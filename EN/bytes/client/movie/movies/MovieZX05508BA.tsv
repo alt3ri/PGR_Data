@@ -1,0 +1,570 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangBegin				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		301				DialogDisable			"{3: 'On the far side of time and space, ""I"" also take my first step forward.'}"
+3	3		401							{1: '1', 2: '250'}
+4	4		307			AniZhuanchangEnd	AniZhuanchangBegin			"{1: '<size=66>On the far side of time and space, ""I"" also take my first step forward.</size>', 5: '0'}"
+5	5		307							{2: '1'}
+6	6		101				DialogEnable			{1: 'Assets/Product/Texture/Image/BgStory/BgStory1262.jpg'}
+7	7		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '3'}
+8	8		201							{1: '1', 2: '500928'}
+9	9		301			AniZhuanchangEnd	DialogDisable			{1: '1', 2: 'I', 3: '(First... foot...)', 4: '1'}
+10	10		202							{1: '1'}
+11	11		401							{1: '2', 2: '4799'}
+12	12		104						150.0	{1: '0|-50|-50', 2: '0.25'}
+13	13		104						250.0	{1: '0|-50|-100', 2: '0.25'}
+14	14		104							{1: '0|0|-100', 2: '0.25'}
+15	15		301			DialogEnable				{3: 'One foot, steps forward, touching the ground.'}
+16	16		201							{1: '1', 2: '500928'}
+17	17		301				DialogDisable			{1: '1', 2: 'I', 3: '(Foot... the other one...)', 4: '1'}
+18	18		202							{1: '1', 6: '1'}
+19	19		104						150.0	{1: '0|-50|-100', 2: '0.25'}
+20	20		104						250.0	{1: '0|-50|-150', 2: '0.25'}
+21	21		104							{1: '0|0|-350', 2: '0.25'}
+22	22		401							{1: '2', 2: '4306'}
+23	23		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.25'}
+24	24		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '0'}
+25	25		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+26	26		301			DialogEnable				{3: 'The other foot, follows... falls down.'}
+27	27		301				DialogDisable			{1: '1', 2: 'I', 3: 'Huff...', 4: '1'}
+28	28		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1262.jpg'}
+29	29		201							{1: '1', 2: '500928'}
+30	30		501				AniZhuanchangEnd			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+31	31		401							{1: '2', 2: '4799'}
+32	32		104						150.0	{1: '0|-50|-150', 2: '0.25'}
+33	33		104						250.0	{1: '0|-50|-200', 2: '0.25'}
+34	34		104							{1: '0|0|-200', 2: '0.25'}
+35	35		301			DialogEnable	DialogDisable			{2: 'I', 3: '(Must... go... forward...)', 4: '1'}
+36	36		401							{1: '2', 2: '4799'}
+37	37		104						150.0	{1: '0|-50|-200', 2: '0.25'}
+38	38		104						250.0	{1: '0|-50|-250', 2: '0.25'}
+39	39		104							{1: '0|0|-250', 2: '0.25'}
+40	40		301			DialogEnable				{2: 'I', 3: '(Need to... go forward...)', 4: '1'}
+41	41		301							{3: 'Stop. There is. A man.'}
+42	42		203							{1: '1', 2: '0.25', 3: '-400'}
+43	43		201							{1: '2', 2: '501243', 4: '400'}
+44	44		301							"{1: '1', 2: 'Haynes', 3: ""Ah, <b>you've</b> finally arrived, my most successful creation."", 4: '2'}"
+45	45		301							{2: 'I', 3: 'You?', 4: '1'}
+46	46		301							{3: 'I. Repeat. And imitate.'}
+47	47		301							"{2: 'Haynes', 3: ""This is the final <b>door</b>. When I <b>open</b> it, you may pass through, and on the other side is the nourishment you'll need for your kind."", 4: '2'}"
+48	48		301							{3: 'Male. Crouch. Waves. Arms. At me.'}
+49	49		301							"{2: 'I', 3: '(Opening, for ""me."")', 4: '1'}"
+50	50		301							{2: 'Haynes', 3: 'Before I open the door for you... would you like to have a <b>name</b>?', 4: '2'}
+51	51		301							{2: 'I', 3: 'Name?', 4: '1'}
+52	52		301							{2: 'Haynes', 3: 'Oh, you <b>tilted your head</b>? Are you just repeating what I said, or are you actually thinking about it?', 4: '2'}
+53	53		301							"{2: 'Haynes', 3: ""Hahaha... you're just like a monkey, or wait, could a monkey even get this far? I've... made it so perfectly... I'm <b>dying</b> of laughter..."", 4: '2'}"
+54	54		301							{3: 'Male, tilt head? Dying of laughter? Dying of laughter? Tilt head?'}
+55	55		301							{3: 'Something, inside my body, pulsing.'}
+56	56		301							"{2: 'Haynes', 3: 'Come now, since I am the <b>Creator</b>, it must be me who bestows upon you a name... how about ""<b>Eve</b>""?', 4: '2'}"
+57	57		301							"{2: 'I', 3: 'Creator...""Eve.""', 4: '1'}"
+58	58		301							{2: 'Eve', 3: 'Eve.', 4: '1'}
+59	59		301							{2: 'Haynes', 3: 'Hahahahaha! Indeed! You are my most satisfactory creation, truly worthy of being a child born from my genes! You will be the species that stands on this planet in the future... brand new and perfect! You deserve this name.', 4: '2'}
+60	60		301							"{3: 'Creator, laughs, ""opens"" door.'}"
+61	61		301							"{2: 'Haynes', 3: ""Come, I've opened the door for you—the thickest <b>gate</b> in this gene bank has been unlocked for you."", 4: '2'}"
+62	62		202							{1: '1', 2: '2'}
+63	63		306							{1: '1'}
+64	64		301							{3: 'I look toward the gate.'}
+65	65		301							{3: 'I repeat, I imitate.'}
+66	66		306							
+67	67		201							{1: '1', 2: '500928'}
+68	68		301							{1: '1', 2: 'Eve', 3: '(Gate, black... I, want to go inside.)', 4: '1'}
+69	69		301							{3: 'Creator, crouches, waves, arms, at me.'}
+70	70		201							{1: '18', 2: '501243', 4: '-80'}
+71	71		301				DialogDisable			{1: '1', 2: 'Haynes', 3: 'Come on, just <b>step</b> forward like that, behind this lies your Eden, so make yourself comfortable and enjoy the fruit of life.', 4: '18'}
+72	72		401							{1: '2', 2: '4799'}
+73	73		104						150.0	{1: '0|-50|-300', 2: '0.25'}
+74	74		104						250.0	{1: '0|-50|-350', 2: '0.25'}
+75	75		104							{1: '0|0|-350', 2: '0.25'}
+76	76		301			DialogEnable				{2: 'Eve', 3: '(Steps forward.)', 4: '1'}
+77	77		301				DialogDisable			"{2: 'Haynes', 3: ""Don't be afraid, I'm nothing like the god who abandoned humanity. I am the Lord who loves you the most, so the entire Eden belongs to you, and those apples won't bring any evil consequences."", 4: '18'}"
+78	78		401							{1: '2', 2: '4799'}
+79	79		104						150.0	{1: '0|-50|-350', 2: '0.25'}
+80	80		104						250.0	{1: '0|-50|-400', 2: '0.25'}
+81	81		104							{1: '0|0|-400', 2: '0.25'}
+82	82		301			DialogEnable				{2: 'Eve', 3: '(Steps forward.)', 4: '1'}
+83	83		301							{2: 'Haynes', 3: 'Follow your instincts, go <b>devour</b>, go <b>seize</b>, go <b>imitate</b>, go <b>learn</b>, go <b>evolve</b>! Cross through this door! The guards inside can be regarded as the lowest <b>excrement</b>, just ignore them!', 4: '18'}
+84	84		301							{2: 'Eve', 3: 'Excrement.', 4: '1'}
+85	85		301				DialogDisable			{2: 'Haynes', 3: 'Come on! <b>Run</b>!', 4: '18'}
+86	86		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '3'}
+87	87		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '3'}
+88	88		104						250.0	{1: '0|0|-800', 2: '0.5'}
+89	89		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0', 4: '1', 5: '0.25'}
+90	90		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '1', 4: '0', 5: '0'}
+91	91		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+92	92		401							{1: '2', 2: '4638'}
+93	93		301			DialogEnable				{2: 'Eve', 3: '(Runs.)', 4: '1'}
+94	94		301							{2: 'Haynes', 3: '<b>Run</b> faster! Yes!', 4: '18'}
+95	95		202							{1: '18', 6: '1'}
+96	96		301							{2: 'Eve', 3: '(Runs faster.)', 4: '1'}
+97	97		301							{2: 'Eve', 3: 'Huff...', 4: '1'}
+98	98		301							{3: 'Fast, quick steps, quick steps.'}
+99	99		301							{3: 'I approach the Creator with quick steps.'}
+100	100		301							{2: 'Eve', 3: 'Huff...', 4: '1'}
+101	101		301				DialogDisable			{3: 'I move like the wind, approaching the Creator.'}
+102	102		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+103	103		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+104	104		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1262.jpg', 3: '0', 4: '1', 5: '0.25'}
+105	105		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1262.jpg', 3: '1', 4: '0', 5: '0'}
+106	106		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1262.jpg'}
+107	107		402							{1: '4638'}
+108	108		301			DialogEnable				"{3: ""I stop... in the Creator's eyes—I, see me.""}"
+109	109		201							{1: '18', 2: '501243', 4: '-80'}
+110	110		301							"{1: '1', 2: 'Haynes', 3: ""Hahaha! Why are you staring at me? You won't see your true self through a human's eyes. Keep running!"", 4: '18'}"
+111	111		301				DialogDisable			{3: 'Creator stops, waves, I must, continue running.'}
+112	112		401							{1: '2', 2: '4799'}
+113	113		104						150.0	{1: '0|-50|0', 2: '0.25'}
+114	114		104						250.0	{1: '0|-50|-100', 2: '0.25'}
+115	115		104							{1: '0|0|-100', 2: '0.25'}
+116	116		301			DialogEnable				{3: 'I move my legs.'}
+117	117		301							"{2: 'Haynes', 3: ""That's it! That's it! Keep going! Hahahahaha..."", 4: '18'}"
+118	118		301				DialogDisable			{2: 'Eve', 3: '...', 4: '1'}
+119	119		202							{1: '1', 2: '18'}
+120	120		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '3'}
+121	121		104						250.0	{1: '0|0|-800', 2: '0.5'}
+122	122		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.25'}
+123	123		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '0'}
+124	124		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+125	125		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+126	126		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+127	127		307							{1: 'I watch the Creator, I step forward, I run quickly.', 3: '60'}
+128	128		301							{3: 'I watch the Creator, I step forward, I run quickly.'}
+129	129		307							{2: '1'}
+130	130		307							{1: 'I leave the gate behind.', 3: '60'}
+131	131		301							{3: 'I leave the gate behind.'}
+132	132		307							{2: '1'}
+133	133		307			AniZhuanchangEnd				{1: 'I, enter the world.', 3: '60'}
+134	134		301				AniZhuanchangBegin			{3: 'I, enter the world.'}
+135	135		307							{2: '1'}
+136	136		101				DialogEnable			{1: 'Assets/Product/Texture/Image/BgStory/BgStory1261.jpg'}
+137	137		301			AniZhuanchangEnd				"{3: 'The sound of wind from running, the exhilarating sensation of striding forward—but the newborn ""Eve"" clearly hasn\'t yet comprehended these feelings.'}"
+138	138		301							{3: 'Eve quickly darts into a room filled with transparent bottles and containers, instinctively concealing herself in the darkness.'}
+139	139		201							{1: '1', 2: '500625'}
+140	140		301				DialogDisable			"{1: '1', 2: 'Researcher', 3: ""...Who's there?"", 4: '1'}"
+141	141		203						250.0	{1: '1', 2: '0.25', 3: '-580'}
+142	142		509						350.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 2: '2'}
+143	143		201							{1: '2', 2: '500928', 4: '500'}
+144	144		301			DialogEnable				{1: '1', 2: 'Eve', 3: '...', 4: '2'}
+145	145		301							"{2: 'Researcher', 3: ""Anyone there? I'm supposed to be the only one on duty today... Nobody said anything about sending interns to the island."", 4: '1'}"
+146	146		301							"{3: ""Eve's gaze penetrates through the spaces between the shelves, catching sight of a young person wearing a white coat.""}"
+147	147		301							{2: 'Eve', 3: '(Excrement.)', 4: '2'}
+148	148		301							{3: 'The white-coated researcher, completely oblivious to the anomaly in the facility, slowly approaches the specimen rack where Eve is hiding—'}
+149	149		203							{1: '2', 2: '0.25', 3: '500', 4: '-200'}
+150	150		301							{2: 'Eve', 3: '(Arches her body.)', 4: '2'}
+151	151		301							{3: '—Fortunately, he stops right before the corner.'}
+152	152		301							"{2: 'Researcher', 3: ""...Maybe I'm just being paranoid. It's not like this place is haunted, geez."", 4: '1'}"
+153	153		301				DialogDisable			{3: 'The researcher shrugs while standing in place, then turns and heads toward another corner.'}
+154	154		202							{1: '1', 2: '2', 6: '1'}
+155	155		510						250.0	{1: '2', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+156	156		201							{1: '1', 2: '500928'}
+157	157		301			DialogEnable				{1: '1', 2: 'Eve', 3: '...', 4: '1'}
+158	158		301							{3: 'As the researcher leaves, Eve leaps out from the shelves and pounces on the nearest set of specimens.'}
+159	159		301							{3: 'It observes carefully. In the stacked glass containers, countless living embryos tremble weakly, their movements imperceptible to human eyes.'}
+160	160		301							{2: 'Eve', 3: 'Seize, devour.', 4: '1'}
+161	161		202							{1: '1'}
+162	162		401							{1: '2', 2: '5532'}
+163	163		301							{3: 'Crunch, crunch—Eve bites through the glass, drawing the researcher who had just left back to the scene.'}
+164	164		401							{1: '1', 2: '36'}
+165	165		201							{1: '1', 2: '500625'}
+166	166		301							"{1: '1', 2: 'Researcher', 3: ""What's that noise again? Don't tell me we have mice in here—AAAGH!!"", 4: '1'}"
+167	167		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+168	168		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+169	169		401							{1: '2', 2: '844'}
+170	170		401							{1: '1', 2: '5026'}
+171	171		203							{1: '1', 2: '0', 3: '400'}
+172	172		201							{1: '2', 2: '500928', 4: '-400'}
+173	173		301							{1: '1', 2: 'Eve', 3: '!', 4: '2'}
+174	174		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+175	175		306							{1: '1'}
+176	176		401							{1: '2', 2: '5532'}
+177	177		301							"{3: 'The container in the researcher\'s hands crashes to the floor, shattering completely. He stumbles backward, pointing at ""Eve,"" his throat producing sharp, shrill sounds. The ""expression"" on his face is something even Eve finds difficult to comprehend.'}"
+178	178		306							
+179	179		301			PanelActor1Shake				{2: 'Researcher', 3: 'Y-y-y-you th-th-this...', 4: '1'}
+180	180		301							{2: 'Eve', 3: 'Excrement.', 4: '2'}
+181	181		301							{2: 'Researcher', 3: 'W-w-what AAAAAAHHH—ALARM! ALARM! ALARM!!!', 4: '1'}
+182	182		202							{1: '1', 2: '2'}
+183	183		301							"{3: 'The ""excrement"" continues screaming in Eve\'s eyes, clearly about to slam the red alarm button on the wall.'}"
+184	184		201							{1: '1', 2: '500928'}
+185	185		301							{1: '1', 2: 'Eve', 3: 'Excrement, run. I, take.', 4: '1'}
+186	186		202							{1: '1', 6: '1'}
+187	187		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+188	188		301							{3: 'Five minutes later, the limp human remains slide off Eve, leaving behind trails of sticky blood as the last proof of his existence.'}
+189	189		301							"{3: ""Eve's purpose is to evolve. She physically eliminated the excrement and absorbed a twisted form of emotion from him.""}"
+190	190		201							{1: '1', 2: '500928'}
+191	191		301							{1: '1', 2: 'Eve', 3: '(Switches to a [Terrified] expression.)', 4: '1'}
+192	192		301							{2: 'Eve', 3: '[Terror].', 4: '1'}
+193	193		202							{1: '1'}
+194	194		301				AniZhuanchangBegin			{3: 'Eve chews on [Terror], feeling a profound sense of shock and panic from deep within, an intoxicating stimulation—no wonder humans voluntarily seek out [Terror] in various activities.'}
+195	195		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1263.jpg'}
+196	196		301			AniZhuanchangEnd				"{3: 'Eve changes into the excrement\'s uniform, wrapping herself completely to conceal her ""terrified"" expression. She then steps out and walks down the corridor.'}"
+197	197		301							{3: 'She savors the genetic information from the embryos, though completely learning it all will take more time.'}
+198	198		301							{3: 'No one passing by notices what happened in the small room. Everyone wrapped in identical thick protective suits walks numbly through the corridor, brushing past her without a second glance.'}
+199	199		201							{1: '1', 2: '500427'}
+200	200		301							{1: '1', 2: 'Eve', 3: 'Excrement.', 4: '1'}
+201	201		301							{3: 'Her gaze drifts across this heap of excrement, the bloodthirsty desire from the depths of her soul compelling her to act.'}
+202	202		301							{3: '—But now is not the time.'}
+203	203		301							{2: 'Eve', 3: 'Resist, keep moving.', 4: '1'}
+204	204		202							{1: '1'}
+205	205		301				AniZhuanchangBegin			{3: 'She is the first of a new world. She must overcome her most primal desires to evolve into a new, perfect human.'}
+206	206		401							{1: '1', 2: '36'}
+207	207		101				DialogDisable		2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory870.jpg'}
+208	208		401							{1: '1', 2: '209'}
+209	209		107			AniZhuanchangEnd			3000.0	{1: 'Guard Room', 2: '21:00:00'}
+210	210		108							{1: '1'}
+211	211		201							{1: '1', 2: '500712'}
+212	212		201							{1: '2', 2: '501063', 4: '-700'}
+213	213		201							{1: '3', 2: '500813', 4: '700'}
+214	214		301			DialogEnable				{1: '1', 2: 'Senior Soldier', 3: 'A pair of fours.', 4: '1'}
+215	215		301							{2: 'Middle-aged Soldier', 3: 'Pair of sevens.', 4: '2'}
+216	216		301							{3: 'The card game has just begun. Several soldiers lean back in their chairs, listlessly tossing down a few low cards.'}
+217	217		301							"{2: 'Senior Soldier', 3: ""What a <b>pain</b>... I heard there's trouble outside again. The port nearest to this island has fallen. They say quite a few people died in the conservation area... It's madness."", 4: '1'}"
+218	218		301							"{2: 'Middle-aged Soldier', 3: ""Looks like we made the right choice coming to this island back then. We've been stuck here for over a decade, but at least it's safe. Those Corrupted haven't managed to swim across the <b>ocean</b> yet."", 4: '2'}"
+219	219		301							"{2: 'Senior Soldier', 3: ""Hey, it's your turn. You're not going to play against a pair of sevens? Hurry up."", 4: '1'}"
+220	220		301							{3: 'The senior soldier frowns at the young recruit in the corner, who clutches his cards, fumbling clumsily to arrange them in order.'}
+221	221		301							"{2: 'Young Soldier', 3: ""Oh-oh, it's my turn. A pair of... a pair of eights."", 4: '3'}"
+222	222		301							"{2: 'Senior Soldier', 3: ""Splitting your hand? No need. We're just playing casually, and we're not playing for stakes. You don't have to throw us easy cards."", 4: '1'}"
+223	223		301							"{2: 'Young Soldier', 3: ""Okay, okay, okay! I'll play properly, I promise!"", 4: '3'}"
+224	224		301							{2: 'Senior Soldier', 3: '...What are you so nervous about?', 4: '1'}
+225	225		301							"{2: 'Middle-aged Soldier', 3: 'Relax. You haven\'t been on this island for long, so you don\'t know the situation here yet. Sure, there\'s some research project running, but this place is just a gene bank, it\'s nothing mission-critical. It\'s actually voted as ""Best Place to Coast Until Retirement"" in the unofficial poll among Kurono personnel.', 4: '2'}"
+226	226		301							{2: 'Young Soldier', 3: 'Oh, oh... Thanks, thank you all for telling me this... I just... I just...', 4: '3'}
+227	227		301							"{3: ""The young man's gaze drifts to the ceiling, where a security camera emits a faint red glow, its lens trained on the soldiers playing cards below.""}"
+228	228		301							"{2: 'Young Soldier', 3: ""I'm just a bit worried about the <b>cameras</b>. They seem to be everywhere, so I thought security was really strict here..."", 4: '3'}"
+229	229		301							"{2: 'Middle-aged Soldier', 3: ""Who cares about those! Let the higher-ups watch if they want—it's not our problem. This <b>damn</b> world is ending anyway, so why not enjoy ourselves while we can?"", 4: '2'}"
+230	230		203						250.0	{1: '1', 2: '0.25', 3: '-300'}
+231	231		201							{1: '4', 2: '500427', 4: '300'}
+232	232		301							{1: '1', 2: 'Masked Soldier in the Corner', 3: 'Pair of Kings.', 4: '4'}
+233	233		301							{2: 'Middle-aged Soldier', 3: '?', 4: '2'}
+234	234		301							{2: 'Senior Soldier', 3: 'What? He plays a pair of 8s, and you just throw down a pair of Kings?', 4: '1'}
+235	235		301							{3: 'The masked soldier in the corner silently nods, indicating that this is exactly how they intend to play. With an unfamiliar build, they deem the soldier to be another newcomer to the unit.'}
+236	236		301							"{2: 'Senior Soldier', 3: ""Fine, I can't beat that. Your turn, let's see just how amazing your hand really is."", 4: '1'}"
+237	237		306							{1: '1'}
+238	238		401							{1: '2', 2: '907504'}
+239	239		301							{3: 'Clap!'}
+240	240		301							{3: 'The silent masked soldier slowly draws out a pair of cards and throws them down, making a crisp sound as they hit the table.'}
+241	241		301							{3: 'Pair of 3s.'}
+242	242		306							
+243	243		301							"{2: 'Senior Soldier', 3: ""...Hahaha! I was wondering why you were in such a rush to play those Kings, turns out you've been hiding a pair of 3s you were afraid of getting stuck with!"", 4: '1'}"
+244	244		301							"{2: 'Senior Soldier', 3: ""Go on, go on, you youngsters take your turn. I'll cut you amateurs some slack."", 4: '1'}"
+245	245		301							{3: 'The senior soldier waves his hand dismissively.'}
+246	246		301							{2: 'Young Soldier', 3: 'P-pair of 5s.', 4: '3'}
+247	247		301							"{2: 'Senior Soldier', 3: ""Pair of 5s? Let me see... The way that guy's been breaking up combinations has left us in a tough spot..."", 4: '1'}"
+248	248		301							"{2: 'Middle-aged Soldier', 3: ""Hey, it's already past nine. Why haven't those researchers gone to dinner yet?"", 4: '2'}"
+249	249		301							"{2: 'Senior Soldier', 3: ""They're probably working overtime and getting chewed out again. A new boss arrived with your batch of new guards a few days ago. Looked normal enough, but he's actually a total workaholic, forcing them to hit KPIs every day, turning scientific research into some performance metrics game."", 4: '1'}"
+250	250		301							{3: 'The senior soldier eyes the security camera, and then lowers his voice.'}
+251	251		301							"{2: 'Senior Soldier', 3: 'He really tears into them. Yesterday he yelled at the researchers, saying ""You can\'t produce any actual research, demand better rations, then turn around and create disgusting abominations""... Hahaha...', 4: '1'}"
+252	252		301							"{2: 'Middle-aged Soldier', 3: ""Pft! He's not wrong though! Hahahaha..."", 4: '2'}"
+253	253		301							{3: 'The duty room is filled with cheerful laughter, except for the two newcomers in the corner playing cards haphazardly.'}
+254	254		301							{2: 'Young Soldier', 3: 'Maybe... we should go <b>check</b> on them?', 4: '3'}
+255	255		301							"{2: 'Young Soldier', 3: ""Since I got here, I've been watching them. No matter what, those researchers always maintained a healthy routine and ate their meals on time... But today, I haven't heard a single sound from them... not a single one."", 4: '3'}"
+256	256		301							{2: 'Middle-aged Soldier', 3: 'Haha! Those researchers probably caused some big commotion and got themselves killed—just like in those old Golden Age movies, where researchers recklessly try to capture monster embryos, only for the monsters to escape and <b>slaughter</b> them all.', 4: '2'}
+257	257		301							{2: 'Young Soldier', 3: '...Does that... really happen?', 4: '3'}
+258	258		301							"{3: ""The duty room falls into unanimous silence. It's the masked soldier's turn to play, but they sit there holding the cards, motionless.""}"
+259	259		301							"{2: 'Senior Soldier', 3: ""Now why did you say that? Look, you've scared the new kid."", 4: '1'}"
+260	260		301							"{2: 'Middle-aged Soldier', 3: ""...I was just joking, don't take it seriously, though these things have happened elsewhere..."", 4: '2'}"
+261	261		306							{1: '1'}
+262	262		401							{1: '2', 2: '907504'}
+263	263		301							{3: 'Clap!'}
+264	264		301							"{3: ""Another crisp sound of cards hitting the table draws everyone's gaze—""}"
+265	265		301							"{3: 'The masked soldier throws down a set of jokers, covering a modest ""pair of threes.""'}"
+266	266		306							
+267	267		301							"{2: 'Senior Soldier', 3: ""...Don't you understand the rules of the game?"", 4: '1'}"
+268	268		202							{1: '1', 2: '2', 3: '3', 4: '4'}
+269	269		401							{1: '1', 2: '36'}
+270	270		306						200.0	{1: '1'}
+271	271		401							{1: '1', 2: '5042'}
+272	272		301							{3: 'The Senior Soldier exchanges a quick glance with the Middle-aged Soldier, holding his cards in one hand while the other slowly reaches toward his waist.'}
+273	273		401						200.0	{1: '2', 2: '10028805'}
+274	274		401							{1: '2', 2: '5495'}
+275	275		301							"{3: ""—But the Young Soldier has already drawn his weapon and jumped to his feet, kicking over the masked newcomer's chair.""}"
+276	276		306							
+277	277		201							{1: '1', 2: '500813', 4: '-400'}
+278	278		201							{1: '2', 2: '500712', 4: '400'}
+279	279		301			PanelActor1Shake				"{2: 'Young Soldier', 3: ""Take off that mask!! I've been wondering who you are this whole time...! I don't remember someone like you arriving!!"", 4: '1'}"
+280	280		301							{2: 'Senior Soldier', 3: '****! This hothead just went for it!', 4: '2'}
+281	281		202							{1: '1', 2: '2'}
+282	282		306							{1: '1'}
+283	283		401							{1: '2', 2: '10028805'}
+284	284		301							"{3: ""The atmosphere in the duty room suddenly grows tense as the other two soldiers also draw their weapons and stand up, aiming at the masked soldier who's climbing to their feet in the corner.""}"
+285	285		301							{3: 'With three guns pointed at them, the masked soldier slowly raises both hands, attempting to remove their mask.'}
+286	286		306							
+287	287		201							{1: '1', 2: '500712'}
+288	288		301							"{1: '1', 2: 'Senior Soldier', 3: ""Don't move!"", 4: '1'}"
+289	289		202							{1: '1'}
+290	290		306							{1: '1'}
+291	291		301							{3: 'The Senior Soldier yanks off the mask before the other can do it themselves.'}
+292	292		301				AniZhuanchangBegin			"{3: 'A crude imitation of a ""terrified"" expression appears before everyone, twisted to the point of being unsettling.'}"
+293	293		306							
+294	294		401							{1: '1', 2: '36'}
+295	295		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1263.jpg'}
+296	296		401							{1: '2', 2: '4545'}
+297	297		401							{1: '1', 2: '6175'}
+298	298		301			AniZhuanchangEnd				{3: 'Alarm bells blare throughout the facility.'}
+299	299		201							{1: '1', 2: '500928'}
+300	300		301							{1: '1', 2: 'Eve', 3: 'She takes off running.', 4: '1'}
+301	301		202							{1: '1'}
+302	302		301							{3: 'Eve dashes out of the duty room under the flashing alarms. Unable to clean off the fragments of blood and flesh, she discards the cumbersome human clothing. It quickens its pace, hastily escaping.'}
+303	303		201							{1: '1', 2: '500928'}
+304	304		301							{1: '1', 2: 'Eve', 3: 'Excrement pursues her.', 4: '1'}
+305	305		201							{1: '1', 2: '500197', 4: '400'}
+306	306		201							{1: '2', 2: '500197', 4: '-400'}
+307	307		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+308	308		301							{1: '1', 2: 'Soldiers', 3: 'STOP IT!!', 4: '1', 5: '2'}
+309	309		202							{1: '1', 2: '2'}
+310	310		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+311	311		306							{1: '1'}
+312	312		401							{1: '2', 2: '10021506'}
+313	313		301							{3: 'A burst of gunfire comes from behind. It seems the old soldier managed to pull the alarm before dying, summoning a group of soldiers.'}
+314	314		306							
+315	315		201							{1: '1', 2: '500928'}
+316	316		301							{1: '1', 2: 'Eve', 3: '(Rolls to dodge.)', 4: '1'}
+317	317		201							{1: '1', 2: '500197', 4: '400'}
+318	318		201							{1: '2', 2: '500197', 4: '-400'}
+319	319		301							"{1: '1', 2: 'Soldiers', 3: ""The duty room is...! ****, it's a massacre! That thing is definitely a monster!"", 4: '1', 5: '2'}"
+320	320		202							{1: '1', 2: '2'}
+321	321		306							{1: '1'}
+322	322		301							{3: 'Eve tries to use all four limbs, but her evolving body no longer adapts to this primitive mode of movement. She can only stumble forward on two feet.'}
+323	323		306							
+324	324		201							{1: '1', 2: '500928'}
+325	325		301							{1: '1', 2: 'Eve', 3: 'Trouble.', 4: '1'}
+326	326		202							{1: '1'}
+327	327		401							{1: '2', 2: '2593'}
+328	328		301							"{3: 'A bullet penetrates Eve\'s ""shoulder,"" splashing foul-smelling black fluid. Her evolving blood hasn\'t fully formed yet, leaving only this substitute to transport energy throughout her body.'}"
+329	329		201							{1: '1', 2: '500197', 4: '400'}
+330	330		201							{1: '2', 2: '500197', 4: '-400'}
+331	331		301							{1: '1', 2: 'Soldiers', 3: 'What?! Disgusting! What the hell is that thing?!', 4: '1'}
+332	332		301							"{2: 'Soldiers', 3: ""Just searched the area—the research lab's compromised too! Activate emergency protocols!! That thing running ahead..."", 4: '2'}"
+333	333		301							"{3: 'As the ""excrement"" soldiers call out, more and more people realize something is wrong.'}"
+334	334		301			PanelActor1Shake				{2: 'Soldiers', 3: '—That thing is definitely not human!!!', 4: '1'}
+335	335		202							{1: '1', 2: '2', 6: '1'}
+336	336		201							{1: '1', 2: '500928'}
+337	337		301			PanelActor1Shake				{1: '1', 2: 'Eve', 3: 'Trouble!', 4: '1'}
+338	338		306							{1: '1'}
+339	339		401							{1: '2', 2: '10001004'}
+340	340		401							{1: '2', 2: '5152'}
+341	341		301							{3: 'Increasingly dense firepower concentrates behind Eve, impossible to escape, impossible to dodge. High-velocity bullets attack mercilessly, tearing apart her recently formed shell that mimics a human body.'}
+342	342		306							
+343	343		201							{1: '1', 2: '500928'}
+344	344		301			PanelActor1Shake	DialogDisable			{2: 'Eve', 3: 'Trouble! Troubletroubletroubletrouble!', 4: '1'}
+345	345		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.25'}
+346	346		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '0'}
+347	347		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+348	348		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+349	349		109						100.0	{1: '1', 2: '<size=30>Trouble</size>', 3: '30', 4: '50', 9: '3'}
+350	350		109						100.0	{1: '2', 2: '<size=30>Trouble</size>', 3: '300', 4: '200', 9: '3'}
+351	351		109						100.0	{1: '3', 2: '<size=40>Trouble</size>', 3: '-300', 4: '-480', 9: '3'}
+352	352		109						100.0	{1: '4', 2: '<size=60>Trouble</size>', 3: '500', 4: '100', 9: '3'}
+353	353		109						100.0	{1: '5', 2: '<size=70>Trouble</size>', 3: '-800', 4: '-80', 9: '3'}
+354	354		109						100.0	{1: '6', 2: '<size=75>Trouble</size>', 3: '200', 4: '-200', 9: '3'}
+355	355		109						100.0	{1: '7', 2: '<size=30>Trouble</size>', 3: '600', 9: '3'}
+356	356		109						100.0	{1: '8', 2: '<size=50>Trouble</size>', 3: '70', 4: '90', 9: '3'}
+357	357		109						100.0	{1: '9', 2: '<size=30>Trouble</size>', 3: '90', 9: '3'}
+358	358		109						100.0	{1: '10', 2: 'Trouble<size=70>Trouble</size>', 3: '300', 4: '20', 9: '3'}
+359	359		109						100.0	{1: '11', 2: 'Trouble<size=80>Trouble</size>', 3: '-50', 4: '-60', 9: '3'}
+360	360		109						100.0	{1: '12', 2: '<size=90>Trouble</size>', 3: '-300', 4: '-70', 9: '3'}
+361	361		109						100.0	{1: '13', 2: 'Trouble<size=100>Trouble</size>', 3: '-400', 4: '80', 9: '3'}
+362	362		109						100.0	{1: '14', 2: '<size=110>Trouble</size>', 3: '200', 4: '-200', 9: '3'}
+363	363		109						100.0	{1: '15', 2: 'Trouble<size=120>Trouble</size>', 3: '-150', 4: '180', 9: '3'}
+364	364		109						100.0	{1: '16', 2: '<size=130>Trouble</size>', 3: '450', 4: '-230', 9: '3'}
+365	365		109						100.0	{1: '17', 2: '<size=140>Trouble</size>', 3: '-450', 4: '-230', 9: '3'}
+366	366		109						100.0	{1: '18', 2: '<size=150>Trouble</size>', 3: '-400', 4: '230', 9: '3'}
+367	367		109						100.0	{1: '19', 2: '<size=160>Trouble</size>', 3: '600', 4: '-400', 9: '3'}
+368	368		109						100.0	{1: '20', 2: '<size=170>Trouble</size>', 3: '-550', 4: '450', 9: '3'}
+369	369		109						100.0	{1: '21', 2: '<size=60>Trouble</size>', 4: '-400', 9: '3'}
+370	370		109						100.0	{1: '22', 2: '<size=190>Trouble</size>', 3: '800', 4: '230', 9: '3'}
+371	371		109						100.0	{1: '23', 2: 'Trouble<size=200>Trouble</size>', 3: '-350', 4: '-350', 9: '3'}
+372	372		109						100.0	{1: '24', 2: '<size=210>Trouble</size>', 3: '400', 9: '3'}
+373	373		109						100.0	{1: '25', 2: '<size=60>Trouble</size>', 3: '-50', 4: '490', 9: '3'}
+374	374		109						100.0	{1: '27', 2: '<size=70>Trouble</size>', 3: '70', 4: '-100', 9: '3'}
+375	375		109						100.0	{1: '28', 2: '<size=90>Trouble</size>', 3: '-500', 4: '-300', 9: '3'}
+376	376		109						500.0	{1: '29', 2: 'Trouble<size=220>Trouble</size>', 3: '500', 4: '500', 9: '3'}
+377	377		301							{3: 'Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble Trouble '}
+378	378		110							
+379	379		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1263.jpg', 3: '0', 4: '1', 5: '0.25'}
+380	380		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1263.jpg', 3: '1', 4: '0', 5: '0'}
+381	381		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1263.jpg'}
+382	382		502							{1: 'PanelActor1Shake'}
+383	383		301			DialogEnable	DialogDisable			{2: 'Eve', 3: 'Excrement!!', 4: '1'}
+384	384		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.25'}
+385	385		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '0'}
+386	386		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+387	387		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+388	388		109						100.0	{1: '1', 2: '<size=30>Excrement!!</size>', 3: '30', 4: '50', 9: '3'}
+389	389		109						100.0	{1: '2', 2: '<size=30>Excrement!</size>', 3: '300', 4: '200', 9: '3'}
+390	390		109						100.0	{1: '3', 2: '<size=40>Excrement</size>', 3: '-300', 4: '-480', 9: '3'}
+391	391		109						100.0	{1: '4', 2: '<size=60>Excrement!!</size>', 3: '500', 4: '100', 9: '3'}
+392	392		109						100.0	{1: '5', 2: '<size=70>Excrement!</size>', 3: '-800', 4: '-80', 9: '3'}
+393	393		109						100.0	{1: '6', 2: '<size=75>Excrement</size>', 3: '200', 4: '-200', 9: '3'}
+394	394		109						100.0	{1: '7', 2: '<size=30>Excrement!</size>', 3: '600', 9: '3'}
+395	395		109						100.0	{1: '8', 2: '<size=50>Excrement</size>', 3: '70', 4: '90', 9: '3'}
+396	396		109						100.0	{1: '9', 2: '<size=30>Excrement!</size>', 3: '90', 9: '3'}
+397	397		109						100.0	{1: '10', 2: 'Excrement!<size=70>Excrement!</size>', 3: '300', 4: '20', 9: '3'}
+398	398		109						100.0	{1: '11', 2: 'Excrement!<size=80>Excrement!</size>', 3: '-50', 4: '-60', 9: '3'}
+399	399		109						100.0	{1: '12', 2: '<size=90>Excrement!</size>', 3: '-300', 4: '-70', 9: '3'}
+400	400		109						100.0	{1: '13', 2: 'Excrement!<size=100>Excrement!</size>', 3: '-400', 4: '80', 9: '3'}
+401	401		109						100.0	{1: '14', 2: '<size=110>Excrement!</size>', 3: '200', 4: '-200', 9: '3'}
+402	402		109						100.0	{1: '15', 2: 'Excrement!<size=120>Excrement!</size>', 3: '-150', 4: '180', 9: '3'}
+403	403		109						100.0	{1: '16', 2: '<size=130>Excrement!</size>', 3: '450', 4: '-230', 9: '3'}
+404	404		109						100.0	{1: '17', 2: '<size=140>Excrement!</size>', 3: '-450', 4: '-230', 9: '3'}
+405	405		109						100.0	{1: '18', 2: '<size=150>Excrement!</size>', 3: '-400', 4: '230', 9: '3'}
+406	406		109						100.0	{1: '19', 2: '<size=160>Excrement!</size>', 3: '600', 4: '-400', 9: '3'}
+407	407		109						100.0	{1: '20', 2: '<size=170>Excrement!</size>', 3: '-550', 4: '450', 9: '3'}
+408	408		109						100.0	{1: '21', 2: '<size=60>Excrement!</size>', 4: '-400', 9: '3'}
+409	409		109						100.0	{1: '22', 2: '<size=190>Excrement!</size>', 3: '800', 4: '230', 9: '3'}
+410	410		109						100.0	{1: '23', 2: 'Excrement!<size=200>Excrement!</size>', 3: '-350', 4: '-350', 9: '3'}
+411	411		109						100.0	{1: '24', 2: '<size=210>Excrement!</size>', 3: '400', 9: '3'}
+412	412		109						100.0	{1: '25', 2: '<size=60>Excrement!</size>', 3: '-50', 4: '490', 9: '3'}
+413	413		109						100.0	{1: '27', 2: '<size=70>Excrement</size>', 3: '70', 4: '-100', 9: '3'}
+414	414		109						100.0	{1: '28', 2: '<size=90>Excrement!</size>', 3: '-500', 4: '-300', 9: '3'}
+415	415		109						500.0	{1: '29', 2: 'Excrement<size=220>Excrement!</size>', 3: '500', 4: '500', 9: '3'}
+416	416		301							{3: 'Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement Excrement '}
+417	417		110							
+418	418		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1263.jpg', 3: '0', 4: '1', 5: '0.25'}
+419	419		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1263.jpg', 3: '1', 4: '0', 5: '0'}
+420	420		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1263.jpg'}
+421	421		301			DialogEnable				{2: 'Eve', 3: 'Excrement!! Damn it!!!', 4: '1'}
+422	422		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+423	423		202							{1: '1'}
+424	424		306							{1: '1'}
+425	425		301							{3: 'At a corner along her escape route, several armed figures suddenly rush out.'}
+426	426		306							
+427	427		201							{1: '1', 2: '500928'}
+428	428		301							{1: '1', 2: 'Eve', 3: 'Kill—Excrement!', 4: '1'}
+429	429		202							{1: '1', 6: '1'}
+430	430		401							{1: '2', 2: '844'}
+431	431		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+432	432		104						250.0	{1: '0|0|-300', 2: '0.25'}
+433	433		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+434	434		301			RImgBg1Shake				"{3: ""Eve lunges forward, opening her enormous maw. The sickening split in her face tears all the way to her ears, yet it's still not enough...""}"
+435	435		201							{1: '1', 2: '500928'}
+436	436		301							{1: '1', 2: 'Eve', 3: 'Devour! Eat! Eat the excrement!', 4: '1'}
+437	437		202							{1: '1'}
+438	438		401							{1: '2', 2: '5530'}
+439	439		301							{3: '(Chomp!)'}
+440	440		401							{1: '2', 2: '2593'}
+441	441		301							"{3: ""Blood splatters, bones crack, flesh tears—the sound resembling fabric being ripped apart. The human researcher's head is savagely torn from their body, then swallowed in a single gulp.""}"
+442	442		201							{1: '1', 2: '500928'}
+443	443		301							{1: '1', 2: 'Eve', 3: 'Devour... Seize... Mimic... Learn...', 4: '1'}
+444	444		301							{2: 'Eve', 3: 'Evolve.', 4: '1'}
+445	445		201							{1: '1', 2: '500197'}
+446	446		301			PanelActor1Shake				{2: 'Soldiers', 3: '...!!!', 4: '1'}
+447	447		202							{1: '1'}
+448	448		301							"{3: 'Eve rapidly processes the information obtained from the ""excrement,"" comprehending various complex emotions through the act of mastication.'}"
+449	449		301							"{3: 'Among them, one particularly light emotion attracts her more than any other, far surpassing the feeling of ""terror."" It nearly gushes from her chest, compelling her to express it no matter what.'}"
+450	450		201							{1: '1', 2: '500928'}
+451	451		301							{1: '1', 2: 'Eve', 3: 'So [happy].', 4: '1'}
+452	452		301							{3: 'Eve perches on the shoulders of the headless researcher, unable to resist throwing her head back and flashing an absolutely radiant smile at her pursuers.'}
+453	453		301				AniZhuanchangBegin			{2: 'Eve', 3: 'Hehe.', 4: '1'}
+454	454		202							{1: '1', 6: '1'}
+455	455		402							{1: '4545'}
+456	456		401							{1: '1', 2: '36'}
+457	457		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1257.jpg'}
+458	458		401							{1: '1', 2: '5042'}
+459	459		301			AniZhuanchangEnd				"{3: 'The world\'s first ""New Human""—Eve—escapes from the gene bank facility and reaches the surface of the isolated island.'}"
+460	460		306							{1: '1'}
+461	461		301							"{3: 'She has devoured enough samples along the way, her body overflowing with information that is continuously processed inside her. From the moment she crossed that doorway until now, this journey of rebirth has been nothing short of a ""complete success.""'}"
+462	462		301							"{3: ""If she jumps into the sea... even if she can't cross the vast ocean, simply hiding underwater for a while will ensure her complete success.""}"
+463	463		301							{3: 'In the moment before leaping into the sea, Eve turns back one last time to look at her pursuers.'}
+464	464		301							"{3: 'Her pursuers will never feel [happy] again—because the swarm of Eve\'s kind has left the nest together. Every ""I"" seeks to evolve. Every ""I"" hunts the excrement.'}"
+465	465		301							"{3: ""Excrement is excrement, meant to obediently serve as stepping stones for the New Humans' advancement.""}"
+466	466		301							"{3: ""Eve stares at their terror-stricken faces and can't help but broadcast her [happiness] with wild abandon.""}"
+467	467		306							
+468	468		201							{1: '1', 2: '500928'}
+469	469		301							{1: '1', 2: 'Eve', 3: 'Hehe, goodbye.', 4: '1'}
+470	470		202							{1: '1'}
+471	471		301				DialogDisable			"{3: ""It stands at the shore's edge and leaps forward in a single bound.""}"
+472	472		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '3'}
+473	473		401							{1: '2', 2: '4156'}
+474	474		104						250.0	{1: '0|0|-800', 2: '0.5'}
+475	475		401							{1: '2', 2: '927'}
+476	476		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.25'}
+477	477		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '0'}
+478	478		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+479	479		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+480	480		501				AniZhuanchangBegin		5000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBubble.prefab', 2: '3'}
+481	481		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory391.jpg'}
+482	482		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBubble.prefab'}
+483	483		201				DialogEnable			{1: '1', 2: '500928'}
+484	484		401							{1: '2', 2: '5529'}
+485	485		301			AniZhuanchangEnd				{1: '1', 2: 'Eve', 3: '(Leaps into the ocean.)', 4: '1'}
+486	486		202							{1: '1'}
+487	487		301							{3: 'We win!'}
+488	488		306							{1: '1'}
+489	489		401							{1: '2', 2: '5529'}
+490	490		301							{3: 'The bubbles formed by her plunge gurgle in her ears, a dense constellation congratulating the newborn human species.'}
+491	491		301							"{3: ""Eve surrenders to gravity's gentle pull, slowly sinking to the ocean floor.""}"
+492	492		301							"{3: 'The countless genes she has stolen rapidly break down and evolve within her body. In each new moment, she sees countless meanings in the species known as ""Old Humans.""'}"
+493	493		301							{3: 'It tries to understand everything, like how the emotion of the first human it encountered was [terror]. And going further back in its memories... the man who conceived its birth... the man who encouraged it to break beyond boundaries, to seek evolution, and who bestowed upon it a name: Haynes.'}
+494	494		301							{3: 'His expression back then—it finally understands it now.'}
+495	495		301							{3: 'So it was a kind of fanatical [excitement].'}
+496	496		306							
+497	497		201							{1: '1', 2: '500928'}
+498	498		301							{1: '1', 2: 'Eve', 3: '[Excitement].', 4: '1'}
+499	499		306							{1: '1'}
+500	500		401							{1: '2', 2: '5539'}
+501	501		301			RImgBg1Shake				{3: 'Suddenly, a massive wave surges from the distance, bringing with it the familiar aura of her kind—At this very moment, a ship from far away has sunk near this isolated island, and that ship carries the scent of Punishing.'}
+502	502		301							{3: 'Even more excitingly, Eve senses that a solitary Old Human has fallen into the ocean.'}
+503	503		301							{3: 'This Old Human seems somewhat different from those other worthless scraps.'}
+504	504		306							
+505	505		201							{1: '1', 2: '500928'}
+506	506		301							{1: '1', 2: 'Eve', 3: '(Quickly swims toward the Old Human.)', 4: '1'}
+507	507		104						250.0	{1: '0|0|-100', 2: '0.25'}
+508	508		202							
+509	509		306							{1: '1'}
+510	510		301							{3: 'The Old Human wears a thick combat suit, a garment that only absorbs water while they drown, becoming like a boulder dragging its wearer down to the deep sea.'}
+511	511		301							"{3: ""Through the eyes of the Punishing, the Old Human's body appears as if molded by spiraling threads of silk, emitting a faint glow.""}"
+512	512		301							{3: 'This is a person bound by the threads of fate.'}
+513	513		301							"{3: ""Is this a projection from some other world? Or perhaps... I'm mistaken, and this is just an ordinary Old Human struggling underwater?""}"
+514	514		306							
+515	515		201							{1: '1', 2: '500928'}
+516	516		301							{1: '1', 2: 'Eve', 3: '(Presses against them with excitement.)', 4: '1'}
+517	517		202							{1: '1'}
+518	518		306							{1: '1'}
+519	519		301							{3: 'Regardless, this Old Human carries extremely rich information, worthy of a taste.'}
+520	520		301							"{3: ""Eve's hand wraps around the Old Human's exposed ankle. She needs to devour information, but the Punishing Corruption rapidly rots the human's skin, exposing raw, crimson flesh.""}"
+521	521		301							"{3: ""The hand gripping the Old Human's ankle instinctively loosens, as a strange emotion rises within Eve's heart.""}"
+522	522		306							
+523	523		201							{1: '1', 2: '500928'}
+524	524		301							{1: '1', 2: 'Eve', 3: 'Attachment?', 4: '1'}
+525	525		202							{1: '1'}
+526	526		301							"{3: 'But the information carried by this Old Human is vast and complex, rapidly enveloping Eve. In an instant, her analysis of the entire ""Old Human"" species accelerates.'}"
+527	527		301							{3: 'In her daze, countless Old Human voices seem to echo around her—men, women, elderly, children—resonating through the ocean depths like a chorus of tower bells.'}
+528	528		306							{1: '1'}
+529	529		301							{3: 'The voices say:'}
+530	530		301							"{3: '<i>""You are my child, my precious darling.""</i>'}"
+531	531		301							"{3: '<i>""You are my little Commandant. I hope you can venture wherever you wish and make all your dreams come true.""</i>'}"
+532	532		301							"{3: '<i>""You are our hope.""</i>'}"
+533	533		301							"{3: '<i>""You are...""</i>'}"
+534	534		306							
+535	535		201							{1: '1', 2: '500928'}
+536	536		301							{1: '1', 2: 'Eve', 3: '...', 4: '1'}
+537	537		301							{3: 'She finds herself captivated by these Old Human voices, rapidly developing a dependency on that sense of warmth.'}
+538	538		301							"{3: ""She can't help but eagerly call out—not with the caution she uses when addressing her creator, Haynes, but simply wanting to call this person as an Old Human would:""}"
+539	539		301							{2: 'Eve', 3: '...M-Mother<//F-Father>...', 4: '1'}
+540	540		202							{1: '1', 6: '1'}
+541	541		401							{1: '2', 2: '4158'}
+542	542		401							{1: '1', 2: '62'}
+543	543		306							{1: '1'}
+544	544		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+545	545		104						250.0	{1: '0|-200|-200', 2: '0.25'}
+546	546		301							"{3: ""Suddenly, the gravity around Eve intensifies sharply. She's brutally ripped away from the Old Human's ankle—and in the next moment, yanked above the water's surface, dangling in midair.""}"
+547	547		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+548	548		306							
+549	549		401							{1: '2', 2: '778'}
+550	550		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5501_8.jpg', 3: '0', 4: '1', 5: '0'}
+551	551		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5501_8.jpg', 3: '1', 4: '0', 5: '0'}
+552	552		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5501_8.jpg'}
+553	553		301			RImgBg1Shake				{2: 'Eve', 3: '▃▇▂▄█▄▄!!!'}
+554	554		401							{1: '2', 2: '844090'}
+555	555		301			RImgBg1Shake				{2: 'Eve', 3: 'HISSSSS!!!'}
+556	556		301							"{3: ""Eve struggles frantically, water dripping from her body back into the sea. A woman with vivid red hair stands waist-deep in the water, her face, so exquisitely crafted it becomes dangerously alluring, presses close to Eve's.""}"
+557	557		301							{2: 'Eve', 3: 'Too close▆▆▇▅▂!'}
+558	558		301							{2: 'Vera', 3: 'I thought so... Why are the vermin on this island trying so hard to look human?'}
+559	559		301							{2: 'Vera', 3: 'What did you eat, what delusion convinced you that you could become human?'}
+560	560		301							"{2: 'Vera', 3: ""Don't delude yourself. Let me tell you...""}"
+561	561		301							{3: 'She stares at Eve, slowly revealing a cruel, mocking smile.'}
+562	562		301							"{2: 'Vera', 3: ""Little darling, you're nothing but a damned Hetero-Creature.""}"
+563	563		301			RImgBg1Shake				{2: 'Eve', 3: '!!!'}
+564	564		301							{2: 'Eve', 3: '([Terrified].)'}
+565	565		401						300.0	{1: '2', 2: '5321'}
+566	566		401							{1: '2', 2: '2593'}
+567	567		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 3: '0', 4: '1', 5: '0.25'}
+568	568		301							{3: 'Snikt.'}
+569	569		301		1		AniZhuanchangBegin			"{3: ""Vera grips an oversized lance and drives it straight through the Hetero-Creature's body.""}"

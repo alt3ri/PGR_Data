@@ -1,0 +1,25 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory26.jpg'}
+2	2		401							{1: '1', 2: '209'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+4	4		201							{1: '1', 2: '1021001', 4: '-400'}
+5	5		201							{1: '2', 2: '1011001', 4: '400'}
+6	6		204							{1: '1', 2: '3'}
+7	7		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'Has Liv run into any danger?', 4: '1'}
+8	8		204							{1: '1'}
+9	9		301							"{2: 'Lee', 3: ""You've been sending a message every 20 seconds. If something's wrong, you'll be the first to know."", 4: '2'}"
+10	10		301							"{2: 'Lucia', 3: ""I... I'm just worried."", 4: '1'}"
+11	11		301							"{2: 'Lee', 3: ""Asimov's research suggests that occasional distractions can increase your mission efficiency by 15%."", 4: '2'}"
+12	12		301							{2: 'Lucia', 3: 'Distraction? I want to be more focused!', 4: '1'}
+13	13		301							"{2: 'Lee', 3: ""The building at our 3 o'clock... Its design belongs to a different era of industrial design than the other buildings. I've analyzed the plans of the Golden Vortex, and they have quite a few similarities."", 4: '2'}"
+14	14		301							"{2: 'Lucia', 3: ""Understood. And the ejector of its light beam consists of a blinds structure that I'd seen when I was stationed at the Jakarta base."", 4: '1'}"
+15	15		301							"{2: 'Lee', 3: ""That light beam is actually a stream of endless golden sand. I've calculated the wattage the Golden Vortex is using to eject that amount of sand with my visual capture system."", 4: '2'}"
+16	16		301							{2: 'Lucia', 3: '(Looks at the calculation) ...That high?!', 4: '1'}
+17	17		301							"{2: 'Lee', 3: ""I believe the data. Plus, the sand at the center of that stream can't even be captured by the visual system... I believe the actual value will be even higher."", 4: '2'}"
+18	18		301							{2: 'Lucia', 3: 'Who built it? What is it for?', 4: '1'}
+19	19		301							"{2: 'Lucia', 3: ""Commandant, I'm afraid that this mission is not that straightforward..."", 4: '1'}"
+20	20		301							{2: 'Lee', 3: 'Lucia?', 4: '2'}
+21	21		204							{1: '1', 2: '3'}
+22	22		301							{2: 'Lucia', 3: '...', 4: '1'}
+23	23		204							{1: '1'}
+24	24		301		1		AniZhuanchangBegin			"{2: 'Lee', 3: ""It's been 20 seconds. Let's check in with Liv's progress."", 4: '2'}"

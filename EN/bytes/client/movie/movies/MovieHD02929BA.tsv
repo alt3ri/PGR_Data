@@ -1,0 +1,84 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory717.jpg'}
+2	2		401							{1: '1', 2: '332'}
+3	3		301			DialogEnable				"{3: ""You haven't seen Lucia around since the birthday party ended and can't help but wonder where she went...""}"
+4	4		301							"{3: ""When you're back to your senses, you find yourself standing at the door to Lucia's resting pod.""}"
+5	5		302							{2: 'Lucia?', 3: '6', 4: '(Knock on door)', 5: '6'}
+6	6		201							{1: '1', 2: '500166'}
+7	7		301							{1: '1', 2: 'Lucia', 3: 'Commandant, is that you? I thought you went to rest already.', 4: '1'}
+8	8		301							"{3: ""Lucia opens the door with a subtle but noticeable surprise on her face, as if she wasn't expecting you to show up at all.""}"
+9	9		301							{3: 'She clears her throat and opens her mouth.'}
+10	10		302							{2: 'Are you alone?', 3: '11'}
+11	11		301							{2: 'Lucia', 3: 'Yup, all alone.', 4: '1'}
+12	12		302							{2: 'Yup, all alone. And so are you, I assume?', 3: '13'}
+13	13		204							{1: '1', 2: '1'}
+14	14		301							{2: 'Lucia', 3: '...', 4: '1'}
+15	15		302							{2: 'Well, would you like to go for a walk together?', 3: '16'}
+16	16		301				DialogDisable			{2: 'Lucia', 3: 'Of course.', 4: '1'}
+17	17		202				AniZhuanchangBegin		400.0	{1: '1', 6: '1'}
+18	18		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+19	19		301			DialogEnable	DialogDisable			{3: 'Once again, she holds your hand.'}
+20	20		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory670.jpg'}
+21	21		301			DialogEnable				{3: 'Crescent and shining brightly, the moon hangs high in the sky, with a few clouds slowly drifting by in the distance.'}
+22	22		201							{1: '1', 2: '500166', 3: '6'}
+23	23		301							{1: '1', 2: 'Lucia', 3: 'Phew...', 4: '1'}
+24	24		301							{3: 'Lucia lets out a barely noticeable sigh of relief.'}
+25	25		302							"{2: ""What's the matter?"", 3: '26'}"
+26	26		301							"{2: 'Lucia', 3: ""Seems like it's been a while since we last had a walk like this."", 4: '1'}"
+27	27		301							"{2: 'Lucia', 3: ""Well, we'll be able to do this every day once everything is ov..."", 4: '1'}"
+28	28		401							{1: '2', 2: '4292'}
+29	29		301							{3: 'Boom!!'}
+30	30		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiRain.prefab', 2: '3'}
+31	31		401							{1: '2', 2: '2597'}
+32	32		301							{3: 'Dark clouds have permeated the sky and, with the thunder, dense raindrops begin to fall almost immediately.'}
+33	33		301							"{3: ""Right when you're about to ask Lucia to take shelter from the rain together, you find yourself standing under a small umbrella.""}"
+34	34		301							"{2: 'Lucia', 3: ""I brought this with me because I checked the weather forecast before we came. Let's keep going, Commandant."", 4: '1'}"
+35	35		302							{2: 'Of course.', 3: '36', 4: '(Smile)', 5: '36'}
+36	36		302							{2: 'We can do this both now and when everything is over.'}
+37	37		301							"{3: ""And when everything is over, you're sure you'll be able to enjoy leisurely walks in the garden every day with Lucia during breaks.""}"
+38	38		301							{2: 'Lucia', 3: 'Alright, shall we?', 4: '1'}
+39	39		301							"{2: 'Lucia', 3: ""I'm pretty sure I'll be able to make you an even bigger cake that looks better."", 4: '1'}"
+40	40		302							{2: 'Cake?', 3: '41'}
+41	41		301							"{3: ""Lucia's gaze suddenly grows a bit evasive.""}"
+42	42		301							"{2: 'Lucia', 3: ""I made you a make for your birthday but it didn't turn out all that well."", 4: '1'}"
+43	43		301							"{2: 'Lucia', 3: ""I took a look at the cake when I took it out of the oven, and it didn't seem exactly like the cake pictures I'd found on my terminal."", 4: '1'}"
+44	44		301							"{2: 'Lucia', 3: ""I left the cake sitting on the counter after, but the cleaning robot took it away thinking I didn't need it anymore. All I have left are these candles that came with the ingredients I'd bought to make the cake."", 4: '1'}"
+45	45		301							{3: 'Lucia takes out a candle from her pocket.'}
+46	46		302							"{2: ""Don't worry about it. I'm happy that you're here with me."", 3: '47'}"
+47	47		204							{1: '1'}
+48	48		301							{2: 'Lucia', 3: 'Are you... sure?', 4: '1'}
+49	49		302							{2: 'Yup.', 3: '50'}
+50	50		301							{2: 'Lucia', 3: 'Well, so am I.', 4: '1'}
+51	51		204							{1: '1', 2: '1'}
+52	52		301							"{2: 'Lucia', 3: ""I'm happy as long as I have you by my side, Commandant, no matter where we go."", 4: '1'}"
+53	53		301							{2: 'Lucia', 3: 'I really wanted to show you the cake I made, though...', 4: '1'}
+54	54		301							{3: 'It seems like she needs some more time to get over the cake. Seeing the candle in her hand, however, you suddenly have an Eureka moment.'}
+55	55		302							{2: 'We can still make wishes with these candles, no?'}
+56	56		301							{2: 'Lucia', 3: 'Wishes, you said?', 4: '1'}
+57	57		302							{2: 'Yup, wishes and birthdays come together, and birthday wishes usually come true.', 3: '58'}
+58	58		302							{2: 'I can share one of my wishes with you, Lucia.', 3: '59'}
+59	59		302							"{2: ""Now, let's make wishes together..."", 3: '60'}"
+60	60		301							"{3: ""Before Lucia shows any reaction, you take the umbrella from her and quickly light up the candle she's holding.""}"
+61	61		302							{2: 'Quick, close your eyes, and make a wish.', 3: '62'}
+62	62		204							{1: '1'}
+63	63		301							{2: 'Lucia', 3: 'Ah... alright.', 4: '1'}
+64	64		301							{3: 'She closes her eyes awkwardly. In the flickering candlelight, her profile is serene and beautiful.'}
+65	65		301			AniZhuanchangBegin				{2: 'Lucia', 3: 'Well, I hope that...', 4: '1'}
+66	66		301			AniZhuanchangEnd				{3: 'The raindrops falling on the umbrella gently muffle the words coming out of her mouth.'}
+67	67		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiRain.prefab'}
+68	68		301							{3: 'When she opens her eyes again, the rain has lessened and the dark clouds are quickly retreating. In their place, the moon is once again hanging high up in the sky.'}
+69	69		301							"{3: ""Coming through the transparent umbrella, the moonlight shines in Lucia's eyes.""}"
+70	70		301							{2: 'Lucia', 3: 'What did you wish for, Commandant?', 4: '1'}
+71	71		302							{2: 'I wished for the rain to stop.', 3: '72', 4: '...', 5: '74'}
+72	72		301							{2: 'Lucia', 3: 'Well, guess that came true indeed.', 4: '1'}
+73	73	75	301							"{2: 'Lucia', 3: ""Well, I'm sure my wish is going to come true, too."", 4: '1'}"
+74	74		301							"{2: 'Lucia', 3: ""Not something you want to say? Well, that's fine."", 4: '1'}"
+75	75		302							{2: 'And you?', 3: '76'}
+76	76		301							{2: 'Lucia', 3: 'My wish? Well...', 4: '1'}
+77	77		301							"{2: 'Lucia', 3: ""I wish to cross paths with you, Commandant, no matter which world we're in, no matter how many times we need to start over, and no matter the trials we face."", 4: '1'}"
+78	78		301							{2: 'Lucia', 3: 'I wish to have you as my commandant in every universe out there.', 4: '1'}
+79	79		301							"{2: 'Lucia', 3: ""As long as I remain myself, I'm sure I'd be able to find my way to you even without this wish."", 4: '1'}"
+80	80		301							"{3: ""In the moonlight that meanders over the raindrops on the umbrella, Lucia's gentle eyes shine brightly with determination.""}"
+81	81		302							{2: 'Pretty sure that will come true.', 3: '82'}
+82	82		301							{2: 'Lucia', 3: 'Yes, so am I.', 4: '1'}
+83	83		301		1		AniZhuanchangBegin			{3: 'Seeing the path ahead aglow in clear, silver light, you know that this leisurely night walk is going to last a while.'}

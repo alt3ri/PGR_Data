@@ -1,0 +1,86 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory110.png'}
+2	1000		401							{1: '1', 2: '203'}
+3	2		301			DialogEnable				"{3: ""Ayla informs Gray Raven the gravity room's mechanism. At that moment...""}"
+4	3		301							{3: 'Bang—'}
+5	4		201							{1: '1', 2: '500101'}
+6	5		301							{1: '1', 2: 'Gabriel', 3: 'Target sighted. Recycling now.', 4: '1'}
+7	6		201							{1: '1', 2: '500110', 3: '4'}
+8	7		301							"{1: '1', 2: 'Ayla', 3: ""Wait... What's that?"", 4: '1'}"
+9	8		201							{1: '1', 2: '500101'}
+10	9		301							{1: '1', 3: 'Ayla notices the extremely high corruption level of the tall enemy, and realizes what was happening.'}
+11	10		301							{3: 'But just when she starts to attack, Selena is already ripped off the terminal—'}
+12	11		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 3: '1'}
+13	13		301			PanelActor1Shake				"{3: ""The enemy then turns around and takes Ayla's strike with his broad shoulders.""}"
+14	14		201							{1: '1', 2: '500110', 3: '4'}
+15	15		301							{1: '1', 2: 'Ayla', 3: 'What?', 4: '1'}
+16	16		201							{1: '1', 2: '500101'}
+17	17		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 3: '1'}
+18	18		301			PanelActor1Shake				{1: '1', 3: 'Ayla does not hesitate for one second. She unleashes numerous attacks with her scythe.'}
+19	19		301							{3: 'Strangely, the enemy does not want to engage in the fight. Instead, he keeps moving back.'}
+20	20		301				AniZhuanchangBegin			"{3: ""Once he reaches the cabin door, he leaps toward the gravity room's core area...""}"
+21	21		202							{1: '1', 6: '1'}
+22	22		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory112.png'}
+23	23		301			AniZhuanchangEnd				{3: 'After bumping into Gray Raven in the gravity room, Ayla follows Gabriel to a shattered floating platform—'}
+24	24		401							{1: '2', 2: '10007502'}
+25	25		301			RImgBg1Shake				{3: 'Boom—'}
+26	26		201							{1: '1', 2: '500101'}
+27	27		301							{1: '1', 3: 'Gabriel flips over and fires a shot. He uses the counterforce to jump through the opening on the wall, which is a result of the previous blast.'}
+28	28		201							{1: '1', 2: '500110', 3: '4'}
+29	29		301							{1: '1', 2: 'Ayla', 3: 'Ugh—!', 4: '1'}
+30	30		301							{3: 'After the heat from the explosion dissipates...'}
+31	31		301							{2: 'Ayla', 3: 'Oh no...', 4: '1'}
+32	32		301							{2: 'Ayla', 3: 'Before he gets away, I must...', 4: '1'}
+33	33		301							{3: 'Just when Ayla is about to follow him, a mechanic claw protrudes from the edge of the platform.'}
+34	34		301							{2: 'Ayla', 3: '?', 4: '1'}
+35	35		201							{1: '1', 2: '500119'}
+36	36		301							{1: '1', 3: 'The claw continues to climb toward the platform surface, finally revealing itself.'}
+37	37		301							{2: 'Korolev', 3: 'Humans... must be... destroyed...', 4: '1'}
+38	38		301							{3: 'It is Korolev. After the battle with Gray Raven, it fell into the vacuum turbulence, but somehow managed to survive space.'}
+39	39		301							{2: 'Korolev', 3: 'Destroy...', 4: '1'}
+40	40		201							{1: '1', 2: '500110', 3: '4'}
+41	41		301							{1: '1', 2: 'Ayla', 3: 'Now of all times!', 4: '1'}
+42	42		201							{1: '1', 2: '500119'}
+43	43		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 3: '1'}
+44	44		301							{2: 'Ayla', 3: 'Hah—!'}
+45	45		301							{3: 'Before Korolev could attack again, Ayla cuts its remaining structure in half, completely annihilating it.'}
+46	46		301							{3: 'However, she has also wasted precious time.'}
+47	47		201							{1: '1', 2: '500110', 3: '4'}
+48	48		301							{1: '1', 3: 'Ayla looks at the opening to space—'}
+49	49		301							{2: 'Ayla', 3: 'I must hurry...', 4: '1'}
+50	50		202							{1: '1', 6: '1'}
+51	51		301				AniZhuanchangBegin			{3: 'Right at this time—'}
+52	53		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+53	54		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'A huge beam goes through the opening and hits the Punishing Heteromer directly.'}
+54	56		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory112.png'}
+55	57		301			AniZhuanchangEnd				{3: 'The gravity room is a mess...'}
+56	58		201							{1: '1', 2: '500110', 3: '4'}
+57	59		301							{1: '1', 3: 'Ayla struggles to maintain balance on the floating platform. She keeps telling herself one thing.'}
+58	60		301							"{2: 'Ayla', 3: ""I mustn't stop. Otherwise, Selena would..."", 4: '1'}"
+59	61		202							{1: '1', 6: '1'}
+60	62		301							{3: 'One by one, she keeps leaping toward the next floating platform.'}
+61	63		301				AniZhuanchangBegin			{3: 'Jumping, dodging, spinning, and slashing through anything in her way.'}
+62	64		202							{1: '1', 6: '1'}
+63	65		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg901_5.jpg'}
+64	1001		401							{1: '1', 2: '202'}
+65	66		201							{1: '1', 2: '500110', 3: '4'}
+66	67		301			AniZhuanchangEnd				{1: '1', 3: 'Step after step, Ayla finally makes it out of the space station.'}
+67	68		202							{1: '1', 6: '1'}
+68	69		301							{3: 'There are huge explosions on the low Earth orbit in the distance. But Ayla has no attention to spare—'}
+69	70		201							{1: '1', 2: '500110', 3: '4'}
+70	71		301							{1: '1', 2: 'Ayla', 3: 'Selena!', 4: '1'}
+71	72		301							{3: 'Still, she is one step too late...'}
+72	73		202							{1: '1', 6: '1'}
+73	74		301							{3: 'The door of the capsule, where Gabriel and Selena are in, has closed. The launch procedure has been initiated...'}
+74	75		201							{1: '1', 2: '500110', 3: '4'}
+75	76		301							{1: '1', 2: 'Ayla', 3: 'Wait... Selena!', 4: '1'}
+76	77		301							{3: 'Ayla runs with all her might on the outer surface of the space station.'}
+77	78		301							{3: 'But the capsule has already taken off. No matter what she does, it only moves further away...'}
+78	79		301							"{3: ""Only the heat from the capsule's exhaust flames remains, scorching Ayla's body.""}"
+79	80		301							{2: 'Ayla', 3: '...', 4: '1'}
+80	81		301							{3: 'All she can do is to silently watch the capsule as it flies toward Earth.'}
+81	82		301							{2: 'Ayla', 3: 'Earth...', 4: '1'}
+82	83		301							{3: 'Ayla mumbles to herself. She already knows her next step.'}
+83	84		204							{1: '1'}
+84	85		301							"{2: 'Ayla', 3: ""There's still a chance... There must be..."", 4: '1'}"
+85	86		301		1		AniZhuanchangBegin			{2: 'Ayla', 3: 'Selena, wait for me...', 4: '1'}

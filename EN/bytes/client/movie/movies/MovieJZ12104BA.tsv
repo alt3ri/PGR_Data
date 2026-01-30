@@ -1,0 +1,287 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	2		504			AniZhuanchangEnd				{1: '0.7'}
+2	1		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory110.png'}
+3	3		401							{1: '1', 2: '208'}
+4	4		201							{1: '1', 2: '500329', 4: '400'}
+5	5		201							{1: '2', 2: '500342', 4: '-400'}
+6	6		301			DialogEnable				{1: '1', 2: 'No. 20', 3: 'When you leave the institute... 21, what do you want to do?', 4: '2'}
+7	7		301							"{2: 'No. 21', 3: ""Want to do? I don't understand."", 4: '1'}"
+8	8		301							"{2: 'No. 20', 3: ""Ugh... Don't you like doing anything?"", 4: '2'}"
+9	9		301							{2: 'No. 20', 3: 'Like I wanna read tons of books... I wanna wear tons of clothes! I wanna go to the beach! I wanna lay in a field of flowers. I wanna...', 4: '2'}
+10	10		301							{3: 'The girl before her begins counting the number of things she wants to do on her fingertips.'}
+11	11		301							"{3: 'No. 21 has never read a book. She has never worn any other clothes. She does not know what a ""beach"" is. She has never seen a field of flowers.'}"
+12	12		204							{1: '1', 2: '3'}
+13	13		301							{2: 'No. 21', 3: 'When I leave... what do I want to do...?', 4: '1'}
+14	14		301							{3: 'No. 21 struggles to think of something. All she knows is what is written on her daily schedule. If there is anything that she could hope for, it might be new colors or smells other than what was in the institute.'}
+15	15		301							"{3: ""No. 21 sees her reflection in No. 20's glimmering eyes, and she finds herself muted and dull.""}"
+16	16		204							{1: '1'}
+17	17		301							{2: 'No. 21', 3: 'Experiments...', 4: '1'}
+18	18		301							"{2: 'No. 20', 3: ""Huh? What'd you say?"", 4: '2'}"
+19	19		301							{2: 'No. 21', 3: '...Complete experiments.', 4: '1'}
+20	20		301							{2: 'No. 20', 3: 'Huh?', 4: '2'}
+21	21		301							"{2: 'No. 21', 3: ""Complete all the experiments. That's what I want to do."", 4: '1'}"
+22	22		301							"{2: 'No. 20', 3: ""That's so boring! You're just like all the other test subjects! All you guys think about is completing experiments."", 4: '2'}"
+23	23		301							{3: 'No. 21 looks down. She does not quite understand what No. 20 is talking about, nor does she understand where the twinkle in her eyes comes from, or even why No. 20 behaves so differently from her.'}
+24	24		301							"{3: ""She looks at the back of her hand. A bruise had formed after such a long period attached to an IV, and it's covered with medical tape. She never thought about what she should do if she left the institute, because she had no answer. Someone else would tell her what to do. She just needs to do it.""}"
+25	25		301							"{2: 'No. 20', 3: ""Anyway... Even if you don't know, you'll leave the institute soon enough."", 4: '2'}"
+26	26		301							"{2: 'No. 20', 3: ""It's almost time for my modification surgery... You might be a bit of an airhead, but I still don't wanna leave you."", 4: '2'}"
+27	27		301							"{2: 'No. 20', 3: ""While I'm gone, you better think of what you wanna do!"", 4: '2'}"
+28	28		301				AniZhuanchangBegin			{2: 'No. 21', 3: 'I see...', 4: '1'}
+29	29		202							{1: '1', 2: '2', 6: '1'}
+30	30		401							{1: '1', 2: '208'}
+31	31		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory52.jpg'}
+32	32		504							{1: '0'}
+33	33		201							{1: '1', 2: '500168', 4: '-400'}
+34	34		201							{1: '2', 2: '500328', 4: '400'}
+35	35		301			AniZhuanchangEnd				{1: '1', 2: 'Vera', 3: 'Why are you here so early?', 4: '1'}
+36	36		301							"{3: ""Vera interrupts No. 21's recollection. She looks up to see Vera standing at the entrance to the training room. Her eyebrows are raised as she asks.""}"
+37	37		301							{2: 'No. 21', 3: '...The hand is at the six, so I woke up and started the mission.', 4: '2'}
+38	38		301							"{2: 'Vera', 3: ""Huh? You mean 6 o'clock?"", 4: '1'}"
+39	39		301							"{3: ""Vera looks at the clock hanging on the wall in the training room. The clock reads 10 o'clock, meaning No. 21 had been sitting here for several hours.""}"
+40	40		301							{2: 'Vera', 3: 'Next time you get here so early, start training by yourself.', 4: '1'}
+41	41		301							{2: 'No. 21', 3: 'Oh. Understood.', 4: '2'}
+42	42		301							"{2: 'Vera', 3: ""Also, when I say something, you better listen up. Don't make me tell you a second time."", 4: '1'}"
+43	43		301							{2: 'No. 21', 3: 'Oh... Okay.', 4: '2'}
+44	44		301							"{2: 'Vera', 3: ""Well, let's begin. Put this on and warm up."", 4: '1'}"
+45	45		301							"{3: ""Vera throws her a small M.I.N.D. simulator. She follows Vera's instructions and attaches it to her temples.""}"
+46	46		401							{1: '1', 2: '36'}
+47	47		301							{2: 'Vera', 3: 'Load battle simulation HEX-022.', 4: '1'}
+48	48		401							{1: '2', 2: '1515'}
+49	49		301							{2: 'System', 3: 'Understood. Loading scenario.'}
+50	50		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+51	51		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+52	52		301							{3: 'The scenery around them begins to change. Weeds and rocks grow on the ground, the sun appears in the sky, and hot wind blows through the air.'}
+53	53		301							{2: 'No. 21', 3: 'Where am I?', 4: '2'}
+54	54		301							"{2: 'Vera', 3: ""It's just a simulated environment. Don't worry just yet..."", 4: '1'}"
+55	55		401							{1: '1', 2: '40'}
+56	56		301							{3: 'No. 21 smells the air. She smells a hot, arid scent along with other peculiar smells. Her whole body is tense and excited by all the novelties around her.'}
+57	57		301							"{2: 'Vera', 3: ""Let's make a few things clear. One, listen to all of my commands when we're in battle. Two..."", 4: '1'}"
+58	58		301							{3: 'No. 21 hears a faint sound from behind a rock. Turning around quickly, a mechanoid springs out from behind and rushes toward her.'}
+59	59		202							{1: '1', 2: '2', 6: '1'}
+60	60		201							{1: '1', 2: '500013'}
+61	61		401							{1: '2', 2: '1508'}
+62	62		301							{1: '1', 2: 'Mechanoid', 3: 'Rawrgh—!', 4: '1'}
+63	63		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+64	64		401							{1: '2', 2: '10007501'}
+65	65		301			PanelActor1Shake				{3: 'The laser cannon blows the mechanoid to pieces right before it reaches No. 21.'}
+66	66		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 3: '1'}
+67	67		401							{1: '2', 2: '10002001'}
+68	68		301							{3: 'Vera unsheathes her blade. After a fierce clash, another mechanoid falls to the ground.'}
+69	69		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+70	70		201							{1: '1', 2: '500168', 3: '13'}
+71	71		301							"{1: '1', 2: 'Vera', 3: ""Don't get in my way."", 4: '1'}"
+72	72		301							"{3: ""Vera pulls out her blade from the back of the mechanoid's head, and smiles arrogantly. Her red eyes twinkle with a light more radiant than the distant sun. Her red frame glows like a goddess emerging out of flames.""}"
+73	73		301							"{3: ""The intense red dazzles No. 21's eyes. Her heart begins to race again. A voice in the depths of her M.I.N.D. screams for more.""}"
+74	74		201							{1: '1', 2: '500328', 3: '5'}
+75	75		301				AniZhuanchangBegin			{1: '1', 2: 'No. 21', 3: '...Understood.', 4: '1'}
+76	76		202							{1: '1', 2: '2', 6: '1'}
+77	77		301			AniZhuanchangEnd				{3: 'Vera finally realizes that No. 21 does indeed have unparalleled talent on the battlefield. She fights with the frenzy of a beast in an arena.'}
+78	78		301							{3: 'This is a sharp contrast from the clueless new recruit she had seen earlier.'}
+79	79		301							"{3: ""No. 21's synergy with the Co-Bot is far greater than any team Vera had witnessed in Kurono. The silly little robot functions as an extension of herself.""}"
+80	80		301							"{3: ""...At the same time, as their training progressed, she begins to uncover No. 21's issues in battle.""}"
+81	81		301							"{3: 'No. 21 has no understanding of the concept of ""defense,"" nor does she know how to fight together with others.'}"
+82	82		301							{3: 'As soon as she engages in combat, she becomes a rabid dog without a leash. She ignores orders and is unable to restrain herself. She fights without discretion until all Corrupted are destroyed.'}
+83	83		301							{3: 'Her combat module seems to only have one command: kill everything.'}
+84	84		201							{1: '1', 2: '500168'}
+85	85		301							{1: '1', 2: 'Vera', 3: 'Enough... No. 21, stop!', 4: '1'}
+86	86		201							{1: '1', 2: '500328', 3: '5'}
+87	87		301							{1: '1', 2: 'No. 21', 3: 'Hiss—', 4: '1'}
+88	88		301			RImgBg1Shake				"{3: ""Right as No. 21's pupils narrow, she pounces on the nearest Corrupted. The Co-Bot traps the Corrupted in a force field, then the laser cannon floating beside her fires a beam of light, blowing up the Corrupted.""}"
+89	89		201							{1: '1', 2: '500168'}
+90	90		301							{1: '1', 2: 'Vera', 3: '...Just great.', 4: '1'}
+91	91		301							{3: 'Vera has no intention of stopping the combat simulation. Her first priority is to put the rabid dog on a leash.'}
+92	92		301							{3: 'Vera slashes an attacking Corrupted with her blade as she tries to close in on No. 21.'}
+93	93		301							{3: 'Sensing someone approach, No. 21 roars menacingly and launches an attack on Vera, unable to distinguish friend from foe.'}
+94	94		401							{1: '2', 2: '10007501'}
+95	95		401							{1: '2', 2: '10002001'}
+96	96		301			PanelActor1Shake				"{3: ""Vera blocks the blast from No. 21's laser cannon, then leans back to avoid the following blow from the Co-Bot. Right as the Co-Bot passes by, she throws her blade with all her might. The flying blade pierces through the Co-Bot's mechanical arm and nails it firmly to the ground.""}"
+97	97		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '2'}
+98	98		502						140.0	{1: 'RImgBg1Shake'}
+99	99		505							{1: 'RImgBg1Shake'}
+100	100		201							{1: '1', 2: '500168'}
+101	101		201							{1: '2', 2: '500328', 3: '5'}
+102	102		203							{1: '1', 2: '0.15', 3: '-370'}
+103	103		203							{1: '2', 2: '0.15', 3: '370'}
+104	104		203					150.0		{1: '1', 2: '0.6', 3: '-450'}
+105	105		203							{1: '2', 2: '0.6', 3: '450'}
+106	106		301							{3: 'Among the carnage, Vera rolls as the laser cannon tracks her with a continuous barrage of attacks, and manages to arrive next to No. 21.'}
+107	107		301							"{3: ""No. 21 doesn't excel at close-ranged combat, unlike Vera, who is in her element.""}"
+108	108		401							{1: '2', 2: '1512'}
+109	109		301							"{3: ""Vera clenches No. 21's throat from behind, restrains her arm behind her back, and knees the back of her leg.""}"
+110	110		502							{1: 'PanelActor2Shake'}
+111	111		301							"{3: ""No. 21 falls to her knees and frantically tries to escape Vera's hold as she growls relentlessly.""}"
+112	112		203							{1: '1', 2: '0.25', 3: '-300'}
+113	113		301							"{3: ""Vera secures her tightly, holding her head close to No. 21's ear.""}"
+114	114		301							{2: 'Vera', 3: 'No. 21! Snap out of it!', 4: '1'}
+115	115		202							{1: '1', 2: '2', 6: '1'}
+116	116		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+117	117		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory345.jpg'}
+118	118		504							{1: '0.7'}
+119	119		201							{1: '1', 2: '500168', 3: '13'}
+120	120		301							"{1: '1', 2: 'Vera', 3: ""I'm the devil... here to take you back to hell."", 4: '1'}"
+121	121		202							{1: '1', 6: '1'}
+122	122		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+123	123		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+124	124		504							{1: '0'}
+125	125		301							{3: 'The familiar sound... The familiar scent... The familiar touch...'}
+126	126		301							{3: 'A flash of memory awakens No. 21. She gradually pulls herself out of attack mode and slowly stops struggling.'}
+127	127		201							{1: '1', 2: '500168'}
+128	128		301							{1: '1', 2: 'Vera', 3: 'Stop combat simulation.', 4: '1'}
+129	129		401							{1: '1', 2: '36'}
+130	130		401							{1: '2', 2: '1515'}
+131	131		301							{2: 'System', 3: 'Combat simulation terminated.'}
+132	132		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+133	133		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory52.jpg'}
+134	134		301							{3: 'The surrounding environment changes rapidly, turning back into the empty training room. The only sound is of the two Constructs struggling to catch their breath.'}
+135	135		301							{3: 'Vera relaxes her hold on No. 21, who sits motionlessly on the floor.'}
+136	136		301							{2: 'Vera', 3: 'Came to your senses, huh?', 4: '1'}
+137	137		401							{1: '2', 2: '558'}
+138	138		301							{3: 'Vera pulls out her weapon sticking out of the Co-Bot. It twitches as it exudes a wisp of black smoke.'}
+139	139		201							{1: '1', 2: '500328', 3: '5'}
+140	140		301							{1: '1', 2: 'No. 21', 3: '...', 4: '1'}
+141	141		204							{1: '1'}
+142	142		301							{2: 'No. 21', 3: '...Yes.', 4: '1'}
+143	143		203							{1: '1', 2: '0.25', 3: '-400'}
+144	144		201							{1: '2', 2: '500168', 4: '400'}
+145	145		301							"{1: '1', 2: 'Vera', 3: ""What'd I say? When we're in combat, you have to listen to my every command."", 4: '2'}"
+146	146		204							{1: '1', 2: '3'}
+147	147		301							{2: 'No. 21', 3: '...', 4: '1'}
+148	148		301							"{2: 'No. 21', 3: ""...I can't control myself."", 4: '1'}"
+149	149		301							{2: 'Vera', 3: 'Then you better start learning.', 4: '2'}
+150	150		204							{1: '1'}
+151	151		301							"{2: 'No. 21', 3: ""I can't..."", 4: '1'}"
+152	152		301							"{2: 'Vera', 3: 'Don\'t say you ""can\'t.""', 4: '2'}"
+153	153		202							{1: '1', 6: '1'}
+154	154		203							{1: '2', 2: '0.25'}
+155	155		401							{1: '2', 2: '10002001'}
+156	156		301							"{3: 'Vera slashes her sword, causing the sharp blade to slice through the air with a loud ""shink!"" She looks down at No. 21 with an expression similar to when they first met.'}"
+157	157		301							{2: 'Vera', 3: 'On your feet. Keep going.', 4: '2'}
+158	158		301							{3: 'The tone in her voice... it sounds like there is nothing she cannot do. For some reason, No. 21 cannot help but believe what the Construct before her is saying. Is it because of her threatening color? Or the light in her eyes?'}
+159	159		201							{1: '2', 2: '500328', 3: '5', 7: '1'}
+160	160		301							{1: '1', 2: 'No. 21', 3: '...Understood.', 4: '2'}
+161	161		401							{1: '1', 2: '31'}
+162	162		301							"{3: ""No. 21 stands up. To Vera's surprise, she becomes reinvigorated with energy and a spring in her step.""}"
+163	163		301							"{3: 'Is this the ""desire"" that the Construct spoke of?'}"
+164	164		301				AniZhuanchangBegin			{3: 'If so—then this is what No. 21 wants to do.'}
+165	165		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+166	166		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory305.png'}
+167	167		201							{1: '1', 2: '500328', 3: '4', 4: '-400', 7: '1'}
+168	168		201							{1: '2', 2: '500168', 4: '400', 7: '1'}
+169	169		301			AniZhuanchangEnd				{2: 'Vera', 3: 'Watch closely. This is how to defend yourself.', 4: '2'}
+170	170		401							{1: '2', 2: '10002001'}
+171	171		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2', 3: '2'}
+172	172		203							{1: '2', 2: '0.1', 3: '450'}
+173	173		301			PanelActor1Shake				"{3: ""Vera takes a step back and blocks a Corrupted's attack from the side with her blade.""}"
+174	174		301							{2: 'No. 21', 3: 'Why defend?', 4: '1'}
+175	175		301							{2: 'No. 21', 3: 'Why not just kill everything?', 4: '1'}
+176	176		301							{2: 'Vera', 3: '...', 4: '2'}
+177	177		401							{1: '2', 2: '1508'}
+178	178		301							{3: 'The Corrupted hisses, signaling another Corrupted to rush over and attack.'}
+179	179		203							{1: '2', 2: '0.25', 3: '400'}
+180	180		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2', 3: '2'}
+181	181		301							"{3: ""Vera slashes downward. The Corrupted loses its balance and falls toward her. With a flick of her wrist, she adeptly pierces it's torso... and the head of the Corrupted behind it.""}"
+182	182		204							{1: '2', 2: '13'}
+183	183		301							{2: 'Vera', 3: 'Sometimes you have to defend in order to kill more Corrupted effectively—duh.', 4: '2'}
+184	184		301							"{2: 'Vera', 3: ""Corrupted don't have minds of their own, but we do. Don't stoop to their level and fight like a rabid dog."", 4: '2'}"
+185	185		301							{2: 'Vera', 3: 'Combat requires you to think.', 4: '2'}
+186	186		204							{1: '1', 2: '5'}
+187	187		301				AniZhuanchangBegin			{2: 'No. 21', 3: 'Understood.', 4: '1'}
+188	188		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+189	189		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory4.jpg'}
+190	190		204							{1: '2'}
+191	191		301			AniZhuanchangEnd				{2: 'Vera', 3: 'When I order you to defend—!', 4: '2'}
+192	192		301							{2: 'No. 21', 3: 'I step back!', 4: '1'}
+193	193		301							"{3: ""No. 21 rolls back toward Vera. The two Constructs stand back-to-back, surrounded by the approaching Corrupted like they're in the eye of the storm. However, they aren't afraid... On the contrary, they're filled with excitement and anticipation.""}"
+194	194		204							{1: '2', 2: '13'}
+195	195		301							{2: 'Vera', 3: '—Let the killing begin.', 4: '2'}
+196	196		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '3'}
+197	197		301			RImgBg1Shake				"{3: ""As No. 21 roars, the Co-Bot leaps into battle, unleashing a force field that imprisons the Corrupted closest to them while Vera's blade severs their memory shells.""}"
+198	198		401							{1: '2', 2: '10007502'}
+199	199		202							{1: '1', 2: '2'}
+200	200		502							{1: 'RImgBg1Shake'}
+201	201		301				AniZhuanchangBegin			{3: 'The center of the storm begins to erupt with explosions, rippling outward in a dazzling display of fireworks.'}
+202	202		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+203	203		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory55.jpg'}
+204	204		201							{1: '1', 2: '500328', 3: '2', 4: '-400'}
+205	205		201							{1: '2', 2: '500168', 3: '13', 4: '400'}
+206	206		301			AniZhuanchangEnd				{1: '1', 2: 'No. 21', 3: 'More enemies approaching from the rear!', 4: '1'}
+207	207		301							"{2: 'Vera', 3: ""Find an opening! You take the left, I got the right! Let's see who gets there first!"", 4: '2'}"
+208	208		204							{1: '1', 2: '5'}
+209	209		301				AniZhuanchangBegin			{2: 'No. 21', 3: 'Understood.', 4: '1'}
+210	210		202							{1: '1', 2: '2', 6: '1'}
+211	211		401							{1: '1', 2: '36'}
+212	212		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg'}
+213	213		401							{1: '2', 2: '1546'}
+214	214		301			AniZhuanchangEnd				"{3: ""At 6 o'clock, No. 21 opens her eyes to see herself lying on a pure white bed.""}"
+215	215		401							{1: '1', 2: '208'}
+216	216		301							"{3: ""No. 21 finds herself in a new room next to Vera's. The bedding in this room is pure white.""}"
+217	217		301							"{3: ""At 7 o'clock, No. 21 completes her routine frame inspection and maintenance. She opens the terminal Vera gave her. Even though she's still unfamiliar with how to use it, she's learned to record some simple notes on it.""}"
+218	218		301							"{3: '""Inspect and repair frame"" complete. Next is, ""attack training.""'}"
+219	219		301							{3: 'No. 21 faces the wall and begins to practice.'}
+220	220		401							{1: '2', 2: '10007502'}
+221	221		301							{3: 'Despite exercising caution... she accidentally shatters a glass wall.'}
+222	222		301							"{3: ""At 8 o'clock, No. 21 sits at a desk in the break room. She takes a few small sips from a cup of piping hot black tea.""}"
+223	223		201							{1: '1', 2: '500168', 4: '-400'}
+224	224		201							{1: '2', 2: '500328', 4: '400'}
+225	225		301							{1: '1', 2: 'Vera', 3: '...', 4: '1'}
+226	226		301							{2: 'No. 21', 3: '?', 4: '2'}
+227	227		301							{2: 'Vera', 3: 'Why are you drinking that?', 4: '1'}
+228	228		301							{2: 'No. 21', 3: 'Because you do.', 4: '2'}
+229	229		301							{3: 'Sitting beside No. 21, Vera resists the urge to smack her. Instead, she channels her anger into setting her own cup of tea forcefully on the table.'}
+230	230		301							{2: 'Vera', 3: 'Just do what I do in combat. Not everything else!', 4: '1'}
+231	231		301							{2: 'No. 21', 3: '...Oh.', 4: '2'}
+232	232		301				AniZhuanchangBegin			{3: 'No. 21 replies, then takes another sip.'}
+233	233		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory52.jpg'}
+234	234		301			AniZhuanchangEnd				"{3: ""At 9 o'clock, No. 21 stands at the entrance to the training room, then turns to look at the red Construct approaching nearby.""}"
+235	235		301							"{2: 'Vera', 3: ""I wasted an hour of my sleep because of you. Look at me like that again, and I'll cut you."", 4: '1'}"
+236	236		301							{2: 'No. 21', 3: 'Time to start combat training.', 4: '2'}
+237	237		301							{2: 'Vera', 3: 'Are you really trying to hurry me along?', 4: '1'}
+238	238		301							{2: 'No. 21', 3: '...', 4: '2'}
+239	239		301							"{2: 'Vera', 3: ""For today's training, you need to learn to stop fighting at a moment's notice. If you can't, you'll just get thrown out with the trash."", 4: '1'}"
+240	240		204							{1: '2', 2: '4'}
+241	241		301				AniZhuanchangBegin			{2: 'No. 21', 3: 'Understood.', 4: '2'}
+242	242		202							{1: '1', 2: '2', 6: '1'}
+243	243		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory190.png'}
+244	244		301			AniZhuanchangEnd				"{3: ""At 6 o'clock, they finish their training. Vera walks through the hall, only to be stopped by two Constructs.""}"
+245	245		201							{1: '1', 2: '500019', 4: '-400'}
+246	246		201							{1: '2', 2: '500168', 4: '400'}
+247	247		301							"{1: '1', 2: '???', 3: ""Looks like you've got yourself a little pet. Not bad, Vera."", 4: '1'}"
+248	248		301							{2: 'Vera', 3: 'Out of my way.', 4: '2'}
+249	249		301							{2: '???', 3: 'Who knows, you might actually cry when you lose her.', 4: '1'}
+250	250		301							{3: 'Vera pulls out her blade. No. 21 arches her back and snarls, threateningly. The Co-Bot somehow manages to sneak up behind them and jumps on one of their heads, clasping his head with its mechanical arm.'}
+251	251		301			PanelActor1Shake				"{1: '1', 2: '???', 3: ""Huh? AHHHHHHH—! Wh-what is this thing?! I can't see!"", 4: '1'}"
+252	252		301							{2: '???', 3: 'Wh-what the hell is that thing!!', 4: '1'}
+253	253		202							{1: '1', 2: '2', 6: '1'}
+254	254		201							{1: '1', 2: '500303'}
+255	255		301							"{1: '1', 2: 'Kurono Guard', 3: ""Hey, you! Constructs, what do you think you're doing?!"", 4: '1'}"
+256	256		201							{1: '1', 2: '500168', 3: '2'}
+257	257		301							{1: '1', 2: 'Vera', 3: '(Scoffs)', 4: '1'}
+258	258		301							{3: 'Vera sheaths her blade.'}
+259	259		202							{1: '1', 6: '1'}
+260	260		301							"{3: ""The Co-Bot scurries off the Construct's head and returns to No. 21's side.""}"
+261	261		201							{1: '1', 2: '500328'}
+262	262		301							{1: '1', 3: 'No. 21 glares at the Constructs. Her cold eyes make the Constructs tremble.'}
+263	263		201							{1: '1', 2: '500019'}
+264	264		301							"{1: '1', 2: '???', 3: ""Y-you guys are m-monsters... Let's get outta here!"", 4: '1'}"
+265	265		301							{3: 'Vera casts a sideways glance at the fleeing Constructs with disdain. Her glare burns like scorching fire.'}
+266	266		201							{1: '1', 2: '500328', 3: '3'}
+267	267		301				AniZhuanchangBegin			{1: '1', 2: 'No. 21', 3: '...', 4: '1'}
+268	268		202							{1: '1', 6: '1'}
+269	269		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory110.png'}
+270	270		504							{1: '0.5'}
+271	271		201							{1: '1', 2: '500329', 7: '1'}
+272	272		301			AniZhuanchangEnd	AniZhuanchangBegin			"{1: '1', 2: 'No. 20', 3: ""While I'm gone, you better think of what you wanna do!"", 4: '1'}"
+273	273		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory190.png'}
+274	274		504							{1: '0'}
+275	275		202							{1: '1', 6: '1'}
+276	276		301			AniZhuanchangEnd				{3: 'No. 21 looks down at the Co-Bot that is lightly rubbing her foot.'}
+277	277		301							{3: 'An unprecedented feeling overwhelms her.'}
+278	278		201							{1: '1', 2: '500328'}
+279	279		301							{1: '1', 2: 'No. 21', 3: '...Is this what I really want to do?', 4: '1'}
+280	280		301							"{3: ""No. 21 shakes her head. She still doesn't know. All she knows is that her life is filled with even more colors.""}"
+281	281		201							{1: '1', 2: '500168'}
+282	282		301							"{1: '1', 2: 'Vera', 3: ""Daydreaming again, aren't you? Don't come crying to me if you miss the final inspection."", 4: '1'}"
+283	283		301							{3: 'Vera calls her up ahead.'}
+284	284		201							{1: '1', 2: '500328'}
+285	285		301							{1: '1', 2: 'No. 21', 3: 'Coming.', 4: '1'}
+286	286		301		1		AniZhuanchangBegin			{3: 'No. 21 answers her and walks over.'}

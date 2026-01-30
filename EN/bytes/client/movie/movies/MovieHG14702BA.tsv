@@ -1,0 +1,231 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory559.jpg'}
+2	2		401							{1: '1', 2: '204'}
+3	3		301			DialogEnable				{3: 'Three days have passed since the group left Babylonia.'}
+4	4		301							{3: 'For the past two days, the researchers have been enthusiastically collecting plant samples from this pristine mountain forest. According to the plan, everyone should head to Nanyun Old Town at the foot of the mountain today.'}
+5	5		301							"{3: ""It isn't until everyone is packing up to leave the mountains that someone finally realizes something is wrong.""}"
+6	6		302							"{2: ""...Yeah, there's no doubt about it. We're lost.""}"
+7	7		301							{3: 'You are leading the way, but turn around to hand the navigator to the rest of the group, looking absolutely certain.'}
+8	8		201							{1: '1', 2: '500361'}
+9	9		301							"{1: '1', 2: 'Researcher A', 3: ""How can this be... How can there be anything that science can't solve...?"", 4: '1'}"
+10	10		202							{1: '1'}
+11	11		301							{3: 'The researcher gives the navigation device a good whack, but brute force fails to work its magic—instead, the compass needle spins merrily in response.'}
+12	12		201							{1: '1', 2: '500361', 4: '400'}
+13	13		201							{1: '2', 2: '500059', 4: '-400'}
+14	14		301							"{1: '1', 2: 'Researcher A', 3: ""Ugh! I can't take it anymore... Let's wait the rain out somewhere. We're already lost anyway... No point in wandering around in circles."", 4: '1'}"
+15	15		301							{2: 'Researcher B', 3: 'I-I agree... Who knew a little rain would make the mountains so cold and damp... And they said Nanyun was supposed to be warmest this time of year...', 4: '2'}
+16	16		202							{1: '1', 2: '2'}
+17	17		301							"{3: ""Nanyun Old Town lies on the outskirts of Kowloong. For decades, few outsiders have ventured in—the ancient trees surrounding the town grow so densely that they blot out the sky, making it easy to lose one's way even with navigation equipment.""}"
+18	18		301				DialogDisable			{3: 'When the team first suspected they were lost, the researchers casually continued collecting mushroom samples that had sprouted after the rain. But as the sun begins to set, the rest of the team, having followed the Commandant in circles through the mountains, is finally too tired to go any further.'}
+19	19		302							{2: '(Crazy how I was thinking about recommending this place to Wanshi for a vacation...)', 3: '20'}
+20	20		302							"{2: ""(I can't believe we got lost just like that...)"", 3: '21'}"
+21	21		301			DialogEnable	DialogDisable			"{3: ""Listening to the researchers' dramatic whining, you realize that fatigue is starting to set in.""}"
+22	22		302							"{2: ""Let's rest for now. I saw a cave over there earlier."", 3: '23'}"
+23	23		302							{2: 'We should conserve our energy for today and try to figure out where to go when the sun is out tomorrow.', 3: '24'}
+24	24		302							{2: 'Our food supplies are running low, too.', 3: '25'}
+25	25		301			DialogEnable				{3: 'At the mention of food supplies, the researchers stop their complaints and meekly enter the cave—these guys lost their rations yesterday.'}
+26	26		301							{3: 'They all sit on the damp ground and stare at one another.'}
+27	27		401							{1: '1', 2: '205'}
+28	28		401							{1: '2', 2: '4307'}
+29	29		301							{3: '(Stomach growls)'}
+30	30		302							"{2: ""Who's hungry?"", 3: '31'}"
+31	31		201							{1: '1', 2: '500361'}
+32	32		301							"{1: '1', 2: 'Hungry Researcher A', 3: ""Ahaha, not me! I mean, look outside—this place would have made a perfect healing resort... if it'd been easier to navigate."", 4: '1'}"
+33	33		301							{2: 'Hungry Researcher A', 3: '...Right?', 4: '1'}
+34	34		301							{3: 'The researcher notices everyone staring intently at him. After a moment of awkward silence, he decides to admit it.'}
+35	35		301							"{2: 'Hungry Researcher A', 3: ""Fine, yes, that was my stomach growling! I'm absolutely starving!"", 4: '1'}"
+36	36		302							"{2: ""I've got some military rations here. You're welcome to have them to tide yourself over if you don't mind these."", 3: '37'}"
+37	37		301							{3: 'The researcher stares at the tightly wrapped square package for a long moment before carefully declining the gesture of goodwill.'}
+38	38		301							"{2: 'Hungry Researcher A', 3: ""Um... why don't we eat something else instead?"", 4: '1'}"
+39	39		203							{1: '1', 2: '0.25', 3: '400'}
+40	40		201							{1: '2', 2: '500059', 4: '-400'}
+41	41		301							"{1: '1', 2: 'Researcher B', 3: ""Are you seriously being picky now? You're the one who lost our food, and you should be grateful we even have compressed biscuits to eat!"", 4: '2'}"
+42	42		301							"{2: 'Hungry Researcher A', 3: ""Can't you aim higher? This is Kowloong we're talking about—Kowloong—the City of Delicacies!"", 4: '1'}"
+43	43		301							"{2: 'Hungry Researcher A', 3: ""Come on, don't tell me you're not even a little hungry."", 4: '1'}"
+44	44		301							{2: 'Researcher B', 3: 'Well...', 4: '2'}
+45	45		301							"{2: 'Hungry Researcher A', 3: ""Alright, you know what, this is what we're gonna do!"", 4: '1'}"
+46	46		202							{1: '1', 2: '2'}
+47	47		301							{3: 'The hungry researcher, having made up his mind, drops his sample bag to the ground with a thud. He takes out all the mushroom specimens and lays them out on a clean rock.'}
+48	48		201							{1: '1', 2: '500361', 4: '400'}
+49	49		201							{1: '2', 2: '500059', 4: '-400'}
+50	50		301							"{1: '1', 2: 'Researcher B', 3: ""You're going to eat those?!"", 4: '2'}"
+51	51		301							"{2: 'Hungry Researcher A', 3: ""Look where we are. Kowloong folks eat these mushrooms knowing some of them are poisonous. You're not gonna go home without giving them a try now, are you? And... see how fast they've been growing after the heavy rain..."", 4: '1'}"
+52	52		301							{3: 'His eyes gleam with joy as he stares at the vividly colored mushrooms.'}
+53	53		301							"{2: 'Researcher B', 3: ""Are you out of your friggin' mind? There are so many mushrooms here—do you even know which ones are safe to eat?"", 4: '2'}"
+54	54		301							"{2: 'Hungry Researcher A', 3: ""Don't worry. I brought an edible mushroom identification guide."", 4: '1'}"
+55	55		202							{1: '1', 2: '2'}
+56	56		301							{3: 'The researcher quickly pulls out a thick manual and sorts the mushrooms into three piles.'}
+57	57		201							{1: '1', 2: '500361', 4: '400'}
+58	58		201							{1: '2', 2: '500059', 4: '-400'}
+59	59		301							"{1: '1', 2: 'Hungry Researcher A', 3: ""This pile is clearly inedible, this one the manual marks as safe, and I can't tell with the rest. To be on the safe side, let's only eat the ones we know are absolutely safe."", 4: '1'}"
+60	60		301							"{2: 'Researcher B', 3: ""Hey, you planned this all along, didn't you!"", 4: '2'}"
+61	61		301							"{2: 'Hungry Researcher A', 3: ""You're all being too cautious. I asked around before coming here—the Nanyun locals don't even need any guidebooks. They just avoid the red caps with white stems and eat everything else."", 4: '1'}"
+62	62		301							"{2: 'Hungry Researcher A', 3: ""Besides, I heard there's an out-of-town doctor in Nanyun Town who's quite the expert at treating mushroom poisoning, so there's definitely gonna be help if things go south. What do you think, Commandant?"", 4: '1'}"
+63	63		302							"{2: ""I don't think we should take any risks..."", 3: '64', 4: ""Yay! I'm curious about what Kowloong mushrooms taste like, too!"", 5: '65'}"
+64	64	66	301							"{2: 'Hungry Researcher A', 3: ""Whatever! Come on, let's try it!"", 4: '1'}"
+65	65		301							{2: 'Researcher B', 3: 'Are you for real?!', 4: '2'}
+66	66		301							"{2: 'Researcher B', 3: ""I-I'm not eating wild mushrooms from the middle of nowhere! No way, no way, NO WAY—!"", 4: '2'}"
+67	67		202							{1: '1', 2: '2'}
+68	68		301							"{3: ""Despite the female researcher's fervent protests, she finds herself outnumbered by the rest of the group—who seem seconds away from eating their bowls raw. They waste no time starting a fire to cook.""}"
+69	69		301							{3: 'Soon, the cooked mushroom soup, seasoned with MSG and salt, fills the air with an irresistibly mouth-watering aroma. Everyone gathers around and stares at the swirling clear broth—a strange glint gradually appearing in their eyes.'}
+70	70		301							{3: 'The researcher who first suggested cooking the mushrooms gulps audibly, clearly almost unable to contain himself.'}
+71	71		201							{1: '1', 2: '500361'}
+72	72		301							"{1: '1', 2: 'Hungry Researcher A', 3: ""Hehe... I'm going to dig in, haha..."", 4: '1'}"
+73	73		202							{1: '1'}
+74	74		301							{3: 'He tilts his head back and downs the mushroom soup in one go.'}
+75	75		301							"{2: 'Onlooking Researchers', 3: ""How's it?""}"
+76	76		301							{3: 'The onlookers scrutinize his face closely, searching for any signs of discomfort.'}
+77	77		201							{1: '1', 2: '500361'}
+78	78		301							{1: '1', 2: 'Researcher A', 3: '...Mmm... Mmm...', 4: '1'}
+79	79		202							{1: '1'}
+80	80		301							{3: 'After savoring it for a moment, he gives an emphatic thumbs-up.'}
+81	81		201							{1: '1', 2: '500361'}
+82	82		301							"{1: '1', 2: 'Researcher A', 3: ""It's great!"", 4: '1'}"
+83	83		202							{1: '1'}
+84	84		301							{2: 'Onlooking Researchers', 3: '—Alright folks, dig in!'}
+85	85		301							"{3: ""With their guard down, everyone scrambles to get their share of the soup. In the midst of the chaos, they make sure to push a bowl into the hands of Gray Raven's Commandant sitting in the corner.""}"
+86	86		201							{1: '1', 2: '500361', 4: '400'}
+87	87		201							{1: '2', 2: '500059', 4: '-400'}
+88	88		301							"{1: '1', 2: 'Researcher B', 3: ""Uhmm, the soup... I'm surprised it actually tastes pretty good."", 4: '2'}"
+89	89		301							"{2: 'Researcher A', 3: 'See? I told you I\'ve thoroughly studied the ""Adventurer\'s Guide to Edible Fungi"". I\'d never put anything dangerous in the pot! Still don\'t trust me?', 4: '1'}"
+90	90		301							"{2: 'Researcher A', 3: ""Well, at least it wasn't bad enough to warrant a visit to that Construct doctor."", 4: '1'}"
+91	91		301							{2: 'Researcher B', 3: 'The what?', 4: '2'}
+92	92		301							{3: 'As the Female Researcher chews on the tender, savory mushrooms, she pauses in thought before a look of sudden realization crosses her face.'}
+93	93		301							{2: 'Researcher B', 3: 'Oh, you mean that doctor who treats mushroom poisoning? The doctor is a Construct?', 4: '2'}
+94	94		302							{2: 'A Construct that treats human patients...?', 3: '95'}
+95	95		301							"{2: 'Researcher B', 3: 'Yes, I heard about him before coming here. They say this Construct doctor looks young but is incredibly good at what he does. I heard he can even perform eight surgeries back-to-back... ""Kowloong\'s Godly Doctor"" is what I would call him!', 4: '2'}"
+96	96		301							{3: 'The group begins chatting with their mouths full of mushrooms.'}
+97	97		301							"{2: 'Researcher A', 3: ""I-I know, right? He's widely praised for his great dedication to saving lives in Kowloong!"", 4: '1'}"
+98	98		302							"{2: '""Kowloong\'s Godly Doctor"", huh...', 3: '99', 4: '""Great dedication"", huh...', 5: '99'}"
+99	99		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory976.jpg', 3: '0', 4: '1', 5: '4'}
+100	100		301							"{2: 'Researcher B', 3: ""Uh, you know what's funny? Why do you have two heads?"", 4: '2'}"
+101	101		301							{2: 'Researcher A', 3: 'I... I was gonna ask you that same question. Is that... a bunch of dwarves dancing around you?', 4: '1'}
+102	102		301							{2: 'Researcher B', 3: 'N-no way!', 4: '2'}
+103	103		301							{2: 'Researcher A', 3: 'You... I... uhh...', 4: '1'}
+104	104		202							{1: '1', 2: '2'}
+105	105		401							{1: '2', 2: '3077'}
+106	106		301							{3: 'The researchers exchange glances for a moment, mushroom soup still in hand, then drop to the ground one after another with thuds.'}
+107	107		302							{2: '...Oh, hell, no...', 3: '108'}
+108	108		301							{3: 'The world around you starts spinning.'}
+109	109		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory976.jpg'}
+110	110		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+111	111		301							{3: 'Who in the world... said these things... were absolutely safe...'}
+112	112		301							{3: '...'}
+113	113		301							{3: '...'}
+114	114		401							{1: '1', 2: '36'}
+115	115		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+116	116		301							"{3: ""Your consciousness sinks like a sandbag would into water. Half dreaming, you seem to feel someone's fingers pressed softly against your temples.""}"
+117	117		301							{3: 'The headaches and stomach pains you experienced from the poisonous mushrooms gradually subside, and your furrowed brows relax.'}
+118	118		401							{1: '1', 2: '243'}
+119	119		301				DialogDisable			"{2: '??', 3: ""Hey, wake up! It's morning already—time for your medicine!""}"
+120	120		302							"{2: ""...Who's calling..."", 3: '121'}"
+121	121		501			AniZhuanchangEnd				{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+122	122		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '0'}
+123	123		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory234.png'}
+124	124		301			DialogEnable				{3: 'When your eyes open again, it takes a while for you to adjust to your surroundings—'}
+125	125		301							"{3: ""You find yourself lying in a room with traditional decor, resting on soft bedding. A pillow sits within arm's reach, and a pleasant medicinal aroma wafts through the air.""}"
+126	126		301							"{3: ""If it weren't for the dull ache in your stomach reminding you of the mushrooms you ate, you'd love nothing more than to roll over and sleep for a few more hours.""}"
+127	127		201							{1: '1', 2: '500824'}
+128	128		301							{1: '1', 2: '??', 3: 'He was spot on about when this person would come to.', 4: '1'}
+129	129		301							{3: 'With effort, you manage to turn your head around, only to find a little black-haired girl by the bedside, staring at you with big, round eyes.'}
+130	130		302							{2: 'Might I ask...', 3: '131'}
+131	131		301							"{2: '??', 3: ""I'm Wan! My grandpa adores me, and I'm the heir to the clinic!"", 4: '1'}"
+132	132		302							"{2: ""You're the heir... to the what?"", 3: '133'}"
+133	133		301							{3: 'It takes you a few seconds to see where you are now—a traditional clinic in Kowloong.'}
+134	134		301							"{2: 'Wan', 3: ""But I'm still an apprentice..."", 4: '1'}"
+135	135		202							{1: '1'}
+136	136		301							{3: 'The girl sticks out her tongue playfully before making a dash for the door.'}
+137	137		201							{1: '1', 2: '500824'}
+138	138		301							{1: '1', 2: 'Wan', 3: 'Wait here. Let me go fetch him.', 4: '1'}
+139	139		301							"{2: 'Wan', 3: ""You should've seen how panicked he was when he carried you all back—I've never seen him so worried!"", 4: '1'}"
+140	140		201							{1: '1', 2: '500953'}
+141	141		301							{1: '1', 2: '??', 3: 'Wan.', 4: '1'}
+142	142		202							{1: '1'}
+143	143		301							"{3: ""A man's voice rings out from behind the door, cutting off the girl's yapping.""}"
+144	144		201							{1: '1', 2: '500934'}
+145	145		301							"{1: '1', 2: 'Wanshi', 3: ""Yawn... I see you're awake."", 4: '1'}"
+146	146		301							{3: 'A white Construct walks in with a yawn, lifting the curtain as he looks at you still out of sorts on the bed.'}
+147	147		302							{2: '?', 3: '148', 4: '...', 5: '148'}
+148	148		301							{3: 'You fall back with a thud and close your eyes in peace.'}
+149	149		302							{2: 'Am I still dreaming?', 3: '150', 4: 'Maybe I got up on the wrong side of the bed?', 5: '150'}
+150	150		301							"{2: 'Wanshi', 3: ""...I'm not just gonna go poof no matter how you decide to get up. Hurry up and get up already."", 4: '1'}"
+151	151		202							{1: '1'}
+152	152		301							{3: 'Wanshi pulls you up from the bed, except your mind is still too hazy to process anything.'}
+153	153		302							{2: '...What are you doing here?'}
+154	154		201							{1: '1', 2: '500934'}
+155	155		301							{1: '1', 2: 'Wanshi', 3: 'My question exactly.', 4: '1'}
+156	156		301							{2: 'Wanshi', 3: 'Except the researchers who came with you already answered that... What a surprising coincidence.', 4: '1'}
+157	157		301							"{2: 'Wanshi', 3: ""Just as I was falling asleep last night, I picked up Gray Raven's signal... I could hardly believe it myself. I had to check several times to be sure."", 4: '1'}"
+158	158		301							{2: 'Wanshi', 3: 'Given the situation, it was hard not to assume you were in danger, especially with those signals coming from the back of the mountain.', 4: '1'}
+159	159		301							"{3: ""What Wan said a little earlier hit you—she probably wasn't stretching the truth when she said she'd never seen Wanshi as worried as he was.""}"
+160	160		301							{3: 'Wan chimes in at the right moment.'}
+161	161		201							{1: '1', 2: '500824'}
+162	162		301							{1: '1', 2: 'Wan', 3: 'You were in pretty rough shape yesterday. Kept spouting all sorts of nonsense, too.', 4: '1'}
+163	163		301							"{2: 'Wan', 3: 'You were saying things like ""destroy the Punishing"", ""behold my power"", ""retirement benefits""... and the rest I just couldn\'t understand to save my life.', 4: '1'}"
+164	164		302							"{2: ""Oh... That's a bit embarrassing..."", 3: '165', 4: 'Not as bad as you think, I guess.', 5: '165'}"
+165	165		301							"{2: 'Wan', 3: ""Wanshi asked us to put you under our care here since he apparently thought that you might say things you shouldn't."", 4: '1'}"
+166	166		301							{3: 'As Wan speaks, you spot a familiar white pillow at the foot of the bed.'}
+167	167		302							"{2: ""Wanshi, isn't that the pillow I gave you?"", 3: '168', 4: 'So this... is your room, Wanshi?', 5: '168'}"
+168	168		301							"{2: 'Wan', 3: ""It is. He hasn't slept for a day now and only went out for a bit."", 4: '1'}"
+169	169		201							{1: '1', 2: '500934'}
+170	170		301							{1: '1', 2: 'Wanshi', 3: '...Wan.', 4: '1'}
+171	171		302							"{2: ""...I'm sorry for all the trouble we've caused."", 3: '172', 4: ""...I'm terribly sorry!"", 5: '172'}"
+172	172		301							"{2: 'Wanshi', 3: ""It's fine—at least you're not spouting nonsense anymore."", 4: '1'}"
+173	173		301							"{2: 'Wanshi', 3: ""You've shown the best recovery among all the patients. You should be able to get up and move around soon."", 4: '1'}"
+174	174		301							"{3: ""You can't help but fear for the researchers who ate more than they should have when Wanshi brings up the rest of the group.""}"
+175	175		301							{3: 'Wanshi, apparently having seen right through you, starts talking again.'}
+176	176		301							"{2: 'Wanshi', 3: ""The researchers have been moved to other rooms. They're all awake now, except for the guy who ate the most—he needs to sleep some more."", 4: '1'}"
+177	177		302							{2: 'Glad to hear that...', 3: '178'}
+178	178		301							"{3: ""Wanshi studies your face, pauses in thought, and, with a subtle smile playing on his lips, drops a question he's been meaning to ask.""}"
+179	179		204							{1: '1', 2: '1'}
+180	180		301							{2: 'Wanshi', 3: '...Would you mind telling me what made you think eating wild mushrooms from the mountain was a good idea?', 4: '1'}
+181	181		302							{2: '(Silence.)', 3: '182', 4: '...We had no choice.', 5: '183'}
+182	182	184	301							{3: 'Unable to find any justification for such absurd behavior, you close your mouth in embarrassment.'}
+183	183		301							"{2: 'Wanshi', 3: ""...Didn't have a choice, huh."", 4: '1'}"
+184	184		301							{3: 'Wanshi repeats your words.'}
+185	185		301							"{2: 'Wanshi', 3: ""I see. You didn't eat much—looks like you only had some because everyone else was egging you on."", 4: '1'}"
+186	186		302							"{2: ""That's true..."", 3: '188', 4: '...', 5: '187'}"
+187	187		301							"{2: 'Wanshi', 3: ""...Don't tell me this was all because you were hungry?"", 4: '1'}"
+188	188		302							{2: 'Uh-hum.', 3: '189'}
+189	189		301							"{2: 'Wanshi', 3: ""The locals in town have gathered plenty of mushrooms. If you'd like some, just let Wan and me know, and we'll get them for you."", 4: '1'}"
+190	190		301							{2: 'Wanshi', 3: 'As for those growing in the forest, let them stay right where they belong.', 4: '1'}
+191	191		301							{2: 'Wanshi', 3: 'Alright, show me your hand. Let me check your pulse.', 4: '1'}
+192	192		302							{2: '(Reach out hand.)', 3: '193'}
+193	193		301							{3: 'Wanshi gently places his fingers on your wrist, occasionally tapping it, seemingly lost in thought.'}
+194	194		301							{2: 'Wanshi', 3: 'Hmm... Your pulse is steady and strong, with no signs of weakness or irregularity...', 4: '1'}
+195	195		301							"{2: 'Wanshi', 3: ""You're all clear. You can get up and move around now."", 4: '1'}"
+196	196		302							"{2: ""I didn't know you were familiar with traditional Chinese medicine."", 3: '197'}"
+197	197		301							"{2: 'Wanshi', 3: ""I only started learning after coming to town. We Constructs learn faster, but I've barely scratched the surface."", 4: '1'}"
+198	198		301							{2: 'Wanshi', 3: 'The locals are generally experienced in identifying mushrooms, but Kowloong still sees quite a few poisoning cases every year. The local doctors have developed a comprehensive treatment theory based on traditional medicine to deal with poisoning incidents.', 4: '1'}
+199	199		301							{3: 'Wanshi points at your wrist.'}
+200	200		301							{2: 'Wanshi', 3: 'This method of identification is much safer.', 4: '1'}
+201	201		301							"{2: 'Wanshi', 3: ""You know what, let's drop it. Come on, I'll show you around Nanyun."", 4: '1'}"
+202	202		301				AniZhuanchangBegin			{3: 'Perhaps from staying up all night by the bedside, Wanshi lets out a gentle yawn while leading you out.'}
+203	203		202							{1: '1', 6: '1'}
+204	204		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory177.png'}
+205	205		301			AniZhuanchangEnd				{3: 'Along the rustic wooden corridor, cheerful children run past the two of you with playful laughter. The clinic is old, but the townspeople still come here all the time.'}
+206	206		301							{3: 'You two walk together until you reach the archive storing antique medical books.'}
+207	207		201							{1: '1', 2: '500934'}
+208	208		301							{1: '1', 2: 'Wanshi', 3: 'Hmm... this is gonna be difficult.', 4: '1'}
+209	209		301							{3: 'The harder Wanshi studies the antique book in hand, the deeper his frown becomes.'}
+210	210		301							"{2: 'Wanshi', 3: ""The mushrooms you ate contained high levels of hallucinogenic compounds. It'll take at least a week or so for the effects to wear off."", 4: '1'}"
+211	211		301							{2: 'Wanshi', 3: 'Until then, possible side effects include, but are not limited to: hallucinations, incoherent speech, and inability to tell hallucinations from reality...', 4: '1'}
+212	212		302							"{2: ""I didn't know mushrooms could do all these."", 3: '213', 4: ""Are you sure people didn't just make all that up?"", 5: '213'}"
+213	213		301							{2: 'Wanshi', 3: 'Better safe than sorry.', 4: '1'}
+214	214		301							{3: 'Wanshi closes the antique book and brushes the dust off his shoulders.'}
+215	215		301							"{2: 'Wanshi', 3: ""For the next few days during our journey through Nanyun Old Town, I'll need to stay by your side at all times."", 4: '1'}"
+216	216		302							"{2: ""Aren't you on a mission yourself?"", 3: '217', 4: ""Don't worry, my mind is perfectly clear."", 5: '218'}"
+217	217	219	301							{2: 'Wanshi', 3: 'Your safety is a top priority to me.', 4: '1'}
+218	218		301							"{2: 'Wanshi', 3: ""That's what everyone says after eating poisonous mushrooms."", 4: '1'}"
+219	219		301							"{2: 'Wanshi', 3: ""After the Punishing outbreak, a bunch of Kowloong's medical records were lost. We don't know much about the hallucinogenic compounds in these toxic mushrooms now."", 4: '1'}"
+220	220		301							"{2: 'Wanshi', 3: ""Just because the tests show no obvious signs doesn't mean your body has fully recovered."", 4: '1'}"
+221	221		301							"{2: 'Wanshi', 3: ""So this isn't an overreaction—I shouldn't have to repeat myself, right?"", 4: '1'}"
+222	222		301							{3: 'Wanshi is as soft-spoken as ever, but something in his tone now brooks no argument.'}
+223	223		302							{2: 'Got it.', 3: '224'}
+224	224		301							"{3: ""At times like these, you know you should just take the doctor's orders.""}"
+225	225		301							{2: 'Wanshi', 3: 'As it happens, the Rain Flower Festival is only a few days away.', 4: '1'}
+226	226		204							{1: '1', 2: '1'}
+227	227		301							{2: 'Wanshi', 3: 'Hmm... Want to go to the festival together?', 4: '1'}
+228	228		302							{2: 'The Rain Flower Festival?', 3: '229'}
+229	229		301							"{3: ""A gentle breeze sweeps through the corridor, lifting Wanshi's curly bangs to reveal a pair of clear, golden eyes twinkling with amusement.""}"
+230	230		301		1		AniZhuanchangBegin			"{2: 'Wanshi', 3: ""You'll like it there."", 4: '1'}"

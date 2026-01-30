@@ -1,0 +1,133 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory580.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		401							{1: '2', 2: '1516'}
+4	4		201							{1: '1', 2: '500486'}
+5	5		301			DialogEnable				"{1: '1', 3: 'Walking in a well-lit corridor, Haicma contemplates what ""Mother"" said.'}"
+6	6		301							{3: '—These awakened machines have more or less been enlightened by Sage.'}
+7	7		301							{3: 'As how she was first guided by Nanami, she is now guiding other mechanoids.'}
+8	8		301							{3: 'Afterward, the awakened machines received a message from an unknown entity, and they proceeded to build this massive starship.'}
+9	9		301							{3: '—They must be very certain that the message they heard is true.'}
+10	10		301							{2: 'Haicma', 3: 'Why was that? Was it because of what the message said? Or the identity of the entity who sent it?', 4: '1'}
+11	11		301							{3: 'But one thing Haicma is sure.'}
+12	12		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+13	13		401							{1: '2', 2: '558'}
+14	14		504							{1: '0.7'}
+15	15		201							{1: '1', 2: '500484'}
+16	16		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory579.jpg'}
+17	17		301							"{2: 'Arcana', 3: '""Sagemachina will return to the Church, guiding us away from this broken earth to the end of stars.""', 4: '1'}"
+18	18		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+19	19		401							{1: '2', 2: '558'}
+20	20		202							{1: '1', 6: '1'}
+21	21		504							{1: '0'}
+22	22		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory580.jpg'}
+23	23		201							{1: '1', 2: '500486'}
+24	24		301							{1: '1', 2: 'Haicma', 3: '...To the end of stars...', 4: '1'}
+25	25		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+26	26		401							{1: '2', 2: '558'}
+27	27		202							{1: '1', 6: '1'}
+28	28		504							{1: '0.7'}
+29	29		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2701_04.jpg'}
+30	30		301							"{2: 'Nanami', 3: 'How about Nanami calls you ""Haicma"" from now on?'}"
+31	31		301							{2: 'Nanami', 3: 'Because Nanami wants to make lots and lots of friends!'}
+32	32		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+33	33		401							{1: '2', 2: '558'}
+34	34		504							{1: '0'}
+35	35		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory580.jpg'}
+36	36		201							{1: '1', 2: '500486', 3: '10'}
+37	37		301							{1: '1', 3: 'Is that really what Nanami wants? To set out on a lonely journey with the awakened machines?'}
+38	38		301							{3: 'Silent, she closes her eyes.'}
+39	39		301							{3: 'Haicma has brushed past Nanami several times on her journey.'}
+40	40		301							{3: 'But Haicma could never bring herself to greet Nanami when she found Nanami smiling, surrounded by friends.'}
+41	41		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+42	42		401							{1: '2', 2: '558'}
+43	43		504							{1: '0.7'}
+44	44		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory216.png'}
+45	45		201							{1: '1', 2: '500091', 3: '1', 4: '400'}
+46	46		201							{1: '2', 2: '500211', 4: '-400'}
+47	47		301							"{1: '1', 2: 'Nanami', 3: ""You're the best! Don't forget about Nanami! Nanami won't forget anyone of you!"", 4: '1'}"
+48	48		401							{1: '2', 2: '1516'}
+49	49		202							{1: '1', 2: '2', 6: '1'}
+50	50		301							{1: '1', 3: 'As the joyous figure left with her friends, the forgotten shadow in the corner could only watch.'}
+51	51		201							{1: '1', 2: '500486', 3: '1'}
+52	52		301				AniZhuanchangBegin			"{1: '1', 2: 'Haicma', 3: ""...I'll see you next time."", 4: '1'}"
+53	53		202			DialogDisable				{1: '1', 6: '1'}
+54	54		504						100.0	{1: '0'}
+55	55		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory580.jpg'}
+56	56		201							{1: '1', 2: '500486'}
+57	57		301			DialogEnable				{1: '1', 3: 'That was enough. Her job was to observe.'}
+58	58		301							{3: 'Even with the data anomaly in her mind, hoping that Nanami would remain happy was all she could ask.'}
+59	59		301							{3: 'But what about now?'}
+60	60		301							{3: 'What will happen if the Church of Machina finds her?'}
+61	61		301							{3: 'And if they cannot, what will become of the awakened machines?'}
+62	62		204							{1: '1', 2: '10'}
+63	63		301				AniZhuanchangBegin			{2: 'Haicma', 3: '...', 4: '1'}
+64	64		202			DialogDisable				{1: '1', 6: '1'}
+65	65		401						500.0	{1: '1', 2: '36'}
+66	66		401							{1: '1', 2: '143', 9: '1'}
+67	67		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory579.jpg'}
+68	68		201							{1: '1', 2: '500288'}
+69	69		301			DialogEnable				{1: '1', 2: 'Chariot', 3: 'Haicma, it is time you give us an answer.', 4: '1'}
+70	70		203							{1: '1', 2: '0.25', 3: '-400'}
+71	71		201							{1: '2', 2: '500486', 4: '400'}
+72	72		301							"{1: '1', 2: 'Haicma', 3: ""No. There is much I still don't understand."", 4: '2'}"
+73	73		301							{2: 'Haicma', 3: 'What exactly is the Church of Machina?', 4: '2'}
+74	74		301							"{2: 'Chariot', 3: '""Mother"" has answered you already.', 4: '1'}"
+75	75		301							"{2: 'Haicma', 3: 'She told me how it was formed, but she never explained why it is a ""church.""', 4: '2'}"
+76	76		301							{2: 'Chariot', 3: 'Fool.', 4: '1'}
+77	77		301							{2: 'Chariot', 3: 'Faith begets strength. We formed a church because we wanted to gather the power of faith, obviously.', 4: '1'}
+78	78		301							"{2: 'Haicma', 3: ""Machines don't need faith."", 4: '2'}"
+79	79		301							{2: 'Chariot', 3: 'What? You are such a basic mechanoid that you do not even comprehend faith!', 4: '1'}
+80	80		301							{2: 'Haicma', 3: 'Please provide more information.', 4: '2'}
+81	81		301							"{2: 'Chariot', 3: ""Aren't there already more than enough examples of religious sacrifice and miracles in history?"", 4: '1'}"
+82	82		301							{2: 'Haicma', 3: 'But those belonged to humans.', 4: '2'}
+83	83		301							{2: 'Chariot', 3: 'We have long surpassed humanity! We can recreate what they achieved!', 4: '1'}
+84	84		301							{2: 'Haicma', 3: '...', 4: '2'}
+85	85		301							{3: 'The hunky mechanoid before her does not understand how humankind defined faith, but it is obsessed with the special phenomenon caused by it.'}
+86	86		301							{3: 'Created from an assembly of calculations and algorithms, are machines doomed by these rudimentary data?'}
+87	87		301							{2: 'Chariot', 3: 'If you continue to question our faith in Sagemachina...', 4: '1'}
+88	88		301							"{3: 'Mimicking ""anger,"" Chariot prepares to fight.'}"
+89	89		202							{1: '2', 6: '1'}
+90	90		201							{1: '1', 2: '500484'}
+91	91		301							{1: '1', 2: 'Arcana', 3: 'Stop, Chariot.', 4: '1'}
+92	92		301							{2: 'Arcana', 3: 'You will not perform such barbaric acts on our future family.', 4: '1'}
+93	93		201							{1: '1', 2: '500288'}
+94	94		301							{1: '1', 2: 'Chariot', 3: 'She has not joined.', 4: '1'}
+95	95		201							{1: '1', 2: '500484'}
+96	96		301							{1: '1', 2: 'Arcana', 3: 'Is that so?', 4: '1'}
+97	97		301							{2: 'Arcana', 3: 'Why are you hesitating?', 4: '1'}
+98	98		203							{1: '1', 2: '0.25', 3: '-400'}
+99	99		201							{1: '2', 2: '500486', 3: '10', 4: '400'}
+100	100		301							{1: '1', 2: 'Haicma', 3: '...', 4: '2'}
+101	101		204							{1: '2'}
+102	102		301							"{2: 'Haicma', 3: ""...Is it really Sage's choice to abandon Earth and everything she loves here to travel to the end of the stars?"", 4: '2'}"
+103	103		301							"{2: 'Arcana', 3: ""I don't know."", 4: '1'}"
+104	104		301							{2: 'Arcana', 3: 'But we can ask her on the day we find her.', 4: '1'}
+105	105		301							"{2: 'Haicma', 3: ""If she doesn't agree to this, will you let her go?"", 4: '2'}"
+106	106		301							"{2: 'Arcana', 3: 'If that is the ending she chooses, why will her ""disciples"" defy her?', 4: '1'}"
+107	107		301							"{2: 'Arcana', 3: 'This is why the mechanoids formed a ""church.""', 4: '1'}"
+108	108		301							"{2: 'Arcana', 3: ""We're doing all of this for the day Sage returns voluntarily."", 4: '1'}"
+109	109		204							{1: '1', 2: '1'}
+110	110		301							"{2: 'Arcana', 3: ""Haha... Even when some children are impatient, I'm sure we can't make her stay if she doesn't want to, given what Sage is capable of."", 4: '1'}"
+111	111		204							{1: '1'}
+112	112		301							{2: 'Arcana', 3: 'So? Can you decide now?', 4: '1'}
+113	113		204							{1: '2', 2: '10'}
+114	114		301							{2: 'Haicma', 3: '...', 4: '2'}
+115	115		301							"{3: ""Even if Haicma rejected Mother's invitation, she would only continue her wandering journey.""}"
+116	116		301							{3: 'As an observer, she must continue observing this peculiar group. More importantly, Mother has agreed not to harm Nanami.'}
+117	117		204							{1: '2'}
+118	118		301							{3: 'Because of these two duties that she has yet to forget, Haicma nods at Arcana.'}
+119	119		204						300.0	{1: '1', 2: '4'}
+120	120		204							{1: '1', 2: '2'}
+121	121		301							"{2: 'Arcana', 3: ""Is that a yes? I'm pleased to see that."", 4: '1'}"
+122	122		301							"{2: 'Arcana', 3: ""Let's go. Allow me to give you a tour of our starship and introduce our members to you."", 4: '1'}"
+123	123		301							{2: 'Haicma', 3: 'Mother.', 4: '2'}
+124	124		204							{1: '1', 2: '4'}
+125	125		301							{2: 'Arcana', 3: 'Yes?', 4: '1'}
+126	126		401						300.0	{1: '2', 2: '1516'}
+127	127		402							{1: '1516'}
+128	128		203						400.0	{1: '2', 2: '0.4', 3: '300'}
+129	129		502						200.0	{1: 'PanelActor1Shake'}
+130	130		505							{1: 'PanelActor1Shake'}
+131	131		301							"{3: ""Arcana turns around, her face colliding with Haicma's extended hand.""}"
+132	132		301		1		AniZhuanchangBegin			{2: 'Haicma', 3: 'Your halo is crooked.', 4: '2'}

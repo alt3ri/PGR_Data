@@ -1,0 +1,233 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory733.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				"{3: 'Opening the dated report, you find entries of people from Conservation Area 109 who went missing in the past few quarters due to ""Hetero-Creature attacks.""'}"
+4	4		301							{3: 'The data... is indeed highly unusual.'}
+5	5		301							{3: 'The people lost in Hetero-Creature attacks should have been healthy adults laboring outside, but most of them mentioned in the report fall into the age brackets of 10 to 15 and 50 to 60.'}
+6	6		201							{1: '1', 2: '500568'}
+7	7		301							"{1: '1', 2: 'Lee', 3: ""I've compiled the data from Conservation Area 108's reports. The results are similar to the one you're holding."", 4: '1'}"
+8	8		301							{2: 'Lee', 3: 'Either the staff from both of these conservation areas have collectively lost their minds and forged the data, or—', 4: '1'}
+9	9		302							"{2: ""They didn't go missing because of Hetero-Creatures."", 3: '10'}"
+10	10		301							"{3: ""Lee's expression turns solemn.""}"
+11	11		301							{2: 'Lee', 3: 'We have to open the investigation again...', 4: '1'}
+12	12		401							{1: '2', 2: '2979'}
+13	13		301							{3: 'The terminal rings right as he says that. The mail from the Science Council has timely arrived.'}
+14	14		302							{2: 'Updates?', 3: '15'}
+15	15		401							{1: '2', 2: '1227'}
+16	16		301							{3: 'You deftly extract the information from the mail, rearranging the words as they leap from page to page to form the hidden message.'}
+17	17		304							{1: '[Code 019]', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}
+18	18		304							{1: '[Internal assessment of Fort Winter experiment records in progress.]', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}
+19	19		304							{1: '[City 023, Conservation Area 112, Outpost D56.]', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 9: '1'}
+20	20		402							{1: '1227'}
+21	21		301			AniZhuanchangEnd	DialogDisable			{1: '1', 2: 'Lee', 3: 'These...', 4: '1'}
+22	22		302							"{2: ""These are all Babylonia's records..."", 3: '23'}"
+23	23		302							{2: '...on minor outposts destroyed by Hetero-Creatures.', 3: '24'}
+24	24		301			DialogEnable				{2: 'Lee', 3: '...', 4: '1'}
+25	25		301							{3: 'These brief words contain countless tears and blood.'}
+26	26		301				DialogDisable			{3: 'Lee turns quiet. He knows as well as you do what it means that the names of those small outposts appear in a report on Fort Winter.'}
+27	27		302							"{2: ""Conservation Area 112 isn't far away from us."", 3: '28'}"
+28	28		302							{2: 'Maybe we should check it out first.', 3: '29'}
+29	29		301			DialogEnable				"{2: 'Lee', 3: ""Understood. I'll go prepare our ride."", 4: '1'}"
+30	30		202							{1: '1'}
+31	31		401							{1: '2', 2: '1516'}
+32	32		301							{3: 'Lee turns to leave the room without a moment of hesitation.'}
+33	33		301							{3: 'The words continue to flicker on the terminal under the dim lights.'}
+34	34		301							{3: 'Clearly, Asimov wants you to investigate Conservation Area 112 and find something to connect the dots by sending you the message. Still, can there be any clues left after such a long time?'}
+35	35		401							{1: '2', 2: '2672'}
+36	36		301							{3: 'You hear the door knob turning.'}
+37	37		302							{2: 'Is our ride ready?', 3: '38'}
+38	38		201							{1: '1', 2: '500702'}
+39	39		301							{1: '1', 2: '???', 3: '...', 4: '1'}
+40	40		301							{3: 'Instead of Lee, the Construct with the purple hair you saw earlier today walks in.'}
+41	41		302							{2: '...Hello?', 3: '42', 4: 'Who are you?', 5: '42'}
+42	42		301							{3: 'You covertly press the alarm button on your terminal to notify Lee of the unexpected situation here.'}
+43	43		301							"{2: '???', 3: ""...Hello, Gray Raven Commandant. You may call me Echo. I'm a Construct from Utopia."", 4: '1'}"
+44	44		302							{2: 'Echo?', 3: '45', 4: 'Utopia?', 5: '45'}
+45	45		401							{1: '2', 2: '1543'}
+46	46		301							{3: 'The purple-haired girl looks a little tense. Gently closing the door, she makes sure that no one can spot her inside the room before saluting you with a complicated greeting salute like she did during the day.'}
+47	47		302							"{2: '...', 3: '48', 4: '""World Government\'s Rules of Etiquette, Third Edition""?', 5: '48'}"
+48	48		301							"{2: 'Echo', 3: ""...I'm here to propose an alliance. It can't hurt to be meticulous with my manners."", 4: '1'}"
+49	49		302							{2: 'An alliance?', 3: '50', 4: 'What do you want?', 5: '50'}
+50	50		301							"{2: 'Echo', 3: ""I... want you to lend me your strength to take down Utopia, Aurora Squadron's secret laboratory base!"", 4: '1'}"
+51	51		301							{3: 'She looks up at you, her eyes ablaze with resolution, yet somehow, you still sense a hint of uncertainty in her expression.'}
+52	52		301				DialogDisable			{3: 'Aurora Squadron? It sounds like a military unit, but you do not recall such a team in Babylonia...'}
+53	53		302							{2: 'You said you came from Utopia.', 3: '54'}
+54	54		302							{2: 'What is Utopia?', 3: '55'}
+55	55		301			DialogEnable				{2: 'Echo', 3: '...', 4: '1'}
+56	56		301							{3: 'Echo hesitates upon hearing your question.'}
+57	57		302							"{2: 'I\'ve never heard of ""Utopia"" or an ""Aurora Squadron"".', 3: '59', 4: ""You should leave. I don't act on disinformation."", 5: '58'}"
+58	58		301							"{2: 'Echo', 3: ""This isn't disinformation. I'm just... thinking about how I can reasonably explain everything."", 4: '1'}"
+59	59		301							{3: 'She pauses for a second before slowly speaking again.'}
+60	60		301							"{2: 'Echo', 3: ""Utopia is one of Aurora Squadron's bases. It is a... large laboratory base."", 4: '1'}"
+61	61		301							"{2: 'Echo', 3: 'They routinely report to a place in Babylonia called ""Kurono"".', 4: '1'}"
+62	62		301							"{2: 'Echo', 3: 'You must have heard of ""Kurono"", given that you\'re also from Babylonia, Gray Raven Commandant.', 4: '1'}"
+63	63		301							{2: 'Echo', 3: 'If you lend me your help, I will let you keep all the contents and data from Utopia after we destroy it.', 4: '1'}
+64	64		301							"{3: ""Kurono? Could the Aurora Squadron... be Kurono's private force?""}"
+65	65		301							{3: 'You did hear about private military units being deployed by some Kurono leadership when you were on Babylonia.'}
+66	66		302							"{2: ""Why didn't you choose Babylonia?"", 3: '67', 4: 'Why did you want to work with me?', 5: '67'}"
+67	67		301							{3: 'She could have easily bargained with Babylonia directly with information like this.'}
+68	68		204							{1: '1', 2: '14'}
+69	69		301							{3: 'Hearing that, Echo frowns, her fingers jittering uncomfortably by her side.'}
+70	70		301							"{2: 'Echo', 3: ""I'm looking for your help because I've heard your name mentioned by a lot of people. They all... spoke highly of you."", 4: '1'}"
+71	71		301							"{2: 'Echo', 3: 'They said... you have ""a heart of integrity.""', 4: '1'}"
+72	72		302							"{2: '...', 3: '73', 4: ""That's it?"", 5: '73'}"
+73	73		301							"{2: 'Echo', 3: ""I'm out of options. I have to bet that you'd believe me."", 4: '1'}"
+74	74		301							"{2: 'Echo', 3: ""As for Babylonia... I can't seek Babylonia's help because I'm being pursued by them at the moment."", 4: '1'}"
+75	75		301				DialogDisable			{3: 'Pursued by Babylonia? Could it be...'}
+76	76		302							"{2: ""You're Kurono's... escaped test subject?"", 3: '77'}"
+77	77		302							{2: 'Or should I call you... Lena?', 3: '78'}
+78	78		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+79	79		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+80	80		201							{1: '1', 2: '1031001'}
+81	81		504							{1: '0.7'}
+82	82		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'You must have also received the notification on the Kurono test subject that the Purifying Force is after, Commandant.', 4: '1'}
+83	83		301							"{2: 'Liv', 3: '""The Kurono test subject is armed with special weapons and is highly dangerous. Do not engage if you encounter her. Report to the Purifying Force immediately...""', 4: '1'}"
+84	84		301							{2: 'Liv', 3: 'Please be careful if you run into her, Commandant.', 4: '1'}
+85	85		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory733.jpg'}
+86	86		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+87	87		504							{1: '0'}
+88	88		201							{1: '1', 2: '500702'}
+89	89		301							{1: '1', 3: 'Liv has warned you about this before your mission.'}
+90	90		301							{3: 'Lena, an Iris Warbler member, was captured by a mysterious armor-like test subject in Constellia before disappearing. The incident caused quite a stir within the Task Force.'}
+91	91		302							{2: '(Raise your gun)', 3: '92'}
+92	92		401							{1: '2', 2: '1511'}
+93	93		301							{2: 'Echo', 3: '...', 4: '1'}
+94	94		301							{3: 'She puts her hands up, indicating that she has no intention to attack.'}
+95	95		301							"{2: 'Echo', 3: ""I'm not Lena... even though I was indeed one of Utopia's test subjects. But I'm not your enemy."", 4: '1'}"
+96	96		301							"{2: 'Echo', 3: ""I can't easily explain the relationship between Lena and me, but everything will be clear once we find Utopia."", 4: '1'}"
+97	97		301							"{2: 'Echo', 3: ""I'm just here to ask for your help. I'm running out of time... I have to find Utopia, and I must find her."", 4: '1'}"
+98	98		301							"{2: 'Echo', 3: ""Babylonia's people are close. I've found more trails of the Aurora Squadron after I left the conservation area this morning."", 4: '1'}"
+99	99		204							{1: '1', 2: '14'}
+100	100		301							"{2: 'Echo', 3: ""I can't let them find me. I have to do this before they catch me..."", 4: '1'}"
+101	101		301							"{2: 'Echo', 3: ""That is why I'm hoping to offer the experiment data from Utopia in exchange for your help..."", 4: '1'}"
+102	102		301							{3: 'She bites her lips and stops speaking.'}
+103	103		302							"{2: ""It's hard to make a deal with an empty promise."", 3: '104'}"
+104	104		301							{3: 'Kurono, the armor-like test subject, and the large laboratory base...'}
+105	105		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+106	106		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+107	107		504							{1: '0.7'}
+108	108		201							{1: '1', 2: '500004'}
+109	109		301							"{1: '1', 2: 'Asimov', 3: ""...Whether it's the military or Kurono, they always withhold some information when sharing data with the Science Council."", 4: '1'}"
+110	110		301							{2: 'Asimov', 3: 'The only way to completely crush their hope is to prove it is wrong from the roots.', 4: '1'}
+111	111		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory733.jpg'}
+112	112		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+113	113		504							{1: '0'}
+114	114		201							{1: '1', 2: '500702', 3: '14'}
+115	115		301							"{1: '1', 3: ""If this Construct is telling the truth, this may be a desperate but crucial move in Asimov's and your plan. Still, it is unwise to act so hastily.""}"
+116	116		301							"{3: 'The incident in Constellia was mystifying, and intel regarding ""the escaped test subject Lena"" has been clearly obfuscated. Still, those are not good enough reasons to start working with this unknown Construct. So...'}"
+117	117		204							{1: '1'}
+118	118		301							"{2: 'Echo', 3: 'I have information regarding the ""missing persons,"" and I know they\'re related to Utopia!', 4: '1'}"
+119	119		302							{2: 'How do you know about this?!', 3: '120', 4: 'You mean...', 5: '120'}
+120	120		301							{2: 'Echo', 3: 'Almost everyone in this conservation area knows that the Gray Raven Commandant is coming here to investigate the missing persons.', 4: '1'}
+121	121		301							"{2: 'Echo', 3: ""I can offer you leads. I'm certain that Utopia has something to do with the missing persons."", 4: '1'}"
+122	122		301							{2: 'Echo', 3: 'There were often Constructs or humans joining us when I was living in Utopia. Some of them came willingly as they sought a live there...', 4: '1'}
+123	123		301							{2: 'Echo', 3: 'While some... were taken there.', 4: '1'}
+124	124		302							{2: '...', 4: 'Can you prove what you said?'}
+125	125		301							{2: 'Echo', 3: 'I can take you to where one of the branches of Utopia is based to find those missing residents.', 4: '1'}
+126	126		301							"{2: 'Echo', 3: ""But... I can't possibly tell you everything at once. This information is my only leverage."", 4: '1'}"
+127	127		301							{3: 'The girl before you seems to be taking extra care with her words.'}
+128	128		301							"{2: 'Echo', 3: ""Work with me, and I'll slowly tell you everything... everything about Utopia and the Aurora Squadron."", 4: '1'}"
+129	129		301							{2: 'Echo', 3: 'Otherwise...', 4: '1'}
+130	130		301							{3: 'She looks up resolutely.'}
+131	131		301							"{2: 'Echo', 3: ""You should know that I'm the only person who knows Utopia intimately enough to lead you to their secret base."", 4: '1'}"
+132	132		302							{2: '...', 3: '133'}
+133	133		301							{3: 'The Construct looks at you, unfaltering.'}
+134	134		301							"{3: ""Is she... trustworthy? If she is one of Kurono's, what is her objective? Laying a trap to capture you?""}"
+135	135		301							"{3: 'Still, being an ""escaped Kurono test subject"" is a precarious position to be in this situation.'}"
+136	136		301							"{3: 'Back in Constellia, the mission assigned to you was to retrieve the test subject, and the Purifying Force was clearly tasked by some to destroy the ""test subject"" before you and Vanessa made your move.'}"
+137	137		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory546.jpg'}
+138	138		504							{1: '0.7'}
+139	139		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+140	140		201							{1: '1', 2: '500560', 3: '4'}
+141	141		301							{1: '1', 2: 'Sica', 3: '【kuroname】...', 4: '1'}
+142	142		302							{2: 'Sica?', 3: '143', 4: 'Is everything okay?', 5: '143'}
+143	143		301							{3: 'The young commandant looks concerned as she organizes the reports on Constellia.'}
+144	144		301							"{2: 'Sica', 3: ""I can't help but feel weird about the final report of this mission."", 4: '1'}"
+145	145		302							{2: 'Is it because of what happened to Lena?', 3: '146'}
+146	146		301							{2: 'Sica', 3: '...Yes.', 4: '1'}
+147	147		301							{2: 'Sica', 3: 'Something about it still feels wrong.', 4: '1'}
+148	148		301							"{2: 'Sica', 3: 'Lena only encountered the ""Kurono test subject"" because she was protecting us. However...', 4: '1'}"
+149	149		301							{2: 'Sica', 3: 'Why could she connect directly with a Kurono test subject when she was a Caribou member? Why did the military show no doubt whatsoever in her identity and issue the arrest warrant immediately?', 4: '1'}
+150	150		301							{2: 'Sica', 3: 'Is it possible that...', 4: '1'}
+151	151		302							"{2: ""...Something is wrong with Lena's identity?"", 3: '152'}"
+152	152		301							"{2: 'Sica', 3: ""I don't want to cast any doubt on it, but..."", 4: '1'}"
+153	153		302							"{2: ""You're just speculating, not doubting.""}"
+154	154		204							{1: '1', 2: '14'}
+155	155		301							{2: 'Sica', 3: 'Hmm...', 4: '1'}
+156	156		301							{3: 'Sica seems to have been trapped in this uncertainty ever since she came back from Constellia.'}
+157	157		301							"{2: 'Sica', 3: ""The timing of Kurono's appearance, the Purifying Force's entry, Lena, the Kurono test subject, a report locked behind clearance..."", 4: '1'}"
+158	158		301							{3: 'She presses her brows worriedly.'}
+159	159		302							{2: 'Maybe you should just trust your gut feeling.', 3: '160'}
+160	160		204							{1: '1', 2: '4'}
+161	161		301							{2: 'Sica', 3: '...', 4: '1'}
+162	162		301							{3: 'Sica ponders on your words.'}
+163	163		301							"{2: 'Sica', 3: ""You're right... I shouldn't agonize over it so much. Lena is part of my team at the end of the day. I need to find out her whereabouts."", 4: '1'}"
+164	164		301							"{2: 'Sica', 3: ""But my hands are tied right now, and I can't investigate any further... Can I ask you for a favor, 【kuroname】?"", 4: '1'}"
+165	165		301							{3: 'Looking up, Sica becomes her usual self once more.'}
+166	166		302							{2: 'Shoot.', 3: '167'}
+167	167		301							"{2: 'Sica', 3: ""If you find out anything about Lena when you're on the surface, please don't report it to the Purifying Force immediately."", 4: '1'}"
+168	168		301							"{2: 'Sica', 3: ""...Contact General Wells or President Hassen directly. We can't let Lena fall into Kurono's hands."", 4: '1'}"
+169	169		301							"{2: 'Sica', 3: ""It's just my speculation... but for Kurono, Lena may be the most important key in this situation."", 4: '1'}"
+170	170		302							"{2: ""I'll consider it."", 3: '171'}"
+171	171		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory733.jpg'}
+172	172		504							{1: '0'}
+173	173		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+174	174		201							{1: '1', 2: '500702', 3: '14'}
+175	175		301				DialogDisable			{1: '1', 3: '...'}
+176	176		302							"{2: ""I still don't trust you."", 3: '177', 4: 'If this is just a temporary alliance...', 5: '183'}"
+177	177		302							{2: 'But I can make a temporary alliance with you.', 3: '178'}
+178	178		302							"{2: ""I'll reserve my judgment on you before the mission is over."", 3: '179'}"
+179	179		302							{2: 'And I might contact Babylonia at any moment.', 3: '180'}
+180	180		204							{1: '1'}
+181	181		301			DialogEnable				"{2: 'Echo', 3: ""That's good enough for me. I'll prove myself to you."", 4: '1'}"
+182	182	185	301							{3: 'Receiving your confirmation, Echo looks visibly more relaxed, even though she is still trying her best to look steady and collected.'}
+183	183		204							{1: '1'}
+184	184		301			DialogEnable				{3: 'Receiving your confirmation, Echo looks visibly more relaxed, even though she is still trying her best to look steady and collected.'}
+185	185		301							{3: 'You give her a temporary terminal as a way to contact each other. Having confirmed when to meet you in the future and how to contact you, she quickly steps out the door and leaves.'}
+186	186		401							{1: '2', 2: '1513'}
+187	187		202						1500.0	{1: '1'}
+188	188		402							{1: '1513'}
+189	189		401							{1: '2', 2: '9342045'}
+190	190		201							{1: '1', 2: '500568', 4: '-400'}
+191	191		203							{1: '1', 2: '0.2'}
+192	192		301							{1: '1', 2: 'Lee', 3: '...Commandant?', 4: '1'}
+193	193		301							{3: 'Lee leaps into the room through the window on the side dexterously.'}
+194	194		301							{3: 'He has been guarding outside the door since he received your alarm earlier, but you signaled him to wait instead of charging in.'}
+195	195		301							{2: 'Lee', 3: 'Should we trust her? The timing of her appearance is quite convenient.', 4: '1'}
+196	196		301				DialogDisable			"{3: ""You just arrived for the investigation of the missing persons, and Asimov's message came merely a moment before Echo showed up, claiming herself to be one of Kurono's test subjects...""}"
+197	197		302							{2: 'Very convenient indeed.', 3: '198'}
+198	198		302							"{2: ""Still, we can't just leave her be like this."", 3: '199'}"
+199	199		301			DialogEnable				{3: 'If the Purifying Force finds her and sends her back to Kurono, Babylonia will lose an important bargaining chip.'}
+200	200		301							"{2: 'Lee', 3: ""That didn't seem like a trap from Kurono... She felt too inexperienced to be a Kurono-trained soldier. Her perception was so bad that she couldn't even detect my presence."", 4: '1'}"
+201	201		301							{2: 'Lee', 3: 'And why would she call herself Echo if she was Lena?', 4: '1'}
+202	202		301							"{2: 'Lee', 3: ""There are too many questions surrounding her. I don't think we should work with her, Commandant."", 4: '1'}"
+203	203		302							"{2: ""That's what makes me more curious about her intention."", 3: '204'}"
+204	204		301							{3: 'If the missing persons from the conservation areas are related to some plan from Kurono, though risky, this move may prove extremely valuable later on.'}
+205	205		301							"{3: 'Even if this ""Echo"" was lying, she must still know something about the people who went missing in these conservation areas.'}"
+206	206		301							{3: 'How else could she come up with a companion and happen to travel through all the areas related to the missing incidents?'}
+207	207		301							"{2: 'Lee', 3: ""...I still think it's too risky."", 4: '1'}"
+208	208		301							"{2: 'Lee', 3: ""Lucia isn't back yet, and Liv is still helping with the reconstruction of Constellia..."", 4: '1'}"
+209	209		301							"{2: 'Lee', 3: ""And this Construct has never shown up on Babylonia's radar apart from that time in Constellia. To work with such an enigmatic figure..."", 4: '1'}"
+210	210		302							{2: 'I still have you with me.', 3: '211'}
+211	211		204							{1: '1', 2: '10'}
+212	212		301							"{2: 'Lee', 3: ""That's not a reason for you to take the risk on your own, Commandant."", 4: '1'}"
+213	213		302							"{2: ""But it's indeed an opportunity."", 3: '214'}"
+214	214		301							"{3: ""If this gamble pays off, you will have taken out one of Kurono's laboratories.""}"
+215	215		301							{3: 'If not, you will still be able to bring the Kurono test subject back to Babylonia.'}
+216	216		204							{1: '1'}
+217	217		301							"{2: 'Lee', 3: ""...I'll request extra support. In the meantime, be extra careful."", 4: '1'}"
+218	218		204							{1: '1'}
+219	219		302				AniZhuanchangBegin			{2: 'I will.', 3: '220'}
+220	220		202							{1: '1', 6: '1'}
+221	221		502							{1: 'DialogDisable'}
+222	222		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+223	223		107			AniZhuanchangEnd			2000.0	{1: 'Outside Conservation Area'}
+224	224		108							{1: '1'}
+225	225		201							{1: '1', 2: '500702', 3: '14'}
+226	226		301			DialogEnable				{1: '1', 3: 'Believing that she has returned to where she secured the armor unnoticed, Echo sits beside the armor while fiddling with the temporary terminal from the Gray Raven Commandant with her eyes lowered in deep thoughts.'}
+227	227		301							{3: 'She can feel that the commandant did not fully trust her.'}
+228	228		301							{3: 'That is fair. If such a legendary commandant from Babylonia trusted a random Construct straight away, Echo would have felt even more uneasy.'}
+229	229		301							{3: '...It is fine. She does not need trust.'}
+230	230		204							{1: '1'}
+231	231		301							{3: 'She only ever has one goal.'}
+232	232		301		1		AniZhuanchangBegin			{3: 'She will destroy Utopia.'}

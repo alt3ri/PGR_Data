@@ -1,0 +1,48 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory161.png'}
+2	2		401							{1: '1', 2: '102'}
+3	3		201							{1: '1', 2: '1021001'}
+4	4		201							{1: '2', 2: '1031001', 3: '14', 4: '-600'}
+5	5		201							{1: '3', 2: '500026', 4: '600'}
+6	6		301			DialogEnable				{1: '1', 3: 'Three drumbeats.'}
+7	7		301							"{3: '""The midnight drums are beatin\'! We\'re closing up!""'}"
+8	8		301							{3: '...'}
+9	11		502							{1: 'RImgBg1Shake'}
+10	12		302							"{2: ""What's going on?"", 3: '13', 4: ""The ship's moving?"", 5: '13'}"
+11	13		301							"{2: 'Liv', 3: ""The ground's shaking?"", 4: '2'}"
+12	14		301							{2: 'Lee', 3: '...The ship has left the port.', 4: '3'}
+13	15		302							"{2: ""Let's go check the deck."", 3: '16', 4: ""Let's go investigate, Lee."", 5: '18'}"
+14	16		301							{2: 'Lee', 3: 'The crowd is gone.', 4: '3'}
+15	17	22	301							{2: 'Lee', 3: 'Apart from those already headed for the boarding gate, every merchant in the market seems to be going in the same direction.', 4: '3'}
+16	18		301							"{2: 'Lee', 3: ""...The ship is some distance away from the port now. Even without considering the waterproof function of Constructs, it's not the kind of distance a human can hold their breath for."", 4: '3'}"
+17	19		302							"{2: 'Are you joking, Lee?', 3: '20', 4: ""That's unrealistic."", 5: '21'}"
+18	20	22	301							"{2: 'Lee', 3: ""I'm serious."", 4: '3'}"
+19	21	22	301							{2: 'Lee', 3: 'Yes, I would also advise against it.', 4: '3'}
+20	22		301							{2: 'Lucia', 3: 'So what do we do now, Commandant?', 4: '1'}
+21	23		302							{2: 'We bide our time.', 3: '24', 4: 'We follow the merchants.', 5: '27'}
+22	24		301							"{2: 'Lee', 3: ""If this is really a night market, then by the looks of it, it's a well-organized one built on strict rules."", 4: '3'}"
+23	25		301							{2: 'Lee', 3: 'Which means it should have fixed open and close times and the ship should follow a fixed schedule.', 4: '3'}
+24	26		302							{2: 'My thoughts exactly.', 3: '28', 4: 'We just have to wait until tomorrow night.', 5: '28'}
+25	27	32	301				AniZhuanchangBegin			{2: 'Lucia', 3: 'Yes.', 4: '1'}
+26	28		301							{2: 'Lee', 3: 'We need to find a place to hide on the ship.', 4: '3'}
+27	29		301							{2: 'Lucia', 3: 'Maybe we can catch up to the merchants aboard the ship, right Commandant?', 4: '1'}
+28	30		302				AniZhuanchangBegin			"{2: ""Let's go"", 3: '32', 4: 'Yes', 5: '32'}"
+29	32		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory150.png'}
+30	33		301			AniZhuanchangEnd				{2: 'Lee', 3: 'This looks like a warehouse. A central warehouse.', 4: '3'}
+31	34		301							"{2: 'Liv', 3: ""Are all the merchants' wares stored here?"", 4: '2'}"
+32	35		301							"{2: 'Lee', 3: ""This doesn't seem like the Night Market on the database."", 4: '3'}"
+33	36		302							"{2: ""I've been here before."", 3: '37', 4: 'Watch out for the guards.', 5: '43'}"
+34	37		301							{2: 'Lee', 3: '...Who is it that kidnapped the commandant, and for what?', 4: '3'}
+35	38		301							{2: 'Lee', 3: 'The kidnapper has not shown up or made another move.', 4: '3'}
+36	39		301							"{2: 'Lucia', 3: ""Regardless, I won't let Commandant out of my sight again."", 4: '1'}"
+37	40		302							"{2: ""It's okay."", 3: '41', 4: ""You don't have to watch me like that, Lucia."", 5: '42'}"
+38	41	46	301							{2: 'Lucia', 3: '(Nods)', 4: '1'}
+39	42	46	301							"{2: 'Lucia', 3: ""I'm sorry, Commandant."", 4: '1'}"
+40	43		301							"{2: 'Lee', 3: 'Based on our last encounter, I\'ve made a brief scan of the ""guards"" on the boat.', 4: '3'}"
+41	44		301							{2: 'Lee', 3: 'Blubber and Ballwheel, mechanical puppet performers of the Acrobatics Series made by the General Toys Company after it was acquired during the Golden Age.', 4: '3'}
+42	45	46	301							{2: 'Lee', 3: 'Not only are they not infected, but they are also surprisingly well maintained.', 4: '3'}
+43	46		204							{1: '2', 2: '14'}
+44	47		301							"{2: 'Liv', 3: ""...I haven't detected any sign of infection on all humans and mechanoids on the boat, but the responses from their bio-signals are all pretty weak. I'm concerned for their health..."", 4: '2'}"
+45	48		301							{2: 'Lee', 3: 'I feel like this boat is hiding many secrets.', 4: '3'}
+46	49		301							{2: 'Lee', 3: 'If only we have more data to analyze...', 4: '3'}
+47	50		301		1		AniZhuanchangBegin			{2: 'Lee', 3: 'Maybe we can get some useful information from these mechanical puppets.', 4: '3'}

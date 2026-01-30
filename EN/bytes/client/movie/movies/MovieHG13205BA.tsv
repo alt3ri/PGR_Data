@@ -1,0 +1,153 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+2	2		401							{1: '1', 2: '204'}
+3	3		201							{1: '1', 2: '500201', 3: '1'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Simon', 3: ""Phew... Finally, that boulder's up the hill!"", 4: '1'}"
+5	5		302							{2: 'What boulder?', 3: '6'}
+6	6		301							{2: 'Simon', 3: 'The speech you gave just now. I was very impressed, so I borrowed your story.', 4: '1'}
+7	7		301							{3: 'Simon does a stretch as if he has just come down from the hill and never has to go back up again.'}
+8	8		302							"{2: ""I don't think it was that impressive..."", 3: '9'}"
+9	9		204							{1: '1'}
+10	10		301							"{2: 'Simon', 3: '""When the boulder finally wears the hill down, we will prove what being a hero really means.""', 4: '1'}"
+11	600		204							{1: '1', 2: '1'}
+12	11		301							{3: 'Both of you give a relieved smile as Simon continues to recite your speech—'}
+13	12		301							"{3: '""Sisyphus was compelled to devote his entire life to a futile endeavor. That boulder was a necessary price that he must pay over and over again for the world.""'}"
+14	13		301							"{3: '""He was exhausting every possible means to fight the punishment given by the gods and fate itself.""'}"
+15	14		301							"{3: '""Our endeavor, like that of Sisyphus, is always at risk of being overturned back to the starting point by fate, by a past full of suffering and a future full of uncertainties.""'}"
+16	15		301							"{3: '""The land we reclaimed yesterday could be buried under the Red Tide tomorrow. The expectation we have for tomorrow could be torn apart by the Punishing Virus today.""'}"
+17	16		301							"{3: '""But we will continue to fight through these inevitable, recurring cycles, to make our lives meaningful.""'}"
+18	17		301							"{3: '""When the boulder finally wears the hill down, we will prove what being a hero really means.""'}"
+19	18		302							"{2: 'But we are still far from being ""heroes.""', 3: '19'}"
+20	19		301							"{2: 'Simon', 3: ""I don't want to be pushed to become some sort of hero... I just have this feeling that the next step after that is to die and be written into textbooks."", 4: '1'}"
+21	20		301							{2: 'Simon', 3: 'Perhaps hearing you telling the truth made me happier than being a hero.', 4: '1'}
+22	21		301							{2: 'Simon', 3: 'Regardless of how the past and future unfold, they cannot run away from the truth, so we may as well just tell them. People must speak the truth to live on in an earnest way.', 4: '1'}
+23	22		301							"{2: 'Simon', 3: ""But you gave them hope on top of that. And that's very important."", 4: '1'}"
+24	23		202							{1: '1'}
+25	24		401							{1: '2', 2: '1516'}
+26	25		301							"{3: ""Soon, Simon returns to the lounge of Dark Aries. Once again, you stop in front of Egret's lounge.""}"
+27	26		301							{3: 'When you pushed this door open for the first time a few days ago, you were also returning from the College with Simon.'}
+28	27		301				AniZhuanchangBegin			{3: 'Now that you think about it, the past few days feel like a surreal dream, detached from the usual rhythm of your daily life.'}
+29	28		502						300.0	{1: 'DialogDisable'}
+30	29		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+31	30		301			DialogEnable				{3: 'This small, fragile dream all started from a question—'}
+32	31		302							{2: 'Bambinata?', 3: '32'}
+33	32		201							{1: '1', 2: '500536'}
+34	33		301							"{1: '1', 3: ""When Bambinata opens the Egret's door, she is no longer hesitant and fearful like before.""}"
+35	34		301							{3: 'She just stands at the doorway quietly and gently like a cat that has been patiently waiting all along.'}
+36	35		301							{2: 'Bambinata', 3: 'Hello...?', 4: '1'}
+37	36		301							{2: 'Bambinata', 3: '...Gray Raven Commandant?', 4: '1'}
+38	37		302							{2: 'Can you recognize me?', 3: '38'}
+39	38		301							{3: 'She nods earnestly. In her blue eyes, you see a faint glimmer—a light that jumped into her clear, innocent eyes from somewhere else.'}
+40	39		204							{1: '1', 2: '4'}
+41	40		301							{2: 'Bambinata', 3: 'Bambinata remembers your name, your look, and your voice.', 4: '1'}
+42	41		204							{1: '1', 2: '1'}
+43	42		301							"{2: 'Bambinata', 3: ""Bambinata doesn't remember what happened yesterday, but Bambinata remembers you."", 4: '1'}"
+44	43		301							{3: 'It is a light that you had never seen before in this dream. Something has transcended time.'}
+45	44		204							{1: '1', 2: '4'}
+46	45		301							"{2: 'Bambinata', 3: ""Bambinata tried to recall yesterday through your name... But Bambinata couldn't remember anything."", 4: '1'}"
+47	46		301							{2: 'Bambinata', 3: 'But Bambinata remembered her diary, so Bambinata was able to find those records of you.', 4: '1'}
+48	47		301							{2: 'Bambinata', 3: 'Here it says that tomorrow... I mean, today, you will be visiting Bambinata. So Bambinata has been waiting here for you.', 4: '1'}
+49	48		301							"{3: ""Bambinata shows you the note you left for her yesterday. She has already bound it into yesterday's diary.""}"
+50	49		301							{3: 'Perhaps that is what promises are all about. They can transcend time and become a never-changing part of memories.'}
+51	50		302							"{2: ""Let's go."", 3: '51'}"
+52	51		204							{1: '1'}
+53	52		301							{2: 'Bambinata', 3: 'Yes, 【kuroname】.', 4: '1'}
+54	53		301							{3: 'Every day, Bambinata would start reading her diary again, starting from the first day in the past few days.'}
+55	54		301							{3: 'In other words, every day she would go through all the things she had gone through ever since the day you met her.'}
+56	55		301							{3: 'She does not filter the experiences though. Instead, she just remembers them all together, only for them to be forgotten again the next time.'}
+57	56		301							"{3: ""Which means things like Vanessa's sarcasm and the inspector's incident would all be revised by her every time.""}"
+58	57		301				AniZhuanchangBegin			{3: 'The advantage of keeping such meticulous records is probably that she can also remember those easily forgotten details for you.'}
+59	58		202			DialogDisable				{1: '1', 6: '1'}
+60	59		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory260.png'}
+61	60		201							{1: '1', 2: '500536'}
+62	61		301			DialogEnable				{1: '1', 2: 'Bambinata', 3: 'Dominik Memorial Park... Mistress brought Bambinata here before.', 4: '1'}
+63	62		301							{3: 'You have brought Bambinata to the park where Simon and you rested yesterday. Apart from here, you cannot think of any other place in Babylonia where you can enjoy a peaceful, relaxing moment.'}
+64	63		301							{3: 'The children are still playing here like they agreed yesterday. You can also see a couple enjoying a picnic on the bench with their child.'}
+65	64		204							{1: '1', 2: '4'}
+66	65		301							"{2: 'Bambinata', 3: ""Why would 【kuroname】 bring Bambinata here? Bambinata doesn't understand."", 4: '1'}"
+67	66		302							{2: 'No reason really.', 3: '67'}
+68	67		301							{3: 'There is no particular reason indeed. You just brought Bambinata here because you thought this was a comfortable place where you could relax.'}
+69	68		204							{1: '1', 2: '1'}
+70	69		301							{2: 'Bambinata', 3: 'Alright.', 4: '1'}
+71	70		301							{2: 'Bambinata', 3: 'I see. Bambinata will just stay around you.', 4: '1'}
+72	71		204							{1: '1'}
+73	72		301							"{3: ""Bambinata sits quietly with you, gazing at the crowd and the park's view together.""}"
+74	73		301							{3: 'Dominik Memorial Park uses a layout similar to that in the pre-Golden Age era. Apart from the monument, there are also many other places for people to relax and entertain, making the park a popular attraction for leisure purposes.'}
+75	74		301							"{3: 'Despite the ""memorial"" in the name, it is no different from ordinary parks. The Parliament knows clearly that Dominik himself would not be happy if the park were as solemn and dreary as a tomb.'}"
+76	75		301							"{3: 'The purpose of ""memorial"" is to help people continue their lives rather than to chain them to the weight of the past.'}"
+77	76		301							{3: 'It is a symbol to warn future generations, as well as a condensed aspiration that offers them a blessing.'}
+78	77		301							{3: 'The children probably see Bambinata as a friend who can play together with them, so they send out a little girl to invite.'}
+79	78		301							"{2: 'Nia', 3: ""How are you? I'm Nia. What is your name?""}"
+80	79		301							{2: 'Nia', 3: 'Hello? Um... Did you not hear me...?'}
+81	80		301							{3: 'Hearing no response at all, the girl begins to doubt if her previous greeting was appropriate. She hesitates, unsure if she should continue talking.'}
+82	81		301							{2: 'Bambinata', 3: 'Hello... What can Bambinata do for you?', 4: '1'}
+83	82		301							{3: 'Bambinata moves her eyes to the girl, who is also wearing a lovely dress just like herself.'}
+84	83		301							{2: 'Nia', 3: 'We are playing over there. Would you like to join us?'}
+85	84		204							{1: '1', 2: '1'}
+86	85		301							{2: 'Bambinata', 3: 'Play? Um...', 4: '1'}
+87	86		301							{3: 'Worried that she may make another mistake, Bambinata glances at you tentatively.'}
+88	87		302							"{2: ""It's up to you."", 3: '88'}"
+89	88		301							"{3: ""It was not really an answer, but Bambinata hesitated a little and rejected Nia's invite.""}"
+90	89		204							{1: '1', 2: '4'}
+91	90		301							"{2: 'Bambinata', 3: ""Thank you for your invitation, but Bambinata can't play with you..."", 4: '1'}"
+92	91		301							{2: 'Nia', 3: 'I see... Okay.'}
+93	92		301							{2: 'Nia', 3: 'But I still want to tell you that you are adorable! We all think you are.'}
+94	93		301							{2: 'Bambinata', 3: 'Adorable?', 4: '1'}
+95	94		301							{3: 'Nia gives Bambinata a brilliant smile, but she probably thinks you are the reason that Bambinata cannot play with them. She secretly pulls a lovely, funny face at you as she leaves.'}
+96	95		302							{2: '(Um... She probably misunderstood...)', 3: '96'}
+97	96		301							{2: 'Bambinata', 3: '【kuroname】, they said Bambinata was adorable...', 4: '1'}
+98	97		301							{2: 'Bambinata', 3: 'Is that a criticism?', 4: '1'}
+99	98		302							"{2: ""It's a compliment."", 3: '99'}"
+100	99		301							"{2: 'Bambinata', 3: ""Compliment? But Bambinata didn't do anything. Bambinata even turned her down. Why did she still compliment Bambinata?"", 4: '1'}"
+101	100		301							{3: 'Bambinata earnestly asks you. The children have gone away, only the balloons floating above the shrubs indicate they are still playing and chasing each other.'}
+102	101		302							{2: 'Why did you turn down their invitation?', 3: '102'}
+103	102		301							"{2: 'Bambinata', 3: ""Because... You didn't give Bambinata clear instructions that she could go."", 4: '1'}"
+104	103		301							{2: 'Bambinata', 3: 'Besides, Bambinata is a Construct... while they are humans.', 4: '1'}
+105	104		301							{3: 'If Bambinata were not converted into a Construct, would she grow up living a happy life like those children?'}
+106	105		301							{3: 'But you cannot make such an assumption as you do not know what past those blue eyes have been through.'}
+107	106		301							"{3: 'Time and history do not allow assumptions, but no one can resist the temptation of ""what-ifs.""'}"
+108	107		302							"{2: ""I'll be right back."", 3: '108'}"
+109	108		204							{1: '1', 2: '1'}
+110	109		301							{2: 'Bambinata', 3: 'Understood. Bambinata will wait here for you.', 4: '1'}
+111	110		301				AniZhuanchangBegin			{3: 'Bambinata nods and continues to sit on the bench, gazing into the distance.'}
+112	111		202			DialogDisable				{1: '1', 6: '1'}
+113	112		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory259.png'}
+114	113		301			DialogEnable				{3: 'Not far from the children, a robot is giving out free balloons to pedestrians. They probably got their balloons from this robot.'}
+115	114		201							{1: '1', 2: '500488'}
+116	115		301							{1: '1', 2: 'Balloon Robot', 3: 'Greetings. Free balloons for everybody! Would you like one?', 4: '1'}
+117	116		302							{2: 'Can I grab a few more?', 3: '117'}
+118	117		301							{2: 'Balloon Robot', 3: 'Of course. Be sure to play safely.', 4: '1'}
+119	118		301							"{3: 'The robot may have misunderstood ""a few more"" and gives you a massive bundle of balloons.'}"
+120	119		301							{2: 'Balloon Robot', 3: 'Be sure to play safely. Please share them with your friends.', 4: '1'}
+121	120		202							{1: '1', 6: '1'}
+122	121		301							{3: 'If Vanessa ever sees the Chief holding so many balloons, she would probably laugh at you for one whole year.'}
+123	122		301				AniZhuanchangBegin			{3: 'Even the children have also noticed you and followed curiously.'}
+124	123		502							{1: 'DialogDisable'}
+125	124		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory260.png'}
+126	125		301			DialogEnable				{3: 'When you return to Bambinata, they finally hide away and continue playing.'}
+127	126		201							{1: '1', 2: '500536', 3: '7'}
+128	127		301							{1: '1', 2: 'Bambinata', 3: 'Um, 【kuroname】? What are those...?', 4: '1'}
+129	128		302							{2: 'Balloons.', 3: '129'}
+130	129		204							{1: '1', 2: '4'}
+131	130		301							{2: 'Bambinata', 3: 'But why did you bring so many balloons...?', 4: '1'}
+132	131		302							{2: 'They are for you.', 3: '132'}
+133	132		204							{1: '1', 2: '7'}
+134	133		301							{2: 'Bambinata', 3: 'Why did you get them for Bambinata?', 4: '1'}
+135	134		301							"{2: 'Bambinata', 3: ""Bambinata never asked for them... Besides, you didn't give such an order..."", 4: '1'}"
+136	135		302							{2: 'I have never given you any orders, Bambinata.', 3: '136'}
+137	136		302							"{2: ""You don't need an order to remember me."", 3: '137'}"
+138	137		302							"{2: ""So you don't need an order to accept these balloons."", 3: '138'}"
+139	138		204							{1: '1', 2: '4'}
+140	139		301							{2: 'Bambinata', 3: 'What a strange logic...', 4: '1'}
+141	140		301							{2: 'Bambinata', 3: 'Do you... want Bambinata to take these balloons?', 4: '1'}
+142	141		302							"{2: ""No, it's whether you want to take these balloons or not."", 3: '142'}"
+143	142		301				AniZhuanchangBegin			{3: 'As a Construct, she is trapped in the cycle of forgetfulness. She has lost track of the pain in the past and no longer has hope for the future.'}
+144	143		202			DialogDisable			300.0	{1: '1', 6: '1'}
+145	144		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgCg/Cg3101_02.jpg'}
+146	145		301			DialogEnable				{3: 'But if she is freed from all those shackles, in that possible alternative world, she should be just like those children.'}
+147	146		301							"{2: 'Bambinata', 3: ""I don't know the purpose of these balloons... But they are very pretty.""}"
+148	147		301							{2: 'Bambinata', 3: 'Bambinata wonders how it feels to hold them in hand... Bambinata wants to have them.'}
+149	148		301							{3: 'A kid, holding a balloon.'}
+150	149		301							{3: 'The aqua-blue balloon is reflected in her eyes, like a dreamy, fragile illusion.'}
+151	150		301							{2: 'Bambinata', 3: 'Thank you... Master...'}
+152	151		301		1		AniZhuanchangBegin			{3: 'The girl whispers in the softest voice possible, but nobody hears her.'}

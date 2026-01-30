@@ -1,0 +1,21 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory12.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500021'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Liv', 3: ""Commandant, that's the end of today's battle mission."", 4: '1'}"
+5	5		302							"{2: ""Let's return to the base to deal with the other affairs."", 3: '6', 4: 'We could keep going to collect more materials.', 5: '7'}"
+6	6	8	301							{2: 'Liv', 3: 'You can leave the work at the base to me, Commandant.', 4: '1'}
+7	7		301							"{2: 'Liv', 3: ""We can leave collecting materials to the other Constructs. I don't think you have to do it yourself, Commandant."", 4: '1'}"
+8	8		301							"{2: 'Liv', 3: ""Not to mention, it's break time already."", 4: '1'}"
+9	9		301							"{2: 'Liv', 3: ""Although the sun's not setting anytime soon in the current season, you should still disconnect early to unwind in preparation for a good night's sleep."", 4: '1'}"
+10	10		302							"{2: ""I'm still very energized."", 3: '11', 4: ""It's uncomfortable for me to leave work unfinished."", 5: '12'}"
+11	11	13	301							"{2: 'Liv', 3: ""That's the adrenaline from the earlier fight talking, Commandant."", 4: '1'}"
+12	12		301							{2: 'Liv', 3: 'That feeling of uneasiness is an early sign of neurotic disorder, Commandant.', 4: '1'}
+13	13		301							"{2: 'Liv', 3: ""Commandant, I've been monitoring your connection and biological data, and it's always the most unstable at this time of day."", 4: '1'}"
+14	14		301							{2: 'Liv', 3: 'You must have proper rests to properly command us on the battlefield.', 4: '1'}
+15	15		301							{2: 'Liv', 3: 'So how about we disconnect now and take a break, okay?', 4: '1'}
+16	16		302							{2: '(Liv gives off an aura that prohibits you from saying no.)', 3: '17', 4: 'U-understood.', 5: '18'}
+17	17	19	301							"{2: 'Liv', 3: ""I'll take your silence as an affirmative."", 4: '1'}"
+18	18		301							"{2: 'Liv', 3: ""I'm glad you understand."", 4: '1'}"
+19	19		301							"{2: 'Liv', 3: ""I'll be preparing for tomorrow's connection at the base, then."", 4: '1'}"
+20	20		301		1		AniZhuanchangBegin			"{2: 'Liv', 3: ""I'll see you tomorrow, Commandant."", 4: '1'}"

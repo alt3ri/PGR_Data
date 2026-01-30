@@ -1,0 +1,24 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory171.png'}
+2	2		401							{1: '1', 2: '10'}
+3	3		301			DialogEnable				{2: 'Kamui', 3: 'Captain, look... On the sea!'}
+4	4		301							{2: 'Kamui', 3: 'So huge...!'}
+5	5		301				AniZhuanchangBegin			{2: 'Kamui', 3: 'What a gigantic ship!'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory148.png'}
+7	7		201							{1: '1', 2: '500155'}
+8	8		301			AniZhuanchangEnd				{1: '1', 2: 'Chrome', 3: 'I searched the database according to mechanoid type and retrieved data on the Musashi IX and the unknown mechanoids we encountered early.', 4: '1'}
+9	9		301							{2: 'Chrome', 3: 'Database entry, E20, only has a text file. All audio and imaging data is missing.', 4: '1'}
+10	10		301				AniZhuanchangBegin			{2: 'Chrome', 3: 'Musashi IX was a security robot model exported by the Kowloong Chamber of Commerce during the Golden Age. Whereas the unknown mechanoids we encountered were mechanical puppet performers of the Acrobatics Series made by the General Toys Company after it was acquired during the Golden Age.', 4: '1'}
+11	11		202							{1: '1', 6: '1'}
+12	12		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory171.png'}
+13	13		301			AniZhuanchangEnd				"{2: 'Chrome', 3: 'The keyword being... ""Kowloong Chamber of Commerce"".'}"
+14	14		301				AniZhuanchangBegin			{2: 'Chrome', 3: 'An Eastern merchant ship that only returns to port at night... The Nighter.'}
+15	15		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory148.png'}
+16	16		201							{1: '1', 2: '1081001'}
+17	17		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+18	18		301			AniZhuanchangEnd				"{1: '1', 2: 'Kamui', 3: ""I didn't quite understand it, but at least the target of our recon mission appeared. Right?!"", 4: '1'}"
+19	19		204							{1: '1', 2: '2'}
+20	20		301							"{2: 'Kamui', 3: ""Let's go, Captain!"", 4: '1'}"
+21	21		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+22	22		201							{1: '1', 2: '500155'}
+23	23		301		1		AniZhuanchangBegin			{1: '1', 2: 'Chrome', 3: 'Wait...', 4: '1'}

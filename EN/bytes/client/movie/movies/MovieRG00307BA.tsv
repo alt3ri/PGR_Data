@@ -1,0 +1,48 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory153.png'}
+2	2		401							{1: '1', 2: '102'}
+3	3		201							{1: '1', 2: '500180'}
+4	4		301			DialogEnable				"{1: '1', 3: ""After defeating the enemies, we quickly ran up the stairs and went through many battle scenes that didn't really match the background settings.""}"
+5	5		301							{1: '1', 2: 'Karenina', 3: 'These scenes have nothing to do with our main plot!', 4: '1'}
+6	1001		201							{1: '1', 2: '500176'}
+7	6		301							"{1: '1', 2: 'Camu', 3: ""I guess Celica only had access to these materials. We're lucky that we aren't stuck. When I watched Kamui play other games..."", 4: '1'}"
+8	1002		302							"{2: 'You are always talking about Kamui.', 3: '7', 4: ""Who's better at playing games, you or Kamui?"", 5: '8'}"
+9	7	9	301							{2: 'Camu', 3: 'Ahem... Not at all. I just happen to inherit all the game-related topics from his memory!', 4: '1'}
+10	8	9	301							"{2: 'Camu', 3: ""Isn't it obvious? I will never lose to that fool in anything."", 4: '1'}"
+11	9		301				AniZhuanchangBegin			{3: 'Eventually, we jumped across a staircase (broken for no reason) and arrived at a special room.'}
+12	1003		202							{1: '1'}
+13	1004		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory170.png'}
+14	1005		201							{1: '1', 2: '500142'}
+15	10		301			AniZhuanchangEnd				{1: '1', 2: '???', 3: 'I have been watching you since you approached the castle... You took a long time to get here, heroes.', 4: '1'}
+16	11		301							{3: 'Apart from some enemies that we previously encountered, there was one figure that gave a very different feel.'}
+17	1006		203							{1: '1', 2: '0.25', 3: '-400'}
+18	1007		201							{1: '2', 2: '500180', 4: '400'}
+19	12		301							"{1: '1', 2: 'Karenina', 3: ""Hey, you are the Demon General, aren't you?"", 4: '2'}"
+20	13		301							{3: 'Vera and Camu were ready to start fighting, but Karenina walked forward and triggered the dialogue.'}
+21	14		301							"{3: ""It wasn't because she liked to follow orders, but because she preferred to ask the enemies' names before beating them.""}"
+22	15		301							{3: 'Either way, the enemy would still be beaten up, but at least it felt better than straight-forward violence. '}
+23	16		301							{1: '1', 2: 'Zanzibaron', 3: 'Right. I am Demon General Zanzibaron.', 4: '1'}
+24	17		301							{3: 'Zanzibaron—I had no clue where that name came from—moved one step forward, dragging his gigantic body.'}
+25	18		301							"{1: '1', 2: 'Zanzibaron', 3: ""You must be the heroes in the revelation. I knew you were coming, but I didn't expect you to come so fast."", 4: '1'}"
+26	1008		302							"{2: 'What are ""heroes in the revelation""?', 3: '19', 4: 'Did you know we were coming since the beginning?', 5: '22'}"
+27	19	20	301							{2: 'Zanzibaron', 3: 'How can you be heroes but not know the legend of the revelation? How did you even get here?', 4: '1'}
+28	20	21	301							{2: 'Karenina', 3: 'Because we skipped the story.', 4: '2'}
+29	21	25	301							"{2: 'Zanzibaron', 3: ""In the Goddess' revelation, there would be heroes..."", 4: '1'}"
+30	22	23	301							{2: 'Zanzibaron', 3: 'Aye, we Demons rely on our perception to survive...', 4: '1'}
+31	23	24	301							"{2: 'Zanzibaron', 3: '""Survive""? You say it like you are on the brink of extinction.', 4: '1'}"
+32	24	25	301							{2: 'Zanzibaron', 3: 'Right, because...', 4: '1'}
+33	25		301							"{2: 'Karenina', 3: ""Stop. I wasn't interested in your story, and I will not listen to it. Learning your name is more than enough!"", 4: '2'}"
+34	1009		401							{1: '1', 2: '111'}
+35	1010		401							{1: '2', 2: '10007001'}
+36	26		301			PanelActor1Shake				{1: '1', 2: 'Zanzibaron', 3: '!?', 4: '1'}
+37	27		301							{3: 'Well, Karenina was only following her own rules. She forced to start the battle when Zanzibaron was still trying to explain the background settings.'}
+38	28		301							"{3: ""Fusion Dragon smashed on Zanzibaron's face like a giant club.""}"
+39	3000		202							{1: '1', 2: '2'}
+40	1011		201							{1: '1', 2: '500176', 4: '400'}
+41	1012		201							{1: '2', 2: '500181', 4: '-400'}
+42	29		301							{1: '1', 2: 'Vera', 3: 'Camu, are sneak attacks like that allowed in the game?', 4: '2'}
+43	30		301							"{2: 'Camu', 3: '""I don\'t see any problems. That looked like a compulsory battle to me. 【kuroname】, we are about to engage in multiple battles. I assume you will give orders, right?""', 4: '1'}"
+44	1013		302							"{2: ""I thought you didn't need me."", 3: '32', 4: 'Of course!', 5: '32'}"
+45	31	33	301							{2: 'Camu', 3: 'We can easily tackle the minions, but Boss fight can be very demanding. You do the thinking, we do the action.', 4: '1'}
+46	32	33	301							"{2: 'Camu', 3: ""Hmph, good to know. It's a Boss after all, we need all the available resources!"", 4: '1'}"
+47	33		301		1		AniZhuanchangBegin			"{2: 'Camu', 3: ""Let's do it then!"", 4: '1'}"

@@ -1,0 +1,269 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory967.png'}
+2	2		401							{1: '1', 2: '209'}
+3	3		301			DialogEnable				{3: 'Despite its battered, crumbling exterior, the inside of the abandoned apartment is surprisingly intact. Cracks run everywhere, but none of them go all the way through.'}
+4	4		301							{3: 'A warning sign made from concrete walls and boarded-up windows blocks every bit of light. Now that the interior lamps are broken, darkness is all that remains.'}
+5	5		301							{3: 'The flashlight is the only source of light, barely pushing back the shadows in a small circle around you.'}
+6	6		302							{2: '(Stay alert)', 3: '7', 4: '(Survey your surroundings)', 5: '7'}
+7	7		301							"{3: ""Maybe it's just your survival instincts kicking in, but you can't shake the feeling that something is about to jump out from the pitch-black void at any moment.""}"
+8	8		301							"{3: ""In the faint light, you see the floor is old and worn, with chairs and stools knocked over. Everything's scattered, but it's surprisingly not dirty.""}"
+9	9		201							{1: '1', 2: '500998'}
+10	10		301							{1: '1', 2: 'Teddy', 3: 'Hmm...', 4: '1', 18: '100005005'}
+11	11		301							"{2: 'Teddy', 3: ""Looks like someone's really into this."", 4: '1', 18: '100005006'}"
+12	12		302							{2: 'Are you talking about me?', 3: '13', 4: 'What?', 5: '13'}
+13	13		301							"{3: ""It's strange—you feel that, rather than noticing what's around it, Teddy is more wrapped up in you.""}"
+14	14		301							{2: 'Teddy', 3: 'Ahem...', 4: '1', 18: '100005007'}
+15	15		301							{3: 'A gentle cough interrupts your thoughts.'}
+16	16		301				DialogDisable			"{2: 'Teddy', 3: ""Anyway, we should listen closely to see if there's anything odd going on."", 4: '1', 18: '100005008'}"
+17	17		302							"{2: ""I really hope there isn't."", 3: '18', 4: 'Yeah.', 5: '18'}"
+18	18		401						3000.0	{1: '1', 2: '36'}
+19	19		401							{1: '2', 2: '4256'}
+20	20		401							{1: '2', 2: '2917'}
+21	21		301			DialogEnable				{3: '!'}
+22	22		302							{2: 'Do you hear that?', 3: '23', 4: 'There actually is a sound!', 5: '23'}
+23	23		301							"{2: 'Teddy', 3: ""It sounds like it's coming from upstairs."", 4: '1', 18: '100005009'}"
+24	24		301							"{3: ""Teddy says this and looks your way. Now, even if you try to refuse, she's definitely dragging you along...""}"
+25	25		302							"{2: ""Let's go."", 3: '26', 4: '(Nod in acknowledgment)', 5: '26'}"
+26	26		202							{1: '1'}
+27	27		301							{3: 'You follow the sound up to the fourth floor of the apartment, coming to a halt outside Room 404.'}
+28	28		301							{3: 'Those digits feel eerily appropriate for this place.'}
+29	29		302							{2: '(Press your ear against the door to listen)', 3: '30', 4: '(Push the door open and walk inside)', 5: '31'}
+30	30		301							{3: 'You press your ear to the door and confirm the odd noise is coming from within. Beyond that, everything is silent.'}
+31	31		401							{1: '2', 2: '895'}
+32	32		301				AniZhuanchangBegin			{3: 'You twist the doorknob and hear the lock click open. Sharing a quick look with Teddy, you ease the door open.'}
+33	33		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory454.jpg'}
+34	34		401							{1: '1', 2: '209'}
+35	35		301			AniZhuanchangEnd				"{3: ""Inside, there's no frantic commotion—only a minimalist room, with Constellia's light streaming in through the window.""}"
+36	36		301							{3: 'The bed and table are in full view, with nothing concealed. An iron wardrobe stands flush against the wall, and a faint noise hums from inside.'}
+37	37		302							{2: 'Anyone there?', 3: '38'}
+38	38		301							"{3: ""There's no reply—just that same trembling sound pulsing away.""}"
+39	39		201							{1: '1', 2: '500998'}
+40	40		301				DialogDisable			{1: '1', 2: 'Teddy', 3: 'Should we open it?', 4: '1', 18: '100005010'}
+41	41		202							{1: '1'}
+42	42		302							"{2: ""According to the previous report, it's supposed to be empty."", 3: '43'}"
+43	43		302							"{2: ""But we'd better check, just in case someone really is stuck in there..."", 3: '44'}"
+44	44		301			DialogEnable				"{3: ""You hook your fingers around the cabinet's groove and pull, but it barely budges.""}"
+45	45		302							{2: 'Is it jammed?', 3: '46'}
+46	46		401							{1: '2', 2: '4692'}
+47	47		301				DialogDisable			"{3: ""You push with both hands, the grating squeak making your teeth ache, as you barely force open a gap that's only slightly bigger than a fist.""}"
+48	48		302							{2: '(Shine the flashlight inside)', 3: '49'}
+49	49		302							{2: 'This is...?!', 3: '50'}
+50	50		301			DialogEnable				{3: 'You slip your arm through the narrow gap, feeling around for the item at the bottom, and finally pull it out.'}
+51	51		301							"{3: ""It's a terminal...""}"
+52	52		402							{1: '4256'}
+53	53		402							{1: '2917'}
+54	54		301							{3: 'You press the pause button, and the eerie noise instantly stops.'}
+55	55		301				DialogDisable			{3: 'The tension in your head loosens right away.'}
+56	56		302							"{2: ""See? Urban legends aren't worth believing."", 3: '57', 4: ""So it's just a prank, right?"", 5: '57'}"
+57	57		302							{2: 'Teddy, what do you...', 3: '59'}
+58	58		401							{1: '1', 2: '36'}
+59	59		301			DialogEnable				"{3: ""You turn around, and the room looks the same as ever, except there's no sign of Teddy.""}"
+60	60		302							"{2: ""Teddy? Come on out. Don't freak me out."", 3: '61', 4: 'Quit hiding—I see you!', 5: '61'}"
+61	61		301							"{3: ""There's nothing but silence.""}"
+62	62		302							{2: 'TEEEDDYYYY—', 3: '63', 4: '(Sweep the flashlight across the room)', 5: '64', 6: '(Check the hallway outside)', 7: '65'}
+63	63	66	301							{3: 'You shout for Teddy a few times, letting your voice echo through the open corridors. The sound quickly fades away, leaving nothing but silence behind.'}
+64	64	66	301							{3: 'The light scans every corner of the room, but it reveals nothing out of the ordinary.'}
+65	65		301							{3: 'The corridor is empty. The door is still ajar, exactly as you left it, so nobody has passed through it since.'}
+66	66		401							{1: '1', 2: '209'}
+67	67		301							{3: 'Has she really vanished?'}
+68	68		301							"{3: ""There are no Corrupted or Hetero-Creature in this abandoned apartment—no real threats at all. With Teddy's level of skill, almost nothing here can pose a danger to her.""}"
+69	69		301							{3: 'Even so, you still feel uneasy not knowing where Teddy is...'}
+70	70		301							"{3: ""You remember Teddy standing right beside you as you opened the wardrobe. It only took you about ten seconds from turning the knob to retrieving what's inside, but in that brief moment, she vanished...""}"
+71	71		301							{3: 'How did she vanish?'}
+72	72		301							{3: 'No, what really matters now is why she vanished.'}
+73	73		302							{2: 'Could it have something to do with me opening the wardrobe door?', 3: '74', 4: 'Is there actually something strange going on with this building?', 5: '74'}
+74	74		301							{3: 'But how is that even possible...?'}
+75	75		301							{3: 'Looking back at the terminal in your hand, it suddenly hits you—if the answer was this simple, the previous investigators would have definitely noticed it.'}
+76	76		301							"{3: ""Which means... it's probably a trap!""}"
+77	77		401							{1: '1', 2: '36'}
+78	78		401							{1: '2', 2: '971'}
+79	79		301							{3: 'Clang!'}
+80	80		301							{3: 'The door behind you, left half-open, suddenly slams shut.'}
+81	81		401							{1: '2', 2: '4256'}
+82	82		401							{1: '2', 2: '2917'}
+83	83		301							{3: 'Tap tap tap tap—'}
+84	84		301							{3: 'That eerie sound is back.'}
+85	85		301							"{3: ""But this time, it isn't coming from the device in your hand—it's coming from that metal wardrobe.""}"
+86	86		401							{1: '2', 2: '4692'}
+87	87		301							{3: 'The wardrobe door, which was stuck tight a moment ago, now swings outward with a sharp, creaking protest.'}
+88	88		301							{3: 'A shadow shaped like an arm is slowly stretching out from within.'}
+89	89		301				DialogDisable			{3: 'The terminal lights up on its own in your hand. Flickering moire patterns shimmer on the screen as line after line of gibberish floods the interface.'}
+90	90		401							{1: '2', 2: '4062'}
+91	91		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory876.jpg', 3: '0', 4: '1', 5: '0.25'}
+92	92		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory876.jpg'}
+93	93		304							{1: 'WARNING: Memory overflow at TE%06B3.009', 2: 'ffffffff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/BgStory876.jpg', 6: '1', 7: '1', 10: '1'}
+94	94		401							{1: '2', 2: '4062'}
+95	95		304							{1: '!FAULT@#009 - *Undefined_sequence D- 93%&', 2: 'ffffffff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/BgStory876.jpg', 6: '1', 7: '1', 10: '1'}
+96	96		401							{1: '2', 2: '4062'}
+97	97		304							{1: 'DY CRASH REPORT >> $Panic_overflow - log#58.331', 2: 'ffffffff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/BgStory876.jpg', 6: '1', 7: '1', 9: '1', 10: '1'}
+98	98		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory454.jpg', 3: '0', 4: '1', 5: '0.25'}
+99	99		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory454.jpg'}
+100	100		302							{2: 'TEDDY?', 3: '101'}
+101	101		301			DialogEnable				{3: 'The wardrobe door is swinging open, and the terminal keeps spitting out garbled code. You glance at the wardrobe, then at the device in your hand, shifting your focus back and forth.'}
+102	102		301							{3: 'Then you freeze in place.'}
+103	103		402							{1: '4256'}
+104	104		402							{1: '2917'}
+105	105		301							"{3: ""You're so absorbed in the wardrobe and the terminal that you only now realize there's something right behind you, inches away.""}"
+106	106		301							{2: '???', 3: 'Teddy—', 18: '100005011'}
+107	107		301							{3: 'A cold breeze grazes the back of your neck.'}
+108	108		301							{2: '???', 3: 'Over here!', 18: '100005012'}
+109	109		401							{1: '2', 2: '2624'}
+110	110		301			RImgBg1Shake				{3: 'A sudden voice echoes, making your heart lurch. You almost cry out as you leap back, arms raised in defense, ready for any surprise attack.'}
+111	111		402							{1: '2624'}
+112	112		301							{3: 'But the sound that follows is a familiar burst of laughter.'}
+113	113		401							{1: '1', 2: '205'}
+114	114		201							{1: '1', 2: '500998', 3: '1'}
+115	115		301							{1: '1', 2: 'Teddy', 3: 'Ahahaha...', 4: '1', 18: '100005013'}
+116	116		301							{3: 'The pink-haired Construct doubles over, clutching her stomach as she nearly sinks to the floor.'}
+117	117		301							{2: 'Teddy', 3: 'You just... ha... almost... launched yourself into the air... hahaha!', 4: '1', 18: '100005014'}
+118	118		202							{1: '1'}
+119	119		301							{3: 'Meanwhile, the wardrobe door opens smoothly, and a familiar mechanoid emerges.'}
+120	120		201							{1: '1', 2: '500488', 5: '-150', 6: '200'}
+121	121		301							{1: '1', 2: 'Kiske', 3: 'Success! Success! High five!', 4: '1', 18: '100005015'}
+122	122		302							"{2: '...?', 3: '123', 4: ""What's going on?"", 5: '123'}"
+123	123		202							{1: '1'}
+124	124		301				AniZhuanchangBegin			{3: 'With the startled you still staring in confusion, the Construct doubles over in laughter, and the mechanoid flails around in excitement. They lightly slap their palms together.'}
+125	125		401							{1: '1', 2: '36'}
+126	126		201							{1: '1', 2: '500488', 5: '-150', 6: '200'}
+127	127		401							{1: '1', 2: '204'}
+128	128		301			AniZhuanchangEnd				{1: '1', 2: 'Kiske', 3: 'Just like music and painting, urban legends are a distinctive form of art.', 4: '1', 18: '100005016'}
+129	129		301							"{2: 'Kiske', 3: ""So I'm going to be the ultimate urban-legend artist! This abandoned apartment is my masterpiece!"", 4: '1', 18: '100005017'}"
+130	130		301							{2: 'Kiske', 3: 'Woohoo! The great art maestro! The free-spirited crafter of urban legends!', 4: '1', 18: '100005018'}
+131	131		202							{1: '1'}
+132	132		301							"{3: ""You give up on prying anything out of Kiske, who's totally wrapped up in his own hype, and turn your gaze to Teddy, who's finally managed to stop laughing.""}"
+133	133		301							"{3: ""Even though she's holding it together now, the way her lips keep curving up tells you she's only a second away from cracking up again.""}"
+134	134		302							{2: 'Care to explain?', 3: '135'}
+135	135		201							{1: '1', 2: '500998', 3: '1'}
+136	136		301							{1: '1', 2: 'Teddy', 3: 'We charge for this, you know.', 4: '1', 18: '100005019'}
+137	137		302							{2: 'Put it on my tab.', 3: '138', 4: 'Come on, do it for me?', 5: '138'}
+138	138		301							{3: 'You point at Kiske, then indicate the apartment building underfoot.'}
+139	139		302							{2: 'Is this his... creation?', 3: '140'}
+140	140		301							"{2: 'Teddy', 3: 'Yeah, these awakened machines are definitely running malware again. First, they\'re Picasso wannabes, then vinyl hoarders, then garage band rejects—now they\'re all ""ooh, we\'re urban legend artists!""', 4: '1', 18: '100005020'}"
+141	141		301							"{2: 'Teddy', 3: 'Honestly, this whole ""urban legend artist"" business is just a fancy way to spook people with flashy tricks.', 4: '1', 18: '100005021'}"
+142	142		301							{2: 'Teddy', 3: 'Take this abandoned apartment, for example. They renovated it with hidden corridors and secret doors. Right here in this room, the hidden passage is inside the wardrobe...', 4: '1', 18: '100005022'}
+143	143		302							{2: 'Sorry to interrupt—where did you hide when you suddenly disappeared?', 3: '144', 4: '(Listen quietly)', 5: '146'}
+144	144		301							"{2: 'Teddy', 3: ""The most dangerous spot is actually the safest. I stay right behind you the entire time, and for a Construct like me, it's no big deal."", 4: '1', 18: '100005023'}"
+145	145		302							"{2: 'Seriously?', 3: '146', 4: ""Next time I'm in a situation like that, I'll make sure to turn around right away."", 5: '146'}"
+146	146		301							{2: 'Teddy', 3: 'After they finished designing hidden passages and secret doors, they went online and spread creepy stories that played out like a twisted game of hide-and-seek.', 4: '1', 18: '100005024'}
+147	147		301							{2: 'Teddy', 3: 'When someone comes to check, odd sounds start up in the room. The instant anyone gets close, they duck through the hidden door, leaving no sign they were ever there.', 4: '1', 18: '100005025'}
+148	148		301							{2: 'Teddy', 3: 'All the bizarre rumors in other areas follow this same pattern.', 4: '1', 18: '100005026'}
+149	149		204							{1: '1', 2: '8'}
+150	150		301							"{2: 'Teddy', 3: ""I can't help but envy how they get to spend their days doing absolutely nothing."", 4: '1', 18: '100005027'}"
+151	151		204							{1: '1', 2: '1'}
+152	152		302							{2: 'How did you know all this?', 3: '153', 4: 'Where did you pick up all this info?', 5: '153'}
+153	153		301							{2: 'Teddy', 3: 'I hired an assistant for the price of a cherry-flavored electrolyte drink, and she shared everything she uncovered with me.', 4: '1', 18: '100005028'}
+154	154		301							"{2: 'Teddy', 3: ""It's totally worth it—I really don't see why anyone would pass on such a deal."", 4: '1', 18: '100005029'}"
+155	155		302							{2: 'S-sorry...', 3: '156', 4: '...', 5: '156'}
+156	156		301				DialogDisable			{3: 'That being said, you are still really curious.'}
+157	157		302							{2: 'Babylonia has arranged multiple inspections, but they have never uncovered anything...', 3: '158'}
+158	158		302							{2: 'How did you actually track them down?', 3: '159'}
+159	159		301			DialogEnable				{2: 'Teddy', 3: 'Until now, every check has only focused on the abandoned apartment itself. Kiske and his team cover their tracks so thoroughly that they leave no trace behind.', 4: '1', 18: '100005030'}
+160	160		301							{2: 'Teddy', 3: 'But I took a different route. I dived into the network and tried to figure out where the rumors about the abandoned apartment first appeared.', 4: '1', 18: '100005031'}
+161	161		301							"{2: 'Teddy', 3: ""I was just giving it a shot at first, but it turned out they were so careless that I tracked down Kiske's account right away. Once I questioned him, everything came to light."", 4: '1', 18: '100005032'}"
+162	162		302							{2: 'Sounds like it was a breeze...', 3: '163'}
+163	163		203							{1: '1', 2: '0.25', 3: '400'}
+164	164		201							{1: '2', 2: '500488', 4: '-400', 5: '-150', 6: '200'}
+165	165		301							{1: '1', 2: 'Kiske', 3: 'Not at all, Gray Raven Commandant.', 4: '2', 18: '100005033'}
+166	166		301							"{3: 'Just then, Kiske, the one who keeps calling himself an ""urban-legend artist,"" runs over suddenly.'}"
+167	167		301							"{2: 'Kiske', 3: ""We're artists, and this abandoned apartment is our creation. Whether it's the physical world or cyberspace, we never let our guard down."", 4: '2', 18: '100005034'}"
+168	168		301							{2: 'Kiske', 3: 'Regarding our online presence, we installed multiple layers of anti-tracking measures. But this Construct lady cracked them all—she clearly went through quite a struggle to do it.', 4: '2', 18: '100005035'}
+169	169		204							{1: '1'}
+170	170		301							{2: 'Teddy', 3: 'You set up anti-tracking programs?', 4: '1', 18: '100005036'}
+171	171		301							{2: 'Teddy', 3: 'Sorry. They were so easy to bypass that I barely noticed.', 4: '1', 18: '100005037'}
+172	172		301							{2: 'Kiske', 3: 'E-even if our online security still needs work, our real-world defenses are rock-solid!', 4: '2', 18: '100005038'}
+173	173		301							{2: 'Kiske', 3: 'After all, you had already pinpointed me, but it still took you a full day to find me!', 4: '2', 18: '100005039'}
+174	174		302							"{2: 'Wait... did you just say ""a full day""?', 3: '175'}"
+175	175		301							"{2: 'Kiske', 3: ""Yes. That's why I was willing to tell her the truth. Part of me was afraid she would plant a virus in me, but I was also moved by her persistence."", 4: '2', 18: '100005040'}"
+176	176		301							"{3: ""From Teddy's laid-back tone, you assumed she locked onto Kiske in Babylonia, then landed and immediately found out the truth, all in one smooth, effortless move.""}"
+177	177		301							{3: 'But it turns out that after marking Kiske, she actually spent a whole day searching for him—burning through one of her rare, hard-won vacation days...'}
+178	178		301							{2: 'Kiske', 3: 'Ahem.', 4: '2', 18: '100005041'}
+179	179		202							{1: '1', 2: '2'}
+180	180		301							"{3: 'Catching Teddy\'s scowl—a silent ""Cut the monologue, genius""—Kiske bolts away from the scene, his retreat punctuated by a final, grandiose cry: ""Behold the Urban Legend Artist!""'}"
+181	181		201							{1: '1', 2: '500998', 3: '1'}
+182	182		301							{1: '1', 2: 'Teddy', 3: 'Honestly, Kiske and his crew mean no harm. They just want to spice up the vacation, never expecting to dump extra work onto SOME UNLUCKY PERSON.', 4: '1', 18: '100005042'}
+183	183		302							{2: 'When it comes to luck, no one really knows how things will turn out.', 3: '184', 4: 'Ha, yeah, right...', 5: '184'}
+184	184		204							{1: '1'}
+185	185		301							"{2: 'Teddy', 3: ""I've reported everything, and by dusk, Babylonia has sent an email to the staff on duty, setting them free."", 4: '1', 18: '100005043'}"
+186	186		302							"{2: ""Why didn't I get it?"", 3: '187'}"
+187	187		204							{1: '1', 2: '2'}
+188	188		301							{2: 'Teddy', 3: 'I specifically told them to skip you. Otherwise, everything would be out in the open, right?', 4: '1', 18: '100005044'}
+189	189		302							{2: 'Thank you...', 3: '190', 4: '...'}
+190	190		301							{2: 'Teddy', 3: '☆!', 4: '1', 18: '100005045'}
+191	191		202							{1: '1'}
+192	192		301							"{3: 'Teddy blinks and mouths, ""You\'re welcome.""'}"
+193	193		301							{3: 'She hums a cheerful tune as she pushes the window open, letting the sound of the waves fill the room.'}
+194	194		201							{1: '1', 2: '500998'}
+195	195		301							"{1: '1', 2: 'Teddy', 3: ""It's pretty close to the beach here, and you happen to be off-duty, too..."", 4: '1', 18: '100005046'}"
+196	196		301							{3: 'She turns around, giving you a soft smile.'}
+197	197		204							{1: '1', 2: '1'}
+198	198		301				AniZhuanchangBegin			{2: 'Teddy', 3: 'How about we step outside and catch some fresh air?', 4: '1', 18: '100005047'}
+199	199		202							{1: '1', 6: '1'}
+200	200		401							{1: '1', 2: '36'}
+201	201		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg', 3: '0', 4: '1', 5: '0.25'}
+202	202		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+203	203		401							{1: '1', 2: '295'}
+204	204		301			AniZhuanchangEnd				{3: 'You walk along the shore, your footprints forming two parallel trails in the sand behind.'}
+205	205		201							{1: '1', 2: '500998'}
+206	206		301							{1: '1', 2: 'Teddy', 3: 'Mm...', 4: '1', 18: '100005048'}
+207	207		202							{1: '1'}
+208	208		301							{3: 'Teddy stretches contentedly in the ocean breeze, feeling utterly relaxed.'}
+209	209		401							{1: '2', 2: '4381'}
+210	210		301							{3: 'Suddenly, half the distant sky lights up in a burst of color, painting dazzling scenes across the horizon.'}
+211	211		201							{1: '1', 2: '500998', 3: '1'}
+212	212		301							{1: '1', 2: 'Teddy', 3: 'Fireworks...', 4: '1', 18: '100005049'}
+213	213		301							"{2: 'Teddy', 3: ""Must be the concert's closing ceremony. It's putting on quite a show."", 4: '1', 18: '100005050'}"
+214	214		202							{1: '1'}
+215	215		301							{3: 'Teddy raises her head, looking up at the sky. The fireworks sparkle in her eyes, reflecting a rainbow of colors.'}
+216	216		402							{1: '4381'}
+217	217		302							{2: 'Teddy...', 3: '218'}
+218	218		201							{1: '1', 2: '500998'}
+219	219		301							{1: '1', 2: 'Teddy', 3: 'Hmm?', 4: '1', 18: '100005051'}
+220	220		302							"{2: ""You were looking forward to the concert, weren't you?"", 3: '221'}"
+221	221		301							{3: 'She turns to meet your eyes and then nods with a warm smile.'}
+222	222		204							{1: '1', 2: '1'}
+223	223		301							{2: 'Teddy', 3: 'Yeah, I was.', 4: '1', 18: '100005052'}
+224	224		301							"{2: 'Teddy', 3: ""It's not just the concert—the seaside villa, Sunset Rock, and the undersea boardwalk... Everything on my list was carefully chosen, and I was really excited about all of them."", 4: '1', 18: '100005053'}"
+225	225		204							{1: '1', 2: '8'}
+226	226		301							{2: 'Teddy', 3: 'But I ended up missing every single one and spent the whole day racing around Constellia, trying to figure out what was causing those weird noises late at night in that abandoned apartment.', 4: '1', 18: '100005054'}
+227	227		204							{1: '1', 2: '2'}
+228	228		301							"{2: 'Teddy', 3: ""And it was all because of you! So I was totally going to scare the living daylights out of you—otherwise, I'd never get a decent night's sleep."", 4: '1', 18: '100005055'}"
+229	229		302							"{2: ""Actually, I turned you down because I didn't want to ruin your vacation..."", 3: '230'}"
+230	230		204							{1: '1'}
+231	231		301							"{2: 'Teddy', 3: ""I know, and that's exactly what bothered me the most."", 4: '1', 18: '100005056'}"
+232	232		302							{2: 'Why?', 3: '233', 4: '...', 5: '233'}
+233	233		301							"{2: 'Teddy', 3: ""It's my vacation, so shouldn't I decide if it's ruined or not?"", 4: '1', 18: '100005057'}"
+234	234		301							"{2: 'Teddy', 3: ""Just look at me now: I'm missing the concert, not visiting a single attraction, and I'm basically using my vacation time to work..."", 4: '1', 18: '100005058'}"
+235	235		204							{1: '1', 2: '1'}
+236	236		301							"{2: 'Teddy', 3: ""But I'm not saying I'm unhappy today."", 4: '1', 18: '100005059'}"
+237	237		301							"{2: 'Teddy', 3: ""Although if I didn't manage to scare you—or if you were too dull about it—I'd probably end up upset."", 4: '1', 18: '100005060'}"
+238	238		302							"{2: 'What is that...?', 3: '239', 4: ""You're way too casual."", 5: '239'}"
+239	239		301							{2: 'Teddy', 3: 'And you still dare to talk back?', 4: '1', 18: '100005061'}
+240	240		301							{2: 'Teddy', 3: 'You know how much you owe me this time? Let me break it down for you.', 4: '1', 18: '100005062'}
+241	241		301							"{2: 'Teddy', 3: ""First, you used the data your assistant gathered outside her usual responsibilities, so now you owe extra—and I'm billing you at a new rate."", 4: '1', 18: '100005063'}"
+242	242		302							"{2: ""But my assistant hasn't even sent me the concert video yet..."", 3: '243', 4: 'Seriously?', 5: '243', 6: 'Alright.', 7: '243'}"
+243	243		301							{2: 'Teddy', 3: 'Second, you owe me a can of ice-cold drink.', 4: '1', 18: '100005064'}
+244	244		302							"{2: ""I let you enter the building earlier. Didn't it already cover that?"", 3: '245', 4: 'Sure.', 5: '245'}"
+245	245		301							{2: 'Teddy', 3: 'Third, I made it clear already when you asked for an explanation: I charge a fee for that.', 4: '1', 18: '100005065'}
+246	246		302							"{2: ""Isn't that just the same as the first point?"", 3: '247', 4: 'Okay.', 5: '247'}"
+247	247		301							"{2: 'Teddy', 3: ""Anyway, I'm adding all three together."", 4: '1', 18: '100005066'}"
+248	248		202							{1: '1', 6: '1'}
+249	249		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_35.jpg', 3: '0', 4: '1', 5: '3'}
+250	250		301							"{3: ""She doesn't give you a second to argue. With her hands tucked behind her back, she strides closer in a heartbeat, closing the gap between you.""}"
+251	251		301							"{3: ""In an instant, she's standing intimately close.""}"
+252	252		301							"{2: 'Teddy', 3: ""Commandant, you owe me so much already, so asking you to promise me just one thing isn't too much, is it?"", 18: '100005067'}"
+253	253		302							{2: 'And what is that?', 3: '254', 4: 'Naturally.', 5: '254'}
+254	254		301							"{2: 'Teddy', 3: ""From now on, if something like this happens again, you're not allowed to pull the same stunt you did today."", 18: '100005068'}"
+255	255		301							"{2: 'Teddy', 3: ""And don't even think about holding back because you're worried about inconveniencing me."", 18: '100005069'}"
+256	256		301							"{2: 'Teddy', 3: ""Don't worry. If I really hate doing something, I will turn it down without hesitation."", 18: '100005070'}"
+257	257		301							"{2: 'Teddy', 3: ""Anyway, that's the deal. I may say no, but you must come and ask for my help."", 18: '100005071'}"
+258	258		302							{2: 'Everything has to go your way, huh?', 3: '259'}
+259	259		301							"{2: 'Teddy', 3: ""What's wrong with that? This is your special treatment. Others would kill for it."", 18: '100005072'}"
+260	260		301							{3: 'The pink-haired Construct leans in, rising onto her tiptoes to whisper in your ear.'}
+261	261		301							{2: 'Teddy', 3: 'So go on, lean on me a little more, okay?', 18: '100005073'}
+262	262		301							"{3: ""Then, as if she's gauging your reaction, she steps back again.""}"
+263	263		301							"{2: 'Teddy', 3: ""After all, I'm the smarter one here, aren't I?"", 18: '100005074'}"
+264	264		302							{2: 'I promise.', 3: '265', 4: '(Nod)', 5: '265'}
+265	265		301							"{3: ""The pink-haired Construct walks across the waves toward the open sea. She turns around, and moonlight blends with the shoreline's glow, lighting up her annoying yet endearing smile.""}"
+266	266		301							"{2: 'Teddy', 3: ""It's a deal then. No backing out!"", 18: '100005075'}"
+267	267		301							{3: 'Annoying? Perhaps.'}
+268	268		301		1		AniZhuanchangBegin			{3: 'Endearing? Definitely.'}

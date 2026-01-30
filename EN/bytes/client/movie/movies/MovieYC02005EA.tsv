@@ -1,0 +1,142 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory381.png'}
+2	2		401							{1: '1', 2: '210'}
+3	3		401							{1: '2', 2: '1507'}
+4	4		301			DialogEnable				"{3: 'Roland hears the sound of rubbing mechanical joints. He knows the ""uninvited guests"" have also arrived.'}"
+5	5		201							{1: '1', 2: '500334'}
+6	6		301							{1: '1', 2: 'Roland', 3: '(I probably should leave... or maybe not?)', 4: '1'}
+7	7		301							{2: 'Roland?', 3: 'What? Do you still want to look at the Task Force guys up close?'}
+8	8		301							{2: 'Roland', 3: '(You got it.)', 4: '1'}
+9	9		301							{2: 'Roland', 3: '(They deserve some special treatment.)', 4: '1'}
+10	10		301							{2: 'Roland', 3: '...Whatever.', 4: '1'}
+11	11		202							{1: '1', 6: '1'}
+12	12		301				AniZhuanchangBegin			"{3: 'The previous occupants left some dynamite to blow up the building when there was a need. Roland puts the dynamite container at a place he deems ""appropriate,"" but has to hide away after hearing the rustling sound of someone stepping on grass.'}"
+13	13		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory376.png'}
+14	14		201			AniZhuanchangEnd			800.0	{1: '1', 2: '500336'}
+15	15		202							{1: '1', 6: '1'}
+16	16		201						800.0	{1: '1', 2: '500328'}
+17	17		202							{1: '1', 6: '1'}
+18	18		201						1000.0	{1: '1', 2: '500168'}
+19	19		202							{1: '1', 6: '1'}
+20	20		301			DialogEnable				{3: '—Soon, three Constructs appear in his vision.'}
+21	21		201							{1: '1', 2: '500334'}
+22	22		301							{1: '1', 2: 'Roland', 3: '(Cerberus...)', 4: '1'}
+23	23		301				AniZhuanchangBegin			{2: 'Roland', 3: '(They came later than I expected.)', 4: '1'}
+24	24		202							{1: '1', 6: '1'}
+25	25		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory175.png'}
+26	26		504							{1: '0.7'}
+27	27		201							{1: '1', 2: '500168', 3: '13', 4: '-450'}
+28	28		201							{1: '2', 2: '500008', 4: '450'}
+29	29		301			AniZhuanchangEnd				"{1: '1', 2: 'Roland', 3: ""I didn't expect you to find me. Honestly, I thought I only had to avoid the Strike Hawk."", 4: '2'}"
+30	30		301				AniZhuanchangBegin			{2: 'Roland', 3: 'That crazy battle style of yours... Perhaps you will be a better fit here than in Babylonia. Ever thought about contracting the Punishing virus?', 4: '2'}
+31	31		202							{1: '1', 2: '2', 6: '1'}
+32	32		504							{1: '0'}
+33	33		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory376.png'}
+34	34		201							{1: '1', 2: '500334'}
+35	35		301			AniZhuanchangEnd				"{1: '1', 2: 'Roland?', 3: ""You seem to have good impression on them. Why don't you invite them now?""}"
+36	36		301							"{2: 'Roland', 3: ""(I'm very keen, but I don't need them right now.)"", 4: '1'}"
+37	37		301							{2: 'Roland', 3: '(We have more important things to do.)', 4: '1'}
+38	38		301				AniZhuanchangBegin			"{3: 'After confirming the identity of his ""guests,"" Roland leaves the place.'}"
+39	39		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory382.png'}
+40	40		301			AniZhuanchangEnd				{2: 'Roland?', 3: 'Speaking of which... Why do you trust Lamia so much?'}
+41	41		301							"{2: 'Roland', 3: ""What can I do if I don't? Leave her alone, the worst she can do is to run. But if I force her to move with me when she has different thoughts in mind..."", 4: '1'}"
+42	42		301							"{3: 'The illusion makes an ""I knew it"" smile.'}"
+43	43		301							{2: 'Roland?', 3: 'Fine. You win this time.'}
+44	44		401							{1: '1', 2: '36'}
+45	45		301				AniZhuanchangBegin			{3: 'Roland stays a little longer to watch, then turns away.'}
+46	46		202							{1: '1', 6: '1'}
+47	47		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory381.png'}
+48	48		401							{1: '1', 2: '201'}
+49	49		301			AniZhuanchangEnd				{3: 'Lamia climbs onto a roof. She hears the never-ending gunshots, and begins to question herself.'}
+50	50		201							{1: '1', 2: '500165'}
+51	51		301							{1: '1', 2: 'Lamia', 3: '(What do I do now...?)', 4: '1'}
+52	52		301							{3: 'The idea of running away has somehow made its way back. Perhaps she still fears Roland.'}
+53	53		301							{3: 'But Lamia has a vague feeling that if she walks away from Roland one more time, they will never meet each other again.'}
+54	54		301							"{2: 'Lamia', 3: ""(Why? Isn't this what I want? Why would I feel a little pity to leave him?)"", 4: '1'}"
+55	55		301							"{3: 'Lamia starts to hesitate. She remembers ""the thing"" that keeps bothering her.'}"
+56	56		301							"{3: 'Leaving is of course the easier option. But if she can guide Roland to ""that place"" during his search for Luna...'}"
+57	57		301							"{3: 'Because he is Roland, so he can always get things done, whether it is for ""Miss Luna""... or, Lamia.'}"
+58	58		301							{3: 'Lamia purses her lips without realizing. Soon, she makes her decision.'}
+59	59		301							{2: 'Lamia', 3: '...I have to do this, eek...', 4: '1'}
+60	60		301							{3: 'She can run away anytime, but this is her only chance to get a powerful helper.'}
+61	61		301							{3: 'Lamia once tried to seek help from The Merciful One... And it did not end well.'}
+62	62		301							"{3: 'Roland may be her last chance of getting ""that thing"" done.'}"
+63	63		401							{1: '1', 2: '36'}
+64	64		301				AniZhuanchangBegin			{3: 'Lamia pulls her mind back from the surrounding forest, then leaps briskly into the town.'}
+65	65		202							{1: '1', 6: '1'}
+66	66		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory382.png'}
+67	67		401							{1: '1', 2: '207'}
+68	68		301			AniZhuanchangEnd				{3: 'Roland walks in the deserted town. The scenes make him... somewhat uncomfortable.'}
+69	69		301							{3: 'Retro-styled streets, houses made from stones, paved road surface with trails pressed by anti-slip plates on carriage wheels.'}
+70	70		301							{3: '—Roland feels uncomfortable.'}
+71	71		301							"{3: ""What if all these traces were only added half an hour ago by the props team? What if the Corrupted weren't infected by the Punishing Virus, but an AI mechanoid specifically designed for this scene?""}"
+72	72		301							{3: 'Roland just cannot stop thinking about these possibilities. Luna once made him believe in reality, but she is not here.'}
+73	73		201							{1: '1', 2: '500334'}
+74	74		301							"{1: '1', 2: 'Roland?', 3: ""You don't look very good.""}"
+75	75		301							{2: 'Roland', 3: 'Look at me, hermano. What do you see?', 4: '1'}
+76	76		301							{2: 'Roland', 3: 'A monster? A corpse? A weakling? A lost lamb?', 4: '1'}
+77	77		301							"{2: 'Roland?', 3: ""You're probably not going to like what I'm about to say.""}"
+78	78		301							"{2: 'Roland', 3: ""I didn't get you here to say things that I can accept with pleasure."", 4: '1'}"
+79	79		301							"{2: 'Roland', 3: 'Have ""I"" become so twisted that I must pretend in front of myself?', 4: '1'}"
+80	80		301							{2: 'Roland?', 3: 'What about you? Are you still going to act fragile and weak?'}
+81	81		301							{2: 'Roland', 3: 'Say it.', 4: '1'}
+82	82		301							"{2: 'Roland?', 3: ""Can't you live without finding yourself a master? Do you have to let others hand the answer to you, even when you can find the answer yourself?""}"
+83	83		301							"{2: 'Roland?', 3: 'You aren\'t that kind of person. At least you shouldn\'t be after leaving ""The Mandhasti Real Park.""'}"
+84	84		301							{2: 'Roland', 3: '...', 4: '1'}
+85	85		301							{2: 'Roland?', 3: 'You never change.'}
+86	86		301							{2: 'Roland?', 3: 'Always looking for a lighthouse, a thing that can support you to continue forward.'}
+87	87		301							{2: 'Roland?', 3: 'You are always seeking a purpose, but you never really think about it.'}
+88	88		301							{2: 'Roland?', 3: 'After all these years, you and I both know who you are. You are not that kind of person.'}
+89	89		301							{2: 'Roland?', 3: 'I suggest you... find a mirror, and take a good look at yourself.'}
+90	90		301							{2: 'Roland', 3: '...If we really can find one in this dull place.', 4: '1'}
+91	91		301							{2: 'Roland', 3: 'What will I see... in the mirror?', 4: '1'}
+92	92		301							{2: 'Roland?', 3: 'You guess.'}
+93	93		301							"{2: 'Roland', 3: ""...You take your time. I'm not in the mood for that."", 4: '1'}"
+94	94		202							{1: '1', 6: '1'}
+95	95		301							{3: 'Roland impales the remains of a Corrupted into the wall.'}
+96	96		301							"{3: ""Some electronic structures within the remains are pressed and squeezed together by Roland's thrust, causing the body to tremble again, probably due to short circuits.""}"
+97	97		301							"{3: 'But Roland had seen it too many times... in his brief ""previous life,"""" or in """"The Mandhasti Real Park.""'}"
+98	98		301							"{3: 'Exaggerated hits, carefully designed and trained poses, and twisted fake deaths that were purposely acted in front of the ""protagonist.""'}"
+99	99		301							"{3: 'They are still alive physically, or mechanically. They will show up in the next scene and may portray a different way of death, but the deaths of the ""characters"" they are playing have been decided.'}"
+100	100		301							{3: 'They are destined to die, so they cannot choose to live. The only option is to embrace a death that looks as real as a performance.'}
+101	101		301							"{3: ""The mechanoid remains stuck in the wall are truthful in their performances. Roland's eyelid keeps twitching.""}"
+102	102		301							"{3: ""This whole deja vu experience feels like a cycle of destiny. It's all too ****ing absurd.""}"
+103	103		301							"{3: ""Every swing of Roland's chain blade seems pointless.""}"
+104	104		301							"{3: ""They aren't going to stop for fear.""}"
+105	105		301							"{3: ""The death of their kin isn't going to make them any crazier.""}"
+106	106		301							"{3: ""It's all but a part of a meaningless cycle.""}"
+107	107		301							{3: 'This entire mess only leaves behind chaos. Even the victor will not feel like he has accomplished anything.'}
+108	108		301							{3: 'How absurd. Had my opponents ever felt this way?'}
+109	109		201							{1: '1', 2: '500334'}
+110	110		301							{1: '1', 2: 'Roland', 3: '(Hah... Why bother.)', 4: '1'}
+111	111		301							{3: 'Through the remains and ruins, he walks into the group of buildings.'}
+112	112		301							{2: 'Roland?', 3: 'You look a lot better now.'}
+113	113		301							{2: 'Roland', 3: '...We still have things to do.', 4: '1'}
+114	114		301							"{2: 'Roland?', 3: ""So, we're done here. What's next?""}"
+115	115		301							"{3: ""Roland doesn't answer his question, but looks at the streets ahead.""}"
+116	116		301							"{2: 'Roland', 3: ""I don't need to worry about that. Our opponent has already prepared the red carpet."", 4: '1'}"
+117	117		301							"{3: 'Roland looks into the distance. On a filthy wall, someone wrote ""Come this way"" with red paint.'}"
+118	118		301							{2: 'Roland?', 3: '...?'}
+119	119		301							{2: 'Roland', 3: 'Whoever wrote this, I have no idea what they were thinking. But at least I get the message.', 4: '1'}
+120	120		301							{2: 'Roland?', 3: 'Everything about it looks like a trap.'}
+121	121		301							{2: 'Roland', 3: '...Indeed.', 4: '1'}
+122	122		301							"{3: ""Roland knows an unknown trap awaits him, but he doesn't have a chance.""}"
+123	123		301				AniZhuanchangBegin			{3: 'He can only put himself at stake, betting for a one in a million chance.'}
+124	124		202							{1: '1', 6: '1'}
+125	125		401							{1: '1', 2: '203'}
+126	126		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory18.jpg'}
+127	127		201							{1: '1', 2: '500308'}
+128	128		301			AniZhuanchangEnd				{1: '1', 2: 'Cinderelik', 3: 'You have already missed two scheduled communications.', 4: '1'}
+129	129		301							{2: 'Voodoo', 3: 'My... memory control threshold... is within the expected value...'}
+130	130		301							"{2: 'Cinderelik', 3: ""...Doesn't sound like that to me."", 4: '1'}"
+131	131		301							{2: 'Voodoo', 3: 'No... Yeah! Very interesting! That girl has same M.I.N.D. fluctuation! Similar stability impairment! Interesting! Very interesting!'}
+132	132		204							{1: '1', 2: '8'}
+133	133		301							"{2: 'Cinderelik', 3: '...(Sighs) ""Loki.""', 4: '1'}"
+134	134		301							{2: 'Voodoo?', 3: 'Um...! Oh, Cinderelik? Mister sent you here! What a... rare sight!'}
+135	135		301							"{2: 'Voodoo', 3: ""I'm fighting for... control... Loki! Don't you ever... dream of... controlling me!""}"
+136	136		301							{2: 'Cinderelik', 3: '...', 4: '1'}
+137	137		301							{2: 'Loki', 3: 'Of course! Of course! Mission... mission! But... can we invite more guests?! Just to play together! Okay? Okay!'}
+138	138		204							{1: '1'}
+139	139		301							"{2: 'Cinderelik', 3: ""Just don't let it interfere with your top priority."", 4: '1'}"
+140	140		301							{3: 'Cinderelik turns off the comms and lets out a little sigh.'}
+141	141		301		1		AniZhuanchangBegin			"{2: 'Cinderelik', 3: ""Miss Voodoo and Miss Loki... If they can stay forever together like this... I'll be..."", 4: '1'}"

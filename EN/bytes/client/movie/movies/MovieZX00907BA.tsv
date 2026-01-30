@@ -1,0 +1,46 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory117.png'}
+2	1000		401							{1: '1', 2: '202'}
+3	2		201							{1: '1', 2: '1031001', 4: '-400'}
+4	3		201							{1: '2', 2: '1011001', 4: '400'}
+5	4		301			DialogEnable				{1: '1', 2: 'Lee', 3: 'We did it.', 4: '2'}
+6	5		301							{2: 'Lee', 3: 'All cabin lock status have been reconfigured to lock...', 4: '2'}
+7	6		301							{2: 'Lee', 3: 'But only 72% of compartments are online now.', 4: '2'}
+8	7		301							{2: 'Liv', 3: 'We still have no information... on the whereabouts of those troops expunged by the space station...', 4: '1'}
+9	8		301							{2: 'Lee', 3: 'Constructs can adapt to space. All the commandants participating in this mission also have dedicated space equipment.', 4: '2'}
+10	9		301							"{2: 'Lee', 3: ""The life-support system should last them until they're rescued."", 4: '2'}"
+11	10		301							{2: 'Lee', 3: 'But before that, they could only wander alone in space.', 4: '2'}
+12	11		301							{2: 'Liv', 3: '...', 4: '1'}
+13	12		302							{2: 'Thank goodness...', 3: '19', 4: 'We need to finish this mission ASAP.', 5: '19'}
+14	19		301				AniZhuanchangBegin			"{1: '1', 2: 'Liv', 3: ""Let's complete the mission as soon as possible, so we can contact Celica and get everybody home..."", 4: '1'}"
+15	20		202							{1: '1', 2: '2', 6: '1'}
+16	21		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory112.png'}
+17	22		201							{1: '1', 2: '1031001', 4: '-400'}
+18	23		201							{1: '2', 2: '1011001', 4: '400'}
+19	24		301			AniZhuanchangEnd				"{1: '1', 2: 'Lee', 3: ""I copied the space station's log data while waiting for the lock to activate."", 4: '2'}"
+20	25		301							"{2: 'Lee', 3: ""Given that the database was also contaminated, I don't know how much useful information we can find."", 4: '2'}"
+21	26		301							"{2: 'Lee', 3: ""I'll leave it to you to filter the data, Liv."", 4: '2'}"
+22	27		301							{2: 'Liv', 3: 'Of course.', 4: '1'}
+23	28		301							{2: 'Liv', 3: 'The log actually recorded how the space station arrived at this state...', 4: '1'}
+24	29		301							{2: 'Liv', 3: 'The station failed to stop Punishing Virus from invading its gravity core, which resulted in gravity disorder.', 4: '1'}
+25	30		301							{2: 'Liv', 3: 'It destroyed the structure and continued to attract nearby Punishing Virus...', 4: '1'}
+26	31		301							{2: 'Liv', 3: 'A high-density matter was created in the gravity core. It was formed by a large amount of Punishing Virus...', 4: '1'}
+27	32		301							{2: 'Liv', 3: 'According to the log, this process is called Heteromerization, and this high-density body is hence named Punishing Heteromer.', 4: '1'}
+28	33		301							{2: 'Liv', 3: 'The scary thing is, these Heteromers can gather and disperse at will while maintaining high coordination with one another.', 4: '1'}
+29	34		301							{2: 'Liv', 3: 'It was also recorded that a cross-shaped enemy would control nearby Heteromer particles to form various Corrupted that were seen on Earth.', 4: '1'}
+30	35		202							{1: '1', 2: '2', 6: '1'}
+31	36		201							{1: '1', 2: '1021001'}
+32	37		301							{1: '1', 2: 'Lucia', 3: 'Which means we have been fighting Punishing Virus itself...', 4: '1'}
+33	38		202							{1: '1', 6: '1'}
+34	39		301							{3: 'Lucia clenches her blade.'}
+35	40		201							{1: '1', 2: '500080'}
+36	41		301							{1: '1', 2: 'Watanabe', 3: '...This information is incredibly important to humanity.', 4: '1'}
+37	42		302							{2: 'The Punishing Virus evolved...', 3: '43', 4: 'We need to tell the world about this.', 5: '43'}
+38	43		202							{1: '1', 6: '1'}
+39	44		201							{1: '1', 2: '1031001', 4: '-400'}
+40	45		201							{1: '2', 2: '1011001', 4: '400'}
+41	46		301							{1: '1', 2: 'Lee', 3: 'Soon, we will have to face more than just information...', 4: '2'}
+42	47		301							{2: 'Liv', 3: 'All ally signals are moving toward the gravity device in the core.', 4: '1'}
+43	48		202							{1: '1', 2: '2', 6: '1'}
+44	49		201							{1: '1', 2: '1021001', 3: '4'}
+45	50		301		1		AniZhuanchangBegin			{1: '1', 2: 'Lucia', 3: 'We must not fall behind.', 4: '1'}

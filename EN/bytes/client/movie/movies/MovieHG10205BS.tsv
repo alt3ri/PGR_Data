@@ -1,0 +1,36 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500166'}
+4	4		301			DialogEnable				{1: '1', 2: 'Lucia', 3: '(Humming)', 4: '1'}
+5	5		301							{3: 'When you finally wake, you start at the sight of Lucia sitting in the corner of your quarters, calm as a lotus flower.'}
+6	6		301							"{2: 'Lucia', 3: ""Commandant, you're finally awake."", 4: '1'}"
+7	101		204							{1: '1', 2: '6'}
+8	7		301							{2: 'Lucia', 3: 'First... I must offer you my apologies.', 4: '1'}
+9	8		302							"{2: 'Why are you apologizing?', 3: '9', 4: ""It's okay."", 5: '10'}"
+10	9	11	301							"{2: 'Lucia', 3: 'For the... ""failed experiments"" I made you eat. I should have known that there was more to food than its appearance.', 4: '1'}"
+11	10	11	301							{2: 'Lucia', 3: 'Thank you, Commandant. I knew you would not hold it against me.', 4: '1'}
+12	11		301							"{2: 'Lucia', 3: ""Please don't take this the wrong way, but... watching you faint made me realize a great many things about myself."", 4: '1'}"
+13	12		301							{2: 'Lucia', 3: 'Not just the old me, but the new me, as well.', 4: '1'}
+14	102		302							{2: 'The new you?', 3: '13', 4: 'Have you processed all your memories?', 5: '14'}
+15	13	15	301							"{2: 'Lucia', 3: ""I had my doubts, but they won't be a problem anymore."", 4: '1'}"
+16	14	15	301							"{2: 'Lucia', 3: ""Not all of it, but the rest won't be a problem."", 4: '1'}"
+17	15		301							{2: 'Lucia', 3: 'A lot of people have been turning up, looking for you for various reasons, Commandant. But I sent them all away.', 4: '1'}
+18	103		302							"{2: 'Nothing important, I hope?', 3: '16', 4: ""Why didn't you wake me?"", 5: '17'}"
+19	16	18	301							{2: 'Lucia', 3: 'Some important, some less so. But I took care of them all promptly.', 4: '1'}
+20	17	18	301							{2: 'Lucia', 3: 'Because the exhaustion must be piling up for you, what with our recent missions and... incidents. I took the liberty of safeguarding your rest.', 4: '1'}
+21	18		301							{2: 'Lucia', 3: 'There are no missions scheduled today, so you can rest easy. I will take watch.', 4: '1'}
+22	104		302							"{2: 'Kind of hard to fall asleep with someone watching.', 3: '19', 4: ""Shouldn't you go get some rest too?"", 5: '20'}"
+23	19	21	301							"{2: 'Lucia', 3: ""Is that so... I can turn away—I guess that wouldn't help any."", 4: '1'}"
+24	20	21	301							{2: 'Lucia', 3: 'Taking watch is rest enough for me, Commandant.', 4: '1'}
+25	105		204							{1: '1', 2: '1'}
+26	21		301							"{2: 'Lucia', 3: ""What's with that expression...? We've been together like this for long, Commandant, even if I wasn't always privy to your condition..."", 4: '1'}"
+27	22		301							{2: 'Lucia', 3: 'According to the records, you were the one person whom I have been with the longest. I am simply adhering to my past behavior.', 4: '1'}
+28	23		301							{2: 'Lucia', 3: 'So... in short.', 4: '1'}
+29	106		204							{1: '1', 2: '6'}
+30	24		301							{2: 'Lucia', 3: 'I would like to share our time together, Commandant.', 4: '1'}
+31	107		302							"{2: 'Whoa...', 3: '25', 4: ""If that's what you'd like..."", 5: '25'}"
+32	25		301							"{2: 'Lucia', 3: ""No, please don't answer. I did not express my feelings to elicit a reply."", 4: '1'}"
+33	26		301							"{3: ""As she speaks, Lucia presents you with a paper crane. It's been carefully folded countless times, and you can faintly make out scribbles in between the creases.""}"
+34	27		301							"{3: 'From the scribbles, you make out a set of groundside coordinates, close to the new HQ you set up together, and these words: ""I hope that you\'ll be there, at the appointed time.""'}"
+35	28		301		1		AniZhuanchangBegin			"{2: 'Lucia', 3: ""Simply put... I'm asking you out on a date."", 4: '1'}"

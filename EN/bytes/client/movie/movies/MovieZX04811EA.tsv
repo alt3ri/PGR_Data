@@ -1,0 +1,119 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory678.jpg'}
+2	2		401							{1: '1', 2: '5039'}
+3	3		201							{1: '1', 2: '500005'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Mercenary 1', 3: ""Don't go! Stay away from those employees!"", 4: '1'}"
+5	5		202							{1: '1'}
+6	6		301							"{3: ""Just as everyone is about to leave, two mercenaries suddenly rush down the stairs from the other side, blocking the group's path.""}"
+7	7		201							{1: '1', 2: '500994'}
+8	8		301							"{1: '1', 2: 'Lucia', 3: ""The employees? What's wrong with them?"", 4: '1'}"
+9	9		201							{1: '1', 2: '500005'}
+10	10		301							"{1: '1', 2: 'Mercenary Staff', 3: ""What's wrong with them? Can't you see? Those butterflies and monsters never touch the employees—they're only targeting us!"", 4: '1'}"
+11	11		202							{1: '1'}
+12	12		301							{3: 'Upon hearing these words, those who were originally willing to cooperate stop in their tracks, distancing themselves from the employees.'}
+13	13		201							{1: '1', 2: '500956'}
+14	14		301							"{1: '1', 2: 'Dejected Employee C', 3: ""Aren't you the ones behind all of this?"", 4: '1'}"
+15	15		201							{1: '1', 2: '500005', 4: '400'}
+16	16		201							{1: '2', 2: '500005', 4: '-400'}
+17	17		301							{1: '1', 2: 'Mercenary 2', 3: 'Stop pinning the blame on us! Go ask that girl with you, the one always holding a paintbrush!', 4: '2'}
+18	18		301							"{2: 'Mercenary 2', 3: ""Anyone who crossed her got beaten up by that custom-made robot of hers. The injuries didn't look serious at first, but then they'd start feeling sick, and none of them lasted more than three days before dying."", 4: '2'}"
+19	19		301							"{2: 'Mercenary 3', 3: ""That can't be right... I've met that robot—she seemed nice enough. She even let me in on a secret, saying she was on the hunt for the mastermind behind these monsters. Didn't the girl mention any of that to you?"", 4: '1'}"
+20	20		202							{1: '1', 2: '2', 6: '1'}
+21	21		201							{1: '1', 2: '500994'}
+22	22		301							"{1: '1', 2: 'Lucia', 3: ""No, she didn't. Let's go ask her."", 4: '1'}"
+23	23		201							{1: '1', 2: '501008'}
+24	24		301							{1: '1', 2: 'Yuko Kirishima', 3: '...What do you want to know?', 4: '1'}
+25	25		301							{3: 'Yuko stands behind the crowd that has yet to evacuate, maintaining her usual listless demeanor.'}
+26	26		301							{3: 'Even in a direct conversation, her gaze stays locked on the shadows, vigilant for any red butterflies that may flutter into view.'}
+27	27		302							"{2: ""You've met Cradle before... right?"", 3: '28'}"
+28	28		301							{2: 'Yuko Kirishima', 3: '...', 4: '1'}
+29	29		302							"{2: ""Did she tell you... that we're the ones who trapped you here? That we're responsible for all of this?"", 3: '30'}"
+30	30		301							{2: 'Yuko Kirishima', 3: '...Yes, I did hear something like that.', 4: '1'}
+31	31		201							{1: '1', 2: '500937'}
+32	32		301							{1: '1', 2: 'Darcie', 3: 'Huh? When did you...', 4: '1'}
+33	33		201							{1: '1', 2: '500303', 3: '5'}
+34	34		301							"{1: '1', 2: 'Barley', 3: ""Do you have any ******* idea what we've been through here?! And you're trying to play innocent right off the bat?!"", 4: '1'}"
+35	35		401							{1: '2', 2: '8220025'}
+36	36		203							{1: '1', 2: '0.1', 5: '-200'}
+37	37		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+38	38		202							{1: '1'}
+39	39		301			RImgBg1Shake				"{3: ""The enraged youth swings his blood-stained fist at you, but before he can even register what's happening, his body is pinned firmly in a twisted manner to the ground.""}"
+40	40		201							{1: '1', 2: '500994'}
+41	41		301							"{1: '1', 2: 'Lucia', 3: ""Of course we know what you've been through! That's exactly why Commandant rushed here, risking personal health to save you!"", 4: '1'}"
+42	42		301							{2: 'Lucia', 3: 'Those Hetero-Creatures infested by the butterflies... do they look friendly to you? Cradle is intimidating you.', 4: '1'}
+43	43		201							{1: '1', 2: '500303', 3: '5'}
+44	44		301							"{1: '1', 2: 'Barley', 3: ""Aren't you doing the same thing now?"", 4: '1'}"
+45	45		201							{1: '1', 2: '500994'}
+46	46		301							"{1: '1', 2: 'Lucia', 3: ""That's because you attacked us first. If we truly meant harm, or if we really wanted to intimidate you into doing something..."", 4: '1'}"
+47	47		301							{3: 'Lucia tightens her grip, drawing a sharp cry of pain from the young man.'}
+48	48		301							"{2: 'Lucia', 3: ""Commandant doesn't even need to do anything. I can handle it right now, by myself."", 4: '1'}"
+49	49		201							{1: '1', 2: '500303', 3: '5'}
+50	50		301							{1: '1', 2: 'Barley', 3: 'You...!', 4: '1'}
+51	51		201							{1: '1', 2: '501008'}
+52	52		301							{1: '1', 2: 'Yuko Kirishima', 3: '...Let Barley go...', 4: '1'}
+53	53		301				AniZhuanchangBegin			"{2: 'Yuko Kirishima', 3: ""Please let him go... We'll listen to what you have to say."", 4: '1'}"
+54	54		202				DialogDisable			{1: '1', 6: '1'}
+55	55		401							{1: '1', 2: '36'}
+56	56		101					2000.0		{1: 'Assets/Product/Texture/Image/BgStory/BgStory920.jpg'}
+57	57		401							{1: '1', 2: '5041'}
+58	58		107			AniZhuanchangEnd			3000.0	{1: 'Inver-Hetero Tower Core Level'}
+59	59		108							{1: '1'}
+60	60		301			DialogEnable				{3: 'Chaos stands at a distance from the core, head bowed as Vonnegut implants minuscule Hetero crystals from his palm into the deteriorating parts of her body.'}
+61	61		201							{1: '1', 2: '500305', 3: '1', 4: '-400'}
+62	62		201							{1: '2', 2: '501033', 4: '400'}
+63	63		301							{1: '1', 2: 'Vonnegut', 3: 'These are just temporary fixes with some additional defensive measures to let you approach the core.', 4: '1'}
+64	64		301							{2: 'Vonnegut', 3: 'Under no circumstances should you engage Cradle once more in your current state.', 4: '1'}
+65	65		301							"{2: 'Chaos', 3: 'Is it possible? The ""fruit"" acts as a two-way connection, giving her control over me as well. Once I leave the Inver-Hetero Tower...', 4: '2'}"
+66	66		301							"{2: 'Vonnegut', 3: ""Then don't leave."", 4: '1'}"
+67	67		301							"{2: 'Chaos', 3: ""Cradle will be here soon. She's running out of time—she'll certainly try to seize the core while she can still move."", 4: '2'}"
+68	68		301							{2: 'Vonnegut', 3: 'Make your own survival the priority.', 4: '1'}
+69	69		301							{2: 'Chaos', 3: '...', 4: '2'}
+70	70		301							{2: 'Chaos', 3: 'And then what? Will you kill her?', 4: '2'}
+71	71		301							"{2: 'Vonnegut', 3: ""No. You're not ready yet to handle Agent Zero's authority and replace Cradle."", 4: '1'}"
+72	72		301							"{2: 'Chaos', 3: ""...Because my consciousness isn't..."", 4: '2'}"
+73	73		301							{2: 'Vonnegut', 3: '...', 4: '1'}
+74	74		202							{1: '1', 2: '2'}
+75	75		301							{3: 'He withdraws his hands and gazes at the core before him with emotionless eyes.'}
+76	76		201							{1: '1', 2: '500305', 3: '1', 4: '-400'}
+77	77		201							{1: '2', 2: '501033', 4: '400'}
+78	78		301							"{1: '1', 2: 'Vonnegut', 3: 'Do you know why I chose the abandoned and the clones to make the ""Key"", despite the risk of Chaos\' unstable consciousness?', 4: '1'}"
+79	79		301							{2: 'Chaos', 3: '...', 4: '2'}
+80	80		301							{2: 'Vonnegut', 3: 'Because Babylonia offers no place for such people.', 4: '1'}
+81	81		301							"{2: 'Vonnegut', 3: 'In my countless attempts to correct diverging timelines, I once used <color=#ff4e4eff>the original you</color>... Yet, neither side would relent. At those times, your primary goal would shift toward ""returning home"" rather than seeking the future.', 4: '1'}"
+82	82		301							{2: 'Vonnegut', 3: 'Naturally, you may harbor hatred towards me, towards Lithos... You could do the very same thing when you first entered the Inver-Hetero Tower...', 4: '1'}
+83	83		301							{2: 'Chaos', 3: 'Not anymore.', 4: '2'}
+84	84		301							{2: 'Chaos', 3: 'That would only waste what few chances I have left. Even if I were to kill you, it would have to wait until everything is over.', 4: '2'}
+85	85		301							{2: 'Vonnegut', 3: '...', 4: '1'}
+86	86		301							{2: 'Chaos', 3: 'Except...', 4: '2'}
+87	87		301							{3: 'Chaos clenches their fists, eyes burning with frustration.'}
+88	88		301							"{2: 'Chaos', 3: ""...Why do others have to sacrifice themselves to complete my consciousness? Why... why am I the only one who can't do it...!"", 4: '2'}"
+89	89		301							"{2: 'Vonnegut', 3: 'Creating the ""Key"" from human consciousness was never possible to begin with. Your very birth is a miracle itself.', 4: '1'}"
+90	90		301							"{2: 'Vonnegut', 3: '...After all, this isn\'t the future where the ""Key"" can be properly created—at best, we can merely generate a ""replica.""', 4: '1'}"
+91	91		301							"{2: 'Vonnegut', 3: 'The same applies to Agent Zero—until she reclaims the Hetero Tower core, she remains bound by both her current body and the ""Cradle"" personality.', 4: '1'}"
+92	92		301							"{2: 'Vonnegut', 3: ""And now... the fruit you've planted has become another of her constraints. All of this is buying us time."", 4: '1'}"
+93	93		301							{2: 'Vonnegut', 3: 'And time is exactly what we need.', 4: '1'}
+94	94		202							{1: '1', 2: '2'}
+95	95		301							"{3: ""Vonnegut reaches out his hand to measure Chaos' current height, met with nothing but her contemptuous glare.""}"
+96	96		201							{1: '1', 2: '500305', 3: '1', 4: '-400'}
+97	97		201							{1: '2', 2: '501033', 4: '400'}
+98	98		301							{1: '1', 2: 'Vonnegut', 3: 'To have grown this tall... considering all the instances of time rewind, it must have been about six or seven years by now.', 4: '1'}
+99	99		301							"{2: 'Vonnegut', 3: ""Once you undergo further completions and become capable of accepting Agent Zero's authority... your physical form will grow even larger."", 4: '1'}"
+100	100		301							{2: 'Chaos', 3: '...', 4: '2'}
+101	101		301							"{2: 'Vonnegut', 3: 'At that point, you would retain Agent Zero\'s authority while possessing enough consciousness stability to override ""her"" instincts that drive her to fulfill her predestined mission... That was my initial plan.', 4: '1'}"
+102	102		301							{2: 'Vonnegut', 3: 'Had Cradle not been persistently destroying the Inver-Hetero Tower, we would have had enough time.', 4: '1'}
+103	103		301							{2: 'Vonnegut', 3: 'But at least, you now have a way to keep her in check, preventing her from freely manipulating the Red Tide.', 4: '1'}
+104	104		301							{2: 'Vonnegut', 3: 'From here on, we can only place our hopes in Lucia and that commandant to complete you ahead of schedule.', 4: '1'}
+105	105		301							{2: 'Vonnegut', 3: 'I hope those two can discern the true adversary during their stay in Constellia.', 4: '1'}
+106	106		301							{2: 'Chaos', 3: '...', 4: '2'}
+107	107		301							{3: 'She yearns to speak her thoughts, to tear this agent before her into shreds, to avert the impending tragedy.'}
+108	108		301							{3: 'Yet she remains silent—she has witnessed the truth with her own eyes, personally confirmed the unchangeable reality.'}
+109	109		301							"{3: ""Though she cannot agree with all of Vonnegut's plans, right now, this thorn-laden tightrope represents the sole path to the future—one misstep would plunge all of humanity into the abyss.""}"
+110	110		301							"{2: 'Chaos', 3: '...Lucia\'s ""Key"" is nearly depleted. If Cradle destroys it again, she won\'t even be able to return safely to the Inver-Hetero Tower.', 4: '2'}"
+111	111		301							{2: 'Vonnegut', 3: '...', 4: '1'}
+112	112		301							{3: 'The ever-reserved agent offers no answer to Chaos.'}
+113	113		301							{2: 'Chaos', 3: 'Vonnegut.', 4: '2'}
+114	114		301							{3: 'The doll calls out his name, her voice like an echoing lament.'}
+115	115		301							"{2: 'Chaos', 3: ""...If things continue to go as Cradle wishes, if we can't find any way to turn this around..."", 4: '2'}"
+116	116		301							{2: 'Chaos', 3: 'Tell me... do you have any backup plans at all?', 4: '2'}
+117	117		301							{2: 'Vonnegut', 3: '...', 4: '1'}
+118	118		301		1		AniZhuanchangBegin			{2: 'Vonnegut', 3: 'No.', 4: '1'}

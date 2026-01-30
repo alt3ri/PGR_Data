@@ -1,0 +1,170 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory546.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				"{3: ""An endless stream of notifications is flooding the screen of Celica's terminal in rapid succession.""}"
+4	4		301							{3: 'But she has no time to process any of them.'}
+5	5		301							{3: 'The corridor outside the conference room is bustling with people. Celica weaves through the crowd and stops before an automatic door.'}
+6	6		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDoorOpen02.prefab', 2: '2'}
+7	7		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+8	8		301							{3: 'The sliding doors part silently. She takes a deep breath before stepping forward.'}
+9	9		104							{1: '0|0|-100', 2: '0.5'}
+10	10		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDoorOpen02.prefab'}
+11	11		201							{1: '1', 2: '500012'}
+12	12		301							"{1: '1', 2: 'Nikola', 3: ""What's the status of the comms array? Have we established contact with Gray Raven?"", 4: '1'}"
+13	13		301							{3: 'Celica offers a quick salute before opening a message on her terminal. Having cross-referenced the data in the summary report, she delivers a less-than-optimistic answer.'}
+14	14		203							{1: '1', 2: '0.25', 3: '-400'}
+15	15		201							{1: '2', 2: '500001', 4: '400'}
+16	16		301							"{1: '1', 2: 'Celica', 3: ""We've locked onto the source of the high-energy signal, and the observation satellites have confirmed the exact coordinates of Aerospace City."", 4: '2'}"
+17	17		301							{2: 'Celica', 3: 'However... severe electromagnetic interference, presumably from the charging reactor, continues to affect the city and its surrounding areas.', 4: '2'}
+18	18		301							"{2: 'Celica', 3: ""We're having difficulty pinpointing the beacon of 【kuroname】, making communication impossible for now. However, we've received a brief report from them, which has been encrypted and forwarded to everyone's terminals."", 4: '2'}"
+19	19		301							{2: 'Nikola', 3: 'Aerospace City... mechanoids... resistance...', 4: '1'}
+20	20		301							{3: 'Reduced to blood-red words, the brief mission report paints a picture of a snow-swept city at a distant outpost.'}
+21	21		301							{2: 'Nikola', 3: 'How far is the nearest Task Force squad from there?', 4: '1'}
+22	22		301							"{2: 'Celica', 3: ""According to reports from New Sophiasburgh, there are minefields on the outskirts of Aerospace City, and at least one-third of the city's defense facilities remain operational."", 4: '2'}"
+23	23		301							{2: 'Nikola', 3: '...', 4: '1'}
+24	24		202							{1: '1', 2: '2'}
+25	25		301				AniZhuanchangBegin			{3: 'The meeting room falls into silence.'}
+26	26		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory256.png'}
+27	27		301			AniZhuanchangEnd				{3: 'One hour earlier.'}
+28	28		301							{3: 'Unknown signal investigation in Aerospace City. Mission duration: <b>45:10:58</b>.'}
+29	29		301							{3: 'The sexagesimal digits cycle endlessly, the numbers on the leftmost side of the screen steadily climbing.'}
+30	30		301							"{3: ""Forty hours have passed since Gray Raven's last mission report.""}"
+31	31		201							{1: '1', 2: '500004', 4: '400'}
+32	32		201							{1: '2', 2: '500570', 4: '-400'}
+33	33		301							{1: '1', 2: 'Asimov', 3: 'Surface control has confirmed with the Forest Guard that Gray Raven split up with them in the forest surrounding Aerospace City.', 4: '1'}
+34	34		301							"{2: 'Asimov', 3: ""According to Rosetta's recollection, it should be around... this area."", 4: '1'}"
+35	35		301							{3: 'He traces a circle the size of a coaster on the ancient map shared by Kowloong, then gently taps its center.'}
+36	36		301							{2: 'Asimov', 3: 'According to the field report, there appears to be no significant threat aside from the minefields and minor Hetero-Creature activities.', 4: '1'}
+37	37		301							{2: 'Long', 3: 'So... can we deploy a Task Force squad to investigate?', 4: '2'}
+38	38		301							"{2: 'Asimov', 3: ""It's too risky. Aerospace City's defense systems are in the vicinity, and... we might provoke neighboring factions."", 4: '1'}"
+39	39		301							{2: 'Asimov', 3: 'Have we gotten anything from analyzing those abnormal high-powered radio waves directed at Babylonia?', 4: '1'}
+40	40		301							{2: 'Long', 3: 'Not yet. It appears to be some form of encrypted message, but...', 4: '2'}
+41	41		202							{1: '1', 2: '2'}
+42	42		301							{3: 'Just as Long is about to open another report, the display with the mission timer is suddenly flooded with crimson.'}
+43	43		301							"{3: ""The white dot marking Gray Raven's position vanishes from the digital map. Not far away, ominous ripples begin to spread from a dark red mass between the contour lines.""}"
+44	44		401							{1: '2', 2: '2782'}
+45	45		301							{2: 'System Alert', 3: 'Warning! Powerful reaction detected on ground level. Warning! Powerful reaction detected on ground level...'}
+46	46		201							{1: '1', 2: '500004', 4: '400'}
+47	47		201							{1: '2', 2: '500570', 3: '7', 4: '-400'}
+48	48		301							{1: '1', 2: 'Long', 3: '...?!', 4: '2'}
+49	49		204							{1: '1', 2: '7'}
+50	50		301							{2: 'Asimov', 3: 'This intensity... Is it a reactor meltdown?!', 4: '1'}
+51	51		202							{1: '1', 2: '2'}
+52	52		402							{1: '2782'}
+53	53		301							{3: 'Aerospace City is a metropolis built upon nuclear power, and its reactor is the only thing that can cause an anomaly of this magnitude within the mission area.'}
+54	54		301							"{3: ""Asimov's fingers dart across the screen, swiftly pinpointing the source of the reaction on the map.""}"
+55	55		301							{3: 'No one could have anticipated that Aerospace City would reveal its hidden coordinates in such a catastrophic way.'}
+56	56		201							{1: '1', 2: '500004', 4: '400'}
+57	57		201							{1: '2', 2: '500570', 4: '-400'}
+58	58		301							"{1: '1', 2: 'Long', 3: ""That's not right. The remote sensing satellites haven't detected any explosion, and the radiation levels in the area haven't changed..."", 4: '2'}"
+59	59		301							{3: 'The Kowloong researcher quickly shifts his focus to the data, dismissing what would have been the most intuitive conclusion.'}
+60	60		301							"{2: 'Asimov', 3: ""A Hetero-Creature outbreak? But viral activities couldn't have generated such massive energy instantaneously."", 4: '1'}"
+61	61		301							{2: 'Long', 3: 'Increasing ionization reactions... Obstructive interference...', 4: '2'}
+62	62		301							{3: 'That forest seems to be a bottomless void, ready to devour everything in its path.'}
+63	63		204							{1: '1', 2: '4'}
+64	64		301							{2: 'Long', 3: 'Could it be...', 4: '2'}
+65	65		301							{3: 'A complex mix of emotions crosses his face as he turns to Asimov, carefully enunciating each word of his question.'}
+66	66		301							{2: 'Long', 3: 'Asimov, have you heard of a top-secret research project that Kowloong conducted in Aerospace City during the Golden Age?', 4: '2'}
+67	67		301							"{2: 'Long', 3: ""That project's codename was..."", 4: '2'}"
+68	68		301				AniZhuanchangBegin			"{2: 'Long', 3: '""The bridge to heaven"".', 4: '2'}"
+69	69		401							{1: '1', 2: '36'}
+70	70		202							{1: '1', 2: '2'}
+71	71		101			DialogDisable			2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory427.jpg'}
+72	72		401							{1: '1', 2: '203'}
+73	73		107			AniZhuanchangEnd			2000.0	{1: 'Parliament Hall', 2: 'One hour and thirty minutes later'}
+74	74		108							{1: '1'}
+75	75		301			DialogEnable				"{3: ""The dome casts an ethereal blue light across the chamber. This hall, which has determined humanity's fate countless times, resembles more of a gladiatorial arena—even down to its architecture.""}"
+76	76		201							{1: '1', 2: '500004'}
+77	77		301							{1: '1', 2: 'Asimov', 3: 'I trust everyone has reviewed the mission briefing in the materials I sent in advance.', 4: '1'}
+78	78		301							"{2: 'Asimov', 3: ""Tsiolkovsky Aerospace City—a place I'm sure everyone present is quite familiar with."", 4: '1'}"
+79	79		301							{2: 'Asimov', 3: 'According to all available intelligence, Aerospace City has been occupied by mechanoids, and...', 4: '1'}
+80	80		301							{2: 'Asimov', 3: 'Ninety-seven minutes ago, we detected high-energy readings south of New Murmansk on the Kola Peninsula, and the energy signatures were consistent with a reactor charging for orbital operations.', 4: '1'}
+81	81		301							"{2: 'Asimov', 3: 'These energy readings originate from a top-secret aerospace project that should have been abandoned after the virus outbreak—the magnetic accelerator track ""Bifrost"".', 4: '1'}"
+82	82		301							{3: 'A brief wave of murmurs ripples through the hall before quickly being hushed into silence.'}
+83	83		301							"{2: 'Asimov', 3: 'In other words, ""Bifrost"" is charging up and preparing for activation.', 4: '1'}"
+84	84		201							{1: '1', 2: '500202', 4: '400'}
+85	85		201							{1: '2', 2: '500856', 4: '-400'}
+86	86		301							"{1: '1', 2: 'Councilor A', 3: '""Bifrost""? That\'s impossible...', 4: '1'}"
+87	87		301							{2: 'Councilor B', 3: 'Does it work on the same principle as a coilgun?', 4: '2'}
+88	88		301							{3: 'Although these council members may have non-military backgrounds, the battles Babylonia has faced thus far have made them acutely aware of potential threats.'}
+89	89		202							{1: '1', 2: '2', 6: '1'}
+90	90		201							{1: '1', 2: '500012'}
+91	91		301							"{1: '1', 2: 'Nikola', 3: ""As you can see, this is an attempt to enter Earth's orbit by an unknown force from the surface."", 4: '1'}"
+92	92		301							{2: 'Nikola', 3: 'Bifrost... If used properly, its mass driver could indeed be utilized to launch a direct strike against Babylonia.', 4: '1'}
+93	93		203							{1: '1', 2: '0.25', 3: '-400'}
+94	94		201							{1: '2', 2: '500202', 4: '400'}
+95	95		301							{1: '1', 2: 'Councilor A', 3: 'According to the report... Gray Raven is conducting reconnaissance in the vicinity?', 4: '2'}
+96	96		301							"{2: 'Nikola', 3: ""We've failed to establish stable communications with Gray Raven so far. This mission report is all we've received from their end."", 4: '1'}"
+97	97		201							{1: '2', 2: '500856', 4: '400'}
+98	98		301							{1: '1', 2: 'Councilor B', 3: 'If we attempt a direct strike on Aerospace City from Babylonia...', 4: '2'}
+99	99		301							{2: 'Nikola', 3: 'Destroying the accelerator track would solve our immediate crisis, but do you really want to burn down the most advanced experimental cold fusion reactor from before the outbreak?', 4: '1'}
+100	100		301							{2: 'Councilor B', 3: '...', 4: '2'}
+101	101		301							{2: 'Nikola', 3: 'Even though we have the capability to replicate such a reactor, where would we find the manpower and resources to construct it?', 4: '1'}
+102	102		201							{1: '2', 2: '500202', 4: '400'}
+103	103		301							{1: '1', 2: 'Councilor A', 3: 'Is it possible to attempt communication with those inside the city?', 4: '2'}
+104	104		202							{1: '1', 2: '2', 6: '1'}
+105	105		201							{1: '1', 2: '500004'}
+106	106		301							{1: '1', 2: 'Asimov', 3: '...Hold on.', 4: '1'}
+107	107		401							{1: '2', 2: '1099'}
+108	108		301							{3: 'Asimov receives a distinct alert on his terminal. Gesturing for silence, he opens the device and reviews the incoming data from the monitoring module.'}
+109	109		301							"{2: 'Asimov', 3: ""The electromagnetic waves have temporarily ceased. It seems Bifrost's energy accumulation is under intermittent operation, and the reactor is beginning its cooling cycle."", 4: '1'}"
+110	110		301							{2: 'Asimov', 3: 'We might be able to establish a brief communication window...', 4: '1'}
+111	111		301							{3: 'He connects his terminal to the holographic projector and opens the communication channel.'}
+112	112		301				AniZhuanchangBegin			"{3: ""The councilors' discussion quickly subsides as everyone's attention returns to the hologram at the center of the hall.""}"
+113	113		202							{1: '1'}
+114	114		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory944.jpg'}
+115	115		301			AniZhuanchangEnd				{3: 'While you rest, you make another attempt to contact Babylonia.'}
+116	116		301							{3: 'Your terminal is still picking up fragments of conversation, but they are just communications between the remaining resistance forces in the city and the sterile binary broadcasts from the mechanoids.'}
+117	117		301							{3: 'As for the colonial ship in orbit, Babylonia seems to be completely cut off by the electromagnetic interference field.'}
+118	118		201							{1: '1', 2: '1031001'}
+119	119		301							{1: '1', 2: 'Liv', 3: '...Commandant! The signal seems to be coming back!', 4: '1'}
+120	120		202							{1: '1'}
+121	121		301							{2: '???', 3: '...This is... Sci... cil...'}
+122	122		301							{2: '???', 3: 'Babylon... Do you copy?'}
+123	123		301							"{3: ""The final words suddenly cut through with perfect clarity—a young man's voice you know all too well.""}"
+124	124		302							{2: 'Is that you, Asimov?', 3: '125', 4: 'This is the Gray Raven Commandant.', 5: '128'}
+125	125		201							{1: '1', 2: '500004'}
+126	126		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+127	127	131	301							{1: '1', 2: 'Asimov', 3: 'Finally. The Parliament is holding an emergency session. Please report the situation at Aerospace City.', 4: '1'}
+128	128		201							{1: '1', 2: '500004'}
+129	129		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+130	130		301							{1: '1', 2: 'Asimov', 3: 'This is the Babylonia Parliament. We are currently holding an emergency session. Please report the situation at Aerospace City.', 4: '1'}
+131	131		301							{3: 'Bifrost has begun charging, and Babylonia has recognized the gravity of the situation. After establishing a stable connection on the secured channel, you briefly describe your encounters since you landed.'}
+132	132		302							{2: '...That concludes everything. Although the resistance forces are currently contained, new conflicts can erupt at any moment.', 3: '133'}
+133	133		301							{3: 'Asimov does not respond immediately. The channel is filled with what sounds like discussions in the Parliament, though their words are completely indiscernible.'}
+134	134		301							{3: 'While they need time to process this information, you also urgently require assistance.'}
+135	135		301							"{3: ""After a brief commotion, Asimov's voice comes through from the other end.""}"
+136	136		301							"{2: 'Asimov', 3: ""The military will attempt to dispatch a Task Force squad to your location. We're currently confirming with the surrounding forces."", 4: '1'}"
+137	137		302							"{2: ""We've formed a temporary alliance with Yulia's refugees. I'll continue negotiations with the resistance forces and hostile mechanoids to buy us time."", 3: '138'}"
+138	138		302							{2: 'And also...', 3: '139'}
+139	139		301							{2: 'Asimov', 3: 'Is there something else?', 4: '1'}
+140	140		302							"{2: 'An awakened mechanoid named Hanying is working with me. Her target is Veronica.', 3: '141', 4: ""Our allies include Hanying, an awakened machine. She's here to track down Veronica."", 5: '142'}"
+141	141	143	301							{2: 'Asimov', 3: 'Hanying? The Kowloong mechanoid that Gray Raven encountered during the Tabula Akasha incident?', 4: '1'}
+142	142		301							{2: 'Asimov', 3: 'That name is familiar... You mentioned her in your report after the Tabula Akasha battle.', 4: '1'}
+143	143		301							{2: 'Asimov', 3: 'Stay alert and be careful—', 4: '1'}
+144	144		202							{1: '1'}
+145	145		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+146	146		401							{1: '2', 2: '4419'}
+147	147		301							{3: 'Your communication is once again disrupted by electromagnetic interference.'}
+148	148		402							{1: '4419'}
+149	149		201							{1: '1', 2: '1031001'}
+150	150		301							{1: '1', 2: 'Liv', 3: 'Without a mechanoid as a guide, it will take the reinforcement some time to clear the minefield even if they take our route.', 4: '1'}
+151	151		302							"{2: ""We'll buy as much time as we can."", 3: '152', 4: ""We'll do our best."", 5: '152'}"
+152	152		301							{3: 'You must find a balance in this chaos that minimizes the casualties before it is too late.'}
+153	153		301				AniZhuanchangBegin			{3: 'As Dimitri said, this ravaged city cannot endure another all-out war.'}
+154	154		202			DialogDisable				{1: '1'}
+155	155		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory256.png'}
+156	156		107						2000.0	{1: 'Science Council'}
+157	157		108							{1: '1'}
+158	158		201							{1: '1', 2: '500570', 4: '-400'}
+159	159		201							{1: '2', 2: '500004', 4: '400'}
+160	160		301			DialogEnable				"{1: '1', 2: 'Long', 3: ""Bifrost... I've only heard stories about it."", 4: '1'}"
+161	161		301							{2: 'Long', 3: 'The ingenuity of humanity during the Golden Age is truly remarkable.', 4: '1'}
+162	162		301							{3: 'Such romantic and imaginative ideas could only have been transformed into magnificent structures during that era.'}
+163	163		301							"{2: 'Long', 3: ""Come to think of it, that was humanity's last hope, wasn't it?"", 4: '1'}"
+164	164		301							{2: 'Asimov', 3: '...', 4: '2'}
+165	165		202							{1: '1', 2: '2'}
+166	166		301							{3: 'Asimov remains silent as he gazes at Earth through the porthole.'}
+167	167		301							{3: 'Awakened machines keep entering Aerospace City... Perhaps that is more alarming than the hastily activated Bifrost.'}
+168	168		301							{3: 'What kind of upheaval is taking place on the surface...'}
+169	169		301		1		AniZhuanchangBegin			{3: 'At some point in time, everything seems to have been spiraling toward an uncontrollable abyss.'}

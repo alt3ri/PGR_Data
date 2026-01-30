@@ -1,0 +1,46 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	610		504							{1: '0.7', 2: '6'}
+2	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory320.png'}
+3	2		401							{1: '1', 2: '209'}
+4	3		201							{1: '1', 2: '500273'}
+5	4		301			DialogEnable				"{1: '1', 2: 'Wanshi', 3: ""Looks like we don't need to waste our time here."", 4: '1'}"
+6	5		301							{2: 'Wanshi', 3: 'The kid has already gone back.', 4: '1'}
+7	6		202							{1: '1', 6: '1'}
+8	600		401							{1: '2', 2: '855'}
+9	7		301							{2: '???', 3: '——▆——▃——▆▇'}
+10	8		301							"{3: 'You hear the ""whale song"" again.'}"
+11	9		301							"{3: ""Wanshi's face turns grim.""}"
+12	10		201							{1: '1', 2: '500273'}
+13	11		301							{1: '1', 2: 'Wanshi', 3: 'Want to turn back?', 4: '1'}
+14	12		302							{2: 'Of course not.', 3: '13'}
+15	13		302							"{2: ""If it's a river, there must be a source."", 3: '14', 4: ""If it's an organism, there must be a heart."", 5: '14'}"
+16	14		301							{2: 'Wanshi', 3: 'So before we reach the limit of our comms...', 4: '1'}
+17	15		302							{2: '(Contact Lee)', 3: '16'}
+18	16		301							"{2: 'Wanshi', 3: ""Phew... Looks like I don't have to remind you."", 4: '1'}"
+19	17		202							{1: '1', 6: '1'}
+20	18		201							{1: '1', 2: '500026'}
+21	19		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+22	20		301							"{1: '1', 3: ""Lee's hologram appears on the comms.""}"
+23	21		301							{3: 'He quickly glances at you and breathes a sigh of relief.'}
+24	22		301							"{2: 'Lee', 3: ""Looks like you're okay."", 4: '1'}"
+25	23		302							{2: '(Brief Lee on the situation)', 3: '24'}
+26	24		301							{2: 'Lee', 3: 'Searching for the source of the Red Tide? Got it...', 4: '1'}
+27	25		301							"{2: 'Lee', 3: ""I trust your judgment. I'll tell Lucia and Liv."", 4: '1'}"
+28	26		301							"{2: 'Lee', 3: ""I'm not sure how much time I can buy you. Come back ASAP before your protective device reaches its limit."", 4: '1'}"
+29	27		301							{2: 'Lee', 3: 'Hey, Strike Hawk.', 4: '1'}
+30	28		203							{1: '1', 2: '0.25', 3: '450'}
+31	29		201							{1: '2', 2: '500273', 4: '-450'}
+32	30		301							"{1: '1', 2: 'Wanshi', 3: ""Uh... What's up?"", 4: '2'}"
+33	31		301							{2: 'Lee', 3: 'Our commandant—', 4: '1'}
+34	32		301							{3: 'Wanshi cuts off Lee mid-sentence.'}
+35	33		301							{2: 'Wanshi', 3: 'Yeah, I got it.', 4: '2'}
+36	34		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+37	35		202							{1: '1', 2: '2'}
+38	36		301							{3: 'Transmission over.'}
+39	37		302							{2: 'So...', 3: '38'}
+40	38		201							{1: '1', 2: '500273'}
+41	39		301							"{1: '1', 2: 'Wanshi', 3: ""Let's go."", 4: '1'}"
+42	40		301							"{2: 'Wanshi', 3: ""Let's cross this area."", 4: '1'}"
+43	41		202							{1: '1', 6: '1'}
+44	42		401							{1: '2', 2: '1516'}
+45	43		301		1		AniZhuanchangBegin			"{3: ""Even if we don't know what awaits us there.""}"

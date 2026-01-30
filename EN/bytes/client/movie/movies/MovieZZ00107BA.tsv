@@ -1,0 +1,47 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory5.jpg'}
+2	2		401							{1: '1', 2: '29'}
+3	3		301			DialogEnable				{2: '-AI-', 3: 'Commandant, now randomly assigning Constructs to suppress the area—'}
+4	4		201							{1: '1', 2: '1041001', 3: '2'}
+5	100		401							{1: '4', 2: '105151'}
+6	5		301							{1: '1', 2: 'Storm', 3: 'The heavens call me, the earth calls me, humanity calls me!', 4: '1'}
+7	6		302							{2: 'Storm... Okay, who else?', 3: '7'}
+8	7		202							{1: '1'}
+9	8		301							"{3: 'The ""Virtual Horizon"" randomly displays three Constructs for you to choose from.'}"
+10	9		301							{2: '-AI-', 3: 'The second Construct is—'}
+11	10		201							{1: '1', 2: '1041001', 3: '2'}
+12	101		401							{1: '4', 2: '105151'}
+13	11		301							{1: '1', 2: 'Storm', 3: 'The heavens call me, the earth calls me, humanity calls me!', 4: '1'}
+14	12		302							{2: 'Huh? Storm... again?', 3: '13'}
+15	13		202							{1: '1'}
+16	14		301							{2: '-AI-', 3: 'The third Construct is—'}
+17	15		201							{1: '1', 2: '1041001', 3: '2'}
+18	102		401							{1: '4', 2: '105151'}
+19	16		301							{1: '1', 2: 'Storm', 3: 'The heavens call me, the earth calls me, humanity calls me!', 4: '1'}
+20	17		302							{2: '...', 3: '18'}
+21	18		202							{1: '1'}
+22	19		301							{2: '-AI-', 3: 'Please select which Construct to add to your team.'}
+23	20		302							{2: 'Storm', 3: '21', 4: 'Storm', 5: '21', 6: 'Storm', 7: '21'}
+24	21		201							{1: '1', 2: '500004'}
+25	22		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+26	23		301							"{1: '1', 2: 'Asimov', 3: ""What's the matter? Something wrong with Storm?"", 4: '1'}"
+27	24		302							{2: 'Storm is already in my team...', 3: '25'}
+28	25		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+29	26		201							{1: '1', 2: '1041001', 3: '1', 4: '-400'}
+30	27		201							{1: '2', 2: '1041001', 3: '1', 4: '400'}
+31	28		301							"{1: '1', 2: 'Storm & Storm', 3: ""I'm the strongest!"", 4: '1', 5: '2'}"
+32	29		202							{1: '1', 2: '2', 6: '1'}
+33	30		201							{1: '1', 2: '500004'}
+34	31		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+35	32		301							"{1: '1', 2: 'Asimov', 3: ""Isn't that a good thing? Combining duplicate Constructs will enhance their combat effectiveness."", 4: '1'}"
+36	33		302							{2: 'Combining Constructs? How does it even work...?', 3: '34'}
+37	34		301				DialogDisable			"{2: 'Asimov', 3: ""I'm not sure either, but it probably means that further researching a Construct will increase their strength..."", 4: '1'}"
+38	35		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+39	36		201							{1: '1', 2: '1041001', 3: '2', 4: '-400'}
+40	37		201							{1: '2', 2: '1041001', 3: '2', 4: '400'}
+41	38		203					2000.0		{1: '1', 2: '0.25'}
+42	39		203							{1: '2', 2: '0.25'}
+43	40		501					250.0		{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+44	41		301			DialogEnable				{1: '1', 2: 'Storm', 3: 'My hidden potential is being revealed!', 4: '1', 5: '2'}
+45	42		302							{2: 'Okay...', 3: '43'}
+46	43		202		1		AniZhuanchangBegin			{1: '1', 2: '2'}

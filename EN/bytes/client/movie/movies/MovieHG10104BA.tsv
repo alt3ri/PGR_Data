@@ -1,0 +1,21 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '205'}
+3	3		201							{1: '1', 2: '1081001', 3: '2'}
+4	4		301			DialogEnable				{1: '1', 2: 'Kamui', 3: 'Yo! Commandant, what are you doing here sneaking around?', 4: '1'}
+5	5		302							{2: 'Shh—', 3: '6', 4: 'Quiet.', 5: '6'}
+6	6		204							{1: '1', 2: '1'}
+7	7		301							"{2: 'Kamui', 3: ""Wow... I thought you were spying on something top secret but what's so interesting about Lee? Just go in and say hi... Hi! Lee!!"", 4: '1'}"
+8	8		203							{1: '1', 2: '0.25', 3: '-400'}
+9	9		201							{1: '2', 2: '1011001', 4: '400'}
+10	10		301							{1: '1', 2: 'Kamui', 3: 'You were busy with something and I saw Commandant here peeking for a while now.', 4: '1'}
+11	11		301							{2: 'Lee', 3: 'Commandant, care to explain why you were loitering outside my room?', 4: '2'}
+12	12		302							"{2: ""I didn't want to disturb you."", 3: '13', 4: 'I was just passing by.', 5: '13'}"
+13	13		301							"{2: 'Lee', 3: ""...Just let me know next time, I wouldn't bar you from entering."", 4: '2'}"
+14	14		301							{2: 'Kamui', 3: 'See, I told you to just go and say hi!', 4: '1'}
+15	15		301							"{2: 'Kamui', 3: ""But I'm curious about what you were doing too."", 4: '1'}"
+16	16		301							"{2: 'Lee', 3: ""...It's none of your business."", 4: '2'}"
+17	17		301							"{2: 'Lee', 3: ""Don't you two have a mission to do or something other than spying on me?"", 4: '2'}"
+18	18		302							{2: 'Checking up on your wellbeing is also my job.', 3: '19'}
+19	19		301							"{2: 'Lee', 3: ""...Look all you want, I'm quite sure you'll lose interest soon enough."", 4: '2'}"
+20	20		301		1		AniZhuanchangBegin			"{2: 'Kamui', 3: ""What about me? I'm interested even if Commandant isn't!"", 4: '1'}"

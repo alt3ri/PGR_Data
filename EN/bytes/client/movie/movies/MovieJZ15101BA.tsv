@@ -1,0 +1,110 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory13.jpg'}
+2	2		401							{1: '1', 2: '101'}
+3	3		201							{1: '1', 2: '500187'}
+4	4		301			DialogEnable				{1: '1', 2: '???', 3: 'If you want to live, you need to be calm in all situations and not let your rage consume you.', 4: '1'}
+5	5		202							{1: '1'}
+6	6		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '1'}
+7	7		401							{1: '2', 2: '10006001'}
+8	8		301							{3: 'The clanging of blades resound in the open space. Two warriors are in the middle of a duel.'}
+9	9		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab'}
+10	10		301							{3: 'They are both wielding greatswords and using similar maneuvers, but it is obvious that the older one is way more experienced.'}
+11	11		301							{3: 'So he keeps challenging the younger one with different moves. A thrust first, and then feinting and pulling back.'}
+12	12		401							{1: '2', 2: '1512'}
+13	13		301			RImgBg1Shake				{3: 'What looked like a kick turns into a downwards chop.'}
+14	14		201							{1: '1', 2: '500189'}
+15	15		301							"{1: '1', 2: '???', 3: ""Darn it, Master! You keep making conversation to distract me in the middle of the duel. That's so unfair!"", 4: '1'}"
+16	16		203							{1: '1', 2: '0.25', 3: '-400'}
+17	17		201							{1: '2', 2: '500187', 4: '400'}
+18	18		301							"{1: '1', 2: '???', 3: ""I'm just trying to teach you as much as possible in the shortest time, you know."", 4: '2'}"
+19	19		301							{3: 'The youth is named Camu, a civilian who is a little bit more capable than the average person. The mentor is named Mao Zhen, a Special Security personnel in Kurono.'}
+20	20		301							{2: 'Camu', 3: 'Tch, what a headache!', 4: '1'}
+21	21		401							{1: '2', 2: '10006001'}
+22	22		301			RImgBg1Shake				{3: 'Camu tosses his greatsword towards Mao Zhen and gets into his usual stance, hoping to grab his mentor and give him a good thrashing.'}
+23	23		301							"{2: 'Mao Zhen', 3: ""Also, haven't I told you not to talk in battle? You could get distracted."", 4: '2'}"
+24	24		301							"{3: ""Mao Zhen simply responds to Camu's rage by knocking the latter's weapon to the side with his own greatsword and bending down slightly.""}"
+25	25		202							{1: '2'}
+26	26		203							{1: '1', 2: '0.25', 3: '0'}
+27	27		301							{2: 'Camu', 3: 'Ugh, my sword—', 4: '1'}
+28	28		202							{1: '1'}
+29	29		201							{1: '1', 2: '500187'}
+30	30		401							{1: '2', 2: '10006001'}
+31	31		301							{2: 'Mao Zhen', 3: 'You lost.', 4: '1'}
+32	32		301							"{3: ""The hilt of the sword is pressed against Camu's stomach. He curls up in anguish and take a few steps back.""}"
+33	33		301			RImgBg1Shake				{3: '...And then he tumbles down to the ground after stepping on an empty tin.'}
+34	34		401							{1: '2', 2: '1506'}
+35	35		203							{1: '1', 2: '0.25', 3: '400'}
+36	36		201							{1: '2', 2: '500189', 4: '-400'}
+37	37		401							{1: '1', 2: '204'}
+38	38		301							{1: '1', 2: 'Camu', 3: 'Ow ow ow ow...', 4: '2'}
+39	39		301							"{2: 'Mao Zhen', 3: ""Come to think of it, you've been training here with me for at least half a year, huh?"", 4: '1', 6: '1'}"
+40	40		301							{2: 'Camu', 3: 'Hey, at least help me up, yeah?', 4: '2'}
+41	41		301							"{2: 'Mao Zhen', 3: ""My apprentices do not rely on others' help."", 4: '1'}"
+42	42		301							{2: 'Camu', 3: 'Eh... fine.', 4: '2'}
+43	43		301							{3: 'Camu bounces up from the ground and dusts himself off.'}
+44	44		301							"{2: 'Camu', 3: ""I'm not sure how long exactly I've been training here... Why bring it up now, though? You want me to work for Kurono's Special Security Department too?"", 4: '2'}"
+45	45		301							{2: 'Mao Zhen', 3: 'The Special Security Department is not for everyone, but I do believe Kurono is your best choice right now.', 4: '1'}
+46	46		301							{2: 'Camu', 3: 'For real? I can really work for Kurono?', 4: '2'}
+47	47		301							"{2: 'Mao Zhen', 3: ""There's an increasing number of Corrupted, and fewer and fewer livable areas. The people at Kurono believe it's time to strengthen their security."", 4: '1'}"
+48	48		301							{2: 'Camu', 3: 'Security? You mean a private military.', 4: '2'}
+49	49		301							{2: 'Mao Zhen', 3: 'Call it whatever you like. So? Will you starve to death on this block or become a Kurono soldier?', 4: '1'}
+50	50		301							"{2: 'Camu', 3: ""Did you really have to ask? I'll become a Kurono soldier, of course. And someday I'll climb higher than you."", 4: '2'}"
+51	51		301							"{2: 'Mao Zhen', 3: ""You sure have no shame. But if—Nah, no way that's happening."", 4: '1'}"
+52	52		301							{2: 'Camu', 3: 'Are you calling me weak now, Master?', 4: '2'}
+53	53		301							"{2: 'Mao Zhen', 3: ""Who knows? Anyway, I'll be leaving the city for a mission soon. You should report in at Kurono tomorrow. If we're both unlucky, we might meet again."", 4: '1'}"
+54	54		301				AniZhuanchangBegin			"{2: 'Camu', 3: ""If we're both unlucky?"", 4: '2'}"
+55	55		202							{1: '1', 2: '2'}
+56	56		401							{1: '1', 2: '209'}
+57	57		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory83.jpg'}
+58	58		301			AniZhuanchangEnd				{3: '—'}
+59	59		301							{3: 'Camu reports in at the Kurono headquarters the next morning. Several other youths from a similar background are also there.'}
+60	60		201							{1: '1', 2: '500137'}
+61	61		301							"{1: '1', 2: 'Instructor', 3: ""Thank you all for coming today. Some of you we've recruited, some of you recommended by our own."", 4: '1'}"
+62	62		301							"{2: 'Instructor', 3: ""You may come from different backgrounds, but we do not discriminate. Here, everyone's treated the same."", 4: '1'}"
+63	63		301							"{3: ""A tremor runs down Camu's spine. He notices several others in white lab coats stepping into the room behind the instructor.""}"
+64	64		301							{3: 'Some are wheeling in basic monitoring devices, some carrying surgery tools, and some holding metal suitcases embossed with the Kurono logo.'}
+65	65		301							"{3: 'Though the sight is unfamiliar, the youths present can all tell that the suitcase must hold what they call ""serums.""'}"
+66	66		301							"{3: ""It's the elixir that allows one to walk outside of a filtered city without being infected by the Punishing Virus.""}"
+67	67		301							"{2: 'Instructor', 3: ""Want to become a Kurono soldier? Simple. We'll inject the serum into you, and you'll be under observation in our building for one night."", 4: '1'}"
+68	68		301							"{2: 'Civilian A', 3: ""That's all? No need to go through tests or anything?""}"
+69	69		301							"{2: 'Instructor', 3: ""Our devices have already determined your physical capabilities when you passed through our gate. Those who didn't make the cut were already sent away."", 4: '1'}"
+70	70		301							"{3: 'The instructor\'s indifferent comment seems to have given all the youths present a confidence boost, as if they were all ""chosen ones"".'}"
+71	71		301							"{3: ""Something, however, hangs on Camu's mind.""}"
+72	72		202							{1: '1'}
+73	73		201							{1: '1', 2: '500189'}
+74	74		301							"{1: '1', 2: 'Camu', 3: ""Why do we have to be observed for a whole night? Doesn't the serum just make us immune to the Punishing Virus?"", 4: '1'}"
+75	75		301							{3: 'If they are testing the effects of the serum, should they not be let outside instead?'}
+76	76		203							{1: '1', 2: '0.25', 3: '400'}
+77	77		201							{1: '2', 2: '500137', 4: '-400'}
+78	78		301							"{1: '1', 2: 'Instructor', 3: ""Because it's a specially-modified serum. We don't know how many of you it will work on. This is a safety precaution."", 4: '2'}"
+79	79		202							{1: '1', 2: '2'}
+80	80		301							{3: 'While beset with questions, Camu decides to keep them to himself. Like the others, he figures that this will not be such a big deal.'}
+81	81		301							{3: 'As long as he becomes a Kurono soldier, he will be set for his whole life—unless he dies in battle, of course.'}
+82	82		301							{3: 'That is why so many others have gathered here.'}
+83	83		301				AniZhuanchangBegin			{3: 'After the brief Q&A session, the instructor moves discreetly out of the room. The prospective soldiers get their serums injected and are sent into the pre-arranged containment rooms to be observed.'}
+84	84		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+85	85		301			AniZhuanchangEnd				{3: 'The enclosed spaces are completely bare and unlit. In the darkness, Camu notices a security camera above his head.'}
+86	86		201			RImgBg1Shake				{1: '1', 2: '500189'}
+87	87		301							"{2: 'Camu', 3: ""So they'll be watching us all night, huh... What time is it anyway?"", 4: '1'}"
+88	88		301							{3: 'Camu had expected a long, boring period of waiting, but a strange sensation soon comes over the serum-injected spot.'}
+89	89		202							{1: '1'}
+90	90		401							{1: '2', 2: '1506'}
+91	91		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '1'}
+92	92		301							{3: 'It is as if his muscles and veins are expanding from the inside. The pressure against his nerves gives him so much pain that he topples to the ground the very next second.'}
+93	93		301							{3: 'As if on cue, shouts and wall-banging travel over from the other rooms.'}
+94	94		401							{1: '2', 2: '1512'}
+95	95		301							{2: 'Civilian A', 3: 'Let me out!'}
+96	96		301							{2: 'Civilian B', 3: 'Agh! Arrgh!'}
+97	97		301							"{2: 'Civilian C', 3: ""What's going on? Am I allergic? Doctor! Is there a doctor?""}"
+98	98		301							{3: 'Only a few were shouting at first, but after a while, it feels like everyone else out there is screaming for help.'}
+99	99		301							{3: 'But there is no response. Writhing in pain, all Camu can hear is the clicking of the security camera as it zooms in and out. He tries his best to calm himself down by focusing on the regular, mechanical whines.'}
+100	100		301							"{2: 'Camu', 3: ""Ugh... darn it, Master... What's going on?""}"
+101	101		301				AniZhuanchangBegin			{3: 'The effects finally overtake his senses. After wheezing for a short while, he faints.'}
+102	102		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+103	103		301			AniZhuanchangEnd				{3: '—'}
+104	104		301							{3: 'An indefinite number of hours later, Camu is awakened by a blinding light and forceful shaking.'}
+105	105		301							{2: 'Monitoring Personnel A', 3: 'Camu, status: alive and healthy.'}
+106	106		301							"{2: 'Monitoring Personnel B', 3: ""So this is the last one of the survivors, huh? There sure aren't a lot of them.""}"
+107	107		301							{3: 'Camu has no idea who the people talking in front of him are, nor what is going on.'}
+108	108		301							{3: 'But before he falls unconscious once more, he hears a certain word.'}
+109	109		301		1		AniZhuanchangBegin			{2: 'Monitoring Personnel A', 3: 'Pass.'}

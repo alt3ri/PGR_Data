@@ -1,0 +1,282 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory627.jpg'}
+2	2		401							{1: '1', 2: '280'}
+3	3		301			DialogEnable				"{3: ""The egg's<//CINDERELIK'S> consciousness is quickly dissipating.""}"
+4	4		301							"{3: 'Before long, ""she"" will be completely shattered and turn into a bunch of chaotic data that, just like all the normal Hetero-Creatures, is completely worthless.'}"
+5	5		201							{1: '2', 2: '500308', 7: '1'}
+6	6		205							{1: '2', 3: '0.5', 4: '0.5', 5: '0'}
+7	7		301							{1: '1', 3: 'Holding the dimming chunk of red in her arms, the mermaid slowly makes her way toward the exit of her dream, where the single-winged girl stands.'}
+8	8		301							{3: 'It seems that this illusion is the last obsession she harbors within the egg.'}
+9	9		301							{2: 'Cinderelik', 3: '...This is a long time coming...', 4: '2'}
+10	10		301							{3: 'The girl gazes at the illusory horizon as she whispers to the stars.'}
+11	11		301							"{2: 'Cinderelik', 3: ""I wanted to show Kana's father the true worth of Project Cthylla, and that it would have been a success anyway if he hadn't rushed things or decided to call it quits."", 4: '2'}"
+12	12		301							"{2: 'Cinderelik', 3: ""I've done so much..."", 4: '2'}"
+13	13		301							{2: 'Cinderelik', 3: 'Why... did he choose to end his life down the new path?', 4: '2'}
+14	14		202							{1: '2', 6: '1'}
+15	15		201							{1: '1', 2: '500740'}
+16	16		301							{1: '1', 2: 'Lamia', 3: '...', 4: '1'}
+17	17		202							{1: '1', 6: '1'}
+18	18		201							{1: '2', 2: '500308', 7: '1'}
+19	19		205							{1: '2', 3: '0.5', 4: '0.5', 5: '0'}
+20	20		301							"{1: '1', 2: 'Cinderelik', 3: ""What do I even have to show for everything I've done?"", 4: '2'}"
+21	21		301							"{2: 'Cinderelik', 3: ""I've got all these points but can't buy what I've always wanted to buy."", 4: '2'}"
+22	22		301							{3: 'Cinderelik tiptoes and reaches her hand into the faraway sky. She tries to grasp something in there, but flying is not something she can do with her single wing.'}
+23	23		301							{3: 'Had she listened to Kana and left the building back then, she probably would have ended up better off than she is now.'}
+24	24		301							"{3: ""And yet no one has shown her the world out there before she made her choice. The only light she had in her world was Mother and Kana, so it's only natural for her decision to have been influenced by them.""}"
+25	25		301							"{3: 'This, no matter how one cuts it, is a tragedy of utter boredom, coming to an end as abruptly as Project Cthylla—something that they called a ""pipe dream.""'}"
+26	26		301							{3: 'When the disappointed audience has all left, only one spectator climbs onto the stage and desperately cries out on behalf of the deceased.'}
+27	27		301							"{2: 'Cinderelik', 3: ""...Project Cthylla is worthwhile and didn't need to be abandoned..."", 4: '2'}"
+28	28		301							"{2: 'Cinderelik', 3: ""...So let's at least leave their traces behind..."", 4: '2'}"
+29	29		202							{1: '2', 6: '1'}
+30	30		201							{1: '1', 2: '500740'}
+31	31		301							{1: '1', 2: 'Lamia', 3: '...Alright...', 4: '1'}
+32	32		202							{1: '1', 6: '1'}
+33	33		201							{1: '2', 2: '500308', 7: '1'}
+34	34		205							{1: '2', 3: '0.5', 4: '0.5', 5: '0'}
+35	35		301							"{1: '1', 3: ""It took a certain spectator a few decades to finally get here—but here they are, finally holding those hands that can't reach the sky.""}"
+36	36		301				AniZhuanchangBegin			{2: 'Cinderelik', 3: '...Please allow me...', 4: '2'}
+37	37		202			DialogDisable				{1: '2', 6: '1'}
+38	38		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+39	39		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory601.jpg'}
+40	40		401							{1: '2', 2: '214'}
+41	41		401							{1: '2', 2: '2597'}
+42	42		201							{1: '1', 2: '500615'}
+43	43		301			DialogEnable				{1: '1', 2: 'Lilith', 3: 'Are you sure this will do? Starting over is going to be even more difficult now without Cthylla.', 4: '1'}
+44	44		203							{1: '1', 2: '0.25', 3: '-400'}
+45	45		201							{1: '2', 2: '500735', 4: '400'}
+46	46		301							"{1: '1', 2: '???', 3: ""Yes, this is what Vonnegut wants. We need to prioritize preserving the commandant's consciousness."", 4: '2'}"
+47	47		301							"{2: '???', 3: ""They tried to break Cthylla's shackles at the cost of their life... and it's a decision that deserves our respect."", 4: '2'}"
+48	48		301							"{2: 'Lilith', 3: ""Well, gotta say this is one hell of a loss we're suffering from."", 4: '1'}"
+49	49		301							"{2: 'Lilith', 3: ""A lot of plans need to start from scratch, and I'm sure this also means that certain gentleman no longer has the luxury of doing his research behind the scenes like he always has, no?"", 4: '1'}"
+50	50		301							{2: '???', 3: '...True.', 4: '2'}
+51	51		301							"{2: 'Lilith', 3: ""He said the Hetero Zone is about to expand, although he didn't say why he thought that."", 4: '1'}"
+52	52		301							"{2: 'Lilith', 3: ""But what can we do without Cthylla? We can't stop the expansion, and we can't convert them into our army anymore."", 4: '1'}"
+53	53		301							"{2: '???', 3: ""...Hmm... he asked me to come down here to lend y'all a hand the moment I woke up, so I know nothing about the specifics of these."", 4: '2'}"
+54	54		301							"{2: '???', 3: ""We should head back before Babylonia's people get here. We need to hatch the child as soon as we can since we don't have Cthylla around."", 4: '2'}"
+55	55		301							{3: 'The boy soothes the egg in his arms gently.'}
+56	56		301							{2: 'Lilith', 3: 'Alright, alright.', 4: '1'}
+57	57		301							"{2: 'Lilith', 3: ""By the way, I still owe you a proper greeting here, don't I?"", 4: '1'}"
+58	58		301							{2: 'Lilith', 3: 'Nice to meet you, Lithos.', 4: '1'}
+59	59		204							{1: '2', 2: '1'}
+60	60		301				AniZhuanchangBegin			{2: 'Lithos', 3: '...Pleasure is all mine, Lilith.', 4: '2'}
+61	61		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+62	62		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory785.jpg'}
+63	63		401							{1: '2', 2: '846106'}
+64	64		301			DialogEnable				"{3: ""The downpour is reminiscent of one's vomit, as much as it is of the tears that the dead didn't have the time to shed.""}"
+65	65		201							{1: '1', 2: '500740'}
+66	66		301							"{1: '1', 3: ""After the two Ascendants have left, Lamia waits in the rain for a long time before Babylonia's army hurries to the place they once stood.""}"
+67	67		301							"{3: 'Everything happened as the commandant had anticipated—""she"" would have been taken away by the Ascendants who came ready to do their job if the commandant failed to merge with Cthylla\'s consciousness.'}"
+68	68		301							{3: 'For the last time, the mermaid looks at the egg in her arms, hugs her tightly, then dives into the sea and swims toward the crowd.'}
+69	69		202							{1: '1', 6: '1'}
+70	70		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory391.jpg', 3: '0', 4: '1', 5: '1'}
+71	71		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+72	72		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory391.jpg'}
+73	73		301							{2: '???', 3: 'High concentration of the Punishing detected! We have an incoming Ascendant!'}
+74	74		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory785.jpg', 3: '0', 4: '1', 5: '1'}
+75	75		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+76	76		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory785.jpg'}
+77	77		301							{2: '???', 3: 'An Ascendant is coming this way! We need Elite Squad here now!'}
+78	78		301							"{3: 'An Ascendant, they said... which makes sense. Why would they address her as ""Lamia"" anyway?'}"
+79	79		301							{3: 'To them, an Ascendant is all that Lamia is.'}
+80	80		201							{1: '1', 2: '500740', 3: '19'}
+81	81		301							"{1: '1', 2: 'Lamia', 3: ""It's okay..."", 4: '1'}"
+82	82		301				AniZhuanchangBegin			"{3: ""She's mentally prepared for this.""}"
+83	83		401			DialogDisable			500.0	{1: '1', 2: '36'}
+84	84		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+85	85		202							{1: '1', 6: '1'}
+86	86		402							{1: '214'}
+87	87		402							{1: '2597'}
+88	88		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_13.jpg'}
+89	89		401							{1: '2', 2: '323'}
+90	90		401							{1: '2', 2: '214'}
+91	91		401							{1: '1', 2: '120'}
+92	92		301			DialogEnable				{3: 'Lamia raises her head—the same way she did in the cold rain on the day she set sail.'}
+93	93		401						1000.0	{1: '2', 2: '1504'}
+94	94		401						600.0	{1: '2', 2: '9326036'}
+95	95		401						200.0	{1: '2', 2: '2880'}
+96	96		401							{1: '2', 2: '2880'}
+97	97		301							{3: 'With all the laser sights trained at her in hostility, leaving her covered in countless red dots, everyone is on high alert waiting for her next move.'}
+98	98		301							{3: 'As the torrential downpour slaps against the water, she can feel the noise sounding through her heart.'}
+99	99		301							{3: 'They all stand silently as they wait for Elite Squad to arrive, none of them dares to lay a finger on this Ascendant that suddenly showed up out of nowhere.'}
+100	100		301							{3: 'So, she takes the initiative and speaks first.'}
+101	101		301							{2: 'Lamia', 3: 'I... uhh... just wanted to give these back to you guys...'}
+102	102		301							{3: 'She takes out two name tags and places them on the shore at their feet.'}
+103	103		301							{2: '???', 3: 'Did you... kill them?'}
+104	104		301							"{2: 'Lamia', 3: ""...N-no, I didn't...""}"
+105	105		301							{2: 'Lamia', 3: 'These name tags belong to Shorthalt and the Gray Raven Commandant...'}
+106	106		301							{2: '???', 3: 'Wait, did you really just say what I think you said?'}
+107	107		301							"{2: '???', 3: ""I don't know about Shorthalt, but the Gray Ravens are all alive and well!""}"
+108	108		301							{2: 'Lamia', 3: '...Are you sure...'}
+109	109		302							{2: 'My name tag?', 3: '110'}
+110	110		301							{3: 'Through a narrow gap comes a human in perfect condition, observing Lamia quietly.'}
+111	111		301							{2: 'Lamia', 3: '...Yes.'}
+112	112		301							"{3: ""They seem like a star—one that seems like one she's seen before, yet too far beyond her reach.""}"
+113	113		301							{3: 'She looks at this person—who stands in front of her now with every last inch of their skin intact and not a single droplet of blood dripping.'}
+114	114		301							{3: 'At this moment, she hopes the human could stay this way forever.'}
+115	115		302							{2: 'Why do you have this?', 3: '116'}
+116	116		301							"{3: ""Oblivious to what's going through Lamia's mind, the human picks up the name tags and begins scrutinizing them.""}"
+117	117		301							{2: 'Lamia', 3: '...'}
+118	118		301							"{3: ""Lamia isn't sure how to explain herself so people won't think she's lying.""}"
+119	119		301							"{3: ""Then, it hits Lamia that she's holding the ultimate trump card.""}"
+120	120		301							{2: 'Lamia', 3: '931206... Does that ring a bell?'}
+121	121		301							"{3: ""Lamia sees a subtle change on the human's face.""}"
+122	122		301							{2: 'Lamia', 3: 'You told me about this... well, another you, that is.'}
+123	123		301							{2: 'Lamia', 3: 'They told me that they had been abandoned... before they died right before me.'}
+124	124		302							{2: '...What?', 3: '125'}
+125	125		301							{3: 'Surrounded by people with weapons who are closing in on her, Lamia finds herself trembling like a plucked string.'}
+126	126		301							{2: 'Lamia', 3: 'Please give me a few moments to tell you everything.'}
+127	127		302							{2: 'Okay.', 3: '128'}
+128	128		301							{3: 'With it, the tense crowd takes half a step back, giving Lamia enough room to work up her courage to recount her journey.'}
+129	129		301							{3: 'She speaks of how she encountered wounded lost souls in the cradle slaughterhouse, how they planned to escape together—only to witness them sacrificing themselves one by one...'}
+130	130		301							"{3: '...How she lived through their regrets, their memories, and their final words... and how she accepted the last wish coming from the ""Gray Raven Commandant"".'}"
+131	131		301							{2: 'Lamia', 3: '...We figured out a way to reach the world outside. We established a connection with Babylonia but never got a response.'}
+132	132		302							{2: '...', 3: '133'}
+133	133		301							{3: 'The human before Lamia falls silent without raising any question.'}
+134	134		301							"{2: 'Lamia', 3: ""You know what I am talking about, don't you?""}"
+135	135		302							{2: 'Yes, Celica came to check on me as soon as she got my call.', 3: '136'}
+136	136		301							{2: 'Lamia', 3: 'And they took our call as some sort of prank because they already had you here?'}
+137	137		302							{2: '...', 3: '138', 4: '...Yes.', 5: '138'}
+138	138		301							{2: 'Lamia', 3: '...'}
+139	139		301							{2: 'Lamia', 3: 'Can I ask you a question?'}
+140	140		301							{3: 'She probably already knows the answer to the question... still, she wants to bring this up one last time before she gives everything away.'}
+141	141		301							"{2: 'Lamia', 3: ""Let's say you found yourself in a situation... where you could either save yourself if you waited for just a few dozen hours longer, or sacrifice yourself to save someone else.""}"
+142	142		301							"{2: 'Lamia', 3: ""Would you still, for a future that's not your own, sacrifice your own chance at life?""}"
+143	143		302							{2: 'I would.', 3: '144'}
+144	144		301							{2: 'Lamia', 3: '...Why?'}
+145	145		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+146	146		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2101_1.jpg'}
+147	147		301							{3: 'Lamia looks up as she questions the human, knowing that the human is no longer the person she knows them to be.'}
+148	148		301							"{2: 'Lamia', 3: ""You'd do that at the cost of your life? But what do you stand to gain from it?""}"
+149	149		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+150	150		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_13.jpg'}
+151	151		302							{2: '...What do we stand to gain from it?', 3: '152'}
+152	152		301							{2: 'Lamia', 3: '...Please tell me...'}
+153	153		502							{1: 'DialogDisable'}
+154	154		302							"{2: ""I can't give you a reason that's universal and impressive."", 3: '155'}"
+155	155		302							"{2: ""To me, it's not about what I stand to gain from it."", 3: '156'}"
+156	156		302							"{2: ""I'd do it because that's what I prefer to do."", 3: '157'}"
+157	157		302							"{2: 'Everyone sees different things in ""sparks.""', 3: '158'}"
+158	158		302							{2: 'And those things vary depending on what people see and know.', 3: '159'}
+159	159		302							"{2: 'For me, this ""spark"" is the people in my life who are still alive...', 3: '160'}"
+160	160		302							{2: '...So I want them to live longer than happier than myself.', 3: '161'}
+161	161		302							{2: 'And you, Lamia?', 3: '162'}
+162	162		301			DialogEnable				{3: 'The human says her name softly.'}
+163	163		302							{2: 'What is it that you came here for knowing that you might not be able to leave?', 3: '164'}
+164	164		401							{1: '2', 2: '846106'}
+165	166		301				AniZhuanchangBegin			{2: 'Lamia', 3: '...I came... to...', 18: '100002470'}
+166	168		502						500.0	{1: 'DialogDisable'}
+167	169		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_14.jpg'}
+168	170		301			DialogEnable				{3: 'The lone mermaid holds up the dead egg in her arms, making herself completely vulnerable.'}
+169	171		301							{2: 'Lamia', 3: 'I came to fulfill my wish, in the most perfect way possible.', 18: '100002471'}
+170	172		301							{3: 'Lamia answers firmly.'}
+171	173		301							{3: 'She looks these people in the eye, knowing full well that she will have to part ways with mankind the moment she hands over the egg.'}
+172	174		302							"{2: ""...Are the people here part of this wish that you're talking about?"", 3: '175'}"
+173	175		301							{2: 'Lamia', 3: 'Yes.', 18: '100002472'}
+174	176		301							"{2: 'Lamia', 3: 'So please take ""her"" with you.', 18: '100002473'}"
+175	177		301							"{2: 'Lamia', 3: 'This is ""her"" wish, as much as it is a request from both me and ""you.""', 18: '100002474'}"
+176	178		301							"{2: 'Lamia', 3: 'Just... be careful. You don\'t want to touch ""her"" because, to you people, she\'s still a Hetero-Creature.', 18: '100002475'}"
+177	179		301							"{3: ""She's no stranger to what Hetero-Creatures are capable of, and the last thing she wants is to see the tragedy repeat itself.""}"
+178	180		302							{2: 'Okay.', 3: '181', 4: '(Nod to the people beside you)', 5: '181'}
+179	181		301							"{3: ""A few seconds later, Lamia sees an isolation case passed into the commandant's hands.""}"
+180	182		301							{2: 'Lamia', 3: '...'}
+181	183		301							"{3: ""Seeing the commandant come close this way with the isolation case and the rest of them exchange knowing looks, she knows that they're ready to capture her.""}"
+182	184		301							"{3: ""And that's when it hits her that, even after everything she has done, the humans still don't see her as an equal.""}"
+183	185		302							{2: '(Open the isolation case and bring it up to Lamia)', 3: '186'}
+184	186		301							{3: 'She can hear the deafening warning bell coming from inside of herself.'}
+185	187		301							{3: 'And, as soon as she puts the egg in the case...'}
+186	188		302							{2: '...Thank you, Lamia.', 3: '189'}
+187	189		301							{2: 'Lamia', 3: '...!'}
+188	190		401							{1: '2', 2: '927'}
+189	191		401							{1: '1', 2: '36'}
+190	192		402							{1: '323'}
+191	193		402							{1: '214'}
+192	194		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory391.jpg', 3: '0', 4: '1', 5: '0.3'}
+193	195		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+194	196		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory391.jpg'}
+195	197		301				AniZhuanchangBegin			"{2: '???', 3: ""She's gone! Hurry up and look for her!""}"
+196	198		502						400.0	{1: 'DialogDisable'}
+197	199		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory391.jpg'}
+198	200		401							{1: '2', 2: '902'}
+199	201		401							{1: '1', 2: '332'}
+200	202		301			DialogEnable				{3: 'Lamia vanishes, sinking into the deep sea.'}
+201	203		201							{1: '1', 2: '500739', 3: '3'}
+202	204		301							{1: '1', 2: 'Lamia', 3: '...', 4: '1'}
+203	205		301							"{3: 'The story comes to an end as the ""villain,"" for a tomorrow that in all likelihood will never come, hands over power that has the potential to destroy the world.'}"
+204	206		301							"{3: 'All her wishes, like bubbles of ""greed,"" are handed over to the people on the shore.'}"
+205	207		301							{3: 'The heroes must be happy about this, right?'}
+206	208		301							"{3: 'But why is Lamia, who\'s the ""villain"" in the story, feeling happy, too?'}"
+207	209		301							{2: 'Lamia', 3: '...', 4: '1'}
+208	210		301							{3: 'Unable to find an answer, the mermaid drifts with the currents, only surfacing at a safe distance when the voices on the shore have faded with the storm.'}
+209	211		202							{1: '1', 6: '1'}
+210	212		401							{1: '2', 2: '9327108'}
+211	213		402							{1: '902'}
+212	214		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3901_43.jpg', 3: '0', 4: '1', 5: '1'}
+213	215		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+214	216		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_43.jpg'}
+215	217		401							{1: '2', 2: '903'}
+216	218		301							{3: 'The sky, before she knows it, has cleared up.'}
+217	219		301							{3: 'The bright starry sky and the lonely moon gaze at the sea surface, twinkling along with the distant lights.'}
+218	220		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3901_05.jpg', 3: '0', 4: '1', 5: '1'}
+219	221		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+220	222		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_05.jpg'}
+221	223		301							{3: 'She steadies her floating body on the sea, looking at the shore.'}
+222	224		301							{3: 'The crowd looking for her slowly moves away, among whom are the Gray Ravens and their commandant.'}
+223	225		301							{3: 'These people sparkle in the lights, redolent of distant stars shining in her eyes.'}
+224	226		301							{3: 'For a moment, she thought she saw that human stopping in their tracks and turning her way.'}
+225	227		301							{2: 'Lamia', 3: '...'}
+226	228		301							{3: 'For a moment, she thought she heard someone saying something to her.'}
+227	229		301							"{3: '—Would it still be a simple ""thank you""?'}"
+228	230		301							"{3: 'How wonderful would it be to hear another ""thank you"" and see another friendly look in those eyes?'}"
+229	231		301							{3: '—Is this asking for too much?'}
+230	232		301							{3: 'But asking for more than they deserve is what villains usually do, no?'}
+231	233		301							{3: 'But out here, she hears nothing but the whispers of the wind and the waves.'}
+232	234		301				AniZhuanchangBegin			{3: 'The mermaid remains watchful for a long time, until all the lights vanish into the distance.'}
+233	235		502						400.0	{1: 'DialogDisable'}
+234	236		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_37.jpg'}
+235	237		105				AniZhuanchangEnd			{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLimiya/UiMovieLimiya04.prefab'}
+236	238		301			DialogEnable				{3: 'She lifts her head, seeking a more eternal light from the star-filled sky.'}
+237	239		301							{2: 'Lamia', 3: '...So far away...'}
+238	240		301							{3: 'Be it their silhouettes or the stars in the sky.'}
+239	241		301							{2: 'Lamia', 3: 'The stars...'}
+240	242		301							{3: 'She once had the chance to touch the stars but willingly let it go.'}
+241	243		301							{2: 'Lamia', 3: 'Because I remember those words.'}
+242	244		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+243	245		105							
+244	246		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+245	247		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory417.jpg'}
+246	248		201							{1: '1', 2: '500350'}
+247	249		301							{1: '1', 3: 'Keep pursuing the starry sky and never stop moving forward.'}
+248	250		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+249	251		202							{1: '1', 6: '1'}
+250	252		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+251	253		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_37.jpg'}
+252	254		105							{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLimiya/UiMovieLimiya04.prefab'}
+253	255		301							"{2: 'Lamia', 3: ""And I'll always remember them.""}"
+254	256		301							{3: 'She remembers what the human commandant said, and this is how she has been living up to those words.'}
+255	257		301							{3: '—Now, instead of plowing ahead alone with the egg, she is keeping around those who can move forward.'}
+256	258		301							{2: 'Lamia', 3: 'I have no regrets...'}
+257	259		301							{3: 'Lamia has asked herself again and again, and her answer never changed.'}
+258	260		301							"{2: 'Lamia', 3: ""It's just...""}"
+259	261		301							"{3: ""She might have no regrets, but that doesn't mean she doesn't still long for humans and the starry sky, or that she doesn't feel sad and lonely knowing that she's getting exiled to the deep sea.""}"
+260	262		301							"{2: 'Lamia', 3: ""But I'm not giving up.""}"
+261	263		301							{3: 'Someday, she will step into that distant starry sky—without leaving anyone behind, that is.'}
+262	264		301							{3: '—But how much longer is that going to take?'}
+263	265		301							"{2: 'Lamia', 3: ""...It's going to take a long, long time...""}"
+264	266		301				AniZhuanchangBegin			{3: 'The mermaid has an infinite amount of time.'}
+265	267		105			DialogDisable				
+266	268		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_06.jpg'}
+267	269		301			DialogEnable				{3: 'Dejected, she looks down at her fishtail that the ocean is embracing.'}
+268	270		301							{3: 'The sea holds the reflections of the star, in the same way her eyes once held the silhouettes of the people she saw.'}
+269	271		301							{2: 'Lamia', 3: 'The stars gaze upon the sea... In its embrace lie the sails... And now...'}
+270	272		301							"{3: ""Alone, she starts singing the song she's just learned—one that doesn't belong to her—to the reflections of the stars that are within her reach.""}"
+271	273		301							{3: 'She knows that this is just herself—an outcast—trying to make herself feel better.'}
+272	274		301							{3: 'Being a villain driven into exile, she can only pretend that she once belonged to that kingdom where only heroes lived.'}
+273	275		301							{2: 'Lamia', 3: '...'}
+274	276		401							{1: '2', 2: '981'}
+275	277		301							{3: '—Drip.'}
+276	278		301							{3: 'When her tears drip into the ocean, the ripples form an eye that drinks in all the stars she yearns for.'}
+277	279		301							{3: 'With her singing and tears...'}
+278	280		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3901_42.jpg', 3: '0', 4: '1', 5: '1'}
+279	281		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+280	282		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_42.jpg'}
+281	283		301		1		AniZhuanchangBegin			{3: '...She sends the love letter that can never reach the stars to their reflections.'}

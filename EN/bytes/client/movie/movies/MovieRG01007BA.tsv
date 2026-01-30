@@ -1,0 +1,910 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1281.jpg'}
+2	2		504							{1: '0.7'}
+3	3		401							{1: '1', 2: '6203'}
+4	4		401							{1: '2', 2: '973'}
+5	5		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '1'}
+6	6		301			AniZhuanchangEnd				{3: 'The river mist hangs thick and heavy, its sticky blackness silently cloaking the underworld.'}
+7	7		401							{1: '2', 2: '2662'}
+8	8		301				DialogDisable			{3: 'Suddenly, a distant whistle echoes from above—from the mortal world.'}
+9	9		104							{1: '0|-25|-100', 2: '0.4'}
+10	10		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory913.jpg', 3: '0', 4: '1', 5: '0.8'}
+11	11		401						800.0	{1: '2', 2: '318'}
+12	12		205							{1: '999'}
+13	13		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory913.jpg'}
+14	14		301			DialogEnable				{3: 'In the next moment, a train wreathed in black flames roars into view. Its steam engine looms proudly above the churning waves, pulling its carriages down into the endless fog below.'}
+15	15		502							{1: 'RImgBg1BlowUp'}
+16	16		301				DialogDisable			"{3: 'The Ferryman of Hell drives the train across the <phonetic=""Rift of Chaos"">Acheron River</phonetic>, escorting souls adrift between life and death—'}"
+17	17		505							{1: 'RImgBg1BlowUp'}
+18	18		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory538.png', 3: '0', 4: '1', 5: '1'}
+19	19		205							{1: '999'}
+20	20		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png', 4: '1'}
+21	21		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png', 4: '4'}
+22	22		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+23	23		109							{1: '1', 2: '<b><size=65>From the mortal realm, down to <color=#ff4e4eff>Hell</color> beneath the river.</size></b>', 4: '25', 7: '1', 9: '3', 11: '1'}
+24	24		301							{3: 'From the mortal realm, down to Hell beneath the river.'}
+25	25		109							{1: '1', 2: '<b><size=65>This is a tale from the eve of the <color=#ff4e4eff>Revolution</color></size></b>', 4: '25', 7: '1', 9: '3', 11: '1'}
+26	26		301				AniZhuanchangBegin			{3: 'This is a tale from the eve of the Revolution.'}
+27	27		110							
+28	28		101							{4: '4', 5: '1'}
+29	29		504							{1: '0'}
+30	30		401						2000.0	{1: '1', 2: '36'}
+31	31		402							{1: '973'}
+32	32		402							{1: '318'}
+33	33		102							{1: 'The Godfall Revelation', 2: 'Abyssal Embers', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+34	34		502				AniZhuanchangBegin		9000.0	{1: 'ThemeEnable'}
+35	35		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory603.jpg', 4: '1'}
+36	36		401							{1: '1', 2: '250'}
+37	37		401							{1: '2', 2: '318'}
+38	38		201							{1: '1', 2: '501233'}
+39	39		301			DialogEnable				"{1: '1', 2: 'Demon', 3: ""After all these years, it's finally our turn. Ugh, these days you even have to win the lottery just to get into Hell."", 4: '1'}"
+40	40		301							"{2: 'Demon', 3: ""This might be the last call for Hell, and once you're there, there's no coming back to the mortal realm. Are you all in on this?"", 4: '1'}"
+41	41		202							{1: '1', 6: '1'}
+42	42		201							{1: '2', 2: '501301'}
+43	43		301							"{1: '1', 2: '""Demon""', 3: ""W-what do you mean...? Isn't it just the way things go? You die, you become a demon, you go to Hell, and then you eventually get sent back to the mortal realm, right?"", 4: '2'}"
+44	44		201							{1: '1', 2: '501233', 4: '-400'}
+45	45		203							{1: '2', 2: '0.25', 3: '600'}
+46	46		301							{1: '1', 2: 'Demon', 3: 'Huh? How could you not know any of this? Did you just kick the bucket completely in the dark?', 4: '1'}
+47	47		301							{2: 'Demon', 3: 'Ever since the Death Lord got locked up thirty years ago, the Laws of Life and Death have gone completely haywire. You think you can just die peacefully and then waltz right back into the mortal realm? Dream on.', 4: '1'}
+48	48		301							{2: 'Demon', 3: 'Countless souls are stuck in limbo, forced to wander the mortal realm like the walking dead.', 4: '1'}
+49	49		301							"{2: 'Demon', 3: ""If it weren't for the Hell Ferryman putting his foot down and running this train, sneaking the dead into Hell right under the Supreme Heaven's nose, we'd all be stuck out in the open, suffering under that damn sun! It never sets!"", 4: '1'}"
+50	50		301							"{2: 'Demon', 3: ""Unfortunately, it's been too long since the Death Lord went down for the count... The Ferryman, who's a Demon Lord himself, is on his last legs. This is probably the absolute last train."", 4: '1'}"
+51	51		301							"{2: 'Demon', 3: 'How many ""last trains"" have you hopped on in your life? At least this time, you\'ve definitely hit the jackpot.', 4: '1'}"
+52	52		202							{1: '1', 2: '2'}
+53	53		301							"{3: 'The evil spirit tries to lighten the mood with a lame joke, paying little attention to the face of the ""died-in-complete-ignorance"" demon hidden beneath the hood across from them.'}"
+54	54		201							{1: '1', 2: '501301'}
+55	55		301							"{1: '1', 2: '""Demon""', 3: 'Oh, I get it now... So, when do I—when do we get there?', 4: '1'}"
+56	56		202							{1: '1', 6: '1'}
+57	57		201							{1: '1', 2: '500676', 5: '-75'}
+58	58		401							{1: '2', 2: '1543'}
+59	59		203							{1: '1', 2: '0.25'}
+60	60		402							{1: '318'}
+61	61		301							"{1: '1', 2: 'A smaller ""Demon""', 3: 'Fifteen minutes to midnight.', 4: '1'}"
+62	62		301							"{3: ""A small figure, similarly huddled under a hood, shifts slightly while stating the train's arrival time in an emotionless voice.""}"
+63	63		201							{1: '1', 2: '501233'}
+64	64		301							"{1: '1', 2: 'Demon', 3: ""There's even a kid on this train to Hell? Guess a lot of folks have it tougher than me."", 4: '1'}"
+65	65		202							{1: '1', 6: '1'}
+66	66		201							{1: '2', 2: '501301', 4: '-200'}
+67	67		203						100.0	{1: '2', 2: '0.25', 3: '-200', 4: '-75'}
+68	68		201							{1: '3', 2: '500676', 4: '400', 5: '-75'}
+69	69		301							"{1: '1', 3: 'The ""died-in-complete-ignorance demon"" brushes off the evil spirit, checking her pocket watch before leaning in close to the small figure and whispering:'}"
+70	70		301							"{2: '""Demon""', 3: ""It's almost time... Shouldn't we get to work?"", 4: '2'}"
+71	71		301							"{2: 'A smaller ""Demon""', 3: '...', 4: '3'}"
+72	72		401							{1: '2', 2: '1543'}
+73	73		203							{1: '2', 2: '0.25', 3: '-200'}
+74	74		301							{3: 'Seeing the child stay perfectly still, her face falters for a second before she tries a more forceful tone, attempting to give orders.'}
+75	75		301				DialogDisable			"{2: '""Demon""', 3: 'You have to listen to Haida. Go open that door... Now!', 4: '2'}"
+76	76		203			PanelActor1Shake				{1: '2', 2: '0.25', 3: '-200'}
+77	77		203							{1: '3', 2: '1', 3: '0'}
+78	78		401						100.0	{1: '2', 2: '5309'}
+79	79		202							{1: '3', 2: '2'}
+80	80		301			DialogEnable				{3: 'The small figure, like a puppet, suddenly lifts an arm from their seat, then wobbly gets to their feet and shuffles slowly toward the middle of the cramped corridor.'}
+81	81		201							{1: '1', 2: '501233'}
+82	82		301							"{1: '1', 2: 'Demon', 3: 'Hey, what are you doing? ""She"" is gonna be counting heads soon. Listen, kid, I\'m warning you—be smart and don\'t make trouble right now.', 4: '1'}"
+83	83		301				DialogDisable			{2: 'Demon', 3: 'I hear troublemakers always get tossed into the Valley of Ash. Even for Hell, that place is supposedly the absolute worst...', 4: '1'}
+84	84		306						200.0	{1: '1'}
+85	85		202							{1: '1'}
+86	86		401							{1: '2', 2: '4129'}
+87	87		401						2000.0	{1: '1', 2: '36'}
+88	88		301			DialogEnable				"{3: ""The dead soul swallows the rest of its sentence—the clang of the iron door swinging open at the end of the car grabs everyone's attention.""}"
+89	89		104							{1: '0|-25|0', 2: '0.25'}
+90	90		401						100.0	{1: '2', 2: '2689'}
+91	91		104							{1: '0|0|0', 2: '0.25'}
+92	92		301							{3: 'The footsteps that follow belong to a being whose name no one dares to even whisper.'}
+93	93		306							
+94	94		401							{1: '1', 2: '297'}
+95	95		201							{1: '1', 2: '501216', 3: '1'}
+96	96		301							"{1: '1', 2: '""The Ferryman""', 3: ""Keep talking. Why'd everyone go quiet?"", 4: '1'}"
+97	97		301							"{2: '""The Ferryman""', 3: 'I could hear your voices all the way from the engine room.', 4: '1'}"
+98	98		401							{1: '2', 2: '4282'}
+99	99		202							{1: '1'}
+100	100		301							{3: 'Footsteps echo across the black iron floor of the third-class carriage, each step pounding fear and obedience into the air.'}
+101	101		402							{1: '4282'}
+102	102		201							{1: '1', 2: '501216', 4: '-400'}
+103	103		201							{1: '2', 2: '501233', 4: '400'}
+104	104		401						100.0	{1: '2', 2: '2689'}
+105	105		203							{1: '1', 2: '0.25', 3: '-200'}
+106	106		301							"{1: '1', 2: '""The Ferryman""', 3: 'Well then, how about we start with you? Speak.', 4: '1'}"
+107	107		401							{1: '2', 2: '10042608'}
+108	108		301				PanelActor2Shake			{3: 'The Ferryman gently rests the tip of the gun on his shoulder, almost tenderly.'}
+109	109		301							{3: 'The interrogated demon knows Judgment awaits; his whole body shakes uncontrollably with fear.'}
+110	110		301							"{2: '""The Ferryman""', 3: ""Fidel Martinez. You were pretty out of it when you boarded. I hope you've come to your senses a bit now?"", 4: '1'}"
+111	111		301							{2: 'Demon', 3: 'Sir, no need for that. Just call me Fide. You see, I...', 4: '2'}
+112	112		301							"{2: '""The Ferryman""', 3: 'You can only answer ""yes"" or ""no.""', 4: '1'}"
+113	113		202							{1: '1', 2: '2', 6: '1'}
+114	114		306						100.0	{1: '1'}
+115	115		201							{1: '1', 2: '501216', 5: '-75', 6: '-220'}
+116	116		301							"{1: '1', 3: ""The Ferryman stares right into the demon's eyes, her gaze piercing deep into his soul.""}"
+117	117		306							
+118	118		202							{1: '1', 6: '1'}
+119	119		401							{1: '2', 2: '5539'}
+120	120		401						200.0	{1: '2', 2: '2923'}
+121	121		402							{1: '2923'}
+122	122		301			RImgBg1Shake				"{3: 'Silence hangs heavy in the cramped seating area, while the crashing waves of Acheron and the rumbling engines only make the ""passengers\'"" anxiety worse.'}"
+123	123		201							{1: '2', 2: '501233'}
+124	124		301							"{1: '1', 2: 'Demon', 3: ""Yes, yes, I'm totally awake now. Ask me anything..."", 4: '2'}"
+125	125		401							{1: '2', 2: '4044'}
+126	126		203							{1: '2', 2: '0.25', 4: '-50'}
+127	127		301							{3: 'The demon slowly lowers his head and falls silent.'}
+128	128		203							{1: '2', 2: '0.25', 3: '400', 4: '-50'}
+129	129		201							{1: '1', 2: '501216', 4: '-200'}
+130	130		301							"{1: '1', 2: '""The Ferryman""', 3: 'Alright, Martinez. Death in Escondida Quell, cause of death: fatal head injury.', 4: '1'}"
+131	131		301							"{2: '""The Ferryman""', 3: 'Charges include having unregistered enchanted weapons, counterfeiting Mammon currency, prison escape, and...', 4: '1'}"
+132	132		204							{1: '1', 2: '1'}
+133	133		301							"{3: ""The Ferryman's lips curl into a smile, as if she finds something amusing.""}"
+134	134		301							"{2: '""The Ferryman""', 3: ""Beaten to death with a bottle by an angry waitress? Let me guess—you just couldn't keep your hands to yourself, could you?"", 4: '1'}"
+135	135		301							{2: 'Demon', 3: 'Misunderstanding. It was all a misunderstanding.', 4: '2'}
+136	136		204							{1: '1', 2: '13'}
+137	137		301							"{2: '""The Ferryman""', 3: 'If it really was a misunderstanding, would you be sitting in this train car right now?', 4: '1'}"
+138	138		203							{1: '1', 2: '0.25', 3: '-400'}
+139	139		401							{1: '2', 2: '10042608'}
+140	140		301							"{3: ""As she moves the lance tip off the demon's shoulder, she casually waves her hand and delivers her Judgment without much fuss.""}"
+141	141		204							{1: '1'}
+142	142		301							"{2: '""The Ferryman""', 3: 'Transport to the Valley of Ash. Take him away.', 4: '1'}"
+143	143		301			PanelActor2Shake	DialogDisable			"{2: 'Demon', 3: ""Your Honor! I'm innocent!"", 4: '2'}"
+144	144		203							{1: '2', 2: '1', 3: '800'}
+145	145		401						500.0	{1: '2', 2: '4548'}
+146	146		203						250.0	{1: '2', 2: '0.5', 3: '1600', 4: '-75'}
+147	147		402							{1: '4548'}
+148	148		202							{1: '2'}
+149	149		203							{1: '1', 2: '0.25'}
+150	150		301			DialogEnable				"{2: '""The Ferryman""', 3: 'Next.', 4: '1'}"
+151	151		301							"{2: '""The Ferryman""', 3: 'Mike Draven...', 4: '1'}"
+152	152		401							{1: '2', 2: '2689'}
+153	153		104						250.0	{1: '0|50|-25', 2: '0.25'}
+154	154		104							{1: '0|0|-50', 2: '0.25'}
+155	155		203							{1: '1', 2: '0.25', 4: '-75', 5: '-220'}
+156	156		301							"{3: ""The Ferryman completely tunes out the dead soul's excuses and steps forward to the next row of shivering passengers.""}"
+157	157		301							"{2: '""The Ferryman""', 3: 'Tried to stop a shooting... accidentally got shot?', 4: '1'}"
+158	158		202							{1: '1'}
+159	159		301				DialogDisable			{3: 'As she silently recites the death information in her mind, she finally notices a small figure standing quietly in the corridor.'}
+160	160		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+161	161		201							{1: '2', 2: '500676'}
+162	162		301			DialogEnable				"{1: '1', 2: 'A smaller ""Demon""', 3: 'Sovereign... You...', 4: '2'}"
+163	163		301							"{3: ""She hears a familiar voice coming from beneath the hood, prompting her to immediately call out the figure's title.""}"
+164	164		203							{1: '2', 2: '0.25', 3: '400'}
+165	165		201							{1: '18', 2: '501216', 3: '6'}
+166	166		301							"{1: '1', 2: '""The Ferryman""', 3: 'Chaos Gate Emissary? What are you doing here?', 4: '18'}"
+167	167		204							{1: '18', 2: '4'}
+168	168		301							"{2: '""The Ferryman""', 3: ""Why aren't you guarding the Valley of Ash like you're supposed to? What are you doing running around here? Has something happened at the Valley?"", 4: '18'}"
+169	169		202							{1: '18', 6: '1'}
+170	170		201						100.0	{1: '1', 2: '501216', 4: '-500'}
+171	171		203							{1: '1', 2: '0.25', 3: '-400'}
+172	172		301							"{1: '1', 3: ""She quickly walks toward the Emissary, sensing something isn't right.""}"
+173	173		301							{3: 'But just as she passes by the cowering demon—'}
+174	174		202							{1: '2'}
+175	175		203							{1: '1', 2: '0.5'}
+176	176		301							"{2: '""The Ferryman""', 3: '...Oh?', 4: '1'}"
+177	177		306						200.0	{1: '1'}
+178	178		201							{1: '1', 2: '501301'}
+179	179		301							{1: '1', 3: 'Her body continues moving forward, but her eyes freeze, then swiftly turn to lock onto the disguised demon.'}
+180	180		306							
+181	181		201							{1: '1', 2: '501216', 3: '13'}
+182	182		401							{1: '1', 2: '36'}
+183	183		301				DialogDisable			"{1: '1', 2: '""The Ferryman""', 3: 'Looks like a dead fish has slipped in among us? Haida?', 4: '1'}"
+184	184		203							{1: '1', 2: '0.25', 5: '-100'}
+185	185		401							{1: '2', 2: '970804'}
+186	186		202							{1: '1'}
+187	187		402							{1: '4282'}
+188	188		401							{1: '2', 2: '4276'}
+189	189		501						600.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab', 2: '2'}
+190	190		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab'}
+191	191		401							{1: '2', 2: '10113408'}
+192	192		401							{1: '1', 2: '6210'}
+193	193		502							{1: 'DialogEnable'}
+194	194		301			RImgBg1Shake				{3: 'Her shadow-like claws appear instantly before the demon, violently tearing away the disguise.'}
+195	195		201							{1: '1', 2: '500739', 5: '-75'}
+196	196		203							{1: '1', 2: '0.25'}
+197	197		301			PanelActor1Shake				{1: '1', 2: 'Witch Haida', 3: 'Eek!', 4: '1'}
+198	198		301							{3: 'The demon, her soul laid bare by that piercing gaze, jolts from her seat in panic. She barely dodges the attack while frantically issuing commands to the Chaos Gate Emissary under her control.'}
+199	199		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+200	200		301							{2: 'Witch Haida', 3: 'Now!', 4: '1'}
+201	201		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+202	202		401							{1: '2', 2: '10113408'}
+203	203		401							{1: '2', 2: '2624'}
+204	204		201							{1: '1', 2: '500650'}
+205	205		301							{1: '1', 3: 'The small figure snaps to it, immediately pulling open the sleeves covering its front. There, cradled in its arms, is an ugly egg.', 4: '1'}
+206	206		202							{1: '1', 6: '1'}
+207	207		306						100.0	{1: '1'}
+208	208		201							{1: '1', 2: '501302'}
+209	209		301							{1: '1', 3: 'Its surface is anything but smooth, covered instead with irregular, vein-like bumps.'}
+210	210		301							{3: 'These pulsate rhythmically, a crimson liquid coursing through them, looking just like the waters of the Acheron River.'}
+211	211		202							{1: '1', 6: '1'}
+212	212		306							
+213	213		402							{1: '2624'}
+214	214		201							{1: '1', 2: '501216', 3: '5'}
+215	215		301							"{1: '1', 2: '""The Ferryman""', 3: 'Emissary! Stay with me!', 4: '1'}"
+216	216		202							{1: '1'}
+217	217		301							{3: 'The girl forces out a few painful groans.'}
+218	218		201							{1: '1', 2: '500650', 3: '17'}
+219	219		301			PanelActor1Shake				"{1: '1', 2: '""Gate Emissary""', 3: 'Forgive me, I...', 4: '1'}"
+220	220		202							{1: '1'}
+221	221		301							"{3: ""Those vein-like tendrils coil around the girl's limbs, their ends disappearing right beneath her skin.""}"
+222	222		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+223	223		201							{1: '1', 2: '500739'}
+224	224		301				DialogDisable			"{1: '1', 2: 'Witch Haida', 3: ""I-it's too late now! Save the teary reunion for later, just do it!"", 4: '1'}"
+225	225		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+226	226		401							{1: '2', 2: '4276'}
+227	227		501						600.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab', 2: '2'}
+228	228		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab'}
+229	229		201							{1: '1', 2: '500652', 3: '17'}
+230	230		301			DialogEnable	DialogDisable			{1: '1', 3: 'The girl raises both arms in response, her metal claws gleaming eerily under the rust-colored, mottled light.'}
+231	231		203						100.0	{1: '1', 2: '0.25', 5: '-125'}
+232	232		202							{1: '1'}
+233	233		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+234	234		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHit01.prefab', 2: '2'}
+235	235		401						500.0	{1: '2', 2: '9342058'}
+236	236		301			DialogEnable				{3: 'She viciously slashes at the air before her, ripping open a rift in the veil of Hell itself.'}
+237	237		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory603.jpg', 4: '1'}
+238	238		401							{1: '2', 2: '5815'}
+239	239		301			AniZhuanchangEnd				{3: 'The arcane gate forms instantly. From its quiet darkness wafts a stench that only belongs in the Sanctuary.'}
+240	240		201							{1: '1', 2: '501216', 3: '5'}
+241	241		301							"{1: '1', 2: '""The Ferryman""', 3: 'Everyone, fall back!', 4: '1'}"
+242	242		203							{1: '1', 2: '0.25', 5: '100'}
+243	243		401							{1: '2', 2: '4692'}
+244	244		202							{1: '1'}
+245	245		301			RImgBg1Shake				"{3: ""The Ferryman senses something's off, as piercing howls indeed draw closer from beyond the windows on both sides—these are the wails of ill omen.""}"
+246	246		201							{1: '1', 2: '501233'}
+247	247		301			RImgBg1Shake				"{1: '1', 2: 'Demon', 3: ""Angels! They're coming for us!"", 4: '1'}"
+248	248		301			RImgBg1Shake				"{2: 'Demon', 3: ""That infiltrator is a nightmare! They've got something from the Sanctuary—I just knew it! My luck's always been rotten, so why would I expect a smooth trip to Hell?"", 4: '1'}"
+249	249		202							{1: '1'}
+250	250		401							{1: '2', 2: '4692'}
+251	251		301			RImgBg1Shake				{3: 'The angels rip at the carriage, their shrieks enough to curdle blood even in Hell. Inside, pandemonium breaks loose.'}
+252	252		201							{1: '1', 2: '501216', 4: '-400'}
+253	253		201						100.0	{1: '2', 2: '500739', 4: '400'}
+254	254		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash.prefab', 2: '3'}
+255	255		203							{1: '1', 2: '0.25', 3: '-250'}
+256	256		203							{1: '2', 2: '0.25', 3: '600', 4: '-75'}
+257	257		502							{1: 'RImgBg1Shake'}
+258	258		401							{1: '2', 2: '4797'}
+259	259		301							{1: '1', 3: 'The red-haired Ferryman springs into action, her Dual-Bladed Lance flashing as she skewers the fleeing culprit.'}
+260	260		301			PanelActor2Shake				"{1: '1', 2: 'Witch Haida', 3: ""Ow, ow, ow! You're still so brutal! Couldn't you at least say Hello to an old colleague before you stab them?"", 4: '2'}"
+261	261		204							{1: '1', 2: '13'}
+262	262		301							"{2: '""The Ferryman""', 3: 'After all these years, I thought you might have matured a little! Instead, you just had to sneak onto my train and hand me this massive headache!', 4: '1'}"
+263	263		301			PanelActor2Shake				{3: 'A fish tail thrashes painfully on the floor, its owner wailing nonstop.'}
+264	264		204							{1: '1', 2: '5'}
+265	265		301							"{2: '""The Ferryman""', 3: 'Explain yourself! Why did you control the Emissary? Why did you snatch something from the Sanctuary and bring the angels down on us?!', 4: '1'}"
+266	266		204							{1: '2', 2: '14'}
+267	267		301							{2: 'Witch Haida', 3: 'Because I wanted to... I wanted to—', 4: '2'}
+268	268		301							{3: 'Witch Haida stumbles over her words, unable to form a coherent thought.'}
+269	269		204							{1: '2', 2: '8'}
+270	270		301							"{2: 'Witch Haida', 3: ""I made a deal, and I can't spill all the beans just yet. Anyway, I used the Gate Emissary's arcane gate to sneak into the Sanctuary—it wasn't a walk in the park—and I swiped the Omega Egg. That thing might be used for reconstruction..."", 4: '2'}"
+271	271		202							{1: '1', 2: '2'}
+272	272		301				DialogDisable			"{3: ""A nameless dread creeps into the Ferryman's chest. She can't shake the feeling this might be the very creation she's always feared.""}"
+273	273		307							{1: 'The Omega Egg', 3: '75', 4: 'ff4e4eff'}
+274	274		301							{3: 'The Omega Egg'}
+275	275		307							{2: '1'}
+276	276		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+277	277		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront79.png', 4: '4'}
+278	278		502							{1: 'DialogEnable'}
+279	279		201							{1: '1', 2: '501302', 7: '1'}
+280	280		301			AniZhuanchangEnd				"{1: '1', 3: ""According to ancient scrolls from the Scorched Borderland, the world's Oblivion will hatch from an egg.""}"
+281	281		301				AniZhuanchangBegin			"{3: ""We're talking about howling winds and the death of all living things. This terrifying weapon, held by the Sanctuary, wields such supreme power that it exists only in legends.""}"
+282	282		202							{1: '1', 6: '1'}
+283	283		101							{4: '4', 5: '1'}
+284	284		502						400.0	{1: 'DialogDisable'}
+285	285		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory603.jpg'}
+286	286		502							{1: 'DialogEnable'}
+287	287		301			AniZhuanchangEnd				"{3: ""Regardless, it absolutely shouldn't be here, now, on a train bound for Hell.""}"
+288	288		301							"{3: ""And it definitely shouldn't be latched onto the Witch's hostage like a parasite.""}"
+289	289		201							{1: '1', 2: '501216', 4: '-200'}
+290	290		201							{1: '2', 2: '500739', 3: '8', 4: '200', 5: '-75'}
+291	291		301							"{1: '1', 2: '""The Ferryman""', 3: 'You cut a deal with the Sanctuary? Did you just throw everything Atlantis taught you to the fishes?!', 4: '1'}"
+292	292		203			PanelActor2Shake				{1: '2', 2: '0.25', 3: '200'}
+293	293		301							"{3: ""The Ferryman snarls, grabbing Witch Haida by the throat. Tears well up in the Witch's eyes as she struggles.""}"
+294	294		204							{1: '2', 2: '14'}
+295	295		301							"{2: 'Witch Haida', 3: ""What do you even know... You're nothing but a thieving plunderer! You have no idea how much I cherish what I once had!"", 4: '2'}"
+296	296		204							{1: '1', 2: '4'}
+297	297		301							"{2: '""The Ferryman""', 3: ""Childish! I don't have time to play make-believe with you right now!"", 4: '1'}"
+298	298		306							{1: '1'}
+299	299		201							{1: '1', 2: '500928', 4: '600', 7: '1'}
+300	300		201							{1: '2', 2: '500928', 4: '800', 7: '1'}
+301	301		201							{1: '3', 2: '500928', 4: '-600', 7: '1'}
+302	302		201							{1: '4', 2: '500928', 4: '-800', 7: '1'}
+303	303		201							{1: '5', 2: '500928', 4: '100', 7: '1'}
+304	304		401							{1: '2', 2: '1543'}
+305	305		203							{1: '1', 2: '0.25', 3: '300'}
+306	306		203							{1: '2', 2: '0.25', 3: '800'}
+307	307		203							{1: '3', 2: '0.25', 3: '-300'}
+308	308		203							{1: '4', 2: '0.25', 3: '-800'}
+309	309		203							{1: '5', 2: '0.25', 3: '0'}
+310	310		401							{1: '2', 2: '5815'}
+311	311		301							{1: '1', 3: 'Meanwhile, unnameable entities, known only as Angels, swarm the train car.'}
+312	312		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5'}
+313	313		306							
+314	314		201							{1: '1', 2: '501216'}
+315	315		301							"{1: '1', 2: '""The Ferryman""', 3: 'Was this train journey part of your deal with the Sanctuary?', 4: '1'}"
+316	316		203							{1: '1', 2: '0.25', 3: '-200'}
+317	317		201							{1: '2', 2: '500739', 3: '8', 4: '200'}
+318	318		301							{1: '1', 2: 'Witch Haida', 3: '...', 4: '2'}
+319	319		301							{3: 'Witch Haida gasps in terror, not daring to confirm the accusation.'}
+320	320		301							"{2: '""The Ferryman""', 3: ""Think carefully. If they want this train, they'll have to step over my dead body first."", 4: '1'}"
+321	321		301							"{2: '""The Ferryman""', 3: ""We're both Demon Lords—we can never truly kill each other. You've really made a foolish choice this time."", 4: '1'}"
+322	322		202							{1: '1', 2: '2'}
+323	323		401							{1: '2', 2: '4547'}
+324	324		301			RImgBg1Shake				{3: 'Angels from the white mist pound against the windows. Vera grinds her teeth, tightening her grip on the fragile neck in her palm before abruptly shoving Lamia to the floor.'}
+325	325		401							{1: '2', 2: '10042608'}
+326	326		201							{1: '1', 2: '501216'}
+327	327		301							"{1: '1', 3: ""She whips out her Dual-Bladed Lance once more and stands tall in the corridor—rock solid and unyielding, she becomes the only sure thing amidst the train car's chaos.""}"
+328	328		301							"{2: '""The Ferryman""', 3: ""Witch Haida, once I'm done with those Sanctuary creeps, I'm perfectly willing to spend the next century duking it out with you."", 4: '1'}"
+329	329		203							{1: '1', 2: '0.25', 3: '-400'}
+330	330		201							{1: '2', 2: '500739', 3: '14', 4: '400'}
+331	331		301			PanelActor2Shake				"{1: '1', 2: 'Witch Haida', 3: ""D-duke it out? You can't swing that! I-I'm not scared of you anymore!"", 4: '2'}"
+332	332		301				PanelActor2Shake			{2: 'Witch Haida', 3: 'With the laws of life and death shattered and the Death Lord locked up, your demonic powers must have pretty much fizzled out by now... Eeyah!', 4: '2'}
+333	333		202							{1: '1', 2: '2', 6: '1'}
+334	334		502							{1: 'DialogDisable'}
+335	335		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash.prefab', 2: '2'}
+336	336		401				RImgBg1Shake			{1: '2', 2: '10019401'}
+337	337		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '3'}
+338	338		401							{1: '2', 2: '4806'}
+339	339		201							{1: '3', 2: '500928', 4: '-550', 6: '25', 7: '1'}
+340	340		203							{1: '1', 2: '0.25', 3: '-600', 4: '-50', 5: '100'}
+341	341		201							{1: '4', 2: '500928', 5: '-75', 6: '0', 7: '1'}
+342	342		203							{1: '2', 2: '0.25', 4: '-75', 5: '75'}
+343	343		201							{1: '5', 2: '500928', 4: '550', 6: '25', 7: '1'}
+344	344		203							{1: '3', 2: '0.25', 3: '600', 4: '-25', 5: '100'}
+345	345		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+346	346		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '1'}
+347	347		202							{1: '3', 2: '4', 3: '5'}
+348	348		301			DialogEnable				{3: 'The master of the train offers no comeback—instead, her weapon flashes up and down in one smooth move, turning the first Angel to bust into the car into nothing but a puddle of foul-smelling goo on the floor.'}
+349	349		401							{1: '2', 2: '10042608'}
+350	350		205							{1: '999'}
+351	351		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '5'}
+352	352		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0', 5: '1'}
+353	353		101							{4: '5', 5: '1'}
+354	354		301							{3: 'She holsters her gun and turns away, giving Witch Haida a sidelong glance as Haida tries desperately to steel her nerves.'}
+355	355		201							{1: '1', 2: '501216', 3: '4', 4: '-400'}
+356	356		201							{1: '2', 2: '500739', 4: '400'}
+357	357		301							"{1: '1', 2: '""The Ferryman""', 3: 'Go on. Bring it.', 4: '1'}"
+358	358		301							"{2: '""The Ferryman""', 3: ""No matter how badly you've messed with the Sanctuary, the Acheron River isn't your playground. I'm not Lustrous—there's no one left who's going to put up with your lawlessness anymore..."", 4: '1'}"
+359	359		204							{1: '2', 2: '19'}
+360	360		301			PanelActor2Shake				"{3: ""The Ferryman speaks Witch Haida's true name, sending shivers down her spine—just like it has for ages.""}"
+361	361		204							{1: '2'}
+362	362		301							{2: 'Witch Haida', 3: '...', 4: '2'}
+363	363		301							"{3: ""For a moment, an old childhood habit almost makes her blurt out an apology, but her mission's purpose completely takes over, stopping the words before they can even escape her trembling lips.""}"
+364	364		204							{1: '2', 2: '14'}
+365	365		301							"{2: 'Witch Haida', 3: ""I'll apologize next time—if there even is a next time."", 4: '2'}"
+366	366		204							{1: '2'}
+367	367		301							"{2: 'Witch Haida', 3: ""I've already... paid my dues!"", 4: '2'}"
+368	368		202							{1: '1', 2: '2', 6: '1'}
+369	369		401							{1: '2', 2: '5286'}
+370	370		201							{1: '1', 2: '500739', 4: '-400', 7: '1'}
+371	371		203							{1: '1', 2: '0.5', 3: '-350'}
+372	372		201							{1: '2', 2: '500650'}
+373	373		301							"{1: '1', 3: ""While the Ferryman is busy fighting the Angels, the mermaid quickly ducks behind the girl with metallic wolf claws and pulls her into her cloak's folds.""}"
+374	374		301				DialogDisable			"{2: 'Witch Haida', 3: ""I-I'm done with you!"", 4: '1'}"
+375	375		306						100.0	{1: '1'}
+376	376		203							{1: '1', 2: '0.25', 3: '-350', 4: '-75'}
+377	377		203						250.0	{1: '2', 2: '0.25', 3: '0', 4: '-120'}
+378	378		203							{1: '1', 2: '0.25', 3: '-600'}
+379	379		203						250.0	{1: '2', 2: '0.25', 3: '-300'}
+380	380		202							{1: '1', 2: '2'}
+381	381		401							{1: '2', 2: '2559'}
+382	382		301			DialogEnable				{3: 'In a flash, the mermaid springs up and dives through the open window.'}
+383	383		301							{3: 'She vanishes into thin air beyond the window, taking the child-like demon figure with her.'}
+384	384		201							{1: '1', 2: '501233', 4: '-400'}
+385	385		201							{1: '2', 2: '501233', 4: '400'}
+386	386		301							{1: '1', 3: 'The demons sitting on both sides see the whole thing go down, but not a single one dares to make a peep.'}
+387	387		202							{1: '1', 2: '2', 6: '1'}
+388	388		201							{1: '3', 2: '501216'}
+389	389		301							"{1: '1', 3: ""The Ferryman's expression shifts, a mix of shadow and light, completely unreadable.""}"
+390	390		306							
+391	391		204							{1: '3', 2: '13'}
+392	392		301							"{2: '""The Ferryman""', 3: ""...Next time? Ha! You still don't get what happens when you cross the Sanctuary."", 4: '3'}"
+393	393		204							{1: '3', 2: '5'}
+394	394		301			RImgBg1Shake				"{2: '""The Ferryman""', 3: ""What are you all staring at? Full train alert, brace for battle! Unless you want angels grinding your bones to dust, fight with everything you've got!"", 4: '3'}"
+395	395		204							{1: '3', 2: '7'}
+396	396		401							{1: '1', 2: '36'}
+397	397		301			RImgBg1Shake				"{2: '""The Ferryman""', 3: 'Train guards, on my command! Move to the third-class carriage, secure the targ—tch!', 4: '3'}"
+398	398		202							{1: '3'}
+399	399		104						250.0	{1: '0|-50|0', 2: '0.25'}
+400	400		104						250.0	{1: '0|0|-25', 2: '0.25'}
+401	401		104							{1: '0|0|0', 2: '0.25'}
+402	402		401							{1: '2', 2: '4637'}
+403	403		401							{1: '1', 2: '5043'}
+404	404		301							"{3: ""She's just barking orders to the driver's cabin several carriages away when a sudden jolt of weightlessness throws the train off balance.""}"
+405	405		201							{1: '1', 2: '501233', 4: '-400'}
+406	406		201							{1: '2', 2: '500832', 4: '400'}
+407	407		301							"{1: '1', 2: 'Demon A', 3: ""We're toast! We're going to plunge right into the Acheron River!"", 4: '1'}"
+408	408		301							"{2: 'Demon B', 3: ""No, please! I was supposed to serve my time in Hell! If we fall in and turn into stones in the Acheron River, we'll never find peace!"", 4: '2'}"
+409	409		301							"{2: 'Demon B', 3: ""Or even worse... getting sent back to the mortal realm, forced to go on with that miserable life that's worse than death!"", 4: '2'}"
+410	410		301							"{2: 'Demon A', 3: ""Snap out of it! You've already kicked the bucket successfully! You're just one step away from being completely dead—you can't quit now! Get up and fight back!"", 4: '1'}"
+411	411		301			PanelActor2Shake	DialogDisable			"{2: 'Demon B', 3: ""I can't—Glug, glug—!"", 4: '2'}"
+412	412		401						100.0	{1: '2', 2: '844006'}
+413	413		203							{1: '3', 2: '0.25', 3: '0'}
+414	414		203							{1: '1', 2: '0.25', 3: '600'}
+415	415		203							{1: '2', 2: '0.25', 3: '700'}
+416	416		502							{1: 'RImgBg1Shake'}
+417	417		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '2'}
+418	418		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+419	419		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab'}
+420	420		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndRed.prefab', 2: '3'}
+421	421		202							{1: '1', 2: '2'}
+422	422		301			DialogEnable				"{1: '1', 3: ""The screaming demon's soul gets pierced clean through, vanishing into thin air in an instant.""}"
+423	423		301							{3: 'Witnessing such a gruesome end, the deceased souls fall into a complete panic.'}
+424	424		201							{1: '3', 2: '501216'}
+425	425		301							"{1: '1', 2: '""The Ferryman""', 3: ""Train crew, what's the situation?!"", 4: '3'}"
+426	426		202							{1: '3', 6: '1'}
+427	427		201							{1: '18', 2: '500425', 4: '-125', 6: '100'}
+428	428		301							"{1: '1', 2: 'Conductor', 3: ""My lady, the steam engine's magic is gone! We can't get control back!"", 4: '18'}"
+429	429		202							{1: '18'}
+430	430		301							{3: 'Desperate, throat-shredding wails erupt from the control cabin.'}
+431	431		201							{1: '18', 2: '500426'}
+432	432		301							"{1: '1', 2: 'Guards', 3: ""Angels, it's angels... They've boarded the train! They're everywhere!"", 4: '18'}"
+433	433		202							{1: '18'}
+434	434		201							{1: '1', 2: '501216', 3: '5'}
+435	435		301							"{1: '1', 2: '""The Ferryman""', 3: ""Stay seated and keep heading for Hell! Anyone who tries to escape... I'll throw you into the river myself."", 4: '1'}"
+436	436		301							{3: 'Her words still carry the same strong authority.'}
+437	437		201							{1: '1', 2: '500928'}
+438	438		301							"{1: '1', 2: '""Angel""', 3: 'Sanctuary, will... Execute!', 4: '1'}"
+439	439		201							{1: '2', 2: '500928', 4: '-600', 6: '25', 7: '1'}
+440	440		201							{1: '3', 2: '500928', 4: '600', 6: '25', 7: '1'}
+441	441		401						100.0	{1: '2', 2: '561'}
+442	442		203							{1: '2', 2: '0.25', 3: '-400', 4: '-25'}
+443	443		203							{1: '3', 2: '0.25', 3: '400', 4: '-25'}
+444	444		301							{1: '1', 3: 'Through the opening where the mermaid disappeared, terrifying white humanoid figures pour into the carriage, one after another. They move so fast that the souls by the windows are devoured before they can even let out a final scream.'}
+445	445		201							{1: '1', 2: '501216'}
+446	446		301				DialogDisable			"{1: '1', 2: '""The Ferryman""', 3: ""Filthy Sanctuary vermin! You won't defile my carriage!"", 4: '1'}"
+447	447		203							{1: '1', 2: '0.25', 3: '-200'}
+448	448		502							{1: 'RImgBg1Shake'}
+449	449		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash.prefab', 2: '2'}
+450	450		401						200.0	{1: '2', 2: '844006'}
+451	451		203							{1: '2', 2: '0.25', 3: '-800'}
+452	452		202							{1: '2'}
+453	453		401							{1: '2', 2: '4349'}
+454	454		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+455	455		203							{1: '1', 2: '0.25', 3: '200'}
+456	456		502							{1: 'RImgBg1Shake'}
+457	457		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+458	458		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+459	459		401						200.0	{1: '2', 2: '844006'}
+460	460		401							{1: '2', 2: '4349'}
+461	461		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+462	462		203							{1: '2', 2: '0.25', 3: '800'}
+463	463		202						100.0	{1: '2', 2: '3'}
+464	464		202							{1: '1'}
+465	465		301			DialogEnable				{3: 'The slaughter begins. Demons fight desperately against the angels surrounding them, watching a dazzling crimson blur zip through the carriage corridor.'}
+466	466		203							{1: '1', 2: '0.25', 5: '-50'}
+467	467		502							{1: 'RImgBg1Shake'}
+468	468		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '1'}
+469	469		401							{1: '2', 2: '4796'}
+470	470		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+471	471		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 4: '5'}
+472	472		301			RImgBg1Shake				"{3: ""The spear tip pierces through the angels' chests, and thick, slimy sludge splatters across the dark crimson shaft.""}"
+473	473		101							{4: '5', 5: '1'}
+474	474		201							{1: '1', 2: '500928'}
+475	475		301			RImgBg1Shake				"{1: '1', 2: '""Angel""', 3: 'Butcher them! Kill! Kill!', 4: '1'}"
+476	476		201							{1: '1', 2: '501216', 3: '13'}
+477	477		301							"{1: '1', 2: '""The Ferryman""', 3: 'You think you can stop me?!', 4: '1'}"
+478	478		202							{1: '1'}
+479	479		401							{1: '2', 2: '4408'}
+480	480		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+481	481		301			RImgBg1Shake				{3: 'Her Dual-Bladed Lance speaks the language of death, turning the monsters from the Sanctuary into puddles of water stripped of their divinity.'}
+482	482		301							"{3: ""But more ghastly limbs covered in white scabs frantically pour through the windows, as if desperate to board a train that doesn't belong to them.""}"
+483	483		201							{1: '1', 2: '501233'}
+484	484		301							"{1: '1', 2: 'Demon', 3: ""They're c-coming again! Help m—"", 4: '1'}"
+485	485		202							{1: '1'}
+486	486		301							{3: 'Terrified souls cry out to anyone nearby for help, only to find few companions left—some ripped apart, others already tossed out the windows by the invaders.'}
+487	487		301							"{3: ""The angel's throat gurgles as it closes in on the nearest demon.""}"
+488	488		201							{1: '1', 2: '501233'}
+489	489		301			PanelActor1Shake				{1: '1', 2: 'Demon', 3: 'No! Please!', 4: '1'}
+490	490		201							{1: '1', 2: '501216', 3: '5'}
+491	491		301							"{1: '1', 2: '""The Ferryman""', 3: 'Step back!', 4: '1'}"
+492	492		202							{1: '1', 6: '1'}
+493	493		201							{1: '2', 2: '501216', 4: '-100'}
+494	494		201						100.0	{1: '3', 2: '501233', 4: '0'}
+495	495		203							{1: '2', 2: '0.25'}
+496	496		203							{1: '3', 2: '0.25', 3: '300'}
+497	497		502							{1: 'RImgBg1Shake'}
+498	498		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '3'}
+499	499		401							{1: '2', 2: '9342058'}
+500	500		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+501	501		301							{1: '1', 3: 'The Ferryman suddenly materializes right in front of the terrified demon, forcefully shutting down its attack.'}
+502	502		202							{1: '2', 2: '3', 6: '1'}
+503	503		201							{1: '1', 2: '501216', 3: '9'}
+504	504		301							"{1: '1', 2: '""The Ferryman""', 3: 'Nngh...!', 4: '1'}"
+505	505		202							{1: '1'}
+506	506		401							{1: '2', 2: '5530'}
+507	507		401							{1: '2', 2: '4640'}
+508	508		301							"{3: ""A jagged, skeletal hand rips off a small piece of Vera's skin, gobbling it up before being sliced to ribbons moments later.""}"
+509	509		201							{1: '1', 2: '501216', 3: '5'}
+510	510		301				DialogDisable			"{1: '1', 2: '""The Ferryman""', 3: ""You want to feast on my flesh and blood? Let's see if you've got enough life to pay the price for it!"", 4: '1'}"
+511	511		202							{1: '1', 6: '1'}
+512	512		201							{1: '1', 2: '501216', 3: '4', 7: '1'}
+513	513		201							{1: '2', 2: '500928', 4: '-600', 7: '1'}
+514	514		201							{1: '3', 2: '500928', 4: '600', 7: '1'}
+515	515		203							{1: '1', 2: '0.25', 4: '-75'}
+516	516		203							{1: '2', 2: '0.25', 3: '-500', 4: '-50'}
+517	517		203							{1: '3', 2: '0.25', 3: '500', 4: '-50'}
+518	518		401						100.0	{1: '2', 2: '4306'}
+519	519		204							{1: '1', 2: '4'}
+520	520		203							{1: '1', 2: '0.25'}
+521	521		202							{1: '3', 2: '2'}
+522	522		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+523	523		401							{1: '2', 2: '11106008'}
+524	524		502							{1: 'RImgBg1Shake'}
+525	525		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '3'}
+526	526		301			DialogEnable				{1: '1', 3: 'She touches the bright red wound on her forearm, tearing through angel after angel as they lunge at her, savoring the exhilarating rush of pushing herself to the limit in battle.'}
+527	527		202							{1: '1'}
+528	528		306							{1: '1'}
+529	529		301							"{3: ""But deep down, she knows—it's almost over.""}"
+530	530		301				DialogDisable			{3: 'Her fingers tremble as strength drains away uncontrollably from her body.'}
+531	531		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+532	532		401							{1: '2', 2: '4386'}
+533	533		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+534	534		301			DialogEnable	DialogDisable			{3: 'The power bestowed upon her by <phonetic=Death Lord> Nyarlathotep</phonetic> vanished years ago during that fateful Judgment. Her endurance until now has been nothing but sheer willpower.'}
+535	535		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+536	536		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory603.jpg'}
+537	537		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+538	538		306							
+539	539		301			DialogEnable				{3: 'In her increasingly blurred vision, the ghastly white of the Sanctuary gradually swallows up the sea of crimson and black.'}
+540	540		201							{1: '1', 2: '501216', 3: '13'}
+541	541		301				DialogDisable			"{1: '1', 2: '""The Ferryman""', 3: 'Haha, at the end of your rope and in such a pathetic state.', 4: '1'}"
+542	542		202							{1: '1', 6: '1'}
+543	543		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+544	544		401							{1: '2', 2: '4385'}
+545	545		504							{1: '0.7'}
+546	546		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory603.jpg'}
+547	547		201							{1: '2', 2: '500676', 7: '1'}
+548	548		301			DialogEnable	DialogDisable			{1: '1', 3: 'She recalls the controlled Chaos Gate Emissary, remembering how alien eggs covered every inch of her body.'}
+549	549		202							{1: '2', 6: '1'}
+550	550		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+551	551		401							{1: '2', 2: '4385'}
+552	552		504							{1: '0'}
+553	553		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory603.jpg'}
+554	554		201							{1: '1', 2: '501216'}
+555	555		301			DialogEnable				"{1: '1', 2: '""The Ferryman""', 3: ""I can't even protect my own anymore, baited like a fool to risk my neck for nothing."", 4: '1'}"
+556	556		204							{1: '1', 2: '8'}
+557	557		301							"{2: '""The Ferryman""', 3: ""If only I had known... I should've just left with Lustrous back then."", 4: '1'}"
+558	558		201							{1: '1', 2: '500426'}
+559	559		301							{1: '1', 2: 'Guards', 3: 'Made it to the third-class carriage!', 4: '1'}
+560	560		301				DialogDisable			{2: 'Guards', 3: 'My lady! I see you!', 4: '1'}
+561	561		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+562	562		502							{1: 'RImgBg1Shake'}
+563	563		201							{1: '2', 2: '500928', 4: '-100'}
+564	564		401							{1: '1', 2: '36'}
+565	565		401							{1: '2', 2: '4806'}
+566	566		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+567	567		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '1'}
+568	568		203							{1: '2', 2: '0.25', 3: '0'}
+569	569		401							{1: '2', 2: '2593'}
+570	570		205							{1: '999'}
+571	571		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '5'}
+572	572		203							{1: '1', 2: '0.25', 3: '400', 4: '-150'}
+573	573		502							{1: 'DialogEnable'}
+574	574		301			PanelActor1Shake				{2: 'Guards', 3: 'Arghhhh—', 4: '1'}
+575	575		401							{1: '1', 2: '276'}
+576	576		101							{4: '5', 5: '1'}
+577	577		203							{1: '1', 2: '0.25', 3: '400', 4: '-200'}
+578	578		202							{1: '1', 2: '2'}
+579	579		301							"{3: ""The angel's fangs slice the first guard clean in half at the waist, right as he's fought his way from the driver's cabin to the carriage. His dying scream echoes off the carriage walls.""}"
+580	580		201							{1: '1', 2: '501216', 3: '3'}
+581	581		301							"{1: '1', 2: '""The Ferryman""', 3: '!!', 4: '1'}"
+582	582		301							{3: 'The metallic scent of blood and those echoing screams are the last things The Ferryman registers as she watches her subordinates vanish one by one without a trace.'}
+583	583		204							{1: '1', 2: '8'}
+584	584		301							"{2: '""The Ferryman""', 3: 'Hah...', 4: '1'}"
+585	585		204							{1: '1', 2: '10'}
+586	586		301							"{2: '""The Ferryman""', 3: ""Looks like I'm still forced to make this kind of choice in the end."", 4: '1'}"
+587	587		202							{1: '1'}
+588	588		401							{1: '2', 2: '4894'}
+589	589		301							{3: 'She lets out a deep breath, then raises her hand to twist the coupling between the carriages.'}
+590	590		201							{1: '1', 2: '501216', 4: '-400'}
+591	591		201							{1: '2', 2: '500426', 4: '400', 5: '-75'}
+592	592		301							{1: '1', 2: 'Guards', 3: 'My lady! This train was built by the First Demon Lord himself...', 4: '2'}
+593	593		301							"{2: '""The Ferryman""', 3: ""...Don't push any further. Fall back. We can't afford to lose everyone here."", 4: '1'}"
+594	594		301							{2: 'Guards', 3: 'My lady!', 4: '2'}
+595	595		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+596	596		204							{1: '1', 2: '5'}
+597	597		301			RImgBg1Shake	DialogDisable			"{2: '""The Ferryman""', 3: 'HAAAARGH—!!!', 4: '1'}"
+598	598		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+599	599		202							{1: '1', 2: '2'}
+600	600		401							{1: '2', 2: '4692'}
+601	601		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '1'}
+602	602		401							{1: '2', 2: '4172'}
+603	603		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab', 2: '2'}
+604	604		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+605	605		502							{1: 'DialogEnable'}
+606	606		301			RImgBg1Shake	DialogDisable			{3: 'The hardened steel slowly warps under the force of her hands, as black flames continuously erupt from her body, melting right through the train—a true marvel, even in Hell itself.'}
+607	607		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab'}
+608	608		201							{1: '1', 2: '500928', 4: '-400'}
+609	609		201							{1: '2', 2: '500928', 4: '400'}
+610	610		203						400.0	{1: '1', 2: '0.25', 3: '-300', 4: '-100'}
+611	611		202							{1: '1'}
+612	612		203						400.0	{1: '2', 2: '0.25', 3: '300', 4: '-100'}
+613	613		401							{1: '2', 2: '2593'}
+614	614		202							{1: '1', 2: '2'}
+615	615		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '5'}
+616	616		502							{1: 'DialogEnable'}
+617	617		301			RImgBg1Shake				"{3: ""A tide of withered bones and fangs surges toward the gaps in The Ferryman's defenses, tearing at her flesh while she's focused on melting through the train.""}"
+618	618		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+619	619		101							{4: '5', 5: '1'}
+620	620		401							{1: '2', 2: '213'}
+621	621		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab', 2: '2'}
+622	622		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+623	623		502							{1: 'RImgBg1Shake'}
+624	624		401							{1: '2', 2: '4176'}
+625	625		301							"{3: ""She keeps forcefully summoning Hell's flames, gradually realizing her magical power is permanently abandoning her.""}"
+626	626		201							{1: '1', 2: '501216', 3: '9'}
+627	627		301			PanelActor1Shake				"{1: '1', 2: '""The Ferryman""', 3: 'Blade... Beh—Gahk!', 4: '1'}"
+628	628		202							{1: '1'}
+629	629		401							{1: '2', 2: '2767'}
+630	630		301							{3: 'Clang.'}
+631	631		301							{3: 'She can no longer grip her Dual-Bladed Lance; it clatters to the ground, abandoning its master.'}
+632	632		301							{3: 'At that very moment, her efforts finally split the train in two. She staggers back, tumbling into the tide of angels.'}
+633	633		301							"{3: ""She watches as her guards, who've been in the trenches with her for years, plummet toward the other side, heading straight for the Valley of Ash.""}"
+634	634		201							{1: '1', 2: '501216'}
+635	635		301							"{1: '1', 2: '""The Ferryman""', 3: 'All remaining forces need to pull back to the Valley of Ash and link up with General Cerberus. At the very least, we have to hold Atlantis. I have a hunch that Witch Haida will keep stirring up trouble there.', 4: '1'}"
+636	636		201							{1: '18', 2: '500426'}
+637	637		301							"{1: '1', 2: 'Guards', 3: ""No—no! My lady! Everyone, hang on tight! The train's going down—Ugh! I'm heading to the front!"", 4: '18'}"
+638	638		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+639	639		202							{1: '1', 2: '18', 6: '1'}
+640	640		306						200.0	{1: '1'}
+641	641		402							{1: '318'}
+642	642		301				DialogDisable			"{3: 'But ""The Ferryman,"" the last Demon Lord still loyal to Hell, can no longer hear her subordinate\'s cries.'}"
+643	643		104				AniZhuanchangBegin			{1: '0|-25|-100', 2: '0.4'}
+644	644		306							
+645	645		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory538.png', 3: '0', 4: '1', 5: '0.8'}
+646	646		401						1200.0	{1: '1', 2: '36'}
+647	647		205							{1: '999'}
+648	648		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+649	649		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+650	650		402							{1: '213'}
+651	651		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+652	652		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+653	653		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab'}
+654	654		501			AniZhuanchangEnd				{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBubble.prefab', 2: '2'}
+655	655		401						2000.0	{1: '2', 2: '5539'}
+656	656		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBubble.prefab'}
+657	657		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory773.jpg'}
+658	658		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+659	659		301			DialogEnable				"{3: 'She plunged into the mist-shrouded <phonetic=""Rift of Chaos"">Acheron River</phonetic>, taking the severed train car and a sea of angels with her.'}"
+660	660		401							{1: '2', 2: '4176'}
+661	661		301			RImgBg1Shake	DialogDisable			"{3: ""A tremendous crash echoes across the water's surface, bringing this dishonorable ambush to an end.""}"
+662	662		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png', 4: '5'}
+663	663		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1281.jpg'}
+664	664		109			AniZhuanchangEnd				"{1: '1', 2: '<color=#ffffffff><size=40>Hell\'s ""Ferryman"" vanishes into the Acheron River.</size></color>', 3: '0', 4: '-420', 8: '3'}"
+665	665		301							"{3: 'Hell\'s ""Ferryman"" vanishes into the Acheron River.'}"
+666	666		109							{1: '1', 2: '<color=#ffffffff><size=40>With the last demon fighting to preserve her dignity gone, the death knell of the Age of Law rings out, marking its final end.</size></color>', 4: '-420', 8: '3'}
+667	667		301				AniZhuanchangBegin			{3: 'With the last demon fighting to preserve her dignity gone, the death knell of the Age of Law rings out, marking its final end.'}
+668	668		110							
+669	669		101							{4: '5', 5: '1'}
+670	670		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory523.jpg'}
+671	671		401							{1: '1', 2: '209'}
+672	672		201							{1: '1', 2: '501294'}
+673	673		301			DialogEnable				"{1: '1', 2: '???', 3: 'While <phonetic=Death Lord>Nyarlathotep</phonetic> remains locked away in the Hall of a Thousand Demons, years later, the defiant ""Ferryman"" also falls victim to an ambush, crashing her train into the Acheron River...', 4: '1'}"
+674	674		203							{1: '1', 2: '0.25', 3: '-400'}
+675	675		201							{1: '2', 2: '500739', 4: '400'}
+676	676		301							"{1: '1', 2: 'Witch Haida', 3: ""You... how dare you utter the Death Lord's name so directly?"", 4: '2'}"
+677	677		301							"{2: '???', 3: 'That\'s beside the point. Let\'s talk about this—I\'m curious. ""The Ferryman"" should be nothing but a silent stone at the bottom of the Acheron River, so why do I sense her presence in the mortal realm?', 4: '1'}"
+678	678		301							{2: '???', 3: 'Was it you, Lamia? You really are a master of these underhanded schemes.', 4: '1'}
+679	679		301							{3: 'She keeps her smile as she boldly speaks the true name of the demon in front of her.'}
+680	680		204							{1: '2', 2: '14'}
+681	681		301							{2: 'Witch Haida', 3: '...', 4: '2'}
+682	682		301							"{2: '???', 3: ""You wanted to swipe Vera's train to make a deal with the Sanctuary, yet you couldn't stand to let her vanish into the Acheron River. So, you secretly saved her and sent her off to the mortal realm... Honestly, you've been pretty greedy."", 4: '1'}"
+683	683		204							{1: '2', 2: '8'}
+684	684		301							{2: 'Witch Haida', 3: 'I-I have my reasons for what I did...', 4: '2'}
+685	685		301							"{2: '???', 3: 'Don\'t worry, I\'m not judging you. I have no right to tell you how to handle ""The Ferryman."" You can afford to be even greedier. As Hell stands now, nothing can stand against you—you\'re the top Demon Lord.', 4: '1'}"
+686	686		301							"{2: '???', 3: ""The victor enjoys the spoils, and you've won. The Sanctuary got half the train, so I guess you've held up your end of the bargain, however grudgingly."", 4: '1'}"
+687	687		301							"{2: '???', 3: ""Now, go collect your rewards, Witch Haida. The Atlantis you wanted and the Omega Egg—they're all yours."", 4: '1'}"
+688	688		204							{1: '2'}
+689	689		301							"{2: 'Witch Haida', 3: ""Atlantis is already mine—it's where I was born! It has always been... the rightful domain of Witch Haida!"", 4: '2'}"
+690	690		301							"{2: 'Witch Haida', 3: ""I'll never let it be stolen from me again."", 4: '2'}"
+691	691		202							{1: '1', 2: '2', 6: '1'}
+692	692		306							{1: '1'}
+693	693		301							"{3: ""Deep within the Valley of Ash lies the Demon Fortress, a place where all of Hell's secrets are buried.""}"
+694	694		301				DialogDisable			"{3: ""It's the stronghold Nyarlathotep bestowed upon generations of Ferrymen, the abyss most feared by all demons.""}"
+695	695		401							{1: '1', 2: '36'}
+696	696		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory531.jpg', 3: '0', 4: '1', 5: '1'}
+697	697		205							{1: '999'}
+698	698		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory531.jpg'}
+699	699		401							{1: '2', 2: '2595'}
+700	700		109							{1: '1', 2: '<color=#ffffffff><size=40>Demon Fortress, Atlantis.</size></color>', 4: '-420', 8: '3', 9: '3'}
+701	701		301				AniZhuanchangBegin			{3: 'Demon Fortress, Atlantis.'}
+702	702		306							
+703	703		110							
+704	704		101							{4: '5', 5: '1'}
+705	705		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+706	706		401							{1: '1', 2: '120'}
+707	707		104							{1: '-50|-25|-150', 2: '0'}
+708	708		502							{1: 'DialogEnable'}
+709	709		301			AniZhuanchangEnd				"{3: '30 years after the Cataclysm, 1st day of the Starfire Month, <phonetic=""Eternal Day"">evening</phonetic>.'}"
+710	710		401							{1: '2', 2: '4799'}
+711	711		301							{3: 'With an entrenching shovel, you rest on the barren riverbank, tilting your head back to wipe away the sweat pouring down your forehead.'}
+712	712		301							"{3: ""Though it's evening, the scorching sun still hangs high in the sky, with the horizon bleached a ghastly white as heat waves roll across the land.""}"
+713	713		301				DialogDisable			{3: 'You still has nothing to show for your efforts.'}
+714	714		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg', 3: '0', 4: '1', 5: '1'}
+715	715		104							{1: '0|0|0', 2: '0'}
+716	716		205							{1: '999'}
+717	717		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+718	718		302							"{2: 'Are you sure this is the spot?', 3: '719', 4: ""You didn't get the location mixed up, did you?"", 5: '719'}"
+719	719		401							{1: '2', 2: '4818'}
+720	720		201							{1: '18', 2: '501283'}
+721	721		301			DialogEnable				{1: '1', 2: 'Morigan', 3: 'No doubt about it, no worries!', 4: '18'}
+722	722		202							{1: '18'}
+723	723		301							{3: 'The raven cranes its neck and fans out its feathers, panting in the heat as it speaks, trying to catch a breeze.'}
+724	724		201							{1: '18', 2: '501283'}
+725	725		301							"{1: '1', 2: 'Morigan', 3: ""Yeah, I might have a raven's beak of doom, but can't you just trust me to get the job done?"", 4: '18'}"
+726	726		302							"{2: ""Fine, let's keep at it."", 3: '729', 4: 'Trusting you is like expecting a rock to give birth to an Acheron.', 5: '729'}"
+727	727		301							{2: 'Morigan', 3: 'Have you ever heard the tale of the Black Gold Miners?', 4: '18'}
+728	728		302							{2: 'No...', 3: '729', 4: 'Get to the point.', 5: '729'}
+729	729		301							{2: 'Morigan', 3: 'Those prospectors, so many of them dug their hearts out, only to come up with nothing in the end.', 4: '18'}
+730	730		301							{2: 'Morigan', 3: 'They just threw in the towel and chalked it up to bad luck. But then someone else comes along and keeps digging in that very same mine shaft—', 4: '18'}
+731	731		301							{2: 'Morigan', 3: 'Hey, guess what?', 4: '18'}
+732	732		302							"{2: ""I'm not falling for your made-up stories."", 3: '733', 4: 'Everyone uses explosives for mining these days. Nobody digs by hand anymore.', 5: '733'}"
+733	733		301							{2: 'Morigan', 3: 'A-anyway, my point is, your very next shovel full is sure to turn up something good!', 4: '18'}
+734	734		202							{1: '18'}
+735	735		104						250.0	{1: '0|-50|-50', 2: '0.25'}
+736	736		401							{1: '2', 2: '2936'}
+737	737		104							{1: '0|0|0', 2: '0.25'}
+738	738		301				DialogDisable			"{3: 'You straighten up, clearly done arguing with the chatty raven, and get ready to take off, just like the miners in the ""Black Gold Miners"" story.'}"
+739	739		104						250.0	{1: '0|-50|0', 2: '0.25'}
+740	740		104						250.0	{1: '0|0|-25', 2: '0.25'}
+741	741		104							{1: '0|0|0', 2: '0.25'}
+742	742		401							{1: '2', 2: '5141'}
+743	743		301			DialogEnable	DialogDisable			{3: '—But suddenly you trip over something underfoot.'}
+744	744		302							{2: '?', 3: '745'}
+745	745		301			DialogEnable				{3: 'Looking back, you spot a small piece of metal sticking out from the dusty gravel right beneath the rock where you were sitting.'}
+746	746		302							{2: 'Wait, is there actually something here?', 3: '747'}
+747	747		401							{1: '2', 2: '2635'}
+748	748		301							{3: 'You shove your shovel into the ground, sending dust and dirt flying.'}
+749	749		306							
+750	750		301							"{3: ""Slowly, a metal object peeks through—a seriously rusty, old-school lighter. Ever since the sun decided to stay out forever, nobody's had a use for these things, so they just got tossed aside.""}"
+751	751		301							"{3: ""But even with all the crud, you can tell there's a cold glint to it, something the years haven't dulled. It's got a sharpness that feels out of place, like it's from beyond the Scorched Borderland.""}"
+752	752		301							{3: 'Then, you trace your fingers over an engraving on the lighter—a unique mark.'}
+753	753		306							
+754	754		201							{1: '18', 2: '501283'}
+755	755		301							"{1: '1', 2: 'Morigan', 3: ""Ha! I knew it! I wasn't wrong!"", 4: '18'}"
+756	756		301							{2: 'Morigan', 3: 'This has got to be...', 4: '18'}
+757	757		302							"{2: 'Her lighter.', 3: '758', 4: ""The Ferryman's."", 5: '758'}"
+758	758		202							{1: '18'}
+759	759		401							{1: '2', 2: '5533'}
+760	760		301							{3: 'Click.'}
+761	761		301							{3: 'You press down on the lighter, but all that comes out is the sound of sand grinding in the metal bits.'}
+762	762		201							{1: '18', 2: '501283'}
+763	763		301							"{1: '1', 2: 'Morigan', 3: ""Think it'll still light?"", 4: '18'}"
+764	764		202							{1: '18'}
+765	765		104						250.0	{1: '0|-50|-25', 2: '0.25'}
+766	766		104						250.0	{1: '0|0|-25', 2: '0.25'}
+767	767		401							{1: '2', 2: '4044'}
+768	768		301							"{3: ""You plop back down on the rock, lean in, cup your hand against the wind, and try again and again to spark it in the rock's sheltered nooks.""}"
+769	769		302							"{2: ""She's immortal; she won't die. This thing's gotta light up."", 3: '770'}"
+770	770		401						100.0	{1: '2', 2: '5533'}
+771	771		401							{1: '2', 2: '5533'}
+772	772		301							{3: 'Click, click.'}
+773	773		401							{1: '2', 2: '5533'}
+774	774		401							{1: '2', 2: '979'}
+775	775		301							{3: 'After a few more sharp clicks, a tiny flame finally flickers to life from the opening.'}
+776	776		301							"{3: ""It's a bit faint compared to today's blazing sun, but it holds on, burning slow and steady in your palm.""}"
+777	777		302				AniZhuanchangBegin			"{2: ""See? The fire's right here."", 3: '778'}"
+778	778		401						1600.0	{1: '1', 2: '36'}
+779	779		502						400.0	{1: 'DialogDisable'}
+780	780		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+781	781		301			DialogEnable	DialogDisable			{3: 'The plunge into the Acheron River still feels as fresh as ever, an endless, nightmarish freefall, like being stuck in a recurring dream of life behind bars.'}
+782	782		401							{1: '2', 2: '4092'}
+783	783		109							{1: '1', 2: '<b><size=50><color=#ff4e4eff>B E T R A Y A L</color></size></b>', 4: '50', 7: '1', 9: '3', 11: '1'}
+784	784		301							{3: 'Betrayal'}
+785	785		401							{1: '2', 2: '4807'}
+786	786		401							{1: '2', 2: '2927'}
+787	787		110							
+788	788		301			DialogEnable	DialogDisable			"{3: ""The guards' screams, angels feasting... all these echoes of memory detonate in her ears, but they can't rouse this soul anymore.""}"
+789	789		402							{1: '4807'}
+790	790		402							{1: '2927'}
+791	791		401							{1: '2', 2: '4092'}
+792	792		109							{1: '1', 2: '<b><size=75><color=#ff4e4eff>S T R I F E</color></size></b>', 4: '50', 7: '1', 9: '3', 11: '1'}
+793	793		301							{3: 'Strife'}
+794	794		110							
+795	795		301			DialogEnable				{3: 'Until...'}
+796	796		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab', 2: '2'}
+797	797		401							{1: '2', 2: '2683'}
+798	798		301				DialogDisable			{3: 'Something barely grazes her skin, a faint burning sensation.'}
+799	799		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab'}
+800	800		401							{1: '2', 2: '4092'}
+801	801		109							{1: '1', 2: '<b><size=75><color=#ff4e4eff>S U F F E R I N G</color></size></b>', 4: '50', 7: '1', 9: '3', 11: '1'}
+802	802		301							{3: 'Suffering'}
+803	803		110							
+804	804		301			DialogEnable	DialogDisable			{3: 'But that long-forgotten sting of pain instantly jolts a soul that had withered, died, even gone stiff with decay, back to life.'}
+805	805		401							{1: '2', 2: '4092'}
+806	806		109							{1: '1', 2: '<b><size=100><color=#ff4e4eff>D E A T H</color></size></b>', 4: '50', 7: '1', 9: '3', 11: '1'}
+807	807		301							{3: 'Death'}
+808	808		110							
+809	809		401							{1: '2', 2: '2624'}
+810	810		301			DialogEnable				{3: 'The demon blood in her veins surges, firing up instincts that had been frozen in time.'}
+811	811		301							"{3: ""She's immortal, undying—fully aware that eternal life is a never-ending torment. Yet, she savors it, like a delicious treat.""}"
+812	812		301				AniZhuanchangBegin			{3: 'She knows the days of chasing pain are back.'}
+813	813		402							{1: '2624'}
+814	814		401						1600.0	{1: '1', 2: '36'}
+815	815		502						400.0	{1: 'DialogDisable'}
+816	816		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+817	817		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '5'}
+818	818		401							{1: '1', 2: '394'}
+819	819		201							{1: '18', 2: '501216', 3: '8'}
+820	820		301			DialogEnable				{1: '1', 2: '???', 3: 'Hm...', 4: '18'}
+821	821		202			DialogDisable				{1: '18'}
+822	822		101							{4: '5', 5: '1'}
+823	823		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+824	824		301			DialogEnable				{3: 'She cracks open her eyes, wincing at the blinding sunlight. Luckily, a backlit figure casts just the right shadow, giving her some much-needed cover.'}
+825	825		302							"{2: ""You're awake."", 3: '826'}"
+826	826		201							{1: '1', 2: '501216', 5: '-100'}
+827	827		301							{1: '1', 2: '???', 3: 'How long was I out?', 4: '1'}
+828	828		302							"{2: ""You're not going to like the answer—it's been years."", 3: '829'}"
+829	829		204							{1: '1', 2: '10'}
+830	830		301							{2: '???', 3: 'This blasted sunlight... I must be back in the mortal realm. Look at the mess that stupid fish made.', 4: '1'}
+831	831		302							"{2: ""We've got a chance to fix this screw-up."", 3: '832'}"
+832	832		204							{1: '1', 2: '4'}
+833	833		301							{2: '???', 3: 'Cut to the chase. What do you want?', 4: '1'}
+834	834		302							"{2: ""In three days, I'll get your train back from the Sanctuary."", 3: '835'}"
+835	835		204							{1: '1', 2: '1'}
+836	836		301							"{2: '???', 3: ""Tch, why don't you grab a shovel, draw some blood, and take a look in a mirror?"", 4: '1'}"
+837	837		204							{1: '1'}
+838	838		301				DialogDisable			{2: '???', 3: 'A human, making such brazen claims? Or maybe the most merciful Cardinal Deity has been reborn to do some good deeds?', 4: '1'}
+839	839		302							{2: 'Of course, everything has a price.', 3: '840'}
+840	840		302							{2: 'Your train can go straight to Hell, so it should be able to fly to the Sanctuary, right?', 3: '841'}
+841	841		301			DialogEnable	DialogDisable			"{2: '???', 3: 'Don\'t you dare breathe the word ""Sanctuary"" in front of me again.', 4: '1'}"
+842	842		302							{2: 'No, I want to stand up to the Sanctuary.', 3: '843'}
+843	843		302							{2: 'Sign a covenant with me, and I can give you back your immortal demonic powers.', 3: '844'}
+844	844		302							{2: 'I can help you sort out your problems in Hell.', 3: '845'}
+845	845		302							"{2: ""And in return, you'll help me wage war against the Sanctuary.""}"
+846	846		204							{1: '1', 2: '1'}
+847	847		301			DialogEnable				{2: '???', 3: 'Waging war against the Sanctuary... Interesting. I do have some old scores to settle with them.', 4: '1'}
+848	848		204							{1: '1', 2: '13'}
+849	849		301							{3: 'The former Demon Lord, the Ferryman, casually adjusted her cascade of fiery red hair and let out a soft laugh.'}
+850	850		301							"{2: '???', 3: ""Thanks for going to the trouble of digging me out. I'm willing to cooperate with you... for now."", 4: '1'}"
+851	851		204							{1: '1', 2: '4'}
+852	852		301							"{2: '???', 3: ""But I have to warn you—hell isn't some place you can just stroll into and out of whenever you please."", 4: '1'}"
+853	853		301				DialogDisable			"{2: '???', 3: ""This dump of a mortal world is just a gentle breeze compared to what's waiting down below."", 4: '1'}"
+854	854		302							"{2: ""The world today isn't all that different from Hell anyway."", 3: '856'}"
+855	855		302							"{2: ""Humans live as humans, and spirits exist as spirits—that's just the natural order of things."", 3: '857'}"
+856	856		302							"{2: ""Together, we'll make the Sanctuary pay."", 3: '857'}"
+857	857		204							{1: '1', 2: '1'}
+858	858		301			DialogEnable				"{1: '1', 2: '???', 3: ""Someone who talks like that... you've really got a death wish, don't you?"", 4: '1'}"
+859	859		204							{1: '1'}
+860	860		301							"{2: '???', 3: ""Show me what you've got, human."", 4: '1'}"
+861	861		203							{1: '1', 2: '0.25'}
+862	862		202							{1: '1'}
+863	863		401							{1: '2', 2: '4044'}
+864	864		301				DialogDisable			{3: 'The red-haired sufferer looks up and grasps your hand.'}
+865	865		201							{1: '1', 2: '501216', 6: '-180', 7: '1'}
+866	866		307							{1: 'Come!', 2: '0', 3: '80', 4: 'ff4e4eff'}
+867	867		301							{3: 'Come!'}
+868	868		307							{2: '1'}
+869	869		302							"{2: 'I crown you ""Death.""', 3: '870'}"
+870	870		302							{2: 'I am the Bloodsworn—', 3: '871'}
+871	871		307							{1: 'Gray Raven.', 2: '0', 3: '80'}
+872	872		301							{3: 'Gray Raven.'}
+873	873		307							{2: '1'}
+874	874		202						200.0	{1: '1'}
+875	875		306							
+876	876		401							{1: '1', 2: '250'}
+877	877		401							{1: '2', 2: '4806'}
+878	878		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+879	879		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '1'}
+880	880		301			DialogEnable				{3: 'You slowly lower your arms toward the freshly dug, nameless grave by the riverbank, then violently plunge the entrenching tool into her collarbone.'}
+881	881		401							{1: '2', 2: '2593'}
+882	882		205							{1: '999'}
+883	883		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '5'}
+884	884		201							{1: '1', 2: '501216', 5: '-150', 7: '1'}
+885	885		401							{1: '2', 2: '2938'}
+886	886		301							{1: '1', 3: 'The sound of shattering crystal rings out, tearing her chest cavity to pieces. Yet, she welcomes this pain as fierce crimson energy surges once more through every receptor in her body.'}
+887	887		301							{3: 'Time reclaims the forgotten one, pulling her back into the frenzy and clamor of the Age of Cataclysm.'}
+888	888		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0', 5: '1'}
+889	889		101							{4: '5', 5: '1'}
+890	890		203							{1: '1', 2: '0.25'}
+891	891		401							{1: '2', 2: '4797'}
+892	892		301				DialogDisable			{1: '1', 3: 'She grips her Dual-Bladed Lance tightly, using it as leverage to slowly rise, lifting the war-forged frame of a knight.'}
+893	893		306							
+894	894		204							{1: '1', 2: '13'}
+895	895		301			DialogEnable				"{2: '""Death""', 3: ""Wherever I stand... that's Hell itself."", 4: '1'}"
+896	896		302				AniZhuanchangBegin			"{2: 'Welcome back, ""Death.""', 3: '897'}"
+897	897		202							{1: '1', 6: '1'}
+898	898		502						400.0	{1: 'DialogDisable'}
+899	899		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory460.jpg'}
+900	900		304			AniZhuanchangEnd				{1: 'How long do we have to wait to wash away the stains of bloody injustice?', 2: 'ffffffff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory460.jpg', 6: '1', 7: '-1', 10: '1'}
+901	901		304							{1: 'Laws crumble, the red sun decays into blackness, and lost souls drift among the living.', 2: 'ffffffff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory460.jpg', 6: '1', 7: '-1', 8: '1', 10: '1'}
+902	902		304							{1: 'The Sanctuary, drunk on its own power, commands the heavens to hold back rain and turns water to blood, ruthlessly unleashing disasters to tear the world apart.', 2: 'ffffffff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory460.jpg', 6: '1', 7: '-1', 10: '1'}
+903	903		304				AniZhuanchangBegin			"{1: ""But death's wrath is now at hand, and those who honor her name will finally find their peace."", 2: 'ffffffff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory460.jpg', 6: '1', 7: '-1', 8: '1', 9: '1', 10: '1'}"
+904	904		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory913.jpg'}
+905	905		109			AniZhuanchangEnd				{1: '1', 2: '<i><b><size=65><color=#ff4e4eff>THE ACHERON SHALL FLOW ONCE MORE</color></size></b></i>', 4: '50', 7: '1', 9: '3', 11: '1'}
+906	906		301							{3: 'The Acheron shall flow once more'}
+907	907		401							{1: '2', 2: '4348'}
+908	908		109							{1: '1', 2: '<i><b><size=65><color=#ff4e4eff>THE UMBRAL FLAMES SHALL DEVOUR THOSE WHO TWIST LIFE AND DEATH</color></size></b></i>', 4: '50', 7: '1', 9: '3', 11: '1'}
+909	909		301		1		AniZhuanchangBegin			{3: 'The umbral flames shall devour those who twist life and death'}

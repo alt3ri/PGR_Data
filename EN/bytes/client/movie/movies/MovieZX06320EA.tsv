@@ -1,0 +1,139 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '2', 2: '18511011'}
+3	3		501						350.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash.prefab', 2: '1'}
+4	4		401							{1: '2', 2: '9342060'}
+5	5		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '1'}
+6	6		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+7	7		401							{1: '1', 2: '7111'}
+8	8		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen01.prefab', 2: '3'}
+9	9		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6201_19.jpg'}
+10	10		401							{1: '2', 2: '4339'}
+11	11		104							{1: '200|-135|-200', 2: '0'}
+12	12		104						2000.0	{1: '-50|-135|-200', 2: '1.5'}
+13	13		301			DialogEnable	DialogDisable			{3: 'The centaur charges through the enemy ranks like a tempest.'}
+14	14		501						1500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFreezeScreen.prefab', 2: '3'}
+15	15		301			DialogEnable	DialogDisable			{3: 'Her silver body reflects the gleam of the ice, four hooves shattering the frozen earth. Each thrust of her blade breaks Corrupted apart in her wake.'}
+16	16		401							{1: '2', 2: '10112408'}
+17	17		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+18	18		104							{1: '0|0|0', 2: '0'}
+19	19		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFreezeScreen.prefab'}
+20	20		502							{1: 'RImgBg1Shake'}
+21	21		301			DialogEnable				{3: 'Rosetta bursts from the encirclement like an arrow through ice, scattering the horde behind her in a whirlwind of severed limbs and shattered parts.'}
+22	22		301							{3: 'On the battlefield of Sophiasburgh, nothing can withstand her.'}
+23	23		502							{1: 'RImgBg1Shake'}
+24	24		301				AniZhuanchangBegin			{2: 'Rosetta', 3: 'Charge with me!'}
+25	25		502							{1: 'DialogDisable'}
+26	26		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory87.png'}
+27	27		201							{1: '2', 2: '500013', 4: '1500'}
+28	28		201							{1: '1', 2: '501444'}
+29	29		502							{1: 'DialogEnable'}
+30	30		502							{1: 'DialogShake'}
+31	31		301			AniZhuanchangEnd				{1: '1', 2: 'Mina', 3: 'Hahaha! Eat this, you freaks!', 4: '1'}
+32	32		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+33	33		203							{1: '1', 2: '0.25', 4: '-50', 5: '-100'}
+34	34		202							{1: '1', 6: '1'}
+35	35		401							{1: '2', 2: '1508'}
+36	36		203							{1: '2', 2: '0.3'}
+37	37		301			DialogShake				{1: '1', 2: 'Corrupted', 3: '—!', 4: '2'}
+38	38		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+39	39		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+40	40		401							{1: '2', 2: '10007001'}
+41	41		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 2: '2', 3: '2'}
+42	42		301			PanelActor2Shake	DialogDisable			{3: 'The sounds of combat tear through the polar wind as green and red auroras writhe violently overhead. Mina swings her ice-breaking hammer, crushing a Corrupted to the ground. Though its head is slick with black mechanical oil, her grin only sharpens, wild and feral.'}
+43	43		401							{1: '2', 2: '3077'}
+44	44		203						200.0	{1: '2', 2: '0.25', 4: '-1080'}
+45	45		202						300.0	{1: '2'}
+46	46		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '2'}
+47	47		201							{1: '1', 2: '501444', 3: '1'}
+48	48		301			DialogEnable				"{1: '1', 2: 'Mina', 3: ""With this array boosting me, I'm unstoppable! Let me show you the real power of my Arctic relic—this ice-breaker!"", 4: '1'}"
+49	49		201							{1: '1', 2: '501459'}
+50	50		301			PanelActor1Shake				"{1: '1', 2: 'Dr. Bear', 3: ""What are you doing, Dr. Mina? The array isn't calibrated for humans! Stay put and don't move!"", 4: '1'}"
+51	51		201							{1: '1', 2: '501444', 3: '5'}
+52	52		301			DialogShake	DialogDisable			{1: '1', 2: 'Mina', 3: 'Are you nuts? You expect me to just stand here as target practice?', 4: '1'}
+53	53		203						250.0	{1: '1', 2: '0.25', 3: '600'}
+54	54		201							{1: '2', 2: '500013', 4: '-200', 7: '1'}
+55	55		401							{1: '2', 2: '10007001'}
+56	56		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+57	57		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen01.prefab'}
+58	58		401							{1: '2', 2: '3077'}
+59	59		203						300.0	{1: '2', 2: '0.25', 3: '-200', 4: '-1080'}
+60	60		202							{1: '2'}
+61	61		203						400.0	{1: '1', 2: '0.3', 3: '0'}
+62	62		401							{1: '2', 2: '4422'}
+63	63		301			DialogEnable				{3: 'Ignoring a panicked Dr. Bear, Mina backhands another Corrupted into the frozen sea and immediately opens her comms channel.'}
+64	64		204							{1: '1', 2: '4'}
+65	65		301							"{2: 'Mina', 3: 'Hey, Asimov. Cut to the chase, what is this ""Amalgamation"" tech, really?', 4: '1'}"
+66	66		203							{1: '1', 2: '0.25', 3: '-400'}
+67	67		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '3', 3: '2'}
+68	68		201							{1: '2', 2: '500004', 4: '400', 7: '1'}
+69	69		301							{1: '1', 2: 'Asimov', 3: 'Is now really the best moment for a theoretical discussion?', 4: '2'}
+70	70		204							{1: '1', 2: '4'}
+71	71		301			DialogShake				"{2: 'Mina', 3: ""I've vented enough steam for now. Dr. Bear, you're hooked into the array, aren't you? Cover me for a minute!"", 4: '1'}"
+72	72		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+73	73		202							{1: '1', 2: '2', 6: '1'}
+74	74		201							{1: '1', 2: '501459'}
+75	75		301							"{1: '1', 2: 'Dr. Bear', 3: ""...Sigh. Just don't do anything crazy, alright?"", 4: '1'}"
+76	76		204							{1: '1', 2: '4'}
+77	77		203							{1: '1', 2: '0.25', 4: '-50', 5: '-200'}
+78	78		301			RImgBg1Shake				"{2: 'Dr. Bear', 3: ""Time to feel this Ursa's fury, Punishing Virus!"", 4: '1'}"
+79	79		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+80	80		202							{1: '1', 6: '1'}
+81	81		401							{1: '2', 2: '1508'}
+82	82		201							{1: '2', 2: '500013'}
+83	83		301				DialogDisable			{1: '1', 2: 'Corrupted', 3: '...?', 4: '2'}
+84	84		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+85	85		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+86	86		401							{1: '2', 2: '10007001'}
+87	87		401							{1: '2', 2: '3077'}
+88	88		203						300.0	{1: '2', 2: '0.25', 4: '-1080'}
+89	89		202						500.0	{1: '2'}
+90	90		201							{1: '1', 2: '501444', 3: '4', 4: '-400'}
+91	91		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '3', 3: '2'}
+92	92		201							{1: '2', 2: '500004', 4: '400'}
+93	93		301			DialogEnable				{1: '1', 2: 'Mina', 3: 'Alright, out with it! I hate being kept in the dark!', 4: '1'}
+94	94		204							{1: '2', 2: '8'}
+95	95		301							{2: 'Asimov', 3: '...', 4: '2'}
+96	96		204							{1: '2'}
+97	97		301							{3: 'The Chief Technician lets out a sigh.'}
+98	98		301							"{2: 'Asimov', 3: ""I'll send you a detailed report later, but put simply, Amalgamation technology is a bridge connecting individual M.I.N.D.s. Its ultimate objective is to construct a vast consciousness network: the Amalgamation array."", 4: '2'}"
+99	99		204							{1: '1', 2: '12'}
+100	100		301							"{2: 'Mina', 3: ""I saw that much firsthand. Everyone linked gets a massive power boost... even starts using tech they shouldn't understand."", 4: '1'}"
+101	101		301							"{2: 'Asimov', 3: ""It's not just enhancement. It is completion. We previously misidentified the instability in the Arctic Route Union's humanoid-hybrid M.I.N.D.s as a flaw. In reality, it was a deliberate design gap."", 4: '2'}"
+102	102		204							{1: '1', 2: '4'}
+103	103		301							{2: 'Mina', 3: 'Are you saying they engineered humanoid-hybrids specifically for Amalgamation?', 4: '1'}
+104	104		301							"{2: 'Asimov', 3: ""Correct. Bionic machines possess dedicated Amalgamation access points. Non-humanoid collectives induce M.I.N.D. instability, but these perceived defects perfectly complement Amalgamation's requirements."", 4: '2'}"
+105	105		301							"{2: 'Asimov', 3: ""The technology's purpose is to construct a macro-array from countless individual nodes, recalibrating each unique entity—from individual to collective, and back again."", 4: '2'}"
+106	106		301							"{2: 'Mina', 3: 'So after the Amalgamation, they become ""complete""... That explains the historical obsession with perfecting humanoid-hybrid frames.', 4: '1'}"
+107	107		306							{1: '1'}
+108	108		204							{1: '1', 2: '3'}
+109	109		301							"{3: '""Ultimate Amalgamator Malkuth""—a term Mina recalls from the manuscript during her talk with Asimov. This, she now understands, is the key. ""Complete"" doesn\'t just mean the Amalgamator is finished; it means the entire system, including its subordinate frames, is now whole.'}"
+110	110		306							{1: '0'}
+111	111		204							{1: '1', 2: '4'}
+112	112		301							"{2: 'Asimov', 3: ""Shared consciousness, mutual reinforcement—that is the true purpose of Amalgamation's power. A communal existence defines Malkuth's core strength."", 4: '2'}"
+113	113		301							"{2: 'Mina', 3: ""But if that's the ideal... what's with the red aurora? What kind of Amalgamation is the Frostheart Emperor running?"", 4: '1'}"
+114	114		301							{2: 'Asimov', 3: 'A corrupted variant.', 4: '2'}
+115	115		301							"{2: 'Asimov', 3: ""Similar to Amberia's prior misuse, while she employed the power of Amalgamation, her core methodology was appropriation, subsuming other nodes within the array as mere extensions of her own will."", 4: '2'}"
+116	116		301							"{2: 'Mina', 3: ""But wouldn't that break the proper connection between the Amalgamator, the humanoid-hybrids, and the bionic machines?"", 4: '1'}"
+117	117		301							{2: 'Asimov', 3: 'Connection is not the requirement. He only needs to activate the combat modules.', 4: '2'}
+118	118		301							{2: 'Asimov', 3: 'Immersion in anger teaches hatred, a principle applicable to any thinking entity. Complex consciousness synchronization is unnecessary. Implanting a single, dominant emotion or command suffices.', 4: '2'}
+119	119		204							{1: '1', 2: '12'}
+120	120		301							"{2: 'Mina', 3: ""No synchronization needed... Wait, so he doesn't need an anchor like Derek in our case..."", 4: '1'}"
+121	121		301							{2: 'Asimov', 3: 'Indeed. I suspect our initial activation failure was within his anticipated parameters.', 4: '2'}
+122	122		204							{1: '1', 2: '4'}
+123	123		301							{2: 'Mina', 3: 'Hmph. Too bad for him we got it working in the end... Speaking of which, what exactly did you connect to handle the processing load?', 4: '1'}
+124	124		301							"{2: 'Asimov', 3: 'A large-scale server cluster, provided by an associate who operates under the designation ""The Unwinged"".', 4: '2'}"
+125	125		202							{1: '1', 2: '2', 6: '1'}
+126	126		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+127	127		401							{1: '2', 2: '4535'}
+128	128		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen01.prefab', 2: '3'}
+129	129		502							{1: 'RImgBg1Shake'}
+130	130		301							{3: 'The sounds of battle swell once more into a furious roar. Despite the counteroffensive, the two sides remain deadlocked, neither able to gain the upper hand.'}
+131	131		201							{1: '1', 2: '501444', 3: '4'}
+132	132		301							"{1: '1', 2: 'Mina', 3: ""Hmph. We'll hash out the details later!"", 4: '1'}"
+133	133		301			DialogShake				"{2: 'Mina', 3: ""Hang on, Dr. Bear! I'm coming to back you up!"", 4: '1'}"
+134	134		202							{1: '1', 6: '1'}
+135	135		201							{1: '1', 2: '501459'}
+136	136		301			RImgBg1Shake				"{1: '1', 2: 'Dr. Bear', 3: ""Can't you just stay back, Mina? I told you the array isn't for humans!"", 4: '1'}"
+137	137		201							{1: '1', 2: '501444', 3: '5'}
+138	138		301		1	DialogShake	AniZhuanchangBegin			{1: '1', 2: 'Mina', 3: 'Stop your nagging!', 4: '1'}

@@ -1,0 +1,143 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		401							{1: '2', 2: '615'}
+4	4		301			DialogEnable				{3: 'All of a sudden, the terminal begins to emit nothing but white noise. You have no idea what happened to Noctis.'}
+5	5		302							{2: 'Noctis? Hello? Noctis!', 3: '6'}
+6	6		301							{3: 'You only know his approximate location before the signals disappeared, based on the distance displayed on the terminal.'}
+7	7		301							{3: 'He seems to be still within the town and not far from you. However, he warned you to not leave the inn. What if it is a trap...?'}
+8	8		402							{1: '615'}
+9	9		201							{1: '1', 2: '500692'}
+10	10		301							"{1: '1', 2: 'Max', 3: ""It seems that there's some trouble in town... Well, I was just about to go and check it out. Now..."", 4: '1'}"
+11	11		301							{3: 'He points at you and leaves the room.'}
+12	12		301							"{2: 'Max', 3: ""Come with us. You want to find that redhead Construct, don't you?"", 4: '1'}"
+13	13		301							{3: 'Moving with Max would indeed be safer... But as the mayor, Max himself cannot be trusted entirely.'}
+14	14		301							{2: 'Max', 3: 'What? Scared that I may kill you?', 4: '1'}
+15	15		302							"{2: ""No. I'll go with you, Max."", 3: '16'}"
+16	16		301							"{2: 'Max', 3: ""Good... It's good to have guts here."", 4: '1'}"
+17	17		301							{3: 'Max stops and takes a puff on his cigar.'}
+18	18		301				AniZhuanchangBegin			"{2: 'Max', 3: 'And... Just call me ""Mayor"".', 4: '1'}"
+19	19		401							{1: '1', 2: '36'}
+20	20		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory748.jpg'}
+21	21		202							{1: '1', 6: '1'}
+22	22		401							{1: '1', 2: '263'}
+23	23		401							{1: '2', 2: '2915'}
+24	24		401							{1: '2', 2: '754'}
+25	25		301			AniZhuanchangEnd				{3: 'As the door opens, a deafening noise and a strong, warm scent of alcohol gush out, as if you have entered another world parallel to the quiet street.'}
+26	26		302							{2: 'What is this place?!', 3: '27'}
+27	27		301							{3: 'You have to speak twice as loud as usual to make sure others can hear.'}
+28	28		201							{1: '1', 2: '500692'}
+29	29		301							"{1: '1', 2: 'Max', 3: ""This is the town's tavern... Alcohol is a necessity for most people here, especially on nights like this."", 4: '1'}"
+30	30		204							{1: '1', 2: '1'}
+31	31		301							{3: 'Max takes a deep breath, savoring the rich aroma of malt in the air with a hint of pride on his face.'}
+32	32		301							{2: 'Max', 3: 'Hmm... Smells like another good year.', 4: '1'}
+33	33		302							{2: 'Alcohol...', 3: '34'}
+34	34		301							{3: 'Although there are also alcoholic beverages in Babylonia, they are essentially regulated items under strict control, yet here they are sold like a common commodity.'}
+35	35		301							{3: 'Not to mention that using naturally produced food rather than synthetic food to brew drinks is, in a sense, quite extravagant.'}
+36	36		301							{2: 'Max', 3: 'This is the golden blood of New Oakley...', 4: '1'}
+37	37		301							{3: 'Max picks up a glass of foamy, golden beer and drains it.'}
+38	38		301							{2: 'Max', 3: 'Nowhere nearly as posh as wine, or as mellow as sake, beer is just a simple beverage of joy and freedom.', 4: '1'}
+39	39		204							{1: '1'}
+40	40		301							{2: 'Max', 3: 'Would you like to grab a drink?', 4: '1'}
+41	41		302							"{2: ""No thanks. I'm still on a mission."", 3: '42'}"
+42	42		301							"{2: 'Max', 3: ""You're too stiff, Commandant. Perhaps you should learn from him and try not to think so much."", 4: '1'}"
+43	43		202							{1: '1', 6: '1'}
+44	44		301							{2: '???', 3: 'Ya—ho!'}
+45	45		301							{3: 'Just then, you hear enthusiastic shouts and cheers from a crowded corner of the tavern.'}
+46	46		301							"{2: '???', 3: ""You know what? I fought tons of those Hetero-Creatures in that bloody forest! Didn't take me more than a punch to finish them off! What's more, I was fighting them while protecting the Gray Raven Commandant...""}"
+47	47		201							{1: '1', 2: '500689', 3: '1', 4: '400'}
+48	48		201							{1: '2', 2: '500691', 4: '-400'}
+49	49		301							"{1: '1', 2: 'Strange Resident A', 3: ""You're so cool, bro! How awesome!"", 4: '1'}"
+50	50		301							{2: 'Strange Resident B', 3: '****! You are so ****ing cool!', 4: '2'}
+51	51		202							{1: '1', 2: '2', 6: '1'}
+52	52		201							{1: '1', 2: '500699'}
+53	53		301				DialogDisable			{1: '1', 2: '???', 3: 'Oh hey! Look, the commandant I was talking about has arrived. Over here!', 4: '1'}
+54	54		302							{2: 'Noctis?', 3: '55'}
+55	55		202							{1: '1'}
+56	56		104						250.0	{1: '0|50|-25', 2: '0.25'}
+57	57		104						250.0	{1: '0|0|-50', 2: '0.25'}
+58	58		201							{1: '1', 2: '500682', 3: '6'}
+59	59		301			DialogEnable				"{1: '1', 3: ""When you've made your way through the crowd and taken a good look through the faint, smoky light, you finally see Noctis. Towering over everyone else, he is waving hard this way.""}"
+60	60		301							"{3: ""The red on his face suggests that he's had alcohol-flavor electrolyte... and that's something you never knew they made here.""}"
+61	61		302							{2: 'Hey, Noctis! Had a little too much drink?', 3: '62'}
+62	62		202							{1: '1', 6: '1'}
+63	63		201							{1: '1', 2: '500689', 6: '1'}
+64	64		301							{1: '1', 2: 'Strange Resident A', 3: 'Actually, he only drank a little...', 4: '1'}
+65	65		301							{3: 'To your surprise, a local butts naturally into the conversation.'}
+66	66		302							"{2: ""Well... I sure never knew he couldn't handle alcohol..."", 3: '67'}"
+67	67		201							{1: '1', 2: '500690'}
+68	68		301							{1: '1', 2: 'Strange Resident B', 3: 'Shh! ****! Are you out of your mind... Remember how he chopped off the head of that stupid **** that made fun of him 10 minutes ago?!', 4: '1'}
+69	69		301							"{3: ""You're glad that Noctis didn't seem to hear what had been said about him...""}"
+70	70		302							{2: 'You guys seem to have a lot of respect for him.', 3: '71'}
+71	71		301							"{3: ""And these are the same people who found Noctis' attitude so repulsive half an hour ago that they almost wanted to spit on his head.""}"
+72	72		202							{1: '1', 6: '1'}
+73	73		201							{1: '1', 2: '500689', 3: '1', 4: '400'}
+74	74		201							{1: '2', 2: '500690', 4: '-400'}
+75	75		301							"{1: '1', 2: 'Strange Resident A', 3: ""We do—because he was there and took care of those Hetero-Creatures and kept our food safe for us... God only knows what would have become of this year's Harvest Festival if he weren't there!"", 4: '1'}"
+76	76		301							"{2: 'Strange Resident B', 3: ""**** yeah! We might not be on the right side of justice, but that ain't mean we backstab people who lend us a helping hand!"", 4: '2'}"
+77	77		301							"{3: ""These people are probably what most would consider evildoers, but they seem like total scoundrels who can't tell right from wrong.""}"
+78	78		301							"{2: 'Strange Resident A', 3: ""And it ain't like we stand a chance fighting him anyway, hahaha!"", 4: '1'}"
+79	79		201							{1: '2', 2: '500691', 4: '-400'}
+80	80		301				AniZhuanchangBegin			{2: 'Strange Resident B', 3: '****, damn straight! Hahaha!', 4: '2'}
+81	81		202							{1: '1', 2: '2', 6: '1'}
+82	82		105							{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieNuoketi/UiMovieNuoketi02.prefab'}
+83	83		301			AniZhuanchangEnd				"{2: 'Noctis', 3: ""Hey, Commandant, whatchu doin' over there? Come over here already!""}"
+84	84		302							{2: 'Uhm, what do you want...', 3: '85'}
+85	85		301							"{3: ""People shove you up toward Noctis. Standing in front of him now, you see that he isn't just standing on a chair—he now stands with a leg on the table.""}"
+86	86		301							"{2: 'Noctis', 3: ""Let's dance!""}"
+87	87		302							{2: 'Dance? As in, right here?', 3: '88'}
+88	88		301							"{2: 'Noctis', 3: ""Does it matter where as long as we enjoy ourselves? C'mon!""}"
+89	89		301							{3: 'In the swaying glow of lights, Noctis holds his hand out at you with a smile.'}
+90	90		301							"{3: ""You suddenly remember what Max said—that this town is a place where one doesn't need to think too much before they act.""}"
+91	91		301							{2: 'Noctis', 3: 'And here we go!'}
+92	92		301				AniZhuanchangBegin			"{3: ""With a moment's hesitation, you grab Noctis' hand—which pulls you right up the table before you even know what happened.""}"
+93	93		105							
+94	94		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory748.jpg'}
+95	95		401							{1: '2', 2: '2581'}
+96	96		301			AniZhuanchangEnd				"{3: ""People around the table burst out shouting and laughing, which eases up the awkward mood. Still, you have absolutely no idea what you're supposed to do next.""}"
+97	97		201							{1: '1', 2: '500682', 3: '1'}
+98	98		301							{1: '1', 2: 'Noctis', 3: 'Ready to spice things up with some breakdance?!', 4: '1'}
+99	99		302							{2: 'Are you for real?', 3: '100'}
+100	100		301							"{2: 'Noctis', 3: ""C'mon, don't be shy!"", 4: '1'}"
+101	101		302							"{2: ""But I don't even know..."", 3: '102'}"
+102	102		301							"{3: 'Before you even finish the sentence, Noctis, still on the table, is already shaking his arms and legs in an attempt to do what remotely seems like a ""breakdance.""'}"
+103	103		302							{2: 'Well, here goes nothing.', 3: '104'}
+104	104		301							"{3: ""But it doesn't matter. Who says a dance needs to be methodical anyway? Your moves might not quite be up to snuff, but it doesn't really matter so long as you enjoy every moment of it.""}"
+105	105		202							{1: '1', 6: '1'}
+106	106		201							{1: '1', 2: '500689', 3: '1', 4: '400'}
+107	107		201							{1: '2', 2: '500690', 4: '-400'}
+108	108		301							"{1: '1', 2: 'Strange Resident A', 3: ""Hahaha! Hey, let's get up there, too!"", 4: '1'}"
+109	109		301							"{2: 'Strange Resident B', 3: ""**** yeah! Let's do this!"", 4: '2'}"
+110	110		202							{1: '1', 2: '2'}
+111	111		301				AniZhuanchangBegin			{3: 'With it, more drunks get on the table after Noctis and start dancing away at the music.'}
+112	112		402							{1: '2915'}
+113	113		401						1500.0	{1: '1', 2: '36'}
+114	114		401							{1: '1', 2: '257'}
+115	115		301			AniZhuanchangEnd				"{3: ""When you pick the last dropped bottle up from the floor and pass it to the tavern's owner, you cast a look out the window—and see a hint of light just around the horizon.""}"
+116	116		302							{2: 'Ahhhh-hhaaaaaa...', 3: '117'}
+117	117		301							"{3: ""How time flies... You can't help but let out a yawn, feeling a chill down your spine as you recall that F.O.S. disqualifies anyone during an operation for letting out so much as a yawn.""}"
+118	118		201							{1: '1', 2: '500682', 3: '8'}
+119	119		301							{1: '1', 2: 'Noctis', 3: 'Uhm...', 4: '1'}
+120	120		204							{1: '1', 2: '14'}
+121	121		301							{3: 'On the floor now, however, lie a bunch of people, including Noctis, their arms and legs sprawling every which way.'}
+122	122		202							{1: '1', 6: '1'}
+123	123		201							{1: '1', 2: '500692'}
+124	124		301							"{1: '1', 2: 'Max', 3: ""Geez, look at this guy... He's only been in town for a day, and he's already acting like he's been living here all his life. Wouldn't have had any doubt even if you had told me he was from here."", 4: '1'}"
+125	125		301							{2: 'Max', 3: 'So, how do you like this place so far, Commandant?', 4: '1'}
+126	126		302							{2: 'I just never saw myself breakdance on a table...', 3: '127'}
+127	127		301							"{2: 'Max', 3: ""Well... that's life for ya. Que sera, sera."", 4: '1'}"
+128	128		301							"{2: 'Max', 3: ""And like I said before, you'll need a job if you want to stay here to look into that guy by the name of Daemon..."", 4: '1'}"
+129	129		301							"{3: ""Says Max as he nods at the tavern's owner, who reciprocates the gesture with a friendly smile.""}"
+130	130		301							"{2: 'Max', 3: ""Probably a good idea for y'all to get yourselves a job here. I'm sure they can use a few extra hands here during the Harvest Festival."", 4: '1'}"
+131	131		302							"{2: ""Well, a commandant is all I've ever learned how to be..."", 3: '132'}"
+132	132		301							{3: 'But it seems like you will have to leave that aside for now.'}
+133	133		302							"{2: ""But I guess I wouldn't mind giving working here a try."", 3: '134'}"
+134	134		301							"{2: 'Max', 3: ""And as for the Construct that goes wherever you go... He fights like a real champ, so let's take him down to Fann and have him keep the town safe."", 4: '1'}"
+135	135		302							{2: 'Fann?', 3: '136'}
+136	136		301							"{2: 'Max', 3: ""That's my son... He works as the town's sheriff. Said he wanted to keep the town safe and all."", 4: '1'}"
+137	137		301							"{2: 'Max', 3: ""Think he just might be able to help y'all if you want to look into something... that's if he wants to, though, of course."", 4: '1'}"
+138	138		302							{2: 'Of course.', 3: '139'}
+139	139		301							{2: 'Max', 3: 'Now, here comes your first task—get all these drunk bastards out of here.', 4: '1'}
+140	140		202							{1: '1'}
+141	141		301							"{3: ""With it, Max turns around and leaves. The tavern's owner, on the other hand, rolls up his sleeves and reveals legs with bulging muscles—a physique that hardly befits his appearance. Single-handedly, he picks one of the guys off the floor and flings him out the door.""}"
+142	142		302		1		AniZhuanchangBegin			{2: '(Why am I even here?)'}

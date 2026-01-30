@@ -1,0 +1,33 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory244.png'}
+2	2		401							{1: '1', 2: '102'}
+3	3		201							{1: '1', 2: '500223'}
+4	4		301			DialogEnable				{1: '1', 2: 'Pulao Crew', 3: 'Damn it, up there!', 4: '1'}
+5	5		202							{1: '1'}
+6	6		301							{3: 'Hearing the soldier shout, the people on the frontline look up as fiery red mechanical clusters zip past the cloudy sky.'}
+7	7		201							{1: '1', 2: '500220', 3: '4'}
+8	8		301							{1: '1', 2: 'Qu', 3: 'Shoot them down.', 4: '1'}
+9	10		201							{1: '1', 2: '500223', 4: '-400'}
+10	11		201							{1: '2', 2: '500223', 4: '400'}
+11	12		301							{1: '1', 2: 'Pulao Crew', 3: 'Roger!', 4: '1', 5: '2'}
+12	13		202							{1: '1', 2: '2'}
+13	14		301							{3: 'The soldiers immediately dispatch troops to shoot at the sky.'}
+14	15		201							{1: '1', 2: '500220'}
+15	16		301							{1: '1', 2: 'Qu', 3: 'Chaofeng Crew, report the casualty count in the city.', 4: '1'}
+16	500		201							{1: '1', 2: '500223'}
+17	501		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+18	17		301							{1: '1', 2: 'Chaofeng Crew', 3: 'The anti-air artillery intercepts most of the airstrikes, but a small number of Corrupted still manage to slip into the city. The guerrilla forces from the Pulao Crew exchange fire with the advancing Corrupted.', 4: '1'}
+19	502		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+20	18		201							{1: '1', 2: '500220', 3: '4'}
+21	19		301							{1: '1', 2: 'Qu', 3: 'Tsk.', 4: '1'}
+22	601		201							{1: '1', 2: '500242'}
+23	602		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+24	20		301							{1: '1', 2: 'Danhao', 3: 'This is the Bian Crew. Some defense turrets were destroyed during the airstrikes. Requesting backup. Repeat, requesting backup.', 4: '1'}
+25	604		202							{1: '1'}
+26	603		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+27	21		301							{3: 'As the defensive barrage falter, the Corrupted on the other side of the bridge advance. They jump off the broken bridge and crumble into pieces from the fall, slowly piling into a path made of mechanical remains.'}
+28	605		201							{1: '1', 2: '500220'}
+29	22		301							{1: '1', 2: 'Qu', 3: 'Defensive line, retreat! Take back the defense turrets!', 4: '1'}
+30	23		201							{1: '1', 2: '500223', 4: '-400'}
+31	24		201							{1: '2', 2: '500223', 4: '400'}
+32	26		301		1		AniZhuanchangBegin			{1: '1', 2: 'Pulao Crew', 3: 'Understood.', 4: '1', 5: '2'}

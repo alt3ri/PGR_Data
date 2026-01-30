@@ -1,0 +1,182 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+2	2		401							{1: '1', 2: '204'}
+3	3		301			DialogEnable				{3: 'You look down from higher ground at a river that has been completely transformed.'}
+4	4		301							{3: 'The serene, clear water has turned dark and murky, carrying loads of sand and mud.'}
+5	5		301							{3: 'The aggressive flood decimates everything in its path. Only a few sturdy old trees sway gruelingly in the gushing waves.'}
+6	6		301							{3: 'The tranquility of the forest is replaced by thundering sounds echoing in the moist air.'}
+7	7		301							"{3: ""Nature is finally revealing its violent side. Witnessing the full force of Mother Nature, you can't help but shiver in fear even though you know that you are at a safe location.""}"
+8	8		302							"{2: ""I can't believe we're caught in a flash flood..."", 3: '9'}"
+9	9		301							{3: 'While you were collecting samples from the river bank, No. 21, having heard rumblings up in the mountain, suddenly gave you a warning call.'}
+10	10		301							"{3: ""It was thanks to her that you didn't get washed away by the flood.""}"
+11	11		301							{3: 'But the sudden flood has blocked your path down the mountain.'}
+12	12		301							{3: 'You check the map on your terminal again. It would take five times longer to get back to your parked vehicle from this side of the river.'}
+13	13		302							"{2: ""It looks like we'll have to stay the night."", 3: '14'}"
+14	14		301							"{3: ""Never expecting there to be a flood, you came without a tent and mattress, and it doesn't help that the majority of the space in your bags is dedicated to carrying the glass instruments needed to hold the samples you collect.""}"
+15	15		201							{1: '1', 2: '500650'}
+16	16		301							{1: '1', 2: 'No. 21', 3: 'I can sleep right here.', 4: '1'}
+17	17		301							{3: 'No. 21 points at the ground.'}
+18	18		301							"{3: ""You usually have no trouble sleeping on the ground, except it's probably better to build a temporary shelter, given a high chance of rain.""}"
+19	19		302							"{2: ""I'm thinking about building two bush shelters for us. What do you say?"", 3: '20'}"
+20	20		301							{2: 'No. 21', 3: 'Why do we need two?', 4: '1'}
+21	21		302							"{2: ""...Because I'll feel guilty otherwise."", 3: '22'}"
+22	22		301							"{3: ""Constructs won't catch a cold or get sick, but you can't bring yourself to leave No. 21 out in the cold, wet night while you're tucked away safely in a shelter.""}"
+23	23		301							"{3: ""She might even get rained on—and that's not something anyone would let happen in good conscience.""}"
+24	24		301							{2: 'No. 21', 3: '?', 4: '1'}
+25	25		301							"{3: ""A confused expression flashes over No. 21's face.""}"
+26	26		301							{2: 'No. 21', 3: 'What do I need to do?', 4: '1'}
+27	27		302							"{2: ""Let's collect some dry, bendable branches first."", 3: '28'}"
+28	28		401							{1: '2', 2: '9332011'}
+29	29		203							{1: '1', 2: '0.17', 3: '-300'}
+30	30		202							{1: '1'}
+31	31		301							"{3: ""No. 21 launches off without a moment's break. Seconds later, branches of different shapes and sizes fall to the ground.""}"
+32	32		302							{2: 'Hey, this is good enough.', 3: '33'}
+33	33		301							{3: 'You call off the task as you watch the pile of twigs grow quickly into a large heap.'}
+34	34		201							{1: '1', 2: '500650'}
+35	35		301							{1: '1', 3: 'No. 21 lands softly on the ground and puts away her weapon, dusting her hands clean of sawdust.'}
+36	36		301							{2: 'No. 21', 3: 'What should we do next?', 4: '1'}
+37	37		301							{3: 'No. 21 looks at you curiously.'}
+38	38		302							"{2: ""I'll take it from here."", 3: '39'}"
+39	39		202							{1: '1', 6: '1'}
+40	40		301							{3: 'You make a small clearing and pick up a twig before sharpening it to use as a peg. You dig out a few deep holes in the clearing.'}
+41	41		301							{3: 'You then pick out a few long, flexible yet sturdy branches with leaves to stick into the holes you just dug, intertwining them to form a dome.'}
+42	42		301							{3: 'Finally, you lay down armfuls of twigs and leaves around the dome and scatter dry leaves inside the clearing to finish up your makeshift bush shelter.'}
+43	43		302							{2: 'Phew...', 3: '44'}
+44	44		301							{3: 'It took you over an hour to finish your tree hut, but you feel accomplished.'}
+45	45		302							{2: 'Boy, never saw this come in handy.', 3: '46'}
+46	46		201							{1: '1', 2: '500650'}
+47	47		301							{1: '1', 2: 'No. 21', 3: 'I... want to try it, too.', 4: '1'}
+48	48		301							{3: 'After watching the entire process with the same expressionless face, No. 21 says with a rare excitement in her voice.'}
+49	49		301							"{3: ""She sounds as though she's come across a new prey and is determined to catch it.""}"
+50	50		302							{2: 'Okay, let me give you a hand.', 3: '51'}
+51	51		301				AniZhuanchangBegin			{3: 'No. 21 accepts your help with a nod.'}
+52	52		401						500.0	{1: '1', 2: '36'}
+53	53		202			DialogDisable				{1: '1', 6: '1'}
+54	54		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+55	55		401							{1: '1', 2: '100'}
+56	56		301			DialogEnable				{3: 'Four hours later.'}
+57	57		201							{1: '1', 2: '500650', 3: '4'}
+58	58		301							{1: '1', 2: 'No. 21', 3: 'Um... it looks a little different from yours.', 4: '1'}
+59	59		302							{2: '(Give a dry chuckle)', 3: '60'}
+60	60		301							{3: 'Her slanted hut looks like half a goose egg lying on its side.'}
+61	61		301							{3: 'Some branches are sticking out, making it look like a green sea urchin with spines.'}
+62	62		502							{1: 'DialogDisable'}
+63	63		302							"{2: ""It's because the holes were dug at an angle, each holding too many branches, some snapped."", 3: '64'}"
+64	64		302							"{2: ""It'll hold. No big deal."", 3: '65'}"
+65	65		301			DialogEnable				{3: 'No. 21 looks intently at the huts, as if comparing the two.'}
+66	66		302							{2: 'Want to switch yours with mine?', 3: '67'}
+67	67		301							{2: 'No. 21', 3: 'No, I want mine.', 4: '1'}
+68	68		202							{1: '1', 6: '1'}
+69	69		301							{3: 'No. 21 quickly slips into her crooked hut.'}
+70	70		201							{1: '1', 2: '500650'}
+71	71		301							{1: '1', 2: 'No. 21', 3: 'This is my territory.', 4: '1'}
+72	72		202							{1: '1', 6: '1'}
+73	73		301							{3: 'The sky darkens. After starting a fire with the flint with the back of your dagger, you duck into your makeshift shelter.'}
+74	74		401							{1: '2', 2: '213'}
+75	75		301							{3: 'Crackling noises from the flickering fire seem to be making the dark night stretch on indefinitely.'}
+76	76		301							{2: 'No. 21', 3: '【kuroname】...'}
+77	77		301							{3: 'The voice of a little girl slips into your tree hut.'}
+78	78		302							{2: 'What is it?', 3: '79'}
+79	79		301							"{2: 'No. 21', 3: ""You know a lot of things I don't know, and you know how to do a lot more things.""}"
+80	80		301							{2: 'No. 21', 3: 'Do you know how to do those things because you found them necessary?'}
+81	81		302							"{2: ""I can't say for sure."", 3: '82'}"
+82	82		301							"{2: 'No. 21', 3: ""Which means they're not necessary, then?""}"
+83	83		302							"{2: ""That's not necessarily true.""}"
+84	84		301							{3: 'No. 21 stays silent for a moment and asks in a puzzled tone.'}
+85	85		301							"{2: 'No. 21', 3: ""I don't get it.""}"
+86	86		302							{2: 'Life is unpredictable...', 3: '87'}
+87	87		301							"{3: ""And I never know if I'll ever be able to use what I've learned.""}"
+88	88		302							{2: 'But the learning process itself is meaningful.', 3: '89'}
+89	89		301							"{3: ""So let's do our best while we can.""}"
+90	90		302							{2: 'Just like how we saved the wolf pup today.', 3: '91'}
+91	91		301							"{3: ""What happened with the pup didn't exactly turn out the way we'd hoped it would...""}"
+92	92		302							"{2: ""But the pup's life changed forever because of our encounter."", 3: '93'}"
+93	93		301							{2: 'No. 21', 3: 'Does that mean regret... would become sorrow in the end?'}
+94	94		502							{1: 'DialogDisable'}
+95	95		302							"{2: ""I can't say for sure."", 3: '96'}"
+96	96		302							"{2: ""All I know is that... I don't want to live in sorrow."", 3: '97'}"
+97	97		301			DialogEnable				{2: 'No. 21', 3: '...'}
+98	98		301							{3: 'A long stretch of silence ensues. Just when you thought she fell asleep, you hear shuffling noises coming from outside your hut.'}
+99	99		301							"{3: ""A little hole opens on the wall next to No. 21's hut. A small, white hand feels around the entrance before retracting.""}"
+100	100		502							{1: 'DialogDisable'}
+101	101		302							{2: '(Look through the opening)', 3: '102'}
+102	102		301			DialogEnable				{3: 'A snowflake-patterned pupil appears on the other side. When it meets your eyes, it flickers briefly and withdraws a little, but eventually gazes into your eyes.'}
+103	103		201							{1: '1', 2: '500650'}
+104	104		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCommon/FxUi2DLihuiFireGlow1000.prefab', 2: '2', 3: '1', 4: '1'}
+105	105		301							"{1: '1', 2: 'No. 21', 3: ""Now we're connected."", 4: '1'}"
+106	106		302							{2: 'Connected? What do you mean?', 3: '107'}
+107	107		301							{2: 'No. 21', 3: 'Our territories. Yours and mine.', 4: '1'}
+108	108		302							{2: '...', 3: '109'}
+109	109		301							{2: 'No. 21', 3: 'I barged into your territory before.', 4: '1'}
+110	110		301							{2: 'No. 21', 3: 'I was hoping you would come into my territory one day, but you never did.', 4: '1'}
+111	111		301							"{2: 'No. 21', 3: ""So I thought you probably didn't want to come to my territory."", 4: '1'}"
+112	112		301							"{2: 'No. 21', 3: ""I didn't want to drag you into my territory."", 4: '1'}"
+113	113		301							"{2: 'No. 21', 3: ""Then I wasn't sure if I really wanted you to come into my territory."", 4: '1'}"
+114	114		301							{2: 'No. 21', 3: 'I was scared—scared of rejection.', 4: '1'}
+115	115		301							{2: 'No. 21', 3: 'But I just realized that I would regret it more if I never asked.', 4: '1'}
+116	116		301							"{2: 'No. 21', 3: '""Only do what\'s needed and nothing more."" For me, this is needed...', 4: '1'}"
+117	117		301							"{3: ""The flickering flame dances in No. 21's snowflake eye, slowly melting away the icicles.""}"
+118	118		301							{3: 'At that moment, the sound of dripping raindrops on the leaves and into the fire travels into your ear.'}
+119	119		301							{3: 'The firelight dims, leaving only the lights from two pairs of gazing eyes.'}
+120	120		302							{2: 'I...', 3: '121'}
+121	121		301							{3: 'Before you can finish your sentence, the fire fizzles out, drowned in the rainwater, and the world returns once again to silent darkness.'}
+122	122		402							{1: '213'}
+123	123		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCommon/FxUi2DLihuiFireGlow1000.prefab', 4: '1'}
+124	124		401							{1: '2', 2: '214'}
+125	125		301							"{3: ""A little girl's voice sounds the moment the fire goes out.""}"
+126	126		301							{2: 'No. 21', 3: 'I want you to be in my territory.', 4: '1'}
+127	127		301							{3: 'Something wiggles in from the opening and snuggles up against your chest.'}
+128	128		301							{2: 'No. 21', 3: 'And people in the same territory take care of one another.', 4: '1'}
+129	129		301							{2: 'No. 21', 3: 'I will lend you what you are missing.', 4: '1'}
+130	130		301							{3: 'In the drizzling sound of the rain, warmth spreads from your chest to your entire body.'}
+131	131		301				AniZhuanchangBegin			{3: 'You know that you will sleep soundly tonight.'}
+132	132		202			DialogDisable				{1: '1', 6: '1'}
+133	133		402							{1: '214'}
+134	134		401						400.0	{1: '1', 2: '36'}
+135	135		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory716.jpg'}
+136	136		401							{1: '1', 2: '208'}
+137	137		201							{1: '1', 2: '500059'}
+138	138		301			DialogEnable				"{1: '1', 2: 'Greenhouse Manager', 3: ""Do you know how scared I was? I totally thought I'd lost the ace of the Task Force..."", 4: '1'}"
+139	139		203							{1: '1', 2: '0.25', 3: '-400'}
+140	140		201							{1: '2', 2: '500650', 3: '4', 4: '400'}
+141	141		301							"{1: '1', 2: 'No. 21', 3: ""You've changed."", 4: '2'}"
+142	142		301							"{2: 'Greenhouse Manager', 3: ""Don't look at me like that. I'm trying my best to understand you!"", 4: '1'}"
+143	143		204							{1: '2'}
+144	144		301							{2: 'Greenhouse Manager', 3: 'We are working together after all... Oh my, look at all the samples you got here!', 4: '1'}
+145	145		301							"{3: ""You finally made it back to the greenhouse at noon the next day. When the manager sees all the samples you've brought back, she forgets how nervous she was and talks with excitement.""}"
+146	146		301							"{2: 'Greenhouse Manager', 3: ""I can't believe you got trapped up in the mountain. I was only thinking about collecting samples and didn't plan for difficult weather."", 4: '1'}"
+147	147		302							"{2: ""Nobody could have seen the flash flood coming, though, so it really wasn't anyone's fault."", 3: '148'}"
+148	148		301							"{2: 'Greenhouse Manager', 3: ""How about you take some flowers with you as a gift? I don't have anything else to give out here."", 4: '1'}"
+149	149		302							"{2: ""I think I'm fine."", 3: '150'}"
+150	150		301							{2: 'Greenhouse Manager', 3: 'What about you, No. 21?', 4: '1'}
+151	151		301							{3: 'No. 21 looks around her before putting her attention on a white flower bud.'}
+152	152		204							{1: '2', 2: '8'}
+153	153		301							{3: 'She moves in for a good sniff and nods her head.'}
+154	154		204							{1: '2'}
+155	155		301							{2: 'No. 21', 3: 'I want this one.', 4: '2'}
+156	156		301							{2: 'Greenhouse Manager', 3: 'This, are you sure? This is an experimental plant cut from a tung tree as a test to see if it could survive away from its mother plant and go through its usual life cycle.', 4: '1'}
+157	157		301							{2: 'Greenhouse Manager', 3: 'It might never flower. There are plenty of other choices.', 4: '1'}
+158	158		301							{2: 'No. 21', 3: 'It smells like me.', 4: '2'}
+159	159		301							"{2: 'Greenhouse Manager', 3: ""Well, if you like it, I'll put it into the growth medium for you. I do hope it'll flower someday."", 4: '1'}"
+160	160		301							"{2: 'Greenhouse Manager', 3: ""By the way, there's going to be a small welcome party today. Will you... join us?"", 4: '1'}"
+161	161		301							"{2: 'Greenhouse Manager', 3: ""It's fine if you don't want to... Uh... but I am really hoping you could."", 4: '1'}"
+162	162		301							{3: 'Relationships are constantly changing.'}
+163	163		301							{3: 'Every encounter, every expression from the heart alters our paths ever so slightly.'}
+164	164		302							{2: 'Sure.', 3: '166'}
+165	165		204							{1: '2', 2: '4'}
+166	166		301							{2: 'No. 21', 3: 'I will go, too.', 4: '2'}
+167	167		301				AniZhuanchangBegin			"{3: ""What's important is taking that first step, or reaching out your hand for the first time. Do what you will not regret.""}"
+168	168		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+169	169		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+170	170		201							{1: '1', 2: '500650'}
+171	171		301			DialogEnable				{1: '1', 3: 'On the transport craft bound for Babylonia, No. 21 is carefully holding her pot with a flower bud.'}
+172	172		302							{2: 'Do you want to see it flower someday?', 3: '173'}
+173	173		301							{3: 'No. 21 tilts her head as if trying to compare it with something.'}
+174	174		301							"{2: 'No. 21', 3: ""I don't know what it will be like when it flowers."", 4: '1'}"
+175	175		301							{2: 'No. 21', 3: 'But I like how it smells right now.', 4: '1'}
+176	176		301							{3: 'She lifts the growth medium just high enough for the sunlight to shine in from the pothole to illuminate the plant, stretching its shadow.'}
+177	177		301							{3: 'A yawn escapes you as you remember how tiring it was to receive the enthusiastic researchers.'}
+178	178		301							{3: 'You doze off to the side just as something soft moves in to catch you as if it could read your mind.'}
+179	179		301							"{2: 'No. 21', 3: ""I'll let you lean on my shoulder this time."", 4: '1'}"
+180	180		301							{3: 'Your shadows may still be separated by a distinct line...'}
+181	181		301		1		AniZhuanchangBegin			{3: 'But your hearts are connected no matter how far apart you may be.'}

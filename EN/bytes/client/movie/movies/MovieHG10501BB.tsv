@@ -1,0 +1,68 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '5'}
+3	3		201							{1: '1', 2: '1041001', 4: '0'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Nanami', 3: ""Boring! Boring! So boring! Nanami's bored!"", 4: '1'}"
+5	5		203							{1: '1', 3: '400'}
+6	6		201							{1: '2', 2: '1021001', 4: '-400'}
+7	7		301							{1: '1', 2: 'Nanami', 3: 'Lucia! Lu~ci~a! What mission do you have? Take Nanami with you!', 4: '1'}
+8	8		301							{2: 'Lucia', 3: 'I do have a few missions on hand...', 4: '2'}
+9	9		204							{1: '1', 2: '2'}
+10	10		401							{1: '2', 2: '10005001'}
+11	11		401							{1: '4', 2: '105003'}
+12	12		301							{2: 'Nanami', 3: 'Then bring Nanami with you and Nanami will shining finger them all to death!', 4: '1'}
+13	13		301				AniZhuanchangBegin			{2: 'Lucia', 3: 'No, thank you. I can handle them on my own. You can remain on standby here at the base.', 4: '2'}
+14	14		202							{1: '1', 2: '2', 6: '1'}
+15	15		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+16	16		201							{1: '1', 2: '1041001', 3: '2', 4: '400'}
+17	17		201							{1: '2', 2: '1011001', 4: '-400'}
+18	19		301			AniZhuanchangEnd				"{1: '1', 2: 'Nanami', 3: ""Awww! That's no fun! Lee, do you have anything for Nanami to do?!"", 4: '1'}"
+19	20		204							{1: '2', 2: '10'}
+20	21		301							"{1: '1', 2: 'Lee', 3: ""I'm doing technical work, you're already helping by not coming over."", 4: '2'}"
+21	22		204							{1: '1'}
+22	23		301							"{2: 'Nanami', 3: ""You think I'm a dingus, don't you! Nanami will have you know that her databanks are filled with superhuman levels of mechanical knowledge!"", 4: '1'}"
+23	24		204							{1: '2'}
+24	25		301							"{2: 'Lee', 3: ""It's not a question of accrued knowledge, but the trouble that arises when you start attaching strange contraptions to every piece of equipment."", 4: '2'}"
+25	26		301							"{2: 'Nanami', 3: 'What do you mean ""strange contraptions""?! Nanami is enhancing the equipment!', 4: '1'}"
+26	27		301							"{2: 'Lee', 3: ""You dare say that making things you can't control is enhancing?"", 4: '2'}"
+27	28		301							"{2: 'Nanami', 3: ""Lee just didn't know how to use it."", 4: '1'}"
+28	29		204							{1: '2', 2: '10'}
+29	30		301				AniZhuanchangBegin			"{2: 'Lee', 3: ""Anyway, I don't need an extra pair of hands here! Go bother someone else."", 4: '2'}"
+30	31		202							{1: '1', 2: '2', 6: '1'}
+31	32		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+32	33		201							{1: '1', 2: '1041001', 3: '1', 4: '0'}
+33	35		301			AniZhuanchangEnd				{1: '1', 2: 'Nanami', 3: 'I guess this leaves Liv... Liv?', 4: '1'}
+34	36		203							{1: '1', 2: '0.25', 3: '400'}
+35	37		201							{1: '2', 2: '1031001', 3: '1', 4: '-400'}
+36	39		301							"{1: '1', 2: 'Liv', 3: ""I'm sorry, but my remaining task is taking care of the paperwork, which will probably be mundane."", 4: '2'}"
+37	40		204							{1: '1'}
+38	41		301				AniZhuanchangBegin			"{1: '1', 2: 'Nanami', 3: ""Hm, that doesn't sound fun at all."", 4: '1'}"
+39	42		202							{1: '1', 2: '2', 6: '1'}
+40	43		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+41	44		201							{1: '1', 2: '1041001', 4: '0'}
+42	45		301			AniZhuanchangEnd				"{1: '1', 2: 'Nanami', 3: ""What should I do then? Nanami's going to rot in boredom!"", 4: '1'}"
+43	46		301							{2: 'Nanami', 3: '...', 4: '1'}
+44	47		301							{2: 'Nanami', 3: '...', 4: '1'}
+45	48		204							{1: '1', 2: '2'}
+46	49		301							{1: '1', 2: 'Nanami', 3: 'Maybe I should just destroy the base.', 4: '1'}
+47	50		302							"{2: 'Wait!', 3: '51', 4: ""There's got to be something else you can do!"", 5: '55'}"
+48	51		204							{1: '1'}
+49	52		301							"{1: '1', 2: 'Nanami', 3: ""Oh, Commandant, you're here."", 4: '1'}"
+50	53		204							{1: '1', 2: '2'}
+51	54		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Nanami', 3: ""Hm... I know! I won't destroy the base if... Commandant agrees to go on a date with Nanami!"", 4: '1'}"
+52	55		204							{1: '1', 2: '1'}
+53	56		301							"{1: '1', 2: 'Nanami', 3: ""Something else... wait, Commandant, you're here!"", 4: '1'}"
+54	57		302							"{2: 'I just got here.', 3: '58', 4: ""I've been standing behind you this whole time."", 5: '64'}"
+55	58		301							{1: '1', 2: 'Nanami', 3: 'Hmm, the fact that Commandant only shows up at this hour means that Commandant has time to kill, just like Nanami!', 4: '1'}
+56	59		302							"{2: ""I've got things to do in a bit."", 3: '60', 4: 'I do have time to kill today.', 5: '62'}"
+57	60		204							{1: '1', 2: '2'}
+58	61		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Nanami', 3: ""I don't care. Commandant is going on a date with Nanami!"", 4: '1'}"
+59	62		204							{1: '1', 2: '2'}
+60	63		301		1		AniZhuanchangBegin			{1: '1', 2: 'Nanami', 3: 'Then Commandant should go on a date with Nanami!', 4: '1'}
+61	64		204							{1: '1', 2: '2'}
+62	65		301							{1: '1', 2: 'Nanami', 3: 'What?!', 4: '1'}
+63	66		301							{1: '1', 2: 'Nanami', 3: 'Is Commandant a ghost?!', 4: '1'}
+64	67		201							{1: '1', 2: '1011001', 3: '10'}
+65	69		301							{1: '1', 2: 'Lee', 3: 'How is that possible...', 4: '1'}
+66	70		201							{1: '1', 2: '1041001', 3: '2'}
+67	72		301		1		AniZhuanchangBegin			{1: '1', 2: 'Nanami', 3: 'Commandant must know how bored Nanami is, because Commandant cares so deeply about Nanami! So, go out on a date with me!', 4: '1'}

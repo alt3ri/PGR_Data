@@ -1,0 +1,301 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				"{3: ""The city's central exhibition hall, which was taken by Iris Warbler, was built based on structures from different regions. Most of the data inside was removed following Cervantes' departure.""}"
+4	4		301							{3: 'After confirming there was no valuable information left in the exhibition hall, Babylonia opened it to the Constellia residents as a museum showcasing human and mechanoid art.'}
+5	5		301							{3: 'During the Paradise Festival, the main hall in the center has been temporarily transformed into a grand stage capable of accommodating thousands.'}
+6	6		301							{3: 'There are human and mechanoid performances on the stage every day of the Paradise Festival. Anyone who has signed up in advance has a chance to showcase their talents.'}
+7	7		301							"{3: 'But the event everyone looks forward to the most is undoubtedly the grand finale of the festival, the ""Joint Show"" that closes out the celebration.'}"
+8	8		301							{3: 'The Paradise Festival lasts half a month, the longest duration WGAA could secure without affecting production on the surface.'}
+9	9		301				AniZhuanchangBegin			{3: 'This arrangement is meant to allow as many people to participate as possible, but it also gives Karenina a final opportunity to polish her performance.'}
+10	10		401							{1: '1', 2: '36'}
+11	11		502						400.0	{1: 'DialogDisable'}
+12	12		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg'}
+13	13		401							{1: '1', 2: '294'}
+14	14		107							{1: 'WGAA Constellia Branch', 2: 'Recording Studio. 10:30 AM.'}
+15	15		301							{3: 'Recording studio, WGAA Constellia Branch. 10:30 AM.'}
+16	16		108							{1: '1'}
+17	17		201							{1: '1', 2: '500576', 3: '10', 4: '400'}
+18	18		201							{1: '2', 2: '500731', 3: '10', 4: '-400'}
+19	19		301			DialogEnable				{1: '1', 2: 'Ayla', 3: 'Your smile here is too superficial. It needs to be more impactful.', 4: '1', 18: '100002293'}
+20	20		204							{1: '1', 2: '2'}
+21	21		301							"{2: 'Ayla', 3: ""Why don't you make a heart with your hands here? It's going to catch everyone's eye."", 4: '1', 18: '100002294'}"
+22	22		204							{1: '2', 2: '6'}
+23	23		301							"{2: 'Karenina', 3: ""Won't it be too weird?! I know we've seen that a lot in many performances, but... What do you think, Commandant? Will it look unnatural?"", 4: '2', 18: '100002295'}"
+24	24		302							{2: '(Give her a thumbs up)', 3: '25', 4: '(Shake your head)', 5: '29'}
+25	25		204							{1: '1'}
+26	26		301							"{2: 'Ayla', 3: ""See? It will look great! And if we're trying to emphasize the contrast, why don't you make the heart gesture with a disdainful expression..."", 4: '1', 18: '100002296'}"
+27	27		204							{1: '2', 2: '10'}
+28	28	33	301				AniZhuanchangBegin			{2: 'Karenina', 3: 'Uh... Will people really like it?', 4: '2', 18: '100002297'}
+29	29		204							{1: '2', 2: '1'}
+30	30		301							"{2: 'Karenina', 3: 'Ahem! Someone has raised an objection. I think we should respect the opinion of our ""producer,"" right?', 4: '2', 18: '100002298'}"
+31	31		204							{1: '1', 2: '10'}
+32	32		301				AniZhuanchangBegin			"{2: 'Ayla', 3: ""Sigh... That's so boring. Fine, we'll redesign this part of the performance..."", 4: '1', 18: '100002299'}"
+33	33		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+34	34		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+35	35		107							{1: 'Constellia Temporary Cafeteria', 2: '11：55PM'}
+36	36		301							{3: 'Constellia Temporary Cafeteria. 11:55 PM.'}
+37	37		108							{1: '1'}
+38	38		201							{1: '1', 2: '500629'}
+39	39		301			DialogEnable				"{1: '1', 2: 'Hanying', 3: ""You've all worked hard! I've prepared some Kowloong noodles for you. Please enjoy them while they're hot."", 4: '1', 18: '100002300'}"
+40	40		203							{1: '1', 2: '0.25', 3: '400'}
+41	41		201							{1: '2', 2: '500731', 3: '1', 4: '-400'}
+42	42		301							"{1: '1', 2: 'Karenina', 3: ""Thank god. I'm starving... mentally speaking."", 4: '2', 18: '100002301'}"
+43	43		301							"{2: 'Hanying', 3: 'I\'ve also brought some special batteries for you, Kiske. The vendor said it\'s ""maple syrup bread"" flavored, but I\'m not exactly sure how that tastes...', 4: '1', 18: '100002302'}"
+44	44		202							{1: '1', 2: '2', 6: '1'}
+45	45		201							{1: '1', 2: '500488'}
+46	46		301							"{1: '1', 2: 'Kiske', 3: ""Thank you so much! Are these from Oscar's? Their trickle charging is the best. It always leaves me wanting more."", 4: '1', 18: '100002303'}"
+47	47		302							"{2: ""(Chew) What are these toppings? They're so soft and chewy."", 3: '48'}"
+48	48		202							{1: '1', 6: '1'}
+49	49		201							{1: '1', 2: '500629', 4: '400'}
+50	50		201							{1: '2', 2: '500731', 4: '-400'}
+51	51		301							"{1: '1', 2: 'Hanying', 3: ""Oh, these are sliced pig intestines and duck blood puddings. They're very popular rice noodle toppings in some Kowloong regions."", 4: '1', 18: '100002304'}"
+52	52		204							{1: '2', 2: '7'}
+53	53		301							{2: 'Karenina', 3: 'What...?! Are you saying that this is—', 4: '2', 18: '100002305'}
+54	54		301							"{2: 'Hanying', 3: ""What's wrong? Do you not like it?"", 4: '1', 18: '100002306'}"
+55	55		302							"{2: '(Swallow quietly)', 3: '56', 4: ""I think it's quite delicious."", 5: '56'}"
+56	56		202							{1: '1', 2: '2', 6: '1'}
+57	57		201							{1: '1', 2: '500576', 3: '2'}
+58	58		301				AniZhuanchangBegin			"{1: '1', 2: 'Ayla', 3: ""I've never had these before! Can I have another bowl, Hanying? I need to analyze its flavor more closely!"", 4: '1', 18: '100002307'}"
+59	59		202			DialogDisable				{1: '1', 6: '1'}
+60	60		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory458.jpg'}
+61	61		107							{1: 'WGAA Constellia Branch', 2: 'Photography Studio. 4:20 PM.'}
+62	62		301							{3: 'Photography studio, WGAA Constellia Branch. 4:20 PM.'}
+63	63		108							{1: '1'}
+64	64		201							{1: '1', 2: '500731', 3: '10'}
+65	65		301			DialogEnable				"{1: '1', 2: 'Karenina', 3: ""Hey, do we really need to take these many photos? Shouldn't two or three be enough for the promotional materials?"", 4: '1', 18: '100002308'}"
+66	66		203							{1: '1', 2: '0.25', 3: '-400'}
+67	67		201							{1: '2', 2: '500576', 3: '2', 4: '400'}
+68	68		301							{1: '1', 2: 'Ayla', 3: 'Of course they are necessary! We need a set for internal use, another one for public advertising, and one for posters. We might even make a photo album if the photos are well-received.', 4: '2', 18: '100002309'}
+69	69		204							{1: '1', 2: '6'}
+70	70		301							{1: '1', 2: 'Karenina', 3: 'A photo album?! We never discussed that!', 4: '1', 18: '100002310'}
+71	71		202							{1: '1', 2: '2', 6: '1'}
+72	72		201							{1: '1', 2: '500488'}
+73	73		301							"{1: '1', 2: 'Kiske', 3: ""A photo album?! Can Thunder Sparks publish one too? I'll make sure every mechanoid we know buys a copy!"", 4: '1', 18: '100002311'}"
+74	74		202							{1: '1', 6: '1'}
+75	75		201							{1: '1', 2: '500731', 3: '10', 4: '-400'}
+76	76		201							{1: '2', 2: '500576', 4: '400'}
+77	77		301							"{1: '1', 2: 'Karenina', 3: ""Can't you aim higher, Kiske?"", 4: '1', 18: '100002312'}"
+78	78		204							{1: '1'}
+79	79		301							{2: 'Ayla', 3: 'If we can make it happen, the final proceeds will be split 70-30 between WGAA and you. Based on past experience, we should be able to make this much...', 4: '2', 18: '100002313'}
+80	80		204							{1: '1', 2: '7'}
+81	81		301							{2: 'Karenina', 3: 'For real?! This is enough to renovate every workshop the Engineering Force has on the surface!', 4: '1', 18: '100002314'}
+82	82		302							{2: 'To save the ever-declining Engineering Force, Karenina decides...', 3: '83'}
+83	83		204							{1: '1', 2: '5'}
+84	84		301				AniZhuanchangBegin			{2: 'Karenina', 3: 'Are you really asking me to decide?!', 4: '1', 18: '100002315'}
+85	85		202			DialogDisable			3000.0	{1: '1', 2: '2', 6: '1'}
+86	86		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg'}
+87	87		107							{1: 'WGAA Constellia Branch', 2: 'Recording Studio. 2:40 PM.'}
+88	88		301							{3: 'Recording studio, WGAA Constellia Branch. 2:40 PM.'}
+89	89		108							{1: '1'}
+90	90		301			DialogEnable				{3: 'Stumbling through various minor incidents, this makeshift team of artists finally makes it to the last day of the Paradise Festival.'}
+91	91		201							{1: '1', 2: '500731', 3: '6'}
+92	92		301							{1: '1', 3: 'Staring at her performance on the tape, Karenina clenches her hands slightly as her left foot fidgets nonstop.'}
+93	93		301							{3: 'Hanying and Kiske are both busy today, and Ayla just got dragged away by an overwhelmed Sica to handle the piled-up work at WGAA.'}
+94	94		301							"{3: 'Fortunately, all arrangements for the performance have been completed. It is now your job as the ""producer"" to confirm the final effects.'}"
+95	95		301							{2: 'Karenina', 3: 'What do you think? Anything else that needs adjusting?', 4: '1', 18: '100002316'}
+96	96		302							"{2: ""It's perfect."", 3: '97', 4: 'Maybe start thinking about how to do your autographs?', 5: '97'}"
+97	97		204							{1: '1', 2: '7'}
+98	98		301							{3: 'Having watched the tape, you nod at Karenina and give her a thumbs up.'}
+99	99		301							{3: 'But Karenina does not appear convinced by what you said.'}
+100	100		301							{2: 'Karenina', 3: 'Is there really no problem? I feel like I can still improve my dance moves during the chorus...', 4: '1', 18: '100002317'}
+101	101		302							{2: 'I really like the way it is.', 3: '102'}
+102	102		204							{1: '1', 2: '1'}
+103	103		301							"{2: 'Karenina', 3: 'Is that so... Fine. You\'re the ""producer.""', 4: '1', 18: '100002318'}"
+104	104		204							{1: '1', 2: '2'}
+105	105		301							"{2: 'Karenina', 3: ""We've done everything we can. I suppose I can relax for a bit..."", 4: '1', 18: '100002319'}"
+106	106		302							{2: 'What did you say?', 3: '107'}
+107	107		204							{1: '1', 2: '7'}
+108	108		301							{1: '1', 2: 'Karenina', 3: 'N-nothing—!', 4: '1', 18: '100002320'}
+109	109		301							{3: 'Startled by your sudden approach, Karenina immediately jumps away, the Inver-Device on her head flashing red.'}
+110	110		204							{1: '1', 2: '20'}
+111	111		301							{2: 'Karenina', 3: 'What I mean is...', 4: '1', 18: '100002321'}
+112	112		301							{2: 'Karenina', 3: 'What I mean is, Commandant, have you had fun these days?', 4: '1', 18: '100002322'}
+113	113		301							"{3: ""Karenina's sudden question leaves you briefly stunned. When you come back to your senses, the memories of the past few days begin to unfold.""}"
+114	114		302							"{2: ""I've had a great time."", 3: '115', 4: 'It was a bit tiring, but it was fulfilling.', 5: '115'}"
+115	115		204							{1: '1', 2: '2'}
+116	116		301							"{2: 'Karenina', 3: ""That's good to hear."", 4: '1', 18: '100002323'}"
+117	117		301							{3: 'Seemingly reassured, Karenina rests her hand on her chest, and her Inver-Device lowers.'}
+118	118		204							{1: '1', 2: '1'}
+119	119		301							"{2: 'Karenina', 3: ""There's nothing to do now but wait. Ayla told me I should conserve my energy before the performance."", 4: '1', 18: '100002324'}"
+120	120		301							{3: 'Karenina needs to calm down now and wait in patience so she can be at her best.'}
+121	121		301							{2: 'Karenina', 3: '...', 4: '1', 18: '100002325'}
+122	122		301							"{2: 'Karenina', 3: ""Why don't we head out for some fresh air, then? Let's see if there is anything new on the last day—"", 4: '1', 18: '100002326'}"
+123	123		202							{1: '1'}
+124	124		401							{1: '1', 2: '36'}
+125	125		301							{3: 'Right then, you hear a crowd suddenly clamoring outside.'}
+126	126		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory672.jpg', 3: '0', 4: '1', 5: '0.5'}
+127	127		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+128	128		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory672.jpg'}
+129	129		401							{1: '1', 2: '208'}
+130	130		201							{1: '1', 2: '500398', 4: '-400', 7: '1', 8: '1'}
+131	131		201							{1: '2', 2: '500565', 4: '400', 5: '-100', 7: '1'}
+132	132		301							{1: '1', 3: 'You look toward where the noise comes from and see a young couple surrounded by a crowd of onlookers.'}
+133	133		301							{1: '1', 3: 'The young man kneels on one knee before his partner, who looks surprised and flushed.'}
+134	134		301							{1: '1', 2: 'Young Man', 3: 'Ivy, will you marry me?', 4: '2', 18: '100002327'}
+135	135		301							{1: '1', 2: 'Young Woman', 3: 'Gino...', 4: '1', 18: '100002328'}
+136	136		301							"{1: '1', 2: 'Young Man', 3: ""I'm sorry I can't give you the grand wedding you deserve. The least I can do is to tell you how I feel in front of everyone in this city on this festive day."", 4: '2', 18: '100002329'}"
+137	137		301							"{1: '1', 2: 'Young Man', 3: ""I don't know if there will be another chance after today. I don't want to have any regrets."", 4: '2', 18: '100002330'}"
+138	138		301							{1: '1', 3: 'He takes out a silver-colored ring made from aluminum and reaches out to his beloved.'}
+139	139		301							"{1: '1', 2: 'Young Woman', 3: ""I... Do you know how long I've waited to hear that...?"", 4: '1', 18: '100002331'}"
+140	140		301							{1: '1', 2: 'Young Woman', 3: 'I do! Of course I do...!', 4: '1', 18: '100002332'}
+141	141		203							{1: '2', 2: '0.17', 3: '150'}
+142	142		301				AniZhuanchangBegin			"{1: '1', 3: 'They embrace each other as the crowd around them offers their blessings. Some mechanoids even start to play the ""Wedding March"" with their speakers.'}"
+143	143		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+144	144		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+145	145		301			DialogEnable				{3: 'Karenina cannot stop thinking about what just transpired when she steps out of the WGAA branch.'}
+146	146		201							{1: '1', 2: '500731', 3: '6'}
+147	147		301							{1: '1', 2: 'Karenina', 3: 'He... he actually p-proposed here...', 4: '1', 18: '100002333'}
+148	148		301							"{2: 'Karenina', 3: ""There were so many people watching... Didn't they feel embarrassed...?!"", 4: '1', 18: '100002334'}"
+149	149		502							{1: 'DialogDisable'}
+150	150		302							"{2: ""But isn't it also quite wonderful?"", 3: '151'}"
+151	151		302							{2: 'Making a lifetime commitment on such a special day...', 3: '152'}
+152	152		302							"{2: ""It's surely going to be an unforgettable memory for them."", 3: '153'}"
+153	153		204							{1: '1', 2: '5'}
+154	154		301			DialogEnable				"{2: 'Karenina', 3: ""Hmph. I didn't say it was bad."", 4: '1', 18: '100002335'}"
+155	155		204							{1: '1', 2: '2'}
+156	156		301							{2: 'Karenina', 3: 'A lifetime... It sounds long, but there are indeed things worth remembering your whole life.', 4: '1', 18: '100002336'}
+157	157		204							{1: '1', 2: '1'}
+158	158		301							{3: 'Karenina looks up, shielding her eyes with her hand from the glaring sunlight.'}
+159	159		301							"{2: 'Karenina', 3: ""It's already the last day..."", 4: '1', 18: '100002337'}"
+160	160		204							{1: '1', 2: '8'}
+161	161		301							{2: 'Karenina', 3: 'Have I really done everything I can...?', 4: '1', 18: '100002338'}
+162	162		204							{1: '1'}
+163	163		301							{3: 'Lost in thought, Karenina notices a few life-sized standees with her likeness by a sign that guides tourists to the central exhibition hall.'}
+164	164		204							{1: '1', 2: '7'}
+165	165		301							{2: 'Karenina', 3: 'The posters are out already, huh? They still look too over the top...', 4: '1', 18: '100002339'}
+166	166		302							{2: 'I think they look great.', 3: '167', 4: 'Can I take one of the standees home later?', 5: '169'}
+167	167		204							{1: '1', 2: '6'}
+168	168	171	301							"{2: 'Karenina', 3: ""I-I wasn't fishing for compliments!"", 4: '1', 18: '100002340'}"
+169	169		204							{1: '1', 2: '5'}
+170	170		301							{2: 'Karenina', 3: 'W-what are you planning?', 4: '1', 18: '100002341'}
+171	171		204							{1: '1'}
+172	172		301							{2: 'Karenina', 3: 'And why are there so many people here? This is a much bigger crowd than the one on the first day.', 4: '1', 18: '100002342'}
+173	173		301							{3: 'The crowd from earlier has yet to disperse. Observing the people on the streets, Karenina realizes for the first time just how many people have gathered in the city.'}
+174	174		301							{2: 'Karenina', 3: 'Are they all here... for the show?', 4: '1', 18: '100002343'}
+175	175		202							{1: '1', 6: '1'}
+176	176		201							{1: '1', 2: '500059', 4: '400'}
+177	177		201							{1: '2', 2: '500260', 4: '-400'}
+178	178		301							{1: '1', 3: 'A mother and her daughter walk by at that moment. The mother dresses like a doctor from a conservation area, and the girl looks to be around seven or eight.'}
+179	179		301							{3: 'The girl has an old but well-maintained camera hanging around her neck. Leading the girl by her hand, her mother frequently stops and kneels down when the girl takes photos.'}
+180	180		301							{2: 'Girl', 3: 'Mom, is today the last day of the festival...?', 4: '2', 18: '100002344'}
+181	181		301							"{2: 'Female Tourist', 3: ""Yeah, but I heard there's going to be a big show tonight. It'll be a lot of fun."", 4: '1', 18: '100002345'}"
+182	182		301							"{2: 'Female Tourist', 3: ""Your father has work to do this time, so make sure you're taking a lot of pretty pictures for him, okay?"", 4: '1', 18: '100002346'}"
+183	183		301							{2: 'Girl', 3: 'Alright! I will!', 4: '2', 18: '100002347'}
+184	184		202							{1: '1', 2: '2', 6: '1'}
+185	185		201							{1: '1', 2: '500731'}
+186	186		301							{1: '1', 2: 'Karenina', 3: '...', 4: '1'}
+187	187		202							{1: '1', 6: '1'}
+188	188		201							{1: '1', 2: '500059', 4: '400'}
+189	189		201							{1: '2', 2: '500260', 4: '-400'}
+190	190		301							{1: '1', 2: 'Girl', 3: 'Mom! Look! Is that the lady on the poster...?', 4: '2', 18: '100002348'}
+191	191		301							{3: 'The girl suddenly notices Karenina standing nearby and the posters by the sign.'}
+192	192		301							"{2: 'Female Tourist', 3: ""Oh? You're right..."", 4: '1', 18: '100002349'}"
+193	193		301							{2: 'Girl', 3: 'Miss! Miss! Can I take a photo for you?', 4: '2', 18: '100002350'}
+194	194		202							{1: '1', 2: '2', 6: '1'}
+195	195		201							{1: '1', 2: '500731', 3: '7'}
+196	196		301							{1: '1', 3: 'The girl is already standing before Karenina by the time she comes to her senses.'}
+197	197		301							{2: 'Karenina', 3: 'Huh? For me...?', 4: '1', 18: '100002351'}
+198	198		202							{1: '1', 6: '1'}
+199	199		201							{1: '1', 2: '500454'}
+200	200		301							{1: '1', 2: 'Male Tourist', 3: 'H-hi... Can I have your autograph?', 4: '1', 18: '100002352'}
+201	201		202							{1: '1', 2: '2', 6: '1'}
+202	202		201							{1: '1', 2: '500731', 3: '7'}
+203	203		301							{1: '1', 2: 'Karenina', 3: 'M-my autograph? Hold on... I...', 4: '1', 18: '100002353'}
+204	204		301							"{3: ""The girl's approach seems to have triggered something. More and more people begin to gather around Karenina.""}"
+205	205		301							"{2: 'Fashionable Woman', 3: ""Oh dear! Aren't you—"", 18: '100002354'}"
+206	206		301							"{2: 'Female Journalist', 3: ""Excuse me! I'm hoping to ask you—"", 18: '100002355'}"
+207	207		204							{1: '1', 2: '6'}
+208	208		301			RImgBg1Shake				{2: 'Karenina', 3: 'Wait! Please... give me some space—', 4: '1', 18: '100002356'}
+209	209		301							{2: 'Karenina', 3: 'Argh...', 4: '1', 18: '100002357'}
+210	210		204							{1: '1', 2: '5'}
+211	211		301							{2: 'Karenina', 3: 'Excuse me! Move! Move, please—!', 4: '1', 18: '100002358'}
+212	212		301							{3: 'Karenina throws you a pleading look. You immediately step forward, shielding her from the surging crowd.'}
+213	213		202							{1: '1', 6: '1'}
+214	214		302							{2: 'Calm down, everyone.', 3: '215'}
+215	215		301							"{2: 'Female Journalist', 3: ""Who are you? What's your relationship with this lady?"", 18: '100002359'}"
+216	216		302							"{2: ""I'm her producer. You can direct your questions to me."", 3: '217'}"
+217	217		201							{1: '1', 2: '500731', 3: '6'}
+218	218		301							{1: '1', 3: 'You cast a reassuring glance at Karenina, signaling her to leave first and let you handle the tourists.'}
+219	219		202							{1: '1', 6: '1'}
+220	220		301							{3: 'Karenina nods back, squeezing her way out of the suffocating crowd and quietly slipping away down the street...'}
+221	221		301				AniZhuanchangBegin			"{3: ""Until she disappears from everyone's sight.""}"
+222	222		401							{1: '1', 2: '36'}
+223	223		502						3000.0	{1: 'DialogDisable'}
+224	224		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory579.jpg'}
+225	225		401							{1: '1', 2: '100'}
+226	226		107							{1: 'Church of Machina', 2: 'Great Hall'}
+227	227		301							{3: 'Great Hall, Church of Machina.'}
+228	228		108							{1: '1'}
+229	229		201							{1: '1', 2: '500585'}
+230	230		301			DialogEnable				{1: '1', 3: 'Before a subterminal of the Gray Tower stands a mechanoid in an old-fashioned top hat. He interfaces with the tower, exchanging information with the constant flow of data inside it.'}
+231	231		301							{3: 'After the Gray Tower verifies the authentication code in his memory shell, he logs into his Gray Tower account for the first time in a very long period.'}
+232	232		301							"{3: ""This is a backdoor he set up during the inception of this massive data terminal. Only Arcana, who is Sagemachina's agent, and mechanoids with Arcana's status are allowed access.""}"
+233	233		301							{3: 'It bypasses all firewalls and encryption set by the Gray Tower, granting most security clearance to the user so they can freely access or extract information stored within the Gray Tower.'}
+234	234		301							{3: 'It also comes with a small additional feature—a chat room that allows mechanoids connected to the Church of Machina network to communicate with each other across distances at any time.'}
+235	235		301							{3: 'This is how he has been able to stay in touch with his compatriots from the Church during his decades of wandering.'}
+236	236		301							"{3: ""Upon reaching the old site of Constellia, his teacher's legacy, he also installed a subterminal in the city that is capable of sharing computing power with the Gray Tower.""}"
+237	237		301							{3: 'It was his insurance policy to ensure the safety of the awakened machines in Constellia in case of emergencies.'}
+238	238		301							{3: 'He once entrusted the clearance of the subterminal to Dulcinea, but now—'}
+239	239		202							{1: '1'}
+240	240		401							{1: '2', 2: '8510113'}
+241	241		301							"{3: 'A sonic boom breaking the sound barrier erupts in the open space outside the Church, signaling the landing of ""Power"", Sagemachina\'s ride.'}"
+242	242		301							{3: 'Shortly after, a young girl with gray hair pushes open the gate and runs over to Cervantes with a smile upon seeing him standing before the Gray Tower.'}
+243	243		201							{1: '1', 2: '500585', 3: '1', 4: '400'}
+244	244		201							{1: '2', 2: '500472', 3: '3', 4: '-400'}
+245	245		301							"{1: '1', 2: 'Nanami', 3: ""Cervantes, I'm back! I got what you sent me!"", 4: '2', 18: '100002360'}"
+246	246		301							{2: 'Cervantes', 3: 'Welcome back, Sage. The Empress was talking about it with me just now. Is she not back with you?', 4: '1', 18: '100002361'}
+247	247		204							{1: '2', 2: '1'}
+248	248		301							"{2: 'Nanami', 3: 'She said she had to continue her ""business trip."" Nanami was planning to sneak—to lend her a hand but then decided to come back first.', 4: '2', 18: '100002362'}"
+249	249		204							{1: '1', 2: '3'}
+250	250		301							"{2: 'Cervantes', 3: '""Neo Universal Toys""... How curious. Has she made any money at all...? All her messages to us were texts like ""I\'m bankrupt again!""', 4: '1', 18: '100002363'}"
+251	251		204							{1: '2', 2: '3'}
+252	252		301							"{2: 'Nanami', 3: ""Nanami is rooting for her! She's the only one who understands how valuable Nanami's collection of all-gen Flash consoles is! Besides, didn't she just organize a major event in the company's name?"", 4: '2', 18: '100002364'}"
+253	253		301							"{2: 'Cervantes', 3: ""...And it's in Constellia. After avoiding her for so many years, she finally got her way. All I did was ask her to take Dulcinea away and hand over the key of the subterminal to you."", 4: '1', 18: '100002365'}"
+254	254		202							{1: '1', 2: '2', 6: '1'}
+255	255		301							{3: 'During a casual chat, Dulcinea mentioned to Cervantes that she wanted to see the world beyond Constellia and travel to different places like Cervantes once did.'}
+256	256		301							"{3: ""Though surprised by Dulcinea's idea, Cervantes ultimately encouraged her to follow her heart.""}"
+257	257		301							"{3: ""So he asked the Empress to take Dulcinea away when passing through Constellia in one of her many travels and hand the temporary clearance for the Gray Tower's subterminal to Nanami.""}"
+258	258		301							{3: 'But the Empress has clearly taken this opportunity to secretly start a business venture in Constellia called the Paradise Festival.'}
+259	259		201							{1: '1', 2: '500585', 3: '2', 4: '400'}
+260	260		201							{1: '2', 2: '500472', 3: '1', 4: '-400'}
+261	261		301							"{1: '1', 2: 'Cervantes', 3: ""She was always talking about building a theme park in that city... I guess her wish has finally come true, then. I'm just not sure how things will turn out..."", 4: '1', 18: '100002366'}"
+262	262		301							"{2: 'Nanami', 3: ""Don't worry. Isn't Hanying there as well? I did ask her to watch over our friends in the city."", 4: '2', 18: '100002367'}"
+263	263		204							{1: '1', 2: '3'}
+264	264		301							{2: 'Cervantes', 3: 'Hanying is a prudent person. I do trust her...', 4: '1', 18: '100002368'}
+265	265		204							{1: '1'}
+266	266		306							{1: '1'}
+267	267		301							{3: 'In a way, it is inevitable that Cervantes and the Empress are adversaries.'}
+268	268		301							{3: 'Whenever the usually humble and polite Cervantes was heard arguing loudly with someone in the Church, it was always with the Empress.'}
+269	269		301							"{3: 'Perhaps ""artists"" and ""capitalists"" are natural enemies. Cervantes only asked for her help this time because he had no other choice.'}"
+270	270		306							
+271	271		204							{1: '1'}
+272	272		301							"{2: 'Cervantes', 3: '""Paradise Festival""... It might sound odd coming from me, but why is she so fixated on it?', 4: '1', 18: '100002369'}"
+273	273		204							{1: '1', 2: '3'}
+274	274		301							"{2: 'Cervantes', 3: 'Is this momentary ""happiness"" a ""necessary"" pursuit for mechanoids and humans right now? If so, what\'s the meaning of it?', 4: '1', 18: '100002370'}"
+275	275		204							{1: '2', 2: '5'}
+276	276		301							"{2: 'Nanami', 3: ""Hmm... Cervantes, you're overthinking this! Your parts are going to age faster if you keep being sour all day!"", 4: '2', 18: '100002371'}"
+277	277		301							{2: 'Cervantes', 3: 'I seem to hear that a lot... Sage, would you mind enlightening me?', 4: '1', 18: '100002372'}
+278	278		301							{3: 'Cervantes looks troubled. He has been trying to recenter himself since he returned from Constellia, but old habits die hard.'}
+279	279		204							{1: '1'}
+280	280		204							{1: '2', 2: '1'}
+281	281		301							"{2: 'Nanami', 3: ""I'm not thinking too hard about it! Just because something's not necessary doesn't mean we can't have it!"", 4: '2', 18: '100002373'}"
+282	282		204							{1: '2', 2: '2'}
+283	283		301							"{2: 'Nanami', 3: 'I might be doing something important right now... something ""meaningful,"" as you would say, but I also don\'t see a problem with spending some time playing video games every day.', 4: '2', 18: '100002374'}"
+284	284		204							{1: '2', 2: '5'}
+285	285		301							{2: 'Nanami', 3: 'No one can stand being serious all the time, be it mechanoids or humans!', 4: '2', 18: '100002375'}
+286	286		204							{1: '2', 2: '1'}
+287	287		301							"{2: 'Nanami', 3: ""That's why we need a stage like this for people to do things they've been wanting to do but couldn't."", 4: '2', 18: '100002376'}"
+288	288		301							"{2: 'Nanami', 3: ""Some opportunities are lost forever if we miss them, and that would leave regrets behind, wouldn't it?"", 4: '2', 18: '100002377'}"
+289	289		204							{1: '2', 2: '2'}
+290	290		301							"{2: 'Nanami', 3: ""A moment of joy can be cherished for a lifetime. My parents often took me to the amusement park when I was young! I haven't forgotten about those memories."", 4: '2', 18: '100002378'}"
+291	291		204							{1: '2', 2: '1'}
+292	292		301							{2: 'Nanami', 3: 'Yeah... No matter what the Empress thinks, I also want to create memories like this for everyone in the Church.', 4: '2', 18: '100002379'}
+293	293		301							{2: 'Cervantes', 3: 'I see...', 4: '1', 18: '100002380'}
+294	294		301							"{2: 'Nanami', 3: ""Anyway, I'll go notify everyone now. Cervantes, can you set up the communication channel?"", 4: '2', 18: '100002381'}"
+295	295		204							{1: '1', 2: '1'}
+296	296		301							{2: 'Cervantes', 3: 'No problem.', 4: '1', 18: '100002382'}
+297	297		202							{1: '2', 6: '1'}
+298	298		203							{1: '1', 2: '0.25'}
+299	299		301							{3: 'Watching the spirited girl leave the hall, Cervantes focuses his attention back to the Gray Tower.'}
+300	300		301		1		AniZhuanchangBegin			{3: 'A prominent message is pinned by the Empress in the chat room, with a countdown reminding everyone how long it is until the grand finale of the Paradise Festival.'}

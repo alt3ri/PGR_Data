@@ -1,0 +1,159 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		401							{1: '2', 2: '844006'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash.prefab', 2: '2'}
+5	5		301			DialogEnable				{3: 'The last of the Corrupted collapses, leaving a radiant arc where the flames still flicker in the air.'}
+6	6		302							{2: '(Open fire)', 3: '7'}
+7	7		401							{1: '2', 2: '1510'}
+8	8		301							"{3: ""Taking careful aim at the fallen enemy's power core, you fire one precise finishing shot.""}"
+9	9		301							{3: 'As the smoke dissipates, all those Corrupted lured by the sound devices lie defeated.'}
+10	10		201							{1: '1', 2: '500994', 3: '6'}
+11	11		301							"{1: '1', 3: ""Lucia stays alert, scanning the area. She places a hand on her hip and gently brushes the dust off that Froggie's head.""}"
+12	12		201							{1: '1', 2: '500019', 4: '400'}
+13	13		201							{1: '2', 2: '500019', 4: '-400'}
+14	14		301							{1: '1', 3: 'The patrol team arrives to assist, confirms the enemy signals, and moves in to examine the remains.'}
+15	15		202							{1: '1', 2: '2', 6: '1'}
+16	16		201							{1: '1', 2: '500994'}
+17	17		301							{1: '1', 3: 'Lucia, standing right beside you, quickly regains her focus and settles back into a defensive stance by your side.'}
+18	18		201							{1: '1', 2: '500019', 4: '400'}
+19	19		201							{1: '2', 2: '500019', 4: '-400'}
+20	20		301							"{1: '1', 2: 'Patrol Member A', 3: ""Whoa... Gray Raven really is something else. It's my first time seeing an elite squad from Babylonia in action!"", 4: '1'}"
+21	21		301							{2: 'Patrol Member A', 3: 'That was so clean and efficient! Flawless teamwork!', 4: '1'}
+22	22		301							"{2: 'Patrol Member B', 3: ""Alright, that's enough! Keep it down and let them catch their breath... Sorry for interrupting!"", 4: '2'}"
+23	23		301							"{3: ""The calm patrol member presses down on the still-excited teammate's head.""}"
+24	24		301							{2: 'Patrol Member B', 3: 'Based on our request, once this shopping mall is cleared, your mission is basically finished.', 4: '2'}
+25	25		302							{2: 'That was quick.'}
+26	26		202							{1: '1', 2: '2', 6: '1'}
+27	27		201							{1: '1', 2: '500994'}
+28	28		301							"{1: '1', 2: 'Lucia', 3: ""Got it. We'll handle the handover soon..."", 4: '1'}"
+29	29		201							{1: '1', 2: '500019', 4: '400'}
+30	30		201							{1: '2', 2: '500019', 4: '-400'}
+31	31		301							"{1: '1', 2: 'Patrol Member A', 3: ""He hasn't finished! Sure, your mission's officially over, but the transport craft back to Babylonia won't arrive until the day after tomorrow. So until then, feel free to do whatever you like—mmpf..."", 4: '1'}"
+32	32		301							{3: 'The calm patrol member firmly presses his head down again.'}
+33	33		301							"{2: 'Patrol Member B', 3: ""That's about it... We'll head out to pick up the scavengers' stuff and return it to them. You're free to do whatever you like"", 4: '2'}"
+34	34		301							{3: 'He hauls away the teammate who still seems eager to speak, leaving in a hurry.'}
+35	35		301							"{2: 'Patrol Member B', 3: ""What's with all the pointless chatter? Sometimes it's exhausting just listening to you!"", 4: '2'}"
+36	36		301				DialogDisable			"{2: 'Patrol Member A', 3: ""Come on, that's not true! They seem to enjoy chatting with me..."", 4: '1'}"
+37	37		202							{1: '1', 2: '2'}
+38	38		302							{2: '...Ahem.', 3: '39', 4: '...', 5: '39'}
+39	39		301			DialogEnable				{3: 'All around, the patrol members swiftly clean up the Corrupted remains and head off, leaving the once lively scene to fall suddenly quiet.'}
+40	40		301							{3: 'Now we have an unexpected break.'}
+41	41		302							"{2: ""Do you have anything you'd like to do, Lucia?"", 3: '42'}"
+42	42		201							{1: '1', 2: '500994', 3: '4'}
+43	43		301							{1: '1', 2: 'Lucia', 3: 'Hmm...', 4: '1'}
+44	44		301							"{3: ""Lucia handles sudden battles with ease, but when she's faced with a surprise vacation, she finds herself momentarily at a loss.""}"
+45	45		301							"{3: ""If she can't make up her mind, maybe you should give that local specialty in the conservation area a try, just like the patrol squad captain suggested...""}"
+46	46		204							{1: '1', 2: '3'}
+47	47		301							{2: 'Lucia', 3: 'Commandant, how about a nice soak in the hot spring?', 4: '1'}
+48	48		302							{2: 'The hot spring?', 3: '49', 4: 'You mean the one at the resort?', 5: '49'}
+49	49		301							"{3: ""Surprisingly, Lucia doesn't linger on the thought for long before speaking up.""}"
+50	50		204							{1: '1', 2: '2'}
+51	51		301				AniZhuanchangBegin			"{2: 'Lucia', 3: ""Yeah. I've heard the water there is naturally flowing, so if we tidy it up a bit, we can probably use it..."", 4: '1'}"
+52	52		202							{1: '1', 6: '1'}
+53	53		401							{1: '1', 2: '36'}
+54	54		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1025.jpg'}
+55	55		401							{1: '1', 2: '181'}
+56	56		301			AniZhuanchangEnd				{3: 'Before you know it, you have already slipped past that hidden path and reached the abandoned hot spring.'}
+57	57		301							"{3: ""Even though nobody's been here for years, the fresh running spring keeps the place from looking as bad as you expected. After scooping out the fallen leaves, the rising steam soon clouds your view.""}"
+58	58		301							{3: 'You soak both feet in the spring. The water is slightly hot, stimulating your senses, and the tiredness from days of travel gradually slips away.'}
+59	59		301							{3: 'Behind you, the girl gently sets her hands on your shoulders, applying just the right amount of pressure as she massages your stiff neck and back.'}
+60	60		201							{1: '1', 2: '500994', 3: '1'}
+61	61		301							{1: '1', 2: 'Lucia', 3: 'Back in the library, I came across a few books on massage.', 4: '1'}
+62	62		301							{2: 'Lucia', 3: 'You often work through the night, Commandant. I believe this will really help relieve your fatigue...', 4: '1'}
+63	63		302							"{2: 'Thanks.', 3: '64', 4: ""It's very effective."", 5: '64'}"
+64	64		301							{3: 'The air falls silent again, leaving only the soft trickle of the flowing water.'}
+65	65		204							{1: '1', 2: '8'}
+66	66		301							{2: 'Lucia', 3: 'It almost feels like a dream.', 4: '1'}
+67	67		302							{2: '?', 3: '68', 4: 'What?', 5: '68'}
+68	68		204							{1: '1', 2: '2'}
+69	69		301							"{2: 'Lucia', 3: ""I still can't believe how dreamy these past few days have been."", 4: '1'}"
+70	70		204							{1: '1', 2: '1'}
+71	71		301							"{2: 'Lucia', 3: ""I ended up going back with you to a battlefield from my past, spotted a rainbow out of nowhere, and even stumbled on that Froggie I'd been hunting for ages."", 4: '1'}"
+72	72		301							"{2: 'Lucia', 3: ""When I first heard about this hot spring, I thought maybe I'd get to visit it with you someday—never expected it'd actually happen..."", 4: '1'}"
+73	73		301							"{3: ""You know, when life runs this smoothly, it feels almost unreal, like you're dreaming.""}"
+74	74		302							"{2: 'Wanna join me for a soak?', 3: '77', 4: ""(Splash water over Lucia's frame)"", 5: '75'}"
+75	75		204							{1: '1', 2: '3'}
+76	76		301							{2: 'Lucia', 3: 'Commandant?', 4: '1'}
+77	77		302							"{2: ""Let's take this as a moment to relax."", 3: '78'}"
+78	78		203							{1: '1', 2: '0.25', 4: '-50'}
+79	79		204							{1: '1', 2: '2'}
+80	80		301							{3: 'Lucia nods, sits down beside you, and immerses her feet in the soothing warmth of the spring.'}
+81	81		301							{3: 'She anticipated the chance of underwater combat before venturing into the forest, so she waterproofed her frame beforehand.'}
+82	82		302							{2: 'How do you feel?', 3: '83'}
+83	83		301							"{2: 'Lucia', 3: ""Mmm... it's really warm."", 4: '1'}"
+84	84		301							{3: 'Her sensory modules transmit every ripple to her M.I.N.D. She lowers her gaze and quietly follows the gentle flow of the water.'}
+85	85		302							{2: 'Not all of this comes down to pure luck.', 3: '86'}
+86	86		301							{2: 'Lucia', 3: 'Hmm?', 4: '1'}
+87	87		302							"{2: ""You've been pushing the mission forward at full speed, all for this very moment, right?"", 3: '88'}"
+88	88		204							{1: '1', 2: '7'}
+89	89		301							{3: 'She hesitates for a second, feeling a bit caught off guard.'}
+90	90		204							{1: '1', 2: '3'}
+91	91		301							{2: 'Lucia', 3: '...Nothing gets past you, Commandant.', 4: '1'}
+92	92		204							{1: '1', 2: '2'}
+93	93		301							"{2: 'Lucia', 3: ""I still have some downtime at Babylonia to fine-tune my frame, but you've been running around nonstop on the surface."", 4: '1'}"
+94	94		301							"{2: 'Lucia', 3: ""It's not just this mission—there was the last one, and the ones before that..."", 4: '1'}"
+95	95		204							{1: '1', 2: '1'}
+96	96		301							{2: 'Lucia', 3: 'Commandant, you really should take a proper break.', 4: '1'}
+97	97		302							{2: 'You need one too, Lucia.', 3: '98'}
+98	98		204							{1: '1', 2: '2'}
+99	99		301							"{2: 'Lucia', 3: ""I'm fine..."", 4: '1'}"
+100	100		302							"{2: ""You didn't stop pushing yourself, even during the standby period, right?"", 3: '101'}"
+101	101		301							"{3: ""After you returned to Babylonia, you checked Lucia's adaptation records from that time. To speed up her compatibility, she spent almost every moment in the Science Council, apart from the bare minimum sleep and downtime.""}"
+102	102		204							{1: '1', 2: '3'}
+103	103		301				DialogDisable			{2: 'Lucia', 3: 'I just want to help...', 4: '1'}
+104	104		302							"{2: ""That's why you and I are cut from the same cloth."", 3: '105'}"
+105	105		302							"{2: ""If the mission isn't done, there's no way we'll take a break."", 3: '106', 4: ""Maybe you're the reason I've picked up these habits."", 5: '110', 6: ""That's just who we are."", 7: '114'}"
+106	106		204							{1: '1', 2: '4'}
+107	107		301			DialogEnable				"{3: ""Those words perfectly sum up Lucia's character.""}"
+108	108		204							{1: '1', 2: '2'}
+109	109	116	301							"{2: 'Lucia', 3: ""You're spot on, Commandant."", 4: '1'}"
+110	110		204							{1: '1', 2: '4'}
+111	111		301			DialogEnable				{2: 'Lucia', 3: '...', 4: '1'}
+112	112		204							{1: '1'}
+113	113	116	301							"{2: 'Lucia', 3: ""I'll take responsibility for you, Commandant."", 4: '1'}"
+114	114		204							{1: '1', 2: '1'}
+115	115		301			DialogEnable				"{2: 'Lucia', 3: ""They say the more time two people spend together, the more alike they become—sounds just like us, doesn't it?"", 4: '1'}"
+116	116		204							{1: '1', 2: '2'}
+117	117		301							{2: 'Lucia', 3: 'But you picked this mission spot so I could catch my breath, right?', 4: '1'}
+118	118		302							{2: 'Oops.', 3: '119', 4: 'You caught me.', 5: '119'}
+119	119		301							{3: 'Your hopes align in a simple way—you just want to look after each other and keep fatigue from wearing each other down.'}
+120	120		202							{1: '1'}
+121	121		301							{3: 'From the moment you began this mission, you both have been seeking a chance to help each other unwind.'}
+122	122		301							{3: 'In the gentle rush of the water, this unspoken concern seeps into your hearts without a word.'}
+123	123		301							{3: 'The hot spring eases your thoughts, intertwining them, and once the truth emerges, a subtle emotion steadily grows.'}
+124	124		201							{1: '1', 2: '500994', 3: '8'}
+125	125		301							{1: '1', 2: 'Lucia', 3: 'Commandant...', 4: '1'}
+126	126		302							{2: 'Yes.', 3: '127'}
+127	127		204							{1: '1', 2: '1'}
+128	128		301							{2: 'Lucia', 3: 'Commandant.', 4: '1'}
+129	129		302							{2: 'Yes.', 3: '130', 4: 'Yeah.', 5: '130'}
+130	130		204							{1: '1', 2: '2'}
+131	131		301							{2: 'Lucia', 3: '【kuroname】.', 4: '1'}
+132	132		302							{2: 'Yes.', 3: '133', 4: 'Yeah.', 5: '134', 6: 'Lucia.', 7: '135'}
+133	133	136	301							"{2: 'Lucia', 3: ""Everything's going to be okay, right, Commandant?"", 4: '1'}"
+134	134	136	301							{2: 'Lucia', 3: 'Mm...', 4: '1'}
+135	135		301							"{2: 'Lucia', 3: ""I'm so glad I got the chance to meet you, 【kuroname】."", 4: '1'}"
+136	136		301							"{3: ""The girl's eyes cut through the soft haze, focusing on the person right beside her.""}"
+137	137		204							{1: '1', 2: '2'}
+138	138		301							{2: 'Lucia', 3: 'Just being at your side makes me happier than anything.', 4: '1'}
+139	139		301							{3: 'She lets her eyelids droop a little, partially concealing those ruby-like eyes.'}
+140	140		203							{1: '1', 2: '0.25', 5: '-50'}
+141	141		301							{2: 'Lucia', 3: 'Commandant, can you promise me something?', 4: '1'}
+142	142		301							"{3: ""That gentle warmth eases your fatigue and intensifies your emotions, growing until you're almost impossible to hold back.""}"
+143	143		202							{1: '1'}
+144	144		301							{3: 'Lucia leave the remaining words unsaid, pouring her unwavering emotion into a single, direct act.'}
+145	145		301							{3: 'She gently loops her arms around your shoulders, pressing her forehead to yours as a comforting warmth settles just beneath your nose.'}
+146	146		301							{3: 'A sensation warmer than any hot spring flows into your soul the instant your skin touches.'}
+147	147		301							"{3: ""Then, a tender brush grazes your cheek and lingers at the corner of your lips, leaving a light, fluttering kiss—like a dragonfly touching the water's surface.""}"
+148	148		302							{2: 'Lucia?', 4: '...'}
+149	149		201							{1: '1', 2: '500994', 3: '2', 6: '-50'}
+150	150		301							{1: '1', 3: 'The rush of water slips away, the breeze goes still, and even the sound of breathing fades to nothing.'}
+151	151		401							{1: '2', 2: '2624'}
+152	152		301							{3: 'Now, right here in this moment, all is hushed save for the steady beat of your hearts, echoing in perfect unison like a delicate two-part harmony.'}
+153	153		202							{1: '1'}
+154	154		301							{3: 'Ba-dump... Ba-dump... The rhythm of your pounding heart builds to a crescendo. In a single breath, Lucia dips her gaze and moves in for another kiss—again and again.'}
+155	155		301							"{3: ""Gentle whispers linger at your ear, gliding over your cheek as softly as a bird's downy feathers.""}"
+156	156		301							"{3: ""They're the words she never finished.""}"
+157	157		201							{1: '1', 2: '500994', 3: '2', 6: '-50'}
+158	158		301		1		AniZhuanchangBegin			{1: '1', 2: 'Lucia', 3: 'Promise me... that we will never be apart.', 4: '1'}

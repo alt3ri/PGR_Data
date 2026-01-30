@@ -1,0 +1,161 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1052.jpg'}
+2	2		401							{1: '2', 2: '4085'}
+3	3		301			DialogEnable				{3: 'The indoor venue is buzzing with excitement. Being the most popular attraction, the gaming section already has a long line forming early on.'}
+4	4		201							{1: '1', 2: '500239'}
+5	5		301							{1: '1', 2: 'Boxing Champion', 3: 'CHALLENGE START!', 4: '1'}
+6	6		401							{1: '1', 2: '220'}
+7	7		302							{2: '(Throw a punch)', 3: '8', 4: '(Throw a devastating punch)', 5: '8'}
+8	8		502							{1: 'PanelActor1Shake'}
+9	9		401							{1: '2', 2: '4681'}
+10	10		301							"{1: '1', 3: ""Your fist lands on the mechanoid's padded chest, but the display panel on its head shows no reaction whatsoever.""}"
+11	11		302							"{2: 'Is this ""Boxing Champion"" broken?', 3: '12'}"
+12	12		301							{2: 'Boxing Champion', 3: 'Your score is 550. Unfortunately, you did not reach the prize threshold.', 4: '1'}
+13	13		202							{1: '1', 6: '1'}
+14	14		201							{1: '2', 2: '500239', 4: '400'}
+15	15		201							{1: '1', 2: '501042', 3: '4', 4: '-400'}
+16	16		301							{1: '1', 2: 'Yata', 3: 'My turn.', 4: '1'}
+17	17		203						250.0	{1: '1', 2: '0.25', 3: '400'}
+18	18		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionR.prefab', 2: '2'}
+19	19		401							{1: '2', 2: '4795'}
+20	20		203							{1: '2', 2: '0.25', 3: '800'}
+21	21		202							{1: '2'}
+22	22		401							{1: '2', 2: '737'}
+23	23		301							{3: 'Yata throws a right hook at the mechanoid, sending it flying several meters back and leaving dark skid marks across the floor.'}
+24	24		301							{2: 'Boxing Champion', 3: 'Y-y-your sc-sc-score is—PRIZE—'}
+25	25		401							{1: '2', 2: '4101'}
+26	26		301							"{3: ""The mechanoid's chest caves in as its head drops limply forward, showering sparks everywhere while spilling coins continuously from its mouth.""}"
+27	27		302				AniZhuanchangBegin			"{2: ""It's kind of unfair for a Construct to play this..."", 3: '28', 4: 'How formidable!', 5: '28'}"
+28	28		202							{1: '1'}
+29	29		502						400.0	{1: 'DialogDisable'}
+30	30		402							{1: '4085'}
+31	31		401							{1: '1', 2: '36'}
+32	32		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1055.jpg'}
+33	33		401							{1: '1', 2: '207'}
+34	34		301			DialogEnable				{3: 'As night falls, visitors who spent the day playing gather outside, flooding the food street where vendors are swamped with customers.'}
+35	35		201							{1: '1', 2: '501042'}
+36	36		301							{1: '1', 2: 'Yata', 3: 'Two skewers, please.', 4: '1'}
+37	37		301							{3: 'Yata hands over the tokens and picks up two grilled skewers from the stall. The aroma of chargrilled food is wafting through the air.'}
+38	38		301							{3: 'Each wooden skewer holds what looks like an egg yolk, glistening with a translucent sheen.'}
+39	39		204							{1: '1', 2: '1'}
+40	40		301							{2: 'Yata', 3: 'Here, 【kuroname】, try this.', 4: '1'}
+41	41		302							{2: 'It looks delicious.', 3: '42', 4: 'What is this...', 5: '42'}
+42	42		301							"{2: 'Yata', 3: 'This is called ""Lantern"". It\'s a unique snack from Hydrangea Island that\'ll be hard to find once the festival ends today.', 4: '1'}"
+43	43		302				AniZhuanchangBegin			"{2: '""Lantern""... What a fitting name.', 3: '44'}"
+44	44		202							{1: '1'}
+45	45		502						400.0	{1: 'DialogDisable'}
+46	46		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1056.jpg'}
+47	47		301			DialogEnable	AniZhuanchangBegin			"{3: ""With nothing particular to do on the festival's last day, you spend time with Yata, properly experiencing the festival you planned.""}"
+48	48		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg'}
+49	49		301			AniZhuanchangEnd	AniZhuanchangBegin			"{3: 'Visitors gradually disperse from the grounds as the twilight overhead fades into a starlit sky. The week-long ""Golden Age Cultural Festival"" finally comes to an end.'}"
+50	50		502						400.0	{1: 'DialogDisable'}
+51	51		201							{1: '1', 2: '501042', 7: '1'}
+52	52		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1056.jpg'}
+53	53		302			AniZhuanchangEnd				{2: 'Time really flies.', 3: '54'}
+54	54		302							{2: 'To think, a whole week has passed.', 3: '55'}
+55	55		301			DialogEnable				{2: 'Yata', 3: 'Yeah, we only came here looking for a place to chill and take a break, but you really turned this festival into something special.', 4: '1'}
+56	56		301							"{2: 'Yata', 3: ""With crowds flooding in every day, I guess all my effort coaching you wasn't wasted after all."", 4: '1'}"
+57	57		301							{3: 'As the festival draws to a close, visitors light up fireworks along the street, painting the night with dazzling colors and brilliant lights.'}
+58	58		301							{3: 'Yata stands beneath the night sky, watching the distant crowds.'}
+59	59		301				AniZhuanchangBegin			{2: 'Yata', 3: 'Everyone is so cheerful and lively... Just like another ordinary day on Hydrangea Island.', 4: '1'}
+60	60		202						200.0	{1: '1'}
+61	61		401							{1: '2', 2: '4381'}
+62	62		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory104.png'}
+63	63		104							{1: '-350|-50|-350', 2: '0'}
+64	64		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'With one hand on her hip, Yata gazes up at the sky. As fireworks burst one after another in the night sky, their light reveals the complex emotions playing across her face.'}
+65	65		502						400.0	{1: 'DialogDisable'}
+66	66		201							{1: '1', 2: '501042', 7: '1'}
+67	67		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1056.jpg'}
+68	68		302			AniZhuanchangEnd				{2: 'Feeling nostalgic?', 3: '69'}
+69	69		301			DialogEnable				{2: 'Yata', 3: '...No.', 4: '1'}
+70	70		301							{2: 'Yata', 3: 'You know what happened on Hydrangea Island.', 4: '1'}
+71	71		301							"{2: 'Yata', 3: ""The past won't change just because you miss it."", 4: '1'}"
+72	72		204							{1: '1', 2: '3'}
+73	73		301							{2: 'Yata', 3: 'Some things are better kept locked away in the heart. Dwelling on the past only adds to the burden we carry.', 4: '1'}
+74	74		301							"{2: 'Yata', 3: ""—That's how I see it, at least. That's why I'd rather focus on making the most of each day as it comes."", 4: '1'}"
+75	75		204							{1: '1'}
+76	76		301							"{2: 'Yata', 3: ""Rather than dwelling on the past... I want more people to understand Hydrangea Island's culture, to remember our way of life."", 4: '1'}"
+77	77		502						400.0	{1: 'DialogDisable'}
+78	78		302							{2: 'Culture always finds its way to be passed down and remembered.', 3: '79'}
+79	79		302							{2: 'Your wish will come true.', 3: '80'}
+80	80		202							{1: '1'}
+81	81		401							{1: '2', 2: '4381'}
+82	82		301			DialogEnable				{3: 'Between the pops of fireworks, deep taiko drums begin to beat.'}
+83	83		301							{3: 'Massive festival floats slowly make their way to center stage, and curious onlookers quickly gather around them.'}
+84	84		402							{1: '4381'}
+85	85		201							{1: '1', 2: '500405', 4: '-400'}
+86	86		201							{1: '2', 2: '500856', 4: '400'}
+87	87		301							"{1: '1', 2: 'Construct Tourist', 3: ""What's that painting up there? That's one huge skeleton."", 4: '1'}"
+88	88		301							"{2: 'Male Tourist', 3: ""That's one of those... uh... yokai things, right?"", 4: '2'}"
+89	89		301							"{2: 'Male Tourist', 3: ""The oil painting style looks like Impressionism. There's a specific term for it, what was it called..."", 4: '2'}"
+90	90		202							{1: '1', 2: '2', 6: '1'}
+91	91		201							{1: '1', 2: '501048'}
+92	92		301							{1: '1', 2: 'Female Student Tourist', 3: 'Ah, you must be thinking of Ukiyo-e! Actually, the Impressionists borrowed many of their techniques from Ukiyo-e art.', 4: '1'}
+93	93		202							{1: '1', 6: '1'}
+94	94		201							{1: '2', 2: '500856', 4: '-400'}
+95	95		201							{1: '1', 2: '501048', 4: '400'}
+96	96		301							{1: '1', 2: 'Male Tourist', 3: 'Oh, really? I thought these two styles had absolutely nothing to do with each other.', 4: '2'}
+97	97		301				AniZhuanchangBegin			"{2: 'Female Student Tourist', 3: ""That's the beauty of art. Even when separated by vast distances, it still connects the past with the future!"", 4: '1'}"
+98	98		202							{1: '1', 2: '2'}
+99	99		502						400.0	{1: 'DialogDisable'}
+100	100		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+101	101		401							{1: '1', 2: '36'}
+102	102		401							{1: '2', 2: '4085'}
+103	103		301			DialogEnable	AniZhuanchangBegin			{3: 'Beneath the ancient paintings, a constant stream of visitors creates a lively buzz of conversation.'}
+104	104		502						400.0	{1: 'DialogDisable'}
+105	105		402							{1: '4085'}
+106	106		201							{1: '1', 2: '501042', 7: '1'}
+107	107		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1056.jpg'}
+108	108		401							{1: '1', 2: '5047'}
+109	109		302			AniZhuanchangEnd				{2: 'We cannot fight against time, but we can prevent forgetting.', 3: '110'}
+110	110		302							{2: 'This is what makes the Golden Age Cultural Festival so meaningful.', 3: '111'}
+111	111		301			DialogEnable				{2: 'Yata', 3: '...', 4: '1'}
+112	112		301							{3: 'As if hearing something remarkable, Yata turns her head and meets your gaze.'}
+113	113		204							{1: '1', 2: '1'}
+114	114		301							{3: 'Then, she gives a knowing smile.'}
+115	115		301							"{2: 'Yata', 3: ""I've heard that the Gray Raven Commandant always has a way of speaking simple words that carry deep meaning."", 4: '1'}"
+116	116		301							"{2: 'Yata', 3: ""Now that I've witnessed it myself, you really do live up to your reputation."", 4: '1'}"
+117	117		401							{1: '2', 2: '4044'}
+118	118		301							{3: 'Yata reaches out and gently taps your shoulder with her right fist.'}
+119	119		401							{1: '2', 2: '4295'}
+120	120		301							{3: 'A gentle breeze passes by as you stand side-by-side, gazing at the brilliant night view.'}
+121	121		301							{3: 'If everything goes as planned, this memorable cultural festival should finally draw to a close at this very moment.'}
+122	122		301							{3: 'If everything goes as planned, that is...'}
+123	123		402							{1: '4295'}
+124	124		201							{1: '2', 2: '500576', 3: '7', 4: '-400'}
+125	125		204							{1: '1', 2: '4'}
+126	126		203							{1: '1', 2: '0.25', 3: '400'}
+127	127		301							"{1: '1', 2: 'Ayla', 3: ""I've finally found you! So this is where you two have been!"", 4: '2'}"
+128	128		302							{2: 'Ayla?', 3: '129'}
+129	129		301							"{2: 'Yata', 3: ""It's you again..."", 4: '1'}"
+130	130		301							"{2: 'Ayla', 3: ""(Panting) I've got an urgent message for you two. Since it's pressing, I'll cut to the chase."", 4: '2'}"
+131	131		204							{1: '2', 2: '1'}
+132	132		301							"{2: 'Ayla', 3: ""Thanks to you both, the Golden Age Cultural Festival's revenue has far exceeded our targets! What's more, the Hydrangea Island theme has attracted tons of attention!"", 4: '2'}"
+133	133		301							{2: 'Ayla', 3: 'So, due to popular demand from the people of Babylonia, the WGAA has decided to extend the festival!', 4: '2'}
+134	134		204							{1: '1'}
+135	135		301							"{2: 'Yata', 3: ""Hey, isn't this a bit too hasty?"", 4: '1'}"
+136	136		301							{2: 'Ayla', 3: 'So! The WGAA would like you, Commandant, and Yata to continue serving as planners for this cultural festival!', 4: '2'}
+137	137		302							"{2: 'This is too sudden. I need to think about it.', 3: '138', 4: ""Great! We'll be getting those sweet bonuses again!"", 5: '139'}"
+138	138	140	301							"{2: 'Ayla', 3: ""Please, Commandant! I'll make you a deal you can't refuse!"", 4: '2'}"
+139	139		301							"{2: 'Ayla', 3: ""Yay! I knew you'd be up for it, Commandant! I'll even throw in a special personal rebate for you!"", 4: '2'}"
+140	140		302							{2: 'Will you keep helping us, Yata?', 3: '141'}
+141	141		301							{2: 'Yata', 3: '...Yeah, I guess.', 4: '1'}
+142	142		302							"{2: ""That's surprisingly decisive of you."", 3: '143', 4: ""This isn't really like you."", 5: '143'}"
+143	143		302							{2: 'Last time they had to bribe you with annual leave days to get you to help.', 3: '144'}
+144	144		204							{1: '1', 2: '3'}
+145	145		301							"{2: 'Yata', 3: ""I get free food and drinks here anyway, so it's pretty much like a vacation."", 4: '1'}"
+146	146		301							"{2: 'Yata', 3: ""Besides, you've changed my mind about this cultural festival thing... I actually like the atmosphere here."", 4: '1'}"
+147	147		204							{1: '1', 2: '4'}
+148	148		301							"{2: 'Yata', 3: ""I am a graduate of Misono High, after all. Can't let you run wild and mess up the cultural festival."", 4: '1'}"
+149	149		301							"{2: 'Ayla', 3: ""That's wonderful! We'll have even more supplies for the second half of the festival, including hydrangeas from Hydrangea Island!"", 4: '2'}"
+150	150		204							{1: '1'}
+151	151		301							"{2: 'Yata', 3: ""Hydrangeas, huh... I'll go take a look later."", 4: '1'}"
+152	152		204							{1: '2'}
+153	153		301							"{2: 'Ayla', 3: ""Everyone in Babylonia loves this festival! I'm sure you two'll make the second half even better!"", 4: '2'}"
+154	154		204							{1: '2', 2: '2'}
+155	155		301							"{2: 'Ayla', 3: ""You can do it! Once the festival's over, I'll treat you both to a fantastic feast!"", 4: '2'}"
+156	156		301							"{2: 'Ayla', 3: ""—Oh right! And I'll throw in exclusive Ayla Wish Coupons too!"", 4: '2'}"
+157	157		301							"{2: 'Yata', 3: ""...I'll pass. Just give both of them to the Gray Raven Commandant instead."", 4: '1'}"
+158	158		301							"{2: 'Yata', 3: ""All right, all right, let's worry about tomorrow's problems tomorrow."", 4: '2'}"
+159	159		204							{1: '1', 2: '3'}
+160	160		301		1		AniZhuanchangBegin			"{2: 'Yata', 3: ""The fireworks aren't over yet. Wanna get a closer look, 【kuroname】?"", 4: '1'}"

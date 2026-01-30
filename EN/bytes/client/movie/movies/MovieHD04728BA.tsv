@@ -1,0 +1,111 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1057.jpg'}
+2	2		401							{1: '1', 2: '278'}
+3	3		301			DialogEnable				{3: 'At the Constellia festival, the Youth Center hosts a poetry sharing class for children. Echo, who has recently delved into poetry, has been invited to teach.'}
+4	4		301							"{3: ""Dusk approaches, uneven sunlight spills into the room, lingering among the children's clear voices.""}"
+5	5		201							{1: '1', 2: '500702'}
+6	6		301							{1: '1', 2: 'Echo', 3: 'In the distant past of Kowloong, there was a poet born on Double Seventh and who also died on Double Seventh... Yet he was not known for romance.', 4: '1'}
+7	7		301							{2: 'Echo', 3: 'His most famous works mourn a shattered homeland—mountains and rivers in ruin, ancestral gardens battered by wind and rain...', 4: '1'}
+8	8		202							{1: '1'}
+9	11		401							{1: '2', 2: '5149', 3: '0.5'}
+10	10		301							{3: 'You see Echo teaching earnestly, occasionally consulting her densely written notes.'}
+11	9		401							{1: '2', 2: '1516', 3: '1'}
+12	12		301							{3: 'The children are engrossed and do not notice someone slipping in through the back door and sitting in the last row.'}
+13	13		301							"{3: 'Even so, Echo clearly sees her uninvited ""student.""'}"
+14	14		201							{1: '1', 2: '500702', 3: '7'}
+15	15		301							{1: '1', 2: 'Echo', 3: 'Commandant? This...', 4: '1'}
+16	16		302							{2: '(Gesture for her to ignore you and continue teaching)', 3: '17'}
+17	17		202							{1: '1'}
+18	18		301							{3: 'Prompted by your signal, Echo refocuses on the lesson.'}
+19	19		201							{1: '1', 2: '500702'}
+20	20		301							{1: '1', 2: 'Echo', 3: 'Does anyone know which poem this is?', 4: '1'}
+21	21		202							{1: '1'}
+22	22		301							"{3: ""It's clear these kids have no understanding of such ancient poetry. Echo had not expected complete silence. The room falls quiet.""}"
+23	23		201							{1: '1', 2: '500702', 3: '10'}
+24	24		301							{1: '1', 2: 'Echo', 3: 'No one? Really?', 4: '1'}
+25	25		202							{1: '1'}
+26	26		301							{3: 'Her anxious gaze sweeps over the puzzled students, then settles on you in the back row, silently asking for help.'}
+27	27		302							{2: '(Maybe help her out)', 3: '28', 4: '(Looks like Echo needs my help right now)', 5: '28'}
+28	28		301							"{3: ""From your seat in the last row, you speak up in a student-like tone and answer Echo's question. Then, to help the confused children, you recite the two most famous lines of the poem:""}"
+29	29		302							"{2: '""How much sorrow can one feel? As ceaseless as the spring river flowing east.""', 3: '30'}"
+30	30		201							{1: '1', 2: '500702'}
+31	31		301							{1: '1', 2: 'Echo', 3: 'Yes... yes! Excellent! This, uh, this student is absolutely right. You earn a little red flower!', 4: '1'}
+32	32		202							{1: '1'}
+33	33		301							"{3: 'A chorus of ""So cool!"" rises from the children. Echo shoots you a grateful glance. Their praise seems to motivate her, and she moves on to the next part of the lesson.'}"
+34	34		201							{1: '1', 2: '500702'}
+35	35		301							{1: '1', 2: 'Echo', 3: 'Did you know that poets everywhere love to write about the moon? Long before the Golden Age, writers in the Transatlantic Economic Community used poems to measure the distance between the moon and the sea...', 4: '1'}
+36	36		302							{2: '(The moon and the sea are far apart. Yet she reaches for him with her amber hands, unwilling to let go...)', 3: '37'}
+37	37		301							{2: 'Echo', 3: 'Poets from the Arctic Routes stared into the deep night sky and demanded to know why the moon kept running away...', 4: '1'}
+38	38		302							{2: '(O moon, why do you flee, sinking into that bright blue sky...)', 3: '39'}
+39	39		202							{1: '1'}
+40	40		301							"{3: ""You mouth the verses along in silence. Echo notices, and the sight gives her even more confidence as she guides the class through the moon's journey across history and poetry.""}"
+41	41		201							{1: '1', 2: '500702'}
+42	42		301							{1: '1', 2: 'Echo', 3: 'We often wait for the moment when a poem and a person meet. Sometimes a poem reminds you of someone; sometimes someone makes you remember a poem. The poems of the past are as countless as the stars...', 4: '1'}
+43	43		301				DialogDisable			"{2: 'Echo', 3: ""When that starlight from the past shines down on us, that's when we truly understand poetry. Thank you for joining my poetry class. Today's lesson is over."", 4: '1'}"
+44	44		202							{1: '1'}
+45	45		401						1000.0	{1: '2', 2: '4694', 3: '0.4'}
+46	46		402							{1: '4694'}
+47	47		401							{1: '2', 2: '4926', 3: '1'}
+48	48		301			DialogEnable				{3: 'The bell rings. No matter how lovely the verses, nothing beats the dismissal bell. The kids pack up at once, ready to leave.'}
+49	49		402							{1: '4926'}
+50	50		301							"{3: 'Echo breathes out in relief and smiles the children out the door. When the last one is gone, only the young teacher and you, her ""student"" in the back row, remain.'}"
+51	51		302							{2: 'You must have prepared for this for ages.', 3: '52'}
+52	52		201							{1: '1', 2: '500702'}
+53	53		301							{1: '1', 2: 'Echo', 3: 'I did. I practiced over and over, but I still felt nervous.', 4: '1'}
+54	54		204							{1: '1', 2: '6'}
+55	55		301				DialogDisable			"{2: 'Echo', 3: ""Commandant, aren't you supposed to be at the festival? What brings you to my lecture?"", 4: '1'}"
+56	56		302							{2: 'I like poetry too.', 3: '57'}
+57	57		302							{2: 'Your lesson was well put together. Are you thinking of becoming a teacher, Echo?', 3: '58'}
+58	58		301			DialogEnable				"{2: 'Echo', 3: ""Even if that's true, Commandant, I still have a lot to learn before I can be a teacher."", 4: '1'}"
+59	59		302							{2: '(Smile)', 3: '60', 4: 'So, Miss Echo, when do I get my red flower?', 5: '60'}
+60	60		301							"{2: 'Echo', 3: ""Quit teasing, Commandant. Let's tidy the room before it gets dark."", 4: '1'}"
+61	61		302							{2: 'Yes, Miss Echo.', 3: '62'}
+62	62		202							{1: '1'}
+63	63		301				DialogDisable			{3: 'A faint blush colors her cheeks, making her even lovelier in the dying light.'}
+64	64		205						2050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1058.jpg', 3: '0', 4: '1', 5: '2'}
+65	65		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+66	66		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1058.jpg'}
+67	67		301			DialogEnable				"{3: ""Together you set every desk and chair back in place. The moon is already above the treetops, its pale light pouring through the windows and resting where the afternoon sun once lay. The two of you can't help but turn your eyes to the bright moon outside.""}"
+68	68		201							{1: '1', 2: '500702', 3: '7'}
+69	69		301				AniZhuanchangBegin			{1: '1', 2: 'Echo', 3: 'Wow, Commandant, look... the moon is so bright tonight.', 4: '1'}
+70	70		202							{1: '1', 6: '1'}
+71	71		401						1000.0	{1: '2', 2: '4331'}
+72	72		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory912.jpg', 3: '1', 4: '0.4', 5: '0'}
+73	73		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory148.png'}
+74	74		104							{1: '-300|100|-250', 2: '0', 4: '1'}
+75	75		301			AniZhuanchangEnd				{3: 'Eager to bathe in the moonlight, she dashes outside. You lock the classroom doors and windows, then follow at a leisurely pace.'}
+76	76		301							{3: 'Under the streetlamp she flips through her notebook. When she notices you, Echo snaps it shut, walks over, and the two of you start toward the lounge.'}
+77	77		301							"{3: ""You stroll beside Constellia's artificial river, the only path back to the lounge.""}"
+78	78		301							"{3: ""The moon isn't full, yet the sky is crystal clear, every cloud gone. Moonlight pours over the water like liquid silver.""}"
+79	79		201							{1: '1', 2: '500702', 3: '1'}
+80	80		301							{1: '1', 2: 'Echo', 3: 'In class this afternoon, Commandant, you sounded well versed in poetry.', 4: '1'}
+81	81		301							{2: 'Echo', 3: 'I brought a poem and I want you to guess which one it is.', 4: '1'}
+82	82		302							"{2: ""Is it one of those Kowloong poems you've been studying?"", 3: '83'}"
+83	83		301							"{2: 'Echo', 3: ""Yes. Since it's the Double Seventh Festival here in Constellia, I stocked up on Kowloong poems. This one fits the night perfectly."", 4: '1'}"
+84	84		302							"{2: ""Always prepared. That's so like you."", 3: '85', 4: ""So what's it about?"", 5: '85'}"
+85	85		301							"{2: 'Echo', 3: ""It's a poem about the moon, about the universe's vastness and how small we are."", 4: '1'}"
+86	86		301							{2: 'Echo', 3: 'It says that when the moon rises, the river, the water, the whole world fills with its glow. When the moon sets, branches along the shore break that glow apart and only a few people walk home across the dappled light.', 4: '1'}
+87	87		302							{2: 'That is a beautiful picture.', 3: '88'}
+88	88		301							{2: 'Echo', 3: 'The poem links the moon to love, as if love were a bold, brave stance stretching across the ages, a shield against the void.', 4: '1'}
+89	89		301							{3: 'Just as she did in class, she speaks with emotion, and you wait for her conclusion.'}
+90	90		302							{2: 'I think I know which poem it is. Is that its title?', 3: '91'}
+91	91		301				DialogDisable			{3: 'Echo glances at her notebook and nods.'}
+92	92		302							"{2: ""If I'm remembering right, it should be..."", 3: '93'}"
+93	93		203					600.0		{1: '1', 2: '0.3', 4: '-10', 5: '-50'}
+94	94		401							{1: '2', 2: '1543', 3: '1'}
+95	95		301			DialogEnable				{3: 'She gently presses a finger to your lips before the words escape. Moonlight spills onto the nearby lake, rippling just like the unspoken lines between you.'}
+96	96		202							{1: '1'}
+97	97		301							{3: 'Echo stays silent, yet you know the poem describes a moment exactly like this.'}
+98	98		301							{3: 'You both gaze at the same flowing moonlight; without a word, the moon reflected in your eyes speaks for you.'}
+99	99		201							{1: '1', 2: '500702', 3: '1', 5: '-10', 6: '-50'}
+100	100		301							{1: '1', 2: 'Echo', 3: 'The moon is beautiful tonight.', 4: '1'}
+101	101		306							{1: '1'}
+102	102		301							"{3: ""In Echo's eyes you see the very moonlight that enchants her, as if the moon itself from those ancient verses had traveled a thousand years to shine on you both.""}"
+103	103		301				DialogDisable			{3: 'One speaks without thinking, moved by the scene.'}
+104	104		306							
+105	105		302							{2: 'Yeah, the moon is really beautiful tonight.', 3: '106'}
+106	106		306							{1: '1'}
+107	107		301			DialogEnable				{3: 'The other, so in sync, lets words slip out before the thought is fully formed.'}
+108	108		306							
+109	109		204							{1: '1', 2: '6'}
+110	110		301		1		AniZhuanchangBegin			{2: 'Echo', 3: 'May we follow the moonlight...', 4: '1'}

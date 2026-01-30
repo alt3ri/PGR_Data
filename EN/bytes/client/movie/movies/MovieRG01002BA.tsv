@@ -1,0 +1,343 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{2: '5668'}
+3	3		301			DialogEnable				{3: 'Suddenly, a melodic chime rings out beside his ear.'}
+4	4		301				DialogDisable			{3: 'The music flows, weaving golden threads that descend into the shattered dreamscape, guiding your consciousness from deep slumber back into the warmth of reality.'}
+5	5		402							{1: '5668'}
+6	6		302							{2: '(Open your eyes)', 3: '7'}
+7	7		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+8	8		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+9	9		401							{2: '120'}
+10	10		201							{1: '18', 2: '501283'}
+11	11		401							{2: '968'}
+12	12		401							{2: '5672'}
+13	13		301			DialogEnable				"{1: '1', 2: 'Morigan', 3: ""Caw—Commandant's awake! Awake!"", 4: '18'}"
+14	14		301							{2: 'Morigan', 3: 'What was in your dream? Quick, write it down!', 4: '18'}
+15	15		301							"{2: 'Morigan', 3: ""Otherwise, if you forget again, Nirvatia will give me hell, and my gorgeous, flowing locks won't survive another hair-pulling session!"", 4: '18'}"
+16	16		202							{1: '18'}
+17	17		301							{3: 'The wind and sand rustle all around. In the hazy landscape, a raven perches on your shoulder, chattering away.'}
+18	18		302							{2: 'Silence.', 3: '18', 4: '...', 5: '22'}
+19	19		201							{1: '18', 2: '501283'}
+20	20		301							{1: '1', 2: 'Morigan', 3: 'Fine. Got it, boss.', 4: '18'}
+21	21		202							{1: '18'}
+22	22		401							{2: '4780'}
+23	23		301							{3: 'Storm winds roar overhead, tearing at the tent. You rest in the shadow of a massive boulder, facing a tattered camp that shudders and twists beneath the blazing sun.'}
+24	24		402							{1: '4780'}
+25	25		201							{1: '1', 2: '501270', 3: '2'}
+26	26		301							{1: '1', 2: 'Watanabe', 3: 'Sorry, did I wake you up?', 4: '1'}
+27	27		401							{2: '1543'}
+28	28		203						200.0	{1: '1', 2: '0.25', 4: '-50', 5: '-50'}
+29	29		202							{1: '1'}
+30	30		301							{3: 'A familiar figure steps over the dried grass and scattered rubble, slowly moving into the shadow to crouch beside you.'}
+31	31		201							{1: '1', 2: '501270', 3: '2', 5: '-150'}
+32	32		301							"{1: '1', 2: 'Watanabe', 3: ""I couldn't find anything else, so I used my cloak."", 4: '1'}"
+33	33		301							{3: 'He glances at the red fabric draped over you.'}
+34	34		302							{2: 'Thanks.', 3: '35', 4: '...', 5: '37'}
+35	35		204							{1: '1', 2: '2'}
+36	36		301							{3: 'He nods slightly, smiling.'}
+37	37		201							{1: '18', 2: '501283'}
+38	38		301							{1: '1', 2: 'Morigan', 3: 'Humans are so weird! Your bodies actually go cold when you dream! Sounds like a cool experience!', 4: '18'}
+39	39		204							{1: '1', 2: '2'}
+40	40		202							{1: '18'}
+41	41		301							"{2: 'Watanabe', 3: ""...I've been wondering... What's with this crow?"", 4: '1'}"
+42	42		201							{1: '18', 2: '501283'}
+43	43		301							"{1: '1', 2: 'Morigan', 3: ""The name's Morigan! I'm a raven! Not a crow!"", 4: '18'}"
+44	44		202				DialogDisable			{1: '18'}
+45	45		302							"{2: ""...That's my companion's pet."", 3: '46'}"
+46	46		302							"{2: ""Morigan, keep quiet when no one's talking to you."", 3: '47'}"
+47	47		201							{1: '18', 2: '501283'}
+48	48		301			DialogEnable				{1: '1', 2: 'Morigan', 3: 'Fine. Got it, boss.', 4: '18'}
+49	49		202							{1: '18'}
+50	50		204							{1: '1'}
+51	51		301							{2: 'Watanabe', 3: '...A pet?', 4: '1'}
+52	52		301							"{3: ""When you don't explain further, Watanabe wisely changes the topic.""}"
+53	53		301							"{2: 'Watanabe', 3: ""Rusty Yoke is still half a day's ride away. If we're lucky, we'll catch up to the Iron Army soon."", 4: '1'}"
+54	54		202							{1: '1'}
+55	55		401							{2: '1543'}
+56	56		301							{3: 'He slowly sits down on the empty ground beside you, opening his steel palm.'}
+57	57		301							{3: 'Inside rests a delicate golden pocket watch. Its gilded surface is carved with intricate patterns that feel too refined for this age of Cataclysm.'}
+58	58		302							{2: 'After the Cataclysm, few bother to check their watches anymore.', 3: '59'}
+59	59		201							{1: '1', 2: '501270'}
+60	60		301							{1: '1', 2: 'Watanabe', 3: 'This is what my father left behind.', 4: '1'}
+61	61		401							{2: '895'}
+62	62		401							{2: '5668'}
+63	63		301							{3: 'With a soft click, Watanabe opens the pocket watch, and a familiar, melodious tune fills the air.'}
+64	64		402							{1: '5668'}
+65	65		306							{1: '1'}
+66	66		301							{3: 'A black-and-white battlefield photograph is fixed to the watch lid. It shows a woman on the left, a man in the center who resembles Watanabe, and an imposing figure with eyes full of determination and intensity.'}
+67	67		306							
+68	68		302							{2: 'Your father? And who are these?', 3: '69'}
+69	69		301							{2: 'Watanabe', 3: 'On the left is Crane, my mother. As for the one on the right...', 4: '1'}
+70	70		301							{2: 'Watanabe', 3: 'Death of Iron, former Vice Generalissimo of the Iron Army.', 4: '1'}
+71	71		301							"{3: ""Watanabe's brow furrows slightly as he speaks his enemy's name.""}"
+72	72		302							{2: 'It looks like they were close once.', 3: '73'}
+73	73		301							"{2: 'Watanabe', 3: 'Gyrfalcon and Crane... my parents... along with Death of Iron, were known as the ""Three Ashfire Heroes"" even before the Cataclysm. They united and led the Iron Army against Demons born from the Rift of Chaos.', 4: '1'}"
+74	74		301							"{2: 'Watanabe', 3: ""After the Cataclysm, humanity's enemies changed from Demons to the very Angels of Sanctuary. Yet, even against these savage, bloodthirsty Angels, the Iron Army never wavered in its duty to protect the mortal world."", 4: '1'}"
+75	75		301							{2: 'Watanabe', 3: '...My mother also fell for that cause.', 4: '1'}
+76	76		202							{1: '1'}
+77	77		301							"{3: ""He falls silent for a moment, gently tracing his finger over the thin glass, over that era of the Army's glory.""}"
+78	78		201							{1: '1', 2: '501270'}
+79	79		301							{1: '1', 2: 'Watanabe', 3: 'Death of Iron, who once charged alone into Hell, was controlled by an Archangel in a brutal battle and became a Sanctuary agent hiding within our Army.', 4: '1'}
+80	80		301							"{2: 'Watanabe', 3: ""...And I've already told you the rest of the story."", 4: '1'}"
+81	81		302							{2: 'Is there a way to break the control and bring Death of Iron back to his senses?', 3: '82'}
+82	82		301							{2: 'Watanabe', 3: 'Covenants are curses carved into human souls. They awaken certain desires within the host and eventually fuse completely with them. Just like the Blood Covenant between you and me.', 4: '1'}
+83	83		301							"{2: 'Watanabe', 3: ""Instead of saying he is controlled by the Sanctuary, it's more accurate to say the Angel's curse has fully consumed Death of Iron's conscience and seeped into his bones and blood."", 4: '1'}"
+84	84		301							{2: 'Watanabe', 3: 'Killing him is the only way to sever his connection to the Sanctuary and stop him from helping the Angels in their crimes.', 4: '1'}
+85	85		301							"{3: ""This is Watanabe's conclusion after reading countless texts and fighting Death of Iron in battle himself.""}"
+86	86		301							{2: 'Watanabe', 3: '...I will personally cut down the covenant binding Death of Iron, not just for my father, but for all the warriors and comrades who fell to both Demons and Angels.', 4: '1'}
+87	87		301							"{2: 'Watanabe', 3: 'This is a war of freedom against oppression. The banners and blades forged with our fathers"" blood must never be crushed like this.', 4: '1'}"
+88	88		202							{1: '1'}
+89	89		301							{3: 'The knight looks up at the crimson sky, reaching out as if to grab the eternal blazing sun in his palm.'}
+90	90		201							{1: '1', 2: '501270'}
+91	91		301							{1: '1', 3: 'He has now awakened a demonic power strong enough to stand against a Sanctuary agent.'}
+92	92		302							{2: 'Your reasons for revenge are justified.', 3: '93', 4: 'I see.', 5: '93'}
+93	93		204							{1: '1', 2: '1'}
+94	94		301							{2: 'Watanabe', 3: 'And what about you, Bloodsworn? Why have you gotten mixed up in this war?', 4: '1'}
+95	95		301							{3: 'Watanabe turns to look at you with curiosity.'}
+96	96		302							"{2: 'If no one stops this, humanity will go extinct.', 3: '97', 4: 'The pursuit of freedom needs no justification.', 5: '97', 6: ""I can't stand the Sanctuary's atrocities."", 7: '97'}"
+97	97		204							{1: '1'}
+98	98		301							{2: 'Watanabe', 3: '...I see. No wonder you borrowed that name.', 4: '1'}
+99	99		302							{2: 'Borrowed?', 3: '100'}
+100	100		301							"{2: 'Watanabe', 3: 'Your codename, ""Gray Raven.""', 4: '1'}"
+101	101		301							"{2: 'Watanabe', 3: '""Gray Raven"" is the first Generalissimo of the Iron Army, a human Hero from before the Cataclysm.', 4: '1'}"
+102	102		301							"{3: ""Weird... That's a legend you've never heard of before.""}"
+103	103		302							{2: 'I never knew there was someone else called Gray Raven.', 3: '104'}
+104	104		301							{2: 'Watanabe', 3: '...?', 4: '1'}
+105	105		301							{3: 'Watanabe shows a rare look of surprise at your response.'}
+106	106		301							{2: 'Watanabe', 3: 'So did you inherit that title from someone? Like how titles are passed down in the Iron Army.', 4: '1'}
+107	107		302							{2: 'No.', 3: '108', 4: 'Gray Raven is my own name.', 5: '108'}
+108	108		301							"{2: 'Watanabe', 3: ""...That's strange."", 4: '1'}"
+109	109		302							"{2: ""I've been using this name since I first gained the power of a Bloodsworn."", 3: '110'}"
+110	110		301							{2: 'Watanabe', 3: 'What about before that? How did you obtain this power?', 4: '1'}
+111	111		202							{1: '1', 6: '1'}
+112	112		401							{1: '2', 2: '4915'}
+113	113		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+114	114		504							{1: '0.7'}
+115	115		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+116	116		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory928.png'}
+117	117		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+118	118		201							{1: '1', 2: '501294'}
+119	119		301							{1: '1', 2: '???', 3: '...Please...', 4: '1'}
+120	120		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+121	121		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+122	122		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+123	123		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+124	124		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+125	125		504							{1: '0'}
+126	126		202							{1: '1', 6: '1'}
+127	127		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+128	128		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+129	129		202							{1: '1', 6: '1'}
+130	130		301							{1: '1', 3: 'You try to recall your past, but all you can do is piece together fragments of shattered memories.'}
+131	131		401							{1: '2', 2: '4915'}
+132	132		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+133	133		504							{1: '0.7'}
+134	134		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+135	135		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory928.png'}
+136	136		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+137	137		201							{1: '1', 2: '501294'}
+138	138		301				DialogDisable			{2: '???', 3: '...This is the price of becoming a Bloodsworn.'}
+139	139		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+140	140		202							{1: '1', 6: '1'}
+141	141		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+142	142		504							{1: '0'}
+143	143		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+144	144		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+145	145		302							{2: '(...The price?)', 3: '146'}
+146	146		401							{1: '2', 2: '4915'}
+147	147		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+148	148		504							{1: '0.7'}
+149	149		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+150	150		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory928.png'}
+151	151		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+152	152		201							{1: '1', 2: '501294'}
+153	153		301			DialogEnable				{2: '???', 3: '...'}
+154	154		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+155	155		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+156	156		504							{1: '0'}
+157	157		202							{1: '1', 6: '1'}
+158	158		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+159	159		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+160	160		301							{1: '1', 3: 'No matter how hard you try to dig into your memories, all you find is a void of emptiness.'}
+161	161		301							{3: 'Everything about the past feels buried. Only your hatred for the Sanctuary remains, driving you forward.'}
+162	162		301				DialogDisable			"{3: 'Perhaps forgetting your past is the ""price"" you\'re paying?'}"
+163	163		302							"{2: ""I can't remember, but it's possible..."", 3: '164'}"
+164	164		302							{2: 'I sacrificed my previous memories in order to gain the powers of a Bloodsworn.', 3: '165'}
+165	165		201							{1: '1', 2: '501270'}
+166	166		301			DialogEnable				"{1: '1', 2: 'Watanabe', 3: 'Could it be related to that ""companion"" of yours?', 4: '1'}"
+167	167		301							{3: 'He says as he looks at the mechanical raven perched on your shoulder.'}
+168	168		302							{2: '(Nirvatia...)', 3: '169'}
+169	169		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+170	170		202							{1: '1', 6: '1'}
+171	171		504							{1: '0.7'}
+172	172		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory121.png'}
+173	173		201							{1: '1', 2: '501294'}
+174	174		301							{1: '1', 3: 'When you hijacked the Hell Train earlier, an Archangel severely wounded you, and you almost died. She arrived just in time to help you escape death.'}
+175	175		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg', 3: '0', 4: '1', 5: '0.25'}
+176	176		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg', 3: '1', 4: '0', 5: '0'}
+177	177		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+178	178		301							{3: 'She was by your side even before that, giving advice and making plans to help you overthrow the Sanctuary.'}
+179	179		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+180	180		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+181	181		504							{1: '0'}
+182	182		202							{1: '1', 6: '1'}
+183	183		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+184	184		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+185	185		301							{3: 'Even if you cannot find more about her in your fragmented memory, she is a trustworthy ally in every way.'}
+186	186		302							"{2: ""I'm not sure, but from what I can tell, she's been helping us."", 3: '187'}"
+187	187		201							{1: '1', 2: '501270'}
+188	188		301							{1: '1', 2: 'Watanabe', 3: '...Sounds like your past remains a mystery.', 4: '1'}
+189	189		202							{1: '1'}
+190	190		301							{3: 'Both fall silent, quietly feeling in the desolate winds that sweep across the world.'}
+191	191		201							{1: '1', 2: '501270', 3: '8'}
+192	192		301							"{1: '1', 2: 'Watanabe', 3: ""My father once told me that the more impressive the road ahead looks, the more you have to look back at the path you've walked. Otherwise, you might lose yourself in your pursuit of the destination."", 4: '1'}"
+193	193		204							{1: '1'}
+194	194		301							{2: 'Watanabe', 3: 'I may not have the right to interfere with the path you choose, but if you ever need me, I will be there to help you stay on track.', 4: '1'}
+195	195		301							{3: 'He turns toward you and gently places his hand on your shoulder.'}
+196	196		204							{1: '1', 2: '2'}
+197	197		301							{2: 'Watanabe', 3: 'Soldiers of the Army never forget those who show us kindness.', 4: '1'}
+198	198		302							{2: 'I will.', 3: '199', 4: '...', 5: '199'}
+199	199		201							{1: '18', 2: '501283'}
+200	200		204							{1: '1'}
+201	201		301							{1: '1', 2: 'Morigan', 3: 'Boss! Emergency! Emergency!', 4: '18'}
+202	202		202							{1: '18'}
+203	203		301							{3: 'The raven on your shoulder suddenly starts cawing at the top of its lungs.'}
+204	204		302							{2: 'Speak.', 3: '205', 4: 'What is it?', 5: '205'}
+205	205		201							{1: '18', 2: '501283'}
+206	206		301							{1: '1', 2: 'Morigan', 3: 'Angel—!', 4: '18'}
+207	207		301				AniZhuanchangBegin			{2: 'Morigan', 3: 'Angel Pilgrims are coming!', 4: '18'}
+208	208		202							{1: '1', 2: '18'}
+209	209		402							{1: '4780'}
+210	210		402							{1: '5672'}
+211	211		401							{1: '1', 2: '36'}
+212	212		402							{1: '968'}
+213	213		101						3000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory318.png'}
+214	214		401							{1: '1', 2: '6204'}
+215	215		306							{1: '1'}
+216	216		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+217	217		301			AniZhuanchangEnd				{3: 'Two brown steeds are pulling the carriage at full speed through the desolate valley.'}
+218	218		201							{1: '1', 2: '500816'}
+219	219		301							{1: '1', 2: 'Coachman', 3: 'Giddyup! Giddyup!', 4: '1'}
+220	220		402							{1: '5712'}
+221	221		202							{1: '1'}
+222	222		401						200.0	{2: '4010'}
+223	223		401							{2: '4010'}
+224	224		301							{3: 'Behind the carriage, an earth-shaking rumble thunders through the land, drowning out the sound of hooves and wheels crossing the rocky terrain.'}
+225	225		201							{1: '1', 2: '500902'}
+226	226		201							{1: '2', 2: '500902', 4: '-1500'}
+227	227		201							{1: '3', 2: '500902', 4: '1500'}
+228	228		301			PanelActor1Shake				{2: 'Angel Pilgrim', 3: 'Die! Die!', 4: '1'}
+229	229		203							{1: '2', 2: '0.25', 3: '-500'}
+230	230		203							{1: '3', 2: '0.25', 3: '500'}
+231	231		301			RImgBg1Shake				{2: 'Angel Pilgrim', 3: 'Eyeballs, fingers, hair, and slaughter!!', 4: '1', 5: '2', 6: '3'}
+232	232		202							{1: '1', 2: '2', 3: '3'}
+233	233		402							{1: '4010'}
+234	234		301							{3: 'A dozen pale-skinned giants scurry on the ground behind the dust cloud raised by the carriage. Using both hands and feet, they quickly close in on their prey.'}
+235	235		402							{1: '4010'}
+236	236		201							{1: '1', 2: '500696', 3: '5'}
+237	237		301							"{1: '1', 2: 'Coachman', 3: ""We're doomed! They're going to catch us!!"", 4: '1'}"
+238	238		301			RImgBg1Shake				"{2: 'Coachman', 3: 'Damn it! How did we run into so many Angels? Has the town been ""marked""?', 4: '1'}"
+239	239		201							{1: '1', 2: '500393', 3: '14'}
+240	240		301			PanelActor1Shake				{2: 'Woman in Pain', 3: 'Ugh... Ahhh...!', 4: '1'}
+241	241		301							{3: 'Trembling sobs rise from behind the young man.'}
+242	242		203						250.0	{1: '1', 2: '0.25', 3: '-400'}
+243	243		201							{1: '2', 2: '500434', 4: '400'}
+244	244		301							"{1: '1', 2: 'Nervous Man', 3: ""But... but it's only been eight months..."", 4: '2'}"
+245	245		301							"{2: 'Nervous Man', 3: ""S-sir! Could you please drive a bit slower? She... she's about to give birth!"", 4: '2'}"
+246	246		202							{1: '1', 2: '2', 6: '1'}
+247	247		201							{1: '1', 2: '500696', 3: '4'}
+248	248		301							"{1: '1', 2: 'Coachman', 3: ""Please hang in there a little longer! We're almost there!"", 4: '1'}"
+249	249		202							{1: '1'}
+250	250		401							{2: '5670'}
+251	251		301			RImgBg1Shake				{3: 'The carriage suddenly starts going down a steep slope, and the entire car shakes violently.'}
+252	252		201							{1: '1', 2: '500393'}
+253	253		301			PanelActor1Shake				{2: 'Woman in Pain', 3: '—Ahhh!!', 4: '1'}
+254	254		201							{1: '1', 2: '500902'}
+255	255		301			PanelActor1Shake				{1: '1', 2: 'Angel Pilgrim', 3: 'Die!!! Rot!!!', 4: '1'}
+256	256		202							{1: '1'}
+257	257		401							{2: '777'}
+258	258		301							"{3: ""The pilgrims suddenly burst into terrifying shrieks that echo sharply through the canyon, as if excited by their prey's wailing.""}"
+259	259		201							{1: '1', 2: '500696', 3: '4'}
+260	260		301							{1: '1', 2: 'Coachman', 3: '...What should we do?', 4: '1'}
+261	261		301							{3: 'The young man glances at the firearm beside him. Carved into its wooden stock is a majestic, double-headed eagle emblem.'}
+262	262		301							{2: 'Coachman', 3: 'If Mister Watanabe were here...', 4: '1'}
+263	263		204							{1: '1', 2: '4'}
+264	264		301							{3: 'He takes a deep breath, reaches out, grips onto his weapon, and shouts at the carriage.'}
+265	265		301							"{2: 'Coachman', 3: ""Hey! You come hold the horses, I'll—"", 4: '1'}"
+266	266		201							{1: '18', 2: '501283'}
+267	267		401							{2: '5672'}
+268	268		301							{1: '1', 2: 'Morigan', 3: 'Rargh!!!!!', 4: '18'}
+269	269		202							{1: '1', 2: '18'}
+270	270		301							"{3: ""A raven's sharp cry suddenly echoes through the valley, cutting off the man's words.""}"
+271	271		401							{2: '4007'}
+272	272		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+273	273		306							
+274	274		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+275	275		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1210.jpg'}
+276	276		301			RImgBg1Shake				{3: 'BOOM—'}
+277	277		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory317.png', 3: '0', 4: '1', 5: '0.25'}
+278	278		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory317.png', 3: '1', 4: '0', 5: '0'}
+279	279		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory317.png'}
+280	280		301							{3: 'The moment the carriage bursts out of the valley, explosion sounds thunder behind them.'}
+281	281		401							{2: '4537'}
+282	282		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFallStone.prefab', 2: '2'}
+283	283		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+284	284		301							{3: 'The earth shakes and mountains tremble. Massive boulders tumble down like a landslide, completely blocking the road behind.'}
+285	285		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFallStone.prefab'}
+286	286		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory317.png', 3: '0', 4: '1', 5: '0.25'}
+287	287		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory317.png', 3: '1', 4: '0', 5: '0'}
+288	288		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory317.png'}
+289	289		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '8'}
+290	290		201							{1: '19', 2: '500696', 3: '7', 5: '-200', 6: '-100'}
+291	291		301							{1: '1', 2: 'Coachman', 3: 'What?!', 4: '19'}
+292	292		202							{1: '19', 6: '1'}
+293	293		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '8', 5: '1'}
+294	294		301							{3: 'The stunned young man silently stares at the sealed valley behind him and slowly lowers his weapon.'}
+295	295		201							{1: '1', 2: '500696', 3: '4'}
+296	296		301							"{1: '1', 2: 'Coachman', 3: ""Tch, there's nothing more we can do! Retreat to the town!"", 4: '1'}"
+297	297		301							{2: 'Coachman', 3: 'Hyah—!', 4: '1'}
+298	298		201							{1: '1', 2: '500902'}
+299	299		201							{1: '2', 2: '500902', 4: '1500'}
+300	300		301							{1: '1', 2: 'Angel Pilgrim', 3: 'Rargh—?!', 4: '1'}
+301	301		203						300.0	{1: '2', 2: '0.35'}
+302	302		203							{1: '1', 2: '0.25', 5: '-280'}
+303	303		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0.25'}
+304	304		401							{2: '2593'}
+305	305		301							{2: 'Angel Pilgrim', 3: 'Grrowlgh—barf!!!', 4: '1'}
+306	306		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0', 5: '0.25'}
+307	307		202							{1: '1', 2: '2'}
+308	308		301							{3: 'The Pilgrim at the front breaks, only to be pushed by the Angels behind into a massive boulder. Blood and brains splatter across the ground in a mangled mess.'}
+309	309		201							{1: '1', 2: '500902'}
+310	310		301			PanelActor1Shake				{2: 'Angel Pilgrim', 3: 'Ambush! Retreat! Retre—', 4: '1'}
+311	311		401							{2: '4007'}
+312	312		202							{1: '1'}
+313	313		301			RImgBg1Shake				{3: 'BOOM—'}
+314	314		301							{3: 'As the Angel army falls into chaos, another thunderous roar echoes behind you, rumbling through the empty valley like distant thunder.'}
+315	315		301							{3: 'Through the billowing dust clouds in the distance, a tiny human figure slowly emerges.'}
+316	316		201							{1: '1', 2: '501270'}
+317	317		301							{1: '1', 2: 'Watanabe', 3: '...', 4: '1'}
+318	318		201							{1: '1', 2: '500902'}
+319	319		301			RImgBg1Shake				{1: '1', 2: 'Angel Pilgrim', 3: 'Just one?', 4: '1'}
+320	320		201							{1: '2', 2: '500902', 4: '-500'}
+321	321		201							{1: '3', 2: '500902', 4: '500'}
+322	322		301			RImgBg1Shake				{1: '1', 2: 'Angel Pilgrim', 3: 'Die! Die!', 4: '1', 5: '2', 6: '3'}
+323	323		202							{1: '1', 2: '2', 3: '3'}
+324	324		301							{3: 'The white giants regroup and charge toward the <phonetic=Demon>human</phonetic> on the other side of the valley.'}
+325	325		401						100.0	{2: '4010'}
+326	326		401							{2: '4010'}
+327	327		301							{3: 'Like a pack of wolves homing in on a lone lamb, the pilgrims charge forward, their footsteps pounding the ground and grinding the rubble beneath them to dust.'}
+328	328		402						100.0	{1: '4010'}
+329	329		402							{1: '4010'}
+330	330		301							{3: 'When they are less than a hundred meters from their prey, the thick smoke covering the valley suddenly clears.'}
+331	331		402							{1: '4010'}
+332	332		301							{3: 'Dozens of firearms appear, their crimson metal surfaces shining with a dazzling radiance.'}
+333	333		201							{1: '1', 2: '501270', 3: '8'}
+334	334		301							{1: '1', 2: 'Watanabe', 3: 'Angels...', 4: '1'}
+335	335		204							{1: '1'}
+336	336		203							{1: '1', 2: '0.25', 5: '-100'}
+337	337		401							{2: '2905'}
+338	338		301							{3: 'The Demon Knight raises his head slightly, then lifts his blade and points it at the approaching wave of enemies.'}
+339	339		204							{1: '1'}
+340	340		502							{1: 'RImgBg1BlowUp'}
+341	341		301							{2: 'Watanabe', 3: 'Are you ready—', 4: '1'}
+342	342		301		1		AniZhuanchangBegin			{2: 'Watanabe', 3: '—For war?', 4: '1'}

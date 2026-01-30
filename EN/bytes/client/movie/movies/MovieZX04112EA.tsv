@@ -1,0 +1,91 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading10.jpg'}
+2	2		401							{1: '1', 2: '354'}
+3	3		301			DialogEnable				{2: 'Watanabe', 3: 'Is this... the space station?'}
+4	4		301							{3: 'After passing through countless debris and almost reaching the space station, Watanabe finds it hard to believe what he is seeing.'}
+5	5		301							{3: 'The once-white hull is now covered in red growths and spherical structures eerily spread over the entire core module.'}
+6	6		301							{3: 'As the transport craft approaches, these structures turn in unison, pointing the remaining white parts at him like curious eyes.'}
+7	7		301							{3: 'Whatever those things are, it is clear the space station has been completely ruined and is no longer a human research outpost.'}
+8	8		201							{1: '1', 2: '500812'}
+9	9		301							{1: '1', 3: 'In his peripheral vision, he sees the drifting, lifeless remains in space.'}
+10	10		202							{1: '1', 6: '1'}
+11	11		301							{2: 'Watanabe', 3: 'Must rescue the survivors now.'}
+12	12		401							{1: '2', 2: '13015204'}
+13	13		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+14	14		301				AniZhuanchangBegin			{3: 'He moves toward the location he received in the communication.'}
+15	15		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+16	16		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory110.png'}
+17	17		301			AniZhuanchangEnd				"{1: '1', 2: 'Watanabe', 3: ""I've docked. Open the hatch."", 4: '1'}"
+18	18		202							{1: '1', 6: '1'}
+19	19		301							{2: '???', 3: 'Alright, opening the hatch now.'}
+20	20		401							{1: '2', 2: '2871'}
+21	21		201							{1: '1', 2: '500042', 4: '-600'}
+22	22		201							{1: '2', 2: '500023', 4: '600'}
+23	23		201							{1: '3', 2: '500625'}
+24	24		301							{1: '1', 3: 'As the isolation door opens, three pale faces appear before Watanabe.'}
+25	25		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+26	26		201							{1: '1', 2: '1101001'}
+27	27		301							{1: '1', 2: 'Watanabe', 3: 'Are there other survivors?', 4: '1'}
+28	28		202							{1: '1', 6: '1'}
+29	29		201							{1: '1', 2: '1101001', 4: '-400'}
+30	30		201							{1: '2', 2: '500625', 4: '400'}
+31	31		301							{1: '1', 3: 'The one who looks like the leader shakes his head.'}
+32	32		301							"{2: 'Manager', 3: ""We didn't encounter any other survivors. I'm afraid we are the last living souls on the space station."", 4: '2'}"
+33	33		301							{2: 'Watanabe', 3: 'Are you sure?', 4: '1'}
+34	34		301							"{2: 'Manager', 3: ""I'm the head of the research department. My terminal tracks the life signals of all space station employees."", 4: '2'}"
+35	35		301							{3: 'He hands over his terminal on which most of the portraits have turned gray.'}
+36	36		301							"{2: 'Manager', 3: ""Turning gray means one of two things: either they're out of reception range, or their brain activity has ceased."", 4: '2'}"
+37	37		301							{3: 'Upon hearing this, the woman leaning to the side hugs her drone tightly.'}
+38	38		301							{2: 'Watanabe', 3: '...Get on board. We need to leave here now.', 4: '1'}
+39	39		301				AniZhuanchangBegin			"{2: 'Watanabe', 3: ""The space station has mutated. Nobody knows what's going to happen next."", 4: '1'}"
+40	40		202							{1: '1', 2: '2', 6: '1'}
+41	41		401							{1: '2', 2: '8510113'}
+42	42		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+43	43		401							{1: '1', 2: '36'}
+44	44		301			AniZhuanchangEnd				"{3: ""As the transport craft leaves the space station, Watanabe doesn't yet know that someday in the future, he will be involved with this place again.""}"
+45	45		201							{1: '1', 2: '500625'}
+46	46		301							{1: '1', 2: 'Manager', 3: 'Where are we going?', 4: '1'}
+47	47		301							{3: 'The manager asks for the sobbing Jada holding the drone and Philip comforting her.'}
+48	48		202							{1: '1', 6: '1'}
+49	49		201							{1: '1', 2: '1101001', 4: '-400'}
+50	50		201							{1: '2', 2: '500625', 4: '400'}
+51	51		301							"{1: '1', 2: 'Watanabe', 3: ""I'm just on temporary duty. Do you have a contingency plan?"", 4: '1'}"
+52	52		301							"{2: 'Manager', 3: ""What's the situation at the spaceport?"", 4: '2'}"
+53	53		301							{2: 'Watanabe', 3: 'The Starship Fleet went haywire. To destroy the rogue ships, they lost over 70% of their ships.', 4: '1'}
+54	54		301							{3: 'His grip on the control stick tightens.'}
+55	55		202							{1: '1', 2: '2', 6: '1'}
+56	56		201							{1: '1', 2: '500042'}
+57	57		301							{1: '1', 2: 'Jada', 3: 'Then... where can we go?', 4: '1'}
+58	58		301							{2: 'Jada', 3: 'The spaceport is gone, the starships are gone, and the space station is gone...', 4: '1'}
+59	59		301							{2: 'Jada', 3: 'How many people are even still alive...', 4: '1'}
+60	60		301							"{3: ""He doesn't have the answer to her question.""}"
+61	61		202							{1: '1', 6: '1'}
+62	62		201							{1: '1', 2: '500625'}
+63	63		301							{1: '1', 2: 'Manager', 3: '...', 4: '1'}
+64	64		202							{1: '1', 6: '1'}
+65	65		301							{3: 'All four fell silent. Project Acadia Transfer had completely collapsed under this mishap. After the heavy losses, what has humanity gained?'}
+66	66		301							{3: 'In this lonely universe, there will no longer be grand spaceports and starships ready for battle.'}
+67	67		301							{3: 'Humanity has taken its first step into the cosmos, only to quickly wither.'}
+68	68		301							"{3: ""And the efforts didn't even make a single ripple in this disaster.""}"
+69	69		201							{1: '1', 2: '500625'}
+70	70		301							"{1: '1', 2: 'Manager', 3: ""Head to Eden II, even though it's just an empty shell now."", 4: '1'}"
+71	71		202							{1: '1', 6: '1'}
+72	72		201							{1: '1', 2: '1101001'}
+73	73		301							{1: '1', 2: 'Watanabe', 3: 'Yeah.', 4: '1'}
+74	74		401							{1: '2', 2: '8510113'}
+75	75		301				AniZhuanchangBegin			{3: 'Watanabe changes direction and heads away from Earth...'}
+76	76		202							{1: '1', 6: '1'}
+77	77		101						1000.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4101_08.jpg'}
+78	78		401							{1: '1', 2: '359'}
+79	79		502							{1: 'RImgBg1BlowUp'}
+80	80		301			AniZhuanchangEnd				"{3: 'Then, a ""Shooting Star"" catches his eye.'}"
+81	81		301							"{2: 'Philip', 3: ""That's the escape pod, and the spaceport's modular cabin...""}"
+82	82		301							"{2: 'Manager', 3: ""And the model is from the space station. We're not the only survivors!""}"
+83	83		301							"{3: 'Each ""Shooting Star"" represents lives saved.'}"
+84	84		301							{3: 'His individual efforts might not make much of an impact in this catastrophe, but those who sacrifice are never alone.'}
+85	85		301							{3: 'Though the cost was immense, such sacrifices are never in vain.'}
+86	86		301							"{3: ""—The stars are heading toward Eden, humanity's next hope.""}"
+87	87		301							"{3: ""—Inheriting the will of the fallen, the Shooting Stars will guard humanity's last stronghold.""}"
+88	88		301							"{3: ""—They are both the walls and the tombstones, silently recording these people's courage and dedication.""}"
+89	89		301							{3: '—Thus, Eden will no longer be an empty shell...'}
+90	90		301		1		AniZhuanchangBegin			{3: '—Babylonia, the spark will be carried into the future.'}

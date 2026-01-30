@@ -1,0 +1,151 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory738.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		301			DialogEnable				{2: 'Lilin', 3: 'No... Pfft...'}
+4	4		401							{1: '2', 2: '10022001'}
+5	5		201							{1: '1', 2: '500652', 3: '4'}
+6	6		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+7	7		301			RImgBg1Shake				"{1: '1', 3: 'No. 21 seizes the opportunity when the enemy\'s ""joint"" is immobilized by Vera\'s blade. With her claw blades spread wide, she unleashes a fierce slash, tearing apart the purple-green hands with ruthless precision.'}"
+8	8		202							{1: '1', 6: '1'}
+9	9		301							{3: 'The monster emits human-like mumbles as chunks of flesh, varying in size, fall from its body, akin to a freshly sliced open stomach.'}
+10	10		301							{3: 'Within ten seconds, the purple-green chunks of flesh quickly dry up, resembling spoiled meat left for days. Soon, all that remains is a mere skin, devoid of any substance or life.'}
+11	11		201							{1: '1', 2: '500168', 3: '9'}
+12	12		301							{1: '1', 2: 'Vera', 3: 'Melted into the soil...?', 4: '1'}
+13	13		301							"{2: 'Vera', 3: ""Anyways, we don't have time for that right now. No. 21, are you hurt?"", 4: '1'}"
+14	14		203							{1: '1', 2: '0.25', 3: '400'}
+15	15		201							{1: '2', 2: '500650', 4: '-400'}
+16	16		301							{1: '1', 3: 'No. 21 takes a quick sniff of her body and shakes her head in confirmation.'}
+17	17		301							{2: 'No. 21', 3: 'Captain, hand.', 4: '2'}
+18	18		301							"{3: ""No. 21's words bring Vera's attention to a crack on the right arm of her frame, from which vital fluid is slowly seeping out.""}"
+19	19		301							"{2: 'Vera', 3: ""Huh, that thing's tail got me? Thought I dodged it."", 4: '1'}"
+20	20		301							{3: 'As if it were nothing more than an everyday triviality, Vera casually wipes the seeping vital fluid off her arm with her other palm and retrieves an already opened gel spray.'}
+21	21		301							{3: 'After just two sprays, the spray nozzle abruptly ceases to dispense any more contents, as if it has uttered its final words.'}
+22	22		301							{3: 'Vera gives the bottle a shake to confirm its emptiness and then puts it back into her bag.'}
+23	23		301							{2: 'Vera', 3: 'No. 21, do we need to adjust our direction?', 4: '1'}
+24	24		204							{1: '2', 2: '8'}
+25	25		301							{2: 'No. 21', 3: 'Hmm... The smell of the campsite is weaker.', 4: '2'}
+26	26		204							{1: '2'}
+27	27		301							{2: 'No. 21', 3: 'But the direction is the same.', 4: '2'}
+28	28		301							"{2: 'Vera', 3: ""Let's move."", 4: '1'}"
+29	29		202							{1: '1', 6: '1'}
+30	30		203							{1: '2', 2: '0.25'}
+31	31		301							{3: 'Stepping over a tree root that stretches across their path, Vera signals No. 21 to continue advancing along their planned course.'}
+32	32		401							{1: '2', 2: '558'}
+33	33		204							{1: '2', 2: '14'}
+34	34		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '1'}
+35	35		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+36	36		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+37	37		301							{3: 'Just as No. 21 begins to lift her leg, a piercing ringing noise cuts through the air, assaulting her ears and penetrating the depths of her M.I.N.D.'}
+38	38		401							{1: '2', 2: '3077'}
+39	39		203						120.0	{1: '2', 2: '0.17', 4: '-100'}
+40	40		202							{1: '2', 6: '1'}
+41	41		301							{3: 'No. 21 collapses onto the roots before her, rendered oblivious to any pain.'}
+42	42		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+43	43		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '0', 4: '1', 5: '0.5'}
+44	44		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+45	45		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+46	46		301							"{3: ""Her sensations are abruptly taken away, consumed by a glaring white light. Deprived of the ability to respond to Vera's call, No. 21 helplessly falls into a dazed state.""}"
+47	47		301				AniZhuanchangBegin			{3: '...'}
+48	48		401							{1: '1', 2: '36'}
+49	49		502						400.0	{1: 'DialogDisable'}
+50	50		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+51	51		301			DialogEnable				{3: '...The smell of blood.'}
+52	52		301							{3: '...It seems that someone was injured just now. Who was it?'}
+53	53		301							{3: 'The feeling of wetness comes from the paws.'}
+54	54		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory739.jpg', 3: '0', 4: '1', 5: '1'}
+55	55		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+56	56		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory739.jpg'}
+57	57		401							{1: '1', 2: '250'}
+58	58		201							{1: '1', 2: '500668', 3: '9'}
+59	59		301							"{1: '1', 3: ""The little wolf's eyes flutter open, only to be greeted by a sensation of numbness on the side of her stomach. Lowering her head, she finds a gaping wound where her fur has been torn away. Her paws, stained with blood and fragments of her flesh, serve as a grim reminder of the injury she sustained.""}"
+60	60		301							{3: 'The moment when she comes back to her senses, an excruciating pain devours her. She holds it back with all her strength and inspects her reflection in the water.'}
+61	61		301							{3: 'Good. The fur surrounding the wound is now dyed in a vivid crimson hue, and so are her paws. Does that mean she and her companions look more alike now?'}
+62	62		301							{3: 'The little wolf stumbles toward the wolf pack, proudly displaying her dyed fur to other wolves.'}
+63	63		301							{3: 'Her companions, previously huddled together in rest, swiftly rise and emit threatening growls, warning the little wolf in response to her bloodied presence.'}
+64	64		301							{3: '...Is the new color of her fur not thick enough?'}
+65	65		301							{3: 'The little wolf comes to a halt and raises her paw once again.'}
+66	66		301							{3: 'The wolves, as if faced with formidable adversaries, swiftly pivot and dash toward a more concealed area with denser vegetation.'}
+67	67		301							"{3: ""Before the little wolf can react, an ominous shadow swiftly darts past the little wolf's head, accompanied by a piercing cry emanating from the sky.""}"
+68	68		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+69	69		301							"{3: ""It's the predators! Startled, she disregards her still-bleeding wound, her focus shifting entirely to the urgent need to escape. Without a moment to spare, she propels herself into yet another desperate sprint.""}"
+70	70		104					500.0		{1: '0|0|-300', 2: '1'}
+71	71		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory741.jpg', 3: '0', 4: '1', 5: '1'}
+72	72		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+73	73		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory741.jpg'}
+74	74		301							{3: 'With the pack no longer in her sight, the little wolf relies solely on her sense of smell, tracking their movements through the faint scent lingering in the air.'}
+75	75		301							{3: 'Is she smelling it wrong? The scent seems to be growing weaker.'}
+76	76		301							"{3: ""No... It's her running speed becoming slower...""}"
+77	77		104					500.0		{1: '0|0|-300', 2: '1'}
+78	78		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory741.jpg', 3: '0', 4: '1', 5: '1'}
+79	79		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+80	80		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory741.jpg'}
+81	81		301							"{3: ""The adrenaline-fueled escape manages to divert the little wolf's attention away from the pain caused by her strained muscles. However, she remains acutely aware of the pulsating veins on the side of her still-bleeding stomach.""}"
+82	82		301							{3: 'As time passes, her limbs grow heavier with exhaustion, and the sound of fluttering wings echoes behind her head. She can sense the imminent danger, knowing that pairs of sharp talons lie in wait, ready to seize her soft and delicate neck.'}
+83	83		301							"{3: ""—It's plunging down.""}"
+84	84		301							"{3: ""The little wolf's pupils mirror the menacing shadow, resembling a swift arrow hurtling through the air with deadly velocity.""}"
+85	85		301							{3: '—She hates her distinctive fur more than ever at this moment.'}
+86	86		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+87	87		301							"{3: ""Foreseeing her impending demise, the little wolf halts her sprint, resigned to the grim fate of becoming the predator's meal.""}"
+88	88		202							{1: '1', 6: '1'}
+89	89		301							{3: 'Knowing the black feathered arrow will arrive in the next instant, she quietly closes her eyes.'}
+90	90		401							{1: '2', 2: '9332011'}
+91	91		201							{1: '1', 2: '500672', 4: '-400'}
+92	92		203						160.0	{1: '1', 2: '0.16', 3: '-100'}
+93	93		203							{1: '1', 2: '0.2'}
+94	94		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+95	95		301			RImgBg1Shake				{1: '1', 3: 'Unnoticed from a corner, a dark bolt suddenly lunges forward, intercepting the feathered arrow aiming at her, and tumbles alongside it in a seamless motion.'}
+96	96		201							{1: '1', 2: '500666', 7: '1'}
+97	97		301							{1: '1', 3: 'Opening her eyes, the little wolf is greeted by the sight of a mysterious black wolf engaged in a fierce battle against the god of death, who had been poised to seal her fate.'}
+98	98		301							"{3: ""With its blade-like beak, the giant eagle clamps down on the front paw of the black wolf, attempting to regain balance by fluttering its wings. Undeterred, the black wolf tenaciously gnaws at the bird's neck, ignoring the scratches inflicted by its prey's talons.""}"
+99	99		301							"{3: ""A dense scent of blood permeates the air, causing the little wolf to twitch her nose instinctively. Stirred by the primal thirst lying within her nature, she can't resist releasing a resounding roar of aggression.""}"
+100	100		301							"{3: 'Treading upon the giant eagle, which has nearly exhausted its final breath, the black wolf gazes down upon this ""challenger.""'}"
+101	101		301							{3: 'Immersed in the lingering thrill of the previous battle, the black wolf prominently reveals its formidable fangs, poised to plunge into the next violent confrontation.'}
+102	102		301							{3: 'The inexperienced little wolf instinctively tucks her tail beneath, a subtle display of her recognition that she is no match for the seasoned hunter standing before her.'}
+103	103		301							{3: 'With its claws, the black wolf firmly grips the lifeless eagle, letting out menacing roars that resonate from the depths of its throat.'}
+104	104		301							{3: 'The little wolf is keenly aware that the black wolf before her would not hesitate to tear her apart, should the need arise.'}
+105	105		301							{3: 'Slowly, she retreats, moving backward and finding refuge within the dense foliage of a nearby bush.'}
+106	106		201							{1: '1', 2: '500665', 7: '1'}
+107	107		301							{1: '1', 3: 'With its gaze still fixed in the direction she departed, the black wolf eagerly begins to gnaw at the flesh of the giant bird.'}
+108	108		301							{3: 'Cannot eat it... It was born to hunt wolves—a voice in her mind tells her.'}
+109	109		301							{3: '...She concurs, as her only instinctual thought in the presence of those airborne predators has always been to flee and seek safety.'}
+110	110		301							"{3: ""Then, what's with the black god of death who is devouring the flesh of a predator?""}"
+111	111		301							{3: 'Is that a path of madness that a wolf, expelled by its pack yet still driven by a desire for survival, is destined to tread upon?'}
+112	112		301							{3: 'Having satiated its hunger, the black wolf proceeds to meticulously clean its paw, where blood continues to seep from two puncture wounds.'}
+113	113		203							{1: '1', 2: '0.25', 3: '200'}
+114	114		202							{1: '1'}
+115	115		301							{3: 'Casting a glance toward the bush where the little wolf is hiding, the black wolf then staggers away in a different direction.'}
+116	116		201							{1: '1', 2: '500668', 3: '9'}
+117	117		301							{1: '1', 3: 'As the black wolf departs, the tension gradually subsides. The little wolf cautiously emerges from the bush, ensuring that the scent of wolf blood has significantly diminished.'}
+118	118		301							{3: 'Her body, drained of strength by the wound and the arduous escape, protests vehemently, craving the replenishment of blood and flesh.'}
+119	119		301							"{3: ""The entrails of the predator emit an eerie aroma, tantalizing the little wolf's acute sense of smell and presenting an irresistible invitation.""}"
+120	120		301							{3: 'With trembling limbs, she cautiously approaches the lifeless body of the giant bird step by step.'}
+121	121		301							{3: 'If you indulge in this forbidden feast, your companions will never accept you—a voice in her mind tells her.'}
+122	122		301							{3: 'She involuntarily swallows a mouthful of saliva, her hunger and instincts tormenting her rational senses. Even her vision becomes obscured by a veil of alluring redness.'}
+123	123		301							{3: 'In her final flicker of consciousness, she manages to regain control just as her teeth are about to make contact with the flesh.'}
+124	124		301							{3: 'As if waking up from the sweetest dream, she takes several trembling steps backward, washed over by a wave of fear.'}
+125	125		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory743.jpg', 3: '0', 4: '1', 5: '1'}
+126	126		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+127	127		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory743.jpg'}
+128	128		301							{3: 'Instinctively, she tucks her tail tightly and summons every ounce of strength within her to flee from the scene.'}
+129	129		301							"{3: ""She doesn't halt her escape until the peculiar aroma is completely absent from her senses. It is then that she realizes she has strayed far from the course of her companions.""}"
+130	130		301							{3: 'Frustrated, the little wolf circles anxiously, meticulously sniffing her surroundings, only to arrive at an unfortunate realization: she has lost the trail of her companions.'}
+131	131		301							{3: 'What should she do? Run around, hoping to luckily run into them in this boundless forest?'}
+132	132		301							{3: 'She has never passed the same place here, in this forest of a size beyond measurement.'}
+133	133		301							{3: 'She is alone again, just like when she first woke up. Having thought about that, the little wolf lets out a sorrowful whine.'}
+134	134		301							{3: 'The more pressing matter now is how to survive by herself before finding the pack?'}
+135	135		301							{3: 'Without companions by her side for cover and support, whether in the pursuit of prey or during moments of rest, the little wolf can easily lose her prey or be detected by predators.'}
+136	136		301							{3: 'Wolves are pack animals—this is etched within their nature.'}
+137	137		301							{3: 'Every fiber of her being longs for it, or she would have never sacrificed her fur to win acceptance of the pack'}
+138	138		301							{3: 'As the little wolf contemplates, a somewhat unsettling idea takes shape in her mind.'}
+139	139		301							{3: 'What if... she follows that fierce, lone black wolf for now?'}
+140	140		301							{3: 'Her heart pounds uncontrollably in her chest upon the thought.'}
+141	141		301							{3: 'She sniffs the lingering scent in the air, detecting the faint yet distinguishable odor of wolf blood.'}
+142	142		301							{3: 'Perhaps she should learn to survive alone from it before finding her companions?'}
+143	143		301							{3: 'While she may be deterred from hunting predators, the skills are universal when it comes to hunting.'}
+144	144		301							{3: 'If there is any unusual activity, the black wolf would likely notice it before her.'}
+145	145		301							{3: 'However, if it sees her as an enemy...'}
+146	146		301							{3: 'Though lacking confidence in her ability to survive those menacing fangs, she holds faith in her capacity to escape as long as she maintains a safe distance... unless the black wolf is pushed to the brink of starvation.'}
+147	147		301							{3: 'In comparison to struggling to survive on her own, she realizes that she stands a better chance by following the black wolf.'}
+148	148		301							{3: 'Moreover, time is running out for her. The scent of wolf blood is gradually fading, almost masked by the fragrant aroma of plants.'}
+149	149		301							{3: 'She will miss the opportunity to track the black wolf if its paw stops bleeding.'}
+150	150		301		1		AniZhuanchangBegin			{3: 'The little wolf shakes her head and resolves to press onward, diligently discerning the lingering scent of blood amidst the surrounding herbal aromas.'}

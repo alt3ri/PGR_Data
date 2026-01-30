@@ -1,0 +1,43 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory717.jpg'}
+2	2		401							{1: '1', 2: '298'}
+3	3		301			DialogEnable				"{3: ""You're back in your room—currently brimming with birthday gifts—after a busy day.""}"
+4	4		301			AniZhuanchangEnd				"{3: ""Your room's lights flicker twice when you're done showering. Could be a sign of unstable voltage... but it puts you on alert mode nonetheless because it never happened before.""}"
+5	5		301			AniZhuanchangEnd				{3: 'You continue drying yourself with a towel until the lights flicker again.'}
+6	6		302							{2: 'You should probably check the circuit.', 3: '7'}
+7	7		301							"{3: ""Wrapping yourself in a towel, you carefully push open the bathroom door and peek outside. Fortunately, there's nothing.""}"
+8	8		301							"{3: ""You thought something supernatural was going on and are thankful that it was just the voltage being unstable. Right when you're about to let your guard down...""}"
+9	9		301			RImgBg1Disable				"{3: 'With a ""pop,"" your room falls into complete darkness.'}"
+10	10		301							{3: 'And with it, you stumble and fall.'}
+11	11		302							{2: 'Oh, for real...?', 3: '12'}
+12	12		301			RImgBg1Enable				{3: 'A few seconds into fumbling around, you see the curtains fluttering in the night breeze.'}
+13	13		301							{3: 'The window is open, and the floor is bathed in silver moonlight, along with a pair of pale feet.'}
+14	14		301							{3: 'A white-haired girl is sitting on the windowsill, frowning at you.'}
+15	15		302							{2: 'Luna.', 3: '16'}
+16	16		201							{1: '1', 2: '500238'}
+17	17		301							{1: '1', 2: 'Luna', 3: 'You seem quite popular?', 4: '1'}
+18	18		301							"{3: ""Luna's gaze shifts to the pile of gifts by my bed.""}"
+19	19		302							{2: 'Doing just fine, I suppose.', 3: '20'}
+20	20		301							"{2: 'Luna', 3: ""You're making yourself too vulnerable now. See, I could harm you now if I wanted to, and you would be totally defenseless. Now..."", 4: '1'}"
+21	21		301							{3: 'As your eyes adjust to the dim light, you try to steady yourself by leaning on the table and slowly stand up.'}
+22	22		301							{2: 'Luna', 3: 'Stop moving!', 4: '1'}
+23	23		302							{2: 'Huh...', 3: '24'}
+24	24		301							"{2: 'Luna', 3: ""God only knows what's gonna happen if you don't stop moving now. This is not a joke."", 4: '1'}"
+25	25		301							"{3: ""With Luna's sharpened gaze and the tension in the air, you find yourself frozen where you've been standing.""}"
+26	26		302							{2: 'Luna, what do you want?', 3: '27'}
+27	27		301							{2: 'Luna', 3: 'I need you to do as I say. Take two steps forward.', 4: '1'}
+28	28		301							"{3: ""Following Luna's instructions, I take two careful steps forward.""}"
+29	29		301							{2: 'Luna', 3: 'Now, you can turn around.', 4: '1'}
+30	30		301							{3: 'Holding your breath, I turn around... On the table is a round, vitrum-colored snow globe with intricate decorations inside.'}
+31	31		301							"{2: 'Luna', 3: ""It's fragile. Watch your butt. It's gonna shatter into pieces if it falls."", 4: '1'}"
+32	32		301							"{3: ""But you can't seem to remember who gave you this as a gift.""}"
+33	33		302							{2: 'Where did this come from...', 3: '34'}
+34	34		302							{2: 'Who in the world gave me this...', 3: '35'}
+35	35		301							{2: 'Luna', 3: 'Are you for real? Argh... you really get on my nerves, do you know that?', 4: '1'}
+36	36		301							"{2: 'Luna', 3: ""Forget it. I was just passing by and thought I'd drop in before the day ends..."", 4: '1'}"
+37	37		301							{2: 'Luna', 3: 'I suppose humans care a lot about their birthdays. I always looked forward to birthdays when I was with my sister. The best thing about a birthday is getting gifts from people, and I figured the same went for you, too...', 4: '1'}
+38	38		302							{2: 'Wishes are just as important, though.', 3: '39'}
+39	39		301							{2: 'Luna', 3: 'Argh...', 4: '1'}
+40	40		301							{2: 'Luna', 3: 'Fine. Happy Birthday. There, happy?', 4: '1'}
+41	41		302							{2: 'You bet!', 3: '42'}
+42	42		301		1		AniZhuanchangBegin			"{2: 'Luna', 3: ""Well then, see you next time. Have a good night's sleep now..."", 4: '1'}"

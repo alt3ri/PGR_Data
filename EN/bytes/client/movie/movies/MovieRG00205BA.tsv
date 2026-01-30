@@ -1,0 +1,20 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500012', 7: '1'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+5	5		301			DialogEnable				{1: '1', 2: 'Nikola', 3: 'Like all legendary retreats in this world, Misty Enclave is just another place full of mysteries, with a deceptive facade.', 4: '1'}
+6	6		301							"{1: '1', 2: 'Nikola', 3: ""It doesn't matter if you have killed people, betrayed your master, or taken things that aren't yours. As long as you're ready to abandon your identity, this place can be your home."", 4: '1'}"
+7	7		301				AniZhuanchangBegin			"{1: '1', 2: 'Nikola', 3: ""And your target is a person who goes by the name Zack. This mission is a secret from Hassen, so don't go around talking about it."", 4: '1'}"
+8	8		202							{1: '1', 6: '1'}
+9	9		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+10	10		201							{1: '1', 2: '500166', 4: '-400', 7: '1'}
+11	11		201							{1: '2', 2: '1011001', 4: '400', 7: '1'}
+12	12		301			AniZhuanchangEnd				{1: '1', 2: 'Lucia', 3: 'According to the brief, this is the likeliest place to find Zack.', 4: '1'}
+13	13		301							"{1: '1', 2: 'Lee', 3: ""It's easier to just ask the person in charge here."", 4: '2'}"
+14	14		202							{1: '1', 2: '2', 6: '1'}
+15	15		301							{2: '???', 3: 'You damn bastard! Stop where you are!'}
+16	16		201							{1: '1', 2: '1031001', 3: '7', 7: '1'}
+17	17		301							{1: '1', 2: 'Liv', 3: 'Someone just ran out!', 4: '1'}
+18	18		302				AniZhuanchangBegin			{2: 'Follow them!', 3: '19'}
+19	19		202		1					{1: '1'}

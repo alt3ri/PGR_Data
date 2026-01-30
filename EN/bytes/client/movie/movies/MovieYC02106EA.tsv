@@ -1,0 +1,38 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory413.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		301			DialogEnable				{3: 'There is a giant water tank in the medical department.'}
+4	4		301							{3: 'One side of the tank is made from transparent tempered glass. Researchers stand outside the tank, while Lamia looks at them anxiously from within.'}
+5	5		201							{1: '1', 2: '500361'}
+6	6		301							"{1: '1', 2: 'Medical Director', 3: ""Start the pressurization. Let's begin with 100 times the atmospheric pressure, approximately the pressure at a depth of around 1 km in the ocean."", 4: '1'}"
+7	7		202							{1: '1', 2: '2', 6: '1'}
+8	8		401							{1: '2', 2: '555'}
+9	9		301							{3: 'The water pressure suddenly increases.'}
+10	10		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+11	11		301			RImgBg1Shake				{3: 'Lamia feels like something has grasped her heart and is crushing it. A huge force is pressing her chest.'}
+12	12		301			RImgBg1Shake				{3: 'Her eyes bulge out as a sharp pain hits her nerves as if millions of steel needles are piercing through her skull. She opens her mouth to scream for help, only to swallow more cold sea water.'}
+13	13		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+14	14		201							{1: '1', 2: '500361'}
+15	15		301							{1: '1', 2: 'Medical Director', 3: 'Your body does not need oxygen now. Forget about your human habits. Adapt to the environment.', 4: '1'}
+16	16		301							"{3: ""After a long time, Lamia's body has finally adapted to the hypergravity effect caused by the intense water pressure and settled down.""}"
+17	17		301							{2: 'Medical Director', 3: 'How do you feel now?', 4: '1'}
+18	18		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+19	19		201							{1: '1', 2: '500165'}
+20	20		301							{1: '1', 2: 'Lamia', 3: 'Be-better.', 4: '1'}
+21	21		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+22	22		201							{1: '1', 2: '500361'}
+23	23		301							{1: '1', 2: 'Medical Director', 3: 'I will increase the pressure then.', 4: '1'}
+24	24		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+25	25		201							{1: '1', 2: '500165'}
+26	26		301			PanelActor1Shake	AniZhuanchangBegin			{1: '1', 2: 'Lamia', 3: 'Eeek—please wait a second!', 4: '1'}
+27	27		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+28	28		202							{1: '1', 6: '1'}
+29	29		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory413.jpg'}
+30	30		301			AniZhuanchangEnd				{3: 'One week later.'}
+31	31		201							{1: '1', 2: '500350', 3: '4', 4: '-400'}
+32	32		201							{1: '2', 2: '500361', 4: '400'}
+33	33		301							"{1: '1', 2: 'Lustrous', 3: ""How's the pressurization going?"", 4: '1'}"
+34	34		301							{2: 'Medical Director', 3: '400 times the atmospheric pressure—equivalent to the pressure at a depth of around 4 km in the ocean.', 4: '2'}
+35	35		301							{2: 'Lustrous', 3: 'And her condition?', 4: '1'}
+36	36		301							{2: 'Medical Director', 3: 'All readings normal and stable. It took some time, but she is already used to this new body.', 4: '2'}
+37	37		301		1		AniZhuanchangBegin			"{2: 'Lustrous', 3: ""Good. She's going to be useful."", 4: '1'}"

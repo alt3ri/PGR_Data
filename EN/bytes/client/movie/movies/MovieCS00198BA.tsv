@@ -1,0 +1,86 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1200.jpg'}
+2	2		401							{1: '1', 2: '36'}
+3	3		201							{1: '1', 2: '501165'}
+4	4		302							{2: 'Background Layer Test', 3: '5', 4: 'Transparency Test', 5: '38', 6: 'Gray Scale Settings', 7: '59'}
+5	5		301			DialogEnable				{3: 'Test Start'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront1.png', 4: '4'}
+7	7		301							{3: 'Background 4-01 Code'}
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront29.png', 4: '6'}
+9	9		301							{3: 'New Background 6 - Stage (Above Background 4, Under Sprite)'}
+10	10		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront16.png', 4: '5'}
+11	11		301							{3: 'Background 5 - Eyes'}
+12	12		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '7'}
+13	13		301							{3: 'New Background 7 - Bloodstain (Above Background 5 and Sprite)'}
+14	14		101							{4: '4', 5: '1'}
+15	15		101							{4: '5', 5: '1'}
+16	16		101							{4: '6', 5: '1'}
+17	17		101							{4: '7', 5: '1'}
+18	18		301							{3: 'Test Complete - Background Layer'}
+19	19		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront5.png', 4: '6'}
+20	20		301							{3: 'Test Start - Background Layer 6 Other Features'}
+21	21		103							{1: '1.5', 3: '6'}
+22	22		301							{3: 'Background Zooming'}
+23	23		104							{1: '0|-200|0', 2: '0.5', 4: '6'}
+24	24		301							{3: 'Background Displacement'}
+25	25		205							{1: '1006', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront5.png', 3: '1', 4: '0.5', 5: '1'}
+26	26		301							{3: 'Transparency Settings'}
+27	27		101							{4: '6', 5: '1'}
+28	28		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront6.png', 4: '7'}
+29	29		301							{3: 'Test Start - Background Layer 7 Other Features'}
+30	30		103							{1: '1.5', 3: '7'}
+31	31		301							{3: 'Background Zooming'}
+32	32		104							{1: '0|-200|0', 2: '0.5', 4: '7'}
+33	33		301							{3: 'Background Displacement'}
+34	34		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront6.png', 3: '1', 4: '0.5', 5: '1'}
+35	35		301							{3: 'Transparency Settings'}
+36	36		101							{4: '7', 5: '1'}
+37	37		301		1		AniZhuanchangBegin			{3: 'Test Complete - Background Layer'}
+38	38		301			DialogEnable				{3: 'Test Start'}
+39	39		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront16.png', 4: '3'}
+40	40		104							{1: '0|0|-300', 2: '0', 4: '3'}
+41	41		301							{3: 'Background 3 (Layer Set for Transparency)'}
+42	42		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront6.png', 3: '0', 4: '0.5', 5: '0'}
+43	43		301							{3: 'Transparency 999 (Using Transparency Will Directly Cut Background 3 Image)'}
+44	44		205							{1: '999'}
+45	45		301							{3: 'Clear'}
+46	46		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront7.png', 3: '1', 4: '0.2', 5: '1.5'}
+47	47		301							{3: 'Transparency 1004 (Background 4)'}
+48	48		205							{1: '1004'}
+49	49		301							{3: 'Clear'}
+50	50		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0.2', 5: '1.5'}
+51	51		301							{3: 'Transparency 1005 (Background 5)'}
+52	52		205							{1: '1005'}
+53	53		301							{3: 'Clear'}
+54	54		205							{1: '1001', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0.2', 5: '1.5'}
+55	55		301							{3: 'Transparency 1001 (Background 1, Will Show Black Background, Use Less)'}
+56	56		205							{1: '1001'}
+57	57		301							{3: 'Clear'}
+58	58		301		1		AniZhuanchangBegin			{3: 'Test Complete - Transparency'}
+59	59		301			DialogEnable				{3: 'Test Start'}
+60	60		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront5.png', 4: '4'}
+61	61		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront27.png', 4: '5'}
+62	62		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront29.png', 4: '6'}
+63	63		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront28.png', 4: '7'}
+64	64		301							{3: 'Newspaper (4), Butterfly (5), Stage (6), Cross (7)', 4: '1'}
+65	65		504							{1: '0.7'}
+66	66		301							{3: 'Full Gray', 4: '1'}
+67	67		504							{1: '0'}
+68	68		301							{3: 'Restore', 4: '1'}
+69	69		504							{1: '0.7', 2: '999'}
+70	70		301							{3: 'Full Gray 999', 4: '1'}
+71	71		504							{1: '0', 2: '999'}
+72	72		301							{3: 'Restore', 4: '1'}
+73	73		504							{1: '0.7', 2: '1005'}
+74	74		301							{3: 'Gray Background 5', 4: '1'}
+75	75		504							{1: '0', 2: '1005'}
+76	76		301							{3: 'Restore', 4: '1'}
+77	77		504							{1: '0.7', 2: '1001'}
+78	78		301							{3: 'Gray Background 1', 4: '1'}
+79	79		504							{1: '0'}
+80	80		301							{3: 'Restore', 4: '1'}
+81	81		201							{1: '2', 2: '500004', 4: '500'}
+82	82		504							{1: '0.7', 2: '2'}
+83	83		301							{1: '1', 3: 'Gray Character 2', 4: '1', 5: '2'}
+84	84		504							{1: '0'}
+85	85		301		1		AniZhuanchangBegin			{3: 'Test Complete - Gray Scale', 4: '1', 5: '2'}

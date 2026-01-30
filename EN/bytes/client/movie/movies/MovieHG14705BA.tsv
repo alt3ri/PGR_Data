@@ -1,0 +1,306 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory234.png'}
+2	2		401							{1: '1', 2: '204'}
+3	3		301			DialogEnable				{3: 'The next day brings clear skies. By the time the two of you make it back to the old town, the Rain Flower Festival is already in full swing.'}
+4	4		301							{3: 'Having spent the night camping in the forest, with no chance to change clothes, you and Wanshi have to borrow festival attire from Zhongjing and Wan.'}
+5	5		301							"{3: ""The two of you change into the town's traditional attire, while Zhongjing looks on with a delighted smile for quite some time.""}"
+6	6		201							{1: '1', 2: '500641'}
+7	7		301							{1: '1', 2: 'Zhongjing', 3: 'Someone from Kowloong came to help out before, right when the Rain Flower Festival was happening. They borrowed clothes from our clinic, too... They fit so perfectly, so perfectly indeed.', 4: '1'}
+8	8		301							{2: 'Zhongjing', 3: 'Something looks familiar though... Ah, never mind. My memory is probably messing with me again... Wan! Where are you? Where is she?', 4: '1'}
+9	9		202							{1: '1'}
+10	10		301							{3: 'Leaning on his cane, Zhongjing ambles out the door to look for his granddaughter.'}
+11	11		201							{1: '1', 2: '500933', 3: '1'}
+12	12		301							{1: '1', 2: 'Wanshi', 3: '...Commandant, you seem to be in a good mood.', 4: '1'}
+13	13		302							{2: 'Is it that obvious?', 3: '14', 4: 'It must be because the festival is about to begin.', 5: '15'}
+14	14	16	301							"{2: 'Wanshi', 3: ""Because you're not even trying to hide it."", 4: '1'}"
+15	15		301							"{2: 'Wanshi', 3: ""I'll take your word for it."", 4: '1'}"
+16	16		204							{1: '1', 2: '2'}
+17	17		301							"{2: 'Wanshi', 3: ""Phew... Good thing the weather's nice today. Doesn't look like it's going to rain."", 4: '1'}"
+18	18		301							{2: 'Wanshi', 3: 'See, they put so much work into putting this festival together, and the last thing you want happening is...', 4: '1'}
+19	19		204							{1: '1', 2: '1'}
+20	20		301							"{2: 'Wanshi', 3: ""You know what, let's not jinx it. It does remind me of this saying, though..."", 4: '1'}"
+21	21		302							"{2: ""What's that?""}"
+22	22		301							"{2: 'Wanshi', 3: '""Anything that can go wrong will go wrong.""', 4: '1'}"
+23	23		302				AniZhuanchangBegin			"{2: ""...You're right. Let's definitely not jinx it."", 3: '24'}"
+24	24		202							{1: '1', 6: '1'}
+25	25		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory253.png'}
+26	26		401							{1: '2', 2: '2915'}
+27	27		301			AniZhuanchangEnd				{3: 'While chatting, the two of you slowly make your way to the plaza at the heart of the festival.'}
+28	28		301							"{3: 'The square is packed with townspeople gathering for the ""Flower Pole"" event. Recently recovered researchers have arrived after hearing the news, and crowds of people flow endlessly along the cobblestone paths. The venue is as vibrant as it can be.'}"
+29	29		401							{1: '2', 2: '4331'}
+30	30		402						1500.0	{1: '2915'}
+31	31		201							{1: '1', 2: '500824'}
+32	32		301							{1: '1', 2: 'Wan', 3: 'Dr. Wanshi, Commandant, you are here!', 4: '1'}
+33	33		202							{1: '1'}
+34	34		301							{3: 'Wan comes running over with a flower crown on her head, carrying a small wooden basin filled with water.'}
+35	35		201							{1: '1', 2: '500824'}
+36	36		301							{1: '1', 2: 'Wan', 3: 'Happy Festival!', 4: '1'}
+37	37		203							{1: '1', 2: '0.25', 5: '-50'}
+38	38		301							{2: 'Wan', 3: 'Hehe... Let me share some Rain Flower Festival blessings with you all!', 4: '1'}
+39	39		301							{3: 'Before the two of you could react, Wan raises the basin ready to splash you with the water in it.'}
+40	40		302							{2: '!', 3: '41'}
+41	41		301							"{2: 'Wan', 3: ""Ah... here's a little crash course on the festival. We take freshly picked flowers, soak them in spring water from the mountain, and then splash the water all over people. This is the blessing from the Rain Flower Festival!"", 4: '1'}"
+42	42		301							"{2: 'Wan', 3: ""I heard some people aren't too fond of this kind of blessing... As in, you know, they don't want to get their clothes wet and all..."", 4: '1'}"
+43	43		301							"{2: 'Wan', 3: ""Let me know if you're worried about getting your clothes wet. There's no need to force yourselves."", 4: '1'}"
+44	44		301							{3: 'Wanshi glances over and shows no particular opinion. He wants you to make the call.'}
+45	45		302							{2: 'Alright, just sprinkle a bit on my hands.', 3: '46', 4: 'Yeah! Hit me with the full course!', 5: '46'}
+46	46		301							{2: 'Wan', 3: 'Allllrighty!', 4: '1'}
+47	47		202							{1: '1'}
+48	48		301							{3: 'Wan sprinkles water and flower petals over both of you, then places two vibrant flower garlands in your palms.'}
+49	49		201							{1: '1', 2: '500824'}
+50	50		201							{1: '2', 2: '500280', 4: '-500'}
+51	51		201							{1: '3', 2: '500677', 4: '500'}
+52	52		301							"{1: '1', 2: 'Wan', 3: ""We picked these flowers together this morning! They wanted to personally give these flowers to you guys, but they asked me to do it instead, since they're a little shy."", 4: '1'}"
+53	53		301							"{2: 'Wan', 3: ""Thank you, Commandant! Thank you, Dr. Wanshi! Thank you both for everything you've done for Nanyun!"", 4: '1'}"
+54	54		202							{1: '1', 2: '2', 3: '3'}
+55	55		301							{3: 'Standing behind Wan, the children break into shy smiles upon hearing her mention them.'}
+56	56		301							{3: 'Wanshi dips his hand into the wooden basin and, with solemn care, sprinkles the blessed water over Wan and the children.'}
+57	57		302							{2: 'Thank you all, too.', 3: '58'}
+58	58		201							{1: '1', 2: '500933', 3: '2'}
+59	59		301							{1: '1', 2: 'Wanshi', 3: 'May you all be blessed, too.', 4: '1'}
+60	60		202							{1: '1'}
+61	61		301							"{3: ""Usually outgoing, Wan grows a little sheepish at Wanshi's gesture.""}"
+62	62		201							{1: '1', 2: '500824'}
+63	63		201							{1: '2', 2: '500280', 4: '-500'}
+64	64		201							{1: '3', 2: '500677', 4: '500'}
+65	65		301							{1: '1', 2: 'Wan', 3: 'Th-thanks for the blessing... Gotta go now! Make sure you both have a blast today, yeah?', 4: '1'}
+66	66		202							{1: '1', 2: '2', 3: '3'}
+67	67		301							{3: 'Wan waves goodbye to the two of you, then skips away with the wooden basin in her arms.'}
+68	68		201							{1: '1', 2: '500933', 3: '1'}
+69	69		301							{1: '1', 2: 'Wanshi', 3: '...So this is what a festival is like.', 4: '1'}
+70	70		302							{2: 'Have you been to one before?', 3: '71'}
+71	71		301							"{2: 'Wanshi', 3: ""I'm quite interested in Kowloong's customs, so I made a point to learn about them."", 4: '1'}"
+72	72		301							"{2: 'Wanshi', 3: ""I've never actually taken part in this festival... but I imagine the dancing and celebrations go on until late into the night?"", 4: '1'}"
+73	73		301							{2: 'Wanshi', 3: 'Everyone stays until the torches burn out, then makes their way home...', 4: '1'}
+74	74		302							"{2: ""They sure mean business here, don't they?"", 3: '75'}"
+75	75		204							{1: '1', 2: '8'}
+76	76		301							{2: 'Wanshi', 3: 'Woah... that sounds extremely tiring.', 4: '1'}
+77	77		302							{2: 'Sure does.', 4: 'Though I suppose some people are actually enjoying themselves.'}
+78	78		204							{1: '1', 2: '2'}
+79	79		301							{2: 'Wanshi', 3: '...Yeah, but I still want to enjoy this festival together with you.', 4: '1'}
+80	80		203						500.0	{1: '1', 2: '0.4', 4: '-40', 5: '-80'}
+81	81		401						250.0	{1: '2', 2: '2936'}
+82	82		402						500.0	{1: '2936'}
+83	83		203							{1: '1', 2: '0.4'}
+84	84		301							{3: 'Wanshi takes the flower garland from his palm and gently fastens it around your wrist.'}
+85	85		301							{2: 'Wanshi', 3: 'It suits you perfectly.', 4: '1'}
+86	86		301							{2: 'Wanshi', 3: 'I knew it—you needed to see this festival with your own eyes.', 4: '1'}
+87	87		302							"{2: ""You knew it? What's that supposed to mean?"", 3: '88'}"
+88	88		202				DialogDisable			{1: '1'}
+89	89		401							{1: '2', 2: '2674'}
+90	90		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+91	91		401							{1: '1', 2: '298'}
+92	92		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+93	93		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+94	94		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+95	95		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4701_10.jpg'}
+96	96		104						800.0	{1: '100|-200|-300', 2: '0'}
+97	97		104						2000.0	{1: '0|0|0', 2: '1.5'}
+98	98		301			DialogEnable				{3: 'Wanshi gestures at the lively festival scene.'}
+99	99		301							"{2: 'Wanshi', 3: 'Nanyun is the perfect place to rest. Remember how you once said, ""There are things we just can\'t do now""? Well, I\'ve been thinking about that since I got here.'}"
+100	100		301							"{2: 'Wanshi', 3: ""I've never dwelt too much on the distant future. It's a waste of energy. I'd rather focus on people who are right by my side.""}"
+101	101		301							"{2: 'Wanshi', 3: ""You don't have to wait until you retire to see the future you want to see.""}"
+102	102		301							"{2: 'Wanshi', 3: ""That peaceful, tranquil life you envision already exists in this world... and if not, I'll find a way to make it happen.""}"
+103	103		301							"{3: 'Wanshi tilts his head up, gazing at the ""flower pole"" in the center of the plaza. Countless bouquets and ribbons adorn its glossy, plant-oiled surface as a fresh floral fragrance drifts on the breeze.'}"
+104	104		301							"{2: 'Wanshi', 3: ""I'm lucky that it didn't take me too long to find a place like that, and I've played my part in putting this wonderful scene together.""}"
+105	105		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+106	106		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory242.png'}
+107	107		401							{1: '2', 2: '2978'}
+108	108		201							{1: '1', 2: '500824', 7: '1'}
+109	109		201							{1: '2', 2: '500280', 4: '-500', 7: '1'}
+110	110		201							{1: '3', 2: '500677', 4: '500', 7: '1'}
+111	111		301							{1: '1', 3: 'With her prosthetic newly adjusted by Wanshi, Wan runs around carrying water basins with a group of children, their laughter filling the air.'}
+112	112		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+113	113		201							{1: '1', 2: '500641'}
+114	114		201							{1: '2', 2: '500240', 4: '-600'}
+115	115		201							{1: '3', 2: '500462', 4: '600'}
+116	116		301							{1: '1', 3: 'Zhongjing and the rest of the group slowly follow behind, gathering towards the center of town.'}
+117	117		202							{1: '1', 2: '2', 3: '3'}
+118	118		301							"{3: ""Joy radiates from everyone's faces as they splash water around, immersing themselves in the rhythm of blessings.""}"
+119	119		301							{3: 'Such a scene is a miracle rarely seen these days, yet here it exists in their present reality.'}
+120	120		301							{3: 'Everyone casts aside their worries for the past and future, throwing themselves wholeheartedly into the festivities with joy and passion, as the gleaming silver ornaments catch the sunlight and chime in gentle harmony.'}
+121	121		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+122	122		101							{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading19.jpg'}
+123	123		104							{1: '-150|-20|-100', 2: '0'}
+124	124		301							{3: 'Sing your hearts out, and dance with joy!'}
+125	125		301							{3: 'Come to the heart of this beautiful square.'}
+126	126		301				DialogDisable			"{3: ""Far from disaster's reach, step into bliss with the most passionate dance.""}"
+127	127		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4701_10.jpg', 3: '0', 4: '1', 5: '1.5'}
+128	128		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4701_10.jpg'}
+129	129		205							{1: '999'}
+130	130		302							"{2: ""...It's beautiful."", 3: '131'}"
+131	131		301			DialogEnable				{3: 'This is what you catch coming out of your mouth by the time you come to your senses.'}
+132	132		301							{2: 'Wanshi', 3: '...Yup.'}
+133	133		301							{3: 'Wanshi nods as a gentle breeze stirs the loose strands of hair around his cheeks.'}
+134	134		301							"{2: 'Wanshi', 3: ""—It's all right here before you.""}"
+135	135		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+136	136		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory242.png'}
+137	137		401							{1: '2', 2: '4044'}
+138	138		104						300.0	{1: '0|0|-50', 2: '0.25'}
+139	139		104							{1: '0|0|0', 2: '0.25'}
+140	140		301							{3: 'Just as Wanshi tries to speak up for once, a flower ball comes flying from afar and hits him in the back.'}
+141	141		301							{3: 'The flower ball was thrown gently, causing Wanshi to flinch only slightly.'}
+142	142		201							{1: '1', 2: '500462'}
+143	143		201							{1: '2', 2: '500059', 4: '-600'}
+144	144		201							{1: '3', 2: '500361', 4: '600'}
+145	145		301							"{1: '1', 2: 'Kowloong Resident', 3: ""Dr. Wanshi, Happy Rain Flower Festival! The pole-climbing contest is about to begin, and we'd definitely love to see the two of you in it!"", 4: '1'}"
+146	146		301							{2: 'Researcher A', 3: 'Hey, count us in, too!', 4: '3'}
+147	147		301							"{2: 'Researcher B', 3: ""Heey—?! For real? Wanshi's a Construct though. That's not exactly fair, is it?"", 4: '2'}"
+148	148		202							{1: '1', 2: '2', 3: '3'}
+149	149		301							{3: 'The researchers, now up and running again, bubble with playful energy once.'}
+150	150		201							{1: '1', 2: '500240', 4: '-400'}
+151	151		201							{1: '2', 2: '500462', 4: '400'}
+152	152		301							"{1: '1', 2: 'Kowloong Resident', 3: ""Well, anything goes—doesn't matter if you're a mechanoid or a Construct. First one to climb to the top and grab the prize wins it."", 4: '2'}"
+153	153		202							{1: '1', 2: '2'}
+154	154		301							"{3: ""Two burly men approach while muttering among themselves, seemingly trying to convince Nanyun's most popular celebrity nowadays to join the competition.""}"
+155	155		301							{3: 'Wanshi hands the bouquet back to the man.'}
+156	156		201							{1: '1', 2: '500933', 3: '1'}
+157	157		301							"{1: '1', 2: 'Wanshi', 3: ""I'll have to pass. As the doctor filling in for Zhongjing, I need to stay alert for any medical situations. Plus... it wouldn't be fair to other participants if a Construct joined the competition."", 4: '1'}"
+158	158		202							{1: '1'}
+159	159		201							{1: '1', 2: '500462'}
+160	160		301							{1: '1', 2: 'Kowloong Resident', 3: 'And you, Commandant?', 4: '1'}
+161	161		302							"{2: ""Well... I'd like to watch for a bit first."", 3: '162'}"
+162	162		301							{2: 'Kowloong Resident', 3: 'Uhmmm...', 4: '1'}
+163	163		202							{1: '1'}
+164	164		301							{3: 'While Wan and the other townsfolk wear looks of disappointment, the researchers are already rolling up their sleeves with barely contained excitement.'}
+165	165		201							{1: '1', 2: '500059', 4: '-400'}
+166	166		201							{1: '2', 2: '500361', 4: '400'}
+167	167		301							"{1: '1', 2: 'Researcher A', 3: ""We're totally okay if you don't want to be part of it. I mean, we just might have a real shot at winning without you in the competition!"", 4: '2'}"
+168	168		301							"{2: 'Researcher B', 3: ""What's the prize for the first person making it up there?"", 4: '1'}"
+169	169		301							"{2: 'Researcher A', 3: ""I didn't look too closely, but I think there's tea, alcohol, and meat? I guess you're supposed to pick whichever ones you like."", 4: '2'}"
+170	170		301							{2: 'Researcher B', 3: 'Woah... these things are sure uniquely Kowloong...', 4: '1'}
+171	171		202							{1: '1', 2: '2'}
+172	172		301							{3: 'A spark of interest stirs in you as you listen to their conversation.'}
+173	173		201							{1: '1', 2: '500824'}
+174	174		201							{1: '2', 2: '500280', 4: '-500'}
+175	175		201							{1: '3', 2: '500677', 4: '500'}
+176	176		301							"{1: '1', 2: 'Wan', 3: ""And that's not it!"", 4: '1'}"
+177	177		302							{2: 'Wan?', 3: '178'}
+178	178		301							"{2: 'Wan', 3: ""And there are lots of candy blocks, too! They're wrapped in rice paper—they taste amazing when you chew them together..."", 4: '1'}"
+179	179		301							{3: 'Wan and the other kids look at you with excitement.'}
+180	180		203							{1: '1', 2: '0.25', 5: '-50'}
+181	181		203							{1: '2', 2: '0.25', 3: '-500', 5: '-50'}
+182	182		203							{1: '3', 2: '0.25', 3: '500', 5: '-50'}
+183	183		301							"{2: 'Kids', 3: ""C'mon, Commandant, it's gonna be fun!"", 4: '1', 5: '2', 6: '3'}"
+184	184		301							"{3: ""The festival's lively atmosphere mingles with the children's excitement, washing over everyone present.""}"
+185	185		202							{1: '1', 2: '2', 3: '3'}
+186	186		301							{3: 'As the children surround and swarm their target, Wanshi stands at the side, watching, with a hint of a smile on his face.'}
+187	187		302							{2: 'Uhh... Wanshi.', 3: '188'}
+188	188		301							{3: 'You look to Wanshi for help, and he responds with a slight nod.'}
+189	189		201							{1: '1', 2: '500933', 3: '2'}
+190	190		301							{1: '1', 2: 'Wanshi', 3: 'Are you gonna go?', 4: '1'}
+191	191		301							"{2: 'Wanshi', 3: ""I'll be waiting for you down there if you're going."", 4: '1'}"
+192	192		302							"{2: ""Actually, I'm kind of interested myself."", 3: '193', 4: 'The prizes look pretty good.', 5: '193'}"
+193	193		202							{1: '1', 6: '1'}
+194	194		201							{1: '1', 2: '500824'}
+195	195		201							{1: '2', 2: '500280', 4: '-500'}
+196	196		201							{1: '3', 2: '500677', 4: '500'}
+197	197		301				AniZhuanchangBegin			{1: '1', 2: 'Kids', 3: 'YAY!!', 4: '1', 5: '2', 6: '3'}
+198	198		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+199	199		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory241.png'}
+200	200		401						2000.0	{1: '1', 2: '239'}
+201	201		301			AniZhuanchangEnd				"{3: ""Surrounded by children, you approach the two tall poles at the plaza's center and give them a pat—they're coated in oil, making it clear that it's going to be quite a challenge even just trying to climb a few inches up.""}"
+202	202		301							{3: 'The prizes at the top of both poles are clearly visible—whoever retrieves them first will be crowned the winner.'}
+203	203		302							{2: 'The rules seem pretty straightforward...', 3: '204'}
+204	204		201							{1: '1', 2: '500462'}
+205	205		301							"{1: '1', 2: 'Kowloong Resident', 3: ""Is everyone at their starting positions? Great! We'll begin as soon as the countdown ends!"", 4: '1'}"
+206	206		202							{1: '1'}
+207	207		301							"{3: ""The researchers sent out their fitness enthusiast—the one who drank the most mushroom soup that day. Word is they're still dizzy even now. Who knows if he's going to make it to the top in this state.""}"
+208	208		201							{1: '1', 2: '500462'}
+209	209		301							"{1: '1', 2: 'Kowloong Resident', 3: ""Let me say this again: false starts are invalid, getting help will disqualify you, and don't even think about trying any funny business."", 4: '1'}"
+210	210		202							{1: '1', 6: '1'}
+211	211		301			RImgBg1Shake				{2: 'Everyone', 3: 'Alright!'}
+212	212		301							"{3: ""People are practically bursting with eagerness, ready to show off what they're made of.""}"
+213	213		301							{3: 'Only Wanshi, sitting on the sidelines, appears particularly composed—even closing his eyes at times. He stands out in stark contrast to the excited crowd beside them.'}
+214	214		201							{1: '1', 2: '500933', 3: '1'}
+215	215		301							"{1: '1', 2: 'Wanshi', 3: ""Get down if you're not feeling well, yeah?"", 4: '1'}"
+216	216		302							{2: 'Yup, will do.', 3: '217', 4: 'Everything is gonna be okay.', 5: '217'}
+217	217		202							{1: '1'}
+218	218		301							{3: 'You take a deep breath to calm yourself down.'}
+219	219		201							{1: '1', 2: '500462'}
+220	220		301							{1: '1', 2: 'Kowloong Resident', 3: 'Three, two, one—', 4: '1'}
+221	221		302							{2: 'Ready...', 3: '222'}
+222	222		301							{2: 'Kowloong Resident', 3: 'Go!', 4: '1'}
+223	223		202							{1: '1', 6: '1'}
+224	224		104							{1: '0|-50|-200', 2: '0.25'}
+225	225		301							{3: 'At the signal, two groups gather around the poles—one side cheering for the researcher from Babylonia, while on the other, Wan leads the children and townspeople in rooting for you...'}
+226	226		302							{2: '(Climb up in one swift push.)', 3: '227', 4: '(Climb up slowly and steadily.)', 5: '227'}
+227	227		401						1000.0	{1: '2', 2: '4432'}
+228	228		402							{1: '4432'}
+229	229		104							{1: '0|-75|-200', 2: '0.25'}
+230	230		301							"{3: ""Surprisingly, having slipped down a few times, you've already figured out the hang of it. Making your way up gets easier after that.""}"
+231	231		302							"{2: ""At least it's way easier than the training equipment at F.O.S."", 3: '232'}"
+232	232		401						1000.0	{1: '2', 2: '4432'}
+233	233		402							{1: '4432'}
+234	234		104							{1: '0|-100|-200', 2: '0.25'}
+235	235		301							"{3: ""With a final bit of clever maneuvering and a few simple steps upward, you finally reach a spot where the silver flask is just within arm's reach.""}"
+236	236		301							{3: 'Looking down, the crowd below has become tiny dots in the distance—looks like victory might really be within reach now.'}
+237	237		302							{2: '(Reach out and grab the flask.)', 3: '238'}
+238	238		401							{1: '2', 2: '2607'}
+239	239		402							{1: '239'}
+240	240		104						150.0	{1: '20|-100|-200', 2: '0.1'}
+241	241		104						150.0	{1: '-20|-100|-200', 2: '0.1'}
+242	242		104							{1: '0|-100|-200', 2: '0.1'}
+243	243		301							{3: 'Just as you reach out to grab the prize, the flower pole starts to wobble ominously, and the world around you starts spinning.'}
+244	244		401							{1: '1', 2: '363'}
+245	245		302							{2: 'Is this thing going to fall?!', 3: '246'}
+246	246		301							{3: 'When you turn to face the other flower pole, you see the researcher who had a little too much mushroom soup to drink the other day with a pale face. When you turn to look down to the ground, though, you see people staring up at you in fear.'}
+247	247		302							{2: 'This is no hallucination...', 3: '248'}
+248	248		401							{1: '2', 2: '2607'}
+249	249		104						200.0	{1: '-50|-80|-200', 2: '0.1'}
+250	250		104							{1: '0|-80|-200', 2: '0.1'}
+251	251		302							{2: 'Oh no... the pole is actually going to fall!', 3: '252'}
+252	252		301							{3: 'You struggle to keep your balance, but things are clearly beyond your control. A fall seems imminent—'}
+253	253		201							{1: '18', 2: '500933', 3: '4'}
+254	254		301							{1: '1', 2: 'Wanshi', 3: '!', 4: '18'}
+255	255		202							{1: '18'}
+256	256		301							"{3: ""As you fall, you catch sight of Wanshi on the sidelines in your inverted vision. Wanshi's eyes widen in alarm as he jumps to his feet.""}"
+257	257		301							{3: 'He hops over the railings into the arena, raising both arms high in your direction.'}
+258	258		301							{3: 'In this crucial moment, you make up your mind right away.'}
+259	259		302							{2: '(Hook the wine flask and leap towards where Wanshi is running from.)', 3: '260'}
+260	260		401						300.0	{1: '2', 2: '4045'}
+261	261		402							{1: '4045'}
+262	262		302							"{2: ""That one's about to fall, too!"", 3: '263'}"
+263	263		301							{3: 'With one last shout to the crowd below, you leap off the pole.'}
+264	264		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+265	265		104							{1: '0|0|0', 2: '0'}
+266	266		201							{1: '1', 2: '500933', 3: '4', 7: '1'}
+267	267		301							{1: '1', 2: 'Wanshi', 3: '【kuroname】—', 4: '1'}
+268	268		202							{1: '1'}
+269	269		201							{1: '1', 2: '500824'}
+270	270		301				AniZhuanchangBegin			{1: '1', 2: 'Wan', 3: 'Whoa! Why in the world did the pole fall?! And the researcher dude over there... Is he still under the influence?', 4: '1'}
+271	271		502						1000.0	{1: 'DialogDisable'}
+272	272		202							{1: '1', 6: '1'}
+273	273		104							{1: '0|-80|-100', 2: '0'}
+274	274		104			AniZhuanchangEnd				{1: '0|80|-100', 2: '5'}
+275	275		301			DialogEnable				"{3: ""The colorful silk at the pole's peak comes down with you. They wrap around the wine flask as both trace an arc through the air and fall together with your silhouette.""}"
+276	276		301							{3: 'The researcher, still experiencing hallucinations, falls into the crowd below, where the townspeople catch him together.'}
+277	277		301							{3: 'On the other side, Wanshi stands firmly below and catches the falling human all by himself.'}
+278	278		402							{1: '363'}
+279	279		401							{1: '2', 2: '4044'}
+280	280		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+281	281		301				AniZhuanchangBegin			{3: '—It is a soft and familiar embrace, one that seems capable of enveloping the sharpest of knives in the world.'}
+282	282		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory241.png'}
+283	283		401							{1: '2', 2: '4511'}
+284	284		201							{1: '1', 2: '500933', 3: '4', 5: '-100', 6: '-200', 7: '1'}
+285	285		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+286	286		301			AniZhuanchangEnd				"{1: '1', 3: ""The flower pole crashes to the ground. As you regain your bearings and look up, you find Wanshi's face hovering over you, tinged with concern.""}"
+287	287		401							{1: '1', 2: '298'}
+288	288		204							{1: '1', 2: '8'}
+289	289		301							"{2: 'Wanshi', 3: ""Thank God I caught you... I knew you'd jump this way."", 4: '1'}"
+290	290		302							"{2: 'Great minds think alike, yeah?', 3: '291', 4: ""You could've caught me no matter which way I jumped, right?"", 5: '291'}"
+291	291		204							{1: '1', 2: '1'}
+292	292		301							"{2: 'Wanshi', 3: ""...Can't argue with that."", 4: '1'}"
+293	293		301							"{2: 'Wanshi', 3: ""But what's with these poles? That was close."", 4: '1'}"
+294	294		301							"{3: ""Wanshi's words sound like a complaint, yet there isn't a trace of actual reproach in his voice.""}"
+295	295		301							{3: 'You try to get up to retrieve the dropped prizes and torn ribbons, but Wanshi stops you.'}
+296	296		302							{2: 'Wait, did you see how I made it all the way up th...', 3: '297'}
+297	297		301							{2: 'Wanshi', 3: 'I saw it.', 4: '1'}
+298	298		104						350.0	{1: '0|50|-20', 2: '0.3'}
+299	299		401						300.0	{1: '2', 2: '4045'}
+300	300		402							{1: '4045'}
+301	301		104							{1: '0|0|0', 2: '0.3'}
+302	302		301							{3: 'Wanshi picks up the cold silver wine flask and places it in your palm.'}
+303	303		204							{1: '1', 2: '2'}
+304	304		301							"{2: 'Wanshi', 3: ""I've been watching the whole time. I saw everything clearly."", 4: '1'}"
+305	305		301		1		AniZhuanchangBegin			"{2: 'Wanshi', 3: ""You made it up there first, and that's beyond a shadow of a doubt."", 4: '1'}"

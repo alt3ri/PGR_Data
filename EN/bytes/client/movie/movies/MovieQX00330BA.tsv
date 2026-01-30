@@ -1,0 +1,58 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg'}
+2	2		401							{1: '1', 2: '243'}
+3	3		301			DialogEnable				{3: 'Over in the garden square, there is a pottery contest going on, lasting three days and two nights.'}
+4	4		301							{3: 'Many signed up, but only a handful have shown up. Probably the whole pottery-making grind scares them off.'}
+5	5		301							{3: 'While strolling through the open pottery workshop, you notice a familiar face.'}
+6	6		201							{1: '1', 2: '500629'}
+7	7		301							"{1: '1', 3: ""Hanying's sitting on a stool, her hands working the clay with finesse.""}"
+8	8		301							"{3: ""Humming away, she has her eyes locked on the task like she's one with the clay.""}"
+9	9		204							{1: '1', 2: '7'}
+10	10		301							{2: 'Hanying', 3: 'Hey there, Commandant! You here to participate in the pottery contest too?', 4: '1'}
+11	11		302							{2: 'Just passing through.', 3: '12'}
+12	12		204							{1: '1', 2: '2'}
+13	13		301							{2: 'Hanying', 3: 'I see. Are you interested in this ancient craft from the Golden Age?', 4: '1'}
+14	14		301							"{2: 'Hanying', 3: ""It's kind of embarrassing, but I picked up pottery from this wandering human master."", 4: '1'}"
+15	15		301							{2: 'Hanying', 3: 'Weirdly enough, shaping clay always gives me this incredible sense of calm...', 4: '1'}
+16	16		301							{2: 'Hanying', 3: 'Want to give it a shot together, Commandant?', 4: '1'}
+17	17		302							{2: '(Reach out hands)', 3: '18'}
+18	18		301							"{2: 'Hanying', 3: ""With Hanying's hands guiding yours, you feel the clay, still raw."", 4: '1'}"
+19	19		301							{2: 'Hanying', 3: 'No need to go too hard on it, just ease into it, Commandant. Feel anything?', 4: '1'}
+20	20		502							{1: 'DialogDisable'}
+21	21		302							{2: 'No, not really.', 3: '22'}
+22	22		302							{2: 'Do you feel anything, Hanying?', 3: '23'}
+23	23		301			DialogEnable				{2: 'Hanying', 3: 'I feel like the clay is thawing from the early spring chill.', 4: '1'}
+24	24		301				AniZhuanchangBegin			"{2: 'Hanying', 3: ""Well, it's just a metaphor. Don't make fun of me for that."", 4: '1'}"
+25	25		202			DialogDisable			1000.0	{1: '1', 6: '1'}
+26	26		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg'}
+27	27		201							{1: '1', 2: '500629'}
+28	28		301			DialogEnable				"{1: '1', 3: ""Time flies when you are shooting the breeze with Hanying, and suddenly, it's afternoon.""}"
+29	29		301							"{3: ""Hanying's delicately carving into the clay, her blade weaving intricate designs.""}"
+30	30		301							"{3: ""She looks at her creation, and a soft smile playing on her lips as if the vase isn't just pottery, but a piece of her soul laid bare.""}"
+31	31		204							{1: '1', 2: '2'}
+32	32		301							{2: 'Hanying', 3: 'I wonder if this could win an award.', 4: '1'}
+33	33		302							"{2: ""It's all about taking part, right?"", 3: '34'}"
+34	34		301							"{2: 'Hanying', 3: ""You're absolutely right. It's the passion that keeps us grounded. The end result doesn't really matter."", 4: '1'}"
+35	35		301							"{2: 'Hanying', 3: ""Hanging out with you, Commandant, that's what makes my day."", 4: '1'}"
+36	36		301							"{2: 'Hanying', 3: ""But there's this weird vibe today, different from the usual."", 4: '1'}"
+37	37		302							{2: 'Weird vibe?', 3: '38'}
+38	38		301							"{2: 'Hanying', 3: ""Master said it might mean my heart's being disturbed."", 4: '1'}"
+39	39		301							{2: 'Hanying', 3: 'Not that I know what a heart involves exactly, but being with you feels different, Commandant.', 4: '1'}
+40	40		202							{1: '1'}
+41	41		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory668.jpg', 3: '0', 4: '1', 5: '1'}
+42	42		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+43	43		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory668.jpg'}
+44	44		301							{3: 'As the sun dips low, casting its final rays on the vase, Hanying sets out to work on the glaze.'}
+45	45		201							{1: '1', 2: '500629', 3: '4'}
+46	46		301							{1: '1', 3: 'She picks out soft greens and classy whites, a reflection of herself, painting them onto the surface to complement the designs.'}
+47	47		301							{3: 'Carefully, Hanying slides the vase into the kiln, her focus intense as the flames dance around it.'}
+48	48		301							"{3: ""Once it's cooled, Hanying doesn't rush to put it on display...""}"
+49	49		204							{1: '1'}
+50	50		301							"{2: 'Hanying', 3: ""More than winning some award or ranking in a contest, I'd rather give something straight from my heart to you, Commandant."", 4: '1'}"
+51	51		204							{1: '1', 2: '2'}
+52	52		301							"{2: 'Hanying', 3: ""Today's Valentine's Day. It seems fitting, right, Commandant? Will you accept this?"", 4: '1'}"
+53	53		302							{2: 'Thank you, Hanying.', 3: '54'}
+54	54		301							{2: 'Hanying', 3: 'No, I should be the one thanking you. With you, Commandant, by my side, loneliness is a thing of the past.', 4: '1'}
+55	55		301							{2: 'Hanying', 3: 'Master always said, pour your heart into the pottery.', 4: '1'}
+56	56		301							"{2: 'Hanying', 3: ""Even though I can't compare to a real human, I still gave it my all."", 4: '1'}"
+57	57		301		1		AniZhuanchangBegin			"{2: 'Hanying', 3: ""Hope you'll think of me when you see the vase. That'd mean the world."", 4: '1'}"

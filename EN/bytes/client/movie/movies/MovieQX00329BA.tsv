@@ -1,0 +1,80 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory672.jpg'}
+2	2		401							{1: '1', 2: '282'}
+3	3		201							{1: '1', 2: '500682'}
+4	4		301			DialogEnable	DialogDisable			{1: '1', 2: 'Noctis', 3: 'Commandant, watching your whole fragile act is downright painful.', 4: '1'}
+5	5		302							{2: 'Fragile...', 3: '6'}
+6	6		302							"{2: ""(Fragile by Noctis' standards, I suppose.)"", 3: '7'}"
+7	7		204							{1: '1', 2: '5'}
+8	8		301			DialogEnable				"{2: 'Noctis', 3: ""Hey, you can't crush enemies on the battlefield if you're built like a twig!"", 4: '1'}"
+9	9		204							{1: '1', 2: '4'}
+10	10		301							"{2: 'Noctis', 3: ""If you slow me down because of this, you're in for a world of trouble."", 4: '1'}"
+11	11		204							{1: '1', 2: '8'}
+12	12		301							"{2: 'Noctis', 3: ""And don't expect me to drag you off the battlefield. Giving you a flare gun is already being generous."", 4: '1'}"
+13	13		302							{2: '(Punch him)', 3: '14'}
+14	14		401						300.0	{1: '2', 2: '4044'}
+15	15		401						300.0	{1: '2', 2: '4044'}
+16	16		204							{1: '1', 2: '1'}
+17	17		301							{2: 'Noctis', 3: 'Not too shabby, but still needs a little oomph!', 4: '1'}
+18	18		301							{3: 'Noctis cracks up and heads for the sports shop.'}
+19	19		204							{1: '1', 2: '2'}
+20	20		301				AniZhuanchangBegin			"{2: 'Noctis', 3: ""What are you zoning out for? Let's hit up the sports shop for some workout gear."", 4: '1'}"
+21	21		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory204.png'}
+22	22		204							{1: '1'}
+23	23		301			AniZhuanchangEnd				"{2: 'Noctis', 3: ""This is my first time here. It's tucked away in this quiet neighborhood, guess the owner's a real character."", 4: '1'}"
+24	24		302							{2: '(Could this place be sketchy?)', 3: '25'}
+25	25		204							{1: '1', 2: '2'}
+26	26		301							{2: 'Noctis', 3: 'Hey, boss! Hook me up with a couple of those detachable dumbbell sets!', 4: '1'}
+27	27		202							{1: '1', 6: '1'}
+28	28		201							{1: '1', 2: '500488', 5: '-80', 6: '100'}
+29	29		301							{1: '1', 2: 'Mechanoid', 3: 'Coming!', 4: '1'}
+30	30		301							"{3: ""From the back of the shop lumbers a clunky mechanoid, moving at a snail's pace.""}"
+31	31		202							{1: '1', 6: '1'}
+32	32		201							{1: '1', 2: '500682', 4: '500'}
+33	33		201							{1: '2', 2: '500488', 4: '-600', 5: '-80', 6: '100'}
+34	34		301							{1: '1', 2: 'Noctis', 3: '...', 4: '1'}
+35	35		301							"{2: 'Noctis', 3: ""So the owner's not human, huh?"", 4: '1'}"
+36	36		301							"{2: 'Mechanoid', 3: ""Watch your words, it's just a robot I control remotely."", 4: '2'}"
+37	37		301							{2: 'Mechanoid', 3: 'Dumbbell sets are right up front on the rack. You look buff enough. Go grab them yourself.', 4: '2'}
+38	38		204							{1: '1', 2: '3'}
+39	39		301							{3: 'Noctis tries hoisting a dumbbell, his face scrunching up in confusion.'}
+40	40		301							"{2: 'Noctis', 3: ""Something isn't right. Feels too easy. Are you sure these dumbbells are legit?"", 4: '1'}"
+41	41		204							{1: '1'}
+42	42		301							"{2: 'Mechanoid', 3: ""Would I ever pawn off fakes on you? Geez, all those reps making you dull? Can't even spot a fake, huh?"", 4: '2'}"
+43	43		204							{1: '1', 2: '4'}
+44	44		401							{1: '2', 2: '4049'}
+45	45		301							{3: 'Noctis grips the iron balls at the ends of the dumbbell and rips off the metal casing, revealing...'}
+46	46		301							{3: 'Wooden junk pretending to be legit, hiding under a flimsy iron cover.'}
+47	47		204							{1: '1', 2: '5'}
+48	48		301							"{2: 'Noctis', 3: ""So you just slapped on some iron, huh? Still claiming it's not fake, you sneaky bot!"", 4: '1'}"
+49	49		204							{1: '1', 2: '4'}
+50	50		301							"{2: 'Mechanoid', 3: ""You brawny goon... I-I don't care! You destroyed my product, cough up now!"", 4: '2'}"
+51	51		401							{1: '2', 2: '1509'}
+52	52		203							{1: '2', 2: '0.15', 3: '-300', 4: '-80', 5: '100'}
+53	53		301							{3: 'The mechanoid shoots out its mechanical arms, charging at Noctis full throttle.'}
+54	54		204							{1: '1', 2: '5'}
+55	55		301							{2: 'Noctis', 3: 'What? This too? Playing the victim and pinning the blame on me, huh?', 4: '1'}
+56	56		204							{1: '1', 2: '4'}
+57	57		401							{1: '2', 2: '9348012'}
+58	58		203						100.0	{1: '1', 2: '0.15'}
+59	59		401							{1: '2', 2: '1512'}
+60	60		203							{1: '2', 2: '0.15', 3: '-1000'}
+61	61		202							{1: '2'}
+62	62		301			RImgBg1Shake				"{3: ""Noctis, with a quick jab, twists the mechanoid's head a full 180.""}"
+63	63		204							{1: '1', 2: '5'}
+64	64		301							"{2: 'Noctis', 3: ""Don't just come at me out of nowhere, you creep! Gave me a scare. You're really asking for a pounding here."", 4: '1'}"
+65	65		204							{1: '1', 2: '8'}
+66	66		301							"{2: 'Noctis', 3: ""Alright, alright, warm-up's over."", 4: '1'}"
+67	67		204							{1: '1', 2: '5'}
+68	68		301							{2: 'Noctis', 3: 'Whoa... opponent down already? That was too easy.', 4: '1'}
+69	69		301							"{2: 'Noctis', 3: ""Can't believe I found a rigged shop in broad daylight. Where do I even start complaining about this mess?"", 4: '1'}"
+70	70		302							"{2: ""I guess I'll take it up with the Constellia Management Committee."", 3: '71'}"
+71	71		204							{1: '1', 2: '14'}
+72	72		301							"{2: 'Noctis', 3: ""Let's go."", 4: '1'}"
+73	73		401							{1: '2', 2: '9332014'}
+74	74		301							{3: 'The mechanoid, stuck on the ground, lets out a weak groan...'}
+75	75		402							{1: '9332014'}
+76	76		204							{1: '1'}
+77	77		301							"{2: 'Noctis', 3: ""See, Commandant? Skip the workouts and you're ripe for getting blindsided by jerks like that."", 4: '1'}"
+78	78		204							{1: '1', 2: '2'}
+79	79		301		1		AniZhuanchangBegin			{2: 'Noctis', 3: 'Might as well drag you to the gym. Still got a few months left on my membership.', 4: '1'}

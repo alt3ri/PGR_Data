@@ -1,0 +1,26 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory78.jpg'}
+2	1000		401							{1: '1', 2: '208'}
+3	2		201							{1: '1', 2: '1091001'}
+4	3		301			DialogEnable				{1: '1', 2: 'Bianca', 3: 'Commandant, our mission today is to join the other squads for a joint operation, right?', 4: '1'}
+5	4		302							"{2: 'Is that okay?', 3: '5', 4: ""I'll count on you."", 5: '7'}"
+6	5		301							{2: 'Bianca', 3: 'Are you asking... because of what happened with the Support Force earlier?', 4: '1'}
+7	6	8	301							"{2: 'Bianca', 3: ""Don't worry, Commandant. It'll be fine."", 4: '1'}"
+8	7		301							"{2: 'Bianca', 3: ""I'll do my best, Commandant."", 4: '1'}"
+9	8		203							{1: '1', 2: '0.25', 3: '450'}
+10	9		201							{1: '2', 2: '500028', 4: '-450'}
+11	100		401							{1: '2', 2: '1502'}
+12	10		301							"{1: '1', 2: 'Construct', 3: ""Your ID's saying you're from Gray Raven... Nice to meet you."", 4: '2'}"
+13	11		301							{2: 'Bianca', 3: 'At your service.', 4: '1'}
+14	12		302							"{2: ""They're behaving very differently from the Support Force..."", 3: '13'}"
+15	13		202							{1: '2', 6: '1'}
+16	14		203							{1: '1', 2: '0.25'}
+17	15		301							{2: 'Bianca', 3: 'The Purifying Force might not be some secret stowed away in the attic...', 4: '1'}
+18	16		301							{2: 'Bianca', 3: 'But due to how we operate, most squads never come into contact with us.', 4: '1'}
+19	17		301							{2: 'Bianca', 3: 'The only ones who know about our existence are the Constructs who have served for a long time.', 4: '1'}
+20	18		301							{2: 'Bianca', 3: 'Like those from the Support Force who have seen very little combat and have never been rebooted.', 4: '1'}
+21	19		301							{2: 'Bianca', 3: 'If the Task Force is the light, the Purifying Force is the shadow.', 4: '1'}
+22	20		301							{2: 'Bianca', 3: 'Once the war is over and things return to normal, those of us in the Purifying Force will be rebooted as well, I think.', 4: '1'}
+23	21		302							"{2: ""I'm not going to let them reboot you."", 3: '22', 4: 'Is that really alright, Bianca?', 5: '23'}"
+24	22		301		1		AniZhuanchangBegin			{2: 'Bianca', 3: 'Thank you, Commandant.', 4: '1'}
+25	23		301		1		AniZhuanchangBegin			{2: 'Bianca', 3: '(Nods) That is alright.', 4: '1'}

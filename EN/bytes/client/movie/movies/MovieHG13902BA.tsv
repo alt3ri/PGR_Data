@@ -1,0 +1,86 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory608.jpg'}
+2	2		401							{1: '1', 2: '207'}
+3	3		301			DialogEnable				"{3: ""It's several hours past sunset by the time you're done dealing with Pickman's minions and settling the refugees in.""}"
+4	4		301							{3: 'The Constructs are still busy reviewing the data at the collection point beside Conservation Area 104. Echo, on the other hand, has gathered up a bunch of items on her own and taken them to a nearby empty lot.'}
+5	5		301				AniZhuanchangBegin			{3: 'Paper products, dirty bandages, old decorations, etc.—these are the things that lie around her feet now.'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_10.jpg'}
+7	7		401							{1: '2', 2: '1226'}
+8	8		201							{1: '1', 2: '500702'}
+9	9		301			AniZhuanchangEnd				{1: '1', 3: 'Echo squats down and gathers them into a pile. Moments later, she produces a lighter—and sets these ownerless items on fire.'}
+10	10		301							{3: 'She is only inches away from the burning pile as specks of ash flutter in the rising, heated air, close enough to catch a few if they drift her way.'}
+11	11		301							{3: 'As you look at Echo, you wonder if her weird apology from earlier had anything to do with what the guy had said about her.'}
+12	12		301							{3: 'You find yourself standing next to her now, your feet seemingly having carried you here with a mind of their own.'}
+13	13		301				DialogDisable			"{3: ""Still not entirely sure what you want to say, you're caught in the awkward silence of the moment.""}"
+14	14		302							{2: 'Hey, look...', 3: '15'}
+15	15		302							"{2: ""I wouldn't take whatever that guy just said personally."", 3: '16'}"
+16	16		301			DialogEnable				{2: 'Echo', 3: 'You mean those people who just got taken away?', 4: '1'}
+17	17		301							{3: 'Echo puts on a barely noticeable smile.'}
+18	18		301							"{2: 'Echo', 3: ""Makes sense that they don't understand what I'm trying to do... when Pickman has done such a good job brainwashing them so thoroughly."", 4: '1'}"
+19	19		301							"{2: 'Echo', 3: ""Don't worry, though. I'm not going to give up just because of a few words."", 4: '1'}"
+20	20		302							{2: 'But why...', 3: '21'}
+21	21		301							{2: 'Echo', 3: 'Why did I apologize just now?', 4: '1'}
+22	22		301							{2: 'Echo', 3: 'I wanted to apologize to you for making a move on my own and putting all of you at risk.', 4: '1'}
+23	23		301				DialogDisable			"{2: 'Echo', 3: ""I'm willing to accept any judgment and punishment that might come my way, but I just thought I owed you all an apology..."", 4: '1'}"
+24	24		302							"{2: ""That's definitely blowing things out of proportion here..."", 3: '25'}"
+25	25		302							"{2: 'Just try not to do that again.', 3: '26', 4: ""I'm just glad it all ended well."", 5: '27'}"
+26	26	31	301			DialogEnable				"{2: 'Echo', 3: ""I'll try not to."", 4: '1'}"
+27	27		302							{2: 'At least nothing serious has happened to us.', 3: '28'}
+28	28		302							{2: 'And the transport craft is just having a minor hiccup.', 3: '29'}
+29	29		302							{2: 'Still, I never want to see you hurt.', 3: '30'}
+30	30		301			DialogEnable				"{2: 'Echo', 3: ""...Right. Yes, I'll follow the rules going forward."", 4: '1'}"
+31	31		301							"{2: 'Echo', 3: ""So long as there's still going back, that is..."", 4: '1'}"
+32	32		302							{2: 'What do you mean?', 3: '33'}
+33	33		301							"{2: 'Echo', 3: ""It's been a while now since Pickman and his central flying fortress went down."", 4: '1'}"
+34	34		301							"{2: 'Echo', 3: ""His headquarters have been staying in touch with all these branches of Utopia out there, but these people probably already had a hunch about what'd happened to Pickman..."", 4: '1'}"
+35	35		302							{2: 'You mean...', 3: '36'}
+36	36		301							{3: 'Echo nods at you.'}
+37	37		301							{2: 'Echo', 3: 'They seemed to have learned something from an outsider visiting them last night when I was watching them.', 4: '1'}
+38	38		301							{2: 'Echo', 3: 'And at noon today, they put all the refugees into some of the bigger tents to stop them from going wherever they wanted to.', 4: '1'}
+39	39		301							"{2: 'Echo', 3: ""Some of the guards started burning printed materials... and I thought it wouldn't be long before they started doing away with the refugees."", 4: '1'}"
+40	40		302							{2: 'Which is why you decided to interfere, I presume?', 3: '41'}
+41	41		301							{2: 'Echo', 3: 'Right. I did a quick headcount of the guards and figured I should be able to handle them on my own just fine.', 4: '1'}
+42	42		301							{2: 'Echo', 3: 'Not knowing they were so heavily armed, that is...', 4: '1'}
+43	43		301							"{2: 'Echo', 3: ""Well... sure glad I didn't end up worse than I did."", 4: '1'}"
+44	44		302							{2: '...', 3: '45'}
+45	45		204							{1: '1', 2: '14'}
+46	46		301							"{2: 'Echo', 3: ""I do have a hard time forgetting all the people I couldn't save, though."", 4: '1'}"
+47	47		301							"{3: ""Says Echo as she turns to face the fire that's still burning—and that's when it hits you that these items belonged to those who didn't survive the battle...""}"
+48	48		301							"{2: 'Echo', 3: 'Cecily was very quiet. She would always tell me all these fairy tales after ""work,"" and this ornament with a hawk on it was her favorite.', 4: '1'}"
+49	49		301							{2: 'Echo', 3: 'Nata wore her heart on her sleeve and was always brimming with energy. I was pretty surprised when I found out that she loved reading these books that... you know, numb the heart.', 4: '1'}
+50	50		301							{2: 'Echo', 3: 'And these...', 4: '1'}
+51	51		301				DialogDisable			"{3: ""People were probably just going about their everyday business carrying these things—until Utopia's peace was shattered.""}"
+52	52		302							"{2: ""This isn't your fault."", 3: '53'}"
+53	53		302							{2: 'There is no way for you to save everyone...', 3: '54', 4: 'You already gave it your all.', 5: '54'}
+54	54		301			DialogEnable				"{2: 'Echo', 3: ""I think I was only trying so hard because that's where I grew up."", 4: '1'}"
+55	55		301							{2: 'Echo', 3: 'And feel free to let me know if you find that a little...', 4: '1'}
+56	56		302							{2: 'I would have done the same.', 3: '57'}
+57	57		204							{1: '1'}
+58	58		301				DialogDisable			{2: 'Echo', 3: 'Really? You would?', 4: '1'}
+59	59		302							{2: 'Of course. I mean, people have had their doubts about me.', 3: '60'}
+60	60		302							{2: 'But I would have done the same nonetheless.', 3: '61'}
+61	61		301			DialogEnable				{2: 'Echo', 3: 'Same.', 4: '1'}
+62	62		302							{2: 'There you go.', 3: '63'}
+63	63		204							{1: '1', 2: '1'}
+64	64		301							{3: 'You put on a funny face as you throw up your hands, which cracks Echo up and brings a smile back to her face.'}
+65	65		301							"{2: 'Echo', 3: ""Well, that's something I never knew about the Gray Raven Commandant."", 4: '1'}"
+66	66		301							{2: 'Echo', 3: 'See, I totally thought you were a...', 4: '1'}
+67	67		302							{2: 'You totally thought I was a...?', 3: '68'}
+68	68		204							{1: '1'}
+69	69		301							{2: 'Echo', 3: 'Hmm...', 4: '1'}
+70	70		301							{3: 'She bites her lip in hesitation.'}
+71	71		302							"{2: ""Trust me. I've probably heard something way worse.""}"
+72	72		301							"{2: 'Echo', 3: ""Ahem... I think I'd prefer it if you gave me some time to come up with a better way to put it."", 4: '1'}"
+73	73		302							{2: '...?', 3: '74'}
+74	74		204							{1: '1', 2: '1'}
+75	75		301							{2: 'Echo', 3: 'But anyhow, thank you, Commandant.', 4: '1'}
+76	76		301							"{2: 'Echo', 3: ""So, I take it that you're here to give me a pep talk? That's nice of you. Seems like Babylonia treats people a lot nicer than how they treated us at Utopia, in a realistic way."", 4: '1'}"
+77	77		301							{3: 'Says Echo as memories belonging to Lena pop up in her M.I.N.D.'}
+78	78		301							{3: 'Echo can now seem to wrap her head around the ad hoc squad and all those different figures.'}
+79	79		302							{2: 'You should totally give it a try sometime.', 3: '80'}
+80	80		204							{1: '1'}
+81	81		301							{2: 'Echo', 3: 'Sometime...?', 4: '1'}
+82	82		302							{2: 'As in when all of this is over. What say you?', 3: '83'}
+83	83		204							{1: '1', 2: '1'}
+84	84		301							"{2: 'Echo', 3: ""...Sure. I'll sleep on that."", 4: '1'}"
+85	85		301		1		AniZhuanchangBegin			"{3: ""Says Echo, with a smile that looks obviously forced. It's anyone's guess what just crossed her mind.""}"

@@ -1,0 +1,421 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+2	2		401							{1: '1', 2: '6182'}
+3	3		502						250.0	{1: 'DialogDisable'}
+4	4		107							{1: 'Babylonia', 2: '10:00 a.m.'}
+5	5		301							{3: 'Babylonia, 10:00 AM'}
+6	6		108							{1: '1'}
+7	7		301			DialogEnable				"{3: 'As you browse through the file marked ""Classified"" on the terminal, you and Lucia exchange a glance before signaling to Hassen that you\'ve finished reading.'}"
+8	8		201							{1: '1', 2: '500011'}
+9	9		301							"{1: '1', 2: 'Hassen', 3: ""You'll find pretty much everything in there."", 4: '1'}"
+10	10		302							"{2: 'Alright.', 3: '11', 4: ""I've finished reading."", 5: '11'}"
+11	11		201							{1: '1', 2: '500166'}
+12	12		301				DialogDisable			"{1: '1', 2: 'Lucia', 3: '""Three rescue teams have vanished one after another at the Copperfield Aquarium, and there\'s been no word from them since...""', 4: '1'}"
+13	13		302							{2: '(Copperfield Aquarium...)', 3: '14'}
+14	14		202							{1: '1', 6: '1'}
+15	15		401							{1: '2', 2: '2904'}
+16	16		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory618.jpg', 3: '0', 4: '0.8', 5: '1'}
+17	17		301			DialogEnable				{3: 'Copperfield Aquarium... The name lingers in your mind, unfamiliar yet hauntingly resonant, as an inexplicable sense of deja vu rises.'}
+18	18		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory618.jpg', 3: '0.8', 4: '0', 5: '0.4'}
+19	19		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+20	20		402							{1: '2904'}
+21	21		301							{3: 'Nearby, the discussion in the conference room continues.'}
+22	22		201							{1: '1', 2: '500166'}
+23	23		301							"{1: '1', 2: 'Lucia', 3: ""Search and rescue missions don't usually get rated this high-risk... Is there something dangerous inside the aquarium that can't be officially disclosed in a file?"", 4: '1'}"
+24	24		203							{1: '1', 2: '0.25', 3: '400'}
+25	25		201							{1: '2', 2: '500011', 3: '5', 4: '-400'}
+26	26		301							{1: '1', 2: 'Hassen', 3: 'Among the missing teams, two of them were on par with elite squads.', 4: '2'}
+27	27		204							{1: '1', 2: '5'}
+28	28		301							"{3: ""Lucia's gaze sharpens. The significance of two elite squads alone speaks volumes.""}"
+29	29		301							"{2: 'Lucia', 3: ""...I see. Does intelligence analysis suggest any Ascendant's involvement?"", 4: '1'}"
+30	30		301							{2: 'Hassen', 3: 'I wish that was the full extent of it...', 4: '2'}
+31	31		301							{2: 'Hassen', 3: 'We suspect that even the force behind the Ascendants might be...', 4: '2'}
+32	32		301							{2: 'Hassen', 3: '【kuroname】?', 4: '2'}
+33	33		302							{2: 'Oh...', 3: '36', 4: 'Sorry, my mind drifts off for a second.', 5: '34'}
+34	34		204							{1: '2'}
+35	35		301							"{2: 'Hassen', 3: ""It's okay."", 4: '2'}"
+36	36		204							{1: '2'}
+37	37		301				DialogDisable			"{2: 'Hassen', 3: ""This should be your off-duty time, but this mission at Copperfield Aquarium can't really wait..."", 4: '2'}"
+38	38		202							{1: '1', 2: '2', 6: '1'}
+39	39		306							{1: '1'}
+40	40		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory626.jpg', 3: '0', 4: '1', 5: '1'}
+41	41		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+42	42		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory626.jpg'}
+43	43		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+44	44		201							{1: '1', 2: '501304', 4: '400'}
+45	45		201							{1: '2', 2: '500548', 4: '-400'}
+46	46		301			DialogEnable	DialogDisable			{1: '1', 3: 'Copperfield Aquarium... The crimson swell of the Red Tide drifts once more across your sight, a hazy veil through which two silhouettes emerge like fragments spliced from old film reels, surfacing in slow motion before fading away.'}
+47	47		202							{1: '1', 2: '2', 6: '1'}
+48	48		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+49	49		306							
+50	50		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg', 3: '0', 4: '1', 5: '1'}
+51	51		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+52	52		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+53	53		302							{2: 'The Copperfield Aquarium...', 3: '54'}
+54	54		302							{2: 'The one with all the bionic exhibits?', 3: '55'}
+55	55		201							{1: '1', 2: '500011'}
+56	56		301			DialogEnable				{1: '1', 2: 'Hassen', 3: 'Yeah. Have you heard much about it?', 4: '1'}
+57	57		301				DialogDisable			"{2: 'Hassen', 3: ""After Babylonia left Earth, that place should've been left abandoned. But given it was a prominent Copperfield family asset, our archives likely still have visual records of it..."", 4: '1'}"
+58	58		302							"{2: ""I haven't really looked into it, but..."", 3: '59'}"
+59	59		302							{2: 'Is Chiko with one of the missing teams?', 3: '60', 4: 'Is Bianca with one of the missing teams?', 5: '60'}
+60	60		301			DialogEnable				{3: 'A rather baseless question slips out unchecked.'}
+61	61		203							{1: '1', 2: '0.25', 3: '400'}
+62	62		204							{1: '1', 2: '5'}
+63	63		201							{1: '2', 2: '500012', 4: '-400'}
+64	64		301							{1: '1', 2: 'Nikola', 3: '...', 4: '2'}
+65	65		301							{2: 'Nikola', 3: 'How did you know?', 4: '2'}
+66	66		301							{2: 'Hassen', 3: 'Nikola.', 4: '1'}
+67	67		301							"{2: 'Nikola', 3: ""The mission briefing only mentioned rescue teams, and we haven't said a thing about the Purifying Force so far."", 4: '2'}"
+68	68		301							{2: 'Nikola', 3: 'Where did you get this information?', 4: '2'}
+69	69		302							"{2: '...', 3: '70', 4: 'I ""saw"" some ""shadows.""', 5: '79'}"
+70	70		301							"{3: ""You detect the sharp edge of interrogation in Nikola's words at once.""}"
+71	71		302							"{2: 'Are you doubting me?', 3: '72', 4: ""I don't have any other sources of information."", 5: '72'}"
+72	72		301							"{2: 'Nikola', 3: ""The Purifying Force receives missions only through secure, specialized channels. Their movements are untraceable by design. That's need-to-know intel, highest clearance."", 4: '2'}"
+73	73		301							{2: 'Nikola', 3: 'So, how did you know the Purifying Force went to the aquarium?', 4: '2'}
+74	74		302							{2: '...', 3: '75'}
+75	75		301							"{2: 'Nikola', 3: ""I'm not doubting you, but we need to understand what's happening."", 4: '2'}"
+76	76		302							"{2: '...I ""saw"" it.', 3: '77'}"
+77	77		301							{2: 'Nikola', 3: '...?', 4: '2'}
+78	78		302							"{2: 'I ""saw""... ""shadows.""', 3: '79'}"
+79	79		301							"{2: 'Nikola', 3: '...You ""saw"" it?', 4: '2'}"
+80	80		302							"{2: 'I also ""saw"" some other information.', 3: '81'}"
+81	81		301							{2: 'Hassen', 3: '...Tell us about it.', 4: '2'}
+82	82		301				DialogDisable			{3: 'Hassen and Nikola exchange a glance.'}
+83	83		302							{2: '(Talk about Bianca in an unfamiliar frame)', 3: '84', 4: '(Talk about the Red Tide flowing into the sea)', 5: '113'}
+84	84		202							{1: '1', 2: '2', 6: '1'}
+85	85		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+86	86		306							{1: '1'}
+87	87		504							{1: '0.8'}
+88	88		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+89	89		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3001_09.jpg'}
+90	90		302							"{2: 'I saw Bianca in a new frame called ""Stigmata"".', 3: '91'}"
+91	91		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+92	92		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory625.jpg'}
+93	93		302							{2: 'She fell into the Red Tide at the aquarium.', 3: '94'}
+94	94		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+95	95		306							
+96	96		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+97	97		504							
+98	98		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+99	99		201							{1: '1', 2: '500011', 3: '5', 4: '400'}
+100	100		201							{1: '2', 2: '500012', 4: '-400'}
+101	101		301			DialogEnable				"{1: '1', 3: ""An Ascendant used the sewers to avoid Babylonia's satellite surveillance, led the Red Tide into the aquarium, and then...""}"
+102	102		202							{1: '1', 2: '2', 6: '1'}
+103	103		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+104	104		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory614.jpg'}
+105	105		504							{1: '0.8'}
+106	106		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+107	107		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+108	108		301							"{1: '1', 3: ""The blurry images freeze on grotesque Hetero-Sapien limbs. No matter how hard you stare, the Red Tide's illusion obscures what lies beyond.""}"
+109	109		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+110	110		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+111	111		504							
+112	112	138	101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+113	113		202							{1: '1', 2: '2', 6: '1'}
+114	114		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+115	115		306							{1: '1'}
+116	116		504							{1: '0.8'}
+117	117		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+118	118		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory612.jpg'}
+119	119		302							{2: 'I saw the Red Tide spreading through the sea.', 3: '120'}
+120	120		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+121	121		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory625.jpg'}
+122	122		302							{2: 'The Ascendant Lithos used the sewers to avoid satellite surveillance and led the Red Tide into the aquarium.', 3: '123'}
+123	123		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+124	124		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3001_09.jpg'}
+125	125		301			DialogEnable				"{3: 'Bianca switched to a frame called ""Stigmata"" and stepped inside the aquarium. After that...'}"
+126	126		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+127	127		504							{1: '0.8'}
+128	128		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+129	129		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+130	130		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory614.jpg'}
+131	131		301							"{3: ""The blurry images freeze on grotesque Hetero-Sapien limbs. No matter how hard you stare, the Red Tide's illusion obscures what lies beyond.""}"
+132	132		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+133	133		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+134	134		504							{1: '0'}
+135	135		306							
+136	136		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+137	137		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+138	138		201							{1: '1', 2: '500011', 3: '5', 4: '400'}
+139	139		201							{1: '2', 2: '500012', 4: '-400'}
+140	140		301							{1: '1', 2: 'Hassen', 3: '...', 4: '1'}
+141	141		301							"{2: 'Nikola', 3: 'You ""saw shadows""...', 4: '2'}"
+142	142		301							"{2: 'Nikola', 3: ""I can't accept vague explanations like that. Or maybe..."", 4: '2'}"
+143	143		301							"{3: ""Nikola's gaze now clearly carries a scrutinizing edge.""}"
+144	144		204							{1: '1'}
+145	145		301							{2: 'Hassen', 3: 'Relax, Nikola. You and I both know the Gray Raven Commandant is the last person to be doubted.', 4: '1'}
+146	146		301							"{3: ""Hassen places his hand on Nikola's shoulder, his words steady and deliberate.""}"
+147	147		301							{2: 'Nikola', 3: '...Okay.', 4: '2'}
+148	148		301							{3: 'Nikola gives a faint nod and settles back into his chair, seemingly trying to gather his thoughts.'}
+149	149		302							"{2: 'Maybe... it\'s because of the ""Time Prison"".', 3: '150'}"
+150	150		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+151	151		202							{1: '1', 2: '2', 6: '1'}
+152	152		504							{1: '0.7'}
+153	153		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+154	154		201							{1: '1', 2: '500004', 7: '1'}
+155	155		301							"{1: '1', 3: 'After experiencing such ""hallucinations,"" you have discussed the situation with Asimov.'}"
+156	156		301							"{3: ""Simple deja vu fails to explain these intricate cause-and-effect visions, while dismissing them as mere fabricated memories doesn't account for their startling level of detail.""}"
+157	157		301							"{2: 'Asimov', 3: ""No... it can't possibly be a Mind Beacon problem."", 4: '1'}"
+158	158		301							"{2: 'Asimov', 3: ""I've checked your Mind Beacon every way I can, and more than once. There are no issues whatsoever."", 4: '1'}"
+159	159		301							"{2: 'Asimov', 3: 'Given your experiences... I suspect the answer lies in the ""Time Prison"".', 4: '1'}"
+160	160		302							{2: 'You mean...', 3: '161'}
+161	161		301							"{2: 'Asimov', 3: 'I haven\'t been through the same ""events"" as you, but from what you\'ve described, this ""Time Prison"" sounds like a distorted timeline.', 4: '1'}"
+162	162		301							"{2: 'Asimov', 3: 'Remember when you used the White Noise device to connect with Selena inside the ""Time Prison""? At that time, your Mind Beacon was fully exposed to ""abnormal time.""', 4: '1'}"
+163	163		301							"{2: 'Asimov', 3: 'That might explain the deja vu you\'ve been experiencing at certain times. Those visions could be fragments from such ""abnormal timelines.""', 4: '1'}"
+164	164		302							{2: 'Is that so...', 3: '165'}
+165	165		301							"{2: 'Asimov', 3: ""I'm not sure."", 4: '1'}"
+166	166		301							"{2: 'Asimov', 3: ""Humanity's understanding of the universe is still incomplete. We are all seekers on this journey."", 4: '1'}"
+167	167		301							{2: 'Asimov', 3: 'This is just one possible answer I can derive from the current circumstances...', 4: '1'}
+168	168		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+169	169		202							{1: '1', 6: '1'}
+170	170		504							
+171	171		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+172	172		201							{1: '1', 2: '500011', 3: '5', 4: '400', 7: '1'}
+173	173		201							{1: '2', 2: '500012', 4: '-400', 7: '1'}
+174	174		301							{1: '1', 2: 'Nikola', 3: '...', 4: '2'}
+175	175		301							{2: 'Hassen', 3: 'Have your visions given you any more details?', 4: '1'}
+176	176		301							"{2: 'Hassen', 3: ""Like the Ascendant's movements, or even rough locations of Bianca and Chiko?"", 4: '1'}"
+177	177		302							"{2: ""I tried, but I couldn't make out any clearer details."", 3: '178', 4: ""I tried, but I couldn't see anything more."", 5: '178'}"
+178	178		301							{2: 'Hassen', 3: '...', 4: '1'}
+179	179		301							{3: 'After exchanging another glance with Nikola, Hassen ponders for a moment.'}
+180	180		301							"{2: 'Hassen', 3: ""The mission goes ahead as planned. As for the specifics, we'll re-evaluate once we've factored in the intel you've given us and figure out if we need to send in more people."", 4: '1'}"
+181	181		301							"{2: 'Hassen', 3: ""And keep this under wraps. Don't breathe a word of it to anyone else."", 4: '1'}"
+182	182		302				AniZhuanchangBegin			{2: 'Understood.', 3: '184'}
+183	183		401							{1: '2', 2: '2661'}
+184	184		202			DialogDisable			500.0	{1: '1', 2: '2', 6: '1'}
+185	185		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+186	186		201							{1: '1', 2: '500011', 3: '5', 4: '400'}
+187	187		201							{1: '2', 2: '500012', 4: '-400'}
+188	188		301			DialogEnable				{1: '1', 3: 'The conference room door softly clicks shut from the outside. Silence settles back into the room. After a moment, Nikola speaks.'}
+189	189		301							"{2: 'Nikola', 3: ""I'm deploying a covert team to investigate the Purifying Force, thoroughly. As for Kurono, we need to move immediately to assess any potential intel leaks."", 4: '2'}"
+190	190		301							{2: 'Hassen', 3: 'Hm?', 4: '1'}
+191	191		301							"{2: 'Nikola', 3: ""Bianca only switched to the new frame just before landing, and Stigmata was developed under Kurono's tightest security protocols."", 4: '2'}"
+192	192		301							{2: 'Nikola', 3: 'If there was a breach, we need to trace every possible vector and ensure it never happens again.', 4: '2'}
+193	193		301							"{2: 'Nikola', 3: ""But if it's not..."", 4: '2'}"
+194	194		306							{1: '1'}
+195	195		301							"{3: '""Time Prison"", ""visions""...'}"
+196	196		306							
+197	197		301							"{2: 'Nikola', 3: ""Asimov may provide a physical explanation for what 【kuroname】 has been seeing, but until we have the data verified, I'll remain skeptical."", 4: '2'}"
+198	198		301							"{2: 'Nikola', 3: ""For that to happen at this particular moment... I can't help but question whether there's more to it."", 4: '2'}"
+199	199		301							{2: 'Hassen', 3: 'I understand your concerns, but our primary objective is still the same. We need to extract Bianca quickly and figure out exactly what happened at the aquarium.', 4: '1'}
+200	200		301							"{2: 'Hassen', 3: ""The Gray Raven Commandant has extensive field experience. While these are just theories at this stage... if they become reality, whether it's a full-scale Red Tide Influx or some Ascendant engineering those Hetero-Sapien creatures, either scenario would be far more difficult to control."", 4: '1'}"
+201	201		301							{2: 'Nikola', 3: '...', 4: '2'}
+202	202		301							"{3: ""Nikola falls into silence but accepts Hassen's judgment without protest.""}"
+203	203		301							{2: 'Hassen', 3: 'Which elite squads do we still have stationed in Babylonia?', 4: '1'}
+204	204		301				AniZhuanchangBegin			"{2: 'Nikola', 3: ""Dark Aries, but I still don't recommend deploying them for now. Cerberus is on a surface patrol mission and hasn't returned yet. There's also..."", 4: '2'}"
+205	205		401							{1: '1', 2: '36'}
+206	206		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+207	207		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory965.png'}
+208	208		401							{1: '1', 2: '229'}
+209	209		107							{1: 'Babylonia', 2: 'Operations Room'}
+210	210		301							{3: 'Babylonia, Lounge.'}
+211	211		108							{1: '1'}
+212	212		301			DialogEnable				"{3: ""Following Hassen and Nikola's reassessment, the mission's threat level has been updated, prompting adjustments to gear and provisions.""}"
+213	213		301							{3: 'As Lucia organizes the combat supplies, you sift through the mission reports from the last three operations...'}
+214	214		509						700.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png', 2: '1'}
+215	215		201							{1: '1', 2: '500026', 4: '-550'}
+216	216		301							{1: '1', 2: 'Lee', 3: 'Commandant.', 4: '1'}
+217	217		302							{2: 'Lee?', 3: '218'}
+218	218		301							"{2: 'Lee', 3: ""I'm applying to join you on the surface mission. You approve it first, then I'll go talk to Celica about it."", 4: '1'}"
+219	219		302							{2: 'Huh?', 3: '220', 4: 'But Hyperreal...', 5: '220'}
+220	220		301							"{2: 'Lee', 3: ""I was going through your mission files and suddenly found out that your mission rating's been adjusted."", 4: '1'}"
+221	221		502							{1: 'DialogDisable'}
+222	222		302							"{2: ""That's not a big deal."", 3: '223', 4: ""Don't worry."", 5: '223'}"
+223	223		302							"{2: ""We'll come back safely."", 3: '224'}"
+224	224		204							{1: '1', 2: '10'}
+225	225		301			DialogEnable				"{2: 'Lee', 3: ""I've heard that promise too many times before, but it's rarely kept."", 4: '1'}"
+226	226		204							{1: '1'}
+227	227		301				DialogDisable			{2: 'Lee', 3: 'I should be going with you...', 4: '1'}
+228	228		302							"{2: ""Doesn't Hyperreal's adjustment require your input at all times?"", 3: '246', 4: 'Well...', 5: '229'}"
+229	229		204							{1: '1', 2: '10'}
+230	230		301			DialogEnable				{2: 'Lee', 3: '...', 4: '1'}
+231	231		302				AniZhuanchangBegin			{2: 'Asimov already told me.', 3: '232'}
+232	232		510						500.0	{1: '1', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+233	233		504							{1: '0.7'}
+234	234		202							{1: '1', 6: '1'}
+235	235		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+236	236		201							{1: '1', 2: '500004'}
+237	237		301			AniZhuanchangEnd				"{1: '1', 2: 'Asimov', 3: ""Covering for him—rushing out mid-adjustment in a specialized frame just to find you in the lounge—was already more than generous. Don't push your luck."", 4: '1'}"
+238	238		301				AniZhuanchangBegin			{2: 'Asimov', 3: 'The specialized frame is in a critical adaptation phase. Right now, field deployment is not advisable.', 4: '1'}
+239	239		202							{1: '1', 6: '1'}
+240	240		509						500.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png', 2: '1'}
+241	241		504							
+242	242		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory965.png'}
+243	243		201							{1: '1', 2: '500026', 3: '10', 4: '-550', 7: '1'}
+244	244		301			AniZhuanchangEnd	DialogDisable			{1: '1', 2: 'Lee', 3: '...', 4: '1'}
+245	245		302							{2: 'Thank you, Lee.', 3: '246'}
+246	246		204							{1: '1'}
+247	247		302							"{2: ""I'll be extra careful."", 3: '248'}"
+248	248		301			DialogEnable				{2: 'Lee', 3: 'I still think...', 4: '1'}
+249	249		401							{1: '2', 2: '1099'}
+250	250		301							{3: 'A brief chime from the terminal interrupts your conversation. Hassen has sent some extra video footage.'}
+251	251		201							{1: '18', 2: '500311', 4: '-50', 5: '-100'}
+252	252		301							{1: '1', 2: 'Science Council Staff', 3: 'Lee...? Lee, are you there? Asimov is looking for you...', 4: '18'}
+253	253		202							{1: '18', 6: '1'}
+254	254		301							{2: 'Lee', 3: '...Just remember: safety first, no exceptions. And keep your comms open all the time.', 4: '1'}
+255	255		302							{2: 'No problem.', 3: '256'}
+256	256		202							{1: '1'}
+257	257		510							{1: '1', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+258	258		301							"{3: ""The call drops, and Lee's image vanishes from the terminal's screen.""}"
+259	259		201							{1: '1', 2: '500166'}
+260	260		301							"{1: '1', 2: 'Lucia', 3: ""Liv can't join us this time either..."", 4: '1'}"
+261	261		302							"{2: ""Liv's new frame is also in the research cycle."", 3: '262'}"
+262	262		301							"{3: ""The Empyrea frame has always been a work in progress. Ever since Liv got back to Babylonia, the Science Council's been wanting to revamp it, which means Liv has to be available to help them out constantly.""}"
+263	263		302							"{2: ""A new frame—I guess that's good news, at least."", 3: '264', 4: ""It's good to stay busy. Yeah, staying busy is good."", 5: '264'}"
+264	264		301							{2: 'Lucia', 3: 'Yeah, these are all good things.', 4: '1'}
+265	265		204							{1: '1', 2: '1'}
+266	266		301							{2: 'Lucia', 3: 'Everything will be fine eventually.', 4: '1'}
+267	267		302							"{2: ""That's right."", 3: '268', 4: ""It'll be fine."", 5: '268'}"
+268	268		401							{1: '2', 2: '1099'}
+269	269		204							{1: '1'}
+270	270		301							"{2: 'Lucia', 3: ""...It's a notice from the transport aircraft. Some mission supplies just got delivered straight to the plane. We need to go check the inventory as soon as possible."", 4: '1'}"
+271	271		302				AniZhuanchangBegin			{2: 'Mm.', 3: '272', 4: 'Sure thing.', 5: '272'}
+272	272		202							{1: '1', 6: '1'}
+273	273		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory266.png'}
+274	274		301			AniZhuanchangEnd				"{3: ""At this hour, most of Babylonia's soldiers and staff are tied up at their posts, leaving the corridor leading to the transport aircrafts pretty empty.""}"
+275	275		401							{1: '2', 2: '1099'}
+276	276		301							{3: 'Just as you are about to pocket your terminal and head for the landing pad, it chimes again—a message from Nikola with intel from the third rescue team.'}
+277	277		302				AniZhuanchangBegin			{2: 'This frame...', 3: '278'}
+278	278		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1291.jpg'}
+279	279		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '2'}
+280	280		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+281	281		201							{1: '1', 2: '500533', 7: '1'}
+282	282		201							{1: '18', 2: '500166', 4: '-100', 5: '-125', 6: '100', 7: '1'}
+283	283		301			AniZhuanchangEnd				{1: '1', 2: 'Lucia', 3: '...Bianca?', 4: '18'}
+284	284		202							{1: '18'}
+285	285		301				AniZhuanchangBegin			{3: 'Bianca shows up on camera, wearing a dark frame that you find both strange and oddly familiar.'}
+286	286		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab'}
+287	287		505						1000.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+288	288		201							{1: '1', 2: '500533', 6: '1'}
+289	289		301			AniZhuanchangEnd				{1: '1', 2: 'Bianca', 3: 'Our primary objective is to confirm the survival status of the first and second rescue teams, and locate Chiko, the vice captain of the Purifying Force who went missing at the aquarium...', 4: '1'}
+290	290		401							{1: '2', 2: '4526'}
+291	291		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+292	292		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+293	293		301							"{2: 'Bianca', 3: ""We've made it... to the designated position... Below us is the Copperfield Aquarium..."", 4: '1'}"
+294	294		202							{1: '1'}
+295	295		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab'}
+296	296		301							"{3: ""She shifts slightly, revealing a leaden gray ocean behind her that looks like a liquid graveyard, weighing heavily on the earth's surface—""}"
+297	297		401							{1: '2', 2: '2975'}
+298	298		401							{1: '1', 2: '36'}
+299	299		306							{1: '1'}
+300	300		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen03.prefab', 2: '3'}
+301	301		104						450.0	{1: '0|0|-200', 2: '0.4'}
+302	302		104							{1: '0|0|0', 2: '0.3'}
+303	303		504							{1: '1', 2: '999'}
+304	304		301							"{3: ""Your own heartbeat drums in your ears as a shadow takes shape at the ocean's edge...""}"
+305	305		401							{1: '1', 2: '160'}
+306	306		201							{1: '1', 2: '501033'}
+307	307		301							{1: '1', 2: '???', 3: '...', 4: '1'}
+308	308		104						1000.0	{1: '-100|-100|-200', 2: '1'}
+309	309		301							"{3: ""A pale girl commands the center of vision, her silent presence drawing your gaze upward, beyond the sea's horizon.""}"
+310	310		202							{1: '1'}
+311	311		302							"{2: ""That's..."", 3: '312'}"
+312	312		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+313	313		201							{1: '1', 2: '501284', 7: '1'}
+314	314		205							{1: '1', 3: '0.5', 4: '0.5', 5: '0'}
+315	315		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+316	316		301							{1: '1', 3: 'Suddenly, the silhouette of a female Construct materializes right before you.'}
+317	317		302							{2: 'Bianca...', 3: '318'}
+318	318		301							{2: 'Bianca', 3: '...Commandant... 【kuroname】?', 4: '1'}
+319	319		301							"{2: 'Bianca', 3: ""I'm... not at the aquarium..."", 4: '1'}"
+320	320		301				DialogDisable			{2: 'Bianca', 3: 'Ugh... is this visual distortion from a M.I.N.D. deviation?', 4: '1'}
+321	321		302							{2: 'Bianca?', 3: '322', 4: 'Can you hear me?', 5: '322'}
+322	322		302							"{2: ""What's your situation right now?"", 3: '323', 4: 'Tell me your exact coordinates!', 5: '323'}"
+323	323		301			DialogEnable				"{3: ""Nothing. She's completely unresponsive, like she can't hear a word you're saying.""}"
+324	324		301							{2: 'Bianca', 3: 'Careful... tropical fish... Red Tide at the aquarium...', 4: '1'}
+325	325		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '3'}
+326	326		401							{1: '2', 2: '966'}
+327	327		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+328	328		203						200.0	{1: '1', 2: '0', 3: '-500', 5: '200'}
+329	329		203						200.0	{1: '1', 2: '0', 3: '300', 5: '-100'}
+330	330		203						200.0	{1: '1', 2: '0', 3: '-200'}
+331	331		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+332	332		202							{1: '1', 6: '1'}
+333	333		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+334	334		301							"{3: ""Just like that, Bianca's image flickers a few times and then she's gone.""}"
+335	335		104						1000.0	{1: '0|0|0', 2: '1'}
+336	336		201							{1: '1', 2: '501033'}
+337	337		301				DialogDisable			{1: '1', 2: '???', 3: '...', 4: '1'}
+338	338		302							{2: 'What just happened?', 3: '339'}
+339	339		302							{2: 'Who are you?', 3: '340', 4: 'Bianca just now...', 5: '340'}
+340	340		301			DialogEnable				{3: 'The red-eyed girl just stands there, silent, her finger pointing into the distance.'}
+341	341		302				AniZhuanchangBegin			"{2: ""What's over there—"", 3: '342'}"
+342	342		202							{1: '1', 6: '1'}
+343	343		401							{1: '2', 2: '966'}
+344	344		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3MainChangeScreenRed.prefab', 2: '3'}
+345	345		504							
+346	346		306							
+347	347		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_09.jpg'}
+348	348		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3MainChangeScreenRed.prefab'}
+349	349		301			AniZhuanchangEnd				"{3: ""There, you witness the Red Tide surge backward into the ocean as a huge, humanoid shadow starts to slowly emerge from the water. It's chanting a dirge, a sound as crushing as a tsunami.""}"
+350	350		401							{1: '1', 2: '36'}
+351	351		401							{1: '2', 2: '2975'}
+352	352		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+353	353		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory266.png'}
+354	354		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen03.prefab'}
+355	355		301							"{3: 'A jolt of cold sweat runs down your back as Babylonia\'s harsh, artificial sunlight snaps you out of that ""vision.""'}"
+356	356		401							{1: '1', 2: '250'}
+357	357		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+358	358		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgCg/Cg5701_09.jpg', 3: '0', 4: '1', 5: '0'}
+359	359		301							"{3: 'That is... the ""lost"" remains of the Hetero-Humanoid twins.'}"
+360	360		301							"{3: 'It\'s anyone\'s guess how the Ascendants managed to snatch the barely surviving twins, but with ""samples"" in hand, ""breeding"" new monsters is clearly a breeze for them.'}"
+361	361		301							"{3: 'Bianca\'s fragmented words still echo in your mind. The aquarium... the Red Tide... ""Hetero-Creatures""...'}"
+362	362		401							{1: '2', 2: '1099'}
+363	363		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+364	364		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+365	365		301							{3: 'Before you can make sense of it, a sharp buzz from your terminal jolts you back to the present. Your transport is leaving soon.'}
+366	366		302							"{2: ""There's no time left..."", 3: '367'}"
+367	367		301							{3: 'Your brain feels thick, like a waterlogged sponge, as you fight against this intense feeling of deja vu...'}
+368	368		111				DialogDisable		2000.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+369	369		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+370	370		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+371	371		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+372	372		301			DialogEnable				{2: '??', 3: '...Is this the medicine you need?'}
+373	373		301							"{2: 'Lucia', 3: ""That's right, thank you...""}"
+374	374		301							{3: 'Consciousness creeps back into your body, and the muffled voices of nearby people drift into your awareness.'}
+375	375		302				DialogDisable			{2: 'Lucia...', 3: '376'}
+376	376		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png', 3: '0', 4: '1', 5: '1'}
+377	377		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+378	378		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+379	379		201							{1: '1', 2: '500166', 3: '1', 4: '400'}
+380	380		201							{1: '2', 2: '500146', 4: '-400'}
+381	381		301			DialogEnable				"{1: '1', 2: 'Lucia', 3: ""Commandant?! You're awake!"", 4: '1'}"
+382	382		302							{2: 'I...', 3: '383', 4: '?!', 5: '383'}
+383	383		301							{3: 'When your consciousness finally returns, you find yourself lying inside the transport craft. Lucia and a familiar blonde-haired young man stand nearby, their faces etched with concern as they look at you.'}
+384	384		204							{1: '1', 2: '5'}
+385	385		301							"{2: 'Lucia', 3: ""We were just watching the mission footage. At first, we were talking about Bianca's frame, but then you just... took off. You walked forward without saying a word, like you weren't even there..."", 4: '1'}"
+386	386		301							{2: 'Lucia', 3: 'I tried to get you to stop, but it was tough. Murray had just hopped off the transport and said hello, but you just plowed right into him...', 4: '1'}
+387	387		301							{2: 'Murray', 3: 'Should I get Star of Life on the horn for you?', 4: '2'}
+388	388		302							{2: 'Not right now... thanks, though.', 3: '389'}
+389	389		202							{1: '1', 2: '2'}
+390	390		301							{3: 'In your hazy mind, the visions you just had remain sharp and vivid.'}
+391	391		302							"{2: ""I've got to tell Hassen and Nikola about this..."", 3: '392'}"
+392	392		301							"{3: ""Regular terminal comms in Babylonia can be bugged. Outside the military's encrypted channels, classified intelligence is typically relayed the old-fashioned way—on paper.""}"
+393	393		301							{3: 'A slightly urgent voice cuts into your thoughts.'}
+394	394		201							{1: '1', 2: '500965'}
+395	395		301							"{1: '1', 2: 'Transport Craft Pilot', 3: ""Departure's almost a go. Make sure you've got all your personal gear, and all non-essential personnel need to bail out now."", 4: '1'}"
+396	396		302							"{2: ""I'm really sorry, but would it be possible to hold off on our departure?"", 3: '397'}"
+397	397		301							"{2: 'Transport Craft Pilot', 3: ""No go. The surface's been too rough, especially in your drop zone."", 4: '1'}"
+398	398		301							"{2: 'Transport Craft Pilot', 3: ""The Punishing concentration is off the charts, and with these shifting winds, it's a real gamble for our flight."", 4: '1'}"
+399	399		301							{2: 'Transport Craft Pilot', 3: 'After I drop you, I still have to swing back and pick up another team headed for the disaster zone for rescue ops...', 4: '1'}
+400	400		302							{2: 'I hear you...', 3: '401'}
+401	401		301				DialogDisable			{3: 'As your mind races through various possibilities, you catch sight of Murray getting ready to disembark.'}
+402	402		302							{2: 'Just give me ten minutes. Please. Ten minutes before we take off. Thanks.', 3: '403'}
+403	403		202							{1: '1', 6: '1'}
+404	404		302							{2: 'Murray!', 3: '405'}
+405	405		201							{1: '1', 2: '500146'}
+406	406		301			DialogEnable				{1: '1', 2: 'Murray', 3: 'Gray Raven Commandant? Do you need something else?', 4: '1'}
+407	407		301							{3: 'The young blonde man turns, a puzzled smile on his face.'}
+408	408		301				DialogDisable			"{2: 'Murray', 3: ""I still think you should get checked out at the Star of Life... Hm? What's this?"", 4: '1'}"
+409	409		302							{2: '(Input vital information into the terminal)', 3: '410'}
+410	410		302							{2: 'This is crucial. Please get this chip to either Celica or Nikola.', 3: '411'}
+411	411		301			DialogEnable				"{3: ""You're not entirely sure this young man can be trusted, but given Lee's connection to him, along with those fragments Nikola once mentioned, he seems like the only option left.""}"
+412	412		301							{3: 'At least this is a far safer bet than a transport robot or trying to transmit it through the terminal.'}
+413	413		302							{2: '(Hand the chip to Murray)', 3: '414'}
+414	414		301							{3: 'Dust motes hang in the harsh artificial sunlight. A cloud drifts past, and blinding pinpricks of light pierce your vision. Everything around you feels surreal. Murray stands before you, his image shimmering under the intense glare—'}
+415	415		301							{2: 'Murray', 3: 'Alright, but...', 4: '1'}
+416	416		302							"{2: 'No time to explain—', 3: '417', 4: ""I'll hit you up on the terminal later—"", 5: '417'}"
+417	417		202							{1: '1'}
+418	418		301							{3: 'Murray steps off the transport with the chip, completely bewildered by what just happened.'}
+419	419		401							{1: '2', 2: '2866'}
+420	420		301		1		AniZhuanchangBegin			{3: 'With a deafening roar, the transport slowly pulls away from Babylonia.'}

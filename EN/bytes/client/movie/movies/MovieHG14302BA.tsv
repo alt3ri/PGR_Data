@@ -1,0 +1,141 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory266.png'}
+2	2		401							{1: '1', 2: '210'}
+3	3		107						3000.0	{1: 'Spaceport'}
+4	4		108							{1: '1'}
+5	5		301			DialogEnable				{3: 'It appears like she has been waiting here for some time. As you draw near, the pink-haired Construct waves at you gently.'}
+6	6		201							{1: '1', 2: '500864', 3: '1'}
+7	7		301							{1: '1', 2: 'Teddy', 3: 'Over here!', 4: '1'}
+8	8		302							{2: 'So, where are we going?', 3: '9'}
+9	9		301							"{2: 'Teddy', 3: ""We're heading to... Constellia."", 4: '1'}"
+10	10		302							"{2: 'Constellia?', 3: '11', 4: ""If we're going down, I need approval..."", 5: '11'}"
+11	11		301							"{2: 'Teddy', 3: ""Don't worry. I've already filed a mission request for you as the vice-captain of the Engineering Force... Celica gave it the green light right away."", 4: '1'}"
+12	12		204							{1: '1', 2: '2'}
+13	13		301							"{2: 'Teddy', 3: 'However, just taking a walk around Constellia isn\'t the ""sincerity"" I had in mind. Think of it as... an appetizer.', 4: '1'}"
+14	14		302							{2: 'Then what do you want...', 3: '15'}
+15	15		301							{2: 'Teddy', 3: 'Join me for the stress test with the new transport crew at Constellia.', 4: '1'}
+16	16		302							"{2: ""...That's it?"", 3: '17', 4: ""That's all you want?"", 5: '17'}"
+17	17		201							{1: '1', 2: '500864', 7: '1'}
+18	18		301							{2: 'Teddy', 3: 'Hmm...', 4: '1'}
+19	19		204							{1: '1', 2: '10'}
+20	20		301							"{2: 'Teddy', 3: ""Now I'm feeling unsatisfied, like my bargain deal was accepted too easily."", 4: '1'}"
+21	21		301							{3: 'She squints her eyes at you.'}
+22	22		204							{1: '1', 2: '3'}
+23	23		301							{2: 'Teddy', 3: 'How about...', 4: '1'}
+24	24		302							{2: 'I think we should just leave it like this.', 3: '28', 4: 'How about I treat you to a cherry-flavored electrolyte?', 5: '25'}
+25	25		204							{1: '1', 2: '1'}
+26	26		301							{2: 'Teddy', 3: 'Eh, you actually remember that...', 4: '1'}
+27	27		301							{2: 'Teddy', 3: 'Your memory is really something else...', 4: '1'}
+28	28		204							{1: '1', 2: '1'}
+29	29		301							"{2: 'Teddy', 3: ""It's a deal, then."", 4: '1'}"
+30	30		204							{1: '1', 2: '15'}
+31	31		301							{2: 'Teddy', 3: 'This all started with your wild squad member, after all, setting up a defensive countermeasure program like that in the whitelist...', 4: '1'}
+32	32		301							{2: 'Teddy', 3: 'A day of your time as compensation for a day of my workload—sounds like a fair trade.', 4: '1'}
+33	33		302							{2: 'So...', 3: '34'}
+34	34		204							{1: '1', 2: '1'}
+35	35		301							{2: 'Teddy', 3: 'Here. This is our schedule for today.', 4: '1'}
+36	36		301							{3: 'She brings up the terminal, revealing a lengthy list of scheduled activities.'}
+37	37		301							"{2: 'Teddy', 3: ""First up, we'll take a look around Constellia. Those mechanoids always hide some gems from the Golden Age."", 4: '1'}"
+38	38		301							"{2: 'Teddy', 3: ""This place, that place, and this one too... After we're done, we'll join the stress test for the new transport crew."", 4: '1'}"
+39	39		302							{2: '...This schedule is jam-packed. Can we really finish it?', 3: '40', 4: 'Alright.', 5: '42'}
+40	40		204							{1: '1', 2: '2'}
+41	41	44	301							"{2: 'Teddy', 3: ""I've planned it down to the last detail, so there won't be any problems."", 4: '1'}"
+42	42		204							{1: '1', 2: '2'}
+43	43		301							"{2: 'Teddy', 3: ""Surprisingly agreeable, aren't you?"", 4: '1'}"
+44	44		204							{1: '1', 2: '1'}
+45	45		401							{1: '2', 2: '2866'}
+46	46		301							"{2: 'Teddy', 3: ""...The transport craft's here. Let's go."", 4: '1'}"
+47	47		301				AniZhuanchangBegin			{2: 'Teddy', 3: 'First stop—Constellia!', 4: '1'}
+48	48		502							{1: 'DialogDisable'}
+49	49		202							{1: '1', 6: '1'}
+50	50		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory671.jpg'}
+51	51		107			AniZhuanchangEnd			3000.0	{1: 'Constellia'}
+52	52		108							{1: '1'}
+53	53		301			DialogEnable				{1: '1', 3: 'The intricate mechanoid city always gives the impression that you could easily lose your way in its twisting streets and alleys, regardless of how many times you traverse them.'}
+54	54		301							"{3: ""However, Teddy effortlessly guides you through a series of twists and turns into an unmarked path on the map, as if she's simply navigating through the Engineering Force.""}"
+55	55		302							{2: 'How do you guys find these routes...?', 3: '56'}
+56	56		201							{1: '1', 2: '500864'}
+57	57		301							{1: '1', 2: 'Teddy', 3: 'We technicians have our own ways, you know.', 4: '1'}
+58	58		204							{1: '1', 2: '2'}
+59	59		301							"{2: 'Teddy', 3: ""Want to learn it? Shell out the tuition, and I'll squeeze in some teaching when I can."", 4: '1'}"
+60	60		204							{1: '1', 2: '4'}
+61	61		301							{2: 'Teddy', 3: 'Eh... Hold on.', 4: '1'}
+62	62		302							"{2: ""What's up?"", 3: '63', 4: '...?', 5: '63'}"
+63	63		301							{3: 'Teddy abruptly halts in her tracks. Following her gaze, you catch sight of none other than the long-unseen eldest son of the Norman family.'}
+64	64		301							{2: 'Teddy', 3: '...Leonardo?!', 4: '1'}
+65	65		203							{1: '1', 2: '0.5', 3: '1980'}
+66	66		104							{1: '-300|0|-300', 2: '0.5'}
+67	67		202							{1: '1'}
+68	68		301							{3: 'She quickly pulls you behind a surprisingly tall trash can built for some unknown reason.'}
+69	69		201							{1: '1', 2: '500864', 3: '10'}
+70	70		301							{1: '1', 2: 'Teddy', 3: '...What brings him here?', 4: '1'}
+71	71		301							{2: 'Teddy', 3: 'Why does he have all this free time... Did Victoria not load him up with enough work?', 4: '1'}
+72	72		302							"{2: ""Didn't you two make up already?"", 3: '73'}"
+73	73		204							{1: '1', 2: '5'}
+74	74		301							{2: 'Teddy', 3: 'Who are you talking about? Clearly not me.', 4: '1'}
+75	75		301							{3: 'Even though she manages to hide in time, Leonardo appears to have sensed something strange and begins walking in your direction.'}
+76	76		204							{1: '1', 2: '4'}
+77	77		301							"{2: 'Teddy', 3: ""I can't get stuck with him, or he'll definitely start spouting nonsense, and our plans for today will be ruined."", 4: '1'}"
+78	78		301							{3: 'After glancing around, Teddy suddenly gives you a hard push.'}
+79	79		202							{1: '1'}
+80	80		502						1000.0	{1: 'RImgBg1Shake'}
+81	81		104							{1: '0|0|0', 2: '0.5'}
+82	82		302							{2: '?!', 3: '83', 4: 'Uh... Huh?', 5: '83'}
+83	83		301							{2: 'Teddy', 3: 'Please... Keep him occupied!', 4: '1'}
+84	84		301							{3: 'With a playful wink, she slips into a nearby shop.'}
+85	85		301							{3: 'Before you can regain your composure, Leonardo has already approached you.'}
+86	86		201							{1: '1', 2: '500497'}
+87	87		301							{1: '1', 2: 'Leonardo', 3: '...Hmm? Gray Raven Commandant? I think I saw... Teddy just now?', 4: '1'}
+88	88		301							{2: 'Leonardo', 3: 'Are you on a surface mission with her?', 4: '1'}
+89	89		302							{2: 'Ugh...', 3: '90', 4: 'Teddy?', 5: '93'}
+90	90		204							{1: '1', 2: '2'}
+91	91		301							{2: 'Leonardo', 3: 'Is my dear sister hiding from me...?', 4: '1'}
+92	92	96	301							"{2: 'Leonardo', 3: ""If that's the case, big brother might get a bit hurt!"", 4: '1'}"
+93	93		204							{1: '1', 2: '2'}
+94	94		301							{2: 'Leonardo', 3: 'Is she really not around?', 4: '1'}
+95	95		301							{2: 'Leonardo', 3: 'Hmm...', 4: '1'}
+96	96		302							{2: 'Wh-what are you doing here in Constellia?', 3: '97'}
+97	97		301							{2: 'Leonardo', 3: 'Oh, just some boring stuff. Victoria roped me into assisting with the reconstruction in Constellia, so here I am, checking it out against my will.', 4: '1'}
+98	98		301							"{2: 'Leonardo', 3: ""Handling mechanoids really isn't as interesting as dealing with those sly old foxes in Parliament."", 4: '1'}"
+99	99		202							{1: '1'}
+100	100		301							"{3: 'After finding no sign of Teddy and having some pointless chatter with you, Leonardo leaves with an expression that says, ""This person is no fun.""'}"
+101	101		301							"{3: ""Though you haven't interacted with him much, you are surprised to notice that he appears more at ease than before.""}"
+102	102		301							{3: 'As you watch him walk away, you turn around, your attention caught by a line of dazzling shops. However, you have already forgotten which one Teddy slipped into...'}
+103	103		302							{2: 'Teddy...?', 3: '104'}
+104	104		301							{2: 'Teddy', 3: 'Shh, over here.', 4: '1'}
+105	105		301							{3: 'Tracing her voice around the corner, you quickly spot Teddy in an entirely different coating, peering out from the back door of a shop.'}
+106	106		201							{1: '1', 2: '500865'}
+107	107		301							{1: '1', 2: 'Teddy', 3: 'Did he really leave?', 4: '1'}
+108	108		302							{2: 'He really left.', 3: '109'}
+109	109		204							{1: '1', 2: '4'}
+110	110		301							"{2: 'Teddy', 3: ""Good... Hey, why are you staring at me? Haven't you seen my new coating?"", 4: '1'}"
+111	111		302							"{2: ""I haven't."", 3: '114', 4: 'It looks great.', 5: '112'}"
+112	112		204							{1: '1', 2: '1'}
+113	113		301							{2: 'Teddy', 3: 'This design is inspired by the Golden Age aesthetic.', 4: '1'}
+114	114		204							{1: '1', 2: '1'}
+115	115		301							"{2: 'Teddy', 3: ""I've been itching to put together something like this since I left Gestalt, and I have to say, it turned out pretty well."", 4: '1'}"
+116	116		302							{2: 'Why the sudden change in the coating?', 3: '117'}
+117	117		204							{1: '1', 2: '2'}
+118	118		301							"{2: 'Teddy', 3: ""Obviously, I don't want Leonardo to latch onto me. He's never seen this coating."", 4: '1'}"
+119	119		301							{2: 'Teddy', 3: 'In this getup, even if he accidentally catches a glimpse of me, I can easily fade into the crowd and avoid being found.', 4: '1'}
+120	120		302							{2: '...Are you sure?', 3: '121', 4: 'Sounds like a good plan.', 5: '124'}
+121	121		204							{1: '1', 2: '3'}
+122	122		301							{2: 'Teddy', 3: 'I guess...', 4: '1'}
+123	123		301							{3: 'She responds uncertainly, appearing to be unsure herself.'}
+124	124		204							{1: '1', 2: '4'}
+125	125		301							{2: 'Teddy', 3: 'Speaking of which, how about you... get changed too?', 4: '1'}
+126	126		302							{2: 'Me?', 3: '128', 4: 'Get changed into what?', 5: '127'}
+127	127		301							"{2: 'Teddy', 3: ""New clothes, obviously! What do you think? There's a mechanoid-run clothing store right around the corner."", 4: '1'}"
+128	128		204							{1: '1', 2: '2'}
+129	129		301							"{2: 'Teddy', 3: ""I don't have time to whip up a custom design for you, but I can definitely help you pick something out right now!"", 4: '1'}"
+130	130		302							"{2: 'Sure.', 3: '131', 4: ""I think I'll pass..."", 5: '132'}"
+131	131		302							"{2: ""But doesn't that quirky collector only show up at certain times?"", 3: '133'}"
+132	132		302							"{2: ""By the way, doesn't that quirky collector only show up at certain times?"", 3: '133'}"
+133	133		201							{1: '1', 2: '500865', 7: '1'}
+134	134		301							"{1: '1', 2: 'Teddy', 3: ""Hmph, you just don't want new clothes..."", 4: '1'}"
+135	135		301							{3: 'After considering it, the pink-haired Construct finally decides to abandon the idea of having you change.'}
+136	136		301							"{2: 'Teddy', 3: ""Alright, I'll let you off the hook this time, just for the sake of my new headphones."", 4: '1'}"
+137	137		204							{1: '1', 2: '3'}
+138	138		301							{2: 'Teddy', 3: 'Let me think about where to go next...', 4: '1'}
+139	139		204							{1: '1', 2: '1'}
+140	140		301		1		AniZhuanchangBegin			"{2: 'Teddy', 3: ""Right, it's this way."", 4: '1'}"

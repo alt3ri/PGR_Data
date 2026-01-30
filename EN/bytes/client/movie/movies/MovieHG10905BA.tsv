@@ -1,0 +1,51 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				"{3: ""Tonight in Ayla's studio...""}"
+4	4		201							{1: '1', 2: '500110'}
+5	5		301							{1: '1', 2: 'Ayla', 3: 'Yeah... I know the principle.', 4: '1'}
+6	6		301							{2: 'Ayla', 3: 'But...', 4: '1'}
+7	7		203							{1: '1', 2: '0.25', 3: '400'}
+8	8		201							{1: '2', 2: '500114', 4: '-400'}
+9	9		301							"{1: '1', 2: 'Agent', 3: ""It's like being confused about what to express with the new ideas you just remembered."", 4: '2'}"
+10	10		301							"{2: 'Ayla', 3: ""...You're right."", 4: '1'}"
+11	11		301							{2: 'Agent', 3: '...What did I say to you already?', 4: '2'}
+12	12		202							{1: '2', 6: '1'}
+13	13		203							{1: '1', 2: '0.25'}
+14	14		301							{2: 'Ayla', 3: '?', 4: '1'}
+15	15		201							{1: '1', 2: '500114'}
+16	16		301							"{1: '1', 2: 'Agent', 3: '""If you want your voice to be heard, then you have to let others hear it.""', 4: '1'}"
+17	17		201							{1: '1', 2: '500110'}
+18	18		301							"{1: '1', 2: 'Ayla', 3: ""Wasn't there something else...?"", 4: '1'}"
+19	19		301							"{2: 'Ayla', 3: 'Let me guess... As for how to frame the ""puzzle,"" that is left to the creator...', 4: '1'}"
+20	20		203							{1: '1', 2: '0.25', 3: '400'}
+21	21		201							{1: '2', 2: '500114', 4: '-400'}
+22	22		301							"{1: '1', 2: 'Agent', 3: 'At the very least, you need to at least think of the ""puzzle.""', 4: '2'}"
+23	23		301							{2: 'Agent', 3: 'That being said, no one said it was taboo to ask the audience for guidance. Right?', 4: '2'}
+24	24		301							"{2: 'Agent', 3: 'The so-called ""fourth wall"" is just a wall in the formal sense of the word.', 4: '2'}"
+25	25		202							{1: '2', 6: '1'}
+26	26		203							{1: '1', 2: '0.25'}
+27	27		301							"{2: 'Ayla', 3: ""...You're right."", 4: '1'}"
+28	28		301							"{2: 'Ayla', 3: ""I'll be right back!"", 4: '1'}"
+29	29		201							{1: '1', 2: '500114'}
+30	30		301							{1: '1', 2: 'Agent', 3: 'You should at least thank a person for giving you inspiration before running off...', 4: '1'}
+31	31		301				AniZhuanchangBegin			{2: 'Agent', 3: 'Hmph...', 4: '1'}
+32	32		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory45.jpg'}
+33	33		201							{1: '1', 2: '500110'}
+34	34		301			AniZhuanchangEnd				{1: '1', 2: 'Ayla', 3: 'Miss Celica!', 4: '1'}
+35	35		201							{1: '1', 2: '500001'}
+36	36		301							{1: '1', 2: 'Celica', 3: 'Ah! What brings you here, Ayla?', 4: '1'}
+37	37		201							{1: '1', 2: '500110'}
+38	38		301							{1: '1', 2: 'Ayla', 3: 'Sorry! Can you give me authorization to read some data in the profiles for a bit?', 4: '1'}
+39	39		201							{1: '1', 2: '500001'}
+40	40		301							{1: '1', 2: 'Celica', 3: 'Ah! My key!', 4: '1'}
+41	41		201							{1: '1', 2: '500011'}
+42	42		301							{1: '1', 2: 'Hassen', 3: 'Forget it. Just let her go.', 4: '1'}
+43	43		203							{1: '1', 2: '0.25', 3: '-400'}
+44	44		201							{1: '2', 2: '500001', 4: '400'}
+45	45		301							{1: '1', 2: 'Celica', 3: 'President Hassen?', 4: '2'}
+46	46		301							{2: 'Hassen', 3: 'An artist with inspiration is harder to stop than a Musashi IX...', 4: '1'}
+47	47		301							"{2: 'Hassen', 3: ""If she reads anything that she shouldn't, I'll tell Allen to keep a better handle on his people."", 4: '1'}"
+48	48		202							{1: '1', 2: '2', 6: '1'}
+49	49		201							{1: '1', 2: '500011'}
+50	50		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Hassen', 3: ""But for now... Let her read whatever she's looking for."", 4: '1'}"

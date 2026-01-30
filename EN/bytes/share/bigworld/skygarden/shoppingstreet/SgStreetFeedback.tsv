@@ -1,0 +1,90 @@
+Id	FeedbackType	Desc	Desc2	IconGroupId	DiffScope	StarType	Star	IsFull	GoodsId
+1	10101	"[""{0}'s pizza is absolutely delicious. I give it a 5-star review!"", ""Even by a gourmet's standards, {0}'s pizza is truly excellent.""]"		1		10101	5	True	
+2	10102	"[""I really like <color=#FFA82B>{1}</color>. In {0}'s pizza, the ratio of <color=#FFA82B>{1}</color> is excellent.""]"		1		10102	5	True	1
+3	10103	"[""I hope the <color=#FFA82B>{1}</color> in {0}'s pizza can be a little more <color=#FFA82B>{2}</color>.""]"		1	1	10102	4		1
+4	10103	"[""{0}'s pizza isn't very good. The <color=#FFA82B>{1}</color> should be more <color=#FFA82B>{2}</color>.""]"		1	2	10102	3		1
+5	10103	"[""{0}'s pizza is way too inauthentic! A pizza's <color=#FFA82B>{1}</color> must be <color=#FFA82B>{2}</color>!""]"		1	4	10102	1		1
+6	10102	"[""Really like {0}'s pizza, especially their perfect control of the amount of <color=#FFA82B>{1}</color>.""]"		1		10103	5	True	2
+7	10103	"[""I think it would be better if the <color=#FFA82B>{1}</color> in {0}'s pizza can be a little more <color=#FFA82B>{2}</color>.""]"		1	1	10103	4		2
+8	10103	"[""{0}'s pizza is kind of unorthodox. It would be better if the <color=#FFA82B>{1}</color> could be more <color=#FFA82B>{2}</color>.""]"		1	2	10103	3		2
+9	10103	"[""{0}'s pizza tastes terrible! The <color=#FFA82B>{1}</color> in the pizza should be <color=#FFA82B>{2}</color>!""]"		1	4	10103	1		2
+10	10102	"[""The amount of <color=#FFA82B>{1}</color> in {0}'s pizza is just right.""]"		1		10104	5	True	3
+11	10103	"[""Wishing to add some <color=#FFA82B>{1}</color> to the <color=#FFA82B>{2}</color> in {0}'s pizza.""]"		1	1	10104	4		3
+12	10103	"[""I feel {0}'s pizza wasn't made correctly. I think the <color=#FFA82B>{1}</color> needs to be more <color=#FFA82B>{2}</color>.""]"		1	2	10104	3		3
+13	10103	['Please {0}, learn how to make an authentic pizza. In real pizza, the <color=#FFA82B>{1}</color> should be very <color=#FFA82B>{2}</color>!']		1	4	10104	1		3
+14	10104	"[""{0}'s pizza chef has really got something!""]"		1		10105	5	True	
+15	10105	['The chef at {0} has inconsistent output. It would be best to <color=#FFA82B>get a new chef</color>.']		1		10105	3		
+16	10106	"[""{0}'s pizza is <color=#FFA82B>a little cheaper than I expected</color>.""]"		1	1	10106	5	True	
+17	10106	"[""{0}'s pizza is really a steal! <color=#FFA82B>It's so cheap</color>!""]"		1	2	10106	5	True	
+18	10106	['Is {0} going to go broke? At this <color=#FFA82B>price</color>, they can <color=#FFA82B>barely cover the costs</color>!']		1	4	10106	5	True	
+19	10107	"[""{0}'s pizza has got <color=#FFA82B>just the right price</color> for me.""]"		1		10106	5	True	
+20	10108	"[""It would be better if {0}'s pizza could be <color=#FFA82B>a little cheaper</color>.""]"		1	1	10106	4		
+21	10108	"[""Even for a pizza lover like me, {0}'s pizza is <color=#FFA82B>pretty expensive</color>.""]"		1	2	10106	3		
+22	10108	['{0} charges <color=#FFA82B>way more</color> for fast food pizza than for proper meals. Who can afford that?!']		1	4	10106	1		
+23	10201	['{0} has everything I love at reasonable prices!', '{0} is truly my dream store. It has everything I want at the prices that I can afford.']		1		10201	5	True	
+24	10202	"['I found everything I wanted at {0}. Not bad.', ""{0}'s product selection is excellent. I love everything they got.""]"		1		10202	5	True	
+25	10206	"[""Wanted to buy something that could <color=#FFA82B>restore energy</color> at {0}, but couldn't find any.""]"		1		10202	3		1
+26	10206	"[""My Construct friend asked me to get him a bottle of <color=#FFA82B>cleaner</color> from {0}, but unfortunately I couldn't find any.""]"		1		10202	3		2
+27	10206	"[""I heard {0} used to sell a really interesting <color=#FFA82B>green jacket</color>, but unfortunately it's no longer available.""]"		1		10202	3		3
+28	10206	"[""I want to buy something at {0} that can make the lounge <color=#FFA82B>smell better</color>, but I don't know what to buy.""]"		1		10202	3		4
+29	10206	"[""I wanted something that could help me <color=#FFA82B>record work meetings</color>, but didn't find any at {0}.""]"		1		10202	3		5
+30	10206	"[""I was planning to buy a <color=#FFA82B>toy</color> at {0} as a gift for my relative's child, but unfortunately there weren't any.""]"		1		10202	3		6
+31	10203	"[""{0}'s energy supply bag is <color=#FFA82B>priced</color> <color=#FFA82B>lower</color> than I expected. I can get a good deal every visit.""]"		1	1	10203	5	True	1
+32	10203	"[""{0}'s energy supply bag is <color=#FFA82B>priced</color> <color=#FFA82B>much lower</color> than I expected. This is an absolute steal!""]"		1	2	10203	5	True	1
+33	10203	"[""{0}'s energy supply bag is so unbelievably <color=#FFA82B>cheap</color>! <color=#FFA82B>Even lower than cost price</color>!""]"		1	4	10203	5	True	1
+34	10204	['Whenever I wanna buy energy supply bags, I go to {0}. <color=#FFA82B>Their price is just right</color>.']		1		10203	5	True	1
+35	10205	['I bought some energy supply bags at {0}, but the <color=#FFA82B>price is slightly expensive</color>.']		1	1	10203	4		1
+36	10205	['I bought some energy supply bags at {0}, but the <color=#FFA82B>price is quite expensive</color>.']		1	2	10203	3		1
+37	10205	"[""{0}'s energy supply bag is practically highway robbery! The <color=#FFA82B>price is absolutely terrifying</color>!""]"		1	4	10203	1		1
+38	10203	"[""{0}'s Construct cleaner is <color=#FFA82B>priced</color> <color=#FFA82B>lower</color> than I expected. I can get a good deal every visit.""]"		1	1	10204	5	True	2
+39	10203	"[""{0}'s Construct cleaner is <color=#FFA82B>priced</color> <color=#FFA82B>much lower</color> than I expected. This is an absolute steal!""]"		1	2	10204	5	True	2
+40	10203	"[""{0}'s Construct cleaner is so unbelievably <color=#FFA82B>cheap</color>! <color=#FFA82B>Even lower than cost price</color>!""]"		1	4	10204	5	True	2
+41	10204	['Whenever I wanna buy Construct cleaner, I go to {0}. <color=#FFA82B>Their price is just right</color>.']		1		10204	5	True	2
+42	10205	['I bought Construct cleaner at {0}, but the <color=#FFA82B>price is slightly expensive</color>.']		1	1	10204	4		2
+43	10205	['I bought Construct cleaner at {0}, but the <color=#FFA82B>price is quite expensive</color>.']		1	2	10204	3		2
+44	10205	"[""{0}'s Construct cleaner is practically highway robbery! The <color=#FFA82B>price is absolutely terrifying</color>!""]"		1	4	10204	1		2
+45	10203	"[""{0}'s textile coat is <color=#FFA82B>priced</color> <color=#FFA82B>lower</color> than I expected. I can get a good deal every visit.""]"		1	1	10205	5	True	3
+46	10203	"[""{0}'s textile coat is <color=#FFA82B>priced</color> <color=#FFA82B>much lower</color> than I expected. This is an absolute steal!""]"		1	2	10205	5	True	3
+47	10203	"[""{0}'s textile coat is so unbelievably <color=#FFA82B>cheap</color>! <color=#FFA82B>Even lower than cost price</color>!""]"		1	4	10205	5	True	3
+48	10204	['Whenever I wanna buy a textile coat, I go to {0}. The <color=#FFA82B>price is just right</color>.']		1		10205	5	True	3
+49	10205	['I bought a textile coat at {0}, but the <color=#FFA82B>price is slightly expensive</color>.']		1	1	10205	4		3
+50	10205	['I bought a textile coat at {0}, but the <color=#FFA82B>price is quite expensive</color>.']		1	2	10205	3		3
+51	10205	"[""{0}'s textile coat is practically highway robbery! The <color=#FFA82B>price is absolutely terrifying</color>!""]"		1	4	10205	1		3
+52	10203	"[""{0}'s aromatherapy diffuser is <color=#FFA82B>priced</color> <color=#FFA82B>lower</color> than I expected. I can get a good deal every visit.""]"		1	1	10206	5	True	4
+53	10203	"[""{0}'s aromatherapy diffuser is <color=#FFA82B>priced</color> <color=#FFA82B>much lower</color> than I expected. This is an absolute steal!""]"		1	2	10206	5	True	4
+54	10203	"[""{0}'s aromatherapy diffuser is so unbelievably <color=#FFA82B>cheap</color>! <color=#FFA82B>Even lower than cost price</color>!""]"		1	4	10206	5	True	4
+55	10204	['Whenever I wanna buy an aromatherapy diffuser, I go to {0}. The <color=#FFA82B>price is just right</color>.']		1		10206	5	True	4
+56	10205	['I bought an aromatherapy diffuser at {0}, but the <color=#FFA82B>price is slightly expensive</color>.']		1	1	10206	4		4
+57	10205	['I bought an aromatherapy diffuser at {0}, but the <color=#FFA82B>price is quite expensive</color>.']		1	2	10206	3		4
+58	10205	"[""{0}'s aromatherapy diffuser is practically highway robbery! The <color=#FFA82B>price is absolutely terrifying</color>!""]"		1	4	10206	1		4
+59	10203	"[""{0}'s holographic recorder is <color=#FFA82B>priced</color> <color=#FFA82B>lower</color> than I expected. I can get a good deal every visit.""]"		1	1	10207	5	True	5
+60	10203	"[""{0}'s holographic recorder is <color=#FFA82B>priced</color> <color=#FFA82B>much lower</color> than I expected. This is an absolute steal!""]"		1	2	10207	5	True	5
+61	10203	"[""{0}'s holographic recorder is so unbelievably <color=#FFA82B>cheap</color>! <color=#FFA82B>Even lower than cost price</color>!""]"		1	4	10207	5	True	5
+62	10204	['Whenever I wanna buy a holographic recorder, I go to {0}. <color=#FFA82B>Their price is just right</color>.']		1		10207	5	True	5
+63	10205	['I bought a holographic recorder at {0}, but the <color=#FFA82B>price is slightly expensive</color>.']		1	1	10207	4		5
+64	10205	['I bought a holographic recorder at {0}, but the <color=#FFA82B>price is quite expensive</color>.']		1	2	10207	3		5
+65	10205	"[""{0}'s holographic recorder is practically highway robbery! The <color=#FFA82B>price is absolutely terrifying</color>!""]"		1	4	10207	1		5
+66	10203	"[""{0}'s ultra-soft plush toy is <color=#FFA82B>priced</color> <color=#FFA82B>lower</color> than I expected. I can get a good deal every visit.""]"		1	1	10208	5	True	6
+67	10203	"[""{0}'s ultra-soft plush toy is <color=#FFA82B>priced</color> <color=#FFA82B>much lower</color> than I expected. This is an absolute steal!""]"		1	2	10208	5	True	6
+68	10203	"[""{0}'s ultra-soft plush toy is so unbelievably <color=#FFA82B>cheap</color>! <color=#FFA82B>Even lower than cost price</color>!""]"		1	4	10208	5	True	6
+69	10204	['Whenever I wanna buy an ultra-soft plush toy, I go to {0}. <color=#FFA82B>Their price is just right</color>.']		1		10208	5	True	6
+70	10205	['I bought an ultra-soft plush toy at {0}, but the <color=#FFA82B>price is slightly expensive</color>.']		1	1	10208	4		6
+71	10205	['I bought an ultra-soft plush toy at {0}, but the <color=#FFA82B>price is quite expensive</color>.']		1	2	10208	3		6
+72	10205	"[""{0}'s ultra-soft plush toy is practically highway robbery! The <color=#FFA82B>price is absolutely terrifying</color>!""]"		1	4	10208	1		6
+73	10301	"[""My favorite cakes are {0}'s cakes. Both the design and pricing are perfect!"", ""{0}'s cake designs are absolute masterpieces, but the prices are so affordable! Amazing!""]"		1		10301	5	True	
+74	10302	"[""{0}'s cakes are truly first-class when it comes to design quality!"", ""The aesthetic design of {0}'s cakes is really nice!""]"		1		10302	5	True	
+75	10303	"[""{0}'s design is somewhat lacking. The <color=#FFA82B>fresh green</color> part is a bit too close to the <color=#FFA82B>{2}</color>.""]"		1	1	10303	3		1
+76	10303	"[""{0}'s design is a complete failure. The <color=#FFA82B>fresh green</color> part is way too close to the <color=#FFA82B>{2}</color>!""]"		1	2	10303	1		1
+77	10303	"[""{0}'s design is somewhat lacking. The <color=#FFA82B>sweet and tangy</color> part is a bit too close to the <color=#FFA82B>{2}</color>.""]"		1	1	10304	3		2
+78	10303	"[""{0}'s design is a complete failure. The <color=#FFA82B>sweet and tangy</color> part is way too close to the <color=#FFA82B>{2}</color>!""]"		1	2	10304	1		2
+79	10303	"[""{0}'s design is somewhat lacking. The <color=#FFA82B>rich and creamy</color> part is a bit too close to the <color=#FFA82B>{2}</color>.""]"		1	1	10305	3		3
+80	10303	"[""{0}'s design is a complete failure. The <color=#FFA82B>rich and creamy</color> part is way too close to the <color=#FFA82B>{2}</color>!""]"		1	2	10305	1		3
+81	10303	"[""{0}'s design is somewhat lacking. The <color=#FFA82B>deep and rich</color> part is a bit too close to the <color=#FFA82B>{2}</color>.""]"		1	1	10306	3		4
+82	10303	"[""{0}'s design is a complete failure. The <color=#FFA82B>deep and rich</color> part is way too close to the <color=#FFA82B>{2}</color>!""]"		1	2	10306	1		4
+83	10304	"[""{0}'s cakes are <color=#FFA82B>priced</color> <color=#FFA82B>a bit lower</color> than I expected, so I bought some right away!""]"		1	1	10307	5	True	
+84	10304	"[""{0}'s cakes are <color=#FFA82B>very cheap</color>! At this price, I'll buy it every day!""]"		1	2	10307	5	True	
+85	10304	"[""I've heard that {0}'s cakes are cheap, but this is <color=#FFA82B>way too cheap</color>! They probably can't even cover costs!""]"		1	4	10307	5	True	
+86	10305	"[""{0}'s cake <color=#FFA82B>prices are just right</color>—very fair!""]"		1		10307	5	True	
+87	10306	"[""{0}'s cakes were <color=#FFA82B>a bit more expensive than my budget</color>, but I gritted my teeth and bought some anyway.""]"		1	1	10307	4		
+88	10306	"[""{0}'s cakes were <color=#FFA82B>much more expensive than my budget</color>. It's a bit luxurious to even have them once.""]"		1	2	10307	3		
+89	10306	['I wanna ask {0}, are your cakes made of gold? Those cakes are <color=#FFA82B>unimaginably expensive</color>!']		1	4	10307	1		

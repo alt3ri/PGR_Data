@@ -1,0 +1,145 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory4.jpg'}
+2	2		401							{1: '1', 2: '203'}
+3	3		502							{1: 'RImgBg1Shake'}
+4	4		401							{1: '2', 2: '10007502'}
+5	5		301			DialogEnable				"{3: '""BOOM—""'}"
+6	6		301							{3: 'The aftermath of the explosion launches rubble into the air as the last remaining Corrupted signals flashing on the terminal are completely annihilated.'}
+7	7		401							{1: '2', 2: '1515'}
+8	8		301							{2: 'System', 3: 'All Corrupted signals in Zone C are gone. Joint eradication mission complete.'}
+9	9		301							{2: 'System', 3: 'Calculating casualties. ETE for the transport craft is twenty minutes. Remain in position and await extraction.'}
+10	10		201							{1: '1', 2: '500166'}
+11	11		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+12	12		301				DialogDisable			"{1: '1', 2: 'Lucia', 3: ""The transport craft has arrived. Commandant, how's your situation?"", 4: '1'}"
+13	13		302							{2: 'Return according to plan.', 3: '14'}
+14	14		302							"{2: ""I'll return with the other commandants."", 3: '15'}"
+15	15		301			DialogEnable				{2: 'Lucia', 3: 'Understood. See you soon, Commandant.', 4: '1'}
+16	16		302							{2: 'Thanks for your work.', 3: '17', 4: 'See you soon.', 5: '17'}
+17	17		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+18	18		202							{1: '1', 6: '1'}
+19	19		301							{3: 'After terminating the comm link, your nerves finally relax a bit. You lean against the wall and sigh gently. The fatigue accumulated from battle begins to surface.'}
+20	20		301							{3: 'Several other commandants participating in this mission also return to the temporary headquarters one after another to confirm the mission with their own team through their respective comm links.'}
+21	21		401						200.0	{1: '2', 2: '1515'}
+22	22		401						200.0	{1: '2', 2: '1515'}
+23	23		401						500.0	{1: '2', 2: '1515'}
+24	24		401							{1: '2', 2: '1515'}
+25	25		301							"{3: ""Suddenly, everyone's terminal rings at the same time.""}"
+26	26		301							{2: 'System', 3: 'Emergency alert.'}
+27	27		301							{2: 'System', 3: 'A commandant performing a mission in Zone C has issued an emergency support request. Construct, Model No. BPH-22, has reached critical M.I.N.D. deviation. She is in urgent need of a commandant connection.'}
+28	28		301							{2: 'System', 3: 'Repeat. Model No. BPH-22...'}
+29	29		302							{2: '(That designation is...)'}
+30	30		201							{1: '1', 2: '500104'}
+31	31		201							{1: '2', 2: '500138', 4: '-600'}
+32	32		201							{1: '3', 2: '500138', 4: '600'}
+33	33		301							{1: '1', 2: 'Commandant A', 3: 'A Construct has gone haywire?', 4: '1'}
+34	34		301							{2: 'Commandant B', 3: 'How could this happen at a time like this...? What about the acting commandant?', 4: '2'}
+35	35		301							"{2: 'Commandant C', 3: ""That model number sounds familiar. Is it that white Construct from Cerberus...? What's she called..."", 4: '3'}"
+36	36		301							"{2: 'Commandant A', 3: 'Cerberus... Those ""Rabid Dogs"" are an experimental combat team. I heard their commandant is a fella who can\'t fight boots on the ground and relies solely on remote M.I.N.D. connections.', 4: '1'}"
+37	37		301							"{2: 'Commandant B', 3: ""Remote links? But once a connection is severed, that'll overload the Construct and take forever to re-calibrate. No wonder they're asking for emergency ground support."", 4: '2'}"
+38	38		301							{2: 'Commandant C', 3: 'Once, I was on a recovery mission in the same area as Cerberus. Their way of fighting...', 4: '3'}
+39	39		301							"{3: ""The commandant with short brown hair shakes his head and shrugs as if remembering something he didn't want to recall.""}"
+40	40		301							"{3: '""The white Construct from Cerberus""...'}"
+41	41		302							"{2: ""...That's No. 21."", 3: '42'}"
+42	42		301							{2: 'Commandant C', 3: '...Seems like a nightmare to control. Connecting with a remote link runs a huge risk of overloading their M.I.N.D.', 4: '3'}
+43	43		301							"{2: 'Commandant B', 3: ""I still have some work to finish. I can't sever my link with my team members just yet."", 4: '2'}"
+44	44		301				AniZhuanchangBegin			{3: 'The alert on your tactical terminal continues to ring. You suddenly recall your last link with No. 21.'}
+45	45		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+46	46		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2001_5.jpg'}
+47	47		504							{1: '0.7'}
+48	48		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'Broken and wounded. Jaw trembling. Gray pupils, fierce and alert.'}
+49	49		504							{1: '0'}
+50	50		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory4.jpg'}
+51	51		201				DialogDisable			{1: '1', 2: '500104'}
+52	52		201							{1: '2', 2: '500138', 4: '-600'}
+53	53		201							{1: '3', 2: '500138', 4: '600'}
+54	54		302			AniZhuanchangEnd				"{2: ""Leave it to me. I'm free now."", 3: '55'}"
+55	55		301			DialogEnable	AniZhuanchangBegin			"{1: '1', 3: ""Without any hesitation, you send a signal to confirm support and immediately proceed to No. 21's position marked on the map.""}"
+56	56		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+57	57		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory5.jpg'}
+58	58		301			AniZhuanchangEnd				{3: 'Despite not bringing a remote connection device on the mission, you reach the distance required to establish a proximity connection as fast as your exoskeleton allows.'}
+59	59		301							"{3: ""No. 21's is vibrantly displayed nearby on your terminal.""}"
+60	60		201							{1: '1', 2: '500328', 3: '5'}
+61	61		301							{1: '1', 3: 'Amid the flurry of dust and smoke, you see a white figure with a murderous glare in her eyes.'}
+62	62		301							{3: 'As if throwing fatigue and emotions into the wind, the Construct commands her Co-Bot to relentless attack the already indistinguishable remains of Corrupted.'}
+63	63		301							"{3: ""You can tell at a glance that the Construct is beyond reasoning with. If she doesn't calm down soon, she may overload her M.I.N.D. due to being unable to control her power.""}"
+64	64		302							{2: '(Approach)', 3: '65', 4: '(Attempt to connect)', 5: '65'}
+65	65		301							{3: 'You put the tranquilizer gun back into your tactical belt, raising your hands as you slowly approach No. 21.'}
+66	66		301							{3: 'Aware that someone is approaching, No. 21 tenses her frame like a wounded little beast and roars menacingly.'}
+67	67		302							"{2: ""I'm not your enemy."", 3: '68'}"
+68	68		301							{2: 'No. 21', 3: 'Mission... Destroy... Death...', 4: '1'}
+69	69		302							{2: 'Your mission is over.', 3: '70'}
+70	70		301							{2: 'No. 21', 3: 'Over...?', 4: '1'}
+71	71		302							"{2: ""There aren't any Corrupted signals nearby."", 3: '72'}"
+72	72		204							{1: '1', 2: '4'}
+73	73		301							{3: 'After quite some time, it seems that No. 21 regains some semblance of clarity amidst the chaos, then robotically halts her struggle.'}
+74	74		301							{3: 'She slowly looks at the scattered remains of the Corrupted, then looks back at you.'}
+75	75		204							{1: '1'}
+76	76		301				DialogDisable			{2: 'No. 21', 3: '...【kuroname】?', 4: '1'}
+77	77		302							"{2: ""It's me."", 3: '78'}"
+78	78		302							"{2: ""If you keep this up, you'll overload your M.I.N.D."", 3: '79'}"
+79	79		302							{2: 'I want to establish a M.I.N.D. connection with you.', 3: '80'}
+80	80		301			DialogEnable				{2: 'No. 21', 3: '...', 4: '1'}
+81	81		301							"{3: ""She doesn't seem to be as confused, nor does she show a strong opposition to the proposal.""}"
+82	82		202							{1: '1', 6: '1'}
+83	83		401							{1: '2', 2: '1515'}
+84	84		301							{2: 'System', 3: 'Link established.'}
+85	85		302							{2: '(Calibrating M.I.N.D.)', 3: '86'}
+86	86		401							{1: '2', 2: '1515'}
+87	87		301							{2: 'System', 3: 'M.I.N.D. stability for Construct BPH-22 has returned to normal.'}
+88	88		301							{3: 'While you send a report to Command, No. 21 stands there silently as if someone had pressed pause. The sharp and drastic contrast from her previous frenzy seems incomprehensible.'}
+89	89		301							{3: 'The wind and heartbeat in your ears begin to stabilize.'}
+90	90		401							{1: '2', 2: '1515'}
+91	91		301							{2: 'System', 3: 'Threat removal confirmed by Command. ETE for the transport craft is twenty minutes. Remain in position and await extraction.'}
+92	92		401							{1: '1', 2: '36'}
+93	93		301				DialogDisable			"{3: ""Hot wind carrying dust and smoke from the battle blows through No. 21's hair. While waiting for the transport craft, you both are surrounded by a peculiar silence.""}"
+94	94		302							{2: 'Why did you...', 3: '95'}
+95	95		302							{2: 'Lose control back there?', 3: '96'}
+96	96		201							{1: '1', 2: '500328'}
+97	97		301			DialogEnable				{1: '1', 2: 'No. 21', 3: 'When I got here, the ground was already covered with bodies.', 4: '1'}
+98	98		301							{2: 'No. 21', 3: 'I thought that the captain and Noctis might be among them...', 4: '1'}
+99	99		301							"{2: 'No. 21', 3: ""And... that's when I saw them... The captain and Noctis... were there, too."", 4: '1'}"
+100	100		301							"{2: 'No. 21', 3: ""But now I know that it wasn't real. My vision module was confused."", 4: '1'}"
+101	101		301							{2: 'No. 21', 3: 'I just wanted to finish the mission. But when I was fighting... I lost control.', 4: '1'}
+102	102		301							{2: 'No. 21', 3: 'Until you got here, 【kuroname】.', 4: '1'}
+103	103		302							{2: '...', 3: '104'}
+104	104		202							{1: '1', 6: '1'}
+105	105		301							{3: 'She answers quickly, and then, as if noticing something, she sniffs quietly and kneels down.'}
+106	106		401							{1: '1', 2: '12'}
+107	107		301							"{3: ""Following her gaze, you see a broken nameplate among the pile of Corrupted remains. You can barely recognize that it belongs to Babylonia's Task Force.""}"
+108	108		302							{2: 'Is this...', 3: '109'}
+109	109		201							{1: '1', 2: '500328'}
+110	110		301							"{1: '1', 2: 'No. 21', 3: ""It doesn't belong to the captain or Noctis."", 4: '1'}"
+111	111		301							{2: 'No. 21', 3: '...Smells human.', 4: '1'}
+112	112		302							{2: 'Does the nameplate belong to a human?', 3: '113'}
+113	113		301							{3: 'No. 21 shakes her head.'}
+114	114		301							"{2: 'No. 21', 3: ""It belongs to a Construct, but I don't smell any sign of life."", 4: '1'}"
+115	115		302							{2: '...', 3: '116'}
+116	116		202							{1: '1', 6: '1'}
+117	117		301							{3: 'Even though you know that sacrifice is inevitable for soldiers, you are still overcome with grief.'}
+118	118		301							"{3: ""No matter how many times you experience it, you still can't get used to such things, nor should you.""}"
+119	119		302				AniZhuanchangBegin			{2: '(Close eyes)', 3: '120'}
+120	120		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+121	121		301			AniZhuanchangEnd				{2: 'No. 21', 3: 'What are you doing?'}
+122	122		302							{2: 'We will mourn the soldiers who died on the battlefield.'}
+123	123		301							{2: 'No. 21', 3: 'Mourn...'}
+124	124		301							"{2: 'No. 21', 3: ""But even if we do, they won't know.""}"
+125	125		301				DialogDisable			{2: 'No. 21', 3: 'Why would you do it?'}
+126	126		302							"{2: ""It's a way for us to say farewell."", 3: '127', 4: ""They've given up their lives so that we can live."", 5: '127'}"
+127	127		302				AniZhuanchangBegin			{2: 'We must carry on their will to fight.', 3: '128'}
+128	128		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory5.jpg'}
+129	129		302			AniZhuanchangEnd				"{2: ""That's one of the reasons we continue to fight."", 3: '130'}"
+130	130		201							{1: '1', 2: '500328'}
+131	131		301			DialogEnable				"{1: '1', 2: 'No. 21', 3: '...I have no ""reason.""', 4: '1'}"
+132	132		301				DialogDisable			{2: 'No. 21', 3: 'All I know is war.', 4: '1'}
+133	133		302							{2: 'Thinking of Vera and Noctis lying on the ground...', 3: '134'}
+134	134		302							{2: 'How did you feel?', 3: '135'}
+135	135		301			DialogEnable				{2: 'No. 21', 3: 'Sad... Out of control...', 4: '1'}
+136	136		301							"{2: 'No. 21', 3: ""I don't want to think about it."", 4: '1'}"
+137	137		301							"{2: 'No. 21', 3: ""I can't let that happen. So, I must fight."", 4: '1'}"
+138	138		302							{2: 'Whoever this nameplate belonged to thought so as well.', 3: '139'}
+139	139		202							{6: '1'}
+140	140		301							{3: 'A gust of wind lifts the dust off the ground. The roar of the approaching transport craft can be heard nearby in the sky.'}
+141	141		301							"{3: ""No. 21 looks at a nameplate buried in vital fluid and dirt. She felt the impulse to do something though she couldn't tell where it came from.""}"
+142	142		301							"{3: ""Perhaps it was from the commandant's words and emotions, both of which were foreign to her, that had been shared over the link.""}"
+143	143		301							{3: 'Perhaps it was human instinct that made it seem so important.'}
+144	144		301		1		AniZhuanchangBegin			{3: 'She picks up the broken nameplate, then boards the transport craft.'}

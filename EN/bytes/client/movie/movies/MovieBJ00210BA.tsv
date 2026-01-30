@@ -1,0 +1,74 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory93.png'}
+2	2		401							{1: '1', 2: '10'}
+3	3		301			DialogEnable				{3: 'The wind is roaring. Standing on the decrepit ruins, the man gazes from afar at the abandoned city on the icy plains, one hand combing the stray strands of windblown hair outside of his eyes.'}
+4	4		301							"{3: ""From where he's standing, he can see a cluster of ramshackle buildings covered by snow. Not a single human can be spotted.""}"
+5	5		301							{2: '???', 3: 'I sense something approaching.'}
+6	6		301							"{2: 'Comms', 3: 'Oh, you again. ""Fara"" is pretty quiet, though.'}"
+7	7		301				AniZhuanchangBegin			"{2: 'Comms', 3: ""Wait... abnormal waveform at 20.9 miles out! Looks similar to the Owl S-118 at Orekhovo the other day. Oops, we almost let that big ol' fish go that time.""}"
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory92.png'}
+9	9		201							{1: '1', 2: '500026', 4: '-400', 7: '1'}
+10	10		201							{1: '2', 2: '1031001', 4: '400', 7: '1'}
+11	11		302							{2: 'Lee, update the mission briefing.', 3: '12'}
+12	12		301			AniZhuanchangEnd				"{1: '1', 2: 'Lee', 3: ""Update complete: The current time is 3:56 p.m. Our current location is in the east of the Eurasian continent. Mission destination is still the land-based Airforce HQ of the Eurasian Branch of the World Government. According to President Hassen's orders, the objective is close recon and reclamation..."", 4: '1'}"
+13	13		301							{2: 'Liv', 3: '...From the data we just received, the closer it is to our destination, the higher concentration of the Punishing Virus is.', 4: '2'}
+14	14		302							"{2: ""That's why we must figure out what's going on."", 3: '15'}"
+15	15		301							{2: 'Everyone', 3: 'Understood.', 4: '1', 5: '2'}
+16	16		202							{1: '1', 2: '2', 6: '1'}
+17	17		201							{1: '1', 2: '500166', 7: '1'}
+18	18		301							{1: '1', 2: 'Lucia', 3: 'Gray Raven, move out!', 4: '1'}
+19	19		202							{1: '1'}
+20	20		301							"{3: ""On the snowy plains, all that's visible are the remains of run-down buildings and an endless expanse of snow.""}"
+21	21		301							"{3: ""But for some reason, I can't shake the feeling we're being watched...""}"
+22	22		302							"{2: 'Wait.', 3: '23', 4: ""Are you sure there's no one here?"", 5: '23'}"
+23	23		201							{1: '1', 2: '1031001'}
+24	24		301							{1: '1', 2: 'Liv', 3: 'No body heat nor Inver-Device signals detected. Commandant, is something wrong?', 4: '1'}
+25	25		302							"{2: ""...Forget it, then. Let's go."", 3: '26'}"
+26	26		301							"{2: 'Liv', 3: ""I'll do another check, just in case..."", 4: '1'}"
+27	27		202							{1: '1'}
+28	28		301							{3: 'Just as the team is preparing to leave, Lucia unsheathes her blade and points it towards a spot in the distance.'}
+29	29		201							{1: '1', 2: '500166', 3: '4'}
+30	30		301			RImgBg1Shake				{1: '1', 2: 'Lucia', 3: 'Who goes there!', 4: '1'}
+31	31		202							{1: '1'}
+32	32		301							"{2: '???', 3: ""【kuroname】's instincts were right.""}"
+33	33		201							{1: '1', 2: '1101001'}
+34	34		301							"{1: '1', 2: 'Watanabe', 3: ""The rest of you, on the other hand... Can't believe you let an unidentified Attacker Construct come within 15 meters around your commandant."", 4: '1'}"
+35	35		301							{2: 'Watanabe', 3: 'If I were a long-range Attacker, Babylonia would have lost an excellent commandant today.', 4: '1'}
+36	36		201							{1: '1', 2: '1031001'}
+37	37		301							{1: '1', 2: 'Liv', 3: '...', 4: '1'}
+38	38		302							"{2: ""Don't you think that's crossing the line?"", 3: '39', 4: 'I trust Lucia.', 5: '42'}"
+39	39		201							{1: '1', 2: '1101001'}
+40	40		301							{1: '1', 2: 'Watanabe', 3: 'Do you mean using my experience in guerilla warfare against Liv is unfair?', 4: '1'}
+41	41	44	301							"{2: 'Watanabe', 3: ""She's not a rookie anymore. Underestimating the enemy is a bad habit to have."", 4: '1'}"
+42	42		201							{1: '1', 2: '1101001'}
+43	43		301							"{1: '1', 2: 'Watanabe', 3: ""That's on you."", 4: '1'}"
+44	44		301							"{2: 'Watanabe', 3: ""I'll get straight to the point."", 4: '1'}"
+45	45		301							"{2: 'Watanabe', 3: ""If I'm guessing correctly, your destination... is it Cape Nohama?"", 4: '1'}"
+46	46		301							"{2: 'Watanabe', 3: ""The land-based airforce HQ of the Eurasia Branch of the World Government... For some reason, it's become a barren hell on earth. Go ahead for another six miles and you'll see what I mean."", 4: '1'}"
+47	47		302							"{2: ""You're heading there too?"", 3: '48', 4: 'For some reason?', 5: '49'}"
+48	48	50	301							{2: 'Watanabe', 3: 'I see I guessed right...', 4: '1'}
+49	49		301							"{2: 'Watanabe', 3: ""Reasons that politicians don't talk about... and I don't care about..."", 4: '1'}"
+50	50		301							{2: 'Watanabe', 3: 'Back to the point, Commandant. Since our goals align, are you interested in working together?', 4: '1'}
+51	51		302							"{2: 'Gray Raven can complete the mission on our own.', 3: '52', 4: ""What's your angle?"", 5: '53'}"
+52	52	54	301							"{2: 'Watanabe', 3: ""I don't doubt it at all."", 4: '1'}"
+53	53		301							"{2: 'Watanabe', 3: ""I understand that you may have doubts. But don't worry, I have no interest in tangling with Babylonia."", 4: '1'}"
+54	54		301							"{2: 'Watanabe', 3: ""Judging by your formation, you're here for recon? Reclamation?"", 4: '1'}"
+55	55		302							{2: 'Both.', 3: '56'}
+56	56		301							"{2: 'Watanabe', 3: ""Well, then, I don't mind sharing with you what data I have."", 4: '1'}"
+57	57		301							{2: 'Watanabe', 3: 'It will at least save you some trouble.', 4: '1'}
+58	58		302							{2: 'On what condition?', 3: '59'}
+59	59		301							{2: 'Watanabe', 3: 'The airforce HQ you have your eyes on is also the site of the only functioning marine radar station in the area.', 4: '1'}
+60	60		301							{2: 'Watanabe', 3: 'What we want is temporary control of the radar station. Babylonia should find this reasonable.', 4: '1'}
+61	61		302							{2: 'Why is that?', 3: '62'}
+62	62		301							"{2: 'Watanabe', 3: ""That's got nothing to do with Babylonia, right?"", 4: '1'}"
+63	63		301							"{2: 'Watanabe', 3: 'Of course, when I said ""saving unnecessary trouble"", I was referring to more than intelligence-related affairs.', 4: '1'}"
+64	64		201							{1: '1', 2: '500154'}
+65	65		201							{1: '2', 2: '500154', 4: '-600'}
+66	66		201							{1: '3', 2: '500154', 4: '600'}
+67	67		401							{1: '2', 2: '1504'}
+68	68		301							{1: '1', 3: 'Watanabe raises an arm and makes a gesture. In a flash, over a dozen Forsaken soldiers materialize out of the snow, dressed in infrared combat suits.'}
+69	69		302							{2: '...', 3: '70'}
+70	70		201							{1: '1', 2: '1101001'}
+71	71		301							"{1: '1', 2: 'Watanabe', 3: ""They've been stationed here in this area for years, and know everything there is to know, from the way the wind blows to how the snow tastes. They are the perfect scouts and intelligence providers."", 4: '1'}"
+72	72		301							"{2: 'Watanabe', 3: ""Let's set off now. You can always change your mind before we arrive at Ghost Coast."", 4: '1'}"
+73	73		301		1		AniZhuanchangBegin			"{2: 'Watanabe', 3: ""And trust me... you wouldn't want to traverse the icefield at night."", 4: '1'}"

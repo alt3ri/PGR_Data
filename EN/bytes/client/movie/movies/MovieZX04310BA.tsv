@@ -1,0 +1,316 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront7.png'}
+2	2		401							{1: '1', 2: '381'}
+3	3		301			DialogEnable				{3: 'The Very First Zero Point Reactor?! Norman Mining Corp has acquired crucial intelligence about Dominik!'}
+4	4		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront8.png'}
+5	5		301							{3: 'Victoria Takes the Helm! Supervisory Board members in favor of Project Herald! Does Dominik still exist?!'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg'}
+7	7		201							{1: '1', 2: '500497'}
+8	8		301							{1: '1', 2: 'Leonardo', 3: 'Sigh...', 4: '1'}
+9	9		301							{3: 'He spins the chair out of boredom. The terminal on his desk starts to beep.'}
+10	10		509							{1: 'Assets/Product/Texture/Image/BgStory/BgStory895.jpg', 2: '2'}
+11	11		203						500.0	{1: '1', 2: '0.25', 3: '-610'}
+12	12		201							{1: '2', 2: '500586', 3: '1', 4: '500'}
+13	13		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '2'}
+14	14		301							{1: '1', 2: 'Trojan', 3: 'Boss... oh, wait, ex-boss. Hello.', 4: '2'}
+15	15		204							{1: '1', 2: '2'}
+16	16		301							"{2: 'Leonardo', 3: ""I haven't seen you for a few days, and you've been promoted quickly. You even have your own office now."", 4: '1'}"
+17	17		301							{2: 'Trojan', 3: 'Of course, the benefits here are much better than your sweat factory, ex-boss.', 4: '2'}
+18	18		301							{3: 'She lounges back in the chair, tapping the armrest with her fingers absentmindedly.'}
+19	19		301							{2: 'Trojan', 3: 'Hail the great Queen Victoria, without whom I would never receive such privileges.', 4: '2'}
+20	20		301							"{2: 'Trojan', 3: ""Nine-to-five, five days a week, triple pay for overtime, a month of paid annual leave... now that's what I call living."", 4: '2'}"
+21	21		301							{2: 'Leonardo', 3: 'Ah... sounds really nice.', 4: '1'}
+22	22		301							{2: 'Leonardo', 3: 'So, what about the promise you made me earlier?', 4: '1'}
+23	23		301							{2: 'Leonardo', 3: 'Even if you jumped ship, you should at least finish your last job.', 4: '1'}
+24	24		204							{1: '2', 2: '7'}
+25	25		301							{2: 'Trojan', 3: 'Huh? Did I promise you anything?', 4: '2'}
+26	26		204							{1: '2', 2: '8'}
+27	27		301							"{3: 'Lazily tapping on the armrest, Trojan seems entirely uninterested in his previous ""work"".'}"
+28	28		301							"{2: 'Trojan', 3: 'I\'ve already handed over my responsibilities, down to the last detail, to your other security advisors. The transition was completed ages ago, so there\'s no ""final task"" left.', 4: '2'}"
+29	29		301							{2: 'Leonardo', 3: 'How heartless—', 4: '1'}
+30	30		204							{1: '2', 2: '1'}
+31	31		301							"{2: 'Trojan', 3: ""Alright, I've applied for a leave. Just one more minute and I'm done for the day."", 4: '2'}"
+32	32		301							{2: 'Trojan', 3: 'Good luck, Leonardo—Your Highness.', 4: '2'}
+33	33		202							{1: '2'}
+34	34		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+35	35		510						500.0	{1: '2', 2: 'Assets/Product/Texture/Image/BgStory/BgStory895.jpg'}
+36	36		203							{1: '1', 2: '0.25'}
+37	37		301							{3: 'Trojan hangs up the call.'}
+38	38		301							"{2: 'Leonardo', 3: ""...Just a few days into the new job, and she's already mocking the old boss."", 4: '1'}"
+39	39		301							"{2: 'Leonardo', 3: ""Did she forget that I hadn't signed off on her previous bonus?"", 4: '1'}"
+40	40		301							{3: 'Leonardo chuckles wryly in the chair, his fingers tapping an irregular rhythm on the table.'}
+41	41		301							"{3: ""Which is the exact sequence Trojan had just tapped on her chair's armrest.""}"
+42	42		204							{1: '1'}
+43	43		301							{3: 'After a moment of silence, he stands up and walks over to the file cabinet, pulling out a paper document with a storage device inserted between the pages.'}
+44	44		301							{2: 'Leonardo', 3: 'Of all the places...', 4: '1'}
+45	45		301				AniZhuanchangBegin			"{3: ""As he flips through the paper document, Leonardo's face gradually darkens.""}"
+46	46		202			DialogDisable				{1: '1', 6: '1'}
+47	47		401							{1: '1', 2: '204'}
+48	48		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+49	49		107						3000.0	{1: 'Babylonia Commercial Street'}
+50	50		108							{1: '1'}
+51	51		301			DialogEnable				{3: 'Sipping an odd-smelling electrolyte, Trojan leisurely sits at the entrance of the commercial street, browsing through various messages received on her terminal.'}
+52	52		201							{1: '1', 2: '500586'}
+53	53		301							"{1: '1', 2: 'Trojan', 3: 'The scheduled return time has arrived... Yet the corporation\'s shuttle has not picked up a single ""Herald""?', 4: '1'}"
+54	54		301							"{2: 'Trojan', 3: 'It\'d be odd if they did—considering where the ""Heralds"" were deployed.', 4: '1'}"
+55	55		301							"{2: 'Trojan', 3: ""Norman Mining Corp's reputation crisis... Babylonian Army disapproves of Norman Mining Corp's forced entry into the area where Reactor 1 is located..."", 4: '1'}"
+56	56		204							{1: '1', 2: '7'}
+57	57		301							"{2: 'Trojan', 3: 'They even had time to issue a statement. Looks like ""His Highness"" did lay some groundwork.', 4: '1'}"
+58	58		204							{1: '1'}
+59	59		301							"{2: 'Trojan', 3: ""But they can't outright stop them, right? After all, the corporation is supposed to be assisting the army's investigation..."", 4: '1'}"
+60	60		202							{1: '1'}
+61	61		301							{3: 'Trojan squints as she observes the commercial street. This area is usually quite busy, but now most shops are closed, with only a few hurried pedestrians on the road.'}
+62	62		301							"{3: 'The Hetero Zone is expanding insanely fast. Most of Babylonia\'s off-duty squads have been summoned back for ground missions. Regular squads are assigned to disaster relief tasks, while elite squads are sent deep into the Hetero Zone to explore the disaster\'s ""source"".'}"
+63	63		201							{1: '1', 2: '500586', 3: '3'}
+64	64		301							{1: '1', 2: 'Trojan', 3: 'What a time of troubles.', 4: '1'}
+65	65		204							{1: '1', 2: '4'}
+66	66		301				AniZhuanchangBegin			{2: 'Trojan', 3: 'Once you get that footage... how will you use it?', 4: '1'}
+67	67		401							{1: '1', 2: '36'}
+68	68		202			DialogDisable				{1: '1', 6: '1'}
+69	69		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+70	70		401							{1: '1', 2: '381'}
+71	71		107						3000.0	{1: '100 kilometers away from Zero Point Reactor 1, on a wasteland.'}
+72	72		108							{1: '1'}
+73	73		301			DialogEnable				{3: 'After clearing out the second batch of Corrupted, the soldiers barely manage to set up a camp.'}
+74	74		201							{1: '1', 2: '500862'}
+75	75		301							"{1: '1', 2: 'Soldier', 3: ""It's so... quiet."", 4: '1'}"
+76	76		301				AniZhuanchangBegin			"{2: 'Soldier', 3: ""Wasn't this place supposed to... have a lot of people?"", 4: '1'}"
+77	77		202			DialogDisable				{1: '1'}
+78	78		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory397.jpg'}
+79	79		301			DialogEnable				{3: 'Zero Point Reactor 1 was once the pinnacle of human civilization.'}
+80	80		301							{3: 'Standing on the ground, humanity gazed at the stars, longing to evolve and take Earth into a new era of adventure.'}
+81	81		301							"{3: ""A series of research institutes were established surrounding the massive Zero Point Reactor project. Based on the researchers' needs, more buildings sprang up around them.""}"
+82	82		301							{3: 'Libraries, restaurants, schools, parks.'}
+83	83		301							{3: 'This area has clearly developed into a city centered around the Zero Point Reactor.'}
+84	84		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory334.png', 3: '0', 4: '1', 5: '1'}
+85	85		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+86	86		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory334.png'}
+87	87		301							{3: 'Everything seemed to be thriving, and humanity appeared to have nearly secured a ticket to the stars—'}
+88	88		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory460.jpg', 3: '0', 4: '1', 5: '1'}
+89	89		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+90	90		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory460.jpg'}
+91	91		301				AniZhuanchangBegin			"{3: ""—until the rebooted machinery's bright red indicators started to flicker.""}"
+92	92		502			DialogDisable			400.0	{1: 'DialogDisable', 6: '1'}
+93	93		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+94	94		201			DialogEnable				{1: '1', 2: '500154', 4: '500'}
+95	95		201							{1: '2', 2: '500862', 4: '-500'}
+96	96		301							"{1: '1', 2: 'Captain', 3: ""Haven't you heard? Ever since that P-whatever virus broke out, nobody could survive in this place."", 4: '1'}"
+97	97		301							"{2: 'Captain', 3: ""Even Ballard almost met his end here... Didn't your team captain tell you to write a will?"", 4: '1'}"
+98	98		301							{2: 'Soldier', 3: 'I did write one, but I never thought... it would really come to this...', 4: '2'}
+99	99		301							{2: 'Captain', 3: 'I never planned on going back alive. But if I can shut this thing down, my mom will have a chance to live.', 4: '1'}
+100	100		301							"{2: 'Captain', 3: ""Even if I don't make it back, they'll make sure she's settled into Babylonia."", 4: '1'}"
+101	101		202							{1: '1', 2: '2'}
+102	102		301							{3: 'He calmly explains his plans.'}
+103	103		301							"{3: ""On the Horizon, the city's silhouette could be seen in the distance, wrapped in a shroud of deadly silence.""}"
+104	104		301							"{3: ""The city's time seems to have been paused. It stands silently under the red mist-filled sky, gazing emptily at this world.""}"
+105	105		201							{1: '1', 2: '500586'}
+106	106		301							{1: '1', 2: 'Trojan', 3: 'Here I am. Whew, glad I made it in time. Wait, did I forget to clock out for field duty...?', 4: '1'}
+107	107		203							{1: '1', 2: '0.25', 3: '500'}
+108	108		201							{1: '2', 2: '500154', 4: '-500'}
+109	109		301							{1: '1', 2: 'Captain', 3: 'Are you the technicians and soldiers from Norman Mining Corp? Come this way.', 4: '2'}
+110	110		301							{2: 'Captain', 3: 'Now we are just waiting for the Science Council members...', 4: '2'}
+111	111		301							"{2: 'Trojan', 3: ""So we weren't the last ones to arrive? Where are the Science Council folks..."", 4: '1'}"
+112	112		202							{1: '1', 2: '2'}
+113	113		401							{1: '2', 2: '2866'}
+114	114		301							{3: 'Before she can finish, the sound of shuttle engines grows closer. Still in their white coats, members of the Science Council step out of the shuttle cabin one after another.'}
+115	115		201							{1: '1', 2: '500116', 4: '500'}
+116	116		201							{1: '2', 2: '500058', 4: '-500'}
+117	117		301							{1: '1', 2: 'Science Council Member 1', 3: 'Never thought I would come to this place at such a time.', 4: '1'}
+118	118		301							{2: 'Science Council Member 1', 3: 'I once thought that when I returned here, it would be to celebrate humanity embarking on a new journey...', 4: '1'}
+119	119		301							"{2: 'Science Council Member 2', 3: ""A new journey always comes at a cost; there's no free lunch."", 4: '2'}"
+120	120		301							{2: 'Science Council Member 2', 3: 'It would be naive to think an energy source like zero-point energy could be so easily controlled by mankind.', 4: '2'}
+121	121		301							"{2: 'Science Council Member 1', 3: ""True. This time we get to observe the Zero Point Reactor's explosion in real-time. It's quite an opportunity..."", 4: '1'}"
+122	122		202							{1: '1', 2: '2'}
+123	123		301							"{3: ""The white-coated Science Council members quickly form several rows according to their Chief's instructions.""}"
+124	124		201							{1: '1', 2: '500586'}
+125	125		301							{1: '1', 2: 'Trojan', 3: 'So many people here... Has the entire Section 1 of Science Council come over? Wait... is that Dominik?!', 4: '1'}
+126	126		301							{3: 'After giving out instructions and settling the Science Council members down, the Chief, also in a white coat, walks toward the gathered soldiers.'}
+127	127		201							{1: '1', 2: '500154'}
+128	128		301				DialogDisable			{1: '1', 2: 'Captain', 3: 'Has the situation become so dire? Even the Chief of the Science Council has to...', 4: '1'}
+129	129		202							{1: '1'}
+130	130		307							"{1: ""No one understands the Zero Point Reactor better than its designer. This catastrophe requires everyone's full effort to solve, including mine. I won't be sitting around doing nothing.""}"
+131	131		301							"{3: ""No one understands the Zero Point Reactor better than its designer. This catastrophe requires everyone's full effort to solve, including mine. I won't be sitting around doing nothing.""}"
+132	132		307						100.0	{2: '1'}
+133	133		201							{1: '1', 2: '500154'}
+134	134		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Captain', 3: ""...I understand. Let's start preparing then."", 4: '1'}"
+135	135		202							{1: '1'}
+136	136		307							{1: 'No, just us.'}
+137	137		301							{3: 'No, just us.'}
+138	138		307						100.0	{2: '1'}
+139	139		307							{1: 'All the researchers from Science Council Section 1 will enter the city to shut down Reactor 1.'}
+140	140		301							{3: 'All the researchers from Science Council Section 1 will enter the city to shut down Reactor 1.'}
+141	141		307						100.0	{2: '1'}
+142	142		201							{1: '1', 2: '500154'}
+143	143		301			DialogEnable				{1: '1', 2: 'Captain', 3: 'We have been ordered to ensure your safety at all costs!', 4: '1'}
+144	144		202				DialogDisable			{1: '1'}
+145	145		307							"{1: ""Rest assured that we don't plan missions based on sacrifice.""}"
+146	146		301							"{3: ""Rest assured that we don't plan missions based on sacrifice.""}"
+147	147		307						100.0	{2: '1'}
+148	148		307							{1: 'We need vehicles, sufficient energy, and protective suits.'}
+149	149		301							{3: 'We need vehicles, sufficient energy, and protective suits.'}
+150	150		307						100.0	{2: '1'}
+151	151		307							{1: 'Remember, once we depart, you need to retreat to a position at least 300 kilometers away.'}
+152	152		301							{3: 'Remember, once we depart, you need to retreat to a position at least 300 kilometers away.'}
+153	153		307						100.0	{2: '1'}
+154	154		307							{1: 'You are the second line of defense. We will leave behind documentation for the reactor, including instructions on how to shut it down.'}
+155	155		301							{3: 'You are the second line of defense. We will leave behind documentation for the reactor, including instructions on how to shut it down.'}
+156	156		307						100.0	{2: '1'}
+157	157		307							{1: 'If we fail, you will become the second pioneer team.'}
+158	158		301							{3: 'If we fail, you will become the second pioneer team.'}
+159	159		307							{2: '1'}
+160	160		201							{1: '1', 2: '500154'}
+161	161		301			DialogEnable				{1: '1', 2: 'Captain', 3: '...Understood.', 4: '1'}
+162	162		301							{3: 'They watch as the researchers in white aboard the white vehicle disappear beyond the misty horizon like a group of white ghosts.'}
+163	163		301							{3: 'A lone white sail has ventured into the crimson sea.'}
+164	164		301							"{2: 'Captain', 3: ""...Let's head out too."", 4: '1'}"
+165	165		202							{1: '1'}
+166	166		301							"{3: ""As per Dominik's request, everyone else immediately boards the vehicles and shuttles, heading away.""}"
+167	167		301							{3: 'In a fairytale, this is where the story would end.'}
+168	168		301				AniZhuanchangBegin			{3: 'Destined to save the world, the heroes have embarked on their journey. The rest only need to prepare to welcome their triumphant return.'}
+169	169		101			DialogDisable	AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory5.jpg'}
+170	170		301			DialogEnable				{3: '20 minutes later.'}
+171	171		301							{3: 'The soldiers and Norman Mining Corp staff have gradually evacuated to a location about 280 kilometers from Zero Point Reactor 1.'}
+172	172		201							{1: '1', 2: '500586'}
+173	173		301							{1: '1', 2: 'Trojan', 3: 'Huh? Why did you stop?', 4: '1'}
+174	174		202							{1: '1'}
+175	175		201							{1: '1', 2: '500862', 4: '500'}
+176	176		201							{1: '2', 2: '500154', 4: '-500'}
+177	177		301							{1: '1', 2: 'Soldier', 3: 'Captain, should we keep moving back?', 4: '1'}
+178	178		301							"{2: 'Captain', 3: ""Stay put for now. I'm a little worried."", 4: '2'}"
+179	179		202							{1: '1', 2: '2'}
+180	180		201							{1: '1', 2: '500586'}
+181	181		301							"{1: '1', 2: 'Trojan', 3: ""Are you sure? We are not at a safe distance yet. Didn't the Chief just ask us to fall back to at least 300 kilometers away?"", 4: '1'}"
+182	182		203							{1: '1', 2: '0.25', 3: '500'}
+183	183		201							{1: '2', 2: '500154', 4: '-500'}
+184	184		301							{1: '1', 2: 'Captain', 3: '...Hold on a bit longer. At this distance, we can still support them once they come out.', 4: '2'}
+185	185		202							{1: '2'}
+186	186		203							{1: '1', 2: '0.25'}
+187	187		301							"{2: 'Trojan', 3: ""Hmm... I still think it's better to follow his instructions."", 4: '1'}"
+188	188		301							{3: 'The other researchers from Norman Mining Corp also seem to have decided to wait here. Trojan reluctantly returns to her vehicle.'}
+189	189		301							"{2: 'Trojan', 3: ""Getting emotional at a time like this just doesn't feel right to me..."", 4: '1'}"
+190	190		301							{2: 'Trojan', 3: 'Hey, are you really not going?', 4: '1'}
+191	191		301							{3: 'A Norman Mining Corp researcher impatiently waves her off, indicating she can leave first. Others have already begun setting up equipment. They seem to be attempting to remotely observe the situation inside Reactor 1.'}
+192	192		301							"{2: 'Trojan', 3: ""I'll get going then..."", 4: '1'}"
+193	193		202							{1: '1'}
+194	194		401							{1: '2', 2: '4230'}
+195	195		301				AniZhuanchangBegin			{3: 'She starts up her vehicle.'}
+196	196		101			DialogDisable	AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory5.jpg'}
+197	197		301			DialogEnable				{3: '28 minutes later.'}
+198	198		301							{3: '280 kilometers from Reactor 1.'}
+199	199		401							{1: '2', 2: '2782'}
+200	200		301							{3: 'A crude instrument on the vehicle suddenly blares, sending a sharp electronic sound through the air.'}
+201	201		401							{1: '1', 2: '60'}
+202	202		201							{1: '1', 2: '500862'}
+203	203		301							{1: '1', 2: 'Soldier', 3: 'This is... the Punishing Virus! The concentration level has exceeded—', 4: '1'}
+204	204		201							{1: '1', 2: '500154'}
+205	205		301							{1: '1', 2: 'Captain', 3: 'Come back! Start the vehicles immediately!', 4: '1'}
+206	206		202							{1: '1'}
+207	207		301							{3: 'The next instant, all Punishing Virus-monitoring instruments begin frantically announcing the arrival of death. Screams and wails can already be heard from the slowest vehicle.'}
+208	208		301							{3: 'A visible shockwave originating from Zero Point Reactor 1 rapidly spreads in the air, almost instantly reaching their location.'}
+209	209		401							{1: '2', 2: '2982'}
+210	210		301							{2: 'Comms', 3: 'Bzzz—Rescue Team 1—Rescue Team 1! Bzzz—do you copy? Do you copy!'}
+211	211		301							{2: 'Comms', 3: 'Rescue Team 2! Bzzz—report your situation! Report your situation!'}
+212	212		301							"{2: 'Comms', 3: ""Science Council Section 1—bzzz—What's the status on the researchers?! Bzzz—""}"
+213	213		301							"{3: ""The sharp howling of the vehicle's intercom gradually becomes mute.""}"
+214	214		401							{1: '2', 2: '2982'}
+215	215		301							{3: 'But no matter how many times they try to call, the command center miles away receives no response.'}
+216	216		301							{2: 'Comms', 3: 'Science Council Section 1! Bzzz—Rescue Team—'}
+217	217		301							{2: 'Comms', 3: '—We need backup! Bzzz—backup required at Reactor 1—'}
+218	218		301				AniZhuanchangBegin			{3: 'The communication abruptly stops. The device is unable to emit any more sound.'}
+219	219		101			DialogDisable	AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+220	220		201							{1: '1', 2: '500586'}
+221	221		301			DialogEnable				{1: '1', 2: 'Trojan', 3: '—Dammit!', 4: '1'}
+222	222		202							{1: '1'}
+223	223		301							{3: 'Even though Trojan has reached a location beyond 300 kilometers from Reactor 1, the monitoring instruments on her vehicle continue to blare.'}
+224	224		401							{1: '2', 2: '4115003'}
+225	225		301							"{3: ""She slams the accelerator. The vehicle's engine roars, pushing its power to the maximum. She has never been so focused, fixing her gaze on the horizon ahead.""}"
+226	226		301							{3: 'This is a race against death.'}
+227	227		301							{3: 'The noises behind her gradually dwindle to a deadly silence. Even without looking back, she knows too well the ending of those left behind.'}
+228	228		301							{3: 'Will the Chief and those from the Science Council... still be alive?'}
+229	229		301							{3: 'Impossible.'}
+230	230		402							{1: '2782'}
+231	231		301							{3: 'The monitoring instruments finally cease their wailing. Trojan finds a high ground, gazing at the position of Reactor 1 from afar.'}
+232	232		301				AniZhuanchangBegin			{3: 'In the last moments of the recording, the distant city and skyscrapers are still standing there silently, shrouded in a thin mist.'}
+233	233		101			DialogDisable	AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+234	234		301			DialogEnable				{3: 'The land falls into silence once again.'}
+235	235		301							{3: 'After the outbreak of the Punishing Virus.'}
+236	236		301							{3: 'The Punishing Virus concentration near Reactor 1 surged to levels unmeasurable by standard instruments. At the same moment, the command center lost contact with Dominik and all other personnel involved in shutting down Reactor 1.'}
+237	237		301							{3: 'Even though the command center immediately dispatched support, it was already too late. No one could escape from Reactor 1 unscathed when faced with such a high concentration of the Punishing Virus.'}
+238	238		301				AniZhuanchangBegin			{3: 'At the end of the data is a list of names involved in the operation.'}
+239	239		401			DialogDisable				{1: '1', 2: '204'}
+240	240		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg'}
+241	241		201							{1: '1', 2: '500497'}
+242	242		301			DialogEnable				{1: '1', 2: 'Leonardo', 3: '...', 4: '1'}
+243	243		301				AniZhuanchangBegin			"{2: 'Leonardo', 3: ""Trojan... you've really left me with something incredible."", 4: '1'}"
+244	244		202			DialogDisable				{1: '1', 6: '1'}
+245	245		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory894.jpg'}
+246	246		107						3000.0	{1: 'Norman Family Conference Room'}
+247	247		108							{1: '1'}
+248	248		201							{1: '1', 2: '500874', 4: '-500'}
+249	249		201							{1: '2', 2: '500873', 4: '500'}
+250	250		301			DialogEnable				{1: '1', 2: 'Charles', 3: 'Is this what you have decided?', 4: '1'}
+251	251		301							{2: 'Victoria', 3: 'Yes.', 4: '2'}
+252	252		301							{2: 'Charles', 3: 'A great decision, it presents both risks and benefits.', 4: '1'}
+253	253		301							"{2: 'Charles', 3: ""You remind me of Christina's request to be transformed into a Construct... You are both the pride of the Norman family."", 4: '1'}"
+254	254		301							{2: 'Charles', 3: 'She will join the Engineering Force and become the first anchor of the Norman family in the military.', 4: '1'}
+255	255		301							{2: 'Charles', 3: 'While you... are the true heir of the Norman family, a true businessperson.', 4: '1'}
+256	256		301							"{2: 'Victoria', 3: '...The corporation\'s laboratory is testing the external interface models they brought back. I\'ve already picked the next batch of ""Heralds"". Once the tests are done, I will negotiate with Babylonia again.', 4: '2'}"
+257	257		301							"{2: 'Victoria', 3: 'After these ""Heralds"" undergo initial Inver-Device modifications, we will continue with the plan.', 4: '2'}"
+258	258		301							"{2: 'Victoria', 3: ""Leonardo can only stop us using his previous connections through the army and parliament. But all of Norman Mining Corp's actions are self-initiated. They can't do much other than moral condemnation."", 4: '2'}"
+259	259		204							{1: '2', 2: '2'}
+260	260		301							"{2: 'Victoria', 3: 'The ""Heralds"" I have picked in this batch are all high-level employees within the corporation... and their descendants.', 4: '2'}"
+261	261		301							{2: 'Victoria', 3: 'They deserve all of this, as they will stand with me to witness the glory of Norman Mining Corp.', 4: '2'}
+262	262		204							{1: '2'}
+263	263		301							"{2: 'Charles', 3: ""It's a well-deserved arrangement. They should embrace the honor that belongs to them."", 4: '1'}"
+264	264		301							{2: 'Charles', 3: 'Dominik will once again lead Norman into the halls of glory.', 4: '1'}
+265	265		301				AniZhuanchangBegin			"{2: 'Charles', 3: ""I'll prepare the celebration and await your good news, Victoria."", 4: '1'}"
+266	266		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+267	267		401							{1: '1', 2: '381'}
+268	268		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+269	269		107						3000.0	{1: 'Science Council Testing Ground'}
+270	270		108							{1: '1'}
+271	271		201							{1: '1', 2: '500871'}
+272	272		301			DialogEnable				"{1: '1', 2: 'Mika', 3: ""No... This isn't right."", 4: '1'}"
+273	273		301							{3: 'Frowning, she tries to adjust all the data she could see, aiming for a more comprehensive solution.'}
+274	274		203							{1: '1', 2: '0.25', 3: '400'}
+275	275		201							{1: '2', 2: '500864', 4: '-400'}
+276	276		301							"{1: '1', 2: 'Teddy', 3: ""Still can't apply it to regular Constructs?"", 4: '1'}"
+277	277		301							"{2: 'Mika', 3: ""...No, the current approach involves using the Inver-Device to connect to Gestalt, amplifying the Construct's consciousness to resist the Punishing Virus."", 4: '1'}"
+278	278		301							{2: 'Mika', 3: 'Based on the data obtained from the last observation, although this solution can achieve our expected results, it also demands very high M.I.N.D. stability.', 4: '1'}
+279	279		301							{2: 'Mika', 3: 'Only the Constructs from a few elite squads meet the requirements...', 4: '1'}
+280	280		301							{2: 'Teddy', 3: 'We need to continue expanding compatibility...', 4: '2'}
+281	281		301							{2: 'Teddy', 3: 'Have you finished adjusting the connection design for the second version of the external interface model?', 4: '2'}
+282	282		301							"{2: 'Mika', 3: ""It's being worked on. We just need two more sets of experimental data."", 4: '1'}"
+283	283		301							{2: 'Teddy', 3: 'Then what are we waiting for? Prepare for immersion.', 4: '2'}
+284	284		301							{3: 'But Mika has not made any move.'}
+285	285		301							{2: 'Mika', 3: 'Continuously immersing in Gestalt for experiments could exert significant stress on your M.I.N.D.', 4: '1'}
+286	286		301							{2: 'Mika', 3: 'Although the experiment is conducted within the quarantine zone, it still requires the introduction of the Punishing Virus...', 4: '1'}
+287	287		204							{1: '2', 2: '2'}
+288	288		301							{2: 'Teddy', 3: 'Huh? Are you kicking me out of the test group now?', 4: '2'}
+289	289		301							{2: 'Mika', 3: 'I checked my M.I.N.D. stability. It has already met the connection requirements. I can...', 4: '1'}
+290	290		301							{2: 'Teddy', 3: 'You can, and then what?', 4: '2'}
+291	291		301							"{2: 'Teddy', 3: ""Are you planning to put a monkey outside to help you monitor the connection model's data? Or are you going to drag your mentor out of the Star of Life's ICU to help you with this part of the work?"", 4: '2'}"
+292	292		204							{1: '2'}
+293	293		301							{2: 'Mika', 3: '...', 4: '1'}
+294	294		301							"{2: 'Teddy', 3: ""I am the sole candidate appointed by the Norman Mining Corp, so let's not engage in this pointless argument again."", 4: '2'}"
+295	295		301							{3: 'She calmly watches the data stream on the screen.'}
+296	296		301							"{2: 'Teddy', 3: ""Aside from those two data sets, how's the rest of the process going?"", 4: '2'}"
+297	297		301							{2: 'Mika', 3: 'Everything is ready, but we are still missing the Gray Raven Commandant, Asimov, and Karenina...', 4: '1'}
+298	298		301							"{2: 'Teddy', 3: ""No need to wait for them. I locked Karenina's Sleeping Pod."", 4: '2'}"
+299	299		301							"{2: 'Mika', 3: ""What about the commandant's connection..."", 4: '1'}"
+300	300		301							"{2: 'Teddy', 3: ""If the second version runs smoothly, can't it temporarily operate without the commandant's connection?"", 4: '2'}"
+301	301		301							{2: 'Mika', 3: 'Theoretically, yes, but...', 4: '1'}
+302	302		204							{1: '2', 2: '2'}
+303	303		301							"{2: 'Teddy', 3: ""Hmph, I've also locked the Gray Raven Commandant and Asimov in the Star of Life's lounge."", 4: '2'}"
+304	304		204							{1: '2'}
+305	305		301							"{2: 'Teddy', 3: ""After all, they're only human. After working non-stop for days, they need to rest a bit."", 4: '2'}"
+306	306		301							{2: 'Mika', 3: '...', 4: '1'}
+307	307		204							{1: '2', 2: '2'}
+308	308		301							{2: 'Teddy', 3: 'What, backing out already?', 4: '2'}
+309	309		301							{2: 'Mika', 3: 'Hmph.', 4: '1'}
+310	310		301							{2: 'Teddy', 3: 'Good, I like your spirit.', 4: '2'}
+311	311		204							{1: '2'}
+312	312		301							"{2: 'Teddy', 3: ""Then let's get started. There's nothing left to wait for."", 4: '2'}"
+313	313		202							{1: '1', 2: '2'}
+314	314		301							{3: 'She never fears the unknown. Even when the path ahead is shrouded in darkness, she would carve out a new light.'}
+315	315		301		1		AniZhuanchangBegin			{3: 'Once again, she steps onto that path of chaos.'}

@@ -1,0 +1,137 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1308.jpg'}
+2	2		401							{1: '2', 2: '2596'}
+3	3		302							{2: '...Why did it end up like this...', 3: '4'}
+4	4		301			DialogEnable				"{3: ""It's four in the afternoon. The weather is clear, the sky perfectly blue. White clouds drift overhead, buildings stretch across the distant skyline, and green grass spreads out underfoot...""}"
+5	5		201							{1: '1', 2: '500445'}
+6	6		301							{1: '1', 3: 'Pulao is sitting on your shoulders.'}
+7	7		302							{2: 'Hey... Pulao...', 3: '8'}
+8	8		204							{1: '1', 2: '5'}
+9	9		402							{1: '2596'}
+10	10		401							{1: '1', 2: '205'}
+11	11		401							{1: '2', 2: '4637'}
+12	12		301			RImgBg1Shake				{2: 'Pulao', 3: 'Whoa, Commandant, stop moving around!', 4: '1'}
+13	13		202							{1: '1'}
+14	14		301							{3: 'The girl on your shoulders loses her balance and leans back, flailing her arms before gripping your head tightly to steady herself.'}
+15	15		302							{2: 'Are you seriously flying a kite while sitting on my shoulders?', 3: '16'}
+16	16		201							{1: '1', 2: '500445'}
+17	17		301							{1: '1', 2: 'Pulao', 3: 'The instructions say I need to run for ten seconds at a height of at least two meters to send it flying...', 4: '1'}
+18	18		302							"{2: 'Why would any kite need such weird launch conditions?', 3: '19', 4: ""So this is a Constellia kite? It's got a lot of character."", 5: '19'}"
+19	19		204							{1: '1', 2: '1'}
+20	20		301							"{2: 'Pulao', 3: 'Of course! It\'s the special Double Seventh Festival upgrade by the little mechanoids—""Solar-Powered Impressionist Super Alloy Kite""! And you picked it out for me!', 4: '1'}"
+21	21		202							{1: '1'}
+22	22		306							{1: '1'}
+23	23		301							"{3: 'The so-called ""Solar-Powered Impressionist Super Alloy Kite"" is basically a silver-gray metal plate shaped like a magpie.'}"
+24	24		301							"{3: ""It's nearly half Pulao's size and weighs about a third of her body weight... which makes you seriously question whether it can actually fly.""}"
+25	25		306							
+26	26		201							{1: '1', 2: '500445', 3: '2'}
+27	27		301							{1: '1', 2: 'Pulao', 3: 'They say once it takes off, it can fly... one, two, three... anyway, super high! Like really high!', 4: '1'}
+28	28		301							{3: 'She starts counting on her fingers, though clearly losing track halfway.'}
+29	29		204							{1: '1', 2: '1'}
+30	30		301							"{2: 'Pulao', 3: ""But it needs to start two meters off the ground, and I can't reach that high... good thing I've got you, Commandant!"", 4: '1'}"
+31	31		302							{2: '...', 3: '32'}
+32	32		204							{1: '1'}
+33	33		301							"{2: 'Pulao', 3: ""Wait, what if I'm too heavy? Can you still run with me up here?"", 4: '1'}"
+34	34		301							{2: 'Pulao', 3: 'Or maybe we should switch. You hold the kite, and I lift you up by the feet—', 4: '1'}
+35	35		202							{1: '1'}
+36	36		301				DialogDisable			"{3: 'A terrible mental image flashes across your mind—\\na 4\'7"" girl holding up a full-grown soldier running with a kite...'}"
+37	37		302							{2: 'No. This is fine.', 3: '38', 4: 'The power armor can handle the weight.', 5: '38'}
+38	38		302							"{2: ""Besides, isn't the point of flying a kite to do it yourself?"", 3: '39'}"
+39	39		201							{1: '1', 2: '500445', 3: '1'}
+40	40		301			DialogEnable				"{1: '1', 2: 'Pulao', 3: ""Hmm... good point. Then let's do it!"", 4: '1'}"
+41	41		203							{1: '1', 2: '0.3', 4: '-30', 5: '-50'}
+42	42		301							{3: 'She happily hugs your neck with one arm and raises the kite high with the other.'}
+43	43		204							{1: '1', 2: '2'}
+44	44		301				DialogDisable			"{2: 'Pulao', 3: ""Let's go!"", 4: '1'}"
+45	45		202							{1: '1', 6: '1'}
+46	46		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+47	47		104						350.0	{1: '0|0|-100', 2: '0.3'}
+48	48		301			DialogEnable				{3: 'You run into the wind with the Construct girl riding on your shoulders. The breeze is cool and refreshing, and the little girl above you cheers.'}
+49	49		201							{1: '1', 2: '500445', 3: '1', 5: '-30', 6: '-50'}
+50	50		301							"{1: '1', 2: 'Pulao', 3: ""It's flying!"", 4: '1'}"
+51	51		202							{1: '1'}
+52	52		301				DialogDisable			{3: 'The silver-gray metal kite catches the wind and rises, spreading hidden wings midair and soaring into the sky under your surprised gaze.'}
+53	53		201							{1: '1', 2: '500445', 3: '1', 5: '-150', 7: '1'}
+54	54		203							{1: '1', 2: '0.4', 4: '-100'}
+55	55		104							{1: '0|-50|-100', 2: '0.5'}
+56	56		301			DialogEnable				"{1: '1', 2: 'Pulao', 3: ""Wow, it's going so high... higher and higher..."", 4: '1'}"
+57	57		202							{1: '1'}
+58	58		301				DialogDisable			{3: 'You hear the wind rushing past. The kite string is spinning wildly off the spool in her hand... and the weight on your shoulders starts feeling lighter and lighter...'}
+59	59		201							{1: '1', 2: '500445', 3: '2', 5: '-100', 6: '-100', 7: '1'}
+60	60		203							{1: '1', 2: '0.4', 4: '-50', 5: '-100'}
+61	61		104							{1: '0|-100|-160', 2: '0.5'}
+62	62		502							{1: 'DialogEnable'}
+63	63		301			DialogShake				"{1: '1', 2: 'Pulao', 3: ""It's going higher and higher... Commandant, I'm lifting off the ground!"", 4: '1'}"
+64	64		302							{2: 'Pulao, let go of it, now!', 3: '65'}
+65	65		204							{1: '1', 2: '1'}
+66	67		301			DialogShake				{2: 'Pulao', 3: 'Almost got it, just a little longer. Whoa!', 4: '1'}
+67	66		401							{1: '2', 2: '2674'}
+68	68		203						100.0	{1: '1', 2: '0.14', 4: '-20', 5: '100'}
+69	69		202							{1: '1', 6: '1'}
+70	70		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+71	71		301			RImgBg1Shake				"{3: ""A sudden gust hits, and the small body on your shoulders is lifted clean off. She's flying straight toward—""}"
+72	72		104							{1: '-50|-150|-200', 2: '0.6'}
+73	73		301							{3: '—the towering sky, now gaping open like an abyss, as if ready to swallow her whole...'}
+74	74		302							"{2: ""I'll buy you another one, just let go!"", 3: '75'}"
+75	75		201							{1: '1', 2: '500445', 3: '5'}
+76	76		301							"{1: '1', 2: 'Pulao', 3: ""No! This one's special!"", 4: '1'}"
+77	77		301				DialogDisable			{3: 'She clings to the string with all her strength, refusing to let go.'}
+78	78		302							{2: '(Grab Pulao)', 3: '79'}
+79	79		202						200.0	{1: '1'}
+80	80		104						450.0	{1: '-100|-200|-300', 2: '0.4'}
+81	81		301			DialogEnable				{3: 'You reach out and catch her, but the moment you do, your own feet leave the ground...'}
+82	82		201							{1: '1', 2: '500445'}
+83	83		301			DialogShake				{1: '1', 2: 'Pulao', 3: 'Commandant, give me your hand!', 4: '1'}
+84	84		202							{1: '1'}
+85	85		301				AniZhuanchangBegin			"{3: ""Just as you're about to slip, the strong little girl grabs hold of you. And just like that, the kite carries both of you higher and higher into the sky...""}"
+86	86		104			DialogDisable				{1: '0|0|0', 2: '0'}
+87	87		401							{1: '1', 2: '36'}
+88	88		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+89	89		307							"{1: 'Under the glow of the setting sun, the ""Solar-Powered Impressionist Super Alloy Kite"" carries the two of you gently through the sky...', 2: '0', 3: '45', 4: 'ffffffff', 6: '1'}"
+90	90		301				AniZhuanchangBegin			"{3: 'Under the glow of the setting sun, the ""Solar-Powered Impressionist Super Alloy Kite"" carries the two of you gently through the sky...'}"
+91	91		307							{2: '1'}
+92	92		401							{1: '1', 2: '100'}
+93	93		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1222.jpg'}
+94	94		201							{1: '1', 2: '500445'}
+95	95		301			DialogEnable				{1: '1', 2: 'Pulao', 3: 'Is this... the windmill tower?', 4: '1'}
+96	96		202							{1: '1'}
+97	97		301							{3: 'As the sun sets and night begins to fall, the kite slowly descends onto the top of a tall tower.'}
+98	98		301							"{3: ""City lights flicker to life below, casting a glow on the girl's flushed cheeks.""}"
+99	99		201							{1: '1', 2: '500445'}
+100	100		301							{1: '1', 2: 'Pulao', 3: 'Feels like this kite brought us here on purpose. The view of Constellia from up here is amazing...', 4: '1'}
+101	101		202							{1: '1'}
+102	102		301							{3: 'She seems to have completely forgotten the terrifying ride you just had. She looks around excitedly, then grabs your hand so you can enjoy the night view together.'}
+103	103		302							{2: 'That was dangerous, Pulao.', 3: '104'}
+104	104		201							{1: '1', 2: '500445', 3: '1'}
+105	105		301							"{1: '1', 2: 'Pulao', 3: ""Yeah... but as long as I'm with you, Commandant, I can survive anything!"", 4: '1'}"
+106	106		301				DialogDisable			{3: 'She gives you a sheepish smile, then confidently pats her chest like a little adult trying to look brave.'}
+107	107		302							{2: 'Still, it was too dangerous.', 3: '108'}
+108	108		302							"{2: ""If the kite's lost, I can always buy you another one."", 3: '109'}"
+109	109		204							{1: '1', 2: '5'}
+110	110		301			DialogEnable				"{2: 'Pulao', 3: ""But that one's special..."", 4: '1'}"
+111	111		202							{1: '1'}
+112	112		301							{3: 'She turns her head away, mumbling under her breath.'}
+113	113		302							{2: 'Hmm?', 3: '114', 4: '...?', 5: '114'}
+114	114		201							{1: '1', 2: '500445', 3: '5'}
+115	115		301							"{1: '1', 2: 'Pulao', 3: ""Because you picked it for me. It's the souvenir you gave me on the Double Seventh Festival!"", 4: '1'}"
+116	116		202							{1: '1'}
+117	117		301							{3: 'She hugs the metal kite tightly. Something you chose without much thought has somehow become a treasure in her eyes...'}
+118	118		201							{1: '1', 2: '500445'}
+119	119		301							"{1: '1', 2: 'Pulao', 3: 'It\'s Double Seventh... If I don\'t hold on to this ""magpie,"" how could we ever cross such a long distance to meet?', 4: '1'}"
+120	120		302							"{2: ""(Pat Pulao's head)"", 3: '121', 4: ""But I'm right here with you, aren't I?"", 5: '123'}"
+121	121		204							{1: '1', 2: '8'}
+122	122	125	301							{3: 'She squints happily, and the tension in her puffed cheeks slowly melts away.'}
+123	123		204							{1: '1', 2: '5'}
+124	124		301							"{2: 'Pulao', 3: ""But there will be times when you're not here with me..."", 4: '1'}"
+125	125		204							{1: '1', 2: '1'}
+126	126		301							"{2: 'Pulao', 3: ""Anyway, I don't want to waste the gift you gave me. And we did manage to catch the kite in the end."", 4: '1'}"
+127	127		202							{1: '1'}
+128	128		401							{1: '2', 2: '4341'}
+129	129		301							{3: 'With a bounce in her step, she skips ahead toward the eaves of the windmill tower.'}
+130	130		201							{1: '1', 2: '500445', 3: '1'}
+131	131		301							{1: '1', 2: 'Pulao', 3: 'So... Commandant, come sit here with me.', 4: '1'}
+132	132		204							{1: '1', 2: '2'}
+133	133		301							{2: 'Pulao', 3: 'There are still lots of places in Constellia I want to see with you tonight.', 4: '1'}
+134	134		202							{1: '1'}
+135	135		301							{3: 'The stars twinkle overhead. She holds the big kite in her arms and swings her legs freely. She leans close to you under the soft glow of the neon lights...'}
+136	136		301		1		AniZhuanchangBegin			{3: 'You stumble together. You laugh together. And together, you share a warm and busy Double Seventh Festival.'}

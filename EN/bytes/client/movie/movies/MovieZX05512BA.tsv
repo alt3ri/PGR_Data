@@ -1,0 +1,659 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '2', 2: '215'}
+3	3		304							"{1: '<i>""A blood-black void begins to weave a network</i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 7: '-3', 10: '1'}"
+4	4		304				AniZhuanchangBegin			"{1: '<i>Cells connecting, reconnecting, joining with the central stem""</i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 7: '1', 9: '1', 10: '1'}"
+5	5		402							{1: '215'}
+6	6		502							{1: 'DialogDisable'}
+7	7		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '4'}
+9	9		109						800.0	{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60>77%</size></color>', 9: '3'}
+10	10		401							{1: '2', 2: '4823'}
+11	11		109						500.0	{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60>78%</size></color>', 9: '3'}
+12	12		401							{1: '2', 2: '4823'}
+13	13		109						400.0	{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60>79%</size></color>', 9: '3'}
+14	14		401							{1: '2', 2: '4823'}
+15	15		109						200.0	{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60>80%</size></color>', 9: '3'}
+16	16		401							{1: '2', 2: '4823'}
+17	17		109						100.0	{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60>81%</size></color>', 9: '3'}
+18	18		401							{1: '2', 2: '4823'}
+19	19		109						50.0	{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60>82%</size></color>', 9: '3'}
+20	20		401							{1: '2', 2: '4823'}
+21	21		109						30.0	{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60>83%</size></color>', 9: '3'}
+22	22		401							{1: '2', 2: '4823'}
+23	23		109						10.0	{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60>84%</size></color>', 9: '3'}
+24	24		401							{1: '2', 2: '9335029'}
+25	25		109	1			AniZhuanchangBegin			{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60>85%</size></color>', 9: '3'}
+26	26		110							
+27	27		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '4', 5: '1'}
+28	28		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory62.jpg', 4: '1'}
+29	29		306				AniZhuanchangEnd		200.0	{1: '1'}
+30	30		401							{1: '1', 2: '6178'}
+31	31		401							{1: '2', 2: '1504'}
+32	32		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+33	33		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+34	34		301			DialogEnable	DialogDisable			{3: 'Snowflakes continue to drift down at a leisurely pace, while the wind stirred by people rushing past throws everything into disarray.'}
+35	35		401							{1: '2', 2: '1504'}
+36	36		104						200.0	{1: '0|0|-150', 2: '0.2'}
+37	37		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory10.jpg', 4: '1'}
+38	38		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 3: '1', 4: '1', 5: '0'}
+39	39		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+40	40		301			DialogEnable	DialogDisable			{3: 'Inside this train car packed with the elderly and vulnerable, chaos has clearly erupted—or more accurately, a one-sided massacre.'}
+41	41		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+42	42		104						200.0	{1: '0|0|0', 2: '0.2', 4: '1'}
+43	43		302							{2: '...!!!', 3: '44'}
+44	44		301			DialogEnable				"{3: ""Those who rushed here immediately spot Kent's body sprawled at the edge of the car, along with the body of the mother, the woman who had tried everything possible to keep her daughter alive.""}"
+45	45		301							{3: 'The sudden turn for the worse leaves everyone feeling untethered, each person engulfed by a wave of disorientation.'}
+46	46		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 3: '0', 4: '0', 5: '0'}
+47	47		306							
+48	48		201							{1: '1', 2: '500260', 5: '-100'}
+49	49		301			PanelActor1Shake				{1: '1', 2: 'Girl', 3: '...', 4: '1'}
+50	50		301							"{3: ""The girl stares vacantly at her mother's body, her hollow gaze fixed unblinkingly on the corpse.""}"
+51	51		203							{1: '1', 2: '0.25', 3: '-200', 4: '-100'}
+52	52		201							{1: '2', 2: '501236', 4: '200'}
+53	53		401							{1: '2', 2: '10028806'}
+54	54		301							"{1: '1', 3: ""Haynes grips the only gun among these people, taken from Kent—judging by the bullet hole in the back of Kent's head, he probably never noticed anything before dying from the sneak attack.""}"
+55	55		301			PanelActor1Shake				"{3: ""Now, the gun barrel is pressed against the girl's head.""}"
+56	56		301							"{2: 'Haynes', 3: ""I've been eavesdropping on your conversations... and discovered a familiar face among you."", 4: '1', 5: '2'}"
+57	57		301							"{2: 'Haynes', 3: 'She stopped my first incident, and now she\'s here to interfere with this ""finale"" too... What a fateful connection we have.', 4: '1', 5: '2'}"
+58	58		202							{1: '1', 2: '2', 6: '1'}
+59	59		201							{1: '3', 2: '501239', 3: '9', 7: '1'}
+60	60		301							{1: '1', 2: 'Vera', 3: '...', 4: '3'}
+61	61		302							{2: '(Vera?!)', 3: '62'}
+62	62		301							"{3: ""Vera grits her teeth, struggling to dismount from Leia's back as her right hand clamps firmly around her weapon.""}"
+63	63		202							{1: '3', 6: '1'}
+64	64		201							{1: '1', 2: '500260', 4: '-200', 5: '-100', 7: '1'}
+65	65		201							{1: '2', 2: '501236', 4: '200', 7: '1'}
+66	66		301							"{1: '1', 2: 'Haynes', 3: ""You're still as young and sharp as ever, you haven't changed at all."", 4: '1', 5: '2'}"
+67	67		202							{1: '1', 2: '2', 6: '1'}
+68	68		201							{1: '3', 2: '501239', 3: '9', 7: '1'}
+69	69		301							"{1: '1', 2: 'Vera', 3: ""...You're something that should have died decades ago, yet you don't look any different from back then... Haynes, who's backing your cloning operation?"", 4: '3'}"
+70	70		301							{3: 'Two figures, separated by decades of time yet unchanged in appearance, stare at each other from opposite ends of a gap several meters wide.'}
+71	71		301							"{3: ""Haynes doesn't answer Vera, instead focusing intently on examining her frame.""}"
+72	72		202							{1: '3', 6: '1'}
+73	73		201							{1: '1', 2: '500260', 4: '-200', 5: '-100', 7: '1'}
+74	74		201							{1: '2', 2: '501236', 3: '5', 4: '200', 7: '1'}
+75	75		301							"{1: '1', 2: 'Haynes', 3: ""Constructs... To think that detestable professor's research would become one of the greatest technologies of this era."", 4: '1', 5: '2'}"
+76	76		301							{2: 'Haynes', 3: 'How does it feel to become a Construct? Is it just like I predicted back then?', 4: '1', 5: '2'}
+77	77		301				DialogDisable			{2: 'Haynes', 3: '—Replacing your fragile human form with metal... have you crossed that river yet?', 4: '1', 5: '2'}
+78	78		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+79	79		202							{1: '1', 2: '2', 6: '1'}
+80	80		504							{1: '0.7'}
+81	81		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1264.jpg'}
+82	82		201							{1: '4', 2: '501236', 7: '1'}
+83	83		301			DialogEnable				{1: '1', 2: 'Haynes', 3: 'So... hold onto that ambition of yours. With just a touch of evolution, you can easily wade across that river...', 4: '4'}
+84	84		301				DialogDisable			{2: 'Haynes', 3: 'Like replacing this fragile flesh, removing the inferior genes within it, and substituting them with...', 4: '4'}
+85	85		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+86	86		202							{1: '4', 6: '1'}
+87	87		504							{1: '0'}
+88	88		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory10.jpg'}
+89	89		201							{1: '3', 2: '501239', 3: '5', 7: '1'}
+90	90		301			DialogEnable				{1: '1', 2: 'Vera', 3: '...Hand over the child!!', 4: '3'}
+91	91		202							{1: '3', 6: '1'}
+92	92		201							{1: '1', 2: '500260', 4: '-200', 5: '-100', 7: '1'}
+93	93		201							{1: '2', 2: '501236', 3: '8', 4: '200', 7: '1'}
+94	94		301							"{1: '1', 2: 'Haynes', 3: ""Hmm... seems you're still drifting in the middle of the river."", 4: '1', 5: '2'}"
+95	95		204							{1: '2', 2: '0'}
+96	96		301							"{2: 'Haynes', 3: ""That young lady, on the other hand, is far more enlightened than you—Miss Vanessa, if I heard correctly, that is your name, isn't it?"", 4: '1', 5: '2'}"
+97	97		401						300.0	{1: '2', 2: '4779'}
+98	98		402							{1: '4779'}
+99	99		301							{3: 'Among those pointing their guns at him, he spotted a young woman with silver-white hair.'}
+100	100		301							"{2: 'Haynes', 3: ""Your thinking is very straightforward. Discard what's useless, preserve what's valuable."", 4: '1', 5: '2'}"
+101	101		301							"{2: 'Haynes', 3: ""Now all the trash is dead—that Kent who clearly couldn't manage things, along with a bunch of sniveling old folks and children, and that interfering woman."", 4: '1', 5: '2'}"
+102	102		301							{3: 'When mentioning that interfering woman, he spits out a mouthful of bloody saliva.'}
+103	103		301							{2: 'Haynes', 3: '...Nothing but a raving lunatic.', 4: '1', 5: '2'}
+104	104		301							{2: 'Haynes', 3: 'Alright, now this child is also a burden.', 4: '1', 5: '2'}
+105	105		401						300.0	{1: '2', 2: '4779'}
+106	106		402							{1: '4779'}
+107	107		301			PanelActor1Shake				"{1: '1', 3: ""Haynes tightens his grip as he presses the still-hot gun barrel against the girl's skin, burning her.""}"
+108	108		202							{1: '1', 2: '2', 6: '1'}
+109	109		201							{1: '3', 2: '500293', 3: '5', 7: '1'}
+110	110		301							"{1: '1', 3: ""Vanessa's expression turns utterly grim.""}"
+111	111		204							{1: '3', 2: '7'}
+112	112		301							{2: 'Vanessa', 3: 'So the eavesdropper... has taken an interest in our casual chat...?', 4: '3'}
+113	113		202							{1: '3', 6: '1'}
+114	114		201							{1: '1', 2: '500260', 4: '-200', 5: '-100', 7: '1'}
+115	115		201							{1: '2', 2: '501236', 4: '200', 7: '1'}
+116	116		301			PanelActor1Shake				"{1: '1', 3: ""The previously unresponsive girl suddenly contorts her entire face after seeing Haynes' spit—extreme rage overtakes her expression, her innocence instantly replaced by an anger completely inherited from her mother.""}"
+117	117		301							{2: 'Girl', 3: 'Die... die... DIE!!', 4: '1'}
+118	118		301			PanelActor1Shake				{2: 'Girl', 3: 'Let him die! Kill him, now!!!', 4: '1'}
+119	119		302							{2: '(Hold down the trigger.)', 3: '120'}
+120	120		401						300.0	{1: '2', 2: '1511'}
+121	121		203						300.0	{1: '2', 2: '0.3', 3: '300'}
+122	122		401							{1: '2', 2: '1512'}
+123	123		203							{1: '2', 2: '0.15', 3: '200'}
+124	124		204							{1: '2', 2: '5'}
+125	125		301							"{3: ""Haynes tightens his grip on the girl's neck and smashes his gun butt into her cheek, knocking out her newly grown permanent teeth.""}"
+126	126		301			PanelActor1Shake				{1: '1', 2: 'Girl', 3: '...Cough!', 4: '1', 5: '2'}
+127	127		301							"{2: 'Haynes', 3: ""Burden, don't speak—and the rest of you better not move."", 4: '1', 5: '2'}"
+128	128		202							{1: '1', 2: '2', 6: '1'}
+129	129		201							{1: '3', 2: '500293', 3: '5', 7: '1'}
+130	130		301							{1: '1', 2: 'Vanessa', 3: 'State your demands!', 4: '3'}
+131	131		202							{1: '3', 6: '1'}
+132	132		201							{1: '1', 2: '500260', 4: '-200', 5: '-100', 7: '1'}
+133	133		201							{1: '2', 2: '501236', 4: '200', 7: '1'}
+134	134		301							"{1: '1', 2: 'Haynes', 3: ""I already told you. Didn't you understand? I want to see which ideology will triumph."", 4: '1', 5: '2'}"
+135	135		301							{2: 'Haynes', 3: 'If you want to save this deadweight, send over that red Construct as an exchange. I happen to have something to discuss with her.', 4: '1', 5: '2'}
+136	136		202							{1: '1', 2: '2', 6: '1'}
+137	137		201							{1: '3', 2: '501239', 3: '4', 7: '1'}
+138	138		301							{1: '1', 3: 'Haynes gestures toward Vera.'}
+139	139		202							{1: '3', 6: '1'}
+140	140		201							{1: '1', 2: '500260', 4: '-200', 5: '-100', 7: '1'}
+141	141		201							{1: '2', 2: '501236', 4: '200', 7: '1'}
+142	142		301							"{1: '1', 2: 'Haynes', 3: 'I never asked for your name before... but the codename ""Hound"" suits you well. A sharp blade, an obedient dog, both equally useful tools.', 4: '1', 5: '2'}"
+143	143		301				DialogDisable			"{2: 'Haynes', 3: ""Hand her over to me, and I won't kill the child."", 4: '1', 5: '2'}"
+144	144		202							{1: '1', 2: '2', 6: '1'}
+145	145		201							{1: '3', 2: '501239', 3: '4', 7: '1'}
+146	146		302							{2: '(Grab Vera.)', 3: '147', 4: '(Look at Vera.)', 5: '147'}
+147	147		201							{1: '3', 2: '500293', 3: '5', 7: '1'}
+148	148		301			DialogEnable				"{1: '1', 2: 'Vanessa', 3: '""Hound,"" trusting him would be the height of stupidity!', 4: '3'}"
+149	149		201							{1: '3', 2: '501239', 3: '4', 7: '1'}
+150	150		301							"{1: '1', 2: 'Vera', 3: ""I don't need you to remind me...!"", 4: '3'}"
+151	151		204							{1: '3', 2: '10'}
+152	152		301							{3: 'Vera quickly surveys her surroundings, but finds nothing noteworthy except for ruins in every direction.'}
+153	153		204							{1: '3', 2: '4'}
+154	154		301							{2: 'Vera', 3: 'He should have killed everyone by now... keeping that girl alive means he must have something else planned...', 4: '3'}
+155	155		301							"{2: 'Vera', 3: ""It's definitely not just... about catching up with an old acquaintance!"", 4: '3'}"
+156	156		204							{1: '3', 2: '9'}
+157	157		301				DialogDisable			{2: 'Vera', 3: 'What is he...', 4: '3'}
+158	158		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+159	159		301			DialogEnable				{3: 'A familiar urgency erupts in her chest as her M.I.N.D. becomes a tangled mess. Simply standing there facing off with Haynes is already taking all her strength.'}
+160	160		301							{3: 'If I could just take him out with one shot...'}
+161	161		202							{1: '3', 6: '1'}
+162	162		201							{1: '1', 2: '500260', 4: '-200', 5: '-100', 7: '1'}
+163	163		201							{1: '2', 2: '501236', 4: '200', 7: '1'}
+164	164		301							"{1: '1', 2: 'Haynes', 3: ""Don't you always love trading risk for reward? Haven't you always wanted to be the hero? Didn't you always want to stand at the front of everyone?"", 4: '2', 5: '1'}"
+165	165		301							{2: 'Haynes', 3: 'Come on, let them see what choice you make.', 4: '2', 5: '1'}
+166	166		202							{1: '1', 2: '2', 6: '1'}
+167	167		201							{1: '3', 2: '501239', 3: '4', 7: '1'}
+168	168		301							"{1: '1', 3: ""The humans notice that the double-edged gun shaft in Vera's grip is trembling slightly, her long-suppressed rage nearly strong enough to snap the handle in two.""}"
+169	169		302							{2: '（!）', 3: '170'}
+170	170		301							"{3: ""That is Vera's stance right before she attacks.""}"
+171	171		302							{2: 'Hound!', 3: '172', 4: '(Is she going to attack head-on?)', 5: '172'}
+172	172		204							{1: '3', 2: '9'}
+173	173		301							{2: 'Vera', 3: '...Hah...', 4: '3'}
+174	174		202							{1: '3', 6: '1'}
+175	175		201							{1: '1', 2: '500260', 4: '-200', 5: '-100', 7: '1'}
+176	176		201							{1: '2', 2: '501236', 4: '200', 7: '1'}
+177	177		301							"{1: '1', 2: 'Haynes', 3: ""Let me guess what you're thinking."", 4: '1', 5: '2'}"
+178	178		301							"{3: ""Whatever crosses Haynes' mind makes the muttering, deranged old man break into a wide grin.""}"
+179	179		301							"{2: 'Haynes', 3: ""You must be thinking... how to kill me as quickly as possible, before I can even pull the trigger, so you can save her... Too bad that's the wrong choi—!"", 4: '1', 5: '2'}"
+180	180		202							{1: '1', 2: '2', 6: '1'}
+181	181		201							{1: '3', 2: '501239', 3: '5', 7: '1'}
+182	182		301			PanelActor3Shake				{1: '1', 2: 'Vera', 3: 'Shut up!', 4: '3'}
+183	183		401							{1: '2', 2: '819016'}
+184	184		203							{1: '3', 2: '0.1', 4: '-100', 5: '-100'}
+185	185		202							{1: '3'}
+186	186		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+187	187		201							{1: '2', 2: '501236', 3: '5', 7: '1'}
+188	188		205						200.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '0.5', 5: '0.2'}
+189	189		301			PanelActor2Shake				{1: '1', 3: 'The lance tears through the air, violently impaling Haynes through the chest.'}
+190	190		401							{1: '2', 2: '2690'}
+191	191		205						200.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0.5', 4: '1', 5: '0.2'}
+192	192		301							"{3: ""A sickening blend of sounds fill the air—ribs shattering, heart torn to shreds, spine disintegrating—as he's instantly pinned to death against the vehicle cabin.""}"
+193	193		301			PanelActor2Shake				{1: '1', 2: 'Haynes', 3: '—Gahk!', 4: '2'}
+194	194		401							{1: '2', 2: '2593'}
+195	195		301				DialogDisable			{3: 'Haynes spews blood mixed with tissue fragments as the delicate standoff shatters in an instant, prompting almost everyone to spring into action.'}
+196	196		306							{1: '1'}
+197	197		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '0', 5: '0'}
+198	198		202							{1: '2', 6: '1'}
+199	199		401							{1: '2', 2: '1504'}
+200	200		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+201	201		201							{1: '1', 2: '500260', 4: '-200', 5: '-100', 7: '1'}
+202	202		502							{1: 'RImgBg1Shake'}
+203	203		301			DialogEnable	DialogDisable			{3: 'People rush toward the cabin filled with corpses, all trying to pull the girl out.'}
+204	204		306							
+205	205		401							{1: '2', 2: '4044'}
+206	206		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+207	207		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+208	208		201							{1: '2', 2: '501236', 4: '600', 7: '1'}
+209	209		203							{1: '2', 2: '0.2', 3: '200'}
+210	210		401							{1: '2', 2: '5151'}
+211	211		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+212	212		301			DialogEnable				{1: '1', 3: 'Meanwhile, Haynes manages to fire that bullet anyway, aiming straight ahead.'}
+213	213		202							{1: '1', 2: '2', 6: '1'}
+214	214		401							{1: '1', 2: '36'}
+215	215		401							{1: '2', 2: '10028604'}
+216	216		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+217	217		301			RImgBg1Shake				{3: 'The bullet races forward, traveling against the current of air torn open by the lance.'}
+218	218		301							"{3: ""Only your peripheral vision catches a glimpse of that fleeting shadow, revealing the bullet's true target—""}"
+219	219		302							{2: 'Vera!!', 3: '220'}
+220	220		201							{1: '3', 2: '501239', 3: '7'}
+221	221		301				DialogDisable			{1: '1', 3: 'Vera sees the bullet too. Even with her visual module already blurred, she can still make out its trajectory.'}
+222	222		307							"{1: ""But she can't dodge it anymore."", 3: '60'}"
+223	223		301							"{3: ""But she can't dodge it anymore.""}"
+224	224		307							{2: '1'}
+225	225		301			DialogEnable	DialogDisable			{3: 'The thrown lance nearly depleted all power, her body still locked in a forward leaning pose... she slowly falls, leaving her unable to dodge the malice originating from her past.'}
+226	226		401							{1: '2', 2: '4331'}
+227	227		302							{2: 'Vera!!!', 3: '228'}
+228	228		401							{1: '2', 2: '9389039'}
+229	229		301			DialogEnable				{3: 'Crash!'}
+230	230		401							{1: '1', 2: '6176'}
+231	231		301				DialogDisable			{3: 'You roar out her name, darting in front of Vera—the action accompanied by a discordant metallic clang as the bullet pierces through the sample box and strikes directly into your body.'}
+232	232		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+233	233		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+234	234		302				RImgBg1Shake			{2: 'Ugh—!', 3: '235'}
+235	235		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+236	236		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+237	237		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+238	238		401						200.0	{1: '2', 2: '4044'}
+239	239		401						500.0	{1: '2', 2: '5302'}
+240	240		402							{1: '5302'}
+241	241		301			DialogEnable	RImgBg1Shake			"{3: ""Both of you lose your strength and fall, but you still spread your arms, deliberately cushioning the falling Construct's body. The two of you collapse awkwardly onto the ground in a tangled heap.""}"
+242	242		203							{1: '3', 2: '0.25', 4: '-100', 5: '-100'}
+243	243		401							{1: '2', 2: '2987'}
+244	244		301							{3: 'Vera refuses to close her eyes even for a second, trembling as she tears at your jacket and shirt.'}
+245	245		204							{1: '3', 2: '7'}
+246	246		301			PanelActor3Shake				"{2: 'Vera', 3: ""...You've been shot!!"", 4: '3'}"
+247	247		202							{1: '3'}
+248	248		301							{3: 'Meanwhile, a new disaster unfolds, giving no one a moment to catch their breath.'}
+249	249		201							{1: '4', 2: '501219', 3: '4'}
+250	250		301				DialogDisable			{1: '1', 2: 'Granny Wang', 3: 'No! Everyone stay away from him!', 4: '4'}
+251	251		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+252	252		202							{1: '4', 6: '1'}
+253	253		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+254	254		301			DialogEnable				"{3: ""No one notices that a certain container inside Haynes' stomach has also been blasted into fragments by the attack.""}"
+255	255		301							"{3: ""His gaze gradually grows cloudy, yet his hoarse voice still reaches everyone's ears through Kent's communication device.""}"
+256	256		201							{1: '2', 2: '501236'}
+257	257		301							{1: '1', 2: 'Haynes', 3: 'I knew... you... thought... could save...', 4: '2'}
+258	258		201							{1: '2', 2: '501239', 3: '4', 7: '1'}
+259	259		301							"{1: '1', 3: ""He's talking to Vera.""}"
+260	260		201							{1: '18', 2: '501236', 3: '5', 4: '40', 5: '50', 6: '-100'}
+261	261		301							{1: '1', 2: 'Haynes', 3: '...All... wrong...', 4: '18'}
+262	262		301							"{3: ""His gaze is fixed on the two people collapsed nearby—Vera's hair burning like a fire.""}"
+263	263		301							{2: 'Haynes', 3: 'You think...', 4: '18'}
+264	264		202				DialogDisable			{1: '18', 6: '1'}
+265	265		307							{1: '—You thought you found someone willing to support you?', 3: '50'}
+266	266		301							{3: '—You thought you found someone willing to support you?'}
+267	267		307							"{1: ""—You think you're brave enough now to stand proudly before everyone?"", 3: '50'}"
+268	268		301							"{3: ""—You think you're brave enough now to stand proudly before everyone?""}"
+269	269		307							{1: '—You should have gone back to the mud, to be broken, to be crushed, to be trampled and devoured by countless beasts.', 3: '48'}
+270	270		301							{3: '—You should have gone back to the mud, to be broken, to be crushed, to be trampled and devoured by countless beasts.'}
+271	271		307							{2: '1'}
+272	272		201							{1: '2', 2: '501236', 3: '5', 7: '1'}
+273	273		301			DialogEnable				"{1: '1', 3: ""There are many words he wants to pour out to that woman in red, but this is enough. Soon she'll know that she made the wrong choice.""}"
+274	274		301			PanelActor2Shake	DialogDisable			{2: 'Haynes', 3: 'You... deserve this... hah...', 4: '2'}
+275	275		204							{1: '2', 2: '0'}
+276	276		307							"{1: ""—While <phonetic=Gabriel>the divine</phonetic>'s messenger has already illuminated the correct path for me."", 3: '45'}"
+277	277		301							"{3: ""—While the divine's messenger has already illuminated the correct path for me.""}"
+278	278		307							{2: '1'}
+279	279		301			DialogEnable				"{3: 'Haynes\' final gaze turns toward the sky—atop the ruined building, a pair of eyes remains perfectly still, appreciating this ""catastrophe"" unfolding directly below.'}"
+280	280		301							"{3: ""The owner of those eyes seems to acknowledge Haynes' final bow. He raises his arm, steadily pointing to a location not far away—Haynes understands this signals the beginning of a new operation.""}"
+281	281		301			PanelActor2Shake				{2: 'Haynes', 3: 'Hah hah hah... I... did it... The new seed... has already...', 4: '2'}
+282	282		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryJianXue.prefab', 2: '2'}
+283	283		201							{1: '1', 2: '500260', 4: '-400', 5: '-100'}
+284	284		301			PanelActor1Shake	DialogDisable			"{1: '1', 3: ""Like a black hole devouring matter, the putrefaction begins at the center of Haynes' abdomen and spreads at a terrifying speed, consuming his bones, organs, fat, and skin... along with the girl kneeling nearby, howling in despair.""}"
+285	285		401							{1: '2', 2: '3077'}
+286	286		203							{1: '2', 2: '0.25', 4: '-700'}
+287	287		203							{1: '1', 2: '0.25', 4: '-700'}
+288	288		202							{1: '2', 2: '1'}
+289	289		301			DialogEnable				"{3: ""Accompanying this suicide attack—everyone's Punishing concentration alarms begin to sound in unison.""}"
+290	290		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+291	291		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+292	292		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryJianXue.prefab'}
+293	293		201							{1: '1', 2: '500201'}
+294	294		301			PanelActor1Shake				{1: '1', 2: 'Simon', 3: 'No! That child is still in there!', 4: '1'}
+295	295		203							{1: '1', 2: '0.25', 3: '400'}
+296	296		201							{1: '2', 2: '500293', 3: '7', 4: '-400'}
+297	297		301							{1: '1', 2: 'Vanessa', 3: 'That child...', 4: '2'}
+298	298		203							{1: '1', 2: '0.2', 3: '600'}
+299	299		203							{1: '2', 2: '0.2', 3: '-600'}
+300	300		201							{1: '3', 2: '501219', 3: '4'}
+301	301		301							{1: '1', 2: 'Granny Wang', 3: 'Haynes has samples in his body too! Everyone stay back!!', 4: '3'}
+302	302		401							{1: '2', 2: '4044'}
+303	303		301							{3: 'Sensing danger, Granny Wang stops abruptly and firmly grabs the two youngsters still trying to rush forward, yanking them back.'}
+304	304		301							"{3: ""Vanessa's hand has already touched the rear panel of the vehicle compartment. The pain from the concentrated Punishing immediately spreads from her fingertips, blood quickly soaking through her glove.""}"
+305	305		204							{1: '2', 2: '9'}
+306	306		301			PanelActor2Shake				{2: 'Vanessa', 3: '...!!!', 4: '2'}
+307	307		301							"{2: 'Granny Wang', 3: ""If you want to be corroded until there's nothing left, not even your bones, then just keep standing here!"", 4: '3'}"
+308	308		204							{1: '2', 2: '7'}
+309	309		301							{2: 'Vanessa', 3: '...', 4: '2'}
+310	310		401							{1: '2', 2: '4411'}
+311	311		301							{3: 'Vanessa and Simon are quickly dragged away. Before their eyes, Haynes and the girl melt into pools of decaying flesh, quickly sliding down the spear Vera had thrown and spreading across the ground.'}
+312	312		301				DialogDisable			{3: 'The humans nearby witnessed everything, and their intense emotions finally burst forth.'}
+313	313		202							{1: '1', 2: '2', 3: '3'}
+314	314		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+315	315		302							"{2: ""...No... I shouldn't have..."", 3: '316'}"
+316	316		201							{1: '4', 2: '501239', 3: '4', 5: '-100'}
+317	317		301			DialogEnable				"{1: '1', 2: 'Vera', 3: ""Shut up, don't say another word...!"", 4: '4'}"
+318	318		401							{1: '2', 2: '2987'}
+319	319		301							{3: 'Vera grits her teeth as she tears open your shirt to examine the gunshot wound.'}
+320	320		301				DialogDisable			"{3: ""Even she couldn't have imagined this damn scene would play out again—over these past few days, you have already rushed in to shield her from two deadly attacks.""}"
+321	321		302							"{2: ""If I hadn't taken that mother's gun away..."", 3: '322'}"
+322	322		302							{2: 'They would have had at least one extra gun to fight back against Haynes... ugh!', 3: '323', 4: 'It never would have come to this... ugh!', 5: '323'}
+323	323		401							{1: '2', 2: '2987'}
+324	324		204							{1: '4', 2: '9'}
+325	325		301			DialogEnable				"{2: 'Vera', 3: ""...If anyone's to blame, it's..."", 4: '4'}"
+326	326		301							"{3: ""The bullet hole leaves scorched black marks on the human's clothes and skin, but no blood comes out—no blood at all.""}"
+327	327		301							{2: 'Vera', 3: 'No blood... something blocked it...', 4: '4'}
+328	328		202							{1: '4'}
+329	329		301							{3: 'What blocked the bullet?'}
+330	330		401							{1: '2', 2: '5286'}
+331	331		301							{3: 'A sinister thought worms its way into her M.I.N.D., and she immediately pulls the sample box from your hands.'}
+332	332		301							{3: 'Her strength has waned considerably, but the box still tumbles to the ground from your grip.'}
+333	333		301							{3: 'A pitch-black bullet hole appears before her eyes, with stabilizing agent rapidly leaking from inside.'}
+334	334		201							{1: '4', 2: '501239', 3: '7', 5: '-100'}
+335	335		301				DialogDisable			{1: '1', 2: 'Vera', 3: '...I was wrong.', 4: '4'}
+336	336		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+337	337		202							{1: '4', 6: '1'}
+338	338		401							{1: '2', 2: '2782'}
+339	339		201							{1: '1', 2: '500942', 3: '6'}
+340	340		301			DialogEnable				{1: '1', 2: 'Leia', 3: 'Granny Wang! A group of Corrupted is approaching us!', 4: '1'}
+341	341		301							{3: 'Leia, being a Construct, is the first to sense the imminent attack.'}
+342	342		301							"{2: 'Leia', 3: ""Corrupted group approaching... They shouldn't have been able to catch up so quickly. There's no time to evacuate!"", 4: '1'}"
+343	343		402							{1: '2782'}
+344	344		201							{1: '1', 2: '501219', 3: '4'}
+345	345		301							{1: '1', 2: 'Granny Wang', 3: 'Regroup immediately, everyone! Prepare to engage!', 4: '1'}
+346	346		301							"{3: ""Granny Wang glances back at the vehicle cabin, where Haynes's remains lie as nothing more than a spreading puddle of mangled flesh.""}"
+347	347		202							{1: '1'}
+348	348		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+349	349		301							{3: 'It mingles with crimson blood and crimson Punishing, seeping through the crevices of the surrounding ruins, seeping, seeping ever deeper.'}
+350	350		301							{3: 'Above it, those who tread upon crimson ground are already trapped in a desperate situation.'}
+351	351		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+352	352		201							{1: '1', 2: '500293', 3: '7'}
+353	353		301							"{1: '1', 2: 'Vanessa', 3: ""Perhaps... I shouldn't have... said those things...?"", 4: '1'}"
+354	354		203							{1: '1', 2: '0.2', 3: '-400'}
+355	355		201							{1: '2', 2: '500201', 4: '400'}
+356	356		301							"{1: '1', 2: 'Simon', 3: ""I shouldn't have gotten out of the car. If I had stayed inside..."", 4: '2'}"
+357	357		202							{1: '1', 2: '2'}
+358	358		401							{1: '2', 2: '4231'}
+359	359		301							{3: 'The electric car driven by Haynes thunders past—'}
+360	360		301							{3: 'Due to the choices made by several young people, it charges back and forth on the tracks, circling around and crushing every innocent person on each branching path, sparing nobody.'}
+361	361		402							{1: '4231'}
+362	362		201							{1: '3', 2: '501219', 3: '4'}
+363	363		301							"{1: '1', 2: 'Granny Wang', 3: '...Can someone really ""utilize"" Punishing to this extent?', 4: '3'}"
+364	364		306							{1: '1'}
+365	365		301							"{3: ""With her wealth of experience, Granny Wang firmly believes this isn't something Haynes could accomplish alone. There must be an existence behind him that far exceeds anything she can imagine, supporting this chaos.""}"
+366	366		301							{3: 'But no one has time to investigate that now. In the immediate future, just staying alive will be a challenge.'}
+367	367		306							
+368	368		204							{1: '3', 2: '8'}
+369	369		301							{3: 'Granny Wang lets out a long sigh.'}
+370	370		204							{1: '3', 2: '4'}
+371	371		301							"{2: 'Granny Wang', 3: ""...You still have guns in your hands, so raise them! It's time for us to fight back once more!"", 4: '3'}"
+372	372		301				DialogDisable			{2: 'Granny Wang', 3: 'You two over there! Can you still stand?', 4: '3'}
+373	373		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+374	374		202							{1: '3', 6: '1'}
+375	375		201							{1: '1', 2: '501242', 7: '1'}
+376	376		301			DialogEnable				{1: '1', 2: 'Vera', 3: '...', 4: '1'}
+377	377		301							"{3: ""The human and the Construct in the distance don't respond. Vera hangs her head, her disheveled hair obscuring her profile, making her expression unreadable.""}"
+378	378		401						100.0	{1: '2', 2: '5540'}
+379	379		401							{1: '2', 2: '5540'}
+380	380		301							{2: 'Sheepdog', 3: 'Woof! Woof!'}
+381	381		502							{1: 'RImgBg1BlowUp'}
+382	382		301							"{3: ""Sheepdog suddenly jumps down and runs to your side, barking frantically at the sample box on the ground, drawing everyone's attention.""}"
+383	383		301							{3: 'Led by Granny Wang, the group approaches and quickly notices that the two are frozen in place, staring at the box with an almost manic intensity.'}
+384	384		301							{2: 'Vera', 3: '...', 4: '1'}
+385	385		301							"{3: ""From the dark bullet hole in the box, they can almost hear Haynes's mocking laughter.""}"
+386	386		201							{1: '1', 2: '501219', 3: '4'}
+387	387		301			PanelActor1Shake				{1: '1', 2: 'Granny Wang', 3: 'Watch out! Step back!', 4: '1'}
+388	388		202							{1: '1'}
+389	389		301							{3: 'Granny Wang spots the danger and holds the others back.'}
+390	390		201							{1: '1', 2: '501242'}
+391	391		301				DialogDisable			{1: '1', 3: 'Vera continues staring at the bullet hole, realizing that Haynes is like a punctuation mark deeply embedded in the earth. Decades later, on yet another winter day, he is once again telling her that every struggle ends in darkness.'}
+392	392		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.3'}
+393	393		304							{1: 'Her memory rewinds to a familiar winter night.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-1'}
+394	394		304							{1: 'Dr. Gwynneth... her only friend, became one of the first victims when the disaster broke out.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-1'}
+395	395		304							{1: 'Afterward, she joined the military forces resisting the Punishing virus, voluntarily signed the informed consent documents, and willingly underwent modification,', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-1'}
+396	396		304							{1: 'then from her very first battlefield appearance as a Construct, she struggled with every ounce of her strength.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-1', 8: '1'}
+397	397		304							"{1: 'Yet even when she tore off her own arm to help her teammates, ""Average Joe"" and the others still couldn\'t survive.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-2'}"
+398	398		304							"{1: 'Even when she was prepared to bear the charge of desertion, ""Hummingbird"" and ""Moth"" still couldn\'t survive.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-1'}"
+399	399		304							{1: 'Even when she gave everything for this group of foolish comedians, she only pushed the situation toward a worse extreme.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-1'}
+400	400		304							"{1: '""The Red-Haired Reaper"" was a curse. Someone else had seen this truth long before she did.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-1', 9: '1'}"
+401	401		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+402	402		202							{1: '1', 6: '1'}
+403	403		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '0', 5: '0'}
+404	404		205							{1: '999'}
+405	405		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5501_1.jpg'}
+406	406		301			DialogEnable	DialogDisable			{2: 'Haynes', 3: 'Your sharpness, too, will inevitably be dulled until you reach the tragic end that awaits you.'}
+407	407		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+408	408		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+409	409		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '4'}
+410	410		401							{1: '2', 2: '4823'}
+411	411		109						800.0	{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60>85%</size></color>', 9: '3'}
+412	412		401							{1: '2', 2: '4823'}
+413	413		109						500.0	{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60>86%</size></color>', 9: '3'}
+414	414		401							{1: '2', 2: '9335029'}
+415	415		109	1						{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60>87%</size></color>', 9: '3'}
+416	416		110							
+417	417		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+418	418		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '4', 5: '1'}
+419	419		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory10.jpg', 4: '1'}
+420	420		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '1', 5: '0'}
+421	421		201							{1: '1', 2: '501239', 3: '7', 7: '1'}
+422	422		301			DialogEnable				{1: '1', 3: 'Vera glares at the box, clenched teeth grinding together to produce a wet clicking.'}
+423	423		204							{1: '1', 2: '5'}
+424	424		301							"{2: 'Vera', 3: ""I refuse to accept this... It's not the time to give up. I refuse to accept this ending."", 4: '1'}"
+425	425		205						200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '0.2'}
+426	426		205							{1: '999'}
+427	427		204							{1: '1', 2: '4'}
+428	428		203							{1: '1', 2: '0.25', 4: '-100', 5: '-100'}
+429	429		301							{3: 'She snatches the box in one swift motion—you instinctively grab hold of the other end.'}
+430	430		301			PanelActor1Shake				"{2: 'Vera', 3: ""Let go...! The stabilizer hasn't completely drained yet, there's still time for you to leave."", 4: '1'}"
+431	431		301							"{2: 'Vera', 3: ""I'll take the sample to a safe place."", 4: '1'}"
+432	432		302							{2: 'The sample cannot be abandoned.', 3: '433', 4: 'This is the last sample we have!', 5: '433', 6: 'What about you?', 7: '433'}
+433	433		204							{1: '1', 2: '5'}
+434	434		301							"{2: 'Vera', 3: ""...I admit I made a mistake, but I won't dwell on it—this sample is never going to reach its destination now, and throwing it as far away as possible is the only remedy I can offer!"", 4: '1'}"
+435	435		302							"{2: 'There must be another way...', 3: '436', 4: ""There's another way!"", 5: '436', 6: '(Take back the box.)', 7: '436'}"
+436	436		204							{1: '1', 2: '4'}
+437	437		301			RImgBg1Shake				{3: 'You snatch it back, clutching it tightly and refusing to let go even as the stabilizer continues to rapidly leak out.'}
+438	438		302							{2: 'The test material... use that piece from my body!', 3: '439'}
+439	439		301				DialogDisable			"{3: ""You suddenly look up, meeting Vera's eyes.""}"
+440	440		302							"{2: 'You said it yourself... it ""can block Punishing more effectively,""', 3: '441'}"
+441	441		302							"{2: '""It can serve as better protection against Punishing""...', 3: '442'}"
+442	442		302							"{2: ""I've got it all recorded on my terminal..."", 3: '443'}"
+443	443		204							{1: '1', 2: '6'}
+444	444		302							"{2: ""You weren't lying to me, were you?"", 3: '445', 4: 'You had no reason to lie to me!', 5: '445'}"
+445	445		204							{1: '1', 2: '4'}
+446	446		301			DialogEnable				{2: 'Vera', 3: '...', 4: '1'}
+447	447		301							"{3: ""Vera doesn't answer. She meets your gaze, and you can already see the answer in her eyes.""}"
+448	448		302							{2: '(Unwrap the bandages around your abdomen.)', 3: '449'}
+449	449		401							{1: '2', 2: '2987'}
+450	450		201							{1: '1', 2: '500201', 7: '1'}
+451	451		301				DialogDisable			{1: '1', 2: 'Simon', 3: '...【kuroname】, what are you doing?', 4: '1'}
+452	452		302							"{2: ""About what just happened and what's about to happen..."", 3: '453'}"
+453	453		302							"{2: ""I admit I'm a bit upset."", 3: '454', 4: ""I admit I'm a bit angry."", 5: '454', 6: ""I admit I'm a bit scared."", 7: '454'}"
+454	454		302							{2: 'But all these emotions... will only last for a second.', 3: '455'}
+455	455		302							{2: 'If I hesitate...', 3: '456'}
+456	456		201							{1: '1', 2: '500293', 3: '5', 7: '1'}
+457	457		301			DialogEnable				{1: '1', 2: 'Vanessa', 3: 'Hold on!', 4: '1'}
+458	458		201							{1: '1', 2: '501239', 3: '7', 7: '1'}
+459	459		301							{1: '1', 2: 'Vera', 3: 'You—', 4: '1'}
+460	460		401							{1: '1', 2: '6177'}
+461	461		401							{1: '2', 2: '13081710'}
+462	462		401							{1: '2', 2: '2593'}
+463	463		301			RImgBg1Shake				"{1: '1', 3: ""Before everyone's shocked eyes, you suddenly press the box firmly against the wound on your abdomen.""}"
+464	464		302							{2: 'Hnngg...', 3: '465'}
+465	465		201							{1: '1', 2: '500201', 4: '400', 7: '1'}
+466	466		201							{1: '2', 2: '500293', 3: '9', 4: '-400', 7: '1'}
+467	467		301							{1: '1', 2: 'Simon', 3: 'What are you doing...!', 4: '1'}
+468	468		301							"{2: 'Vanessa', 3: ""...You've lost your mind!"", 4: '2'}"
+469	469		203							{1: '1', 2: '0.2', 3: '400', 4: '-100', 5: '-100'}
+470	470		203							{1: '2', 2: '0.2', 3: '-400', 4: '-100', 5: '-100'}
+471	471		401							{1: '2', 2: '4044'}
+472	472		301				RImgBg1Shake			{3: 'Simon and Vanessa both think their classmate has gone mad, desperately reaching out to grab the sample box.'}
+473	473		302							{2: '(Grip the box tightly.)', 3: '474'}
+474	474		401							{1: '2', 2: '4432'}
+475	475		301				DialogDisable			"{3: ""The searing pain feels like it's tearing open the wound on their side again. You grimace in agony, hunching over and curling up almost into a fetal position.""}"
+476	476		302							{2: 'Only one sample left... too important...', 3: '477'}
+477	477		302							{2: 'Only by getting this sample to the right place for analysis...', 3: '478'}
+478	478		302							{2: 'can we possibly stop the disaster from spreading...', 3: '479'}
+479	479		302							{2: 'Otherwise... what just happened... will occur everywhere...', 3: '480'}
+480	480		202							{1: '1', 2: '2'}
+481	481		201							{1: '3', 2: '501239', 3: '4'}
+482	482		301			DialogEnable				{1: '1', 2: 'Vera', 3: '...', 4: '3'}
+483	483		301							"{3: 'Vera\'s expression grows complicated as she finds herself forced to ""reassess"" the person in front of her once again.'}"
+484	484		301							"{2: 'Vera', 3: ""...Even like this, you're still determined to deliver the sample?"", 4: '3'}"
+485	485		302							"{2: ""If you were in my place... wouldn't you make the same choice?""}"
+486	486		204							{1: '3', 2: '10'}
+487	487		301							{2: 'Vera', 3: '...', 4: '3'}
+488	488		301							{3: 'Vera receives an answer just like the one she expected. Her mouth stretches into a smile as she too hunches over, suppressing the flood of emotions threatening to burst forth.'}
+489	489		204							{1: '3', 2: '13'}
+490	490		301							{2: 'Vera', 3: '...Hahahah... Hah...', 4: '3'}
+491	491		301			PanelActor3Shake				{2: 'Vera', 3: 'Haha... HAHAHAHA!!!', 4: '3'}
+492	492		301							{3: 'Finally, all her unspoken reproaches and all the responsibility she wished to shoulder alone transform into thunderous laughter, echoing above the ruins.'}
+493	493		204							{1: '3', 2: '4'}
+494	494		301							{2: 'Vera', 3: 'That sample has a maximum stability period of 6 hours—Granny Wang, can we make it in time?', 4: '3'}
+495	495		201							{1: '3', 2: '501219', 3: '4'}
+496	496		301							{1: '1', 2: 'Granny Wang', 3: '...', 4: '3'}
+497	497		301							{3: 'Granny Wang immediately understands her intention.'}
+498	498		301							"{2: 'Granny Wang', 3: ""We can't make it. The Corrupted will catch up to us before we reach a base with analysis capabilities. Fighting while retreating is no longer an option."", 4: '3'}"
+499	499		301							{3: 'But Granny Wang delivers her assessment, definitive yet regrettably honest.'}
+500	500		203							{1: '3', 2: '0.2', 3: '-500'}
+501	501		201							{1: '2', 2: '500293', 3: '9', 4: '300'}
+502	502		301							{1: '1', 2: 'Vanessa', 3: 'What if we hold the rear and block all the Corrupted?', 4: '2'}
+503	503		202							{1: '2', 2: '3', 6: '1'}
+504	504		201							{1: '2', 2: '500293', 3: '4', 4: '-300', 5: '-50'}
+505	505		201							{1: '4', 2: '501239', 4: '150', 5: '-100'}
+506	506		301				DialogDisable			"{1: '1', 3: ""From within the crowd, a silver-haired girl throws out these words—simultaneously reaching out and grabbing Vera's arm."", 4: '1'}"
+507	507		401							{1: '2', 2: '5286'}
+508	508		203							{1: '2', 2: '0.25', 3: '-300'}
+509	509		203							{1: '4', 2: '0.25', 3: '150'}
+510	510		301			DialogEnable				"{3: ""Her eyes are rimmed with red, and her gloves still seep blood, leaving a shocking crimson handprint on Vera's armor.""}"
+511	511		202							{2: '4', 6: '1'}
+512	512		203							{1: '2', 2: '0.25', 3: '0'}
+513	513		204							{1: '2', 2: '4'}
+514	514		301							"{2: 'Vanessa', 3: ""We haven't even reached the point of writing the after-action report, and you're already fantasizing about being the hero... Disgusting!"", 4: '2'}"
+515	515		301							"{2: 'Vanessa', 3: 'Do you think you\'re some self-proclaimed savior of the world, expecting all us ""pampered elites"" from Babylonia to fall in line behind you? I can\'t stand that self-righteous look on your face...', 4: '2'}"
+516	516		204							{1: '2', 2: '5'}
+517	517		301							{2: 'Vanessa', 3: 'Even if this is my first time on the surface, I refuse to be someone holding you back...', 4: '2'}
+518	518		301							{3: 'She defiantly wipes her face.'}
+519	519		204							{1: '2', 2: '4'}
+520	520		301							{2: 'Vanessa', 3: 'Just like how you and Leia bought time for the people from the conservation area to retreat, I can do the same!', 4: '2'}
+521	521		301							{2: 'Vanessa', 3: 'Everyone here will!', 4: '2'}
+522	522		202							{1: '2'}
+523	523		301							{3: 'She sweeps her arm toward the crowd behind her—every refugee who stood with them has witnessed their perseverance, and also beheld the tragedy that unfolded on that vehicle.'}
+524	524		301							{3: 'At this moment, everyone silently gives their answer: they will no longer choose an endless flight with no destination.'}
+525	525		201							{1: '2', 2: '500293', 3: '4'}
+526	526		301							"{1: '1', 2: 'Vanessa', 3: ""Mrs. Wang, isn't this enough?!"", 4: '2'}"
+527	527		201							{1: '2', 2: '501219', 3: '4'}
+528	528		301							{2: 'Granny Wang', 3: '...Concentrate all our resources on one transport vehicle!', 4: '2'}
+529	529		401							{1: '2', 2: '1504'}
+530	530		301							{3: 'Granny Wang issues her command, and people begin to move, silent and resolute as they act swiftly.'}
+531	531		301							{2: 'Granny Wang', 3: 'Even with the best preparations and buying as much time as possible, the transport vehicle can only travel a short distance more, not enough to reach the destination.', 4: '2'}
+532	532		301							"{2: 'Granny Wang', 3: ""There will definitely be a stretch of road you'll have to travel by yourself."", 4: '2'}"
+533	533		203							{1: '2', 2: '0.25', 3: '-500'}
+534	534		201							{1: '1', 2: '501239', 4: '500', 5: '-100'}
+535	535		301							{1: '1', 2: 'Vera', 3: '...I can carry that person on my back while running. Factor my speed into your calculations.', 4: '1'}
+536	536		301							"{2: 'Granny Wang', 3: ""No. In your current condition, you can't achieve a Construct's normal movement speed."", 4: '2'}"
+537	537		301							{2: 'Vera', 3: 'I can. I can reach that speed.', 4: '1'}
+538	538		204							{1: '1', 2: '9'}
+539	539		301			PanelActor1Shake				{3: 'Vera tries to prop herself up using her weapon, but she can barely lift her head.'}
+540	540		301							"{2: 'Vera', 3: ""I've already tried it. The consciousness connection that person established with me... it works."", 4: '1'}"
+541	541		301							{2: 'Vera', 3: 'As long as the connection is maintained, I can move!', 4: '1'}
+542	542		401							{1: '1', 2: '36'}
+543	543		301							{2: 'Granny Wang', 3: '...', 4: '2'}
+544	544		401							{1: '1', 2: '273'}
+545	545		301							{2: 'Granny Wang', 3: 'Then...', 4: '2'}
+546	546		202							{1: '1'}
+547	547		203							{1: '2', 2: '0.25', 3: '0'}
+548	548		301							{3: 'Granny Wang turns toward you, suffering alone.'}
+549	549		301							"{2: 'Granny Wang', 3: ""To fulfill your wish, to fulfill everyone's wishes... you must..."", 4: '2'}"
+550	550		302							{2: '...I need her.', 3: '551', 4: '...I need Vera.', 5: '551'}
+551	551		201							{1: '2', 2: '501239', 3: '4', 4: '0', 5: '-100'}
+552	552		301							{1: '1', 2: 'Vera', 3: '...', 4: '2'}
+553	553		301							{3: 'You grip the rope connecting you to Vera.'}
+554	554		302							{2: 'Please help us... Delay the Corrupted as long as possible!', 3: '555'}
+555	555		306							{1: '1'}
+556	556		201							{1: '2', 2: '500201', 3: '4'}
+557	557		301							"{1: '1', 2: 'Simon', 3: ""They're here!"", 4: '2'}"
+558	558		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+559	559		202							{1: '2', 6: '1'}
+560	560		401							{1: '2', 2: '1508'}
+561	561		201							{1: '3', 2: '500013', 4: '-650', 5: '-100', 7: '1'}
+562	562		201							{1: '4', 2: '500013', 4: '650', 5: '-100', 7: '1'}
+563	563		201							{1: '5', 2: '500013', 5: '-100', 7: '1'}
+564	564		301							"{1: '1', 3: 'The horde of Corrupted, drawn by Haynes through some unknown method, appears on the horizon. They ""flow"" through the crevices of these ruins, surging forward like a flood.'}"
+565	565		301							{3: 'Granny Wang removes the sniper rifle from her shoulder.'}
+566	566		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+567	567		202							{1: '3', 2: '4', 3: '5', 6: '1'}
+568	568		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory10.jpg'}
+569	569		306						200.0	
+570	570		201							{1: '4', 2: '501219'}
+571	571		301							{1: '1', 2: 'Granny Wang', 3: 'Alright, Shepherd and I are good to go.', 4: '4'}
+572	572		401						100.0	{1: '2', 2: '5540'}
+573	573		401							{1: '2', 2: '5540'}
+574	574		301							"{2: 'Granny Wang', 3: ""It's been a while since I've fought like this... Reminds me of my days in the Cargo Crew."", 4: '4'}"
+575	575		301							{2: 'Granny Wang', 3: 'Come on, get up! We need to move right now!', 4: '4'}
+576	576		202							{1: '4'}
+577	577		201							{1: '1', 2: '501219', 3: '4', 4: '-300', 5: '-50'}
+578	578		201							{1: '2', 2: '501239', 3: '9', 4: '150', 5: '-100'}
+579	579		301							"{1: '1', 3: ""Granny Wang reaches out, placing her hand on Vera's shoulder. Her arm, hardened from years of handling rifles, remains steady and strong.""}"
+580	580		401							{1: '2', 2: '5286'}
+581	581		203							{1: '1', 2: '0.25', 3: '-300'}
+582	582		203							{1: '2', 2: '0.25', 3: '150'}
+583	583		401						200.0	{1: '2', 2: '4660'}
+584	584		301			RImgBg1Shake				{3: 'Vera thrusts her weapon into the ground, trying to pull herself up—but days of constant running, repeatedly pushing her frame to its breaking point, have left her strength almost completely drained.'}
+585	585		203							{1: '2', 2: '0.25', 3: '150', 4: '-100'}
+586	586		301							{3: 'She struggles up, only to fall.'}
+587	587		203							{1: '2', 2: '0.25', 3: '150', 4: '-50'}
+588	588		301							{3: 'She tries again, only to fall again.'}
+589	589		301			PanelActor2Shake	DialogDisable			{2: 'Vera', 3: '...Ugh... Get up...!', 4: '2', 5: '1'}
+590	590		307							{1: 'She rises, falls, and rises again, all the while struggling toward that person.', 3: '50'}
+591	591		301							{3: 'She rises, falls, and rises again, all the while struggling toward that person.'}
+592	592		307							{2: '1'}
+593	593		301			DialogEnable				{2: 'Granny Wang', 3: 'Leia, come give me a hand!', 4: '1', 5: '2'}
+594	594		202							{1: '1', 2: '2', 6: '1'}
+595	595		201							{1: '3', 2: '500293', 3: '9'}
+596	596		301							{1: '1', 2: 'Vanessa', 3: '...Tsk!', 4: '3'}
+597	597		301							{2: 'Vanessa', 3: 'You two owe debts of gratitude that can never be repaid, understand?!', 4: '3'}
+598	598		401						300.0	{1: '2', 2: '4779'}
+599	599		402							{1: '4779'}
+600	600		301							{3: 'Vanessa refuses to help. Instead, she draws her sidearm and leads the still-armed refugees forward without a backward glance.'}
+601	601		301							"{2: 'Vanessa', 3: ""...I will ensure everyone's survival. That's my promise."", 4: '3'}"
+602	602		301							"{2: 'Vanessa', 3: ""Even if the rest of the world perishes, I'll ensure at least a handful of us survive."", 4: '3'}"
+603	603		301				AniZhuanchangBegin			"{2: 'Vanessa', 3: ""As for you all... even if you're suffocated by the weight of responsibility, even if you must run until your last breath... You absolutely cannot let our efforts go to waste!"", 4: '3'}"
+604	604		502							{1: 'DialogDisable'}
+605	605		202							{1: '3', 6: '1'}
+606	606		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '1'}
+607	607		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab', 2: '2', 5: '3'}
+608	608		301			DialogEnable	DialogDisable			{3: 'Vera collapses one last time—this has to be her last.'}
+609	609		511						1000.0	{1: '3', 2: '1', 3: '0|0|-500'}
+610	610		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab', 5: '3'}
+611	611		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+612	612		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5501_25.jpg', 4: '1'}
+613	613		104						1000.0	{1: '500|-350|-500', 2: '0', 4: '1'}
+614	614		104						3000.0	{1: '500|350|-500', 2: '3', 4: '1'}
+615	615		301			DialogEnable	AniZhuanchangBegin			{3: 'She finally accepts help from others, lying on her back in the center of the group, allowing them to support her limbs and weapons as they all strain forward together.'}
+616	616		502							{1: 'DialogDisable'}
+617	617		104				AniZhuanchangEnd			{1: '-500|350|-500', 2: '0', 4: '1'}
+618	618		104						3000.0	{1: '-500|-350|-500', 2: '3', 4: '1'}
+619	619		301			DialogEnable	DialogDisable			{3: 'They lift her up together—'}
+620	620		104						3500.0	{1: '0|0|0', 2: '3.5', 4: '1'}
+621	621		401							{1: '1', 2: '274'}
+622	622		307							{1: 'A hero needs a sharp blade, so they lift their swords before them.', 3: '60', 5: '0'}
+623	623		301							{3: 'A hero needs a sharp blade, so they lift their swords before them.'}
+624	624		307							{2: '1'}
+625	625		104						1500.0	{1: '0|-150|-300', 2: '1.5', 4: '1'}
+626	626		302							{2: '(Reach out hand.)', 3: '627', 4: 'Beginning... connection.', 5: '627'}
+627	627		301			DialogEnable				"{2: 'Vera', 3: ""I've been thinking lately...""}"
+628	628		301							"{2: 'Vera', 3: ""I've realized that time and experience shape who we become. Everyone around you supports you, while everyone around me lost their lives because of me.""}"
+629	629		301							{2: 'Vera', 3: 'So your instinct is to give, while mine is to take.'}
+630	630		301							{3: 'She has long seen her fate written in the stars: born from misfortune, bringing suffering wherever she goes. Only by continuously swallowing pain can she stomach the harsh reality she creates.'}
+631	631		301							"{2: 'Vera', 3: ""Do you understand? We're walking different paths, completely different from each other, 【kuroname】.""}"
+632	632		301							{2: 'Vera', 3: 'Vanessa was wrong too. I have no interest in being a hero.'}
+633	633		104						1500.0	{1: '0|-100|-300', 2: '1.5', 4: '1'}
+634	634		301							{3: 'Countless hands lift her before you—she gazes at the hand reaching out to her, and blinks slowly.'}
+635	635		301							"{2: 'Vera', 3: ""Look... you're the hero.""}"
+636	636		301							"{2: 'Vera', 3: ""You can draw everyone's attention and admiration to yourself, shining so brightly it's almost annoying.""}"
+637	637		301							"{2: 'Vera', 3: ""I've been wavering all along, reluctantly continuing this relay with you, not wanting to sacrifice myself for some grand purpose.""}"
+638	638		301							{2: 'Vera', 3: 'But now, I...'}
+639	639		301							{3: 'She watches you writhe in pain, repeatedly recalling the moment they used their own flesh and blood to fill the gap.'}
+640	640		301							{3: 'She knows all too well, that you are a modern Icarus who will attempt to cross the sea with waxen wings, but the harsh rays of reality will surely melt them, sending you plummeting into the deepest trenches of the unfeeling waters.'}
+641	641		301							{2: 'Vera', 3: 'I refuse to accept this!'}
+642	642		301							{3: 'The Mind Beacon descends once more, sending a piercing pain into her M.I.N.D., as if transmitting the agony this person is currently enduring.'}
+643	643		301							{3: 'A familiar pain races through her limbs and fingertips as she gradually awakens, her strength returning with it. Slowly, she clenches her fist.'}
+644	644		104						2000.0	{1: '0|0|0', 2: '2', 4: '1'}
+645	645		301							{2: 'Vera', 3: 'Come here.'}
+646	646		301				DialogDisable			{3: 'She understands completely.'}
+647	647		307							{1: 'Take a piece of flesh from the body of mine<//DISASTER>.', 3: '60', 5: '0'}
+648	648		301							{3: 'Take a piece of flesh from the body of mine<//DISASTER>.'}
+649	649		307				AniZhuanchangBegin			{2: '1'}
+650	650		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+651	651		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '4'}
+652	652		109						500.0	{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60>87%</size></color>', 9: '3'}
+653	653		401							{1: '2', 2: '4823'}
+654	654		109						400.0	{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60>88%</size></color>', 9: '3'}
+655	655		401							{1: '2', 2: '4823'}
+656	656		109						300.0	{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60>89%</size></color>', 9: '3'}
+657	657		401							{1: '2', 2: '9335029'}
+658	658		109	1	1		AniZhuanchangBegin		200.0	{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60>90%</size></color>', 9: '3'}

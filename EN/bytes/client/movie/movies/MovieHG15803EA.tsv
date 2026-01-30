@@ -1,0 +1,287 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1288.jpg'}
+2	2		401							{1: '2', 2: '2669'}
+3	3		401							{1: '2', 2: '4926'}
+4	4		301			DialogEnable				{3: 'As the bell tolls slowly, people begin to leave the church in small groups.'}
+5	5		301							"{3: ""Just when you're getting ready to leave after helping with the cleanup, Bianca's gentle voice suddenly calls out to you.""}"
+6	6		401							{1: '1', 2: '230'}
+7	7		402							{1: '4926'}
+8	8		201							{1: '18', 2: '501280', 4: '-100', 5: '-120', 6: '75'}
+9	9		301							{1: '1', 2: 'Bianca', 3: 'Commandant.', 4: '18', 18: '100010765'}
+10	10		202							{1: '18'}
+11	11		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+12	12		306							
+13	13		201							{1: '1', 2: '501280', 7: '1'}
+14	14		301							{1: '1', 3: 'You turn around to see Bianca standing with her hands clasped in front of her, radiating a holy aura in the center of the church.'}
+15	15		302							"{2: ""...Didn't you already confirm that I'm fine?"", 3: '16'}"
+16	16		204							{1: '1', 2: '1'}
+17	17		301							"{2: 'Bianca', 3: ""Well... I just realized that if it's you we're talking about..."", 4: '1', 18: '100010766'}"
+18	18		204							{1: '1', 2: '8'}
+19	19		301							{2: 'Bianca', 3: '...I should be able to do that now.', 4: '1', 18: '100010767'}
+20	20		302							{2: '...Do what?', 3: '21', 4: '...?', 5: '21'}
+21	21		204							{1: '1', 2: '1'}
+22	22		301							{2: 'Bianca', 3: 'As the Holy Maiden... I am able to pray to the divine for blessings, and also grant the wish of another during the Sacred Prayer Ritual...', 4: '1', 18: '100010768'}
+23	23		202							{1: '1'}
+24	24		401							{1: '2', 2: '1543'}
+25	25		301				DialogDisable			{3: 'The woman in white gently extends her arms.'}
+26	26		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_10.jpg'}
+27	27		104							{1: '0|-120|-300', 2: '0'}
+28	28		502							{1: 'DialogEnable'}
+29	29		301			AniZhuanchangEnd				{2: 'Bianca', 3: 'Would you be willing to join me for the final part of the ritual?', 18: '100010769'}
+30	30		301				DialogDisable			{3: 'Flower petals dance through the air before freezing against the luminous veil of time.'}
+31	31		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5701_10.jpg', 3: '0', 4: '1', 5: '1'}
+32	32		104							{1: '0|0|0', 2: '0'}
+33	33		205							{1: '999'}
+34	34		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_10.jpg'}
+35	35		301			DialogEnable				{3: 'The expression that has appeared countless times in your mind is so gentle... yet so distant.'}
+36	36		301							"{3: ""Like a deity's compassionate gaze, she envelops lost souls in her embrace.""}"
+37	37		302							{2: '...Of course.', 3: '38'}
+38	38		301							{2: 'Bianca', 3: 'Now then, tell me what you wish.', 18: '100010770'}
+39	39		301							{3: 'Her voice is serene and ethereal, carrying an enchanting power that slowly draws the emotions buried deep within your heart.'}
+40	40		302							{2: '...I wish for world peace.', 3: '41', 4: '...I wish for you to stay by my side.', 5: '67'}
+41	41		301							{3: 'The Snowfields have endured too much suffering this winter. Natural disasters almost destroyed all those who live here... You hope that such calamities will never happen again.'}
+42	42		301							{2: 'Bianca', 3: 'I see.', 18: '100010771'}
+43	43		301							"{3: 'She responds softly, gradually guiding you until you have fully expressed all your wishes for the ""world.""'}"
+44	44		301				DialogDisable			{3: 'The ritual of listening seems to be draining her energy quickly. After you finish, she wearily closes her eyes, her beautiful eyelashes trembling.'}
+45	45		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1288.jpg', 3: '0', 4: '1', 5: '1'}
+46	46		201							{1: '1', 2: '501280', 3: '9', 7: '1'}
+47	47		205							{1: '999'}
+48	48		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1288.jpg'}
+49	49		401							{1: '2', 2: '4044'}
+50	50		203							{1: '1', 2: '0.25', 4: '-75', 5: '-220'}
+51	51		502							{1: 'DialogEnable'}
+52	52		301			RImgBg1Shake				{1: '1', 3: 'Suddenly, her body falls limp toward you.'}
+53	53		302							{2: 'Bianca!', 3: '54'}
+54	54		202							{1: '1'}
+55	55		301							{3: 'You catch Bianca and realize her body is weightless, light as a feather. Her skin, which was once a lustrous white, has lost its color and is now pale and cracked.'}
+56	56		201							{1: '1', 2: '501280', 3: '9', 5: '-75', 6: '-220'}
+57	57		301							"{1: '1', 2: 'Bianca', 3: ""I'm fine... I'm just a bit tired..."", 4: '1', 18: '100010773'}"
+58	58		202							{1: '1'}
+59	59		301							"{3: ""Even if she hasn't realized it, her body has already been pushed beyond its limits by the endless prayer.""}"
+60	60		201							{1: '1', 2: '501280', 5: '-75', 6: '-220'}
+61	61		301							"{1: '1', 2: 'Bianca', 3: 'Commandant... Does your ""world"" include me as well?', 4: '1', 18: '100010774'}"
+62	62		302							{2: 'Of course.', 3: '64', 4: '...', 5: '65'}
+63	63		204							{1: '1', 2: '1'}
+64	64	87	301							"{2: 'Bianca', 3: ""That's... that's good to hear."", 4: '1', 18: '100010775'}"
+65	65		204							{1: '1'}
+66	66	86	301							{2: 'Bianca', 3: 'Ha... I see...', 4: '1', 18: '100010776'}
+67	67		301							{3: 'She seems surprised by your words, and her compassionate eyes tremble for an instant.'}
+68	68		301							{2: 'Bianca', 3: 'Oh...', 18: '100010772'}
+69	69		301							"{3: 'She responds softly, gradually guiding you until you have fully expressed all your wishes for ""Bianca"".'}"
+70	70		301				DialogDisable			{3: 'The ritual of listening seems to be draining her energy quickly. After you finish, she wearily closes her eyes, her beautiful eyelashes trembling.'}
+71	71		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1288.jpg', 3: '0', 4: '1', 5: '1'}
+72	72		201							{1: '1', 2: '501280', 3: '9', 7: '1'}
+73	73		205							{1: '999'}
+74	74		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1288.jpg'}
+75	75		401							{1: '2', 2: '4044'}
+76	76		203							{1: '1', 2: '0.25', 4: '-75', 5: '-220'}
+77	77		502							{1: 'DialogEnable'}
+78	78		301			RImgBg1Shake				{3: 'Suddenly, her body falls limp toward you.'}
+79	79		302							{2: 'Bianca!', 3: '80'}
+80	80		202							{1: '1'}
+81	81		301							{3: 'You catch Bianca and realize her body is weightless, light as a feather. Her skin, which was once a lustrous white, has lost its color and is now pale and cracked.'}
+82	82		201							{1: '1', 2: '501280', 3: '9', 5: '-75', 6: '-220'}
+83	83		301							"{1: '1', 2: 'Bianca', 3: ""I'm fine... I'm just a bit tired..."", 4: '1', 18: '100010773'}"
+84	84	85	301							"{3: ""Even if she hasn't realized it, her body has already been pushed beyond its limits by the endless prayer.""}"
+85	85	86	301							{2: 'Bianca', 3: 'I told you already, Commandant... Yet you still made such a willful wish.', 4: '1', 18: '100010777'}
+86	86		204							{1: '1', 2: '1'}
+87	87		301							"{2: 'Bianca', 3: ""Alright... I promise you, I'll stay at the church for now."", 4: '1', 18: '100010778'}"
+88	88		302							{2: 'Oh?', 3: '89', 4: 'Why do you agree now?', 5: '89'}
+89	89		204							{1: '1'}
+90	90		301							{2: 'Bianca', 3: 'While I prayed alone on the mountain, the blizzard ceased... and we were blessed with enough game to last through winter. The divine has heard our prayers.', 4: '1', 18: '100010779'}
+91	91		301							"{2: 'Bianca', 3: ""The weather is getting warmer, and the snow blocking the mountain roads will soon melt. That's not really a bad thing, but..."", 4: '1', 18: '100010780'}"
+92	92		204							{1: '1', 2: '5'}
+93	93		301							"{2: 'Bianca', 3: ""That means you'll be leaving soon, right, Commandant?"", 4: '1', 18: '100010781'}"
+94	94		202							{1: '1'}
+95	95		301							{3: 'Indeed, you will have to leave with your team the day the snow melts. You need to find the cause of this disaster and stop your enemies.'}
+96	96		302							{2: '...'}
+97	97		201							{1: '1', 2: '501280', 5: '-75', 6: '-220'}
+98	98		301							"{1: '1', 2: 'Bianca', 3: ""Anyway, I won't go anywhere until you leave."", 4: '1', 18: '100010782'}"
+99	99		302							{2: 'You heard my wish... Do you have one of your own?', 3: '100'}
+100	100		204							{1: '1', 2: '1'}
+101	101		301							"{2: 'Bianca', 3: ""Of course... My wish is that when spring comes, you'll return to the church and watch the lilies bloom with me."", 4: '1', 18: '100010783'}"
+102	102		301							"{2: 'Bianca', 3: ""And when summer comes, we'll..."", 4: '1', 18: '100010785'}"
+103	103		202							{1: '1'}
+104	104		301							{3: 'She thinks for a moment, then smiles and places her index finger in front of her lips.'}
+105	105		302							{2: '...?'}
+106	106		201							{1: '1', 2: '501280', 3: '6', 5: '-75', 6: '-220'}
+107	107		301							"{1: '1', 2: 'Bianca', 3: ""It's a secret. You have to promise me my spring wish first."", 4: '1', 18: '100010786'}"
+108	108		302							{2: 'I promise.', 3: '109'}
+109	109		204							{1: '1', 2: '8'}
+110	110		301							{2: 'Bianca', 3: 'Good...', 4: '1', 18: '100010787'}
+111	111		203							{1: '1', 2: '0.25', 4: '-95', 5: '-240'}
+112	112		401						100.0	{1: '2', 2: '4044'}
+113	113		202							{1: '1'}
+114	114		301				AniZhuanchangBegin			{3: 'She closes her eyes again and leans against your shoulder, breathing faintly but steadily. She falls asleep with the tired exhaustion of a sick child.'}
+115	115		401						2000.0	{1: '1', 2: '36'}
+116	116		502						400.0	{1: 'DialogDisable'}
+117	117		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory708.jpg'}
+118	118		306						100.0	{1: '1'}
+119	119		401							{1: '2', 2: '4429'}
+120	120		502							{1: 'DialogEnable'}
+121	121		201							{1: '1', 2: '501148', 4: '150'}
+122	122		301			AniZhuanchangEnd				{1: '1', 3: 'After making sure that Bianca is properly settled, you head back to the church. An elderly figure closes a book and smiles to greet you.'}
+123	123		306							
+124	124		203							{1: '1', 2: '0.25'}
+125	125		202							{1: '1', 6: '1'}
+126	126		201							{1: '1', 2: '500022'}
+127	127		301							{1: '1', 2: 'Father Snow', 3: 'Child... would you keep an old man company for a while?', 4: '1', 18: '100010788'}
+128	128		302				AniZhuanchangBegin			{2: 'Sure.', 3: '129', 4: 'Of course.', 5: '129'}
+129	129		202							{1: '1', 6: '1'}
+130	130		502						400.0	{1: 'DialogDisable'}
+131	131		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1089.jpg'}
+132	132		401							{1: '1', 2: '6186'}
+133	133		306						200.0	{1: '1'}
+134	134		502							{1: 'DialogEnable'}
+135	135		301			AniZhuanchangEnd				"{3: ""Before you know it, March has arrived, though it's still a bit chilly outside.""}"
+136	136		301				AniZhuanchangBegin			{3: 'The blizzards have finally ceased, and the gloom over the Snowfields gradually lifts. Bianca no longer needs to pray to the gods every day, and mostly stays inside the church instead.'}
+137	137		502						400.0	{1: 'DialogDisable'}
+138	138		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory506.jpg'}
+139	139		201							{1: '1', 2: '501280', 5: '-125', 6: '-75'}
+140	140		401						100.0	{1: '2', 2: '5526'}
+141	141		203							{1: '1', 2: '0.25', 4: '-105', 5: '-75'}
+142	142		301			DialogEnable				{1: '1', 3: 'After finishing her regular morning prayers and meditation, Bianca slowly adds firewood to the stove. She then clears the snow, prepares ingredients, and leads prayer recitations...'}
+143	143		202							{1: '1', 6: '1'}
+144	144		201							{1: '1', 2: '500022', 4: '400'}
+145	145		201							{1: '2', 2: '500055', 4: '-400'}
+146	146		301				AniZhuanchangBegin			{1: '1', 3: 'Although both Father Snow and Bonnie told her to go rest, she insists on doing all these daily chores.'}
+147	147		202							{1: '1', 2: '2', 6: '1'}
+148	148		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory707.jpg'}
+149	149		401							{1: '2', 2: '2596'}
+150	150		301			AniZhuanchangEnd	DialogDisable			"{3: ""And so, days pass. Soon, spring's curtain quietly draws. The courtyard, silent throughout the long winter, is filled with chirping birds today.""}"
+151	151		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory708.jpg', 3: '0', 4: '1', 5: '1'}
+152	152		205							{1: '999'}
+153	153		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory708.jpg'}
+154	154		301			DialogEnable				{3: 'The drifting snow gradually slows, but the earth still carries a slightly cold scent... Underneath the soil, the seeds you planted with her are silently awakening.'}
+155	155		201							{1: '1', 2: '501280', 3: '1'}
+156	156		301							{1: '1', 3: 'Whenever she thinks of these, the corners of her mouth curve into a warm smile.'}
+157	157		202							{1: '1', 6: '1'}
+158	158		402							{1: '2596'}
+159	159		306							
+160	160		401						2000.0	{1: '1', 2: '36'}
+161	161		502						400.0	{1: 'DialogDisable'}
+162	162		401							{1: '1', 2: '163'}
+163	163		201							{1: '2', 2: '500602'}
+164	164		301			DialogEnable				{1: '1', 2: 'Venice', 3: 'And then, Sister Bianca? What happened next?', 4: '2', 18: '100010789'}
+165	165		203							{1: '2', 2: '0.25', 3: '400'}
+166	166		201							{1: '1', 2: '501280', 3: '1', 4: '-400'}
+167	167		301							{1: '1', 2: 'Bianca', 3: 'Hmm... Have you finished practicing your writing?', 4: '1', 18: '100010790'}
+168	168		202							{1: '1', 2: '2'}
+169	169		301							{3: 'In her free time, she teaches the children in the room next to the courtyard.'}
+170	170		201							{1: '2', 2: '500602'}
+171	171		301							{1: '1', 2: 'Venice', 3: 'I have! What happened next? Her family all became demons that attacked the town, and the little girl was all alone at home... And?', 4: '2', 18: '100010791'}
+172	172		202							{1: '2'}
+173	173		401							{1: '2', 2: '2768'}
+174	174		301							"{3: ""To make it easier for them to understand, she finds two children's picture books among the pile of scriptures and patiently reads the fairy tales.""}"
+175	175		201							{1: '1', 2: '501280', 3: '1', 4: '-400'}
+176	176		201							{1: '2', 2: '500602', 4: '400'}
+177	177		301							{1: '1', 2: 'Bianca', 3: 'Well, after that... the witch turned the girl into a venomous snake, and the snake killed the demons who hunted the humans.', 4: '1', 18: '100010792'}
+178	178		204							{1: '1'}
+179	179		301							{2: 'Bianca', 3: 'But the venomous snake was similarly feared and hated by the people, so she left the human world and fled to the desolate black forest.', 4: '1', 18: '100010793'}
+180	180		301							"{2: 'Venice', 3: ""Yes! The snake drove away the demons! She's so cool! But..."", 4: '2', 18: '100010794'}"
+181	181		202							{1: '1', 2: '2', 6: '1'}
+182	182		201							{1: '1', 2: '500726'}
+183	183		301							"{1: '1', 2: 'Rosie', 3: ""It's a little sad... What happened next, Sister Bianca?"", 4: '1', 18: '100010795'}"
+184	184		201							{1: '1', 2: '501280', 3: '9'}
+185	185		301							{1: '1', 2: 'Bianca', 3: 'After that...', 4: '1', 18: '100010796'}
+186	186		203							{1: '1', 2: '0.25', 3: '0'}
+187	187		204							{1: '1', 2: '7'}
+188	188		401							{1: '2', 2: '4373'}
+189	189		301							{3: 'Bianca pauses without thinking when she catches sight of you slowly walking into the courtyard.'}
+190	190		202							{1: '1', 6: '1'}
+191	191		306							{1: '1'}
+192	192		201							{1: '1', 2: '500678'}
+193	193		301							{1: '1', 2: '【kuroname】', 3: 'I see.', 4: '1'}
+194	194		201							{1: '1', 2: '500565'}
+195	195		301							{1: '1', 2: 'Squad Captain', 3: 'The snow... road... too thick...', 4: '1', 18: '100010825'}
+196	196		301							"{2: 'Squad Captain', 3: ""I'm worried... any longer..."", 4: '1', 18: '100010826'}"
+197	197		201							{1: '1', 2: '500678'}
+198	198		301				DialogDisable			{1: '1', 2: '【kuroname】', 3: 'Okay.', 4: '1'}
+199	199		202							{1: '1'}
+200	200		306							
+201	201		401							{1: '2', 2: '4557'}
+202	202		301			DialogEnable				{3: 'The soldier says a few words to you before leaving, while you gesture for Bianca to continue as you slowly sit down in the back row.'}
+203	203		402							{1: '4557'}
+204	204		301							{3: 'Bianca can see the worry hidden in your calm expression. She silently takes note of it and continues with the story.'}
+205	205		201							{1: '1', 2: '501280'}
+206	206		301							{1: '1', 2: 'Bianca', 3: 'After that, as winters turned to summers and springs turned to autumns, a great hero appeared among the humans—a hero who could kill the demons...', 4: '1', 18: '100010797'}
+207	207		202							{1: '1', 6: '1'}
+208	208		201							{1: '2', 2: '500602', 4: '500'}
+209	209		201							{1: '1', 2: '500260', 4: '-500'}
+210	210		201							{1: '3', 2: '500678'}
+211	211		203							{1: '2', 2: '0.25', 3: '450'}
+212	212		203							{1: '1', 2: '0.25', 3: '-450'}
+213	213		401						100.0	{1: '2', 2: '4044'}
+214	214		301							{1: '1', 3: 'The kids slowly circle around you. You listen quietly, occasionally showing the same innocent smile as the kids.'}
+215	215		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+216	216		201							{1: '1', 2: '501280', 3: '1'}
+217	217		301							{1: '1', 2: 'Bianca', 3: 'Many years later, the great hero met the venomous snake feared by the world in the black forest...', 4: '1', 18: '100010798'}
+218	218		202							{1: '1'}
+219	219		201							{1: '1', 2: '501252', 4: '550', 5: '-50'}
+220	220		201							{1: '2', 2: '500259', 4: '0', 5: '-50'}
+221	221		201							{1: '3', 2: '500260', 4: '-550', 5: '-50'}
+222	222		301							{1: '1', 3: '...'}
+223	223		301				DialogDisable			{3: '...'}
+224	224		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+225	225		203							{1: '1', 2: '0.25', 3: '550', 4: '0'}
+226	226		203							{1: '2', 2: '0.25', 3: '0', 4: '0'}
+227	227		203							{1: '3', 2: '0.25', 3: '-550', 4: '0'}
+228	228		401						100.0	{1: '2', 2: '4429'}
+229	229		202							{1: '1', 2: '2', 3: '3'}
+230	230		301			DialogEnable				{3: 'The children reluctantly leave only after hearing the end of the story. Bianca closes the picture book and walks to where you are sitting.'}
+231	231		201							{1: '18', 2: '501280', 3: '11', 4: '-100', 5: '-120', 6: '75'}
+232	232		301							{1: '1', 2: 'Bianca', 3: 'Commandant, you really should be setting a good example for the children.', 4: '18', 18: '100010799'}
+233	233		202							{1: '18'}
+234	234		401							{1: '2', 2: '5526'}
+235	235		301							{3: 'She gently brushes the snow off your uniform and takes out a handkerchief to wipe away the water from the melted snow.'}
+236	236		201							{1: '1', 2: '500678'}
+237	237		301							{1: '1', 2: '【kuroname】', 3: 'Sorry, Bianca. I was a bit late today.', 4: '1'}
+238	238		201							{1: '18', 2: '501280', 3: '5', 4: '-100', 5: '-120', 6: '75'}
+239	239		301							{1: '1', 2: 'Bianca', 3: 'I heard that you took the soldiers to clear the snow from the mountain paths... What happened? Can we talk about it?', 4: '18', 18: '100010800'}
+240	240		301							"{2: '【kuroname】', 3: ""The snow is deeper than expected. It'll probably be hard to clear it in a few days."", 4: '1'}"
+241	241		301							{2: 'Bianca', 3: '...', 4: '18', 18: '100010801'}
+242	242		204							{1: '18', 2: '1'}
+243	243		301				DialogDisable			{2: 'Bianca', 3: 'Do you remember? We planted flower seeds together in this courtyard after the Sacred Prayer Ritual.', 4: '18', 18: '100010802'}
+244	244		202							{1: '18', 2: '1', 6: '1'}
+245	245		306							{1: '1'}
+246	246		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory698.jpg', 3: '0', 4: '1', 5: '1'}
+247	247		205							{1: '999'}
+248	248		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory698.jpg'}
+249	249		301			DialogEnable				{3: 'She guides your gaze toward the courtyard outside. You see withered trees, dry branches, and barren ground, and smell the scent of the cold and bitter soil.'}
+250	250		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory708.jpg'}
+251	251		306							
+252	252		201							{1: '18', 2: '501280', 4: '-100', 5: '-120', 6: '75'}
+253	253		301			AniZhuanchangEnd				{1: '1', 2: 'Bianca', 3: 'Cold currents converge at the Snowfields, so even after spring arrives, many seeds struggle to sprout.', 4: '18', 18: '100010803'}
+254	254		301							"{2: 'Bianca', 3: ""I don't mean that these seeds won't be able to bloom. Quite the opposite. I actually believe more than anyone that they'll bloom beautifully all together."", 4: '18', 18: '100010804'}"
+255	255		301							{2: 'Bianca', 3: 'Only because they were planted by you and me, the two of us together.', 4: '18', 18: '100010805'}
+256	256		301							{2: 'Bianca', 3: 'So...', 4: '18', 18: '100010806'}
+257	257		202							{1: '18'}
+258	258		401							{1: '2', 2: '1543'}
+259	259		301							{3: 'She takes your somewhat cold hands and grips them tightly.'}
+260	260		201							{1: '18', 2: '501280', 4: '-100', 5: '-120', 6: '75'}
+261	261		301							"{1: '1', 2: 'Bianca', 3: ""I hope you understand that no matter what happens, you don't need to shoulder it all alone."", 4: '18', 18: '100010807'}"
+262	262		301							{2: 'Bianca', 3: 'The warmth of two people together can overcome even the coldest of winters in this world.', 4: '18', 18: '100010808'}
+263	263		202							{1: '18'}
+264	264		201							{1: '1', 2: '500678'}
+265	265		301							{1: '1', 2: '【kuroname】', 3: 'I understand.', 4: '1'}
+266	266		202							{1: '1'}
+267	267		301							{3: 'You smile wearily and signal to Bianca not to worry.'}
+268	268		201							{1: '18', 2: '500565', 4: '-50', 5: '-120', 6: '75'}
+269	269		301							{1: '1', 2: 'Squad Captain', 3: 'Commandant—', 4: '18', 18: '100010831'}
+270	270		202							{1: '18'}
+271	271		301							"{3: ""A soldier's call can be heard in the distance.""}"
+272	272		201							{1: '1', 2: '500678'}
+273	273		301							{1: '1', 2: '【kuroname】', 3: 'Bianca...', 4: '1'}
+274	274		201							{1: '18', 2: '501280', 3: '1', 4: '-100', 5: '-120', 6: '75'}
+275	275		301							"{1: '1', 2: 'Bianca', 3: ""It's okay."", 4: '18', 18: '100010809'}"
+276	276		202							{1: '18', 2: '1'}
+277	277		301							{3: 'Bianca lets your hand go and gently straightens your collar with both hands.'}
+278	278		201							{1: '18', 2: '501280', 3: '1', 4: '-100', 5: '-120', 6: '75'}
+279	279		301							{1: '1', 2: 'Bianca', 3: 'Godspeed.', 4: '18', 18: '100010810'}
+280	280		202							{1: '18'}
+281	281		301							"{3: ""She notices that you are still troubled by something that you can't share with her, which worries her.""}"
+282	282		301							"{3: ""But she can tell that it's probably a decision made to protect her, and Bianca believes in your choice.""}"
+283	283		201							{1: '1', 2: '501280', 3: '9'}
+284	284		301							{1: '1', 2: 'Bianca', 3: 'God, please look after...', 4: '1', 18: '100010811'}
+285	285		202							{1: '1'}
+286	286		301		1		AniZhuanchangBegin			{3: 'Bianca silently clasps her hands together in prayer after watching you leave.'}

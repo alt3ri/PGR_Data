@@ -1,0 +1,36 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory11.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '1031001', 4: '400'}
+4	4		201							{1: '3', 2: '1011001', 4: '-400'}
+5	5		301			DialogEnable				"{1: '1', 2: 'Lee', 3: ""I've never heard of a Corrupted doing pranks before. Liv, can you check its original model?"", 4: '3'}"
+6	6		301							"{2: 'Liv', 3: '...Based on its shape and size, it is likely the painting model ""Spray Can"", also named Nozzle, from Cosmos Industries back in the middle Golden Age.', 4: '1'}"
+7	7		301							{2: 'Liv', 3: 'It was mainly used to paint large areas, but some models were used in performances, education, and artistic creations...', 4: '1'}
+8	8		301							{2: 'Lee', 3: 'Artistic creations?', 4: '3'}
+9	9		301							"{2: 'Lee', 3: 'So that\'s why it\'s been going around ""creating"""" and insisting that its work is """"art""...', 4: '3'}"
+10	10		301							{2: 'Liv', 3: 'But can mechs really undertake artistic endeavors?', 4: '1'}
+11	11		301							"{2: 'Lee', 3: ""Even I'm not sure. In Babylonia, art made by mechs are under the strict supervision and guidance of humans."", 4: '3'}"
+12	12		301							"{2: 'Lee', 3: ""If you leave them alone, then you'll get these strange drawings indecipherable to humans. Like these graffiti."", 4: '3'}"
+13	13		301							{2: 'Liv', 3: 'Mechs have always gone on well with humans in other areas, but when it comes to art...', 4: '1'}
+14	14		301							{2: 'Liv', 3: 'Commandant, can you understand these drawings?', 4: '1'}
+15	15		302							"{1: '300', 2: 'I understand some bits, I think...', 3: '19', 4: ""Nope, I'm lost like you guys."", 5: '22'}"
+16	16		202							{1: '1', 2: '3', 6: '1'}
+17	17		201							{1: '3', 2: '1011001'}
+18	18		303							{1: '300'}
+19	19		204							{1: '3', 2: '10'}
+20	20		301							"{1: '1', 2: 'Lee', 3: ""Commandant, if you'd sounded a little bit more sincere, I just might have believed."", 4: '3'}"
+21	21	23	204							{1: '3'}
+22	22		301							"{1: '1', 2: 'Lee', 3: ""Thankfully, this means you're still normal..."", 4: '3'}"
+23	23		203							{1: '3', 3: '400'}
+24	24		201							{1: '1', 2: '1031001', 4: '-400'}
+25	25		301							{1: '1', 2: 'Liv', 3: 'Alright...', 4: '1'}
+26	26		301							"{2: 'Lee', 3: ""Liv, now's not the time for this. Whether this paint can's been making art out of its own will or not—"", 4: '3'}"
+27	27		301							"{2: 'Lee', 3: ""It has destroyed a lot of Constructs, which means it's our enemy."", 4: '3'}"
+28	28		301							{2: 'Lee', 3: 'As for its artistic mystery, I think the answer can only be found after we catch up with it.', 4: '3'}
+29	29		202							{1: '1', 2: '3', 6: '1'}
+30	30		201							{1: '2', 2: '1021001', 3: '3'}
+31	31		301							"{1: '1', 2: 'Lucia', 3: ""But we've already lost track of it. Not to mention being in this magnetically disruptive mist."", 4: '2'}"
+32	32		202							{1: '2', 6: '1'}
+33	33		201							{1: '3', 2: '1011001'}
+34	34		301							{1: '1', 2: 'Lee', 3: 'Not an issue. Our radars might not work, but we still have its trail... Look at the marks on the floor.', 4: '3'}
+35	35		301		1		AniZhuanchangBegin			{1: '1', 2: 'Lee', 3: 'These, are our tickets.', 4: '3'}

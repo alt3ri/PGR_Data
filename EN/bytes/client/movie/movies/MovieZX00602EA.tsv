@@ -1,0 +1,21 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory39.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '1101001', 4: '400'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Watanabe', 3: ""Extermination target?! You're from the Purifying Force?!"", 4: '1'}"
+5	5		201							{1: '2', 2: '1041001', 3: '2', 4: '-400'}
+6	6		301							"{1: '1', 2: 'Nanami', 3: ""Hahaha! You're so easy to trick, ojisan!"", 4: '2'}"
+7	7		301							{2: 'Nanami', 3: 'As if Nanami will be in the Purifying Force. Nanami was just imitating that nagging obasan from the Purifying Force.', 4: '2'}
+8	8		204							{1: '1', 2: '1'}
+9	9		301							"{2: 'Watanabe', 3: ""Obasan? Ah, I think I know who you're referring to."", 4: '1'}"
+10	10		204							{1: '2'}
+11	11		301							{2: 'Nanami', 3: 'HA!', 4: '2'}
+12	12		204							{1: '1'}
+13	13		202							{1: '2', 6: '1'}
+14	14		203							{1: '1', 2: '0.25', 3: '0'}
+15	15		301							{2: 'Watanabe', 3: 'Hey! Stop! I still have some business to settle with you about our last encounter!', 4: '1'}
+16	16		202							{1: '1', 6: '1'}
+17	17		201							{1: '2', 2: '1021001', 4: '400'}
+18	18		201							{1: '3', 2: '1011001', 4: '-400'}
+19	19		301							"{1: '1', 2: 'Lucia', 3: ""She's already gone..."", 4: '2'}"
+20	20		301		1		AniZhuanchangBegin			"{2: 'Lee', 3: ""...Looks like the Forsaken's gotten a taste of Nanami before too."", 4: '3'}"

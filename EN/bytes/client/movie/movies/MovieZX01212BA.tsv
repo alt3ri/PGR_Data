@@ -1,0 +1,52 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		401			AniZhuanchangEnd				{1: '1', 2: '201'}
+2	2		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory172.png'}
+3	3		201							{1: '1', 2: '500167', 3: '4'}
+4	4		301							"{1: '1', 2: 'Bridget', 3: ""Her wounds... Get her in the truck. We'll handle the rest."", 4: '1'}"
+5	5		301							{3: 'On your way back to the city, you run into the traveling Support Force agents. You follow their instructions and put Lucia in the transport truck.'}
+6	6	8	301							{2: 'Lucia', 3: '...'}
+7	8	10	203							{1: '1', 2: '0.25', 3: '400'}
+8	10		201							{1: '2', 2: '1031001', 3: '14', 4: '-400'}
+9	11		301							{1: '1', 2: 'Liv', 3: 'Lucia...', 4: '2'}
+10	12		301							"{2: 'Bridget', 3: ""She's in pretty bad shape. What on earth happened...?"", 4: '1'}"
+11	13		302							{2: 'The Ascendants happened.', 3: '14', 4: 'Is she gonna be okay?', 5: '17'}
+12	14		301							"{2: 'Bridget', 3: ""The Ascendants...? Then you guys must be Gray Raven. It's incredible you made it here alive. Elite squad indeed."", 4: '1'}"
+13	15		301							"{2: 'Liv', 3: ""But we didn't even get anything done. Worse, we..."", 4: '2'}"
+14	16	18	301							"{2: 'Bridget', 3: ""Just the fact that you're all alive is something."", 4: '1'}"
+15	17		301							"{2: 'Bridget', 3: ""Yes, as long as we can keep her M.I.N.D. alive. But she's not returning to the battlefield any time soon."", 4: '1'}"
+16	18		301							{2: 'Bridget', 3: 'Anyway, first things first, we gotta bring her back to our base. You guys go ahead and return to battle.', 4: '1'}
+17	19		301							{3: 'With that, Bridget motions the driver to start the truck and hops on the back.'}
+18	20		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+19	21		201							{1: '1', 2: '500026'}
+20	22		301							{1: '1', 2: 'Lee', 3: 'Lucia should be fine with the SF people. Now we need to figure out our next move...', 4: '1'}
+21	23		203							{1: '1', 2: '0.25', 3: '400'}
+22	24		201							{1: '2', 2: '500110', 4: '-400'}
+23	25		301							{1: '1', 2: 'Ayla', 3: 'Then from here on out, let me assist Gray Raven!', 4: '2'}
+24	26		301							{3: 'A cheerful voice from a scythe-wielding Construct dispels the gloom—Ayla. Like always, she is in that painterly frame of hers, looking out of place in a battlefield.'}
+25	27		302							{2: 'What are you doing here, Ayla?', 3: '28', 4: 'Assist...?', 5: '29'}
+26	28	30	301							"{2: 'Ayla', 3: ""President Hassen issued a call to arms. I'm not a combatant, but I know I gotta be a part of this!"", 4: '2'}"
+27	29		301							{2: 'Ayla', 3: 'I rushed over as soon as I learned what happened to Lucia. So let me help out, Commandant!', 4: '2'}
+28	30		301							{2: 'Ayla', 3: 'And besides...', 4: '2'}
+29	31		301							{3: 'Ayla pauses and fishes through her decorative backpack, then displays a strangely shaped device.'}
+30	32		202							{1: '2'}
+31	33		301							"{2: 'Lee', 3: ""What's this...?"", 4: '1'}"
+32	34		201							{1: '2', 2: '500011', 4: '-400'}
+33	35		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+34	36		301							{1: '1', 2: 'Hassen', 3: 'Good, now we can talk. Gray Raven, how am I sounding?', 4: '2'}
+35	37		302							{2: 'Mr. President?', 3: '38', 4: 'Why this device?', 5: '40'}
+36	38		301							"{2: 'Hassen', 3: ""...You must be wondering why I'm speaking to you via Ayla's connection device."", 4: '2'}"
+37	39	41	301							"{2: 'Lee', 3: ""Must be the scrambler waves from Kowloong. Not sure if it's effective against the Ascendants, but it sure messed up our comms systems."", 4: '1'}"
+38	40		301							{2: 'Hassen', 3: 'Kowloong is broadcasting a scrambling signal. This is the only way I can contact you from outside the city.', 4: '2'}
+39	41		301							"{2: 'Hassen', 3: ""We're already at work fixing the connection, but I'm afraid it's gonna take a while, so I had this comms device sent to you."", 4: '2'}"
+40	42		301							{2: 'Lee', 3: 'You have new orders for us, I take it?', 4: '1'}
+41	43		301							"{2: 'Hassen', 3: ""Originally, several, yes. But there's been a change of plans. One of the Ascendants, Gabriel, launched a surprise assault, so now I need you to go there and stop him."", 4: '2'}"
+42	44		301							"{2: 'Hassen', 3: ""Of course, I've sent other squads too. And let me repeat this—the Ascendants are after the Gestalt-grade terminal within the light wall."", 4: '2'}"
+43	45		301							"{2: 'Hassen', 3: ""Stop them at all costs. I'm counting on you."", 4: '2'}"
+44	46		302							{2: 'Understood.', 3: '47', 4: 'Can we really defeat the Ascendants?', 5: '48'}
+45	47	49	301							{2: 'Hassen', 3: 'Good. Now take Ayla with you and go.', 4: '2'}
+46	48		301							{2: 'Hassen', 3: 'Not like we can just surrender. But you know that already, 【kuroname】.', 4: '2'}
+47	49		201							{1: '1', 2: '1031001', 3: '6', 4: '400'}
+48	50		301							{1: '1', 2: 'Liv', 3: 'Oh, and President Hassen!', 4: '1'}
+49	51		301							{2: 'Hassen', 3: 'Yes?', 4: '2'}
+50	52		301							{2: 'Liv', 3: 'Who was it that saved us on the bridge?', 4: '1'}
+51	53		301		1		AniZhuanchangBegin			{2: 'Hassen', 3: 'They... are the fruits of our labor.', 4: '2'}

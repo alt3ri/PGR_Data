@@ -1,0 +1,34 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+2	1000		401							{1: '1', 2: '203'}
+3	2		201							{1: '1', 2: '1031001'}
+4	3		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Commandant, according to the locational data from Babylonia, Tifa is approaching our position!', 4: '1'}
+5	4		201							{1: '1', 2: '1021001'}
+6	5		301							{1: '1', 2: 'Lucia', 3: 'Commandant, your orders, please!', 4: '1'}
+7	6		201							{1: '1', 2: '1031001'}
+8	7		301							{1: '1', 2: 'Liv', 3: 'Ah, wait! There are... other Corrupted signals as well!', 4: '1'}
+9	8		201							{1: '1', 2: '1011001'}
+10	9		301							"{1: '1', 2: 'Lee', 3: ""More? Didn't we get rid of them along the way?"", 4: '1'}"
+11	10		201							{1: '1', 2: '500006'}
+12	11		301							{1: '1', 2: 'Suzaku Squad Construct', 3: 'Tifa...', 4: '1'}
+13	12		202							{1: '1', 6: '1'}
+14	13		201							{1: '1', 2: '1021001', 4: '-400'}
+15	14		201							{1: '2', 2: '1031001', 4: '400'}
+16	15		301							"{1: '1', 2: 'Lucia', 3: ""It's the Construct we just saved, why is he here?"", 4: '1'}"
+17	16		301							"{2: 'Liv', 3: ""The virus has already corrupted his M.I.N.D. That's why he's showing up as a Corrupted on the radar."", 4: '2'}"
+18	17		201							{1: '2', 2: '1011001', 4: '400'}
+19	18		301							{1: '1', 2: 'Lee', 3: 'Shall we?', 4: '2'}
+20	19		202							{1: '1', 2: '2', 6: '1'}
+21	20		201							{1: '1', 2: '500006'}
+22	21		301							{1: '1', 2: 'Suzaku Squad Construct', 3: 'Tifa...', 4: '1'}
+23	22		201							{1: '1', 2: '1031001'}
+24	23		301							"{1: '1', 2: 'Liv', 3: ""Please wait! He's still maintaining a part of himself... all through sheer force of will..."", 4: '1'}"
+25	24		203							{1: '1', 2: '0.25', 3: '-400'}
+26	25		201							{1: '2', 2: '500006', 4: '400'}
+27	26		301							{1: '1', 2: 'Suzaku Squad Construct', 3: 'Please... heal me... I can still... fight...', 4: '2'}
+28	27		201							{1: '1', 2: '1021001', 4: '-400'}
+29	28		301							"{1: '1', 2: 'Lucia', 3: ""If you go on like this, you'll—"", 4: '1'}"
+30	29		301							{2: 'Suzaku Squad Construct', 3: 'No matter... Even so... I have to... I have to bring Tifa back and cleanse her...', 4: '2'}
+31	30		201							{1: '1', 2: '1011001', 4: '-400'}
+32	31		301							"{1: '1', 2: 'Lee', 3: ""Cleanse... That's not possible."", 4: '1'}"
+33	32		301		1		AniZhuanchangBegin			"{2: 'Lee', 3: ""Looks like he's about to lose it, he's seeing hallucinations as well."", 4: '1'}"

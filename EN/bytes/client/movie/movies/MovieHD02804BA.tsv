@@ -1,0 +1,181 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory556.jpg'}
+2	2		401							{1: '1', 2: '204'}
+3	3		301			DialogEnable				{3: 'A familiar dizziness sets in.'}
+4	4		301							{3: 'You have experienced this feeling of waking up from a dream countless times.'}
+5	5		201							{1: '1', 2: '500842'}
+6	6		301							"{1: '1', 2: '???', 3: ""You're awake?"", 4: '1', 18: '100003042'}"
+7	7		301							{3: 'You feel the cold touch of skin on your face.'}
+8	8		301							{2: '???', 3: 'Hey.', 4: '1', 18: '100003043'}
+9	9		202							{1: '1'}
+10	10		301							{3: 'Right. You were with Cerberus earlier.'}
+11	11		402							{1: '204'}
+12	12		502				AniZhuanchangBegin			{1: 'DialogDisable'}
+13	13		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory701.jpg'}
+14	14		301			DialogEnable				{3: 'You are about to set out to Constellia from a conservation area when you find out that Cerberus is conducting an investigation near Constellia after what must be a recent mission.'}
+15	15		301							{3: 'They cannot disclose the remaining details, so you do not ask.'}
+16	16		401							{1: '1', 2: '205'}
+17	17		302							"{2: ""I'll drive this time. I insist."", 3: '18'}"
+18	18		201							{1: '1', 2: '500650'}
+19	19		301							{1: '1', 2: 'No. 21', 3: 'I want to drive.', 4: '1', 18: '100003044'}
+20	20		202							{1: '1'}
+21	21		201							{1: '1', 2: '500682', 3: '5'}
+22	22		301							"{1: '1', 2: 'Noctis', 3: ""Isn't it my turn?"", 4: '1', 18: '100003045'}"
+23	23		202							{1: '1'}
+24	24		201							{1: '1', 2: '500650'}
+25	25		301							{1: '1', 2: 'No. 21', 3: 'I just changed the turn order.', 4: '1', 18: '100003046'}
+26	26		202							{1: '1'}
+27	27		201							{1: '1', 2: '500345', 3: '2'}
+28	28		301							{1: '1', 2: 'Vera', 3: 'Why do you wanna drive so badly? What are you up to?', 4: '1', 18: '100003047'}
+29	29		202							{1: '1'}
+30	30		302							{2: 'Just let me do it.', 3: '31'}
+31	31		301							"{3: ""You have worked with these three enough times to know what will happen if you agree to let No. 21 take the driver's seat.""}"
+32	32		301							"{3: 'From both personal experience and the rumor mill, you know nothing good ever happens when you put ""Cerberus"" and ""vehicles"" together.'}"
+33	33		201							{1: '1', 2: '500345'}
+34	34		301							{1: '1', 2: 'Vera', 3: 'Alright. Since the Gray Raven Commandant is so eager to drive, you two just sit back and relax.', 4: '1', 18: '100003048'}
+35	35		202							{1: '1'}
+36	36		201							{1: '1', 2: '500650'}
+37	37		301							"{1: '1', 2: 'No. 21', 3: 'I\'ve updated the ""driving roster."" The new order is Commandant, No. 21, Captain, and Noctis.', 4: '1', 18: '100003049'}"
+38	38		202							{1: '1'}
+39	39		201							{1: '1', 2: '500682'}
+40	40		301							{1: '1', 2: 'Noctis', 3: 'Why did I get pushed back again?!', 4: '1', 18: '100003050'}
+41	41		202							{1: '1'}
+42	42		201							{1: '1', 2: '500650'}
+43	43		301							{1: '1', 2: 'No. 21', 3: 'Because Noctis never drives properly and always messes up.', 4: '1', 18: '100003051'}
+44	44		202							{1: '1'}
+45	45		201							{1: '1', 2: '500682'}
+46	46		301							"{1: '1', 2: 'Noctis', 3: ""You're not much better, 21."", 4: '1', 18: '100003052'}"
+47	47		202							{1: '1'}
+48	48		301							{3: 'Theoretically, there should not be any problems along the way, and the navigation also indicates the weather is good today.'}
+49	49		301							{3: 'But you absolutely cannot leave the fate of the vehicle to them before you depart.'}
+50	50		201							{1: '1', 2: '500345'}
+51	51		301							{1: '1', 2: 'Vera', 3: 'Start the car, Commandant.', 4: '1', 18: '100003053'}
+52	52		202							{1: '1', 6: '1'}
+53	53		401							{1: '1', 2: '36'}
+54	54		502				AniZhuanchangBegin			{1: 'DialogDisable'}
+55	55		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+56	56		301			DialogEnable				{3: 'The argument between No. 21 and Noctis still echoes in your memory. Given the state you find yourself in, it can only mean one thing.'}
+57	57		302							{2: '(This feeling on my back...)', 3: '58'}
+58	58		301							{3: 'Realizing this, your instincts kick in, quickly sorting out your thoughts.'}
+59	59		302							{2: '(Slowly open your eyes)', 3: '60'}
+60	60		501			DialogDisable				{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryZhengyan.prefab', 2: '3'}
+61	61		105			AniZhuanchangEnd				{1: 'Assets/Product/Ui/Spine/Weila/UiMovieWeilaSkin01/UiMovieWeilaSkin01.prefab'}
+62	62		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryZhengyan.prefab'}
+63	63		401							{1: '1', 2: '210'}
+64	64		301			DialogEnable				"{2: 'Noctis', 3: ""The commandant's eyes are open!"", 18: '100003054'}"
+65	65		301							{2: 'Vera', 3: 'Lucky you. I was going to slap you.', 18: '100003055'}
+66	66		302							{2: 'This is...', 3: '67'}
+67	67		301							"{2: 'No. 21', 3: 'This is a ""crash site.""', 18: '100003056'}"
+68	68		301							"{3: ""No. 21's tone is calm, her gaze directed somewhere out of your sight.""}"
+69	69		301							{3: 'The dizziness slowly subsides, but it will still be a while before you can control your body. But this also is not unusual for you.'}
+70	70		302							{2: 'I figured.', 3: '71'}
+71	71		301							"{2: 'Vera', 3: ""Let's do a routine check. How many fingers am I holding up?"", 18: '100003057'}"
+72	72		301							{3: 'Vera holds up one finger.'}
+73	73		302							{2: 'One.', 3: '77', 4: 'Two.', 5: '74'}
+74	74		401							{1: '2', 2: '2766'}
+75	75		301							{3: 'Vera slaps you hard.'}
+76	76		301							{2: 'Vera', 3: 'Want to try again?', 18: '100003058'}
+77	77		301							{2: 'Vera', 3: 'Open your mouth.', 18: '100003059'}
+78	78		302							{2: '(Open mouth)', 3: '82', 4: '(Close eyes)', 5: '79'}
+79	79		401							{1: '2', 2: '2766'}
+80	80		301							{3: 'Vera slaps you real hard.'}
+81	81		301							{2: 'Vera', 3: 'Give it another shot.', 18: '100003060'}
+82	82		301							{2: 'Vera', 3: 'Hand.', 18: '100003061'}
+83	83		302							{2: '(Shake her hands and then let go)', 3: '84'}
+84	84		301							{2: 'Vera', 3: 'Good dog. Do you remember your name?', 18: '100003062'}
+85	85		302							{2: '【kuroname】.', 3: '86'}
+86	86		302							{2: 'F.O.S. Chief, Gray Raven Commandant...', 3: '87'}
+87	87		301							"{2: 'Vera', 3: ""Enough. You're fine."", 18: '100003063'}"
+88	88		301				AniZhuanchangBegin			{3: 'Vera pulls you up and absentmindedly dusts you off.'}
+89	89		105			DialogDisable				
+90	90		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory556.jpg'}
+91	91		302							{2: 'So, what happened?'}
+92	92		201							{1: '1', 2: '500846', 3: '4'}
+93	93		301			DialogEnable				{1: '1', 2: 'No. 21', 3: 'We crashed.', 4: '1', 18: '100003064'}
+94	94		202							{1: '1'}
+95	95		302							{2: 'Of course.', 3: '96'}
+96	96		301							{3: 'No. 21 points at an old vehicle on the ground. Based on its size, it must have been easily destroyed by the jeep that crashed into the tree on the other side.'}
+97	97		301							{3: 'Finally having the chance to examine the crash, you also find several mechanoids stuck in the mud.'}
+98	98		301							{3: 'This means it was not a Construct or a human driving the old vehicle just now. Regardless, you did not expect a normal car could navigate such terrain.'}
+99	99		301							{3: 'Tracing the tire marks left by the drifting jeep, you finally remember what caused the accident.'}
+100	100		302							{2: 'Right, it was because...', 3: '101'}
+101	101		301							{3: 'You tried to avoid the old vehicle and ended up skidding into a tree.'}
+102	102		201							{1: '1', 2: '500846'}
+103	103		301							"{1: '1', 2: 'No. 21', 3: ""That's right. You owe me 10k Black Cards, Commandant."", 4: '1', 18: '100003065'}"
+104	104		302							{2: 'Huh?', 3: '105', 4: 'I almost forgot.', 5: '106'}
+105	105	107	301							"{2: 'No. 21', 3: ""You couldn't dodge it and crashed the jeep. There's no escape now, Commandant."", 4: '1', 18: '100003066'}"
+106	106		301							{2: 'No. 21', 3: 'Right, we should put it in writing. You can make the transfer as soon as we get a signal.', 4: '1', 18: '100003067'}
+107	107		202							{1: '1'}
+108	108		302							{2: '...', 3: '109'}
+109	109		201							{1: '1', 2: '500849', 3: '3'}
+110	110		201							{1: '2', 2: '500825', 3: '4', 4: '600'}
+111	111		201							{1: '3', 2: '500846', 3: '4', 4: '-600'}
+112	112		301							{1: '1', 2: 'Noctis', 3: 'Can you share some with me?', 4: '1', 18: '100003068'}
+113	113		301							"{2: 'No. 21', 3: ""I don't owe you anything."", 4: '3', 18: '100003069'}"
+114	114		301							{3: 'Seeing that you are trying to make a call with your terminal, Vera walks over.'}
+115	115		301							"{2: 'Vera', 3: ""Don't bother. We already confirmed there's no signal. Luckily, No. 21 downloaded the map, so we're not lost."", 4: '2', 18: '100003070'}"
+116	116		302							{2: 'By the way, what are you guys carrying?', 3: '117'}
+117	117		301							{2: 'Noctis', 3: 'We found them on these guys.', 4: '1', 18: '100003071'}
+118	118		301							{3: 'Noctis points at the mechanoids on the ground. You have no idea if they have merely passed out or if they are...'}
+119	119		302							"{2: ""Wait. If they're awakened machines..."", 3: '120'}"
+120	120		302							{2: 'Did we...', 3: '121'}
+121	121		204							{1: '1', 2: '8'}
+122	122		301							{2: 'Noctis', 3: 'They just shut down to protect their data. A manual reboot will wake them up... except for this one.', 4: '1', 18: '100003072'}
+123	123		301							{3: 'A pretty damaged humanoid mechanoid lies on the ground. Its injuries are indeed more severe.'}
+124	124		301							{2: 'Vera', 3: 'No. 21 accessed its data to find out where it came from.', 4: '2', 18: '100003073'}
+125	125		301							{2: 'No. 21', 3: 'I only managed to access its model number and this document.', 4: '3', 18: '100003074'}
+126	126		202							{1: '1', 2: '2', 3: '3'}
+127	127		301							"{3: 'Noctis briefly summarizes the content recorded by the ""ST-100"" mechanoid, and you obtain a copy of the story through your terminal.'}"
+128	128		302							{2: 'This storyteller mechanoid...', 3: '129'}
+129	129		302							{2: 'It sounds like a lost item from the WGAA.', 3: '130'}
+130	130		201							{1: '1', 2: '500825', 3: '2'}
+131	131		301							"{1: '1', 2: 'Vera', 3: ""Unfortunately, the WGAA never developed such a model, and it wasn't from Constellia either."", 4: '1', 18: '100003075'}"
+132	132		301							"{2: 'Vera', 3: ""And there's no signal here, the area we were tasked to investigate. Guess who got the development rights of this place back then?"", 4: '1', 18: '100003076'}"
+133	133		204							{1: '1', 2: '13'}
+134	134		301							"{3: 'Vera makes a ""hush"" gesture, and the answer is obvious.'}"
+135	135		302							{2: 'Would Kurono really hire these people?', 3: '136'}
+136	136		301							"{2: 'Vera', 3: ""Who knows? There's nothing they're not capable of. Anyway, we're too close to Constellia to investigate in the open. Let's put on some disguises."", 4: '1', 18: '100003077'}"
+137	137		301							"{2: 'Vera', 3: 'You wouldn\'t want us to ""accidentally"" take out a few of these mechanoids during the mission, right? That\'s going to snowball into something interesting.', 4: '1', 18: '100003078'}"
+138	138		302							"{2: ""If they're connected to this place..."", 3: '139'}"
+139	139		302							{2: 'These mechanoids might not be here just to make a movie.'}
+140	140		202							{1: '1'}
+141	141		201							{1: '1', 2: '500849'}
+142	142		301							{1: '1', 2: 'Noctis', 3: 'We ran a test with the broken mechanoid earlier. They mainly identify each other through their monitors.', 4: '1', 18: '100003079'}
+143	143		301							{2: 'Noctis', 3: 'It matches some of the requirements of antique mechanoids. Something to do with their consciousness, maybe?', 4: '1', 18: '100003080'}
+144	144		302							{2: 'What if they really are awakened machines?', 3: '145'}
+145	145		202							{1: '1'}
+146	146		201							{1: '1', 2: '500825'}
+147	147		301							"{1: '1', 2: 'Vera', 3: 'Any damage Cerberus does to awakened machines will be blamed on you, since you\'re the active commandant with us, and your ""misdeeds"" will reflect on Babylonia. Regardless, I don\'t care.', 4: '1', 18: '100003081'}"
+148	148		302							{2: '...Alright.', 3: '149'}
+149	149		302							{2: 'But why... do we have to dress like this?', 3: '150'}
+150	150		204							{1: '1', 2: '1'}
+151	151		301							{2: 'Vera', 3: 'Why else?', 4: '1', 18: '100003082'}
+152	152		202							{1: '1'}
+153	153		201							{1: '1', 2: '500846'}
+154	154		301							{1: '1', 2: 'No. 21', 3: 'We need to get into characters.', 4: '1', 18: '100003083'}
+155	155		302							"{2: ""But we're mainly doing this for the investigation... right?"", 3: '156'}"
+156	156		301							"{3: ""Vera's smile is somewhat mischievous.""}"
+157	157		202							{1: '1'}
+158	158		201							{1: '1', 2: '500825', 3: '2'}
+159	159		301							{1: '1', 2: 'Vera', 3: 'What do you think?', 4: '1', 18: '100003084'}
+160	160		301							"{2: 'Vera', 3: ""We really just needed to alter a few recognition points. Putting on the costumes was a whim. There's no car to take you back anyway."", 4: '1', 18: '100003085'}"
+161	161		302							{2: 'I guess I have no reason not to help.', 3: '162'}
+162	162		301							{3: 'The smoking jeep does not look like it can be saved, after all.'}
+163	163		204							{1: '1', 2: '8'}
+164	164		301							"{2: 'Vera', 3: 'Get familiar with your ""script."" You\'re the only one who hasn\'t read it yet.', 4: '1', 18: '100003086'}"
+165	165		202							{1: '1'}
+166	166		201							{1: '1', 2: '500849', 3: '1'}
+167	167		301							{1: '1', 2: 'Noctis', 3: 'I can run lines with you if you want.', 4: '1', 18: '100003087'}
+168	168		202							{1: '1'}
+169	169		201							{1: '1', 2: '500825', 3: '2'}
+170	170		301							"{1: '1', 2: 'Vera', 3: 'By the way, would you be thrilled if I call you ""my liege"" one day, 【kuroname】?', 4: '1', 18: '100003088'}"
+171	171		302							"{2: 'Want to give it a shot right now?', 3: '172', 4: ""Doesn't feel right."", 5: '173'}"
+172	172	174	301							"{2: 'Vera', 3: ""Why don't you save the Black Cards you owe No. 21 for your stay at the Star of Life?"", 4: '1', 18: '100003089'}"
+173	173		301							{2: 'Vera', 3: 'I was hoping to see a more interesting reaction.', 4: '1', 18: '100003090'}
+174	174		301							{3: 'Vera picks up the straw hat next to the box and puts it on you, and the four of you follow the tracks of the old vehicle into the mountains.'}
+175	175		202							{1: '1'}
+176	176		201							{1: '1', 2: '500846', 3: '4'}
+177	177		301							{1: '1', 2: 'No. 21', 3: 'Bring the box, Noctis.', 4: '1', 18: '100003091'}
+178	178		202							{1: '1'}
+179	179		201							{1: '1', 2: '500849', 3: '5'}
+180	180		301		1		AniZhuanchangBegin			{1: '1', 2: 'Noctis', 3: 'Hell no!', 4: '1', 18: '100003092'}

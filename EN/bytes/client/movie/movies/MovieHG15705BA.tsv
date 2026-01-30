@@ -1,0 +1,265 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_05_01.jpg'}
+2	2		401			AniZhuanchangEnd				{1: '1', 2: '169'}
+3	3		301			DialogEnable				{3: 'When the last petal falls from the rose, the curse will take effect.'}
+4	4		502						500.0	{1: 'DialogDisable'}
+5	5		401							{1: '2', 2: '2936'}
+6	6		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_05_02.jpg', 3: '0', 4: '1', 5: '1.5'}
+7	7		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_05_02.jpg'}
+8	8		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+9	9		301			DialogEnable				{3: 'As the final petal withers away, the Demon Lord and everything within the castle will fade into nothingness.'}
+10	10		502						500.0	{1: 'DialogDisable'}
+11	11		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_05_03.png', 4: '4'}
+12	12		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_05_04.png', 4: '5'}
+13	13		104							{1: '125|0|0', 2: '1', 4: '4'}
+14	14		104						1200.0	{1: '-115|0|0', 2: '1', 4: '5'}
+15	15		401							{1: '2', 2: '2936'}
+16	16		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_05_05.jpg', 3: '0', 4: '1', 5: '1'}
+17	17		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_05_05.jpg'}
+18	18		205						200.0	{1: '999'}
+19	19		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_05_06.jpg', 3: '0', 4: '1', 5: '1'}
+20	20		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_05_06.jpg'}
+21	21		205						200.0	{1: '999'}
+22	22		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_05_07.jpg', 3: '0', 4: '1', 5: '1'}
+23	23		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_05_07.jpg'}
+24	24		205						200.0	{1: '999'}
+25	25		301			DialogEnable				{3: 'Rose petals now carpet the floor, and the countdown has begun.'}
+26	26		101							{4: '4', 5: '1'}
+27	27		101							{4: '5', 5: '1'}
+28	28		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_05_08.jpg'}
+29	29		301			AniZhuanchangEnd				"{3: 'This time, the villagers\' wish will finally come true—for the ""Demon Lord"" has made contact with the shadows, hastening this countdown.'}"
+30	30		502						500.0	{1: 'DialogDisable'}
+31	31		101							{1: 'Assets/Product/Texture/Image/BgComic/V300cibeizhe/V300_00.png', 4: '5'}
+32	32		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_05_09.png', 4: '4'}
+33	33		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0.5'}
+34	34		104							{1: '-1920|0|0', 2: '0', 4: '4'}
+35	35		104						1500.0	{1: '0|0|0', 2: '1', 4: '4'}
+36	36		301			DialogEnable	AniZhuanchangBegin			{3: 'When the midnight bells toll, the Demon Lord who has struggled on Earth for hundreds of years will finally perish.'}
+37	37		205							{1: '999'}
+38	38		101							{4: '4', 5: '1'}
+39	39		101							{4: '5', 5: '1'}
+40	40		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_06_01.jpg'}
+41	41		301			AniZhuanchangEnd				{3: 'The Demon Lord sits in a chair, gently toying with the withering rose.'}
+42	42		301							"{2: 'Vera', 3: ""The rose brought by that puppet will soon vanish too... What a pity there's only this one."", 18: '100009462'}"
+43	43		301							"{3: 'The puppet ""hero"" who suddenly appeared in the castle has long since departed, their brief time together like a beautiful dream she had not experienced in ages.'}"
+44	44		301							{3: 'She still remembers when the puppet handed her the rose, with that familiar hesitation written across its face.'}
+45	45		401							{1: '2', 2: '4387'}
+46	46		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+47	47		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1124.jpg'}
+48	48		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+49	49		504							{1: '0.7'}
+50	50		201							{1: '1', 2: '501216', 3: '4', 5: '-120', 6: '-200', 7: '1'}
+51	51		301							{1: '1', 2: 'Vera', 3: 'You dare to give me something like this... Was it truly unintentional?', 4: '1', 18: '100009463'}
+52	52		301							"{2: 'Vera', 3: 'Did my subordinates not tell you what ""roses"" mean to me?', 4: '1', 18: '100009464'}"
+53	53		202							{1: '1', 6: '1'}
+54	54		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+55	55		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+56	56		504							{1: '0'}
+57	57		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+58	58		301				DialogDisable			{3: 'But that puppet—with the same look as the human—replied:'}
+59	59		307						100.0	"{1: '<i>""The fire is here.""</i>', 3: '80', 4: 'ff4e4eff'}"
+60	60		301				AniZhuanchangBegin			"{3: '""The fire is here.""'}"
+61	61		307							{2: '1'}
+62	62		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_06_01.jpg'}
+63	63		502							{1: 'DialogEnable'}
+64	64		301			AniZhuanchangEnd				{2: 'Vera', 3: '...Hah, how thoroughly prepared. Did they even fabricate identical memories? To think you could say those exact words.', 18: '100009465'}
+65	65		301							"{2: 'Vera', 3: ""But regrettably, even a puppet so uncannily similar, I won't keep it by my side."", 18: '100009466'}"
+66	66		301							"{2: 'Vera', 3: ""I've always wanted that person to find their way to somewhere more vast and free."", 18: '100009467'}"
+67	67		301							"{2: 'Vera', 3: 'Alright, you persistent ""system"" that keeps watching me, you can piss off now.', 18: '100009468'}"
+68	68		301							"{2: 'Vera', 3: 'You\'ve gotten what you wanted. Your precious ""hero"" has been sent beyond the shadows by me and will likely return safely to your village soon enough.', 18: '100009469'}"
+69	69		301							"{2: 'Vera', 3: ""As for me... in these final moments before the Punishing Virus devours me, I'd like to be alone."", 18: '100009470'}"
+70	70		502						500.0	{1: 'DialogDisable'}
+71	71		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_06_02.png', 3: '0', 4: '1', 5: '1.5'}
+72	72		104						2000.0	{1: '200|0|0', 2: '1', 4: '3'}
+73	73		301			DialogEnable				{3: 'She brings the rose gifted by the puppet to her lips, savoring the soft, moist texture of its petals.'}
+74	74		502						500.0	{1: 'DialogDisable'}
+75	75		205							{1: '999'}
+76	76		104							{1: '0|0|0', 2: '0', 4: '3'}
+77	77		101				AniZhuanchangEnd		800.0	{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_06_03.jpg'}
+78	78		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_06_04.jpg', 3: '0', 4: '1', 5: '1'}
+79	79		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_06_04.jpg'}
+80	80		205							{1: '999'}
+81	81		301			DialogEnable				"{3: ""Invisible shadows have begun to corrupt her fingertips. Soon, humanity's final stronghold—the Demon Lord's castle—will also be engulfed in darkness.""}"
+82	82		502						500.0	{1: 'DialogDisable'}
+83	83		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '4'}
+84	84		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '5'}
+85	85		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_06_05.jpg'}
+86	86		104							{1: '-450|100|200', 2: '0'}
+87	87		104							{1: '0|750|0', 2: '0', 4: '4'}
+88	88		104				AniZhuanchangEnd			{1: '0|-750|0', 2: '0', 4: '5'}
+89	89		104							{1: '0|0|0', 2: '4'}
+90	90		104							{1: '0|1200|0', 2: '6', 4: '4'}
+91	91		104						2000.0	{1: '0|-1200|0', 2: '6', 4: '5'}
+92	92		301			DialogEnable			2000.0	{3: 'She quietly surveys the great hall bathed in moonlight. If only, she thinks, beautiful dance music could fill this space.'}
+93	93		301						2000.0	"{2: 'Vera', 3: ""...Ah, thinking about it now, it's somewhat regrettable. Had I known better, I wouldn't have said so much to that puppet so soon."", 18: '100009471'}"
+94	94		301							"{2: 'Vera', 3: ""If I'd kept the puppet in the attic, perhaps I could have found some other amusements before everything ends."", 18: '100009472'}"
+95	95		101							{4: '4', 5: '1'}
+96	96		101							{4: '5', 5: '1'}
+97	97		401							{1: '2', 2: '5281'}
+98	98		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_07_01.jpg'}
+99	99		301			AniZhuanchangEnd				"{2: 'Vera', 3: ""...Forget it. Let's toast to everything that's about to disappear."", 18: '100009473'}"
+100	100		502						500.0	{1: 'DialogDisable'}
+101	101		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_07_02.png', 3: '0', 4: '1', 5: '1.5'}
+102	102		104							{1: '0|-250|0', 2: '0', 4: '3'}
+103	103		104						2000.0	{1: '0|0|0', 2: '1', 4: '3'}
+104	104		301			DialogEnable				"{2: 'Vera', 3: 'To the last castle, to the ""Rose Curse"" coveted for centuries, and—', 18: '100009474'}"
+105	105		301							{2: 'Vera', 3: 'To my own struggle.', 18: '100009475'}
+106	106		301							{3: 'Vera raises her glass, the bright red liquid gently swirling within.'}
+107	107		502						500.0	{1: 'DialogDisable'}
+108	108		401							{1: '2', 2: '5288'}
+109	109		205						2000.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_07_03.png', 3: '0', 4: '1', 5: '1.5'}
+110	110		301			DialogEnable				{3: 'She glances at the clock hands approaching midnight, then drains her glass in one go.'}
+111	111		502							{1: 'DialogDisable'}
+112	112		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+113	113		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_07_04.png', 4: '4'}
+114	114		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_07_06.png'}
+115	115		104							{1: '0|178|-400', 2: '0'}
+116	116		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_07_07.png', 4: '3'}
+117	117		401			AniZhuanchangEnd			800.0	{1: '2', 2: '4697'}
+118	118		402						1500.0	{1: '4697'}
+119	119		301			DialogEnable				{3: 'But before the midnight bell can toll, a knock at the door shatters the silence of the long night.'}
+120	120		502						500.0	{1: 'DialogDisable'}
+121	121		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_07_05.png'}
+122	122		104							{1: '0|178|-400', 2: '0'}
+123	123		101						500.0	{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_07_08.png', 4: '3'}
+124	124		104							{1: '0|-150|0', 2: '1.5', 4: '3'}
+125	125		104						2000.0	{1: '0|-50|-200', 2: '1.5'}
+126	126		301			DialogEnable				{3: 'The crisp sound cuts through the howling blizzard, like the first ray of dawn piercing the lonely darkness.'}
+127	127		101							{4: '3', 5: '1'}
+128	128		101							{4: '4', 5: '1'}
+129	129		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_07_09.png'}
+130	130		104							{1: '355|0|0', 2: '0'}
+131	131		301			AniZhuanchangEnd				{3: 'Vera glances toward the source of the sound, but only offers a self-mocking smile in response.'}
+132	132		301							{2: 'Vera', 3: 'Heh, what am I even hoping for at this point... Has the Punishing Virus concentration risen high enough to cause hallucinations?', 18: '100009476'}
+133	133		401							{1: '1', 2: '36'}
+134	134		401							{1: '2', 2: '2910'}
+135	135		401							{1: '2', 2: '4981'}
+136	136		101							{1: 'Assets/Product/Texture/Image/BgComic/V300cibeizhe/V300_00.png', 4: '5'}
+137	137		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_08_01.jpg'}
+138	138		301			AniZhuanchangEnd				{3: 'But the door swings wide open—and she suddenly realizes this is no hallucination.'}
+139	139		502						500.0	{1: 'DialogDisable'}
+140	140		401							{1: '1', 2: '6104'}
+141	141		402							{1: '4981'}
+142	142		104						850.0	{1: '0|440|0', 2: '0.8'}
+143	143		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_08_02.png', 3: '0', 4: '1', 5: '1.5'}
+144	144		104						2000.0	{1: '0|-145|0', 2: '0', 4: '3'}
+145	145		301			DialogEnable				{3: 'She sees a familiar figure.'}
+146	146		502						500.0	{1: 'DialogDisable'}
+147	147		401							{1: '2', 2: '2902'}
+148	148		104							{1: '0|500|0', 2: '0.8'}
+149	149		104						600.0	{1: '0|-645|0', 2: '0.8', 4: '3'}
+150	150		205						1500.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_08_03.png', 3: '0', 4: '1', 5: '1.2'}
+151	151		301			DialogEnable				"{3: ""The blizzard sweeps up rose petals from the floor, obscuring the human's face and making it impossible for her to read their expression.""}"
+152	152		502							{1: 'DialogDisable'}
+153	153		101							{4: '3', 5: '1'}
+154	154		101							{4: '5', 5: '1'}
+155	155		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_08_04.png', 4: '4'}
+156	156		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_08_05.png'}
+157	157		401							{1: '2', 2: '1543'}
+158	158		104						250.0	{1: '0|-10|-40', 2: '0.2'}
+159	159		104						800.0	{1: '0|0|-80', 2: '0.2'}
+160	160		401							{1: '2', 2: '1543'}
+161	161		104						250.0	{1: '0|-10|-120', 2: '0.2'}
+162	162		104						800.0	{1: '0|0|-160', 2: '0.2'}
+163	163		301			DialogEnable				"{3: ""The human's snow-covered steps slowly approach her—with a noticeable limp.""}"
+164	164		401							{1: '2', 2: '2924'}
+165	165		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+166	166		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+167	167		101							{4: '4', 5: '1'}
+168	168		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+169	169		401							{1: '2', 2: '5388'}
+170	170		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteAnimationJingGao.prefab', 2: '2'}
+171	171		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+172	172		301							{3: 'ZZZZT!'}
+173	173		302							{2: 'Uhh...', 3: '174'}
+174	174		301				DialogDisable			"{3: 'The ""system"" in your head shrieks so loudly it nearly blows your skull apart—the surviving ""humans"" seem furious and shocked that their fabricated puppet has gone haywire.'}"
+175	175		302							{2: '(Just... bear with it... a little longer...)', 3: '176'}
+176	176		302							{2: 'Vera...', 3: '177'}
+177	177		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteAnimationJingGao.prefab'}
+178	178		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+179	179		402							{1: '5388'}
+180	180		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_08_05.png'}
+181	181		104							{1: '320|215|200', 2: '2'}
+182	182		401							{1: '2', 2: '1516'}
+183	183		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_08_06.png', 3: '0', 4: '1', 5: '1.5'}
+184	184		104							{1: '0|0|0', 2: '0'}
+185	185		104						2500.0	{1: '200|125|-200', 2: '2', 4: '3'}
+186	186		301			DialogEnable				"{3: ""The protagonist of this hero's tale approaches the Demon Lord, step by step, despite their opposing sides.""}"
+187	187		205							{1: '999'}
+188	188		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_09_01.jpg'}
+189	189		301			AniZhuanchangEnd				{2: 'Vera', 3: '...Why did you come back?', 18: '100009477'}
+190	190		301							"{2: 'Vera', 3: 'This place will be devoured by the ""New World"" in no time. Do you really want to stand against the ""villagers"" who worship you?', 18: '100009478'}"
+191	191		302							"{2: ""I don't like... bad endings."", 3: '192'}"
+192	192		301				DialogDisable			"{3: 'Whether in reality or illusion, the human\'s ""soul"" never wants a story to reach a regretful ending.'}"
+193	193		302							"{2: ""I've heard... that when the moonlight is at its finest, they hold balls in the castle,"", 3: '194'}"
+194	194		302							{2: 'I still remember the way back to the castle.', 3: '195'}
+195	195		302							{2: 'I have no gown, nor an invitation,', 3: '196'}
+196	196		302							{2: 'but I...', 3: '197'}
+197	197		401							{1: '2', 2: '1543'}
+198	198		104						150.0	{1: '10|0|0', 2: '0.1'}
+199	199		104							{1: '0|0|0', 2: '0.1'}
+200	200		301			DialogEnable				"{3: 'The human staggers, nearly falling to their knees—but manages to stay upright—using the ""village\'s finest sword"" for support.'}"
+201	201		302							{2: 'I still wish to be your dance partner.', 3: '202'}
+202	202		301				DialogDisable			"{2: 'Vera', 3: ""You're such... an idiot!"", 18: '100009479'}"
+203	203		302							{2: 'Right now, I am not a puppet fabricated by Punishing,', 3: '204'}
+204	204		302							{2: 'nor a hero from any legend,', 3: '205'}
+205	205		302							{2: 'much less a phantom long lost in the past.', 3: '206'}
+206	206		302							{2: 'I am 【kuroname】.', 3: '207'}
+207	207		302							{2: 'I bet this is still just a script, and a better world exists beyond.', 3: '208'}
+208	208		302							{2: 'When the bell tolls its last, come with me to the [Good Ending].', 3: '209'}
+209	209		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_09_05.png', 3: '0', 4: '1', 5: '1.5'}
+210	210		104							{1: '270|0|0', 2: '0', 4: '3'}
+211	211		104						1800.0	{1: '0|0|0', 2: '1', 4: '3'}
+212	212		301			DialogEnable				{2: 'Vera', 3: 'A [Good Ending]...?', 18: '100009480'}
+213	213		205							{1: '999'}
+214	214		502							{1: 'DialogDisable'}
+215	215		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_09_02.jpg'}
+216	216		104							{1: '0|50|200', 2: '0'}
+217	217		502						200.0	{1: 'AniZhuanchangEnd'}
+218	218		401						500.0	{1: '2', 2: '4833'}
+219	219		402							{1: '4833'}
+220	220		104						1800.0	{1: '0|0|0', 2: '1.5'}
+221	221		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_09_03.jpg', 3: '0', 4: '1', 5: '1.5'}
+222	222		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_09_03.jpg'}
+223	223		205							{1: '999'}
+224	224		301			DialogEnable				{3: 'The human extends a hand to Vera, the only warmth in a world full of swirling snow.'}
+225	225		502						500.0	{1: 'DialogDisable'}
+226	226		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_09_04.jpg', 3: '0', 4: '1', 5: '1.5'}
+227	227		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_09_04.jpg'}
+228	228		205							{1: '999'}
+229	229		301			DialogEnable	DialogDisable			{3: 'There is not a trace of hesitation in their eyes, only a hopeful question, as if this were merely an ordinary ball, and they were extending a polite invitation to a dance partner.'}
+230	230		302							{2: 'My dear Valkyrie,', 3: '231'}
+231	231		302				AniZhuanchangBegin			{2: 'May I have the honor... of dancing with you until the clock strikes?', 3: '232'}
+232	232		401						2000.0	{1: '1', 2: '36'}
+233	233		401							{1: '1', 2: '6186'}
+234	234		502							{1: 'DialogEnable'}
+235	235		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_10_01.jpg'}
+236	236		301			AniZhuanchangEnd				{3: 'After a long silence, she finally responds to the hand extended toward her.'}
+237	237		502						500.0	{1: 'DialogDisable'}
+238	238		104						1500.0	{1: '-500|0|100', 2: '2'}
+239	239		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_10_02.jpg', 3: '0', 4: '1', 5: '1.5'}
+240	240		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_10_02.jpg'}
+241	241		205							{1: '999'}
+242	242		301			DialogEnable				{3: 'As their fingers intertwine, she feels the warmth emanating from that hand.'}
+243	243		401							{1: '2', 2: '4895'}
+244	244		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_10_03.jpg'}
+245	245		301			AniZhuanchangEnd				{3: 'The light casts their silhouettes against the wall, and watching the flickering shadows, she realizes just how close they are to each other.'}
+246	246		301							"{2: 'Vera', 3: ""You haven't changed at all. You're exactly the same as when I first saw you."", 18: '100009481'}"
+247	247		301							{2: 'Vera', 3: 'You really are... a naive and stubborn fool.', 18: '100009482'}
+248	248		502						500.0	{1: 'DialogDisable'}
+249	249		401							{1: '2', 2: '1543'}
+250	250		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_10_04.png', 3: '0', 4: '1', 5: '1.5'}
+251	251		104							{1: '200|0|0', 2: '0', 4: '3'}
+252	252		104						2000.0	{1: '0|0|0', 2: '1', 4: '3'}
+253	253		301			DialogEnable				"{3: ""She places her hands on the human's shoulder and waist, her face lighting up with a radiant smile.""}"
+254	254		301							"{2: 'Vera', 3: ""If you want to be my dance partner, you'll have to follow my lead. Can you keep up?"", 18: '100009483'}"
+255	255		302							{2: 'Of course!', 3: '256'}
+256	256		301							{2: 'Vera', 3: 'Well then—【kuroname】, are you ready?', 18: '100009484'}
+257	257		301							"{2: 'Vera', 3: ""Let's dance together... until the very last moment."", 18: '100009485'}"
+258	258		401							{1: '1', 2: '6179'}
+259	259		502						500.0	{1: 'DialogDisable'}
+260	260		101							{1: 'Assets/Product/Texture/Image/BgComic/V300cibeizhe/V300_00.png', 4: '5'}
+261	261		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_10_04.png', 3: '1', 4: '0', 5: '0.5'}
+262	262		104							{1: '0|0|-200', 2: '15'}
+263	263		301			DialogEnable				{3: 'The music begins, echoing across the floor bathed in moonlight, as the lunar glow through the windows illuminates their silhouettes.'}
+264	264		301		1		AniZhuanchangBegin			{3: 'A tale that should have reached its ending now begins to be rewritten anew in this moment.'}

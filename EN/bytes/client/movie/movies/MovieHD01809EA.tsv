@@ -1,0 +1,94 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory260.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: 'The head of a Corrupted falls to the ground and makes a spin—before it disappears in a puff of smoke.'}
+4	4		201							{1: '1', 2: '500111'}
+5	5		301							"{1: '1', 2: 'Allen', 3: ""Knowing these things weren't real... didn't seem to make them any less disgusting when you see them up close."", 4: '1'}"
+6	6		203							{1: '1', 2: '0.25', 3: '400'}
+7	7		201							{1: '2', 2: '500576', 3: '10', 4: '-400'}
+8	8		301							"{1: '1', 2: 'Ayla', 3: ""No, Allen. Don't even get me started."", 4: '2'}"
+9	9		202							{1: '2', 6: '1'}
+10	10		201							{1: '1', 2: '500494', 3: '12'}
+11	11		301							"{1: '1', 2: 'Karenina', 3: ""Cut the chitchat. Where's the mechanoid?"", 4: '1'}"
+12	12		202							{1: '1', 6: '1'}
+13	13		201							{1: '1', 2: '500488'}
+14	14		301							{1: '1', 2: 'Conductor', 3: 'Well done!', 4: '1'}
+15	15		301							{3: 'Emerging from the remaining smoke in the air, the mysterious mechanoid lands squarely on the ground, all the while seemingly oblivious to the Constructs closing in on it.'}
+16	16		301							"{2: 'Conductor', 3: ""Well done, well done indeed... You've proven yourself more powerful than the data—and that, in principle, goes to show that the data no longer deserves a place."", 4: '1'}"
+17	17		301							"{2: 'Conductor', 3: ""And yet you've also proven beyond a shadow of a doubt what the data means to all of you."", 4: '1'}"
+18	18		301							{2: 'Conductor', 3: 'And now, with the cleanup calculation coming to an end, I shall free you all from Gestalt as promised.', 4: '1'}
+19	22		301							{2: 'Conductor', 3: 'I shall once again review and determine the meaning... and value of the data.', 4: '1'}
+20	23		202							{1: '1', 6: '1'}
+21	24		301							"{3: ""With a wave of the conductor's hand, everyone is lifted up by a force they can't see—as their surroundings revert to their original state.""}"
+22	25		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab', 2: '2'}
+23	26		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory292.png', 3: '0', 4: '1', 5: '0.5'}
+24	27		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+25	28		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory292.png'}
+26	29		301							"{3: ""First to appear are the buildings, then Babylonia's enormous dome, then the tables and chairs and plants in the parks, then the ground on which you previously stood.""}"
+27	30		301							{3: 'Green for normal, red for errors, yellow for warnings, and blue for notes—these are the only colors that brighten up the otherwise entirely black-and-white void, through which ice-cold streams of data flow methodically.'}
+28	31		201							{1: '1', 2: '500568'}
+29	32		301							{1: '1', 2: 'Lee', 3: 'So this... is what Gestalt is really like?', 4: '1'}
+30	33		201							{1: '1', 2: '500488'}
+31	34		301							{1: '1', 2: 'Conductor', 3: 'No, not exactly.', 4: '1'}
+32	35		301							"{2: 'Conductor', 3: ""What we're seeing here is Gestalt with its alphabetic interface, but it actually has a core that lies beneath its shell."", 4: '1'}"
+33	36		301							"{3: '""Conductor"" looks up this way, its limbs starting to dissipate from the ends.'}"
+34	37		301							{2: 'Conductor', 3: 'Thank you all for your help. Farewell.', 4: '1'}
+35	38		301							{3: 'With yet another clumsy gesture of gratitude, the mechanoid takes a bow.'}
+36	39		202							{1: '1', 6: '1'}
+37	40		201							{1: '1', 2: '500166'}
+38	41		301				AniZhuanchangBegin			{1: '1', 2: 'Lucia', 3: 'Commandant—', 4: '1'}
+39	42		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab'}
+40	43		401						2000.0	{1: '1', 2: '36'}
+41	44		202			DialogDisable				{1: '1', 6: '1'}
+42	45		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+43	46		401							{1: '1', 2: '12'}
+44	47		301			DialogEnable				{3: '...'}
+45	48		301							{3: '...'}
+46	49		301							"{2: '???', 3: ""It's over.""}"
+47	50		301							"{3: 'When you open your eyes again, you see yourself ""standing"" in a quiet, dark corner, the streams of data previously surrounding you now nowhere to be found.'}"
+48	51		301							{2: '???', 3: 'Hi, 【kuroname】. I suppose I should address you as the Gray Raven Commandant?'}
+49	52		301							"{3: ""Hearing the conductor's cold electronic voice coming from behind, you turn around—only to be greeted by nothing but the voice that lingers in the darkness.""}"
+50	53		302							{2: '(What are...)', 3: '54'}
+51	54		301							"{3: ""The voice, however, answers your question even before it's completely formed.""}"
+52	55		301							{2: '???', 3: 'CW-49 has fulfilled its duty.'}
+53	56		302							{2: '(Who is CW-49?)', 3: '57'}
+54	57		301							"{2: '???', 3: 'CW-49 is its code in the compiler library, but just now it went by ""Conductor"".'}"
+55	58		302							{2: '(Why am I here?)', 3: '59', 4: '(Where is the rest of my team?)', 5: '60'}
+56	59	61	301							{2: 'Conductor?', 3: 'I need you to stay in Gestalt for just a while longer since you carry an exact solution I need for the cleanup calculation.'}
+57	60		301							"{2: 'Conductor?', 3: ""I just freed your team members' caches and let them exit Gestalt.""}"
+58	61		301							{2: 'Conductor?', 3: 'And now, we just need to see the cleanup through.'}
+59	62		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory627.jpg', 3: '0', 4: '1', 5: '1'}
+60	63		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+61	64		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory627.jpg'}
+62	65		301							"{3: ""Suddenly, a pond unfurls underneath the ground upon which you stand. The water in it unreal, the swirling pond is redolent of a canvas that's been sprinkled with specks of stars in all sorts of colors.""}"
+63	66		302							{2: '(What are these?)', 3: '67'}
+64	67		301							{2: 'Conductor?', 3: 'Historical data selected by past passengers'}
+65	68		301							{2: 'Conductor?', 3: 'I have included other cars to maximize the accuracy of the data selected.'}
+66	69		301							{3: 'Like the colored beads of an ever-changing kaleidoscope, the stars underneath display the past as they all seemingly race toward one destination.'}
+67	70		301							{2: 'Conductor?', 3: 'Human behaviors and thoughts and the ways in which everything works can be quantified as equations—equations that, with postulates and calculations, can predict the future.'}
+68	71		301							"{2: 'Conductor?', 3: ""And you... are an unpredictable variable. I don't even know what state your data is in now—or put a different way, there exists an unscalable wall in between us.""}"
+69	72		301							"{2: 'Conductor?', 3: ""But... as a model that's branched off Gestalt, I need to select certain historical data to reach the best solution for the future.""}"
+70	73		502							{1: 'DialogDisable'}
+71	74		302							"{2: ""(But there doesn't exist a best solution.)"", 3: '75'}"
+72	75		302							"{2: ""(I don't think they're going to believe in a future of certainty.)"", 3: '76'}"
+73	76		301			DialogEnable				"{2: 'Conductor?', 3: ""That's an interesting point—although that assumption doesn't stand, given existing logic.""}"
+74	77		301							{2: 'Conductor?', 3: 'As an undeterminable variable, everything you do and every choice you make has an impact on the result of the calculation.'}
+75	78		301							{2: 'Conductor?', 3: 'You are the hint to these pieces of history—and at the same time, these pieces of history have become intertwined because of you.'}
+76	79		301							{2: 'Conductor?', 3: 'You... are unquantifiable, undeterminable, and unduplicable.'}
+77	80		301							{3: 'The icy voice echoes through the space and within your head.'}
+78	81		302							"{2: ""(So what's going to happen if I decide to keep the data?)"", 3: '82'}"
+79	82		301							{2: 'Conductor?', 3: 'You can certainly make that choice.'}
+80	83		302							"{2: ""(Then I've made my choice.)"", 3: '84'}"
+81	84		301							{2: 'Conductor?', 3: 'I find that choice... incomprehensible.'}
+82	85		301							{2: 'Conductor?', 3: 'Is that your answer? Or the answer of your true self?'}
+83	86		302							{2: '(This is the answer of my every self.)', 3: '87'}
+84	87		301							{2: 'Conductor?', 3: 'Again... incomprehensible.'}
+85	88		301							{3: 'With it, the voice falls silent, seemingly both deep in thought and trying to find its next words.'}
+86	89		301							{2: 'Conductor?', 3: 'Both history and time are loops with no end, and we need a future of certain to lead humanity.'}
+87	90		301							{2: 'Conductor?', 3: 'While I may not understand your choice, I respect it all the same.'}
+88	91		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+89	92		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+90	93		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+91	94		301							{3: 'Appearing around your feet, a ray of light expands—eventually devouring you and the void entirely.'}
+92	95		301							{2: '???', 3: 'History... might not be all that cold... after all.'}
+93	96		301		1		AniZhuanchangBegin			{2: '???', 3: 'And all... shall be kept... thank you...'}

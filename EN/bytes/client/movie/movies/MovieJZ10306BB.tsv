@@ -1,0 +1,7 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory18.jpg'}
+2	1000		401							{1: '1', 2: '203'}
+3	2		201							{1: '1', 2: '500005'}
+4	3		301			DialogEnable				{1: '1', 2: 'Officer', 3: '...Retreat. Abandon the current battlefield. I repeat—all ground units retreat. Extract from your positions.'}
+5	4		301							"{2: 'Soldier', 3: ""...But... there's not enough time for a retreat, there's a large number of wounded still in there..."", 4: '1'}"
+6	5		301		1		AniZhuanchangBegin			{2: 'Officer', 3: '...I know! But we have no choice! The Corrupted here is an army! The longer we stay here, the more of us die!'}

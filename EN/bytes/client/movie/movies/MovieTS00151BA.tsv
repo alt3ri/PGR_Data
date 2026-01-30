@@ -1,0 +1,34 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory83.jpg'}
+2	2		401							{1: '1', 2: '203'}
+3	3		201							{1: '1', 2: '500019'}
+4	4		301			DialogEnable				{1: '1', 2: 'Guard', 3: 'Power supply damaged... Insufficient power in weather engine Group B...', 4: '1'}
+5	5		201							{1: '1', 2: '1091001'}
+6	6		301							"{1: '1', 2: 'Bianca', 3: ""(Nails the guard to the wall with an arrow) That's weird... It's broadcasting the warning about the power supply, but Nat's not here, and it's the only guard present..."", 4: '1'}"
+7	7		301							"{2: 'Bianca', 3: ""What's its motive?"", 4: '1'}"
+8	8		301							"{2: 'Bianca', 3: ""That can't be Nat's design..."", 4: '1'}"
+9	9		201							{1: '1', 2: '500019'}
+10	10		301							{1: '1', 2: 'Guard', 3: 'Insufficient power in weather engine Group C... Insufficient power in cooling systems Group D, Group E, Group F...', 4: '1'}
+11	11		201							{1: '1', 2: '1091001'}
+12	12		301							"{1: '1', 2: 'Bianca', 3: ""(Checks the alarm receiver inside the guard's head) It hasn't turned on the alarm receiver, which means it's just broadcasting the warning itself...?"", 4: '1'}"
+13	13		201							{1: '1', 2: '500019'}
+14	14		301							{1: '1', 2: 'Guard', 3: 'Temperature of weather engine rising... 20 minutes until danger threshold... Correction—correcting projection...', 4: '1'}
+15	15		301							{2: 'Guard', 3: '11 minutes until danger threshold... Correction—correcting projection...', 4: '1'}
+16	16		301							{2: 'Guard', 3: '6 minutes until danger threshold... Correction—correcting projection...', 4: '1'}
+17	17		301							{2: 'Guard', 3: '1 minute until danger threshold... Correction—correcting projection...', 4: '1'}
+18	18		201							{1: '1', 2: '1091001'}
+19	19		301							{1: '1', 2: 'Bianca', 3: '...?', 4: '1'}
+20	20		201							{1: '1', 2: '500019'}
+21	21		301							{1: '1', 2: 'Guard', 3: 'Temperature of weather engine... has reached the danger threshold... I repeat... Danger threshold reached...', 4: '1'}
+22	22		201							{1: '1', 2: '1091001', 3: '4'}
+23	23		301							{1: '1', 2: 'Bianca', 3: '(Realizes the severity) If this continues... the Golden Vortex is going to...', 4: '1'}
+24	24		401							{1: '2', 2: '1515'}
+25	25		301							"{2: 'Bianca', 3: ""Establishing communications... Keep trying until I'm connected... Ignore all warnings!"", 4: '1'}"
+26	26		301							{2: 'Bianca', 3: '(Leaves in a hurry) I have to find Karenina before returning to the commandant.', 4: '1'}
+27	27		201							{1: '1', 2: '500019'}
+28	28		301							{1: '1', 3: 'After Bianca leaves...'}
+29	29		202							{1: '1', 6: '1'}
+30	30		301							{1: '1', 3: 'The eyes of the motionless guard suddenly flash red...'}
+31	31		201							{1: '1', 2: '500006'}
+32	32		401							{1: '2', 2: '1508'}
+33	33		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Guard', 3: ""(Removes Bianca's arrow) ...!"", 4: '1'}"

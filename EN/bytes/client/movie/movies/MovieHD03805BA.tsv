@@ -1,0 +1,288 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401						1000.0	{1: '1', 2: '36'}
+3	3		109	1		AniZhuanchangEnd	AniZhuanchangBegin			"{1: '1', 2: ""<color=#ffffffff><size=50><i>In the dreamer's dream, the one being dreamed awakens.</i></size></color>""}"
+4	4		301			DialogDisable				"{3: ""<i>In the dreamer's dream, the one being dreamed awakens.</i>""}"
+5	5		110							{1: '1'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory514.jpg'}
+7	7		401			DialogEnable				{1: '1', 2: '386'}
+8	8		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+9	9		301			AniZhuanchangEnd				{3: 'Your mind comes to a sweet, rich scent.'}
+10	10		301							"{3: ""One minute you're in a deep dream, the next you're pulled back by a soft whisper. The familiar smell makes waking up feel natural, with no sudden jolt.""}"
+11	11		201							{1: '1', 2: '501108'}
+12	12		301							"{1: '1', 2: 'Luna', 3: ""【kuroname】, you're awake now."", 4: '1', 18: '100007136'}"
+13	13		301							{3: 'You sit up on the comfy bed as the girl is waiting patiently for you to wake up.'}
+14	14		301				DialogDisable			{2: 'Luna', 3: 'Still nothing?', 4: '1', 18: '100007137'}
+15	15		302							{2: '(Shake head)', 3: '16'}
+16	16		302							{2: 'Same as before.', 3: '17'}
+17	17		302							{2: 'I only remember things since we came to this world.', 3: '18'}
+18	18		302							"{2: ""I don't remember anything before that."", 3: '0'}"
+19	19		204							{1: '1', 2: '11'}
+20	20		301			DialogEnable				"{3: ""Luna's eyes fall a little.""}"
+21	21		301							"{2: 'Luna', 3: ""You really don't remember anything..."", 4: '1', 18: '100007138'}"
+22	22		202							{1: '1'}
+23	23		301							"{3: 'I thought the ""Heart of Divinity"" maturing would be the end. But because you two went through so much here, you lost the memories instead.'}"
+24	24		301							{3: 'Leaving now would hurt you, so she has to wait for your memories to come back.'}
+25	25		301							"{3: 'Maybe this is the ""price"" Chessia mentioned.'}"
+26	26		302							{2: 'The mirror—still nothing?', 3: '27'}
+27	27		202							{1: '1', 6: '1'}
+28	28		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+29	29		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory707.jpg'}
+30	30		504							{1: '0.7'}
+31	31		301							"{3: ""Once the Eternal Night in the Republic is over, Luna's moon returns to her, joining with Chessia in the shattered painting on the ground.""}"
+32	32		301							{3: 'After that, the temple goes back to normal, and the painting turns into a blurry mirror that shows nothing.'}
+33	33		301							{3: 'Chessia tells you through the mirror that it shows your deepest desire. Finding that is the only way to get the memories back.'}
+34	34		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+35	35		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory514.jpg'}
+36	36		504							{1: '0'}
+37	37		201							{1: '1', 2: '501108', 3: '8'}
+38	38		301							{1: '1', 3: 'Luna shakes her head.'}
+39	39		204							{1: '1'}
+40	40		301							"{2: 'Luna', 3: ""I've already let everyone know you're safe."", 4: '1', 18: '100007139'}"
+41	41		301							"{2: 'Luna', 3: ""So, no rush. We'll go when your memories come back."", 4: '1', 18: '100007140'}"
+42	42		302							{2: 'Yes', 3: '43'}
+43	43		301							{2: 'Luna', 3: 'How was your dream? Did you like it?', 4: '1', 18: '100007141'}
+44	44		301							{3: 'She picks up the incense by the bed and takes a sniff, the smell filling her nose.'}
+45	45		302							{2: 'It was a lovely dream.', 3: '46'}
+46	46		301							{2: 'Luna', 3: 'If you get bored, we can try something else.', 4: '1', 18: '100007142'}
+47	47		204							{1: '1', 2: '2'}
+48	48		301							{2: 'Luna', 3: 'Tons of money, endless power... whatever dream you want, I can make it happen.', 4: '1', 18: '100007143'}
+49	49		301							{2: 'Luna', 3: 'If you really wish it.', 4: '1', 18: '100007144'}
+50	50		302							{2: 'Anything I ask for?', 3: '51'}
+51	51		301							{2: 'Luna', 3: 'Yeah.', 4: '1', 18: '100007145'}
+52	52		202							{1: '1'}
+53	53		301							"{3: ""She puts the new desires into the incense burner, making it richer. Once it's lit, these desires will add to the smell, giving anyone who breathes it sweet dreams.""}"
+54	54		301							{3: 'This is the only way Luna can think of right now. Once you have lived through different dreams, maybe you will figure out what you really want.'}
+55	55		301							"{3: ""It's also—a reward for her journey.""}"
+56	56		301							"{3: ""Luna turns the sweet illusions from desires into dreams, collecting them for that person to pick from. If this person's willing, all the desires of this world await, ready to be claimed.""}"
+57	57		201							{1: '1', 2: '501108'}
+58	58		301							{1: '1', 2: 'Luna', 3: 'Every human desire can be fulfilled this way.', 4: '1', 18: '100007146'}
+59	59		204							{1: '1', 2: '2'}
+60	60		301							"{2: 'Luna', 3: ""But we'll save these for tonight when you fall asleep again."", 4: '1', 18: '100007147'}"
+61	61		301							"{2: 'Luna', 3: ""It's time to eat now."", 4: '1', 18: '100007148'}"
+62	62		203							{1: '1', 2: '0.4', 4: '-20', 5: '-50'}
+63	63		301				AniZhuanchangBegin			{3: 'After she speaks, Luna holds out her hand, and you put yours in hers immediately.'}
+64	64		202							{1: '1', 6: '1'}
+65	65		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory8.jpg'}
+66	66		301			AniZhuanchangEnd				{3: 'Leaving the room, you follow her through some amazing, palace-like rooms. Luna stops at the last room, and when she opens the door, a long table filled with delicious food and wine comes into view.'}
+67	67		201							{1: '1', 2: '501108'}
+68	68		301							{1: '1', 2: 'Luna', 3: 'Here we are.', 4: '1', 18: '100007149'}
+69	69		301							{2: 'Luna', 3: 'Sit down. No one will disturb us.', 4: '1', 18: '100007150'}
+70	70		204							{1: '1', 2: '2'}
+71	71		301							{2: 'Luna', 3: 'I made these special dishes just for you.', 4: '1', 18: '100007151'}
+72	72		202							{1: '1'}
+73	73		301							"{3: ""The smell of food hits you—it's even more tempting than anything you've smelled before.""}"
+74	74		301							"{3: ""Following Luna's look, you grab the closest piece of cake and put it in your mouth.""}"
+75	75		301				DialogDisable			{3: 'The sweet cream slides over your tongue; as the taste reaches your brain, something unexpectedly changes.'}
+76	76		111						1000.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+77	77		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4401_13.jpg', 3: '0', 4: '1', 5: '0.8'}
+78	78		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_13.jpg'}
+79	79		205							{1: '999'}
+80	80		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiDlcCasual/FxUiDlcCasualDate.prefab', 2: '2'}
+81	81		401							{1: '2', 2: '2915'}
+82	82		201							{1: '1', 2: '500527', 4: '-600'}
+83	83		201							{1: '2', 2: '501062'}
+84	84		201							{1: '3', 2: '500454', 4: '600'}
+85	85		301			DialogEnable				{1: '1', 3: 'The scene changes—the empty room becomes a big, busy square. People are packed together, cheering and celebrating.'}
+86	86		301							"{3: ""They seem to be celebrating a win, and you're clearly the center of their attention. Voices of blessing and praise surround you, and every face in the crowd is filled with joy and passionate adoration.""}"
+87	87		301							{3: 'It would be very easy to get lost in this sea of joy and praise.'}
+88	88		201							{1: '18', 2: '501108', 3: '2', 4: '-300', 5: '-250', 6: '200'}
+89	89		301				DialogDisable			{1: '1', 2: 'Luna', 3: 'So?', 4: '18', 18: '100007152'}
+90	90		202							{1: '18'}
+91	91		111						1000.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+92	92		202						200.0	{1: '1', 2: '2', 3: '3'}
+93	93		402							{1: '2915'}
+94	94		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiDlcCasual/FxUiDlcCasualDate.prefab'}
+95	95		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.8'}
+96	96		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+97	97		205							{1: '999'}
+98	98		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+99	99		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory8.jpg'}
+100	100		301			DialogEnable				"{3: ""After who knows how long, the cake's sweetness fades. The illusions vanish, and she is back in the fancy restaurant.""}"
+101	101		302							{2: 'What just happened—', 3: '102'}
+102	102		201							{1: '1', 2: '501108'}
+103	103		301							{1: '1', 2: 'Luna', 3: 'That was the memory of a king. He conquered many city-states and spent most of his life basking in victory and adoration.', 4: '1', 18: '100007153'}
+104	104		301							"{2: 'Luna', 3: ""He turned power and glory into his desires, and now I'm giving them to you."", 4: '1', 18: '100007154'}"
+105	105		301							"{3: ""While she's talking, Luna offers you another glass of wine.""}"
+106	106		301				DialogDisable			{2: 'Luna', 3: 'Now try this one.', 4: '1', 18: '100007155'}
+107	107		202							{1: '1'}
+108	108		111						1000.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+109	109		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory617.jpg', 3: '0', 4: '1', 5: '1'}
+110	110		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory617.jpg'}
+111	111		205							{1: '999'}
+112	112		301			DialogEnable				{3: 'You take the smooth, sweet-smelling drink. As the wine goes down, the scene changes to a never-ending field of flowers.'}
+113	113		301				DialogDisable			{3: 'You walk through the flowers, surrounded by their scent. Laughter comes from next to you, and sweet whispers pull at your heart as you watch the moon and sun together.'}
+114	114		111						1000.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+115	115		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg', 3: '0', 4: '1', 5: '1'}
+116	116		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+117	117		205							{1: '999'}
+118	118		301			DialogEnable	DialogDisable			"{3: '""The bright moon hangs in the night sky, and below, spring blooms.""'}"
+119	119		111						1000.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+120	120		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.8'}
+121	121		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+122	122		205							{1: '999'}
+123	123		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory8.jpg'}
+124	124		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+125	125		201							{1: '1', 2: '501108'}
+126	126		301			DialogEnable				{1: '1', 2: 'Luna', 3: 'This memory belonged to a shepherd boy who met his love in a flower field back home.', 4: '1', 18: '100007156'}
+127	127		202							{1: '1'}
+128	128		301							"{3: ""Luna runs her finger along the edge of the glass, making a clear, ringing sound. It sounds like the shepherd's flute from the memory, echoing across the flower field.""}"
+129	129		201							{1: '1', 2: '501108'}
+130	130		301							{1: '1', 2: 'Luna', 3: 'So, how do you feel?', 4: '1', 18: '100007157'}
+131	131		202							{1: '1'}
+132	132		301							"{3: ""Luna's been collecting all kinds of desires and beautiful dreams. Glory, status, power, money, and love—she's found everything in the world for you.""}"
+133	133		301				DialogDisable			"{3: ""But for some reason, the mirror's still blurry.""}"
+134	134		302							{2: '(Shake head)', 3: '135'}
+135	135		302							"{2: ""I'm sorry. You've done so much, but I still can't seem to..."", 3: '136'}"
+136	136		201							{1: '1', 2: '501108'}
+137	137		301			DialogEnable				"{1: '1', 2: 'Luna', 3: ""That's not necessary..."", 4: '1', 18: '100007158'}"
+138	138		301							"{2: 'Luna', 3: 'This all comes from the ""Heart of Divinity"". We made this fruit together, so you deserve to share it.', 4: '1', 18: '100007159'}"
+139	139		202							{1: '1'}
+140	140		301				AniZhuanchangBegin			"{3: ""Luna tells you to rest and dream, hoping it'll help. Meanwhile, she goes to the temple mirror, staring at its stubborn blur.""}"
+141	141		401							{1: '1', 2: '36'}
+142	142		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1111.jpg'}
+143	143		401						2000.0	{1: '1', 2: '100'}
+144	144		201							{1: '18', 2: '501108', 3: '4', 4: '-300', 5: '-250', 6: '200'}
+145	145		301			AniZhuanchangEnd				"{1: '1', 2: 'Chessia', 3: ""What's up? Messed up again? Running off to sulk?"", 4: '18', 18: '100007160'}"
+146	146		202							{1: '18'}
+147	147		301							{3: 'Chessia yells at Luna from inside the mirror.'}
+148	148		201							{1: '1', 2: '501108', 3: '18'}
+149	149		301							{1: '1', 2: 'Luna', 3: '...Cheap.', 4: '1', 18: '100007161'}
+150	150		301							"{3: ""Chessia ruins Luna's quiet moment, and Luna is clearly irritated.""}"
+151	151		201							{1: '18', 2: '501108', 3: '4', 4: '-300', 5: '-250', 6: '200'}
+152	152		301							"{1: '1', 2: 'Chessia', 3: ""Hey, hey—don't leave! Stay and talk. I'm going nuts being stuck in here."", 4: '18', 18: '100007162'}"
+153	153		204							{1: '18', 2: '3'}
+154	154		301							{2: 'Chessia', 3: 'Hmm... how about we talk about something you like? Like—【kuroname】.', 4: '18', 18: '100007163'}
+155	155		202							{1: '18'}
+156	156		301							{2: 'Luna', 3: 'Mind your own business.', 4: '1', 18: '100007164'}
+157	157		301							"{3: ""Since Luna doesn't leave, Chessia's curiosity is back.""}"
+158	158		201							{1: '18', 2: '501108', 3: '3', 4: '-300', 5: '-250', 6: '200'}
+159	159		301							"{1: '1', 2: 'Chessia', 3: ""Like I said, I'm just your desires, and Lucifer was your bad memories. Now that you remember everything, we're not a threat. You can talk, it's fine."", 4: '18', 18: '100007165'}"
+160	160		301							"{2: 'Chessia', 3: ""I mean—Lucifer's gone for sure, but me... well, I'm not so sure."", 4: '18', 18: '100007166'}"
+161	161		202							{1: '18'}
+162	162		301							{2: 'Luna', 3: 'What are you getting at?', 4: '1', 18: '100007167'}
+163	163		201							{1: '18', 2: '501108', 3: '3', 4: '-300', 5: '-250', 6: '200'}
+164	164		301							"{1: '1', 2: 'Chessia', 3: ""Aren't you worried 【kuroname】 can't find the lost memories? If so, why not just keep 【kuroname】 here?"", 4: '18', 18: '100007168'}"
+165	165		204							{1: '18', 2: '4'}
+166	166		301							"{2: 'Chessia', 3: ""This is your chance! 【kuroname】 will do anything you want right now. And no one's going to bother you. You two could totally—hey, where're you going?!"", 4: '18', 18: '100007169'}"
+167	167		202							{1: '1', 2: '18'}
+168	168		401							{1: '2', 2: '4872'}
+169	169		301							{3: 'Luna stands up and walks away, ignoring the mirror girl. But as she opens the door, she bumps into someone coming in.'}
+170	170		201							{1: '1', 2: '501108', 3: '14'}
+171	171		301				DialogDisable			{1: '1', 2: 'Luna', 3: 'What are you doing here?', 4: '1', 18: '100007170'}
+172	172		302							{2: 'Hmm... you seem a little off.', 3: '173'}
+173	173		302							{2: 'I was worried. I looked everywhere for you, so I came looking.', 3: '174'}
+174	174		204							{1: '1', 2: '11'}
+175	175		301			DialogEnable				{2: 'Luna', 3: 'Come on in.', 4: '1', 18: '100007171'}
+176	176		202							{1: '1'}
+177	177		301							"{3: ""Luna doesn't want to make up excuses. She just lets them in, hoping the mirror will suddenly work and you will find your memories.""}"
+178	178		302							{2: 'Are my problems becoming a burden?', 3: '179'}
+179	179		201							{1: '1', 2: '501108', 3: '11'}
+180	180		301							{1: '1', 2: 'Luna', 3: 'No.', 4: '1', 18: '100007172'}
+181	181		301							"{2: 'Luna', 3: ""Getting to spend more time with you because of this... I don't see that as bad."", 4: '1', 18: '100007173'}"
+182	182		204							{1: '1'}
+183	183		301							"{2: 'Luna', 3: 'I just don\'t want you to lose your ""completeness"".', 4: '1', 18: '100007174'}"
+184	184		202							{1: '1'}
+185	185		301							"{3: ""Having felt this way herself, she doesn't want you to go through the same pain. Plus, she's starting to get how you must have felt...""}"
+186	186		301				DialogDisable			"{3: ""Your shared memories are in that forgotten past. That's why she wants you to remember.""}"
+187	187		302							"{2: ""But they've tried pretty much every desire already..."", 3: '188'}"
+188	188		302							"{2: 'Why hasn\'t Luna considered the ""Heart of Divinity"" yet?', 3: '189'}"
+189	189		201							{1: '1', 2: '501108', 3: '11'}
+190	190		301			DialogEnable				"{1: '1', 2: 'Luna', 3: '""Heart of Divinity""...', 4: '1', 18: '100007175'}"
+191	191		301							"{3: ""She's tried everything else, but nothing's worked. It's not that she hasn't thought of it, but—""}"
+192	192		204							{1: '1'}
+193	193		301							"{2: 'Luna', 3: 'To get your memories back, you need to find ""what you want most"".', 4: '1', 18: '100007176'}"
+194	194		301							{2: 'Luna', 3: 'It must be something beautiful.', 4: '1', 18: '100007177'}
+195	195		204							{1: '1', 2: '8'}
+196	196		301							"{2: 'Luna', 3: 'But not the ones gathered from the ""Heart of Divinity"". Those aren\'t good enough.', 4: '1', 18: '100007178'}"
+197	197		301				DialogDisable			{3: 'Luna remembers the pain you went through, and even how she acted when she lost her memories—nobody would call those good memories.'}
+198	198		302							{2: 'We might as well give it a shot.', 3: '199'}
+199	199		302							"{2: ""Even though I don't remember everything, I trust Luna."", 3: '200'}"
+200	200		302							"{2: 'Whatever I went through with Luna, it wasn\'t ""bad"" to me.', 3: '201'}"
+201	201		204							{1: '1'}
+202	202		301			DialogEnable				{2: 'Luna', 3: 'I see how you feel.', 4: '1', 18: '100007179'}
+203	203		301							{2: 'Luna', 3: 'Then... as you wish.', 4: '1', 18: '100007180'}
+204	204		202							{1: '1'}
+205	205		401							{1: '2', 2: '4893'}
+206	206		301							"{3: ""Seeing your trust, Luna doesn't hesitate. She splits the golden apple, and you both eat it.""}"
+207	207		401							{1: '2', 2: '4276'}
+208	208		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+209	209		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5101_11.jpg'}
+210	210		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '4'}
+211	211		104							{1: '-330|-5|-460', 2: '0'}
+212	212		104							{1: '0|0|70', 2: '0', 4: '4'}
+213	213		301							{3: 'Memories flood back. Surprisingly, the blurry mirror finally became clear. It shows Luna—not as the divine from the paintings, but as a girl turned demon.'}
+214	214		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+215	215		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1111.jpg'}
+216	216		101							{4: '4', 5: '1'}
+217	217		201							{1: '1', 2: '501108', 3: '14', 7: '1'}
+218	218		301							{1: '1', 2: 'Luna', 3: 'This is...', 4: '1', 18: '100007181'}
+219	219		301							{3: 'Luna stares, surprised at the answer—it is right there, but she never saw it.'}
+220	220		302							{2: 'Luna?', 3: '221'}
+221	221		204							{1: '1'}
+222	222		301							{3: 'Luna looks at the person next to her, answering the unspoken question with a look. She knows your memories have returned when you eat the fruit.'}
+223	223		301							{2: 'Luna', 3: 'Is this what you wanted?', 4: '1', 18: '100007182'}
+224	224		301				DialogDisable			"{2: 'Luna', 3: 'Me as a ""demon"".', 4: '1', 18: '100007183'}"
+225	225		302							"{2: 'It doesn\'t matter that you\'re a ""demon"".', 3: '226'}"
+226	226		302							{2: 'No matter what Luna looks like, I can always tell.', 3: '227'}
+227	227		302							"{2: ""If you ever get lost, I'll find you and bring you back."", 3: '228'}"
+228	228		302							{2: 'Just like this time.', 3: '229'}
+229	229		301			DialogEnable				{2: 'Luna', 3: 'So, do you want to stay here with me?', 4: '1', 18: '100007184'}
+230	230		306							{1: '1'}
+231	231		301							"{3: ""Luna remembers what Chessia said. She isn't trying to force an answer—but after all they'd been through, she allows herself to hope.""}"
+232	232		301				DialogDisable			{3: 'If you leave, when will you meet again? When will you have time to be with each other again?'}
+233	233		306							
+234	234		302							{2: 'Staying means accompanying.', 3: '235'}
+235	235		302							"{2: 'But... ""memories"" can give us that, too.', 3: '236'}"
+236	236		302							"{2: ""I'll keep going, with our shared memories."", 3: '237'}"
+237	237		302							{2: 'Wherever I go.', 3: '238'}
+238	238		301			DialogEnable	DialogDisable			{3: 'The sweetness of the fruit lingers, much like the memories spiraling through your heart.'}
+239	239		302							{2: 'This fruit holds all our shared experiences.', 3: '240'}
+240	240		302							"{2: ""So, I'll never leave them behind, no matter what."", 3: '241'}"
+241	241		302							"{2: ""The places we've been together are definitely worth remembering."", 3: '242'}"
+242	242		302				AniZhuanchangBegin			"{2: ""But, we can't stay here forever."", 3: '243'}"
+243	243		202							{1: '1', 6: '1'}
+244	244		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2804.jpg'}
+245	245		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront21.png', 4: '4'}
+246	246		104							{1: '-150|-150|-200', 2: '0'}
+247	247		109							{1: '1', 2: '<color=#ffffffff><size=40>Warm nests call for returning flocks.</size></color>', 3: '625', 4: '50'}
+248	248		109			AniZhuanchangEnd				{1: '2', 2: '<color=#ffffffff><size=40>They seek no longer the horizon beyond.</size></color>', 3: '625', 4: '-50'}
+249	249		301							{3: 'Warm nests call for returning flocks. They seek no longer the horizon beyond.'}
+250	250		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+251	251		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory609.jpg'}
+252	252		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront22.png', 4: '4'}
+253	253		104							{1: '100|0|0', 2: '0'}
+254	254		109							{1: '1', 2: '<color=#ffffffff><size=40>For when one stands on firm soil...</size></color>', 3: '-625', 4: '100'}
+255	255		109							"{1: '2', 2: '<color=#ffffffff><size=40>It is ""home"".</size></color>', 3: '-625'}"
+256	256		109							"{1: '3', 2: ""<color=#ffffffff><size=40>Where one's heart belongs.</size></color>"", 3: '-625', 4: '-100'}"
+257	257		301				AniZhuanchangBegin			"{3: 'For when one stands on firm soil... It is ""home"". Where one\'s heart belongs.'}"
+258	258		110							
+259	259		101							{4: '4', 5: '1'}
+260	260		105			DialogEnable				{1: 'Assets/Product/Ui/Spine/3-0Spine/UiMovieLuNaV30/UiMovieLuNaV30.prefab'}
+261	261		301			AniZhuanchangEnd				"{2: 'Luna', 3: ""Looks like we're on the same page."", 18: '100007185'}"
+262	262		301							{3: 'Luna leans against the painting, waiting for this world to fade.'}
+263	263		301							{2: 'Luna', 3: 'Perhaps you and I once wished to have the other to ourselves—but at least neither of us felt like we belonged here.', 18: '100007186'}
+264	264		301							{2: 'Luna', 3: 'I hoped to hold your gaze a little longer, but I wanted more.', 18: '100007187'}
+265	265		301							"{2: 'Luna', 3: ""Dreams don't come true."", 18: '100007188'}"
+266	266		301				DialogDisable			{2: 'Luna', 3: 'I need something I can feel, something solid, not something that can vanish in an instant.', 18: '100007189'}
+267	267		302							"{2: ""But this isn't goodbye."", 3: '268'}"
+268	268		302							"{2: ""It's so we can walk the same path again, in the future."", 3: '269'}"
+269	269		301			DialogEnable				"{2: 'Luna', 3: ""Think it through. After you eat that half apple, everything here will be a memory you can't forget."", 18: '100007190'}"
+270	270		301							{2: 'Luna', 3: 'Our minds will go, but the memories will last.', 18: '100007191'}
+271	271		301				DialogDisable			{2: 'Luna', 3: 'Are you sure you want these memories as a part of your life from now on?', 18: '100007192'}
+272	272		302							{2: 'Without question.', 3: '273'}
+273	273		302							"{2: ""They'll be a part of what keeps me going."", 3: '274'}"
+274	274		301			DialogEnable				{3: 'Perhaps it all has to start over.'}
+275	275		301							{3: 'But the thought that someone will be waiting at the end—'}
+276	276		301							{3: 'It gives wing to each other, keeping each other marching ever onward.'}
+277	277		301							{2: 'Luna', 3: 'Till we meet again, when the time comes.', 18: '100007193'}
+278	278		301				AniZhuanchangBegin			"{2: 'Luna', 3: ""In another paradise, one we'll see together."", 18: '100007194'}"
+279	279		105							
+280	280		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory782.jpg'}
+281	281		301			AniZhuanchangEnd	DialogDisable			"{3: 'The ""Heart of Divinity"" is fully absorbed, and this world\'s destruction is almost complete.'}"
+282	282		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory773.jpg', 3: '0', 4: '1', 5: '1.5'}
+283	283		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory773.jpg'}
+284	284		205							{1: '999'}
+285	285		301			DialogEnable	DialogDisable			{3: 'Blood-red rain pours down, trying to drown everything. First the lowlands, then rocks, trees, temples, ruins. Finally, everything sinks into the deep.'}
+286	286		104						2000.0	{1: '0|-80|-70', 2: '1.8'}
+287	287		301		1	DialogEnable	AniZhuanchangBegin			{3: 'Only the book, browned with age, floats above.'}

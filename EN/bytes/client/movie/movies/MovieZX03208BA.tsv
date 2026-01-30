@@ -1,0 +1,304 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory427.jpg'}
+2	2		401							{1: '1', 2: '172'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+4	4		201							{1: '1', 2: '500011', 3: '5'}
+5	5		301			DialogEnable				"{1: '1', 3: ""The bullet aims precisely at Hassen's heart, leaving him no time to react. He can do nothing but watch as the enraged guard pulls the trigger, unleashing a furious yell.""}"
+6	6		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+7	7		401							{1: '2', 2: '2513'}
+8	8		202							{1: '1', 6: '1'}
+9	9		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+10	10		301			RImgBg1Shake				"{3: '""Bang—""'}"
+11	11		301							{3: 'The deafening roar of the gunshot reverberates within the expansive Parliament Hall, its echoes gradually dissipating into a profound silence.'}
+12	12		201							{1: '1', 2: '500011', 3: '5'}
+13	13		301							{1: '1', 2: 'Hassen', 3: '...!'}
+14	14		301							"{3: ""Unexpectedly, the bullet intended for Hassen's heart finds its mark in the chest of another person instead—one of the councilmen rushes in front of Hassen amidst the chaos, selflessly shielding him from harm.""}"
+15	15		301							{2: 'Hassen', 3: 'Mr. Liszt...?!', 4: '1'}
+16	16		201							{1: '1', 2: '500496', 3: '4'}
+17	17		301			PanelActor1Shake				"{1: '1', 3: ""The bullet strikes Liszt's chest with force, yet it fails to bring him down. Nonetheless, it takes him a few unsteady steps to regain his balance.""}"
+18	18		201							{1: '1', 2: '500005'}
+19	19		301							{1: '1', 2: 'Guard', 3: 'You... traitor... Go to hell!', 4: '1'}
+20	20		401							{1: '2', 2: '1512'}
+21	21		201							{1: '2', 2: '500496', 3: '4', 4: '-800'}
+22	22		203						200.0	{1: '2', 2: '0.2'}
+23	23		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+24	24		202							{1: '1', 6: '1'}
+25	25		502							{1: 'RImgBg1Shake'}
+26	26		401							{1: '2', 2: '3077'}
+27	27		301							"{1: '1', 3: ""As the guard tries to pull the trigger once more, Liszt's fist proves swifter than his finger, delivering a powerful blow to the guard's jaw.""}"
+28	28		401							{1: '2', 2: '1511'}
+29	29		301							"{3: ""In a split second, the man is sent sprawling to the ground as Liszt swiftly seizes the fallen gun. Only after ensuring the guard's complete incapacitation does Liszt retreat to Hassen's side.""}"
+30	30		202							{1: '2', 6: '1'}
+31	31		201							{1: '1', 2: '500011', 4: '-400'}
+32	32		201							{1: '2', 2: '500496', 3: '5', 4: '400'}
+33	33		301							{1: '1', 2: 'Hassen', 3: 'Thanks... but how did you...?', 4: '1'}
+34	34		301							"{3: ""It is only at this moment that Hassen's eyes catch sight of the bullet-proof vest concealed beneath Liszt's suit, revealed by the bullet hole. He realizes that the vest is the true savior that protected both him and Liszt.""}"
+35	35		401							{1: '2', 2: '2603'}
+36	36		202							{1: '1', 2: '2', 6: '1'}
+37	37		201							{1: '1', 2: '500012'}
+38	38		301							"{1: '1', 3: ""Beside the two, Nikola nimbly deflects a councilman's attack by throwing a kick and comes to join them.""}"
+39	39		301							"{2: 'Nikola', 3: ""Hmph, so it seems someone actually showed up to a meeting wearing a bullet-proof vest... Talk about having zero faith in the Parliament's security."", 4: '1'}"
+40	40		201							{1: '1', 2: '500496', 3: '5'}
+41	41		301							"{1: '1', 2: 'Liszt', 3: ""No offense, it's just a bad habit of mine—I can't stand to see any accidents that deviate from my plans."", 4: '1'}"
+42	42		401						300.0	{1: '2', 2: '1511'}
+43	43		401						300.0	{1: '2', 2: '1510'}
+44	44		401							{1: '2', 2: '1510'}
+45	45		301							{3: 'Liszt swiftly removes the magazine from the pistol to check the remaining bullets before reloading it. With a sense of urgency, he fires several warning shots, dissuading the approaching people from getting any closer.'}
+46	46		202							{1: '1', 6: '1'}
+47	47		201							{1: '1', 2: '500011', 3: '5'}
+48	48		301							"{1: '1', 2: 'Hassen', 3: ""Even the Parliament's guards are..."", 4: '1'}"
+49	49		201							{1: '1', 2: '500012'}
+50	50		301							{1: '1', 2: 'Nikola', 3: 'Are the guards collaborating with these rioting councilmen...? No, that seems too unlikely.', 4: '1'}
+51	51		301							"{3: ""As the assault erupted, Nikola's initial suspicion fell upon Kurono. However, Liszt's reaction and subsequent actions have strongly suggested that Kurono is likely innocent.""}"
+52	52		301							{3: 'At the very least, it can be confirmed that such a large-scale attack was not decided by Kurono as a whole.'}
+53	53		201							{1: '1', 2: '500496', 3: '5'}
+54	54		301							"{1: '1', 2: 'Liszt', 3: ""There's another possibility to consider. I'm assuming you both have heard Celica's report—that strange electromagnetic radiation apparently is affecting people's minds."", 4: '1'}"
+55	55		301							{3: 'Liszt discerns the presence of numerous individuals engaging in frenzied attacks or muttering amidst cries, and he recognizes them as members of Kurono. Something is undoubtedly amiss.'}
+56	56		201							{1: '1', 2: '500011', 3: '5'}
+57	57		301							"{1: '1', 2: 'Hassen', 3: ""If that's true, then there won't be a single safe place left in Babylonia."", 4: '1'}"
+58	58		301							"{3: ""This space station, once hailed as humanity's last cradle, has now transformed into a breeding ground of unadulterated terror. Within its confines, every human survivor has become one of the most menacing foes.""}"
+59	59		201							{1: '1', 2: '500496', 3: '5'}
+60	60		301							{1: '1', 2: 'Liszt', 3: 'Even we, who could potentially succumb to the same fate at any moment, can no longer be trusted...', 4: '1'}
+61	61		301							{3: 'Liszt narrows his eyes and shakes his head, attempting to suppress the maddening thoughts that persistently plague his mind. He recognizes all too well that surrendering to that madness would inevitably transform him into one of them.'}
+62	62		301							{3: 'Regardless of whether the bullets or his sanity deplete first, the grim reality remains unchanged. This harrowing situation will inevitably lead them all to death.'}
+63	63		401							{1: '2', 2: '1501'}
+64	64		401							{1: '2', 2: '647'}
+65	65		301							{3: 'As they face off against the crazed councilmen, the piercing wail of alarms resounds through the Parliament Hall. Accompanied by the clamor, the emergency partition door leading to the hallway begins its descent.'}
+66	66		301							{2: 'Liszt', 3: '...We are going to be stuck here.', 4: '1'}
+67	67		301							{3: 'Liszt firmly aims his gun at the councilmen who have gathered near the door. The grim reality sets in—their only chance of survival lies in swiftly taking down any obstacles and making a desperate run for freedom.'}
+68	68		201							{1: '1', 2: '500011', 3: '5'}
+69	69		301							"{1: '1', 2: 'Hassen', 3: ""We won't make it. It's already too late..."", 4: '1'}"
+70	70		301							{3: 'Just as Hassen says, there is no time left for them. The partition door falls with astonishing speed, isolating the Parliament Hall from the outside world in the blink of an eye.'}
+71	71		201							{1: '1', 2: '500012'}
+72	72		301							{1: '1', 2: 'Nikola', 3: 'None of this feels normal... It appears that even the person in control of the partition doors is being influenced.', 4: '1'}
+73	73		201							{1: '1', 2: '500496', 3: '5'}
+74	74		301							{1: '1', 2: 'Liszt', 3: 'Is this the end...', 4: '1'}
+75	75		401							{1: '2', 2: '1510'}
+76	76		301							{3: 'Liszt issues a stern warning with his final bullet. With their last means of defense gone, they are now forced to watch helplessly as the throng of deranged individuals closes in around them.'}
+77	77		202							{1: '1', 6: '1'}
+78	78		301							{2: '???', 3: 'Hey, this way!'}
+79	79		401							{1: '2', 2: '2511'}
+80	80		301			RImgBg1Shake				{3: 'With a thunderous bang, the previously locked emergency passage door is forcefully kicked open, shattering the tense atmosphere. In the doorway emerges a figure, both familiar and unexpected.'}
+81	81		201							{1: '1', 2: '500012'}
+82	82		301							{1: '1', 2: 'Nikola', 3: 'Collins... Why are you here?', 4: '1'}
+83	83		201							{1: '1', 2: '500319'}
+84	84		301							{1: '1', 3: 'Collins waves at Nikola with a wide grin, as if they were long-lost friends happily reunited.'}
+85	85		301							"{2: 'Collins', 3: ""Didn't see this coming, did you? I got banned by the Parliament, thanks to someone, so I decided to wait for you here... Hey, Nicky, this isn't considered a violation, right?"", 4: '1'}"
+86	86		301							{3: 'Nikola notices another person in the emergency passage other than Collins.'}
+87	87		201							{1: '1', 2: '500012'}
+88	88		301							{1: '1', 2: 'Nikola', 3: 'Wells... Are you the only one who survived?', 4: '1'}
+89	89		201							{1: '1', 2: '500575'}
+90	90		301							{1: '1', 3: 'The man named Wells responds with a nod. As the head of the General Staff Department operating under the HQ, he holds a position that technically makes him a direct subordinate of Nikola.'}
+91	91		301							"{2: 'Wells', 3: ""Yes, I'm fine... for now."", 4: '1'}"
+92	92		201							{1: '1', 2: '500319'}
+93	93		301							"{1: '1', 2: 'Collins', 3: ""I bumped into this guy on my way here, who told me that the Parliament must be in complete chaos. Couldn't resist joining the party myself."", 4: '1'}"
+94	94		201							{1: '1', 2: '500012'}
+95	95		301							"{1: '1', 2: 'Nikola', 3: ""Excuse me, no one is asking about you... Wells, how's the situation outside?"", 4: '1'}"
+96	96		201							{1: '1', 2: '500575'}
+97	97		301							{1: '1', 2: 'Wells', 3: 'As soon as I received the messages from the surface, I immediately instructed my team to issue an emergency call for the Task Force, but they fell soon afterward...', 4: '1'}
+98	98		301							{3: 'Given that General Wells arrived alone, it becomes evident that the situation within the headquarters must be equally chaotic.'}
+99	99		201							{1: '1', 2: '500496', 3: '5'}
+100	100		301							{1: '1', 2: 'Liszt', 3: 'General Wells, may I ask how you acquired that weapon?', 4: '1'}
+101	101		301							"{3: ""Liszt's attention is drawn to the firearm in Wells' possession, its antique design catching his eye. It appears to be a relic from a bygone era, crafted before the Golden Age.""}"
+102	102		201							{1: '1', 2: '500575'}
+103	103		301							{1: '1', 2: 'Wells', 3: 'Just a piece from my collection. Never expected it to have any practical value until now.', 4: '1'}
+104	104		301							{3: 'With a composed demeanor, Wells strides toward the door and tosses a cylindrical object at the crowd.'}
+105	105		202							{1: '1', 6: '1'}
+106	106		401							{1: '2', 2: '737'}
+107	107		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+108	108		301			RImgBg1Shake				{3: 'Upon landing, the cylindrical object unleashes a blinding flash that illuminates the entire space, accompanied by a powerful shockwave that swiftly renders the nearby individuals unconscious.'}
+109	109		201							{1: '1', 2: '500575', 4: '400'}
+110	110		201							{1: '2', 2: '500012', 4: '-400'}
+111	111		301							"{1: '1', 2: 'Wells', 3: ""Don't worry, it's just a flashbang... They'll be temporarily unconscious, but it's non-lethal."", 4: '1'}"
+112	112		301							{3: 'Wells gives Nikola a nod, acknowledging the importance of minimizing harm to the innocent, even in the midst of such an emergency.'}
+113	113		202							{1: '1', 6: '1'}
+114	114		201							{1: '1', 2: '500319', 4: '400'}
+115	115		301							"{1: '1', 2: 'Collins', 3: ""Who would've thought an antique like this can still come in handy... I bet this old thing has seen more action than all of us."", 4: '1'}"
+116	116		301							{3: 'During the Golden Age, large-scale wars were scarcely witnessed, and the advent of the Punishing Virus further diminished the relevance of weapons specifically designed for combat against humans.'}
+117	117		301							"{2: 'Nikola', 3: ""More than me, that's for sure, considering I'm a lot younger than you. But I won't make the same assumption about you."", 4: '2'}"
+118	118		301							{2: 'Collins', 3: 'Oh, is that so? I almost forgot my age... I suppose an old-timer like me could use a bit more exercise.', 4: '1'}
+119	119		202							{1: '1', 2: '2', 6: '1'}
+120	120		201							{1: '1', 2: '500319', 4: '400'}
+121	121		201						500.0	{1: '2', 2: '500340', 4: '-400'}
+122	122		401							{1: '2', 2: '9317003'}
+123	123		203						250.0	{1: '1', 2: '0.25', 3: '200'}
+124	124		401							{1: '2', 2: '2690'}
+125	125		203							{1: '2', 2: '0.25', 3: '-800'}
+126	126		202							{1: '2'}
+127	127		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+128	128		301			RImgBg1Shake				"{3: ""Collins swiftly seizes a lurking councilman in an attempt to grab Nikola from behind the door. With one hand, he bends the man's arm at an unnatural angle, and uses his other hand to firmly grab the councilman by the collar, forcefully slamming him into the doorframe.""}"
+129	129		203							{1: '1', 2: '0.25'}
+130	130		301							"{3: ""He then takes hold of the poor man's head and lets out a laugh upon observing the battered state of his face.""}"
+131	131		301							"{2: 'Collins', 3: 'Hey, isn\'t he the Control Court guy who investigated me? If I remember correctly, he\'s a ""friend"" of yours, Liszt? My apologies, I might have hit him a bit harder than intended.', 4: '1'}"
+132	132		201							{1: '1', 2: '500496', 3: '5'}
+133	133		301							"{1: '1', 3: ""Liszt's gaze remains cold as he stares at Collins, devoid of any emotion.""}"
+134	134		301							"{2: 'Liszt', 3: ""...Forget about it. To be honest, I'm not really that familiar with him."", 4: '1'}"
+135	135		201							{1: '1', 2: '500575'}
+136	136		301							{1: '1', 2: 'Wells', 3: 'Stop wasting time here. Take these...', 4: '1'}
+137	137		301							{3: 'As Wells distributes the remaining three pistols among the group, Liszt is surprised to find that Wells has also prepared a firearm for him.'}
+138	138		301							{2: 'Wells', 3: 'With no way to predict when or who will succumb to madness, someone needs to have the means to stop him.', 4: '1'}
+139	139		301							{3: 'Each member of this group possesses formidable control over Babylonia. They are acutely aware that even a single individual succumbing to madness could cause dire and untoward damage.'}
+140	140		202							{1: '1', 6: '1'}
+141	141		201							{1: '1', 2: '500319', 4: '400'}
+142	142		201							{1: '2', 2: '500496', 4: '-400'}
+143	143		301							"{1: '1', 2: 'Collins', 3: ""Well, in that case, we're tailored for the situation, considering our diverse perspectives. If someone loses it, we can put him down without batting an eye."", 4: '1'}"
+144	144		301							{2: 'Liszt', 3: 'I see... Fair enough.', 4: '2'}
+145	145		301							{3: 'Liszt carefully inspects the gun in his hand to ensure its functionality. He confirms that it is still in working order, despite its utterly outdated model.'}
+146	146		301							{2: 'Collins', 3: 'So, where are we heading next? Go play bridge or grab a drink?', 4: '1'}
+147	147		202							{1: '1', 2: '2', 6: '1'}
+148	148		201							{1: '1', 2: '500011'}
+149	149		301							"{1: '1', 2: 'Hassen', 3: ""Let's make a stop at the communication center first... We need to send out the emergency broadcast as soon as possible."", 4: '1'}"
+150	150		202							{1: '1', 6: '1'}
+151	151		301							{3: 'Though nodding in mutual understanding, no one in the group takes the first decisive step—something is still left undecided.'}
+152	152		201							{1: '1', 2: '500496'}
+153	153		301							{1: '1', 2: 'Liszt', 3: 'Here is the first question: who should be the one taking the lead?', 4: '1'}
+154	154		301							{3: 'Irrespective of who among them takes on the responsibility, it becomes evident that this person must confront the imminent danger ahead while staying mindful of the four guns behind that may point at his back anytime.'}
+155	155		202							{1: '1', 6: '1'}
+156	156		201							{1: '1', 2: '500012', 4: '-800'}
+157	157		201							{1: '2', 2: '500011', 4: '-300'}
+158	158		201							{1: '3', 2: '500319', 4: '300'}
+159	159		201							{1: '4', 2: '500575', 4: '800'}
+160	160		301							{1: '1', 3: 'In a fleeting moment, the remaining four exchange meaningful glances with one another.'}
+161	161		301							{2: 'Nikola', 3: '...The youngest one.', 4: '1'}
+162	162		301							{2: 'Collins', 3: 'Is that even a question? The youngest one, of course.', 4: '3'}
+163	163		301							{2: 'Wells', 3: 'Considering our combat capabilities, it would be optimal for the young one to scout ahead and make the first contact with the enemies.', 4: '4'}
+164	164		301							{2: 'Hassen', 3: 'I second that. The youngest person should be assigned to the frontline.', 4: '2'}
+165	165		202							{1: '1', 2: '2', 3: '3', 4: '4', 6: '1'}
+166	166		201							{1: '1', 2: '500496', 3: '8'}
+167	167		301							{1: '1', 2: 'Liszt', 3: '...', 4: '1'}
+168	168		204							{1: '1', 2: '5'}
+169	169		301				AniZhuanchangBegin			"{3: ""A subtle twitch of Liszt's mouth and his discernible frown reveal his inner thoughts. However, it only takes a fleeting moment before he raises his gun and makes his way toward the end of the emergency passage.""}"
+170	170		202							{1: '1', 6: '1'}
+171	171		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory48.jpg'}
+172	172		301			AniZhuanchangEnd				{3: 'Within the confines of a dim meeting room belonging to the Science Council, the light of holographic transmission is intermittently flashing.'}
+173	173		201							{1: '1', 2: '500404', 4: '-400'}
+174	174		201							{1: '2', 2: '500004', 4: '400'}
+175	175		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+176	176		301							{1: '1', 2: 'Hippocrates', 3: '...Based on the rough inferences from the Science Council and Star of Life, the conclusion should be easily drawn.', 4: '1'}
+177	177		301							"{3: ""With a furrowed brow, Asimov pores over the Task Force's report on the Hetero Tower, as well as Hippocrates' research document. However, no matter how many times he scrutinizes the information, he repeatedly arrives at the same conclusion.""}"
+178	178		301							{2: 'Asimov', 3: 'Indeed. It appears that the electromagnetic waves, or rather, the energy beams emitted by the Hetero Tower, have a significant ability to contaminate Mind Beacons, leading humans into madness.', 4: '2'}
+179	179		301							{2: 'Hippocrates', 3: 'However, the symptoms exhibited by the affected individuals are not identical... It has only been around tens of minutes since the onset, which is not sufficient time for us to fully decipher its approach.', 4: '1'}
+180	180		301							{2: 'Asimov', 3: 'Same for us. Even...', 4: '2'}
+181	181		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+182	182		202							{1: '1', 2: '2', 6: '1'}
+183	183		401							{1: '2', 2: '2511'}
+184	184		301			RImgBg1Shake				{3: 'Abruptly, a loud and heavy sound reverberates through the meeting room as the door is forcefully smashed.'}
+185	185		201							{1: '1', 2: '500539', 3: '11'}
+186	186		301							{1: '1', 2: 'Rosa', 3: 'Arrrgh! Mr. Asimov!', 4: '1'}
+187	187		202							{1: '1', 6: '1'}
+188	188		301							{3: 'Rosa, who has been silently staying in a corner the whole time, is startled by the noise and bursts out screaming.'}
+189	189		301							{2: 'Researcher A', 3: 'Be careful. The Hetero-Creature that ran away is hiding inside this room...'}
+190	190		301							{2: 'Researcher C', 3: 'Since it refuses to come out, we should utilize this new grenade to blast the door open! Once we capture it...'}
+191	191		301							"{2: 'Researcher A', 3: ""What if the explosion ends up killing the test subject? Let's break in! Just force it open!""}"
+192	192		401							{1: '2', 2: '2511'}
+193	193		201							{1: '1', 2: '500539', 3: '11'}
+194	194		301			RImgBg1Shake				"{1: '1', 3: ""Despite Rosa's desperate efforts to push her tiny body against the door, her attempt proves nearly futile.""}"
+195	195		201							{1: '1', 2: '500004'}
+196	196		301							{1: '1', 2: 'Asimov', 3: 'Rosa... I want you to hide inside the locker and remain completely silent, no matter what happens... Do not come out under any circumstances.', 4: '1'}
+197	197		201							{1: '1', 2: '500539', 3: '11'}
+198	198		301							{1: '1', 2: 'Rosa', 3: 'But... what about you, Mr. Asimov?', 4: '1'}
+199	199		202							{1: '1'}
+200	200		301							{3: 'Before Rosa has time to say more words, Asimov has already shoved her into a locker.'}
+201	201		201							{1: '1', 2: '500004'}
+202	202		301							{1: '1', 2: 'Asimov', 3: 'There are still things I must finish…', 4: '1'}
+203	203		202							{1: '1', 6: '1'}
+204	204		401							{1: '2', 2: '992'}
+205	205		401							{1: '2', 2: '1506'}
+206	206		301			RImgBg1Shake				{3: 'Once Rosa is secure in the locker, he pushes down all the invaluable equipment positioned near the door. This impromptu makeshift barricade serves as their final line of defense, aiming to create a temporary delay against the impending assault.'}
+207	207		201							{1: '1', 2: '500404', 4: '-400'}
+208	208		201							{1: '2', 2: '500004', 4: '400'}
+209	209		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+210	210		301							"{1: '1', 2: 'Asimov', 3: 'From what I have surmised—""surmise"" might be a too generous word to use—more from my ""instinct"" as a scientist, the root cause of this situation lies within that colossal Hetero Tower.', 4: '2'}"
+211	211		301							{2: 'Asimov', 3: 'Apart from Camu, a Transcendant who is currently on a mission on the surface and unable to make it in time... there is only one frame capable of entering and investigating the Hetero Tower under such intense Punishing Virus concentration.', 4: '2'}
+212	212		301							{2: 'Hippocrates', 3: 'You want to use that frame to be assigned to Gray Raven...? But the compatibility adjustment is still incomplete, as far as I know.', 4: '1'}
+213	213		301							{2: 'Asimov', 3: 'Time is running out. All the basic adjustments are finished. We have no choice but to... leave the rest to him.', 4: '2'}
+214	214		301							{2: 'Asimov', 3: 'In the meantime, we still need to find a way to establish communication with the Task Force on the surface... That tower is beyond dangerous.', 4: '2'}
+215	215		301							"{2: 'Hippocrates', 3: ""Then, we'll gather our forces for the rescue operation... if there's anybody who can still work."", 4: '1'}"
+216	216		401						300.0	{1: '2', 2: '2511'}
+217	217		401							{1: '2', 2: '2604'}
+218	218		301							{3: 'As the smashing sounds intensify outside the door, cracks start to form, signaling the imminent breach of the door.'}
+219	219		301							{2: 'Hippocrates', 3: 'We will prioritize heading to the Science Council... Keep yourself safe before we get there, alright?', 4: '1'}
+220	220		301							"{2: 'Asimov', 3: ""I'll try my best..."", 4: '2'}"
+221	221		301							"{2: 'Hippocrates', 3: 'Don\'t ""try your best."" Give me an affirmative answer.', 4: '1'}"
+222	222		301							{3: 'Asimov nods at her, a faint smile showing up on his face.'}
+223	223		301							{2: 'Asimov', 3: 'Yes, I will.', 4: '2'}
+224	224		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+225	225		202							{1: '1', 6: '1'}
+226	226		203							{1: '2', 2: '0.25'}
+227	227		401							{1: '2', 2: '2566'}
+228	228		301				AniZhuanchangBegin			{3: 'Having said that, he terminates the call with Star of Life and quickly initiates a new communication request...'}
+229	229		202							{1: '2', 6: '1'}
+230	230		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory266.png'}
+231	231		301			AniZhuanchangEnd				{3: 'This is strange... Very strange...'}
+232	232		301							{3: 'Despite the evacuation guidance broadcasted, Lee encounters a significant number of civilians still wandering along the path leading to the landing pad of transport crafts.'}
+233	233		201							{1: '1', 2: '500019'}
+234	234		301							"{1: '1', 2: 'Construct Soldier A', 3: ""Hey, hold on! You're not allowed to pass through here."", 4: '1'}"
+235	235		301							{3: 'A group of Construct soldiers intercepts Lee on his way.'}
+236	236		201							{1: '1', 2: '500026'}
+237	237		301							"{1: '1', 2: 'Lee', 3: ""I'm Lee from Gray Raven. I received an order from the General Staff ten minutes ago, and I'm heading to the landing pad for the surface combat mission. Weren't you given the same order?"", 4: '1'}"
+238	238		201							{1: '1', 2: '500405', 4: '-400', 7: '1'}
+239	239		201							{1: '2', 2: '500019', 4: '400', 7: '1'}
+240	240		301							"{1: '1', 3: ""Upon learning that Lee is a member of an elite squad, the Construct soldiers' demeanor noticeably shifts, displaying a greater level of respect.""}"
+241	241		301							{2: 'Construct Soldier B', 3: 'We did receive the same order initially, but a new order came from the General Staff shortly after.', 4: '1'}
+242	242		301							"{2: 'Construct Soldier A', 3: ""It's said that the emergency alarm has been lifted, and we were asked to stay here and stop the uninformed Task Force members from passing through."", 4: '2'}"
+243	243		202							{1: '1', 2: '2', 6: '1'}
+244	244		201							{1: '1', 2: '500026'}
+245	245		301							"{1: '1', 2: 'Lee', 3: ""That's impossible..."", 4: '1'}"
+246	246		301							{3: 'Lee checks his terminal again, finding that neither the emergency assembling order has been lifted nor has any new order been received.'}
+247	247		202							{1: '1', 6: '1'}
+248	248		201							{1: '1', 2: '500405', 4: '-400'}
+249	249		201							{1: '2', 2: '500394', 4: '400'}
+250	250		301							"{1: '1', 2: 'Construct Soldier B', 3: ""Wait, that's not right. How come the order I received was to rally the Task Force and wait for a new order to come?"", 4: '1'}"
+251	251		301							{2: 'Construct Soldier C', 3: 'No, no, no... What I got is...', 4: '2'}
+252	252		301							{3: 'Confusion permeates among the Constructs, causing a fracture in their once-unified discipline. Despite being a small team, multiple members have received conflicting versions of orders from the General Staff...'}
+253	253		202							{1: '1', 2: '2', 6: '1'}
+254	254		201							{1: '1', 2: '500026'}
+255	255		301							{1: '1', 2: 'Lee', 3: '...Could it be that the terminals in the General Staff have been hacked?', 4: '1'}
+256	256		301							"{3: ""Lee's thoughts drift back to Luna's time as an agent, when she utilized Huaxu to hack into Babylonia's network system. Following that incident, security measures were reinforced against invasions. Lee finds it difficult to fathom the possibility of another successful attempt.""}"
+257	257		401							{1: '1', 2: '58'}
+258	258		202							{1: '1', 6: '1'}
+259	259		401							{1: '2', 2: '2756'}
+260	260		401							{1: '2', 2: '213'}
+261	261		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+262	262		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+263	263		301			RImgBg1Shake				{3: 'Abruptly, a deafening blast resonates nearby, jolting Lee out of his contemplation. It was a street-side store that erupted in flames and subsequently detonated.'}
+264	264		301							"{3: ""To Lee's astonishment, the nearby residents appear entirely oblivious to the imminent danger, their gazes fixed upon the flames with vacant expressions.""}"
+265	265		402							{1: '213'}
+266	266		201							{1: '1', 2: '500026'}
+267	267		301							{1: '1', 2: 'Lee', 3: 'Go help them!', 4: '1'}
+268	268		301							"{3: ""Lee's voice breaks through the Construct soldiers' preoccupation with the command system error, redirecting their attention to the explosive scene. The soldiers spring into action, rushing toward the site to initiate rescue operations.""}"
+269	269		401							{1: '2', 2: '1099'}
+270	270		301							"{3: ""Just as Lee is preparing to join the rescue efforts, a call interrupts his intentions, emanating from Lee's terminal—it's from Asimov.""}"
+271	271		401							{1: '2', 2: '791'}
+272	272		301							{2: 'Lee', 3: 'Asimov?', 4: '1'}
+273	273		301							"{3: ""There seems to be strong interference on Asimov's side, with garbled noises filling the airwaves. After a few seconds, Lee finally manages to discern Asimov's words.""}"
+274	274		402							{1: '791'}
+275	275		202							{1: '1', 6: '1'}
+276	276		201							{1: '1', 2: '500004'}
+277	277		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+278	278		301							{1: '1', 2: 'Asimov', 3: 'Lee, can you hear me?', 4: '1'}
+279	279		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+280	280		201							{1: '1', 2: '500026'}
+281	281		301							{2: 'Lee', 3: 'This is Lee. Asimov, what is going on in Babylonia? Do you know anything...', 4: '1'}
+282	282		201							{1: '1', 2: '500004'}
+283	283		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+284	284		301							"{1: '1', 3: ""Although Lee has answered Asimov's call, it appears that Lee's voice is unable to reach Asimov on the other end.""}"
+285	285		301							"{2: 'Asimov', 3: ""I'm hearing no response... Could it be that the use of internal comms devices in Babylonia has also been manually restricted...? If you can hear me, please immediately head to the Science Council."", 4: '1'}"
+286	286		301							{2: 'Asimov', 3: 'Based on our preliminary investigation, it appears that the recently emerged Hetero Tower on the surface is emitting a specific type of electromagnetic radiation in the form of a visible red light that can contaminate the Mind Beacons of humans.', 4: '1'}
+287	287		301							"{3: ""If Asimov's statements hold true, it means Lee is about to confront innocent civilians who are meant to be protected, as well as all of Babylonia falling under their control.""}"
+288	288		301							"{2: 'Asimov', 3: ""Cough... There's not much time left... I'll make it short."", 4: '1'}"
+289	289		401							{1: '2', 2: '2511'}
+290	290		301							{3: 'Among a cacophony of noises, the deafening smashing sound rings once more, accompanied by furious roars and screams of humans.'}
+291	291		301							"{2: 'Asimov', 3: ""I've finished adjusting your new frame. Consciousness transfer and authorization are the last two steps to be taken before its activation."", 4: '1'}"
+292	292		301							{2: 'Asimov', 3: 'The vicinity surrounding the Hetero Tower is densely saturated with the Punishing Virus. Unfortunately, we currently lack the means to detect the inner space of the tower or anticipate the potential hazards that may lie ahead.', 4: '1'}
+293	293		301							{2: 'Asimov', 3: 'I want you to switch to the Hyperreal frame that possesses complete immunity against the Punishing Virus. Enter that tower on the surface, and investigate the root cause of that devastating red light...', 4: '1'}
+294	294		301							"{3: ""Asimov's voice is tinged with groans of pain as he speaks. It seems that he is also affected by that infectious red light.""}"
+295	295		301							"{2: 'Asimov', 3: ""You may be the only one who can stop this calamity... Lee, I'm sorry. I have no choice but to place the hope of all humanity on your shoulders..."", 4: '1'}"
+296	296		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+297	297		202							{1: '1', 6: '1'}
+298	298		401							{1: '2', 2: '2566'}
+299	299		301							"{3: ""The communication is cut off right afterward. Asimov's end remains silent, regardless of Lee's repeated attempts to establish contact.""}"
+300	300		201							{1: '1', 2: '500026'}
+301	301		301							{1: '1', 2: 'Lee', 3: 'Damn it...', 4: '1'}
+302	302		301							"{3: ""Besides the terrors that have transpired so far, Lee is struck by a more frightening realization: even Asimov's words cannot be trusted, as he too is a human being.""}"
+303	303		301		1		AniZhuanchangBegin			{3: 'However, something tells him that the frame known as Hyperreal holds the key to unlocking all the answers he seeks.'}

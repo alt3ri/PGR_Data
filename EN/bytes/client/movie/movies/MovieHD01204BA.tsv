@@ -1,0 +1,139 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory240.png'}
+2	2		401							{1: '1', 2: '205'}
+3	3		301			DialogEnable				{3: 'More wooden signs show up every few meters. The messages on them also keep changing.'}
+4	4		301				AniZhuanchangBegin			"{3: '""Turn left here. Don\'t get it wrong.""'}"
+5	5		401							{1: '2', 2: '1504'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory237.png'}
+7	7		301			AniZhuanchangEnd				"{3: '""Red means stop, green means go... Run! Now!""'}"
+8	8		301							"{3: '""Go straight! Don\'t stop!""'}"
+9	9		301				AniZhuanchangBegin			{3: 'There are a few twists and turns, but you follow the signs and manage to arrive at the destination safely.'}
+10	10		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory241.png'}
+11	11		401							{1: '1', 2: '204'}
+12	12		301			AniZhuanchangEnd				"{3: '""Welcome home""'}"
+13	13		301							{3: 'The walls are about two meters tall and are painted bright red. On top of the walls are blue bricks and tiles with complicated patterns.'}
+14	14		301							"{3: ""The two-door panels aren't the common steel type, but are made in timber with beautiful patterns.""}"
+15	15		201							{1: '1', 2: '500166', 3: '1', 7: '1'}
+16	16		301							{1: '1', 2: 'Lucia', 3: 'Looks like we have arrived.', 4: '1'}
+17	17		203							{1: '1', 2: '0.25', 3: '-400'}
+18	18		201							{1: '2', 2: '1031001', 3: '6', 4: '400', 7: '1'}
+19	19		301							"{1: '1', 2: 'Liv', 3: ""It's a Kowloong style residence."", 4: '2'}"
+20	20		202							{1: '1', 2: '2', 6: '1'}
+21	21		201							{1: '1', 2: '500026', 7: '1'}
+22	22		301							"{1: '1', 2: 'Lee', 3: ""The New Year is one of the traditional Kowloong festivals. I'm not surprised."", 4: '1'}"
+23	24		201							{1: '1', 2: '1031001', 3: '3', 7: '1'}
+24	25		301							{1: '1', 2: 'Liv', 3: 'Huh? Is this incantation also a Kowloong tradition?', 4: '1'}
+25	26		401							{1: '1', 2: '205'}
+26	27		301							{3: 'Liv points to an ink-wash painting on the door. The painting is highly abstract and not limited by mere techniques. It is full of emotions.'}
+27	28		302							{2: 'No...', 3: '29'}
+28	29		302							"{2: ""I think it's us."", 3: '30'}"
+29	30		204							{1: '1', 2: '7'}
+30	31		301							{2: 'Liv', 3: 'Huh?', 4: '1'}
+31	32		301							{3: 'Nanami once drew your portrait with a similar style, so you immediately recognize this painting.'}
+32	33		302							{2: 'This is Lucia.', 3: '34'}
+33	34		201							{1: '1', 2: '500166', 3: '6', 7: '1'}
+34	35		301							{1: '1', 2: 'Lucia', 3: 'Is that... me?', 4: '1'}
+35	36		204							{1: '1', 2: '2'}
+36	37		302							{2: 'This is Lee.', 3: '38'}
+37	38		203							{1: '1', 2: '0.25', 3: '-400'}
+38	39		201							{1: '2', 2: '500026', 3: '10', 4: '400', 7: '1'}
+39	40		301							{1: '1', 2: 'Lee', 3: '...', 4: '2'}
+40	41		302							{2: 'And this is Liv.', 3: '42'}
+41	42		202							{1: '1', 2: '2', 6: '1'}
+42	43		201							{1: '1', 2: '1031001', 3: '1', 7: '1'}
+43	44		301							{1: '1', 2: 'Liv', 3: 'This must be Commandant then.', 4: '1'}
+44	45		204							{1: '1', 2: '2'}
+45	46		301							"{2: 'Liv', 3: ""It's quite difficult to tell."", 4: '1'}"
+46	47		302							"{2: ""Trust me, it's already much better than before."", 3: '48', 4: 'Looks no different from before.', 5: '51'}"
+47	48		201							{1: '1', 2: '500479', 7: '1'}
+48	49		301							{1: '1', 2: 'Tiger', 3: 'Meow—', 4: '1'}
+49	50	54	301							{3: 'Tiger rubs against your palm.'}
+50	51		201							{1: '1', 2: '500479', 7: '1'}
+51	52		301							{1: '1', 2: 'Tiger', 3: 'Meooooow!', 4: '1'}
+52	53	54	301							{3: 'Tiger bumps into your chest.'}
+53	54		401							{1: '1', 2: '36'}
+54	55		301							{3: 'It then rises into the air and points its large eyes toward the painting. A red light quickly scans through it.'}
+55	56		401					100.0		{1: '2', 2: '937'}
+56	57		401							{1: '2', 2: '937'}
+57	58		301							{3: 'Beep'}
+58	59		202							{1: '1', 6: '1'}
+59	60		301							{3: 'After the sound, the doors gradually open, making a squeaky noise.'}
+60	61		401				AniZhuanchangBegin			{1: '1', 2: '5'}
+61	300		101			DialogDisable	AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory176.png'}
+62	62		301			DialogEnable				{3: 'In front of you is a Kowloong-styled mansion.'}
+63	63		502							{1: 'RImgBg1BlowUp'}
+64	64		301							{3: 'There are individual buildings on the four sides inside the vast mansion, which are connected through corridors.'}
+65	65		301							{3: 'The buildings are made from green bricks and tiles, decorated by a rock garden. In the center is a giant pagoda tree with a shiny marble table under it.'}
+66	66		301							"{3: ""At the entrance are the three Constructs' equipment and... a broom?""}"
+67	67		505							{1: 'RImgBg1BlowUp'}
+68	68		201							{1: '1', 2: '500166', 7: '1'}
+69	69		301							"{1: '1', 2: 'Lucia', 3: ""It's our equipment."", 4: '1'}"
+70	70		302							{2: 'I sense a battle coming.', 3: '71'}
+71	71		201							{1: '1', 2: '500479'}
+72	72		301							{1: '1', 2: 'Tiger', 3: 'Meow... Meow...', 4: '1'}
+73	73		203							{1: '1', 2: '0.25', 3: '-400'}
+74	74		201							{1: '2', 2: '1031001', 3: '3', 4: '400', 7: '1'}
+75	75		301							{1: '1', 2: 'Liv', 3: 'Tiger, do you want us to go in?', 4: '2'}
+76	76		301							{2: 'Tiger', 3: 'Meow... Meow...', 4: '1'}
+77	77		401							{1: '1', 2: '203'}
+78	78		301							{3: 'Tiger urges you to cross the wood threshold. The moment you step into the yard, something happens.'}
+79	79		202							{1: '1', 2: '2', 6: '1'}
+80	80		401							{1: '2', 2: '1508'}
+81	81		301							{2: '???', 3: 'Squeak!'}
+82	82		301							{3: 'A lot of gray-black balls swarm out from all the corners: wall corner, bricks and tiles, under the tree... They soon take up almost half of the yard.'}
+83	83		201							{1: '1', 2: '500166', 3: '5', 7: '1'}
+84	84		301							{1: '1', 2: 'Lucia', 3: 'Corrupted?', 4: '1'}
+85	85		203							{1: '1', 2: '0.25', 3: '-400'}
+86	86		201							{1: '2', 2: '1031001', 4: '400', 7: '1'}
+87	87		301							"{1: '1', 2: 'Liv', 3: ""No, I can't detect any Punishing reaction on them."", 4: '2'}"
+88	88		302							{2: 'Liv, can I have an update on the surroundings?', 3: '89', 4: 'Relax, Lucia.', 5: '92'}
+89	89		202							{1: '1', 6: '1'}
+90	90		203							{1: '2', 2: '0.25'}
+91	91	96	301							{1: '1', 2: 'Liv', 3: 'No radar signal outside the mansion. They only show up here.', 4: '2'}
+92	92		202							{1: '2', 6: '1'}
+93	93		204							{1: '1', 2: '5'}
+94	94		203							{1: '1', 2: '0.25', 7: '1'}
+95	95		301							{1: '1', 3: 'Lucia nods at you, but still clenches her weapon and looks at the front vigilantly.'}
+96	96		202							{1: '2'}
+97	97		201							{1: '1', 2: '1031001', 3: '5', 7: '1'}
+98	98		301							"{1: '1', 2: 'Liv', 3: ""Their number keeps rising, but they don't seem aggressive."", 4: '1'}"
+99	99		301							"{2: 'Liv', 3: ""Is this also Nanami's gift?"", 4: '1'}"
+100	100		203							{1: '1', 2: '0.25', 3: '-400'}
+101	101		201							{1: '2', 2: '500026', 4: '400', 7: '1'}
+102	102		301							{1: '1', 2: 'Lee', 3: 'No. Look around us.', 4: '2'}
+103	103		201							{1: '2', 2: '500166', 3: '5', 4: '400', 7: '1'}
+104	104		301							{1: '1', 2: 'Lucia', 3: 'The walls... are deteriorating.', 4: '2'}
+105	105		301							{2: 'Liv', 3: 'The tree is also withering. The more balls there are, the faster it dies.', 4: '1'}
+106	106		301							"{2: 'Lucia', 3: ""Let's get out of here just to be safe."", 4: '2'}"
+107	107		301							{2: 'Lucia', 3: '...The door is blocked.', 4: '2'}
+108	108		202							{1: '1', 2: '2', 6: '1'}
+109	109		301							{3: 'The door has been engulfed in a mist. When touched, it feels like steel instead. You cannot seem to go through.'}
+110	110		301							{3: 'More gray-black balls continue to appear, leaving less space for Gray Raven.'}
+111	111		201							{1: '1', 2: '500479', 7: '1'}
+112	112		301							{1: '1', 2: 'Tiger', 3: 'Meow!', 4: '1'}
+113	113		301							{3: 'Tiger starts to attack the balls, probably because it is annoyed by the decreasing space.'}
+114	114		401							{1: '2', 2: '11106008'}
+115	115		401					100.0		{1: '2', 2: '1512'}
+116	116		502						100.0	{1: 'PanelActor1Shake'}
+117	117		301							{3: 'With no limbs available, it rams them with its strongest face armor. The balls are knocked away and disappear.'}
+118	118		301							{3: 'As Tiger gets more involved, the number of gray-black balls continues to decrease. The deterioration of the surroundings has also slowed, and even started to reverse.'}
+119	119		401							{1: '2', 2: '1506'}
+120	120		301							{3: 'It feels like Tiger is removing dust from the environment.'}
+121	121		301							{3: 'Seeing what has happened, you have figured out how Nanami set her trials.'}
+122	122		202							{1: '1', 6: '1'}
+123	123		302							{2: 'I see.', 3: '124'}
+124	124		302							"{2: 'We probably have to ""dust and clean"" this place.', 3: '125'}"
+125	125		201							{1: '1', 2: '500166', 7: '1'}
+126	126		301							{1: '1', 2: 'Lucia', 3: 'Dust and clean?', 4: '1'}
+127	127		301							"{3: ""It's a spring tradition. Put it simple, we need to clean the house before New Year arrives.""}"
+128	128		301							"{3: ""After last year's incident, you looked up some information, but didn't expect it to come into use here.""}"
+129	129		203							{1: '1', 2: '0.25', 3: '-400'}
+130	130		201							{1: '2', 2: '1031001', 4: '400', 7: '1'}
+131	131		301							{1: '1', 2: 'Liv', 3: 'Dust and clean... So are these balls the dust?', 4: '2'}
+132	132		204							{1: '1', 2: '5'}
+133	133		301							"{2: 'Lucia', 3: ""The mission is clear then. Let's clean this place together."", 4: '1'}"
+134	134		202							{1: '1', 2: '2', 6: '1'}
+135	135		301							"{3: 'Lucia and other members soon join the ""battle.""'}"
+136	136		301							{3: 'With no gun around, you look at the lonely but unmissable broom—'}
+137	137		301							"{3: 'Pick up the broom and embrace the ""battlefield""—'}"
+138	138		302		1		AniZhuanchangBegin			{2: 'Why am I suddenly wearing an apron?!'}

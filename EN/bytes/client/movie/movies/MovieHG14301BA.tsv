@@ -1,0 +1,176 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				{3: 'Soft light filters through the window, as warm as the gentle aroma of coffee filling the room.'}
+4	4		301							"{3: ""Such a warm afternoon isn't the best time for long meetings. Despite the coffee to help keep you awake, the temptation of drowsiness is difficult to ward off.""}"
+5	5		302							{2: '...', 3: '8', 4: '(Quietly yawn)', 5: '6'}
+6	6		201							{1: '1', 2: '500001'}
+7	7		301							{1: '1', 2: 'Celica', 3: '...Is this really that tiring?', 4: '1'}
+8	8		201							{1: '1', 2: '500001', 3: '2', 7: '1'}
+9	9		401						250.0	{1: '2', 2: '2766'}
+10	10		401							{1: '2', 2: '2766'}
+11	11		301							"{2: 'Celica', 3: ""Alright... Let's call it a day! Remember to submit the work reports on time!"", 4: '1'}"
+12	12		202							{1: '1'}
+13	13		301							{3: 'She quickly wraps up the last agenda item and claps her hands, releasing a room full of drowsy commandants and staff members.'}
+14	14		301							{3: 'As people disperse in small clusters, the meeting room gradually empties. Dust particles dance gleefully in the sunlight, enticing you to just sink down for a delightful afternoon nap.'}
+15	15		301				AniZhuanchangBegin			{3: 'You might as well...'}
+16	16		502							{1: 'DialogDisable'}
+17	17		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+18	18		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+19	19		401					250.0		{1: '2', 2: '2626'}
+20	20		301			DialogEnable	AniZhuanchangBegin			"{3: '""Knock, knock.""'}"
+21	21		502							{1: 'DialogDisable'}
+22	22		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+23	23		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+24	24		502							{1: 'DialogEnable'}
+25	25		301			AniZhuanchangEnd				"{3: ""Your body instinctively responds to the chair's beckoning, inclining toward it. Just as your eyelids are on the verge of closing, gentle knocks come from the window beside you.""}"
+26	26		302							{2: '?', 3: '27'}
+27	27		509						700.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory546.jpg', 2: '1'}
+28	28		201							{1: '1', 2: '500864', 3: '2', 4: '-550'}
+29	29		301							{1: '1', 2: 'Teddy', 3: 'Ha, caught you slacking off here.', 4: '1'}
+30	30		302							"{2: ""I'm not slacking off..."", 3: '31', 4: 'We just finished a meeting...', 5: '31'}"
+31	31		301							{2: 'Teddy', 3: 'An explanation is just an excuse, and an excuse is—', 4: '1'}
+32	32		204							{1: '1', 2: '4'}
+33	33		301							{2: 'Teddy', 3: 'Shh, hold on.', 4: '1'}
+34	34		203						100.0	{1: '1', 2: '0.1', 3: '-500', 5: '-100'}
+35	35		202							{1: '1'}
+36	36		401							{1: '2', 2: '2701'}
+37	37		301							{3: 'With remarkable agility for a technician, she deftly pushes open the window and flips into the room.'}
+38	38		302							"{2: ""What's going—"", 3: '39'}"
+39	39		301							{3: 'Before you can finish your words, another familiar figure emerges on the opposite side of the corridor.'}
+40	40		201							{1: '1', 2: '500494', 3: '5', 4: '-450'}
+41	41		201							{1: '2', 2: '500864', 4: '450', 5: '-700'}
+42	42		301							{1: '1', 2: 'Karenina', 3: 'TEDDY!! I saw you!', 4: '1'}
+43	43		301							{2: 'Teddy', 3: 'Shh—', 4: '2'}
+44	44		203							{1: '2', 2: '0.5', 3: '450', 4: '-1980'}
+45	45		301							{3: 'Hiding under the conference table, Teddy gestures at you with her eyes squinted.'}
+46	46		204							{1: '1', 2: '4'}
+47	47		301							{2: 'Karenina', 3: 'Where is she... Huh? Commandant?', 4: '1'}
+48	48		301							{2: 'Karenina', 3: 'Did you see Teddy? I swear I saw her run over here...', 4: '1'}
+49	49		302							{2: 'Ahem.', 3: '50', 4: 'Who? Teddy?', 5: '51'}
+50	50	52	301							{2: 'Karenina', 3: 'Hmm...? Is she inside?', 4: '1'}
+51	51		301							"{2: 'Karenina', 3: ""She's really not here?"", 4: '1'}"
+52	52		301							{3: 'Karenina peeks through the window, attempting to get a better view of the room outside.'}
+53	53		302							"{2: ""I didn't see her."", 3: '54', 4: 'We just finished a meeting.', 5: '54'}"
+54	54		301							{2: 'Karenina', 3: 'This is odd... Could it be a projection that she used to trick me...?', 4: '1'}
+55	55		204							{1: '1', 2: '5'}
+56	56		301							"{2: 'Karenina', 3: ""If you see her, make sure to tell me immediately! I'm winning the argument this time, no matter what!"", 4: '1'}"
+57	57		202							{1: '1'}
+58	58		401							{1: '2', 2: '4009'}
+59	59		301							{3: 'Karenina dashes off energetically in a different direction.'}
+60	60		202							{1: '2'}
+61	61		402							{1: '4009'}
+62	62		510						700.0	{1: '1'}
+63	63		201							{1: '1', 2: '500864', 3: '6', 5: '-1980'}
+64	64		203							{1: '1', 2: '1'}
+65	65		301							{1: '1', 2: 'Teddy', 3: '...Phew.', 4: '1'}
+66	66		301							{3: 'As the footsteps recede, Teddy cautiously emerges from under the conference table.'}
+67	67		302							"{2: ""What's going on?"", 3: '68', 4: 'Are you two fighting again?', 5: '68'}"
+68	68		204							{1: '1', 2: '4'}
+69	69		301							"{2: 'Teddy', 3: ""This isn't the time to talk about it. She'll definitely come back..."", 4: '1'}"
+70	70		204							{1: '1', 2: '2'}
+71	71		301							{2: 'Teddy', 3: 'Covering for your slacking deserves a reward. How about letting me borrow your lounge?', 4: '1'}
+72	72		302							"{2: ""I told you already. I wasn't slacking off—"", 3: '73'}"
+73	73		203						300.0	{1: '1', 2: '0.25', 5: '-100'}
+74	74		203						300.0	{1: '1', 2: '0.25'}
+75	75		203						1000.0	{1: '1', 2: '0.5', 3: '1980'}
+76	76		202							{1: '1'}
+77	77		301				AniZhuanchangBegin			{3: 'Without giving you a chance to protest, Teddy quickly seizes your arm and leads you to Gray Raven lounge.'}
+78	78		502							{1: 'DialogDisable'}
+79	79		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+80	80		107			AniZhuanchangEnd			3000.0	{1: 'Gray Raven Lounge'}
+81	81		108							{1: '1'}
+82	82		201							{1: '1', 2: '500864'}
+83	83		301			DialogEnable				"{1: '1', 2: 'Teddy', 3: ""...No one's here, huh."", 4: '1'}"
+84	84		302							"{2: ""It's a workday afternoon, after all."", 3: '85'}"
+85	85		301							{2: 'Teddy', 3: 'Fair enough. So, can I take a seat here?', 4: '1'}
+86	86		301							{3: 'The Construct with pink hair gazes at you, seeking permission.'}
+87	87		302							{2: 'Sure.', 3: '88', 4: 'Suit yourself.', 5: '88'}
+88	88		204							{1: '1', 2: '1'}
+89	89		301							{2: 'Teddy', 3: 'Thanks.', 4: '1'}
+90	90		202							{1: '1'}
+91	91		301							{3: 'She settles gracefully onto the couch and summons a virtual screen, poised to delve into her work.'}
+92	92		302							{2: 'So, you and Karen—', 3: '93'}
+93	93		401							{1: '2', 2: '2825'}
+94	94		301							{3: 'Driven by curiosity, you find yourself unable to resist asking after handing her a cup of electrolyte.'}
+95	95		201							{1: '1', 2: '500864'}
+96	96		301							"{1: '1', 2: 'Teddy', 3: ""Oh, about that... Karenina's dead set on adding a weird structure to the engineering model."", 4: '1'}"
+97	97		301							{2: 'Teddy', 3: 'I already warned her that adding that thing could turn the model into a ticking time bomb with even the slightest error.', 4: '1'}
+98	98		301							"{2: 'Teddy', 3: ""But she insisted it'd be fine. I didn't feel like arguing, so I just ran away."", 4: '1'}"
+99	99		301							"{2: 'Teddy', 3: ""I'll just hang out in your lounge to wrap up today's... remaining tasks. You're cool with that, right?"", 4: '1'}"
+100	100		302							{2: 'Of course.', 3: '103', 4: 'Remaining tasks?', 5: '101'}
+101	101		204							{1: '1', 2: '2'}
+102	102		301							"{2: 'Teddy', 3: ""Yeah, REMAINING TASKS... Life isn't a breeze for the vice-captain of the Engineering Force, you know."", 4: '1'}"
+103	103		202							{1: '1'}
+104	104		401							{1: '2', 2: '1515'}
+105	105		301							{3: 'In this tranquil afternoon, the lounge is filled only with the soft tapping of terminal keyboards.'}
+106	106		201							{1: '1', 2: '500864', 3: '3'}
+107	107		301							{1: '1', 2: 'Teddy', 3: 'Eh...', 4: '1'}
+108	108		302							{2: '?', 3: '109', 4: 'Is there anything wrong?', 5: '109'}
+109	109		204							{1: '1', 2: '5'}
+110	110		301							{2: 'Teddy', 3: 'I should expect nothing less. The Gray Raven Commandant is really always under watchful guard, huh...', 4: '1'}
+111	111		301							{2: 'Teddy', 3: 'Who in their right mind would set up a stranger signal blocker in a lounge?!', 4: '1'}
+112	112		302							"{2: 'Hmm...', 3: '113', 4: ""It's probably Lee."", 5: '113'}"
+113	113		204							{1: '1', 2: '10'}
+114	114		301							"{2: 'Teddy', 3: ""...Whatever. I've whitelisted my terminal. My IP will be wiped automatically once I'm done with work."", 4: '1'}"
+115	115		301							{2: 'Teddy', 3: 'What a pain. That set me back a whole twenty minutes of work. Maybe I should charge you for that as well...', 4: '1'}
+116	116		302							{2: 'Hey...!', 3: '117'}
+117	117		204							{1: '1', 2: '2'}
+118	118		301							{2: 'Teddy', 3: 'Heh, just kidding.', 4: '1'}
+119	119		202							{1: '1'}
+120	120		301							{3: 'As the terminal finally connects to the network, the light gradually dims with the passage of time. After some time, she seems to have completed a phase of her work and starts relaxing.'}
+121	121		201							{1: '1', 2: '500864', 3: '1'}
+122	122		301							{1: '1', 2: 'Teddy', 3: 'Is work also this dull for you... even as the Gray Raven Commandant?', 4: '1'}
+123	123		301							{2: 'Teddy', 3: 'Meetings, missions, meetings, and report writing...?', 4: '1'}
+124	124		302							{2: 'Yeah, pretty much like that.', 3: '125', 4: 'Well, there are still some interesting parts.', 5: '126'}
+125	125	127	301							{2: 'Teddy', 3: 'In that case, you might as well just join the Engineering Force as my assistant and help me with blueprints.', 4: '1'}
+126	126		301							"{2: 'Teddy', 3: ""Really...? I don't buy it."", 4: '1'}"
+127	127		302							{2: '...Did you finish your work?', 3: '128'}
+128	128		301							"{3: ""Seeing Teddy's leisurely grin, you feel compelled to launch a counterattack.""}"
+129	129		301							"{2: 'Teddy', 3: ""It's all done."", 4: '1'}"
+130	130		301							{2: 'Teddy', 3: 'Feel free to take a look yourself.', 4: '1'}
+131	131		202							{1: '1'}
+132	132		301							{3: 'She swivels the terminal screen toward you, revealing a detailed data report of a complete engineering model.'}
+133	133		302							{2: 'This... is also part of your work?', 3: '134'}
+134	134		301							{3: 'Out of nowhere, a small blue robot materializes on the screen, consuming the text at a fast speed.'}
+135	135		201							{1: '1', 2: '500864', 3: '1'}
+136	136		301							{1: '1', 2: 'Teddy', 3: 'Huh?', 4: '1'}
+137	137		204							{1: '1', 2: '5'}
+138	138		301							{2: 'Teddy', 3: '****...!', 4: '1'}
+139	139		202							{1: '1'}
+140	140		401							{1: '2', 2: '1546'}
+141	141		301							{3: 'Flustered, Teddy attempts to turn the terminal screen back, but amidst the chaos, the electrolyte spills directly onto the keyboard...'}
+142	142		201							{1: '1', 2: '500864', 3: '10'}
+143	143		301							{1: '1', 2: 'Teddy', 3: '...', 4: '1'}
+144	144		302							{2: '...', 3: '145'}
+145	145		401							{1: '2', 2: '2566'}
+146	146		301							"{3: 'Both of you watch helplessly as the tiny robot consumes all the data on the screen. Then, menacingly, it loads a sniper rifle, and with a ""bang"" sound, Teddy\'s terminal screen completely goes dark.'}"
+147	147		204							{1: '1', 2: '10'}
+148	148		301							"{2: 'Teddy', 3: ""That was Karenina's engineering model!"", 4: '1'}"
+149	149		204							{1: '1', 2: '3'}
+150	150		301							"{2: 'Teddy', 3: ""I'm done for. She's totally going to use this to tease me about slacking off."", 4: '1'}"
+151	151		204							{1: '1', 2: '5'}
+152	152		301							{2: 'Teddy', 3: 'You Gray Raven people are outrageous! Even your whitelist has a defensive countermeasure program!', 4: '1'}
+153	153		302							{2: 'Um...', 3: '154'}
+154	154		301							{3: 'You find yourself caught in a confusing mix of pride and the urge to apologize.'}
+155	155		301							{2: 'Teddy', 3: 'Sigh, I was hoping to use this to make her shut up...', 4: '1'}
+156	156		301							{2: 'Teddy', 3: 'So, how are you gonna make it up to me?', 4: '1'}
+157	157		302							"{2: ""Ah... I'm sorry?"", 3: '158'}"
+158	158		204							{1: '1', 2: '2'}
+159	159		301							"{2: 'Teddy', 3: ""Do you honestly believe a simple apology can make up for a day's workload for the vice-captain of the Engineering Force?"", 4: '1'}"
+160	160		204							{1: '1', 2: '15'}
+161	161		301							"{2: 'Teddy', 3: ""Shouldn't you... be showing a bit more sincerity?"", 4: '1'}"
+162	162		301							"{3: 'She bites down heavily on the word ""sincerity"".'}"
+163	163		302							{2: 'Hmm...', 3: '164', 4: '(Think)', 5: '164'}
+164	164		204							{1: '1', 2: '2'}
+165	165		301							{2: 'Teddy', 3: 'Tomorrow at this time, meet me at the spaceport.', 4: '1'}
+166	166		203							{1: '1', 2: '0.5', 3: '1980'}
+167	167		301							{3: 'Before you can react, Teddy has dashed off with the now inactive terminal in her arms.'}
+168	168		302							{2: 'Hey!', 3: '169'}
+169	169		509						700.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory546.jpg', 2: '2'}
+170	170		203							{1: '1', 2: '0.5', 3: '1000'}
+171	171		301							"{2: 'Teddy', 3: ""Don't think you can sneak away. I've checked your schedule, and I know you're off tomorrow."", 4: '1'}"
+172	172		203							{1: '1', 2: '0.3', 3: '900'}
+173	173		301							{1: '1', 3: 'Unnoticed by you, Teddy peers around the door frame at one moment, her eyes squinting.'}
+174	174		203							{1: '1', 2: '0.3', 3: '450'}
+175	175		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Teddy', 3: ""I'll see you there."", 4: '1'}"

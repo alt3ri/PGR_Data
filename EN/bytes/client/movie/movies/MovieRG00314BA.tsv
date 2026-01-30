@@ -1,0 +1,81 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory192.png'}
+2	2		401							{1: '1', 2: '210'}
+3	3		201							{1: '1', 2: '500166'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Lucia', 3: ""Commandant? I didn't expect to see you here. Why are you here anyway?"", 4: '1'}"
+5	2001		203							{1: '1', 2: '0.25', 3: '-400'}
+6	2002		201							{1: '2', 2: '500181', 4: '400'}
+7	5		301							{1: '1', 2: 'Vera', 3: 'The question is ours to ask.', 4: '2'}
+8	6		301							"{3: ""I knew there were two teams, but I didn't expect to meet them so early outside the Demon General's Castle.""}"
+9	7		301							{2: 'Lucia', 3: 'I can answer you first. We came here because our clues showed that Liv once visited this place.', 4: '1'}
+10	2003		302							"{2: ""Wasn't Liv taken by the Demon King?"", 3: '8', 4: 'Is Liv inside this castle?', 5: '9'}"
+11	8	10	301							"{2: 'Lucia', 3: ""The Demon King... What's going on?"", 4: '1'}"
+12	9	10	301							"{2: 'Lucia', 3: ""We aren't sure either, but she's definitely been around here."", 4: '1'}"
+13	10		301							"{3: ""Lucia's answer sounded slightly off, as if they were playing a different game.""}"
+14	2004		202							{1: '1', 2: '2'}
+15	2005		201							{1: '1', 2: '500176', 4: '400'}
+16	2006		201							{1: '2', 2: '1081001', 4: '-400'}
+17	11		301							"{1: '1', 2: 'Camu', 3: ""Looks like the information we collected didn't match for some reason... Kamui, did you not go to the castle?"", 4: '1'}"
+18	12		301							"{2: 'Kamui', 3: ""No, we didn't. Liv was lost before we started the game, so we've been looking for her."", 4: '2'}"
+19	13		301							{2: 'Camu', 3: 'Just like I thought...', 4: '1'}
+20	14		301							"{2: 'Kamui', 3: 'You must have been to the King\'s palace. We heard many rumors on the way, like ""the King\'s minions"""", and """"evil heroes.""', 4: '2'}"
+21	2007		202							{1: '1', 2: '2'}
+22	2008		201							{1: '1', 2: '500180'}
+23	15		301							"{1: '1', 2: 'Karenina', 3: ""Hey, I'm not evil! It's Vera!"", 4: '1'}"
+24	2009		302							"{2: 'Me neither...', 3: '1001', 4: ""She's actually not that bad."", 5: '1003'}"
+25	1001	1002	202							{1: '1'}
+26	1002	16	201							{1: '1', 2: '500166', 3: '1'}
+27	16	1005	301							"{1: '1', 2: 'Lucia', 3: ""Of course, I know Commandant wouldn't do that."", 4: '1'}"
+28	1003	1004	202							{1: '1'}
+29	1004	17	201							{1: '1', 2: '500181'}
+30	17	1005	301							{1: '1', 2: 'Vera', 3: 'Wow, are you speaking for me, Commandant of Gray Raven? Thanks.', 4: '1'}
+31	1005		202							{1: '1'}
+32	1006		201							{1: '1', 2: '1081001'}
+33	18		301							{1: '1', 2: 'Kamui', 3: 'Commandant, what exactly did the King tell you? Could you share it with us?', 4: '1'}
+34	2010		302							{2: '(Tell him what you know)', 3: '19'}
+35	2011		201							{1: '2', 2: '500173', 4: '600'}
+36	2012		201							{1: '3', 2: '500166', 4: '-600'}
+37	19		301							{1: '1', 2: 'Lee', 3: 'I see. So the King NPC looked like Hassen, and he called Liv the Princess. She was taken by the Demon King to his castle.', 4: '2'}
+38	20		301							"{2: 'Lucia', 3: ""The Goddess' artifact, and what the Demon General said before he was defeated... They all match what we know."", 4: '3'}"
+39	21		301							"{2: 'Kamui', 3: ""So that King is a bad guy, isn't he?"", 4: '1'}"
+40	2013		202							{1: '1', 2: '2', 3: '3'}
+41	2014		201							{1: '1', 2: '500181'}
+42	22		301							"{1: '1', 2: 'Vera', 3: ""Those humans who attacked the Demons out of revenge weren't any better."", 4: '1'}"
+43	2015		203							{1: '1', 2: '0.25', 3: '-400'}
+44	2016		201							{1: '2', 2: '500173', 4: '400'}
+45	23		301							"{1: '1', 2: 'Lee', 3: ""But from what Commandant said, the King wanted the heroes to collect the artifact for him to open the path to the Demon King's Castle."", 4: '2'}"
+46	24		301							"{2: 'Lee', 3: ""What could Liv's role possibly be..."", 4: '2'}"
+47	2017		201							{1: '2', 2: '500166', 4: '400'}
+48	25		301							"{1: '1', 2: 'Lucia', 3: ""True... But he definitely needs Liv for something else, otherwise he wouldn't be putting her in the quest."", 4: '2'}"
+49	26		301							"{3: ""After Lee and Lucia's analysis, we were able to confirm two key things in the King's plan.""}"
+50	27		301							"{3: ""The first was to open the gate of the Demon King's Castle, and the second was Liv.""}"
+51	28		301							"{2: 'Lucia', 3: ""We only need to collect the artifact to open the Demon King's Castle. But we don't know anything about Liv's situation yet, so we better take caution."", 4: '2'}"
+52	29		301							{2: 'Vera', 3: 'Why take caution? Just follow the quest tips.', 4: '1'}
+53	30		301							"{2: 'Lucia', 3: ""But the King could have an evil plan up his sleeve. If we don't stop him, both the humans and Demons could suffer greatly."", 4: '2'}"
+54	31		301							"{2: 'Vera', 3: ""So what? This is just a game. I couldn't care less about their lives."", 4: '1'}"
+55	32		301							{2: 'Lucia', 3: 'You may be right, Vera. But I will not give up anyone.', 4: '2'}
+56	33		301							{2: 'Vera', 3: '...', 4: '1'}
+57	34		301							{2: 'Vera', 3: 'You have become even more disgusting after the memory loss.', 4: '1'}
+58	2018		202							{2: '1', 3: '2'}
+59	2019		201							{1: '1', 2: '500166'}
+60	35		301							"{1: '1', 3: ""After the quarrel, Vera pulls her weapon out from the ground and walks directly toward the Demon General's Castle, followed by Camu and Karenina.""}"
+61	36		301							{2: 'Lucia', 3: 'Commandant, if you are going into the castle, could you protect Liv if you happen to see her inside?', 5: '1'}
+62	2020		302							{2: 'Of course.', 3: '37', 4: 'What about you?', 5: '38'}
+63	37	2021	301							{2: 'Lucia', 3: 'Thank you, Commandant.', 4: '1'}
+64	38	2021	301							"{2: 'Lucia', 3: ""The info we collected didn't show Liv entering the building, so we will continue searching around here."", 4: '1'}"
+65	2021		201							{1: '1', 2: '500180'}
+66	39		301							"{1: '1', 2: 'Karenina', 3: ""Hurry up, Gray Raven! Don't forget you are in our team!"", 4: '1'}"
+67	40		301				AniZhuanchangBegin			{3: 'Karenina grabbed me and pulled me into the castle.'}
+68	2022		202							{2: '1'}
+69	2023		201							{1: '1', 2: '500166'}
+70	2024		201							{1: '2', 2: '500173', 4: '600'}
+71	2025		201							{1: '3', 2: '1081001', 4: '-600'}
+72	41		301			AniZhuanchangEnd				{1: '1', 3: '——'}
+73	42		301							{2: 'Lee', 3: 'Lucia, why did you let them take Commandant? We should keep as much strength as we can.', 4: '2'}
+74	43		301							{2: 'Lucia', 3: 'Because the enemy wanted us, not the other team of heroes.', 4: '1'}
+75	44		301							"{2: 'Lee', 3: ""Oh, this part of you has never changed... Kamui, let's prepare for battle."", 4: '2'}"
+76	45		301							{2: 'Kamui', 3: 'Understood!', 4: '3'}
+77	46		301							{3: 'Lucia unsheathed her blade right after Commandant left. Kamui and Lee also braced themselves as a man walked out of a hidden corner.'}
+78	2026		202							{1: '1', 2: '2', 3: '3'}
+79	2027		201							{1: '1', 2: '500011'}
+80	47		301		1		AniZhuanchangBegin			{1: '1', 2: 'King', 3: 'Hah... You found me, heroes from afar.', 4: '1'}

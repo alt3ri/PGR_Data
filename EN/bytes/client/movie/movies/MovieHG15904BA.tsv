@@ -1,0 +1,285 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500340', 6: '-150'}
+4	4		301			DialogEnable				{1: '1', 2: 'Host', 3: 'Little Phym finishes in 31.33 seconds and takes first place!', 4: '1'}
+5	5		401							{1: '2', 2: '4085'}
+6	6		203							{1: '1', 2: '0.25', 3: '-450', 5: '-150'}
+7	7		201							{1: '2', 2: '500856', 4: '400'}
+8	8		301							"{1: '1', 2: 'Host', 3: ""Let's give a round of applause to Little Phym's trainer and the sponsor of this Paw Guardian event—Mr. Kaiji!"", 4: '1'}"
+9	9		401							{1: '2', 2: '4081'}
+10	10		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiDlcCasual/FxUiDlcCasualDate.prefab', 2: '2'}
+11	11		301							"{2: 'Host', 3: ""Mr. Kaiji is passionate about public welfare—not only rescuing animals but also revitalizing the conservation area. <color=#ff4e4eff>He's even running for Babylonia council soon</color>, so please give him your support!"", 4: '1'}"
+12	12		402							{1: '4085'}
+13	13		202							{1: '1', 6: '1'}
+14	14		203							{1: '2', 2: '0.3', 3: '100'}
+15	15		301							{2: 'Kaiji', 3: 'Thank you, thank you everyone!', 4: '2'}
+16	16		301							"{2: 'Kaiji', 3: ""I only wish to do my part for humanity. Whether or not I become a council member doesn't matter. As long as I can serve the public, I'll do it from any position."", 4: '2'}"
+17	17		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiDlcCasual/FxUiDlcCasualDate.prefab'}
+18	18		202							{2: '2', 6: '1'}
+19	19		201							{1: '1', 2: '501328'}
+20	20		201							{1: '3', 2: '501320', 4: '500', 7: '1'}
+21	21		301							{1: '1', 2: 'Discord', 3: 'This guy...', 4: '1'}
+22	22		301							{3: 'Watching the self-important figure in the center of the arena, the blue-haired girl frowns.'}
+23	23		302							"{2: ""Ksori's up next. Are you ready?"", 3: '24'}"
+24	24		401							{1: '2', 2: '5832'}
+25	25		301							{2: 'Ksori', 3: 'Woof!', 4: '3'}
+26	26		301							"{2: 'Discord', 3: ""Yeah, we're both ready."", 4: '1'}"
+27	27		202							{1: '1', 2: '3', 6: '1'}
+28	28		201							{1: '2', 2: '500340', 6: '-150'}
+29	29		301							"{1: '1', 2: 'Host', 3: 'Next, please welcome the infamous ""dangerous dog""—Ksori—and its trainer, Miss Discord!', 4: '2'}"
+30	30		301							"{3: '""Dangerous dog""—such a blatantly slanderous term to appear in the host\'s script. There must be more to this.'}"
+31	31		202							{1: '2', 6: '1'}
+32	32		201							{1: '1', 2: '501328', 3: '10'}
+33	33		201							{1: '3', 2: '501320', 4: '500', 7: '1'}
+34	34		301							"{1: '1', 3: ""The blue-haired girl's stride falters for a moment.""}"
+35	35		302							"{2: ""Don't worry, Discord. You and Ksori will prove them wrong."", 3: '36', 4: ""Don't worry, Ksori. You'll prove them wrong."", 5: '39'}"
+36	36		204							{1: '1', 2: '1'}
+37	37		301							{2: 'Discord', 3: 'Yeah. After all, we trained her together, 【kuroname】.', 4: '1'}
+38	38	39	301							{3: 'She turns slightly to give you a small smile before guiding Ksori into the arena.'}
+39	39		204							{1: '1', 2: '1'}
+40	40		401							{1: '2', 2: '5832'}
+41	41		301							{2: 'Ksori', 3: 'Woof!', 4: '3'}
+42	42		301							{3: 'Ksori glances back at you with a short bark, then follows Discord in.'}
+43	43		202							{1: '1', 2: '3', 6: '1'}
+44	44		401							{1: '1', 2: '36'}
+45	45		201							{1: '18', 2: '500340'}
+46	46		301							{1: '1', 2: 'Host', 3: 'Timer—start!', 4: '18'}
+47	47		202				DialogDisable			{1: '18', 6: '1'}
+48	48		401				RImgBg1Shake			{1: '2', 2: '4601'}
+49	49		401							{1: '1', 2: '29'}
+50	50		401							{1: '2', 2: '1504'}
+51	51		306							{1: '1'}
+52	52		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+53	53		201							{1: '18', 2: '500340'}
+54	54		301			DialogEnable				{1: '1', 2: 'Host', 3: 'First up, the hurdles. Beautiful! Both trainer and dog have immediately found their rhythm!', 4: '18'}
+55	55		202				DialogDisable			{1: '18', 6: '1'}
+56	56		401							{1: '2', 2: '4388'}
+57	57		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+58	58		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg'}
+59	59		502							{1: 'RImgBg1Shake'}
+60	60		201							{1: '18', 2: '500340'}
+61	61		301			DialogEnable				{1: '1', 2: 'Host', 3: 'And now the final event, the long platform jump. Hold it steady! And what a perfect finish!', 4: '18'}
+62	62		202				DialogDisable			{1: '18', 6: '1'}
+63	63		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+64	64		306							
+65	65		201							{1: '1', 2: '500340', 6: '-150'}
+66	66		301			DialogEnable				"{1: '1', 2: 'Host', 3: ""Ksori's time is 26.71 seconds, taking first place from Little Phym!"", 4: '1'}"
+67	67		301							"{2: 'Host', 3: ""That concludes our practice competition. We've arranged free health check-ups for all rescue dogs. Please wait just outside the exam room."", 4: '1'}"
+68	68		401							{1: '1', 2: '36'}
+69	69		202							{1: '1'}
+70	70		401							{1: '1', 2: '208'}
+71	71		301							{3: 'With the competition over, the blue-haired Construct girl makes her way quickly toward you.'}
+72	72		301							{3: 'Though she tries to maintain the composure and professionalism of a maid in front of you, the light classical tune she hums while walking gives away her good mood.'}
+73	73		201							{1: '1', 2: '501328', 3: '1'}
+74	74		201							{1: '2', 2: '501320', 4: '500'}
+75	75		301							{1: '1', 2: 'Discord', 3: 'We did it, Commandant!', 4: '1'}
+76	76		301							"{3: ""If Constructs had tails like dogs, Discord's would be wagging straight up toward the sky right now.""}"
+77	77		302							"{2: ""(Pat Discord's head)"", 3: '78', 4: 'Well done.', 5: '84'}"
+78	78		204							{1: '1', 2: '6'}
+79	79		301							{2: 'Discord', 3: 'Ah!', 4: '1'}
+80	80		203							{1: '1', 2: '0.25', 4: '-20', 5: '20'}
+81	81		301							{3: 'Her short blue hair is soft and smooth under your palm. She instinctively pulls back a little, a faint blush rising to her cheeks.'}
+82	82		203							{1: '1', 2: '0.25', 3: '0', 4: '0'}
+83	83	89	301							"{3: ""After a moment's hesitation, she stays put, eyes half-closing with contentment as the stiffness in her body slowly melts away.""}"
+84	84		204							{1: '1', 2: '8'}
+85	85		301							{2: 'Discord', 3: 'Mm...', 4: '1'}
+86	86		204							{1: '1', 2: '0'}
+87	87		301							{3: 'She unconsciously purses her lips, as if a little disappointed in her own reaction.'}
+88	88		204							{1: '1', 2: '1'}
+89	89		202							{1: '2'}
+90	90		301							{2: 'Discord', 3: 'A-anyway, this is the result of our teamwork.', 4: '1'}
+91	91		301							"{2: 'Discord', 3: ""Earning Ksori's trust and bringing her back to a normal life in such a short time is far more than enough for me."", 4: '1'}"
+92	92		301							"{2: 'Discord', 3: ""Whether or not she wins first place in the practice competition, she'll always be my companion."", 4: '1'}"
+93	93		302							{2: 'But the host just called her a dangerous dog.', 3: '94'}
+94	94		204							{1: '1', 2: '0'}
+95	95		301							{2: 'Discord', 3: 'Busybodies never seem to rest.', 4: '1'}
+96	96		204							{1: '1', 2: '3'}
+97	97		301							"{3: ""She instinctively reaches out to pat Ksori's head, wanting to ease the sting of the host's hurtful words from earlier, only to realize she's already been taken for her health check.""}"
+98	98		301							"{3: ""Discord's hand finds only empty air, and a faint unease rises in her.""}"
+99	99		301							"{2: 'Discord', 3: ""Strange... the check's been going on for almost half an hour and Ksori still isn't back."", 4: '1'}"
+100	100		401							{1: '1', 2: '36'}
+101	101		202							{1: '1', 6: '1'}
+102	102		306							{1: '1'}
+103	103		502							{1: 'RImgBg1Shake'}
+104	104		401							{1: '1', 2: '161'}
+105	105		201							{1: '18', 2: '500340'}
+106	106		301							"{1: '1', 2: 'Host', 3: ""Who's Ksori's trainer? That <color=#ff4e4eff>mad dog</color> has lost control again!"", 4: '18'}"
+107	107		202				DialogDisable			{1: '18', 6: '1'}
+108	108		401							{1: '2', 2: '4339'}
+109	109		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '2'}
+110	110		502							{1: 'RImgBg1Shake'}
+111	111		301			DialogEnable				{3: 'A crimson flash of steel slices the air, leaving countless afterimages in your vision.'}
+112	112		306							
+113	113		201							{1: '1', 2: '501328', 3: '10'}
+114	114		301							{1: '1', 2: 'Discord', 3: '...<color=#ff4e4eff>Mad dog</color>?', 4: '1'}
+115	115		401							{1: '2', 2: '2704'}
+116	116		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+117	117		201							{1: '1', 2: '500340', 6: '-150'}
+118	118		301							"{1: '1', 3: ""In the blink of an eye, a branch above the host's head is neatly trimmed, withered bits falling in loose fragments onto his shoulders.""}"
+119	119		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+120	120		502							{1: 'DialogShake'}
+121	121		301			PanelActor1Shake				{1: '1', 2: 'Host', 3: 'Eek!!!', 4: '1'}
+122	122		201							{1: '1', 2: '501328', 7: '1'}
+123	123		301				DialogDisable			{1: '1', 2: 'Discord', 3: 'Lead the way.', 4: '1'}
+124	124		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+125	125		202							{1: '1', 6: '1'}
+126	126		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory732.jpg'}
+127	127		401							{1: '2', 2: '2920'}
+128	128		201							{1: '1', 2: '501317'}
+129	129		301			DialogEnable				{1: '1', 2: 'Ksori', 3: '(Low, threatening growl)', 4: '1'}
+130	130		202							{1: '1', 6: '1'}
+131	131		401							{1: '2', 2: '212'}
+132	132		201							{1: '2', 2: '500342', 4: '350'}
+133	133		201							{1: '3', 2: '500454', 4: '-350'}
+134	134		301							"{1: '1', 2: 'Crowd Member 1', 3: ""Look at that mad dog, baring its teeth at Mr. Kaiji's dog!"", 5: '2'}"
+135	135		301							"{2: 'Crowd Member 2', 3: ""After the way it performed in the competition, I thought it had changed. But the moment its trainer's gone, it acts like this. How can anyone trust it?!"", 5: '3'}"
+136	136		202							{1: '2', 2: '3', 6: '1'}
+137	137		306							{1: '1'}
+138	138		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+139	139		401							{1: '2', 2: '4339'}
+140	140		201							{1: '1', 2: '501317', 4: '-600'}
+141	141		203							{1: '1', 2: '0.3', 3: '0'}
+142	142		301							"{1: '1', 3: ""Following Discord into the exam room, you see chaos: Ksori has Kaiji's dog cornered, growling as if ready to pounce.""}"
+143	143		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+144	144		201							{1: '2', 2: '500342', 4: '350'}
+145	145		201							{1: '3', 2: '500454', 4: '-350'}
+146	146		203							{1: '2', 2: '0.25', 3: '450'}
+147	147		203							{1: '3', 2: '0.25', 3: '-450'}
+148	148		201							{1: '1', 2: '501328', 3: '3', 7: '1'}
+149	149		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Discord', 3: ""This smell... something's not right. It's not just medicine or the usual clinic scent..."", 4: '1'}"
+150	150		401							{1: '2', 2: '5286'}
+151	151		203						250.0	{1: '1', 2: '0.2', 3: '100'}
+152	152		203							{1: '2', 2: '0.3', 3: '550'}
+153	153		203						250.0	{1: '1', 2: '0.2', 3: '-100'}
+154	154		203						300.0	{1: '3', 2: '0.3', 3: '-550'}
+155	155		203							{1: '1', 2: '0.2', 3: '0'}
+156	156		401							{1: '2', 2: '5286'}
+157	157		301			DialogEnable	DialogDisable			{1: '1', 2: 'Discord', 3: 'Excuse me, passing through.', 4: '1'}
+158	158		306							{1: '0'}
+159	159		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+160	160		201							{1: '4', 2: '500856', 4: '300'}
+161	161		201							{1: '5', 2: '501320', 4: '-400'}
+162	162		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+163	163		502							{1: 'DialogEnable'}
+164	164		301			PanelActor4Shake				{1: '1', 3: 'In the middle of the crowd, Kaiji, dressed in a sharp suit, waves his arms theatrically while shielding his dog.'}
+165	165		301							{2: 'Kaiji', 3: 'Calm down, everyone. This dog did win first place in the practice competition, so it must have some special qualities.', 4: '4'}
+166	166		202							{1: '4', 2: '5', 6: '1'}
+167	167		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+168	168		201							{1: '2', 2: '500342', 4: '550'}
+169	169		201							{1: '3', 2: '500454', 4: '-550'}
+170	170		201							{1: '1', 2: '501328', 3: '3'}
+171	171		301							{1: '1', 2: 'Crowd Member 1', 3: 'Mr. Kaiji, why protect a vicious dog? If it shows aggression toward others, it should be disqualified no matter how skilled it is!', 4: '2'}
+172	172		301							"{2: 'Crowd Member 2', 3: ""That's right, disqualify it!"", 4: '3'}"
+173	173		202							{1: '2', 2: '3', 3: '1', 6: '1'}
+174	174		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+175	175		201							{1: '4', 2: '500856', 4: '300'}
+176	176		201							{1: '5', 2: '501320', 4: '-400'}
+177	177		301				DialogDisable			{1: '1', 2: 'Kaiji', 3: 'Heh...', 4: '4'}
+178	178		203						350.0	{1: '4', 2: '0.3', 3: '450'}
+179	179		203							{1: '5', 2: '0.5', 3: '-300'}
+180	180		301			DialogEnable				"{3: ""Seeing his fake display of generosity only riles up the crowd further, Kaiji can't help but chuckle.""}"
+181	181		401							{1: '2', 2: '2920'}
+182	182		301			PanelActor5Shake				{2: 'Ksori', 3: '(Low, threatening growl)', 4: '5'}
+183	183		301							"{2: 'Kaiji', 3: ""Don't you dare hurt my dog!"", 4: '4'}"
+184	184		401							{1: '2', 2: '5832'}
+185	185		301			DialogShake				{2: 'Ksori', 3: 'Wooof—Woof!', 4: '5'}
+186	186		202							{1: '4', 2: '5', 6: '1'}
+187	187		201							{1: '2', 2: '500342', 4: '550'}
+188	188		201							{1: '3', 2: '500454', 4: '-550'}
+189	189		201							{1: '1', 2: '501328', 3: '3'}
+190	190		301							"{1: '1', 3: ""You push your way through the crowd, only to see Ksori's muscles tense, fangs bared at Kaiji. The air is seconds from breaking.""}"
+191	191		301			PanelActor1Shake	DialogDisable			{1: '1', 2: 'Discord', 3: 'Ksori, stop!', 4: '1'}
+192	192		202							{1: '2', 2: '3', 3: '1', 6: '1'}
+193	193		401							{1: '2', 2: '5832'}
+194	194		201							{1: '4', 2: '500856', 4: '300'}
+195	195		201							{1: '5', 2: '501320', 4: '-400'}
+196	196		203						350.0	{1: '4', 2: '0.3', 3: '450'}
+197	197		203							{1: '5', 2: '0.5', 3: '-300'}
+198	198		401							{1: '2', 2: '2920'}
+199	199		301			DialogEnable				"{1: '1', 3: ""But Ksori's in a frenzy, ignoring Discord's command completely as she lunges toward Kaiji like an arrow, jaws open.""}"
+200	200		301			PanelActor4Shake	DialogDisable			{2: 'Kaiji', 3: 'Aaah!! Get away from me!', 4: '4'}
+201	201		201							{1: '1', 2: '501328', 4: '25'}
+202	202		203							{1: '5', 2: '0.25', 3: '-400'}
+203	203		203							{1: '4', 2: '0.25', 3: '700'}
+204	204		202							{1: '4'}
+205	205		401							{1: '2', 2: '4044'}
+206	206		502							{1: 'RImgBg1Shake'}
+207	207		301			DialogEnable	DialogDisable			"{1: '1', 3: ""Kaiji stumbles back, but in that split second, a blue figure flashes forward like a shadow, placing herself in front of Kaiji's dog.""}"
+208	208		402							{1: '212'}
+209	209		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+210	210		401							{1: '2', 2: '2593'}
+211	211		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 3: '0', 4: '1', 5: '0.4'}
+212	212		502							{1: 'DialogEnable'}
+213	213		204							{1: '1', 2: '10'}
+214	214		301			PanelActor1Shake				{2: 'Discord', 3: 'Aargh!', 4: '1'}
+215	215		301							"{3: ""Ksori's teeth sink into her arm, grayish-red vital fluid welling from the wound.""}"
+216	216		301							{2: 'Discord', 3: 'Ksori—', 4: '1'}
+217	217		204							{1: '1', 2: '19'}
+218	218		301							{3: 'Discord endures the pain and uses her other arm to gently wrap around the dog.'}
+219	219		301							{2: 'Ksori', 3: 'Roar... Woo...', 4: '5'}
+220	220		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+221	221		401							{1: '2', 2: '13081709'}
+222	222		203							{1: '5', 2: '0.25', 3: '-500'}
+223	223		203							{1: '1', 2: '0.25', 3: '25', 4: '-50'}
+224	224		301				DialogDisable			"{3: ""Still holding her, Discord strokes Ksori's head. When seeing her blood, Ksori slowly releases her grip and lies down in front of her, whimpering softly.""}"
+225	225		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 3: '0', 4: '0', 5: '0'}
+226	226		202							{1: '1', 2: '5', 6: '1'}
+227	227		201							{1: '2', 2: '500856', 4: '100', 5: '-80'}
+228	228		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Kaiji', 3: ""Sorry, Miss Discord, but given Ksori's dangerous behavior, we regret to inform you that it's disqualified."", 4: '2'}"
+229	229		203						250.0	{1: '2', 2: '0.2', 3: '70', 4: '-50'}
+230	230		203							{1: '2', 2: '0.3', 3: '100', 4: '0'}
+231	231		301			DialogEnable				{3: 'Still shaken, Kaiji straightens with help from the onlookers, tugging his flashy tie before speaking in a show of regret.'}
+232	232		301							"{2: 'Kaiji', 3: ""Everyone saw what happened. I admire Ksori's skills, but I must be responsible for every dog and trainer here."", 4: '2'}"
+233	233		301							"{2: 'Kaiji', 3: ""Ksori has endangered everyone's safety, so I think..."", 4: '2'}"
+234	234		201							{1: '18', 2: '501328'}
+235	235		301							{1: '1', 2: 'Discord', 3: '...Do you smell that?', 4: '18'}
+236	236		202							{1: '18', 6: '1'}
+237	237		301			DialogEnable				"{3: ""Ignoring Kaiji's dramatic speech, she crouches, her backlit face unreadable.""}"
+238	238		301							{2: 'Kaiji', 3: 'S-smell what?', 4: '2'}
+239	239		201							{1: '2', 2: '501328', 5: '-80', 7: '1'}
+240	240		301				DialogDisable			"{1: '1', 2: 'Discord', 3: ""There's a strange scent in the air."", 4: '2'}"
+241	241		203						250.0	{1: '2', 2: '0.2', 3: '-30', 4: '-80'}
+242	242		203							{1: '2', 2: '0.3', 3: '0', 4: '0'}
+243	243		301			DialogEnable				{3: 'She slowly stands, sniffing around as people eye her nervously.'}
+244	244		201							{1: '2', 2: '500856', 4: '100', 7: '1'}
+245	245		301							"{1: '1', 2: 'Kaiji', 3: ""There's no strange scent. And don't use that as an excuse to cover up that dog's—"", 4: '2'}"
+246	246		201							{1: '2', 2: '501328', 7: '1'}
+247	247		301							"{1: '1', 2: 'Discord', 3: ""Just as I thought. It's coming from your dog."", 4: '2'}"
+248	248		202							{1: '2'}
+249	249		306							{1: '1'}
+250	250		301							"{3: ""Discord starts walking toward Kaiji's dog, but just as she is about to kneel, something glints in the corner and catches her attention.""}"
+251	251		306							
+252	252		201							{1: '1', 2: '501328', 3: '3'}
+253	253		301							"{1: '1', 2: 'Discord', 3: ""Is this... Ksori's name tag and collar? These bite marks... were they bitten off?"", 4: '1'}"
+254	254		204							{1: '1', 2: '5'}
+255	255		301							{3: 'Her voice turns cold. She slowly lifts her head to look at Kaiji, her pupils trembling ever so slightly.'}
+256	256		301							{3: 'For a brief moment, Kaiji can almost feel the weight of her gaze burning through him like deep blue flames.'}
+257	257		201							{1: '1', 2: '500856', 4: '100', 7: '1'}
+258	258		301							{1: '1', 2: 'Kaiji', 3: 'Uh...', 4: '1'}
+259	259		201							{1: '1', 2: '501328', 3: '5', 7: '1'}
+260	260		301							{1: '1', 2: 'Discord', 3: 'The bitten tag and collar carry the same strange scent. Exactly like the scent from your dog.', 4: '1'}
+261	261		301							"{3: ""The blue-haired Construct girl grips Ksori's name tag tightly, saying nothing, her expression shadowed.""}"
+262	262		201							{1: '1', 2: '500856', 4: '100', 7: '1'}
+263	263		301				DialogDisable			{1: '1', 2: 'Kaiji', 3: 'S-so what?', 4: '1'}
+264	264		302							"{2: ""If you're assigning responsibility for safety, the tag and collar need to be part of the investigation."", 3: '265'}"
+265	265		302							{2: 'If the teeth marks and saliva match your dog...', 3: '266'}
+266	266		301			DialogEnable				"{2: 'Kaiji', 3: ""That only proves there was a fight. It doesn't prove Ksori's innocent."", 4: '1'}"
+267	267		301							{2: 'Kaiji', 3: 'With so many people coming and going, no one can say for sure which dog bit what!', 4: '1'}
+268	268		302							"{2: ""Then both dogs should be treated the same if there's doubt."", 3: '269'}"
+269	269		301			PanelActor1Shake				{2: 'Kaiji', 3: 'You...! <size=30>Fine. FINE.</size>', 4: '1'}
+270	270		301							{3: 'The suited man glares at you, his face tightening. Then, as if making a decision, he draws a slow breath and forces a friendly smile.'}
+271	271		301							"{2: 'Kaiji', 3: ""Alright, friends. It's time to end this little drama."", 4: '1'}"
+272	272		301							"{2: 'Kaiji', 3: ""It's true I failed in my responsibility to ensure harmony in our dog community and safety backstage. That's on me."", 4: '1'}"
+273	273		301							"{2: 'Kaiji', 3: ""I promise it won't happen again. And as a personal favor to me, please show leniency to both dogs involved."", 4: '1'}"
+274	274		201							{1: '1', 2: '501328', 3: '5', 4: '0', 7: '1'}
+275	275		201							{1: '2', 2: '501320', 4: '450'}
+276	276		301							{1: '1', 2: 'Discord', 3: 'That smile makes my skin crawl.'}
+277	277		301							{3: 'Discord leads Ksori back to your side without hiding her disgust.'}
+278	278		301							"{2: 'Discord', 3: ""He's too afraid to verify the bite marks, hiding behind smooth talk."", 4: '1'}"
+279	279		302							"{2: ""It's fine. Everyone here can see the truth."", 3: '280', 4: '...'}"
+280	280		204							{1: '1', 2: '0'}
+281	281		301							"{2: 'Discord', 3: ""At least we kept Ksori's eligibility."", 4: '1'}"
+282	282		201							{1: '2', 2: '501318', 4: '650', 5: '-430', 6: '500', 7: '1'}
+283	283		301							"{3: ""She glances down at the little brown-and-white dog by your feet... Ksori's ears and tail droop lifelessly, all her usual energy gone.""}"
+284	284		301		1		AniZhuanchangBegin			{2: 'Discord', 3: 'Ksori...', 4: '1'}

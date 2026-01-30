@@ -1,0 +1,90 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1340.jpg'}
+2	2		401							{1: '1', 2: '120'}
+3	3		201							{1: '1', 2: '501389', 3: '8'}
+4	4		301			DialogEnable				{1: '1', 3: 'Melinoe sits quietly in the depths of the mine.'}
+5	5		401				DialogDisable			{1: '2', 2: '2987'}
+6	6		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront99.png', 3: '0', 4: '1', 5: '1'}
+7	7		204							{1: '1', 2: '14'}
+8	8		301			DialogEnable				"{3: 'Surrounded by spiderwebs like tattered veils, her gaze is fixed on the path ""Aisling"" had taken to leave.'}"
+9	9		306							{1: '1'}
+10	10		301				AniZhuanchangBegin			{3: 'Once again, with her own hands, she has set her child adrift on an uncertain future.'}
+11	11		306							
+12	12		401							{1: '1', 2: '36'}
+13	14		202							{1: '1', 6: '1'}
+14	15		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront99.png', 3: '1', 4: '0', 5: '0'}
+15	17		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+16	18		504						2000.0	{1: '0.7'}
+17	16		401							{1: '1', 2: '6250'}
+18	19		201							{1: '1', 2: '501381', 3: '14'}
+19	20		301			AniZhuanchangEnd				"{1: '1', 2: '""Aisling""', 3: 'The spider silk... snapped.', 4: '1'}"
+20	21		301							"{2: '""Aisling""', 3: 'Is my power failing me too...?', 4: '1'}"
+21	22		301							"{2: '""Aisling""', 3: 'I can never... make them mine?', 4: '1'}"
+22	23		203						300.0	{1: '1', 2: '0.25', 3: '-400'}
+23	24		201							{1: '2', 2: '501389', 3: '8', 4: '400'}
+24	25		301							{1: '1', 2: 'Melinoe', 3: '...', 4: '2'}
+25	26		301							"{2: '""Aisling""', 3: 'You failed...?', 4: '1'}"
+26	27		301							"{3: 'Melinoe remains silent, having no answer for the yearning in ""Aisling\'s"" voice.'}"
+27	28		204							{1: '2', 2: '14'}
+28	29		301							"{2: 'Melinoe', 3: ""They've found me."", 4: '2'}"
+29	30		301							"{2: '""Aisling""', 3: 'So what should I do now?', 4: '1'}"
+30	31		204							{1: '2', 2: '8'}
+31	32		301							{2: 'Melinoe', 3: 'You... must go.', 4: '2'}
+32	33		301							"{3: ""She lowers her gaze, unable to bear the disappointment in her child's eyes.""}"
+33	34		204							{1: '2', 2: '14'}
+34	35		301							{2: 'Melinoe', 3: 'Liv... They will find this place soon.', 4: '2'}
+35	36		301							{2: 'Melinoe', 3: 'You were born only recently. Even your power is no match for them now.', 4: '2'}
+36	37		204							{1: '2', 2: '10'}
+37	38		301							{2: 'Melinoe', 3: 'Go find Wheel of Fortune. You know how to find him, right?', 4: '2'}
+38	39		301							{2: 'Melinoe', 3: 'I left something with him. You will know what to do.', 4: '2'}
+39	40		301							"{2: '""Aisling""', 3: '...What about you?', 4: '1'}"
+40	41		204							{1: '2', 2: '4'}
+41	42		301							{2: 'Melinoe', 3: 'I...', 4: '2'}
+42	43		301							{3: 'She pauses for a moment.'}
+43	44		204							{1: '2', 2: '1'}
+44	45		301							"{2: 'Melinoe', 3: ""I'm staying here."", 4: '2'}"
+45	46		204							{1: '1', 2: '3'}
+46	47		301							"{2: '""Aisling""', 3: 'Why? You should come with me.', 4: '1'}"
+47	48		204							{1: '2', 2: '8'}
+48	49		301				DialogDisable			"{2: 'Melinoe', 3: ""...I can't, Aisling. If we go together, neither of us will escape."", 4: '2'}"
+49	50		204							{1: '2', 2: '14'}
+50	51		203						450.0	{1: '2', 2: '0.4', 3: '200'}
+51	52		401							{1: '2', 2: '2704'}
+52	53		203						450.0	{1: '2', 2: '0.4', 3: '200', 4: '-50'}
+53	54		301			DialogEnable				"{3: ""She retracts her sharp claws, her touch gentle as she smooths the child's disheveled hair.""}"
+54	55		204							{1: '2', 2: '10'}
+55	56		301							"{2: 'Melinoe', 3: ""I'll hold them back for you, so..."", 4: '2'}"
+56	57		204							{1: '2', 2: '14'}
+57	58		301				DialogDisable			{2: 'Melinoe', 3: 'Run, Aisling.', 4: '2'}
+58	59		401							{1: '2', 2: '13081710'}
+59	60		203						450.0	{1: '2', 2: '0.4', 3: '150', 4: '-50'}
+60	61		203						450.0	{1: '2', 2: '0.4', 3: '200', 4: '-50'}
+61	62		204							{1: '2', 2: '1'}
+62	63		301			DialogEnable				"{3: ""Forcing a wan smile, she straightens the child's clothes.""}"
+63	64		301							"{2: 'Melinoe', 3: ""Watch your step. Don't fall... Just get away from here. As far as you can."", 4: '2'}"
+64	65		204							{1: '2', 2: '14'}
+65	66		301							"{2: 'Melinoe', 3: ""Don't get caught. Find a place to hide, and then..."", 4: '2'}"
+66	67		204							{1: '2', 2: '1'}
+67	68		401							{1: '2', 2: '1087'}
+68	69		203						450.0	{1: '2', 2: '0.4', 3: '200'}
+69	70		203						450.0	{1: '2', 2: '0.4', 3: '400'}
+70	71		301							{2: 'Melinoe', 3: 'Grow up big and strong.', 4: '2'}
+71	72		306							{1: '1'}
+72	73		301							{3: 'She looks at the small figure, seeing once more the infant she had cradled years back.'}
+73	74		306							
+74	75		204							{1: '2', 2: '14'}
+75	76		301							"{2: 'Melinoe', 3: ""I couldn't protect her, but at least... I can still protect you."", 4: '2'}"
+76	77		301							"{3: 'Flesh has sprouted where it was never meant to; a mechanoid has become a ""human\'s"" mother.'}"
+77	78		204							{1: '1', 2: '8'}
+78	79		301							"{2: '""Aisling""', 3: '...', 4: '1'}"
+79	80		204							{1: '1', 2: '14'}
+80	81		301							"{2: '""Aisling""', 3: ""Let's go together. I can protect you..."", 4: '1'}"
+81	82		301							"{2: 'Melinoe', 3: ""There's no time."", 4: '2'}"
+82	83		204							{1: '2', 2: '1'}
+83	84		301							{2: 'Melinoe', 3: 'Run, Aisling. Just keep running...', 4: '2'}
+84	85		401							{1: '2', 2: '4044'}
+85	86		203						450.0	{1: '2', 2: '0.4'}
+86	87		202							{1: '1'}
+87	88		301							{3: 'She gives the child a firm, final push.'}
+88	89		204							{1: '2', 2: '10'}
+89	90		301		1		AniZhuanchangBegin			{2: 'Melinoe', 3: 'Do not look back.', 4: '2'}

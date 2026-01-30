@@ -1,0 +1,61 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab', 2: '2'}
+4	4		401							{1: '2', 2: '1509'}
+5	5		301			DialogEnable	AniZhuanchangBegin			{2: 'System', 3: '...'}
+6	6		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab'}
+7	7		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory62.jpg'}
+8	8		301			AniZhuanchangEnd				{2: 'System', 3: 'Connected.'}
+9	9		401							{1: '1', 2: '102'}
+10	10		201							{1: '1', 2: '500013'}
+11	11		401							{1: '2', 2: '1508'}
+12	12		301							{1: '1', 2: 'Corrupted', 3: '—! —!', 4: '1'}
+13	13		501			PanelActor1Shake			1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+14	14		202							{1: '1', 6: '1'}
+15	15		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+16	16		301							{3: 'A strange scene unfolds before you. Watanabe and Ayla are standing on two sides, keeping distance from the Corrupted while preparing to fight.'}
+17	17		201							{1: '1', 2: '500110'}
+18	18		301							{1: '1', 2: 'Ayla', 3: 'According to my calculations, the Corrupted are splitting up, moving toward our east and west.', 4: '1'}
+19	19		301							{2: 'Ayla', 3: 'How are you doing there, ■■■■■?', 4: '1'}
+20	20		203							{1: '1', 2: '0.25', 3: '-400'}
+21	21		201							{1: '2', 2: '1101001', 4: '400'}
+22	22		301							"{1: '1', 2: 'Watanabe', 3: ""■■■■■...? What's going on?"", 4: '2'}"
+23	23		301							{2: 'Ayla', 3: '...I detected an abnormal signal connecting to my M.I.N.D. 0.34 microseconds ago. This signal must have affected our communication system.', 4: '1'}
+24	24		301							{2: 'Ayla', 3: 'This signal...', 4: '1'}
+25	25		301							"{2: 'Ayla', 3: ""Commandant...? You're watching us, aren't you?"", 4: '1'}"
+26	26		302							{2: 'Yep.', 3: '28', 4: 'What are you two doing?', 5: '30'}
+27	27		204							{1: '2', 2: '5'}
+28	28		301							{2: 'Watanabe', 3: 'I see. For a split second, it felt like I was being controlled.', 4: '2'}
+29	29	31	204							{1: '2'}
+30	30		301							"{2: 'Watanabe', 3: ""I'm assisting ■■■■■ in a temporary clean-up mission."", 4: '2'}"
+31	31		301							"{2: 'Ayla', 3: ""Commandant, care to explain what's going on?"", 4: '1'}"
+32	32		302							{2: '(Explain)', 3: '33'}
+33	33		301							"{2: 'Ayla', 3: ""So you were kidnapped and put into a connection chamber, because of April Fool's Day... And you have problems identifying us."", 4: '1'}"
+34	34		301							"{2: 'Watanabe', 3: ""But from what you said, the recognition discrepancy didn't happen to Lucia."", 4: '2'}"
+35	35		301							"{2: 'Ayla', 3: ""Perhaps that connection chamber wasn't fully activated just then... Or maybe there was another reason. Anyway, could you describe what we look like to you?"", 4: '1'}"
+36	36		302							"{2: ""You're Ayla and Watanabe."", 3: '37'}"
+37	37		301							"{2: 'Ayla', 3: ""So I'm Ayla... Hmm."", 4: '1'}"
+38	38		204							{1: '2', 2: '5'}
+39	39		301							{2: 'Watanabe', 3: 'Watanabe... huh. Why would Commandant see me as Watanabe?', 4: '2'}
+40	40		204							{1: '2'}
+41	41		301							{2: 'Watanabe', 3: 'Is this another trick that Lord is playing on me?', 4: '2'}
+42	42		301							"{2: 'Ayla', 3: ""The kidnappers mentioned April Fool's Day. It could all be part of that."", 4: '1'}"
+43	43		301							{2: 'Ayla', 3: 'Maybe we could find some clues by creating abnormal happenstances. How about...', 4: '1'}
+44	44		301							{2: 'Ayla', 3: '■■, put your hand on my chest.', 4: '1'}
+45	45		401							{1: '1', 2: '205'}
+46	46		302							"{2: 'Hold on!', 3: '47', 4: ""That's harassment!"", 5: '48'}"
+47	47	49	301							"{2: 'Ayla', 3: ""It's only a behavioral experiment in order to find out the truth."", 4: '1'}"
+48	48		301							{2: 'Ayla', 3: 'Harassment...?', 4: '1'}
+49	49		204							{1: '2', 2: '5'}
+50	50		301							"{2: 'Watanabe', 3: ""No, I'm not doing that. In Commandant's eyes, it would be Watanabe putting his hand on Ayla's... chest, right?"", 4: '2'}"
+51	51		301							{2: 'Ayla', 3: 'Bugs are often discovered in irregularities. Maybe by inducing conflict, we will be able to test the stability of this connection system.', 4: '1'}
+52	52		301							{2: 'Ayla', 3: 'This could be the key to solving this issue.', 4: '1'}
+53	53		301							"{2: 'Watanabe', 3: ""I said no. And please don't talk about these weird things with such a straight face!"", 4: '2'}"
+54	54		302							"{1: '487', 2: ""Why don't we find some other way?"", 3: '57', 4: ""Anyway, let's start searching."", 5: '58'}"
+55	55		204							{1: '2'}
+56	56		303							{1: '487'}
+57	57		301							"{2: 'Watanabe', 3: ""I agree! Let's search for Commandant's whereabouts."", 4: '2'}"
+58	58		301							"{2: 'Ayla', 3: ""I just ran a second risk calculation. We don't know much about the chamber, so any attempts that may possibly crash the system might be potentially harmful."", 4: '1'}"
+59	59		401							{1: '4', 2: '108003'}
+60	60		301		1		AniZhuanchangBegin			{2: 'Watanabe', 3: 'Looks like we have to search the area inch by inch.', 4: '2'}

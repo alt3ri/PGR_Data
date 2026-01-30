@@ -1,0 +1,209 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory869.jpg'}
+2	2		401							{1: '1', 2: '36'}
+3	3		107			DialogEnable			3000.0	"{1: 'Kowloong', 2: 'November 10, 01:56', 4: ""Huaxu's firewall collapses (delayed)"", 5: '1410m under Kowloong, Tabula Akasha Central Control Room'}"
+4	4		108							{1: '1'}
+5	5		401							{1: '1', 2: '119'}
+6	6		201							{1: '1', 2: '500166', 3: '5'}
+7	7		301							{1: '1', 2: 'Lucia', 3: 'Pulao!', 4: '1'}
+8	8		202							{1: '1'}
+9	9		301							{3: 'By the time you see Pulao, she is already surrounded by corpses and debris. The Hetero-Creatures and Corrupted are slowly pulling back after the initial wave of assaults.'}
+10	10		201							{1: '1', 2: '500445', 3: '8', 7: '1'}
+11	11		302							{2: 'Pulao! Fall back!', 3: '12', 4: 'Lee! Cover her!', 5: '12'}
+12	12		401							{1: '2', 2: '10021506'}
+13	13		202							{1: '1', 6: '1'}
+14	14		301							{3: 'Lee, stationed high in the control room, shoots a bullet, ripping open massive wounds on the Hetero-Creatures surrounding Pulao. They writhe for a moment before collapsing.'}
+15	15		301							{3: 'However, Pulao, seemingly unsatisfied, calls back her Dragon Axe and leaps into a fresh fight.'}
+16	16		201							{1: '1', 2: '500309'}
+17	17		301							"{1: '1', 2: 'Chrome', 3: ""I'll go—"", 4: '1'}"
+18	18		202							{1: '1', 6: '1'}
+19	19		201							{1: '1', 2: '500144'}
+20	20		301							{1: '1', 2: 'Chaofeng', 3: 'No, just leave her be.', 4: '1'}
+21	21		301							{3: 'Chaofeng holds back Chrome, who is on the verge of raising his gun to stop Pulao, and gazes toward her.'}
+22	22		301							"{2: 'Chaofeng', 3: ""She's already... lost so much."", 4: '1'}"
+23	23		301							{2: 'Chaofeng', 3: 'Let her vent her anger.', 4: '1'}
+24	24		301							{3: 'She swings the Dragon Axe, so large compared to her body size, repeatedly and silently.'}
+25	25		301							{3: 'As long as there is one enemy in her sight, she will persist until everything is utterly obliterated—'}
+26	26		302							"{2: ""So, what's the reason exactly?"", 3: '27'}"
+27	27		301							{2: 'Chaofeng', 3: 'The mechanoid who is still unconscious...', 4: '1'}
+28	28		301							{2: 'Chaofeng', 3: 'She rescued and took Pulao in on the Nighter. Without her, Pulao might have died on the Nighter long ago.', 4: '1'}
+29	29		301							"{2: 'Chaofeng', 3: 'She\'s likely the only person Pulao can consider ""family"" in this world.', 4: '1'}"
+30	30		302							{2: 'Family...', 3: '31'}
+31	31		202							{1: '1', 6: '1'}
+32	32		201							{1: '1', 2: '1031001'}
+33	33		301							"{1: '1', 2: 'Liv', 3: ""Are you talking about the mechanoid called Hanying? Even Lee couldn't really find a way to repair her..."", 4: '1'}"
+34	34		202							{1: '1'}
+35	35		201							{1: '1', 2: '500445'}
+36	36		301							{1: '1', 3: 'That small, fragile figure stands alone on the battlefield.'}
+37	37		301							"{3: ""Since Hanying was stabbed by the mechanoid who calls himself Schulz, she's been in a coma, only exhibiting some routine circuit signals.""}"
+38	38		301							{3: 'From that moment on, Pulao has never uttered another word. She has simply been executing her duty in silence.'}
+39	39		502						300.0	{1: 'DialogDisable'}
+40	40		401							{1: '2', 2: '952'}
+41	41		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+42	42		201							{1: '2', 2: '500828', 4: '600', 7: '1'}
+43	43		201							{1: '3', 2: '500829', 4: '-600', 7: '1'}
+44	44		307							{1: 'Child...', 3: '55'}
+45	45		301							{1: '1', 3: 'Child...'}
+46	46		302							{2: '?', 3: '47'}
+47	47		307							{2: '1'}
+48	48		301			DialogEnable				{3: 'Before your eyes, two faint shadows appear near Pulao.'}
+49	49		302							"{2: ""Who's there?"", 3: '50'}"
+50	50		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+51	51		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+52	52		201							{1: '1', 2: '500166', 3: '5'}
+53	53		301							{1: '1', 2: 'Lucia', 3: 'What?', 4: '1'}
+54	54		202							{1: '1'}
+55	55		401							{1: '1', 2: '36'}
+56	56		301							{3: 'When you shake your head again, the two shadows disappear.'}
+57	57		401							{1: '1', 2: '201'}
+58	58		201							{1: '1', 2: '500136'}
+59	59		301							{1: '1', 2: '???', 3: 'You can see them too?', 4: '1'}
+60	60		301							"{3: ""A person in worker's attire approaches you, clutching a chipped crowbar.""}"
+61	61		301							{3: 'Despite his age, his eyes retain a bright and resolute gleam.'}
+62	62		301							{2: 'Master Si', 3: 'Hey, can you see those shadows too?', 4: '1'}
+63	63		301							{3: 'The old man points toward Pulao in the distance.'}
+64	64		502							{1: 'DialogDisable'}
+65	65		302							{2: 'I think I just saw some shadows moving.', 3: '66'}
+66	66		302							{2: 'Can you see them?', 3: '67'}
+67	67		301			DialogEnable				"{2: 'Master Si', 3: ""I can't see hers, but I can see mine."", 4: '1'}"
+68	68		301							"{2: 'Master Si', 3: ""I'm not the only one; Ma's granddaughter can see hers too."", 4: '1'}"
+69	69		301							{2: 'Master Si', 3: 'Those are... shadows of the dead.', 4: '1'}
+70	70		301							{2: 'Master Si', 3: 'Sometimes, I also see such shadows appear around me.', 4: '1'}
+71	71		502							{1: 'DialogDisable'}
+72	72		302							{2: 'Shadows of the dead...', 3: '73'}
+73	73		302							{2: 'You mean the two shadows that appeared near Pulao just now...', 3: '74'}
+74	74		302							{2: 'They are related to Pulao?', 3: '75'}
+75	75		301			DialogEnable				{3: 'The old man offers a wistful smile and releases a deep sigh.'}
+76	76		301							{2: 'Master Si', 3: '...Probably.', 4: '1'}
+77	77		502							{1: 'DialogDisable'}
+78	78		302							{2: 'So does that mean...', 3: '79'}
+79	79		302							{2: 'That Pulao herself can also see those shadows...?', 3: '80'}
+80	80		401							{1: '2', 2: '952'}
+81	81		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+82	82		201							{1: '2', 2: '500850', 4: '-600', 7: '1'}
+83	83		307							{1: 'Father...', 3: '55'}
+84	84		301							{1: '1', 3: 'Father...'}
+85	85		307							{2: '1'}
+86	86		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+87	87		202							{1: '2', 6: '1'}
+88	88		301			DialogEnable				"{3: ""It's only for a moment, but a similar shadow flickers near the old man.""}"
+89	89		301							{2: 'Master Si', 3: 'You saw it, right?', 4: '1'}
+90	90		301							{3: 'In this realm where virtuality and reality intersect, some things can no longer be explained by common sense.'}
+91	91		502							{1: 'DialogDisable'}
+92	92		302							{2: 'Yes...', 3: '93'}
+93	93		302							{2: 'Just now, that shadow appeared right beside you.', 3: '94'}
+94	94		202							{1: '1', 6: '1'}
+95	95		201							{1: '1', 2: '500568'}
+96	96		301			DialogEnable				"{1: '1', 2: 'Lee', 3: ""What's wrong, Commandant?"", 4: '1'}"
+97	97		301							{3: 'After confirming no more fire support is needed, Lee stands concerned by your side.'}
+98	98		502							{1: 'DialogDisable'}
+99	99		302							{2: 'After you entered Tabula Akasha...', 3: '100'}
+100	100		302							{2: 'Have you seen some blurry shadows?', 3: '101'}
+101	101		301			DialogEnable				{3: 'Lee gazes at you with a serious look and shakes his head.'}
+102	102		301							{2: 'Lee', 3: 'No.', 4: '1'}
+103	103		201							{1: '2', 2: '500166', 3: '5', 4: '600'}
+104	104		201							{1: '3', 2: '1031001', 3: '5', 4: '-600'}
+105	105		301							{1: '1', 2: 'Lucia', 3: 'Me neither.', 4: '2'}
+106	106		301							"{2: 'Liv', 3: ""No, I haven't."", 4: '3'}"
+107	107		301							{2: 'Lucia', 3: '...Could it be a problem with your Mind Beacon?', 4: '2'}
+108	108		302							"{2: ""Doesn't seem like it..."", 3: '109', 4: 'If there was a problem, you all would have sensed it too.', 5: '109'}"
+109	109		301							{2: 'Liv', 3: 'Are you experiencing any physical discomfort?', 4: '3'}
+110	110		302							{2: 'No.', 3: '111'}
+111	111		301							{2: 'Lee', 3: 'Strange...', 4: '1'}
+112	112		502							{1: 'DialogDisable'}
+113	113		302							{2: 'I just have this familiar feeling.', 3: '114'}
+114	114		302							"{2: ""It's kind of like..."", 3: '115'}"
+115	115		302							{2: 'That time in City 075.', 3: '116'}
+116	116		204							{1: '1', 2: '7'}
+117	117		301			DialogEnable				{2: 'Lee', 3: 'You mean...', 4: '1'}
+118	118		301							"{3: ""Lee's eyes instantly light up in alertness.""}"
+119	119		204							{1: '1', 2: '5'}
+120	120		301							{2: 'Lee', 3: 'Huaxu?!', 4: '1'}
+121	121		302							"{2: ""It's possible."", 3: '122'}"
+122	122		301							{2: 'Lee', 3: 'We need to prepare precautions immediately. Lucia, Liv—', 4: '1'}
+123	123		502							{1: 'DialogDisable'}
+124	124		302							"{2: ""There's no need for now."", 3: '125'}"
+125	125		204							{1: '1'}
+126	126		302							"{2: ""This Huaxu doesn't appear as hostile as before."", 3: '127'}"
+127	127		302							{2: 'It... and they seem to want to show me something.', 3: '128'}
+128	128		301			DialogEnable				{2: 'Lucia', 3: 'Are you sure, Commandant?', 4: '2'}
+129	129		301							"{3: ""Lee's brows stay furrowed, while Lucia and Liv appear perplexed.""}"
+130	130		202							{1: '1', 2: '2', 3: '3'}
+131	131		301							"{3: 'Although you are unsure of what Huaxu and these ""shadows of the dead"" intend to show you, a sense of premonition—or perhaps curiosity—compels you within.'}"
+132	132		301							"{3: ""Involuntarily, your gaze is drawn to the small room where Qu's body rests.""}"
+133	133		301							"{3: 'If these ""shadows"" are the dead uploaded to Tabula Akasha...'}"
+134	134		502							{1: 'DialogDisable'}
+135	135		201							{1: '1', 2: '500568', 7: '1'}
+136	136		201							{1: '2', 2: '500166', 3: '5', 4: '600', 7: '1'}
+137	137		201							{1: '3', 2: '1031001', 3: '5', 4: '-600', 7: '1'}
+138	138		302							"{2: ""Yes, I'm sure."", 3: '139'}"
+139	139		302							"{2: ""If I sense any danger, I'll let you know immediately."", 3: '140'}"
+140	140		302							"{2: ""After all, we've been together this whole time, right?"", 3: '141'}"
+141	141		301			DialogEnable				"{3: 'So, what does ""the dead""—""she""—want to show you?'}"
+142	142		202							{1: '1', 2: '2', 4: '3', 6: '1'}
+143	143		201							{1: '1', 2: '500136'}
+144	144		301							"{1: '1', 2: 'Master Si', 3: ""Maybe it's because you have something to do with all of us."", 4: '1'}"
+145	145		301							"{2: 'Master Si', 3: ""That's why you can see them."", 4: '1'}"
+146	146		301							"{2: 'Master Si', 3: ""But we don't believe in that."", 4: '1'}"
+147	147		301							{3: 'The old man squeezes the crowbar in his hand.'}
+148	148		301							{2: 'Master Si', 3: 'The dead is dead.', 4: '1'}
+149	149		301							"{2: 'Master Si', 3: ""There's no... so such a place for the dead to return to."", 4: '1'}"
+150	150		301							{2: 'Master Si', 3: 'The place they truly belong...', 4: '1'}
+151	151		301							{2: 'Master Si', 3: '...Should be within the hearts of us, the living.', 4: '1'}
+152	152		502						400.0	{1: 'DialogDisable'}
+153	153		401							{1: '2', 2: '952'}
+154	154		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+155	155		202							{1: '1', 7: '1'}
+156	156		307							{1: 'My<//OUR> time... is running out.', 3: '55'}
+157	157		301							{3: 'My<//OUR> time... is running out.'}
+158	158		307							"{1: ""Huaxu's... Tabula Akasha's time..."", 3: '55'}"
+159	159		301							"{3: ""Huaxu's... Tabula Akasha's time...""}"
+160	160		307							{1: '...Is running out.', 3: '55'}
+161	161		301							{3: '...Is running out.'}
+162	162		307							{1: 'Do... what... you... must...', 3: '55'}
+163	163		301							{3: 'Do... what... you... must...'}
+164	164		307							{1: 'Chief...', 3: '55'}
+165	165		301							{3: 'Chief...'}
+166	166		307							{2: '1'}
+167	167		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+168	168		301			DialogEnable				{3: 'The words before your eyes slowly fade away, leaving only echoes in your mind.'}
+169	169		302							{2: 'These people who exist between life and death...', 3: '170'}
+170	170		302							{2: 'Why are they so fixated on me?', 3: '171'}
+171	171		401							{1: '1', 2: '36'}
+172	172		301							{2: '???', 3: '...Cough...'}
+173	173		301							{2: '???', 3: 'Commandant... right?'}
+174	174		401							{1: '1', 2: '120'}
+175	175		301							{3: 'A gentle hand tugs at your sleeve from behind.'}
+176	176		302							{2: 'Hanying?!', 3: '177'}
+177	177		302							{2: 'You woke up?!', 3: '178'}
+178	178		201							{1: '1', 2: '500629', 3: '17'}
+179	179		301							{1: '1', 2: 'Hanying', 3: 'I... cough...', 4: '1'}
+180	180		301							{3: 'She barely holds herself up, her breath feeble, yet a faint bitter smile lingers on her face.'}
+181	181		301							{2: 'Hanying', 3: 'I... saw them...', 4: '1'}
+182	182		301							{2: 'Hanying', 3: 'Yoyo... They are... right beside Yoyo...', 4: '1'}
+183	183		203							{1: '1', 2: '0.25', 3: '400'}
+184	184		201							{1: '2', 2: '1031001', 3: '19', 4: '-400'}
+185	185		301							{1: '1', 2: 'Liv', 3: 'Hanying, your injury...', 4: '2'}
+186	186		301							{3: 'Hanying trembles as she grips your hand.'}
+187	187		302							{2: 'You are shaking...', 3: '188'}
+188	188		302							{2: 'Liv, is there any way a mechanoid can...', 3: '189'}
+189	189		301							"{2: 'Hanying', 3: ""No, I shouldn't be your concern now..."", 4: '1'}"
+190	190		301							{2: 'Hanying', 3: 'This contains her memories of her parents... and of Kowloong...', 4: '1'}
+191	191		301							{2: 'Hanying', 3: 'Upload them... into Tabula Akasha.', 4: '1'}
+192	192		301							{2: 'Hanying', 3: 'Upload them into Tabula Akasha... Please... you must...', 4: '1'}
+193	193		202							{1: '1', 2: '2'}
+194	194		301							{3: 'With her final ounce of strength exerted, she slumps beside you, yet still wearing a peaceful smile.'}
+195	195		301							"{3: ""Her hand, scarcely distinguishable from a human's, loosens its hold on you. A small storage device is left in your palm, with a slightly faded tassel attached.""}"
+196	196		201							{1: '1', 2: '500144'}
+197	197		301							{1: '1', 2: 'Chaofeng', 3: 'Fuxi! Hurry!', 4: '1'}
+198	198		202							{1: '1'}
+199	199		301							"{3: ""Naturally, the medics cannot treat mechanoids. However, ever since Hanying fell unconscious, even the Fuxi Crew of Kowloong haven't been able to restart her.""}"
+200	200		301							{3: 'But upon noticing the two shadows beside Pulao, she regained her senses and fought to pass the storage device to you.'}
+201	201		302							{2: 'She asked me to upload this into Tabula Akasha...', 3: '202'}
+202	202		201							{1: '1', 2: '500630', 3: '4'}
+203	203		301							{1: '1', 2: 'Duheng', 3: 'Leave it to me, 【kuroname】.', 4: '1'}
+204	204		301							"{3: ""Duheng, who has been guarding the room where Qu's body is kept, speaks.""}"
+205	205		301							{3: 'At this moment, she is clutching another storage device in her hand, but the one she holds appears more damaged and... savage.'}
+206	206		301							"{2: 'Duheng', 3: ""Everything I've done is for Tabula Akasha."", 4: '1'}"
+207	207		301							{2: 'Duheng', 3: 'Be it Huainan, Sufu, or Qu...', 4: '1'}
+208	208		301		1		AniZhuanchangBegin			{2: 'Duheng', 3: 'Only the dead can enter Tabula Akasha, and the dead must enter Tabula Akasha.', 4: '1'}

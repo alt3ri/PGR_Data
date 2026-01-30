@@ -1,0 +1,184 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	3		301			DialogEnable				{2: 'Unknown Song', 3: '...'}
+3	4		301							"{2: 'Unknown Song', 3: '""Let us sing, for all will be well.""'}"
+4	5		301							"{2: 'Unknown Song', 3: '""Blossoming flowers and sea-washed sand castles, milk and warm bread and birch tinder that crackles.""'}"
+5	6		301							"{2: 'Unknown Song', 3: '""...Let us prepare, for all will go foul.""'}"
+6	7		301							"{2: 'Unknown Song', 3: '""Mire-sunken conflicts and steps made in struggle, blood and hot iron and heads burnt in puddles.""'}"
+7	8		301							{2: 'Far Voice', 3: '...【kuroname】...'}
+8	9		302							{2: '...Luna?', 3: '10'}
+9	10		301							"{2: 'Far Voice', 3: ""If I'd met you instead back then...""}"
+10	11		302							{2: 'Where are you?', 3: '12'}
+11	12		301							{3: 'You see Luna devoured by the Polyphage through its translucent maw, looking like an embryo caged within an artificial womb.'}
+12	13		301							{2: 'Far Voice', 3: '...【kuroname】, connect to me.'}
+13	14		302							{2: 'No, I—', 3: '15'}
+14	15		301							{2: 'Approaching Voice', 3: '...You must be tired.'}
+15	16		301							{2: 'Approaching Voice', 3: 'Commandant?'}
+16	17		502				RImgBg1Disable			{1: 'DialogDisable'}
+17	22		201							{1: '1', 2: '1031001', 3: '14'}
+18	18		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+19	19		101			RImgBg1Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg'}
+20	20		401							{1: '1', 2: '201'}
+21	21		302							{2: 'Hm?', 3: '23', 4: 'Sorry. Just spacing out.', 5: '23'}
+22	23		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Commandant... After all that, you must be very tired. Sorry for disturbing you...', 4: '1'}
+23	24		302							"{2: ""It's okay."", 3: '25', 4: ""I'm ready for work."", 5: '25'}"
+24	25		201							{1: '1', 2: '500026'}
+25	26		301							"{1: '1', 2: 'Lee', 3: ""I recovered the data we sent through the terminal. We can now determine that the signal within the Red Tide is indeed Luna's."", 4: '1'}"
+26	27		301							{3: 'The teenage figure near the window glances at you from the files in his hands.'}
+27	28		301							"{2: 'Lee', 3: ""I've virtually double-reconstructed the data through the Spear of F.O.S., but I didn't experience it myself after all. There might still be discrepancies between the reconstructed data and what you went through."", 4: '1'}"
+28	29		301							"{2: 'Lee', 3: ""You can begin to work on this after you are fully recovered. I'll tell Asimov about it."", 4: '1'}"
+29	30		302							"{2: ""I'm fully recovered already."", 3: '31', 4: 'Thanks, Lee.', 5: '31'}"
+30	31		301							{2: 'Lee', 3: '...', 4: '1'}
+31	32		301							"{3: ""You deny Lee's kind offer for a little more time off, but find that he is still staring at you.""}"
+32	33		302							{2: '?', 3: '34', 4: 'Do I have something on my face?', 5: '34'}
+33	34		301							"{2: 'Lee', 3: ""...It's nothing. If you're ready, then that's fine by me as well."", 4: '1'}"
+34	35		301							{2: 'Lee', 3: 'Now, we just need you to go through and confirm the relevant data on Luna we found in the Red Tide.', 4: '1'}
+35	36		302							{2: 'Understood...'}
+36	37		201							{1: '1', 2: '1031001', 3: '1'}
+37	38		301							{1: '1', 2: 'Liv', 3: '(Giggles)', 4: '1'}
+38	39		302							{2: '?', 3: '40'}
+39	40		301							"{2: 'Liv', 3: ""Commandant, your face... it's half-red."", 4: '1'}"
+40	41		302							{2: 'What do you mean?', 3: '999'}
+41	999		204							{1: '1', 2: '6'}
+42	42		301							"{2: 'Liv', 3: ""Oops, sorry! It must've been because you were sleeping sideways! It's nothing, it'll go away in a minute..."", 4: '1'}"
+43	43		202							{1: '1', 6: '1'}
+44	44		301							{3: 'You check your cheeks and do find it a little uneven and warm. It must have gone red.'}
+45	45		301				AniZhuanchangBegin			{3: 'Turning around, you examine your figure on the glass window. The sight of you touching your cheeks suddenly reminds you of a scene in your memories.'}
+46	47		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+47	48		504							{1: '1'}
+48	49		201							{1: '1', 2: '500238', 3: '4'}
+49	50		301			AniZhuanchangEnd	AniZhuanchangBegin			{1: '1', 2: 'Luna', 3: 'So, you too... Are you part of my dreams?', 4: '1'}
+50	51		202			DialogDisable				{1: '1', 6: '1'}
+51	52		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg'}
+52	53		504							{1: '0'}
+53	54		201							{1: '1', 2: '500026'}
+54	46		302			AniZhuanchangEnd				{2: '...Data on Luna, huh.', 3: '55'}
+55	55		301			DialogEnable				{1: '1', 2: 'Lee', 3: 'Yeah. From our current observations, the Red Tide only consumes consciousnesses going through near-death experiences within it.', 4: '1'}
+56	56		301				AniZhuanchangBegin			"{2: 'Lee', 3: ""Human or Construct, when they face death, their deepest emotions hidden inside their memories become bare. This also matches with the consciousness data that we've seen in the Red Tide."", 4: '1'}"
+57	57		202							{1: '1', 6: '1'}
+58	59		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory256.png'}
+59	58		301			AniZhuanchangEnd				"{3: ""Going through a retinal scan, the two of you enter Asimov's lab.""}"
+60	60		201							{1: '1', 2: '500004'}
+61	61		301							"{1: '1', 2: 'Asimov', 3: ""Don't make unapproved conclusions without me."", 4: '1'}"
+62	62		301							"{2: 'Asimov', 3: ""The sample size is too small. We can't say for sure yet."", 4: '1'}"
+63	63		301							"{2: 'Asimov', 3: ""But, I know we'll get to the bottom of it."", 4: '1'}"
+64	64		302							{2: 'You sound pretty invested in this, Asimov.', 3: '65', 4: 'Atta, Asimov!', 5: '65'}
+65	65		301							"{2: 'Asimov', 3: ""First things first, though, you'll have to fully cooperate, Gray Raven Commandant."", 4: '1'}"
+66	66		302							"{2: 'Sure.', 3: '67', 4: ""I've been fully cooperative all the time."", 5: '67'}"
+67	67		301							"{2: 'Asimov', 3: ""You are the only commandant to have connected to Luna's M.I.N.D, and I presume it's not just once."", 4: '1'}"
+68	68		203							{1: '1', 2: '0.25', 3: '400'}
+69	69		201							{1: '2', 2: '500026', 4: '-400'}
+70	70		301							{1: '1', 2: 'Lee', 3: 'What are you—', 4: '2'}
+71	71		301							"{2: 'Asimov', 3: ""Chillax. I'm not here to prosecute your commandant. This is just a mere deductive guess."", 4: '1'}"
+72	72		301							{2: 'Lee', 3: 'I never knew the chief technician had a say in our tactical decisions—', 4: '2'}
+73	73		302							"{2: 'Yeah, get him, Lee.', 3: '74', 4: ""Lee, it's okay."", 5: '74'}"
+74	74		301							"{2: 'Asimov', 3: ""You're right. Do whatever you want on the field, I couldn't care less. I just want data, so you know what to do."", 4: '1'}"
+75	75		302							{2: 'Yeah.', 3: '76', 4: 'I know.', 5: '76'}
+76	76		202							{1: '2', 6: '1'}
+77	77		203							{1: '1', 2: '0.25', 3: '0'}
+78	78		301							"{2: 'Asimov', 3: ""Put this on. It's installed with Luna's consciousness data found inside the Red Tide."", 4: '1'}"
+79	79		301							"{2: 'Asimov', 3: ""This will simulate the situation of Luna's consciousness sample reacting with the observation target of Lucia."", 4: '1'}"
+80	80		301							"{2: 'Asimov', 3: ""You are Lucia's commandant, and have also linked with Luna without much emotional influence. You are the best candidate for an observer."", 4: '1'}"
+81	81		302							{2: 'Alright.', 3: '998'}
+82	998		301				AniZhuanchangBegin			"{2: 'Asimov', 3: ""Well then, let's go."", 4: '1'}"
+83	82		202							{1: '1', 6: '1'}
+84	83		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+85	84		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'Loading<<<<Consciousness link detected<<<<'}
+86	85		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory59.jpg'}
+87	86		401							{1: '1', 2: '209'}
+88	87		504							{1: '1'}
+89	88		301			AniZhuanchangEnd				{3: 'You open your eyes to find yourself in a long corridor.'}
+90	997		201							{1: '1', 2: '500031'}
+91	89		301							{1: '1', 2: '???', 3: 'Sis, what are you doing?', 4: '1'}
+92	90		301							{3: 'A small blonde girl materializes out of thin air next to you. She raises her head, looking at you and beaming with a warm smile.'}
+93	91		302							{2: '...Luna?', 3: '92'}
+94	92		301							"{2: 'Asimov', 3: 'The ""consciousnesses"" consumed and rebuilt by the Red Tide are not the ""consciousness beings"" themselves—these are only bait used by the Red Tide.'}"
+95	93		301							{2: 'Asimov', 3: 'Which is why they take on the appearance and form that can most affect the related subjects.'}
+96	94		302							{2: 'I see.', 3: '996'}
+97	996		202							{1: '1'}
+98	95		301							"{3: 'Walking further onward, the ""Luna"" behind dissipates like fog. A new ""Luna"" appears before you.'}"
+99	96		201							{1: '1', 2: '500031'}
+100	97		301							"{1: '1', 2: 'Luna', 3: ""Sister, look what I found! It's canned meat, and still edible...! Did I do good?"", 4: '1'}"
+101	98		302							{2: '...', 3: '100'}
+102	99		202							{1: '1', 6: '1'}
+103	100		301							"{2: 'Asimov', 3: ""Don't respond.""}"
+104	101		302							{2: 'Okay.', 3: '103'}
+105	102		201							{1: '1', 2: '500031'}
+106	103		301							"{1: '1', 2: 'Luna', 3: ""Sister, it's snowing outside! Let's go build a snowman together!"", 4: '1'}"
+107	104		301							"{2: 'Luna', 3: ""Sister—achoo! Ehehe, it's kinda cold... Sister, your hand is so warm... Let's hold hands!"", 4: '1'}"
+108	105		202							{1: '1'}
+109	106		301							"{3: 'Myriad ""Luna"" figures fade in and out around you.'}"
+110	107		301							"{3: ""Innocent, cheerful, and frisky. These must have been the happiest memories in Luna's mind.""}"
+111	108		301							{3: 'You know deep down that these are illusions created by the Red Tide. You try your best to ignore these shades and move forward.'}
+112	109		201							{1: '1', 2: '500031'}
+113	110		301							{1: '1', 2: 'Luna', 3: 'Wow! I love this present!', 4: '1'}
+114	111		301							{2: 'Luna', 3: 'My hands are cold... Can we hold hands...?', 4: '1'}
+115	995		204							{1: '1', 2: '14'}
+116	112		301							{2: 'Luna', 3: 'Why are you ignoring me...?', 4: '1'}
+117	113		301							"{3: 'A ""Luna"" stays behind you this time instead of fading away. She looks dejectedly at you.'}"
+118	114		301							"{2: 'Luna', 3: ""Is it because I wasn't good enough...? Sorry... I'll try harder... I'll grow stronger... Don't leave me behind..."", 4: '1'}"
+119	115		302							{2: '...', 3: '116', 4: 'I get why people are lured by the Red Tide now.', 5: '116'}
+120	116		301							"{2: 'Luna', 3: ""Didn't you say you'd... change everything for me...?"", 4: '1'}"
+121	118		302							{2: '...?', 3: '117'}
+122	117		202							{1: '1'}
+123	119		301				AniZhuanchangBegin			{2: 'Asimov', 3: 'Focus.'}
+124	120		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+125	121		301			AniZhuanchangEnd				{3: 'You reach the end of the corridor and find yourself surrounded by complete darkness. Only a pitch black door can be seen.'}
+126	122		302							{2: '(Open the door)', 3: '123'}
+127	123		301							{3: 'Creak——'}
+128	124		301							"{3: ""Warm light spills out of the door crack. You find a simple, but somewhat worn out children's room.""}"
+129	125		502				RImgBg1Disable			{1: 'DialogDisable'}
+130	126		101			RImgBg1Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory56.jpg'}
+131	127		302							"{2: ""That's...!"", 3: '128', 4: ""Luna's room in her childhood?"", 5: '129'}"
+132	128	130	301			DialogEnable				{2: 'Asimov', 3: 'What?'}
+133	129		301			DialogEnable				{2: 'Asimov', 3: 'I guess. So what?'}
+134	130		302							{2: '...Nothing.', 3: '131'}
+135	131		301							{3: 'You walk inside and see Luna sleeping on the bed.'}
+136	132		302							{2: '...!', 3: '133'}
+137	133		301							"{3: 'But not the Luna shades you have been seeing. This is the grown-up Luna, the Ascendant. Somehow, the word ""safe"" springs into your mind when you see her hair sprawled on her cheeks and on the bed.'}"
+138	134		301							"{2: 'Asimov', 3: ""Your heart rate is rising. What's the matter?""}"
+139	135		302							{2: '...', 3: '136'}
+140	136		302							{2: 'Do you remember when you told me about...', 3: '137'}
+141	137		302							{2: 'The self-defense mechanism of a M.I.N.D.?', 3: '138'}
+142	138		301							"{2: 'Asimov', 3: ""...You mean the drowner effect? What's wrong?""}"
+143	139		302							{2: 'Drowner effect?', 3: '140'}
+144	140		301							"{2: 'Asimov', 3: ""Something from an earlier age when Construct tech wasn't that mature. If a commandant's Mind Beacon with a Construct isn't stable enough, or if they aren't compatible, the M.I.N.D. will try to get rid of the intruder.""}"
+145	141		302							"{2: 'What happens then?', 3: '142', 4: 'Is this why ""remote link"" was discontinued?', 5: '143'}"
+146	142	144	301							"{2: 'Asimov', 3: ""Let's imagine the M.I.N.D. as an ocean. A Construct is like someone that's drowning, so they'll instinctively grab at anything they can.""}"
+147	143		301							"{2: 'Asimov', 3: ""That's part of the reason. But mostly, it's because remote link back then can cause irreparable psychological damage to a commandant.""}"
+148	144		301							"{2: 'Asimov', 3: ""But that's nothing to worry about now. The compatibility of our modern Constructs blows the earlier models out of the water. You can be rest assured that the drowner effect won't happen.""}"
+149	994		301							"{2: 'Asimov', 3: ""After all, if this happens even once, we'd lose precious commandant personnel. We don't have that many to spare.""}"
+150	145		302							{2: '...', 3: '146', 4: 'Yay for science.', 5: '146'}
+151	146		301							{2: 'Asimov', 3: 'Why are you asking me this all of a sudden?'}
+152	147		302							{2: 'Just remembering something...', 3: '148'}
+153	148		302							{2: 'Do drowned Constructs remember anything?', 3: '149'}
+154	149		301							"{2: 'Asimov', 3: ""In their M.I.N.D.? Theoretically, they should. But it's been ages since I've done research on that topic, you got some ideas you wanna share?""}"
+155	150		302							"{2: 'Nah, not really.', 3: '151', 4: ""I'll tell you if I think of any."", 5: '151'}"
+156	151		301							{3: 'Asimov snorts over the channel and falls silent.'}
+157	152		301							{3: 'You carefully scan the room... Such a warm and quiet room this is.'}
+158	153		301							"{3: ""This is the deepest, safest place in Luna's M.I.N.D.""}"
+159	154		301							{3: 'She spent her childhood here with Lucia. This must be the memories she treasure the most.'}
+160	155		301							{2: 'Asimov', 3: '...So, any findings?'}
+161	156		302							{2: '...Nothing, really.', 3: '157'}
+162	157		301							"{2: 'Asimov', 3: ""That's what Lucia said as well. She said that these memories should be Luna's... ah, what was it again—most precious moments?""}"
+163	158		301				AniZhuanchangBegin			"{2: 'Asimov', 3: ""Well then, let's get you outta here.""}"
+164	159		301							{3: '<<<<<<<<<<<<<<<<<<<<<'}
+165	160		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory45.jpg'}
+166	161		504							{1: '0'}
+167	162		301			AniZhuanchangEnd				"{3: ""Lee and Liv have to help out in Asimov's lab. So you decide to leave on your own.""}"
+168	163		302							{2: '...', 3: '164'}
+169	164		301				AniZhuanchangBegin			"{3: ""The sights you saw through the shades and the experiences in Luna's M.I.N.D. seem to have strangely matched up.""}"
+170	165		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory57.jpg'}
+171	166		401							{1: '1', 2: '207'}
+172	167		201							{1: '1', 2: '500266', 7: '1'}
+173	168		301			AniZhuanchangEnd				{1: '1', 3: 'In the Red Tide projections, you clearly saw... a reddish night light next to her bed. You would never forget the shape of it.'}
+174	169		301							{3: 'What happened deep in her M.I.N.D. was not just a mere dream. It might not have been pointless.'}
+175	170		301				AniZhuanchangBegin			{3: 'Maybe everything is going differently than the way you thought it would. Maybe some things are really changing.'}
+176	993		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory45.jpg'}
+177	992		202							{1: '1', 6: '1'}
+178	171		301			AniZhuanchangEnd				{3: 'Pausing at the bridge, you see an old friend, the pale blue planet, rotating silently in the vast expanse of space.', 4: '1'}
+179	172		301							{3: 'And this half-broken planet, is where that snow-like Construct—where she—came from.', 4: '1'}
+180	173		301							{3: '...Is she still on there?'}
+181	174		302							{2: 'Perhaps...', 3: '175'}
+182	175		302							{2: 'If we meet again...', 3: '176'}
+183	176		302		1		AniZhuanchangBegin			"{2: ""I'll ask her myself.""}"

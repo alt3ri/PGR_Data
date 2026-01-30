@@ -1,0 +1,249 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory598.jpg'}
+2	2		401							{1: '1', 2: '148'}
+3	3		107						2000.0	{1: '7.00 a.m. '}
+4	4		108							{1: '1'}
+5	5		401							{1: '2', 2: '973'}
+6	6		301			DialogEnable				{3: 'The biting chill hints at impending snowfall.'}
+7	7		301							"{3: ""Hauling Noan back up to the tower's summit, your face drains of color as you struggle for air.""}"
+8	8		302							{2: 'Noan.', 3: '9'}
+9	9		201							{1: '1', 2: '500506', 3: '4'}
+10	10		301							{1: '1', 2: 'Noan', 3: 'Yeah.', 4: '1'}
+11	11		301							{3: 'The young man, summoned by name, approaches, checking you for any potential injuries.'}
+12	12		301							{2: 'Noan', 3: 'Any other wounds?', 4: '1'}
+13	13		301				DialogDisable			"{3: ""Noan's demeanor is eerily composed.""}"
+14	14		302							"{2: ""No, I'm good."", 3: '15'}"
+15	15		302							{2: 'And you?', 3: '16'}
+16	16		301			DialogEnable				"{2: 'Noan', 3: ""Don't sweat it."", 4: '1'}"
+17	17		401							{1: '2', 2: '4131'}
+18	18		301							"{3: ""With those words, crimson liquid coats the young man's hands, trickling down to the floor, forming macabre patterns like viscous blooms.""}"
+19	19		301							{3: 'He seems like a broken instrument, struggling to produce a melody amidst turbulent seas.'}
+20	20		302							"{2: '...', 3: '21', 4: '(If that\'s so, which ""strings"" were you referring to?)', 5: '21'}"
+21	21		301				DialogDisable			"{2: 'Noan', 3: ""What's the matter?"", 4: '1'}"
+22	22		302							"{2: ""Can you share what's on your mind?"", 3: '23'}"
+23	23		302							{2: 'Why would you risk your life?', 3: '24'}
+24	24		302							{2: 'Are you seriously considering facing off against Lithos in his place?', 3: '25'}
+25	25		204							{1: '1', 2: '14'}
+26	26		301			DialogEnable				{2: 'Noan', 3: '...', 4: '1'}
+27	27		204							{1: '1', 2: '4'}
+28	28		301							"{2: 'Noan', 3: ""Given Dark Aries' current plight, the only shot at improvement lies in uprooting the source of the problem."", 4: '1'}"
+29	29		302							{2: 'So?', 3: '30'}
+30	30		204							{1: '1'}
+31	31		301							{2: 'Noan', 3: 'This could be our chance.', 4: '1'}
+32	32		301							"{2: 'Noan', 3: 'Lithos would rather see the ""original that\'s replicable."" Let me handle it.', 4: '1'}"
+33	33		302							{2: 'Do you believe this is a rational choice?', 3: '34'}
+34	34		204							{1: '1', 2: '4'}
+35	35		301							{2: 'Noan', 3: 'No, but...', 4: '1'}
+36	36		301							"{2: 'Noan', 3: ""If it's the only way out, it's not entirely unreasonable, is it?"", 4: '1'}"
+37	37		204							{1: '1'}
+38	38		301				DialogDisable			"{2: 'Noan', 3: ""Even if we only manage to eliminate a few replicas and gather intel... it's better than sitting idle."", 4: '1'}"
+39	39		302							{2: 'True, this could alleviate some of the issues caused by Lithos.', 3: '40'}
+40	40		302							{2: 'But where does that leave you? Can you return unscathed?', 3: '41'}
+41	41		204							{1: '1', 2: '4'}
+42	42		301			DialogEnable				{2: 'Noan', 3: '...', 4: '1'}
+43	43		204							{1: '1', 2: '14'}
+44	44		301							"{2: 'Noan', 3: ""That's what I should be asking, right..."", 4: '1'}"
+45	45		301							"{3: ""A crack finally appears in Noan's composed demeanor.""}"
+46	46		204							{1: '1', 2: '4'}
+47	47		301							{2: 'Noan', 3: 'These lingering issues and people have ensnared my team and pulled you into this mess.', 4: '1'}
+48	48		302							"{2: 'No one can clean it up entirely, Noan.', 3: '49', 4: ""As long as we're breathing, these things will arise. I'm no exception."", 5: '49'}"
+49	49		301				DialogDisable			{2: 'Noan', 3: '...', 4: '1'}
+50	50		302							"{2: ""The Noan I know wouldn't act on impulse like this."", 3: '51'}"
+51	51		302							{2: 'Did something else go down?', 3: '52'}
+52	52		204							{1: '1', 2: '9'}
+53	53		301			DialogEnable				{3: 'He glances up, bewildered, as if the answer lies before his eyes...'}
+54	54		204							{1: '1', 2: '4'}
+55	55		301							"{2: 'Noan', 3: ""You've already been snatched by Bethe once."", 4: '1'}"
+56	56		301							"{2: 'Noan', 3: ""Didn't I warn you clearly enough last time?"", 4: '1'}"
+57	57		301							"{2: 'Noan', 3: ""Because I only divulged his identity, not the depths of his depravity nor the difficulty of confronting someone who's abandoned their morals..."", 4: '1'}"
+58	58		302							"{2: ""You really didn't."", 3: '59', 4: '...', 5: '59'}"
+59	59		301							{2: 'Noan', 3: 'Remember when we trailed him to rescue someone?', 4: '1'}
+60	60		301							{2: 'Noan', 3: 'After prying open three doors, we stumbled upon the innermost one in his lair, rigged with delicate fishing lines.', 4: '1'}
+61	61		301							"{2: 'Noan', 3: 'Breaking those lines while opening the door... it was like using someone\'s scream as his ""doorbell.""', 4: '1'}"
+62	62		301							{2: 'Noan', 3: 'And all those lines were tied to the same person... we were trying to rescue.', 4: '1'}
+63	63		302							{2: '...', 3: '64'}
+64	64		301							"{2: 'Noan', 3: ""When you mentioned April 1st's disappearance was linked to Bethe, I felt a fleeting relief, thinking Lithos was holding him back."", 4: '1'}"
+65	65		204							{1: '1', 2: '14'}
+66	66		301							{2: 'Noan', 3: 'Ha... Lithos was holding him back...', 4: '1'}
+67	67		301							{3: 'Noan weakly shuts his eyes, his hidden emotions leaking out like the blood on his hands.'}
+68	68		301							{2: 'Noan', 3: 'If these things happen to you or Commandant Simon, how could I...', 4: '1'}
+69	69		301							{3: 'He chokes on the rest of his sentence.'}
+70	70		204							{1: '1', 2: '4'}
+71	71		301							"{2: 'Noan', 3: 'This was my solo mission, unauthorized—I shouldn\'t have ""borrowed"" your aid.', 4: '1'}"
+72	72		301							"{2: 'Noan', 3: ""Leaving the Clean Zone was a last resort. At the time, I assumed you'd return with Commandant Simon."", 4: '1'}"
+73	73		301							"{2: 'Noan', 3: ""Even if begrudgingly, after splitting up, Captain Palma would've escorted you back."", 4: '1'}"
+74	74		301							"{2: 'Noan', 3: ""She'd do it forcefully—she always protects those she trusts."", 4: '1'}"
+75	75		301							"{2: 'Noan', 3: ""Even if she couldn't locate you, I had an arrangement with you to call me or Gray Raven for help if danger arose."", 4: '1'}"
+76	76		301							"{2: 'Noan', 3: ""Even if I couldn't handle it and wasn't dependable, the invincible Gray Raven would always come through, right?"", 4: '1'}"
+77	77		301							"{2: 'Noan', 3: 'But then Bethe sent word that you were taken by ""another me.""', 4: '1'}"
+78	78		204							{1: '1', 2: '14'}
+79	79		301							"{2: 'Noan', 3: ""I really don't want to witness that again, Commandant."", 4: '1'}"
+80	80		204							{1: '1', 2: '4'}
+81	81		301							{2: 'Noan', 3: 'Just when I dare to hope for a brighter future, it all darkens.', 4: '1'}
+82	82		301							"{2: 'Noan', 3: ""No matter how much I try to keep myself grounded and composed, there's always something throwing me off balance."", 4: '1'}"
+83	83		204							{1: '1', 2: '14'}
+84	84		301							{2: 'Noan', 3: 'I start to question... maybe this composure itself is a mistake?', 4: '1'}
+85	85		204							{1: '1', 2: '14'}
+86	86		301							{2: 'Noan', 3: '...', 4: '1'}
+87	87		204							{1: '1', 2: '4'}
+88	88		301							"{2: 'Noan', 3: '""Wouldn\'t act on impulse like this,"" huh?', 4: '1'}"
+89	89		202							{1: '1', 6: '1'}
+90	90		301							{3: 'He lets out a rueful chuckle.'}
+91	91		302							{2: 'Sorry for causing you worry.', 3: '97', 4: '(Pat his shoulder)', 5: '97', 6: '(Hug Noan)', 7: '92'}
+92	92		401							{1: '2', 2: '2936'}
+93	93		301							"{3: ""Noan's body trembles slightly, caught off guard by your embrace.""}"
+94	94		301							{3: 'He raises his blood-stained hands, wanting to reciprocate but fearing staining the coat.'}
+95	95		401							{1: '2', 2: '1543'}
+96	96	100	301				DialogDisable			{3: 'After a hesitant pause, he embraces you tightly, letting go of rationality for a moment.'}
+97	97		201							{1: '1', 2: '500506'}
+98	98		301							{1: '1', 2: 'Noan', 3: '...', 4: '1'}
+99	99		301				DialogDisable			"{2: 'Noan', 3: ""Well... I'm just glad you're okay now."", 4: '1'}"
+100	100		302							{2: 'Try putting a bit more trust in me.', 3: '101'}
+101	101		302							"{2: ""I wouldn't take risks without being prepared."", 3: '102'}"
+102	102		201							{1: '1', 2: '500506', 3: '10'}
+103	103		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Noan', 3: ""You could've given me a heads-up, you know."", 4: '1'}"
+104	104		302							{2: 'Uh, it all went down in the blink of an eye.', 3: '105'}
+105	105		302							"{2: 'And that was also ""Noan"", right?', 3: '106'}"
+106	106		204							{1: '1', 2: '4'}
+107	107		301			DialogEnable				{2: 'Noan', 3: 'He was seriously considering offing me just now.', 4: '1'}
+108	108		301							"{2: 'Noan', 3: ""Until he recovers his full memory, it's best to treat him like an adversary."", 4: '1'}"
+109	109		302							{2: 'Does regaining memory mean being pals?', 3: '110'}
+110	110		301							"{2: 'Noan', 3: ""Sounds like tomorrow's stale bread to me."", 4: '1'}"
+111	111		302							{2: 'What?', 3: '112', 4: 'Huh.', 5: '112'}
+112	112		301							{2: 'Noan', 3: 'What would you do with bread about to go bad?', 4: '1'}
+113	113		302							{2: 'Scarf it down pronto.', 3: '114', 4: 'Toss it out.', 5: '114'}
+114	114		301							"{2: 'Noan', 3: 'Yeah, that\'s what ""I"" would do too.', 4: '1'}"
+115	115		301							{2: 'Noan', 3: 'Once memories come flooding back, facing up to past deeds...', 4: '1'}
+116	116		302							{2: '...', 3: '117'}
+117	117		301							"{2: 'Noan', 3: 'No, the bigger worry now is that Lithos won\'t let ""him"" remember.', 4: '1'}"
+118	118		301							{2: 'Noan', 3: 'Perhaps we could still hoodwink Lithos.', 4: '1'}
+119	119		301							{3: 'He cast a worried glance at the sea below the lighthouse.'}
+120	120		301							"{2: 'Noan', 3: ""He's definitely still kicking, right..."", 4: '1'}"
+121	121		302							"{2: ""You're not thinking of picking up where we left off, are you?"", 3: '122'}"
+122	122		301				DialogDisable			"{2: 'Noan', 3: ""It's been ages. We probably can't catch up now."", 4: '1'}"
+123	123		302							"{2: ""You haven't lost hope at all!"", 3: '124', 4: 'You...', 5: '124'}"
+124	124		302							"{2: ""Anyway, let's head back first and then mull this over."", 3: '125'}"
+125	125		301			DialogEnable				{2: 'Noan', 3: 'Back?', 4: '1'}
+126	126		302							"{2: ""What's the matter?"", 3: '127'}"
+127	127		301							{2: 'Noan', 3: '...', 4: '1'}
+128	128		301							{3: 'Noan quietly recounts what went down when he met Simon.'}
+129	129		301							"{3: ""Simon's interrogation, and that bottle he didn't get a chance to ask about.""}"
+130	130		301							{3: 'Then, he saw Palma whisper something to Simon, and Simon took a shot at Noan.'}
+131	131		301				DialogDisable			{2: 'Noan', 3: 'Can we still go back?', 4: '1'}
+132	132		302							"{2: ""I'll help smooth things over."", 3: '133'}"
+133	133		302							"{2: ""It might not go swimmingly, but there's always a way."", 3: '134'}"
+134	134		301			DialogEnable				{2: 'Noan', 3: '...', 4: '1'}
+135	135		302							{2: 'Also, I think Atiel might be a factor.', 3: '136'}
+136	136		301							{2: 'Noan', 3: 'Atiel?', 4: '1'}
+137	137		302							{2: 'Yeah, better ask Simon about that.', 3: '138', 4: 'Just... it might not be wise for me to chime in.', 5: '138'}
+138	138		301				DialogDisable			{3: 'You lower your head with a sigh.'}
+139	139		302							"{2: ""I guess we've got no other choice."", 3: '140'}"
+140	140		302							"{2: ""We'll hash it out with Simon when we return."", 3: '141'}"
+141	141		204							{1: '1'}
+142	142		301			DialogEnable				{2: 'Noan', 3: 'Yeah.', 4: '1'}
+143	143		301							{3: 'His voice is calm as he fully agrees.'}
+144	144		301							"{2: 'Noan', 3: ""Let's give Captain Palma a taste of her own medicine."", 4: '1'}"
+145	145		301							{2: 'Noan', 3: 'Making her aware of the consequences might make her think twice next time.', 4: '1'}
+146	146		302							{2: 'True.', 3: '147'}
+147	147		204							{1: '1', 2: '1'}
+148	148		301				DialogDisable			"{2: 'Noan', 3: ""But... I didn't expect you to propose such a cunning plan, oh great expert of unity and friendship."", 4: '1'}"
+149	149		302							"{2: ""Hey, it's just a tactic."", 3: '150', 4: ""In that case, I'll trust you to keep it under wraps."", 5: '150'}"
+150	150		302							"{2: ""Simon tends to take things pretty seriously, so don't overdo it."", 3: '151', 4: 'Make sure to give him a heads-up beforehand.', 5: '151'}"
+151	151		301			DialogEnable				{2: 'Noan', 3: 'Got it.', 4: '1'}
+152	152		302							"{2: ""And let's not use this as an excuse to settle old scores, okay?"", 3: '153'}"
+153	153		202							{1: '1', 6: '1'}
+154	154		301							{3: 'Noan gives a knowing smile.'}
+155	155		201							{1: '1', 2: '500506', 3: '11'}
+156	156		301							{1: '1', 3: 'As the smile fades from his lips, a sorrow that always lingered beneath the surface finally emerges on his face.'}
+157	157		302							"{2: ""Let's head back. There's plenty to do... Achoo!"", 3: '158'}"
+158	158		204							{1: '1'}
+159	159		301							{3: 'Amidst the biting cold wind, you sneeze twice.'}
+160	160		301				DialogDisable			"{2: 'Noan', 3: ""You're out here without enough layers. Should I call Gray Raven to pick you up?"", 4: '1'}"
+161	161		302							"{2: 'No need, there are no missions for the next few days.', 3: '162', 4: ""I've already let them know not to worry."", 5: '162'}"
+162	162		302							"{2: ""It's not urgent, after all."", 3: '163'}"
+163	163		302							"{2: ""There's a base about 7 kilometers away; we can catch a transport back."", 3: '164'}"
+164	164		302				AniZhuanchangBegin			"{2: ""Let's do it."", 3: '165', 4: ""Let's head back together."", 5: '165'}"
+165	165		202							{1: '1', 6: '1'}
+166	166		402							{1: '973'}
+167	167		401						2000.0	{1: '1', 2: '36'}
+168	168		401							{1: '1', 2: '169'}
+169	169		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory597.jpg'}
+170	170		301			DialogEnable				{3: 'Leaving the lighthouse behind, you walk toward the base along streets where the snow still lay thick.'}
+171	171		502							{1: 'RImgBg1DisableSlow'}
+172	172		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory96.png'}
+173	173		301							{3: 'Walking silently side by side, neither of you speaks much along the way.'}
+174	174		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+175	175		301							{3: 'When you glance up again, the sky is filled with falling snowflakes.'}
+176	176		201							{1: '1', 2: '500506'}
+177	177		301							{1: '1', 2: 'Noan', 3: '...', 4: '1'}
+178	178		301							{3: 'He watches them drift down, his gaze growing distant.'}
+179	179		301							"{2: 'Noan', 3: ""It's snowing..."", 4: '1'}"
+180	180		204							{1: '1', 2: '14'}
+181	181		301				DialogDisable			"{2: 'Noan', 3: ""It's snowing again."", 4: '1'}"
+182	182		302							{2: '...', 3: '183', 4: '(Move closer to Noan)', 5: '183'}
+183	183		302							"{2: ""We're almost at the base..."", 3: '184'}"
+184	184		204							{1: '1'}
+185	185		301			DialogEnable				{2: 'Noan', 3: 'Yeah.', 4: '1'}
+186	186		302							"{2: 'Still worried about ""that"" Noan?', 3: '187'}"
+187	187		301							{2: 'Noan', 3: 'Yeah...', 4: '1'}
+188	188		301							"{2: 'Noan', 3: ""I don't know how much longer I'll be of use, or how many more people I'll have to harm."", 4: '1'}"
+189	189		301							{2: 'Noan', 3: 'Even Lithos might become suspicious, and even if I could deceive them, there would be consequences.', 4: '1'}
+190	190		301							"{2: 'Noan', 3: ""And... I've found no evidence of my own replication."", 4: '1'}"
+191	191		302							{2: 'I got it.', 3: '192'}
+192	192		301							{3: 'You show Noan the terminal in your hand.'}
+193	193		301				DialogDisable			{2: 'Noan', 3: 'When did you get that?', 4: '1'}
+194	194		302							"{2: ""As I said, I'm the commandant."", 3: '195'}"
+195	195		302							{2: 'How could I be taken without some preparation?', 3: '196'}
+196	196		301			DialogEnable	DialogDisable			{2: 'Noan', 3: 'To gather this evidence?', 4: '1'}
+197	197		302							{2: 'Not solely for that reason.', 3: '198'}
+198	198		302							"{2: 'I even considered trying to persuade ""that you"" to come to Babylonia.', 3: '199'}"
+199	199		202							{1: '1', 6: '1'}
+200	200		301			DialogEnable				{3: 'His expression grows subtly complex.'}
+201	201		302							{2: 'Are you truly so incompatible?', 3: '202'}
+202	202		201							{1: '1', 2: '500506'}
+203	203		301							"{1: '1', 2: 'Noan', 3: ""No, it's not that. But in some matters, having just one of me is trouble enough."", 4: '1'}"
+204	204		301				DialogDisable			"{2: 'Noan', 3: 'And I can be selfish too. There are things I\'d rather not trade or share, even with ""me.""', 4: '1'}"
+205	205		302							{2: 'Fair enough.', 3: '206', 4: 'Yeah.', 5: '206'}
+206	206		302							{2: 'Ah, right...', 3: '207'}
+207	207		302							{2: '(Hand back the mechanical firefly to Noan)', 3: '208'}
+208	208		302							{2: 'He initially intended to assist Bethe...', 3: '209'}
+209	209		301			DialogEnable	DialogDisable			{2: 'Noan', 3: '...But got distracted by the firefly?', 4: '1'}
+210	210		302							{2: 'Yeah.', 3: '211'}
+211	211		302							{2: 'And then, I happened upon the conversation between you and Bethe.', 3: '212'}
+212	212		302							{2: 'Is this... some kind of coincidence?', 3: '213'}
+213	213		301			DialogEnable	DialogDisable			{2: 'Noan', 3: '...', 4: '1'}
+214	214		302							{2: 'When you handed back the terminal...'}
+215	215		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+216	216		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+217	217		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory711.jpg'}
+218	218		504							{1: '0.7'}
+219	219		201							{1: '1', 2: '500746'}
+220	220		301			DialogEnable				"{1: '1', 2: 'Noan?', 3: 'For some reason, it felt like hearing a long-lost friend telling me to ""wait.""', 4: '1'}"
+221	221		301							"{2: 'Noan?', 3: ""And when I turned around, there it was, what I'd been searching for so long, in your hands..."", 4: '1'}"
+222	222		301				DialogDisable			{2: 'Noan?', 3: '...', 4: '1'}
+223	223		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+224	224		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+225	225		504							{1: '0'}
+226	226		201							{1: '1', 2: '500506'}
+227	227		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory96.png'}
+228	228		302							"{2: ""His true nature hasn't veered too far off course."", 3: '229'}"
+229	229		302							"{2: ""He'll regain all his memories sooner or later."", 3: '230'}"
+230	230		302							"{2: ""We've done everything we could."", 3: '231'}"
+231	231		301			DialogEnable				{3: 'Noan responds in silence.'}
+232	232		302							{2: '(Extend a hand to Noan)', 3: '233'}
+233	233		301							{3: 'Noan also reaches out his hand to reciprocate, but then pauses as if sensing something...'}
+234	234		301							{2: 'Noan', 3: 'Just a moment.', 4: '1'}
+235	235		202							{1: '1'}
+236	236		401							{1: '2', 2: '1514'}
+237	237		301							{3: 'He glances around, swiftly makes his way to the roadside, scoops up a handful of snow, and uses it to cleanse the blood and vital fluid seeping from the wound on his hand.'}
+238	238		401							{1: '2', 2: '2987'}
+239	239		301							{3: 'After a few moments of silent contemplation, he hastily wraps the wound with a bandage, then returns to you and takes your hand.'}
+240	240		301							{3: 'It is only at this moment that the soul trapped in the stocks slowly comes to its senses.'}
+241	241		302							{2: 'Do you dislike snow?', 3: '242'}
+242	242		201							{1: '1', 2: '500506'}
+243	243		301							{1: '1', 2: 'Noan', 3: '...', 4: '1'}
+244	244		302							{2: 'Noan?', 3: '245'}
+245	245		204							{1: '1', 2: '14'}
+246	246		301							"{2: 'Noan', 3: ""It's alright, I'm fine now."", 4: '1'}"
+247	247		204							{1: '1', 2: '1'}
+248	248		301		1		AniZhuanchangBegin			"{2: 'Noan', 3: ""Let's go back."", 4: '1'}"

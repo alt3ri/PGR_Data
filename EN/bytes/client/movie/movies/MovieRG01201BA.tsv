@@ -1,0 +1,994 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory373.png'}
+2	2		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab', 2: '2', 5: '1'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab', 2: '2', 5: '2'}
+4	4		511							{1: '1', 2: '0', 3: '-750|600|0'}
+5	5		511							{1: '2', 2: '0', 3: '750|600|0'}
+6	6		401			AniZhuanchangEnd				{1: '1', 2: '55'}
+7	7		301			DialogEnable				{3: 'Heavy fog cloaks the wilderness, burying the dense forest beneath layers of suffocating mist.'}
+8	8		301				DialogDisable			"{3: ""It's the dead of night in Whitehorse, where townsfolk slumber peacefully, blissfully unaware of the dark events transpiring in the forest beyond.""}"
+9	9		401							{1: '2', 2: '4386'}
+10	10		511							{1: '1', 2: '0.5', 3: '-2200|600|0'}
+11	11		511							{1: '2', 2: '0.5', 3: '2200|600|0'}
+12	12		104						200.0	{1: '0|0|-100', 2: '0.8'}
+13	13		205						650.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg', 3: '0', 4: '1', 5: '0.5'}
+14	14		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+15	15		205							{1: '999'}
+16	16		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab', 5: '1'}
+17	17		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab', 5: '2'}
+18	18		401							{1: '2', 2: '4331'}
+19	19		301			DialogEnable				{3: 'Through the dim haze, two figures dart along the forest path with hunched shoulders, clutching their bundles protectively as they sprint from tree to tree, finally ducking behind a massive trunk where they crouch gasping for air.'}
+20	20		201							{1: '1', 2: '501068'}
+21	21		301			PanelActor1Shake				"{1: '1', 2: 'Pompous Lad', 3: ""We... we ran far enough, right? We're safe now?"", 4: '1'}"
+22	22		301							"{3: ""His voice carried a tremor that didn't match his expensive clothes.""}"
+23	23		203							{1: '1', 2: '0.25', 3: '400'}
+24	24		201							{1: '2', 2: '501080', 4: '-400'}
+25	25		301							"{1: '1', 2: 'Fancy Lady', 3: ""Ha, haha... We've come so far. No way those Angel fools can catch us now."", 4: '2'}"
+26	26		301			PanelActor2Shake	DialogDisable			"{2: 'Fancy Lady', 3: ""Good riddance to those broke losers... Mammon's treasure is all ours now!"", 4: '2'}"
+27	27		202							{1: '1', 2: '2'}
+28	28		401							{1: '2', 2: '13081710'}
+29	29		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront96.png', 3: '0', 4: '1', 5: '0.5'}
+30	30		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0', 4: '0.8', 5: '0.5'}
+31	31		306							{1: '1'}
+32	32		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 2: '3', 5: '3'}
+33	33		511						550.0	{1: '3', 2: '0', 3: '-70|85|0'}
+34	34		301			DialogEnable	DialogDisable			"{3: ""The woman laughs as she rummages through her bundle and produces a coin, its surface bearing an intricately carved skull that glints with hypnotic golden fire in the forest's pale light.""}"
+35	35		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 5: '3'}
+36	36		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront96.png', 3: '1', 4: '0', 5: '0.4'}
+37	37		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0.8', 4: '0', 5: '0.4'}
+38	38		306						450.0	
+39	39		201							{1: '1', 2: '501068', 4: '400'}
+40	40		201							{1: '2', 2: '501080', 4: '-400'}
+41	41		301			DialogEnable				{1: '1', 2: 'Pompous Lad', 3: 'Honey, do you still remember the spell to unlock the treasure vault...', 4: '1'}
+42	42		203							{1: '2', 2: '0.25', 3: '-100'}
+43	43		301							{2: 'Fancy Lady', 3: '...Hush.', 4: '2'}
+44	44		301							"{3: ""The woman quickly covers the man's mouth with her hand.""}"
+45	45		301							"{2: 'Fancy Lady', 3: ""Careful. Someone might be listening. We'll discuss this later when we—"", 4: '2'}"
+46	46		402							{1: '55'}
+47	47		401							{1: '2', 2: '2690'}
+48	48		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+49	49		301				DialogDisable			{3: 'Before she can finish, a blade pierces through her chest.'}
+50	50		401							{1: '2', 2: '2593'}
+51	51		502							{1: 'PanelActor2Shake'}
+52	52		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0.3'}
+53	53		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0', 5: '0.3'}
+54	54		401							{1: '2', 2: '4306'}
+55	55		203						350.0	{1: '2', 2: '0.4', 3: '-250', 4: '-800'}
+56	56		202							{1: '2'}
+57	57		301			DialogEnable				{3: 'Blood-drenched claws withdraw from her chest as crimson streaks paint the tree bark. She hits the ground without even a scream.'}
+58	58		401							{1: '1', 2: '6175'}
+59	59		202							{1: '1', 6: '1'}
+60	60		201							{1: '1', 2: '500928'}
+61	61		502							{1: 'PanelActor1Shake'}
+62	62		301							"{1: '1', 2: '""Angel""', 3: '...Treasure... thieves... must... die!', 4: '1'}"
+63	63		301							{3: 'As the woman collapses, a corpse-pale figure steps out from behind the tree, its mouth stretched in a grotesque grin that seems to mock their foolishness.'}
+64	64		202							{1: '1', 6: '1'}
+65	65		201							{1: '1', 2: '501068', 7: '1'}
+66	66		502							{1: 'RImgBg1Shake'}
+67	67		301			PanelActor1Shake				{1: '1', 2: 'Pompous Lad', 3: 'AHHH—!!!'}
+68	68		401							{1: '2', 2: '4895'}
+69	69		203						400.0	{1: '1', 2: '0.25', 4: '-100'}
+70	70		401							{1: '2', 2: '4331'}
+71	71		203							{1: '1', 2: '0.25', 4: '-60', 5: '100'}
+72	72		104							{1: '0|0|-100', 2: '0.25'}
+73	73		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+74	74		301							"{3: ""Terror consumes the man completely, yet even in this overwhelming fear, he still remembers to tear the gold coin from his dead wife's grasp before stumbling toward the far side of the woods.""}"
+75	75		401							{1: '2', 2: '2936'}
+76	76		301							{3: 'As he crashes through the undergrowth, branches tear his expensive clothes to shreds. The elegant coat with its meticulous tailoring is reduced to nothing more than a blood-soaked rag.'}
+77	77		401							{1: '2', 2: '4784'}
+78	78		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '0.5', 5: '0.3'}
+79	79		104							{1: '0|0|-50', 2: '0.3'}
+80	80		203						350.0	{1: '1', 2: '0.3', 4: '-60', 5: '-50'}
+81	81		301			RImgBg1Shake				"{3: ""The Angel rattles behind him, the sound echoing through the trees, and without even turning around, he knows it's closing in fast.""}"
+82	82		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0.5', 4: '1', 5: '0.3'}
+83	83		104							{1: '0|0|-100', 2: '0.3'}
+84	84		203						350.0	{1: '1', 2: '0.3', 4: '-100', 5: '-150'}
+85	85		301			PanelActor1Shake	DialogDisable			"{2: 'Pompous Lad', 3: ""Someone... anyone, please help me! I don't want to die here!"", 4: '1'}"
+86	86		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '0.3'}
+87	87		306							{1: '1'}
+88	88		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+89	89		202							{1: '1', 6: '1'}
+90	90		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg', 3: '0', 4: '1', 5: '0.3'}
+91	91		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+92	92		205							{1: '999'}
+93	93		201							{1: '1', 2: '501131'}
+94	94		301			DialogEnable				{1: '1', 3: 'As if the merciful Cardinal Deity has heard his prayers, a tall, slender figure materializes in the path ahead.'}
+95	95		306							
+96	96		202							{1: '1', 6: '1'}
+97	97		201							{1: '1', 2: '501131', 4: '400'}
+98	98		201							{1: '2', 2: '501068', 4: '-600'}
+99	99		401							{1: '2', 2: '4006'}
+100	100		203							{1: '2', 2: '0.4', 3: '-400', 4: '-200'}
+101	101		301							{1: '1', 3: 'The man sees his salvation and throws himself forward with his last ounce of strength, crashing to his knees before the mysterious figure.'}
+102	102		301			PanelActor2Shake				"{2: 'Pompous Lad', 3: ""P-please—help me! There's an Angel after me!"", 4: '2'}"
+103	103		301							"{2: 'Pompous Lad', 3: ""I've got money—lots of it! I'll pay you as much as you want, I swear!"", 4: '2'}"
+104	104		301							{3: 'Only after blurting out his plea and offer in one desperate breath does he finally muster the strength to look up at the figure before him.'}
+105	105		306							{1: '1'}
+106	106		202							{1: '1', 2: '2', 6: '1'}
+107	107		201							{1: '1', 2: '501130'}
+108	108		301							{1: '1', 3: 'Before him stands a woman of breathtaking beauty, her exquisite features veiled beneath ornate hair ornaments. An inscrutable smile curls her lips as she gazes down at the desperate man, studying him with the cold calculation of a merchant appraising wares.'}
+109	109		301							"{3: ""The elegant woman holds a Moon Umbrella even though it's midnight, completely ignoring his frantic pleas. She parts her lips with languid grace, as though merely exchanging pleasantries during a casual evening walk.""}"
+110	110		306							
+111	111		202							{1: '1', 6: '1'}
+112	112		201							{1: '1', 2: '501130', 4: '400'}
+113	113		201							{1: '2', 2: '501068', 4: '-400', 5: '-200'}
+114	114		301							{1: '1', 2: '??', 3: 'Oh? And what exactly can you offer me in return?', 4: '1'}
+115	115		301							{3: 'Panic seizes the man as he frantically spills out increasingly desperate offers, trying to prove his worth with more money.'}
+116	116		301			PanelActor2Shake				"{2: 'Pompous Lad', 3: ""I'm the tax official of Whitehorse! All the town's wealth is mine! Whatever you want, I can give it to you!"", 4: '2'}"
+117	117		301							"{2: 'Pompous Lad', 3: ""I could... I could also adopt you as my daughter, then pass the tax official position down to you. Wouldn't that be amazing?"", 4: '2'}"
+118	118		301			DialogShake				"{2: 'Pompous Lad', 3: ""W-why won't you answer me?! I can make you rich! If I die, you won't get anything at all!"", 4: '2'}"
+119	119		301							{3: 'His final words carry a raw, undisguised threat. They are less negotiation and more the desperate warning of a man with nowhere left to run.'}
+120	120		203						450.0	{1: '1', 2: '0.4', 3: '150', 4: '-20'}
+121	121		301							{3: 'But the tall woman remains utterly unmoved. She simply leans down with deliberate slowness and, with inexorable certainty, pries the blood-soaked coin from his white-knuckled grip.'}
+122	122		204							{1: '1', 2: '9'}
+123	123		301							"{2: '??', 3: ""No need. I've already found something even better."", 4: '1'}"
+124	124		402							{1: '6175'}
+125	125		202							{1: '1', 2: '2', 6: '1'}
+126	126		401							{1: '2', 2: '2593'}
+127	127		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+128	128		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '0', 4: '1', 5: '0'}
+129	129		301				DialogDisable			{3: 'Guh-urgh—'}
+130	130		401							{1: '1', 2: '6176'}
+131	131		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '1', 4: '0', 5: '0.3'}
+132	132		201							{1: '1', 2: '501130', 4: '600', 5: '-20'}
+133	133		201							{1: '2', 2: '501068', 5: '-200'}
+134	134		201							{1: '3', 2: '500928', 4: '-400', 7: '1'}
+135	135		401							{1: '2', 2: '2593'}
+136	136		502						1500.0	{1: 'PanelActor2Shake'}
+137	137		401							{1: '2', 2: '4306'}
+138	138		203						300.0	{1: '2', 2: '0.4', 4: '-500'}
+139	139		202							{1: '2'}
+140	140		301			DialogEnable				"{1: '1', 3: ""Viscous blood erupts in a violent spray, and in the next instant, the pursuing Angel's blade pierces through the man's chest.""}"
+141	141		401							{1: '2', 2: '2690'}
+142	142		203						250.0	{1: '1', 2: '0.25'}
+143	143		203							{1: '3', 2: '0.25', 3: '-400', 4: '-50'}
+144	144		301			PanelActor3Shake				"{3: ""Only then does the woman raise her Moon Umbrella, driving it straight through the Angel's rotting skull in one powerful thrust.""}"
+145	145		202							{1: '1', 2: '3', 6: '1'}
+146	146		306							{1: '1'}
+147	147		201							{1: '1', 2: '501068', 5: '-100'}
+148	148		301			PanelActor1Shake				"{1: '1', 3: ""The man lies writhing on the ground, eyes blazing with fury as he watches the woman's retreating figure. His gaze is a silent accusation: if you had the power to save us, why did you just stand there and do nothing?""}"
+149	149		306							
+150	150		202							{1: '1', 6: '1'}
+151	151		201							{1: '1', 2: '501130'}
+152	152		301							"{1: '1', 2: '??', 3: ""...Why do you look so shocked? Oh, my dear <color=#ff4e4eff><b>father</b></color>, I'm simply returning the favor you and mother did for me all those years ago."", 4: '1'}"
+153	153		301							{3: 'She continues to twirl the umbrella with elegant grace, as if the carnage strewn about has absolutely nothing to do with her.'}
+154	154		204							{1: '1', 2: '9'}
+155	155		301							"{2: '??', 3: ""You haven't forgotten about me, have you, Father? I'm that little girl, the one you left by the roadside as bait, the one who refused to die. Your precious Eleanor."", 4: '1'}"
+156	156		202							{1: '1', 6: '1'}
+157	157		201							{1: '1', 2: '501068', 5: '-50', 7: '1'}
+158	158		301			PanelActor1Shake				{1: '1', 2: 'Pompous Lad', 3: '—!!', 4: '1'}
+159	159		401							{1: '2', 2: '1505'}
+160	160		205						600.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0.5'}
+161	161		301							{3: 'In his dying moments, the man struggles desperately to speak, but only more blood spills from his throat.'}
+162	162		401							{1: '2', 2: '4387'}
+163	163		205							{1: '999'}
+164	164		202							{1: '1', 6: '1'}
+165	165		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+166	166		504							{1: '0.7'}
+167	167		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory745.jpg'}
+168	168		301							{3: 'The memory comes flooding back. Over ten years ago, he and his wife had fled into these very same woods, just like today, with an enraged mob chasing them down.'}
+169	169		301							{3: 'But that day, they had brought their seven-year-old daughter along. After talking it over, he and his wife convinced themselves that the townspeople would never harm an innocent child, so they decided to abandon her by the roadside as bait, hoping to buy themselves precious time to escape.'}
+170	170		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+171	171		504							{1: '0'}
+172	172		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+173	173		301							"{3: ""Over the years, they'd occasionally think back to the little girl they'd abandoned, but after the Cataclysm turned the Scorched Borderland into this lawless wasteland, who could have possibly imagined she'd actually survived?""}"
+174	174		201							{1: '1', 2: '501130', 3: '8'}
+175	175		301							"{1: '1', 2: '""Eleanor""', 3: 'So don\'t trouble yourself any longer, Father. Eleanor has received your ""gift""...', 4: '1'}"
+176	176		204							{1: '1', 2: '5'}
+177	177		301							"{2: '""Eleanor""', 3: ""And she'll certainly live a better life than either of you ever could."", 4: '1'}"
+178	178		202							{1: '1'}
+179	179		401							{1: '2', 2: '5291'}
+180	180		301							{3: 'Eleanor carefully wipes every trace of blood from the gold coin and walks it away. She then strolls out of the forest with a spring in her step, the very same woods that had filled her childhood with endless nightmares.'}
+181	181		301				AniZhuanchangBegin			"{3: ""But this time, she's the one walking away from the table with all the winnings.""}"
+182	182		401						2000.0	{1: '1', 2: '36'}
+183	183		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory394.jpg'}
+184	184		401							{1: '1', 2: '6167'}
+185	185		301			AniZhuanchangEnd				{3: 'As she walks away, she hums a cheerful little tune, the same lullaby her mother used to sing at her bedside when she was small.'}
+186	186		201							{1: '1', 2: '501130', 3: '8'}
+187	187		301							"{1: '1', 2: '""Eleanor""', 3: ""<i>{226|153|170} Hey, Demon King—you did this to yourself. Hey, Mama—watch me now. I'm riding the Hellrail, ain't nothing can stop me now. {226|153|170} </i>"", 4: '1'}"
+188	188		401							{1: '2', 2: '2599'}
+189	189		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+190	190		301							{3: 'Swirling snow pellets drift onto her umbrella, and a barely noticeable chill quietly settles in the air around her.'}
+191	191		204							{1: '1', 2: '7'}
+192	192		301							"{2: '""Eleanor""', 3: ""Oh, my... It's snowing."", 4: '1'}"
+193	193		301							{3: 'She lifts her hand and catches a flake of pure white that melts the instant it touches her palm.'}
+194	194		204							{1: '1', 2: '9'}
+195	195		301							"{2: '""Eleanor""', 3: ""I almost forgot. Tonight's Christmas Eve, after all..."", 4: '1'}"
+196	196		202							{1: '1'}
+197	197		301							{3: 'Then she lifts her head toward the distant sky above and shows a smile of pure innocence.'}
+198	198		201							{1: '1', 2: '501130'}
+199	199		301				AniZhuanchangBegin			"{1: '1', 2: '""Eleanor""', 3: 'Merry Christmas, Mom and Dad.', 4: '1'}"
+200	200		402							{1: '2599'}
+201	201		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+202	202		502							{1: 'DialogDisable'}
+203	203		401						1000.0	{1: '1', 2: '36'}
+204	204		202							{1: '1', 6: '1'}
+205	205		102							{1: 'The Godfall Revelation', 2: 'Bottled Snow', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+206	206		502						5000.0	{1: 'ThemeEnable'}
+207	207		101						5000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1162.jpg'}
+208	208		401							{1: '1', 2: '6121'}
+209	209		107			AniZhuanchangEnd				{1: 'Lucky 38 Casino', 2: 'Years Ago'}
+210	210		301							{3: 'Years Ago\\nLucky 38 Casino'}
+211	211		108							{1: '1'}
+212	212		401							{1: '2', 2: '5840'}
+213	213		301			DialogEnable	DialogDisable			"{3: ""The casino never sleeps. A constant din of voices and clinking chips fills the air around the clock. Gaming tables overflow with tightly packed crowds while waitstaff weave through the chaos, attending to the guests' endless demands.""}"
+214	214		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1165.jpg', 3: '0', 4: '1', 5: '0.8'}
+215	215		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1165.jpg'}
+216	216		205							{1: '999'}
+217	217		301			DialogEnable				"{3: ""Young Eleanor carefully navigates the crowded floor, one hand balancing a tray laden with champagne and hors d'oeuvres, the other lifting her skirt as she slips gracefully into an opulent private room.""}"
+218	218		402							{1: '5840'}
+219	219		201							{1: '1', 2: '501120'}
+220	220		301							{1: '1', 2: 'Eleanor', 3: 'Mr. Trout, your Galaxy Tears.', 4: '1'}
+221	221		203							{1: '1', 2: '0.25', 3: '-400'}
+222	222		201							{1: '2', 2: '500723', 4: '400'}
+223	223		301							{1: '1', 2: 'Trout', 3: 'Just leave it here.', 4: '2'}
+224	224		301							{3: 'Without so much as glancing up from his cards, the man delivers his cold command.'}
+225	225		204							{1: '1', 2: '4'}
+226	226		301							{2: 'Eleanor', 3: '...Yes, sir.', 4: '1'}
+227	227		202							{1: '1', 2: '2'}
+228	228		401							{1: '2', 2: '5290'}
+229	229		301							{3: 'The hostess, in her cute dress, gracefully sets down the tray. After confirming the guest requires nothing more, she stays silent and prepares to leave the private room.'}
+230	230		401							{1: '2', 2: '4307'}
+231	231		301							{3: '—Grumble.'}
+232	232		301							"{3: ""But the enticing aroma of food filling the room, coupled with her stomach's involuntary growl, catches the guest's attention.""}"
+233	233		201							{1: '1', 2: '500723'}
+234	234		301							{1: '1', 2: 'Trout', 3: '...', 4: '1'}
+235	235		202							{1: '1'}
+236	236		301							"{3: ""Under the guest's scrutinizing stare, she lowers her head in shame, hiding her flushed face beneath her hat brim as she stammers an explanation.""}"
+237	237		201							{1: '1', 2: '501120', 3: '4', 4: '-400'}
+238	238		201							{1: '2', 2: '500723', 4: '400'}
+239	239		301							"{1: '1', 2: 'Eleanor', 3: ""I'm sorry, Mr. Trout..."", 4: '1'}"
+240	240		301							"{2: 'Trout', 3: ""Don't worry about it. Though it seems your casino doesn't treat its hostesses particularly well."", 4: '2'}"
+241	241		202							{1: '1', 6: '1'}
+242	242		201							{1: '1', 2: '501024', 4: '-400'}
+243	243		301							{1: '1', 3: 'The guest unexpectedly forgave her rudeness and instead turned a probing gaze toward the dealer across the table.'}
+244	244		301							"{2: 'Dealer', 3: ""My deepest apologies, Mr. Trout. I'm afraid I don't have the answer. The casino has always treated its staff fairly."", 4: '1'}"
+245	245		202							{1: '2', 6: '1'}
+246	246		201							{1: '2', 2: '501120', 3: '4', 4: '400'}
+247	247		301							{1: '1', 2: 'Dealer', 3: 'Eleanor, did you not have a proper meal before your shift today?', 4: '1'}
+248	248		301							{3: 'The shrewd dealer smoothly deflects the problem, shifting the blame onto the girl instead.'}
+249	249		301							{2: 'Eleanor', 3: 'I...', 4: '2'}
+250	250		301							{3: 'Eleanor fidgets with her skirt hem, eyes locked on the floor as though the ornate brown carpet might somehow yield the answer she desperately needs.'}
+251	251		202							{1: '1', 2: '2', 6: '1'}
+252	252		201							{1: '1', 2: '500723'}
+253	253		301							{1: '1', 2: 'Trout', 3: 'Never mind. No need to explain.', 4: '1'}
+254	254		401							{1: '2', 2: '5299'}
+255	255		301							{3: 'The man sweeps up the remaining cards from the table, then expertly weaves them into a flowing cascade between his fingers.'}
+256	256		301							{2: 'Trout', 3: 'Do you know the card ranking rules?', 4: '1'}
+257	257		203							{1: '1', 2: '0.25', 3: '400'}
+258	258		201							{1: '2', 2: '501120', 4: '-400'}
+259	259		301							{1: '1', 2: 'Eleanor', 3: 'Yes, sir. From highest to lowest: Jupiter, Metis, Themis...', 4: '2'}
+260	260		301							{3: 'Despite her nervousness, the girl reels off the terms with practiced fluency.'}
+261	261		301							"{3: ""The man's brow furrows slightly, as if he's witnessed something truly unusual.""}"
+262	262		301							{2: 'Trout', 3: 'Did you go to school?', 4: '1'}
+263	263		204							{1: '2', 2: '4'}
+264	264		301							{2: 'Eleanor', 3: '...', 4: '2'}
+265	265		301							"{3: ""The girl falls silent again, realizing she's already said far too much.""}"
+266	266		301							"{2: 'Trout', 3: ""Can't answer that question, either? Hmm... your casino certainly has a lot of rules..."", 4: '1'}"
+267	267		202							{1: '1', 2: '2'}
+268	268		301							{3: 'Abandoning his attempts to probe the vigilant hostess, the man turns his attention back to the dealer, who seems far more at ease.'}
+269	269		201							{1: '1', 2: '500723', 4: '400'}
+270	270		201							{1: '2', 2: '501024', 4: '-400'}
+271	271		301							"{1: '1', 2: 'Trout', 3: ""I'd like her to play as a temporary hand in the next round. That shouldn't be a problem, should it?"", 4: '1'}"
+272	272		301							{2: 'Dealer', 3: 'Of course, whatever you wish. But, Mr. Trout, why would you...', 4: '2'}
+273	273		301							{2: 'Trout', 3: 'Call it a whim.', 4: '1'}
+274	274		202							{1: '1', 2: '2'}
+275	275		401							{1: '2', 2: '5298'}
+276	276		301							{3: 'The man stops shuffling and slides the neatly arranged deck toward the girl.'}
+277	277		201							{1: '1', 2: '500723', 4: '400'}
+278	278		201							{1: '2', 2: '501120', 3: '4', 4: '-400'}
+279	279		301							{1: '1', 2: 'Trout', 3: 'What about you? Want to give it a try?', 4: '1'}
+280	280		301							{2: 'Eleanor', 3: 'Sir, I...', 4: '2'}
+281	281		306							{1: '1'}
+282	282		301							"{3: ""Though the dealer's glare burns into her like he's trying to bore straight through her soul, Eleanor feels in her bones that this man's offer might be her one shot at changing everything.""}"
+283	283		306							
+284	284		301							{3: 'She gives a resolute nod and reaches out to take the cards from his hands.'}
+285	285		204							{1: '2'}
+286	286		301				AniZhuanchangBegin			"{2: 'Eleanor', 3: ""I'd be delighted."", 4: '2'}"
+287	287		202							{1: '1', 2: '2', 6: '1'}
+288	288		502							{1: 'DialogDisable'}
+289	289		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1164.jpg'}
+290	290		304			AniZhuanchangEnd				"{1: 'None could have known that this night would mark the birth of a legend. It would be the rise of ""Gambler Lilith,"" whose name would echo across the Scorched Borderland.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1'}"
+291	291		304							{1: 'That grimy little street urchin, Eleanor, plucked from the gutter by the casino owner, revealed astonishing natural talent after just one lesson.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1'}
+292	292		304							{1: 'Within mere weeks, Eleanor, through sheer cleverness, managed to carve a piece of flesh from the nearly impenetrable casino…', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1'}
+293	293		304							{1: '...and became an exceptionally rare lucky victor.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1'}
+294	294		304							{1: 'The other hostesses who once sneered at her and starved her out of spite...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1'}
+295	295		304				AniZhuanchangBegin			{1: '...now huddle around her table at every game, watching her every move with sheer fascination.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1', 9: '1'}
+296	296		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1165.jpg'}
+297	297		401						1000.0	{1: '1', 2: '36'}
+298	298		401							{1: '1', 2: '6120'}
+299	299		201							{1: '1', 2: '501120', 3: '2', 7: '1'}
+300	300		502							{1: 'DialogEnable'}
+301	301		301			AniZhuanchangEnd				{1: '1', 2: 'Eleanor', 3: 'ALL IN.', 4: '1'}
+302	302		202							{1: '1'}
+303	303		401							{1: '2', 2: '2581'}
+304	304		401							{1: '2', 2: '5292'}
+305	305		301							{3: 'Amid wild cheers, the girl across the table shoves all her chips into the pot once more, her bold move spurring the hostesses around her to follow suit with giddy excitement.'}
+306	306		201							{1: '1', 2: '501169'}
+307	307		301			DialogShake				"{1: '1', 2: 'Hostess A', 3: ""I'll follow Eleanor. I'm going all in too!"", 4: '1'}"
+308	308		203							{1: '1', 2: '0.25', 3: '-400'}
+309	309		201							{1: '2', 2: '500466', 4: '400'}
+310	310		301			DialogShake				{1: '1', 2: 'Hostess B', 3: 'Me too, me too!', 4: '2'}
+311	311		202							{1: '1', 2: '2'}
+312	312		401							{1: '2', 2: '5299'}
+313	313		301							{3: 'Seconds later, the cards were revealed. A tempting straight flush lay on the table like a fruit ripe for the picking.'}
+314	314		401							{1: '2', 2: '2581'}
+315	315		201							{1: '1', 2: '501169', 4: '-500'}
+316	316		201							{1: '2', 2: '501120'}
+317	317		203							{1: '1', 2: '0.25', 3: '-350'}
+318	318		301			DialogShake				"{1: '1', 2: 'Hostess A', 3: ""Eleanor! You're amazing! You're like the goddess of luck herself here in Lucky 38!"", 4: '1'}"
+319	319		201							{1: '3', 2: '500466', 4: '600', 8: '1'}
+320	320		203							{1: '3', 2: '0.25', 3: '400'}
+321	321		201							{1: '4', 2: '501169', 4: '1000', 8: '1'}
+322	322		203							{1: '4', 2: '0.25', 3: '800'}
+323	323		201							{1: '5', 2: '500466', 4: '-1000'}
+324	324		203							{1: '5', 2: '0.25', 3: '-800'}
+325	325		301							"{1: '1', 3: ""Another wave of cheers erupts from the crowd as the petite girl finds herself smothered in hugs and kisses from the hostesses. Even the goddess of fortune herself couldn't ask for a more adoring reception.""}"
+326	326		301							{2: 'Eleanor', 3: 'Everyone, I should probably head out now...', 4: '2'}
+327	327		301							"{3: ""Catching the dealer's sour expression from across the table, the girl stands on her tiptoes to collect her chips and signals that it's time for her to leave.""}"
+328	328		301							"{2: 'Hostess B', 3: ""Don't go, Eleanor! We're all counting on you!"", 4: '3'}"
+329	329		301							{2: 'Hostess A', 3: 'Yeah, yeah! Just stay a little longer!', 4: '1'}
+330	330		301							"{2: 'Eleanor', 3: ""I'm sorry, everyone, but I have other things I need to take care of..."", 4: '2'}"
+331	331		301							{3: 'Eleanor picks her words carefully, terrified of saying the wrong thing and losing the popularity she has earned with her older colleagues.'}
+332	332		301							"{2: 'Eleanor', 3: ""If I'm late for my shift, the supervisor will..."", 4: '2'}"
+333	333		301							"{2: 'Hostess A', 3: ""...Oh, then you'd better get going. We wouldn't want little Eleanor getting in trouble for being late to her night shift."", 4: '1'}"
+334	334		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5'}
+335	335		301							{3: 'With the hostesses finally backing down, Eleanor hurries away like a prisoner being pardoned.'}
+336	336		401							{1: '2', 2: '5299'}
+337	337		301							{3: 'The moment Eleanor disappears, the dealer calmly swaps out the deck with practiced ease, sliding a fresh stack of specially marked cards from a hidden drawer beneath the table.'}
+338	338		401							{1: '1', 2: '36'}
+339	339		401							{1: '2', 2: '4385'}
+340	340		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+341	341		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1166.jpg'}
+342	342		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0', 4: '1', 5: '0'}
+343	343		401							{1: '1', 2: '51'}
+344	344		201							{1: '1', 2: '501024', 5: '-50', 7: '1'}
+345	345		301							"{1: '1', 2: 'Dealer', 3: ""...Eleanor's been getting a little too bold for her own good lately."", 4: '1'}"
+346	346		401							{1: '2', 2: '5533'}
+347	347		301							{3: 'In the empty hall after closing, the tired dealer strikes a match and lights an expensive hand-rolled incense.'}
+348	348		301							"{2: 'Dealer', 3: ""Every penny Eleanor and her followers have won still belongs to Lucky 38, and the boss won't let them keep it."", 4: '1'}"
+349	349		203							{1: '1', 2: '0.25', 3: '-400', 4: '-50'}
+350	350		201							{1: '2', 2: '501178', 4: '400'}
+351	351		301							"{1: '1', 2: 'Security', 3: ""But she won it all legitimately at the tables, didn't she?"", 4: '2'}"
+352	352		301							"{2: 'Dealer', 3: ""Ha, and that's exactly why I say you muscular brutes don't understand the first thing about business."", 4: '1'}"
+353	353		301							{3: 'He gives the incense a delicate flick with his slender fingers, sending ash drifting into a glass ashtray.'}
+354	354		301							{2: 'Dealer', 3: 'Sure, Lucky 38 lets employees run their own card games on the side, but ask yourself, why would they allow that?', 4: '1'}
+355	355		301							"{2: 'Dealer', 3: ""You idiot! It's so the boss can watch the wages she pays out to be tossed right back into the endless games."", 4: '1'}"
+356	356		301							"{2: 'Dealer', 3: ""That way, these slaves can never break free. They're forever stuck serving customers here until the day they die."", 4: '1'}"
+357	357		301							"{2: 'Security', 3: 'Hah, so all that crap about ""earning enough at the tables to buy your freedom"" is just a lie?', 4: '2'}"
+358	358		301							"{2: 'Dealer', 3: ""Shh, you're being too blunt about it."", 4: '1'}"
+359	359		301							"{2: 'Dealer', 3: ""Mr. Trout taught her the art of cards on a whim, opening a door to new possibilities, but she wouldn't know then that luck's greatest gifts often carry the seeds of destruction."", 4: '1'}"
+360	360		301							{2: 'Dealer', 3: 'When her world comes crashing down, will she regret ever laying eyes on that door?', 4: '1'}
+361	361		203						300.0	{1: '1', 2: '0.4', 3: '-400'}
+362	362		401							{1: '2', 2: '5286'}
+363	363		301							"{3: ""The final embers die out in the ashtray as the dealer stands up, pulling on the coat he'd left draped across the cushions.""}"
+364	364		301							"{2: 'Dealer', 3: 'It won\'t be long before the boss sets her sights on Eleanor, demanding payment for all that ""luck.""', 4: '1'}"
+365	365		202							{1: '1', 2: '2', 6: '1'}
+366	366		401							{1: '2', 2: '5280'}
+367	367		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+368	368		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+369	369		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1172.jpg'}
+370	370		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+371	371		301			RImgBg1Shake				{3: 'Bang!'}
+372	372		301							{3: 'Thick snowflakes drift down as the tiny girl is violently shoved out the door, her body slamming against the frozen ground.'}
+373	373		201							{1: '1', 2: '501178'}
+374	374		301							{1: '1', 2: 'Security', 3: 'I hereby declare that junior hostess Eleanor, found guilty of theft and cheating, is sentenced to complete forfeiture of assets and permanent exile from Lucky 38 Casino—', 4: '1'}
+375	375		201							{1: '1', 2: '501120', 3: '4'}
+376	376		301			DialogShake				"{1: '1', 2: 'Eleanor', 3: ""—No! I didn't!"", 4: '1'}"
+377	377		301							{3: 'Braving the vicious wind and biting snow, the girl struggles to raise her head, desperately pleading.'}
+378	378		301			DialogShake				{2: 'Eleanor', 3: 'Everything I have, I earned fair and square at those tables! I played with honor! I never broke any rule!', 4: '1'}
+379	379		202							{1: '1'}
+380	380		401							{1: '2', 2: '4327'}
+381	381		301							"{3: ""But no one answers her pleas. Through the falling snow, only the hostesses' hushed gossip reaches her ears with painful clarity.""}"
+382	382		201							{1: '1', 2: '501169', 4: '-400'}
+383	383		201							{1: '2', 2: '500466', 4: '400'}
+384	384		301							{1: '1', 2: 'Hostesses', 3: 'I knew something was up! How else could she all of a sudden start winning so much at the tables? Turns out she was cheating.', 4: '1', 5: '2'}
+385	385		301							{2: 'Hostesses', 3: 'Ugh, ungrateful little parasite! We take her in, off the streets, and this is how she repays us? Even a stray dog would have the decency to wag its tail and beg.', 4: '1', 5: '2'}
+386	386		402							{1: '4327'}
+387	387		202							{1: '1', 2: '2', 6: '1'}
+388	388		201							{1: '1', 2: '501120', 3: '4', 7: '1'}
+389	389		301			PanelActor1Shake				"{1: '1', 2: 'Eleanor', 3: ""I didn't... I really didn't..."", 4: '1'}"
+390	390		301							"{3: ""Her voice grows fainter until it dies completely. The bitter truth finally hits her. She's completely alone.""}"
+391	391		203							{1: '1', 2: '0.25', 3: '-400'}
+392	392		201							{1: '2', 2: '501178', 4: '400'}
+393	393		301							"{1: '1', 2: 'Security', 3: ""Come on. I'd rather not have to drag you out of here."", 4: '2'}"
+394	394		301							"{3: ""The towering man steps forward and hauls her up from where she's slumped on the ground, then leans close to murmur in her ear.""}"
+395	395		301							{2: 'Security', 3: 'Take this chance. You can still walk out in one piece.', 4: '2'}
+396	396		301				AniZhuanchangBegin			{2: 'Eleanor', 3: '...', 4: '1'}
+397	397		202							{1: '1', 2: '2', 6: '1'}
+398	398		401							{1: '1', 2: '36'}
+399	399		306							{1: '1'}
+400	400		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1200.jpg'}
+401	401		401							{1: '1', 2: '120'}
+402	402		301			AniZhuanchangEnd				{3: 'Beyond the casino walls, the sun still shines in a clear blue sky, yet the air has turned bitterly cold. The girl trudges through snow-dusted streets, searching desperately for anything that might pass for shelter.'}
+403	403		301							"{3: ""The crowds streaming past her are all headed for Lucky 38 Casino, their faces burning with barely contained hunger and anticipation. They are utterly bewitched by the town's seductive illusions. Each one is convinced they will be fortune's next darling.""}"
+404	404		306							
+405	405		201							{1: '1', 2: '501120', 3: '4', 4: '-600'}
+406	406		201							{1: '2', 2: '500440', 4: '400'}
+407	407		203							{1: '1', 2: '0.25', 3: '-300'}
+408	408		301							"{1: '1', 2: 'Eleanor', 3: ""E-Excuse me, ma'am... are you heading to Lucky 38 Casino by any chance?"", 4: '1'}"
+409	409		301							{3: 'Summoning what little courage she has left, the girl steps out from the sidewalk to approach a middle-aged woman with a gentle expression.'}
+410	410		301							"{2: 'Guest', 3: ""That's right. Judging by your outfit, you're one of the casino's hostesses?"", 4: '2'}"
+411	411		301							"{2: 'Eleanor', 3: ""Y-Yes, ma'am. If you wouldn't mind, I could serve as your guide."", 4: '1'}"
+412	412		301							{2: 'Eleanor', 3: 'I know every game in the casino inside and out—all the rules, the best betting strategies to maximize your winnings...', 4: '1'}
+413	413		301							"{3: ""Suspicion clouds the woman's eyes, but Eleanor steels herself and pushes forward.""}"
+414	414		301							"{2: 'Eleanor', 3: ""I won't ask for anything up front—just a small cut of whatever you win. That's all."", 4: '1'}"
+415	415		301							"{3: ""After she finishes, silence stretches between them. Eleanor keeps her head down, too afraid to meet the woman's gaze.""}"
+416	416		301				DialogDisable			"{2: 'Guest', 3: ""...I see. Let's find somewhere quiet to talk this through."", 4: '2'}"
+417	417		202							{1: '1', 2: '2'}
+418	418		401							{1: '2', 2: '1516'}
+419	419		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory382.png', 3: '0', 4: '1', 5: '0.8'}
+420	420		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory382.png'}
+421	421		205							{1: '999'}
+422	422		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory376.png', 3: '0', 4: '1', 5: '0.8'}
+423	423		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory376.png'}
+424	424		205							{1: '999'}
+425	425		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory926.jpg', 3: '0', 4: '1', 5: '0.8'}
+426	426		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory926.jpg'}
+427	427		205							{1: '999'}
+428	428		402							{1: '1516'}
+429	429		301			DialogEnable				{3: 'Finally, she agrees, but the woman immediately turns and walks off. Terrified she might change her mind, Eleanor hurries after her. After weaving through several streets, they duck into a narrow alley.'}
+430	430		301							"{3: ""The cramped alley reeks of mold and decay. It's a world completely foreign to Eleanor's sheltered existence. Anxiety gnaws at her as she takes in the unfamiliar feeling.""}"
+431	431		201							{1: '1', 2: '501120', 3: '4', 4: '-400'}
+432	432		201							{1: '2', 2: '500440', 4: '400'}
+433	433		301							"{1: '1', 2: 'Eleanor', 3: ""Um, ma'am..."", 4: '1'}"
+434	434		203						100.0	{1: '2', 2: '0.15', 3: '200'}
+435	435		401							{1: '2', 2: '4044'}
+436	436		203							{1: '1', 2: '0.15', 3: '-430', 4: '-50'}
+437	437		301			PanelActor1Shake				{1: '1', 3: 'In an instant, the woman who had seemed so calm and gentle drops her mask, delivering a vicious kick that sends Eleanor sprawling.'}
+438	438		301							"{2: 'Guest', 3: ""Listen here, little girl. Don't think I'm some clueless mark. You're planning to help me cheat, then work with the house to shake me down, aren't you?"", 4: '2'}"
+439	439		301							{2: 'Guest', 3: 'You really think you can fool me with such a cheap scam?', 4: '2'}
+440	440		203						100.0	{1: '2', 2: '0.15', 3: '100', 4: '-20'}
+441	441		401							{1: '2', 2: '4044'}
+442	442		203							{1: '1', 2: '0.15', 3: '-450', 4: '-80'}
+443	443		301							"{3: ""The woman shows no mercy. A sickly metallic taste floods Eleanor's mouth as pain shoots through her ribs, almost cracking under the force.""}"
+444	444		301			PanelActor1Shake				"{2: 'Eleanor', 3: ""No, I wasn't! You've got it all wrong—"", 4: '1'}"
+445	445		203							{1: '2', 2: '0.15', 4: '-40'}
+446	446		401						300.0	{1: '2', 2: '4044'}
+447	447		203						100.0	{1: '2', 2: '0.15', 3: '100', 4: '-20'}
+448	448		203						100.0	{1: '2', 2: '0.15', 4: '-40'}
+449	449		401							{1: '2', 2: '4044'}
+450	450		301			PanelActor1Shake				"{3: ""She throws her arms up desperately, but the woman keeps slamming her high heels onto Eleanor's back with vicious precision.""}"
+451	451		203						250.0	{1: '2', 2: '0.25', 3: '100'}
+452	452		301							"{2: 'Guest', 3: ""Still pretending to be innocent? So young and already rotten to the core. I'll teach you what happens when you—"", 4: '2'}"
+453	453		401							{1: '2', 2: '2513'}
+454	454		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2', 3: '2'}
+455	455		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0.2'}
+456	456		301			PanelActor2Shake				{3: 'Her voice stops suddenly as a bright flash erupts with a deafening blast, and a copper round turns her head into bloody pulp.'}
+457	457		306							{1: '1'}
+458	458		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 4: '2'}
+459	459		202							{1: '1', 2: '2', 6: '1'}
+460	460		205							{1: '999'}
+461	461		201							{1: '1', 2: '501204'}
+462	462		401							{1: '2', 2: '5705'}
+463	463		301							"{1: '1', 3: ""Looking up, she spots another man lurking in the alley's depths, casually lowering his shotgun with a whistle.""}"
+464	464		401							{1: '2', 2: '5486'}
+465	465		306							
+466	466		301							{2: 'Thug', 3: 'Bingo! One fat sheep from out of town, plus a little stray from the casino.', 4: '1'}
+467	467		203							{1: '1', 2: '0.4', 4: '-100'}
+468	468		401							{1: '2', 2: '4895'}
+469	469		301							"{3: ""The thug ignores the girl who's frozen solid with terror and crouches down to look through the woman's corpse for Mammon coins.""}"
+470	470		301							"{2: 'Thug', 3: ""Tch, that's all? Hardly worth the bullet."", 4: '1'}"
+471	471		203							{1: '1', 2: '0.4'}
+472	472		301							{3: 'Half a minute later, he stands up, clutching his only prize—a Black Card—and gives the corpse a hard kick.'}
+473	473		301							"{2: 'Thug', 3: ""Only went for you 'cause of that fancy getup, but you're just another broke gambler living on credit. Worthless."", 4: '1'}"
+474	474		203							{1: '1', 2: '0.25', 3: '200'}
+475	475		201							{1: '2', 2: '501120', 3: '4', 4: '-600', 5: '-50', 7: '1'}
+476	476		203							{1: '2', 2: '0.25', 3: '-350', 4: '-100'}
+477	477		301			RImgBg1Shake				"{1: '1', 2: 'Eleanor', 3: ""—Don't go!!"", 4: '2'}"
+478	478		301							"{3: ""Faced with this gruesome scene, everything she once believed about the world crumbles. She doesn't understand why she's doing it, but pure instinct drives her to grab desperately at the gangster's pant leg.""}"
+479	479		301							"{2: 'Eleanor', 3: ""Mister, you saved my life and I'm grateful, but—"", 4: '2'}"
+480	480		301							"{2: 'Thug', 3: ""So what? Little girl, you don't actually think I shot her to save you, do you?"", 4: '1'}"
+481	481		301							"{3: ""Eleanor's eyes widen.""}"
+482	482		301							"{2: 'Thug', 3: ""Oh, but you've given me an idea. You might actually be useful after all..."", 4: '1'}"
+483	483		202							{1: '1', 2: '2'}
+484	484		401							{1: '2', 2: '4884'}
+485	485		301							{3: 'The man pulls a beat-up communicator from his pocket and presses the red transmit button in front of Eleanor.'}
+486	486		201							{1: '1', 2: '501204'}
+487	487		301							{1: '1', 2: 'Thug', 3: 'Hey, is this the Security Bureau? I found a body over on West Street.', 4: '1'}
+488	488		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '3'}
+489	489		401							{1: '1', 2: '36'}
+490	490		401							{1: '2', 2: '5562'}
+491	491		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+492	492		301				DialogDisable			"{2: 'Thug', 3: ""Suspect? I didn't see her clearly, but she looked like some kid who sneaked out of the casino..."", 4: '1'}"
+493	493		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+494	494		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+495	495		202							{1: '1', 6: '1'}
+496	496		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+497	497		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+498	498		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+499	499		401							{1: '2', 2: '4386'}
+500	500		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+501	501		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1030.jpg'}
+502	502		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+503	503		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+504	504		401							{1: '1', 2: '273'}
+505	505		401							{1: '2', 2: '4331'}
+506	506		402							{1: '5562'}
+507	507		201							{1: '1', 2: '501120', 3: '4', 7: '1'}
+508	508		301			DialogEnable				"{1: '1', 3: ""When Eleanor comes to her senses, she's already running frantically down the street.""}"
+509	509		301							{3: 'She has no memory of leaving that alley, and her feet hurt from running for so long, but an overwhelming sense of terror pursues her from behind, urging her to flee that place reeking of blood and death.'}
+510	510		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+511	511		401							{1: '2', 2: '4006'}
+512	512		203						200.0	{1: '1', 2: '0.25', 4: '-100'}
+513	513		301			PanelActor1Shake				{1: '1', 2: 'Eleanor', 3: 'Ugh—!', 4: '1'}
+514	514		202							{1: '1'}
+515	515		301							{3: 'Running too frantically, she stumbles and falls hard, scraping her knee into a bloody mess.'}
+516	516		201							{1: '1', 2: '501178'}
+517	517		301			DialogShake				"{1: '1', 2: 'Security Officer', 3: ""The girl from the casino. It's her!"", 4: '1'}"
+518	518		202							{1: '1'}
+519	519		301							{3: 'Chilling voices continue to pursue her relentlessly from behind. She has no time to check her wound and scrambles back to her feet, running frantically forward.'}
+520	520		301			RImgBg1Shake				{2: 'Crowd', 3: 'Stop her, stop her!!'}
+521	521		301							{3: 'People who had ignored her now rush toward her from all directions. One security officer raises his gun and puts his finger on the trigger—'}
+522	522		201							{1: '1', 2: '501120', 3: '4'}
+523	523		301							{1: '1', 2: 'Eleanor', 3: '!', 4: '1'}
+524	524		202							{1: '1', 6: '1'}
+525	525		201							{1: '2', 2: '501120', 3: '4', 4: '-200'}
+526	526		203							{1: '2', 2: '0.25', 3: '300'}
+527	527		201						300.0	{1: '1', 2: '500137'}
+528	528		401							{1: '2', 2: '10021508'}
+529	529		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2'}
+530	530		301							{1: '1', 3: 'In a split second, instinct sends her diving behind another man just as the bullet whistles past, so close it parts her hair—'}
+531	531		202							{1: '1', 2: '2', 6: '1'}
+532	532		201							{1: '1', 2: '501178'}
+533	533		301							{1: '1', 2: 'Security Officer', 3: 'W-what...?', 4: '1'}
+534	534		202							{1: '1', 6: '1'}
+535	535		401							{1: '2', 2: '212'}
+536	536		301			RImgBg1Shake				"{2: 'Crowd', 3: ""Eek! Somebody's been killed!!!""}"
+537	537		402							{1: '212'}
+538	538		201							{1: '1', 2: '501120', 3: '4', 4: '300'}
+539	539		201							{1: '2', 2: '500137'}
+540	540		301							{1: '1', 2: 'Eleanor', 3: '...?', 4: '1'}
+541	541		401							{1: '2', 2: '1505'}
+542	542		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0.8'}
+543	543		301							"{3: ""Something warm and sticky splashes across her cheek. She frantically wipes her face, but the crimson stain won't come off.""}"
+544	544		301			PanelActor1Shake				{2: 'Eleanor', 3: 'S-sorry.', 4: '1'}
+545	545		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+546	546		401							{1: '2', 2: '4306'}
+547	547		203						350.0	{1: '2', 2: '0.4', 3: '-200', 4: '-800'}
+548	548		202							{1: '2'}
+549	549		301							{3: 'She starts to apologize, but the man just topples over like a felled tree, crashing into the muddy street.'}
+550	550		301			PanelActor1Shake				"{2: 'Eleanor', 3: ""I... I'm not..."", 4: '1'}"
+551	551		202							{1: '1'}
+552	552		401							{1: '2', 2: '212'}
+553	553		301							"{3: 'No one cares what the ""criminal"" has to say. The crowd explodes into chaos once again.'}"
+554	554		401							{1: '2', 2: '2959'}
+555	555		402							{1: '212'}
+556	556		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+557	557		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+558	558		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory745.jpg'}
+559	559		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+560	560		301				DialogDisable			{3: 'The world around Eleanor seems filthy and loud, and in her daze, she feels like she has returned to the forest where she was separated from her parents.'}
+561	561		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+562	562		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+563	563		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1030.jpg'}
+564	564		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+565	565		401							{1: '2', 2: '4331'}
+566	566		201							{1: '1', 2: '501120', 3: '4', 7: '1'}
+567	567		203						250.0	{1: '1', 2: '0.3', 3: '500'}
+568	568		202							{1: '1'}
+569	569		301			DialogEnable				{3: 'Terror crushes down on her chest, but she grits her teeth and forces herself to run.'}
+570	570		301			DialogShake				{2: 'Crowd', 3: 'She went into that alley. Go after her!'}
+571	571		401							{1: '2', 2: '4385'}
+572	572		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+573	573		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory926.jpg'}
+574	574		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+575	575		401							{1: '2', 2: '4331'}
+576	576		201							{1: '1', 2: '501121', 7: '1'}
+577	577		301							"{1: '1', 3: ""As she runs, Eleanor's vision blurs with moisture. She reaches up to wipe her eyes.""}"
+578	578		301							{2: 'Eleanor', 3: 'Not... blood?', 4: '1'}
+579	579		301							{3: 'In the dark alley, teardrops fall and disappear into the cold, indifferent world.'}
+580	580		301							{2: 'Eleanor', 3: 'I am... crying?', 4: '1'}
+581	581		301							{2: 'Eleanor', 3: 'Why?', 4: '1'}
+582	582		301							"{3: ""She didn't even cry the day her parents abandoned her.""}"
+583	583		301							{2: 'Eleanor', 3: '...Why is all of this happening to me?', 4: '1'}
+584	584		301							{2: 'Eleanor', 3: 'Why... why do this to me...?', 4: '1'}
+585	585		306							{1: '1'}
+586	586		301							{3: 'Her thoughts remain a tangled mess as she struggles to understand this sudden surge of grief.'}
+587	587		306							
+588	588		301							"{3: ""She turns into the wind, letting tears roll down her face as the last thread of composure she's fought so hard to maintain finally snaps. She can't hold back anymore. Her mouth opens and she breaks into raw, uncontrolled sobs.""}"
+589	589		301			PanelActor1Shake				{2: 'Eleanor', 3: 'Sob—sob—sob—AAAAHHH—!', 4: '1'}
+590	590		301							"{2: 'Eleanor', 3: ""Why, Supreme Heaven... Haven't I suffered enough...?"", 4: '1'}"
+591	591		301			RImgBg1Shake				{2: 'Eleanor', 3: 'How long... just how long will fate keep toying with me?!', 4: '1'}
+592	592		202							{1: '1'}
+593	593		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+594	594		301							{3: 'Her heart-wrenching wail echoes through the dark alley.'}
+595	595		301							{3: 'Heavy snow continues to fall, covering her footprints and bloodstains, silently becoming her only companion in this unforgiving city.'}
+596	596		401							{1: '2', 2: '2907'}
+597	597		301							{3: 'DING-DONG—'}
+598	598		301							{3: 'In the distance, the cathedral bells toll. Their deep, resonant chimes flow across the entire city.'}
+599	599		301							"{3: ""Daily prayers begin, and the girl's hoarse sobs are swallowed by the cathedral's majestic chimes.""}"
+600	600		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+601	601		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+602	602		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+603	603		301							{3: 'Yes, here in the Scorched Borderland, the strong always devour the weak. Those with power and influence can return to the table again and again, while the powerless vanish without a trace after their final, desperate gamble.'}
+604	604		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+605	605		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory926.jpg'}
+606	606		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+607	607		201							{1: '1', 2: '501121', 5: '-100', 7: '1'}
+608	608		301							{1: '1', 3: 'Eleanor is starving. She grabs a handful of snow, shoves it into her mouth, and gnaws on the bitter truth of this predatory world. Why is she always the one getting trampled? Why do others always steal her few remaining cards?'}
+609	609		301							{2: 'Eleanor', 3: 'Looks like no one will let me live...', 4: '1'}
+610	610		202							{1: '1'}
+611	611		301							"{3: ""The Sanctuary's scriptures all say that snow is Judgment descending from the Supreme Heaven to the mortal world.""}"
+612	612		401							{1: '2', 2: '4331'}
+613	613		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+614	614		201							{1: '1', 2: '501121'}
+615	615		301							{1: '1', 3: 'The girl continues running forward, letting Judgment fall upon her.'}
+616	616		301							"{2: 'Eleanor', 3: ""Then I'll claw my way to the table and live better than all of you!"", 4: '1'}"
+617	617		301				AniZhuanchangBegin			{3: 'She murmurs to herself, a wicked smile slowly creeping across her face.'}
+618	618		202							{1: '1', 6: '1'}
+619	619		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+620	620		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+621	621		502							{1: 'DialogDisable'}
+622	622		401						2000.0	{1: '1', 2: '36'}
+623	623		401							{1: '1', 2: '6121'}
+624	624		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1175.jpg'}
+625	625		107			AniZhuanchangEnd				{1: 'At the Sanctuary Game', 2: 'Back to the present'}
+626	626		301							{3: 'Back to the present\\nAt the Sanctuary Game'}
+627	627		108							{1: '1'}
+628	628		306							{1: '1'}
+629	629		301			DialogEnable				"{3: 'The dealer lifts an exquisitely crafted gold coin from the gilded gaming table and places it at the center of the ""Alchemy Matrix.""'}"
+630	630		301							{3: 'Until the game ends, all stakes will be guarded by this matrix and impervious to any outside interference. Not even the Supreme Heaven itself could break these cage walls.'}
+631	631		301							{3: 'For centuries, the people of the Scorched Borderland have depended on this demonic array to keep their gambling games honest.'}
+632	632		306							
+633	633		201							{1: '1', 2: '501123', 3: '2'}
+634	634		301							"{1: '1', 2: 'Madam Raphael', 3: ""...Lilith? Now that's quite the alias, filled with contempt for the Sanctuary."", 4: '1'}"
+635	635		301							{3: 'The Archangel seated across the table gives an amused smile, as if accepting this utterly blasphemous choice of name.'}
+636	636		202							{1: '1', 6: '1'}
+637	637		201							{1: '1', 2: '501130'}
+638	638		301							"{1: '1', 2: 'Lilith', 3: ""But Madam Raphael, all you really care about are the stakes I've brought, right?"", 4: '1'}"
+639	639		301							{3: 'The challenger leans against her cushion, lazily swirling her champagne with cynical amusement, knowing full well the Archangel has no choice but to accept her terms.'}
+640	640		202							{1: '1', 6: '1'}
+641	641		201							{1: '1', 2: '501123', 4: '-400'}
+642	642		201							{1: '2', 2: '501130', 4: '400'}
+643	643		301							"{1: '1', 2: 'Madam Raphael', 3: ""Indeed, you've brought the key to Mammon's treasure vault. With Mammon's throne vacant all these years, you certainly qualify to sit across from me."", 4: '1'}"
+644	644		301							{2: 'Madam Raphael', 3: 'Now you can name your terms. What are you trying to win?', 4: '1'}
+645	645		301							"{2: 'Lilith', 3: ""My request is quite reasonable. Since you're so generous in giving my father Whitehorse, I'll simply take five times what he's receiving."", 4: '2'}"
+646	646		301							{3: 'The lady in white holds up five fingers with a flourish, her ambition laid bare in the simple gesture.'}
+647	647		301							{2: 'Lilith', 3: 'I want to be a tax collector for an entire state.', 4: '2'}
+648	648		301							{2: 'Madam Raphael', 3: 'Quite the ambitious request.', 4: '1'}
+649	649		301							"{3: ""Raphael's face remains unreadable, giving no hint whether Eleanor's demand is trivial or troublesome.""}"
+650	650		301							"{2: 'Madam Raphael', 3: ""I accept your terms, but you do know the rules of the Sanctuary game, don't you?"", 4: '1'}"
+651	651		204							{1: '2', 2: '2'}
+652	652		301							{2: 'Lilith', 3: 'Of course I do. Lose, and my soul belongs to the Angel.', 4: '2'}
+653	653		301							{3: 'She licks her champagne-wet lips with obvious excitement.'}
+654	654		301				DialogDisable			"{2: 'Lilith', 3: ""I'm not some coward who can't take a loss."", 4: '2'}"
+655	655		202							{1: '1', 2: '2'}
+656	656		401							{1: '2', 2: '4814'}
+657	657		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen03.prefab', 2: '2'}
+658	658		509						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1175.jpg', 2: '1'}
+659	659		301			DialogEnable				{3: 'Madam Raphael gives a nod. The silent dealer standing nearby activates the Alchemy Matrix. With terms settled, the game begins.'}
+660	660		301							"{3: ""The Archangel picks up her cards from the table, barely glances at what she's holding, and makes her call.""}"
+661	661		201							{1: '1', 2: '501123', 4: '-600'}
+662	662		201							{1: '2', 2: '501130', 4: '550'}
+663	663		401							{1: '2', 2: '5298'}
+664	664		301							{1: '1', 2: 'Madam Raphael', 3: 'Bet.', 4: '1'}
+665	665		401							{1: '2', 2: '5298'}
+666	666		301							{2: 'Lilith', 3: 'Call.', 4: '2'}
+667	667		301							{3: 'The lady in white refuses to yield, staying locked onto her opponent like a predator.'}
+668	668		204							{1: '1', 2: '2'}
+669	669		301							"{2: 'Madam Raphael', 3: ""Oh, there's no need to put on such an aggressive show."", 4: '1'}"
+670	670		204							{1: '1'}
+671	671		301							"{2: 'Madam Raphael', 3: ""I'll give you plenty of time to think it over."", 4: '1'}"
+672	672		204							{1: '2', 2: '9'}
+673	673		301							"{2: 'Lilith', 3: ""Madam Raphael, I've been playing this game since I was seven years old."", 4: '2'}"
+674	674		301							{3: 'She laughs with theatrical flair, making zero effort to hide her arrogance.'}
+675	675		204							{1: '2'}
+676	676		301							"{2: 'Lilith', 3: ""There's no doubt I'm the best card player in all the Scorched Borderland."", 4: '2'}"
+677	677		204							{1: '1', 2: '2'}
+678	678		301							"{2: 'Madam Raphael', 3: ""You're absolutely right. Why would I be worried about the world-famous, legendary, undefeated Gambler Lilith?"", 4: '1'}"
+679	679		301				DialogDisable			{3: 'Madam Raphael gives a noncommittal smile and casually plays her next card.'}
+680	680		202						300.0	{1: '1', 2: '2'}
+681	681		401							{1: '2', 2: '4814'}
+682	682		510						600.0	{1: '1'}
+683	683		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen03.prefab'}
+684	684		201							{1: '1', 2: '501125'}
+685	685		301			DialogEnable				{1: '1', 2: 'Dealer', 3: 'Miss Lilith takes the round.', 4: '1'}
+686	686		306							{1: '1'}
+687	687		202							{1: '1', 6: '1'}
+688	688		201							{1: '1', 2: '501130'}
+689	689		301							{1: '1', 3: 'As the result is announced, Lilith shoots her opponent a triumphant look.'}
+690	690		306							
+691	691		202							{1: '1', 6: '1'}
+692	692		201							{1: '1', 2: '501123'}
+693	693		301							{1: '1', 2: 'Madam Raphael', 3: 'Next round.', 4: '1'}
+694	694		202							{1: '1'}
+695	695		301				AniZhuanchangBegin			"{3: ""Ignoring the provocation, Madam Raphael simply continues to calmly oversee the game's progress.""}"
+696	696		306						500.0	{1: '1'}
+697	697		301			AniZhuanchangEnd				{3: 'Time crawls by, and the tension at the card table reaches an intense level.'}
+698	698		301							{3: 'After several heated exchanges, both Madam Raphael and Lilith are down to their last chip.'}
+699	699		301				AniZhuanchangBegin			"{3: ""Yet both maintain their calm smiles, as if this next round isn't going to seal someone's fate but is merely some casual game.""}"
+700	700		306						500.0	
+701	701		201							{1: '1', 2: '501130', 7: '1'}
+702	702		401							{1: '2', 2: '5299'}
+703	703		301			AniZhuanchangEnd				"{1: '1', 3: ""The final round reaches its decisive moment, and Lilith smiles as she reveals the card she's casually placed before her.""}"
+704	704		204							{1: '1', 2: '9'}
+705	705		301							{2: 'Lilith', 3: '—Oh, my?', 4: '1'}
+706	706		301							"{3: ""She can't help herself and lets out a sly chuckle.""}"
+707	707		202							{1: '1'}
+708	708		301							"{3: ""Not that anyone could blame her for losing her composure. It's a gleaming ace of hearts. What could possibly be better?""}"
+709	709		201							{1: '1', 2: '501130', 3: '9'}
+710	710		301							"{1: '1', 2: 'Lilith', 3: ""My apologies, Madam Raphael, but it looks like I've won—"", 4: '1'}"
+711	711		402							{1: '6121'}
+712	712		401							{1: '2', 2: '2513'}
+713	713		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+714	714		301			RImgBg1Shake				"{3: ""Just as she's about to raise her hand to show off her winning card, her stomach suddenly seizes, and a sharp, unfamiliar pain tears through her body.""}"
+715	715		401							{1: '2', 2: '1505'}
+716	716		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0.8'}
+717	717		104						1000.0	{1: '0|-700|700', 2: '0', 4: '5'}
+718	718		204							{1: '1'}
+719	719		301							{3: 'Lilith looks down and sees crimson blooming across her abdomen.'}
+720	720		401							{1: '1', 2: '52'}
+721	721		301							{2: 'Lilith', 3: '...Huh?', 4: '1'}
+722	722		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0', 5: '0.3'}
+723	723		202							{1: '1'}
+724	724		301							{3: 'The lady maintains her pose, gracefully expressing her bewilderment at the dealer who just shot her.'}
+725	725		301							"{3: ""She's hardly surprised that this Archangel would break her word, but the Alchemy Matrix can't be unlocked even by the Supreme Heaven. If she dies, that gold coin will be lost forever.""}"
+726	726		201							{1: '1', 2: '501130', 3: '4'}
+727	727		301							"{1: '1', 2: 'Lilith', 3: '...I thought you Angels would value the ""Key of Mammon"" more than this.', 4: '1'}"
+728	728		202							{1: '1', 6: '1'}
+729	729		201							{1: '1', 2: '501123', 5: '-80'}
+730	730		301							"{1: '1', 2: 'Madam Raphael', 3: 'I do value the ""Key of Mammon,"" make no mistake... It\'s just that what you put in that matrix was a fake from the start.', 4: '1'}"
+731	731		203							{1: '1', 2: '0.5'}
+732	732		301							{3: 'Madam Raphael drifts through the lingering gunsmoke and slides that familiar gold coin to the center of the table.'}
+733	733		204							{1: '1', 2: '2'}
+734	734		301							"{2: 'Madam Raphael', 3: 'What a coincidence. Just days ago, I happened to get a replica infused with Mammon\'s power from a ""special channel,"" and you show up at my doorstep today.', 4: '1'}"
+735	735		301							"{2: 'Madam Raphael', 3: ""Looks like even the Alchemy Matrix can't tell a genuine artifact of the Golden King from a clever fake."", 4: '1'}"
+736	736		201							{1: '1', 2: '501130', 3: '5'}
+737	737		301			PanelActor1Shake				{1: '1', 2: 'Lilith', 3: 'How dare you—!', 4: '1'}
+738	738		306							{1: '1'}
+739	739		301							{3: 'For the first time, fury twists her delicate features, not from the defeat, but from the betrayal of cheating at what should have been a sacred game.'}
+740	740		306							
+741	741		301			DialogShake				"{2: 'Lilith', 3: ""So this whole Sanctuary game was just a trap wrapped in pretty lies! You Angels can't even follow the rules set by yourselves?!"", 4: '1'}"
+742	742		202							{1: '1', 6: '1'}
+743	743		201							{1: '1', 2: '501123', 3: '2'}
+744	744		301							"{1: '1', 2: 'Madam Raphael', 3: ""Why should I follow rules when dealing with you pathetic humans? You're nothing but animals."", 4: '1'}"
+745	745		202							{1: '1'}
+746	746		301							"{3: ""While speaking, Madam Raphael slips the Key of Mammon away and moves toward the private room's door.""}"
+747	747		301							{3: 'She tugs her hat brim low and takes one last look at her opponent, now slumped helplessly in the chair.'}
+748	748		201							{1: '1', 2: '501123'}
+749	749		301							"{1: '1', 2: 'Madam Raphael', 3: ""Don't deceive yourself. Mammon's treasure always belonged to the Sanctuary. You never had any right to bargain with me to begin with."", 4: '1'}"
+750	750		201							{1: '1', 2: '501130', 3: '5'}
+751	751		301			PanelActor1Shake				{1: '1', 2: 'Lilith', 3: 'You...!', 4: '1'}
+752	752		201							{1: '2', 2: '501125', 4: '550'}
+753	753		401							{1: '2', 2: '1543'}
+754	754		203						100.0	{1: '2', 2: '0.15', 3: '360'}
+755	755		201							{1: '1', 2: '501131', 7: '1'}
+756	756		301			PanelActor1Shake				{1: '1', 3: 'Before her angry protest can escape, another figure steps from the shadows and silences her with a firm hand over her mouth.'}
+757	757		201							{1: '18', 2: '501123', 4: '-100'}
+758	758		301							{1: '1', 2: 'Madam Raphael', 3: 'Clean it up.', 4: '18'}
+759	759		202							{1: '18', 6: '1'}
+760	760		401							{1: '2', 2: '5321'}
+761	761		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+762	762		301			PanelActor1Shake				{3: 'The order comes swiftly and sharply, and scissors plunge deep into her chest without hesitation.'}
+763	763		301							"{3: ""The silent dealer knows that his master hates noise, so his grip locks around Lilith's throat, letting nothing escape but blood.""}"
+764	764		301			PanelActor1Shake				{2: 'Lilith', 3: 'Ugh—!', 4: '1'}
+765	765		301							"{3: ""But Lilith fights on, desperate to release the rage burning in her chest. She refuses to go quietly, and she won't die like some nameless dog in a dark corner.""}"
+766	766		301			PanelActor1Shake				{2: 'Lilith', 3: 'Mmmmph—!', 4: '1'}
+767	767		301							"{3: ""Her bloodshot eyes snap open, burning with hatred as they track Raphael's retreating figure, while the vilest curses writhe unspoken in her crushed throat.""}"
+768	768		203						200.0	{1: '1', 2: '0.25', 4: '-20'}
+769	769		204							{1: '2', 2: '7'}
+770	770		301			PanelActor2Shake				{2: 'Dealer', 3: 'Arrgh!', 4: '2'}
+771	771		301							"{3: ""She tears off a chunk of flesh from the dealer's palm with her teeth, forcing him to jerk his hand away in agony.""}"
+772	772		204							{1: '2'}
+773	773		301			DialogShake	DialogDisable			"{2: 'Dealer', 3: ""Still going even at death's door. Damn this mad girl!"", 4: '2'}"
+774	774		401							{1: '2', 2: '4895'}
+775	775		203						500.0	{1: '2', 2: '0.25', 3: '700'}
+776	776		203						200.0	{1: '2', 2: '0.25', 3: '360'}
+777	777		401							{1: '2', 2: '4046'}
+778	778		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiChopping03.prefab', 2: '2', 5: '4'}
+779	779		511							{1: '4', 2: '0', 3: '145|300|0'}
+780	780		502							{1: 'DialogEnable'}
+781	781		301			PanelActor1Shake				"{3: ""The man's rage boils over. He grabs a heavy vase and smashes it down on the back of her head.""}"
+782	782		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiChopping03.prefab', 5: '4'}
+783	783		401							{1: '2', 2: '4306'}
+784	784		203						350.0	{1: '1', 2: '0.4', 4: '-800'}
+785	785		202							{1: '1'}
+786	786		301				AniZhuanchangBegin			"{3: ""This time, she can't fight back. Her consciousness has slipped away, and her body sags to the floor in defeat.""}"
+787	787		202							{1: '2', 6: '1'}
+788	788		401							{1: '1', 2: '36'}
+789	789		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+790	790		401							{1: '1', 2: '169'}
+791	791		304			AniZhuanchangEnd				{1: 'As death approaches, she dreams of her parents once more.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '1'}
+792	792		304							{1: 'Just like the day she was abandoned in the woods, dense snowflakes drift down like goose feathers. She is holding a gold coin in her hand and walking barefoot along an endless path of snow.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '1'}
+793	793		304							{1: 'Before leaving her behind, her mother presses one last gold coin into her hand.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '1'}
+794	794		304							"{1: '""There, now you can\'t say we didn\'t take care of you. Whether you make it or not is your problem now.""', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '1'}"
+795	795		304				AniZhuanchangBegin			{1: 'After walking for what feels like forever, she reaches a towering tree and stops beneath its roots.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '1', 9: '1'}
+796	796		502							{1: 'DialogEnable'}
+797	797		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1124.jpg'}
+798	798		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiSpecialFashionShop/FxUiSpecialFashionShopSnow.prefab', 2: '2'}
+799	799		201							{1: '1', 2: '501068', 4: '400', 7: '1'}
+800	800		201							{1: '2', 2: '501080', 4: '-400', 7: '1'}
+801	801		301			AniZhuanchangEnd				{1: '1', 2: '??', 3: '...', 4: '1', 5: '2'}
+802	802		306							{1: '1'}
+803	803		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront96.png', 3: '0', 4: '1', 5: '0.5'}
+804	804		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0', 4: '0.8', 5: '0.5'}
+805	805		104							{1: '0|0|0', 2: '0', 4: '5'}
+806	806		301				DialogDisable			{3: 'Two corpses huddle together against the tree trunk, fingers intertwined, a glittering gold coin clutched within their palms.'}
+807	807		202							{1: '1', 2: '2'}
+808	808		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront96.png', 3: '1', 4: '0', 5: '0.4'}
+809	809		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0.8', 4: '0', 5: '0.4'}
+810	810		306						500.0	
+811	811		205							{1: '1007', 3: '0', 4: '1', 5: '0'}
+812	812		205							{1: '1005', 3: '0', 4: '1', 5: '0'}
+813	813		201							{1: '1', 2: '501130'}
+814	814		301			DialogEnable				{1: '1', 2: 'Lilith', 3: 'Hey, you two may be pathetic bastards...', 4: '1'}
+815	815		203						450.0	{1: '1', 2: '0.4', 4: '-50'}
+816	816		401							{1: '2', 2: '5526'}
+817	817		301							{3: 'She kneels down and tenderly brushes the fine snow from their hair.'}
+818	818		204							{1: '1', 2: '5'}
+819	819		301							{2: 'Lilith', 3: 'But tell me, is giving your life over a single gold coin really worth it?', 4: '1'}
+820	820		202							{1: '1', 6: '1'}
+821	821		201							{1: '1', 2: '501068', 4: '400'}
+822	822		201							{1: '2', 2: '501080', 4: '-400'}
+823	823		301							{1: '1', 2: '??', 3: '...', 4: '1', 5: '2'}
+824	824		202							{1: '1', 2: '2'}
+825	825		301							"{3: ""The dead don't answer, of course. Frustrated, she gets back to her feet and kicks a mound of snow aside.""}"
+826	826		201							{1: '1', 2: '501130'}
+827	827		301							{1: '1', 2: 'Lilith', 3: 'Though I suppose in the end, I turned out just like you.', 4: '1'}
+828	828		301							"{2: 'Lilith', 3: ""If you were still alive, you'd be laughing at me, too."", 4: '1'}"
+829	829		202							{1: '1'}
+830	830		301							{3: 'Snowflakes keep falling. She spreads her arms wide, taking elegant steps through the snow as she spins in circles.'}
+831	831		201							{1: '1', 2: '501130', 3: '8'}
+832	832		301							{1: '1', 2: 'Lilith', 3: 'Hmm-hmm-hmm...', 4: '1'}
+833	833		202							{1: '1'}
+834	834		301							{3: 'An elegant melody echoes through the forest as she hums softly, singing a hymn to her own approaching death.'}
+835	835		301							"{3: ""They say that before you die, your whole life flashes before your eyes. If her life were nothing but one long snowfall, that wouldn't have been so terrible.""}"
+836	836		201							{1: '1', 2: '501130', 3: '9'}
+837	837		301				DialogDisable			{1: '1', 2: 'Lilith', 3: 'Ah... but I really would like to see it, just once.', 4: '1'}
+838	838		202							{1: '1', 6: '1'}
+839	839		104						600.0	{1: '0|-60|-100', 2: '0.8'}
+840	840		401							{1: '2', 2: '2936'}
+841	841		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory939.png', 3: '0', 4: '1', 5: '0.5'}
+842	842		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory939.png'}
+843	843		205							{1: '999'}
+844	844		301			DialogEnable				"{3: ""She dances until her strength gives out, then lets her arms fall and collapses into the snow, gazing up at the pale moon hanging in the sky. It's a sight that hasn't graced the Scorched Borderland since the Cataclysm.""}"
+845	845		201							{1: '18', 2: '501130', 3: '7', 4: '-25', 5: '-230'}
+846	846		301							{1: '1', 2: 'Lilith', 3: 'The moon in the real world... is this what it actually looks like?', 4: '18'}
+847	847		202				DialogDisable			{1: '18'}
+848	848		302							"{2: ""No, it's even more beautiful than this."", 3: '849', 4: ""Maybe. I've never seen the moon either."", 5: '849'}"
+849	849		401							{1: '1', 2: '36'}
+850	850		401							{1: '2', 2: '1543'}
+851	851		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1124.jpg', 3: '0', 4: '1', 5: '0.3'}
+852	852		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1124.jpg'}
+853	853		205							{1: '999'}
+854	854		401							{1: '1', 2: '226'}
+855	855		201							{1: '1', 2: '501130', 3: '7'}
+856	856		301			DialogEnable	DialogDisable			{1: '1', 3: 'An unfamiliar voice responds from nearby, and she lifts her head.'}
+857	857		202							{1: '1'}
+858	858		306						300.0	{1: '1'}
+859	859		201							{1: '1', 2: '500678'}
+860	860		301			DialogEnable				{1: '1', 3: 'Somehow, the great tree behind her has vanished, replaced by a figure in a gray-black cloak walking toward her through the snow.'}
+861	861		301							{3: 'She has never seen this person before, nor does she understand why they would appear in her dream, so once again she puts on her mask and smiles back.'}
+862	862		306							
+863	863		202							{1: '1', 6: '1'}
+864	864		201							{1: '1', 2: '501130'}
+865	865		301							{1: '1', 2: 'Lilith', 3: 'Good evening. Is there anything I can help you with?', 4: '1'}
+866	866		302							"{2: 'Why have you collapsed here? The ""Sanctuary Game"" isn\'t a place humans can just wander into.', 3: '867'}"
+867	867		306							{1: '1'}
+868	868		204							{1: '1', 2: '4'}
+869	869		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '0.8', 5: '0.3'}
+870	870		301							"{3: ""But her companion has turned the tables on her, and this isn't the rhythm she's used to.""}"
+871	871		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0.8', 4: '0', 5: '0.3'}
+872	872		306							
+873	873		204							{1: '1'}
+874	874		301							{2: 'Lilith', 3: 'Well... Simply put, I was tricked by Angels.', 4: '1'}
+875	875		301							{3: 'She continues to smile gracefully, seamlessly steering the conversation back under her control.'}
+876	876		301							"{2: 'Lilith', 3: ""I've never done anything wrong in my entire life, so I can't imagine why Madam Raphael would pass such a harsh judgment on me..."", 4: '1'}"
+877	877		204							{1: '1', 2: '9'}
+878	878		301							"{2: 'Lilith', 3: 'Maybe it\'s because I caught her cheating at the ""Sanctuary Game,"" so she had to silence me?', 4: '1'}"
+879	879		202							{1: '1'}
+880	880		301							"{3: ""Lies come to her as naturally as breathing, an ingrained habit in how she navigates life, one she can't let go of even in death.""}"
+881	881		302							{2: '...', 3: '882'}
+882	882		301							{3: 'The gray-cloaked figure falls silent, as if sifting through the truth and lies mixed in her words.'}
+883	883		201							{1: '1', 2: '501130', 3: '2'}
+884	884		301							"{1: '1', 2: 'Lilith', 3: ""But I'll be dead soon enough anyway, so I guess this secret really will go to my grave. No one will ever find out now... haha..."", 4: '1'}"
+885	885		302							{2: 'I can help you.', 3: '886'}
+886	886		301							{3: 'Unexpectedly, the person takes the bait.'}
+887	887		204							{1: '1', 2: '9'}
+888	888		301							"{2: 'Lilith', 3: ""How exactly can you help me? You can't just have me bolt upright in my coffin like some dead Cardinal Deity, can you?"", 4: '1'}"
+889	889		301				DialogDisable			{3: 'The ridiculous image makes her laugh despite herself.'}
+890	890		302							"{2: ""Mm-hmm, exactly. Simply put, I'll bring you back to life."", 3: '891'}"
+891	891		302							"{2: ""So, what do you say? Want to come with me and settle the score with the Sanctuary's Angels?"", 3: '892'}"
+892	892		204							{1: '1', 2: '5'}
+893	893		301			DialogEnable				{3: 'In this situation, even what seemed like a ridiculous fantasy demands her serious consideration.'}
+894	894		301				DialogDisable			"{2: 'Lilith', 3: ""...What's the catch?"", 4: '1'}"
+895	895		302							{2: 'Smart girl.', 3: '896'}
+896	896		302							"{2: ""You'll become a Demon in return."", 3: '897'}"
+897	897		204							{1: '1'}
+898	898		301			DialogEnable	DialogDisable			{2: 'Lilith', 3: 'The creature from legend that drives around in a hellish train, grabbing people and kicking them into the Acheron River?', 4: '1'}
+899	899		302							"{2: ""That's right, exactly that."", 3: '900'}"
+900	900		302							"{2: 'But you\'ll be far more powerful than that. I will crown you ""Famine.""', 3: '901'}"
+901	901		204							{1: '1', 2: '2'}
+902	902		301			DialogEnable				{2: 'Lilith', 3: '...Haha.', 4: '1'}
+903	903		301							"{3: ""Lilith laughs again, but this time, it's from pure excitement.""}"
+904	904		202							{1: '1'}
+905	905		301							"{3: ""She knows the person trusts her words about as much as she trusts theirs, but that doesn't matter. What she's offering is too valuable to turn down.""}"
+906	906		301							"{3: ""She thought this was where her story would end, but it turns out she's still worth saving, even from the brink of death.""}"
+907	907		301							"{3: ""Just goes to show that you never know what ace someone's been hiding until the final hand.""}"
+908	908		201							{1: '1', 2: '501130'}
+909	909		301							{1: '1', 3: 'An unstoppable rush of adrenaline surges through Lilith. She pushes herself up from the snow and faces the figure, head held high.'}
+910	910		301				DialogDisable			{2: 'Lilith', 3: 'Deal.', 4: '1'}
+911	911		302							{2: '(Raise hand)', 3: '912'}
+912	912		401							{1: '2', 2: '2595'}
+913	913		104							{1: '0|0|0', 2: '0', 4: '5'}
+914	914		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront79.png', 3: '0', 4: '1', 5: '0.2'}
+915	915		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0'}
+916	916		401							{1: '2', 2: '2975'}
+917	917		104						350.0	{1: '0|0|-250', 2: '0.3', 4: '1'}
+918	918		104							{1: '0|0|0', 2: '0.4', 4: '1'}
+919	919		109							{1: '1', 2: '<color=#ff4e4eff><size=180><b>You do it!</b></size></color>', 3: '0', 4: '100', 9: '3'}
+920	920		301							{3: 'You do it!'}
+921	921		110							
+922	922		104							{1: '0|0|-50', 2: '0.4'}
+923	923		203							{1: '1', 2: '0.4', 5: '-50'}
+924	924		401							{1: '2', 2: '2690'}
+925	925		301			DialogEnable				{3: 'The figure leans down and reaches into the gaping, bloody wound in her chest.'}
+926	926		401							{1: '2', 2: '4548'}
+927	927		104							{1: '0|0|-100', 2: '0.8'}
+928	928		203							{1: '1', 2: '0.8', 5: '-100'}
+929	929		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront79.png', 3: '1', 4: '0', 5: '0.8'}
+930	930		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront87.png', 3: '0', 4: '1', 5: '0.8'}
+931	931		301							{3: 'Crimson threads burst from the wound, spiraling upward and weaving themselves into gleaming silk that cocoons them both.'}
+932	932		204							{1: '1', 2: '2'}
+933	933		301			PanelActor1Shake				{2: 'Lilith', 3: '...It hurts. It hurts!', 4: '1'}
+934	934		401							{1: '2', 2: '1543'}
+935	935		203							{1: '1', 2: '0.4', 5: '-120'}
+936	936		301							"{3: ""Through the bone-deep agony, she laughs with wild defiance and seizes the figure's wrist.""}"
+937	937		301							{2: 'Lilith', 3: 'Hey, if this leaves permanent scars, what exactly are you gonna do about it?', 4: '1'}
+938	938		301				DialogDisable			{3: 'The figure ignores her question entirely, only continuing to probe deeper into the crimson void.'}
+939	939		302							{2: 'I am the Bloodsworn—', 3: '940'}
+940	940		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+941	941		202							{1: '1', 6: '1'}
+942	942		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiSpecialFashionShop/FxUiSpecialFashionShopSnow.prefab'}
+943	943		401							{1: '2', 2: '4092'}
+944	944		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+945	945		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+946	946		307							{1: 'Gray Raven.', 3: '100'}
+947	947		301							{3: 'Gray Raven.'}
+948	948		307							{2: '1'}
+949	949		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+950	950		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiSpecialFashionShop/FxUiSpecialFashionShopSnow.prefab', 2: '2'}
+951	951		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1124.jpg'}
+952	952		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront87.png', 3: '0', 4: '1', 5: '0.8'}
+953	953		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryRedSmokeNew.prefab', 2: '2', 3: '1'}
+954	954		201							{1: '1', 2: '501131', 6: '-120', 7: '1'}
+955	955		301			DialogEnable				{1: '1', 3: 'At the heart of the swirling crimson chaos, you close your grip around her thirty-five-gram soul.'}
+956	956		301							{3: 'In the next instant, an unstoppable flood of demonic energy tears through her, remaking her entirely.'}
+957	957		401							{1: '2', 2: '2690'}
+958	958		502							{1: 'PanelActor1Shake'}
+959	959		301			RImgBg1Shake				{2: 'Lilith', 3: 'Aaaaah—!', 4: '1'}
+960	960		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '0'}
+961	961		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront87.png', 3: '1', 4: '0', 5: '0.3'}
+962	962		202							{1: '1'}
+963	963		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryRedSmokeNew.prefab', 4: '1'}
+964	964		306							{1: '1'}
+965	965		301							{3: 'Heavy snow swirls endlessly through the air, the howling winds threatening to swallow her anguished screams.'}
+966	966		301							"{3: ""But still she roars, determined that all three realms will hear her voice, and that they'll know she's no mangy dog dying forgotten in a web of deceit.""}"
+967	967		301							{3: 'She, the unbeaten card player of the Scorched Borderland, master gambler, the con artist who could fool the world itself, has clawed her way back from the depths of hell.'}
+968	968		301				DialogDisable			{3: 'No one will ever silence her again.'}
+969	969		306							
+970	970		302							"{2: '...Welcome to my game, ""Famine.""', 3: '971'}"
+971	971		401							{1: '2', 2: '1543'}
+972	972		301			DialogEnable				{3: 'The figure releases her chest, and the newly reborn Horseman rises from the snow-covered wasteland, steadying herself with her Moon Umbrella.'}
+973	973		301							{3: 'An endless hunger rages within her, screaming for her to devour everything in sight.'}
+974	974		301							"{3: ""From that moment forward, an insatiable hunger was planted deep within the Demon's heart. It's an appetite that could never be satisfied.""}"
+975	975		401							{1: '2', 2: '970804'}
+976	976		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '2'}
+977	977		301							{3: 'The umbrella spins with grace, forming a crimson shield that deflects the falling ice crystals.'}
+978	978		201							{1: '1', 2: '501297', 3: '9', 4: '-300'}
+979	979		301							"{1: '1', 2: '""Famine""', 3: ""Win big or lose everything. That's all there is when the stakes are real..."", 4: '1'}"
+980	980		204							{1: '1', 2: '2'}
+981	981		301				AniZhuanchangBegin			"{2: '""Famine""', 3: 'So tell me, Bloodsworn, are you ready to bet it all?', 4: '1'}"
+982	982		202							{1: '1', 6: '1'}
+983	983		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiSpecialFashionShop/FxUiSpecialFashionShopSnow.prefab'}
+984	984		401						2000.0	{1: '1', 2: '36'}
+985	985		401							{1: '1', 2: '6201'}
+986	986		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+987	987		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiSpecialFashionShop/FxUiSpecialFashionShopSnow.prefab', 2: '2'}
+988	988		304			AniZhuanchangEnd				{1: 'Go! I grant you the <color=#ff4e4eff>power</color> to deceive and overturn the world itself—', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 7: '-3', 10: '1'}
+989	989		304							{1: 'And slice through every moment with the cards you hold.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 7: '-1', 8: '1', 10: '1'}
+990	990		304							{1: '<size=55>Until every Angel tastes the sweet poison of your lies.</size>', 2: 'ff4e4eff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 7: '-3', 10: '1'}
+991	991		401							{1: '2', 2: '10112409'}
+992	992		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFreezeScreen.prefab', 2: '1'}
+993	993		304		1		AniZhuanchangBegin			{1: '<size=55>The endless blizzard continues to drive snow between their chattering teeth.</size>', 2: 'ff4e4eff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 7: '-1', 10: '1'}

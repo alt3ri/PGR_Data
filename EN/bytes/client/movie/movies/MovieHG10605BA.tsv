@@ -1,0 +1,71 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		302							{2: 'The base has been weirdly quiet lately.', 3: '4'}
+4	4		201							{1: '1', 2: '1031001', 4: '450'}
+5	5		201							{1: '2', 2: '1021001', 4: '-450'}
+6	6		301			DialogEnable				"{1: '1', 2: 'Liv', 3: ""Maybe it's because Kamui hasn't shown up recently."", 4: '1'}"
+7	7		301							{2: 'Lucia', 3: 'Strike Hawks are in charge of scouting the battlefields. They rarely have the chance for a long period of rest.', 4: '2'}
+8	8		302							"{2: ""I'm just used to having him around."", 3: '12', 4: 'It just feels a little empty here.', 5: '9'}"
+9	9		301							{2: 'Lucia', 3: 'Let me check the parts in our storage. Maybe Kamui will come back for his maintenance in the future.', 4: '2'}
+10	10		302							"{2: ""I'll go update the connection data as well."", 3: '11'}"
+11	11	17	301							"{2: 'Liv', 3: ""I'll also help with preparation."", 4: '1'}"
+12	12		202							{1: '1', 2: '2', 6: '1'}
+13	13		201							{1: '1', 2: '1011001'}
+14	14		301							"{1: '1', 2: 'Lee', 3: ""Don't get used to that."", 4: '1'}"
+15	15		302							{2: 'Do you miss him too, Lee?', 3: '16'}
+16	16	19	301							{2: 'Lee', 3: '...Of course not. I just find it so much quieter now.', 4: '1'}
+17	17		202							{1: '1', 2: '2', 6: '1'}
+18	18		201							{1: '1', 2: '1011001'}
+19	19		301							"{1: '1', 2: 'Lee', 3: ""I'll go check the device status and make sure it's running normally."", 4: '1'}"
+20	20		302							{2: 'See, Lee? You care!', 3: '21'}
+21	21		301							"{2: 'Lee', 3: ""I'm just doing this so that when the fool arrives, we can lock him inside the chamber immediately and shut him up."", 4: '1'}"
+22	22		202							{1: '1', 6: '1'}
+23	100		401							{1: '1', 2: '202'}
+24	23		301							{3: 'BANG—'}
+25	24		201							{1: '1', 2: '1081001', 4: '450'}
+26	25		201							{1: '2', 2: '500007', 4: '-450'}
+27	26		301			RImgBg1Shake				{1: '1', 3: 'It is a loud thump of something heavy hitting the wall.'}
+28	27		202							{1: '1', 2: '2', 6: '1'}
+29	28		201							{1: '1', 2: '1021001'}
+30	29		301							{1: '1', 2: 'Lucia', 3: 'Chrome?', 4: '1'}
+31	30		202							{1: '1', 6: '1'}
+32	31		201							{1: '1', 2: '1081001', 4: '450'}
+33	32		201							{1: '2', 2: '500007', 4: '-450'}
+34	33		301							{1: '1', 2: 'Chrome', 3: 'My apologies. I did tell him to stop moving.', 4: '2'}
+35	34		202							{1: '1', 2: '2', 6: '1'}
+36	35		201							{1: '1', 2: '1031001'}
+37	36		301							{1: '1', 2: 'Liv', 3: 'Kamui?!', 4: '1'}
+38	37		202							{1: '1', 6: '1'}
+39	38		201							{1: '1', 2: '1081001', 4: '450'}
+40	39		201							{1: '2', 2: '500007', 4: '-450'}
+41	40		301							{1: '1', 2: 'Kamui', 3: 'I said I can walk! Stop holding me, Capt!', 4: '1'}
+42	41		302							{2: 'What happened to him?', 3: '42', 4: 'How did he get that hurt?', 5: '42'}
+43	42		301							{2: 'Chrome', 3: 'He was acting impulsive and rushed into a swarm of Corrupted by himself.', 4: '2'}
+44	43		302							"{2: ""That's reckless."", 3: '44'}"
+45	44		301							"{2: 'Chrome', 3: ""Thanks to him, we did manage to save a few people who almost got devoured by the Corrupted. They're getting treated right now."", 4: '2'}"
+46	45		301							{2: 'Chrome', 3: 'Lee, get his other arm.', 4: '2'}
+47	46		203							{1: '1', 2: '0.25'}
+48	47		201							{1: '3', 2: '1011001', 4: '450'}
+49	48		301							{1: '1', 2: 'Lee', 3: 'Got it.', 4: '3'}
+50	49		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+51	50		201							{1: '1', 2: '1031001'}
+52	51		301							"{1: '1', 2: 'Liv', 3: ""I-I'll go calibrate the Maintenance Chamber."", 4: '1'}"
+53	52		201							{1: '1', 2: '1021001'}
+54	53		301							{1: '1', 2: 'Lucia', 3: 'I just checked. We have enough parts in our storage.', 4: '1'}
+55	54		302							{2: 'How can I help?', 3: '55'}
+56	55		201							{1: '1', 2: '1081001', 3: '2'}
+57	56		301							"{1: '1', 2: 'Kamui', 3: ""I'm fine! Everyone's just being a drama queen."", 4: '1'}"
+58	57		204							{1: '1', 2: '1'}
+59	58		301							"{2: 'Kamui', 3: ""Go rest up, Commandant! Don't worry about me."", 4: '1'}"
+60	59		301							"{2: 'Kamui', 3: ""I'm a Construct! As long as the Inver-Device isn't damaged, I'll be alright."", 4: '1'}"
+61	60		302							"{2: ""That doesn't mean you don't have to take care of yourself!"", 3: '61'}"
+62	61		204							{1: '1'}
+63	62		301							{2: 'Kamui', 3: '...Right. Sorry.', 4: '1'}
+64	63		302							"{2: 'Just do as they say.', 3: '101', 4: ""I don't need your apology. I need you in one piece."", 5: '64'}"
+65	101		204							{1: '1', 2: '1'}
+66	102	66	301							{2: 'Kamui', 3: 'Okay.', 4: '1'}
+67	64		204							{1: '1', 2: '1'}
+68	65		301							{2: 'Kamui', 3: 'Thanks, Commandant.', 4: '1'}
+69	66		204							{1: '1', 2: '2'}
+70	67		301		1		AniZhuanchangBegin			{2: 'Kamui', 3: 'The almighty Kamui will be back by your side in no time!', 4: '1'}

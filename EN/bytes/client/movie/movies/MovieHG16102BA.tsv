@@ -1,0 +1,292 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		301			DialogEnable	AniZhuanchangBegin			{3: 'Awakening from darkness, the little gray raven opened its eyes.'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+4	4		401							{1: '1', 2: '6244'}
+5	5		401							{1: '2', 2: '5786'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '4'}
+7	7		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6001_09.jpg'}
+8	8		301			AniZhuanchangEnd				"{3: ""Before it stretched an endless expanse of fragrant grass, as it found itself cradled in the gentle curve of a maiden's arms.""}"
+9	9		301							{2: '??', 3: '...Are you still in pain, little gray raven?', 18: '100013029'}
+10	10		301							{3: 'Her voice was firm, yet layered with sorrow.'}
+11	11		104							{1: '0|-100|-100', 2: '0.5'}
+12	12		301							{3: 'The little gray raven looked up to see the maiden smiling through her tears.'}
+13	13		302							{2: '(Touch her face)', 3: '14', 4: '(Make a sound to call to her)', 5: '16'}
+14	14		301							{3: 'It tried to reach for her face, but could only extend a battered wing. A sharp pain held it back. Her teardrops remained just beyond its reach.'}
+15	15	18	202							{1: '1'}
+16	16		301							{3: 'It tried to call out to her, but pain stole its voice. Following the ache, it found its wing stained crimson with blood.'}
+17	17		202							{1: '1'}
+18	18		301							{3: 'The maiden gathered scattered scraps of paper that swirled around them. In her hands, the tattered pages stirred to new life, transforming into soft gray feathers.'}
+19	19		301							"{3: ""Tenderly, she placed the new feathers over the little gray raven's wound, binding them with her tears.""}"
+20	20		301							{3: 'The wound closed, and the pain slowly ebbed away. She cupped the little gray raven in her palm and lifted it gently.'}
+21	21		301				AniZhuanchangBegin			{2: 'Maiden', 3: 'Go on, now... Return to your blue skies...', 18: '100013030'}
+22	22		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1017.jpg'}
+23	23		401							{1: '2', 2: '968'}
+24	24		301			AniZhuanchangEnd				{3: 'A strong wind swept past. Instinct took over—the raven spread its wings and soared.'}
+25	25		301							{3: 'Fly on, fly on... it climbed toward the distant horizon, back to the place from which it came.'}
+26	26		301							"{3: ""But the maiden... wouldn't she come too?""}"
+27	27		201							{1: '1', 2: '501396'}
+28	28		306							{1: '1'}
+29	29		301							"{1: '1', 3: ""The little gray raven couldn't help but look back. There stood the maiden in white, smiling and waving as if well acquainted with goodbyes.""}"
+30	30		202							{1: '1'}
+31	31		301							{3: 'Yet across that vast and desolate landscape, her figure seemed fragile, almost fragmented...'}
+32	32		302							{2: '(Fly to her)', 3: '33'}
+33	33		306							
+34	34		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '3'}
+35	35		104							{1: '0|0|-200', 2: '0.3'}
+36	36		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+37	37		402							{1: '5786'}
+38	38		402							{1: '968'}
+39	39		301				AniZhuanchangBegin			{3: 'To her surprise, the little gray raven turned and landed once more in her palm.'}
+40	40		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6001_08.jpg'}
+41	41		201							{1: '1', 2: '501396'}
+42	42		301			AniZhuanchangEnd				{1: '1', 2: 'Maiden', 3: 'Are you lost?', 4: '1', 18: '100013031'}
+43	43		302							{2: '(Shake head)', 3: '44'}
+44	44		204							{1: '1', 2: '2'}
+45	45		301							"{2: 'Maiden', 3: ""You mean... you just don't want me to feel lonely?"", 4: '1', 18: '100013032'}"
+46	46		203							{1: '1', 2: '0.5', 5: '-200'}
+47	47		301							{3: 'Overjoyed, she held it close to her heart.'}
+48	48		301				AniZhuanchangBegin			{3: 'And for the first time, the little gray raven saw her smile, without a single tear.'}
+49	49		502							{1: 'DialogDisable'}
+50	50		202							{1: '1'}
+51	51		101			AniZhuanchangEnd			500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+52	52		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '4', 5: '1'}
+53	53		307				AniZhuanchangBegin		500.0	{1: '——The Maiden of Eden II——', 3: '70', 4: 'ffffffff'}
+54	54		301							{3: '——The Maiden of Eden II——'}
+55	55		307							{2: '1'}
+56	56		401						1800.0	{1: '1', 2: '36'}
+57	57		401							{1: '1', 2: '209'}
+58	58		307			AniZhuanchangEnd				{1: 'Commandant... Commandant?', 3: '50'}
+59	59		301							{3: 'Commandant... Commandant?'}
+60	60		307							{2: '1'}
+61	61		302				AniZhuanchangBegin			{2: '...', 3: '62'}
+62	62		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory744.jpg'}
+63	63		201			AniZhuanchangEnd				{1: '1', 2: '501378', 3: '3'}
+64	64		301			DialogEnable				{1: '1', 2: '??', 3: 'Commandant!', 4: '1', 18: '100013033'}
+65	65		302							{2: 'I...', 3: '66'}
+66	66		202							{1: '1'}
+67	67		306							{1: '1'}
+68	68		301							{3: 'You instinctively stare at your hands, turning them over, searching for a trace of gray feathers, but finding only familiar skin.'}
+69	69		306							
+70	70		301							{3: 'What was that? Why would you even look for feathers on your body?'}
+71	71		201							{1: '1', 2: '501378', 3: '15'}
+72	72		301							{1: '1', 2: 'Liv', 3: 'Are you okay, Commandant? Is the heat getting to you again?', 4: '1', 18: '100013034'}
+73	73		301							"{3: ""Liv's hand presses a cool, worried palm against your forehead.""}"
+74	74		302							"{2: ""I'm okay."", 3: '75'}"
+75	75		204							{1: '1'}
+76	76		301							"{2: 'Liv', 3: ""I've checked, and it does seem there's nothing unusual."", 4: '1', 18: '100013035'}"
+77	77		204							{1: '1', 2: '1'}
+78	78		301							"{2: 'Liv', 3: ""I'm right here with you. Don't push yourself. If you feel unwell at all, just let me know."", 4: '1', 18: '100013036'}"
+79	79		302							{2: 'Okay.'}
+80	80		202							{1: '1'}
+81	81		301							"{3: ""Following the children's directions toward Vennquis, you walk beneath a forest canopy that shields you from the sweltering sun. The air hums with the songs of birds and insects, a living soundtrack to your journey.""}"
+82	82		201							{1: '1', 2: '501378', 3: '2'}
+83	83		301				AniZhuanchangBegin			{1: '1', 2: 'Liv', 3: 'About five more minutes, and we should be there.', 4: '1', 18: '100013037'}
+84	84		202							{1: '1', 6: '1'}
+85	85		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory530.jpg'}
+86	86		401						1800.0	{1: '1', 2: '36'}
+87	87		401							{1: '1', 2: '5061'}
+88	88		301			AniZhuanchangEnd				{3: 'As you move along the final stretch of path, the scenery ahead begins to open, slowly, then all at once.'}
+89	89		301							{3: 'It feels as though a god had swept a careless hand across the mortal realm, spilling ink and color with joyous abandon. Mountains and sky bleed together in a dreamy haze, forming a fantastical tapestry.'}
+90	90		201							{1: '1', 2: '501378', 3: '1'}
+91	91		301							{1: '1', 2: 'Liv', 3: 'This is it, Vennquis.', 4: '1', 18: '100013038'}
+92	92		202							{1: '1'}
+93	93		301							"{3: ""Clustered against the mountainside are low, old-fashioned houses, many showing their age. Scattered bricks and weathered tiles mingle with the soil along the paths, telling quiet stories of time's passage.""}"
+94	94		301							"{3: ""The mountain breeze carries the scent of herbs and damp earth, and for a moment, it's easy to believe you've stumbled into a hidden paradise.""}"
+95	95		201							{1: '1', 2: '500163'}
+96	96		301							"{1: '1', 2: '??', 3: ""Beautiful, isn't it?"", 4: '1', 18: '100013039'}"
+97	97		306							{1: '1'}
+98	98		301							{3: 'Then, a figure materializes beside you. No, not quite a figure. A female Construct, splashed from head to toe in vibrant paint.'}
+99	99		301							{3: 'She carries an absurdly large drawing board under one arm, seemingly heading out for a sketch. Paintbrushes sprout from every pocket, bristling with color and potential.'}
+100	100		306							
+101	101		301							"{2: 'Vimine', 3: ""Oh! Where are my manners? I'm Vimine, with the WGAA. A pleasure to meet you both."", 4: '1', 18: '100013040'}"
+102	102		203							{1: '1', 2: '0.25', 3: '400'}
+103	103		201							{1: '2', 2: '501378', 3: '1', 4: '-400'}
+104	104		301							"{1: '1', 2: 'Liv', 3: ""Nice to meet you, Ms. Vimine. We're—"", 4: '2', 18: '100013041'}"
+105	105		301							"{2: 'Vimine', 3: ""—From Gray Raven, I know. That uniform your companion's wearing is a bit of a giveaway."", 4: '1', 18: '100013042'}"
+106	106		301				DialogDisable			"{2: 'Vimine', 3: ""Still, it's not every day you see Task Force members all the way out in Vennquis."", 4: '1', 18: '100013043'}"
+107	107		302							"{2: ""We're here to conduct research for a project."", 3: '108', 4: ""We're here on vacation."", 5: '110'}"
+108	108		302							"{2: '""A Study on the Micro-Interactivity of Positive Affective Expression Behaviors in Dyadic Relationships"".', 3: '109'}"
+109	109	113	301			DialogEnable				"{2: 'Vimine', 3: ""Oh, a sociology project! I get it now... You're here on your honeymoon!"", 4: '1', 18: '100013044'}"
+110	110		301			DialogEnable				{2: 'Vimine', 3: 'Huh, I was hoping for something a bit more romantic. Like a honeymoon, perhaps?', 4: '1', 18: '100013045'}
+111	111		301							{3: 'Vimine gives Liv a mischievous wink.'}
+112	112		204							{1: '2', 2: '10'}
+113	113		301							"{2: 'Liv', 3: ""W-we're here to..."", 4: '2', 18: '100013046'}"
+114	114		302							"{2: ""This is Liv's hometown. I'm tagging along on her visit.""}"
+115	115		202							{1: '2', 6: '1'}
+116	116		203							{1: '1', 2: '0.25'}
+117	117		301							{2: 'Vimine', 3: 'Meeting the parents, then?', 4: '1', 18: '100013047'}
+118	118		302							"{2: ""Liv's... parents?"", 3: '119'}"
+119	119		301							"{2: 'Vimine', 3: ""But I'm afraid they're probably not in Vennquis anymore."", 4: '1', 18: '100013048'}"
+120	120		301							{2: 'Vimine', 3: 'After the Punishing Virus outbreak, nearly everyone scrambled to get aboard Babylonia. The irony is, this area was barely touched, protected by the mountains and the sea.', 4: '1', 18: '100013049'}
+121	121		301							"{2: 'Vimine', 3: ""Now that Babylonia's officially reclaiming the zone, the WGAA sent a few of us Constructs back to sketch the landscapes."", 4: '1', 18: '100013050'}"
+122	122		202							{1: '1'}
+123	123		301							{3: 'People in WGAA uniforms are sketching everywhere. So this is the birthplace of those exhibition paintings.'}
+124	124		301							{3: 'Under the blistering sky, these moss-clad ruins sleep low to the earth, their haunting beauty laid bare.'}
+125	125		201							{1: '1', 2: '500163'}
+126	126		301							"{1: '1', 2: 'Vimine', 3: ""I've almost painted everything around here, actually. You should come see the piece I'm working on up at the windmill tower."", 4: '1', 18: '100013051'}"
+127	127		302							{2: '(Look at Liv)', 3: '128'}
+128	128		202							{1: '1', 6: '1'}
+129	129		201							{1: '1', 2: '501378'}
+130	130		301							"{1: '1', 2: 'Liv', 3: ""That's very kind, but... we were hoping to go home first."", 4: '1', 18: '100013052'}"
+131	131		202							{1: '1', 6: '1'}
+132	132		201							{1: '1', 2: '500163'}
+133	133		301							"{1: '1', 2: 'Vimine', 3: ""Of course. That's only natural. After all this time, you're finally back."", 4: '1', 18: '100013053'}"
+134	134		301							{2: 'Vimine', 3: '...', 4: '1', 18: '100013054'}
+135	135		301							{2: 'Vimine', 3: 'Antonia would be so happy to see you home.', 4: '1', 18: '100013055'}
+136	136		203							{1: '1', 2: '0.25', 3: '400'}
+137	137		201							{1: '2', 2: '501378', 3: '3', 4: '-400'}
+138	138		301							{1: '1', 2: 'Liv', 3: '...You knew my mother?', 4: '2', 18: '100013056'}
+139	139		301							{2: 'Vimine', 3: 'Well, of course... Mmph—', 4: '1', 18: '100013057'}
+140	140		202							{1: '1', 2: '2', 6: '1'}
+141	141		401							{1: '2', 2: '4910'}
+142	142		301							"{3: 'As she speaks, Vimine lifts her drawing board and turns to leave, casting a look at Liv that seems to say, ""I once held you when you were small.""'}"
+143	143		201							{1: '1', 2: '500163'}
+144	144		301							{1: '1', 2: 'Vimine', 3: 'I held you once when you were just a little thing.', 4: '1', 18: '100013058'}
+145	145		202							{1: '1', 6: '1'}
+146	146		201							{1: '1', 2: '501378', 3: '3'}
+147	147		301							"{1: '1', 2: 'Liv', 3: ""Wait, Ms. Vimine! If you were a friend of my mother's, would you like to come with us?"", 4: '1', 18: '100013059'}"
+148	148		202							{1: '1', 6: '1'}
+149	149		201							{1: '18', 2: '500163', 4: '-410', 5: '-300', 6: '400'}
+150	150		301							"{1: '1', 2: 'Vimine', 3: ""I'd love to, but I need to catch this light while it lasts. The wind's been picking up. It'd be a shame if a hurricane rolled in and ruined everything."", 4: '18', 18: '100013060'}"
+151	151		302							{2: 'A hurricane?', 3: '152'}
+152	152		301							"{2: 'Vimine', 3: ""It's Vennquis' summer; it happens. But don't mind me, I'm just making excuses to finish my work."", 4: '18', 18: '100013061'}"
+153	153		301							"{2: 'Vimine', 3: ""Anyway, I'll be camped out on the other side of the mountain for the next few days. Feel free to stop by! Bye for now!"", 4: '18', 18: '100013062'}"
+154	154		202							{1: '18', 6: '1'}
+155	155		201							{1: '1', 2: '501378'}
+156	156		301							{1: '1', 2: 'Liv', 3: 'Yeah... Goodbye, Ms. Vimine.', 4: '1', 18: '100013063'}
+157	157		202							{1: '1'}
+158	158		301							{3: 'Vimine offers a casual, backward wave of her free arm, then turns her steps toward the waiting mountains.'}
+159	159		201							{1: '1', 2: '501378', 3: '2'}
+160	160		301				AniZhuanchangBegin			"{1: '1', 2: 'Liv', 3: ""Let's go too, Commandant. We're almost there."", 4: '1', 18: '100013064'}"
+161	161		202							{1: '1'}
+162	162		401						1800.0	{1: '1', 2: '36'}
+163	163		401							{1: '1', 2: '5070'}
+164	164		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory609.jpg'}
+165	165		301			AniZhuanchangEnd				{3: 'As you pass the wooden fence, the sunlight shines with the brilliance of her childhood memory...'}
+166	166		401							{1: '2', 2: '5810'}
+167	167		301							{3: 'A gust of wind brushes the courtyard gate, and its long, creaking sigh sounds just like a gently swaying swing.'}
+168	168		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+169	169		402							{1: '5810'}
+170	170		504							{1: '0.7'}
+171	171		201							{1: '1', 2: '501399', 7: '1'}
+172	172		301							{1: '1', 2: 'Antonia', 3: 'Liv?', 4: '1', 18: '100013065'}
+173	173		202							{1: '1', 6: '1'}
+174	174		201							{1: '1', 2: '500049'}
+175	175		301							{1: '1', 2: 'Liv', 3: 'Mom? Mom!', 4: '1', 18: '100013066'}
+176	176		401							{1: '2', 2: '4331'}
+177	177		203							{1: '1', 2: '0.3', 3: '400'}
+178	178		202							{1: '1'}
+179	179		301				AniZhuanchangBegin			{3: 'Seeing the silhouette from her dreams, Liv breaks into a sprint without a second thought.'}
+180	180		201							{1: '1', 2: '501399'}
+181	181		301			AniZhuanchangEnd	AniZhuanchangBegin			"{1: '1', 2: 'Antonia', 3: ""Easy now, Liv. I'm right here."", 4: '1', 18: '100013067'}"
+182	182		202							{1: '1', 6: '1'}
+183	183		201							{1: '1', 2: '500049'}
+184	184		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '3'}
+185	185		301			AniZhuanchangEnd	AniZhuanchangBegin			{1: '1', 2: 'Liv', 3: 'Huff... Huff...', 4: '1', 18: '100013068'}
+186	186		202							{1: '1', 6: '1'}
+187	187		502						400.0	{1: 'DialogDisable'}
+188	188		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+189	189		201			AniZhuanchangEnd				{1: '1', 2: '501399'}
+190	190		201							{1: '2', 2: '500049', 4: '-600'}
+191	191		203						300.0	{1: '2', 2: '0.25', 3: '-200'}
+192	192		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndWhite.prefab', 2: '2', 3: '1'}
+193	193		202							{1: '1'}
+194	194		301			DialogEnable				"{3: ""The moment her mother turns, Liv throws herself into the hazy figure's embrace. She feels a hand lovingly stroking her long hair, and then the form dissolves like sand in a stream.""}"
+195	195		301				DialogDisable			{3: 'Liv stands frozen, utterly unable to comprehend the void left behind.'}
+196	196		302							{2: 'Liv.', 3: '197'}
+197	197		202							{1: '2', 6: '1'}
+198	198		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndWhite.prefab', 4: '1'}
+199	199		401							{1: '1', 2: '6226'}
+200	200		401							{1: '2', 2: '4387'}
+201	201		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+202	202		504							{1: '0'}
+203	203		201							{1: '1', 2: '501378', 7: '1'}
+204	204		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Huh?', 4: '1', 18: '100013069'}
+205	205		302							{2: 'As soon as we got here, you ran straight to this spot.', 3: '206'}
+206	206		204							{1: '1', 2: '8'}
+207	207		301							{2: 'Liv', 3: 'Back then... whenever I came home, my mom would always be waiting for me right here on this swing...', 4: '1', 18: '100013070'}
+208	208		202							{1: '1'}
+209	209		301							{3: 'Liv carefully pushes aside the prickly overgrowth and takes your hand, leading you toward the weathered door.'}
+210	210		401						600.0	{1: '2', 2: '5482'}
+211	211		401						200.0	{1: '2', 2: '5482'}
+212	212		301							{3: 'Knock knock. Knock knock. She timidly repeats the old pattern from years gone by.'}
+213	213		301							{3: 'The house offers only silence in return.'}
+214	214		302							"{2: ""This doorknob isn't moving at all... Liv, did you bring a key?"", 3: '215'}"
+215	215		201							{1: '1', 2: '501378'}
+216	216		301							"{1: '1', 2: 'Liv', 3: ""I didn't take one when I left. But it's okay. The front door is usually locked, but the back door might be open. I'll go check."", 4: '1', 18: '100013071'}"
+217	217		302							"{2: ""Sounds good. Just in case it's locked too, I'll see if I can find another way in."", 3: '218'}"
+218	218		301							{2: 'Liv', 3: 'Okay.', 4: '1', 18: '100013072'}
+219	219		202							{1: '1'}
+220	220		401							{1: '2', 2: '1085'}
+221	221		301							{3: 'Targeting a window shrouded in cobwebs, you gently pry at its loose edges.'}
+222	222		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+223	223		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory59.jpg'}
+224	224		401							{1: '2', 2: '4812'}
+225	225		301							{3: 'Shortly after Liv vanishes from sight, you slip effortlessly into the empty house, not even using the toolkit Lee had so insistently prepared.'}
+226	226		302							{2: '(So quiet in here...)', 3: '227'}
+227	227		301				AniZhuanchangBegin			{3: 'Inside, dust blankets the wooden floors, and pale walls stand damp and moldy. Every sign points to the same inescapable conclusion: no one has lived here for a very long time.'}
+228	228		401						2000.0	{1: '1', 2: '36'}
+229	229		401							{1: '1', 2: '169'}
+230	230		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory609.jpg'}
+231	231		306						500.0	{1: '1'}
+232	232		301			AniZhuanchangEnd				{3: 'Liv wanders along the edge of the house, her footsteps deliberately slow. She has never liked the front door.'}
+233	233		301				DialogDisable			{3: 'When Antonia was still alive, Liv used to play with the sheep in the garden, and when she grew tired, she would come inside directly through the back door near the yard.'}
+234	234		307							"{1: '""Liv, welcome home.""', 3: '60'}"
+235	235		301							"{3: '""Liv, welcome home.""', 6: '1'}"
+236	236		307							{2: '1'}
+237	237		301			DialogEnable				"{1: '1', 3: ""Whenever that door opened, she would be met with her mother's loving smile or the affectionate fussing of Calliope, the maid.""}"
+238	238		202							{1: '1'}
+239	239		301							{3: 'There were candies, plush toys, and the safe warmth of a place where a child could fall asleep without fear.'}
+240	240		301				AniZhuanchangBegin			{3: 'But after her mother passed away, no one ever waited for little Liv at the back door again.'}
+241	241		306							
+242	242		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory354.png'}
+243	243		201							{1: '1', 2: '501378'}
+244	244		301			AniZhuanchangEnd				{1: '1', 2: 'Liv', 3: '...', 4: '1', 18: '100013073'}
+245	245		202							{1: '1'}
+246	246		301				AniZhuanchangBegin			{3: 'Now she stands on the front steps, hesitating, unable to make herself go in.'}
+247	247		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+248	248		201							{1: '1', 2: '500050'}
+249	249		301			AniZhuanchangEnd				"{1: '1', 3: 'If her father answered the door, he would say, ""Go on inside. I have a meeting tonight.""'}"
+250	250		202							{1: '1', 6: '1'}
+251	251		201							{1: '1', 2: '500051'}
+252	252		301							"{1: '1', 3: 'If it were her stepmother, she would say, ""Back so late? Have you done your chores?""'}"
+253	253		202							{1: '1', 6: '1'}
+254	254		201							{1: '1', 2: '500053', 4: '400'}
+255	255		201							{1: '2', 2: '500052', 4: '-400'}
+256	256		301				AniZhuanchangBegin			{1: '1', 3: 'Her stepbrother would brag about his grades; her stepsister would fish for compliments on her new dress.'}
+257	257		202							{1: '1', 2: '2', 6: '1'}
+258	258		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory354.png'}
+259	259		301			AniZhuanchangEnd				{3: 'Childhood taught her that the front door was not warm. Not welcoming. It was cold and impersonal, nothing like the home that used to welcome little Liv back.'}
+260	260		401							{1: '2', 2: '12033602', 3: '0.5'}
+261	261		301							{3: 'Time sprouts branches and vines at her feet, twisting up her legs, wrapping around her body. With every step she takes, the bindings tighten.'}
+262	262		301				DialogDisable			"{3: 'They whisper. They scream at her, ""Don\'t go back. No one is waiting for you.""'}"
+263	263		104							{1: '0|0|-100', 2: '0.4'}
+264	264		301			DialogEnable				{3: 'By the time she finally reaches the door, she is tangled in green, caged in leaves and twisting tendrils. Struggling, she pushes her fingers through a gap of faint light and knocks.'}
+265	265		401						600.0	{1: '2', 2: '5482'}
+266	266		301							"{3: ""Knock. Knock. Knock. Maybe this time her father wouldn't be in a hurry. Maybe this time she'd see Calliope's warm smile.""}"
+267	267		301							{3: 'Even though those wishes had long since faded into nothing.'}
+268	268		301							{3: 'Who knows?'}
+269	269		401							{1: '1', 2: '36'}
+270	270		401							{1: '2', 2: '754'}
+271	271		301				DialogDisable			{3: 'Perhaps all she hoped for was that when the door opened, someone would simply say:'}
+272	272		201							{1: '1', 2: '500678'}
+273	273		302							{2: 'Liv...'}
+274	274		307				AniZhuanchangBegin			{1: 'Welcome home.', 3: '60'}
+275	275		301							{3: 'Welcome home.'}
+276	276		307						500.0	{2: '1', 6: '1'}
+277	277		401							{1: '1', 2: '6225'}
+278	278		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory637.jpg'}
+279	279		201			DialogEnable				{1: '1', 2: '501378', 3: '15'}
+280	280		301			AniZhuanchangEnd				{1: '1', 2: 'Liv', 3: '...', 4: '1', 18: '100013074'}
+281	281		202							{1: '1'}
+282	282		401							{1: '2', 2: '4798'}
+283	283		301							{3: 'In an instant, the vines and leaves that bind her wither and fall away.'}
+284	284		302							{2: '(Spread arms)', 3: '285'}
+285	285		301							{3: 'Through the doorway rushes all the warmth of days long past.'}
+286	286		201							{1: '1', 2: '501378', 3: '1'}
+287	287		301							{1: '1', 2: 'Liv', 3: 'Commandant...', 4: '1', 18: '100013075'}
+288	288		301							"{2: 'Liv', 3: ""I'm back."", 4: '1', 18: '100013076'}"
+289	289		204							{1: '1', 2: '9'}
+290	290		203							{1: '1', 2: '0.5', 5: '-200'}
+291	291		301		1		AniZhuanchangBegin			{3: 'With hurried steps, Liv stumbles into the embrace, into a harbor her soul has not known for countless years.'}

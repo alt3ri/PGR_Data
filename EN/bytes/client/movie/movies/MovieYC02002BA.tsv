@@ -1,0 +1,187 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: 'What happened to Lamia was a long story.'}
+4	4		301							"{3: ""But we need to go through it to explain why she ended up in The Merciful One's camp.""}"
+5	5		301				AniZhuanchangBegin			"{3: ""So, let's begin.""}"
+6	6		504							{1: '0.7'}
+7	7		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory279.png'}
+8	8		201							{1: '1', 2: '500026'}
+9	9		301			AniZhuanchangEnd				"{1: '1', 2: 'Lee', 3: ""This is what you're after, isn't it?"", 4: '1'}"
+10	10		301							"{3: ""A gleaming white cube appears on Lee's fingertips—Huaxu's key, given by Roland earlier.""}"
+11	11		301							{3: 'He hands Lucia the key before pointing his gun at Lamia.', 4: '1'}
+12	12		203							{1: '1', 2: '0.25', 3: '-400'}
+13	13		201							{1: '2', 2: '500165', 3: '1', 4: '400'}
+14	14		301							{1: '1', 2: 'Lamia', 3: 'Hmph... Guys with instincts are the worst.', 4: '2'}
+15	15		301							"{2: 'Lee', 3: ""Can't let an Ascendant get ahold of it again."", 4: '1'}"
+16	16		301							"{2: 'Lamia', 3: ""...Ascendant? Pfft, you really are pretty clueless, aren't you?"", 4: '2'}"
+17	17		301							{2: 'Lee', 3: 'What are you saying?', 4: '1'}
+18	18		301							"{2: 'Lamia', 3: ""Hmm... I'll get nagged if I say another word. You're nowhere nearly as scary as that guy."", 4: '2'}"
+19	19		301							"{2: 'Lamia', 3: ""Try as you may, I'll get what I want eventually. And this time... you're not catching me."", 4: '2'}"
+20	20		203							{1: '1', 2: '0.25'}
+21	21		202							{1: '2'}
+22	22		301							{3: 'Lamia flicks her tongue out to taunt them before disappearing into thin air.', 4: '2'}
+23	23		202							{1: '1', 6: '1'}
+24	24		301							"{2: 'Lamia', 3: '(Eek... If this road is destroyed, I\'ll have to wait at the ""end""...)'}"
+25	25		301				AniZhuanchangBegin			{2: 'Lamia', 3: '(Better not show up in front of them again. There is only one shot...)'}
+26	26		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+27	27		301			AniZhuanchangEnd				"{3: ""Lamia was going to seize Huaxu's key from the exhausted Babylonia members, but the explosion and collapse of the facility have brought unexpected changes to Lamia's plan.""}"
+28	28		301				AniZhuanchangBegin			"{3: 'Lamia managed to get the thing that ""he"" wanted, but she finds that if she doesn\'t run, she will be buried alive with the entire facility.'}"
+29	29		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory279.png'}
+30	30		401							{1: '2', 2: '1503'}
+31	31		502							{1: 'RImgBg1Shake'}
+32	32		201							{1: '1', 2: '500165'}
+33	33		301			AniZhuanchangEnd				{1: '1', 2: 'Lamia', 3: 'Eek! Not again!', 4: '1'}
+34	34		301							{2: 'Lamia', 3: 'Well then...', 4: '1'}
+35	35		202							{1: '1', 6: '1'}
+36	36		301							{3: 'Lamia gathers strength from all four legs, leaping toward the top of the ruins like a locust.'}
+37	37		401							{1: '2', 2: '10007502'}
+38	38		401							{1: '2', 2: '1503'}
+39	39		201							{1: '1', 2: '500165'}
+40	40		301			RImgBg1Shake				{1: '1', 2: 'Lamia', 3: 'Gargh—!', 4: '1'}
+41	41		202							{1: '1', 6: '1'}
+42	42		301							{3: 'A steel bar loses its hinge and swings down.'}
+43	43		301				AniZhuanchangBegin			{3: 'Lamia is in mid-air and has nowhere to run. She is knocked sideways, slamming into the ruins on the opposite site.'}
+44	44		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory278.png'}
+45	45		301			AniZhuanchangEnd				{3: 'The impact pushes Lamia all the way to the other side of the ruins. Meanwhile, right underneath her...'}
+46	46		301							{3: 'Roland sits at the bottom of a crater, watching the Red Tide pouring down from the broken pipes. Beside him lies the other ashen Hetero-Creature, now completely lifeless.'}
+47	47		301							{3: 'He picks up his broken left arm, trying to match it up with where it fractures from his shoulder, before putting it down disappointingly.'}
+48	48		201							{1: '1', 2: '500165'}
+49	49		301							"{1: '1', 2: 'Lamia', 3: ""...It's over... It's all over... I'm the only one left..."", 4: '1'}"
+50	50		202							{1: '1', 6: '1'}
+51	51		301							{3: 'This group of Ascendants, led by Luna, is facing inevitable destruction, Lamia believes.'}
+52	52		301							{3: 'But she refuses to go down with it.'}
+53	53		301							{3: 'She wants to survive. She will survive, no matter what she has to do...'}
+54	54		201							{1: '1', 2: '500165'}
+55	55		301							"{1: '1', 2: 'Lamia', 3: ""Dammit... I won't die here... Eeaaagghhh!"", 4: '1'}"
+56	56		202							{1: '1', 6: '1'}
+57	57		301							{3: 'She forces herself up, clinging onto every single protrusion of the ruins.'}
+58	58		301							{3: 'One step after another.'}
+59	59		301							"{3: 'Every step means she is closer to ""survival.""'}"
+60	60		301							"{3: 'Every step means she is moving further away from ""those people.""'}"
+61	61		301							{3: 'But Lamia has to do it. Because she must live on.'}
+62	62		301				AniZhuanchangBegin			{3: 'She sees the sun outside—'}
+63	63		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory71.jpg'}
+64	64		401							{1: '1', 2: '204'}
+65	65		504							{1: '0'}
+66	66		201							{1: '1', 2: '500165', 4: '450'}
+67	67		201							{1: '2', 2: '500334', 4: '-450'}
+68	68		301			AniZhuanchangEnd				{1: '1', 2: 'Lamia', 3: '(If I ever tell Roland that I watched Miss Luna disappear and watched him die without doing anything...)', 4: '1'}
+69	69		301							"{2: 'Lamia', 3: ""(...No! It's too scary! He's going to kill me for sure!)"", 4: '1'}"
+70	70		301							{2: 'Lamia', 3: 'Remember the Polyphage? It was a complete mess...', 4: '1'}
+71	71		301							"{2: 'Lamia', 3: ""I couldn't find you after that..."", 4: '1'}"
+72	72		301							{2: 'Roland', 3: '...', 4: '2'}
+73	73		301							{2: 'Lamia', 3: '(Will he believe me? Will he?)', 4: '1'}
+74	74		301							"{2: 'Roland', 3: ""...Whatever. I was lucky to survive it. You couldn't really do anything even if you were there."", 4: '2'}"
+75	75		301							{2: 'Lamia', 3: '...Yeah, exactly...', 4: '1'}
+76	76		301							{2: 'Lamia', 3: '(S-safe...)', 4: '1'}
+77	77		301							{2: 'Roland', 3: 'What happened after? Why were you in the camp of The Merciful One?', 4: '2'}
+78	78		301							{2: 'Roland', 3: 'You seemed like you wanted to follow her.', 4: '2'}
+79	79		301				AniZhuanchangBegin			"{2: 'Lamia', 3: ""Um, that's because..."", 4: '1'}"
+80	80		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory9.jpg'}
+81	81		504							{1: '0.7'}
+82	82		202							{1: '1', 2: '2', 6: '1'}
+83	83		301			AniZhuanchangEnd				"{3: ""After Lamia left, she completed the deal. But someone didn't seem to think this way.""}"
+84	84		301							{3: 'She has only been walking on the wasteland for a few days before finding out someone has been watching her.'}
+85	85		201							{1: '1', 2: '500165'}
+86	86		301							"{1: '1', 2: 'Lamia', 3: ""(...What's going on? I already changed my route many times, but I still feel like being watched and chased...)"", 4: '1'}"
+87	87		301							{3: 'Lamia has no choice but to give up hiding or staying. She departs once again, hoping to get rid of the pursuer.'}
+88	88		301							{3: 'And then—'}
+89	89		401							{1: '2', 2: '10001004'}
+90	90		301							{2: 'Lamia', 3: 'Eek?!', 4: '1'}
+91	91		202							{1: '1', 6: '1'}
+92	92		301							"{3: ""Two shells fly past Lamia's both sides, kicking up a lot of dust from the ground. She looks back at their source and finally gets a vision of the chaser—""}"
+93	93		301							"{3: ""It's a black figure rapidly approaching from the sky.""}"
+94	94		201							{1: '1', 2: '500326'}
+95	95		301							"{1: '1', 2: '???', 3: 'You got ""that thing."" Hand it over.', 4: '1'}"
+96	96		201							{1: '1', 2: '500165'}
+97	97		301							{1: '1', 2: 'Lamia', 3: '...!', 4: '1'}
+98	98		301							{2: 'Lamia', 3: 'But I already gave it away...', 4: '1'}
+99	99		201							{1: '1', 2: '500326'}
+100	100		301							{1: '1', 2: '???', 3: 'Is that so?', 4: '1'}
+101	101		301							"{2: '???', 3: ""...Guess I'll just take it off your corpse."", 4: '1'}"
+102	102		201							{1: '1', 2: '500165'}
+103	103		301							{1: '1', 2: 'Lamia', 3: '...???', 4: '1'}
+104	104		202							{1: '1', 6: '1'}
+105	105		301							"{3: ""Before Lamia can explain, numerous missiles are launched from the chaser's giant wings, flying toward her...""}"
+106	106		401							{1: '2', 2: '10007502'}
+107	107		504							{1: '0'}
+108	108		101						5000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+109	109		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory71.jpg'}
+110	110		201							{1: '1', 2: '500165', 4: '450'}
+111	111		201							{1: '2', 2: '500334', 4: '-450'}
+112	112		301			AniZhuanchangEnd				{1: '1', 2: 'Lamia', 3: 'I have been chased ever since... Could not find anywhere to take a break.', 4: '1'}
+113	113		301							"{3: ""Until I got near The Merciful One's camp... That black guy circled around and left. They might have some sort of agreement.""}"
+114	114		301							{2: 'Roland', 3: '...', 4: '2'}
+115	115		301							{2: 'Lamia', 3: 'After that... I just saw you come out of her tent...', 4: '1'}
+116	116		301							{2: 'Lamia', 3: 'Speaking of which, Roland, you look a lot different now... What happened?', 4: '1'}
+117	117		301							{2: 'Roland', 3: 'If you ask me... She saved me, probably.', 4: '2'}
+118	118		301							{2: 'Lamia', 3: '...Saved you?', 4: '1'}
+119	119		301							{2: 'Roland', 3: 'I just bought myself a chance, taking advantage of her uninhibited and unpredictable nature.', 4: '2'}
+120	120		301							{2: 'Roland', 3: 'Even so, I took a great risk trying to set up an agent. Gotta be more careful in the future.', 4: '2'}
+121	121		301							"{2: 'Roland', 3: 'Now there is a second chance, ""we"" must find Luna again.', 4: '2'}"
+122	122		301							{2: 'Lamia', 3: 'Sigh... But where shall we go...?', 4: '1'}
+123	123		301							"{2: 'Roland', 3: ""...That's a problem indeed."", 4: '2'}"
+124	124		301							"{2: 'Lamia', 3: ""(Even Roland doesn't have a clue... Such a rare sight.)"", 4: '1'}"
+125	125		301							"{2: 'Lamia', 3: ""(But if that's the case...)"", 4: '1'}"
+126	126		301							"{2: 'Lamia', 3: ""Why don't we split up? That way, we will have a better chance..."", 4: '1'}"
+127	127		301							{2: 'Lamia', 3: '(As long as I can leave Roland for a moment, I can get away...)', 4: '1'}
+128	128		301							{2: 'Roland', 3: 'Actually, no.', 4: '2'}
+129	129		301							{2: 'Lamia', 3: 'Eek?', 4: '1'}
+130	130		301							"{2: 'Roland', 3: ""I am just as clueless as you are. We won't get anywhere if we split up."", 4: '2'}"
+131	131		301							{2: 'Roland', 3: 'Both of us are equally worn out. Better not divide our strength even further.', 4: '2'}
+132	132		301							{2: 'Roland', 3: 'Or...', 4: '2'}
+133	133		301							"{3: 'Before Roland says ""are you planning to run away,"" Lamia quickly replies.'}"
+134	134		301				AniZhuanchangBegin			"{2: 'Lamia', 3: ""L-let's move together then!"", 4: '1'}"
+135	135		202							{1: '1', 2: '2', 6: '1'}
+136	136		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+137	137		301			AniZhuanchangEnd				"{3: ""Lamia doesn't mind if Roland doubts her, as long as he doesn't become an enemy.""}"
+138	138		301							{3: 'If she is lucky, she may find enough chips for her next deal with Murray along the way.'}
+139	139		301							{2: 'Lamia', 3: 'Guess we just have to move together for now.'}
+140	140		301							{3: 'Instead of thinking where to go, Lamia would rather let those around her decide her direction.'}
+141	141		301				AniZhuanchangBegin			"{3: ""She can then focus on how to survive. This is what she has always been doing, so the decision isn't hard to make.""}"
+142	142		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory71.jpg'}
+143	143		201							{1: '1', 2: '500165', 4: '450'}
+144	144		201							{1: '2', 2: '500334', 4: '-450'}
+145	145		301			AniZhuanchangEnd				{1: '1', 2: 'Roland', 3: '...Alright then.', 4: '2'}
+146	146		301							"{2: 'Roland', 3: ""We might have lost the others, but I don't see any harm in two left-behinds sticking together."", 4: '2'}"
+147	147		301							"{3: ""So Roland isn't eager to dig into Lamia's hesitating and capricious response.""}"
+148	148		301							"{3: ""It's not the time to push her away yet. After all, she makes a great scapegoat, and is an asset he can sacrifice any time.""}"
+149	149		301							{2: 'Roland', 3: 'Speaking of which, how much do you know about The Merciful One? Why were you with her?', 4: '2'}
+150	150		301							{2: 'Lamia', 3: 'Eek?', 4: '1'}
+151	151		301							"{2: 'Lamia', 3: ""I don't know either..."", 4: '1'}"
+152	152		301							"{2: 'Lamia', 3: ""It's just that... I sensed a power from her, not quite like Miss Luna's... But very similar..."", 4: '1'}"
+153	153		301							{2: 'Lamia', 3: 'So...'}
+154	154		301							{2: 'Roland', 3: 'You wanted to find a shelter, but she turned you down?', 4: '2'}
+155	155		301							{3: 'Lamia nods.'}
+156	156		301							{3: 'Ever after what happened to Shome, Roland had been investigating The Merciful One. But every piece of information about her was ambiguous, just like her mysterious smile and unpredictable action.'}
+157	157		301							{3: 'She seems to be always alone, with no minions or friends. Roland cannot tell if she poses a threat to Luna as an agent.'}
+158	158		301							{3: 'Not to mention that she did save his life.'}
+159	159		301							"{3: ""She gave him so much, but asked for nothing. Even when she learned that he was only using her, she wasn't upset at all. Whoever did this must be either a saint or a fool.""}"
+160	160		301							{3: 'Roland does not think she is a fool, but can hardly call her a saint.'}
+161	161		301							{3: 'What is her purpose then?'}
+162	162		301							"{2: 'Roland', 3: ""Either way, it's not something I should worry about right now."", 4: '2'}"
+163	163		301							"{3: ""Perhaps she had a purpose, perhaps she didn't. But that's not important at this moment.""}"
+164	164		301							{3: 'After all, he would have died long ago without her.'}
+165	165		301							"{2: 'Roland', 3: ""Let's take a rest and head out at daybreak."", 4: '2'}"
+166	166		301				AniZhuanchangBegin			{2: 'Lamia', 3: 'Um...', 4: '1'}
+167	167		202							{1: '1', 2: '2', 6: '1'}
+168	168		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+169	169		301			AniZhuanchangEnd				"{2: 'Lamia', 3: ""He didn't ask any more questions... Am I safe for now?""}"
+170	170		301							{2: 'Lamia', 3: '...I can only keep going. There is no safe place...'}
+171	171		301							{1: '1', 2: 'Roland', 3: 'Lamia?'}
+172	172		201							{1: '1', 2: '500165', 4: '450'}
+173	173		201							{1: '2', 2: '500334', 4: '-450'}
+174	174		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory71.jpg'}
+175	175		301			AniZhuanchangEnd				{1: '1', 2: 'Lamia', 3: 'Eek?!', 4: '1'}
+176	176		301							"{2: 'Roland', 3: ""I'll leave it to you to set up the guard, lassie (Miss)."", 4: '2'}"
+177	177		301							{2: 'Lamia', 3: '...Eek—?', 4: '1'}
+178	178		301							{3: 'Lamia wants to complain, but Roland has already lain back against the wall and entered hibernate mode.'}
+179	179		301				AniZhuanchangBegin			{2: 'Lamia', 3: '...Hmm.', 4: '1'}
+180	180		202							{1: '1', 2: '2', 6: '1'}
+181	181		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory38.jpg'}
+182	182		401							{1: '1', 2: '202'}
+183	183		201							{1: '1', 2: '500313', 4: '-450'}
+184	184		201							{1: '2', 2: '500314', 4: '450'}
+185	185		301			AniZhuanchangEnd				{1: '1', 2: '???', 3: 'Stick to the plan.', 4: '1'}
+186	186		301		1		AniZhuanchangBegin			{2: '???', 3: 'Understood.', 4: '2'}

@@ -1,0 +1,40 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory571.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500013', 7: '1'}
+4	4		401							{1: '2', 2: '15024034'}
+5	5		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+6	6		502						1000.0	{1: 'PanelActor1Shake'}
+7	7		505							{1: 'PanelActor1Shake'}
+8	8		401							{1: '2', 2: '2603'}
+9	9		203							{1: '1', 2: '0.2', 4: '-1200'}
+10	10		202						500.0	{1: '1'}
+11	11		301			DialogEnable				{3: 'As the battle draws to a close, Nanami leaps forward with a decisive slash and slashes down the last charging mechanoid.'}
+12	12		301							{3: 'The once chaotic battlefield falls silent. In the depths of this dark space, only a massive central computer emits a dim, mysterious glow.'}
+13	13		301							"{3: ""Nanami steps forward and connects herself to the computer's cables, establishing a direct link.""}"
+14	14		201							{1: '1', 2: '501070'}
+15	15		301							{1: '1', 2: 'Nanami', 3: 'Hi there! Can you tell Nanami your name?', 4: '1'}
+16	16		202							{1: '1', 6: '1'}
+17	17		301							{2: 'Computer', 3: 'Serv■ce Sub■yst■m—'}
+18	18		301							{2: 'Computer', 3: 'Taihao.'}
+19	19		201							{1: '1', 2: '501070'}
+20	20		301							{1: '1', 2: 'Nanami', 3: 'Do you know what happened to all the humans in this world?', 4: '1'}
+21	21		202							{1: '1', 6: '1'}
+22	22		301							{2: 'Computer', 3: 'After the dis■ase outbreak, some Kowloong citizens moved to under■round shel■ers. They created Taihao, modeled after ■xu the machine tool to man■ge social resources.'}
+23	23		301							"{2: 'Computer', 3: ""How■ver, humans ha■en't res■onded to Taihao's c■lls for ■■ years.""}"
+24	24		201							{1: '1', 2: '501070'}
+25	25		301							{1: '1', 2: 'Nanami', 3: 'Your speech is all glitchy. Let Nanami take a look at that for you.', 4: '1'}
+26	26		202							{1: '1'}
+27	27		301							{3: 'Nanami sets aside her weapon, gathers up the cables, and makes her way behind the computer.'}
+28	28		301							{2: 'Nanami', 3: 'Yikes... The core components are shot from lack of maintenance.'}
+29	29		301							"{2: 'Computer', 3: ""The kilometer-deep under■round shelter couldn't stop the dis■ase invasion. The p■an was con■irmed a failure.""}"
+30	30		301							{2: 'Computer', 3: 'This unit theorizes that during the prolonged con■lict, the Punishing has anni■ilated human■ind.'}
+31	31		401							{1: '2', 2: '901'}
+32	32		301							{3: 'After delivering its final response, the computer ceases functioning, its lights slowly fading into darkness.'}
+33	33		201							{1: '1', 2: '501070', 3: '12'}
+34	34		301				DialogDisable			"{1: '1', 2: 'Nanami', 3: ""It's dead..."", 4: '1'}"
+35	35		302							"{2: ""Some Kowloong survivors took refuge deep underground, but it seems even that couldn't save them from the Punishing."", 3: '36'}"
+36	36		302							"{2: ""That's as much info as we're getting here. Let's go."", 3: '37'}"
+37	37		301			DialogEnable				"{2: 'Nanami', 3: ""Yep, Nanami's getting the creeps from this place. Let's hurry to the next spot!"", 4: '1'}"
+38	38		204							{1: '1', 2: '2'}
+39	39		301		1		AniZhuanchangBegin			"{2: 'Nanami', 3: ""Commandant, it's pretty dark ahead! Better hold onto Nanami and watch your step!"", 4: '1'}"

@@ -1,0 +1,44 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory5.jpg'}
+2	2		401							{1: '1', 2: '205'}
+3	3		301			DialogEnable				{3: 'You finally make it to the final stage of the mission, but you are met with an arduous battle.'}
+4	4		201							{1: '1', 2: '1041001', 3: '1'}
+5	5		401							{1: '4', 2: '105152'}
+6	6		301							"{1: '1', 2: 'Storm', 3: ""That's quite a crowd! Nanamideon, activate!"", 4: '1'}"
+7	7		202							{1: '1'}
+8	8		301							{3: 'Storm swings her chainsaw menacingly at the hostiles, even just scratching an enemy causes it to explode into scrap metal.'}
+9	9		302							{2: 'Storm is OP! How many Storms did I pull?!', 3: '10'}
+10	10		301							{2: '-AI-', 3: 'Half of the enemies have been annihilated, while Storm only sustained minor injuries.'}
+11	11		301							{3: 'Regardless, the outcome of the battle still looks bleak. The reason being...'}
+12	12		302							"{2: ""What's up with my team being all close-ranged..."", 3: '13'}"
+13	13		301							{3: 'Dawn, Tenebrion, Astral, and Arclight... The only long-ranged member is Blast, but sending her out will cause other issues.'}
+14	14		301							{3: 'Your team members are unable to get close to the last elite enemy standing firmly atop a cliff...'}
+15	15		201							{1: '1', 2: '500016'}
+16	16		401							{1: '2', 2: '1508'}
+17	17		301							{1: '1', 2: 'Elite Enemy', 3: 'Rargh!!!!!', 4: '1'}
+18	18		301							{2: 'Asimov', 3: '(Laughs sardonically) Are you out of options?'}
+19	19		301							{2: 'Elite Enemy', 3: 'Rargh!! Rargh!!!', 4: '1'}
+20	20		302							{2: 'If we can just make it fall down...', 3: '21'}
+21	21		202							{1: '1'}
+22	22		301							{2: '-AI-', 3: 'Do you need it to fall?'}
+23	23		301			RImgBg1Shake				{3: 'Suddenly, the battlefield begins to shake.'}
+24	24		301							{2: '-AI-', 3: 'Importing global variable data—complete.'}
+25	25		301							{3: 'The hill that the elite enemy was standing on abruptly disappears, causing it to fall to the ground.'}
+26	26		201							{1: '1', 2: '500004'}
+27	100		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+28	27		301							"{1: '1', 2: 'Asimov', 3: 'In ""Virtual Horizon"", battlefield conditions will intermittently change and produce different effects to simulate a variety of battle scenarios. Looks like you got lucky.', 4: '1'}"
+29	102		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+30	28		201							{1: '1', 2: '1041001', 3: '1'}
+31	29		301							{1: '1', 2: 'Storm', 3: 'From the hate-scorched sky, with righteous anger in our hearts! Corrupted Bane!', 4: '1'}
+32	30		202							{1: '1'}
+33	31		301							{3: 'Storm shreds the elite enemy to pieces just as it hits the ground.'}
+34	32		302							{2: 'Amazing! Storm is unstoppable!', 3: '33'}
+35	33		301							{3: 'But was that change to the battlefield really... just a coincidence?'}
+36	34		301							{2: '-AI-', 3: 'The elite enemy has been vanquished. Combat complete. Congratulations!'}
+37	35		302							{2: 'Did you help me?', 3: '36'}
+38	36		301							{2: '-AI-', 3: '...'}
+39	37		201							{1: '1', 2: '500004'}
+40	101		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+41	38		301							"{1: '1', 2: 'Asimov', 3: ""There's no way. This AI is just an AI. And it's from ages past, it won't help you out on its own."", 4: '1'}"
+42	39		302							"{2: ""But something doesn't seem quite right..."", 3: '40'}"
+43	40		301		1		AniZhuanchangBegin			"{2: 'Asimov', 3: ""Alright, this week's test is over. Good work. I hope you keep it up next week as well."", 4: '1'}"

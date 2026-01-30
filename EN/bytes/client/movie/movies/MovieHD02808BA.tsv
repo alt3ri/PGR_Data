@@ -1,0 +1,172 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory554.jpg'}
+2	2		401							{1: '1', 2: '363'}
+3	3		301							"{1: '1', 2: 'Storyteller', 3: 'In a flash of silver, fists and weapons clash. The ""Action Star"" and Cerberus fight each other for hundreds of rounds...', 18: '100003308'}"
+4	4		301							"{2: 'Storyteller', 3: 'But in the end, even the mightiest ""Action Star"" can\'t fend off multiple opponents. His movements slow...', 18: '100003309'}"
+5	5		201							{1: '1', 2: '500633', 3: '1'}
+6	6		301							"{1: '1', 2: 'Action Star', 3: ""I've lost..."", 4: '1', 18: '100003310'}"
+7	7		202							{1: '1'}
+8	8		301				AniZhuanchangBegin			"{1: '1', 2: 'Storyteller', 3: ""Meanwhile, at Craig's hiding spot..."", 4: '18', 18: '100003311'}"
+9	9		502							{1: 'DialogDisable'}
+10	10		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory584.jpg'}
+11	11		302							{2: 'Stop.', 3: '12'}
+12	12		201							{1: '1', 2: '500294'}
+13	13		301			DialogEnable				{1: '1', 2: 'Craig', 3: 'You... How dare you...', 4: '1', 18: '100003312'}
+14	14		202							{1: '1'}
+15	15		301							{3: 'You are already pointing your gun at him. The mechanoids on your way have not posed any threat.'}
+16	16		302							{2: 'This has bothered me the whole night...', 3: '17'}
+17	17		201							{1: '1', 2: '500860'}
+18	18		301							{1: '1', 2: 'Little Assistant', 3: 'Mr. Craig, watch out—', 4: '1', 18: '100003313'}
+19	19		202							{1: '1'}
+20	20		301							"{3: 'The little assistant moves to stand in front of Craig as fast as possible, but it seems to lose balance at the last minute, gently bumping into Craig and ""accidentally"" knocking the terminal out of his hand.'}"
+21	21		401							{1: '2', 2: '1510'}
+22	22		301							{3: 'It is followed by a gunshot.'}
+23	23		301							{3: 'Craig and the little assistant both close their eyes.'}
+24	24		301							{3: 'When Craig realizes he is not hurt after he opens his eyes, he hurriedly checks on the little assistant.'}
+25	25		301							{3: 'Only then does he notice that the terminal on the ground has been shattered by a bullet.'}
+26	26		302							{2: 'Tch... I missed.', 3: '27', 4: 'Ahem... You have one more chance.', 5: '27'}
+27	27		301							{3: 'This is all part of the plan, of course. Next, you point your gun at the little assistant, who gradually moves away from Craig to protect him from getting accidentally shot.'}
+28	28		201							{1: '1', 2: '500294'}
+29	29		301							{1: '1', 2: 'Craig', 3: 'Please spare the mechanoids...', 4: '1', 18: '100003314'}
+30	30		202							{1: '1'}
+31	31		201							{1: '1', 2: '500860'}
+32	32		301							"{1: '1', 2: 'Little Assistant', 3: ""Go, Mr. Craig. I'll cover you."", 4: '1', 18: '100003315'}"
+33	33		202							{1: '1'}
+34	34		401							{1: '1', 2: '36'}
+35	35		201							{1: '1', 2: '500294'}
+36	36		401							{1: '1', 2: '242'}
+37	37		301							{1: '1', 2: 'Craig', 3: 'No, little assistant. I think... cough... the awakened machine they mentioned must be you. You seem very important to them.', 4: '1', 18: '100003316'}
+38	38		302							"{2: ""You didn't think that before."", 3: '39'}"
+39	39		302							"{2: ""They aren't puppets for you to manipulate."", 3: '40'}"
+40	40		202							{1: '1'}
+41	41		201							{1: '1', 2: '500860'}
+42	42		301							{1: '1', 2: 'Little Assistant', 3: 'We follow your orders because you were the one who came here and awakened us. Otherwise, we would have been left forgotten in this place forever.', 4: '1', 18: '100003317'}
+43	43		202							{1: '1'}
+44	44		201							{1: '1', 2: '500294'}
+45	45		301							"{1: '1', 2: 'Craig', 3: ""So you're all awakened...?"", 4: '1', 18: '100003318'}"
+46	46		302							{2: 'They never need this technology to operate them.', 3: '47'}
+47	47		301							{3: 'You step forward and handcuff Craig, who does not resist at all.'}
+48	48		301							{2: 'Craig', 3: 'Can I ask you something?', 4: '1', 18: '100003319'}
+49	49		302							{2: 'Sure.', 3: '50'}
+50	50		301							{2: 'Craig', 3: 'What year... is it?', 4: '1', 18: '100003320'}
+51	51		301							{3: 'At that moment, Craig imagines the hands of the pocket watch on his chest moving slightly.'}
+52	52		301				AniZhuanchangBegin			{3: '...'}
+53	53		401							{1: '1', 2: '36'}
+54	54		202			DialogDisable				{1: '1', 6: '1'}
+55	55		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgCg/Cg4201_11.jpg'}
+56	56		401							{1: '1', 2: '377'}
+57	57		301			DialogEnable				"{2: 'Vera', 3: ""This is the version of the story they're all telling. So, Commandant, how do you like it?"", 18: '100003321'}"
+58	58		301							{3: 'You take the rose tea Vera hands you and have a sip.'}
+59	59		302							{2: 'I was quite impressive.', 3: '60', 4: 'Do people actually believe this?', 5: '60'}
+60	60		301							{2: 'Vera', 3: 'A fairytale about mechanoids and humans protecting each other, plus a fight scene in which a Chief of Babylonia confronts dozens of mechanoids. Many people love this kind of story.', 18: '100003322'}
+61	61		301							{3: 'Vera leans against the railing on the second floor of the theater with an unusual expression of laziness on her face.'}
+62	62		302							{2: 'Uh, are you... unhappy with the mechanoids?', 3: '63', 4: 'Maybe I could do it. Fighting all those mechanoids on my own.', 5: '64'}
+63	63	65	301							"{2: 'Vera', 3: ""It's just a little boring because no one has suspected anything."", 18: '100003323'}"
+64	64		301							"{2: 'Vera', 3: ""I almost forgot that you're not the same person I knew when we first met."", 18: '100003324'}"
+65	65		301							{2: 'Vera', 3: 'Never mind... I have no interest in a perfect ending. The fate of these mechanoids does not concern me. As long as you stay silent, people will come up with a truth they prefer.', 18: '100003325'}
+66	66		202							
+67	67		302							{2: '(Lean against a pillar)', 3: '68'}
+68	68		301							{3: 'You say nothing, leaning against the red pillar of the theater like Vera does.'}
+69	69		302							{2: 'I suppose it concerns them.', 3: '71'}
+70	70		301							{3: 'Both Vera and you glance at No. 21 and Noctis.'}
+71	71		301							{2: 'No. 21', 3: 'I saw it first!', 18: '100003326'}
+72	72		301							{2: 'Noctis', 3: 'Go get food yourself if you want to eat!', 18: '100003327'}
+73	73		302							{2: 'How lively.', 3: '74'}
+74	74		302							"{2: ""I heard that you're often seen around here."", 3: '75'}"
+75	75		302							{2: 'But... you usually leave early.', 3: '76'}
+76	76		301							"{2: 'Vera', 3: 'That\'s why some people think I came up with this dreadful ""happy ending""—as if it\'s more convincing to show the ""other side of Cerberus.""', 18: '100003328'}"
+77	77		302							{2: 'Everyone was quite pleased in the end.', 3: '78', 4: 'I thought this kind of story must be a hobby of yours.', 5: '79'}
+78	78	80	301							"{2: 'Vera', 3: ""I'm just too familiar with the way we fool people."", 18: '100003329'}"
+79	79		301							{2: 'Vera', 3: 'Nonsense. Writing their reports is annoying enough.', 18: '100003330'}
+80	80		301							{2: 'Vera', 3: 'Have you ever imagined your own ending?', 18: '100003331'}
+81	81		302							{2: 'Retirement with a full pension.', 3: '82'}
+82	82		301							{2: 'Vera', 3: 'Are you sure?', 18: '100003332'}
+83	83		302							"{2: '(Shrug)', 3: '84', 4: ""Shouldn't dreams be more grounded?"", 5: '84'}"
+84	84		301							"{2: 'Vera', 3: ""Hey, do you actually believe that? I can't tell if you're stupid or adorable..."", 18: '100003333'}"
+85	85		301							{3: 'Vera turns toward the stage.'}
+86	86		301				AniZhuanchangBegin			{3: 'Her hand casually removes the ribbon tying her hair, letting her red hair fall down like a waterfall that blends the red and yellow lights.'}
+87	87		502						400.0	{1: 'DialogDisable'}
+88	88		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgCg/Cg4201_12.jpg'}
+89	89		301			DialogEnable				{3: 'You recall the first time you met each other. Seeing the same hairstyle now, you are amazed by how different things are.'}
+90	90		301							{3: 'Your gaze moves to the rose tea in your hand, then back to Vera.'}
+91	91		301							{2: 'Vera', 3: 'Anyway, I asked you to come over because this is the last chapter of the book.', 18: '100003334'}
+92	92		302							{2: 'Oh?', 3: '93'}
+93	93		302							{2: 'So, how do things end for me in the book?', 3: '94'}
+94	94		301							"{2: 'Vera', 3: ""Don't worry, everyone is satisfied with the ending you got. Personally, though..."", 18: '100003335'}"
+95	95		302							"{2: ""Hey, that doesn't sound good at all!"", 3: '96'}"
+96	96		301							"{3: ""You also walk over to Vera and lean on the carved railing. The storyteller's words continue in the center of the stage, but your thoughts drift toward the person beside you as curiosity drives you to turn your head.""}"
+97	97		302							{2: 'By the way...', 3: '98'}
+98	98		302							{2: 'How did you all manage it in the end?', 3: '99'}
+99	99		302							{2: 'When the WGAA approached me, I just told them it was classified.', 3: '100'}
+100	100		301							{3: 'In reality, you did not appear like a hero at the end of the story, nor did you expect the tale to become more and more bizarre—'}
+101	101		301							{3: 'Before long, rumors about the incident began to spread, and the only version you know of is the one you have heard just now—full of discrepancies from the truth.'}
+102	102		301							{2: 'Vera', 3: 'Shh—', 18: '100003336'}
+103	103		301							{3: 'Vera points at the stage.'}
+104	104		202							
+105	105		301							{2: 'Storyteller', 3: 'Eventually, the commandant resigned and returned home, peacefully living in seclusion away from worldly matters...', 18: '100003337'}
+106	106		302							{2: 'Not bad at all.', 3: '107'}
+107	107		301							{2: 'Storyteller', 3: 'Nations rose and fell, and countless heroes have come and gone.', 18: '100003338'}
+108	108		401							{1: '2', 2: '4296'}
+109	109		301				DialogDisable			{2: 'Storyteller', 3: 'But the legacy they left behind will be celebrated in songs.', 18: '100003339'}
+110	110		402							{1: '377'}
+111	111		202				AniZhuanchangBegin		400.0	{1: '1'}
+112	112		101			AniZhuanchangEnd			400.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory558.jpg'}
+113	113		201							{1: '1', 2: '500236'}
+114	114		401							{1: '1', 2: '207'}
+115	115		301			DialogEnable				"{1: '1', 2: 'ST-100', 3: ""We decided to stay with him for a little longer... After this... I'll bring the complete story to you."", 4: '1', 18: '100003340'}"
+116	116		202							{1: '1'}
+117	117		201							{1: '1', 2: '500849', 3: '1'}
+118	118		301							{1: '1', 2: 'Noctis', 3: 'Can we end it with an explosion?', 4: '1', 18: '100003341'}
+119	119		202							{1: '1'}
+120	120		201							{1: '1', 2: '500825'}
+121	121		301							"{1: '1', 2: 'Vera', 3: ""You may want to change the names in the story. I've heard that Kowloong people like puns."", 4: '1', 18: '100003342'}"
+122	122		202							{1: '1'}
+123	123		201							{1: '1', 2: '500236'}
+124	124		301							{1: '1', 2: 'ST-100', 3: 'I can only generate some random names.', 4: '1', 18: '100003343'}
+125	125		202							{1: '1'}
+126	126		201							{1: '1', 2: '500825', 3: '1'}
+127	127		301							"{1: '1', 2: 'Vera', 3: ""That's none of my business—Now..."", 4: '1', 18: '100003344'}"
+128	128		301							{3: 'Vera stretches lazily.'}
+129	129		301							{2: 'Vera', 3: 'I just need to figure out how to get the poor commandant out of here... Why would you force yourself through all that when you have low blood sugar?', 4: '1', 18: '100003345'}
+130	130		202							{1: '1'}
+131	131		201							{1: '1', 2: '500846'}
+132	132		301							{1: '1', 2: 'No. 21', 3: 'I can drive.', 4: '1', 18: '100003346'}
+133	133		301							{3: 'The little assistant shakes his head.'}
+134	134		202							{1: '1'}
+135	135		201							{1: '1', 2: '500860'}
+136	136		301							{1: '1', 2: 'Little Assistant', 3: 'Every car you see here has gotten its parts removed to modify other tools.', 4: '1', 18: '100003347'}
+137	137		202							{1: '1'}
+138	138		201							{1: '1', 2: '500849', 3: '1'}
+139	139		301							"{1: '1', 2: 'Noctis', 3: ""Carrying the commandant back won't take that long."", 4: '1', 18: '100003348'}"
+140	140		301							"{3: ""Noctis tries to take the dazed human from Vera's side.""}"
+141	141		202							{1: '1'}
+142	142		201							{1: '1', 2: '500633'}
+143	143		301							{1: '1', 2: 'Action Star', 3: 'Is this enough to take you back?', 4: '1', 18: '100003349'}
+144	144		401							{1: '1', 2: '36'}
+145	145		401							{1: '2', 2: '1514'}
+146	146		301							"{3: 'The ""Action Star"" walks over, bringing two horses.'}"
+147	147		401							{1: '1', 2: '363'}
+148	148		202							{1: '1'}
+149	149		201							{1: '1', 2: '500849', 3: '2'}
+150	150		301							{1: '1', 2: 'Noctis', 3: 'Are they...', 4: '1', 18: '100003350'}
+151	151		301							{3: 'Noctis cannot hide the excitement in his voice.'}
+152	152		202							{1: '1'}
+153	153		201							{1: '1', 2: '500846'}
+154	154		301							{1: '1', 2: 'No. 21', 3: 'Animals. Lovely.', 4: '1', 18: '100003351'}
+155	155		202							{1: '1'}
+156	156		201							{1: '1', 2: '500825'}
+157	157		301							{1: '1', 2: 'Vera', 3: 'Huh? Where did you find them?', 4: '1', 18: '100003352'}
+158	158		202							{1: '1'}
+159	159		201							{1: '1', 2: '500633'}
+160	160		301							"{1: '1', 2: 'Action Star', 3: 'I played the lead in a ""Golden Age Western"", and I caught them in the wild. Frankly... they fit quite well with our Kowloong sets, don\'t they?', 4: '1', 18: '100003353'}"
+161	161		301							{3: 'Vera glances at the person leaning against her.'}
+162	162		202							{1: '1'}
+163	163		201							{1: '1', 2: '500825', 3: '8'}
+164	164		301							{1: '1', 2: 'Vera', 3: 'Fine. Whatever.', 4: '1', 18: '100003354'}
+165	165		301							"{3: ""She pushes the human onto the horse's back before smoothly mounting it herself, letting the commandant rest in her embrace.""}"
+166	166		204							{1: '1', 2: '2'}
+167	167		301				DialogDisable			"{2: 'Vera', 3: 'You really are a troublesome commandant... Hold on tight, ""my liege.""', 4: '1', 18: '100003355'}"
+168	168		202			AniZhuanchangBegin				{1: '1', 6: '1'}
+169	169		502			AniZhuanchangEnd				{1: 'RImgBg1Shake'}
+170	170		401							{1: '2', 2: '884'}
+171	171		301		1	DialogEnable	AniZhuanchangBegin			{3: 'A signal tower explodes on the mountain behind.'}

@@ -1,0 +1,93 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory668.jpg'}
+2	2		401							{1: '1', 2: '36'}
+3	3		201							{1: '1', 2: '500488'}
+4	4		301			DialogEnable				{1: '1', 2: 'Mark', 3: 'Are you really going to go with my work?', 4: '1'}
+5	5		302							"{2: ""Why not? You don't care what they have to say about it, right?"", 3: '6'}"
+6	6		401							{1: '1', 2: '32'}
+7	7		301							"{2: 'Mark', 3: ""Right, I don't... except getting them to care about it is the whole point of this mission here."", 4: '1'}"
+8	8		202							{1: '1', 6: '1'}
+9	9		301							{3: 'A makeshift tent billows with shrieks in the wind on the spacious Windmill Square.'}
+10	10		301							"{3: ""The chills outside the tent, however, put absolutely no dent in the heated discussion inside it on what's going to happen next.""}"
+11	11		201							{1: '1', 2: '500494', 3: '13'}
+12	12		301							{1: '1', 2: 'Karenina', 3: 'Can someone just explain to me what in the world is going on here?', 4: '1'}
+13	13		301							"{2: 'Karenina', 3: ""We're all set, Commandant... Hey, what's that for, Teddy?"", 4: '1'}"
+14	14		203							{1: '1', 2: '0.25', 3: '400'}
+15	15		201							{1: '2', 2: '500495', 4: '-400'}
+16	16		301							{1: '1', 2: 'Teddy', 3: 'Outta my way. Teddy coming through... Here, Commandant. This is the letter you asked me to write.', 4: '2'}
+17	17		203							{1: '2', 2: '0.25'}
+18	18		202							{1: '1', 6: '1'}
+19	19		302							{2: 'Is it provocative enough?', 3: '20'}
+20	20		204							{1: '2', 2: '13'}
+21	21		301							"{2: 'Teddy', 3: ""I did pick a part from a past conversation with Karenina as you told me to... and it's something you want to steer clear of when you aren't feeling your best."", 4: '2'}"
+22	22		302							{2: '...Sounds perfect. Get ready to send it off, then.', 3: '23'}
+23	23		202							{1: '2', 6: '1'}
+24	24		201							{1: '1', 2: '500576'}
+25	25		301							{1: '1', 2: 'Ayla', 3: 'All completed works have arrived, Commandant.', 4: '1'}
+26	26		302							"{2: ""Put them where they're supposed to go."", 3: '27'}"
+27	27		301							{2: 'Ayla', 3: 'Roger that.', 4: '1'}
+28	28		302							{2: 'Any update from you, Lee?'}
+29	29		201							{1: '1', 2: '500568'}
+30	30		301							"{1: '1', 2: 'Lee', 3: ""Having not the least trouble traveling through Constellia's city network, all thanks to Dulcinea's admin privilege."", 4: '1'}"
+31	31		301							{2: 'Lee', 3: 'We have our hands on the whereabouts of all the members from Master-class from all three schools. Will send them your way now, Commandant.', 4: '1'}
+32	32		302							{2: 'Well done.', 3: '33'}
+33	33		201							{1: '1', 2: '500168'}
+34	34		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+35	35		301							{1: '1', 2: 'Vera', 3: 'Fifteen minutes out...', 4: '1'}
+36	36		302							{2: 'Thanks, Vera. Hang in there.', 3: '37'}
+37	37		204							{1: '1', 2: '1'}
+38	38		301							"{2: 'Vera', 3: ""C'mon, I was only back for a few seconds and you went ahead and put me out here. You do know that there is a steep price to pay, don't you?"", 4: '1'}"
+39	39		502							{1: 'DialogDisable'}
+40	40		302							{2: '...Your contribution shall not be forgotten, Vera.', 3: '41'}
+41	41		302							"{2: ""How's everything with the mechanoids?"", 3: '42'}"
+42	42		301			DialogEnable				{2: 'Vera', 3: 'Right behind me looking like a bunch of puppies trying to get their stolen bones back.', 4: '1'}
+43	43		301							{3: 'What have you done to them...'}
+44	44		301							{2: 'Vera', 3: 'Fourteen minutes out. Time to get them to go to where we want them to go now.', 4: '1'}
+45	45		302							"{2: ""Alrighty. Let's make it hot and epic."", 3: '46'}"
+46	46		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+47	47		202							{1: '1', 6: '1'}
+48	48		301							{3: 'You look over at Teddy and give her the green light.'}
+49	49		201							{1: '1', 2: '500495', 3: '13'}
+50	50		301							{1: '1', 2: 'Teddy', 3: 'Sent. Oh boy, this is going to be absolutely epic...', 4: '1'}
+51	51		204							{1: '1'}
+52	52		301							"{2: 'Teddy', 3: ""Oh wow, there's the reply. Mechanoids never waste a second, huh?"", 4: '1'}"
+53	53		204							{1: '1', 2: '1'}
+54	54		301							{2: 'Teddy', 3: 'Challenge accepted, Commandant.', 4: '1'}
+55	55		202							{1: '1', 6: '1'}
+56	56		301							{3: 'Challenging all three schools from the Palette Clash to a showdown on behalf of the Neo-Multidimensional Mechanical Cubists—this is probably about as crazy as crazy can get.'}
+57	57		201							{1: '1', 2: '500598'}
+58	58		301							{1: '1', 2: 'Dulcinea', 3: 'Ready?', 4: '1'}
+59	59		301							{3: 'Right then, Dulcinea walks in on the discussion.'}
+60	60		302							{2: 'Dulcinea, why are you...', 3: '61'}
+61	61		301							{3: 'With the halo over her head gone, Dulcinea now looks like any regular mechanoid—just like how you remember her when you first met.'}
+62	62		301							{2: 'Dulcinea', 3: 'I was just thinking about the conversation we had, where you guys told me to stop them as who I am.', 4: '1'}
+63	63		401							{1: '1', 2: '36'}
+64	64		301							{2: 'Dulcinea', 3: 'So... here I am now.', 4: '1'}
+65	65		502							{1: 'DialogDisable'}
+66	66		302							{2: 'Sure!', 3: '67'}
+67	67		401							{1: '1', 2: '101'}
+68	68		302							{2: 'Best of luck with it, Dulcinea.', 3: '69'}
+69	69		201							{1: '1', 2: '500576'}
+70	70		301			DialogEnable				{1: '1', 2: 'Ayla', 3: 'We got your back, Dulcin.', 4: '1'}
+71	71		201							{1: '1', 2: '500488'}
+72	72		301							{1: '1', 2: 'Mark', 3: 'Show them how you roll, Boss.', 4: '1'}
+73	73		201							{1: '1', 2: '500568', 3: '1'}
+74	74		301							{2: 'Lee', 3: 'Tell them exactly what you want to tell them.', 4: '1'}
+75	75		202							{1: '2', 6: '1'}
+76	76		201							{1: '1', 2: '500494', 3: '12', 4: '400'}
+77	77		201							{1: '2', 2: '500495', 3: '1', 4: '-400'}
+78	78		301							{1: '1', 2: 'Karenina', 3: 'I already sent you the instructions for the devices.', 4: '1'}
+79	79		301							"{2: 'Teddy', 3: ""By the way... Do I get to play with your admin privilege when we're done?"", 4: '2'}"
+80	80		204							{1: '2'}
+81	81		301							{2: 'Teddy', 3: 'Never mind. I never said that.', 4: '2'}
+82	82		202							{1: '2', 6: '1'}
+83	83		201							{1: '1', 2: '500168'}
+84	84		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+85	85		301							{1: '1', 2: 'Vera', 3: 'Ten minutes out.', 4: '1'}
+86	86		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+87	87		202							{1: '1', 6: '1'}
+88	88		502							{1: 'DialogDisable'}
+89	89		302							"{2: ""Let's get ready for what we need to do next."", 3: '90'}"
+90	90		302							"{2: ""Let's go."", 3: '91'}"
+91	91		502							{1: 'DialogEnable'}
+92	92		301		1		AniZhuanchangBegin			"{3: ""It's time to put an end to the Palette Clash.""}"

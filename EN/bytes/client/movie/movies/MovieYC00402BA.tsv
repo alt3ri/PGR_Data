@@ -1,0 +1,13 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory24.jpg'}
+2	100		401							{1: '1', 2: '207'}
+3	2		301			DialogEnable				"{2: 'Emma', 3: ""Okay, story's over.""}"
+4	3		301							"{2: 'Emma', 3: ""Zack, do you think the rabbit's right? Or the donkey's right?""}"
+5	4		201							{1: '1', 2: '500020'}
+6	5		301							{1: '1', 2: 'Zack', 3: '...Zack... Zack thinks that...', 4: '1'}
+7	6		201							{1: '1', 2: '500097'}
+8	7		301							{1: '1', 2: 'Estate Butler', 3: 'Milady, the time.', 4: '1'}
+9	8		301							{2: 'Emma', 3: 'Alright...'}
+10	9		301							{3: 'Emma hopped off of Zack and landed right into the arms of the estate butler.'}
+11	10		301							{2: 'Emma', 3: 'Is this really the last day?'}
+12	11		301		1		AniZhuanchangBegin			{2: 'Estate Butler', 3: 'Yes. From tomorrow onwards, Emma, you will have to live in a new home.', 4: '1'}

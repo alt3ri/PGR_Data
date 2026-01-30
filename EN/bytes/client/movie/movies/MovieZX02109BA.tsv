@@ -1,0 +1,58 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory415.jpg'}
+2	2		401							{1: '1', 2: '55'}
+3	3		301			DialogEnable	AniZhuanchangBegin			"{3: ""There is nothing else useful in the office apart from the researchers' journals.""}"
+4	4		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory405.jpg'}
+5	5		301			AniZhuanchangEnd				{3: 'The two of you exit the building and return outside.'}
+6	6		301							{3: 'You can see lightning in the distant sky.'}
+7	7		301							{3: 'The thundercloud to your east has indeed roamed toward the city. The rain has yet to arrive, but the sound of thunder has.'}
+8	8		301							{3: 'A thunderstorm will soon envelop the city. The sound of waves is getting nearer.'}
+9	9		301							{3: 'The city has submerged considerably.'}
+10	10		301							{3: 'Looking out on a street in the main city, you no longer see the landing pad. Only the top of a few satellite cities remains above water.'}
+11	11		201							{1: '1', 2: '500345'}
+12	12		301							"{1: '1', 2: 'Vera', 3: ""The city is still sinking. I have no idea if their safeguard for the submergence threshold is still working or not. If it doesn't stop going down, the water pressure will destroy it all."", 4: '1'}"
+13	13		301							"{2: 'Vera', 3: ""We've got two options: either we find a way to stop the city from submerging, or we head for the reactor directly, hoping we'll find some key intel before it all goes poof."", 4: '1'}"
+14	14		301							"{2: 'Vera', 3: ""Whichever we choose, we won't be able to find out... where they are. We don't have time to search all of these buildings one by one."", 4: '1'}"
+15	15		302							{2: 'These Corrupted are kind of strange.', 3: '16'}
+16	16		202							{1: '1', 6: '1'}
+17	17		301							{3: 'Vera nods.'}
+18	18		301							{3: 'There are clearly two kinds of Corrupted here.'}
+19	19		301							{3: 'One of them is the Cleaner Bots that were serving this base. The emblems on these mechanoids are obvious.'}
+20	20		301							{3: 'The other one... You cannot tell where they come from.'}
+21	21		201							{1: '1', 2: '500345'}
+22	22		301							"{1: '1', 2: 'Vera', 3: ""They're probably Corrupted that infested the nearby ocean recently. They were the ones who brought the Punishing Virus here."", 4: '1'}"
+23	23		302							{2: 'Their level of infection is different.', 3: '24', 4: 'Their level of abrasion is different.', 5: '24'}
+24	24		301							{3: 'Vera takes a look at the Corrupted remains scattered on the ground.'}
+25	25		301							{2: 'Vera', 3: 'The machines from the base are only faintly infected. The abrasion from seawater is barely noticeable.', 4: '1'}
+26	26		301							{3: 'They have not been infected for long, thus their desire to attack humans is more restrained.'}
+27	27		204							{1: '1', 2: '13'}
+28	28		301							{2: 'Vera', 3: 'Hah, what an unfortunate end to a paradise. Having been isolated from the Punishing Virus-infected world for so many years, it is still going to fall.', 4: '1'}
+29	29		302							"{2: ""It's a shame."", 3: '30'}"
+30	30		204							{1: '1'}
+31	31		301							{2: 'Vera', 3: 'Did you think I was feeling sorry for it?', 4: '1'}
+32	32		301							"{2: 'Vera', 3: ""Don't be mistaken. I don't give a shit about this place—I don't care if it's destroyed or not. All I want to know is where the hell this zero-point reactor is. Do we need to search every single room here?"", 4: '1'}"
+33	33		301							{2: 'Vera', 3: 'God dammit. If the humans are all gone, why are these electromagnetic barriers still working?', 4: '1'}
+34	34		302							{2: 'We can ask those mechanoids.', 3: '35'}
+35	35		301							{3: 'Vera glances at the Cleaner Bot lying on the floor.'}
+36	36		301							{2: 'Vera', 3: 'You want to ask these metal junks?', 4: '1'}
+37	37		302							"{2: ""They're only faintly infected."", 3: '38'}"
+38	38		301				AniZhuanchangBegin			{3: 'That means we might still be able to communicate with their logic circuits.'}
+39	39		202							{1: '1', 6: '1'}
+40	40		301			AniZhuanchangEnd				{3: 'After a while.'}
+41	41		201							{1: '1', 2: '500345'}
+42	42		301							"{1: '1', 2: 'Vera', 3: ""You're quite familiar with this sort of stuff. I suppose Lee has kept you trained?"", 4: '1'}"
+43	43		301							{2: 'Vera', 3: 'How is it? Has our metal junk here shared any feelings with you, Chief?', 4: '1'}
+44	44		302							{2: '(Transfer Vera the deciphered data)', 3: '45'}
+45	45		301							{3: 'All Cleaner Bots in the base are on the same local network. You have identified their patrol routes.'}
+46	46		301							{3: 'Vera quickly responds after reading the data.'}
+47	47		301							"{3: 'Their patrol routes form a three-dimensional ""nest,"""" each """"branch"" a corridor or a pipeline.'}"
+48	48		301							"{2: 'Vera', 3: ""I see... What is that in the center of the nest? Why do all of the Cleaner Bots walk around it? They didn't even upload the plan of that place onto the Bots' systems."", 4: '1'}"
+49	49		302							{2: 'It must require higher clearance.', 3: '50'}
+50	50		301							{3: 'High enough that those humans did not allow this level of mechanoids in.'}
+51	51		301							{2: 'Vera', 3: 'The zero-point reactor.', 4: '1'}
+52	52		302							{2: '(Nod)', 3: '53'}
+53	53		301							{2: 'Vera', 3: 'Good. Then should we head up or down now?', 4: '1'}
+54	54		302							{2: 'Down.', 3: '55'}
+55	55		301							{2: 'Vera', 3: 'Of course.', 4: '1'}
+56	56		302							"{2: ""We're out of time."", 3: '57'}"
+57	57		301		1		AniZhuanchangBegin			"{2: 'Vera', 3: ""You don't have to remind me. But right now... we need to breach these barriers."", 4: '1'}"

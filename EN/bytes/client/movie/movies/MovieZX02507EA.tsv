@@ -1,0 +1,37 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory556.jpg'}
+2	2		401							{1: '1', 2: '5'}
+3	3		201							{1: '1', 2: '500445', 3: '1', 4: '-400'}
+4	4		201							{1: '2', 2: '500451', 4: '400'}
+5	5		301			DialogEnable				{1: '1', 2: 'Pulao', 3: 'Celestial! I am back with the tear of Mr. Big Fish!', 4: '1'}
+6	6		301							"{2: 'Celestial!', 3: ""It's good that you got the tear. But why did you also bring back so many toys and snacks... gulp."", 4: '2'}"
+7	7		204							{1: '1', 2: '6'}
+8	8		301							{2: 'Pulao', 3: 'Um... Because I met Mr. Guide at the bottom of the mountain. I mean, he used to be a tour guide, but is running a shop now.', 4: '1'}
+9	9		301							{2: 'Pulao', 3: 'He just had to give me them.', 4: '1'}
+10	10		301							{2: 'Celestial!', 3: 'I see. Not bad... gulp.', 4: '2'}
+11	11		301				AniZhuanchangBegin			"{2: 'Celestial!', 3: ""Without further ado, let's start making the elixir!"", 4: '2'}"
+12	12		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory556.jpg'}
+13	13		401						400.0	{1: '1', 2: '36'}
+14	14		401							{1: '1', 2: '32'}
+15	15		301			AniZhuanchangEnd				{2: 'Celestial!', 3: 'Strychnine, senna, cocklebur and lotus seeds.', 4: '2'}
+16	16		301							{2: 'Celestial!', 3: 'Dioscorea, sophora, chinaberry...', 4: '2'}
+17	17		301							{2: 'Pulao', 3: 'Is this a spell for making the elixir? It sounds like a song.', 4: '1'}
+18	18		301							{2: 'Celestial!', 3: 'Not much different... gulp.', 4: '2'}
+19	19		301							{2: 'Celestial!', 3: 'Finally, tear of Big Fish... Ready!', 4: '2'}
+20	20		401							{1: '2', 2: '804'}
+21	21		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+22	22		202							{1: '1', 2: '2', 6: '1'}
+23	23		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+24	24		301							{3: 'The celestial makes a finger snap. The pot cooking the elixir suddenly shines brilliantly, shooting all the way to the clouds. The light lasts a few seconds before disappearing.'}
+25	25		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+26	26		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory556.jpg'}
+27	27		201							{1: '1', 2: '500445', 4: '-400'}
+28	28		201							{1: '2', 2: '500451', 4: '400'}
+29	29		301					500.0		"{2: 'Celestial!', 3: ""Tsk, I knew I shouldn't trust the specials. This torch only lasted a few seconds."", 4: '2'}"
+30	30		204							{1: '1', 2: '2'}
+31	31		301							{2: 'Pulao', 3: 'Is this small black ball... the elixir?', 4: '1'}
+32	32		301							{2: 'Celestial!', 3: 'Correct. It may not taste good, but it can heal any disease.', 4: '2'}
+33	33		204							{1: '1', 2: '1'}
+34	34		301							"{2: 'Pulao', 3: ""Phew... Finally, I can cure Master's disease."", 4: '1'}"
+35	35		301							"{2: 'Celestial!', 3: ""Yeah. Maybe this is fate's reward for your hard work."", 4: '2'}"
+36	36		301		1		AniZhuanchangBegin			"{2: 'Celestial!', 3: ""Now, it's time for those who travel far away from home to come back."", 4: '2'}"

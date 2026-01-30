@@ -1,0 +1,558 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory701.jpg'}
+2	2		306				AniZhuanchangEnd		200.0	{1: '1'}
+3	3		401							{1: '1', 2: '201'}
+4	4		301			DialogEnable				"{3: ""The new <color=#ff4e4eff>Central Purification Filters</color>, equipped with an improved filter core, are quickly spreading like wildfire across all conservation areas under Babylonia's control.""}"
+5	5		301				DialogDisable			"{3: ""However, even with these advancements, the new Central Purification Filters can't completely eliminate the Punishing Virus.""}"
+6	6		401							{1: '2', 2: '4682'}
+7	7		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory743.jpg', 3: '0', 4: '1', 5: '0.4'}
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory743.jpg'}
+9	9		205							{1: '999'}
+10	10		301			DialogEnable	DialogDisable			{3: 'While the filters drive it away, the virus slowly reforms in areas outside the safe zones. In places without the new filters, Dead Zones gradually merge into vast regions, becoming breeding grounds for Red Tide and more Hetero-Creatures.'}
+11	11		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory740.jpg', 3: '0', 4: '1', 5: '0.4'}
+12	12		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory740.jpg'}
+13	13		205							{1: '999'}
+14	14		301			DialogEnable	DialogDisable			{3: 'These creatures are slowly evolving.'}
+15	15		402							{1: '4682'}
+16	16		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory894.jpg', 3: '0', 4: '1', 5: '0.4'}
+17	17		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory894.jpg'}
+18	18		205							{1: '999'}
+19	19		301			DialogEnable	DialogDisable			{3: 'Yet, the people of Babylonia have no time to worry about these looming disasters. The elites have unanimously shifted their focus from external threats to internal affairs, specifically fixating on information leaked from Gestalt.'}
+20	20		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png', 3: '0', 4: '1', 5: '0.4'}
+21	21		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+22	22		205							{1: '999'}
+23	23		306							
+24	24		301			DialogEnable				"{3: ""More precisely, they're obsessed with the timestamp attached to that information.""}"
+25	25		201							{1: '1', 2: '500864', 3: '3'}
+26	26		301							"{1: '1', 2: 'Teddy', 3: ""There's nothing in Gestalt that corresponds to this timestamp."", 4: '1'}"
+27	27		401							{1: '2', 2: '4047'}
+28	28		202							{1: '1'}
+29	29		301							{3: 'Hunched over the console, Teddy explains to the person beside them without looking back, their hands never pausing as cascading data and complex command windows flash on the screen.'}
+30	30		302							{2: 'So, the problem is that Gestalt has a bug?', 3: '31'}
+31	31		402							{1: '4047'}
+32	32		201							{1: '1', 2: '500864', 3: '3'}
+33	33		301							"{1: '1', 2: 'Teddy', 3: 'If that were the case, the response team would have to act tomorrow to handle the chaos this ""bug"" would cause throughout Babylonia.', 4: '1'}"
+34	34		204							{1: '1', 2: '4'}
+35	35		301							"{2: 'Teddy', 3: ""It's not a bug. Someone's already pinpointed its time period. I'm just the unlucky soul who got stuck with the mission of tracing this timestamp back to its original coordinates."", 4: '1'}"
+36	36		302							{2: 'What do you mean...', 3: '37'}
+37	37		301							"{2: 'Teddy', 3: ""This thing just doesn't exist before the leak, and good luck trying to reverse-engineer it with conventional methods once it's intercepted. Its origin is pretty obvious then."", 4: '1'}"
+38	38		202							{1: '1'}
+39	39		401							{1: '2', 2: '1015'}
+40	40		301							"{3: ""The display's flurry of activity finally dies down. Teddy lets out a slow breath, taking a moment to rest. Just then, a communication dialog pops up with a note attached to the timestamp—Golden Age.""}"
+41	41		201							{1: '1', 2: '500864', 3: '4'}
+42	42		301							"{1: '1', 2: 'Teddy', 3: ""It's straight from the Golden Age—right out of Dominik's impenetrable chasm of zeros and ones, from beyond that unsolvable <b><ud><color=#34aff8ff><link=26>data wall</link></color></ud></b> inside Gestalt."", 4: '1'}"
+43	43		204							{1: '1', 2: '15'}
+44	44		301							{3: 'As she speaks, Teddy glances at the persistently flashing communication alerts and lets out a derisive snort.'}
+45	45		301							{2: 'Teddy', 3: 'Parliament erupted the moment this news hit. Public pressure, directives, demands, pulling every personal favor they could—those politicians have thrown more tactics at me than there are antivirus programs, all to push me into finding a breach in that wall.', 4: '1'}
+46	46		301				DialogDisable			{2: 'Teddy', 3: 'And then escort their technicians inside.', 4: '1'}
+47	47		202							{1: '1'}
+48	48		302							{2: '...', 3: '49'}
+49	49		401							{1: '2', 2: '4387'}
+50	50		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+51	51		504							{1: '0.7'}
+52	52		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory902.jpg'}
+53	53		301			DialogEnable	DialogDisable			{3: 'Memories surface of the scene witnessed when connected with Teddy—that bizarre space existing within Gestalt, that data wall stretching endlessly from ground to sky...'}
+54	54		401							{1: '2', 2: '4387'}
+55	55		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+56	56		504							{1: '0'}
+57	57		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+58	58		302							{2: 'Does that thing really have a breach?', 3: '59'}
+59	59		302							{2: 'And even if it does, would anyone even be able to get through?', 3: '60'}
+60	60		201							{1: '1', 2: '500864', 3: '4'}
+61	61		301			DialogEnable				"{1: '1', 2: 'Teddy', 3: ""No—my professional assessment is no, but unfortunately, nobody's going to listen to me."", 4: '1'}"
+62	62		202							{1: '1'}
+63	63		401							{1: '2', 2: '4544'}
+64	64		301							{3: 'She shrugs, her eyes glued to the terminal screen in front of her.'}
+65	65		201							{1: '1', 2: '500864', 3: '10'}
+66	66		301							"{1: '1', 2: 'Teddy', 3: 'Those pencil pushers who fuss over meeting minutes always have some crazy idea about the past. They can\'t wait to make their glorious mark in the history books, writing, ""This is the decision that turns the page on humanity\'s history, leading us into a new era...""', 4: '1'}"
+67	67		204							{1: '1', 2: '4'}
+68	68		402							{1: '4544'}
+69	69		301							{3: 'Teddy suddenly goes quiet, her brow furrowed as she zeroes in on a specific point in the data stream.'}
+70	70		302							{2: '?!', 3: '71', 4: 'Did you find something?', 5: '72'}
+71	71	73	301							{2: 'Teddy', 3: 'Shh...', 4: '1'}
+72	72		301							{2: 'Teddy', 3: 'Not yet, but...', 4: '1'}
+73	73		202							{1: '1'}
+74	74		401							{1: '2', 2: '4544'}
+75	75		301							{3: 'Her fingers fly across the terminal at lightning speed—'}
+76	76		201							{1: '1', 2: '500864', 3: '4'}
+77	77		301							{1: '1', 2: 'Teddy', 3: '3, 2, 1—', 4: '1'}
+78	78		301							{2: 'Teddy', 3: 'Got it—the final coordinate.', 4: '1'}
+79	79		202							{1: '1'}
+80	80		402							{1: '4544'}
+81	81		401							{1: '2', 2: '2563'}
+82	82		301							{3: 'After swiftly punching the precise coordinates into the terminal and transmitting them to Asimov, Teddy finally turns around and picks up where she left off.'}
+83	83		201							{1: '1', 2: '500864', 3: '1'}
+84	84		301							{1: '1', 2: 'Teddy', 3: 'Coordinates, coordinates... Ha! Nobody even remembers that when we first stepped into Gestalt, we only wanted to use its computing power to upgrade the Inver-Device.', 4: '1'}
+85	85		302							"{2: ""People losing sight of their original purpose isn't exactly rare."", 3: '86', 4: 'Self-interest just rewrites what people set out to do.', 5: '86'}"
+86	86		202							{1: '1', 6: '1'}
+87	87		301							{3: 'The original Inver-Device structure and Golden Age treasures clearly pique their interest way more than just upgrading the Inver-Device.'}
+88	88		201							{1: '1', 2: '500864', 3: '13'}
+89	89		301							{1: '1', 2: 'Teddy', 3: '<b><ud><color=#ff4e4eff><link=25>The Normans</link></color></ud></b> really went all out to make that happen.', 4: '1'}
+90	90		204							{1: '1', 2: '10'}
+91	91		301							{3: 'At the mention of the name, Teddy rolls her eyes.'}
+92	92		204							{1: '1', 2: '13'}
+93	93		301							"{2: 'Teddy', 3: ""Those people are so hung up on digging up anything about Dominik from Gestalt or Reactor No. 1, but they're so shallow they completely miss the point."", 4: '1'}"
+94	94		302							{2: 'Are you talking about the info Gestalt sent?', 3: '98', 4: 'Are you talking about Gestalt itself?', 5: '98', 6: 'Are you talking about Dominik?', 7: '95'}
+95	95		204							{1: '1', 2: '0'}
+96	96		301							"{2: 'Teddy', 3: ""It's Gestalt, okay? Gestalt."", 4: '1'}"
+97	97		301							{3: 'The young woman narrows her eyes, giving you a sidelong glance.'}
+98	98		204							{1: '1', 2: '3'}
+99	99		301							{2: 'Teddy', 3: 'That message with the error stamp, the one Gestalt put out... What is Gestalt really thinking?', 4: '1'}
+100	100		202							{1: '1'}
+101	101		401							{1: '2', 2: '4047'}
+102	102		301							{3: 'No one knows the answer to that.'}
+103	103		301							{3: 'Gestalt gives off a faint, cold glow, looming silently, completely speechless.'}
+104	104		402							{1: '4047'}
+105	105		401						100.0	{1: '2', 2: '2814'}
+106	106		401							{1: '2', 2: '2670'}
+107	107		201							{1: '1', 2: '500004', 3: '9'}
+108	108		301							{1: '1', 3: 'The sudden click of a code lock breaking the silence as Asimov appears in the room, dark circles heavy under his eyes.'}
+109	109		301							{2: 'Asimov', 3: 'Is the information trace complete?', 4: '1'}
+110	110		203							{1: '1', 2: '0.25', 3: '450'}
+111	111		201							{1: '2', 2: '500864', 4: '-450'}
+112	112		301							{1: '1', 2: 'Teddy', 3: 'Seriously, did you even need to ask?', 4: '2'}
+113	113		301							"{2: 'Teddy', 3: ""The data wall coordinates that 【kuroname】 and I tracked while deep in Gestalt? They're all in the encrypted document I just sent you."", 4: '2'}"
+114	114		301							{2: 'Asimov', 3: 'Anything new pop up?', 4: '1'}
+115	115		301							"{2: 'Teddy', 3: ""No, same old. The data walls are still a brick wall, blocking access to that secret space's core. We're only seeing a few chinks in the armor."", 4: '2'}"
+116	116		301							"{2: 'Teddy', 3: ""Even though everything points to us being able to crack it open, I'm sticking to my guns. I could try to hijack it using the lower-level protocol, but Gestalt's database might just activate its own defenses and take a hit."", 4: '2'}"
+117	117		204							{1: '2', 2: '4'}
+118	118		301							{2: 'Asimov', 3: '...', 4: '1'}
+119	119		301							"{2: 'Teddy', 3: ""The code for Gestalt's foundational database has been lost in the shuffle for ages, so there's no telling how much damage we're talking about. Which means..."", 4: '2'}"
+120	120		301							"{2: 'Teddy', 3: ""If we hijack Gestalt, sure, we might just snag the tech they're after. But there's also a good chance we could blow Gestalt's entire foundational database to smithereens."", 4: '2'}"
+121	121		204							{1: '2', 2: '14'}
+122	122		301							{2: 'Teddy', 3: 'Have they made a decision yet?', 4: '2'}
+123	123		301							"{3: ""A rare look of concern washes over Teddy's face.""}"
+124	124		301							"{2: 'Asimov', 3: ""Since Gestalt still can't crunch certain numbers, they're gearing up for a parliamentary vote on whether to open these data walls."", 4: '1'}"
+125	125		204							{1: '2', 2: '10'}
+126	126		301							{2: 'Teddy', 3: '...', 4: '2'}
+127	127		301							{2: 'Teddy', 3: 'Brainless idiots.', 4: '2'}
+128	128		302							{2: '...', 3: '129'}
+129	129		202							{1: '1', 2: '2'}
+130	130		301				AniZhuanchangBegin			"{3: ""The parliamentary vote won't be derailed just because a few tech folks are against it.""}"
+131	131		502							{1: 'DialogDisable'}
+132	132		401							{1: '1', 2: '36'}
+133	133		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory427.jpg'}
+134	134		401							{1: '1', 2: '372'}
+135	135		301			DialogEnable				{3: 'The Science Council scholars pushing to open the data wall reckon they can mimic the safety protocols from the Inver-Device experiments by setting up an isolation zone within Gestalt.'}
+136	136		301							"{3: ""The idea is to cordon off all operations to this zone; that way, if anything goes south, they can just jettison the zone and keep most of Gestalt's modules intact.""}"
+137	137		301							"{3: '""The fruits of the Golden Age""—nobody can pass that up, especially not when they\'ve already snagged partial blueprints of the Inver-Device.'}"
+138	138		301							"{3: ""The writing's on the wall for this one.""}"
+139	139		301							"{2: 'Gestalt', 3: ""Commander Nikola's proposal received 52.8% support, 35.1% opposition, and 12.1% abstentions.""}"
+140	140		301				AniZhuanchangBegin			{2: 'Gestalt', 3: 'The proposal passes.'}
+141	141		502							{1: 'DialogDisable'}
+142	142		401							{1: '1', 2: '36'}
+143	143		306						200.0	{1: '1'}
+144	144		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+145	145		401							{2: '201'}
+146	146		301			DialogEnable				"{3: 'Babylonians are buzzing with excitement, eagerly awaiting the grand unveiling of a new technological marvel. To amp up public anticipation even further, politicians have slated the ""Data Wall"" to open in just two days.'}"
+147	147		301							"{3: ""Meanwhile, far from the celebratory hubbub, you, Asimov, and Teddy are holed up in a Science Council laboratory. You couldn't care less about the festivities; your focus is on cracking open Dominik's mysterious invitation.""}"
+148	148		306							
+149	149		201							{1: '1', 2: '500864', 7: '1'}
+150	150		301							{1: '1', 2: 'Teddy', 3: 'Hmm... There, that should do it.', 4: '1'}
+151	151		401							{1: '2', 2: '5286'}
+152	152		301							{3: 'Teddy gives the last two screws on a peculiar machine a final tighten with her wrench before dusting off her hands with a satisfied flourish.'}
+153	153		401							{1: '2', 2: '5371'}
+154	154		301							"{2: 'Teddy', 3: ""Have a seat and put this on. Asimov and I are hooking the invitation up to this Full Sensory Simulation Device. Then you'll be able to access the information inside."", 4: '1'}"
+155	155		302							{2: 'Are you sure this will work?', 3: '156', 4: 'Are you sure this will decode the invitation?', 5: '156'}
+156	156		201							{1: '1', 2: '500004', 7: '1'}
+157	157		301							{1: '1', 2: 'Asimov', 3: 'Sure you can.', 4: '1'}
+158	158		401							{1: '2', 2: '4979'}
+159	159		301							{3: 'Asimov inspects the terminal connected to the machine as he begins to explain.'}
+160	160		301							"{2: 'Asimov', 3: ""We're taking apart the underlying architecture of the invitation. After Teddy cracks the Conundrum data lock, I keep on decoding the remaining portions."", 4: '1'}"
+161	161		301							"{2: 'Asimov', 3: ""The code itself isn't rocket science, but its arrangement is all over the place with unusual boundary condition judgments. While digging through the Science Council's internal database, I stumbled upon a similar code structure pattern—"", 4: '1'}"
+162	162		301							{2: 'Asimov', 3: 'This is it: the Full Sensory Simulation Device.', 4: '1'}
+163	163		302							{2: 'Nanami left it behind.', 3: '164'}
+164	164		301							"{2: 'Asimov', 3: ""That's right."", 4: '1'}"
+165	165		301							"{2: 'Asimov', 3: ""I'm looking at the code she wrote—it's a real spaghetti of complexity, yet somehow that jumble just works."", 4: '1'}"
+166	166		301							{2: 'Asimov', 3: 'The code structure for the invitation is practically a dead ringer for the Full Sensory Simulation Device.', 4: '1'}
+167	167		401							{1: '2', 2: '4979'}
+168	168		301							{3: 'Asimov gives the data on the terminal one last once-over.'}
+169	169		301							"{2: 'Asimov', 3: ""I've run tests using the encryption keys she stashed away, and it's physically safe—but I can't vouch for whether the experience is just this machine playing tricks on your mind."", 4: '1'}"
+170	170		201							{1: '1', 2: '500864', 7: '1'}
+171	171		301							"{1: '1', 2: 'Teddy', 3: ""Alright, enough talk—let's just give it a whirl."", 4: '1'}"
+172	172		401							{1: '2', 2: '5286'}
+173	173		203							{1: '1', 2: '0.25', 4: '-50', 5: '-50'}
+174	174		301							{3: 'Teddy pulls you over to the machine.'}
+175	175		301							"{2: 'Teddy', 3: ""Once you're inside, I'll punch in the right keys, and Asimov will keep an eye on the machine the whole time. If anything goes south, we'll yank the plug immediately. Don't sweat it, you're totally safe."", 4: '1'}"
+176	176		302							{2: 'Really...', 3: '177', 4: 'I trust you.', 5: '178'}
+177	177		301							"{2: 'Teddy', 3: ""Come on, what's with the suspicious look?"", 4: '1'}"
+178	178		204							{1: '1', 2: '2'}
+179	179		301							"{2: 'Teddy', 3: ""Let's go! Gray Raven Commandant!"", 4: '1'}"
+180	180		201							{1: '1', 2: '500004', 7: '1'}
+181	181		301				AniZhuanchangBegin			{1: '1', 2: 'Asimov', 3: 'This invitation has a one-time encryption key. Make sure to jot down any info you find inside.', 4: '1'}
+182	182		502							{1: 'DialogDisable'}
+183	183		202							{1: '1', 6: '1'}
+184	184		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+185	185		301			DialogEnable				"{3: ""Asimov's voice fades into the darkness as the helmet slides over your head.""}"
+186	186		401							{1: '1', 2: '36'}
+187	187		401							{1: '2', 2: '9389034'}
+188	188		301							"{3: ""You're hit with a wave of dizziness.""}"
+189	189		401							{1: '2', 2: '2624'}
+190	190		301				DialogDisable			{3: 'Your mind drifts into a vast, empty expanse. The silence is so profound you can only hear your own heartbeat.'}
+191	191		402							{1: '2624'}
+192	192		302							{2: 'Where... am I?'}
+193	193		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 3: '0', 4: '1', 5: '0.4'}
+194	194		401							{1: '2', 2: '4424'}
+195	195		401							{1: '1', 2: '382'}
+196	196		301			DialogEnable				"{2: '????', 3: ""You're here.""}"
+197	197		401							{1: '2', 2: '4424'}
+198	198		301							{3: 'A synthetic voice echoes from all directions within the dark void.'}
+199	199		301							"{2: '????', 3: ""You finally got the key, but the Tower isn't growing anymore.""}"
+200	200		302							{2: 'Who?', 3: '201'}
+201	201		301							{2: '????', 3: 'No need to worry, ■ is just a ghost floating through data space, a mere shred of history that no longer exists.'}
+202	202		302							{2: '...Dominik?', 3: '203'}
+203	203		201							{1: '1', 2: '500263'}
+204	204		301							"{1: '1', 2: '""Dominik""', 3: '■ is Dominik, part of the Gestalt.', 4: '1'}"
+205	205		302							"{2: ""But I'm not hooked up to the Gestalt."", 3: '206'}"
+206	206		301							"{2: '""Dominik""', 3: ""Everything's connected. You're here because something's off; ■ picked up on an anomaly."", 4: '1'}"
+207	207		302							{2: 'An anomaly?', 3: '208'}
+208	208		301							"{2: '""Dominik""', 3: ""You've got the key, but the Tower isn't growing anymore."", 4: '1'}"
+209	209		301							"{2: '""Dominik""', 3: 'Are you a time traveler? Did you mess everything up?', 4: '1'}"
+210	210		302							{2: '...', 3: '211', 4: 'What are you talking about?', 5: '211'}
+211	211		301							"{2: '""Dominik""', 3: '...', 4: '1'}"
+212	212		301							{3: 'Dominik seems to weigh his suspicions for a moment before speaking again.'}
+213	213		301							"{2: '""Dominik""', 3: 'So, do you know where the advance team is?', 4: '1'}"
+214	214		302							{2: 'Advance Team?', 3: '215'}
+215	215		301				AniZhuanchangBegin			"{3: ""That phrase is like a firework in my mind—a quick burst before it's gone. In that flash, fuzzy images pop up at the edge of my vision.""}"
+216	216		502							{1: 'DialogDisable'}
+217	217		401							{1: '1', 2: '36'}
+218	218		202							{1: '1', 6: '1'}
+219	219		205						500.0	{1: '999'}
+220	220		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+221	221		401							{1: '2', 2: '895'}
+222	222		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+223	223		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+224	224		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_39.jpg'}
+225	225		401							{1: '1', 2: '229'}
+226	226		301			DialogEnable	DialogDisable			{3: 'A madman, covered in white mist, slumped on a couch, sorting out his suicide note.'}
+227	227		401							{1: '2', 2: '895'}
+228	228		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory736.jpg'}
+229	229		201							{1: '1', 2: '500567'}
+230	230		301			DialogEnable				"{1: '1', 2: 'Advance Team Member 1', 3: ""Alright, you've handled all the infected within your reach."", 4: '1'}"
+231	231		301				AniZhuanchangBegin			{2: 'Advance Team Member 1', 3: 'Keep the force field-equipped protective suit on. Welcome to the advance team.', 4: '1'}
+232	232		502							{1: 'DialogDisable'}
+233	233		202						500.0	{1: '1', 6: '1'}
+234	234		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory736.jpg'}
+235	235		201							{1: '1', 2: '501003'}
+236	236		301			DialogEnable	DialogDisable			{1: '1', 2: 'Nemo', 3: 'I hope▂▄▁doing well, Profe▁▂▄▁Trout.', 4: '1'}
+237	237		401							{1: '2', 2: '895'}
+238	238		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+239	239		201							{1: '1', 2: '500723', 7: '1'}
+240	240		301			DialogEnable				{1: '1', 2: 'Trout', 3: 'Our current technology has its limits. My consciousness is cluttered with too many other voices, but digitizing remains essential.', 4: '1'}
+241	241		301				DialogDisable			"{2: 'Trout', 3: ""You're looking for someone to take over Agent Zero's authority, and I'm curious to see what possessing such power is like. But first, one must shed their human form."", 4: '1'}"
+242	242		401							{1: '2', 2: '895'}
+243	243		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+244	244		202							{1: '1', 6: '1'}
+245	245		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_39.jpg'}
+246	246		301			DialogEnable				"{2: 'Vonnegut', 3: ""These symptoms of yours... they're remarkably similar to the effects of Agent Zero's authority.""}"
+247	247		301				AniZhuanchangBegin			"{2: 'Vonnegut', 3: ""If there are no secrets about you I don't know, then it means you've eventually merged with Chaos and taken Agent Zero's place.""}"
+248	248		502							{1: 'DialogDisable'}
+249	249		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+250	250		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+251	251		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+252	252		301			DialogEnable				{3: 'The hazy visions gradually fade, leaving only empty darkness before me.'}
+253	253		302							"{2: ""I'm sorry, but I don't know anything about an advance team.""}"
+254	254		301				DialogDisable			{3: 'Even though the invitation came from Nanami, revealing what I know to someone whose identity is unclear would be unwise.'}
+255	255		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 3: '0', 4: '1', 5: '0.4'}
+256	256		201							{1: '1', 2: '500263'}
+257	257		301			DialogEnable				"{1: '1', 2: '""Dominik""', 3: ""So you're not a time traveler after all?"", 4: '1'}"
+258	258		301							"{2: '""Dominik""', 3: 'But the new Central Purification Filter core clearly has tech from way further in the future...', 4: '1'}"
+259	259		301							{3: 'The data ghost mutters to itself.'}
+260	260		302							"{2: ""You're Dominik. How could you not know this stuff?"", 3: '261'}"
+261	261		301							"{2: '""Dominik""', 3: ""Dominik was never a know-it-all. Besides, ■ is just the echo of Dominik's consciousness, left behind before he went into Reactor 1."", 4: '1'}"
+262	262		302							"{2: ""Where's the real Dominik?"", 3: '263'}"
+263	263		301							"{2: '""Dominik""', 3: 'The real Dominik might still be kicking around in the <color=#ff4e4eff>Fog</color>.', 4: '1'}"
+264	264		302							"{2: ""Isn't it Reactor 1?"", 3: '265', 4: 'You just said he went into Reactor 1.'}"
+265	265		301							"{2: '""Dominik""', 3: 'The one in Reactor 1 is just ""the final Dominik.""', 4: '1'}"
+266	266		302							{2: '...', 3: '267', 4: 'What a confusing way to put it.', 5: '267'}
+267	267		301							"{2: '""Dominik""', 3: ""It's a pretty tangled story. Let ■ figure out what to share with you right now."", 4: '1'}"
+268	268		301							{3: 'The air hangs heavy for a moment before the voice in the void slowly speaks.'}
+269	269		301							"{2: '""Dominik""', 3: '<phonetic=The Primordial One>Dominik</phonetic> leads the advance team <color=#ff4e4eff>into the Hetero Tower</color>. After recycling its core, he vanishes into the Fog.', 4: '1'}"
+270	270		301							"{2: '""Dominik""', 3: 'Through an ""invitation,"" he picks ""inheritors"" in this world. These successors, who take on the ""Dominik"" identity, throw themselves into unearthing deeper secrets within the M.I.N.D. and pushing back Punishing Virus.', 4: '1'}"
+271	271		301							"{2: '""Dominik""', 3: 'But after a certain point, no messages from <phonetic=The Primordial One>Dominik</phonetic>... have come through for ages.', 4: '1'}"
+272	272		301							"{2: '""Dominik""', 3: ""So, no one can confirm Dominik's current status."", 4: '1'}"
+273	273		302							"{2: 'You just mentioned ""the Fog."" What kind of place is that?', 3: '274'}"
+274	274		301							"{2: '""Dominik""', 3: 'The Fog is a space inside the Hetero Tower.', 4: '1'}"
+275	275		301							"{2: '""Dominik""', 3: 'A long, long time ago, <phonetic=The Primordial One>Dominik</phonetic> left behind coordinates to a spot in the Fog that could receive messages.', 4: '1'}"
+276	276		301							"{2: '""Dominik""', 3: 'Based on our calculations, that location should be where the Hetero Tower manifests.', 4: '1'}"
+277	277		301							"{2: '""Dominik""', 3: ""Now, since the Hetero Tower isn't showing up, the Fog is naturally impossible to enter."", 4: '1'}"
+278	278		302							"{2: 'Calculations?', 3: '279', 4: ""Who's doing these calculations?"", 5: '279'}"
+279	279		301							"{2: '""Dominik""', 3: 'About the Gestalt.', 4: '1'}"
+280	280		301							"{2: '""Dominik""', 3: 'After we discovered the Hetero Tower hadn\'t appeared, ■ and Gestalt ran the numbers. The results suggest someone from the future might\'ve reversed time, stopping the ""Hetero Tower"" from growing.', 4: '1'}"
+281	281		301							"{2: '""Dominik""', 3: '■ used to think the time travelers on the advance team had pulled it off...', 4: '1'}"
+282	282		301							{3: 'His voice trails off.'}
+283	283		302							{2: 'You keep bringing up the Hetero Tower, but what even is it?', 3: '284'}
+284	284		301							"{3: 'That crimson spiral tower I caught a glimpse of when Lee was switching Hyperreal frames, and earlier, when Vonnegut kept talking about ""the Tower""...'}"
+285	285		301							"{3: 'If all these ""towers"" are actually the Hetero Tower...'}"
+286	286		301							{3: 'Then what kind of thing could it really be?'}
+287	287		301							"{2: '""Dominik""', 3: 'The Hetero Tower...', 4: '1'}"
+288	288		301							{3: 'He seems a bit uneasy, pausing for a moment before slowly starting to talk.'}
+289	289		301							"{2: '""Dominik""', 3: ""■ doesn't really know much either. <phonetic=The Primordial One>Dominik</phonetic> just mentioned that it signals impending doom."", 4: '1'}"
+290	290		301							"{2: '""Dominik""', 3: 'It seems to have powers that go beyond dimensions and can only be controlled with ""keys.""', 4: '1'}"
+291	291		302							{2: 'Keys?', 3: '292', 4: 'The invitations?', 5: '292'}
+292	292		301							"{2: '""Dominik""', 3: ""The invitations are just one piece of the puzzle. Their whole point is to wreck the Hetero Tower's core and then recycle it."", 4: '1'}"
+293	293		301							"{2: '""Dominik""', 3: ""For more information, <phonetic=The Primordial One>Dominik</phonetic> himself is the only one who'd know."", 4: '1'}"
+294	294		301							"{3: '""Dominik"" lets out a soft sigh, and silence fills the air once more.'}"
+295	295		302							{2: 'So, these invitations are just to clue me in on all this?', 3: '296'}
+296	296		301							"{2: '""Dominik""', 3: 'Not entirely. This info is actually a ""bonus."" ■ only loaded this invitation with extra data after realizing the Hetero Tower hadn\'t shown up.', 4: '1'}"
+297	297		301							"{2: '""Dominik""', 3: 'Originally, the invitation was simply a way to pass on ""knowledge.""', 4: '1'}"
+298	298		301							"{2: '""Dominik""', 3: '<phonetic=The Primordial One>Dominik</phonetic> picks a spark and sends it out—whoever catches it becomes the new ""Dominik,"" tasked with bringing humanity glory.', 4: '1'}"
+299	299		301							"{2: '""Dominik""', 3: 'Way down the line, they\'re all supposed to add their own data to this invitation, then pass it on to future ""Dominiks.""', 4: '1'}"
+300	300		301							"{2: '""Dominik""', 3: 'But now...', 4: '1'}"
+301	301		301							"{2: '""Dominik""', 3: 'Would you be up for becoming the new ""Dominik""?', 4: '1'}"
+302	302		301							{3: 'The digital specter, calm as ever, slowly lays out its weighty proposition:'}
+303	303		301							"{3: ""To become the new Dominik, to embrace history's call, to sculpt a new future.""}"
+304	304		301							{3: 'And the answer?'}
+305	305		302							{2: 'No, I refuse.', 3: '306'}
+306	306		301							"{3: ""There's hardly a pause—not out of caution or a fear of responsibility—even if everything this entity describes rings true. You simply won't take the bait.""}"
+307	307		301							{3: 'Does this era even need a Dominik? No, should I say...'}
+308	308		302							"{2: '""Dominik"" has already done what history asked.', 3: '309'}"
+309	309		301				DialogDisable			{3: 'You look the ancient being squarely in the eye and speaks softly.'}
+310	310		302							{2: 'History should only serve as a warning and an inspiration.', 3: '311'}
+311	311		302							"{2: ""Our job now is to make our own choices and push forward. Simply carrying on the past's wishes isn't the way."", 3: '312'}"
+312	312		301			DialogEnable				{3: 'The key to breaking free from our current bind lies in the present.'}
+313	313		301							"{2: '""Dominik""', 3: ""Ah... So that's your choice?"", 4: '1'}"
+314	314		301							"{3: 'The last sentence hangs unspoken, yet ""Dominik"" gets it. A voice echoes in the void—devoid of sadness or relief—as Dominik gives a gentle nod.'}"
+315	315		301							"{2: '""Dominik""', 3: ""So be it. Time's ticking, and this information will soon vanish."", 4: '1'}"
+316	316		301							"{2: '""Dominik""', 3: 'Hidden beneath this invitation is an information black box only you can open.', 4: '1'}"
+317	317		301				DialogDisable			"{2: '""Dominik""', 3: ""The last known coordinates of where <phonetic=The Primordial One>Dominik</phonetic>'s messages hit are also tucked away in the information black box."", 4: '1'}"
+318	318		104							{1: '-30|0|0', 2: '0.1', 4: '3'}
+319	319		104							{1: '30|0|0', 2: '0.2', 4: '3'}
+320	320		104							{1: '0|-30|0', 2: '0.1', 4: '3'}
+321	321		104							{1: '0|30|0', 2: '0.2', 4: '3'}
+322	322		104							{1: '-30|0|0', 2: '0.1', 4: '3'}
+323	323		104							{1: '30|0|0', 2: '0.2', 4: '3'}
+324	324		104							{1: '0|-30|0', 2: '0.1', 4: '3'}
+325	325		104							{1: '0|30|0', 2: '0.2', 4: '3'}
+326	326		104							{1: '0|0|0', 2: '0.1', 4: '3'}
+327	327		301			DialogEnable				{3: 'The air around them starts to subtly shake.'}
+328	328		301							"{2: '""Dominik""', 3: ""We're hitting the wall here..."", 4: '1'}"
+329	329		302							{2: 'Hold on, were you the one who put up those data walls in Gestalt?', 3: '330'}
+330	330		301							"{2: '""Dominik""', 3: 'Yes.', 4: '1'}"
+331	331		301							"{2: '""Dominik""', 3: ""What's behind those walls isn't just old Golden Age echoes. Way too much time has passed; those data walls are falling apart. They're going to crumble eventually, even if nobody tries to open them."", 4: '1'}"
+332	332		301							"{2: '""Dominik""', 3: 'Think of it as the last gift to humanity.', 4: '1'}"
+333	333		301							{3: 'The shape lurking behind the data slowly melts away.'}
+334	334		301							"{2: '""Dominik""', 3: ""It's time to leave."", 4: '1'}"
+335	335		301				AniZhuanchangBegin			"{2: '""Dominik""', 3: 'The Hetero Tower hasn\'t shown up. Maybe... maybe you\'ll see a better ""future.""', 4: '1'}"
+336	336		301				DialogDisable			{3: 'Just like that, the dark world drops back into dead silence.'}
+337	337		502							{1: 'DialogDisable'}
+338	338		202							{1: '1', 6: '1'}
+339	339		401							{1: '1', 2: '36'}
+340	340		205						1000.0	{1: '999'}
+341	341		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+342	342		107							{1: 'Classified Laboratory, Science Council'}
+343	343		301							{3: 'Classified Laboratory, Science Council'}
+344	344		108							{1: '1'}
+345	345		401							{1: '1', 2: '381'}
+346	346		302							{2: 'Dominik has laid it all out for me in the invitation.', 3: '347'}
+347	347		401							{1: '2', 2: '4544'}
+348	348		401							{1: '2', 2: '4427'}
+349	349		301			DialogEnable				"{3: '""Invitation"", ""Hetero Tower"", ""the Fog""...'}"
+350	350		301							{3: 'Asimov jots down these cryptic terms on his terminal, connecting the dots, trying to make sense of their relationships.'}
+351	351		402							{1: '4544'}
+352	352		402							{1: '4427'}
+353	353		201							{1: '1', 2: '500004', 3: '8'}
+354	354		301							"{1: '1', 2: 'Asimov', 3: ""I think... I'm finally getting it."", 4: '1'}"
+355	355		302							"{2: 'Brilliant, Asimov!', 3: '356', 4: ""I think I'm on the same page too."", 5: '356'}"
+356	356		204							{1: '1', 2: '0'}
+357	357		301							"{2: 'Asimov', 3: 'First off, there\'s the ""Hetero Tower,"" which could be a harbinger of disaster. Its appearance is—', 4: '1'}"
+358	358		302							{2: 'A crimson spiral tower.', 3: '359'}
+359	359		301							"{2: 'Asimov', 3: 'It most likely dates back to Dominik, the one they call ""The Primordial One.""', 4: '1'}"
+360	360		301							{2: 'Asimov', 3: 'The Hetero Tower appears to have transdimensional abilities—or perhaps, it allows travel through time.', 4: '1'}
+361	361		301							"{2: 'Asimov', 3: 'But to control the Hetero Tower, you need ""keys."" The invitation you\'re holding is part of them; the other part remains a mystery to us.', 4: '1'}"
+362	362		301				DialogDisable			"{2: 'Asimov', 3: 'So, based on what you ""saw"", ""Dominik""\'s explanation, and what Vonnegut told us...', 4: '1'}"
+363	363		401							{1: '2', 2: '4387'}
+364	364		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+365	365		202							{1: '1', 6: '1'}
+366	366		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+367	367		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+368	368		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory663.jpg', 3: '0.3', 4: '0.3', 5: '0'}
+369	369		401							{1: '2', 2: '4387'}
+370	370		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+371	371		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1284.jpg'}
+372	372		205							{1: '999'}
+373	373		201							{1: '1', 2: '500305'}
+374	374		301			DialogEnable				"{1: '1', 2: 'Vonnegut', 3: 'What did you do to the ""Tower""?', 4: '1'}"
+375	375		301				DialogDisable			"{2: 'Vonnegut', 3: ""Ascending the Tower with a mortal body? That's impossible."", 4: '1'}"
+376	376		401							{1: '2', 2: '4387'}
+377	377		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+378	378		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+379	379		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 3: '1', 4: '1', 5: '0'}
+380	380		201							{1: '1', 2: '500263', 6: '1'}
+381	381		301			DialogEnable				"{1: '1', 2: '""Dominik""', 3: 'After we discovered the Hetero Tower hadn\'t appeared, ■ and Gestalt ran the numbers. The results suggest someone from the future might\'ve reversed time, stopping the ""Hetero Tower"" from growing.', 4: '1'}"
+382	382		301							"{2: '""Dominik""', 3: ""■ doesn't really know much either. <phonetic=The Primordial One>Dominik</phonetic> just mentioned that it signals impending doom."", 4: '1'}"
+383	383		301				DialogDisable			"{2: '""Dominik""', 3: 'It seems to have powers that go beyond dimensions and can only be controlled with ""keys.""', 4: '1'}"
+384	384		401							{1: '2', 2: '4388'}
+385	385		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+386	386		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+387	387		205							{1: '999'}
+388	388		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+389	389		202							{1: '1', 6: '1'}
+390	390		301			DialogEnable				{3: 'Asimov is speaking in a grave tone in the dimly lit room.'}
+391	391		201							{1: '1', 2: '500004'}
+392	392		301				DialogDisable			"{1: '1', 2: 'Asimov', 3: 'The ""Hetero Tower"" was originally supposed to show up in this world at a specific point in time.', 4: '1'}"
+393	393		202							{1: '1'}
+394	394		302							{2: '...', 3: '395'}
+395	395		401							{1: '2', 2: '4387'}
+396	396		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+397	397		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+398	398		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+399	399		201							{1: '1', 2: '500568'}
+400	400		301			DialogEnable	DialogDisable			{1: '1', 3: 'The sudden deja vu I had during the Hyperreal frame replacement flashes vividly in my mind.'}
+401	401		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory663.jpg', 3: '0', 4: '1', 5: '0.4'}
+402	402		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory663.jpg'}
+403	403		205							{1: '999'}
+404	404		301			DialogEnable				"{3: 'Was that the moment? The time the ""Hetero Tower"" was supposed to appear?'}"
+405	405		202							{1: '1'}
+406	406		301				DialogDisable			{3: 'It seems ever since then, my deja vu visions have been getting weaker and further from what actually happens...'}
+407	407		401							{1: '2', 2: '4387'}
+408	408		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+409	409		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_14.jpg'}
+410	410		301			DialogEnable	DialogDisable			"{3: ""Whether it's the spherical forest that never appeared, or Shorthalt's testament that I received unexpectedly...""}"
+411	411		401							{1: '2', 2: '4388'}
+412	412		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+413	413		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+414	414		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+415	415		201							{1: '1', 2: '500004', 7: '1'}
+416	416		301			DialogEnable				{1: '1', 2: 'Asimov', 3: 'For some reason—', 4: '1'}
+417	417		401							{1: '2', 2: '4544'}
+418	418		401							{1: '2', 2: '4427'}
+419	419		301							{3: 'Asimov types a lone question mark onto a blank document on his terminal.'}
+420	420		402							{1: '4544'}
+421	421		402							{1: '4427'}
+422	422		301							{2: 'Asimov', 3: 'Something external messed with things, and the Hetero Tower just never showed up.', 4: '1'}
+423	423		301							"{2: 'Asimov', 3: 'Vonnegut\'s convinced you meddled with something ""in the future,"" and Dominik\'s got you pegged as a time traveler.', 4: '1'}"
+424	424		204							{1: '1', 2: '7'}
+425	425		301				DialogDisable			{2: 'Asimov', 3: 'So, did you actually pull some strings in the future?', 4: '1'}
+426	426		302							{2: 'Me?', 3: '427', 4: 'Who?', 5: '427', 6: 'You mean... me?', 7: '427'}
+427	427		302							"{2: ""But I'm just a human..."", 3: '428'}"
+428	428		202							{1: '1'}
+429	429		301			DialogEnable	DialogDisable			"{3: ""It wouldn't even take much—a tiny bit more of that Punishing Virus and I'd be a goner, my whole body rotting away.""}"
+430	430		302							{2: 'Besides, if I really did something big in the future...', 3: '431'}
+431	431		302							"{2: ""Why wouldn't I have just killed Vonnegut?"", 3: '432'}"
+432	432		201							{1: '1', 2: '500004'}
+433	433		301			DialogEnable				"{1: '1', 2: 'Asimov', 3: 'Maybe because you twisted the ""future,"" not the ""past.""', 4: '1'}"
+434	434		301							"{2: 'Asimov', 3: 'Remember those ""war aftereffects"" we talked about in that meeting, right before you saved Selena from the Time Prison?', 4: '1'}"
+435	435		301							{2: 'Asimov', 3: 'The Mind Beacon went haywire because of those war aftereffects...', 4: '1'}
+436	436		301							"{2: 'Asimov', 3: 'Could that have been the moment your ""future self"" popped back in?', 4: '1'}"
+437	437		302							"{2: 'This is ridiculous...', 3: '438', 4: ""That's impossible."", 5: '438', 6: '...', 7: '438'}"
+438	438		301							{2: 'Asimov', 3: 'In science, even the craziest ideas are fair game.', 4: '1'}
+439	439		202							{1: '1'}
+440	440		301							{3: 'Asimov just casually shuts down the conversation.'}
+441	441		302							"{2: ""But there's no way for us to prove any of this, is there?"", 3: '442'}"
+442	442		201							{1: '1', 2: '500004'}
+443	443		301							{1: '1', 2: 'Asimov', 3: 'Time itself will prove it for us.', 4: '1'}
+444	444		301							{3: 'His face stays hidden in the shadows, only his voice cutting through the darkness.'}
+445	445		301							"{2: 'Asimov', 3: 'It\'s about time. Let\'s kick off our investigation with the ""Data Wall.""', 4: '1'}"
+446	446		301				AniZhuanchangBegin			"{2: 'Asimov', 3: 'Let\'s see if there\'s really something beyond the ""Data Wall""... something more than just Golden Age relics.', 4: '1'}"
+447	447		502							{1: 'DialogDisable'}
+448	448		202							{1: '1', 6: '1'}
+449	449		205							{1: '999'}
+450	450		401						1000.0	{1: '1', 2: '36'}
+451	451		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4301_03.jpg'}
+452	452		107							{1: 'Science Council', 2: 'Testing Ground'}
+453	453		301							"{3: ""At the Science Council's testing ground.""}"
+454	454		108							{1: '1'}
+455	455		401							{1: '1', 2: '201'}
+456	456		301			DialogEnable				{2: 'Teddy', 3: 'Protocol decryption is complete.'}
+457	457		301							{2: 'Asimov', 3: 'Initiating hijack.'}
+458	458		301							{3: 'The giant screen projected by the terminal scrolled with the latest updates, as layers of the data wall are systematically hijacked.'}
+459	459		401							{1: '2', 2: '2563'}
+460	460		301							{2: 'Teddy', 3: '—Hijack complete.'}
+461	461		301							"{3: ""At the moment Teddy presses the final key, Gestalt's terminal flickers, unleashing a torrent of unknown data, with countless lost technologies cascading into the terminal's memory.""}"
+462	462		301							{2: 'Researcher A', 3: 'Thank goodness!'}
+463	463		401							{1: '1', 2: '36'}
+464	464		301				DialogDisable			{2: 'Teddy', 3: 'Wait! What is that!?'}
+465	465		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+466	466		101							{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading29.jpg'}
+467	467		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+468	468		401							{1: '1', 2: '273'}
+469	469		401							{1: '2', 2: '4436'}
+470	470		401							{1: '2', 2: '2782'}
+471	471		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab', 2: '2'}
+472	472		301			DialogEnable				"{3: ""The moment Gestalt's <b><ud><color=#34aff8ff><link=27>Data Wall</link></color></ud></b> opens, the hall plunges into darkness. Only crimson warning alerts frantically flash across the screen.""}"
+473	473		301			RImgBg1Shake				"{3: ""The entire Babylonia begins to shake in sync with Gestalt's tremors. Violent crimson lightning crackles under the alloy shell as the Punishing virus seeps out.""}"
+474	474		301							"{3: ""The Punishing Virus contracts inward, condensing into a pitch-black sphere that's no larger than a human eyeball.""}"
+475	475		301				AniZhuanchangBegin			{3: 'It looks like a dark star that can devour even light.'}
+476	476		502							{1: 'DialogDisable'}
+477	477		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab'}
+478	478		401							{1: '1', 2: '36'}
+479	479		402							{1: '4436'}
+480	480		402							{1: '2782'}
+481	481		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+482	482		401							{1: '1', 2: '390'}
+483	483		201							{1: '1', 2: '500380'}
+484	484		301			DialogEnable				{1: '1', 2: 'Ishmael', 3: '...So it has come to this moment after all.', 4: '1'}
+485	485		301				AniZhuanchangBegin			{3: 'In the darkness, a woman gazes toward the source of the chaos, where humanity is racing against time before disaster strikes.'}
+486	486		202							{1: '1', 6: '1'}
+487	487		502							{1: 'DialogDisable'}
+488	488		505						500.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+489	489		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading29.jpg'}
+490	490		201							{1: '18', 2: '500380'}
+491	491		301			DialogEnable				{1: '1', 2: 'Ishmael', 3: 'The past remains unchanged. So once again, the arrival of Punishing begins on December 20, 2160...', 4: '18'}
+492	492		301							{2: 'Ishmael', 3: 'The Hetero Tower never descended, and the Ascension-Network...', 4: '18'}
+493	493		202				DialogDisable			{1: '18', 6: '1'}
+494	494		306							{1: '1'}
+495	495		301			DialogEnable				{3: 'When the Punishing arrived on Earth, it first targeted the cornerstone of human civilization—information itself.'}
+496	496		301							{3: 'So it infiltrated the largest information hub of that time—Gestalt.'}
+497	497		301							"{3: ""If Punishing were to take control of Gestalt, then given enough time, its memetic contamination could seep into civilization itself—even into language. When that happens, Earth's future would be lost entirely.""}"
+498	498		301							"{3: 'But when the virus broke out on December 20th, that trait was stripped away by humanity. Only an ""empty shell"" remained, and that is the Punishing Virus humanity knows now.'}"
+499	499		301				DialogDisable			"{3: 'Over time, this ""empty shell"" infected countless Constructs, machines, and humans, and it was gradually filled with information belonging to Earth. Bit by bit, it became Earth\'s own ""specialty""—a network, Ascension-Network.'}"
+500	500		306						300.0	
+501	501		201							{1: '18', 2: '500380'}
+502	502		301			DialogEnable				{1: '1', 2: 'Ishmael', 3: '<phonetic=The contaminating memetic>Dark Star</phonetic> is about to be released, and if it merges with the Ascension-Network...', 4: '18'}
+503	503		301							{2: 'Ishmael', 3: 'Now that the Hetero Zone is gone, Luna, what will you do to fight against Selene?', 4: '18'}
+504	504		202				DialogDisable			{1: '18', 6: '1'}
+505	505		301			DialogEnable	AniZhuanchangBegin			{3: 'She gazes into the distance at the A1 Air Port, already reduced to ruins by Selene.'}
+506	506		502							{1: 'DialogDisable'}
+507	507		401						2000.0	{1: '1', 2: '36'}
+508	508		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4301_12.jpg'}
+509	509		107							{1: 'Deep within the city where Reactor 1 is located.'}
+510	510		301							{3: 'Deep within the city where Reactor 1 is located.'}
+511	511		108							{1: '1'}
+512	512		401							{1: '1', 2: '5068'}
+513	513		201							{1: '1', 2: '500540'}
+514	514		301			DialogEnable				{1: '1', 2: 'Cradle', 3: 'Is this... the place?', 4: '1'}
+515	515		202							{1: '1'}
+516	516		301							{3: 'A girl in a green hood stands near the library, pale flowers clustered around her feet.'}
+517	517		301							{3: 'She gently strokes the Hetero-Creature there, inclining her head to catch its whispers.'}
+518	518		301							{3: 'She then slips silently into the long-abandoned city.'}
+519	519		301							{3: 'This is the graveyard of a collapsed civilization.'}
+520	520		201							{1: '1', 2: '500540', 3: '4'}
+521	521		301							{1: '1', 2: 'Cradle', 3: 'This is the story of civilizations—they fall, rise, and then fall again.', 4: '1'}
+522	522		301							{2: 'Cradle', 3: 'There is always a pattern to follow.', 4: '1'}
+523	523		202							{1: '1'}
+524	524		301							{3: 'Standing before the shattered library entrance, she gazes up at the towering guardian robot.'}
+525	525		201							{1: '1', 2: '500540'}
+526	526		301							"{1: '1', 2: 'Cradle', 3: ""So... what happens next? What's my script?"", 4: '1'}"
+527	527		401							{1: '2', 2: '967'}
+528	528		202							{1: '1'}
+529	529		301							{3: 'A gentle breeze sweeps through the grass and rustles the leaves. No one answers.'}
+530	530		402							{1: '967'}
+531	531		201							{1: '1', 2: '500540', 3: '4'}
+532	532		301							"{1: '1', 2: 'Cradle', 3: ""What's going on? Has my script been interrupted?"", 4: '1'}"
+533	533		301							"{3: 'She\'s run through these ""lines"" countless times here, but no one has ever responded to her voice.'}"
+534	534		204							{1: '1', 2: '8'}
+535	535		301							{2: 'Cradle', 3: 'Sigh...', 4: '1'}
+536	536		401							{1: '2', 2: '13081709'}
+537	537		204							{1: '1', 2: '4'}
+538	538		203							{1: '1', 2: '0.25', 4: '-30'}
+539	539		301							"{3: ""Cradle squats on the ground, utterly bored, like an exhausted actor who's just wrapped their final scene.""}"
+540	540		301							{2: 'Cradle', 3: 'So, what now?', 4: '1'}
+541	541		204							{1: '1', 2: '8'}
+542	542		301				AniZhuanchangBegin			"{2: 'Cradle', 3: ""Why isn't anyone here? What am I supposed to do?"", 4: '1'}"
+543	543		502							{1: 'DialogDisable'}
+544	544		202						1000.0	{1: '1', 6: '1'}
+545	545		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1116.jpg'}
+546	546		104				AniZhuanchangEnd			{1: '0|0|-300', 2: '0'}
+547	547		104						2200.0	{1: '0|0|0', 2: '2'}
+548	548		301			DialogEnable				{3: 'In a distant room, the Merciful One watches everything unfold below.'}
+549	549		201							{1: '1', 2: '500380'}
+550	550		301							{1: '1', 2: 'Ishmael', 3: 'Ah... and you, too.', 4: '1'}
+551	551		401							{1: '2', 2: '5149'}
+552	552		301							"{3: 'She flips through the pages of the Red Tide\'s book, but beneath Cradle\'s name, ""Agent Zero"" is crossed out.'}"
+553	553		204							{1: '1', 2: '12'}
+554	554		301							"{2: 'Ishmael', 3: ""The Hetero Tower never descended, and Agent Zero never got their hands on Cradle's body within the Red Tide..."", 4: '1'}"
+555	555		204							{1: '1', 2: '0'}
+556	556		301							{2: 'Ishmael', 3: 'Well then, grow freely from now on.', 4: '1'}
+557	557		301		1		AniZhuanchangBegin			{2: 'Ishmael', 3: 'Perhaps... you also represent a new possibility.', 4: '1'}

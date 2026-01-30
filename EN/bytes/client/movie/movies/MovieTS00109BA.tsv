@@ -1,0 +1,40 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory39.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+4	4		201							{1: '1', 2: '1021001', 3: '9'}
+5	5		301			DialogEnable				"{1: '1', 2: 'Lucia', 3: ""I can't take these guards down... fast enough..."", 4: '1'}"
+6	6		301							"{2: 'Lucia', 3: ""Commandant! I can't last much longer if this continues... You have to run for the opening I create as soon as the alarm on my frame pings!"", 4: '1'}"
+7	7		301							{2: 'Lucia', 3: 'I will fight to my last breath to make sure you can get out!', 4: '1'}
+8	8		302							"{2: 'There has to be another way!', 3: '9', 4: ""I won't leave you behind, Lucia!"", 5: '9'}"
+9	9		301							"{2: 'Lucia', 3: ""I've made my decision! I'll push you away myself if I have to when the time comes!"", 4: '1'}"
+10	10		201							{1: '1', 2: '500015'}
+11	100		401							{1: '2', 2: '1508'}
+12	11		301							{1: '1', 2: 'Iron Maiden', 3: 'Stop your attack, my servants!', 4: '1'}
+13	12		201							{1: '1', 2: '1021001', 3: '9'}
+14	13		301							{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+15	14		201							{1: '1', 2: '500015'}
+16	15		301							{1: '1', 2: 'Iron Maiden', 3: 'The Queen has extended her invitation into her chamber to this human... Servants! Bring me that human!', 4: '1'}
+17	16		201							{1: '1', 2: '1021001', 3: '9'}
+18	17		301							"{1: '1', 2: 'Lucia', 3: ""You're not taking Commandant away!"", 4: '1'}"
+19	18		201							{1: '1', 2: '500015'}
+20	19		301							{1: '1', 2: 'Iron Maiden', 3: 'Servants, I said bring me...', 4: '1'}
+21	20		201							{1: '1', 2: '1011001', 3: '9'}
+22	21		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+23	101		401							{1: '2', 2: '1511'}
+24	22		301							"{1: '1', 2: 'Lee', 3: ""You said you're a royal guard, but I don't see any difference between you and those servants of yours..."", 4: '1'}"
+25	23		203							{1: '1', 2: '0.25', 3: '400'}
+26	24		201							{1: '2', 2: '1021001', 3: '9', 4: '-400'}
+27	25		301							"{1: '1', 2: 'Lucia', 3: ""Lee! Where's Liv..."", 4: '2'}"
+28	26		301							"{2: 'Lee', 3: ""(His frame is heavily damaged) I received Commandant's request for assistance by the time I climbed out from underground... I must prioritize Commandant's safety..."", 4: '1'}"
+29	27		301							{2: 'Lucia', 3: 'What have you done to yourself?!', 4: '2'}
+30	28		301							{2: 'Lee', 3: 'The guards tried to keep me inside a tunnel, so I collapsed it... and here I am.', 4: '1'}
+31	29		301							"{2: 'Lee', 3: ""(Points his gun toward the Iron Maiden) I've crossed paths with her before... She bolted halfway through... It seems like her target is the commandant."", 4: '1'}"
+32	30		301							"{2: 'Lucia', 3: ""You're right. She was very unambiguous about that."", 4: '2'}"
+33	31		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+34	32		202							{1: '1', 6: '1'}
+35	33		203							{1: '2', 2: '0.25'}
+36	34		301			PanelActor2Shake				"{1: '1', 2: 'Lucia', 3: ""If that Queen of yours wants to see Commandant, you'll have to go through us first."", 4: '2'}"
+37	35		201							{1: '2', 2: '500015'}
+38	102		401							{1: '2', 2: '1508'}
+39	36		301		1	PanelActor2Shake	AniZhuanchangBegin			"{1: '1', 2: 'Iron Maiden', 3: ""You dare defy Her Majesty's will?! Constructs, you don't even deserve to be servants!"", 4: '2'}"

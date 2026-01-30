@@ -1,0 +1,305 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_10.jpg'}
+2	2		401							{1: '2', 2: '2597'}
+3	3		401							{1: '1', 2: '120'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+5	5		306							{1: '1'}
+6	6		301			DialogEnable				{3: 'Outside the tent, the rain is coming down in sheets, threatening to rip every plant from the mountainside and wash away all the soil.'}
+7	7		301				AniZhuanchangBegin			{3: 'The followers of the Scarlet Revelation are huddled inside the tent, watching the deluge with growing anxiety.'}
+8	8		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+9	9		306						500.0	
+10	10		402							{1: '2597'}
+11	11		401							{1: '2', 2: '4907'}
+12	12		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory731.jpg'}
+13	13		201							{1: '1', 2: '500541'}
+14	14		301			AniZhuanchangEnd				{1: '1', 2: 'Grace', 3: 'How can the rain be this heavy...', 4: '1'}
+15	15		402							{1: '4907'}
+16	16		401							{1: '2', 2: '13081710'}
+17	17		301							"{3: 'Worriedly, Grace kneads the linen pouch filled with rune pebbles and silently asks, ""When will the rain stop?"" After a moment\'s deliberation, she pulls out the first pebble her fingers touch.'}"
+18	18		202							{1: '1'}
+19	19		306							{1: '1'}
+20	20		301							"{3: 'It\'s a wooden rune, representing the letter ""H.""'}"
+21	21		306							
+22	22		201							{1: '1', 2: '500541', 3: '8'}
+23	23		301							{1: '1', 2: 'Grace', 3: 'Hail...', 4: '1'}
+24	24		202							{1: '1'}
+25	25		301							"{3: ""Delay, restriction, termination... This isn't exactly a stellar divination result.""}"
+26	26		301							"{3: ""When you're powerless to change your circumstances, all you can do is put your faith in belief. Even though Grace wasn't initially good at divination, she's really gotten the hang of it over time.""}"
+27	27		201							{1: '1', 2: '500541', 3: '8'}
+28	28		301							{1: '1', 2: 'Grace', 3: 'God... please guide us.', 4: '1'}
+29	29		301							{2: 'Grace', 3: 'Our supplies are running low, and the seeds we just planted have been completely washed away by the rain... God, please guide us and show us the way forward.', 4: '1'}
+30	30		401							{1: '2', 2: '5324'}
+31	31		301							{3: 'Grace closes her eyes and murmurs a prayer for a moment before picking up the linen pouch again. After a quick shake, she lays the bag flat on the table and draws out another rune.'}
+32	32		202							{1: '1'}
+33	33		306							{1: '1'}
+34	34		301							"{3: ""This time, it's a rune carved right out of a stone. In a world like this, she's simply out of luck when it comes to getting a complete set of matching stone or wooden divination tools.""}"
+35	35		301							"{3: 'It represents the letter ""N""—restriction, necessity, peril...'}"
+36	36		306							
+37	37		201							{1: '1', 2: '500541'}
+38	38		301							{1: '1', 2: 'Grace', 3: 'Sigh...', 4: '1'}
+39	39		301							{3: 'Grace knits her brows together as she gathers up all the rune pebbles.'}
+40	40		201							{1: '2', 2: '500294', 4: '500'}
+41	41		203							{1: '1', 2: '0.25', 3: '-500'}
+42	42		301							{1: '1', 2: 'Follower A', 3: 'Lady Revelationist... has God granted us new orders?', 4: '2'}
+43	43		301							{3: 'Noticing Grace tucking away her runes, the followers swarm her, desperate for the reassurance they crave: The rain will let up soon, and they will definitely make it through this.'}
+44	44		402							{1: '4432'}
+45	45		301							{3: 'Looking at their drawn, hungry faces, Grace steels herself and trots out her usual speech yet again.'}
+46	46		204							{1: '1', 2: '8'}
+47	47		301							{2: 'Grace', 3: 'God says we must endure. Our current hardships are a test, and afterward, we will surely overcome these difficulties...', 4: '1'}
+48	48		201							{1: '18', 2: '500093', 4: '-150', 5: '-230', 6: '100', 7: '1'}
+49	49		301							{2: 'Smoker', 3: 'One pack of rations, two packs, two and a half packs, two point seven packs...', 4: '18'}
+50	50		202							{1: '18', 6: '1'}
+51	51		204							{1: '1'}
+52	52		301							{2: 'Grace', 3: '...God says, as long as we endure through this time...', 4: '1'}
+53	53		201							{1: '18', 2: '500093', 4: '-150', 5: '-230', 6: '100', 7: '1'}
+54	54		301							{2: 'Smoker', 3: '...Four cans, four and a half, four point eight cans...', 4: '18'}
+55	55		202							{1: '18', 2: '2', 6: '1'}
+56	56		204							{1: '1', 2: '5'}
+57	57		203						200.0	{1: '1', 2: '0.25', 3: '0'}
+58	58		301			RImgBg1Shake				{2: 'Grace', 3: '...Smoker!', 4: '1'}
+59	59		401							{1: '2', 2: '1513'}
+60	60		201							{1: '1', 2: '500093', 4: '-200'}
+61	61		203							{1: '1', 2: '0.25', 3: '0'}
+62	62		301							{1: '1', 2: 'Smoker', 3: 'Oh! Lady Revelationist, do you need something?', 4: '1'}
+63	63		402							{1: '1513'}
+64	64		301							{3: 'The middle-aged man hustles back inside from the downpour, his makeshift tarp practically drenched.'}
+65	65		201							{1: '2', 2: '500541', 3: '5', 4: '400'}
+66	66		203							{1: '1', 2: '0.25', 3: '-400'}
+67	67		301							{1: '1', 2: 'Grace', 3: 'Do you seriously need to be counting cans right now?! And how in the world did you end up with four point eight cans?!', 4: '2'}
+68	68		301							"{2: 'Smoker', 3: ""Whoa, whoa, I didn't sneak any for myself!"", 4: '1'}"
+69	69		204							{1: '2'}
+70	70		301							"{2: 'Smoker', 3: ""That half a can was from when little Owen got sick, and I mixed it with rations to make him some porridge. The other 0.3 can? That was two days ago, when Zoey was at death's door with a mild Punishing Virus infection..."", 4: '1'}"
+71	71		301							{3: 'His voice catches as he blows his nose loudly.'}
+72	72		204							{1: '2', 2: '8'}
+73	73		301							{2: 'Smoker', 3: 'She was on her way out, and you told me to make her comfortable, so I gave her two-thirds of a can.', 4: '1'}
+74	74		204							{1: '2'}
+75	75		301							{2: 'Grace', 3: '...Is this really all we have left?', 4: '2'}
+76	76		301							"{2: 'Smoker', 3: ""Yeah, that's all... and we got them last month by waiting in line for relief aid outside a conservation area we passed by."", 4: '1'}"
+77	77		301							"{2: 'Smoker', 3: ""But now... who knows when those conservation areas will hand out supplies again. They probably don't have enough to go around for themselves..."", 4: '1'}"
+78	78		204							{1: '2', 2: '8'}
+79	79		301							{2: 'Grace', 3: '...Sigh.', 4: '2'}
+80	80		202							{1: '1', 2: '2'}
+81	81		301							"{3: ""Grace sighs again, having lost count of how many times she's done so today.""}"
+82	82		201							{1: '1', 2: '500541'}
+83	83		301				AniZhuanchangBegin			{1: '1', 2: 'Grace', 3: 'When... will the rain stop?', 4: '1'}
+84	84		202							{1: '1', 2: '2', 6: '1'}
+85	85		402							{1: '4907'}
+86	86		401							{1: '2', 2: '2597'}
+87	87		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+88	88		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_10.jpg'}
+89	89		301			AniZhuanchangEnd				{3: 'Outside the tent, a few devotees huddle close, mumbling passages from the Scarlet Revelation doctrines scrawled on tattered paper.'}
+90	90		301							"{3: 'They skip right over the chapters on ""catastrophe"" and ""curse,"" instead murmuring about ""confession,"" ""supplication,"" and ""redemption"" over and over.'}"
+91	91		201							{1: '1', 2: '500294', 4: '400', 7: '1'}
+92	92		201							{1: '2', 2: '500616', 4: '-400', 7: '1'}
+93	93		301							"{1: '1', 2: 'Followers A & B', 3: '""I have nothing left to rely on, nothing left to ask for, as long as I can find salvation...""', 4: '1', 5: '2'}"
+94	94		301							"{2: 'Followers A & B', 3: '""O God, I praise Your holy name, prostrate at Your feet...""', 4: '1', 5: '2'}"
+95	95		301							"{2: 'Followers A & B', 3: '""God shall create paradise, God shall grant eternal life through the Red Tide...""', 4: '1', 5: '2'}"
+96	96		401							{1: '2', 2: '4292'}
+97	97		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+98	98		301				AniZhuanchangBegin			{3: 'Thunder crashes overhead.'}
+99	99		202							{1: '1', 2: '2', 6: '1'}
+100	100		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+101	101		402							{1: '4292'}
+102	102		402							{1: '2597'}
+103	103		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory731.jpg'}
+104	104		201							{1: '1', 2: '501308', 3: '4', 4: '-200'}
+105	105		401							{1: '1', 2: '201'}
+106	106		401							{1: '2', 2: '1516'}
+107	107		203					500.0		{1: '1', 2: '0.5', 3: '0'}
+108	108		301			AniZhuanchangEnd				{1: '1', 2: '??', 3: 'What a goddamn disaster. How can it be raining this heavily?', 4: '1'}
+109	109		402							{1: '1516'}
+110	110		401							{1: '2', 2: '5526'}
+111	111		301							{3: 'The long-haired Construct continues her loud cursing, tossing her makeshift rain poncho carelessly onto the ground.'}
+112	112		202							{1: '1'}
+113	113		301							{3: 'The followers inside the tent grumble under their breath, careful not to let the long-haired woman hear them.'}
+114	114		201							{1: '2', 2: '500541', 4: '400'}
+115	115		201							{1: '1', 2: '501308', 3: '4', 4: '-400'}
+116	116		301							"{1: '1', 2: 'Grace', 3: ""Lulu, you're back... How was the haul?"", 4: '2'}"
+117	117		301							"{2: 'Lulu', 3: 'If you can even call this a ""haul.""', 4: '1'}"
+118	118		401							{1: '2', 2: '4892'}
+119	119		301							{3: 'She roughly tosses a rain-soaked package onto the ground beside Grace.'}
+120	120		202							{1: '1', 2: '2'}
+121	121		306							{1: '1'}
+122	122		301							"{3: ""The package spills open, revealing just two rolls of bandages, an unopened can of fruit, a bag of food that looks like it's been stored since the dawn of time, and a measly handful of rice grains.""}"
+123	123		306							
+124	124		201							{1: '1', 2: '501308', 3: '4', 4: '-400'}
+125	125		201							{1: '2', 2: '500541', 4: '400'}
+126	126		301							"{1: '1', 2: 'Lulu', 3: 'Here\'s the ""fruit"" of your ""divination.""', 4: '1'}"
+127	127		204							{1: '1', 2: '8'}
+128	128		301							{3: 'The long-haired woman takes a deep breath, clearly biting back a string of curses. After pulling herself together for a moment, she speaks again.'}
+129	129		204							{1: '1', 2: '4'}
+130	130		301							{2: 'Lulu', 3: 'I found my way to the spot you mentioned, right on the edge of the ruins. What a bust, though, just a tiny refugee camp, already swallowed whole by the Red Tide.', 4: '1'}
+131	131		301							{2: 'Lulu', 3: 'Seriously, I waded through hell and high water battling Corrupted and those nasty, clingy Hetero-Creatures just to drag back this pathetic haul.', 4: '1'}
+132	132		301							"{2: 'Lulu', 3: ""And your divination didn't exactly clue us in on this downpour, did it? My gun nearly jammed because of it!"", 4: '1'}"
+133	133		203							{1: '1', 2: '0.25', 3: '-400', 4: '-200'}
+134	134		401							{1: '2', 2: '4799'}
+135	135		301							"{3: 'Still grumbling, Lulu plops down beside Grace, deftly pulling out her tools to dismantle the gun that serves as her ""arm.""'}"
+136	136		301							"{2: 'Grace', 3: ""...Thanks for everything, Lulu. At least we'll have something to eat tonight."", 4: '2'}"
+137	137		204							{1: '1', 2: '1'}
+138	138		301							{2: 'Lulu', 3: 'Heh, as long as you appreciate my suffering.', 4: '1'}
+139	139		301							"{3: 'The female Construct lets out a derisive snort, then goes back to tinkering with her ""arm.""'}"
+140	140		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+141	141		202							{1: '1', 2: '2', 6: '1'}
+142	142		401							{1: '1', 2: '208'}
+143	143		301							{3: 'Soon, a metal pot is bubbling over a crackling campfire.'}
+144	144		301							"{3: ""The scent of the old rations isn't exactly gourmet, but it's not awful either. Maybe it's that extra 0.3 can of preserved food—whatever the reason, everyone seems unusually stoked for dinner tonight.""}"
+145	145		201							{1: '1', 2: '500294', 4: '400'}
+146	146		201							{1: '2', 2: '500616', 4: '-400'}
+147	147		301							{1: '1', 2: 'Followers A & B', 3: 'O God of the Red Tide, we thank you for providing us with food...', 4: '1', 5: '2'}
+148	148		301							{3: 'Before digging in, the followers drone their usual prayers.'}
+149	149		202							{1: '1', 2: '2', 6: '1'}
+150	150		201							{1: '1', 2: '501308', 3: '4'}
+151	151		301							{1: '1', 2: 'Lulu', 3: '...Tch, thanking the Red Tide for what? You should be thanking me!', 4: '1'}
+152	152		202							{1: '1', 6: '1'}
+153	153		201							{1: '1', 2: '500294', 4: '400'}
+154	154		201							{1: '2', 2: '500616', 4: '-400'}
+155	155		301							{1: '1', 2: 'Followers A & B', 3: '...Thank you for your guidance, for letting us live to see the sun of another day...', 4: '1', 5: '2'}
+156	156		201							{1: '2', 2: '500541', 4: '400'}
+157	157		201							{1: '1', 2: '501308', 3: '4', 4: '-400'}
+158	158		203							{1: '1', 2: '0.5', 3: '-300'}
+159	159		301							"{1: '1', 2: 'Lulu', 3: ""Hah, with this downpour, who knows if we'll even catch a glimpse of the sun tomorrow... Hey, why are you pulling me?"", 4: '1'}"
+160	160		202							{1: '1', 2: '2'}
+161	161		301				AniZhuanchangBegin			{3: 'The person disrupting the prayer gets yanked aside, letting the rest of the followers get on with their devotions.'}
+162	162		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory604.jpg'}
+163	163		401						2000.0	{1: '1', 2: '36'}
+164	164		401							{1: '1', 2: '201'}
+165	165		201							{1: '1', 2: '501308', 3: '4', 4: '-400'}
+166	166		201							{1: '2', 2: '500541', 4: '400'}
+167	167		301			AniZhuanchangEnd				"{1: '1', 2: 'Lulu', 3: ""Tch, wasn't I telling the truth?"", 4: '1'}"
+168	168		301							"{2: 'Grace', 3: ""That's not it. Didn't you want to tell me something in private?"", 4: '2'}"
+169	169		301							{3: 'When Lulu sat down beside her, hesitating several times as if wanting to speak, Grace already saw through her intention.'}
+170	170		204							{1: '1', 2: '8'}
+171	171		301							"{2: 'Lulu', 3: ""Well, I'm not sure if this is a good idea or a bad one, but..."", 4: '1'}"
+172	172		204							{1: '1', 2: '4'}
+173	173		401							{1: '2', 2: '4095'}
+174	174		301							{3: 'Lulu pulls a tattered piece of paper from a waterproof pocket at her waist. She hesitates for a moment before finally handing it over to Grace.'}
+175	175		301							{2: 'Lulu', 3: 'This thing might have been left behind by some of your Red Tide folks.', 4: '1'}
+176	176		204							{1: '2', 2: '8'}
+177	177		301							"{2: 'Grace', 3: ""It's the Scarlet Revelation."", 4: '2'}"
+178	178		204							{1: '2'}
+179	179		301							"{3: ""Grace corrects Lulu's odd choice of words while taking the paper from her.""}"
+180	180		301							{2: 'Grace', 3: 'Is this... some kind of invitation?', 4: '2'}
+181	181		301							"{2: 'Lulu', 3: 'So, it\'s an invitation for the Scarlet Revelation members to check out the Copperfield Aquarium. Apparently, once you pass the test and hit ""that place by the sea,"" you\'ll ""be reborn in the Red Tide.""', 4: '1'}"
+182	182		204							{1: '1', 2: '8'}
+183	183		301							"{2: 'Lulu', 3: ""This just doesn't look on the up and up."", 4: '1'}"
+184	184		204							{1: '1', 2: '4'}
+185	185		301							{2: 'Lulu', 3: 'Did one of your folks leave this behind?', 4: '1'}
+186	186		301							"{2: 'Grace', 3: ""...I'm not sure. I haven't been in contact with other Revelationists for a long time, but this marking... It was definitely left by a Revelationist I know."", 4: '2'}"
+187	187		301				AniZhuanchangBegin			{3: 'Grace runs her fingers over the paper, a sense of unease washing over her.'}
+188	188		202							{1: '1', 2: '2', 6: '1'}
+189	189		306						500.0	{1: '1'}
+190	190		101							{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading30.jpg'}
+191	191		301			AniZhuanchangEnd				{3: 'The refugee camp might be where that Revelationist once stayed, now already swallowed by the Red Tide. Then...'}
+192	192		301				AniZhuanchangBegin			"{3: 'Has that Revelationist already been granted ""salvation,"" or... have they moved on to face the ""test""?'}"
+193	193		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory604.jpg'}
+194	194		306							
+195	195		201							{1: '1', 2: '501308', 3: '4', 4: '-400'}
+196	196		201							{1: '2', 2: '500541', 4: '400'}
+197	197		301			AniZhuanchangEnd				{1: '1', 2: 'Grace', 3: 'So, should we head over there?', 4: '2'}
+198	198		204							{1: '1', 2: '8'}
+199	199		301							"{2: 'Lulu', 3: ""Huh? Wait, are you serious? You're asking me?"", 4: '1'}"
+200	200		204							{1: '1'}
+201	201		301							"{2: 'Lulu', 3: ""Well, if you're putting me on the spot, I guess we could give it a look."", 4: '1'}"
+202	202		301							"{2: 'Lulu', 3: ""There's barely anything left here, and no conservation areas close by. We can't even try to scavenge for food from... those folks in Babylonia. If we stick around, we're going to starve, plain and simple."", 4: '1'}"
+203	203		204							{1: '1', 2: '2'}
+204	204		301							"{2: 'Lulu', 3: 'I\'ve scoured every nook and cranny nearby, but there\'s not a single usable replacement part to be found. Once this downpour utterly ruins me, we can just hold hands and step into that ""salvation"" you mentioned, together.', 4: '1'}"
+205	205		301							{3: 'Lulu lets out a couple of dry laughs.'}
+206	206		204							{1: '1'}
+207	207		301							"{2: 'Lulu', 3: ""What do you think? Aren't you good at divination? Why don't you try reading the signs?"", 4: '1'}"
+208	208		301							{2: 'Grace', 3: 'I...', 4: '2'}
+209	209		301							{3: 'Grace nervously fiddles with her linen pouch, torn about doing another divination. Lately, every reading has been a bust.'}
+210	210		301							{2: 'Lulu', 3: 'Oh, one more thing...', 4: '1'}
+211	211		402							{1: '201'}
+212	212		401							{1: '2', 2: '4928'}
+213	213		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+214	214		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '0.8', 5: '0'}
+215	215		502							{1: 'PanelActor2Shake'}
+216	216		401					800.0		{1: '2', 2: '4892'}
+217	217		301							{1: '1', 3: 'Before she can finish speaking, a sharp pop cuts her off—the dim yellow bulb inside the tent flickers and dies. Grace jerks in surprise, the linen pouch slipping from her grasp. Rune pebbles clatter across the ground, scattering into the shadows.'}
+218	218		204							{1: '1', 2: '8'}
+219	219		301							"{2: 'Lulu', 3: ""Hah, that's what I was getting at."", 4: '1'}"
+220	220		401							{1: '1', 2: '120'}
+221	221		204							{1: '1', 2: '4'}
+222	222		301							{2: 'Lulu', 3: 'When I got back, I saw the generator—which was working perfectly fine before—was trashed by the Corrupted. I tried to fix it, but no dice. One of the screws is glowing red hot.', 4: '1'}
+223	223		301							"{2: 'Lulu', 3: ""Looks like this camp's going to be off the grid from now on."", 4: '1'}"
+224	224		301							{2: 'Grace', 3: '...', 4: '2'}
+225	225		401							{1: '2', 2: '4799'}
+226	226		204							{1: '2', 2: '8'}
+227	227		203							{1: '2', 2: '0.5', 3: '400', 4: '-200'}
+228	228		301							{3: 'Grace crouches low, her thoughts a jumbled mess.'}
+229	229		202							{1: '1', 2: '2'}
+230	230		301							{3: 'Should they head for the coast and face whatever test comes their way?'}
+231	231		201							{1: '1', 2: '500093'}
+232	232		301			RImgBg1Shake				"{1: '1', 2: 'Smoker', 3: ""Hey—! Don't think you can sneak around in the dark stealing canned food, you brats!"", 4: '1'}"
+233	233		301							"{3: ""Smoker's booming voice cuts through the darkness. The tiny, mouse-like rustling stops dead in its tracks.""}"
+234	234		301			RImgBg1Shake				{2: 'Smoker', 3: 'Stay away from those supply crates! Back off, back off! Listen up! Those who steal food will never enter the Red Tide and be reborn!', 4: '1'}
+235	235		301			RImgBg1Shake				{2: 'Smoker', 3: 'No stealing meat cans, and absolutely NO stealing fruit cans!', 4: '1'}
+236	236		401							{1: '2', 2: '4931'}
+237	237		202							{1: '1'}
+238	238		301							{3: 'Scattered footsteps echo as the children jostle and shove each other, putting distance between themselves and the crates.'}
+239	239		201							{1: '1', 2: '500093'}
+240	240		301							{1: '1', 2: 'Smoker', 3: 'One pack of rations, two packs of rations, two and a half packs of rations, two point seven packs... No rations consumed today, praise be to the God of Red Tide...', 4: '1'}
+241	241		201							{1: '1', 2: '501308', 3: '4'}
+242	242		301							{1: '1', 2: 'Lulu', 3: '****.', 4: '1'}
+243	243		201							{1: '1', 2: '500093'}
+244	244		301							{1: '1', 2: 'Smoker', 3: '...Four cans, four and a half cans...', 4: '1'}
+245	245		301							{2: 'Smoker', 3: 'Ugh, had to use another third of a can to feed those insatiable locusts. Only four cans left, and the rain washed away all our newly planted crops...', 4: '1'}
+246	246		301							{2: 'Smoker', 3: 'Sigh.', 4: '1'}
+247	247		202							{1: '1'}
+248	248		301							{3: 'Smoker sighs heavily, completely missing Grace and Lulu as they huddle behind the supply crates. He finishes his inventory count and steps out of the tent.'}
+249	249		301							{1: '1', 3: 'Should they... go to the seaside? Grace fumbles around in the darkness and accidentally touches the first rune on the ground...'}
+250	250		402							{1: '120'}
+251	251		306							{1: '1'}
+252	252		301							{3: 'R—carriage, travel, and all your dealings will pan out in your favor.'}
+253	253		306							
+254	254		401							{1: '1', 2: '152'}
+255	255		201							{1: '2', 2: '500541', 3: '8'}
+256	256		301							{1: '1', 2: 'Grace', 3: '...', 4: '2'}
+257	257		201							{1: '1', 2: '501308', 4: '-400'}
+258	258		203							{1: '2', 2: '0.25', 3: '400'}
+259	259		301							"{1: '1', 2: 'Lulu', 3: ""Hey, why do you suddenly look like you've had some huge realization?"", 4: '1'}"
+260	260		204							{1: '2', 2: '1'}
+261	261		301				DialogDisable			"{2: 'Grace', 3: ""It's nothing. The divine has already given me the answer."", 4: '2'}"
+262	262		202							{1: '1', 2: '2', 6: '1'}
+263	263		401							{1: '2', 2: '4348'}
+264	264		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '0', 5: '1'}
+265	265		301			DialogEnable				{3: 'Grace lets out a huge sigh of relief. In the glow of the torch Lulu finally got lit, Grace gathers up all the rune pebbles.'}
+266	266		201							{1: '1', 2: '501308'}
+267	267		301				AniZhuanchangBegin			{1: '1', 2: 'Lulu', 3: 'Fine, whatever floats your boat.', 4: '1'}
+268	268		202							{1: '1', 2: '2', 6: '1'}
+269	269		201							{1: '1', 2: '500541'}
+270	270		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_10.jpg'}
+271	271		402							{1: '4907'}
+272	272		401							{1: '2', 2: '980'}
+273	273		301			AniZhuanchangEnd				{1: '1', 3: 'The campfire flares back to life. Grace stands by the flames, facing her anxious followers, the faint light dancing in her eyes.'}
+274	274		301							{2: 'Grace', 3: 'Everyone, God has shown us the path forward.', 4: '1'}
+275	275		301							"{2: 'Grace', 3: ""I've just received a new divine revelation."", 4: '1'}"
+276	276		201							{1: '1', 2: '500294'}
+277	277		301							{1: '1', 2: 'Follower A', 3: 'Thank goodness, Lady Revelationist...', 4: '1'}
+278	278		201							{1: '1', 2: '500541'}
+279	279		301							{1: '1', 2: 'Grace', 3: 'God has bestowed upon us a new test.', 4: '1'}
+280	280		202							{1: '1'}
+281	281		301							"{3: 'In the firelight, the ""Scarlet Revelation"" emblem on the worn letter stands out prominently.'}"
+282	282		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+283	283		401							{1: '2', 2: '979'}
+284	284		301							{3: 'She tosses the letter into the campfire just as the wind whips through the tent. The flames swallow the paper, and sparkling crimson embers, breaking free, suddenly shoot skyward.'}
+285	285		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+286	286		201							{1: '1', 2: '500541'}
+287	287		301							"{1: '1', 2: 'Grace', 3: ""We'll set out for the seaside to face this divine test."", 4: '1'}"
+288	288		301							"{2: 'Grace', 3: 'If we pass this test, we... will enter ""rebirth.""', 4: '1'}"
+289	289		202							{1: '1', 6: '1'}
+290	290		201							{1: '1', 2: '500294', 4: '400'}
+291	291		201							{1: '2', 2: '500616', 4: '-400'}
+292	292		301							"{1: '1', 2: 'Followers A & B', 3: '""O God, I praise Your holy name, prostrate at Your feet...""', 4: '1', 5: '2'}"
+293	293		301							"{2: 'Followers A & B', 3: '""God shall create paradise, God shall grant eternal life through the Red Tide...""', 4: '1', 5: '2'}"
+294	294		202							{1: '1', 2: '2'}
+295	295		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+296	296		301							{3: 'Prostrate on the ground, the followers murmur the doctrines of the Scarlet Revelation. Then, with a flurry of activity, they start taking stock of their meager supplies, preparing for the journey ahead.'}
+297	297		306							{1: '1'}
+298	298		301							"{3: ""Grace stands in the center of the tent, her fingers idly toying with the linen pouch that holds her rune pebbles. She simply doesn't dare perform another divination, fearing yet another unfavorable outcome.""}"
+299	299		301							"{3: ""She can only pin her hopes on what's to come...""}"
+300	300		301							{3: 'R—carriage, travel, and all your dealings will pan out in your favor.'}
+301	301		301				AniZhuanchangBegin			"{3: 'Maybe there really is ""new hope"" on the horizon.'}"
+302	302		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory610.jpg'}
+303	303		301			AniZhuanchangEnd				{3: 'Clinging to this pipe dream, Grace follows the old map, leading her band of Scarlet Revelation followers toward the Copperfield Aquarium.'}
+304	304		301		1		AniZhuanchangBegin			"{3: 'That place where people supposedly find ""rebirth.""'}"

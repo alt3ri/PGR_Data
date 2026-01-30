@@ -1,0 +1,30 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory74.jpg'}
+2	2		401							{1: '2', 2: '1509'}
+3	3		401							{1: '1', 2: '101'}
+4	4		201							{1: '2', 2: '1021001'}
+5	5		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'Ah, this is...', 4: '2'}
+6	6		202							{1: '2', 6: '1'}
+7	7		201							{1: '1', 2: '1081001'}
+8	8		301							{1: '1', 2: 'Kamui', 3: 'The projectors restarted themselves?', 4: '1'}
+9	9		202							{1: '1', 6: '1'}
+10	10		201							{1: '3', 2: '1011001'}
+11	11		301							"{1: '1', 2: 'Lee', 3: ""Looks like these devices aren't as flimsy as we made them out to be."", 4: '3'}"
+12	12		301							{2: 'Lee', 3: 'The EMP will only last for around a minute.', 4: '3'}
+13	13		301							"{2: 'Lee', 3: ""And we don't have much left."", 4: '3'}"
+14	14		203							{1: '3', 2: '0.25', 3: '-400'}
+15	15		201							{1: '2', 2: '1021001', 4: '400'}
+16	16		301							{1: '1', 2: 'Lucia', 3: 'Can we search for Liv during the rebooting time of the projectors?', 4: '2'}
+17	17		301							{2: 'Lee', 3: 'Not likely, but we can try to find the control source of these projectors.', 4: '3'}
+18	18		202							{1: '2', 2: '3', 6: '1'}
+19	19		201							{1: '1', 2: '1081001'}
+20	20		301							{1: '1', 2: 'Kamui', 3: 'Alright, showtime!', 4: '1'}
+21	21		203						1000.0	{1: '1', 2: '0.25', 3: '-2000'}
+22	22		202							{1: '1', 6: '1'}
+23	23		301							{2: 'Kamui', 3: 'With my help, the projectors gonna break twice as fast!'}
+24	24		201							{1: '2', 2: '1021001'}
+25	25		301							{1: '1', 2: 'Lucia', 3: 'Kamui! Wait!', 4: '2'}
+26	26		202							{1: '2', 6: '1'}
+27	27		201							{1: '3', 2: '1011001'}
+28	28		301							{1: '1', 2: 'Lee', 3: 'Lucia...', 4: '3'}
+29	29		301		1		AniZhuanchangBegin			"{2: 'Lee', 3: ""Don't let Kamui out of sight."", 4: '3'}"

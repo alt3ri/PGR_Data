@@ -1,0 +1,579 @@
+Id	Name	Desc	Condition	CostResourceIds	CostResourceCounts	CostResourceRates	CostCommodityIds	CostCommodityCounts	CostCommodityRates	BuffIds	EffectIds	NextEventId	WinningRate	WinningNextEvents	FailedNextEvents	GambleRewardDelay	GambleRewardRates	GambleRewardWeights
+12010101	Accept with pleasure	Main City Lv.6 required	12010101									120102						
+12010102	Decline politely	We are still a developing city										120103						
+12010201	Accept the gift	Golden Shells <color=#FF0000>+15000</color>									[161002]							
+12010301	That goes both ways	Golden Shells <color=#FF0000>+5000</color>									[161003]							
+12020101	I'll try anything	Main City Lv.6 required	12020101									120202						
+12020102	Huh?	What's that?										120203						
+12020201	Great Success	<b>All items'</b> prices <color=#FF0000>+15%</color> for 2 quarters								[61003]								
+12020301	For real?	<b>All items'</b> prices <color=#FF0000>+5%</color> for 2 quarters								[61004]								
+12030101	I think I can do this	Connect 3 cities	12030101									120302						
+12030102	You are right, but...	Sorry, can't do it.										120303						
+12030201	Prosperous Market	<b>All items'</b> prices <color=#FF0000>+15%</color> for 2 quarters								[61003]								
+12030301	That's not a bad result.	<b>All items'</b> prices <color=#FF0000>+5%</color> for 2 quarters								[61004]								
+12040101	Take part in it.	Connect 3 cities	12040101									120402						
+12040102	Don't overdo it.	We won't accept everything unconditionally.										120403						
+12040201	Stable Market	<b>All items'</b> quarterly fluctuation upper and lower limits <color=#FF0000>+10%</color> for 2 quarters								[61005]								
+12040301	As always	<b>All items'</b> quarterly fluctuation upper and lower limits <color=#FF0000>+5%</color> for 2 quarters								[61006]								
+12050101	No problem!	Complete 4 City Missions	12050101									120502						
+12050102	Not now	Calm down. Don't rush.										120503						
+12050201	Satisfy friendly cities	<b>All items'</b> sale CRIT rates <color=#FF0000>+10%</color> for 2 quarters								[61007]								
+12050301	Refuse them	<b>All items'</b> sale CRIT rates <color=#FF0000>+5%</color> for 2 quarters								[61008]								
+12060101	All good	Complete 4 City Missions	12060101									120602						
+12060102	Decline	You will regret it!										120603						
+12060201	Satisfy friendly cities	<b>All items'</b> final prices <color=#FF0000>+5</color> for 2 quarters								[61009]								
+12060301	You'll pay for this	<b>All items'</b> final prices <color=#FF0000>+2</color> for 2 quarters								[61010]								
+12070101	Payment on delivery	10000 Golden Shells required	12070101	[2]	[10000]	[0]						120702						
+12070102	Doubt it	This scam is outdated										120703						
+12070201	There is good stuff	Receive Building Blueprint: <color=#FF0000>Lucky Star</color>									[161004]							
+12070301	What?	Receive Building Blueprint: <color=#FF0000>Coconut Factory Lv.1</color>									[161005]							
+12080101	You'll get your money's worth.	Requires 250 <color=#a46800>Coconuts</color>	12080101				[1]	[250]	[0]			120802						
+12080102	Doubt it	Really? I don't believe it.										120803						
+12080201	Refuse and leave	Receive Building Blueprint: <color=#FF0000>Supervision Tower Lv.3</color>									[161006]							
+12080301	What?	Receive Building Blueprint: <color=#FF0000>Rabbit Sawmill Lv.1</color>									[161007]							
+12090101	I have it!	Requires 500 <color=#a46800>Wood</color>	12090101				[2]	[500]	[0]			120902						
+12090102	Sorry, we can't do that.	We are currently out of stock.										120903						
+12090201	Everyone's happy	Receive Building Blueprint: <color=#FF0000>Moon Pound Lv.3</color>									[161008]							
+12090301	What?	Receive Building Blueprint: <color=#FF0000>Petroleum Refinery Lv.2</color>									[161009]							
+12100101	Look what it is	Requires 50 <color=#a46800>Petroleum</color>	12100101				[3]	[50]	[0]			121002						
+12100102	But I refuse!	I wouldn't give it to you even if I had it.										121003						
+12100201	Double happiness	Receive Building Blueprint: <color=#FF0000>Artifact Workshop</color>									[161010]							
+12100301	What?	Receive Building Blueprint: <color=#FF0000>Cat Warehouse Lv.2</color>									[161011]							
+15010101	That's good news	<color=#a46800>Coconut</color> productivity +15% for 2 quarters								[64001]								
+15020101	That's good news	<color=#a46800>Wood</color> productivity +15% for 2 quarters								[64002]								
+15030101	That's good news	<color=#a46800>Petroleum</color> productivity +15% for 2 quarters								[64003]								
+15040101	You don't know what to say.	<color=#a46800>Coconut</color> price +15% for 2 quarters								[64004]								
+15050101	You don't know what to say.	<color=#a46800>Wood</color> price +15% for 2 quarters								[64005]								
+15060101	You don't know what to say.	<color=#a46800>Petroleum</color> price +15% for 2 quarters								[64006]								
+15110101	Choose <color=#a46800>Coconuts</color>.	<color=#a46800>Coconut</color> productivity +20% for 2 quarters								[64101]								
+15110102	Choose <color=#a46800>Petroleum</color>.	<color=#a46800>Petroleum</color> productivity +10% for 2 quarters								[64102]								
+15120101	Choose <color=#a46800>Wood</color>.	<color=#a46800>Wood</color> productivity +20% for 2 quarters								[64111]								
+15120102	Choose <color=#a46800>Coconuts</color>.	<color=#a46800>Coconut</color> productivity +10% for 2 quarters								[64112]								
+15130101	Choose <color=#a46800>Petroleum</color>.	<color=#a46800>Petroleum</color> productivity +20% for 2 quarters								[64121]								
+15130102	Choose <color=#a46800>Wood</color>.	<color=#a46800>Wood</color> productivity +10% for 2 quarters								[64122]								
+15140101	Choose <color=#a46800>Coconuts</color>.	<color=#a46800>Coconut</color> price +15% for 2 quarters								[64131]								
+15140102	Choose <color=#a46800>Petroleum</color>.	<color=#a46800>Petroleum</color> price +10% for 2 quarters								[64132]								
+15150101	Choose <color=#a46800>Wood</color>.	<color=#a46800>Wood</color> price +15% for 2 quarters								[64141]								
+15150102	Choose <color=#a46800>Coconuts</color>.	<color=#a46800>Coconut</color> price +10% for 2 quarters								[64142]								
+15160101	Choose <color=#a46800>Petroleum</color>.	<color=#a46800>Petroleum</color> price +15% for 2 quarters								[64151]								
+15160102	Choose <color=#a46800>Wood</color>.	<color=#a46800>Wood</color> price +10% for 2 quarters								[64152]								
+15210101	Implement a big pay raise.	Requires 30000 Golden Shells.	15210101	[2]	[30000]	[0]						152102						
+15210102	Issue some bonuses.	10000 Golden Shells required	15210102	[2]	[10000]	[0]						152103						
+15210103	Can't do that.	Not a penny!										152104						
+15210201	Produce <color=#a46800>Coconuts</color>.	<color=#a46800>Coconut</color> productivity +25% for 3 quarters								[64201]								
+15210202	Produce <color=#a46800>Wood</color>.	<color=#a46800>Wood</color> productivity +25% for 3 quarters								[64202]								
+15210203	Produce <color=#a46800>Petroleum</color>.	<color=#a46800>Petroleum</color> productivity +25% for 3 quarters								[64203]								
+15210301	Motivated, but not much	<b>All items'</b> productivity <color=#FF0000>+10%</color> for 2 quarters								[64204]								
+15210401	End event	Nothing happens																
+15220101	That's what I thought	Cooperation is the way to win										152202						
+15220102	Lack of Interest	Only cowards can't work hard.										152203						
+15220201	Choose <color=#a46800>Coconuts</color>.	<color=#a46800>Coconut</color> price +25% but <color=#a46800>Wood</color> and <color=#a46800>Petroleum</color> prices -10$ for 3 quarters								[64211]								
+15220202	Choose <color=#a46800>Wood</color>.	<color=#a46800>Wood</color> price +25% but <color=#a46800>Coconut</color> and <color=#a46800>Petroleum</color> prices -10$ for 3 quarters								[64213]								
+15220203	Choose <color=#a46800>Petroleum</color>.	<color=#a46800>Petroleum</color> price +25% but <color=#a46800>Coconut</color> and <color=#a46800>Wood</color> prices -10$ for 3 quarters								[64215]								
+15220301	Word harder.	<b>All items'</b> prices <color=#FF0000>+5%</color> for 3 quarters								[64217]								
+15310101	Good things happen to good people.	<color=#a46800>Coconuts</color><color=#FF0000> +100</color>									[164301]							
+15320101	Good things happen to good people.	<color=#a46800>Wood</color><color=#FF0000> +250</color>									[164302]							
+15330101	Good things happen to good people.	<color=#a46800>Petroleum</color><color=#FF0000> +20</color>									[164303]							
+15340101	Good things happen to good people.	Golden Shells <color=#FF0000>+4000</color>									[164304]							
+15410101	Purchase their items.	10000 Golden Shells required	15410101	[2]	[10000]	[0]						154102						
+15410102	Take their Golden Shells.	Golden Shells will never betray you.										154103						
+15410201	Take the items	<color=#a46800>Coconuts</color> +100, <color=#a46800>Wood</color> +250									[164401, 164402]							
+15410301	Accept the payment	Golden Shells <color=#FF0000>+5000</color>									[164403]							
+15420101	Purchase their items.	10000 Golden Shells required	15420101	[2]	[10000]	[0]						154202						
+15420102	Take their Golden Shells.	Golden Shells will never betray you.										154203						
+15420201	Take the items	<color=#a46800>Wood</color> +250, <color=#a46800>Petroleum</color> +20									[164404, 164405]							
+15420301	Accept the payment	Golden Shells <color=#FF0000>+5000</color>									[164406]							
+15430101	Purchase their items.	10000 Golden Shells required	15430101	[2]	[10000]	[0]						154302						
+15430102	Take their Golden Shells.	Golden Shells will never betray you.										154303						
+15430201	Take the items	<color=#a46800>Coconuts</color> +100, <color=#a46800>Petroleum</color> +20									[164407, 164408]							
+15430301	Accept the payment	Golden Shells <color=#FF0000>+5000</color>									[164409]							
+15440101	Take their equipment.	See if there's any good stuff.										154402						
+15440201	Take their equipment.	Production <color=#FF0000>+2</color> for 2 quarters								[64218]								
+15510101	Only children make choices. You'll take all.	100000 Golden Shells required	15510301	[2]	[100000]	[0]						155102						
+15510102	Choose the items you need.	Requires 30000 Golden Shells.	15510201	[2]	[30000]	[0]						155103						
+15510103	State that you're just looking around	I won't spend any money										155104						
+15510201	Purchase the shop	Permanent Production <color=#FF0000>+1</color>									[164504]							
+15510301	Pick items	Receive a random Artifact									[164505]							
+15510401	Take advantage of the situation.	Golden Shells <color=#FF0000>+5000</color>									[164403]							
+15520101	Go to the central equipment room.	Requires Professional Waterproof Gear. (Main City Lv.6)	15520301									155202						
+15520102	Go to the captain's vault.	Requires Basic Waterproof Gear. (Main City Lv.5)	15520201									155203						
+15520103	Explore the perimeter carefully	Be cautious										155204						
+15520201	Say thank you.	Permanent Production <color=#FF0000>+1</color>									[164507]							
+15520301	Say thank you.	Golden Shells <color=#FF0000>+50000</color>									[164508]							
+15520401	Say thank you.	<color=#a46800>Coconuts</color> +100, <color=#a46800>Wood</color> +250, <color=#a46800>Petroleum</color> +20									[164506, 164509, 164510]							
+22010101	You must help!	Requires 2000000 Golden Shells	22010101	[2]	[2000000]	[0]						220102						
+22010102	Heartlessly refuse.	You can't believe someone actually believes in that.										220103						
+22010201	Something seems wrong, but you can't tell why.	Take the musical instruments.									[22010201, 22010202, 22010203]							
+22010301	This is a historic choice.	Receive 500000 Golden Shells.									[220103]							
+81000101	Give more!	Golden Shells <color=#FF0000>+4000</color>									[91010301]							
+81010101	It feels good to spend money! Go with the buyout price!	Requires 5000 Golden Shells. Guaranteed to win the bid.	81010101	[2]	[5000]	[0]							10000	[820101]				
+81010102	Just have some fun.	Requires 1500 Golden Shells. 50% chance to win the bid. Price will increase on failure.	81010102	[2]	[1500]	[0]							5000	[820102]	[810111]			
+81010103	An expert will never get the first one.	Think in the long term. Maybe next time.													[820104]			
+81011101	Better sooner than later! Go with the buyout price!	Requires 6500 Golden Shells. Guaranteed to win the bid.	81011101	[2]	[6500]	[0]							10000	[820101]				
+81011102	Not a big deal. Bid!	Requires 2600 Golden Shells. 60% chance to win the bid. Price will increase on failure.	81011102	[2]	[2600]	[0]							6000	[820102]	[810112]			
+81011103	An expert will never get the first one.	Think in the long term. Maybe next time.													[820104]			
+81011201	Change of plan. I'll buy out.	Requires 8450 Golden Shells. Guaranteed to win the bid.	81011201	[2]	[8450]	[0]							10000	[820101]				
+81011202	I won't go home without it. Keep bidding.	Requires 4225 Golden Shells. 70% chance to win the bid. Price will increase on failure.	81011202	[2]	[4225]	[0]							7000	[820102]	[810113]			
+81011203	An expert will never get the first one.	Think in the long term. Maybe next time.													[820104]			
+81011301	Go all in! Buy out!	Requires 8450 Golden Shells. Guaranteed to win the bid.	81011301	[2]	[8450]	[0]							10000	[820101]				
+81011302	An expert will never get the first one.	Think in the long term. Maybe next time.													[820104]			
+82010101	It feels good to spend money! Go with the buyout price!	Requires 5000 Golden Shells. Guaranteed to win the bid.	82010101	[2]	[5000]	[0]							10000	[830101]				
+82010102	Just have some fun.	Requires 1500 Golden Shells. 30% chance to win the bid. Price will increase on failure.	82010102	[2]	[1500]	[0]							3000	[830102]	[820111]			
+82010103	An expert will never get the second one.	Think in the long term. Maybe next time.													[830104]			
+82011101	Better sooner than later! Go with the buyout price!	Requires 6500 Golden Shells. Guaranteed to win the bid.	82011101	[2]	[6500]	[0]							10000	[830101]				
+82011102	Not a big deal. Bid!	Requires 2600 Golden Shells. 40% chance to win the bid. Price will increase on failure.	82011102	[2]	[2600]	[0]							4000	[830102]	[820112]			
+82011103	An expert will never get the second one.	Think in the long term. Maybe next time.													[830104]			
+82011201	Change of plan. I'll buy out.	Requires 8450 Golden Shells. Guaranteed to win the bid.	82011201	[2]	[8450]	[0]							10000	[830101]				
+82011202	I won't go home without it. Keep bidding.	Requires 4225 Golden Shells. 50% chance to win the bid. Price will increase on failure.	82011202	[2]	[4225]	[0]							5000	[830102]	[820113]			
+82011203	An expert will never get the second one.	Think in the long term. Maybe next time.													[830104]			
+82011301	Go all in! Buy out!	Requires 8450 Golden Shells. Guaranteed to win the bid.	82011301	[2]	[8450]	[0]							10000	[830101]				
+82011302	An expert will never get the second one.	Think in the long term. Maybe next time.													[830104]			
+83010101	It feels good to spend money! Go with the buyout price!	Requires 8000 Golden Shells. Guaranteed to win the bid.	83010101	[2]	[8000]	[0]							10000	[840101]				
+83010102	Just have some fun.	Requires 2400 Golden Shells. 20% chance to win the bid. Price will increase on failure.	83010102	[2]	[2400]	[0]							2000	[840102]	[830111]			
+83010103	An expert will never get the third one.	Think in the long term. Maybe next time.													[840104]			
+83011101	Better sooner than later! Go with the buyout price!	Requires 10400 Golden Shells. Guaranteed to win the bid.	83011101	[2]	[10400]	[0]							10000	[840101]				
+83011102	Not a big deal. Bid!	Requires 4160 Golden Shells. 30% chance to win the bid. Price will increase on failure.	83011102	[2]	[4160]	[0]							3000	[840102]	[830112]			
+83011103	An expert will never get the third one.	Think in the long term. Maybe next time.													[840104]			
+83011201	Change of plan. I'll buy out.	Requires 13520 Golden Shells. Guaranteed to win the bid.	83011201	[2]	[13520]	[0]							10000	[840101]				
+83011202	I won't go home without it. Keep bidding.	Requires 6760 Golden Shells. 40% chance to win the bid. Price will increase on failure.	83011202	[2]	[6760]	[0]							4000	[840102]	[830113]			
+83011203	An expert will never get the third one.	Think in the long term. Maybe next time.													[840104]			
+83011301	Go all in! Buy out!	Requires 13520 Golden Shells. Guaranteed to win the bid.	83011301	[2]	[13520]	[0]							10000	[840101]				
+83011302	An expert will never get the third one.	Think in the long term. Maybe next time.													[840104]			
+84010101	It's over.	It's already over.																
+84010201	It's over.	It's already over.																
+84010301	It's over.	It's already over.																
+84010401	It's over.	It's already over.																
+81110101	It feels good to spend money! Go with the buyout price!	Requires 8000 Golden Shells. Guaranteed to win the bid.	81110101	[2]	[8000]	[0]							10000	[821101]				
+81110102	Just have some fun.	Requires 2400 Golden Shells. 30% chance to win the bid. Price will increase on failure.	81110102	[2]	[2400]	[0]							3000	[821102]	[811111]			
+81110103	An expert will never get the first one.	Think in the long term. Maybe next time.													[821104]			
+81111101	Better sooner than later! Go with the buyout price!	Requires 10400 Golden Shells. Guaranteed to win the bid.	81111101	[2]	[10400]	[0]							10000	[821101]				
+81111102	Not a big deal. Bid!	Requires 4160 Golden Shells. 40% chance to win the bid. Price will increase on failure.	81111102	[2]	[4160]	[0]							4000	[821102]	[811112]			
+81111103	An expert will never get the first one.	Think in the long term. Maybe next time.													[821104]			
+81111201	Change of plan. I'll buy out.	Requires 13520 Golden Shells. Guaranteed to win the bid.	81111201	[2]	[13520]	[0]							10000	[821101]				
+81111202	I won't go home without it. Keep bidding.	Requires 6760 Golden Shells. 50% chance to win the bid. Price will increase on failure.	81111202	[2]	[6760]	[0]							5000	[821102]	[811113]			
+81111203	An expert will never get the first one.	Think in the long term. Maybe next time.													[821104]			
+81111301	Go all in! Buy out!	Requires 13520 Golden Shells. Guaranteed to win the bid.	81111301	[2]	[13520]	[0]							10000	[821101]				
+81111302	An expert will never get the first one.	Think in the long term. Maybe next time.													[821104]			
+82110101	It feels good to spend money! Go with the buyout price!	Requires 10000 Golden Shells. Guaranteed to win the bid.	82110101	[2]	[10000]	[0]							10000	[831101]				
+82110102	Just have some fun.	Requires 3000 Golden Shells. 25% chance to win the bid. Price will increase on failure.	82110102	[2]	[3000]	[0]							2500	[831102]	[821111]			
+82110103	An expert will never get the second one.	Think in the long term. Maybe next time.													[831104]			
+82111101	Better sooner than later! Go with the buyout price!	Requires 13000 Golden Shells. Guaranteed to win the bid.	82111101	[2]	[13000]	[0]							10000	[831101]				
+82111102	Not a big deal. Bid!	Requires 5200 Golden Shells. 35% chance to win the bid. Price will increase on failure.	82111102	[2]	[5200]	[0]							3500	[831102]	[821112]			
+82111103	An expert will never get the second one.	Think in the long term. Maybe next time.													[831104]			
+82111201	Change of plan. I'll buy out.	Requires 16900 Golden Shells. Guaranteed to win the bid.	82111201	[2]	[16900]	[0]							10000	[831101]				
+82111202	I won't go home without it. Keep bidding.	Requires 8450 Golden Shells. 45% chance to win the bid. Price will increase on failure.	82111202	[2]	[8450]	[0]							4500	[831102]	[821113]			
+82111203	An expert will never get the second one.	Think in the long term. Maybe next time.													[831104]			
+82111301	Go all in! Buy out!	Requires 16900 Golden Shells. Guaranteed to win the bid.	82111301	[2]	[16900]	[0]							10000	[831101]				
+82111302	An expert will never get the second one.	Think in the long term. Maybe next time.													[831104]			
+83110101	It feels good to spend money! Go with the buyout price!	Requires 20000 Golden Shells. Guaranteed to win the bid.	83110101	[2]	[20000]	[0]							10000	[841101]				
+83110102	Just have some fun.	Requires 6000 Golden Shells. 15% chance to win the bid. Price will increase on failure.	83110102	[2]	[6000]	[0]							1500	[841102]	[831111]			
+83110103	An expert will never get the third one.	Think in the long term. Maybe next time.													[841104]			
+83111101	Better sooner than later! Go with the buyout price!	Requires 26000 Golden Shells. Guaranteed to win the bid.	83111101	[2]	[26000]	[0]							10000	[841101]				
+83111102	Not a big deal. Bid!	Requires 10400 Golden Shells. 25% chance to win the bid. Price will increase on failure.	83111102	[2]	[10400]	[0]							2500	[841102]	[831112]			
+83111103	An expert will never get the third one.	Think in the long term. Maybe next time.													[841104]			
+83111201	Change of plan. I'll buy out.	Requires 33800 Golden Shells. Guaranteed to win the bid.	83111201	[2]	[33800]	[0]							10000	[841101]				
+83111202	I won't go home without it. Keep bidding.	Requires 16900 Golden Shells. 35% chance to win the bid. Price will increase on failure.	83111202	[2]	[16900]	[0]							3500	[841102]	[831113]			
+83111203	An expert will never get the third one.	Think in the long term. Maybe next time.													[841104]			
+83111301	Go all in! Buy out!	Requires 33800 Golden Shells. Guaranteed to win the bid.	83111301	[2]	[33800]	[0]							10000	[841101]				
+83111302	An expert will never get the third one.	Think in the long term. Maybe next time.													[841104]			
+84110101	It's over.	It's already over.																
+84110201	It's over.	It's already over.																
+84110301	It's over.	It's already over.																
+84110401	It's over.	It's already over.																
+81210101	It feels good to spend money! Go with the buyout price!	Requires 40000 Golden Shells. Guaranteed to win the bid.	81210101	[2]	[40000]	[0]							10000	[822101]				
+81210102	Just have some fun.	Requires 12000 Golden Shells. 15% chance to win the bid. Price will increase on failure.	81210102	[2]	[12000]	[0]							1500	[822102]	[812111]			
+81210103	An expert will never get the first one.	Think in the long term. Maybe next time.													[822104]			
+81211101	Better sooner than later! Go with the buyout price!	Requires 52000 Golden Shells. Guaranteed to win the bid.	81211101	[2]	[52000]	[0]							10000	[822101]				
+81211102	Not a big deal. Bid!	Requires 20800 Golden Shells. 25% chance to win the bid. Price will increase on failure.	81211102	[2]	[20800]	[0]							2500	[822102]	[812112]			
+81211103	An expert will never get the first one.	Think in the long term. Maybe next time.													[822104]			
+81211201	Change of plan. I'll buy out.	Requires 67600 Golden Shells. Guaranteed to win the bid.	81211201	[2]	[67600]	[0]							10000	[822101]				
+81211202	I won't go home without it. Keep bidding.	Requires 33800 Golden Shells. 35% chance to win the bid. Price will increase on failure.	81211202	[2]	[33800]	[0]							3500	[822102]	[812113]			
+81211203	An expert will never get the first one.	Think in the long term. Maybe next time.													[822104]			
+81211301	Go all in! Buy out!	Requires 67600 Golden Shells. Guaranteed to win the bid.	81211301	[2]	[67600]	[0]							10000	[822101]				
+81211302	An expert will never get the first one.	Think in the long term. Maybe next time.													[822104]			
+82210101	It feels good to spend money! Go with the buyout price!	Requires 40000 Golden Shells. Guaranteed to win the bid.	82210101	[2]	[40000]	[0]							10000	[832101]				
+82210102	Just have some fun.	Requires 12000 Golden Shells. 15% chance to win the bid. Price will increase on failure.	82210102	[2]	[12000]	[0]							1500	[832102]	[822111]			
+82210103	An expert will never get the second one.	Think in the long term. Maybe next time.													[832104]			
+82211101	Better sooner than later! Go with the buyout price!	Requires 52000 Golden Shells. Guaranteed to win the bid.	82211101	[2]	[52000]	[0]							10000	[832101]				
+82211102	Not a big deal. Bid!	Requires 20800 Golden Shells. 25% chance to win the bid. Price will increase on failure.	82211102	[2]	[20800]	[0]							2500	[832102]	[822112]			
+82211103	An expert will never get the second one.	Think in the long term. Maybe next time.													[832104]			
+82211201	Change of plan. I'll buy out.	Requires 67600 Golden Shells. Guaranteed to win the bid.	82211201	[2]	[67600]	[0]							10000	[832101]				
+82211202	I won't go home without it. Keep bidding.	Requires 33800 Golden Shells. 35% chance to win the bid. Price will increase on failure.	82211202	[2]	[33800]	[0]							3500	[832102]	[822113]			
+82211203	An expert will never get the second one.	Think in the long term. Maybe next time.													[832104]			
+82211301	Go all in! Buy out!	Requires 67600 Golden Shells. Guaranteed to win the bid.	82211301	[2]	[67600]	[0]							10000	[832101]				
+82211302	An expert will never get the second one.	Think in the long term. Maybe next time.													[832104]			
+83210101	It feels good to spend money! Go with the buyout price!	Requires 60000 Golden Shells. Guaranteed to win the bid.	83210101	[2]	[60000]	[0]							10000	[842101]				
+83210102	Just have some fun.	Requires 18000 Golden Shells. 10% chance to win the bid. Price will increase on failure.	83210102	[2]	[18000]	[0]							1000	[842102]	[832111]			
+83210103	An expert will never get the third one.	Think in the long term. Maybe next time.													[842104]			
+83211101	Better sooner than later! Go with the buyout price!	Requires 78000 Golden Shells. Guaranteed to win the bid.	83211101	[2]	[78000]	[0]							10000	[842101]				
+83211102	Not a big deal. Bid!	Requires 31200 Golden Shells. 20% chance to win the bid. Price will increase on failure.	83211102	[2]	[31200]	[0]							2000	[842102]	[832112]			
+83211103	An expert will never get the third one.	Think in the long term. Maybe next time.													[842104]			
+83211201	Change of plan. I'll buy out.	Requires 101400 Golden Shells. Guaranteed to win the bid.	83211201	[2]	[101400]	[0]							10000	[842101]				
+83211202	I won't go home without it. Keep bidding.	Requires 50700 Golden Shells. 30% chance to win the bid. Price will increase on failure.	83211202	[2]	[50700]	[0]							3000	[842102]	[832113]			
+83211203	An expert will never get the third one.	Think in the long term. Maybe next time.													[842104]			
+83211301	Go all in! Buy out!	Requires 101400 Golden Shells. Guaranteed to win the bid.	83211301	[2]	[101400]	[0]							10000	[842101]				
+83211302	An expert will never get the third one.	Think in the long term. Maybe next time.													[842104]			
+84210101	It's over.	It's already over.																
+84210201	It's over.	It's already over.																
+84210301	It's over.	It's already over.																
+84210401	It's over.	It's already over.																
+81310101	It feels good to spend money! Go with the buyout price!	Requires 60000 Golden Shells. Guaranteed to win the bid.	81310101	[2]	[60000]	[0]							10000	[823101]				
+81310102	Just have some fun.	Requires 18000 Golden Shells. 20% chance to win the bid. Price will increase on failure.	81310102	[2]	[18000]	[0]							2000	[823102]	[813111]			
+81310103	An expert will never get the first one.	Think in the long term. Maybe next time.													[823104]			
+81311101	Better sooner than later! Go with the buyout price!	Requires 78000 Golden Shells. Guaranteed to win the bid.	81311101	[2]	[78000]	[0]							10000	[823101]				
+81311102	Not a big deal. Bid!	Requires 31200 Golden Shells. 30% chance to win the bid. Price will increase on failure.	81311102	[2]	[31200]	[0]							3000	[823102]	[813112]			
+81311103	An expert will never get the first one.	Think in the long term. Maybe next time.													[823104]			
+81311201	Change of plan. I'll buy out.	Requires 101400 Golden Shells. Guaranteed to win the bid.	81311201	[2]	[101400]	[0]							10000	[823101]				
+81311202	I won't go home without it. Keep bidding.	Requires 50700 Golden Shells. 40% chance to win the bid. Price will increase on failure.	81311202	[2]	[50700]	[0]							4000	[823102]	[813113]			
+81311203	An expert will never get the first one.	Think in the long term. Maybe next time.													[823104]			
+81311301	Go all in! Buy out!	Requires 101400 Golden Shells. Guaranteed to win the bid.	81311301	[2]	[101400]	[0]							10000	[823101]				
+81311302	An expert will never get the first one.	Think in the long term. Maybe next time.													[823104]			
+82310101	It feels good to spend money! Go with the buyout price!	Requires 80000 Golden Shells. Guaranteed to win the bid.	82310101	[2]	[80000]	[0]							10000	[833101]				
+82310102	Just have some fun.	Requires 24000 Golden Shells. 15% chance to win the bid. Price will increase on failure.	82310102	[2]	[24000]	[0]							1500	[833102]	[823111]			
+82310103	An expert will never get the second one.	Think in the long term. Maybe next time.													[833104]			
+82311101	Better sooner than later! Go with the buyout price!	Requires 104000 Golden Shells. Guaranteed to win the bid.	82311101	[2]	[104000]	[0]							10000	[833101]				
+82311102	Not a big deal. Bid!	Requires 41600 Golden Shells. 25% chance to win the bid. Price will increase on failure.	82311102	[2]	[41600]	[0]							2500	[833102]	[823112]			
+82311103	An expert will never get the second one.	Think in the long term. Maybe next time.													[833104]			
+82311201	Change of plan. I'll buy out.	Requires 135200 Golden Shells. Guaranteed to win the bid.	82311201	[2]	[135200]	[0]							10000	[833101]				
+82311202	I won't go home without it. Keep bidding.	Requires 67600 Golden Shells. 35% chance to win the bid. Price will increase on failure.	82311202	[2]	[67600]	[0]							3500	[833102]	[823113]			
+82311203	An expert will never get the second one.	Think in the long term. Maybe next time.													[833104]			
+82311301	Go all in! Buy out!	Requires 135200 Golden Shells. Guaranteed to win the bid.	82311301	[2]	[135200]	[0]							10000	[833101]				
+82311302	An expert will never get the second one.	Think in the long term. Maybe next time.													[833104]			
+83310101	It feels good to spend money! Go with the buyout price!	Requires 120000 Golden Shells. Guaranteed to win the bid.	83310101	[2]	[120000]	[0]							10000	[843101]				
+83310102	Just have some fun.	Requires 36000 Golden Shells. 10% chance to win the bid. Price will increase on failure.	83310102	[2]	[36000]	[0]							1000	[843102]	[833111]			
+83310103	An expert will never get the third one.	Think in the long term. Maybe next time.													[843104]			
+83311101	Better sooner than later! Go with the buyout price!	Requires 156000 Golden Shells. Guaranteed to win the bid.	83311101	[2]	[156000]	[0]							10000	[843101]				
+83311102	Not a big deal. Bid!	Requires 62400 Golden Shells. 20% chance to win the bid. Price will increase on failure.	83311102	[2]	[62400]	[0]							2000	[843102]	[833112]			
+83311103	An expert will never get the third one.	Think in the long term. Maybe next time.													[843104]			
+83311201	Change of plan. I'll buy out.	Requires 202800 Golden Shells. Guaranteed to win the bid.	83311201	[2]	[202800]	[0]							10000	[843101]				
+83311202	I won't go home without it. Keep bidding.	Requires 101400 Golden Shells. 30% chance to win the bid. Price will increase on failure.	83311202	[2]	[101400]	[0]							3000	[843102]	[833113]			
+83311203	An expert will never get the third one.	Think in the long term. Maybe next time.													[843104]			
+83311301	Go all in! Buy out!	Requires 202800 Golden Shells. Guaranteed to win the bid.	83311301	[2]	[202800]	[0]							10000	[843101]				
+83311302	An expert will never get the third one.	Think in the long term. Maybe next time.													[843104]			
+84310101	It's over.	It's already over.																
+84310201	It's over.	It's already over.																
+84310301	It's over.	It's already over.																
+84310401	It's over.	It's already over.																
+81410101	It feels good to spend money! Go with the buyout price!	Requires 200000 Golden Shells. Guaranteed to win the bid.	81410101	[2]	[200000]	[0]							10000	[824101]				
+81410102	Just have some fun.	Requires 60000 Golden Shells. 15% chance to win the bid. Price will increase on failure.	81410102	[2]	[60000]	[0]							1500	[824102]	[814111]			
+81410103	An expert will never get the first one.	Think in the long term. Maybe next time.													[824104]			
+81411101	Better sooner than later! Go with the buyout price!	Requires 260000 Golden Shells. Guaranteed to win the bid.	81411101	[2]	[260000]	[0]							10000	[824101]				
+81411102	Not a big deal. Bid!	Requires 104000 Golden Shells. 25% chance to win the bid. Price will increase on failure.	81411102	[2]	[104000]	[0]							2500	[824102]	[814112]			
+81411103	An expert will never get the first one.	Think in the long term. Maybe next time.													[824104]			
+81411201	Change of plan. I'll buy out.	Requires 338000 Golden Shells. Guaranteed to win the bid.	81411201	[2]	[338000]	[0]							10000	[824101]				
+81411202	I won't go home without it. Keep bidding.	Requires 169000 Golden Shells. 35% chance to win the bid. Price will increase on failure.	81411202	[2]	[169000]	[0]							3500	[824102]	[814113]			
+81411203	An expert will never get the first one.	Think in the long term. Maybe next time.													[824104]			
+81411301	Go all in! Buy out!	Requires 338000 Golden Shells. Guaranteed to win the bid.	81411301	[2]	[338000]	[0]							10000	[824101]				
+81411302	An expert will never get the first one.	Think in the long term. Maybe next time.													[824104]			
+82410101	It feels good to spend money! Go with the buyout price!	Requires 200000 Golden Shells. Guaranteed to win the bid.	82410101	[2]	[200000]	[0]							10000	[834101]				
+82410102	Just have some fun.	Requires 60000 Golden Shells. 15% chance to win the bid. Price will increase on failure.	82410102	[2]	[60000]	[0]							1500	[834102]	[824111]			
+82410103	An expert will never get the second one.	Think in the long term. Maybe next time.													[834104]			
+82411101	Better sooner than later! Go with the buyout price!	Requires 260000 Golden Shells. Guaranteed to win the bid.	82411101	[2]	[260000]	[0]							10000	[834101]				
+82411102	Not a big deal. Bid!	Requires 104000 Golden Shells. 25% chance to win the bid. Price will increase on failure.	82411102	[2]	[104000]	[0]							2500	[834102]	[824112]			
+82411103	An expert will never get the second one.	Think in the long term. Maybe next time.													[834104]			
+82411201	Change of plan. I'll buy out.	Requires 338000 Golden Shells. Guaranteed to win the bid.	82411201	[2]	[338000]	[0]							10000	[834101]				
+82411202	I won't go home without it. Keep bidding.	Requires 169000 Golden Shells. 35% chance to win the bid. Price will increase on failure.	82411202	[2]	[169000]	[0]							3500	[834102]	[824113]			
+82411203	An expert will never get the second one.	Think in the long term. Maybe next time.													[834104]			
+82411301	Go all in! Buy out!	Requires 338000 Golden Shells. Guaranteed to win the bid.	82411301	[2]	[338000]	[0]							10000	[834101]				
+82411302	An expert will never get the second one.	Think in the long term. Maybe next time.													[834104]			
+83410101	It feels good to spend money! Go with the buyout price!	Requires 350000 Golden Shells. Guaranteed to win the bid.	83410101	[2]	[350000]	[0]							10000	[844101]				
+83410102	Just have some fun.	Requires 105000 Golden Shells. 10% chance to win the bid. Price will increase on failure.	83410102	[2]	[105000]	[0]							1000	[844102]	[834111]			
+83410103	An expert will never get the third one.	Think in the long term. Maybe next time.													[844104]			
+83411101	Better sooner than later! Go with the buyout price!	Requires 455000 Golden Shells. Guaranteed to win the bid.	83411101	[2]	[455000]	[0]							10000	[844101]				
+83411102	Not a big deal. Bid!	Requires 182000 Golden Shells. 20% chance to win the bid. Price will increase on failure.	83411102	[2]	[182000]	[0]							2000	[844102]	[834112]			
+83411103	An expert will never get the third one.	Think in the long term. Maybe next time.													[844104]			
+83411201	Change of plan. I'll buy out.	Requires 591500 Golden Shells. Guaranteed to win the bid.	83411201	[2]	[591500]	[0]							10000	[844101]				
+83411202	I won't go home without it. Keep bidding.	Requires 295750 Golden Shells. 30% chance to win the bid. Price will increase on failure.	83411202	[2]	[295750]	[0]							3000	[844102]	[834113]			
+83411203	An expert will never get the third one.	Think in the long term. Maybe next time.													[844104]			
+83411301	Go all in! Buy out!	Requires 591500 Golden Shells. Guaranteed to win the bid.	83411301	[2]	[591500]	[0]							10000	[844101]				
+83411302	An expert will never get the third one.	Think in the long term. Maybe next time.													[844104]			
+84410101	It's over.	It's already over.																
+84410201	It's over.	It's already over.																
+84410301	It's over.	It's already over.																
+84410401	It's over.	It's already over.																
+81510101	It feels good to spend money! Go with the buyout price!	Requires 60000 Golden Shells. Guaranteed to win the bid.	81510101	[2]	[60000]	[0]							10000	[825101]				
+81510102	Just have some fun.	Requires 18000 Golden Shells. 20% chance to win the bid. Price will increase on failure.	81510102	[2]	[18000]	[0]							2000	[825102]	[815111]			
+81510103	An expert will never get the first one.	Think in the long term. Maybe next time.													[825104]			
+81511101	Better sooner than later! Go with the buyout price!	Requires 78000 Golden Shells. Guaranteed to win the bid.	81511101	[2]	[78000]	[0]							10000	[825101]				
+81511102	Not a big deal. Bid!	Requires 31200 Golden Shells. 30% chance to win the bid. Price will increase on failure.	81511102	[2]	[31200]	[0]							3000	[825102]	[815112]			
+81511103	An expert will never get the first one.	Think in the long term. Maybe next time.													[825104]			
+81511201	Change of plan. I'll buy out.	Requires 101400 Golden Shells. Guaranteed to win the bid.	81511201	[2]	[101400]	[0]							10000	[825101]				
+81511202	I won't go home without it. Keep bidding.	Requires 50700 Golden Shells. 40% chance to win the bid. Price will increase on failure.	81511202	[2]	[50700]	[0]							4000	[825102]	[815113]			
+81511203	An expert will never get the first one.	Think in the long term. Maybe next time.													[825104]			
+81511301	Go all in! Buy out!	Requires 101400 Golden Shells. Guaranteed to win the bid.	81511301	[2]	[101400]	[0]							10000	[825101]				
+81511302	An expert will never get the first one.	Think in the long term. Maybe next time.													[825104]			
+82510101	It feels good to spend money! Go with the buyout price!	Requires 80000 Golden Shells. Guaranteed to win the bid.	82510101	[2]	[80000]	[0]							10000	[835101]				
+82510102	Just have some fun.	Requires 24000 Golden Shells. 15% chance to win the bid. Price will increase on failure.	82510102	[2]	[24000]	[0]							1500	[835102]	[825111]			
+82510103	An expert will never get the second one.	Think in the long term. Maybe next time.													[835104]			
+82511101	Better sooner than later! Go with the buyout price!	Requires 104000 Golden Shells. Guaranteed to win the bid.	82511101	[2]	[104000]	[0]							10000	[835101]				
+82511102	Not a big deal. Bid!	Requires 41600 Golden Shells. 25% chance to win the bid. Price will increase on failure.	82511102	[2]	[41600]	[0]							2500	[835102]	[825112]			
+82511103	An expert will never get the second one.	Think in the long term. Maybe next time.													[835104]			
+82511201	Change of plan. I'll buy out.	Requires 135200 Golden Shells. Guaranteed to win the bid.	82511201	[2]	[135200]	[0]							10000	[835101]				
+82511202	I won't go home without it. Keep bidding.	Requires 67600 Golden Shells. 35% chance to win the bid. Price will increase on failure.	82511202	[2]	[67600]	[0]							3500	[835102]	[825113]			
+82511203	An expert will never get the second one.	Think in the long term. Maybe next time.													[835104]			
+82511301	Go all in! Buy out!	Requires 135200 Golden Shells. Guaranteed to win the bid.	82511301	[2]	[135200]	[0]							10000	[835101]				
+82511302	An expert will never get the second one.	Think in the long term. Maybe next time.													[835104]			
+83510101	It feels good to spend money! Go with the buyout price!	Requires 120000 Golden Shells. Guaranteed to win the bid.	83510101	[2]	[120000]	[0]							10000	[845101]				
+83510102	Just have some fun.	Requires 36000 Golden Shells. 10% chance to win the bid. Price will increase on failure.	83510102	[2]	[36000]	[0]							1000	[845102]	[835111]			
+83510103	An expert will never get the third one.	Think in the long term. Maybe next time.													[845104]			
+83511101	Better sooner than later! Go with the buyout price!	Requires 156000 Golden Shells. Guaranteed to win the bid.	83511101	[2]	[156000]	[0]							10000	[845101]				
+83511102	Not a big deal. Bid!	Requires 62400 Golden Shells. 20% chance to win the bid. Price will increase on failure.	83511102	[2]	[62400]	[0]							2000	[845102]	[835112]			
+83511103	An expert will never get the third one.	Think in the long term. Maybe next time.													[845104]			
+83511201	Change of plan. I'll buy out.	Requires 202800 Golden Shells. Guaranteed to win the bid.	83511201	[2]	[202800]	[0]							10000	[845101]				
+83511202	I won't go home without it. Keep bidding.	Requires 101400 Golden Shells. 30% chance to win the bid. Price will increase on failure.	83511202	[2]	[101400]	[0]							3000	[845102]	[835113]			
+83511203	An expert will never get the third one.	Think in the long term. Maybe next time.													[845104]			
+83511301	Go all in! Buy out!	Requires 202800 Golden Shells. Guaranteed to win the bid.	83511301	[2]	[202800]	[0]							10000	[845101]				
+83511302	An expert will never get the third one.	Think in the long term. Maybe next time.													[845104]			
+84510101	It's over.	It's already over.																
+84510201	It's over.	It's already over.																
+84510301	It's over.	It's already over.																
+84510401	It's over.	It's already over.																
+81610101	It feels good to spend money! Go with the buyout price!	Requires 200000 Golden Shells. Guaranteed to win the bid.	81610101	[2]	[200000]	[0]							10000	[826101]				
+81610102	Just have some fun.	Requires 60000 Golden Shells. 15% chance to win the bid. Price will increase on failure.	81610102	[2]	[60000]	[0]							1500	[826102]	[816111]			
+81610103	An expert will never get the first one.	Think in the long term. Maybe next time.													[826104]			
+81611101	Better sooner than later! Go with the buyout price!	Requires 260000 Golden Shells. Guaranteed to win the bid.	81611101	[2]	[260000]	[0]							10000	[826101]				
+81611102	Not a big deal. Bid!	Requires 104000 Golden Shells. 25% chance to win the bid. Price will increase on failure.	81611102	[2]	[104000]	[0]							2500	[826102]	[816112]			
+81611103	An expert will never get the first one.	Think in the long term. Maybe next time.													[826104]			
+81611201	Change of plan. I'll buy out.	Requires 338000 Golden Shells. Guaranteed to win the bid.	81611201	[2]	[338000]	[0]							10000	[826101]				
+81611202	I won't go home without it. Keep bidding.	Requires 169000 Golden Shells. 35% chance to win the bid. Price will increase on failure.	81611202	[2]	[169000]	[0]							3500	[826102]	[816113]			
+81611203	An expert will never get the first one.	Think in the long term. Maybe next time.													[826104]			
+81611301	Go all in! Buy out!	Requires 338000 Golden Shells. Guaranteed to win the bid.	81611301	[2]	[338000]	[0]							10000	[826101]				
+81611302	An expert will never get the first one.	Think in the long term. Maybe next time.													[826104]			
+82610101	It feels good to spend money! Go with the buyout price!	Requires 200000 Golden Shells. Guaranteed to win the bid.	82610101	[2]	[200000]	[0]							10000	[836101]				
+82610102	Just have some fun.	Requires 60000 Golden Shells. 15% chance to win the bid. Price will increase on failure.	82610102	[2]	[60000]	[0]							1500	[836102]	[826111]			
+82610103	An expert will never get the second one.	Think in the long term. Maybe next time.													[836104]			
+82611101	Better sooner than later! Go with the buyout price!	Requires 260000 Golden Shells. Guaranteed to win the bid.	82611101	[2]	[260000]	[0]							10000	[836101]				
+82611102	Not a big deal. Bid!	Requires 104000 Golden Shells. 25% chance to win the bid. Price will increase on failure.	82611102	[2]	[104000]	[0]							2500	[836102]	[826112]			
+82611103	An expert will never get the second one.	Think in the long term. Maybe next time.													[836104]			
+82611201	Change of plan. I'll buy out.	Requires 338000 Golden Shells. Guaranteed to win the bid.	82611201	[2]	[338000]	[0]							10000	[836101]				
+82611202	I won't go home without it. Keep bidding.	Requires 169000 Golden Shells. 35% chance to win the bid. Price will increase on failure.	82611202	[2]	[169000]	[0]							3500	[836102]	[826113]			
+82611203	An expert will never get the second one.	Think in the long term. Maybe next time.													[836104]			
+82611301	Go all in! Buy out!	Requires 338000 Golden Shells. Guaranteed to win the bid.	82611301	[2]	[338000]	[0]							10000	[836101]				
+82611302	An expert will never get the second one.	Think in the long term. Maybe next time.													[836104]			
+83610101	It feels good to spend money! Go with the buyout price!	Requires 350000 Golden Shells. Guaranteed to win the bid.	83610101	[2]	[350000]	[0]							10000	[846101]				
+83610102	Just have some fun.	Requires 105000 Golden Shells. 10% chance to win the bid. Price will increase on failure.	83610102	[2]	[105000]	[0]							1000	[846102]	[836111]			
+83610103	An expert will never get the third one.	Think in the long term. Maybe next time.													[846104]			
+83611101	Better sooner than later! Go with the buyout price!	Requires 455000 Golden Shells. Guaranteed to win the bid.	83611101	[2]	[455000]	[0]							10000	[846101]				
+83611102	Not a big deal. Bid!	Requires 182000 Golden Shells. 20% chance to win the bid. Price will increase on failure.	83611102	[2]	[182000]	[0]							2000	[846102]	[836112]			
+83611103	An expert will never get the third one.	Think in the long term. Maybe next time.													[846104]			
+83611201	Change of plan. I'll buy out.	Requires 591500 Golden Shells. Guaranteed to win the bid.	83611201	[2]	[591500]	[0]							10000	[846101]				
+83611202	I won't go home without it. Keep bidding.	Requires 295750 Golden Shells. 30% chance to win the bid. Price will increase on failure.	83611202	[2]	[295750]	[0]							3000	[846102]	[836113]			
+83611203	An expert will never get the third one.	Think in the long term. Maybe next time.													[846104]			
+83611301	Go all in! Buy out!	Requires 591500 Golden Shells. Guaranteed to win the bid.	83611301	[2]	[591500]	[0]							10000	[846101]				
+83611302	An expert will never get the third one.	Think in the long term. Maybe next time.													[846104]			
+84610101	It's over.	It's already over.																
+84610201	It's over.	It's already over.																
+84610301	It's over.	It's already over.																
+84610401	It's over.	It's already over.																
+91000101	That's too good to be true.	Golden Shells <color=#FF0000>+2000</color>									[91010201]							
+91000201	That's too good to be true.	Golden Shells <color=#FF0000>+4000</color>									[91010301]							
+91000301	That's too good to be true.	Golden Shells <color=#FF0000>+4000</color>									[91010301]							
+91010101	I only want to play it safe.	Invest 10000 Golden Shells.	91010101									910111						
+91010102	I'm rich, so I'll go with percentage damage.	Invest 30% of your current Golden Shells.										910112						
+91010103	I'm done. I want my money back.	Move away										910103						
+91010201	May the God of Wealth bless me.	Leave the place with expectations in heart.																
+91010301	Time to go.	I won't give it another look.																
+91011101	Play it safe.	90% chance to gain <color=#EC5B38>+10%</color> additional profit. 10% chance to lose <color=#409B7E>10%</color> of Golden Shell investment.		[2]	[10000]	[0]						910102				1	[11000, 9000]	[9000, 1000]
+91011102	Go aggressive.	70% chance to gain <color=#EC5B38>+30%</color> additional profit. 30% chance to lose <color=#409B7E>20%</color> of Golden Shell investment.		[2]	[10000]	[0]						910102				1	[13000, 8000]	[7000, 3000]
+91011103	Gotta love the heart-racing feeling.	50% chance to gain <color=#EC5B38>+80%</color> additional profit. 50% chance to lose <color=#409B7E>40%</color> of Golden Shell investment.		[2]	[10000]	[0]						910102				1	[18000, 6000]	[5000, 5000]
+91011201	Play it safe.	90% chance to gain <color=#EC5B38>+10%</color> additional profit. 10% chance to lose <color=#409B7E>10%</color> of Golden Shell investment.		[2]	[0]	[3000]						910102				1	[11000, 9000]	[9000, 1000]
+91011202	Go aggressive.	70% chance to gain <color=#EC5B38>+30%</color> additional profit. 30% chance to lose <color=#409B7E>20%</color> of Golden Shell investment.		[2]	[0]	[3000]						910102				1	[13000, 8000]	[7000, 3000]
+91011203	Gotta love the heart-racing feeling.	50% chance to gain <color=#EC5B38>+80%</color> additional profit. 50% chance to lose <color=#409B7E>40%</color> of Golden Shell investment.		[2]	[0]	[3000]						910102				1	[18000, 6000]	[5000, 5000]
+92010101	I only want to play it safe.	Invest 50000 Golden Shells.	92010101									920111						
+92010102	I'm rich, so I'll go with percentage damage.	Invest 40% of your current Golden Shells.										920112						
+92010103	I'm done. I want my money back.	Move away										920103						
+92010201	May the God of Wealth bless me.	Leave the place with expectations in heart.																
+92010301	Time to go.	I won't give it another look.																
+92011101	Play it safe.	80% chance to gain <color=#EC5B38>+30%</color> additional profit. 20% chance to lose <color=#409B7E>20%</color> of Golden Shell investment.		[2]	[50000]	[0]						920102				1	[13000, 8000]	[8000, 2000]
+92011102	Go aggressive.	70% chance to gain <color=#EC5B38>+60%</color> additional profit. 30% chance to lose <color=#409B7E>40%</color> of Golden Shell investment.		[2]	[50000]	[0]						920102				1	[16000, 6000]	[7000, 3000]
+92011103	Gotta love the heart-racing feeling.	50% chance to gain <color=#EC5B38>+130%</color> additional profit. 50% chance to lose <color=#409B7E>50%</color> of Golden Shell investment.		[2]	[50000]	[0]						920102				1	[23000, 5000]	[5000, 5000]
+92011201	Play it safe.	80% chance to gain <color=#EC5B38>+30%</color> additional profit. 20% chance to lose <color=#409B7E>20%</color> of Golden Shell investment.		[2]	[0]	[4000]						920102				1	[13000, 8000]	[8000, 2000]
+92011202	Go aggressive.	70% chance to gain <color=#EC5B38>+60%</color> additional profit. 30% chance to lose <color=#409B7E>40%</color> of Golden Shell investment.		[2]	[0]	[4000]						920102				1	[16000, 6000]	[7000, 3000]
+92011203	Gotta love the heart-racing feeling.	50% chance to gain <color=#EC5B38>+130%</color> additional profit. 50% chance to lose <color=#409B7E>50%</color> of Golden Shell investment.		[2]	[0]	[4000]						920102				1	[23000, 5000]	[5000, 5000]
+93010101	I only want to play it safe.	Invest 150000 Golden Shells.	93010101									930111						
+93010102	Show-hand is art.	Invest 50% of your current Golden Shells.										930112						
+93010103	I'm done. I want my money back.	Move away										930103						
+93010201	May the God of Wealth bless me.	Leave the place with expectations in heart.																
+93010301	Time to go.	I won't give it another look.																
+93011101	Play it safe.	60% chance to gain <color=#EC5B38>+50%</color> additional profit. 40% chance to lose <color=#409B7E>40%</color> of Golden Shell investment.		[2]	[150000]	[0]						930102				1	[15000, 6000]	[6000, 4000]
+93011102	Go aggressive.	50% chance to gain <color=#EC5B38>+80%</color> additional profit. 50% chance to lose <color=#409B7E>50%</color> of Golden Shell investment.		[2]	[150000]	[0]						930102				1	[18000, 5000]	[5000, 5000]
+93011103	Gotta love the heart-racing feeling.	30% chance to gain <color=#EC5B38>+200%</color> additional profit. 70% chance to lose <color=#409B7E>60%</color> of Golden Shell investment.		[2]	[150000]	[0]						930102				1	[30000, 4000]	[3000, 7000]
+93011201	Play it safe.	60% chance to gain <color=#EC5B38>+50%</color> additional profit. 40% chance to lose <color=#409B7E>40%</color> of Golden Shell investment.		[2]	[0]	[5000]						930102				1	[15000, 6000]	[6000, 4000]
+93011202	Go aggressive.	50% chance to gain <color=#EC5B38>+80%</color> additional profit. 50% chance to lose <color=#409B7E>50%</color> of Golden Shell investment.		[2]	[0]	[5000]						930102				1	[18000, 5000]	[5000, 5000]
+93011203	Gotta love the heart-racing feeling.	30% chance to gain <color=#EC5B38>+200%</color> additional profit. 70% chance to lose <color=#409B7E>60%</color> of Golden Shell investment.		[2]	[0]	[5000]						930102				1	[30000, 4000]	[3000, 7000]
+94010101	I only want to play it safe.	Invest 150000 Golden Shells.	94010101									940111						
+94010102	Show-hand is art.	Invest 50% of your current Golden Shells.										940112						
+94010103	I'm done. I want my money back.	Move away										940103						
+94010201	May the God of Wealth bless me.	Leave the place with expectations in heart.																
+94010301	Time to go.	I won't give it another look.																
+94011101	Play it safe.	60% chance to gain <color=#EC5B38>+50%</color> additional profit. 40% chance to lose <color=#409B7E>40%</color> of Golden Shell investment.		[2]	[150000]	[0]						940102				1	[15000, 6000]	[6000, 4000]
+94011102	Go aggressive.	50% chance to gain <color=#EC5B38>+80%</color> additional profit. 50% chance to lose <color=#409B7E>50%</color> of Golden Shell investment.		[2]	[150000]	[0]						940102				1	[18000, 5000]	[5000, 5000]
+94011103	Gotta love the heart-racing feeling.	30% chance to gain <color=#EC5B38>+200%</color> additional profit. 70% chance to lose <color=#409B7E>60%</color> of Golden Shell investment.		[2]	[150000]	[0]						940102				1	[30000, 4000]	[3000, 7000]
+94011201	Play it safe.	60% chance to gain <color=#EC5B38>+50%</color> additional profit. 40% chance to lose <color=#409B7E>40%</color> of Golden Shell investment.		[2]	[0]	[5000]						940102				1	[15000, 6000]	[6000, 4000]
+94011202	Go aggressive.	50% chance to gain <color=#EC5B38>+80%</color> additional profit. 50% chance to lose <color=#409B7E>50%</color> of Golden Shell investment.		[2]	[0]	[5000]						940102				1	[18000, 5000]	[5000, 5000]
+94011203	Gotta love the heart-racing feeling.	30% chance to gain <color=#EC5B38>+200%</color> additional profit. 70% chance to lose <color=#409B7E>60%</color> of Golden Shell investment.		[2]	[0]	[5000]						940102				1	[30000, 4000]	[3000, 7000]
+1001	Accept the payment	Golden Shells <color=#FF0000>+1000</color>									[11]							
+1101	Leave																	
+1010001	Focus your advertising on tourists to improve your ratings on websites.	Item price +20% but productivity <color=#16D100>-10%</color> for 2 quarters								[80011, 80046]		10101						
+1010002	Focus your advertising on the locals to maintain your reputation.	Item productivity +30% but price <color=#16D100>-10%</color> for 2 quarters								[80012, 80013]		10102						
+1010101	Running a business is hard...																	
+1010201	Running a business is hard...																	
+1020101	Expand your store and hire more people.	Item productivity +30% for 3 quarters	1020101	[2]	[5000]	[0]				[80021]		10202						
+1020102	Cut operating hours to ease operational pressure.	Item productivity +15% for 3 quarters								[80022]		10203						
+1020201	Your hard work during this period is worth it.																	
+1020301	You need to optimize your workflow.																	
+1030101	Refuse. In the worst scenario, you'll open a store at another location.	Item production CRIT effect +50% for 2 quarters	1030101	[2]	[10000]	[0]				[80036]		10302						
+1030102	Respect the locals. Swallow it for now.	Item production CRIT rate +30% for 2 quarters	1030102	[2]	[8000]	[0]				[80035]		10303						
+1030103	Prove the shop's ability to drive growth with actual performance.	"Receive Special Artifact: ""Fate"""									[1030103]	10304						
+1030201	The bottom line is what matters most.																	
+1030301	One day, you will get your money back.	"Chamber Representative: ""We got tips again, folks!"""																
+1030401	Facts speak louder than words.																	
+1040101	Gather from the seaside.	<color=#a46800>Coconuts</color><color=#FF0000> +50</color>, <color=#a46800>Wood</color><color=#FF0000> +300</color>									[1040101, 1040102]	10402						
+1040102	Gather from the mountains.	<color=#a46800>Wood</color><color=#FF0000> +600</color>									[1040103]	10403						
+1040201	It turns out she likes the sea, too.																	
+1040301	You should have brought mosquito repellent.																	
+1050101	A cute, fancy girly style.	Item sale CRIT rate +20% for 2 quarters								[80023]		10502						
+1050102	A style that reminds people of the tropics.	<color=#a46800>Coconut</color> and <color=#a46800>Wood</color> productivity +40% for 2 quarters								[80024]		10503						
+1050201	It turns out she looks pretty good in the princess style!																	
+1050301	The best design is one that acts according to local conditions.																	
+1060101	Agree. This can be mutually beneficial.	Golden Shells +50000 but item productivity -30% for 1 quarter								[80025]	[1060101]	10602						
+1060102	Refuse. It's too much of a loss to close the store for one day.											10603						
+1060103	Show him a better location to take photos.	Item price +30% permanently								[80026]		10604						
+1060201	Everyone is happy... Right?																	
+1060301	Viral doesn't suit you.																	
+1060401	It seems you're going to be busy for a while. What a good problem to have.																	
+1070101	Agree. This can be mutually beneficial.	Golden Shells +50000 but item productivity -30% for 1 quarter								[80025]	[1060101]	10702						
+1070102	Refuse. It's too much of a loss to close the store for one day.											10703						
+1070103	Why not get everyone here and do the interview together?	Item productivity +30% permanently								[80030]		10704						
+1070201	Everyone is happy.																	
+1070301	Viral doesn't suit you.																	
+1070401	It seems you're going to be busy for a while. What a good problem to have.																	
+1080101	There is still more to be considered. Go with independent development.											10802						
+1080102	Leave the past in the past. Invite the Chamber.	Production +1 for 2 quarters								[80027]		10803						
+1080201	Take caution.																	
+1080301	Work together.																	
+1090101	Those people can't be trusted. Go with independent development.											10902						
+1090102	Leave the past in the past. Accept the Chamber.	Production +1 for 3 quarters								[80028]		10903						
+1090201	Keep it up! The logistics network is almost complete.																	
+1090301	Work together.																	
+1100101	Agree.											11002						
+1100102	You need to give it some thought.											11003						
+1100201	There is strength in numbers.	Golden Shells +20000									[1100201]							
+1100301	It's better to play it safe.																	
+1110101	Take a break.	"Receive Special Artifact: ""Tenet"""									[1110101]	11102						
+1110201	What a wonderful day.																	
+1110301	Ignore.											11104						
+1110302	Take a shortcut to catch up with the figure.	Golden Shells +50000									[1060101]	11105						
+1110401	What a wonderful day.																	
+1110501	It's never too late to turn over a new leaf.																	
+1120101	Task Nanami with promoting.											11202						
+1120102	Task Nanami with gathering the materials.											11203						
+1120201	It looks like you can look forward to the performance of her promotional work.																	
+1120301	You wonder what she will bring back.																	
+1130101	Open another branch store for mechanoids.											11302						
+1130102	Have a discussion with Nanami.	<color=#a46800>Petroleum</color> productivity +20% for 2 quarters								[80029]		11303						
+1130201	Do as she says, then.																	
+1130301	There is nothing wrong with hiring mechanoids in the store.																	
+1140101	Agree to their request.	Golden Shells +20000									[1100201]	11402						
+1140102	Refuse. Mechanoids have the right to get paid.	<color=#a46800>Petroleum</color> productivity +20% for 2 quarters								[80029]		11403						
+1140201	There are more helping hands now.																	
+1140301	Now you are friends, too.																	
+1150101	Keep the store safe and sound.	Item productivity +30% permanently								[80030]		11502						
+1150102	Let more mechanoids be our friends.	"Receive Special Artifact: ""Friend-Ship"""									[1150102]	11503						
+1150201	You will remember that.																	
+1150301	Make more friends together.																	
+1160101	Keep the store safe and sound.	Item productivity +30% permanently								[80030]		11602						
+1160201	You will remember that.	Golden Shells +3000									[1170101]							
+1170101	Tell the truth. You don't need help right now.											11702						
+1170102	Try your best to find her a job.	<color=#a46800>Coconut</color> productivity +30% for 2 quarters	1170102	[2]	[1000]	[0]				[80031]		11703						
+1170201	So the test begins...																	
+1170301	She can't be denied...																	
+1180101	Sophia and Changyu	Item sale CRIT rate +20% for 2 quarters								[80023]		11802						
+1180102	Ayla and Karenina	Item price +20% for 2 quarters								[80032]		11803						
+1180201	That's the kind of game that the Little League likes to play.																	
+1180301	Is it because of the personal aura...?																	
+1190101	You had fun, too.	Golden Shells +100000									[1190101]	11902						
+1190102	There is one more place that you want to show her.	"Receive Special Artifact: ""Green Bottle"""									[1190102]	11903						
+1190201	Same.																	
+1190301	We'll remember together.																	
+1201	Bottleneck: Construct 3 buildings	Rewards: <color=#a46800>Coconuts</color>, <color=#a46800>Wood</color>, <color=#a46800>Petroleum</color>	4001								[1201]	1201						
+120101	Bottleneck: Construct 8 buildings	Reward: Production +1	4002								[1202]	1202						
+120201	Bottleneck: Construct 12 buildings	Reward: Free Constructions +1	4003								[1203]	1203						
+120301	Bottleneck: Purchase 2 islands	Reward: Artifact Workshop *1	4004								[1204]	1204						
+120401	Bottleneck: Construct 20 buildings	Reward: Lucky Star *1	4005								[1205]	1205						
+120501	Bottleneck: Upgrade Main City to Lv.4	Reward: Production +3	4006								[1206]	1206						
+120601	Bottleneck: Construct 30 buildings	Reward: Items produced by buildings +20%	4007							[80033]		1207						
+120701	Bottleneck: Purchase 5 islands	Reward: Production +5	4008								[1207]	1208						
+120801	Bottleneck: Upgrade Main City to Lv.9	Reward: ???	4009								[1208]	1209						
+120901	Go through the void tunnel.																	
+121001	You're finally awake!																	
+1301	Purchase the Polarized Island.	Reward: Artifact Workshop x1. Unlocks all special areas on the island.	4010								[1204, 1301]	1301						
+1302	Take the blueprint and say goodbye to the robot.																	
+1401	Pay to learn.	Merchant EXP +200	1401	[2]	[100000]	[0]					[1401]	1401						
+1402	Pay to learn.	Merchant EXP +400	1402	[2]	[200000]	[0]					[1402]							
+2010001	Hire a specialist.		2010001	[2]	[1000]	[0]												
+2010002	Give up the search.											20102						
+2010101	Let it go.	Coconuts +500									[1501]	20103						
+2010102	Quickly refine it.	Petroleum +100									[1502]	20104						
+2010201	Leave																	
+3010001	At least you have the freedom of thought.	Item price +20% for 2 quarters								[80011]		30101						
+3010002	Get some fries?	Golden Shells +3000									[1170101]	30102						
+3010101	Love, philosophy and robots.																	
+3010201	You don't quite understand what it's saying, but you do want to get some fries.																	
+3020001	The meaning of thinking must lie beyond thinking itself.	Item sale CRIT rate +20% for 2 quarters								[80023]								
+3021101	Sisyphus Fries: A tribute to imperfect freedom.	Item price +20% for 2 quarters								[80032]								
+3030001	She will come back.											30301						
+3030002	You need to be franker.											30302						
+3030101	Accept the gift.	Golden Shells +5000									[3030001]							
+3030201	Where did he go?																	
+3040001	"""He would have done the same."""	Golden Shells +20000									[1100201]							
+3041101	"""I don't want to leave any regrets in my final days."""	"Receive Special Artifact: ""Courage"""									[3040101]							
+3050001	You want to become light, too. (Help them.)	Item sale CRIT rate +20% for 2 quarters	3050001	[2]	[2000]	[0]				[80023]		30501						
+3050002	What is this place? (Make them leave.)											30502						
+3050101	Come on, Golden Age guy!																	
+3050201	Great. You hate babysitting.																	
+3060001	Safe evacuation from the Reconquista Age!	Item sale CRIT effect +30% for 3 quarters								[80034]								
+3061101	Of course, you will have your share of the bonus.	Golden Shells +20000									[1100201]							
+3070001	Fight! (Play with them.)	Item productivity +30% for 2 quarters	3070101	[2]	[2000]	[0]						30701						
+3070002	Something is off. Run! (And report them to authorities.)	Coconuts +200									[3070201]	30702						
+3070101	You two look pretty brave.									[80012]								
+3070201	Life is like a box of chocolates. You never know what you're gonna get.																	
+3080001	Who asked you?	Item productivity +30% for 3 quarters								[80021]								
+3081101	You end the night of legend with your own hands.	Item price +20% for 2 quarters								[80032]								
+3090001	Teach her yourself.											30901						
+3090002	Encourage her.	Golden Shells +5000									[3030001]	30902						
+3090101	Once upon a time, someone wanted to form a band with you for a lifetime.																	
+3090201	An unexpected reward.																	
+3100001	Look at the marked crosswalk. Don't you think it's perfect for the album cover?	"Receive Special Artifact: ""Lonely Sheet Music"""									[3100001]							
+3101101	I've wanted the championship for a long, long time.	Item price +20%								[80011]								
+3110001	Yes, of course!	Coconut and Wood production CRIT rate +20% for 2 quarters								[80037]		31101						
+3110002	Of course not!	Coconuts +100, Wood +250									[3200002]	31102						
+3110101	Recruiting aliens, time travelers and sliders!																	
+3110201	Superpowers and magic no longer exist once you grow up.																	
+3120001	The beautiful days are a discontinuous existence.	Coconut and Wood production CRIT rate +30% for 3 quarters								[80038]								
+3121101	There will always be people who try to find reality in fiction.	Coconut and Wood sale CRIT rate +30% for 3 quarters								[80039]								
+3130001	Give him the sausage.	Petroleum +50	3130001	[2]	[500]	[0]					[3140001]	31301						
+3130002	Heartlessly refuse. (The sausage is mine! Mine!)											31302						
+3130101	Say thank you to the puppy.	Golden Shells +5000									[3030001]							
+3130201	You're the best.																	
+3140001	See? Dogs are the best.	Golden Shells +20000									[1100201]							
+3141101	See? Dogs are the best.	Petroleum sale CRIT effect +40% for 3 quarters								[80040]								
+3150001	Work overtime.	Item productivity +40% for 2 quarters	3150001	[2]	[5000]	[0]				[80041]		31501						
+3150002	Keep the current schedule. (Don't overdo it.)											31502						
+3150101	Leave																	
+3150201	Leave																	
+3160001	Keep it up.	Item price +30% for 3 quarters								[80042]								
+3161101	Keep it up.	Item price +15% for 3 quarters								[80043]								
+3170001	Refuse. (Then report them to authorities.)											31701						
+3170002	Agree. (Take the money first, worry about it later.)	Item productivity +30% for 2 quarters								[80012]		31702						
+3170101	Leave																	
+3170201	Leave																	
+3180001	Leave	Item price +30% for 2 quarters								[80044]								
+3181101	Leave	Item price -30% for 2 quarters								[80045]								
+3190001	Help him realize his dream		3190001	[2]	[5000]	[0]						31901						
+3190002	I don't buy it											31902						
+3190101	Come on!																	
+3190201	Go to sleep.																	
+3200001	Leave	Item sale CRIT rate +30% and CRIT effect +50% for 3 quarters								[80047, 80048]								
+3201101	Leave	Item price +15% for 3 quarters								[80043]								
+3210001	Become the Legend of Akdilek!	Golden Shells +20000									[1100201]							

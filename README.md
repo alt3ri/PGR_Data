@@ -7,5 +7,5 @@ Region: `CN`
 
 Region: `EN/Global`
 > Status: Release</br>
-> Resource Version: 4.1.0</br>
-> Document Version: 4.1.14</br>
+> Resource Version: 4.2.0</br>
+> Document Version: 4.2.4</br>

@@ -1,0 +1,16 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	1000		401							{1: '1', 2: '2'}
+3	2		301			DialogEnable	AniZhuanchangBegin			{3: 'Silence fills the air after the battle ended. Tifa slowly moves toward the Musashi IX, and—'}
+4	3		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg215_2.jpg'}
+5	4		301			AniZhuanchangEnd				"{3: ""She easily pulls out Musashi IX's head and raises it up.""}"
+6	5		301							{2: 'Tifa', 3: 'I win.'}
+7	6		301							{2: 'Roland', 3: '...'}
+8	7		301							{3: 'Still smiling, Roland remains silent.'}
+9	8		301							{3: 'Tifa stares mesmerized at the mechanoid head. She seems to be immersed in her own world...'}
+10	9		301							{2: 'Tifa', 3: 'What an amazing feeling... How irresistible...'}
+11	10		301							{2: 'Tifa', 3: 'Commandant, did you see that?'}
+12	11		301							{2: 'Tifa', 3: 'I—'}
+13	12		301							{2: 'Tifa', 3: 'Survived...'}
+14	13		301							{3: '...'}
+15	14		301		1		AniZhuanchangBegin			{2: 'Roland', 3: 'What a masterpiece...'}

@@ -1,0 +1,114 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory330.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500013'}
+4	4		401							{1: '2', 2: '10002001', 3: '1'}
+5	5		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 3: '1'}
+6	6		301							{1: '1', 2: 'Corrupted', 3: 'Urgh—', 4: '1'}
+7	7		301			PanelActor1Disable				{2: 'Corrupted', 3: 'Bzz..', 4: '1'}
+8	1000		202							{1: '1', 6: '1'}
+9	8		201							{1: '2', 2: '1021001', 3: '4'}
+10	9		301							{1: '1', 2: 'Lucia', 3: 'Commandant, this way...', 4: '2'}
+11	10		301							{3: 'Lucia steadily paves a path, coldly surveying for ambushes and cutting apart any approaching Corrupted.'}
+12	11		301							{2: 'Lucia', 3: 'Commandant? Please follow tight.', 4: '2'}
+13	12		302							{2: 'Lucia, there are no more Corrupted around.', 3: '14'}
+14	13		204							{1: '1'}
+15	14		301							{2: 'Lucia', 3: '……', 4: '2'}
+16	15		301							{2: 'Lucia', 3: 'Sorry, Commandant. I must look... uncanny right now...', 4: '2'}
+17	16		204							{1: '2', 2: '3'}
+18	17		301							{2: 'Lucia', 3: 'The symptoms of M.I.N.D. deviation are... showing...', 4: '2'}
+19	18		302							"{2: ""Don't worry, I'll be here to keep you stable."", 3: '19'}"
+20	19		204							{1: '2'}
+21	20		301							{2: 'Lucia', 3: 'Commandant...', 4: '2'}
+22	21		301							{2: 'Lucia', 3: 'Sure.', 4: '2'}
+23	22		301							"{2: 'Lucia', 3: ""I've heard that... maintaining close contact with your commandant can help stabilize M.I.N.D. integrity."", 4: '2'}"
+24	23		301							{2: 'Lucia', 3: '……', 4: '2'}
+25	24		204							{1: '2', 2: '3'}
+26	25		301							{2: 'Lucia', 3: 'But... with my condition now...', 4: '2'}
+27	26		302							"{2: ""(Don't strain yourself, leave the navigation to me!)"", 3: '27'}"
+28	27		204							{1: '2'}
+29	28		301				AniZhuanchangBegin			"{2: 'Lucia', 3: ""Then... I'll just follow you like this, Commandant... Is it alright...?"", 4: '2'}"
+30	29		202							{1: '2', 6: '1'}
+31	30		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg002_1.jpg'}
+32	31		301			AniZhuanchangEnd				{3: 'After a short rest, you and Lucia reach your destination—a small area hidden by the ruins.'}
+33	32		301							{3: 'Beneath the shadows stand a discontented-looking teenager, and...'}
+34	33		301				AniZhuanchangBegin			{3: 'A somewhat reluctant and petite girl.'}
+35	34		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory5.jpg'}
+36	35		201							{1: '1', 2: '1031001', 3: '7'}
+37	36		301			AniZhuanchangEnd				"{1: '1', 2: 'Liv', 3: ""Lucia! You're hurt so badly... Commandant, you as well..."", 4: '1'}"
+38	37		202							{1: '1', 6: '1'}
+39	38		201							{1: '2', 2: '1021001'}
+40	39		301							"{1: '1', 2: 'Lucia', 3: ""It's not an issue. I've disconnected my pain receptors, so executing the mission will not be a problem."", 4: '2'}"
+41	40		202							{1: '2', 6: '1'}
+42	41		201							{1: '1', 2: '1031001', 3: '14', 4: '-400'}
+43	42		201							{1: '3', 2: '1011001', 3: '10', 4: '400'}
+44	43		301							"{1: '1', 2: 'Liv', 3: ""You've gone so far to..."", 4: '1'}"
+45	44		301							{2: 'Lee', 3: 'Reckless beyond belief.', 4: '3'}
+46	45		202							{1: '1', 2: '3', 6: '1'}
+47	46		201							{1: '2', 2: '1021001'}
+48	47		301							{1: '1', 2: 'Lucia', 3: 'At least, we succeeded.', 4: '2'}
+49	48		202							{1: '2', 6: '1'}
+50	49		201							{1: '3', 2: '1011001'}
+51	50		301							"{1: '1', 2: 'Lee', 3: ""Yes, you did. But for this, you've been heavily wounded, our most important Commandant nearly died, and not only so, even Liv's lost her combat capabilities."", 4: '3'}"
+52	51		202							{1: '3', 6: '1'}
+53	52		201							{1: '2', 2: '1021001'}
+54	53		301							{1: '1', 2: 'Lucia', 3: 'Liv...?', 4: '2'}
+55	54		202							{1: '2', 6: '1'}
+56	55		201							{1: '1', 2: '1031001'}
+57	56		301							"{1: '1', 2: 'Liv', 3: ""I'm sorry, I overloaded my Levi-Guns for the blast just now and its core melted..."", 4: '1'}"
+58	57		301							{2: 'Liv', 3: 'But, I can still provide computing power and data support!', 4: '1'}
+59	58		202							{1: '1', 6: '1'}
+60	59		201							{1: '3', 2: '1011001', 3: '10'}
+61	60		301							{1: '1', 2: 'Lee', 3: '... (Sighs)', 4: '3'}
+62	61		203							{1: '3', 2: '0.25', 3: '400'}
+63	62		201							{1: '2', 2: '1021001', 4: '-400'}
+64	63		301							{1: '1', 2: 'Lucia', 3: 'Lee, your hand?', 4: '2'}
+65	64		204							{1: '3'}
+66	65		301							{2: 'Lee', 3: 'Hand?', 4: '3'}
+67	66		301							"{2: 'Lee', 3: ""Just scorched from connecting the Levi-Gun to the city's power grid. Nothing serious, it doesn't affect its function."", 4: '3'}"
+68	67		202							{1: '2', 2: '3', 6: '1'}
+69	68		201							{1: '1', 2: '1031001'}
+70	69		301							{1: '1', 2: 'Liv', 3: 'Lee...', 4: '1'}
+71	70		202							{1: '1', 6: '1'}
+72	71		201							{1: '3', 2: '1011001'}
+73	72		301							{1: '1', 2: 'Lee', 3: 'Right, Commandant—', 4: '3'}
+74	73		202							{1: '3', 6: '1'}
+75	74		201							{1: '1', 2: '500082'}
+76	75		301							"{1: '1', 2: 'Lee', 3: ""You'd likely require these, so I scavenged a few serums for you."", 4: '1'}"
+77	76		301							"{2: 'Lee', 3: ""Don't ask where I got them, you can probably guess."", 4: '1'}"
+78	77		202							{1: '1', 6: '1'}
+79	78		201							{1: '3', 2: '1011001'}
+80	79		301							"{1: '1', 2: 'Lee', 3: ""At least we've escaped from the Corrupted's ambush now. Let's continue with the plan, Lucia."", 4: '3'}"
+81	80		202							{1: '3', 6: '1'}
+82	81		201							{1: '2', 2: '1021001'}
+83	82		301							"{1: '1', 2: 'Lucia', 3: ""Yes. I'll reiterate first. Our mission is to recover City 015."", 4: '2'}"
+84	83		301							"{2: 'Lucia', 3: ""When we're done exterminating the Corrupted from the designated areas, the Engineering Force will arrive and rebuild the city into a frontier for Humanity on Earth."", 4: '2'}"
+85	84		301							{2: 'Lucia', 3: 'But our conditions are dire, we must first regroup with other supply squads to resupply...', 4: '2'}
+86	85		301				AniZhuanchangBegin			"{2: 'Lucia', 3: ""And after a map update, I've found that the church nearby has a shortcut to the nearest meeting point. Let's head over there."", 4: '2'}"
+87	86		202							{1: '2', 6: '1'}
+88	87		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory98.png'}
+89	88		201							{1: '2', 2: '1021001', 3: '9'}
+90	89		301			AniZhuanchangEnd				{1: '1', 2: 'Lucia', 3: 'Ugh!', 4: '2'}
+91	90		204							{1: '2'}
+92	91		301							{1: '1', 2: 'Lucia', 3: 'Church...', 4: '2'}
+93	92		202							{1: '2', 6: '1'}
+94	93		201							{1: '3', 2: '1011001'}
+95	94		301							{1: '1', 2: 'Lee', 3: 'Is something the matter with this church?', 4: '3'}
+96	95		202							{1: '3', 6: '1'}
+97	96		201							{1: '2', 2: '1021001'}
+98	97		301							{1: '1', 2: 'Lucia', 3: 'Nothing, just struck by a sense of déjà vu...', 4: '2'}
+99	98		301							{1: '1', 2: 'Lucia', 3: 'Occasionally... happens...', 4: '2'}
+100	99		202							{1: '2', 6: '1'}
+101	100		201							{1: '3', 2: '1011001'}
+102	101		301							{1: '1', 2: 'Lee', 3: 'Not an unusual occurrence. The M.I.N.D. system is a complete simulation of the human consciousness model after all.', 4: '3'}
+103	102		301							"{2: 'Lee', 3: ""Might be a remnant from one of the places you've been. You do have a vast amount of combat experience after all."", 4: '3'}"
+104	103		302							"{2: ""You've all had your fair share of battle."", 3: '104'}"
+105	104		301							{2: 'Lee', 3: 'Commandant, you seem to have left yourself out.', 4: '3'}
+106	105		301							"{2: 'Lee', 3: ""Even though it's true that your resume doesn't stand out... but..."", 4: '3'}"
+107	106		302							{2: '……', 3: '107'}
+108	107		204							{1: '3', 2: '10'}
+109	108		301							{2: 'Lee', 3: 'Nevermind... We all have skeletons in the closet.', 4: '3'}
+110	109		202							{1: '3', 6: '1'}
+111	110		201							{1: '2', 2: '1021001'}
+112	111		301							{1: '1', 2: 'Lucia', 3: 'Lee...', 4: '2'}
+113	112		301		1		AniZhuanchangBegin			"{2: 'Lucia', 3: ""I'm fine now, let's continue."", 4: '2'}"

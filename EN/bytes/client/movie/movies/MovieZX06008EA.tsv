@@ -1,0 +1,200 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '6235'}
+3	3		304							{1: '<i>In what seems to be an endless cycle of dark reincarnation,</i>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-1'}
+4	4		304							"{1: ""<i>Veronica's consciousness appears to be drawn into a shadowy void.</i>"", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-1'}"
+5	5		304							"{1: ""<i>She feels as though she's walking through an endless dark corridor, where each door she pushes open,</i>"", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-1'}"
+6	6		304							{1: '<i>only reveals another identical hallway stretching before her.</i>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-1'}
+7	7		304				AniZhuanchangBegin			{1: '<i>Darkness. Nothing but endless, infinite darkness.</i>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-1', 9: '1'}
+8	8		501			AniZhuanchangEnd				{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab', 2: '2'}
+9	9		301			DialogEnable				{2: '???', 3: 'Veronica...'}
+10	10		301							{2: '???', 3: 'Wake up, Veronica...'}
+11	11		301							{3: 'A voice she recognizes calls out from beyond the door ahead.'}
+12	12		301							{2: 'Serra', 3: 'Come here, Veronica...'}
+13	13		301							{3: 'She steps forward and pushes the door open.'}
+14	14		401							{1: '2', 2: '4134'}
+15	15		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+16	16		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab'}
+17	17		401							{1: '1', 2: '36'}
+18	18		502							{1: 'DialogDisable'}
+19	19		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+20	20		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+21	21		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+22	22		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+23	23		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1317.jpg'}
+24	24		401							{1: '1', 2: '6236'}
+25	25		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 3: '1', 4: '1', 5: '0'}
+26	26		301			DialogEnable	DialogDisable			"{3: ""Before her is nothing but harsh white light flooding a chaotic laboratory. It takes Veronica's visual modules several seconds to adjust to the intense brightness.""}"
+27	27		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+28	28		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+29	29		301			DialogEnable				{3: 'Once her visual modules normalize, she spots a shocking splash of crimson amid the stark whiteness.'}
+30	30		201							{1: '1', 2: '501360', 3: '4'}
+31	31		203						250.0	{1: '1', 2: '0.2', 3: '-30', 4: '-20'}
+32	32		203							{1: '1', 2: '0.3', 3: '0', 4: '-50'}
+33	33		301			PanelActor1Shake				"{1: '1', 3: ""Among the scattered glass shards and twisted metal lies Serra, her body completely drenched in blood. With what little strength she has left, Serra holds open the laboratory's security door.""}"
+34	34		301							{3: 'The shattered access panel nearby is smeared with thick, viscous blood. No one could fathom what incredible willpower drove her to forcibly break through the sealed security system.'}
+35	35		301				DialogDisable			{2: 'Serra', 3: '...', 4: '1'}
+36	36		205							{1: '1005'}
+37	37		202							{1: '1', 6: '1'}
+38	38		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+39	39		401						200.0	{1: '2', 2: '2922'}
+40	40		402							{1: '2922'}
+41	41		301			DialogEnable				{2: 'Laboratory System', 3: 'Warning. Abnormal status detected in sector. Test subject no longer under control.'}
+42	42		401						200.0	{1: '2', 2: '2922'}
+43	43		402							{1: '2922'}
+44	44		301							{2: 'Laboratory System', 3: 'Support units, advance to Sector D on the top floor and assemble.'}
+45	45		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+46	46		301							{3: 'The flat, emotionless electronic voice echoes throughout the entire laboratory complex.'}
+47	47		401							{1: '2', 2: '4064'}
+48	48		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+49	49		301							{3: 'In an instant, the cold white light turns to pulsing red alarms, bathing everything in a harsh crimson.'}
+50	50		301							"{3: ""Countless automated support units instantly respond to the terminal system's command and quickly block the only escape route from the laboratory.""}"
+51	51		301							{2: 'Support Units', 3: 'Eliminating breaching subject.'}
+52	52		301				DialogDisable			{2: 'Support Units', 3: 'Executing suppressive fire.'}
+53	53		502							{1: 'RImgBg1Shake'}
+54	54		401						300.0	{1: '2', 2: '4642'}
+55	55		402							{1: '4642'}
+56	56		402							{1: '4064'}
+57	57		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+58	58		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+59	59		502							{1: 'DialogEnable'}
+60	60		301			DialogShake	DialogDisable			{3: 'With it, a storm of bullets and muzzle flashes instantly floods the confined space.'}
+61	61		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+62	62		401							{1: '2', 2: '1505'}
+63	63		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0.2'}
+64	64		201							{1: '1', 2: '501360', 3: '5'}
+65	65		203						250.0	{1: '1', 2: '0.2', 3: '-30', 4: '-20'}
+66	66		203							{1: '1', 2: '0.3', 3: '0', 4: '-50'}
+67	67		502							{1: 'DialogEnable'}
+68	68		301			DialogShake				{1: '1', 2: 'Serra', 3: '...Aargh!', 4: '1'}
+69	69		306							{1: '1'}
+70	70		301							"{3: ""Crimson blooms erupt across Serra's body as the pool of blood under her grows larger by the second.""}"
+71	71		301							{3: 'Despite everything, she channels her remaining strength and every ounce of her being to maintain her position to keep the laboratory door access system open.'}
+72	72		204							{1: '1', 2: '2'}
+73	73		301							{3: 'She turns to look at Veronica. Despite her grievous wounds, Serra shows no signs of pain as she forces a smile.'}
+74	74		301							{3: 'Blood stains her lips, yet her smile remains as pure and innocent as ever.'}
+75	75		306							{1: '0'}
+76	76		301			PanelActor1Shake				"{2: 'Serra', 3: ""Once you're out... turn left... then... through the hallway in Sector F..."", 4: '1'}"
+77	77		301							"{2: 'Serra', 3: ""I've... already... taken care of... the security doors... there..."", 4: '1'}"
+78	78		204							{1: '1', 2: '13'}
+79	79		301							"{2: 'Serra', 3: ""Don't... trust... that... D-Dolores..."", 4: '1'}"
+80	80		204							{1: '1', 2: '10'}
+81	81		301				AniZhuanchangBegin			{2: 'Serra', 3: 'Hey, Veronica... do I... look... ridiculous... like this...', 4: '1'}
+82	82		502							{1: 'DialogDisable'}
+83	83		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+84	84		104							{1: '-650|0|-400', 2: '0', 4: '7'}
+85	85		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront18.png', 3: '0.5', 4: '0.5', 5: '0'}
+86	86		201				AniZhuanchangEnd			{1: '1', 2: '501364', 3: '7', 5: '-20', 6: '-200'}
+87	87		301			DialogEnable				{1: '1', 2: 'Veronica', 3: '...', 4: '1'}
+88	88		201							{1: '1', 2: '501360', 3: '2', 7: '1'}
+89	89		301			PanelActor1Shake				{1: '1', 2: 'Serra', 3: '...for me...', 4: '1'}
+90	90		401							{1: '1', 2: '36'}
+91	91		401							{1: '2', 2: '5151'}
+92	92		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+93	93		205							{1: '1007'}
+94	94		202							{1: '1', 6: '1'}
+95	95		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+96	96		301			RImgBg1Shake				{3: 'Bam!'}
+97	97		301							"{3: ""Another round from the support units tears through Serra's chest.""}"
+98	98		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+99	99		401							{1: '2', 2: '2593'}
+100	100		205						250.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 3: '0', 4: '1', 5: '0.2'}
+101	101		401							{1: '1', 2: '6235'}
+102	102		301							"{3: ""The bullet pierces Serra's fragile body at top speed and lets out a shriek before it finally hits the wall with devastating force and comes to a stop.""}"
+103	103		301							{3: 'Robbed of strength and will by the ammunition, Serra, having endured the assault for far too long, falls to the floor.'}
+104	104		201							{1: '1', 2: '501360', 3: '13'}
+105	105		301							{1: '1', 2: 'Serra', 3: '...', 4: '1'}
+106	106		203						250.0	{1: '1', 2: '0.2', 3: '-20', 4: '-10'}
+107	107		203							{1: '1', 2: '0.3', 3: '80', 4: '-30'}
+108	108		306							{1: '1'}
+109	109		301				DialogDisable			"{3: ""Before Serra's body hits the floor, however, her fall stops.""}"
+110	110		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0', 4: '1', 5: '1'}
+111	111		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+112	112		205							{1: '999'}
+113	113		301			DialogEnable				{3: 'She feels weightless, like a fledgling bird spreading its wings for the first time as it soars into the boundless freedom of the sky.'}
+114	114		301							{3: 'The sky above feels vast and empty. As if being enveloped by gentle clouds, she feels every last bit of pain and fear leaving her body.'}
+115	115		301							"{3: ""The only thing that's left is a bone-deep coldness when all her other sensations have faded away.""}"
+116	116		301							{3: 'Why is this endless sky so utterly cold? Practically unable to process anything in her mind anymore, Serra is unable to answer this question.'}
+117	117		306							{1: '0'}
+118	118		203							{1: '1', 2: '0.25', 3: '80', 4: '-30'}
+119	119		301			PanelActor1Shake	DialogDisable			"{2: 'Serra', 3: ""It's... so cold..."", 4: '1'}"
+120	120		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1317.jpg', 3: '0', 4: '1', 5: '0.5'}
+121	121		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1317.jpg'}
+122	122		205							{1: '999'}
+123	123		205							{1: '999'}
+124	124		205							{1: '1005'}
+125	125		401							{1: '2', 2: '4044'}
+126	126		201							{1: '2', 2: '501364', 3: '5', 4: '-250', 5: '-20', 6: '-200'}
+127	127		203							{1: '1', 2: '0.25', 3: '80', 4: '-50'}
+128	128		301			DialogEnable				"{1: '1', 3: ""Serra's lifeless body lies limply in Veronica's arms.""}"
+129	129		301							{3: 'Her once vibrant emerald eyes, having lost their focus, stare not at Veronica, but into the empty nothingness.'}
+130	130		301							{3: 'Her voice fades to barely a whisper, her lips producing meaningless, fragmented words.'}
+131	131		301							{2: 'Serra', 3: 'So... cold...', 4: '1'}
+132	132		204							{1: '2', 2: '8'}
+133	133		301							{2: 'Veronica', 3: '...!', 4: '2'}
+134	134		401							{1: '2', 2: '5286'}
+135	135		203							{1: '1', 2: '0.3', 3: '80'}
+136	136		203							{1: '2', 2: '0.3', 3: '-250', 4: '-50', 5: '-200'}
+137	137		301				DialogDisable			"{3: ""Veronica leans down as she holds Serra tightly against her chest, as though trying to hold on to a life that's quickly slipping away.""}"
+138	138		306							{1: '1'}
+139	139		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+140	140		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+141	141		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+142	142		301			DialogEnable				{3: 'For the first time, Veronica truly comprehends how fragile a human body is—like a piece of paper that could tear apart at any moment.'}
+143	143		301							{3: 'In her arms, Serra no longer feels as warm as Veronica remembers her from when she carried out maintenance on her.'}
+144	144		401							{1: '2', 2: '2986'}
+145	145		301							"{3: ""For the first time, she feels the beating of the human heart. It beats at a rhythm entirely different from the energy core powering a mechanoid's shell.""}"
+146	146		301							{3: 'But now, that heartbeat is gradually coming to a stop.'}
+147	147		401							{1: '2', 2: '5286'}
+148	148		204							{1: '2', 2: '12'}
+149	149		301							{2: 'Veronica', 3: 'Hold me tight!', 4: '2'}
+150	150		301							{3: 'With her eyes closed peacefully, Serra gives no response, looking as though fatigue has gotten the better of her.'}
+151	151		204							{1: '2', 2: '9'}
+152	152		301			PanelActor2Shake	DialogDisable			{2: 'Veronica', 3: '...', 4: '2'}
+153	153		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+154	154		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+155	155		306							
+156	156		401							{1: '2', 2: '5286'}
+157	157		203							{1: '1', 2: '0.25', 3: '80'}
+158	158		203							{1: '2', 2: '0.25', 3: '-250', 4: '0', 5: '-200'}
+159	159		301			DialogEnable				"{3: ""The mechanoid rises slowly to her feet, cradling her friend's body securely in one arm.""}"
+160	160		301							"{2: 'Veronica', 3: ""I'll take it from here."", 4: '2'}"
+161	161		204							{1: '2', 2: '5'}
+162	162		301				DialogDisable			{2: 'Veronica', 3: 'I will... get you out of here!', 4: '2'}
+163	163		202							{1: '1', 2: '2', 6: '1'}
+164	164		401							{1: '2', 2: '4053'}
+165	165		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+166	166		502							{1: 'RImgBg1Shake'}
+167	167		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+168	168		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+169	169		401						600.0	{1: '2', 2: '4642'}
+170	170		402							{1: '4642'}
+171	171		301			DialogEnable	DialogDisable			{3: 'Facing a barrage of ammunition from the support units, Veronica appears completely fearless.'}
+172	172		502							{1: 'RImgBg1Shake'}
+173	173		401							{1: '2', 2: '4339'}
+174	174		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+175	175		301			DialogEnable				"{3: ""She cradles Serra's body with one arm while aiming her lance forward with the other.""}"
+176	176		201							{1: '1', 2: '501364', 3: '5', 5: '-20', 6: '-200'}
+177	177		301				DialogDisable			"{1: '1', 2: 'Veronica', 3: ""I'm going to crush every last one of you standing in my way!"", 4: '1'}"
+178	178		202							{1: '1', 6: '1'}
+179	179		401							{1: '2', 2: '4053'}
+180	180		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+181	181		502							{1: 'RImgBg1Shake'}
+182	182		401						600.0	{1: '2', 2: '4642'}
+183	183		402							{1: '4642'}
+184	184		301			DialogEnable				"{3: ""The support units open fire with crushing intensity, attempting to halt Veronica's advance—yet the storm of bullets doesn't seem to set her back even one single step.""}"
+185	185		301							{3: 'Determined to fight her way through, she wields her lance, ignoring the mounting damage to her frame as she thrusts and cuts with relentless fury.'}
+186	186		301							{3: 'But the fiery downpour of countless bullets intensifies, threatening to blanket her field of vision.'}
+187	187		401							{1: '2', 2: '5286'}
+188	188		201							{1: '1', 2: '501360', 3: '8', 4: '100', 5: '-150'}
+189	189		201							{1: '2', 2: '501363', 3: '5', 4: '-250', 5: '-50', 6: '-200'}
+190	190		203							{1: '1', 2: '0.25', 3: '80', 4: '30'}
+191	191		203							{1: '2', 2: '0.25', 3: '-250', 4: '0', 5: '-200'}
+192	192		301				DialogDisable			"{1: '1', 2: 'Veronica', 3: ""I'm not going to let you people... Argh!"", 4: '2'}"
+193	193		306						200.0	{1: '1'}
+194	194		401							{1: '2', 2: '2975'}
+195	195		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+196	196		104						150.0	{1: '0|0|-100', 2: '0.1'}
+197	197		104							{1: '0|0|0', 2: '0.2'}
+198	198		204							{1: '2', 2: '9'}
+199	199		301		1	DialogEnable	AniZhuanchangBegin			{3: 'Excruciating pain surges through every corner of her consciousness module once more, as a curtain of cold darkness that she seems to recognize slowly draws across her vision.'}

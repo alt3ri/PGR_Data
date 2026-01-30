@@ -1,0 +1,30 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cgqz902.jpg'}
+2	2		401							{1: '1', 2: '2'}
+3	3		301			DialogEnable				{2: 'System Voice', 3: 'That is the plan for the operation.'}
+4	4		301							{2: 'System Voice', 3: 'You must be reminded again that this operation is very important and comes with certain risks.'}
+5	5		301							{2: 'System Voice', 3: 'There is a large number of Corrupted in the battle area. Teams must work closely together to achieve the goal of liberating the area.'}
+6	6		301							"{2: 'System Voice', 3: ""Please act with your assigned team and strictly follow the mission orders. In other cases, the commandant's decisions are the final commands.""}"
+7	7		301							{2: 'System Voice', 3: 'Finally, I wish you all to return in triumph.'}
+8	8		301				AniZhuanchangBegin			{2: 'System Voice', 3: '— Please accept the highest regards from the Command Center.'}
+9	10		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+10	11		201							{1: '1', 2: '1081001', 4: '450'}
+11	12		201							{1: '2', 2: '500027', 4: '-450'}
+12	13		301			AniZhuanchangEnd				"{1: '1', 2: 'Kamui', 3: ""Shame that we're in different teams..."", 4: '1'}"
+13	14		301							"{2: 'Koya', 3: ""But aren't you on the same team as Lucia? I thought you wanted to have a practice match with her?"", 4: '2'}"
+14	15		301							"{2: 'Kamui', 3: ""That's right... But Lucia doesn't like to talk. I'll look stupid if I'm the only one who enjoys the game and she doesn't even care a bit of it."", 4: '1'}"
+15	16		301							"{2: 'Koya', 3: ""Hahaha, didn't think you would worry about stuff like this."", 4: '2'}"
+16	17		301							{2: 'Koya', 3: 'But she does look a little too distant indeed.', 4: '2'}
+17	18		301							"{2: 'Kamui', 3: ""Whoa! Quietly or she'll hear us!"", 4: '1'}"
+18	19		301							"{2: 'Koya', 3: ""I didn't mean to say anything bad... I just feel that she is a little too determined, as if there is some kind of obsession supporting her to fight."", 4: '2'}"
+19	20		204							{1: '1', 2: '1'}
+20	21		301							"{2: 'Kamui', 3: ""Is that so... Oh right, let's return to base together after finishing our mission!"", 4: '1'}"
+21	22		204							{1: '1'}
+22	23		301							{2: 'Koya', 3: 'Yeah.', 4: '2'}
+23	24		301							{2: 'System', 3: 'Attention, the operation will begin in three minutes. Please proceed to the platform with the corresponding number to board the transport craft and prepare for battle.'}
+24	25		301							{2: 'Kamui', 3: 'We must get rid of those pests this time!', 4: '1'}
+25	26		301							"{2: 'Koya', 3: ""Well, let's part our ways here... And take care of yourself, Kamui. See you after the operation."", 4: '2'}"
+26	27		202							{1: '2', 6: '1'}
+27	28		203							{1: '1', 2: '0.25'}
+28	29		301							{2: 'Kamui', 3: 'Construct Kamui.', 4: '1'}
+29	30		301		1		AniZhuanchangBegin			"{2: 'Kamui', 3: ""I'll sacrifice everything to liberate the Earth."", 4: '1'}"

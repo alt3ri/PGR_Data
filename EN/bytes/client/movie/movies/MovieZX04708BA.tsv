@@ -1,0 +1,408 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				{3: 'The transport aircraft cruises steadily through the air.'}
+4	4		301							"{3: ""While most people in the cabin rest with their eyes closed from exhaustion, Melvie's gaze remains fixed on a woman sitting diagonally ahead of her.""}"
+5	5		301							{3: 'The woman has Kowloong features but straight silver-white hair. She appears young, cradling a small bundle in her arms.'}
+6	6		301							"{3: ""Melvie had siblings of her own—though they were all lost in the Punishing disaster. She knows an infant shouldn't stay this motionless for so long.""}"
+7	7		201							{1: '1', 2: '500938'}
+8	8		301							{1: '1', 2: '??', 3: 'Sleep, sleep...', 4: '1'}
+9	9		202							{1: '1'}
+10	10		301							{3: 'The woman rocks the swaddled infant, as gently as waves cradling a small boat.'}
+11	11		301							{3: 'She raises her hand again to pat it gently, her movements somewhat stiff and awkward.'}
+12	12		201							{1: '1', 2: '500941'}
+13	13		301							"{1: '1', 2: 'Melvie', 3: ""(It's her first time taking care of a child...?)"", 4: '1'}"
+14	14		301							{3: 'Melvie watches her with concern before finally deciding to step forward and help.'}
+15	15		301							{2: 'Melvie', 3: 'Hello...?', 4: '1'}
+16	16		203							{1: '1', 2: '0.25', 3: '400'}
+17	17		201							{1: '2', 2: '500938', 4: '-400'}
+18	18		301							{1: '1', 2: '??', 3: '...', 4: '1'}
+19	19		301							{3: 'The woman sitting diagonally ahead cautiously tilts her head, glancing at Melvie without a word.'}
+20	20		301							{2: 'Melvie', 3: 'Would you like to take a break? I can hold the child for a while—I have younger siblings at home too.', 4: '1'}
+21	21		301							"{2: 'Melvie', 3: ""I'm Melvie. I noticed you haven't let go of the baby since before we boarded..."", 4: '1'}"
+22	22		301							"{2: '??', 3: ""Thanks, but I'm alright—ugh!"", 4: '2'}"
+23	23		202							{1: '1', 2: '2'}
+24	24		301			RImgBg1Shake				{3: 'The vehicle suddenly shudders, sending passengers stumbling in all directions. The woman clutches her child tightly as her safety belt yanks her back into her seat.'}
+25	25		301							"{3: ""The blanket comes loose, revealing the infant's face.""}"
+26	26		301							"{3: ""The child must have survived an explosion with its family—the skin bears scrapes from gravel, and what little undamaged skin remains glows an unhealthy red. It's clearly burning with fever.""}"
+27	27		201							{1: '1', 2: '500941', 3: '7'}
+28	28		301							{1: '1', 2: 'Melvie', 3: 'The baby?!', 4: '1'}
+29	29		202							{1: '1'}
+30	30		301							{3: 'Everyone in the transport aircraft turns to look at Melvie.'}
+31	31		301							"{3: ""The silver-haired woman's hands tremble as she hastily wraps the blanket back around the child.""}"
+32	32		201							{1: '1', 2: '500938', 3: '14'}
+33	33		301							"{1: '1', 2: '??', 3: ""The wounds were treated before we boarded. It's just... he's very sick."", 4: '1'}"
+34	34		301							"{2: '??', 3: ""But he's still alive... He's using his father's slot too. We aren't taking up any additional space."", 4: '1'}"
+35	35		301							"{3: ""The woman's head hangs low, utterly exhausted.""}"
+36	36		301							{2: '??', 3: 'He must go to Babylonia...', 4: '1'}
+37	37		301							{2: '??', 3: '...Let me save him... please.', 4: '1'}
+38	38		201							{1: '1', 2: '500941', 3: '14'}
+39	39		301				AniZhuanchangBegin			{1: '1', 2: 'Melvie', 3: '...', 4: '1'}
+40	40		202							{1: '1', 5: '1'}
+41	41		401							{1: '1', 2: '36'}
+42	42		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+43	43		401							{1: '1', 2: '201'}
+44	44		301			AniZhuanchangEnd				{3: 'Melvie never expected to run into that mother from the transport aircraft so soon again.'}
+45	45		201							{1: '1', 2: '500941'}
+46	46		301							"{1: '1', 2: 'Melvie', 3: ""Hello, I'm Melvie, the one from Kock Biological Research Institute."", 4: '1'}"
+47	47		202							{1: '1'}
+48	48		301							{3: 'Melvie places her new ID badge on the desk for the staff to verify.'}
+49	49		301							{3: 'Another hand, pale and thin, reaches forward to gently place down another ID badge.'}
+50	50		201							{1: '1', 2: '500938'}
+51	51		301							{1: '1', 2: '??', 3: 'Kowloong Fuxi Institute, Wanxu', 4: '1'}
+52	52		201							{1: '1', 2: '500941'}
+53	53		301							"{1: '1', 2: 'Melvie', 3: ""...Oh, it's you? From the transport aircraft earlier. You're also working on Construct research?"", 4: '1'}"
+54	54		301							{3: 'The woman gives a slight nod.'}
+55	55		203							{1: '1', 2: '0.25', 3: '400'}
+56	56		201							{1: '2', 2: '500938', 4: '-400'}
+57	57		301							{1: '1', 2: 'Wanxu', 3: 'Pleased to meet you.', 4: '2'}
+58	58		301							"{2: 'Melvie', 3: ""You're from Kowloong, right? I didn't know Kowloong had research projects in this field. What's your specific focus?"", 4: '1'}"
+59	59		301							{2: 'Wanxu', 3: 'The human brain... and its connection to the Construct M.I.N.D.', 4: '2'}
+60	60		301							"{3: ""Melvie recognizes that familiar exhaustion on Wanxu's face. She means to leave it at that, but can't help thinking about the baby from that day.""}"
+61	61		301							{2: 'Melvie', 3: 'About your child... have you found someone to take care of them?', 4: '1'}
+62	62		204							{1: '2', 2: '14'}
+63	63		301							"{3: ""At the mention of her child, a trace of sorrow crosses Wanxu's face.""}"
+64	64		301							"{2: 'Wanxu', 3: ""...Thank you for asking. He's at the Star of Life. He still hasn't woken up yet."", 4: '2'}"
+65	65		301							"{2: 'Wanxu', 3: ""He's so young... I don't even know if he'll make it through this."", 4: '2'}"
+66	66		204							{1: '1', 2: '14'}
+67	67		301							"{2: 'Melvie', 3: ""I'm sorry..."", 4: '1'}"
+68	68		202							{1: '1', 2: '2'}
+69	69		301				AniZhuanchangBegin			{3: 'Wanxu shakes her head with gentle detachment and walks straight into the work area.'}
+70	70		401							{1: '1', 2: '36'}
+71	71		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory767.png'}
+72	72		401							{1: '1', 2: '5030'}
+73	73		301			AniZhuanchangEnd				"{3: ""Since the Punishing outbreak, humanity's frontlines have been pushed back repeatedly. Our flesh and blood cannot withstand the virus's corruption—we desperately need stronger soldiers on the battlefield.""}"
+74	74		301							"{3: 'The scientists carrying the lamps decide to delve deeper into a proposition from the end of the Golden Age—""Constructs"".'}"
+75	75		301							{3: 'Their modest progress is like the lamp they hold—a faint light in the dark cave, showing them the way forward.'}
+76	76		301							"{3: 'Dr. Kalon takes the first step forward, leading a group of students to the moon, where they begin research on the Construct core ""Inver-Device"" at the lunar base.'}"
+77	77		301							{3: 'M.I.N.D.-related technology is another crucial component, drawing the largest number of researchers to the project.'}
+78	78		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgUi/BgFightLoading.jpg', 3: '0', 4: '1', 5: '0.25'}
+79	79		301							"{3: ""That year, researchers from around the world were sent to Eden, humanity's safest haven, as the Science Council launched a joint research initiative with ground-based research institutes to study Construct M.I.N.D.""}"
+80	80		301							{3: 'Though the research was never made public, pioneers have already carved their findings into stone: human memory, memory data conversion, Construct M.I.N.D., memory duplication... and Recall.'}
+81	81		301				AniZhuanchangBegin			"{3: '""Stone Carving"" will become a historical record, documenting the early development process of Construct Tech.'}"
+82	82		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory427.jpg', 3: '1', 4: '0', 5: '0'}
+83	83		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory427.jpg'}
+84	84		201							{1: '1', 2: '500202'}
+85	85		301			AniZhuanchangEnd				{1: '1', 2: 'Councilor', 3: 'Battles take a massive toll on our Construct resources. According to the statistics, the average attrition rate for standard Constructs reaches 43% within their first month of deployment.', 4: '1'}
+86	86		301							{2: 'Councilor', 3: 'While Constructs possess superior combat capabilities compared to human soldiers, such a high attrition rate means our investments are going to waste. Worse still, Punishing infection and M.I.N.D. deviation can turn them into new threats.', 4: '1'}
+87	87		301							{2: 'Councilor', 3: 'We attempted to use remote connection pods, but their effectiveness in stabilizing the M.I.N.D. proved extremely limited. Some connection operators even developed severe memory trauma.', 4: '1'}
+88	88		301							"{2: 'Councilor', 3: ""Enhancing the Inver-Device's resistance to Punishing, preserving Construct memory data even after frame failure, and achieving safer and more efficient Construct connection control—these technological upgrades are crucial for our ground operations."", 4: '1'}"
+89	89		301							{3: 'The Councilor turns to another corner of the room, where representatives of the Science Council are seated.'}
+90	90		301							{2: 'Councilor', 3: 'Never mind the Inver-Device—how long has the Science Council been working on Construct M.I.N.D. research alone? The Council needs to disclose your current research progress and interim findings to us.', 4: '1'}
+91	91		301				AniZhuanchangBegin			"{2: 'Councilor', 3: ""Take the Recall branch for example. As far as I know, we can barely manage M.I.N.D. extraction, and it's far from being universally applicable—let alone achieving actual Recall capabilities. What about the other projects?"", 4: '1'}"
+92	92		202							{1: '1', 6: '1'}
+93	93		401							{1: '1', 2: '36'}
+94	94		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory41.jpg'}
+95	95		401							{1: '1', 2: '373'}
+96	96		201							{1: '1', 2: '500941', 4: '400'}
+97	97		201							{1: '2', 2: '500938', 4: '-400'}
+98	98		301			AniZhuanchangEnd				"{1: '1', 2: 'Melvie', 3: ""Wanxu, we've hit a bottleneck, haven't we?"", 4: '1'}"
+99	99		301							{2: 'Melvie', 3: '—Without suitable test subjects, we can only go so far with our current data.', 4: '1'}
+100	100		301							{3: 'Wanxu contemplates for a moment.'}
+101	101		301							"{2: 'Wanxu', 3: 'Group Three\'s observations of the ""Special Constructs\'"" M.I.N.D. patterns have yielded some... interesting findings.', 4: '2'}"
+102	102		301							"{2: 'Melvie', 3: '""Special Constructs""?', 4: '1'}"
+103	103		301							{3: 'Wanxu pulls up a set of data.'}
+104	104		301							"{2: 'Wanxu', 3: 'You probably don\'t know about this... ""Special Constructs"" refers to Constructs that were modified during childhood. I attended the last conference and brought back the experimental details and data. You can take a look.', 4: '2'}"
+105	105		301							{2: 'Melvie', 3: '...Huh?', 4: '1'}
+106	106		301							{2: 'Wanxu', 3: 'Most of them underwent modification when their brains were still developing.', 4: '2'}
+107	107		301							"{2: 'Wanxu', 3: 'Group Three conducted connection tests using the connection pods. Current results show they have lower ""rejection"" rates toward artificially synchronized data, resulting in more stable connections.', 4: '2'}"
+108	108		301							{2: 'Wanxu', 3: 'Their M.I.N.D.s could serve as a foundation for various research directions, such as new memory connection methods and M.I.N.D. deviation treatments... Some have already proposed theoretical frameworks.', 4: '2'}
+109	109		301							{2: 'Wanxu', 3: 'They are currently our finest test subjects.', 4: '2'}
+110	110		204							{1: '1', 2: '5'}
+111	111		301							"{3: ""Melvie's expression grows serious.""}"
+112	112		301							"{2: 'Melvie', 3: ""No, Wanxu, don't tell me you're..."", 4: '1'}"
+113	113		301							{3: 'Wanxu closes the data files.'}
+114	114		301							"{2: 'Wanxu', 3: ""You're overthinking it. I haven't reached the point of deliberately creating test subjects... yet."", 4: '2'}"
+115	115		301							{2: 'Wanxu', 3: 'The Special Constructs currently available to our project team are all child Constructs that Babylonia has incorporated from the surface. Most of them have yet to reach mental maturity.', 4: '2'}
+116	116		301							"{2: 'Wanxu', 3: ""Even with continued education to compensate, most of them must maintain their child-like forms forever to prevent M.I.N.D. deviation. It's unlikely they'll ever develop a proper sense of self-identity."", 4: '2'}"
+117	117		301							"{2: 'Wanxu', 3: ""The Science Council won't permit such inhumane modifications. They've already rejected all related research proposals."", 4: '2'}"
+118	118		301							"{2: 'Wanxu', 3: ""Just a minor setback. We'll have to consider other ways to advance the experiments."", 4: '2'}"
+119	119		204							{1: '1'}
+120	120		301							"{2: 'Melvie', 3: ""I'm afraid we're running out of time. If no miracle happens and we still can't make progress with our experiments, our entire team and all the laboratories under our supervision on the surface will be disbanded. They've already proposed cutting our funding in the last meeting."", 4: '1'}"
+121	121		301							{2: 'Melvie', 3: 'If we do get disbanded, which team are you planning to go to?', 4: '1'}
+122	122		301							"{2: 'Wanxu', 3: ""Doesn't matter. As long as I can continue my M.I.N.D. research."", 4: '2'}"
+123	123		301							{2: 'Melvie', 3: 'By the way, why are you so persistent about the M.I.N.D. experiments?', 4: '1'}
+124	124		301							{2: 'Wanxu', 3: 'For Wanshi.', 4: '2'}
+125	125		301							"{3: ""The words slip from Wanxu's lips without a moment's hesitation.""}"
+126	126		204							{1: '1', 2: '7'}
+127	127		301							{2: 'Melvie', 3: '...Wanshi? Your son?', 4: '1'}
+128	128		301							"{3: ""In all the time Melvie has known Wanxu, this is only the second time she has mentioned their child, and the first time she revealed the child's name.""}"
+129	129		301							{3: 'A dim suspicion begins to form in her mind.'}
+130	130		301							"{2: 'Melvie', 3: ""...Could it be that you're using these experiments... to find a way to wake him up?"", 4: '1'}"
+131	131		301							{2: 'Wanxu', 3: '...', 4: '2'}
+132	132		301							"{2: 'Melvie', 3: ""But what does this have to do with Construct M.I.N.D.? Couldn't you seek help from human medical professionals instead?"", 4: '1'}"
+133	133		301							{3: 'Wanxu stands up and walks to the control panel at the back.'}
+134	134		301							"{2: 'Wanxu', 3: ""We'll leave it there for now. Let's get back to work."", 4: '2'}"
+135	135		301				AniZhuanchangBegin			"{2: 'Wanxu', 3: ""Before we officially disband, we can organize all the experimental data transmitted from the ground research facilities. Even if we can't use it anymore, it might serve as reference material for future researchers."", 4: '2'}"
+136	136		202							{1: '1', 2: '2', 6: '1'}
+137	137		401							{1: '1', 2: '36'}
+138	138		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory41.jpg'}
+139	139		401							{1: '1', 2: '373'}
+140	140		301			AniZhuanchangEnd				{3: 'Several months have passed since that conversation with Wanxu.'}
+141	141		301							"{3: 'Scientific research isn\'t always smooth sailing—quite the contrary. In the final months, the ""miraculous breakthrough"" they had fantasized about never materialized. Instead, everyone only became more certain of their stagnating progress.'}"
+142	142		301							"{3: 'Calling it a ""failure"" would be putting it mildly.'}"
+143	143		301							"{3: ""Some, having learned of the group's imminent disbandment, have already left voluntarily to seek opportunities elsewhere.""}"
+144	144		301							{3: 'The situation on the ground is growing dire. Despite their numerous protective measures, the ground facilities cannot escape the Punishing threat. Research facilities maintaining contact with Babylonia are disappearing one after another.'}
+145	145		301							{3: 'The steadily decreasing data transmissions indicate these research facilities have reached an unsustainable state.'}
+146	146		301							"{3: ""Occasionally, a research facility would suddenly upload all their current data, followed shortly by news reaching Melvie of the entire facility's personnel perishing.""}"
+147	147		301							{3: 'A suffocating tension spreads among those who remain.'}
+148	148		201							{1: '1', 2: '500938'}
+149	149		301							{1: '1', 2: 'Wanxu', 3: 'This is Wanxu, making the final communication for today. I will proceed to collect research data from all ground-based facilities shortly.', 4: '1'}
+150	150		202							{1: '1'}
+151	151		301							{3: 'Wanxu establishes connections with the few remaining ground facilities. With staff shortage, she now has to personally handle all communications with the research facilities.'}
+152	152		301							{3: 'Only static crackles through the communication channel while the staff on the ground silently process their final tasks.'}
+153	153		301							{3: 'Melvie approaches with a troubled look, giving Wanxu a gentle tap on the shoulder.'}
+154	154		201							{1: '1', 2: '500941'}
+155	155		301							"{1: '1', 2: 'Melvie', 3: ""Wanxu, we've lost contact with a research facility on the edge of the Arctic Union Route. I'm sending you the details—take a look at this."", 4: '1'}"
+156	156		301							"{2: 'Melvie', 3: ""I haven't received any reports of Corrupted attacks at these coordinates, but all my recent communication attempts have failed."", 4: '1'}"
+157	157		203							{1: '1', 2: '0.25', 3: '400'}
+158	158		201							{1: '2', 2: '500938', 4: '-400'}
+159	159		301							"{1: '1', 2: 'Wanxu', 3: ""The military might not have notified us yet. For now, retrieve all the experimental data they've transmitted this month."", 4: '2'}"
+160	160		301							"{2: 'Melvie', 3: ""I've been collecting and processing their lab data myself—they've been producing excellent results lately, the best among our remaining facilities..."", 4: '1'}"
+161	161		202							{1: '1', 2: '2'}
+162	162		301							{3: 'Melvie pulls up several data reports. Wanxu quickly scrolls through them to the final pages, then freezes at certain lines.'}
+163	163		201							{1: '1', 2: '500941', 4: '400'}
+164	164		201							{1: '2', 2: '500938', 3: '4', 4: '-400'}
+165	165		301							{1: '1', 2: 'Wanxu', 3: '...?', 4: '2'}
+166	166		301							"{3: ""Wanxu's brow furrows as she studies the text, then returns to review the earlier detailed data.""}"
+167	167		301							"{2: 'Wanxu', 3: ""Their test subjects' M.I.N.D. readings are all stable... The quality is exceptional—even meeting our requirements for new connection testing."", 4: '2'}"
+168	168		301							"{2: 'Melvie', 3: ""Yes, one of the few pieces of good news we've had lately."", 4: '1'}"
+169	169		301							{2: 'Wanxu', 3: 'Where did they get their test subjects from?', 4: '2'}
+170	170		301							{2: 'Melvie', 3: 'Huh? They signed consent forms—all the volunteers.', 4: '1'}
+171	171		301							{2: 'Wanxu', 3: '...', 4: '2'}
+172	172		301							{2: 'Melvie', 3: 'Wanxu?', 4: '1'}
+173	173		301							"{3: ""Wanxu's mind drifts away until Melvie's voice brings her back to reality.""}"
+174	174		204							{1: '2'}
+175	175		301							"{2: 'Wanxu', 3: ""...Keep these data safe. We'll need them later."", 4: '2'}"
+176	176		301							"{2: 'Melvie', 3: ""No problem, I'll continue checking to make sure they're secure."", 4: '1'}"
+177	177		401							{1: '2', 2: '1099'}
+178	178		301							"{2: 'Wanxu', 3: ""That won't be necessary, Melvie."", 4: '2'}"
+179	179		202							{1: '1', 2: '2'}
+180	180		301							{3: 'The internal comms channel of Babylonia comes alive—a channel that has never once delivered good news.'}
+181	181		201							{1: '1', 2: '500755'}
+182	182		301							{1: '1', 2: 'Staff Member', 3: 'Ground recon has reported in. A research facility along the Arctic Union Route was attacked by the Corrupted. All test subjects inside were infected and have been eliminated. As for the researchers...', 4: '1'}
+183	183		202							{1: '1'}
+184	184		301							"{3: 'Melvie\'s body jolts at the words ""have been eliminated"".'}"
+185	185		201							{1: '1', 2: '500938'}
+186	186		301							{1: '1', 2: 'Wanxu', 3: 'Can we still access their internal files?', 4: '1'}
+187	187		201							{1: '1', 2: '500755'}
+188	188		301							{1: '1', 2: 'Staff Member', 3: 'The evacuation was urgent—the recon team only brought back one person from the institute. The transport aircraft just landed at the port... Wait, what? They left the airfield already? Did they even complete decontamination?', 4: '1'}
+189	189		301							"{2: 'Staff Member', 3: ""Sorry, one moment, I need to verify something... Hey!! I've been telling you there are major security holes in your airfield's entry and exit protocols!"", 4: '1'}"
+190	190		201							{1: '1', 2: '500938'}
+191	191		301							"{1: '1', 2: 'Wanxu', 3: ""Melvie, end the call. Check if they've transmitted any detailed files about the test subjects."", 4: '1'}"
+192	192		203							{1: '1', 2: '0.25', 3: '-400'}
+193	193		201							{1: '2', 2: '500941', 4: '400'}
+194	194		301							"{1: '1', 2: 'Melvie', 3: ""The test subjects? Yes, I'll look for—wait, what's wrong with the test subjects?"", 4: '2'}"
+195	195		301							"{2: 'Wanxu', 3: ""Unless they're falsifying data to avoid disbandment, readings like these could only come from Special Constructs."", 4: '1'}"
+196	196		301							{2: 'Melvie', 3: '...', 4: '2'}
+197	197		301							{2: 'Melvie', 3: '...What??', 4: '2'}
+198	198		202							{1: '1', 2: '2'}
+199	199		301							{3: 'Not just Melvie—the researchers behind her all turn to stare at Wanxu after hearing his words.'}
+200	200		301							{3: 'Wanxu rises from her seat, straightens her collar with a quick movement, and prepares to leave.'}
+201	201		201							{1: '1', 2: '500938'}
+202	202		301							{1: '1', 2: 'Wanxu', 3: 'I need to see the person the recon team brought back.', 4: '1'}
+203	203		201							{1: '1', 2: '500270', 5: '-60'}
+204	204		301							"{1: '1', 2: '??', 3: ""...I'm right here."", 4: '1'}"
+205	205		202							{1: '1'}
+206	206		301							{3: 'A disheveled middle-aged man walks in, followed by staff members hurriedly processing his authorization.'}
+207	207		301							{3: 'His lab coat was confiscated at the spaceport. Now he is only wearing a tattered thermal shirt, his hand clutching something tightly.'}
+208	208		301							"{3: ""He extends his open palm, revealing an intact data storage device stained with dark red marks—whether it's blood or vital fluid remains unclear.""}"
+209	209		201							{1: '1', 2: '500270', 5: '-60'}
+210	210		301							{1: '1', 2: '??', 3: 'I am Chiron, the last survivor from the Zelenograd Laboratory.', 4: '1'}
+211	211		201							{1: '1', 2: '500938'}
+212	212		301							{1: '1', 2: 'Wanxu', 3: '...', 4: '1'}
+213	213		301							"{3: ""Chiron's expression is a mix of sorrow and rage. After observing him for a few seconds, Wanxu decides to ask her question bluntly.""}"
+214	214		301							{2: 'Wanxu', 3: 'Where did those test subjects come from?', 4: '1'}
+215	215		201							{1: '1', 2: '500270', 5: '-60'}
+216	216		301							"{1: '1', 2: 'Chiron', 3: ""You approved this, didn't you? And now that things have gone wrong, you're trying to wash your hands of it?"", 4: '1'}"
+217	217		201							{1: '1', 2: '500941'}
+218	218		301							{1: '1', 2: 'Melvie', 3: 'Well...', 4: '1'}
+219	219		202							{1: '1'}
+220	220		301							{3: 'Chiron glances at the speechless Melvie and lets out a scornful laugh.'}
+221	221		201							{1: '1', 2: '500270', 5: '-60'}
+222	222		301							"{1: '1', 2: 'Chiron', 3: ""What's with that look on your face? Don't tell me you're only realizing this now. You could have stepped in to fix this at any point along the way."", 4: '1'}"
+223	223		301							{3: 'He lifts up the storage device.'}
+224	224		301							"{2: 'Chiron', 3: ""The experiments weren't progressing, and they... we didn't want to be disbanded. The experiments needed stable M.I.N.D. samples, so we took the quickest solution available."", 4: '1'}"
+225	225		301							"{2: 'Chiron', 3: ""Based on the observation data you submitted about children Constructs' M.I.N.D., we modified children under ten years old, attempting to directly transfer human consciousness into Construct M.I.N.D..."", 4: '1'}"
+226	226		301							{3: 'Melvie speaks in disbelief.'}
+227	227		203							{1: '1', 2: '0.25', 3: '400', 4: '-60'}
+228	228		201							{1: '2', 2: '500941', 3: '5', 4: '-400'}
+229	229		301							"{1: '1', 2: 'Melvie', 3: '""Children under ten""? Child Constructs were wrong from the very beginning! Our observations were never meant to help you deliberately create more test subjects!', 4: '2'}"
+230	230		301							{2: 'Melvie', 3: 'Our intention was to help—', 4: '2'}
+231	231		301							"{2: 'Chiron', 3: 'Your ""good intentions"" have long since become nothing but a weapon in our hands.', 4: '1'}"
+232	232		204							{1: '2', 2: '14'}
+233	233		301							{2: 'Melvie', 3: '...', 4: '2'}
+234	234		203							{1: '1', 2: '0.25', 3: '0', 4: '-60'}
+235	235		202							{1: '2'}
+236	236		301							"{2: 'Chiron', 3: ""These contain evidence of our inhumane experiments. I will submit them to the Science Council. For any ambiguous details, I'll cooperate and provide additional information."", 4: '1'}"
+237	237		301							"{2: 'Chiron', 3: ""I knew dissolution was inevitable, but now that I'm the one who exposed this, what follows will likely be far worse than a simple disbandment."", 4: '1'}"
+238	238		301							"{2: 'Chiron', 3: ""Compared to some unachievable success, I can't bear what's right before my eyes... this slaughterhouse I built with my own hands."", 4: '1'}"
+239	239		301							{3: 'He straightens his tattered clothes as if trying to piece together what remains of his conscience.'}
+240	240		301							{2: 'Chiron', 3: 'Let it be. None of us will come out of this with our dignity intact, and if the Science Council decides to go public, we might even become villains in the eyes of others.', 4: '1'}
+241	241		301							"{2: 'Chiron', 3: ""The Zelenograd Laboratory under Group Four has been destroyed, and all key personnel involved in the children's modifications are dead."", 4: '1'}"
+242	242		301							"{2: 'Chiron', 3: ""I was just an assistant who wasn't deeply involved. The regular researchers might also get away with it, but as for..."", 4: '1'}"
+243	243		202							{1: '1'}
+244	244		301							{3: 'Chiron looks at Wanxu, who remains expressionless.'}
+245	245		201							{1: '1', 2: '500938'}
+246	246		301							"{1: '1', 2: 'Wanxu', 3: ""I'll take responsibility for this. But there are other matters I need to discuss with you."", 4: '1'}"
+247	247		203							{1: '1', 2: '0.25', 3: '-400'}
+248	248		201							{1: '2', 2: '500270', 4: '400', 5: '-60'}
+249	249		301							{1: '1', 2: 'Chiron', 3: '...Go ahead.', 4: '2'}
+250	250		301							"{2: 'Wanxu', 3: ""There shouldn't have been any large-scale Corrupted attacks near the Zelenograd Laboratory. I want to know if the Corrupted first appeared from within your facility."", 4: '1'}"
+251	251		301							{2: 'Chiron', 3: '...', 4: '2'}
+252	252		202							{1: '1', 2: '2', 6: '1'}
+253	253		201							{1: '1', 2: '500941', 3: '14'}
+254	254		301							{1: '1', 2: 'Melvie', 3: '...Was it you?', 4: '1'}
+255	255		201							{1: '1', 2: '500270', 5: '-60'}
+256	256		301							"{1: '1', 2: 'Chiron', 3: ""Hah... You want to blame me, don't you?"", 4: '1'}"
+257	257		301							"{2: 'Chiron', 3: ""From the moment I realized what kind of experiment I was involved in, I became a sinner. At this point, I couldn't care less about what other crimes are added to my name."", 4: '1'}"
+258	258		202							{1: '1'}
+259	259		301				AniZhuanchangBegin			{3: 'He gives up trying to fix his appearance and leaves with the arriving military personnel.'}
+260	260		401							{1: '1', 2: '36'}
+261	261		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory718.jpg'}
+262	262		401							{1: '1', 2: '5016'}
+263	263		301			AniZhuanchangEnd				"{3: ""A month later, Wanxu stands before a patient room at the end of the Star of Life's corridor, watching as Melvie approaches.""}"
+264	264		301							"{3: ""Dark circles mark Melvie's pallid face, showing her lack of proper rest.""}"
+265	265		201							{1: '1', 2: '500938', 4: '-400'}
+266	266		201							{1: '2', 2: '500941', 4: '400'}
+267	267		301							"{1: '1', 2: 'Wanxu', 3: ""I hear you're thinking of transferring to the Star of Life?"", 4: '1'}"
+268	268		301							"{2: 'Melvie', 3: ""Yes, but it's not that simple."", 4: '2'}"
+269	269		301							"{2: 'Wanxu', 3: ""Are you trying to save others to make up for your guilt? What's done is done. You need to face reality."", 4: '1'}"
+270	270		301							"{2: 'Melvie', 3: ""How am I supposed to accept this? If only I had understood more, if only I had asked you more about the data... Maybe things wouldn't have come to this."", 4: '2'}"
+271	271		301							"{2: 'Melvie', 3: ""I've seen the footage Chiron brought back. Those children were forced to transform into Constructs, only to die in the connection experiments."", 4: '2'}"
+272	272		301							"{2: 'Melvie', 3: ""All for better experimental results, they forcibly turned children into Constructs... When our research was meant to ensure humanity's survival..."", 4: '2'}"
+273	273		301							"{2: 'Melvie', 3: ""How dare they talk about preserving humanity when they're killing children?"", 4: '2'}"
+274	274		301							{3: 'Wanxu answers Melvie with nothing but silence.'}
+275	275		301							"{2: 'Melvie', 3: ""I can't sleep at night."", 4: '2'}"
+276	276		301							"{2: 'Melvie', 3: ""You, me... and everyone in the project who was involved in this—we all need to atone for what we've done."", 4: '2'}"
+277	277		301							{2: 'Wanxu', 3: '...', 4: '1'}
+278	278		301							{3: 'In the stifling atmosphere, Melvie takes a moment to compose herself.'}
+279	279		301							"{2: 'Melvie', 3: ""Let's talk about something else... I don't ever want to bring it up again. What about you? You didn't call me here just to ask how I've been doing, did you?"", 4: '2'}"
+280	280		301							"{2: 'Wanxu', 3: ""I'm planning to leave Babylonia. Someone wants me to continue my research at a facility on the ground."", 4: '1'}"
+281	281		301							"{2: 'Wanxu', 3: ""...So I'd like to ask you to look after Wanshi for me."", 4: '1'}"
+282	282		301							{3: 'Melvie lets out a long sigh.'}
+283	283		301							"{2: 'Melvie', 3: ""So that's why I was called to the Star of Life... Wanshi is inside?"", 4: '2'}"
+284	284		301							{3: 'Wanxu pushes open the ward door.'}
+285	285		301				AniZhuanchangBegin			{2: 'Wanxu', 3: 'Come in.', 4: '1'}
+286	286		202							{1: '1', 2: '2', 6: '1'}
+287	287		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+288	288		301			AniZhuanchangEnd				{3: 'Artificial sunlight streams through the corridor windows into the ward. As Melvie takes a step forward, she beholds a sight that will be forever etched in her memory.'}
+289	289		201							{1: '1', 2: '500941', 3: '7'}
+290	290		301							{1: '1', 2: 'Melvie', 3: 'This...', 4: '1'}
+291	291		202							{1: '1'}
+292	292		301							{3: 'The small child lies on the bed, arranged like a specimen. His skin and flesh—once lost to disease and injury—are now growing back with desperate intensity. Various machines pierce his body, maintaining his vital signs.'}
+293	293		301							{3: '—A life hanging by the thinnest of threads.'}
+294	294		301							{3: 'An oversized respirator covers his face, while mysterious patches on his head connect to a device at the bedside—one that Melvie finds eerily familiar.'}
+295	295		201							{1: '1', 2: '500938', 4: '-400'}
+296	296		201							{1: '2', 2: '500941', 4: '400'}
+297	297		301							{1: '1', 2: 'Wanxu', 3: 'He survived, but you saw his condition on the transport aircraft... The Star of Life staff told me he might never wake up again.', 4: '1'}
+298	298		301							"{2: 'Melvie', 3: ""Even with our advanced medical technology, there's nothing we can do...?"", 4: '2'}"
+299	299		301							{2: 'Wanxu', 3: 'No. No technology today can save him. Despite my best efforts, all I managed to save was an empty shell.', 4: '1'}
+300	300		301							"{2: 'Wanxu', 3: ""I won't accept this."", 4: '1'}"
+301	301		301							"{3: ""Wanxu's words echo Melvie's own sentiments.""}"
+302	302		301							"{2: 'Wanxu', 3: ""I want to save him. I came up with a solution... and I've already tried it on him."", 4: '1'}"
+303	303		301							{3: 'Wanxu points to the device beside the hospital bed.'}
+304	304		301							{2: 'Wanxu', 3: 'Look familiar?', 4: '1'}
+305	305		301							"{2: 'Melvie', 3: ""Don't tell me you made all of this—this thing that looks like a remote connection pod... and all these tubes, these devices on his head?"", 4: '2'}"
+306	306		301							{2: 'Wanxu', 3: 'I did.', 4: '1'}
+307	307		204							{1: '2', 2: '14'}
+308	308		301							{2: 'Melvie', 3: '...Are you really using M.I.N.D. research to find a solution for him? What exactly are you trying to do? Turn him into a Construct?', 4: '2'}
+309	309		204							{1: '1', 2: '14'}
+310	310		301							"{2: 'Wanxu', 3: ""No... In his condition, there's no way he could survive the modification process."", 4: '1'}"
+311	311		301							{3: 'Wanxu glances at Melvie, bitterness evident in his gaze.'}
+312	312		301							"{2: 'Melvie', 3: 'So this is the ""Recall"" you were trying to achieve...?', 4: '2'}"
+313	313		301							{2: 'Wanxu', 3: '...', 4: '1'}
+314	314		301							"{3: ""Wanxu's silence leaves Melvie stunned.""}"
+315	315		204							{1: '2', 2: '5'}
+316	316		301							"{2: 'Melvie', 3: ""Have you lost your mind? Aren't you afraid his condition will worsen—"", 4: '2'}"
+317	317		204							{1: '1'}
+318	318		301							{2: 'Wanxu', 3: 'No.', 4: '1'}
+319	319		301							{2: 'Wanxu', 3: 'I stopped being afraid long ago, Melvie. Every single step I took with him was an all-or-nothing gamble.', 4: '1'}
+320	320		204							{1: '2', 2: '14'}
+321	321		301							{2: 'Melvie', 3: '...How does it work? Has it been effective?', 4: '2'}
+322	322		301							"{2: 'Wanxu', 3: ""I'm sorry, but I can't explain it yet. Everything I have right now is just speculation that still needs to be verified."", 4: '1'}"
+323	323		301							"{2: 'Wanxu', 3: ""I can't access the other Project recall groups anymore, so that opportunity on the ground... I can't let it slip away."", 4: '1'}"
+324	324		301							{2: 'Melvie', 3: '...', 4: '2'}
+325	325		301							"{2: 'Wanxu', 3: ""If he wakes up, that means I succeeded. If he remains in his coma, and I don't come back..."", 4: '1'}"
+326	326		204							{1: '1', 2: '14'}
+327	327		301							"{2: 'Wanxu', 3: ""Please... don't give up on him."", 4: '1'}"
+328	328		301							"{2: 'Melvie', 3: ""Why are you talking like you'll never come back...?"", 4: '2'}"
+329	329		301							"{2: 'Wanxu', 3: ""Because I actually don't plan on coming back. Consider this journey as a life traded for a life... I can't really explain it to you."", 4: '1'}"
+330	330		301							{2: 'Melvie', 3: '...', 4: '2'}
+331	331		202							{1: '1', 2: '2'}
+332	332		301							"{3: ""The conversation with Wanxu on the transport aircraft that day suddenly flashes through Melvie's mind.""}"
+333	333		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+334	334		504							{1: '0.7'}
+335	335		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+336	336		201							{1: '1', 2: '500938', 3: '14'}
+337	337		301							"{1: '1', 2: 'Wanxu', 3: ""He's still alive..."", 4: '1'}"
+338	338		301							{2: 'Wanxu', 3: 'Let me save him... please.', 4: '1'}
+339	339		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+340	340		504							{1: '0'}
+341	341		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+342	342		301							"{3: ""Just like that moment, Wanxu now stands at the edge of a cliff, desperately begging for Melvie's support.""}"
+343	343		301							{3: 'Melvie had always cherished her family. She wonders if they too had begged others—or fate itself—for another chance, just like Wanxu is doing now when the Punishing claimed their lives.'}
+344	344		301							"{3: ""Back on the transport aircraft, hadn't she also shed tears when she held that tiny bundle, feeling a warmth in her arms she hadn't known for so long?""}"
+345	345		201							{1: '1', 2: '500941', 3: '14'}
+346	346		301				AniZhuanchangBegin			{1: '1', 2: 'Melvie', 3: '...Tell me what I need to do.', 4: '1'}
+347	347		202							{1: '1', 6: '1'}
+348	348		401							{1: '1', 2: '36'}
+349	349		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory972.jpg'}
+350	350		401							{1: '1', 2: '5016'}
+351	351		201							{1: '1', 2: '500936', 3: '14', 4: '-400'}
+352	352		201							{1: '2', 2: '500941', 4: '400'}
+353	353		301			AniZhuanchangEnd				{1: '1', 2: 'Wanshi', 3: '...', 4: '1'}
+354	354		301							"{2: 'Melvie', 3: ""I don't know exactly what she did to you—I just maintained the equipment as she instructed... But I am the best candidate to look after you. After all, no other doctor is as familiar with these laboratory-exclusive devices as I am."", 4: '2'}"
+355	355		301							{2: 'Melvie', 3: 'And just like that, she was gone for years, and you woke up.', 4: '2'}
+356	356		301							{2: 'Wanshi', 3: 'Before I woke up, my memories...', 4: '1'}
+357	357		301							"{2: 'Melvie', 3: 'Yes, I\'ve been honest with you from the very beginning. Those events never actually happened—they were just ""dreams"" she crafted for you.', 4: '2'}"
+358	358		301							"{2: 'Melvie', 3: ""After you woke up, you could speak like other children your age and had common knowledge... At first, I was shocked. I couldn't tell if she had actually achieved some form of Recall, or if she had implanted memories through other means."", 4: '2'}"
+359	359		301							{2: 'Melvie', 3: 'But soon I had no time to dwell on such thoughts. You know what happened after that.', 4: '2'}
+360	360		301							"{3: ""The image of that gun pointed at himself flashes through Wanshi's mind.""}"
+361	361		301							{2: 'Melvie', 3: 'The nightmares you described... I know exactly what they are—the Corrupted. So what Wanxu did must be far more complicated than it seems. She woke you up, but in doing so, she also put you in danger.', 4: '2'}
+362	362		301							"{2: 'Melvie', 3: ""I suspect it's got to do with Project Recall. Not only were they watching you, but they also started investigating my background. When they discovered that Wanxu and I were both part of that disbanded group, they began monitoring me too. None of these are good signs."", 4: '2'}"
+363	363		301							{2: 'Melvie', 3: 'So I made my decision.', 4: '2'}
+364	364		301							{3: 'Melvie gives a bitter smile as she looks at Wanshi, who still cannot come to terms with the truth.'}
+365	365		204							{1: '2', 2: '14'}
+366	366		301							"{2: 'Melvie', 3: ""I've never been a clever person. I couldn't protect my own family, couldn't make any scientific contributions, and was so careless that I caused innocent children's deaths..."", 4: '2'}"
+367	367		301							{2: 'Melvie', 3: 'I never even understood what Wanxu was thinking... All I could do was try my best to do what I believed was right.', 4: '2'}
+368	368		301							"{2: 'Melvie', 3: ""At that time, I had only one thought in mind: to protect you and let you live a normal child's life in Babylonia."", 4: '2'}"
+369	369		301							{2: 'Melvie', 3: 'I lied to you, saying they were just dreams. I adamantly refused to let you mention them—all because I wanted to keep you away from any whirlpool that might drag you in. Away from Wanxu, and even away from me.', 4: '2'}
+370	370		301							{2: 'Wanshi', 3: '...', 4: '1'}
+371	371		301							"{2: 'Melvie', 3: ""I'm sorry."", 4: '2'}"
+372	372		301							"{2: 'Melvie', 3: ""When you were little, you followed me everywhere—you must have thought I was reliable, right? But I wasn't just some pediatrician working hard to save lives. Everything I did was for atonement. With each child I saved, the weight on my shoulders became a little lighter."", 4: '2'}"
+373	373		301							"{2: 'Melvie', 3: ""You were also part of my atonement. I've been forcing my protection on you all this time, completely disregarding your wishes... taking it upon myself to shield you."", 4: '2'}"
+374	374		301							{2: 'Melvie', 3: 'There are no noble reasons here, Wanshi. No one is a hero.', 4: '2'}
+375	375		301							{2: 'Melvie', 3: 'I only wish to atone for my sins and fulfill what Wanxu entrusted to me.', 4: '2'}
+376	376		301							{3: 'Melvie takes a deep breath.'}
+377	377		204							{1: '2'}
+378	378		301							"{2: 'Melvie', 3: ""At least it's all coming to an end now."", 4: '2'}"
+379	379		301							{2: 'Wanshi', 3: '...?', 4: '1'}
+380	380		301							"{2: 'Melvie', 3: ""Though I've been stationed at the Star of Life and haven't been involved with the Project Recall since then, I've still heard things. The Recall system has likely been realized, and they're probably planning to implement it on a massive scale."", 4: '2'}"
+381	381		301							"{2: 'Melvie', 3: 'People have abandoned their obsession with that project. The attention you received as ""potentially the first to achieve special Recall"" should gradually fade away too.', 4: '2'}"
+382	382		301							"{2: 'Melvie', 3: ""I'm not here to reprimand you."", 4: '2'}"
+383	383		301							"{2: 'Melvie', 3: ""Over these years, you've sent me fifty-seven messages. I knew about each one. I also knew I was the one depriving you of your right to choose freely."", 4: '2'}"
+384	384		301							{3: 'Hearing the first half of the sentence, Wanshi feels a lump forming in his throat.'}
+385	385		301							"{2: 'Melvie', 3: ""This won't happen again. This is the last time, I promise... but I still hope you'll listen to me for just this final time."", 4: '2'}"
+386	386		301							"{3: ""Melvie looks into Wanshi's eyes earnestly, as if there are countless words she cannot bring herself to say.""}"
+387	387		204							{1: '2', 2: '14'}
+388	388		301							{2: 'Melvie', 3: 'You are the salvation for many.', 4: '2'}
+389	389		301							{2: 'Melvie', 3: 'Wanxu once said that everything she did was to keep you alive. You can accept this miracle that belongs to you alone—consider everything since your awakening at the Star of Life until now as the second life Wanxu has given you.', 4: '2'}
+390	390		301							"{2: 'Melvie', 3: ""I'm no different. I've never wanted you to achieve great things—I only wish for you to live safely as an ordinary person."", 4: '2'}"
+391	391		301							"{2: 'Melvie', 3: ""You're becoming an adult now, ready to handle the truth... Now that you understand everything others have fought for on your behalf, please don't waste it. Don't take any risks, okay?"", 4: '2'}"
+392	392		301							"{2: 'Wanshi', 3: ""...You're saying this, and Shorthalt also..."", 4: '1'}"
+393	393		204							{1: '2'}
+394	394		301							{2: 'Melvie', 3: 'I heard you submitted an appeal to the Youth Center. Withdraw it. I already asked Professor Chiron to prepare a recommendation letter for you.', 4: '2'}
+395	395		301							{2: 'Wanshi', 3: '...', 4: '1'}
+396	396		301							"{2: 'Melvie', 3: ""As for the others, don't concern yourself with them, don't get involved. Just know that every step you're taking now is the right one—carefully prepared by all those who've sacrificed for you."", 4: '2'}"
+397	397		202							{1: '1', 2: '2'}
+398	398		301							{3: 'Melvie slides the familiar little lunchbox in front of Wanshi.'}
+399	399		301							{3: 'Wanshi opens the lid to find the same blackened mass that has remained the same for years.'}
+400	400		201							{1: '1', 2: '500941', 3: '1'}
+401	401		301							"{1: '1', 2: 'Melvie', 3: ""Don't waste it."", 4: '1'}"
+402	402		301							{3: 'Her cooking remains unchanged over the years, just as she stubbornly conceals the truth until she deems it safe to reveal. Melvie is the most obstinate person he has ever known.'}
+403	403		301							"{3: ""Unlike before, Wanshi doesn't force himself to swallow it. He pushes the little lunchbox back—a refusal.""}"
+404	404		301							"{2: 'Melvie', 3: ""...Very well. You don't have to force yourself to eat something you don't like. Wanshi, this will be the last time—from now on, no matter what happens, you'll make your own decisions."", 4: '1'}"
+405	405		202							{1: '1'}
+406	406		301							{3: 'As if accepting the rebellion of the teen, Melvie gently notes that this will tie in with his growth.'}
+407	407		301		1		AniZhuanchangBegin			{3: 'She puts away the lunchbox, bids farewell one last time, and leaves.'}

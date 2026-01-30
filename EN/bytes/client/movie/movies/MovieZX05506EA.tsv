@@ -1,0 +1,255 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		401			AniZhuanchangBegin				{1: '2', 2: '4280'}
+2	2		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory346.jpg'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+5	5		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+6	6		111			AniZhuanchangEnd	RImgBg1Shake			{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+7	7		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+8	8		401							{1: '1', 2: '5072'}
+9	9		302							{2: '...Argh!!', 3: '10'}
+10	10		301			DialogEnable				{3: 'Your head slams against the ground again, accompanied by a sharp pain so intense it causes numbness. Some memories rapidly withdraw from your mind.'}
+11	11		301							{3: 'A worried-looking F.O.S. classmate, a researcher unconscious in the corner, a box on the floor...'}
+12	12		301							{3: 'The shout from that classmate...'}
+13	13		401							{1: '2', 2: '4388'}
+14	14		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+15	15		504							{1: '0.7'}
+16	16		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory547.jpg'}
+17	17		201							{1: '1', 2: '500005'}
+18	18		301				DialogDisable			{1: '1', 2: '???', 3: 'This sample... is... something we staked our lives on... very important...', 4: '1'}
+19	19		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+20	20		202							{1: '1', 6: '1'}
+21	21		504							{1: '0'}
+22	22		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory346.jpg'}
+23	23		302							{2: '(The box... very important...)', 3: '24'}
+24	24		401							{1: '2', 2: '4388'}
+25	25		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+26	26		504							{1: '0.7'}
+27	27		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory547.jpg'}
+28	28		201							{1: '1', 2: '500005'}
+29	29		301			DialogEnable				"{1: '1', 2: '???', 3: ""The sample is crucial! You must take it to the temporary safe zone up ahead! Don't forget!"", 4: '1'}"
+30	30		401							{1: '2', 2: '5556'}
+31	31		301							{3: 'The classmate shouts something, but all you hear is the roaring of aircraft flying overhead.'}
+32	32		301							"{3: 'In a daze, a fleeting thought passes through your head: ""I don\'t think I ever asked his name.""'}"
+33	33		302							"{2: ""(What's... your name?)"", 3: '34'}"
+34	34		301							{3: 'He busies himself, hastily stuffing useful items into your arms... including a whistle and a small knife from who knows where, all entrusted to this classmate who had consistently ranked first in evaluations.'}
+35	35		301							{3: 'He trusts you.'}
+36	36		301							"{2: '???', 3: ""You go ahead with the sample and that researcher, there's barely enough time... but I can unlock it quickly enough. Once you hand it over to the people at the forward safe zone, my mission will be complete."", 4: '1'}"
+37	37		302							"{2: ""Wait... what's your—""}"
+38	38		301							"{2: '???', 3: 'Just don\'t call me ""Student A""!', 4: '1'}"
+39	39		301							"{2: '???', 3: ""Alright, it's all up to you now!"", 4: '1'}"
+40	40		202							{1: '1'}
+41	41		306							{1: '1'}
+42	42		401							{1: '2', 2: '4306'}
+43	43		301			RImgBg1Shake	DialogDisable			{3: 'He pushes with all his might.'}
+44	44		306							
+45	45		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+46	46		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+47	47		504							{1: '0'}
+48	48		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory346.jpg'}
+49	49		401							{1: '2', 2: '4280'}
+50	50		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+51	51		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+52	52		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+53	53		301			DialogEnable				{3: 'Bzzz—'}
+54	54		302							{2: 'Ugh!', 3: '55'}
+55	55		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '2'}
+56	56		301							"{3: 'The head hematoma takes its toll once more, as memories surge like a tide before rapidly receding—a new cycle of ""rebooting"" seems about to begin.'}"
+57	57		301							"{3: 'Meanwhile, a new wave of bombardment is about to hit. You can only clutch the small box containing the ""sample"" tightly, secure the important researcher on your back, and brace for impact.'}"
+58	58		302							"{2: ""Can't forget..."", 3: '59', 4: ""Can't forget can't forget!"", 5: '59'}"
+59	59		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+60	60		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+61	61		301							"{3: 'Vera\'s words crackle through the earpiece with static. They\'re barely discernible, but you hear her say that she\'s evacuated the mother and daughter from the bombing zone and is ""heading this way now.""'}"
+62	62		301							"{3: ""...If you manage to reunite with Vera, there's so much you need to tell her.""}"
+63	63		301							"{3: ""You need to tell her: that the mother and daughter weren't lying, the F.O.S. classmate's mission was real, and you even managed to crack the code for him, you retrieved the important sample—and carried out the last researcher on your back!""}"
+64	64		301							{3: 'To accomplish so much under such extreme conditions, you must be able to...'}
+65	65		301				DialogDisable			{3: 'But these memories are fading away.'}
+66	66		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '2'}
+67	67		302							"{2: ""Can't forget, must tell Vera everything, tell her..."", 3: '68', 4: ""Don't forget..."", 5: '68'}"
+68	68		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+69	69		401							{1: '2', 2: '844'}
+70	70		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+71	71		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+72	72		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+73	73		201							{1: '1', 2: '501239', 3: '4'}
+74	74		301			DialogEnable				{1: '1', 2: 'Vera', 3: '...You... idiot!!', 4: '1'}
+75	75		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+76	76		301							{3: 'When you open your eyes again, Vera has already rushed into your field of vision.'}
+77	77		302							{2: 'Vera! I still remember!', 3: '78'}
+78	78		204							{1: '1', 2: '6'}
+79	79		301							{2: 'Vera', 3: '...?', 4: '1'}
+80	80		302							"{2: ""I didn't make the wrong choice!"", 3: '81', 4: ""No, no... I'm saying I didn't make the wrong choice!"", 5: '81'}"
+81	81		204							{1: '1'}
+82	82		301							{3: 'The impulsive words sound more like a petulant retort.'}
+83	83		301							"{3: ""—What you're trying to express is that during your separate mission, you didn't make a single wrong move. Even if you were merely playing at being a hero, you succeeded at it.""}"
+84	84		302							"{2: ""...But I'm not feeling well."", 3: '85', 4: 'But I...', 5: '85'}"
+85	85		301							{3: 'Memories dissolve into mere scattered shards, while a mixture of emotions weighs on my chest with a heaviness that makes it hard to breathe.'}
+86	86		301							{3: 'Just as you said, this was your first time setting foot on real ground, your first time witnessing such a scene, your first time experiencing these emotions.'}
+87	87		301							{3: 'If this is destined to become the catalyst for your future choices, then you must remember it clearly.'}
+88	88		302							{2: 'Please remember for me—', 3: '89'}
+89	89		301							"{3: ""But Vera doesn't waste a single word, nor does she have time to listen to any heroic sentiments. Instead, she nearly explodes with rage as she tackles you to the ground, pinning you beneath her.""}"
+90	90		204							{1: '1', 2: '4'}
+91	91		301			PanelActor1Shake				{2: 'Vera', 3: 'Are you deaf?! Get down!!', 4: '1'}
+92	92		302							{2: '...Ve...?', 3: '93'}
+93	93		301							{3: 'Many words die on your lips, the words never making it past your mouth.'}
+94	94		202							{1: '1'}
+95	95		306							{1: '1'}
+96	96		401							{1: '2', 2: '4412'}
+97	97		301							{3: 'The final shell whistles down from the sky.'}
+98	98		301							"{3: ""The Construct's warmth fiercely embraces both you and the female researcher you had rescued.""}"
+99	99		301							"{3: ""The moment you feel the Construct's body heat, a stubborn question forces its way through your thoughts:""}"
+100	100		302							"{2: ""But you're supposed to be..."", 3: '101', 4: 'Why... why would you go this far to help me...?', 5: '101'}"
+101	101		401							{1: '2', 2: '4260'}
+102	102		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+103	103		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionL.prefab', 2: '2'}
+104	104		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionR.prefab', 2: '2'}
+105	105		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+106	106		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+107	107		101			RImgBg1Shake				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1210.jpg'}
+108	108		301				DialogDisable			{3: 'Boom—'}
+109	109		401							{1: '2', 2: '4280'}
+110	110		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory346.jpg'}
+111	111		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+112	112		501				AniZhuanchangEnd			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+113	113		301			DialogEnable				{3: 'The bomb strikes, and your memories explode with it, sending you spiraling into darkness.'}
+114	114		301							{3: 'Enough now. Time to stop thinking about everything.'}
+115	115		301							"{3: ""The shockwave sweeps over the few survivors, the heat penetrating through your clothes as sand and debris shower down on all of you. Thankfully, with the Construct's protection, you emerge unharmed.""}"
+116	116		301							{3: 'As the dust settles, Vera brushes the ash from her hair and examines you with a furrowed brow.'}
+117	117		306							
+118	118		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+119	119		201							{1: '1', 2: '501239', 3: '4'}
+120	120		301							{1: '1', 2: 'Vera', 3: 'Are you hurt—What the hell are you holding onto?!', 4: '1'}
+121	121		202							{1: '1'}
+122	122		301							"{3: ""Vera forcibly pries the female researcher's arm from your grip, like extracting a piece of stone.""}"
+123	123		201							{1: '1', 2: '501239', 3: '4'}
+124	124		301							{1: '1', 2: 'Vera', 3: 'You just realized—this person is already dead!', 4: '1'}
+125	125		301				DialogDisable			"{3: ""But you stubbornly cling to the researcher's grayish wrist, refusing to surrender the body to Vera.""}"
+126	126		302							"{2: ""She's important!"", 3: '127', 4: ""Can't forget... what was it..."", 5: '127'}"
+127	127		302							"{2: ""I can't remember..."", 3: '128'}"
+128	128		204							{1: '1', 2: '5'}
+129	129		301			DialogEnable				"{2: 'Vera', 3: ""Let go! What's the point of dragging around a corpse?! Aren't you afraid of infection?!"", 4: '1'}"
+130	130		301							"{2: 'Vera', 3: ""I leave you alone for one hour and you're picking up all sorts of things! What's that in your hand? A box? What the hell happened?"", 4: '1'}"
+131	131		202							{1: '1'}
+132	132		306							{1: '1'}
+133	133		401							{1: '2', 2: '4432'}
+134	134		301							"{3: ""Vera pulls the researcher's body from your arms and reflexively tears the fabric name tag from the corpse's chest.""}"
+135	135		301				DialogDisable			{3: 'Meanwhile, you clutch an unfamiliar small box while furiously pounding the ground in frustration.'}
+136	136		302							"{2: ""Musn't forget—what can't I forget?!"", 3: '137'}"
+137	137		302							"{2: ""What I can't forget..."", 3: '138'}"
+138	138		401							{1: '2', 2: '4280'}
+139	139		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+140	140		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+141	141		301			DialogEnable				"{3: ""A sense of helplessness spreads from your mind throughout your entire body. Even as you pound the sandy ground until your hands bleed, you still can't remember anything.""}"
+142	142		301							{3: 'Fragile humans ultimately cannot transcend the shackles of their flesh.'}
+143	143		301							{3: 'The wound in your side begins to seep fluid. The recent battle and escape must have reopened it.'}
+144	144		306							
+145	145		201							{1: '1', 2: '501239', 3: '4'}
+146	146		301				DialogDisable			"{1: '1', 2: 'Vera', 3: ""Stop punching the ground! Your brain's malfunctioning, and panicking won't help!"", 4: '1'}"
+147	147		302							{2: 'Temporary safe area... abandoned conservation area...', 3: '148'}
+148	148		302							{2: 'And... the box...? Samples?', 3: '149'}
+149	149		301			DialogEnable	DialogDisable			{3: 'The wound in your side intertwines with your throbbing headache, making you want to curl up in agony.'}
+150	150		302							{2: 'Wait, I...'}
+151	151		202						250.0	{1: '1'}
+152	152		401							{1: '1', 2: '36'}
+153	153		401							{1: '2', 2: '2766'}
+154	154		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+155	155		104							{1: '0|0|-500', 2: '0.4'}
+156	156		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory346.jpg', 3: '0', 4: '1', 5: '0.4'}
+157	157		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory346.jpg', 3: '1', 4: '0', 5: '0'}
+158	158		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory346.jpg'}
+159	159		301			DialogEnable				{3: 'Slap!!'}
+160	160		306							{1: '1'}
+161	161		301							"{3: ""Vera's hands slam against your cheeks with a sharp slap, firmly gripping your head and restraining your movements.""}"
+162	162		306							
+163	163		401							{1: '1', 2: '6172'}
+164	164		201							{1: '1', 2: '501239', 3: '5'}
+165	165		301							{1: '1', 2: 'Vera', 3: '【kuroname】, look at me!', 4: '1'}
+166	166		301				DialogDisable			"{3: ""The world falls silent for a moment. All you can see is Vera's face—furious yet somehow tinged with helplessness.""}"
+167	167		302							{2: '...', 3: '168'}
+168	168		302							"{2: ""This is all I can remember... I'm sorry..."", 3: '169'}"
+169	169		301			DialogEnable				{2: 'Vera', 3: 'Stop getting hung up on this!', 4: '1'}
+170	170		301							"{2: 'Vera', 3: ""I don't know exactly what just happened, but beating yourself up now is pointless and risks reopening your wounds—you clearly don't understand how precious those materials used on your injuries are! Even if ten of you died, it wouldn't cover the cost!"", 4: '1'}"
+171	171		302							{2: 'Materials... the materials seem important too...', 3: '172'}
+172	172		204							{1: '1', 2: '4'}
+173	173		301							"{2: 'Vera', 3: ""...Yes, that's more like it."", 4: '1'}"
+174	174		301							"{3: ""Vera's expression grows increasingly complex, becoming difficult to read. She seems to understand your confusion and inner struggle, her tone softens ever so slightly from it's usual harshness.""}"
+175	175		204							{1: '1', 2: '8'}
+176	176		301							{2: 'Vera', 3: '...Remember your mission. All you need to do is keep yourself safe and protect the materials.', 4: '1'}
+177	177		204							{1: '1', 2: '10'}
+178	178		301							{3: 'Finally, she lets out a soft sigh.'}
+179	179		204							{1: '1', 2: '1'}
+180	180		301							"{2: 'Vera', 3: ""I'm guessing your memory has reset again... Let me quickly fill you in on the situation."", 4: '1'}"
+181	181		301							"{2: 'Vera', 3: 'You can call me ""Hound."" I\'m a Construct from Babylonia assigned to you. For the rest of the details, wait until we reach a safe area, then check the notes on your terminal.', 4: '1'}"
+182	182		204							{1: '1'}
+183	183		301							"{2: 'Vera', 3: ""Since we've handled the situations on both fronts, let's evacuate immediately. The bombing didn't eliminate all the Corrupted, we can't stay here for long."", 4: '1'}"
+184	184		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.4'}
+185	185		201							{1: '2', 2: '501239', 7: '1'}
+186	186		504							{1: '0.3', 2: '2'}
+187	187		203							{1: '2', 2: '0.4', 3: '-250', 5: '-150'}
+188	188		301							"{2: 'Vera', 3: ""(I wonder if Kurono's nearby stronghold was caught in the blast.)"", 4: '1'}"
+189	189		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '0.3'}
+190	190		203						300.0	{1: '2', 2: '0.25'}
+191	191		202							{1: '2', 6: '1'}
+192	192		504							{1: '0', 2: '2'}
+193	193		204							{1: '1', 2: '10'}
+194	194		301							{2: 'Vera', 3: 'Can you walk?', 4: '1'}
+195	195		302							{2: '(Nod.)', 3: '196', 4: '(Extend hand.)', 5: '196'}
+196	196		202							{1: '1'}
+197	197		301							{3: 'Seeing your condition gradually stabilize, Vera finally releases her grip and prepares to pull you up from the ground.'}
+198	198		302							{2: '(Stumble forward)', 3: '199'}
+199	199		201							{1: '1', 2: '501239', 3: '1'}
+200	200		301							"{1: '1', 2: 'Vera', 3: ""I'll carry you on my back."", 4: '1'}"
+201	201		302							{2: 'No need. I can walk.', 3: '202', 4: 'Also need to bring that...', 5: '202'}
+202	202		301							"{3: ""While speaking, you stubbornly drag up the small box that appears completely mysterious to Vera's eyes.""}"
+203	203		204							{1: '1', 2: '8'}
+204	204		301							{2: 'Vera', 3: '...', 4: '1'}
+205	205		204							{1: '1', 2: '4'}
+206	206		301							{2: 'Vera', 3: 'Is it really that important?', 4: '1'}
+207	207		301							"{3: ""You don't know why—or rather, you've forgotten it. In the end, you only respond with a faint whisper.""}"
+208	208		302							{2: '...I want to take it with me.', 3: '209', 4: '...I have to take it with me.', 5: '209'}
+209	209		202							{1: '1'}
+210	210		301							{3: 'The mother and daughter also miraculously survived the bombing, emerging alongside several other refugees who had fled here, all supporting one another as they walk out.'}
+211	211		201							{1: '1', 2: '500624', 4: '400'}
+212	212		201							{1: '2', 2: '500280', 4: '-400'}
+213	213		301							{1: '1', 2: 'Mother', 3: 'Please... take us with you.', 4: '1'}
+214	214		301							{2: 'Girl', 3: 'Miss...', 4: '2'}
+215	215		301							{3: 'The refugees look pleadingly at the only Construct before them, ready to entrust their lives to this powerful warrior.'}
+216	216		202							{1: '1', 2: '2', 6: '1'}
+217	217		201							{1: '1', 2: '501239', 3: '8'}
+218	218		301							{1: '1', 2: 'Vera', 3: '...Tsk.', 4: '1'}
+219	219		204							{1: '1', 2: '10'}
+220	220		301							"{2: 'Vera', 3: ""Don't ask me. Ask this person over here."", 4: '1'}"
+221	221		301							{3: 'Vera irritably turns you around, forcing you to face the pleading refugees.'}
+222	222		204							{1: '1'}
+223	223		301							"{2: 'Vera', 3: ""Come on, our amnesiac Commandant, open your eyes and see the fine mess you've gotten us into."", 4: '1'}"
+224	224		302							{2: '...', 3: '225'}
+225	225		301							"{2: 'Vera', 3: ""I've told you before, don't carelessly take on other people's burdens—especially their lives. You can't handle it. That's what years of experience have taught me."", 4: '1'}"
+226	226		302							{2: '...', 3: '227'}
+227	227		202						250.0	{1: '1'}
+228	228		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+229	229		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+230	230		301							{1: '1', 3: 'You stare at the crowd with an unfocused gaze, unable to respond.'}
+231	231		301							{3: 'Vera rolls her eyes at you.'}
+232	232		201							{1: '1', 2: '501239', 3: '13'}
+233	233		301							"{1: '1', 2: 'Vera', 3: '...Judging by your expression, you can\'t process this right now. Heh, that\'s fine. Eventually you\'ll learn the bitter disappointment that comes from playing ""savior"" time and again...', 4: '1'}"
+234	234		401							{1: '2', 2: '4280'}
+235	235		501						3000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab', 2: '2'}
+236	236		202							{1: '1', 6: '1'}
+237	237		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+238	238		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+239	239		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+240	240		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+241	241		401							{1: '2', 2: '4306'}
+242	242		301			AniZhuanchangEnd				"{3: ""But you're unable to respond—your legs give way again, and you suddenly collapse to the side.""}"
+243	243		201							{1: '1', 2: '501242'}
+244	244		301							{1: '1', 2: 'Vera', 3: '!', 4: '1'}
+245	245		301							{3: 'Before you hit the ground, Vera catches you in one swift motion, along with the small box you refuse to let go of.'}
+246	246		301							{2: 'Vera', 3: '【kuroname】!', 4: '1'}
+247	247		202							{1: '1'}
+248	248		301							"{3: ""Vera's anxious calls sound close to your ear, but you can't open your eyes anymore... Compared to Constructs, your human body is too fragile, easily breaking from the slightest touch.""}"
+249	249		302							{2: 'I...', 3: '251'}
+250	250		401						500.0	{1: '2', 2: '4115010'}
+251	251		401							{1: '2', 2: '5540'}
+252	252		301							{2: '???', 3: 'Woof!'}
+253	253		302							"{2: ""What's that sound..."", 3: '254'}"
+254	254		301		1		AniZhuanchangBegin			{3: 'Just before you slip away, you hear the muffled sound of brakes screeching, and... a dog barking?'}

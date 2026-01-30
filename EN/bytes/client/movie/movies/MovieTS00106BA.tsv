@@ -1,0 +1,32 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory39.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		201							{1: '1', 2: '1021001'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Lucia', 3: ""Right, Commandant—I've noticed as well. These guards seem to be pushing us further inside intentionally."", 4: '1'}"
+5	5		301							"{2: 'Lucia', 3: ""Still, we can't do anything even though we have figured that out. Commandant, I hate being played."", 4: '1'}"
+6	6		302							"{2: 'We have to be even calmer in this situation.', 3: '7', 4: ""We're slowly entering the enemy's trap."", 5: '7'}"
+7	7		301							"{1: '1', 2: 'Lucia', 3: ""I'll come up with an emergency plan immediately. We have to be prepared for the worst-case scenario..."", 4: '1'}"
+8	8		201							{1: '1', 2: '500015'}
+9	100		401							{1: '2', 2: '1508'}
+10	9		301							"{1: '1', 2: 'Iron Maiden', 3: ""To wear the Queen's shackles is an honor bestowed to you and that lowly creature by your side..."", 4: '1'}"
+11	10		201							{1: '1', 2: '1021001'}
+12	11		204							{1: '1', 2: '3'}
+13	12		301							{1: '1', 2: 'Lucia', 3: '...How did she appear so close to us?!', 4: '1'}
+14	13		204							{1: '1'}
+15	14		201							{1: '1', 2: '500015'}
+16	15		301							{1: '1', 2: 'Iron Maiden', 3: 'As the royal guard of Her Majesty, I command you, Construct... Arrest the human by your side, and hand me the human!', 4: '1'}
+17	16		201							{1: '1', 2: '1021001'}
+18	101		401							{1: '2', 2: '1507'}
+19	17		301							{1: '1', 2: 'Lucia', 3: 'Watch your feet, Commandant! The guards are crawling out from the trapdoors below us!', 4: '1'}
+20	18		201							{1: '1', 2: '500015'}
+21	19		301							"{1: '1', 2: 'Iron Maiden', 3: ""Defy Her Majesty's will, and you too will be shackled, regardless if you are a fierce Construct warrior or not!"", 4: '1'}"
+22	20		201							{1: '1', 2: '1021001'}
+23	102		401							{1: '2', 2: '1515'}
+24	21		301							"{1: '1', 2: 'Lucia', 3: ""Commandant! It's Liv's signal...!"", 4: '1'}"
+25	22		201							{1: '1', 2: '1031001'}
+26	23		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+27	24		301							{1: '1', 3: 'A holographic projection of Liv appears on your comms...', 4: '1'}
+28	25		301							"{2: 'Liv', 3: ""Lucia... something's... wrong... in... danger..."", 4: '1'}"
+29	26		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+30	27		201							{1: '1', 2: '500015'}
+31	28		301		1	PanelActor1Shake	AniZhuanchangBegin			{1: '1', 2: 'Iron Maiden', 3: 'My servants! Take down the Construct and human before me!', 4: '1'}

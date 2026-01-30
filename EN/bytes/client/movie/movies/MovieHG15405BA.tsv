@@ -1,0 +1,59 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 3: '0', 4: '0.9', 5: '0'}
+2	2		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1165.jpg'}
+3	3		401							{1: '1', 2: '201'}
+4	4		301			DialogEnable				{3: 'Eleanor pulls over another chair from nearby and sits down.'}
+5	5		301							{3: 'She picks up the wristband terminal for the game.'}
+6	6		201							{1: '1', 2: '501130', 3: '4'}
+7	7		301							{1: '1', 2: 'Eleanor', 3: 'No one seems to be initiating this round yet.', 4: '1', 18: '100007558'}
+8	8		302							"{2: ""Probably won't for a while yet."", 3: '9'}"
+9	9		204							{1: '1'}
+10	10		301							{2: 'Eleanor', 3: 'Yeah...', 4: '1', 18: '100007559'}
+11	11		301							{3: 'Eleanor looks at you with great interest.'}
+12	12		301							"{2: 'Eleanor', 3: ""If I were your opponent, I'd drag out the game too."", 4: '1', 18: '100007560'}"
+13	13		302							{2: 'Hold out for an hour.', 3: '14', 4: 'Hmm?', 5: '14'}
+14	14		204							{1: '1', 2: '2'}
+15	15		301							"{2: 'Eleanor', 3: ""You're thinking the same thing, aren't you?"", 4: '1', 18: '100007561'}"
+16	16		301							{3: 'Eleanor chuckles.'}
+17	17		204							{1: '1'}
+18	18		301							{2: 'Eleanor', 3: 'I thought that was part of your strategy...', 4: '1', 18: '100007562'}
+19	19		301							"{2: 'Eleanor', 3: ""By just hunkering down in a safe zone, you can prolong your opponent's torment."", 4: '1', 18: '100007563'}"
+20	20		301							{3: 'In a cage without the concept of time, everyone would lose their grip on time.'}
+21	21		301							{3: 'Control over sleep and the body blurs as the hours stretch and collapse.'}
+22	22		301							{3: 'An hour was supposed to be for rest—or to rethink the next move. But as the game wore on, it twisted into something else: another thread woven into the nightmare.'}
+23	23		302							{2: 'This must be the effect the designers intended.', 3: '24'}
+24	24		301							"{3: 'The word ""Filtering"" surfaces in your mind.'}"
+25	25		301							"{2: 'Eleanor', 3: ""I couldn't agree more."", 4: '1', 18: '100007564'}"
+26	26		301							{2: 'Eleanor', 3: 'Speaking of which, now, do we have a chance to spend the rest of our time together?', 4: '1', 18: '100007565'}
+27	27		203							{1: '1', 2: '0.5', 5: '-60'}
+28	28		301							{3: 'Eleanor moves to sit closer to you.'}
+29	29		204							{1: '1', 2: '4'}
+30	30		301							"{2: 'Eleanor', 3: ""Aren't you even a little curious about all this?"", 4: '1', 18: '100007566'}"
+31	31		302							{2: 'Not as much as my curiosity about you.', 3: '32'}
+32	32		301							{2: 'Eleanor', 3: 'Me? Just a bird trying to break free from its cage, chasing after freedom.', 4: '1', 18: '100007567'}
+33	33		301							{3: 'Eleanor points toward the sky, her words pulling you back to the train of thought you had just lost.'}
+34	34		301							{3: 'She flicks the cards from the table between her fingers, sending them spinning through the air before they return to her hand.'}
+35	35		302							{2: 'May I take a look at your terminal?', 3: '36'}
+36	36		204							{1: '1', 2: '8'}
+37	37		301							{2: 'Eleanor', 3: 'In principle, I should say no.', 4: '1', 18: '100007568'}
+38	38		204							{1: '1', 2: '4'}
+39	39		203							{1: '1', 2: '0.5', 5: '-100'}
+40	40		301							{2: 'Eleanor', 3: 'But... alright, as a trade, indulge my curiosity about you, too?', 4: '1', 18: '100007569'}
+41	41		302							"{2: ""Compared to your situation... there's only a slight difference."", 3: '42', 4: 'I just came alone to search for supplies and got separated from my companions.', 5: '42'}"
+42	42		202						250.0	{1: '1'}
+43	43		401							{1: '2', 2: '9332010'}
+44	44		104						200.0	{1: '0|-100|-100', 2: '0.25'}
+45	45		104						100.0	{2: '0.25'}
+46	46		104						100.0	{1: '0|50|0', 2: '0.25'}
+47	47		104						100.0	{2: '0.25'}
+48	48		301							{3: 'Eleanor tosses the terminal to you—clearly unconcerned about your injuries.'}
+49	49		302							{2: '(Examine the terminal once more)', 3: '50'}
+50	50		301							{3: 'Your fingers trace the metal frame, brushing over the words about freedom etched along its edges.'}
+51	51		302							{2: 'Thank you.', 3: '52'}
+52	52		301							{3: 'The woman takes the terminal and places it back on the table.'}
+53	53		302							{2: '(Walk toward the sofa in the room)', 3: '54'}
+54	54		401							{1: '2', 2: '4833'}
+55	55		301							{3: 'You lean back into the sofa, carefully avoiding any contact with the wounds.'}
+56	56		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '3'}
+57	57		301							{3: 'The painkillers finally kick in—yelids leaden, thoughts turning syrupy slow.'}
+58	58		301		1		AniZhuanchangBegin			"{3: ""In the last flicker of wakefulness, Eleanor's fingers brush your shoulder as she smooths the blanket over you.""}"

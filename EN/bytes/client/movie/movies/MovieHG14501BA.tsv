@@ -1,0 +1,142 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory717.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				{3: 'On your rare morning off, you finally put away your terminal, spread out lazily on the bed, and enjoy a moment of leisure.'}
+4	4		301							{3: 'It feels strange to have a completely empty schedule after being used to working 24/7.'}
+5	5		301							"{3: ""While you know this is your well-deserved free time and it's okay to do absolutely nothing—a restless urge stirs in your heart, telling you to go out for a walk.""}"
+6	6		301							{3: 'But... what would you do after going out?'}
+7	7		401							{1: '2', 2: '2626'}
+8	8		301				AniZhuanchangBegin			{3: 'As you ponder this question, someone knocks on the lounge door.'}
+9	9		401							{1: '2', 2: '754'}
+10	10		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+11	11		201							{1: '1', 2: '500907'}
+12	12		301			AniZhuanchangEnd				{1: '1', 2: 'Bridget', 3: 'Hey, 【kuroname】!', 4: '1'}
+13	13		302							{2: 'Bridget...?', 3: '14'}
+14	14		301							"{3: ""It's Bridget, wearing a coating you've never seen before.""}"
+15	15		301				DialogDisable			{2: 'Bridget', 3: 'Are you going to let me in?', 4: '1'}
+16	16		302							{2: 'Please.', 3: '22', 4: 'Can we just talk here?', 5: '17'}
+17	17		301			DialogEnable				{2: 'Bridget', 3: 'Hmm?', 4: '1'}
+18	18		301							"{3: 'Bridget raises an eyebrow, giving you an innocent smile that clearly says ""Really?""'}"
+19	19		302							{2: '...Please, come in.', 3: '20'}
+20	20		204							{1: '1', 2: '2'}
+21	21		301				DialogDisable			"{2: 'Bridget', 3: ""That's more like it. A commandant who can't read the room won't be very popular, right?"", 4: '1'}"
+22	22		202							{1: '1'}
+23	23		502							{1: 'RImgBg1DisableSlow'}
+24	24		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory717.jpg'}
+25	25		201							{1: '1', 2: '500907'}
+26	26		301			DialogEnable				{1: '1', 3: 'Bridget takes out a sealed folder after coming in.'}
+27	27		301				AniZhuanchangBegin			{2: 'Bridget', 3: 'Here you go. I was passing by, and the Science Council asked me to deliver this.', 4: '1'}
+28	28		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+29	29		202							{1: '1', 6: '1'}
+30	30		504							{1: '0.7'}
+31	31		301			AniZhuanchangEnd				{3: 'One hour ago.'}
+32	32		401							{1: '2', 2: '2872'}
+33	33		301							{3: 'With the hiss of gas dissipating, the maintenance pod opens, and Bridget gets up from within.'}
+34	34		201							{1: '1', 2: '500116'}
+35	35		301							{1: '1', 2: 'Female Technician', 3: 'Frame inspection complete. All severely worn parts have been replaced. Frame diagnostics are within normal parameters. Everything checks out.', 4: '1'}
+36	36		202							{1: '1', 6: '1'}
+37	37		201							{1: '1', 2: '500906'}
+38	38		301							{1: '1', 2: 'Bridget', 3: 'Thanks.', 4: '1'}
+39	39		301							{3: 'Bridget moves away from the maintenance pod and gently stretches her body. She then overhears a name in a conversation.'}
+40	40		202							{1: '1', 6: '1'}
+41	41		201							{1: '1', 2: '500058', 4: '400'}
+42	42		201							{1: '2', 2: '500116', 4: '-400'}
+43	43		301							"{1: '1', 2: 'Male Technician', 3: ""We need to give these documents to the Gray Raven Commandant tomorrow. Why can't we just send them digitally?"", 4: '1'}"
+44	44		301							{2: 'Female Technician', 3: 'Oh, that. The digital version has already been sent. This physical copy was printed by mistake.', 4: '2'}
+45	45		301							"{2: 'Female Technician', 3: ""You know how it is—printing wasn't requested, but the handler just assumed it needed to be printed."", 4: '2'}"
+46	46		301							{2: 'Male Technician', 3: 'Was it the intern?', 4: '1'}
+47	47		301							{2: 'Female Technician', 3: 'Yup.', 4: '2'}
+48	48		301							"{2: 'Female Technician', 3: ""We were going to put it in the archives, but the staff said they never received any notice to file it, also because it isn't important enough for archiving. Well... that last part is true..."", 4: '2'}"
+49	49		301							"{2: 'Female Technician', 3: ""Ahem... That's not the point. Anyway, we decided to send these documents directly to 【kuroname】."", 4: '2'}"
+50	50		301							{3: 'She takes a small sip of her coffee and shakes her head.'}
+51	51		301							{2: 'Female Technician', 3: 'Sigh... Newcomers...', 4: '2'}
+52	52		301							"{2: 'Male Technician', 3: ""Never mind all that. I heard there's a festival in the Education District. Want to check it out together after work?"", 4: '1'}"
+53	53		301							"{2: 'Female Technician', 3: ""Sure, I'd love to! I haven't gone out much lately—It'd be nice to get some fresh air."", 4: '2'}"
+54	54		202							{1: '1', 2: '2', 6: '1'}
+55	55		201							{1: '1', 2: '500906'}
+56	56		301							{1: '1', 3: 'Bridget sinks into deep thought as she listens in on the conversation.'}
+57	57		301				AniZhuanchangBegin			{2: 'Bridget', 3: '(A festival, eh...)', 4: '1'}
+58	58		306							{1: '1'}
+59	59		202							{1: '1', 6: '1'}
+60	60		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory187.png'}
+61	61		301			AniZhuanchangEnd				"{3: ""Bridget has heard of this festival. It's an event co-hosted by the WGAA and the Basic Education Center.""}"
+62	62		301							{3: 'The event started as the Golden Age Cultural Festival, a student-led event in the Education District. It celebrates the upcoming student graduation and reminds the graduates to always remember the Golden Age.'}
+63	63		301							{3: 'The festival grows grander each year. With the involvement of the WGAA and the Executive Court, it has gone beyond a student event and become a festival for the entire city.'}
+64	64		301				AniZhuanchangBegin			{3: 'Even members of Support Force take time off to join the festival.'}
+65	65		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+66	66		306							
+67	67		201							{1: '1', 2: '500906'}
+68	68		301			AniZhuanchangEnd				"{1: '1', 2: 'Bridget', 3: ""Um... this document is for the Gray Raven Commandant? I'm going to see 【kuroname】 in a bit, so I could deliver it."", 4: '1'}"
+69	69		202							{1: '1', 6: '1'}
+70	70		201							{1: '1', 2: '500058', 4: '400'}
+71	71		201							{1: '2', 2: '500116', 4: '-400'}
+72	72		301							"{1: '1', 2: 'Male Technician', 3: ""Hmm... That's not quite within the rules, but... this isn't classified information..."", 4: '1'}"
+73	73		301							{3: 'The other technician cuts him off.'}
+74	74		301				AniZhuanchangBegin			{2: 'Female Technician', 3: 'Great, thank you for offering! That would be a huge help!', 4: '2'}
+75	75		202							{1: '1', 2: '2', 6: '1'}
+76	76		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+77	77		201							{1: '1', 2: '500906'}
+78	78		301			AniZhuanchangEnd				{1: '1', 3: 'Bridget takes the documents with a smile and leaves, but stops in the hall in front of her own reflection in the glass.'}
+79	79		301							{3: 'She stands still, her gaze jumping between her reflection in the glass and the name on the files.'}
+80	80		301							{3: 'She finally makes up her mind.'}
+81	81		301				AniZhuanchangBegin			{2: 'Bridget', 3: '(I gotta switch to a different coating.)', 4: '1'}
+82	82		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+83	83		401							{1: '2', 2: '2871'}
+84	84		301			AniZhuanchangEnd				{1: '1', 3: 'The door to the maintenance room opens once more as Bridget peeks in with a grin and looks at the two technicians.'}
+85	85		204							{1: '1', 2: '2'}
+86	86		301				AniZhuanchangBegin			"{2: 'Bridget', 3: ""Hey, it's me again! I was wondering if you might have time to help me change my coating?"", 4: '1'}"
+87	87		402							{1: '2871'}
+88	88		504							{1: '0'}
+89	89		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory717.jpg'}
+90	90		201							{1: '1', 2: '500907'}
+91	91		301			AniZhuanchangEnd				{1: '1', 3: '...'}
+92	92		302							{2: 'Ah, I see.', 3: '93'}
+93	93		204							{1: '1'}
+94	94		301							{2: 'Bridget', 3: 'Yep!', 4: '1'}
+95	95		302							{2: 'But why did you change your coating?', 3: '96'}
+96	96		204							{1: '1', 2: '3'}
+97	97		301							{3: 'Bridget slaps her forehead and sighs loudly.'}
+98	98		301							{2: 'Bridget', 3: 'You numbskull...', 4: '1'}
+99	99		204							{1: '1'}
+100	100		301							{2: 'Bridget', 3: 'For the festival, of course! The Golden Age Cultural Festival is super fun, and some of the games there are way more interesting when you play with someone else!', 4: '1'}
+101	101		301							"{2: 'Bridget', 3: ""Also, you've been really busy lately, right?"", 4: '1'}"
+102	102		301							"{2: 'Bridget', 3: ""It's your only day off! Why spend it cooped up in the lounge? Let's go out and have some fun!"", 4: '1'}"
+103	103		301							"{2: 'Bridget', 3: ""A date! It's a date! A commandant who can't read the room won't be very popular, right?"", 4: '1'}"
+104	104		204							{1: '1'}
+105	105		301							{3: 'Bridget fixes her gaze on you.'}
+106	106		302							{2: 'You really want to go so badly?', 3: '107', 4: 'You really want to go to this festival with me?', 5: '108'}
+107	107	109	301							{2: 'Bridget', 3: 'I do.', 4: '1'}
+108	108		301							{2: 'Bridget', 3: 'Yes.', 4: '1'}
+109	109		204							{1: '1', 2: '6'}
+110	110		301							"{2: 'Bridget', 3: ""Ahem. Anyway, I'll make sure you have a good time."", 4: '1'}"
+111	111		204							{1: '1'}
+112	112		301							"{2: 'Bridget', 3: ""If you help me complete this festival-going mission, I'll remember your kindness and make sure to return the favor someday."", 4: '1'}"
+113	113		301							{2: 'Bridget', 3: 'Doing me this favor will definitely be worth it. What do you say, 【kuroname】?', 4: '1'}
+114	114		302							"{2: 'You really called it a ""mission""...', 3: '115', 4: ""True. I suppose it's a good deal."", 5: '115'}"
+115	115		301							{2: 'Bridget', 3: 'Besides, this festival is really awesome!', 4: '1'}
+116	116		301							"{2: 'Bridget', 3: ""Come with me! I promise you won't be disappointed."", 4: '1'}"
+117	117		302							"{2: ""Alright, I'll tag along."", 3: '118'}"
+118	118		202							{1: '1', 6: '1'}
+119	119		301							{3: 'The missions have been so stressful lately. This should help you unwind a bit.'}
+120	120		301							{3: 'You start to walk toward the door when Bridget calls out to stop you.'}
+121	121		201							{1: '1', 2: '500907'}
+122	122		301							{1: '1', 2: 'Bridget', 3: 'Hold on, 【kuroname】.', 4: '1'}
+123	123		302							"{2: ""What's wrong?"", 3: '124'}"
+124	124		301							"{2: 'Bridget', 3: ""You're going to the festival dressed like that?"", 4: '1'}"
+125	125		301							{3: 'You look down at your outfit. They are clean, neat, and perfectly ordinary.'}
+126	126		302							{2: 'Is there... something wrong with my outfit?', 3: '127'}
+127	127		301							"{2: 'Bridget', 3: ""This is your work uniform, isn't it? You can't have fun dressed like that!"", 4: '1'}"
+128	128		301							"{2: 'Bridget', 3: ""If you're going to have fun, you need to break from the workday routine, and it all starts with your outfit!"", 4: '1'}"
+129	129		301							"{2: 'Bridget', 3: ""Why don't you change into something more casual? I'll wait for you outside."", 4: '1'}"
+130	130		302				AniZhuanchangBegin			{2: 'Got it.', 3: '131'}
+131	131		301			AniZhuanchangEnd				"{1: '1', 3: ""You change into an outfit that matches Bridget's style and color and invite her back into the room. She cups her chin as she looks you up and down.""}"
+132	132		301							{2: 'Bridget', 3: 'Mm-hmm, much better!', 4: '1'}
+133	133		301							"{2: 'Bridget', 3: ""You've got quite an eye for fashion, Commandant!"", 4: '1'}"
+134	134		301							{2: 'Bridget', 3: 'But something still feels off...', 4: '1'}
+135	135		301							{3: 'Rumor has it Bridget has a great eye for fashion. She sometimes switches to more casual coatings, and her style often sets new trends.'}
+136	136		301							{2: 'Bridget', 3: 'Try these.', 4: '1'}
+137	137		301							{3: 'Bridget pulls out a pair of sunglasses from her pocket and gently puts them on you.'}
+138	138		204							{1: '1', 2: '2'}
+139	139		301							{2: 'Bridget', 3: 'Perfect!', 4: '1'}
+140	140		204							{1: '1'}
+141	141		301		1		AniZhuanchangBegin			"{2: 'Bridget', 3: ""The opening ceremony is about to start. Let's get going."", 4: '1'}"

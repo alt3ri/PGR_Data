@@ -1,0 +1,174 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory546.jpg'}
+2	2		401							{1: '1', 2: '5'}
+3	3		201							{1: '1', 2: '500702', 4: '400'}
+4	4		201							{1: '2', 2: '500019', 4: '-400'}
+5	5		301			DialogEnable				{1: '1', 2: 'Construct', 3: 'Thank you for your cooperation.', 4: '2'}
+6	6		301							{3: 'Echo gives the Construct a nod, except the Construct is fully absorbed by the terminal in hand.'}
+7	7		301							"{3: ""When you see Echo stepping out of the meeting room, you quickly save the draft with the few words and phrases that you've come up with.""}"
+8	8		302							{2: 'Is the inquiry session over?', 3: '9'}
+9	9		301							"{2: 'Construct', 3: ""Gray Raven Commandant? Yes, it's over. Great to see you here."", 4: '2'}"
+10	10		301							"{2: 'Construct', 3: ""We will need Echo to take the next Earth-bound transport craft back to Earth—and as her temporary guardian, you're kindly asked to ensure that she is sent to the specified location."", 4: '2'}"
+11	11		302							{2: 'Of course.', 3: '12'}
+12	12		301							{2: 'Construct', 3: 'Let me mail you about the specifics now... Done.', 4: '2'}
+13	13		401							{1: '2', 2: '2979'}
+14	14		301							{3: 'Checking the mail, you see that the specified location is right around the next branch of Utopia, and the transport craft that you and Echo are taking... is leaving in no time.'}
+15	15		302							"{2: ""She's leaving this soon?"", 3: '16'}"
+16	16		301							"{2: 'Construct', 3: ""Given her unique identity, Echo can't be seen sticking around for too long now..."", 4: '2'}"
+17	17		301							{3: 'The Construct sounds hesitant, apparently not having seen that reaction coming at all.'}
+18	18		301							"{2: 'Echo', 3: ""The target that both the military and I are after isn't here. That much is certain."", 4: '1'}"
+19	19		301							"{2: 'Echo', 3: ""And even with the arrest warrant revoked, people here are probably still going to feel a little confused if they see a commandant with some Construct they've never seen before, no?"", 4: '1'}"
+20	20		502							{1: 'DialogDisable'}
+21	21		302							"{2: ""I don't think that's something we need to worry about..."", 3: '22'}"
+22	22		302							{2: 'Alright, I see.', 3: '23'}
+23	23		202							{1: '2', 6: '1'}
+24	24		203							{1: '1', 2: '0.25'}
+25	25		301			DialogEnable				{3: 'The Construct salutes you before proceeding to disappear around the corner of the hallway.'}
+26	26		502							{1: 'DialogDisable'}
+27	27		302							{2: 'Well, I was hoping we could go to the library...', 3: '28'}
+28	28		302							{2: '...To borrow the poetry collections that you mentioned.', 3: '29'}
+29	29		204							{1: '1', 2: '1'}
+30	30		301			DialogEnable				{2: 'Echo', 3: 'Oh, is that so...', 4: '1'}
+31	31		301							{3: 'Unlike you, Echo seems somewhat excited.'}
+32	32		301							"{2: 'Echo', 3: ""But it indeed makes sense that I shouldn't be seen around now, given my identity."", 4: '1'}"
+33	33		301							{2: 'Echo', 3: 'But I still very much look forward to reading your work with the insight gained from the books, Commandant, and it may allow me to experience their charm in a different way.', 4: '1'}
+34	34		302							"{2: ""God only knows how long that's going to take, though..."", 3: '35'}"
+35	35		204							{1: '1'}
+36	36		301							"{2: 'Echo', 3: ""That's fine. Time is no object... Wait, when's our flight? Think we need to get going now, right?"", 4: '1'}"
+37	37		302							{2: 'Crap, we gotta run now.', 3: '38'}
+38	38		301							{3: 'You grab Echo by the wrist and start running down the hallway.'}
+39	39		401							{1: '2', 2: '1504'}
+40	40		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+41	41		204							{1: '1', 2: '7'}
+42	42		301							"{2: 'Echo', 3: ""H-hey! It says on the wall that you aren't supposed to run here!"", 4: '1'}"
+43	43		302							"{2: ""Celica would've protested already if they actually meant it!"", 3: '44'}"
+44	44		204							{1: '1', 2: '6'}
+45	45		301							{2: 'Echo', 3: 'B-but...', 4: '1'}
+46	46		301							{3: 'Looking down at her wrist, Echo blushes, perhaps feeling embarrassed about doing something the signs explicitly forbid.'}
+47	47		302							{2: 'Almost there. The pad is actually not far from here!', 3: '48'}
+48	48		301							{2: 'Echo', 3: 'Fine... just this once, then!', 4: '1'}
+49	49		202							{1: '1'}
+50	50		301				AniZhuanchangBegin			{3: 'All that can be heard reverberating further down the otherwise quiet hallway are hurried footsteps.'}
+51	51		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+52	52		502						2000.0	{1: 'DialogDisable'}
+53	53		401							{1: '1', 2: '36'}
+54	54		401							{1: '2', 2: '569'}
+55	55		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+56	56		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+57	57		401							{1: '1', 2: '169'}
+58	58		401							{1: '2', 2: '1506'}
+59	59		502							{1: 'RImgBg1Shake'}
+60	60		301			DialogEnable				{3: 'You wake up to a violent shake.'}
+61	61		301							"{3: ""Seeing a blanket on you that you don't recognize, you figure Echo probably put it on you.""}"
+62	62		301							"{3: ""You've been working non-stop for quite a few days now, but you still don't think it's appropriate to fall asleep on a transport craft.""}"
+63	63		301							{3: 'You look out the window as you rub your eyes for a clear head—and notice that the transport craft is quickly descending through the night sky.'}
+64	64		302							{2: 'Is everything okay?', 3: '65'}
+65	65		201							{1: '1', 2: '500702', 3: '1'}
+66	66		301							"{1: '1', 2: 'Echo', 3: ""Don't worry. We're just descending."", 4: '1'}"
+67	67		203							{1: '1', 2: '0.25', 3: '400'}
+68	68		201							{1: '2', 2: '500019', 4: '-400'}
+69	69		301							"{1: '1', 2: 'Piloting Construct', 3: ""We just received an emergency notice that there will be a meteor rainstorm soon, and we'll lose our connection with Babylonia if we keep going as planned."", 4: '2'}"
+70	70		301							"{2: 'Piloting Construct', 3: ""Best we wait it out before we take to the air again. Now, hold on tight. We're touching down."", 4: '2'}"
+71	71		202							{1: '1', 2: '2', 6: '1'}
+72	72		301							"{3: ""Upon landing, the plane doesn't shake as violently as you thought it would, thanks to the pilot's skillful maneuvering.""}"
+73	73		402							{1: '569'}
+74	74		301							{3: 'With the engine turned off, the craft eases into the silent embrace of the night.'}
+75	75		201							{1: '1', 2: '500702', 4: '400', 6: '1'}
+76	76		201							{1: '2', 2: '500019', 4: '-400', 6: '1'}
+77	77		302							{2: 'Can I open the cabin door for some fresh air?', 3: '78'}
+78	78		301							{2: 'Piloting Construct', 3: 'Motion sickness? No way...', 4: '2'}
+79	79		302							"{2: ""Thought I'd check out the meteors, for the rare sight."", 3: '80'}"
+80	80		301							"{2: 'Piloting Construct', 3: ""Ohh... well, just don't wander off..."", 4: '2'}"
+81	81		301							{3: 'The Construct casts a glance at Echo.'}
+82	82		302							"{2: ""Rest assured. Let's go."", 3: '83'}"
+83	83		301				AniZhuanchangBegin			{3: 'You hop out of the craft and wave back at Echo.'}
+84	84		202			DialogDisable			800.0	{1: '1', 2: '2', 6: '1'}
+85	85		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_10.jpg'}
+86	86		305							{1: '2', 2: '213'}
+87	87		201							{1: '1', 2: '500702'}
+88	88		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCommon/FxUi2DLihuiFireGlow1000.prefab', 2: '2', 3: '1', 4: '1'}
+89	89		301			DialogEnable				{1: '1', 3: 'You start a campfire near the craft and sit on the ground with Echo.'}
+90	90		204							{1: '1', 2: '1'}
+91	91		301							"{2: 'Echo', 3: ""You're getting more and more proficient at starting a campfire now."", 4: '1'}"
+92	92		302							{2: 'Been getting a lot of practice these days.', 3: '93'}
+93	93		301							"{2: 'Echo', 3: ""So, you didn't really come out just to start this campfire here, did you?"", 4: '1'}"
+94	94		502							{1: 'DialogDisable'}
+95	95		302							{2: 'Came out for the meteors, of course.', 3: '96'}
+96	96		302							"{2: ""And you didn't seem like you wanted to stay there anyway."", 3: '97'}"
+97	97		204							{1: '1'}
+98	98		301			DialogEnable				{2: 'Echo', 3: '...Me? As far as those guys from Babylonia are concerned, I should probably stay where they can see me.', 4: '1'}
+99	99		204							{1: '1', 2: '14'}
+100	100		301							"{2: 'Echo', 3: ""But truth be told... I think I'd much rather be stepping on actual ground than being inside a craft."", 4: '1'}"
+101	101		301							"{3: ""You see a tinge of sadness in Echo's eyes, and you can't help but wonder if she's reminded of her days living in Pickman's flying fortress.""}"
+102	102		204							{1: '1'}
+103	103		301							"{2: 'Echo', 3: ""I'm not turning a blind eye to my past, though... and it's not like I've got nothing but bad things happen to me anyway."", 4: '1'}"
+104	104		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCommon/FxUi2DLihuiFireGlow1000.prefab', 4: '1'}
+105	105		202							{1: '1', 6: '1'}
+106	106		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg', 3: '0', 4: '1', 5: '0.5'}
+107	107		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+108	108		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg'}
+109	109		301							{3: 'Says Echo as a star swooshes past the night sky, leaving a silver trail in its wake before disappearing into the heavens behind her head.'}
+110	110		301							{3: 'A second later, countless stars cascade from above, turning the night sky into a canvas with mesmerizing star trails.'}
+111	111		301							"{3: ""This isn't the first time you've seen a meteor shower, but this is one of the few times you actually have a good look at it.""}"
+112	112		301							"{3: ""You trace the stars until they disappear in the direction around Echo's face.""}"
+113	113		301							"{3: ""Engrossed, she looks up, her mouth curling into a smile. Aglow with starlight, her eyes are as bright as the stars she's gazing at.""}"
+114	114		301							"{3: ""Looking at Echo, you're every bit as absorbed—and it isn't until she starts talking that you quickly look away.""}"
+115	115		301							{2: 'Echo', 3: 'Cecily and I did this a few times when I was still a kid.'}
+116	116		301							{2: 'Echo', 3: 'She had her eyes closed this one time when a shooting star flew past. I asked her why she was doing that, and she told me she was making a wish, because shooting stars can bring people luck.'}
+117	117		301							{2: 'Echo', 3: 'The star was gone by the time I was ready to make a wish, and that got me feeling very upset for quite a few days.'}
+118	118		301							{2: 'Echo', 3: 'So, Cecily carved me a little star to help me feel better. She told me it was to make up for the shooting star I missed... Now that I think back on it, I was really a child at that time.'}
+119	119		302							"{2: 'And I guess this is the ""Blessed Star"" that you mentioned?', 3: '120'}"
+120	120		301							"{2: 'Echo', 3: ""Yes, but since I'm giving it to you... I'm going to add a little twist to it.""}"
+121	121		302							"{2: ""I can't wait."", 3: '122'}"
+122	122		301							{2: 'Echo', 3: 'Well, besides the star itself, maybe I can also...'}
+123	123		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3801_10.jpg', 3: '0', 4: '1', 5: '0.5'}
+124	124		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+125	125		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_10.jpg'}
+126	126		201							{1: '1', 2: '500702'}
+127	127		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCommon/FxUi2DLihuiFireGlow1000.prefab', 2: '2', 3: '1', 4: '1'}
+128	128		301							{1: '1', 3: 'Says Echo as she takes out her notebook and starts writing away.'}
+129	129		401						500.0	{1: '2', 2: '910'}
+130	130		402							{1: '910'}
+131	131		301							{3: 'You look at Echo, immersed in the moment.'}
+132	132		301							"{3: ""Your terminal seems to be the only thing you can write with at the moment when you're done patting yourself down... except a pen and a piece of paper seem more fitting for an occasion like this.""}"
+133	133		302							{2: '...Do you happen to have an extra pen and paper with you?', 3: '134'}
+134	134		301							{2: 'Echo', 3: 'I do. Please give me a second.', 4: '1'}
+135	135		301							"{3: ""She pulls out of her bag a pen that looks the same as the one she's using, then tears two pages off her notebook and passes them to you.""}"
+136	136		302							"{2: ""Maybe it'd be easier for me to write it in your way..."", 3: '137'}"
+137	137		301							{2: 'Echo', 3: 'Are you talking about your poem?', 4: '1'}
+138	138		301							"{2: 'Echo', 3: ""For me, the tools don't matter that much... This is just a personal habit."", 4: '1'}"
+139	139		301							{3: 'She taps on her paper with the tip of her pen.'}
+140	140		204							{1: '1', 2: '1'}
+141	141		301							"{2: 'Echo', 3: ""I'm speaking purely from my experience here, but when it comes to writing poems, I think that feeling the moment seems more important?"", 4: '1'}"
+142	142		204							{1: '1', 2: '6'}
+143	143		301							"{2: 'Echo', 3: ""Take this very moment, for example. See how we're having such a great moment now...? And by that, I mean the meteor shower!"", 4: '1'}"
+144	144		302							{2: 'Agreed.', 3: '145'}
+145	145		204							{1: '1', 2: '10'}
+146	146		301							{2: 'Echo', 3: 'Com—man—dant, your shoulders are shaking. You are not trying to hold back a laugh there, are you?', 4: '1'}
+147	147		202							{1: '1', 6: '1'}
+148	148		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCommon/FxUi2DLihuiFireGlow1000.prefab', 4: '1'}
+149	149		301				AniZhuanchangBegin			{3: 'Seeing Echo clench her fists, you jump to your feet and take a step backward. Before you know it, the two of you start circling and squabbling around the campfire like kids.'}
+150	150		502						500.0	{1: 'DialogDisable'}
+151	151		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_10.jpg'}
+152	152		201							{1: '1', 2: '500702'}
+153	153		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCommon/FxUi2DLihuiFireGlow1000.prefab', 2: '2', 3: '1', 4: '1'}
+154	154		301			DialogEnable				{1: '1', 3: '...The shooting stars are long gone when the two of you look into the heavens again.'}
+155	155		302							{2: 'Phew... Ha... Stop. I lost...', 3: '156'}
+156	156		204							{1: '1', 2: '5'}
+157	157		301							"{2: 'Echo', 3: 'If there\'s a chance, I\'ll make sure to have someone get me a copy of ""World Government\'s Rules of Etiquette, Third Edition"", and I\'m going to make you read it! Sometimes, you really just throw your manners out the window, Commandant!', 4: '1'}"
+158	158		302							{2: 'Does Babylonia still have that?!', 3: '159'}
+159	159		301							{2: 'Echo', 3: 'Of course they do!', 4: '1'}
+160	160		502							{1: 'DialogDisable'}
+161	161		302							{2: 'Uhm... Well...', 3: '162'}
+162	162		204							{1: '1'}
+163	163		302							{2: 'Wait, did you get to make a wish to the stars this time?', 3: '164'}
+164	164		302							{2: 'Probably easier for a wish to be heard with so many of them.', 3: '166'}
+165	165		204							{1: '1', 2: '1'}
+166	166		301			DialogEnable				"{2: 'Echo', 3: ""I'm way past the age when I used to believe that God would lend us an ear and make our wishes come true... But you're right. I'm going to make a lot of wishes nonetheless."", 4: '1'}"
+167	167		204							{1: '1', 2: '6'}
+168	168		301							"{2: 'Echo', 3: ""And you'll see what I mean exactly when you get..."", 4: '1'}"
+169	169		301							"{3: ""Echo's voice becomes so quiet now that you can barely hear what she's saying.""}"
+170	170		302							{2: 'What did you just say?', 3: '171'}
+171	171		204							{1: '1', 2: '1'}
+172	172		301							{2: 'Echo', 3: 'My wishes are going to be heard anyways, is what I said!', 4: '1'}
+173	173		301		1		AniZhuanchangBegin			{3: 'Echo says with a smile, her eyes now glistening with the warm firelight rather than the cold starlight.'}

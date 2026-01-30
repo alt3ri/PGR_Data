@@ -1,0 +1,128 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '204'}
+3	3		301			DialogEnable				{3: 'Combat supplies... ready.'}
+4	4		301							"{3: ""The Gray Raven Commandant's room... located.""}"
+5	5		301							{3: 'She reviews her previous training in her M.I.N.D.'}
+6	6		301							"{3: ""One more thing—don't forget to smile.""}"
+7	7		301							"{3: ""Don't. Forget. To smile.""}"
+8	8		301							{3: 'She stands in front of the mirror and practices.'}
+9	9		301							{3: '...'}
+10	10		301							"{3: ""It's still not a pleasant smile, but at least it's no longer frightening.""}"
+11	11		301							"{3: ""At the very least, it shouldn't make anyone mad.""}"
+12	12		301				AniZhuanchangBegin			{3: 'Everything should be ready to go now.'}
+13	13		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+14	14		301			AniZhuanchangEnd				"{3: 'In every sense of the word, today should be an ""ordinary"" day.'}"
+15	15		301							"{3: ""No ground missions. No meetings. Today, you've spent the entire morning in the training room.""}"
+16	16		301							{3: 'At noon, you visit the WGAA to collect the file you asked Ayla to help find, and plan on checking up on No. 21.'}
+17	17		301							"{3: ""You weren't expecting your plans to go right out the window.""}"
+18	18		301							{3: '—You now stand outside of your room, staring at the scene inside.'}
+19	19		301				AniZhuanchangBegin			"{3: ""Prior to that, you never thought you'd be so shocked to see the state of your room.""}"
+20	20		504							{1: '0.7'}
+21	21		201							{1: '1', 2: '1031001'}
+22	999		401							{1: '1', 2: '36'}
+23	22		301			AniZhuanchangEnd				{1: '1', 2: 'Liv', 3: 'I just walked by your room, Commandant. The door was open, so I saw...', 4: '1'}
+24	23		301							"{2: 'Liv', 3: ""...Commandant, I know you've been busy... But you still need to tidy up your room."", 4: '1'}"
+25	24		301							"{2: 'Liv', 3: ""At least pick up a little bit. You can't just throw everything on the ground like that."", 4: '1'}"
+26	25		301							{2: 'Liv', 3: 'And also... Um...', 4: '1'}
+27	26		301							{3: 'Liv seems to hesitate a moment.'}
+28	29		302				AniZhuanchangBegin			"{2: '?', 3: '27', 4: ""What's wrong with my room?"", 5: '27'}"
+29	27		202							{1: '1', 6: '1'}
+30	28		504							{1: '0'}
+31	30		202							{1: '1', 6: '1'}
+32	31		401							{1: '2', 2: '1513'}
+33	32		301			AniZhuanchangEnd				{3: 'Your heart sinks. Rushing over to your room, you see that...'}
+34	33		301							{3: 'The door is wide open, revealing the disaster within.'}
+35	998		401							{1: '1', 2: '205'}
+36	34		301							{3: 'All kinds of old toys, badges, glass bottles, cog boxes, and mechanical parts litter the ground.'}
+37	35		302							"{2: 'What happened?!', 3: '36', 4: ""And why's there hypertune material?!"", 5: '36'}"
+38	36		301							{3: 'With no clear place to step, you see a white Construct sitting among the mess, trying to stuff a strange CUB into a box.'}
+39	37		201							{1: '1', 2: '500328'}
+40	38		301							"{1: '1', 2: 'No. 21', 3: ""Ah! It's you, 【kuroname】."", 4: '1'}"
+41	39		301							"{2: 'No. 21', 3: ""The door was open, so I let myself in. I couldn't find anyone, so I've been waiting for you here."", 4: '1'}"
+42	40		302							"{2: ""What's all this on the ground..."", 3: '41'}"
+43	41		301							"{2: 'No. 21', 3: 'These are ""gifts.""', 4: '1'}"
+44	42		301							{2: 'No. 21', 3: 'For you, 【kuroname】.', 4: '1'}
+45	43		302							{2: 'Gifts?', 3: '44'}
+46	44		301							"{2: 'No. 21', 3: ""You helped me, so I should say thank you. Which I haven't."", 4: '1'}"
+47	45		302							{2: 'Thank you.', 3: '46'}
+48	46		301							{2: 'No. 21', 3: 'Why are you thanking me for thanking you?', 4: '1'}
+49	47		302							{2: 'For the gift.', 3: '48'}
+50	48		301							{2: 'No. 21', 3: 'Oh...', 4: '1'}
+51	49		202							{1: '1', 6: '1'}
+52	50		301							{3: 'No. 21 stands up and turns her back. Her shoulders move up and down as if taking several deep breaths, then she turns to face you.'}
+53	51		201							{1: '1', 2: '500328', 3: '2'}
+54	52		301							{1: '1', 2: 'No. 21', 3: 'Thank you, 【kuroname】.', 4: '1'}
+55	53		302							{2: '...', 3: '54'}
+56	54		301							{2: 'No. 21', 3: 'Is my smile... really that scary?', 4: '1'}
+57	55		302							"{2: ""Not at all. It's cute."", 3: '56', 4: 'A little...', 5: '58'}"
+58	56		204							{1: '1'}
+59	57	65	301							{2: 'No. 21', 3: 'Looks like all that practice paid off.', 4: '1'}
+60	58		202							{1: '1', 6: '1'}
+61	59		301							{3: 'No. 21 lowers her head and rubs her face with her hands completely covered by her sleeves.'}
+62	60		201							{1: '1', 2: '500328', 3: '2'}
+63	61		301							{1: '1', 2: 'No. 21', 3: 'What about now?', 4: '1'}
+64	62		302							"{2: ""...There's no difference!"", 3: '63'}"
+65	63		204							{1: '1'}
+66	64		301							{2: 'No. 21', 3: 'Really...? Then I guess... I still need practice.', 4: '1'}
+67	65		301							{2: 'No. 21', 3: 'Well... Next up.', 4: '1'}
+68	66		202							{1: '1', 6: '1'}
+69	67		301							{3: 'No. 21 gets down on the ground like a small animal, looks up at you, then raises her hands like two paws.'}
+70	68		301							{2: 'No. 21', 3: '...Meooooow?'}
+71	69		301				DialogDisable			{3: 'With the door still open, you hear some sounds of bewilderment coming from outside.'}
+72	70		302							{2: 'Whoa! Whoa!! Whoa!!!!', 3: '71', 4: '(Close the door!)', 5: '71'}
+73	71		302							{2: 'Where on earth did you learn that?', 3: '72'}
+74	72		301			DialogEnable				{3: 'Right then, the discussion outside the door seems to get louder.'}
+75	73		201							{1: '1', 2: '500328'}
+76	74		301							"{1: '1', 2: 'No. 21', 3: 'My machine for learning ""emotions"" broke.', 4: '1'}"
+77	75		301							"{2: 'No. 21', 3: 'So I asked some people how to express ""gratitude.""', 4: '1'}"
+78	76		301							"{2: 'No. 21', 3: 'This is a ""common way to express gratitude.""', 4: '1'}"
+79	77		302							"{2: 'Quit learning all that nonsense.', 3: '78', 4: ""Who on earth said that's common?!"", 5: '78'}"
+80	78		301							{2: 'No. 21', 3: 'Is this wrong?', 4: '1'}
+81	79		301				DialogDisable			{3: 'No. 21 bows her head. Her quiet gray eyes seem to express a look of confusion.'}
+82	997		401							{1: '1', 2: '208'}
+83	80		302							{2: '21', 3: '81'}
+84	81		302							{2: 'Human emotions... are complicated.', 3: '82'}
+85	82		302							"{2: ""There're a lot of different ways to express yourself."", 3: '83'}"
+86	83		302							{2: 'No need to rush.', 3: '84'}
+87	84		302							{2: 'Just go at your own pace.', 3: '85'}
+88	85		301			DialogEnable	DialogDisable			"{2: 'No. 21', 3: ""...I don't understand."", 4: '1'}"
+89	86		302							{2: 'Your desire to protect Vera and Noctis...', 3: '87'}
+90	87		302							{2: 'Your disappointment after being misunderstood...', 3: '88'}
+91	88		302							{2: 'Your happiness after receiving a gift.', 3: '89'}
+92	89		302							"{2: ""They're proof of your emotions."", 3: '90'}"
+93	90		302							{2: 'They belong to you.', 3: '91'}
+94	91		301			DialogEnable	DialogDisable			"{3: ""People will feel sad, smile, sympathize, and decide things according to their own will. Heartless machines won't do that. Not like her. These emotions belong to her and her alone..""}"
+95	92		302							{2: 'If these emotions get too much for you...', 3: '93'}
+96	93		302							{2: 'Others will help you share the burden.', 3: '94'}
+97	94		302							{2: 'Vera, Noctis...', 3: '95'}
+98	95		302							{2: 'And me.', 3: '96'}
+99	96		301			DialogEnable	DialogDisable			"{3: ""You place the brand-new audio-visual terminal that you were holding in No. 21's hands.""}"
+100	97		302							{2: 'That documentary on the lone white wolf you were watching...', 3: '98'}
+101	98		302							{2: 'I checked with the WGAA and found the next episode.', 3: '99'}
+102	99		301			DialogEnable				{2: 'No. 21', 3: 'That white wolf... I saw it go home.', 4: '1'}
+103	100		301				DialogDisable			"{2: 'No. 21', 3: ""...I know that wasn't real though. It keeps wandering in the snow."", 4: '1'}"
+104	101		302							{2: 'This is the real ending.', 3: '102'}
+105	102		302							{2: 'It finds a good home. I promise.', 3: '103'}
+106	103		301			DialogEnable				{2: 'No. 21', 3: 'Really...?', 4: '1'}
+107	104		301							{2: 'No. 21', 3: 'You really are a lot like Captain, but also not at the same time.', 4: '1'}
+108	105		301							{2: 'No. 21', 3: 'Your scent is special, 【kuroname】.', 4: '1'}
+109	106		301							{2: 'No. 21', 3: 'When I was in the lab, I never smelled anything like it.', 4: '1'}
+110	107		301							"{2: 'No. 21', 3: ""...It's warm and kind. I like it."", 4: '1'}"
+111	108		301							"{2: 'No. 21', 3: 'I want to have a ""human scent.""', 4: '1'}"
+112	109		301							"{2: 'No. 21', 3: ""I've thought you smelled nice ever since I first met you."", 4: '1'}"
+113	110		301							{3: 'As No. 21 stiffly attempts to convey her inner thoughts, she approaches you step-by-step.'}
+114	111		301							"{3: ""She's just like a wild animal who bears their fangs at distant enemies and snuggles up to their trusted companions, snoring gently.""}"
+115	112		301							{2: 'No. 21', 3: 'I feel different every time I see you, 【kuroname】.', 4: '1'}
+116	113		301							"{2: 'No. 21', 3: ""But I don't hate this feeling."", 4: '1'}"
+117	114		301							{3: 'No. 21 stops talking. Her eyes are fixed on you.'}
+118	115		302							{2: 'Why are you staring at me?', 3: '116'}
+119	116		301							"{2: 'No. 21', 3: ""Because I can't take my eyes off you."", 4: '1'}"
+120	117		301							{2: 'No. 21', 3: 'Is that wrong?', 4: '1'}
+121	118		301							{3: 'No. 21 tilts her head and appears to be contemplating if she said something wrong.'}
+122	119		301							"{3: ""Her expression is so charming, you can't help but reach out and pet the top of her head.""}"
+123	120		301							{3: 'Right as you are about to retract your hand, No. 21 lifts her head and rubs it against your hand, her soft cheeks touching your palm.'}
+124	121		301							{3: 'Gradually, the artificial sunlight outside the window begins to set.'}
+125	122		301							{3: 'Warm light fills the room, enveloping you and No. 21 in a warm glow.'}
+126	123		301							{3: 'Suddenly, you notice that the sunlight is as warm as it was the first day you met.'}
+127	124		301		1		AniZhuanchangBegin			{3: 'After making just a brief appearance in her life, you hold her hand.'}

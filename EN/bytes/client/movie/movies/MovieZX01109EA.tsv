@@ -1,0 +1,27 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory163.png'}
+2	2		401							{1: '1', 2: '16'}
+3	5		201							{1: '1', 2: '1031001', 3: '7', 4: '-400'}
+4	6		201							{1: '2', 2: '500026', 4: '400'}
+5	7		301			DialogEnable				"{1: '1', 2: 'Liv', 3: ""Yazi's body suddenly disappeared... as if teleported to somewhere else..."", 4: '1'}"
+6	8		301							{2: 'Liv', 3: 'This place is... very odd.', 4: '1'}
+7	10		301							"{2: 'Lee', 3: ""It's a virtual M.I.N.D... and yet its precision level is higher than that of a real one."", 4: '2'}"
+8	11		301							"{2: 'Lee', 3: ""That sand painting seemed to be some kind of trigger device. And now we're inside Huaxu's virtual M.I.N.D. "", 4: '2'}"
+9	12		302							"{2: 'Where are the others?', 3: '13', 4: ""Where's Lucia?"", 5: '13'}"
+10	13		202							{1: '1', 2: '2', 6: '1'}
+11	100		201							{1: '1', 2: '1081001', 3: '5'}
+12	14		301							{1: '1', 2: 'Kamui', 3: 'Commandant...! Lee...! Liv!', 4: '1'}
+13	15		202							{1: '1'}
+14	16		301							{3: 'Two familiar figures run toward you from the distance.'}
+15	17		201							{1: '1', 2: '500026'}
+16	18		301							{1: '1', 2: 'Lee', 3: 'How did you find us?', 4: '1'}
+17	19		201							{1: '1', 2: '500155'}
+18	20		301							{1: '1', 2: 'Chrome', 3: 'We went with the river flow.', 4: '1'}
+19	21		201							{1: '1', 2: '500026'}
+20	22		301							"{1: '1', 2: 'Lee', 3: 'If we\'re inside Huaxu\'s M.I.N.D., then everything we see here is created by her ""mind"".', 4: '1'}"
+21	23		301							{2: 'Lee', 3: 'So Huaxu and Qu are not in cahoots after all.', 4: '1'}
+22	24		201							{1: '1', 2: '1031001', 3: '14'}
+23	25		301							"{1: '1', 2: 'Liv', 3: ""Maybe it's true that Huaxu never wanted to hurt us..."", 4: '1'}"
+24	101		302							{2: 'Our immediate priority is to find Lucia.', 3: '26'}
+25	26		201							{1: '1', 2: '500026'}
+26	27		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Lee', 3: ""You're right. Let's go find Lucia."", 4: '1'}"

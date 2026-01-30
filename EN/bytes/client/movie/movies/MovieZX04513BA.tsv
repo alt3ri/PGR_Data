@@ -1,0 +1,175 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory733.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		107			AniZhuanchangEnd			3000.0	"{1: 'Temporary Camp', 2: ""Cheryl's Tent""}"
+4	4		108							{1: '1'}
+5	5		401							{1: '2', 2: '4079'}
+6	6		104						300.0	{1: '0|50|-10', 2: '0.25'}
+7	7		104							{1: '0|0|0', 2: '0.25'}
+8	8		301			DialogEnable				{3: 'Thud—'}
+9	9		301							{3: 'Bridget suddenly slams her fist onto the table, causing the already unstable video feed to flicker and blur for a moment.'}
+10	10		509						800.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg', 2: '1'}
+11	11		201							{1: '1', 2: '500906', 3: '5', 4: '550'}
+12	12		201							{1: '2', 2: '500856', 4: '-500'}
+13	13		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '2'}
+14	14		301							{1: '1', 2: 'Bridget', 3: 'Never!', 4: '1'}
+15	15		301							"{2: 'Councilor from Babylonia', 3: ""H-hey, calm down. It's just a simple exchange of resources and information. There is no need to get so worked up about it."", 4: '2'}"
+16	16		301							"{2: 'Councilor from Babylonia', 3: ""As Support Force Captain, shouldn't you prioritize your people's safety above all else?"", 4: '2'}"
+17	17		301							"{2: 'Councilor from Babylonia', 3: ""Rather than obsessing over research data that came from Kurono, or that small amount of tantalum resources, wouldn't a potential safe passage be far more valuable to you all right now?"", 4: '2'}"
+18	18		301							"{2: 'Bridget', 3: ""I don't have the authority over the tantalum, but just as you've already pointed out, I don't mind letting it go if it means we can all go home safely. If Kurono can convince Babylonia and Norman Mining Corp to shell it out, then so be it."", 4: '1'}"
+19	19		301							"{2: 'Bridget', 3: ""But we've got no reason to share the research data with you. Kurono themselves should know full well how many secrets are buried in there."", 4: '1'}"
+20	20		301							{2: 'Bridget', 3: 'What you just said concerns me more than the research data does. What are you... I mean, what exactly is Kurono up to?', 4: '1'}
+21	21		301							{2: 'Councilor from Babylonia', 3: '...Ah, my apologies. Being vague during negotiations is indeed a bad habit. Which statement are you referring to?', 4: '2'}
+22	22		204							{1: '1', 2: '15'}
+23	23		301							"{2: 'Bridget', 3: '""While there might be a secure escape route, there\'s a high probability that a few individuals may perish due to unexpected incidents during the evacuation. Let\'s not dwell on it too much and withdraw as soon as possible...""', 4: '1'}"
+24	24		301							{3: 'Bridget recites these words with an ice-cold tone.'}
+25	25		301							{2: 'Bridget', 3: 'What are you getting at? What exactly are you trying to say?', 4: '1'}
+26	26		301							{2: 'Councilor from Babylonia', 3: 'Ahaha...', 4: '2'}
+27	27		301							{3: 'The figure in the projection forces out an awkward laugh, clearly caught off guard by someone with the guts to openly question these deliberately ambiguous statements that are usually left unaddressed.'}
+28	28		301							"{3: ""After this exchange, the councilor's tone loses all pretense of friendliness and turns hostile.""}"
+29	29		301							"{2: 'Councilor from Babylonia', 3: ""I have no idea what you're talking about. What, do you think these mines are some kind of pleasure resort? Anything can happen when you're in a place as dangerous and complicated as that."", 4: '2'}"
+30	30		301							"{2: 'Councilor from Babylonia', 3: ""Especially those researchers who spend all their time in labs and rarely exercise... Pretty sure they'd be the first ones to lose their lives in sudden accidents due to slow reflexes, no?"", 4: '2'}"
+31	31		301							"{3: ""Bridget's face contorts with fury at these words.""}"
+32	32		301							"{2: 'Bridget', 3: ""Why don't you just name An Jie or whoever else you want? When we retreat, I can help make sure they all stay behind in the mine. How does that sound?"", 4: '1'}"
+33	33		301							"{2: 'Councilor from Babylonia', 3: ""Oh my, what a cruel thing to say. Bridget, you're the Support Force Captain—how could you even suggest doing something so outrageous?"", 4: '2'}"
+34	34		301							"{2: 'Councilor from Babylonia', 3: ""An Jie is a valuable talent of Norman Mining Corp and a precious asset to Babylonia. I'm sure Kurono wouldn't just stand idly by if something were to happen to someone so important, would they?"", 4: '2'}"
+35	35		301							"{2: 'Councilor from Babylonia', 3: ""Of course we have to save everyone we can, but there are times when we're powerless—when certain accidents happen, there's nothing we can do about it, right?"", 4: '2'}"
+36	36		204							{1: '1', 2: '15'}
+37	37		203							{1: '1', 2: '0.25', 3: '500', 5: '-30'}
+38	38		301							{2: 'Bridget', 3: 'Bastard...', 4: '1'}
+39	39		301				DialogDisable			"{3: ""A bitter laugh escapes Bridget's lips as she barely contains a cold sneer between clenched teeth.""}"
+40	40		302							{2: '(Comfort Bridget)', 3: '41', 4: '(Take Over the Conversation)', 5: '41'}
+41	41		302							"{2: ""(Pat Bridget's shoulder and signal her to step back)"", 3: '42'}"
+42	42		203							{1: '1', 2: '0.25', 3: '550'}
+43	43		302							"{2: ""Say, we were hoping you'd be able to share some actual solutions with us, sir."", 3: '44'}"
+44	44		301			DialogEnable	DialogDisable			{2: 'Councilor from Babylonia', 3: '...Since we have the Gray Raven Commandant here with us, perhaps we could arrange for a... smaller accident? What do you say?', 4: '2'}
+45	45		302							{2: 'Out of the question. I have never and will never make such compromises.', 3: '46'}
+46	46		302							{2: 'If I take one step back, you will make me compromise again.', 3: '47'}
+47	47		302							"{2: ""I don't care how you slice the cake, but everyone who remains has to stay alive."", 3: '48'}"
+48	48		301			DialogEnable				{2: 'Councilor from Babylonia', 3: 'Hah... If you two think you can get something for nothing, then we have nothing left to discuss.', 4: '2'}
+49	49		301							"{2: 'Councilor from Babylonia', 3: ""That being said... Babylonia isn't the only party behind this operation, is it? Shouldn't you consider Norman Mining Corp's opinion before making such decisions?"", 4: '2'}"
+50	50		301							{2: '????', 3: 'Whatever Gray Raven Commandant decides to do, that would be our decision, too.'}
+51	51		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+52	52		401							{1: '2', 2: '4278'}
+53	53		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+54	54		202							{1: '1'}
+55	55		201							{1: '1', 2: '500873', 3: '2', 4: '500', 7: '1'}
+56	56		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+57	57		301						1000.0	{1: '1', 3: 'After a burst of static, another person joins the communication channel.'}
+58	58		301							"{2: 'Victoria', 3: ""I like what 【kuroname】 said—I don't care how you slice the cake, those who remain have to stay alive."", 4: '1'}"
+59	59		204							{1: '1'}
+60	60		301							{2: 'Victoria', 3: 'Norman Mining Corp has always been a family that prioritizes employee welfare over corporate profits. We can overlook minor gains, but the safety of our employees has to be guaranteed.', 4: '1'}
+61	61		301							{3: 'The councilor in the video feed now lets out a bitter laugh, obviously infuriated.'}
+62	62		301							"{2: 'Councilor from Babylonia', 3: ""Victoria... I feel like I can see exactly what's going through your mind even through the screen. Employee welfare over corporate profits... Oh boy."", 4: '2'}"
+63	63		301							{2: 'Councilor from Babylonia', 3: 'This is not the stance you took during our previous discussion.', 4: '2'}
+64	64		204							{1: '1', 2: '2'}
+65	65		301							{2: 'Victoria', 3: 'Previous discussion? Hmm... I thought someone was just saying how we should make ourselves clear during negotiations, no?', 4: '1'}
+66	66		301							"{2: 'Victoria', 3: ""Norman Mining Corp is a vast enterprise with countless verbal agreements and written contracts. I can't possibly keep track of every single detail."", 4: '1'}"
+67	67		301							"{2: 'Victoria', 3: ""Regarding the mining operation, Norman Mining Corp did indeed have prior contact with Kurono. However, since this concerns an industry we've previously collaborated with, preliminary preparations were simply standard procedure."", 4: '1'}"
+68	68		301							{2: 'Councilor from Babylonia', 3: '...', 4: '2'}
+69	69		301							{3: 'After a moment of silence, the councilor quickly regains composure and speaks with measured emphasis.'}
+70	70		301							{2: 'Councilor from Babylonia', 3: 'So negotiations are off the table, then?', 4: '2'}
+71	71		204							{1: '1'}
+72	72		301							"{2: 'Victoria', 3: ""Don't forget—you're undeniably involved in the death of Mister Skych, who was not only Norman Mining Corp's butler but also family to all of our brothers and sisters."", 4: '1'}"
+73	73		301							{3: 'As those words hang in the air, the councilor in the projection straightens his posture.'}
+74	74		301							{3: 'The councilor knows full well that the mere utterance of these words leaves no room for further negotiation, no matter how much Victoria values Skych the butler.'}
+75	75		301							"{2: 'Councilor from Babylonia', 3: ""Very well. If that's how it is, then this is where the deal comes to an end. I deeply regret this outcome. You see..."", 4: '2'}"
+76	76		301							"{2: 'Councilor from Babylonia', 3: ""Without Kurono's support, the mine will only become more dangerous, not less. It would be a shame if an accident were to occur and the death toll exceeded our expectations. Wouldn't you agree, Commandant?"", 4: '2'}"
+77	77		401							{1: '2', 2: '4423'}
+78	78		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+79	79		202							{1: '2', 6: '1'}
+80	80		509						800.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg', 2: '1'}
+81	81		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '2'}
+82	82		201							{1: '2', 2: '500575', 4: '-550'}
+83	83		301							{1: '1', 3: 'Without waiting for a response, the councilor promptly terminates the communication, their holographic image vanishing instantly.'}
+84	84		401							{1: '2', 2: '4079'}
+85	85		301							{3: 'Thud—'}
+86	86		301							{3: 'With this, Bridget slams her fist on the table once again. Wells, who has remained silent this whole time, seizes the moment to speak, dispersing the thick tension in the air.'}
+87	87		301							"{2: 'Wells', 3: ""You made the right choice, Bridget. There's no need to be frustrated just because you hold yourself to higher moral standards."", 4: '2'}"
+88	88		301							"{2: 'Wells', 3: ""Let's try to be more practical here, Victoria. Do you have any additional intelligence from Norman Mining Corp?"", 4: '2'}"
+89	89		301							{2: 'Victoria', 3: 'As much as I hate to admit it, in this particular matter, Norman Mining Corp simply cannot offer better terms than Kurono.', 4: '1'}
+90	90		301							{2: 'Victoria', 3: 'The most I can do is provide auxiliary support. Norman Mining Corp has already dispatched an integrated team of geological surveyors and engineering experts under our coordination.', 4: '1'}
+91	91		301							"{2: 'Wells', 3: ""Let's proceed with Karenina's original plan then. Can you hold out, 【kuroname】?"", 4: '2'}"
+92	92		302							"{2: 'I can take it from here.', 3: '93', 4: ""I'll do what I can."", 5: '93'}"
+93	93		301							{2: 'Wells', 3: 'Contact me immediately if anything changes.', 4: '2'}
+94	94		204							{1: '1', 2: '2'}
+95	95		203						600.0	{1: '1', 2: '0.5', 3: '500', 4: '-50'}
+96	96		203							{1: '1', 2: '0.25', 3: '500'}
+97	97		301				AniZhuanchangBegin			{3: 'Wells nods and disconnects from the call. On the other end, Victoria gives a courteous bow before her hologram fades away.'}
+98	98		510						700.0	{1: '1'}
+99	99		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+100	100		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+101	101		202							{1: '1', 2: '2', 6: '1'}
+102	102		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory733.jpg'}
+103	103		401							{1: '1', 2: '169'}
+104	104		201							{1: '1', 2: '500906', 3: '14'}
+105	105		301			AniZhuanchangEnd				{1: '1', 2: 'Bridget', 3: '...', 4: '1'}
+106	106		301							"{2: 'Bridget', 3: ""【kuroname】, I'm sorry... Was I being a little too reckless?"", 4: '1'}"
+107	107		302							{2: 'Why apologize for doing what any friend would do?', 3: '108'}
+108	108		204							{1: '1'}
+109	109		301							"{3: ""With a smile, you pat Bridget's shoulder and speak softly as she gradually regains her composure.""}"
+110	110		302							"{2: ""Come on, we've got plenty more to do."", 3: '111'}"
+111	111		302							{2: 'You brief everyone on the intel while I go and look for An Jie.', 3: '112'}
+112	112		204							{1: '1', 2: '3'}
+113	113		301							{2: 'Bridget', 3: 'Got it, but... should we tell them everything?', 4: '1'}
+114	114		302							"{2: ""Use your judgment—you're the rescue expert here. You don't need my opinion on this."", 3: '115'}"
+115	115		204							{1: '1'}
+116	116		301				AniZhuanchangBegin			{2: 'Bridget', 3: '...Alright then!', 4: '1'}
+117	117		202							{1: '1', 6: '1'}
+118	118		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory870.jpg'}
+119	119		104							{1: '100|0|-200', 2: '0'}
+120	120		301			AniZhuanchangEnd				"{3: ""The mood at the temporary camp shifts with the arrival of new intelligence, but there are no severe repercussions thanks to Bridget's and Support Force's swift response.""}"
+121	121		301							"{3: ""When you meet up with Bridget again, she has already finished pacifying everyone. The camp is back in operation, with everyone's tasks reassigned to better coordinate with Engineering Force operating in the field.""}"
+122	122		301							{3: 'While the situation has inevitably dealt them something of an emotional blow, everything remains under control.'}
+123	123		201							{1: '1', 2: '500906'}
+124	124		301							"{1: '1', 2: 'Bridget', 3: ""【kuroname】, how's everything looking there?"", 4: '1'}"
+125	125		302							{2: 'I just finished briefing her. She might need some time to process everything.', 3: '126'}
+126	126		202							{1: '1'}
+127	127		301							{3: 'An Jie sits before you, clutching her arm with one hand, her face drained of color.'}
+128	128		201							{1: '1', 2: '500906', 3: '4', 4: '-400'}
+129	129		201							{1: '2', 2: '500910', 3: '3', 4: '400', 5: '-100'}
+130	130		301							"{1: '1', 2: 'An Jie', 3: ""Did they really say that? They really want me dead ASAP, don't they..."", 4: '2'}"
+131	131		301							"{2: 'Bridget', 3: ""It may not be that obvious, but given what's happened before, you should be well aware of your situation."", 4: '1'}"
+132	132		204							{1: '2'}
+133	133		301							"{2: 'An Jie', 3: ""Well, then... I'll hand over everything, just please spare my life."", 4: '2'}"
+134	134		203						600.0	{1: '2', 2: '0.5', 3: '380', 4: '-150'}
+135	135		401						500.0	{1: '2', 2: '4432'}
+136	136		402							{1: '4432'}
+137	137		301							{3: 'An Jie bites her lower lip and trembles as she shrinks back toward her luggage.'}
+138	138		203						600.0	{1: '2', 2: '0.5', 3: '400', 4: '-100'}
+139	139		301							"{2: 'An Jie', 3: ""This is a Norman access card modified by Kurono. With this, you can find what you're looking for on your own."", 4: '2'}"
+140	140		301							{3: 'Instead of taking the card, Bridget fixes her gaze on An Jie with intent.'}
+141	141		301							"{2: 'Bridget', 3: ""We'll protect you regardless, An Jie. 【kuroname】 and I didn't bring you here so we can scare you soulless."", 4: '1'}"
+142	142		204							{1: '1'}
+143	143		301							"{2: 'Bridget', 3: ""We're not Kurono, and you don't have to be either. We're all survivors now—we should be in this together."", 4: '1'}"
+144	144		301							{2: 'Bridget', 3: 'Take it easy, alright?', 4: '1'}
+145	145		301							{2: 'An Jie', 3: '...', 4: '2'}
+146	146		203						400.0	{1: '2', 2: '0.3', 3: '380', 4: '-150'}
+147	147		401						1000.0	{1: '2', 2: '4432'}
+148	148		402							{1: '4432'}
+149	149		203						400.0	{1: '2', 2: '0.3', 3: '400', 4: '-100'}
+150	150		203							{1: '2', 2: '0.5', 3: '300'}
+151	151		301							"{3: ""An Jie's lips quiver as she struggles to speak. After a long moment, she lowers her head slightly and reaches into her backpack, retrieving some patches. She hands the patches over to Bridget along with her own hand.""}"
+152	152		204							{1: '1', 2: '4'}
+153	153		301							{2: 'Bridget', 3: '...What are you doing?', 4: '1'}
+154	154		301							"{2: 'An Jie', 3: ""These are prints of my fingerprints and palm patterns. Along with my expertise, I'll cooperate with your operations."", 4: '2'}"
+155	155		301							"{2: 'An Jie', 3: ""If all they needed was an access card and my palm print, they would've just cut off my hand and done everything themselves by now."", 4: '2'}"
+156	156		204							{1: '1'}
+157	157		301							"{2: 'Bridget', 3: ""...Thank you for trusting me. I'll do everything in my power to keep you safe, An Jie."", 4: '1'}"
+158	158		301							{2: 'An Jie', 3: '...', 4: '2'}
+159	159		202							{1: '1', 2: '2'}
+160	160		301							"{3: ""An Jie doesn't answer, but gives an emphatic nod instead.""}"
+161	161		201							{1: '1', 2: '500906'}
+162	162		301							{1: '1', 2: 'Bridget', 3: 'All right then...', 4: '1'}
+163	163		301							{3: 'Just as Bridget is about to stand up, a figure darts into the room.'}
+164	164		203							{1: '1', 2: '0.25', 3: '-400'}
+165	165		201							{1: '2', 2: '500166', 4: '400'}
+166	166		301							"{1: '1', 2: 'Lucia', 3: ""Commandant, we've got a situation with Cheryl."", 4: '2'}"
+167	167		302							"{2: ""What's wrong?"", 3: '168'}"
+168	168		301							{2: 'Lucia', 3: 'Cheryl has been working on something following that lead ever since you mentioned the power issue.', 4: '2'}
+169	169		301							{2: 'Lucia', 3: 'Just now, they detected a momentary blip of vital signs on the radar.', 4: '2'}
+170	170		301							"{2: 'Lucia', 3: ""The signal's amplitude differs from both those of human and Construct. Cheryl suspects it might be an equipment malfunction and is attempting a second scan, but I don't think that's necessary."", 4: '2'}"
+171	171		301							{2: 'Lucia', 3: 'Commandant, your judgment is correct. There are people in the mine besides Kurono and Support Force—we should move out now.', 4: '2'}
+172	172		302							{2: 'Bridget.', 3: '173'}
+173	173		204							{1: '1', 2: '4'}
+174	174		301		1		AniZhuanchangBegin			"{2: 'Bridget', 3: ""Roger that. I'll make the arrangements right away."", 4: '1'}"

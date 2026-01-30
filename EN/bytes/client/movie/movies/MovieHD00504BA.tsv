@@ -1,0 +1,32 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory135.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500127'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+5	5		301			DialogEnable				{1: '1', 2: 'Sophia', 3: 'Commandant.', 4: '1'}
+6	6		302							{2: 'Is something wrong?', 3: '7', 4: 'S-Sophia...?', 5: '7'}
+7	7		301							"{2: 'Sophia', 3: ""Part of the train's self-diagnostic system failed so the axle temperature detecting system didn't work when the axle boxes overheated which means the alarm didn't sound and the emergency repair didn't happen..."", 4: '1'}"
+8	8		302							{2: 'Calm down. Speak slowly.', 3: '9', 4: 'This is a little bit beyond me.', 5: '9'}
+9	9		204							{1: '1', 2: '10'}
+10	10		301							{2: 'Sophia', 3: '...', 4: '1'}
+11	11		204							{1: '1'}
+12	12		301							{2: 'Sophia', 3: 'Right.', 4: '1'}
+13	13		201							{1: '1', 2: '500026'}
+14	14		301							{1: '1', 2: 'Lee', 3: '...', 4: '1'}
+15	15		302							"{2: ""Lee, what's going on?"", 3: '16', 4: ""The look on your face tells me you've run into trouble?"", 5: '16'}"
+16	16		301							"{2: 'Lee', 3: ""Something went wrong with the self-diagnostic system. If we don't take care of it now, the train won't last to the next checkpoint. We have to be prepared for an emergency repair in the tunnel."", 4: '1'}"
+17	17		301							"{2: 'Lee', 3: ""The tunnel is way too narrow for the operation, and there are so many industrial-grade mechanoids inside. If they got infected, we'll be at a serious disadvantage in terms of the environment and our numbers."", 4: '1'}"
+18	18		302							{2: 'Alright, let me notify the others.', 3: '19', 4: 'Relax! I can help.', 5: '19'}
+19	19		301							"{2: 'Lee', 3: ""Don't underestimate how dangerous it is to fight in the tunnel. I'll try to keep us in an advantageous environment when we stop the train, but, Commandant, you mustn't let your guard down..."", 4: '1'}"
+20	20		302							"{2: ""Don't worry, I know what I'm doing."", 3: '21', 4: 'Are you worried about me?', 5: '23'}"
+21	21		401							{1: '4', 2: '101003'}
+22	22	25	301							{2: 'Lee', 3: 'You better be.', 4: '1'}
+23	23		401							{1: '4', 2: '101002'}
+24	24		301							"{2: 'Lee', 3: ""Of course not. I'm just concerned with the effectiveness of our operation here, and it is my job to evaluate the risks and report them."", 4: '1'}"
+25	25		301							{2: 'Lee', 3: '...', 4: '1'}
+26	26		302							"{2: 'I see.', 3: '27', 4: ""It's not the first day you're on my team."", 5: '27'}"
+27	27		301							"{2: 'Lee', 3: ""...I'm not wasting more time with you."", 4: '1'}"
+28	28		301							"{2: 'Lee', 3: ""I've sent you the emergency response proposal, if you can just accept it for me."", 4: '1'}"
+29	29		302							"{2: 'Thanks, Lee.', 3: '30', 4: ""You're as dependable as always!"", 5: '30'}"
+30	30		401							{1: '4', 2: '101004'}
+31	31		301		1		AniZhuanchangBegin			{2: 'Lee', 3: 'Then we should get to work.', 4: '1'}

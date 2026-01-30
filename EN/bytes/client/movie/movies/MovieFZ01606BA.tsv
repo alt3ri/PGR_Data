@@ -1,0 +1,81 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	2		401							{1: '1', 2: '208'}
+2	19		501						1500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+3	1		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory285.png'}
+4	20		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+5	22		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+6	23		301			DialogEnable				{3: 'Some years ago—never mind how long precisely—a certain rumor has spread out among the scavengers.'}
+7	24		201							{1: '1', 2: '500259'}
+8	25		301							{1: '1', 2: 'Young Scavenger', 3: 'T-they say that there are p-plenty of resources in those abandoned ruins.', 4: '1'}
+9	26		301							{2: 'Young Scavenger', 3: 'A-apparently some organization brought them there to rebuild the ruins.', 4: '1'}
+10	27		301							{2: 'Young Scavenger', 3: 'B-but they were attacked, and the rebuilding plans were c-canceled, and the r-resources were left there.', 4: '1'}
+11	28		301							{3: 'If you were to ask the scavengers where this rumor came from, you would receive nothing but vague answers.'}
+12	29		301							"{2: 'Young Scavenger', 3: ""I-I dunno. I t-told you out of goodwill. If you don't wanna go, I'll g-go myself."", 4: '1'}"
+13	30		301							{3: 'Or perhaps, you might receive an even worse answer.'}
+14	31		201							{1: '1', 2: '500260'}
+15	32		301							{1: '1', 2: 'Scavenger Girl', 3: 'A winged mechanic angel told me!', 4: '1'}
+16	33		201							{1: '1', 2: '500003', 4: '400'}
+17	34		201							{1: '2', 2: '500262', 4: '-400'}
+18	35		301							{1: '1', 2: '???', 3: '...', 4: '2'}
+19	36		301							{2: '???', 3: 'Princess Bella, should we trust this intel?', 4: '2'}
+20	37		301							"{2: 'Bella', 3: ""How many times do I have to tell you?! Just call me Bella! Don't use what you learned from your manga on me. They don't say it like that in those books anyway!"", 4: '1'}"
+21	38		301							{2: '???', 3: 'Perhaps you should read more books, Bella-chan.', 4: '2'}
+22	39		301							{2: 'Bella', 3: 'Yikes... Give me a break.', 4: '1'}
+23	40		301							"{2: 'Bella', 3: ""It's hard to tell if it's true, but resources are depleted around here anyway, and we still have some food reserve, we might as well check it out."", 4: '1'}"
+24	41		301							"{2: '???', 3: ""Then I'll make the preparations. If we run into any danger, I'll protect you like a Cardman Rider, Bella-chun."", 4: '2'}"
+25	42		301							"{2: 'Bella', 3: ""Pff! Slime, if you call me anything like that again, I'll rip all the books in your backpack."", 4: '1'}"
+26	43		301							"{2: 'Slime?', 3: ""Whatever you say, you're doing what you hate the most yourself."", 4: '2'}"
+27	44		301							{2: 'Shrek', 3: 'My name is Shrek! Plus, that rotten chicken soup book in your hand should be ripped apart first!', 4: '2'}
+28	45		301							{2: 'Bella', 3: 'This is faith! The harsher the environment, the more important it is to believe in hope.', 4: '1'}
+29	46		301							"{2: 'Bella', 3: ""As long as we have a strong heart, there's nothing we can't overcome!"", 4: '1'}"
+30	47		301							"{2: 'Shrek', 3: ""It's a placebo, Bella dear."", 4: '2'}"
+31	48		301			PanelActor1Shake				{1: '1', 3: 'Hearing what he called her, Bella lets out a scream and wrestles with Shrek.'}
+32	49		202							{1: '1', 2: '2', 6: '1'}
+33	50		301							{3: 'The scavengers nearby watch them enviously.'}
+34	51		201							{1: '1', 2: '500259'}
+35	52		301							{1: '1', 2: 'Young Scavenger', 3: 'How nice... They must have a full belly to be able to wrestle.', 4: '1'}
+36	53		202							{1: '1', 6: '1'}
+37	54		301							{3: 'He is not wrong. Bella and Shrek are good fighters. Together they have taken over several mobster bases, plundered their food reserve, then made a killing by selling the loot.'}
+38	55		301							{3: 'If it were not for their obsession with books, they would probably have saved up more supplies and would not have to venture into the rumored ruins.'}
+39	56		201							{1: '1', 2: '500003', 4: '400'}
+40	57		201							{1: '2', 2: '500262', 4: '-400'}
+41	58		301							{1: '1', 2: 'Shrek', 3: 'My book!', 4: '2'}
+42	59		301							{3: 'Shrek screeches painfully. A page of his precious book is torn.'}
+43	60		301							"{2: 'Shrek', 3: ""Damn it... I should've traded the supplies for a terminal instead! Synthetic paper is such a nuisance!"", 4: '2'}"
+44	61		301							"{2: 'Bella', 3: ""A terminal? Can you even afford using it?! We'd still have a ton of food left if it wasn't for the books!"", 4: '1'}"
+45	62		301							"{2: 'Bella', 3: ""...Anyway. Let's just go to the ruins. It'll be dinnertime soon if we keep dilly-dallying."", 4: '1'}"
+46	63		301				AniZhuanchangBegin			{3: 'Shrek mournfully holds the torn book in his arms and drags his feet behind Bella toward the ruins.'}
+47	64		202							{1: '1', 2: '2', 6: '1'}
+48	65		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory286.png'}
+49	66		301			AniZhuanchangEnd				{3: 'After a tedious trek, the two finally arrive at the ruins, but what they see gives them goosebumps.'}
+50	67		201							{1: '1', 2: '500003', 4: '400'}
+51	68		201							{1: '2', 2: '500262', 4: '-400'}
+52	69		301							{1: '1', 2: 'Bella', 3: '...What in the world is this?', 4: '1'}
+53	70		301							{3: 'Frail scavengers are crawling on the streets. A bright red fluid gushes out of the ground and swallows them quickly.'}
+54	71		301							{2: 'Shrek', 3: 'It seems that even the planet is crying bloody tears.', 4: '2'}
+55	72		301							"{3: ""Bella ignores Shrek's poetic comment. She grabs hold of a scavenger and waves a biscuit in front of him.""}"
+56	74		203							{1: '1', 2: '0.25', 3: '600'}
+57	75		203							{1: '2', 2: '0.25', 3: '-600'}
+58	76		201							{1: '3', 2: '500261'}
+59	77		301							"{1: '1', 2: 'Bella', 3: ""What's with that red stuff?"", 4: '1'}"
+60	78		301							"{2: 'Scavenger', 3: ""They say it's heaven."", 4: '3'}"
+61	79		301							{2: 'Bella', 3: 'Heaven?', 4: '1'}
+62	80		301							"{2: 'Scavenger', 3: ""I dunno. They say if you jump in, you'll have eternal life. You can even come out of it and talk."", 4: '3'}"
+63	81		301							{2: 'Shrek', 3: '...Is that the river Styx?', 4: '2'}
+64	82		301							"{2: 'Scavenger', 3: ""I don't have many friends in there, so I've only seen other people's friends come out of it."", 4: '3'}"
+65	83		301							{3: 'The pair exchanges a silent glance. The scavenger may be scrawny but it looks like he is telling the truth.'}
+66	84		301							"{2: 'Scavenger', 3: ""The recent new comers have all jumped in. I'm kind of timid, still debating what to do."", 4: '3'}"
+67	85		301							"{2: 'Scavenger', 3: ""But everyone has been saying that since we're starving and miserable already, we might as well give this unknown heaven a try."", 4: '3'}"
+68	86		301							{2: 'Scavenger', 3: 'And you know what, everyone that jumped in said it was great when they came out.', 4: '3'}
+69	90		301							{3: 'The scavenger takes the biscuit from Bella and gives them a bow.'}
+70	91		301							{2: 'Scavenger', 3: 'Thank you. There are a few ruffians around here. Try to stay away from them.', 4: '3'}
+71	87		202							{1: '3', 6: '1'}
+72	88		203							{1: '1', 2: '0.25', 3: '400'}
+73	89		203							{1: '2', 2: '0.25', 3: '-400'}
+74	92		301							{2: 'Bella', 3: '...', 4: '1'}
+75	93		301							{2: 'Shrek', 3: 'Should we bring them to justice and replenish our supplies in the process?', 4: '2'}
+76	94		301							"{2: 'Bella', 3: ""Good idea, but we should figure out what they're capable of first."", 4: '1'}"
+77	95		301							{2: 'Bella', 3: 'Resources around our area are running low. We have to restock before we can travel further.', 4: '1'}
+78	96		301							"{2: 'Shrek', 3: ""I'll do as you wish, Bella love."", 4: '2'}"
+79	97		301							"{3: 'Maddened, Bella holds in her anger and opens the nostalgic Chicken Soup for the Soul magazine and begins to read through ""Forgiveness is the Key"". Shrek squats down in anguish as if he heard a banshee screech.'}"
+80	98		301		1		AniZhuanchangBegin			"{2: 'Bella', 3: ""Alright. Let's roll."", 4: '1'}"

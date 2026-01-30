@@ -1,0 +1,160 @@
+Index	Name	Attrib
+1	HP	Life
+2	Energy	Energy
+3	Speed (Run)	RunSpeed
+4	Speed (Walk)	WalkSpeed
+5	Speed (Turning)	TurnRoundSpeed
+6	Orb Interval	BallInterval
+7	Physical DMG Immunity	DamageNormalImmunity
+8	Elemental DMG Immunity	DamageMagicImmunity
+9	Physical DMG Counter Immunity	AntiDamageNormalImmunity
+10	Anti-Elemental DMG Immunity	AntiDamageMagicImmunity
+11	ATK	AttackNormal
+12	Fire Attack	AttackMagic1
+13	Lightning Attack	AttackMagic2
+14	Ice Attack	AttackMagic3
+15	Dark Attack	AttackMagic4
+16	Nihil Attack	AttackMagic5
+17	Physical ATK Counter	AntiAttackNormal
+18	Anti-Fire Attack	AntiAttackMagic1
+19	Anti-Lightning Attack	AntiAttackMagic2
+20	Anti-Ice Attack	AntiAttackMagic3
+21	Anti-Dark Attack	AntiAttackMagic4
+22	Anti-Nihil Attack	AntiAttackMagic5
+23	DEF	DefenseNormal
+24	Anti-Defense	AntiDefenseNormal
+25	Extra DMG Bonus	DamageChangeP
+26	Physical DMG Bonus	DamageNormalChangeP
+27	Fire DMG Bonus	DamageMagic1ChangeP
+28	Lightning DMG Bonus	DamageMagic2ChangeP
+29	Ice DMG Bonus	DamageMagic3ChangeP
+30	Dark DMG Bonus	DamageMagic4ChangeP
+31	Nihil DMG Bonus	DamageMagic5ChangeP
+32	Extra DMG Reduction	AntiDamageChangeP
+33	Physical RES	AntiDamageNormalChangeP
+34	Fire DMG RES	AntiDamageMagic1ChangeP
+35	Lightning DMG RES	AntiDamageMagic2ChangeP
+36	Ice DMG RES	AntiDamageMagic3ChangeP
+37	Dark DMG RES	AntiDamageMagic4ChangeP
+38	Nihil Resistance	AntiDamageMagic5ChangeP
+39	DMG Type Start-Mark	DamagePBegin
+40	Mech DMG	Damage1P
+41	Energy DMG	Damage2P
+42	Creature DMG	Damage3P
+43	DMG Type End-Mark	DamagePEnd
+44	CRIT	Crit
+45	CRIT Rate	CritP
+46	CRIT DMG Rate	CritDamageP
+47	Anti-CRIT Rate	AntiCritP
+48	Anti-CRIT DMG Rate	AntiCritDamageP
+49	Lifesteal	Lifesteal
+50	Lifesteal Rate	LifestealP
+51	Amplify Healing	CureChangeP
+52	Anti-Amplify Healing	AntiCureChangeP
+53	Super Armor - Yellow	Endure
+54	Aggro Generation Rate	ThreatRateP
+55	Dodge Energy	DodgeEnergy
+56	Dodge Energy Auto Regen (Energy/s)	DodgeEnergyAutoRecovery
+57	Custom Energy	CustomEnergy
+58	Charge Resistance 1	AccuResistance1
+59	Charge Resistance 2	AccuResistance2
+60	Charge Resistance 3	AccuResistance3
+61	Charge Resistance 4	AccuResistance4
+62	Charge Resistance 5	AccuResistance5
+63	Charge Resistance 6	AccuResistance6
+64	Charge Resistance 7	AccuResistance7
+65	Charge Resistance 8	AccuResistance8
+66	Charge Resistance 9	AccuResistance9
+67	Charge Resistance 10	AccuResistance10
+68	Crouch SPD	SquatSpeed
+69	Physical Weakness	NormalWeaknessP
+70	Fire Weakness	Magic1WeaknessP
+71	Lightning Weakness	Magic2WeaknessP
+72	Ice Weakness	Magic3WeaknessP
+73	Dark Weakness	Magic4WeaknessP
+74	Sprint Speed (Logic Unit/Rate)	SprintSpeed
+75	Custom Energy Group 1	CustomEnergyGroup1
+76	Custom Energy Group 2	CustomEnergyGroup2
+77	Custom Energy Group 3	CustomEnergyGroup3
+78	Custom Energy Group 4	CustomEnergyGroup4
+79	Execution	Hack
+80	Execution Buff Rate	HackChangeP
+81	Execution Resistance Rate	AntiHackChangeP
+82	Remaining gauge that can activate Finishing Move	HackExecuteSkillTriggerP
+83	Skill Multiplier Increase	SkillDamageChangeP
+84	Dynamic Scoring Coefficient of Reduced Enemy Execution	ReduceHackDynamicScoringCoe
+85	Dynamic Scoring Coefficient of Enemy Execution	BeExecutedDynamicScoringCoe
+86	Dynamic scoring rate up	DynamicScoringScoreChangeP
+87	Dynamic scoring up	DynamicScoringScoreChangeV
+88	Dynamic scoring rate decreased per second up	ReduceDynamicScoringScorePerSecondChangeP
+89	Dynamic scoring decreased per second up	ReduceDynamicScoringScorePerSecondChangeV
+90	Dynamic scoring rate decreased once injured up	ReduceDynamicScoringScoreWhenBeDamagedChangeP
+91	Dynamic scoring decreased once injured up	ReduceDynamicScoringScoreWhenBeDamagedChangeV
+92	DMG Boost	DamageAmplificationFactorP
+93	Basic Shield Break Efficiency	BrokenProtectorHp
+94	Extra Shield Break Increase	BrokenProtectorHpChangeP
+95	Extra Shield Break Resistance	AntiBrokenProtectorHpChangeP
+96	All Elemental DMG Increase	AllMagicDamageChangeP
+97	All Elemental Resistance Reduction	AllMagicAntiChangeP
+98	Nihil Fragility	Magic5WeaknessP
+99	Equilibrium Field	ProtectorHp
+100	Skill Debuff Gauge Amplification	SkillAccumulatorP
+101	Extra Ignition DMG Bonus	BurnDamageExtraP
+102	Ignition DMG Resistance	AntiBurnDamageP
+103	Ignition Gauge Efficiency Increase	BurnAccumulatorP
+104	Ignition Gauge Efficiency Resistance	BurnAntiAccumulatorP
+105	Swordwave Gauge Efficiency Increase	SwordPowerAccumulatorP
+106	Swordwave Gauge Efficiency Resistance	SwordPowerAntiAccumulatorP
+107	Dimension Slash Base DMG Bonus	SwordPowerDamageP
+108	Dimension Slash Extra DMG Bonus	SwordPowerDamageExtraP
+109	Dimension Slash DMG Resistance	AntiSwordPowerP
+110	Dimension Slash Fragility	SwordPowerWeaknessP
+111	Ignition DMG Fragility	BurnDamageWeaknessP
+112	Lightning Shield Gauge Efficiency Increase	ThunderShieldAccumulatorP
+113	Lightning Shield Gauge Efficiency Resistance	ThunderShieldAntiAccumulatorP
+114	Lightning Shield Extra DMG Bonus	ThunderShieldDamageExtraP
+115	Lightning Shield DMG Resistance	AntiThunderShieldP
+116	Lightning Shield DMG Fragility	ThunderShieldWeaknessP
+117	Congelation Gauge Efficiency Increase	FreezeAccumulatorP
+118	Congelation Gauge Efficiency Resistance	FreezeAntiAccumulatorP
+119	Congelation Extra DMG Bonus	FreezeDamageExtraP
+120	Congelation DMG Resistance	AntiFreezeP
+121	Congelation DMG Fragility	FreezeWeaknessP
+122	Speed (Walk and Jump)	IdleJumpSpeed
+123	Speed (Run and Jump)	RunJumpSpeed
+124	Speed (Leap Turning)	JumpTurnRoundSpeed
+125	Rigid Landing	LandingFreeze
+126	HP Lock	LockedLife
+127	Extra Radiation DMG Bonus	FalloutDamageExtraP
+128	Radiation DMG Resistance	FalloutAntiDamageP
+129	Radiation Weakness	FalloutWeaknessP
+130	Radiation Gauge Efficiency Increase	FalloutAccumulatorP
+131	Radiation Gauge Efficiency Resistance	FalloutAntiAccumulatorP
+132	Jumping Acceleration	JumpAcceleration
+133	Temp HP	BloodBorne
+134	Temp HP Decay (ms)	BloodBorneAttenuationTime
+135	Temp HP Deduction Rate (/s)	BloodBorneDeductSpeed
+136	Temp HP Recovery CD (ms)	BloodBorneResetCD
+137	Temp HP Conversion Rate	BloodBorneChangeRateP
+138	LightNoiseAccumulatorP	LightNoiseAccumulatorP
+139	LightNoiseAntiAccumulatorP	LightNoiseAntiAccumulatorP
+140	LightNoiseDamageExtraP	LightNoiseDamageExtraP
+141	AntiLightNoiseP	AntiLightNoiseP
+142	LightNoiseWeaknessP	LightNoiseWeaknessP
+143	DamageChangePEx	DamageChangePEx
+144	Phylotree Energy 1	LifeEnergy1
+145	Phylotree Energy 2	LifeEnergy2
+146	Phylotree Energy 3	LifeEnergy3
+147	Phylotree Energy 4	LifeEnergy4
+148	Phylotree Energy 5	LifeEnergy5
+149	Phylotree Energy 6	LifeEnergy6
+150	Phylotree Energy 7	LifeEnergy7
+151	Phylotree Energy 8	LifeEnergy8
+152	Phylotree Energy 9	LifeEnergy9
+153	Phylotree Energy 10	LifeEnergy10
+154	自定义能量组5	CustomEnergyGroup5
+155	自定义能量组6	CustomEnergyGroup6
+156	自定义能量组7	CustomEnergyGroup7
+157	自定义能量组8	CustomEnergyGroup8
+158	自定义能量组9	CustomEnergyGroup9
+159	自定义能量组10	CustomEnergyGroup10

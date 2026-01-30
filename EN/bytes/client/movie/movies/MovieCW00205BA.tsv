@@ -1,0 +1,103 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory227.png'}
+2	2		401							{1: '1', 2: '5'}
+3	3		201							{1: '2', 2: '500004'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+5	5		301			DialogEnable				"{1: '1', 2: 'Asimov', 3: ""You're back."", 4: '2'}"
+6	6		301							{2: 'Asimov', 3: 'Shall we finish where we left off with the calibration?', 4: '2'}
+7	7		203							{1: '2', 2: '0.25', 3: '400'}
+8	8		201							{1: '1', 2: '500214', 4: '-400'}
+9	9		301							{1: '1', 3: 'Rosetta hops off the CUB and responds to Asimov on the comms.'}
+10	10		301							"{2: 'Rosetta', 3: ""That won't be necessary."", 4: '1'}"
+11	11		301							{2: 'Asimov', 3: 'Something has happened between you two, I assume.', 4: '2'}
+12	12		301							"{2: 'Rosetta', 3: ""Yes. I want to keep it this way a little longer. I think it'll be better for us if we help each other as individuals."", 4: '1'}"
+13	13		301							"{2: 'Asimov', 3: ""That's what Combat Unit Boosters are designed for."", 4: '2'}"
+14	14		301							{2: 'Rosetta', 3: 'Combat Unit Booster...', 4: '1'}
+15	15		301							{2: 'Rosetta', 3: 'Asimov, does it have a name?', 4: '1'}
+16	16		301							"{2: 'Asimov', 3: ""No. After all, it's not like other CUBs. Most of the data is unique to your centaur module."", 4: '2'}"
+17	17		301							"{2: 'Asimov', 3: ""As I said before, you're the most suitable candidate."", 4: '2'}"
+18	18		301							{2: 'Rosetta', 3: 'I see...', 4: '1'}
+19	19		301							{3: 'Rosetta looks at the CUB, lost in thought. A moment later, she quietly utters a phrase.'}
+20	20		301							{2: 'Rosetta', 3: 'Frost Oath...', 4: '1'}
+21	21		301							{2: 'Asimov', 3: 'Sorry?', 4: '2'}
+22	22		301							{2: 'Rosetta', 3: 'Frost Oath.', 4: '1'}
+23	23		301							{3: 'The CUB standing off to the side nods slightly. Rosetta quickly realizes the meaning behind the gesture.'}
+24	24		301							"{3: ""She takes a step forward, then gently places her forehead on the CUB's forehead.""}"
+25	25		301							{2: 'Rosetta', 3: 'Frost Oath... The snow and storm has witnessed our vows to each other.', 4: '1'}
+26	26		301							"{2: 'Asimov', 3: ""Frost Oath, is it? I'll enter it into the file."", 4: '2'}"
+27	27		301							{2: 'Diana', 3: 'What happened, Rosetta?'}
+28	28		301							"{3: ""Diana's inquiry can be heard coming from the direction of the camp, interrupting the conversation between Rosetta and Asimov.""}"
+29	29		301							"{2: 'Asimov', 3: ""You can go. I'll have someone else collect the equipment."", 4: '2'}"
+30	30		301							{2: 'Asimov', 3: 'Just one more thing. Temporary integration is still within the scope of our technology. You can always ask me to recalibrate it should the need arise during an operation.', 4: '2'}
+31	31		301							"{2: 'Asimov', 3: ""I don't think Frost Oath will have any objections."", 4: '2'}"
+32	32		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+33	33		202							{1: '1', 2: '2', 6: '1'}
+34	34		201							{1: '1', 2: '500332'}
+35	35		301							{1: '1', 2: 'Frost Oath', 3: 'Neigh.', 4: '1'}
+36	36		301							{3: 'Frost Oath briefly neighs in agreeance.'}
+37	37		201							{1: '1', 2: '500214', 3: '1'}
+38	38		301				AniZhuanchangBegin			{1: '1', 2: 'Rosetta', 3: 'Thank you.', 4: '1'}
+39	39		202							{1: '1', 2: '2', 6: '1'}
+40	40		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory96.png'}
+41	41		301			AniZhuanchangEnd				{3: 'After saying goodbye to Asimov, Rosetta leads Frost Oath in the direction of Diana and the Forest Guard.'}
+42	42		301							{3: 'Now that the blizzard had subsided, the sunlight shines all the more radiantly.'}
+43	43		201							{1: '1', 2: '500214', 3: '1', 4: '-400'}
+44	44		201							{1: '2', 2: '500088', 4: '400'}
+45	45		301							{1: '1', 2: 'Rosetta', 3: 'There was a minor hiccup, but we completed the mission successfully.', 4: '1'}
+46	46		301							{2: 'Diana', 3: 'Huh? Is that...', 4: '2'}
+47	47		301							{2: 'Rosetta', 3: 'You guessed it. We have a new addition to the Forest Guard.', 4: '1'}
+48	48		301							{2: 'Rosetta', 3: 'Everyone, say hello to Frost Oath.', 4: '1'}
+49	49		301							{2: 'Diana', 3: 'The marks on you two... Did you go to the mountain?', 4: '2'}
+50	50		204							{1: '1'}
+51	51		301							{2: 'Rosetta', 3: 'We did.', 4: '1'}
+52	52		301							{2: 'Diana', 3: '...', 4: '2'}
+53	53		301							{2: 'Rosetta', 3: 'Sorry for making you all worried.', 4: '1'}
+54	54		301							"{2: 'Diana', 3: ""Sigh. It's not like we can do anything about it now."", 4: '2'}"
+55	55		301							"{2: 'Diana', 3: ""Let's go back to camp and get you fixed up."", 4: '2'}"
+56	56		301							{2: 'Rosetta', 3: '...', 4: '1'}
+57	57		301							{3: 'Before the hesitant Rosetta can finish speaking, Frost Oath walks off toward the camp.'}
+58	58		301							"{2: 'Rosetta', 3: ""I'll leave it to you then."", 4: '1'}"
+59	59		301							"{2: 'Diana', 3: ""Yeah, that's more like it."", 4: '2'}"
+60	60		401							{1: '2', 2: '1514'}
+61	61		301				AniZhuanchangBegin			{3: 'Diana pats Rosetta on the shoulder. Then the Forest Guard follows Frost Oath to the camp.'}
+62	62		202							{1: '1', 2: '2', 6: '1'}
+63	63		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory96.png'}
+64	64		301			AniZhuanchangEnd				{3: 'While undergoing maintenance, Rosetta looks at her comrades standing before her. Even though they have been through so much, they still stand dignified. She cannot help but smile.'}
+65	65		201							{1: '1', 2: '500214', 3: '1'}
+66	66		301							"{1: '1', 2: 'Rosetta', 3: ""I didn't realize how much everyone has grown."", 4: '1'}"
+67	67		203							{1: '1', 2: '0.25', 3: '-400'}
+68	68		201							{1: '2', 2: '500088', 4: '400'}
+69	69		301							"{1: '1', 2: 'Diana', 3: ""You have, too. The old Rosetta wouldn't be so willing to accept help from others."", 4: '2'}"
+70	70		204							{1: '1', 2: '6'}
+71	71		301							"{2: 'Rosetta', 3: ""I'm sorry."", 4: '1'}"
+72	72		204							{1: '1'}
+73	73		301							"{2: 'Diana', 3: ""It's okay. We've been working hard to help shoulder your burden."", 4: '2'}"
+74	74		301							"{2: 'Rosetta', 3: ""You've known all this time?"", 4: '1'}"
+75	75		301							{2: 'Diana', 3: 'You wear your heart on your sleeve, Rosetta.', 4: '2'}
+76	76		301							{2: 'Diana', 3: 'Members of the Forest Guard might not be strong individually, but as long as we come together, nothing can stand in our way.', 4: '2'}
+77	77		301							{2: 'Diana', 3: 'This is how we survive.', 4: '2'}
+78	78		301							"{2: 'Diana', 3: ""It's not one person's responsibility to protect everyone. We work together and share this duty."", 4: '2'}"
+79	79		301							"{2: 'Rosetta', 3: ""...You're right."", 4: '1'}"
+80	80		301							{2: 'Rosetta', 3: 'I did go overboard in the past.', 4: '1'}
+81	81		301							{2: 'Rosetta', 3: 'But now, I hope you will all help me shape the future of the Forest Guard.', 4: '1'}
+82	82		202							{1: '1', 2: '2', 6: '1'}
+83	83		201							{1: '1', 2: '500332'}
+84	84		301							{1: '1', 2: 'Frost Oath', 3: 'Neigh!', 4: '1'}
+85	85		201							{1: '1', 2: '500214', 4: '-400'}
+86	86		201							{1: '2', 2: '500088', 4: '400'}
+87	87		301							"{1: '1', 2: 'Diana', 3: ""Hehe, even Frost Oath knows what's up."", 4: '2'}"
+88	88		301							{2: 'Rosetta', 3: '?', 4: '1'}
+89	89		202							{1: '1', 2: '2', 6: '1'}
+90	90		201							{1: '1', 2: '500204', 4: '-600'}
+91	91		201							{1: '2', 2: '500204'}
+92	92		201							{1: '3', 2: '500204', 4: '600'}
+93	93		301							"{1: '1', 2: 'Forest Guards', 3: ""You don't have to ask. We'll gladly stand by your side."", 4: '1', 5: '2', 6: '3'}"
+94	94		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+95	95		201							{1: '1', 2: '500214', 3: '6'}
+96	96		301							{1: '1', 2: 'Rosetta', 3: 'Everyone...', 4: '1'}
+97	97		202							{1: '1', 2: '2', 6: '1'}
+98	98		301							{3: 'Having finished repairs, the Forest Guard follows Frost Oath and gathers with Rosetta in the center.'}
+99	99		201							{1: '1', 2: '500088'}
+100	100		301							{1: '1', 2: 'Diana', 3: 'Welcome back.', 4: '1'}
+101	101		201							{1: '1', 2: '500214', 3: '1'}
+102	102		301		1		AniZhuanchangBegin			{1: '1', 2: 'Rosetta', 3: 'Glad to be back.', 4: '1'}

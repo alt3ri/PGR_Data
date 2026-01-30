@@ -1,0 +1,154 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory826.jpg'}
+2	2		401							{1: '1', 2: '120'}
+3	3		401							{1: '2', 2: '4232'}
+4	4		301			DialogEnable				{3: 'Hours into driving in the desert, the night begins to fall.'}
+5	5		301							{3: 'The desert temperature drops drastically at night, plummeting to below zero. Humans must race against the Terminator Line and hurry to the conservation area.'}
+6	6		301				AniZhuanchangBegin			{3: 'With low visibility after the storm, Watanabe is relying on limited lighting and his familiarity with the desert to navigate.'}
+7	7		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+8	8		201							{1: '1', 2: '500434', 4: '-400', 7: '1'}
+9	9		201							{1: '2', 2: '500616', 4: '400', 7: '1'}
+10	10		301			AniZhuanchangEnd				{1: '1', 3: 'Inside the vehicle, the passengers, still feeling joyous about surviving the disaster, are now starting to feel stressed out as reality sets in.'}
+11	11		301							"{2: 'Male Civilian', 3: ""We finally escaped, but I really don't feel happy thinking about jail time ahead..."", 4: '1'}"
+12	12		301							{2: 'Female Civilian', 3: 'Stop complaining. We chose this path, so now we have to deal with it.', 4: '2'}
+13	13		301							"{2: 'Male Civilian', 3: ""I don't want to sound ungrateful. I'm glad we were saved, but aren't you worried about life in prison?"", 4: '1'}"
+14	14		301							"{2: 'Female Civilian', 3: ""Of course I'm scared... But I made a mistake back then, and now I have to face the consequences. There's no point in complaining."", 4: '2'}"
+15	15		301				AniZhuanchangBegin			{2: 'Female Civilian', 3: 'Enough talking. We have a lot to deal with tomorrow. Get some sleep.', 4: '2'}
+16	16		202							{1: '1', 2: '2', 6: '1'}
+17	17		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory825.jpg'}
+18	18		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 3: '1', 4: '1', 5: '0'}
+19	19		301			AniZhuanchangEnd				{3: 'The murmurs from the back seats gradually fade as they fall asleep.'}
+20	20		302							{2: '(Reach over to close the rear window)', 3: '21'}
+21	21		401							{1: '2', 2: '4182'}
+22	22		301							{3: 'Smack—'}
+23	23		301							{3: 'To avoid disturbing Watanabe, who is driving, you reach over to close the rear window.'}
+24	24		201							{1: '1', 2: '500783'}
+25	25		301							"{1: '1', 2: 'Watanabe', 3: ""It's fine. Their voices don't bother me."", 4: '1'}"
+26	26		302							"{2: ""You sound like you're used to this."", 3: '27'}"
+27	27		301							"{2: 'Watanabe', 3: ""It's only natural. They're just ordinary people with emotions. Just because I saved them doesn't mean they'll suddenly have a change of heart."", 4: '1'}"
+28	28		301							"{2: 'Watanabe', 3: ""I don't expect them to be grateful or see me as a savior... As long as they can find their way back onto the right path, that would be enough."", 4: '1'}"
+29	29		301							"{2: 'Watanabe', 3: ""I'm the one who should be apologizing for dragging you into this mess today."", 4: '1'}"
+30	30		302							"{2: ""Don't worry. I didn't come here for their gratitude, either."", 3: '31'}"
+31	31		301							{3: 'Watanabe has been driving for hours without rest. The weak light from the headlights barely illuminates his face, making his expression unreadable.'}
+32	32		301							"{3: ""Despite this, Watanabe's tone shows no signs of fatigue. He recounts the day's events as if it were just another ordinary day.""}"
+33	33		301							{2: 'Watanabe', 3: 'If I wanted gratitude, hearing thanks from comrades like you would be enough.', 4: '1'}
+34	34		301							"{2: 'Watanabe', 3: ""Even if they did thank me, I wouldn't know if it was sincere or just politeness."", 4: '1'}"
+35	35		301							{2: 'Watanabe', 3: 'I saved them for my own peace of mind, so how they feel is irrelevant.', 4: '1'}
+36	36		301							"{2: 'Watanabe', 3: ""But you... you're different. You came here, risking your life, because you trust me."", 4: '1'}"
+37	37		301				DialogDisable			"{2: 'Watanabe', 3: ""My persistence has value as long as you trust me and believe in what I'm doing."", 4: '1'}"
+38	38		302							{2: 'Of course it is valuable.', 3: '39'}
+39	39		302							"{2: ""You also mentioned that many of them aren't bad people, only desperate people."", 3: '40'}"
+40	40		302							{2: 'And you saved them, giving them another choice.', 3: '41'}
+41	41		301			DialogEnable				{2: 'Watanabe', 3: 'Yeah... I hope they seize this chance.', 4: '1'}
+42	42		301							"{2: 'Watanabe', 3: ""It's already nightfall. We need to hurry and get them to the conservation area."", 4: '1'}"
+43	43		301							"{3: ""You instinctively hunch your shoulders as the desert temperature drops steadily with the night's arrival.""}"
+44	44		301							"{2: 'Watanabe', 3: ""Here's a blanket. Keep yourself warm."", 4: '1'}"
+45	45		401							{1: '2', 2: '1543'}
+46	46		301				DialogDisable			"{3: ""Watanabe pulls out a blanket from the storage compartment next to the driver's seat and puts it over you. The blanket carries a faint scent of tobacco.""}"
+47	47		302							{2: 'Thank you.', 3: '48'}
+48	48		302							"{2: ""It's much warmer now wrapped in this blanket."", 3: '49'}"
+49	49		301			DialogEnable				"{2: 'Watanabe', 3: ""It's still a long way to conservation area 148. You should get some sleep."", 4: '1'}"
+50	50		302							{2: 'What about you?', 3: '51'}
+51	51		301							"{2: 'Watanabe', 3: ""Did you forget that I'm a Construct and don't need rest?"", 4: '1'}"
+52	52		302							"{2: ""I mean, you don't need someone to chat with on the road?"", 3: '53'}"
+53	53		301				DialogDisable			"{2: 'Watanabe', 3: ""This isn't my first solo mission and I'm not that impatient."", 4: '1'}"
+54	54		302							"{2: ""But I'll be heading back soon."", 3: '55'}"
+55	55		302							"{2: ""It feels like we haven't talked much during this trip."", 3: '56'}"
+56	56		301			DialogEnable				{3: 'Silence falls in the cabin for a moment before Watanabe speaks again with a slightly indulgent tone.'}
+57	57		204							{1: '1', 2: '1'}
+58	58		301							{2: 'Watanabe', 3: 'Alright, what do you want to talk about?', 4: '1'}
+59	59		202							{1: '1'}
+60	60		301							{3: 'Outside the window, the starry sky is reflecting light from billions of years ago, and the bright moon is casting a frosty veil over everything below.'}
+61	61		301							{3: 'The distant horizon shows no signs of human structures. This is raw nature, silently rejecting human interference.'}
+62	62		301							{3: 'The sand dunes in the distance are layered like ink, looking as if they are both near and far at the same time.'}
+63	63		301							"{3: ""The armor vehicle's bright lights cut through the hills like a shooting star. You can see the small circle illuminated by the searchlight but can never fully grasp the vastness of the desert. It is a surreal feeling.""}"
+64	64		302							"{2: ""It's so beautiful..."", 3: '65'}"
+65	65		201							{1: '1', 2: '500783'}
+66	66		301				DialogDisable			{1: '1', 2: 'Watanabe', 3: 'Where? This vast expanse of sand?', 4: '1'}
+67	67		302							{2: 'Though desert storms are terrifying, the peaceful desert after the storm is beautiful.', 3: '68'}
+68	68		302							{2: 'Nature has this terrifying yet beautiful duality.', 3: '69'}
+69	69		301			DialogEnable				{3: 'Watanabe rolls down the window, letting the frigid night wind fill the small cabin.'}
+70	70		301							"{2: 'Watanabe', 3: ""...Well, no one's ever said that to me before."", 4: '1'}"
+71	71		301							{2: 'Watanabe', 3: 'But I have to admit, the desert at night... is indeed different from daytime.', 4: '1'}
+72	72		302							"{2: ""It isn't every day that you get to stare into the middle of the desert at night."", 3: '73'}"
+73	73		204							{1: '1', 2: '1'}
+74	74		301							{2: 'Watanabe', 3: 'Haha, if you like it, you can stay with the Forsaken and stare at it every day.', 4: '1'}
+75	75		302							"{2: ""I've mentioned before, Babylonia is a place I want to change..."", 3: '76'}"
+76	76		301							"{2: 'Watanabe', 3: ""A place you want to change and not to escape. Right, don't worry, I remember."", 4: '1'}"
+77	77		301							"{2: 'Watanabe', 3: ""So, let's discuss this when the war ends."", 4: '1'}"
+78	78		302							{2: 'War, eh...', 3: '79'}
+79	79		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '2'}
+80	80		301							{3: 'Wrapped in the warm blanket, sleepiness gradually sets in.'}
+81	81		302							{2: 'It will end soon...', 3: '82'}
+82	82		204							{1: '1', 2: '7'}
+83	83		301				DialogDisable			{2: 'Watanabe', 3: '【kuroname】?', 4: '1'}
+84	84		302							{2: 'Then, there will be plenty of time...', 3: '85'}
+85	85		302							{2: 'We can enjoy the desert landscape at night or go on...', 3: '86'}
+86	86		302							{2: 'Desert travels...', 3: '87'}
+87	87		202							{1: '1'}
+88	88		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 3: '1', 4: '0', 5: '3'}
+89	89		502							{1: 'RImgBg1DisableSlow'}
+90	90		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+91	91		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+92	92		301			DialogEnable				{3: 'With heavy eyelids, you slowly close your eyes.'}
+93	93		301							{3: 'Talking with Watanabe brings an unexpected sense of reassurance.'}
+94	94		301							{3: 'Staying by his side, it feels like those elusive dreams could actually come true.'}
+95	95		301							{3: 'Surrounded by this warm sense of security, you lean back in the passenger seat, gradually succumbing to sleep.'}
+96	96		301							{3: 'You hear a gentle voice just before drifting into slumber.'}
+97	97		301				AniZhuanchangBegin			{2: 'Watanabe', 3: 'Sweet dreams, 【kuroname】.'}
+98	98		401							{1: '1', 2: '36'}
+99	99		402							{1: '4232'}
+100	100		205							{1: '999'}
+101	101		101						3000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg'}
+102	102		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 3: '1', 4: '1', 5: '0'}
+103	103		401							{1: '1', 2: '210'}
+104	104		301			AniZhuanchangEnd				{3: 'The blinding sunlight jolts you awake. You are approaching the conservation area.'}
+105	105		301				AniZhuanchangBegin			"{3: ""The driver's seat is empty. It looks like Watanabe purposely didn't wake you up.""}"
+106	106		205							{1: '999'}
+107	107		401							{1: '2', 2: '2874'}
+108	108		301			AniZhuanchangEnd				"{3: ""When you step out of the vehicle, you see Watanabe leading Schneider's group and talking to the soldiers at the conservation area gate.""}"
+109	109		201							{1: '1', 2: '500783', 4: '400'}
+110	110		201							{1: '2', 2: '500567', 4: '-400'}
+111	111		301							{1: '1', 2: 'Conservation Area Soldier', 3: 'Thank you, Watanabe, for your contribution to maintaining the peace of conservation area 148. We will hand these people over to the legal authorities for their sentence.', 4: '2'}
+112	112		301							{2: 'Watanabe', 3: 'No problem.', 4: '1'}
+113	113		301							{2: 'Watanabe', 3: 'By the way, the Gray Raven Commandant 【kuroname】 also helped a lot in this operation. Please include that in the report.', 4: '1'}
+114	114		301							{2: 'Conservation Area Soldier', 3: 'Commandant 【kuroname】, right? We will contact Babylonia to submit this report.', 4: '2'}
+115	115		301							{3: 'It looks like the handover process is almost done.'}
+116	116		301							{3: 'When Watanabe is about to leave the conservation area, Schneider, who has been silent, suddenly calls out to him.'}
+117	117		202							{1: '1', 2: '2', 6: '1'}
+118	118		201							{1: '1', 2: '500093'}
+119	119		301							"{1: '1', 2: 'Schneider', 3: ""Watanabe, I'm not the only follower of Ballard. Taking me down won't end this."", 4: '1'}"
+120	120		301							"{2: 'Schneider', 3: 'You can\'t save everyone. As long as there\'s chaos in this world, ""Resisters"" will rise up!', 4: '1'}"
+121	121		202							{1: '1', 6: '1'}
+122	122		201							{1: '1', 2: '500567', 4: '400'}
+123	123		201							{1: '2', 2: '500093', 4: '-400'}
+124	124		401							{1: '2', 2: '4044'}
+125	125		301							{1: '1', 2: 'Conservation Area Soldier', 3: 'Hey! Stop spouting nonsense! You are nothing but a prisoner now!', 4: '1'}
+126	126		301							"{3: ""Soldiers from the conservation area rush to restrain Schneider, but Watanabe waves them off, indicating he doesn't mind.""}"
+127	127		202							{1: '1', 2: '2', 6: '1'}
+128	128		201							{1: '1', 2: '500783'}
+129	129		301							"{1: '1', 2: 'Watanabe', 3: ""It doesn't matter. No matter how many come, my mission remains the same."", 4: '1'}"
+130	130		301							{2: 'Watanabe', 3: 'I will prove through my actions that our ideals will not be wavered.', 4: '1'}
+131	131		202							{1: '1'}
+132	132		401							{1: '2', 2: '1516'}
+133	133		301				AniZhuanchangBegin			"{3: ""Watanabe doesn't look back and walks in the opposite direction. Under the sunlight, his shadow slowly separates from Schneider's until they no longer intersect.""}"
+134	134		201							{1: '1', 2: '500783'}
+135	135		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 3: '1', 4: '1', 5: '0'}
+136	136		401							{1: '2', 2: '2858'}
+137	137		301			AniZhuanchangEnd				"{1: '1', 2: 'Watanabe', 3: ""Oh, 【kuroname】, you're awake."", 4: '1'}"
+138	138		302							"{2: ""I'm sorry that I left it for you to handle alone..."", 3: '139'}"
+139	139		301							{2: 'Watanabe', 3: 'No worries. You were tired yesterday, so you should rest.', 4: '1'}
+140	140		301							"{2: 'Watanabe', 3: ""Babylonia contacted you through conservation area 148. They've designated a new rendezvous point. I'll drive you there."", 4: '1'}"
+141	141		302				AniZhuanchangBegin			{2: 'Okay.', 3: '142'}
+142	142		202							{1: '1', 6: '1'}
+143	143		401							{1: '2', 2: '885'}
+144	144		205							{1: '999'}
+145	145		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4101_01.jpg'}
+146	146		301			AniZhuanchangEnd				{3: 'Watanabe starts the car, and the steady roar of the engine signals the start of your journey once more.'}
+147	147		301							{3: 'Outside, the sunlight is perfect. A perfect line has formed between the blue sky and the golden earth.'}
+148	148		301							{3: 'The refreshing wind is blowing into the car, lifting your spirits.'}
+149	149		301							"{3: ""You can't help but think of the promise that was made yesterday.""}"
+150	150		302							{2: 'Watanabe, could we search for that oasis on our way back?', 3: '151'}
+151	151		301							{3: 'You thought Watanabe would brush it off as a joke, but to your surprise, Watanabe nods.'}
+152	152		301							{3: 'He grips the steering wheel tightly and accelerates. The powerful force pushes you back into your seats.'}
+153	153		301		1		AniZhuanchangBegin			"{2: 'Watanabe', 3: ""Alright, let's find our oasis together.""}"

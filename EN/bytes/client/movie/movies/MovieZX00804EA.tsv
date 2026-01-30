@@ -1,0 +1,10 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory42.jpg'}
+2	100		401							{1: '1', 2: '201'}
+3	2		201							{1: '1', 2: '1031001', 4: '400'}
+4	3		201							{1: '2', 2: '500029', 4: '-400'}
+5	4		301			DialogEnable				"{1: '1', 2: 'Lucia', 3: ""It's down...?"", 4: '2'}"
+6	5		301							{2: 'Liv', 3: 'Even the attack patterns are the same.', 4: '1'}
+7	6		302							"{2: ""No time to investigate, let's keep going."", 3: '7'}"
+8	7		301							"{2: 'Lucia', 3: ""Commandant's right, though we have many questions, we must find Kamui first."", 4: '2'}"
+9	8		301		1		AniZhuanchangBegin			{2: 'Lucia', 3: 'After the mission is over, we should retrieve some of these machines for research.', 4: '2'}

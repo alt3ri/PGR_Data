@@ -1,0 +1,17 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500328'}
+4	4		301			DialogEnable				"{1: '1', 2: 'No. 21', 3: ""Sniff. It doesn't smell suspicious. Should be safe."", 4: '1'}"
+5	5		302							"{2: ""It's safe!""}"
+6	6		301							{2: 'No. 21', 3: 'Noctis gave me a box last time. It exploded when I opened it and covered my face with grease.', 4: '1'}
+7	7		301							{2: 'No. 21', 3: 'He also gave me a box the time before that. My hands were stuck to the box with glue when I opened it.', 4: '1'}
+8	8		301							{2: 'No. 21', 3: 'And the time before that time...', 4: '1'}
+9	9		302							"{2: ""It's the person that's suspicious, not the box!"", 3: '10'}"
+10	10		301							"{2: 'No. 21', 3: ""So you're suspicious, Commandant?"", 4: '1'}"
+11	11		203							{1: '1', 2: '0.25', 5: '-80'}
+12	12		301							{3: 'No. 21 puts down the gift and walks toward you. You instinctively take a step back, but not before she grabs you by the collar and starts sniffing you.'}
+13	13		301							"{2: 'No. 21', 3: ""Sniff. You don't smell suspicious. The commandant should be safe."", 4: '1'}"
+14	14		302							{2: 'Can we open it now?', 3: '15'}
+15	15		204							{1: '1', 2: '3'}
+16	16		301		1		AniZhuanchangBegin			"{2: 'No. 21', 3: ""No. I'm keeping this box. I'll come back to sniff you the next time I find it suspicious, Commandant."", 4: '1'}"

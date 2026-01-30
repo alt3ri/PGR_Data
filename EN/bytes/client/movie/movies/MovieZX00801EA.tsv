@@ -1,0 +1,38 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory38.jpg'}
+2	100		401							{1: '1', 2: '203'}
+3	2		201							{1: '1', 2: '1031001', 4: '400'}
+4	3		201							{1: '2', 2: '1021001', 4: '-400'}
+5	4		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'Is it still intact?', 4: '2'}
+6	5		301							"{2: 'Liv', 3: ""There's a large amount of serum inside, and a new frame."", 4: '1'}"
+7	6		301							"{2: 'Liv', 3: ""It's a frame for Lucia!"", 4: '1'}"
+8	7		201							{1: '2', 2: '1011001', 4: '-400'}
+9	8		301							{1: '1', 2: 'Lee', 3: 'How generous of HQ this time.', 4: '2'}
+10	9		302							{2: 'Go on then, Lucia.', 3: '10'}
+11	10		201							{1: '2', 2: '1021001', 3: '6', 4: '-400'}
+12	11		301							{1: '1', 2: 'Lucia', 3: 'I... Please excuse me for a moment.', 4: '2'}
+13	12		302							"{2: ""What's she doing?"", 3: '13'}"
+14	13		201							{1: '2', 2: '1011001', 4: '-400'}
+15	14		204							{1: '1', 2: '6'}
+16	15		301							{1: '1', 2: 'Liv', 3: 'Commandant, you ask all these weird questions...', 4: '1'}
+17	16		204							{1: '1'}
+18	17		204							{1: '2', 2: '10'}
+19	18		301							"{2: 'Lee', 3: ""Cough, I'd like to refrain from answering."", 4: '2'}"
+20	19		201							{1: '2', 2: '1091001', 4: '-400'}
+21	20		301							{1: '1', 2: 'Bianca', 3: '...', 4: '2'}
+22	21		302							{2: '???', 3: '22'}
+23	22		202							{1: '1', 2: '2', 6: '1'}
+24	23		301							{3: 'One moment later.'}
+25	24		201							{1: '1', 2: '1031001', 4: '-400'}
+26	25		201							{1: '2', 2: '500029', 4: '400'}
+27	26		301							{1: '1', 2: 'Liv', 3: 'Are the adjustments going well?', 4: '1'}
+28	27		201							{1: '1', 2: '1011001', 4: '-400'}
+29	28		301							"{1: '1', 2: 'Lee', 3: ""It's a good frame."", 4: '1'}"
+30	29		201							{1: '1', 2: '1031001', 3: '1', 4: '-400'}
+31	30		301							{1: '1', 2: 'Liv', 3: 'It fits you well, Lucia—', 4: '1'}
+32	31		204							{1: '1'}
+33	32		301							"{2: 'Lucia', 3: ""Is that... so... It's just that the appearance is... a bit..."", 4: '2'}"
+34	33		302							{2: 'Change is good once in a while.', 3: '34'}
+35	34		201							{1: '1', 2: '1091001', 4: '-400'}
+36	35		301							{1: '1', 2: 'Bianca', 3: 'Sorry to interrupt, but we should continue tracking Kamui.', 4: '1'}
+37	36		301		1		AniZhuanchangBegin			"{2: 'Bianca', 3: ""Kamui's signal hasn't moved for a while now."", 4: '1'}"

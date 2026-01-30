@@ -1,0 +1,171 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory28.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: 'Meanwhile, at Oasis.'}
+4	4		201							{1: '1', 2: '500005', 4: '-400'}
+5	5		201							{1: '2', 2: '500460', 4: '400'}
+6	6		301							"{1: '1', 2: 'Forsaken Soldier', 3: ""Our leader left with a team of our men to take care of the Hetero-Creatures that showed up, and we're having trouble getting hold of them because there is strong magnetic disruption where they are. How many times are you going to make me repeat that?"", 4: '1'}"
+7	7		301							"{2: 'Forsaken Soldier', 3: ""We already asked the instructor to come down and he's on the way here, but you can go ahead and tell me what you need while we wait."", 4: '1'}"
+8	8		301							"{2: 'Resident', 3: ""Nope, not gonna do that. You don't seem like you're in charge here. The mayor said I needed to speak with the one in charge."", 4: '2'}"
+9	9		301							{3: 'Says the man in the bizarre outfit as he takes a swig from the flagon around his waist.'}
+10	10		301							{2: 'Resident', 3: 'Phew... boy, this is my first time delivering a message, and this sure is making me nervous.', 4: '2'}
+11	11		301							"{2: 'Forsaken Soldier', 3: ""Hey, you aren't supposed to drink here!"", 4: '1'}"
+12	12		301							"{2: 'Resident', 3: ""Don't sweat it. This is just wheatgrass juice. See, I can't take alcohol..."", 4: '2'}"
+13	13		301							"{2: 'Forsaken Soldier', 3: 'Wait, you\'re from ""New Oakley"" but you can\'t drink?', 4: '1'}"
+14	14		301							"{3: ""Seeing the suspicious look on the soldier's face, the man quickly corrects himself.""}"
+15	15		301							"{2: 'Resident', 3: ""Well, I can't really drink when I'm out on an official errand now, can I?"", 4: '2'}"
+16	16		301							{3: 'Says the man as he burps. He twists his flagon open to let the soldier smell its content. It smells anything but alcoholic.'}
+17	17		301							{2: 'Resident', 3: 'Want a sip?', 4: '2'}
+18	18		301							"{2: 'Forsaken Soldier', 3: ""Think I'll pass..."", 4: '1'}"
+19	19		301							{3: 'The soldier shakes his head.'}
+20	20		301							"{2: 'Resident', 3: ""Well, that's a shame... Glek glek."", 4: '2'}"
+21	21		301							{3: 'The man takes another swig of what he claims to be wheatgrass juice, filling the air with a crisp aroma.'}
+22	22		301							{2: 'Resident', 3: 'And I thought you guys were on friendly terms with Babylonia, no?', 4: '2'}
+23	23		301							"{2: 'Resident', 3: ""Heard from some guys from out of town that you've worked together a few times but taken some loss?"", 4: '2'}"
+24	24		301							"{2: 'Resident', 3: ""Most of the guys that they send down from Babylonia are Constructs and are good to go again with some quick fixes, but that ain't gonna fly with you human soldiers, no?"", 4: '2'}"
+25	25		301							"{2: 'Resident', 3: ""Have they ever treated you people at all? Or do they just go puff when they're done with their business?"", 4: '2'}"
+26	26		301							"{2: 'Forsaken Soldier', 3: ""We'd have still gone to help those people even without Babylonia's help. I'd stop sticking my nose into people's business now if I were you."", 4: '1'}"
+27	27		301							{3: 'The soldier clutches his gun and, as he does so, he can seem to feel the heat coming from the blood-tainted name tag in his pocket.'}
+28	28		301							"{2: 'Resident', 3: ""C'mon, man, chill. I was just saying..."", 4: '2'}"
+29	29		301							"{2: 'Resident', 3: ""Say, where is the guy I'm supposed to talk to? Is he still on his way?"", 4: '2'}"
+30	30		202							{1: '1', 2: '2', 6: '1'}
+31	31		301							{2: '???', 3: 'I am right here. How can I help you today?'}
+32	32		201							{1: '1', 2: '500686', 4: '400'}
+33	33		201							{1: '2', 2: '500005', 4: '-400'}
+34	34		301							{1: '1', 3: 'As a steady voice comes from behind the man, the soldier standing before him salutes the person behind him.'}
+35	35		301							{2: 'Forsaken Soldier', 3: 'Sir Ballard!', 4: '2'}
+36	36		301							"{2: 'Ballard', 3: 'I heard we had a friend hailing from ""New Oakley"" ready to share some intel with us.', 4: '1'}"
+37	37		202							{1: '2', 6: '1'}
+38	38		201							{1: '2', 2: '500460', 4: '-400'}
+39	39		301							{1: '1', 3: 'After saluting the soldier, Ballard turns around to face the man.'}
+40	40		301							{2: 'Ballard', 3: 'I am the one in charge of the Forsaken when Watanabe is away, so feel free to talk to me.', 4: '1'}
+41	41		301							"{3: ""Feeling intimidated by Ballard's stern demeanor, the man quickly stands upright as he fastens the flagon to his waist.""}"
+42	42		301				AniZhuanchangBegin			{2: 'Resident', 3: 'Yes, I came to share some very important intel with you.', 4: '2'}
+43	43		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory41.jpg'}
+44	44		204							{1: '1', 2: '4'}
+45	45		301			AniZhuanchangEnd				{1: '1', 2: 'Ballard', 3: 'Are you sure about that?', 4: '1'}
+46	46		301							"{3: 'After hearing what the man from ""New Oakley"" had to say, everyone looks dubiously at him.'}"
+47	47		301							"{2: 'Resident', 3: ""I swear to God I'm not lying. The commandant who shared the intel with me seemed important enough."", 4: '2'}"
+48	48		301							"{2: 'Resident', 3: ""Based on the way that angry Construct followed that commandant's orders, there's no way the commandant is here to defect to us, right?"", 4: '2'}"
+49	49		202							{1: '1', 2: '2', 6: '1'}
+50	50		201							{1: '1', 2: '500136'}
+51	51		301							"{1: '1', 2: 'Forsaken A', 3: 'And you were saying Babylonia is trying to add ""New Oakley"" to their territory? That\'s a whole bunch of nonsense!', 4: '1'}"
+52	52		301							{2: 'Forsaken A', 3: 'Are they seriously going to fight for this land on Earth now when they abandoned Earth and left it to suffer?', 4: '1'}
+53	53		202							{1: '1', 6: '1'}
+54	54		201							{1: '1', 2: '500136', 4: '-400'}
+55	55		201							{1: '2', 2: '500565', 4: '400'}
+56	56		301							"{1: '1', 2: 'Forsaken B', 3: ""They've come a long way since the Great Evacuation, though. At least they seem willing to work together now."", 4: '2'}"
+57	57		301							"{2: 'Forsaken A', 3: ""C'mon, son, you weren't even born when the Great Evacuation was happening!"", 4: '1'}"
+58	58		301							"{2: 'Forsaken B', 3: ""Right, but I've been fighting alongside Sir Watanabe for long enough, and I believe what I've seen with my very own eyes."", 4: '2'}"
+59	59		301							"{2: 'Forsaken A', 3: ""You know what his problem is? He's being too much of a pushover. We wouldn't have been where we are today had he tried to keep this base's independence by force."", 4: '1'}"
+60	60		301							"{2: 'Forsaken A', 3: ""Just think about how we're all still here trying to keep this base safe and how he has to personally get rid of the Hetero-Creatures himself."", 4: '1'}"
+61	61		202							{1: '1', 2: '2', 6: '1'}
+62	62		201							{1: '1', 2: '500686'}
+63	63		301							"{1: '1', 2: 'Ballard', 3: ""Alright, that's quite enough."", 4: '1'}"
+64	64		301							"{3: ""With Ballard's stern tone of voice, the argument quickly dies down.""}"
+65	65		201							{1: '1', 2: '500624'}
+66	66		301							"{1: '1', 2: 'Forsaken C', 3: ""Sir, Babylonia doesn't seem like they want to talk this out at all, and that's what we're all having such a difficult time swallowing here."", 4: '1'}"
+67	67		301							{3: 'A man who has never spoken until now speaks up.'}
+68	68		301							"{2: 'Forsaken C', 3: ""We understand why they want to do what they're trying to do, but the way they're going about it screams arrogance."", 4: '1'}"
+69	69		301							"{2: 'Forsaken C', 3: ""The Clean Zone belongs to everyone and isn't Babylonia's private property."", 4: '1'}"
+70	70		301							"{2: 'Forsaken C', 3: ""They seem to still think of Earth as something they own and don't realize that there are people trying to survive on this very planet they abandoned."", 4: '1'}"
+71	71		301							"{2: 'Forsaken C', 3: '""New Oakley"" is an important source of food to the Forsaken, and we just hate the idea of seeing our lifeline privatized again.', 4: '1'}"
+72	72		301							"{2: 'Forsaken C', 3: ""I mean, it isn't the first time they've done that anyway."", 4: '1'}"
+73	73		201							{1: '1', 2: '500686'}
+74	74		301							"{1: '1', 2: 'Ballard', 3: ""I totally understand where you're coming from, but let's just take a moment to remember that not everyone from Babylonia wants the Forsaken gone."", 4: '1'}"
+75	75		301							{2: 'Ballard', 3: 'Which is why we need to strike a balance—before we have what it takes to go independent.', 4: '1'}
+76	76		301							{2: 'Ballard', 3: 'There is still a possibility for conservation, so there is no need for us to complicate things by being hostile.', 4: '1'}
+77	77		301							{2: 'Ballard', 3: 'Why is why...', 4: '1'}
+78	78		401							{1: '1', 2: '36'}
+79	79		401							{1: '2', 2: '1515'}
+80	80		301							{3: 'Right when Ballard is about to go on, every terminal on the Forsaken in the discussion starts blaring.'}
+81	81		401							{1: '1', 2: '202'}
+82	82		201							{1: '1', 2: '500136'}
+83	83		301				AniZhuanchangBegin			{1: '1', 2: 'Forsaken A', 3: 'A distress signal?', 4: '1'}
+84	84		201							{1: '1', 2: '500696', 3: '4'}
+85	85		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory347.jpg'}
+86	86		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+87	87		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+88	88		401							{1: '2', 2: '2566'}
+89	89		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+90	90		401							{1: '2', 2: '2791'}
+91	91		301			AniZhuanchangEnd				{1: '1', 3: 'Their terminals all show the face of a young man now—one that looks slightly dorky without a mask on.'}
+92	92		301							"{3: 'His name tag reads ""Zong"".'}"
+93	93		301							{3: 'Watanabe has taken a team of Forsakens with him to build an area of defense where Hetero-Creatures had previously been found—and Zong was one of the Forsakens that went with Watanabe.'}
+94	94		401							{1: '2', 2: '2959'}
+95	95		301							{2: 'Zong', 3: '...Assault... All channels...', 4: '1'}
+96	96		301							"{3: ""The disruption is so bad that all that's coming from Zong's side of the line now are odd phrases, gunshots, and sounds of explosion.""}"
+97	97		301							"{2: 'Forsaken A', 3: ""Zong, aren't you with Watanabe? What's going on?!""}"
+98	98		401							{1: '2', 2: '2959'}
+99	99		301							{2: 'Zong', 3: '...Purifying Force... Severely wounded... Help...', 4: '1'}
+100	100		301			RImgBg1Shake				"{3: ""As the video shakes violently, Zong keeps his eyes down. It seems like he's dragging something.""}"
+101	101		401							{1: '2', 2: '943'}
+102	102		301							{3: 'Right then, from behind Zong, everyone sees a shrapnel shell coming straight at him with trailing smoke.'}
+103	103		301			RImgBg1Shake				{2: 'Forsaken B', 3: 'Zong! Drop down now!'}
+104	104		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+105	105		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+106	106		401							{1: '2', 2: '2982'}
+107	107		401							{1: '2', 2: '2924'}
+108	108		402							{1: '2791'}
+109	109		501						1500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+110	110		202							{1: '1', 6: '1'}
+111	111		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+112	112		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+113	113		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+114	114		301				AniZhuanchangBegin			{3: 'Before the video turns black, the Forsakens see Zong drop down.'}
+115	115		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory41.jpg'}
+116	116		301			AniZhuanchangEnd				"{3: ""With it, the video turns black, and everyone present falls silent. The silence, however, doesn't last long.""}"
+117	117		401							{1: '2', 2: '2511'}
+118	118		301			RImgBg1Shake				{3: 'The Forsaken that was shouting at the top of his lungs just moments ago stands up, his chair creaking against the floor.'}
+119	119		201							{1: '1', 2: '500460'}
+120	120		301							{1: '1', 2: 'Resident', 3: 'Dude... what the hell?', 4: '1'}
+121	121		202							{1: '1', 6: '1'}
+122	122		301							{3: 'Without saying anything, the Forsaken walks out the door. The person with whom he was having a heated argument just moments ago stands up, too, and follows him outside.'}
+123	123		201							{1: '1', 2: '500686', 4: '400'}
+124	124		201							{1: '2', 2: '500136', 4: '-400'}
+125	125		301							{1: '1', 2: 'Ballard', 3: 'Where are you going?', 4: '1'}
+126	126		301							"{2: 'Forsaken A', 3: ""I don't know about you, but I'm totally ready to give Babylonia a piece of my mind here!"", 4: '2'}"
+127	127		301							{3: 'As he spits out the words, the other guy beside him nods in silent agreement.'}
+128	128		301							{2: 'Ballard', 3: 'Are you trying to freak everyone out now? Come back and sit down already.', 4: '1'}
+129	129		301							{2: 'Forsaken A', 3: 'Ballard!!', 4: '2'}
+130	130		301							{3: 'The Forsaken points a finger at Ballard.'}
+131	131		301							"{2: 'Forsaken A', 3: ""Think no one knows what you've done? You were the one who founded the Purifying Force back in the Post-Pandemic Age."", 4: '2'}"
+132	132		301							{2: 'Forsaken A', 3: 'Finding it hard to let Babylonia go now, huh?', 4: '2'}
+133	133		301							"{2: 'Ballard', 3: ""I'm as good as dead to the Purifying Force."", 4: '1'}"
+134	134		301							{3: 'Ballard remains unfazed.'}
+135	135		301							"{2: 'Ballard', 3: ""But you're not thinking all of these through with a straight head, and that's definitely not something that either Watanabe or I have taught you."", 4: '1'}"
+136	136		301							"{2: 'Ballard', 3: ""What if the video was fake? It might seem like the Purifying Force was attacking Zong, but what if that's not what he was trying to tell us?"", 4: '1'}"
+137	137		301							"{2: 'Forsaken A', 3: ""But it's got to do with them no matter what, and I'm sure they're keeping an eye on us as we speak anyway!"", 4: '2'}"
+138	138		301							{2: 'Ballard', 3: 'Well, be that as it may, how exactly are you going to find them? Are you just going to shout at the top of your lungs so the entire world can hear you?', 4: '1'}
+139	139		301							{2: 'Ballard', 3: 'And how are you going to deal with them when you find them? Are you just going to do them in without a trial?', 4: '1'}
+140	140		301							"{2: 'Ballard', 3: ""And exactly how are you going to make sure nothing is going to happen to the border when you've met Babylonia head-on?"", 4: '1'}"
+141	141		301							"{3: ""Ballard's shadow seems to loom bigger with every question, causing the air to grow heavier by the second.""}"
+142	142		301							"{3: ""Feeling the weight of the truth in Ballard's words, the Forsaken says no more, his body shuddering all over.""}"
+143	143		202							{1: '1', 2: '2', 6: '1'}
+144	144		201							{1: '1', 2: '500624'}
+145	145		301							{1: '1', 2: 'Forsaken C', 3: 'If I may, sir, what exactly are we supposed to do?', 4: '1'}
+146	146		201							{1: '1', 2: '500686'}
+147	147		301							"{1: '1', 2: 'Ballard', 3: ""I'd have the video we saw just now analyzed by our technicians and start looking for survivors where Watanabe went to build the area of defense."", 4: '1'}"
+148	148		301							"{2: 'Ballard', 3: ""It's Watanabe we are talking about, and you don't come across a guy as tough as him every day."", 4: '1'}"
+149	149		301							{2: 'Ballard', 3: 'We need to take the initiative if Babylonia is really behind this.', 4: '1'}
+150	150		301							"{2: 'Ballard', 3: ""Now, I don't mean that we're getting back at them—we're just trying to get back what's rightfully ours before they go any further with the Clean Zone."", 4: '1'}"
+151	151		301							"{2: 'Ballard', 3: ""Be it getting them to do as we say or going against them, we'll need to first get our hands on a few trump cards."", 4: '1'}"
+152	152		301							"{2: 'Ballard', 3: ""We'll need these trump cards to either ask them to spill the beans about Watanabe or ask them to save him."", 4: '1'}"
+153	153		201							{1: '1', 2: '500565'}
+154	154		301							"{1: '1', 2: 'Forsaken B', 3: ""I don't think Sir Watanabe would have agreed to this had he been here."", 4: '1'}"
+155	155		301							{2: 'Forsaken B', 3: 'But I think most people here will agree if this is something we have to do to save him.', 4: '1'}
+156	156		201							{1: '1', 2: '500686'}
+157	157		301							{1: '1', 2: 'Ballard', 3: 'Right. Now, we need to come up with a plan first.', 4: '1'}
+158	158		301							"{2: 'Ballard', 3: 'And as for our friend from ""New Oakley""...', 4: '1'}"
+159	159		301							"{3: ""Ballard casts a look at the man—who's trying to sneak out quietly.""}"
+160	160		202							{1: '1', 6: '1'}
+161	161		201							{1: '1', 2: '500686', 4: '400'}
+162	162		201							{1: '2', 2: '500460', 4: '-400'}
+163	163		301							{1: '1', 2: 'Resident', 3: 'Well... I thought I was already done here...', 4: '2'}
+164	164		301							"{2: 'Ballard', 3: ""Guess we'll need you to stay here for just a bit longer."", 4: '1'}"
+165	165		301							{2: 'Resident', 3: 'Well... sure, then.', 4: '2'}
+166	166		301							"{3: ""The man is about to say no—but quickly decides that he isn't really in a position to do so, given how severely outnumbered he is.""}"
+167	167		202							{1: '1', 2: '2', 6: '1'}
+168	168		201							{1: '1', 2: '500624'}
+169	169		301							{1: '1', 3: 'As the other people look the other way, the reserved Forsaken stops shaking his head.'}
+170	170		301		1		AniZhuanchangBegin			{2: 'Forsaken C', 3: '...', 4: '1'}

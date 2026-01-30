@@ -1,0 +1,231 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory70.jpg'}
+2	2		401							{1: '1', 2: '271'}
+3	3		301			DialogEnable				"{3: 'Veronica strides through the deserted hallway with nothing standing in her way. The ""wings"" extended from her back cast shadows in her wake.'}"
+4	4		301							{3: 'The support units that previously covered the arena and laid down suppressive fire against her now lie in grotesque, twisted heaps.'}
+5	5		401							{1: '2', 2: '2567'}
+6	6		201							{1: '1', 2: '500353', 4: '600', 5: '-100', 6: '100'}
+7	7		201							{1: '2', 2: '500353', 4: '-600', 5: '-100', 6: '100'}
+8	8		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 3: '1', 4: '1'}
+9	9		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 3: '2', 4: '2'}
+10	10		502							{1: 'DialogShake'}
+11	11		301							{1: '1', 2: 'Support Units', 3: 'Rargh—', 4: '2'}
+12	12		401							{1: '2', 2: '4698'}
+13	13		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 3: '1', 4: '1'}
+14	14		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1', 4: '1'}
+15	15		301			RImgBg1Shake	DialogDisable			{2: 'Support Units', 3: '^#$%*&——', 4: '2'}
+16	16		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 4: '1'}
+17	17		502						700.0	{1: 'PanelActor1Shake'}
+18	18		505							{1: 'PanelActor1Shake'}
+19	19		203						80.0	{1: '1', 2: '0.15', 3: '600', 4: '-250', 5: '100'}
+20	20		202							{1: '1'}
+21	21		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+22	22		203					400.0	400.0	{1: '2', 2: '0.5', 4: '-100', 5: '100'}
+23	23		202							{1: '2'}
+24	24		306							{1: '1', 2: '2'}
+25	25		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 4: '1'}
+26	26		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 4: '2'}
+27	27		301			DialogEnable				{3: 'All of the support units, apparently having fallen into bizarre chaos, are attacking one another.'}
+28	28		301				DialogDisable			{3: 'Shattered parts of them litter the corridor before they get stained with vital fluid leaking from their broken bodies.'}
+29	29		306							
+30	30		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab', 2: '2'}
+31	31		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+32	32		401							{1: '2', 2: '4063', 3: '0.7'}
+33	33		201							{1: '1', 2: '501366', 6: '-100'}
+34	34		104							{1: '0|-100|-150', 2: '1'}
+35	35		203						1050.0	{1: '1', 2: '1', 3: '0', 4: '-20', 5: '-200'}
+36	36		401							{1: '2', 2: '4053', 3: '1'}
+37	37		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+38	38		301			DialogEnable				"{1: '1', 3: ""One of the support units, apparently having sensed Veronica's approach, pivots and locks its visual module on her.""}"
+39	39		301							{3: 'Its visual module, usually aglow with a steady blue gleam, now frantically flashes with rapid pulses of crimson.'}
+40	40		401							{1: '2', 2: '2567'}
+41	41		301			DialogShake				{2: 'Support Units', 3: 'Rargh—'}
+42	42		204							{1: '1', 2: '4'}
+43	43		301				DialogDisable			{2: 'Veronica', 3: 'Are you... infected?', 4: '1'}
+44	44		401							{1: '2', 2: '846'}
+45	45		203							{1: '1', 2: '0.14', 3: '0', 4: '-60', 5: '-300'}
+46	46		502						150.0	{1: 'RImgBg1Shake'}
+47	47		401							{1: '2', 2: '4806'}
+48	48		401							{1: '2', 2: '966'}
+49	49		501						600.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+50	50		402							{1: '4063'}
+51	51		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenRedEx.prefab'}
+52	52		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+53	53		202							{1: '1'}
+54	54		104							{1: '0|0|0', 2: '0'}
+55	55		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab'}
+56	56		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+57	57		402							{1: '718'}
+58	58		301			DialogEnable	AniZhuanchangBegin			{3: 'She raises her lance and impales the energy core of the now-corrupted support unit. As the frenzied red light in its eyes fades, its piercing wail falls silent.'}
+59	59		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+60	60		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1310.jpg'}
+61	61		201							{1: '18', 2: '501353', 4: '-200', 5: '-100', 6: '200'}
+62	62		301			AniZhuanchangEnd				"{1: '1', 2: 'Dolores', 3: ""Is that you, Veronica? I'd recognize those footsteps anywhere."", 4: '18'}"
+63	63		202			DialogDisable				{1: '18', 6: '1'}
+64	64		401						300.0	{1: '2', 2: '4806'}
+65	65		401						500.0	{1: '2', 2: '772'}
+66	66		111						250.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab'}
+67	67		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1318.jpg'}
+68	68		301			DialogEnable		2000.0		{3: 'The lance slices through the air and shatters the ornate folding screen. Beyond it, Veronica finally sees her—the human girl hidden away all this time, the one behind all this brutality and suffering.'}
+69	69		301							"{3: ""Veronica descends through the darkness like Death, ready to take Dolores' life.""}"
+70	70		306							{1: '1'}
+71	71		201							{1: '1', 2: '501353'}
+72	72		301							{1: '1', 3: 'Dolores, however, remains unfazed, maintaining her composure without budging an inch.'}
+73	73		301							{3: 'She reclines on her sumptuous bed, enveloped in soft velvet and lace. Beneath these luxurious fabrics, her face is pale to the point of appearing translucent.'}
+74	74		202							{1: '1'}
+75	75		306							
+76	76		301							{3: 'Yet, without so much as a glance at Veronica, she treats the mechanoid as nothing more than a long-expected visitor.'}
+77	77		301				DialogDisable			{3: 'Instead, she keeps her attention fixed on the array of monitors before her, which display live footage of the hellish arena below.'}
+78	78		401							{1: '2', 2: '4627'}
+79	79		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+80	80		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+81	81		401						500.0	{1: '2', 2: '36'}
+82	82		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1315.jpg'}
+83	83		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+84	84		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '2'}
+85	85		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+86	86		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+87	87		401							{1: '1', 2: '6204'}
+88	88		301			DialogEnable				"{3: ""In the arena, the match has concluded—the loser's metal limbs lie torn and crushed beyond recognition, no longer resembling the mechanoid gladiator they once were.""}"
+89	89		301							"{3: ""The victor's visual module pulses with the same frenzied red glow as the support units.""}"
+90	90		301							"{3: 'Instead of savoring its ""victory,"" however, it launches itself skyward with terrifying force and soars straight into the audience stands.'}"
+91	91		401							{1: '2', 2: '4916'}
+92	92		301							"{3: 'The crowd doesn\'t erupt in cheers for the ""champion."" Rather, the arena brims with desperate pleas for help and terrified screams.'}"
+93	93		301			DialogShake	DialogDisable			{1: '1', 2: 'Spectators', 3: 'Help!!!', 4: '1'}
+94	94		401							{1: '2', 2: '4408'}
+95	95		101						80.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 4: '4'}
+96	96		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 4: '4', 5: '1'}
+97	97		502							{1: 'DialogEnable'}
+98	98		301			DialogShake	DialogDisable			"{2: 'Spectators', 3: ""The m-mech—it's gone berserk—AAAHH!!!"", 4: '2'}"
+99	99		401							{1: '2', 2: '4408'}
+100	100		101						80.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 4: '4'}
+101	101		101						400.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 4: '4', 5: '1'}
+102	102		401							{1: '2', 2: '4408'}
+103	103		101						80.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 4: '4'}
+104	104		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 4: '4', 5: '1'}
+105	105		402							{1: '4916'}
+106	106		301			DialogEnable				"{3: 'Ignoring all the cries for help from the humans, this ""champion"" mindlessly swings its weapon as it carries out the same killing spree it did in this arena.'}"
+107	107		201							{1: '1', 2: '501233'}
+108	108		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 3: '1', 4: '1'}
+109	109		401							{1: '2', 2: '4313'}
+110	110		301			DialogShake				{1: '1', 2: 'Mechanoid', 3: 'Locking target. Attack.', 4: '1'}
+111	111		401							{1: '2', 2: '4408'}
+112	112		502							{1: 'DialogShake'}
+113	113		301			RImgBg1Shake	DialogDisable			{2: 'Mechanoid', 3: 'Attack—%*&#$&#—', 4: '1'}
+114	114		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 4: '1'}
+115	115		202							{1: '1'}
+116	116		401						100.0	{1: '2', 2: '5321'}
+117	117		401						400.0	{1: '2', 2: '2593'}
+118	118		101			RImgBg1Shake				{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '4'}
+119	119		401							{1: '2', 2: '5321'}
+120	120		301			DialogEnable	DialogDisable			{3: 'The weapon thrusts again and again into human bodies, each strike blossoming with vivid crimson.'}
+121	121		401						100.0	{1: '2', 2: '5321'}
+122	122		401						400.0	{1: '2', 2: '2593'}
+123	123		101			RImgBg1Shake				{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 4: '6'}
+124	124		401							{1: '2', 2: '5321'}
+125	125		301			DialogEnable	DialogDisable			"{3: ""Through the mechanoid's corrupted visual module, it's no longer able to tell vital fluid from human blood.""}"
+126	126		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '6', 5: '1'}
+127	127		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 4: '4', 5: '1'}
+128	128		104						500.0	{1: '120|0|-200', 2: '0.5'}
+129	129		301			DialogEnable				{3: 'In the exit corridors, the guide robots—once precise and helpful escorts—are now merciless weapons that butcher fleeing spectators.'}
+130	130		301							{3: 'More and more fragile bodies fall to cold, unfeeling metal arms and fall into gruesome heaps at every exit.'}
+131	131		301				DialogDisable			{3: 'As time passes by, more mechanoids join the slaughter, while the number of human survivors dwindles rapidly.'}
+132	132		104						500.0	{1: '-120|0|-200', 2: '0.5'}
+133	133		301			DialogEnable	DialogDisable			{3: 'A few survivors hide in the shadows, desperately trying to call for help, but every terminal now displays nothing but white static.'}
+134	134		104							{1: '0|0|0', 2: '0.5'}
+135	135		301			DialogEnable				"{3: ""No one in the arena knows exactly what's causing the chaos.""}"
+136	136		301							{3: 'As mechanoids pierce through flesh and bone, none of the victims realize it is the Punishing Virus that wreaked this havoc on humanity.'}
+137	137		301				DialogDisable			{3: 'A new age of unprecedented cruelty has quietly begun.'}
+138	138		401							{1: '2', 2: '4916'}
+139	139		301			DialogEnable	DialogDisable			{2: 'Spectators', 3: 'What... in the world is going on?'}
+140	140		401							{1: '2', 2: '4408'}
+141	141		101						80.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 4: '4'}
+142	142		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 4: '4', 5: '1'}
+143	143		502							{1: 'DialogEnable'}
+144	144		301			DialogShake	DialogDisable			{2: 'Spectators', 3: 'Help me—! Someone please—anybody—!'}
+145	145		401							{1: '2', 2: '4408'}
+146	146		401							{1: '2', 2: '2593'}
+147	147		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '6'}
+148	148		101						800.0	{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 4: '4'}
+149	149		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '6', 5: '1'}
+150	150		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 4: '4', 5: '1'}
+151	151		502							{1: 'DialogEnable'}
+152	152		301			DialogShake	DialogDisable			"{2: 'Spectators', 3: ""I don't want to die—!""}"
+153	153		401							{1: '2', 2: '4408'}
+154	154		101						800.0	{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '6'}
+155	155		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '6', 5: '1'}
+156	156		402							{1: '4916'}
+157	157		301			DialogEnable				"{3: ""These desperate human pleas don't last long. Soon, the once-vibrant arena falls into utter silence.""}"
+158	158		301							{3: 'The only things that are now still moving are the mechanoids. In all shapes and sizes, their visual sensors pulse with the same manic red glow.'}
+159	159		301				DialogDisable			{3: 'Yet the human girl witnessing this carnage shows no trace of fear or panic—instead, she wears an excited smile across her face.'}
+160	160		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+161	161		401							{1: '2', 2: '4627'}
+162	162		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+163	163		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+164	164		401						500.0	{1: '2', 2: '36'}
+165	165		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1318.jpg'}
+166	166		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab'}
+167	167		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+168	168		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+169	169		401							{1: '1', 2: '271'}
+170	170		201							{1: '1', 2: '501353', 3: '2'}
+171	171		301			DialogEnable				"{1: '1', 2: 'Dolores', 3: ""You're doing so well. You always manage to crush them all, no matter the circumstances."", 4: '1'}"
+172	172		301							"{3: ""A sickly flush spreads across Dolores' pale face as her eyes gleam with desperate hunger.""}"
+173	173		202							{1: '1'}
+174	174		301							"{3: ""Dolores ignores the bloodshed and gunpowder hanging in the air, her greedy gaze sweeping over Veronica again and again—as if she's looking not at a terrifying war machine, but at a...""}"
+175	175		201							{1: '1', 2: '501353', 3: '2'}
+176	176		301							{1: '1', 2: 'Dolores', 3: 'Veronica, you truly are a flawless work of art.', 4: '1'}
+177	177		203							{1: '1', 2: '0.3', 4: '-50', 5: '-300'}
+178	178		306							{1: '1'}
+179	179		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu01.prefab'}
+180	180		104						500.0	{1: '0|-50|-200', 2: '0.3'}
+181	181		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu01.prefab'}
+182	182		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu02.prefab'}
+183	183		301							"{3: '""And the perfect new body to house my mind.""'}"
+184	184		301				DialogDisable			"{3: ""This unspoken desire floods Dolores' eyes, impossible to hide.""}"
+185	185		202							{1: '1', 6: '1'}
+186	186		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu02.prefab'}
+187	187		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu03.prefab'}
+188	188		306							
+189	189		104						550.0	{1: '0|0|0', 2: '0.5'}
+190	190		201							{1: '1', 2: '501366', 3: '13', 5: '-20', 6: '-200'}
+191	191		301			DialogEnable				"{1: '1', 2: 'Veronica', 3: ""You done? I don't have time for this nonsense."", 4: '1'}"
+192	192		204							{1: '1', 2: '5'}
+193	193		301							{2: 'Veronica', 3: 'Now, meet your fate.', 4: '1'}
+194	194		202							{1: '1'}
+195	195		301							"{3: ""Veronica approaches Dolores, but Dolores doesn't make any attempt to escape. Not even a flicker of fear crosses her eyes.""}"
+196	196		301							{3: 'An ornate handgun rests by her pillow—useless against a mechanoid as powerful as Veronica, and she shows no interest in reaching for it at all.'}
+197	197		201							{1: '1', 2: '501366', 3: '13', 5: '-20', 6: '-200'}
+198	198		301							{1: '1', 2: 'Veronica', 3: 'Fool.', 4: '1'}
+199	199		301							{3: 'In the cold blue glow coming through the massive aquarium, Veronica finally sees Dolores for what she is now.'}
+200	200		202							{1: '1', 6: '1'}
+201	201		306							{1: '1'}
+202	202		201							{1: '1', 2: '501354'}
+203	203		301							{1: '1', 3: 'Beneath her elegant clothing, countless tubes snake in all directions, their rough edges piercing her skin—imprisoning her within an exquisite cage of her own flesh.'}
+204	204		301							"{3: 'In that instant, it finally dawns on Veronica what Dolores meant just now when she said she needed a ""perfect new body.""'}"
+205	205		202							{1: '1', 2: '1'}
+206	206		306							
+207	207		301							{3: 'All the clues that Veronica has gathered so far connect like strands in a web, leading to the venomous spider—she who has orchestrated everything behind the scenes—at its center.'}
+208	208		301							{3: 'With her broken body, Deloris has been plotting something audacious—to transfer her consciousness into what she believes is the most powerful mechanoid.'}
+209	209		301							"{3: 'And now, the human—the ""parasite"" in this case—finally meets her desired ""host."" The human can\'t escape—in fact, she can\'t even raise a hand against the mechanoid.'}"
+210	210		201							{1: '1', 2: '501354', 3: '1'}
+211	211		301							"{1: '1', 2: 'Dolores', 3: ""Well, well, well. Are you going to strike me down now that you've seen the truth, my dear heroine?"", 4: '1'}"
+212	212		301							"{3: ""Dolores, however, utters these very words with a mocking smile on her face. Her vulnerability doesn't seem to concern her at all.""}"
+213	213		202							{1: '1'}
+214	214		301				DialogDisable			"{3: ""As soon as Dolores finishes talking, Veronica's pupils contract sharply. Her sensory systems flood with warnings—something is approaching at incredible speed.""}"
+215	215		401							{1: '2', 2: '2912'}
+216	216		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+217	217		502						1000.0	{1: 'RImgBg1Shake'}
+218	218		502						1000.0	{1: 'RImgBg1Shake'}
+219	219		401							{1: '2', 2: '4376'}
+220	220		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+221	221		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+222	222		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+223	223		101				AniZhuanchangBegin		500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+224	224		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1318.jpg'}
+225	225		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+226	226		201							{1: '2', 2: '501357', 4: '450', 5: '50', 6: '-100', 7: '1'}
+227	227		401			AniZhuanchangEnd				{1: '2', 2: '5544'}
+228	228		301			DialogEnable				"{1: '1', 3: ""As the dust settles, the object that was coming at Veronica reveals itself—it's none other than Overseer, now standing obediently by Deloris.""}"
+229	229		201							{1: '18', 2: '501354', 3: '1', 4: '-200', 5: '-100', 6: '200'}
+230	230		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Dolores', 3: ""Now... it's time we get some cleanup done."", 4: '18'}"

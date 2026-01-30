@@ -1,0 +1,425 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory908.jpg'}
+2	2		401							{1: '1', 2: '391'}
+3	3		306							{1: '1'}
+4	4		301			DialogEnable				{3: 'On December 15th, Spaceport A1, the central transit hub of the space fortress, one of the petals that belong to the most dazzling flower in Babylonia, is engulfed in the highly-concentrated Punishing Virus. The vast crimson glow looms ominously, almost as if it could devour everything in its path.'}
+5	5		301							{3: 'At last, the influence of the Punishing reaches a boundary and stops. After one hour and thirty-two minutes, the spaceport, completely transformed by the Punishing corruption, rips itself away from Babylonia like a living creature, bit by bit, and begins to fall toward Earth.'}
+6	6		502							{1: 'RImgBg1Shake'}
+7	7		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory907.jpg', 3: '0', 4: '1', 5: '2'}
+8	8		401							{1: '2', 2: '4321'}
+9	9		301							{3: 'The turbulence from the tear affects all of Babylonia, forcing it off its original orbit and triggering a cascade of structural failures across vast sections.'}
+10	10		301				AniZhuanchangBegin			{3: 'As the awakened spaceport plummets, intermittent explosions tear through its surface, each blast ejecting fragments of its structure. Like a sentient being devoid of emotion, it adjusts its descent by shedding its own flesh piece by piece.'}
+11	11		502							{1: 'RImgBg1BlowUp'}
+12	12		205							{1: '999'}
+13	13		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory664.jpg'}
+14	14		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '1'}
+15	15		301			AniZhuanchangEnd				{3: 'And its final calibrated trajectory points directly at the Clean Zone on the surface, where that tower reaching to the sky stands.'}
+16	16		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '3'}
+17	17		503							{1: '10128'}
+18	18		306							
+19	19		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+20	20		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+21	21		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+22	22		401							{1: '2', 2: '4322'}
+23	23		401							{1: '2', 2: '4321'}
+24	24		301							"{3: ""In that instant, a white flash engulfs everyone's vision.""}"
+25	25		401							{1: '2', 2: '943'}
+26	26		401							{1: '2', 2: '4431'}
+27	27		401							{1: '2', 2: '4280'}
+28	28		301							{3: 'The Inver-Hetero Tower emits a deafening drone—a mournful wail, as if lamenting an entire era—drowning out the once-piercing alarms warning of rising Punishing concentration.'}
+29	29		301							{3: 'Employees who had only earned their Clean Zone credentials last month run screaming from the burning rooms, throwing themselves into the lingering white light outside.'}
+30	30		201							{1: '1', 2: '500342', 4: '-100', 7: '1'}
+31	31		201							{1: '2', 2: '500335', 3: '19', 4: '300', 7: '1'}
+32	32		205							{1: '2', 3: '0', 4: '0', 5: '0'}
+33	33		301			PanelActor1Shake				{1: '1', 2: 'Clean Zone Staff', 3: 'Ahhhhhhhh!!', 4: '1', 5: '2'}
+34	34		401							{1: '2', 2: '3077'}
+35	35		203							{1: '1', 2: '0.25', 4: '-150'}
+36	36		205							{1: '2', 3: '0', 4: '1', 5: '0.25'}
+37	37		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory701.jpg', 3: '0', 4: '1', 5: '1'}
+38	38		301							{2: 'Lillian', 3: 'L-look out!', 4: '1', 5: '2'}
+39	39		301							{3: 'In the fading white light, a petite Construct catches the stumbling human in her arms.'}
+40	40		202					1000.0		{1: '1', 2: '2', 6: '1'}
+41	41		401							{1: '2', 2: '4348'}
+42	42		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+43	43		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+44	44		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+45	45		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory701.jpg'}
+46	46		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory767.png', 3: '0.7', 4: '0.7', 5: '0'}
+47	47		301							"{3: ""In mere moments, the Clean Zone—symbol of humanity's hope—is ignited by falling Shards, transforming into a sea of flames.""}"
+48	48		201							{1: '1', 2: '500335', 3: '19'}
+49	49		301				DialogDisable			"{1: '1', 2: 'Lillian', 3: ""Babylonia... what's happening..."", 4: '1'}"
+50	50		307							{1: 'Hey!', 3: '60'}
+51	51		301							{3: 'Hey!'}
+52	52		307							{2: '1'}
+53	53		402							{1: '4431'}
+54	54		401							{1: '2', 2: '2601'}
+55	55		401							{1: '2', 2: '4330'}
+56	56		301			DialogEnable				{3: 'As the ringing in their ears begins to fade, alarms and cries for help flood in.'}
+57	57		401							{1: '2', 2: '4008'}
+58	58		301							"{3: ""Despite the early warning, the flames still manage to reach those who can't escape in time.""}"
+59	59		402							{1: '4330'}
+60	60		402							{1: '2601'}
+61	61		202							{1: '1', 6: '1'}
+62	62		201							{1: '1', 2: '500019'}
+63	63		301							{1: '1', 2: 'Construct A', 3: 'Hey!! The support unit over there, come help these people, quick!', 4: '1'}
+64	64		301							{3: 'Someone shouts, pointing at the injured being pulled from the collapsed buildings.'}
+65	65		202							{1: '1', 6: '1'}
+66	66		201							{1: '1', 2: '500028'}
+67	67		301							{1: '1', 2: 'Construct C', 3: 'Put out the fire first! Where are the robots we brought down from Babylonia? Deploy them to help!', 4: '1'}
+68	68		202							{1: '1'}
+69	69		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory767.png', 3: '0.7', 4: '1', 5: '1'}
+70	70		401							{1: '2', 2: '4331'}
+71	71		301							{3: 'The newcomers rush toward the most intense flames with fire extinguishers in hand, but are halted by another warning shout.'}
+72	72		402							{1: '4331'}
+73	73		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory767.png', 3: '1', 4: '0.3', 5: '1'}
+74	74		201							{1: '1', 2: '500567'}
+75	75		301							{1: '1', 2: 'Construct B', 3: 'Stay away from the fire!!', 4: '1'}
+76	76		301							{2: 'Construct B', 3: 'These buildings already have automatic fire suppression systems, and worse still, the Punishing concentration in the Clean Zone is rising—any robots rushing here could turn Corrupted at any moment!', 4: '1'}
+77	77		301							{3: 'These words send waves of panic through everyone present.'}
+78	78		202							{1: '1', 6: '1'}
+79	79		201							{1: '1', 2: '500019', 4: '-650'}
+80	80		201							{1: '2', 2: '500567'}
+81	81		201							{1: '3', 2: '500028', 4: '650'}
+82	82		301							{1: '1', 2: 'Construct A', 3: 'What did you say?! The Clean Zone?! The Punishing concentration?!', 4: '1'}
+83	83		301							{2: 'Construct C', 3: 'Is something wrong with the Inver-Hetero Tower??', 4: '3'}
+84	84		301							{2: 'Construct B', 3: 'Even worse... Look!', 4: '2'}
+85	85		301				DialogDisable			{2: 'Constructs', 3: 'What?', 4: '1', 5: '3'}
+86	86		402							{1: '4008'}
+87	87		202							{1: '1', 2: '2', 3: '3'}
+88	88		104						1000.0	{1: '-200|0|-200', 2: '1'}
+89	89		104							{1: '200|0|-200', 2: '1'}
+90	90		301			DialogEnable				{3: 'Following his pointing finger, everyone looks around and realizes that there are fewer areas burning than they expected.'}
+91	91		104						2000.0	{1: '400|-250|-350', 2: '2'}
+92	92		201							{1: '18', 2: '500567', 4: '-280', 5: '-150', 6: '300'}
+93	93		301							"{1: '1', 2: 'Construct B', 3: ""These fragments aren't the only things that hit the Inver-Hetero Tower, right? Where's the biggest one?"", 4: '18'}"
+94	94		201							{1: '18', 2: '500405', 4: '-280', 5: '-150', 6: '300'}
+95	95		301				AniZhuanchangBegin			"{1: '1', 2: 'Construct D', 3: ""It's... gone..."", 4: '18'}"
+96	96		104							{1: '0|0|0', 2: '0'}
+97	97		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory701.jpg'}
+98	98		202							{1: '18', 6: '1'}
+99	99		201							{1: '1', 2: '500567', 4: '300', 5: '-100'}
+100	100		201							{1: '2', 2: '500405', 4: '-300', 5: '-100'}
+101	101		203							{1: '1', 2: '0.25', 3: '300'}
+102	102		203							{1: '2', 2: '0.25', 3: '-300'}
+103	103		401							{1: '2', 2: '4044'}
+104	104		301			AniZhuanchangEnd				{1: '1', 2: 'Construct B', 3: 'What did you say?! Really?', 4: '1'}
+105	105		301							"{3: ""He yanks up the Construct who's covering her eyes and demands answers loudly.""}"
+106	106		301							"{2: 'Construct D', 3: ""Of course it's true, I saw it!! I never took my eyes off it!! That's exactly why my visual module got damaged... ugh, it hurts."", 4: '2'}"
+107	107		301							{2: 'Construct B', 3: 'How did they vanish?', 4: '1'}
+108	108		301							{2: 'Construct D', 3: 'The moment they touched the Inver-Hetero Tower... they just... vanished.', 4: '2'}
+109	109		301							{2: 'Construct B', 3: 'Is the abnormal Punishing Virus concentration... caused by the Inver-Hetero Tower too?', 4: '1'}
+110	110		301							"{2: 'Construct D', 3: ""The Punishing Virus concentration is abnormal? What's the situation now?"", 4: '2'}"
+111	111		301							"{3: ""The Construct monitoring the Punishing Virus runs a trembling hand over the detector. Seeing the anxious, worried faces of his companions, he can't bring himself to speak the grim results.""}"
+112	112		301							"{3: ""The detector's screen shows the Hetero Zone creeping into the edges of the Clean Zone. Though its expansion has slowed during the conversation, the fact that it's still happening is clear evidence that the Inver-Hetero Tower is on the wane.""}"
+113	113		301							{2: 'Construct B', 3: 'The Clean Zone is shrinking, and extremely low Punishing concentrations have also been detected near the tower.', 4: '1'}
+114	114		301							{2: 'Construct B', 3: 'This place... is no longer safe.', 4: '1'}
+115	115		202							{1: '1', 2: '2', 6: '1'}
+116	116		201							{1: '1', 2: '500019'}
+117	117		301							"{1: '1', 2: 'Construct A', 3: ""Standing around won't help. Let's focus on getting people out first. In a situation this intense, you know the elite squads won't just sit around."", 4: '1'}"
+118	118		301				AniZhuanchangBegin			"{2: 'Construct A', 3: ""Let's leave the Inver-Hetero Tower situation to them. They're the only ones who can handle it now."", 4: '1'}"
+119	119		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+120	120		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+121	121		402							{1: '4008'}
+122	122		202							{1: '1', 6: '1'}
+123	123		401							{1: '1', 2: '36'}
+124	124		205							{1: '999'}
+125	125		101						3000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory783.jpg'}
+126	126		401							{1: '1', 2: '201'}
+127	127		301			AniZhuanchangEnd				{3: 'The setting sun bathes the land in its dying light.'}
+128	128		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory100.png', 3: '0', 4: '1', 5: '1'}
+129	129		301							{3: 'Half an hour after the fallen Spaceport A1 vanished into the Inver-Hetero Tower, Gray Raven finally leaves the chaos of Babylonia behind as they approach the Clean Zone.'}
+130	130		201							{1: '1', 2: '1031001'}
+131	131		301							{1: '1', 2: 'Liv', 3: 'According to the environmental scan below, the fire has been contained.', 4: '1'}
+132	132		301							{2: 'Liv', 3: 'But... your concerns were right, Commandant. The Clean Zone is no longer free of the Punishing Virus.', 4: '1'}
+133	133		301							{2: 'Liv', 3: 'If this is caused by another interference with the Inver-Hetero Tower... Commandant, are you feeling alright?', 4: '1'}
+134	134		302							"{2: '(Shake head)', 3: '135', 4: ""I'm perfectly fine."", 5: '135'}"
+135	135		201							{1: '1', 2: '500166'}
+136	136		301							"{1: '1', 2: 'Lucia', 3: ""It seems there's no Mind Beacon corruption this time."", 4: '1'}"
+137	137		301							"{2: 'Lucia', 3: ""The Clean Zone has gotten smaller, but thankfully, the area around the tower still has low concentration levels and hasn't returned to its former state."", 4: '1'}"
+138	138		201							{1: '1', 2: '1031001'}
+139	139		301							"{1: '1', 2: 'Liv', 3: ""We can't let our guard down yet. Even though the increase rate is slow, the Punishing Virus concentration near the tower is still rising."", 4: '1'}"
+140	140		204							{1: '1', 2: '19'}
+141	141		301							{2: 'Liv', 3: 'How can we possibly stop something like this...', 4: '1'}
+142	142		201							{1: '1', 2: '500568'}
+143	143		301							"{1: '1', 2: 'Lee', 3: ""This tower... there's still too much we don't understand about it."", 4: '1'}"
+144	144		302							{2: 'Shortly after you returned from the tower, President Hassen said the same thing.', 3: '145'}
+145	145		205							{1: '999'}
+146	146		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+147	147		504							{1: '0.7'}
+148	148		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+149	149		201							{1: '1', 2: '500011', 3: '5'}
+150	150		301							{1: '1', 2: 'Hassen', 3: 'This tower harbors too many mysteries. Its operational mechanics and means of entry remain completely unknown to us.', 4: '1'}
+151	151		301							"{2: 'Hassen', 3: ""If we invest all our reconstruction resources into it, there's no guarantee this unknown entity won't vanish just as suddenly as it appeared."", 4: '1'}"
+152	152		301							{2: 'Hassen', 3: 'But right now, we have no other hope. We must use it to rebuild our homeland, and through the opportunities it presents, find a way to bring it under our control.', 4: '1'}
+153	153		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory100.png'}
+154	154		504							{1: '0'}
+155	155		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+156	156		201							{1: '1', 2: '500568'}
+157	157		301							{1: '1', 2: 'Lee', 3: 'I know.', 4: '1'}
+158	158		301				AniZhuanchangBegin			{3: 'Lee falls silent, his eyes fixed on the approaching surface below.'}
+159	159		202							{1: '1', 6: '1'}
+160	160		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+161	161		301			AniZhuanchangEnd				"{3: ""One hour after Babylonia's Spaceport A1 crashed into the Clean Zone, the transport vessel from Babylonia finally touches down at the edge of the disaster area.""}"
+162	162		201							{1: '1', 2: '500019'}
+163	163		301							"{1: '1', 2: 'Construct A', 3: ""It's Gray Raven!"", 4: '1'}"
+164	164		202							{1: '1'}
+165	165		301							{3: 'They immediately stop their current tasks and hurry over, delivering their report on the damage to the Clean Zone.'}
+166	166		201							{1: '1', 2: '500567'}
+167	167		301							"{1: '1', 2: 'Construct B', 3: ""The situation isn't critical yet. Most of the Clean Zone territory swallowed by the Hetero Zone is made up of uninhabited and undeveloped areas with no defenses."", 4: '1'}"
+168	168		302							"{2: ""...That's a relief."", 3: '169'}"
+169	169		301							"{2: 'Construct B', 3: ""In addition to this, we just investigated the Inver-Hetero Tower and discovered an unfamiliar door that wasn't there before."", 4: '1'}"
+170	170		201							{1: '1', 2: '500568'}
+171	171		301							{1: '1', 2: 'Lee', 3: 'A door?', 4: '1'}
+172	172		201							{1: '1', 2: '500019'}
+173	173		301							"{1: '1', 2: 'Construct A', 3: ""It might be more accurate to call it a door-like structure... We've all tried, but no one has been able to get through it."", 4: '1'}"
+174	174		301				AniZhuanchangBegin			"{2: 'Construct A', 3: ""I'll lead the way."", 4: '1'}"
+175	175		202							{1: '1', 6: '1'}
+176	176		101							{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading66.png'}
+177	177		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory646.jpg', 3: '0.5', 4: '0.5', 5: '0'}
+178	178		301			AniZhuanchangEnd				{3: 'Led by the Construct, the four of you quickly make your way around to the other side of the Inver-Hetero Tower.'}
+179	179		301							{3: 'Within the tightly interlocked blue crystals, a narrow, dark doorway faintly emerges.'}
+180	180		301							"{3: ""When you shine an emergency light inside, there's no reflection—it's as if the light is swallowed up, leaving no echo to escape.""}"
+181	181		302							{2: '(Gesture for everyone to stand back, then fire a shot into the doorway)', 3: '182'}
+182	182		401							{1: '2', 2: '1510'}
+183	183		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+184	184		301							{3: 'Just like the light before it, the bullet vanishes instantly into the void, leaving no trace behind.'}
+185	185		302							{2: '(Cautiously reach a hand toward the doorway)', 3: '186'}
+186	186		301							{3: 'Your forearm vanishes beyond the doorway, yet you can still feel everything—your fingertips make contact with something solid inside, as if the door is only about half a meter deep.'}
+187	187		401							{1: '2', 2: '9326036'}
+188	188		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+189	189		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+190	190		301							{3: 'In the next instant, a searing pain stings through your fingertips.'}
+191	191		302							{2: '(Quickly withdraw your hand)', 3: '192'}
+192	192		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+193	193		201							{1: '1', 2: '1031001', 3: '7'}
+194	194		301							"{1: '1', 2: 'Liv', 3: ""Your hand's corrupted!"", 4: '1'}"
+195	195		302							"{2: ""Just a slight contact. I'm fine."", 3: '196'}"
+196	196		201							{1: '1', 2: '500166', 3: '5'}
+197	197		301							"{1: '1', 2: 'Lucia', 3: ""There's still a considerable Punishing concentration in there. We need to be careful."", 4: '1'}"
+198	198		302				DialogDisable			{2: 'Got it.', 3: '200'}
+199	199		202						500.0	{1: '1', 6: '1'}
+200	200		201							{1: '1', 2: '500568'}
+201	201		302							"{2: ""Lee, you're the only one here who's immune to the corruption."", 3: '202'}"
+202	202		202							{1: '1'}
+203	203		301			DialogEnable				{3: 'The young man silently nods before stepping into the pitch-black doorway, only to emerge moments later.'}
+204	204		201							{1: '1', 2: '500568'}
+205	205		301							"{1: '1', 2: 'Lee', 3: ""It's sealed off inside. Can't see anything, and there's no way through."", 4: '1'}"
+206	206		302							{2: '...', 3: '207'}
+207	207		201							{1: '1', 2: '500166'}
+208	208		301							{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+209	209		202							{1: '1', 6: '1'}
+210	210		201							{1: '1', 2: '500019', 4: '-400'}
+211	211		201							{1: '2', 2: '500567', 4: '400'}
+212	212		301							"{1: '1', 2: 'Construct A', 3: ""Something's not right here. You went inside before."", 4: '1'}"
+213	213		301							{2: 'Construct B', 3: 'Is it because of the frame? Or has something changed within the tower again?', 4: '2'}
+214	214		202							{1: '1', 2: '2'}
+215	215		301							{3: 'They take a few steps back and begin to whisper among themselves.'}
+216	216		201							{1: '18', 2: '500019', 4: '-280', 5: '-150', 6: '300'}
+217	217		301							"{1: '1', 2: 'Construct A', 3: ""Maybe it's really because of the frame?"", 4: '18'}"
+218	218		301							"{2: 'Construct A', 3: ""After all, the specialized frame has built up quite a bit over time—from Empyrea's experimental data, to the Enhanced Inver-Device documents Egret found, and later, the findings from the Phantom Tracer and Ascendant technology."", 4: '18'}"
+219	219		301							{2: 'Construct A', 3: 'Who knows? Any one of these could be the key requirement for entering this tower.', 4: '18'}
+220	220		302							{2: '...', 3: '221'}
+221	221		201							{1: '18', 2: '500567', 4: '-280', 5: '-150', 6: '300'}
+222	222		301							"{1: '1', 2: 'Construct B', 3: ""If this door stays open, we'll have our answer soon enough."", 4: '18'}"
+223	223		201							{1: '18', 2: '500019', 4: '-280', 5: '-150', 6: '300'}
+224	224		301							{1: '1', 2: 'Construct A', 3: 'What do you mean?', 4: '18'}
+225	225		201							{1: '18', 2: '500567', 4: '-280', 5: '-150', 6: '300'}
+226	226		301							"{1: '1', 2: 'Construct B', 3: ""I heard that the higher-ups are still working on another frame of the same specs. But it's not going well—they're missing something that was originally captured in the Phantom Tracer, making it difficult to replicate."", 4: '18'}"
+227	227		301							"{2: 'Construct B', 3: ""They brought back a similar egg, but even after all this time, they still haven't managed to make it work."", 4: '18'}"
+228	228		201							{1: '18', 2: '500019', 4: '-280', 5: '-150', 6: '300'}
+229	229		301							{1: '1', 2: 'Construct A', 3: 'Do you know who this frame is intended for?', 4: '18'}
+230	230		201							{1: '18', 2: '500567', 4: '-280', 5: '-150', 6: '300'}
+231	231		301							{1: '1', 2: 'Construct B', 3: 'Who else could it be?', 4: '18'}
+232	232		301							{3: 'His eyes dart toward the four people behind them.'}
+233	233		202							{1: '18', 6: '1'}
+234	234		201							{1: '1', 2: '500568'}
+235	235		301							{1: '1', 2: 'Lee', 3: '...', 4: '1'}
+236	236		204							{1: '1', 2: '10'}
+237	237		301							{3: 'Lee reaches out, running his fingers across the blue crystals. The dormant heaviness in his chest stirs once again.'}
+238	238		504							{1: '1', 2: '999'}
+239	239		201							{1: '2', 2: '500568', 7: '1'}
+240	240		205							{1: '2', 3: '0', 4: '0', 5: '0'}
+241	241		401							{1: '2', 2: '2646'}
+242	242		204							{1: '1', 2: '9'}
+243	243		104							{1: '0|0|-200', 2: '0.4'}
+244	244		205							{1: '2', 3: '0.1', 4: '0.1', 5: '0'}
+245	245		203						400.0	{1: '2', 2: '0.4', 5: '-100'}
+246	246		104							{1: '0|0|0', 2: '0.4'}
+247	247		203							{1: '2', 2: '0.4'}
+248	248		504							{1: '0'}
+249	249		301							{1: '1', 3: 'Is it an illusion, or a premonition?'}
+250	250		301							{3: 'This tower will bring about something irreversible—yet he can no longer enter it.'}
+251	251		204							{1: '1', 2: '9'}
+252	252		301							{2: 'Lee', 3: '...Why?', 4: '1'}
+253	253		301							{3: 'He feels a dull ache in the depths of his M.I.N.D., where an indecipherable voice whispers secrets missing in his memories.'}
+254	254		301							{2: 'Lee', 3: 'What exactly have I forgotten?', 4: '1'}
+255	255		202							{1: '1', 2: '2', 6: '1'}
+256	256		401							{1: '2', 2: '2692'}
+257	257		504							{1: '0.7'}
+258	258		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+259	259		205							{1: '999'}
+260	260		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3201_08.jpg'}
+261	261		301							"{3: '""Once you leave here, you will lose your ability to see the future and interfere with time.""'}"
+262	262		301							"{3: '""You will forget all that you have seen about the past and the future, and you will never get to change the past again. Everything that has happened here will be erased from history.""'}"
+263	263		301							"{3: '""Even so, are you sure you do not want to go through this gate?""'}"
+264	264		401							{1: '2', 2: '2708'}
+265	265		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+266	266		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+267	267		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '2'}
+268	268		301							{3: 'The emotions that should have vanished within the tower still fall like scattered fragments.'}
+269	269		301							"{3: ""Lee dimly recalls answering someone's question, though the memory feels distant.""}"
+270	270		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab'}
+271	271		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+272	272		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory646.jpg'}
+273	273		401							{1: '2', 2: '2576'}
+274	274		201							{1: '1', 2: '500568', 7: '1'}
+275	275		301							{1: '1', 2: 'Lee', 3: 'No matter what the future is like, I will find it together with them.', 4: '1'}
+276	276		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+277	277		101							{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading66.png'}
+278	278		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory646.jpg', 3: '0.5', 4: '0.5', 5: '0'}
+279	279		504							{1: '0'}
+280	280		301							{2: 'Lee', 3: '...', 4: '1'}
+281	281		301							{3: 'Looking back, his companions stand not far away.'}
+282	282		302							"{2: ""Lee? What's wrong?"", 3: '283'}"
+283	283		301							"{2: 'Lee', 3: ""It's nothing."", 4: '1'}"
+284	284		301				AniZhuanchangBegin			"{3: ""—Even though some things are inevitable, next time, when he's fully prepared, he'll face them together with everyone.""}"
+285	285		202							{1: '1', 6: '1'}
+286	286		401							{1: '1', 2: '36'}
+287	287		205							{1: '999'}
+288	288		101						3000.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_04.jpg'}
+289	289		401							{1: '1', 2: '398'}
+290	290		301			AniZhuanchangEnd				{3: 'After countless struggles tearing at her very being, the long-standing shackles that bound Luna have finally met their end.'}
+291	291		502							{1: 'RImgBg1BlowUp'}
+292	292		401						1800.0	{1: '2', 2: '772'}
+293	293		505							{1: 'RImgBg1BlowUp'}
+294	294		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4401_05.jpg', 3: '0', 4: '1', 5: '0.5'}
+295	295		401							{1: '2', 2: '2559'}
+296	296		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+297	297		301				AniZhuanchangBegin			{3: 'As the crystal-formed chains shatter and scatter, most of her power crumbles away with them.'}
+298	298		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory335.png'}
+299	299		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory548.jpg', 3: '0.5', 4: '0.5', 5: '0'}
+300	300		401							{1: '2', 2: '1516'}
+301	301		201							{1: '1', 2: '500238'}
+302	302		301			AniZhuanchangEnd				{1: '1', 3: 'Now, Luna can no longer sustain her usual hover. She is left to walk through the muddy ground on frail legs, more fragile than those of an ordinary Construct.'}
+303	303		201							{1: '1', 2: '500610'}
+304	304		301							{1: '1', 2: 'α', 3: '...', 4: '1'}
+305	305		202							{1: '1', 6: '1'}
+306	306		201							{1: '1', 2: '500610', 4: '300'}
+307	307		201							{1: '2', 2: '500238', 4: '-300'}
+308	308		301							{1: '1', 3: 'Unable to watch her stumble any longer, Alpha strides to her side and firmly grasps her hand, becoming her strength. Meanwhile, Lamia takes point ahead, staying alert for potential attacks.'}
+309	309		202							{1: '1', 2: '2'}
+310	310		301							{3: 'As she slowly emerges from her long-sealed prison and lifts her gaze to the sky again, the rising moon stares back at her with its cold, silvery light.'}
+311	311		201							{1: '1', 2: '500238'}
+312	312		301							{1: '1', 2: 'Luna', 3: '...The night grows deep.', 4: '1'}
+313	313		301							{3: 'Answering the call of the moonlight, the girl steps onto the land tainted by the Punishing Virus. She bends softly by the muddy ground, cupping the Red Tide that has gathered in the shallow hollow.'}
+314	314		201							{1: '1', 2: '500610'}
+315	315		301							"{1: '1', 2: 'α', 3: ""What's your next move?"", 4: '1'}"
+316	316		201							{1: '1', 2: '500238'}
+317	317		301							{1: '1', 2: 'Luna', 3: '...', 4: '1'}
+318	318		301							{2: 'Luna', 3: 'Sister, what are your thoughts on these Red Tides?', 4: '1'}
+319	319		201							{1: '1', 2: '500610'}
+320	320		301							{1: '1', 2: 'α', 3: 'Another form of the Punishing Virus.', 4: '1'}
+321	321		201							{1: '1', 2: '500238'}
+322	322		301				AniZhuanchangBegin			"{1: '1', 2: 'Luna', 3: ""Yes, but there's more to it than that."", 4: '1'}"
+323	323		202							{1: '1', 2: '2', 6: '1'}
+324	324		205							{1: '999'}
+325	325		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1601_5.jpg'}
+326	326		504							{1: '0.7'}
+327	327		301			AniZhuanchangEnd				{2: 'Luna', 3: 'When I first saw the Red Tide with Gabriel, I only saw its flaws.'}
+328	328		301							"{2: 'Luna', 3: ""Even in battle, the Red Tide's deadly high-concentration zones may spell instant death, but how could they ever compare to the lethal fields conjured by the Ascendants?""}"
+329	329		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgUi/BgFightLoading30.jpg', 3: '0', 4: '1', 5: '1'}
+330	330		101							{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading30.jpg'}
+331	331		301							"{2: 'Luna', 3: ""It crawls along the ground, only able to gather and flow at the Ascendants' command.""}"
+332	332		301							"{2: 'Luna', 3: ""It can't be controlled with the precision of Punishing, can't be wielded as a weapon, and certainly can't be integrated into a frame.""}"
+333	333		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg1601_7.jpg', 3: '0', 4: '1', 5: '1'}
+334	334		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1601_7.jpg'}
+335	335		301				AniZhuanchangBegin			"{2: 'Luna', 3: ""The first Hetero-Creatures were merely Gabriel's playthings, arrogant yet fragile... Their way of devouring life through tidal surges was meaningless—nothing more than mindless slaughter.""}"
+336	336		504							{1: '0'}
+337	337		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory335.png'}
+338	338		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory548.jpg', 3: '0.5', 4: '0.5', 5: '0'}
+339	339		201							{1: '1', 2: '500238', 3: '3'}
+340	340		301			AniZhuanchangEnd				{1: '1', 3: 'Luna closes her eyes, as if listening intently to whispers emanating from the Red Tide.'}
+341	341		301							"{2: 'Luna', 3: ""It wasn't until I saw those Red Tide projections that I finally understood—the true purpose of the Red Tide is to absorb the information stored within the Ascension-Network, allowing Earth's concepts to more seamlessly fill the Punishing Virus."", 4: '1'}"
+342	342		301							"{2: 'Luna', 3: ""Punishing is constrained by the Red Tide—and that's precisely what makes it more controllable."", 4: '1'}"
+343	343		204							{1: '1'}
+344	344		301							{3: 'She opens her hand, letting the crimson liquid seep through her fingers.'}
+345	345		301							{2: 'Luna', 3: 'Sister, do you remember the story you once told me about the imprisoned stars?', 4: '1'}
+346	346		201							{1: '1', 2: '500610'}
+347	347		301							{1: '1', 2: 'α', 3: '...I do.', 4: '1'}
+348	348		201							{1: '1', 2: '500238'}
+349	349		301							"{1: '1', 2: 'Luna', 3: 'I was once like that old man with his mirror, seeing only a partial reflection of the Ascension-Network. But now, ""she"" who has broken free from my control is just like that old man, seeing only a fragment of who I am.', 4: '1'}"
+350	350		301							"{3: ""The girl who once looked down upon everything below now grasps her sister's hand in return, rising on her own two feet from the mire.""}"
+351	351		301							"{2: 'Luna', 3: 'Next, I need to use the Red Tide to achieve an effect similar to that ""egg,"" using the re-filtering process to restore my frame\'s power.', 4: '1'}"
+352	352		201							{1: '1', 2: '500739', 3: '19'}
+353	353		301							{1: '1', 2: 'Lamia', 3: 'W-what? How is that possible? Vonnegut spent so long preparing for the egg, and we only have one day at most!', 4: '1'}
+354	354		201							{1: '1', 2: '500238'}
+355	355		301							"{1: '1', 2: 'Luna', 3: 'First, we need to find ""someone"" who can weave the Red Tide.', 4: '1'}"
+356	356		201							{1: '1', 2: '500739'}
+357	357		301							{1: '1', 2: 'Lamia', 3: 'Are you talking about... Lithos? True, he does handle the Red Tide quite skillfully.', 4: '1'}
+358	358		201							{1: '1', 2: '500238'}
+359	359		301							"{1: '1', 2: 'Luna', 3: ""If Lithos were really up to the task, Vonnegut wouldn't have any need for Cthylla."", 4: '1'}"
+360	360		301							"{2: 'Luna', 3: ""Besides, if my guess is correct, he'll come to us on his own soon enough. We won't need to search for him."", 4: '1'}"
+361	361		201							{1: '1', 2: '500610'}
+362	362		301							"{1: '1', 2: 'α', 3: ""Lithos? What's he doing here?"", 4: '1'}"
+363	363		201							{1: '1', 2: '500238'}
+364	364		301							{1: '1', 2: 'Luna', 3: 'I spoke with Vonnegut not long ago.', 4: '1'}
+365	365		201							{1: '1', 2: '500610'}
+366	366		301							{1: '1', 2: 'α', 3: 'What did you discuss?', 4: '1'}
+367	367		201							{1: '1', 2: '500238'}
+368	368		301							{1: '1', 2: 'Luna', 3: 'It just confirmed some theories I already had—nothing useful beyond that.', 4: '1'}
+369	369		301							{2: 'Luna', 3: 'However, he did warn me to be wary of Cradle.', 4: '1'}
+370	370		201							{1: '1', 2: '500610'}
+371	371		301							{1: '1', 2: 'α', 3: '...', 4: '1'}
+372	372		201							{1: '1', 2: '500739'}
+373	373		301							{1: '1', 2: 'Lamia', 3: 'Cradle? That humanoid Hetero-Creature that appeared recently? Why should we be wary of her?', 4: '1'}
+374	374		301							"{2: 'Lamia', 3: ""...I only learned about this Hetero-Creature from Roland. She's similar to Cthylla, but more complete..."", 4: '1'}"
+375	375		204							{1: '1', 2: '19'}
+376	376		301							{2: 'Lamia', 3: 'More complete... but weaker in combat ability. Is it really necessary to be cautious of a Hetero-Creature like that?', 4: '1'}
+377	377		201							{1: '1', 2: '500238'}
+378	378		301							"{2: 'Luna', 3: ""Her true nature... rather than being a mere creature, is more akin to a title. Right now it's Cradle, but after her death, another Hetero-Creature could take her place. That's why she cannot be truly eliminated."", 4: '1'}"
+379	379		301							"{2: 'Luna', 3: 'This trait resembles that of an ""agent,"" doesn\'t it? Even if it weren\'t me, someone else would become an agent.', 4: '1'}"
+380	380		201							{1: '1', 2: '500610'}
+381	381		301							{1: '1', 2: 'α', 3: 'Is she part of your next move?', 4: '1'}
+382	382		201							{1: '1', 2: '500238'}
+383	383		301							"{2: 'Luna', 3: ""Correct. I intend to make a deal with her, and for that, I'll need Gray Raven's assistance."", 4: '1'}"
+384	384		301							{3: 'Alpha furrows her brow.'}
+385	385		201							{1: '1', 2: '500610'}
+386	386		301							{1: '1', 2: 'α', 3: 'Why?', 4: '1'}
+387	387		201							{1: '1', 2: '500238'}
+388	388		301							"{1: '1', 2: 'Luna', 3: 'To achieve an effect similar to the ""egg"" in such a short time, I must enter the Red Tide. I need a M.I.N.D. connection to stabilize my M.I.N.D., and only the commandant can provide that.', 4: '1'}"
+389	389		301							"{2: 'Luna', 3: ""One more thing, even if I pass the re-filtering and regain my frame's power, I must still reclaim my rightful authority as an agent."", 4: '1'}"
+390	390		301							"{2: 'Luna', 3: 'It fell into the tower in the Clean Zone along with ""Selene"". I can sense her location.', 4: '1'}"
+391	391		201							{1: '1', 2: '500739'}
+392	392		301							{1: '1', 2: 'Lamia', 3: '...That... Inver-Hetero Tower?', 4: '1'}
+393	393		205							{1: '999'}
+394	394		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory663.jpg'}
+395	395		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+396	396		504							{1: '0.7'}
+397	397		202							{1: '1', 6: '1'}
+398	398		301							{2: 'Lamia', 3: 'Could it be...'}
+399	399		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory335.png'}
+400	400		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory548.jpg', 3: '0.5', 4: '0.5', 5: '0'}
+401	401		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+402	402		504							{1: '0'}
+403	403		201							{1: '1', 2: '500238'}
+404	404		301							"{1: '1', 2: 'Luna', 3: ""To get inside, we'd have to step into the Clean Zone. With no knowledge of its terrain or defenses, sneaking in wouldn't be a smart choice."", 4: '1'}"
+405	405		301							"{2: 'Luna', 3: ""If Gray Raven were to support us, gaining entry wouldn't be difficult at all."", 4: '1'}"
+406	406		201							{1: '1', 2: '500610'}
+407	407		301							{1: '1', 2: 'α', 3: 'They have no reason to help.', 4: '1'}
+408	408		201							{1: '1', 2: '500238'}
+409	409		301							"{1: '1', 2: 'Luna', 3: ""They do have a reason. You mentioned it yourself—part of the fallen Babylonia disappeared into that tower, didn't it?"", 4: '1'}"
+410	410		301							"{2: 'Luna', 3: 'Those ""humanity\'s heroes"" must be desperately trying to find a way to prevent this disaster from escalating further.', 4: '1'}"
+411	411		301							{2: 'Luna', 3: 'Even for us Ascendants, only re-filtered agents can enter that tower. Humans will only find it even more troublesome to deal with.', 4: '1'}
+412	412		301							"{2: 'Luna', 3: ""And finally—there's Cradle, an issue humanity cannot afford to ignore."", 4: '1'}"
+413	413		201							{1: '1', 2: '500610'}
+414	414		301							{1: '1', 2: 'α', 3: '...', 4: '1'}
+415	415		301							"{2: 'α', 3: ""This is dangerous. Tell me what you'll do if you fail."", 4: '1'}"
+416	416		201							{1: '1', 2: '500238'}
+417	417		301							"{1: '1', 2: 'Luna', 3: ""There are no other options. I'm prepared for this."", 4: '1'}"
+418	418		204							{1: '1', 2: '1'}
+419	419		301							{3: 'Luna gazes at the Red Tide ahead, a serene smile crossing her face.'}
+420	420		301							"{2: 'Luna', 3: ""If I lose myself to the Red Tide, at least you'll have a Hetero-Creature that talks just like me as a memento."", 4: '1'}"
+421	421		201							{1: '1', 2: '500610'}
+422	422		301							"{1: '1', 2: 'α', 3: ""That's not going to happen."", 4: '1'}"
+423	423		201							{1: '1', 2: '500238', 3: '1'}
+424	424		301		1		AniZhuanchangBegin			{1: '1', 2: 'Luna', 3: 'Trust me, Sister.', 4: '1'}

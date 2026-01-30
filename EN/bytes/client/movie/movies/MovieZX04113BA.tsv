@@ -1,0 +1,378 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory427.jpg'}
+2	2		401							{1: '1', 2: '50'}
+3	3		107						1000.0	{1: 'World Government', 2: 'Punishing Defense Command Center'}
+4	4		108							{1: '1'}
+5	5		201							{1: '1', 2: '500788', 3: '8'}
+6	6		301			DialogEnable				{1: '1', 2: 'Hans', 3: 'Report the losses...', 4: '1'}
+7	7		202							{1: '1'}
+8	8		301							{3: 'After losing contact with the space forces, the command center immediately dispatched an aerospace squadron to investigate.'}
+9	9		301							{3: 'But soon, falling debris forced them to alter their original plan.'}
+10	10		301							{3: 'To clear a path between ground and sky, the military had to destroy most infected defensive formations from previous operations.'}
+11	11		301							{3: 'With air raid alarms sounding from all directions, they had to consolidate their limited aerial forces to intercept the debris, preventing further damage to ground facilities and civilians.'}
+12	12		301							{3: 'Such losses are expected but unavoidable.'}
+13	13		301							"{3: ""When the sky was covered in smoke and no more burning debris fell, the command center finally received warnings from Ballard's team and saw the liaison sent by the spaceport.""}"
+14	14		201							{1: '1', 2: '500427'}
+15	15		301							{1: '1', 2: 'Lieutenant', 3: 'Yes... As of now, the reported losses from the space forces are as follows.', 4: '1'}
+16	16		301							{2: 'Lieutenant', 3: 'Space station: 1,927 dead, 25 survivors. The station is fully occupied, with a 0.12% chance of reclaiming it.', 4: '1'}
+17	17		301							{2: 'Lieutenant', 3: 'Starship Fleet: 35,782 dead, 965 missing, 1,729 survivors. All officers above the deputy command level are dead, with an 87% combat unit casualty rate and complete ship destruction.', 4: '1'}
+18	18		301							{2: 'Lieutenant', 3: 'Spaceport garrison: 1,792 dead, 298 missing, 23,597 survivors. The smallest loss, with remaining modular sections detached and docked with Eden II colony ship.', 4: '1'}
+19	19		301							{2: 'Lieutenant', 3: 'Aerospace squadron: 9,300 dead, 125 missing, over 80% personnel casualty rate, and over 97% aircraft loss rate.', 4: '1'}
+20	20		301							{2: 'Lieutenant', 3: 'Additionally, losses from radiation and falling debris caused by the space nuclear explosion are still being assessed...', 4: '1'}
+21	21		202							{1: '1', 6: '1'}
+22	22		201							{1: '1', 2: '500788', 3: '8'}
+23	23		301							{1: '1', 2: 'Hans', 3: '...', 4: '1'}
+24	24		204							{1: '1'}
+25	25		301							{2: 'Hans', 3: 'Any other news?', 4: '1'}
+26	26		203							{1: '1', 2: '0.25', 3: '-400'}
+27	27		201							{1: '2', 2: '500427', 4: '400'}
+28	28		301							"{1: '1', 2: 'Lieutenant', 3: ""Gestalt's central core has been dismantled and is on its way."", 4: '2'}"
+29	29		301							"{2: 'Hans', 3: ""Have the tech department draft an isolation plan immediately. We must make sure this doesn't happen again."", 4: '1'}"
+30	30		301							{2: 'Lieutenant', 3: 'And... the report from Reactor One.', 4: '2'}
+31	31		301							{2: 'Lieutenant', 3: 'Thirty minutes ago, our 45 monitoring stations simultaneously detected a spike in Punishing concentration in the area.', 4: '2'}
+32	32		301							{2: 'Lieutenant', 3: 'Within 300 milliseconds, it rose to 20,000 times the original level, and we lost contact with Dominik and his team.', 4: '2'}
+33	33		301							{2: 'Hans', 3: 'Did they fail too...', 4: '1'}
+34	34		301							{2: 'Lieutenant', 3: 'No... The command staff thinks they succeeded.', 4: '2'}
+35	35		301							{2: 'Lieutenant', 3: 'Because in the following 30 minutes, there were no further increases in Punishing concentration, and it is now spreading according to our diffusion model.', 4: '2'}
+36	36		301							{2: 'Lieutenant', 3: 'Most importantly, no energy reactions were detected in the area after the burst.', 4: '2'}
+37	37		301							{2: 'Lieutenant', 3: 'The command staff ruled out all other possibilities, so we can infer that Reactor 1 has been shut down.', 4: '2'}
+38	38		301							{2: 'Lieutenant', 3: 'Commander, what should we do next?', 4: '2'}
+39	39		202							{1: '2', 6: '1'}
+40	40		203							{1: '1', 2: '0.25'}
+41	41		301							{3: 'Although the chaos has subsided, this is not the end. This is not even the beginning of the end, but merely the end of the beginning.'}
+42	42		301							{3: 'With the loss of the spaceport, starships, and the International Space Station, Project Acadia Transfer has completely failed.'}
+43	43		301							{3: 'While soldiers and civilians mourn their lost comrades and loved ones, decision-makers must step forward to carve a new future.'}
+44	44		301							{2: 'Hans', 3: 'First, establish quarantine zones and evacuate the masses based on the diffusion situation.', 4: '1'}
+45	45		301							{2: 'Hans', 3: 'Dispatch rescue teams, determine the Geiger index in nuclear-affected areas, plan safe areas, conduct cleanup, and restart power facilities.', 4: '1'}
+46	46		301							{2: 'Hans', 3: 'Compile accurate casualty numbers and reorganize the surviving units.', 4: '1'}
+47	47		301							{2: 'Hans', 3: 'Go and finish these tasks first.', 4: '1'}
+48	48		202							{1: '1', 6: '1'}
+49	49		201							{1: '1', 2: '500427'}
+50	50		301							{1: '1', 2: 'Lieutenant', 3: 'Got it!', 4: '1'}
+51	51		202							{1: '1'}
+52	52		301							{3: 'After issuing the orders, Hans stands up and walks out of the command center.'}
+53	53		301							{3: 'The nearby guard immediately follows him, but Hans waves him off.'}
+54	54		201							{1: '1', 2: '500788'}
+55	55		301							"{1: '1', 2: 'Hans', 3: ""There's no security risk here. Leave me alone for a while."", 4: '1'}"
+56	56		301				AniZhuanchangBegin			{3: 'He slowly walks outside. Even this steadfast pine tree has bent slightly.'}
+57	57		401							{1: '1', 2: '36'}
+58	58		202			DialogDisable			600.0	{1: '1', 6: '1'}
+59	59		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+60	60		401							{1: '1', 2: '333'}
+61	61		201							{1: '1', 2: '500788'}
+62	62		301			DialogEnable				"{1: '1', 3: ""Hans sits alone in the room. He hasn't been back here or slept for days while directing the operation.""}"
+63	63		301							{3: 'He had considered the worst-case scenario, but they still knew too little about the Punishing.'}
+64	64		201							{1: '2', 2: '500811'}
+65	65		301							{1: '1', 3: 'Unimaginable situations led to unbearable losses.'}
+66	66		202							{1: '1'}
+67	67		301							{3: 'He wants to keep thinking, but fatigue and guilt are dragging his mind to the edge of chaos.'}
+68	68		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '0', 4: '1', 5: '1'}
+69	69		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+70	70		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg'}
+71	71		301							{3: 'What should we do?'}
+72	72		301							{3: 'He is a soldier, a commander, with duties and beliefs.'}
+73	73		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory845.jpg', 3: '0', 4: '1', 5: '1'}
+74	74		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+75	75		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory845.jpg'}
+76	76		301							{3: 'But he is also a human with flesh and blood who is unable to ignore the bloodshed behind the numbers in the reports.'}
+77	77		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory846.jpg', 3: '0', 4: '1', 5: '1'}
+78	78		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+79	79		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory846.jpg'}
+80	80		301							{3: 'Did he make a mistake? He keeps questioning himself after leaving the command room.'}
+81	81		301							{3: 'Would different plans or even just adjusting the sequence have led to better outcomes?'}
+82	82		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory847.jpg', 3: '0', 4: '1', 5: '1'}
+83	83		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+84	84		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory847.jpg'}
+85	85		301							{3: 'They have sworn to pave the way to victory for humanity with their flesh and blood.'}
+86	86		301							"{3: ""But that doesn't mean paving the path to victory with sacrifices is the right thing to do.""}"
+87	87		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory848.jpg', 3: '0', 4: '1', 5: '1'}
+88	88		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+89	89		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory848.jpg'}
+90	90		301							{3: 'What should he do next? How should he face the survivors?'}
+91	91		202							{1: '2'}
+92	92		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory844.jpg', 3: '0', 4: '1', 5: '1'}
+93	93		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+94	94		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory844.jpg'}
+95	95		301							{3: 'The weighty burdens press upon his shoulders, menacing to fracture this resolute pine tree.'}
+96	96		502						1000.0	{1: 'DialogDisable'}
+97	97		401							{1: '2', 2: '952'}
+98	98		101						700.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory849.jpg'}
+99	99		401							{1: '2', 2: '952'}
+100	100		101						400.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory850.jpg'}
+101	101		401							{1: '2', 2: '952'}
+102	102		101						100.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory851.jpg'}
+103	103		401							{1: '2', 2: '952'}
+104	104		101						50.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory852.jpg'}
+105	105		401							{1: '2', 2: '952'}
+106	106		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory853.jpg'}
+107	107		301							{3: 'Want to be free?'}
+108	108		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+109	109		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+110	110		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+111	111		301			DialogEnable				{3: 'He opens the cabinet beside the desk, revealing a fully loaded pistol.'}
+112	112		401							{1: '2', 2: '1511'}
+113	113		301				AniZhuanchangBegin			{3: 'He presses the gun against his chin.'}
+114	114		401							{1: '1', 2: '36'}
+115	115		502						5000.0	{1: 'DialogDisable'}
+116	116		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg'}
+117	117		301			DialogEnable				"{3: 'Meanwhile, an ""old friend"" shows up at Trillard\'s residence.'}"
+118	118		201							{1: '1', 2: '500793', 3: '2'}
+119	119		301							"{1: '1', 2: 'Trillard', 3: ""I'm guessing you didn't drop by at a time like this just for a casual catch-up, am I right?"", 4: '1'}"
+120	120		301							{3: 'He nudges the cup of steaming tea toward the other side and sits back on the couch.'}
+121	121		401							{1: '1', 2: '66'}
+122	122		204							{1: '1', 2: '1'}
+123	123		301							{2: 'Trillard', 3: 'How should I address you, Kurono-San?', 4: '1'}
+124	124		301							{2: 'Kurono-San', 3: 'That suits me just fine.'}
+125	125		301							{3: 'The other person takes the cup, giving it a gentle swirl, causing the amber tea to ripple softly within the ceramic vessel.'}
+126	126		301							"{2: 'Kurono-San', 3: ""After over thirty years of knowing each other, can't you serve me some better tea?""}"
+127	127		301							"{3: ""The person's tone carries a playful demeanor, devoid of any sense of distance, as if talking to a familiar friend whom they frequently visit.""}"
+128	128		204							{1: '1', 2: '11'}
+129	129		301							{3: 'Trillard wears a resigned expression, with a subtle undertone of teasing complaint in his voice.'}
+130	130		301							{2: 'Trillard', 3: 'Unlike you, the big-shot entrepreneur swimming in cash, I only have my salary from the World Government to rely on.', 4: '1'}
+131	131		204							{1: '1', 2: '2'}
+132	132		301							"{2: 'Trillard', 3: ""It's been ages since you last visited me. Many things have happened, you know."", 4: '1'}"
+133	133		204							{1: '1', 2: '1'}
+134	134		301							{3: 'The two cunning old foxes exchange knowing smiles.'}
+135	135		301							"{2: 'Trillard', 3: ""Since it's a long-awaited reunion, are you here to reminisce about the good old days?"", 4: '1'}"
+136	136		204							{1: '1'}
+137	137		301							"{2: 'Trillard', 3: 'Let me guess. Is it ""Project Cthylla"" or ""Winter""?', 4: '1'}"
+138	138		301							{3: 'The person lightly taps the handle of the teacup with a finger.'}
+139	139		301							{2: 'Kurono-San', 3: 'Forget about that little business in the past. Not even worth mentioning anymore.'}
+140	140		301							"{2: 'Trillard', 3: ""Oh, so you really don't know?"", 4: '1'}"
+141	141		204							{1: '1', 2: '1'}
+142	142		301							{2: 'Trillard', 3: 'Want me to fill you in on some inside information?', 4: '1'}
+143	143		301							{3: 'The person places the teacup on the coaster and falls silent.'}
+144	144		301							"{2: 'Kurono-San', 3: ""That's against the rules, isn't it? I don't want to end up in hot water, you know.""}"
+145	145		301							{2: 'Trillard', 3: 'Do you really care about all that?', 4: '1'}
+146	146		301							"{2: 'Kurono-San', 3: ""I'm a law-abiding taxpayer.""}"
+147	147		204							{1: '1', 2: '11'}
+148	148		301							{2: 'Trillard', 3: 'If you say so.', 4: '1'}
+149	149		204							{1: '1'}
+150	150		301							{3: 'Trillard takes a sip of tea and then gently puts the cup down.'}
+151	151		204							{1: '1', 2: '1'}
+152	152		301							"{2: 'Trillard', 3: ""Well, if there's nothing else to catch up on, excuse me, but I've got a lot on my plate right now."", 4: '1'}"
+153	153		204							{1: '1'}
+154	154		301							"{2: 'Kurono-San', 3: ""Oh, really? Hasn't the military taken over the World Government's command since the outbreak of the Punishing Virus?""}"
+155	155		301							"{2: 'Kurono-San', 3: ""You haven't made a public appearance in a while as the President of the World Government, right?""}"
+156	156		301							"{3: ""The seemingly casual words slither into Trillard's heart, much like a snake's tongue.""}"
+157	157		204							{1: '1', 2: '2'}
+158	158		301							"{2: 'Trillard', 3: ""It's a special time, after all. Signing documents is more than enough for me. My old bones can't handle the front lines anymore."", 4: '1'}"
+159	159		301							{3: 'The person sitting opposite lets out a chuckle.'}
+160	160		204							{1: '1'}
+161	161		301							{2: 'Kurono-San', 3: 'Of course, signing documents is also a very important job.'}
+162	162		301							"{2: 'Kurono-San', 3: ""Just like fighting the Punishing Virus, maintaining government operations and ensuring people's lives aren't a walk in the park.""}"
+163	163		301							{2: 'Kurono-San', 3: 'But you and I both know, the more ordinary the task, the more easily it gets overlooked. People tend to remember the changes you made, not the things you maintained.'}
+164	164		301							{2: 'Kurono-San', 3: 'While they mourn the sacrifices of soldiers, how many actually remember those who toil for their daily necessities?'}
+165	165		301							{2: 'Kurono-San', 3: 'Even though the latter is closely related to their lives.'}
+166	166		301							{3: 'Among the seemingly ordinary words, lay the most venomous and contemptuous provocation.'}
+167	167		301							{2: 'Trillard', 3: 'Everyone has their role to play. For us, staying behind the scenes is the best outcome.', 4: '1'}
+168	168		301							"{2: 'Trillard', 3: ""Moreover, Hans is my friend. I've placed all my trust in him."", 4: '1'}"
+169	169		301							{2: 'Kurono-San', 3: 'Oh, come on, my friend, cut it out with the old jokes.'}
+170	170		301							{3: 'The person speaks in a pretentious tone.'}
+171	171		301							{2: 'Kurono-San', 3: 'People like us only trust ourselves and established facts.'}
+172	172		301							"{2: 'Trillard', 3: ""What if we're not the same?"", 4: '1'}"
+173	173		301							{2: 'Kurono-San', 3: 'Is this your way of showing humor?'}
+174	174		301							{3: 'Trillard offers no response.'}
+175	175		301							{2: 'Kurono-San', 3: 'For us, words are just a curtain covering our true intentions.'}
+176	176		301							"{2: 'Kurono-San', 3: ""What we say never matters; it's our actions that truly reveal our hearts.""}"
+177	177		301							"{2: 'Kurono-San', 3: 'If you truly didn\'t care, you wouldn\'t be so eagerly pushing for ""Project Eden"" or implementing the ""Hiring Act"" to secure your re-election.'}"
+178	178		301							{2: 'Kurono-San', 3: 'For that, we are all grateful.'}
+179	179		301							"{2: 'Trillard', 3: 'Does ""we"" refer to the Kurono Group, or...', 4: '1'}"
+180	180		301							{3: 'Before Trillard continues, the person interrupts him.'}
+181	181		301							{2: 'Kurono-San', 3: 'The Group and its friends, of course.'}
+182	182		301							"{3: ""Observing Trillard's silence, Kurono-San nods in satisfaction.""}"
+183	183		301							"{2: 'Kurono-San', 3: 'You went all-in on ""Project Eden"", but unfortunately, it seems like you made the wrong bet.'}"
+184	184		301							{2: 'Kurono-San', 3: 'Like I said, people remember what you changed, not what you maintained.'}
+185	185		301							{2: 'Kurono-San', 3: 'Medical reform? Civilianizing Gestalt? Universalizing education?'}
+186	186		301							"{2: 'Kurono-San', 3: ""You're wrong, my friend. They won't remember any of those.""}"
+187	187		301							"{2: 'Kurono-San', 3: ""They'll only remember that the first President of the World Government and the Science Council opened the gates of hell, unleashing the disaster known as the Punishing Virus.""}"
+188	188		301							"{2: 'Kurono-San', 3: ""They might not have had the time to settle scores yet, but I'm guessing you've already suppressed quite a few impeachments against the Science Council, right?""}"
+189	189		301							"{2: 'Kurono-San', 3: ""Even humanity's once shining beacon of hope can be engulfed by such foolish opinions. What chance do you stand?""}"
+190	190		301							{3: 'Trillard remains silent, not directly refuting the other.'}
+191	191		301							{2: 'Trillard', 3: 'Expecting rationality from people in the face of calamity is a luxury. Time will prove that we made the right choice.', 4: '1'}
+192	192		301							"{2: 'Kurono-San', 3: ""By then, you'll be history, and your reputation and status will have been long gone.""}"
+193	193		301							{2: 'Kurono-San', 3: 'But now, you have a chance...'}
+194	194		301							{3: 'The person retrieves two kraft envelopes from their pocket.'}
+195	195		301							{2: 'Trillard', 3: 'This is...?', 4: '1'}
+196	196		301							"{2: 'Kurono-San', 3: ""I know transport crafts are causing quite a headache for the World Government. After all, the military's air force is nearly decimated after the failure of the Great Transfer.""}"
+197	197		301							{2: 'Kurono-San', 3: 'Everyone knows this planet is not safe anymore. The sky is the only refuge.'}
+198	198		301							{2: 'Trillard', 3: 'You know quite a lot.', 4: '1'}
+199	199		301							{2: 'Kurono-San', 3: 'Kurono has many friends.'}
+200	200		301							"{2: 'Kurono-San', 3: ""So, I've brought you a little gift...""}"
+201	201		301							{3: 'He points at one of the envelopes.'}
+202	202		301							{2: 'Kurono-San', 3: 'And a small proposal...'}
+203	203		301							{3: 'He then points at the other envelope.'}
+204	204		301							{3: 'Trillard opens the first envelope and discovers a transfer contract for the air transport service much needed by the World Government.'}
+205	205		301							{2: 'Trillard', 3: 'Where did you get so many transport crafts?', 4: '1'}
+206	206		301							"{2: 'Kurono-San', 3: ""It's not like we have to go to the front lines, all thanks to the World Government's protection of civilian property.""}"
+207	207		301							{2: 'Trillard', 3: 'I also have the right to requisition them in the name of the World Government.', 4: '1'}
+208	208		301							"{2: 'Kurono-San', 3: ""At a time like this? No, you're not gonna pour gasoline on the fire after such a major defeat.""}"
+209	209		301							"{2: 'Kurono-San', 3: ""Things on the front lines are tough, and the rear isn't any better. You wouldn't want people to get the wrong idea, would you?""}"
+210	210		301							{2: 'Kurono-San', 3: 'Does the World Government still have enough manpower to handle riots?'}
+211	211		301							{2: 'Trillard', 3: '...', 4: '1'}
+212	212		301							{3: 'He silently opens the other envelope, revealing a list of names.'}
+213	213		301							{3: 'After a mere glance at the first page, he sets the list aside.'}
+214	214		301							"{2: 'Trillard', 3: ""That's too many positions you're asking for."", 4: '1'}"
+215	215		301							"{2: 'Kurono-San', 3: ""My friend, I'm a businessman. Getting to the bottom line of a deal is second nature to me, so don't even bother with your negotiation tactics.""}"
+216	216		301							"{2: 'Kurono-San', 3: ""Moreover, this isn't just a proposal; it's an invitation.""}"
+217	217		301							{2: 'Trillard', 3: 'An invitation?', 4: '1'}
+218	218		301							"{2: 'Kurono-San', 3: 'You know, there\'s this old saying: ""A smart bird picks its perch, and a wise minister picks their ruler.""'}"
+219	219		301							{2: 'Kurono-San', 3: 'The era of the Science Council is over...'}
+220	220		301							"{2: 'Trillard', 3: ""But I don't believe the next era belongs to you."", 4: '1'}"
+221	221		301							{2: 'Kurono-San', 3: 'If you sign the contract, it will belong to us—not just me, but us.'}
+222	222		301							"{2: 'Kurono-San', 3: ""You'll still be the big-shot President dominating the world of politics, not some loser that everyone despises.""}"
+223	223		301							"{3: ""The change in Trillard's expression doesn't escape Kurono-San's notice.""}"
+224	224		301							"{2: 'Trillard', 3: ""Even if I were to agree, it's not possible to replace all these positions at once. The President's power has its limits."", 4: '1'}"
+225	225		301							{2: 'Kurono-San', 3: 'Everything will follow the rules, just like our previous collaborations.'}
+226	226		301							{3: 'Hearing this, Trillard narrows his eyes.'}
+227	227		301							{2: 'Trillard', 3: 'Your reach extends quite far.', 4: '1'}
+228	228		301							{2: 'Kurono-San', 3: 'Further than you think. In the face of calamity, not everyone is as stubborn as Hans.'}
+229	229		301							{3: 'With that said, he chuckles softly.'}
+230	230		301							"{2: 'Kurono-San', 3: ""He's like an unwavering pine tree, refusing to bend even when all its leaves have fallen and its vitality has faded away.""}"
+231	231		301							"{2: 'Kurono-San', 3: ""But most people are just like grass, swaying in whichever direction the wind blows. That's why we have quite a few potential allies on our side.""}"
+232	232		301							{2: 'Kurono-San', 3: 'So, which category do you fall into?'}
+233	233		301							{2: 'Trillard', 3: '...', 4: '1'}
+234	234		301							{2: 'Trillard', 3: 'I need a list of collaborators.', 4: '1'}
+235	235		301							{2: 'Kurono-San', 3: 'Of course, but...'}
+236	236		301							{2: 'Kurono-San', 3: 'Considering our past unpleasant experiences with broken promises, I would like you to make a globally televised speech as the President first.'}
+237	237		301							"{2: 'Trillard', 3: ""You're essentially asking me to make it a fait accompli?"", 4: '1'}"
+238	238		301							"{2: 'Kurono-San', 3: ""What matters isn't what's promised but what's done, right?""}"
+239	239		301							{3: 'A profound silence blankets the space between the two.'}
+240	240		301							{2: 'Kurono-San', 3: 'A list of names, a little bit of help...'}
+241	241		301							{3: 'He slides the two envelopes across the table, presenting his bargaining chips to Trillard.'}
+242	242		301							{2: 'Kurono-San', 3: 'And your next re-election.'}
+243	243		301							{3: 'Trillard ponders for a moment before crossing out two names on the list.'}
+244	244		301							"{2: 'Trillard', 3: ""I can't meddle with the military; Hans has too much influence there."", 4: '1'}"
+245	245		301							{3: 'Kurono-San frowns, waiting for him to continue.'}
+246	246		301							"{2: 'Trillard', 3: ""There's a press conference next month, and the appointment orders will be announced by then."", 4: '1'}"
+247	247		301							"{2: 'Kurono-San', 3: ""Hmm... Alright, those two aren't important anyway.""}"
+248	248		301							{3: 'Kurono-San signs his name on the transfer contract.'}
+249	249		301							{2: 'Kurono-San', 3: 'Once the announcement is made, the transport crafts will be transferred to you directly.'}
+250	250		301							{2: 'Kurono-San', 3: 'Also, welcome aboard, Trillard.'}
+251	251		301				AniZhuanchangBegin			{3: 'The person rises to his feet, puts on his hat, and leaves the room.'}
+252	252		401							{1: '1', 2: '36'}
+253	253		202			DialogDisable			400.0	{1: '1', 6: '1'}
+254	254		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg'}
+255	255		301			DialogEnable				{3: 'One month later.'}
+256	256		401							{1: '2', 2: '1512'}
+257	257		401							{1: '1', 2: '201'}
+258	258		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+259	259		301			RImgBg1Shake				"{3: ""A hard blow lands on Trillard's face, sending him tumbling to the ground.""}"
+260	260		201							{1: '1', 2: '500789'}
+261	261		301							{1: '1', 2: 'Hans', 3: 'Trillard!', 4: '1'}
+262	262		306							{1: '1'}
+263	263		301							{3: 'In the span of a mere month, Hans appears to have aged by decades.'}
+264	264		301							{3: 'The following day, as people in the command room see Hans with his hair turned white overnight, their eyes fill with concern and worry.'}
+265	265		301							{3: 'Nevertheless, he only calmly waves his hand, signaling everyone to proceed with their work.'}
+266	266		301							{3: 'If those soldiers have become bargaining chips for the future, then he will willingly place himself as a wager too.'}
+267	267		301							"{3: ""He won't and can't dishonor the lives lost by succumbing to guilt and avoidance.""}"
+268	268		301							{3: 'He will use himself as a bargaining chip wisely, letting it serve its purpose and die with dignity.'}
+269	269		301							"{3: ""Clearly, finding an easy way out through suicide won't be a wise use of that.""}"
+270	270		301							"{3: ""But he didn't expect someone to desert their ground already.""}"
+271	271		306							
+272	272		401							{1: '2', 2: '4079'}
+273	273		301							{2: 'Hans', 3: 'What the hell is going on?!', 4: '1'}
+274	274		301							{3: 'When those councilors were thrown into prison on false charges, and when Trillard announced the new appointments at the press conference...'}
+275	275		301							{3: 'Hans was consumed by an anger greater than ever. He never expected that Trillard would be the one to betray them first.'}
+276	276		203							{1: '1', 2: '0.25', 3: '-400'}
+277	277		201							{1: '2', 2: '500793', 4: '400'}
+278	278		301							{1: '2', 2: 'Trillard', 3: 'Hans, we need those transport crafts.', 4: '2'}
+279	279		301							"{2: 'Hans', 3: ""But you're overdrawing the future of the Parliament!"", 4: '1'}"
+280	280		301							{2: 'Hans', 3: 'You know the consequences once the World Government falls into their hands.', 4: '1'}
+281	281		301							{3: 'Trillard stays silent for a long time before finally speaking.'}
+282	282		301							"{2: 'Trillard', 3: ""Hans, our dream is already shattered. It's time to face reality."", 4: '2'}"
+283	283		203						70.0	{1: '1', 2: '0.14'}
+284	284		203							{1: '2', 2: '0.16', 3: '600'}
+285	285		202							{1: '2'}
+286	286		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+287	287		401							{1: '2', 2: '1512'}
+288	288		301			RImgBg1Shake				{2: 'Hans', 3: 'You son of a *****.', 4: '1'}
+289	289		301							{3: 'Trillard is punched once more, and the bodyguard standing aside can no longer hold himself back, intervening to stop Hans.'}
+290	290		301							{2: 'Bodyguard', 3: 'Sir, if you persist with this course of action, you will be perceived as assaulting the President.'}
+291	291		301							{2: 'Hans', 3: 'Do you have anything else to say to me?', 4: '1'}
+292	292		301							{3: 'Trillard remains silent.'}
+293	293		301							{2: 'Hans', 3: 'Let go. I can walk on my own!', 4: '1'}
+294	294		202							{1: '1'}
+295	295		301				AniZhuanchangBegin			{3: 'Hans turns to leave the room, with the door slammed shut behind him.'}
+296	296		401							{1: '1', 2: '36'}
+297	297		502						400.0	{1: 'DialogDisable'}
+298	298		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg'}
+299	299		301			DialogEnable				{3: 'At night.'}
+300	300		401							{1: '1', 2: '359'}
+301	301		201							{1: '1', 2: '500793'}
+302	302		301							{1: '1', 3: 'After giving his final instructions, Trillard dismisses the young man in front of him.'}
+303	303		301							{3: 'He retrieves some tools and starts meticulously cleaning this room where he has dedicated nearly twenty years of his life.'}
+304	304		202							{1: '1'}
+305	305		301							{3: 'He is being incredibly thorough, leaving no corner or shadow untouched.'}
+306	306		301							{3: 'After sweeping away the dust from the floor, he proceeds to wipe the bookshelves...'}
+307	307		301							"{3: ""It's not until all the windows gleam with clarity that he finally sinks back into his chair, gently rubbing his aching back.""}"
+308	308		201							{1: '1', 2: '500793', 3: '1'}
+309	309		301							"{1: '1', 2: 'Trillard', 3: ""Phew... After the cleaning, it shouldn't get dirty again for a while."", 4: '1'}"
+310	310		301							{3: 'As he gazes at the moonlight streaming through the window, for some inexplicable reason, the memory of raising a toast with Hans floods his mind.'}
+311	311		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+312	312		202							{1: '1', 6: '1'}
+313	313		504							{1: '0.7'}
+314	314		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+315	315		201							{1: '1', 2: '500793', 3: '1', 4: '400', 7: '1'}
+316	316		201							{1: '2', 2: '500788', 3: '1', 4: '-400', 7: '1'}
+317	317		401							{1: '2', 2: '2825'}
+318	318		301							{1: '1', 2: 'Trillard', 3: 'To tomorrow.', 4: '1'}
+319	319		301							{2: 'Hans', 3: 'To tomorrow.', 4: '2'}
+320	320		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+321	321		202							{1: '1', 2: '2', 6: '1'}
+322	322		504							
+323	323		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg'}
+324	324		201							{1: '1', 2: '500793'}
+325	325		301							{1: '1', 3: 'He never forgets the exhilaration of gazing at the stars; at that very moment, he realized that this was the cause he would dedicate his life to.'}
+326	326		301							{3: 'He wants to lead humanity out of the solar system and continue writing their legend in the universe.'}
+327	327		301							{3: 'He wants to leave a glorious mark on history instead of fading away into its annals of oblivion.'}
+328	328		301							{3: '...'}
+329	329		301							{3: 'He wants to explain to his best friend, to bid a dignified farewell.'}
+330	330		301							"{3: ""But he can't...""}"
+331	331		301							{3: 'For that seemingly casual promise has always been his guiding creed.'}
+332	332		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+333	333		202							{1: '1', 6: '1'}
+334	334		504							{1: '0.7'}
+335	335		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory829.jpg'}
+336	336		201							{1: '1', 2: '500788', 4: '-400', 7: '1'}
+337	337		201							{1: '2', 2: '500793', 3: '1', 4: '400', 7: '1'}
+338	338		301							"{1: '1', 2: 'Trillard', 3: ""I can assure you, though, that I'm not being entirely selfish here. I've always placed the World Government above myself."", 4: '2'}"
+339	339		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+340	340		202							{1: '1', 2: '2', 6: '1'}
+341	341		504							
+342	342		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg'}
+343	343		201							{1: '1', 2: '500793', 7: '1'}
+344	344		301							{1: '1', 3: 'The man, accustomed to wielding lies as his weapon, chooses to hide his true feelings even at the very end.'}
+345	345		301							"{2: 'Trillard', 3: ""This age doesn't need another mediocre politician, but I can still do something for you."", 4: '1'}"
+346	346		301							{3: 'He pours out the long-prepared red wine and raises a toast to the moon.'}
+347	347		204							{1: '1', 2: '2'}
+348	348		301							{2: 'Trillard', 3: 'To tomorrow.', 4: '1'}
+349	349		301				AniZhuanchangBegin			{3: 'The red liquid in the glass is downed in one gulp.'}
+350	350		202			DialogDisable				{1: '1', 6: '1'}
+351	351		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory427.jpg'}
+352	352		301			DialogEnable				"{3: ""The following day, the Control Court received a comprehensive report, outlining the President of the World Government's crimes of corruption and bribery, accompanied by compelling evidence.""}"
+353	353		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg', 3: '0', 4: '1', 5: '0.5'}
+354	354		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+355	355		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg'}
+356	356		301							"{3: ""When the members of the Control Court broke into Trillard's office, they found him already dead.""}"
+357	357		301							{3: 'The wine glass beside him tested positive for cyanide, consistent with the presumed cause of his death.'}
+358	358		301							{3: 'Meanwhile, the evidence presented in the report was verified as authentic.'}
+359	359		301							{3: 'Trillard was promptly expelled from the World Government, and those whom he had wronged were soon released and reinstated to their rightful positions.'}
+360	360		301							"{3: ""The substantial assets under Trillard's name, of unknown origin, were all confiscated, including a significant number of transport crafts.""}"
+361	361		301							{3: 'If Trillard were still alive, the masterminds behind the scene would have countless ways to coerce him into recanting and disclosing the identity of the anonymous report sender.'}
+362	362		301							{3: 'But with his death, they could do nothing to a dead person despised by the whole world.'}
+363	363		301							{3: 'That day, Hans locked himself in his office for a long time.'}
+364	364		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory3.jpg', 3: '0', 4: '1', 5: '0.5'}
+365	365		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+366	366		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory3.jpg'}
+367	367		301							{3: 'That day, the Purifying Force sprang into action, and Ballard nearly crushed the terminal in his hand as he saw the long list of names.'}
+368	368		201							{1: '1', 2: '500686', 3: '4'}
+369	369		301							{1: '1', 2: 'Ballard', 3: 'Move out! Time to root out the tumors of corruption!', 4: '1'}
+370	370		202							{1: '1'}
+371	371		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory829.jpg', 3: '0', 4: '1', 5: '1'}
+372	372		205							{1: '999', 3: '1', 4: '0', 5: '1'}
+373	373		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory829.jpg'}
+374	374		301							"{3: ""Trillard's scandal has ignited a worldwide uproar.""}"
+375	375		301							{3: 'However, just three days later, no one pays attention to the dead former president anymore.'}
+376	376		301							{3: 'The Acadia Evacuation...'}
+377	377		301		1		AniZhuanchangBegin			{3: '...Is starting.'}

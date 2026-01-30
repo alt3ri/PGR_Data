@@ -1,0 +1,49 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+2	2		401							{1: '1', 2: '76'}
+3	3		301			DialogEnable				{3: 'In the evening, people are still immersed in the revelry of your birthday party. Amidst the continuous greetings and blessings, you quietly retreat to the edge of the room.'}
+4	4		301							{3: 'Babylonia is never quiet at night, but rarely does it have a joyous clamor like this.'}
+5	5		301							"{3: ""Coming back to your senses, you find yourself a good distance away from the lights, now standing alone by the library's entrance.""}"
+6	6		301							"{3: ""In the night breeze that's been keeping you company the entire way, you, having come all the way here by instinct, push open the door like you have all those nights before.""}"
+7	7		201							{1: '1', 2: '500506', 3: '1'}
+8	8		301							"{1: '1', 2: 'Noan', 3: 'Welcome, Commandant, or should I say ""Happy Birthday"" first?', 4: '1'}"
+9	9		302							"{2: ""So you remember it's my birthday today."", 3: '10', 4: ""I didn't see you all day."", 5: '11'}"
+10	10		301							"{2: 'Noan', 3: ""Of course, I do. I even went looking for you around Gray Raven's lounge."", 4: '1'}"
+11	11		301							"{2: 'Noan', 3: ""But I thought I shouldn't disturb you because you were surrounded by all these people. I meant to go to you to chat you up again... so I could hand you your birthday gift."", 4: '1'}"
+12	12		301							{3: 'Noan lowers his eyes, sounding mysteriously amused.'}
+13	13		204							{1: '1', 2: '2'}
+14	14		301							"{2: 'Noan', 3: ""Well, I presume you're all free now since you're here?"", 4: '1'}"
+15	15		302							{2: 'That depends on what you plan to do.', 4: 'I suppose so?'}
+16	16		204							{1: '1', 2: '1'}
+17	17		301							{2: 'Noan', 3: 'Well, then, this is for you.', 4: '1'}
+18	18		301							{3: 'Sitting in your palm now is a small photo frame filled with all sorts of paper sculptures, the soft lighting painting a scene of fireflies dancing in the grass.'}
+19	19		302							{2: 'A paper sculpture lamp?', 3: '20'}
+20	20		301							"{2: 'Noan', 3: ""Yup, that's what it is."", 4: '1'}"
+21	21		302							{2: 'Well, this is pretty...', 4: 'Thank you.'}
+22	22		302							{2: 'But... why fireflies?', 3: '23', 4: 'These fireflies... remind me of how you make me feel.', 5: '24'}
+23	23	28	301							{2: 'Noan', 3: 'Some say... that fireflies are stars on Earth. They may not shine as bright as the stars, but they are within reach, and they communicate with one another using their own light.', 4: '1'}
+24	24		301							{2: 'Noan', 3: 'How so?', 4: '1'}
+25	25		302							"{2: ""It's like having starlight right by my side."", 3: '28', 4: ""C'mon, need I say more?"", 5: '27'}"
+26	26		204							{1: '1', 2: '2'}
+27	27		301							{2: 'Noan', 3: '...', 4: '1'}
+28	28		301							{2: 'Noan', 3: 'Which is why I wanted to give this to you.', 4: '1'}
+29	29		301							"{2: 'Noan', 3: ""This is going to keep you company for me even when I'm not around you."", 4: '1'}"
+30	30		302							"{2: ""I'd rather have you by my side instead."", 3: '31', 4: 'Accepted with appreciation.', 5: '34', 6: 'Then you probably should have given me something more durable than this.', 7: '33'}"
+31	31		204							{1: '1', 2: '11'}
+32	32	34	301							"{2: 'Noan', 3: ""I'd love to do that, too, but there are many places that Dark Aries can't go."", 4: '1'}"
+33	33		301							{2: 'Noan', 3: 'Let me fix it for you if it ever breaks, then.'}
+34	34		204							{1: '1', 2: '1'}
+35	35		301							{2: 'Noan', 3: 'And now...', 4: '1'}
+36	36		301							{3: 'Noan takes out a notebook and pen and jots down a few locations and plans.'}
+37	37		301							{2: 'Noan', 3: 'Want to pick one that seems interesting to you? Or should we rest here for a bit?', 4: '1'}
+38	38		302							"{2: ""Let's rest for a while."", 3: '39'}"
+39	39		301							{2: 'Noan', 3: 'Alright.', 4: '1'}
+40	40		301							{3: 'Noan sits down as he always does and pulls out a piece of fruit candy from his pocket.'}
+41	41		301							{2: 'Noan', 3: 'Here.', 4: '1'}
+42	42		302							{2: 'Candy?', 3: '43'}
+43	43		301							{3: 'He nods earnestly, with a mix of nostalgia and anticipation, as if he really wants to see you eat it.'}
+44	44		302							"{2: ""And you don't have one for yourself?"", 3: '45'}"
+45	45		301							{2: 'Noan', 3: 'This is the only one I happen to have today.', 4: '1'}
+46	46		302							{2: '...Well...', 3: '47'}
+47	47		204							{1: '1', 2: '2'}
+48	48		301		1		AniZhuanchangBegin			{2: 'Noan', 3: 'We should probably split it, then?', 4: '1'}

@@ -1,0 +1,13 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1052.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		302							"{2: 'What\'s a ""Mini 4WD Assembly Race""?', 3: '4'}"
+4	4		201							{1: '1', 2: '500568'}
+5	5		301			DialogEnable				{1: '1', 2: 'Lee', 3: 'You have to assemble a Mini 4WD car within the time limit, then race it on a short track.', 4: '1'}
+6	6		204							{1: '1', 2: '10'}
+7	7		301							"{2: 'Lee', 3: ""If you win, you'll get quite a few tokens as a prize."", 4: '1'}"
+8	8		204							{1: '1', 2: '1'}
+9	9		301							"{2: 'Lee', 3: ""We've played so many games already. We must be running low on tokens."", 4: '1'}"
+10	10		302							{2: 'Now that you mention it...', 3: '11'}
+11	11		301							"{2: 'Lee', 3: ""Please wait here and rest, Commandant. I'll be right back."", 4: '1'}"
+12	12		301		1		AniZhuanchangBegin			"{2: 'Lee', 3: ""...I'm actually quite interested in this game."", 4: '1'}"

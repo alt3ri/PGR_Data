@@ -1,0 +1,27 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory118.png'}
+2	1000		401							{1: '1', 2: '201'}
+3	2		301			DialogEnable				{3: 'There are no others in sight except Ayla in the long and narrow space station passageway.'}
+4	3		301							{3: 'The lights flicker on and off. Dull, low battle noises could be heard occasionally, probably coming from other troops fighting the enemy.'}
+5	4		201							{1: '1', 2: '500110'}
+6	5		301							{1: '1', 2: 'Ayla', 3: 'Phew...', 4: '1'}
+7	6		202							{1: '1', 6: '1'}
+8	7		301							{3: 'Ayla inhales a deep breath and starts to focus, trying to sense any possible signal from Selena.'}
+9	8		301							"{2: 'Noise', 3: '""..."" (Lines from ""The Tempest"")'}"
+10	9		201							{1: '1', 2: '500110'}
+11	10		301							{1: '1', 2: 'Ayla', 3: 'As predicted...', 4: '1'}
+12	11		202							{1: '1', 6: '1'}
+13	12		301							"{2: 'Noise', 3: '""..."" (Lines from ""The Tempest"")'}"
+14	13		201							{1: '1', 2: '500110'}
+15	14		301							{1: '1', 2: 'Ayla', 3: 'Selena!', 4: '1'}
+16	15		301							{2: 'Ayla', 3: 'Selena, can you hear me?', 4: '1'}
+17	16		202							{1: '1'}
+18	17		301							"{2: 'Noise', 3: '""..."" (Lines from ""The Tempest"")'}"
+19	18		301							{3: 'Ayla tries all sorts of communication methods but receives no replies.'}
+20	19		201							{1: '1', 2: '500110'}
+21	20		301							{1: '1', 2: 'Ayla', 3: '...', 4: '1'}
+22	21		301							"{2: 'Ayla', 3: ""Maybe Selena can't receive any signals... Yes, that must be it."", 4: '1'}"
+23	22		301							"{2: 'Ayla', 3: ""It's okay... I will find you, and I will bring you back..."", 4: '1'}"
+24	23		301							{2: 'Ayla', 3: 'Keep it up, Selena. Keep singing...', 4: '1'}
+25	24		202							{1: '1', 6: '1'}
+26	25		301		1		AniZhuanchangBegin			{3: 'Ayla picks up her scythe and starts running...'}

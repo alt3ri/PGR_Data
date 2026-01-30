@@ -1,0 +1,91 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg'}
+2	2		401							{1: '1', 2: '100'}
+3	3		201							{1: '1', 2: '500445'}
+4	4		301			DialogEnable				{1: '1', 3: 'As you stroll through the busy streets, a familiar face suddenly pops into view.'}
+5	5		301							{2: 'Pulao', 3: 'All good here. Next location!', 4: '1'}
+6	6		204							{1: '1', 2: '1'}
+7	7		301							{2: 'Pulao', 3: 'Huh?!', 4: '1'}
+8	8		204							{1: '1', 2: '2'}
+9	9		301							{2: 'Pulao', 3: 'Commandant!', 4: '1'}
+10	10		301							"{3: ""Pulao's usual serious demeanor melts away as soon as she spots you.""}"
+11	11		302							"{2: ""What's up, Pulao?"", 3: '12'}"
+12	12		204							{1: '1', 2: '1'}
+13	13		301							"{2: 'Pulao', 3: ""Just out here patrolling the streets, making sure everything's safe and sound. After all, it's my duty to keep everyone protected."", 4: '1'}"
+14	14		302							{2: 'Sounds like tough work.', 3: '15'}
+15	15		301							{2: 'Pulao', 3: 'Not at all. Seeing all those smiles out there gives me a boost of energy.', 4: '1'}
+16	16		301							{3: 'Glancing around with Pulao, you can see how the joy radiating from the bustling crowd is infectious.'}
+17	17		301							{3: 'In this day and age, moments like these are a real gem.'}
+18	18		502							{1: 'DialogDisable'}
+19	19		302							"{2: ""I'll admit, I was a bit worried when I heard you and your league were taking over the whole commercial street."", 3: '20'}"
+20	20		302							{2: 'Well, it looks like I may have underestimated you a bit.', 3: '21'}
+21	21		302							{2: 'Is this the power of the Little League?', 3: '22'}
+22	22		301			DialogEnable				{2: 'Pulao', 3: 'Of course! We kids, uh, I mean the Little League and I, are pretty darn impressive!', 4: '1'}
+23	23		204							{1: '1', 2: '2'}
+24	24		301							{2: 'Pulao', 3: 'Ah, right!', 4: '1'}
+25	25		301							"{2: 'Pulao', 3: ""Commandant, you've been around here a few times, right? Any suggestions?"", 4: '1'}"
+26	26		302							{2: 'Everything is just perfect.', 3: '27'}
+27	27		204							{1: '1', 2: '1'}
+28	28		301							{2: 'Pulao', 3: 'Haha!', 4: '1'}
+29	29		302							"{2: ""But there's one tiny hiccup."", 3: '30'}"
+30	30		204							{1: '1'}
+31	31		301							{2: 'Pulao', 3: 'Huh?', 4: '1'}
+32	32		301							"{3: ""Pulao's demeanor shifts, visibly tensing up.""}"
+33	33		502							{1: 'DialogDisable'}
+34	34		302							{2: 'While the festival spreads joy and ease all around...', 3: '35'}
+35	35		302							{2: 'The one who really makes it happen is run off their feet.', 3: '36'}
+36	36		302							"{2: ""That's something you need to fix."", 3: '37'}"
+37	37		204							{1: '1', 2: '6'}
+38	38		301			DialogEnable				{3: 'At your words, Pulao blinks rapidly, her tense expression softening. She crosses her arms and pouts.'}
+39	39		204							{1: '1', 2: '5'}
+40	40		301							{2: 'Pulao', 3: 'You really had me on edge there, Commandant!', 4: '1'}
+41	41		502							{1: 'DialogDisable'}
+42	42		302							"{2: ""But hey, it's all about finding that sweet spot between work and play. Trust those in charge of keeping things safe."", 3: '43'}"
+43	43		302							{2: 'Pulao, take a breather, will you?', 3: '44'}
+44	44		204							{1: '1', 2: '6'}
+45	45		301			DialogEnable				{2: 'Pulao', 3: 'I...', 4: '1'}
+46	46		302							{2: 'When it comes to improving the festival, nothing beats experiencing it firsthand, right?', 3: '47'}
+47	47		204							{1: '1', 2: '1'}
+48	48		301							"{2: 'Pulao', 3: ""Hmm... you make a good point, Commandant. Then I'll soak it in a bit and have some personal experience for a change."", 4: '1'}"
+49	49		301							{2: 'Pulao', 3: 'Commandant, care to join me?', 4: '1'}
+50	50		302				AniZhuanchangBegin			"{2: ""I'd be thrilled."", 3: '51'}"
+51	51		202			DialogDisable				{1: '1', 6: '1'}
+52	52		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg'}
+53	53		301			DialogEnable				{3: '...'}
+54	54		201							{1: '1', 2: '500445', 3: '2'}
+55	55		301							{1: '1', 2: 'Pulao', 3: 'Qiao Guo!', 4: '1'}
+56	56		301							{2: 'Pulao', 3: 'Qiao Ya noodles!', 4: '1'}
+57	57		301							{2: 'Pulao', 3: 'Char siu bun!', 4: '1'}
+58	58		301							{3: 'Pulao follows the tantalizing aroma of food, her lively figure skipping ahead with the trinkets jingling around her waist.'}
+59	59		301							{2: 'Pulao', 3: 'Commandant, check this out! Check it out!', 4: '1'}
+60	60		301							"{3: ""The girl's grin is wider than ever before.""}"
+61	61		301							"{3: 'Just as you suspected, even though you just called it ""experience,"" it\'s basically just a blast.'}"
+62	62		302							{2: 'I nailed it!', 3: '63'}
+63	63		204							{1: '1', 2: '6'}
+64	64		301							{3: 'Pulao giggles at your successful scheme, then blushes a bit at her reaction.'}
+65	65		301							"{2: 'Pulao', 3: ""I mean, I'm usually all business, you know!"", 4: '1'}"
+66	66		204							{1: '1', 2: '8'}
+67	67		301							{2: 'Pulao', 3: 'For some reason, hanging out with you today made everything way more fun than usual. I was almost...', 4: '1'}
+68	68		204							{1: '1', 2: '6'}
+69	69		301							"{2: 'Pulao', 3: ""Whoa, hold up! I didn't mean to imply it was your fault, Commandant!"", 4: '1'}"
+70	70		502							{1: 'DialogDisable'}
+71	71		302							"{2: ""It's cool, Pulao. I get what you're saying."", 3: '72'}"
+72	72		302							{2: 'Spending the day with you makes me happier than I have in ages.', 3: '73'}
+73	73		204							{1: '1', 2: '1'}
+74	74		301			DialogEnable				"{2: 'Pulao', 3: ""Really? That's awesome!"", 4: '1'}"
+75	75		301							{2: 'Pulao', 3: 'Oh, by the way, there was something I wanted to talk to you about later tonight, Commandant.', 4: '1'}
+76	76		302							{2: 'Oh?', 3: '77'}
+77	77		301							{2: 'Pulao', 3: 'Commandant, could you do me a favor and close your eyes for a second?', 4: '1'}
+78	78		302				AniZhuanchangBegin			{2: '(Close eyes)', 3: '79'}
+79	79		202			DialogDisable				{1: '1', 6: '1'}
+80	80		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg'}
+81	81		201							{1: '1', 2: '500445', 3: '2'}
+82	82		301			DialogEnable				{1: '1', 2: 'Pulao', 3: 'Ta-da!', 4: '1'}
+83	83		301							{3: 'You open my eyes. Pulao hands over a panda plushie, dressed in cowboy attire.'}
+84	84		204							{1: '1', 2: '1'}
+85	85		301							"{2: 'Pulao', 3: ""Do you remember the Weaver Girl Panda doll you gave me last year? Well, the one I'm giving you now is its partner, Commandant!"", 4: '1'}"
+86	86		301							"{2: 'Pulao', 3: ""I promised you a surprise blind box, but a blind box can only fit one gift, and I've got a whole bunch of goodies I want to give you."", 4: '1'}"
+87	87		301							{2: 'Pulao', 3: 'So, I came up with this brilliant plan!', 4: '1'}
+88	88		301							"{2: 'Pulao', 3: ""Among all the gifts I'm giving you today, one is a special Valentine's Day gift, and the rest are regular Valentine's Day gifts."", 4: '1'}"
+89	89		301							"{2: 'Pulao', 3: ""And guess what? You have no idea which one's the special one. It's kind of a blind-box idea!"", 4: '1'}"
+90	90		301		1		AniZhuanchangBegin			"{2: 'Pulao', 3: ""Here's the first one, Commandant. Take good care of it. There's plenty more where that came from!"", 4: '1'}"

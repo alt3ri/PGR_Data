@@ -1,0 +1,9 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory.png'}
+2	100		401							{1: '1', 2: '203'}
+3	2		301			RImgBg1Shake				{3: 'Boom—'}
+4	3		301							{3: 'A train bursts through the walls and crashes into an ancient and elegant-looking estate...'}
+5	4		301			RImgBg1Shake				{3: 'Crackle—'}
+6	5		201							{1: '1', 2: '500008'}
+7	6		301							{1: '1', 3: 'Roland kicks aside the broken doors and walks out of the carriage unscathed.'}
+8	7		301		1		AniZhuanchangBegin			{2: 'Roland', 3: 'Hm. Finally. My stop.', 4: '1'}

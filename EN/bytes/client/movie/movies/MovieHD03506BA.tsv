@@ -1,0 +1,125 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory671.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				{3: 'A short while ago, your terminal picked up an email containing a single set of coordinates.'}
+4	4		301							"{3: 'You can easily tell the sender\'s identity from the concise, matter-of-fact tone. But instead of the typical ""I\'ll be here waiting,"" it ends on a slightly urgent note: ""Get here as soon as you can.""'}"
+5	5		301							"{3: ""You wonder what's going on.""}"
+6	6		301							"{3: ""When you reach the destined corner, it's nearly empty. The holiday cheer lingers across the street, leaving only the calm of a summer afternoon.""}"
+7	7		401							{1: '2', 2: '2626'}
+8	8		301							{3: 'Thud—Thud—'}
+9	9		201							{1: '1', 2: '500610'}
+10	10		301							{1: '1', 3: 'You turn toward the sound to find Alpha leaning against the doorframe of a shop, idly tapping her fingers on the dark brown door.'}
+11	11		301							"{3: ""Something seems different about her—her shoulders are slightly slumped, her expression unusually relaxed. There's a subtle air of exhaustion about her, both physical and mental.""}"
+12	12		202							{1: '1'}
+13	13		301							{3: 'She beckons you with a finger before turning and stepping inside.'}
+14	14		302				AniZhuanchangBegin			{2: '(Follow)', 3: '15'}
+15	15		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory637.jpg'}
+16	16		301			AniZhuanchangEnd				"{3: ""Seems like this shop sells coatings. The interior isn't fancy, but every little touch shows the owner's unwavering devotion.""}"
+17	17		201							{1: '1', 2: '500610'}
+18	18		301							"{1: '1', 2: 'Alpha', 3: ""Watch your step. Don't trip.""}"
+19	19		301							"{3: ""At Alpha's reminder, you shift your gaze from the shelves on the wall down to the floor.""}"
+20	20		301							{3: 'Now the floor is a total mess, the complete opposite of the earlier scene. Mannequins lie knocked over—some even broken—and colorful synthetic hair is either scattered everywhere or wrapped up in knots.'}
+21	21		301							"{3: ""It's clear that... chaos just swept through here.""}"
+22	22		302							"{2: 'What happened?', 3: '23', 4: 'You called me in to help you clean up a ""crime scene""?', 5: '23'}"
+23	23		301							"{3: 'Alpha shows no emotion as she steps over the ""rubble"" and moves deeper into the mess. She crouches, reaches out, and snatches something in one swift motion.'}"
+24	24		301							"{3: ""When she straightens, she's holding a white cat by the scruff. It hangs limp, not moving at all, with a fat gray rat clenched in its teeth.""}"
+25	25		301							{2: 'Alpha', 3: 'This is the culprit.', 4: '1'}
+26	26		301							{3: 'A cat, a rat, and this whole disaster... Now, you get the picture.'}
+27	27		301							"{3: ""You bend down to straighten the fallen ornament. Glancing at the tag, you're surprised to see the synthetic fiber price is higher than expected.""}"
+28	28		302							"{2: 'So, you called me here to...', 3: '29', 4: ""These aren't cheap, you know."", 5: '29'}"
+29	29		204							{1: '1', 2: '8'}
+30	30		301							{3: 'Alpha shakes her head with a weary sigh and flicks the white cat aside.'}
+31	31		301							"{2: 'Alpha', 3: ""I don't have enough Black Cards on me. Cover me this time, and I'll owe you one."", 4: '1'}"
+32	32		302							"{2: 'Sure.', 3: '33', 4: ""I'm charging interest."", 5: '33', 6: 'How dare you assume I have money on me?', 7: '33'}"
+33	33		204							{1: '1'}
+34	34		301							{3: 'Alpha is about to reply but suddenly notices something. She turns around and sees an old woman standing at the shop entrance.'}
+35	35		301							"{3: ""The old lady spots the mess in the shop and doesn't seem too alarmed at first—until she notices strands of hair on the floor.""}"
+36	36		201							{1: '1', 2: '500268'}
+37	37		301							{1: '1', 2: 'Elderly Woman', 3: 'Oh my goodness! Why is this hair all over the place?!', 4: '1'}
+38	38		301							{3: 'She rushes over, clearly worried, and gently gathers a few strands. Then she turns to you with a hint of scolding in her voice, though she still sounds kind.'}
+39	39		301				AniZhuanchangBegin			"{2: 'Elderly Woman', 3: ""I only stepped away to chat with an acquaintance for a moment... Kids, what's going on here?"", 4: '1'}"
+40	40		202							{1: '1', 6: '1'}
+41	41		301			AniZhuanchangEnd				"{3: ""You help Alpha tidy the elderly woman's cluttered shop by picking up stray hair from the floor, while you fill her in on what happened.""}"
+42	42		301							"{3: ""She nods, but it's clear she isn't really listening. Halfway through your explanation, she stops paying attention and fixates on Alpha's trailing hair.""}"
+43	43		301							{3: 'Then, without warning, she reaches out and lightly pinches the end of a strand that drapes in front of Alpha.'}
+44	44		201							{1: '1', 2: '500268'}
+45	45		301							{1: '1', 2: 'Elderly Woman', 3: 'You got great hair.', 4: '1'}
+46	46		301							{3: 'Alpha starts to get up out of habit, but when she notices the elderly woman means no harm, she stays seated after all.'}
+47	47		301							"{2: 'Elderly Woman', 3: ""I'm serious! I've seen and even made a lot of Constructs' hair in my time, but I've never come across any this fine and this lovely... How do you usually take care of it?"", 4: '1'}"
+48	48		203							{1: '1', 2: '0.25', 3: '-500'}
+49	49		201							{1: '2', 2: '500610', 4: '500'}
+50	50		301							{1: '1', 2: 'Alpha', 3: 'Nothing special. Just wash it like normal.', 4: '2'}
+51	51		301							"{3: ""She gently slips her hair free from the elderly woman's grasp.""}"
+52	52		301							{2: 'Alpha', 3: 'About the compensation...', 4: '2'}
+53	53		301							"{2: 'Elderly Woman', 3: ""It's a real shame that kind of hair isn't properly taken care of. Letting such great hair leave my shop without the right treatment just doesn't sit right with me."", 4: '1'}"
+54	54		301							"{2: 'Elderly Woman', 3: ""How about this: I give your hair a proper treatment, and we'll settle the compensation once and for all."", 4: '1'}"
+55	55		301							{2: 'Alpha', 3: '...Are there other options? Like paying with Black Cards?', 4: '2'}
+56	56		301							"{2: 'Elderly Woman', 3: ""Well, if you don't let me treat it, you could always cut it off and hand it over as compensation."", 4: '1'}"
+57	57		301							{3: 'The elderly woman has a warm smile and a gentle tone, but her words are chilling.'}
+58	58		301							"{3: 'Alpha tilts her head, giving you a look that says, ""Don\'t just stand there."" It\'s so rare to see her caught off guard that you feel a strange flutter inside you.'}"
+59	59		302							"{2: 'It would be a shame not to keep such lovely hair in good condition.', 3: '60', 4: ""I'll go find the scissors for you."", 5: '60', 6: '(Smile)', 7: '60'}"
+60	60		204							{1: '2', 2: '8'}
+61	61		301							{2: 'Alpha', 3: '...', 4: '2'}
+62	62		301							{2: 'Elderly Woman', 3: 'Right this way, please.', 4: '1'}
+63	63		202							{1: '1', 2: '2'}
+64	64		301							{3: 'You notice there are still some devices at the back of the shop that service Constructs.'}
+65	65		201							{1: '1', 2: '500610'}
+66	66		301							{1: '1', 2: 'Alpha', 3: 'What a hassle.', 4: '1'}
+67	67		202							{1: '1'}
+68	68		301							{3: 'Alpha sighs as she undoes her hair tie, letting her long hair fall freely down her back.'}
+69	69		301							"{3: ""She leans on the bed's edge, hands on the white mattress, tilting her head toward the air conditioner. A cool breeze ripples through her white hair, stirring its red tips.""}"
+70	70		301							"{3: ""Maybe it's because her loose hair softens some of her edge, but right now, Alpha feels different from how she used to be.""}"
+71	71		201							{1: '1', 2: '500610'}
+72	72		301							{1: '1', 2: 'Alpha', 3: '...Stop staring and give the old lady a hand if you have a moment.', 4: '1'}
+73	73		202							{1: '1'}
+74	74		301							{3: 'The chaos in the shop is making it hard for the old lady to grab what she needs, so you help arrange the bottles and jars, placing them within easy reach by the shampoo station.'}
+75	75		301							"{3: ""Suddenly, a voice calls out from outside, like someone is trying to get the old lady's attention.""}"
+76	76		201							{1: '1', 2: '500268'}
+77	77		301							{1: '1', 2: 'Elderly Woman', 3: 'Oh my! I nearly forgot—I came back to get something I need to deliver to someone.', 4: '1'}
+78	78		301							"{2: 'Elderly Woman', 3: ""Young one, do you have any experience taking care of a Construct's long hair?"", 4: '1'}"
+79	79		302							"{2: ""I'm pretty skilled at that."", 3: '80', 4: 'I have some experience.', 5: '80', 6: 'I have no idea what to do.', 7: '80'}"
+80	80		301							{2: 'Elderly Woman', 3: 'Huh... Anyway, just hear me out.', 4: '1'}
+81	81		301							"{3: ""The elder carefully walks you through the routine—which bottle goes first, how to use the jar. It sounds complicated to most, but you're used to handling intricate tasks. You pay close attention and get the hang of it pretty fast.""}"
+82	82		301							"{2: 'Elderly Woman', 3: ""Good, I'll leave the rest to you."", 4: '1'}"
+83	83		302							{2: 'Huh?', 3: '84', 4: '...', 5: '84'}
+84	84		301							"{2: 'Elderly Woman', 3: ""I'm not coming back for a while, and I don't want you waiting here all day. I can see you're sharp and detail-oriented—otherwise, I wouldn't trust you with this girl's gorgeous hair, would I?"", 4: '1'}"
+85	85		302							"{2: ""That's really not the issue..."", 3: '86'}"
+86	86		202							{1: '1'}
+87	87		301							"{3: ""You look over at Alpha; she's ready and turns her gaze toward you at the same moment.""}"
+88	88		301							{3: 'She neither agrees nor refuses.'}
+89	89		301							{3: 'The elderly woman gives a couple more reminders, then leaves, leaving you to handle everything on your own.'}
+90	90		301							"{3: ""You start with the basics: running a comb through her hair, soaking it with warm water, applying the special shampoo, and massaging it until it's all nice and foamy...""}"
+91	91		301							{3: 'Throughout this entire process, Alpha keeps her eyes wide open. Honestly, her unblinking stare for such a long time unsettles you, and you find yourself moving more stiffly.'}
+92	92		201							{1: '1', 2: '500610'}
+93	93		301							{1: '1', 2: 'Alpha', 3: 'How... do we end up like this...?', 4: '1'}
+94	94		302							"{2: 'Not everything can be fixed just by throwing money at it.', 3: '95', 4: ""You'll have to ask the cat about that."", 5: '95'}"
+95	95		301							"{2: 'Alpha', 3: ""That's not what I meant..."", 4: '1'}"
+96	96		204							{1: '1', 2: '8'}
+97	97		301							{3: 'She speaks softly, offering no more explanation, then slowly closes her eyes.'}
+98	98		301							"{3: ""It's clear Alpha is no longer as tense as before; she seems to be going along with it in her own way.""}"
+99	99		301							{3: 'Your once stiff movements gradually settle into a natural rhythm. No one rushes you, and no one grows impatient. Everything continues smoothly...'}
+100	100		301							{3: 'You carry on until the routine is nearly complete, leaving only the final step of blow-drying her hair.'}
+101	101		301							{2: 'Alpha', 3: '...', 4: '1'}
+102	102		301							{3: 'Alpha sits on a white cushion, her damp hair draping behind her. You stand nearby, holding a hairdryer carefully, while the mischievous white cat saunters around her legs. She scratches under its chin, and the cat purrs contentedly.'}
+103	103		204							{1: '1', 2: '1'}
+104	104		301							{3: 'She lets out a soft chuckle.'}
+105	105		301				AniZhuanchangBegin			"{2: 'Alpha', 3: ""It's... not bad to do this once in a while."", 4: '1'}"
+106	106		202							{1: '1', 6: '1'}
+107	107		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory671.jpg'}
+108	108		301			AniZhuanchangEnd				{3: 'After grooming, you help the elderly woman tidy her shop. Before leaving, you consider offering her something in return, but she waves off with a friendly smile.'}
+109	109		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+110	110		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory637.jpg'}
+111	111		504							{1: '0.7'}
+112	112		201							{1: '1', 2: '500268'}
+113	113		301							"{1: '1', 2: 'Elderly Woman', 3: ""To be honest, that rat was ruining my goods every day, so I'm glad the cat caught it. No need for compensation—really, don't mention it."", 4: '1'}"
+114	114		504							{1: '0'}
+115	115		202							{1: '1', 6: '1'}
+116	116		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+117	117		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory671.jpg'}
+118	118		201							{1: '1', 2: '500610'}
+119	119		301							"{1: '1', 2: 'Alpha', 3: ""At the end of the day, it's all this little troublemaker's fault."", 4: '1'}"
+120	120		301							"{3: ""Alpha grabs the white cat that's jumping around trying to claw at her hair. She tosses it gently, and the cat lands right in your arms.""}"
+121	121		301							{2: 'Alpha', 3: 'I owe you one this time. If you need my help with anything, just let me know.', 4: '1'}
+122	122		302							{2: 'Alright then—how about coming with me to the festival today?', 3: '123'}
+123	123		204							{1: '1'}
+124	124		301		1		AniZhuanchangBegin			"{2: 'Alpha', 3: ""...Let's go."", 4: '1'}"

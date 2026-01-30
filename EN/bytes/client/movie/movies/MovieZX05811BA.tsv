@@ -1,0 +1,446 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory663.jpg'}
+2	2		501			AniZhuanchangEnd				{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen03.prefab', 2: '2'}
+3	3		401							{1: '1', 2: '66'}
+4	4		401							{1: '2', 2: '4295'}
+5	5		401							{1: '2', 2: '968'}
+6	6		301			DialogEnable				{3: 'The wind howls violently.'}
+7	7		301							"{3: ""A biting gale scatters the dreamscape's mist. A crimson spiral tower grows clearer on the horizon.""}"
+8	8		401							{1: '2', 2: '891'}
+9	9		201							{1: '1', 2: '500166', 3: '5'}
+10	10		301							{1: '1', 2: 'Lucia', 3: 'What is... that?', 4: '1'}
+11	11		202							{1: '1'}
+12	12		301							{3: 'Lucia staggers forward, pushing down the hidden pain deep within her M.I.N.D.'}
+13	13		301							{3: 'Just at the edge of her sight, a boisterous crowd gathers, their cheers echoing as they watch a figure step into the tower.'}
+14	14		201							{1: '1', 2: '500166', 3: '5'}
+15	15		301			PanelActor1Shake				"{1: '1', 2: 'Lucia', 3: ""No... Don't..."", 4: '1'}"
+16	16		202							{1: '1'}
+17	17		301							"{3: ""Lucia's pupils shrink to pinpricks as an unshakeable terror grips her chest.""}"
+18	18		201							{1: '1', 2: '500166', 3: '5'}
+19	19		301							"{1: '1', 2: 'Lucia', 3: ""Commandant... don't go in there... it's dangerous inside!"", 5: '1'}"
+20	20		202							{1: '1'}
+21	21		301							"{3: ""The crowd remains jubilant, their cheers never faltering, as they wait for their hero's triumphant return.""}"
+22	22		104							{1: '0|40|-120', 2: '0.35'}
+23	23		301				DialogDisable			{3: 'A twisted fissure opens its pitch-black maw, patiently waiting for its prey—'}
+24	24		307			RImgBg1Shake				{1: '<color=#ffffffff><size=50>No, no—!!</size></color>'}
+25	25		301							{3: 'No, no—!!'}
+26	26		307							{2: '1'}
+27	27		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen03.prefab'}
+28	28		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+29	29		502							{1: 'AniZhuanchangBegin', 10: '1'}
+30	30		401							{1: '1', 2: '36'}
+31	31		401							{1: '1', 2: '209'}
+32	32		402							{1: '891'}
+33	33		402							{1: '968'}
+34	34		402							{1: '4295'}
+35	35		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+36	36		201							{1: '1', 2: '500994', 3: '8'}
+37	37		502							{1: 'PanelActor1Shake'}
+38	38		502							{1: 'DialogEnable'}
+39	39		401							{1: '2', 2: '2871'}
+40	40		301			AniZhuanchangEnd				{1: '1', 2: 'Lucia', 3: 'AARGH—!', 4: '1'}
+41	41		202							{1: '1'}
+42	42		301							{3: 'Cold sweat beads on her forehead as Lucia bolts upright in the experimental chamber.'}
+43	43		302							"{2: 'Lucia?', 3: '44', 4: ""What's wrong?"", 5: '44'}"
+44	44		201							{1: '1', 2: '500994', 3: '5'}
+45	45		301							{1: '1', 2: 'Lucia', 3: 'I... I saw the crimson tower...', 4: '1'}
+46	46		202							{1: '1'}
+47	47		301							"{3: ""She clutches the human's hand in a tight grip.""}"
+48	48		201							{1: '1', 2: '500994', 3: '8'}
+49	49		301							{1: '1', 2: 'Lucia', 3: 'I saw so many... so many images...', 4: '1'}
+50	50		202							{1: '1'}
+51	51		301				DialogDisable			"{3: ""But these are scenes she's never seen before.""}"
+52	52		401							{1: '2', 2: '558'}
+53	53		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+54	54		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory663.jpg'}
+55	55		401							{1: '2', 2: '558'}
+56	56		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+57	57		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory734.jpg'}
+58	58		401							{1: '2', 2: '558'}
+59	59		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+60	60		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory700.jpg'}
+61	61		301			DialogEnable				"{3: 'She\'s never laid eyes on a crimson tower or purple spherical forests, nor has she ever heard the term ""Clean Zone.""'}"
+62	62		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+63	63		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+64	64		301							"{3: ""The dream's scenes are like rock layers eroded by Babylonia—touched by the wind, they instantly crumble to sand.""}"
+65	65		201							{1: '1', 2: '500994', 3: '5'}
+66	66		301							"{1: '1', 2: 'Lucia', 3: ""The rest... it's a blank."", 4: '1'}"
+67	67		302							{2: 'The Tower...', 3: '68'}
+68	68		202							{1: '1'}
+69	69		306							{1: '1'}
+70	70		301							"{3: 'The ""Tower,"" again.'}"
+71	71		301							"{3: 'Both Hyperreal and Pyroath saw visions of the ""Tower"" during frame adaptation.'}"
+72	72		301							{3: 'If this is the Hetero Tower Dominik mentioned, why did only those two see it during adaptation?'}
+73	73		306							
+74	74		301				DialogDisable			{3: 'You push those questions aside for now and head to the back laboratory to check on the Pyroath frame with Asimov.'}
+75	75		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+76	76		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+77	77		302							{2: 'Is there anything unusual with the Pyroath frame?', 3: '78'}
+78	78		201							{1: '1', 2: '500004'}
+79	79		301			DialogEnable				{1: '1', 2: 'Asimov', 3: 'Nope. The M.I.N.D. fluctuations from this frame transfer are all within acceptable parameters.', 4: '1'}
+80	80		301				DialogDisable			"{2: 'Asimov', 3: ""Something's bothering you?"", 4: '1'}"
+81	81		302							"{2: 'Lucia just told me she saw the ""Tower"" too.', 3: '82'}"
+82	82		302							"{2: ""If it's not M.I.N.D. fluctuations, then why..."", 3: '83'}"
+83	83		204							{1: '1', 2: '8'}
+84	84		301			DialogEnable				{3: 'Asimov falls into deep thought for a moment.'}
+85	85		204							{1: '1'}
+86	86		301							"{2: 'Asimov', 3: 'If the ""absurd hypothesis"" is actually true, then—', 4: '1'}"
+87	87		301							"{2: 'Asimov', 3: ""It's possible that both of these frames have, to some degree, formed a connection with the Hetero Tower."", 4: '1'}"
+88	88		202							{1: '1'}
+89	89		401							{1: '2', 2: '1014'}
+90	90		301							{3: 'Asimov opens his terminal and pulls up an encrypted document with records on the Hetero Tower.'}
+91	91		201							{1: '1', 2: '500004'}
+92	92		301							"{1: '1', 2: 'Asimov', 3: ""What makes the Hyperreal frame truly stand out is its incredible computing power. When it's running at full tilt, it can actually transcend time and dimensions."", 4: '1'}"
+93	93		301							"{2: 'Asimov', 3: 'If the ""absurd hypothesis"" holds true, the Hyperreal frame might have inadvertently snagged information fragments during these high-capacity operations—pieces from the past, or maybe even glimpses of the future.', 4: '1'}"
+94	94		204							{1: '1'}
+95	95		301				DialogDisable			"{2: 'Asimov', 3: 'After all, we\'ve never fully grasped Punishing\'s ""capabilities"" or how it stores information.', 4: '1'}"
+96	96		302							{2: 'Therefore, what the Hyperreal might have captured is information preserved by Punishing...', 3: '97'}
+97	97		302							"{2: 'Data that simply doesn\'t belong to ""this reality.""', 3: '98'}"
+98	98		301			DialogEnable				"{2: 'Asimov', 3: ""That's right."", 4: '1'}"
+99	99		202							{1: '1'}
+100	100		401							{1: '2', 2: '1515'}
+101	101		301							{3: 'Asimov says, turning to quickly check the data from both Pyroath frames before continuing.'}
+102	102		201							{1: '1', 2: '500004'}
+103	103		301							"{1: '1', 2: 'Asimov', 3: 'As for the Pyroath frame, its power source is a modified ""Omega Core.""', 4: '1'}"
+104	104		301							"{2: 'Asimov', 3: 'The carrier for this core is that <b><ud><color=#34aff8ff><link=29>""egg,""</link></color></ud></b> which uses technology from the <b><ud><color=#34aff8ff><link=28>Heteromer Shard</link></color></ud></b> and the modified Omega Weapon to create it.', 4: '1'}"
+105	105		204							{1: '1'}
+106	106		301							{2: 'Asimov', 3: 'This setup allows the Pyroath frame to continuously draw energy from Punishing, letting it function without needing sleep, just like an Ascendant.', 4: '1'}
+107	107		301							{2: 'Asimov', 3: 'This frame had a tough test, naturally. As the official frame transfer occurred, I suspect...', 4: '1'}
+108	108		302							{2: 'Lucia accessed information from Punishing during the transfer.', 3: '109'}
+109	109		301							"{2: 'Asimov', 3: 'Hmm, whether this ""information"" from Punishing is from the past or the future, only time will tell.', 4: '1'}"
+110	110		202							{1: '1'}
+111	111		401							{1: '2', 2: '4095'}
+112	112		301							{3: 'Asimov finishes his report, taking the printed documents into his hands.'}
+113	113		201							{1: '1', 2: '500004'}
+114	114		301							"{1: '1', 2: 'Asimov', 3: ""Given its many functions and groundbreaking technologies, I've asked for a stability period of at least three months to make sure everything runs smoothly."", 4: '1'}"
+115	115		301							{2: 'Asimov', 3: 'Think of it as a precaution.', 4: '1'}
+116	116		301							{2: 'Asimov', 3: 'If any anomalies crop up during this period, contact me directly.', 4: '1'}
+117	117		302							{2: 'Sure.', 3: '118', 4: 'I will.', 5: '118'}
+118	118		202							{1: '1'}
+119	119		401							{1: '2', 2: '4649'}
+120	120		301				AniZhuanchangBegin			{3: 'You put away the frame report and open the lab door to find Lucia waiting outside, now in her Pyroath frame.'}
+121	121		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+122	122		201							{1: '1', 2: '500994', 3: '4', 7: '1'}
+123	123		301			AniZhuanchangEnd				{1: '1', 2: 'Lucia', 3: 'Commandant...', 4: '1'}
+124	124		301							{3: 'Lucia still seems on edge. The moment she sees you emerge, she clutches your arm tightly.'}
+125	125		302							"{2: '(Gently pat her hand)', 3: '126', 4: ""It's all right now, Lucia."", 5: '126'}"
+126	126		204							{1: '1', 2: '3'}
+127	127		301							{2: 'Lucia', 3: 'Yes, I know... I just...', 4: '1'}
+128	128		202							{1: '1'}
+129	129		301							"{3: ""Even though she's safe in Babylonia, she just can't shake the feeling that danger's lurking around every corner.""}"
+130	130		302							"{2: ""Let's head back to the lounge."", 3: '131', 4: ""This isn't the place to talk."", 5: '131'}"
+131	131		201							{1: '1', 2: '500994', 3: '8'}
+132	132		301							{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+133	133		202							{1: '1'}
+134	134		301				AniZhuanchangBegin			"{3: ""Lucia doesn't say a word. She just gives an obedient nod, but her hand stays glued to your arm, refusing to let go.""}"
+135	135		502						400.0	{1: 'DialogDisable'}
+136	136		401							{1: '1', 2: '201'}
+137	137		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+138	138		107			AniZhuanchangEnd				{1: 'Gray Raven Lounge'}
+139	139		301							{3: 'Gray Raven Lounge.'}
+140	140		108							{1: '1'}
+141	141		301			DialogEnable				"{3: ""It's a rare moment without any missions, and both Lee and Liv are in the lounge. Liv's busy maintaining her Levi-Gun while Lee polishes your sidearm.""}"
+142	142		201							{1: '1', 2: '1031001'}
+143	143		301							"{1: '1', 2: 'Liv', 3: ""Hey, Commandant, Lucia, you're back..."", 4: '1'}"
+144	144		204							{1: '1', 2: '3'}
+145	145		301							{2: 'Liv', 3: 'Lucia, are you alright? Did something go wrong during the frame transfer?', 4: '1'}
+146	146		202							{1: '1'}
+147	147		301							"{3: ""Noticing Lucia's troubled expression, Liv walks over, concern etched on her face. Lee puts down the sidearm and moves closer too.""}"
+148	148		302							{2: 'Nothing too serious.', 3: '149', 4: '...', 5: '149'}
+149	149		401							{1: '2', 2: '2670'}
+150	150		301							"{3: ""Casually closing the door, you gesture to Lee. He instantly gets it and starts checking the room's security and privacy measures. Once everything's locked down, all four of you gather around and take a seat.""}"
+151	151		302							"{2: 'Lucia\'s frame transfer isn\'t just a blur; she also sees the ""Tower.""', 3: '152'}"
+152	152		201							{1: '1', 2: '500568'}
+153	153		301							{1: '1', 2: 'Lee', 3: '...', 4: '1'}
+154	154		302							{2: 'Asimov thinks you might have tapped into information embedded within Punishing...', 3: '155'}
+155	155		202							{1: '1'}
+156	156		301							"{3: ""As you repeat Asimov's theory, Lee's expression turns grave.""}"
+157	157		201							{1: '1', 2: '500568', 3: '10'}
+158	158		301							"{1: '1', 2: 'Lee', 3: ""If Asimov's theory is correct..."", 4: '1'}"
+159	159		301							"{3: ""Lee's brows furrow deeply as he starts to recall.""}"
+160	160		204							{1: '1'}
+161	161		301							"{2: 'Lee', 3: 'After my frame transfer, during a field mission, I pushed my frame to its absolute limit. My M.I.N.D. went into overload. That\'s when I also saw that ""Tower.""', 4: '1'}"
+162	162		301							"{2: 'Lee', 3: ""He pauses, lost in thought. Back then... I seem to have picked up other information too, but it's buried deep in my M.I.N.D. I've tried to dig it up a few times, but it's like chasing smoke. No trace of it."", 4: '1'}"
+163	163		202							{1: '1', 6: '1'}
+164	164		401							{1: '2', 2: '558'}
+165	165		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+166	166		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1106.jpg'}
+167	167		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '0', 4: '0.5', 5: '0'}
+168	168		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+169	169		201							{1: '1', 2: '500568', 7: '1'}
+170	170		205							{1: '1', 3: '1', 4: '0.7', 5: '0'}
+171	171		301							"{1: '1', 2: 'Lee?', 3: ""...That Dead Zone number... That can't be right. The Hetero Tower isn't located there."", 4: '1'}"
+172	172		301							"{2: 'Lee?', 3: ""The loop's been broken. It's time for you to go."", 4: '1'}"
+173	173		202							{1: '1', 6: '1'}
+174	174		205							{1: '1', 3: '0', 4: '1', 5: '0'}
+175	175		401							{1: '2', 2: '558'}
+176	176		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+177	177		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+178	178		205							{1: '1005', 3: '0', 4: '1', 5: '0'}
+179	179		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+180	180		201							{1: '1', 2: '500568', 7: '1'}
+181	181		301							{1: '1', 2: 'Lee', 3: 'Later, I tried to get that vision back while connected to the commandant, but no dice. Probably hit a wall with computing power.', 4: '1'}
+182	182		301							"{2: 'Lee', 3: 'So, what exactly is this ""Tower""?', 4: '1'}"
+183	183		302							"{2: ""(You share Asimov's theory with everyone)"", 3: '184'}"
+184	184		202							{1: '1'}
+185	185		301							{3: 'Hetero Tower, invitation, key...'}
+186	186		301							{3: 'These strange, obscure terms just drift through the M.I.N.D.s of all three of you present.'}
+187	187		201							{1: '1', 2: '500568'}
+188	188		301							"{1: '1', 2: 'Lee', 3: ""I think Asimov's theory is highly plausible."", 4: '1'}"
+189	189		202							{1: '1'}
+190	190		301							{3: 'Even though that theory sounds absurd and hopeless...'}
+191	191		301							{3: 'If anyone could manage this and reach that destination, it would perhaps be this human before me, who has already created so many miracles.'}
+192	192		301							"{3: ""He can't even imagine what hardships and suffering you would have to endure if you really keep going down this path.""}"
+193	193		201							{1: '1', 2: '500994', 3: '9'}
+194	194		301							{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+195	195		202							{1: '1'}
+196	196		301							{3: 'Lucia clasps her hands together so tightly that her synthetic skin actually dimples under the pressure.'}
+197	197		301							{3: 'Her fleeting memories have dissipated with each frame replacement, yet a soul-piercing sorrow still remains.'}
+198	198		301							{3: 'What exactly made her so sorrowful? She refuses to dwell on it.'}
+199	199		302							"{2: ""It's okay. Everything is changing."", 3: '200'}"
+200	200		301							{3: 'Ever since the Copperfield Aquarium, those feelings of deja vu have only existed within that blurred field of vision.'}
+201	201		401							{1: '2', 2: '558'}
+202	202		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+203	203		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+204	204		201							{1: '1', 2: '501035', 7: '1'}
+205	205		301							"{1: '1', 3: 'She doesn\'t know why the girl named Chaos never appeared again, but those faintly emerging images have indeed never been ""verified"" since.', 4: '1'}"
+206	206		202							{1: '1', 6: '1'}
+207	207		401							{1: '2', 2: '558'}
+208	208		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+209	209		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+210	210		301							"{3: ""Whether it's the crimson tower or the spherical forest.""}"
+211	211		201							{1: '1', 2: '1031001', 3: '3'}
+212	212		301							{1: '1', 2: 'Liv', 3: 'Commandant...', 4: '1'}
+213	213		202							{1: '1'}
+214	214		301				DialogDisable			{3: 'Liv anxiously slides a cup of hot tea toward her.'}
+215	215		302							"{2: ""Don't worry."", 3: '216'}"
+216	216		302							"{2: ""No matter what, we'll face it together."", 3: '217'}"
+217	217		201							{1: '1', 2: '500994'}
+218	218		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'Right, I get it.', 4: '1'}
+219	219		202							{1: '1'}
+220	220		301							{3: 'A small gash appears on her synthetic skin. Lucia quickly wipes away the vital fluid, keeping any signs of trouble hidden from human eyes.'}
+221	221		306							{1: '1'}
+222	222		301							"{3: ""I'm sure it's going to work.""}"
+223	223		301				AniZhuanchangBegin			{3: 'No matter what happens, she will protect you—no doubt about it.'}
+224	224		502							{1: 'DialogDisable'}
+225	225		306							
+226	226		401						2000.0	{1: '1', 2: '36'}
+227	227		401							{1: '1', 2: '55'}
+228	228		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory1.jpg'}
+229	229		107			AniZhuanchangEnd				{1: 'Reactor 1'}
+230	230		301							{3: 'Reactor 1.'}
+231	231		108							{1: '1'}
+232	232		301			DialogEnable				"{3: 'This used to be a thriving town, with research facilities popping up all over, drawn by the prestige of housing ""the first Zero-point Reactor.""'}"
+233	233		301							{3: 'On December 20, 2160, the Punishing Virus burst forth from the activated Zero-point Reactor, transforming this place into one of the areas with the highest Punishing concentration on the surface.'}
+234	234		301							"{3: 'Cradle once stopped by here, but she never found the ""story"" she was hoping for.'}"
+235	235		301							{3: 'Since Cradle left, the library—which had briefly come alive due to the arrival of Hetero-Creatures—has once again fallen silent.'}
+236	236		301							"{3: 'Grass stems snap underfoot with a faint crackle as the dark agent pays a visit, carrying his ""return ticket.""'}"
+237	237		201							{1: '1', 2: '501003', 7: '1'}
+238	238		205							{1: '1', 3: '0.5', 4: '0.5', 5: '0'}
+239	239		301							{1: '1', 2: 'Nemo', 3: 'Back then... is this where Dominik vanished?', 4: '1'}
+240	240		202							{1: '1', 6: '1'}
+241	241		301							{3: 'A voice from deep within his M.I.N.D. poses this question.'}
+242	242		201							{1: '1', 2: '500305'}
+243	243		301							{1: '1', 2: 'Trout', 3: 'Yes, Zero-point Reactor 1 is right by that library.', 4: '1'}
+244	244		301							{2: 'Trout', 3: 'After the Punishing outbreak, Dominik led a team to shut down Zero-point Reactor 1. Not a single one of them made it back, but the reactor? It was definitely taken offline from the inside.', 4: '1'}
+245	245		202							{1: '1'}
+246	246		301							"{3: ""The agent's gaze is fixed, unblinking, on the ravaged library in the distance.""}"
+247	247		201							{1: '1', 2: '501003', 3: '8', 7: '1'}
+248	248		205							{1: '1', 3: '0.5', 4: '0.5', 5: '0'}
+249	249		301							{1: '1', 2: 'Nemo', 3: 'With the library looking like this—completely abandoned—is Zero-point Reactor 1 actually still running?', 4: '1'}
+250	250		202							{1: '1', 6: '1'}
+251	251		201							{1: '1', 2: '500305'}
+252	252		301				DialogDisable			"{1: '1', 2: 'Trout', 3: ""You bet it is. Stuff built in the Golden Age isn't going to crumble after just a few decades of bad weather."", 4: '1'}"
+253	253		202							{1: '1', 6: '1'}
+254	254		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg', 3: '0', 4: '1', 5: '0.5'}
+255	255		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg'}
+256	256		205							{1: '999'}
+257	257		301			DialogEnable				{3: 'He strides past the library, weaving through streets and alleyways.'}
+258	258		201							{1: '1', 2: '500305'}
+259	259		301							{1: '1', 2: 'Trout', 3: 'Most of the buildings on the surface got wiped out by mechanoids and Constructs infected with Punishing. Zero-point Reactors are usually buried deep underground, so...', 4: '1'}
+260	260		301				AniZhuanchangBegin			"{2: 'Trout', 3: ""As long as no one's gotten here before us, the basic setup should still be good to go."", 4: '1'}"
+261	261		202							{1: '1', 6: '1'}
+262	262		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory12.jpg'}
+263	263		301			AniZhuanchangEnd				{3: 'He passes a hospital, crosses a bridge, and walks by a string of completely empty trash cans.'}
+264	264		201							{1: '1', 2: '500305'}
+265	265		301							{1: '1', 2: 'Trout', 3: 'Here.', 4: '1'}
+266	266		202							{1: '1'}
+267	267		301							{3: 'Following the faded street signs, he finds the central power facility. Clearly, whoever evacuated this place made sure to cut the power to the entire city.'}
+268	268		201							{1: '1', 2: '500305'}
+269	269		301							{1: '1', 2: 'Trout', 3: 'Done.', 4: '1'}
+270	270		202							{1: '1'}
+271	271		301				AniZhuanchangBegin			"{3: ""For Vonnegut, cracking into the terminal and bringing the city's power back online is a piece of cake.""}"
+272	272		401							{1: '2', 2: '1515'}
+273	273		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1222.jpg'}
+274	274		401						500.0	{1: '2', 2: '764'}
+275	275		401							{1: '2', 2: '908'}
+276	276		301			AniZhuanchangEnd				{3: 'The moment he hits that last key, the entire city jolts awake from its slumber.'}
+277	277		401							{1: '2', 2: '901'}
+278	278		401						200.0	{1: '2', 2: '901'}
+279	279		401						300.0	{1: '2', 2: '901'}
+280	280		401						300.0	{1: '2', 2: '901'}
+281	281		301							{3: 'But right on cue, high concentrations of Punishing surge through all the newly powered machinery.'}
+282	282		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+283	283		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory9.jpg'}
+284	284		402							{1: '908'}
+285	285		401							{1: '2', 2: '690'}
+286	286		201							{1: '1', 2: '500067', 4: '-500', 7: '1'}
+287	287		201							{1: '2', 2: '500067', 4: '500', 7: '1'}
+288	288		201							{1: '3', 2: '500067', 7: '1'}
+289	289		301							"{1: '1', 3: ""Countless machines, their red warning lights flashing frantically, start to roam aimlessly through the streets. They're like demons on a night patrol, kicking up a ruckus amidst the cold, desolate ruins.""}"
+290	290		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+291	291		201							{1: '1', 2: '500305', 3: '1'}
+292	292		301				AniZhuanchangBegin			"{1: '1', 2: 'Trout', 3: ""It's really buzzing in here."", 4: '1'}"
+293	293		202							{1: '1'}
+294	294		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+295	295		301			AniZhuanchangEnd				{3: 'The Agent strolls along, parading right alongside the Corrupted, making the way to the ultimate destination.'}
+296	296		201							{1: '1', 2: '501003', 3: '4', 7: '1'}
+297	297		205							{1: '1', 3: '0.5', 4: '0.5', 5: '0'}
+298	298		301							{1: '1', 2: 'Nemo', 3: 'Are you sure this will work?', 4: '1'}
+299	299		202							{1: '1', 6: '1'}
+300	300		301							{3: 'Nemo still looks worried.'}
+301	301		201							{1: '1', 2: '500305'}
+302	302		301							"{1: '1', 2: 'Trout', 3: ""I'm not sure, but it's the only shot we've got right now."", 4: '1'}"
+303	303		301							"{2: 'Trout', 3: ""We've got to find someone to step into Agent Zero's shoes."", 4: '1'}"
+304	304		301							"{2: 'Trout', 3: ""Otherwise, if Agent Zero comes down to Earth and no one's ready... this world will be swallowed whole by the contamination too."", 4: '1'}"
+305	305		202							{1: '1'}
+306	306		301							{3: 'His tone is grave, and Nemo just goes quiet.'}
+307	307		201							{1: '1', 2: '500305'}
+308	308		301							{1: '1', 2: 'Trout', 3: 'Besides... the Tower is definitely coming down.', 4: '1'}
+309	309		202							{1: '1'}
+310	310		301							"{3: ""Nemo only got here through a gap in Constellia's Hetero Tower during the Punishing outbreak. If the Tower truly vanishes for good, Nemo will likely vanish right along with it.""}"
+311	311		301							{3: 'Since Nemo still exists, maybe...'}
+312	312		201							{1: '1', 2: '500305'}
+313	313		301							{1: '1', 2: 'Trout', 3: 'You burst into this world back then because Zero-point Reactor 1 fired up, which is also what set off the Punishing outbreak.', 4: '1'}
+314	314		301							{2: 'Trout', 3: 'So, perhaps the Tower can come down here again the moment Zero-point Reactor 1 restarts.', 4: '1'}
+315	315		201						300.0	{1: '2', 2: '500067', 4: '-800'}
+316	316		203						200.0	{1: '2', 2: '0.35', 3: '-100'}
+317	317		401							{1: '2', 2: '1506'}
+318	318		203						200.0	{1: '2', 2: '0.25', 3: '-600'}
+319	319		202							{1: '2'}
+320	320		301							{3: 'Trout calmly swats away a stumbling Corrupted charging at him, not a single muscle in his face twitching.'}
+321	321		202							{1: '1', 6: '1'}
+322	322		201							{1: '1', 2: '501003', 7: '1'}
+323	323		205							{1: '1', 3: '0.5', 4: '0.5', 5: '0'}
+324	324		301							"{1: '1', 2: 'Nemo', 3: ""So, we still don't know why the Tower hasn't come down?"", 4: '1'}"
+325	325		203							{1: '1', 2: '0.25', 3: '400'}
+326	326		201							{1: '2', 2: '500305', 4: '-400'}
+327	327		301							"{1: '1', 2: 'Trout', 3: ""It's because of the Gray Raven Commandant."", 4: '2'}"
+328	328		301							{2: 'Nemo', 3: 'How can you be so sure?', 4: '1'}
+329	329		301							"{2: 'Trout', 3: ""I can't be sure, but it has to be Commandant."", 4: '2'}"
+330	330		301							"{2: 'Trout', 3: ""Before I came here, I went to see Luna, but she didn't know anything about it."", 4: '2'}"
+331	331		301							"{2: 'Trout', 3: ""And the other agent wouldn't be interested in saving Earth; her desires lie elsewhere."", 4: '2'}"
+332	332		301							"{3: 'That lady is more eager to see the ""rules"" broken rather than things proceeding along a straight path.'}"
+333	333		301							"{2: 'Trout', 3: 'From the information previously passed, ""Cradle"" seemed to be a very important character, but now...', 4: '2'}"
+334	334		301							"{2: 'Trout', 3: ""She's just a Hetero-Creature, a vessel for the Red Tide's will."", 4: '2'}"
+335	335		301							{3: 'To the Agent, this Cradle is indistinguishable from the Hetero-Humanoid twins he once nurtured.'}
+336	336		301							{2: 'Nemo', 3: '...', 4: '1'}
+337	337		202							{1: '1', 2: '2', 6: '1'}
+338	338		301							"{3: 'All signs point to one conclusion: the ""suspect"" can only be the Gray Raven Commandant, who\'s constantly meddling with their operations.'}"
+339	339		201							{1: '1', 2: '500305'}
+340	340		301							"{1: '1', 2: 'Trout', 3: ""No matter what, the Tower can't fall into anyone else's hands—especially not humans."", 4: '1'}"
+341	341		202							{1: '1'}
+342	342		301							"{3: ""It's as if he's talking to Nemo, yet also reminding himself. The agent's voice is barely a whisper, so faint only he can hear it.""}"
+343	343		201							{1: '1', 2: '500305'}
+344	344		301							{1: '1', 2: 'Trout', 3: 'Only this way can this long journey finally conclude.', 4: '1'}
+345	345		202							{1: '1'}
+346	346		301							"{3: ""He's been repeating this chaotic, excessively long dream for far too long.""}"
+347	347		301							{3: 'He became a jumbled mess, given a new identity by a mask.'}
+348	348		301							{3: 'As time goes on, these identities fuse with his very being, eventually settling deep within his consciousness...'}
+349	349		301							{3: 'Vonnegut.'}
+350	350		301							{3: 'After the chaos erupted, he once again tries everything to cut out the static noise in his consciousness, but doing so also damages his M.I.N.D.'}
+351	351		301							"{3: ""It was then that he suddenly discovered the Red Tide's origin shares similar traits with the Chaos contamination—""}"
+352	352		301				DialogDisable			"{3: ""Nothing's over yet. Only by completely controlling the Hetero Tower can he achieve his purpose.""}"
+353	353		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory63.jpg', 3: '0', 4: '1', 5: '1'}
+354	354		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory63.jpg'}
+355	355		205							{1: '999'}
+356	356		301			DialogEnable				{3: 'Passing through a park and circling a ruined school, the agent slowly repeats his plan to himself.'}
+357	357		201							{1: '1', 2: '500305'}
+358	358		301							{1: '1', 2: 'Trout', 3: 'Even though the Punishing Virus is nowhere near as bad as the <b><ud><color=#34aff8ff><link=30>Chaos Contamination</link></color></ud></b> from your era, if the Punishing Virus concentration gets too high, it could attract the contaminating memetic—Agent Zero.', 4: '1'}
+359	359		202							{1: '1'}
+360	360		301							"{3: 'My other self in the ""Tower"" sent me that theory back when we could still communicate.'}"
+361	361		201							{1: '1', 2: '501003', 7: '1'}
+362	362		205							{1: '1', 3: '0.5', 4: '0.5', 5: '0'}
+363	363		301							"{1: '1', 2: 'Nemo', 3: ""Wouldn't just letting the Red Tide keep growing do the same thing?"", 4: '1'}"
+364	364		202							{1: '1', 2: '4', 6: '1'}
+365	365		201							{1: '1', 2: '500305'}
+366	366		301							{1: '1', 2: 'Trout', 3: 'Yes, but...', 4: '1'}
+367	367		204							{1: '1', 2: '1'}
+368	368		301							"{2: 'Trout', 3: ""Don't you think that'd take forever and be a total drag?"", 4: '1'}"
+369	369		202							{1: '1'}
+370	370		301				AniZhuanchangBegin			"{3: ""A smile, undeniably Kilgore Trout's, spreads beneath his mask.""}"
+371	371		401						2000.0	{1: '1', 2: '36'}
+372	372		401							{1: '1', 2: '203'}
+373	373		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory9.jpg'}
+374	374		201							{1: '1', 2: '500004', 7: '1'}
+375	375		301			AniZhuanchangEnd				{1: '1', 3: 'At the edge of the Dead Zone, all four members of Gray Raven are geared up and ready to go, with only Asimov there to see them off.'}
+376	376		302							{2: 'You coming with us to Zero-point Reactor 1 too?', 3: '377'}
+377	377		202							{1: '1'}
+378	378		306							{1: '1'}
+379	379		301							"{3: ""For this mission, you're trying to push deep into Zero-point Reactor 1—""}"
+380	380		301							"{3: ""An execution squad that wandered into the Dead Zone just reported in: power's back on in the city around Zero-point Reactor 1.""}"
+381	381		301							{3: 'Zero-point Reactor 1 is one of the places with the highest concentration of the Punishing Virus. So far, Gray Raven is the only squad capable of handling a mission like this.'}
+382	382		306							
+383	383		201							{1: '1', 2: '500004'}
+384	384		301							"{1: '1', 2: 'Asimov', 3: ""If I try to enter with you, Babylonia's staff will drag me back to the Science Council before I can even get inside."", 4: '1'}"
+385	385		202							{1: '1'}
+386	386		301							{3: 'Asimov pulls a terminal-sized case from a box next to him.'}
+387	387		201							{1: '1', 2: '500004'}
+388	388		301							{1: '1', 2: 'Asimov', 3: 'You forgot to bring this.', 4: '1'}
+389	389		302							"{2: 'The ""Key""?', 3: '390', 4: 'The one that Cervantes brought...?', 5: '390'}"
+390	390		301							"{2: 'Asimov', 3: 'The ""Key"".', 4: '1'}"
+391	391		202							{1: '1'}
+392	392		301							{3: 'Even earlier—before Lucia got her Pyroath frame—you traveled to Aerospace City with Liv. You were there to help smooth things over between humans and machines.'}
+393	393		301							"{3: 'As the mission wraps up and you\'re about to leave, Cervantes, who says he\'s part of the ""Church of Machina"", hands this case to you.'}"
+394	394		401							{1: '2', 2: '558'}
+395	395		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+396	396		504							{1: '0.7'}
+397	397		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory956.jpg'}
+398	398		201							{1: '1', 2: '500585'}
+399	399		301							"{1: '1', 2: 'Cervantes', 3: 'The ""key."" This is a new ""key"" to activate the ""invitation.""', 4: '1'}"
+400	400		301							"{2: 'Cervantes', 3: ""It's also a message Sage left behind."", 4: '1'}"
+401	401		301							{2: 'Cervantes', 3: 'Sage told me this key is just a replica because of certain circumstances. It still works, but it has its limits.', 4: '1'}
+402	402		301							"{2: 'Cervantes', 3: ""Sage mentioned that for modifications, it'd need an interface compatible with standard terminals... She seemed to prefer the old design, but she still let Zavier make the changes for human use."", 4: '1'}"
+403	403		202							{1: '1', 6: '1'}
+404	404		401							{1: '2', 2: '558'}
+405	405		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+406	406		504							{1: '0'}
+407	407		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory9.jpg'}
+408	408		301							"{3: 'Back in Babylonia, you press the ""key"" into Asimov\'s hand. But...'}"
+409	409		201							{1: '1', 2: '500004'}
+410	410		301							{1: '1', 2: 'Asimov', 3: 'Take it with you.', 4: '1'}
+411	411		301							{3: 'Asimov shoves it right back.'}
+412	412		302							"{2: 'But the ""Tower"" never shows up...', 3: '413'}"
+413	413		301							"{3: 'You\'re left with both the ""invitation"" and the ""key,"" but what good are they when the ""Tower"" has vanished into thin air?'}"
+414	414		301							{2: 'Asimov', 3: 'It might come in handy.', 4: '1'}
+415	415		302							{2: 'What do you know?', 3: '416'}
+416	416		301							"{2: 'Asimov', 3: ""I don't know anything."", 4: '1'}"
+417	417		302							{2: 'Hey, stop being so cryptic.', 3: '418', 4: 'If you know something, just tell me!', 5: '418'}
+418	418		301							{2: 'Asimov', 3: '...', 4: '1'}
+419	419		301							{2: 'Asimov', 3: 'The only intelligence I have is that Vonnegut might be near Reactor 1.', 4: '1'}
+420	420		202							{1: '1'}
+421	421		301				DialogDisable			{3: 'With those final words, Asimov turns and heads back to the transport vessel without so much as a goodbye.'}
+422	422		302							"{2: '""Might be""?', 3: '423', 4: 'Vonnegut?', 5: '423'}"
+423	423		302							"{2: ""But the mission briefing didn't say anything about..."", 3: '424'}"
+424	424		401							{1: '2', 2: '4410'}
+425	425		301			DialogEnable			1500.0	{3: 'The transport vessel shudders as it lifts off, kicking up a storm of dust and sand across the desolate landscape.'}
+426	426		302							{2: '...', 3: '427'}
+427	427		301							{3: 'The Commandant gives up on trying to contact Asimov for more answers and turns to see the other three Gray Raven members making their final battle preparations.'}
+428	428		201							{1: '1', 2: '500994'}
+429	429		301							"{1: '1', 2: 'Lucia', 3: ""Commandant, the Dead Zone is a deathtrap. Once we're in, stick to me."", 4: '1'}"
+430	430		301							{3: 'Lucia grips her sword hilt, her expression deadly serious.'}
+431	431		302							"{2: ""Don't sweat it too much, Lucia."", 3: '432'}"
+432	432		202							{1: '1', 6: '1'}
+433	433		201							{1: '1', 2: '1031001'}
+434	434		301							"{1: '1', 2: 'Liv', 3: ""It's not every day we go on a mission like this together."", 4: '1'}"
+435	435		301							{3: 'Liv has just finished checking their supplies and approaches.'}
+436	436		301							{2: 'Liv', 3: 'Supply check complete, Commandant.', 4: '1'}
+437	437		202							{1: '1', 6: '1'}
+438	438		201							{1: '1', 2: '500568'}
+439	439		301							{1: '1', 2: 'Lee', 3: 'No unusual activity detected nearby. The new filtration systems in the safe zone are humming along normally. Looks like all potential threats are cooped up in the Dead Zone.', 4: '1'}
+440	440		301							"{2: 'Lee', 3: ""Once we step foot in there, we'll need to be on high alert."", 4: '1'}"
+441	441		202							{1: '1'}
+442	442		401							{1: '2', 2: '4779'}
+443	443		301							{3: 'Lee scans the surrounding area before clicking the scope back onto his sniper rifle.'}
+444	444		302							"{2: ""Alright, let's roll then."", 3: '445', 4: ""Let's go."", 5: '445', 6: 'Move out! Gray Raven!', 7: '445'}"
+445	445		301		1		AniZhuanchangBegin			{3: 'Twilight flames rage across the plains as Gray Raven assembles and pushes into the Dead Zone.'}

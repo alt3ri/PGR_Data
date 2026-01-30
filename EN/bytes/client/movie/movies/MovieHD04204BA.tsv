@@ -1,0 +1,607 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory926.jpg'}
+2	2		401							{1: '1', 2: '274'}
+3	3		401							{1: '2', 2: '5326'}
+4	4		301			AniZhuanchangEnd				"{3: 'Hey opens the door, gripping the ""Key"" as she looks down upon the horde of Corrupted below.'}"
+5	5		201							{1: '1', 2: '500661'}
+6	6		301							"{1: '1', 2: 'Vera', 3: ""You think you can lure away this many Corrupted by yourself? You're delusional!"", 4: '1'}"
+7	7		203							{1: '1', 2: '0.25', 3: '-400'}
+8	8		201							{1: '2', 2: '500405', 4: '400'}
+9	9		301							"{1: '1', 2: 'Hey', 3: ""So you need to stay behind—it's the only way those refugees might have a chance to survive."", 4: '2'}"
+10	10		301							{2: 'Hey', 3: 'You were exactly right... They are a flock without a shepherd, and they need you right now.', 4: '2'}
+11	11		202							{1: '1', 2: '2'}
+12	12		301							"{3: 'When they detected the Corrupted below earlier, they temporarily sheltered the refugees in a ""sheep pen"" in a forked passage.'}"
+13	13		301							{3: 'Hey mutters to herself once again.'}
+14	14		201							{1: '1', 2: '500405'}
+15	15		301							{1: '1', 2: 'Hey', 3: 'I wanted to live... Haha.', 4: '1'}
+16	16		301							{3: 'Before she makes the ultimate choice, she finally tears off her mask and lets out a hoarse cry.'}
+17	17		301							{2: 'Hey', 3: 'Hahaha... I wanted to live!', 4: '1'}
+18	18		301							{2: 'Hey', 3: 'Just as you said—I wanted to run away! I wanted to escape from Kurono and the battlefield!', 4: '1'}
+19	19		301							{2: 'Hey', 3: 'When you were telling Moth those ways to retreat from the frontline, I was paying even more attention than she was... Hahaha.', 4: '1'}
+20	20		301							"{2: 'Hey', 3: ""Truthfully, I'd probably be no different from the refugees behind us if I hadn't met you and Moth... Everyone's a self-serving coward at heart."", 4: '1'}"
+21	21		301							"{2: 'Hey', 3: ""Sometimes your presence is just too... prominent. I find myself avoiding a deeper connection with you—like... I'd only call you by your codename. That's part of it, I think."", 4: '1'}"
+22	22		203							{1: '1', 2: '0.25', 3: '400'}
+23	23		201							{1: '2', 2: '500661', 3: '5', 4: '-400'}
+24	24		301				DialogDisable			"{1: '1', 2: 'Vera', 3: ""...You're out of your mind! Give me the tracking device!"", 4: '2'}"
+25	25		401							{1: '2', 2: '10042416'}
+26	26		203							{1: '2', 2: '0.25', 3: '100'}
+27	27		203						250.0	{1: '1', 2: '0.25', 3: '500'}
+28	28		203							{1: '1', 2: '0.25', 3: '300'}
+29	29		203							{1: '2', 2: '0.25', 3: '0'}
+30	30		301			DialogEnable				"{3: 'Vera grabs Hey\'s hand with the ""Key"" tightly, the two locked in a fierce struggle.'}"
+31	31		301							"{2: 'Hey', 3: ""Give it to you? After everything that's happened, you still want to let me go?"", 4: '1'}"
+32	32		301							"{2: 'Vera', 3: ""Never! Cut the nonsense—I won't allow someone with a deviated M.I.N.D. like you to—"", 4: '2'}"
+33	33		301							"{2: 'Hey', 3: ""Let me go, Vera. I can't take this anymore."", 4: '1'}"
+34	34		204							{1: '2'}
+35	35		301							{3: 'This is the first time her captain has called Hound by her real name, causing Vera to freeze for a moment.'}
+36	36		301							"{2: 'Hey', 3: ""Right... Vera, there's something I've wanted to ask you for a long time."", 4: '1'}"
+37	37		301							{2: 'Hey', 3: 'What must we pursue... in order to survive?', 4: '1'}
+38	38		301							"{2: 'Hey', 3: ""For me, I want freedom. I want to go to a paradise without viruses, war, and distrust... I'm always willing to hold on just a little longer for these dreams."", 4: '1'}"
+39	39		301							{2: 'Hey', 3: 'Vera... What about you?', 4: '1'}
+40	40		301				AniZhuanchangBegin			{3: 'Vera opens her mouth slightly, trying twice to speak, but her vocal module is hoarse with a rumble in her chest.'}
+41	41		202							{1: '1', 2: '2', 6: '1'}
+42	42		502						400.0	{1: 'DialogDisable'}
+43	43		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+44	44		109			AniZhuanchangEnd	AniZhuanchangBegin			"{1: '1', 2: '<size=60>""What do you live for?""</size>', 6: '1', 7: '6', 8: '1'}"
+45	45		301							"{3: '<size=60>""What do you live for?""</size>'}"
+46	46		110							
+47	47		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+48	48		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cgqz1701.jpg'}
+49	49		301			DialogEnable				"{3: ""Vera's mind races through countless thoughts—every moment from her birth until now, from the peaceful moments she once cherished to every battlefield she has traversed since growing up.""}"
+50	50		301				AniZhuanchangBegin			{3: 'From the heartbeats she once felt in her human body to the engines in her frame that push her forward just a little bit more for one more strike.'}
+51	51		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz1702.jpg'}
+52	52		104							{1: '150|-100|-175', 2: '2.5'}
+53	53		301			AniZhuanchangEnd				{3: 'She recalls the lives destroyed and the deaths spread by the Punishing Virus. She remembers when she stood among it all, the cold blood and vital fluid dripping down her blade.'}
+54	54		301							{3: 'She thinks about all of them, and in the end, there is only one thing that she will remember for centuries to come.'}
+55	55		301				AniZhuanchangBegin			{3: 'And so, Vera utters the word—'}
+56	56		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+57	57		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory926.jpg'}
+58	58		201							{1: '1', 2: '500661', 4: '-400'}
+59	59		201							{1: '2', 2: '500405', 4: '400'}
+60	60		301			AniZhuanchangEnd				"{1: '1', 2: 'Vera', 3: ""It's [pain]."", 4: '1'}"
+61	61		301							{2: 'Hey', 3: '...', 4: '2'}
+62	62		301							{2: 'Hey', 3: '...Oorah.', 4: '2'}
+63	63		301							{3: 'Receiving the answer, Hey laughs with tears.'}
+64	64		301							"{2: 'Hey', 3: ""I knew it... I've always wondered what makes you live with such determination."", 4: '2'}"
+65	65		301							"{2: 'Hey', 3: ""If it's pain... I finally understand."", 4: '2'}"
+66	66		301				DialogDisable			{2: 'Hey', 3: 'Thank you.', 4: '2'}
+67	67		203						250.0	{1: '2', 2: '0.25', 3: '-350'}
+68	68		203							{1: '1', 2: '0.25', 3: '-550', 4: '-50'}
+69	69		401							{1: '2', 2: '4806'}
+70	70		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+71	71		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '1'}
+72	72		205							{1: '999'}
+73	73		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '5'}
+74	74		502							{1: 'DialogEnable'}
+75	75		401							{1: '2', 2: '2593'}
+76	76		301			PanelActor1Shake				"{3: ""Hey suddenly twists Vera's injured arm and plunges a knife into it, pinning her firmly against the wall.""}"
+77	77		101							{4: '5', 5: '1'}
+78	78		301							{2: 'Vera', 3: '!!!', 4: '1'}
+79	79		301							{3: 'The intense pain makes Vera wince as all sensations in her body concentrate at this single point—this pain is unnaturally severe, nearly robbing her of the ability to move.'}
+80	80		301							"{2: 'Hey', 3: 'You called me ""gentle"" the other day... Haha... Who\'s the truly gentle one, I wonder...? Stop struggling, Vera. I won\'t harm you. You\'ll live.', 4: '2'}"
+81	81		301							{2: 'Hey', 3: 'I tampered with your arm when I was treating you that day... Who would have thought? I originally did it to prevent you from hunting down a deserter like me, but now it serves a different purpose.', 4: '2'}
+82	82		301							{2: 'Hey', 3: 'Look at those faces behind you. Look into their eyes.', 4: '2'}
+83	83		202							{1: '1', 2: '2', 6: '1'}
+84	84		104						500.0	{1: '0|75|-100', 2: '0.5'}
+85	85		104							{1: '0|0|0', 2: '0.5'}
+86	86		401							{1: '2', 2: '4933'}
+87	87		301				DialogDisable			{3: 'Hey kicks open the rusted metal door at the junction—'}
+88	88		201	1						{1: '1', 2: '500294', 4: '-600'}
+89	89		201	1						{1: '2', 2: '500895', 4: '0'}
+90	90		201	1						{1: '3', 2: '500896', 4: '600'}
+91	91		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+92	92		301			DialogEnable				"{3: ""Following Hey's direction, Vera turns her face and meets the eyes of the refugees, all of them glimmering with the will to survive.""}"
+93	93		201							{1: '1', 2: '500661', 4: '-550', 5: '-50'}
+94	94		201							{1: '2', 2: '500405'}
+95	95		301							"{1: '1', 2: 'Hey', 3: ""You're the only one who can lead them to safety now. You're their last lifeline they can cling to."", 4: '2'}"
+96	96		301							{2: 'Vera', 3: '...', 4: '1'}
+97	97		301							{2: 'Hey', 3: 'My reason to keep fighting... is no longer enough to lead these people to safety, but perhaps I can march on in a different way for a while longer, giving you all a chance to survive.', 4: '2'}
+98	98		204							{1: '1', 2: '5'}
+99	99		401							{1: '2', 2: '4833'}
+100	100		203						250.0	{1: '1', 2: '0.25', 3: '-400'}
+101	101		203							{1: '1', 2: '0.25', 3: '-550'}
+102	102		301							{3: 'Realizing something, Vera begins to struggle desperately.'}
+103	103		301							"{2: 'Vera', 3: ""Ugh...! There's still... enough time! That beach Hush talked about... Didn't you... want to see it?!"", 4: '1'}"
+104	104		204							{1: '1'}
+105	105		301							{2: 'Hey', 3: 'That was probably a fantasy.', 4: '2'}
+106	106		301							"{2: 'Hey', 3: ""Moth was very young when she joined Kurono, and her memories were merely post-traumatic self-embellishments... The trauma was so severe that she couldn't even remember her own name."", 4: '2'}"
+107	107		301							"{2: 'Hey', 3: ""So a place that beautiful simply doesn't exist."", 4: '2'}"
+108	108		301							"{2: 'Hey', 3: 'I taught her many things, but the word ""captain"" is what she pronounces most clearly.', 4: '2'}"
+109	109		301							"{2: 'Hey', 3: 'She even asked me to teach her how to pronounce your name when you first joined Group 013, but she couldn\'t roll her tongue properly and kept calling you ""Ve-wa"".', 4: '2'}"
+110	110		301							"{2: 'Hey', 3: ""I did consider desertion once, but I abandoned that idea after what happened to Group 009... I didn't want any of you to bear the burden of my mistakes or my indecision."", 4: '2'}"
+111	111		301							{2: 'Hey', 3: 'In the end, I took on this mission. I thought to myself—I could probably slip away quietly on my own in a remote place like Seaside Town... far away from the Kurono headquarters, right?', 4: '2'}
+112	112		301							{2: 'Hey', 3: 'In the end... As you can see, my indecision has prevented you all from breaking out of this place, leaving us trapped in mutual distrust.', 4: '2'}
+113	113		203						250.0	{1: '2', 2: '0.25', 4: '-25'}
+114	114		203							{1: '2', 2: '0.25'}
+115	115		401							{1: '2', 2: '4044'}
+116	116		301							"{3: ""Hey gently pats Vera's injured arm in a comforting gesture.""}"
+117	117		301							"{2: 'Hey', 3: ""My M.I.N.D. almost deviated, having been trapped down here. If what you say is true and dozens of days have passed... Why hasn't Kurono contacted us even once?"", 4: '2'}"
+118	118		301							{2: 'Hey', 3: 'Vera... Do you think Kurono also intended for us to turn against each other?', 4: '2'}
+119	119		301							{2: 'Vera', 3: '...', 4: '1'}
+120	120		301							{2: 'Hey', 3: 'I had only one thought left when I realized that—I wanted Moth and you to survive.', 4: '2'}
+121	121		301							{2: 'Hey', 3: 'But now Moth is dead too, and my ridiculous fantasy ends here.', 4: '2'}
+122	122		301							"{2: 'Hey', 3: ""To be honest, you... my [teammates] were truly the only part I didn't find revolting in Kurono."", 4: '2'}"
+123	123		203							{1: '2', 2: '0.25', 3: '400'}
+124	124		301							{3: 'Hey turns toward the door, casting one final glance back at Vera.'}
+125	125		301							{2: 'Hey', 3: 'I agree with what Moth said.', 4: '2'}
+126	126		301							"{2: 'Hey', 3: '""...Perhaps there\'s no one else in this world but us.""', 4: '2'}"
+127	127		301							{2: 'Hey', 3: '...Live, Vera. I suppose that means we live on too.', 4: '2'}
+128	128		204							{1: '1', 2: '5'}
+129	129		301							{2: 'Vera', 3: '...Let go of me!!!', 4: '1'}
+130	130		401							{1: '2', 2: '2921'}
+131	131		203							{1: '1', 2: '0.25', 3: '-100'}
+132	132		301							"{3: ""Vera nearly tears her shoulder apart for the second time when she finally manages to grip the knife's handle and pull out the blade pinning her down.""}"
+133	133		203							{1: '1', 2: '0.25', 3: '100'}
+134	134		301							{3: 'Vera lunges toward the door, reaching out to grab—'}
+135	135		401							{1: '2', 2: '1543'}
+136	136		203						250.0	{1: '1', 2: '0.25'}
+137	137		203						250.0	{1: '1', 2: '0.25', 3: '100'}
+138	138		203							{1: '1', 2: '0.25'}
+139	139		301							{3: 'But countless hands of refugees have reached out as well, grabbing hold of Vera.'}
+140	140		204							{1: '1'}
+141	141		301							{2: 'Vera', 3: '...!', 4: '1'}
+142	142		301							"{3: ""Vera remains frozen in place, struggling as she watches Hummingbird leap into the abyss just beyond her fingertips' reach.""}"
+143	143		204							{1: '1', 2: '5'}
+144	144		301							{2: 'Vera', 3: 'CAPTAIN——!!!', 4: '1'}
+145	145		203						250.0	{1: '2', 2: '0.25', 3: '400', 4: '-75'}
+146	146		202							{1: '1', 2: '2'}
+147	147		401							{1: '2', 2: '9351040'}
+148	148		306							{1: '1'}
+149	149		502							{1: 'RImgBg1BlowUp'}
+150	150		301							"{3: 'Under everyone\'s gaze and ""abandonment"", Hummingbird plummets into the swarm of Corrupted below.'}"
+151	151		505							{1: 'RImgBg1BlowUp'}
+152	152		401							{1: '2', 2: '10019401'}
+153	153		301							{3: 'The sound of metal clashing sends a heartbreaking screech through the air as vital fluid blooms outward like a flower.'}
+154	154		301							{3: 'Hummingbird whirls her blade like a cyclone, cutting through the surging waves of Corrupted in a storm mixed with her vital fluid as she slowly recedes into the distance.'}
+155	155		301							{3: '...Wanting to go somewhere far away to see the ocean.'}
+156	156		301				AniZhuanchangBegin			"{3: 'The false ""Key"" she holds once gave her hope, and now she uses this mistake to lead the raging tide away from shores full of the living.'}"
+157	157		502						400.0	{1: 'DialogDisable'}
+158	158		306							
+159	159		401							{1: '1', 2: '36'}
+160	160		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+161	161		401							{1: '2', 2: '903'}
+162	162		301			DialogEnable				{3: '...'}
+163	163		301							{3: 'Until the tide recedes at the edge of the sea.'}
+164	164		401						1600.0	{1: '2', 2: '4308'}
+165	165		402							{1: '4308'}
+166	166		301				AniZhuanchangBegin			"{3: ""A long, drawn-out whistle echoes from somewhere beyond the crowd's vision.""}"
+167	167		502						400.0	{1: 'DialogDisable'}
+168	168		401							{1: '2', 2: '5323'}
+169	169		504							{1: '0.9'}
+170	170		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1157.jpg'}
+171	171		401							{1: '1', 2: '359'}
+172	172		109							"{1: '1', 2: '<size=60><i>""Homebound.""</i></size>', 6: '1', 7: '6', 8: '1'}"
+173	173		301							"{2: 'Bot', 3: '<i>""Homebound.""</i>'}"
+174	174		402							{1: '5323'}
+175	175		110							
+176	176		301							{2: 'Bot', 3: 'Homebound.'}
+177	177		401							{1: '2', 2: '5323'}
+178	178		301			DialogEnable				"{2: 'Bot', 3: '<i>""When the fishermen were done fishing, they would whistle this sound to relay messages to the shore.""</i>'}"
+179	179		301							"{2: 'Bot', 3: '<i>""So people on shore knew when to prepare meals for their return.""</i>'}"
+180	180		301							"{2: 'Bot', 3: '<i>""Vera, we\'ll be homebound soon too.""</i>'}"
+181	181		402							{1: '903'}
+182	182		402							{1: '5323'}
+183	183		201							{1: '1', 2: '500407'}
+184	184		301							"{1: '1', 2: 'Hush', 3: ""W-we'll... be, homebound, soon, too."", 4: '1'}"
+185	185		202							{1: '1', 6: '1'}
+186	186		502						400.0	{1: 'DialogDisable'}
+187	187		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+188	188		504							{1: '0'}
+189	189		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory926.jpg'}
+190	190		401							{1: '2', 2: '2647'}
+191	191		502							{1: 'RImgBg1Shake'}
+192	192		301			DialogEnable				{3: 'As the whistle ends, Vera hears an explosion.'}
+193	193		301							{3: 'The plan to keep everyone alive has succeeded, but no one cheers.'}
+194	194		301				AniZhuanchangBegin			{3: '...'}
+195	195		504							{1: '0.9'}
+196	196		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1157.jpg'}
+197	197		401							{1: '2', 2: '903'}
+198	198		201							{1: '1', 2: '500405', 4: '400'}
+199	199		201							{1: '2', 2: '500407', 4: '-400'}
+200	200		301			AniZhuanchangEnd				{1: '1', 2: 'Hey', 3: '...Is this how you do it? Are my hands in the right place?', 4: '1'}
+201	201		301							{2: 'Hush', 3: 'Mmm-hmm!', 4: '2'}
+202	202		301							"{3: ""Hey was following Hush's guidance and pressed her hands together, and Vera actually caught a glimpse of embarrassment on her face.""}"
+203	203		301							"{2: 'Hey', 3: 'So... what about other words? I\'ve already learned ""homebound"".', 4: '1'}"
+204	204		202							{1: '1', 2: '2', 6: '1'}
+205	205		502						400.0	{1: 'DialogDisable'}
+206	206		402							{1: '903'}
+207	207		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+208	208		504							{1: '0'}
+209	209		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory926.jpg'}
+210	210		201							{1: '1', 2: '500661'}
+211	211		301			DialogEnable				"{1: '1', 2: 'Vera', 3: 'This whistle... it\'s not ""homebound""...', 4: '1'}"
+212	212		301							"{2: 'Vera', 3: ""It's the new word she learned..."", 4: '1'}"
+213	213		202							{1: '1'}
+214	214		301							{3: 'Vera seems to want to say something, but she cannot utter a single word in front of the refugees.'}
+215	215		301							"{3: 'She now stands at the head of the refugees, leading these survivors as she takes on the mission of ""living on"".'}"
+216	216		301							"{3: 'And the refugees—the ""sheep""—suddenly jump free of that nonexistent boundary around them as if inspired by the black sheep, and they no longer follow the crowd one after another.'}"
+217	217		401							{1: '2', 2: '1543'}
+218	218		201							{1: '1', 2: '500294', 4: '400', 7: '1'}
+219	219		301							"{1: '1', 3: ""The first refugee steps forward, and, having retrieved Hey's weapon at some point, hands it to Vera.""}"
+220	220		401							{1: '2', 2: '4044'}
+221	221		201							{1: '2', 2: '500895', 4: '-400', 7: '1'}
+222	222		301							{1: '1', 3: 'A second refugee steps forward as well, raising a lantern high to illuminate the path ahead.'}
+223	223		202							{1: '1', 2: '2', 6: '1'}
+224	224		201							{1: '1', 2: '500661'}
+225	225		301				DialogDisable			{1: '1', 2: 'Vera', 3: '...', 4: '1'}
+226	226		202							{1: '1', 6: '1'}
+227	227		201							{1: '1', 2: '500460', 4: '800', 5: '0', 7: '1'}
+228	228		205	1						{1: '1', 3: '0', 4: '1', 5: '0.75'}
+229	229		201							{1: '2', 2: '500136', 4: '400', 5: '0', 7: '1'}
+230	230		205	1						{1: '2', 3: '0', 4: '1', 5: '0.75'}
+231	231		201							{1: '3', 2: '500564', 4: '0', 5: '0', 7: '1'}
+232	232		205	1						{1: '3', 3: '0', 4: '1', 5: '0.75'}
+233	233		201							{1: '4', 2: '500236', 4: '-400', 5: '0', 7: '1'}
+234	234		205	1						{1: '4', 3: '0', 4: '1', 5: '0.75'}
+235	235		201							{1: '5', 2: '500454', 4: '-800', 5: '0', 7: '1'}
+236	236		205	1						{1: '5', 3: '0', 4: '1', 5: '0.75'}
+237	237		201							{1: '6', 2: '500813', 4: '-1200', 5: '0', 7: '1'}
+238	238		301			DialogEnable	DialogDisable			{3: 'A third, a fourth...'}
+239	239		401							{1: '2', 2: '1504'}
+240	240		203							{1: '1', 2: '1'}
+241	241		203							{1: '2', 2: '1'}
+242	242		203							{1: '3', 2: '1'}
+243	243		203							{1: '4', 2: '1'}
+244	244		203							{1: '5', 2: '1'}
+245	245		203						2.0	{1: '6', 2: '1'}
+246	246		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '1'}
+247	247		202							{1: '6', 6: '1'}
+248	248		104				AniZhuanchangBegin			{1: '0|0|-150', 2: '1'}
+249	249		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory148.png'}
+250	250		402							{2: '1504'}
+251	251		401							{1: '2', 2: '903'}
+252	252		301			DialogEnable				{3: 'People support each other as they leave the sunless fortress and emerge into the open. This place is still not far from the sea—one can hear the waves providing a backdrop to the whistle sound if one listens carefully.'}
+253	253		402							{1: '903'}
+254	254		301							{3: 'Corrupted continue to attack them throughout their escape, but Vera, leaning on her blade for support, cuts them down one after another.'}
+255	255		201							{1: '1', 2: '500661'}
+256	256		301							{1: '1', 2: 'Vera', 3: '...Phew.', 4: '1'}
+257	257		202							{1: '1'}
+258	258		301							"{3: ""Vera's injuries continue to multiply along the way, forcing people to scavenge Moth's body to salvage usable parts for her.""}"
+259	259		301							"{3: ""Moth's arm is now Vera's arm. It is as if Moth continues to live on through her.""}"
+260	260		301							{3: 'In occasional moments of daze, Vera returns to that conversation with Hush on the 44th day, finally speaking the words she could not say back then.'}
+261	261		201							{1: '1', 2: '500661'}
+262	262		301							{1: '1', 2: 'Vera', 3: 'My hometown... was quite far away from the ocean.', 4: '1'}
+263	263		301							"{2: 'Vera', 3: ""The summer wasn't very hot, so it wasn't great for swimming... And it always snowed in the winter."", 4: '1'}"
+264	264		301							"{2: 'Vera', 3: ""There was plenty to do in the snow too, though I don't know if they were as fun as those on the beach... It's funny, really... Despite being born at the end of the Golden Age, I've never seen the sea with my own eyes."", 4: '1'}"
+265	265		301							{2: 'Vera', 3: 'Most of my family were gone... Most of the time, I could only think of better ways to survive. There was no time to stop and take in the scenery.', 4: '1'}
+266	266		301							"{2: 'Vera', 3: ""So I've... never seen those landscapes you described... never seen a paradise like that."", 4: '1'}"
+267	267		301							"{2: 'Vera', 3: ""I've also... never had teammates I could... rely on."", 4: '1'}"
+268	268		301							{2: 'Vera', 3: '...', 4: '1'}
+269	269		301							{2: 'Vera', 3: '...I should raise my blade, I think.', 4: '1'}
+270	270		301							"{3: ""It feels as though the hands of all the refugees are still clutching to her alongside Hush's, constantly pushing her to raise her blade once more.""}"
+271	271		301							"{2: 'Vera', 3: 'Shouldn\'t the purpose of raising my blade be... to keep ""me"" alive?', 4: '1'}"
+272	272		204							{1: '1', 2: '1'}
+273	273		301							{2: 'Vera', 3: 'When did it become so complicated...? Ha.', 4: '1'}
+274	274		204							{1: '1'}
+275	275		203							{1: '1', 2: '0.25', 4: '25', 5: '-75'}
+276	276		401							{1: '2', 2: '10042608'}
+277	277		301							{3: 'She raises her blade, then raises it once more.'}
+278	278		301							{3: 'After countless times she has raised her blade for others, she feels as though she, too, has arrived at the paradise Hush described.'}
+279	279		301							{2: 'Vera', 3: '...!', 4: '1'}
+280	280		401							{1: '2', 2: '2634'}
+281	281		301							{3: 'She seems to see a rainbow-colored beach, crystal-clear waters, fantastically diverse coral, and noisy seabirds squabbling over food—everything resembles the vibrant atmosphere of a chaotic, colorful festival.'}
+282	282		204							{1: '1', 2: '1'}
+283	283		301							{2: 'Vera', 3: '...', 4: '1'}
+284	284		202							{1: '1'}
+285	285		306							{1: '1'}
+286	286		104							{1: '0|-100|-175', 2: '5'}
+287	287		301							{3: 'She gazes at this scene and smiles gently.'}
+288	288		301							{3: 'In truth, she is the same—'}
+289	289		301							{3: 'She also believes in the existence of that paradise, and she is grateful to Hush for giving her hope.'}
+290	290		301							{3: 'And so... the elderly and children are surrounded in the center of the formation. They look up toward that splash of red at the very front—their Valkyrie, standing at the boundary of Hel itself.'}
+291	291		301							"{3: 'And the people walk toward the side of ""life"".'}"
+292	292		301							{3: 'Until—'}
+293	293		301							{3: 'Until...'}
+294	294		301							{3: '...'}
+295	295		306							
+296	296		201							{1: '1', 2: '500294', 4: '-400'}
+297	297		201							{1: '2', 2: '500895', 4: '400'}
+298	298		301							"{1: '1', 2: 'Refugee', 3: ""...Someone's there!"", 4: '1'}"
+299	299		301				AniZhuanchangBegin			"{2: 'Refugee', 3: ""Look! There are people ahead! We're saved!"", 4: '2'}"
+300	300		401							{1: '1', 2: '36'}
+301	301		202							{1: '1', 2: '2', 6: '1'}
+302	302		402							{1: '903'}
+303	303		502						400.0	{1: 'DialogDisable'}
+304	304		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory702.jpg'}
+305	305		401							{1: '1', 2: '169'}
+306	306		401							{1: '2', 2: '214'}
+307	307		501			AniZhuanchangEnd				{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+308	308		301			DialogEnable				{3: 'Not far ahead lies a conservation area.'}
+309	309		301							"{3: ""Heavy rain falls from the sky. Through the curtain of rainfall, people can see that the Corrupted's attack has also reached this conservation area.""}"
+310	310		301							{3: 'Vera casts a heavy gaze across the distance. As expected, she spots a crowd of panicked refugees fleeing for their lives.'}
+311	311		301							{3: 'But beyond that... there is a conspicuous squad of Constructs within the crowd, standing in the pouring rain and shouting something.'}
+312	312		201							{1: '2', 2: '500019', 4: '0'}
+313	313		301							"{1: '1', 2: 'Construct', 3: ""Everyone, stay calm and maintain order! Our team has already contained the Corrupted! There's enough time to evacuate!"", 4: '2'}"
+314	314		203							{1: '2', 2: '0.25', 3: '-400'}
+315	315		201							{1: '1', 2: '500661', 4: '400'}
+316	316		301							{1: '1', 2: 'Vera', 3: 'Babylonian Constructs...', 4: '1'}
+317	317		301							{3: 'There are clearly not enough transport vehicles, but they have still managed to arrange the evacuation in a relatively neat and orderly fashion.'}
+318	318		202							{1: '1'}
+319	319		203							{1: '2', 2: '0.25'}
+320	320		301							{2: 'Construct', 3: 'Let those with children board first, and the rest of you can—', 4: '2'}
+321	321		203						250.0	{1: '2', 2: '0.25', 3: '150', 4: '-75'}
+322	322		201							{1: '3', 2: '500028', 4: '400', 7: '1'}
+323	323		203						250.0	{1: '2', 2: '0.25', 3: '150'}
+324	324		301							{1: '1', 3: 'The speaking Construct slips, but another Construct quickly grabs and steady him.'}
+325	325		301							{2: 'Construct', 3: 'Thanks... Ah, the ground is so slippery.', 4: '2'}
+326	326		202							{1: '2', 2: '3', 6: '1'}
+327	327		201							{1: '1', 2: '500661', 4: '600'}
+328	328		201							{1: '2', 2: '500895', 4: '0'}
+329	329		201							{1: '3', 2: '500896', 4: '-600'}
+330	330		301							{1: '1', 2: 'Vera', 3: '...', 4: '1'}
+331	331		301							{2: 'Vera', 3: 'Are they... capable of relying on each other?', 4: '1'}
+332	332		401							{1: '2', 2: '4044'}
+333	333		203							{1: '1', 2: '0.25', 3: '550'}
+334	334		203						250.0	{1: '1', 2: '0.25', 3: '600'}
+335	335		203							{1: '2', 2: '0.25', 3: '-100'}
+336	336		203							{1: '3', 2: '0.25', 3: '-650'}
+337	337		301							{3: 'Vera stands in place, exhausted. When the Constructs from the conservation area notice them, she raises her hand and pushes the refugee closest to her.'}
+338	338		301							{2: 'Vera', 3: 'Go... move on...', 4: '1'}
+339	339		301							{2: 'Vera', 3: 'Food, water... vehicles... You people need those things to survive, and they have them all.', 4: '1'}
+340	340		301							{3: 'Her eyes fix on the two Constructs rushing toward them.'}
+341	341		301							{2: 'Vera', 3: 'Babylonia... is probably a better place than Kurono.', 4: '1'}
+342	342		202							{1: '1', 6: '1'}
+343	343		201							{1: '1', 2: '500294'}
+344	344		401							{1: '2', 2: '4557'}
+345	345		203							{1: '1', 2: '0.25', 3: '-1200'}
+346	346		203						250.0	{1: '2', 2: '0.25', 3: '-1200'}
+347	347		203						250.0	{1: '3', 2: '0.25', 3: '-1200'}
+348	348		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+349	349		301							"{3: ""With Vera's push, the refugees who have come with her all run toward the Constructs. They are finally safe.""}"
+350	350		301							"{3: 'But Vera does not follow them to safety. A ""hound"" of the Kurono Special Force should probably avoid Babylonia personnel.'}"
+351	351		402							{1: '4557'}
+352	352		401							{1: '2', 2: '4797'}
+353	353		301							{3: 'She leans on her blade for support, walking toward the sound of waves.'}
+354	354		301							{3: '...Until the tide recedes at the edge of the sea.'}
+355	355		501				AniZhuanchangBegin			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab', 2: '2'}
+356	356		402							{1: '214'}
+357	357		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+358	358		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+359	359		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+360	360		201							{1: '18', 2: '500661'}
+361	361		301			AniZhuanchangEnd	AniZhuanchangBegin			{1: '1', 2: 'Vera', 3: 'Huff...', 4: '18'}
+362	362		202							{1: '18', 6: '1'}
+363	363		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory785.jpg'}
+364	364		401							{1: '2', 2: '903'}
+365	365		301			AniZhuanchangEnd				{3: 'Vera reaches the shore.'}
+366	366		301							{3: 'She finds a small boat, collapses onto it, and lets it carry her away adrift.'}
+367	367		401							{1: '2', 2: '9327108'}
+368	368		301				AniZhuanchangBegin			"{3: ""Another wave crashes onto the shore, washing away Vera's staggering footprints on the sand and erasing everything.""}"
+369	369		401							{1: '1', 2: '36'}
+370	370		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1157.jpg'}
+371	371		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+372	372		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '3'}
+373	373		301			AniZhuanchangEnd				{3: '...'}
+374	374		201							{1: '18', 2: '500345', 3: '8'}
+375	375		301							{1: '1', 2: 'Vera', 3: 'Huff...', 4: '18'}
+376	376		301							{2: 'Vera', 3: 'Huff...', 4: '18'}
+377	377		202							{1: '18'}
+378	378		401						300.0	{1: '2', 2: '2954'}
+379	379		402							{1: '2954'}
+380	380		301				AniZhuanchangBegin			{3: 'Raindrops fall on her face. Her eyelashes quiver slightly as she opens her eyes.'}
+381	381		401							{1: '1', 2: '148'}
+382	382		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+383	383		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+384	384		301			AniZhuanchangEnd				{3: 'A human stands above her, intently gazing down at her face.'}
+385	385		302							"{2: 'Found it.', 3: '386', 4: ""You're awake."", 5: '386'}"
+386	386		201							{1: '1', 2: '500345', 3: '1'}
+387	387		301							{1: '1', 2: 'Vera', 3: 'So... this is the place.', 4: '1'}
+388	388		301							{3: 'The small boat by the shore carries the survivor and brings her to today—many years later.'}
+389	389		301							"{3: 'The person in the small boat is no longer a ""hound"" of Kurono, but Vera of Babylonia.'}"
+390	390		301							{3: 'Before Vera can adjust her visual module, she sees a blurry shape sway before her, seemingly a human hand waving in front of her face.'}
+391	391		302							{2: 'Do you want to get up?', 3: '392', 4: 'I can give you a hand.', 5: '392'}
+392	392		204							{1: '1', 2: '8'}
+393	393		301							"{2: 'Vera', 3: ""Get up? You're disturbing my rest."", 4: '1'}"
+394	394		302							{2: '...', 3: '395'}
+395	395		204							{1: '1'}
+396	396		301							{2: 'Vera', 3: 'Never mind... Come sit with me for a while.', 4: '1'}
+397	397		202							{1: '1', 6: '1'}
+398	398		104						250.0	{1: '0|-25|0', 2: '0.25'}
+399	399		104						250.0	{1: '0|0|0', 2: '0.25'}
+400	400		401							{1: '2', 2: '4044'}
+401	401		301							"{3: ""Long accustomed to the Cerberus captain's demeanor, you cannot be bothered by her sharp tongue. You accept her invitation and sit beside her—right in the seawater.""}"
+402	402		201							{1: '1', 2: '500345'}
+403	403		301							"{1: '1', 2: 'Vera', 3: ""I didn't expect you to actually find this place."", 4: '1'}"
+404	404		302							{2: 'What did you expect when you sent me the exact same mail again?', 3: '405'}
+405	405		301							{3: 'With exaggerated solemnity, you pull up the mail from Vera on your terminal and read it aloud.'}
+406	406		302							"{2: '""By the time you receive this letter, I will have already fled with countless treasures...""', 3: '407'}"
+407	407		302							"{2: '""I\'ve found a secluded paradise to hide away in, and I\'ll never return to Babylonia again...""', 3: '408'}"
+408	408		204							{1: '1', 2: '2'}
+409	409		301							"{2: 'Vera', 3: ""Oh? So you've come looking for me again because of a letter I sent as a joke?"", 4: '1'}"
+410	410		301							"{2: 'Vera', 3: ""I thought if I cried wolf enough times, you wouldn't fall for it anymore."", 4: '1'}"
+411	411		301							"{3: 'Despite her words, Vera\'s expression clearly says, ""I knew you\'d come all along"".'}"
+412	412		302							"{2: 'I didn\'t ""fall for it"".', 3: '413', 4: ""I'll try my best to be there when you call for me."", 5: '413'}"
+413	413		301							{3: 'Vera narrows her eyes with satisfaction.'}
+414	414		301							{2: 'Vera', 3: 'Good.', 4: '1'}
+415	415		302							"{2: 'However, there really is a secret mission this time.', 3: '416', 4: ""Actually, I'm already on a mission right now."", 5: '416'}"
+416	416		204							{1: '1'}
+417	417		301							{2: 'Vera', 3: 'Oh, so Nikola sent you. Did he tell you everything about the mission?', 4: '1'}
+418	418		302							{2: 'Just the mission objectives.', 3: '419'}
+419	419		302							{2: 'I know nothing about your past connection to this mission.', 3: '420'}
+420	420		202							{1: '1'}
+421	421		301							"{3: 'According to Commander Nikola, Vera is secretly searching for a ""Key"".'}"
+422	422		301							"{3: 'Kurono has the ""Key"", and its only copy was lost toward the end of the Golden Age. After the Punishing Virus outbreak, Kurono sent people to recover the copy from a black market, but they failed, and there was no follow-up.'}"
+423	423		301							"{3: 'But Babylonia suddenly becomes interested in the treasure behind this ""Key"" and begins searching for the copy. They send Vera, who has a previous connection to it, along with the Gray Raven Commandant, who Vera requested.'}"
+424	424		302							"{2: 'According to your speculation, the copy of the ""Key"" is on this island?', 3: '425'}"
+425	425		201							{1: '1', 2: '500345'}
+426	426		301							"{1: '1', 2: 'Vera', 3: 'That\'s right. Back when I was still with Kurono\'s Special Force, my squad never managed to find the real ""Key"". We were deceived, and the entire squad was lost.', 4: '1'}"
+427	427		301							"{2: 'Vera', 3: 'We spent a long time suspecting each other while holding the fake ""Key"" when the real one was being kept by Daedalus all along.', 4: '1'}"
+428	428		301							"{2: 'Vera', 3: 'Surprisingly, my captain survived. I heard she took revenge on the culprits, infiltrated Daedalus, and made off with the real ""Key""... Her current whereabouts is unknown, but that was quite a badass sequel.', 4: '1'}"
+429	429		204							{1: '1', 2: '2'}
+430	430		301							"{2: 'Vera', 3: 'Haha... Now Babylonia wants me to pick up where that mission left off, and the simplest approach is to find the whereabouts of this ""badass captain"".', 4: '1'}"
+431	431		204							{1: '1'}
+432	432		301							{2: 'Vera', 3: 'So I got to work and found some information from those who might know something.', 4: '1'}
+433	433		302							{2: '...', 3: '434'}
+434	434		301							"{2: 'Vera', 3: 'I suggest you put away any unnecessary compassion. Those ""informants"" deserved worse than they got.', 4: '1'}"
+435	435		301							"{2: 'Vera', 3: ""They sold out plenty of people back when they were with Kurono. Our mission went wrong because of them as well. Just an eye for an eye, that's all."", 4: '1'}"
+436	436		301							"{2: 'Vera', 3: ""However, I'm certain she'll eventually come to this island, even without finding the ones who sabotaged our mission back then."", 4: '1'}"
+437	437		302							{2: '...Would you tell me more about what happened?', 3: '438'}
+438	438		302							{2: 'Consider it repayment for me agreeing to this mission.', 3: '439'}
+439	439		301							{3: 'Vera glances at you, seemingly contemplating whether this exchange of her past is appropriate.'}
+440	440		301							{3: 'In the end, she chooses to tell you her story.'}
+441	441		301							"{2: 'Vera', 3: ""It's quite a... long story."", 4: '1'}"
+442	442		202							{1: '1'}
+443	443		401							{1: '2', 2: '9327108'}
+444	444		301							{3: 'As Vera speaks, the sea gently washes over the two of you on the beach like waves of distant memories breaking shore.'}
+445	445		301				AniZhuanchangBegin			{3: '...'}
+446	446		502						400.0	{1: 'DialogDisable'}
+447	447		306							{1: '1'}
+448	448		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory175.png'}
+449	449		301			DialogEnable				{3: 'Her story connects three people. Vera begins from when they were all nobodies and tells of the formation of Kurono Special Force Group 013.'}
+450	450		104							{1: '0|0|-500', 2: '0.8'}
+451	451		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory601.jpg', 3: '0', 4: '1', 5: '1'}
+452	452		401						1000.0	{1: '2', 2: '4387'}
+453	453		205							{1: '999'}
+454	454		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory601.jpg'}
+455	455		301							{3: 'How they went from complete strangers to souls bound by inevitable threads of fate.'}
+456	456		104							{1: '0|0|-500', 2: '0.8'}
+457	457		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory925.jpg', 3: '0', 4: '1', 5: '1'}
+458	458		401						1000.0	{1: '2', 2: '4387'}
+459	459		205							{1: '999'}
+460	460		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory925.jpg'}
+461	461		301							"{3: 'From distrust to two ""defeats"" she pretends to dismiss... Yet her eyes cast downward every time she remembers them.'}"
+462	462		104							{1: '0|0|-500', 2: '0.8'}
+463	463		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory926.jpg', 3: '0', 4: '1', 5: '1'}
+464	464		401						1000.0	{1: '2', 2: '4387'}
+465	465		205							{1: '999'}
+466	466		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory926.jpg'}
+467	467		301							"{3: ""From the fall of Moth and Hummingbird to the hands she could not grab in time to the refugee's hands that firmly grasped hers then.""}"
+468	468		104							{1: '0|0|-500', 2: '0.8'}
+469	469		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1157.jpg', 3: '0', 4: '1', 5: '1'}
+470	470		401						1000.0	{1: '2', 2: '4387'}
+471	471		205							{1: '999'}
+472	472		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1157.jpg'}
+473	473		301				AniZhuanchangBegin			{3: 'From her boarding a small boat in the rain... all the way to now, this very moment.'}
+474	474		306							
+475	475		502						400.0	{1: 'DialogDisable'}
+476	476		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1157.jpg'}
+477	477		301			DialogEnable				"{3: 'Vera finishes her tale before pointing to the beautiful scenery before you—the very ""paradise"" she has described in her letters.'}"
+478	478		201							{1: '1', 2: '500345'}
+479	479		301							{1: '1', 2: 'Vera', 3: 'One last thing... Do you think this island is beautiful?', 4: '1'}
+480	480		301							{2: 'Vera', 3: 'Does it live up to our fantasies?', 4: '1'}
+481	481		301							"{2: 'Vera', 3: '—This is ""Rainbow Beach"", the beautiful homeland of Hush.', 4: '1'}"
+482	482		301							"{2: 'Vera', 3: 'It\'s also the ""paradise"" that Hey always dreamed of escaping to... If she really survived, this is where she would come.', 4: '1'}"
+483	483		203						250.0	{1: '1', 2: '0.25', 4: '-75', 5: '-50'}
+484	484		202							{1: '1'}
+485	485		401							{1: '2', 2: '4044'}
+486	486		301							{3: 'She lies down, stretching her limbs to feel the shallow waves washing over her and the colorful coral reef beneath.'}
+487	487		301				AniZhuanchangBegin			{3: 'You listen silently, turning your gaze once more to the scenery before you.'}
+488	488		401							{1: '1', 2: '36'}
+489	489		105							{1: 'Assets/Product/Ui/Spine/3-1Spine/WeilaTowerV31/WeilaTowerV31.prefab'}
+490	490		401							{1: '1', 2: '5028'}
+491	491		502							{1: 'DialogEnable'}
+492	492		401							{1: '1', 2: '381'}
+493	493		301			AniZhuanchangEnd				"{3: '<i>""There\'s a beach in front of my home. We called it the \'Rainbow Beach\'.""</i>'}"
+494	494		301							"{3: '<i>""The \'Rainbow Beach\' has very shallow waters. Shoals of fish will appear at high tide, and the coral beneath reveals itself when the tide recedes.""</i>'}"
+495	495		301							"{3: '<i>""The corals are so colorful. They gleam in the sunlight.""</i>'}"
+496	496		302							{2: '...', 3: '497'}
+497	497		301							{3: 'There are no colorful coral reefs or swimming fish here.'}
+498	498		301							{3: 'Only gray-white dead coral and mountains of bleached bones.'}
+499	499		301							"{3: 'The so-called ""paradise"" was nothing but a fabricated memory from a girl and a desperate fantasy from a woman dreaming of escape.'}"
+500	500		301							{3: 'This paradise was destroyed by the Punishing Virus long ago.'}
+501	501		301							"{3: 'Vera laughs bitterly at this ""scenic view"", lying in the gray water as she gently touches her once-damaged left eye.'}"
+502	502		301							{2: 'Vera', 3: 'What a joke...'}
+503	503		301							{3: 'Everything from her time with Kurono ultimately turns into bleached bones.'}
+504	504		302							"{2: ""No... perhaps it's not like that."", 3: '505'}"
+505	505		302							"{2: 'Their struggles were not erased.', 3: '506', 4: ""They've lived on in another way."", 5: '506'}"
+506	506		301							{3: 'You point at Vera—amidst the decay, a streak of red remains vibrantly alive.'}
+507	507		302							{2: 'And in the process, a new, vibrant team is born.', 3: '508'}
+508	508		301							{3: 'Behind that streak of crimson stands a special squad that causes a commotion every single day.'}
+509	509		301							"{2: 'Vera', 3: ""Tch, don't go interpreting my thoughts as something so noble and righteous. I've only ever thought about how to keep myself alive.""}"
+510	510		302							"{2: 'But your ""self"" seems to have expanded.', 3: '511'}"
+511	511		301							{2: 'Vera', 3: '...'}
+512	512		301							{3: 'Time passes, and the hound has become Cerberus.'}
+513	513		301							{2: 'Vera', 3: '...'}
+514	514		301							{3: 'After losing Group 013, is Vera not also trying to find closure for that chapter of her life?'}
+515	515		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+516	516		105							
+517	517		504							{1: '0.9'}
+518	518		401							{1: '2', 2: '4387'}
+519	519		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory648.jpg'}
+520	520		301							{3: 'She has repeatedly volunteered for missions related to Daedalus, and even after its fall, she has continued moving between its remaining branches.'}
+521	521		301							{3: 'She has witnessed more malice and bleached bones than what lies on this beach now.'}
+522	522		301							{3: 'Her endless search finally came to a halt in one of the laboratories, where she finally found a single living being.'}
+523	523		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+524	524		401							{1: '2', 2: '4387'}
+525	525		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2501.jpg'}
+526	526		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+527	527		401							{1: '2', 2: '1516'}
+528	528		301							{3: 'Specifically, a Construct—a white shadow.'}
+529	529		301							"{3: ""The white shadow reached out her hand against Vera's blade as if wanting to embrace her.""}"
+530	530		301							"{2: 'No. 21', 3: ""Don't... leave... me...""}"
+531	531		301							{2: 'No. 21', 3: 'I...'}
+532	532		301							"{3: 'She propped up the white shadow by her shoulders, adjusting her position like a doll, and stopped her ""bleeding"" with practiced motions.'}"
+533	533		301							"{2: 'No. 21', 3: ""You're...""}"
+534	534		301							{2: 'No. 21', 3: '...Are you... an angel?'}
+535	535		301							{3: 'Vera was momentarily stunned.'}
+536	536		301				AniZhuanchangBegin			{3: 'She likely said something dismissive out of habit afterward, but once the girl lost consciousness, Vera carried her over her shoulders.'}
+537	537		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+538	538		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_19.jpg'}
+539	539		301			AniZhuanchangEnd				{3: 'And then there was that rainy night.'}
+540	540		301							"{3: 'As collapses closed in and contact with Kurono failed in a familiar passage, Vera grasped her higher-up\'s intents—""survival of the fittest"", like how Group 013 was left to struggle underground for over a month years ago.'}"
+541	541		301							{3: 'Kurono was once again trying to eliminate the weaker one between them.'}
+542	542		301							{3: 'She ordered No. 21 to retreat, refusing to let another life wither away under her watch.'}
+543	543		301							{3: 'But that idiot would not listen.'}
+544	544		301							{3: 'No. 21 hunched over, shielding Vera from falling rocks while desperately dragging her toward the exit.'}
+545	545		301							{3: 'Even with vital fluid pooling beneath her, even if she finally collapsed on a rainy night, No. 21 was determined to bring her home safely.'}
+546	546		301				AniZhuanchangBegin			{3: 'And so, a white shadow is added to her shoulders.'}
+547	547		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2503.jpg'}
+548	548		502							{1: 'RImgBg1Shake'}
+549	549		301			AniZhuanchangEnd				{2: 'Vera', 3: 'Hey! Stay with me!'}
+550	550		301							{2: 'Vera', 3: 'You want me to lug your corpse all the way back?'}
+551	551		301							"{2: 'No. 21', 3: ""...I'm not.""}"
+552	552		301							{2: 'Vera', 3: '...'}
+553	553		301							{3: 'She carried No. 21 firmly on her back, feeling the warmth against her shoulders.'}
+554	554		301				AniZhuanchangBegin			{3: 'For the first time in her life, she felt grateful.'}
+555	555		504							{1: '0'}
+556	556		105							{1: 'Assets/Product/Ui/Spine/3-1Spine/WeilaTowerV31/WeilaTowerV31.prefab'}
+557	557		301			AniZhuanchangEnd				{3: '...'}
+558	558		301							"{3: 'Her bonds with her ""teammates"" have already transformed into an unyielding obsession, firmly rooted in her past—just like her own stubbornness.'}"
+559	559		301							"{3: 'And now, as the threads of fate continue to weave, the ""hound"" has been rewarded with more futures ahead. Even without Group 013, Vera now possesses possibilities she has never before imagined.'}"
+560	560		301							{3: 'Countless threads weave into a tapestry of fate, and after all causes and effects have played out, it always chooses the perfect moment to bring people together.'}
+561	561		302							{2: 'Now you must live on for all of them.', 3: '562'}
+562	562		105							
+563	563		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1157.jpg', 3: '0', 4: '1', 5: '1'}
+564	564		205							{1: '999'}
+565	565		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1157.jpg'}
+566	566		201							{1: '1', 2: '500345', 3: '2'}
+567	567		301							"{1: '1', 2: 'Vera', 3: ""Haha... Yeah, you're right."", 4: '1'}"
+568	568		202							{1: '1'}
+569	569		104							{1: '0|-100|-175', 2: '10'}
+570	570		401							{1: '2', 2: '4298'}
+571	571		301							{3: 'The captain of Cerberus rises from the beach and walks toward the bleached bones.'}
+572	572		301							{3: 'Among the pile of bones, the remains of a Construct stand conspicuously out of place.'}
+573	573		301							"{3: ""Hummingbird's appearance is no longer discernible, having been washed and eroded by the seawater.""}"
+574	574		402							{1: '4298'}
+575	575		401						800.0	{1: '2', 2: '13015111'}
+576	576		402							{1: '13015111'}
+577	577		301							"{3: ""Starting with her, Vera pries a small access card from the hand of the Construct's remains.""}"
+578	578		301							"{3: '""A plain, unassuming access card, looking almost like an insignificant trinket.""'}"
+579	579		201							{1: '1', 2: '500345'}
+580	580		301							"{1: '1', 2: 'Vera', 3: ""Because the paradise of her imagination didn't exist, she lost her last will to live... and chose to end her life."", 4: '1'}"
+581	581		301							"{2: 'Vera', 3: ""I must admit I don't like your ending, Hummingbird. I prefer what the commandant just said."", 4: '1'}"
+582	582		301							"{3: 'Vera clutches the ""Key"" tightly as if gripping a newfound conviction.'}"
+583	583		301				DialogDisable			"{2: 'Vera', 3: 'Why don\'t you leave the real ""Key"" to me?', 4: '1'}"
+584	584		401						1600.0	{1: '2', 2: '5322'}
+585	585		402							{1: '5322'}
+586	586		301			DialogEnable				"{3: 'Vera secures the ""Key"" and lets out a distinctive whistle, the sound carrying across the waves into the distance.'}"
+587	587		204							{1: '1', 2: '2'}
+588	588		301							"{2: 'Vera', 3: ""Hey, Commandant, you've heard the story. Want to guess what that meant?"", 4: '1'}"
+589	589		301							"{2: 'Vera', 3: 'I\'ll give you a hint: ""Hummingbird"" whistled it when she was leading the Corrupted away.', 4: '1'}"
+590	590		302							{2: 'Homebound?', 3: '591'}
+591	591		204							{1: '1', 2: '13'}
+592	592		301							{3: 'Vera bursts into laughter.'}
+593	593		301				DialogDisable			{2: 'Vera', 3: 'You got it wrong!', 4: '1'}
+594	594		202							{1: '1', 6: '1'}
+595	595		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5201_11.jpg', 3: '0', 4: '1', 5: '1'}
+596	596		104							{1: '0|0|-50', 2: '0'}
+597	597		401						1000.0	{1: '2', 2: '4044'}
+598	598		205							{1: '999'}
+599	599		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5201_11.jpg'}
+600	600		401							{1: '2', 2: '4660'}
+601	601		401							{1: '2', 2: '10113408'}
+602	602		502							{1: 'RImgBg1BlowUp'}
+603	603		301			DialogEnable				{3: 'She thrusts her banner spear into the beach, its flag instantly unfurling and fluttering in the air.'}
+604	604		505							{1: 'RImgBg1BlowUp'}
+605	605		301							"{2: 'Vera', 3: 'It means—""set sail""!'}"
+606	606		301		1		AniZhuanchangBegin			{2: 'Vera', 3: 'I will open up the next paradise!'}

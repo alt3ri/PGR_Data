@@ -1,0 +1,51 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '1031001', 3: '1'}
+4	4		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Commandant...', 4: '1'}
+5	5		302							{2: 'Liv...', 3: '6'}
+6	6		204							{1: '1'}
+7	7		301							{2: 'Liv', 3: 'Commandant...?', 4: '1'}
+8	8		302							{2: 'Liv...', 3: '9'}
+9	9		204							{1: '1', 2: '6'}
+10	10		301							{2: 'Liv', 3: 'Commandant... Something feels off. Quit leading me on.', 4: '1'}
+11	11		302							{2: 'Liv.', 3: '12', 4: 'Look!', 5: '12'}
+12	12		502						500.0	{1: 'RImgBg1Disable'}
+13	13		401							{1: '2', 2: '1514'}
+14	14		502							{1: 'RImgBg1Enable'}
+15	15		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+16	16		204							{1: '1', 2: '7'}
+17	17		301							{2: 'Liv', 3: 'Is this...', 4: '1'}
+18	18		302							"{2: ""It's snow."", 3: '19', 4: ""It's snowing."", 5: '19'}"
+19	19		204							{1: '1'}
+20	20		301							{2: 'Liv', 3: 'Is it mechanical debris from the nearby factory? It might be corrupted by the Punishing Virus! Commandant, get behind me!', 4: '1'}
+21	21		301							"{2: 'Liv', 3: ""It might look like snow, but my scanner indicates that it's mechanical debris. There doesn't appear to be anything wrong with the ID system either."", 4: '1'}"
+22	22		301							"{2: 'Liv', 3: ""Commandant, inject a serum! I'll try and hold off until Lucia and Lee get back...!"", 4: '1'}"
+23	23		204							{1: '1', 2: '7'}
+24	24		301							"{2: 'Liv', 3: ""Huh? Commandant? What's so funny?"", 4: '1'}"
+25	25		302							{2: 'Calm down, Liv.', 3: '26', 4: 'Run a scan on the Punishing concentration.', 5: '26'}
+26	26		301							"{2: 'Liv', 3: ""Huh? Let me see... My analysis indicates that there's... no Punishing Virus... What is this...?"", 4: '1'}"
+27	27		302							"{2: ""It's a winter wonderland of snow."", 3: '28', 4: 'Just relax and enjoy it.', 5: '28'}"
+28	28		301							{2: 'Liv', 3: '...Huh?', 4: '1'}
+29	29		204							{1: '1', 2: '1'}
+30	30		301							{2: 'Liv', 3: '...Hmm...', 4: '1'}
+31	31		202							{1: '1', 6: '1'}
+32	32		301							"{3: ""Liv still looks confused. Maybe she doesn't know what is happening.""}"
+33	33		301							{3: 'However, by the look of her raised eyebrows, you can tell how elated she really is.'}
+34	34		301							{3: 'After a brief moment, she realizes that this was not caused by the horrific Punishing Virus, and lowers her guard temporarily—'}
+35	35		301							{3: 'She sets down her bags and becomes completely immersed in the scenery before you, showing a rare smile.'}
+36	36		301							"{3: ""At that moment, she's no longer the Liv you know. She's no longer the girl with a past full of regrets.""}"
+37	37		301							{3: 'Even though this moment is trivial... Even though they will soon continue to fight for the wishes of mankind...'}
+38	38		301							{3: 'This is enough. This is what they needed—'}
+39	39		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory106.png'}
+40	40		301							{3: '(Static)'}
+41	41		201							{1: '1', 2: '1021001'}
+42	42		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+43	43		301							{1: '1', 2: 'Lucia', 3: 'Lee, the snow is letting up. Any problems over there?', 4: '1'}
+44	44		401							{1: '2', 2: '1514'}
+45	45		301							"{2: 'Lee', 3: ""The White Kuroro's running low on cogs. We've got another two or three minutes at most. Move on to the next phase ASAP, Lucia.""}"
+46	46		301							"{2: 'Lucia', 3: ""I still don't know where Nanami is. Things aren't looking good."", 4: '1'}"
+47	47		301							"{2: 'Lucia', 3: ""I'll go get her. Try to hold out a little longer. You got this, Lee."", 4: '1'}"
+48	48		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+49	49		202							{1: '1', 6: '1'}
+50	50		301		1		AniZhuanchangBegin			{3: 'Beep—'}

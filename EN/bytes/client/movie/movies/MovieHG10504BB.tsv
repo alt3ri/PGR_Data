@@ -1,0 +1,42 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	35		401			DialogEnable				{1: '1', 2: '208'}
+3	2		201							{1: '1', 2: '1041001'}
+4	3		301			PanelActor1Shake				{1: '1', 2: 'Nanami', 3: 'Arghhhh!', 4: '1'}
+5	4		301							{2: 'Nanami', 3: 'So annoying!! Annoying!!!', 4: '1'}
+6	36		202							{1: '1', 6: '1'}
+7	5		201							{1: '1', 2: '1031001', 3: '7', 4: '-400'}
+8	6		201							{1: '2', 2: '1011001', 3: '10', 4: '400'}
+9	7		301							{1: '1', 2: 'Liv', 3: '...', 4: '1'}
+10	8		301							{2: 'Lee', 3: 'Lucia, what should we do with that?', 4: '2'}
+11	9		202							{1: '1', 2: '2', 6: '1'}
+12	10		201							{1: '3', 2: '1021001'}
+13	11		301							"{1: '1', 2: 'Lucia', 3: ""It seems like Nanami's troubling over something related to you, Commandant, can you take care of that?"", 4: '3'}"
+14	101		302							"{2: 'Me?!', 3: '12', 4: ""Alright, I'll see what I can do."", 5: '12'}"
+15	12		301							"{2: 'Lucia', 3: ""We'll leave that to you then, Commandant."", 4: '3'}"
+16	13		201							{1: '3', 2: '1041001'}
+17	102		302							{2: 'What are you doing, Nanami?', 3: '14', 4: 'Is something bothering you?', 5: '15'}
+18	14	16	301							"{2: 'Nanami', 3: ""I'm puzzling over the perfect date."", 4: '3'}"
+19	15	16	301							{2: 'Nanami', 3: 'The last date turned out to be a disaster. If only Mr. Mannequin could move under his own power!', 4: '3'}
+20	16		301							"{2: 'Nanami', 3: ""I couldn't collect useful data even when I tried a more gentle approach, like dating."", 4: '3'}"
+21	17		301							"{2: 'Nanami', 3: ""We need more actors. Let's just grab a few from Babylonia, yeah?"", 4: '3'}"
+22	18		203							{1: '3', 2: '0.25', 3: '-400'}
+23	19		201							{1: '2', 2: '1011001', 4: '400'}
+24	20		301							{1: '1', 2: 'Lee', 3: 'Stop right there, before you cause trouble!', 4: '2'}
+25	21		301							"{2: 'Nanami', 3: ""But if that's the case, Nanami won't finish her mission."", 4: '3'}"
+26	103		302							"{2: ""Isn't the Constructs' prime directive to reclaim Earth?"", 3: '22', 4: 'You really care about your job, Nanami.', 5: '111'}"
+27	22	24	301							"{2: 'Nanami', 3: ""Yeah, that's just a side objective for Nanami."", 4: '3'}"
+28	111	23	204							{1: '3', 2: '2'}
+29	23	24	301							{2: 'Nanami', 3: 'Of course, Nanami is one hardworking gal!', 4: '3'}
+30	24		301							"{2: 'Lee', 3: ""Say, I never found out your reasons for researching humans, but aren't you a close analogue to a human yourself?"", 4: '2'}"
+31	25		201							{1: '1', 2: '1031001', 3: '1'}
+32	26		203							{1: '3', 2: '0.25', 3: '-600'}
+33	27		203							{1: '2', 2: '0.25', 3: '600'}
+34	28		301							{2: 'Liv', 3: 'My thoughts exactly.', 4: '1'}
+35	112		204							{1: '3'}
+36	29		301							"{2: 'Nanami', 3: ""No matter how similar they're designed to look, machines are worthless. It must be humans, it must be..."", 4: '3'}"
+37	30		202							{1: '1', 2: '3', 6: '1'}
+38	32		203							{1: '2', 2: '0.25', 3: '0'}
+39	104		302							"{2: ""Looks like she's really torn..."", 3: '1000', 4: 'What do we do now, Lee?', 5: '1000'}"
+40	1000		204							{1: '2', 2: '10'}
+41	33		301		1		AniZhuanchangBegin			"{2: 'Lee', 3: ""(Sighs) She'll just be here making noise if we leave her be. I'll see if I can figure something out before her next tantrum."", 4: '2'}"

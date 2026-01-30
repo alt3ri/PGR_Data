@@ -1,0 +1,90 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory91.png'}
+2	2		401							{1: '1', 2: '112'}
+3	3		201							{1: '1', 2: '500086', 4: '400'}
+4	4		201							{1: '2', 2: '500019', 4: '-400'}
+5	5		301			DialogEnable				{1: '1', 2: 'Construct', 3: 'Good thing we rendezvoused in time. Quickly, escort the civilians to the safe zone. Everyone else, keep an eye on the bionics!', 4: '2'}
+6	6		301							"{2: 'Fisher', 3: ""Err' damn cannonslinger, get your asses over 'ere!"", 4: '1'}"
+7	7		301							{3: 'The base is in turmoil. One group of humans is engaging with the bionics approaching the base, while another is hastily preparing for the next wave of attacks.'}
+8	1001		202							{1: '1', 2: '2'}
+9	1002		201							{1: '1', 2: '500201', 3: '10'}
+10	8		301							"{1: '1', 2: 'Simon', 3: ""...Ugh, I'm sorry. I don't feel so..."", 4: '1'}"
+11	9		301							{3: 'Simon, neither a Construct nor piloting a Polar Soldier, had no choice but to hitch a ride on Diana.'}
+12	10		301							{3: 'Upon reaching the base, Simon could no longer hold his grip and tumbles off of Diana, rolling onto the ground.'}
+13	1003		302							"{2: 'Are you okay?', 3: '11', 4: ""Didn't you go through training in Babylonia?"", 5: '12'}"
+14	11	3000	301							{2: 'Simon', 3: 'Phew... I-I just need a quick breather...', 4: '1'}
+15	12	3000	301							{2: 'Simon', 3: 'Argh... My physical training grades were just average... Ngh...', 4: '1'}
+16	3000		202							{1: '1'}
+17	13		301							{3: 'Before he could finish, he signals for a open path and scurries behind the shade. By the look of things, he is likely going to be out of action for some time.'}
+18	1004		201							{1: '1', 2: '500206', 3: '1'}
+19	14		301							"{1: '1', 2: 'Atiel', 3: ""Simon's always like this. I'll go look after him."", 4: '1'}"
+20	1005		401							{1: '2', 2: '1514'}
+21	1006		201							{1: '1', 2: '500199', 3: '5', 4: '-400'}
+22	1007		201							{1: '2', 2: '500214', 3: '4', 4: '400'}
+23	15		301							{1: '1', 2: 'Staessen', 3: 'The code! Did you guys find it?!', 4: '1'}
+24	16		301							{3: 'Captain Staessen pushes his way from out of the crowd. Handing over the command to one of his subordinates, he begins to shake Atiel vigorously.'}
+25	1008		302							"{2: 'Calm down!', 3: '17', 4: ""Derek's voice is the code."", 5: '19'}"
+26	17	18	301							{2: 'Staessen', 3: 'How can I calm down at a time like this? Do you know how dire the situation is? What on earth is the code to control Amberia?!', 4: '1'}
+27	18	20	301							"{2: 'Rosetta', 3: ""It's Derek. More specifically, it's his voice."", 4: '2'}"
+28	19	20	301							{2: 'Staessen', 3: 'Derek... You mean that mechanic narwhal?!', 4: '1'}
+29	20		301							"{2: 'Staessen', 3: ""Wait... Why is that mechanical narwhal's voice the code? They're using a voice to control Amberia?"", 4: '1'}"
+30	21		301							"{2: 'Rosetta', 3: ""I can't tell what they were thinking either, but I'm afraid it's true. Derek's voice is specifically designed to resonate with the frequency of humanoid-hybrid M.I.N.D.s."", 4: '2'}"
+31	22		301							{2: 'Staessen', 3: 'How is that possible?', 4: '1'}
+32	23		301							{2: 'Rosetta', 3: 'You must know what I mean, Commandant. You saw it firsthand.', 4: '2'}
+33	1009		302							{2: 'Our last time in the ARU...'}
+34	24		301							"{2: 'Rosetta', 3: ""Yeah. Derek's voice was the main reason I wasn't taken by the virus. I didn't realize at the time, but looking back, Derek may be the key to everything."", 4: '2'}"
+35	1010		202							{1: '1', 2: '2'}
+36	1011		201							{1: '1', 2: '500088', 3: '4'}
+37	25		301							{1: '1', 2: 'Diana', 3: 'Now that you mention it, even though Derek swims all over the world, he always returns at a specific time.', 4: '1'}
+38	1012		201							{1: '1', 2: '500199', 3: '4', 4: '-400'}
+39	1013		201							{1: '2', 2: '500214', 3: '4', 4: '400'}
+40	26		301							{1: '1', 2: 'Staessen', 3: 'The ebb and flow of the tide... You mean, that narwhal is the key to putting Amberia to rest?', 4: '1'}
+41	27		301							{2: 'Rosetta', 3: 'Looks like it...', 4: '2'}
+42	1014		302							{2: 'Where is Derek now?', 3: '28', 4: 'Will Derek be returning soon?', 5: '29'}
+43	28	31	301							{2: 'Staessen', 3: '...Who knows where that blasted narwhal is!', 4: '1'}
+44	29	30	301							{2: 'Rosetta', 3: 'He usually shows up at about this time, so he should have. We all assumed it was part of his migration cycle, but this time, Derek is running late.', 4: '2'}
+45	30	31	301							{2: 'Rosetta', 3: 'As a result...', 4: '2'}
+46	31		301							{2: 'Rosetta', 3: 'Derek might be malfunctioning. The reason being...', 4: '2'}
+47	1015		302							{2: 'α', 3: '32'}
+48	32		301							"{2: 'Rosetta', 3: 'That must be it. Alpha had her eyes on Derek during her last visit, and in trying to ""tame"" him, she must have caused a system malfunction.', 4: '2'}"
+49	33		301							{2: 'Staessen', 3: 'Then what do we do? No Derek, no code...', 4: '1'}
+50	1016		302							{2: 'Evan has the code.', 3: '1017'}
+51	1017		202							{1: '1', 2: '2'}
+52	1018		201							{1: '1', 2: '500088', 3: '4'}
+53	34		301							{1: '1', 2: 'Diana', 3: 'Why Evan... Ah...', 4: '1'}
+54	35		301				AniZhuanchangBegin			{3: 'Diana suddenly recalls the last time she saw Evan.'}
+55	1019		202							{1: '1'}
+56	1020		201							{1: '1', 2: '500198'}
+57	1021		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory217.png'}
+58	36		301			AniZhuanchangEnd				{1: '1', 2: 'Evan', 3: 'Supersonic Derek Wahoo!', 4: '1'}
+59	37		301				AniZhuanchangBegin			"{2: 'Player', 3: ""'——'"", 6: '1'}"
+60	1022		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory91.png'}
+61	1023		202							{1: '1'}
+62	1024		201							{1: '1', 2: '500088', 3: '4'}
+63	38		301			AniZhuanchangEnd				"{1: '1', 2: 'Diana', 3: ""That's definitely Derek's voice.. Wait, where's Evan?"", 4: '1'}"
+64	1025		201							{1: '1', 2: '500198', 3: '14', 4: '400'}
+65	39		301			PanelActor1Shake				{1: '1', 2: 'Evan', 3: 'Wah!', 4: '1'}
+66	1026		201							{1: '1', 2: '500206', 3: '2'}
+67	40		301							{1: '1', 3: 'Before you could react, Evan has already fallen to the ground. A familiar female Construct has snatched the voice player around his neck, radiating a terrifying smile on her face.'}
+68	1027		201							{1: '1', 2: '500088', 3: '4'}
+69	41		301							{1: '1', 2: 'Diana', 3: 'A-Atiel?!', 4: '1'}
+70	1028		302							{2: '(Shoot grapple at her)', 3: '4000', 4: '(Charge at her)', 5: '5000'}
+71	4000		201							{1: '1', 2: '500206', 3: '2'}
+72	42		301							{3: 'You pilot the Polar Soldier to attack Atiel.'}
+73	43		301			PanelActor1Shake				{1: '1', 2: 'Atiel', 3: '——!', 4: '1'}
+74	4002		401							{1: '2', 2: '10004001'}
+75	44		301							"{3: ""The grappling hook scratches Atiel's torso, causing vitual fluid to spray out.""}"
+76	45	5003	301							{1: '1', 2: 'Atiel', 3: 'Ugh... Dammit!', 4: '1'}
+77	5000	46	201							{1: '1', 2: '500206', 3: '2'}
+78	46	47	301							{3: 'You pilot the Polar Soldier to attack Atiel.'}
+79	47	48	301							"{2: 'Atiel', 3: ""Boss, you're way off mark."", 4: '1'}"
+80	48	49	301							{3: 'Atiel dodges your charge, but Rosetta quickly follows with a throw of her spear.'}
+81	49	50	301			PanelActor1Shake				{2: 'Atiel', 3: 'What?!', 4: '1'}
+82	50	5002	301							{1: '1', 3: 'The spear strikes Atiel, causing vital fluid to spray out.'}
+83	5002	51	401							{1: '2', 2: '10004001'}
+84	51	5003	301							{2: 'Atiel', 3: 'Cough... Dammit!', 4: '1'}
+85	5003		202							{1: '1'}
+86	52		301							{3: 'The terrain, however, makes the attack ineffectual, giving Atiel an opportunity to escape and run the other way.'}
+87	53		301							{3: 'Rosetta activates her light wings and flies into the air.'}
+88	1029		201							{1: '1', 2: '500214', 3: '5'}
+89	54		301		1		AniZhuanchangBegin			{1: '1', 2: 'Rosetta', 3: 'Catch her, Commandant!', 4: '1'}

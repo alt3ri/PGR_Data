@@ -1,0 +1,47 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory579.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		401						400.0	{1: '2', 2: '647'}
+4	4		401							{1: '2', 2: '1516'}
+5	5		301			DialogEnable				{3: 'With a sharp and heavy thud, the thick door to the hall opens, letting a hint of light inside the dark chamber. Hurried footsteps follow.'}
+6	6		201							{1: '1', 2: '500493'}
+7	7		301			PanelActor1Shake				"{1: '1', 2: '???', 3: ""Who... who's... here..."", 4: '1'}"
+8	8		203						100.0	{1: '1', 2: '0.25', 4: '-200'}
+9	9		202						50.0	{1: '1', 6: '1'}
+10	10		401							{1: '2', 2: '561'}
+11	11		301				AniZhuanchangBegin			{3: 'As metal clashes with the stone floor, everything returns to silence.'}
+12	12		101			DialogDisable	AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory286.png'}
+13	13		201							{1: '1', 2: '500486'}
+14	14		301			DialogEnable				{1: '1', 2: 'Haicma', 3: 'Wiped out?', 4: '1'}
+15	15		203							{1: '1', 2: '0.25', 3: '400'}
+16	16		201							{1: '2', 2: '500490', 3: '4', 4: '-400'}
+17	17		301							"{1: '1', 2: '???', 3: 'I heard that we couldn\'t even fish out the remains of that team of ""Gear""... Not even the Corrupted could escape from that flood of the Punishing Virus.', 4: '2'}"
+18	18		301							{3: 'Standing next to Haicma is a beast mechanoid with the head of a hound and a humanoid body. He joined the Church of Machina not too long ago.'}
+19	19		301							"{3: 'Despite being a new member, Spooner seems to prefer hanging with Haicma, the lone wolf. According to him, ""you\'re not as mad as the rest of them. I\'ve had my share of madmen.""'}"
+20	20		301							{3: 'He bends down, reaching out and touching a crimson crystal shooting up from underground.'}
+21	21		301							{2: '???', 3: 'It looks like... a plant.', 4: '2'}
+22	22		301							"{2: 'Haicma', 3: 'How\'s ""Lover"" doing, Spooner?', 4: '1'}"
+23	23		204							{1: '2', 2: '10'}
+24	24		301							{2: 'Spooner', 3: 'How would I know? Madam Arcana is fixing her right now.', 4: '2'}
+25	25		301							"{2: 'Haicma', 3: ""Didn't you check up on her before you left?"", 4: '1'}"
+26	26		204							{1: '2'}
+27	27		301							"{2: 'Spooner', 3: ""Hmph, I guess the infection wasn't as serious. Madam Arcana hooked up her memory shell with a music player. You can't imagine how funny it was with Zero screaming inside a CD player."", 4: '2'}"
+28	28		301							"{2: 'Spooner', 3: ""I've saved that video inside the central memory bank. I hope she'd reconsider the next time she's going to spill out nonsense."", 4: '2'}"
+29	29		301							"{2: 'Haicma', 3: ""I don't think that'll threaten her."", 4: '1'}"
+30	30		301							{2: 'Haicma', 3: 'Data analysis of this area is complete. The composition is still unknown, but it contains a high concentration of the Punishing Virus.', 4: '1'}
+31	31		301							{3: 'Haicma lifts a finger. Her fingertip projects a waterfall of data as she transfers it to Spooner.'}
+32	32		201							{1: '2', 2: '500491', 4: '-400'}
+33	33		301							"{2: 'Spooner', 3: 'This level of concentration... It\'s going to instantly devour anyone trapped inside, no screw spared. It\'s not difficult to imagine how hard Zero\'s ""Gear"" got hit...', 4: '2'}"
+34	34		301							{3: 'Haicma frowns slightly. Her system is retrieving the wireless signals that were sent and received nearby.'}
+35	35		301							{2: 'Haicma', 3: 'What this flood can do to humans and Constructs is catastrophic.', 4: '1'}
+36	36		301							{2: 'Haicma', 3: 'We should also stay away from it.', 4: '1'}
+37	37		301							{3: 'Haicma watches the scarlet stream flowing past the plateau they are standing on.'}
+38	38		301							"{2: 'Haicma', 3: '...""Red Tide"".', 4: '1'}"
+39	39		301							{2: 'Spooner', 3: 'Huh?', 4: '2'}
+40	40		301							{2: 'Haicma', 3: 'A fitting name.', 4: '1'}
+41	41		201							{1: '2', 2: '500490', 3: '4', 4: '-400'}
+42	42		301							{3: 'Haicma turns around and looks Spooner in the eye.'}
+43	43		301							{2: 'Haicma', 3: 'Humans have named it Red Tide.', 4: '1'}
+44	44		301							"{2: 'Haicma', 3: 'Objective updated. We are to investigate the ""Red Tide"" appearing around the Church of Machina, recording and analyzing its data, and determining its cause and threat level.', 4: '1'}"
+45	45		301							"{2: 'Haicma', 3: ""You take west; I'll take east. Let's get going."", 4: '1'}"
+46	46		301		1		AniZhuanchangBegin			{2: 'Spooner', 3: 'Alright. Be careful.', 4: '2'}

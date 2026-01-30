@@ -1,0 +1,369 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '297'}
+3	3		301			DialogEnable				"{2: 'Howitzer', 3: ""Hey, wake up... The curse... It's already here!"", 4: '1', 18: '100009349'}"
+4	4		301							"{2: 'Howitzer', 3: ""Q-quick, wake up... We're g-going to be too late...!"", 4: '1', 18: '100009350'}"
+5	5		301							{2: 'Technor', 3: 'Damn it, how can you be sleeping so deeply?!', 4: '2', 18: '100009351'}
+6	6		301				AniZhuanchangBegin			{3: 'In a daze, you hear chaotic voices, followed by violent shaking of your body.'}
+7	7		502							{1: 'DialogDisable'}
+8	8		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '2'}
+9	9		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_19.jpg'}
+10	10		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+11	11		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+12	12		111				AniZhuanchangEnd			{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+13	13		201							{1: '1', 2: '501233', 4: '-500'}
+14	14		201							{1: '2', 2: '501232', 4: '500'}
+15	15		301			DialogEnable				{1: '1', 3: 'Opening your eyes, you see not the familiar system prompts, but the anxious faces of two guards.'}
+16	16		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+17	17		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+18	18		202							{1: '2'}
+19	19		203							{1: '1', 2: '0.25', 3: '0'}
+20	20		301							{2: 'Technor', 3: 'Get up now! We need to go! The Demon Lord has ordered you to leave the castle immediately!', 5: '1', 18: '100009352'}
+21	21		301							"{2: 'Technor', 3: '""That thing"" is about to arrive... Hey, take this! Your village\'s finest sword!', 5: '1', 18: '100009353'}"
+22	22		401							{1: '2', 2: '4834'}
+23	23		203							{1: '1', 2: '0.25', 3: '0', 4: '-50', 5: '-50'}
+24	24		301							{3: 'While speaking, the guard tosses the previously confiscated weapon to the hero.'}
+25	25		203							{1: '1', 2: '0.25', 3: '0', 4: '0', 5: '0'}
+26	26		302							{2: 'What happened?', 3: '27'}
+27	27		301				DialogDisable			"{2: 'Technor', 3: ""There's no time to explain!"", 4: '1', 18: '100009354'}"
+28	28		203							{1: '1', 2: '0.2', 3: '600'}
+29	29		202							{1: '1'}
+30	30		301			DialogEnable	DialogDisable			"{3: ""With the guard's shout, you finally notice the eerie changes that are taking place in this prison cell.""}"
+31	31		306							{1: '1'}
+32	32		401							{1: '2', 2: '4984'}
+33	33		104						300.0	{1: '-100|0|-100', 2: '0.3'}
+34	34		504						150.0	{1: '1'}
+35	35		504						150.0	{1: '0'}
+36	36		504						150.0	{1: '1'}
+37	37		504							{1: '0'}
+38	38		301			DialogEnable	DialogDisable			{3: 'Uncanny shadows flow across the surrounding walls, as if alive and sentient. Your heightened senses detect a subtle, oppressive pressure bearing down.'}
+39	39		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 2: '2'}
+40	40		104						2000.0	{1: '100|0|-100', 2: '0.5'}
+41	41		104							{1: '0|0|0', 2: '0.3'}
+42	42		301			DialogEnable	DialogDisable			{3: 'Before you can even take a closer look, flowing shadows surge in from all directions. The spaces they sweep through leave nothing but distorted air in their wake.'}
+43	43		401							{1: '2', 2: '4388'}
+44	44		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+45	45		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab'}
+46	46		402							{1: '4984'}
+47	47		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory509.jpg'}
+48	48		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+49	49		401						500.0	{1: '2', 2: '1504'}
+50	50		104						300.0	{1: '0|50|-50', 2: '0.3'}
+51	51		104							{1: '0|0|-100', 2: '0.2'}
+52	52		301			DialogEnable				"{1: '1', 3: ""The shadows surge forward rapidly, ensnaring the lead guard's arm in the blink of an eye.""}"
+53	53		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+54	54		504						150.0	{1: '1'}
+55	55		504						150.0	{1: '0'}
+56	56		504						150.0	{1: '1'}
+57	57		504							{1: '0'}
+58	58		201							{1: '1', 2: '501233'}
+59	59		301			PanelActor1Shake				{1: '1', 2: 'Technor', 3: 'Oh ****... Dammit!', 4: '1', 18: '100009355'}
+60	60		203							{1: '1', 2: '0.25', 4: '-100'}
+61	61		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 2: '2'}
+62	62		401							{1: '2', 2: '3077'}
+63	63		301				DialogDisable			{2: 'Technor', 3: 'What the **** is this thing... argh!', 4: '1', 18: '100009356'}
+64	64		203							{1: '1', 2: '0.25', 3: '400', 4: '0'}
+65	65		401							{1: '2', 2: '4222'}
+66	66		501						150.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+67	67		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab'}
+68	68		301			DialogEnable	DialogDisable			"{3: ""Gripping the village's finest sword once more, the hero slices through the black mist ensnaring the guard.""}"
+69	69		501						150.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+70	70		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab'}
+71	71		202						200.0	{1: '1', 6: '1'}
+72	72		104						300.0	{1: '0|0|-150', 2: '0.3'}
+73	73		104							{1: '0|0|-50', 2: '0.2'}
+74	74		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+75	75		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+76	76		401							{1: '2', 2: '2924'}
+77	77		301			DialogEnable	DialogDisable			{3: 'ZZZZT!'}
+78	78		306							
+79	79		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+80	80		401							{1: '2', 2: '1105'}
+81	81		301			DialogEnable				{2: 'System', 3: 'Warning. Warning. Character deviation, detected.', 18: '100009357'}
+82	82		302							{2: 'Ugh! Just bear with it for a moment...', 3: '83'}
+83	83		401						200.0	{1: '2', 2: '1105'}
+84	84		401							{1: '2', 2: '1105'}
+85	85		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteAnimationJingGao.prefab', 2: '2'}
+86	86		301							{2: 'System', 3: 'Multiple boundary violations, detected. Forced progression protocol, activated.', 18: '100009358'}
+87	87		302							{2: 'What?', 3: '88'}
+88	88		301				DialogDisable			{2: 'System', 3: 'Auto-completing storyline progression... Auto-navigation activated.', 18: '100009359'}
+89	89		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteAnimationJingGao.prefab'}
+90	90		104						300.0	{1: '0|0|-150', 2: '0.3'}
+91	91		104							{1: '0|0|-50', 2: '0.2'}
+92	92		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+93	93		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+94	94		104						100.0	{1: '-50|50|-50', 2: '0.1'}
+95	95		104						200.0	{1: '50|-50|-150', 2: '0.2'}
+96	96		104						100.0	{1: '-50|50|-100', 2: '0.1'}
+97	97		104						200.0	{1: '0|0|0', 2: '0.2'}
+98	98		401							{1: '2', 2: '4278'}
+99	99		501						150.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+100	100		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+101	101		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+102	102		101						100.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_05.jpg'}
+103	103		101						100.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_06.jpg'}
+104	104		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory530.jpg'}
+105	105		301			DialogEnable	DialogDisable			{3: 'The system pauses briefly, then a tidal wave of data floods into your mind, compressing every region of memory.'}
+106	106		401							{1: '2', 2: '4278'}
+107	107		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+108	108		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+109	109		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+110	110		101						100.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_08.jpg'}
+111	111		101						100.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_09.jpg'}
+112	112		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory531.jpg'}
+113	113		301			DialogEnable	DialogDisable			"{2: 'System', 3: ""The hero brings the disaster-summoning red rose to the Demon Lord's hall. Feigning sincerity, the hero confesses their feelings, winning the Demon Lord's trust and favor. Then, without hesitation, the hero summons a curse that even the Demon Lord cannot break, grasping and utterly consuming the Demon Lord..."", 18: '100009360'}"
+114	114		401							{1: '2', 2: '4278'}
+115	115		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+116	116		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+117	117		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+118	118		101						100.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_08.jpg'}
+119	119		101						100.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_20.jpg'}
+120	120		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1124.jpg'}
+121	121		301			DialogEnable	DialogDisable			{2: 'System', 3: 'The hero then leaves the starter village, navigates countless adventures, overcomes innumerable challenges, slays the Black Dragon King to claim its bones, then destroys the Kuro Tower to master the art of time reversal, and finally connects the three realms to become the invincible Supreme Sovereign. But on a snowy night...', 18: '100009361'}
+122	122		401							{1: '2', 2: '4278'}
+123	123		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+124	124		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+125	125		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+126	126		101						100.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory530.jpg'}
+127	127		101						100.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory531.jpg'}
+128	128		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1193.jpg'}
+129	129		301			DialogEnable	DialogDisable			"{2: 'System', 3: ""But on a snowy night, the Supreme Sovereign hero arrives at a long-abandoned castle and sees the thorny garden blooming with red roses. Suddenly, the hero realizes that the arrogant, imperious Demon Lord had left a scar upon the hero's heart..."", 18: '100009362'}"
+130	130		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+131	131		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+132	132		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+133	133		401							{1: '2', 2: '558'}
+134	134		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory509.jpg'}
+135	135		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+136	136		201							{1: '1', 2: '501233'}
+137	137		301			DialogEnable				"{1: '1', 2: 'Technor', 3: ""Hey! What's going on?!"", 4: '1', 18: '100009363'}"
+138	138		302							"{2: ""The system's gone crazy again!"", 3: '139'}"
+139	139		301				DialogDisable			{2: 'Technor', 3: 'What?!', 4: '1', 18: '100009364'}
+140	140		203							{1: '1', 2: '0.1', 4: '-100', 5: '-100'}
+141	141		401							{1: '2', 2: '907504'}
+142	142		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+143	143		202							{1: '1', 6: '1'}
+144	144		401							{1: '2', 2: '9389034'}
+145	145		104							{1: '-50|50|-50', 2: '0.1'}
+146	146		104						100.0	{1: '50|-50|-150', 2: '0.1'}
+147	147		104						100.0	{1: '-50|50|-100', 2: '0.1'}
+148	148		104						100.0	{1: '0|0|0', 2: '0.1'}
+149	149		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+150	150		301			DialogEnable	DialogDisable			{3: 'The guard slaps the hero hard across the body, causing the system in their mind to flicker and glitch.'}
+151	151		401							{1: '2', 2: '558'}
+152	152		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+153	153		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+154	154		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+155	155		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+156	156		201							{1: '1', 2: '501233', 4: '-500'}
+157	157		201							{1: '2', 2: '501232', 4: '500'}
+158	158		306							{1: '1'}
+159	159		301			DialogEnable				{1: '1', 2: 'System', 3: '*&*(%)/~*@)@#!——#*(~&$(*!@*/*/!', 18: '100009365'}
+160	160		301				DialogDisable			{2: 'System', 3: '—System update anchor point confirmed: Castle Hall.', 18: '100009366'}
+161	161		302							{2: '...', 3: '162'}
+162	162		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+163	163		104							{1: '0|0|-100', 2: '0.5'}
+164	164		203							{1: '1', 3: '-500', 5: '-300'}
+165	165		202						100.0	{1: '1'}
+166	166		203							{1: '2', 3: '500', 5: '-300'}
+167	167		202						100.0	{1: '2'}
+168	168		401							{1: '2', 2: '1504'}
+169	169		502						300.0	{1: 'RImgBg1Shake'}
+170	170		301			DialogEnable	DialogDisable			"{1: ' ', 3: ""With the guards' help, the mental restraints in the hero's mind momentarily loosen. The hero gives the guards a surprised look, then immediately grabs them and starts running.""}"
+171	171		401							{1: '2', 2: '1504'}
+172	172		502						300.0	{1: 'RImgBg1Shake'}
+173	173		302							"{2: ""I'm fine...! Just run!"", 3: '174'}"
+174	174		104						200.0	{1: '0|50|-150', 2: '0.2'}
+175	175		104				AniZhuanchangBegin			{1: '0|0|-200', 2: '0.2'}
+176	176		502							{1: 'DialogDisable'}
+177	177		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory531.jpg'}
+178	178		104				AniZhuanchangEnd			{1: '-150|-100|-200', 2: '0'}
+179	179		301			DialogEnable	DialogDisable			{3: 'There is no time to comprehend what these terrifying shadows truly are. The scenery from yesterday has transformed completely.'}
+180	180		401						500.0	{1: '2', 2: '1504'}
+181	181		104							{1: '0|0|-50', 2: '0.5'}
+182	182		301			DialogEnable	DialogDisable			{3: 'Stone walls and decorations alike have been consumed by the shadows. A piercing chill invades the air—even breathing while running feels like it is corrupting the organs inside. In this situation, what fate awaits the Demon Lord?'}
+183	183		306							
+184	184		302							"{2: ""Where's Vera—I mean, the Demon Lord?!"", 3: '185'}"
+185	185		302							{2: 'What is happening to this castle? Tell me!', 3: '186'}
+186	186		401							{1: '2', 2: '1504'}
+187	187		201							{1: '18', 2: '501232'}
+188	188		301			DialogEnable				"{1: '1', 2: 'Howitzer', 3: ""It's... a c-curse..."", 4: '18', 18: '100009367'}"
+189	189		301							{2: 'Howitzer', 3: 'W-when... when all the p-petals fall from that rose, the c-curse will take effect... E-everything in this c-castle will d-disappear...', 4: '18', 18: '100009368'}
+190	190		202				DialogDisable			{1: '18'}
+191	191		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+192	192		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+193	193		504							{1: '0.7'}
+194	194		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1124.jpg'}
+195	195		201							{1: '1', 2: '501233', 4: '-500', 7: '1'}
+196	196		201							{1: '2', 2: '501232', 4: '500', 7: '1'}
+197	197		301			DialogEnable	DialogDisable			{1: '1', 2: 'Howitzer', 3: 'H-hey, are you trying to get yourself killed? If you keep that flower... the D-Demon Lord will be fur—mmph!', 4: '2', 18: '100009369'}
+198	198		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+199	199		202							{1: '1', 2: '2', 6: '1'}
+200	200		201							{1: '3', 2: '501216', 3: '4', 5: '-100', 6: '-100', 7: '1'}
+201	201		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Vera', 3: 'Did my subordinates not tell you what ""roses"" mean to me?', 4: '3', 18: '100009370'}"
+202	202		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+203	203		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+204	204		504							{1: '0'}
+205	205		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory531.jpg'}
+206	206		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+207	207		302							{2: 'The rose is the trigger of the curse?', 3: '208'}
+208	208		302							"{2: 'So... this is the ""curse"" that the system said could restrain the Demon Lord?', 3: '209'}"
+209	209		201						100.0	{1: '1', 2: '501233', 4: '-1800', 5: '-1800', 7: '1'}
+210	210		203							{1: '1', 2: '0.2', 3: '-500', 4: '0'}
+211	211		301			DialogEnable				"{1: '1', 2: 'Technor', 3: ""Yes! Many years ago, the Demon Lord was cursed by a red rose! That's why she hates roses so much!"", 4: '1', 18: '100009371'}"
+212	212		301				DialogDisable			"{2: 'Technor', 3: ""But the curse wasn't supposed to take effect until midnight tonight... How is it activating now... Could she have accepted that rose from yesterday?!"", 4: '1', 18: '100009372'}"
+213	213		201						100.0	{1: '2', 2: '501232', 4: '1800', 5: '-1800', 7: '1'}
+214	214		203							{1: '2', 2: '0.2', 3: '500', 4: '0'}
+215	215		301			DialogEnable				{1: '1', 2: 'Howitzer', 3: 'M-my lord said... e-everything will... disappear...', 4: '2', 18: '100009373'}
+216	216		301			PanelActor2Shake				"{2: 'Howitzer', 3: ""I'm so scared... W-when that s-shadow devours me, will it... will it h-hurt..."", 4: '2', 18: '100009374'}"
+217	217		301			PanelActor1Shake	DialogDisable			{1: '1', 2: 'Technor', 3: 'This is all because of you! You conniving human!', 4: '1', 18: '100009375'}
+218	218		302							"{2: ""No... It wasn't me..."", 3: '219'}"
+219	219		301			DialogEnable				{3: 'The hero opens their mouth to object, but then recalls the garbage plot that spilled out when the system malfunctioned earlier. To their dismay, they realize—this situation really does seem to be of their own making.'}
+220	220		401							{1: '2', 2: '4984'}
+221	221		504						150.0	{1: '1'}
+222	222		504						150.0	{1: '0'}
+223	223		504						150.0	{1: '1'}
+224	224		504							{1: '0'}
+225	225		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+226	226		401							{1: '2', 2: '4044'}
+227	227		203							{1: '1', 2: '0.25', 3: '-300', 4: '0'}
+228	228		203						200.0	{1: '2', 2: '0.25', 3: '300', 4: '0'}
+229	229		401							{1: '2', 2: '3077'}
+230	230		203							{1: '1', 2: '0.2', 3: '-300', 4: '-100'}
+231	231		203							{1: '2', 2: '0.2', 3: '300', 4: '-100'}
+232	232		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 2: '2', 3: '1'}
+233	233		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 2: '2', 3: '2'}
+234	234		301			DialogEnable				{3: 'Meanwhile, the shadows from behind have caught up and seized the two hapless guards.'}
+235	235		302							{2: 'Run faster!', 3: '236'}
+236	236		301			PanelActor1Shake				"{2: 'Technor', 3: ""Tch! What a pain... Why won't it go after you instead!"", 4: '1', 18: '100009376'}"
+237	237		302							{2: 'Because I am the chosen one, blessed by the light!', 3: '238'}
+238	238		205						500.0	{1: '1', 2: '501233', 3: '1', 4: '0.8', 5: '0.5'}
+239	239		301			PanelActor2Shake	DialogDisable			{2: 'Howitzer', 3: 'B-bro... Your body is a-already...', 4: '2', 18: '100009377'}
+240	240		401							{1: '2', 2: '4222'}
+241	241		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab'}
+242	242		401							{1: '2', 2: '4222'}
+243	243		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab'}
+244	244		301			DialogEnable	DialogDisable			{3: 'The shadows entangle the two more deeply with each passing moment. Even with the hero helping to slash them away, they gradually fail to keep pace with the speed of corruption.'}
+245	245		203							{1: '1', 2: '0.2', 3: '-300', 4: '-150'}
+246	246		203							{1: '2', 2: '0.2', 3: '300', 4: '-150'}
+247	247		205						500.0	{1: '1', 2: '501233', 3: '1', 4: '0.5', 5: '0.5'}
+248	248		401							{1: '1', 2: '6172'}
+249	249		301			DialogEnable	DialogDisable			"{2: 'Technor', 3: 'You... if you\'re really ""blessed by the light""... can you please help my lord?!', 18: '100009378'}"
+250	250		302							{2: 'Why do you trust me?', 3: '251'}
+251	251		302							"{2: ""I'm supposed to be the one who kills the Demon Lord in this script!"", 3: '252'}"
+252	252		301			DialogEnable				{2: 'Technor', 3: 'Because...', 18: '100009379'}
+253	253		301							{3: 'Technor suddenly gives the hero a meaningful look.'}
+254	254		302							"{2: '...Please don\'t say ""the master hasn\'t smiled like that in ages""!', 3: '255', 4: ""...Please don't spout cheesy lines!"", 5: '255'}"
+255	255		301							"{2: 'Technor', 3: ""Because my lord hasn't been this happy in ages!"", 18: '100009380'}"
+256	256		203							{1: '1', 2: '0.2', 3: '-300', 4: '-200'}
+257	257		203							{1: '2', 2: '0.2', 3: '300', 4: '-200'}
+258	258		401							{1: '2', 2: '3077'}
+259	259		205						500.0	{1: '1', 2: '501233', 3: '0.5', 4: '0', 5: '0.5'}
+260	260		205						500.0	{1: '2', 2: '501233', 3: '0.8', 4: '0.5', 5: '0.5'}
+261	261		301			PanelActor2Shake	DialogDisable			"{2: 'Howitzer', 3: ""D-don't worry, we are the D-Demon Lord's guards, we'll break f-free as well—waaaahh..."", 18: '100009381'}"
+262	262		205						500.0	{1: '2', 2: '501233', 3: '0.5', 4: '0', 5: '0.5'}
+263	263		301			DialogEnable	DialogDisable			"{3: ""The hero reaches out to grab them, but the two guards' forms are already growing transparent—then dissolve completely into the shadows.""}"
+264	264		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 4: '1'}
+265	265		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 4: '2'}
+266	266		302							{2: 'No!', 3: '267'}
+267	267		401							{1: '2', 2: '4537'}
+268	268		502							{1: 'RImgBg1Shake'}
+269	269		501				AniZhuanchangBegin		1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFallStone.prefab', 2: '2'}
+270	270		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory771.jpg'}
+271	271		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFallStone.prefab'}
+272	272		104				AniZhuanchangEnd			{1: '0|0|0', 2: '0', 4: '1'}
+273	273		307							{1: 'Everything returns to nothingness, everything surrenders to the surging shadows.', 3: '65'}
+274	274		301							{3: 'Everything returns to nothingness, everything surrenders to the surging shadows.'}
+275	275		307							{2: '1'}
+276	276		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory771.jpg', 3: '0', 4: '1', 5: '0.5'}
+277	277		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory771.jpg'}
+278	278		205							{1: '999'}
+279	279		301			DialogEnable	DialogDisable			{3: 'The castle no longer bears its original form, and the path forward is completely blocked by flowing shadows.'}
+280	280		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+281	281		301			DialogEnable				{3: 'The hero instinctively steps back, but the shadows follow relentlessly. The arm closest to the darkness is instantly enveloped by a bone-chilling cold.'}
+282	282		401						500.0	{1: '2', 2: '772'}
+283	283		402							{1: '772'}
+284	284		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFreezeScreen.prefab', 2: '2'}
+285	285		301							{3: 'A single moment of hesitation proves fatal—before the hero can grip their weapon to defend, the piercing cold freezes their limbs solid.'}
+286	286		401							{1: '2', 2: '2924'}
+287	287		301							{3: 'Meanwhile, the system speaks up again.'}
+288	288		401							{1: '2', 2: '2924'}
+289	289		104						200.0	{1: '0|0|-150', 2: '0.2'}
+290	290		104							{1: '0|0|0', 2: '0.3'}
+291	291		301			DialogEnable	DialogDisable			{2: 'System', 3: 'Forced correction, forced correction.', 18: '100009382'}
+292	292		302							{2: 'This bloody system...', 3: '293'}
+293	293		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.3'}
+294	294		301			DialogEnable				"{3: ""The hero's breathing becomes increasingly difficult, as if trapped in a viscous swamp of darkness. Everything begins to condense and solidify...""}"
+295	295		401							{1: '2', 2: '4044'}
+296	296		301				DialogDisable			{3: 'But before the sticky cold completely consumes their consciousness, the hero feels a firm grip on their wrist.'}
+297	297		201							{1: '1', 2: '501225'}
+298	298		301			DialogEnable				{1: '1', 2: '??', 3: '...', 4: '1'}
+299	299		301				DialogDisable			"{2: '??', 3: ""...I knew I just couldn't accept this ending."", 4: '1', 18: '100009384'}"
+300	300		202							{1: '1', 6: '1'}
+301	301		401						500.0	{1: '2', 2: '773'}
+302	302		402							{1: '773'}
+303	303		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFreezeScreen.prefab'}
+304	304		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFreezeScreenDis.prefab', 2: '2'}
+305	305		401							{1: '2', 2: '778'}
+306	306		301			DialogEnable	DialogDisable			{3: 'Bzzzt—'}
+307	307		401						500.0	{1: '2', 2: '772'}
+308	308		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab', 2: '2'}
+309	309		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory531.jpg'}
+310	310		401							{1: '1', 2: '6177'}
+311	311		201							{1: '1', 2: '501225'}
+312	312		301			DialogEnable	DialogDisable			{1: '1', 3: 'A familiar voice breaks through the chaotic barrier, bringing clarity back to your fading consciousness.'}
+313	313		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '0.3'}
+314	314		205							{1: '999'}
+315	315		301			DialogEnable				{3: 'Fiery red light pierces through the darkness, revealing a person whose flowing crimson hair stands out vividly.'}
+316	316		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+317	317		201							{1: '1', 2: '501216', 3: '10', 7: '1'}
+318	318		301							{3: 'The hero struggles to stabilize their mind as their vision gradually sharpens—the face before them is still that of Demon Lord Vera.'}
+319	319		306							{1: '1'}
+320	320		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 2: '1', 3: '1'}
+321	321		301				DialogDisable			"{3: ""But the moment of elation lasts only an instant. The hero quickly notices traces of shadow already spreading across the Demon Lord's body.""}"
+322	322		306							
+323	323		302							{2: 'Vera, why are you also...', 3: '324'}
+324	324		401							{1: '2', 2: '2924'}
+325	325		104						200.0	{1: '0|0|-150', 2: '0.2'}
+326	326		104							{1: '0|0|0', 2: '0.3'}
+327	327		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+328	328		204							{1: '1', 2: '9'}
+329	329		401							{1: '2', 2: '1105'}
+330	330		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteAnimationJingGao.prefab', 2: '2'}
+331	331		301			DialogEnable	DialogDisable			{2: 'System', 3: 'Warning. Warning. Story sequence disruption detected. Initiating correction. Initiating correction.', 18: '100009385'}
+332	332		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteAnimationJingGao.prefab'}
+333	333		104						200.0	{1: '0|0|-150', 2: '0.2'}
+334	334		104							{1: '0|0|0', 2: '0.3'}
+335	335		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+336	336		301			DialogEnable				"{3: ""Excruciating pain tears through every inch of the hero's body as their limbs begin to melt away, while the Demon Lord—""}"
+337	337		104							{1: '0|-50|-50', 2: '0.3'}
+338	338		203							{1: '1', 2: '0.25', 4: '-100', 5: '-100'}
+339	339		301							"{3: ""She swiftly grabs the hero's wrist and pulls them into a tight embrace.""}"
+340	340		204							{1: '1', 2: '10'}
+341	341		301				DialogDisable			{2: 'Vera', 3: '...Why does it have to be you?', 4: '1', 18: '100009386'}
+342	342		307							{1: 'She seems to lament, an emotion she rarely displays.', 2: '0', 3: '60', 5: '0'}
+343	343		301							{3: 'She seems to lament, an emotion she rarely displays.'}
+344	344		307							{2: '1'}
+345	345		301			DialogEnable				"{2: 'Vera', 3: 'Those ""monkeys"" outside have evolved to be too cunning. Even after hundreds of years... they still refuse to spare the last survivor of the ""human era.""', 4: '1', 18: '100009387'}"
+346	346		204							{1: '1', 2: '8'}
+347	347		301							"{2: 'Vera', 3: ""Never mind. I've been a thorn in their side for a long time. This time, they've finally found the right approach."", 4: '1', 18: '100009388'}"
+348	348		302							{2: '...Huh?', 3: '349'}
+349	349		204							{1: '1', 2: '4'}
+350	350		301				DialogDisable			"{2: 'Vera', 3: ""Seems you still don't understand anything, little puppet."", 4: '1', 18: '100009389'}"
+351	351		203							{1: '1', 2: '0.25', 4: '-100', 5: '-150'}
+352	352		204							{1: '1', 2: '8'}
+353	353		301			DialogEnable	DialogDisable			{1: '1', 3: 'She holds the hero tightly in her embrace, showing no sign of letting go even as the shadows spread across her entire body.'}
+354	354		203							{1: '1', 2: '0.5', 4: '-150', 5: '-180'}
+355	355		301			DialogEnable				"{1: '1', 3: ""She lowers her head, gently touching her forehead to the hero's brow, as if trying to describe every detail through her skin.""}"
+356	356		301							{1: '1', 2: 'Vera', 3: '...If possible, connect to me again, 【kuroname】.', 4: '1', 18: '100009390'}
+357	357		301				AniZhuanchangBegin			"{1: '1', 2: 'Vera', 3: ""It's been so long since I've shared these centuries of nightmares with anyone..."", 4: '1', 18: '100009391'}"
+358	358		402							{1: '4984'}
+359	359		502							{1: 'DialogDisable'}
+360	360		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab'}
+361	361		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+362	362		202							{1: '1', 6: '1'}
+363	363		401							{1: '2', 2: '2924'}
+364	364		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+365	365		401							{1: '2', 2: '4276'}
+366	366		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab', 2: '2'}
+367	367		301			DialogEnable				"{3: ""A strange, piercing sensation cuts through the system's chaos, directly penetrating the hero's consciousness.""}"
+368	368		301		1		AniZhuanchangBegin			{3: 'Like a familiar ray of light.'}

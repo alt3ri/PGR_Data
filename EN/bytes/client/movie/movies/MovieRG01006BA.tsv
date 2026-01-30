@@ -1,0 +1,797 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory317.png'}
+2	2		401							{1: '1', 2: '249'}
+3	3		401							{1: '2', 2: '9342060'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+5	5		502						300.0	{1: 'RImgBg1Shake'}
+6	6		401							{1: '2', 2: '18511011'}
+7	7		301			DialogEnable	DialogDisable			{3: 'Blades clash with explosive force, sending rolling waves of sound that carve fresh scars into the surrounding buildings.'}
+8	8		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory315.png', 3: '0', 4: '1', 5: '0.45'}
+9	9		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory315.png'}
+10	10		205							{1: '999'}
+11	11		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+12	12		301			DialogEnable				{3: 'A burnt Eagle Banner hangs over the plaza, while shattered marble sculptures stand like silent spectators, witnessing the brutal duel.'}
+13	13		402							{1: '4264'}
+14	14		401							{1: '2', 2: '4339'}
+15	15		201							{1: '1', 2: '501271', 3: '17', 4: '-50', 5: '-50', 6: '-50', 7: '1'}
+16	16		203							{1: '1', 2: '0.2', 3: '0', 4: '0', 5: '0'}
+17	17		301							{1: '1', 2: 'Watanabe', 3: 'Huff... Puff...', 4: '1'}
+18	18		201							{1: '1', 2: '500787', 7: '1'}
+19	19		301							{2: 'Death of Iron', 3: '...', 4: '1'}
+20	20		306							{1: '1'}
+21	21		201							{1: '1', 2: '501271', 3: '17', 7: '1'}
+22	22		301				DialogDisable			{1: '1', 3: 'After countless rounds of fierce combat, Watanabe and his enemy have both reached the limits of their stamina.'}
+23	23		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+24	24		301			DialogEnable				"{3: ""Every breath tears at Watanabe's limbs and bones. Every inch of his skin burns, and his body sways, yet he stands firm—driven by sheer will to win a battle he cannot afford to lose.""}"
+25	25		204							{1: '1', 2: '0'}
+26	26		301				DialogDisable			{3: 'His demonic power has been exhausted, and his firearms have all but dissipated. For him, the Rebellion Woe in his hands is the only weapon that can help him complete his revenge.'}
+27	27		306						200.0	
+28	28		205						250.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.2'}
+29	29		301			DialogEnable	DialogDisable			"{2: 'Watanabe', 3: '(""Death of Iron\'s"" back tentacles have disappeared, too...)', 4: '1'}"
+30	30		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '0'}
+31	31		301			DialogEnable				{3: 'Is his enemy in the same condition as he is?'}
+32	32		204							{1: '1', 2: '17'}
+33	33		301							"{3: ""Watanabe can't be sure, but as his strength fades, he decides to make a move and end the battle as quickly as possible.""}"
+34	34		204							{1: '1', 2: '5'}
+35	35		301							{2: 'Watanabe', 3: '—!', 4: '1'}
+36	36		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+37	37		401							{1: '2', 2: '4339'}
+38	38		203							{1: '1', 2: '0.1', 3: '-80', 4: '-50', 5: '-100'}
+39	39		202							{1: '1'}
+40	40		301				DialogDisable			{3: 'Sharp steel gleams with deadly radiance under the blazing sun as Watanabe grips his Trailblade tight, roaring as he charges forward, ready to stake his last breath on this single strike!'}
+41	41		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+42	42		401							{1: '2', 2: '5669'}
+43	43		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2'}
+44	44		502						300.0	{1: 'RImgBg1Shake'}
+45	45		401							{1: '2', 2: '5669'}
+46	46		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2'}
+47	47		301			DialogEnable				{3: 'Bang—bang—'}
+48	48		301							"{3: ""You pull the trigger, and two blood bullets race alongside the blade's gleam, joining it in an assault like a relentless wave—""}"
+49	49		401							{1: '2', 2: '9342060'}
+50	50		502						300.0	{1: 'RImgBg1Shake'}
+51	51		401							{1: '2', 2: '18511011'}
+52	52		201							{1: '1', 2: '500787', 4: '-1500', 7: '1'}
+53	53		201							{1: '2', 2: '501271', 4: '1500', 7: '1'}
+54	54		301				DialogDisable			{1: '1', 3: 'CLANG!!!'}
+55	55		401							{1: '2', 2: '11106008'}
+56	56		203							{1: '1', 2: '0.2', 3: '-300'}
+57	57		203							{1: '2', 2: '0.2', 3: '300'}
+58	58		502						300.0	{1: 'RImgBg1Shake'}
+59	59		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiChopping03.prefab', 2: '2'}
+60	60		301			DialogEnable				{3: 'A cold gleam flashes as something stops the deadly strike with chilling force.'}
+61	61		301							{2: 'Death of Iron', 3: '...Still reckless, still too impatient to wait for your prey to tire itself out before striking.', 4: '1'}
+62	62		301							"{3: ""Tentacles lash through the air, exhausting their last bit of magic to block Watanabe's blood bullets. Then their glow fades, and they shatter into glimmering golden specks.""}"
+63	63		301							{2: 'Death of Iron', 3: 'Just like—the past!', 4: '1'}
+64	64		401							{1: '2', 2: '4429'}
+65	65		203							{1: '1', 2: '0.2', 3: '-350'}
+66	66		203						200.0	{1: '2', 2: '0.2', 3: '350'}
+67	67		204							{1: '2', 2: '17'}
+68	68		203							{1: '1', 2: '0.2', 3: '-250'}
+69	69		203							{1: '2', 2: '0.2', 3: '450'}
+70	70		301				DialogDisable			"{3: ""Death of Iron suddenly releases his weapon, rushes forward, and turns to ram Watanabe's upper body.""}"
+71	71		306							{1: '1'}
+72	72		205						250.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.2'}
+73	73		203							{1: '2', 2: '0.25', 3: '450', 4: '-50'}
+74	74		301			DialogEnable	DialogDisable			{2: 'Watanabe', 3: '(Block it... Too late!)', 4: '2'}
+75	75		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '0'}
+76	76		306							
+77	77		401							{1: '2', 2: '11106007'}
+78	78		203							{1: '2', 2: '0.25', 3: '450', 4: '0'}
+79	79		203						250.0	{1: '1', 2: '0.2', 3: '-300'}
+80	80		203							{1: '1', 2: '0.2', 3: '-250'}
+81	81		401							{1: '2', 2: '4005'}
+82	82		502						300.0	{1: 'RImgBg1Shake'}
+83	83		301			DialogEnable				"{3: ""Death of Iron firmly grips Watanabe's right hand and twists it with a reverse grip. Crack! The Trailblade instantly slips from Watanabe's grasp and clatters to the ground.""}"
+84	84		301							{2: 'Death of Iron', 3: '—Haargh!!!', 4: '1'}
+85	85		401							{1: '2', 2: '18511011'}
+86	86		203						250.0	{1: '1', 2: '0.2', 3: '-300'}
+87	87		203							{1: '1', 2: '0.1', 3: '-200'}
+88	88		203							{1: '2', 2: '0.25', 3: '500', 4: '0'}
+89	89		502							{1: 'RImgBg1Shake'}
+90	90		301							"{3: ""Death of Iron roars in rage and swings his right fist. The powerful blow howls like a fierce wind, carrying deadly force as it hurtles toward Watanabe's face.""}"
+91	91		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '8'}
+92	92		201							{1: '19', 2: '501271', 3: '17', 5: '-250', 6: '-100'}
+93	93		301							{1: '1', 2: 'Watanabe', 3: '!!', 4: '19'}
+94	94		202							{1: '21', 2: '19', 6: '1'}
+95	95		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '8', 5: '1'}
+96	96		203							{1: '2', 2: '0.3', 3: '550', 4: '0'}
+97	97		301				DialogDisable			{3: 'His exhausted body begins to lag behind his thoughts, and Watanabe can only rely on muscle memory to block the incoming attack.'}
+98	98		202							{1: '1', 2: '2', 6: '1'}
+99	99		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+100	100		401							{1: '2', 2: '555'}
+101	101		502							{1: 'RImgBg1Shake'}
+102	102		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+103	103		301			DialogEnable	DialogDisable			{3: 'BOOM—'}
+104	104		401							{1: '2', 2: '4339'}
+105	105		201							{1: '1', 2: '501271', 3: '17', 4: '-50', 5: '-50', 6: '-50', 7: '1'}
+106	106		203							{1: '1', 2: '0.2', 3: '0', 4: '0', 5: '0'}
+107	107		205						150.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 3: '0', 4: '1', 5: '0.1'}
+108	108		301			DialogEnable				{1: '1', 3: 'The violent impact sends Watanabe sliding across the stone, leaving deep marks. He spits out a mouthful of blood, his arms going limp as he drops to one knee.'}
+109	109		203							{1: '1', 2: '0.2', 3: '-50', 4: '-100'}
+110	110		204							{1: '1', 2: '5'}
+111	111		301			PanelActor1Shake				{2: 'Watanabe', 3: 'Cough—!', 4: '1'}
+112	112		401						300.0	{1: '2', 2: '4779'}
+113	113		402							{1: '4779'}
+114	114		301							"{3: ""Dust from the impact clouds Watanabe's blood-red vision. He can barely make out Death of Iron drawing a sidearm and aiming it at him.""}"
+115	115		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 3: '0', 4: '0', 5: '0'}
+116	116		201							{1: '1', 2: '500787', 7: '1'}
+117	117		301							{1: '1', 2: 'Death of Iron', 3: 'This ends here—', 4: '1'}
+118	118		401							{1: '1', 2: '36'}
+119	119		401							{2: '2975'}
+120	120		104						200.0	{1: '0|0|-150', 2: '0.2'}
+121	121		104							{1: '0|0|0', 2: '0.2'}
+122	122		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+123	123		301			PanelActor1Shake				{2: 'Death of Iron', 3: 'Argh!', 4: '1'}
+124	124		203							{1: '1', 2: '0.25', 4: '-50'}
+125	125		401							{2: '279'}
+126	126		301							"{3: ""Death of Iron's pupils suddenly contract as his body freezes and begins trembling violently.""}"
+127	127		301							{2: 'Death of Iron', 3: 'Get... away... get out of me!', 4: '1'}
+128	128		401							{1: '2', 2: '4005'}
+129	129		205						150.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront79.png', 3: '0', 4: '1', 5: '0.1'}
+130	130		301							"{3: ""Suddenly, a heart-wrenching agony tears through Death of Iron's hazy consciousness, as if steel needles were stabbing into his spine.""}"
+131	131		204							{1: '1', 2: '8'}
+132	132		301							{2: 'Death of Iron', 3: 'Watanabe...!', 4: '1'}
+133	133		203						300.0	{1: '1', 2: '0.25', 4: '-100'}
+134	134		203							{1: '1', 2: '0.4', 4: '0'}
+135	135		301							{3: 'Fragmented thoughts struggle desperately in his corrupted heart to force him to bend down and pick up something from the ground.'}
+136	136		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront79.png', 3: '1', 4: '0', 5: '0'}
+137	137		401							{1: '2', 2: '4834'}
+138	138		201							{1: '1', 2: '501271', 7: '1'}
+139	139		301							{1: '1', 3: 'Thud! Rebellion Woe is hurled violently within the thick smoke, rolling to a stop two meters from Watanabe.'}
+140	140		201							{1: '1', 2: '500787', 7: '1'}
+141	141		301				DialogDisable			"{1: '1', 2: 'Death of Iron', 3: ""Open your eyes! Look around you! Look at what you've done!"", 4: '1'}"
+142	142		202							{1: '1', 6: '1'}
+143	143		306							{1: '1'}
+144	144		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+145	145		401							{1: '2', 2: '4085'}
+146	146		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory317.png', 3: '0', 4: '1', 5: '0.3'}
+147	147		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory317.png'}
+148	148		205							{1: '999'}
+149	149		301			DialogEnable				{3: 'Watanabe finally notices that the sporadic gunfire has nearly ceased, replaced by jubilant cheers echoing throughout the fortress.'}
+150	150		301							"{3: ""He slowly raises his head and sees the Army's Eagle Banners being lowered from building after building. In the distance, rebel soldiers embrace each other, weeping tears of joy.""}"
+151	151		301				AniZhuanchangBegin			{3: 'It turns out that beyond this small battlefield, Gray Raven had already led countless suffering comrades to victory on a far greater stage of war.'}
+152	152		502							{1: 'DialogDisable'}
+153	153		402							{1: '4085'}
+154	154		401						2000.0	{1: '1', 2: '36'}
+155	155		401							{1: '1', 2: '358'}
+156	156		306							
+157	157		101			DialogEnable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory315.png'}
+158	158		201							{1: '1', 2: '501271', 3: '8', 7: '1'}
+159	159		301			AniZhuanchangEnd				"{1: '1', 2: 'Watanabe', 3: ""Now... even if you kill me... You can't change how this war ends..."", 4: '1'}"
+160	160		204							{1: '1', 2: '0'}
+161	161		401							{1: '2', 2: '5673'}
+162	162		301							{3: 'Watanabe tries to reach for his weapon with a trembling arm, but the crisp sound of rotating gears forces him to freeze.'}
+163	163		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+164	164		201							{1: '1', 2: '500787', 7: '1'}
+165	165		301							{1: '1', 3: 'The mad Death of Iron lifts his dark gun barrel again, locking eyes with Watanabe.'}
+166	166		301							{2: 'Death of Iron', 3: 'Your lack of foresight will drag the Army and the entire Scorched Borderland into an irredeemable abyss!', 4: '1'}
+167	167		301							"{2: 'Death of Iron', 3: ""The Angels will slaughter every last human, and this planet's history and everything we've fought for, whether glory or death, will be lost forever!"", 4: '1'}"
+168	168		301							{2: 'Death of Iron', 3: 'I have seen countless futures, and this is the only path that leads to a tomorrow where the Army and humanity still survive!', 4: '1'}
+169	169		201							{1: '1', 2: '501271', 5: '-80', 7: '1'}
+170	170		301							"{1: '1', 2: 'Watanabe', 3: ""Butchers overthrown by their people... A leader who became the Angel's puppet... What right do you have... to speak of the future?"", 4: '1'}"
+171	171		204							{1: '1', 2: '1'}
+172	172		301							{3: 'Watanabe chuckles softly, wipes the blood from his mouth, lifts his face, and stares down the deadly barrel.'}
+173	173		204							{1: '1', 2: '0'}
+174	174		301							"{2: 'Watanabe', 3: ""The Death of Iron of the past died long ago... No matter how you try to spin it... You can't hide the fact that you're nothing more than a monster wrapped in human skin."", 4: '1'}"
+175	175		301							{2: 'Watanabe', 3: 'The Sanctuary has already corrupted this body into... a demon more terrifying than any Demon.', 4: '1'}
+176	176		502							{1: 'RImgBg1Shake'}
+177	177		201							{1: '1', 2: '500787'}
+178	178		301							{1: '1', 2: 'Death of Iron', 3: 'Shut up!', 4: '1'}
+179	179		301							"{3: 'Upon hearing himself associated with the title of Demon, ""Death of Iron"" suddenly lashes out.'}"
+180	180		301							"{2: 'Death of Iron', 3: ""The Iron Army's history is forged in Demon's wails and rivers of blood. In the wars against the Rift of Chaos, countless of our warriors were brutally slain by Demons, dying far from home!"", 4: '1'}"
+181	181		301							"{2: 'Death of Iron', 3: ""Humanity and Demons have always been locked in a blood feud. Even if we fight to the last man, we will never yield to Hell. This is the legacy that runs in our veins and the Iron Army's mission we will never betray."", 4: '1'}"
+182	182		204							{1: '1', 2: '8'}
+183	183		301							{2: 'Death of Iron', 3: 'Gyrfalcon and Crane gave up everything for this cause. How would they feel knowing their child consorts with the Demons? So tragic!', 4: '1'}
+184	184		204							{1: '1', 2: '0'}
+185	185		301							"{3: 'This ""Generalissimo,"" who always seems to have everything under control, now has panic burning in his eyes and an agitated tone.'}"
+186	186		201							{1: '1', 2: '501271', 3: '8', 5: '-80', 7: '1'}
+187	187		301							{1: '1', 2: 'Watanabe', 3: '...', 4: '1'}
+188	188		204							{1: '1', 2: '0'}
+189	189		301							"{2: 'Watanabe', 3: 'On this journey working with the ""Demons,"" I discovered a truth no battlefield could ever teach—one worth living by for a lifetime.', 4: '1'}"
+190	190		204							{1: '1', 2: '17'}
+191	191		203						350.0	{1: '1', 2: '0.3', 3: '-30', 4: '-50'}
+192	192		203							{1: '1', 2: '0.5', 3: '0', 4: '0'}
+193	193		301							{3: 'He grits his teeth against the excruciating pain tearing through his torso and slowly rises to his feet.'}
+194	194		204							{1: '1', 2: '0'}
+195	195		301							{2: 'Watanabe', 3: 'Power is a just bullet. Its worth is never measured by its material or weight, but by the target I choose to aim it at.', 4: '1'}
+196	196		301							"{2: 'Watanabe', 3: ""Throughout my journey, I've seen sinners empowered by the Sanctuary whose evil runs deep, and mortals chosen by Hell who burn themselves to light the way for others."", 4: '1'}"
+197	197		204							{1: '1', 2: '8'}
+198	198		301							"{2: 'Watanabe', 3: ""You're right. I have become a Demon..."", 4: '1'}"
+199	199		204							{1: '1', 2: '0'}
+200	200		301							{2: 'Watanabe', 3: 'But my bullet has chosen the direction that leads to humanity.', 4: '1'}
+201	201		202							{1: '1'}
+202	202		301							{3: 'Amidst songs of victory, the people raise new banners high.'}
+203	203		301							{3: 'Gray banners flutter in the fierce wind, rising in defiance against the heavens that never deign to show mercy to the mortal world.'}
+204	204		201							{1: '1', 2: '501271', 3: '8'}
+205	205		301							{1: '1', 2: 'Watanabe', 3: 'My father once said... those who turn their backs on this land will one day be devoured by it.', 4: '1'}
+206	206		204							{1: '1', 2: '0'}
+207	207		301							{2: 'Watanabe', 3: 'But those willing to fight for its people, no matter how many times they fall, the people will lift them up again.', 4: '1'}
+208	208		301							"{2: 'Watanabe', 3: ""It wasn't until I met that person that I truly understood: the hatred between us had long been tied to the collapse of this world's order."", 4: '1'}"
+209	209		201							{1: '1', 2: '500787'}
+210	210		301							{1: '1', 2: 'Death of Iron', 3: 'Heh...', 4: '1'}
+211	211		301							"{3: '""Death of Iron"" shows nothing but disdain. The color in his eyes is completely devoured by a golden yellow glow.'}"
+212	212		204							{1: '1', 2: '8'}
+213	213		301							{3: 'Then, he takes out a golden pocketwatch from his chest.'}
+214	214		204							{1: '1', 2: '0'}
+215	215		301							{2: 'Death of Iron', 3: 'When the pocket watch stops, pick up your weapon.', 4: '1'}
+216	216		301							{2: 'Death of Iron', 3: 'If you can manage it, shoot me.', 4: '1'}
+217	217		401							{1: '2', 2: '13081710'}
+218	218		301							{3: 'He puts away his sidearm and announces the unfair rules in a cold voice.'}
+219	219		204							{1: '1', 2: '1'}
+220	220		301							{2: 'Death of Iron', 3: '...If you can outrun a bullet.', 4: '1'}
+221	221		202							{1: '1'}
+222	222		402							{1: '358'}
+223	223		401						200.0	{1: '2', 2: '2683'}
+224	224		401							{1: '2', 2: '5668'}
+225	225		301							{3: 'Click, and a pleasant melody begins to play.'}
+226	226		301							{3: 'The music flows like a bubbling spring, drifting slowly across the blazing and torn battlefield.'}
+227	227		201							{1: '1', 2: '501271'}
+228	228		301							{1: '1', 2: 'Watanabe', 3: '...', 4: '1'}
+229	229		301				DialogDisable			{3: 'Watanabe carefully counts every musical note, his gaze moving warily between Death of Iron and the weapon at his feet.'}
+230	230		205						350.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.3'}
+231	231		301			DialogEnable				{3: 'He runs through his next moves again and again, planning for when the music stops and searching for a way to turn the tide.'}
+232	232		301							{3: 'Act before the music stops and catch Death of Iron off guard?'}
+233	233		301							"{2: 'Watanabe', 3: '(...Not a good idea. ""Death of Iron\'s"" reflexes are faster than mine.)', 4: '1'}"
+234	234		204							{1: '1', 2: '8'}
+235	235		301							{3: 'He recalls his first duel with Death of Iron not long ago, but quickly pushes the thought aside.'}
+236	236		204							{1: '1', 2: '0'}
+237	237		301							{3: 'Shout, or maybe kick up some dust to distract him?'}
+238	238		204							{1: '1', 2: '8'}
+239	239		301				DialogDisable			"{2: 'Watanabe', 3: ""(He won't fall for tricks like that... No.)"", 4: '1'}"
+240	240		202							{1: '1'}
+241	241		301			DialogEnable				{3: 'Tick-tock... Tick-tock...'}
+242	242		301							{3: 'The gentle wind moves like death itself, brushing over the graveyard, quietly awaiting the final notes of the music.'}
+243	243		301							"{3: ""All options are gone, and time won't wait for Watanabe to find another solution.""}"
+244	244		301							"{3: ""Now, there's only one path left: fighting with honor, his life on the line.""}"
+245	245		201							{1: '1', 2: '501271'}
+246	246		301							{1: '1', 2: 'Watanabe', 3: '(Rolling over quickly to grab the weapon and pull the trigger... That might be difficult to pull off.)', 4: '1'}
+247	247		301							{2: 'Watanabe', 3: '(But I have to try.)', 4: '1'}
+248	248		301							{3: 'In the final few seconds, Watanabe tenses up every muscle in his body, steeling his resolve to give it everything.'}
+249	249		202							{1: '1'}
+250	250		301							{3: 'Tick-tock... tick-tock...'}
+251	251		301							{3: 'Finally, the melody comes to an end.'}
+252	252		205						150.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '0.1'}
+253	253		201							{1: '1', 2: '501271'}
+254	254		301							{1: '1', 2: 'Watanabe', 3: '(—Now!)', 4: '1'}
+255	255		202							{1: '1'}
+256	256		301							{3: 'However, the music does not stop.'}
+257	257		201							{1: '1', 2: '500787'}
+258	258		301							{1: '1', 2: 'Death of Iron', 3: '—?!', 4: '1'}
+259	259		301							{3: 'The same melody rises behind Watanabe, like flames blooming from ashes, extending the duel.'}
+260	260		302							"{2: ""—Don't move."", 3: '261', 4: 'We meet again, Death of Iron.', 5: '261'}"
+261	261		401						300.0	{1: '2', 2: '4779'}
+262	262		402							{1: '4779'}
+263	263		401							{2: '6201'}
+264	264		301							{3: 'You point your gun at Death of Iron and slowly move beside Watanabe, holding the same golden pocket watch in your hand.'}
+265	265		302							"{2: ""This duel isn't fair. I propose we start over."", 3: '266'}"
+266	266		201							{1: '1', 2: '501271'}
+267	267		301							{1: '1', 2: 'Watanabe', 3: '...Gray Raven?', 4: '1'}
+268	268		204							{1: '1', 2: '2', 6: '1'}
+269	269		301				DialogDisable			{3: 'Watanabe glances at his comrade beside him with surprise in his eyes and a faint trace of delight.'}
+270	270		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+271	271		402							{1: '5668'}
+272	272		401							{1: '2', 2: '4387'}
+273	273		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+274	274		202							{1: '1', 6: '1'}
+275	275		504							{1: '0.7'}
+276	276		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '2'}
+277	277		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory393.jpg'}
+278	278		201							{1: '1', 2: '501270', 7: '1'}
+279	279		301			DialogEnable				"{1: '1', 2: 'Watanabe', 3: ""I'll leave this to you."", 4: '1'}"
+280	280		302							{2: 'Your pocketwatch?', 3: '281'}
+281	281		301							"{2: 'Watanabe', 3: ""Before I enter the prison, they'll search me for sure. I don't want this to fall into enemy hands."", 4: '1'}"
+282	282		302							"{2: ""Wouldn't it be safer to leave it in town?"", 3: '283'}"
+283	283		202							{1: '1'}
+284	284		301							{3: 'He slowly lifts his head, his gaze sweeping over the land strewn with slaughter, looking toward the distant sky.'}
+285	285		201							{1: '1', 2: '501270', 3: '2'}
+286	286		301							{1: '1', 2: 'Watanabe', 3: '...I have always believed that the souls of the valiant have never left this land they loved so dearly.', 4: '1'}
+287	287		301							"{2: 'Watanabe', 3: ""They will become the jagged cliffs, the wind, and everything they held dear... Generation after generation, they will watch over humanity's descendants, and drift onward with history."", 4: '1'}"
+288	288		204							{1: '1', 2: '0'}
+289	289		301							"{2: 'Watanabe', 3: ""That is why I want my father to be right here beside me and to witness the Iron Army's rebirth with his own eyes."", 4: '1'}"
+290	290		301							"{2: 'Watanabe', 3: ""Besides, is there any place safer than Gray Raven's side in the Scorched Borderland?"", 4: '1'}"
+291	291		302							{2: 'I see.', 3: '292', 4: '...Stop flattering me.', 5: '292'}
+292	292		204							{1: '1', 2: '1'}
+293	293		301							{3: 'He turns his face to the side and smiles gently.'}
+294	294		204							{1: '1', 2: '2'}
+295	295		301							"{2: 'Watanabe', 3: ""I'll be counting on you."", 4: '1'}"
+296	296		204							{1: '1', 2: '0'}
+297	297		301				DialogDisable			{2: 'Watanabe', 3: 'Please be sure to... keep it safe.', 4: '1'}
+298	298		401							{1: '2', 2: '4388'}
+299	299		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+300	300		202							{1: '1', 6: '1'}
+301	301		504							{1: '0'}
+302	302		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab'}
+303	303		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory315.png'}
+304	304		104							{1: '0|0|-50', 2: '0', 4: '1'}
+305	305		302							{2: 'I brought it here... to the place closest to you.', 3: '306'}
+306	306		201							{1: '1', 2: '501271'}
+307	307		401							{1: '2', 2: '4779'}
+308	308		301			DialogEnable				{1: '1', 3: 'You say as you hand Watanabe a belt containing another sidearm.'}
+309	309		302							"{2: ""This isn't a war you should fight alone."", 3: '310', 4: 'Sorry. I should have finished him off back there.', 5: '315', 6: ""Sorry, I'm late."", 7: '317'}"
+310	310		204							{1: '1', 2: '2'}
+311	311		301							"{2: 'Watanabe', 3: ""Well, I never thought... that you'd be the one watching my back."", 4: '1'}"
+312	312	319	301				DialogDisable			"{3: 'He is talking about the ""agreement"" he had made with you earlier.'}"
+313	313		204							{1: '1', 2: '0'}
+314	314	319	301			DialogEnable				{2: 'Watanabe', 3: 'Perfect. I will settle this grudge myself.', 4: '1'}
+315	315		204							{1: '1', 2: '1'}
+316	316		301							{3: 'A slight smile crosses his face as he shakes his head.'}
+317	317		204							{1: '1', 2: '2'}
+318	318		301							{2: 'Watanabe', 3: 'No, perfect timing.', 4: '1'}
+319	319		302							"{2: 'I\'ll leave the rest to you, ""War.""', 3: '320', 4: ""Good luck, and don't lose."", 5: '321'}"
+320	320	324	301			DialogEnable	DialogDisable			{2: 'Watanabe', 3: 'Roger that.', 4: '1'}
+321	321		301			DialogEnable				{3: 'He nods slightly and responds with a cold laugh.'}
+322	322		204							{1: '1', 2: '0'}
+323	323		301				DialogDisable			"{2: 'Watanabe', 3: ""I'm not planning to end this war here."", 4: '1'}"
+324	324		202							{1: '1', 6: '1'}
+325	325		104						550.0	{1: '0|0|0', 2: '0.5'}
+326	326		401						300.0	{1: '2', 2: '4779'}
+327	327		402							{1: '4779'}
+328	328		301			DialogEnable				{3: 'You nod, keeping your gun trained on Death of Iron while slowly backing away, giving the battlefield back to the two.'}
+329	329		301							{3: 'The crystal melody chimes, and all grievances, old and new, surge forth across the scorching, desolate battlefield.'}
+330	330		201							{1: '1', 2: '500787'}
+331	331		301							"{1: '1', 2: 'Death of Iron', 3: ""I see... So it was Gray Raven who turned you into a Demon's slave."", 4: '1'}"
+332	332		204							{1: '1', 2: '1'}
+333	333		301							{2: 'Death of Iron', 3: 'Even Commandant has... Tch. This race truly is beyond salvation.', 4: '1'}
+334	334		201							{1: '1', 2: '501271', 3: '5'}
+335	335		301							"{1: '1', 2: 'Watanabe', 3: ""Cut the chatter and focus on what's in front of you!"", 4: '1'}"
+336	336		201							{1: '1', 2: '500787'}
+337	337		301							{1: '1', 2: 'Death of Iron', 3: '...', 4: '1'}
+338	338		202							{1: '1', 6: '1'}
+339	339		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '8'}
+340	340		202							{1: '1', 6: '1'}
+341	341		201							{1: '21', 2: '501271', 4: '0', 5: '-250', 6: '-100'}
+342	342		203							{1: '21', 2: '0.45', 3: '400', 4: '-250', 5: '-100'}
+343	343		201							{1: '19', 2: '500787', 4: '0', 5: '-250', 6: '-100', 8: '1'}
+344	344		203							{1: '19', 2: '0.45', 3: '-500', 4: '-250', 5: '-100'}
+345	345		301							"{1: '1', 3: ""Amid the crystal-clear melody, Watanabe holds his gaze on Death of Iron, his right hand gripping Gray Raven's holster tightly."", 5: '19', 6: '21'}"
+346	346		301							{3: 'Death of Iron tilts his head back, sneering with confident certainty at the life-or-death judgment about to unfold.', 5: '19', 6: '21'}
+347	347		301							{3: 'Angel and Demon grapple in their primitive, savage form, silently awaiting the chime of the death knell.', 5: '19', 6: '21'}
+348	348		301							{3: 'Amid the swirling sand, Watanabe suddenly recalls a scorching afternoon from long ago.', 5: '19', 6: '21'}
+349	349		301				DialogDisable			{3: 'He remembers the stifling air, his sweat-soaked shirt, and an argument... left unresolved.', 5: '19', 6: '21'}
+350	350		202							{1: '21', 2: '19', 6: '1'}
+351	351		101					200.0		{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '8', 5: '1'}
+352	352		301			DialogEnable	AniZhuanchangBegin			{3: 'Then, the bell tolls.'}
+353	353		401							{1: '1', 2: '36'}
+354	354		502						250.0	{1: 'DialogDisable'}
+355	355		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+356	356		401							{1: '2', 2: '5669'}
+357	357		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2'}
+358	358		401							{1: '2', 2: '5669'}
+359	359		501				AniZhuanchangBegin		4500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2'}
+360	360		504							{1: '0.7'}
+361	361		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory566.jpg'}
+362	362		401							{2: '229'}
+363	363		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+364	364		201							{1: '1', 2: '500800'}
+365	365		301			DialogEnable				"{1: '1', 2: 'Gyrfalcon', 3: ""...The fanatics' main force has retreated. The remaining enemies are all hiding up in the watchtower ahead."", 4: '1'}"
+366	366		201							{1: '1', 2: '500787', 7: '1'}
+367	367		301							"{1: '1', 2: 'Death of Iron', 3: ""The Halo Bullets cannot fall into enemy hands. Don't give them time to regroup! Bring the artillery battalion and attack immediately!"", 4: '1'}"
+368	368		201							{1: '1', 2: '500063', 7: '1'}
+369	369		301							{1: '1', 2: 'Watanabe', 3: 'No! There are still civilians inside!', 4: '1'}
+370	370		301							{2: 'Watanabe', 3: 'Leave it to me! Let me go negotiate with them!', 4: '1'}
+371	371		201							{1: '1', 2: '500787', 7: '1'}
+372	372		301							{1: '1', 2: 'Death of Iron', 3: 'Negotiate? The moment you step out of these trenches, those lunatics will turn you into Swiss cheese!', 4: '1'}
+373	373		301							"{2: 'Death of Iron', 3: ""Look at the bloody corpses scattered at your feet! How many of your comrades have they killed? How many of their brothers have you killed? This isn't academy training—this is a battlefield where it's kill or be killed!"", 4: '1'}"
+374	374		201							{1: '1', 2: '500063', 7: '1'}
+375	375		301							{1: '1', 2: 'Watanabe', 3: '...Military Discipline, Article Three: The Iron Army was founded by farmers and exists to protect the people of the Scorched Borderland above all else.', 4: '1'}
+376	376		301							{2: 'Watanabe', 3: 'My gun will only point at enemies of humanity.', 4: '1'}
+377	377		301							{2: 'Watanabe', 3: 'On behalf of the Army General Staff, I refuse to execute the combat orders issued by Deputy Generalissimo Death of Iron.', 4: '1'}
+378	378		201							{1: '1', 2: '500787', 7: '1'}
+379	379		301							{1: '1', 2: 'Death of Iron', 3: 'You fool... I never should have let you graduate early!', 4: '1'}
+380	380		201							{1: '1', 2: '500063', 7: '1'}
+381	381		301							{2: 'Watanabe', 3: 'Generalissimo Gyrfalcon, please issue the combat orders!', 4: '1'}
+382	382		201							{1: '1', 2: '500787', 7: '1'}
+383	383		301							"{2: 'Death of Iron', 3: ""We can't wait any longer, Gyrfalcon! The Halo Bullets are still in enemy hands!"", 4: '1'}"
+384	384		201							{1: '1', 2: '500800', 3: '10'}
+385	385		301							{1: '1', 2: 'Gyrfalcon', 3: '...', 4: '1'}
+386	386		204							{1: '1', 2: '0'}
+387	387		301							{2: 'Gyrfalcon', 3: 'I command—', 4: '1'}
+388	388		202							{1: '1', 6: '1'}
+389	389		401							{1: '2', 2: '5280'}
+390	390		502						250.0	{1: 'RImgBg1Shake'}
+391	391		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+392	392		301							{3: 'Suddenly, with a loud bang, the tower gate bursts open when someone kicks it from the inside.'}
+393	393		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+394	394		301							{2: '???', 3: 'Hey! You outside!!'}
+395	395		306							{1: '1'}
+396	396		301							{3: 'She is carrying a wounded soldier over her shoulder and dragging an unconscious fanatic by the arm. Panting heavily, she shouts toward the other end of the battlefield.'}
+397	397		301							{2: 'Crane', 3: 'Many wounded civilians are still inside! Come and give us a hand!!!'}
+398	398		306						200.0	
+399	399		201							{1: '1', 2: '500063'}
+400	400		301							{1: '1', 2: 'Watanabe', 3: '...Mother?', 4: '1'}
+401	401		201							{1: '1', 2: '500787', 7: '1'}
+402	402		301							{1: '1', 2: 'Death of Iron', 3: '...Who authorized the assault team to act?', 4: '1'}
+403	403		202							{1: '1'}
+404	404		301							{2: 'Crane', 3: 'Watanabe! Ballard! I could hear you two arguing from way over here!'}
+405	405		301							"{2: 'Crane', 3: ""How many times do I have to tell you? Opportunities won't come from arguing! When will you ever learn?""}"
+406	406		301				DialogDisable			{2: 'Crane', 3: 'Are you all done yapping? Now get over here and start working!!'}
+407	407		504						200.0	{1: '0.8'}
+408	408		504						200.0	{1: '0.9'}
+409	409		504						200.0	{1: '1'}
+410	410		301			DialogEnable	AniZhuanchangBegin			{3: 'The years have worn away life and color, until even truths once held with unwavering conviction have become blurred and uncertain.'}
+411	411		401						2000.0	{1: '1', 2: '36'}
+412	412		401							{1: '1', 2: '360'}
+413	413		502						200.0	{1: 'DialogDisable'}
+414	414		202							{1: '1', 2: '2', 6: '1'}
+415	415		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+416	416		109							{1: '10', 2: '<color=#ffffffff><size=50>Years later, when they stand by each other once more and look back to pick up their shattered selves—</size></color>', 4: '100', 9: '3', 11: '1'}
+417	417		301							{3: 'Years later, when they stand by each other once more and look back to pick up their shattered selves—'}
+418	418		109							{1: '10', 2: '<color=#ffffffff><size=50>The debate over courage and life announces its victor within two chimes of the bell.</size></color>', 4: '100', 9: '3', 11: '1'}
+419	419		301							{3: 'The debate over courage and life announces its victor within two chimes of the bell.'}
+420	420		110				AniZhuanchangBegin		1000.0	{1: '10'}
+421	421		504							{1: '0'}
+422	422		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+423	423		401							{1: '2', 2: '5669'}
+424	424		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2'}
+425	425		401							{1: '2', 2: '5669'}
+426	426		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2'}
+427	427		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory315.png'}
+428	428		201							{1: '1', 2: '501271', 3: '17'}
+429	429		301			DialogEnable				{1: '1', 2: 'Watanabe', 3: 'Cough—!', 4: '1'}
+430	430		401							{1: '2', 2: '9389039'}
+431	431		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiChopping03.prefab', 2: '1'}
+432	432		301			PanelActor1Shake				{3: 'A bullet whistles out, striking Watanabe in his right arm as he draws his weapon.'}
+433	433		401						300.0	{1: '2', 2: '2593'}
+434	434		402							{1: '2593'}
+435	435		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '1', 5: '0'}
+436	436		104							{1: '0|-500|800', 2: '0', 4: '7'}
+437	437		401							{1: '2', 2: '13081710'}
+438	438		203						300.0	{1: '1', 2: '0.25', 4: '-50'}
+439	439		203							{1: '1', 2: '0.4', 4: '-100'}
+440	440		301							{3: 'Blood sprays through the air as Watanabe spits out a mouthful, his body swaying before he drops to one knee, his weapon falling at his feet.'}
+441	441		301							{2: 'Watanabe', 3: 'Huff...', 4: '1'}
+442	442		202							{1: '1', 6: '1'}
+443	443		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '0', 5: '0'}
+444	444		301							{3: 'However, Death of Iron does not pull the trigger.'}
+445	445		401							{1: '2', 2: '4795'}
+446	446		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+447	447		502							{1: 'RImgBg1Shake'}
+448	448		301			DialogEnable	DialogDisable			{3: 'Because just moments ago, a blood bullet struck like lightning, blasting straight through his chest.'}
+449	449		401						300.0	{1: '2', 2: '2593'}
+450	450		402							{1: '2593'}
+451	451		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '1', 5: '0'}
+452	452		104							{1: '0|-500|800', 2: '0', 4: '5'}
+453	453		201							{1: '1', 2: '500787', 7: '1'}
+454	454		301			DialogEnable	DialogDisable			{1: '1', 2: 'Death of Iron', 3: 'W... what?', 4: '1'}
+455	455		203						300.0	{1: '1', 2: '0.25', 3: '0', 4: '-80'}
+456	456		301			DialogEnable				{3: 'Death of Iron sinks heavily to his knees, his weapon clattering to the ground as he reaches out in disbelief to touch the bloody wound torn through his chest.'}
+457	457		301			PanelActor1Shake				{1: '1', 2: 'Death of Iron', 3: 'Guh—!', 4: '1'}
+458	458		301							{3: 'He coughs up blood, lifting his head in shock to look toward the source of the shot.'}
+459	459		202							{1: '1'}
+460	460		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '0', 5: '0'}
+461	461		104							{1: '0|0|0', 2: '0', 4: '5'}
+462	462		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+463	463		301							"{3: ""A gentle breeze stirs up dust and smoke. At the edge of Death of Iron's vision, Watanabe is breathing heavily as he slowly lowers his steel left arm.""}"
+464	464		301							{3: 'Waves of scorching heat radiate from the refined steel of his demonic prosthetic like flames fired from a mortar—blazing hot to the touch.'}
+465	465		201							{1: '1', 2: '501271'}
+466	466		301							{1: '1', 2: 'Watanabe', 3: 'The wound you left on me...', 4: '1'}
+467	467		301							{2: 'Watanabe', 3: 'Is my most powerful weapon.', 4: '1'}
+468	468		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '1', 5: '0'}
+469	469		104							{1: '0|-500|800', 2: '0', 4: '7'}
+470	470		201							{1: '1', 2: '500787'}
+471	471		301							{1: '1', 2: 'Death of Iron', 3: '...Heh.', 4: '1'}
+472	472		301				DialogDisable			{2: 'Death of Iron', 3: 'Nice... shot... Cough, cough cough!!!', 4: '1'}
+473	473		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+474	474		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+475	475		204							{1: '1', 2: '8'}
+476	476		301			DialogEnable				"{3: ""Blood gushes out like water from a broken dam, blurring Death of Iron's vision and choking the words in his throat.""}"
+477	477		301							{3: 'He can no longer hear his own fading murmurs. He can only slowly lift his head to gaze up at the sky that once brought him Revelation.'}
+478	478		301							{3: 'Now, the double-headed eagle that once gazed upon heaven and earth has fallen, leaving only the rebel banners fluttering proudly in the wind.'}
+479	479		204							{1: '1', 2: '0'}
+480	480		301							{3: 'Suddenly, he seems to see something and struggles to reach out his arm. A gurgling sound rises from his blood-filled throat.'}
+481	481		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+482	482		301							{2: 'Death of Iron', 3: '—!', 4: '1'}
+483	483		401							{1: '2', 2: '4005'}
+484	484		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+485	485		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+486	486		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDust.prefab', 2: '1'}
+487	487		301							"{3: ""A streak of golden light shines from within Death of Iron's body, glowing through his skin as it twists and writhes beneath the surface, boiling and swelling until it threatens to tear his spine apart.""}"
+488	488		301							{3: 'At this moment, Death of Iron has completely recovered his own consciousness—the one belonging to Ballard. He lifts his head and shouts with all of his strength—'}
+489	489		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+490	490		204							{1: '1', 2: '0'}
+491	491		201							{1: '2', 2: '501271', 3: '5', 4: '1500'}
+492	492		301				DialogDisable			{2: 'Death of Iron', 3: 'Watanabe—execute immediately—!!', 4: '1'}
+493	493		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDust.prefab'}
+494	494		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+495	495		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '0', 5: '0'}
+496	496		202							{1: '1', 6: '1'}
+497	497		401						200.0	{1: '2', 2: '5512'}
+498	498		402							{1: '5512'}
+499	499		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab', 2: '2'}
+500	500		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab'}
+501	501		502							{1: 'RImgBg1Shake'}
+502	502		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+503	503		201							{1: '1', 2: '500787', 4: '-400', 7: '1'}
+504	504		203							{1: '2', 2: '0.25', 3: '0'}
+505	505		401							{1: '2', 2: '5321'}
+506	506		502					300.0		{1: 'PanelActor1Shake'}
+507	507		203							{1: '2', 2: '0.25', 3: '200'}
+508	508		301			DialogEnable				"{1: '1', 3: ""A sudden gust of wind surges forth, and before he can finish speaking, the Trailblade has already pierced Death of Iron's throat, striking the white-light parasite inside his body.""}"
+509	509		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+510	510		301							{1: '1', 2: 'Watanabe', 3: '...I heard you, Ballard.', 4: '2'}
+511	511		301							{2: 'Watanabe', 3: 'I will... inherit everything from the Three Ashfire Heroes.', 4: '2'}
+512	512		204							{1: '1', 2: '8'}
+513	513		301							{2: 'Death of Iron', 3: '...', 4: '1'}
+514	514		204							{1: '1', 2: '1'}
+515	515		301				DialogDisable			"{3: ""Death of Iron forces out a cold smile, his arms falling limp as his pupils gradually lose focus, silently gazing into his disciple's eyes.""}"
+516	516		202							{1: '1', 2: '2'}
+517	517		307							{1: 'Good... job.', 3: '55'}
+518	518		301							{3: 'Good... job.'}
+519	519		307							{2: '1'}
+520	520		306							{1: '1'}
+521	521		301			DialogEnable				"{3: ""Death of Iron's fingers slowly uncurl, revealing a bullet shimmering with blue specks of blue light, resting quietly in the center of his palm.""}"
+522	522		306						200.0	
+523	523		201							{1: '18', 2: '500787', 3: '8', 4: '-400', 5: '-100', 6: '450', 7: '1'}
+524	524		301				AniZhuanchangBegin			{1: '1', 2: 'Death of Iron', 3: 'Halo... Bullet...', 4: '18'}
+525	525		202							{1: '18', 6: '1'}
+526	526		502							{1: 'DialogDisable'}
+527	527		401						3000.0	{1: '1', 2: '36'}
+528	528		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+529	529		401							{1: '1', 2: '376'}
+530	530		301			DialogEnable				"{3: ""That was Death of Iron's last words, and also the final lesson he left for Watanabe.""}"
+531	531		301							"{3: ""The Angel's wings have snapped.""}"
+532	532		301							{3: 'For he was but dust, and to dust he must return.'}
+533	533		201							{1: '1', 2: '501271'}
+534	534		301				DialogDisable			{1: '1', 3: 'Watanabe grips onto the final relic left behind by his forebears. With the burden finally gone, he lifts his face in relief, eyes fixed on a sky reborn in waves of searing flame.'}
+535	535		202							{1: '1'}
+536	536		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory318.png', 3: '0', 4: '1', 5: '0.5'}
+537	537		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory318.png'}
+538	538		205							{1: '999'}
+539	539		401							{1: '2', 2: '5672'}
+540	540		301			DialogEnable				{3: 'At the horizon, ravens shriek as they sweep across the battlefield where death and rebirth entwine.'}
+541	541		301				AniZhuanchangBegin			{3: 'They fly into the desolation between Sanctuary and Hell.', 9: '1'}
+542	542		502						2500.0	{1: 'DialogDisable'}
+543	543		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory968.png'}
+544	544		401				AniZhuanchangEnd			{1: '2', 2: '5307'}
+545	545		304							{1: '<i>Watanabe, I have also given your questions much thought.<i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png'}
+546	546		304							{1: '<i>No matter how great a person or their deeds, none can escape death or achieve true eternity.<i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png'}
+547	547		304							{1: '<i>When the river of history rises past our ankles, the footprints we leave behind will eventually be washed away, dissolving into the vast, endless past.<i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png'}
+548	548		304							{1: '<i>However, when you open a history book, you will discover with awe that humanity has long mastered the miracle of conquering time.<i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png'}
+549	549		304							{1: '<i>The brave heroes who tamed barren lands, the martyrs who overthrew tyrants... The vast records of history, like the dome of heaven itself, have long been marked with their names.<i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png'}
+550	550		304							{1: '<i>They are never forgotten by the world because of their choices and courage, and for this reason, they live forever in our hearts.<i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png'}
+551	551		304							{1: '<i>Therefore, Watanabe, do not fear responsibility or the dangers that lie ahead.<i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png'}
+552	552		304							{1: '<i>When you take that step forward, the brilliant and glorious history will lift you up and help you move forward without fear.<i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png'}
+553	553		304							{1: '<i>The Iron Army may fall to death, but it must never be defeated by time.<i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png'}
+554	554		304							{1: '<i>Go, Watanabe.<i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png'}
+555	555		304				AniZhuanchangBegin			"{1: ""<i>When choosing your path forward, don't forget to look back.<i>"", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 9: '1'}"
+556	556		401						4000.0	{1: '1', 2: '36'}
+557	557		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+558	558		501				AniZhuanchangEnd			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteGlow.prefab', 2: '2'}
+559	559		107							{1: 'Scorched Borderland', 2: 'One month later'}
+560	560		301							{3: 'Scorched Borderland, one month later'}
+561	561		108						200.0	{1: '1'}
+562	562		401							{1: '1', 2: '6201'}
+563	563		301			DialogEnable				{3: 'Amid the endless yellow sands, ethereal music drifts through the air.'}
+564	564		301							{3: 'The west wind howls as a lone crimson figure slowly emerges from the veil of sand.'}
+565	565		201							{1: '1', 2: '501270'}
+566	566		301							{1: '1', 2: 'Watanabe', 3: '...', 4: '1'}
+567	567		301							{3: 'He sits in the saddle, holding a harmonica to his lips with both hands, like a solitary musician in a storm, letting all his carefree spirit and restraint drift away across the barren land.'}
+568	568		202							{1: '1', 6: '1'}
+569	569		301							{3: 'Another figure on horseback quietly emerges from behind him.'}
+570	570		302							"{2: ""How's your recovery?"", 3: '571'}"
+571	571		201							{1: '1', 2: '501270', 3: '1'}
+572	572		301							"{1: '1', 2: 'Watanabe', 3: ""It's going well, thanks to you."", 4: '1'}"
+573	573		401							{1: '2', 2: '13081710'}
+574	574		301							{3: 'He briefly stops playing, turns to face you, and waves his bandaged right arm in the air with a spirited smile.'}
+575	575		202							{1: '1', 6: '1'}
+576	576		201							{1: '2', 2: '500696'}
+577	577		301							{1: '1', 2: 'Taco', 3: 'I never thought... we could actually win... We even recovered the Halo Cannon...', 4: '2'}
+578	578		204							{1: '2', 2: '2'}
+579	579		301							{2: 'Taco', 3: 'This totally feels like a dream!', 4: '2'}
+580	580		203							{1: '2', 2: '0.25', 3: '-450'}
+581	581		201							{1: '3', 2: '500694', 4: '450'}
+582	582		301							{1: '1', 2: 'Half-blind Soldier', 3: 'Death of Iron... We have to avenge him for what the Sanctuary did to him.', 4: '3'}
+583	583		301							"{2: 'Half-blind Soldier', 3: ""Those bastards in the sky dare to defile Death of Iron's honor and faith... I will never let them get away with this!"", 4: '3'}"
+584	584		301							{2: 'Taco', 3: 'Yeah, let the Sanctuary go to hell! This time, we have the invincible Mister Watanabe and Gray Raven on our side!', 4: '2'}
+585	585		202							{1: '2', 2: '3'}
+586	586		505						200.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteGlow.prefab'}
+587	587		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+588	588		301							{3: 'The smoke and dust gradually clear, revealing more and more figures gathering behind the two of them.'}
+589	589		201							{1: '1', 2: '500284'}
+590	590		301							{1: '1', 2: 'Calm Veteran', 3: 'Generalissimo Watanabe, rebel forces from all over are rallying to our cause. We did run into logistical issues you were worried about recently, but...', 4: '1'}
+591	591		301							{2: 'Calm Veteran', 3: 'Thanks to volunteer efforts from across the land, our soldiers now have stable food and water supplies.', 4: '1'}
+592	592		301							{2: 'Calm Veteran', 3: 'Generalissimo, I must say that in my nearly thirty years of military service...', 4: '1'}
+593	593		301							{2: 'Calm Veteran', 3: 'I have never seen such a... massive army.', 4: '1'}
+594	594		202							{1: '1'}
+595	595		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+596	596		301							{3: 'The sands around them have now completely cleared. Watanabe and 【kuroname】 hold their reins and look back at the path they have traveled together—'}
+597	597		301							{3: 'An army of unprecedented size in human history slowly appears before their eyes.'}
+598	598		301							{3: 'Warhorses neigh and weapons stand at the ready. Under the blazing sun, the moving columns flow like rushing tributaries across the winding, cracked earth, converging on the horizon into a surging torrent.'}
+599	599		201							{1: '1', 2: '501270'}
+600	600		301							{1: '1', 2: 'Watanabe', 3: 'Gray Raven.', 4: '1'}
+601	601		204							{1: '1', 2: '2'}
+602	602		301							{2: 'Watanabe', 3: 'The speech we prepared together last night—do you want to deliver it, or should I?', 4: '1'}
+603	603		301							{3: 'Watanabe puts away his harmonica and looks at you.'}
+604	604		302							"{2: ""You're the Army Generalissimo."", 3: '605', 4: ""I don't want to deal with such a big scene."", 5: '605'}"
+605	605		204							{1: '1', 2: '1'}
+606	606		301							{3: 'He nods with a smile and is about to ride forward when he suddenly turns back and extends his right fist toward you.'}
+607	607		204							{1: '1', 2: '2'}
+608	608		301				DialogDisable			{2: 'Watanabe', 3: 'Well, how about a little encouragement?', 4: '1'}
+609	609		302							"{2: '(Extend your right fist)', 3: '610', 4: ""You've got this."", 5: '610'}"
+610	610		202							{1: '1'}
+611	611		401							{1: '2', 2: '5670'}
+612	612		301			DialogEnable	DialogDisable			{3: 'Watanabe responds with a smile, then spurs his horse and charges forward.'}
+613	613		205						1100.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory393.jpg', 3: '0', 4: '1', 5: '0.9'}
+614	614		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory393.jpg'}
+615	615		205							{1: '999'}
+616	616		201							{1: '1', 2: '501270'}
+617	617		301			DialogEnable				{1: '1', 2: 'Watanabe', 3: 'Comrades, I am Watanabe, fourth Generalissimo of the Iron Army!', 4: '1'}
+618	618		301							{2: 'Watanabe', 3: 'Not long ago, I had the honor of fighting tough battles alongside you, my comrades, as we conquered the Halo Fortress together and reclaimed the god-slaying Halo Cannon.', 4: '1'}
+619	619		301							{2: 'Watanabe', 3: 'In that life-and-death battle, many warriors, including myself, witnessed with our own eyes that Death of Iron had sprouted Angelic wings of light from his back, and had the power to control minds!', 4: '1'}
+620	620		301							"{2: 'Watanabe', 3: ""I have no doubt that everything Death of Iron did was caused by the Angel's manipulation, and that he was merely a Sanctuary agent, suffering under the Supreme Heaven's cruel punishment."", 4: '1'}"
+621	621		401						800.0	{1: '2', 2: '4328'}
+622	622		402							{1: '4328'}
+623	623		301							{3: 'At these words, the troops before him erupt in an uproar.'}
+624	624		301							{2: 'Watanabe', 3: 'For thirty years, the Sanctuary has brought disaster, unleashed ruthless Angels, killed our children, burned our lands, and filled the Scorched Borderland with suffocating fear.', 4: '1'}
+625	625		301							"{2: 'Watanabe', 3: ""And now, still unsatisfied with their oppressive rule from the heavens, they've sparked a civil war among us, hoping we'll turn on each other and fight until the last of us drowns in a pool of our comrades' blood."", 4: '1'}"
+626	626		301							{3: 'The newly appointed Generalissimo speaks with controlled tone, gazing down with authority at the scarred world before him.'}
+627	627		301							"{2: 'Watanabe', 3: ""But we've already shown them that even in humanity's darkest hour, we won't give in to fear or cowardice—we'll stand united and strike back on the path to redemption!"", 4: '1'}"
+628	628		301							{3: 'He turns to the side and points toward the distant horizon behind him.'}
+629	629		301							{2: 'Watanabe', 3: 'The road ahead will be filled with hardship and trials, and we are destined to keep fighting. Soon, more bloodthirsty monsters will descend from the skies, and more comrades will fall before our eyes.', 4: '1'}
+630	630		301							{2: 'Watanabe', 3: 'Will you feel fear? Of course you will! But never turn your back on that fear, for it is the proof of our humanity, the very line that separates us from the Sanctuary and Hell itself.', 4: '1'}
+631	631		301							{2: 'Watanabe', 3: 'When I saw my parents fall and Angels open their bloody jaws at me, I, too, felt fear rise in my heart—just as you do.', 4: '1'}
+632	632		301							"{2: 'Watanabe', 3: ""But! I've always believed!"", 4: '1'}"
+633	633		301							{3: 'Suddenly, Watanabe raises his fist high.'}
+634	634		301							"{2: 'Watanabe', 3: ""True courage isn't about suppressing the fear in your heart! It's about staring down a path paved with despair—and still choosing to step forward with your head held high, ready to fight with everything you've got!"", 4: '1'}"
+635	635		301							{2: 'Watanabe', 3: 'My battle does not end here! The Sanctuary has yet to pay for what they did to my beloved parents and mentor, and the legacy of the Three Ashfire Heroes must live on!', 4: '1'}
+636	636		301							{2: 'Watanabe', 3: 'We will continue to fight! Because if no one steps up, despair will spread and destroy everything we hold dear!', 4: '1'}
+637	637		301							{2: 'Watanabe', 3: 'Perhaps one day, I will die—perhaps one day, we all will.', 4: '1'}
+638	638		301							{2: 'Watanabe', 3: 'But no matter what, there will always be comrades ready to raise our banner and walk the path forged by countless brothers-in-arms who gave their lives. They will carry our fight forward!', 4: '1'}
+639	639		301							"{2: 'Watanabe', 3: ""Because! I've always believed—!"", 4: '1'}"
+640	640		301							"{2: 'Watanabe', 3: ""It's precisely because we have something beautiful and precious to protect that humanity's history can endure and thrive for generations to come!"", 4: '1'}"
+641	641		202							{1: '1'}
+642	642		301							{3: 'The passionate declaration echoes across the land as the crowd raises their fists in unison, bursting forth with deafening roars.'}
+643	643		201							{1: '1', 2: '501270'}
+644	644		301							{1: '1', 2: 'Watanabe', 3: 'Now, in the name of the Iron Army Generalissimo and on behalf of all humanity in the Scorched Borderland—', 4: '1'}
+645	645		502							{1: 'RImgBg1Shake'}
+646	646		301							{2: 'Watanabe', 3: 'I declare war on the imperious Sanctuary, on the Supreme Heaven that turns a blind eye to human suffering!!', 4: '1'}
+647	647		202							{1: '1', 6: '1'}
+648	648		502							{1: 'RImgBg1Shake'}
+649	649		301							"{2: 'Everyone', 3: '""Yeah!""\\n""Our fight isn\'t over!""'}"
+650	650		301							"{2: 'Everyone', 3: '""War! War!""\\n""Kill all the Angels!!""\\n""Avenge my mother! Avenge my daughter!!!""'}"
+651	651		201							{1: '1', 2: '501270'}
+652	652		301							"{1: '1', 2: 'Watanabe', 3: ""War's iron hooves will keep moving forward, crushing all who threaten humanity and clearing every inch of corrupted land beneath us!"", 4: '1'}"
+653	653		401							{1: '2', 2: '819043'}
+654	654		301							{3: 'Watanabe draws his weapon and points the blade at the burning land in the distance.'}
+655	655		301							{2: 'Watanabe', 3: 'This war will rage on for all eternity—', 4: '1'}
+656	656		301				DialogDisable			{2: 'Watanabe', 3: 'Until the Sanctuary is razed to the ground!', 4: '1'}
+657	657		202							{1: '1', 6: '1'}
+658	658		307					300.0		"{1: '""War!""', 3: '50'}"
+659	659		301							"{3: '""War!""'}"
+660	660		307							{2: '1'}
+661	661		201							{1: '1', 2: '501270', 7: '1'}
+662	662		301			DialogEnable	DialogDisable			{1: '1', 2: 'Watanabe', 3: 'Until the Angels bleed dry!', 4: '1'}
+663	663		202							{1: '1', 6: '1'}
+664	664		307							"{1: '""War!""', 3: '55'}"
+665	665		301							"{3: '""War!""'}"
+666	666		307							{2: '1'}
+667	667		502							{1: 'RImgBg1Shake'}
+668	668		201							{1: '1', 2: '501270', 7: '1'}
+669	669		301			DialogEnable	DialogDisable			{1: '1', 2: 'Watanabe', 3: 'Until darkness blankets this land once more!!!', 4: '1'}
+670	670		401							{1: '2', 2: '5671'}
+671	671		202							{1: '1', 6: '1'}
+672	672		307							"{1: '""WAR! WAR! WAR!""', 3: '60', 4: 'ff4e4eff'}"
+673	673		301							"{3: '""WAR! WAR! WAR!""'}"
+674	674		307						500.0	{2: '1'}
+675	675		402							{1: '5671'}
+676	676		109							{1: '13', 2: '<size=60><i>For those who need <color=#ff4e4eff>war</color>, war is <color=#ff4e4eff>virtue</color>.</i></size>', 4: '200', 9: '3', 11: '1'}
+677	677		301							{3: 'For those who need war, war is virtue.'}
+678	678		109							{1: '14', 2: '<size=60><i>For those who have lost all <color=#ff4e4eff>hope</color>, <color=#ff4e4eff>war</color> is just.</i></size>', 4: '100', 9: '3', 11: '1'}
+679	679		301							{3: 'For those who have lost all hope, war is just.'}
+680	680		110						500.0	
+681	681		201							{1: '1', 2: '501270'}
+682	682		301			DialogEnable				{1: '1', 2: 'Watanabe', 3: 'Everyone, follow the flag!', 4: '1'}
+683	683		301				AniZhuanchangBegin			{2: 'Watanabe', 3: 'Advance!!!', 4: '1'}
+684	684		502							{1: 'DialogDisable'}
+685	685		202							{1: '1', 6: '1'}
+686	686		401						6000.0	{1: '1', 2: '36'}
+687	687		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory732.jpg'}
+688	688		401							{1: '1', 2: '209'}
+689	689		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 2: '1'}
+690	690		201							{1: '2', 2: '500787'}
+691	691		301			DialogEnable				{1: '1', 2: 'Death of Iron', 3: 'Shin, what is your answer?', 4: '2'}
+692	692		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab'}
+693	693		201							{1: '2', 2: '500800', 3: '10'}
+694	694		301							{1: '1', 3: 'Gyrfalcon remains silent, his brow furrowed, his eyes cold as steel.'}
+695	695		204							{1: '2', 2: '4'}
+696	696		301							"{2: 'Gyrfalcon', 3: ""You... you're not Ballard."", 4: '2'}"
+697	697		301							{2: 'Gyrfalcon', 3: 'I can feel it. Your body is now just a shell for another soul... or rather, you have become a puppet of some Angel.', 4: '2'}
+698	698		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 2: '1'}
+699	699		201							{1: '2', 2: '500787'}
+700	700		301							{1: '1', 2: 'Death of Iron', 3: '...', 4: '2'}
+701	701		301							{3: 'Death of Iron stares at him with cold indifference, his lips moving slightly.'}
+702	702		301							"{2: 'Death of Iron', 3: '""I"" am willing to give you this chance only because of ""his"" last remaining trace of reason.', 4: '2'}"
+703	703		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab'}
+704	704		401							{1: '2', 2: '4548'}
+705	705		201							{1: '2', 2: '500800', 3: '5'}
+706	706		402							{1: '4548'}
+707	707		301							"{1: '1', 3: ""Gyrfalcon's fingertips are almost tearing through the leather of his holster.""}"
+708	708		301							"{2: 'Gyrfalcon', 3: 'I am the third Generalissimo of the Iron Army, ""Gyrfalcon.""', 4: '2'}"
+709	709		301				AniZhuanchangBegin			"{2: 'Gyrfalcon', 3: ""I will not make deals with the Sanctuary's puppets!"", 4: '2'}"
+710	710		202							{1: '2', 6: '1'}
+711	711		502							{1: 'DialogDisable'}
+712	712		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+713	713		402							{1: '209'}
+714	714		401						100.0	{2: '5669'}
+715	715		401							{2: '5669'}
+716	716		101						80.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+717	717		101						100.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+718	718		101						80.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+719	719		101						100.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+720	720		301			DialogEnable	DialogDisable			{3: 'Both pull their triggers at the same time, and deadly fire erupts.'}
+721	721		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_03_07.png', 4: '4'}
+722	722		401							{2: '10028604'}
+723	723		104							{1: '600|0|0', 2: '0', 4: '4'}
+724	724		104						1000.0	{1: '-1200|0|-300', 2: '0.8', 4: '4'}
+725	725		301			DialogEnable	AniZhuanchangBegin			{3: 'However, only one bullet finds its mark.'}
+726	726		502							{1: 'DialogDisable'}
+727	727		101							{4: '4', 5: '1'}
+728	728		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '1'}
+729	729		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory732.jpg', 3: '0', 4: '1', 5: '0.5'}
+730	730		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory732.jpg'}
+731	731		205							{1: '999'}
+732	732		401							{1: '1', 2: '209'}
+733	733		201							{1: '1', 2: '500808'}
+734	734		301			DialogEnable				{1: '1', 2: 'Gyrfalcon', 3: '...', 4: '1'}
+735	735		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 2: '1'}
+736	736		201							{1: '1', 2: '500787'}
+737	737		301			PanelActor1Shake	DialogDisable			{1: '1', 2: 'Death of Iron', 3: 'Cough...!', 4: '1'}
+738	738		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab'}
+739	739		201							{1: '1', 2: '500800'}
+740	740		301			DialogEnable				"{1: '1', 3: ""Another bullet grazes Gyrfalcon's cheek, leaving behind a shallow streak of blood.""}"
+741	741		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 2: '1'}
+742	742		201							{1: '1', 2: '500787'}
+743	743		301							{1: '1', 2: 'Death of Iron', 3: 'Shin... are you avoiding my vitals?', 4: '1'}
+744	744		401						300.0	{1: '2', 2: '2593'}
+745	745		402							{1: '2593'}
+746	746		104							{1: '0|0|0', 2: '0', 4: '4'}
+747	747		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab'}
+748	748		301			PanelActor1Shake				{3: 'Death of Iron coughs up a mouthful of blood, the golden light in his eyes fading as the radiant wings on his back suddenly retract.'}
+749	749		201							{1: '1', 2: '500800', 3: '4'}
+750	750		301							"{1: '1', 2: 'Gyrfalcon', 3: ""I believe there's still a chance to turn this around."", 4: '1'}"
+751	751		401						300.0	{1: '2', 2: '4779'}
+752	752		402							{1: '4779'}
+753	753		301							{3: 'As he speaks, he lowers his gun.'}
+754	754		301							"{2: 'Gyrfalcon', 3: ""Have you calmed down? Ballard, tell me everything you've been through."", 4: '1'}"
+755	755		202							{1: '1'}
+756	756		201							{1: '18', 2: '500787', 4: '-400', 5: '-100', 6: '450', 7: '1'}
+757	757		301							{1: '1', 2: 'Death of Iron', 3: 'I—', 4: '18'}
+758	758		202				DialogDisable		200.0	{1: '18', 6: '1'}
+759	759		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+760	760		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+761	761		306							{1: '1'}
+762	762		301			DialogEnable				{3: 'Death of Iron starts to speak, but suddenly freezes as something enters his field of vision.'}
+763	763		306							
+764	764		201							{1: '1', 2: '500787'}
+765	765		301							{1: '1', 2: 'Death of Iron', 3: 'Watanabe?!', 4: '1'}
+766	766		201							{1: '1', 2: '500800', 3: '4', 7: '1'}
+767	767		301							{1: '1', 2: 'Gyrfalcon', 3: '—?!', 4: '1'}
+768	768		301				DialogDisable			{3: 'Gyrfalcon whips around, and as a gentle breeze stirs through the tent, Watanabe, who had been standing behind him, suddenly collapses to the ground.'}
+769	769		401						100.0	{1: '1', 2: '36'}
+770	770		401							{2: '4223'}
+771	771		501						350.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+772	772		502							{1: 'PanelActor1Shake'}
+773	773		301			DialogEnable	DialogDisable			{3: 'While Gyrfalcon freezes in shock, a silent blade flashes through the air.'}
+774	774		401							{2: '2593'}
+775	775		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '1', 5: '0'}
+776	776		104							{1: '0|-500|800', 2: '0', 4: '7'}
+777	777		502							{1: 'RImgBg1Shake'}
+778	778		203							{1: '1', 2: '0.25', 4: '-80', 7: '1'}
+779	779		301			DialogEnable				{1: '1', 3: 'The blade pierces straight through his chest.'}
+780	780		401							{1: '1', 2: '55'}
+781	781		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '0', 5: '0'}
+782	782		201							{1: '1', 2: '500787', 7: '1'}
+783	783		301			PanelActor1Shake	DialogDisable			{1: '1', 2: 'Death of Iron', 3: 'Shin!!', 4: '1'}
+784	784		202							{1: '1', 6: '1'}
+785	785		301			DialogEnable				{3: 'Blood gushes forth as a deadly, sinister presence fills the tent.'}
+786	786		201							{1: '18', 2: '500800'}
+787	787		301							{1: '1', 2: 'Gyrfalcon', 3: 'Who... are you?', 4: '18'}
+788	788		202							{1: '18', 6: '1'}
+789	789		502							{1: 'RImgBg1BlowUp'}
+790	790		301							{2: '???', 3: '...'}
+791	791		301							{2: '???', 3: 'Lord Ballard.'}
+792	792		301				AniZhuanchangBegin			{2: '???', 3: 'Care to make a deal?'}
+793	793		502							{1: 'DialogDisable'}
+794	794		401						2000.0	{1: '1', 2: '36'}
+795	795		102							{1: 'The Godfall Revelation', 2: 'To Be Continued', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+796	796		502		1		AniZhuanchangBegin		9000.0	{1: 'ThemeEnable'}

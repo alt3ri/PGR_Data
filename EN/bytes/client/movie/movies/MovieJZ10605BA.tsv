@@ -1,0 +1,42 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		301			DialogEnable				{2: 'Koya', 3: 'Ah... Hah...'}
+4	4		201							{1: '1', 2: '500027'}
+5	5		301							{1: '1', 2: 'Koya', 3: 'No... The operating speed of the action module continues to slow down!', 4: '1'}
+6	6		203							{1: '1', 2: '0.25', 3: '-450'}
+7	7		201							{1: '2', 2: '500006', 4: '450'}
+8	8		301							{1: '1', 2: 'Teammate A', 3: 'Koya— Aaargh!', 4: '2'}
+9	9		301							{2: 'Koya', 3: 'Hang on! The reinforcements are arriving!', 4: '1'}
+10	10		301							{2: 'Teammate A', 3: 'Ah!!', 4: '2'}
+11	11		201							{1: '2', 2: '500013', 4: '450'}
+12	100		401							{1: '2', 2: '1508'}
+13	12		301							{1: '1', 2: 'Corrupted', 3: 'Urgh—', 4: '2'}
+14	13		301							{2: 'Koya', 3: 'Darn it...', 4: '1'}
+15	14		301							{2: 'Koya', 3: 'You...', 4: '1'}
+16	15		301							{2: 'Koya', 3: 'You monsters!!', 4: '1'}
+17	101		401							{1: '2', 2: '1508'}
+18	16		301							{2: 'Corrupted', 3: 'Uuuurgh— !', 4: '2'}
+19	17		202							{1: '1', 2: '2', 6: '1'}
+20	18		301				AniZhuanchangBegin			{2: 'Kamui', 3: 'Koya! Look out!!'}
+21	20		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz905.jpg'}
+22	21		301			AniZhuanchangEnd				{2: 'Koya', 3: '!?'}
+23	102		401							{1: '2', 2: '1508'}
+24	22		301			RImgBg1Shake				{2: 'Corrupted', 3: 'Uuuurgh— !!'}
+25	23		301							{2: 'Kamui', 3: 'You, get away from my friend!'}
+26	103		401							{1: '2', 2: '1508'}
+27	24		301			RImgBg1Shake				{2: 'Corrupted', 3: 'Uuuurgh—'}
+28	25		301							"{2: 'Kamui', 3: ""I won't let you hurt him!""}"
+29	26		301							{2: 'Kamui', 3: 'Get out!'}
+30	27		301							{2: 'Kamui', 3: 'Of my sight!!'}
+31	28		301				AniZhuanchangBegin			{3: '...'}
+32	30		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+33	31		201							{1: '1', 2: '1081001', 4: '450'}
+34	32		201							{1: '2', 2: '500027', 4: '-450'}
+35	33		301			AniZhuanchangEnd				{1: '1', 2: 'Kamui', 3: 'Sorry, there are too many Corrupted on the road.', 4: '1'}
+36	34		301							{2: 'Kamui', 3: 'You...', 4: '1'}
+37	35		301							{2: 'Koya', 3: 'More than half of our men had their Inver-Device destroyed and ended up as food for the Corrupted...', 4: '2'}
+38	36		301							{2: 'Koya', 3: 'We... failed...', 4: '2'}
+39	37		301							"{2: 'Kamui', 3: ""Don't say that! We need to keep on living!"", 4: '1'}"
+40	38		301							{2: 'Kamui', 3: 'For them!', 4: '1'}
+41	39		301		1		AniZhuanchangBegin			"{2: 'Kamui', 3: ""Just wait, I will bring you back... I will... We're going home together... And we will welcome our new life together... We promised."", 4: '1'}"

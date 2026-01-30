@@ -1,0 +1,192 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory715.jpg'}
+2	2		401							{1: '1', 2: '5'}
+3	3		301			DialogEnable				{3: 'Changing out the culture solution... adjusting the temperature... recording growth...'}
+4	4		301							{3: 'You tick off items on your morning to-do list one by one.'}
+5	5		302							"{2: ""And I'm done."", 3: '6'}"
+6	6		401							{1: '2', 2: '2871'}
+7	7		301							{3: 'You put away your terminal and start toward the door, which opens before you reach it.'}
+8	8		201							{1: '1', 2: '500059'}
+9	9		301							{1: '1', 2: 'Greenhouse Manager', 3: 'Phew, there you are, Gray Raven Commandant.', 4: '1'}
+10	10		301							{3: 'The greenhouse manager hurries in looking like she just ran, her forehead covered in sweat.'}
+11	11		301							"{2: 'Greenhouse Manager', 3: ""I hope I didn't interrupt you."", 4: '1'}"
+12	12		301							"{2: 'Greenhouse Manager', 3: ""Oh, the flowers aren't out yet? It is harder to get them to flower on a growth medium. Looks like we might have to adjust the conditions a bit... Haha... ha..."", 4: '1'}"
+13	13		301							{3: 'She glances at you and then at a pot of white flower bud as if trying to ease her anxiety.'}
+14	14		301							"{3: ""It's been a few days since you started working with this particular researcher, but the way she acts makes it seem as though you've just met. She used to be in Babylonia and rarely interacted with the Task Force.""}"
+15	15		302							{2: 'I already did that.', 3: '16'}
+16	16		301							"{2: 'Greenhouse Manager', 3: ""Oh... that's great... Hahaha..."", 4: '1'}"
+17	17		301							"{2: 'Greenhouse Manager', 3: ""Oh... actually, um... I wanted to... There's, um... another task I wanted to ask you to..."", 4: '1'}"
+18	18		301							{3: 'She stutters in a hesitant voice, as if trying to decide if she should ask.'}
+19	19		301							"{2: 'Greenhouse Manager', 3: ""...Never mind, actually. I can't just ask you for help all the time, can I..."", 4: '1'}"
+20	20		301							{2: 'Greenhouse Manager', 3: 'I will be away for a few days. You can go to the other managers if you need anything.', 4: '1'}
+21	21		301				AniZhuanchangBegin			{3: 'After hesitating for the last time, she gives up with a hopeless face.'}
+22	22		502							{1: 'DialogDisable'}
+23	23		504							{1: '0.7'}
+24	24		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+25	25		201							{1: '1', 2: '500001', 7: '1'}
+26	26		302			AniZhuanchangEnd				{2: 'A greenhouse on the surface?', 3: '27'}
+27	27		301			DialogEnable				"{2: 'Celica', 3: ""Yep, you've heard of the building plans for the Clean Zone?"", 4: '1'}"
+28	28		301							"{2: 'Celica', 3: ""This is part of it. It is an important strategic plan, so don't underestimate it."", 4: '1'}"
+29	29		302							"{2: ""Don't they have professionals to handle this?"", 3: '30'}"
+30	30		204							{1: '1', 2: '2'}
+31	31		301							"{2: 'Celica', 3: ""We've been short of hands for a while now... So before automation is installed, they'll need helpers."", 4: '1'}"
+32	32		301							"{3: 'Says Celica with a ""you-caught-my-drift-there"" look.'}"
+33	33		204							{1: '1'}
+34	34		301							"{2: 'Celica', 3: ""The manager has never been to Earth or had any contact with the Task Force, plus... she's somewhat timid with strangers."", 4: '1'}"
+35	35		301							"{2: 'Celica', 3: ""So we wanted to send someone who's more easy-going."", 4: '1'}"
+36	36		302							{2: 'Is this really a good idea?', 3: '37'}
+37	37		301				AniZhuanchangBegin			{2: 'Celica', 3: 'Just think of it as alleviating her stress. Please?', 4: '1'}
+38	38		202							{1: '1', 6: '1'}
+39	39		502							{1: 'DialogDisable'}
+40	40		504							{1: '0'}
+41	41		201							{1: '1', 2: '500059', 7: '1'}
+42	42		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory715.jpg'}
+43	43		302			AniZhuanchangEnd				{2: 'Wait.', 3: '44'}
+44	44		301			DialogEnable				{3: 'Remembering what Celica said before you left, you call out to the manager.'}
+45	45		301							{2: 'Greenhouse Manager', 3: 'Huh...?', 4: '1'}
+46	46		302							{2: 'I was instructed to help you complete the greenhouse setup.', 3: '47'}
+47	47		302							"{2: ""So if you have any other requests, please don't hesitate to ask."", 3: '48'}"
+48	48		301							"{2: 'Greenhouse Manager', 3: ""...Sorry... I've always imagined the Task Force to be cold-blooded, emotionless fighters... I thought you weren't happy with the tasks we've asked you to do..."", 4: '1'}"
+49	49		301							{3: 'The manager becomes emotional all of a sudden and starts stuttering.'}
+50	50		301				DialogDisable			"{2: 'Greenhouse Manager', 3: ""I can't believe you're willing to help me. I'm so thankful."", 4: '1'}"
+51	51		302							"{2: ""I really wouldn't mind if you dropped all the pleasantry, you know..."", 3: '52'}"
+52	52		302							{2: 'But where did you get that impression?', 3: '53'}
+53	53		301			DialogEnable	AniZhuanchangBegin			"{2: 'Greenhouse Manager', 3: ""That's what everyone says... But anyways, I'll fill you in on the details on our way there."", 4: '1'}"
+54	54		502							{1: 'DialogDisable'}
+55	55		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory700.jpg'}
+56	56		302			AniZhuanchangEnd				"{2: ""You mean we've got more helpers?"", 3: '57'}"
+57	57		301			DialogEnable				{3: 'You walk with the manager through the facilities still under construction toward the office.'}
+58	58		301							{2: 'Greenhouse Manager', 3: 'Yes. The current staff is barely enough to maintain the greenhouse.', 4: '1'}
+59	59		301							{2: 'Greenhouse Manager', 3: 'We have nobody to do fieldwork like soil sampling, plant sample collection, and ecosystem study.', 4: '1'}
+60	60		301							{2: 'Greenhouse Manager', 3: 'I wanted to have a few extra hands to handle the fieldwork, so I applied for temporary assistants to keep the greenhouse running.', 4: '1'}
+61	61		301							{2: 'Greenhouse Manager', 3: 'Once the greenhouse automation is up and running, we can start processing samples ASAP.', 4: '1'}
+62	62		301							{2: 'Greenhouse Manager', 3: 'I submitted the application... It was approved... And backup has arrived... but...', 4: '1'}
+63	63		401							{1: '1', 2: '36'}
+64	64		301							"{3: ""The manager stops mid-sentence as if she's about to say something scary.""}"
+65	65		401							{1: '1', 2: '205'}
+66	66		301							{2: 'Greenhouse Manager', 3: 'They sent us Cerberus, that bloodthirsty beast with murderous tendencies.', 4: '1'}
+67	67		302							{2: '?', 3: '68'}
+68	68		301							{3: 'The Cerberus has always been known for their extreme ways, but this is definitely an overstatement.'}
+69	69		301							{3: 'Before you could explain anything, the manager goes on in an agitated tone.'}
+70	70		301				DialogDisable			"{2: 'Greenhouse Manager', 3: ""I heard they'd put a knife to your throat at the slightest disagreement."", 4: '1'}"
+71	71		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+72	72		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+73	73		201						1000.0	{1: '1', 2: '500168', 3: '13', 7: '1'}
+74	74		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory700.jpg'}
+75	75		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+76	76		201							{1: '1', 2: '500059'}
+77	77		302							{2: '...', 3: '78'}
+78	78		302							{2: '(Nod)', 3: '79'}
+79	79		301			DialogEnable	DialogDisable			{2: 'Greenhouse Manager', 3: 'And put an excess amount of explosives but leave no time for you to get out of range?', 4: '1'}
+80	80		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+81	81		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+82	82		201						1000.0	{1: '1', 2: '500336', 7: '1'}
+83	83		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory700.jpg'}
+84	84		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+85	85		201							{1: '1', 2: '500059'}
+86	86		302							{2: '(Nod)', 3: '87'}
+87	87		301			DialogEnable	DialogDisable			{2: 'Greenhouse Manager', 3: 'And that ghastly white monster raised to kill with a smile like death?', 4: '1'}
+88	88		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+89	89		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+90	90		201						1000.0	{1: '1', 2: '500650', 3: '2', 7: '1'}
+91	91		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+92	92		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory700.jpg'}
+93	93		201							{1: '1', 2: '500059'}
+94	94		302							{2: 'Um... about that...', 3: '95'}
+95	95		301			DialogEnable				"{3: ""It hits you that her descriptions aren't too far from the truth.""}"
+96	96		301							{2: 'Greenhouse Manager', 3: 'Just how in the world can anyone work with people like that?! I plan on teaching at the Center of Public Education when I retire!', 4: '1'}
+97	97		301							"{2: 'Greenhouse Manager', 3: ""So I wanted to ask you to help me out, since you're in the Task Force, too, but I didn't want to put all the burden on you."", 4: '1'}"
+98	98		301							{2: 'Greenhouse Manager', 3: 'I heard that even the Task Force is scared of them. Is that true?', 4: '1'}
+99	99		301							{3: 'She freezes at the office door with sweat dripping down her forehead.'}
+100	100		301							"{2: 'Greenhouse Manager', 3: ""You can still refuse... but once I open this door, there's no going back... Now, on the count of three..."", 4: '1'}"
+101	101		302							{2: 'Actually...', 3: '102'}
+102	102		301							{2: 'Greenhouse Manager', 3: 'Three...', 4: '1'}
+103	103		401							{1: '2', 2: '2511'}
+104	104		301			RImgBg1Shake				{3: 'Just when you are about to tell her that you know the members of Cerberus, the door is crashed open from the inside.'}
+105	105		203						150.0	{1: '1', 2: '0.15', 3: '-250'}
+106	106		301							{2: 'Greenhouse Manager', 3: 'Ah! Help! Help!', 4: '1'}
+107	107		502						300.0	{1: 'PanelActor1Shake'}
+108	108		505							{1: 'PanelActor1Shake'}
+109	109		203							{1: '1', 2: '0.25', 3: '-250', 4: '-200'}
+110	110		202							{1: '1'}
+111	111		401							{1: '2', 2: '3077'}
+112	112		301							{3: 'The manager takes a step back to avoid being rammed into by the metal door, but trips and falls backward.'}
+113	113		201							{1: '1', 2: '500059', 4: '-250', 5: '-100'}
+114	114		201							{1: '2', 2: '500676', 4: '250'}
+115	115		201							{1: '3', 2: '500650', 4: '250', 7: '1'}
+116	116		205							{1: '3', 3: '0', 4: '0', 5: '0'}
+117	117		203							{1: '1', 2: '0.25', 3: '-250'}
+118	118		301							{1: '1', 3: 'A short, slim figure moves past you quickly behind the manager to support her.'}
+119	119		301							{2: 'Greenhouse Manager', 3: 'Thank you...', 4: '1'}
+120	120		301							{3: 'Having been supported from behind, the manager calms down and holds her hand to her chest.'}
+121	121		202							{1: '2'}
+122	122		205							{1: '3', 3: '0', 4: '1', 5: '0.3'}
+123	123		301					300.0		{3: 'She turns her head to see a ghastly white face with her prosthetic eye showing an image of shattered snowflakes.'}
+124	124		204							{1: '3', 2: '4'}
+125	125		301							{2: 'No. 21', 3: 'Manager, asking for help.', 4: '3'}
+126	126		204							{1: '3', 2: '5'}
+127	127		301							"{2: 'No. 21', 3: ""Are there enemies that I didn't detect?"", 4: '3'}"
+128	128		301							{3: 'No. 21 scans your surroundings with a menacing look for the non-existent enemies.'}
+129	129		301							{3: 'The manager stares at the sharp fangs a few inches from her own throat before looking at you with tears in her eyes.'}
+130	130		301			PanelActor1Shake				{1: '1', 2: 'Greenhouse Manager', 3: 'H-help...', 4: '1'}
+131	131		204							{1: '3', 2: '4'}
+132	132		301							{2: 'No. 21', 3: '?', 4: '3'}
+133	133		203							{1: '1', 2: '0.1', 3: '-400'}
+134	134		401							{1: '2', 2: '9332011'}
+135	135		202							{1: '1'}
+136	136		301							{3: 'Standing up from No. 21 with your support, the manager immediately hides behind you.'}
+137	137		302							"{2: ""No. 21, there are no enemies here. She's just a little scared because of you."", 3: '138'}"
+138	138		204							{1: '3', 2: '8'}
+139	139		203							{1: '3', 2: '0.25'}
+140	140		301							{2: 'No. 21', 3: 'Hmm...', 4: '3'}
+141	141		301							{3: 'After hearing your words, No. 21 confirms the safety of the surroundings in her own way.'}
+142	142		401							{1: '1', 2: '208'}
+143	143		204							{1: '3'}
+144	144		301							{2: 'No. 21', 3: 'All clear.', 4: '3'}
+145	145		301							{3: 'No. 21 turns to look behind your back at the manager, who immediately hides away upon noticing her gaze.'}
+146	146		301							{2: 'No. 21', 3: 'I am sorry.', 4: '3'}
+147	147		301							"{2: 'No. 21', 3: ""I detected a familiar scent but didn't notice there were other people."", 4: '3'}"
+148	148		301							{2: 'No. 21', 3: 'I will be more careful next time.', 4: '3'}
+149	149		202							{1: '3', 6: '1'}
+150	150		201							{1: '1', 2: '500059'}
+151	151		301							{1: '1', 2: 'Greenhouse Manager', 3: 'Please pay no attention to me. Just ignore me like I am an insignificant shrub!', 4: '1'}
+152	152		301							"{3: 'Looks like this manager who is ""somewhat timid with strangers"" got a good scare from the close interaction with No. 21 just now.'}"
+153	153		201							{1: '1', 2: '500650'}
+154	154		301							{1: '1', 2: 'No. 21', 3: 'Okay, I got it, shrub.', 4: '1'}
+155	155		201							{1: '1', 2: '500059'}
+156	156		301							"{1: '1', 2: 'Shrub', 3: ""I didn't mean to ask you to call me that, though..."", 4: '1'}"
+157	157		301							{3: 'The manager quietly murmurs her complaint behind you.'}
+158	158		302							{2: 'So the backup you were talking about is No. 21?', 3: '159'}
+159	159		201							{1: '1', 2: '500650'}
+160	160		301							"{1: '1', 2: 'No. 21', 3: ""Captain said I should find work to do, so I'm here."", 4: '1'}"
+161	161		201							{1: '1', 2: '500059'}
+162	162		301							{1: '1', 2: 'Greenhouse Manager', 3: 'Huh... wait... You two know each other? Why was I even worried about you?', 4: '1'}
+163	163		301							"{3: ""She sounds as if she's been betrayed.""}"
+164	164		302							"{2: ""Yeah, we're close."", 3: '165', 4: ""We're not that close."", 5: '171'}"
+165	165		201							{1: '1', 2: '500650'}
+166	166		301							"{1: '1', 2: 'No. 21', 3: ""Yeah, we're close."", 4: '1'}"
+167	167		301							{3: 'You and No. 21 reply the same thing at almost exactly the same time, prompting you to turn to look at No. 21.'}
+168	168		301							{3: 'Her white outfit has been replaced by a black one, her upright ears and long tail are also signs that she is now a different No. 21 than before.'}
+169	169		301							{3: 'Completely different from how she used to be, the No. 21 standing before you now has found her unique colors.'}
+170	170		302							"{2: ""She's way different from before."", 3: '178'}"
+171	171		201							{1: '1', 2: '500650'}
+172	172		301							"{2: 'No. 21', 3: ""Yeah, we're close."", 4: '1'}"
+173	173		204							{1: '1', 2: '5'}
+174	174		301				DialogDisable			{3: 'You and No. 21 reply at almost exactly the same time. Hearing your answer, No. 21 reveals her fangs.'}
+175	175		302							{2: 'Hey, look at you in your new frame...', 3: '176'}
+176	176		302							"{2: ""And we haven't seen each other since the last few missions."", 3: '177'}"
+177	177		301			DialogEnable				{3: 'Panicked, you try to explain.'}
+178	178		204							{1: '1'}
+179	179		301							"{2: 'No. 21', 3: ""You smell the same, 【kuroname】. I'll never forget how you smell."", 4: '1'}"
+180	180		301							"{2: 'No. 21', 3: ""I became stronger, but you haven't grown one bit, 【kuroname】."", 4: '1'}"
+181	181		301							"{3: ""You seem to feel a little pride from No. 21's words.""}"
+182	182		301							{2: 'No. 21', 3: 'I know you well, so you also need to know me well, 【kuroname】.', 4: '1'}
+183	183		301							{2: 'No. 21', 3: 'Mission. We finish together.', 4: '1'}
+184	184		301							{3: 'Under the hot sun, the little pup sends out her invitation.'}
+185	185		301							"{3: ""It isn't until now that you realize the biggest change in No. 21.""}"
+186	186		301							{3: 'She is much more active.'}
+187	187		302							"{2: ""Sure, let's do it together."", 3: '188'}"
+188	188		201							{1: '1', 2: '500059'}
+189	189		301							{1: '1', 2: 'Greenhouse Manager', 3: 'Excuse me...', 4: '1'}
+190	190		301							"{3: ""The manager's quiet voice sounds from behind.""}"
+191	191		301		1		AniZhuanchangBegin			"{2: 'Greenhouse Manager', 3: ""Shouldn't we go over the details of the mission first?"", 4: '1'}"

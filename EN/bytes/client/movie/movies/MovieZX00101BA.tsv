@@ -1,0 +1,140 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	2001		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory965.png'}
+2	2002		401							{1: '1', 2: '203'}
+3	2003		201							{1: '1', 2: '1021001'}
+4	2004		301			DialogEnable				"{1: '1', 2: 'Lucia', 3: ""Next, we'll be reliving those missions in the sim, Commandant."", 4: '1'}"
+5	2005		301							"{2: 'Lucia', 3: 'The target for this sim battle is a spray-type infected unit called ""Graffiti Artist.""', 4: '1'}"
+6	2006		301							"{2: 'Lucia', 3: ""Even if we've beaten them before, we can't afford to let our guard down."", 4: '1'}"
+7	2007		301							"{2: 'Lucia', 3: ""Commandant, is there anything else you'd like to go over before we begin?"", 4: '1'}"
+8	2008		302							"{2: 'Why revisit the old battle logs?', 3: '2009', 4: 'What kind of enemy is this ""Graffiti Artist""?', 5: '2011', 6: 'Understood. No further questions.', 7: '2013'}"
+9	2009		301							"{2: 'Lucia', 3: ""Simulation Review builds a holographic battlefield using the combat data we've collected."", 4: '1'}"
+10	2010	2007	301							"{2: 'Lucia', 3: ""The holographic space can recreate mission scenarios down to the smallest detail. It's a great way to sharpen combat skills."", 4: '1'}"
+11	2011		301							"{2: 'Lucia', 3: ""The briefing says he's a machine infected by the Punishing Virus."", 4: '1'}"
+12	2012	2007	301							"{2: 'Lucia', 3: ""Hunting down Corrupted on the surface is one of Gray Raven's key missions."", 4: '1'}"
+13	2013		301							{2: 'Lucia', 3: 'Alright, time to head out.', 4: '1'}
+14	2014		202							{1: '1'}
+15	2015		401							{1: '2', 2: '4872'}
+16	2016		301							{3: 'Lucia steps to your side and opens the combat room door first.'}
+17	2017		201							{1: '1', 2: '1021001', 3: '1'}
+18	2018		301				AniZhuanchangBegin			"{1: '1', 2: 'Lucia', 3: ""Let's team up again today, Commandant."", 4: '1'}"
+19	2019		202							{1: '1', 6: '1'}
+20	2020		401						2000.0	{1: '1', 2: '36'}
+21	456		102							{1: 'Graffiti Art', 2: 'Chapter 1', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+22	457		502						5000.0	{1: 'ThemeEnable'}
+23	1		101						4000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory49.jpg'}
+24	2		401							{1: '1', 2: '201'}
+25	3		201							{1: '1', 2: '1031001'}
+26	4		301			AniZhuanchangEnd				{1: '1', 2: 'Liv', 3: 'Lucia?', 4: '1'}
+27	5		203							{1: '1', 2: '0.25', 3: '-400'}
+28	6		201							{1: '2', 2: '1021001', 3: '9', 4: '400'}
+29	7		301							"{1: '1', 2: 'Lucia', 3: ""L-Liv...? I'm... fine..."", 4: '2'}"
+30	8		301							"{2: 'Liv', 3: ""How can it be all right?! You're hurt all over, and now you can't feel because you cut off your pain receptors."", 4: '1'}"
+31	9		301							"{2: 'Liv', 3: ""Stay put! I'll try to temporarily reinforce your damaged parts..."", 4: '1'}"
+32	10		202							{1: '1', 6: '1'}
+33	11		201							{1: '3', 2: '1011001', 4: '-400'}
+34	12		301							{1: '1', 2: 'Lucia', 3: '……', 4: '2'}
+35	13		204							{1: '3', 2: '10'}
+36	14		204							{1: '1', 2: '12'}
+37	15		301							"{2: 'Lee', 3: ""I'm sorry, Lucia."", 4: '3'}"
+38	16		301							"{2: 'Lee', 3: ""I wasn't of much help that last fight."", 4: '3'}"
+39	17		204							{1: '3'}
+40	18		301							"{2: 'Lucia', 3: ""Her... speed... her precision... It's a miracle I survived that long..."", 4: '2'}"
+41	19		301							{2: 'Lucia', 3: 'It was pure guesswork that I managed to deflect those few blows...', 4: '2'}
+42	20		301							{2: 'Lee', 3: 'I see... From what I can surmise from that battle, her blade strategy set shares great similarities to yours.', 4: '3'}
+43	21		204							{1: '2', 2: '4'}
+44	22		301							"{2: 'Lucia', 3: ""Similar...? Beaten at my own game, then... If only my visual signals weren't..."", 4: '2'}"
+45	23		204							{1: '2', 2: '3'}
+46	24		301							"{2: 'Lucia', 3: ""I don't understand... Why was I... the only one affected?"", 4: '2'}"
+47	25		202							{1: '2', 6: '1'}
+48	26		203							{1: '3', 2: '0.25', 3: '0'}
+49	27		301							{2: 'Lee', 3: '...Something like that has never happened before.', 4: '3'}
+50	30		301							{2: 'Lee', 3: 'The Memory Inductive Neural Depository, or M.I.N.D. system of us Constructs function in a vastly different way than the logic circuits of mechs and androids—', 4: '3'}
+51	31		301							{2: 'Lee', 3: 'Which means it is extremely difficult to disrupt a specific target.', 4: '3'}
+52	32		301							{2: 'Lee', 3: 'So unless they have a far more superior grasp of M.I.N.D. tech than the scientists back at Babylonia, it is impossible to specifically target someone.', 4: '3'}
+53	33		202							{1: '3', 6: '1'}
+54	34		201							{1: '2', 2: '1021001', 3: '3'}
+55	35		301							{1: '1', 2: 'Lucia', 3: '...At least the battle data was recorded, now we only have to wait for the analytics from HQ.', 4: '2'}
+56	36		301							"{2: 'Lucia', 3: ""Let's hurry to the nearest meeting point."", 4: '2'}"
+57	37		203							{1: '2', 3: '400'}
+58	38		201							{1: '1', 2: '1031001', 4: '-400'}
+59	39		204							{1: '2', 2: '12'}
+60	40		301							{1: '1', 2: 'Liv', 3: 'WAIT!', 4: '1'}
+61	41		301							{2: 'Liv', 3: '30 seconds, Miss Wounded Lucia. There are still 30 seconds before your nano-reinforcement glue stabilizes. Wait.', 4: '1'}
+62	42		204							{1: '2', 2: '6'}
+63	43		301				AniZhuanchangBegin			{2: 'Lucia', 3: 'Understood...', 4: '2'}
+64	44		202							{1: '1', 2: '2', 6: '1'}
+65	45		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory11.jpg'}
+66	46		201							{1: '3', 2: '1011001'}
+67	47		301			AniZhuanchangEnd				{1: '1', 2: 'Lee', 3: '……', 4: '3'}
+68	48		301							{2: 'Lee', 3: 'This is the designated meeting point.', 4: '3'}
+69	49		202							{1: '3', 6: '1'}
+70	50		201							{1: '1', 2: '1031001', 3: '7'}
+71	51		301							"{1: '1', 2: 'Liv', 3: ""But there's a ton of... Construct.. remains... and Corrupted roaming around here...?"", 4: '1'}"
+72	52		202							{1: '1', 6: '1'}
+73	53		201							{1: '3', 2: '1011001', 3: '10'}
+74	54		204							{1: '3', 2: '10'}
+75	55		301							"{1: '1', 2: 'Lee', 3: ""We're too late, the battle here's already over."", 4: '3'}"
+76	56		204							{1: '3'}
+77	57		301							{2: 'Lee', 3: 'Look at the signal emitter over there—', 4: '3'}
+78	58		202							{1: '3', 6: '1'}
+79	59		201							{1: '1', 2: '500013'}
+80	60		301							{1: '1', 3: 'A broken Corrupted lay motionless on the radio. Although it had lost its power, it had managed to insert its arm into the radio and completely corrupt it.', 4: '4'}
+81	61		202							{1: '1', 6: '1'}
+82	62		201							{1: '2', 2: '1021001'}
+83	63		301							{1: '1', 2: 'Lucia', 3: '...The Constructs here lost hold. From the traces of battle here, they must have already given it their best...', 4: '2'}
+84	64		202							{1: '2', 6: '1'}
+85	65		201							{1: '1', 2: '500013'}
+86	66		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 3: '1'}
+87	67		401	1						{1: '2', 2: '10002001'}
+88	1000		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 4: '1'}
+89	68		202							{1: '1'}
+90	69		301							"{3: ""Lucia steps forward and ends the Corrupted's life with one swift cut. She then destroys the corrupted emitter in several slashes."", 4: '1'}"
+91	70		201							{1: '1', 2: '1031001', 4: '400'}
+92	71		201							{1: '3', 2: '1011001', 4: '-400'}
+93	72		301							{1: '1', 2: 'Liv', 3: 'So these signals are all just... bait from the Corrupted...', 4: '1'}
+94	73		204							{1: '3', 2: '10'}
+95	74		301							"{2: 'Lee', 3: ""Looks like you're right. It's a primitive trap, but we fell right in it since we need supplies so badly... Should we keep going, Commandant?"", 4: '3'}"
+96	75		302							{2: 'Search more thoroughly for friendly signals.', 3: '76', 4: 'Immediately leave to avoid being besieged.', 5: '83'}
+97	76		202							{1: '1', 2: '3', 6: '1'}
+98	77		201							{1: '3', 2: '1011001'}
+99	78		301							"{1: '1', 2: 'Lee', 3: ""The longer we dawdle in this trap, the greater the danger we face, but... I'll still support your decision."", 4: '3'}"
+100	79		301							"{2: 'Lee', 3: ""Liv, you have better searching capabilities, so we'll leave that to you."", 4: '3'}"
+101	80		202							{1: '3', 6: '1'}
+102	81		201							{1: '1', 2: '1031001'}
+103	82	87	301							{1: '1', 2: 'Liv', 3: 'It has!', 4: '1'}
+104	83		202							{1: '1', 2: '3', 6: '1'}
+105	84		201							{1: '1', 2: '1031001'}
+106	85		204							{1: '1', 2: '7'}
+107	86		301							{1: '1', 2: 'Liv', 3: 'Commandant! W-wait!', 4: '1'}
+108	87		204							{1: '1', 2: '7'}
+109	88		301							{1: '1', 2: 'Liv', 3: '...Wait! Several distress signals are blinking weakly nearby!', 4: '1'}
+110	89		204							{1: '1'}
+111	90		301							{2: 'Liv', 3: 'They must have been in hiding before and are now trying to ask for our help.', 4: '1'}
+112	91		202							{1: '1', 6: '1'}
+113	92		201							{1: '2', 2: '1021001', 3: '4'}
+114	93		301							"{1: '1', 2: 'Lucia', 3: ""But the battle has already been going on for a long time. They haven't recalled yet?"", 4: '2'}"
+115	94		302							{2: 'Recall?', 3: '95', 4: 'They must have something important to convey.', 5: '105'}
+116	95		202							{1: '2', 6: '1'}
+117	96		201							{1: '3', 2: '1011001', 3: '10'}
+118	97		301							{1: '1', 2: 'Lee', 3: 'This should be basic knowledge for squads and commandants...', 4: '3'}
+119	98		204							{1: '3'}
+120	99		301							"{2: 'Lee', 3: ""A Construct's memory is unique just like a human's. However, Constructs can initiate a long-range recall just before their frame is destroyed."", 4: '3'}"
+121	100		301							{2: 'Lee', 3: 'Though this would heavily deviate their M.I.N.D. thought model from the standard humanity thought model, it is still preferable to complete annihilation.', 4: '3'}
+122	101		204							{1: '3', 2: '10'}
+123	102		301							{2: 'Lee', 3: 'If their M.I.N.D. is destroyed before they recall, then their memory will be completely destroyed.', 4: '3'}
+124	103		202							{1: '3', 6: '1'}
+125	104	110	202							{1: '3', 6: '1'}
+126	105		202							{1: '2', 6: '1'}
+127	106		201							{1: '2', 2: '1021001', 4: '400'}
+128	107		201							{1: '3', 2: '1011001', 4: '-400'}
+129	108		301							{1: '1', 2: 'Lee', 3: 'Quite possible, especially since that enemy is capable of destroying their entire Construct squad.', 4: '3'}
+130	109		202							{1: '2', 2: '3', 6: '1'}
+131	110		201							{1: '1', 2: '1031001', 3: '7'}
+132	111		301							{1: '1', 2: 'Liv', 3: 'Oh, no! Corrupted picked up their signal! A horde of Corrupted are headed right toward them!', 4: '1'}
+133	112		202							{1: '1', 6: '1'}
+134	113		201							{1: '2', 2: '1021001'}
+135	114		301							{1: '1', 2: 'Lucia', 3: 'Commandant, your orders!', 4: '2'}
+136	115		302							{2: 'Gray Raven, prepare for battle!', 3: '116'}
+137	116		201							{1: '1', 2: '1031001', 4: '600'}
+138	117		201							{1: '3', 2: '1011001', 4: '-600'}
+139	118		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Lucia & Lee & Liv', 3: ""Yes, ma'am!"", 4: '1', 5: '2', 6: '3'}"

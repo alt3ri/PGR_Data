@@ -1,0 +1,49 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		301			DialogEnable				{3: 'Commandant Dormitory, Babylonia. 11:20 am. One hour away from the date with Bianca.'}
+4	4		302							"{2: ""I should be there on time. Let's arrive 10 minutes early."", 3: '5', 4: ""Can't keep a date waiting! I'm arriving half an hour early!"", 5: '6'}"
+5	5	7	301							{3: '(50 minutes later.)'}
+6	6		301				AniZhuanchangBegin			{3: '(30 minutes later.)'}
+7	7		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory3.jpg'}
+8	8		301			AniZhuanchangEnd				{3: 'The air feels fresh after a brief morning rain. A scatter of people walks by the road, and you notice the tall female figure by a lamp post from afar.'}
+9	100		401							{1: '2', 2: '1513'}
+10	101		401							{1: '1', 2: '204'}
+11	9		302							{2: 'Bianca!', 3: '10', 4: 'Why are you here so early?', 5: '10'}
+12	10		301							{3: 'Bianca turns around. She is still equipped with her usual frame, but she looks different than usual somehow.'}
+13	11		201							{1: '1', 2: '500128'}
+14	12		301							{1: '1', 2: 'Bianca', 3: 'Commandant...', 4: '1'}
+15	13		301							{2: 'Bianca', 3: 'I happen to be free today, so I arrived a little early.', 4: '1'}
+16	14		301							{2: 'Bianca', 3: 'The temperature is still a little cold. Based on what you usually wear, you might be a bit underdressed.', 4: '1'}
+17	15		301							"{2: 'Bianca', 3: ""It's getting windy at night. Here, please put on this scarf in case you catch a cold..."", 4: '1'}"
+18	16		302							"{2: 'Th-thank you...', 3: '17', 4: ""That's very sweet of you, Bianca..."", 5: '17'}"
+19	17		301							"{2: 'Bianca', 3: ""It's what I should do."", 4: '1'}"
+20	18		301							"{2: 'Bianca', 3: ""Let's go. We're heading that way."", 4: '1'}"
+21	19		302							{2: 'E-eh?', 3: '20', 4: 'Did you prepare something?', 5: '20'}
+22	20		202							{1: '1', 6: '1'}
+23	21		301							{3: 'Bianca walks toward a lawn by the side and takes out a blanket from her bag, laying it over the damp grass.'}
+24	22		201							{1: '1', 2: '500128'}
+25	23		301							"{1: '1', 2: 'Bianca', 3: ""You haven't had your lunch yet, right, Commandant?"", 4: '1'}"
+26	24		302							"{2: 'Not yet.', 3: '25', 4: ""Now that you've mentioned it, I'm getting a little hungry."", 5: '25'}"
+27	25		202							{1: '1', 6: '1'}
+28	26		301							{3: 'Bianca sits on the blanket and opens the package she is carrying, revealing a series of lunchboxes filled with sizzling hot meals.'}
+29	27		201							{1: '1', 2: '500128'}
+30	28		301							"{1: '1', 2: 'Bianca', 3: ""I wasn't sure what you liked, so I made one of every cuisine I was good at."", 4: '1'}"
+31	29		302							"{2: ""That's impressive!"", 3: '30', 4: 'Did you make all of this, Bianca?!', 5: '30'}"
+32	30		301							{2: 'Bianca', 3: '(Nods)', 4: '1'}
+33	31		301							{2: 'Bianca', 3: 'My previous... job involved taking care of other people.', 4: '1'}
+34	32		301							{2: 'Bianca', 3: 'This is nothing out of the ordinary.', 4: '1'}
+35	33		302							"{2: ""Then I'll get started!"", 3: '34', 4: 'Thank you! They look super delicious!', 5: '34'}"
+36	34		204							{1: '1', 2: '1'}
+37	102		401							{1: '4', 2: '104003'}
+38	35		301							"{2: 'Bianca', 3: ""There's tea for digestion in this cup. Please enjoy."", 4: '1'}"
+39	36		302							"{2: ""Bianca, you're smiling."", 3: '37', 4: ""It's so rare to see you smiling, Bianca."", 5: '37'}"
+40	37		204							{1: '1'}
+41	38		301							{2: 'Bianca', 3: '...Did I?', 4: '1'}
+42	39		301							"{2: 'Bianca', 3: ""I guess that's because this reminds me of the past."", 4: '1'}"
+43	40		301							{2: 'Bianca', 3: 'It has been a long time since someone said something like this to me...', 4: '1'}
+44	41		301							"{2: 'Bianca', 3: ""For some reason, it's oddly comforting."", 4: '1'}"
+45	42		302							{2: 'It comforts you making food for other people?', 3: '43', 4: 'Then please keep making food for me in the future!', 5: '43'}
+46	43		301							"{2: 'Bianca', 3: ""I-it's just... taking care of others has jogged some old memories."", 4: '1'}"
+47	44		301							"{2: 'Bianca', 3: ""But if that's what you want, Commandant..."", 4: '1'}"
+48	45		301		1		AniZhuanchangBegin			"{2: 'Bianca', 3: ""I'm more than happy to comply."", 4: '1'}"

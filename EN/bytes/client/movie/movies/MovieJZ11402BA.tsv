@@ -1,0 +1,81 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		401							{1: '1', 2: '201'}
+2	3		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory88.png'}
+3	4		201							{1: '1', 2: '500200'}
+4	5		301			DialogEnable				{1: '1', 3: 'By the time Puff had finished his business with the Fishing Guild and selected a carving knife in the market, it was already noon.', 4: '1'}
+5	6		201							{1: '1', 2: '500093', 4: '400'}
+6	7		201							{1: '2', 2: '500087', 4: '-400'}
+7	8		301							{1: '1', 2: 'Port Manager', 3: 'Hurry, and pack up shop. Business is over today.', 4: '1'}
+8	9		301							{2: 'Knife Seller', 3: 'The hell! I just sold me first shivvy!', 4: '2'}
+9	10		301							"{2: 'Port Manager', 3: '""They"" are coming. Go home where it\'s safe.', 4: '1'}"
+10	11		202							{1: '1', 2: '2'}
+11	12		301							{3: 'Hearing this, Puff realizes that the bionic tide is coming today.'}
+12	13		201							{1: '1', 2: '500200', 4: '400'}
+13	14		201							{1: '2', 2: '500093', 4: '-400'}
+14	15		301							{1: '1', 2: 'Puff', 3: 'Where is the tide coming from?', 4: '1'}
+15	16		301							{2: 'Port Manager', 3: 'Huh? Like always, from the surrounding forest... Same deal this time...', 4: '2'}
+16	17		202							{1: '1', 2: '2'}
+17	18		301							{3: 'Quickly paying the knife seller, Puff turns and hurries into the forest.'}
+18	19		201							{1: '1', 2: '500087'}
+19	20		301				AniZhuanchangBegin			{1: '1', 2: 'Knife Seller', 3: 'Oi, gramps! Your change!', 4: '1'}
+20	21		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory69.jpg'}
+21	22		201							{1: '1', 2: '500200'}
+22	23		301			AniZhuanchangEnd				{1: '1', 2: 'Puff', 3: 'Rosetta! Are you here?!', 4: '1'}
+23	24		301							{3: 'Puff shoves open the small door to the cabin. There are no signs of invasion by the tide, but Rosetta is nowhere to be found.'}
+24	25		301							{3: 'Puff has previously ordered Rosetta to leave a note whenever she would leave home.'}
+25	26		301							"{2: 'Puff', 3: ""If only I hadn't gone out at this time... Rosetta... Where in God's name are you?"", 4: '1'}"
+26	27		301							"{3: ""His intuition tells him that Rosetta's disappearance must be related to the bionic tide.""}"
+27	28		301							"{3: ""And as if confirming Puff's thoughts, the characteristic roars of the bionics resound from outside the door.""}"
+28	29		401							{1: '1', 2: '202'}
+29	30		301							{2: 'Bionic Machine', 3: 'GAAWR...!'}
+30	3301		301				AniZhuanchangBegin			{2: 'Puff', 3: 'Damn it!', 4: '1'}
+31	32		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory105.png'}
+32	33		201							{1: '1', 2: '500208'}
+33	34		301			AniZhuanchangEnd				{3: 'Puff rushes out the door with an alacrity that betrays his old age. He begins firing his shotgun at the bionics.'}
+34	35		401							{1: '2', 2: '1510'}
+35	36		301							{1: '1', 2: 'Bionic Machine', 3: 'Bzz..', 4: '1'}
+36	37		203				PanelActor1Shake			{1: '1', 2: '1', 4: '-300'}
+37	38		203				RImgBg1Shake			{1: '1', 2: '1', 4: '-1080'}
+38	39		301							{3: 'The pellets punch a massive cavity in the chest of a bionic, and it collapses onto the snow.'}
+39	3901		201							{1: '1', 2: '500208', 4: '600'}
+40	3902		201							{1: '2', 2: '500208', 4: '-600'}
+41	40		301							{1: '1', 3: 'The tide, however, is more than just a singular bionic. More begin to surround Puff.', 4: '1', 5: '2'}
+42	41		301							{2: '???', 3: '(Whistles)'}
+43	42		301							{3: 'A short whistle travels through the air, and over a dozen spears plummet from the sky, impaling the bionics that surrounded Puff.'}
+44	4201		202							{1: '1', 2: '2'}
+45	43		301							{3: 'Crisp clip-clops of hooves approach. A centaur-shaped Construct leaps over the bushes and stands beside Puff.'}
+46	44		201							{1: '1', 2: '500205', 3: '1'}
+47	45		301							{1: '1', 2: 'Temia', 3: 'My name is Temia, a member of the Forest Guard. Are you injured, sir?', 4: '1'}
+48	46		301							{3: 'Seeing this strange Construct introduce herself as a Forest Guard, Puff furrows his brows and shifts, quietly avoiding eye contact.'}
+49	47		301							"{3: ""Taking Puff's silence for shock, Temia strides over to comfort him. Before reaching Puff, however, a bionic—not completely destroyed—suddenly hurls itself at her.""}"
+50	48		201							{1: '1', 2: '500208'}
+51	49		301							{1: '1', 2: 'Bionic Machine', 3: 'ROAAR—arghhh!!!', 4: '1'}
+52	50		202							{1: '1'}
+53	51		401							{1: '2', 2: '1510'}
+54	52		301							"{3: ""A blast from Puff's shotgun punches a hole straight through the bionic's chest. Smoke dissipates from the barrel.""}"
+55	53		201							{1: '1', 2: '500200'}
+56	54		301							"{1: '1', 2: 'Puff', 3: ""If you don't destroy their power connectors, they might get back up again. "", 4: '1'}"
+57	55		201							{1: '1', 2: '500205', 3: '5'}
+58	56		301							{2: 'Temia', 3: 'Thank you...', 4: '1'}
+59	57		301							{3: 'Several other Forest Guard members arrive, reporting to Temia.'}
+60	58		202							{1: '1', 2: '2'}
+61	59		201							{1: '1', 2: '500205', 4: '400'}
+62	60		201							{1: '2', 2: '500204', 4: '-400'}
+63	61		301							{1: '1', 2: 'Forest Guard', 3: 'Captain! We found some fresh tracks leading to the foot of the mountain. Looks like they belong to a girl.', 4: '2'}
+64	62		301							{2: 'Temia', 3: 'To the mountains where the kids in town snuck off to...? But why?', 4: '1'}
+65	63		301							"{2: 'Forest Guard', 3: ""There are quite a few bionic footprints nearby. I'm worried that..."", 4: '2'}"
+66	64		301							{3: 'Hearing the Forest Guard, Puff immediately slings his shotgun around his shoulder and hastily proceeds toward the mountain.'}
+67	65		301							{2: 'Forest Guard', 3: 'Hey, where are you going?! Hey!', 4: '2'}
+68	66		301				AniZhuanchangBegin			{2: 'Temia', 3: 'Forest Guards, stay on guard and follow the hunter. Move out!', 4: '1'}
+69	67		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory54.jpg'}
+70	68		202							{1: '2', 6: '1'}
+71	69		201			AniZhuanchangEnd				{1: '1', 2: '500210', 5: '-100'}
+72	71		301			DialogEnable				{1: '1', 3: 'Rosetta cautiously hides behind a fallen tree and sniffed the air.', 4: '1'}
+73	72		203							{1: '1', 2: '0.25'}
+74	73		301							"{2: 'Rosetta', 3: ""Vital fluid... They're still moving up the mountain!"", 4: '1'}"
+75	74		204							{1: '1', 2: '5'}
+76	75		301							"{2: 'Rosetta', 3: ""I should've warned the girls not to go into the forest when I saw them off in the distance!"", 4: '1'}"
+77	76		301							"{3: ""But she couldn't break the promise she made to her grandfather to not speak or meet with outsiders."", 4: '1'}"
+78	77		301							{2: 'Rosetta', 3: 'But now there are only two choices: charge ahead of the bionics to find the girls, or...', 4: '1'}
+79	78		301							{3: 'Rosetta firmly grips her trusty spear.', 4: '1'}
+80	79		301		1		AniZhuanchangBegin			{2: 'Rosetta', 3: 'Or destroy all of the bionics!', 4: '1'}

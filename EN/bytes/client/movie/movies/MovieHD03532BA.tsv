@@ -1,0 +1,113 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory551.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				{3: 'When it comes to Double Seventh Festival celebrations, the Kowloong district is definitely the busiest place around, filled with stalls that bring traditional folk customs to life.'}
+4	4		301							{3: 'But to you surprise... you run into someone completely unexpected here.'}
+5	5		302							{2: 'Wanshi?'}
+6	6		301							{3: 'Upon hearing that shout, the person in front of you turns around and looks your way, then stretches in a laid-back manner.'}
+7	7		201							{1: '1', 2: '500934', 3: '7'}
+8	8		301							"{1: '1', 2: 'Wanshi', 3: ""Hmm, 【kuroname】? So it's you."", 4: '1'}"
+9	9		204							{1: '1', 2: '1'}
+10	10		301							{2: 'Wanshi', 3: 'Why that tone? Are you that shocked to see me?', 4: '1'}
+11	11		302							"{2: 'No, not at all.', 3: '12', 4: ""I just didn't expect to find you at a stall in the Kowloong district."", 5: '12'}"
+12	12		301							"{2: 'Wanshi', 3: ""I dropped by because there's something here I want."", 4: '1'}"
+13	13		202							{1: '1'}
+14	14		104							{1: '0|0|-100', 2: '0.25'}
+15	15		301							{3: 'Wanshi nods, gently takes your hand, and guides you toward the stall up ahead.'}
+16	16		201							{1: '1', 2: '500934'}
+17	17		301							"{1: '1', 2: 'Wanshi', 3: ""Now that you're here, I don't have to go looking for you."", 4: '1'}"
+18	18		301							{2: 'Wanshi', 3: 'Mind lending me a hand, Commandant?', 4: '1'}
+19	19		202							{1: '1'}
+20	20		301							"{3: ""As he leads you closer, you notice an elderly man dressed in traditional Kowloong attire, busy making sugar paintings at his stall. You've heard about this craft before, but this is your first time seeing it in person.""}"
+21	21		301							{3: 'The sweet aroma of melted sugar wafts through the heat, drifting into your nose. Your attention is instantly caught by the captivating skill on display before you.'}
+22	22		201							{1: '1', 2: '500934', 3: '4'}
+23	23		301				DialogDisable			{1: '1', 2: 'Wanshi', 3: 'Do you want me to file an application with the commercial district? We could keep the sugar-painting stand permanently there on Babylonia.', 4: '1'}
+24	24		302							{2: '...That might be a little too much.', 3: '25'}
+25	25		302							{2: 'Stop teasing me, Wanshi.', 3: '26'}
+26	26		204							{1: '1', 2: '2'}
+27	27		301			DialogEnable				"{3: ""He chuckles softly, folds his arms, and leans lazily against the pillar behind him. As he meets your gaze, it's clear he's quite amused.""}"
+28	28		204							{1: '1', 2: '1'}
+29	29		301							{2: 'Wanshi', 3: 'I just think you look really amusing right now.', 4: '1'}
+30	30		204							{1: '1'}
+31	31		301							"{2: 'Wanshi', 3: ""Anyway, let's get down to business. I need your help with something..."", 4: '1'}"
+32	32		301							{3: 'Wanshi points to a wooden sign on the stall with a few lines of text.'}
+33	33		301							{2: 'Wanshi', 3: 'Here, this is it.', 4: '1'}
+34	34		302							{2: 'A sugar-painting challenge?', 3: '35'}
+35	35		301							"{2: 'Wanshi', 3: ""Yeah, it's a special event for the Double Seventh Festival. According to Kowloong culture, Double Seventh has two traditional themes, so they've split it into two different tracks."", 4: '1'}"
+36	36		301							"{2: 'Wanshi', 3: 'The first theme is ""pray for craftsmanship."" It\'s all about teaching kids handcraft skills, so it\'s set up as a children\'s-only track.', 4: '1'}"
+37	37		301							{2: 'Wanshi', 3: 'About that second one I can join...', 4: '1'}
+38	38		301							{3: 'Wanshi taps the underside of the wooden plaque with his finger. All the rules for the second track are written there.'}
+39	39		302							"{2: '""Only groups of two can enter, and the prize doubles""?', 3: '40'}"
+40	40		301							{2: 'Wanshi', 3: 'The prize this time is a limited-edition sleep-aid fragrance. It rarely ever goes on sale.', 4: '1'}
+41	41		301							{2: 'Wanshi', 3: 'Think of it as a little wish of mine.', 4: '1'}
+42	42		301							{2: 'Wanshi', 3: 'So... can you help me win it, Commandant?', 4: '1'}
+43	43		302							{2: 'If you say it like that...', 3: '44', 4: 'You can count on me.', 5: '44'}
+44	44		201							{1: '1', 2: '500236'}
+45	45		301							"{1: '1', 2: 'Vendor', 3: ""Are you two looking to try the two-person challenge? Don't worry."", 4: '1'}"
+46	46		301							"{2: 'Vendor', 3: ""The whole idea behind this challenge is to give everyone an unforgettable experience. The sugar painting is just a small keepsake, so it's really not difficult."", 4: '1'}"
+47	47		201							{1: '1', 2: '500934'}
+48	48		301							{1: '1', 2: 'Wanshi', 3: 'What exactly do we need to do for the sugar painting?', 4: '1'}
+49	49		201							{1: '1', 2: '500236'}
+50	50		301							"{1: '1', 2: 'Vendor', 3: ""All you have to do is use the syrup to write each other's names. Once it hardens, you're all set."", 4: '1'}"
+51	51		301				DialogDisable			"{2: 'Vendor', 3: ""And as for the final part of the challenge... you'll have to wait until your sugar paintings are complete to find out!"", 4: '1'}"
+52	52		202							{1: '1'}
+53	53		302							{2: 'So mysterious, huh?', 3: '54'}
+54	54		302							"{2: ""Well, it doesn't sound too tough. Shall we?"", 3: '55'}"
+55	55		201							{1: '1', 2: '500934', 3: '1'}
+56	56		301			DialogEnable				{1: '1', 2: 'Wanshi', 3: 'Yeah.', 4: '1'}
+57	57		202							{1: '1'}
+58	58		301							"{3: ""Following the stall owner's directions, you stand alongside Wanshi at two parallel easels. After a quick rundown of the painting pointers, you begin.""}"
+59	59		301							"{3: ""The challenge doesn't ask for a perfectly polished piece, but you can't bring yourself to just slap something together. It's been a while, and yet you've only managed to write half the name on your board.""}"
+60	60		301							"{3: ""Shifting your gaze toward Wanshi, you see he's made about as much progress as you have. Unlike his usual laid-back attitude, there's a rare sense of earnestness in his eyes.""}"
+61	61		301							{3: 'In this state, he looks almost as if...'}
+62	62		201							{1: '1', 2: '500934'}
+63	63		301							"{1: '1', 2: 'Wanshi', 3: ""You haven't even finished, Commandant, and you're already slacking off?"", 4: '1'}"
+64	64		301							{3: 'Wanshi waves a hand in front of you to snap you out of it, then starts teasing.'}
+65	65		302							"{2: ""No way. I'm giving this my all."", 3: '66', 4: ""I just paused to see how you were doing, that's all."", 5: '66'}"
+66	66		301				DialogDisable			"{2: 'Wanshi', 3: ""You were staring at me so intently, I almost thought you'd wrapped up your part already."", 4: '1'}"
+67	67		302							"{2: ""I've only gotten halfway through it."", 3: '68', 4: ""Hey, I've got a good excuse for that."", 5: '70'}"
+68	68		302							"{2: ""Anyway, from what I've seen, you aren't exactly racing ahead either."", 3: '69'}"
+69	69	73	301			DialogEnable				"{2: 'Wanshi', 3: ""Yeah, well, this is a big deal, so rushing things won't do us any good."", 4: '1'}"
+70	70		302							{2: 'You were so intense just now—it reminded me of how you are on the battlefield.', 3: '71'}
+71	71		204							{1: '1', 2: '4'}
+72	72		301			DialogEnable				"{2: 'Wanshi', 3: ""I mean, if it's someone or something important, of course I'm going to give it my all."", 4: '1'}"
+73	73		302							{2: 'Is it because this challenge matters so much to you?', 3: '74'}
+74	74		204							{1: '1', 2: '4'}
+75	75		301							"{2: 'Wanshi', 3: ""Yeah, but to be more exact, it's about what the challenge entails."", 4: '1'}"
+76	76		301							{3: 'During that brief lull in the conversation, Wanshi completes another stroke.'}
+77	77		204							{1: '1', 2: '2'}
+78	78		301							{2: 'Wanshi', 3: 'Because your name is incredibly important to me.', 4: '1'}
+79	79		204							{1: '1', 2: '1'}
+80	80		301							{2: 'Wanshi', 3: 'I want every detail to be just right—every stroke should be flawless, leaving no room for mistakes.', 4: '1'}
+81	81		201							{1: '1', 2: '500236'}
+82	82		301							{1: '1', 2: 'Vendor', 3: 'Looks like you two have already picked up on how much thought went into this challenge.', 4: '1'}
+83	83		301							{3: 'After saying this, the stall owner—who has been waiting nearby—steps forward with a bright smile and joins the conversation.'}
+84	84		301							{2: 'Vendor', 3: 'Put all your feelings—and the importance you place on the other person—into this sweet sugar painting...', 4: '1'}
+85	85		301							"{2: 'Vendor', 3: ""That's exactly why we started this challenge in the first place!"", 4: '1'}"
+86	86		202							{1: '1'}
+87	87		301							"{3: ""Because it's so precious, you're extra careful, afraid of making even the slightest mistake.""}"
+88	88		301							{3: 'Time moves on little by little, and you both finish your paintings. Recalling the conversation from a moment ago, you realize these sugar paintings now carry a whole new meaning.'}
+89	89		201							{1: '1', 2: '500236'}
+90	90		301							"{1: '1', 2: 'Vendor', 3: ""Now, here's the final step of the challenge—please exchange your sugar paintings and share them with each other!"", 4: '1'}"
+91	91		301							{2: 'Vendor', 3: 'Make sure you savor it so you can truly feel the thoughtfulness behind it.', 4: '1'}
+92	92		202							{1: '1'}
+93	93		301							{3: 'Following the instructions, you exchange sugar paintings with Wanshi. After receiving the prize for completing the challenge, you both decide to explore the other stalls together.'}
+94	94		302							{2: 'Looks like you really are into this fragrance.', 3: '95'}
+95	95		301							{3: 'Wanshi glances away from the sleep-aid fragrance and meets your gaze.'}
+96	96		201							{1: '1', 2: '500934'}
+97	97		301							"{1: '1', 2: 'Wanshi', 3: ""I wouldn't say I'm that fond of it. It just has... other purposes."", 4: '1'}"
+98	98		301							{3: 'With that, Wanshi picks one of the fragrances from the gift box and hands it over.'}
+99	99		301							"{2: 'Wanshi', 3: ""Go on, take it. It's not like I'm planning to keep the prize all to myself."", 4: '1'}"
+100	100		301							{2: 'Wanshi', 3: 'This pair of fragrances... they carry the same meaning as the sugar paintings.', 4: '1'}
+101	101		302							{2: 'What kind of meaning?', 3: '102'}
+102	102		301							"{2: 'Wanshi', 3: 'A ""connection.""', 4: '1'}"
+103	103		301							"{2: 'Wanshi', 3: 'It\'s something that proves there\'s a bond between us—something that ""connects"" you and me.', 4: '1'}"
+104	104		301							"{2: 'Wanshi', 3: ""When I drift off to sleep under the same fragrance, even if we're not in the same place, I can still feel you close to me."", 4: '1'}"
+105	105		301							{2: 'Wanshi', 3: 'And as for the sugar painting...', 4: '1'}
+106	106		202							{1: '1'}
+107	107		301							{3: 'Wanshi picks up the sugar painting of your name and takes a small bite from its corner.'}
+108	108		301							"{3: ""To showcase Kowloong's traditional charm, red lanterns line the streets. Their flickering light dances across his face and in his eyes, gently swaying and stirring something deep within.""}"
+109	109		201							{1: '1', 2: '500934', 3: '2'}
+110	110		301							"{1: '1', 2: 'Wanshi', 3: 'Your ""name"" is already here with me.', 4: '1'}"
+111	111		204							{1: '1', 2: '1'}
+112	112		301		1		AniZhuanchangBegin			"{2: 'Wanshi', 3: 'And my ""name"" will stay with you. They form a special connection between us—one that won\'t fade, no matter how much time goes by.', 4: '1'}"

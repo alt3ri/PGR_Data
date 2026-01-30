@@ -1,0 +1,28 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory9.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500065'}
+4	4		301			DialogEnable				{1: '1', 2: 'Kamui', 3: 'Hahahaha! Come at me, bro!', 4: '1'}
+5	5		301							"{2: 'Kamui', 3: ""Let me show you what I've got!"", 4: '1'}"
+6	6		301							{2: 'Kamui', 3: 'Piece of cake!', 4: '1'}
+7	7		201							{1: '1', 2: '1021001'}
+8	8		301							{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+9	9		201							{1: '1', 2: '1031001'}
+10	10		301							{1: '1', 2: 'Liv', 3: 'Is it just me...?', 4: '1'}
+11	11		301							{2: 'Liv', 3: 'Why do I feel like...', 4: '1'}
+12	12		302							"{2: ""That's a different fighting style..."", 3: '13', 4: 'He\'s acting more like ""that"" Construct...', 5: '15'}"
+13	13		201							{1: '1', 2: '1011001'}
+14	14	17	301							"{1: '1', 2: 'Lee', 3: 'It has a hint of ""that"" Construct...', 4: '1'}"
+15	15		201							{1: '1', 2: '1011001'}
+16	16		301							"{1: '1', 2: 'Lee', 3: ""They're the same person, after all."", 4: '1'}"
+17	17		301							{2: 'Lee', 3: 'But charging forward without reservation has always been his style.', 4: '1'}
+18	18		302							"{2: ""It's not the same if you watch closely."", 3: '19', 4: 'There are still some subtle differences.', 5: '19'}"
+19	19		301							{2: 'Lee', 3: 'Not to me.', 4: '1'}
+20	20		302							"{2: ""Just in terms of how he fights, Kamui's style used to be... purer."", 3: '21'}"
+21	21		202							{1: '1', 6: '1'}
+22	22		201							{1: '2', 2: '1021001', 4: '450'}
+23	23		201							{1: '1', 2: '1011001', 4: '-450'}
+24	24		301							{1: '1', 2: 'Lucia', 3: 'I agree with the commandant.', 4: '2'}
+25	25		301							{2: 'Lee', 3: 'Speaking in human terms, I suppose Kamui has changed mentally.', 4: '1'}
+26	26		301							{2: 'Lee', 3: 'Humans or Constructs, no one can remember something like that without being affected.', 4: '1'}
+27	27		302		1		AniZhuanchangBegin			"{2: ""That's true..."", 4: 'Right...'}"

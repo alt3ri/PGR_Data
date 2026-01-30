@@ -1,0 +1,284 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory106.png'}
+2	2		401							{1: '1', 2: '120'}
+3	3		301			DialogEnable				{3: 'Winter. The first encounter between Bella and the 17-year-old Noan—'}
+4	4		301							{3: 'Noan has witnessed the conflicts within Asslam slowly come to a boiling point during the years he has served on the Cargo Crew, a festering wound that tests the boundaries of the people and the law.'}
+5	5		301							{3: 'To stand a chance against the guards from the upper level, Rachel has finally found several weapon suppliers who are willing to work with her after a long period of searching and hard work.'}
+6	6		301							{3: 'Still, there are many desperate people in the lower level who are willing to snitch on them like Bancroft did.'}
+7	7		301							{3: 'The Cargo Crew has to hide the weapons they have procured in different cargos, sending them all across the world with their trucks to keep their plan safe.'}
+8	8		301							{3: 'They will have to wait for the right time before retrieving the weapons.'}
+9	9		205			DialogDisable			1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory352.jpg', 3: '0', 4: '1', 5: '1'}
+10	10		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+11	11		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory352.jpg'}
+12	12		201							{1: '1', 2: '500511', 3: '1'}
+13	13		301			DialogEnable				{1: '1', 2: 'Noan', 3: 'Hi! Captain Rachel told me to come here and collect the remaining Blessing Boxes. Is Mr. Bethe here?', 4: '1'}
+14	14		203							{1: '1', 2: '0.25', 3: '-400'}
+15	15		201							{1: '2', 2: '500003', 4: '400'}
+16	16		301							"{1: '1', 2: '???', 3: ""My grandfather went to sleep after finishing his work. You're from the Cargo Crew? Where's Rachel?"", 4: '2'}"
+17	17		301							"{2: 'Noan', 3: ""She's busy with something else, so she asked me to come this time."", 4: '1'}"
+18	18		301							{2: '???', 3: 'Huh...', 4: '2'}
+19	19		301							"{2: '???', 3: ""I've heard Rachel's distrustful of the people around her. I wasn't expecting it to be so bad that she's making a child captain."", 4: '2'}"
+20	20		301							"{3: ""She gauges Noan's height with her hand.""}"
+21	21		204							{1: '1', 2: '2'}
+22	22		301							{2: 'Noan', 3: 'Have you considered that I might be a genius prodigy?', 4: '1'}
+23	23		301							{3: 'Noan no longer feels bothered the way he did when he was younger when he hears someone challenge him. He changes the topic with a smile.'}
+24	24		204							{1: '1', 2: '1'}
+25	25		301							"{2: 'Noan', 3: ""If Mr. Bethe isn't here, maybe you can help me with the supplies instead?"", 4: '1'}"
+26	26		301							"{2: '???', 3: 'Sure. You mean the last batch of ""merch,"" right?', 4: '2'}"
+27	27		204							{1: '1', 2: '4'}
+28	28		301							{2: 'Noan', 3: 'Right.', 4: '1'}
+29	29		301							"{2: '???', 3: ""The weapon parts and ammo have all been dispersed among the unsold Blessing Boxes according to Rachel's specifications."", 4: '2'}"
+30	30		301							{2: '???', 3: 'Will they stay hidden?', 4: '2'}
+31	31		204							{1: '1', 2: '1'}
+32	32		301							"{2: 'Noan', 3: ""The guards are used to seeing these boxes. They'll open the containers to inspect the other packages, but they're too lazy to open the Blessing Boxes one by one to check what's inside."", 4: '1'}"
+33	33		301							{3: 'Every time Rachel purchases a new order of weaponry, she disguises them as unsold Blessing Boxes and hides them in different refugee bases.'}
+34	34		301							"{3: 'Just like how these ""Pandora Boxes"" were the aristocrats\' tool to destroy the lower level, they are now the Cargo Crew\'s instrument to secure power for the rebellion.'}"
+35	35		301							"{2: '???', 3: ""As long as you guys know what you're doing."", 4: '2'}"
+36	36		301							"{2: '???', 3: 'Not counting the ones with the ""merch,"" we somehow sold 31 of these boxes. Can\'t believe there are still people who fall for these scams.', 4: '2'}"
+37	37		301							"{2: 'Noan', 3: ""They're selling much worse than they used to. No one's making them anymore on the train. This is the last batch remaining."", 4: '1'}"
+38	38		301							"{2: 'Noan', 3: ""What about the other items we're selling here?"", 4: '1'}"
+39	39		301							"{2: '???', 3: ""They're almost out, including your moonshine. Here's the list. You'll find our fee on it."", 4: '2'}"
+40	40		301							{2: 'Noan', 3: 'Thanks. And the thing we mentioned last time...', 4: '1'}
+41	41		301							"{2: '???', 3: ""My grandfather said no. The way he put it, you'll only drag him into your fight if he joins you. You'll be asking for supplies or refuge or something else... he'll never hear the end of it."", 4: '2'}"
+42	42		301							{2: '???', 3: 'Further involvement will only put this base at risk. Selling you guys weapons is as far as we go.', 4: '2'}
+43	43		301							{2: 'Noan', 3: '...Alright. I understand.', 4: '1'}
+44	44		301							{2: '???', 3: 'Get on with your work. The bees are also done with rebuilding the base last night, so take them with you.', 4: '2'}
+45	45		301							{3: 'The woman looks toward where Bumblebee is, sighing with anguish and disgust.', 4: '2'}
+46	46		301				AniZhuanchangBegin			"{2: '???', 3: ""...They're also a mess, that lot."", 4: '2'}"
+47	47		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+48	48		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory516.jpg'}
+49	49		301			DialogEnable				{3: 'Noan and Cargo Crew 08 walk toward where Bumblebee is resting and find the upper-level guards that usually oversee the operations here are nowhere to be found.'}
+50	50		301							{3: 'The Bumblebee members all look exhausted and sad, their heads lowered.'}
+51	51		301							{3: 'Blood splatters on the ground near them, telling the same story once again.'}
+52	52		201							{1: '1', 2: '500511', 4: '-400'}
+53	53		201							{1: '2', 2: '500425', 4: '400'}
+54	54		301							{1: '1', 2: 'Noan', 3: '...They did this?', 4: '1'}
+55	55		301							"{2: 'Bumblebee Member 1', 3: ""Who else? Someone couldn't finish the crazy amount of work, so they were going to deduct our pay."", 4: '2'}"
+56	56		301							{2: 'Bumblebee Member 1', 3: 'Our captain was pissed, so he started fighting with the guards.', 4: '2'}
+57	57		202							{1: '1', 6: '1'}
+58	58		201							{1: '1', 2: '500427', 4: '-400'}
+59	59		301							"{1: '1', 2: 'Cargo Crew 08 Member 1', 3: ""Couldn't finish your work again?"", 4: '1'}"
+60	60		202							{1: '2', 6: '1'}
+61	61		201							{1: '2', 2: '500382', 4: '400'}
+62	62		301							{1: '1', 2: 'Bumblebee Captain', 3: 'Finish my ***!', 4: '2'}
+63	63		301							{3: 'Shouting angrily with his hoarse voice, the Bumblebee captain stands up, his hand covering his injury.'}
+64	64		301							"{2: 'Bumblebee Captain', 3: 'Their CPF wasn\'t completely fixed when we worked on the area. We didn\'t have enough protective gear, but the ""dickheads"" didn\'t give a ****.', 4: '2'}"
+65	65		202							{1: '1', 6: '1'}
+66	66		201							{1: '1', 2: '500425', 4: '-400'}
+67	67		301							"{1: '1', 2: 'Bumblebee Member 2', 3: ""The CPF always fails a few months before we come here to rebuild. We're gonna die if we arrive early, and if we arrive late—who's going to let us arrive late?"", 4: '1'}"
+68	68		202							{1: '1', 6: '1'}
+69	69		203							{1: '2', 2: '0.25'}
+70	70		301							"{2: 'Bumblebee Captain', 3: 'A hulking ""dickhead"" arrived in the morning and told us to fix the house on the left first. Then another ""dickhead"" visited in the evening and told us to prioritize the farm.', 4: '2'}"
+71	71		301							"{2: 'Bumblebee Captain', 3: ""They're both subcontracting the work they took and getting commissions from them. They don't care how much work there is!"", 4: '2'}"
+72	72		301							"{2: 'Bumblebee Captain', 3: ""So many folks on the train could use a meal, but they wouldn't bring extra hands, so they wouldn't have the extra mouths to feed."", 4: '2'}"
+73	73		301							"{2: 'Bumblebee Captain', 3: ""I was complaining about the lack of work for all the hungry folks on the train four years ago, but it's worse now. Those who stayed are starving, and those who came out here are worked to death!"", 4: '2'}"
+74	74		301							{2: 'Bumblebee Captain', 3: 'Time was short, and we had to crunch—two weeks ago, the CPF at the reconstruction site broke down in the middle of the night. We were all working underground, so no one noticed it when the signal light turned red.', 4: '2'}
+75	75		301							"{2: 'Bumblebee Captain', 3: 'The engineer at the base spotted it and contacted the ""dickheads"" overseeing the work. Guess what? Those drunkards were sleeping, and they didn\'t bother to do anything! So the engineer thought we weren\'t there!', 4: '2'}"
+76	76		301							"{2: 'Bumblebee Captain', 3: 'By the time the ""dickheads"" woke up in the middle of the day, we already had four infected! We even had to inject the serums ourselves!', 4: '2'}"
+77	77		202							{1: '2', 6: '1'}
+78	78		201							{1: '1', 2: '500425', 4: '-600'}
+79	79		201							{1: '2', 2: '500425'}
+80	80		201							{1: '3', 2: '500425', 4: '600'}
+81	81		301							"{1: '1', 2: 'Bumblebee Member 3', 3: ""They're like that every time! Good luck finding them to confirm anything on time!"", 4: '1'}"
+82	82		301							"{2: 'Bumblebee Member 4', 3: ""Unless they're here to fine us! Suddenly they'll have a detailed list of every little mistake we've made! Some of the things they're charging us don't even make sense!"", 4: '2'}"
+83	83		301							"{2: 'Bumblebee Member 5', 3: ""We thought there'd still be something left when all's said and done, but no! One guy didn't fill his quota, and now they're not paying any one of us!"", 4: '3'}"
+84	84		301							"{2: 'Bumblebee Member 1', 3: 'Ha! What did Captain say when we left the train? ""If we need to crunch, we\'ll crunch. At least they picked us, and we won\'t have to starve.""', 4: '1'}"
+85	85		301							"{2: 'Bumblebee Member 5', 3: ""With what they're fining us, we somehow have to pay them back."", 4: '3'}"
+86	86		202							{1: '2', 6: '1'}
+87	87		201							{1: '2', 2: '500382'}
+88	88		301							"{1: '1', 2: 'Bumblebee Captain', 3: 'I was reasoning with them, but the ""dickheads"" were like, ""At least Akdilek gave us two meals a day,"" and they threatened to turn off the CPF and water filter where we rest if we keep complaining!', 4: '2'}"
+89	89		301							{2: 'Bumblebee Captain', 3: 'Can you stand that?', 4: '2'}
+90	90		301							{2: 'Bumblebee Member 3', 3: 'How is it different from murdering us themselves if they stop the CPF and the water filter?', 4: '1'}
+91	91		301							{2: 'Bumblebee Captain', 3: 'So we started punching!', 4: '2'}
+92	92		202							{1: '1', 2: '3', 6: '1'}
+93	93		203							{1: '2', 2: '0.25', 3: '400'}
+94	94		201							{1: '1', 2: '500140', 4: '-400'}
+95	95		301							{1: '1', 2: 'Cargo Crew 08 Member 2', 3: 'Could you beat them?', 4: '1'}
+96	96		301							{2: 'Bumblebee Captain', 3: 'They might be armed, but we got the number. Still... some of us inevitably got hurt...', 4: '2'}
+97	97		202							{1: '1', 2: '2', 6: '1'}
+98	98		201							{1: '1', 2: '500511', 3: '14'}
+99	99		301							{1: '1', 2: 'Noan', 3: 'Where are the guards?', 4: '1'}
+100	100		202							{1: '1', 6: '1'}
+101	101		201							{1: '1', 2: '500382', 4: '-400'}
+102	102		201							{1: '2', 2: '500425', 4: '400'}
+103	103		301							"{1: '1', 2: 'Bumblebee Captain', 3: ""Gone. They weren't going to throw their lives away."", 4: '1'}"
+104	104		301							"{2: 'Bumblebee Member 5', 3: ""We should've followed him and crushed his head with our hammers!"", 4: '2'}"
+105	105		301							"{2: 'Bumblebee Captain', 3: ""Didn't you see him opening his terminal? They wouldn't just indict us if we kept fighting! What would happen when we go back?"", 4: '1'}"
+106	106		202							{1: '1', 2: '2', 6: '1'}
+107	107		201							{1: '1', 2: '500511'}
+108	108		301							{1: '1', 2: 'Noan', 3: 'How many are hurt?', 4: '1'}
+109	109		203							{1: '1', 2: '0.25', 3: '-400', 6: '1'}
+110	110		201							{1: '2', 2: '500382', 4: '400'}
+111	111		301							{1: '1', 2: 'Bumblebee Captain', 3: 'Six... Seven, counting him.', 4: '2'}
+112	112		202							{1: '1', 2: '2'}
+113	113		401							{1: '2', 2: '1516'}
+114	114		301							{3: 'Noan quickly walks further inside and finds six people lying on makeshift wooden beds. The ones slightly hurt are dressing their injuries with dirty rags, while others are surrounding the two that were heavily wounded.'}
+115	115		301							{3: 'One of them is unconscious with a gun wound in the stomach right on the liver. The other one is still awake, luckily, with a few broken ribs.'}
+116	116		201							{1: '1', 2: '500140'}
+117	117		301							"{1: '1', 2: 'Cargo Crew 08 Member 2', 3: ""Is there anything they won't do?!"", 4: '1'}"
+118	118		203							{1: '1', 2: '0.25', 3: '-400'}
+119	119		201							{1: '2', 2: '500511', 4: '400'}
+120	120		301							"{1: '1', 2: 'Noan', 3: ""Help them first. There should still be some meds in the supplies we're bringing back."", 4: '2'}"
+121	121		202							{1: '1', 6: '1'}
+122	122		201							{1: '1', 2: '500136', 4: '-400'}
+123	123		301							"{1: '1', 2: 'Cargo Crew 08 Member 3', 3: ""Those are our wares. How are we going to explain to the guards if we're short? We're going to get punished too."", 4: '1'}"
+124	124		204							{1: '2', 2: '4'}
+125	125		301							"{2: 'Noan', 3: ""...I'll cover the loss."", 4: '2'}"
+126	126		301							"{2: 'Cargo Crew 08 Member 3', 3: ""Do you have a lot of supplies with you? These people don't have anything to give you in return. The most valuable thing they have is their lives."", 4: '1'}"
+127	127		301							"{2: 'Cargo Crew 08 Member 3', 3: ""Listen, Four-Eyes—not that I don't want to save them. It's just..."", 4: '1'}"
+128	128		204							{1: '2'}
+129	129		301							{2: 'Noan', 3: '...I know.', 4: '2'}
+130	130		301							{3: 'Being part of the Cargo Crew used to be an enviable position for the Bumblebee. With the more established structure, Cargo Crew members can just make a living underneath a leader who cares about them.'}
+131	131		301							{3: 'But, like the Bumblebee, the Cargo Crew can hardly look out for themselves nowadays, not to mention other people.'}
+132	132		301							"{2: 'Noan', 3: ""Help the heavily wounded first. Supplies are scarce, but they've also helped us in the past."", 4: '2'}"
+133	133		301							{2: 'Cargo Crew 08 Member 3', 3: 'No way we can save the one shot in the gut!', 4: '1'}
+134	134		301							{2: 'Noan', 3: 'Then we have five we can save.', 4: '2'}
+135	135		301							{2: 'Cargo Crew 08 Member 3', 3: 'But...!', 4: '1'}
+136	136		202							{1: '2', 6: '1'}
+137	137		201							{1: '2', 2: '500427', 4: '400'}
+138	138		301							"{1: '1', 2: 'Cargo Crew 08 Member 1', 3: 'Listen to Four-Eyes here. It\'s also what Rachel would\'ve wanted. Not to mention that we\'re almost ""ready.""'}"
+139	139		301							"{2: 'Cargo Crew 08 Member 3', 3: ""...You're right. Let's go."", 4: '1'}"
+140	140		202							{1: '1', 2: '2'}
+141	141		301							{3: 'The Cargo Crew members gesture to each other before running toward the warehouse where the wares are.'}
+142	142		201							{1: '1', 2: '500382', 4: '-400'}
+143	143		201							{1: '2', 2: '500511', 4: '400'}
+144	144		301							{1: '1', 2: 'Bumblebee Captain', 3: 'Thanks.', 4: '1'}
+145	145		301							"{2: 'Noan', 3: ""You said seven. Where's the other one?"", 4: '2'}"
+146	146		301							"{2: 'Bumblebee Captain', 3: ""You mean ol' Ed? He didn't make it..."", 4: '1'}"
+147	147		301							"{2: 'Bumblebee Captain', 3: ""He was the one who couldn't finish the job. Those ******* guards... Ed was old and sick, and they still chose him to work out here!"", 4: '1'}"
+148	148		301							{2: 'Noan', 3: '...Where is he?', 4: '2'}
+149	149		301							{3: 'The Bumblebee captain points at the ruins to the west, his expression livid.'}
+150	150		202							{1: '2'}
+151	151		401						500.0	{1: '2', 2: '1516'}
+152	152		301							"{2: 'Bumblebee Captain', 3: ""You don't want to go there. He died from an infection."", 4: '1'}"
+153	153		301							{2: 'Bumblebee Captain', 3: 'Noan? Hey!', 4: '1'}
+154	154		201							{1: '2', 2: '500140', 4: '400'}
+155	155		301							"{1: '1', 2: 'Cargo Crew 08 Member 2', 3: ""Let him go. Sigh... Ol' Ed took care of him when he was young. He was the one who helped Noan see Julie one last time before she died."", 4: '2'}"
+156	156		301							"{2: 'Bumblebee Captain', 3: ""Tch. Don't blame me if he's infected!"", 4: '1'}"
+157	157		401							{1: '2', 2: '1512'}
+158	158		301			RImgBg1Shake				"{3: ""With no way to express his anger, the captain's fist hits the wall with a dull thud. As its echo fades, everyone hears a woman's heartbreaking cry coming from behind.""}"
+159	159		301				AniZhuanchangBegin			{3: 'The person with the gun wound is no longer in pain. Surrounded by his friends and companions, he has left this cold, uncaring world behind.'}
+160	160		202			DialogDisable			300.0	{1: '1', 2: '2', 6: '1'}
+161	161		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory270.png'}
+162	162		301			DialogEnable				{3: 'By the time the Bumblebee has finished burying their dead and boarded the trucks with their belongings and grief, Noan is met with more bad news.'}
+163	163		201							{1: '1', 2: '500511'}
+164	164		301							"{1: '1', 2: 'Noan', 3: ""...What's wrong?"", 4: '1'}"
+165	165		301							{3: 'The Cargo Crew member in charge of inspecting the wares is standing next to a pile of collapsed crates, staring at the blood flowing out from underneath in panic.'}
+166	166		203							{1: '1', 2: '0.25', 3: '-400'}
+167	167		201							{1: '2', 2: '500427', 4: '400'}
+168	168		301							{1: '1', 2: 'Cargo Crew 08 Member 7', 3: 'The upper-level guards were checking the goods and found a few Blessing Boxes too packed...', 4: '2'}
+169	169		202							{1: '1', 6: '1'}
+170	170		201							{1: '1', 2: '500003', 4: '-400'}
+171	171		301							{1: '1', 2: '???', 3: '...', 4: '1'}
+172	172		301							{2: 'Cargo Crew 08 Member 7', 3: 'I was going to distract them, but the crane in the warehouse suddenly moved and knocked down the crates on top.', 4: '2'}
+173	173		301							{3: 'The Cargo Crew member points at the control panel in the distance, where a woman is sitting quietly with her head lowered. She is not looking at the bloody scene, nor does she look like she intends to leave her seat.'}
+174	174		301							{2: 'Cargo Crew 08 Member 7', 3: 'She is... the wife of the person who just passed. The one who got shot in the gut.', 4: '2'}
+175	175		202							{1: '2', 6: '1'}
+176	176		201							{1: '2', 2: '500511', 4: '400'}
+177	177		301							{1: '1', 2: '??? & Noan', 3: '...', 4: '1', 5: '2'}
+178	178		202							{1: '1', 6: '1'}
+179	179		201							{1: '1', 2: '500136', 4: '-400'}
+180	180		301							"{1: '1', 2: 'Cargo Crew 08 Member 6', 3: ""What should we do? That's three dead guards under those crates. How the hell are we going to explain it?"", 4: '1'}"
+181	181		301							"{2: 'Noan', 3: ""It was an accident. Their deaths have nothing to do with the Blessing Boxes or any personal quarries. That's what we're going to say."", 4: '2'}"
+182	182		301							{2: 'Cargo Crew 08 Member 6', 3: 'Will the other guards believe us?', 4: '1'}
+183	183		202							{1: '1', 6: '1'}
+184	184		201							{1: '1', 2: '500003', 4: '-400'}
+185	185		301							"{1: '1', 2: '???', 3: ""I'll testify."", 4: '1'}"
+186	186		301							"{2: '???', 3: ""I'm also partially responsible. I should have packed the Blessing Boxes more carefully."", 4: '1'}"
+187	187		301							"{2: 'Noan', 3: ""Thank you, but this would have happened even if they hadn't discovered the boxes."", 4: '2'}"
+188	188		301							{3: 'He sighs, looking at the crying woman at the control panel.'}
+189	189		301				AniZhuanchangBegin			{2: 'Noan', 3: 'Power secured by violence will one day be taken by violence.', 4: '2'}
+190	190		202			DialogDisable			2000.0	{1: '1', 2: '2', 6: '1'}
+191	191		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory275.png'}
+192	192		201							{1: '1', 2: '500511', 4: '-400'}
+193	193		201							{1: '2', 2: '500003', 4: '400'}
+194	194		301			DialogEnable				"{1: '1', 2: '???', 3: ""It's sorted?"", 4: '2'}"
+195	195		301							"{2: 'Noan', 3: ""Yes. You'll find your payment inside warehouse A1. Thanks again. We've got to go."", 4: '1'}"
+196	196		301							"{2: '???', 3: ""Are you alright? You look like you're going to break down any second."", 4: '2'}"
+197	197		301							{2: 'Noan', 3: 'Break down? Me?', 4: '1'}
+198	198		301							{2: '???', 3: 'Is there someone else here?', 4: '2'}
+199	199		301							{2: 'Noan', 3: '...', 4: '1'}
+200	200		301							{3: 'Hearing her words, Noan finally notices the dull pain in his chest.'}
+201	201		301							"{2: 'Noan', 3: ""...I'm fine. I'm just exhausted."", 4: '1'}"
+202	202		301							{2: '???', 3: 'Is that all?', 4: '2'}
+203	203		301							{2: '???', 3: 'Your team told me that one of the dead bees was someone who took care of you since you were young.', 4: '2'}
+204	204		301							{2: 'Noan', 3: '...', 4: '1'}
+205	205		301							{3: '—How could that be all?'}
+206	206		301							{3: 'Even though he has seen his share of deaths, it is not something he can get used to.'}
+207	207		301							{3: 'But...'}
+208	208		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+209	209		202							{1: '1', 2: '2', 6: '1'}
+210	210		504							{1: '0.7'}
+211	211		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory602.jpg'}
+212	212		201							{1: '1', 2: '500515'}
+213	213		301							"{1: '1', 2: 'Rachel', 3: ""We're standing within a rushing riptide right now. Any careless mistake will bring the thousands of folks in the Cargo Crew down with us."", 4: '1'}"
+214	214		301							{2: 'Rachel', 3: 'There are too many people we have to save. The only way we can turn this around is by tackling the root of the problem.', 4: '1'}
+215	215		301							"{2: 'Rachel', 3: ""You're a captain and a core member of the Cargo Crew now, so every move you make will be monitored. Do not do anything on impulse—be patient! Act like a grown-up!"", 4: '1'}"
+216	216		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+217	217		202							{1: '1', 6: '1'}
+218	218		504							{1: '0'}
+219	219		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory275.png'}
+220	220		201							{1: '1', 2: '500511', 4: '-400'}
+221	221		201							{1: '2', 2: '500003', 4: '400'}
+222	222		301							"{1: '1', 2: '???', 3: ""Never mind. It's impressive that you're still functioning and doing your job as it is. Most can't get into the Cargo Crew at your age, not to mention become a captain."", 4: '2'}"
+223	223		204							{1: '1', 2: '1'}
+224	224		301							{2: 'Noan', 3: '...Thanks for your compliments.', 4: '1'}
+225	225		301							{2: '???', 3: 'Tch... Already smiling, are we? Are you mellow, or are you just cold-hearted?', 4: '2'}
+226	226		301							"{2: 'Noan', 3: ""Neither. I'm busy. I don't have time to be sad."", 4: '1'}"
+227	227		301							{2: '???', 3: '...I can kinda see why Rachel trusts you on a job this important.', 4: '2'}
+228	228		301							"{2: '???', 3: ""There are still some things I'm curious about, but I'm not sure if it's my place to ask."", 4: '2'}"
+229	229		301							{2: 'Noan', 3: 'What is it?', 4: '1'}
+230	230		301							"{2: '???', 3: ""I've been told that supplies are even more scarce on the train than in refugee bases like ours. How has Rachel managed to find so many things to trade?"", 4: '2'}"
+231	231		301							"{2: 'Noan', 3: ""No idea. Rachel has her way, and she won't tell me."", 4: '1'}"
+232	232		301							"{2: '???', 3: ""How likely do you think you'll win?"", 4: '2'}"
+233	233		301							"{2: 'Noan', 3: ""No idea. There's still a lot we aren't sure about and many we don't trust. Guessing now is a fool's errand."", 4: '1'}"
+234	234		301							{2: '???', 3: 'That was the last batch of weapons. When are you going to act?', 4: '2'}
+235	235		301							"{2: 'Noan', 3: ""No idea. That's up to Rachel."", 4: '1'}"
+236	236		301							{2: '???', 3: 'You have no idea about anything, and you still carry on. Are you that eager to die?', 4: '2'}
+237	237		301							"{2: 'Noan', 3: ""No. There's a reason Captain Rachel doesn't tell anyone any details."", 4: '1'}"
+238	238		301							"{2: 'Noan', 3: ""The aristocrats have known what we're up to for a while. Failing to find any evidence, all they can do is pressure us and keep searching. Should they get ahold of anything, the consequences will be dire."", 4: '1'}"
+239	239		301							"{2: 'Noan', 3: ""If you're curious, why don't you agree with Captain Rachel's proposal? Mr. Bethe and you are both merchants she's collaborated with secretly for a long time. Perhaps she'll make an exception and tell you her plan?"", 4: '1'}"
+240	240		301							"{2: 'Noan', 3: ""Having a refugee base to support us continuously will give us something reliable to fall back on. You've already planned to cover for us, after all."", 4: '1'}"
+241	241		301							{2: '???', 3: 'Grandfather said no, and that means no. You can owe me a favor for covering for you. It has nothing to do with my grandfather or the base.', 4: '2'}
+242	242		301							{3: 'She looks down in silence briefly.'}
+243	243		301							"{2: '???', 3: ""Grandfather said you are destined to fail. You're all one step away from your graves."", 4: '2'}"
+244	244		301							{2: '???', 3: 'Any instability at Akdilek will impact the bases greatly. If you all lose, our trades will also be affected.', 4: '2'}
+245	245		301							{2: '???', 3: 'Not to mention the elderly on the train, and the other kids like you...', 4: '2'}
+246	246		301							{2: 'Noan', 3: 'Better a corpse than a servant and an accomplice to those aristocrats.', 4: '1'}
+247	247		301							{2: '???', 3: '...Is that something a kid your age gets to say?', 4: '2'}
+248	248		301							"{2: 'Noan', 3: ""That's what everyone else says. I just take after them."", 4: '1'}"
+249	249		301							{2: '???', 3: 'Speaking of which, everyone on your team is older than you. Do they listen to you?', 4: '2'}
+250	250		301							"{2: 'Noan', 3: ""They don't have to. I only made captain because I got along with the people around me."", 4: '1'}"
+251	251		301							"{2: 'Noan', 3: ""They're not impressed with what I can do—they simply support and trust me as their comrade. I listen to them as often as they listen to me. We're all equal."", 4: '1'}"
+252	252		301							{2: '???', 3: 'Equal...? I was expecting more arrogance from a kid like you! How old are you?', 4: '2'}
+253	253		301							{2: 'Noan', 3: '18 next summer.', 4: '1'}
+254	254		301							"{2: '???', 3: ""And I thought you were no older than 14. I guess you're still waiting for your growth spurt... Well, do your best and live. You still owe me one."", 4: '2'}"
+255	255		301							{2: 'Noan', 3: 'Thanks. I appreciate it.', 4: '1'}
+256	256		301							{3: 'Nodding sincerely, Noan has no idea how he will come to regret his promise in the future.'}
+257	257		301							"{2: 'Noan', 3: ""What's your name?"", 4: '1'}"
+258	258		301							"{2: 'Bella', 3: ""I'm Bella. Last name's Bethe, like my grandfather. Bella Bethe."", 4: '2'}"
+259	259		204							{1: '1', 2: '2'}
+260	260		301							"{2: 'Noan', 3: ""Cool name. I guess I'll call you Bebe—"", 4: '1'}"
+261	261		203							{1: '2', 2: '0.1', 3: '100'}
+262	262		401							{1: '2', 2: '1512'}
+263	263		502						400.0	{1: 'PanelActor1Shake'}
+264	264		505							{1: 'PanelActor1Shake'}
+265	265		301							{3: 'Bella gives him a solid knock on his head before he can finish.'}
+266	266		203							{1: '2', 2: '0.25', 3: '400'}
+267	267		301							"{2: 'Bella Bethe', 3: ""I guess Rachel didn't tell you not to call me that."", 4: '2'}"
+268	268		204							{1: '1', 2: '1'}
+269	269		301							{2: 'Noan', 3: 'She only ever talked about old Mr. Bethe, Miss Bethe.', 4: '1'}
+270	270		301							"{2: 'Bella Bethe', 3: ""Bethe is fine. I'm older than you but not old enough for honorifics."", 4: '2'}"
+271	271		204							{1: '1', 2: '2'}
+272	272		301							{2: 'Noan', 3: 'Alright, Bethe.', 4: '1'}
+273	273		301							{3: '—That will be his first and last time to call Bella by that name.'}
+274	274		301							{3: 'Noan is prepared to make any sacrifices. He never expects to see her again.'}
+275	275		204							{1: '1', 2: '1'}
+276	276		301							"{2: 'Noan', 3: ""I'll see you around."", 4: '1'}"
+277	277		203						80.0	{1: '1', 2: '0.3', 3: '-600'}
+278	278		202							{1: '1'}
+279	279		301							{3: 'With those words that even he himself finds improbable, Noan waves and turns around, leaving with a smile that he has put on so many times on occasions like this.'}
+280	280		203							{1: '2', 2: '0.25'}
+281	281		301							{2: 'Bella Bethe', 3: '...', 4: '2'}
+282	282		301							"{3: ""Bella only remembers that there was something she forgot to ask when Noan's figure disappeared from her sight.""}"
+283	283		301		1		AniZhuanchangBegin			"{2: 'Bella Bethe', 3: ""...What's his name again?"", 4: '2'}"

@@ -1,0 +1,324 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory759.jpg'}
+2	2		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab', 2: '2', 5: '1'}
+4	4		511							{1: '1', 2: '0', 3: '0|250|0'}
+5	5		401							{1: '1', 2: '166'}
+6	6		107			AniZhuanchangEnd			2500.0	{1: 'Babylonia Logistics Warehouse', 2: 'Conservation Area', 4: '15:40', 5: 'Line Spacing: 0'}
+7	7		108							{1: '1'}
+8	8		201							{1: '1', 2: '500110', 3: '4'}
+9	9		301			DialogEnable				{1: '1', 2: 'Ayla', 3: 'Commandant...', 4: '1'}
+10	10		401							{1: '2', 2: '5365', 3: '0.2'}
+11	11		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+12	12		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab', 5: '1'}
+13	13		202							{1: '1', 6: '1'}
+14	14		301							{3: 'Water spray from the fire sprinkler system, slowly dissipating the irritant gas.'}
+15	15		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+16	16		201							{1: '18', 2: '500495'}
+17	17		401							{1: '2', 2: '4544'}
+18	18		301							{1: '1', 2: 'Teddy', 3: 'There are absolutely no relevant records in the conservation area or Babylonia as if this guy appeared out of blue...', 4: '18'}
+19	19		202							{1: '18', 6: '1'}
+20	20		402							{1: '4544'}
+21	21		301							{3: 'Over the comm, the sound of keystrokes slows down.'}
+22	22		201							{1: '18', 2: '500495', 3: '4'}
+23	23		301							{1: '1', 2: 'Teddy', 3: '...Commandant?', 4: '18'}
+24	24		202							{1: '18', 6: '1'}
+25	25		301				AniZhuanchangBegin			{3: 'In the temporary channel they had established, the portrait representing the Gray Raven Commandant has turned gray at some point.'}
+26	26		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory584.jpg'}
+27	27		201							{1: '1', 2: '500495', 3: '4'}
+28	28		301			AniZhuanchangEnd				"{1: '1', 2: 'Teddy', 3: ""The communication system is working. There's no interference... Why are they offline?"", 4: '1'}"
+29	29		301				DialogDisable			{2: 'Teddy', 3: 'Commandant... Ayla?', 4: '1'}
+30	30		203							{1: '1', 2: '0.3', 3: '550', 6: '1'}
+31	31		401							{1: '2', 2: '4422'}
+32	32		509						250.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory759.jpg', 2: '1'}
+33	33		201							{1: '11', 2: '500110', 3: '4', 4: '-550'}
+34	34		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '11'}
+35	35		301			DialogEnable				{1: '1', 2: 'Ayla', 3: 'Teddy! Check all surveillance footage inside and outside the warehouse!', 4: '11'}
+36	36		401							{1: '2', 2: '4331'}
+37	37		301				DialogDisable			{3: 'From the sound, Ayla must be running in a hurry.'}
+38	38		401							{1: '2', 2: '4423'}
+39	39		510						250.0	{1: '1'}
+40	40		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '11'}
+41	41		202							{1: '11'}
+42	42		203							{1: '1', 2: '0.25'}
+43	43		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Teddy', 3: ""What's going on?!"", 4: '1'}"
+44	44		401							{1: '2', 2: '4544', 3: '1'}
+45	45		202							{1: '1'}
+46	46		306							{1: '1'}
+47	47		301			DialogEnable				{3: 'Fingers fly across the controls and footage from 47 cameras shows up. As the smoke gradually clears on the screen, only Ayla is still in the warehouse. Both the intruder and the commandant have vanished.'}
+48	48		306							
+49	49		402							{1: '4544'}
+50	50		201							{1: '1', 2: '500495', 3: '4'}
+51	51		301				AniZhuanchangBegin			{1: '1', 2: 'Teddy', 3: 'Comman... dant?', 4: '1'}
+52	52		202							{1: '1', 6: '1'}
+53	53		502							{1: 'DialogDisable'}
+54	54		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+55	55		304			AniZhuanchangEnd				"{1: 'The Gray Raven Commandant has vanished right under Babylonia\'s nose, along with the mysterious ""intruder.""', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '2'}"
+56	56		304							"{1: ""The military immediately forms a search group, but there's no sign of either of them anywhere around the warehouse."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '2'}"
+57	57		304							{1: 'The Engineering Force checks all warehouse surveillance footage but only finds recordings from before the smoke spread...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '2'}
+58	58		304				AniZhuanchangBegin			"{1: ""Footage that's identical to the ones stored in Ayla's records."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '2', 9: '1'}"
+59	59		401						2000.0	{1: '1', 2: '36'}
+60	60		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+61	61		401							{1: '1', 2: '161'}
+62	62		401							{1: '2', 2: '4925'}
+63	63		201							{1: '1', 2: '500495', 3: '4'}
+64	64		301			DialogEnable				{1: '1', 2: 'Teddy', 3: 'Explain.', 4: '1'}
+65	65		202							{1: '1', 6: '1'}
+66	66		201							{1: '1', 2: '500380', 3: '3', 7: '1'}
+67	67		301							{1: '1', 2: 'Ishmael', 3: '...', 4: '1'}
+68	68		401							{1: '2', 2: '2768'}
+69	69		301							{3: 'A ripple forms in the still coffee cup as Ishmael furrows her brow, flipping through the report Teddy gave her.'}
+70	70		203							{1: '1', 2: '0.25', 3: '-400'}
+71	71		201							{1: '2', 2: '500495', 4: '400'}
+72	72		301							"{1: '1', 2: 'Teddy', 3: 'The frame ""Ishmael"" asked to destroy looks exactly like the Construct in Ayla\'s artwork. It triggered mental distress in 【kuroname】.', 4: '2'}"
+73	73		301							{2: 'Teddy', 3: 'Now 【kuroname】 went missing with a mysterious invader in a warehouse in Conservation Area 221, the warehouse that holds this frame...', 4: '2'}
+74	74		301							{2: 'Teddy', 3: 'I need a logical explanation.', 4: '2'}
+75	75		301							{2: 'Ishmael', 3: '...', 4: '1'}
+76	76		204							{1: '1', 2: '12'}
+77	77		301							"{2: 'Ishmael', 3: ""I have no recollection of this matter. I'm not trying to avoid responsibility. I'm simply stating a fact."", 4: '1'}"
+78	78		301							{2: 'Ishmael', 3: 'You must have heard about the recent incidents involving Babylonia and the commandant. If I were behind all this...', 4: '1'}
+79	79		204							{1: '1'}
+80	80		301							{2: 'Ishmael', 3: 'You really think you can just waltz up to me, even with the Control Court backing you?', 4: '1'}
+81	81		204							{1: '2', 2: '4'}
+82	82		301							{2: 'Teddy', 3: '...', 4: '2'}
+83	83		301							"{2: 'Ishmael', 3: ""Don't rush it. I'll look into it, but unraveling the full story takes time."", 4: '1'}"
+84	84		204							{1: '2', 2: '5'}
+85	85		301							"{3: ""Teddy furrows her brows after examining the Control Court Construct before her and realizing she isn't lying.""}"
+86	86		202							{1: '1', 2: '2'}
+87	87		306							{1: '1'}
+88	88		301							"{3: ""The good news is that Babylonia doesn't have a mole. The bad news is that Ishmael actually knows nothing about this... It's another dead end.""}"
+89	89		306							
+90	90		201							{1: '1', 2: '500495', 4: '500'}
+91	91		401							{1: '2', 2: '4422'}
+92	92		509						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory759.jpg', 2: '1'}
+93	93		201							{1: '11', 2: '500110', 3: '4', 4: '-500'}
+94	94		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '11'}
+95	95		301							{1: '1', 3: 'A notification chime sounds. Ayla is on the other end.'}
+96	96		301							"{2: 'Ayla', 3: ""The Task Force's inspected most areas in the warehouse and found no issues. We're heading to the last few gates."", 4: '11'}"
+97	97		301							{2: 'Ayla', 3: 'So... any updates on your end?', 4: '11'}
+98	98		401						300.0	{1: '2', 2: '4896'}
+99	99		402							{1: '4896'}
+100	100		301							{3: 'Wind scrapes across the terminal, creating a harsh, grating sound.'}
+101	101		301							"{2: 'Teddy', 3: ""The lead's gone cold. I'll keep going through the rest of the surveillance footage at Engineering Force."", 4: '1'}"
+102	102		301							{2: 'Teddy', 3: 'Has the Science Council found the origin of that odd device in the warehouse? The one they just found...', 4: '1'}
+103	103		301							"{2: 'Ayla', 3: 'They\'re on it. Asimov has asked for experts from Science Council Sections 1 and 2 to disassemble the device. It\'s codenamed ""White Noise"" for now...', 4: '11'}"
+104	104		301							{2: 'Teddy', 3: 'White Noise?', 4: '1'}
+105	105		301							{2: 'Ayla', 3: 'Asimov notices a strange noise in the surveillance footage right before the smoke dissipated. My combat records picked up the same frequency...', 4: '11'}
+106	106		301							"{2: 'Ayla', 3: ""This can't be a coincidence."", 4: '11'}"
+107	107		301							"{2: 'Teddy', 3: ""Got it. I'll go get a sample of that White Noise frequency from Asimov right now."", 4: '1'}"
+108	108		301							"{2: 'Ayla', 3: ""Okay... We're at another entry point. I'll contact you immediately if we find anything."", 4: '11'}"
+109	109		401							{1: '2', 2: '4423'}
+110	110		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '11'}
+111	111		202							{1: '1', 2: '11', 6: '1'}
+112	112		510							{1: '1'}
+113	113		301							{3: 'Ayla quickly ends the call.'}
+114	114		201							{1: '1', 2: '500495', 3: '4'}
+115	115		301				DialogDisable			{1: '1', 2: 'Teddy', 3: 'The noise... sound waves...', 4: '1'}
+116	116		203						450.0	{1: '1', 2: '0.4', 3: '-800'}
+117	117		401							{1: '2', 2: '2661'}
+118	118		202							{1: '1'}
+119	119		301			DialogEnable				{3: 'Teddy compares the surveillance records before and after the invader appeared, uploads the clips to the terminal, and hurries to the Science Council.'}
+120	120		401							{1: '2', 2: '5281'}
+121	121		301							{3: 'Ishmael sets down her cup and watches the ripples in her coffee distorted by the sound of the closing door.'}
+122	122		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLianyi.prefab', 2: '2'}
+123	123		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.3'}
+124	124		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+125	125		205							{1: '999'}
+126	126		401							{1: '2', 2: '9339045'}
+127	127		301				AniZhuanchangBegin			{3: 'Ring upon ring, like cages, the ripples trap the foam inside.'}
+128	128		502							{1: 'DialogDisable'}
+129	129		401						2000.0	{1: '1', 2: '36'}
+130	130		401							{1: '1', 2: '120'}
+131	131		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+132	132		107			AniZhuanchangEnd				{1: 'Science Council'}
+133	133		301							{3: 'Science Council'}
+134	134		108							{1: '1'}
+135	135		301			DialogEnable				{3: 'The lights in this building are never fully out. Researchers in white coats are always coming and going all day long.'}
+136	136		201							{1: '1', 2: '500004'}
+137	137		301							{1: '1', 2: 'Asimov', 3: '...I copied that noise frequency you asked for to your terminal.', 4: '1'}
+138	138		201							{1: '1', 2: '500495', 7: '1'}
+139	139		301							{1: '1', 2: 'Teddy', 3: 'Those old folks from Science Council Section 2 have been called in as well... You think this has to do with outer space?', 4: '1'}
+140	140		201							{1: '1', 2: '500004', 7: '1'}
+141	141		301				DialogDisable			"{1: '1', 2: 'Asimov', 3: ""I'm not sure. I'll have to broaden the scope of the investigation."", 4: '1'}"
+142	142		202							{1: '1', 6: '1'}
+143	143		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.7', 5: '0.3'}
+144	144		201							{1: '1', 2: '501182', 6: '-100'}
+145	145		301			DialogEnable	DialogDisable			"{1: '1', 3: 'He stares at the middle of the table at the device codenamed ""White Noise"" that was urgently transported to Babylonia.', 4: '1'}"
+146	146		202							{1: '1', 6: '1'}
+147	147		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.7', 4: '0', 5: '0.3'}
+148	148		201							{1: '1', 2: '500004'}
+149	149		301			DialogEnable				{1: '1', 2: 'Asimov', 3: 'Section 1 has already used every method imaginable to disassemble and decode this device. They used existing technological tools to take it apart and attempted to decrypt it with their Punishing Virus research...', 4: '1'}
+150	150		301							"{2: 'Asimov', 3: ""But it doesn't react to anything."", 4: '1'}"
+151	151		301							"{2: 'Asimov', 3: 'Or rather, under specific conditions, it appears to activate, but cannot be ""used.""', 4: '1'}"
+152	152		301				DialogDisable			{2: 'Asimov', 3: 'I suspect...', 4: '1'}
+153	153		401							{1: '2', 2: '4044'}
+154	154		201							{1: '1', 2: '500539', 3: '11', 4: '-100', 7: '1'}
+155	155		203							{1: '1', 2: '0.25'}
+156	156		301			DialogEnable				{1: '1', 2: 'Rosa', 3: 'M-Mr. Asimov!', 4: '1'}
+157	157		301							{3: 'Rosa comes stumbling over, arms wrapped around a stack of yellowed documents taller than herself.'}
+158	158		204							{1: '1', 2: '14'}
+159	159		301							{2: 'Rosa', 3: 'These are the documents you asked for... Um, do you... have a minute?', 4: '1'}
+160	160		401							{1: '2', 2: '4681'}
+161	161		301							{3: 'The purple-haired girl puts the files on the table with a thud, and timidly looks up with just her eyes visible as she glances at Teddy standing in the back.'}
+162	162		202							{1: '1', 6: '1'}
+163	163		201							{1: '1', 2: '500004'}
+164	164		301							{1: '1', 2: 'Asimov', 3: 'Okay.', 4: '1'}
+165	165		202							{1: '1'}
+166	166		401							{1: '2', 2: '4824'}
+167	167		301							"{3: 'Asimov gestures for Rosa to start talking while he pulls up the data report from his terminal, checking the structural breakdown of the ""White Noise"".'}"
+168	168		201							{1: '1', 2: '500539'}
+169	169		301							"{1: '1', 2: 'Rosa', 3: 'As... as per Mr. Asimov\'s instructions, I... I retrieved some of the ""research directions"" stored by the Science Council from the Golden Age.', 4: '1'}"
+170	170		301							"{2: 'Rosa', 3: 'Many of them are just ""papers,"" theories that exist only on paper without any actual research results... From there, I filtered out 8791 research papers related to ""sound waves""...', 4: '1'}"
+171	171		301							"{2: 'Rosa', 3: 'Based on the application of the ""White Noise"", I then narrowed it down... They\'re all published by the same institution.', 4: '1'}"
+172	172		301							"{2: 'Rosa', 3: '""Experimental Principles of Sound Field Localization Using Focused Sound Signals"", ""Hypothetical Effects of Giant Cavitation Bubble Instantaneous Pressure on Sound Fields"", and this one... ""Research on Localization Principles of Special Echo Signals Based on Spatial Signal Frequencies"".', 4: '1'}"
+173	173		204							{1: '1', 2: '11'}
+174	174		301							"{2: 'Rosa', 3: ""B-but, everything is just theory, and the current Science Council hasn't restarted any of these projects..."", 4: '1'}"
+175	175		202							{1: '1', 6: '1'}
+176	176		201							{1: '1', 2: '500004'}
+177	177		301							{1: '1', 2: 'Asimov', 3: '...', 4: '1'}
+178	178		301							"{3: ""Asimov's expression gradually darkens as he compares the main diagrams in the papers.""}"
+179	179		301							"{2: 'Asimov', 3: ""Go get the Abess Project Team's files."", 4: '1'}"
+180	180		202							{1: '1', 6: '1'}
+181	181		201							{1: '1', 2: '500539', 3: '11'}
+182	182		301				DialogDisable			{1: '1', 2: 'Rosa', 3: 'Tene... Tenebrion!', 4: '1'}
+183	183		401						350.0	{1: '2', 2: '4331'}
+184	184		203							{1: '1', 2: '0.4', 3: '800'}
+185	185		202							{1: '1'}
+186	186		301			DialogEnable				{3: 'Rosa, having made the connection, lets out a hushed gasp and rushes to another lab.'}
+187	187		201							{1: '1', 2: '500495', 4: '-450'}
+188	188		201							{1: '2', 2: '500004', 4: '450'}
+189	189		301							"{1: '1', 2: 'Teddy', 3: ""Tenebrion... Kamui's special frame?"", 4: '1'}"
+190	190		301							"{2: 'Asimov', 3: 'It\'s research on ""Tenebrion"" as a special energy source.', 4: '2'}"
+191	191		301							{2: 'Asimov', 3: 'The latest technology is already being applied, but during a recent project report, we discovered their application progress far exceeded what was presented.', 4: '2'}
+192	192		301							{2: 'Teddy', 3: '...', 4: '1'}
+193	193		301							"{3: 'If it happened once, we could explain it as an ""accident,"" but when it happens a second time, something is up.'}"
+194	194		301							{2: 'Asimov', 3: 'Can the Engineering Force access surveillance footage around the Science Council? I need all recordings before the day of the report, with a special focus on all ambient sounds.', 4: '2'}
+195	195		301							"{2: 'Teddy', 3: ""Yes, I'll request access right away. How far back do you need?"", 4: '1'}"
+196	196		301							{2: 'Asimov', 3: 'At least three years.', 4: '2'}
+197	197		204							{1: '1', 2: '10'}
+198	198		301							{2: 'Teddy', 3: '?', 4: '1'}
+199	199		401							{1: '2', 2: '2626'}
+200	200		301							"{3: ""Before she can express her confusion, there's a knock at the door.""}"
+201	201		301				DialogDisable			{2: 'Teddy', 3: '...Forget it.', 4: '1'}
+202	202		201							{1: '2', 2: '500380', 4: '-400'}
+203	203		203							{1: '1', 2: '0.4', 3: '-1100'}
+204	204		203						300.0	{1: '2', 2: '0.4', 3: '0'}
+205	205		202							{1: '1'}
+206	206		301			DialogEnable				"{1: '1', 3: ""She stretches slowly, walks by Ishmael who's entering the room, finds a corner to sit, and starts working.""}"
+207	207		202							{1: '2', 6: '1'}
+208	208		201							{1: '1', 2: '500004'}
+209	209		301							"{1: '1', 2: 'Asimov', 3: ""...The Science Council doesn't have time to comply with inspections from the Prosecutor's Office at the moment."", 4: '1'}"
+210	210		202							{1: '1'}
+211	211		301							"{3: ""Asimov remains focused on the stack of documents, refusing to even acknowledge Ishmael's presence.""}"
+212	212		201							{1: '1', 2: '500380'}
+213	213		301				DialogDisable			"{1: '1', 2: 'Ishmael', 3: ""I'm not here to represent the Prosecutor's Office."", 4: '1'}"
+214	214		202							{1: '1', 6: '1'}
+215	215		104							{1: '0|0|-50', 2: '0.3'}
+216	216		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0.3'}
+217	217		201							{1: '1', 2: '501182', 6: '-100'}
+218	218		301			DialogEnable	DialogDisable			"{1: '1', 3: 'Her gaze shifts to the ""White Noise"" placed in the middle of the table, waiting to be examined.', 4: '1'}"
+219	219		104							{1: '0|0|0', 2: '0.3'}
+220	220		202							{1: '1', 6: '1'}
+221	221		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '0', 5: '0.3'}
+222	222		201							{1: '1', 2: '500380', 4: '-450'}
+223	223		201							{1: '2', 2: '500004', 4: '450'}
+224	224		301			DialogEnable				"{1: '1', 2: 'Asimov', 3: ""That device is classified as a special item. The report has reached the President, so it doesn't require any approval."", 4: '2'}"
+225	225		301							"{2: 'Ishmael', 3: ""...I apologize. You may not like me because of my identity, but I really am not here on behalf of the Prosecutor's Office."", 4: '1'}"
+226	226		301							"{2: 'Ishmael', 3: 'My frame can collect and reconstruct advanced data, so the military has asked me to help ""restore"" this device.', 4: '1'}"
+227	227		202							{1: '1', 2: '2'}
+228	228		301							{3: 'Ishmael pulls out the statement signed by Nikola.'}
+229	229		201							{1: '1', 2: '500004'}
+230	230		301							{1: '1', 2: 'Asimov', 3: '...', 4: '1'}
+231	231		301				DialogDisable			{2: 'Asimov', 3: 'Please.', 4: '1'}
+232	232		202							{1: '1', 6: '1'}
+233	233		306							{1: '1'}
+234	234		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0.3'}
+235	235		201							{1: '1', 2: '501182', 6: '-100'}
+236	236		301			DialogEnable				"{1: '1', 3: 'After receiving permission, Ishmael stands by the table, carefully examining the device named ""White Noise"".', 4: '1'}"
+237	237		301				DialogDisable			"{3: ""It looks like a large data reader, with several scratches from battles. It has markings that don't belong to the current era."", 4: '1'}"
+238	238		202							{1: '1', 6: '1'}
+239	239		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '0', 5: '0.3'}
+240	240		306							
+241	241		201							{1: '1', 2: '500380'}
+242	242		203							{1: '1', 2: '0.25', 5: '-50'}
+243	243		301			DialogEnable				{1: '1', 3: 'She reaches out, gently touching the base of the device with her fingertips.'}
+244	244		401							{1: '2', 2: '5274'}
+245	245		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiArenaOnlineFuben/FxUiArenaOnlineSectionSmoke01.prefab', 2: '2'}
+246	246		301							{3: 'Dots of light shimmer as data slowly flows out as pale blue rays, showing the internal structure of the device...'}
+247	247		504							{1: '0.7'}
+248	248		401							{1: '2', 2: '4278'}
+249	249		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3MainChangeScreenBlue.prefab', 2: '2'}
+250	250		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+251	251		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiArenaOnlineFuben/FxUiArenaOnlineSectionSmoke01.prefab'}
+252	252		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenBlueEx.prefab', 2: '2'}
+253	253		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+254	254		201							{1: '1', 2: '501184', 3: '17', 4: '400', 5: '-100', 7: '1'}
+255	255		201							{1: '2', 2: '500380', 4: '-400'}
+256	256		301							{1: '1', 2: 'Selena', 3: 'So please, help me...', 4: '1'}
+257	257		301							{2: 'Ishmael', 3: '...What do you want to do?', 4: '2'}
+258	258		301							{2: 'Selena', 3: 'I will...', 4: '1'}
+259	259		204							{1: '1', 2: '4'}
+260	260		203							{1: '1', 2: '0.25', 3: '400'}
+261	261		301							{3: 'The girl looks up, her face tinged with both sorrow and determination.'}
+262	262		202							{1: '1', 2: '2', 6: '1'}
+263	263		401							{1: '2', 2: '4278'}
+264	264		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3MainChangeScreenBlue.prefab', 2: '2'}
+265	265		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+266	266		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1183.jpg'}
+267	267		202							{1: '1', 6: '1'}
+268	268		201							{1: '1', 2: '501164', 3: '4', 7: '1'}
+269	269		301							{1: '1', 2: 'Lueya', 3: 'You have no right to interfere with what must be premiered...', 4: '1'}
+270	270		201							{1: '1', 2: '500380', 7: '1'}
+271	271		301							"{1: '1', 2: 'Ishmael', 3: ""...I won't... cause and effect..."", 4: '1'}"
+272	272		301				DialogDisable			{2: 'Ishmael', 3: '...', 4: '1'}
+273	273		504							{1: '0'}
+274	274		401							{1: '2', 2: '4278'}
+275	275		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3MainChangeScreenBlue.prefab', 2: '2'}
+276	276		202							{1: '1', 6: '1'}
+277	277		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+278	278		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenBlueEx.prefab'}
+279	279		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+280	280		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+281	281		104							{1: '0|0|-100', 2: '0'}
+282	282		104						300.0	{1: '0|0|0', 2: '0.5'}
+283	283		301			DialogEnable				"{3: ""Pale blue light flickers, tracing the device's exterior and internal structure. A researcher on the side quickly takes photos, trying to figure out how it should be operated.""}"
+284	284		201							{1: '1', 2: '500004'}
+285	285		301							"{1: '1', 2: 'Asimov', 3: ""...That's quite impressive for a data collection and reconstruction device."", 4: '1'}"
+286	286		202							{1: '1'}
+287	287		301							{3: 'Asimov looks at Ishmael, who responds with a smile.'}
+288	288		201							{1: '1', 2: '500380'}
+289	289		301							"{1: '1', 2: 'Ishmael', 3: ""I'm done with the military's request. Is there anything else you need me for?"", 4: '1'}"
+290	290		203							{1: '1', 2: '0.25', 3: '-400'}
+291	291		201							{1: '2', 2: '500004', 4: '400'}
+292	292		301							"{1: '1', 2: 'Asimov', 3: ""Not at the moment. I'll send a formal request, if necessary."", 4: '2'}"
+293	293		301							"{2: 'Ishmael', 3: ""Then, I'll take my leave."", 4: '1'}"
+294	294		202							{1: '1', 2: '2'}
+295	295		301							{3: 'After the researchers finish documenting, Ishmael gestures politely before leaving the lab.'}
+296	296		201							{1: '1', 2: '500004'}
+297	297		301							{1: '1', 2: 'Asimov', 3: 'A positioning device...', 4: '1'}
+298	298		301							"{3: 'Asimov\'s mind races as he studies the terminal\'s projection of the device\'s core components that Ishmael ""disassembled.""'}"
+299	299		301							"{3: 'If Ishmael\'s analysis is right, and ""White Noise"" is indeed a positioning device, then...'}"
+300	300		301							"{3: 'What he didn\'t say was the only ""condition"" to activate this device is to play that specific noise on the surveillance footage at a precise frequency while the device is powered.'}"
+301	301		301							{3: 'But...'}
+302	302		202							{1: '1', 6: '1'}
+303	303		401							{1: '2', 2: '952'}
+304	304		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+305	305		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+306	306		201							{1: '1', 2: '501182', 7: '1'}
+307	307		301							"{1: '1', 3: 'If everything is normal, then why can\'t ""White Noise"" activate again?', 4: '1'}"
+308	308		301							"{3: 'Did this device actually ""teleport"" the Gray Raven Commandant to another location?', 4: '1'}"
+309	309		202							{1: '1', 6: '1'}
+310	310		401							{1: '2', 2: '952'}
+311	311		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+312	312		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory759.jpg'}
+313	313		301							{3: 'The Task Force has searched every inch of the conservation area, but where is the commandant?'}
+314	314		401							{1: '2', 2: '952'}
+315	315		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+316	316		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1014.jpg'}
+317	317		301							"{3: '""Teleportation"" was never achieved even during the Golden Age, so where did this device come from?'}"
+318	318		401							{1: '2', 2: '952'}
+319	319		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+320	320		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+321	321		301				DialogDisable			{3: 'In other words...'}
+322	322		109							"{1: '1', 2: '<color=#ffffffff><size=60>Does this device locate only a ""geographical position""?</size></color>', 4: '50'}"
+323	323		301		1		AniZhuanchangBegin			"{3: 'Does this device locate only a ""geographical position""?'}"

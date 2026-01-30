@@ -1,0 +1,136 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory669.jpg'}
+2	2		401							{1: '1', 2: '204'}
+3	3		107						2000.0	{1: 'Constellia Central Street'}
+4	4		108							{1: '1'}
+5	5		301			DialogEnable				"{3: 'Your terminal casts a crystal-blue glow, and the interface lingers on your chat with Teddy. The last message reads, ""Meet at 3 PM, same place.""'}"
+6	6		301							"{3: ""You glance at the clock—it's already 3:12 PM.""}"
+7	7		301							{3: 'You and Teddy have a deal: if either of you is more than ten minutes late, you have to grant the other a favor—unless you can come up with a reason the other accepts.'}
+8	8		301							{3: 'You still recall how you were late once before because your meeting ran long. After some thorough logic, Teddy insisted you could have made it on time anyway. And then...'}
+9	9		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+10	10		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory546.jpg'}
+11	11		504							{1: '0.7'}
+12	12		201							{1: '1', 2: '500864', 3: '2'}
+13	13		301							"{1: '1', 2: 'Teddy', 3: ""Come and be my model for half the day. I've been experimenting with a few outfit combos, and I really want to see how they look on you."", 4: '1'}"
+14	14		202							{1: '1', 6: '1'}
+15	15		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+16	16		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory669.jpg'}
+17	17		504							{1: '0'}
+18	18		301							{3: 'Now, you finally get your chance.'}
+19	19		201							{1: '1', 2: '500864', 3: '3'}
+20	20		301							{1: '1', 3: 'You hear those familiar footsteps approaching and look up. The pink-haired Construct comes to a stop right in front of you.'}
+21	21		306							{1: '1'}
+22	22		301							"{3: ""She's here. Knowing Teddy as well as you do, you're sure she's about to claim she was forced by circumstances beyond her control—probably with some creative excuses.""}"
+23	23		306							
+24	24		301							"{2: 'Teddy', 3: ""The traffic is terrible, so I'm late."", 4: '1'}"
+25	25		306							{1: '1'}
+26	26		301							{3: 'The first thing you will do is root out any twisted arguments lurking in here...'}
+27	27		306							
+28	28		301							{2: 'Teddy', 3: 'Sorry.', 4: '1'}
+29	29		306							{1: '1'}
+30	30		301							{3: '...'}
+31	31		306							
+32	32		301							{3: '...?'}
+33	33		302							"{2: ""You're actually admitting it just like that?!"", 3: '34', 4: 'Who are you? Where are you hiding Teddy?', 5: '34'}"
+34	34		204							{1: '1'}
+35	35		301							"{2: 'Teddy', 3: ""You're totally overreacting."", 4: '1'}"
+36	36		301							"{2: 'Teddy', 3: ""I'm just not in the mood to argue with you about this today."", 4: '1'}"
+37	37		301							"{3: ""You notice Teddy's voice is a bit deeper and more earnest than usual.""}"
+38	38		302							"{2: 'Is something going on?', 3: '39', 4: ""I see. It's because of the Double Seventh Festival."", 5: '44'}"
+39	39		204							{1: '1', 2: '1'}
+40	40		301							{2: 'Teddy', 3: 'Go on, take a guess.', 4: '1'}
+41	41		204							{1: '1', 2: '2'}
+42	42		301							{2: 'Teddy', 3: 'Guess right, and you get a reward. Guess wrong, and you face a penalty.', 4: '1'}
+43	43		302							"{2: ""So I'm not getting out of this, am I?"", 3: '44'}"
+44	44		204							{1: '1'}
+45	45		301							"{2: 'Teddy', 3: ""Hmm... maybe it's the festival spirit getting to me."", 4: '1'}"
+46	46		204							{1: '1', 2: '3'}
+47	47		301							"{2: 'Teddy', 3: ""But, that's not the whole story..."", 4: '1'}"
+48	48		202							{1: '1'}
+49	49		301							"{3: ""Teddy murmurs, then opens and closes her mouth. It's obvious she wants to say more, but the words never come.""}"
+50	50		301							{3: 'She lowers her head, gazing at her toes, and seems a little... shy?'}
+51	51		201							{1: '1', 2: '500864', 3: '3'}
+52	52		301							{1: '1', 2: 'Teddy', 3: 'Commandant...', 4: '1'}
+53	53		301							{3: 'After a moment, she looks up and meets your gaze.', 4: '1'}
+54	54		204							{1: '1'}
+55	55		301				AniZhuanchangBegin			{2: 'Teddy', 3: 'Can you come with me somewhere?', 4: '1'}
+56	56		202							{1: '1', 6: '1'}
+57	57		401							{1: '1', 2: '36'}
+58	58		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory677.jpg'}
+59	59		401							{1: '1', 2: '163'}
+60	60		401							{1: '2', 2: '2902'}
+61	61		301			AniZhuanchangEnd				{3: 'In this cool, secluded garden, lush greenery thrives. At the center stands an ancient tree, its golden leaves gleaming in the sunlight. Occasionally, a soft breeze drifts through, knocking a few leaves loose.'}
+62	62		301							{3: 'You catch a falling leaf, cool against your palm. On one side is a vivid image of the cowherd, the weaver girl, and their magpie bridge—reminding you that neither the leaf nor the tree is natural, but an exquisitely crafted work of art.'}
+63	63		301							{3: 'Many couples are strolling in, their hands tightly clasped as they quietly gaze at the towering tree.'}
+64	64		201							{1: '1', 2: '500864', 3: '1'}
+65	65		301							{1: '1', 2: 'Teddy', 3: 'This is the Double Seventh Magpie Tree.', 4: '1'}
+66	66		301							{3: 'As if she wants to blend into the mood, she speaks in a hushed tone.'}
+67	67		301							"{2: 'Teddy', 3: 'Commandant, do you know this place is called the ""date sanctuary"" of the Double Seventh Festival park?', 4: '1'}"
+68	68		301							"{2: 'Teddy', 3: ""Legend says that if two people sincerely share what's in their hearts under this tree, the magpies will bless them, ensuring they stay happy and together forever."", 4: '1'}"
+69	69		302							{2: 'It sounds so romantic.', 4: '...'}
+70	70		202							{1: '1'}
+71	71		301							"{3: ""Teddy takes a deep breath, as though she's mustering her courage.""}"
+72	72		201							{1: '1', 2: '500864', 3: '6'}
+73	73		301							"{1: '1', 2: 'Teddy', 3: ""Commandant, there's something I need to tell you."", 4: '1'}"
+74	74		301							"{3: ""This setting, this mood, and Teddy's uncharacteristic bashfulness...""}"
+75	75		301							{3: 'Could it be...?'}
+76	76		302							{2: 'This is way too sudden!', 3: '77', 4: 'Give me a second to prepare.', 5: '77', 6: '...', 7: '77'}
+77	77		204							{1: '1', 2: '3'}
+78	78		301							"{2: 'Teddy', 3: ""It's hard to explain right now, so..."", 4: '1'}"
+79	79		203							{1: '1', 2: '0.4', 5: '-50'}
+80	80		301							{3: 'She takes a portable player and earphones from her pocket and hands them over with both hands.'}
+81	81		204							{1: '1', 2: '6'}
+82	82		301							"{2: 'Teddy', 3: ""I've already recorded it."", 4: '1'}"
+83	83		301							"{3: ""You take the portable music player, wondering if Teddy's message is hidden inside.""}"
+84	84		301				DialogDisable			{3: 'You put the earphones in and meet her gaze. She nods gently.'}
+85	85		302							{2: '(Press play)', 3: '86'}
+86	86		401						200.0	{1: '2', 2: '897'}
+87	87		202							{1: '1'}
+88	88		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.8'}
+89	89		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+90	90		205							{1: '999'}
+91	91		301			DialogEnable				"{3: ""At first, there's only silence—then the music starts flowing.""}"
+92	92		301							{3: 'It begins with the piano, soft and ethereal. Though the melody is simple, it never feels dull. Gradually, Kowloong instruments weave in, taking the piece to new heights.'}
+93	93		301							"{3: ""Modern and traditional elements blend, as if neon magpies appear in the sky to form a magpie bridge. Two souls, perfectly in tune, hold each other's hands on that bridge.""}"
+94	94		301							{3: 'Emotions rise steadily, heading toward a climax. Right before they explode, everything suddenly stops. And then...'}
+95	95		301							{3: 'Then... nothing...'}
+96	96		301							"{3: ""It's over?""}"
+97	97		301				DialogDisable			"{3: ""It seems to be over. There's no more sound after that.""}"
+98	98		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory677.jpg', 3: '0', 4: '1', 5: '0.8'}
+99	99		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory677.jpg'}
+100	100		205							{1: '999'}
+101	101		302							"{2: 'The music sounds great...', 3: '102', 4: ""So... that's it?"", 5: '102'}"
+102	102		201							{1: '1', 2: '500864'}
+103	103		301			DialogEnable				"{1: '1', 2: 'Teddy', 3: ""Ahem... So here's the situation."", 4: '1'}"
+104	104		301							"{2: 'Teddy', 3: ""You've probably seen the Double Seventh Festival promo video. There's a section where modern instruments play alongside traditional Kowloong instruments, which I find really fascinating."", 4: '1'}"
+105	105		301							"{2: 'Teddy', 3: ""I watch it and try to replicate the performance, but I can never quite capture the core feeling. Right now, the best track I've managed to create is the one you're hearing."", 4: '1'}"
+106	106		301							"{2: 'Teddy', 3: ""It might sound decent at first, but when you listen more carefully, you can tell it's missing that spark that truly brings it to life."", 4: '1'}"
+107	107		204							{1: '1', 2: '1'}
+108	108		301							"{3: ""Teddy's mouth gradually curls into a subtle smile.""}"
+109	109		301							"{2: 'Teddy', 3: 'After analyzing it, I find that the heart of this melody lies in a strong sense of ""attachment.""', 4: '1'}"
+110	110		301							"{2: 'Teddy', 3: ""So I'm asking you, Commandant, to help me set the right mood. With your cooperation, I think I can fully grasp this tune and finish the piece."", 4: '1'}"
+111	111		204							{1: '1', 2: '2'}
+112	112		301							"{3: ""In the end, that evil grin reappears on the pink-haired Construct's face, as though it never truly left.""}"
+113	113		301							{2: 'Teddy', 3: 'Oh? Commandant, you looked a little tense just now...', 4: '1'}
+114	114		301							{2: 'Teddy', 3: 'Were you expecting something?', 4: '1'}
+115	115		302							"{2: ""I knew it'd turn out like this."", 3: '116', 4: 'That act of yours was pretty convincing...', 5: '116', 6: '...', 7: '116'}"
+116	116		301							"{3: ""As though she's satisfied with your reaction, Teddy beams with delight.""}"
+117	117		301							{2: 'Teddy', 3: 'But it surely is helpful, heh-heh...', 4: '1'}
+118	118		204							{1: '1', 2: '1'}
+119	119		301							"{2: 'Teddy', 3: ""That's the exact vibe I'm going for. Mhm, I'll just tweak this part right here..."", 4: '1'}"
+120	120		202							{1: '1'}
+121	121		401						250.0	{1: '2', 2: '4422'}
+122	122		401							{1: '2', 2: '4427'}
+123	123		301							"{3: ""She hums a melody as she opens her terminal's projection, brings up the score, makes a quick edit, then exports the audio and loads it into her music player.""}"
+124	124		402							{1: '4427'}
+125	125		201							{1: '1', 2: '500864'}
+126	126		301							"{1: '1', 2: 'Teddy', 3: ""Let's head out, Commandant. We're moving on to the next spot."", 4: '1'}"
+127	127		302							"{2: ""We're leaving? We just got here to see the tree, and it's already over?"", 3: '128'}"
+128	128		301							"{2: 'Teddy', 3: ""It's definitely not over..."", 4: '1'}"
+129	129		203							{1: '1', 2: '0.5', 5: '-50'}
+130	130		301							{3: 'Teddy shares the wired earphones with you.'}
+131	131		301							{3: 'She hits the play button, and the newly adjusted melody begins to flow softly.'}
+132	132		301							"{2: 'Teddy', 3: ""It's not finished yet. A half-done song like this won't receive the magpies' blessing."", 4: '1'}"
+133	133		204							{1: '1', 2: '1'}
+134	134		301							"{2: 'Teddy', 3: ""Let's come here again when it's done."", 4: '1'}"
+135	135		301		1		AniZhuanchangBegin			"{2: 'Teddy', 3: ""When that time comes, I'll let you hear the voice in my heart."", 4: '1'}"

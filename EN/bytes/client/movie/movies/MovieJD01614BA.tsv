@@ -1,0 +1,20 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory260.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '1031001', 4: '-600'}
+4	4		201							{1: '2', 2: '500026', 4: '600'}
+5	5		201							{1: '3', 2: '500166'}
+6	6		301			DialogEnable				"{1: '1', 2: 'Liv', 3: ""We're at the end of the channel. The bridge... is up ahead."", 4: '1'}"
+7	7		301							{2: 'Lee', 3: 'I bet this is what screwed up the security lock.', 4: '2'}
+8	8		301							"{2: 'System Notice', 3: '""Security Line Code E-02-00＊（＆Ｔ＿（Ｈ＿（ＰＩＵＧ436, Security Lock L３……３……３……(HN()PT_(^T VVO（＆＊Ｂ＊＆＾ＲＦ＊） BI*TY}_{""""&^ ""'}"
+9	9		301							{3: 'In addition to the bizarre codes, the security lock is also showing traces of multiple bridging.'}
+10	10		301							{2: 'Liv', 3: 'But the entry module still seems usable...', 4: '1'}
+11	11		301							"{2: 'Lee', 3: ""We've got two choices here, then..."", 4: '2'}"
+12	12		301							"{2: 'Lee', 3: ""It's up to you now, Commandant."", 4: '2'}"
+13	13		302				DialogDisable			{2: '(Nod)', 3: '14'}
+14	14		305							{1: '15', 2: '19'}
+15	15		301			DialogEnable				{2: 'Lee', 3: 'The path is clear now!', 4: '2'}
+16	16		301							"{2: 'Lucia', 3: ""Guys, let's go!"", 4: '3'}"
+17	17		301							{2: 'Liv', 3: '...The bridge is over there!', 4: '1'}
+18	18		302		1		AniZhuanchangBegin			"{2: ""Let's all get ready."", 3: '19'}"
+19	19		202		1		AniZhuanchangBegin			{1: '1', 2: '2', 3: '3', 6: '1'}

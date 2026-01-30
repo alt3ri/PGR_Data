@@ -1,0 +1,145 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory671.jpg'}
+2	2		401							{1: '1', 2: '205'}
+3	3		301			DialogEnable				{2: 'Broadcast', 3: 'First set, stretching exercises. One, two, three, four...'}
+4	4		301							{3: 'Following the broadcast count, No. 21 perks up her wolf ears and raises both arms straight out in front of her.'}
+5	5		201							{1: '1', 2: '500650'}
+6	6		301							{1: '1', 2: 'No. 21', 3: 'Am I doing this right, Commandant?', 4: '1'}
+7	7		302							"{2: 'Step forward with your left foot.', 3: '8', 4: ""Don't look at me. Chin up, eyes forward."", 5: '9'}"
+8	8		301							{2: 'No. 21', 3: 'Ah...', 4: '1'}
+9	9		203							{1: '1', 2: '0.3', 3: '450'}
+10	10		201							{1: '2', 2: '500488', 4: '-450', 5: '-250', 6: '400'}
+11	11		301							{1: '1', 2: 'Mechanoid', 3: 'Incorrect. Start over. Incorrect. Start over. Incorrect. Sta—', 4: '2'}
+12	12		401							{1: '2', 2: '10022001'}
+13	13		201							{1: '1', 2: '500652', 3: '5', 4: '450'}
+14	14		301			DialogShake				"{1: '1', 2: 'No. 21', 3: ""Grr... I'm gonna tear you apart!"", 4: '1'}"
+15	15		301			DialogShake				{2: 'Mechanoid', 3: 'Violence prohibited! Security!', 4: '2'}
+16	16		302							"{2: ""Yeah, yeah, I'm coming..."", 3: '17', 4: 'No. 21, calm down.', 5: '17'}"
+17	17		301			DialogShake				"{2: 'No. 21', 3: ""Don't stop me, Commandant. This stupid machine is picking on me!"", 4: '1'}"
+18	18		301			DialogShake				"{2: 'Mechanoid', 3: ""I'm following protocol. If you want your stamp and the prize, you need to follow the rules!"", 4: '2'}"
+19	19		202							{1: '1', 2: '2'}
+20	20		301							{3: 'This is one of the Double Seventh Festival activities. The banner says anyone who completes the radio calisthenics gets a stamp.'}
+21	21		301							{3: 'These stamps can be exchanged for prizes.'}
+22	22		401							{1: '2', 2: '4387'}
+23	23		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+24	24		504							{1: '0.7'}
+25	25		201							{1: '2', 2: '500650', 3: '2'}
+26	26		301							{1: '1', 2: 'No. 21', 3: 'I want that big wolf...', 4: '1'}
+27	27		202							{1: '1', 6: '1'}
+28	28		401							{1: '2', 2: '4387'}
+29	29		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+30	30		504							{1: '0'}
+31	31		301							{3: 'Drawn by the plush wolf on display, No. 21 eagerly joined the calisthenics, but without ever having learned it, she failed miserably.'}
+32	32		201							{1: '1', 2: '500650', 4: '450'}
+33	33		201							{1: '2', 2: '500488', 4: '-450', 5: '-250', 6: '400'}
+34	34		301							"{1: '1', 2: 'Mechanoid', 3: ""That's why I got the Gray Raven Commandant to guide you. Do the calisthenics right and you'll get the stamp. Please stop biting. Machines can feel pain too!"", 4: '2'}"
+35	35		204							{1: '1', 2: '5'}
+36	36		301							{2: 'No. 21', 3: 'Bad...!', 4: '1'}
+37	37		302				DialogDisable			"{2: ""Let's just keep going, No. 21."", 3: '38', 4: ""Let's give it another try."", 5: '38'}"
+38	38		204					600.0		{1: '1'}
+39	39		301			DialogEnable				"{2: 'No. 21', 3: ""...Alright. I'll do as you say, Commandant."", 4: '1'}"
+40	40		301							{2: 'No. 21', 3: 'We agreed that once I finish the leg kick exercise, I get the stamp.', 4: '1'}
+41	41		301			DialogShake				{2: 'Mechanoid', 3: 'Why would I lie? Hurry up and do it!', 4: '2'}
+42	42		202							{1: '1', 2: '2'}
+43	43		301							{3: 'The mechanoid restarts the broadcast, and the familiar opening tune of radio calisthenics fills the air.'}
+44	44		201							{1: '1', 2: '500650'}
+45	45		301							{1: '1', 2: 'No. 21', 3: 'Commandant, could you go over the leg?kick exercise again?', 4: '1'}
+46	46		301							{3: 'With a bit of time before the third section begins, No. 21 tugs on your sleeve, wanting to review.'}
+47	47		301							{2: 'No. 21', 3: 'You said it has eight counts.', 4: '1'}
+48	48		204							{1: '1', 2: '14'}
+49	49		301							{2: 'No. 21', 3: 'Left foot forward three steps, arms raised... How far is three steps? My steps are smaller. I need two extra.', 4: '1'}
+50	50		302							"{2: ""That's fine. Just use a lunge position."", 3: '51'}"
+51	51		204							{1: '1', 2: '4'}
+52	52		301							{2: 'No. 21', 3: 'Uh...', 4: '1'}
+53	53		401							{1: '2', 2: '4341'}
+54	54		301				DialogDisable			{3: 'She always forgets the lunge, clenching her fists and shaking her head hard as if trying to force herself to remember.'}
+55	55		203						400.0	{1: '1', 2: '0.4', 4: '-40', 5: '-100'}
+56	56		301			DialogEnable	DialogDisable			{2: 'No. 21', 3: 'First count, left foot... no, right foot forward into a lunge, arms up.', 4: '1'}
+57	57		203						550.0	{1: '1', 2: '0.8', 4: '20', 5: '-150'}
+58	58		204							{1: '1', 2: '14'}
+59	59		301			DialogEnable				{2: 'No. 21', 3: 'Second count, left foot kicks forward, arms swing back... then switch to the left... right? Left?', 4: '1'}
+60	60		302							"{2: 'Really?', 3: '61', 4: ""To the right, isn't it?"", 5: '61'}"
+61	61		401							{1: '2', 2: '4341'}
+62	62		204							{1: '1'}
+63	63		301							"{3: ""It's common to mix up left and right when you're flustered. The best fix is physical guidance. You step in, place your hands on her shoulders, and gently turn her 180 degrees while talking her through it.""}"
+64	64		301							{2: 'No. 21', 3: 'Left side first, then right. Right, Commandant?', 4: '1'}
+65	65		302							"{2: ""That's correct, No. 21."", 3: '66'}"
+66	66		204							{1: '1'}
+67	67		301				DialogDisable			"{3: ""Her tail sways with satisfaction at your approval, but this time she doesn't nuzzle closer. She stays in position and recites the last count.""}"
+68	68		203						330.0	{1: '1', 2: '0.3', 4: '-20', 5: '-70'}
+69	69		203							{1: '1', 2: '0.3'}
+70	70		301			DialogEnable				{2: 'No. 21', 3: 'After the eighth count... start again from the first.', 4: '1'}
+71	71		202							{1: '1'}
+72	72		301							"{3: ""Looks like you've got it.""}"
+73	73		201							{1: '1', 2: '500488', 5: '-250', 6: '400'}
+74	74		301							"{1: '1', 2: 'Mechanoid', 3: ""Alright, that's enough. Time for the third section!"", 4: '1'}"
+75	75		202							{1: '1', 6: '1'}
+76	76		201							{1: '1', 2: '500650'}
+77	77		301							{1: '1', 2: 'No. 21', 3: 'Got it.', 4: '1'}
+78	78		302							{2: 'You can do it!', 3: '79'}
+79	79		204							{1: '1', 2: '4'}
+80	80		301							{2: 'No. 21', 3: 'No. 21 will do it perfectly!', 4: '1'}
+81	81		202							{1: '1'}
+82	82		306							{1: '1'}
+83	83		301							{2: 'Broadcast', 3: 'Third set, leg kicks, begin!'}
+84	84		301				AniZhuanchangBegin			{3: 'Ready and focused, she moves in rhythm with the broadcast.'}
+85	85		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory671.jpg'}
+86	86		301			AniZhuanchangEnd				{2: 'Broadcast', 3: 'Five, six, seven, stop.'}
+87	87		301							{3: 'She draws her feet back into a standing position. The exercise is complete.'}
+88	88		306							
+89	89		201							{1: '1', 2: '500650', 3: '4'}
+90	90		301							{1: '1', 2: 'No. 21', 3: 'Did I pass?', 4: '1'}
+91	91		302							{2: 'Did she pass?', 3: '92'}
+92	92		202							{1: '1', 6: '1'}
+93	93		201							{1: '1', 2: '500488', 5: '-250', 6: '400'}
+94	94		301							{1: '1', 2: 'Mechanoid', 3: 'Mmm...', 4: '1'}
+95	95		301							{2: 'Mechanoid', 3: 'Yep, you passed.', 4: '1'}
+96	96		203							{1: '1', 2: '0.3', 3: '-450', 4: '-250', 5: '400'}
+97	97		201							{1: '2', 2: '500650', 3: '2', 4: '450'}
+98	98		301							{1: '1', 2: 'No. 21', 3: 'I passed, Commandant!', 4: '2'}
+99	99		302							"{2: ""That's great."", 3: '100', 4: ""Let's get that stamp."", 5: '100'}"
+100	100		301							{2: 'No. 21', 3: 'Yes. Then I can take the big wolf home as my prize.', 4: '2'}
+101	101		301							"{2: 'Mechanoid', 3: ""One stamp isn't enough for that."", 4: '1'}"
+102	102		302							{2: 'Huh?', 3: '103'}
+103	103		301							{2: 'Mechanoid', 3: 'You have to do the exercises daily for them to mean anything. If you could get the prize in one go, what would be the point of stamps? Come back the next two days.', 4: '1'}
+104	104		301							{2: 'No. 21', 3: '...', 4: '2'}
+105	105		201							{1: '2', 2: '500652', 3: '5', 4: '450'}
+106	106		502							{1: 'PanelActor2Shake'}
+107	107		401							{1: '2', 2: '10022001'}
+108	108		301			DialogShake				"{2: 'No. 21', 3: ""I knew it. You're a bad guy!"", 4: '2'}"
+109	109		301			RImgBg1Shake				{2: 'Mechanoid', 3: 'Security!', 4: '1'}
+110	110		302							{2: '(Restrain No. 21)', 3: '111', 4: '(Team up with No. 21 against the mechanoid)', 5: '118'}
+111	111		502							{1: 'PanelActor2Shake'}
+112	112		502							{1: 'RImgBg1Shake'}
+113	113		401							{1: '2', 2: '970804'}
+114	114		203						150.0	{1: '1', 2: '0.14', 3: '-800', 4: '-250', 5: '400'}
+115	115		202						300.0	{1: '1'}
+116	116		202							{1: '2'}
+117	117	124	301			DialogShake				{2: 'Mechanoid', 3: 'Quick! Get her off me!', 4: '1'}
+118	118		203							{1: '1', 2: '0.14', 3: '-800', 4: '-250', 5: '400'}
+119	119		203						150.0	{1: '2', 2: '0.14'}
+120	120		401							{1: '2', 2: '4802'}
+121	121		202							{1: '1', 2: '2'}
+122	122		502							{1: 'RImgBg1Shake'}
+123	123		301			DialogShake				{2: 'Mechanoid', 3: 'Help! The Commandant from Babylonia is siccing a Construct on me!', 4: '1'}
+124	124		301							{3: 'Under her relentless attack, the mechanoid gives in and hands over the wolf. In return, No. 21 has to come back for exercises the next two days.'}
+125	125		201							{1: '1', 2: '500650', 3: '14'}
+126	126		301							{1: '1', 2: 'No. 21', 3: 'The wolf... You take it, Commandant.', 4: '1'}
+127	127		302							"{2: ""You don't want it?"", 3: '128'}"
+128	128		204							{1: '1'}
+129	129		301							"{2: 'No. 21', 3: ""When I saw it, I thought of you, Commandant. And how I can't always be with you."", 4: '1'}"
+130	130		301							"{2: 'No. 21', 3: ""So you'll treat it as my stand-in. When I'm not here, it'll mark my territory for me."", 4: '1'}"
+131	131		302							{2: 'So I just put it in my room?', 3: '132'}
+132	132		301							{2: 'No. 21', 3: 'Yes. Put it somewhere obvious so everyone knows your room belongs to No. 21.', 4: '1'}
+133	133		202							{1: '1', 6: '1'}
+134	134		201							{1: '1', 2: '500488', 5: '-250', 6: '400'}
+135	135		301							"{1: '1', 2: 'Mechanoid', 3: ""And don't forget, you still owe me two more days of exercises!"", 4: '1'}"
+136	136		202							{1: '1', 6: '1'}
+137	137		201							{1: '1', 2: '500650', 3: '4'}
+138	138		301							{1: '1', 2: 'No. 21', 3: '...I hate doing exercises.', 4: '1'}
+139	139		302							"{2: ""Then I'll join you."", 3: '140', 4: 'How about we start training tonight?', 5: '140'}"
+140	140		202							{1: '1'}
+141	141		301							"{3: ""As thanks for the big wolf, I'll spend more time with you.""}"
+142	142		301							{3: 'She freezes for a moment, then her lips curve into a small, warm smile.'}
+143	143		201							{1: '1', 2: '500650'}
+144	144		301		1		AniZhuanchangBegin			{1: '1', 2: 'No. 21', 3: 'The big wolf did its job, Commandant.', 4: '1'}

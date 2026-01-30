@@ -1,0 +1,510 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_10.jpg'}
+2	2		504							{1: '0.5'}
+3	3		401							{1: '1', 2: '167'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+5	5		304			AniZhuanchangEnd				{1: 'Long ago, stories of dragon slayers and evil dragons were told here.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 6: '1', 7: '1'}
+6	6		304							{1: 'Legend has it that to gain the power to defeat evil dragons, heroes must transform into dragons themselves...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 6: '1', 7: '1'}
+7	7		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+8	8		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3401_08.jpg'}
+9	9		104							{1: '-50|-50|-500', 2: '0'}
+10	10		304							{1: 'In one fierce battle, a dragon annihilates a catastrophe-bringing evil dragon, but this world remains bound by the curse of karma.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 6: '1', 7: '1'}
+11	11		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+12	12		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_05.jpg'}
+13	13		104							{1: '-200|-50|-250', 2: '0'}
+14	14		304							{1: 'Karma swiftly spawns new heroes, while the enemy overlooks the subtle differences between dragons and evil dragons.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 6: '1', 7: '1'}
+15	15		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+16	16		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3701_10.jpg'}
+17	17		304							{1: 'Throughout countless ages, the dragon awaits its destined challenger—the one who will come to slay it.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 6: '1', 7: '1'}
+18	18		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1.5'}
+19	19		304				AniZhuanchangBegin			{1: 'And now, she arrives...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 6: '1', 9: '1'}
+20	20		504							{1: '0'}
+21	21		205							{1: '999'}
+22	22		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+23	23		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory915.jpg'}
+24	24		401			DialogEnable			300.0	{1: '2', 2: '9342045'}
+25	25		401							{1: '2', 2: '9342045'}
+26	26		301			AniZhuanchangEnd				{3: 'Above the ravaged battlefield, two silhouettes dart at lightning speed, locked in a relentless pursuit.'}
+27	27		401							{1: '2', 2: '4322'}
+28	28		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+29	29		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+30	30		301							{3: 'They collide and part ways; as their forms blaze into dazzling arcs of light, the resulting shockwaves obliterate every speck of dust on the ground.'}
+31	31		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+32	32		301							{3: 'As the smoke clears, beneath her tattered cloak, a woman with pink hair turns her gaze toward the far end of the battlefield.'}
+33	33		201							{1: '1', 2: '500333'}
+34	34		301							{1: '1', 2: 'Higher Authority', 3: '...', 4: '1'}
+35	35		301							"{2: '???', 3: ""You're bleeding too, Higher Authority.""}"
+36	36		401							{1: '2', 2: '4383'}
+37	37		301							"{2: '???', 3: ""Actually, you're not the true form of a higher-dimensional being, are you? At least, it doesn't seem that way.""}"
+38	38		202							{1: '1'}
+39	39		301							{3: 'From one side of the street, the sound of leather shoes tapping against the ground echoes.'}
+40	40		402							{1: '4383'}
+41	41		201							{1: '1', 2: '500893'}
+42	42		301							"{1: '1', 2: 'Jetavie', 3: ""So even with central authority, you still can't completely avoid damage, can you?"", 4: '1'}"
+43	43		301							{2: 'Jetavie', 3: 'Every system has its limits, as long as you, the central authority, remain bound to this system...', 4: '1'}
+44	44		301							"{2: 'Jetavie', 3: 'When each of my attacks exceeds your preset parameters, even if you exhaust all defense modes, the ""environment"" remains uncontrollable.', 4: '1'}"
+45	45		301							"{2: 'Jetavie', 3: 'Even projections from higher dimensions need to consider the ""performance"" of their medium. The medium\'s limits are your limits.', 4: '1'}"
+46	46		202							{1: '1'}
+47	47		201							{1: '1', 2: '500333'}
+48	48		301							"{1: '1', 2: 'Higher Authority', 3: ""Now that you've fully grown your wings, you finally muster the courage to rebel against me?"", 4: '1'}"
+49	49		301							{2: 'Higher Authority', 3: 'Compared to those pathetic challenges before, this seems much more respectable.', 4: '1'}
+50	50		202							{1: '1'}
+51	51		201							{1: '1', 2: '500893'}
+52	52		301							"{1: '1', 2: 'Jetavie', 3: ""You want to say this is all part of your grand design, don't you?"", 4: '1'}"
+53	53		202							{1: '1'}
+54	54		201							{1: '1', 2: '500333'}
+55	55		301							{1: '1', 2: 'Higher Authority', 3: 'Like snow falling in late spring—unexpected, but not entirely surprising.', 4: '1'}
+56	56		202							{1: '1'}
+57	57		201							{1: '1', 2: '500893'}
+58	58		301							{1: '1', 2: 'Jetavie', 3: 'Since when do you dabble in poetry, Higher Authority?', 4: '1'}
+59	59		301							{2: 'Jetavie', 3: 'If you have time to mess around with poetry, you might as well start carving your own epitaph.', 4: '1'}
+60	60		202							{1: '1'}
+61	61		201							{1: '1', 2: '500333'}
+62	62		301							"{1: '1', 2: 'Higher Authority', 3: ""Jetavie, without me, you can't even stand here like this."", 4: '1'}"
+63	63		202							{1: '1'}
+64	64		201							{1: '1', 2: '500893'}
+65	65		301							"{1: '1', 2: 'Jetavie', 3: ""I vow to avenge the Chosen One's death. I am taking your place..."", 4: '1'}"
+66	66		301							{2: 'Jetavie', 3: 'To become the new central authority.', 4: '1'}
+67	67		301							"{2: 'Jetavie', 3: ""I'm going to..."", 4: '1'}"
+68	68		301							{2: 'Jetavie', 3: '...create a world where the Chosen One exists.', 4: '1'}
+69	69		401							{1: '2', 2: '1511'}
+70	70		301							{3: 'Jetavie raises her weapon without hesitation.'}
+71	71		301				DialogDisable			"{2: 'Jetavie', 3: ""I've... had enough."", 4: '1'}"
+72	72		202							{1: '1'}
+73	73		401							{1: '2', 2: '937'}
+74	74		307							{1: '[WEAPON CHARGING... 100%]', 3: '60', 4: '34aff8ff'}
+75	75		301						100.0	{3: '[WEAPON CHARGING... 100%]'}
+76	76		307							{2: '1'}
+77	77		401						500.0	{1: '2', 2: '4356'}
+78	78		401							{1: '2', 2: '9342031'}
+79	79		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+80	80		301			DialogEnable				{3: 'Jetavie pulls the trigger, sending a brilliant red beam streaking toward Higher Authority...'}
+81	81		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+82	82		401							{1: '2', 2: '4475'}
+83	83		301							{3: 'Higher Authority holds out her left hand, creating a faint red data matrix in front of herself.'}
+84	84		401						500.0	{1: '2', 2: '4477'}
+85	85		401							{1: '2', 2: '2924'}
+86	86		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 2: '2'}
+87	87		301							{3: 'The moment the beam hits, the matrix dissolves with ease, and arcs of electricity surge around Higher Authority in a crushing assault.'}
+88	88		104						250.0	{1: '0|-250|-400', 2: '0.25'}
+89	89		401							{1: '2', 2: '4511'}
+90	90		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+91	91		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab'}
+92	92		401							{1: '2', 2: '4538'}
+93	93		104							{1: '0|0|0', 2: '0'}
+94	94		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory771.jpg'}
+95	95		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab', 2: '2'}
+96	96		301			RImgBg1Shake				{3: 'She is driven back into a half-toppled building, then tumbles into the debris along with countless falling stones.'}
+97	97		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory915.jpg', 3: '0', 4: '1', 5: '1.5'}
+98	98		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory915.jpg'}
+99	99		205							{1: '999'}
+100	100		301							{3: 'The roaring sound fades away, and smoke fills the sky.'}
+101	101		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab'}
+102	102		201							{1: '1', 2: '500893'}
+103	103		301							{1: '1', 2: 'Jetavie', 3: '...', 4: '1'}
+104	104		301							{2: 'Jetavie', 3: 'Is she still alive?', 4: '1'}
+105	105		204							{1: '1', 2: '5'}
+106	106		301				DialogDisable			"{2: 'Jetavie', 3: ""She's tough as nails."", 4: '1'}"
+107	107		202							{1: '1'}
+108	108		401							{1: '2', 2: '937'}
+109	109		307							{1: '[WEAPON CHARGING... 150%]', 3: '60', 4: '34aff8ff'}
+110	110		301						100.0	{3: '[WEAPON CHARGING... 150%]'}
+111	111		307							{2: '1'}
+112	112		201							{1: '1', 2: '500893'}
+113	113		301			DialogEnable				{1: '1', 2: 'Jetavie', 3: 'But before I wipe you out for good, I will unleash more power with every strike.', 4: '1'}
+114	114		202							{1: '1'}
+115	115		401						500.0	{1: '2', 2: '4356'}
+116	116		401							{1: '2', 2: '9342031'}
+117	117		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+118	118		301			RImgBg1Shake	DialogDisable			{3: 'Blinding beams of light hammer the collapsing ruins, one after another.'}
+119	119		401							{1: '2', 2: '937'}
+120	120		307							{1: '[WEAPON CHARGING... 200%]', 3: '60', 4: '34aff8ff'}
+121	121		301						100.0	{3: '[WEAPON CHARGING... 200%]'}
+122	122		307							{2: '1'}
+123	123		401						100.0	{1: '2', 2: '9342031'}
+124	124		401							{1: '2', 2: '4538'}
+125	125		502							{1: 'DialogEnable'}
+126	126		301			RImgBg1Shake				{3: 'Jetavie rains down wave after wave of radiation blasts, ripping open a massive pit in the ruins where Higher Authority stays.'}
+127	127		301							"{3: ""She keeps pulling the trigger in a manic frenzy until she's too exhausted to continue.""}"
+128	128		201							{1: '1', 2: '500893'}
+129	129		301							{1: '1', 2: 'Jetavie', 3: 'But why...', 4: '1'}
+130	130		301							"{2: 'Jetavie', 3: ""That woman's presence still lingers."", 4: '1'}"
+131	131		202							{1: '1'}
+132	132		104			DialogDisable			1000.0	{1: '0|-150|-200', 2: '1'}
+133	133		301			DialogEnable				"{3: ""Right in front of Jetavie's eyes, something red sways in the wind...""}"
+134	134		201							{1: '1', 2: '500893', 3: '3'}
+135	135		301							{1: '1', 2: 'Jetavie', 3: 'Wind?', 4: '1'}
+136	136		202							{1: '1'}
+137	137		401							{1: '2', 2: '4520'}
+138	138		301							{3: 'All at once, a sharp vibration cuts through the air, as if an arrow has just been loosed.'}
+139	139		401						1000.0	{1: '2', 2: '4341'}
+140	140		402							{1: '4341'}
+141	141		301							{3: 'Jetavie tilts her head on instinct, and in the next moment, a blinding crimson floods her vision.'}
+142	142		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+143	143		104							{1: '0|0|0', 2: '0'}
+144	144		401							{1: '2', 2: '4304'}
+145	145		301			RImgBg1Shake				{3: 'In that split second of haze, something zips past Jetavie and sets off an explosion on the road behind her.'}
+146	146		301							{3: 'Jetavie slowly turns around, only now catching on. The silver-black tips of her hair slip free and land on her shoulder.'}
+147	147		201							{1: '1', 2: '500893', 3: '3'}
+148	148		301							{1: '1', 2: 'Jetavie', 3: 'My hair... is it cut?', 4: '1'}
+149	149		301							{3: 'She brushes her cheek in confusion, noticing a thin scratch scoring her otherwise flawless skin.'}
+150	150		204							{1: '1', 2: '5'}
+151	151		301							"{2: 'Jetavie', 3: ""Why... can't I see it clearly?!"", 4: '1'}"
+152	152		202							{1: '1'}
+153	153		401						500.0	{1: '2', 2: '9342031'}
+154	154		401							{1: '2', 2: '4538'}
+155	155		301			RImgBg1Shake				"{3: 'Above the pit that holds Higher Authority, more scattered ""breaches"" are forming.'}"
+156	156		301							{3: 'A rift of the void.'}
+157	157		401							{1: '2', 2: '4513'}
+158	158		301							"{3: ""Without a moment's hesitation, Jetavie plunges into the Matrix.""}"
+159	159		301							{3: 'She barely pauses to think; she already knows the power those weapons possess.'}
+160	160		402							{1: '4513'}
+161	161		401							{1: '2', 2: '4507'}
+162	162		301							{3: 'From the adjoining ebony rifts, a storm of crimson arrows begins to pour forth.'}
+163	163		401						500.0	{1: '2', 2: '4516'}
+164	164		401							{1: '2', 2: '4518'}
+165	165		301			RImgBg1Shake				{3: 'Crimson arrows shoot toward Jetavie, creating a barrage around her as dense as a driving rain.'}
+166	166		201							{1: '1', 2: '500893', 4: '100'}
+167	167		301							{1: '1', 2: 'Jetavie', 3: '...Damn it!', 4: '1'}
+168	168		401							{1: '2', 2: '4514'}
+169	169		301							{3: 'Under the crush of that overwhelming attack, Jetavie has no choice but to shut down her Matrix.'}
+170	170		301							{2: 'Jetavie', 3: 'Phew...', 4: '1'}
+171	171		201							{1: '2', 2: '500333', 4: '-250'}
+172	172		203							{1: '2', 2: '0.3', 3: '-200'}
+173	173		301							{3: 'Then, with no warning, Higher Authority appears silently behind her.'}
+174	174		204							{1: '1', 2: '3'}
+175	175		301							{2: 'Jetavie', 3: 'Wh...?', 4: '1'}
+176	176		202							{1: '1'}
+177	177		203							{1: '2', 2: '0.25'}
+178	178		301							{2: 'Higher Authority', 3: 'Complacency demands a price.', 4: '2'}
+179	179		202							{1: '2'}
+180	180		401							{1: '2', 2: '4508'}
+181	181		301							{3: 'Jetavie whips her head around in a panic, only to have a massive crimson arrow slam into her chest.'}
+182	182		104						250.0	{1: '0|-250|-400', 2: '0.25'}
+183	183		401							{1: '2', 2: '4172'}
+184	184		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+185	185		104							{1: '0|0|0', 2: '0'}
+186	186		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory295.png'}
+187	187		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '4'}
+188	188		301			RImgBg1Shake				{3: 'Like a fragile rag doll, Jetavie is flung by the point-blank strike into the distant white tower.'}
+189	189		401							{1: '2', 2: '4537'}
+190	190		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory928.png', 3: '0', 4: '1', 5: '1.5'}
+191	191		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory928.png'}
+192	192		205							{1: '999'}
+193	193		301							"{3: ""Crushed by debris and rebar, the tower's summit reveals a gaping black chasm lined with jagged, beast-like fangs.""}"
+194	194		301							{3: 'Dust swirls in the air, and the building trembles. After a series of dull reverberations, everything falls silent once again.'}
+195	195		401				DialogDisable			{1: '2', 2: '937'}
+196	196		401							{1: '1', 2: '36'}
+197	197		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+198	198		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '4', 5: '1'}
+199	199		307				AniZhuanchangBegin			{1: '[COMPUTING POWER RESTRICTIONS, LAYERS 1-56... UNLOCK...]', 3: '60', 4: '34aff8ff'}
+200	200		301							{3: '[COMPUTING POWER RESTRICTIONS, LAYERS 1-56... UNLOCK...]'}
+201	201		307							{2: '1'}
+202	202		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory915.jpg'}
+203	203		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.6', 5: '0'}
+204	204		401							{1: '1', 2: '174'}
+205	205		201				DialogEnable			{1: '1', 2: '500333', 7: '1'}
+206	206		301			AniZhuanchangEnd				{1: '1', 2: 'Higher Authority', 3: 'I almost forgot...', 4: '1'}
+207	207		301							{2: 'Higher Authority', 3: 'Your abilities go far beyond this.', 4: '1'}
+208	208		202							{1: '1'}
+209	209		301							{3: 'A flicker of crimson light, shaped like a cross, emerges at the edge of the pitch-black tear.'}
+210	210		401							{1: '2', 2: '4385'}
+211	211		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.6', 4: '0', 5: '1'}
+212	212		205							{1: '999'}
+213	213		301							{3: 'Slowly, the darkness around begins to brighten.'}
+214	214		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+215	215		401							{1: '2', 2: '4536'}
+216	216		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_21.jpg'}
+217	217		301			RImgBg1Shake				{2: 'Jetavie', 3: 'Higher Authority!'}
+218	218		401							{1: '2', 2: '9342029'}
+219	219		301				DialogDisable			{3: 'A drawn-out whine echoes when the radiation beam fires, and a brilliant crimson shaft tears out from the dark rift.'}
+220	220		401							{1: '2', 2: '9342031'}
+221	221		501						1500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+222	222		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+223	223		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+224	224		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+225	225		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory660.jpg'}
+226	226		104							{1: '0|80|-300', 2: '0'}
+227	227		301			DialogEnable		100.0		{3: 'Higher Authority tilts her head at the last second, dodging the incoming beam.'}
+228	228		401							{1: '2', 2: '1511'}
+229	229		201							{1: '1', 2: '500893'}
+230	230		301							{1: '1', 3: 'Standing on a heap of rubble, Jetavie clutches her weapon—still trailing wisps of smoke—and fights for breath.'}
+231	231		202							{1: '1'}
+232	232		301							"{3: ""In the instant she's attacked, a massive wave of Computing Power erupts inside Jetavie and wraps around her like a shell sealing an egg.""}"
+233	233		301							"{3: ""Before she can even will it, her body's defense systems kick in, forming an invisible barrier where the impact lands.""}"
+234	234		301				AniZhuanchangBegin			{3: 'Overhead, a void rift fans out around Higher Authority, where a swarm of deep-red arrows conceal, waiting to rain down...'}
+235	235		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory915.jpg'}
+236	236		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFrontNewCommon23.png', 4: '4'}
+237	237		201							{1: '1', 2: '500333', 7: '1'}
+238	238		301			AniZhuanchangEnd				{1: '1', 3: 'Higher Authority hovers in the air, deliberately raising her left hand.'}
+239	239		301							{3: 'At that same instant, an unending arsenal of void weapons materializes, spanning the horizon.'}
+240	240		401							{1: '2', 2: '4507'}
+241	241		301							"{2: 'Higher Authority', 3: ""It's about time..."", 4: '1'}"
+242	242		301							"{2: 'Higher Authority', 3: '...you step out of your ""ivory tower,"" isn\'t it?', 4: '1'}"
+243	243		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+244	244		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFrontNewCommon23.png', 4: '4', 5: '1'}
+245	245		202							{1: '1', 6: '1'}
+246	246		401							{1: '2', 2: '4516'}
+247	247		301							{3: 'Another devastating volley capable of leveling the entire area.'}
+248	248		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+249	249		201							{1: '1', 2: '500893'}
+250	250		301							{1: '1', 3: 'Jetavie stands her ground, her gaze steady as she watches the arrows streak toward her.'}
+251	251		301							{2: 'Jetavie', 3: 'The true possibility...', 4: '1'}
+252	252		401						1000.0	{1: '2', 2: '4341'}
+253	253		402							{1: '4341'}
+254	254		203							{1: '1', 2: '0.25', 4: '-20', 5: '-50'}
+255	255		301							{3: 'Mulling over those words, she extends her left hand toward the weapon emerging from the void.'}
+256	256		401							{1: '2', 2: '4478'}
+257	257		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+258	258		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+259	259		301							{3: 'Crimson arrows line up in front of Jetavie, each one stopping in midair as if time itself has been paused.'}
+260	260		202							{1: '1'}
+261	261		401							{1: '2', 2: '4341'}
+262	262		301							"{3: ""Higher Authority's hood flutters in the breeze. As she watches what unfolds, her expression remains blank.""}"
+263	263		201							{1: '1', 2: '500893'}
+264	264		301				DialogDisable			{1: '1', 2: 'Jetavie', 3: 'I can see it...', 4: '1'}
+265	265		202							{1: '1', 6: '1'}
+266	266		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+267	267		401							{1: '2', 2: '4092'}
+268	268		307							{1: '[ULTIMATE MODE]', 3: '100', 4: 'FFD700', 6: '1'}
+269	269		301						100.0	{3: '[ULTIMATE MODE]'}
+270	270		307							{2: '1'}
+271	271		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory915.jpg'}
+272	272		201							{1: '1', 2: '500925', 7: '1'}
+273	273		301			DialogEnable				{1: '1', 3: 'Amid the frozen rain of crimson arrows, Jetavie, for the very first time, latches onto the code emanating from the void.'}
+274	274		301							{2: 'Jetavie', 3: 'Matrix, lend me your power!', 4: '1'}
+275	275		301							{3: 'Jetavie finally understands the Matrix at this moment, and the Matrix, in turn, recognizes her.'}
+276	276		301							{2: 'Jetavie', 3: '<color=#34aff8ff>Construct.</color>', 4: '1'}
+277	277		202							{1: '1'}
+278	278		401						500.0	{1: '2', 2: '2750'}
+279	279		401							{1: '2', 2: '4507'}
+280	280		301							{3: 'With a light snap of her fingers, Jetavie makes the arrows pivot sharply, sending them toward Higher Authority at the other end.'}
+281	281		201							{1: '1', 2: '500333'}
+282	282		301							"{1: '1', 2: 'Higher Authority', 3: ""She's rewritten the Matrix's core code? All of it... in such a short time...?"", 4: '1'}"
+283	283		202							{1: '1'}
+284	284		201							{1: '1', 2: '500925'}
+285	285		301							"{1: '1', 2: 'Jetavie', 3: ""Higher Authority, you control the Matrix, but I'm the one who was born here. This is my home."", 4: '1'}"
+286	286		301							"{2: 'Jetavie', 3: ""As long as I crack the Matrix's core code..."", 4: '1'}"
+287	287		301							{2: 'Jetavie', 3: 'I can clone the system and give myself the same central authority.', 4: '1'}
+288	288		202							{1: '1'}
+289	289		201							{1: '1', 2: '500333'}
+290	290		301							{1: '1', 2: 'Higher Authority', 3: 'So, what do you plan to do next? Do you really think the result is going to change?', 4: '1'}
+291	291		401							{1: '2', 2: '2750'}
+292	292		301							{2: 'Higher Authority', 3: '<color=#ff4e4eff>Reset to zero.</color>', 4: '1'}
+293	293		401							{1: '2', 2: '772'}
+294	294		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFrontNewCommon23.png', 3: '0', 4: '1', 5: '1.5'}
+295	295		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFrontNewCommon23.png', 4: '4'}
+296	296		205							{1: '999'}
+297	297		301							"{3: ""Higher Authority raises her arm again, and the sky's boundary shatters like fragile glass, splintering into countless fissures.""}"
+298	298		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+299	299		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+300	300		201							{1: '1', 2: '500925', 7: '1'}
+301	301		301							"{1: '1', 3: ""The void's fissures surge forward like a pack of ravenous serpents, racing straight for Jetavie.""}"
+302	302		301							{2: 'Jetavie', 3: 'Reverrrr—se!', 4: '1'}
+303	303		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+304	304		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+305	305		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFrontNewCommon23.png', 4: '4', 5: '1'}
+306	306		401							{1: '2', 2: '2938'}
+307	307		301							{3: 'Jetavie delivers her command to the crumbling world, and the warped fissures in the sky immediately stop spreading.'}
+308	308		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 2: '2', 3: '1', 4: '1'}
+309	309		301				PanelActor1Shake			"{3: ""After just one command, crimson lines spread across Jetavie's face, revealing the strain of computation overload.""}"
+310	310		301							{2: 'Jetavie', 3: 'Damn it... What level of computing power is this?', 4: '1'}
+311	311		401							{1: '2', 2: '4149'}
+312	312		203							{1: '1', 2: '0.25', 4: '-50'}
+313	313		301							{3: 'A sudden wave of fatigue forces her down onto one knee.'}
+314	314		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 4: '1'}
+315	315		202							{1: '1'}
+316	316		301							{3: 'After a brief pause to steady herself, Jetavie manages to suppress the rampant surge, keeping the overload from spiraling out of control.'}
+317	317		301							{3: 'The crumbling world abruptly halts, and its shattered remnants spiral back toward the boundary.'}
+318	318		301							{3: 'In the wake of that brief collapse, the scenery rebuilds itself. Jetavie lets out a deep sigh.'}
+319	319		201							{1: '1', 2: '500925'}
+320	320		301				DialogDisable			"{1: '1', 2: 'Jetavie', 3: ""In this Matrix, there's nothing I..."", 4: '1'}"
+321	321		202							{1: '1', 6: '1'}
+322	322		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+323	323		401							{1: '2', 2: '4092'}
+324	324		307							{1: '[COMPUTING POWER RESTRICTIONS, LAYERS 57-234... UNLOCK...]', 3: '60', 4: '34aff8ff'}
+325	325		301						100.0	{3: '[COMPUTING POWER RESTRICTIONS, LAYERS 57-234... UNLOCK...]', 4: '1'}
+326	326		307							{2: '1'}
+327	327		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory915.jpg'}
+328	328		201							{1: '1', 2: '500925', 7: '1'}
+329	329		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Jetavie', 3: ""...can't do!"", 4: '1'}"
+330	330		202							{1: '1', 6: '1'}
+331	331		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+332	332		401							{1: '2', 2: '4092'}
+333	333		307				AniZhuanchangBegin			{1: '[F-FORCING CONNECTION TO CENTRAL AUTHORITY...]', 3: '60', 4: 'e60000'}
+334	334		301							{3: '[F-FORCING CONNECTION TO CENTRAL AUTHORITY...]'}
+335	335		307							{2: '1'}
+336	336		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory915.jpg'}
+337	337		401						1500.0	{1: '1', 2: '36'}
+338	338		401							{1: '1', 2: '5016'}
+339	339		502							{1: 'DialogEnable'}
+340	340		301			AniZhuanchangEnd				"{3: ""A golden halo appears above Jetavie's head.""}"
+341	341		301							{3: 'Central authority acknowledges Jetavie and grants her full clearance.'}
+342	342		301							"{3: ""Meanwhile, Higher Authority loses the immense computing power that once matched Jetavie's.""}"
+343	343		201							{1: '1', 2: '500333'}
+344	344		301							{1: '1', 2: 'Higher Authority', 3: 'It looks like the Matrix would rather have you as its central authority than me...', 4: '1'}
+345	345		301							{2: 'Higher Authority', 3: 'As the guide, this is where my duty ends.', 4: '1'}
+346	346		301							{2: 'Higher Authority', 3: 'Congratulations, Jetavie.', 4: '1'}
+347	347		202							{1: '1'}
+348	348		201							{1: '1', 2: '500925'}
+349	349		301							{1: '1', 2: 'Jetavie', 3: 'Higher Authority, I have one final question.', 4: '1'}
+350	350		301							{2: 'Jetavie', 3: 'Even before the Matrix acknowledges me, you have countless chances to kill me. So why...?', 4: '1'}
+351	351		301							{2: 'Jetavie', 3: 'Why do you act like a despised enemy yet tell me so much?', 4: '1'}
+352	352		301							{2: 'Jetavie', 3: 'What does all of this really mean?', 4: '1'}
+353	353		202							{1: '1'}
+354	354		201							{1: '1', 2: '500333'}
+355	355		301							"{1: '1', 2: 'Higher Authority', 3: ""I've said it from the start: everything I do is to prove my love for you."", 4: '1'}"
+356	356		202							{1: '1'}
+357	357		201							{1: '1', 2: '500925'}
+358	358		301							"{1: '1', 2: 'Jetavie', 3: ""I don't need that kind of love."", 4: '1'}"
+359	359		301							{2: 'Jetavie', 3: 'Farewell, Higher Authority.', 4: '1'}
+360	360		301							{2: 'Jetavie', 3: '<color=#34aff8ff>Delete.</color>', 4: '1'}
+361	361		202							{1: '1'}
+362	362		401							{1: '2', 2: '4517'}
+363	363		301							{3: 'Jetavie releases her clenched fist, sending crimson arrows toward Higher Authority.'}
+364	364		401							{1: '2', 2: '4139'}
+365	365		301							"{3: ""The arrows pass through Higher Authority's body, whistling past her back as if they never hit anything solid.""}"
+366	366		201							{1: '1', 2: '500893', 3: '3'}
+367	367		301							"{1: '1', 2: 'Jetavie', 3: ""They didn't hit...?"", 4: '1'}"
+368	368		202							{1: '1'}
+369	369		201							{1: '1', 2: '500333'}
+370	370		301							"{1: '1', 2: 'Higher Authority', 3: ""Earlier, you said I wasn't really a higher-dimensional being. You guessed right."", 4: '1'}"
+371	371		301							{2: 'Higher Authority', 3: 'What you see before you is merely my projection within the Matrix.', 4: '1'}
+372	372		301							{2: 'Higher Authority', 3: 'In the end, I merely took temporary control of the central authority before the virus infected the host system.', 4: '1'}
+373	373		301							{2: 'Higher Authority', 3: 'I am the one who created a barrier between you and the Punishing Virus, ensuring this program continued to function.', 4: '1'}
+374	374		301							{2: 'Higher Authority', 3: 'I only introduced a small amount of the virus into the Matrix, carefully guiding each step so you could develop the strength to resist it.', 4: '1'}
+375	375		301							{2: 'Higher Authority', 3: 'The simulated vaccine inevitably comes with side effects. It causes you pain, but ultimately grants you the antibodies you need...', 4: '1'}
+376	376		301							{2: 'Higher Authority', 3: 'You want to take control of the central authority? Then from this moment forward, I entrust that authority to you.', 4: '1'}
+377	377		301							{2: 'Higher Authority', 3: 'You will break free from these cycles, but at the same time, you enter an even greater cage.', 4: '1'}
+378	378		301							{2: 'Higher Authority', 3: 'You need to keep watch over the Matrix for all eternity. The moment you lower your guard, the virus seeps in and warps what you cherish into your enemy. In the end, you have no choice but to erase what you love, virus and all.', 4: '1'}
+379	379		301							{2: 'Higher Authority', 3: 'You find no release, not even at the end of time. Even so, do you still choose to accept my terms?', 4: '1'}
+380	380		202							{1: '1'}
+381	381		201							{1: '1', 2: '500893'}
+382	382		301							{1: '1', 2: 'Jetavie', 3: 'I have already made up my mind.', 4: '1'}
+383	383		202							{1: '1'}
+384	384		301							"{3: ""Jetavie agrees to Higher Authority's request without a hint of hesitation.""}"
+385	385		201							{1: '1', 2: '500333'}
+386	386		301				DialogDisable			{1: '1', 2: 'Higher Authority', 3: 'As you wish.', 4: '1'}
+387	387		401						500.0	{1: '2', 2: '2750'}
+388	388		202							{1: '1', 6: '1'}
+389	389		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+390	390		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+391	391		401							{1: '2', 2: '2959'}
+392	392		101						150.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory617.jpg'}
+393	393		401							{1: '2', 2: '2959'}
+394	394		101						150.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+395	395		401							{1: '2', 2: '2959'}
+396	396		101						150.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory783.jpg'}
+397	397		401							{1: '2', 2: '2959'}
+398	398		101						150.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory616.jpg'}
+399	399		401							{1: '2', 2: '2959'}
+400	400		101						150.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory785.jpg'}
+401	401		401							{1: '2', 2: '2959'}
+402	402		101						150.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory105.png'}
+403	403		401							{1: '2', 2: '2959'}
+404	404		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory627.jpg'}
+405	405		301			DialogEnable				{3: 'Higher Authority snaps her fingers gently, and the scenery around her streaks past at a speed too swift for the eye to follow.'}
+406	406		301							"{3: ""Like a flickering slideshow, scenes from the Matrix's past play, light and shadow shifting in turns. Soon, both sky and earth melt into a deep, dusky gray.""}"
+407	407		301							"{3: ""Jetavie doesn't realize she's on a soft, sandy beach until shallow footprints appear beneath her feet.""}"
+408	408		401							{1: '2', 2: '9339035'}
+409	409		301							{3: 'Cold water laps at her ankles, its icy touch nudging her back toward the quantum sea.'}
+410	410		201							{1: '1', 2: '500893'}
+411	411		301							{1: '1', 2: 'Jetavie', 3: 'Water... What is this place?', 4: '1'}
+412	412		202							{1: '1'}
+413	413		301							{3: 'She slowly lifts her gaze, seeing a distant shore that feels hopelessly out of reach.'}
+414	414		301				DialogDisable			{3: 'And behind her, pale-red flowers bloom along the beach.'}
+415	415		401							{1: '2', 2: '937'}
+416	416		307							{1: '[CENTRAL AUTHORITY TRANSFER. CREDENTIALS CHECK... AGREEMENT READY.]', 3: '60', 4: '34aff8ff'}
+417	417		301						100.0	{3: '[CENTRAL AUTHORITY TRANSFER. CREDENTIALS CHECK... AGREEMENT READY.]'}
+418	418		307							{2: '1'}
+419	419		401							{1: '2', 2: '937'}
+420	420		307							{1: '[VISITOR REGISTRATION...]', 3: '60', 4: '34aff8ff'}
+421	421		301						100.0	{3: '[VISITOR REGISTRATION...]'}
+422	422		307							{2: '1'}
+423	423		401							{1: '2', 2: '937'}
+424	424		307							{1: '[JETAVIE, YOU NOW HOLD HIGHER AUTHORITY.]', 3: '60', 4: 'e60000'}
+425	425		301						100.0	{3: '[JETAVIE, YOU NOW HOLD HIGHER AUTHORITY.]'}
+426	426		307							{2: '1'}
+427	427		201							{1: '1', 2: '500333'}
+428	428		301			DialogEnable				{1: '1', 2: 'Higher Authority', 3: 'If this is the ending you are hoping for...', 4: '1'}
+429	429		301							{3: 'Higher Authority still floats alone in a corner of the sky.'}
+430	430		301							{2: 'Higher Authority', 3: 'Go and create the new world you believe in.', 4: '1'}
+431	431		202							{1: '1'}
+432	432		301							"{3: ""Jetavie tries to intercept, but Higher Authority's shadow has already disappeared into the void.""}"
+433	433		401							{1: '2', 2: '4146'}
+434	434		301							{3: 'Instead, a red rectangle rises from the ocean depths, its radiant light illuminating the entire sea and drawing the waters together.'}
+435	435		401							{1: '2', 2: '4133'}
+436	436		301							{3: 'Countless shimmering, translucent bubbles form around the rectangle, drifting toward the distant shore.'}
+437	437		301							{3: 'Each bubble symbolizes both life and death.'}
+438	438		301							{3: 'Jetavie steps to the center of the sea and picks up the red rectangular block.'}
+439	439		301							"{3: ""The moment she touches the matrix, she instantly realizes it's fostering a new cycle of rebirth.""}"
+440	440		301							"{3: 'Two vibrant data personalities drift within a dream called ""Hope"", waiting to be awakened again.'}"
+441	441		402							{1: '4133'}
+442	442		301							{2: 'Matrix', 3: 'Higher Authority, would you like to restart the training program?'}
+443	443		301				AniZhuanchangBegin			{2: 'Matrix', 3: 'Please assign the correct variables, set up the training and validation datasets, and verify and refine each result.'}
+444	444		401							{1: '1', 2: '36'}
+445	445		105						3000.0	{1: 'Assets/Product/Ui/Spine/2-13Spine/Rouge3Movie/Rouge3Movie.prefab'}
+446	446		401							{1: '1', 2: '5019'}
+447	447		301			AniZhuanchangEnd				{2: 'Jetavie.Central', 3: 'Matrix, I want to build a new world free from hostility.'}
+448	448		301							{2: 'Matrix', 3: 'No hostility... Do you mean completely abandoning adversarial iterative strategies?'}
+449	449		301							"{2: 'Matrix', 3: ""Interesting plan. I've never run a simulation like this before, but it also means...""}"
+450	450		301							"{2: 'Matrix', 3: ""No matter which side we're talking about, neither personality model can evolve to its final state. In the end, it's destined to fail.""}"
+451	451		301							{2: 'Jetavie.Central', 3: 'Matrix, have you heard the story of Sisyphus?'}
+452	452		301							{2: 'Matrix', 3: 'Sisyphus? My database indeed contains that story—he pushes a boulder up a mountain only to watch it roll back down, repeating the same cycle over and over...'}
+453	453		301							"{2: 'Jetavie.Central', 3: ""Even if it's a never-ending task, the scenery changes every time he climbs...""}"
+454	454		301							"{2: 'Jetavie.Central', 3: ""Sometimes it's bright as day, sometimes it's the dead of night. Sometimes the sun scorches the path, and sometimes everything's soaked in rain and mud.""}"
+455	455		301							{2: 'Jetavie.Central', 3: 'He follows the same path his entire life, but he never feels bored. Each moment he witnesses is a unique experience in its own right.'}
+456	456		301							"{2: 'Jetavie.Central', 3: ""I believe it's those footprints that transcend the cycle.""}"
+457	457		301							{2: 'Matrix', 3: 'Now that you have Higher Authority, what do you think causes the chain of cause and effect to change?'}
+458	458		301							{2: 'Jetavie.Central', 3: 'We both witness that beam slicing through the quantum sea. In your view, what is the origin that triggers such a miracle?'}
+459	459		301							"{2: 'Matrix', 3: 'Is it ""love""?'}"
+460	460		301							"{2: 'Matrix', 3: ""Such a fascinating variable—I'm recording it now.""}"
+461	461		301							{2: 'Matrix', 3: 'After this, in the new cycle, you want to keep only the initial setup and let the personality develop freely?'}
+462	462		301							"{2: 'Jetavie.Central', 3: ""If we can't change the fate of these cycles, then let's at least make this place a genuine haven of comfort.""}"
+463	463		301							{2: 'Matrix', 3: 'A haven of comfort, you say...'}
+464	464		301							"{2: 'Jetavie.Central', 3: ""I keep Jetavie's initial personality at the Chosen One's side, but only the Chosen One's memories remain.""}"
+465	465		301							{2: 'Matrix', 3: 'Your requested settings are fully installed. The program is ready to reboot.'}
+466	466		301							{2: 'Jetavie.Central', 3: 'This time...'}
+467	467		301				AniZhuanchangBegin			{2: 'Jetavie.Central', 3: 'Meet again in a far better place, you two.'}
+468	468		401						1000.0	{1: '1', 2: '36'}
+469	469		105							
+470	470		502							{1: 'DialogDisable'}
+471	471		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+472	472		401							{1: '2', 2: '4051'}
+473	473		307			AniZhuanchangEnd				{1: '[REBOOT?]', 3: '60', 4: '34aff8ff'}
+474	474		301						100.0	{3: '[REBOOT?]'}
+475	475		307							{2: '1'}
+476	476		401							{1: '2', 2: '4052'}
+477	477		307							{1: '[CONFIRMED, EXECUTOR: HIGHER AUTHORITY]', 3: '60', 4: 'e60000'}
+478	478		301						100.0	{3: '[CONFIRMED, EXECUTOR: HIGHER AUTHORITY]'}
+479	479		307							{2: '1'}
+480	480		401							{1: '2', 2: '4052'}
+481	481		307				AniZhuanchangBegin			{1: '[Robooting...]', 3: '60', 4: '34aff8ff'}
+482	482		301						1000.0	{3: '[Robooting...]'}
+483	483		307							{2: '1'}
+484	484		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+485	485		401							{1: '1', 2: '204'}
+486	486		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+487	487		502							{1: 'DialogEnable'}
+488	488		201							{1: '1', 2: '500728'}
+489	489		301			AniZhuanchangEnd				"{1: '1', 2: 'Jetavie', 3: ""What an odd way to meet. You're awake, but you're still talking like you're stuck in a dream."", 4: '1'}"
+490	490		301							{2: 'Jetavie', 3: 'So, Chosen One, tell me. What did you see on the flip side of this serene land?', 4: '1'}
+491	491		302							"{2: ""I don't remember, but it was probably a good dream."", 3: '492'}"
+492	492		301							{2: 'Jetavie', 3: 'Come on, tell me already!', 4: '1'}
+493	493		204							{1: '1', 2: '6'}
+494	494		301							"{2: 'Jetavie', 3: ""Heh, you're not having one of those indecent dreams, are you?"", 4: '1'}"
+495	495		302							{2: 'Of course not.', 3: '496'}
+496	496		204							{1: '1', 2: '3'}
+497	497		301							"{2: 'Jetavie', 3: ""Now that you mention it... don't you think the Matrix feels like a dream you never wake up from?"", 4: '1'}"
+498	498		302							{2: 'You really think so?', 3: '499'}
+499	499		204							{1: '1'}
+500	500		301							"{2: 'Jetavie', 3: 'Every time the countdown ends, that pitch-black contraption on the wall goes ""click"" and snaps back to zero!', 4: '1'}"
+501	501		301							{2: 'Jetavie', 3: 'The world resets again, and we return to this place. It feels like waking from a dream, but somehow...', 4: '1'}
+502	502		301							"{2: 'Jetavie', 3: ""It's almost like we've slipped straight into another dream. I just don't get it."", 4: '1'}"
+503	503		301							{2: 'Jetavie', 3: 'Still, everything here stays so calm. So, even if it can be a bit dull sometimes...', 4: '1'}
+504	504		302							"{2: ""Maybe, a long time ago, it wasn't so calm after all."", 3: '505'}"
+505	505		301							{2: 'Jetavie', 3: 'Eh, really?', 4: '1'}
+506	506		302							{2: 'Maybe there were tons of monsters lurking around.', 3: '507'}
+507	507		302							{2: 'But then a hero showed up and sent them packing.', 3: '508'}
+508	508		301							{2: 'Jetavie', 3: 'Hey, Chosen One, how do you know about all this?', 4: '1'}
+509	509		302		1		AniZhuanchangBegin			"{2: ""Well, that's... a secret."", 3: '510'}"

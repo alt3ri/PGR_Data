@@ -1,0 +1,251 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory551.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		401							{1: '2', 2: '752'}
+4	4		201							{1: '2', 2: '500150', 3: '14'}
+5	5		301			DialogEnable				{3: 'The figure in teal is thrown out, her chest marked by a gaping wound—Lady Qu, the master of the Nighter, plummets to the ground.', 4: '2'}
+6	6		201							{1: '1', 2: '500442', 3: '4', 4: '-800'}
+7	7		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+8	8		203							{1: '1', 2: '0.15', 3: '-400'}
+9	9		401							{1: '2', 2: '11106008'}
+10	10		502						300.0	{1: 'PanelActor2Shake'}
+11	11		505							{1: 'PanelActor2Shake'}
+12	12		203							{1: '2', 2: '0.15', 3: '500'}
+13	13		502						400.0	{1: 'RImgBg1Shake'}
+14	14		505							{1: 'RImgBg1Shake'}
+15	15		301							"{3: 'Behind her, another figure accelerates and dashes, ready to annihilate ""Qu"" with a claw strike.', 4: '1', 5: '2'}"
+16	16		202							{1: '2', 6: '1'}
+17	17		201							{1: '1', 2: '500442', 3: '4'}
+18	18		301							{1: '1', 2: 'Hanying', 3: '//Execute Order [Destroy Target]', 4: '1'}
+19	19		202							{1: '1', 6: '1'}
+20	20		401							{1: '2', 2: '10002001'}
+21	21		301							"{3: 'Right as Hanying\'s arm is about to pierce ""Qu""\'s body, a giant sword flies toward her, spinning and blocking her path, forcing her to step back.'}"
+22	22		201							{1: '1', 2: '500445'}
+23	23		301							{1: '1', 2: '???', 3: 'Stop, Hanying...!', 4: '1'}
+24	24		202							{1: '1', 6: '1'}
+25	25		301							"{3: 'The girl comes rushing in, catching the spinning blade before swinging it with its flat side, fighting off the approaching Hanying and covering ""Qu"".'}"
+26	26		201							{1: '1', 2: '500445', 4: '-450'}
+27	27		201							{1: '2', 2: '500150', 4: '450'}
+28	28		301							{1: '1', 2: '???', 3: 'Lady Qu... are you alright?', 4: '1'}
+29	29		301							"{2: 'Qu', 3: ""I'm fine. This body can take a few hits. But... who are you...?"", 4: '2'}"
+30	30		301							"{2: '???', 3: ""It doesn't matter... especially when I don't remember it very well!"", 4: '1'}"
+31	31		301							"{3: '""Qu"" nods, standing up and looking at the surrounding crowd.'}"
+32	32		301							"{2: 'Qu', 3: ""Come out. All the Corrupted on the Nighter are defeated. You can't win."", 4: '2'}"
+33	33		202							{1: '1', 2: '2', 6: '1'}
+34	34		301							{3: 'A man in a bamboo hat walks out. The girl remembers him to be the bad person who took Hanying away three days ago.'}
+35	35		201							{1: '1', 2: '500148'}
+36	36		301							"{1: '1', 2: 'Cradle', 3: ""That's alright. The Corrupted we drew here were simply distractions... so that we can kill you."", 4: '1'}"
+37	37		202							{1: '1', 6: '1'}
+38	38		201							{1: '1', 2: '500445', 4: '-450'}
+39	39		201							{1: '2', 2: '500150', 4: '450'}
+40	40		301							{1: '1', 2: '???', 3: '...What did you do to Hanying?!', 4: '1'}
+41	41		202							{1: '1', 2: '2', 6: '1'}
+42	42		201							{1: '1', 2: '500148'}
+43	43		301							{1: '1', 2: 'Cradle', 3: 'I just gave the puppet meaning again—as a tool for humans!', 4: '1'}
+44	44		202							{1: '1', 6: '1'}
+45	45		201							{1: '1', 2: '500445', 4: '-450'}
+46	46		201							{1: '2', 2: '500150', 4: '450'}
+47	47		301							{1: '1', 2: 'Qu', 3: 'Catch him!', 4: '2'}
+48	48		202							{1: '1', 2: '2', 6: '1'}
+49	49		301							{3: 'Several mechanoids leap toward the man, pressing him on the ground, only to find him laughing.'}
+50	50		201							{1: '1', 2: '500148'}
+51	51		301							{1: '1', 2: 'Cradle', 3: 'This is futile. The puppet will still carry out her programming even if I die.', 4: '1'}
+52	52		202							{1: '1', 6: '1'}
+53	53		301							"{3: 'Meanwhile, Hanying, having attacked ""Qu"", is in shock, staring at her blood-red, vital fluid-stained hands.'}"
+54	54		201							{1: '1', 2: '500148', 4: '-450'}
+55	55		201							{1: '2', 2: '500442', 3: '7', 4: '450'}
+56	56		301							{1: '1', 2: 'Hanying', 3: 'What... am I doing...', 4: '2'}
+57	57		301							{3: 'Escorted by guard machines, the man passes by Hanying with a sinister chuckle, leaning in close to whisper into her ear.'}
+58	58		301							{2: 'Cradle', 3: 'You are doing well, Hanying. Think, and remember what your value is.', 4: '1'}
+59	59		301							{2: 'Hanying', 3: 'My... value is... i-is //Execute Order [Destroy Target].', 4: '2'}
+60	60		301							{3: 'Excruciated, Hanying shakes her head, but she cannot shake away the command deeply rooted in her soul.'}
+61	61		301				AniZhuanchangBegin			{2: 'Hanying', 3: 'No... My value is...', 4: '2'}
+62	62		202							{1: '1', 2: '2', 6: '1'}
+63	63		504							{1: '0.7'}
+64	64		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+65	65		401							{1: '1', 2: '211'}
+66	66		201							{1: '1', 2: '500215', 4: '-450'}
+67	67		201							{1: '2', 2: '500442', 3: '4', 4: '450'}
+68	68		301			AniZhuanchangEnd				{1: '1', 2: '???', 3: 'This is activation attempt: 00001. Lord Villier, please enter my designation.', 4: '2'}
+69	69		301							"{2: 'Villier', 3: ""You're just a tool, and your AI right now is just a test... You don't need a name."", 4: '1'}"
+70	70		204							{1: '2'}
+71	71		301							{2: '???', 3: 'I am... a tool? Yes, I understand.', 4: '2'}
+72	72		204							{1: '2', 2: '4'}
+73	73		301							{2: '???', 3: 'What should I do?', 4: '2'}
+74	74		301							"{2: 'Villier', 3: ""You're a vessel I made to house Huaxu in its entirety. That is your value."", 4: '1'}"
+75	75		204							{1: '2'}
+76	76		301				AniZhuanchangBegin		2000.0	{2: '???', 3: 'I understand. I shall carry out this order at all costs.', 4: '2'}
+77	77		202							{1: '1', 2: '2', 6: '1'}
+78	78		201							{1: '1', 2: '500442', 3: '4'}
+79	79		301			AniZhuanchangEnd				{1: '1', 2: '???', 3: 'This is activation attempt: 00378. Hello, Lord Villier.', 4: '1'}
+80	80		301							{3: 'But Villier is only focusing on calibrating the machines, and he looks distressed. Seeing Villier like this for the first time, the mechanoid begins developing new emotions.'}
+81	81		201							{1: '1', 2: '500442'}
+82	82		301							{1: '1', 2: '???', 3: 'Lord Villier, I had a dream during my last slumber.', 4: '1'}
+83	83		301							{3: 'Villier is surprised to find the mechanoid initiating a conversation with him.'}
+84	84		301							{2: '???', 3: 'In my dream, I became Huaxu for real, and I stay by your side, Lord Villier...', 4: '1'}
+85	85		201							{1: '1', 2: '500215'}
+86	86		301							"{1: '1', 2: 'Villier', 3: ""Machines don't dream. I figure your programming is indeed flawed."", 4: '1'}"
+87	87		201							{1: '1', 2: '500442', 3: '7'}
+88	88		301							{1: '1', 2: '???', 3: 'I cannot dream... What about you, Lord Villier? Do you dream? What are real dreams like?', 4: '1'}
+89	89		201							{1: '1', 2: '500215'}
+90	90		301							{1: '1', 2: 'Villier', 3: 'Enough... Stop pretending to speak like a human. It disgusts me.', 4: '1'}
+91	91		301							"{2: 'Villier', 3: ""And I've concluded that only a Construct's M.I.N.D. is capable of housing Huaxu's consciousness after my countless tests. A mechanoid like you is no use to me."", 4: '1'}"
+92	92		201							{1: '1', 2: '500442', 3: '7'}
+93	93		301							{1: '1', 2: '???', 3: 'I... cannot become Huaxu?', 4: '1'}
+94	94		201							{1: '1', 2: '500215'}
+95	95		301							"{1: '1', 2: 'Villier', 3: ""You can't. You have no value anymore."", 4: '1'}"
+96	96		301							"{2: 'Villier', 3: ""I ought to have you self-destruct, but time is short, and I must obtain Huaxu's backup immediately... The Corrupted will swarm this place soon, anyway. It doesn't matter now."", 4: '1'}"
+97	97		202							{1: '1', 6: '1'}
+98	98		301							{3: 'Villier quickly packs up everything and severs all his connections to this location.'}
+99	99		201							{1: '1', 2: '500215', 4: '-450'}
+100	100		201							{1: '2', 2: '500442', 3: '7', 4: '450'}
+101	101		301							{1: '1', 2: '???', 3: 'Lord Villier...', 4: '2'}
+102	102		301							{2: 'Villier', 3: 'What?', 4: '1'}
+103	103		202							{1: '1', 2: '2', 6: '1'}
+104	104		301							{3: 'Countless emotions run through her mind. She wants to flee—to keep him with her—to defend herself—to cry—to rage—to snap... but in the end, she forces herself to smile.'}
+105	105		201							{1: '1', 2: '500442'}
+106	106		301				AniZhuanchangBegin			{2: '???', 3: 'Thank you for creating me, Lord Villier. I wish you the best of luck.', 4: '1'}
+107	107		202							{1: '1', 6: '1'}
+108	108		504							{1: '0'}
+109	109		401							{1: '1', 2: '10'}
+110	110		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory551.jpg'}
+111	111		201							{1: '1', 2: '500442', 3: '4'}
+112	112		301			AniZhuanchangEnd				{1: '1', 2: 'Hanying', 3: 'Ugh...!', 4: '1'}
+113	113		202							{1: '1', 6: '1'}
+114	114		401							{1: '2', 2: '825'}
+115	115		301							"{3: 'Hanying\'s ""collar"" blinks red, meaning she has lost control of her body once again.'}"
+116	116		201							{1: '2', 2: '500445', 4: '-800'}
+117	117		201							{1: '1', 2: '500442', 3: '4', 4: '800'}
+118	118		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+119	119		203							{1: '1', 2: '0.14', 3: '200'}
+120	120		203							{1: '2', 2: '0.14', 3: '-200'}
+121	121		401							{1: '2', 2: '11106008'}
+122	122		502						350.0	{1: 'RImgBg1Shake'}
+123	123		505						10.0	{1: 'RImgBg1Shake'}
+124	124		502						350.0	{1: 'RImgBg1Shake'}
+125	125		505						200.0	{1: 'RImgBg1Shake'}
+126	126		301							"{3: ""Her claw strikes clash with the girl's giant sword, making a shrilling sound."", 4: '1', 5: '2'}"
+127	127		203							{1: '2', 2: '0.06', 3: '-1500'}
+128	128		203							{1: '1', 2: '0.03', 3: '150'}
+129	129		502						300.0	{1: 'RImgBg1Shake'}
+130	130		505						200.0	{1: 'RImgBg1Shake'}
+131	131		301							{1: '1', 3: 'Before the girl can recover her balance, Hanying slips between her defenses and kicks.', 4: '2'}
+132	132		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+133	133		202							{1: '1', 2: '2', 6: '1'}
+134	134		201						100.0	{1: '1', 2: '500445', 4: '1500', 7: '1'}
+135	135		203							{1: '1', 2: '0.09'}
+136	136		401							{1: '2', 2: '1503'}
+137	137		502						350.0	{1: 'RImgBg1Shake'}
+138	138		505						200.0	{1: 'RImgBg1Shake'}
+139	139		301							{1: '1', 2: '???', 3: 'Aargh...!', 4: '1'}
+140	140		301							{3: 'The girl is sent flying away. She adjusts her center of gravity mid-air, lessening the impact of the fall with her giant sword.'}
+141	141		301							{3: 'Hanying tries desperately to rein in her slipping mind, retaining her consciousness momentarily.'}
+142	142		201							{1: '1', 2: '500442', 3: '14', 4: '-450'}
+143	143		201							{1: '2', 2: '500445', 3: '16', 4: '450'}
+144	144		301							{1: '1', 2: 'Hanying', 3: 'Yoyo... Destroy me!', 4: '1'}
+145	145		301							"{2: '???', 3: ""No... I'm here to save you, Hanying. We promised to live and return to Kowloong together!"", 4: '2'}"
+146	146		301							"{3: 'Even though the girl has no recollection of the name ""Yoyo"", nor does she remember why she has to return to Kowloong, they all seem trivial to her now...'}"
+147	147		301							"{2: 'Hanying', 3: ""I'm sorry... Yoyo... I'm not strong enough. I thought I could... find my own value if I just kept searching like you said."", 4: '1'}"
+148	148		301							"{2: 'Hanying', 3: ""But in the end, I'm just a machine someone else built, bounded by my programming... I'm just a puppet without values..."", 4: '1'}"
+149	149		301				AniZhuanchangBegin			"{2: '???', 3: ""That's not true! That's not true..."", 4: '2'}"
+150	150		202							{1: '1', 2: '2', 6: '1'}
+151	151		401							{1: '1', 2: '211'}
+152	152		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz3003.jpg'}
+153	153		301			AniZhuanchangEnd				"{3: ""The girl drops her sword, rushing in and hugging Hanying's shaking body.""}"
+154	154		301							"{2: '???', 3: ""You're not someone without values!""}"
+155	155		301							{2: '???', 3: 'Remember the guests who love to see you dance on the stage? The people who clap every time you perform?'}
+156	156		301							{2: '???', 3: 'And the friends you helped in the market? They always came by and thanked you.'}
+157	157		301							"{2: '???', 3: ""And Uno, who's only fixed because of you... It can't speak, but it's been thanking you all this time.""}"
+158	158		301							"{2: '???', 3: ""And me... You gave me a second chance... You gave me hope. You allowed me to begin my journey one more time. Can't you see how precious you are?""}"
+159	159		301							{3: 'Hanying looks around at the faces surrounding them, many of whom are familiar to her. They have encouraged her and cheered for her, not because of someone else, but because of her—Hanying alone.'}
+160	160		301				AniZhuanchangBegin			"{3: ""Opening time's treasure chest, Hanying discovers all the things she holds dear, all signed with her own name.""}"
+161	161		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory551.jpg'}
+162	162		201							{1: '1', 2: '500442'}
+163	163		301			AniZhuanchangEnd				"{1: '1', 2: 'Hanying', 3: ""It's glistening and beautiful... Have I changed?"", 4: '1'}"
+164	164		301							{3: 'She looks down at the girl holding her. She would still be trapped in the dream of her past if not for the girl.'}
+165	165		301							"{2: 'Hanying', 3: ""In the end... I'm not a vessel for Huaxu... but you, Yoyo, and everyone on the Nighter."", 4: '1'}"
+166	166		202							{1: '1', 2: '2', 6: '1'}
+167	167		201							{1: '1', 2: '500150'}
+168	168		301							{1: '1', 2: 'Qu', 3: 'Huaxu... How do you know that name? Who are you?', 4: '1'}
+169	169		202							{1: '1', 6: '1'}
+170	170		301							"{3: 'Hanying is slightly shocked to hear that, having thought the ""Qu"" before her is Villier, but she smiles in the end.'}"
+171	171		201							{1: '1', 2: '500442'}
+172	172		301							"{1: '1', 2: 'Hanying', 3: ""You have indeed forgotten me, Lord Villier... but that's okay. Allow me to introduce myself one more time."", 4: '1'}"
+173	173		401							{1: '2', 2: '825'}
+174	174		301							"{3: 'Even when her ""collar"" is glowing bright red, Hanying holds on to who she is. She has Yoyo slowly let go of her before turning around and grabbing the ""collar"" on her neck.'}"
+175	175		301							{2: 'Hanying', 3: 'My name is Hanying. I really like that name. I hope you will remember it.', 4: '1'}
+176	176		201							{1: '1', 2: '500148'}
+177	177		301							{1: '1', 2: 'Cradle', 3: 'What are you doing?! Kill them!', 4: '1'}
+178	178		301							"{3: 'Trembling, the man known as ""The Cradle"" shouts out Hanying\'s code, only to realize he still cannot seize immediate control over her.'}"
+179	179		301							{2: 'Cradle', 3: 'What?! What did you do... What... have you become?!', 4: '1'}
+180	180		201							{1: '1', 2: '500150'}
+181	181		301							"{1: '1', 2: 'Qu', 3: 'You want to destroy your ""collar""? But you will destroy yourself in the process with the ""collar\'s"" security restriction.', 4: '1'}"
+182	182		202							{1: '1', 6: '1'}
+183	183		301							"{3: ""In Huaxu's mind, no machine will choose to self-destruct for no purpose or rebel against its programming. What Hanying is doing has surpassed its understanding—she is acting like a human.""}"
+184	184		201							{1: '1', 2: '500442', 4: '-350'}
+185	185		201							{1: '2', 2: '500445', 3: '16', 4: '350'}
+186	186		301							{1: '1', 2: '???', 3: 'Hanying...!', 4: '2'}
+187	187		301							{2: 'Hanying', 3: 'Do you know, Yoyo, that even machines dream? I used to only have one dream, but I have had so many more since I met you.', 4: '1'}
+188	188		301							"{3: ""Hanying cannot help herself but comb the girl's hair, whispering in her ears like how Hanying did years ago.""}"
+189	189		301							{2: 'Hanying', 3: 'Sometimes they were happy dreams... sometimes they were sad dreams... sometimes I was dancing on the stage... sometimes I was stargazing... But more often than not, I dreamed about being with you, visiting all the places in Kowloong.', 4: '1'}
+190	190		301							"{3: 'She knows the code invading her through her ""collar"" will eventually take over her. She will not let it happen.'}"
+191	191		301							"{2: 'Hanying', 3: ""Although people say that dreams don't come true... I think that one day, even after I'm gone, you will carry our memories and return to Kowloong with the Nighter. Because you are strong."", 4: '1'}"
+192	192		202							{1: '1', 2: '2', 6: '1'}
+193	193		301							{3: 'Hanying gently pushes Yoyo away before backing up a few steps, smiling. She stands at a spot away from the crowd, as if it is a curtain call on a stage of her own.'}
+194	194		201							{1: '1', 2: '500445', 3: '16'}
+195	195		301							{1: '1', 2: '???', 3: 'No...!', 4: '1'}
+196	196		201							{1: '1', 2: '500442'}
+197	197		301							{1: '1', 2: 'Hanying', 3: 'I must protect everything we cherish... I must protect everyone, and your smile, Yoyo... So, can you promise me not to cry anymore?', 4: '1'}
+198	198		202							{1: '1', 6: '1'}
+199	199		301							"{3: ""The Nighter has made her cry so many times already, the girl thought. But it has also given her countless memories—the things Hanying holds dear are now the girl's as well.""}"
+200	200		201							{1: '1', 2: '500445', 3: '16'}
+201	201		301							"{1: '1', 2: '???', 3: ""I promise you I won't cry... I'll protect this place like you do... I'll go back to Kowloong with everyone, even if..."", 4: '1'}"
+202	202		201							{1: '1', 2: '500442'}
+203	203		301							"{1: '1', 2: 'Hanying', 3: ""I know you can do it, Yoyo. It's a promise."", 4: '1'}"
+204	204		301							{3: 'Hanying extends her pinky finger toward the girl—a promise of theirs alone.'}
+205	205		301							{2: 'Hanying', 3: 'Pinky swear... pinky swear...', 4: '1'}
+206	206		201							{1: '1', 2: '500445', 3: '16'}
+207	207		301							{2: '???', 3: 'Hanying and Yoyo swear... A promise made, a promise kept... a promise of a thousand years...', 4: '1'}
+208	208		202							{1: '1', 6: '1'}
+209	209		301							{3: 'The girl also extends her pinky finger, but her voice is drowned in her sob.'}
+210	210		301							"{3: 'Hanying nods. The moment she tears the ""collar"" off her neck, its security protocol kicks in, delivering a massive surge of electricity onto Hanying.'}"
+211	211		401							{1: '1', 2: '36'}
+212	212		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+213	213		401				AniZhuanchangBegin		1000.0	{1: '2', 2: '627'}
+214	214		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory167.jpg'}
+215	215		201							{1: '1', 2: '500150'}
+216	216		401							{1: '1', 2: '12'}
+217	217		301			AniZhuanchangEnd				"{1: '1', 2: 'Villier', 3: 'Why didn\'t you order them to destroy the mechanoid ""Cradle"" controlled? Why would you let the girl take her away?', 4: '1'}"
+218	218		201							{1: '1', 2: '500160'}
+219	219		301							"{1: '1', 2: 'Huaxu', 3: 'That mechanoid is special... I believe... ""Hanying"" has her values. It is best to keep her close to a subject that can trigger such an unusual phenomenon.', 4: '1'}"
+220	220		301							{3: 'Villier lightly groans, not intending to discuss further.'}
+221	221		201							{1: '1', 2: '500150'}
+222	222		301							{1: '1', 2: 'Villier', 3: 'In the end, your decision has provided us with a new Construct who will remain loyal to us. She might look like a little girl, but her capability is beyond regular Constructs.', 4: '1'}
+223	223		201							{1: '1', 2: '500143'}
+224	224		301							"{1: '1', 2: 'Yazi', 3: 'I recommend recruiting her as one of the Dragon Children ""Pulao"" and tasking her to organize the security forces on the Nighter in case a Corrupted invasion happens again.', 4: '1'}"
+225	225		201							{1: '1', 2: '500150', 3: '1'}
+226	226		301							"{1: '1', 2: 'Villier', 3: ""Alright, do as you said... In that case, we'll have all nine Dragon Children."", 4: '1'}"
+227	227		301							{3: 'Villier turns around and nods at Huaxu, revealing a rare, earnest smile.'}
+228	228		301							"{2: 'Villier', 3: 'The device to transfer your body is complete. I\'ll become ""Qu"" once again to elect your perfect vessel... Constructs all over the world will gather on the Nighter, providing us with endless bodies.', 4: '1'}"
+229	229		201							{1: '1', 2: '500160'}
+230	230		301							{1: '1', 2: 'Huaxu', 3: 'Is this your dream, Lord Villier?', 4: '1'}
+231	231		201							{1: '1', 2: '500150', 3: '1'}
+232	232		301							"{1: '1', 2: 'Villier', 3: ""Of course. Isn't that your dream as well?"", 4: '1'}"
+233	233		201							{1: '1', 2: '500160'}
+234	234		301							{1: '1', 2: 'Huaxu', 3: 'My... dream... Can I have a dream of my own...?', 4: '1'}
+235	235		202							{1: '1', 6: '1'}
+236	236		301							{3: 'Huaxu closes its eyes, wondering if its eventual body will be similar to Hanying. If so, what expressions will it make when it stands next to Lord Villier...'}
+237	237		301				AniZhuanchangBegin			{3: 'It tries to collect different data, but it fails to come up with any answers.'}
+238	238		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory234.png'}
+239	239		401							{1: '1', 2: '37'}
+240	240		201							{1: '1', 2: '500444'}
+241	241		301			AniZhuanchangEnd				{1: '1', 2: 'Uno', 3: 'Rargh—!', 4: '1'}
+242	242		301							{3: 'Uno walks toward the girl with the giant sword in its hand, its massive body swaying from side to side.'}
+243	243		201							{1: '1', 2: '500145', 3: '1'}
+244	244		301							"{1: '1', 2: '???', 3: 'I got it. Today\'s our first day guarding the market as the ""Pulao Crew"".', 4: '1'}"
+245	245		301							{3: 'She looks at the giant sword and thinks for a while before deciding to place it back in the corner where it is stored.'}
+246	246		301							"{2: '???', 3: ""I don't think we need it right now, so let's not carry it. After all, it can fly toward us if we do need it."", 4: '1'}"
+247	247		301							"{3: 'The girl looks at herself in front of the mirror, the character ""Pu"" on her back indicating her identity.'}"
+248	248		301							"{2: 'Pulao', 3: 'Hanying, I\'ll put away the name ""Yoyo"" until I meet you again. I\'ll be Pulao starting today. I\'ll protect the people on this ship... and one day, we\'ll all go back to Kowloong together.', 4: '1'}"
+249	249		301							"{3: ""Pulao looks at her pinky as if it is still hooked to Hanying's.""}"
+250	250		301		1		AniZhuanchangBegin			"{2: 'Pulao', 3: ""Uno, let's go!"", 4: '1'}"

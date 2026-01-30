@@ -1,0 +1,160 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory309.png'}
+2	2		401							{1: '1', 2: '5'}
+3	3		201							{1: '1', 2: '500152'}
+4	4		301			DialogEnable				{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+5	5		301							{3: 'Walking through the bustling market, Lucia carefully observes her surroundings.'}
+6	6		301							{3: 'Aside from vendors selling goods, the organizers have also arranged a variety of activities during the celebration to give away tons of Star Tickets.'}
+7	7		301							"{3: ""That is Lucia's goal.""}"
+8	8		204							{1: '1', 2: '4'}
+9	9		301							"{3: 'Like achieving the highest score in ""Whac-a-Mole for Two"" all by herself…'}"
+10	19		301							"{3: 'Or wining the ""Throw and Catch"" game by acting as both the thrower and catcher.'}"
+11	29		301							"{3: 'Now, Lucia is about to register for ""Double Trouble"".'}"
+12	30		302							{2: '...', 3: '31'}
+13	31		301							{3: 'Looks like you were right to quietly follow Lucia over here. Seems like collecting Star Tickets is her top priority.'}
+14	32		302							{2: 'Lucia.', 3: '33'}
+15	33		204							{1: '1'}
+16	34		301							"{2: 'Lucia', 3: ""Weren't you going to take a break in the exhibition hall, Commandant?"", 4: '1'}"
+17	35		302							{2: 'I was worried about you.', 4: 'I needed some fresh air.', 5: '40'}
+18	36		201							{1: '1', 2: '500151'}
+19	37		301							"{2: 'Lucia', 3: ""Worried? It's safe here. There isn't any potential danger."", 4: '1'}"
+20	38		302							"{2: ""That's not what I mean..."", 3: '39'}"
+21	39	41	301							"{3: ""I've been worried you're taking this too seriously and not enjoying the celebration. It's better that you take the time to relax...""}"
+22	40		301							"{3: ""Rather than telling Lucia that you're worried about taking the competition too seriously and not enjoying the celebration, you decide to guide her into a more positive mindset...""}"
+23	41		302							{2: 'And I wanted to walk around the market with you, Lucia.', 3: '42'}
+24	42		201							{1: '1', 2: '500151'}
+25	43		301							{1: '1', 2: 'Lucia', 3: 'But splitting up is more... Very well. I understand.', 4: '1'}
+26	44		204							{1: '1', 2: '2'}
+27	45		301				AniZhuanchangBegin			{2: 'Lucia', 3: 'Be careful not to get separated. There are a lot of people here.', 4: '1'}
+28	46		202			DialogDisable				{1: '1', 6: '1'}
+29	47		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory308.png'}
+30	48		301			DialogEnable				{3: 'Compared with the exhibition hall, which is mostly children, the market is filled with couples.'}
+31	49		301							"{3: ""The stalls sell a variety of goods, such as crude paper and plastic knickknacks or plants in bottles. Even still, everyone is carefully looking through their wares, asking each other's opinions, or playfully teasing each other.""}"
+32	50		301							"{3: ""Hearing these lovers quarrels throughout the market, you can't help but cast sideways glances and smile.""}"
+33	51		301							"{3: ""Along the way, you and Lucia also attract your fair share of attention. Some people are drawn to Lucia's distinct coating, while others...""}"
+34	52		401							{1: '2', 2: '212'}
+35	53		301							"{2: 'Pedestrian A', 3: 'Look! She\'s the one who\'s hit 1000 points in ""Whac-a-Mole""…'}"
+36	54		301							"{2: 'Pedestrian B', 3: 'She didn\'t miss a single one in ""Kendama""...'}"
+37	55		301							"{2: 'Pedestrian A', 3: ""The person she's with must be just as awesome, huh?""}"
+38	56		301							{2: 'Pedestrian B', 3: 'Maybe...'}
+39	57		402							{1: '212'}
+40	58		302							{2: '...', 3: '59'}
+41	59		201							{1: '1', 2: '500152'}
+42	60		301							"{1: '1', 2: 'Lucia', 3: ""Commandant. Maybe it's best I change back into a battle coating?"", 4: '1'}"
+43	61		302							{2: 'No need.', 3: '62'}
+44	62		302							"{2: ""It's a compliment. Don't worry.""}"
+45	63		203							{1: '1', 2: '0.25', 3: '-400'}
+46	64		201							{1: '2', 2: '500104', 4: '400'}
+47	65		301							{1: '1', 2: '???', 3: 'Greetings. May take a few moments of your time?', 4: '2'}
+48	66		301							{3: 'A man with a camera walks over.'}
+49	67		301							"{2: 'Staff Member', 3: ""I'm a staff member for the celebration. Might I take your picture, beautiful lady?"", 4: '2'}"
+50	68		201							{1: '1', 2: '500151', 4: '-400'}
+51	69		301							{2: 'Lucia', 3: 'Commandant?', 4: '1'}
+52	70		301							{3: 'Lucia refrains from answering. Instead, she glances over questioningly as if to let you decide.'}
+53	71		302							{2: 'What will the picture be used for?', 3: '72'}
+54	72		302							{2: 'Can I see some credentials?', 3: '73'}
+55	73		301							{3: 'Since Lucia is letting you decide, you feel it is necessary for the other party to confirm his identity and the purpose of the photo to protect your team member.'}
+56	74		301							{2: 'Staff Member', 3: 'The photo will be put on the memorial wall for the celebration. With your consent, of course, my lady.', 4: '2'}
+57	75		301							{3: 'The man takes out his terminal and shows Lucia the wall with numerous photos of the celebration.'}
+58	76		301							"{3: ""Whether it's a picture of a vendor proudly displaying his own craft, a child making silly faces, or a shy but happy couple—all sorts of pictures are on the memorial wall.""}"
+59	77		301							{2: 'Staff Member', 3: 'As for my credentials...', 4: '2'}
+60	78		301							{3: 'He begrudgingly opens up the work permit folder on his terminal.'}
+61	79		302							{2: '?', 3: '80'}
+62	80		301							{3: 'You look down and confirm that his employee code is indeed authentic and he is, in fact, a staff member working for the celebration.'}
+63	81		301							{3: 'Written as his name, you see...'}
+64	82		302							{2: 'Cupid...', 3: '83'}
+65	83		302							{2: 'Ahem...'}
+66	84		301							{2: 'Cupid', 3: 'Alright, enough already. No one can help what their parents name them, right?', 4: '2'}
+67	85		301							"{3: 'He has a look of ""I knew you\'d laugh"" on his face.'}"
+68	86		302							{2: 'Lucia...', 3: '87'}
+69	87		302							"{2: ""Let's take a picture so we have something to remember about the celebration."", 3: '88'}"
+70	88		201							{1: '1', 2: '500152', 4: '-400'}
+71	89		301							{2: 'Lucia', 3: 'Understood.', 4: '1'}
+72	90		202						100.0	{1: '2', 6: '1'}
+73	91		203							{1: '1', 2: '0.25'}
+74	92		204							{1: '1', 2: '4'}
+75	93		301							{2: 'Lucia', 3: 'Is this okay?', 4: '1'}
+76	94		301							{3: 'Lucia walks in front of the camera and strikes her usual pose.', 4: '1'}
+77	95		301							"{2: 'Cupid', 3: ""You're gorgeous, but you're a little stiff. Think you can loosen up a bit?""}"
+78	96		301							{2: 'Lucia', 3: 'Loosen up...', 4: '1'}
+79	97		201							{1: '1', 2: '500151'}
+80	98		301							{1: '1', 3: 'Lucia slightly adjusts her posture.', 4: '1'}
+81	99		301							{2: 'Cupid', 3: 'Better, but a little happier. Maybe give the camera a wink?'}
+82	100		301							{2: 'Lucia', 3: 'A wink...?', 4: '1'}
+83	101		302							{2: 'You know... Like this...', 3: '102'}
+84	102		301							{3: 'You give her a demonstration.'}
+85	103		201							{1: '1', 2: '500152', 3: '4'}
+86	104		301							"{2: 'Lucia', 3: ""...Okay, I'll try."", 4: '1'}"
+87	105		201							{1: '1', 2: '500151', 3: '9'}
+88	106		301							{1: '1', 2: 'Lucia', 3: '...Is this okay?', 4: '1'}
+89	107		302							{2: '...', 3: '108'}
+90	108		301							{2: 'Cupid', 3: '...'}
+91	109		301							{2: 'Cupid', 3: 'On second thought... Try the one from before.'}
+92	110		204							{1: '1'}
+93	111		301							{2: 'Lucia', 3: 'Understood.', 4: '1'}
+94	112		301							"{2: 'Cupid', 3: ""Okay. Don't move... 3, 2, 1, cheese! Alright, got it.""}"
+95	113		101						50.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+96	114		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory308.png'}
+97	115		401							{1: '2', 2: '925'}
+98	116		301							{3: 'Following the click of the shutter, Cupid takes his camera and shows the screen to Lucia.'}
+99	117		203							{1: '1', 2: '0.25', 3: '-400'}
+100	118		201							{1: '2', 2: '500104', 4: '400'}
+101	119		301							{1: '1', 2: 'Cupid', 3: 'Are you happy with it?', 4: '2'}
+102	120		301							{2: 'Lucia', 3: 'Looks fine. What do you think, Commandant?', 4: '1'}
+103	121		302							{2: 'Works for me.', 3: '122'}
+104	122		301							"{2: 'Cupid', 3: ""As a thank you, everyone photographed gets a printed photo. Would you like one? I'll have one for you in a jiffy. The camera comes with a printer."", 4: '2'}"
+105	123		301							{3: 'He pats the latch on the bottom of his camera.'}
+106	124		201							{1: '1', 2: '500152', 4: '-400'}
+107	125		301							{2: 'Lucia', 3: 'No, I...', 4: '1'}
+108	126		301							{3: 'Lucia wants to refuse, but she stops abruptly and asks—'}
+109	127		301							"{2: 'Lucia', 3: ""I don't need you to print this photo, but can you take a photo of me and the commandant?"", 4: '1'}"
+110	128		301							{2: 'Cupid', 3: 'Of course!', 4: '2'}
+111	129		302							{2: 'Huh?', 3: '130'}
+112	130		301							"{3: ""You're slightly caught off guard. Lucia rarely asks anything of others.""}"
+113	131		301							"{2: 'Lucia', 3: ""Didn't you say you wanted a picture to commemorate the celebration?"", 4: '1'}"
+114	132		301							{2: 'Lucia', 3: 'I think a photo of us would be more memorable.', 4: '1'}
+115	133		302							{2: 'Makes sense.', 3: '134'}
+116	134		301							"{2: 'Lucia', 3: ""Too bad Liv and Lee aren't here."", 4: '1'}"
+117	135		302							"{2: ""Let's take another photo of the four of us before we leave."", 3: '136'}"
+118	136		302							"{2: ""But for now, we'll take this one."", 3: '137'}"
+119	137		301							{2: 'Lucia', 3: 'Okay.', 4: '1'}
+120	138		301							"{2: 'Cupid', 3: ""Now that it's decided... How about we take a photo over there?"", 4: '2'}"
+121	139		301							{3: 'He points to a ginkgo tree just beginning to bloom. The small green buds look especially vibrant.'}
+122	140		202							{1: '2', 6: '1'}
+123	141		203							{1: '1', 2: '0.25'}
+124	142		301							"{3: ""You follow Cupid's instructions and move into position..."", 4: '1'}"
+125	143		301							{2: 'Cupid', 3: 'Alright, get a little closer. I wanna get both of you in the frame. How about you two hold hands?', 4: '2'}
+126	144		301							{2: 'Lucia', 3: 'Commandant?', 4: '1'}
+127	145		302							"{2: '(Hold hands)', 3: '146', 4: ""(Don't hold hands)"", 5: '149'}"
+128	146		201							{1: '1', 2: '500151', 3: '2'}
+129	147		301							{1: '1', 3: 'Lucia senses your decision and places her hand in your palm.', 4: '1'}
+130	148	152	301							{3: 'Your human hand and her Construct fingers lock tightly.', 4: '1'}
+131	149		201							{1: '1', 2: '500151'}
+132	150		301							"{3: ""Lucia remains quiet and follows Cupid's instructions to move closer."", 4: '1'}"
+133	151		301							"{3: ""You stand shoulder to shoulder. Several strands of Lucia's hair drape on your shoulder."", 4: '1'}"
+134	152		301							"{2: 'Cupid', 3: ""Now don't move... 3, 2, 1... Cheese!""}"
+135	153		204						500.0	{1: '1', 2: '2'}
+136	154		101						50.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+137	155		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory308.png'}
+138	156		401							{1: '2', 2: '925'}
+139	157		301							{3: 'Click!'}
+140	158		301							"{3: ""Shortly after pressing the shutter, Cupid gestures that it's over.""}"
+141	159		301							{3: 'Cupid looks at the photo as it leaves the printer on the side of the camera.'}
+142	160		203							{1: '1', 2: '0.25', 3: '-400'}
+143	161		201							{1: '2', 2: '500104', 4: '400'}
+144	162		301							"{1: '1', 2: 'Cupid', 3: ""Now that's a postcard. Can I place it on the memorial wall?"", 4: '2'}"
+145	163		301							"{2: 'Lucia', 3: ""I don't mind. Do you, Commandant?"", 4: '1'}"
+146	164		302							{2: 'Sure.', 3: '165', 4: 'No.', 5: '167'}
+147	165		301							"{2: 'Cupid', 3: ""Thank you very much. Here's your photo."", 4: '2'}"
+148	166	169	301							{3: 'Cupid gives Lucia two photos.'}
+149	167		301							{2: 'Cupid', 3: 'What a pity...', 4: '2'}
+150	168		301							{3: 'Cupid gives Lucia two photos, then lets you watch as he deletes the photo.'}
+151	169		301							"{2: 'Cupid', 3: ""I have other work to do, so I'll get going. I hope you two have a wonderful day."", 4: '2'}"
+152	170		202							{1: '2', 6: '1'}
+153	171		203							{1: '1', 2: '0.25'}
+154	172		301							{3: 'Lucia puts one of the photos away and hands you the other one.'}
+155	173		301							"{2: 'Lucia', 3: ""Here's your photo, Commandant."", 4: '1'}"
+156	174		301							{3: 'In the photo, Lucia has a gentle expression, but she seems a little shy by comparison.'}
+157	175		301							"{3: ""Colorful paper blows in the wind. As the photo continues to develop, the ginkgo tree's vibrant flowers come to life.""}"
+158	176		301							{3: 'Spring is quietly blooming in the branches.'}
+159	177		302		1		AniZhuanchangBegin			{2: 'Just need to frame it...'}

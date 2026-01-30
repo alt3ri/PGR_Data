@@ -1,0 +1,75 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory12.jpg'}
+2	1000		401							{1: '1', 2: '201'}
+3	2		201							{1: '1', 2: '1041001'}
+4	3		301			DialogEnable				{1: '1', 2: 'Nanami', 3: 'Ooh, right! Nanami has something else to do!', 4: '1'}
+5	4		201							{1: '1', 2: '1011001'}
+6	5		301							{1: '1', 2: 'Lee', 3: 'Those graffiti?', 4: '1'}
+7	6		201							{1: '1', 2: '1041001', 3: '1'}
+8	7		301							"{1: '1', 2: 'Nanami', 3: ""Yup yup! This is important stuff! See y'all for now!"", 4: '1'}"
+9	8		202							{1: '1', 6: '1'}
+10	9		201							{1: '1', 2: '1021001', 4: '-400'}
+11	10		201							{1: '2', 2: '1031001', 3: '1', 4: '400'}
+12	11		301							"{1: '1', 2: 'Liv', 3: ""Nanami's quite a carefree person. Almost contagious."", 4: '2'}"
+13	12		301							"{2: 'Lucia', 3: ""Yes, it's an... enviable personality..."", 4: '1'}"
+14	13		204							{1: '2', 2: '7'}
+15	14		301							{2: 'Liv', 3: 'Um, I think you have a great personality too, Lucia!', 4: '2'}
+16	15		201							{1: '2', 2: '1011001', 4: '400'}
+17	16		301							"{1: '1', 2: 'Lee', 3: ""Agreed, rather than some whimsical dice, I'd much prefer working with someone more down to earth."", 4: '2'}"
+18	100		204							{1: '1', 2: '3'}
+19	17		301							{2: 'Lucia', 3: '...', 4: '1'}
+20	101		204							{1: '2', 2: '10'}
+21	18		301							"{2: 'Lee', 3: ""Back to that Construct Nanami though... there's not much about her on the database."", 4: '2'}"
+22	19		301				AniZhuanchangBegin			"{2: 'Lee', 3: ""She's a bit suspicious if you ask me..."", 4: '2'}"
+23	20		202							{1: '1', 2: '2', 6: '1'}
+24	21		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory62.jpg'}
+25	22		201							{1: '1', 2: '1021001', 4: '-400'}
+26	23		201							{1: '2', 2: '1031001', 4: '400'}
+27	24		301			AniZhuanchangEnd				"{1: '1', 2: 'Lucia', 3: ""We've reached the coordinates for deploying the Iso-Devices. We'll have to deploy them every 1.5km until it links up with the devices from the other squads."", 4: '1'}"
+28	25		301							{2: 'Liv', 3: 'The map shows that the other squads are already on the move. We have to hurry.', 4: '2'}
+29	26		302							{2: 'Wait...', 3: '27'}
+30	27		301							{2: 'Lucia', 3: 'Is something the matter, Commandant?', 4: '1'}
+31	28		204							{1: '2', 2: '7', 4: '2'}
+32	29		301							"{2: 'Liv', 3: ""There's a... connection request from a nearby Construct?"", 4: '2'}"
+33	30		204							{1: '2'}
+34	31		301							"{2: 'Liv', 3: ""It's from... deep within the Corrupted zones."", 4: '2'}"
+35	32		301							{2: 'Lucia', 3: 'Do we know their identity?', 4: '1'}
+36	33		301							{2: 'Liv', 3: 'Please wait...', 4: '2'}
+37	34		301							"{2: 'Liv', 3: 'Okay, I got it. The Construct\'s named ""Tifa"", a Support-type Construct, member of the Suzaku squad.', 4: '2'}"
+38	35		301							{2: 'Liv', 3: 'But according to historical records, the Suzaku commandant had been confirmed KIA a few days prior. All Constructs lost connection, and no one was recalled...', 4: '2'}
+39	36		202							{1: '1', 2: '2', 6: '1'}
+40	37		201							{1: '1', 2: '1011001'}
+41	38		301							{1: '1', 2: 'Lee', 3: 'If I remember correctly, the massive loss of Construct squads also began around that time.', 4: '1'}
+42	39		301							{2: 'Lee', 3: 'We mistook the Nozzle model as the culprit before, due to the lack of any intact survivor memories and information.', 4: '1'}
+43	40		201							{1: '1', 2: '1031001'}
+44	41		301							"{1: '1', 2: 'Liv', 3: 'So the true culprit is this Corrupted named ""Iron Maiden""?', 4: '1'}"
+45	42		201							{1: '1', 2: '1011001', 4: '1'}
+46	43		301							{1: '1', 2: 'Lee', 3: 'Not enough information to confirm for now, but this signal...', 4: '1'}
+47	44		201							{1: '1', 2: '1021001'}
+48	45		301							{1: '1', 2: 'Lucia', 3: 'Commandant! I... advise against connecting with this signal...', 4: '1'}
+49	46		301							{2: 'Lucia', 3: 'Connecting with more than 3 Constructs at a time will place a heavy burden on your mind, Commandant.', 4: '1'}
+50	47		301							{2: 'Lucia', 3: 'And, from our previous experience, this could be a trap as well. We do not know if it might cause any danger to you, Commandant.', 4: '1'}
+51	48		302							{2: '(Listen to Lucia.)', 3: '49', 4: '(Insist on connecting)', 5: '50'}
+52	49	58	301							{3: 'Lucia lets out a relieved sigh.'}
+53	50		301							{2: 'Lucia', 3: 'Commandant...!', 4: '1'}
+54	51		202							{1: '1', 6: '1'}
+55	52		301							{2: 'System', 3: 'Increasing Mind Beacon output activity...'}
+56	53		301							{2: 'System', 3: 'Establishing M.I.N.D. Connection...'}
+57	54		301							{2: 'System', 3: '...'}
+58	55		301							{2: 'System', 3: 'Connection failed...'}
+59	56		201							{1: '1', 2: '1021001', 4: '1'}
+60	57		301							{3: 'Lucia lets out a relieved sigh.'}
+61	58		204							{1: '1', 2: '3'}
+62	59		301							{1: '1', 2: 'Lucia', 3: 'Sorry, I should not have been relieved for the loss of contact with other Constructs.', 4: '1'}
+63	60		301							"{2: 'Lucia', 3: ""I'm more worried about your safety than other squads, Commandant."", 4: '1'}"
+64	61		204							{1: '1'}
+65	62		203							{1: '1', 2: '0.25', 3: '-400'}
+66	63		201							{1: '2', 2: '1011001', 3: '10', 4: '400'}
+67	64		301							{1: '1', 2: 'Lee', 3: 'Lucia, you might be a bit paranoid about this. Though the human body is frail and easily destroyed by the Punishing Virus...', 4: '2'}
+68	65		204							{1: '2'}
+69	66		301							"{2: 'Lee', 3: ""However, the Punishing Virus can't affect humans on a cognitive level. That's humanity's only advantage against the virus. This is why we fight along side commandants."", 4: '2'}"
+70	67		204							{1: '1', 2: '3', 3: '...', 4: '1'}
+71	68		301							{2: 'Lucia', 3: '...', 4: '1'}
+72	69		202							{1: '1', 2: '2', 6: '1'}
+73	70		201							{1: '1', 2: '1031001'}
+74	71		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Liv', 3: ""Well... The signal is near our designated path anyway, so we could investigate when we're near."", 4: '1'}"

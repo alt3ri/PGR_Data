@@ -1,0 +1,902 @@
+Id	Trigger	TriggerParams	Type	TypeParams	PerformanceOrder	Desc	ShowDesc	Cv
+1	23	[1, 0, 0]	3	[4, 1]	100	Universal Red Orb 1-Ping for Red characters. Deals 4 DMG to a single target.	<color=#FFFFFF>1-Ping</color> -> <Icon=IconRedSkill|45|45|0.5/> <color=#E76D88>Red Orb Card</color>	
+2	22	[1, 0, 0]	3	[6, 1]	100	Universal Red Orb 2-Ping for Red characters. Deals 6 DMG to a single target.	<color=#FFFFFF>2-Ping</color> -> <Icon=IconRedSkill|45|45|0.5/> <color=#E76D88>Red Orb Card</color>	
+3	21	[1, 0, 0]	3	[8, 1]	100	Universal Red Orb 3-Ping for Red characters. Deals 8 DMG to a single target.	<color=#FFFFFF>3-Ping</color> -> <Icon=IconRedSkill|45|45|0.5/> <color=#E76D88>Red Orb Card</color>	
+4	21	[1, 0, 0]	31	[0, 1, 1, 0, 0, 0]	100	Universal Red Orb 3-Ping for Red characters. Draws 1 random card from the draw pile in the original order.	<color=#FFFFFF>3-Ping</color> Bonus Draw	
+5	23	[3, 0, 0]	3	[4, 1]	100	Universal Yellow Orb 1-Ping for Red characters. Deals 4 DMG to a single target.	<color=#FFFFFF>1-Ping</color> -> <Icon=IconYellowSkill|45|45|0.5/> <color=#FAD364FF>Yellow Orb Card</color>	
+6	22	[3, 0, 0]	3	[6, 1]	100	Universal Yellow Orb 2-Ping for Red characters. Deals 6 DMG to a single target.	<color=#FFFFFF>2-Ping</color> -> <Icon=IconYellowSkill|45|45|0.5/> <color=#FAD364FF>Yellow Orb Card</color>	
+7	21	[3, 0, 0]	3	[8, 1]	100	Universal Yellow Orb 3-Ping for Red characters. Deals 8 DMG to a single target.	<color=#FFFFFF>3-Ping</color> -> <Icon=IconYellowSkill|45|45|0.5/> <color=#FAD364FF>Yellow Orb Card</color>	
+8	21	[3, 0, 0]	31	[0, 1, 1, 0, 0, 0]	100	Universal Yellow Orb 3-Ping for Red characters. Draws 1 random card from the draw pile in the original order.	<color=#FFFFFF>3-Ping</color> Bonus Draw	
+9	23	[2, 0, 0]	3	[4, 1]	100	Universal Blue Orb 1-Ping for Red characters. Deals 4 DMG to a single target.	<color=#FFFFFF>1-Ping</color> -> <Icon=IconBlueSkill|45|45|0.5/> <color=#59CCFFFF>Blue Orb Card</color>	
+10	22	[2, 0, 0]	3	[6, 1]	100	Universal Blue Orb 2-Ping for Red characters. Deals 6 DMG to a single target.	<color=#FFFFFF>2-Ping</color> -> <Icon=IconBlueSkill|45|45|0.5/> <color=#59CCFFFF>Blue Orb Card</color>	
+11	21	[2, 0, 0]	3	[8, 1]	100	Universal Blue Orb 3-Ping for Red characters. Deals 8 DMG to a single target.	<color=#FFFFFF>3-Ping</color> -> <Icon=IconBlueSkill|45|45|0.5/> <color=#59CCFFFF>Blue Orb Card</color>	
+12	21	[2, 0, 0]	31	[0, 1, 1, 0, 0, 0]	100	Universal Blue Orb 3-Ping for Red characters. Draws 1 random card from the draw pile in the original order.	<color=#FFFFFF>3-Ping</color> Bonus Draw	
+13	23	[1, 0, 0]	3	[4, 1]	100	Universal Red Orb 1-Ping for Yellow characters. Deals 4 DMG to a single target.	<color=#FFFFFF>1-Ping</color> -> <Icon=IconRedSkill|45|45|0.5/> <color=#E76D88>Red Orb Card</color>	
+14	22	[1, 0, 0]	3	[6, 1]	100	Universal Red Orb 2-Ping for Yellow characters. Deals 6 DMG to a single target.	<color=#FFFFFF>2-Ping</color> -> <Icon=IconRedSkill|45|45|0.5/> <color=#E76D88>Red Orb Card</color>	
+15	21	[1, 0, 0]	3	[8, 1]	100	Universal Red Orb 3-Ping for Yellow characters. Deals 8 DMG to a single target.	<color=#FFFFFF>3-Ping</color> -> <Icon=IconRedSkill|45|45|0.5/> <color=#E76D88>Red Orb Card</color>	
+16	21	[1, 0, 0]	31	[0, 1, 1, 0, 0, 0]	100	Universal Red Orb 3-Ping for Yellow characters. Draws 1 random card from the draw pile in the original order.	<color=#FFFFFF>3-Ping</color> Bonus Draw	
+17	23	[3, 0, 0]	27	[3]	100	Universal Yellow Orb 1-Ping for Yellow characters. Grants 4 Armor to the commandant.	<color=#FFFFFF>1-Ping</color> -> <Icon=IconYellowSkill|45|45|0.5/> <color=#FAD364FF>Yellow Orb Card</color>	
+18	22	[3, 0, 0]	27	[4]	100	Universal Yellow Orb 2-Ping for Yellow characters. Grants 6 Armor to the commandant.	<color=#FFFFFF>2-Ping</color> -> <Icon=IconYellowSkill|45|45|0.5/> <color=#FAD364FF>Yellow Orb Card</color>	
+19	21	[3, 0, 0]	27	[6]	100	Universal Yellow Orb 3-Ping for Yellow characters. Grants 8 Armor to the commandant.	<color=#FFFFFF>3-Ping</color> -> <Icon=IconYellowSkill|45|45|0.5/> <color=#FAD364FF>Yellow Orb Card</color>	
+20	21	[3, 0, 0]	31	[0, 1, 1, 0, 0, 0]	100	Universal Yellow Orb 3-Ping for Yellow characters. Draws 1 random card from the draw pile in the original order.	<color=#FFFFFF>3-Ping</color> Bonus Draw	
+21	23	[2, 0, 0]	27	[3]	100	Universal Blue Orb 1-Ping for Yellow characters. Grants 4 Armor to the commandant.	<color=#FFFFFF>1-Ping</color> -> <Icon=IconBlueSkill|45|45|0.5/> <color=#59CCFFFF>Blue Orb Card</color>	
+22	22	[2, 0, 0]	27	[4]	100	Universal Blue Orb 2-Ping for Yellow characters. Grants 6 Armor to the commandant.	<color=#FFFFFF>2-Ping</color> -> <Icon=IconBlueSkill|45|45|0.5/> <color=#59CCFFFF>Blue Orb Card</color>	
+23	21	[2, 0, 0]	27	[6]	100	Universal Blue Orb 3-Ping for Yellow characters. Grants 8 Armor to the commandant.	<color=#FFFFFF>3-Ping</color> -> <Icon=IconBlueSkill|45|45|0.5/> <color=#59CCFFFF>Blue Orb Card</color>	
+24	21	[2, 0, 0]	31	[0, 1, 1, 0, 0, 0]	100	Universal Blue Orb 3-Ping for Yellow characters. Draws 1 random card from the draw pile in the original order.	<color=#FFFFFF>3-Ping</color> Bonus Draw	
+25	23	[1, 0, 0]	3	[4, 1]	100	Universal Red Orb 1-Ping for Blue characters. Deals 4 DMG to a single target.	<color=#FFFFFF>1-Ping</color> -> <Icon=IconRedSkill|45|45|0.5/> <color=#E76D88>Red Orb Card</color>	
+26	22	[1, 0, 0]	3	[6, 1]	100	Universal Red Orb 2-Ping for Blue characters. Deals 6 DMG to a single target.	<color=#FFFFFF>2-Ping</color> -> <Icon=IconRedSkill|45|45|0.5/> <color=#E76D88>Red Orb Card</color>	
+27	21	[1, 0, 0]	3	[8, 1]	100	Universal Red Orb 3-Ping for Blue characters. Deals 8 DMG to a single target.	<color=#FFFFFF>3-Ping</color> -> <Icon=IconRedSkill|45|45|0.5/> <color=#E76D88>Red Orb Card</color>	
+28	21	[1, 0, 0]	31	[0, 1, 1, 0, 0, 0]	100	Universal Red Orb 3-Ping for Blue characters. Draws 1 random card from the draw pile in the original order.	<color=#FFFFFF>3-Ping</color> Bonus Draw	
+29	23	[3, 0, 0]	8	[1]	100	Universal Yellow Orb 1-Ping for Blue characters. Restores 1 HP to the commandant.	<color=#FFFFFF>1-Ping</color> -> <Icon=IconYellowSkill|45|45|0.5/> <color=#FAD364FF>Yellow Orb Card</color>	
+30	22	[3, 0, 0]	8	[2]	100	Universal Yellow Orb 2-Ping for Blue characters. Restores 2 HP to the commandant.	<color=#FFFFFF>2-Ping</color> -> <Icon=IconYellowSkill|45|45|0.5/> <color=#FAD364FF>Yellow Orb Card</color>	
+31	21	[3, 0, 0]	8	[2]	100	Universal Yellow Orb 3-Ping for Blue characters. Restores 2 HP to the commandant.	<color=#FFFFFF>3-Ping</color> -> <Icon=IconYellowSkill|45|45|0.5/> <color=#FAD364FF>Yellow Orb Card</color>	
+32	21	[3, 0, 0]	31	[0, 1, 1, 0, 0, 0]	100	Universal Yellow Orb 3-Ping for Blue characters. Draws 1 random card from the draw pile in the original order.	<color=#FFFFFF>3-Ping</color> Bonus Draw	
+33	23	[2, 0, 0]	8	[1]	100	Universal Blue Orb 1-Ping for Blue characters. Restores 1 HP to the commandant.	<color=#FFFFFF>1-Ping</color> -> <Icon=IconBlueSkill|45|45|0.5/> <color=#59CCFFFF>Blue Orb Card</color>	
+34	22	[2, 0, 0]	8	[2]	100	Universal Blue Orb 2-Ping for Blue characters. Restores 2 HP to the commandant.	<color=#FFFFFF>2-Ping</color> -> <Icon=IconBlueSkill|45|45|0.5/> <color=#59CCFFFF>Blue Orb Card</color>	
+35	21	[2, 0, 0]	8	[2]	100	Universal Blue Orb 3-Ping for Blue characters. Restores 2 HP to the commandant.	<color=#FFFFFF>3-Ping</color> -> <Icon=IconBlueSkill|45|45|0.5/> <color=#59CCFFFF>Blue Orb Card</color>	
+36	21	[2, 0, 0]	31	[0, 1, 1, 0, 0, 0]	100	Universal Blue Orb 3-Ping for Blue characters. Draws 1 random card from the draw pile in the original order.	<color=#FFFFFF>3-Ping</color> Bonus Draw	
+101	4		3	[4, 1]	300	Universal QTE for Attackers. Deals 4 DMG to a single target.	<color=#E76D88>Attacker</color> QTE Triggered	
+102	4		41	[2]	300	Universal QTE for Attackers. Grants 2 Action Points.		
+103	4		14	[8010, 1, 8]	300	Universal QTE for Attackers. Adds a QTE Counter.		
+201	4		27	[4]	300	Universal QTE for Tanks. Grants 6 Armor to the commandant.	<color=#FAD364FF>Tank</color>QTE Triggered	
+202	4		31	[0, 1, 1, 0, 0, 0]	300	Universal QTE for Tanks. Draws 1 random card from the draw pile in the original order.		
+203	4		14	[8010, 1, 8]	300	Universal QTE for Tanks. Adds a QTE Counter.		
+301	4		8	[2]	300	Universal QTE for Supports. Restores 2 HP to the commandant.	<color=#59CCFFFF>Support</color>QTE Triggered	
+302	4		31	[0, 1, 1, 0, 0, 0]	300	Universal QTE for Supports. Draws 1 random card from the draw pile in the original order.		
+303	4		14	[8010, 1, 8]	300	Universal QTE for Supports. Adds a QTE Counter.		
+401	4		12	[5020, 1]	300	Universal QTE for Amplifiers. Grants 1 stack of [Power] to all characters.	<color=#59CCFFFF>Amplifier</color>QTE Triggered	
+402	4		31	[0, 1, 1, 0, 0, 0]	300	Universal QTE for Amplifiers. Draws 1 random card from the draw pile in the original order.		
+403	4		14	[8010, 1, 8]	300	Universal QTE for Amplifiers. Adds a QTE Counter.		
+1001	21	[0, 0, 0]	31	[0, 2, 1, 0, 1, 0]	200	Lotus' Core. Draws 1 Red Orb Card from the draw pile in the reverse order after a 3-Ping.	<color=#E76D88>Lucia: Lotus'</color>Core Passive Triggered	
+1002	24	[4, 1020, 2]	41	[1]	200	Lotus' Core. Grants 1 Action Point if Lotus already has 2 or more stacks of Dual Blades Energy Recovery Count Hidden Token after a 3-Ping.		
+1003	24	[2, 1010, 1]	14	[1010, 1, 1]	200	Lotus' Core. Lotus gains 1 stack of [Dual Blades] mark after a 3-Ping.		102151
+1004	21	[0, 0, 0]	14	[1020, 1, 1]	200	Lotus' Core. Lotus gains 1 stack of Dual Blades Energy Recovery Count Hidden Token after a 3-Ping.		
+1010	5	[0, 0]	45	[0, 0]	400	Lotus [Dual Blades] Token Effect. Deals damage again.	<color=#E76D88>[Dual Blades]</color> Effect Triggered	102153
+2001	21	[0, 0, 0]	27	[4]	200	Storm's Core. Grants 4 Armor to the commandant after a 3-Ping.	<color=#FAD364FF>Nanami: Storm's</color> Core Passive Triggered	105151
+2002	21	[0, 0, 0]	31	[0, 2, 1, 0, 3, 0]	200	Storm's Core. Draws 1 Yellow Orb Card from the draw pile in the reverse order after a 3-Ping.		
+2010	8		25	[1]	400	Storm [Barrier] Token Effect. Prolongs Armor for 1 turn.		
+2011	8		12	[2010, -1]	400	Storm [Barrier] Token Effect. Removes 1 stack at the end of the turn.		
+3001	21	[0, 0, 0]	31	[0, 2, 1, 0, 2, 0]	200	Eclipse's Core. Draws 1 Blue Orb Card from the draw pile in the reverse order after a 3-Ping.	<color=#59CCFFFF>Liv: Eclipse's</color> Core Passive Triggered	103151
+3002	21	[0, 0, 0]	36	[2, 3003, 2, 0]	201	Eclipse's Core. Reveals and gets the card on top of the pile after a 3-Ping. Triggers Effect 3003 if the card value meets its trigger condition.		
+3003	1	[1, 2, 2]	3	[6, 2]	202	Eclipse Core Effect Condition. Deals 6 DMG to all enemies if the card value is lower than the commandant's current HP.		103153
+4001	21	[0, 1, 0]	14	[4010, 1, 4]	200	Zero's Core. After a 3-Ping, if there's 1 same-valued card pinged, then Zero gains 1 stack of [Mercy] mark.	<color=#E76D88>Bianca: Zero's</color> Core Passive Triggered	104151
+4002	21	[0, 2, 0]	14	[4010, 2, 4]	200	Zero's Core. After a 3-Ping, if there are 2 same-valued cards pinged, then Zero gains 2 stack of [Mercy] mark.	<color=#E76D88>Bianca: Zero's</color> Core Passive Triggered	104151
+4003	21	[0, 3, 0]	14	[4010, 3, 4]	200	Zero's Core. After a 3-Ping, if there are 3 same-valued cards pinged, then Zero gains 3 stack of [Mercy] mark.	<color=#E76D88>Bianca: Zero's</color> Core Passive Triggered	104152
+4010	25	[1]	21	[1, 0]	400	Zero [Mercy] Token Effect. Each stack increases the DMG dealt by 1.		
+4011	9	[4, 4010, 3]	30	[4, 3, 1, 0, 0, 52, 0, 0, 0]	400	Zero [Mercy] Token Effect. At 3 stacks, moves Zero's Signature Card from the draw pile or the discard pile to the top of the pile.		
+5001	21	[0, 1, 0]	14	[5010, 1, 5]	200	Zitherwoe's Core. After a 3-Ping, if there's 1 same-valued card pinged, then Zitherwoe gains 1 stack of [Dance] mark.	<color=#59CCFFFF>Hanying: Zitherwoe's</color> Core Passive Triggered	139068
+5002	21	[0, 2, 0]	14	[5010, 2, 5]	200	Zitherwoe's Core. After a 3-Ping, if there are 2 same-valued cards pinged, then Zitherwoe gains 2 stacks of [Dance] mark.	<color=#59CCFFFF>Hanying: Zitherwoe's</color> Core Passive Triggered	139069
+5003	21	[0, 3, 0]	14	[5010, 3, 5]	200	Zitherwoe's Core. After a 3-Ping, if there are 3 same-valued cards pinged, then Zitherwoe gains 3 stacks of [Dance] mark.	<color=#59CCFFFF>Hanying: Zitherwoe's</color> Core Passive Triggered	139070
+5004	21	[0, 0, 0]	35	[2, 3, 1, 0, 0, 0]	200	Zitherwoe's Core. Takes the rightmost card in the hand and puts it next to the card(s) with the same color on the left after any 3-Ping.		
+5010	9	[4, 5010, 3]	30	[4, 3, 1, 0, 0, 54, 0, 0, 0]	400	Zitherwoe [Mercy] Token Effect. With 3 or more stacks, moves Zitherwoe's Signature Card from the draw pile or the discard pile to the top of the pile.		
+5020	25	[1]	21	[1, 0]	400	Zitherwoe [Power] Token Effect. Each stack increases the DMG dealt by 1.		
+6001	21	[0, 1, 0]	27	[6]	200	Rigor's Core. After a 3-Ping, if there's 1 same-valued card pinged, then the commandant gains 6 Armor.	<color=#FAD364FF>Rosetta: Rigor's</color> Core Passive Triggered	114063
+6002	21	[0, 2, 0]	27	[6]	200	Rigor's Core. After a 3-Ping, if there are 2 same-valued cards pinged, then the commandant gains 6 Armor.	<color=#FAD364FF>Rosetta: Rigor's</color> Core Passive Triggered	114063
+6003	21	[0, 2, 0]	15	[6010, 2, 0]	200	Rigor's Core. After a 3-Ping, if there are 2 same-valued cards pinged, then the target enemy gains 2 stacks of [Frail].		
+6004	21	[0, 3, 0]	27	[9]	200	Rigor's Core. After a 3-Ping, if there are 3 same-valued cards pinged, then the commandant gains 9 Armor.	<color=#FAD364FF>Rosetta: Rigor's</color> Core Passive Triggered	100000084
+6005	21	[0, 3, 0]	15	[6010, 6, 0]	200	Rigor's Core. After a 3-Ping, if there are 3 same-valued cards pinged, then the target enemy gains 6 stacks of [Frail].		
+6010	25	[1]	22	[5000, 0]	400	Enemy Token [Frail]: Takes 50% more direct damage.		
+6011	6	[0, 0, 0, 2, 0]	11	[6010, -1]	400	Enemy Token [Frail]: Removes 1 stack after taking damage.		
+7001	21	[0, 0, 0]	14	[7040, 2, 7]	200	Laurel's Core. Laurel gains 2 stacks of [Singularity] mark after any 3-Ping.	<color=#E76D88>Luna: Laurel's</color> Core Passive Triggered	120067
+7002	42	[1, 7, 1]	14	[7010, 1, 7]	200	Laurel's Core. Laurel gains [Annihilation] after any discard of card(s) with the stack(s) equal to the total value of card(s) discarded.		
+7020	44		16	[7020, 7021]	400	Enemy Token [Punishing Virus]: Triggers 7021 based on the number of stack(s) when the turn begins.		
+7021	1	[0, 0, 0]	4	[1]	400	Enemy Token [Punishing Virus]: Loses HP equal to the current stack(s). Triggers 7022 after result calculation.	<color=#FFFFFF>[Punishing Virus]</color> Effect Triggered	
+7022	43	[7020]	11	[7020, -1]	400	Enemy Token [Punishing Virus]: Removes 1 stack		
+7030	9	[1, 7030, 100]	30	[4, 1, 200, 0, 1, 0, 0, 0, 1]	400	Count Token: When greater than 100 stacks, moves all Red Orb Cards from the draw pile to the discard pile.	When <color=#E76D88>[Annihilation]</color>>100, moves all <Icon=IconRedSkill|45|45|0.5/> <color=#E76D88>Red Orb Cards</color> from the draw pile to the discard pile.	
+7031	30	[0]	12	[7030, -999]	400	Count Token: Removes count after any consumption of Action Points.		
+7040	7	[7, 1, 0]	16	[7040, 7041]	400	Laurel [Singularity] Token Effect. When the turn begins, gains Draw Count Token based on the Singularity stacks. Triggers 7042 after result calculation.		
+7041	1	[0, 0, 0]	14	[7050, 1, 7]	400	Laurel [Singularity] Token Effect. When the turn begins, gains Draw Count Token based on the number of Singularity stack(s).		120069
+7042	43	[7040]	14	[7040, -1, 7]	400	Laurel [Singularity] Token Effect. Stacks -1. Triggers 7043 After Result Calculation	<color=#E76D88>[Singularity]</color> discard card effect triggered. Discard the lowest card in the hand.	
+7043	43	[7042]	14	[7040, -1, 7]	400	Laurel [Singularity] Token Effect. Stacks -1. Triggers 7044 After Result Calculation	<color=#E76D88>[Singularity]</color> discard card effect triggered. Discard the lowest card in the hand.	
+7044	43	[7043]	14	[7040, -1, 7]	400	Laurel [Singularity] Token Effect. Stacks -1. Triggers 7045 After Result Calculation	<color=#E76D88>[Singularity]</color> discard card effect triggered. Discard the lowest card in the hand.	
+7045	43	[7044]	14	[7040, -1, 7]	400	Laurel [Singularity] Token Effect. Stacks -1. Triggers 7047 After Result Calculation	<color=#E76D88>[Singularity]</color> discard card effect triggered. Discard the lowest card in the hand.	
+7046	10	[4, 7040, 0]	39	[4, 7060, 1, 0, 0, 0]	400	Laurel [Singularity] Token Effect. Upon a decrease of stacks, discards the lowest card in your hand. Executes 7060 (placeholder, no effect) after it's done.		
+7047	43	[7045]	32	[0, 1, 7050, 0, 0, 0, 0]	400	Laurel [Singularity] Token Effect. Draws X card(s) based on Draw Count Token. Triggers 7048 after result calculation.	<color=#E76D88>[Singularity]</color> Draw Effect Triggered	
+7048	43	[7047]	14	[7050, -4, 7]	400	Laurel [Singularity] Token Effect. Removes all Count Token(s) on Laurel.		
+7060	1	[0, 0, 0]	14	[7060, 1, 7]	400	Temporary Effect. Laurel gains an invalid Token.		
+8001	21	[0, 0, 0]	14	[8020, 1, 8]	200	Capriccio's Core. Capriccio gains 1 stack of [Reprise] after any 3-Ping.	<color=#59CCFFFF>Selena: Capriccio's</color> Core Passive Triggered	128068
+8010	40	[2, 57]	14	[8010, -99, 8]	200	Capriccio Global Token Effect. Removes Count Token when a Signature Card is drawn.		
+8011	23	[4, 57, 0]	32	[0, 1, 8010, 0, 0, 0, 0]	100	Capriccio Global Token Effect. Draw card(s) based on the number of 8010Token stack(s) after Capriccio's Signature is played. Triggers 8012 after result calculation.		
+8012	43	[8011]	34		100	Capriccio Global Token Effect. Arranges your hand. Triggers 8013 after result calculation.		
+8013	43	[8012]	14	[8010, -99, 8]	100	Capriccio Global Token Effect. Removes Count 8010Token stack(s).		
+8020	41	[1, 0, 3]	47	[2]	200	Capriccio [Reprise] Token Effect. Triggers Capriccio's QTE effect once when any character is switched in.		
+8021	41	[1, 0, 3]	14	[8020, -1, 8]	200	Capriccio [Reprise] Token Effect. Stacks -1 when any character is switched in.		
+9001	42	[0, 0, 2]	14	[9010, 1, 9]	200	Scire's Core. Adds Signature Draw Count Token when a card is discarded.		
+9002	41	[3, 9, 2]	34		200	Scire's Core. Arranges your hand when Scire is switched in. Triggers 9003 after result calculation.	<color=#FAD364FF>Karenina: Scire's</color> Core Passive Triggered	132069
+9003	43	[9002]	39	[3, 9004, 1, 0, 0, 0]	200	Scire's Core. Discards 1 random set of 3-Ping Cards. Triggers Effect 9004 after it's done.		132069
+9004	1	[0, 0, 0]	14	[9020, 1, 9]	200	Scire's Core. Adds Count Mark 9020 to Scire upon a successful discard of a 3-Ping.	<color=#FAD364FF>Karenina: Scire's</color> Core Passive. Discard the 1st 3-Ping.	
+9005	43	[9020]	31	[4, 0, 3, 3, 4, 113]	200	Scire's Core. Grants 3 Leap Attack cards upon a successful discard of a 3-Ping.		
+9006	43	[9005]	39	[3, 9007, 1, 0, 0, 0]	200	Scire's Core. Discards a random set of 3-Ping Cards upon the successful discard of the 1st set of 3-Ping cards. Triggers Effect 9007 after it's done.	<color=#FAD364FF>Karenina: Scire's</color> Core Passive. Discard the 2nd 3-Ping.	132069
+9007	1	[0, 0, 0]	14	[9030, 1, 9]	200	Scire's Core. Adds Count Mark 9030 to Scire upon a successful discard of a 3-Ping.		
+9008	43	[9030]	31	[4, 0, 3, 3, 4, 113]	200	Scire's Core. Grants 3 Leap Attack cards upon a successful discard of a 3-Ping.		
+9009	43	[9008]	39	[3, 9010, 1, 0, 0, 0]	200	Scire's Core. Discards a random set of 3-Ping Cards upon the successful discard of the 2nd set of 3-Ping cards. Triggers Effect 90010 after it's done.	<color=#FAD364FF>Karenina: Scire's</color> Core Passive. Discard the 3rd 3-Ping.	132069
+9010	1	[0, 0, 0]	14	[9040, 1, 9]	200	Scire's Core. Adds Count Mark 9040 to Scire upon a successful discard of a 3-Ping.		
+9011	43	[9040]	31	[4, 0, 3, 3, 4, 113]	200	Scire's Core. Grants 3 Leap Attack cards upon a successful discard of a 3-Ping.		
+9012	42	[0, 0, 2]	14	[9010, 1, 9]	200	Scire's Core. Adds Signature Draw Count Token when a card is discarded.		
+9020	9	[0, 9020, 0]	27	[6]	200	Scire Core Count Token. The commandant gains 8 Armor upon obtaining this.		
+9030	9	[0, 9030, 0]	27	[6]	200	Scire Core Count Token. The commandant gains 8 Armor upon obtaining this.		
+9040	9	[0, 9040, 0]	27	[6]	200	Scire Core Count Token. The commandant gains 8 Armor upon obtaining this.		
+49001	23	[4, 49, 0]	3	[10, 1]	100	Lotus' Signature. Deals 10 DMG to a single target.	Signature Card <color=#E76D88>Padma Flurry</color> Played	102154
+49002	23	[4, 49, 0]	41	[2]	100	Lotus' Signature. Adds 2 Action Points.		
+49003	23	[4, 49, 0]	31	[0, 1, 2, 0, 0, 0]	100	Lotus' Signature. Draws 2 random cards from the draw pile in the original order.		
+50001	23	[4, 50, 0]	27	[24]	100	Storm's Signature. Grants 24 Armor to the commandant.	Signature Card <color=#FAD364FF>Crystal Barrier</color> Played	105154
+50002	23	[4, 50, 0]	12	[2010, 1]	100	Storm's Signature. The commandant gains 1 stack of [Barrier] mark.		
+51001	23	[4, 51, 0]	8	[4]	100	Eclipse's Signature. Restores 4 HP to the commandant.	Signature Card <color=#59CCFFFF>Azure Starfall</color> Played	103154
+51002	23	[4, 51, 0]	40	[0, 1, 2, 2]	100	Eclipse's Signature. Reveals cards on top of the pile until the total value of the cards revealed goes beyond the commandant's current HP. Grants the cards revealed.		
+52001	23	[4, 52, 0]	14	[4020, 1, 4]	100	Zero's Signature. Adds an invalid Token that plays Signature Voice.		104154
+52002	23	[4, 52, 0]	32	[0, 1, 4010, 0, 0, 0, 0]	100	Zero's Signature. Reveals the top X card(s) on top of the pile. X equals to the stack(s) of [Mercy] mark owned. Grants the card(s) revealed. Calculate the total value of the card(s) revealed. Passes parameters, triggers 52003 to deal damage equal to the total value of the card(s) revealed, and removes all [Mercy] stack(s).	Signature Card <color=#E76D88>Rain of Destiny</color> Played	
+52003	43	[52002]	3	[1, 1]	100	Zero's Signature. Deals Parameter Passing Points DMG. Triggers after result calculation. Removes all [Mercy] stack(s).		
+52004	43	[52003]	14	[4010, -3, 4]	100	Zero's Signature. Removes all [Mercy] stack(s) on Zero.		
+53001	23	[4, 53, 0]	30	[4, 1, 2, 0, 0, 0, -1, 0, 2]	100	Rigor's Signature. Draws 2 cards with the card value equal to that of the rightmost card in the hand from the draw pile or the discard pile.	Signature Card <color=#FAD364FF>Absolving Spear</color> Played	
+53002	23	[4, 53, 0]	27	[6]	100	Rigor's Signature. Grants 6 Armor to the commandant.		114064
+54001	23	[4, 54, 0]	8	[4]	100	Zitherwoe's Signature. Restores 4 HP.	Signature Card <color=#59CCFFFF>Vision of Mountains</color> Played	139071
+54002	23	[4, 54, 0]	32	[0, 1, 5010, 0, 0, 0, 0]	100	Zitherwoe's Signature. Draws X card(s) based on the number of [Dance] stack(s). Then, triggers Effect 54003.		
+54003	43	[54002]	16	[5010, 54004]	100	Zitherwoe's Signature. Triggers Effect 54004 based on the number of [Dance] stack(s).		
+54004	1	[0, 0, 0]	12	[5020, 1]	100	Zitherwoe's Signature. Grants X stack(s) of [Power] to the commandant. Triggers 54005 after result calculation.		
+54005	43	[54003]	14	[5010, -4, 5]	100	Zitherwoe's Signature. Removes all Zitherwoe's [Mercy] stack(s).		
+55001	23	[4, 55, 0]	14	[7070, 1, 7]	100	Laurel's Signature. Adds an invalid Token that plays Signature Voice.		120070
+55002	23	[4, 55, 0]	16	[7010, 55003]	100	Laurel's Signature. Triggers Effect 55003 based on Laurel's number of [Annihilation] stack(s).	Signature Card <color=#E76D88>Finale Descends</color> Played	
+55003	1	[0, 0, 0]	15	[7020, 1, 0]	100	Laurel's Signature. Inflicts [Punishing Virus] equal to Laurel's [Annihilation] stack(s) on the enemy target.		
+55004	23	[4, 55, 0]	16	[7010, 55005]	100	Laurel's Signature. Triggers Effect 55005 based on Laurel's number of [Annihilation] stack(s).		
+55005	1	[0, 0, 0]	12	[7030, 1]	100	Laurel's Signature. Adds Count Token.		
+56001	23	[4, 56, 0]	14	[9050, 1, 9]	100	Scire's Signature. Adds an invalid Token that plays Signature Voice.		132071
+56002	23	[4, 56, 0]	16	[9010, 56003]	100	Scire's Signature. Triggers 56003 based on 9010 Count Token stack(s).		
+56003	1	[0, 0, 0]	27	[1, 0, 0, 1]	100	Scire's Signature. Grants X Armor. A equals to the number of cards you discarded in this turn.	Signature Card <color=#FAD364FF>Starshatter Horizon</color> Played	
+56004	23	[4, 56, 0]	47	[1]	100	Scire's Signature. Triggers the QTE of the character in the red position.		
+56005	23	[4, 56, 0]	47	[2]	100	Scire's Signature. Triggers the QTE of the character in the blue position.		
+57001	23	[4, 57, 0]	39	[0, 57002, 0, 0, 0, 0]	100	Capriccio's Signature. Discards your hand. Activates 57002.		128071
+57002	1	[0, 0, 0]	31	[0, 1, 1, 0, 0, 0]	100	Capriccio's Signature. Guaranteed to draw 1.	Signature Card <color=#59CCFFFF>Dream Cosmos Suite</color> Played	
+113001	23	[4, 113, 0]	30	[1, 2, 1, 0, 0, 113, 0, 0, -1]	100	Leap Attack Effect. Removal upon use.		
+113002	23	[4, 113, 0]	41	[1]	100	Leap Attack Effect. Grants 1 Action Point.	Derivative Card <color=#FFFFFF>Leap Attack</color> Played	132070
+113003	23	[4, 113, 0]	31	[0, 1, 1, 0, 0, 0]	100	Leap Attack Effect. Draws 1 card.		
+113004	23	[4, 113, 0]	3	[1, 1]	100	Leap Attack Effect. Deals 1 DMG.		
+1000001	25	[1]	29	[1]	400	Universal Token [Rigid Body]: When having [Rigid Body], always take only 1 direct DMG.		
+1000002	23	[0, 0, 1]	11	[1, -1]	400	Universal Token [Rigid Body]: When having [Rigid Body], after a 1-Ping by the player, lose the stack(s) of [Rigid Body] equal to the total value of the card pinged.		
+1000003	22	[0, 0, 1]	11	[1, -1]	400	Universal Token [Rigid Body]: When having [Rigid Body], after a 2-Ping by the player, lose the stacks of [Rigid Body] equal to the total value of the cards pinged.		
+1000004	21	[0, 0, 1]	11	[1, -1]	400	Universal Token [Rigid Body]: When having [Rigid Body], after a 3-Ping by the player, lose the stacks of [Rigid Body] equal to the total value of the cards pinged.		
+1000005	21	[3, 0, 0]	11	[1, 10]	400	Chapter 1 Stage Token [Yellow Thirst]: Enemy with this Token gains 10 stacks of [Rigid Body] when the player performs a Yellow Orb 3-Ping.	<color=#FFFFFF>[Yellow Thirst]</color> Effect Triggered	
+1000006	21	[1, 0, 0]	11	[6, 1]	400	Chapter 1 Stage Token [Red Thirst]: Gains 1 stack of [Berserk] when the player performs a Red Orb 3-Ping.	<color=#FFFFFF>[Red Thirst]</color> Effect Triggered	
+1000007	21	[2, 0, 0]	43	[38, 1, 5]	400	Chapter 1 Stage Token [Blue Thirst]: When the player performs a Blue Orb 3-Ping, summons 1 Self-Destruction Bug.	<color=#FFFFFF>[Blue Thirst]</color> Effect Triggered	
+1000008	25	[3]	22	[5000, 0]	400	Player Token [Frail]: Take 50% more direct damage.		
+1000009	6	[0, 0, 0, 2, 0]	12	[5, -1]	400	Player Token [Frail]: Remove 1 stack after taking damage.		
+1000010	25	[3]	21	[1, 0]	400	Enemy Universal Token [Berserk]: Damage dealt +1.		
+1000011	25	[1]	22	[-2500, 1]	400	Player Token [Fatigue]: Deal 25% less direct damage.		
+1000012	5	[0, 0]	12	[7, -1]	400	Player Token [Fatigue]: Remove 1 stack after dealing direct damage.		
+1000013	10	[3, 40, 1]	2	[10]	400	[Countdown] Count Token: Deals 10 DMG to the commandant when the stacks are reduced to 1.		
+1000014	43	[1000013]	4	[100]	400	[Countdown] Count Token: Deals 100 to self when the stacks are reduced to 1.		
+1000020	30	[1]	11	[9, -1]	400	Enemy Token [Bitter Journey I]: Removes 1 stack every time the player spends Action Point(s) (no effect if the turn ends directly)		
+1000021	6	[0, 4, 12, 2, 0]	11	[9, 12]	400	Enemy Token [Bitter Journey I]: Resets the effect to 12 stacks when taking no less than 12 DMG from a single attack.	<color=#FFFFFF>[Bitter Journey I]</color> Stacks Reset	
+1000030	30	[1]	11	[10, -1]	400	Enemy Token [Bitter Journey II]: Removes 1 stack every time the player spends Action Point(s) (no effect if the turn ends directly)		
+1000031	6	[0, 4, 12, 2, 0]	11	[10, 12]	400	Enemy Token [Bitter Journey II]: Resets the effect to 12 stacks when taking no less than 12 DMG from a single attack.	<color=#FFFFFF>[Bitter Journey II]</color> Stacks Reset	
+1000032	40	[2, 114]	2	[3]	400	Enemy Token [Bitter Journey II]: Deals 3 DMG to the commandant when Punishment is drawn.		
+1000040	23	[4, 114, 0]	30	[1, 2, 1, 0, 0, 114, 0, 0, -1]	100	Punishment Effect. Removal upon use.		
+1000041	23	[4, 114, 0]	41	[1]	100	Punishment Effect. Grants 1 Action Point.	Derivative Card <color=#FFFFFF>Punishment</color> Played	
+1000050	23	[4, 115, 0]	30	[1, 2, 1, 0, 0, 115, 0, 0, -1]	100	Punishment Effect. Removal upon use.		
+1000051	23	[4, 115, 0]	41	[1]	100	Punishment Effect. Grants 1 Action Point.	Derivative Card <color=#FFFFFF>Punishment</color> Played	
+1000060	30	[1]	11	[11, -1]	400	Enemy Token [Bitter Journey III]: Removes 1 stack every time the player spends Action Point(s) (no effect if the turn ends directly)		
+1000061	6	[0, 4, 24, 2, 0]	11	[11, 12]	400	Enemy Token [Bitter Journey III]: Resets the effect to 12 stacks when taking no less than 24 DMG from a single attack.	<color=#FFFFFF>[Bitter Journey III]</color> Stacks Reset	
+1000062	40	[2, 115]	2	[3]	400	Enemy Token [Bitter Journey III]: Deals 3 DMG to the commandant when Punishment is drawn.		
+1000070	30	[1]	11	[12, -1]	400	Enemy Token [Bitter Journey IV]: Removes 1 stack every time the player spends Action Point(s) (no effect if the turn ends directly)		
+1000071	6	[0, 4, 24, 2, 0]	11	[12, 12]	400	Enemy Token [Bitter Journey IV]: Resets the effect to 12 stacks when taking no less than 24 DMG from a single attack.	<color=#FFFFFF>[Bitter Journey IV]</color> Stacks Reset	
+1000072	40	[2, 115]	2	[3]	400	Enemy Token [Bitter Journey IV]: Deals 3 DMG to the commandant when Punishment is drawn.		
+1000080	45		12	[5, 2]	400	Challenge 2-1 Main Enemy Token [Infect]: Inflicts 2 stacks of [Frail] on the player upon death	<color=#FFFFFF>[Infect]</color> Effect Triggered	
+1000090	45		12	[5, 2]	400	Challenge 2-1 Minion 1 Token [Infect]: Inflicts 2 stacks of [Frail] on the player upon death	<color=#FFFFFF>[Infect]</color> Effect Triggered	
+1000100	45		12	[5, 2]	400	Challenge 2-1 Minion 2 Token [Infect]: Inflicts 2 stacks of [Frail] on the player upon death	<color=#FFFFFF>[Infect]</color> Effect Triggered	
+1000110	5	[1, 10]	33	[0, 0, 1, 0, 0, 114, 0, 0, 0]	400	Enemy Token [Martyrdom]: Deals DMG to the player. If the DMG is above 10, then adds 1 [Punishment] 114 Card to the player's draw pile. ([Punishment]: White card. King of Hearts. Effect: Removal upon use. Take 3 DMG when you draw this card. Restore 1 Action Point and draw 1 card.)		
+1000120	2	[2, 2, 120]	26	[20, 0]	400	Challenge 2-4 Enemy Token [More!]: Gains 20 Armor if Iron Maiden's HP is below 120 when the enemy's action starts.	<color=#FFFFFF>[More!]</color> Effect Triggered	
+1000121	43	[1000120]	11	[11, -12]	400	Challenge 2-4 Enemy Token [More!]: Removes [Bitter Journey III] if Iron Maiden's HP is below 180 when the enemy's action starts.		
+1000122	43	[1000121]	11	[12, 12]	400	Challenge 2-4 Enemy Token [More!]: Gains [Bitter Journey IV] if Iron Maiden's HP is below 180 when the enemy's action starts.		
+1000123	43	[1000122]	11	[25, -13]	400	Challenge 2-4 Enemy Token [More!]: Removes [Bitter Journey III] count if Iron Maiden's HP is below 180 when the enemy's action starts.		
+1000124	43	[1000123]	11	[26, 13]	400	Challenge 2-4 Enemy Token [More!]: Gains [Bitter Journey IV] count if Iron Maiden's HP is below 180 when the enemy's action starts.		
+1000125	43	[1000124]	11	[17, -1]	400	Challenge 2-4 Enemy Token [More!]: Removes [More!]		
+1000130	23	[4, 116, 0]	30	[1, 2, 1, 0, 0, 116, 0, 0, -1]	100	Derivative Card Redundant effect. Removal upon use.		
+1000131	23	[4, 116, 0]	31	[0, 1, 1, 0, 0, 0]	100	Derivative Card Redundant effect. Draws 1 card.	Derivative Card <color=#FFFFFF>Redundant</color> Played	
+1000140	2	[1, 5, 1]	43	[98, 1, 5]	400	Enemy Token [Security Check I]: Summons 1 [Terrapod] if the player has a card valued 1 in their hand when the enemy's action starts.	<color=#FFFFFF>[Security Check I]</color> Effect Triggered	
+1000150	2	[1, 5, 2]	43	[98, 1, 5]	400	Enemy Token [Security Check II]: Summons 1 [Terrapod] if the player has a card valued 1 or 2 in their hand when the enemy's action starts.	<color=#FFFFFF>[Security Check II]</color> Effect Triggered	
+1000160	2	[1, 2, 5]	43	[98, 1, 5]	400	Enemy Token [Security Check III]: Summons 1 [Terrapod] if the player has a Red Orb Card in their hand when the enemy's action starts.	<color=#FFFFFF>[Security Check III]</color> Effect Triggered	
+1000170	25	[1]	22	[-5000, 0]	400	Enemy Token [Flight]: Takes 50% less direct damage.		
+1000171	6	[0, 0, 0, 2, 0]	11	[21, -1]	400	Enemy Token [Flight]: Removes 1 stack upon taking damage.		
+1000180	44		46	[1]	400	Enemy Token [Crash Landing]: When the enemy's action starts, skips the action and triggers 1000181		
+1000181	43	[1000180]	11	[21, 2]	400	Enemy Token [Crash Landing]: When this becomes effective, gains 2 stacks of Flight and triggers 1000182		
+1000182	43	[1000181]	11	[27, 3]	400	Enemy Token [Crash Landing]: When this becomes effective, gains 3 stacks of Flight Count and triggers 1000182		
+1000183	43	[1000182]	11	[22, -1]	400	Enemy Token [Crash Landing]: Removes it when this becomes effective.	<color=#FFFFFF>[Crash Landing]</color> Effect Triggered. Skip the enemy's action.	
+1000190	30	[1]	11	[23, -1]	400	Enemy Token [Bitter Journey I] Count Token: Removes 1 stack every time the player spends Action Point(s) (excluding the turn that ends directly)		
+1000191	10	[3, 23, 1]	11	[23, 13]	400	Enemy Token [Bitter Journey I] Count Token: Resets the effect to 13 stacks and triggers Effect 1000192 when it is reduced to 1 stack		
+1000192	43	[1000191]	11	[1, 20]	400	Enemy Token [Bitter Journey I] Count Token: Gains 20 stacks of [Rigid Body] and triggers Effect 1000193	<color=#FFFFFF>[Bitter Journey I]</color> Effect Triggered	
+1000193	43	[1000192]	11	[9, 12]	400	Enemy Token [Bitter Journey I] Count Token: Resets [Bitter Journey I] stacks		
+1000194	6	[0, 4, 12, 2, 0]	11	[23, 13]	400	Enemy Token [Bitter Journey I] Count Token: Resets it to 13 stacks when taking no less than 12 DMG from a single attack.		
+1000200	30	[1]	11	[24, -1]	400	Enemy Token [Bitter Journey II] Count Token: Removes 1 stack every time the player spends Action Point(s) (excluding the turn that ends directly)		
+1000201	10	[3, 24, 1]	11	[24, 13]	400	Enemy Token [Bitter Journey II] Count Token: Resets the effect to 13 stacks and triggers Effect 1000202 when it is reduced to 1 stack		
+1000202	43	[1000201]	11	[6, 1]	400	Enemy Token [Bitter Journey II] Count Token: Gains 1 stack of [Berserk] and triggers Effect 1000193	<color=#FFFFFF>[Bitter Journey II]</color> Effect Triggered	
+1000203	43	[1000202]	11	[10, 12]	400	Enemy Token [Bitter Journey II] Count Token: Resets [Bitter Journey II] stacks		
+1000204	6	[0, 4, 12, 2, 0]	11	[24, 13]	400	Enemy Token [Bitter Journey II] Count Token: Resets the effect to 13 stacks when taking no less than 12 DMG from a single attack.		
+1000210	30	[1]	11	[25, -1]	400	Enemy Token [Bitter Journey III] Count Token: Removes 1 stack every time the player spends Action Point(s) (no effect if the turn ends directly)		
+1000211	10	[3, 25, 1]	11	[25, 13]	400	Enemy Token [Bitter Journey III] Count Token: Resets the effect to 13 stacks and triggers Effect 1000212 when it is reduced to 1 stack		
+1000212	43	[1000211]	11	[1, 20]	400	Enemy Token [Bitter Journey III] Count Token: Gains 20 stacks of [Rigid Body] and triggers Effect 1000213	<color=#FFFFFF>[Bitter Journey III]</color> Effect Triggered	
+1000213	43	[1000212]	11	[11, 12]	400	Enemy Token [Bitter Journey III] Count Token: Resets [Bitter Journey III] stacks and triggers Effect 1000214		
+1000214	43	[1000213]	33	[0, 0, 2, 0, 0, 115, 0, 0, 0]	400	Enemy Token [Bitter Journey III] Count Token: Adds two Punishment 115 cards to the player's draw pile		
+1000215	6	[0, 4, 24, 2, 0]	11	[25, 13]	400	Enemy Token [Bitter Journey III] Count Token: Resets the effect to 13 stacks when taking no less than 24 DMG from a single attack.		
+1000220	30	[1]	11	[26, -1]	400	Enemy Token [Bitter Journey IV] Count Token: Removes 1 stack every time the player spends Action Point(s) (no effect if the turn ends directly)		
+1000221	10	[3, 26, 1]	11	[26, 13]	400	Enemy Token [Bitter Journey IV] Count Token: Resets the effect to 13 stacks and triggers Effect 1000222 when it is reduced to 1 stack		
+1000222	43	[1000221]	11	[6, 1]	400	Enemy Token [Bitter Journey IV] Count Token: Gains 1 stack of [Berserk] and triggers Effect 1000223	<color=#FFFFFF>[Bitter Journey IV]</color> Effect Triggered	
+1000223	43	[1000222]	11	[12, 12]	400	Enemy Token [Bitter Journey IV] Count Token: Resets [Bitter Journey IV] stacks and triggers Effect 1000223		
+1000224	43	[1000223]	33	[0, 0, 2, 0, 0, 115, 0, 0, 0]	400	Enemy Token [Bitter Journey IV]: Adds two Punishment 115 cards to the player's draw pile		
+1000225	6	[0, 4, 24, 2, 0]	11	[26, 13]	400	Enemy Token [Bitter Journey IV] Count Token: Resets the effect to 13 stacks when taking no less than 24 DMG from a single attack.		
+1000230	6	[0, 0, 0, 2, 0]	11	[27, -1]	400	Enemy Token [Flight] Count Token: Removes 1 stack upon taking damage.		
+1000231	10	[5, 27, 1]	11	[22, 1]	400	Enemy Token [Flight] Count Token: Gains the [Crash Landing] mark when this is reduced to 1 stack.		
+1000240	40	[2, 114]	1	[3]	400	Punishment 114 DMG activated effect.	<color=#FFFFFF>Punishment</color> DMG Taken	
+1000250	40	[2, 115]	1	[3]	400	Punishment 115 DMG activated effect.	<color=#FFFFFF>Punishment</color> DMG Taken	
+1000260	45		41	[1]	400	Infinite Stage Enemy Universal Token: Restores 1 Action Point to the commandant once defeated.	<color=#FFFFFF>[Infinite Blessing]</color> Effect Triggered	
+1000261	45		31	[0, 1, 3, 0, 0, 0]	400	Infinite Stage Enemy Universal Token: Draws 3 random cards for the commandant once defeated.		
+1000270	25	[3]	21	[2, 0]	400	Enemy Universal Token [Infinite Rage]: Damage dealt +2.		
+1000280	7	[0, 0, 2]	12	[41, 1]	100	M.I.N.D. God of War Trigger Condition: When any non-infinite stage turn starts, and the player's restarts are no less than 2, gives the player a buff that grants +999 DMG.		
+1000290	25	[1]	21	[999, 0]	200	M.I.N.D. God of War Token Effect: When any non-infinite stage turn starts, and the player's restarts are no less than 2, gives the player a buff that grants +999 DMG.		
+1010001	2	[0, 0, 0]	2	[10]	100	Enemy Action: Deals 10 DMG to the commandant	<color=#FFFFFF><Gardener (Large)></color> Action Starts	
+1020001	2	[0, 0, 0]	26	[5, 0]	100	Enemy Action: Gains 5 Armor	<color=#FFFFFF><Gardener (Large)></color> Action Starts	
+1030001	2	[0, 0, 0]	26	[5, 0]	100	Enemy Action: Gains 5 Armor	<color=#FFFFFF><Gardener (Large)></color> Action Starts	
+2010001	2	[0, 0, 0]	2	[5]	200	Enemy Action: Deals 5 DMG to the commandant	<color=#FFFFFF><Gardener></color> Action Starts	
+2020001	2	[0, 0, 0]	26	[5, 0]	200	Enemy Action: Gains 5 Armor	<color=#FFFFFF><Gardener></color> Action Starts	
+3010001	2	[0, 0, 0]	2	[10]	100	Enemy Action: Deals 10 DMG to the commandant	<color=#FFFFFF><Gardener (Large)></color> Action Starts	
+3020001	2	[0, 0, 0]	2	[5]	100	Enemy Action: Deals 5 DMG to the commandant	<color=#FFFFFF><Gardener (Large)></color> Action Starts	
+3030001	2	[0, 0, 0]	26	[5, 0]	100	Enemy Action: Gains 5 Armor	<color=#FFFFFF><Gardener (Large)></color> Action Starts	
+4010001	2	[0, 0, 0]	2	[10]	200	Enemy Action: Deals 10 DMG to the commandant	<color=#FFFFFF><Gardener></color> Action Starts	
+5010001	2	[0, 0, 0]	2	[10]	100	Enemy Action: Deals 10 DMG to the commandant	<color=#FFFFFF><Gardener (Large)></color> Action Starts	
+5020001	2	[0, 0, 0]	2	[5]	100	Enemy Action: Deals 5 DMG to the commandant	<color=#FFFFFF><Gardener (Large)></color> Action Starts	
+5030001	2	[0, 0, 0]	26	[5, 0]	100	Enemy Action: Gains 5 Armor	<color=#FFFFFF><Gardener (Large)></color> Action Starts	
+6010001	2	[0, 0, 0]	2	[10]	200	Enemy Action: Deals 10 DMG to the commandant	<color=#FFFFFF><Gardener></color> Action Starts	
+6020001	2	[0, 0, 0]	26	[5, 0]	200	Enemy Action: Gains 5 Armor	<color=#FFFFFF><Gardener></color> Action Starts	
+7010001	2	[0, 0, 0]	2	[8]	100	Enemy Action: Deals 8 DMG to the commandant	<color=#FFFFFF><Gardener (Large)></color> Action Starts	
+8010001	2	[0, 0, 0]	2	[4]	200	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Gardener></color> Action Starts	
+9010001	2	[0, 0, 0]	2	[4]	300	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Gardener></color> Action Starts	
+10010001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Repairer (Large)></color> Action Starts	
+10020001	2	[0, 0, 0]	9	[10, 2, 0]	100	Enemy Action: Restores 10 HP to all enemies	<color=#FFFFFF><Repairer (Large)></color> Action Starts	
+11010001	2	[0, 0, 0]	2	[10]	200	Enemy Action: Deals 10 DMG to the commandant	<color=#FFFFFF><Gardener></color> Action Starts	
+12010001	2	[0, 0, 0]	2	[10]	200	Enemy Action: Deals 10 DMG to the commandant	<color=#FFFFFF><Gardener></color> Action Starts	
+13010001	2	[0, 0, 0]	26	[20, 0]	300	Enemy Action: Gains 20 Armor	<color=#FFFFFF><Gardener></color> Action Starts	
+13020001	2	[0, 0, 0]	2	[5]	300	Enemy Action: Deals 5 DMG to the commandant	<color=#FFFFFF><Gardener></color> Action Starts	
+13030001	2	[0, 0, 0]	26	[5, 0]	300	Enemy Action: Gains 5 Armor	<color=#FFFFFF><Gardener></color> Action Starts	
+14010001	2	[0, 0, 0]	26	[20, 0]	400	Enemy Action: Gains 20 Armor	<color=#FFFFFF><Gardener></color> Action Starts	
+14020001	2	[0, 0, 0]	2	[5]	400	Enemy Action: Deals 5 DMG to the commandant	<color=#FFFFFF><Gardener></color> Action Starts	
+14030001	2	[0, 0, 0]	26	[5, 0]	400	Enemy Action: Gains 5 Armor	<color=#FFFFFF><Gardener></color> Action Starts	
+15010001	2	[0, 0, 0]	2	[10]	100	Enemy Action: Deals 10 DMG to the commandant	<color=#FFFFFF><Gardener (Large)></color> Action Starts	
+15020001	2	[0, 0, 0]	26	[20, 0]	100	Enemy Action: Gains 20 Armor	<color=#FFFFFF><Gardener (Large)></color> Action Starts	
+16010001	2	[0, 0, 0]	9	[8, 2, 0]	200	Enemy Action: Restores 8 HP to all enemies	<color=#FFFFFF><Repairer></color> Action Starts	
+16020001	2	[0, 0, 0]	2	[6]	200	Enemy Action: Deals 6 DMG to the commandant	<color=#FFFFFF><Repairer></color> Action Starts	
+17010001	2	[0, 0, 0]	9	[8, 2, 0]	300	Enemy Action: Restores 8 HP to all enemies	<color=#FFFFFF><Repairer></color> Action Starts	
+17020001	2	[0, 0, 0]	2	[6]	400	Enemy Action: Deals 6 DMG to the commandant	<color=#FFFFFF><Repairer></color> Action Starts	
+18010001	2	[0, 0, 0]	2	[10]	100	Enemy Action: Deals 10 DMG to the commandant	<color=#FFFFFF><Gardener (Large)></color> Action Starts	
+18020001	2	[0, 0, 0]	26	[10, 0]	100	Enemy Action: Gains 10 Armor	<color=#FFFFFF><Gardener (Large)></color> Action Starts	
+18030001	2	[0, 0, 0]	2	[5]	100	Enemy Action: Deals 5 DMG to the commandant	<color=#FFFFFF><Gardener (Large)></color> Action Starts	
+19010001	2	[0, 0, 0]	11	[1, 20]	200	Enemy Action: Gains 20 stacks of [Rigid Body] Token	<color=#FFFFFF><Shieldbearer></color> Action Starts	
+19010002	2	[0, 0, 0]	28	[10, 6, 0]	201	Enemy Action: Main enemy gains 10 Armor		
+19020001	2	[0, 0, 0]	2	[6]	200	Enemy Action: Deals 6 DMG to the commandant	<color=#FFFFFF><Shieldbearer></color> Action Starts	
+20010001	2	[0, 0, 0]	11	[1, 10]	100	Enemy Action: Gains 10 stacks of [Rigid Body] Token	<color=#FFFFFF><Shieldbearer (Large)></color> Action Starts	
+20010002	2	[0, 0, 0]	28	[10, 7, 0]	101	Enemy Action: Grants Armor 10 to Random Enemy (Other Minions First)		
+20020001	2	[0, 0, 0]	2	[6]	100	Enemy Action: Deals 6 DMG to the commandant	<color=#FFFFFF><Shieldbearer (Large)></color> Action Starts	
+21010001	2	[0, 0, 0]	9	[8, 2, 0]	200	Enemy Action: Restores 8 HP to all enemies	<color=#FFFFFF><Repairer></color> Action Starts	
+21020001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Repairer></color> Action Starts	
+22010001	2	[0, 0, 0]	9	[8, 2, 0]	300	Enemy Action: Restores 8 HP to all enemies	<color=#FFFFFF><Repairer></color> Action Starts	
+22020001	2	[0, 0, 0]	2	[2]	300	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Repairer></color> Action Starts	
+23010001	2	[0, 0, 0]	2	[2]	400	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Gardener></color> Action Starts	
+23020001	2	[0, 0, 0]	26	[10, 0]	400	Enemy Action: Gains 10 Armor	<color=#FFFFFF><Gardener></color> Action Starts	
+24010001	2	[0, 0, 0]	2	[2]	500	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Gardener></color> Action Starts	
+24020001	2	[0, 0, 0]	26	[10, 0]	500	Enemy Action: Gains 10 Armor	<color=#FFFFFF><Gardener></color> Action Starts	
+25010001	2	[0, 0, 0]	2	[6]	100	Enemy Action: Deals 6 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Large)></color> Action Starts	
+25020001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Large)></color> Action Starts	
+25020002	2	[0, 0, 0]	12	[5, 1]	101	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+25030001	2	[0, 0, 0]	43	[26, 1, 5]	100	Enemy Action: Summons Ground Monitor (Medium) 1	<color=#FFFFFF><Ground Monitor (Large)></color> Action Starts	
+25030002	2	[0, 0, 0]	43	[27, 1, 5]	101	Enemy Action: Summons Ground Monitor (Medium) 2		
+25040001	2	[0, 0, 0]	2	[6]	100	Enemy Action: Deals 6 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Large)></color> Action Starts	
+25050001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Large)></color> Action Starts	
+25050002	2	[0, 0, 0]	12	[5, 1]	101	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+26010001	2	[0, 0, 0]	2	[3]	200	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+26020001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+26020002	2	[0, 0, 0]	12	[5, 1]	201	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+26030001	2	[0, 0, 0]	43	[28, 1, 5]	200	Enemy Action: Summons Ground Monitor (Micro) 1	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+26040001	2	[0, 0, 0]	2	[3]	200	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+26050001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+26050002	2	[0, 0, 0]	12	[5, 1]	201	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+27010001	2	[0, 0, 0]	2	[3]	300	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+27020001	2	[0, 0, 0]	2	[2]	300	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+27020002	2	[0, 0, 0]	12	[5, 1]	301	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+27030001	2	[0, 0, 0]	43	[29, 1, 5]	300	Enemy Action: Summons Ground Monitor (Micro) 2	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+27040001	2	[0, 0, 0]	2	[3]	300	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+27050001	2	[0, 0, 0]	2	[2]	300	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+27050002	2	[0, 0, 0]	12	[5, 1]	301	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+28010001	2	[0, 0, 0]	2	[1]	400	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+28020001	2	[0, 0, 0]	12	[5, 1]	400	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+29010001	2	[0, 0, 0]	2	[1]	500	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+29020001	2	[0, 0, 0]	12	[5, 1]	500	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+30010001	2	[0, 0, 0]	28	[4, 7, 0]	100	Enemy Action: Grants Armor 4 to Random Enemy (Other Minions First)	<color=#FFFFFF><Tamer (Large)></color> Action Starts	
+30010002	2	[0, 0, 0]	28	[4, 7, 0]	101	Enemy Action: Grants Armor 4 to Random Enemy (Other Minions First)		
+30020001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Tamer (Large)></color> Action Starts	
+30030001	2	[0, 0, 0]	28	[4, 7, 0]	100	Enemy Action: Grants Armor 4 to Random Enemy (Other Minions First)	<color=#FFFFFF><Tamer (Large)></color> Action Starts	
+30030002	2	[0, 0, 0]	28	[4, 7, 0]	101	Enemy Action: Grants Armor 4 to Random Enemy (Other Minions First)		
+30040001	2	[0, 0, 0]	28	[4, 7, 0]	100	Enemy Action: Grants Armor 4 to Random Enemy (Other Minions First)	<color=#FFFFFF><Tamer (Large)></color> Action Starts	
+30040002	2	[0, 0, 0]	28	[4, 7, 0]	101	Enemy Action: Grants Armor 4 to Random Enemy (Other Minions First)		
+30050001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Tamer (Large)></color> Action Starts	
+30060001	2	[0, 0, 0]	2	[2]	100	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Tamer (Large)></color> Action Starts	
+30060002	2	[0, 0, 0]	2	[2]	101	Enemy Action: Deals 2 DMG to the commandant		
+30060003	2	[0, 0, 0]	2	[2]	102	Enemy Action: Deals 2 DMG to the commandant		
+31010001	2	[0, 0, 0]	2	[1]	200	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+31020001	2	[0, 0, 0]	12	[5, 1]	200	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+31030001	2	[0, 0, 0]	2	[1]	200	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+31040001	2	[0, 0, 0]	12	[5, 1]	200	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+32010001	2	[0, 0, 0]	2	[1]	300	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+32020001	2	[0, 0, 0]	12	[5, 1]	300	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+32030001	2	[0, 0, 0]	2	[1]	300	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+32040001	2	[0, 0, 0]	12	[5, 1]	300	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+33010001	2	[0, 0, 0]	9	[12, 2, 0]	400	Enemy Action: Restores 12 HP to all enemies	<color=#FFFFFF><Repairer></color> Action Starts	
+33020001	2	[0, 0, 0]	2	[1]	400	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Repairer></color> Action Starts	
+33020002	2	[0, 0, 0]	12	[7, 1]	401	Enemy Action: Inflicts 1 stack of [Fatigue] on the commandant		
+33030001	2	[0, 0, 0]	9	[12, 2, 0]	400	Enemy Action: Restores 12 HP to all enemies	<color=#FFFFFF><Repairer></color> Action Starts	
+33040001	2	[0, 0, 0]	2	[1]	400	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Repairer></color> Action Starts	
+33040002	2	[0, 0, 0]	12	[7, 1]	401	Enemy Action: Inflicts 1 stack of [Fatigue] on the commandant		
+33050001	2	[0, 0, 0]	12	[7, 2]	400	Enemy Action: Inflicts 2 stacks of [Fatigue] on the commandant	<color=#FFFFFF><Repairer></color> Action Starts	
+34010001	2	[0, 0, 0]	11	[8, -1]	500	Enemy Action: Removes 1 stack of [Countdown]	<color=#FFFFFF><Self-Destruction Bug></color> Action Starts	
+34010002	2	[0, 0, 0]	11	[40, -1]	601	Enemy Action: Removes 1 stack of [Countdown] Count Token		
+35010001	2	[0, 0, 0]	28	[16, 7, 0]	100	Enemy Action: Grants Armor 16 to Random Enemy (Other Minions First)	<color=#FFFFFF><Shieldbearer (Large)></color> Action Starts	
+35020001	2	[0, 0, 0]	12	[5, 2]	100	Enemy Action: Inflicts 2 stacks of [Frail] on the commandant	<color=#FFFFFF><Shieldbearer (Large)></color> Action Starts	
+35030001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Shieldbearer (Large)></color> Action Starts	
+35030002	2	[0, 0, 0]	28	[8, 7, 0]	101	Enemy Action: Grants Armor 8 to Random Enemy (Other Minions First)		
+35040001	2	[0, 0, 0]	2	[1]	100	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Shieldbearer (Large)></color> Action Starts	
+35040002	2	[0, 0, 0]	2	[1]	101	Enemy Action: Deals 1 DMG to the commandant		
+35040003	2	[0, 0, 0]	2	[1]	102	Enemy Action: Deals 1 DMG to the commandant		
+35050001	2	[0, 0, 0]	28	[16, 7, 0]	100	Enemy Action: Grants Armor 16 to Random Enemy (Other Minions First)	<color=#FFFFFF><Shieldbearer (Large)></color> Action Starts	
+35060001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Shieldbearer (Large)></color> Action Starts	
+35060002	2	[0, 0, 0]	28	[8, 7, 0]	101	Enemy Action: Grants Armor 8 to Random Enemy (Other Minions First)		
+35070001	2	[0, 0, 0]	2	[1]	100	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Shieldbearer (Large)></color> Action Starts	
+35070002	2	[0, 0, 0]	2	[1]	101	Enemy Action: Deals 1 DMG to the commandant		
+35070003	2	[0, 0, 0]	2	[1]	102	Enemy Action: Deals 1 DMG to the commandant		
+36010001	2	[0, 0, 0]	11	[8, -1]	200	Enemy Action: Removes 1 stack of [Countdown]	<color=#FFFFFF><Self-Destruction Bug></color> Action Starts	
+36010002	2	[0, 0, 0]	11	[40, -1]	601	Enemy Action: Removes 1 stack of [Countdown] Count Token		
+37010001	2	[0, 0, 0]	11	[8, -1]	300	Enemy Action: Removes 1 stack of [Countdown]	<color=#FFFFFF><Self-Destruction Bug></color> Action Starts	
+37010002	2	[0, 0, 0]	11	[40, -1]	601	Enemy Action: Removes 1 stack of [Countdown] Count Token		
+38010001	2	[0, 0, 0]	11	[8, -1]	400	Enemy Action: Removes 1 stack of [Countdown]	<color=#FFFFFF><Self-Destruction Bug></color> Action Starts	
+38010002	2	[0, 0, 0]	11	[40, -1]	601	Enemy Action: Removes 1 stack of [Countdown] Count Token		
+39010001	2	[0, 0, 0]	2	[6]	100	Enemy Action: Deals 6 DMG to the commandant	<color=#FFFFFF><Nozzle></color> Action Starts	
+39010002	2	[0, 0, 0]	31	[4, 0, 1, 0, 0, 105]	101	Enemy Action: Grants the player 1 Derivative Yellow Orb		
+39010003	2	[0, 0, 0]	31	[4, 0, 1, 0, 0, 106]	102	Enemy Action: Grants the player 1 Derivative Yellow Orb		
+39020001	2	[0, 0, 0]	12	[7, 6]	100	Enemy Action: Inflicts 6 stacks of [Fatigue] on the commandant	<color=#FFFFFF><Nozzle></color> Action Starts	
+39020002	2	[0, 0, 0]	11	[2, -1]	101	Enemy Action: Removes 1 stack of [Yellow Thirst]		
+39020003	2	[0, 0, 0]	11	[4, 1]	102	Enemy Action: Gains 1 stack of [Blue Thirst]		
+39020004	2	[0, 0, 0]	11	[1, 10]	103	Enemy Action: Gains 10 stacks of [Rigid Body]		
+39030001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Nozzle></color> Action Starts	
+39030002	2	[0, 0, 0]	2	[3]	101	Enemy Action: Deals 3 DMG to the commandant		
+39030003	2	[0, 0, 0]	2	[3]	102	Enemy Action: Deals 3 DMG to the commandant		
+39030004	2	[0, 0, 0]	31	[4, 0, 1, 0, 0, 109]	103	Enemy Action: Grants the player 1 Derivative Blue Orb		
+39030005	2	[0, 0, 0]	31	[4, 0, 1, 0, 0, 110]	104	Enemy Action: Grants the player 1 Derivative Blue Orb		
+39040001	2	[0, 0, 0]	2	[1]	100	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Nozzle></color> Action Starts	
+39040002	2	[0, 0, 0]	2	[1]	101	Enemy Action: Deals 1 DMG to the commandant		
+39040003	2	[0, 0, 0]	2	[1]	102	Enemy Action: Deals 1 DMG to the commandant		
+39040004	2	[0, 0, 0]	2	[1]	103	Enemy Action: Deals 1 DMG to the commandant		
+39040005	2	[0, 0, 0]	2	[1]	104	Enemy Action: Deals 1 DMG to the commandant		
+39040006	2	[0, 0, 0]	11	[4, -1]	105	Enemy Action: Removes 1 stack of [Blue Thirst]		
+39040007	2	[0, 0, 0]	11	[3, 1]	106	Enemy Action: Gains 1 stack of [Red Thirst]		
+39040008	2	[0, 0, 0]	43	[38, 1, 5]	107	Enemy Action: Summons 1 Self-Destruction Bug		
+39050001	2	[0, 0, 0]	26	[15, 0]	100	Enemy Action: Gains 15 Armor	<color=#FFFFFF><Nozzle></color> Action Starts	
+39050002	2	[0, 0, 0]	12	[5, 2]	101	Enemy Action: Inflicts 2 stacks of [Frail] on the commandant		
+39050003	2	[0, 0, 0]	31	[4, 0, 1, 0, 0, 101]	102	Enemy Action: Grants the player 1 Derivative Red Orb		
+39050004	2	[0, 0, 0]	31	[4, 0, 1, 0, 0, 102]	103	Enemy Action: Grants the player 1 Derivative Red Orb		
+39060001	2	[0, 0, 0]	26	[18, 0]	100	Enemy Action: Gains 18 Armor	<color=#FFFFFF><Nozzle></color> Action Starts	
+39060002	2	[0, 0, 0]	11	[3, -1]	101	Enemy Action: Removes 1 stack of [Red Thirst]		
+39060003	2	[0, 0, 0]	11	[2, 1]	102	Enemy Action: Gains 1 stack of [Yellow Thirst]		
+39060004	2	[0, 0, 0]	11	[6, 1]	103	Enemy Action: Gains 1 stack of [Berserk]		
+40010001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Large)></color> Action Starts	
+40010002	2	[0, 0, 0]	2	[3]	101	Enemy Action: Deals 3 DMG to the commandant		
+40010003	2	[0, 0, 0]	2	[3]	102	Enemy Action: Deals 3 DMG to the commandant		
+40020001	2	[0, 0, 0]	2	[2]	100	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Large)></color> Action Starts	
+40020002	2	[0, 0, 0]	2	[2]	101	Enemy Action: Deals 2 DMG to the commandant		
+40020003	2	[0, 0, 0]	2	[2]	102	Enemy Action: Deals 2 DMG to the commandant		
+40020004	2	[0, 0, 0]	12	[5, 1]	103	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+40030001	2	[0, 0, 0]	43	[41, 1, 5]	100	Enemy Action: Summons Ground Monitor (Medium) 1	<color=#FFFFFF><Ground Monitor (Large)></color> Action Starts	
+40030002	2	[0, 0, 0]	43	[42, 1, 5]	101	Enemy Action: Summons Ground Monitor (Medium) 2		
+40040001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Large)></color> Action Starts	
+40040002	2	[0, 0, 0]	2	[3]	101	Enemy Action: Deals 3 DMG to the commandant		
+40040003	2	[0, 0, 0]	2	[3]	102	Enemy Action: Deals 3 DMG to the commandant		
+40050001	2	[0, 0, 0]	2	[2]	100	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Large)></color> Action Starts	
+40050002	2	[0, 0, 0]	2	[2]	101	Enemy Action: Deals 2 DMG to the commandant		
+40050003	2	[0, 0, 0]	2	[2]	102	Enemy Action: Deals 2 DMG to the commandant		
+40050004	2	[0, 0, 0]	12	[5, 1]	103	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+41010001	2	[0, 0, 0]	2	[4]	200	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+41020001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+41020002	2	[0, 0, 0]	12	[5, 1]	201	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+41030001	2	[0, 0, 0]	43	[43, 1, 5]	200	Enemy Action: Summons Ground Monitor (Micro) 1	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+41040001	2	[0, 0, 0]	2	[4]	200	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+41050001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+41050002	2	[0, 0, 0]	12	[5, 1]	201	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+42010001	2	[0, 0, 0]	2	[4]	300	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+42020001	2	[0, 0, 0]	2	[2]	300	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+42020002	2	[0, 0, 0]	12	[5, 1]	301	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+42030001	2	[0, 0, 0]	43	[44, 1, 5]	300	Enemy Action: Summons Ground Monitor (Micro) 2	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+42040001	2	[0, 0, 0]	2	[4]	300	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+42050001	2	[0, 0, 0]	2	[2]	300	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+42050002	2	[0, 0, 0]	12	[5, 1]	301	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+43010001	2	[0, 0, 0]	2	[2]	400	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+43020001	2	[0, 0, 0]	12	[5, 1]	400	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+44010001	2	[0, 0, 0]	2	[2]	500	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+44020001	2	[0, 0, 0]	12	[5, 1]	500	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+45010001	2	[0, 0, 0]	28	[5, 7, 0]	100	Enemy Action: Grants Armor to Random Enemy 5 (Other Minions First)	<color=#FFFFFF><Tamer (Large)></color> Action Starts	
+45010002	2	[0, 0, 0]	28	[5, 7, 0]	101	Enemy Action: Grants Armor to Random Enemy 5 (Other Minions First)		
+45020001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Tamer (Large)></color> Action Starts	
+45030001	2	[0, 0, 0]	28	[5, 7, 0]	100	Enemy Action: Grants Armor to Random Enemy 5 (Other Minions First)	<color=#FFFFFF><Tamer (Large)></color> Action Starts	
+45030002	2	[0, 0, 0]	28	[5, 7, 0]	101	Enemy Action: Grants Armor to Random Enemy 5 (Other Minions First)		
+45040001	2	[0, 0, 0]	28	[5, 7, 0]	100	Enemy Action: Grants Armor to Random Enemy 5 (Other Minions First)	<color=#FFFFFF><Tamer (Large)></color> Action Starts	
+45040002	2	[0, 0, 0]	28	[5, 7, 0]	101	Enemy Action: Grants Armor to Random Enemy 5 (Other Minions First)		
+45050001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Tamer (Large)></color> Action Starts	
+45060001	2	[0, 0, 0]	2	[2]	100	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Tamer (Large)></color> Action Starts	
+45060002	2	[0, 0, 0]	2	[2]	101	Enemy Action: Deals 2 DMG to the commandant		
+45060003	2	[0, 0, 0]	2	[2]	102	Enemy Action: Deals 2 DMG to the commandant		
+46010001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+46020001	2	[0, 0, 0]	12	[5, 1]	200	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+46030001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+46040001	2	[0, 0, 0]	12	[5, 1]	200	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+47010001	2	[0, 0, 0]	2	[2]	300	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+47020001	2	[0, 0, 0]	12	[5, 1]	300	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+47030001	2	[0, 0, 0]	2	[2]	300	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+47040001	2	[0, 0, 0]	12	[5, 1]	300	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+48010001	2	[0, 0, 0]	9	[15, 2, 0]	400	Enemy Action: Restores 15 HP to all enemies	<color=#FFFFFF><Repairer></color> Action Starts	
+48020001	2	[0, 0, 0]	2	[2]	400	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Repairer></color> Action Starts	
+48020002	2	[0, 0, 0]	12	[7, 1]	401	Enemy Action: Inflicts 1 stack of [Fatigue] on the commandant		
+48030001	2	[0, 0, 0]	9	[15, 2, 0]	400	Enemy Action: Restores 15 HP to all enemies	<color=#FFFFFF><Repairer></color> Action Starts	
+48040001	2	[0, 0, 0]	2	[2]	400	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Repairer></color> Action Starts	
+48040002	2	[0, 0, 0]	12	[7, 1]	401	Enemy Action: Inflicts 1 stack of [Fatigue] on the commandant		
+48050001	2	[0, 0, 0]	12	[7, 2]	400	Enemy Action: Inflicts 2 stacks of [Fatigue] on the commandant	<color=#FFFFFF><Repairer></color> Action Starts	
+49010001	2	[0, 0, 0]	11	[8, -1]	500	Enemy Action: Removes 1 stack of [Countdown]	<color=#FFFFFF><Self-Destruction Bug></color> Action Starts	
+49010002	2	[0, 0, 0]	11	[40, -1]	601	Enemy Action: Removes 1 stack of [Countdown] Count Token		
+50010001	2	[0, 0, 0]	28	[16, 7, 0]	100	Enemy Action: Grants Armor 16 to Random Enemy (Other Minions First)	<color=#FFFFFF><Shieldbearer (Large)></color> Action Starts	
+50020001	2	[0, 0, 0]	12	[5, 2]	100	Enemy Action: Inflicts 2 stacks of [Frail] on the commandant	<color=#FFFFFF><Shieldbearer (Large)></color> Action Starts	
+50030001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Shieldbearer (Large)></color> Action Starts	
+50030002	2	[0, 0, 0]	28	[8, 7, 0]	101	Enemy Action: Grants Armor 8 to Random Enemy (Other Minions First)		
+50040001	2	[0, 0, 0]	2	[1]	100	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Shieldbearer (Large)></color> Action Starts	
+50040002	2	[0, 0, 0]	2	[1]	101	Enemy Action: Deals 1 DMG to the commandant		
+50040003	2	[0, 0, 0]	2	[1]	102	Enemy Action: Deals 1 DMG to the commandant		
+50050001	2	[0, 0, 0]	28	[16, 7, 0]	100	Enemy Action: Grants Armor 16 to Random Enemy (Other Minions First)	<color=#FFFFFF><Shieldbearer (Large)></color> Action Starts	
+50060001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Shieldbearer (Large)></color> Action Starts	
+50060002	2	[0, 0, 0]	28	[8, 7, 0]	101	Enemy Action: Grants Armor 8 to Random Enemy (Other Minions First)		
+50070001	2	[0, 0, 0]	2	[1]	100	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Shieldbearer (Large)></color> Action Starts	
+50070002	2	[0, 0, 0]	2	[1]	101	Enemy Action: Deals 1 DMG to the commandant		
+50070003	2	[0, 0, 0]	2	[1]	102	Enemy Action: Deals 1 DMG to the commandant		
+51010001	2	[0, 0, 0]	11	[8, -1]	200	Enemy Action: Removes 1 stack of [Countdown]	<color=#FFFFFF><Self-Destruction Bug></color> Action Starts	
+51010002	2	[0, 0, 0]	11	[40, -1]	601	Enemy Action: Removes 1 stack of [Countdown] Count Token		
+52010001	2	[0, 0, 0]	11	[8, -1]	300	Enemy Action: Removes 1 stack of [Countdown]	<color=#FFFFFF><Self-Destruction Bug></color> Action Starts	
+52010002	2	[0, 0, 0]	11	[40, -1]	601	Enemy Action: Removes 1 stack of [Countdown] Count Token		
+53010001	2	[0, 0, 0]	2	[6]	100	Enemy Action: Deals 6 DMG to the commandant	<color=#FFFFFF><Nozzle></color> Action Starts	
+53010002	2	[0, 0, 0]	31	[4, 0, 1, 0, 0, 105]	101	Enemy Action: Grants the player 1 Derivative Yellow Orb		
+53010003	2	[0, 0, 0]	31	[4, 0, 1, 0, 0, 106]	102	Enemy Action: Grants the player 1 Derivative Yellow Orb		
+53020001	2	[0, 0, 0]	12	[7, 6]	100	Enemy Action: Inflicts 6 stacks of [Fatigue] on the commandant	<color=#FFFFFF><Nozzle></color> Action Starts	
+53020002	2	[0, 0, 0]	11	[2, -1]	101	Enemy Action: Removes 1 stack of [Yellow Thirst]		
+53020003	2	[0, 0, 0]	11	[4, 1]	102	Enemy Action: Gains 1 stack of [Blue Thirst]		
+53020004	2	[0, 0, 0]	11	[1, 10]	103	Enemy Action: Gains 10 stacks of [Rigid Body]		
+53030001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Nozzle></color> Action Starts	
+53030002	2	[0, 0, 0]	2	[3]	101	Enemy Action: Deals 3 DMG to the commandant		
+53030003	2	[0, 0, 0]	2	[3]	102	Enemy Action: Deals 3 DMG to the commandant		
+53030004	2	[0, 0, 0]	31	[4, 0, 1, 0, 0, 109]	103	Enemy Action: Grants the player 1 Derivative Blue Orb		
+53030005	2	[0, 0, 0]	31	[4, 0, 1, 0, 0, 110]	104	Enemy Action: Grants the player 1 Derivative Blue Orb		
+53040001	2	[0, 0, 0]	2	[1]	100	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Nozzle></color> Action Starts	
+53040002	2	[0, 0, 0]	2	[1]	101	Enemy Action: Deals 1 DMG to the commandant		
+53040003	2	[0, 0, 0]	2	[1]	102	Enemy Action: Deals 1 DMG to the commandant		
+53040004	2	[0, 0, 0]	2	[1]	103	Enemy Action: Deals 1 DMG to the commandant		
+53040005	2	[0, 0, 0]	2	[1]	104	Enemy Action: Deals 1 DMG to the commandant		
+53040006	2	[0, 0, 0]	11	[4, -1]	105	Enemy Action: Removes 1 stack of [Blue Thirst]		
+53040007	2	[0, 0, 0]	11	[3, 1]	106	Enemy Action: Gains 1 stack of [Red Thirst]		
+53040008	2	[0, 0, 0]	43	[38, 1, 5]	107	Enemy Action: Summons 1 Self-Destruction Bug		
+53050001	2	[0, 0, 0]	26	[15, 0]	100	Enemy Action: Gains 15 Armor	<color=#FFFFFF><Nozzle></color> Action Starts	
+53050002	2	[0, 0, 0]	12	[5, 2]	101	Enemy Action: Inflicts 2 stacks of [Frail] on the commandant		
+53050003	2	[0, 0, 0]	31	[4, 0, 1, 0, 0, 101]	102	Enemy Action: Grants the player 1 Derivative Red Orb		
+53050004	2	[0, 0, 0]	31	[4, 0, 1, 0, 0, 102]	103	Enemy Action: Grants the player 1 Derivative Red Orb		
+53060001	2	[0, 0, 0]	26	[18, 0]	100	Enemy Action: Gains 18 Armor	<color=#FFFFFF><Nozzle></color> Action Starts	
+53060002	2	[0, 0, 0]	11	[3, -1]	101	Enemy Action: Removes 1 stack of [Red Thirst]		
+53060003	2	[0, 0, 0]	11	[2, 1]	102	Enemy Action: Gains 1 stack of [Yellow Thirst]		
+53060004	2	[0, 0, 0]	11	[6, 1]	103	Enemy Action: Gains 1 stack of [Berserk]		
+54010001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Large)></color> Action Starts	
+54010002	2	[0, 0, 0]	2	[3]	101	Enemy Action: Deals 3 DMG to the commandant		
+54010003	2	[0, 0, 0]	2	[3]	102	Enemy Action: Deals 3 DMG to the commandant		
+54020001	2	[0, 0, 0]	2	[2]	100	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Large)></color> Action Starts	
+54020002	2	[0, 0, 0]	2	[2]	101	Enemy Action: Deals 2 DMG to the commandant		
+54020003	2	[0, 0, 0]	2	[2]	102	Enemy Action: Deals 2 DMG to the commandant		
+54020004	2	[0, 0, 0]	12	[5, 1]	103	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+54030001	2	[0, 0, 0]	43	[55, 1, 5]	100	Enemy Action: Summons Ground Monitor (Medium) 1	<color=#FFFFFF><Ground Monitor (Large)></color> Action Starts	
+54030002	2	[0, 0, 0]	43	[56, 1, 5]	101	Enemy Action: Summons Ground Monitor (Medium) 2		
+54040001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Large)></color> Action Starts	
+54040002	2	[0, 0, 0]	2	[3]	101	Enemy Action: Deals 3 DMG to the commandant		
+54040003	2	[0, 0, 0]	2	[3]	102	Enemy Action: Deals 3 DMG to the commandant		
+54050001	2	[0, 0, 0]	2	[2]	100	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Large)></color> Action Starts	
+54050002	2	[0, 0, 0]	2	[2]	101	Enemy Action: Deals 2 DMG to the commandant		
+54050003	2	[0, 0, 0]	2	[2]	102	Enemy Action: Deals 2 DMG to the commandant		
+54050004	2	[0, 0, 0]	12	[5, 1]	103	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+55010001	2	[0, 0, 0]	2	[4]	200	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+55020001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+55020002	2	[0, 0, 0]	12	[5, 1]	201	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+55030001	2	[0, 0, 0]	43	[57, 1, 5]	200	Enemy Action: Summons Ground Monitor (Micro) 1	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+55040001	2	[0, 0, 0]	2	[4]	200	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+55050001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+55050002	2	[0, 0, 0]	12	[5, 1]	201	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+56010001	2	[0, 0, 0]	2	[4]	300	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+56020001	2	[0, 0, 0]	2	[2]	300	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+56020002	2	[0, 0, 0]	12	[5, 1]	301	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+56030001	2	[0, 0, 0]	43	[58, 1, 5]	300	Enemy Action: Summons Ground Monitor (Micro) 2	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+56040001	2	[0, 0, 0]	2	[4]	300	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+56050001	2	[0, 0, 0]	2	[2]	300	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+56050002	2	[0, 0, 0]	12	[5, 1]	301	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+57010001	2	[0, 0, 0]	2	[2]	400	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+57020001	2	[0, 0, 0]	12	[5, 1]	400	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+58010001	2	[0, 0, 0]	2	[2]	500	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+58020001	2	[0, 0, 0]	12	[5, 1]	500	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+59010001	2	[0, 0, 0]	28	[5, 7, 0]	100	Enemy Action: Grants Armor to Random Enemy 5 (Other Minions First)	<color=#FFFFFF><Tamer (Large)></color> Action Starts	
+59010002	2	[0, 0, 0]	28	[5, 7, 0]	101	Enemy Action: Grants Armor to Random Enemy 5 (Other Minions First)		
+59020001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Tamer (Large)></color> Action Starts	
+59030001	2	[0, 0, 0]	28	[5, 7, 0]	100	Enemy Action: Grants Armor to Random Enemy 5 (Other Minions First)	<color=#FFFFFF><Tamer (Large)></color> Action Starts	
+59030002	2	[0, 0, 0]	28	[5, 7, 0]	101	Enemy Action: Grants Armor to Random Enemy 5 (Other Minions First)		
+59040001	2	[0, 0, 0]	28	[5, 7, 0]	100	Enemy Action: Grants Armor to Random Enemy 5 (Other Minions First)	<color=#FFFFFF><Tamer (Large)></color> Action Starts	
+59040002	2	[0, 0, 0]	28	[5, 7, 0]	101	Enemy Action: Grants Armor to Random Enemy 5 (Other Minions First)		
+59050001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Tamer (Large)></color> Action Starts	
+59060001	2	[0, 0, 0]	2	[2]	100	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Tamer (Large)></color> Action Starts	
+59060002	2	[0, 0, 0]	2	[2]	101	Enemy Action: Deals 2 DMG to the commandant		
+59060003	2	[0, 0, 0]	2	[2]	102	Enemy Action: Deals 2 DMG to the commandant		
+60010001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+60020001	2	[0, 0, 0]	12	[5, 1]	200	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+60030001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+60040001	2	[0, 0, 0]	12	[5, 1]	200	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+61010001	2	[0, 0, 0]	2	[2]	300	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+61020001	2	[0, 0, 0]	12	[5, 1]	300	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+61030001	2	[0, 0, 0]	2	[2]	300	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+61040001	2	[0, 0, 0]	12	[5, 1]	300	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+62010001	2	[0, 0, 0]	9	[15, 2, 0]	400	Enemy Action: Restores 15 HP to all enemies	<color=#FFFFFF><Repairer></color> Action Starts	
+62020001	2	[0, 0, 0]	2	[2]	400	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Repairer></color> Action Starts	
+62020002	2	[0, 0, 0]	12	[7, 1]	401	Enemy Action: Inflicts 1 stack of [Fatigue] on the commandant		
+62030001	2	[0, 0, 0]	9	[15, 2, 0]	400	Enemy Action: Restores 15 HP to all enemies	<color=#FFFFFF><Repairer></color> Action Starts	
+62040001	2	[0, 0, 0]	2	[2]	400	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Repairer></color> Action Starts	
+62040002	2	[0, 0, 0]	12	[7, 1]	401	Enemy Action: Inflicts 1 stack of [Fatigue] on the commandant		
+62050001	2	[0, 0, 0]	12	[7, 2]	400	Enemy Action: Inflicts 2 stacks of [Fatigue] on the commandant	<color=#FFFFFF><Repairer></color> Action Starts	
+63010001	2	[0, 0, 0]	11	[8, -1]	500	Enemy Action: Removes 1 stack of [Countdown]	<color=#FFFFFF><Self-Destruction Bug></color> Action Starts	
+63010002	2	[0, 0, 0]	11	[40, -1]	601	Enemy Action: Removes 1 stack of [Countdown] Count Token		
+64010001	2	[0, 0, 0]	28	[16, 7, 0]	100	Enemy Action: Grants Armor 16 to Random Enemy (Other Minions First)	<color=#FFFFFF><Shieldbearer (Large)></color> Action Starts	
+64020001	2	[0, 0, 0]	12	[5, 2]	100	Enemy Action: Inflicts 2 stacks of [Frail] on the commandant	<color=#FFFFFF><Shieldbearer (Large)></color> Action Starts	
+64030001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Shieldbearer (Large)></color> Action Starts	
+64030002	2	[0, 0, 0]	28	[8, 7, 0]	101	Enemy Action: Grants Armor 8 to Random Enemy (Other Minions First)		
+64040001	2	[0, 0, 0]	2	[1]	100	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Shieldbearer (Large)></color> Action Starts	
+64040002	2	[0, 0, 0]	2	[1]	101	Enemy Action: Deals 1 DMG to the commandant		
+64040003	2	[0, 0, 0]	2	[1]	102	Enemy Action: Deals 1 DMG to the commandant		
+64050001	2	[0, 0, 0]	28	[16, 7, 0]	100	Enemy Action: Grants Armor 16 to Random Enemy (Other Minions First)	<color=#FFFFFF><Shieldbearer (Large)></color> Action Starts	
+64060001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Shieldbearer (Large)></color> Action Starts	
+64060002	2	[0, 0, 0]	28	[8, 7, 0]	101	Enemy Action: Grants Armor 8 to Random Enemy (Other Minions First)		
+64070001	2	[0, 0, 0]	2	[1]	100	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Shieldbearer (Large)></color> Action Starts	
+64070002	2	[0, 0, 0]	2	[1]	101	Enemy Action: Deals 1 DMG to the commandant		
+64070003	2	[0, 0, 0]	2	[1]	102	Enemy Action: Deals 1 DMG to the commandant		
+65010001	2	[0, 0, 0]	11	[8, -1]	200	Enemy Action: Removes 1 stack of [Countdown]	<color=#FFFFFF><Self-Destruction Bug></color> Action Starts	
+65010002	2	[0, 0, 0]	11	[40, -1]	601	Enemy Action: Removes 1 stack of [Countdown] Count Token		
+66010001	2	[0, 0, 0]	11	[8, -1]	300	Enemy Action: Removes 1 stack of [Countdown]	<color=#FFFFFF><Self-Destruction Bug></color> Action Starts	
+66010002	2	[0, 0, 0]	11	[40, -1]	601	Enemy Action: Removes 1 stack of [Countdown] Count Token		
+67010001	2	[0, 0, 0]	2	[6]	100	Enemy Action: Deals 6 DMG to the commandant	<color=#FFFFFF><Nozzle></color> Action Starts	
+67010002	2	[0, 0, 0]	31	[4, 0, 1, 0, 0, 105]	101	Enemy Action: Grants the player 1 Derivative Yellow Orb		
+67010003	2	[0, 0, 0]	31	[4, 0, 1, 0, 0, 106]	102	Enemy Action: Grants the player 1 Derivative Yellow Orb		
+67020001	2	[0, 0, 0]	12	[7, 6]	100	Enemy Action: Inflicts 6 stacks of [Fatigue] on the commandant	<color=#FFFFFF><Nozzle></color> Action Starts	
+67020002	2	[0, 0, 0]	11	[2, -1]	101	Enemy Action: Removes 1 stack of [Yellow Thirst]		
+67020003	2	[0, 0, 0]	11	[4, 1]	102	Enemy Action: Gains 1 stack of [Blue Thirst]		
+67020004	2	[0, 0, 0]	11	[1, 10]	103	Enemy Action: Gains 10 stacks of [Rigid Body]		
+67030001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Nozzle></color> Action Starts	
+67030002	2	[0, 0, 0]	2	[3]	101	Enemy Action: Deals 3 DMG to the commandant		
+67030003	2	[0, 0, 0]	2	[3]	102	Enemy Action: Deals 3 DMG to the commandant		
+67030004	2	[0, 0, 0]	31	[4, 0, 1, 0, 0, 109]	103	Enemy Action: Grants the player 1 Derivative Blue Orb		
+67030005	2	[0, 0, 0]	31	[4, 0, 1, 0, 0, 110]	104	Enemy Action: Grants the player 1 Derivative Blue Orb		
+67040001	2	[0, 0, 0]	2	[1]	100	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Nozzle></color> Action Starts	
+67040002	2	[0, 0, 0]	2	[1]	101	Enemy Action: Deals 1 DMG to the commandant		
+67040003	2	[0, 0, 0]	2	[1]	102	Enemy Action: Deals 1 DMG to the commandant		
+67040004	2	[0, 0, 0]	2	[1]	103	Enemy Action: Deals 1 DMG to the commandant		
+67040005	2	[0, 0, 0]	2	[1]	104	Enemy Action: Deals 1 DMG to the commandant		
+67040006	2	[0, 0, 0]	11	[4, -1]	105	Enemy Action: Removes 1 stack of [Blue Thirst]		
+67040007	2	[0, 0, 0]	11	[3, 1]	106	Enemy Action: Gains 1 stack of [Red Thirst]		
+67040008	2	[0, 0, 0]	43	[38, 1, 5]	107	Enemy Action: Summons 1 Self-Destruction Bug		
+67050001	2	[0, 0, 0]	26	[15, 0]	100	Enemy Action: Gains 15 Armor	<color=#FFFFFF><Nozzle></color> Action Starts	
+67050002	2	[0, 0, 0]	12	[5, 2]	101	Enemy Action: Inflicts 2 stacks of [Frail] on the commandant		
+67050003	2	[0, 0, 0]	31	[4, 0, 1, 0, 0, 101]	102	Enemy Action: Grants the player 1 Derivative Red Orb		
+67050004	2	[0, 0, 0]	31	[4, 0, 1, 0, 0, 102]	103	Enemy Action: Grants the player 1 Derivative Red Orb		
+67060001	2	[0, 0, 0]	26	[18, 0]	100	Enemy Action: Gains 18 Armor	<color=#FFFFFF><Nozzle></color> Action Starts	
+67060002	2	[0, 0, 0]	11	[3, -1]	101	Enemy Action: Removes 1 stack of [Red Thirst]		
+67060003	2	[0, 0, 0]	11	[2, 1]	102	Enemy Action: Gains 1 stack of [Yellow Thirst]		
+67060004	2	[0, 0, 0]	11	[6, 1]	103	Enemy Action: Gains 1 stack of [Berserk]		
+68010001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Construct (Large)></color> Action Starts	
+68020001	2	[0, 0, 0]	2	[1]	100	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Construct (Large)></color> Action Starts	
+68020002	2	[0, 0, 0]	2	[1]	101	Enemy Action: Deals 1 DMG to the commandant		
+69010001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Construct></color> Action Starts	
+69020001	2	[0, 0, 0]	2	[1]	100	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Construct></color> Action Starts	
+69020002	2	[0, 0, 0]	2	[1]	101	Enemy Action: Deals 1 DMG to the commandant		
+70010001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Construct></color> Action Starts	
+70020001	2	[0, 0, 0]	2	[1]	100	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Construct></color> Action Starts	
+70020002	2	[0, 0, 0]	2	[1]	101	Enemy Action: Deals 1 DMG to the commandant		
+71010001	2	[0, 0, 0]	2	[2]	100	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Executor (Large)></color> Action Starts	
+71020001	2	[0, 0, 0]	11	[6, 1]	100	Enemy Action: Gains 1 stack of [Berserk]	<color=#FFFFFF><Executor (Large)></color> Action Starts	
+72010001	2	[0, 0, 0]	2	[4]	200	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+72020001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+72020002	2	[0, 0, 0]	12	[5, 1]	201	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+72030001	2	[0, 0, 0]	43	[74, 1, 5]	200	Enemy Action: Summons Ground Monitor (Micro) 1	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+72040001	2	[0, 0, 0]	2	[4]	200	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+72050001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+72050002	2	[0, 0, 0]	12	[5, 1]	201	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+73010001	2	[0, 0, 0]	2	[4]	300	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+73020001	2	[0, 0, 0]	2	[2]	300	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+73020002	2	[0, 0, 0]	12	[5, 1]	301	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+73030001	2	[0, 0, 0]	43	[75, 1, 5]	300	Enemy Action: Summons Ground Monitor (Micro) 2	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+73040001	2	[0, 0, 0]	2	[4]	300	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+73050001	2	[0, 0, 0]	2	[2]	300	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+73050002	2	[0, 0, 0]	12	[5, 1]	301	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+74010001	2	[0, 0, 0]	2	[2]	400	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+74020001	2	[0, 0, 0]	12	[5, 1]	400	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+75010001	2	[0, 0, 0]	2	[2]	500	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+75020001	2	[0, 0, 0]	12	[5, 1]	500	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+76010001	2	[0, 0, 0]	2	[2]	100	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+76020001	2	[0, 0, 0]	2	[9]	100	Enemy Action: Deals 9 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+76030001	2	[0, 0, 0]	2	[2]	100	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+76030002	2	[0, 0, 0]	2	[2]	101	Enemy Action: Deals 2 DMG to the commandant		
+76040001	2	[0, 0, 0]	2	[9]	100	Enemy Action: Deals 9 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+76050001	2	[0, 0, 0]	2	[2]	100	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+76050002	2	[0, 0, 0]	2	[2]	101	Enemy Action: Deals 2 DMG to the commandant		
+76050003	2	[0, 0, 0]	2	[2]	102	Enemy Action: Deals 2 DMG to the commandant		
+76060001	2	[0, 0, 0]	2	[9]	100	Enemy Action: Deals 9 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+76070001	2	[0, 0, 0]	2	[2]	100	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+76070002	2	[0, 0, 0]	2	[2]	101	Enemy Action: Deals 2 DMG to the commandant		
+76070003	2	[0, 0, 0]	2	[2]	102	Enemy Action: Deals 2 DMG to the commandant		
+76070004	2	[0, 0, 0]	2	[2]	103	Enemy Action: Deals 2 DMG to the commandant		
+76080001	2	[0, 0, 0]	2	[9]	100	Enemy Action: Deals 9 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+76090001	2	[0, 0, 0]	2	[2]	100	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+76090002	2	[0, 0, 0]	2	[2]	101	Enemy Action: Deals 2 DMG to the commandant		
+76090003	2	[0, 0, 0]	2	[2]	102	Enemy Action: Deals 2 DMG to the commandant		
+76090004	2	[0, 0, 0]	2	[2]	103	Enemy Action: Deals 2 DMG to the commandant		
+76090005	2	[0, 0, 0]	2	[2]	104	Enemy Action: Deals 2 DMG to the commandant		
+76100001	2	[0, 0, 0]	2	[9]	100	Enemy Action: Deals 9 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+77010001	2	[0, 0, 0]	2	[2]	100	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Iron Maiden></color> Action Starts	
+77010002	2	[0, 0, 0]	2	[2]	101	Enemy Action: Deals 2 DMG to the commandant		
+77010003	2	[0, 0, 0]	2	[2]	102	Enemy Action: Deals 2 DMG to the commandant		
+77020001	2	[0, 0, 0]	26	[10, 0]	100	Enemy Action: Gains 10 Armor	<color=#FFFFFF><Iron Maiden></color> Action Starts	
+77020002	2	[0, 0, 0]	12	[5, 1]	101	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+77020003	2	[0, 0, 0]	12	[7, 1]	102	Enemy Action: Inflicts 1 stack of [Fatigue] on the commandant		
+77030001	2	[0, 0, 0]	2	[10]	100	Enemy Action: Deals 10 DMG to the commandant	<color=#FFFFFF><Iron Maiden></color> Action Starts	
+77030002	2	[0, 0, 0]	33	[0, 0, 1, 0, 0, 115, 0, 0, 0]	101	Enemy Action: Adds 1 Punishment 115 to the player's draw pile		
+78010001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Construct (Large)></color> Action Starts	
+78020001	2	[0, 0, 0]	2	[1]	100	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Construct (Large)></color> Action Starts	
+78020002	2	[0, 0, 0]	2	[1]	101	Enemy Action: Deals 1 DMG to the commandant		
+79010001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Construct></color> Action Starts	
+79020001	2	[0, 0, 0]	2	[1]	100	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Construct></color> Action Starts	
+79020002	2	[0, 0, 0]	2	[1]	101	Enemy Action: Deals 1 DMG to the commandant		
+80010001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Construct></color> Action Starts	
+80020001	2	[0, 0, 0]	2	[1]	100	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Construct></color> Action Starts	
+80020002	2	[0, 0, 0]	2	[1]	101	Enemy Action: Deals 1 DMG to the commandant		
+81010001	2	[0, 0, 0]	2	[2]	100	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Executor (Large)></color> Action Starts	
+81020001	2	[0, 0, 0]	11	[6, 1]	100	Enemy Action: Gains 1 stack of [Berserk]	<color=#FFFFFF><Executor (Large)></color> Action Starts	
+82010001	2	[0, 0, 0]	2	[4]	200	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+82020001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+82020002	2	[0, 0, 0]	12	[5, 1]	201	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+82030001	2	[0, 0, 0]	43	[84, 1, 5]	200	Enemy Action: Summons Ground Monitor (Micro) 1	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+82040001	2	[0, 0, 0]	2	[4]	200	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+82050001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+82050002	2	[0, 0, 0]	12	[5, 1]	201	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+83010001	2	[0, 0, 0]	2	[4]	300	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+83020001	2	[0, 0, 0]	2	[2]	300	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+83020002	2	[0, 0, 0]	12	[5, 1]	301	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+83030001	2	[0, 0, 0]	43	[85, 1, 5]	300	Enemy Action: Summons Ground Monitor (Micro) 2	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+83040001	2	[0, 0, 0]	2	[4]	300	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+83050001	2	[0, 0, 0]	2	[2]	300	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+83050002	2	[0, 0, 0]	12	[5, 1]	301	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+84010001	2	[0, 0, 0]	2	[2]	400	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+84020001	2	[0, 0, 0]	12	[5, 1]	400	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+85010001	2	[0, 0, 0]	2	[2]	500	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+85020001	2	[0, 0, 0]	12	[5, 1]	500	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+86010001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+86020001	2	[0, 0, 0]	2	[12]	100	Enemy Action: Deals 12 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+86030001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+86030002	2	[0, 0, 0]	2	[3]	101	Enemy Action: Deals 3 DMG to the commandant		
+86040001	2	[0, 0, 0]	2	[12]	100	Enemy Action: Deals 12 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+86050001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+86050002	2	[0, 0, 0]	2	[3]	101	Enemy Action: Deals 3 DMG to the commandant		
+86050003	2	[0, 0, 0]	2	[3]	102	Enemy Action: Deals 3 DMG to the commandant		
+86060001	2	[0, 0, 0]	2	[12]	100	Enemy Action: Deals 12 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+86070001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+86070002	2	[0, 0, 0]	2	[3]	101	Enemy Action: Deals 3 DMG to the commandant		
+86070003	2	[0, 0, 0]	2	[3]	102	Enemy Action: Deals 3 DMG to the commandant		
+86070004	2	[0, 0, 0]	2	[3]	103	Enemy Action: Deals 3 DMG to the commandant		
+86080001	2	[0, 0, 0]	2	[12]	100	Enemy Action: Deals 12 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+86090001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+86090002	2	[0, 0, 0]	2	[3]	101	Enemy Action: Deals 3 DMG to the commandant		
+86090003	2	[0, 0, 0]	2	[3]	102	Enemy Action: Deals 3 DMG to the commandant		
+86090004	2	[0, 0, 0]	2	[3]	103	Enemy Action: Deals 3 DMG to the commandant		
+86090005	2	[0, 0, 0]	2	[3]	104	Enemy Action: Deals 3 DMG to the commandant		
+86100001	2	[0, 0, 0]	2	[12]	100	Enemy Action: Deals 12 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+87010001	2	[0, 0, 0]	2	[2]	100	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Iron Maiden></color> Action Starts	
+87010002	2	[0, 0, 0]	2	[2]	101	Enemy Action: Deals 2 DMG to the commandant		
+87010003	2	[0, 0, 0]	2	[2]	102	Enemy Action: Deals 2 DMG to the commandant		
+87020001	2	[0, 0, 0]	26	[15, 0]	100	Enemy Action: Gains 15 Armor	<color=#FFFFFF><Iron Maiden></color> Action Starts	
+87020002	2	[0, 0, 0]	12	[5, 1]	101	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+87020003	2	[0, 0, 0]	12	[7, 1]	102	Enemy Action: Inflicts 1 stack of [Fatigue] on the commandant		
+87030001	2	[0, 0, 0]	2	[10]	100	Enemy Action: Deals 10 DMG to the commandant	<color=#FFFFFF><Iron Maiden></color> Action Starts	
+87030002	2	[0, 0, 0]	33	[0, 0, 1, 0, 0, 115, 0, 0, 0]	101	Enemy Action: Adds 1 Punishment 115 to the player's draw pile		
+88010001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Construct (Large)></color> Action Starts	
+88020001	2	[0, 0, 0]	2	[1]	100	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Construct (Large)></color> Action Starts	
+88020002	2	[0, 0, 0]	2	[1]	101	Enemy Action: Deals 1 DMG to the commandant		
+89010001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Construct></color> Action Starts	
+89020001	2	[0, 0, 0]	2	[1]	100	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Construct></color> Action Starts	
+89020002	2	[0, 0, 0]	2	[1]	101	Enemy Action: Deals 1 DMG to the commandant		
+90010001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Construct></color> Action Starts	
+90020001	2	[0, 0, 0]	2	[1]	100	Enemy Action: Deals 1 DMG to the commandant	<color=#FFFFFF><Construct></color> Action Starts	
+90020002	2	[0, 0, 0]	2	[1]	101	Enemy Action: Deals 1 DMG to the commandant		
+91010001	2	[0, 0, 0]	2	[2]	100	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Executor (Large)></color> Action Starts	
+91020001	2	[0, 0, 0]	11	[6, 1]	100	Enemy Action: Gains 1 stack of [Berserk]	<color=#FFFFFF><Executor (Large)></color> Action Starts	
+92010001	2	[0, 0, 0]	2	[4]	200	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+92020001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+92020002	2	[0, 0, 0]	12	[5, 1]	201	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+92030001	2	[0, 0, 0]	43	[94, 1, 5]	200	Enemy Action: Summons Ground Monitor (Micro) 1	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+92040001	2	[0, 0, 0]	2	[4]	200	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+92050001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+92050002	2	[0, 0, 0]	12	[5, 1]	201	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+93010001	2	[0, 0, 0]	2	[4]	300	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+93020001	2	[0, 0, 0]	2	[2]	300	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+93020002	2	[0, 0, 0]	12	[5, 1]	301	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+93030001	2	[0, 0, 0]	43	[95, 1, 5]	300	Enemy Action: Summons Ground Monitor (Micro) 2	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+93040001	2	[0, 0, 0]	2	[4]	300	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+93050001	2	[0, 0, 0]	2	[2]	300	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Medium)></color> Action Starts	
+93050002	2	[0, 0, 0]	12	[5, 1]	301	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+94010001	2	[0, 0, 0]	2	[2]	400	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+94020001	2	[0, 0, 0]	12	[5, 1]	400	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+95010001	2	[0, 0, 0]	2	[2]	500	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+95020001	2	[0, 0, 0]	12	[5, 1]	500	Enemy Action: Inflicts 1 stack of [Frail] on the commandant	<color=#FFFFFF><Ground Monitor (Micro)></color> Action Starts	
+96010001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+96020001	2	[0, 0, 0]	2	[12]	100	Enemy Action: Deals 12 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+96030001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+96030002	2	[0, 0, 0]	2	[3]	101	Enemy Action: Deals 3 DMG to the commandant		
+96040001	2	[0, 0, 0]	2	[12]	100	Enemy Action: Deals 12 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+96050001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+96050002	2	[0, 0, 0]	2	[3]	101	Enemy Action: Deals 3 DMG to the commandant		
+96050003	2	[0, 0, 0]	2	[3]	102	Enemy Action: Deals 3 DMG to the commandant		
+96060001	2	[0, 0, 0]	2	[12]	100	Enemy Action: Deals 12 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+96070001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+96070002	2	[0, 0, 0]	2	[3]	101	Enemy Action: Deals 3 DMG to the commandant		
+96070003	2	[0, 0, 0]	2	[3]	102	Enemy Action: Deals 3 DMG to the commandant		
+96070004	2	[0, 0, 0]	2	[3]	103	Enemy Action: Deals 3 DMG to the commandant		
+96080001	2	[0, 0, 0]	2	[12]	100	Enemy Action: Deals 12 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+96090001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+96090002	2	[0, 0, 0]	2	[3]	101	Enemy Action: Deals 3 DMG to the commandant		
+96090003	2	[0, 0, 0]	2	[3]	102	Enemy Action: Deals 3 DMG to the commandant		
+96090004	2	[0, 0, 0]	2	[3]	103	Enemy Action: Deals 3 DMG to the commandant		
+96090005	2	[0, 0, 0]	2	[3]	104	Enemy Action: Deals 3 DMG to the commandant		
+96100001	2	[0, 0, 0]	2	[12]	100	Enemy Action: Deals 12 DMG to the commandant	<color=#FFFFFF><Sister></color> Action Starts	
+97010001	2	[0, 0, 0]	2	[2]	100	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Iron Maiden></color> Action Starts	
+97010002	2	[0, 0, 0]	2	[2]	101	Enemy Action: Deals 2 DMG to the commandant		
+97010003	2	[0, 0, 0]	2	[2]	102	Enemy Action: Deals 2 DMG to the commandant		
+97020001	2	[0, 0, 0]	26	[15, 0]	100	Enemy Action: Gains 15 Armor	<color=#FFFFFF><Iron Maiden></color> Action Starts	
+97020002	2	[0, 0, 0]	12	[5, 1]	101	Enemy Action: Inflicts 1 stack of [Frail] on the commandant		
+97020003	2	[0, 0, 0]	12	[7, 1]	102	Enemy Action: Inflicts 1 stack of [Fatigue] on the commandant		
+97030001	2	[0, 0, 0]	2	[10]	100	Enemy Action: Deals 10 DMG to the commandant	<color=#FFFFFF><Iron Maiden></color> Action Starts	
+97030002	2	[0, 0, 0]	33	[0, 0, 1, 0, 0, 115, 0, 0, 0]	101	Enemy Action: Adds 1 Punishment 115 to the player's draw pile		
+98010001	2	[0, 0, 0]	30	[4, 1, 2, 0, 1, 0, 0, 0, 1]	500	Enemy Action: Moves 2 random Red Orbs from the player's draw pile to the discard pile	<color=#FFFFFF><Terrapod></color> Action Starts	
+98020001	2	[0, 0, 0]	30	[4, 1, 2, 0, 1, 0, 0, 0, 1]	500	Enemy Action: Moves 2 random Red Orbs from the player's draw pile to the discard pile	<color=#FFFFFF><Terrapod></color> Action Starts	
+98030001	2	[0, 0, 0]	2	[3]	500	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Terrapod></color> Action Starts	
+98040001	2	[0, 0, 0]	28	[10, 7, 0]	500	Enemy Action: Grants Armor 10 to Random Enemy (Other Minions First)	<color=#FFFFFF><Terrapod></color> Action Starts	
+99010001	2	[0, 0, 0]	33	[0, 0, 2, 0, 0, 116, 0, 0, 0]	100	Enemy Action: Adds 2 Redundant 116 to the player's draw pile	<color=#FFFFFF><Missionary (Large)></color> Action Starts	
+99020001	2	[0, 0, 0]	2	[4]	100	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Missionary (Large)></color> Action Starts	
+99020002	2	[0, 0, 0]	2	[4]	101	Enemy Action: Deals 4 DMG to the commandant		
+99030001	2	[0, 0, 0]	2	[6]	100	Enemy Action: Deals 6 DMG to the commandant	<color=#FFFFFF><Missionary (Large)></color> Action Starts	
+99030002	2	[0, 0, 0]	12	[7, 3]	101	Enemy Action: Inflicts 3 stacks of [Fatigue] on the commandant		
+100010001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Aerial Monitor></color> Action Starts	
+100010002	2	[0, 0, 0]	2	[2]	201	Enemy Action: Deals 2 DMG to the commandant		
+100010003	2	[0, 0, 0]	2	[2]	202	Enemy Action: Deals 2 DMG to the commandant		
+100020001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Aerial Monitor></color> Action Starts	
+100030001	2	[0, 0, 0]	15	[6, 1, 1]	200	Enemy Action: Inflicts 1 stack of [Berserk] on all enemies	<color=#FFFFFF><Aerial Monitor></color> Action Starts	
+101010001	2	[0, 0, 0]	33	[0, 0, 2, 0, 0, 116, 0, 0, 0]	100	Enemy Action: Adds 2 Redundant 116 to the player's draw pile	<color=#FFFFFF><Missionary (Large)></color> Action Starts	
+101020001	2	[0, 0, 0]	2	[4]	100	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Missionary (Large)></color> Action Starts	
+101020002	2	[0, 0, 0]	2	[4]	101	Enemy Action: Deals 4 DMG to the commandant		
+101030001	2	[0, 0, 0]	2	[6]	100	Enemy Action: Deals 6 DMG to the commandant	<color=#FFFFFF><Missionary (Large)></color> Action Starts	
+101030002	2	[0, 0, 0]	12	[7, 3]	101	Enemy Action: Inflicts 3 stacks of [Fatigue] on the commandant		
+102010001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Executor></color> Action Starts	
+102020001	2	[0, 0, 0]	11	[6, 1]	200	Enemy Action: Gains 1 stack of [Berserk]	<color=#FFFFFF><Executor></color> Action Starts	
+103010001	2	[0, 0, 0]	2	[2]	300	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Executor></color> Action Starts	
+103020001	2	[0, 0, 0]	11	[6, 1]	300	Enemy Action: Gains 1 stack of [Berserk]	<color=#FFFFFF><Executor></color> Action Starts	
+104010001	2	[0, 0, 0]	33	[0, 0, 1, 0, 0, 116, 0, 0, 0]	100	Enemy Action: Adds 1 Redundant 116 to the player's draw pile	<color=#FFFFFF><Pilgrim (Large)></color> Action Starts	
+104010002	2	[0, 0, 0]	2	[2]	101	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Pilgrim (Large)></color> Action Starts	
+104010003	2	[0, 0, 0]	2	[2]	102	Enemy Action: Deals 2 DMG to the commandant		
+104010004	2	[0, 0, 0]	2	[2]	103	Enemy Action: Deals 2 DMG to the commandant		
+105010001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Pilgrim></color> Action Starts	
+105010002	2	[0, 0, 0]	2	[2]	201	Enemy Action: Deals 2 DMG to the commandant		
+105010003	2	[0, 0, 0]	2	[2]	202	Enemy Action: Deals 2 DMG to the commandant		
+105020001	2	[0, 0, 0]	33	[0, 0, 1, 0, 0, 116, 0, 0, 0]	200	Enemy Action: Adds 1 Redundant 116 to the player's draw pile	<color=#FFFFFF><Pilgrim></color> Action Starts	
+106010001	2	[0, 0, 0]	33	[0, 0, 1, 0, 0, 116, 0, 0, 0]	300	Enemy Action: Adds 1 Redundant 116 to the player's draw pile	<color=#FFFFFF><Pilgrim></color> Action Starts	
+106020001	2	[0, 0, 0]	2	[2]	300	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Pilgrim></color> Action Starts	
+106020002	2	[0, 0, 0]	2	[2]	301	Enemy Action: Deals 2 DMG to the commandant		
+106020003	2	[0, 0, 0]	2	[2]	302	Enemy Action: Deals 2 DMG to the commandant		
+107010001	2	[0, 0, 0]	43	[98, 2, 5]	100	Enemy Action: Summons 2 Terrapods	<color=#FFFFFF><Roseblade></color> Action Starts	
+107020001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Roseblade></color> Action Starts	
+107020002	2	[0, 0, 0]	2	[3]	101	Enemy Action: Deals 3 DMG to the commandant		
+107030001	2	[0, 0, 0]	11	[6, 1]	100	Enemy Action: Gains 1 stack of [Berserk]	<color=#FFFFFF><Roseblade></color> Action Starts	
+107030002	2	[0, 0, 0]	26	[20, 0]	101	Enemy Action: Gains 20 Armor		
+107040001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Roseblade></color> Action Starts	
+107040002	2	[0, 0, 0]	2	[3]	101	Enemy Action: Deals 3 DMG to the commandant		
+107050001	2	[0, 0, 0]	11	[6, 1]	100	Enemy Action: Gains 1 stack of [Berserk]	<color=#FFFFFF><Roseblade></color> Action Starts	
+107050002	2	[0, 0, 0]	26	[20, 0]	101	Enemy Action: Gains 20 Armor		
+107060001	2	[0, 0, 0]	2	[18]	100	Enemy Action: Deals 18 DMG to the commandant	<color=#FFFFFF><Roseblade></color> Action Starts	
+107070001	2	[0, 0, 0]	11	[6, 1]	100	Enemy Action: Gains 1 stack of [Berserk]	<color=#FFFFFF><Roseblade></color> Action Starts	
+107070002	2	[0, 0, 0]	26	[20, 0]	101	Enemy Action: Gains 20 Armor		
+108010001	2	[0, 0, 0]	33	[0, 0, 2, 0, 0, 116, 0, 0, 0]	100	Enemy Action: Adds 2 Redundant 116 to the player's draw pile	<color=#FFFFFF><Missionary (Large)></color> Action Starts	
+108020001	2	[0, 0, 0]	2	[4]	100	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Missionary (Large)></color> Action Starts	
+108020002	2	[0, 0, 0]	2	[4]	101	Enemy Action: Deals 4 DMG to the commandant		
+108030001	2	[0, 0, 0]	2	[6]	100	Enemy Action: Deals 6 DMG to the commandant	<color=#FFFFFF><Missionary (Large)></color> Action Starts	
+108030002	2	[0, 0, 0]	12	[7, 3]	101	Enemy Action: Inflicts 3 stacks of [Fatigue] on the commandant		
+109010001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Aerial Monitor></color> Action Starts	
+109010002	2	[0, 0, 0]	2	[2]	201	Enemy Action: Deals 2 DMG to the commandant		
+109010003	2	[0, 0, 0]	2	[2]	202	Enemy Action: Deals 2 DMG to the commandant		
+109020001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Aerial Monitor></color> Action Starts	
+109030001	2	[0, 0, 0]	15	[6, 1, 1]	200	Enemy Action: Inflicts 1 stack of [Berserk] on all enemies	<color=#FFFFFF><Aerial Monitor></color> Action Starts	
+110010001	2	[0, 0, 0]	33	[0, 0, 2, 0, 0, 116, 0, 0, 0]	100	Enemy Action: Adds 2 Redundant 116 to the player's draw pile	<color=#FFFFFF><Missionary (Large)></color> Action Starts	
+110020001	2	[0, 0, 0]	2	[4]	100	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Missionary (Large)></color> Action Starts	
+110020002	2	[0, 0, 0]	2	[4]	101	Enemy Action: Deals 4 DMG to the commandant		
+110030001	2	[0, 0, 0]	2	[6]	100	Enemy Action: Deals 6 DMG to the commandant	<color=#FFFFFF><Missionary (Large)></color> Action Starts	
+110030002	2	[0, 0, 0]	12	[7, 3]	101	Enemy Action: Inflicts 3 stacks of [Fatigue] on the commandant		
+111010001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Executor></color> Action Starts	
+111020001	2	[0, 0, 0]	11	[6, 1]	200	Enemy Action: Gains 1 stack of [Berserk]	<color=#FFFFFF><Executor></color> Action Starts	
+112010001	2	[0, 0, 0]	2	[2]	300	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Executor></color> Action Starts	
+112020001	2	[0, 0, 0]	11	[6, 1]	300	Enemy Action: Gains 1 stack of [Berserk]	<color=#FFFFFF><Executor></color> Action Starts	
+113010001	2	[0, 0, 0]	33	[0, 0, 1, 0, 0, 116, 0, 0, 0]	100	Enemy Action: Adds 1 Redundant 116 to the player's draw pile	<color=#FFFFFF><Pilgrim (Large)></color> Action Starts	
+113010002	2	[0, 0, 0]	2	[2]	101	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Pilgrim (Large)></color> Action Starts	
+113010003	2	[0, 0, 0]	2	[2]	102	Enemy Action: Deals 2 DMG to the commandant		
+113010004	2	[0, 0, 0]	2	[2]	103	Enemy Action: Deals 2 DMG to the commandant		
+114010001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Pilgrim></color> Action Starts	
+114010002	2	[0, 0, 0]	2	[2]	201	Enemy Action: Deals 2 DMG to the commandant		
+114010003	2	[0, 0, 0]	2	[2]	202	Enemy Action: Deals 2 DMG to the commandant		
+114020001	2	[0, 0, 0]	33	[0, 0, 1, 0, 0, 116, 0, 0, 0]	200	Enemy Action: Adds 1 Redundant 116 to the player's draw pile	<color=#FFFFFF><Pilgrim></color> Action Starts	
+115010001	2	[0, 0, 0]	33	[0, 0, 1, 0, 0, 116, 0, 0, 0]	300	Enemy Action: Adds 1 Redundant 116 to the player's draw pile	<color=#FFFFFF><Pilgrim></color> Action Starts	
+115020001	2	[0, 0, 0]	2	[2]	300	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Pilgrim></color> Action Starts	
+115020002	2	[0, 0, 0]	2	[2]	301	Enemy Action: Deals 2 DMG to the commandant		
+115020003	2	[0, 0, 0]	2	[2]	302	Enemy Action: Deals 2 DMG to the commandant		
+116010001	2	[0, 0, 0]	43	[98, 2, 5]	100	Enemy Action: Summons 2 Terrapods	<color=#FFFFFF><Roseblade></color> Action Starts	
+116020001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Roseblade></color> Action Starts	
+116020002	2	[0, 0, 0]	2	[3]	101	Enemy Action: Deals 3 DMG to the commandant		
+116030001	2	[0, 0, 0]	11	[6, 1]	100	Enemy Action: Gains 1 stack of [Berserk]	<color=#FFFFFF><Roseblade></color> Action Starts	
+116030002	2	[0, 0, 0]	26	[20, 0]	101	Enemy Action: Gains 20 Armor		
+116040001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Roseblade></color> Action Starts	
+116040002	2	[0, 0, 0]	2	[3]	101	Enemy Action: Deals 3 DMG to the commandant		
+116050001	2	[0, 0, 0]	11	[6, 1]	100	Enemy Action: Gains 1 stack of [Berserk]	<color=#FFFFFF><Roseblade></color> Action Starts	
+116050002	2	[0, 0, 0]	26	[20, 0]	101	Enemy Action: Gains 20 Armor		
+116060001	2	[0, 0, 0]	2	[18]	100	Enemy Action: Deals 18 DMG to the commandant	<color=#FFFFFF><Roseblade></color> Action Starts	
+116070001	2	[0, 0, 0]	11	[6, 1]	100	Enemy Action: Gains 1 stack of [Berserk]	<color=#FFFFFF><Roseblade></color> Action Starts	
+116070002	2	[0, 0, 0]	26	[20, 0]	101	Enemy Action: Gains 20 Armor		
+117010001	2	[0, 0, 0]	33	[0, 0, 2, 0, 0, 116, 0, 0, 0]	100	Enemy Action: Adds 2 Redundant 116 to the player's draw pile	<color=#FFFFFF><Missionary (Large)></color> Action Starts	
+117020001	2	[0, 0, 0]	2	[4]	100	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Missionary (Large)></color> Action Starts	
+117020002	2	[0, 0, 0]	2	[4]	101	Enemy Action: Deals 4 DMG to the commandant		
+117030001	2	[0, 0, 0]	2	[6]	100	Enemy Action: Deals 6 DMG to the commandant	<color=#FFFFFF><Missionary (Large)></color> Action Starts	
+117030002	2	[0, 0, 0]	12	[7, 3]	101	Enemy Action: Inflicts 3 stacks of [Fatigue] on the commandant		
+118010001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Aerial Monitor></color> Action Starts	
+118010002	2	[0, 0, 0]	2	[2]	201	Enemy Action: Deals 2 DMG to the commandant		
+118010003	2	[0, 0, 0]	2	[2]	202	Enemy Action: Deals 2 DMG to the commandant		
+118020001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Aerial Monitor></color> Action Starts	
+118030001	2	[0, 0, 0]	15	[6, 1, 1]	200	Enemy Action: Inflicts 1 stack of [Berserk] on all enemies	<color=#FFFFFF><Aerial Monitor></color> Action Starts	
+119010001	2	[0, 0, 0]	33	[0, 0, 2, 0, 0, 116, 0, 0, 0]	100	Enemy Action: Adds 2 Redundant 116 to the player's draw pile	<color=#FFFFFF><Missionary (Large)></color> Action Starts	
+119020001	2	[0, 0, 0]	2	[4]	100	Enemy Action: Deals 4 DMG to the commandant	<color=#FFFFFF><Missionary (Large)></color> Action Starts	
+119020002	2	[0, 0, 0]	2	[4]	101	Enemy Action: Deals 4 DMG to the commandant		
+119030001	2	[0, 0, 0]	2	[6]	100	Enemy Action: Deals 6 DMG to the commandant	<color=#FFFFFF><Missionary (Large)></color> Action Starts	
+119030002	2	[0, 0, 0]	12	[7, 3]	101	Enemy Action: Inflicts 3 stacks of [Fatigue] on the commandant		
+120010001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Executor></color> Action Starts	
+120020001	2	[0, 0, 0]	11	[6, 1]	200	Enemy Action: Gains 1 stack of [Berserk]	<color=#FFFFFF><Executor></color> Action Starts	
+121010001	2	[0, 0, 0]	2	[2]	300	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Executor></color> Action Starts	
+121020001	2	[0, 0, 0]	11	[6, 1]	300	Enemy Action: Gains 1 stack of [Berserk]	<color=#FFFFFF><Executor></color> Action Starts	
+122010001	2	[0, 0, 0]	33	[0, 0, 1, 0, 0, 116, 0, 0, 0]	100	Enemy Action: Adds 1 Redundant 116 to the player's draw pile	<color=#FFFFFF><Pilgrim (Large)></color> Action Starts	
+122010002	2	[0, 0, 0]	2	[2]	101	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Pilgrim (Large)></color> Action Starts	
+122010003	2	[0, 0, 0]	2	[2]	102	Enemy Action: Deals 2 DMG to the commandant		
+122010004	2	[0, 0, 0]	2	[2]	103	Enemy Action: Deals 2 DMG to the commandant		
+123010001	2	[0, 0, 0]	2	[2]	200	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Pilgrim></color> Action Starts	
+123010002	2	[0, 0, 0]	2	[2]	201	Enemy Action: Deals 2 DMG to the commandant		
+123010003	2	[0, 0, 0]	2	[2]	202	Enemy Action: Deals 2 DMG to the commandant		
+123020001	2	[0, 0, 0]	33	[0, 0, 1, 0, 0, 116, 0, 0, 0]	200	Enemy Action: Adds 1 Redundant 116 to the player's draw pile	<color=#FFFFFF><Pilgrim></color> Action Starts	
+124010001	2	[0, 0, 0]	33	[0, 0, 1, 0, 0, 116, 0, 0, 0]	300	Enemy Action: Adds 1 Redundant 116 to the player's draw pile	<color=#FFFFFF><Pilgrim></color> Action Starts	
+124020001	2	[0, 0, 0]	2	[2]	300	Enemy Action: Deals 2 DMG to the commandant	<color=#FFFFFF><Pilgrim></color> Action Starts	
+124020002	2	[0, 0, 0]	2	[2]	301	Enemy Action: Deals 2 DMG to the commandant		
+124020003	2	[0, 0, 0]	2	[2]	302	Enemy Action: Deals 2 DMG to the commandant		
+125010001	2	[0, 0, 0]	43	[98, 2, 5]	100	Enemy Action: Summons 2 Terrapods	<color=#FFFFFF><Roseblade></color> Action Starts	
+125020001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Roseblade></color> Action Starts	
+125020002	2	[0, 0, 0]	2	[3]	101	Enemy Action: Deals 3 DMG to the commandant		
+125030001	2	[0, 0, 0]	11	[6, 1]	100	Enemy Action: Gains 1 stack of [Berserk]	<color=#FFFFFF><Roseblade></color> Action Starts	
+125030002	2	[0, 0, 0]	26	[20, 0]	101	Enemy Action: Gains 20 Armor		
+125040001	2	[0, 0, 0]	2	[3]	100	Enemy Action: Deals 3 DMG to the commandant	<color=#FFFFFF><Roseblade></color> Action Starts	
+125040002	2	[0, 0, 0]	2	[3]	101	Enemy Action: Deals 3 DMG to the commandant		
+125050001	2	[0, 0, 0]	11	[6, 1]	100	Enemy Action: Gains 1 stack of [Berserk]	<color=#FFFFFF><Roseblade></color> Action Starts	
+125050002	2	[0, 0, 0]	26	[20, 0]	101	Enemy Action: Gains 20 Armor		
+125060001	2	[0, 0, 0]	2	[18]	100	Enemy Action: Deals 18 DMG to the commandant	<color=#FFFFFF><Roseblade></color> Action Starts	
+125070001	2	[0, 0, 0]	11	[6, 1]	100	Enemy Action: Gains 1 stack of [Berserk]	<color=#FFFFFF><Roseblade></color> Action Starts	
+125070002	2	[0, 0, 0]	26	[20, 0]	101	Enemy Action: Gains 20 Armor		

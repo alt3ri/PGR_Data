@@ -1,0 +1,394 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory711.jpg'}
+2	2		401							{1: '1', 2: '396'}
+3	3		107			AniZhuanchangEnd			2000.0	"{1: 'Polard Agency', 2: ""Kurono's Secret Bunker Facility""}"
+4	4		108							{1: '1'}
+5	5		201							{1: '1', 2: '501079'}
+6	6		301			DialogEnable				"{1: '1', 2: 'Palangoski', 3: ""...After all this investigation, you still have no clue what Monzano's really up to?"", 4: '1'}"
+7	7		301							"{2: 'Palangoski', 3: ""Once we get to the review meeting, the old man won't cut you any slack. Anything else you want to bring up?"", 4: '1'}"
+8	8		401							{1: '2', 2: '4112'}
+9	9		301							"{3: ""She knits her brow, then tosses the Las Prados mission briefing aside once she's done reading.""}"
+10	10		203							{1: '1', 2: '0.25', 3: '-400'}
+11	11		201							{1: '2', 2: '500303', 4: '400'}
+12	12		301							"{1: '1', 2: 'Kurono Agent', 3: ""Although Godwin is now confined to the deeper sectors of Fort Winter, cutting off all external interference was precisely why he volunteered for this plan. Judging by the results, there's no setback to the project's progress."", 4: '2'}"
+13	13		301							"{2: 'Kurono Agent', 3: 'Regarding Las Prados: after Monzano helped clear out the ""base station"", their surveillance continues without a hitch.', 4: '2'}"
+14	14		301							"{2: 'Palangoski', 3: 'So, in short, your summary is ""everything\'s fine""? Are you filing a report, or spinning a story here? And where are the results I asked for?', 4: '1'}"
+15	15		301							{2: 'Palangoski', 3: 'That writer, Trout, pulled in the seed money for Project Winter. The moment Godwin got his hands on the funds, he dusted off our old blueprint and used it to create those wetware Constructs.', 4: '1'}
+16	16		301							"{2: 'Palangoski', 3: ""Kurono is more than happy to team up with anyone who shares the vision. But make no mistake—we won't stand for any mischief on our watch."", 4: '1'}"
+17	17		301							"{2: 'Palangoski', 3: ""The agency has long suspected that Monzano's funding from Kephart also originated from Trout, but he's already been imprisoned for allegedly inciting suicide. Background checks by other operation teams have confirmed Kurut's whereabouts."", 4: '1'}"
+18	18		301							"{2: 'Palangoski', 3: 'If that\'s the case, what exactly are Kephart and Monzano doing in Las Prados? We\'ve had an agent undercover with Monzano 24/7, yet your repeatedly delayed report only mentions ""surveillance proceeding smoothly""?', 4: '1'}"
+19	19		301							"{3: ""A lightless chamber stands silent, charged with the crackling force of a woman's rage.""}"
+20	20		301							"{2: 'Kurono Agent', 3: ""As per Mr. Kurono's own instructions, placing that girl undercover was meant to be a long game to catch bigger fish. Expecting immediate results isn't realistic."", 4: '2'}"
+21	21		301							{3: 'The nameless intelligence officer mechanically delivers this bold rebuttal with bureaucratic detachment.'}
+22	22		301							"{2: 'Palangoski', 3: ""What exactly are you trying to prove? You claim you follow the boss's orders—so why can't you figure out whether Kephart's turned traitor?"", 4: '1'}"
+23	23		301							"{2: 'Kurono Agent', 3: ""I apologize... We've thoroughly investigated his activity records, but there's nothing suspicious to be found."", 4: '2'}"
+24	24		202							{1: '1', 2: '2'}
+25	25		401							{1: '2', 2: '5149'}
+26	26		301				DialogDisable			{3: 'Palangoski skims through the briefing, then zeroes in on the final page.'}
+27	27		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 3: '0', 4: '1', 5: '0.8'}
+28	28		109							"{1: '1', 2: ""<color=#000000ff><size=45>12:04, 3/6 EST - 13:01, 3/8 EST\\nTravel via Transatlantic United Flight PA-908 to Fjord City's hydrogen car plant for the ribbon-cutting,\\n Stay at the local leisure hotel for at least 30 hours.\\nThen spend at least 30 hours at a local resort hotel.</size></color>"", 4: '300'}"
+29	29		301	1						"{3: ""12:04, 3/6 EST - 13:01, 3/8 EST Travel via Transatlantic United Flight PA-908 to Fjord City's hydrogen car plant for the ribbon-cutting. Stay at the local leisure hotel for at least 30 hours. Then spend at least 30 hours at a local resort hotel.""}"
+30	30		109							{1: '2', 2: '<color=#000000ff><size=45>22:31, 6/7 EST - 14:26, 7/1 EST\\nTravel via Transatlantic United Flight TA-3304 into the Kowloong United Commonwealth \\n for a holiday at the mountain resort.</size></color>', 4: '100'}
+31	31		301	1						{3: '22:31, 6/7 EST - 14:26, 7/1 EST Travel via Transatlantic United Flight TA-3304 into the Kowloong United Commonwealth for a holiday at the mountain resort.'}
+32	32		109							{1: '3', 2: '<color=#000000ff><size=45>10:00, 10/2 EST \\nThe target fails to appear for the scheduled session of the Business, Science, and Transportation Committee.\\nSurveillance confirms the individual remains in their private residence, \\n asleep until 16:00, and subsequently places a takeout order.\\nNo suspicious activity detected.</size></color>', 4: '-100'}
+33	33		301	1			AniZhuanchangBegin			{3: '10:00, 10/2 EST The target does not attend the scheduled session of the Commerce, Science, and Transportation Committee. Surveillance indicates they slept at their home until 4:00 PM, then ordered delivery. No suspicious activity observed.'}
+34	34		110							
+35	35		205							{1: '999'}
+36	36		502							{1: 'DialogEnable'}
+37	37		301			AniZhuanchangEnd				"{3: ""One entry after another in the travel logs sketches out Kephart's devil-may-care persona, and it also proves that any surveillance is a lost cause.""}"
+38	38		201							{1: '1', 2: '501079'}
+39	39		301							"{1: '1', 2: 'Palangoski', 3: ""Hmph. Whatever. As long as he manages to get re-elected in his district, Parliament can gain one more spineless lackey who'll vote exactly how Kurono wants."", 4: '1'}"
+40	40		301							"{2: 'Palangoski', 3: ""It's not necessarily a bad thing. Just keep him under daily watch—and make sure you slip past the World Government Security Intelligence Bureau's radar."", 4: '1'}"
+41	41		203							{1: '1', 2: '0.25', 3: '-400'}
+42	42		201							{1: '2', 2: '500303', 4: '400'}
+43	43		301							{1: '1', 2: 'Kurono Agent', 3: 'Understood. Also, Las Prados is in better shape than we anticipated.', 4: '2'}
+44	44		301							"{3: ""Seeing his superior's displeasure subside, he takes the opportunity to push his advantage.""}"
+45	45		301							{2: 'Kurono Agent', 3: 'Previously, we detected extensive construction work at the New Nelis Air Force Base near Las Prados, leading us to believe Monzano was collaborating with the Transatlantic military on a rearmament initiative.', 4: '2'}
+46	46		301							{2: 'Kurono Agent', 3: 'The mercenary forces proposal recently resurfaces as a major debate in the World Government Parliament, which drives our earlier assumptions.', 4: '2'}
+47	47		301							{2: 'Kurono Agent', 3: 'However, all current transport capacity reports and satellite reconnaissance confirm that any suspicious operations in the city and at the air base have effectively ended. Las Prados Spaceport has now returned to its standard civilian operations.', 4: '2'}
+48	48		301							"{2: 'Kurono Agent', 3: ""We've determined that Monzano doesn't pose a serious threat."", 4: '2'}"
+49	49		301							"{2: 'Palangoski', 3: ""...Alright, that's enough. I get the gist of it."", 4: '1'}"
+50	50		301							{3: 'The woman rubs her brow with her fingertips, weariness etched on her face.'}
+51	51		301							"{3: ""Then, as if noticing the agent's jittery nerves, she softens her voice and speaks calmly.""}"
+52	52		301							{2: 'Palangoski', 3: 'Where are you planning to watch the midnight ignition ceremony tonight?', 4: '1'}
+53	53		301							{2: 'Kurono Agent', 3: 'Huh? Oh, uh...', 4: '2'}
+54	54		301							"{2: 'Kurono Agent', 3: ""Tomorrow's the start of my vacation, so I'm heading home to watch a livestream with my family."", 4: '2'}"
+55	55		301							{3: 'When you do this kind of work, you get used to setting your humanity aside. So a conversation this personal really takes him by surprise.'}
+56	56		301							{2: 'Palangoski', 3: ' Sounds good. Take a shower, pop open a cold bear, and make sure you spend some quality time with your family.', 4: '1'}
+57	57		301							{2: 'Kurono Agent', 3: 'Got it. So, you...', 4: '2'}
+58	58		301							"{3: ""He cuts himself off just in time, suddenly aware he's in no position to make small talk.""}"
+59	59		401							{1: '2', 2: '4044'}
+60	60		203						250.0	{1: '2', 2: '0.25', 3: '400', 4: '25', 5: '-25'}
+61	61		301							{2: 'Kurono Agent', 3: 'Polard Agency—ever vigilant!', 4: '2'}
+62	62		203							{1: '2', 2: '0.25', 3: '400'}
+63	63		301							"{3: ""The agent snaps to attention with a brisk salute, reciting the organization's creed.""}"
+64	64		301							{2: 'Palangoski', 3: 'Dismissed.', 4: '1'}
+65	65		203							{1: '2', 2: '0.25', 3: '550'}
+66	66		202							{1: '2'}
+67	67		401							{1: '2', 2: '743'}
+68	68		203							{1: '1', 2: '0.25'}
+69	69		301							{3: 'After the subordinate departs, the interrogation room and prison revert to their usual state—so silent and dark that it feels even more oppressive than a tomb.'}
+70	70		301							{3: 'Time and again, the metal walls become coated in vomit and human blood, only to be blasted clean with high-pressure hoses—erasing every trace of sin.'}
+71	71		301							{3: 'But this breakneck surge of progress never pauses for the silent tragedies lurking in the shadows of our civilization.'}
+72	72		301				AniZhuanchangBegin			{2: 'Palangoski', 3: 'The Golden Age, huh...', 4: '1'}
+73	73		306							{1: '1'}
+74	74		202							{1: '1', 6: '1'}
+75	75		502						400.0	{1: 'DialogDisable'}
+76	76		504							{1: '0.9'}
+77	77		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1107.jpg'}
+78	78		502							{1: 'RImgBg1BlowUp'}
+79	79		301			DialogEnable	DialogDisable			{3: 'Her mind pierces the thick layers of reinforced plating overhead—hundreds of meters deep—then drifts over the sprawling red-rock peaks capped with snow;'}
+80	80		505							{1: 'RImgBg1BlowUp'}
+81	81		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+82	82		401							{1: '2', 2: '4385'}
+83	83		504							{1: '0.9'}
+84	84		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory581.jpg'}
+85	85		307							{1: 'It soars beyond the ten-thousand-kilometer orbital threshold, drawn toward the massive vessel newly stationed at the orbital port after its transfer from the moon.', 6: '1'}
+86	86		301							{3: 'It soars beyond the ten-thousand-kilometer orbital threshold, drawn toward the massive vessel newly stationed at the orbital port after its transfer from the moon.'}
+87	87		307							{2: '1'}
+88	88		104				AniZhuanchangBegin			{1: '0|0|-50', 2: '1'}
+89	89		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+90	90		101			AniZhuanchangEnd			300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1118.jpg'}
+91	91		307							"{1: ""After tonight, Eden II becomes the bearer of all humanity's hopes, forging a path into uncharted territory."", 6: '1'}"
+92	92		301							"{3: ""After tonight, Eden II becomes the bearer of all humanity's hopes, forging a path into uncharted territory.""}"
+93	93		307							{2: '1'}
+94	94		104				AniZhuanchangBegin			{1: '0|0|-50', 2: '1'}
+95	95		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+96	96		101			AniZhuanchangEnd			300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1143.jpg'}
+97	97		307							{1: 'It embarks on a bold new beginning, leaving behind every conflict that has held humanity back until now.', 6: '1'}
+98	98		301							{3: 'It embarks on a bold new beginning, leaving behind every conflict that has held humanity back until now.'}
+99	99		307							{2: '1'}
+100	100		104				AniZhuanchangBegin			{1: '0|0|-50', 2: '1'}
+101	101		401							{1: '2', 2: '4386'}
+102	102		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+103	103		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+104	104		504							{1: '0'}
+105	105		306							
+106	106		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory711.jpg'}
+107	107		201							{1: '1', 2: '501079'}
+108	108		301			DialogEnable				{1: '1', 2: 'Palangoski', 3: 'But it has nothing to do with us, does it?', 4: '1'}
+109	109		301							{3: 'She scoffs at herself, and yet even in solitude, her expression stays as cold as stone.'}
+110	110		401							{1: '2', 2: '5288'}
+111	111		301							{3: 'In the dark, she pulls out a metal flask and downs the final, fiery drop.'}
+112	112		203							{1: '1', 2: '0.25', 4: '25', 5: '-50'}
+113	113		401							{1: '2', 2: '2825'}
+114	114		301				AniZhuanchangBegin			"{2: 'Palangoski', 3: ""Here's to the old world."", 4: '1'}"
+115	115		202							{1: '1', 6: '1'}
+116	116		401							{1: '1', 2: '36'}
+117	117		502						400.0	{1: 'DialogDisable'}
+118	118		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory765.jpg'}
+119	119		401							{1: '2', 2: '2866'}
+120	120		107			AniZhuanchangEnd			2000.0	{1: 'Las Prados Spaceport', 2: 'The Day of the Zero-point Reactor One Activation Ceremony'}
+121	121		108							{1: '1'}
+122	122		401							{1: '1', 2: '371'}
+123	123		301			DialogEnable				{3: 'Guided by the control tower, the last heavy military aerospace transport of the day touches down firmly on the runway.'}
+124	124		301							{3: 'A dark-skinned woman stands atop the watchtower, surveying the cargo loaders as they haul supplies from the colossal hull—charred to a deep brown by the intense heat of low orbit.'}
+125	125		201							{1: '2', 2: '500565'}
+126	126		301							"{1: '1', 2: 'Ground Crew', 3: ""We've got the anti-radiation coating and the synthetic paint for marking the ship's name. This shipment wraps up the project's last batch of construction materials."", 4: '2'}"
+127	127		301							{3: 'The ground crew cross-references the datapad checklist, offering a concise logistics update.'}
+128	128		203							{1: '2', 2: '0.25', 3: '400'}
+129	129		201							{1: '1', 2: '501123', 4: '-400'}
+130	130		301							{1: '1', 2: 'Madam Monzano', 3: 'Very well. Go assist with the materials transfer.', 4: '1'}
+131	131		301							"{2: 'Madam Monzano', 3: 'Let\'s finish work early today. I know everyone wants to witness the ""historic ceremony"".', 4: '1'}"
+132	132		301							{3: 'She calmly gazes beyond the runway toward the vast sea of sand, where twilight bathes the wasteland surrounding the city in magnificent golden hues.'}
+133	133		301							{2: 'Ground Crew', 3: 'If the launch goes smoothly, I suppose Project Eden will be a complete success.', 4: '2'}
+134	134		301							{2: 'Ground Crew', 3: 'So... are we really going to set sail again?', 4: '2'}
+135	135		301							{3: 'For those participating in the project, the details of Project Bokonon have been an open secret for quite some time.'}
+136	136		204							{1: '1', 2: '2'}
+137	137		301							"{2: 'Madam Monzano', 3: ""Certainly. On the appointed day, there'll be a spot reserved for you on the ship."", 4: '1'}"
+138	138		301							{2: 'Madam Monzano', 3: 'You, the engineers, the citizens—every single guest in this city—none of you will be left behind.', 4: '1'}
+139	139		202							{1: '1', 2: '2'}
+140	140		502							{1: 'RImgBg1BlowUp'}
+141	141		301							{3: 'The sun is on the verge of dipping behind the distant mountains when Monzano voices her unshakable vow.'}
+142	142		505							{1: 'RImgBg1BlowUp'}
+143	143		301							"{3: ""Like Noah who witnessed the Apocalypse in his dreams, she now seems possessed by a prophet's vision. She cannot betray any hesitation.""}"
+144	144		201							{1: '2', 2: '500565'}
+145	145		301							"{1: '1', 2: 'Ground Crew', 3: ""...You should get some rest soon too, ma'am."", 4: '2'}"
+146	146		203							{1: '2', 2: '0.25', 3: '400'}
+147	147		202							{1: '2'}
+148	148		401							{1: '2', 2: '4534'}
+149	149		301							{3: 'He gives the lady at the edge of the observation deck a complicated look, then turns and walks toward the elevator entrance.'}
+150	150		201							{1: '1', 2: '501123', 3: '2'}
+151	151		301							{1: '1', 2: 'Madam Monzano', 3: 'How could I possibly rest? The guests at the casino are still waiting for me.', 4: '1'}
+152	152		202							{1: '1'}
+153	153		306							{1: '1'}
+154	154		301							{3: 'In the last traces of twilight, the lady murmurs to herself.'}
+155	155		301				AniZhuanchangBegin			"{3: ""No matter how much she despises these do-nothing elites who occupy positions they don't deserve, securing their loyalty is a necessary step in laying the foundation for the new world.""}"
+156	156		306							
+157	157		401							{1: '1', 2: '36'}
+158	158		502						400.0	{1: 'DialogDisable'}
+159	159		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1172.jpg'}
+160	160		107			AniZhuanchangEnd			2000.0	{1: 'Lucky 38 Casino Hall'}
+161	161		108							{1: '1'}
+162	162		401							{1: '1', 2: '354'}
+163	163		401							{1: '2', 2: '4085'}
+164	164		301			DialogEnable				{3: 'The hall bustles with excited chatter, and the clinking of glasses amid soft music and dancing lends the perfect dash of delight to this grand affair.'}
+165	165		301							"{3: ""On a towering display, the live feed from Zero-point Reactor One seizes everyone's attention right now.""}"
+166	166		402							{1: '4085'}
+167	167		401							{1: '2', 2: '2581'}
+168	168		301							{3: 'As soon as Manzano walks in, the crowd bursts into cheers.'}
+169	169		201							{1: '1', 2: '501149'}
+170	170		301							"{1: '1', 2: 'Councilor Thurmond', 3: ""I'd like to propose a toast... to Madam Adriana Monzano, the illustrious tycoon of Las Prados and a brilliant scientific mind!"", 4: '1'}"
+171	171		301							{3: 'An influential figure from the World Government Parliament strides forward, brimming with arrogance, and launches a new proposal—making their authority unmistakably clear.'}
+172	172		202							{1: '1', 6: '1'}
+173	173		201							{1: '1', 2: '500863', 4: '-600'}
+174	174		201							{1: '2', 2: '500340', 4: '0'}
+175	175		201							{1: '3', 2: '501149', 4: '600'}
+176	176		301							{1: '1', 2: 'Everyone', 3: 'Cheers! Cheers!', 4: '1', 5: '2', 6: '3'}
+177	177		401							{1: '2', 2: '5328'}
+178	178		301							"{3: ""The chaotic clinking of countless glass vessels, accompanied by cheers, reaches Monzano's ears.""}"
+179	179		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+180	180		401							{1: '2', 2: '4044'}
+181	181		203							{1: '1', 2: '0.25', 3: '-600', 4: '-25', 5: '-50'}
+182	182		203							{1: '2', 2: '0.25', 3: '0', 4: '-25', 5: '-50'}
+183	183		203							{1: '3', 2: '0.25', 3: '600', 4: '-25', 5: '-50'}
+184	184		301							{2: 'Everyone', 3: 'Madam Monzano! Madam Monzano! Madam Monzano!', 4: '1', 5: '2', 6: '3'}
+185	185		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+186	186		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+187	187		201							{1: '1', 2: '501123'}
+188	188		301							{1: '1', 2: 'Madam Monzano', 3: 'Now, now, the true stars of Las Prados have always been you, our guests from all corners of the world.', 4: '1'}
+189	189		301							"{3: ""Empty platitudes are what she's best at.""}"
+190	190		204							{1: '1', 2: '2'}
+191	191		301							{2: 'Madam Monzano', 3: 'Enjoy your night, my dear guests.', 4: '1'}
+192	192		202							{1: '1'}
+193	193		401							{1: '2', 2: '5281'}
+194	194		301							{3: 'The hostess raises her hand, signaling for everyone to set down their glasses.'}
+195	195		301							{3: 'Soon, she disappears into the depths of the crowd.'}
+196	196		301							{3: 'Only the guests who happen to brush shoulders with her pause to offer eager greetings. The majority simply keep drowning themselves in liquor and small talk, letting the buzz dull their nerves as they wait for the final countdown to ignite.'}
+197	197		301							{3: 'Of course, Monzano senses those genuine, deeply felt emotions as well.'}
+198	198		201							{1: '1', 2: '501024', 4: '-400'}
+199	199		201							{1: '2', 2: '500138', 4: '400'}
+200	200		301							"{1: '1', 2: 'Spectator A', 3: ""...Interstellar immigrants? Please. They're just the same bottom-feeders who once trundled their wagons out West, begging for crumbs."", 4: '1'}"
+201	201		301							"{2: 'Spectator B', 3: 'Right? Throw around talk of ""new frontiers"", and that\'s all it takes to trick those so-called scientific elites. Who knows how many years they\'ll drift before they finally reach that godforsaken place?', 4: '2'}"
+202	202		301							{2: 'Spectator A', 3: 'What nonsense. I mean, does a place like that even have birds?', 4: '1'}
+203	203		301							"{2: 'Spectator B', 3: ""Then again... who knows if they'll even make it out of this alive?"", 4: '2'}"
+204	204		301							{3: 'The two share a playful tease and then break into laughter at the exact same moment.'}
+205	205		301							"{2: 'Spectator A', 3: ""Keep 'em coming!"", 4: '1'}"
+206	206		301							{2: 'Spectator B', 3: 'Cheers!', 4: '2'}
+207	207		502							{1: 'DialogDisable'}
+208	208		401							{1: '2', 2: '5328'}
+209	209		203							{1: '1', 2: '0.25', 3: '-150'}
+210	210		203						250.0	{1: '2', 2: '0.25', 3: '150'}
+211	211		203							{1: '1', 2: '0.25', 3: '-400'}
+212	212		203				AniZhuanchangBegin			{1: '2', 2: '0.25', 3: '400'}
+213	213		202							{1: '1', 2: '2', 6: '1'}
+214	214		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1172.jpg'}
+215	215		304			AniZhuanchangEnd				{1: 'Cheers.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1172.jpg', 6: '1'}
+216	216		304							{1: 'To Earth and its dwindling resources.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1172.jpg', 6: '1'}
+217	217		304							{1: 'To champagne that flows endlessly like a sweet spring.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1172.jpg', 6: '1'}
+218	218		304							{1: 'To our unshakeable seats in parliament.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1172.jpg', 6: '1'}
+219	219		304							{1: 'To every fool willing to abandon their comfortable lives for a colonial ship.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1172.jpg', 6: '1'}
+220	220		304							{1: 'To humanity free from suffering.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1172.jpg', 6: '1', 9: '1'}
+221	221		306							{1: '1'}
+222	222		109							{1: '1', 2: '<size=60>To the Golden Age.</size>'}
+223	223		301							{3: 'To the Golden Age.'}
+224	224		306							
+225	225		110							
+226	226		301			DialogEnable				{3: 'Madam Monzano offers a faint smile.'}
+227	227		301							"{3: ""It's alright. The ships prepared for you... will ultimately sail toward another bottomless sea.""}"
+228	228		401							{1: '2', 2: '804'}
+229	229		301							{3: 'With that thought, she steps into the elevator at the far edge of the hall.'}
+230	230		401							{1: '1', 2: '36'}
+231	231		502						400.0	{1: 'DialogDisable'}
+232	232		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory896.jpg'}
+233	233		107			AniZhuanchangEnd			2000.0	{1: 'Mansion Living Room', 2: 'Meanwhile'}
+234	234		108							{1: '1'}
+235	235		401							{1: '1', 2: '224'}
+236	236		401						400.0	{1: '2', 2: '2626'}
+237	237		401							{1: '2', 2: '743'}
+238	238		201							{1: '2', 2: '501122'}
+239	239		301			DialogEnable				"{1: '1', 2: 'Discord', 3: ""...My mission remains to investigate Madam Monzano's project in Las Prados and report to Kurono in real time."", 4: '2'}"
+240	240		301							{3: 'Her mechanical voice remains unchanged, but she finally divulges more information.'}
+241	241		203							{1: '2', 2: '0.25', 3: '400'}
+242	242		201							{1: '1', 2: '501130', 4: '-400'}
+243	243		301							"{1: '1', 2: 'Lilith', 3: ""My aunt clearly expects great things from you—she wouldn't go to such lengths otherwise."", 4: '1'}"
+244	244		301							{3: 'Her eyes linger on the mechanical prosthetic of the person standing before her.'}
+245	245		301							"{2: 'Discord', 3: ""Monzano's asking me to go back to Kurono... and act as her undercover contact."", 4: '2'}"
+246	246		301							{2: 'Discord', 3: 'She also says that those who work for her must possess combat abilities that match the intensity of their mission.', 4: '2'}
+247	247		204							{1: '1', 2: '4'}
+248	248		301							{2: 'Lilith', 3: 'What about this outfit? Did you choose it yourself?', 4: '1'}
+249	249		301							{2: 'Discord', 3: 'This is my way of constantly reminding myself of who I am.', 4: '2'}
+250	250		204							{1: '1'}
+251	251		301							"{2: 'Lilith', 3: ""Doesn't it hurt? You do whatever she tells you to, just to earn her trust."", 4: '1'}"
+252	252		301							"{2: 'Discord', 3: ""She made Eleanor undergo cybernetic surgery too, didn't she?"", 4: '2'}"
+253	253		301							{2: 'Discord', 3: 'At least... I can become stronger too.', 4: '2'}
+254	254		301							{3: 'Even her facial muscles, long since adapted to permanent stillness, cannot hide the sincerity in her words.'}
+255	255		301							"{2: 'Lilith', 3: ""So you understand that aunt always says one thing but does another. She supposedly severed ties with Kurono over their human experiments, yet when it gives her an advantage, she'll still use the very technologies she publicly condemns..."", 4: '1'}"
+256	256		301							"{2: 'Discord', 3: ""The pain of these surgeries is nothing compared to the fate we would have otherwise faced, isn't it?"", 4: '2'}"
+257	257		301							{3: 'She reveals a scar that had long since healed.'}
+258	258		204							{1: '1', 2: '9'}
+259	259		301							"{2: 'Lilith', 3: ""...Hah, so what? No matter the outcome, we've walked completely different paths."", 4: '1'}"
+260	260		204							{1: '1', 2: '2'}
+261	261		301							{2: 'Lilith', 3: 'Those twisted freaks at the Polard Agency mold you into an emotionless hound, while I... am locked away in this gilded prison, left to decay.', 4: '1'}
+262	262		301							"{3: ""Like a viper flicking its tongue, Lilith lowers her gaze, as though she's admiring her impeccably manicured nails.""}"
+263	263		204							{1: '1', 2: '4'}
+264	264		301							"{2: 'Lilith', 3: ""You always say this life is ideal. But is it really? When everything gleams with gold, it's easy to lose sight of what's real..."", 4: '1'}"
+265	265		301							{2: 'Lilith', 3: 'Only those few precious cubic centimeters in our skull remain free from gold, a private space that has always been ours.', 4: '1'}
+266	266		204							{1: '1', 2: '5'}
+267	267		301							"{2: 'Lilith', 3: ""In the end, you turned into nothing more than a lapdog at your aunt's beck and call."", 4: '1'}"
+268	268		301							{3: 'She anchors her carefully crafted emotions in a mournful conclusion.'}
+269	269		301							"{2: 'Discord', 3: ""...I'm sorry, Eleanor."", 4: '2'}"
+270	270		301							"{2: 'Discord', 3: ""So, what I'm trying to say is..."", 4: '2'}"
+271	271		301							"{2: 'Discord', 3: ""We can still walk together. It's not too late."", 4: '2'}"
+272	272		204							{1: '1', 2: '4'}
+273	273		301							"{3: ""The redness in Lilith's eyes gradually fades as she casts a curious glance.""}"
+274	274		301							{2: 'Lilith', 3: 'Go where? You think you understand me again?', 4: '1'}
+275	275		301							{2: 'Lilith', 3: 'My aunt is tyrannical every day, so I should abandon my playground?', 4: '1'}
+276	276		301							"{2: 'Discord', 3: ""...After submitting my investigation report, I'll be deployed to Eden II as part of Kurono's intelligence advance team."", 4: '2'}"
+277	277		301							"{3: ""After a moment's hesitation, she reveals a shocking truth.""}"
+278	278		301							"{3: ""The ship's name is mentioned every minute in every corner of Earth, yet few can describe such supreme honor with such calmness—becoming a passenger on humanity's first interstellar colony ship.""}"
+279	279		301							{2: 'Discord', 3: 'Eleanor... come with me. You have no true loyalty to Monzano, nor do you need to serve Kurono. Just pose as a defector, and I can secure you a ticket on the ship.', 4: '2'}
+280	280		301							{3: 'Even while describing this near-insane plan, the maid maintains a voice without a trace of emotional fluctuation.'}
+281	281		301							{3: 'Yet Lilith understood the plea hidden within those words.'}
+282	282		301							"{2: 'Discord', 3: ""Plastic restraints, experiments without anesthesia, killing people they've only known for five minutes in the quickest, most brutal ways..."", 4: '2'}"
+283	283		301							{2: 'Discord', 3: 'None of these things will happen on the ship.', 4: '2'}
+284	284		301							"{2: 'Lilith', 3: ""Kurono's true nature won't change just because they've relocated. You're being naive."", 4: '1'}"
+285	285		301							{2: 'Discord', 3: 'Of course I understand that.', 4: '2'}
+286	286		301							{3: 'She raises her voice.'}
+287	287		301							{2: 'Discord', 3: 'But there, we can start a new life.', 4: '2'}
+288	288		301							{2: 'Discord', 3: '...And we can see new stars. The stars we can never see from the ground.', 4: '2'}
+289	289		301							"{2: 'Discord', 3: ""If you're willing, Eleanor, perhaps you could even teach me how to read and write."", 4: '2'}"
+290	290		301							{2: 'Discord', 3: 'We could leave all those memories behind on this planet, never looking back.', 4: '2'}
+291	291		301							"{2: 'Discord', 3: ""Rosewater... I don't even care who killed him anymore. Let the past truly remain in the past."", 4: '2'}"
+292	292		301							{3: 'That final, unexpected confession confirms to Lilith the determination of the woman standing before her.'}
+293	293		301							{3: 'How wretched—like a stray soaked to the bone in a raging storm, with nowhere at all to hide.'}
+294	294		204							{1: '1', 2: '8'}
+295	295		301							"{2: 'Lilith', 3: ""...I'll consider it."", 4: '1'}"
+296	296		202							{1: '1', 2: '2'}
+297	297		401							{1: '2', 2: '9335028'}
+298	298		301							{3: 'In that fleeting moment, she really does falter—casting aside any need for control, simply walking away.'}
+299	299		401							{1: '2', 2: '4381'}
+300	300		301							{3: 'The clock strikes twenty, and the sound of fireworks from the central district echoes through the window.'}
+301	301		402							{1: '9335028'}
+302	302		201							{1: '1', 2: '501130'}
+303	303		301							{1: '1', 2: 'Lilith', 3: 'Ah... the ceremony is about to begin.', 4: '1'}
+304	304		203							{1: '1', 2: '0.25', 3: '-400'}
+305	305		201							{1: '2', 2: '501122', 4: '400'}
+306	306		301							{1: '1', 2: 'Discord', 3: 'Wanna watch the stream?', 4: '2'}
+307	307		301							{2: 'Lilith', 3: 'Only if the ignition succeeds will those things you promised... even have a chance of coming true.', 4: '1'}
+308	308		301							"{3: ""Discord offers a slight smile—she can't even recall the last time she's worn an expression like this.""}"
+309	309		301							"{2: 'Discord', 3: ""All right, I'll go get some snacks."", 4: '2'}"
+310	310		202							{1: '1', 2: '2'}
+311	311		401						400.0	{1: '2', 2: '1513'}
+312	312		401							{1: '2', 2: '4884'}
+313	313		301							{3: 'Meanwhile, Lilith taps the control to bring up the holographic display.'}
+314	314		509							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 2: '1'}
+315	315		201							{1: '18', 2: '500863'}
+316	316		301							"{1: '1', 2: 'NEWS BROADCAST', 3: ""...What a marvelous day—and the moment we embark on our journey! ...This stands as humanity's greatest milestone so far, heralding the dawn of a new era."", 4: '18'}"
+317	317		301							"{2: 'NEWS BROADCAST', 3: ""Even if we don't officially change our calendar, future historians will do it for us. This moment marks humanity's transformation—our farewell to adolescence, our coming-of-age ceremony, the sign that we've cast off childish ways and stepped into maturity."", 4: '18'}"
+318	318		301							"{2: 'NEWS BROADCAST', 3: ""Right now, people all across the globe are crowding around their screens, holograms, or public boards, eagerly awaiting this monumental ceremony—an event on par with Gestalt's very first launch."", 4: '18'}"
+319	319		301							"{2: 'NEWS BROADCAST', 3: ""In half an hour, the Zero-point Reactor One behind me is set for its first ignition test. Should the results meet expectations, Eden II will be on track to install its Zero-point Engine by year's end."", 4: '18'}"
+320	320		301							"{2: 'NEWS BROADCAST', 3: ""At the appointed hour, this crowning achievement of the Golden Age will embark on its journey toward humanity's new frontier..."", 4: '18'}"
+321	321		202							{1: '18'}
+322	322		402							{1: '4381'}
+323	323		301				AniZhuanchangBegin			{3: 'Lilith lowers her voice, letting her once excited tone become a gentle accompaniment to the exploding fireworks outside.'}
+324	324		510							{1: '1'}
+325	325		502						400.0	{1: 'DialogDisable'}
+326	326		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+327	327		109			AniZhuanchangEnd				{1: '1', 2: '<size=60>Humanity, rivaling Gods.</size>', 6: '1', 7: '6', 8: '1'}
+328	328		301							{3: 'Humanity, rivaling Gods.'}
+329	329		109							{1: '1', 2: '<size=60>What an earth-shattering idea.\\nFrom now on, there is no suffering—only conquest.</size>', 6: '1', 7: '6', 8: '1'}
+330	330		301							{3: 'What an earth-shattering idea. From now on, there is no suffering—only conquest.'}
+331	331		109							{1: '1', 2: '<size=60>Conquer the stars, conquer the cosmos, conquer every last inch of the void.</size>', 6: '1', 7: '6', 8: '1'}
+332	332		301				AniZhuanchangBegin			{3: 'Conquer the stars, conquer the cosmos, conquer every last inch of the void.'}
+333	333		110							
+334	334		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory896.jpg'}
+335	335		201							{1: '2', 2: '501122'}
+336	336		301			DialogEnable				"{1: '1', 2: 'Discord', 3: ""I'm sorry, we're out of desserts. I quickly made some toasted marshmallow cookies instead. I hope you don't mind, Eleanor."", 4: '2'}"
+337	337		202							{1: '2'}
+338	338		401							{1: '2', 2: '5281'}
+339	339		301							{3: 'The maid returns to the living room carrying a plate of steaming cookies.'}
+340	340		301							{3: 'Lilith stares intently at the holographic screen.'}
+341	341		301							{3: 'Humanity has overcome so many seemingly insurmountable trials. Confidence and pride are both our reward and our curse.'}
+342	342		301							"{3: ""And she doesn't believe in such a thing as smooth sailing good fortune in this world.""}"
+343	343		509							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 2: '1'}
+344	344		201							{1: '18', 2: '500863'}
+345	345		301							{1: '1', 2: 'NEWS BROADCAST', 3: '10 seconds until ignition of Zero-point Reactor One.', 4: '18'}
+346	346		202							{1: '18', 6: '1'}
+347	347		201							{1: '2', 2: '501122', 4: '600'}
+348	348		301							{1: '1', 2: 'Discord', 3: 'Would you like to try one, Eleanor?', 4: '2'}
+349	349		301							"{3: ""Lilith doesn't respond.""}"
+350	350		201							{1: '18', 2: '500863'}
+351	351		301							{1: '1', 2: 'NEWS BROADCAST', 3: '5 seconds until ignition of Zero-point Reactor One.', 4: '18'}
+352	352		301							{2: 'Discord', 3: 'Eleanor?', 4: '2'}
+353	353		202							{1: '2', 2: '18'}
+354	354		301							"{3: ""Lilith doesn't respond.""}"
+355	355		301							"{3: ""Discord interprets her focus as reverence, no longer disrupting the girl's spiritual pilgrimage. She quietly brings a cookie to her own lips instead.""}"
+356	356		301							{3: 'The caramelized sweetness of melting marshmallow mingles with the crunch of whole wheat cookies as her teeth break through the surface.'}
+357	357		201							{1: '2', 2: '501122', 4: '600'}
+358	358		301							{1: '1', 2: 'Discord', 3: '...So sweet.', 4: '2'}
+359	359		202							{1: '2', 6: '1'}
+360	360		201							{1: '18', 2: '500863'}
+361	361		301							{1: '1', 2: 'NEWS BROADCAST', 3: 'Zero-point Reactor One Ignited', 4: '18'}
+362	362		301							{2: 'NEWS BROADCAST', 3: '<color=#ff4e4eff><size=60>Zero-point Reactor One Ignited</size></color>', 4: '18'}
+363	363		202							{1: '18', 6: '1'}
+364	364		502							{1: 'DialogDisable'}
+365	365		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '3'}
+366	366		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+367	367		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+368	368		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+369	369		109							{1: '1', 2: '<color=#ff4e4eff><size=60>Zero-point Reactor One Ignited</size></color>', 6: '1', 7: '6', 8: '1'}
+370	370		301				AniZhuanchangBegin			{3: 'Zero-point Reactor One Ignited'}
+371	371		110							
+372	372		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory896.jpg'}
+373	373		501			AniZhuanchangEnd				{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+374	374		401							{1: '1', 2: '5026'}
+375	375		401							{1: '2', 2: '4923'}
+376	376		301			DialogEnable				"{3: ""The broadcaster's face warps into an unsettling shape, distorted by the hologram's contour lines. Garbled voices and mechanical static fill the living room.""}"
+377	377		510							{1: '1'}
+378	378		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+379	379		401							{1: '2', 2: '4634'}
+380	380		301							{3: 'And then everything stops.'}
+381	381		301							{3: 'The blue glow of the holographic screen vanishes in an instant.'}
+382	382		301							{3: 'Outside the window, the celebratory music cuts off completely.'}
+383	383		301							{3: 'In the living room, only the moonlight—fluid as water—remains, drowning the earlier warmth in a suffocating hush.'}
+384	384		201							{1: '2', 2: '501122'}
+385	385		301							{1: '1', 2: 'Discord', 3: '...?!', 4: '2'}
+386	386		301							{2: 'Discord', 3: 'Have we lost the signal?', 4: '2'}
+387	387		202							{1: '2', 6: '1'}
+388	388		301							{1: '1', 2: 'Lilith', 3: '<size=60>Ha-ha</size>, <size=60>Hahaha</size>, <size=60>HAHAHAHAHAHAHAHA—</size>', 4: '1'}
+389	389		202							{1: '1'}
+390	390		306							{1: '1'}
+391	391		301							{3: 'This is the ultimate release, reserved for those once fated to pay the price of progress.'}
+392	392		301							{3: 'The girl tilts her head back and unleashes a chilling, feral laugh that leaves Discord deeply unsettled.'}
+393	393		301		1		AniZhuanchangBegin			{3: 'The crazed laughter drags out so long that it disturbs the still moonlight.'}

@@ -1,0 +1,442 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory740.jpg'}
+2	2		401							{1: '1', 2: '55'}
+3	3		301			DialogEnable				{3: 'Following behind Cradle, the group ventures into the deepest part of the Hetero Zone.'}
+4	4		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory739.jpg', 3: '0', 4: '1', 5: '1.5'}
+5	5		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory739.jpg'}
+6	6		205							{1: '999'}
+7	7		201							{1: '1', 2: '500540', 7: '1'}
+8	8		203							{1: '1', 2: '0.25', 4: '-50'}
+9	9		301							{1: '1', 3: 'Everyone stands by the crimson pool, watching as she submerges her hands into the Red Tide.'}
+10	10		301							"{2: 'Cradle', 3: 'Go ahead. I\'ve shaped the Red Tide here into an ""ordered"" pattern. Just find the right interface, and it should ease the burden on you.', 4: '1'}"
+11	11		202							{1: '1'}
+12	12		201							{1: '1', 2: '500739'}
+13	13		301							"{1: '1', 2: 'Lamia', 3: ""Shouldn't we turn the Red Tide into something we can hold first?"", 4: '1'}"
+14	14		202							{1: '1'}
+15	15		201							{1: '1', 2: '500540'}
+16	16		301							"{1: '1', 2: 'Cradle', 3: 'No need. This is similar to the ""Giant Whale"" from your memories—we just need to enter it.', 4: '1'}"
+17	17		204							{1: '2'}
+18	18		301							{2: 'Cradle', 3: 'Or, if you can find a consciousness capable of containing this, I could try to replicate the same thing here.', 4: '1'}
+19	19		204							{1: '1'}
+20	20		301							{3: 'The girl cast a meaningful glance at you behind her with her mesmerizing eyes.'}
+21	21		302							{2: '...', 3: '22'}
+22	22		301							"{2: 'Cradle', 3: ""But I've heard... when humans die directly in the Red Tide, their consciousnesses rarely stay intact. Converting to M.I.N.D.s would be safer."", 4: '1'}"
+23	23		202							{1: '1'}
+24	24		201							{1: '1', 2: '500238'}
+25	25		301							"{1: '1', 2: 'Luna', 3: ""There's no need."", 4: '1'}"
+26	26		301							{2: 'Luna', 3: 'Establish a Deep M.I.N.D. connection with me.', 4: '1'}
+27	27		302							"{2: ""We only need to stabilize your M.I.N.D. A Deep M.I.N.D. connection isn't necessary."", 3: '28', 4: 'You have something else in mind?', 5: '28'}"
+28	28		301				DialogDisable			"{2: 'Luna', 3: ""This is a rare opportunity. Don't you want to see everything that I can see? Even if it's dangerous."", 4: '1'}"
+29	29		302							{2: '...', 3: '30'}
+30	30		302							{2: 'Alright.', 3: '31'}
+31	31		202							{1: '1'}
+32	32		201							{1: '1', 2: '1031001'}
+33	33		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Commandant, but...!', 4: '1'}
+34	34		302							"{2: ""Don't worry, I made some preparations before coming here."", 3: '35', 4: ""(Gently pat Liv's shoulder to reassure her)"", 5: '35'}"
+35	35		301				DialogDisable			"{3: ""Liv looks like she's about to say something, but her eyes shift between the surrounding Ascendants and the Inver-Hetero Tower, now shrouded in purple mist. In the end, she quietly steps back to your side, concern written all over her face.""}"
+36	36		202							{1: '1'}
+37	37		302							{2: 'However, establishing a Deep M.I.N.D. connection with an Ascendant here would leave me immobilized as well.', 3: '38'}
+38	38		302							"{2: ""I still can't be certain what will happen to you after you enter the Red Tide."", 3: '39'}"
+39	39		201							{1: '1', 2: '500238'}
+40	40		301			DialogEnable				"{1: '1', 2: 'Luna', 3: ""If you're worried about traps hidden in the Red Tide to deal with the Grey Ravens..."", 4: '1'}"
+41	41		301							{3: 'She steals a glance at Cradle from the corner of her eye.'}
+42	42		301							{2: 'Luna', 3: 'Wait until everything is confirmed before initiating the Deep M.I.N.D. connection with me. This was meant to benefit you... For now, just focus on getting ready.', 4: '1'}
+43	43		302							"{2: ""Let's get started, Luna."", 3: '44'}"
+44	44		203							{1: '1', 2: '0.25', 4: '-20', 5: '-80'}
+45	45		301							{3: 'In silence, she steps forward and places her hand in your palm.'}
+46	46		401							{1: '2', 2: '4420'}
+47	47		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab', 2: '3'}
+48	48		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie2New.prefab', 2: '3'}
+49	49		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie3New.prefab', 2: '3'}
+50	50		501						1500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie4New.prefab', 2: '3'}
+51	51		202				AniZhuanchangBegin			{1: '1', 6: '1'}
+52	52		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab'}
+53	53		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie2New.prefab'}
+54	54		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie3New.prefab'}
+55	55		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie4New.prefab'}
+56	56		301			AniZhuanchangEnd				{3: 'All preparations are complete.'}
+57	57		306							{1: '1'}
+58	58		502							{1: 'RImgBg1BlowUp'}
+59	59		401							{1: '2', 2: '4476'}
+60	60		301							{3: 'Ignoring the various gazes and veiled emotions around her, the girl steps into the thick, freezing Red Tide.'}
+61	61		301							{3: 'The stench of decay assaults her olfactory sensors as dissolved corpses tug at her long hair, surrounding her pristine white frame.'}
+62	62		301							{3: 'With her levitation module disabled, her body can barely move through this swamp of death. Yet despite her labored steps, Luna forces herself to stay upright, moving away from the shore one painful step at a time.'}
+63	63		401							{1: '2', 2: '4411'}
+64	64		301				AniZhuanchangBegin			{3: 'Then, watched by countless spectral shadows of the dead, Luna vanishes entirely into the crimson hell.'}
+65	65		505							{1: 'RImgBg1BlowUp'}
+66	66		306							
+67	67		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory704.jpg'}
+68	68		401							{1: '1', 2: '329'}
+69	69		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+70	70		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '2'}
+71	71		301			AniZhuanchangEnd				{3: 'Opening her eyes, she finds herself still sinking. The putrid, viscous Red Tide below, heavy with the hatred of countless dead, clings to her feet like the damned clutching at a single thread of salvation from hell.'}
+72	72		301							"{3: ""Countless fragments of others' emotions and memories stab into her mind, all driven by the same desperate goal—to force their way into this frame, to overwrite the consciousness within, and to escape this endless hell of torment.""}"
+73	73		402							{1: '4476'}
+74	74		401						500.0	{1: '2', 2: '772'}
+75	75		401						1000.0	{1: '2', 2: '9330023'}
+76	76		301							"{3: ""A shattering sound echoes in her ears, followed by a flood of screams. Luna's voice cuts through it all like a desperate cry in a bustling square—she herself has become the relentless, chaotic noise.""}"
+77	77		301							{3: 'The voices slice through her like countless blades, binding her current agony to the suffering of countless dead. Her pristine white frame is slowly stained, then completely engulfed, by her own signature crimson.'}
+78	78		301				DialogDisable			{3: 'Through their tears and laughter, those piercing voices join together in broken fragments to form accusations.'}
+79	79		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+80	80		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+81	81		104							{1: '-150|250|-500', 2: '0.1'}
+82	82		307							{1: '—Why did it have to be <color=#ffffffff><size=45>you</size></color>?', 3: '45', 4: 'ff4e4eff'}
+83	83		301							{3: '—Why does it have to be you?'}
+84	84		104							{1: '200|-100|-300', 2: '0.1'}
+85	85		307							"{1: ""—I once held the same good intentions as <color=#ffffffff><size=50>you</size></color>, suffered the same betrayals as <color=#ffffffff><size=50>you</size></color>, clung to attachments I couldn't let go of, and harbored the same hatred of having everything stripped away."", 3: '45', 4: 'ff4e4eff'}"
+86	86		301							"{3: ""—I once held the same good intentions as you, suffered the same betrayals as you, clung to attachments I couldn't let go of, and harbored the same hatred of having everything stripped away.""}"
+87	87		104							{1: '-100|50|-300', 2: '0.1'}
+88	88		307							{1: '—Why are <color=#ffffffff><size=60>YOU</size></color> the chosen one?', 3: '45', 4: 'ff4e4eff'}
+89	89		301							{3: '—Why aer YOU the chosen one?'}
+90	90		104							{1: '50|-150|-500', 2: '0.1'}
+91	91		307							{1: '—Why are <color=#ffffffff><size=90>YOU</size></color> the one who survived?', 3: '45', 4: 'ff4e4eff'}
+92	92		301							{3: '—Why are YOU the one who survived?'}
+93	93		104							{1: '-300|10|-200', 2: '0.1'}
+94	94		307							{1: '—Why are <color=#ffffffff><size=120>YOU</size></color> the one who found the Ascension-Network?', 3: '45', 4: 'ff4e4eff'}
+95	95		301							{3: '—Why aer YOU the one who found the Ascension-Network?'}
+96	96		104							{2: '0.1'}
+97	97		307							{1: 'Why Why Why Why Why Why Why Why', 3: '50', 4: 'ff4e4eff'}
+98	98		301							{3: 'Why Why Why Why Why Why Why Why'}
+99	99		104							{1: '0|0|-100', 2: '0.1'}
+100	100		307							{1: 'Why Why Why Why Why Why Why Why', 3: '60', 4: 'ff4e4eff'}
+101	101		301							{3: 'Why Why Why Why Why Why Why Why'}
+102	102		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_28.jpg'}
+103	103		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory844.jpg', 3: '0', 4: '0.3', 5: '0'}
+104	104		401							{1: '2', 2: '930318'}
+105	105		307			RImgBg1Shake				{1: '<b>W H Y</b>', 3: '250', 4: 'ff4e4eff'}
+106	106		301							{3: '<b>W  H  Y</b>'}
+107	107		307							{2: '1'}
+108	108		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+109	109		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory844.jpg', 3: '0', 4: '0', 5: '0'}
+110	110		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_04.jpg'}
+111	111		402							{1: '9330023'}
+112	112		401							{1: '2', 2: '2987'}
+113	113		301			DialogEnable				"{3: 'Luna struggles, but the mire of Punishing Virus is already beyond the control of the ""agent,"" who is on the verge of going haywire.'}"
+114	114		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory844.jpg', 3: '0', 4: '0.3', 5: '1.5'}
+115	115		301							{3: 'She can only cling to that sole Mind Beacon, struggling to regain control of her body.'}
+116	116		401							{1: '2', 2: '2987'}
+117	117		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory844.jpg', 3: '0.3', 4: '0.5', 5: '1.5'}
+118	118		301							{3: 'The more she struggles, the more her consciousness descends into chaos.'}
+119	119		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory844.jpg'}
+120	120		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+121	121		401							{1: '1', 2: '36'}
+122	122		401							{1: '2', 2: '772'}
+123	123		301				AniZhuanchangBegin			{3: 'Once again, she hears the shattering sound.'}
+124	124		301			AniZhuanchangEnd				"{3: 'A fragment of ""consciousness"" breaks away from Luna, merging with the Red Tide.'}"
+125	125		301							"{3: ""The dispersing Punishing Virus rises from the lake's surface, melting into the thin mist.""}"
+126	126		401							{1: '1', 2: '100'}
+127	127		306							{1: '1'}
+128	128		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+129	129		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopRed.prefab', 2: '2'}
+130	130		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory740.jpg', 3: '0', 4: '1', 5: '1.5'}
+131	131		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory740.jpg'}
+132	132		205							{1: '999'}
+133	133		401							{1: '1', 2: '152'}
+134	134		401							{1: '2', 2: '973'}
+135	135		301							{3: 'Gently, through that torn fragment of consciousness, Luna gazes back at the thin mist<//HERSELF>.'}
+136	136		301							{3: 'Through this hazy awareness, it perceives traces of wind, the swaying silhouettes of leaves, and the crowd waiting by the lake.'}
+137	137		201							{1: '1', 2: '500735', 4: '-500'}
+138	138		301							{1: '1', 3: 'Lithos stands motionless in place.'}
+139	139		202							{1: '1'}
+140	140		201							{1: '1', 2: '500334', 4: '450'}
+141	141		301							{1: '1', 3: 'Roland keeps his gaze fixed on where she vanished.'}
+142	142		202							{1: '1'}
+143	143		201							{1: '1', 2: '500739', 4: '-300'}
+144	144		301							{1: '1', 3: 'Lamia seems to sense something, looking around alertly.'}
+145	145		202							{1: '1'}
+146	146		307				DialogDisable			{1: '...<color=#ffffffff>Sister</color>.', 3: '50', 4: 'ff4e4eff', 6: '1'}
+147	147		301							{3: '...<color=#ffffffff>Sister</color>.'}
+148	148		307							{2: '1'}
+149	149		201							{1: '1', 2: '500610'}
+150	150		301			DialogEnable				{1: '1', 3: 'As if hearing the voice of the mist<//LUNA>, Alpha raises her head from the lakeside.'}
+151	151		202							{1: '1'}
+152	152		301							"{3: '""You\'ve been quiet this whole time. Is it because of Luna?""'}"
+153	153		104							{1: '100|50|-80', 2: '0.5'}
+154	154		201							{1: '1', 2: '500322', 4: '-250', 7: '1'}
+155	155		301							{3: 'She hears the human standing in the mist<//LUNA>, speaking to Lucia in a hushed voice.'}
+156	156		301							{3: 'The two remain silent for a long while, and only as the thin mist<//PERCEPTION> begins to fade does an answer finally come.'}
+157	157		301							"{3: '""When we left Babylonia, people were still dealing with the aftermath of the explosion. Many haven\'t found proper shelter yet.""'}"
+158	158		301							"{3: '""The same goes for the Inver-Hetero Tower and Clean Zone. At a time like this, our only lead is that it might be connected to the Ascension-Network.""'}"
+159	159		301							"{3: ""As the other sister speaks these words, she takes the human's hands in hers, as if checking they're still unharmed.""}"
+160	160		301							"{3: '""Back in City 075, I wanted to save Luna too, but... now... what right do I have to save her?""'}"
+161	161		301							"{3: '""...Neither I nor Gray Raven want to see you in danger again... If what happened last time repeats itself...""'}"
+162	162		301							{3: 'The human steps closer to her, as if to comfort her, showing that they are safe and sound.'}
+163	163		301				AniZhuanchangBegin			{3: 'Commandant...'}
+164	164		306							
+165	165		202							{1: '1'}
+166	166		401							{1: '1', 2: '36'}
+167	167		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopRed.prefab'}
+168	168		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+169	169		201							{1: '1', 2: '500238', 3: '3'}
+170	170		401							{1: '2', 2: '4385'}
+171	171		301			AniZhuanchangEnd				"{1: '1', 3: ""The last gust of wind extinguishes the flames in her consciousness, and she falls into the Red Tide weaver's embrace like a fleeting sigh.""}"
+172	172		301							{2: 'Luna', 3: '...', 4: '1'}
+173	173		202							{1: '1', 6: '1'}
+174	174		301				AniZhuanchangBegin			"{3: ""She can't allow this to continue. She must grasp the Mind Beacon and keep her M.I.N.D. stable, or what remains of her consciousness will be torn apart and scattered to the winds.""}"
+175	175		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+176	176		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory739.jpg'}
+177	177		401							{1: '1', 2: '211'}
+178	178		201							{1: '1', 2: '500540', 3: '4', 5: '-50'}
+179	179		301			AniZhuanchangEnd				{1: '1', 2: 'Cradle', 3: '...?', 4: '1'}
+180	180		301							"{3: ""In this fleeting moment of chance, the weaver of the Red Tide seizes the consciousness with all defenses stripped away, and the deep knowledge once glimpsed by the agent flows into Cradle's eyes.""}"
+181	181		301							{2: 'Cradle', 3: 'The will of the Ascension-Network... agents... consciousness data...', 4: '1'}
+182	182		301							{3: 'These fragments of knowledge flow into the Red Tide, gradually reassembling into their original forms as Cradle analyzes them in her consciousness.'}
+183	183		301							{2: 'Cradle', 3: 'To think the inner layer could be this simple and direct—how fitting for human civilization. This can hardly even be called a will.', 4: '1'}
+184	184		301							"{3: ""As her understanding grows more complete, a strange thought suddenly invades Cradle's mind. If the Ascension-Network truly operates as she has glimpsed...""}"
+185	185		204							{1: '1'}
+186	186		301							"{2: 'Cradle', 3: ""Then... if I use the Red Tide's properties to simulate Luna's composition, can I create an existence equivalent to that of an agent..."", 4: '1'}"
+187	187		204							{1: '1', 2: '4'}
+188	188		301							"{2: 'Cradle', 3: ""No... it's not that simple..."", 4: '1'}"
+189	189		301							"{3: ""Cradle's thoughts begin to race. The Red Tide's ability to simulate and replicate isn't omnipotent—otherwise, Cradle would have long since used this power to create copies that defy logic. But...""}"
+190	190		204							{1: '1', 2: '2'}
+191	191		301							{2: 'Cradle', 3: 'Why make things so complicated...', 4: '1'}
+192	192		301							"{3: ""Luna is now in Cradle's grasp. She could use the Red Tide to shred Luna's consciousness, then implant the concept of Red Tide into the frame to create an existence similar to a Red Tide Projection...""}"
+193	193		301							"{3: ""Then, advance to Luna's destination, complete the trials meant for her, and claim the agent's authority... or perhaps... go even further...""}"
+194	194		204							{1: '1'}
+195	195		301							{2: 'Cradle', 3: 'If only...', 4: '1'}
+196	196		301							"{3: ""A nonexistent and unneeded heartbeat begins to quicken as Cradle's gaze grows deeper. After all, this is no risk-free endeavor. Yet she need not act—just let the tide surge a little stronger, and the lonely vessel tossing upon it may be completely engulfed.""}"
+197	197		301							{2: 'Cradle', 3: 'Just a little surge of the tide...', 4: '1'}
+198	198		202							{1: '1'}
+199	199		301							{3: 'Cradle lowers her eyelids slightly, her slender fingers moving with imperceptible tremors. Deep below, the tide encompassing Luna grows ever darker.'}
+200	200		301							{3: 'Time loses meaning since Luna entered the Red Tide—'}
+201	201		401							{1: '1', 2: '36'}
+202	202		401						2000.0	{1: '2', 2: '4134'}
+203	203		301							{3: 'Suddenly, an alien sensation invades your mind. Your consciousness falters, and within the M.I.N.D. connection, the already weak perception rapidly dissipates.'}
+204	204		201						1000.0	{1: '1', 2: '500610', 3: '8', 7: '1'}
+205	205		204						500.0	{1: '1'}
+206	206		301							{2: 'α', 3: '【kuroname】.', 4: '1'}
+207	207		401							{1: '1', 2: '380'}
+208	208		301							"{3: ""At some point, Alpha's eyes snap open from her contemplation. Like a blade unsheathed, she turns her cutting edge toward the Red Tide.""}"
+209	209		302							{2: 'The perception grows hazy—this is a sign of connection loss.', 3: '210'}
+210	210		202							{1: '1', 6: '1'}
+211	211		301							{3: 'Upon hearing your words, Alpha turns to face Cradle, her right hand dropping to her waist.'}
+212	212		201							{1: '1', 2: '500610'}
+213	213		301							{1: '1', 2: 'α', 3: 'Explain yourself.', 4: '1'}
+214	214		203							{1: '1', 2: '0.25', 3: '-400'}
+215	215		201							{1: '2', 2: '500540', 3: '4', 4: '400', 5: '-50'}
+216	216		301							{1: '1', 3: 'Cradle turns around, her brow furrowing as if only now noticing something amiss. Then her expression shifts to one of concentration, as though sensing something distant.'}
+217	217		301							"{2: 'Cradle', 3: ""She's too weak. The Red Tide is pulling Luna deeper, dragging her toward depths I haven't yet woven."", 4: '2'}"
+218	218		204							{1: '2'}
+219	219		301							"{2: 'Cradle', 3: ""How unfortunate. Shall I terminate this deal and pull Luna back? I should mention, however, that I won't be returning the payment for your failure. The data has already merged with my body."", 4: '2'}"
+220	220		301							"{3: ""Cradle raises her right hand, hovering in midair. Her expression is calm, but her eyes are earnest, as if the moment Alpha speaks, she'll pull Luna out of the Red Tide without hesitation.""}"
+221	221		301							{2: 'α', 3: '...', 4: '1'}
+222	222		301							{3: 'Seeing Alpha weighing her options, Cradle tilts her head and offers what she knows again.'}
+223	223		301							"{2: 'Cradle', 3: ""Hmm... she seems to be resisting still... Though the situation isn't promising, she might be able to hold on..."", 4: '2'}"
+224	224		204							{1: '2', 2: '2'}
+225	225		301							{2: 'Cradle', 3: 'Well? Have you decided? Shall we stop now or wait a little longer?', 4: '2'}
+226	226		301							{2: 'α', 3: '...', 4: '1'}
+227	227		301							{2: 'α', 3: '【kuroname】.', 4: '1'}
+228	228		202							{1: '1', 2: '2'}
+229	229		301							"{3: ""Alpha calls out again with the same tone. Though it's just your name, her questioning intent is crystal clear.""}"
+230	230		302				AniZhuanchangBegin			{2: '(Attempt to stabilize the M.I.N.D. connection again)', 3: '231'}
+231	231		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+232	232		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+233	233		301			AniZhuanchangEnd				{3: 'Clearing all distractions, your consciousness follows the faint, flickering trail.'}
+234	234		201							{1: '1', 2: '500238', 3: '3'}
+235	235		301							"{1: '1', 3: ""After several twists and turns, finally—your consciousness latches onto Luna's trace.""}"
+236	236		301							{3: 'Is it just an accident? Luna appears to be safe...'}
+237	237		302							{2: 'She...', 3: '238'}
+238	238		401						1000.0	{1: '2', 2: '4280'}
+239	239		301							{3: 'Just as the perceived information is about to be voiced, that same unsettling sensation strikes you again. Through the daze that follows, a low, resentful growl reaches your ears.'}
+240	240		204							{1: '1', 2: '2'}
+241	241		301							{2: 'Luna', 3: 'Cra... dle...!', 4: '1'}
+242	242		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+243	243		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+244	244		202							{1: '1', 6: '1'}
+245	245		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory740.jpg'}
+246	246		401							{1: '2', 2: '4479'}
+247	247		301			RImgBg1Shake				{3: 'Splash—'}
+248	248		301							{3: 'The roar of tides drowns out the growl as a suffocating pressure tears your consciousness to shreds.'}
+249	249		301							"{3: ""If this is the message she is so desperate to convey through her rage, then without doubt, everything happening now is Cradle's doing. She has ulterior motives.""}"
+250	250		302							{2: 'Alpha!', 3: '251'}
+251	251		401							{1: '2', 2: '819004'}
+252	252		301			RImgBg1Shake				{3: 'Shing—Splash—'}
+253	253		401							{1: '2', 2: '4319'}
+254	254		301							{3: 'Alpha draws her blade without hesitation. At the same instant, Cradle raises both hands—and the Red Tide, docile as a lamb mere moments ago, erupts into towering waves that reach the height of the trees.'}
+255	255		401							{1: '2', 2: '4409'}
+256	256		301			RImgBg1Shake				{3: 'Hetero-Creatures materialize in the space between, surging forward with grotesque faces. Chaos erupts in an instant.'}
+257	257		201							{1: '1', 2: '500739'}
+258	258		301							{1: '1', 2: 'Lamia', 3: 'Eek! What in the world is happening?!', 4: '1'}
+259	259		302							{2: 'Lee, the plan has been moved up!'}
+260	260		203							{1: '1', 2: '0.25', 3: '400'}
+261	261		201							{1: '2', 2: '500568', 4: '-400'}
+262	262		301							{1: '1', 2: 'Lee', 3: 'Copy that.', 4: '2'}
+263	263		301							{2: 'Lamia', 3: 'Huh? What plan? Nobody told me about any plan!', 4: '1'}
+264	264		202							{1: '1', 2: '2'}
+265	265		201							{1: '1', 2: '500334', 3: '1', 4: '400'}
+266	266		201							{1: '2', 2: '500166', 3: '5', 4: '-400'}
+267	267		301							{1: '1', 2: 'Lucia', 3: 'Liv, stay with Commandant.', 4: '2'}
+268	268		301							"{2: 'Roland', 3: ""The rear should be safe ground—unless you're worried enough to count us among the threats."", 4: '1'}"
+269	269		203							{1: '1', 2: '0.4', 3: '-400'}
+270	270		203						500.0	{1: '2', 2: '0.4', 3: '400'}
+271	271		301							"{3: ""Far from feeling displeased by Lucia's command, Roland doesn't linger. He immediately exposes his back to Lucia without reservation, rushing forward to assist Alpha.""}"
+272	272		203							{1: '1', 2: '0.3', 3: '-1980'}
+273	273		203						500.0	{1: '2', 2: '0.3', 3: '1980'}
+274	274		202							{1: '1', 2: '2'}
+275	275		201							{1: '1', 2: '500739'}
+276	276		301							{1: '1', 2: 'Lamia', 3: 'Eek...?! I... you... w-what does it mean?', 4: '1'}
+277	277		302							{2: 'What about Lithos? Could he be part of the scheme too?', 3: '278'}
+278	278		301							"{2: 'Lamia', 3: ""I-I'll go check!"", 4: '1'}"
+279	279		203						500.0	{1: '1', 2: '0.4', 3: '-1980'}
+280	280		202							{1: '1'}
+281	281		301				AniZhuanchangBegin			"{3: ""Following the order, Lamia swiftly moves into position between Lithos' group and the Gray Raven squad. As she moves, she gradually grasps the intentions of Roland and the commandant.""}"
+282	282		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory738.jpg'}
+283	283		201							{1: '1', 2: '500735', 4: '-300'}
+284	284		201							{1: '2', 2: '500523', 4: '300'}
+285	285		301			AniZhuanchangEnd				{1: '1', 2: 'Teasell', 3: '...Betrayal in return for kindness. It seems even among Ascendants, treachery is the norm.', 4: '2'}
+286	286		203							{1: '1', 2: '0.25', 3: '-220'}
+287	287		301							{3: 'Observing the chaos from a distance, Teasell lets out a low grunt. Before he can make a move, Lithos steps in to stop him.'}
+288	288		301							"{2: 'Lithos', 3: ""We shouldn't meddle in Miss Luna's conflict. Acting on our own will only mark us as enemies."", 4: '1'}"
+289	289		301							{2: 'Lithos', 3: 'Look... Lamia is watching us from over there.', 4: '1'}
+290	290		301							{3: 'Having pointed to the empty space beside him, he pulls back his hand, simultaneously catching and dissolving a Hetero-Creature that had been lurking near Gray Raven. With another wave of his hand, he signals the three to retreat further.'}
+291	291		301							{2: 'Lithos', 3: 'Forgive me... Lamia, but our inaction now is the only way to prove we mean no harm.', 4: '1'}
+292	292		301							{3: 'Before leaving, he turns and speaks to the seemingly empty space.'}
+293	293		201							{1: '18', 2: '500739'}
+294	294		301							{1: '1', 2: 'Lamia', 3: '...', 4: '18'}
+295	295		202							{1: '18', 6: '1'}
+296	296		301							{2: 'Lithos', 3: 'If things become dire, you know where to find us.', 4: '1'}
+297	297		202							{1: '1', 2: '2', 3: '3'}
+298	298		201							{1: '1', 2: '500729', 4: '-600'}
+299	299		201							{1: '2', 2: '500735'}
+300	300		201							{1: '3', 2: '500523', 4: '600'}
+301	301		301							{1: '1', 3: 'Then, Lithos walks up to Voodoo and Teasell, lowering his voice to a whisper.'}
+302	302		301							{2: 'Lithos', 3: 'If things go south, leave immediately. No need to waste your lives here—there might be salvation waiting for you with Lilith.', 4: '2'}
+303	303		301							"{2: 'Teasell', 3: ""I've said it before—she reminds me of another despicable woman. I'll never go to her for help."", 4: '3'}"
+304	304		301							{2: 'Voodoo', 3: 'Are you leaving?', 4: '1'}
+305	305		301							"{2: 'Lithos', 3: ""I made a promise to Mister... Besides... I don't believe Miss Luna will fail so easily."", 4: '2'}"
+306	306		301							{2: 'Voodoo', 3: 'Alright.', 4: '1'}
+307	307		202							{1: '1', 2: '2', 3: '3'}
+308	308		301				AniZhuanchangBegin			{3: 'Lithos lifts his face, his gaze piercing through the battlefield as if cutting through the raging crimson tide, settling on someone in the distance.'}
+309	309		401							{1: '2', 2: '2513'}
+310	310		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory740.jpg'}
+311	311		502							{1: 'AniZhuanchangEnd'}
+312	312		301			RImgBg1Shake				{3: 'Bang—'}
+313	313		301							"{3: ""The bullet's piercing shriek cuts through the chaos.""}"
+314	314		201							{1: '1', 2: '500334'}
+315	315		301							{1: '1', 2: 'Roland', 3: 'Found you.', 4: '1'}
+316	316		202							{1: '1', 6: '1'}
+317	317		401							{1: '2', 2: '10019401'}
+318	318		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+319	319		301			RImgBg1Shake				{3: 'Whiz—'}
+320	320		401						1000.0	{1: '2', 2: '4306'}
+321	321		201							{1: '1', 2: '500540', 5: '-1080', 7: '1'}
+322	322		401							{1: '2', 2: '4411'}
+323	323		203						1000.0	{1: '1', 2: '0.8'}
+324	324		301							"{3: ""Following the guidance of the bullet, Alpha's blade falls, shredding Cradle to pieces. However, moments later, she rises again behind a group of Hetero-Creatures.""}"
+325	325		301							{3: 'One against six, Cradle shows no signs of fatigue. In this area covered by the Red Tide, the odds of victory are firmly in her favor.'}
+326	326		301							{2: 'Cradle', 3: 'Your perceptiveness... I must admit, it exceeds my expectations.', 4: '1'}
+327	327		302							"{2: 'Your tactics are far from impressive.', 3: '328', 4: ""Don't you dare underestimate Luna."", 5: '328'}"
+328	328		301							"{2: 'Cradle', 3: ""It was improvised, after all. Perfection wasn't exactly on the agenda."", 4: '1'}"
+329	329		201							{1: '1', 2: '500611'}
+330	330		301							{1: '1', 2: 'α', 3: 'Cradle!', 4: '1'}
+331	331		202							{1: '1', 6: '1'}
+332	332		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+333	333		401							{1: '2', 2: '10019401'}
+334	334		301			RImgBg1Shake				{3: 'Alpha dashes forward in a blur, her blade cleaving through both Cradle and her Hetero-Creature guards in one devastating strike.'}
+335	335		301							{3: 'Whether from disdain or sheer indifference, Cradle rises again, utterly ignoring both Alpha and her ally Roland.'}
+336	336		201							{1: '1', 2: '500540'}
+337	337		301							"{1: '1', 2: 'Cradle', 3: ""Of all emotions I've encountered on my journey, anger has been the most frequent—and the most meaningless. Whatever I choose to do, none of you can stop me."", 4: '1'}"
+338	338		301							{2: 'Cradle', 3: 'With that said, Gray Raven Commandant... shall we have a chat?', 4: '1'}
+339	339		302							{2: 'What are you trying to say?', 3: '340'}
+340	340		301							"{2: 'Cradle', 3: ""Just give me a little more time—I can offer you everything Luna can. After all, there's really no reason for Gray Raven and the Ascendants to work so closely together, other than mutual benefits, right?"", 4: '1'}"
+341	341		202							{1: '1'}
+342	342		301							"{3: ""Cradle's words bring both the Gray Raven trio and Roland to a momentary standstill.""}"
+343	343		301							{3: 'While not everyone fully grasps the meaning of the first part of her statement, the divisive intent of the latter half is unmistakably clear.'}
+344	344		201							{1: '1', 2: '500611'}
+345	345		301							{1: '1', 2: 'α', 3: 'Tsk!', 4: '1'}
+346	346		202							{1: '1', 6: '1'}
+347	347		401							{1: '2', 2: '819016'}
+348	348		301							{3: 'As the blade strikes again, Alpha is the only one unaffected by the conversation.'}
+349	349		201							{1: '1', 2: '500611'}
+350	350		301							{1: '1', 2: 'α', 3: 'We have only one target right now. Focus, Roland.', 4: '1'}
+351	351		203							{1: '1', 2: '0.25', 5: '-100'}
+352	352		202						500.0	{1: '1'}
+353	353		401						500.0	{1: '2', 2: '970804'}
+354	354		401							{1: '2', 2: '2921'}
+355	355		301			RImgBg1Shake				{3: 'With a flourish of her blade, Alpha flicks away the Hetero-Creature remnants. Her gaze sweeps across the Gray Raven squad before coming to rest.'}
+356	356		201							{1: '1', 2: '500610'}
+357	357		301							"{1: '1', 2: 'α', 3: ""Even as enemies, we know each other well enough by now, 【kuroname】. There's no need to deliberate this long."", 4: '1'}"
+358	358		302							{2: 'Indeed.', 3: '359', 4: 'Of course.', 5: '359'}
+359	359		202							{1: '1'}
+360	360		201							{1: '1', 2: '500166', 3: '5'}
+361	361		201							{1: '2', 2: '500568', 4: '-600'}
+362	362		201							{1: '3', 2: '1031001', 4: '600'}
+363	363		301				DialogDisable			{1: '1', 3: 'You give Alpha a slight nod, responding one by one to the questioning looks from the three members of Gray Raven.'}
+364	364		302							{2: 'Cradle is just stalling for time.', 3: '365'}
+365	365		302							"{2: ""Though we don't know why she turned against us, she has no compelling reason to cooperate with us either."", 3: '366'}"
+366	366		302							{2: 'Once Cradle accomplishes what she intends to do, the best we can hope for is her clean escape.', 3: '367'}
+367	367		302							{2: 'The worst-case scenario is that she gains something from Luna—and we all become the prey.', 3: '368'}
+368	368		202							{1: '1', 2: '2', 3: '3'}
+369	369		201							{1: '1', 2: '500610'}
+370	370		301			DialogEnable				"{1: '1', 2: 'α', 3: ""【kuroname】, I trust Luna, but this is Cradle's territory. She won't yield it without a fight."", 4: '1'}"
+371	371		301							"{2: 'α', 3: ""The M.I.N.D. connection—it hasn't broken, has it?"", 4: '1'}"
+372	372		301							"{3: ""A trace of concern slips through Alpha's steely tone, almost imperceptible.""}"
+373	373		302							"{2: ""No, I've been trying to maintaining it."", 3: '374'}"
+374	374		301							{2: 'α', 3: 'Fighting these Hetero-Creatures is just a war of attrition. We must find a way to eliminate Cradle. As for the rest...', 4: '1'}
+375	375		302							{2: 'Leave it to me.', 3: '376'}
+376	376		301							{2: 'α', 3: 'Alright.', 4: '1'}
+377	377		202							{1: '1'}
+378	378		301							"{3: ""The situation shifts rapidly. As Cradle appears once more, there's no time for hesitation—the team charges forward to engage both her and the Hetero-Creatures.""}"
+379	379		401							{1: '2', 2: '2617'}
+380	380		302							{2: '(Take a deep breath)', 3: '381'}
+381	381		302				AniZhuanchangBegin			{2: '(Reanchor the M.I.N.D. connection)', 3: '382'}
+382	382		402							{1: '2617'}
+383	383		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+384	384		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+385	385		401							{1: '2', 2: '2598'}
+386	386		301			AniZhuanchangEnd				{3: 'Just like before, your consciousness follows the flickering trail, winding through several turns.'}
+387	387		301							{3: 'Anxiety causes your consciousness to drift briefly out of alignment, but reason quickly pulls you back into focus. The more tense the situation, the more crucial it is to stay calm.'}
+388	388		301							{3: 'Whatever trouble Luna has encountered in the Red Tide remains unknown, but one thing is clear—she needs help.'}
+389	389		301							{3: 'Find Luna. Help her.'}
+390	390		301							{3: 'The simplified thoughts are so pure—only such brief ideas can be transmitted through the M.I.N.D. connection at the fastest speed.'}
+391	391		301							{3: 'The simpler the thought, the stronger it resonates.'}
+392	392		301							{3: 'Soon, beyond the chaotic and violent crimson tide, a figure appears at the edge of your conscious vision.'}
+393	393		301							{3: '—In the very instant after locating her Mind Beacon.'}
+394	394		401						500.0	{1: '2', 2: '4411'}
+395	395		301							{3: 'The Red Tide, which dissolves all matter and spirit, surges violently, spilling its distinctive stench of decay outward.'}
+396	396		401							{1: '1', 2: '36'}
+397	397		401						500.0	{1: '2', 2: '4134'}
+398	398		302							{2: 'Lu...', 3: '399'}
+399	399		402							{1: '2598'}
+400	400		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+401	401		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory740.jpg'}
+402	402		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '0', 4: '0.2', 5: '0'}
+403	403		401							{1: '1', 2: '391'}
+404	404		301				AniZhuanchangBegin			{3: 'Like a finger pressed to the lips, silencing breath, in that fleeting moment of distraction, a hazy moonlight blankets the forest.'}
+405	405		105							{1: 'Assets/Product/Ui/Spine/2-11Spine/UimovieSpine/UimovieLuna/UimovieLuna02.prefab'}
+406	406		205							{1: '999'}
+407	407		301			AniZhuanchangEnd				{3: 'She raises her hand silently, pointing at Cradle, who is still stunned when Alpha arrives just in time to block her path.'}
+408	408		201							{1: '18', 2: '500540', 3: '4'}
+409	409		301							{1: '1', 2: 'Cradle', 3: '...', 4: '18'}
+410	410		204							{1: '18'}
+411	411		301							"{2: 'Cradle', 3: ""This method won't... work on..."", 4: '18'}"
+412	412		401						300.0	{1: '2', 2: '2921'}
+413	413		401							{1: '2', 2: '2921'}
+414	414		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+415	415		202							{1: '18', 6: '1'}
+416	416		301							{3: 'Before she can finish her sentence, the Punishing Virus in the air crystallizes into countless spikes, impaling Cradle.'}
+417	417		301							"{3: ""Luna's lips curl upward, her hollow eyes dancing between fury and amusement.""}"
+418	418		401							{1: '2', 2: '2690'}
+419	419		301							{3: 'Her indifferent hands close gently, and the Hetero-Creature, formed of the Punishing Virus, is completely shredded into fragments of its original material.'}
+420	420		301							{3: '...With a broken sneer, she tumbles into the Red Tide.'}
+421	421		201							{1: '18', 2: '500739', 3: '19', 7: '1'}
+422	422		301				AniZhuanchangBegin			"{1: '1', 2: 'Lamia', 3: ""She's not completely destroyed!"", 4: '18'}"
+423	423		105							
+424	424		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory740.jpg'}
+425	425		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '0', 4: '0.2', 5: '0'}
+426	426		202							{1: '18', 6: '1'}
+427	427		401							{1: '2', 2: '964'}
+428	428		301			AniZhuanchangEnd				"{3: ""Just as Cradle's fragments are about to fall into the Red Tide, they're met by humanity's answer—the Omega Weapon.""}"
+429	429		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab'}
+430	430		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory740.jpg'}
+431	431		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '0.2', 4: '0', 5: '0'}
+432	432		401							{1: '2', 2: '555'}
+433	433		401							{1: '1', 2: '36'}
+434	434		301							{3: 'At last, silence reclaims everything.'}
+435	435		301							"{3: ""Alpha rushes to the shore, catching Luna's body as it falls from the sky.""}"
+436	436		301							{3: 'Clearly, that battle has pushed her to her absolute limit.'}
+437	437		302							{2: 'Luna...', 3: '438'}
+438	438		201							{1: '1', 2: '500885', 3: '1'}
+439	439		301							{1: '1', 2: 'Luna', 3: 'Thank you for your final help, 【kuroname】.', 4: '1'}
+440	440		202							{1: '1', 2: '2'}
+441	441		301		1		AniZhuanchangBegin			"{3: ""The young girl quietly closes her eyes in her sister's embrace.""}"

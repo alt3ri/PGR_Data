@@ -1,0 +1,65 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		401			AniZhuanchangEnd			2000.0	{1: '2', 2: '5303'}
+2	2		401							{1: '2', 2: '648'}
+3	3		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDoorOpen02.prefab', 2: '3'}
+4	4		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory761.jpg'}
+5	5		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDoorOpen02.prefab'}
+6	6		401							{1: '1', 2: '209'}
+7	7		107						3000.0	{1: 'Conservation Area 221', 2: 'Babylonia Logistics Warehouse', 4: '12:30', 5: 'Line Spacing: 0'}
+8	8		108							{1: '1'}
+9	9		301			DialogEnable				{3: 'As you leave the landing pad, the noisy engines behind you briefly stop before starting again.'}
+10	10		301							{3: 'You and Ayla wave goodbye to the pilot through the windshield, then turn toward your destination.'}
+11	11		401							{1: '2', 2: '10028615'}
+12	12		401							{1: '2', 2: '4884'}
+13	13		301							{3: 'You press the terminal amidst the roaring air currents. The rumbling drowns out the sound in your earpiece.'}
+14	14		201							{1: '18', 2: '500495'}
+15	15		301							"{1: '1', 2: 'Teddy', 3: ""The storage area in front of you is the smallest range you've been able to narrow down. The frame was transferred to the conservation area a week ago."", 4: '18'}"
+16	16		301							"{2: 'Teddy', 3: ""Item transfers within the storage area aren't reported to Babylonia, and from the current situation, I doubt they're even recorded locally."", 4: '18'}"
+17	17		201							{1: '1', 2: '500110'}
+18	18		301							"{1: '1', 2: 'Ayla', 3: ""Got it. So it's time to search, right?"", 4: '1'}"
+19	19		204							{1: '18', 2: '1'}
+20	20		301							{2: 'Teddy', 3: 'I can show you which warehouses have the good stuff. This conservation area has loads of art on the restricted list.', 4: '18'}
+21	21		302							"{2: ""Now there'll be two more names on the list."", 3: '22'}"
+22	22		204							{1: '18', 2: '13'}
+23	23		301							"{2: 'Teddy', 3: ""Don't worry, I can take off my name and Ayla's, and put yours."", 4: '18'}"
+24	24		202							{1: '1', 2: '18'}
+25	25		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+26	26		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory759.jpg'}
+27	27		301				DialogDisable			{3: 'You arrive at the entrance, chatting along the way.'}
+28	28		104						2000.0	{1: '0|0|-200', 2: '2'}
+29	29		301			DialogEnable	DialogDisable			{3: 'Uneasiness rises as you walk up to the doorway.'}
+30	30		104						2000.0	{2: '2'}
+31	31		306							{1: '1'}
+32	32		302							{2: 'Teddy, check our surroundings.', 3: '33'}
+33	33		201							{1: '18', 2: '500495'}
+34	34		301			DialogEnable	DialogDisable			{1: '1', 2: 'Teddy', 3: 'Wait...', 4: '18'}
+35	35		202							{1: '18', 6: '1'}
+36	36		401							{1: '2', 2: '4289'}
+37	37		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenBlueEx.prefab', 2: '2'}
+38	38		104						1000.0	{1: '300|0|-300', 2: '1'}
+39	39		104						2000.0	{1: '-300|0|-300', 2: '2'}
+40	40		104						1000.0	{2: '1'}
+41	41		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenBlueEx.prefab'}
+42	42		402							{1: '4289'}
+43	43		306							
+44	44		201							{1: '18', 2: '500495'}
+45	45		301			DialogEnable				{1: '1', 2: 'Teddy', 3: 'All 47 cameras around you are functional. No signs of tampering were detected.', 4: '18'}
+46	46		301							{3: 'Ayla senses the change in atmosphere and tilts her head.'}
+47	47		201							{1: '1', 2: '500110', 3: '4'}
+48	48		301							{1: '1', 2: 'Ayla', 3: 'Commandant? Did you notice something?', 4: '1'}
+49	49		302							"{2: ""It's going a bit too smoothly."", 3: '50'}"
+50	50		301							"{2: 'Teddy', 3: ""Smooth? Not really. According to puzzle game logic, we need multiple keys to unlock the path we're taking."", 4: '18'}"
+51	51		301							"{2: 'Teddy', 3: ""We've just started. The Construct in this warehouse might only be the start, and we still have no idea what's going on with Ishmael."", 4: '18'}"
+52	52		301							{2: 'Ayla', 3: '...I think what the commandant means is that everything seems to be going in a straight line.', 4: '1'}
+53	53		401						500.0	{1: '2', 2: '4779'}
+54	54		402							{1: '4779'}
+55	55		301				DialogDisable			{3: 'You nod to Ayla and instinctively move your hand toward your holster.'}
+56	56		302							{2: 'Identify problem, gather clues, locate target.', 3: '57'}
+57	57		302							{2: 'This is almost too easy.', 3: '58'}
+58	58		301			DialogEnable				{2: 'Teddy', 3: '...', 4: '18'}
+59	59		301							"{2: 'Teddy', 3: ""Yes, and we didn't even need to solve the only trouble we ran into."", 4: '18'}"
+60	60		301							"{2: 'Teddy', 3: ""Thinking about it now, our initial search showed no results until an error message suddenly gave us a clue. It's odd, no matter how you look at it."", 4: '18'}"
+61	61		301							{3: 'Realizing the problem, the voice in your earpiece grows more alert.'}
+62	62		302							"{2: ""If this isn't just coincidence or the task is actually straightforward..."", 3: '63'}"
+63	63		301							"{2: 'Ayla', 3: ""Then we've stumbled into someone else's game."", 4: '1'}"
+64	64		301		1		AniZhuanchangBegin			{3: 'You exchange a look with Ayla, silently becoming alert as you enter the warehouse side by side.'}

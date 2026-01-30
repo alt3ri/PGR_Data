@@ -1,0 +1,160 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory192.png'}
+2	2		401							{1: '1', 2: '263'}
+3	3		401							{1: '2', 2: '2915'}
+4	4		301			DialogEnable				{3: 'You expected the arcade to be popular, but this is beyond anything you imagined.'}
+5	5		306							{1: '1'}
+6	6		201							{1: '1', 2: '500682'}
+7	7		301				DialogDisable			{1: '1', 3: 'Countless people crowd around a strength-testing punching machine. Who knew these pre-Golden Age arcade games could be so popular? Among the crowd, you notice familiar bright red hair.'}
+8	8		306							
+9	9		402							{1: '2915'}
+10	10		302							"{2: '(Noctis?)', 3: '11', 4: ""(What's he doing here?)"", 5: '11'}"
+11	11		201							{1: '18', 2: '500488', 4: '-880', 5: '-600', 6: '1200'}
+12	12		502							{1: 'DialogEnable'}
+13	13		301			DialogShake				{1: '1', 2: 'Mechanoid Vendor', 3: 'I strongly protest the destructive behavior of this Babylonia Construct in Constellia!', 4: '18'}
+14	14		202							{1: '18'}
+15	15		502							{1: 'DialogDisable'}
+16	16		302							{2: '(Oh no. Noctis has caused another scene.)', 3: '17'}
+17	17		203							{1: '1', 2: '0.25', 3: '400'}
+18	18		201							{1: '2', 2: '500488', 4: '-400', 5: '-250', 6: '400'}
+19	19		301			DialogEnable				{1: '1', 3: 'Driven by curiosity, you squeeze through the crowd and see a punching machine warped and broken from excessive force. The furious vendor curses angrily at Noctis, who stands there without a care.'}
+20	20		204							{1: '1', 2: '5'}
+21	21		301							{2: 'Noctis', 3: 'Destructive behavior? Please. These salvaged Golden Age antiques are just too fragile. I barely touched it and it broke on its own.', 4: '1'}
+22	22		301			DialogShake				{2: 'Mechanoid Vendor', 3: 'Dissatisfied: Unacceptable behavior! This is complete circuit spaghetti! Conveying demand: Construct Noctis must repair the damage and provide compensation.', 4: '2'}
+23	23		204							{1: '1', 2: '13'}
+24	24		301			DialogShake				{2: 'Noctis', 3: 'Circuit spaghetti? Now that actually sounds kind of tasty. Repair it? Not really my specialty. Want me to try punching it in reverse with the same force instead?', 4: '1'}
+25	25		302							"{2: 'Noctis!', 3: '26', 4: ""Don't!"", 5: '26'}"
+26	26		202							{1: '1', 2: '2'}
+27	27		301							"{3: 'Seriously doubting Noctis\' idea of ""fixing it with a punch"" would end well, you quickly stop him.'}"
+28	28		201							{1: '1', 2: '500682', 3: '1'}
+29	29		301							{1: '1', 2: 'Noctis', 3: '【kuroname】? Commandant! Perfect timing!', 4: '1'}
+30	30		301							"{3: ""Noctis grabs you like you're his savior and prepares to introduce you grandly.""}"
+31	31		302							"{2: 'Huh?', 3: '32', 4: ""Don't drag me into this, Noctis!"", 5: '32'}"
+32	32		204							{1: '1', 2: '3'}
+33	33		301							"{2: 'Noctis', 3: ""(Whispers) Help me out here, Commandant. I really don't know how to fix stuff!"", 4: '1'}"
+34	34		203							{1: '1', 2: '0.25', 3: '400'}
+35	35		204							{1: '1', 2: '2'}
+36	36		201							{1: '2', 2: '500488', 4: '-400', 5: '-250', 6: '400'}
+37	37		301							"{1: '1', 2: 'Noctis', 3: ""Vendor, do you know who this is? It's 【kuroname】, Gray Raven's Commandant, the hero of humanity! If anyone can fix it, it's 【kuroname】!"", 4: '1'}"
+38	38		302							"{2: ""That's right, the one and only!"", 3: '39', 4: 'Me? Do I really know how to fix this?', 5: '39'}"
+39	39		301							{2: 'Mechanoid Vendor', 3: 'Identity confirmed: Commandant 【kuroname】. Requesting compensation from Babylonia.', 4: '2'}
+40	40		302							"{2: ""Why do I feel like you're just using me?"", 3: '41'}"
+41	41		301							"{2: 'Noctis', 3: ""How about this, 【kuroname】? Help me sort out this mess, and I'll take you somewhere amazing. I promise it's an experience you've never had before!"", 4: '1'}"
+42	42		302							"{2: ""Then it's decided!"", 3: '43', 4: 'Alright then.', 5: '43'}"
+43	43		301							{3: 'You take out your terminal and make some quick calls. Soon, the Engineering Force agrees to send someone to handle the repairs.'}
+44	44		302				AniZhuanchangBegin			"{2: ""I've already contacted Babylonia's repair team. Someone will be here shortly to fix this."", 3: '45'}"
+45	45		401						2000.0	{1: '1', 2: '36'}
+46	46		401							{1: '1', 2: '122'}
+47	47		202							{1: '1', 2: '2'}
+48	48		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg'}
+49	49		201							{1: '1', 2: '500682', 3: '1'}
+50	50		301			AniZhuanchangEnd				"{1: '1', 3: ""After giving the repair team's contact info to the vendor, the arcade incident is finally settled. To thank you, Noctis hands you a large cup of freshly squeezed juice.""}"
+51	51		301							"{2: 'Noctis', 3: ""All sorted? I knew you'd handle it. This one's yours."", 4: '1'}"
+52	52		302							"{2: '(Gulp gulp gulp...)', 3: '53', 4: ""That's done. Now, where's this amazing place you mentioned?"", 5: '53'}"
+53	53		204							{1: '1', 2: '2'}
+54	54		301				AniZhuanchangBegin			"{2: 'Noctis', 3: ""Heh, you'll see. It's gonna blow your mind."", 4: '1'}"
+55	55		202							{1: '1', 6: '1'}
+56	56		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory687.jpg'}
+57	57		301			AniZhuanchangEnd				"{3: ""You're now standing at the top of a towering windmill, high above Constellia. Noctis is in front of you, wearing something that can only be described as a ridiculous custom wingsuit. He spreads his arms theatrically.""}"
+58	58		201							{1: '1', 2: '500682', 3: '2'}
+59	59		301							{1: '1', 2: 'Noctis', 3: 'Well? Ever seen anything like this?', 4: '1'}
+60	60		302							"{2: ""I didn't know you could wingsuit."", 3: '61', 4: 'So this ""amazing place"" was actually for wingsuit flying?', 5: '61'}"
+61	61		204							{1: '1', 2: '3'}
+62	62		301							"{2: 'Noctis', 3: ""What, you already know about it? Man, I've been holding back this whole time so I could surprise you."", 4: '1'}"
+63	63		301				DialogDisable			"{2: 'Noctis', 3: ""Wait, you've tried it before, haven't you? Beat me to it? Seriously, does F.O.S. teach you everything?"", 4: '1'}"
+64	64		302							{2: 'Not really.', 3: '65'}
+65	65		302							{2: 'F.O.S. just mentioned it once. Said it used to be a luxury extreme sport from the Golden Age.', 3: '66'}
+66	66		204							{1: '1', 2: '2'}
+67	67		301			DialogEnable				"{2: 'Noctis', 3: ""Extreme sport? I always thought it was some high-stakes infiltration technique. Well, either way, if you haven't done it, I'm taking you now."", 4: '1'}"
+68	68		302							{2: 'Are you sure this is safe?', 3: '69', 4: 'I remember Vera warning me not to get into anything piloted by you.', 5: '69'}
+69	69		301							"{2: 'Noctis', 3: ""I figured you'd say that. That's why I came prepared."", 4: '1'}"
+70	70		202							{1: '1', 6: '1'}
+71	71		401							{1: '2', 2: '5517'}
+72	72		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+73	73		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory209.png'}
+74	74		301				DialogDisable			{3: 'As if to prove his skill, Noctis pulls out his terminal and shows you a video of himself flying through the sky. In the footage, Noctis flows with ease, gliding through the air like a bird.'}
+75	75		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+76	76		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory687.jpg'}
+77	77		302							{2: 'Most of my experience has been in transport flights or parachuting...', 3: '78'}
+78	78		302							"{2: ""Guess it's time to try something different."", 3: '79'}"
+79	79		401							{1: '2', 2: '4432'}
+80	80		301			DialogEnable				"{3: ""Noctis expertly straps you in front of him. Despite his usual loud personality, he's surprisingly careful as he checks every buckle and strap. Even his voice lowers a bit as he explains safety measures.""}"
+81	81		201							{1: '1', 2: '500682', 3: '1'}
+82	82		301				DialogDisable			"{1: '1', 2: 'Noctis', 3: ""Alright, 【kuroname】, you ready? We're about to conquer the sky."", 4: '1'}"
+83	83		302							"{2: ""Let's do it."", 3: '84'}"
+84	84		202							{1: '1'}
+85	85		104							{1: '0|-150|-200', 2: '1'}
+86	86		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory687.jpg'}
+87	87		401						1000.0	{1: '1', 2: '36'}
+88	88		401							{1: '1', 2: '5060'}
+89	89		401							{1: '2', 2: '968'}
+90	90		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+91	91		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory782.jpg', 3: '0', 4: '1', 5: '0.5'}
+92	92		205							{1: '999'}
+93	93		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory782.jpg'}
+94	94		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '2'}
+95	95		301			DialogEnable				{3: 'Far below, the festival still buzzes with life. But up here, no one notices as two figures, like birds, leap from the top of the windmill tower and dive into open air.'}
+96	96		201							{1: '1', 2: '500682', 3: '1'}
+97	97		301							{1: '1', 2: 'Noctis', 3: 'Woohoo! How does it feel, 【kuroname】?', 4: '1'}
+98	98		202							{1: '1'}
+99	99		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+100	100		401							{1: '2', 2: '5517'}
+101	101		401							{1: '2', 2: '2624'}
+102	102		301							{3: 'The wind screams past your ears. Gravity pulls, steady and strong. You fall slower than you imagined, but your heart pounds like a drum. Every logical thought is stripped away by the rush of air...'}
+103	103		301							{3: 'With Noctis holding firm and the wingsuit fully deployed, the two of you glide like a single bird cutting through the sky.'}
+104	104		401							{1: '2', 2: '5517'}
+105	105		301							{3: 'The air is crisp and cold, but the warmth of his chest against your back keeps you grounded.'}
+106	106		402							{1: '2624'}
+107	107		201							{1: '1', 2: '500682', 3: '4'}
+108	108		301							"{1: '1', 2: 'Noctis', 3: ""Don't look down, 【kuroname】. Look ahead. There, see? You're flying, Commandant!"", 4: '1'}"
+109	109		202							{1: '1'}
+110	110		301				DialogDisable			{3: 'His words yank your thoughts back into focus. You shift your gaze forward and finally see it.'}
+111	111		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+112	112		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1017.jpg', 3: '0', 4: '1', 5: '1.5'}
+113	113		205							{1: '999'}
+114	114		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1017.jpg'}
+115	115		301			DialogEnable	DialogDisable			{3: 'The horizon curves gently. The sky stretches endlessly. A pale blue canopy above. A battered planet below.'}
+116	116		302							{2: '!', 3: '117'}
+117	117		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1016.jpg', 3: '0', 4: '1', 5: '1'}
+118	118		205							{1: '999'}
+119	119		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1016.jpg'}
+120	120		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg', 3: '0', 4: '1', 5: '1'}
+121	121		205							{1: '999'}
+122	122		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+123	123		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory393.jpg', 3: '0', 4: '1', 5: '1'}
+124	124		205							{1: '999'}
+125	125		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory393.jpg'}
+126	126		402							{1: '968'}
+127	127		301			DialogEnable				{3: 'As you glide farther, new sights slowly rise from beyond the horizon. The beauty of it loosens every last knot of tension.'}
+128	128		301				DialogDisable			{3: 'Watching Constellia grow smaller below, one very important question finally comes to mind—one that Noctis never addressed.'}
+129	129		401							{1: '1', 2: '36'}
+130	130		401							{1: '1', 2: '122'}
+131	131		302							{2: 'Noctis... how are we getting back?', 3: '132'}
+132	132		201							{1: '1', 2: '500682', 3: '3'}
+133	133		301			DialogEnable				{1: '1', 2: 'Noctis', 3: 'What?', 4: '1'}
+134	134		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+135	135		104							{1: '0|-100|-100', 2: '0.3'}
+136	136		104							{1: '0|50|-100', 2: '0.3'}
+137	137		401							{1: '2', 2: '4429'}
+138	138		301							"{3: ""The good news: you didn't land too far from Constellia. The bad news: neither of you has any way to get back.""}"
+139	139		204							{1: '1', 2: '1'}
+140	140		301							{2: 'Noctis', 3: 'So? 【kuroname】, I bet this was the most exciting part of the festival for you, right?', 4: '1'}
+141	141		302							"{2: 'Yeah, flying really was exciting.', 3: '142', 4: ""Of course, walking all the way back, that's a different kind of thrill."", 5: '142'}"
+142	142		204							{1: '1', 2: '2'}
+143	143		301							"{2: 'Noctis', 3: ""Then it's time for something even more exciting: award ceremony!"", 4: '1'}"
+144	144		302							"{2: ""Wait, what? There's an award ceremony?"", 3: '145', 4: '...An award ceremony?', 5: '145'}"
+145	145		401							{1: '2', 2: '4432'}
+146	146		203							{1: '1', 2: '0.25', 4: '-50', 5: '-60'}
+147	147		301							{3: 'Noctis pulls out a crudely made certificate from who-knows-where and hands it to you. Your name, 【kuroname】, is already written on it. Looks like he planned this all along.'}
+148	148		204							{1: '1', 2: '1'}
+149	149		301							{2: 'Noctis', 3: 'Awarded personally by the great Noctis, the first wingsuit flight certificate since the Golden Age.', 4: '1'}
+150	150		204							{1: '1', 2: '2'}
+151	151		301							"{2: 'Noctis', 3: 'I know you\'re probably gonna say something like ""The view was reward enough,"" or whatever. But that doesn\'t fly with me!', 4: '1'}"
+152	152		301							"{2: 'Noctis', 3: ""Now we're the only two people in the world with flight certificates. Next time we fly, we do it together again. Deal?"", 4: '1'}"
+153	153		302							{2: 'Hey, Noctis.', 3: '154'}
+154	154		204							{1: '1', 2: '1'}
+155	155		301				DialogDisable			{2: 'Noctis', 3: 'What is it?', 4: '1'}
+156	156		302							"{2: ""Today was amazing. I won't forget it."", 3: '157'}"
+157	157		302							"{2: 'And for the record, just because we flew together doesn\'t mean we\'re ""Love Birds in Flight"". You might want to rethink that title.', 3: '158', 4: 'Hold on, why does it say ""Love Birds in Flight""?', 5: '158', 6: '""Love Birds in Flight""? So that\'s what you think it means?', 7: '158'}"
+158	158		204							{1: '1', 2: '6'}
+159	159		301		1	DialogEnable	AniZhuanchangBegin			"{2: 'Noctis', 3: ""Huh? I don't know! It just sounded cool, okay?! Let's just go already!"", 4: '1'}"

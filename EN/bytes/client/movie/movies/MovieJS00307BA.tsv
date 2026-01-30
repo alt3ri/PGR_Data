@@ -1,0 +1,34 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+2	2		401							{1: '1', 2: '5'}
+3	3		201							{1: '1', 2: '500472', 3: '1'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+5	5		301			DialogEnable				{1: '1', 2: 'Nanami', 3: 'Nanami has a question for you, Commandant.', 4: '1'}
+6	6		302							{2: 'Is it a brain teaser?'}
+7	7		204							{1: '1', 2: '5'}
+8	8		301							"{2: 'Nanami', 3: ""No! It's a serious question! Why would you think that Nanami is only interested in brain teasers..."", 4: '1'}"
+9	9		204							{1: '1', 2: '1'}
+10	10		301							{2: 'Nanami', 3: 'What I want to ask is—do you find any part of Nanami strange, Commandant?', 4: '1'}
+11	11		302							"{2: ""Isn't that a brain teaser?"", 3: '12'}"
+12	12		301							{2: 'Nanami', 3: 'It seems that a lot of people are calling Nanami special, so I want to ask you if Nanami really is that strange...', 4: '1'}
+13	13		302							"{2: ""Strange? I don't think so."", 3: '14'}"
+14	14		301							{2: 'Nanami', 3: 'Hm... Then what do you think about Nanami, Commandant?', 4: '1'}
+15	15		302							"{2: ""You're often whimsical but always miraculously dependable."", 3: '16'}"
+16	16		204							{1: '1', 2: '2'}
+17	17		301							{2: 'Nanami', 3: 'Whoa! Nanami is that impressive in your eyes?', 4: '1'}
+18	18		302							"{2: ""But you're also just an ordinary girl."", 3: '19'}"
+19	19		204							{1: '1', 2: '1'}
+20	20		301							{2: 'Nanami', 3: 'For real? Nanami is ordinary? Can you tell me which part of Nanami is ordinary...?!', 4: '1'}
+21	21		502							{1: 'DialogDisable'}
+22	22		302							{2: 'You cry, you laugh. You work hard for what you love.', 3: '23'}
+23	23		302							"{2: ""You're sad when you fail... Ordinary, no?"", 3: '24'}"
+24	24		204							{1: '1', 2: '2'}
+25	25		301			DialogEnable				{2: 'Nanami', 3: 'I suppose Nanami is indeed quite ordinary when you look at it this way, so much so that it feels natural for me to stay by your side, Commandant, right?', 4: '1'}
+26	26		302							"{2: ""Sure. You can always come and play when you're bored."", 3: '27'}"
+27	27		204							{1: '1', 2: '1'}
+28	28		301							"{2: 'Nanami', 3: 'Then... Nanami will thank you by giving your exoskeleton a free upgrade! The ""normal"" kind!', 4: '1'}"
+29	29		302							"{2: 'No... No upgrades! Not ""normal"" ones or ""special"" ones!', 3: '30'}"
+30	30		301							"{2: 'Nanami', 3: ""That's alright, Commandant! We're buddies, aren't we? You don't have to be so polite."", 4: '1'}"
+31	31		204							{1: '1', 2: '3'}
+32	32		301							"{2: 'Nanami', 3: ""I'll let you be, then! You'll see the surprise Nanami left for you when you return to your lounge!"", 4: '1'}"
+33	33		302		1		AniZhuanchangBegin			{2: 'Hey! Nanami!'}

@@ -1,0 +1,87 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory68.jpg'}
+2	2		401							{1: '1', 2: '210'}
+3	3		201							{1: '1', 2: '1031001', 4: '600'}
+4	1001		201							{1: '2', 2: '500166'}
+5	1002		201							{1: '3', 2: '500026', 4: '-600'}
+6	4		301			DialogEnable				"{1: '1', 2: 'Liv', 3: ""This area is bigger than I thought, now that we've got a map from Foreman..."", 4: '1'}"
+7	5		301							"{2: 'Lucia', 3: ""It's also divided into clearly-defined zones. I wonder how many mechanoids have gathered here."", 4: '2'}"
+8	6		301							{2: 'Lee', 3: 'My initial estimation is over a thousand of them. After all, maintaining a hologram of this scale must involve an enormous amount of recon drones.', 4: '3'}
+9	7		302							"{2: 'Who organizes this?', 3: '8', 4: ""Can't believe there's so many mechanoid here."", 5: '10'}"
+10	8	9	301							{2: 'Lee', 3: 'It could be Foreman, it could be others, but from my experience, a convention of this nature is usually run collectively by the fans.', 4: '3'}
+11	9	1003	301							{2: 'Liv', 3: 'Foreman did say they all enjoy Ghost Expert here.', 4: '1'}
+12	1353		301							"{2: 'Lee', 3: ""Even with the results from our database, it's still difficult to determine what this Ghost Expert is...""}"
+13	10	1003	301							{2: 'Lee', 3: 'Anyway, we should definitely look into a group this size. We might just get our hands on some useful intel.', 4: '3'}
+14	1003		202							{1: '1', 2: '2', 3: '3'}
+15	1004		201							{1: '1', 2: '500142', 4: '400'}
+16	1005		201							{1: '2', 2: '500142', 4: '-400'}
+17	11		301							{1: '1', 2: 'Mechanoid A', 3: 'Ugh, why is the first trial so damn difficult already? What the hell?', 4: '1'}
+18	12		301							"{2: 'Mechanoid B', 3: ""We can always give it another go later. Let's try the other trials first to liven things up."", 4: '2'}"
+19	13		301							"{2: 'Mechanoid A', 3: ""I'm gonna give that East General a taste of my fist after the event's over. Just you wait!"", 4: '1'}"
+20	1006		201							{1: '1', 2: '1031001', 3: '7', 4: '400'}
+21	1007		201							{1: '2', 2: '500166', 4: '-400'}
+22	14		301							{1: '1', 2: 'Liv', 3: 'Those mechanoids...', 4: '2'}
+23	15		301							"{2: 'Lucia', 3: ""Looks like they're contestants who did the trial before us. Should we ask them how it went, Commandant?"", 4: '2'}"
+24	1008		302							"{2: ""That's not necessary."", 3: '16', 4: ""Let's ask them."", 5: '17'}"
+25	16	1013	301							"{2: 'Lucia', 3: ""Copy. Then let's keep going."", 4: '2'}"
+26	17	18	301							{2: 'Lucia', 3: 'Understood.', 4: '2'}
+27	18	1009	301							{3: 'Lucia walks up to the two mechanoids as you instructed and greets them.'}
+28	1009	1010	202							{1: '1', 2: '2'}
+29	1010	1011	201							{1: '1', 2: '500166', 4: '-600'}
+30	1011	1012	201							{1: '2', 2: '500142', 4: '600'}
+31	1012	19	201							{1: '3', 2: '500142'}
+32	19	20	301							{1: '1', 2: 'Mechanoid A', 3: 'Babylonia... Nah, never heard of it. What can I do for you?', 4: '2'}
+33	20	21	301							"{2: 'Lucia', 3: ""We're also participants in this competition. We're just wondering if you can tell us a little bit about the content of the trial?"", 4: '1'}"
+34	21	22	301							"{2: 'Mechanoid A', 3: ""Won't hurt to tell you what it is, I suppose. Basically, it's a game of riddles."", 4: '2'}"
+35	22	23	301							{2: 'Lucia', 3: 'Are they riddles that challenge our knowledge base?', 4: '1'}
+36	23	24	301							"{2: 'Mechanoid A', 3: ""It's a challenge on how well you know your companions. Speaking of which—how the hell did you not notice that guy's a fake?"", 4: '2'}"
+37	24	25	301							{2: 'Mechanoid B', 3: 'Hey, stop hitting me!', 4: '3'}
+38	25	26	301							{3: 'Halfway through your conversation, one of the mechanoids starts smacking the other one, and you feel like this is as much information as you can get from them.'}
+39	26	1013	301				AniZhuanchangBegin			{2: 'Lucia', 3: 'How well we know our companions, is it...?', 4: '1'}
+40	1013		202							{1: '1', 2: '2', 3: '3'}
+41	1014		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory68.jpg'}
+42	1015		201							{1: '1', 2: '500170'}
+43	27		301			AniZhuanchangEnd				{1: '1', 3: '——'}
+44	28		301							"{2: 'East General', 3: ""So you're the Babylonian contestants Foreman mentioned, aren't you? I'm East General, the guardian of the Eastern trial!"", 4: '1'}"
+45	1016		203							{1: '1', 2: '0.25', 3: '400'}
+46	1017		201							{1: '2', 2: '500166', 4: '-400'}
+47	29		301							{1: '1', 2: 'Lucia', 3: 'Did Foreman mention us specifically?', 4: '2'}
+48	30		301							"{2: 'East General', 3: ""This ghost-hunting event is for fun, after all. We wouldn't want bad eggs among us, would we?"", 4: '1'}"
+49	31		301							{3: 'Despite how silly this event is, this East General in front of you seems to be quite a knowledgeable individual.'}
+50	1018		202							{1: '2'}
+51	1019		203							{1: '1', 2: '0.25', 3: '0'}
+52	32		301							{2: 'East General', 3: 'Regardless, I should provide you with a little more information before you begin.', 4: '1'}
+53	33		301							{2: 'East General', 3: 'Apart from the Northern trial, all the other trials only permit one participant each time, and those who have taken part in a previous trial cannot join another one.', 4: '1'}
+54	34		301							"{2: 'East General', 3: ""Considering that you're a group of Constructs with a commandant, I'll allow your commandant to assist you through your comms."", 4: '1'}"
+55	1020		302							"{2: 'Thanks.', 3: '35', 4: ""Wouldn't that be unfair?"", 5: '36'}"
+56	35	1023	301							{2: 'East General', 3: 'Sure.', 4: '1'}
+57	36	1021	301							"{2: 'East General', 3: ""Given that you Constructs only work well with a commandant and that you're all new to this... Consider this a newcomer gift."", 4: '1'}"
+58	1021	1022	203							{1: '1', 2: '0.25', 3: '400'}
+59	1022	37	201							{1: '2', 2: '500026', 3: '10', 4: '-400'}
+60	37	1023	301							"{1: '1', 2: 'Lee', 3: ""Newcomers... So you've hosted this event here multiple times..."", 4: '2'}"
+61	1023		202							{1: '1', 2: '2'}
+62	1024		201							{1: '1', 2: '500170'}
+63	38		301							{1: '1', 2: 'East General', 3: 'Now, onto the instruction of the trial itself. As contestants, you must know that ghosts are inclined to disguise themselves as others to trick innocent people.', 4: '1'}
+64	39		301							"{2: 'East General', 3: ""But you certainly won't be fooled by such trickery as outstanding Taoists yourselves! Therefore, I, East General, shall test your perception!"", 4: '1'}"
+65	40		301							{2: 'East General', 3: 'So, send in the one who knows your group best!', 4: '1'}
+66	5000		203							{1: '1', 2: '0.25', 3: '400'}
+67	5001		201							{1: '2', 2: '500166', 4: '-400'}
+68	41		301							{1: '1', 2: 'Lucia', 3: 'The one who knows us best... Commandant, who should we send?', 4: '2'}
+69	1025		302							{2: 'How about me?', 3: '42', 4: 'Any one of you will do, right?', 5: '5002'}
+70	42	1026	301							{2: 'East General', 3: 'Better keep the human out of this, I reckon. Unexpected dangers lurk within!', 4: '1'}
+71	5002	4000	202							{1: '1', 2: '2'}
+72	4000	43	201							{1: '1', 2: '500166', 3: '1'}
+73	43	1026	301							{1: '1', 2: 'Lucia', 3: 'Right. Any one of us would easily pass this trial.', 4: '1'}
+74	1026		202							{1: '1'}
+75	1027		201							{1: '1', 2: '1031001', 3: '1'}
+76	44		301							{1: '1', 2: 'Liv', 3: 'In that case... can I do it?', 4: '1'}
+77	45		301							{3: 'As you wrestle with deciding who to send in, Liv raises her hand, her cheeks slightly blushing.'}
+78	46		301							"{2: 'Liv', 3: ""It's always been Lucia or Lee who leads the charge in the past, therefore... if I could..."", 4: '1'}"
+79	47		301							"{2: 'Liv', 3: ""And I've always been watching over everyone on the battlefield! That's why I won't fail when it comes to knowing my companions!"", 4: '1'}"
+80	1028		203							{1: '1', 2: '0.25', 3: '400'}
+81	1029		201							{1: '2', 2: '500166', 3: '1', 4: '-400'}
+82	48		301							"{1: '1', 2: 'Lucia', 3: ""I don't see why not, Commandant. Let's send Liv in."", 4: '2'}"
+83	1030		302							"{2: '(Nod)', 3: '1031', 4: ""Let's do it!"", 5: '1031'}"
+84	1031		202							{1: '1', 2: '2'}
+85	1032		201							{1: '1', 2: '500170'}
+86	49		301		1		AniZhuanchangBegin			{1: '1', 2: 'East General', 3: 'Very well... Let the trial begin! Scene change!', 4: '1'}

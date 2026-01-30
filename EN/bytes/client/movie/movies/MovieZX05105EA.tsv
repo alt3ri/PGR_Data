@@ -1,0 +1,98 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+2	2		401							{1: '1', 2: '5067'}
+3	3		301			DialogEnable				{3: 'Damp moonlight seeps through the dark trees.'}
+4	4		201							{1: '1', 2: '501036', 3: '4'}
+5	5		301							"{1: '1', 2: 'Vanessa', 3: ""The enemies aren't following us."", 4: '1'}"
+6	6		301							"{2: 'Vanessa', 3: ""What's the situation on your side?"", 4: '1'}"
+7	7		302							{2: 'No sign of the Red Tide here either...', 3: '8'}
+8	8		204							{1: '1', 2: '3'}
+9	9		301						250.0	"{2: 'Vanessa', 3: ""...I didn't ask you that."", 4: '1'}"
+10	10		401							{1: '2', 2: '2704'}
+11	11		203						250.0	{1: '1', 2: '0.25', 4: '-25', 5: '-25'}
+12	12		203						250.0	{1: '1', 2: '0.25', 4: '-50', 5: '-50'}
+13	13		203							{1: '1', 2: '0.25', 4: '-25', 5: '-100'}
+14	14		301							{3: 'Vanessa walks over, checks your protective suit, and relaxes a bit when the Punishing Virus concentration is down.'}
+15	15		204							{1: '1', 2: '1'}
+16	16		301							"{2: 'Vanessa', 3: ""Let's rest here for a bit."", 4: '1'}"
+17	17		301							{2: 'Vanessa', 3: 'Those things in the woods are relentless.', 4: '1'}
+18	18		202							{1: '1'}
+19	19		301							"{3: 'The forest where Luna is lies outside Aerospace City\'s ""Clean Zone"", so the enemies here are especially tough.'}"
+20	20		301							{3: 'On the way back, you were chased by Hetero-Creatures and barely made it out of the forest.'}
+21	21		302							{2: 'I...', 4: '...'}
+22	22		401							{1: '2', 2: '2907'}
+23	23		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+24	24		301							{3: 'Buzz—'}
+25	25		301				AniZhuanchangBegin			{3: 'Just as you start to speak, a loud buzzing fills your M.I.N.D. connection.'}
+26	26		401							{1: '2', 2: '9389034'}
+27	27		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+28	28		301			AniZhuanchangEnd				"{3: ""It's like a thousand bells ringing, stabbing pain in your ears. Your vision goes black as something disconnects from your mind.""}"
+29	29		301							"{3: 'It\'s ""The Shackles"".'}"
+30	30		302							{2: 'The Shackles are loosening...', 3: '31'}
+31	31		201							{1: '1', 2: '501036', 3: '4'}
+32	32		301				DialogDisable			{1: '1', 2: 'Vanessa', 3: '...?', 4: '1'}
+33	33		302							{2: 'Did you... hear that?', 3: '34'}
+34	34		302							{2: 'Bell tolls...', 3: '36'}
+35	35		401							{1: '2', 2: '2887'}
+36	36		301			DialogEnable				{3: 'Consciousness is buried in freezing mud, bells echoing through mind.'}
+37	37		301							{2: 'Vanessa', 3: '...', 4: '1'}
+38	38		202							{1: '1'}
+39	39		301							"{3: ""She rushes over, checks the protective suit's readings, and frowns.""}"
+40	40		301							{3: 'A needle goes in, the cold liquid mixing with hot blood. The sharp pain pulls back a small portion of consciousness.'}
+41	41		201							{1: '1', 2: '501036', 3: '4'}
+42	42		301							"{1: '1', 2: 'Vanessa', 3: ""You're heavily infected. It's probably just ringing in your ears."", 4: '1'}"
+43	43		301							"{3: ""No, it's not ringing in your ears.""}"
+44	44		302							"{2: ""It's Luna."", 3: '45'}"
+45	45		204							{1: '1', 2: '5'}
+46	46		301							{2: 'Vanessa', 3: '...', 4: '1'}
+47	47		204							{1: '1', 2: '4'}
+48	48		301							"{2: 'Vanessa', 3: ""It's just your imagination."", 4: '1'}"
+49	49		301							{3: 'In the blurry vision, the falling snow makes weird shapes as Vanessa purses her lips.'}
+50	50		301							"{2: 'Vanessa', 3: ""Break's over. We need to move, now."", 4: '1'}"
+51	51		202							{1: '1'}
+52	52		301				AniZhuanchangBegin			{3: 'After checking the route on a portable terminal, Vanessa grabs your arm and heads back to the rendezvous point before you can speak.'}
+53	53		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1122.jpg'}
+54	54		301			AniZhuanchangEnd				{3: 'After crossing a few snow hills, the lights of the rendezvous point come into view. A familiar figure runs toward you.'}
+55	55		201							{1: '1', 2: '500984', 3: '1'}
+56	56		301							{1: '1', 2: 'Emma', 3: 'Vanessa, Commandant!', 4: '1'}
+57	57		201							{1: '1', 2: '501036', 3: '4'}
+58	58		301							{1: '1', 2: 'Vanessa', 3: 'Did something happen back at the settlement?', 4: '1'}
+59	59		201							{1: '1', 2: '500984', 3: '1'}
+60	60		301							"{1: '1', 2: 'Emma', 3: ""According to the latest data, the Punishing Virus concentration at the rendezvous point has spiked. It's above the survival threshold."", 4: '1'}"
+61	61		301							"{2: 'Emma', 3: ""Two human groups are still inside... they haven't been evacuated..."", 4: '1'}"
+62	62		302							"{2: 'Evacuate now.', 3: '63', 4: ""We can't wait any longer."", 5: '63'}"
+63	63		301				DialogDisable			"{2: 'Emma', 3: ""But the vehicles from Aerospace City haven't returned yet..."", 4: '1'}"
+64	64		302							"{2: ""Get the vehicles' coordinates. Head in their direction."", 3: '65'}"
+65	65		302							{2: 'Pack up and leave, on foot, now.', 3: '66'}
+66	66		301			DialogEnable				{2: 'Emma', 3: '...Understood.', 4: '1'}
+67	67		301							{2: 'Emma', 3: 'Patrol teams, help with the evacuation, now!', 4: '1'}
+68	68		202							{1: '1'}
+69	69		301							{3: 'The command is clear, prompting the remaining humans to move out.'}
+70	70		301							{3: 'Leaving behind heavy gear, the residents grab essentials and rush out, confused.'}
+71	71		301				AniZhuanchangBegin			"{3: ""With no time to explain, everyone heads toward Aerospace City with the patrol's help.""}"
+72	72		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1121.jpg', 3: '0', 4: '1', 5: '0.5'}
+73	73		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'The lights around the Great Tombstone are going out one by one.'}
+74	74		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5101_04.jpg'}
+75	75		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1121.jpg', 3: '1', 4: '0', 5: '0'}
+76	76		301			AniZhuanchangEnd				{3: 'Standing at the edge of the camp, you stare at the forest where Luna was, a faint buzzing lingering in your M.I.N.D. connection.'}
+77	77		401							{1: '2', 2: '2907'}
+78	78		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+79	79		301							{3: 'Suddenly, the buzzing glitches. Emma pauses, looking toward the distant mountains and forest.'}
+80	80		201							{1: '1', 2: '500984', 3: '1'}
+81	81		301							{1: '1', 2: 'Emma', 3: '...?', 4: '1'}
+82	82		301							"{2: 'Emma', 3: ""What's going on..."", 4: '1'}"
+83	83		401							{1: '2', 2: '4421'}
+84	84		301							{3: 'Then, her device vibrates, pulling her attention back.'}
+85	85		301							{2: 'Emma', 3: 'Hmm?', 4: '1'}
+86	86		302							{2: '...', 3: '87'}
+87	87		301							"{2: 'Emma', 3: ""【kuroname】, the Punishing Virus concentration's dropping, we..."", 4: '1'}"
+88	88		302							{2: 'Are we done packing?', 3: '89'}
+89	89		301							"{2: 'Emma', 3: ""Huh? I'm ready, but the Punishing Virus concentration..."", 4: '1'}"
+90	90		302							"{2: ""Let's go then. We're running out of time."", 3: '91'}"
+91	91		301				AniZhuanchangBegin			{3: 'Emma stops, interrupted again. Something clicks.'}
+92	92		202				DialogDisable			{1: '1', 6: '1'}
+93	93		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1107.jpg'}
+94	94		401							{1: '2', 2: '5165'}
+95	95		104			AniZhuanchangEnd				{1: '0|0|-300', 2: '6'}
+96	96		301			DialogEnable				"{3: ""Avoiding Emma's eyes, you look back at the mountains. The forest is quiet, the snow and dead branches composing a mournful song.""}"
+97	97		301		1		AniZhuanchangBegin			{3: 'Regardless, that faint light has gone out in the dark.'}

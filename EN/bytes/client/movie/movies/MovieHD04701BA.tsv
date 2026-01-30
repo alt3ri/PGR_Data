@@ -1,0 +1,136 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory670.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		401							{1: '2', 2: '2915'}
+4	4		301			DialogEnable	DialogDisable			{3: 'The heart of Constellia glows with bright lights, filled with the hum of mechanoid vendors and the steady click of turning gears. Their stalls are piled with unusual components, handcrafted pieces, and carefully restored relics.'}
+5	5		306						250.0	{1: '1'}
+6	6		502						500.0	{1: 'RImgBg1BlowUp'}
+7	7		201						50.0	{1: '1', 2: '500340', 4: '-600', 7: '1'}
+8	8		203						500.0	{1: '1', 2: '2', 3: '-600', 5: '-800'}
+9	9		202						250.0	{1: '1'}
+10	10		201						50.0	{1: '2', 2: '500969', 4: '600', 7: '1'}
+11	11		203						500.0	{1: '2', 2: '2', 3: '600', 5: '-800'}
+12	12		202						250.0	{1: '2'}
+13	13		201						50.0	{1: '3', 2: '501025', 4: '-300', 7: '1'}
+14	14		203						500.0	{1: '3', 2: '2', 3: '-300', 5: '-800'}
+15	15		202						250.0	{1: '3'}
+16	16		201						50.0	{1: '4', 2: '500342', 4: '300', 7: '1'}
+17	17		203						500.0	{1: '4', 2: '2', 3: '300', 5: '-800'}
+18	18		202							{1: '4'}
+19	19		301			DialogEnable	DialogDisable			{3: 'The air carries a faint hint of machine oil blended with the sweet scent of energy fluid. Stalls of every kind tempt passersby to linger.'}
+20	20		402							{1: '2915'}
+21	21		505							{1: 'RImgBg1BlowUp'}
+22	22		302							{2: 'So full of imagination...', 3: '23', 4: 'Even the decorations on these mechanoid stalls have their own unique style.', 5: '23'}
+23	23		306							
+24	24		201							{1: '1', 2: '500568', 3: '10', 4: '-800'}
+25	25		203						200.0	{1: '1', 2: '0.2'}
+26	26		301			DialogEnable				"{1: '1', 2: 'Lee', 3: ""According to my scans, the market's energy efficiency is 17.3% higher than expected. Some stalls even hide defensive structures under designs that fit perfectly with the festival's atmosphere..."", 4: '1'}"
+27	27		302							{2: 'Lee? When did you get here?', 3: '28', 4: '...! How do you move without a sound?', 5: '28'}
+28	28		204							{1: '1'}
+29	29		301							{2: 'Lee', 3: 'Is that so strange? I like visiting markets too.', 4: '1'}
+30	30		302							"{2: ""That's rare. I thought you'd see this kind of activity as a waste of time."", 3: '31'}"
+31	31		204							{1: '1', 2: '10'}
+32	32		301							"{2: 'Lee', 3: ""Efficiency isn't the only measure. Observing how individuals behave and trade is valuable data too. And... today is a special day."", 4: '1'}"
+33	33		302							"{2: ""Ah, the Double Seventh Festival... You're right, even the air feels different."", 3: '34'}"
+34	34		204							{1: '1'}
+35	35		301							"{2: 'Lee', 3: ""More important than the festival is that you're here. Last Double Seventh, you were so buried in your report that someone had to feed you cake. Have you forgotten?"", 4: '1'}"
+36	36		301							"{3: ""Lee's gaze is bright, his expression serious yet touched with the faintest trace of expectation as he looks at you.""}"
+37	37		302							{2: 'Do you want to pick out a souvenir?', 3: '38'}
+38	38		202							{1: '1'}
+39	39		301							"{3: ""Lee doesn't answer right away. His eyes settle on a small, unassuming stall at the edge of the square, run by a somewhat bulky mechanoid built from several old optical lenses and metal arms.""}"
+40	40		201							{1: '1', 2: '500568'}
+41	41		301							{1: '1', 2: 'Lee', 3: 'Forget it. Come with me.', 4: '1'}
+42	42		302							{2: 'Where to?', 3: '43'}
+43	43		202							{1: '1'}
+44	44		301							{3: 'He takes your wrist and strides forward, and if you look closely, his habitually faulty cooling system is glowing red again.'}
+45	45		201							{1: '1', 2: '500568', 3: '13'}
+46	46		301				AniZhuanchangBegin			"{1: '1', 2: 'Lee', 3: ""You'll find out soon. It's rare we have time off, so let's not waste it."", 4: '1'}"
+47	47		202							{1: '1', 6: '1'}
+48	48		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory802.jpg'}
+49	49		301			AniZhuanchangEnd				{3: 'The two of you arrive at the quiet stall. The clumsy mechanoid vendor turns its head slowly toward you, as if waking from a long sleep.'}
+50	50		201							{1: '1', 2: '500929'}
+51	51		301							{1: '1', 2: 'Mechanoid Vendor', 3: 'Welcome. This stall operates on equivalent exchange. I accept high-precision items, rare elements, or... perhaps interesting data?', 4: '1'}
+52	52		202							{1: '1'}
+53	53		301							{3: 'Lee steps forward and picks up a fist-sized chunk of blue metal, its surface lined with natural crystalline patterns. As he studies it, faint streams of golden data light flow from his fingertips.'}
+54	54		201							{1: '1', 2: '500929'}
+55	55		301							{1: '1', 2: 'Mechanoid Vendor', 3: 'This is a stabilized memory alloy fragment. It comes from the core protective layer of a probe, able to store information securely and resist detection by standard scans.', 4: '1'}
+56	56		201							{1: '1', 2: '500568'}
+57	57		301							{1: '1', 2: 'Lee', 3: 'Hmm. Non-standard engraving marks, stable storage structure, excellent interference resistance. The origin is unknown, but I detect no signs of danger...', 4: '1'}
+58	58		201							{1: '1', 2: '500929'}
+59	59		301							{1: '1', 2: 'Mechanoid Vendor', 3: 'You recognize its value. What will you trade for it?', 4: '1'}
+60	60		201							{1: '1', 2: '500568'}
+61	61		301							{1: '1', 2: 'Lee', 3: 'I can offer an optimized communication core, compatible with your outdated optical sensor array. It will increase bandwidth and interference resistance by 37%, and it can also improve the stability of your central processing unit.', 4: '1'}
+62	62		202							{1: '1'}
+63	63		401							{2: '5284'}
+64	64		301							"{3: ""Before he even finishes, the mechanoid vendor's lens flashes rapidly, accompanied by the buzzing sound of calculations.""}"
+65	65		402							{1: '5284'}
+66	66		201							{1: '1', 2: '500929'}
+67	67		301							{1: '1', 2: 'Mechanoid Vendor', 3: 'D-deal! Exchange accepted. Please take the memory alloy.', 4: '1'}
+68	68		202							{1: '1'}
+69	69		301							"{3: 'The mechanoid vendor extends a mechanical arm, carefully picking up the ""Void Prism"" shard while sliding the blue memory alloy toward Lee. Lee nods in thanks and places the alloy in his palm.'}"
+70	70		301							{3: 'He seems to store something inside it before handing it to you.'}
+71	71		302							{2: '(Take the alloy)', 3: '72'}
+72	72		301							{3: 'The metal glimmers with a shifting light, radiating a strange sense of stability.'}
+73	73		302							"{2: 'Thank you.', 3: '74', 4: 'Is there something special about it?', 5: '74', 6: 'Can it really ""store information securely"" like the vendor claimed?', 7: '74'}"
+74	74		201							{1: '1', 2: '500568'}
+75	75		301							{1: '1', 2: 'Lee', 3: 'The vendor clearly overstated its capabilities. Still, small creations like this from the late Golden Age have no means of restoration left. These days, their worth lies more in collection than in practical use.', 4: '1'}
+76	76		302							{2: 'So what did you just store in it?', 3: '77'}
+77	77		301							{2: 'Lee', 3: 'I stored... Actually, you first. What would you want to store?', 4: '1'}
+78	78		302							"{2: ""If it were me, I'd want to store this very moment tonight."", 3: '79'}"
+79	79		301							"{2: 'Lee', 3: ""It can't capture all that. At most it can only..."", 4: '1'}"
+80	80		202							{1: '1'}
+81	81		301							{3: 'But you gesture toward the neon?lit night sky, as if gathering in that motion the sweet hint in the air and the lively calls of the vendors around you.'}
+82	82		302							"{2: ""Wouldn't this moment with you be one worth keeping?"", 3: '83'}"
+83	83		201							{1: '1', 2: '500568', 3: '7'}
+84	84		301							{1: '1', 2: 'Lee', 3: '...', 4: '1'}
+85	85		301							{3: 'Lee watches you, pausing for half a second before speaking, his tone just a little slower than usual.'}
+86	86		301							{2: 'Lee', 3: 'It can only store a few characters at most. But some memories and feelings deserve to be safeguarded, untouched by time or disaster.', 4: '1'}
+87	87		301							{3: 'Realizing he spoke a little too plainly, Lee adds a quick follow?up.'}
+88	88		204							{1: '1', 2: '10'}
+89	89		301							{2: 'Lee', 3: 'Either way, as a small data storage unit, it has more... more tactical value than an ordinary gift.', 4: '1'}
+90	90		302							"{2: ""That's so like you."", 3: '91', 4: 'Even your Double Seventh gift has to be both practical and tactical?', 5: '91', 6: 'So what exactly did you put inside it?', 7: '91'}"
+91	91		204							{1: '1', 2: '6'}
+92	92		301							"{2: 'Lee', 3: ""That's irrelevant. Do you like it or not?"", 4: '1'}"
+93	93		203							{1: '1', 2: '0.25', 5: '-50'}
+94	94		301				DialogDisable			{3: 'Lee turns his head aside, enclosing your fingers around the small alloy piece with his own.'}
+95	95		302							{2: 'I love it.', 3: '96'}
+96	96		302							"{2: ""I'll treasure this memory and keep it safe."", 3: '97'}"
+97	97		401							{2: '5388'}
+98	98		306							{1: '1'}
+99	99		202							{1: '1'}
+100	100		301			DialogEnable				{3: 'Just then, a commotion breaks out at a nearby stall selling holographic fireworks. One of the projectors overloads, and the giant pink heart it was displaying begins to flicker and warp before emitting a grating noise.'}
+101	101		402							{1: '5388'}
+102	102		401							{2: '4536'}
+103	103		301							"{3: ""The mechanoid vendor flails with its mechanical arms, trying to catch the parts that keep erupting into the air, but it's no use. A metal plate breaks loose and comes crashing toward you.""}"
+104	104		306							
+105	105		401							{2: '202'}
+106	106		201							{1: '1', 2: '500568', 3: '5'}
+107	107		301							{1: '1', 2: 'Lee', 3: 'Get back, Commandant!', 4: '1'}
+108	108		202							{1: '1', 6: '1'}
+109	109		401							{2: '4044'}
+110	110		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.3'}
+111	111		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '0'}
+112	112		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+113	113		301							{3: 'Lee takes a quick step back, glances over his shoulder at you, then lunges back to shield you.'}
+114	114		401							{2: '2756'}
+115	115		301							{3: 'Metal plates crash down and explosions echo around you, but beneath the noise, a deliberately hushed voice slips quietly into your ear.'}
+116	116		302							{2: '...', 3: '117'}
+117	117		401							{2: '36'}
+118	118		401							{2: '839'}
+119	119		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory802.jpg', 3: '0', 4: '1', 5: '0.3'}
+120	120		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory802.jpg', 3: '1', 4: '0', 5: '0'}
+121	121		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory802.jpg'}
+122	122		301			RImgBg1Shake				{3: 'Only after the last clatter of falling metal does Lee lower the arm shielding your head.'}
+123	123		301							{3: 'The devices that went haywire have already been shut down, now releasing thin trails of white smoke as they sit silently facing the two of you in the street.'}
+124	124		401							{2: '6226'}
+125	125		201							{1: '1', 2: '500568'}
+126	126		301							"{1: '1', 2: 'Lee', 3: ""Ahem. I didn't expect something like that to happen here. Are you alright, Commandant?"", 4: '1'}"
+127	127		302							"{2: ""I'm fine."", 3: '128', 4: 'Lee, what did you just say...?', 5: '128'}"
+128	128		204							{1: '1', 2: '7'}
+129	129		301							{2: 'Lee', 3: 'You heard me?', 4: '1'}
+130	130		302							"{2: 'I heard you.', 3: '131', 4: ""I didn't quite catch that. Say it again."", 5: '131', 6: ""It's not enough to have it stored in the alloy. Tell me yourself."", 7: '131'}"
+131	131		204							{1: '1', 2: '1'}
+132	132		301							"{3: ""The corner of Lee's mouth curves into the faintest smile as his gaze drifts back to the dazzling lights and the simulated galaxy overhead.""}"
+133	133		204							{1: '1', 2: '1'}
+134	134		301							{2: 'Lee', 3: '...Come closer.', 4: '1'}
+135	135		301		1		AniZhuanchangBegin			{2: 'Lee', 3: 'If you want to hear it, I can say it as many times as you like.', 4: '1'}

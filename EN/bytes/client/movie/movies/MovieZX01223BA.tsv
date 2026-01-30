@@ -1,0 +1,41 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory180.png'}
+2	2		401							{1: '1', 2: '202'}
+3	3		301			DialogEnable				{2: 'Huaxu', 3: 'The Babylonia members and the Ascendants have both arrived near the Observatory. Dispatching guards now...'}
+4	4		201							{1: '1', 2: '500150'}
+5	5		301							{1: '1', 2: 'Qu', 3: 'Send guards to clean out the Corrupted before they damage the relics.', 4: '1'}
+6	6		301							{2: 'Huaxu', 3: 'That course of action will lower our chances of victory.'}
+7	7		301							{2: 'Qu', 3: 'Those relics are a precious part of Kowloong. Go and give the orders, Huaxu.', 4: '1'}
+8	8		301							{2: 'Huaxu', 3: 'Understood.'}
+9	9		301							{2: 'Qu', 3: 'If they want to climb up here to the Observatory, let them.', 4: '1'}
+10	10		301							{2: 'Qu', 3: 'In this very yard...', 4: '1'}
+11	11		301				AniZhuanchangBegin			{2: 'Qu', 3: 'I will destroy them all.', 4: '1'}
+12	12		202							{1: '1', 6: '1'}
+13	13		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory176.png'}
+14	14		201							{1: '1', 2: '500101'}
+15	15		301			AniZhuanchangEnd				{1: '1', 2: 'Gabriel', 3: '...This leads up to the Observatory.', 4: '1'}
+16	16		202							{1: '1'}
+17	17		301							{3: 'After a long trek, Gabriel finally arrives at the base of the Observatory. Here inside the light wall, free of the flames of war, Gabriel is almost like a theater actor waiting for the audience.'}
+18	18		201							{1: '1', 2: '500101'}
+19	19		301							"{1: '1', 2: 'Gabriel', 3: ""The Corrupted I've brought should create enough of a diversion. This tower should hold what I seek."", 4: '1'}"
+20	20		202							{1: '1'}
+21	21		301							{3: 'The Gestalt-like creation must be inside, but the tower will certainly be littered with traps.'}
+22	22		301							{3: 'Direct confrontation does not concern Gabriel, but unforeseen circumstances—the prospect of disappointing Luna—does.'}
+23	23		301				AniZhuanchangBegin			{3: 'And so, he hides.'}
+24	24		201							{1: '1', 2: '1031001'}
+25	25		301			AniZhuanchangEnd				"{1: '1', 2: 'Liv', 3: ""Commandant, we're not far from the tower's base now."", 4: '1'}"
+26	26		201							{1: '1', 2: '500110', 3: '4'}
+27	27		301							{1: '1', 2: 'Ayla', 3: 'No guards... Are they welcoming us in?', 4: '1'}
+28	28		201							{1: '1', 2: '500026'}
+29	29		301							{1: '1', 2: 'Lee', 3: 'More like a display of arrogance.', 4: '1'}
+30	30		201							{1: '1', 2: '500169'}
+31	31		301							{1: '1', 2: 'Prime', 3: 'Stop right there, invaders!', 4: '1'}
+32	32		201							{1: '1', 2: '500110', 3: '4'}
+33	33		301							"{1: '1', 2: 'Ayla', 3: ""Still tailing us, huh... Commandant, if we go in like this, we'll get sandwiched!"", 4: '1'}"
+34	34		302							{2: 'Defeat the enemies first!', 3: '35', 4: 'Gotta get in the tower now.', 5: '37'}
+35	35		201							{1: '1', 2: '500026'}
+36	36		301							"{1: '1', 2: 'Lee', 3: ""We've left most of them behind already. Now let's take care of the rest here!"", 4: '1'}"
+37	37		201							{1: '1', 2: '1031001'}
+38	38		301							"{1: '1', 2: 'Liv', 3: ""Can't afford to get stalled... I think I just caught a glimpse of Gabriel."", 4: '1'}"
+39	39		201							{1: '1', 2: '500110'}
+40	40		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Ayla', 3: ""Okay, I'll be the decoy, Lee and Liv can get rid of them."", 4: '1'}"

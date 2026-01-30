@@ -1,0 +1,378 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory43.jpg'}
+2	2		401							{1: '1', 2: '209'}
+3	3		301			DialogEnable				"{3: ""After their brief conversation, the ghost decides to personally guide you to meet Mammon. It chatters away the entire way, explaining this world's rules to its unexpected visitor.""}"
+4	4		201							{1: '1', 2: '500853'}
+5	5		301							{1: '1', 2: '??', 3: 'We all came here carrying too many regrets. To make our wishes come true, we willingly sold our souls to Mammon in exchange for the right to stay here forever.', 4: '1'}
+6	6		301							"{2: '??', 3: ""Take me, for instance. I used to be an architect, but spent my whole life building nothing but cafeterias and bathrooms. Only after coming here did I finally get to experience what it's like being the one in charge!"", 4: '1'}"
+7	7		202							{1: '1', 6: '1'}
+8	8		306							{1: '1'}
+9	9		401							{1: '2', 2: '4533', 3: '0.5'}
+10	10		301							{3: 'As he talks, he shifts his head through various forms—clocks, vases, even locomotive engines. The chimney sprouting from his neck even releases real smoke.'}
+11	11		306							
+12	12		201							{1: '1', 2: '500853'}
+13	13		301							{1: '1', 2: '??', 3: 'What about you, stranger? What is your wish?', 4: '1'}
+14	14		302							{2: 'None of your business.', 3: '15', 4: 'My wish is to return to the real world.', 5: '15'}
+15	15		301							"{2: '??', 3: ""Oh, come on, don't be so dull! Everyone's got regrets in life."", 4: '1'}"
+16	16		306							{1: '1'}
+17	17		202							{1: '1', 6: '1'}
+18	18		401							{1: '2', 2: '2625', 3: '1'}
+19	19		301							"{3: ""This time, he shifts his head into a large clock. It's a brass pendulum that swings endlessly inside its transparent glass case, ticking away with every word he speaks.""}"
+20	20		306							
+21	21		201							{1: '1', 2: '500853'}
+22	22		301							"{1: '1', 2: '??', 3: ""Come on, tell me. I won't laugh at you."", 4: '1'}"
+23	23		302							"{2: ""...I've lost my memories of the past."", 3: '24'}"
+24	24		402							{1: '2625'}
+25	25		301							{3: 'The wildly swinging pendulum suddenly stops dead.'}
+26	26		302							"{2: ""If I could get my memories back, then I'd know what I really want, right?"", 3: '27'}"
+27	27		301				DialogDisable			{2: '??', 3: '...Wait, stranger. I might actually be able to help you!', 4: '1'}
+28	28		306							{1: '1'}
+29	29		401						200.0	{1: '2', 2: '4512'}
+30	30		203							{1: '1', 2: '0.3', 3: '0', 4: '-50', 5: '-150'}
+31	31		301			DialogEnable				{3: 'With a loud pop, his head transforms into a magnifying glass, and he leans in close, as if trying to peer into the very depths of your soul.'}
+32	32		306							
+33	33		301							"{2: '??', 3: ""Have you ever heard of an Inner World? If you just sit still and meditate, this realm will manifest your heart's deepest desires as a real, tangible place."", 4: '1'}"
+34	34		301							"{2: '??', 3: ""Some people's Inner World is a casino, others a library, or a movie theater... You can see their deepest desires reflected to an extent in these places."", 4: '1'}"
+35	35		301				DialogDisable			"{2: '??', 3: ""If you really can't remember anything from your past, then give this a shot! I think this might be your best bet."", 4: '1'}"
+36	36		302							"{2: ""...Let's do that then."", 3: '37', 4: ""...I think it's worth a try."", 5: '37'}"
+37	37		202							{1: '1', 6: '1'}
+38	38		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab', 2: '2'}
+39	39		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+40	40		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+41	41		401							{1: '1', 2: '36'}
+42	42		301			DialogEnable	DialogDisable			"{3: 'Under the magnifying glass\'s intense scrutiny, you quietly close your eyes and begin to meditate on your brief ""existence.""'}"
+43	43		401						400.0	{1: '2', 2: '9327108', 3: '1'}
+44	44		401							{1: '2', 2: '1226'}
+45	45		401							{1: '2', 2: '213'}
+46	46		304							{1: 'You begin to awaken from a devastating flood, and searing flames tear through chaos, lifting you from the depths of the abyss.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 7: '-2'}
+47	47		401							{1: '2', 2: '4834'}
+48	48		304							{1: 'Then, from the flowing waters, you grasp an iron lance. The metal that should be cold burns with such fierce heat that it threatens to scorch your flesh.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 7: '-1'}
+49	49		304							{1: 'The instant you grip the lance, a phrase both strange and familiar crashes into your consciousness.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 7: '-1', 9: '1'}
+50	50		401							{1: '2', 2: '2595'}
+51	51		307							{1: 'Blood Covenant', 3: '100', 4: 'ff4e4eff', 6: '1'}
+52	52		301							{3: 'Blood Covenant'}
+53	53		307							{2: '1'}
+54	54		304							{1: 'Through this, you remember your identity, your mission...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 7: '-2'}
+55	55		304							{1: '...and that name buried in the depths of memory, one that follows you like a shadow even when forgotten—', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 7: '-1', 9: '1'}
+56	56		401							{1: '2', 2: '2887', 3: '1'}
+57	57		307							{1: 'Gray Raven.', 3: '100', 4: 'DDDDDD', 6: '1'}
+58	58		301							{3: 'Gray Raven.'}
+59	59		307							{2: '1'}
+60	60		402							{1: '213'}
+61	61		401							{1: '2', 2: '4387'}
+62	62		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+63	63		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTempleBattle/FxUiTempleBattleHuaban.prefab', 2: '2'}
+64	64		401							{1: '1', 2: '6167'}
+65	65		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1118.jpg'}
+66	66		401							{1: '2', 2: '5786'}
+67	67		301			DialogEnable				{3: 'The moment your eyes open, countless bright, delicate petals drift through the air.'}
+68	68		301							{3: 'That memory transports everyone present into a vast sea of flowers.'}
+69	69		301							{3: 'Fresh fragrance drifts through the air, evoking early summer after rain. Dew glints as the soft and pale morning light breaks.'}
+70	70		301							{3: 'Vibrant flowers bloom in wild abundance among the branches, their colors dancing together, while towering canopies block out the sky above. This space transcends the limits of season and latitude. Every plant species from across the Scorched Borderland has miraculously gathered here in one place.'}
+71	71		401							{1: '2', 2: '2704', 3: '0.5'}
+72	72		402							{1: '5786'}
+73	73		104							{1: '0|0|-100', 2: '0.4'}
+74	74		301				DialogDisable			{3: 'You take a step forward and hear a shocked gasp from behind.'}
+75	75		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTempleBattle/FxUiTempleBattleHuaban.prefab'}
+76	76		201							{1: '1', 2: '500853'}
+77	77		502							{1: 'DialogEnable'}
+78	78		301			DialogShake				"{1: '1', 2: '??', 3: ""...No, that's impossible! Illusions shouldn't be able to create living things!"", 4: '1'}"
+79	79		301							{2: '??', 3: 'These flowers, this grass, all these trees. Where did they come from?', 4: '1'}
+80	80		301							"{3: ""The ghost trails behind, his form dissolving back into shapeless shadow after being stunned by the impossible wonder he's witnessed.""}"
+81	81		302							"{2: ""I don't know."", 3: '82', 4: 'So this is my... ""Inner World""?', 5: '82'}"
+82	82		301							"{2: '??', 3: '...Well, stranger, I may not understand how any of this works, but I\'ll give you this—you really are one hell of a selfless ""saint.""', 4: '1'}"
+83	83		203							{1: '1', 2: '0.5', 3: '0', 4: '-100', 5: '-50'}
+84	84		401							{1: '2', 2: '2936', 3: '1'}
+85	85		301							{3: 'He settles onto the ground and plucks a wildflower, turning it over in his hands with careful attention, his voice thick with nostalgia.'}
+86	86		301							{2: '??', 3: 'Everyone else wishes to fix the regrets from their life, but what about you? Admiring flowers and grass?', 4: '1'}
+87	87		301				DialogDisable			"{2: '??', 3: ""I can't figure you out, but I have to admit that you're almost too pure for your own good."", 4: '1'}"
+88	88		401							{1: '2', 2: '2936'}
+89	89		401							{1: '2', 2: '2930', 3: '1'}
+90	90		203						600.0	{1: '1', 2: '0.5', 3: '0', 4: '0', 5: '0'}
+91	91		202							{1: '1'}
+92	92		301			DialogEnable				{3: 'The ghost tosses the flower aside and drifts toward the shimmering lake, where his wavering shadow is reflected in the still water below.'}
+93	93		402							{1: '2930'}
+94	94		201							{1: '18', 2: '500853', 4: '-100', 6: '100'}
+95	95		301							"{1: '1', 2: '??', 3: ""I love this place. If you weren't in such a rush to keep moving, I could spend centuries here."", 4: '18'}"
+96	96		202			DialogDisable				{1: '18', 6: '1'}
+97	97		302							{2: '...', 3: '98'}
+98	98		301			DialogEnable	DialogDisable			"{3: 'But in this moment, your mind wanders to a different ""scene"" you witnessed not long ago.'}"
+99	99		302							"{2: 'Can I ask you something? Have you ever seen anyone whose ""scene"" was nothing but snow?', 3: '100'}"
+100	100		104					50.0	500.0	{1: '50|0|-200', 2: '0.5'}
+101	101		201							{1: '1', 2: '500853'}
+102	102		301			DialogEnable				{1: '1', 2: '??', 3: 'Snow?', 4: '1'}
+103	103		301							"{3: ""The dark figure seems to shake his head within the shimmering halo of light cast by the lake's surface.""}"
+104	104		301							"{2: '??', 3: 'I haven\'t encountered one myself, but if that kind of ""scene"" really exists...', 4: '1'}"
+105	105		301				AniZhuanchangBegin			{2: '??', 3: 'Then that person must be pretty lonely.', 4: '1'}
+106	106		202							{1: '1'}
+107	107		104							{1: '0|0|0', 2: '0'}
+108	108		401							{1: '1', 2: '36'}
+109	109		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory25.jpg'}
+110	110		401							{1: '1', 2: '5042'}
+111	111		301			AniZhuanchangEnd				{3: 'The talkative ghost guides you and the raven to another grand hall. Much like the spiral graveyard you left behind, this place radiates the same oppressive stillness. Towering architecture with extravagant design completely lacks any traces of life.'}
+112	112		301							{3: 'Every corner of the hall is crammed with bizarre trinkets—windmills, floral hair clips, and oddly-shaped paper cranes. Whoever rules this place clearly has a serious hoarding problem.'}
+113	113		201							{1: '1', 2: '500853'}
+114	114		301			DialogShake				"{1: '1', 2: '??', 3: '""Mammon""! News, big news! We\'ve got a human who fell right into our realm and has absolutely no clue how things work around here!', 4: '1'}"
+115	115		202							{1: '1', 6: '1'}
+116	116		201							{1: '1', 2: '500513', 3: '2'}
+117	117		301							{1: '1', 3: 'Hemmed in by countless trinkets, the figure on the throne slowly lifts its head. But those tired eyes look past you entirely, fixing instead on Morigan perched on your shoulder.'}
+118	118		301							"{2: '""Former Mammon""', 3: 'Morigan... Why are you here?', 4: '1'}"
+119	119		202							{1: '1', 6: '1'}
+120	120		201							{1: '18', 2: '501283'}
+121	121		301							{1: '1', 2: 'Morigan', 3: 'Caw, long story short. The new Mammon tossed us in here.', 4: '18'}
+122	122		301							{2: 'Morigan', 3: 'After you hid yourself up in this godforsaken realm, the Scorched Borderland went into chaos. Even the Cardinal Deity got kicked off his throne, but since the Golden Law has its claws in every mineral deposit on the planet, Mammon coins are still functional.', 4: '18'}
+123	123		301							{2: 'Morigan', 3: 'Eventually, Sanctuary got fed up with the whole mess and decided to seize both the City of No Return and the coin-forging furnaces. They manipulated some young girl to do their dirty work, but she turned the tables on them, killed Raphael, and claimed your throne as the new Mammon.', 4: '18'}
+124	124		202							{1: '18', 6: '1'}
+125	125		201							{1: '1', 2: '500513'}
+126	126		301							"{1: '1', 2: '""Former Mammon""', 3: 'Ah, I see... So the City of No Return has found itself a new ruler as well...', 4: '1'}"
+127	127		202							{1: '1', 6: '1'}
+128	128		201							{1: '18', 2: '501283'}
+129	129		301							"{1: '1', 2: 'Morigan', 3: ""Yep, and here's the cherry on top. Your physical body kicked the bucket completely! So thoroughly gone it didn't even need a funeral!"", 4: '18'}"
+130	130		202							{1: '18', 6: '1'}
+131	131		201							{1: '1', 2: '500513'}
+132	132		301							"{1: '1', 2: '""Former Mammon""', 3: ""But the law's influence will eventually force the new Mammon to make the same choice I did."", 4: '1'}"
+133	133		302							{2: 'Hold on. You two know each other?', 3: '134'}
+134	134		202							{1: '1'}
+135	135		301							"{3: ""You can't understand the cryptic exchanges between them and have no choice but to interrupt.""}"
+136	136		201							{1: '1', 2: '500513', 3: '2'}
+137	137		301							"{1: '1', 2: '""Former Mammon""', 3: ""Ancient history from centuries ago. It's nothing worth noting."", 4: '1'}"
+138	138		301				DialogDisable			"{2: '""Former Mammon""', 3: ""I get the gist of what's happening. You're here looking for a way out of this realm, right?"", 4: '1'}"
+139	139		202							{1: '1'}
+140	140		202							{1: '1', 6: '1'}
+141	141		401						300.0	{1: '2', 2: '4895'}
+142	142		401							{1: '2', 2: '4045'}
+143	143		301			DialogEnable				{3: 'The elegant host raises a hand with a gentle flourish, and a steaming pot of fragrant herbal tea appears on the table alongside a plate of gleaming millet seeds.'}
+144	144		201							{1: '1', 2: '500513', 3: '1'}
+145	145		301							"{1: '1', 2: '""Former Mammon""', 3: ""Please, sit down. Let's talk while we have some tea."", 4: '1'}"
+146	146		302							{2: '...', 3: '147', 4: '(Stand still)', 5: '147'}
+147	147		202							{1: '1'}
+148	148		401							{1: '2', 2: '759'}
+149	149		301							"{3: ""Noticing you aren't moving, the raven swoops closer and hungrily pecks at the millet scattered on the plate.""}"
+150	150		201							{1: '18', 2: '501283'}
+151	151		301							"{1: '1', 2: 'Morigan', 3: ""Don't worry! Munch, munch... Everything I create in this realm is absolutely top-notch, except I can't make anything with a soul, of course!"", 4: '18'}"
+152	152		202							{1: '18', 6: '1'}
+153	153		201							{1: '1', 2: '500513', 3: '2'}
+154	154		301							"{1: '1', 2: '""Former Mammon""', 3: ""But the thrill of getting everything for nothing is too intoxicating. Once you've had your desires endlessly satisfied in this realm, no one can find the strength to leave on their own."", 4: '1'}"
+155	155		202							{1: '1', 6: '1'}
+156	156		401							{1: '2', 2: '2750'}
+157	157		306							{1: '1'}
+158	158		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+159	159		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory615.jpg', 3: '0', 4: '0.5', 5: '2'}
+160	160		401							{1: '2', 2: '4536', 3: '0.5'}
+161	161		104							{1: '-50|0|-450', 2: '0', 4: '4'}
+162	162		301				DialogDisable			{3: 'The elegant, purple-haired beauty snaps their fingers, and tens of thousands of paper cranes suddenly fall, carpeting the entire hall in a dense, fluttering blanket.'}
+163	163		401							{1: '2', 2: '4536'}
+164	164		104						1500.0	{1: '-50|-200|-450', 2: '2', 4: '4'}
+165	165		401							{1: '2', 2: '4895', 3: '1'}
+166	166		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+167	167		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory615.jpg', 3: '0', 4: '0', 5: '0'}
+168	168		205							{1: '1004', 3: '1', 4: '1', 5: '0'}
+169	169		301			DialogEnable				{3: 'The paper cranes pour down like heavy rain, steady and relentless, accumulating until Morigan nearly drowns beneath the mounting pile. The host waves her hand again, and every last white trinket vanishes without a trace.'}
+170	170		306							
+171	171		201							{1: '1', 2: '500513', 3: '1'}
+172	172		301							"{1: '1', 2: '""Former Mammon""', 3: ""Don't worry. Anyone who leaves this realm through their own willpower can never return here again, whether they try to or get dragged in against their will."", 4: '1'}"
+173	173		202							{1: '1'}
+174	174		301							"{3: ""Despite their host's sincere tone, you can't shake the feeling that this Former Mammon has an ulterior motive, and that all this hospitality is leading somewhere.""}"
+175	175		301							{3: 'Sure enough, the former Golden King shows their cards with the very next words.'}
+176	176		201							{1: '1', 2: '500513', 3: '2'}
+177	177		301				DialogDisable			"{1: '1', 2: '""Former Mammon""', 3: 'I can tell you how to escape, but I also need you to do something for me.', 4: '1'}"
+178	178		302							{2: 'We really need to get back right away. We have to stop the new Mammon.', 3: '179'}
+179	179		302							{2: 'What do you need?', 3: '180'}
+180	180		204							{1: '1'}
+181	181		301			DialogEnable				"{2: '""Former Mammon""', 3: 'Stop her... That sounds nice. If only someone had been there to pull me back all those years ago, maybe I never would have chosen this place.', 4: '1'}"
+182	182		301							{3: 'The figure on the throne lets out a weary sigh, palm pressed against her temple.'}
+183	183		204							{1: '1', 2: '2'}
+184	184		301							"{2: '""Former Mammon""', 3: 'What I need you to do is... to help me ""kill"" Mammon.', 4: '1'}"
+185	185		202							{1: '1', 6: '1'}
+186	186		201							{1: '18', 2: '501283'}
+187	187		301							{1: '1', 2: 'Morigan', 3: 'Kill?', 4: '18'}
+188	188		202							{1: '18', 6: '1'}
+189	189		301							{3: 'The raven stops mid-feast, its beak frozen in shock.'}
+190	190		201							{1: '1', 2: '500513', 3: '2'}
+191	191		301							"{1: '1', 2: '""Former Mammon""', 3: '""Kill"" isn\'t the right word. What I need is for you to help me destroy the Seat of Mammon in the City of No Return, forever.', 4: '1'}"
+192	192		204							{1: '1'}
+193	193		301							{3: 'After dropping such a bombshell, the former Demon Lord remains utterly composed, offering nothing more than a slight nod.'}
+194	194		301							"{2: '""Former Mammon""', 3: ""After spending an eternity here, I've reached one conclusion. The City of No Return and the Golden Law are both utterly meaningless."", 4: '1'}"
+195	195		301							"{2: '""Former Mammon""', 3: ""That bottled city does nothing but endlessly churn out new sacrifices for the Law Nexus. It's a never-ending tragedy for whoever sits on this throne and for all three realms."", 4: '1'}"
+196	196		302							{2: 'What about you?', 3: '197'}
+197	197		301							"{2: '""Former Mammon""', 3: ""We're... nothing but ghosts clinging to this golden prison."", 4: '1'}"
+198	198		301							"{2: '""Former Mammon""', 3: 'Our real selves perished in the world beyond long ago. What remains here are just stubborn obsessions too proud to let go.', 4: '1'}"
+199	199		202							{1: '1'}
+200	200		301							"{3: 'That explains everything. So that\'s why every ""person"" we\'ve seen here is just a faceless shadow drifting through the air.'}"
+201	201		201							{1: '1', 2: '500513', 3: '2'}
+202	202		301							"{1: '1', 2: '""Former Mammon""', 3: ""I'm very tired. I sacrificed my entire life to serve as the Law Nexus. Now that I'm dead, I want to choose my own fate, just this once."", 4: '1'}"
+203	203		301							"{2: '""Former Mammon""', 3: ""And as long as human greed endures, this illusion will never truly die. It'll simply reset itself after a brief pause and carry on forever."", 4: '1'}"
+204	204		202							{1: '1'}
+205	205		301				DialogDisable			"{3: ""The former Golden King's voice carries such quiet resignation that it's obvious this isn't a spur-of-the-moment decision. She has been planned for ages, waiting for someone worthy to carry it out.""}"
+206	206		302							"{2: ""...I see. I'll help you."", 3: '207'}"
+207	207		302							{2: 'What are we supposed to do exactly?', 3: '208'}
+208	208		306							{1: '1'}
+209	209		201							{1: '1', 2: '500513', 3: '2'}
+210	210		301			DialogEnable				"{1: '1', 3: '""Mammon"" gestures toward the center of her collarbone, where a crystal core gleams with an eerie, otherworldly radiance.'}"
+211	211		301							"{3: ""Unlike the soft gold of angelic cores, a devil's heart burns deep crimson, like a pool of blood frozen in time, set against pale skin.""}"
+212	212		306							
+213	213		201							{1: '1', 2: '500513', 3: '2'}
+214	214		301				DialogDisable			"{2: '""Former Mammon""', 3: '...Come closer, child of man. Approach my throne.', 4: '1'}"
+215	215		401						200.0	{1: '1', 2: '36'}
+216	216		203							{1: '1', 2: '0.35', 3: '0', 4: '10', 5: '-25'}
+217	217		401							{1: '2', 2: '5703'}
+218	218		104						400.0	{1: '0|30|-25', 2: '0.4'}
+219	219		203							{1: '1', 2: '0.35', 3: '0', 4: '0', 5: '-50'}
+220	220		104						400.0	{1: '0|0|-50', 2: '0.4'}
+221	221		203							{1: '1', 2: '0.35', 3: '0', 4: '10', 5: '-75'}
+222	222		401							{1: '2', 2: '5703'}
+223	223		104				AniZhuanchangBegin			{1: '0|30|-75', 2: '0.4'}
+224	224		202							{1: '1', 6: '1'}
+225	225		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory43.jpg'}
+226	226		401						1500.0	{1: '1', 2: '12'}
+227	227		402							{1: '5702'}
+228	228		502							{1: 'DialogEnable'}
+229	229		104							{1: '0|0|0', 2: '0'}
+230	230		301			AniZhuanchangEnd				{3: 'After you are done, you and the raven start heading back. The moment you leave the throne room, you bump into that same nameless, upbeat ghost.'}
+231	231		201							{1: '1', 2: '500853'}
+232	232		301							"{1: '1', 2: '??', 3: 'So? After your chat with ""Mammon,"" you must know how perfect this world is, right? From now on, let\'s all get along and live the good life together!', 4: '1'}"
+233	233		302							"{2: ""It's not bad, I suppose."", 3: '234', 4: 'Maybe. Let me think about it.', 5: '234'}"
+234	234		301							"{2: '??', 3: ""Hey now, don't look so glum! Sure, you don't remember your past, but from today forward, every single day will be a fresh start!"", 4: '1'}"
+235	235		301							{3: 'The ghost rambles on, lost in its own words, strutting smugly through the spiral graveyard it created with pride.'}
+236	236		301							{2: '??', 3: 'You can start today. Think about what you want to achieve and what dreams you want to fulfill. We have all the time in the world and endless resources at our fingertips. Why not stay...?', 4: '1'}
+237	237		302							"{2: ""I need to get going, but there's one more thing I want to ask you."", 3: '238'}"
+238	238		202							{1: '1'}
+239	239		301				DialogDisable			{3: 'You feel compelled to cut short this invitation.'}
+240	240		302							{2: 'Do you remember your own name?', 3: '241'}
+241	241		401							{1: '1', 2: '36'}
+242	242		201							{1: '1', 2: '500853'}
+243	243		301			DialogEnable				{1: '1', 2: '??', 3: '...', 4: '1'}
+244	244		202							{1: '1'}
+245	245		301							"{3: ""For the first time, the cheerful ghost doesn't immediately jump back into the conversation.""}"
+246	246		301							"{3: ""This world has no wind, no flowing water, no chirping insects. The moment everyone stops talking, all that's left is an unbearable, suffocating silence.""}"
+247	247		401							{1: '2', 2: '5703'}
+248	248		301							{3: 'After what feels like an eternity of silence, the ghost turns its head away and tosses off a casual response.'}
+249	249		201							{1: '1', 2: '500853'}
+250	250		301				AniZhuanchangBegin			"{1: '1', 2: '??', 3: ""I don't remember. But does it really matter in a place like this?"", 4: '1'}"
+251	251		202							{1: '1', 6: '1'}
+252	252		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory393.jpg'}
+253	253		401							{1: '1', 2: '209'}
+254	254		301			AniZhuanchangEnd	DialogDisable			"{3: ""After leaving the seemingly endless graveyard and crossing several barren wastelands, you follow the former Mammon's directions and continue climbing up a mountain made entirely of gold and silver.""}"
+255	255		401							{1: '2', 2: '1085'}
+256	256		104						250.0	{1: '0|-50|-25', 2: '0.25'}
+257	257		401							{1: '2', 2: '5292', 3: '0.5'}
+258	258		104							{1: '0|-20|-50', 2: '0.25'}
+259	259		301			DialogEnable				"{3: ""This mountain of pure luxury and jewels offers barely any solid footing. One wrong step and you'll be sliding down a pile of precious stones. You struggle with every step, while Morigan has completely given up, flopping over and sprawling in the bag with its legs in the air.""}"
+260	260		201							{1: '18', 2: '501283'}
+261	261		301							"{1: '1', 2: 'Morigan', 3: ""What kind of sick joke is this?! We worked so hard to get all the way up here, and we can't even take a single coin!"", 4: '18'}"
+262	262		301							"{2: 'Morigan', 3: ""And then they put the damn exit at the very top of the treasure mountain! You have to climb all the way up just to escape! That bastard who dreamed up this sick game was pure evil. It's nothing but torture!"", 4: '18'}"
+263	263		302							{2: 'Morigan... think of... something!', 3: '264', 4: '(Continue climbing up)', 5: '264'}
+264	264		401							{1: '2', 2: '4046'}
+265	265		104							{1: '0|-50|-100', 2: '1'}
+266	266		301							"{2: 'Morigan', 3: ""Ever since we left that damn hall, I've completely given up. I feel like I haven't eaten in forever, so I can't do any real work right now. Ouch!"", 4: '18'}"
+267	267		202							{1: '18', 6: '1'}
+268	268		104							{1: '0|0|-75', 2: '0.2'}
+269	269		401							{1: '2', 2: '4306', 3: '1'}
+270	270		401							{1: '2', 2: '5672'}
+271	271		401							{1: '2', 2: '2767'}
+272	272		301			RImgBg1Shake				{3: 'You suddenly lose footing on the treasure mountain, sending the raven in the bag crying out in pain.'}
+273	273		201							{1: '18', 2: '501283'}
+274	274		301			DialogShake				{1: '1', 2: 'Morigan', 3: 'Ouch! What the hell are you—!', 4: '18'}
+275	275		202							{1: '18', 6: '1'}
+276	276		301							{3: 'Morigan angrily pokes its head out of the bag to give you a piece of its mind, but the sight before you leaves it absolutely thunderstruck.'}
+277	277		302							"{2: ""...Looks like we're here."", 3: '278'}"
+278	278		201							{1: '18', 2: '501283'}
+279	279		301							"{1: '1', 2: 'Morigan', 3: ""Whoa, whoa, hold up. This has gotta be some kind of joke! There's no way I'm going in there..."", 4: '18'}"
+280	280		202							{1: '18', 6: '1'}
+281	281		306							{1: '1'}
+282	282		301				DialogDisable			"{3: ""You and the raven both look up to see a colossal maw several stories tall, gaping open in the void above the treasure mountain's peak. Chunks of flesh dangle from its filthy yellow fangs, as if it had just finished gnawing on some fresh prey.""}"
+283	283		306							
+284	284		302							"{2: ""We don't have a choice. The previous Mammon told us that as long as we don't bring any treasures from this realm with us, we won't get devoured."", 3: '285'}"
+285	285		201							{1: '18', 2: '501283'}
+286	286		401							{1: '2', 2: '5672'}
+287	287		502							{1: 'DialogEnable'}
+288	288		301			DialogShake	DialogDisable			"{1: '1', 2: 'Morigan', 3: ""Fine, you go first and I'll follow behind you, ouch, ouch! Quit grabbing my feathers!"", 4: '18'}"
+289	289		202							{1: '18', 6: '1'}
+290	290		401						150.0	{1: '2', 2: '4812'}
+291	291		104						200.0	{1: '0|-50|-100', 2: '0.25'}
+292	292		402							{1: '4812'}
+293	293		401							{2: '5726'}
+294	294		104							{1: '0|50|-150', 2: '0.25'}
+295	295		401							{1: '2', 2: '844'}
+296	296		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.25'}
+297	297		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+298	298		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '2'}
+299	299		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+300	300		301			DialogEnable	AniZhuanchangBegin			"{3: ""You don't give Morigan a chance to think. You scoop it up and plunge headfirst into the monstrous maw.""}"
+301	301		104							{1: '0|0|0', 2: '0', 4: '4'}
+302	302		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+303	303		104							{1: '0|0|0', 2: '0'}
+304	304		401							{1: '1', 2: '36'}
+305	305		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1020.jpg'}
+306	306		401							{1: '1', 2: '297'}
+307	307		401							{1: '2', 2: '5722'}
+308	308		306							{1: '1'}
+309	309		301			AniZhuanchangEnd				{3: 'A long-haired woman leans back on her throne, picking up a gold coin from the floor and studying the relief patterns etched into its surface, the same patterns she remembers since the day she was born.'}
+310	310		301							"{3: ""Every Mammon coin is identical. It is nearly impossible to counterfeit, yet endlessly churned out from the City of No Return. Since the Three Great Laws were established, they've served as the Scorched Borderland's sole token of trade.""}"
+311	311		301							"{3: ""But she'd never realized that Mammon coin production operates beyond anyone's control. The coins simply follow the Golden Law's programming, endlessly popping out of the furnace one after another.""}"
+312	312		301							"{3: ""The truth turns out to be far more boring than she'd ever imagined.""}"
+313	313		306							
+314	314		201							{1: '1', 2: '501297', 3: '7', 4: '-300'}
+315	315		301							"{1: '1', 2: '""Mammon""', 3: 'Sigh... So what should I do now?', 4: '1'}"
+316	316		301							"{2: '""Mammon""', 3: 'Maybe I should clean up this City of No Return a bit?', 4: '1'}"
+317	317		202							{1: '1'}
+318	318		301							{3: 'No living soul responds to her. Only the furnace flames continue to flicker silently through the empty city.'}
+319	319		306							{1: '1'}
+320	320		402							{1: '5722'}
+321	321		401							{1: '2', 2: '1543'}
+322	322		301							"{3: ""The woman rises from her throne and is about to step down when something catches her eye. It's a pitch-black feather lying in the corner.""}"
+323	323		301							"{3: ""It's a sleek tail feather that gleams on the floor, catching the firelight with its silky, lustrous surface. She'd recognize the owner of this feather anywhere.""}"
+324	324		301							{3: 'A smile tugs at her lips, that familiar expression returning to her face. She knows her Bloodsworn would never settle for being trapped in some illusion.'}
+325	325		306							
+326	326		201							{1: '1', 2: '501297', 3: '10', 4: '-300'}
+327	327		301				DialogDisable			"{1: '1', 2: '""Mammon""', 3: ""...So you're back, Gray Raven."", 4: '1'}"
+328	328		202							{1: '1', 6: '1'}
+329	329		306							{1: '1'}
+330	330		401						200.0	{1: '2', 2: '10028604'}
+331	331		101						50.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 4: '4'}
+332	332		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 4: '4', 5: '1'}
+333	333		401							{1: '2', 2: '13015304'}
+334	334		502							{1: 'DialogEnable'}
+335	335		301			RImgBg1Shake				"{3: 'The words barely leave her lips when a blood bullet streaks from the shadows behind her, aimed straight for her crown. ""Mammon"" raises her hand with casual ease, plucking the bullet from the air and crushing it in her palm until it melts back into blood.'}"
+336	336		401							{1: '2', 2: '4282'}
+337	337		301				DialogDisable			{3: 'The figure in the gray-black cloak steps out of the shadows, abandoning all pretense of concealment as they emerge from behind the wall with a pistol.'}
+338	338		402							{1: '4282'}
+339	339		306							
+340	340		302							"{2: ""...Let's make one final wager."", 3: '341'}"
+341	341		302							"{2: 'Lilith, if I win, you give up being ""Mammon"" and go back to being the ""Famine Knight.""', 3: '342'}"
+342	342		201							{1: '1', 2: '501297', 3: '7', 4: '-300'}
+343	343		301			DialogEnable				"{1: '1', 2: '""Mammon""', 3: 'I like your straightforward approach, but every deal needs equal stakes from both sides.', 4: '1'}"
+344	344		204							{1: '1', 2: '10'}
+345	345		301							"{2: '""Mammon""', 3: ""Gray Raven, I'm willing to put everything I've ever worked for on the line..."", 4: '1'}"
+346	346		301							"{2: '""Mammon""', 3: 'And you, tell me, what do you have to offer me?', 4: '1'}"
+347	347		202							{1: '1'}
+348	348		301							"{3: ""Joy surges through her as a dormant thrill shivers down her spine. She thought her days of dancing on the razor's edge between triumph and death were over, but here they are, chasing her down and dragging her back into fate's deadly game.""}"
+349	349		301				DialogDisable			"{3: ""So she's ready to roll the dice one last time and bet it all on this ultimate game.""}"
+350	350		302							"{2: ""If I lose, I'll give you my soul."", 3: '351'}"
+351	351		302							"{2: ""I'll stay here with you forever in this City of No Return."", 3: '352'}"
+352	352		201							{1: '1', 2: '501297', 3: '10', 4: '-300'}
+353	353		301			DialogEnable				"{1: '1', 2: '""Mammon""', 3: '...What a tempting offer. You know me so well.', 4: '1'}"
+354	354		301							{3: 'She lets out a satisfied sigh.'}
+355	355		204							{1: '1', 2: '8'}
+356	356		301							"{2: '""Mammon""', 3: ""Even if you'll probably never truly understand what this bet means to me..."", 4: '1'}"
+357	357		204							{1: '1', 2: '10'}
+358	358		301				DialogDisable			"{2: '""Mammon""', 3: ""But I'll still honor your terms."", 4: '1'}"
+359	359		202							{1: '1', 6: '1'}
+360	360		306							{1: '1'}
+361	361		401							{1: '2', 2: '4424'}
+362	362		401							{1: '2', 2: '5717'}
+363	363		401							{1: '2', 2: '565'}
+364	364		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '1'}
+365	365		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab'}
+366	366		111							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab'}
+367	367		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+368	368		301			DialogEnable				{3: 'The Golden King raises her hand, and a Moon Umbrella wrought from pure magic materializes in her grasp. Both parties agree, and the wager is sealed.'}
+369	369		401							{1: '2', 2: '5715'}
+370	370		301			RImgBg1Shake	DialogDisable			{3: 'Torrents of magical energy surge through the bottled city, sending countless gold coins scattered across the floor spiraling upward in a brilliant whirlwind that engulfs both you and the silver-haired devil.'}
+371	371		306							
+372	372		201						500.0	{1: '1', 2: '501297', 3: '10', 4: '-300', 7: '1'}
+373	373		401							{1: '2', 2: '2689'}
+374	374		203						300.0	{1: '1', 2: '0.3', 3: '-300', 4: '-20', 5: '-80'}
+375	375		401							{1: '2', 2: '4895'}
+376	376		301			DialogEnable				{3: 'She floats in midair, gliding forward toward you, and raises her umbrella to point directly at her opponent.'}
+377	377		301		1		AniZhuanchangBegin			"{2: '""Mammon""', 3: ""Then let's begin... our final wager."", 4: '1'}"

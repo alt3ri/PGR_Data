@@ -1,0 +1,22 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory275.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '1031001', 4: '-600'}
+4	4		201							{1: '2', 2: '500026', 4: '600'}
+5	5		201							{1: '3', 2: '500166'}
+6	6		301			DialogEnable				{1: '1', 3: 'A chasm breaks the ground apart, the Red Tide swirling in it. It can devour you the moment you step into it.'}
+7	7		301							{2: 'Liv', 3: 'The Red Tide has a high level of concentration of the Punishing Virus around it. We need to figure out a way to get past it quickly!', 4: '1'}
+8	8		301							"{2: 'Lucia', 3: ""I'll try to find some planks."", 4: '3'}"
+9	9		301				DialogDisable			{2: 'Lee', 3: 'We can try to tie some of the empty supply boxes together and walk on them.', 4: '2'}
+10	10		302							{2: 'Anyhow, we need to leave here as soon as we can.', 3: '11'}
+11	11		305							{1: '12', 2: '21'}
+12	12		301			DialogEnable				{2: 'Liv', 3: 'What is it, Commandant?', 4: '1'}
+13	13		302							{2: 'There is a shadow in the Red Tide...', 3: '14'}
+14	14		301							{2: 'Liv', 3: 'A shadow? Did you see a projection?', 4: '1'}
+15	15		302							{2: 'I think so.', 3: '16'}
+16	16		302							{2: 'And it looked like Rowler.', 3: '17'}
+17	17		301							{2: 'Liv', 3: 'Is it the same person who was calling for help?', 4: '1'}
+18	18		301							"{2: 'Liv', 3: ""So he does say hi to people he doesn't know..."", 4: '1'}"
+19	19		302							"{2: ""He pointed to the left. Let's go and have a look."", 3: '20'}"
+20	20		301		1		AniZhuanchangBegin			"{2: 'Liv', 3: ""You're right. Let's go."", 4: '1'}"
+21	21		202		1		AniZhuanchangBegin			{1: '1', 2: '2', 3: '3', 6: '1'}

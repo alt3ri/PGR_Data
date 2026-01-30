@@ -1,0 +1,243 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory642.jpg'}
+2	2		401							{1: '1', 2: '6389'}
+3	3		502						250.0	{1: 'DialogDisable'}
+4	4		107							{1: 'Residential District', 2: 'Babylonia'}
+5	5		301							{3: 'Babylonia, Residential District.'}
+6	6		108							
+7	7		301			DialogEnable				{3: 'Nikola wakes with an unsettling premonition that lingers all morning.'}
+8	8		301							"{3: ""【kuroname】 is already aboard the transport returning from conservation area 368, the mission report sent to Nikola's terminal.""}"
+9	9		201							{1: '1', 2: '500012', 3: '9'}
+10	10		301							{1: '1', 2: 'Nikola', 3: 'Melinoe...', 4: '1'}
+11	11		204							{1: '1'}
+12	12		301							{2: 'Nikola', 3: 'In other words, they purposefully send Kolm Lebrant onto Babylonia.', 4: '1'}
+13	13		301							{2: 'Nikola', 3: 'But... why?', 4: '1'}
+14	14		202							{1: '1'}
+15	15		301				AniZhuanchangBegin			"{3: ""Driven by the needle-sharp premonition of danger, Nikola quickens his pace, hurrying toward Kolm Lebrant's location.""}"
+16	16		401						2000.0	{1: '1', 2: '36'}
+17	17		401							{1: '1', 2: '169'}
+18	18		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+19	19		201							{1: '1', 2: '501425'}
+20	20		301			AniZhuanchangEnd				"{1: '1', 3: ""On his way to Hassen's office, Yan Zhen is lost in thought.""}"
+21	21		401							{1: '2', 2: '4387'}
+22	22		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+23	23		202							{1: '1', 6: '1'}
+24	24		504							{1: '0.7'}
+25	25		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1264.jpg'}
+26	26		301							"{3: ""His mind drifts through the ghosts of the Third Dark Room: the hundreds of volunteers, the long hours beside Moineau's sterile chamber, a mosaic of faded memories.""}"
+27	27		401							{1: '2', 2: '4387'}
+28	28		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+29	29		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory312.png'}
+30	30		301							{3: 'Yet, it always sharpens to a single, searing point: the day Hassen returned to announce the World Government was pulling its funding.'}
+31	31		306							{1: '1'}
+32	32		301							{3: 'The numbness, the shock, the pleas, the despair...'}
+33	33		301							{3: 'The entire emotional cataclysm has blurred into a dull ache.'}
+34	34		201							{1: '1', 2: '501434'}
+35	35		301							"{1: '1', 3: ""All that remains vivid is Hassen's regretful apology and the sight of his retreating back.""}"
+36	36		301				DialogDisable			{3: 'Hassen was a messenger, truly. First, he delivered hope; then, he delivered despair.'}
+37	37		501						1400.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+38	38		306						400.0	
+39	39		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory3.jpg'}
+40	40		202							{1: '1', 6: '1'}
+41	41		301			DialogEnable				{3: 'Years later, Yan Zhen found his way to Babylonia. His expertise earned him a place within the very machine that had abandoned him.'}
+42	42		301				AniZhuanchangBegin			{3: 'It even placed him across the table from Hassen professionally, but not once did the man mention the Third Dark Room.'}
+43	43		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+44	44		504							{1: '0'}
+45	45		301			AniZhuanchangEnd	DialogDisable			"{3: ""The past recedes as the present reasserts itself: Hassen's office door now stands before him.""}"
+46	46		401							{1: '1', 2: '36'}
+47	47		401							{1: '2', 2: '754'}
+48	48		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1381.jpg', 3: '0', 4: '1', 5: '0.8'}
+49	49		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1381.jpg'}
+50	50		205							{1: '999'}
+51	51		401							{1: '1', 2: '209'}
+52	52		301			DialogEnable				{3: 'It slides open with a soft hiss. Without touching the controls, Yan Zhen guides his wheelchair forward, the machine gliding silently on the path of his thought.'}
+53	53		201							{1: '1', 2: '500011'}
+54	54		301							{1: '1', 2: 'Hassen', 3: 'Hello, Dr. Yan Zhen.', 4: '1'}
+55	55		301							"{3: 'Just as he did forty years ago, Hassen calls him ""Doctor."" The title is a fossil, a relic from a world that no longer exists.'}"
+56	56		203							{1: '1', 2: '0.25', 3: '400'}
+57	57		201							{1: '2', 2: '501425', 4: '-400'}
+58	58		301							"{1: '1', 2: 'Yan Zhen', 3: '""Councilor"" will suffice, Mr. President.', 4: '2'}"
+59	59		204							{1: '1', 2: '1'}
+60	60		301							{3: 'Hassen gives a smile.'}
+61	61		301							"{2: 'Hassen', 3: 'I thought ""Doctor"" would be more symbolic.', 4: '1'}"
+62	62		204							{1: '2', 2: '1'}
+63	63		301							{2: 'Yan Zhen', 3: 'Symbolic... Hah.', 4: '2'}
+64	64		401							{1: '2', 2: '5288'}
+65	65		301							{3: 'The nearby coffee machine sputters to life. Yan Zhen accepts a cup and takes a slow, deliberate sip.'}
+66	66		401							{1: '2', 2: '5281'}
+67	67		204							{1: '2', 2: '8'}
+68	68		301							{2: 'Yan Zhen', 3: 'Hmm... The same beans as before?', 4: '2'}
+69	69		204							{1: '2'}
+70	70		301							{2: 'Yan Zhen', 3: 'Though the acidity is much sharper now.', 4: '2'}
+71	71		204							{1: '1'}
+72	72		301							{2: 'Hassen', 3: 'These are not the best of times.', 4: '1'}
+73	73		301							{3: 'Yan Zhen remains noncommittal.'}
+74	74		301							{2: 'Yan Zhen', 3: 'For certain people in Babylonia, I imagine life continues unchanged.', 4: '2'}
+75	75		301							{2: 'Hassen', 3: '...Is that what you believe?', 4: '1'}
+76	76		301							"{2: 'Yan Zhen', 3: ""I've done a great deal of thinking over the years... What happened then cannot be laid solely at Trillard's feet, or yours."", 4: '2'}"
+77	77		301							{2: 'Yan Zhen', 3: 'The Parliament is a tapestry of conflicting interests. Progress was always an uphill battle.', 4: '2'}
+78	78		301							{2: 'Yan Zhen', 3: 'Kurono, Earth loyalists like you and Nikola, the voyagers, the emerging space generation, those upstarts from F.O.S., not to mention the shortsighted opportunists...', 4: '2'}
+79	79		204							{1: '2', 2: '8'}
+80	80		301							{2: 'Yan Zhen', 3: 'It was impossible... just impossible...', 4: '2'}
+81	81		204							{1: '2'}
+82	82		301							{2: 'Yan Zhen', 3: 'I imagine your position was not an easy one, either...', 4: '2'}
+83	83		301							{2: 'Hassen', 3: 'We always find a way through hardship.', 4: '1'}
+84	84		204							{1: '2', 2: '1'}
+85	85		301							"{2: 'Yan Zhen', 3: ""Hah, ever the optimist, aren't you?"", 4: '2'}"
+86	86		202							{1: '1', 2: '2'}
+87	87		301							{3: 'Hassen opens his mouth to speak, only to be cut short.'}
+88	88		401							{1: '1', 2: '36'}
+89	89		201							{1: '1', 2: '501425', 3: '4'}
+90	90		301							{1: '1', 2: 'Yan Zhen', 3: 'But at what cost, Hassen?', 4: '1'}
+91	91		202							{1: '1', 6: '1'}
+92	92		201							{1: '1', 2: '500011', 3: '5'}
+93	93		301							{1: '1', 2: 'Hassen', 3: '...', 4: '1'}
+94	94		202							{1: '1'}
+95	95		401							{1: '1', 2: '175'}
+96	96		301							"{3: ""Yan Zhen's gaze looks straight through Hassen, fixed on a distant, invisible point.""}"
+97	97		301							{3: 'His voice is a blend of weary acceptance and the faint, sharp edge of an old resentment.'}
+98	98		201							{1: '1', 2: '501425', 3: '14'}
+99	99		301							{1: '1', 2: 'Yan Zhen', 3: 'Why did it have to be you who came to the Third Dark Room to tell me the project was canceled?', 4: '1'}
+100	100		301							{2: 'Yan Zhen', 3: 'And yet... you were the one who first offered me that hope...', 4: '1'}
+101	101		204							{1: '1', 2: '4'}
+102	102		301							{2: 'Yan Zhen', 3: '...Hassen, is this broken world the future you envisioned when you abandoned the one I was fighting for?', 4: '1'}
+103	103		301							{2: 'Yan Zhen', 3: 'Tell me...', 4: '1'}
+104	104		203							{1: '1', 2: '0.25', 3: '-400'}
+105	105		201							{1: '2', 2: '500011', 4: '400'}
+106	106		401						500.0	{1: '1', 2: '36'}
+107	107		401							{1: '1', 2: '166'}
+108	108		401							{1: '2', 2: '5705'}
+109	109		301							{1: '1', 3: 'Yan Zhen produces a standard-issue handgun from his coat. He raises the dark barrel toward Hassen, his own eyes just as hollow.'}
+110	110		204							{1: '2', 2: '5'}
+111	111		301							{2: 'Hassen', 3: '...', 4: '2'}
+112	112		301							{2: 'Hassen', 3: 'Are you sure this is the path you want to take?', 4: '2'}
+113	113		301							{2: 'Yan Zhen', 3: 'I have one more question.', 4: '1'}
+114	114		301							"{2: 'Yan Zhen', 3: ""Back then... was Project Connection's emblem a tree?"", 4: '1'}"
+115	115		301							{2: 'Hassen', 3: 'What gives you that impression?', 4: '2'}
+116	116		204							{1: '1', 2: '1'}
+117	117		301							{2: 'Yan Zhen', 3: 'Gasp...', 4: '1'}
+118	118		301							"{3: ""A bitter smile touches Yan Zhen's lips.""}"
+119	119		301							{2: 'Yan Zhen', 3: 'Then allow me a prophecy.', 4: '1'}
+120	120		301							{2: 'Hassen', 3: '...Hmm?', 4: '2'}
+121	121		204							{1: '1'}
+122	122		301							{2: 'Yan Zhen', 3: 'You will become the sinner—and I, the jester who cheers you on.', 4: '1'}
+123	123		301							"{2: 'Yan Zhen', 3: ""You once said anyone could become the President of the World Government. Then we shall see if that's true."", 4: '1'}"
+124	124		202							{1: '1', 2: '2'}
+125	125		401							{1: '2', 2: '4557'}
+126	126		301							{3: 'A sound comes from outside the door, but it no longer matters.'}
+127	127		301				DialogDisable			{3: 'The windmill of fate has begun its turn.'}
+128	128		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+129	129		402							{1: '4557'}
+130	130		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+131	131		401							{1: '2', 2: '4092'}
+132	132		307							{1: 'Meanwhile, Elysium', 3: '70', 4: 'ffffffff'}
+133	133		301							{3: 'Meanwhile, Elysium.'}
+134	134		307							{2: '1'}
+135	135		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+136	136		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1372.jpg'}
+137	137		201							{1: '1', 2: '501420', 7: '1'}
+138	138		301			DialogEnable				{1: '1', 2: 'Moineau', 3: 'Does it really have to come to this...', 4: '1'}
+139	139		202							{1: '1'}
+140	140		401							{1: '2', 2: '5316'}
+141	141		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab', 2: '2', 5: '2'}
+142	142		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab', 2: '2', 5: '3'}
+143	143		511							{1: '2', 2: '0', 3: '-800|0|0'}
+144	144		511							{1: '3', 2: '0', 3: '800|0|0'}
+145	145		301			RImgBg1Shake				{3: 'Bang!'}
+146	146		301							{3: 'Amid the swirling shards in the sky, a thousand roses shimmered in the light.'}
+147	147		201							{1: '1', 2: '500864'}
+148	148		301							"{1: '1', 2: 'Teddy', 3: ""I've been thinking for a long time... Why do you have to erase my memories? Why go to such extremes to play these games...?"", 4: '1'}"
+149	149		301				DialogDisable			{2: 'Teddy', 3: 'Moineau. What are you... what are you people really plotting against Babylonia?', 4: '1'}
+150	150		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+151	151		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab', 5: '2'}
+152	152		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab', 5: '3'}
+153	153		202							{1: '1', 6: '1'}
+154	154		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+155	155		401							{1: '2', 2: '4092'}
+156	156		307							{1: 'Meanwhile, Babylonia, Residential District', 3: '70', 4: 'ffffffff'}
+157	157		301							{3: 'Meanwhile, Babylonia, Residential District.'}
+158	158		307							{2: '1'}
+159	159		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+160	160		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory642.jpg'}
+161	161		201							{1: '1', 2: '500012', 3: '5', 7: '1'}
+162	162		502							{1: 'DialogShake'}
+163	163		301			DialogEnable				{1: '1', 2: 'Nikola', 3: '...What do you mean Kolm Lebrant is dead?', 4: '1'}
+164	164		301				DialogDisable			{2: 'Nikola', 3: 'How many times did I tell you to keep an eye on him?!', 4: '1'}
+165	165		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+166	166		202							{1: '1', 6: '1'}
+167	167		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+168	168		401							{1: '2', 2: '4092'}
+169	169		307							{1: 'Meanwhile, on the Surface', 3: '70', 4: 'ffffffff'}
+170	170		301							{3: 'Meanwhile, Surface.'}
+171	171		307							{2: '1'}
+172	172		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+173	173		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory699.jpg'}
+174	174		201							{1: '1', 2: '501381', 3: '3', 7: '1'}
+175	175		301			DialogEnable				"{1: '1', 2: '""Aisling""', 3: 'F.O.S... What is that place?', 4: '1'}"
+176	176		202							{1: '1', 6: '1'}
+177	177		301							"{2: 'Wheel of Fortune', 3: ""Oh, it's Babylonia. A wonderful place that is.""}"
+178	178		301							{3: '...'}
+179	179		201							{1: '1', 2: '501381'}
+180	180		301							"{1: '1', 2: '""Aisling""', 3: ""...Then let's bring F.O.S. down."", 4: '1'}"
+181	181		301				AniZhuanchangBegin			"{3: 'Says ""Aisling"".'}"
+182	182		202							{1: '1'}
+183	183		401						2000.0	{1: '1', 2: '36'}
+184	184		401							{1: '1', 2: '5046'}
+185	185		504							{1: '0.7'}
+186	186		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory342.jpg'}
+187	187		301			AniZhuanchangEnd				{3: 'In the summer of 2155, Hassen and Yan Zhen shook hands beneath the emblem of the World Government.'}
+188	188		301				AniZhuanchangBegin			{3: 'They were idealists then, proclaiming that they were to build a world for all.'}
+189	189		504							{1: '0'}
+190	190		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1381.jpg'}
+191	191		401							{1: '2', 2: '5705'}
+192	192		301			AniZhuanchangEnd				"{3: ""Now, years later, a bullet fires from the gun in Yan Zhen's right hand.""}"
+193	193		401						200.0	{1: '2', 2: '5669'}
+194	194		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '3'}
+195	195		401							{1: '2', 2: '2590'}
+196	196		104						500.0	{1: '0|0|-400', 2: '2'}
+197	197		504							{1: '0'}
+198	198		504							{1: '0.8', 8: '1.5'}
+199	199		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1374.jpg', 3: '0', 4: '1', 5: '1.5'}
+200	200		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1374.jpg'}
+201	201		205							{1: '999'}
+202	202		301							"{3: ""It cuts through the night breeze over Kowloong Central University's running track,"", 17: '1', 22: '1'}"
+203	203		104					500.0	500.0	{1: '0|0|-400', 2: '2'}
+204	204		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1379.jpg', 3: '0', 4: '1', 5: '1.5'}
+205	205		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1379.jpg'}
+206	206		205							{1: '999'}
+207	207		301							{3: 'pierces the memory of his wedding with Claire,', 17: '1', 22: '1'}
+208	208		104					500.0	500.0	{1: '0|0|-400', 2: '2'}
+209	209		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1264.jpg', 3: '0', 4: '1', 5: '1.5'}
+210	210		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1264.jpg'}
+211	211		205							{1: '999'}
+212	212		301							"{3: ""rushes through Moineau's sterile chamber..."", 22: '1'}"
+213	213		104					500.0	500.0	{1: '0|0|-400', 2: '2'}
+214	214		504							{1: '0', 8: '1.5'}
+215	215		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1381.jpg', 3: '0', 4: '1', 5: '1.5'}
+216	216		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1381.jpg'}
+217	217		205							{1: '999'}
+218	218		201							{1: '1', 2: '500011', 3: '5'}
+219	219		301				DialogDisable			"{1: '1', 3: ""And shoots through Hassen's body.""}"
+220	220		401							{1: '2', 2: '5669'}
+221	221		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+222	222		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+223	223		202							{1: '1', 6: '1'}
+224	224		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '4'}
+225	225		101				AniZhuanchangBegin	1000.0		{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+226	226		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '4', 5: '1'}
+227	227		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1381.jpg'}
+228	228		401			AniZhuanchangEnd				{1: '2', 2: '4305'}
+229	229		401							{1: '2', 2: '4557'}
+230	230		301			DialogEnable				{3: 'Four Constructs burst through the doorway.'}
+231	231		301							"{3: ""His puppets' assassination attempt failed. They've tracked him down here. The direct attempt on Hassen's life is also ruined...""}"
+232	232		301							{3: '...But none of that matters anymore.'}
+233	233		201							{1: '1', 2: '501425', 3: '1'}
+234	234		301							"{1: '1', 2: 'Yan Zhen', 3: ""It's time for that hypocritical banner in the sky to fall. Forgive me for this... but I regret nothing."", 4: '1'}"
+235	235		301							{2: 'Yan Zhen', 3: 'Farewell, Hassen.', 4: '1'}
+236	236		202							{1: '1'}
+237	237		401							{1: '2', 2: '5669'}
+238	238		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 4: '4'}
+239	239		301			RImgBg1Shake				{3: 'He turns the gun on himself and pulls the trigger again, the bullet tearing through his own heart.'}
+240	240		504							{1: '0.8', 8: '0.9'}
+241	241		301							{3: 'A sound comes from outside ■■, but it no longer matters.'}
+242	242		301		1		AniZhuanchangBegin			{3: 'The windmill of fate has begun its turn.'}

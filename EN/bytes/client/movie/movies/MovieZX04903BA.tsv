@@ -1,0 +1,424 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory360.png'}
+2	2		401							{1: '1', 2: '5023'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+4	4		401							{1: '2', 2: '915'}
+5	5		502							{1: 'RImgBg1Shake'}
+6	6		301			DialogEnable				{3: 'An explosion rips through the side door of the transport, half-buried in mud at the edge of the dense forest.'}
+7	7		401							{1: '2', 2: '819042'}
+8	8		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+9	9		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+10	10		401						300.0	{1: '2', 2: '4315'}
+11	11		401							{1: '2', 2: '819042'}
+12	12		301							{3: 'White smoke rises from two smoke grenades as shadows dart through the haze.'}
+13	13		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+14	14		401							{1: '2', 2: '10001004'}
+15	15		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+16	16		301			RImgBg1Shake				{3: 'Without warning, the belly-mounted turrets open fire, spraying bullets into the surrounding trees.'}
+17	17		201							{1: '1', 2: '500013', 4: '-400', 7: '1'}
+18	18		201							{1: '2', 2: '500013', 4: '400', 7: '2'}
+19	19		502							{1: 'PanelActor2Shake'}
+20	20		401						350.0	{1: '2', 2: '2513'}
+21	21		502							{1: 'PanelActor1Shake'}
+22	22		401						350.0	{1: '2', 2: '2513'}
+23	23		505							{1: 'PanelActor1Shake'}
+24	24		505							{1: 'PanelActor2Shake'}
+25	25		401							{1: '2', 2: '2603'}
+26	26		203							{1: '1', 2: '0.2', 3: '-400', 4: '-1200'}
+27	27		203						500.0	{1: '2', 2: '0.2', 3: '400', 4: '-1200'}
+28	28		202							{1: '1', 2: '2'}
+29	29		301							{1: '1', 3: 'The large-caliber rounds tear through the two Corrupted hiding behind the trees, sending them crashing to the ground.'}
+30	30		201							{1: '1', 2: '500627'}
+31	31		301							{1: '1', 2: 'Discord', 3: 'Report—targets eliminated by turret fire.', 4: '1'}
+32	32		201							{1: '1', 2: '500961'}
+33	33		301							{1: '1', 2: 'Valeria', 3: 'Yata, take point.', 4: '1'}
+34	34		301							{2: 'Valeria', 3: 'Shiva, maintain electronic warfare and environmental scanning. Stay beside me or take position behind.', 4: '1'}
+35	35		301							{2: 'Valeria', 3: 'Discord, take rear guard. Protect Shiva and watch our six.', 4: '1'}
+36	36		201							{1: '1', 2: '500900', 3: '1'}
+37	37		301							"{1: '1', 2: 'Shiva', 3: ""V, 4 o'clock."", 4: '1'}"
+38	38		202							{1: '1', 6: '1'}
+39	39		401						300.0	{1: '2', 2: '9389036'}
+40	40		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+41	41		401							{1: '2', 2: '9389036'}
+42	42		301			RImgBg1Shake				{3: 'Valeria swiftly swings her weapon toward the dark thicket, firing two pulse rounds.'}
+43	43		301							{3: 'The whistling rounds pierce into the thicket and vanish into silence as if devoured by the darkness.'}
+44	44		201							{1: '1', 2: '500961'}
+45	45		301							{1: '1', 2: 'Valeria', 3: 'They dodged it.', 4: '1'}
+46	46		301							{2: 'Valeria', 3: 'Everyone, night vision on.', 4: '1'}
+47	47		202							{1: '1', 6: '1'}
+48	48		201							{1: '1', 2: '500013', 4: '1200', 5: '-100'}
+49	49		201							{1: '2', 2: '500013', 5: '-600'}
+50	50		201							{1: '3', 2: '500013', 4: '-1200', 5: '-100'}
+51	51		203							{1: '1', 2: '0.1', 3: '600', 4: '-100'}
+52	52		203							{1: '2', 2: '0.1'}
+53	53		203							{1: '3', 2: '0.1', 3: '-600', 4: '-100'}
+54	54		401							{1: '2', 2: '10112002'}
+55	55		401							{1: '2', 2: '1508'}
+56	56		301							{1: '1', 3: 'Before the words can settle, three Corrupted spring out from the clearing just ahead of the Scarabs.'}
+57	57		401							{1: '2', 2: '9342045'}
+58	58		203							{1: '1', 2: '0.2', 3: '-700'}
+59	59		203							{1: '2', 2: '0.2', 5: '-150'}
+60	60		203							{1: '3', 2: '0.2', 3: '700'}
+61	61		401							{1: '2', 2: '1508'}
+62	62		301							{3: 'The Corrupted fan out in a trident formation, pressing their attack.'}
+63	63		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+64	64		201							{1: '1', 2: '501041', 3: '4'}
+65	65		301							{1: '1', 2: 'Yata', 3: 'You bastards having a party here?!', 4: '1'}
+66	66		201							{1: '1', 2: '501041', 3: '4'}
+67	67		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+68	68		401							{1: '2', 2: '10112002'}
+69	69		201							{1: '3', 2: '500013', 4: '700'}
+70	70		201							{1: '2', 2: '500013', 4: '-700', 7: '1'}
+71	71		203							{1: '2', 2: '0.15', 3: '-300'}
+72	72		203							{1: '3', 2: '0.15', 3: '300'}
+73	73		203							{1: '1', 2: '0.15', 4: '-50', 5: '50'}
+74	74		502							{1: 'RImgBg1Shake'}
+75	75		505					500.0		{1: 'RImgBg1Shake'}
+76	76		501					400.0		{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+77	77		401							{1: '2', 2: '10112007'}
+78	78		203							{1: '2', 2: '0.15', 3: '-1500'}
+79	79		203							{1: '3', 2: '0.15', 3: '1500'}
+80	80		203							{1: '1', 2: '0.1'}
+81	81		301							{1: '1', 3: 'Yata charges forward decisively, her mechanical arms making quick work of two Corrupted with effortless swings.'}
+82	82		202							{1: '1', 6: '1'}
+83	83		401							{1: '2', 2: '1508'}
+84	84		201							{1: '1', 2: '500013'}
+85	85		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+86	86		203							{1: '1', 2: '0.15', 5: '-100'}
+87	87		301							{1: '1', 3: 'The remaining Corrupted hesitates for a moment, then bypasses Yata to charge straight at Valeria.'}
+88	88		201							{1: '1', 2: '501041', 3: '4'}
+89	89		301				DialogDisable			"{1: '1', 2: 'Yata', 3: ""Heads up, Valeria! They're coming for you!"", 4: '1'}"
+90	90		201							{1: '1', 2: '500013'}
+91	91		401							{1: '2', 2: '1510'}
+92	92		502							{1: 'RImgBg1Shake'}
+93	93		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+94	94		401						300.0	{1: '2', 2: '1510'}
+95	95		401							{1: '2', 2: '1508'}
+96	96		301			DialogEnable				{1: '1', 3: 'Valeria fires twice, but the Corrupted sprints straight through the gunfire.', 4: '1'}
+97	97		202							{1: '1', 6: '1'}
+98	98		301							{3: 'As everyone moves to defend Valeria, a towering figure suddenly materializes behind Shiva.'}
+99	99		401							{1: '2', 2: '9342045'}
+100	100		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+101	101		301							{3: 'Before that moment arrives, a nimble figure dashes past both Valeria and Shiva in a blur.'}
+102	102		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+103	103		201							{1: '2', 2: '500302', 4: '1300', 7: '1'}
+104	104		201							{1: '1', 2: '501041', 3: '4', 4: '-1300', 7: '1'}
+105	105		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+106	106		203							{1: '1', 2: '0.15', 3: '-400'}
+107	107		203							{1: '2', 2: '0.15', 3: '300'}
+108	108		502						350.0	{1: 'RImgBg1Shake'}
+109	109		401							{1: '2', 2: '844007'}
+110	110		301							{1: '1', 3: 'Two pairs of metallic arms intercept the incoming fists.'}
+111	111		401							{1: '2', 2: '3079'}
+112	112		203							{1: '2', 2: '0.15', 3: '700'}
+113	113		203							{1: '1', 2: '0.15', 3: '-300'}
+114	114		502							{1: 'RImgBg1Shake'}
+115	115		301							{3: 'The towering mechanoid staggers back two steps as its attack is interrupted by the counterforce.'}
+116	116		301							{3: 'With her mechanical arms extended, Yata cracks her neck in annoyance as she stares down her opponent.'}
+117	117		301							"{2: 'Yata', 3: ""I'm right here, dumbo!"", 4: '1'}"
+118	118		401							{1: '2', 2: '2690'}
+119	119		203							{1: '1', 2: '0.15', 3: '-200'}
+120	120		203							{1: '2', 2: '0.15', 3: '600'}
+121	121		301			RImgBg1Shake				"{3: ""Standing tall, Yata uses her external arms to forcefully twist the Corrupted's fists away from their intended direction.""}"
+122	122		301							"{2: 'Yata', 3: ""When it comes to raw strength, I won't lose to you!"", 4: '1'}"
+123	123		301							"{3: ""Inch by inch, the Corrupted's body is forced off the ground in the struggle.""}"
+124	124		401							{1: '2', 2: '2935'}
+125	125		401							{1: '2', 2: '4826'}
+126	126		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+127	127		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiJiyouNew.prefab', 2: '2'}
+128	128		203							{1: '1', 2: '0.15'}
+129	129		301			RImgBg1Shake				"{3: ""A deep breath. Feet planted firmly. Then—a straight punch pierces through the Corrupted's chest.""}"
+130	130		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiJiyouNew.prefab'}
+131	131		301							{2: 'Yata', 3: 'Two fists against six—get it now, you big lug?', 4: '1'}
+132	132		202							{1: '1', 2: '2', 6: '1'}
+133	133		201							{1: '1', 2: '500961'}
+134	134		301							"{1: '1', 2: 'Valeria', 3: ""Yata, stay alert! They're coordinating their attacks!"", 4: '1'}"
+135	135		401							{1: '2', 2: '10001004'}
+136	136		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+137	137		301			RImgBg1Shake				{3: 'Valeria calls out the warning while maintaining suppressive fire in the opposite direction.'}
+138	138		301							{3: 'But before Valeria can finish her sentence, she notices something off.'}
+139	139		301				DialogDisable			{2: 'Valeria', 3: 'Tactics...', 4: '1'}
+140	140		202							{1: '1', 6: '1'}
+141	141		401							{1: '2', 2: '2711'}
+142	142		504							{1: '0.7'}
+143	143		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+144	144		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+145	145		306							{1: '1'}
+146	146		307							{1: 'Tactical coordination?', 3: '60'}
+147	147		301							{3: 'Tactical coordination?'}
+148	148		307						10.0	{2: '1'}
+149	149		307							{1: 'Can the Corrupted really understand tactics at all?', 3: '60'}
+150	150		301							{3: 'Can the Corrupted really understand tactics at all?'}
+151	151		307							{2: '1'}
+152	152		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+153	153		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory432.jpg'}
+154	154		301			DialogEnable				{3: 'Though there was that incident at Praia Forest Park...'}
+155	155		301							{3: 'But that was essentially just a hive mind issuing collective commands.'}
+156	156		301							{3: 'These Corrupted are coordinating with one another far too perfectly.'}
+157	157		306							
+158	158		504							{1: '0'}
+159	159		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+160	160		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory360.png'}
+161	161		201							{1: '1', 2: '500961'}
+162	162		301							{1: '1', 2: 'Valeria', 3: 'There must be a puppeteer behind this.', 4: '1'}
+163	163		301							"{2: 'Valeria', 3: ""This isn't something mechanical minds can cook up."", 4: '1'}"
+164	164		201							{1: '1', 2: '501041'}
+165	165		301							"{1: '1', 2: 'Yata', 3: ""Are you suggesting they're operating with a commandant-and-squad formation like us?"", 4: '1'}"
+166	166		201							{1: '1', 2: '500961'}
+167	167		301							"{1: '1', 2: 'Valeria', 3: ""But you're not my puppets."", 4: '1'}"
+168	168		301							{2: 'Valeria', 3: 'The Corrupted attacking us are just mindless marionettes programmed for suicide attacks.', 4: '1'}
+169	169		201							{1: '1', 2: '501041'}
+170	170		301							{1: '1', 2: 'Yata', 3: 'Come to think of it, they breached our M.I.N.D. without any resistance...', 4: '1'}
+171	171		301							{2: 'Yata', 3: 'How did they manage to do that?', 4: '1'}
+172	172		202							{1: '1', 6: '1'}
+173	173		201							{1: '1', 2: '500356'}
+174	174		301							{1: '1', 3: 'While Yata is lost in thought, a mechanoid covered in explosives shambles toward them, its movements unsteady.'}
+175	175		301							{2: 'Self-Destruction Mechanoid', 3: 'Land of eternity... paradise... escape from this mortal realm...', 4: '1'}
+176	176		301							{2: 'Self-Destruction Mechanoid', 3: 'I... am a firefly...', 4: '1'}
+177	177		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+178	178		301							{3: 'With these cryptic words, the Self-Destruction Mechanoid suddenly charges at Valeria in a frenzy.'}
+179	179		201							{1: '1', 2: '501041', 3: '4'}
+180	180		301							{1: '1', 2: 'Yata', 3: 'Watch out!', 4: '1'}
+181	181		201							{1: '2', 2: '501041', 3: '4', 4: '-800'}
+182	182		201							{1: '1', 2: '500356', 4: '400'}
+183	183		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+184	184		203							{1: '2', 2: '0.15'}
+185	185		401							{1: '2', 2: '11106008'}
+186	186		502						250.0	{1: 'RImgBg1Shake'}
+187	187		203							{1: '1', 2: '0.15', 3: '1000'}
+188	188		202							{1: '1'}
+189	189		301							{1: '1', 3: 'With lightning-fast reflexes, Yata kicks the Self-Destruction Mechanoid skyward.'}
+190	190		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+191	191		202							{1: '2', 6: '1'}
+192	192		401							{1: '2', 2: '4304'}
+193	193		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+194	194		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionL.prefab', 2: '2'}
+195	195		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionR.prefab', 2: '2'}
+196	196		301			RImgBg1Shake				{3: 'After a blinding flash, the airborne mechanoid becomes nothing more than a momentary burst of light.'}
+197	197		401							{1: '2', 2: '2935'}
+198	198		301							"{3: 'Its ""remains"" rain down like metallic petals, scattering across the ground with an otherworldly wail.'}"
+199	199		301							"{3: ""After a moment's pause, Valeria and Yata cautiously approach to investigate.""}"
+200	200		301							{3: 'A fragment of bionic vocal cords on the ground continues to emit unintelligible static, stuttering and mumbling.'}
+201	201		401							{1: '2', 2: '2982'}
+202	202		301							{2: 'Self-Destruction Mechanoid', 3: 'The promise... Yata... come back...'}
+203	203		402							{1: '2982'}
+204	204		401							{1: '2', 2: '2513'}
+205	205		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+206	206		301			RImgBg1Shake				{3: 'Before the mechanoid can finish speaking, Valeria raises her gun and delivers the final shot.'}
+207	207		301							{3: 'At this moment, Shiva and Discord arrive on the scene.'}
+208	208		201							{1: '1', 2: '501041', 3: '7'}
+209	209		301							{1: '1', 2: 'Yata', 3: 'Did I hear that wrong, or was it just... calling my name?', 4: '1'}
+210	210		201							{1: '1', 2: '500961'}
+211	211		301							{1: '1', 2: 'Valeria', 3: 'Unless we all heard wrong.', 4: '1'}
+212	212		201							{1: '1', 2: '500900'}
+213	213		301							"{1: '1', 2: 'Shiva', 3: ""What's really going on with these Corrupted?"", 4: '1'}"
+214	214		301							{2: 'Shiva', 3: 'Three units appeared as a group. Two executed feint attacks while the third charged straight for V.', 4: '1'}
+215	215		301							"{2: 'Shiva', 3: ""Are they assuming that the Task Force's commandant lacks combat capabilities?"", 4: '1'}"
+216	216		201							{1: '1', 2: '500961'}
+217	217		301							{1: '1', 2: 'Valeria', 3: 'Take out the command first, then dismantle the rest of the squad one by one.', 4: '1'}
+218	218		301							{2: 'Valeria', 3: 'Maybe this is how we lost contact with the last Task Force.', 4: '1'}
+219	219		301							{2: 'Valeria', 3: 'Yata.', 4: '1'}
+220	220		301							{2: 'Valeria', 3: 'Tell me exactly what happened here.', 4: '1'}
+221	221		301							{2: 'Valeria', 3: 'Why... did that Corrupted know your name?', 4: '1'}
+222	222		301							"{3: ""Valeria's voice remains unnaturally calm.""}"
+223	223		201							{1: '1', 2: '501041', 3: '4'}
+224	224		301							{1: '1', 2: 'Yata', 3: 'I have no idea how to answer that question, V.', 4: '1'}
+225	225		301							{2: 'Yata', 3: 'This is my first time back here in years.', 4: '1'}
+226	226		301							{2: 'Yata', 3: 'Back then, the Punishing wiped out almost all of humanity. Even my best friend.', 4: '1'}
+227	227		301							{2: 'Yata', 3: 'Ghosts... are probably the only things left here.', 4: '1'}
+228	228		301							"{2: 'Yata', 3: ""If that's what you're trying to ask!"", 4: '1'}"
+229	229		201							{1: '1', 2: '500961'}
+230	230		301							{1: '1', 2: 'Valeria', 3: 'Enough.', 4: '1'}
+231	231		202							{1: '1'}
+232	232		301							{3: 'She shifts her gaze away from Yata and prepares to step forward.'}
+233	233		201							{1: '1', 2: '501041', 3: '8', 7: '1'}
+234	234		203							{1: '1', 2: '0.25', 4: '-300'}
+235	235		202							{1: '1'}
+236	236		401							{1: '2', 2: '3077'}
+237	237		301			RImgBg1Shake				{1: '1', 3: 'But in that instant, almost simultaneously, Yata collapses face-first onto the ground.'}
+238	238		201							{1: '1', 2: '500961'}
+239	239		301							{1: '1', 2: 'Valeria', 3: 'Yata!', 4: '1'}
+240	240		203							{1: '1', 2: '0.25', 4: '-80'}
+241	241		301							"{3: ""Valeria kneels down and sees that Yata's eyes have gone lifeless.""}"
+242	242		301							{2: 'Valeria', 3: '...A M.I.N.D. quake!', 4: '1'}
+243	243		301							{2: 'Valeria', 3: 'Stay calm and focus on the Mind Beacon.', 4: '1'}
+244	244		401							{1: '2', 2: '4306'}
+245	245		301							{3: 'Just as Valeria is about to connect with Yata, Discord, too, collapses to the ground nearby.'}
+246	246		301							"{2: 'Valeria', 3: ""They're falling one after another?"", 4: '1'}"
+247	247		301							"{2: 'Valeria', 3: ""The commandant's consciousness connection with their squad weakens when they lose focus."", 4: '1'}"
+248	248		301							{2: 'Valeria', 3: 'This was the moment they were waiting for.', 4: '1'}
+249	249		301							{3: 'Valeria turns to Shiva, the only one still barely conscious.'}
+250	250		301							{2: 'Valeria', 3: 'Shiva, report.', 4: '1'}
+251	251		201							{1: '1', 2: '501060'}
+252	252		301			PanelActor1Shake				{1: '1', 2: 'Shiva', 3: 'My head... it hurts... damn it... Valeria!', 4: '1'}
+253	253		301							"{2: 'Shiva', 3: ""There's a force in my M.I.N.D... It's trying to tear us away from your beacon..."", 4: '1'}"
+254	254		202							{1: '1', 6: '1'}
+255	255		301							{3: 'Gritting her teeth, Valeria struggles with all her might to stabilize the connection.'}
+256	256		401							{1: '1', 2: '36'}
+257	257		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '2'}
+258	258		201							{1: '1', 2: '501041', 3: '8', 5: '-100'}
+259	259		301							{1: '1', 2: 'Yata', 3: 'A song... This voice...', 4: '1'}
+260	260		301							{3: 'Lying on the ground, Yata seems to be regaining consciousness.'}
+261	261		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1063.jpg', 3: '0', 4: '0.5', 5: '2'}
+262	262		301				AniZhuanchangBegin			"{3: ""However, what reflects in Yata's eyes is an otherworldly scene, one that looks like anything but a battlefield...""}"
+263	263		202							{1: '1', 6: '1'}
+264	264		205							{1: '999'}
+265	265		306							{1: '1'}
+266	266		401							{1: '1', 2: '36'}
+267	267		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1063.jpg'}
+268	268		401							{1: '1', 2: '5058'}
+269	269		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+270	270		301			AniZhuanchangEnd				{3: 'Endless rays of bright sunlight fill a spacious classroom where boys and girls in uniforms gather.'}
+271	271		201							{1: '1', 2: '501054', 4: '400'}
+272	272		201							{1: '2', 2: '501057', 4: '-400'}
+273	273		301							{1: '1', 3: 'Their faces beam with bright smiles as they join hands, singing a heartwarming melody together.', 4: '1', 5: '2'}
+274	274		202							{1: '1', 2: '2', 6: '1'}
+275	275		201							{1: '1', 2: '501053', 4: '-400'}
+276	276		201							{1: '2', 2: '501058', 4: '400'}
+277	277		301							{1: '1', 3: 'They sing on tirelessly, free from worry and care.', 4: '1', 5: '2'}
+278	278		202							{1: '1', 2: '2'}
+279	279		301							{3: '—How many years have flown by since those days of school life...'}
+280	280		301							"{3: ""—When we look back, we're surprised by how fast time went by...""}"
+281	281		201							{1: '1', 2: '501042', 3: '7'}
+282	282		301							{1: '1', 2: 'Yata', 3: 'Is this... a graduation ceremony?', 4: '1'}
+283	283		202							{1: '1', 6: '1'}
+284	284		201							{1: '1', 2: '501057'}
+285	285		301							{1: '1', 3: 'A young girl, holding a bouquet of hydrangeas, makes her way through the crowd toward Yata.'}
+286	286		301							{3: 'A pleasant floral fragrance emanates from her—an innocent scent that puts all guards down.'}
+287	287		202							{1: '1', 6: '1'}
+288	288		201							{1: '1', 2: '501042', 3: '7'}
+289	289		301							{1: '1', 2: 'Yata', 3: 'Who are you?', 4: '1'}
+290	290		202							{1: '1', 6: '1'}
+291	291		201							{1: '1', 2: '501057'}
+292	292		301							{1: '1', 2: '???', 3: 'Shh.', 4: '1'}
+293	293		504							{1: '0'}
+294	294		306							
+295	295		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+296	296		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+297	297		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory360.png'}
+298	298		201							{1: '1', 2: '500961'}
+299	299		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+300	300		401							{1: '1', 2: '36'}
+301	301		301							{1: '1', 2: 'Valeria', 3: 'The song...', 4: '1'}
+302	302		401							{1: '1', 2: '5054'}
+303	303		301							{2: 'Valeria', 3: 'Hallucinations, huh...', 4: '1'}
+304	304		301							{2: 'Valeria', 3: 'No time to waste. We need to do a deep dive now.', 4: '1'}
+305	305		202							{1: '1'}
+306	306		306							{1: '1'}
+307	307		201							{1: '2', 2: '500968'}
+308	308		301							{1: '1', 3: 'Valeria takes a deep breath and closes her eyes.', 4: '2'}
+309	309		301							{3: 'As a commandant, she understands the implications of such actions in battle.', 4: '2'}
+310	310		301							"{3: ""Dropping one's defense, even briefly, means becoming nothing more than a sitting duck on the battlefield."", 4: '2'}"
+311	311		301							"{3: ""Casting all caution aside, Valeria dives deep into Yata's M.I.N.D."", 4: '2'}"
+312	312		202							{1: '2'}
+313	313		401							{1: '2', 2: '2930'}
+314	314		306							
+315	315		301							{3: 'Suddenly, sounds emerge from the dense forest, followed by intermittent footsteps that break the silence...'}
+316	316		201							{1: '1', 2: '500900'}
+317	317		301							"{1: '1', 2: 'Shiva', 3: ""Valeria, something's coming..."", 4: '1'}"
+318	318		301							{3: 'Shiva lets out a heavy sigh as she watches an unresponsive Valeria.'}
+319	319		401							{1: '2', 2: '4779'}
+320	320		301							"{3: ""As the footsteps draw closer, she staggers forward to grab Valeria's sidearm.""}"
+321	321		402							{1: '2930'}
+322	322		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 2: '2'}
+323	323		201							{1: '1', 2: '500296'}
+324	324		301							{1: '1', 2: 'Construct?', 3: 'Join us... Join the spiritual Eden... Become a citizen of the eternal realm.', 4: '1'}
+325	325		301							{2: 'Construct?', 3: 'Whatever your faith may be, this is the ultimate paradise, Canaan, the Pure Land...', 4: '1'}
+326	326		401							{1: '2', 2: '2880'}
+327	327		301							{3: 'The controlled Construct soldier mutters incomprehensible words as it slowly raises its weapon at Shiva.'}
+328	328		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab'}
+329	329		201							{1: '1', 2: '500900', 3: '1'}
+330	330		301							{1: '1', 2: 'Shiva', 3: '...Stay away from us!', 4: '1'}
+331	331		401							{1: '2', 2: '9389036'}
+332	332		401							{1: '2', 2: '4306'}
+333	333		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+334	334		301			RImgBg1Shake				{3: 'A pulse bursts from the muzzle, knocking down the already unstable Construct.'}
+335	335		301							{2: 'Shiva', 3: 'Why did you betray Babylonia?', 4: '1'}
+336	336		202							{1: '1', 6: '1'}
+337	337		301							{2: 'Construct?', 3: 'We did not... have a choice.'}
+338	338		301							"{2: 'Construct?', 3: ""She's... invading our minds...""}"
+339	339		301							"{2: 'Construct?', 3: ""Her dream of Eden is corrupting everyone's will...""}"
+340	340		401							{1: '2', 2: '4306'}
+341	341		201							{1: '1', 2: '500900', 3: '1'}
+342	342		203							{1: '1', 2: '0.2', 4: '-80'}
+343	343		301							{1: '1', 3: 'The fallen Construct continues to mutter bewildering phrases, while Shiva, beyond exhausted, collapses to her knees.'}
+344	344		301							"{2: 'Shiva', 3: ""So this is what it's like getting controlled..."", 4: '1'}"
+345	345		201							{1: '1', 2: '500449'}
+346	346		401							{1: '2', 2: '1508'}
+347	347		301							{1: '1', 2: 'Corrupted', 3: 'SCREEEEE—', 4: '1'}
+348	348		201							{1: '1', 2: '500900', 3: '1'}
+349	349		301							{1: '1', 2: 'Shiva', 3: '...Ugh, not again!', 4: '1'}
+350	350		401							{1: '2', 2: '9389036'}
+351	351		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+352	352		301			RImgBg1Shake				{3: 'Shiva struggles to pull the trigger, but cannot stop the massive Corrupted from drawing near.'}
+353	353		301							{2: 'Shiva', 3: 'Valeria... are we not done yet?', 4: '1'}
+354	354		301							{2: 'Shiva', 3: 'I have a bad feeling about—', 4: '1'}
+355	355		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '1'}
+356	356		401							{1: '2', 2: '4701'}
+357	357		202							{1: '1'}
+358	358		401							{1: '2', 2: '1513'}
+359	359		301			RImgBg1Shake				"{3: ""An elongated shadow blocks out the light from Shiva's view as something hoists her onto its shoulder and frantically runs away. She desperately tries to scream, but no sound comes out.""}"
+360	360		401							{1: '2', 2: '10042402'}
+361	361		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+362	362		401							{1: '2', 2: '13015319'}
+363	363		401							{1: '2', 2: '11105405'}
+364	364		301			RImgBg1Shake				{3: 'THUD—!'}
+365	365		401							{1: '2', 2: '1508'}
+366	366		201							{1: '1', 2: '500449', 7: '1'}
+367	367		301			PanelActor1Shake				{1: '1', 2: 'Corrupted', 3: 'SCREE??', 4: '1'}
+368	368		201							{1: '1', 2: '501041', 3: '4'}
+369	369		301							{1: '1', 2: 'Yata', 3: 'Stop right there!', 4: '1'}
+370	370		202							{1: '1', 6: '1'}
+371	371		401							{1: '2', 2: '4331'}
+372	372		301							"{3: ""A bolt of electricity pierces through the Corrupted's body, but another Construct quickly snatches Shiva away.""}"
+373	373		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+374	374		201							{1: '1', 2: '501041', 3: '4'}
+375	375		301							{1: '1', 2: 'Yata', 3: 'Tsk... I was too late.', 4: '1'}
+376	376		301							{3: 'Despite launching an attack the moment her consciousness returned, Yata, due to insufficient charge, fails to stop the Construct that took Shiva.'}
+377	377		301							{2: 'Yata', 3: 'The Corrupted working together with Construct soldiers? What interesting times we live in.', 4: '1'}
+378	378		301							{2: 'Yata', 3: 'What kind of brainwashing did they go through to become one big family?!', 4: '1'}
+379	379		201							{1: '1', 2: '500961'}
+380	380		301							"{1: '1', 2: 'Valeria', 3: ""I'm more curious about who it is that's working the strings here."", 4: '1'}"
+381	381		301							{3: 'Having just stabilized Discord, Valeria forces herself to stand up.'}
+382	382		301							"{2: 'Valeria', 3: ""We don't have time for that now. Isn't Shiva's tracking device connected to our terminals?"", 4: '1'}"
+383	383		201							{1: '1', 2: '500627'}
+384	384		301							"{1: '1', 2: 'Discord', 3: ""We can still track her now since the connection's still active, but I can't guarantee it'll work if they get too far."", 4: '1'}"
+385	385		301							{2: 'Discord', 3: 'Someone needs to stay close to her to act as a relay point for the connection to stay alive because of signal interference.', 4: '1'}
+386	386		201							{1: '1', 2: '500961'}
+387	387		301							{1: '1', 2: 'Valeria', 3: 'If we align the direction in which the interference is the most powerful...', 4: '1'}
+388	388		301							"{2: 'Valeria', 3: ""With where the corrupted M.I.N.D.'s infiltration is intensifying..."", 4: '1'}"
+389	389		301							{2: 'Valeria', 3: 'Bearing 451 is where the two overlap. Initiating image analysis.', 4: '1'}
+390	390		201							{1: '1', 2: '500627'}
+391	391		301							{1: '1', 2: 'Discord', 3: 'Enhancing night vision mode... Looks like a stone monument among some abandoned buildings.', 4: '1'}
+392	392		301							"{2: 'Discord', 3: ""There's a line of text embedded in the stone monument. It's hard to make it out, but it looks like something about a school..."", 4: '1'}"
+393	393		201							{1: '1', 2: '501041', 3: '4'}
+394	394		301							{1: '1', 2: 'Yata', 3: 'Misono Academy High School.', 4: '1'}
+395	395		301							"{2: 'Yata', 3: ""That's not a monument. It's our high school gate."", 4: '1'}"
+396	396		301							"{2: 'Yata', 3: ""Let me handle this. I know the school's layout well."", 4: '1'}"
+397	397		301							{2: 'Yata', 3: 'Try to brute force your way through them while I draw their fire.', 4: '1'}
+398	398		201							{1: '1', 2: '500961'}
+399	399		301							{1: '1', 2: 'Valeria', 3: '...', 4: '1'}
+400	400		202							{1: '1'}
+401	401		301							{3: 'Valeria briefly closes her eyes.'}
+402	402		201							{1: '1', 2: '501041', 3: '4'}
+403	403		301							"{1: '1', 2: 'Yata', 3: ""We can't wait any longer... Scarab can't afford to lose another member."", 4: '1'}"
+404	404		301							"{2: 'Yata', 3: ""I'll be back in one piece, and I'll bring Shiva back with me..."", 4: '1'}"
+405	405		201							{1: '1', 2: '500961'}
+406	406		301							{1: '1', 2: 'Valeria', 3: '...', 4: '1'}
+407	407		301							"{2: 'Valeria', 3: ""Don't force your way through. Fall back if things ever go south."", 4: '1'}"
+408	408		301							{2: 'Valeria', 3: 'Keep your terminal on and check in every ten minutes.', 4: '1'}
+409	409		301							{3: 'Valeria is unusually fussy with her instructions.'}
+410	410		301							"{2: 'Valeria', 3: ""Also, short-range communications on the ground are working just fine, but we aren't getting any response to any messages sent to Babylonia."", 4: '1'}"
+411	411		301							{2: 'Valeria', 3: 'Take the comm relay with you.', 4: '1'}
+412	412		301							{3: 'Valeria hands a black device to Yata.'}
+413	413		301							{2: 'Valeria', 3: 'We can reach out to Babylonia once we restore long-range communication. The rooftop would make an excellent installation site.', 4: '1'}
+414	414		201							{1: '1', 2: '501041', 3: '4'}
+415	415		301							{1: '1', 2: 'Yata', 3: 'Roger that.', 4: '1'}
+416	416		202							{1: '1'}
+417	417		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '1'}
+418	418		401							{1: '2', 2: '4795'}
+419	419		401							{1: '2', 2: '4331'}
+420	420		301			RImgBg1Shake				{3: 'Yata knocks down two approaching Corrupted with her mechanical arm and dashes into the dense forest.'}
+421	421		201							{1: '1', 2: '500961'}
+422	422		301							{1: '1', 2: 'Valeria', 3: 'Now...', 4: '1'}
+423	423		301		1		AniZhuanchangBegin			{2: 'Valeria', 3: 'Discord, prepare to strike—', 4: '1'}

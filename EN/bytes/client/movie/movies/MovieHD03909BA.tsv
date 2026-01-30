@@ -1,0 +1,107 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory556.jpg'}
+2	2		104							{1: '0|0|-450', 2: '0'}
+3	3		401							{1: '1', 2: '100'}
+4	4		401							{1: '2', 2: '1516'}
+5	5		401							{1: '2', 2: '967'}
+6	6		502							{1: 'DialogEnable'}
+7	7		301			AniZhuanchangEnd				{3: 'You slowly walk up the stone steps with the wind blowing, and Kowloong Valley is quiet and peaceful.'}
+8	8		301							{3: 'The rustling sound of wind passing through the forest harmonizes with the soft whisper of a broom sweeping against the ground nearby.'}
+9	9		502							{1: 'DialogDisable'}
+10	10		402							{1: '967'}
+11	11		401							{1: '2', 2: '2704'}
+12	12		104						250.0	{1: '0|25|-450', 2: '0.25'}
+13	13		104							{1: '0|0|-475', 2: '0.25'}
+14	14		301			DialogEnable				"{3: ""A few more steps and you see an old person sweeping. He's wearing Kowloong clothes and looks happy and peaceful, smiling and nodding at you.""}"
+15	15		502							{1: 'DialogDisable'}
+16	16		401							{1: '2', 2: '2704'}
+17	17		104						250.0	{1: '0|25|-475', 2: '0.25'}
+18	18		104							{1: '0|0|-500', 2: '0.25'}
+19	19		301			DialogEnable	AniZhuanchangBegin			"{3: ""Shortly after moving past each other, you reach the last step, and you can see where you're going.""}"
+20	20		502						400.0	{1: 'DialogDisable'}
+21	21		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+22	22		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory744.jpg'}
+23	23		401							{1: '2', 2: '754'}
+24	24		301			DialogEnable				{3: 'Smoke comes from the chimney. Before you get to the gate, Hanying opens the window, hearing you coming.'}
+25	25		201							{1: '1', 2: '500917', 3: '1', 5: '-100', 6: '200'}
+26	26		301							{1: '1', 2: 'Hanying', 3: 'Commandant.', 4: '1'}
+27	27		202							{1: '1'}
+28	28		301							{3: 'You nod back.'}
+29	29		301							{3: 'Her long hair flows around her, and the morning light makes her smile shine.'}
+30	30		401							{1: '2', 2: '2550'}
+31	31		301							{3: 'A calico cat wiggles out of her arms, jumps off the window, onto the fence, and runs off into the garden.'}
+32	32		401							{1: '2', 2: '4383'}
+33	33		301							{3: 'At the window, Hanying grabs a hairpin and quickly puts her hair up, rushing to the courtyard. In no time, her long hair is pinned neatly.'}
+34	34		402							{1: '4383'}
+35	35		201							{1: '1', 2: '500916', 3: '1'}
+36	36		301							{1: '1', 2: 'Hanying', 3: 'Please, come in! I heard some noise and thought you were early, Commandant... but it was just a cat coming through the window.', 4: '1'}
+37	37		202							{1: '1'}
+38	38		401							{1: '2', 2: '4892'}
+39	39		301				AniZhuanchangBegin			{3: 'Hanying smiles as she leads you inside, putting things back where the cat knocked them.'}
+40	40		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+41	41		502						400.0	{1: 'DialogDisable'}
+42	42		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+43	43		301			DialogEnable				"{3: ""Sitting at the tea table by the window, you can see everything outside. The mountains look like waves in the wind, the sun's warm, and a stream turns a water wheel for the fields.""}"
+44	44		401							{1: '2', 2: '2825'}
+45	45		301							{3: 'Hanying brings some snacks to the table and then lights the kettle on the stove.'}
+46	46		201							{1: '1', 2: '500916', 3: '1', 5: '-75'}
+47	47		301							{1: '1', 2: 'Hanying', 3: 'I took it upon myself to invite you to your birthday celebration, Commandant...', 4: '1'}
+48	48		301							{3: 'Hanying stops talking and opens a bamboo basket of snacks.'}
+49	49		301							"{2: 'Hanying', 3: ""I wasn't expecting these little hiccups. Now I'm the one all flustered."", 4: '1'}"
+50	50		301							{2: 'Hanying', 3: 'But I made the pastries ahead of time. Would you like to try some, Commandant?', 4: '1'}
+51	51		202							{1: '1'}
+52	52		301							{3: 'She slides a bamboo steamer of osmanthus cakes toward you.'}
+53	53		301							"{3: ""You take a piece and bite. Your mouth fills with osmanthus. It's soft and just right—not too plain or too sweet.""}"
+54	54		302							"{2: ""Just as you'd expect from Hanying's skill."", 3: '55'}"
+55	55		201							{1: '1', 2: '500916', 3: '1', 5: '-75'}
+56	56		301							"{1: '1', 2: 'Hanying', 3: ""If it's easy for you, feel free to take some back with you."", 4: '1'}"
+57	57		202							{1: '1'}
+58	58		301							{3: 'The teapot bubbles with a soft gurgling sound. Hanying gently lifts it, waiting for the first infusion to steep properly before pouring it into cups.'}
+59	59		301							"{3: ""You notice some potted plants by the window. Roses are blooming, blue plumbago flowers are thriving outside, and a camellia plant's climbing the window, adding a bright splash of color.""}"
+60	60		301							{3: 'Seeing you smelling the flower, she cuts a light yellow rose and gives it to you.'}
+61	61		301							{3: 'A strong, nice flower smell fills the air, even stronger than the osmanthus.'}
+62	62		302							{2: 'Something smells nice...', 3: '64', 4: 'This feels kind of familiar...', 5: '63'}
+63	63		301							{3: 'Hanying nods.'}
+64	64		201							{1: '1', 2: '500916', 3: '1', 5: '-75'}
+65	65		301							{1: '1', 2: 'Hanying', 3: 'These were all transplanted from the garden we went together on this day last year, Commandant.', 4: '1'}
+66	66		301							{2: 'Hanying', 3: 'They bloom all year. I wanted you to see these flowers whenever you came.', 4: '1'}
+67	67		203							{1: '1', 2: '0.15', 4: '-25'}
+68	68		202							{1: '1'}
+69	69		401							{1: '2', 2: '4799'}
+70	70		301							{1: '1', 3: 'Hanying gets up and puts a flower in your pocket. She fixes your collar and walks toward the other end of the room.'}
+71	71		301							{3: 'A moment later, she brings out a traditional Kowloong outfit.'}
+72	72		201							{1: '1', 2: '500916', 3: '8', 5: '-80', 6: '-200'}
+73	73		301							{1: '1', 2: 'Hanying', 3: 'Last time we met, I was already thinking about making you some clothes, Commandant.', 4: '1'}
+74	74		204							{1: '1', 2: '1'}
+75	75		301							"{2: 'Hanying', 3: ""If you're okay with it, try it on."", 4: '1'}"
+76	76		202							{1: '1'}
+77	77		401							{1: '2', 2: '4044'}
+78	78		301							{3: 'Hanying gives you the clothes she was holding. As soon as you touch them, you feel how soft they are. It looks simple, but you can feel the patterns in the fabric.'}
+79	79		401							{1: '2', 2: '4341'}
+80	80		301							"{3: ""The garment unfolds before you, its predominantly gray-black fabric accented with elegant jade-green embellishments that complement Hanying's own attire.""}"
+81	81		301							{3: 'The sunlight through the window makes the embroidery on the garment come to life with striking vividness, as if awakened from slumber.'}
+82	82		301							{3: '...'}
+83	83		201							{1: '1', 2: '500916', 5: '-80', 6: '-200'}
+84	84		301							{1: '1', 2: 'Hanying', 3: 'Commandant... how do you like it?', 4: '1'}
+85	85		301							"{3: ""Wearing the clothes and looking in the mirror, you feel like you're in one of those Kowloong scroll paintings, becoming a character within its world.""}"
+86	86		302							"{2: 'It looks great.', 3: '87', 4: 'You look quite different than usual.', 5: '89', 6: ""I'm really enjoying it."", 7: '90'}"
+87	87		204							{1: '1', 2: '1'}
+88	88		301							{2: 'Hanying', 3: 'That makes me feel better, then.', 4: '1'}
+89	89	92	301							{3: 'Hanying nods, agreeing with what you said.'}
+90	90		204							{1: '1', 2: '1'}
+91	91	93	301							{3: 'Hanying visibly relaxes, as if a weight has been lifted, and her smile grows warmer with enthusiasm.'}
+92	92		204							{1: '1', 2: '1'}
+93	93		301							{2: 'Hanying', 3: 'While making this, I realized you might stand out wearing it in other settings, Commandant...', 4: '1'}
+94	94		204							{1: '1', 2: '8'}
+95	95		301							"{2: 'Hanying', 3: ""But I'd like you to have a matching outfit for every visit—something just for you and these times, Commandant."", 4: '1'}"
+96	96		204							{1: '1'}
+97	97		301							"{2: 'Hanying', 3: ""Is this... a little favor I'm asking?"", 4: '1'}"
+98	98		401							{1: '2', 2: '4798'}
+99	99		301							{3: 'A breeze comes through, moving her hair and rustling the flowers.'}
+100	100		302							"{2: ""I'll remember moments like this."", 3: '101'}"
+101	101		204							{1: '1', 2: '1'}
+102	102		301							{3: 'A ripple of emotion passes through her eyes, but she quickly returns to her usual dignified composure.'}
+103	103		301							"{2: 'Hanying', 3: ""Hmm, it's still early. After we enjoy all the tea, let me spend a bit more time with you."", 4: '1'}"
+104	104		202							{1: '1'}
+105	105		401							{1: '2', 2: '2825'}
+106	106		301		1		AniZhuanchangBegin			{3: 'Inside a little cabin tucked away in the Kowloong mountains, fresh tea is poured into a cup, filling it halfway.'}

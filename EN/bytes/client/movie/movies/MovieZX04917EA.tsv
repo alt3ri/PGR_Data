@@ -1,0 +1,301 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4901_01.jpg'}
+2	2		401							{1: '1', 2: '229'}
+3	3		104							{1: '-400|150|-400', 2: '0'}
+4	4		502							{1: 'DialogEnable'}
+5	5		301			AniZhuanchangEnd				"{3: ""As the battle comes to an end, the lecture hall's outer wall gives way, and Yuka crashes through into the adjacent classroom.""}"
+6	6		104							{1: '0|0|0', 2: '15'}
+7	7		301							{3: 'Where flower petals once lay scattered, now only a dim, decrepit space remains.'}
+8	8		301							{3: 'Dust blankets everything, the room dilapidated and devoid of life.'}
+9	9		301							{3: 'This place once served as an after-school study room for students...'}
+10	10		301							"{3: ""Decades have passed, leaving behind only the school supplies that couldn't be carried away during the evacuation.""}"
+11	11		301							{3: 'Having exhausted all the power Cradle had granted her, Yuka collapses into a pool of her own blood.'}
+12	12		301							{2: 'Yuka Saotome', 3: 'Yata...'}
+13	13		301							{3: 'The daybreak sun pours freely into the space, yet comes to an inexplicable halt before reaching Yuka.'}
+14	14		301							{3: 'She looks around at her surroundings with bleary eyes, as if just waking from a dream.'}
+15	15		301							{3: 'After a long moment, her gaze slowly refocuses on Yata as understanding dawns.'}
+16	16		301							{2: 'Yuka Saotome', 3: 'Thank goodness... you managed to escape.'}
+17	17		301				AniZhuanchangBegin			{3: 'A smile of relief spreads across her face.'}
+18	18		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1074.jpg'}
+19	19		201							{1: '1', 2: '501040', 3: '7'}
+20	20		301			AniZhuanchangEnd				{1: '1', 2: 'Yata', 3: '...!', 4: '1'}
+21	21		204							{1: '1', 2: '8'}
+22	22		301				AniZhuanchangBegin			{3: 'Yata feels a lump in her throat and unconsciously closes her eyes.'}
+23	23		202							{1: '1', 6: '1'}
+24	24		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+25	25		301			AniZhuanchangEnd				{3: 'The tide of memories rushes backward, threatening to sweep her away.'}
+26	26		301				DialogDisable			{3: 'A desperate scream echoes from afar, fragments of broken words pouring into her ears.'}
+27	27		307							"{1: '""Run, Yata!""', 3: '65', 4: 'ff4e4eff'}"
+28	28		301							"{3: '""Run, Yata!""'}"
+29	29		307							{2: '1'}
+30	30		301			DialogEnable	DialogDisable			{3: 'She snaps back to reality just in time, grasping at the final lifeline in this world of devastation.'}
+31	31		307							"{1: '""Thank goodness... you managed to escape.""', 3: '65', 4: '34aff8ff'}"
+32	32		301				AniZhuanchangBegin			"{3: '""Thank goodness... you managed to escape.""'}"
+33	33		307							{2: '1'}
+34	34		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+35	35		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4901_01.jpg'}
+36	36		502							{1: 'DialogEnable'}
+37	37		301			AniZhuanchangEnd				{3: 'Yata opens her eyes, a storm of conflicting emotions churning in her chest.'}
+38	38		301							"{2: 'Yata', 3: ""What's all this talk about escaping? Can't believe you're still hung up on that after all these years.""}"
+39	39		301							{2: 'Yuka Saotome', 3: 'Not just back then, it remains true even now.'}
+40	40		301							{3: 'The girl before her gazes on quietly, the obstinance and madness in her eyes fading away along with the power of the Red Tide.'}
+41	41		301							{2: 'Yata', 3: 'What do you mean... even now?'}
+42	42		301				AniZhuanchangBegin			"{2: 'Yuka Saotome', 3: ""I'm glad that you made it out of my consciousness projection this time.""}"
+43	43		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1074.jpg'}
+44	44		201							{1: '1', 2: '501040', 3: '7', 4: '-400'}
+45	45		201							{1: '2', 2: '501051', 4: '400'}
+46	46		301			AniZhuanchangEnd				"{1: '1', 3: ""Yata's body trembles as realization dawns upon her.""}"
+47	47		204							{1: '1'}
+48	48		301							"{2: 'Yata', 3: ""You didn't just wake up now. You remember everything you've done..."", 4: '1'}"
+49	49		204							{1: '2', 2: '14'}
+50	50		301							{2: 'Yuka Saotome', 3: 'Yes, Yata. I remember. I remember every single detail.', 4: '2'}
+51	51		301							{2: 'Yuka Saotome', 3: 'I remember deploying my consciousness projection, and I remember inviting you to join the Red Tide.', 4: '2'}
+52	52		301							{3: 'Yuka responds slowly, an indescribable sorrow wavering in her crimson eyes.'}
+53	53		204							{1: '1', 2: '8'}
+54	54		301							{2: 'Yata', 3: 'No... you could have lied to me, said that the Red Tide suppressed your M.I.N.D., that Cradle was controlling you...', 4: '1'}
+55	55		204							{1: '1'}
+56	56		301							"{2: 'Yata', 3: ""I would've believed you. I'd much rather believe that."", 4: '1'}"
+57	57		204							{1: '2'}
+58	58		301							{2: 'Yuka Saotome', 3: 'The Red Tide did suppress my M.I.N.D... Even so, the consciousness projection was my own choice.', 4: '2'}
+59	59		301							"{2: 'Yata', 3: ""Didn't it only bring pain? Both to your M.I.N.D. and to everyone under its control."", 4: '1'}"
+60	60		301							"{2: 'Yuka Saotome', 3: ""It wasn't like this when the Punishing first broke out."", 4: '2'}"
+61	61		204							{1: '2', 2: '8'}
+62	62		301							{3: 'Yuka slightly bows her head and lets out a soft sigh.'}
+63	63		204							{1: '2'}
+64	64		301							"{2: 'Yuka Saotome', 3: ""Even in my comatose state, I could hear them, the Punishing's victims, screaming, raging, and weeping by my ears..."", 4: '2'}"
+65	65		301							{2: 'Yuka Saotome', 3: 'So I did everything in my power to create a beautiful dreamland, so they could pass without having to suffer.', 4: '2'}
+66	66		301							"{2: 'Yuka Saotome', 3: ""It's Dr. Saotome's dream to connect human consciousness together to bring people happiness, and I was trying to do just that."", 4: '2'}"
+67	67		301							"{2: 'Yuka Saotome', 3: ""See? Consciousness projection isn't all that bad, right?"", 4: '2'}"
+68	68		301							{2: 'Yata', 3: '...', 4: '1'}
+69	69		301							{2: 'Yuka Saotome', 3: 'You know what, Yata?', 4: '2'}
+70	70		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory699.jpg', 3: '0', 4: '1', 5: '1'}
+71	71		202							{1: '1', 2: '2'}
+72	72		301							{2: 'Yuka Saotome', 3: 'That winter when the Punishing broke out, Hydrangea Island was blanketed by heavy snow.'}
+73	73		301							{2: 'Yuka Saotome', 3: 'The solitary buildings, the withered flower beds... everything lies buried beneath a blanket of white snow.'}
+74	74		301							{2: 'Yuka Saotome', 3: 'In this vast world, I stood alone... not knowing where to go, nor why I should go anywhere.'}
+75	75		301							{2: 'Yuka Saotome', 3: 'I walked through that heavy snow for what felt like an eternity... Days? Months? Years? Time lost all meaning as I wandered on alone.'}
+76	76		301							{2: 'Yuka Saotome', 3: '...Until the day I was awakened.'}
+77	77		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory699.jpg', 3: '1', 4: '0', 5: '1'}
+78	78		201							{1: '1', 2: '501040', 4: '-400'}
+79	79		201							{1: '2', 2: '501051', 4: '400'}
+80	80		301							"{1: '1', 2: 'Yuka Saotome', 3: ""Yata... You should understand it by now. Saving humanity, connecting everyone's consciousness, bringing happiness to all... Such noble ideals."", 4: '2'}"
+81	81		204							{1: '2', 2: '8'}
+82	82		301							{2: 'Yuka Saotome', 3: 'I was the only one who ever sought salvation.', 4: '2'}
+83	83		204							{1: '1', 2: '8', 6: '1'}
+84	84		301							{2: 'Yata', 3: 'Yuka...', 4: '1'}
+85	85		301							"{2: 'Yuka Saotome', 3: ""Projecting consciousness to erase people's pain... it was nothing but a substitute for my own desires."", 4: '2'}"
+86	86		204							{1: '2', 2: '15'}
+87	87		301							{3: 'The girl lifts her head, her black hair cascading down her shoulders and slipping through her fingers.'}
+88	88		301							"{3: ""Her smile is feeble and sorrowful, causing Yata to turn away, unable to bear the look on Yuka's face.""}"
+89	89		301							"{2: 'Yata', 3: ""...But using the Red Tide's power for consciousness projection can never eliminate pain. Rather—"", 4: '1'}"
+90	90		204							{1: '2'}
+91	91		204							{1: '1'}
+92	92		301							"{2: 'Yuka Saotome', 3: ""It infects those who receive the projection, doesn't it?"", 4: '2'}"
+93	93		204							{1: '1', 2: '6'}
+94	94		301							{2: 'Yata', 3: '...', 4: '1'}
+95	95		204							{1: '1'}
+96	96		301							{2: 'Yuka Saotome', 3: 'To accept the Red Tide means submitting to its will.', 4: '2'}
+97	97		301							{2: 'Yuka Saotome', 3: 'It continuously amplifies my obsession and uses it to expand its own power.', 4: '2'}
+98	98		301							{2: 'Yata', 3: 'Yuka, why...', 4: '1'}
+99	99		301				DialogDisable			{2: 'Yuka Saotome', 3: 'Curious about why I accepted the Red Tide?', 4: '2'}
+100	100		307							"{1: ""No, that's not what I want to ask."", 3: '60'}"
+101	101		301							"{3: ""No, that's not what I want to ask.""}"
+102	102		307							{2: '1'}
+103	103		204							{1: '2', 2: '14'}
+104	104		301			DialogEnable	DialogDisable			{2: 'Yuka Saotome', 3: 'Because I was so lonely there, amidst the heavy snow.', 4: '2'}
+105	105		307							{1: 'I know.', 3: '60'}
+106	106		301							{3: 'Of course.'}
+107	107		307							{2: '1'}
+108	108		301			DialogEnable	DialogDisable			{2: 'Yuka Saotome', 3: 'It was just that simple of a wish—to live on, and to not be alone anymore.', 4: '2'}
+109	109		307							"{1: ""I've always known!"", 3: '60'}"
+110	110		301							"{3: ""I've always known!""}"
+111	111		307							{2: '1'}
+112	112		301			DialogEnable				"{3: ""As vital fluid gushes out of Yuka's wounds, the countdown of her life quietly begins.""}"
+113	113		301							{2: 'Yata', 3: 'Why... does it need to come at the cost of your life? Is there really no other way? Are there no miracles?', 4: '1'}
+114	114		204							{1: '1', 2: '8'}
+115	115		301							{3: 'Yata thought she had mentally prepared herself already, but she cannot help but seek a definitive answer all the same.'}
+116	116		204							{1: '2', 2: '15'}
+117	117		301							"{2: 'Yuka Saotome', 3: ""I mean... I don't own this life anyway, and it's time I gave it back."", 4: '2'}"
+118	118		204							{1: '1', 2: '7'}
+119	119		301							{3: 'The cruel truth shatters her last hope, paining Yata so much she can barely breathe.'}
+120	120		204							{1: '1', 2: '6'}
+121	121		301							{3: 'Yet the girl lying in the pool of blood simply offers Yata a quiet smile.'}
+122	122		301							"{2: 'Yuka Saotome', 3: ""Yata, don't look so sad."", 4: '2'}"
+123	123		301							{2: 'Yuka Saotome', 3: 'I consider myself lucky to have seen you again.', 4: '2'}
+124	124		204							{1: '1', 2: '8'}
+125	125		301							{2: 'Yata', 3: 'Why...', 4: '1'}
+126	126		301				DialogDisable			{3: 'Her throat tightens, leaving her unable to speak.'}
+127	127		202							{1: '1', 2: '2', 6: '1'}
+128	128		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+129	129		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+130	130		307							"{1: ""Why do we have to part ways again when we've only just found each other?"", 3: '60'}"
+131	131		301							"{3: ""Why do we have to part ways again when we've only just found each other?""}"
+132	132		307						10.0	{2: '1'}
+133	133		307							"{1: ""Why am I getting this ending when I've given it everything I've got?"", 3: '60'}"
+134	134		301							"{3: ""Why am I getting this ending when I've given it everything I've got?""}"
+135	135		307						10.0	{2: '1'}
+136	136		307							{1: 'Why are you being kind to someone like me...', 3: '60'}
+137	137		301							{3: 'Why are you being kind to someone like me...'}
+138	138		307						10.0	{2: '1'}
+139	139		307							{1: 'Mock me with spite, cry in despair, scream in anguish—anything, please, just say something to me, even if only for a moment.', 3: '62'}
+140	140		301							{3: 'Mock me with spite, cry in despair, scream in anguish—anything, please, just say something to me, even if only for a moment.'}
+141	141		307						10.0	{2: '1'}
+142	142		307							"{1: ""Because I'm the one who failed to save you, the one who killed you with my own hands."", 3: '60'}"
+143	143		301							"{3: ""Because I'm the one who failed to save you, the one who killed you with my own hands.""}"
+144	144		307						10.0	{2: '1'}
+145	145		307							{1: 'The one who has always been weak and powerless...', 3: '60'}
+146	146		301				AniZhuanchangBegin			{3: 'The one who has always been weak and powerless...'}
+147	147		307							{2: '1'}
+148	148		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1074.jpg'}
+149	149		201							{1: '1', 2: '501040', 3: '8', 4: '-400'}
+150	150		201							{1: '2', 2: '501051', 4: '400'}
+151	151		502							{1: 'DialogEnable'}
+152	152		301			AniZhuanchangEnd				{1: '1', 2: 'Yuka Saotome', 3: 'Yata?', 4: '2'}
+153	153		204							{1: '1'}
+154	154		301							{2: 'Yata', 3: 'I...', 4: '1'}
+155	155		301							"{2: 'Yuka Saotome', 3: ""Only now, seeing you here, do I finally understand that consciousness projection isn't the way for people to truly connect."", 4: '2'}"
+156	156		301							{2: 'Yuka Saotome', 3: 'No matter how many minds I connect with, I still feel so lonely.', 4: '2'}
+157	157		301							"{2: 'Yuka Saotome', 3: ""Only when the Red Tide's power fades away can I be free, and only then can we truly reunite."", 4: '2'}"
+158	158		301							"{2: 'Yuka Saotome', 3: ""That requires giving it everything you've got, right?"", 4: '2'}"
+159	159		204							{1: '2', 2: '15'}
+160	160		301							{2: 'Yuka Saotome', 3: 'So... stop blaming yourself for this.', 4: '2'}
+161	161		204							{1: '1', 2: '8'}
+162	162		301							{3: 'Yata lowers her head, her body trembling uncontrollably.'}
+163	163		301							{2: 'Yata', 3: 'Even so, you still have to go...', 4: '1'}
+164	164		301							{2: 'Yuka Saotome', 3: 'Yes... My life should have ended many years ago.', 4: '2'}
+165	165		301							{2: 'Yuka Saotome', 3: 'What I have now is nothing but borrowed time.', 4: '2'}
+166	166		301							"{2: 'Yuka Saotome', 3: ""If I have one regret, it's that we never got to say a proper goodbye."", 4: '2'}"
+167	167		204							{1: '1'}
+168	168		301							{3: 'Yata gazes intently at the young girl kneeling beside the lecture hall.'}
+169	169		204							{1: '1', 2: '8'}
+170	170		301							{3: 'Goodbye, goodbye... Yata opens her mouth to speak, only to bite her lip tightly shut.'}
+171	171		301							{3: 'She had said goodbye to Yuka countless times before, yet today, the words refuse to leave her lips.'}
+172	172		204							{1: '1'}
+173	173		301							{2: 'Yuka Saotome', 3: 'Do you remember how I once wove a dream for everyone, each according to their wish...', 4: '2'}
+174	174		301							{2: 'Yuka Saotome', 3: 'In these dreams, some were promoted to officers, some became heroes, and a few shed their uniforms to live ordinary lives...', 4: '2'}
+175	175		301							{2: 'Yuka Saotome', 3: 'While you remained at Misono High.', 4: '2'}
+176	176		301							{2: 'Yata', 3: '...Is there something wrong with dreaming about Misono High?', 4: '1'}
+177	177		204							{1: '2', 2: '8'}
+178	178		301							{2: 'Yuka Saotome', 3: '...', 4: '2'}
+179	179		204							{1: '2'}
+180	180		301							"{2: 'Yuka Saotome', 3: ""One's best dream shouldn't lie in the past... but in the future."", 4: '2'}"
+181	181		204							{1: '1', 2: '7'}
+182	182		301							{2: 'Yata', 3: '...!', 4: '1'}
+183	183		202							{1: '1', 2: '2'}
+184	184		301							{3: 'Yuka gazes around with lingering affection, and Yata follows her line of sight.'}
+185	185		301							{3: 'The aged classroom, the freshly sprouting flowers and grass—everything remains as it was, yet everything rushes toward tomorrow...'}
+186	186		201							{1: '1', 2: '501040', 4: '-400'}
+187	187		201							{1: '2', 2: '501051', 3: '14', 4: '400'}
+188	188		301							{1: '1', 2: 'Yuka Saotome', 3: 'Yata, my time is running out...', 4: '2'}
+189	189		301							"{2: 'Yuka Saotome', 3: ""You should go for what lies ahead... while I'll stay here."", 4: '2'}"
+190	190		301							"{3: ""The girl's voice, soft and delicate, fades away with her life, drifting into the distance.""}"
+191	191		204							{1: '2', 2: '8'}
+192	192		301							{2: 'Yuka Saotome', 3: 'So cold...', 4: '2'}
+193	193		301							{3: 'As if trying to grasp something, she desperately reaches out both hands into the void.'}
+194	194		204							{1: '1', 2: '7'}
+195	195		301							{2: 'Yata', 3: 'Yuka, Yuka!', 4: '1'}
+196	196		301							"{2: 'Yuka Saotome', 3: ""Here, it's snowing again."", 4: '2'}"
+197	197		202							{1: '2'}
+198	198		203							{1: '2', 2: '0.25', 3: '400', 4: '-200'}
+199	199		401							{1: '2', 2: '4306'}
+200	200		301							"{3: ""Yuka's hands fall limply as her body collapses.""}"
+201	201		204							{1: '1', 2: '4'}
+202	202		301							{2: 'Yata', 3: '!!', 4: '1'}
+203	203		301							{3: 'The distance between life and death always seems so vast.'}
+204	204		301							"{3: ""Even a hand's breadth away becomes an unreachable distance.""}"
+205	205		203							{1: '1', 2: '0.25'}
+206	206		401							{1: '2', 2: '4700'}
+207	207		301							{3: 'Just as Yata rushes forward to catch Yuka, she notices someone else has already held her up.'}
+208	208		301							{2: 'Yata', 3: '...Dr. Saotome?', 4: '1'}
+209	209		202							{1: '1', 6: '1'}
+210	210		401							{1: '2', 2: '1099'}
+211	211		301							"{3: ""Confused about Reika's presence, Yata is pulled back to her senses by a transmission from Valeria.""}"
+212	212		401							{1: '2', 2: '2566'}
+213	213		509						800.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg', 2: '2'}
+214	214		201							{1: '1', 2: '501040', 4: '-600'}
+215	215		201							{1: '2', 2: '500961', 4: '500'}
+216	216		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '2'}
+217	217		301							"{1: '1', 2: 'Valeria', 3: ""Yata, if you're still alive, withdraw immediately. The Red Tide is coming."", 4: '2'}"
+218	218		301							"{2: 'Yata', 3: ""The Red Tide? It still hasn't stopped?"", 4: '1'}"
+219	219		301							"{2: 'Valeria', 3: ""No, it hasn't stopped, even though Shiva and Discord's M.I.N.D.s are normal again."", 4: '2'}"
+220	220		301				DialogDisable			"{2: 'Yata', 3: ""Strange... I thought Yuka's powers were gone?"", 4: '1'}"
+221	221		202							{1: '1', 2: '2', 6: '1'}
+222	222		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+223	223		510						800.0	{1: '2'}
+224	224		201							{1: '1', 2: '501050', 3: '4'}
+225	225		301			DialogEnable				"{1: '1', 2: 'Reika Saotome', 3: ""The Lady of the Red Tide hasn't reclaimed the power she had left Yuka..."", 4: '1'}"
+226	226		202							{1: '1', 6: '1'}
+227	227		201							{1: '1', 2: '501050', 3: '4', 4: '250'}
+228	228		201							{1: '2', 2: '501057', 4: '-250', 5: '-150'}
+229	229		401							{1: '2', 2: '4701'}
+230	230		203							{1: '1', 2: '0.25', 3: '250', 4: '-80'}
+231	231		301							"{1: '1', 3: ""Reika kneels to support Yuka's shoulders and let her rest against herself.""}"
+232	232		202							{1: '1', 2: '2', 6: '1'}
+233	233		201							{1: '1', 2: '501040', 4: '-400'}
+234	234		201							{1: '2', 2: '501050', 4: '400'}
+235	235		301							{1: '1', 2: 'Yata', 3: 'Then you have even more reason to not stay here. The Red Tide is coming.', 4: '1'}
+236	236		301							{2: 'Reika Saotome', 3: 'Yata, this will be my final experiment.', 4: '2'}
+237	237		204							{1: '1', 2: '4'}
+238	238		301							"{2: 'Yata', 3: ""Dr. Saotome, I really don't want to lose my temper with you... but Yuka is slipping away!"", 4: '1'}"
+239	239		204							{1: '2', 2: '4'}
+240	240		301							{2: 'Reika Saotome', 3: '...', 4: '2'}
+241	241		301							{2: 'Reika Saotome', 3: 'Do you know why Yuka can create such beautiful dreams, yet remains in constant agony?', 4: '2'}
+242	242		301							{2: 'Yata', 3: 'Because Yuka tries to bring happiness to people by projecting her consciousness.', 4: '1'}
+243	243		301							{2: 'Yata', 3: 'Is that the only thing you can say now when you were the one that put her through her suffering?!', 4: '1'}
+244	244		301							{3: 'Reika looks at Yata with intensity, a flicker of struggle crossing her eyes.'}
+245	245		301							{2: 'Reika Saotome', 3: 'Because those who weave dreams cannot dream themselves.', 4: '2'}
+246	246		204							{1: '1', 2: '7'}
+247	247		301				DialogDisable			{2: 'Yata', 3: '...!', 4: '1'}
+248	248		202							{1: '1', 2: '2', 6: '1'}
+249	249		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+250	250		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+251	251		307							"{1: '""I was the only one who ever sought salvation.""', 3: '60'}"
+252	252		301							"{3: '""I was the only one who ever sought salvation.""'}"
+253	253		307							{2: '1'}
+254	254		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+255	255		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1074.jpg'}
+256	256		201							{1: '1', 2: '501040', 3: '8', 4: '-400', 7: '1'}
+257	257		201							{1: '2', 2: '501050', 4: '400', 7: '1'}
+258	258		301			DialogEnable				{1: '1', 2: 'Reika Saotome', 3: 'That is Prometheus.', 4: '2'}
+259	259		301							{2: 'Reika Saotome', 3: 'An experiment in consciousness projection, allowing humans to communicate mind to mind, giving happiness to everyone...', 4: '2'}
+260	260		301							"{2: 'Reika Saotome', 3: ""And yet its creator is the only one who can never find happiness... Ironic, isn't it?"", 4: '2'}"
+261	261		301							{3: 'Yata narrows her eyes, studying the elegantly dressed woman from head to toe.'}
+262	262		204							{1: '1'}
+263	263		301							"{2: 'Yata', 3: ""Yuka has been in slumber for decades. You're not her, how could you possibly understand what she feels?"", 4: '1'}"
+264	264		204							{1: '2', 2: '4'}
+265	265		301							{3: 'Reika gently extends her hand, catching the rays of sunlight that fall upon them.'}
+266	266		301							{2: 'Reika Saotome', 3: 'You once asked me why I went to such lengths to transform myself into a Construct.', 4: '2'}
+267	267		301							{2: 'Reika Saotome', 3: 'Here is why... because the consciousness projection experiment has to continue.', 4: '2'}
+268	268		301							"{3: ""Yata stares at Reika as the anger in her heart slowly fades away. She already has an inkling of the answer, there's no need to ask any more questions.""}"
+269	269		301							{2: 'Yata', 3: 'After Yuka fell into her slumber, you turned yourself into a test subject for consciousness projection.', 4: '1'}
+270	270		301							"{2: 'Yata', 3: ""That's how you came to understand the pain that consciousness projection inflicted upon Yuka."", 4: '1'}"
+271	271		301							"{2: 'Reika Saotome', 3: ""No... what I experienced wasn't even a fraction of what Yuka had gone through."", 4: '2'}"
+272	272		301							{3: 'Reika gazes at the young girl leaning against her, who now lies with eyes tightly shut, quietly awaiting her life to fade away.'}
+273	273		301							{2: 'Reika Saotome', 3: 'Yuka created beautiful dreams for so many people, but she never had any of her own.', 4: '2'}
+274	274		301							{2: 'Reika Saotome', 3: 'This will be the final experiment—a one-on-one consciousness projection, led by me.', 4: '2'}
+275	275		401							{1: '2', 2: '4919'}
+276	276		204							{1: '1', 2: '8'}
+277	277		301							{3: 'Yata takes a deep breath as the shrieking of the Red Tide reaches her ears.'}
+278	278		204							{1: '1'}
+279	279		301							{2: 'Yata', 3: 'Please...', 4: '1'}
+280	280		301							{3: 'Yata finds herself unable to say what she wanted to say.'}
+281	281		204							{1: '2', 2: '4'}
+282	282		301							{2: 'Reika Saotome', 3: 'There are no heroes in real life, but I will shoot down that eagle for her.', 4: '2'}
+283	283		301							{3: 'Unfazed by the trembling earth beneath, Reika speaks with serene determination.'}
+284	284		301							{2: 'Yata', 3: '...Please do so.', 4: '1'}
+285	285		202							{1: '1', 2: '2'}
+286	286		401							{1: '2', 2: '1513'}
+287	287		301				AniZhuanchangBegin			"{3: ""Yata takes one last long look at Yuka before turning away and rushing toward Valeria's coordinates.""}"
+288	288		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+289	289		301			AniZhuanchangEnd	DialogDisable			{3: 'As she leaves the dilapidated classroom, a distant voice echoes once more within her M.I.N.D.'}
+290	290		307							{1: 'Goodbye... Yata.', 3: '65'}
+291	291		301							{3: 'Goodbye... Yata.'}
+292	292		307							{2: '1'}
+293	293		201							{1: '1', 2: '501040', 3: '8'}
+294	294		301			DialogEnable				{1: '1', 2: 'Yata', 3: 'Well...', 4: '1'}
+295	295		301							{3: 'To which she responds softly.'}
+296	296		204							{1: '1'}
+297	297		301							{2: 'Yata', 3: 'Goodbye... Yuka.', 4: '1'}
+298	298		202							{1: '1', 2: '2'}
+299	299		401							{1: '2', 2: '1513'}
+300	300		301		1		AniZhuanchangBegin			{3: 'Without looking back, Yata sprints forward into the distance.'}

@@ -1,0 +1,17 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory216.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500214'}
+4	4		301							{1: '1', 3: 'Rosetta, who should have been ahead to clear the way, is instead waiting for you and the others on the snowfield.', 4: '1'}
+5	5		302							"{2: ""What's the matter?"", 3: '6'}"
+6	6		301							"{2: 'Rosetta', 3: ""We're almost there, so I've been waiting here for you."", 4: '1'}"
+7	7		301				AniZhuanchangBegin			{3: 'Rosetta points her spear off into the distance through the misty snowfield, following her spear tip, you see familiar port facilities at the edge of the snowy forest.'}
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory92.png'}
+9	9		201							{1: '1', 2: '500140'}
+10	10		301			AniZhuanchangEnd				"{1: '1', 3: ""Kyaranta's liaison greets you warmly. However, upon hearing the intention of your visit, he gives you a snide look.""}"
+11	11		301							{2: 'Liaison', 3: 'Oh, the Moses class you say?', 4: '1'}
+12	12		301							"{2: 'Liaison', 3: ""Go further north from here. They're located at the abandoned dock over there."", 4: '1'}"
+13	13		301							"{2: 'Liaison', 3: ""But... If you expect to just sail 'em out right away, I'm afraid that won't be so easy."", 4: '1'}"
+14	14		302							{2: '?', 3: '15'}
+15	15		301							{2: 'Liaison', 3: 'But let me tell you, Kyaranta has no objections to this. Take them if you want.', 4: '1'}
+16	16		301		1		AniZhuanchangBegin			"{2: 'Liaison', 3: ""I'm sure you must all be tired from your voyage. Why don't you rest here for the night?"", 4: '1'}"

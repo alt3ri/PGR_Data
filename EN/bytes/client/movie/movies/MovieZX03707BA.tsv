@@ -1,0 +1,138 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500682', 3: '5'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Noctis', 3: ""I give up! This thing ain't working at all!"", 4: '1'}"
+5	5		301							{3: 'Frustrated, Noctis throws his terminal onto the bed and paces back and forth in front of the window.'}
+6	6		302							{2: 'It seems we just have no means to contact Babylonia.', 3: '7'}
+7	7		301							{3: 'Two of you wasted the whole morning trying to modify the terminal in order to contact Babylonia.'}
+8	8		301							{3: 'Still, it looks like you have overestimated your abilities. Compared to professionals like Lee, two amateurs like you can hardly carry out such modifications.'}
+9	9		302							"{2: ""There's no other option. We'll just have to go out there to investigate."", 3: '10'}"
+10	10		204							{1: '1', 2: '3'}
+11	11		301							"{2: 'Noctis', 3: ""What? Didn't that old man tell us not to do it?"", 4: '1'}"
+12	12		302							"{2: ""We just can't do so in the name of Babylonia."", 3: '13'}"
+13	13		301							{3: 'If you can still get Daemon through covert investigation, Mayor Max will not have much to say.'}
+14	14		301							"{2: 'Noctis', 3: ""Are you sure it will work...? But we can't really get anything done in this room. Better get moving then. I'm already bored to death."", 4: '1'}"
+15	15		302							"{2: ""Let's split up then."", 3: '16'}"
+16	16		204							{1: '1'}
+17	17		301							{3: 'Noctis sighs and walks to the door. He tosses his terminal to you.'}
+18	18		301							{2: 'Noctis', 3: 'Have you forgotten already? You are their primary target. Maybe they have been waiting for you to get out...', 4: '1'}
+19	19		301							"{2: 'Noctis', 3: ""Just stay here and keep in touch. I'll go around the town and investigate."", 4: '1'}"
+20	20		204							{1: '1', 2: '2'}
+21	21		301							"{2: 'Noctis', 3: ""I'll find some clues. I swear."", 4: '1'}"
+22	22		302							{2: 'Are you going to be alright on your own?', 3: '23'}
+23	23		301							"{2: 'Noctis', 3: ""Cut the nonsense. You'll only slow me down."", 4: '1'}"
+24	24		301							{3: 'Noctis has a point, but given his personality, you still deeply suspect whether he can even start a proper conversation with the locals.'}
+25	25		301				AniZhuanchangBegin			{3: '—Perhaps you should just start praying that he will not engage in another conflict.'}
+26	26		401						600.0	{1: '1', 2: '36'}
+27	27		202			DialogDisable				{1: '1', 6: '1'}
+28	28		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory756.jpg'}
+29	29		401							{1: '1', 2: '263'}
+30	30		201							{1: '1', 2: '500682', 3: '4', 4: '400'}
+31	31		201							{1: '2', 2: '500164', 4: '-400'}
+32	32		301			DialogEnable				{1: '1', 2: 'Noctis', 3: 'Hey, mate. Do you know this guy...?', 4: '1'}
+33	33		301				AniZhuanchangBegin			"{3: ""Noctis stops a young man passing by. He takes out Daemon's photo and tries to ask, but the man just rolls his eyes.""}"
+34	34		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+35	35		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory756.jpg'}
+36	36		201							{1: '1', 2: '500682', 3: '2', 4: '400'}
+37	37		201							{1: '2', 2: '500268', 4: '-400'}
+38	38		301			DialogEnable				{1: '1', 2: 'Noctis', 3: 'Hey you, old woman. Have you seen him...?', 4: '1'}
+39	39		301							{3: 'He finally finds another elderly woman selling her crops in a shop on the roadside. She seems quite easy-going.'}
+40	40		301							"{3: ""She looks at Noctis' terminal, then stares at him for quite a while before revealing a smile.""}"
+41	41		301							{2: 'Old Lady', 3: '**** off!', 4: '2'}
+42	42		202							{1: '2', 6: '1'}
+43	43		401							{1: '2', 2: '971'}
+44	44		301			RImgBg1Shake	AniZhuanchangBegin			{3: 'With a voice that is way too loud for her age, she pulls the door closed with great force, shutting Noctis—who is still clueless about what just happened—outside.'}
+45	45		202			DialogDisable				{1: '1', 6: '1'}
+46	46		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory756.jpg'}
+47	47		201							{1: '1', 2: '500682', 3: '4'}
+48	48		301			DialogEnable				"{1: '1', 2: 'Noctis', 3: ""****! What's wrong with these people!"", 4: '1'}"
+49	49		301							{3: 'Despite all the negative experiences, Noctis just grumbles and continues on his journey to find the next person who may possibly listen to him.'}
+50	50		301				AniZhuanchangBegin			"{2: 'Noctis', 3: ""I promised to find some clues. No way I'll go back empty-handed... That sucks."", 4: '1'}"
+51	51		401						600.0	{1: '1', 2: '36'}
+52	52		202			DialogDisable				{1: '1', 6: '1'}
+53	53		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory757.jpg'}
+54	54		401						600.0	{1: '1', 2: '250'}
+55	55		301			DialogEnable				{3: 'Meanwhile, in a dark corner that Noctis has not noticed, the person he is after already has his eyes on him.'}
+56	56		201							{1: '1', 2: '500687', 3: '2'}
+57	57		301							"{1: '1', 2: 'Daemon', 3: ""Hah... That idiot's still looking for me. He would never imagine that I'm just right here under his nose."", 4: '1'}"
+58	58		204							{1: '1', 2: '1'}
+59	59		203							{1: '1', 2: '0.25', 3: '-400'}
+60	60		201							{1: '2', 2: '500688', 4: '400'}
+61	61		301							{1: '1', 3: 'With a smug smile, Daemon pats the shoulder of the person next to him.'}
+62	62		204							{1: '1'}
+63	63		301							"{2: 'Daemon', 3: ""It wouldn't be so smooth without your help, Fann."", 4: '1'}"
+64	64		301							{2: 'Fann', 3: 'I grew up in this town. Nobody knows the people here better than I do. The Babylonia outsiders will have a hard time here...', 4: '2'}
+65	65		301							{2: 'Daemon', 3: 'The Forsaken troops will soon pass through here. Since you have helped me, you are our friend. Rest assured that we will keep the locals unbothered.', 4: '1'}
+66	66		301							"{2: 'Fann', 3: ""I don't care about the uninvited outsiders. It'll be great if you can drive them both away... But no matter what, I won't let anything harm this town. This is the last thing that can remind me of Mother."", 4: '2'}"
+67	67		301							"{2: 'Daemon', 3: ""That's easy, but I still don't know about your father... He seems to want this town to remain neutral."", 4: '1'}"
+68	68		301							{2: 'Daemon', 3: 'We warned him many times, but he refuses to give in... He really has no clue who is providing shelter for this town.', 4: '1'}
+69	69		301							{3: 'Due to their cooperative relationship, the Forsaken camp has been setting up gates to protect New Oakley from Corrupted for years.'}
+70	70		204							{1: '2', 2: '5'}
+71	71		301							{2: 'Fann', 3: 'He only clings to those old-fashioned ideals like neutrality and freedom... He must have forgotten how Mother died long ago.', 4: '2'}
+72	72		301							{3: 'Daemon looks at Fann with a hint of a smile. To him, those people with resentment cannot be any easier to control.'}
+73	73		301							"{2: 'Daemon', 3: ""As long as things can go smoothly this time, I'll recommend you to Generalissimo. You'll be able to join the Forsaken and seek revenge against Babylonia..."", 4: '1'}"
+74	74		204							{1: '2'}
+75	75		301							{2: 'Fann', 3: 'Revenge against Babylonia... Is that really possible?', 4: '2'}
+76	76		301							{2: 'Daemon', 3: 'We, the Forsakens, are just like you. Every single one of us hates Babylonia for some reason. After Generalissimo joined us, we have also been secretly accepting the victims of Babylonia.', 4: '1'}
+77	77		204							{1: '1', 2: '2'}
+78	78		301							"{2: 'Daemon', 3: ""Soon, we will grow into a formidable power... Those hypocrites in Babylonia won't even be able to imagine what's coming for them."", 4: '1'}"
+79	79		301							{3: 'Daemon points at the faraway tower glowing in blue light. There is a sharp gleam in his eyes.'}
+80	80		301							{2: 'Daemon', 3: 'We deserve a place in the area under that light, but Babylonia has taken it all away.', 4: '1'}
+81	81		301							{2: 'Fann', 3: 'Are the Forsakens going to attack the Clean Zone...?!', 4: '2'}
+82	82		204							{1: '1'}
+83	83		301							{2: 'Daemon', 3: 'Correct, and this town acts as a crucial gate near the Clean Zone without the worries about Corrupted interference. As long as you can allow the Forsaken troops to pass, our plan will succeed.', 4: '1'}
+84	84		301							{3: 'Daemon squints at Noctis, who is still wasting effort on his futile investigation.'}
+85	85		301							{2: 'Daemon', 3: 'But right now, these two from Babylonia are our greatest obstacle. It will be a lot of trouble if they discover our plan before it is executed.', 4: '1'}
+86	86		301							{2: 'Fann', 3: 'Fine. Those scums always disgrace this town, but now would be a good time to make use of them.', 4: '2'}
+87	87		301							{2: 'Daemon', 3: 'Excellent idea. If the locals here take action, those Babylonia people would probably hold back due to their hypocritical rules.', 4: '1'}
+88	88		301							{3: 'Fann signals at a few thugs hiding in a shadowy corner.'}
+89	89		202							{1: '1', 2: '2', 6: '1'}
+90	90		201							{1: '1', 2: '500689', 3: '1', 4: '400'}
+91	91		201							{1: '2', 2: '500690', 4: '-400'}
+92	92		301							{1: '1', 2: 'Strange Resident A', 3: 'Hehe...', 4: '1'}
+93	93		301				AniZhuanchangBegin			{2: 'Strange Resident B', 3: '****, ****...', 4: '2'}
+94	94		401						600.0	{1: '1', 2: '36'}
+95	95		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+96	96		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+97	97		401							{1: '1', 2: '201'}
+98	98		301			DialogEnable				{3: 'Feeling extremely bored in the room, you cannot figure out what to do. From what you have heard in the terminal, Noctis seems to have no progress either.'}
+99	99		302							{2: 'Sigh...', 3: '100'}
+100	100		301							{3: 'You cannot help but let out a sigh. It seems like an eternity since the last time you felt so powerless. Once again, you realize your limit as a commandant.'}
+101	101		401							{1: '2', 2: '2626'}
+102	102		301							{3: 'Right then, someone knocks on the door slowly and steadily. You take off the terminal and instinctively reach under the pillow, where the pistol is hidden.'}
+103	103		302							{2: 'Who is it...?', 3: '104'}
+104	104		401							{1: '2', 2: '754'}
+105	105		201							{1: '1', 2: '500692'}
+106	106		301							{1: '1', 3: 'Without waiting for a response, the door is pushed open, and a burly man walks in assuredly, followed by several retinues.'}
+107	107		302							{2: 'Mr... Max, what can I do for you?', 3: '108'}
+108	108		301							{2: 'Max', 3: 'You are a commandant of Babylonia. A smart person.', 4: '1'}
+109	109		301							{3: 'Max sits down on a chair, handing his cane to one of his followers.'}
+110	110		302							{2: 'I am a commandant, but I may not be that smart.', 3: '111'}
+111	111		301							{3: 'He seems not surprised at the absence of Noctis, indicating that he must have picked this time when Noctis is not around.'}
+112	112		301							"{2: 'Max', 3: ""Then I hope your unintelligence won't bring you too much trouble... The rules you are used to do not work here."", 4: '1'}"
+113	113		301							"{2: 'Max', 3: ""This place is a haven for criminals, thugs, scumbags, and people who couldn't make it anywhere else... These people, well, will not surprise anyone if they suddenly lose their lives the next moment."", 4: '1'}"
+114	114		302							{2: 'Are you trying to get us out of here?', 3: '115'}
+115	115		301							{2: 'Max', 3: 'That Construct probably has some reason to stay. But I can tell that you are different...', 4: '1'}
+116	116		301							{3: 'He glances at the communicator you were working on just now. The screen still shows a Babylonia message title.'}
+117	117		301							"{2: 'Max', 3: ""You still want to return to Babylonia, don't you?"", 4: '1'}"
+118	118		301							{3: 'That is why he seizes this moment and tries to convince you.'}
+119	119		302							"{2: ""Thanks for the advice, but unfortunately, I'm probably also a criminal now."", 3: '120'}"
+120	120		301							{3: 'If you fail to find Daemon, you will not be able to explain why you went solo. Your joint operation with Noctis, who was a suspect, can only be interpreted as attempting to defect.'}
+121	121		204							{1: '1', 2: '5'}
+122	122		301							"{2: 'Max', 3: ""Even if you stay here, you won't find anything... Like I said, you are not welcome here. This place is full of..."", 4: '1'}"
+123	123		502							{1: 'DialogDisable'}
+124	124		302							"{2: '""Criminals, thugs, scums, and people who couldn\'t make it anywhere else,"" right?', 3: '125'}"
+125	125		302							{2: 'Then we are just like them now.', 3: '127'}
+126	126		204							{1: '1'}
+127	127		301			DialogEnable				{3: 'Max seems somewhat surprised. You do not know if it is just a delusion, but his gaze has softened slightly.'}
+128	128		204							{1: '1'}
+129	129		301							"{2: 'Max', 3: ""Hmph... In that case, I won't be able to stop you. You will become the new blood of New Oakley."", 4: '1'}"
+130	130		204							{1: '1'}
+131	131		301							{3: 'Max stands up, takes the cane from the follower, and firmly plants it on the ground with a crisp thud.'}
+132	132		301							"{2: 'Max', 3: 'Now that you\'ve become a resident of the town, you must, like the others, find a ""job"" that suits you. Anyone without a job here will be expelled.', 4: '1'}"
+133	133		302							"{2: '""Job""...', 3: '134'}"
+134	134		301							{3: 'What other job can you possibly handle other than being a commandant...?'}
+135	135		401							{1: '2', 2: '2983'}
+136	136		301							{3: 'Right then, you hear a loud noise from the communicator in your hand, followed by several screams.'}
+137	137		302		1		AniZhuanchangBegin			{2: 'Noctis?!'}

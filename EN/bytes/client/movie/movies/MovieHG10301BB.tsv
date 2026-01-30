@@ -1,0 +1,53 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory1.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		201							{1: '1', 2: '1021001'}
+4	4		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'Our only target is that Corrupted!', 4: '1'}
+5	5		401							{1: '2', 2: '1508'}
+6	6		201							{1: '1', 2: '500013'}
+7	7		301							{1: '1', 2: 'Corrupted', 3: '—!', 4: '1'}
+8	8		201							{1: '1', 2: '1011001'}
+9	9		301							"{1: '1', 2: 'Lee', 3: ""You're not getting away."", 4: '1'}"
+10	10		201							{1: '1', 2: '1021001'}
+11	11		301							"{1: '1', 2: 'Lucia', 3: ""We'll split up once Liv arrives at the designated point, understood?"", 4: '1'}"
+12	12		201							{1: '1', 2: '1011001'}
+13	13		301							{1: '1', 2: 'Lee', 3: 'Understood.', 4: '1'}
+14	14		201							{1: '1', 2: '1031001'}
+15	15		301							{1: '1', 2: 'Liv', 3: 'This is the designated point according to the path prediction... All I have to do now is point and shoot.', 4: '1'}
+16	16		302							{2: 'Relax.', 3: '18', 4: 'Seems pretty straightforward.', 5: '17'}
+17	17		301							"{2: 'Liv', 3: ""I'm sure it's going to be very easy... with you here by my side, Commandant."", 4: '1'}"
+18	18		201							{1: '1', 2: '1021001'}
+19	19		301							{1: '1', 2: 'Lucia', 3: 'The Corrupted is heading to the commandant as we predicted. Are you ready?', 4: '1'}
+20	20		302							"{2: ""I'm good."", 3: '21', 4: ""Are we sure we're just going to leave it to Liv?"", 5: '21'}"
+21	21		201							{1: '1', 2: '1031001'}
+22	22		301							{1: '1', 2: 'Liv', 3: 'Hold on, I have to move forward a little bit to hit the target.', 4: '1'}
+23	23		201							{1: '1', 2: '1011001'}
+24	24		301							"{1: '1', 2: 'Lee', 3: ""Wait, Liv! It'll discover you if you move!"", 4: '1'}"
+25	25		201							{1: '1', 2: '1031001'}
+26	26		301							{1: '1', 2: 'Liv', 3: 'Firing!', 4: '1'}
+27	27		201							{1: '1', 2: '500013'}
+28	28		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+29	29		301							{1: '1', 2: 'Corrupted', 3: '—!', 4: '1'}
+30	30		302							"{2: 'We missed...', 3: '31', 4: ""We're discovered?!"", 5: '31'}"
+31	31		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+32	32		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 2: '1'}
+33	33		301							{2: 'Corrupted', 3: '—! —!', 4: '1'}
+34	34		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 4: '1'}
+35	35		301							{2: 'Corrupted', 3: '—!!!', 4: '1'}
+36	36		201							{1: '1', 2: '1011001'}
+37	37		301							{1: '1', 2: 'Lee', 3: 'This operation has failed...', 4: '1'}
+38	38		201							{1: '1', 2: '1031001', 3: '14'}
+39	39		301							{1: '1', 2: 'Liv', 3: '...', 4: '1'}
+40	40		302							"{2: ""There's always next time, Liv."", 3: '41', 4: ""I guess it's time for another review report."", 5: '42'}"
+41	41	43	301							"{2: 'Liv', 3: ""We can't just wait for the next mission..."", 4: '1'}"
+42	42		301							{2: 'Liv', 3: 'It was because of me that...', 4: '1'}
+43	43		301							{2: 'Liv', 3: 'I must do my best to prove myself worthwhile to the Gray Ravens and Commandant as quickly as possible.', 4: '1'}
+44	44		201							{1: '1', 2: '1021001'}
+45	45		301							{1: '1', 2: 'Lucia', 3: 'What if the commandant conducts special training with you, Liv?', 4: '1'}
+46	46		302							{2: 'Me?', 3: '47', 4: 'Special training?', 5: '49'}
+47	47		201							{1: '1', 2: '1031001', 3: '14'}
+48	48	52	301							"{1: '1', 2: 'Liv', 3: ""(Nods) I'm certain you would give me constructive advice, Commandant."", 4: '1'}"
+49	49		201							{1: '1', 2: '1011001'}
+50	50		301							"{1: '1', 2: 'Lee', 3: ""Liv's combat experience is relatively lacking compared to the other Constructs'. How about you just accompany her with whatever she wants to do for now?"", 4: '1'}"
+51	51		201							{1: '1', 2: '1031001', 3: '14'}
+52	52		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Liv', 3: ""In that case... I'll count on you, Commandant."", 4: '1'}"

@@ -1,0 +1,218 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4301_06.jpg'}
+2	2		401							{1: '1', 2: '278'}
+3	3		301			DialogEnable				{2: 'Victoria', 3: 'And then what? What happened next?'}
+4	4		301							{2: 'Teddy', 3: 'And then? Some fool lay on the Star of Life for too long before finally getting up.'}
+5	5		301							"{2: 'Teddy', 3: ""Still dreaming of becoming a Construct... Hmph, only to realize your brain can't even fill the smallest M.I.N.D.?""}"
+6	6		301							"{2: 'Leonardo', 3: ""Come on, don't be so cold to your brother, little Christina.""}"
+7	7		301							{2: 'Teddy', 3: 'Call! Me! Teddy!'}
+8	8		301							"{2: 'Leonardo', 3: ""Besides, what's wrong with me becoming a Construct? If I do really well and take your spot as vice-captain of the Engineering Force, don't come crying to me!""}"
+9	9		301							"{2: 'Teddy', 3: ""That's not happening.""}"
+10	10		301							{2: 'Leonardo', 3: 'Why?'}
+11	11		301							"{2: 'Teddy', 3: 'You don\'t know? There\'s a sign on the Engineering Force\'s gate saying ""No Leonardo or dogs allowed.""'}"
+12	12		301							"{2: 'Leonardo', 3: ""Hey, hey, don't be so harsh!""}"
+13	13		301							{3: 'The simulated sunlight filled the dim hall, and it felt like ages since the three of them had sat together to enjoy afternoon tea.'}
+14	14		301							{2: 'Leonardo', 3: 'Speaking of which... how is Grandfather doing?'}
+15	15		301							{2: 'Victoria', 3: 'Grandfather...'}
+16	16		301							{2: 'Victoria', 3: 'He fell ill a few days ago. After being checked at the Star of Life, the doctors found a blood clot in his cerebral artery, causing focal acute cerebral ischemia.'}
+17	17		301							"{2: 'Victoria', 3: ""Although he's being kept alive by the Star of Life, I'm afraid that...""}"
+18	18		301							{3: 'She elegantly dabs the corner of her mouth with a napkin.'}
+19	19		301							{2: 'Teddy', 3: '...'}
+20	20		301							{2: 'Teddy', 3: 'Did he say anything?'}
+21	21		301							"{3: 'After seeing the notes Liv brings back, presumably left by the one they call ""Father"", she can\'t help but wonder if that powerful figure ever had any regrets.'}"
+22	22		301							{2: 'Victoria', 3: '...He said he hoped I could continue Project Herald and find Dominik.'}
+23	23		301							{2: 'Teddy', 3: '...'}
+24	24		301							"{2: 'Victoria', 3: ""No matter what, I won't restart Project Herald. I've already handed over all the information on Project Herald to the military at Babylonia.""}"
+25	25		301							"{2: 'Victoria', 3: ""Norman doesn't need glory that comes at the expense of human lives.""}"
+26	26		301							"{2: 'Leonardo', 3: ""That's my sister! Speaking of which...""}"
+27	27		301							{2: 'Leonardo', 3: 'When will my projects get approved? Please, I really need them to bring in some funds...'}
+28	28		301							"{2: 'Leonardo', 3: ""I still owe Trojan three times her salary, and she doesn't come cheap.""}"
+29	29		301				AniZhuanchangBegin			"{2: 'Victoria', 3: ""Then I'd better take a good look at your projects, Leonardo. If there's a problem, I won't go easy on you...""}"
+30	30		401							{1: '1', 2: '36'}
+31	31		502						2000.0	{1: 'DialogDisable'}
+32	32		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+33	33		107							{1: 'Science Council'}
+34	34		301							{3: 'At the Science Council.'}
+35	35		108							{1: '1'}
+36	36		401							{1: '1', 2: '381'}
+37	37		201							{1: '1', 2: '500004', 4: '400'}
+38	38		201							{1: '2', 2: '500864', 4: '-400'}
+39	39		301			DialogEnable				{1: '1', 3: 'Buried under a pile of documents, Asimov could only poke his head out. Teddy sits nearby, a cup of pink electrolyte beside her.'}
+40	40		302							{2: 'Asimov?', 3: '42', 4: 'Teddy?', 5: '41'}
+41	41	43	301							{2: 'Teddy', 3: 'Ha... uh.', 4: '2'}
+42	42		301							"{2: 'Asimov', 3: ""...You're here? Take a seat."", 4: '1'}"
+43	43		301							"{3: ""You find a seat while Asimov stays focused on the work in the terminal's database.""}"
+44	44		204							{1: '2', 2: '15'}
+45	45		301							"{2: 'Teddy', 3: ""I thought they'd locked you in the break room by now."", 4: '2'}"
+46	46		302							"{2: ""No, that wouldn't happen."", 3: '47', 4: 'I managed to escape.', 5: '47'}"
+47	47		301							{2: 'Teddy', 3: 'You did? Maybe I should tell Lucia right away...', 4: '2'}
+48	48		301							{3: 'Teddy takes out the terminal, pretending to make a call, but quickly changes the topic.'}
+49	49		204							{1: '2'}
+50	50		302							{2: 'How are things going in the testing ground?', 3: '51'}
+51	51		301							{2: 'Asimov', 3: 'Not bad.', 4: '1'}
+52	52		301							"{2: 'Asimov', 3: ""Mika's teacher has finally been able to leave Star of Life, thanks to Teddy validating the correct threshold limit. She is now working with Mika on the disassembly research of the Inver-Device."", 4: '1'}"
+53	53		301							{2: 'Asimov', 3: 'With the data and this experimental model, they might be able to develop a new type of Inver-Device.', 4: '1'}
+54	54		301							"{2: 'Asimov', 3: 'It would be more stable, with better compatibility, capable of ""neutralizing"" higher concentrations of the Punishing Virus.', 4: '1'}"
+55	55		302							{2: 'Good to hear.', 3: '56'}
+56	56		301							"{2: 'Asimov', 3: ""But that's just a possibility."", 4: '1'}"
+57	57		301							"{2: 'Asimov', 3: ""Thanks to your and Teddy's recklessness, the expansion of the Hetero Zone has stopped, and there are even signs that it's starting to shrink."", 4: '1'}"
+58	58		301							{2: 'Asimov', 3: 'The Science Council, Engineering Force, and Cosmos Technicians Union can finally take a breather.', 4: '1'}
+59	59		204							{1: '2', 2: '15'}
+60	60		301							"{2: 'Teddy', 3: ""That's what I call a wise decision."", 4: '2'}"
+61	61		302							"{2: 'Cough...', 3: '62', 4: ""That's just..."", 5: '62'}"
+62	62		204							{1: '2'}
+63	63		301							"{2: 'Asimov', 3: ""No need to explain. Three members of your team are out there looking for you... And Karenina has been searching for you for a while now, didn't you know?"", 4: '1'}"
+64	64		301							{3: 'He rarely smiles, but now there is a hint of one.'}
+65	65		301							{2: 'Asimov', 3: 'I heard you all hid away after returning to Babylonia?', 4: '1'}
+66	66		302							{2: 'Umm...', 3: '67', 4: 'Just a tactical retreat.', 5: '67'}
+67	67		306							{1: '1'}
+68	68		202							{1: '1', 2: '2', 6: '1'}
+69	69		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory897.jpg', 3: '0', 4: '1', 5: '1'}
+70	70		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+71	71		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory897.jpg'}
+72	72		301							{3: 'Looking back now, chasing after Cradle was indeed a risky move.'}
+73	73		301							{3: 'But if I had to do it again...'}
+74	74		301							"{3: ""I'd probably make the same choice.""}"
+75	75		301							"{3: ""We can't turn a blind eye to innocent lives. No matter what, Teddy and I won't just sit back and let Cradle consume the refugees and wounded Constructs.""}"
+76	76		301							{3: 'Anyway...'}
+77	77		306							
+78	78		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png', 3: '0', 4: '1', 5: '1'}
+79	79		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+80	80		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+81	81		201							{1: '1', 2: '500004', 4: '400', 7: '1'}
+82	82		201							{1: '2', 2: '500864', 4: '-400', 7: '1'}
+83	83		302							"{2: ""You didn't tell them I'm here, did you?"", 3: '84'}"
+84	84		301							"{2: 'Asimov', 3: ""No, I wouldn't do something that stupid."", 4: '1'}"
+85	85		301							"{2: 'Asimov', 3: 'I called you here to let you know that there\'s been a breakthrough regarding the ""invitation.""', 4: '1'}"
+86	86		302							{2: 'Really?', 3: '87'}
+87	87		204							{1: '1', 2: '8'}
+88	88		301							{2: 'Asimov', 3: 'Are you doubting me?', 4: '1'}
+89	89		204							{1: '1'}
+90	90		301							{3: 'He turns on the terminal, and a long stream of complex code flashes across the screen.'}
+91	91		301							"{2: 'Asimov', 3: 'Teddy and I have disassembled the source code of the Gestalt Simulation Device, and reverse-engineered the content of the ""invitation"".', 4: '1'}"
+92	92		301							{2: 'Asimov', 3: 'Want to check its authenticity yourself?', 4: '1'}
+93	93		302							{2: 'Move forward and take a look.', 3: '97', 4: '(Refuse.)', 5: '94'}
+94	94		204							{1: '2', 2: '10'}
+95	95		301							"{2: 'Teddy', 3: ""Huh? You don't even take a look? I spent half a day figuring this out..."", 4: '2'}"
+96	96		204							{1: '2'}
+97	97		401							{1: '2', 2: '4262'}
+98	98		301							{3: 'Lines of code rapidly flash across the terminal, barely discernible.'}
+99	99		402							{1: '4262'}
+100	100		301							{2: 'Asimov', 3: 'This is just part of the reverse-engineered content. If we fully reconstruct it...', 4: '1'}
+101	101		301							"{2: 'Asimov', 3: ""It's probably a set of encryption keys."", 4: '1'}"
+102	102		302							{2: 'Encryption keys?', 3: '103'}
+103	103		204							{1: '2', 2: '4'}
+104	104		301							{2: 'Teddy', 3: 'These are linked to the Gestalt Simulation Device keys. According to her setup, each set corresponds to different scenarios...', 4: '2'}
+105	105		301							"{2: 'Teddy', 3: ""Think of it like the World Government Association of Art's holographic movies or something similar."", 4: '2'}"
+106	106		301							"{2: 'Teddy', 3: ""I'm not entirely sure, but during our reverse-engineering, we decoded some truly astonishing information..."", 4: '2'}"
+107	107		301							{2: 'Teddy', 3: 'Are you sure you want to keep listening?', 4: '2'}
+108	108		302							{2: 'Sure.', 3: '114', 4: 'What kind of information is it?', 5: '109'}
+109	109		204							{1: '1', 2: '8'}
+110	110		301							"{2: 'Asimov', 3: ""...It's about Dominik."", 4: '1'}"
+111	111		204							{1: '1'}
+112	112		301							"{2: 'Asimov', 3: 'You mentioned this is an ""invitation"".', 4: '1'}"
+113	113		302							{2: '...', 3: '114', 4: 'It does sound like something truly astonishing.', 5: '114'}
+114	114		202							{1: '1', 2: '2', 6: '1'}
+115	115		401							{1: '2', 2: '4387'}
+116	116		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+117	117		504							{1: '0.7'}
+118	118		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory864.jpg'}
+119	119		201							{1: '1', 2: '500817'}
+120	120		301							"{1: '1', 2: 'Qu', 3: ""It's never about a single name, but a spirit worth remembering."", 4: '1'}"
+121	121		301							"{2: 'Qu', 3: 'That\'s probably why ""he"" wanted me to give this to you.', 4: '1'}"
+122	122		301							"{2: 'Qu', 3: ""But perhaps because Huaxu isn't directly connected to Dominik, they had to take the form of that girl to convey this message to me."", 4: '1'}"
+123	123		301							{2: 'Qu', 3: 'Waiting at the end of that universe... the girl named Nanami.', 4: '1'}
+124	124		301							"{2: 'Qu', 3: 'It\'s an ""invitation"".', 4: '1'}"
+125	125		202							{1: '1', 6: '1'}
+126	126		401							{1: '2', 2: '4387'}
+127	127		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+128	128		504							
+129	129		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+130	130		301							"{3: ""Whether it's about Nanami or Dominik, we need to take this invitation seriously.""}"
+131	131		201							{1: '1', 2: '500004', 4: '400'}
+132	132		201							{1: '2', 2: '500864', 3: '15', 4: '-400'}
+133	133		301							"{1: '1', 2: 'Teddy', 3: ""Now that's some courage! Definitely worthy of the title Gray Raven Commandant."", 4: '2'}"
+134	134		301							{2: 'Asimov', 3: 'And about Gestalt...', 4: '1'}
+135	135		401							{1: '1', 2: '36'}
+136	136		401							{1: '2', 2: '2626'}
+137	137		301							{3: 'Just then, a soft knock on the office door interrupts Asimov.'}
+138	138		401							{1: '1', 2: '205'}
+139	139		301							{2: 'Lucia', 3: 'Asimov... have you seen our commandant?'}
+140	140		301							{2: 'Lucia', 3: 'Professor Hippocrates said the commandant seemed to be heading this way...'}
+141	141		302							{2: '!!!', 3: '142', 4: 'Oh no...', 5: '142'}
+142	142		301							"{2: 'Teddy', 3: ""Looks like someone's about to get caught."", 4: '2'}"
+143	143		401							{1: '2', 2: '4305'}
+144	144		204							{1: '2'}
+145	145		204							{1: '1', 2: '8'}
+146	146		301			RImgBg1Shake				"{2: 'Karenina', 3: ""Teddy! I know you're in there! Show yourself!""}"
+147	147		301							{2: 'Karenina', 3: '...Lucia? Why are you here too?'}
+148	148		301							"{2: 'Lucia', 3: ""I'm here looking for our commandant...""}"
+149	149		401							{1: '2', 2: '4305'}
+150	150		204							{1: '1', 2: '7'}
+151	151		301			RImgBg1Shake	AniZhuanchangBegin			"{2: 'Karenina', 3: ""...You two! Don't think I won't tear down Asimov's door!""}"
+152	152		401							{1: '1', 2: '36'}
+153	153		202			DialogDisable			3000.0	{1: '1', 2: '2', 6: '1'}
+154	154		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory263.png'}
+155	155		401							{1: '1', 2: '208'}
+156	156		301			DialogEnable				{3: 'It feels like everything that happened before is just a blur.'}
+157	157		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory895.jpg', 3: '0', 4: '1', 5: '1'}
+158	158		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+159	159		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory895.jpg'}
+160	160		301							{3: 'The Norman Mining Corp went through a power shift, and after Victoria handed over all the relevant info, they officially declared Project Herald a lie at Babylonia.'}
+161	161		301							"{3: 'People should not pin their hope on ""legends"". Even if Gestalt is sealed and Dominik is long gone, humanity is still trudging across the river of time, clutching one slippery rock at a time.'}"
+162	162		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png', 3: '0', 4: '1', 5: '1'}
+163	163		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+164	164		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+165	165		301				AniZhuanchangBegin			{3: 'The new Inver-Device, developed by the Science Council, Engineering Force, and Cosmos Technicians Union, seems to be showing some early results, and research on the Ω Effect is gradually improving...'}
+166	166		502						400.0	{1: 'DialogDisable'}
+167	167		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory700.jpg'}
+168	168		107							{1: 'Surface Conservation Area'}
+169	169		301							{3: 'In the Surface Conservation Area.'}
+170	170		108							{1: '1'}
+171	171		201							{1: '1', 2: '500392'}
+172	172		301			DialogEnable				{1: '1', 2: 'Elean', 3: '...Lucia! Liv!', 4: '1'}
+173	173		301							{2: 'Elean', 3: 'And... the Gray Raven Commandant!', 4: '1'}
+174	174		301							"{3: ""We received a mission to escort a group of refugees into the Clean Zone, but I didn't expect to run into them again.""}"
+175	175		302							{2: 'What a coincidence.', 3: '176'}
+176	176		301							"{2: 'Elean', 3: ""I never thought I'd see you all again, it's wonderful!"", 4: '1'}"
+177	177		301							"{2: 'Elean', 3: ""And I can't believe we're really going to enter the Clean Zone. Thank you all!"", 4: '1'}"
+178	178		203							{1: '1', 2: '0.25', 3: '400'}
+179	179		201							{1: '2', 2: '1031001', 3: '1', 4: '-400'}
+180	180		301							{1: '1', 2: 'Liv', 3: 'We should really thank Lucille and the others...', 4: '2'}
+181	181		204							{1: '2', 2: '14'}
+182	182		301							"{2: 'Liv', 3: ""Oh, you're right. Sorry, I..."", 4: '2'}"
+183	183		301							{2: 'Elean', 3: '...', 4: '1'}
+184	184		301							"{2: 'Elean', 3: ""It's okay."", 4: '1'}"
+185	185		301							{2: 'Elean', 3: 'The old leader once lured away the Corrupted, saving Lucille and Mika when they were surrounded.', 4: '1'}
+186	186		301							{2: 'Elean', 3: 'Lucille and Gemira paved that road for us with their lives.', 4: '1'}
+187	187		204							{1: '2', 2: '2'}
+188	188		301							"{2: 'Elean', 3: 'If needed... I\'d do the same in the future. After all, I\'m a member of ""For a Better Tomorrow - Sunlight Shines on All - Battlefield Trauma Emergency Rescue Team""!', 4: '1'}"
+189	189		301							{3: 'Her eyes are sparkling like stars, bright and radiant.'}
+190	190		301							{2: 'Elean', 3: 'We held a funeral for Lucille because we were already near the Clean Zone, and I found her favorite flowers.', 4: '1'}
+191	191		301							{2: 'Elean', 3: 'Those little wildflowers, bright orange, covering the hills and fields...', 4: '1'}
+192	192		301							{2: 'Elean', 3: 'She would definitely be so happy!', 4: '1'}
+193	193		204							{1: '2', 2: '16'}
+194	194		301							{2: 'Liv', 3: 'Yes, she would definitely be very happy...', 4: '2'}
+195	195		301							{2: 'Elean', 3: 'Moore rejoined the team; he will temporarily guard the conservation area where we live, and everyone has been well settled...', 4: '1'}
+196	196		204							{1: '2', 2: '2'}
+197	197		301							{2: 'Elean', 3: 'Oh, I almost forgot to share the best news!', 4: '1'}
+198	198		202							{1: '1', 2: '2', 6: '1'}
+199	199		201							{1: '1', 2: '500565'}
+200	200		301							{1: '1', 3: 'Elean pulls out a refugee with chestnut hair from the back of the group.'}
+201	201		203							{1: '1', 2: '0.25', 3: '400'}
+202	202		201							{1: '2', 2: '500392', 4: '-400'}
+203	203		301							"{1: '1', 2: 'Elean', 3: ""Let me introduce you to Tony! He's also a member of our team!"", 4: '2'}"
+204	204		301							{2: 'Elean', 3: 'He got lost on the outskirts of that strange place, but luckily, he survived by chasing the supplies we tied to the trees.', 4: '2'}
+205	205		301							{2: 'Elean', 3: 'He reunited with us at the last intersection! Once we reach the Clean Zone, we have to celebrate!', 4: '2'}
+206	206		301							{3: 'The refugee named Tony shyly scratches his head.'}
+207	207		301							"{2: 'Tony', 3: ""Luckily, there were two vials of serum left in Uncle Gemira's pack; otherwise, I wouldn't have made it here..."", 4: '1'}"
+208	208		202							{1: '1', 2: '2', 6: '1'}
+209	209		201							{1: '1', 2: '1031001', 3: '16'}
+210	210		301							"{1: '1', 2: 'Liv', 3: ""...That's great!"", 4: '1'}"
+211	211		203							{1: '1', 2: '0.25', 3: '400'}
+212	212		201							{1: '2', 2: '500260', 4: '-400'}
+213	213		204							{1: '1', 2: '2'}
+214	214		301							{1: '1', 2: 'Refugee Child', 3: 'Liv! Look!', 4: '2'}
+215	215		301							{2: 'Refugee Child', 3: 'I, I brought the little seedlings down!', 4: '2'}
+216	216		301							{3: 'In the little hands, two small sprouts planted in discarded serum tubes stand shakily in the cool breeze.'}
+217	217		301		1		AniZhuanchangBegin			{3: 'The weather is warming up.'}

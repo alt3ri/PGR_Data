@@ -1,0 +1,53 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+2	2		401							{1: '1', 2: '101'}
+3	3		201							{1: '1', 2: '1031001', 4: '-600'}
+4	4		201							{1: '2', 2: '500026', 4: '600'}
+5	5		201							{1: '3', 2: '500166'}
+6	6		301			DialogEnable				{1: '1', 2: 'Liv', 3: '...Found her!', 4: '1'}
+7	7		301							"{2: 'Liv', 3: 'It\'s the fake ""Bianca""... Huaxu\'s signature.', 4: '1'}"
+8	8		302							"{2: ""Then let's move out!"", 3: '9'}"
+9	9		301							"{2: 'Lee', 3: ""...Finally slipped up, didn't you?"", 4: '2'}"
+10	10		301							"{2: 'Lucia', 3: ""Let's go. No time to waste."", 4: '3'}"
+11	11		301							{2: 'Lucia', 3: 'Only by saving Babylonia will humanity have a future.', 4: '3'}
+12	12		302				AniZhuanchangBegin			"{2: ""That's right!"", 3: '13'}"
+13	13		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory47.jpg'}
+14	14		401							{1: '1', 2: '203'}
+15	15		201							{1: '1', 2: '500004', 4: '600'}
+16	16		201							{1: '2', 2: '1111001', 4: '-600'}
+17	17		201							{1: '3', 2: '500167', 3: '5'}
+18	18		301			AniZhuanchangEnd				{1: '1', 2: 'Asimov', 3: 'Find out why!', 4: '1'}
+19	19		204							{1: '2', 2: '5'}
+20	20		301							"{2: 'Karenina', 3: ""There's power fluctuation in the immersion frame!"", 4: '2'}"
+21	21		301							{2: 'Bridget', 3: 'Team 2, connect the auxiliary interlay emergency power supply!', 4: '3'}
+22	22		301							"{2: 'Karenina', 3: ""Hey! Asimov! Can't you have the Gray Ravens initiate an emergency evac?"", 4: '2'}"
+23	23		301							{2: 'Asimov', 3: 'The intruders have hijacked the immersion module! If we take the immersion module offline now, all uplinked consciousness will be severely impacted!', 4: '1'}
+24	24		301							{2: 'Asimov', 3: 'Constructs can be rebooted, but for humans... that may be fatal!', 4: '1'}
+25	25		301							{2: 'Karenina', 3: '...Dammit! Why the **** do you always make something so dangerous?', 4: '2'}
+26	26		301							{2: 'Bridget', 3: 'Quit fighting! Karenina, get over here and help me set up the jumper!', 4: '3'}
+27	27		301							{2: 'Karenina', 3: 'Coming!', 4: '2'}
+28	28		301				AniZhuanchangBegin			{2: 'Asimov', 3: 'Preliminary estimation of the chance of failure... more than 69.7%. But... all we can do is try.', 4: '1'}
+29	29		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+30	30		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory263.png'}
+31	31		401							{1: '1', 2: '102'}
+32	32		301			AniZhuanchangEnd				{3: 'Babylonia DECK-4-2-C, the archives of the intelligence department.'}
+33	33		201							{1: '1', 2: '500146'}
+34	34		301							{1: '1', 2: 'Murray', 3: 'I see... The commander sure is laying out all his cards on the table.', 4: '1'}
+35	35		301							{3: 'The usually heavily guarded archives are now empty, and only the security door is locked.'}
+36	36		301							{3: 'Murray approaches the security door and opens it with the ID card he just got.'}
+37	37		301							{3: '*High clearance user detected. Manual review requested.*'}
+38	38		301							{2: 'Murray', 3: 'Manual review...? Uh oh...', 4: '1'}
+39	39		301							{3: 'Murray anxiously looks at the security door, then quickly scans the room for a place to hide.'}
+40	40		301							{3: '—But there is nothing for him to hide behind in the small, empty room.'}
+41	41		301							"{2: 'Murray', 3: ""So if a turret comes down from the ceiling, I'll just have to face it head-on..."", 4: '1'}"
+42	42		301							{3: '*Manual review request not responding. Request timed out.*'}
+43	43		301							{2: 'Murray', 3: '...What now?', 4: '1'}
+44	44		301							{3: '*Activating maximum security procedure.*'}
+45	45		301							{3: 'Murray looks around the room again and finds a security gate lowering in front of the door he came through.'}
+46	46		301							"{2: 'Murray', 3: ""So, I'm stuck here if I can't open this door, huh?"", 4: '1'}"
+47	47		301							{3: '...'}
+48	48		301							{3: '*External interruption detected. Activating Wartime Evacuation Procedure B. Security door has been closed. Opening emergency passageway.*'}
+49	49		301							{3: 'The safety door opens inward, and the air begins to make a hissing sound as it circulates between the two spaces.'}
+50	50		204							{1: '1', 2: '8'}
+51	51		301							"{2: 'Murray', 3: ""...Sigh. Don't make me come back here again."", 4: '1'}"
+52	52		301		1		AniZhuanchangBegin			{3: 'Murray walks through the safety door.'}

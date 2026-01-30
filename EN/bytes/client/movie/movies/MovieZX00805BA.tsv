@@ -1,0 +1,26 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory42.jpg'}
+2	100		401							{1: '1', 2: '101'}
+3	2		201							{1: '1', 2: '1031001', 3: '7', 4: '400'}
+4	3		201							{1: '2', 2: '500029', 4: '-400'}
+5	4		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Incoming from the back!', 4: '1'}
+6	5		204							{1: '1'}
+7	6		201							{1: '2', 2: '1011001', 4: '-400'}
+8	7		301							{1: '1', 2: 'Lee', 3: 'An ambush?', 4: '2'}
+9	8		301							"{2: 'Lee', 3: ""A new mechanoid... It's...!"", 4: '2'}"
+10	9		301							"{2: 'Lee', 3: ""The butler from the Museum Estate. It's the same model."", 4: '2'}"
+11	10		201							{1: '2', 2: '500029', 4: '-400'}
+12	11		301							"{1: '1', 2: 'Lucia', 3: ""Be careful. They don't come in peace."", 4: '2'}"
+13	12		201							{1: '2', 2: '1011001', 4: '-400'}
+14	13		301							{1: '1', 2: 'Lee', 3: 'This only further proves that these machines are left by Roland to stop us from advancing.', 4: '2'}
+15	14		301							"{2: 'Lee', 3: ""Looks like Roland really doesn't want us to reach Kamui before him."", 4: '2'}"
+16	15		201							{1: '2', 2: '1091001', 4: '-400'}
+17	16		301							"{1: '1', 2: 'Bianca', 3: ""We can't let Kamui fall into the hands of the Ascendants."", 4: '2'}"
+18	17		302							{2: 'Defeat it and move on.', 3: '18'}
+19	18		202							{1: '1', 2: '2', 6: '1'}
+20	19		201							{1: '1', 2: '500029'}
+21	20		301							"{1: '1', 2: 'Lucia', 3: ""I'll put this new frame HQ provided me with to good use."", 4: '1'}"
+22	21		301							{2: 'Lucia', 3: 'Keep in mind the time, we have to finish this quickly.', 4: '1'}
+23	22		201							{1: '1', 2: '500097'}
+24	23		301							"{1: '1', 2: 'Roseblade', 3: ""I will not let you stand in my master's path."", 4: '1'}"
+25	24		301		1		AniZhuanchangBegin			{2: 'Roseblade', 3: 'I am Roseblade, and you shall not pass.', 4: '1'}

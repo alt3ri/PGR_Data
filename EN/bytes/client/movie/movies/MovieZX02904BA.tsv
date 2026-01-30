@@ -1,0 +1,101 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg2301_10.jpg'}
+2	2		401							{1: '1', 2: '119'}
+3	3		301			DialogEnable				{3: 'Realizing that none of this is purely coincidental, the young man spends a good ten minutes trying to find out if Lillian saw anyone when she picked up the toy.'}
+4	4		201							{1: '1', 2: '500335', 3: '19'}
+5	5		301							"{1: '1', 2: 'Lillian', 3: ""Look, I've said this already... It was just out there, and I thought it belonged to one of the kids around. I was going to fix it and just leave it here, but you can totally have it if you think it's yours."", 4: '1'}"
+6	6		204							{1: '1'}
+7	7		301							"{2: 'Lillian', 3: ""But for what it's worth, don't you think you're a little too... old for a toy like this?"", 4: '1'}"
+8	8		201							{1: '1', 2: '500506', 3: '11'}
+9	9		301							"{1: '1', 2: 'Young Man A', 3: ""I don't know. It's probably just something that I kept around... as a reminder of my dreams as a child."", 4: '1'}"
+10	10		204							{1: '1'}
+11	11		301							{3: 'Unable to get to the bottom of his question, the young man resorts to writing down a message on the piece of paper he got the night before.'}
+12	12		301							{3: 'The driver in the transport vehicle out there is honking impatiently by the time he finishes folding up the paper and leaves it with one of the Constructs guarding the base.'}
+13	13		204							{1: '1', 2: '10'}
+14	14		301							"{3: '""At least I\'m making headway here,"" he tells himself.'}"
+15	15		204							{1: '1'}
+16	16		301							"{3: ""And it's true that he's made headway.""}"
+17	17		202							{1: '1', 6: '1'}
+18	18		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+19	19		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+20	20		201							{1: '1', 2: '500313'}
+21	21		301							"{1: '1', 3: ""But just exactly who is that person he can't remember the face of?""}"
+22	22		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+23	23		201							{1: '1', 2: '500512', 7: '1'}
+24	24		205							{1: '1', 3: '0.5', 4: '0.5', 5: '0'}
+25	25		301							"{1: '1', 3: ""And who's that boy that pops up in his mind with the melody?""}"
+26	26		202							{1: '1', 6: '1'}
+27	27		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+28	28		201							{1: '1', 2: '500518', 4: '400'}
+29	29		201							{1: '2', 2: '500515', 4: '-400', 8: '1'}
+30	30		301							{1: '1', 3: 'Where are his mother and Rachel now?'}
+31	31		202							{1: '1', 2: '2', 6: '1'}
+32	32		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+33	33		301				AniZhuanchangBegin			"{3: '""Could they just be waiting for me somewhere as I wander across the world as a lost soul?""'}"
+34	35		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+35	36		201						2000.0	{1: '1', 2: '500506', 3: '10'}
+36	37		301			AniZhuanchangEnd				"{1: '1', 2: 'Young Man A', 3: ""No, I can't stop just yet..."", 4: '1'}"
+37	38		204							{1: '1'}
+38	39		301							"{3: ""I will never be able to get to the bottom of this if I don't get my memory back…""}"
+39	40		202							{1: '1', 6: '1'}
+40	41		301							{3: 'Calming himself down, the young man shifts his focus back to the conversation the Constructs are having.'}
+41	42		201							{1: '1', 2: '500019', 4: '-600'}
+42	43		201							{1: '2', 2: '500019'}
+43	44		201							{1: '3', 2: '500019', 4: '600'}
+44	45		301							{1: '1', 2: 'Construct Soldier 1', 3: 'Where is the Chief Commandant?', 4: '1'}
+45	46		301							{2: 'Construct Soldier 2', 3: 'Gray Raven left in the middle of the night because they got a bit of a situation going on.', 4: '2'}
+46	47		301							{2: 'Construct Soldier 3', 3: 'What happened?', 4: '3'}
+47	48		301							{2: 'Construct Soldier 2', 3: 'Not sure, but apparently some of the guys guarding the place defected, and God only knows where they went.', 4: '2'}
+48	49		301							"{2: 'Construct Soldier 1', 3: ""...All these disasters over the past few months are pretty disconcerting. Say, do you think they're hanging out with Ascendants now?"", 4: '1'}"
+49	50		301							{2: 'Construct Soldier 2', 3: 'Ascendants? No way...', 4: '2'}
+50	51		301							"{2: 'Construct Soldier 1', 3: ""Oh, yes way. Who wouldn't want to be immune to the virus, right? I mean, not everyone can be, but better giving it a try than waiting around."", 4: '1'}"
+51	52		301							"{2: 'Construct Soldier 3', 3: ""C'mon, you're talking out of your ass."", 4: '3'}"
+52	53		301							"{2: 'Construct Soldier 1', 3: ""I'm not. See, people have been talking about this. They think there is no end to all this fighting, so they'd rather keep their options open—for example, by joining the ranks of Ascendants and see if they get lucky."", 4: '1'}"
+53	54		301							"{2: 'Construct Soldier 2', 3: ""And that's why the higher-ups decided to send the Purifying Force out, right?"", 4: '2'}"
+54	55		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+55	56		201							{1: '1', 2: '500405'}
+56	57		301							"{1: '1', 2: 'Construct Soldier 4', 3: ""Man. Best we drop this topic now and do what we're supposed to do."", 4: '1'}"
+57	58		202							{1: '1', 6: '1'}
+58	59		301							"{3: ""Their sighs fade into the lasting silence that shrouds the car—until one of them decides he's had enough and starts talking about Lillian, who sits in the corner.""}"
+59	60		201							{1: '1', 2: '500335', 3: '19', 4: '-400'}
+60	61		201							{1: '2', 2: '500019', 4: '400'}
+61	62		301							"{1: '1', 2: 'Construct Soldier 5', 3: ""What's with the long face, Lillian?"", 4: '2'}"
+62	63		301							"{2: 'Lillian', 3: ""I lost touch with Talbot from the squad, and I haven't been able to get hold of him yet."", 4: '1'}"
+63	64		301							{2: 'Construct Soldier 5', 3: 'What? You should have brought this up earlier.', 4: '2'}
+64	65		301							{2: 'Lillian', 3: 'Well, he was still on the line until just now...', 4: '1'}
+65	66		202							{1: '2', 6: '1'}
+66	67		201							{1: '2', 2: '500405', 4: '400'}
+67	68		301							"{1: '1', 2: 'Construct Soldier 4', 3: ""You gotta keep an eye out for the guy. He kind of lost it after what happened to Anna, and I wouldn't be surprised at all if he decides to defect somewhere down the road."", 4: '2'}"
+68	69		301				AniZhuanchangBegin			{2: 'Lillian', 3: '...', 4: '1'}
+69	70		202							{1: '1', 2: '2', 6: '1'}
+70	71		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory362.png'}
+71	72		301			AniZhuanchangEnd				{3: 'A few moments later, the transport vehicle stops at a fork. All the Constructs get off.'}
+72	73		301							"{3: ""The young man and Lillian head toward Medical Center 09 together as they chat about what's been happening lately—until her device starts ringing.""}"
+73	74		401							{1: '1', 2: '36'}
+74	75		401							{1: '2', 2: '1099'}
+75	76		509							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory361.png', 2: '2'}
+76	77		201							{1: '1', 2: '500335', 4: '-400'}
+77	78		201							{1: '2', 2: '500506', 4: '-800'}
+78	79		201							{1: '13', 2: '500517', 4: '600'}
+79	80		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '13'}
+80	81		301							{1: '1', 2: 'Talbot', 3: 'Lillian! Are you in the Medzone now?', 4: '13'}
+81	82		401							{1: '1', 2: '202'}
+82	83		301							{2: 'Bird CUB', 3: 'Help! Help!', 4: '13'}
+83	84		301							"{2: 'Lillian', 3: ""I'm almost there. What's going on?"", 4: '1'}"
+84	85		301							"{2: 'Talbot', 3: ""I'm surrounded by a bunch of Corrupted! I need help!"", 4: '13'}"
+85	86		301							{2: 'Bird CUB', 3: 'Wait, I thought you were supposed to be there to help people!', 4: '13'}
+86	87		301							{2: 'Talbot', 3: 'Shut up, Blush!', 4: '13'}
+87	88		301							{2: 'Young Man A', 3: 'Blush?', 4: '2'}
+88	89		301							{2: 'Blush', 3: 'Help! Blush is calling for help!', 4: '13'}
+89	90		301							"{2: 'Talbot', 3: 'This thing is a CUB based on a weero, which is why I call it ""Blush"". I mean, it\'s lost its colors so much that you can\'t really tell what it... Wait, why am I telling you all this now?!', 4: '13'}"
+90	91		301							{2: 'Talbot', 3: 'I just sent our coordinates your way. Just come and help us now!', 4: '13'}
+91	92		301							{2: 'Blush', 3: 'Please!', 4: '13'}
+92	93		301							{2: 'Lillian', 3: '...', 4: '1'}
+93	94		204							{1: '1', 2: '19'}
+94	95		301							{2: 'Lillian', 3: 'H-hey, John...', 4: '1'}
+95	96		204							{1: '2', 2: '9'}
+96	97		301							{3: 'The young man almost chokes when Lillian calls him that, but still manages to keep a straight face.'}
+97	98		204							{1: '2', 2: '4'}
+98	99		301							"{2: 'Young Man A', 3: ""Heard it all. Let's go and help."", 4: '2'}"
+99	100		204							{1: '1', 2: '1'}
+100	101		301		1		AniZhuanchangBegin			"{2: 'Lillian', 3: ""...Right, thank you. Let's go!"", 4: '1'}"

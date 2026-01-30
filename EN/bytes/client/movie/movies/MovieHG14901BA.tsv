@@ -1,0 +1,224 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		401							{1: '2', 2: '1099'}
+4	4		301			DialogEnable				{3: 'The terminal vibrates, showing an incoming communication request.'}
+5	5		302							{2: '(Pick up the call)', 3: '6'}
+6	6		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '3'}
+7	7		201							{1: '1', 2: '500001'}
+8	8		301							{1: '1', 2: 'Celica', 3: 'Greetings, Gray Raven Commandant.', 4: '1'}
+9	9		301							{2: 'Celica', 3: 'Good news—your vacation time has finally come.', 4: '1'}
+10	10		302							"{2: ""Perfect timing. I've just wrapped up all my missions for now."", 3: '11', 4: '...And the bad news is?', 5: '12'}"
+11	11	15	301							"{2: 'Celica', 3: 'Well, the thing is... this vacation is kind of a ""mission"" too, in a way.', 4: '1'}"
+12	12		204							{1: '1', 2: '4'}
+13	13	14	301							"{2: 'Celica', 3: ""Hey, don't just assume there's bad news—"", 4: '1'}"
+14	14		204							{1: '1'}
+15	15		301							"{2: 'Celica', 3: ""Seeing how you've been working around the clock lately, the higher-ups decided to give you something a bit more relaxing... A standard mission, for the sake of work-life balance."", 4: '1'}"
+16	16		301							"{2: 'Celica', 3: ""As you know, we've recently reclaimed the Hydrangea Artificial Island, and everything there is in the process of reconstruction."", 4: '1'}"
+17	17		301							{2: 'Celica', 3: 'Many of the Golden Age islanders are now returning home to hold a reclamation festival, celebrating the construction of conservation area.', 4: '1'}
+18	18		301							"{2: 'Celica', 3: ""Your mission is to help with the festival preparations. I've double-checked—no combat assignments involved. It's purely for relaxation, I promise."", 4: '1'}"
+19	19		302							{2: 'That sounds pretty good.', 3: '20'}
+20	20		301							"{2: 'Celica', 3: ""The organizers are expecting a large turnout, so they're hoping the staff heading to the island could bring along some more supplies."", 4: '1'}"
+21	21		301							{2: 'Celica', 3: 'The detailed list is in the mission briefing—construction materials and some special civilian goods. All purchasing expenses will be reimbursed. Would you mind helping us out, Gray Raven Commandant?', 4: '1'}
+22	22		302							{2: 'Roger.', 3: '23'}
+23	23		301				AniZhuanchangBegin			{2: 'Celica', 3: 'Oh right, for this mission, the military has also assigned you a temporary squad member. Their information is also included in the briefing. You can contact them directly.', 4: '1'}
+24	24		202							{1: '1'}
+25	25		502						400.0	{1: 'DialogDisable'}
+26	26		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+27	27		401							{1: '2', 2: '1515'}
+28	28		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+29	29		301			DialogEnable				"{3: ""The communication ends. As you open the mission details, the temporary member's portrait looks familiar, as if you've seen her somewhere before.""}"
+30	30		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '3'}
+31	31		201							{1: '1', 2: '500374', 7: '1'}
+32	32		301							{1: '1', 3: '—Yata, member of the Scarab Squad, terminal ID...'}
+33	33		301							"{3: ""Beyond these basic details, there's practically no other information available. The Scarab Squad certainly lives up to its reputation for secrecy.""}"
+34	34		301							"{3: ""Your last impression of Yata comes from your previous joint operations. Word has it that she's been spotted with a new frame recently, and you can't help but wonder how she's doing.""}"
+35	35		502						400.0	{1: 'DialogDisable'}
+36	36		202							{1: '1'}
+37	37		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab'}
+38	38		302							{2: '(Send a communication request to Yata)', 3: '39'}
+39	39		401							{1: '2', 2: '887'}
+40	40		301			DialogEnable				{2: 'Terminal', 3: 'Beep... beep... beep...'}
+41	41		301							{2: 'Terminal', 3: 'Your call cannot be connected...'}
+42	42		402							{1: '887'}
+43	43		302							"{2: ""Maybe she's busy?"", 3: '44'}"
+44	44		301							{3: 'After several failed attempts to make contact, you decide to go purchase the supplies first.'}
+45	45		301				AniZhuanchangBegin			{3: 'With that thought, you turn off your terminal and break free from your busy duties, stepping toward the beckoning promise of a vacation.'}
+46	46		401							{1: '2', 2: '10042416'}
+47	47		401							{1: '1', 2: '36'}
+48	48		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+49	49		401							{1: '1', 2: '204'}
+50	50		201							{1: '2', 2: '500460'}
+51	51		301			AniZhuanchangEnd				"{1: '1', 2: 'Elderly Shopkeeper', 3: ""Looking at what you're buying, are you also heading to the festival on that artificial island?"", 4: '2'}"
+52	52		302							{2: 'Is a lot of people going?', 3: '53'}
+53	53		301							"{2: 'Elderly Shopkeeper', 3: ""Yeah. I hear they're celebrating the reclamation of lost territory. Many of the displaced citizens volunteered to help with the reconstruction, and they even got approval for a festival. Quite a few shop owners from this street alone are going to join in the festivities."", 4: '2'}"
+54	54		302							"{2: ""You're not going?"", 3: '55'}"
+55	55		301							"{2: 'Elderly Shopkeeper', 3: ""At my age, I don't have the energy for such trips anymore. The reclamation is wonderful news, but my hometown is so far away... I wonder if I'll even live to see that day."", 4: '2'}"
+56	56		301				AniZhuanchangBegin			"{2: 'Elderly Shopkeeper', 3: ""Sigh. Well... being in Babylonia isn't so bad, I guess. Here you go, kid. Careful now."", 4: '2'}"
+57	57		202							{1: '2'}
+58	58		502						400.0	{1: 'DialogDisable'}
+59	59		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+60	60		401							{1: '2', 2: '1099'}
+61	61		301			DialogEnable				{3: 'Just as you step out of the shop, your terminal chimes with a notification.'}
+62	62		301							{3: 'The sender is none other than Yata, who had been out of contact until now.'}
+63	63		301							"{2: 'Yata', 3: ""I've reviewed the mission briefing. For efficiency's sake, let's split up.""}"
+64	64		301				AniZhuanchangBegin			"{2: 'Yata', 3: ""I've sent you the planned routes. Let's meet up at the shop at the last stop.""}"
+65	65		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+66	66		301			AniZhuanchangEnd				{3: 'Shoppers stroll through the commercial district, chatting and laughing.'}
+67	67		301							"{3: ""After several rounds of shopping, half the items on the checklist are crossed off. Your hands are full of purchases—everything's going smoothly so far.""}"
+68	68		301							{3: 'After borrowing a small cart for the supplies, you make your way through the bustling lunch crowd to reach the shop where Yata and you agreed to meet.'}
+69	69		401							{1: '2', 2: '4090'}
+70	70		301							{3: 'Just as you are about to push the cart up the slope, the door suddenly swings open from the inside. The wind chimes above the entrance tinkle, and a familiar figure comes into view.'}
+71	71		201							{1: '1', 2: '501041', 5: '-75', 6: '50'}
+72	72		301							{1: '1', 2: 'Yata', 3: 'Oh hey, Gray Raven Commandant.', 4: '1'}
+73	73		301							{3: 'The Construct holds a can of cherry blossom soda in each hand, while her mechanical arms on the back are carrying shopping bags and waving goodbye to those inside the shop.'}
+74	74		202							{1: '1'}
+75	75		502						400.0	{1: 'DialogDisable'}
+76	76		302							{2: 'Hello, Yata.', 3: '77', 4: 'I see you got here first.', 5: '77'}
+77	77		401							{1: '2', 2: '4373'}
+78	78		201							{1: '1', 2: '501040'}
+79	79		203						120.0	{1: '1', 2: '0.1', 4: '-50', 5: '-10'}
+80	80		203							{1: '1', 2: '0.1'}
+81	81		301			DialogEnable				{1: '1', 3: 'Yata leaps down the steps and lands in front of you, her mechanical arms already moving to rearrange the scattered goods in the cart.'}
+82	82		301							{3: 'The bustling crowds in the distance continue their chatter as her copper-colored eyes meet yours.'}
+83	83		301							"{2: 'Yata', 3: ""I was just wondering when you'd show up."", 4: '1'}"
+84	84		204							{1: '1', 2: '1'}
+85	85		301							{3: 'Yata flashes you a smile. The sunlight falls on her, accentuating her gallant demeanor.'}
+86	86		301							{2: 'Yata', 3: 'Speak of the devil, I guess.', 4: '1'}
+87	87		301							{2: 'Yata', 3: 'Here, this is for you.', 4: '1'}
+88	88		204							{1: '1'}
+89	89		301							{3: 'Yata hands you a can of soda, opens it, and raises hers for a toast.'}
+90	90		302							{2: 'I sent you a message earlier.', 3: '91'}
+91	91		302							"{2: ""Couldn't reach you, so I went ahead with the shopping."", 3: '92'}"
+92	92		401							{1: '2', 2: '4421'}
+93	93		301							"{3: ""Beep, beep— Right as you finish speaking, Yata's terminal chimes with a new message notification.""}"
+94	94		301							"{2: 'Yata', 3: ""...It was already a bit late by the time I saw your message. Rather than waste time meeting up, I figured it'd be more efficient to split up."", 4: '1'}"
+95	95		401							{1: '2', 2: '4421'}
+96	96		301							{3: 'Beep, beep— Another notification chimes.'}
+97	97		204							{1: '1', 2: '4'}
+98	98		301							{3: 'With a resigned sigh, Yata takes out her terminal. Her brows furrow slightly as countless flickering characters reflect in her eyes.'}
+99	99		301							{2: 'Yata', 3: 'Tch, what a hassle...', 4: '1'}
+100	100		302							"{2: ""What's wrong?"", 3: '101'}"
+101	101		301							"{2: 'Yata', 3: ""Since we're working together today, I tried to whitelist you from my Do Not Disturb settings."", 4: '1'}"
+102	102		301							"{2: 'Yata', 3: ""Instead... I think I tapped something that disabled Do Not Disturb for everyone. Now my terminal's flooded with notifications."", 4: '1'}"
+103	103		301							"{3: 'You lean over to peek at Yata\'s terminal screen. The entire display is covered in notifications, with a huge ""99+"" counter in the top right.'}"
+104	104		301							{2: 'Yata', 3: 'Who designed this gaudy interface... I really hate it when I have to clear these red dots one by one.', 4: '1'}
+105	105		302							{2: 'Do you need a hand?', 3: '106'}
+106	106		204							{1: '1'}
+107	107		301							{3: 'Yata turns to you and nods.'}
+108	108		301							{2: 'Yata', 3: 'You handle it. I rarely use these features.', 4: '1'}
+109	109		301							{3: 'Taking her terminal, you open the communication settings, mark all as read, and enable Do Not Disturb for everyone—in the blink of an eye, all the cluttered notifications vanish from the screen.'}
+110	110		204							{1: '1', 2: '1'}
+111	111		301							"{2: 'Yata', 3: ""Ah, that's much easier on the eyes now."", 4: '1'}"
+112	112		301							{3: 'As she speaks, she takes back her terminal and carefully navigates to the priority notifications feature, dragging your profile into the empty list.'}
+113	113		301							{2: 'Yata', 3: 'There. Now you can reach me anytime.', 4: '1'}
+114	114		302							"{2: ""You're only whitelisting me? What about your commandant?"", 3: '115'}"
+115	115		204							{1: '1', 2: '8'}
+116	116		301							"{2: 'Yata', 3: ""...You're right. That is very important."", 4: '1'}"
+117	117		301							"{3: ""You watch as Yata drags Valeria's profile into the blocked list.""}"
+118	118		204							{1: '1'}
+119	119		301							{2: 'Yata', 3: 'At least no one will interrupt me during this mission now.', 4: '1'}
+120	120		301							"{2: 'Yata', 3: ""Anyway, let's sync up the shopping list. What are we still missing?"", 4: '1'}"
+121	121		302							{2: 'Here, take a look.', 3: '122', 4: 'Let me check.', 5: '124'}
+122	122		301							{3: 'After receiving the shared list, Yata methodically marks and adjusts the items on it. Her fingers dance across the screen with precision, and within a minute, the newly edited list is sent back to you.'}
+123	123	126	301							"{2: 'Yata', 3: ""Green marks what we've purchased, orange for excess purchases, and red for items we still need."", 4: '1'}"
+124	124		301							{3: 'Yata gives you an intrigued look before sharing her list with you.'}
+125	125	126	301							"{3: ""Her remarkable progress demonstrates her efficiency at every turn. After checking the list, you can't help but be impressed.""}"
+126	126		302							{2: 'Almost done then.', 3: '127'}
+127	127		301							"{2: 'Yata', 3: ""...Right, we've settled everything with the construction material suppliers. All that's left are some civilian goods."", 4: '1'}"
+128	128		301							"{2: 'Yata', 3: ""If all goes well, we'll have about half an hour of free time before the shuttle takes off."", 4: '1'}"
+129	129		301							"{2: 'Yata', 3: ""I say that's a good start."", 4: '1'}"
+130	130		301							{3: 'The Construct nods in satisfaction.'}
+131	131		204							{1: '1', 2: '6'}
+132	132		301							{2: 'Yata', 3: 'Oh, by the way.', 4: '1'}
+133	133		301							{2: 'Yata', 3: 'Um...', 4: '1'}
+134	134		301							{3: 'Yata, who had been full of spirit until now, suddenly becomes flustered and averts your gaze, running her fingers through her silver curls.'}
+135	135		302							{2: 'Hm?', 3: '136'}
+136	136		301							"{2: 'Yata', 3: ""Ahem, I'd like to interview you about something."", 4: '1'}"
+137	137		204							{1: '1', 2: '1'}
+138	138		301							{2: 'Yata', 3: 'What do you think of my new frame?', 4: '1'}
+139	139		301							{3: 'In an instant, Yata regains her gallant composure, placing her hands on her hips and fixing her gaze upon you.'}
+140	140		301							{3: 'She looks just like a fashion model—if you ignore the mechanical arms behind her carrying several sacks.'}
+141	141		301							"{2: 'Yata', 3: ""Don't just stand there staring. What do you think?"", 4: '1'}"
+142	142		302							"{2: ""You're... even cuter now."", 3: '143', 4: 'You look even cooler now.', 5: '153', 6: ""I can't really tell the difference."", 7: '160'}"
+143	143		204							{1: '1', 2: '7'}
+144	144		301							{2: 'Yata', 3: '...?', 4: '1'}
+145	145		204							{1: '1', 2: '6'}
+146	146		301							{2: 'Yata', 3: '...', 4: '1'}
+147	147		302							{2: '?', 3: '148'}
+148	148		301							{3: 'Yata glances around nervously, making sure no one else has heard your conversation.'}
+149	149		204							{1: '1'}
+150	150		401							{1: '2', 2: '4044'}
+151	151		301			RImgBg1Shake				{3: 'Then with a thump, she taps your shoulder with her mechanical arm—not too hard, not too soft, but just enough to betray her feelings.'}
+152	152	163	301				AniZhuanchangBegin			{2: 'Yata', 3: 'Forget I asked. This conversation never happened.', 4: '1'}
+153	153		204							{1: '1', 2: '1'}
+154	154		301							"{2: 'Yata', 3: ""Right? That's exactly what I was thinking too!"", 4: '1'}"
+155	155		301							{3: 'Yata extends her right fist, inviting you for a fist bump.'}
+156	156		203							{1: '1', 2: '0.25', 4: '-50', 5: '-150'}
+157	157		401							{1: '2', 2: '4044'}
+158	158		203							{1: '1', 2: '0.5', 5: '-100'}
+159	159	163	301				AniZhuanchangBegin			{2: 'Yata', 3: 'As expected of the Gray Raven Commandant. Great minds think alike, after all.', 4: '1'}
+160	160		204							{1: '1', 2: '6'}
+161	161		301							{2: 'Yata', 3: 'Ah...', 4: '1'}
+162	162	163	301				AniZhuanchangBegin			{2: 'Yata', 3: 'Oh, okay...', 4: '1'}
+163	163		202							{1: '1'}
+164	164		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory262.png'}
+165	165		301			AniZhuanchangEnd				{3: 'After delivering all the available supplies to the transport area, you return with Yata to complete the remaining procurement tasks.'}
+166	166		301							{3: 'As you check off another item from the list, a mechanical arm moves ahead of you, lifting away the hefty cargo with ease.'}
+167	167		301							"{3: ""Such tasks come naturally to her, as if she's determined to live up to the principle that great power comes with great responsibility.""}"
+168	168		302							{2: 'Speaking of which, I heard...', 3: '169'}
+169	169		302							"{2: ""That the Scarab Squad took part in the operation to reclaim Hydrangea Island, didn't they?"", 3: '170'}"
+170	170		301							{3: 'As those words hang in the air, Yata, who was walking ahead, suddenly comes to a halt.'}
+171	171		201							{1: '1', 2: '501040'}
+172	172		301							{1: '1', 2: 'Yata', 3: '...Yup.', 4: '1'}
+173	173		301							{2: 'Yata', 3: 'A lot of nasty things happened during that time. What? You interested in hearing about it?', 4: '1'}
+174	174		302							"{2: ""No pressure if you'd rather not talk about it."", 3: '175'}"
+175	175		204							{1: '1', 2: '8'}
+176	176		301							"{2: 'Yata', 3: ""Hey, no need to be so formal with me. It's not classified information or anything, just a long story. We can sit down and talk about it properly some other time."", 4: '1'}"
+177	177		302							"{2: ""It's a deal, then."", 3: '178'}"
+178	178		204							{1: '1'}
+179	179		301							{2: 'Yata', 3: 'Anyway, how much do you know about this island?', 4: '1'}
+180	180		302				AniZhuanchangBegin			{2: 'Hydrangea Artificial Island...', 3: '181'}
+181	181		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1065.jpg'}
+182	182		202							{1: '1'}
+183	183		306							{1: '1'}
+184	184		401							{1: '2', 2: '4792'}
+185	185		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+186	186		301			AniZhuanchangEnd				"{3: ""One of the Golden Age's hidden gems. It was a hub for technical talent, home to the prestigious Misono High.""}"
+187	187		301							"{3: ""The academy boasted an exceptional faculty and consistently produced top talent for the entire world. However, when the Punishing Virus outbreak occurred, this island became one of humanity's first major strongholds to fall.""}"
+188	188		301							"{3: ""As of today, Babylonia's recent reclamation operation has eliminated all the Corrupted from the island, and reconstruction efforts are now in full swing.""}"
+189	189		301				AniZhuanchangBegin			{3: 'This festival marks a new beginning for Hydrangea Island as it takes a step into the future.'}
+190	190		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+191	191		306							
+192	192		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+193	193		201							{1: '1', 2: '501040'}
+194	194		301			AniZhuanchangEnd				"{1: '1', 2: 'Yata', 3: ""...Yeah, that's what Hydrangea Island is—to outsiders, at least."", 4: '1'}"
+195	195		301							"{2: 'Yata', 3: ""When V... Valeria assigned me this mission, she said to treat it as a vacation. And seeing how cheerful you've been on the way here, I'm guessing you're here for some rest and relaxation too?"", 4: '1'}"
+196	196		301							"{2: 'Yata', 3: ""Since we'll be keeping each other company for the next few days, let me know if you have any plans besides the festival. And if you don't..."", 4: '1'}"
+197	197		301							{3: 'Yata grabs some human snacks and energy drinks from the shelf, adding them to her shopping cart.'}
+198	198		204							{1: '1', 2: '1'}
+199	199		301							"{2: 'Yata', 3: ""Then you'd better stick close to me. Wouldn't want our great hero here getting into any trouble during my watch."", 4: '1'}"
+200	200		302							{2: 'What about you? Got any plans?', 3: '201'}
+201	201		204							{1: '1', 2: '6'}
+202	202		301							{2: 'Yata', 3: 'Hmm... Not sure yet. Maybe a jog around the island?', 4: '1'}
+203	203		204							{1: '1', 2: '1'}
+204	204		301							"{2: 'Yata', 3: ""Wanna join me? Jogging's pretty fun!"", 4: '1'}"
+205	205		302							"{2: ""Sure thing! I'm quite the athlete, you know."", 3: '206', 4: 'Is there maybe a less exhausting option...', 5: '208'}"
+206	206		204							{1: '1', 2: '1'}
+207	207	210	301							"{2: 'Yata', 3: ""Tell you what—if you make it through the jog, I'll take you to the island's famous hot spring."", 4: '1'}"
+208	208		204							{1: '1', 2: '1'}
+209	209	210	301							"{2: 'Yata', 3: ""Then how about joining me for some training at the waterfall? There's a nice hot spring right nearby."", 4: '1'}"
+210	210		301							"{3: ""As soon as those words leave her mouth, Yata's expression turns somewhat dejected.""}"
+211	211		204							{1: '1', 2: '6'}
+212	212		301							{2: 'Yata', 3: '...Oh wait, no. The hot springs were destroyed during the Punishing outbreak.', 4: '1'}
+213	213		301							"{2: 'Yata', 3: ""Pretty much everything's under reconstruction. Misono High is probably the only place that's still mostly intact."", 4: '1'}"
+214	214		204							{1: '1', 2: '1'}
+215	215		302							{2: 'You seem to know that place pretty well.', 3: '216'}
+216	216		301							{2: 'Yata', 3: 'Of course. I used to be a student there.', 4: '1'}
+217	217		301							"{2: 'Yata', 3: ""This is technically classified info, but since it's you, I don't really mind. Just keep it under wraps, yeah?"", 4: '1'}"
+218	218		204							{1: '1'}
+219	219		301							{3: 'Unlike the secretive nature of the Scarab Squad you remember, Yata openly shares information about herself.'}
+220	220		301							{3: 'With one hand on her hip, her gaze falls on your face, yet her eyes seem focused on something far more distant.'}
+221	221		301							{2: 'Yata', 3: 'In all of Babylonia, nobody knows that place better than I do.', 4: '1'}
+222	222		204							{1: '1', 2: '1'}
+223	223		301		1		AniZhuanchangBegin			{2: 'Yata', 3: 'Just a bit more shopping to do. Get ready for your well-deserved break, Gray Raven Commandant.', 4: '1'}

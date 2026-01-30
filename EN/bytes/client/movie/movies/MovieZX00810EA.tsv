@@ -1,0 +1,11 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory40.jpg'}
+2	100		401							{1: '1', 2: '201'}
+3	2		201							{1: '1', 2: '500002', 4: '400'}
+4	3		201							{1: '2', 2: '1091001', 4: '-400'}
+5	4		301			DialogEnable				{1: '1', 2: 'Vera', 3: 'Hm, more tenacious than I thought.', 4: '1'}
+6	5		201							{1: '2', 2: '1011001', 4: '-400'}
+7	6		301							"{1: '1', 2: 'Lee', 3: ""You're not joining in yourself?"", 4: '2'}"
+8	7		301							"{2: 'Vera', 3: ""Oh, if it weren't for a certain little promise."", 4: '1'}"
+9	8		301							"{2: 'Vera', 3: ""But losing is losing, so I'll be a good girl and leave."", 4: '1'}"
+10	9		301		1		AniZhuanchangBegin			{2: 'Vera', 3: 'Only, you all better think it through, whether this outcome is for the better or worse.', 4: '1'}

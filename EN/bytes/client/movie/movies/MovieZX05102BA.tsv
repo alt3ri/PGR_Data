@@ -1,0 +1,84 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1089.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		107						2500.0	{1: 'Camp Perimeter Defense Line', 2: 'The Next Morning'}
+4	4		108							{1: '1'}
+5	5		201							{1: '1', 2: '500565'}
+6	6		301			DialogEnable				"{1: '1', 2: 'Patrol Member', 3: ""There's an abandoned town 12 kilometers north along the river—the same location listed in the patrol team's routine report last week."", 4: '1'}"
+7	7		301							"{2: 'Patrol Member', 3: ""We're short on people, and the water collection team gets the vehicles first, so we haven't gotten the supplies yet."", 4: '1'}"
+8	8		201							{1: '1', 2: '500984', 3: '1'}
+9	9		301							"{1: '1', 2: 'Emma', 3: ""If I remember right, the report didn't mention any Mutated Red Tide activity?"", 4: '1'}"
+10	10		201							{1: '1', 2: '500565'}
+11	11		301							"{1: '1', 2: 'Patrol Member', 3: ""Yeah, it's an abandoned town. We scanned it and found a lot of protective gear, purification devices, and weapons and ammunition inside."", 4: '1'}"
+12	12		301							"{2: 'Patrol Member', 3: ""They probably didn't have time to evacuate..."", 4: '1'}"
+13	13		301							{3: 'He shrugs and goes quiet.'}
+14	14		202							{1: '1'}
+15	15		301							{3: 'Across this destroyed land, the same sad stories repeat.'}
+16	16		302							"{2: ""Rosa's list said we'd need some water purifiers."", 3: '17'}"
+17	17		201							{1: '1', 2: '500984', 3: '1'}
+18	18		301							{1: '1', 2: 'Emma', 3: 'Should I take a chance?', 4: '1'}
+19	19		302							{2: 'Yeah.', 3: '20'}
+20	20		202							{1: '1'}
+21	21		301							"{3: ""Since you're on patrol, you now have time to venture deeper into the ruined city to search for the materials Rosa mentioned that are in short supply at Aerospace City.""}"
+22	22		301				AniZhuanchangBegin			{3: 'With a light reconnaissance vehicle, you can cover ten kilometers across the flat land easily.'}
+23	23		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1092.jpg'}
+24	24		401							{1: '2', 2: '4416'}
+25	25		301			AniZhuanchangEnd				{3: 'About twenty minutes from camp, you see buildings in the distance.'}
+26	26		201							{1: '18', 2: '500984', 3: '1', 4: '175', 5: '-200', 6: '-200'}
+27	27		301							{1: '1', 2: 'Emma', 3: 'Not bad... The Punishing Virus is still low here. We should be able to find something useful.', 4: '18'}
+28	28		401							{1: '2', 2: '4128'}
+29	29		202							{1: '18'}
+30	30		301				DialogDisable			"{3: ""The vehicle's treads crunch over gravel and ice, sending a crackling sound and vibrations from beneath the driver's seat straight into your ears.""}"
+31	31		401							{1: '2', 2: '4416'}
+32	32		502							{1: 'RImgBg1DisableSlow'}
+33	33		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory575.jpg'}
+34	34		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory575.jpg'}
+35	35		301			DialogEnable				"{3: ""The town's image in your eyes turns into more details.""}"
+36	36		401							{1: '1', 2: '36'}
+37	37		301							"{3: ""No, that's not... a building.""}"
+38	38		401							{1: '1', 2: '5017'}
+39	39		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+40	40		301							{3: 'The buildings in the distance suddenly look like hazy gray clouds, and the horizon below them wavers.'}
+41	41		302							"{2: ""What's happening..."", 3: '42'}"
+42	42		205						100.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg1601_7.jpg', 3: '0', 4: '0.7', 5: '0.1'}
+43	43		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg1601_7.jpg', 3: '0.7', 4: '0', 5: '0.25'}
+44	44		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg1601_7.jpg', 3: '0', 4: '0.7', 5: '0.1'}
+45	45		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg1601_7.jpg', 3: '0.7', 4: '0', 5: '0.25'}
+46	46		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg1601_7.jpg', 3: '0', 4: '0.7', 5: '0.1'}
+47	47		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg1601_7.jpg', 3: '0.7', 4: '0', 5: '0.25'}
+48	48		301			RImgBg1Shake				"{3: ""The ground under the town curves upward, like someone's playing with a sandcastle.""}"
+49	49		401							{1: '2', 2: '4685'}
+50	50		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg1601_7.jpg', 3: '0', 4: '1', 5: '1'}
+51	51		301			RImgBg1Shake	DialogDisable			{3: 'A dark red flood pours from the sky, swallowing the gray mass before joining the chaotic horizon.'}
+52	52		302							"{2: ""Careful, it's red..."", 3: '53', 4: 'Danger, take cover!', 5: '53'}"
+53	53		401							{1: '2', 2: '4786'}
+54	54		401							{1: '2', 2: '9327108'}
+55	55		401							{1: '2', 2: '4685'}
+56	56		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+57	57		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg1601_7.jpg', 3: '1', 4: '0', 5: '3'}
+58	58		501						3000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieHongchaoHs.prefab', 2: '2'}
+59	59		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+60	60		402							{1: '4786'}
+61	61		301			DialogEnable				{2: 'Emma', 3: 'Commandant!'}
+62	62		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+63	63		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+64	64		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab', 2: '1'}
+65	65		401							{1: '2', 2: '902'}
+66	66		401							{1: '2', 2: '4685'}
+67	67		301							{3: 'You try to speak, but the desperate urge to speak drowns in the airless depths of your throat.'}
+68	68		301							"{3: ""Like a nightmare, you can't even make a sound.""}"
+69	69		302							{2: '(Emma, everyone, run...)', 3: '70', 8: '2'}
+70	70		301							"{3: ""Your mouth opens wide, and your cheeks hurt from trying to speak, but it's all in vain.""}"
+71	71		301							{3: 'The brown and white land is gone. Under the sky, nothing can stop the red wave.'}
+72	72		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory773.jpg', 3: '0', 4: '1', 5: '1'}
+73	73		301							"{3: ""But under your feet are rocky reefs, with strangely shaped algae and coral growing through the cracks, like they're hungry for nourishment.""}"
+74	74		205							{1: '999'}
+75	75		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory773.jpg'}
+76	76		301			RImgBg1Shake				{3: 'Then, something grabs your legs.'}
+77	77		302							{2: '(Is this... the bottom of the ocean?)', 3: '78', 8: '2'}
+78	78		301							{3: 'Wait... this feeling...'}
+79	79		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+80	80		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+81	81		301							{3: 'A chill runs down your back as old fears start to surface.'}
+82	82		301							"{3: ""You're dreaming... it seems...""}"
+83	83		301		1		AniZhuanchangBegin			"{3: 'You\'ve seen this ""scene"" before.'}"

@@ -1,0 +1,143 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory45.jpg'}
+2	2		401							{1: '1', 2: '205'}
+3	3		201							{1: '1', 2: '500011'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Hassen', 3: ""That's all for this week's routine report. Dismissed."", 4: '1'}"
+5	5		201							{1: '1', 2: '500001'}
+6	6		301							"{1: '1', 2: 'Celica', 3: ""Gray Raven Commandant? You're a bit worse for wear. Is your stomach okay?"", 4: '1'}"
+7	7		302							{2: 'I gotta bad feeling about today...', 3: '8'}
+8	8		301							"{2: 'Celica', 3: ""Haha, you're just overthinking. The Gray Ravens are just performing routine equipment tests. What could possibly go wrong?"", 4: '1'}"
+9	9		302							{2: 'Fingers crossed...', 3: '10'}
+10	10		301				AniZhuanchangBegin			"{2: 'Celica', 3: ""Go back to your room and rest up. Just don't forget to meet at the mission dispatch area later."", 4: '1'}"
+11	11		202							{1: '1', 6: '1'}
+12	12		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg'}
+13	13		301			AniZhuanchangEnd				{3: 'Returning to your room to rest, you find a Construct waiting inside, gracefully sipping a cup of tea.'}
+14	14		201							{1: '1', 2: '500150'}
+15	15		301							{1: '1', 2: 'Qu', 3: 'Pine needle tea... Not as good as black tea, but it sure tastes like the wilderness.', 4: '1'}
+16	16		302							{2: 'Qu?! What are you doing here...', 3: '17'}
+17	17		301							"{2: 'Qu', 3: 'What\'s all the fuss about? All I did was use your ""collar"" as a springboard into Babylonia.', 4: '1'}"
+18	18		302							{2: 'But your body...', 3: '19'}
+19	19		301							"{2: 'Qu', 3: ""I'm just borrowing it for the time being. As I said before, only you can see the real me. Others just see me as some obsolete Construct."", 4: '1'}"
+20	20		302							{2: 'So... What are your plans for today?', 3: '21'}
+21	21		301							"{2: 'Qu', 3: ""Aren't you a paranoid one... I don't have anything planned. I just want to learn more about Babylonia—learn more about your everyday life."", 4: '1'}"
+22	22		301							"{2: 'Qu', 3: ""You basically know all about my past, but I don't know anything about you. That's not exactly fair as your partner."", 4: '1'}"
+23	23		302							{2: 'You have a point.', 3: '24'}
+24	24		301							{2: 'Qu', 3: 'Well, what about you?', 4: '1'}
+25	25		302							"{2: ""I'm going to Mission Dispatch."", 3: '26'}"
+26	26		301							"{2: 'Qu', 3: ""I will go with you. It doesn't look like the Gray Ravens are around, so I don't think you have any reason to refuse."", 4: '1'}"
+27	27		302				AniZhuanchangBegin			{2: 'Better than you running around and making a mess, I guess...', 3: '1500'}
+28	1500		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory52.jpg'}
+29	1501		401							{1: '1', 2: '201'}
+30	28		301			AniZhuanchangEnd				{2: 'Qu', 3: 'Is this where missions are dispatched...? What mission did you choose?', 4: '1'}
+31	29		302							{2: '(Show her)', 3: '30', 4: '(Decline)', 5: '31'}
+32	30	33	301							"{2: 'Qu', 3: ""Patrolling a Low Viral Intensity Region... Isn't sending a star commandant such as yourself a bit overboard?"", 4: '1'}"
+33	31		301							"{2: 'Qu', 3: ""What's there to hide? No matter how dangerous the task is, I won't be surprised... Let me see."", 4: '1'}"
+34	32		301							"{2: 'Qu', 3: ""Low Viral Intensity Region guard duty...? That's it?"", 4: '1'}"
+35	33		202							{1: '1', 6: '1'}
+36	34		201							{1: '1', 2: '500138', 4: '-400'}
+37	35		201							{1: '2', 2: '500163', 4: '400'}
+38	36		301							{1: '1', 2: 'Male Commandant', 3: 'Hmph... Got that right. Our Big Boss is stealing missions from us average joes. Must have a hell of a grudge against us or something.', 4: '1'}
+39	37		301							"{2: 'Female Commandant', 3: ""Don't put it like that. Our Big Boss, being all high and mighty, shouldn't have to risk life and limb completing missions. They should just stay back and guard the rear."", 4: '2'}"
+40	38		202							{1: '1', 2: '2', 6: '1'}
+41	39		201							{1: '1', 2: '500150'}
+42	40		301							{1: '1', 2: 'Qu', 3: 'Insensate buffoons... If you have time for envy, consider taking a good look at yourself!', 4: '1'}
+43	41		202							{1: '1', 6: '1'}
+44	42		201							{1: '1', 2: '500138', 4: '-400'}
+45	43		201							{1: '2', 2: '500163', 4: '400'}
+46	44		301							"{1: '1', 2: 'Male Commandant', 3: ""Oh, I heard that Gray Ravens weren't here today... Are you one of our good Boss's temporary squad members? What can a walking pile of scrap metal like you do? Hahaha!"", 4: '1'}"
+47	45		301							"{2: 'Female Commandant', 3: ""No wonder you didn't choose a harder mission, Boss. Taking her with us would just be our death sentence!"", 4: '2'}"
+48	46		202							{1: '1', 2: '2', 6: '1'}
+49	47		201							{1: '1', 2: '500150'}
+50	48		301							{1: '1', 2: 'Qu', 3: 'You...', 4: '1'}
+51	49		302							{2: 'Cool it... We should get going.', 3: '50'}
+52	50		202							{1: '1', 6: '1'}
+53	51		301				AniZhuanchangBegin			{3: 'Seething with anger, Qu shuts her mouth and follows you, ignoring the arrogant laughter from the other commandants.'}
+54	53		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory31.jpg'}
+55	54		301			AniZhuanchangEnd				{3: 'Soon, Qu and the commandants arrive at the location designated for the mission. To your surprise, you are joined by the previous two commandants.'}
+56	55		201							{1: '1', 2: '500138'}
+57	56		301							"{1: '1', 2: 'Male Commandant', 3: ""You actually came, Boss. I didn't think you'd seriously accept the mission after everything we said..."", 4: '1'}"
+58	57		302							"{2: ""You'd think that, wouldn't you?"", 3: '58'}"
+59	58		201							{1: '1', 2: '500163'}
+60	59		301							"{1: '1', 2: 'Female Commandant', 3: ""No matter, just don't slow us down."", 4: '1'}"
+61	60		201							{1: '1', 2: '500150'}
+62	61		301							{1: '1', 2: 'Qu', 3: 'The same goes for you, too.', 4: '1'}
+63	62		201							{1: '1', 2: '500138'}
+64	63		301							{1: '1', 2: 'Male Commandant', 3: 'I am the leader of this operation. Everyone must obey my orders. Got it, Boss?', 4: '1'}
+65	64		302							{2: 'Of course.', 3: '65'}
+66	65		201							{1: '1', 2: '500163'}
+67	66		301							"{1: '1', 2: 'Female Commandant', 3: ""Boss, you take the west. We'll stay here."", 4: '1'}"
+68	67		201							{1: '1', 2: '500150'}
+69	68		301							"{1: '1', 2: 'Qu', 3: 'Hmph, seems ""reasonable""...', 4: '1'}"
+70	69		302							"{2: ""Roger. Let's go."", 3: '70'}"
+71	70		301							{2: 'Qu', 3: 'Why do we have to listen to orders from dimwits? Is that how Babylonia works?', 4: '1'}
+72	71		302				AniZhuanchangBegin			{2: 'Orders must be obeyed on the battlefield.', 3: '72'}
+73	72		202							{1: '1', 6: '1'}
+74	73		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+75	74		301			AniZhuanchangEnd				{3: 'Still unable to understand, Qu follows you to take up garrison in the western region.'}
+76	75		301				AniZhuanchangBegin			"{3: ""And very quickly, Qu's concerns come true...""}"
+77	1100		401							{1: '1', 2: '203'}
+78	77		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory37.jpg'}
+79	78		201							{1: '1', 2: '500150'}
+80	79		301			AniZhuanchangEnd				{1: '1', 2: 'Qu', 3: 'Mmph...', 4: '1'}
+81	80		302							{2: 'Qu, are you hurt?!', 3: '81'}
+82	81		301							{3: 'Qu tears out the Corrupted appendage stabbed into her leg. Vital fluid begins to pour out from her wound.'}
+83	82		301							"{2: 'Qu', 3: ""Don't worry. It's nothing serious... But we can't leave the cave now."", 4: '1'}"
+84	84		401							{1: '2', 2: '1508'}
+85	1000		301							{3: 'Horrifying screams echo throughout the cave... You can tell that the Corrupted already have you surrounded.'}
+86	86		301							"{2: 'Qu', 3: ""This can't just be a coincidence... The Corrupted already have us surrounded before we could establish a communication channel."", 4: '1'}"
+87	87		301							{3: 'Obviously, Qu meant that the other two commandants set you up.'}
+88	88		302							{2: 'No way.', 3: '89'}
+89	89		301							"{2: 'Qu', 3: ""Boy, aren't you naive... Those in the limelight always attract those that want a share."", 4: '1'}"
+90	90		301							"{2: 'Qu', 3: ""You can't trust anyone on your way to the top... The Path to Glory is that of solitude."", 4: '1'}"
+91	91		302							"{2: ""I don't want to be at the top."", 3: '92'}"
+92	92		301							"{2: 'Qu', 3: ""Unfortunately, sometimes you don't have any other choice. Just like now."", 4: '1'}"
+93	93		302							"{2: ""Even if we have our differences, they're still our comrades."", 3: '94'}"
+94	94		301							{2: 'Qu', 3: 'Enough with the comrade spiel... Even family members will stab you in the back!', 4: '1'}
+95	95		302							{2: 'I choose to trust them.', 3: '96'}
+96	96		301							{3: 'You hand a signal flare to Qu.'}
+97	97		302							{2: 'But do you trust me?', 3: '98'}
+98	98		301							"{2: 'Qu', 3: ""This is stupid... Even if there's only a 1% chance of success, I still won't lose hope..."", 4: '1'}"
+99	1001		204							{1: '1', 2: '1'}
+100	99		301							{3: 'Qu smiles. She picks up the flare and fires it into the sky—exposing your position to your comrades, but also the enemy.', 4: '1'}
+101	100		202							{1: '1', 6: '1'}
+102	101		401							{1: '2', 2: '1508'}
+103	102		301							{2: 'Corrupted', 3: 'Rargh—!!! Argh!!'}
+104	103		301							{3: 'As expected, you hear a flurry of footsteps as Corrupted approach the cave.'}
+105	104		301							"{3: ""You sling Qu's hand over your shoulder to support her injured leg, then help her to her feet.""}"
+106	105		302							"{2: ""They're coming, Qu!"", 3: '106'}"
+107	106		201							{1: '1', 2: '500150'}
+108	107		301							"{1: '1', 2: 'Qu', 3: ""I take back what I said earlier. Maybe you aren't a star commandant, you're just a fool. Simple as that."", 4: '1'}"
+109	108		302							"{2: ""You're only just now finding that out?"", 3: '109'}"
+110	109		301				AniZhuanchangBegin			"{2: 'Qu', 3: ""But I'm the star of Kowloong in my own right. I won't let my partner die so easily."", 4: '1'}"
+111	110		202							{1: '1', 6: '1'}
+112	111		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory32.jpg'}
+113	112		301			AniZhuanchangEnd				{3: 'Corrupted swarm the cave. Both of you manage to help each other fight through the waves of enemies, but you are nearing your limit.'}
+114	113		201							{1: '1', 2: '500150'}
+115	114		301							"{1: '1', 2: 'Qu', 3: ""There's no stopping them...!"", 4: '1'}"
+116	115		301							{3: 'Qu kicks away an approaching Corrupted, causing her remaining leg to ignite with sparks as it is destroyed.'}
+117	116		301							"{2: 'Qu', 3: ""Commandant! It's okay, leave me! Run!"", 4: '1'}"
+118	117		302							{2: 'No need to retreat! Time to counterattack!', 3: '118'}
+119	118		202							{1: '1', 6: '1'}
+120	119		301							{3: 'Three flickering lights fly through the air, then fall around you and explode, turning most of the Corrupted into scrap iron.'}
+121	120		201							{1: '1', 2: '500150'}
+122	121		301							{1: '1', 2: 'Qu', 3: 'Have they... really come to save us?', 4: '1'}
+123	122		201							{1: '1', 2: '500138'}
+124	123		301							{1: '1', 2: 'Male Commandant', 3: 'Hey, Boss! Are you guys okay?!', 4: '1'}
+125	124		302							"{2: ""I'm alright. Can't say the same about her legs."", 3: '125'}"
+126	125		202							{1: '1', 6: '1'}
+127	126		301							{3: 'To your surprise, the two commandants from before arrive with the Support Force from Babylonia.'}
+128	127		201							{1: '1', 2: '500138', 4: '-400'}
+129	128		201							{1: '2', 2: '500163', 4: '400'}
+130	129		301							"{1: '1', 2: 'Female Commandant', 3: ""Thank goodness! We wouldn't have found you had it not been for the signal flare."", 4: '2'}"
+131	130		301							{2: 'Male Commandant', 3: 'Great work, Boss... That sure took a lot of courage to fire that off at a time like this.', 4: '1'}
+132	131		301							"{3: ""The female commandant and support Construct begin work on repairing Qu's injured legs.""}"
+133	132		301							"{2: 'Female Commandant', 3: ""You too. I didn't think an obsolete Construct could last so long against so many Corrupted..."", 4: '2'}"
+134	133		301							{2: 'Male Commandant', 3: 'I think we underestimated the combat capabilities of older models. I think we should take this to the Science Council for reevaluation.', 4: '1'}
+135	134		302							{2: 'No... We just got lucky is all!', 3: '135'}
+136	135		202							{1: '1', 2: '2', 6: '1'}
+137	136		301							"{3: ""Qu couldn't help but laugh seeing you try to desperately explain yourself.""}"
+138	137		201							{1: '1', 2: '500150'}
+139	138		301							"{1: '1', 2: 'Qu', 3: 'Maybe I underestimated ""humans""—whether that be 【kuroname】 or the two other commandants.', 4: '1'}"
+140	139		301							{2: 'Qu', 3: 'Ugliness and beauty; malice and goodwill; cowardice and courage; vulnerability and strength—all are intertwined. Humanity is defined by contradiction and irrationality.', 4: '1'}
+141	140		301							{3: 'Qu looks off into the distance at the people celebrating the victory. Her gaze finally falls upon the person in the center of it all.'}
+142	141		301		1		AniZhuanchangBegin			{2: 'Qu', 3: '【kuroname】, I believe I now have a better understanding of what you believe in.', 4: '1'}

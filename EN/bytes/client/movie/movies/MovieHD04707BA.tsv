@@ -1,0 +1,116 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+2	2		401							{1: '1', 2: '294'}
+3	3		201							{1: '1', 2: '500929'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Judge', 3: ""The camera cuts back to the main screen. You've reached the final round of this year's Block-Pulling Championship."", 4: '1'}"
+5	5		301							"{2: 'Judge', 3: ""On the red team, we have Team Block Master! And on the blue team, representing Babylonia, it's 【kuroname】 and Karenina—Team Karenina Invincible!"", 4: '1'}"
+6	6		202							{1: '1'}
+7	7		301							"{3: ""The judge's loud voice hypes up the crowd. Despite the fancy name, the competition area is really just a small, simple tent.""}"
+8	8		301							{3: 'You and a mechanoid sit across from each other at a square table in the middle. The tower of blocks between you is already starting to wobble. A few more moves, and this match will be over.'}
+9	9		201							{1: '1', 2: '500929'}
+10	10		301							"{1: '1', 2: 'Judge', 3: ""All right, what's the next move going to be?!"", 4: '1'}"
+11	11		201							{1: '1', 2: '500494', 3: '4'}
+12	12		301							{1: '1', 2: 'Karenina', 3: '【kuroname】, you better not mess up now!', 4: '1'}
+13	13		302							"{2: ""Why don't you do it then?"", 3: '14'}"
+14	14		204							{1: '1', 2: '5'}
+15	15		301							"{2: 'Karenina', 3: ""I would've if I could! But they were too scared to go up against me, so they made you play instead!"", 4: '1'}"
+16	16		201							{1: '1', 2: '500488', 5: '-250', 6: '400'}
+17	17		301			DialogShake				{1: '1', 2: 'Block Master Mechanoid', 3: 'Are you two done talking? Hurry up and pull a block!', 4: '1'}
+18	18		201							{1: '1', 2: '500494', 3: '4'}
+19	19		301							{1: '1', 2: 'Karenina', 3: 'Yeah, yeah. 【kuroname】, go for that blue one. Once you pull it out, the gold one underneath will be exposed.', 4: '1'}
+20	20		202							{1: '1'}
+21	21		301							"{3: ""If you do what Karenina says, the whole tower will be dangerously unstable, and there'll only be a few safe blocks left.""}"
+22	22		302							{2: '(Pull out the block)', 3: '23'}
+23	23		201							{1: '1', 2: '500929'}
+24	24		301							{1: '1', 2: 'Judge', 3: 'Wow, as expected of the famous Construct from the Engineering Force. That was a perfect move. Looks like Team Block Master is in trouble now.', 4: '1'}
+25	25		201							{1: '1', 2: '500488', 5: '-250', 6: '400'}
+26	26		301							{1: '1', 2: 'Block Master Mechanoid', 3: 'Trouble? You two brats from Babylonia are the ones who should be worried.', 4: '1'}
+27	27		302							{2: 'Wait, what?', 3: '28', 4: 'Huh?', 5: '28'}
+28	28		301							"{2: 'Block Master Mechanoid', 3: ""I've been watching every move and glance. That Construct, Karenina, told you to go for the blue block, but her eyes were locked on a different one the whole time."", 4: '1'}"
+29	29		201							{1: '1', 2: '500494', 3: '7'}
+30	30		301							{1: '1', 2: 'Karenina', 3: '...So you noticed.', 4: '1'}
+31	31		201							{1: '1', 2: '500488', 5: '-250', 6: '400'}
+32	32		301							"{1: '1', 2: 'Block Master Mechanoid', 3: ""I'd bet anything that, under your little setup, the only block left that can actually be pulled is the one she kept staring at—that green one, right?"", 4: '1'}"
+33	33		301							"{2: 'Block Master Mechanoid', 3: ""It's my turn now. I'm pulling it."", 4: '1'}"
+34	34		202							{1: '1'}
+35	35		301							"{3: ""After finishing its analysis, the Block Master mechanoid pulls out a block with such precision that the tower doesn't even tremble.""}"
+36	36		201							{1: '1', 2: '500488', 5: '-250', 6: '400'}
+37	37		301							{1: '1', 2: 'Block Master Mechanoid', 3: 'I win!', 4: '1'}
+38	38		202							{1: '1'}
+39	39		401							{2: '4537'}
+40	40		301			RImgBg1Shake				{3: 'Then the tower crashes down.'}
+41	41		201							{1: '1', 2: '500488', 5: '-250', 6: '400'}
+42	42		301							"{1: '1', 2: 'Block Master Mechanoid', 3: ""What? That should've been safe... Karenina, you tricked me!"", 4: '1'}"
+43	43		201							{1: '1', 2: '500494', 3: '4'}
+44	44		301							"{2: 'Karenina', 3: ""Just because I looked at it doesn't mean I wanted to pull it. And for the record, I don't need tricks. We could play this game a hundred times and you still wouldn't beat me."", 4: '1'}"
+45	45		301							"{2: 'Karenina', 3: ""You forget where I'm from. I could win a match like this with my eyes closed."", 4: '1'}"
+46	46		201							{1: '1', 2: '500488', 5: '-250', 6: '400'}
+47	47		301			RImgBg1Shake				"{1: '1', 2: 'Block Master Mechanoid', 3: ""Hey! That's prejudiced...! Against machines! I'm gonna scrap you for that!"", 4: '1'}"
+48	48		201							{1: '1', 2: '500494', 3: '5'}
+49	49		301							{1: '1', 2: 'Karenina', 3: 'Bring it on!', 4: '1'}
+50	50		302							{2: 'Hold on!', 3: '51'}
+51	51		201							{1: '1', 2: '500929'}
+52	52		301			RImgBg1Shake	DialogDisable			"{1: '1', 2: 'Judge', 3: ""Someone get over here! They're about to start a street fight!"", 4: '1'}"
+53	53		202							{1: '1'}
+54	54		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+55	55		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '0'}
+56	56		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+57	57		401							{2: '4111'}
+58	58		307							"{1: '——Obtained ""Legendary Gold-Inlaid Block""——', 3: '50', 5: '0'}"
+59	59		301							"{3: '——Obtained ""Legendary Gold-Inlaid Block""——'}"
+60	60		307							{2: '1'}
+61	61		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory912.jpg', 3: '0', 4: '1', 5: '1'}
+62	62		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory912.jpg', 3: '1', 4: '0', 5: '0'}
+63	63		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory802.jpg'}
+64	64		201							{1: '1', 2: '500494', 3: '1'}
+65	65		301			DialogEnable				"{1: '1', 2: 'Karenina', 3: ""Heh. One more prize in the bag. By the way, 【kuroname】, didn't you promise WGAA you'd bring back some souvenirs?"", 4: '1'}"
+66	66		302							{2: 'Kind of.', 3: '67', 4: 'How do you even know that?', 5: '68'}
+67	67	70	301							"{2: 'Karenina', 3: ""I helped you, didn't I?"", 4: '1'}"
+68	68		204							{1: '1', 2: '4'}
+69	69		301							"{2: 'Karenina', 3: ""Doesn't matter. The point is, I helped you, didn't I?"", 4: '1'}"
+70	70		301							{3: 'At that, Karenina, who has been walking ahead, turns to face you with a smug grin.'}
+71	71		302							{2: 'Yes, yes, my friend.', 3: '72', 4: 'Yeah, thank you.', 5: '74'}
+72	72		204							{1: '1', 2: '5'}
+73	73	75	301							"{2: 'Karenina', 3: ""Don't push it!"", 4: '1'}"
+74	74		301							"{2: 'Karenina', 3: ""What's with the serious thank-you out of nowhere...?"", 4: '1'}"
+75	75		204							{1: '1', 2: '12'}
+76	76		301							"{2: 'Karenina', 3: ""Whatever. Let's grab more souvenirs. Food's no good. Maybe some locally made weapons?"", 4: '1'}"
+77	77		302							{2: 'Why are you going out of your way to help me?', 3: '78'}
+78	78		204							{1: '1', 2: '4'}
+79	79		301							{2: 'Karenina', 3: '...', 4: '1'}
+80	80		202							{1: '1'}
+81	81		301							{3: 'After hearing the question, Karenina freezes in place, then clenches her fist and takes a deep breath.'}
+82	82		201							{1: '1', 2: '500494', 3: '4'}
+83	83		301							"{1: '1', 2: 'Karenina', 3: ""I knew you'd ask that. Fine. I'll just say it."", 4: '1'}"
+84	84		204							{1: '1', 2: '6'}
+85	85		301							{2: 'Karenina', 3: '【kuroname】, I want you to spend today with me!', 4: '1'}
+86	86		302							{2: 'May I ask why?', 3: '89', 4: 'Is this a confession?', 5: '87'}
+87	87		204							{1: '1', 2: '6'}
+88	88		301			DialogShake				"{2: 'Karenina', 3: ""No! It's not! Don't get weird about it!"", 4: '1'}"
+89	89		204							{1: '1', 2: '12'}
+90	90		301							{2: 'Karenina', 3: 'The Engineering Force started messing around before the festival. They voted on who would be the loneliest on Double Seventh.', 4: '1'}
+91	91		302							{2: '...', 3: '92', 4: 'I can guess the result.', 5: '92'}
+92	92		204							{1: '1', 2: '4'}
+93	93		301							"{2: 'Karenina', 3: ""Tch. I just didn't want anyone looking down on me. And you just happened to be nearby when I got here. Simple as that."", 4: '1'}"
+94	94		302							{2: 'So I was just someone you grabbed at random?', 3: '95'}
+95	95		204							{1: '1', 2: '6'}
+96	96		301							"{2: 'Karenina', 3: ""No... This is Double Seventh. You think I'd just grab a random person?"", 4: '1'}"
+97	97		301							{2: 'Karenina', 3: '...', 4: '1'}
+98	98		301							{3: 'Her voice rises, but she lowers her head. Her bangs fall over her face, hiding her expression.'}
+99	99		204							{1: '1', 2: '12'}
+100	100		301							"{2: 'Karenina', 3: ""If I hadn't grabbed you at the entrance, someone else might've..."", 4: '1'}"
+101	101		302							"{2: ""That's..."", 3: '102', 4: ""(Pat Karenina's head)"", 5: '105'}"
+102	102		301							{2: 'Karenina', 3: '...', 4: '1'}
+103	103		202							{1: '1'}
+104	104	108	301							{3: 'You stay quiet for the next ten minutes or so. Neither of you is quite sure where to start or what to say.'}
+105	105		301							{2: 'Karenina', 3: '...A little more to the left.', 4: '1'}
+106	106		202							{1: '1'}
+107	107		301							"{3: ""After gently patting Karenina's head, you both stand in silence for the next ten minutes or so, listening to the sounds of the crowd around you.""}"
+108	108		301							{3: 'And...'}
+109	109		201							{1: '1', 2: '500494', 3: '5'}
+110	110		301							"{1: '1', 2: 'Karenina', 3: ""Hmph. You're such an idiot, 【kuroname】. What's with that serious look? I was just quoting a line from a drama I saw the other day!"", 4: '1'}"
+111	111		301							"{2: 'Karenina', 3: ""Anyway, you're all mine today. I'm going to grab you as many souvenirs as I can, and you're not allowed to say no, understood?"", 4: '1'}"
+112	112		301							{3: 'Karenina lifts her head, her proud, commanding air instantly returning.'}
+113	113		302							{2: 'Looks like all I can do is follow your lead.', 3: '114'}
+114	114		204							{1: '1', 2: '1'}
+115	115		301		1		AniZhuanchangBegin			"{2: 'Karenina', 3: ""That's better. Come on, 【kuroname】, the Double Seventh celebration is about to start!"", 4: '1'}"

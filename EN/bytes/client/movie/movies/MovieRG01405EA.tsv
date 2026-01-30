@@ -1,0 +1,259 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1110.jpg'}
+2	2		401							{1: '1', 2: '276'}
+3	3		304			AniZhuanchangEnd				{1: 'Long after, the demons of the Scorched Borderland call this age the Dreamless Night, the opposite of the Eternal Daylight.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-3', 10: '1'}
+4	4		304							"{1: ""Nirvatia, the Night Sovereign, destroys the Sanctuary herself and ends the angels' oppression of the mortal realm."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}"
+5	5		304							{1: 'The demons gain the honor of immortality at the cost of losing their dreams forever.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 8: '1', 10: '1'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+7	7		201							{1: '1', 2: '500678', 7: '1'}
+8	8		304							{1: 'Rumor says the Bloodsworn who stands by the Night Sovereign was once a close comrade of the Four Horsemen.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-3', 10: '1'}
+9	9		202							{1: '1'}
+10	10		304							{1: 'But now, the demons dread the names of the Four Horsemen.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+11	11		304				AniZhuanchangBegin			{1: 'Because their arrival brings only destruction and death.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 9: '1', 10: '1'}
+12	12		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory507.jpg'}
+13	13		201							{1: '1', 2: '501232'}
+14	14		301			AniZhuanchangEnd				{1: '1', 2: 'Demon Attendant', 3: 'Congratulations, my lady. With the fall of the last Cardinal Diocese, we now control the entire Scorched Borderland.', 4: '1'}
+15	15		301							"{2: 'Demon Attendant', 3: ""Meanwhile, construction of the Babel Tower continues without a hitch. I believe it won't be long before the Supreme Heaven also falls under your control, my lord."", 4: '1'}"
+16	16		201							{1: '1', 2: '501281', 3: '4'}
+17	17		301				DialogDisable			{1: '1', 2: 'Nirvatia', 3: 'Enough with the flattery. Stop wasting my time. Where is Gray Raven?', 4: '1'}
+18	18		401							{1: '2', 2: '1516'}
+19	19		203						350.0	{1: '1', 2: '0.3', 4: '25', 5: '-50'}
+20	20		203						350.0	{1: '1', 2: '0.3', 4: '-50', 5: '-100'}
+21	21		301			DialogEnable				{3: 'Nirvatia descends slowly from the towering demon palace. Her every gesture sends tremors of fear through the demons gathered below.'}
+22	22		201							{1: '1', 2: '501232'}
+23	23		301			PanelActor1Shake				{1: '1', 2: 'Demon Attendant', 3: 'Y-yes, my lady!', 4: '1'}
+24	24		301				DialogDisable			"{2: 'Demon Attendant', 3: ""Gray Raven and the Four Horsemen have departed for Hell to negotiate with the demons. With Mammon's Throne now vacant, it's only a matter of time before Hell belongs to us as well..."", 4: '1'}"
+25	25		202							{1: '1'}
+26	26		302							"{2: ""I'm back."", 3: '27', 4: '(Show up)', 5: '27'}"
+27	27		401							{1: '2', 2: '1516'}
+28	28		104						550.0	{1: '0|0|-100', 2: '0.5'}
+29	29		301			DialogEnable				{3: 'Before the weak demon can say anything more to annoy Nirvatia further, the Bloodsworn steps into the demon palace.'}
+30	30		306							{1: '1'}
+31	31		301							{3: 'The demons all breathe a quiet sigh of relief. With Gray Raven here, Nirvatia will not release her wrath today.'}
+32	32		306							
+33	33		201							{1: '1', 2: '501281', 3: '1'}
+34	34		301							{1: '1', 2: 'Nirvatia', 3: 'Gray Raven. Just the person I wanted to see.', 4: '1'}
+35	35		301							{3: 'When Nirvatia sees you arrive, she smiles, an expression unfamiliar to every demon in the hall.'}
+36	36		301							{2: 'Nirvatia', 3: 'I just found something interesting. I wanted to see it with you...', 4: '1'}
+37	37		204							{1: '1', 2: '8'}
+38	38		301				DialogDisable			"{2: 'Nirvatia', 3: ""Ahem. That concludes today's session. All of you may leave."", 4: '1'}"
+39	39		401							{1: '1', 2: '36'}
+40	40		401							{1: '2', 2: '4982'}
+41	41		202							{1: '1'}
+42	42		306						250.0	{1: '1'}
+43	43		502						500.0	{1: 'RImgBg1BlowUp'}
+44	44		201						50.0	{1: '1', 2: '500832', 4: '-600', 7: '1'}
+45	45		203						500.0	{1: '1', 2: '2', 3: '-600', 5: '-800'}
+46	46		202						250.0	{1: '1'}
+47	47		201						50.0	{1: '2', 2: '500379', 4: '600', 7: '1'}
+48	48		203						500.0	{1: '2', 2: '2', 3: '600', 5: '-800'}
+49	49		202						250.0	{1: '2'}
+50	50		201						50.0	{1: '3', 2: '501232', 4: '-300', 7: '1'}
+51	51		203						500.0	{1: '3', 2: '2', 3: '-300', 5: '-800'}
+52	52		202						250.0	{1: '3'}
+53	53		201						50.0	{1: '4', 2: '500622', 4: '300', 7: '1'}
+54	54		203						500.0	{1: '4', 2: '2', 3: '300', 5: '-800'}
+55	55		202							{1: '4'}
+56	56		402							{1: '4982'}
+57	57		505							{1: 'RImgBg1BlowUp'}
+58	58		306							
+59	59		301			DialogEnable				{3: 'The demons bow their heads and leave in a disorderly rush.'}
+60	60		401							{1: '2', 2: '4276'}
+61	61		501						350.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab', 2: '3'}
+62	62		401							{1: '1', 2: '5069'}
+63	63		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab'}
+64	64		301							"{3: ""The grand hall falls silent. Only Nirvatia and the Bloodsworn remain. She doesn't rush. Step by step, she leads you toward a clear, polished mirror.""}"
+65	65		201							{1: '1', 2: '501281', 3: '1'}
+66	66		301							"{1: '1', 2: 'Nirvatia', 3: ""I found a relic of Nyarlathotep. This is the Primordial Mirror. It truly holds Nyarlathotep's soul."", 4: '1'}"
+67	67		204							{1: '1', 2: '4'}
+68	68		301							{2: 'Nirvatia', 3: 'According to legend, the Laws of Life and Death were born inside the infinite space of this mirror. If someone activates the ritual while standing before it, they can witness every cycle of their reincarnation.', 4: '1'}
+69	69		302							{2: 'Do you want to see your own past lives?', 3: '70', 4: 'Do you want to see my past lives?', 5: '72'}
+70	70		204							{1: '1', 2: '14'}
+71	71	74	301				DialogDisable			{2: 'Nirvatia', 3: 'More accurately... I want to understand where I truly came from.', 4: '1'}
+72	72		204							{1: '1', 2: '1'}
+73	73		301				DialogDisable			"{2: 'Nirvatia', 3: ""I've already seen it. Everything is perfectly clear to me."", 4: '1'}"
+74	74		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+75	75		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront58.png', 3: '0', 4: '0.7', 5: '0'}
+76	76		202							{1: '1', 6: '1'}
+77	77		401							{1: '2', 2: '13081710'}
+78	78		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab', 2: '3'}
+79	79		201							{1: '1', 2: '501294'}
+80	80		502							{1: 'RImgBg1BlowUp'}
+81	81		203						2050.0	{1: '1', 2: '2', 5: '-200'}
+82	82		301			DialogEnable				{1: '1', 3: 'Nirvatia stands still in front of the mirror. She lifts her hand and reaches toward the reflection of herself.'}
+83	83		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+84	84		202							{1: '1', 6: '1'}
+85	85		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab'}
+86	86		505							{1: 'RImgBg1BlowUp'}
+87	87		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront58.png', 3: '0.7', 4: '0', 5: '0'}
+88	88		201							{1: '1', 2: '501281', 3: '4', 7: '1'}
+89	89		301							{1: '1', 2: 'Nirvatia', 3: 'Long ago, every demon in Hell called me a natural-born demon. But none of them knew that I never chose to be born without dreams.', 4: '1'}
+90	90		204							{1: '1', 2: '8'}
+91	91		301							{2: 'Nirvatia', 3: 'I want proof that I was not born a witch. That my soul is no different from theirs.', 4: '1'}
+92	92		204							{1: '1', 2: '4'}
+93	93		301							{2: 'Nirvatia', 3: 'I ended up here because of my own choices. Nothing else.', 4: '1'}
+94	94		306							{1: '1'}
+95	95		204							{1: '1', 2: '1'}
+96	96		301							{3: 'She withdraws her gaze from the mirror and turns to face you.'}
+97	97		306							
+98	98		301							{2: 'Nirvatia', 3: 'Gray Raven, can you understand why this matters to me so much?', 4: '1'}
+99	99		302							"{2: 'I understand.', 3: '100', 4: ""I don't fully understand, but I'll stay by your side."", 5: '100'}"
+100	100		301				DialogDisable			{2: 'Nirvatia', 3: 'That is enough.', 4: '1'}
+101	101		401							{1: '1', 2: '36'}
+102	102		203						550.0	{1: '1', 2: '0.5', 5: '-100'}
+103	103		202							{1: '1'}
+104	104		401							{1: '2', 2: '551'}
+105	105		301			DialogEnable	DialogDisable			{3: 'Nirvatia takes your hand. Together, the two of you activate the ritual.'}
+106	106		401						500.0	{1: '2', 2: '772'}
+107	107		111						250.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab'}
+108	108		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1038.jpg'}
+109	109		401							{1: '1', 2: '63'}
+110	110		301			DialogEnable				{3: 'A sharp sound rings out as the mirror instantly shatters. Crystal shards fly through the air.'}
+111	111		111							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab'}
+112	112		301							{3: 'An endless corridor unfolds before you. This is the Mirror Gallery where Nyarlathotep once remained dormant for decades.'}
+113	113		401							{1: '2', 2: '2924'}
+114	114		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+115	115		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+116	116		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+117	117		301				DialogDisable			{3: 'You and the newly appointed Demon Lord step into the corridor. At the same time, countless unfamiliar scenes appear on the mirrored walls.'}
+118	118		401							{1: '2', 2: '2924'}
+119	119		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+120	120		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+121	121		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+122	122		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+123	123		201							{1: '1', 2: '501294', 6: '-200'}
+124	124		205							{1: '1', 3: '0', 4: '0.7', 5: '0'}
+125	125		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg', 3: '0', 4: '0.5', 5: '0'}
+126	126		205							{1: '1002', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1118.jpg', 3: '0', 4: '0.5', 5: '0'}
+127	127		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1322.jpg', 3: '0', 4: '0.5', 5: '0'}
+128	128		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab'}
+129	129		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab'}
+130	130		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+131	131		301			DialogEnable	AniZhuanchangBegin			{3: 'Nirvatia looks up. Her reflection mixes and overlaps with the scenes on the mirror walls.'}
+132	132		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+133	133		202							{2: '1'}
+134	134		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg', 3: '0.5', 4: '0', 5: '0'}
+135	135		205							{1: '1002', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1118.jpg', 3: '0.5', 4: '0', 5: '0'}
+136	136		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1322.jpg', 3: '0.5', 4: '0', 5: '0'}
+137	137		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+138	138		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+139	139		504							{1: '0.7'}
+140	140		201							{1: '1', 2: '500463', 4: '-400'}
+141	141		201							{1: '2', 2: '501233', 4: '400'}
+142	142		301			AniZhuanchangEnd				"{1: '1', 2: ""Nirvatia's Mother"", 3: 'My love. I never thought we could truly create a child together...', 4: '1'}"
+143	143		301							"{2: ""Nirvatia's Mother"", 3: 'This must be mercy from the Supreme Heaven. He broke the walls between our souls and races, and brought our love together.', 4: '1'}"
+144	144		301							"{2: ""Nirvatia's Father"", 3: 'I pray this child never gets caught in the war between Sanctuary and Hell. Let her live in the mortal realm, as a human, by your side.', 4: '2'}"
+145	145		301							{3: 'In the mirror, Nirvatia sees her father for the first time. He stands beside her mother with gentle eyes. Together, they look down at the small baby in their arms.'}
+146	146		306							{1: '1'}
+147	147		301							{3: 'This should be a beautiful, dreamlike moment. But something feels wrong...'}
+148	148		306							
+149	149		301							"{2: ""Nirvatia's Father"", 3: ""I'm sorry, Nirvatia. I had to leave you the moment you were born."", 4: '2'}"
+150	150		301							"{2: ""Nirvatia's Father"", 3: ""I did it so you and your mother could live safely. Maybe one day, you'll return to Hell and find out who you truly are."", 4: '2'}"
+151	151		301				DialogDisable			"{2: ""Nirvatia's Father"", 3: 'Until then, we hope you choose to be yourself. Never let prejudice decide who you are. Live freely.', 4: '2'}"
+152	152		401							{1: '1', 2: '36'}
+153	153		401							{1: '2', 2: '5790'}
+154	154		307							"{1: ""She suddenly notices the horns on her father's head."", 3: '50', 4: 'ff4e4eff'}"
+155	155		309	1						"{2: ""She suddenly notices the horns on her father's head.""}"
+156	156		401							{1: '1', 2: '52'}
+157	157		307							{2: '1'}
+158	158		201							{1: '18', 2: '501281', 3: '7', 5: '-150'}
+159	159		301			DialogEnable				{1: '1', 2: 'Nirvatia', 3: 'No...', 4: '18'}
+160	160		204							{1: '18', 2: '14'}
+161	161		301			DialogShake				"{2: 'Nirvatia', 3: ""—This can't be real!"", 4: '18'}"
+162	162		202							{1: '18', 6: '1'}
+163	163		502							{1: 'DialogDisable'}
+164	164		401						500.0	{1: '2', 2: '772'}
+165	165		111						250.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab'}
+166	166		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory507.jpg'}
+167	167		502							{1: 'DialogEnable'}
+168	168		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+169	169		504							{1: '0'}
+170	170		202							{1: '1', 2: '2', 6: '1'}
+171	171		301			RImgBg1Shake	DialogDisable			{3: 'Nirvatia cries out. The illusion shatters. The entire mirror corridor collapses around you two.'}
+172	172		401							{1: '2', 2: '4331'}
+173	173		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+174	174		104						850.0	{1: '0|0|-150', 2: '0.8'}
+175	175		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+176	176		201							{1: '1', 2: '501281', 3: '14'}
+177	177		401							{1: '2', 2: '4044'}
+178	178		203						450.0	{1: '1', 2: '0.4', 4: '-50', 5: '-100'}
+179	179		502						500.0	{1: 'PanelActor1Shake'}
+180	180		301			DialogEnable				"{1: '1', 3: ""You rush to her side and catch her as her body weakens. She's shaking.""}"
+181	181		302							"{2: 'Are you alright?', 3: '182', 4: ""What's happening?"", 5: '182'}"
+182	182		301							{2: 'Nirvatia', 3: 'Gray Raven... did you see everything?', 4: '1'}
+183	183		301							"{3: ""She doesn't answer your question. Her eyes wander in all directions, lost.""}"
+184	184		302							"{2: ""I didn't see anything."", 3: '185', 4: 'Yes, I saw everything.', 5: '185'}"
+185	185		301							{2: 'Nirvatia', 3: 'Was I... born of a human and a demon?', 4: '1'}
+186	186		204							{1: '1', 2: '8'}
+187	187		301			RImgBg1Shake				{2: 'Nirvatia', 3: 'No demon can know this secret. If it spreads, they will no longer trust me to fight for Hell...', 4: '1'}
+188	188		302							{2: 'Nirvatia, stay calm.', 3: '189'}
+189	189		301				DialogDisable			{3: 'You take her hand in yours.'}
+190	190		302							{2: 'Nothing bad will happen. This is not a scandal.', 3: '191'}
+191	191		401							{1: '1', 2: '36'}
+192	192		302							{2: 'Because...', 3: '193'}
+193	193		306							{1: '1'}
+194	194		401							{1: '1', 2: '33'}
+195	195		307							{1: 'Because you were born from love and blessing.', 3: '45', 9: '3'}
+196	196		309	1						{2: 'Because you were born from love and blessing.'}
+197	197		307							{2: '1'}
+198	198		306							
+199	199		301			DialogEnable				{3: 'These words should come easily, but instead they feel heavy and hard to speak.'}
+200	200		302							"{2: ""Because... I'll protect this secret for you."", 3: '201'}"
+201	201		204							{1: '1', 2: '10'}
+202	202		301							{2: 'Nirvatia', 3: 'Gray Raven... I knew I could always count on you.', 4: '1'}
+203	203		204							{1: '1', 2: '9'}
+204	204		301				DialogDisable			"{2: 'Nirvatia', 3: ""I made the right choice. You're the one thing I can't lose."", 4: '1'}"
+205	205		204							{1: '1', 2: '8'}
+206	206		203						1050.0	{1: '1', 2: '1'}
+207	207		204							{1: '1', 2: '4'}
+208	208		301			DialogEnable				{3: 'With that promise secured, Nirvatia takes a deep breath and slowly stands up again.'}
+209	209		204							{1: '1', 2: '8'}
+210	210		301							"{2: 'Nirvatia', 3: ""You're right. I can't lose my nerve now... We have to finish what we started."", 4: '1'}"
+211	211		204							{1: '1', 2: '4'}
+212	212		301				DialogDisable			"{2: 'Nirvatia', 3: ""After decades of war, there's only one step left..."", 4: '1'}"
+213	213		203						550.0	{1: '1', 2: '0.5', 3: '-200'}
+214	214		202							{1: '1'}
+215	215		401							{1: '2', 2: '2924'}
+216	216		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+217	217		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront80.png', 3: '0', 4: '1', 5: '0.5'}
+218	218		401						500.0	{1: '2', 2: '772'}
+219	219		111						250.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab'}
+220	220		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront80.png', 3: '1', 4: '0', 5: '0'}
+221	221		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustBrokenLightWall.prefab', 2: '2', 5: '1'}
+222	222		511						300.0	{1: '1', 2: '0', 3: '0|-600|0'}
+223	223		301			DialogEnable				{3: 'Nirvatia walks up to the mercury mirror. She lifts one finger, and a stream of purple light shoots out, shattering the forbidden mirror into dust.'}
+224	224		401							{1: '2', 2: '1516'}
+225	225		301							"{3: ""She doesn't look at the shards on the floor. As if they were never there, she continues down the hall, glass crunching beneath her feet.""}"
+226	226		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustBrokenLightWall.prefab', 5: '1'}
+227	227		201							{1: '1', 2: '501281', 3: '4'}
+228	228		301							{1: '1', 2: 'Nirvatia', 3: 'To set this world right, we have to take down the Supreme Heaven.', 4: '1'}
+229	229		301							"{2: 'Nirvatia', 3: ""And I'll give everything to make it happen."", 4: '1'}"
+230	230		302							{2: '...', 3: '231'}
+231	231		202							{1: '1'}
+232	232		301				AniZhuanchangBegin			{3: 'You say nothing. You just silently follow her down the hall.'}
+233	233		306							{1: '1'}
+234	234		401							{1: '1', 2: '36'}
+235	235		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory510.jpg'}
+236	236		401							{1: '1', 2: '143'}
+237	237		401							{1: '2', 2: '212'}
+238	238		201							{1: '1', 2: '500622', 4: '700'}
+239	239		201							{1: '2', 2: '500379', 4: '-800'}
+240	240		201							{1: '3', 2: '501232', 4: '200'}
+241	241		201							{1: '4', 2: '500832', 4: '-300'}
+242	242		301			AniZhuanchangEnd				{1: '1', 3: 'Outside the demon palace, an immense army has gathered. As far as the eye can see, the landscape is covered with banners and watchtowers.'}
+243	243		401							{1: '2', 2: '5893'}
+244	244		301			RImgBg1Shake				{3: 'When they see Nirvatia step out from the palace, the army erupts in cheers. They raise their arms in excitement.'}
+245	245		306							
+246	246		301							{2: 'Demon Army', 3: 'All hail Night Sovereign!\\nAll hail Gray Raven!', 4: '1', 5: '2', 6: '3', 7: '4'}
+247	247		301							{2: 'Demon Army', 3: 'The Four Horsemen will lead us to victory in every battle!', 4: '1', 5: '2', 6: '3', 7: '4'}
+248	248		301							{2: 'Demon Army', 3: 'All glory to Hell!', 4: '1', 5: '2', 6: '3', 7: '4'}
+249	249		402							{1: '212'}
+250	250		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+251	251		202							{1: '1', 2: '2', 3: '3', 4: '4', 6: '1'}
+252	252		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory513.jpg'}
+253	253		201							{1: '1', 2: '501281', 3: '1'}
+254	254		301							{1: '1', 3: 'Nirvatia stands on the high platform. She looks back at you and extends her hand.'}
+255	255		301				AniZhuanchangBegin			{2: 'Nirvatia', 3: 'Come. This new world is waiting for us to conquer it.', 4: '1'}
+256	256		502							{1: 'DialogDisable'}
+257	257		102							{1: 'The Godfall Revelation', 2: 'End?', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+258	258		502		1		AniZhuanchangBegin		9000.0	{1: 'ThemeEnable'}

@@ -1,0 +1,32 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '5'}
+3	3		201							{1: '1', 2: '1111001', 4: '-400'}
+4	4		201							{1: '2', 2: '1031001', 4: '400'}
+5	5		301			DialogEnable				{1: '1', 2: 'Karenina', 3: 'Liv, do you know how to fortify the wall?', 4: '1'}
+6	6		301							{2: 'Liv', 3: 'No problem.', 4: '2'}
+7	7		301							"{2: 'Karenina', 3: ""I'll go handle logistics with the support force."", 4: '1'}"
+8	8		301							{2: 'Liv', 3: 'Understood.', 4: '2'}
+9	9		202							{1: '2', 6: '1'}
+10	10		203							{1: '1', 2: '0.25'}
+11	11		301							{2: 'Karenina', 3: 'Sigh...', 4: '1'}
+12	12		301							{2: 'Karenina', 3: 'So careless and disorganized...', 4: '1'}
+13	13		301							{2: 'Karenina', 3: 'Is this how you Gray Ravens manage this?!', 4: '1'}
+14	14		302							"{2: ""The base wasn't built overnight."", 3: '15', 4: ""We're short on expertise..."", 5: '16'}"
+15	15	17	301							{2: 'Karenina', 3: 'But the defense planning for the base is in complete disarray and not up to par. Looks like I have to do it myself!', 4: '1'}
+16	16		301							"{2: 'Karenina', 3: ""Then all I can do is try my best. Looks like I'm going to be staying with the Gray Ravens longer than I expected!"", 4: '1'}"
+17	17		203							{1: '1', 2: '0.25', 3: '-400'}
+18	18		201							{1: '2', 2: '1041001', 3: '1', 4: '400'}
+19	19		301							{1: '1', 2: 'Nanami', 3: 'Can I tear down the pile of materials over there and have a look? I bet there are treasures in there!', 4: '2'}
+20	20		301							"{2: 'Karenina', 3: ""I just finished packing all of that up! There's nothing but junk in it!"", 4: '1'}"
+21	21		204							{1: '2'}
+22	22		301							{2: 'Nanami', 3: 'Oh... What about this pile?', 4: '2'}
+23	23		301							{2: 'Karenina', 3: 'Nanami! Are you here to help or cause trouble?!', 4: '1'}
+24	24		202							{1: '2', 6: '1'}
+25	25		203							{1: '1', 2: '0.25'}
+26	26		301							"{2: 'Karenina', 3: ""Ahhh!... Never mind. I'll go out hunting Corrupted for a while. Out of side, out of mind!"", 4: '1'}"
+27	27		302							{2: 'Wait!', 3: '28', 4: 'Be careful, then.', 5: '29'}
+28	28	30	301							"{2: 'Karenina', 3: ""Don't wait!"", 4: '1'}"
+29	29		301							"{2: 'Karenina', 3: ""Don't worry about her."", 4: '1'}"
+30	30		203						500.0	{1: '1', 2: '0.5', 3: '1000'}
+31	31		202		1		AniZhuanchangBegin			{1: '1', 6: '1'}

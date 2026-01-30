@@ -1,0 +1,347 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg5401_09.jpg'}
+2	2		401							{1: '1', 2: '229'}
+3	3		301			DialogEnable				{2: 'Jetavie', 3: '<color=#808080><i>Please enter unit name____</i></color>'}
+4	4		301							"{3: ""...No matter how many times you call out to her, the result remains the same. She's like a freshly initialized AI, only capable of processing simple questions and commands through preset dialogue.""}"
+5	5		301							{3: '—That quirky, spirited girl is gone.'}
+6	6		301							"{3: ""There's still some energy left in your power armor's battery. For now, you connect it to Jetavie's tail.""}"
+7	7		301				DialogDisable			{3: 'Next... you can only try methods that might not work.'}
+8	8		401							{1: '2', 2: '4092'}
+9	9		307							{1: 'DEEP M.I.N.D. CONNECTION REQUEST', 3: '60', 4: '34aff8ff'}
+10	10		301							{3: 'DEEP M.I.N.D. CONNECTION REQUEST'}
+11	11		307						10.0	{2: '1'}
+12	12		401							{1: '2', 2: '1105'}
+13	13		307							{1: 'RECEIVER NOT RESPONDING', 3: '60', 4: 'ff4e4eff'}
+14	14		301							{3: 'RECEIVER NOT RESPONDING'}
+15	15		307							{2: '1'}
+16	16		302							{2: '(Increasing Mind Beacon power)', 3: '17'}
+17	17		401							{1: '2', 2: '4092'}
+18	18		307							{1: 'CONNECTION REQUEST FROM RECEIVER', 3: '60', 4: '34aff8ff'}
+19	19		301							{3: 'CONNECTION REQUEST FROM RECEIVER'}
+20	20		307							{2: '1'}
+21	21		301			DialogEnable	DialogDisable			{3: '...From the receiver? Is Jetavie sending connection requests herself?'}
+22	22		401							{1: '2', 2: '4092'}
+23	23		307							{1: '...SIGNAL CONFIRMED, BUILDING CONNECTION', 3: '60', 4: '34aff8ff'}
+24	24		301							{3: '...SIGNAL CONFIRMED, BUILDING CONNECTION'}
+25	25		307						10.0	{2: '1'}
+26	26		401							{1: '2', 2: '4092'}
+27	27		307							{1: 'DEEP M.I.N.D. CONNECTION ESTABLISHED', 3: '60', 4: '34aff8ff'}
+28	28		301							{3: 'DEEP M.I.N.D. CONNECTION ESTABLISHED'}
+29	29		307							{2: '1'}
+30	30		401							{1: '2', 2: '4092'}
+31	31		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+32	32		301			DialogEnable				{3: 'The moment this notification reaches your mind, all surrounding sounds fade away. Every noise and clamor abruptly stops as darkness descends.'}
+33	33		401							{1: '2', 2: '897'}
+34	34		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory257.png'}
+35	35		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '1'}
+36	36		301							{3: 'Immediately, a ray of light shines from beneath your feet and scans your entire body.'}
+37	37		301							{3: 'A sense of déjà vu... exactly like when you first immersed yourself in Gestalt.'}
+38	38		301							{2: '?', 3: 'Hello, Teacher 【kuroname】.'}
+39	39		301							"{3: ""A cold, emotionless voice echoes through the silent void. It's Jetavie's, but completely devoid of any feeling.""}"
+40	40		301							"{3: ""Focusing your gaze, you realize it's the prismatic pillar in the center of the void that's speaking.""}"
+41	41		302							{2: 'Jetavie?', 3: '42', 4: 'Who are you?', 5: '42'}
+42	42		301							"{2: '?', 3: ""This is Jetavie's personality module. I am the data recycling program for this module.""}"
+43	43		302							{2: 'Recycling Program?', 3: '44'}
+44	44		301							"{2: 'Recycling Program', 3: ""Jetavie's personality module often suffers from power shortages during high-intensity battles, causing data dispersion. Under normal circumstances, I automatically recycle these scattered shards of personality data.""}"
+45	45		301							"{2: 'Recycling Program', 3: ""However, during this recent battle, nearly 90% of Jetavie's personality data dispersed into shards, making automatic recovery impossible.""}"
+46	46		301							"{2: 'Recycling Program', 3: ""If these data shards aren't quickly recycled and reassembled, Jetavie's personality will likely dissociate permanently.""}"
+47	47		302							{2: '...Dissociate?', 3: '48', 4: '...Does that mean Jetavie will die?', 5: '49'}
+48	48	50	301							{2: 'Recycling Program', 3: 'In human terms, yes, the current Jetavie would die. However, if the personality module grows again, a new Jetavie might eventually be born.'}
+49	49		301							{2: 'Recycling Program', 3: 'In human terms, yes. However, if the personality module grows again, a new Jetavie might eventually be born.'}
+50	50		302							{2: 'How many times has her personality dissociated before?', 3: '51'}
+51	51		301							{2: 'Recycling Program', 3: 'This is the first time.'}
+52	52		301							{2: 'Recycling Program', 3: 'Jetavie needs your help, which is why I initiated this connection with you.'}
+53	53		302							{2: 'What should I do?', 3: '54'}
+54	54		301							"{2: 'Recycling Program', 3: ""Immerse yourself into the depths of Jetavie's personality module and collect the scattered data shards.""}"
+55	55		301							{2: 'Recycling Program', 3: 'Of course... I must warn you that even if you do this, the success rate of restoring Jetavie is still quite low.'}
+56	56		302							{2: 'Why?', 3: '57'}
+57	57		301							{2: 'Recycling Program', 3: 'Because piecing together these data shards often requires you to have shared memories with them. For example, if you drank bubble tea with Jetavie, you would be able to piece together that segment of data.'}
+58	58		302							"{2: '...', 3: '59', 4: ""I've spent so little time with her... Does that mean her past memories are beyond recovery?"", 5: '59'}"
+59	59		301							{2: 'Recycling Program', 3: 'Nothing is absolute. Even if you only piece together a small segment of data, I might be able to use that to find other related shards.'}
+60	60		301							"{2: 'Recycling Program', 3: 'Additionally, the data shards you find may ""replay"" before you in first-person perspective, but you cannot ""change"" established facts.'}"
+61	61		301							{2: 'Recycling Program', 3: 'In other words, you only have read permissions, not write permissions.'}
+62	62		302							{2: 'Please let me give it a try first.', 3: '63'}
+63	63		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+64	64		401							{1: '1', 2: '36'}
+65	65		301							{3: 'Everything before you fades into complete darkness once again.'}
+66	66		401							{1: '2', 2: '4092'}
+67	67		304							{1: 'ACCESSING DEEP PERSONALITY MODULE', 2: '34aff8ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '-4', 10: '1'}
+68	68		304							{1: 'IDENTITY VERIFICATION IN PROGRESS: EMPLOYEE NUMBER 035034, TEACHER', 2: '34aff8ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 9: '1', 10: '1'}
+69	69		301				DialogDisable			{3: '...'}
+70	70		401							{1: '2', 2: '4092'}
+71	71		307							{1: 'SPECIAL CONSCIOUSNESS WAVEFORM DETECTED, MATCHING VERIFICATION IN PROGRESS', 3: '60', 4: '34aff8ff'}
+72	72		301							{3: 'SPECIAL CONSCIOUSNESS WAVEFORM DETECTED, MATCHING VERIFICATION IN PROGRESS'}
+73	73		307							{2: '1'}
+74	74		301			DialogEnable	DialogDisable			"{3: ""Something's not right. Why is there another layer of verification?""}"
+75	75		401							{1: '2', 2: '4092'}
+76	76		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenBlueEx.prefab', 2: '2'}
+77	77		304							"{1: 'VERIFICATION COMPLETE, MODEL DESIGNATION: ""THE CHOSEN ONE""', 2: '34aff8ff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-4', 10: '1'}"
+78	78		304							{1: 'MATCH RATE: 100%', 2: '34aff8ff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 9: '1', 10: '1'}
+79	79		302							{2: '...?', 3: '80', 4: 'The Chosen One... is that me?', 5: '80'}
+80	80		401							{1: '2', 2: '4092'}
+81	81		307							{1: 'CONNECTING TO NEURAL NETWORK', 3: '60', 4: '34aff8ff'}
+82	82		301				AniZhuanchangBegin			{3: 'CONNECTING TO NEURAL NETWORK'}
+83	83		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenBlueEx.prefab'}
+84	84		307							{2: '1'}
+85	85		401							{1: '1', 2: '6167'}
+86	86		205							{1: '999'}
+87	87		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1217.jpg'}
+88	88		502							{1: 'DialogEnable'}
+89	89		301			AniZhuanchangEnd				{3: 'The world is ending. How many times has this happened since she first formed memories?'}
+90	90		401							{1: '2', 2: '4538'}
+91	91		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1218.jpg'}
+92	92		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+93	93		301			RImgBg1Shake				{3: 'Rocks crash down suddenly from the domed ceiling as the ground beneath gives way in an instant.'}
+94	94		301							{3: 'She can tap into her own computing power to rewrite the main system from within—but what difference would that make?'}
+95	95		301							{3: 'The world would briefly return to normal, only to march toward extinction once more as the pendulum swung back.'}
+96	96		301							{3: 'The cycle would just repeat itself...'}
+97	97		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5401_05.jpg', 3: '0', 4: '1', 5: '2'}
+98	98		301							{2: 'Girl', 3: '...?'}
+99	99		301							{3: 'The silvery sunlight feels inexplicably warm today.'}
+100	100		301							{3: 'From within the collapsing rays of light, a human figure slowly materializes.'}
+101	101		301							{2: 'Girl', 3: 'Are you... also a monster, here to kill me?'}
+102	102		301							{3: 'Her voice carries the weight of a sigh, blending emotional numbness with profound sorrow.'}
+103	103		301							{3: 'She shows no surprise, no wariness, not even turning her body. She merely casts a slightly bewildered gaze in your direction.'}
+104	104		301							"{3: ""This is the <b>first time</b> you've seen this girl with silver-gray twintails.""}"
+105	105		302							"{2: '...I am the ""Chosen One.""', 3: '106'}"
+106	106		301							"{3: 'When you meet her here, all your past memories are a blur, with only your identity as the ""Chosen One"" remaining...'}"
+107	107		301							{2: 'Girl', 3: '...Chosen One?'}
+108	108		301							{3: 'She mulls over this title, small ripples stirring within her otherwise apathetic eyes.'}
+109	109		302							"{2: ""What's your name?"", 3: '110'}"
+110	110		301							"{3: ""The girl's lips quiver, as if chanting some incantation, slowly releasing a string of syllables.""}"
+111	111		302							{2: '...Jetavie?', 3: '112'}
+112	112		301							{2: 'Girl', 3: '...Jetavie?'}
+113	113		301							{2: 'Girl', 3: 'Yes, Jetavie—I like that name!'}
+114	114		302							{2: 'Hello, Jetavie?', 3: '115'}
+115	115		301							{2: 'Jetavie', 3: 'Hello, Chosen One.'}
+116	116		205							{1: '999'}
+117	117		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5401_05.jpg'}
+118	118		301							{3: 'She seems delighted to have found a companion, and a hint of color gradually emerges in her previously numb expression.'}
+119	119		401							{1: '2', 2: '4538'}
+120	120		301			RImgBg1Shake				{3: 'BOOM—enormous boulders suddenly crash down as the room begins to collapse, and with it, this entire world.'}
+121	121		302							"{2: ""Jetavie, let's escape together."", 3: '122'}"
+122	122		301				DialogDisable			"{2: 'Jetavie', 3: ""But I've already tried—no matter what method I used, escape was impossible... the destruction of this world would simply enter the next cycle of reincarnation.""}"
+123	123		302							{2: 'Together, the two of us might just create a miracle.', 3: '124'}
+124	124		302							"{2: ""(Take Jetavie's hand)"", 3: '125'}"
+125	125		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5401_02.jpg', 3: '0', 4: '1', 5: '1'}
+126	126		301			DialogEnable				{2: 'Jetavie', 3: 'Huh?'}
+127	127		301							{3: 'The girl is momentarily stunned.'}
+128	128		301							{3: 'She hesitates briefly, then firmly grasps your hand in return.'}
+129	129		301				DialogDisable			"{2: 'Jetavie', 3: ""Yes. Let's escape together, Chosen One!""}"
+130	130		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+131	131		205							{1: '999'}
+132	132		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+133	133		401							{1: '2', 2: '4092'}
+134	134		307							{1: 'DATA ASSEMBLY: 20%', 3: '60', 4: '34aff8ff'}
+135	135		301							{3: 'DATA ASSEMBLY: 20%'}
+136	136		401							{1: '2', 2: '4092'}
+137	137		307							{2: '1'}
+138	138		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+139	139		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory523.jpg'}
+140	140		301			DialogEnable				{3: 'However, as the countdown reaches zero, the world arrives at its terminal point.'}
+141	141		301							{3: 'The terrifying monsters vanish, but the Red Tide surrounding them surges forward.'}
+142	142		301							{3: 'Jetavie taps into all of her computing power to rewrite the main system from within. The collapsing world begins to restart.'}
+143	143		201							{1: '1', 2: '500728'}
+144	144		301				DialogDisable			"{1: '1', 2: 'Jetavie', 3: ""Maybe next time, we'll run a bit faster, reach a bit farther."", 4: '1'}"
+145	145		202							{1: '1', 6: '1'}
+146	146		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+147	147		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+148	148		401							{1: '2', 2: '4092'}
+149	149		307							{1: 'DATA ASSEMBLY: 30%', 3: '60', 4: '34aff8ff'}
+150	150		301							{3: 'DATA ASSEMBLY: 30%'}
+151	151		401							{1: '2', 2: '4092'}
+152	152		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+153	153		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+154	154		307							{2: '1'}
+155	155		201							{1: '2', 2: '500748', 7: '1'}
+156	156		301			DialogEnable				{1: '1', 2: 'Jetavie', 3: 'Hello, Chosen One.', 4: '2'}
+157	157		302							{2: '...And you are?', 3: '158'}
+158	158		301							{3: 'Before obtaining the key, your memories never carried over to the next cycle—which is why you never discovered that your journey had already repeated countless times...'}
+159	159		202							{1: '2'}
+160	160		201							{1: '1', 2: '500728', 3: '14'}
+161	161		301							"{1: '1', 2: 'Jetavie', 3: ""My name is... Jetavie. I'm here to meet you for a reason."", 4: '1'}"
+162	162		301							"{3: ""Just as when you first met her, the girl's face shows hints of melancholy and bewilderment.""}"
+163	163		301				DialogDisable			{2: 'Jetavie', 3: 'Chosen One... where should we escape to next?', 4: '1'}
+164	164		401							{1: '2', 2: '4092'}
+165	165		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+166	166		204							{1: '1', 2: '12'}
+167	167		301			DialogEnable				"{2: 'Jetavie', 3: ""...My name is Jetavie. I'm here to meet you for a reason."", 4: '1'}"
+168	168		301							"{3: ""As she grows to accept your presence, the girl's expression, though still somewhat distant, appears more natural and relaxed.""}"
+169	169		301				DialogDisable			{2: 'Jetavie', 3: 'Chosen One, time is short. We need to get moving.', 4: '1'}
+170	170		401							{1: '2', 2: '4092'}
+171	171		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+172	172		204							{1: '1', 2: '5'}
+173	173		301			DialogEnable				"{2: 'Jetavie', 3: ""My name is Jetavie! I'm here to meet you for a reason."", 4: '1'}"
+174	174		301							"{3: ""She's grown used to being with you, but seems a little annoyed by your repeated memory loss.""}"
+175	175		301				DialogDisable			"{2: 'Jetavie', 3: ""Jeez, give me your hand already! Let's run!"", 4: '1'}"
+176	176		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+177	177		401						1800.0	{1: '2', 2: '4092'}
+178	178		204							{1: '1'}
+179	179		301			DialogEnable	DialogDisable			{2: 'Jetavie', 3: 'My name is Jetavie. Our meeting here is not by chance.', 4: '1'}
+180	180		302							{2: '...?', 3: '181'}
+181	181		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.6', 5: '1'}
+182	182		304							"{1: ""I see, you've forgotten again..."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-5', 9: '1', 10: '1'}"
+183	183		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.6', 4: '0', 5: '1'}
+184	184		301			DialogEnable				"{2: 'Jetavie', 3: ""Well, guess it's all written in the stars."", 4: '1'}"
+185	185		301				DialogDisable			{3: 'After countless self-introductions, the girl no longer appears anxious. Instead, she seems to playfully enjoy your confused expression.'}
+186	186		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.6', 5: '1'}
+187	187		304							{1: 'That look of yours... so silly. Have you gotten even thinner than before?', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-5', 9: '1', 10: '1'}
+188	188		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.6', 4: '0', 5: '1'}
+189	189		302							{2: 'Hello, Jetavie?', 3: '190'}
+190	190		301			DialogEnable				{2: 'Jetavie', 3: 'Hello, Chosen One.', 4: '1'}
+191	191		301							{3: 'Jetavie, hands tucked behind her back, suddenly produces a milk bottle from nowhere.'}
+192	192		204							{1: '1', 2: '2'}
+193	193		301							{3: 'Her expression turns freaky.'}
+194	194		302							{2: 'What do you want?', 3: '195'}
+195	195		203							{1: '1', 2: '0.3', 5: '-100'}
+196	196		301							{3: 'Jetavie saunters over and, without warning, shoves a milk bottle into your mouth, pouring the milk in.'}
+197	197		401							{1: '2', 2: '5288'}
+198	198		301							"{2: 'Jetavie', 3: ""Don't fight it. You're pretty weak right now. More milk will do you good."", 4: '1'}"
+199	199		301				DialogDisable			"{2: 'Jetavie', 3: ""That's it, keep chugging. It'd be a shame to waste it."", 4: '1'}"
+200	200		202							{1: '1', 6: '1'}
+201	201		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+202	202		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+203	203		401							{1: '2', 2: '4092'}
+204	204		401							{1: '1', 2: '36'}
+205	205		307							{1: 'DATA ASSEMBLY: 40%', 3: '60', 4: '34aff8ff'}
+206	206		301							{3: 'DATA ASSEMBLY: 40%'}
+207	207		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+208	208		401							{1: '2', 2: '4092'}
+209	209		307							{2: '1'}
+210	210		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory782.jpg'}
+211	211		401							{1: '1', 2: '152'}
+212	212		301			DialogEnable				{3: 'And what happened after that?'}
+213	213		301							"{3: ""You and Jetavie found the key, but still couldn't avoid the inevitable destruction. Using this key, your memories could finally be transferred to the next reincarnation cycle.""}"
+214	214		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3901_47.jpg', 3: '0', 4: '1', 5: '1'}
+215	215		301							{3: 'She gently strokes your face as you both watch the world slowly fade away.'}
+216	216		301							{2: 'Jetavie', 3: 'Chosen One, next time...'}
+217	217		302							{2: 'Next time?', 3: '218'}
+218	218		301				DialogDisable			{2: 'Jetavie', 3: 'We have to run faster.'}
+219	219		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+220	220		205							{1: '999'}
+221	221		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+222	222		401							{1: '2', 2: '4092'}
+223	223		307							{1: 'DATA ASSEMBLY: 50%', 3: '60', 4: '34aff8ff'}
+224	224		301							{3: 'DATA ASSEMBLY: 50%'}
+225	225		307							{2: '1'}
+226	226		401							{1: '2', 2: '4092'}
+227	227		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+228	228		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory523.jpg'}
+229	229		301			DialogEnable				{3: 'By chance, you observe Jetavie from another <phonetic=dataset>worldline</phonetic>.'}
+230	230		301							{3: 'This Jetavie has lost her Chosen One and continues a long, drawn-out battle against the higher authority.'}
+231	231		201							{1: '1', 2: '500893'}
+232	232		301				DialogDisable			"{1: '1', 2: 'Jetavie.Beta', 3: ""No matter how long it takes, I'll keep rewinding until I return to the past."", 4: '1'}"
+233	233		401							{1: '2', 2: '4092'}
+234	234		307							{1: '[0:00:01]', 3: '60', 4: '34aff8ff'}
+235	235		301							{3: '[0:00:01]'}
+236	236		307							{2: '1'}
+237	237		301			DialogEnable	DialogDisable			{2: 'Jetavie.Beta', 3: 'I will hold your hand once more...', 4: '1'}
+238	238		401							{1: '2', 2: '4092'}
+239	239		307							{1: '[0:00:15]', 3: '60', 4: '34aff8ff'}
+240	240		301							{3: '[0:00:15]'}
+241	241		307							{2: '1'}
+242	242		301			DialogEnable				{2: 'Jetavie.Beta', 3: 'This time, I will never let you go.', 4: '1'}
+243	243		202							{1: '1'}
+244	244		301				DialogDisable			{3: 'Under your watchful gaze, the girl sets off on her journey alone.'}
+245	245		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+246	246		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+247	247		401							{1: '2', 2: '4092'}
+248	248		307							{1: 'DATA ASSEMBLY: 60%', 3: '60', 4: '34aff8ff'}
+249	249		301							{3: 'DATA ASSEMBLY: 60%'}
+250	250		401							{1: '2', 2: '4092'}
+251	251		307							{2: '1'}
+252	252		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+253	253		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory915.jpg'}
+254	254		301			DialogEnable				{3: 'The girl fails to defeat the Higher Authority.'}
+255	255		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4401_21.jpg', 3: '0', 4: '1', 5: '1'}
+256	256		301							{2: 'Jetavie.Beta', 3: 'The Chosen One from another world, may we see each other in a better place...'}
+257	257		301							{2: 'Jetavie.Beta', 3: 'Until we meet again.'}
+258	258		301							"{3: ""This energy is nothing like before—the light comes directly from Jetavie's own computing power...""}"
+259	259		301							{3: 'Beautiful radiance tears through the pitch-black world, like light from a lighthouse piercing through darkness, like dawn breaking through the night.'}
+260	260		301							{2: 'Jetavie.Beta', 3: 'Higher Authority, take this!'}
+261	261		301							{2: 'Jetavie.Beta', 3: 'Listen, Chosen One, for this will be the last thing you will hear.'}
+262	262		401							{1: '2', 2: '10021401'}
+263	263		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+264	264		301				DialogDisable			"{3: ""With the last of her strength, she blasts open the boundary between the two worlds and transforms her remaining computing power into a gun, delivering it into your and Jetavie's hands.""}"
+265	265		402							{1: '10021401'}
+266	266		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+267	267		205							{1: '999'}
+268	268		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+269	269		401							{1: '2', 2: '4092'}
+270	270		307							{1: 'DATA ASSEMBLY: 70%', 3: '60', 4: '34aff8ff'}
+271	271		301							{3: 'DATA ASSEMBLY: 70%'}
+272	272		307							{2: '1'}
+273	273		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+274	274		401							{1: '2', 2: '4092'}
+275	275		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory251.png'}
+276	276		301			DialogEnable				"{3: ""In the battle against the Higher Authority, you sacrifice yourself to ensure Jetavie's survival, transferring your computing power to her.""}"
+277	277		201							{1: '1', 2: '500728'}
+278	278		301							"{1: '1', 2: 'Jetavie', 3: ""I knew it... No matter what happens, I'll never be able to let go of the Chosen One."", 4: '1'}"
+279	279		302							{2: 'Jetavie, are you giving up on awakening?', 3: '280'}
+280	280		301							"{2: 'Jetavie', 3: ""I don't want to leave by myself, Chosen One. I'm not going anywhere."", 4: '1'}"
+281	281		301							"{2: 'Jetavie', 3: ""I can't imagine a world without you, even if I manage to make it out of here."", 4: '1'}"
+282	282		301							"{2: 'Jetavie', 3: ""I don't want any power that comes at the cost of your life."", 4: '1'}"
+283	283		301				DialogDisable			{3: 'However, Jetavie refuses this power, choosing instead to remain in the world with you.'}
+284	284		202							{1: '1', 6: '1'}
+285	285		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+286	286		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+287	287		401							{1: '2', 2: '4092'}
+288	288		307							{1: 'DATA ASSEMBLY: 80%', 3: '60', 4: '34aff8ff'}
+289	289		301							{3: 'DATA ASSEMBLY: 80%'}
+290	290		307							{2: '1'}
+291	291		401							{1: '2', 2: '4092'}
+292	292		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+293	293		105							{1: 'Assets/Product/Ui/Spine/2-13Spine/Rouge3Movie/Rouge3Movie.prefab'}
+294	294		301			DialogEnable				"{3: ""In another battle against the Higher Authority, Jetavie witnesses your death and, in a rage, defeats it, seizing control of the central system's power.""}"
+295	295		301							"{2: 'Jetavie.Central', 3: ""If we can't change the fate of these cycles, then let's at least make this place a genuine haven of comfort.""}"
+296	296		301							{2: 'Matrix', 3: 'A haven of comfort, you say...'}
+297	297		301							"{2: 'Jetavie.Central', 3: ""Let Jetavie's initial personality stay with the Chosen One, but retain only the Chosen One's memories.""}"
+298	298		301							{2: 'Matrix', 3: 'Your requested settings are fully installed. The program is ready to reboot.'}
+299	299		301							{2: 'Jetavie.Central', 3: 'This time...'}
+300	300		301							{2: 'Jetavie.Central', 3: 'You two will meet again in a far better place.'}
+301	301		301				DialogDisable			{3: 'She could never forget you. Using her newfound powers, she created a world without hostility. In this world, she watched over the young Jetavie and the Chosen One living happily together.'}
+302	302		105							
+303	303		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+304	304		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+305	305		401							{1: '2', 2: '4092'}
+306	306		307							{1: 'DATA ASSEMBLY: 90%', 3: '60', 4: '34aff8ff'}
+307	307		301							{3: 'DATA ASSEMBLY: 90%'}
+308	308		401							{1: '2', 2: '4092'}
+309	309		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+310	310		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory627.jpg'}
+311	311		307							{2: '1'}
+312	312		301			DialogEnable				{3: 'In the very end, after enduring countless hardships and suffering throughout her journey, Jetavie defeated the higher authority and obtained the computing power of both the Matrix and all Chosen Ones, finally stepping into reality.'}
+313	313		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4601_09.jpg', 3: '0', 4: '1', 5: '1'}
+314	314		301							{2: 'Jetavie', 3: 'Since I showed up with twintails, I figure I should say goodbye wearing them too.'}
+315	315		301							"{2: 'Jetavie', 3: ""I've fought in so many battles that I've nearly forgotten what I used to look like...""}"
+316	316		301							{2: 'Jetavie', 3: 'This style... it feels so nostalgic.'}
+317	317		301							{3: 'With her twintails now tied up, the young girl stands before the spiral gate and quietly whispers...'}
+318	318		301							"{2: 'Jetavie', 3: ""It's time to go.""}"
+319	319		301				DialogDisable			"{2: 'Jetavie', 3: 'I will carry these memories with me as I embark on a new journey. My next stop is a place called ""reality.""'}"
+320	320		205							{1: '999'}
+321	321		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+322	322		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+323	323		401							{1: '2', 2: '4092'}
+324	324		307							{1: 'DATA ASSEMBLY: 100%', 3: '60', 4: '34aff8ff'}
+325	325		301							{3: 'DATA ASSEMBLY: 100%'}
+326	326		307						10.0	{2: '1'}
+327	327		401							{1: '2', 2: '4092'}
+328	328		307							{1: 'PERSONALITY MODULE RECOVERING...', 3: '60', 4: '34aff8ff'}
+329	329		301							{3: 'PERSONALITY MODULE RECOVERING...'}
+330	330		302							{2: '(Open eyes)', 3: '331'}
+331	331		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5401_09.jpg'}
+332	332		307							{2: '1'}
+333	333		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+334	334		301			DialogEnable				{3: 'Splintered memories of being a Chosen One flood into your mind all at once, unleashing a torrent of indescribable emotions.'}
+335	335		301							{3: 'Sadness, longing, joy... losing and finding, finding and losing again—powerful and complex emotions continuously crash against the shores of your consciousness.'}
+336	336		301				DialogDisable			"{3: ""These aren't just your own emotions, but rather feelings transmitted from Jetavie's personality module through your Deep M.I.N.D. connection.""}"
+337	337		401							{1: '2', 2: '4092'}
+338	338		307							{1: 'PERSONALITY MODULE RESTORED', 3: '60', 4: '34aff8ff'}
+339	339		301							{3: 'PERSONALITY MODULE RESTORED'}
+340	340		307							{2: '1'}
+341	341		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5401_10.jpg', 3: '0', 4: '1', 5: '1'}
+342	342		301			DialogEnable				"{2: 'Jetavie', 3: ""It's you... so it was you all along...""}"
+343	343		301							"{2: 'Jetavie', 3: ""I've finally found you... Chosen One.""}"
+344	344		301							"{3: ""White doves take flight as tears stream uncontrollably down the girl's face.""}"
+345	345		301							{2: 'Jetavie', 3: 'Thank goodness... I can properly protect you now... thank goodness... I persevered and survived...'}
+346	346		301		1		AniZhuanchangBegin			"{2: 'Jetavie', 3: ""We'll never be separated again, right?""}"

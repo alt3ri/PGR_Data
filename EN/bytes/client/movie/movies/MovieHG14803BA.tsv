@@ -1,0 +1,172 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory539.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				"{3: ""The forest's terrain is twisted and overgrown. Humans haven't been here for ages, and in some spots, thick brambles make it nearly impossible to pass.""}"
+4	4		201							{1: '1', 2: '500994'}
+5	5		301							"{1: '1', 2: 'Lucia', 3: ""Something's not right."", 4: '1'}"
+6	6		204							{1: '1', 2: '6'}
+7	7		301							"{2: 'Lucia', 3: ""This isn't the right way. The target just changed direction—it's heading... in the opposite direction?"", 4: '1'}"
+8	8		302							"{2: ""The sound device's moving?"", 3: '9'}"
+9	9		204							{1: '1'}
+10	10		301							"{2: 'Lucia', 3: ""Yeah, this terrain is pretty rough. There's an uncharted spot up ahead, and the signal keeps changing position, so it's hard to track. All we can do is figure out its approximate location."", 4: '1'}"
+11	11		302							{2: 'Maybe an animal picked it up.', 3: '12', 4: 'Maybe it got washed away.', 5: '14'}
+12	12		204							{1: '1', 2: '4'}
+13	13	15	301							{2: 'Lucia', 3: 'That could definitely happen...', 4: '1'}
+14	14		301							"{2: 'Lucia', 3: ""But there isn't much water up ahead, so it's less likely it got swept downstream. Maybe an animal got hold of it..."", 4: '1'}"
+15	15		204							{1: '1'}
+16	16		301							"{3: ""You recall the sound device you found at the bird nest's edge this morning and feel more certain than ever about this hunch.""}"
+17	17		302							{2: 'Can we still track it down?', 3: '18'}
+18	18		301							"{2: 'Lucia', 3: ""No worries—it's up ahead."", 4: '1'}"
+19	19		202							{1: '1', 6: '1'}
+20	20		301							{2: 'Patrol Dog', 3: 'Woof!'}
+21	21		301							"{3: ""You've only got two more sound devices left to collect here. This one's the second-to-last, and the final one is located...""}"
+22	22		502							{1: 'RImgBg1DisableSlow'}
+23	23		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2804.jpg'}
+24	24		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2804.jpg'}
+25	25		201							{1: '1', 2: '500994'}
+26	26		301							{1: '1', 2: 'Lucia', 3: 'Commandant?', 4: '1'}
+27	27		302							{2: 'Hmm?', 3: '28', 4: 'Did you find it?', 5: '28'}
+28	28		301							{2: 'Lucia', 3: 'Yeah...', 4: '1'}
+29	29		301							"{3: ""A massive tree towers like a pillar, reaching all the way into the clouds. The rainwater that gathered on its curved leaves now cascades earthward under gravity's pull.""}"
+30	30		301							{3: 'When you look up along its scale-like bark, you see that this silent guardian is scarred all over. The girl stands at the base of the tree, waving for you to follow her.'}
+31	31		302							"{2: ""So you're telling me there's a device inside this big tree?"", 3: '32'}"
+32	32		301							{2: 'Lucia', 3: 'Going by the signal we picked up... this should be the spot.', 4: '1'}
+33	33		301							{3: 'She lifts her head, gazing up at the towering canopy.'}
+34	34		204							{1: '1', 2: '1'}
+35	35		301							"{2: 'Lucia', 3: ""Good thing the Pyroath frame can fly straight up. Otherwise, we'd have to climb it by hand."", 4: '1'}"
+36	36		302							"{2: ""All right, Lucia—this one's all yours."", 3: '42', 4: 'I can climb it!', 5: '37'}"
+37	37		204							{1: '1'}
+38	38		301							"{2: 'Lucia', 3: ""No, it's too dangerous. The tree's tall, and I can't guarantee you'll be safe."", 4: '1'}"
+39	39		301							"{3: ""Lucia almost never turns down your requests, so it's surprising to see her refuse so decisively this time.""}"
+40	40		301							"{3: ""As you move in, the sheer height of the tree becomes clear. You make a quick estimate of the distance from the ground to the canopy—despite your protective suit and exoskeleton support, there's no telling what awaits above, so it's definitely risky.""}"
+41	41		302							"{2: ""All right, Lucia—this one's all yours."", 3: '42'}"
+42	42		202							{1: '1'}
+43	43		401							{1: '2', 2: '4663'}
+44	44		301							"{3: ""She doesn't need much time to get ready. Pyroath's thrusters kick in, lifting Lucia steadily off the ground. In her struggle against gravity, she quickly gains the upper hand.""}"
+45	45		301							{3: 'Her white silhouette glides like a bird, nimbly slipping into the canopy.'}
+46	46		301							"{3: ""A moment later, Lucia's voice crackles over the communicator.""}"
+47	47		301							"{3: ""Her voice is soft, as though she's afraid of disturbing something.""}"
+48	48		401							{1: '2', 2: '2983'}
+49	49		301							"{2: 'Lucia', 3: ""Commandant, there's a hollow up here. Inside, there's...""}"
+50	50		401							{1: '2', 2: '2902'}
+51	51		301							"{3: ""A gentle rustling sound emerges; she's carefully trying to figure out exactly what's hidden inside.""}"
+52	52		301							"{2: 'Lucia', 3: ""This feels like a feather... Wait, that texture's more like a rock... And this one... might be a pinecone?""}"
+53	53		301							"{3: ""The opponent's identity is finally revealed—a squirrel struggling with its unstoppable urge to gather things.""}"
+54	54		301				DialogDisable			"{2: 'Lucia', 3: ""...I've found the device. It's right here.""}"
+55	55		302							{2: 'Nice work, Lucia!', 3: '56'}
+56	56		104						1500.0	{1: '0|-170|-200', 2: '1.5'}
+57	57		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '1'}
+58	58		201							{1: '1', 2: '500988', 3: '4'}
+59	59		301			DialogEnable				{1: '1', 3: 'Lucia hovers in midair, suddenly turning as though she has noticed something. She freezes in place, suspended above the ground.'}
+60	60		301							{3: 'The wind whips the ribbons at her back, sending them fluttering in all directions. Their shifting shadows blur her silhouette, making it difficult for you to see her clearly.'}
+61	61		302							{2: '...Lucia?', 3: '62'}
+62	62		204							{1: '1'}
+63	63		301				DialogDisable			"{2: 'Lucia', 3: ""...Ah, Commandant, I'll be right down."", 4: '1'}"
+64	64		202							{1: '1'}
+65	65		104						1000.0	{1: '0|0|0', 2: '1'}
+66	66		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+67	67		401							{1: '2', 2: '4373'}
+68	68		201							{1: '1', 2: '500994', 3: '1'}
+69	69		301			DialogEnable				{1: '1', 3: 'Responding to your call, she glides down like a graceful white bird cutting through the quiet air. She lands before you, her tousled hair doing little to hide the excitement gleaming in her eyes.'}
+70	70		301							"{2: 'Lucia', 3: ""I just caught sight of the last device's location up there. It's not far ahead."", 4: '1'}"
+71	71		301							{3: 'Lucia habitually reaches out, gently wrapping her fingers around your wrist.'}
+72	72		301				DialogDisable			"{2: 'Lucia', 3: ""Let's go, Commandant."", 4: '1'}"
+73	73		302							{2: 'You are so excited.', 3: '74', 4: 'You look so happy.', 5: '74'}
+74	74		302							{2: 'Did you spot something just now?', 3: '75'}
+75	75		301			DialogEnable				{2: 'Lucia', 3: 'I saw a pond surrounded by flowers and fresh grass. I heard frogs croaking, so I bet there are a bunch of them there.', 4: '1'}
+76	76		301							{2: 'Lucia', 3: 'Commandant, do you remember that notebook I gave you a while ago?', 4: '1'}
+77	77		302							{2: 'Yes, I remember. It was the gift you gave me on your Activation Date...', 3: '78'}
+78	78		301							"{3: '""It\'s midnight right now. I\'m sitting on the edge of a crater so large that a puddle has formed at the bottom.""'}"
+79	79		301							"{3: '""Orange-brown mud scatters around it; I think this might be a grass field before. There\'s even a small coral-colored flower growing in the disturbed soil. I bet Liv would know what it\'s called if she were here...""'}"
+80	80		301							"{3: ""Yellowed by time and weathered by hardship, this notebook holds the black-haired girl's every thought. You can almost see her at the grass's edge, quietly recording all she observes.""}"
+81	81		301							{2: 'Lucia', 3: 'I spotted it right away when reviewing the mission briefing before we headed out—this is the same place where I once took on a mission.', 4: '1'}
+82	82		301							"{2: 'Lucia', 3: ""But time has marched on. After we cleared out the Corrupted, the whole area looks nothing like before. I wasn't sure it was the same place until I noticed that pond."", 4: '1'}"
+83	83		302							{2: 'Is that really the same pond...?', 3: '84'}
+84	84		301							{2: 'Lucia', 3: 'Yes, it has to be the spot where I fought before.', 4: '1'}
+85	85		302							{2: 'Lucia...', 3: '86', 4: '...', 5: '86'}
+86	86		301							{3: 'A short distance away, the pond covers a good chunk of the grassland, and you can practically feel how brutal the battle must have been back then.'}
+87	87		204							{1: '1', 2: '2'}
+88	88		301							"{2: 'Lucia', 3: ""...All of that is in the past now, Commandant. You don't have to worry anymore."", 4: '1'}"
+89	89		203							{1: '1', 2: '0.3', 5: '-80'}
+90	90		301							{3: 'Sensing your concern, Lucia moves in closer. The gentle warmth she radiates quietly eases any remaining unease of yours.'}
+91	91		301							{2: 'Lucia', 3: 'When I wrote you that letter, there was only one tiny flower around. But life finds a way—now there are more... so many more blooming on that lawn.', 4: '1'}
+92	92		301				AniZhuanchangBegin			{2: 'Lucia', 3: 'Commandant, you really should see it with your own eyes.', 4: '1'}
+93	93		202							{1: '1', 6: '1'}
+94	94		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory617.jpg'}
+95	95		301			AniZhuanchangEnd				"{3: ""Brilliant flowers cluster along the pond's muddy bank, each one bursting into bloom with a splendor all its own.""}"
+96	96		301							{3: 'The patrol dog darts deftly into the tiny flower patch, then pokes its head back up with a purple petal perched on its nose.'}
+97	97		301							{3: 'Lucia watches this and allows a faint smile to form on her lips.'}
+98	98		201							{1: '1', 2: '500994', 3: '2'}
+99	99		301							{1: '1', 2: 'Lucia', 3: 'Commandant, this place has changed so much.', 4: '1'}
+100	100		301							"{2: 'Lucia', 3: ""I remember when we didn't have all these little creatures or such beautiful scenery—only endless hordes of the Corrupted..."", 4: '1'}"
+101	101		301							{2: 'Lucia', 3: 'Once the mission was done, I went straight back to Babylonia and left the rest to the local conservation staff. I never expected things would turn out like this...', 4: '1'}
+102	102		301							{3: 'No one could imagine this place would regain its former beauty after all these years.'}
+103	103		302							"{2: ""It's gorgeous, Lucia."", 3: '104', 4: 'You did a good job, Lucia.', 5: '104'}"
+104	104		301							"{2: 'Lucia', 3: ""I'm honestly surprised we could return here and see it together, Commandant."", 4: '1'}"
+105	105		301							{3: 'She locks her gaze on the sea of flowers by the pond, each blossom shining brilliantly in her eyes.'}
+106	106		301							{3: 'The once-documented view unfolds before you, memories blending with the present as though reversing the flow of time.'}
+107	107		301							{3: 'Back then, Lucia sat there by herself and channeled all her burning hopes into each stroke of her illustration. She etched them onto the page, planning to deliver these drawings someday to the one dear to her.'}
+108	108		301							{3: 'Now that she has returned to this place, she is no longer the lonely figure she once was. New hues fill her memories, adding fresh layers to the past.'}
+109	109		204							{1: '1'}
+110	110		301							{2: 'Lucia', 3: 'Oh, I nearly forgot...', 4: '1'}
+111	111		301							"{2: 'Lucia', 3: ""There's still one more sound device. After this mission is over—if you're interested, Commandant—I can tell you about the fight I had here back then."", 4: '1'}"
+112	112		302							"{2: ""Then let's finish this fast."", 3: '113'}"
+113	113		202							{1: '1'}
+114	114		301							"{3: ""Receiving new orders, the patrol dog disappears into the flowers, and Lucia tunes in to the device's frequency with full concentration.""}"
+115	115		301							{3: 'The nearby land is flat, and Lucia has just scoped out the area from above. Tracking down the sound device—maybe stashed beneath the clovers by some small creature—poses no real challenge.'}
+116	116		201							{1: '1', 2: '500994'}
+117	117		301							{1: '1', 2: 'Lucia', 3: 'Clovers...', 4: '1'}
+118	118		401							{1: '2', 2: '2936'}
+119	119		203							{1: '1', 2: '0.3', 4: '-80'}
+120	120		301							{3: 'After pocketing the device, Lucia shifts her attention back to the clover patch. She crouches and gently brushes aside the smooth, rounded leaves.'}
+121	121		302							"{2: ""Maybe we'll find a four-leaf clover."", 3: '122'}"
+122	122		301							{2: 'Lucia', 3: 'Froggie and the Four-leaf Clover... I did promise to flip through that picture book again with you.', 4: '1'}
+123	123		302							"{2: ""We're already reliving that story now."", 3: '124'}"
+124	124		301							{3: 'The storybook springs to life as frogs burst into chorus, signaling the start of your quest. Somewhere in the grass, the happiness you seek may be quietly waiting to be found.'}
+125	125		301							"{3: ""Delicate, pale-green stalks shift between Lucia's fingertips as she carefully turns over every tuft of clover, examining each one with calm determination.""}"
+126	126		301							"{2: 'Lucia', 3: ""Right after the battle was over, I caught sight of a gray raven streaking across the sky. I picked up the feather it left behind... In that moment, I couldn't help thinking—what if Commandant and I could become birds like that ourselves?"", 4: '1'}"
+127	127		301							{3: 'Become birds that fly freely in the sky, traveling alongside the one held dear, reaching every corner of the world.'}
+128	128		301							"{2: 'Lucia', 3: ""I never imagined in those days that someday... I'd return to this place side by side with you, Commandant."", 4: '1'}"
+129	129		302							{2: 'Me neither.', 3: '132', 4: 'Becoming a bird sounds pretty nice.', 5: '130'}
+130	130		204							{1: '1', 2: '1'}
+131	131		301							{2: 'Lucia', 3: 'Mm, now I can fly with you to every corner of the world.', 4: '1'}
+132	132		301							"{3: ""Whether it's someplace you once fought on your own, or a battlefield where you stood side by side—if you're together, your memories will keep growing and living on.""}"
+133	133		204							{1: '1', 2: '2'}
+134	134		301							{2: 'Lucia', 3: 'Commandant... this is so nice.', 4: '1'}
+135	135		302				AniZhuanchangBegin			{2: 'Yeah.', 3: '136', 4: 'Yeah, it is.', 5: '136'}
+136	136		202							{1: '1', 6: '1'}
+137	137		301			AniZhuanchangEnd				{3: 'When two people do anything together, time always seems to race by. The sun sinks lower, and before you know it, your search for four-leaf clovers is quietly drawing to a close.'}
+138	138		301							"{3: ""Perhaps Lady Luck isn't smiling on this place, leaving a faint trace of regret lingering between you.""}"
+139	139		302							"{2: ""Well, we can't find a single one in the end."", 3: '140'}"
+140	140		201							{1: '1', 2: '500994', 3: '2'}
+141	141		301							"{1: '1', 2: 'Lucia', 3: ""After all, it's a slim chance, but the act of searching is still a fun and intriguing journey."", 4: '1'}"
+142	142		202							{1: '1', 6: '1'}
+143	143		401							{1: '2', 2: '2902'}
+144	144		301							"{3: ""As you're speaking, a gentle rustling catches your attention. The patrol dog appears with sure-footed steps, holding its prize firmly in its jaws.""}"
+145	145		301							{2: 'Beefy', 3: 'Woof!'}
+146	146		301							"{3: ""Alongside it, there's a frog perched right on top of its head.""}"
+147	147		301							{2: 'Frog', 3: 'Ribbit, ribbit.'}
+148	148		302							{2: '?', 3: '149'}
+149	149		201							{1: '1', 2: '500994', 3: '7'}
+150	150		301							"{1: '1', 2: 'Lucia', 3: ""It's... a frog!"", 4: '1'}"
+151	151		202							{1: '1', 6: '1'}
+152	152		301							"{3: ""The goofy little frog stands on the dog's head, proudly croaking at full volume.""}"
+153	153		301							{3: 'Lucia takes a small breath, looking somewhat hesitant. Yet her intention is clear as she slowly extends her hand toward the creature.'}
+154	154		301							"{3: ""Tilting its head, the little frog treats Lucia's hand as its next landing spot and hops onto it with ease.""}"
+155	155		201							{1: '1', 2: '500994', 3: '7'}
+156	156		301							{1: '1', 2: 'Lucia', 3: 'Commandant...!', 4: '1'}
+157	157		301							{3: 'She calls out quietly, then immediately turns around to share this bizarre sight.'}
+158	158		301							"{3: ""Resting on the back of her hand, Froggie's original form remains calm, steadily inflating its vocal sac.""}"
+159	159		302							{2: '(Approach)', 3: '160', 4: '(Observe)', 5: '160'}
+160	160		202							{1: '1', 6: '1'}
+161	161		401							{1: '2', 2: '4302'}
+162	162		301							{3: 'The moment your eyes land on it, the frog springs up in a flash.'}
+163	163		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1016.jpg', 3: '0', 4: '1', 5: '1'}
+164	164		301							{3: 'Its abrupt leap paints a brief arc overhead, prompting both of you to track its lively movement without missing a beat.'}
+165	165		201							{1: '1', 2: '500994', 3: '2'}
+166	166		301							"{1: '1', 2: 'Lucia', 3: ""...Commandant, look—there's a rainbow."", 4: '1'}"
+167	167		301							"{3: ""On the pond's eastern side, a dazzling rainbow now stretches across the sky, though no one can say exactly when it appeared.""}"
+168	168		204							{1: '1', 2: '2'}
+169	169		301							"{2: 'Lucia', 3: ""It looks like we won't come away empty-handed after all."", 4: '1'}"
+170	170		301							{3: 'Lucia raises her hand, as if the shimmering rainbow before her rests in her palm. A faint smile crosses her lips as she turns to look at you.'}
+171	171		301		1		AniZhuanchangBegin			{3: 'Behind her, countless flowers blossom all at once.'}

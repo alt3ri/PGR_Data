@@ -1,0 +1,195 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+2	2		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+3	3		401							{1: '1', 2: '5017'}
+4	4		401							{1: '2', 2: '2597'}
+5	5		301			DialogEnable				{3: 'Your view turns hazy under the relentless downpour.'}
+6	6		301							{3: 'Two mechanoids make their way along a shallow rut, hauling a crate of batteries. As they pass, they kick up a small splash of murky water.'}
+7	7		301							"{3: ""The rainstorms descend in silence. You don't spot Yalin before leaving for the campsite, so you start looking for her.""}"
+8	8		302							{2: 'Yalin!', 3: '9'}
+9	9		201							{1: '1', 2: '500488', 5: '-180', 6: '300'}
+10	10		301							{1: '1', 2: 'Boccioni', 3: '【kuroname】! Hanying!', 4: '1'}
+11	11		202							{1: '1'}
+12	12		301							"{3: ""Boccioni calls out both your name and Hanying's.""}"
+13	13		301							"{3: ""He's pushing a shipping container, and as soon as you see him struggling, you hurry over to help.""}"
+14	14		201							{1: '1', 2: '500916', 3: '7'}
+15	15		301							{1: '1', 2: 'Hanying', 3: 'Boccioni!', 4: '1'}
+16	16		203							{1: '1', 2: '0.25', 3: '400'}
+17	17		201							{1: '2', 2: '500488', 4: '-400', 5: '-180', 6: '300'}
+18	18		301							"{1: '1', 2: 'Boccioni', 3: ""L-let's get it to a safe spot first. I'm pretty sure there's a thief out there..."", 4: '2'}"
+19	19		204							{1: '1', 2: '7'}
+20	20		301							{2: 'Hanying', 3: 'A thief?', 4: '1'}
+21	21		301							{3: 'You instinctively reach for the weapon at your hip.'}
+22	22		301							{2: 'Boccioni', 3: 'Someone took my oilcloth tarp!', 4: '2'}
+23	23		301				AniZhuanchangBegin			"{2: 'Boccioni', 3: ""I really don't want to rely on my waterproof plating alone."", 4: '2'}"
+24	24		202							{1: '1', 2: '2', 6: '1'}
+25	25		402							{1: '2597'}
+26	26		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+27	27		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory733.jpg'}
+28	28		301			AniZhuanchangEnd				{3: 'Hanying helps Boccioni push open the warehouse door at the camp. This hastily built storage facility is the handiwork of the Bixi Crew.'}
+29	29		301							{3: 'After placing the container in the corner, you turn on the lights.'}
+30	30		201							{1: '1', 2: '500488', 4: '-400', 5: '-180', 6: '300'}
+31	31		201							{1: '2', 2: '500916', 4: '400'}
+32	32		301							"{2: 'Boccioni', 3: ""Thanks. We're in real trouble if these documents get soaked."", 4: '1'}"
+33	33		302							{2: 'Is there anything else we might have dropped?', 3: '34'}
+34	34		301							"{2: 'Boccioni', 3: ""No, I've just checked everything."", 4: '1'}"
+35	35		301							"{2: 'Hanying', 3: ""It could've been borrowed by someone at the last minute..."", 4: '2'}"
+36	36		301							"{2: 'Boccioni', 3: ""That's definitely possible, but I'm realizing I got too anxious earlier, which wasn't very sensible."", 4: '1'}"
+37	37		301							{2: 'Hanying', 3: 'Have you seen Yalin?', 4: '2'}
+38	38		302							{2: 'She mentioned she was looking for you before heading out.', 3: '39'}
+39	39		301							{2: 'Boccioni', 3: 'Yalin? Has she not returned home yet?', 4: '1'}
+40	40		302							{2: '(Shake head)', 3: '41'}
+41	41		301							{2: 'Hanying', 3: 'When was the last time you saw her?', 4: '2'}
+42	42		301							"{2: 'Boccioni', 3: ""Before four o'clock this afternoon."", 4: '1'}"
+43	43		302							{2: 'At that time...', 3: '44'}
+44	44		301							"{2: 'Hanying', 3: ""There wasn't any rain yet."", 4: '2'}"
+45	45		301							{2: '??', 3: 'So, are you asking me to lend a hand?'}
+46	46		301							{3: 'A familiar, gruff voice rises from the shadows.'}
+47	47		302							{2: 'Dazhu?', 3: '48'}
+48	48		202							{1: '1', 2: '2', 6: '1'}
+49	49		201							{1: '1', 2: '500224'}
+50	50		301							{1: '1', 2: 'Dazhu', 3: 'How did you all get here?', 4: '1'}
+51	51		301							{3: 'Dazhu studies the three faces in front of him, each wearing the same confused look.'}
+52	52		201							{1: '1', 2: '500916'}
+53	53		301							{1: '1', 2: 'Hanying', 3: 'Dazhu, why are you here too?', 4: '1'}
+54	54		201							{1: '1', 2: '500224'}
+55	55		301							"{1: '1', 2: 'Dazhu', 3: ""I'm worried we're gonna run outta sandbags if the flood hits, so I'm grabbing some more."", 4: '1'}"
+56	56		301							{2: 'Dazhu', 3: 'This rain just started out of nowhere, seriously...', 4: '1'}
+57	57		302							"{2: ""We're here to find Yalin."", 3: '58'}"
+58	58		301							"{2: 'Dazhu', 3: ""That little girl? I haven't seen her today."", 4: '1'}"
+59	59		301							"{2: 'Dazhu', 3: ""Hold on... You're here to find her? So she's missing?"", 4: '1'}"
+60	60		301							"{2: 'Dazhu', 3: ""Where can anyone go in this downpour? I'll get the Bixi Crew to help."", 4: '1'}"
+61	61		203							{1: '1', 2: '0.25', 3: '400'}
+62	62		201							{1: '2', 2: '500488', 4: '-400', 5: '-180', 6: '300'}
+63	63		301							{1: '1', 2: 'Boccioni', 3: 'We need to have your men evacuate the crowd now.', 4: '2'}
+64	64		301							"{2: 'Dazhu', 3: ""Where do we evacuate people to? This spot ain't even got ventilation! Even I'd feel damn suffocated if I had to stay here for a while."", 4: '1'}"
+65	65		301							{2: 'Boccioni', 3: 'If the nearby river levels rise, there could be casualties.', 4: '2'}
+66	66		301							{2: 'Dazhu', 3: 'All the danger zones are marked, and the Bixi Crew is keeping an eye on things.', 4: '1'}
+67	67		202							{1: '1', 2: '2', 6: '1'}
+68	68		201							{1: '1', 2: '500916'}
+69	69		301							{1: '1', 2: 'Hanying', 3: 'Excuse me, gentlemen!', 4: '1'}
+70	70		301							{3: 'Hanying interrupts the two of them.'}
+71	71		301							"{2: 'Hanying', 3: ""Let's take the children here first and have the others rescue the camp. Is that okay?"", 4: '1'}"
+72	72		301							{3: 'After she finishes speaking, Hanying looks at you.'}
+73	73		302							{2: 'We can handle looking for Yalin by ourselves.', 3: '74'}
+74	74		301							{2: 'Hanying', 3: 'Yalin mentioned she was going to meet Boccioni before she left.', 4: '1'}
+75	75		201							{1: '1', 2: '500224', 4: '400'}
+76	76		201							{1: '2', 2: '500488', 4: '-400', 5: '-180', 6: '300'}
+77	77		301							{1: '1', 2: 'Boccioni', 3: 'Ah yeah, today Yalin came to me and asked about reinforcing the shed.', 4: '2'}
+78	78		301							"{2: 'Dazhu', 3: ""But we've already set up the shed a while ago, and the potatoes won't be ready for harvest until next month."", 4: '1'}"
+79	79		301							{2: 'Dazhu', 3: 'Also, that little girl asked me for some vines...', 4: '1'}
+80	80		301							{2: 'Boccioni', 3: 'A shed helps saplings sprout faster.', 4: '2'}
+81	81		302							{2: 'Saplings...', 3: '82'}
+82	82		301							{3: 'The original plan is to check on the saplings tomorrow.'}
+83	83		301							"{3: ""You never expected this to be Yalin's secret.""}"
+84	84		301							"{3: ""You catch a flicker of unease in Hanying's eyes.""}"
+85	85		301							"{2: 'Boccioni', 3: ""Besides, that's my downtime. I told her to come back and find me later."", 4: '2'}"
+86	86		301							{2: 'Boccioni', 3: 'From what I can tell, she should be home by now.', 4: '2'}
+87	87		202							{1: '1', 2: '2'}
+88	88		301							"{3: ""But that's not the case.""}"
+89	89		301							{3: 'The answer seems to be within reach. After locking eyes with Hanying, you nod.'}
+90	90		201							{1: '1', 2: '500916'}
+91	91		301				AniZhuanchangBegin			{1: '1', 2: 'Hanying', 3: 'She could only be there.', 4: '1'}
+92	92		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+93	93		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+94	94		202							{1: '1', 6: '1'}
+95	95		401							{1: '2', 2: '2597'}
+96	96		301			AniZhuanchangEnd				{3: 'Without hesitation, the two of you head straight out of the warehouse.'}
+97	97		301							{3: 'Boccioni, staying at the camp, looks over at Dazhu.'}
+98	98		201							{1: '1', 2: '500224', 4: '400'}
+99	99		201							{1: '2', 2: '500488', 4: '-400', 5: '-180', 6: '300'}
+100	100		301							{1: '1', 2: 'Boccioni', 3: 'Were they just communicating on an encrypted channel?', 4: '2'}
+101	101		301							{2: 'Dazhu', 3: 'They just vibe.', 4: '1'}
+102	102		301							"{2: 'Dazhu', 3: ""But aren't they always..."", 4: '1'}"
+103	103		301							{2: 'Boccioni', 3: 'What?', 4: '2'}
+104	104		301							"{2: 'Dazhu', 3: ""Hey, enough questions. Let's get to work."", 4: '1'}"
+105	105		301							"{2: 'Dazhu', 3: 'It\'d be nice if you guys could ""vibe"" a bit better.', 4: '1'}"
+106	106		301							"{2: 'Dazhu', 3: ""I don't want you mechanoids and Babylonians to look down on me."", 4: '1'}"
+107	107		202							{1: '1', 2: '2'}
+108	108		301							{3: 'Dazhu dons his cloak, watches the water level rise, and lifts a sandbag.'}
+109	109		301				AniZhuanchangBegin			{3: '...'}
+110	110		401							{1: '1', 2: '36'}
+111	111		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+112	112		401							{1: '1', 2: '242'}
+113	113		301			AniZhuanchangEnd				{3: 'The girl strains to hold up a corner of the shed.'}
+114	114		301							{3: 'When she just laid down the rain tarp, the downpour started.'}
+115	115		301							{3: 'Rain, whipped by fierce winds, slightly lifts the wooden stakes and batters the canvas she set up with Boccioni only yesterday.'}
+116	116		301							{3: 'Luckily, she had prepared in advance. After Boccioni left, she quietly took the waterproof green tarp he left at the camp.'}
+117	117		401							{1: '2', 2: '4292'}
+118	118		301							{3: 'Thunder crashes, pulling her out of her memories. Just moments ago, she was desperately protecting this small shed, but now, the sound startles her into a crouch.'}
+119	119		301							{3: 'Once I shore up this area, I can head home.'}
+120	120		301							{3: 'Yalin thinks to herself as she wipes the rain from her face.'}
+121	121		301							"{3: 'She coughs uncontrollably, then stands up, trying to keep the surprise she prepared for her two ""parents"" safe.'}"
+122	122		301							{3: 'The howling wind and rain echo through the hills, silent and equal.'}
+123	123		301							"{3: ""Yalin pants heavily, unable to understand why she still can't secure a corner of the tarp""}"
+124	124		301							"{3: ""Right now, she's fascinated by how Boccioni can pull off these tasks so effortlessly.""}"
+125	125		301							{3: '...'}
+126	126		302							{2: 'Over there!', 3: '127'}
+127	127		301							"{3: ""You glance ahead. Though the heavy rain hasn't stopped, it's lighter than before. Fierce winds lift a corner of the tarp-covered shed.""}"
+128	128		301							{3: 'The mountain path is more treacherous than you expected. Hanying steadies you, while the bright green tarp stands out starkly in the night.'}
+129	129		104							{1: '0|0|-200', 2: '1'}
+130	130		301							{3: 'You break into a run toward the shed and, sure enough, spot Yalin there.'}
+131	131		301							{3: 'With no time to waste, you wrap the child in your cloak and lift her frail, slender body.'}
+132	132		201							{1: '18', 2: '500916'}
+133	133		301							"{1: '1', 2: 'Hanying', 3: ""We're almost there..."", 4: '18'}"
+134	134		202							{1: '18'}
+135	135		301							{3: 'Hanying soothes the groggy Yalin.'}
+136	136		301							{3: 'The scent of earth blends with the moisture in the air, forming a fog.'}
+137	137		301							{3: 'The fog blankets the mountains and dense forests, obscuring the way home.'}
+138	138		301				AniZhuanchangBegin			{3: '...'}
+139	139		402							{1: '2597'}
+140	140		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+141	141		401							{1: '1', 2: '36'}
+142	142		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory752.jpg'}
+143	143		401							{1: '1', 2: '181'}
+144	144		301			AniZhuanchangEnd				"{3: ""As you move through the camp, it's clear that some areas have already been flooded, but you can't attend to them now.""}"
+145	145		301							"{3: ""Back at the cabin, you carefully lay Yalin on the bed; the girl's consciousness is already fading.""}"
+146	146		301							"{3: ""The situation looks grim as you place your hand on the girl's forehead.""}"
+147	147		302							"{2: ""It's hot!"", 3: '148', 4: 'She seems to have a fever.', 5: '148'}"
+148	148		301							{3: 'You retrieve the fever medicine from your coat, break a dose in half, and give it to Yalin.'}
+149	149		201							{1: '1', 2: '500824'}
+150	150		301							"{1: '1', 2: 'Yalin', 3: ""(I'm sorry for making you worry.)"", 4: '1'}"
+151	151		301							{3: 'Yalin strains to make hand gestures; the aches from her fever make it difficult for her arms to lift.'}
+152	152		201							{1: '1', 2: '500916'}
+153	153		301							"{1: '1', 2: 'Hanying', 3: ""It's okay..."", 4: '1'}"
+154	154		302							"{2: 'You just need to rest now.', 3: '155', 4: ""You didn't do anything wrong."", 5: '155'}"
+155	155		301							{3: 'Hanying joins you in comforting her.'}
+156	156		201							{1: '1', 2: '500824'}
+157	157		301							{1: '1', 2: 'Yalin', 3: '(I want to take good care of those saplings.)', 4: '1'}
+158	158		301							{2: 'Yalin', 3: '(Can they hold up?)', 4: '1'}
+159	159		302							{2: '(Of course.)', 3: '160'}
+160	160		301							"{3: ""Feeling somewhat relieved, Yalin can't help but smile.""}"
+161	161		201							{1: '1', 2: '500916'}
+162	162		301							"{1: '1', 2: 'Hanying', 3: ""...I'm going to get a towel."", 4: '1'}"
+163	163		202							{1: '1'}
+164	164		301							{3: 'Hanying quietly stands up to fetch the towel, while the girl grabs your hand.'}
+165	165		201							{1: '1', 2: '500824'}
+166	166		301							{1: '1', 2: 'Yalin', 3: '(Can you stay with me for a while?)', 4: '1'}
+167	167		301							{2: 'Yalin', 3: '(And Hanying.)', 4: '1'}
+168	168		302							{2: 'Huh?', 3: '169', 4: 'Sure.', 5: '169'}
+169	169		301							"{3: ""Yalin's eyes hold a pleading look.""}"
+170	170		202							{1: '1'}
+171	171		302							{2: 'Hanying.', 3: '172'}
+172	172		301							"{3: ""Hanying strides into the room without answering right away. She calmly folds the damp towel and places it on Yalin's forehead.""}"
+173	173		301							{3: 'Yalin continues to reach out her hand.'}
+174	174		201							{1: '1', 2: '500916'}
+175	175		301							{1: '1', 2: 'Hanying', 3: 'Like this?', 4: '1'}
+176	176		202							{1: '1'}
+177	177		301							{3: 'Hanying places her right hand over hers, and your left hand is gently pulled over.'}
+178	178		301							{3: 'The girl carefully aligns the two hands together.'}
+179	179		301							{3: 'Finally, your skin touches.'}
+180	180		301							{3: 'You turn your gaze toward Hanying without even realizing it, and her amber eyes rise to meet yours.'}
+181	181		301							{3: 'Outside the window, the rain softly tapers off. A silver gleam cuts through clouds and mist, illuminating her face.'}
+182	182		301							"{3: ""You can't explain it, but the way your hands find each other feels so natural.""}"
+183	183		201							{1: '1', 2: '500824'}
+184	184		301							{1: '1', 2: 'Yalin', 3: '(I want to do something for this place too.)', 4: '1'}
+185	185		301							{2: 'Yalin', 3: '(Just like you.)', 4: '1'}
+186	186		201							{1: '1', 2: '500916', 3: '8'}
+187	187		301							"{1: '1', 2: 'Hanying', 3: ""You shouldn't push yourself so hard next time."", 4: '1'}"
+188	188		204							{1: '1'}
+189	189		301							"{3: ""With that said, it's clear Hanying still carries the weight of blame on her own shoulders.""}"
+190	190		302							"{2: ""(You hold Hanying's hand.)"", 3: '191'}"
+191	191		201							{1: '1', 2: '500824'}
+192	192		301							{1: '1', 2: 'Yalin', 3: '(So,)', 4: '1'}
+193	193		301							{2: 'Yalin', 3: '(You two are more than just good friends, right?)', 4: '1'}
+194	194		301		1		AniZhuanchangBegin			{3: 'Then a long, weighted silence settles in.'}

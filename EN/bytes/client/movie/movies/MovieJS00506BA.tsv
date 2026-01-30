@@ -1,0 +1,64 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory459.jpg'}
+2	2		401							{1: '1', 2: '204'}
+3	3		107						1500.0	{1: '01: Secret Base'}
+4	4		108							{1: '1'}
+5	5		201							{1: '1', 2: '500506'}
+6	6		301			DialogEnable				{1: '1', 3: 'When you burst into the library where Noan is, the Babylonia sky has already transitioned into the hues of night.'}
+7	7		301							{3: 'You got caught red-handed by Celica while you were negotiating with a merchant on the roadside because your year-end summary report was late for three whole days.'}
+8	8		302							{2: 'Noan! I need to take shelter here!', 3: '9'}
+9	9		301							{2: 'Noan', 3: 'Sure.', 4: '1'}
+10	10		301							"{3: ""Without question, Noan immediately steps aside, gesturing toward a corner of the library's beverage bar.""}"
+11	11		502							{1: 'DialogDisable'}
+12	12		302							{2: '(Hide under the bar counter)', 3: '13'}
+13	13		302							{2: 'Call me after Celica has gone far enough...', 3: '14'}
+14	14		301			DialogEnable				"{2: 'Noan', 3: ""This place might not be safe if it's Celica."", 4: '1'}"
+15	15		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory595.jpg', 3: '0', 4: '1', 5: '1'}
+16	16		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+17	17		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory595.jpg'}
+18	18		301							{3: 'He pushes open the narrow door to the storage room behind the bar and opens the box deep inside.'}
+19	19		204							{1: '1', 2: '1'}
+20	20		301							{2: 'Noan', 3: 'Hide in here.', 4: '1'}
+21	21		302				AniZhuanchangBegin			{2: 'Okay!', 3: '22'}
+22	22		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+23	23		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+24	24		509				AniZhuanchangEnd		1000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory459.jpg', 2: '2'}
+25	25		301			DialogEnable				"{3: ""As anticipated, Celica's voice soon echoes through the library.""}"
+26	26		201							{1: '1', 2: '500506', 4: '500'}
+27	27		201							{1: '18', 2: '500001', 3: '4'}
+28	28		301							{1: '1', 2: 'Celica', 3: 'Have you seen 【kuroname】?', 4: '18'}
+29	29		301							{2: 'Noan', 3: 'Gone.', 4: '1'}
+30	30		301							{2: 'Celica', 3: 'Really?', 4: '18'}
+31	31		202							{1: '1', 2: '18', 6: '1'}
+32	32		401							{1: '2', 2: '1516'}
+33	33		301							{3: 'Her footsteps echo throughout the library, searching the bar counter just as Noan anticipated.'}
+34	34		201							{1: '18', 2: '500001', 3: '4'}
+35	35		301							"{1: '1', 2: 'Celica', 3: ""【kuroname】, no matter how many missions you have on your plate, that report can't be delayed any longer. After all, it needs to be presented at the Parliament."", 4: '18'}"
+36	36		302							"{2: ""(But it's really long!)"", 3: '37'}"
+37	37		204							{1: '18'}
+38	38		301							{2: 'Celica', 3: '【kuroname】? If you come out now, you still have a chance to finish it in the battle preparation room.', 4: '18'}
+39	39		301							"{2: 'Celica', 3: ""But if I find you... you'll have to complete it alone in a meeting room inaccessible even to Gray Raven."", 4: '18'}"
+40	40		202							{1: '18', 6: '1'}
+41	41		301							{3: 'After circling the library twice, Celica sighs—then, the familiar sound of an emergency terminal call rings.'}
+42	42		302							{2: '...!', 3: '43'}
+43	43		301							{3: 'But... your terminal is not with you?!'}
+44	44		302							{2: '...', 3: '45'}
+45	45		201							{1: '1', 2: '500506', 4: '500'}
+46	46		301							"{1: '1', 2: 'Noan', 3: ""Seems like the commandant left it here... I'll return it later."", 4: '1'}"
+47	47		201							{1: '18', 2: '500001'}
+48	48		301							{1: '1', 2: 'Celica', 3: 'How could the commandant possibly leave the terminal here?', 4: '18'}
+49	49		301							"{2: 'Noan', 3: ""Here's the thing..."", 4: '1'}"
+50	50		202							{1: '1', 2: '18', 6: '1'}
+51	51		301							{3: 'Their voices begin to fade, drowned by the clamor of the bustling crowd beyond.'}
+52	52		302							{2: '...', 3: '53', 4: '(What are they talking about?)', 5: '53'}
+53	53		301				AniZhuanchangBegin			"{3: ""Ten minutes later, Celica's footsteps finally peter out.""}"
+54	54		502							{1: 'DialogDisable'}
+55	55		510						1000.0	{1: '2', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory459.jpg'}
+56	56		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory595.jpg'}
+57	57		201							{1: '1', 2: '500506', 3: '1'}
+58	58		301			DialogEnable				{1: '1', 3: 'A crack in the box reveals Noan standing there, a smile gracing his face.'}
+59	59		302							{2: 'Is it safe now?', 3: '60'}
+60	60		301							{2: 'Noan', 3: 'No.', 4: '1'}
+61	61		302							"{2: ""...Indeed, I'm not done with the report yet."", 3: '62'}"
+62	62		301							"{2: 'Noan', 3: ""It's not just that—but I've bought you some time."", 4: '1'}"
+63	63		301		1		AniZhuanchangBegin			{2: 'Noan', 3: 'Let me lend a hand with that report before they catch you here, Commandant.', 4: '1'}

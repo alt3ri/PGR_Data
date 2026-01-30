@@ -1,0 +1,17 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory59.jpg'}
+2	1000		401							{1: '1', 2: '5'}
+3	2		201							{1: '2', 2: '500051', 4: '400'}
+4	3		201							{1: '3', 2: '500050', 4: '-400'}
+5	4		301			DialogEnable				{1: '1', 2: 'Father', 3: '...This is an important dinner. All the important figures will be here. I want to introduce everyone to the gracious support known as my family with this opportunity.', 4: '3'}
+6	5		301							"{2: 'Mother', 3: ""Oh, honey, we're a family. This is what I should do, right? Children?"", 4: '2'}"
+7	6		201							{1: '2', 2: '500052', 4: '400', 6: '1'}
+8	7		201							{1: '3', 2: '500053', 4: '-400'}
+9	8		301							{1: '1', 2: 'Brother', 3: 'Yes, Mother—', 4: '3'}
+10	9		301							{2: 'Sister', 3: 'Mother, I want to wear that handmade white dress to the dinner!', 4: '2'}
+11	10		202							{1: '2', 2: '3', 6: '1'}
+12	11		201							{1: '2', 2: '500051'}
+13	12		301							"{1: '1', 2: 'Mother', 3: ""Of course, you're a perfect match for that dress with your beauty. Ah but, where did I put that dress again? Liv, Liv!"", 4: '2'}"
+14	13		301							{2: 'Mother', 3: 'Liv, can you help Mother find that white dress of mine? Think you can handle it?', 4: '2'}
+15	14		201							{1: '2', 2: '500049'}
+16	15		301		1		AniZhuanchangBegin			{1: '1', 2: 'Liv', 3: 'Yes... Mother.', 4: '2'}

@@ -1,0 +1,45 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+2	555		401							{1: '1', 2: '203'}
+3	2		301							"{1: '1', 2: 'Pilot', 3: ""As you can see through the porthole, we're close to the mission location.""}"
+4	3		302							{2: 'Gazing out.', 3: '4'}
+5	4		301							"{1: '1', 3: ""It's an island.""}"
+6	5		301							{1: '1', 3: 'Technically, a corner of an island.'}
+7	6		301							{1: '1', 3: 'An enormous white tower stands on the cape, casting a long shadow on the surface of the sea.'}
+8	7		302							"{2: 'Is this the ""Towerfolk""?', 3: '8'}"
+9	8		201							{1: '1', 2: '500001', 3: '0'}
+10	9		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+11	10		301							"{1: '1', 2: 'Celica', 3: ""It may be called a tower, but it's actually a deep-space rocket that never got launched."", 4: '1'}"
+12	11		301							{1: '1', 2: 'Celica', 3: 'Just one of the many things that got disrupted by the virus.', 4: '1'}
+13	12		301							{1: '1', 2: 'Celica', 3: 'The liaison will fill you in on the specifics.', 4: '1'}
+14	13		202							{1: '1'}
+15	14		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+16	15		301				AniZhuanchangBegin			{1: '1', 2: 'Pilot', 3: 'Hold on tight. Landing on a makeshift airstrip can be a little rough!'}
+17	16		301			AniZhuanchangEnd				{3: 'As you descend from the aircraft, the giant tower, which looked like a white column from up in the air, becomes an imposing colossus.'}
+18	17		301							"{3: 'Despite the wear and tear on the surface of the tower, the blue logo and the four letters ""AAXA"" are clear as day.'}"
+19	18		201							{1: '1', 2: '500166'}
+20	19		301							{1: '1', 2: 'Lucia', 3: 'So big...', 4: '1'}
+21	20		203							{1: '1', 2: '0.25', 3: '-400'}
+22	21		201							{1: '2', 2: '1011001', 4: '400'}
+23	22		301							"{1: '1', 2: 'Lee', 3: 'This is the ""Utopia-65000"" model... built by the AAXA (Asian Astronomical Study Assembly).', 4: '2'}"
+24	23		301							"{1: '1', 2: 'Lee', 3: ""I never imagined I'd see it with my own eyes... It's enormous..."", 4: '2'}"
+25	24		302				AniZhuanchangBegin			"{2: ""Let's go."", 3: '25'}"
+26	25		202							{1: '1', 2: '2', 6: '1'}
+27	26		301			AniZhuanchangEnd				{1: '1', 3: 'You enter a dilapidated building that harks back to the Golden Age.'}
+28	27		301							{1: '1', 3: 'The hallway and lobby are filled with tents and makeshift structures that look at odds with the simplicity of the building housing them.'}
+29	28		301							{1: '1', 2: '???', 3: 'You came!'}
+30	29		302							{2: 'And you are?', 3: '30', 4: '?', 5: '30'}
+31	30		301							"{1: '1', 2: '???', 3: ""Uh, Miss Celica should have already told you. I'm Sagawa! The liaison for the Towerfolk!""}"
+32	31		201							{1: '1', 2: '500138'}
+33	32		301							"{1: '1', 2: 'Sagawa', 3: 'As you can see, we live close to the white tower and we rely on the electricity it generates. That\'s why we call ourselves ""Towerfolk""!', 4: '1'}"
+34	33		301							{1: '1', 2: '???', 3: 'Sagawa, we have a situation!'}
+35	34		301							{1: '1', 2: 'Sagawa', 3: 'What is it, Fujiko?', 4: '1'}
+36	35		301							"{1: '1', 2: 'Fujiko', 3: 'Komori and her recovery team still haven\'t come back! They must have run into ""those people"" again!'}"
+37	36		301							"{1: '1', 2: 'Sagawa', 3: ""Oh, that's not good... I know this is a bit sudden, but we need your help!"", 4: '1'}"
+38	37		302							{2: 'A little more detail, please.', 3: '38'}
+39	38		301				AniZhuanchangBegin			"{1: '1', 2: 'Sagawa', 3: ""Yeah, yeah! Sorry, stupid me! Here's what happened..."", 4: '1'}"
+40	39		301			AniZhuanchangEnd				"{1: '1', 2: 'Sagawa', 3: ""...That's about it."", 4: '1'}"
+41	40		301							{1: '1', 2: 'Sagawa', 3: 'Get to the stranded recovery team as fast as you can and bring them back, and then...', 4: '1'}
+42	41		301							"{1: '1', 2: 'Sagawa', 3: ""(Whispers) Perhaps I need to force my dad's hand this time..."", 4: '1'}"
+43	42		302							{2: '?', 3: '43'}
+44	43		301		1		AniZhuanchangBegin			{1: '1', 2: 'Sagawa', 3: 'Oh, never mind! That was an unrelated matter. Off you go then!', 4: '1'}

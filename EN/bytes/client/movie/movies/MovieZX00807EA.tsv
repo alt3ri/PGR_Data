@@ -1,0 +1,10 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory38.jpg'}
+2	1000		401							{1: '1', 2: '2'}
+3	2		201							{1: '1', 2: '1031001', 4: '400'}
+4	3		201							{1: '2', 2: '500029', 4: '-400'}
+5	4		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Lucia!', 4: '1'}
+6	5		301							{2: 'Lucia', 3: 'Do you have the results?', 4: '2'}
+7	6		301							"{2: 'Liv', 3: ""Lee's been injected with something."", 4: '1'}"
+8	7		301							"{2: 'Lucia', 3: ""Is it the reason he's gone haywire on us?"", 4: '2'}"
+9	8		301		1		AniZhuanchangBegin			{2: 'Liv', 3: 'The energy source comes from the Iron Maiden!', 4: '1'}

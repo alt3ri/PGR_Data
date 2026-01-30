@@ -1,0 +1,36 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory214.png'}
+2	2		401							{1: '1', 2: '210'}
+3	3		301			DialogEnable				{1: '1', 3: 'Clank... Clank... Clack... Clank...', 4: '1'}
+4	4		301							{1: '1', 3: 'The massive weight of the mech leaves deep impressions in the snow. Each step is like a toddler learning to walk.'}
+5	5		301							{3: 'Clank... Clank...'}
+6	1001		201							{1: '1', 2: '500214', 3: '4'}
+7	6		301							{1: '1', 2: 'Rosetta', 3: 'Commandant, how does it feel inside?', 4: '1'}
+8	7		301							{2: '【kuroname】', 3: '...'}
+9	8		301							{3: 'This mechanical unit must be what Rosetta meant by protection.'}
+10	9		301							{3: 'Just as Captain Staessen finished making arrangements, a polar suit appeared right before your eyes. Rosetta strapped you into the armor without further hesitation.'}
+11	1002		302							{2: 'Is this really necessary?', 3: '10', 4: 'This feels weird...', 5: '11'}
+12	10	12	301							"{2: 'Rosetta', 3: ""Because I promised the Gray Ravens that I'd keep you safe."", 4: '1'}"
+13	11	12	301							"{2: 'Rosetta', 3: ""You'll get used to it. ARU fishermen use these for deep-sea operations."", 4: '1'}"
+14	12		301							"{2: 'Rosetta', 3: ""I wouldn't exactly call myself lucky... I was probably the reason why the transport craft crashed. So, it's better to be safe than sorry."", 4: '1'}"
+15	1003		302							"{2: ""You keep saying you're unlucky."", 3: '13', 4: ""Maybe you're just being superstitious?"", 5: '14'}"
+16	13	15	301							{2: 'Rosetta', 3: 'Yeah, because I really am... Sorry.', 4: '1'}
+17	14	15	301							"{2: 'Rosetta', 3: ""No, I don't think it's just superstition, but a type of intuition. Anyway, it never hurts to over-prepare."", 4: '1'}"
+18	15		301							"{2: 'Rosetta', 3: ""...We should have brought more troops with us. We're assigned to a relatively small area, but..."", 4: '1'}"
+19	1004		202							{1: '1'}
+20	1005		201							{1: '1', 2: '500086'}
+21	2001		401							{1: '1', 2: '102'}
+22	16		301							{1: '1', 2: 'Fisher', 3: 'Dammit... You bionical barnacles!', 4: '1'}
+23	17		301							{3: 'A series of distraught voices interrupts your conversation. You and Rosetta look over to see several armed fishermen fighting with bionics.'}
+24	18		301							"{2: 'Fisher', 3: ""This is our land! We'll git 'em back with our bare hands. Git outta 'ere, you hairy dodos!"", 4: '1'}"
+25	4000		201							{1: '1', 2: '500208'}
+26	19		301							{1: '1', 2: 'Bionic Machine', 3: 'ROAR!!!', 4: '2'}
+27	1007		202							{1: '1'}
+28	1008		201							{1: '1', 2: '500214', 3: '5'}
+29	20		301							"{1: '1', 2: 'Rosetta', 3: ""I knew some of 'em will react like this... These fishermen sure are something..."", 4: '1'}"
+30	21		301							{3: 'Rosetta brandishes her equipment and rushes to their aid, but halts right as she activates her wings.'}
+31	3000		302							"{2: ""What's the matter?"", 3: '22', 4: ""Let's go save them, Rosetta."", 5: '24'}"
+32	22	3001	301							"{2: 'Rosetta', 3: ""Since you're the commandant, it just occurred to me that it might be better to wait for your orders."", 4: '1'}"
+33	3001	23	302							"{2: ""Then let's save some fishermen, Rosetta."", 3: '23'}"
+34	23		301		1		AniZhuanchangBegin			{2: 'Rosetta', 3: 'Roger, Rosetta. Moving out!', 4: '1'}
+35	24		301		1		AniZhuanchangBegin			{2: 'Rosetta', 3: 'Roger, Rosetta. Moving out!', 4: '1'}

@@ -1,0 +1,48 @@
+Id	Type	TargetType	Params	RoundDuration	NodeDuration	MaxOverlays	Desc	Icon	Name	Condition	EffectId
+1	1			1	1	1	For Display	Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesscanPieceUp.png	Buff Name 1		41
+23	104	[-1]	[5]	1	1	1	Energy +5. Triggered upon revival.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21081.png			41
+24	104	[-1]	[10]	1	1	1	Energy +10. Triggered upon revival.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21082.png			41
+25	104	[-1]	[9999]	1	1	1	Restores all Energy. Triggered upon revival.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21083.png			41
+26	105	[-1]	[26]	1	1	1	Resets skill cooldowns. Triggered upon revival.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22120.png			41
+31001	2	[200]	[999]	5	1	1	Shark Lord unleashes golden power during Signature and becomes immune to all damage.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22090.png	Overwhelming Power		41
+5001	1					1	Destroys Black's King.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22110.png	Destruction		41
+50	108		[-1]			1	All skills' CD -1 every time during fusion.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon31071.png	Pawn Acceleration		41
+51	107		[1]			1	Each fusion grants a bonus move.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon31072.png	Knight Springboard		41
+52	16		[5000]			1	During fusion, devours the chess piece and transfers 50% of current HP to other ally pieces. (Max HP increases at the same time.)	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21061.png	Bishop's Sacrifice		41
+53	109		[1]			1	Becomes immune to damage once during fusion. The Rook will be destroyed upon successful immunity.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21021.png	Rook Protection		41
+54	104		[20]			1	Each fusion grants Rage +20.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon13021.png	Queen's Ceremony		41
+100	101	[100]	[30]	1	1	1	Initial Rage +30 [Ongoing Stage Only]	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11041.png	Fury		41
+101	101	[100]	[15]	1	1	1	Initial Rage +15 [Ongoing Stage Only]	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11040.png	Anger		41
+102	102	[100]	[-25]		1	1	Skills cost 25 less Rage. [Ongoing Stage Only]	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon13011.png	High-Efficiency		41
+103	14	[100]	[1, 5]		1	1	Vera has DMG Dealt +5 when on a black square. [Ongoing Stage Only]	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11011.png	Black Power		41
+104	14	[100]	[2, 5]		1	1	Vera has DMG Dealt +5 when on a white square. [Ongoing Stage Only]	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21251.png	White Power		41
+105	11	[3]	[7, 10]		1	1	Upon death of an ally Bishop, other ally pieces have HP +10. [Ongoing Stage Only]	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22001.png	Sacrifice		41
+106	5	[1]	[2]		1	1	Ally Pawns have Movement Range +1. The effect cannot be stacked. [Ongoing Stage Only]	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33001.png	Rapid March		41
+107	5	[1]	[3]		1	1	Ally Pawns have Movement Range +2. The effect cannot be stacked. [Ongoing Stage Only]	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33002.png	Rapid March II		41
+108	4	[1, 2, 3, 5]	[4, 1]		1	1	Ally pieces become immune to damage when adjacent to a Rook. [Ongoing Stage Only]	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32161.png	Barrier		32
+109	2	[1, 2, 3, 4, 5]	[1]		1	1	All ally pieces are immune to damage once. [Ongoing Stage Only]	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32061.png	Explosion-Proof		41
+110	2	[1]	[2]		1	1	Ally Pawns become immune to damage twice. [Ongoing Stage Only]	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32062.png	Special Unit		42
+111	7	[5]	[1, 2, 5]		1	1	Upon death of your Queen, generates 2 1-Star Queens.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33021.png	Splitting		41
+1001	3	[6]	[5]		1	1	The King takes no DMG when the Queen is alive.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32001.png	Protection		22
+1002	11	[3]	[5, 5, 6]		1	1	Upon death, the King and the Queen on the chessboard have HP +5.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22080.png	Sacrifice		41
+1003	8	[6]	[2, 2, 3030602]		1	1	When the King is attacked, generates 2 Pawns around it.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon1.png	Pawn Recruitment		21
+1004	4	[1]	[4, 1]		1	1	Pawns become immune to damage when adjacent to a Rook.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12151.png	Barrier		32
+1005	1				1	1	Protects surrounding Pawns.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22031.png	Protection		29
+1006	15	[5]	[1131003]		1	1	Stay away from Vera!	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11045.png	Dread		41
+1007	10	[5]	[2, 2, 3040202, 5]		1	1	Generates 2 Pawns every time it moves.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11121.png	Pawn Recruitment		41
+1008	11	[3]	[5, 6]		1	1	Upon death, the King on the chessboard has HP +5.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21131.png	Sacrifice		25
+1009	7	[3]	[1, 1, 3040308]		1	1	Upon death, revives somewhere nearby with half HP.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon38381.png	Comeback		25
+1010	5	[1]	[2]		1	1	Movement Range +1 square	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33003.png	Rapid March		41
+1011	6	[1]	[3050218, 0]		1	1	Comes back as an unknown chess piece after death.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33111.png	Reincarnation		41
+1012	6	[1]	[3050219, 0]		1	1	Comes back as an unknown chess piece after death.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33111.png	Reincarnation		41
+1013	6	[1]	[3050220, 0]		1	1	Comes back as an unknown chess piece after death.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33111.png	Reincarnation		41
+1014	6	[1]	[3050221, 0]		1	1	Comes back as an unknown chess piece after death.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33111.png	Reincarnation		41
+1016	7	[3]	[1, 1, 3140308]		1	1	Upon death, revives somewhere nearby with half HP.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon38381.png	Comeback		25
+1017	8	[6]	[2, 2, 3130602]		1	1	When the King is attacked, generates 2 Pawns around it.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon1.png	Pawn Recruitment		21
+1018	10	[5]	[2, 2, 3140202, 5]		1	1	Generates 2 Pawns every time it moves.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11121.png	Pawn Recruitment		41
+1020	6	[1]	[3150218, 0]		1	1	Comes back as an unknown chess piece after death.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33111.png	Reincarnation		41
+1021	6	[1]	[3150219, 0]		1	1	Comes back as an unknown chess piece after death.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33111.png	Reincarnation		41
+1022	6	[1]	[3150220, 0]		1	1	Comes back as an unknown chess piece after death.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33111.png	Reincarnation		41
+1023	6	[1]	[3150221, 0]		1	1	Comes back as an unknown chess piece after death.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33111.png	Reincarnation		41
+2001	1	[5]			1	1	The King takes no DMG when the Queen is alive.	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32001.png	Protection		23
+2002	17				1	1	Stay Put	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12151.png	Immovable		30

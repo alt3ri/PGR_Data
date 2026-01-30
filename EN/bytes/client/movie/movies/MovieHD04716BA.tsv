@@ -1,0 +1,233 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1030.jpg'}
+2	2		401							{1: '1', 2: '294'}
+3	3		301			DialogEnable				"{3: ""Outside the main venue, there's a separate recreation area set up for visiting guests.""}"
+4	4		301							{3: 'You were planning to take a short break, until you spot Rosetta locked in an intense card duel with a mechanoid.'}
+5	5		201							{1: '18', 2: '500965', 4: '-50'}
+6	6		301							"{1: '1', 2: 'Onlooking Crowd', 3: ""Whoa! The mechanoid rolled a 6! Rosetta's in trouble now."", 4: '18'}"
+7	7		202							{1: '18', 6: '1'}
+8	8		201							{1: '1', 2: '500929'}
+9	9		301							"{1: '1', 2: 'Card-Playing Mechanoid', 3: ""According to this card's effect, Rosetta must roll a dice. If she rolls lower than my 6, she'll take 6,000 damage and lose this round."", 4: '1'}"
+10	10		202							{1: '1', 6: '1'}
+11	11		201							{1: '1', 2: '500214', 3: '8'}
+12	12		301							{1: '1', 2: 'Rosetta', 3: 'Mm...', 4: '1'}
+13	13		202							{1: '1', 6: '1'}
+14	14		201							{1: '1', 2: '500929'}
+15	15		301							{1: '1', 2: 'Card-Playing Mechanoid', 3: 'Based on prior match data with Rosetta, her current chance of winning is less than 5%.', 4: '1'}
+16	16		201							{1: '1', 2: '500214', 3: '4', 7: '1'}
+17	17		301			DialogShake				"{1: '1', 2: 'Rosetta', 3: ""Don't be so sure about that!"", 4: '1'}"
+18	18		202							{1: '1', 2: '2'}
+19	19		401							{1: '2', 2: '5324'}
+20	20		301							"{3: ""Under everyone's watchful gaze, Rosetta rolls the dice. It spins across the table several times and settles on a 1.""}"
+21	21		401							{1: '2', 2: '2946'}
+22	22		201							{1: '1', 2: '500214', 3: '14'}
+23	23		301							{1: '1', 2: 'Rosetta', 3: '...Lost again.', 4: '1'}
+24	24		202							{1: '1'}
+25	25		301				DialogDisable			{3: 'She looks clearly frustrated by the loss and seems ready to challenge the mechanoid for another round.'}
+26	26		302							"{2: ""How's the score looking today?"", 3: '27'}"
+27	27		201							{1: '1', 2: '500214'}
+28	28		301			DialogEnable				{1: '1', 2: 'Rosetta', 3: '【kuroname】...', 4: '1'}
+29	29		204							{1: '1', 2: '6'}
+30	30		301							{3: 'The moment she hears your voice, she glances over for help, but embarrassment flashes across her face.'}
+31	31		202							{1: '1'}
+32	32		301							{3: 'The card-playing mechanoid butts in and announces the tally as if showing off.'}
+33	33		401							{1: '2', 2: '2945'}
+34	34		201							{1: '1', 2: '500929'}
+35	35		301				DialogDisable			{1: '1', 2: 'Card-Playing Mechanoid', 3: 'Match record: Mechanoid 5, Rosetta 0.', 4: '1'}
+36	36		202							{1: '1'}
+37	37		302							"{2: ""Luck's not on your side today, huh?"", 3: '38', 4: 'Just an off day?', 5: '38'}"
+38	38		201							{1: '1', 2: '500214'}
+39	39		301			DialogEnable				{1: '1', 2: 'Rosetta', 3: 'You know me, 【kuroname】... my luck has never been great.', 4: '1'}
+40	40		302							{2: 'Still want another round?', 3: '41'}
+41	41		204							{1: '1', 2: '14'}
+42	42		301							{2: 'Rosetta', 3: 'I need at least one win. Otherwise the Engineering Force will tease me forever.', 4: '1'}
+43	43		302							"{2: ""You've got this, Rosetta!"", 3: '44'}"
+44	44		204							{1: '1', 2: '4'}
+45	45		301							"{2: 'Rosetta', 3: ""Yeah, 【kuroname】! This time I'm winning."", 4: '1'}"
+46	46		202							{1: '1', 6: '1'}
+47	47		201							{1: '1', 2: '500929'}
+48	48		301							{1: '1', 2: 'Card-Playing Mechanoid', 3: 'Rosetta has repeated that line four times with zero success.', 4: '1'}
+49	49		202							{1: '1'}
+50	50		401							{1: '2', 2: '5324'}
+51	51		401						200.0	{1: '2', 2: '5324'}
+52	52		301							"{3: ""After the trash-talk ends, they both roll dice to see who goes first. Unsurprisingly, Rosetta's 2 loses to the mechanoid's 4.""}"
+53	53		201							{1: '1', 2: '500929'}
+54	54		301							"{1: '1', 2: 'Card-Playing Mechanoid', 3: ""Based on previous data, Rosetta's chance of winning after losing the first move is only 0.37 percent."", 4: '1'}"
+55	55		302							{2: 'Hey! How did you come up with 0.37 percent?', 3: '56', 4: '?', 5: '56'}
+56	56		202							{1: '1', 6: '1'}
+57	57		201							{1: '1', 2: '500214'}
+58	58		301							{1: '1', 2: 'Rosetta', 3: 'Ignore him. With your cheers, and your luck...', 4: '1'}
+59	59		301							{3: 'She looks at the cards in her hand, then shoots you a look full of resolve.'}
+60	60		204							{1: '1', 2: '4'}
+61	61		301							"{2: 'Rosetta', 3: ""I'll win!"", 4: '1'}"
+62	62		302							{2: 'I believe you, but you might be tempting fate.', 3: '63'}
+63	63		301							"{3: ""Even with your support, luck still won't smile on Rosetta.""}"
+64	64		204							{1: '1', 2: '8'}
+65	65		401							{1: '2', 2: '2946'}
+66	66		301			PanelActor1Shake				{2: 'Rosetta', 3: 'Uh...', 4: '1'}
+67	67		202							{1: '1'}
+68	68		301							"{3: ""The mechanoid's early defense blocks every attack, and her life points are barely flickering, like a candle in the wind.""}"
+69	69		201							{1: '1', 2: '500929'}
+70	70		301							{1: '1', 2: 'Card-Playing Mechanoid', 3: 'If Rosetta fails to win this turn, my chance of victory next turn becomes one hundred percent.', 4: '1'}
+71	71		202							{1: '1'}
+72	72		201							{1: '1', 2: '500214', 3: '8'}
+73	73		301							"{1: '1', 2: 'Rosetta', 3: ""So I really can't win..."", 4: '1'}"
+74	74		204							{1: '1'}
+75	75		301							"{2: 'Rosetta', 3: ""I'm sorry, 【kuroname】. It looks like I'm breaking my promise."", 4: '1'}"
+76	76		301							{3: 'She turns to you, helplessness clouding her face.'}
+77	77		302							"{2: ""Don't lose heart. We still have one last draw."", 3: '78', 4: ""The battle isn't decided yet."", 5: '78'}"
+78	78		204							{1: '1', 2: '8'}
+79	79		301				DialogDisable			{2: 'Rosetta', 3: 'The odds are just too slim...', 4: '1'}
+80	80		302							"{2: ""Exactly. Won't the victory taste better this way?"", 3: '81'}"
+81	81		202							{1: '1'}
+82	82		302							"{2: ""Mechanoid, what are Rosetta's odds now?"", 3: '83'}"
+83	83		201							{1: '1', 2: '500929'}
+84	84		301			DialogEnable	DialogDisable			{1: '1', 2: 'Card-Playing Mechanoid', 3: 'Rosetta? Win probability? Still... 0.37 percent.', 4: '1'}
+85	85		202							{1: '1'}
+86	86		302							"{2: ""See? Even at rock bottom, our odds haven't dropped."", 3: '87'}"
+87	87		201							{1: '1', 2: '500214'}
+88	88		301			DialogEnable				"{1: '1', 3: 'Watching your calm, confident expression, Rosetta recalls the ""miracles"" you\'ve pulled off before. For a moment, she forgets how tiny 0.37 percent really is.'}"
+89	89		204							{1: '1', 2: '8'}
+90	90		301				DialogDisable			"{2: 'Rosetta', 3: ""(If luck can change anything, it's probably 【kuroname】's luck that can turn this around.)"", 4: '1'}"
+91	91		302							{2: 'For the next draw, Rosetta and I will pull together. No rule against that, right?', 3: '92'}
+92	92		202							{1: '1', 6: '1'}
+93	93		201							{1: '1', 2: '500929'}
+94	94		301			DialogEnable				"{1: '1', 2: 'Card-Playing Mechanoid', 3: ""If Rosetta agrees, I have no objection. Note: Her win rate will not increase because of 【kuroname】's participation."", 4: '1'}"
+95	95		302							{2: 'Yeah, we know.', 3: '96', 4: 'Ready, Rosetta?', 5: '96'}
+96	96		202							{1: '1'}
+97	97		301							"{3: ""You and Rosetta place your hands on the tiny deck. Your confidence blows away her doubt; whatever happens, she's eager to see what card you'll draw together.""}"
+98	98		201							{1: '1', 2: '500214'}
+99	99		306							{1: '1'}
+100	100		301			DialogShake				"{1: '1', 2: '【kuroname】 & Rosetta', 3: ""With this draw, we'll turn it all around!"", 4: '1'}"
+101	101		306							
+102	102		401							{1: '2', 2: '5301'}
+103	103		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+104	104		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiColorTableStageMain/FxUiColorTableStageRollStarLoop.prefab', 2: '2'}
+105	105		401							{1: '2', 2: '4276'}
+106	106		204							{1: '1', 2: '1'}
+107	107		301				DialogDisable			{3: 'Rosetta slips the new card into her hand. You watch her tense expression soften, as if the card is shining inside her visual module.'}
+108	108		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiColorTableStageMain/FxUiColorTableStageRollStarLoop.prefab'}
+109	109		302							{2: 'So? Can we win?', 3: '110'}
+110	110		204							{1: '1', 2: '1'}
+111	111		502							{1: 'DialogEnable'}
+112	112		301			DialogShake				{2: 'Rosetta', 3: 'We can win. This will do it!', 4: '1'}
+113	113		202							{1: '1'}
+114	114		306							{1: '1'}
+115	115		301							{3: 'The mechanoid has never encountered this card in any previous duel with Rosetta, so it has no counter ready.'}
+116	116		301							"{3: ""Thanks to the card you drew together, all of its moves are sealed. Now is Rosetta's perfect window to strike back!""}"
+117	117		306							
+118	118		201							{1: '1', 2: '500214', 3: '4'}
+119	119		301							"{1: '1', 2: 'Rosetta', 3: ""Now it's my turn to attack!"", 4: '1'}"
+120	120		202							{1: '1'}
+121	121		401							{1: '2', 2: '5301'}
+122	122		401						300.0	{1: '2', 2: '5301'}
+123	123		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '3'}
+124	124		401						200.0	{1: '2', 2: '5301'}
+125	125		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '3'}
+126	126		401						200.0	{1: '2', 2: '5301'}
+127	127		301							"{3: ""The mechanoid's earlier lockdown had trapped several cards in Rosetta's hand. She unleashes them in a dazzling flurry.""}"
+128	128		401							{1: '2', 2: '5301'}
+129	129		401						200.0	{1: '2', 2: '5301'}
+130	130		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '3'}
+131	131		401						200.0	{1: '2', 2: '5301'}
+132	132		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '3'}
+133	133		401						200.0	{1: '2', 2: '5301'}
+134	134		301							{3: 'Cards flash in and out of play until the entire enemy defense is wiped. Then she summons enough power to zero out its life points.'}
+135	135		401							{1: '2', 2: '2945'}
+136	136		201							{1: '1', 2: '500929'}
+137	137		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiChopping03.prefab', 2: '3'}
+138	138		203						300.0	{1: '1', 2: '0.4', 3: '-200'}
+139	139		202							{1: '1', 6: '1'}
+140	140		301							"{3: ""The combined strike drives the mechanoid's life to zero. Rosetta has seized that 0.37 percent chance and turned the duel on its head!""}"
+141	141		201							{1: '1', 2: '500214', 3: '8'}
+142	142		301							{1: '1', 2: 'Rosetta', 3: 'Phew... That was a tough win, thanks to you, 【kuroname】.', 4: '1'}
+143	143		302							{2: 'We drew that card together.', 3: '144'}
+144	144		204							{1: '1', 2: '1'}
+145	145		301							{2: 'Rosetta', 3: '【kuroname】, do you remember this card?', 4: '1'}
+146	146		302							{2: 'This card... looks somewhat familiar.', 3: '147'}
+147	147		301							{2: 'Rosetta', 3: 'This is the one you told me to include back when I built the deck. Never thought your pick would be the key to my comeback today, 【kuroname】.', 4: '1'}
+148	148		302							{2: 'Right, now I remember.', 3: '149'}
+149	149		202							{1: '1'}
+150	150		301				AniZhuanchangBegin			{3: 'For a heartbeat, the scene blurs. A memory surfaces: you and Rosetta in the Engineering Force maintenance room long ago.'}
+151	151		401						1000.0	{1: '1', 2: '36'}
+152	152		401				DialogDisable			{1: '1', 2: '5059'}
+153	153		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+154	154		504							{1: '0.7'}
+155	155		302			AniZhuanchangEnd				"{2: ""This card looks powerful. Why haven't you added it to your deck, Rosetta?"", 3: '156'}"
+156	156		201							{1: '1', 2: '500214', 3: '1'}
+157	157		301			DialogEnable				{1: '1', 2: 'Rosetta', 3: 'Since when did you care about card games, Commandant?', 4: '1'}
+158	158		204							{1: '1'}
+159	159		301							"{2: 'Rosetta', 3: ""The effect is strong, but it clashes with my deck's style. Drawn at the wrong time, it is dead weight."", 4: '1'}"
+160	160		302							{2: 'But what if you draw it at the perfect moment?', 3: '161'}
+161	161		301							{2: 'Rosetta', 3: 'Then it could very well decide the match... but that window is extremely narrow.', 4: '1'}
+162	162		302							{2: 'Why not keep one copy anyway? Call it my wish for you to pull off a miracle when things look hopeless.', 3: '163'}
+163	163		204							{1: '1', 2: '1'}
+164	164		301							"{2: 'Rosetta', 4: ""Since it carries your blessing, I'll hold on to it."", 5: '1'}"
+165	165		202							{1: '1'}
+166	166		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.8'}
+167	167		301							{2: 'Rosetta', 3: '【kuroname】, 【kuroname】...'}
+168	168		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+169	169		401							{1: '2', 2: '4388'}
+170	170		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+171	171		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1030.jpg'}
+172	172		504							{1: '0'}
+173	173		301							"{3: ""The Construct's voice pulls you back to the present card table.""}"
+174	174		201							{1: '1', 2: '500214'}
+175	175		301							{1: '1', 2: 'Rosetta', 3: 'What are you thinking?', 4: '1'}
+176	176		302							"{2: ""I was thinking the Engineering Force can't tease you anymore."", 3: '177', 4: 'Feel like playing more? We can go together.', 5: '179'}"
+177	177		204							{1: '1', 2: '4'}
+178	178	181	301				AniZhuanchangBegin			{2: 'Rosetta', 3: 'No way, 1-5 is still awful. I need the score in my favor.', 4: '1'}
+179	179		204							{1: '1', 2: '1'}
+180	180		301				AniZhuanchangBegin			"{2: 'Rosetta', 3: ""With your luck and my skill, we'll claw it back for sure!"", 4: '1'}"
+181	181		202							{1: '1', 6: '1'}
+182	182		401						2000.0	{1: '1', 2: '36'}
+183	183		401							{1: '1', 2: '6226'}
+184	184		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory802.jpg'}
+185	185		301			AniZhuanchangEnd				{3: 'You duel the mechanoid together until the streetlights come on. The final tally: Rosetta 6, Mechanoid 5. Pleased at last, she stands and leaves by your side.'}
+186	186		201							{1: '1', 2: '500214'}
+187	187		301							{1: '1', 2: 'Rosetta', 3: '【kuroname】, check this out.', 4: '1'}
+188	188		202							{1: '1'}
+189	189		301							{3: 'Walking side by side down the now-quiet street, Rosetta hands you the card that turned the tide.'}
+190	190		201							{1: '1', 2: '500214'}
+191	191		301							{1: '1', 2: 'Rosetta', 3: 'How did you know we could claw this back when the odds were so low?', 4: '1'}
+192	192		302							"{2: ""Because it wasn't zero. I chose to believe first and leave the rest to luck."", 3: '193'}"
+193	193		301							{2: 'Rosetta', 3: 'I never expect much from my luck... and the card has strict use conditions, so I only kept one copy even though you suggested it.', 4: '1'}
+194	194		204							{1: '1', 2: '8'}
+195	195		301							"{2: 'Rosetta', 3: ""Honestly, if you hadn't drawn that card, I might have forgotten it was there."", 4: '1'}"
+196	196		204							{1: '1', 2: '14'}
+197	197		301							{2: 'Rosetta', 3: 'My luck is terrible, yet I always cling to tiny hopes. ', 4: '1'}
+198	198		204							{1: '1', 2: '1'}
+199	199		301				DialogDisable			{2: 'Rosetta', 3: 'Turns out the card was meant for you—only someone truly lucky could pull it at the perfect moment.', 4: '1'}
+200	200		302							{2: 'But you did keep one copy.', 3: '201'}
+201	201		302							"{2: ""Next time, trust yourself a little more, whether it's luck or something else."", 3: '202'}"
+202	202		302							{2: 'Besides, we drew it together. I just believed a bit more...', 3: '203'}
+203	203		204							{1: '1'}
+204	204		301			DialogEnable				{2: 'Rosetta', 3: 'Believe what?', 4: '1'}
+205	205		302							{2: 'Believed we would win, and that the card would answer our hope.', 3: '206'}
+206	206		204							{1: '1', 2: '1'}
+207	207		301							{2: 'Rosetta', 3: 'That is so like you, 【kuroname】. If it were just you versus that mechanoid, the match would have been so easy.', 4: '1'}
+208	208		302							{2: 'Even with luck on my side, I still needed your skill. One person alone could not have done it.', 3: '209', 4: 'Have some faith in yourself, Rosetta. You were essential to our victory!', 5: '209'}
+209	209		301							"{2: 'Rosetta', 3: ""So I'm really one of the ingredients for victory? Thank you, 【kuroname】."", 4: '1'}"
+210	210		204							{1: '1'}
+211	211		301							"{2: 'Rosetta', 3: ""But we've been winning ever since we teamed up. I'm curious, are you always this lucky, 【kuroname】? Let's test it! I shuffled. Draw again!"", 4: '1'}"
+212	212		302							{2: '(Draw card)', 3: '213'}
+213	213		401							{1: '2', 2: '5298'}
+214	214		204							{1: '1', 2: '4'}
+215	215		301							"{2: 'Rosetta', 3: ""It's the same card again! You're cheating, aren't you?"", 4: '1'}"
+216	216		302							{2: 'Not at all. Just lucky, I swear.', 3: '217'}
+217	217		204							{1: '1'}
+218	218		301				DialogDisable			{2: 'Rosetta', 3: 'Is it really just luck?', 4: '1'}
+219	219		302							"{2: ""Yes and no. Meeting you, Rosetta—that's luck in action."", 3: '220'}"
+220	220		302							{2: 'But also because I believed I would meet you someday, I was certain of it.', 3: '221'}
+221	221		306							{1: '1'}
+222	222		203							{1: '1', 2: '0.4', 4: '-100', 5: '-150'}
+223	223		204						400.0	{1: '1', 2: '6'}
+224	224		301			DialogEnable				{3: 'You look at her earnestly. Under the dim streetlamp, even the blush on her cheeks feels intoxicating.'}
+225	225		301				DialogDisable			"{3: ""With shy courage, she meets your gaze. The knight's smile seems to hold the lingering warmth of daylight.""}"
+226	226		306							
+227	227		203						450.0	{1: '1', 2: '0.4'}
+228	228		301			DialogEnable				{2: 'Rosetta', 3: 'No wonder. Looks like you used up all my luck.', 4: '1'}
+229	229		204							{1: '1', 2: '1'}
+230	230		301							"{2: 'Rosetta', 3: ""Promise me: if I ever need you to return a little of it, you won't say no."", 4: '1'}"
+231	231		302							"{2: ""I won't. And when you need me, come find me too."", 3: '232'}"
+232	232		301		1		AniZhuanchangBegin			{2: 'Rosetta', 3: 'Deal.', 4: '1'}

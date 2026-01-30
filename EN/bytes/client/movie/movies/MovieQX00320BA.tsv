@@ -1,0 +1,58 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory670.jpg'}
+2	2		504				AniZhuanchangEnd			{1: '0.7'}
+3	3		401							{1: '1', 2: '169'}
+4	4		201							{1: '1', 2: '500166'}
+5	5		301			DialogEnable				"{1: '1', 2: 'Lucia', 3: ""You mean... a Valentine's Day gift?"", 4: '1'}"
+6	6		302							{2: 'Yes.', 3: '7'}
+7	7		301							"{3: ""Half an hour earlier, you'd popped the question.""}"
+8	8		204							{1: '1', 2: '2'}
+9	9		301							{2: 'Lucia', 3: 'Then... hold my hand.', 4: '1'}
+10	10		301							"{3: ""She says something that hasn't crossed her lips in a while.""}"
+11	11		302				AniZhuanchangBegin			{2: 'Okay.', 3: '12'}
+12	12		202			DialogDisable				{1: '1', 6: '1'}
+13	13		504							
+14	14		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory668.jpg'}
+15	15		201							{1: '1', 2: '500166', 3: '1'}
+16	16		301			DialogEnable				{1: '1', 3: 'And here you are, strolling hand-in-hand down the quiet street.'}
+17	17		302							"{2: ""It's been ages since we'd had a walk like this."", 3: '18'}"
+18	18		301							{2: 'Lucia', 3: 'Yeah.', 4: '1'}
+19	19		301							{3: 'Lucia tilts her head back, the stars shimmering in her eyes.'}
+20	20		301							"{2: 'Lucia', 3: ""Tonight, as said in the tale about the lovers' day of Kowloong, the Cowherd and Weaver Girl get to hold hands too, right?"", 4: '1'}"
+21	21		301							"{2: 'Lucia', 3: ""They're very brave."", 4: '1'}"
+22	22		302							{2: 'Brave?', 3: '23'}
+23	23		301							{2: 'Lucia', 3: 'To stare across the Milky Way at their love, with just one meeting a year? The loneliness... the heartbreak after the reunion...', 4: '1'}
+24	24		301							"{2: 'Lucia', 3: ""But no matter how tough it gets, they never give up. Even if it's just one day, they hold on..."", 4: '1'}"
+25	25		301							{2: 'Lucia', 3: 'So I think they are very brave.', 4: '1'}
+26	26		502							{1: 'DialogDisable'}
+27	27		302							{2: 'Yeah...', 3: '28'}
+28	28		302							"{2: ""The wait might be long, but they know they'll be together eventually."", 3: '29'}"
+29	29		301			DialogEnable				"{2: 'Lucia', 3: ""Maybe that's what forever feels like?"", 4: '1'}"
+30	30		302							{2: 'I believe so.', 3: '31', 4: 'You bet.', 5: '31'}
+31	31		301							{3: 'She smiles and nods, her eyes sparkling with unspoken agreement.'}
+32	32		301							"{2: 'Lucia', 3: ""Maybe perfect forever doesn't exist."", 4: '1'}"
+33	33		301							"{2: 'Lucia', 3: ""But as long as we keep looking forward to seeing each other, we'll meet again and again."", 4: '1'}"
+34	34		301							"{2: 'Lucia', 3: ""Right, even if the road's long and bumpy..."", 4: '1'}"
+35	35		301							{2: 'Lucia', 3: 'I still believe in your dream, Commandant. Eradicating the Punishing Virus, no more suffering, a world reborn...', 4: '1'}
+36	36		302							{2: '(Nod)', 3: '37'}
+37	37		301							"{2: 'Lucia', 3: ""Commandant, let's go on a trip together, after it's all over, okay?"", 4: '1'}"
+38	38		302							{2: 'A trip?', 3: '39'}
+39	39		301							{2: 'Lucia', 3: 'Yeah! Peaceful places, people rebuilding their lives, maybe even cooking together. Sunrises, sunsets...', 4: '1'}
+40	40		302							"{2: 'Maybe skip the cooking part...', 3: '41', 4: 'Looking forward to that.', 5: '49', 6: ""I'll handle the cooking. Looking forward to everything else, though."", 7: '41'}"
+41	41		204							{1: '1'}
+42	42		301							"{2: 'Lucia', 3: ""Still dwelling on that, aren't you, Commandant?"", 4: '1'}"
+43	43		301							{3: 'She looks down, a hint of dejection in her eyes.'}
+44	44		301							"{2: 'Lucia', 3: ""But you said the last one wasn't too bad..."", 4: '1'}"
+45	45		302							"{2: 'Look, let me handle the chores.', 3: '46', 4: ""I'll leave it to you, then."", 5: '46'}"
+46	46		204							{1: '1', 2: '2'}
+47	47		301							{2: 'Lucia', 3: 'Um... Alright.', 4: '1'}
+48	48		302							{2: 'Now, what else is on your mind?', 3: '49'}
+49	49		301							{2: 'Lucia', 3: 'I want to hold your hand, Commandant. To experience things together, and create countless memories.', 4: '1'}
+50	50		301							{2: 'Lucia', 3: 'Eradicating the Punishing Virus might take time, but I still want to make a promise to you...', 4: '1'}
+51	51		301							"{2: 'Lucia', 3: ""This hope for a brighter future, that's what fuels me. It keeps me from giving up."", 4: '1'}"
+52	52		502							{1: 'DialogDisable'}
+53	53		302							"{2: 'Lucia.', 3: '54', 4: ""It's a promise, then..."", 5: '54'}"
+54	54		302							{2: '(Squeeze her hand firmly)', 3: '55'}
+55	55		302							{2: 'This fuels me as well.', 3: '56'}
+56	56		301			DialogEnable				{3: 'This sense of warmth, of shared strength...'}
+57	57		301		1		AniZhuanchangBegin			{3: 'You will face whatever comes your way, hand in hand. Never letting go.'}

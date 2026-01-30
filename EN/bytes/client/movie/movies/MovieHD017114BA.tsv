@@ -1,0 +1,62 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory672.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: 'Art in Constellia comes in many forms.'}
+4	4		301							{3: 'Only a few of them are created deliberately to be free from human influence. Most of the rest are understandable to humans.'}
+5	5		301							{3: 'So you can see why they would choose to turn the counterweight of the calibration device into a statue.'}
+6	6		301							{3: 'Large and loud, this piece is a brilliant backdrop for the Palette Clash.'}
+7	7		201							{1: '1', 2: '500471'}
+8	8		301				AniZhuanchangBegin			{1: '1', 2: 'Awakened Machine', 3: 'Did you ask everyone to come here for this, Mark?', 4: '1'}
+9	9		202			DialogDisable				{1: '1', 6: '1'}
+10	10		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg'}
+11	11		301			DialogEnable				{3: 'You can see the impatient mechanoids staring at the statue through your telescope, their complaints transmitting through your comms.'}
+12	12		301							{3: 'Mark waves his hands in a panic, the signal light that indicates his thought process blinking so frequently as if it does not turn off. His voice comes through the comms in fragments.'}
+13	13		201							{1: '1', 2: '500488'}
+14	14		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+15	15		301							"{1: '1', 2: 'Mark', 3: ""Is Karenina not ready? I can't make it up anymore."", 4: '1'}"
+16	16		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+17	17		201							{1: '1', 2: '500494', 3: '13'}
+18	18		301							{1: '1', 2: 'Karenina', 3: 'Hang on for a little bit longer.', 4: '1'}
+19	19		201							{1: '1', 2: '500488'}
+20	20		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+21	21		301							{1: '1', 2: 'Mark', 3: 'What kind of art is it to spray a layer of foam over the statue anyway?!', 4: '1'}
+22	22		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+23	23		201							{1: '1', 2: '500494', 3: '13'}
+24	24		301							{1: '1', 2: 'Karenina', 3: 'Just wait and see.', 4: '1'}
+25	25		301							{2: 'Karenina', 3: 'Dulcinea.', 4: '1'}
+26	26		203							{1: '1', 2: '0.25', 3: '-400'}
+27	27		201							{1: '2', 2: '500598', 4: '400'}
+28	28		301							{1: '1', 2: 'Dulcinea', 3: 'Connection secured. Impact area within our calculation.', 4: '2'}
+29	29		301							{2: 'Karenina', 3: 'Commandant?', 4: '1'}
+30	30		302							"{2: ""Area clear. You're good to go."", 3: '31'}"
+31	31		301							{3: 'Karenina takes out a device and opens the lid, revealing a red button.'}
+32	32		401							{1: '1', 2: '36'}
+33	33		204							{1: '1', 2: '1'}
+34	34		301							{2: 'Karenina', 3: 'Check this out, Mark. This is what art is in the Engineering Force.', 4: '1'}
+35	35		202							{1: '1', 2: '2', 6: '1'}
+36	36		401							{1: '2', 2: '952'}
+37	37		301							{3: 'Beep.'}
+38	38		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+39	39		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory295.png'}
+40	40		401							{1: '2', 2: '884'}
+41	41		301			RImgBg1Shake				{3: 'BOOM—'}
+42	42		401							{1: '1', 2: '205'}
+43	43		301							{3: 'The explosion erupts like a thunderstorm. You can see a hole blown open neatly underneath the statue through your telescope.'}
+44	44		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory672.jpg', 3: '0', 4: '1', 5: '1'}
+45	45		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+46	46		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory672.jpg'}
+47	47		301							{3: 'The crowd watches as the statue of the awakened machine, which has one arm pointing at the sky and the other on its hips, slowly sinks into the ground as dust rises from the explosion.'}
+48	48		301							{3: 'Visual modules reboot after a deafening silence before the crowd is set off, and the members of the School who made the statue turn their gaze on Mark.'}
+49	49		302							{2: 'Run, Mark.', 3: '50'}
+50	50		201							{1: '1', 2: '500488'}
+51	51		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+52	52		301							"{1: '1', 2: 'Mark', 3: ""You don't say!"", 4: '1'}"
+53	53		301							"{2: 'Mark', 3: 'Listen to me! I didn\'t do it! Calm down! It was the human they called ""Commandant"" who made me do it!', 4: '1'}"
+54	54		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+55	55		202							{1: '1', 6: '1'}
+56	56		301							"{3: ""You only hear static afterward. Mark's comms is likely drowning in the relentless assault of paints in the air.""}"
+57	57		301							{3: 'Karenina confirms the result with other members of the Engineering Force before opening a map on her terminal and crossing out your current location from a list.'}
+58	58		201							{1: '1', 2: '500494', 3: '1'}
+59	59		301							"{1: '1', 2: 'Karenina', 3: ""This area is cleared, then. Let's head to the next one, Commandant."", 4: '1'}"
+60	60		302							{2: 'Ah...', 3: '61'}
+61	61		301		1		AniZhuanchangBegin			{3: 'Quietly packing up your telescope, you follow Karenina to the other locations on the list.'}

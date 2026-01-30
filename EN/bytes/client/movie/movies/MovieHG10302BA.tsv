@@ -1,0 +1,34 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500021'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Liv', 3: ""Commandant, I've already logged and updated today's agenda. Please follow it strictly as scheduled."", 4: '1'}"
+5	5		302							{2: 'U-understood.', 3: '6', 4: 'Did something happen, Liv?', 5: '7'}
+6	6	8	301							"{2: 'Liv', 3: ""You don't have to repeat yourself, Commandant."", 4: '1'}"
+7	7		301							{2: 'Liv', 3: 'Did something happen? What a weird question, Commandant.', 4: '1'}
+8	8		301							"{2: 'Liv', 3: ""I'll be waiting for you at the entrance then. Please come over once you're ready."", 4: '1'}"
+9	9		201							{1: '1', 2: '1011001'}
+10	10		301							{1: '1', 2: 'Lee', 3: 'Another packed day, Commandant?', 4: '1'}
+11	11		302							{2: 'So very packed...', 3: '12', 4: 'Does Liv hate me?', 5: '13'}
+12	12	14	301							{2: 'Lee', 3: 'This is inhumanely intensive...', 4: '1'}
+13	13		301							"{2: 'Lee', 3: ""You'll have to ask her yourself."", 4: '1'}"
+14	14		203							{1: '1', 2: '0.25', 3: '400'}
+15	15		201							{1: '2', 2: '1021001', 4: '-400'}
+16	16		301							{1: '1', 2: 'Lucia', 3: 'Liv does seem quite different recently, especially when it comes to her personality... Did it begin when she changed to the Lux frame?', 4: '2'}
+17	17		301							"{2: 'Lee', 3: ""Switching frames doesn't alter our personality, though. You know that, Lucia."", 4: '1'}"
+18	18		301							"{2: 'Lucia', 3: ""Which is why I'm as perplexed as the commandant regarding why Liv is acting the way she is now."", 4: '2'}"
+19	19		302							"{2: 'She feels like how Lucia used to be.', 3: '20', 4: ""Can't be puberty, can it?"", 5: '22'}"
+20	20		301							{2: 'Lucia', 3: 'How I used to be?', 4: '2'}
+21	21	24	301							{2: 'Lee', 3: 'The way you were meticulous and diligent, I suppose. And maybe a little inapproachable.', 4: '1'}
+22	22		301							{2: 'Lee', 3: 'Puberty? What do you think we are? Kids?', 4: '1'}
+23	23		301							"{2: 'Lee', 3: ""I don't think we'll go through that kind of mental transition."", 4: '1'}"
+24	24		202							{1: '1', 2: '2', 6: '1'}
+25	25		201							{1: '1', 2: '500021'}
+26	26		301							"{1: '1', 2: 'Liv', 3: ""Commandant, I've been waiting outside the base for ten minutes. It's time for the mission to begin."", 4: '1'}"
+27	27		301							{2: 'Liv', 3: 'I thought you must have received an urgent mission.', 4: '1'}
+28	28		301							"{2: 'Liv', 3: ""As much as I agree with the importance of communicating with your teammates, I don't think it's worth delaying a mission."", 4: '1'}"
+29	29		301							"{2: 'Liv', 3: ""You can understand, can't you?"", 4: '1'}"
+30	30		302							"{2: 'I understand...', 3: '31', 4: ""Liv, there's something I want to discuss with you."", 5: '31'}"
+31	31		201							{1: '1', 2: '1021001'}
+32	32		301							"{1: '1', 2: 'Lucia', 3: ""Commandant, let's just go on the mission with Liv for now."", 4: '1'}"
+33	33		301		1		AniZhuanchangBegin			"{2: 'Lucia', 3: ""We'll pay more attention to her behavior in the process. I'm sure we'll find out why she's changed."", 4: '1'}"

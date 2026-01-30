@@ -1,0 +1,448 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory70.jpg'}
+2	2		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+3	3		401			AniZhuanchangEnd				{1: '1', 2: '6236'}
+4	4		401							{1: '2', 2: '4545'}
+5	5		301			DialogEnable				{3: 'Harsh red emergency lights bathe the entire area, while the monotonous blare of alarms repeats in an endless, urgent loop.'}
+6	6		402							{1: '4545'}
+7	7		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+8	8		401							{1: '2', 2: '4053'}
+9	9		301							{3: 'Countless red targeting lasers from the security robots are all trained on Veronica and Serra.'}
+10	10		301							{3: 'One false move, and the heavily armed security robots will shower them both with a hail of bullets without mercy.'}
+11	11		201							{1: '5', 2: '501360', 3: '14', 4: '400', 8: '1'}
+12	12		201							{1: '1', 2: '501364', 3: '4', 5: '-20', 6: '-200'}
+13	13		301							{1: '1', 3: 'Looking as pale as a ghost, Serra struggles to maintain her composure nonetheless.'}
+14	14		203							{1: '5', 2: '0.25', 3: '250'}
+15	15		301				DialogDisable			{1: '1', 3: 'She presses herself tightly against Veronica, a futile attempt to shield her companion from harm.'}
+16	16		202							{1: '1', 2: '5', 6: '1'}
+17	17		502							{1: 'RImgBg1Shake'}
+18	18		401						800.0	{1: '2', 2: '4376'}
+19	19		401						800.0	{1: '2', 2: '4376'}
+20	20		502							{1: 'RImgBg1Shake'}
+21	21		401						800.0	{1: '2', 2: '4376'}
+22	22		401						800.0	{1: '2', 2: '4376'}
+23	23		301			DialogEnable				{3: 'The standoff is short-lived. Heavy footsteps approach, accompanied by the grinding of metal against metal as Overseer draws near—each footstep a death knell signaling their impending fate.'}
+24	24		301							{3: 'Finally, the massive mechanoid emerges, its towering frame casting an overwhelming shadow that swallows both Serra and Veronica whole.'}
+25	25		201							{1: '1', 2: '501357', 4: '450', 5: '50', 6: '-100'}
+26	26		301							"{1: '1', 2: 'Overseer', 3: ""You can drop the act now, Mechanic Serra. You've performed admirably."", 4: '1'}"
+27	27		202							{1: '1'}
+28	28		401							{1: '2', 2: '9351042'}
+29	29		301							"{3: ""Overseer's words leave both Serra and Veronica stunned. Before either can react, the security robots swiftly move in to separate them.""}"
+30	30		201							{1: '1', 2: '501357', 4: '450', 5: '50', 6: '-100'}
+31	31		301							{1: '1', 2: 'Overseer', 3: 'Confirmed—mechanoid Veronica has attempted desertion and acted upon this intent. Punishment will be administered per the protocol.', 4: '1'}
+32	32		301							{2: 'Overseer', 3: 'Mechanics Serra and Roko have identified this security risk during maintenance and provided successful verification. Rewards will be distributed per the protocol.', 4: '1'}
+33	33		202							{1: '1', 6: '1'}
+34	34		201							{1: '1', 2: '501360', 3: '14'}
+35	35		301							{1: '1', 2: 'Serra', 3: 'What...', 4: '1'}
+36	36		301							"{3: ""Serra's pupils contract in shock as she struggles to process what she's just heard. Right then, a chilling, rage-filled growl cuts through the air.""}"
+37	37		201							{1: '1', 2: '501364', 3: '11', 5: '-20', 6: '-200'}
+38	38		301			DialogShake				{1: '1', 2: 'Veronica', 3: 'SERRA—!', 4: '1'}
+39	39		201							{1: '1', 2: '501360', 3: '14', 7: '1'}
+40	40		301			PanelActor1Shake				"{1: '1', 2: 'Serra', 3: ""No! Wait... It's not what you think!"", 4: '1'}"
+41	41		203							{1: '1', 2: '0.25', 3: '200'}
+42	42		201							{1: '2', 2: '500086', 4: '-200'}
+43	43		301							"{1: '1', 3: ""Serra struggles to break free from the security robot's grip, only to be intercepted by someone else.""}"
+44	44		203							{1: '1', 2: '0.25', 3: '200', 4: '-50'}
+45	45		203							{1: '2', 2: '0.25', 3: '-150', 4: '-50'}
+46	46		301							"{3: ""Roko appears out of nowhere and roughly forces Serra's head down as he leans in to whisper in her ear.""}"
+47	47		301			DialogShake				"{2: 'Roko', 3: ""Stay still if you don't want to die!"", 4: '2'}"
+48	48		203							{1: '1', 2: '0.4', 3: '800', 4: '-50'}
+49	49		203							{1: '2', 2: '0.4', 3: '360'}
+50	50		201							{1: '3', 2: '501357', 4: '-800', 5: '50', 6: '-100', 8: '1'}
+51	51		204							{1: '2', 2: '1'}
+52	52		301							{1: '1', 3: 'Roko then lifts his head and puts on an ingratiating smile for Overseer.'}
+53	53		301							{2: 'Roko', 3: 'Thank you, thank you! This little one here is still caught up in her role-playing, you see.', 4: '2'}
+54	54		202							{1: '1', 2: '2', 3: '3'}
+55	55		301				DialogDisable			"{3: 'Roko clamps one hand over Serra\'s mouth while frantically fishing out the ""storage component"" she had seen earlier from his pocket and offering it to Overseer.'}"
+56	56		401							{1: '2', 2: '558'}
+57	57		504							{1: '0.7'}
+58	58		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+59	59		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+60	60		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1311.jpg'}
+61	61		201							{1: '1', 2: '501364', 4: '-300', 5: '-70', 6: '-200', 7: '1'}
+62	62		201						500.0	{1: '2', 2: '501360', 4: '300', 5: '-50', 7: '1'}
+63	63		401							{1: '2', 2: '558'}
+64	64		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+65	65		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1313.jpg'}
+66	66		203							{1: '1', 2: '0', 3: '-400', 4: '-20', 5: '-200'}
+67	67		203							{1: '2', 2: '0', 3: '400'}
+68	68		204							{1: '1', 2: '8'}
+69	69		204						500.0	{1: '2', 2: '12'}
+70	70		401							{1: '2', 2: '558'}
+71	71		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+72	72		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1312.jpg'}
+73	73		204							{1: '1', 2: '4'}
+74	74		203							{1: '1', 2: '0', 3: '-250', 4: '-20', 5: '-200'}
+75	75		203						500.0	{1: '2', 2: '0', 3: '200', 5: '-50'}
+76	76		202							{1: '1', 2: '2', 6: '1'}
+77	77		401							{1: '2', 2: '558'}
+78	78		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+79	79		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5901_3.jpg'}
+80	80		401							{1: '2', 2: '558'}
+81	81		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+82	82		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory70.jpg'}
+83	83		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+84	84		504							{1: '0'}
+85	85		301			DialogEnable				"{3: ""Through Overseer's network, a holographic projection stored in the storage component appears before everyone—footage of Serra and Veronica's previous interactions together.""}"
+86	86		301							"{3: ""Seeing this, Serra deflates completely. All of Roko's strange behavior during their earlier conversations suddenly makes perfect sense.""}"
+87	87		201							{1: '1', 2: '500086', 4: '-400'}
+88	88		201							{1: '2', 2: '501360', 3: '13', 4: '400'}
+89	89		301							{1: '1', 2: 'Serra', 3: '...', 4: '2'}
+90	90		204							{1: '2', 2: '14'}
+91	91		301							{2: 'Serra', 3: '...You knew all along? You were watching us the whole time?', 4: '2'}
+92	92		301							{2: 'Serra', 3: 'And then you just waited for the perfect moment to stab me in the back?', 4: '2'}
+93	93		203							{1: '1', 2: '0.25', 3: '-425'}
+94	94		301							"{3: ""Roko avoids Serra's gaze. He turns his head away as his fingers tremble almost imperceptibly.""}"
+95	95		301							"{2: 'Roko', 3: ""...I don't have much time left, but my wife and child are still out there."", 4: '1'}"
+96	96		301							"{2: 'Serra', 3: ""So that's why you betr—"", 4: '2'}"
+97	97		401							{1: '2', 2: '1543'}
+98	98		203						200.0	{1: '1', 2: '0.25'}
+99	99		301			PanelActor2Shake				"{1: '1', 3: '""Betray me?"" Roko clamps his hand over her mouth again, stopping her from saying more.'}"
+100	100		306							
+101	101		301							"{3: ""Serra swears that she's never seen this man as emotionally conflicted in all their years together.""}"
+102	102		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '8'}
+103	103		201							{1: '19', 2: '500086', 5: '-185', 6: '-300'}
+104	104		301							{1: '1', 3: 'Determination, ferocity, and... unmistakable guilt.'}
+105	105		101							{4: '8', 5: '1'}
+106	106		202							{1: '19', 6: '1'}
+107	107		306							
+108	108		301			DialogShake				{2: 'Roko', 3: 'At least I kept you out of this!', 4: '1'}
+109	109		201							{1: '18', 2: '501364', 3: '11', 4: '350', 5: '-145', 6: '-400'}
+110	110		301			RImgBg1Shake				{1: '1', 2: 'Veronica', 3: 'Liar!', 4: '18'}
+111	111		202							{1: '18'}
+112	112		301							{3: 'Another angry voice suddenly yanks Serra out of her grief.'}
+113	113		202							{1: '1', 2: '2', 6: '1'}
+114	114		201							{1: '1', 2: '501364', 3: '5', 5: '-20', 6: '-200'}
+115	115		301							"{1: '1', 3: ""She turns around to face the consuming rage in Veronica's eyes.""}"
+116	116		301							{2: 'Veronica', 3: 'So... you two are in this together.', 4: '1'}
+117	117		202							{1: '1', 6: '1'}
+118	118		201							{1: '1', 2: '501360', 3: '14'}
+119	119		301			DialogShake				"{1: '1', 2: 'Serra', 3: ""No, I'm not part of this!"", 4: '1'}"
+120	120		204							{1: '1', 2: '13'}
+121	121		301							"{2: 'Serra', 3: ""It's not like that, I swear it's not what you think it is..."", 4: '1'}"
+122	122		202							{1: '1', 6: '1'}
+123	123		201							{1: '1', 2: '501364', 3: '5', 5: '-20', 6: '-200'}
+124	124		301							"{1: '1', 2: 'Veronica', 3: ""Quite a show you've been putting up there treating mechanoids like friends."", 4: '1'}"
+125	125		301							"{2: 'Veronica', 3: ""Always playing the victim, claiming you're trapped here, constantly oppressed."", 4: '1'}"
+126	126		301							"{2: 'Veronica', 3: ""Spouting nonsense about being a prisoner here just like the mechanoids when you're a human."", 4: '1'}"
+127	127		204							{1: '1', 2: '13'}
+128	128		301							{2: 'Veronica', 3: 'Hah! Utterly ridiculous!', 4: '1'}
+129	129		301							"{2: 'Veronica', 3: ""You've been waiting for this very day, haven't you?"", 4: '1'}"
+130	130		301							"{2: 'Veronica', 3: 'To you humans, mechanoids are nothing but ""tools"" to further your own agenda.', 4: '1'}"
+131	131		301							{2: 'Veronica', 3: 'I should have strangled you when I first saw you.', 4: '1'}
+132	132		202							{1: '1', 6: '1'}
+133	133		201							{1: '1', 2: '501360', 3: '17'}
+134	134		301							{1: '1', 2: 'Serra', 3: '...', 4: '1'}
+135	135		301							"{3: ""Meeting Veronica's unbridled fury, Serra has nothing but tears and silence to offer.""}"
+136	136		202							{1: '1'}
+137	137		301							{3: 'Their fragile friendship now lies shattered.'}
+138	138		201							{1: '1', 2: '501364', 3: '5', 5: '-20', 6: '-200'}
+139	139		301							{1: '1', 2: 'Veronica', 3: 'Now, die!', 4: '1'}
+140	140		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+141	141		202							{1: '1', 6: '1'}
+142	142		401							{1: '2', 2: '9388002'}
+143	143		301			RImgBg1Shake	DialogDisable			"{3: ""Veronica's lance slices through the air with deadly precision.""}"
+144	144		501						2500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab', 2: '3'}
+145	145		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+146	146		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+147	147		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+148	148		301			DialogEnable	DialogDisable			"{3: ""Serra makes no attempt to dodge Veronica's attack. She simply closes her eyes, awaiting what comes next—only to realize nothing has happened.""}"
+149	149		401						1000.0	{1: '2', 2: '4006'}
+150	150		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+151	151		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5901_4.jpg'}
+152	152		104							{1: '-400|-50|-320', 2: '0'}
+153	153		301			DialogEnable		500.0		"{3: ""There's only the heavy thud of something hitting the floor—she opens her eyes to find Veronica's face contorted in agony.""}"
+154	154		401							{1: '2', 2: '2924'}
+155	155		301							{3: 'Veronica collapses to her knees, the restraint collar around her neck discharging powerful electrical currents. In excruciating pain, she can barely hold herself upright.'}
+156	156		301							{3: 'Behind her stands Overseer.'}
+157	157		201							{1: '18', 2: '501357', 4: '-480', 5: '-150', 8: '1'}
+158	158		301							{1: '1', 2: 'Overseer', 3: 'Initiating disciplinary protocol against rogue mechanoid Veronica.', 4: '18'}
+159	159		202							{1: '18', 6: '1'}
+160	160		301			DialogShake				{2: 'Veronica', 3: '...You... human... lapdog!'}
+161	161		201							{1: '18', 2: '501360', 3: '5', 4: '145', 5: '-100', 6: '-200'}
+162	162		301			DialogShake				{1: '1', 2: 'Serra', 3: 'Stop it!', 4: '18'}
+163	163		202							{1: '18'}
+164	164		306							{1: '1'}
+165	165		401							{1: '2', 2: '4895'}
+166	166		301							{3: 'Without hesitation, Serra throws herself at Veronica in an attempt to shield Veronica with her own body—completely forgetting she could be shot dead while at it.'}
+167	167		301							{3: 'She completely disregards that this same mechanoid was just trying to slash her down moments ago.'}
+168	168		301							{3: 'All she wants is to rush forward and embrace her friend in this moment of crisis.'}
+169	169		306							
+170	170		401							{1: '2', 2: '2513'}
+171	171		401							{1: '2', 2: '2593'}
+172	172		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+173	173		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_03.jpg'}
+174	174		301			RImgBg1Shake				"{3: ""But a security robot's bullet tears through her calf with surgical precision.""}"
+175	175		401							{1: '2', 2: '4306'}
+176	176		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+177	177		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+178	178		301			DialogShake				"{3: ""The wound isn't fatal, but it instantly robs her of her ability to move.""}"
+179	179		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5901_4.jpg'}
+180	180		104							{1: '-400|-50|-320', 2: '0'}
+181	181		301			AniZhuanchangEnd	DialogDisable			{3: 'Serra desperately reaches out trying to close the distance between herself and Veronica, longing to touch her, to save her from this nightmare.'}
+182	182		104						3500.0	{1: '0|0|0', 2: '3'}
+183	183		301			DialogEnable	AniZhuanchangBegin			{3: 'Except there is nothing she can do.'}
+184	184		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory70.jpg'}
+185	185		201							{1: '1', 2: '501357', 4: '450', 5: '50', 6: '-100'}
+186	186		301			AniZhuanchangEnd				{1: '1', 3: 'Overseer watches it all unfold, its voice remaining as cold and emotionless as ever.'}
+187	187		301							{2: 'Overseer', 3: 'Fugitive resistance escalating. Intensifying disciplinary protocol.', 4: '1'}
+188	188		202							{1: '1', 6: '1'}
+189	189		201							{1: '1', 2: '501357', 4: '750', 5: '50', 6: '-100'}
+190	190		201							{1: '2', 2: '501364', 3: '9', 4: '-200', 5: '-150', 6: '-200'}
+191	191		401							{1: '2', 2: '2924'}
+192	192		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 2: '2', 3: '2'}
+193	193		301							"{1: '1', 3: ""Overseer's massive mechanical hand clamps around Veronica's neck as it pumps increasingly powerful, disruptive currents through her frame.""}"
+194	194		301			PanelActor2Shake				{1: '1', 2: 'Veronica', 3: '...!', 4: '2'}
+195	195		401							{1: '2', 2: '4006'}
+196	196		203						250.0	{1: '2', 2: '0.3', 3: '-200', 4: '-500', 5: '-200'}
+197	197		202							{1: '1', 2: '2'}
+198	198		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '2'}
+199	199		301							{3: 'Veronica eventually loses her will to fight under the overwhelming force. Her mechanical body goes limp, and her arms fall to her sides as she collapses to the ground.'}
+200	200		201							{1: '18', 2: '501360', 3: '16', 4: '145', 5: '-100', 6: '-200'}
+201	201		301			RImgBg1Shake				{1: '1', 2: 'Serra', 3: 'VERONICA!!!', 4: '18'}
+202	202		202							{1: '18'}
+203	203		301							{3: 'But the mechanoid lying on the ground will never again respond to her call.'}
+204	204		401							{1: '2', 2: '4923'}
+205	205		301							{3: 'A human voice crackles through the surveillance system overhead.'}
+206	206		301							{3: 'It belongs to a young girl—soft as a feather, yet sharp as a blade.'}
+207	207		401							{1: '2', 2: '4422'}
+208	208		509						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1318.jpg', 2: '1'}
+209	209		201							{1: '11', 2: '501355', 4: '-450'}
+210	210		201							{1: '1', 2: '501357', 4: '1050', 5: '50', 6: '-100'}
+211	211		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '11'}
+212	212		301							{1: '1', 2: '???', 3: 'I heard every word they said. What a captivating little drama that was.', 4: '11'}
+213	213		301							"{2: '???', 3: 'You two are such ""exemplary assets"" to the Consortium. Truly deserving of recognition.', 4: '11'}"
+214	214		301							"{2: '???', 3: ""Keeping them together would be foolish. See that they're accommodated separately."", 4: '11'}"
+215	215		301							"{2: '???', 3: ""Bring the girl to me—as for that old man, he's all yours."", 4: '11'}"
+216	216		301							{2: 'Overseer', 3: 'Yes, Master.', 4: '1'}
+217	217		510							{1: '1'}
+218	218		202							{1: '11', 2: '1'}
+219	219		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '11'}
+220	220		401							{1: '2', 2: '4423'}
+221	221		301						300.0	{3: 'Overseer shoves Roko—his face ashen with fear—into the midst of security robots like a discarded rag doll. Multiple weapon barrels instantly lock onto him.'}
+222	222		201							{1: '1', 2: '500086'}
+223	223		301							{1: '1', 2: 'Roko', 3: '...', 4: '1'}
+224	224		202							{1: '1'}
+225	225		401							{1: '2', 2: '10028806'}
+226	226		301							{3: 'Then, with its gun barrel, Overseer motions for Serra to walk ahead.'}
+227	227		201							{1: '1', 2: '501357', 4: '450', 5: '50', 6: '-100'}
+228	228		301				AniZhuanchangBegin			"{1: '1', 2: 'Overseer', 3: 'Come with me to meet ""Master"".', 4: '1'}"
+229	229		202							{1: '1', 6: '1'}
+230	230		502							{1: 'DialogDisable'}
+231	231		401						2000.0	{1: '1', 2: '36'}
+232	232		401							{1: '1', 2: '55'}
+233	233		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1318.jpg'}
+234	234		107			AniZhuanchangEnd				"{1: 'Top Level, the ""Master\'s"" Chamber', 2: 'Everett Arena'}"
+235	235		301							"{3: 'Everett Arena, Top Level, the ""Master\'s"" Chamber'}"
+236	236		108							{1: '1'}
+237	237		301			DialogEnable				"{3: ""Serra enters a place she's never been before. It's so dimly lit here that she can barely make out her surroundings.""}"
+238	238		301							{3: 'Still, she immediately senses something different about this place.'}
+239	239		306							{1: '1'}
+240	240		301				DialogDisable			"{3: ""Beneath her feet isn't the cold, hard metal floor she's used to, but soft, plush carpet. Rather than reeking of the pervasive machine oil stench of the arena, this place smells of a subtle fragrance she's never smelt before.""}"
+241	241		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1318.jpg', 3: '0', 4: '1', 5: '1.5'}
+242	242		104						2000.0	{1: '200|-40|-200', 2: '0', 4: '3'}
+243	243		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1318.jpg'}
+244	244		104							{1: '200|-40|-200', 2: '0'}
+245	245		205							{1: '999'}
+246	246		104							{1: '0|0|0', 2: '0', 4: '3'}
+247	247		301			DialogEnable				{3: 'The most striking feature of the room is the enormous aquarium spanning an entire wall, its waters emanating a faint, ethereal glow.'}
+248	248		301							"{3: 'But Serra is not interested in any of this right now. Her thoughts are fixed on this ""Master"" waiting for her somewhere ahead.'}"
+249	249		301							"{3: 'Never has she felt such terror and isolation—not from the threat of death at the hands of this ""Master,"" but from not knowing where Veronica is right now.'}"
+250	250		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+251	251		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1314.jpg'}
+252	252		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '5'}
+253	253		401							{1: '2', 2: '5885'}
+254	254		201							{1: '1', 2: '501368', 5: '-20', 6: '-200', 7: '1'}
+255	255		301							{1: '1', 3: 'A horrific vision flashes unbidden through her mind: Veronica lying unconscious in the middle of the arena, a hydraulic press descending with a piercing screech and inching closer until it crushes her into scattered parts.'}
+256	256		402							{1: '5885'}
+257	257		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+258	258		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1318.jpg'}
+259	259		101							{4: '5', 5: '1'}
+260	260		202							{1: '1', 6: '1'}
+261	261		201							{1: '1', 2: '501360', 3: '14'}
+262	262		301							"{1: '1', 3: ""She can't shake it off her mind. All she wants is to flee this room and rush to Veronica's side—whatever fate might await them both.""}"
+263	263		401							{1: '2', 2: '5705'}
+264	264		203							{1: '1', 2: '0.25', 3: '-100'}
+265	265		201							{1: '2', 2: '501357', 4: '1050', 5: '50', 6: '-100'}
+266	266		301							"{1: '1', 3: ""But Overseer's gun remains pressed against her back. There's nowhere to run.""}"
+267	267		306							
+268	268		301							{2: 'Overseer', 3: 'Master, here she is.', 4: '2'}
+269	269		202							{1: '1', 2: '2'}
+270	270		401							{1: '2', 2: '4044'}
+271	271		301							"{3: 'Overseer shoves her forward, forcing her into full view of its ""human master"" waiting at the far end of the room.'}"
+272	272		301							{3: 'With a respectful bow, Overseer silently withdraws beyond the doorway to stand guard.'}
+273	273		301							{3: 'Serra can barely keep herself upright with the gun wound in her calf. Gritting through the searing pain, she struggles to push herself upright from the floor.'}
+274	274		306							{1: '1'}
+275	275		201							{1: '1', 2: '501355', 5: '-40'}
+276	276		301							"{1: '1', 3: 'This ""Master"" remains shrouded in darkness. Casually reclining on an enormous bed, this person apparently has no intention of rising to greet her.'}"
+277	277		401							{1: '2', 2: '4323'}
+278	278		301							{3: 'Serra catches the soft, rhythmic beeping of some kind of device. In the same direction, mysterious indicator lights pulse rhythmically.'}
+279	279		402							{1: '4323'}
+280	280		306							
+281	281		301							"{2: 'Dolores', 3: ""Relax. That little wound of yours isn't going to kill you."", 4: '1'}"
+282	282		301							"{2: 'Dolores', 3: ""Let's skip the pleasantries. I already know your name, Serra. A beautiful name, I gotta say."", 4: '1'}"
+283	283		301							{2: 'Dolores', 3: 'I run this place. You can call me Deloris.', 4: '1'}
+284	284		301							{2: 'Dolores', 3: 'Take it easy. Say, fancy some girl talk?', 4: '1'}
+285	285		202							{1: '1', 6: '1'}
+286	286		201							{1: '1', 2: '501360', 3: '4'}
+287	287		301				DialogDisable			{1: '1', 2: 'Serra', 3: '...', 4: '1'}
+288	288		202							{1: '1', 6: '1'}
+289	289		201							{1: '1', 2: '501355', 5: '-40'}
+290	290		203						450.0	{1: '1', 2: '0.4'}
+291	291		401							{1: '2', 2: '9351040'}
+292	292		401							{1: '2', 2: '1543'}
+293	293		301			DialogEnable				{3: 'Only now does this girl who calls herself Dolores slowly straighten herself on the massive bed—her movements come with the soft whirring of mechanical joints.'}
+294	294		202							{1: '1', 6: '1'}
+295	295		201							{1: '1', 2: '501354'}
+296	296		306							{1: '1'}
+297	297		301							"{1: '1', 3: ""When Deloris's face catches the dim glow from the aquarium, Serra finally sees her face—one with delicate, youthful features, framed by raven-black hair that only accentuates her unnaturally pallid skin.""}"
+298	298		203						300.0	{1: '1', 2: '0.4', 4: '-100', 5: '-100'}
+299	299		301							"{3: ""From beneath Dolores' dress, a web of strange tubes extends outward carrying all sorts of colored fluids that pulse slowly through their transparent lengths. All of them connect to a bizarre machine whose indicator lights blink in an irregular rhythm.""}"
+300	300		301							"{3: ""As Serra traces the tubes to their destination, she gasps in horror—they pierce directly through Deloris's delicate skin at various spots across her body, effectively imprisoning Deloris to the massive bed.""}"
+301	301		306							
+302	302		202							{1: '1', 6: '1'}
+303	303		201							{1: '1', 2: '501354'}
+304	304		301							{1: '1', 2: 'Dolores', 3: 'Please accept my apologies for not showing you a better version of myself.', 4: '1'}
+305	305		201							{1: '1', 2: '501360', 3: '4'}
+306	306		301			DialogShake				{1: '1', 2: 'Serra', 3: 'What the hell do you want from me?!', 4: '1'}
+307	307		202							{1: '1', 6: '1'}
+308	308		201							{1: '1', 2: '501354', 3: '1'}
+309	309		301							"{1: '1', 2: 'Dolores', 3: 'Didn\'t I already tell you? To give you your ""reward"" for being such an excellent employee.', 4: '1'}"
+310	310		202							{1: '1', 6: '1'}
+311	311		201							{1: '1', 2: '501360', 3: '4'}
+312	312		301							{1: '1', 2: 'Serra', 3: '...', 4: '1'}
+313	313		202							{1: '1', 6: '1'}
+314	314		201							{1: '1', 2: '501354'}
+315	315		301							{1: '1', 2: 'Dolores', 3: 'Why would you trust those useless pieces of junk?', 4: '1'}
+316	316		204							{1: '1', 2: '1'}
+317	317		301							"{2: 'Dolores', 3: ""You don't actually believe a mechanoid you barely know would unconditionally take your side just because you've exchanged a few words, do you?"", 4: '1'}"
+318	318		204							{1: '1', 2: '5'}
+319	319		301							"{2: 'Dolores', 3: ""And you're still trying to speak up for her here when she just tried to kill you? How very sad."", 4: '1'}"
+320	320		204							{1: '1'}
+321	321		301							"{2: 'Dolores', 3: ""Only humans can truly understand one another's struggles, thoughts, and deepest desires... Don't you agree?"", 4: '1'}"
+322	322		204							{1: '1', 2: '1'}
+323	323		301							{2: 'Dolores', 3: 'I know exactly what you want—you want to be flying out there like a free little bird.', 4: '1'}
+324	324		301							"{3: ""With a knowing smile, Dolores eyes the winged pendant hanging from Serra's neck.""}"
+325	325		301							"{2: 'Dolores', 3: '""Freedom""—that\'s exactly what I want, too. You see, our goals are perfectly aligned.', 4: '1'}"
+326	326		204							{1: '1', 2: '5'}
+327	327		301							"{2: 'Dolores', 3: ""I could make this room the most comfortable and luxurious in the world, but I'm sick of being stuck here."", 4: '1'}"
+328	328		204							{1: '1', 2: '2'}
+329	329		301			DialogShake				{2: 'Dolores', 3: 'I want to walk, I want to run, I want to... indulge in every pleasure life has to offer! Anything would be better than living like this!', 4: '1'}
+330	330		301							{3: 'Dolores seems to be growing more manic by the second.'}
+331	331		204							{1: '1', 2: '1'}
+332	332		301							"{2: 'Dolores', 3: 'So, help me gain my ""freedom,"" and I\'ll grant you yours in return.', 4: '1'}"
+333	333		301							"{2: 'Dolores', 3: 'You\'re going to complete my ""experimental project"" and ""repair"" my body.', 4: '1'}"
+334	334		202							{1: '1', 6: '1'}
+335	335		201							{1: '1', 2: '501360', 3: '14'}
+336	336		301							"{1: '1', 3: ""Serra stares at Dolores in shock. No matter how Serra looks at her, she appears entirely human. She can't even see a mechanical prosthetic on her.""}"
+337	337		301				DialogDisable			"{2: 'Serra', 3: ""What... do you mean? I'm not a doctor..."", 4: '1'}"
+338	338		202							{1: '1'}
+339	339		104						850.0	{1: '200|-40|-200', 2: '0.8'}
+340	340		301			DialogEnable				{3: 'Dolores puts on a wordless smile. She turns her face away to gaze at the aquarium beside her as though admiring its artificial landscape.'}
+341	341		306							{1: '1'}
+342	342		301							{3: 'But the massive tank contains no fish. The only inhabitants are a few oddly-shaped hermit crabs slowly crawling about.'}
+343	343		301							"{3: 'One of the hermit crabs appears to be searching for a new ""home,"" persistently exploring all the shells on the tank floor with its claws. Eventually, it picks a shell that meets all its requirements.'}"
+344	344		301							{3: 'The hermit crab slowly extracts itself from its old shell. Without protection, its soft, twisted body appears grotesquely vulnerable and hideous.'}
+345	345		301				DialogDisable			"{3: 'It carefully maneuvers its body to slide into the new shell. Apparently satisfied with its new ""home,"" the crab starts waving its pincers again and continues its search for food.'}"
+346	346		306							
+347	347		104						850.0	{1: '0|0|0', 2: '0.8'}
+348	348		201							{1: '1', 2: '501354', 3: '1'}
+349	349		301			DialogEnable				"{1: '1', 3: ""When she's done observing the hermit crab's performance, Dolores turns back to Serra with a lingering smile.""}"
+350	350		301							{2: 'Dolores', 3: 'The human body is far too fragile. Even the slightest injury or illness can break it. How very useless, no?', 4: '1'}
+351	351		301							{2: 'Dolores', 3: 'Mechanoids, on the other hand, are powerful, beautiful, and capable of anything.', 4: '1'}
+352	352		201							{1: '1', 2: '501360', 3: '14'}
+353	353		301							{1: '1', 2: 'Serra', 3: '...', 4: '1'}
+354	354		202							{1: '1'}
+355	355		301							"{3: ""A terrifying realization dawns on Serra, but the horror of it paralyzes her completely. She can't bring herself to vocalize her thought.""}"
+356	356		301							"{3: ""Dolores, however, reads Serra's thoughts from the terrified look on her face.""}"
+357	357		201							{1: '1', 2: '501354'}
+358	358		301							"{1: '1', 2: 'Dolores', 3: ""You're clever. What I want is a new mechanoid body."", 4: '1'}"
+359	359		301							"{2: 'Dolores', 3: ""I want Veronica's body."", 4: '1'}"
+360	360		201							{1: '1', 2: '501360', 3: '5'}
+361	361		301			RImgBg1Shake				"{1: '1', 2: 'Serra', 3: ""You're mad!!!"", 4: '1'}"
+362	362		202							{1: '1', 6: '1'}
+363	363		201							{1: '1', 2: '501354', 3: '1'}
+364	364		301							{1: '1', 3: 'Dolores breaks into a calm smile, looking as though she completely saw this reaction coming from Serra.'}
+365	365		301							{2: 'Dolores', 3: 'Still trying to act tough, huh?', 4: '1'}
+366	366		204							{1: '1', 2: '5'}
+367	367		301							"{2: 'Dolores', 3: 'There is no negotiating—unless, of course, you want to end up like ""him.""', 4: '1'}"
+368	368		202							{1: '1', 2: '2'}
+369	369		401							{1: '2', 2: '754'}
+370	370		301							{3: 'With a gesture from Dolores, the door slides open. With it, metallic footsteps echo through the room, drawing closer and closer.'}
+371	371		306							{1: '1'}
+372	372		201							{1: '1', 2: '500354'}
+373	373		301							"{1: '1', 3: ""It isn't, however, Overseer—but an ordinary, generic mechanoid that doesn't even appear to have any combat modules installed.""}"
+374	374		306							
+375	375		202							{1: '1', 6: '1'}
+376	376		201							{1: '1', 2: '501354', 4: '-400'}
+377	377		201							{1: '2', 2: '500354', 4: '600', 5: '-140', 6: '200'}
+378	378		203							{1: '2', 2: '0.4', 3: '400', 4: '-140', 5: '200'}
+379	379		301							"{1: '1', 3: ""It moves forward with slow yet steady steps and comes to a halt next to Dolores' bed.""}"
+380	380		301							{2: 'Nameless Mechanoid', 3: 'Ready to serve you, Master.', 4: '2'}
+381	381		301							{2: 'Dolores', 3: 'Who are you?', 4: '1'}
+382	382		301							{2: 'Nameless Mechanoid', 3: 'ID: 18702, codename: Roko.', 4: '2'}
+383	383		202							{1: '1', 2: '2', 6: '1'}
+384	384		201							{1: '1', 2: '501360', 3: '14', 7: '1'}
+385	385		301			PanelActor1Shake				{1: '1', 2: 'Serra', 3: 'Y-you are...', 4: '1'}
+386	386		301							{3: 'There is no mistaking who this mechanoid is, distorted as its voice is.'}
+387	387		202							{1: '1', 6: '1'}
+388	388		401							{1: '2', 2: '4387'}
+389	389		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+390	390		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory70.jpg'}
+391	391		201							{1: '1', 2: '500139', 7: '1'}
+392	392		301							"{1: '1', 3: 'Roko, who was desperately crawling through a pool of blood not too long ago, is now permanently imprisoned within this cold mechanoid shell—forever denied the ""freedom"" he so desperately craved.'}"
+393	393		205						850.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0', 4: '1', 5: '0.8'}
+394	394		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+395	395		205							{1: '999'}
+396	396		301							"{3: ""And the worst part of it is—he doesn't even know what's happened to him, no memory of who he once was.""}"
+397	397		202							{1: '1', 6: '1'}
+398	398		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+399	399		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1318.jpg'}
+400	400		201							{1: '1', 2: '501360', 3: '16', 7: '1'}
+401	401		301			RImgBg1Shake				{1: '1', 2: 'Serra', 3: 'Uncle Roko!!!', 4: '1'}
+402	402		202							{1: '1', 6: '1'}
+403	403		201							{1: '1', 2: '501354', 4: '-400'}
+404	404		201							{1: '2', 2: '500354', 4: '400', 5: '-140', 6: '200'}
+405	405		301							"{1: '1', 3: 'The mechanoid, however, shows no reaction, standing motionless as it awaits further commands from its ""Master""—Dolores.'}"
+406	406		301							{2: 'Dolores', 3: 'You may leave now.', 4: '1'}
+407	407		301							{2: 'Nameless Mechanoid', 3: 'Yes, Master.', 4: '2'}
+408	408		202							{1: '1', 2: '2'}
+409	409		301							"{3: ""The mechanoid housing Roko's consciousness turns around and exits the room with the same slow, measured steps.""}"
+410	410		201							{1: '1', 2: '501360', 3: '16'}
+411	411		301							{1: '1', 2: 'Serra', 3: '...', 4: '1'}
+412	412		202							{1: '1'}
+413	413		301							"{3: ""The dark room falls into absolute silence—save for Serra's tears dropping one by one onto the floor.""}"
+414	414		301							{3: 'What she just witnessed has completely shattered the last bit of resistance in her mind.'}
+415	415		201							{1: '1', 2: '501354', 4: '-400'}
+416	416		201							{1: '2', 2: '501360', 3: '17', 4: '400'}
+417	417		301							{1: '1', 3: 'Dolores waits patiently for the young mechanic to give her the answer she wants.'}
+418	418		204							{1: '2', 2: '16'}
+419	419		301							{3: 'After a long silence, Serra, desperate, finally gives her answer—she reaches out and clutches the silver letter opener gleaming on the table.'}
+420	420		401							{1: '2', 2: '5321'}
+421	421		301			PanelActor2Shake				{3: 'Instead of pointing the letter opener at Dolores, however, Serra points it at herself.'}
+422	422		301							{3: 'Her hand trembles as she musters what little resolve she still has in her.'}
+423	423		301				DialogDisable			{3: 'Only in death can she find redemption and escape—she must destroy her knowledge and skills along with her life.'}
+424	424		307							{1: 'She refuses to become a tool for evil.', 3: '55', 4: 'ffffffff'}
+425	425		301							{3: 'She refuses to become a tool for evil.'}
+426	426		307							{2: '1'}
+427	427		204							{1: '1', 2: '1'}
+428	428		301			DialogEnable				{2: 'Dolores', 3: 'Trying to kill yourself now? How very funny.', 4: '1'}
+429	429		301							"{2: 'Dolores', 3: ""Death is terrifying. Are you sure you're ready for that?"", 4: '1'}"
+430	430		301							"{2: 'Dolores', 3: ""When the blade pierces your flesh, the pain is excruciating. When your blood drains away, you're going to feel colder and colder..."", 4: '1'}"
+431	431		301							"{2: 'Dolores', 3: ""And when you die? You'll be lying in the pitch-black earth while the worms slowly devour that pretty face of yours... Still think it's worth it?"", 4: '1'}"
+432	432		301							{3: 'Dolores laughs softly, her venomous gaze cold as ice.'}
+433	433		204							{1: '1', 2: '5'}
+434	434		301							"{2: 'Dolores', 3: ""Even if you die, I'd still be able to extract your entire consciousness and transfer it into any mechanoid shell I choose."", 4: '1'}"
+435	435		301							"{2: 'Dolores', 3: ""All I need is your skills as a technician. Everything else about you, I'll just erase."", 4: '1'}"
+436	436		301							"{2: 'Dolores', 3: 'Then you\'ll truly become a ""tool"" that does exactly as I say.', 4: '1'}"
+437	437		204							{1: '1', 2: '1'}
+438	438		301							{2: 'Dolores', 3: 'So, put that thing down now.', 4: '1'}
+439	439		203							{1: '1', 2: '0.25', 3: '-300'}
+440	440		401							{1: '2', 2: '5321'}
+441	441		301			PanelActor2Shake				{3: 'Says Dolores as she takes the letter opener from Serra without so much as breaking a sweat.'}
+442	442		204							{1: '1'}
+443	443		301							"{2: 'Dolores', 3: ""Enough. Let's not waste any more time—we shouldn't keep Veronica waiting."", 4: '1'}"
+444	444		203						200.0	{1: '1', 2: '0.4', 3: '-200', 4: '-20'}
+445	445		203						450.0	{1: '2', 2: '0.4', 3: '480', 4: '-40'}
+446	446		204							{1: '1', 2: '2'}
+447	447		301		1		AniZhuanchangBegin			"{2: 'Dolores', 3: 'Now... let\'s begin the ""feast,"" shall we?', 4: '1'}"

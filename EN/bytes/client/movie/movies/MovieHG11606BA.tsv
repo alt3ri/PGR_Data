@@ -1,0 +1,127 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory210.png'}
+2	2		401							{1: '1', 2: '207'}
+3	3		301			DialogEnable				{3: '—Drip. Drop.'}
+4	4		301							{3: 'A streak of warm liquid flows down your cheek. With the buzz in your ears, you open your eyes to find the fading moonlight behind a cloudy night sky. The small building that trapped you is long gone.'}
+5	5		302							{2: 'Changyu?', 3: '6', 4: 'Where the hell is the roof?', 5: '6'}
+6	6		502				RImgBg1Disable			{1: 'DialogDisable'}
+7	7		101			RImgBg1Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory93.png'}
+8	8		301			DialogEnable				{3: 'Hoping to take stock of your surroundings, you try to get up, only to find yourself pressed against by something heavy. Something that is dripping the liquid running down your face.'}
+9	9		302							{2: 'Is that... vital fluid?', 3: '10'}
+10	10		301							"{1: '1', 3: ""Your vision trails downward, and you find Changyu's body lying on yours.""}"
+11	11		302							{2: '?!', 3: '12', 4: 'Changyu!', 5: '12'}
+12	12		201							{1: '1', 2: '500166'}
+13	13		301							{1: '1', 2: 'Lucia', 3: 'Commandant!', 4: '1'}
+14	1013		301							{3: 'Hearing your voice, Lucia knocks out the remaining guard and hurries toward you with the rest of Gray Raven.'}
+15	14		302							{2: 'Is everyone alright?', 3: '15'}
+16	15		301							"{2: 'Lucia', 3: ""Everyone's fine. It's just a flashbang."", 4: '1'}"
+17	16		302							{2: 'Is Changyu...', 3: '17'}
+18	17		201							{1: '1', 2: '1031001'}
+19	18		301							"{1: '1', 2: 'Liv', 3: ""Diagnosing... His M.I.N.D. hasn't been damaged, and his body isn't critically wounded... The vital fluid he's bleeding is probably from injuries he took during the battle..."", 4: '1'}"
+20	19		302							"{2: ""But he's not waking up—"", 3: '20'}"
+21	20		201							{1: '1', 2: '500026'}
+22	21		301							{1: '1', 2: 'Lee', 3: 'Hey, you! How long are you going to lie there?', 4: '1'}
+23	22		301							{3: 'Annoyed, Lee grabs Changyu by his collar and lifts him off his feet.'}
+24	23		201							{1: '1', 2: '500225', 3: '6'}
+25	24		301							"{1: '1', 2: 'Changyu', 3: ""...Think of the children, Lee. Can't you just be a smidge gentler?"", 4: '1'}"
+26	25		201							{1: '1', 2: '500026', 3: '10'}
+27	26		301							{1: '1', 2: 'Lee', 3: 'Not for you.', 4: '1'}
+28	27		202							{1: '1', 6: '1'}
+29	28		301							{3: 'Lee lets go of him, and Changyu lands—except he barely catches himself, no sign of the dexterous fighter he has been the whole night. Staggered, he leans on the broken wall next to him, rubbing his eyes clean of the vital fluid that seeped in.'}
+30	29		201							{1: '1', 2: '500225', 3: '14'}
+31	30		301							{1: '1', 2: 'Changyu', 3: 'A flashbang... I thought the wacko was bringing us down with him with an explosive.', 4: '1'}
+32	31		302							"{2: ""Where's their boss, by the way?"", 3: '32'}"
+33	32		201							{1: '1', 2: '500026'}
+34	33		301							{1: '1', 2: 'Lee', 3: 'He escaped—thanks to a moron who smashed a hole in the wall for him before the flashbang went off.', 4: '1'}
+35	34		201							{1: '1', 2: '500225', 3: '2'}
+36	35		301							"{1: '1', 2: 'Changyu', 3: ""C'mon, I couldn't have planned for everything, could I?"", 4: '1'}"
+37	36		301							"{2: 'Changyu', 3: ""Fussing over every detail's gonna give you wrinkles, Construct or not."", 4: '1'}"
+38	37		201							{1: '1', 2: '500026'}
+39	38		301							"{1: '1', 2: 'Lee', 3: ""That's not true!"", 4: '1'}"
+40	39		202							{1: '1', 6: '1'}
+41	40		301							{3: 'You stand up to find all the mechanoid guards you fought now decimated.'}
+42	41		302							{2: 'Enemy status?', 3: '42'}
+43	42		201							{1: '1', 2: '500026'}
+44	43		301							"{1: '1', 2: 'Lee', 3: ""We took care of the rest of them when you were both out. Not that there were many of them left—this doesn't seem to be their headquarters."", 4: '1'}"
+45	44		203							{1: '1', 2: '0.25', 3: '-400'}
+46	45		201							{1: '2', 2: '500225', 4: '400'}
+47	46		301							{1: '1', 2: 'Changyu', 3: 'A temporary base of operation, then.', 4: '2'}
+48	47		301							{2: 'Lee', 3: 'Enough with this. Care to explain what just happened?', 4: '1'}
+49	48		204							{1: '2', 2: '6'}
+50	49		301							{2: 'Changyu', 3: 'Oh. Well...', 4: '2'}
+51	50		301							{3: 'Changyu scratches his head, embarrassed.'}
+52	51		202							{1: '1', 6: '1'}
+53	52		203							{1: '2', 2: '0.25', 3: '0'}
+54	53		204							{1: '2'}
+55	54		301							"{2: 'Changyu', 3: ""Sorry for keeping this from y'all."", 4: '2'}"
+56	55		301							{2: 'Changyu', 3: 'You were discovered the first time you set foot on the dock.', 4: '2'}
+57	56		301							"{2: 'Changyu', 3: ""These were some dirty, rich folks screwing around. They didn't think Babylonia would get involved."", 4: '2'}"
+58	57		301							"{2: 'Changyu', 3: ""And when they realized that we knew each other, they came to me with an offer: remove the Babylonians, and they'll remove some of the more audacious terms on their deal with Akdilek."", 4: '2'}"
+59	58		301							"{2: 'Changyu', 3: ""Audacious terms that I'd have to follow to get this—"", 4: '2'}"
+60	59		301							{3: 'He picks up the leather suitcase he threw aside and takes out an authenticator, carefully inspecting it.'}
+61	60		301							"{2: 'Changyu', 3: ""Phew... Everything's intact. Luckily I secured it when the guards came swinging."", 4: '2'}"
+62	61		302							{2: 'You secured it during a fight like that?', 3: '62'}
+63	62		301							"{2: 'Changyu', 3: ""Well, it's important."", 4: '2'}"
+64	63		302							"{2: 'But you just threw it to the side...', 3: '64', 4: ""You weren't protecting it during the explosion."", 5: '64'}"
+65	64		204							{1: '2', 2: '6'}
+66	65		301							{2: 'Changyu', 3: 'Priorities, priorities...', 4: '2'}
+67	66		301							"{2: 'Changyu', 3: ""I told you I wanted a win-win situation... But if I have to lose one, I'd rather lose this."", 4: '2'}"
+68	67		301							{3: 'He gives the authenticator in his hand a spin. Then he walks away and sits on a piece of rubble, mumbling to himself.'}
+69	68		302							"{2: ""Why didn't you tell me the plan?"", 3: '1068'}"
+70	1068		204							{1: '2', 2: '14'}
+71	69		301							{2: 'Changyu', 3: 'Would you have said yes?', 4: '2'}
+72	70		302							{2: 'No.', 3: '71', 4: 'Maybe.', 5: '72'}
+73	71	73	301							{2: 'Changyu', 3: 'Duh! What do you think?', 4: '2'}
+74	72		301							"{2: 'Changyu', 3: ""Even if you agreed, your buddies here wouldn't!"", 4: '2'}"
+75	73		202							{1: '2', 6: '1'}
+76	74		201							{1: '1', 2: '500166'}
+77	75		301							{1: '1', 2: 'Lucia', 3: 'What exactly was the plan?', 4: '1'}
+78	76		302							{2: 'Changyu was going to—', 3: '77', 4: '...', 5: '79'}
+79	77		201							{1: '1', 2: '500225', 3: '3'}
+80	78	81	301							"{1: '1', 2: 'Changyu', 3: ""Look! You're here in one piece!"", 4: '1'}"
+81	79		201							{1: '1', 2: '500225', 3: '2'}
+82	80		301							"{2: 'Changyu', 3: ""It doesn't matter, as long as 【kuroname】 is here in one piece."", 4: '1'}"
+83	81		302							"{2: ""But we've only discovered their scheme."", 3: '1083', 4: ""But we haven't found those involved."", 5: '1083'}"
+84	1083		204							{1: '1', 2: '1'}
+85	82		301							"{2: 'Changyu', 3: ""I guess you're looking for this?"", 4: '1'}"
+86	83		301							{3: 'Changyu transfers you a data file.'}
+87	84		301							"{2: 'Changyu', 3: 'I just received this from Sophia. She managed to put together a list of names once she was done ""cleaning."" It should help you track them down, wherever they\'re hiding now.', 4: '1'}"
+88	85		302							"{2: ""So, all you're after is this device?"", 3: '86'}"
+89	86		301							{2: 'Changyu', 3: 'Yep. Trades can resume once we get to quickly identify counterfeits with this thing.', 4: '1'}
+90	87		302							"{2: ""You could've left me when you got it."", 3: '88'}"
+91	88		301							{2: 'Changyu', 3: 'Leave you? Have you forgotten the last thing I said?', 4: '1'}
+92	89		301							{3: 'Changyu raises three fingers, the way he did the day before.'}
+93	90		204							{1: '1', 2: '2'}
+94	91		301							"{2: 'Changyu', 3: ""I told you I'd protect you, 【kuroname】, and I never go back on my word."", 4: '1'}"
+95	92		302							"{2: ""That doesn't sound like a good deal to you."", 3: '93'}"
+96	93		204							{1: '1', 2: '1'}
+97	94		301							"{2: 'Changyu', 3: ""Why? Because I didn't exploit everyone?"", 4: '1'}"
+98	95		301							"{2: 'Changyu', 3: ""Sure, I probably should've left sooner for Akdilek's sake."", 4: '1'}"
+99	96		301							"{2: 'Changyu', 3: ""But I'm the agent on the scene, and I say you are more valuable than this device, so YOU are my priority."", 4: '1'}"
+100	97		301							"{2: 'Changyu', 3: ""And I trust you. And I trust me. That's why it was always going to end in our favor."", 4: '1'}"
+101	98		302							{2: 'Even though you thought it was a real bomb?', 3: '99'}
+102	99		204							{1: '1', 2: '6'}
+103	100		301							{2: 'Changyu', 3: 'Ugh... Sure.', 4: '1'}
+104	101		204							{1: '1', 2: '2'}
+105	102		301							{3: 'Awkwardly he smiles, recalling how he was on the verge of a breakdown during the heat of the moment.'}
+106	103		204							{1: '1', 2: '1'}
+107	104		301							"{2: 'Changyu', 3: ""Anyway, it's lovely how everything went so smoothly."", 4: '1'}"
+108	105		301							"{2: 'Changyu', 3: ""I assume you're going after our escapee as well?"", 4: '1'}"
+109	106		302							"{2: ""That's part of the job."", 3: '107', 4: 'This data is more than enough.', 5: '107'}"
+110	107		301							"{2: 'Changyu', 3: ""Then I guess it's fair to say we've killed two birds with one stone."", 4: '1'}"
+111	1108		204							{1: '1', 2: '13'}
+112	108		301							{2: 'Changyu', 3: 'Wait, no—three birds with one stone...', 4: '1'}
+113	109		302							{2: 'Three birds?', 3: '110'}
+114	110		204							{1: '1', 2: '6'}
+115	111		301							"{3: ""Changyu's and your eyes meet, and he quickly looks away with a murmur.""}"
+116	112		301							"{2: 'Changyu', 3: ""I've got everything I'm after, with a few benefits thrown in... Sounds like the best deal to me..."", 4: '1'}"
+117	113		302							{2: 'Hm?', 3: '114'}
+118	114		204							{1: '1', 2: '2'}
+119	115		301							"{2: 'Changyu', 3: ""Nothing! Congratulations on a mission well executed! I'll take my leave now, see ya!"", 4: '1'}"
+120	116		202							{1: '1', 6: '1'}
+121	117		301							{3: 'Changyu waves everyone goodbye, before hopping over the crumpled walls to a small, hidden path. But then he stops, and he turns around to look at you.'}
+122	118		201							{1: '1', 2: '500225', 3: '1'}
+123	119		301							"{1: '1', 2: 'Changyu', 3: ""I'll see you soon, 【kuroname】."", 4: '1'}"
+124	120		301							{3: 'He smiles at you and waves one last time, with a sincerity that you can perhaps recognize now.'}
+125	121		301							"{2: 'Changyu', 3: ""Next time I'll be an open book."", 4: '1'}"
+126	122		301		1		AniZhuanchangBegin			{3: 'With that, Changyu dashes away through the ruins, leaping from one broken wall to another, looking almost lighter than he ever was, as he vanishes from your sight...'}

@@ -1,0 +1,52 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory273.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500026', 4: '400'}
+4	4		201							{1: '2', 2: '1031001', 4: '-400'}
+5	5		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'The Core Area is up ahead.', 4: '2'}
+6	6		301							"{2: 'Liv', 3: ""Once we're inside, we might be facing more than just Roland alone. The other Ascendants..."", 4: '2'}"
+7	7		301							"{2: 'Lee', 3: ""It's not unwise to wait for backup before advancing. What do you think, Lucia?"", 4: '1'}"
+8	500		202							{1: '1', 2: '2', 6: '1'}
+9	8		201							{1: '1', 2: '500166'}
+10	9		301							{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+11	10		302							{2: 'Lucia?', 3: '11'}
+12	11		301							{2: 'Lucia', 3: 'Ah! Sorry, I...', 4: '1'}
+13	12		201							{1: '1', 2: '1031001'}
+14	13		301							{1: '1', 2: 'Liv', 3: 'Lucia, are you still thinking about what Roland said?', 4: '1'}
+15	14		201							{1: '1', 2: '500166', 3: '5'}
+16	15		301							"{1: '1', 2: 'Lucia', 3: ""Yeah. Even though I've been catching glimpses of her projections along the way, I still don't understand why Luna would become an agent."", 4: '1'}"
+17	16		301							"{2: 'Lucia', 3: ""In my memories... she was the kind of person who'd save up food for a neighbor's children. But now..."", 4: '1'}"
+18	17		302							{2: 'Should we look into it?', 3: '18'}
+19	18		301							{2: 'Lucia', 3: 'You mean... looking into her records here with the Spear of F.O.S.?', 4: '1'}
+20	19		201							{1: '1', 2: '500026'}
+21	20		301							"{1: '1', 2: 'Lee', 3: ""I hope her mind hasn't been altered by the Punishing Virus like the other Corrupted."", 4: '1'}"
+22	21		302							"{2: ""If she has, she wouldn't be able to retain her mind."", 3: '22'}"
+23	22		301							"{2: 'Lee', 3: ""We've seen so many unbelievable changes on our journey, I won't be surprised to see one more. It's not unprecedented to the creatures of Earth."", 4: '1'}"
+24	23		201							{1: '1', 2: '500166', 3: '5'}
+25	24		301							"{1: '1', 2: 'Lucia', 3: ""...If she has been completely taken over by the Punishing Virus as you said, and she's only imitating Luna's mind—"", 4: '1'}"
+26	25		301							"{2: 'Lucia', 3: ""Even though I'm her sister, I... will stop her."", 4: '1'}"
+27	26		302							"{2: ""Let's find out."", 3: '27'}"
+28	27		301							{3: 'So much has happened during the time when they were apart, and now the two sisters are walking down drastically different paths.'}
+29	28		301							{3: 'Now, Lucia is looking for information on the Ascendants, while trying to find out why Luna turned into one. Whatever answer has been hidden from her in the past, today is the day when all is revealed.'}
+30	29		301				AniZhuanchangBegin			"{2: 'Lucia', 3: ""Let's uncover the truth."", 4: '1'}"
+31	30		202							{1: '1', 6: '1'}
+32	31		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory268.png'}
+33	32		301			AniZhuanchangEnd				{3: 'Lucia clutches her weapon and smiles, bitterly, as she steps forward, and the four of you walk alongside the bridge for a while.'}
+34	33		301							{3: 'Suddenly, you can hear the low rumbling of machines running coming from below.'}
+35	34		201							{1: '1', 2: '500026', 4: '400'}
+36	35		201							{1: '2', 2: '1031001', 3: '7', 4: '-400'}
+37	36		301							{1: '1', 2: 'Lee', 3: 'Wait... Liv, do you hear anything?', 4: '1'}
+38	37		301							"{2: 'Liv', 3: ""The sound of a machine activated, dull and heavy. It's coming from the giant pillar in the Core Area up ahead."", 4: '2'}"
+39	38		301							"{2: 'Lee', 3: ""An underground industrial complex of this size must consist of a megaton electromagnetic platform lift to connect the surface and the subsurface area. It's most likely to be in the Core Area ahead."", 4: '1'}"
+40	39		302							{2: 'Hold on, what is that?', 3: '501'}
+41	501		202							{1: '1', 2: '2', 6: '1'}
+42	40		201							{1: '1', 2: '500263'}
+43	41		301							{1: '1', 3: 'Lee swiftly draws his gun and aims at where you are looking. What he is aiming at, however, is a projection without a body.', 4: '1'}
+44	42		302							{2: 'Is that what Huaxu actually looks like?', 3: '43'}
+45	43		301							{3: 'Lucia quickly reaches out and tries to grab the specter, but her hand passes through without interruption.', 4: '1'}
+46	44		201							{1: '1', 2: '500026'}
+47	45		301							{1: '1', 2: 'Lee', 3: 'Just another projection from the Spear of F.O.S., probably the same kind we saw back in the ruins.', 4: '1'}
+48	46		201							{1: '1', 2: '500263'}
+49	47		301							{3: 'Huaxu hovers ahead of you in silence, as if guiding you further inside.', 4: '1'}
+50	48		201							{1: '1', 2: '500166', 3: '5'}
+51	49		301		1		AniZhuanchangBegin			{1: '1', 2: 'Lucia', 3: 'We should check it out, Commandant.', 4: '1'}

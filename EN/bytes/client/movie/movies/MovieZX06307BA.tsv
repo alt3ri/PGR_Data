@@ -1,0 +1,388 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1398.jpg'}
+2	2		401						400.0	{1: '2', 2: '4808'}
+3	3		401							{1: '1', 2: '7100'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '2'}
+5	5		104							{1: '0|0|-5', 2: '0.1'}
+6	6		401						200.0	{1: '2', 2: '9389039'}
+7	7		104							{1: '0|0|0', 2: '0.1'}
+8	8		201							{1: '1', 2: '501449', 3: '5', 4: '600'}
+9	9		203							{1: '1', 2: '0.3'}
+10	10		301			DialogEnable				"{1: '1', 3: ""Even as an incomplete frame, Rosetta holds her own. She slices through Dulova's bullets with precise strikes, then exploits the frame's high-speed flight capability to close the distance in a blur.""}"
+11	11		301			DialogShake	DialogDisable			{2: 'Rosetta', 3: 'Your crusade ends here, Dulova! For every life fighting on the other front.', 4: '1'}
+12	12		104							{1: '0|0|-200', 2: '1'}
+13	13		401							{1: '2', 2: '5311'}
+14	14		203						100.0	{1: '1', 2: '0.13', 4: '-50', 5: '-100'}
+15	15		401							{1: '2', 2: '4009'}
+16	16		202							{1: '1'}
+17	17		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+18	18		502							{1: 'RImgBg1Shake2Loop'}
+19	19		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+20	20		201							{1: '1', 2: '500209'}
+21	21		301			DialogEnable	DialogDisable			{1: '1', 2: 'Dulova', 3: '...Damn it!', 4: '1'}
+22	22		402							{1: '4009'}
+23	23		505							{1: 'RImgBg1Shake2Loop'}
+24	24		502							{1: 'RImgBg1Shake2Disable'}
+25	25		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+26	26		401							{1: '2', 2: '11106008'}
+27	27		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+28	28		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+29	29		502							{1: 'RImgBg1Shake'}
+30	30		401							{1: '2', 2: '959'}
+31	31		203						100.0	{1: '1', 2: '0.13', 4: '-70', 5: '100'}
+32	32		202							{1: '1'}
+33	33		301			DialogEnable	DialogDisable			"{3: ""With a final strike, Rosetta drives her blade into Dulova's frame. Dulova reels, balance shattered, and crashes heavily into the skeletal remains of the building at her back.""}"
+34	34		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1398.jpg', 3: '0', 4: '1', 5: '1'}
+35	35		104						1050.0	{1: '0|0|-300', 2: '0', 4: '3'}
+36	36		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1398.jpg'}
+37	37		104							{1: '0|0|-300', 2: '0'}
+38	38		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+39	39		201							{1: '1', 2: '500209', 5: '-100'}
+40	40		401							{1: '2', 2: '5496'}
+41	41		203						550.0	{1: '1', 2: '0.5', 3: '-10', 4: '-50'}
+42	42		203						500.0	{1: '1', 2: '0.5'}
+43	43		402						200.0	{1: '5496'}
+44	44		301			DialogEnable				{2: 'Dulova', 3: 'Cough... If only the bionic whales had all returned...', 4: '1'}
+45	45		202							{1: '1'}
+46	46		201							{1: '1', 2: '501449', 3: '5'}
+47	47		301				DialogDisable			{1: '1', 2: 'Rosetta', 3: 'So it was you! You called them back!', 4: '1'}
+48	48		502							{1: 'RImgBg1Shake'}
+49	49		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+50	50		202						200.0	{1: '1', 6: '1'}
+51	51		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviezidan.prefab', 2: '2', 5: '1'}
+52	52		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviezidan.prefab', 2: '2', 5: '7'}
+53	53		401							{1: '2', 2: '4808'}
+54	54		511							{1: '7', 2: '0', 3: '0|-300|0', 4: '180'}
+55	55		511						100.0	{1: '1', 2: '0', 3: '0|100|0', 4: '180'}
+56	56		401							{1: '2', 2: '4808'}
+57	57		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviezidan.prefab', 2: '2', 5: '2'}
+58	58		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviezidan.prefab', 2: '2', 5: '8'}
+59	59		511							{1: '8', 2: '0', 3: '0|410|0', 4: '180'}
+60	60		511						100.0	{1: '2', 2: '0', 3: '0|-30|0', 4: '180'}
+61	61		401							{1: '2', 2: '4808'}
+62	62		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviezidan.prefab', 2: '2', 5: '3'}
+63	63		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviezidan.prefab', 2: '2', 5: '9'}
+64	64		511							{1: '9', 2: '0', 3: '0|-450|0', 4: '180'}
+65	65		511						100.0	{1: '3', 2: '0', 3: '0|200|0', 4: '180'}
+66	66		401							{1: '2', 2: '4808'}
+67	67		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviezidan.prefab', 2: '2', 5: '4'}
+68	68		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviezidan.prefab', 2: '2', 5: '10'}
+69	69		511							{1: '10', 2: '0', 3: '0|500|0', 4: '180'}
+70	70		511						100.0	{1: '4', 2: '0', 3: '0|-230|0', 4: '180'}
+71	71		401							{1: '2', 2: '4808'}
+72	72		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviezidan.prefab', 2: '2', 5: '5'}
+73	73		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviezidan.prefab', 2: '2', 5: '11'}
+74	74		511							{1: '11', 2: '0', 3: '0|-520|0', 4: '180'}
+75	75		511						100.0	{1: '5', 2: '0', 3: '0|150|0', 4: '180'}
+76	76		401							{1: '2', 2: '4808'}
+77	77		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviezidan.prefab', 2: '2', 5: '6'}
+78	78		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviezidan.prefab', 2: '2', 5: '6'}
+79	79		511							{1: '6', 2: '0', 3: '0|490|0', 4: '180'}
+80	80		511						100.0	{1: '6', 2: '0', 3: '0|-120|0', 4: '180'}
+81	81		301			DialogEnable				{3: 'Regaining her balance, Dulova fills the air with a massive volley of bullets aimed at Rosetta.'}
+82	82		201							{1: '1', 2: '500209'}
+83	83		301			PanelActor1Shake	DialogDisable			{1: '1', 2: 'Dulova', 3: 'Spare me the theatrics! You saw the devices yourself!', 4: '1'}
+84	84		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+85	85		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviezidan.prefab', 2: '2', 5: '17'}
+86	86		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviezidan.prefab', 2: '2', 5: '18'}
+87	87		401							{1: '2', 2: '4808'}
+88	88		511							{1: '18', 2: '0', 3: '0|-300|0', 4: '180'}
+89	89		511						100.0	{1: '1', 2: '0', 3: '0|100|0', 4: '180'}
+90	90		401							{1: '2', 2: '4808'}
+91	91		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviezidan.prefab', 2: '2', 5: '19'}
+92	92		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviezidan.prefab', 2: '2', 5: '20'}
+93	93		511							{1: '19', 2: '0', 3: '0|410|0', 4: '180'}
+94	94		511						100.0	{1: '20', 2: '0', 3: '0|-30|0', 4: '180'}
+95	95		401							{1: '2', 2: '4808'}
+96	96		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviezidan.prefab', 2: '2', 5: '21'}
+97	97		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviezidan.prefab', 2: '2', 5: '22'}
+98	98		511							{1: '21', 2: '0', 3: '0|-450|0', 4: '180'}
+99	99		511							{1: '22', 2: '0', 3: '0|200|0', 4: '180'}
+100	100		401							{1: '2', 2: '6310'}
+101	101		203						250.0	{1: '1', 2: '0.2', 3: '-900'}
+102	102		202							{1: '1'}
+103	103		301			DialogEnable	DialogDisable			{3: 'While projectiles erupt from hidden ports in her frame, she herself closes the distance in a burst of inhuman speed.'}
+104	104		302							"{2: ""Now, Rosetta, her guard's open!"", 3: '105'}"
+105	105		401							{1: '2', 2: '4387'}
+106	106		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+107	107		104							{1: '0|0|0', 2: '0'}
+108	108		201							{1: '1', 2: '501449', 3: '4'}
+109	109		301			DialogEnable	DialogDisable			{1: '1', 2: 'Rosetta', 3: 'Targeting the joints!', 4: '1'}
+110	110		202							{1: '1', 6: '1'}
+111	111		104							{1: '0|0|-100', 2: '0.3'}
+112	112		201							{1: '1', 2: '500209'}
+113	113		401							{1: '2', 2: '959'}
+114	114		203						200.0	{1: '1', 2: '0.3', 5: '-100'}
+115	115		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2', 5: '23'}
+116	116		511						200.0	{1: '23', 2: '0', 3: '-400|-200|0'}
+117	117		401							{1: '2', 2: '4660'}
+118	118		203							{1: '1', 2: '0.5', 4: '-100', 5: '-100'}
+119	119		502						1000.0	{1: 'PanelActor1Shake'}
+120	120		203							{1: '1', 2: '0.12', 3: '-10', 4: '-50', 5: '-100'}
+121	121		401						400.0	{1: '2', 2: '4660'}
+122	122		505							{1: 'PanelActor1Shake'}
+123	123		203							{1: '1', 2: '0.13', 5: '-100'}
+124	124		401							{1: '2', 2: '4660'}
+125	125		301			DialogEnable				"{3: ""The light sword strikes Dulova's massive claw with a piercing shriek of splitting metal. She staggers but doesn't fall; instead, spike-like mechanisms shoot from beneath her body, digging into the ground to arrest her momentum.""}"
+126	126		301			DialogShake				{2: 'Dulova', 3: 'Cough... To think a lab specimen would turn her teeth on me...', 4: '1'}
+127	127		302							"{2: 'They were never specimens.', 3: '128', 4: ""They're true warriors."", 5: '128'}"
+128	128		301			PanelActor1Shake				"{2: 'Dulova', 3: ""Specimens, all of you! Wondering why my frame resembles Amberia's?"", 4: '1'}"
+129	129		301			PanelActor1Shake				{2: 'Dulova', 3: 'After her failure, we ran experiment after experiment, until we perfected a stable modification protocol!', 4: '1'}
+130	130		302							{2: '...Forest Guards.', 3: '131'}
+131	131		301							{2: 'Dulova', 3: 'Correct. Every captive became data. And that data built the foundation for the enhancements of us Frostheart Warlords.', 4: '1'}
+132	132		301				DialogDisable			{2: 'Dulova', 3: 'A pity, really. With more subjects... more patriots... we could have achieved far more.', 4: '1'}
+133	133		202						200.0	{1: '1', 6: '1'}
+134	134		201							{1: '1', 2: '501449', 3: '4', 4: '-450'}
+135	135		201							{1: '2', 2: '500209', 4: '600'}
+136	136		203							{1: '1', 2: '0.13', 3: '-100'}
+137	137		203						130.0	{1: '2', 2: '0.13', 3: '300'}
+138	138		401							{1: '2', 2: '9342060'}
+139	139		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash.prefab', 2: '2'}
+140	140		203							{1: '1', 2: '0.13', 3: '-450'}
+141	141		401							{1: '2', 2: '2922'}
+142	142		203						400.0	{1: '2', 2: '0.13', 3: '600'}
+143	143		203							{1: '1', 2: '0.13', 3: '-100'}
+144	144		203						130.0	{1: '2', 2: '0.13', 3: '300'}
+145	145		401							{1: '2', 2: '9342060'}
+146	146		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash.prefab', 2: '2'}
+147	147		203							{1: '1', 2: '0.13', 3: '-500'}
+148	148		203							{1: '2', 2: '0.13', 3: '500'}
+149	149		402							{1: '2922'}
+150	150		301			DialogEnable				{3: 'The battle rages on. Rosetta grows more attuned to her frame, her evasive maneuvers and laser counterattacks merging into a seamless, lethal dance. Dulova, in stark contrast, abandons all finesse. She relies purely on overwhelming power, pushing her frame so hard its surface glows with the ominous red of overload.'}
+151	151		204							{1: '1', 2: '5'}
+152	152		301							{2: 'Rosetta', 3: 'What gives you the right to treat lives as data? How many never left your lab?!', 4: '1'}
+153	153		301				DialogDisable			"{2: 'Dulova', 3: ""Before the Union's destiny, they are statistics. Once Amalgamators and humanoid-hybrids are realized, every sacrifice will be sanctified as glory!"", 4: '2'}"
+154	154		302							{2: 'Break through, Rosetta!', 3: '155'}
+155	155		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+156	156		204							{1: '1', 2: '17'}
+157	157		401						700.0	{1: '2', 2: '8510113'}
+158	158		104							{1: '0|0|0', 2: '0.15'}
+159	159		203							{1: '1', 2: '0.15', 3: '35', 5: '-100'}
+160	160		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash.prefab', 2: '2', 5: '13'}
+161	161		511							{1: '13', 2: '0', 3: '100|0|0'}
+162	162		402							{1: '8510113'}
+163	163		203							{1: '2', 2: '0.15', 3: '600', 5: '-200'}
+164	164		202							{1: '2', 6: '1'}
+165	165		201							{1: '15', 2: '500209', 4: '600', 6: '-200', 7: '1'}
+166	166		401							{1: '2', 2: '844007'}
+167	167		502							{1: 'RImgBg1Shake'}
+168	168		301			DialogEnable				"{1: '1', 3: ""This is the moment. Seizing it, Rosetta ignites all thrusters and drives directly into Dulova's defensive spikes. The clash instantly becomes a primal contest of raw strength.""}"
+169	169		301							{2: 'Rosetta', 3: 'No one asked for this glory! No one wanted to be your sacrifice!', 4: '1'}
+170	170		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+171	171		401							{1: '2', 2: '18511011'}
+172	172		203							{1: '1', 2: '0.13', 3: '-400', 5: '-100'}
+173	173		203							{1: '15', 2: '0.13', 3: '200', 5: '-200'}
+174	174		301							"{2: 'Dulova', 3: ""As the Arctic people, our only purpose is to serve the Union's ascent. Everything else is sentiment."", 4: '15'}"
+175	175		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+176	176		401							{1: '2', 2: '10042605'}
+177	177		204							{1: '1', 2: '4'}
+178	178		203							{1: '1', 2: '0.13', 3: '35', 5: '-100'}
+179	179		203							{1: '15', 2: '0.13', 3: '600', 5: '-200'}
+180	180		301							"{2: 'Rosetta', 3: ""It's this arrogance that has brought the Arctic to such—"", 4: '1'}"
+181	181		401							{1: '2', 2: '18511011'}
+182	182		203							{1: '1', 2: '0.13', 3: '-400', 5: '-100'}
+183	183		203							{1: '15', 2: '0.13', 3: '200', 5: '-200'}
+184	184		301							"{2: 'Dulova', 3: 'These are growing pains, Forest Guard. History belongs to the victor. When the Union unifies the world, every ""failure"" will be remembered as noble sacrifice.', 4: '15'}"
+185	185		301							{2: 'Dulova', 3: 'For our fallen, you should be fulfilling your purpose, not hindering it!', 4: '15'}
+186	186		401							{1: '2', 2: '4548'}
+187	187		203							{1: '1', 2: '1', 3: '-350', 5: '-100'}
+188	188		203							{1: '15', 2: '1', 3: '250', 5: '-200'}
+189	189		204							{1: '1', 2: '8'}
+190	190		301							{2: 'Rosetta', 3: 'My purpose...', 4: '1'}
+191	191		402							{1: '4548'}
+192	192		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+193	193		401							{1: '2', 2: '18511011'}
+194	194		204							{1: '1', 2: '5'}
+195	195		203							{1: '1', 2: '0.13', 3: '-200', 5: '-100'}
+196	196		203							{1: '15', 2: '0.13', 3: '400', 5: '-200'}
+197	197		301			DialogShake				{2: 'Rosetta', 3: '...is to end your schemes, Dulova!', 4: '1'}
+198	198		301			PanelActor15Shake	DialogDisable			{2: 'Dulova', 3: 'What...?!', 4: '15'}
+199	199		401							{1: '2', 2: '6310'}
+200	200		203						100.0	{1: '1', 2: '0.13', 3: '-200', 4: '70', 5: '-120'}
+201	201		202						100.0	{1: '1'}
+202	202		203						300.0	{1: '15', 2: '0.13', 4: '-68', 5: '-100'}
+203	203		401							{1: '2', 2: '9342060'}
+204	204		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieGlow.prefab', 2: '3', 5: '14'}
+205	205		511							{1: '14', 2: '0', 3: '378|-200|0'}
+206	206		205						100.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '0', 4: '0.9', 5: '0.1'}
+207	207		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '0.9', 4: '0', 5: '0.1'}
+208	208		201							{1: '2', 2: '500209', 5: '-68', 6: '-100', 7: '1'}
+209	209		202							{1: '15', 6: '1'}
+210	210		301			DialogEnable	DialogDisable			"{1: '1', 3: ""In the split second before their power balance breaks, Rosetta accelerates upward. Dulova lunges, and meets empty air. Before she can recover, Rosetta hurls one light sword, pinning Dulova's massive claw to the ground, while the other—""}"
+211	211		401							{1: '1', 2: '36'}
+212	212		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieGlow.prefab', 2: '3', 5: '15'}
+213	213		401							{1: '2', 2: '4796'}
+214	214		511							{1: '15', 2: '0', 3: '-410|262|0'}
+215	215		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryJianXue.prefab', 2: '3'}
+216	216		205						100.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '0', 4: '0.9', 5: '0.1'}
+217	217		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '0.9', 4: '0', 5: '0.1'}
+218	218		401							{1: '2', 2: '4408'}
+219	219		301			DialogEnable				"{3: ""—spears straight through Dulova's humanoid torso.""}"
+220	220		401							{1: '2', 2: '4387'}
+221	221		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryJianXue.prefab'}
+222	222		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+223	223		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieGlow.prefab', 5: '14'}
+224	224		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieGlow.prefab', 5: '15'}
+225	225		401							{1: '1', 2: '358'}
+226	226		301							{2: 'Dulova', 3: 'So... in the end, time defeated me.', 4: '2'}
+227	227		301							"{3: ""Through the M.I.N.D. connection with Rosetta, you sense a quiet ebbing from Dulova's form: her life force, nearing its end.""}"
+228	228		301				DialogDisable			"{2: 'Dulova', 3: ""Puff... You're going to tell me I was wrong again?"", 4: '2'}"
+229	229		202							{1: '2'}
+230	230		302							{2: 'Puff...?', 3: '231'}
+231	231		201							{1: '1', 2: '501449', 3: '3'}
+232	232		301			DialogEnable	DialogDisable			{1: '1', 2: 'Rosetta', 3: '...', 4: '1'}
+233	233		202							{1: '1'}
+234	234		201							{1: '1', 2: '500209', 5: '-50'}
+235	235		401							{1: '2', 2: '5275'}
+236	236		502							{1: 'PanelActor1Shake'}
+237	237		205						350.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '0', 4: '0.5', 5: '0.3'}
+238	238		203							{1: '1', 2: '0.5', 4: '-100'}
+239	239		205						800.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '0.5', 4: '0', 5: '2'}
+240	240		401							{1: '2', 2: '4139'}
+241	241		203						550.0	{1: '1', 2: '0.5', 4: '-150'}
+242	242		205							{1: '1005', 3: '1', 4: '1', 5: '0'}
+243	243		505							{1: 'PanelActor1Shake'}
+244	244		301			DialogEnable				"{3: ""Rosetta's eyes widen, mirroring your own surprise. But Dulova's core systems are destroyed; she will offer no more answers. The red light within her frame dims, flickers, and fades—and with it, her presence. Her body goes still.""}"
+245	245		202							{1: '1'}
+246	246		201							{1: '1', 2: '501449', 3: '3'}
+247	247		301							{1: '1', 2: 'Rosetta', 3: 'Hmph...', 4: '1'}
+248	248		301							{3: 'There is little joy for victory after the battle, only a heavier silence filled with new questions. But hesitation is a luxury you cannot afford now.'}
+249	249		302							"{2: ""Rosetta, the battle's not over."", 3: '250'}"
+250	250		204							{1: '1', 2: '4'}
+251	251		301							{2: 'Rosetta', 3: '—Scout, report status and establish connection!', 4: '1'}
+252	252		202							{1: '1'}
+253	253		201							{1: '1', 2: '500204'}
+254	254		301							"{1: '1', 2: 'Forest Guard', 3: ""Multiple squads have neutralized their target units! We'll be establishing a forward base here shortly. Comms are live!"", 4: '1'}"
+255	255		202							{1: '1'}
+256	256		301				DialogDisable			{3: 'Though the majority of the Forest Guards have been deployed to support various regions, they left behind a small squad for intelligence relay and emergency response.'}
+257	257		401							{1: '2', 2: '1099'}
+258	258		509						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1396.jpg', 2: '1'}
+259	259		401							{1: '2', 2: '4923'}
+260	260		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab', 2: '3', 5: '16'}
+261	261		511							{1: '16', 2: '0', 3: '-400|0|0'}
+262	262		401						400.0	{1: '2', 2: '914'}
+263	263		201							{1: '1', 2: '501449', 3: '8', 4: '600'}
+264	264		301			DialogEnable				{1: '1', 3: 'Seeing the communication channel open, Rosetta takes a deep breath.'}
+265	265		401							{1: '2', 2: '2983'}
+266	266		204							{1: '1'}
+267	267		301							{2: 'Rosetta', 3: 'Dulova, one of the Frostheart Warlords, has been defeated. Her coastal sector is secure.', 4: '1'}
+268	268		401							{1: '2', 2: '2983'}
+269	269		204							{1: '1', 2: '1'}
+270	270		301			DialogShake	DialogDisable			{2: 'Rosetta', 3: 'This victory belongs to the alliance forces! It belongs to us!', 4: '1'}
+271	271		202							{1: '1', 6: '1'}
+272	272		306							{1: '1'}
+273	273		402							{1: '914'}
+274	274		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab', 5: '16'}
+275	275		510							{1: '2', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1398.jpg'}
+276	276		301			DialogEnable				{3: 'In war, the news of victory always stirs the heart. It is the moment when sacrifice bears fruit, a fleeting warmth that makes even the bitter wind and snow feel like a celebration.'}
+277	277		401							{1: '2', 2: '5671'}
+278	278		401							{1: '2', 2: '2581'}
+279	279		301				AniZhuanchangBegin			{3: 'And in the next breath, a cheer erupts, rippling through the entire city district.'}
+280	280		402							{1: '2581'}
+281	281		402							{1: '5671'}
+282	282		306							
+283	283		510						500.0	{1: '1'}
+284	284		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1397.jpg'}
+285	285		201							{1: '1', 2: '500506', 3: '1'}
+286	286		301			AniZhuanchangEnd	DialogDisable			"{1: '1', 2: 'Noan', 3: ""Palma, they've taken their objective."", 4: '1'}"
+287	287		203							{1: '1', 2: '0.25', 3: '400'}
+288	288		201							{1: '2', 2: '500522', 4: '-400'}
+289	289		301			DialogEnable				{1: '1', 2: 'Palma', 3: 'Now, the rest is on us!', 4: '2'}
+290	290		202							{1: '1', 2: '2', 6: '1'}
+291	291		306							{1: '1'}
+292	292		301							"{3: ""The sound of distant cheers washes over the battlefield, where Dark Aries remains locked in combat with Rumyantsev. Elsewhere, Fyodor's failed ambush has backfired, leaving him encircled by ARU troops.""}"
+293	293		306							
+294	294		201							{1: '1', 2: '500633', 3: '1'}
+295	295		301							"{1: '1', 2: 'Rumyantsev', 3: ""Sounds like Dulova's finished, Fyodor."", 4: '1'}"
+296	296		202							{1: '1'}
+297	297		201							{1: '1', 2: '501441', 3: '4'}
+298	298		301							{1: '1', 2: 'Fyodor', 3: 'So it would seem...', 4: '1'}
+299	299		202							{1: '1'}
+300	300		301							{3: 'The battle is still a whirlwind of violence, but on the strategic board, the opening gambit is already over, and the outcome is clear.'}
+301	301		401							{1: '1', 2: '36'}
+302	302		201							{1: '1', 2: '500634', 3: '1'}
+303	303		401							{1: '2', 2: '8220025'}
+304	304		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '3'}
+305	305		104							{1: '0|0|-100', 2: '0.15'}
+306	306		203							{1: '1', 2: '0.15', 5: '-50', 6: '-100'}
+307	307		301							"{1: '1', 2: 'Rumyantsev', 3: ""Then I suppose we'll have to be the ones to flip the board."", 4: '1'}"
+308	308		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+309	309		401							{1: '1', 2: '5024'}
+310	310		401							{1: '2', 2: '4387'}
+311	311		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+312	312		201							{1: '1', 2: '500506', 3: '5'}
+313	313		301				DialogDisable			{1: '1', 2: 'Noan', 3: 'What?', 4: '1'}
+314	314		401							{1: '2', 2: '6310'}
+315	315		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+316	316		401							{1: '2', 2: '9342060'}
+317	317		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash.prefab', 2: '2'}
+318	318		502							{1: 'RImgBg1Shake'}
+319	319		203							{1: '1', 2: '0.13', 3: '300'}
+320	320		201							{1: '2', 2: '500633', 3: '1', 4: '-300'}
+321	321		301			DialogEnable				{1: '1', 3: 'Unfazed by the shifting tides of battle, Rumyantsev presses his assault against Noan once again.'}
+322	322		301							"{3: ""Noan, already accustomed to his opponent's unpredictable rhythms, meets the attack squarely. His Rev Blade intercepts the blow with a sharp clash.""}"
+323	323		301							{2: 'Rumyantsev', 3: 'Heh!', 4: '2'}
+324	324		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+325	325		202							{1: '1', 2: '2', 6: '1'}
+326	326		201							{1: '1', 2: '501441'}
+327	327		301							"{1: '1', 2: 'Fyodor', 3: ""I must say, ARU soldiers never cease to impress. Bringing out anti-tank weaponry to demolish a building... you've certainly broadened my horizons."", 4: '1'}"
+328	328		202							{1: '1', 6: '1'}
+329	329		201							{1: '1', 2: '500086'}
+330	330		201							{1: '2', 2: '500005', 4: '-450'}
+331	331		201							{1: '3', 2: '500005', 4: '450'}
+332	332		301							"{1: '1', 2: 'Antonov', 3: ""I just used what I had on hand! I won't let you lay a hand on Babylonia's commandant! Everyone, press the attack!"", 4: '1'}"
+333	333		401							{1: '2', 2: '10001004'}
+334	334		301			DialogShake				{2: 'ARU Member', 3: 'Yes, sir!', 4: '2', 5: '3'}
+335	335		202							{1: '1', 2: '2', 3: '3'}
+336	336		306							{1: '1'}
+337	337		301							"{3: ""Fyodor closed in, but his ambush was caught at the last second by Antonov. In a split-second decision, Antonov fired at the structure beneath him, destroying Fyodor's footing and sending him staggering.""}"
+338	338		301							"{3: ""As a result, the bullets from Fyodor's gun streaked harmlessly off course.""}"
+339	339		306							
+340	340		201							{1: '1', 2: '501441', 3: '2'}
+341	341		301							"{1: '1', 2: 'Fyodor', 3: ""Quick thinking, I'll give you that. But don't think it's enough to stop the Frostheart Warlords. Rumyantsev, our target is that Babylonia commandant!"", 4: '1'}"
+342	342		401							{1: '2', 2: '4387'}
+343	343		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+344	344		201							{1: '1', 2: '500633', 3: '1'}
+345	345		301							"{2: 'Rumyantsev', 3: ""Perfect timing. I'm just getting warmed up."", 4: '1'}"
+346	346		202							{1: '1'}
+347	347		301							{3: 'In war, disabling the command system is always the fastest path to victory, a truth both the alliance forces and the Warlords know well.'}
+348	348		401							{1: '2', 2: '9342029'}
+349	349		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '3'}
+350	350		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '0', 4: '0.8', 5: '2'}
+351	351		201							{1: '1', 2: '500633', 3: '1'}
+352	352		203							{1: '1', 2: '1', 4: '-100'}
+353	353		301							{1: '1', 3: 'Upon receiving the order, Rumyantsev drops into a sprinting stance. His skin begins to glow, its color shifting from green to a vivid, charging crimson.'}
+354	354		401							{1: '1', 2: '36'}
+355	355		401							{1: '2', 2: '2983'}
+356	356		201							{1: '18', 2: '500201', 4: '250', 5: '-135', 6: '-300', 7: '1'}
+357	357		301							"{1: '1', 2: 'Simon', 3: ""That's enough. All units, fall back!"", 4: '18'}"
+358	358		401							{1: '1', 2: '5023'}
+359	359		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+360	360		202							{1: '18', 6: '1'}
+361	361		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '0.8', 4: '0', 5: '0.5'}
+362	362		203							{1: '1', 2: '0.3'}
+363	363		301							{2: 'Rumyantsev', 3: 'What?', 4: '1'}
+364	364		205							{1: '1004', 3: '1', 4: '1', 5: '0'}
+365	365		202							{1: '1'}
+366	366		401							{1: '2', 2: '4803'}
+367	367		301							"{3: ""Just as Rumyantsev prepares to sprint, Simon's voice—magnified by field amplifiers—rings out. In perfect sync, the alliance soldiers pull their pins and release a volley of combat grenades.""}"
+368	368		201							{1: '1', 2: '501441', 3: '4'}
+369	369		301				DialogDisable			{1: '1', 2: 'Fyodor', 3: 'This is...', 4: '1'}
+370	370		202							{1: '1', 6: '1'}
+371	371		401							{1: '2', 2: '4512'}
+372	372		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndWhite.prefab', 2: '3'}
+373	373		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab', 2: '1', 5: '24'}
+374	374		511							{1: '24', 2: '0', 3: '0|500|0'}
+375	375		301			DialogEnable				{3: 'The canisters hit the ground and rupture, blanketing the area not with shrapnel, but with a dense, multi-compound smoke.'}
+376	376		201							{1: '1', 2: '500633', 3: '1'}
+377	377		301				DialogDisable			{1: '1', 2: 'Rumyantsev', 3: 'You think smoke will save you? Charge!', 4: '1'}
+378	378		401							{1: '2', 2: '6310'}
+379	379		203							{1: '1', 2: '0.15', 4: '-70', 5: '100'}
+380	380		202						400.0	{1: '1'}
+381	381		401							{1: '2', 2: '6293'}
+382	382		502							{1: 'DialogEnable'}
+383	383		301			RImgBg1Shake				{3: 'Rumyantsev halts his energy build-up and storms into the haze. Expecting impact, he meets only vacant space. The roar of collapsing concrete and twisted steel echoes around him; he has barreled straight through a derelict building.'}
+384	384		201							{1: '1', 2: '501441'}
+385	385		401							{1: '2', 2: '1543'}
+386	386		301							{1: '1', 3: 'Fyodor samples the air, catching smoke on his fingertips. His eyes sharpen, but his mouth curves into a knowing, devious smile.'}
+387	387		301		1		AniZhuanchangBegin			{2: 'Fyodor', 3: 'Well played.', 4: '1'}

@@ -1,0 +1,129 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory18.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				"{3: ""The patrol dog's trail leads you to the ruins of an old building. It shakes off the water clinging to its fur, then barks twice at the crumbling walls.""}"
+4	4		301							{2: 'Patrol Dog', 3: 'Woof!'}
+5	5		201							{1: '1', 2: '500994'}
+6	6		301							{1: '1', 2: 'Lucia', 3: 'Over here!', 4: '1'}
+7	7		202							{1: '1', 6: '1'}
+8	8		201							{1: '1', 2: '500994', 4: '-400'}
+9	9		201							{1: '2', 2: '500454', 4: '400'}
+10	10		301							{1: '1', 3: 'A wary scavenger remains hidden in the rubble, glaring in your direction—he can hardly muster the strength to keep running any longer.'}
+11	11		301							"{2: 'Scavenger', 3: ""You... you—stay back! Don't come any closer!"", 4: '2'}"
+12	12		301							"{2: 'Lucia', 3: ""Please, calm down. We're not here to hurt you."", 4: '1'}"
+13	13		301							{2: 'Scavenger', 3: '...', 4: '2'}
+14	14		301							{3: 'He pants, saying nothing, and keeps a wary eye on you.'}
+15	15		301							"{2: 'Lucia', 3: ""This forest isn't safe. The Red Tide is spreading faster. You have to leave..."", 4: '1'}"
+16	16		401							{1: '1', 2: '211'}
+17	17		301			PanelActor2Shake				{1: '1', 2: 'Scavenger', 3: 'Oh, **** me! Again with the same line—enough already! Are you ever gonna stop?!', 4: '2'}
+18	18		301							"{3: ""Lucia's words are cut short when the scavenger lashes out in anger. Despair spreads across his face, gathering and festering until it finally explodes.""}"
+19	19		301							"{2: 'Scavenger', 3: ""We've been living here just fine, no worries about food or clothing. Then you people showed up out of nowhere, claiming it's not safe and kicking us out. **** you, what are you even after?!"", 4: '2'}"
+20	20		301							{2: 'Lucia', 3: 'This is a necessary form of protection.', 4: '1'}
+21	21		301							"{2: 'Scavenger', 3: ""We don't need your so-called protection!!"", 4: '2'}"
+22	22		302							{2: '...', 3: '23'}
+23	23		301							"{2: 'Scavenger', 3: ""We're doing just fine here! We can grow our own food, we've got enough to eat. Do you have any idea how hard it is to find a place like this these days?! Then you barge in, say it's dangerous, and tell us to leave. Are you out of your minds?! Why should we?"", 4: '2'}"
+24	24		301							"{2: 'Scavenger', 3: ""Isn't it enough that you've got plenty—food, clothes, everything? Now you won't even leave a small place like this alone?"", 4: '2'}"
+25	25		301							"{2: 'Scavenger', 3: ""We don't need any protection! We can take care of ourselves! The only threat around here is you people who showed up out of nowhere!"", 4: '2'}"
+26	26		301							{3: 'His exhausted face is etched with accusation.'}
+27	27		302							{2: 'Protect yourselves... Is this what you mean?', 3: '28'}
+28	28		301							{3: 'You signal Lucia to pull out the sound device, and the scavenger freezes.'}
+29	29		301				DialogDisable			{2: 'Scavenger', 3: 'Y-you...', 4: '2'}
+30	30		302							{2: 'Three scavenger camps have already been wiped out.', 3: '31'}
+31	31		302							"{2: 'It\'s all because this ""sound device"" drew in the Corrupted and those Hetero-Creatures!', 3: '32'}"
+32	32		301			DialogEnable				{3: 'The low-frequency pulses might keep beasts away, but they also give mindless Corrupted a perfect way to track down humans.'}
+33	33		301							"{2: 'Scavenger', 3: ""This... No, that can't be..."", 4: '2'}"
+34	34		302							"{2: ""And on top of all that, this device can't even stop the Red Tide..."", 3: '35'}"
+35	35		301							"{2: 'Scavenger', 3: ""But there's nothing like that around here! Don't try to pull one over on me!"", 4: '2'}"
+36	36		302							"{2: ""It wasn't here before, but after this..."", 3: '37'}"
+37	37		301							{3: 'At the rate the Red Tide is spreading, it might soon overtake this entire forest.'}
+38	38		203							{1: '2', 2: '0.3', 3: '450', 4: '-100'}
+39	39		401							{1: '2', 2: '3077'}
+40	40		301							{3: 'On the map provided by Babylonia for the conservation area, the surrounding Punishing Virus concentration stands out in stark detail. The scavenger staggers back two steps and lands on the ground with a thud.'}
+41	41		301							"{2: 'Lucia', 3: ""The patrol captain of the nearby conservation area should've already sent you a warning."", 4: '1'}"
+42	42		301							"{2: 'Scavenger', 3: ""N-no, that's because they're trying to take over this place just for themselves..."", 4: '2'}"
+43	43		301							"{2: 'Lucia', 3: ""The conservation area doesn't need this forest for supplies."", 4: '1'}"
+44	44		301							{3: 'Most conservation areas have farmland within the CPF area, so as long as nothing goes wrong, they can meet at least the basic food requirements.'}
+45	45		301							{2: 'Scavenger', 3: 'So... so what do we do now...?', 4: '2'}
+46	46		301							{3: 'He stares blankly at the map suspended in midair.'}
+47	47		302							{2: '(Pull him up from the ground)', 4: '...', 5: '52'}
+48	48		203							{1: '2', 2: '0.3', 3: '450'}
+49	49		401							{1: '2', 2: '4700'}
+50	50		301							{2: 'Scavenger', 3: '...', 4: '2'}
+51	51		301							{3: 'He staggers to his feet, confusion clouding his face.'}
+52	52		301							"{2: 'Scavenger', 3: ""What are we supposed to do if we can't make it? Everything we have... We've already planted our last seeds in this forest."", 4: '2'}"
+53	53		301							{2: 'Lucia', 3: '...', 4: '1'}
+54	54		302							{2: 'You can head to the conservation area to pick up new seeds.', 3: '55', 4: 'The conservation area will take care of everything.', 5: '55'}
+55	55		301							"{2: 'Scavenger', 3: ""Even so, wouldn't that mean we're back to square one? All our belongings... everything we've worked for..."", 4: '2'}"
+56	56		301							"{3: ""In these crumbling ruins, it's clear that scavengers once called this place home. They have rigged up flimsy shelters for protection from the rain, and even managed to plant a few flowering shrubs...""}"
+57	57		301							"{3: ""They're doing everything they can just to live a new life.""}"
+58	58		301							{2: 'Lucia', 3: 'Even so, that also brings the promise of fresh hope.', 4: '1'}
+59	59		301							{2: 'Scavenger', 3: 'Hope...', 4: '2'}
+60	60		301							{2: 'Lucia', 3: 'The conservation area is a lot safer than this forest. Under its guidelines, you can get new tents, crop seeds, and if you have any relevant work history, there might even be a job waiting for you.', 4: '1'}
+61	61		301							{2: 'Scavenger', 3: 'A... a job?', 4: '2'}
+62	62		302							{2: 'Yes.', 3: '63', 4: 'Correct.', 5: '63'}
+63	63		301							{3: 'In some conservation areas, transport drivers get special treatment, while others continue to recruit for their patrol squads. Each area feels like a small village, always bustling with different kinds of work.'}
+64	64		202							{1: '1', 2: '2', 6: '1'}
+65	65		201							{1: '1', 2: '500994'}
+66	66		301							"{1: '1', 2: 'Lucia', 3: ""Perhaps one day, you'll find a future that's even brighter than what you have now."", 4: '1'}"
+67	67		204							{1: '1', 2: '2'}
+68	68		301							"{2: 'Lucia', 3: ""After all, you're never truly alone, are you?"", 4: '1'}"
+69	69		301							{3: 'The girl instinctively takes your hand.'}
+70	70		302							{2: '(Give her hand a gentle squeeze in return)', 3: '71'}
+71	71		202							{1: '1', 6: '1'}
+72	72		201							{1: '1', 2: '500454'}
+73	73		301							"{1: '1', 2: 'Scavenger', 3: ""...Yeah. I've never really been on my own..."", 4: '1'}"
+74	74		301							{3: 'He mutters under his breath, as though the conservation area described by you and Lucia has sparked a flicker of hope in him.'}
+75	75		301							"{2: 'Scavenger', 3: ""I've still got my boss, my friends, and my brother and sister..."", 4: '1'}"
+76	76		302							{2: 'Where are your friends?', 3: '77', 4: 'Where are your family?', 5: '77'}
+77	77		301							"{2: 'Scavenger', 3: ""They're all in hiding. We don't want to get kicked out... heh heh."", 4: '1'}"
+78	78		301							{3: 'He rubs the back of his head, looking a bit embarrassed.'}
+79	79		301				AniZhuanchangBegin			"{2: 'Scavenger', 3: ""I-I'll go get them!"", 4: '1'}"
+80	80		202							{1: '1', 6: '1'}
+81	81		401						2000.0	{1: '1', 2: '36'}
+82	82		401							{1: '1', 2: '208'}
+83	83		301			AniZhuanchangEnd				"{3: ""At his call, more scavengers step forward. Most still give you two visitors from Babylonia wary looks, but at least they're no longer shutting down all communication.""}"
+84	84		301							"{3: ""You field each scavenger's question until your throat is dry, and only then does the patrol team member finally rush in.""}"
+85	85		301							{2: 'Patrol Dog', 3: 'Woof!'}
+86	86		301							{3: 'Originally out on patrol, the dog swiftly lunges at its overseer.'}
+87	87		201							{1: '1', 2: '500019'}
+88	88		301							"{1: '1', 2: 'Patrol Member A', 3: ""S-sorry! There were some Corrupted around here, and after dealing with them, I ended up in a place I don't recognize..."", 4: '1'}"
+89	89		302							{2: 'So you were the one getting lost, huh?', 4: '...'}
+90	90		301							"{2: 'Patrol Member A', 3: ""Ahem... Sorry to put you through this. By the way, how's Beefy doing?"", 4: '1'}"
+91	91		302							{2: 'Awesome.', 3: '92', 4: 'Doing great.', 5: '92'}
+92	92		202							{1: '1', 6: '1'}
+93	93		201							{1: '1', 2: '500994'}
+94	94		301							"{1: '1', 2: 'Lucia', 3: ""Beefy's been a huge help—really pulling its weight."", 4: '1'}"
+95	95		301							{2: 'Lucia', 3: 'Also, do you mind escorting these people back to the conservation area? We still have one more area to search for the sound devices...', 4: '1'}
+96	96		202							{1: '1', 6: '1'}
+97	97		201							{1: '1', 2: '500454'}
+98	98		301							"{1: '1', 2: 'Scavenger', 3: ""...I'm sorry. We must have caused you so much trouble..."", 4: '1'}"
+99	99		301							{3: 'Seeing the patrol member so worn out, the scavengers have no choice but to believe that the sound device really does attract the Corrupted.'}
+100	100		202							{1: '1', 6: '1'}
+101	101		201							{1: '1', 2: '500019'}
+102	102		301							"{1: '1', 2: 'Patrol Member A', 3: ""It's all right. After all, you're just doing what you must to survive."", 4: '1'}"
+103	103		301							{3: 'The patrol member readily agrees to escort the scavengers back.'}
+104	104		301							"{2: 'Patrol Member A', 3: ""Thanks, by the way. The two of you can handle recovery across three whole zones on your own—just what I'd expect from an elite squad!"", 4: '1'}"
+105	105		301							"{2: 'Patrol Member A', 3: ""Alright, I'll take these guys back now. As for Beefy..."", 4: '1'}"
+106	106		301							"{2: 'Patrol Member A', 3: 'Oh, ""Beefy"" is this dog\'s name. By the way, have you two ever raised a dog before? Seems it really likes you two.', 4: '1'}"
+107	107		202							{1: '1', 6: '1'}
+108	108		201							{1: '1', 2: '500994'}
+109	109		301							{1: '1', 2: 'Lucia', 3: 'We used to take care of a puppy for a while.', 4: '1'}
+110	110		301							{3: 'An image of that puppy appears in your mind, the memory fixed on Lucia gently petting it.'}
+111	111		301							"{3: ""You snap back to reality. In front of you, the patrol dog named Beefy nuzzles the girl's hand that hangs at her side.""}"
+112	112		202							{1: '1', 6: '1'}
+113	113		201							{1: '1', 2: '500019'}
+114	114		301							{1: '1', 2: 'Patrol Member A', 3: 'Makes sense. Now that I think about it, Beefy went missing once when it was still a pup...', 4: '1'}
+115	115		301							"{2: 'Patrol Member A', 3: ""Haha, there's no way it's that big of a coincidence."", 4: '1'}"
+116	116		301							{2: 'Patrol Member A', 3: 'Oh, by the way, would you two like to bring Beefy along on your mission?', 4: '1'}
+117	117		301							"{2: 'Patrol Member A', 3: ""It's first-rate at tracking; it'll definitely give you guys a big advantage."", 4: '1'}"
+118	118		301							{2: 'Patrol Dog', 3: 'Woof!'}
+119	119		301							"{2: 'Patrol Member A', 3: ""Hey, wipe that smug grin off your face! You wouldn't be half as good if I hadn't trained you so well!"", 4: '1'}"
+120	120		301				DialogDisable			"{3: ""He gives Beefy's head a fond ruffle.""}"
+121	121		302							{2: 'Sounds good.', 3: '122', 4: 'With it around, we can get things done more efficiently.', 5: '122'}
+122	122		202							{1: '1', 6: '1'}
+123	123		201							{1: '1', 2: '500994'}
+124	124		302							{2: 'What do you think, Lucia?', 3: '125'}
+125	125		301			DialogEnable				"{1: '1', 3: ""Lucia lowers her head and solemnly gives Beefy's raised paw a gentle squeeze.""}"
+126	126		204							{1: '1', 2: '1'}
+127	127		301							"{2: 'Lucia', 3: ""Alright then, we'll be relying on you from now on, Beefy."", 4: '1'}"
+128	128		301		1		AniZhuanchangBegin			{2: 'Patrol Dog', 3: 'Woof!'}

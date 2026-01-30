@@ -1,0 +1,516 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangBegin				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+4	4		509						500.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory122.png', 2: '1'}
+5	5		401							{1: '2', 2: '973'}
+6	6		201							{1: '1', 2: '500506', 4: '550'}
+7	7		201							{1: '11', 2: '500522', 4: '-500'}
+8	8		401							{1: '2', 2: '885'}
+9	9		301			AniZhuanchangEnd				"{1: '1', 2: 'Palma', 3: 'So... that\'s why you had a brawl with those assholes and left the Clean Zone right under their noses, leaving me to deal with endless ""greetings"" from my former colleagues in the Purifying Force?', 4: '11'}"
+10	10		301							{3: 'Having evaded numerous pursuers, you two found the motorcycle Noan had prepared beforehand a few miles away from the Clean Zone and are now racing toward the destination.'}
+11	11		301							"{2: 'Noan', 3: ""It's best to keep the number of people involved to a minimum. Acting rashly can easily jeopardize Commandant Simon's safety."", 4: '1'}"
+12	12		301							{2: 'Palma', 3: 'What an old-fashioned way to kidnap, and with cliche threats.', 4: '11'}
+13	13		301							"{2: 'Noan', 3: ""...I already warned him that trouble was brewing and saw him make some preparations. Things shouldn't have come to this..."", 4: '1'}"
+14	14		301							"{2: 'Noan', 3: ""It's likely someone close to him who caught him off guard."", 4: '1'}"
+15	15		301							"{2: 'Palma', 3: ""Hmph, Lillian's terminal is dead. Either she's been nabbed too, or she's the problem. More likely, it's both."", 4: '11'}"
+16	16		302							{2: 'Jumping to suspect your own teammate right off the bat?', 3: '17'}
+17	17		301							"{2: 'Palma', 3: ""People's hearts can be very unpredictable. It's only logical to suspect the one who would have the most convenience in pulling off such a move."", 4: '11'}"
+18	18		301				AniZhuanchangBegin			{2: 'Palma', 3: 'Besides, she asked me a weird question last month.', 4: '11'}
+19	19		402							{1: '973'}
+20	20		202							{1: '11', 6: '1'}
+21	21		510							{1: '1'}
+22	22		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory122.png'}
+23	23		201							{1: '1', 2: '500335', 4: '-400', 7: '1'}
+24	24		201							{1: '2', 2: '500522', 4: '400', 7: '1'}
+25	25		504							{1: '0.7'}
+26	26		301			AniZhuanchangEnd				{1: '1', 2: 'Lillian', 3: 'Captain Palma, if Commandant Simon and Noan are both drowning in a lake, who will you save first?', 4: '1'}
+27	27		301							"{2: 'Palma', 3: ""This lake you're talking about, is it near my house?"", 4: '2'}"
+28	28		301							{2: 'Lillian', 3: 'Yes, I guess?', 4: '1'}
+29	29		301				AniZhuanchangBegin			"{2: 'Palma', 3: ""I'll move somewhere else."", 4: '2'}"
+30	30		202							{1: '2', 6: '1'}
+31	31		502							{1: 'DialogDisable'}
+32	32		504							{1: '0'}
+33	33		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+34	34		201							{1: '1', 2: '500506', 4: '550', 7: '1'}
+35	35		201							{1: '11', 2: '500522', 4: '-500', 7: '1'}
+36	36		509						800.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory122.png', 2: '1'}
+37	37		401							{1: '2', 2: '973'}
+38	38		302			AniZhuanchangEnd				"{2: 'Sounds like a weird joke...', 3: '39', 4: ""Aren't you supposed to include yourself in these kinds of questions?"", 5: '39'}"
+39	39		301			DialogEnable				"{2: 'Palma', 3: ""Leaving Lillian aside, I've also received a mission from the Purifying Force to apprehend you."", 4: '11'}"
+40	40		301							{2: 'Palma', 3: 'Taking away their commandant like this, do you think Gray Ravens would go easy on you?', 4: '11'}
+41	41		301							{2: 'Noan', 3: 'You can take the commandant back when you come to apprehend me.', 4: '1'}
+42	42		301				DialogDisable			{2: 'Palma', 3: 'Trying to dump your troubles on me again?', 4: '11'}
+43	43		302							"{2: ""Hold on... I've already contacted them."", 3: '44'}"
+44	44		302							"{2: ""I told them there's an urgent mission."", 3: '45'}"
+45	45		301			DialogEnable				{2: 'Palma', 3: 'Huh?', 4: '11'}
+46	46		302							"{2: ""Bianca's still out on a mission, so I can't reach her for now."", 3: '47'}"
+47	47		301							"{2: 'Palma', 3: ""Even if we could, she wouldn't just let go of everything."", 4: '11'}"
+48	48		302							{2: 'At least we can get a chance to explain afterward.', 3: '49'}
+49	49		301							"{2: 'Noan', 3: ""I'll head over first as requested, but there's still a lot to confirm—Lillian's whereabouts, for example."", 4: '1'}"
+50	50		301							"{2: 'Noan', 3: ""If they have further moves planned, even I can't guarantee Commandant Simon's safety."", 4: '1'}"
+51	51		301							"{2: 'Noan', 3: ""Since you've received the mission, why not just come out and lend a hand?"", 4: '1'}"
+52	52		301							{2: 'Noan', 3: '(And take the Gray Raven Commandant back with you.)', 4: '1'}
+53	53		301							{3: 'Though he makes no sound, you still manage to discern his words by reading his lips.'}
+54	54		302							{2: '(Noan...)', 3: '55'}
+55	55		301							{2: 'Palma', 3: '...Ugh.', 4: '11'}
+56	56		301							"{2: 'Palma', 3: ""I told Simon that we wouldn't really click, and that he should've just asked to disband the squad. If he had agreed back then, we wouldn't have gotten dragged into this mess."", 4: '11'}"
+57	57		301							"{2: 'Palma', 3: ""Those old bones did it on purpose. If they really wanted Dark Aries to bounce back faster, they would've assigned us a more aggressive commandant."", 4: '11'}"
+58	58		302							"{2: ""Superficial compliance doesn't work in the long term. Trust him a bit more."", 3: '59'}"
+59	59		301							"{2: 'Palma', 3: ""You're telling me to trust and respect someone who, despite being warned beforehand, still fell right into a trap?"", 4: '11'}"
+60	60		302							"{2: ""You've indeed changed a lot since your squad was first formed."", 3: '61'}"
+61	61		301							"{2: 'Palma', 3: ""Considering Dark Aries' current situation, no one's probably gonna come to our rescue."", 4: '11'}"
+62	62		302							{2: 'But here you are, going out of your way to rescue him anyway.', 3: '63'}
+63	63		301							{2: 'Palma', 3: 'Tsk.', 4: '11'}
+64	64		301							"{3: ""—Though that's said, could it be possible that Simon neglected such risks?""}"
+65	65		302							"{2: ""(No, that can't be the case.)"", 3: '66'}"
+66	66		301							{3: 'Perhaps, he just values the truth over his own safety.'}
+67	67		301							{3: 'If all his efforts lead back to the same mistake, to another betrayal by someone he trusted, and to witnessing his squad iterate, he...'}
+68	68		301							"{2: 'Noan', 3: ""I can go alone if it's inconvenient for you. I'm the one who caused the trouble this time anyway."", 4: '1'}"
+69	69		301							{2: 'Palma', 3: 'This time... Heh...', 4: '11'}
+70	70		301							"{2: 'Palma', 3: ""I'll find a way to get out, assuming you're not lying or planning to take your hostage to the Ascendants."", 4: '11'}"
+71	71		301							"{2: 'Palma', 3: 'Just remember, they\'re still investigating ""you"" being spotted near the river where the Gray Raven Commandant disappeared.', 4: '11'}"
+72	72		301							{3: 'While saying that with her teeth clenched in frustration, Palma begins to arrange the weapons she intends to take in front of the camera.'}
+73	73		301							"{2: 'Palma', 3: 'Actually, the Purifying Force has already caught you hanging around with the Ascendants multiple times. If they hadn\'t given me those ""greetings,"" I wouldn\'t have even known that.', 4: '11'}"
+74	74		301							{2: 'Palma', 3: 'And you even helped the Ascendants take down a defector transfer depot.', 4: '11'}
+75	75		302							{2: 'This could likely be related to unauthorized M.I.N.D. replication.', 3: '76'}
+76	76		301							"{2: 'Palma', 3: 'Only ""likely"" is not enough. Before any concrete evidence is found, they have all the reasons to suspect Noan himself rather than some replica being involved.', 4: '11'}"
+77	77		301							"{2: 'Palma', 3: ""With this added to the pile, even if someone vouches for him, he won't be able to get away with it. Looks like Dark Aries' downtime is getting extended again."", 4: '11'}"
+78	78		301							"{3: ""Palma's voice carries a weighty undertone of suppressed rage.""}"
+79	79		301							{2: 'Palma', 3: 'Just how much longer do we need to wait before taking on actual missions?', 4: '11'}
+80	80		301							"{2: 'Noan', 3: ""If I recall correctly, it was you who didn't meet the team coordination criteria in the virtual combat during the last assessment."", 4: '1'}"
+81	81		301							{3: 'Suddenly, a profound silence descends upon the other end of the call.'}
+82	82		401							{1: '2', 2: '1543'}
+83	83		301							"{3: ""As the howling winter wind persists, Noan's cape is caught in its grasp, fluttering against your face in the back seat.""}"
+84	84		302							{2: '(Quietly push it down)', 3: '85', 4: '(Ignore it)', 5: '85'}
+85	85		301							"{2: 'Palma', 3: ""Tch, it will only take some practice to fix that, but the mess you're in isn't going to be solved that easily!!"", 4: '11'}"
+86	86		301							{2: 'Palma', 3: 'The higher-ups have made their intentions pretty clear. That specialized frame adaptability of yours is only good for being a lab rat for researchers or attracting thieves with a penchant for stealing.', 4: '11'}
+87	87		301							"{2: 'Palma', 3: ""Instead of waiting for you to get your hands on a new frame that's still up in the air and trying to slip away from surveillance and restrictions, it'd be way faster to just kill that Ascendant."", 4: '11'}"
+88	88		301							{2: 'Noan', 3: 'I agree.', 4: '1'}
+89	89		301							{2: 'Palma', 3: 'Can we even get out?', 4: '11'}
+90	90		301							{3: 'Having spoken those words, she seems to realize something, her brows furrowing.'}
+91	91		301							"{2: 'Palma', 3: ""So, we've got one more fish to catch?"", 4: '11'}"
+92	92		301							"{2: 'Noan', 3: ""No. We're only going to save Commandant Simon this time."", 4: '1'}"
+93	93		301							{2: 'Noan', 3: 'We need more information before dealing with that Ascendant—at least the whereabouts of his M.I.N.D. replica and the original.', 4: '1'}
+94	94		301							{2: 'Palma', 3: 'Do as you please. Just make sure to give Simon a pep talk before you kick the bucket, so he can see you off with a smile.', 4: '11'}
+95	95		202							{1: '11', 2: '1', 6: '1'}
+96	96		510							{1: '1'}
+97	97		401							{1: '2', 2: '2566'}
+98	98		301							{3: 'Palma abruptly cuts off the call.'}
+99	99		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '1'}
+100	100		201							{1: '1', 2: '500506'}
+101	101		301							{1: '1', 2: 'Noan', 3: '...', 4: '1'}
+102	102		301							{3: 'Glancing at Noan from the back seat, you see his expression unchanged, and he takes a moment to check the wound on your neck again through the rearview mirror.'}
+103	103		301							"{2: 'Noan', 3: ""...How's your neck?"", 4: '1'}"
+104	104		302							"{2: ""It's just a shallow cut, and you've already treated it."", 3: '105', 4: ""I'm doing fine. The wound on your hand seems much worse though."", 5: '106'}"
+105	105	107	301							{3: 'He nods at you, yet a hint of concern still lingers in his expression.'}
+106	106		301							{2: 'Noan', 3: 'This is nothing to a Construct.', 4: '1'}
+107	107		302							{2: 'Noan, are you planning to confront Lithos on your own?', 3: '108'}
+108	108		301							{2: 'Noan', 3: 'My top priority this time is rescuing Commandant Simon.', 4: '1'}
+109	109		302							"{2: ""Don't change the subject."", 3: '110'}"
+110	110		301				DialogDisable			{2: 'Noan', 3: '...Yes, if I can find an opportunity to do so.', 4: '1'}
+111	111		302							{2: 'In your current state, making contact with Lithos will be very dangerous.', 3: '112'}
+112	112		302							"{2: ""You shouldn't leave the Clean Zone again."", 3: '113'}"
+113	113		301			DialogEnable				"{2: 'Noan', 3: ""Waiting longer won't make those troublemakers disappear by themselves."", 4: '1'}"
+114	114		301							{2: 'Noan', 3: 'After all this time in Babylonia, the situation with Dark Aries and myself has only proven one point.', 4: '1'}
+115	115		301							"{2: 'Noan', 3: 'As long as we stay in the ""pen,"" we can\'t solve the problem from its root.', 4: '1'}"
+116	116		301							"{2: 'Noan', 3: 'It\'s not just about Lithos, but also those helping him find ""stable M.I.N.D.s.""', 4: '1'}"
+117	117		204							{1: '1', 2: '14'}
+118	118		301							"{2: 'Noan', 3: ""To be honest... I'm a bit fed up."", 4: '1'}"
+119	119		204							{1: '1'}
+120	120		401							{1: '2', 2: '4115003'}
+121	121		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '1'}
+122	122		301							{3: 'In silence, Noan accelerates the motorcycle.'}
+123	123		302							{2: '...', 3: '127', 4: '(Wrap your arms around him)', 5: '124'}
+124	124		301				DialogDisable			{2: 'Noan', 3: '...Commandant?', 4: '1'}
+125	125		302							"{2: ""It's a bit cold."", 3: '126', 4: 'Nothing.', 5: '126'}"
+126	126		502							{1: 'DialogEnable'}
+127	127		301							{3: 'Dark clouds slowly engulf the afternoon sunlight, and the biting wind intensifies.'}
+128	128		301							"{2: 'Noan', 3: ""You really shouldn't have come out with me."", 4: '1'}"
+129	129		302							"{2: ""But I'm very concerned about Simon."", 3: '140', 4: ""Without a witness, you'll only end up being wronged."", 5: '140', 6: ""I just feel that you won't come back if you leave alone."", 7: '130'}"
+130	130		301							{2: 'Noan', 3: 'Why?', 4: '1'}
+131	131		302							{2: 'A hunch?', 3: '140', 4: 'From what I know about you.', 5: '140', 6: 'Achoo!', 7: '133'}
+132	132		204							{1: '1', 2: '10'}
+133	133		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+134	134		401							{1: '2', 2: '4115005'}
+135	135		301							{3: 'Hearing your sneeze, Noan lets out a sigh and stops the motorcycle in front of some ruins.'}
+136	136		204							{1: '1'}
+137	137		301							{2: 'Noan', 3: 'Use this to keep yourself warm for now.', 4: '1'}
+138	138		301							{3: 'He takes out a covering tarp from the storage box and wraps it around you.'}
+139	139		302							{2: 'Okay.', 3: '141', 4: 'Thanks.', 5: '141'}
+140	140		301							{2: 'Noan', 3: '...', 4: '1'}
+141	141		301							"{2: 'Noan', 3: ""We'll reach our destination before it gets dark. If Captain Palma leaves now, she probably won't have to wait too long for us."", 4: '1'}"
+142	142		302							{2: 'Alright.', 3: '143'}
+143	143		301				AniZhuanchangBegin			{2: 'Noan', 3: '...I wonder how Commandant Simon is doing right now.', 4: '1'}
+144	144		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory711.jpg'}
+145	145		402							{1: '973'}
+146	146		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+147	147		201							{1: '1', 2: '500362'}
+148	148		301			AniZhuanchangEnd				{1: '1', 3: 'In a cell, Simon finds himself grasping in pain, his mind blurred.'}
+149	149		301							{3: '—Just as Noan fears, Bethe is not a person interested only in outcomes.'}
+150	150		301							"{3: ""Before pulling out that fingernail, he had been venting his frustrations with an ice pick in the cell, provoked by Lithos' oppressive control.""}"
+151	151		301							"{3: ""Had it not been for his lack of interest in young soldiers like Simon, Noan's premonitions of bloodshed would have come true.""}"
+152	152		301							{2: 'Simon', 3: '...', 4: '1'}
+153	153		306							{1: '1'}
+154	154		301							"{3: ""Before this day arrived, Simon had heeded Noan's warning and played out countless scenarios in his mind, maintaining a vigilant guard against those around him.""}"
+155	155		301							{3: 'But he never suspected his own teammates, let alone Noan, who warned him in the first place.'}
+156	156		301							{3: 'However, he lost consciousness after taking the medicine brought by Noan and woke up only to find himself in the current predicament.'}
+157	157		301							{2: 'Simon', 3: '...Why?', 4: '1'}
+158	158		301							"{3: ""That bottle of medicine was safely sealed, and Noan's behavior had been completely normal these days.""}"
+159	159		301							{2: 'Simon', 3: 'Did someone... secretly switch the medicine...', 4: '1'}
+160	160		301							{3: 'Or, there is something he never found out.'}
+161	161		301							"{3: ""The moment he glimpses Noan's figure outside the cell, Simon doesn't believe it.""}"
+162	162		301							{3: 'However, the snippets of conversation overheard from those people around the corner have been gradually sowing doubt in his mind.'}
+163	163		301							"{3: ""Is all of this part of their scheme? Or is this Noan's true nature?""}"
+164	164		301							"{3: ""The weight of regret, deeply embedded in his memories, constantly reminds him of the latter's possibility.""}"
+165	165		301				AniZhuanchangBegin			{2: 'Simon', 3: '...Atiel.', 4: '1'}
+166	166		401							{1: '1', 2: '272'}
+167	167		202							{1: '1', 6: '1'}
+168	168		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+169	169		201							{1: '1', 2: '500206'}
+170	170		301			AniZhuanchangEnd				{1: '11', 3: 'He mutters that name from the past, recalling her face amidst the excruciating pain in his fingertip.', 4: '1'}
+171	171		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory122.png', 3: '0', 4: '1', 5: '1'}
+172	172		301							{3: 'While the old Dark Aries disbanded and waited to be restructured, Atiel and Simon were assigned to the same temporary squad.', 4: '1'}
+173	173		301							{3: 'The two were old acquaintances, so their bond developed faster than that of a typical squad.', 4: '1'}
+174	174		301							"{3: ""With Atiel, it would be unlikely for Dark Aries to get disbanded again, wouldn't it?"", 4: '1'}"
+175	175		301							{3: 'They made a promise to each other—once the mission with the ARU ended, Atiel would submit an official application to join Dark Aries.', 4: '1'}
+176	176		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+177	177		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+178	178		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+179	179		504							{1: '0.7'}
+180	180		204							{1: '1', 2: '1'}
+181	181		301							{2: 'Atiel', 3: 'Sure, since we get along pretty well.', 4: '1'}
+182	182		301							"{3: ""She said that with a smile, tenderly caressing Simon's back as he vomited.""}"
+183	183		301							"{2: 'Atiel', 3: ""You think I've got something on my mind? But everyone does, right?"", 4: '1'}"
+184	184		301							"{2: 'Atiel', 3: ""If you really want to know... I'll tell you after the mission ends. How about that?"", 4: '1'}"
+185	185		202							{1: '1', 6: '1'}
+186	186		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+187	187		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+188	188		301							{3: 'But when the mission at hand ended, what awaited him was only news of her betrayal and death.'}
+189	189		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory216.png'}
+190	190		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+191	191		201							{1: '1', 2: '500214', 4: '400', 7: '1'}
+192	192		201							{1: '2', 2: '500201', 4: '-400', 7: '1'}
+193	193		301							{1: '1', 2: 'Rosetta', 3: 'Atiel used to be part of the ARU. She joined this mission seeking revenge.', 4: '1'}
+194	194		301				AniZhuanchangBegin			{2: 'Simon', 3: 'Revenge? You mean... Atiel?', 4: '2'}
+195	195		202							{1: '2', 6: '1'}
+196	196		504							{1: '0'}
+197	197		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+198	198		201							{1: '1', 2: '500206', 3: '1'}
+199	199		301			AniZhuanchangEnd				"{1: '1', 3: ""Simon remembered Atiel's radiant smile and the way she joyfully played with children—he had never seen even the slightest hint of darkness in her."", 4: '1'}"
+200	200		301							{3: 'He thought they were good friends, yet he had never been granted the right to know, nor had he noticed anything amiss.', 4: '1'}
+201	201		301				AniZhuanchangBegin			{3: 'And so, everything came to an abrupt end on this snowy day, leaving behind regrets for never truly getting to know a friend and devoid of the chance for a proper closure.', 4: '1'}
+202	202		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory711.jpg'}
+203	203		201							{1: '1', 2: '500362'}
+204	204		301			AniZhuanchangEnd	DialogDisable			{1: '1', 2: 'Simon', 3: 'Why...', 4: '1'}
+205	205		202							{1: '1', 6: '1'}
+206	206		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+207	207		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+208	208		307							{1: 'Why has he never been granted the right to know the truth?', 3: '60'}
+209	209		301							{3: 'Why has he never been granted the right to know the truth?'}
+210	210		307							{2: '1'}
+211	211		504							{1: '0.7'}
+212	212		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+213	213		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+214	214		502							{1: 'DialogEnable'}
+215	215		201							{1: '1', 2: '500206', 3: '1', 7: '1'}
+216	216		301				AniZhuanchangBegin			"{1: '1', 2: 'Atiel', 3: ""We're friends, aren't we?"", 4: '1'}"
+217	217		306							
+218	218		504							{1: '0'}
+219	219		202							{1: '1', 6: '1'}
+220	220		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+221	221		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+222	222		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+223	223		301			AniZhuanchangEnd				{3: 'Before his consciousness completely slipped away, Simon had a dream of winter.'}
+224	224		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory629.jpg', 3: '0', 4: '1', 5: '1'}
+225	225		301							{3: 'In that dream, Atiel finally opened up about all her burdens.'}
+226	226		301							{3: 'The two walked side by side along the pristine snowfield for a long time. When all the words were spoken, she closed her eyes, a smile gracing her lips.'}
+227	227		201							{1: '1', 2: '500206', 3: '1'}
+228	228		301							"{1: '1', 2: 'Atiel', 3: ""I can't forget those things, nor do I want to, so no matter what happened, things would end up like this anyway."", 4: '1'}"
+229	229		301							"{2: 'Atiel', 3: ""But that's just how humans work, isn't it?"", 4: '1'}"
+230	230		301							{2: 'Atiel', 3: 'Trapped on different paths by our own memories, manipulated by emotions, and making impulsive decisions.', 4: '1'}
+231	231		301				AniZhuanchangBegin			{2: 'Atiel', 3: 'Look, Simon... your teammate is just like you, still trapped in the snow.', 4: '1'}
+232	232		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+233	233		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+234	234		401							{1: '1', 2: '36'}
+235	235		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+236	236		101						3000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg'}
+237	237		401							{1: '1', 2: '201'}
+238	238		201							{1: '1', 2: '500506'}
+239	239		301			AniZhuanchangEnd				{1: '1', 3: 'After nearly 7 hours of driving the old motorcycle, Noan and you finally approach your destination in the evening.'}
+240	240		302							{2: 'How in the world did you get this motorcycle?', 3: '241', 4: 'Why use this mode of transportation?', 5: '243'}
+241	241		301							"{2: 'Noan', 3: ""It's a secret—let's just say I didn't play it exactly by the book."", 4: '1'}"
+242	242	244	302							"{2: ""I figured... You didn't even hide it in the Clean Zone."", 3: '244'}"
+243	243		301							{2: 'Noan', 3: 'My original plan was all about me acting alone... This would suffice.', 4: '1'}
+244	244		202							{1: '1', 6: '1'}
+245	245		301							{3: 'After Noan parks the old vehicle, Palma sends a comms request again.'}
+246	246		401							{1: '2', 2: '1099'}
+247	247		509						500.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory302.png', 2: '1'}
+248	248		201							{1: '1', 2: '500506', 4: '550'}
+249	249		201							{1: '11', 2: '500522', 4: '-550'}
+250	250		301							"{1: '1', 2: 'Palma', 3: ""I found Lillian. She's in a real mess, badly injured."", 4: '11'}"
+251	251		301							{2: 'Noan', 3: '...', 4: '1'}
+252	252		301							{2: 'Palma', 3: 'Still breathing though. Said she saw Simon being taken away, so she ran after them but ended up getting captured somewhere close by.', 4: '11'}
+253	253		301							"{2: 'Palma', 3: ""Tsk, no time to grill an injured person right now. I've sent her to a nearby post. We'll get the details from her later."", 4: '11'}"
+254	254		301							{2: 'Noan', 3: 'Alright.', 4: '1'}
+255	255		301							"{2: 'Palma', 3: ""I'm still an hour away from the location you sent. How about you go ahead first so I can retrieve your dog tag today?"", 4: '11'}"
+256	256		301							"{2: 'Noan', 3: ""I'll die tomorrow instead."", 4: '1'}"
+257	257		202							{1: '11', 2: '1', 6: '1'}
+258	258		401							{1: '2', 2: '2568'}
+259	259		510							{1: '1'}
+260	260		301							{3: 'With an abrupt clack, Palma hangs up on him.'}
+261	261		201							{1: '1', 2: '500506'}
+262	262		301							"{1: '1', 2: 'Noan', 3: ""She's warning us not to be too reckless."", 4: '1'}"
+263	263		302							{2: 'How can you tell?!', 3: '264', 4: 'Is this some encrypted language of Dark Aries?', 5: '264'}
+264	264		301							{3: 'The young man waves his hand, indicating that he will explain in detail later.'}
+265	265		301							"{2: 'Noan', 3: ""But she's right. This is nothing like a regular mission, Commandant. I still think you should go back with Commandant Simon later."", 4: '1'}"
+266	266		302							"{2: ""You have companions now. Don't take all the risks by yourself."", 3: '267', 4: ""Trust me a bit more, won't you?"", 5: '267'}"
+267	267		204							{1: '1', 2: '10'}
+268	268		301							{2: 'Noan', 3: '...', 4: '1'}
+269	269		204							{1: '1'}
+270	270		301							"{2: 'Noan', 3: ""In that case, let's split up. They won't be happy seeing me come with another person."", 4: '1'}"
+271	271		302							{2: 'Alright, but we have to keep the comms on.', 3: '272'}
+272	272		301				DialogDisable			{3: 'You take out your terminal and send Noan an invitation to an encrypted channel, but he seems hesitant to accept it.'}
+273	273		302							{2: 'Communication through this channel is hard to intercept.', 3: '274'}
+274	274		302							"{2: ""The signal is also more stable and won't easily get disrupted."", 3: '275'}"
+275	275		301			DialogEnable				{2: 'Noan', 3: '...', 4: '1'}
+276	276		302							"{2: ""You're not seriously planning to do something crazy on your own, right?"", 3: '277'}"
+277	277		204							{1: '1', 2: '2'}
+278	278		301							{2: 'Noan', 3: 'Of course not.', 4: '1'}
+279	279		302							"{2: ""Or is it that you can't guarantee nothing crazy will happen?"", 3: '280'}"
+280	280		204							{1: '1', 2: '11'}
+281	281		301							{2: 'Noan', 3: '...Nothing crazy will happen.', 4: '1'}
+282	282		301							{3: 'The young man lowers his head with a bitter smile, accepting your invitation on his terminal.'}
+283	283		302							{2: 'Can I trust your word?', 3: '284', 4: 'You promise?', 5: '284'}
+284	284		204							{1: '1'}
+285	285		301							{2: 'Noan', 3: 'I promise...', 4: '1'}
+286	286		301							{3: 'With a soft sigh escaping his lips, he reaches into his pocket, takes out an old clockwork firefly, and places it in your hand.'}
+287	287		302							"{2: ""...What's this?"", 3: '288'}"
+288	288		301							"{2: 'Noan', 3: ""A little lucky charm. To me, it's as important as my name tag. You see the scratch here? It once saved my life."", 4: '1'}"
+289	289		301							"{2: 'Noan', 3: ""I promise I'll return safely. Give it back to me when you see me again."", 4: '1'}"
+290	290		302							{2: 'Alright.', 3: '291'}
+291	291		301				DialogDisable			"{2: 'Noan', 3: ""In return, you need to be cautious during your investigation. Call me or Gray Raven for help if there's any danger."", 4: '1'}"
+292	292		302				AniZhuanchangBegin			"{2: ""It's a deal, then."", 3: '293'}"
+293	293		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory7.jpg'}
+294	294		502							{1: 'DialogEnable'}
+295	295		301			AniZhuanchangEnd				{1: '1', 3: 'As the dim sunset falls behind the clouds, taking away with it the remaining light from the surface, Noan sneaks around the recorded address and makes his way into the nearby ruins.'}
+296	296		201							{1: '1', 2: '500506', 3: '4'}
+297	297		401							{1: '2', 2: '4049'}
+298	298		301							{1: '1', 3: 'With the fading light seeping in from outside, he removes the armor encasing his leg, tears open the bionic skin, and hides his terminal inside the mechanical structure.'}
+299	299		401							{1: '2', 2: '9351040'}
+300	300		301							{3: 'Ignoring the warning signals from his pain receptors, he wipes away the leaking vital fluid, carefully reapplies the bionic skin, and attaches the armor back to his leg.'}
+301	301		202							{1: '1'}
+302	302		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.7', 5: '1'}
+303	303		301							{3: 'As the sun finally sets behind the horizon, the lightless ruins are engulfed in an impenetrable darkness.'}
+304	304		306							{1: '1'}
+305	305		509						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 2: '2'}
+306	306		201							{1: '1', 2: '500506', 4: '600'}
+307	307		301							{1: '1', 3: 'Hiding himself deeper into the shadows cast by the fragmented walls, Noan stealthily traverses toward the entrance.'}
+308	308		201							{1: '2', 2: '500019', 4: '-600'}
+309	309		301							"{1: '1', 2: '???', 3: ""It's getting late. Is he still coming or not?"", 4: '2'}"
+310	310		202							{1: '2'}
+311	311		201							{1: '2', 2: '500567', 4: '-600'}
+312	312		301							"{1: '1', 2: '???', 3: ""Just wait, it's not like he's gonna make his fancy entrance in a transport craft. Given their situation, he's probably gotta run all the way here, haha."", 4: '2'}"
+313	313		202							{1: '2', 6: '1'}
+314	314		301							{3: 'Two Constructs and three humans are standing at the entrance, with more figures within the dilapidated building behind them—Noan sees a flickering glimmer from a lighter over there.'}
+315	315		301							"{2: 'Noan', 3: ""(I can't break through from here.)"", 4: '1'}"
+316	316		301							{3: 'He surveys this base again.'}
+317	317		301							{3: 'Given the signs of life around and the number of people present, this place seems to be just a temporary relay station.'}
+318	318		301							{3: 'In that case, its internal infrastructure must have been abandoned for a long time and rendered unusable.'}
+319	319		301							{3: 'Just as he anticipates, his stay in the shadows turns out to be brief before he sees some movement—a human male emerges from the doorway and heads toward the woods behind the ruined building.'}
+320	320		301							{2: 'Noan', 3: '...Hff.', 4: '1'}
+321	321		301							{3: 'Clutching his two blades, Noan avoids the sight of others and quietly trails behind.'}
+322	322		401							{1: '2', 2: '1516'}
+323	323		502							{1: 'RImgBg1DisableSlow'}
+324	324		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+325	325		301							{3: 'The man makes his way through a thicket and looks around before stopping in front of a big tree.'}
+326	326		301							{3: 'The dense vegetation is far from suitable for maintaining stealth, and moving across is bound to create noise.'}
+327	327		301							"{3: ""Noan doesn't intend to mimic a cat's meow to camouflage himself with the comms still on, even though the only other option at hand is less than ideal.""}"
+328	328		301							{2: 'Noan', 3: 'Well then...', 4: '1'}
+329	329		202							{1: '1', 6: '1'}
+330	330		401							{1: '2', 2: '906607'}
+331	331		510						500.0	{1: '2'}
+332	332		201							{1: '1', 2: '500506', 3: '4', 4: '200', 7: '1'}
+333	333		201							{1: '2', 2: '500454', 4: '-100'}
+334	334		401							{1: '2', 2: '4079'}
+335	335		205							{1: '1', 3: '0', 4: '0', 5: '0'}
+336	336		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+337	337		301			RImgBg1Shake				"{1: '1', 3: ""He hurls his short sword toward the man. Although its trajectory slightly deviates from Noan's intended target, it still finds its mark at an equally intimidating spot."", 4: '2'}"
+338	338		306							
+339	339		401							{1: '2', 2: '10022001'}
+340	340		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+341	341		205							{1: '1', 3: '0', 4: '2', 5: '0.5'}
+342	342		301							"{3: ""During the brief moment of the man's surprise, Noan swiftly leaps from behind, positioning his Rev Blade across his neck."", 4: '2'}"
+343	343		301							"{2: 'Noan', 3: ""Don't make any noise. Hands up."", 4: '2'}"
+344	344		301			PanelActor2Shake				{3: 'Completely caught off guard, the man nods hesitantly, his hands swaying at his sides before slowly rising.', 4: '2'}
+345	345		301							{2: 'Human Male', 3: 'M-my pants...', 4: '2'}
+346	346		301							{2: 'Noan', 3: 'I got it.', 4: '2'}
+347	347		301							{3: 'Though Noan speaks words of understanding, he takes the opportunity only to retrieve the short sword from the tree and disarm the man by confiscating all his weapons.', 4: '2'}
+348	348		301							{2: 'Human Male', 3: '...What about my pants?', 4: '2'}
+349	349		301							{2: 'Noan', 3: 'I have some questions for you.', 4: '2'}
+350	350		301							"{2: 'Human Male', 3: ""Seriously? Can't you see I'm in the middle of taking a leak here? Don't you Babylonians have any sense of honor?"", 4: '2'}"
+351	351		301							"{2: 'Noan', 3: ""Sorry, I used to work in Akdilek's Cargo Crew."", 4: '2'}"
+352	352		301							{3: 'The intimidated man immediately ceases his moral objections.', 4: '2'}
+353	353		301				AniZhuanchangBegin			{2: 'Human Male', 3: '...What the **** do you want?', 4: '2'}
+354	354		502							{1: 'DialogDisable'}
+355	355		202							{1: '1', 2: '2', 6: '1'}
+356	356		205							{1: '999'}
+357	357		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory76.jpg'}
+358	358		302			AniZhuanchangEnd				{2: '...', 3: '359'}
+359	359		301			DialogEnable				"{3: ""Everything from Noan's end is transmitted clearly to your ears through the encrypted channel.""}"
+360	360		302							{2: '(Cargo Crew...)', 3: '361'}
+361	361		301							"{3: ""For those who have lived in safety, they are like Santa Claus bringing gifts—at least, that's what some children said.""}"
+362	362		301							{3: 'But few have asked how they manage to navigate treacherous roads with outdated vehicles and repel Corrupted using nothing but their human strength...'}
+363	363		301							"{3: ""And how they have dealt with Akdilek's infamous internal conflicts, defeated ravenous bandits while safeguarding valuable cargo, and ultimately arrived at their destinations.""}"
+364	364		301							{3: '—At least one thing is certain: conventional combat skills and tactics fall short when it comes to the intricate conflicts among humans. However...'}
+365	365		302							{2: '(Is this why he hesitated to have the comms on?)', 3: '366', 4: '(Should I thank him for being gentle when he kidnapped me?)', 5: '366'}
+366	366		301							{3: 'You let out a soft sigh, subtly readjust your posture, and persist in inspecting the vicinity of this temporary base.'}
+367	367		301							{3: 'Suddenly, a familiar figure slowly emerges around a dim corner.'}
+368	368		302							{2: '(...Noan?)', 3: '369'}
+369	369		201							{1: '1', 2: '500746'}
+370	370		301							{1: '1', 3: 'Quietly following behind, you observe the person at a distance. Just as you speculated...'}
+371	371		301							{3: 'Something feels off. The ambiance clearly sounds different on the other end of the comms—Noan is not here.'}
+372	372		302							{2: '(Could it be...)', 3: '373', 4: '(The M.I.N.D. replica...)', 5: '373'}
+373	373		301							{3: 'As you scrutinize the young Construct who strikingly resembles Noan, you notice his pupils in a somber crimson hue, and unlike Noan, he is not wearing glasses.'}
+374	374		301							{3: 'The wound on his chest is constantly seeping vital fluid. Without prompt repairs, even at a gradual pace, it will inevitably lead to his death.'}
+375	375		301							{3: 'The Ascendants are still using him. Why would they allow him to be in such a dire state?'}
+376	376		301				AniZhuanchangBegin			"{3: 'Or is it... precisely because they need to use him, they cannot afford to let their ""tool"" spiral out of control?'}"
+377	377		201							{1: '1', 2: '500506', 3: '4', 4: '200'}
+378	378		201							{1: '2', 2: '500454', 4: '-200'}
+379	379		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory313.png'}
+380	380		301			AniZhuanchangEnd				{1: '1', 3: 'Meanwhile, Noan, with his sword drawn, compels the man to walk up to the group.', 4: '2'}
+381	381		301							"{3: ""After a brief, unfriendly exchange of words, they quickly recognize each other's needs."", 4: '2'}"
+382	382		201							{1: '1', 2: '500136', 4: '-400'}
+383	383		201							{1: '2', 2: '500425', 4: '400'}
+384	384		301							{1: '1', 2: '???', 3: 'We can let your commandant go, but you have to stay.', 4: '1'}
+385	385		301							{2: '???', 3: 'We owe Mr. Bethe a solid. He wants to see you, and we gotta do right by him.', 4: '2'}
+386	386		201							{1: '2', 2: '500454', 4: '-200', 7: '1'}
+387	387		201							{1: '1', 2: '500506', 3: '4', 4: '200', 7: '1'}
+388	388		301							"{1: '1', 2: 'Noan', 3: ""Oh, he wants to see me? So does the Purifying Force. You guys may have known them already, since you both are Lithos' old acquaintances."", 4: '2'}"
+389	389		202							{1: '1', 2: '2', 6: '1'}
+390	390		201							{1: '1', 2: '500136'}
+391	391		301							{1: '1', 2: '???', 3: 'What are you trying to get at?', 4: '1'}
+392	392		201							{1: '1', 2: '500506', 3: '4', 4: '200', 7: '1'}
+393	393		201							{1: '2', 2: '500454', 4: '-200', 7: '1'}
+394	394		301							"{1: '1', 2: 'Noan', 3: ""They've also made deals with Lithos, wanting to get some copies of my M.I.N.D."", 4: '2'}"
+395	395		301							"{2: 'Noan', 3: ""Aren't you curious about what will happen if they track me down through the locator in me?"", 4: '2'}"
+396	396		202							{1: '1', 2: '2', 6: '1'}
+397	397		201							{1: '1', 2: '500136', 7: '1'}
+398	398		301							{1: '1', 2: '???', 3: '...Tch.', 4: '1'}
+399	399		301							{3: 'The human who appears to be the leader frowns, refraining from offering any response.'}
+400	400		201							{1: '1', 2: '500506', 3: '4', 4: '200', 7: '1'}
+401	401		201							{1: '2', 2: '500454', 4: '-200', 7: '1'}
+402	402		301							"{1: '1', 2: 'Noan', 3: ""(Doesn't seem like there's any Ascendant around; otherwise, he wouldn't feel threatened by such a simple bluff.)"", 4: '2'}"
+403	403		301							"{2: 'Noan', 3: ""My request still stands. Let me get Commandant Simon to safety, and don't play any tricks along the way."", 4: '2'}"
+404	404		301							"{2: 'Noan', 3: ""Once he leaves, I'll hand over the locator, but if you insist on starting a fight here..."", 4: '2'}"
+405	405		301			PanelActor2Shake				{3: 'He firmly grasps the trousers of the man in front of him, eliciting a visible shudder of fear.', 4: '2'}
+406	406		301							"{2: 'Human Male', 3: ""Boss! He's not lying! I heard him talking to someone else. They'll be here in minutes!"", 4: '2'}"
+407	407		202							{1: '1', 2: '2', 6: '1'}
+408	408		201							{1: '1', 2: '500136'}
+409	409		301							{1: '1', 2: '???', 3: '...', 4: '1'}
+410	410		301							{3: 'It takes the leader quite some time to ponder on this clumsy lie.'}
+411	411		301							"{3: ""It's not a matter of lacking intelligence, but rather he knows too well that those people are highly likely to act in that manner.""}"
+412	412		301				AniZhuanchangBegin			{2: '???', 3: 'Alright. Bring the commandant outside.', 4: '1'}
+413	413		201							{1: '1', 2: '500136', 4: '-300', 7: '1'}
+414	414		201							{1: '2', 2: '500362', 4: '300', 7: '1'}
+415	415		301			AniZhuanchangEnd				{1: '1', 3: 'Nine hours after escaping the Clean Zone, Noan finally reunites with Simon, who seems to be barely holding up.', 4: '1', 5: '2'}
+416	416		202							{1: '1', 2: '2', 6: '1'}
+417	417		201							{1: '1', 2: '500506', 3: '4', 4: '200'}
+418	418		201							{1: '2', 2: '500454', 4: '-200'}
+419	419		401							{1: '2', 2: '4044'}
+420	420		301							{1: '1', 3: 'Under the watchful gazes of many, Noan ties the severed belt of the man into a knot and completes the exchange of hostages.', 4: '2'}
+421	421		202							{1: '1', 2: '2', 6: '1'}
+422	422		201							{1: '1', 2: '500506', 4: '300'}
+423	423		201							{1: '2', 2: '500362', 4: '-300'}
+424	424		301							{1: '1', 2: 'Simon', 3: '...', 4: '2'}
+425	425		301							"{2: 'Noan', 3: ""I just received a signal from Captain Palma. She'll be here soon."", 4: '1'}"
+426	426		401							{1: '2', 2: '2987'}
+427	427		301							"{3: ""After assessing Simon's injuries, Noan proceeds to silently apply a treatment gel to his pierced hand and patches it up.""}"
+428	428		301							{2: 'Simon', 3: '...You always carry these things with you.', 4: '2'}
+429	429		301							"{2: 'Noan', 3: ""Because Lillian is better at maintaining Constructs, and I'm the only one on the squad with basic human medical knowledge, so..."", 4: '1'}"
+430	430		301							{2: 'Simon', 3: 'Do you also need medical knowledge to carry medicine?', 4: '2'}
+431	431		204							{1: '1', 2: '4'}
+432	432		301							{2: 'Noan', 3: '...What?', 4: '1'}
+433	433		301							{2: 'Simon', 3: 'Tell me the truth about that bottle of medicine.', 4: '2'}
+434	434		401							{1: '1', 2: '36'}
+435	435		202							{1: '1', 2: '2', 6: '1'}
+436	436		301							{3: 'Just as Noan is about to explain, a piercing scream rends the air, echoing from the distance.'}
+437	437		401							{1: '1', 2: '279'}
+438	438		201							{1: '1', 2: '500522'}
+439	439		301							{1: '1', 3: 'They turn their heads, only to see a familiar figure—Palma is walking over with the heads of two Constructs grasped in her hands, her silhouette outlined against the moonlight.'}
+440	440		201							{1: '1', 2: '500136'}
+441	441		301							{1: '1', 2: '???', 3: 'He broke the deal! Get them!', 4: '1'}
+442	442		202							{1: '1', 6: '1'}
+443	443		201							{1: '1', 2: '500506', 3: '4', 4: '300'}
+444	444		201							{1: '2', 2: '500362', 4: '-400'}
+445	445		301							"{1: '1', 2: 'Noan', 3: ""Wait, she's here for Commandant Simon. I'm still going with you."", 4: '1'}"
+446	446		203							{1: '1', 2: '0.25', 3: '400'}
+447	447		301							{3: 'Noan takes a step back, shielding the weapons pointed at them with his body.'}
+448	448		301							{2: 'Simon', 3: 'Where are you going?', 4: '2'}
+449	449		301							{2: 'Noan', 3: '...', 4: '1'}
+450	450		301							{2: 'Noan', 3: 'You go ahead first and return to the Clean Zone with Captain Palma.', 4: '1'}
+451	451		301							{2: 'Simon', 3: 'Against the defenses here, the two of you are enough to fight a way out!', 4: '2'}
+452	452		301							"{3: ""Noan shakes his head. Given how desperate these defectors are, Simon won't make it back unscathed if they do so.""}"
+453	453		301							"{3: ""Moreover, as long as Bethe remains alive, Lithos will soon recreate today's chaos.""}"
+454	454		301							"{2: 'Noan', 3: ""This won't solve all the problems. You go back first."", 4: '1'}"
+455	455		203							{1: '1', 2: '0.25', 3: '500'}
+456	456		301							{3: 'He tosses the pistols and daggers he had collected to Simon and takes several steps back, allowing Palma to approach in a peaceful manner.'}
+457	457		301							"{2: 'Simon', 3: ""It's not the first time Dark Aries has encountered something like this. Don't try to solve the problem by leaving with the defectors."", 4: '2'}"
+458	458		301							{3: 'He demands the right to know the truth from Noan, but the young man before him utters words strikingly similar to what Atiel had once said.'}
+459	459		301							"{2: 'Noan', 3: ""I'll explain everything once I'm back... I promise."", 4: '1'}"
+460	460		401							{1: '2', 2: '1513'}
+461	461		202							{1: '1'}
+462	462		301							"{3: ""Then, just like Atiel, he walks away without a moment's hesitation.""}"
+463	463		201							{1: '1', 2: '500522', 4: '400'}
+464	464		301							{1: '1', 2: 'Simon', 3: '...', 4: '2'}
+465	465		301							{2: 'Palma', 3: 'I knew he would leave.', 4: '1'}
+466	466		301							{2: 'Simon', 3: 'You... knew?', 4: '2'}
+467	467		301							{2: 'Palma', 3: 'Noan made his way out by kidnapping the Gray Raven Commandant, saying it was all for your rescue, and now he refuses to come back with us.', 4: '1'}
+468	468		301							{3: 'Dropping the heads she was holding, Palma shares her most pessimistic speculation—she is no stranger to such occurrences.'}
+469	469		301							"{2: 'Palma', 3: ""I've searched around along the way, but I couldn't find the Gray Raven Commandant nearby."", 4: '1'}"
+470	470		301							"{2: 'Palma', 3: ""Must've thrown everything behind for the sake of revenge."", 4: '1'}"
+471	471		301							"{2: 'Simon', 3: ""Noan's doing this... for..."", 4: '2'}"
+472	472		504							{1: '0.7'}
+473	473		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory216.png'}
+474	474		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+475	475		201							{1: '1', 2: '500214', 4: '400', 7: '1'}
+476	476		201							{1: '2', 2: '500201', 4: '-400', 7: '1'}
+477	477		301							{1: '1', 2: 'Simon', 3: 'Revenge? You mean... Atiel?', 4: '2'}
+478	478		301							{3: 'The cold wind carries with it memories of the past, their echoes crying out deafeningly in the air.'}
+479	479		202							{1: '2', 6: '1'}
+480	480		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory313.png'}
+481	481		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+482	482		504							{1: '0'}
+483	483		201							{1: '1', 2: '500522'}
+484	484		301							"{1: '1', 2: 'Palma', 3: ""What's the plan now? While rescuing you is our top priority at the moment, I can still take care of that guy and get his Dark Aries tag back."", 4: '1'}"
+485	485		201							{1: '1', 2: '500362'}
+486	486		301							{1: '1', 2: 'Simon', 3: 'Are you saying the Chief... also disappeared?', 4: '1'}
+487	487		301							{2: 'Simon', 3: 'The Chief...', 4: '1'}
+488	488		203							{1: '1', 2: '0.3', 4: '-50', 5: '100'}
+489	489		502						300.0	{1: 'PanelActor1Shake'}
+490	490		505							{1: 'PanelActor1Shake'}
+491	491		301							{3: 'Only now does he appear to regain his senses, stumbling back a few steps.'}
+492	492		301							{2: 'Simon', 3: 'What in the world... should we do now?', 4: '1'}
+493	493		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+494	494		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory628.jpg'}
+495	495		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+496	496		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+497	497		201							{1: '1', 2: '500206', 3: '2'}
+498	498		301							{1: '1', 2: 'Atiel', 3: 'Are you an idiot?', 4: '1'}
+499	499		301				DialogDisable			"{2: 'Atiel', 3: ""It's simple in this kind of situation—just kill the traitor."", 4: '1'}"
+500	500		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+501	501		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+502	502		202							{1: '1', 6: '1'}
+503	503		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+504	504		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+505	505		401						400.0	{1: '2', 2: '1510'}
+506	506		401						400.0	{1: '2', 2: '1510'}
+507	507		401							{1: '2', 2: '1510'}
+508	508		301			DialogEnable				{3: '—His mind goes blank for a moment.'}
+509	509		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+510	510		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory313.png'}
+511	511		301			AniZhuanchangEnd				{3: 'When his vision clears again, Simon finds himself holding up a gun, its barrel emitting a faint warmth.'}
+512	512		301							"{3: ""Under the moonlight, a mark is left on that familiar face, while one of the defectors walking ahead of him has collapsed, clearly struck by the bullet's impact.""}"
+513	513		201							{1: '1', 2: '500506', 3: '11'}
+514	514		301							{1: '1', 3: 'Noan finally turns around, showing Simon a bitter smile.'}
+515	515		301		1		AniZhuanchangBegin			"{2: 'Noan', 3: ""...I'm sorry."", 4: '1'}"

@@ -1,0 +1,63 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory179.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				"{3: ""You're strolling through a bustling Kowloong-inspired district, thinking you'll pick up a few mementos to bring home...""}"
+4	4		301							{3: 'But most of the specialty items and souvenirs are so pricey that you hesitate at every stand.'}
+5	5		301							"{3: ""What you'd find all over Kowloong's streets is treated like high-end merchandise here.""}"
+6	6		201							{1: '1', 2: '500817'}
+7	7		301							"{1: '1', 3: ""Right when you're feeling stuck, you notice a familiar silhouette on the other side of the road.""}"
+8	8		302							"{2: 'Qu.', 3: '9', 4: ""It's a rare sight to see someone so busy taking a moment to wander around town."", 5: '9'}"
+9	9		301							{3: 'Qu nods slightly in acknowledgment.'}
+10	10		301							{2: 'Qu', 3: 'The same to you.', 4: '1'}
+11	11		301							{2: 'Qu', 3: 'Why are you standing outside the souvenir shop looking so worried?', 4: '1'}
+12	12		302							"{2: ""They're way too expensive..."", 3: '13', 4: ""I'm just strapped for... cash, you know."", 5: '13'}"
+13	13		202							{1: '1'}
+14	14		301							{3: 'When Qu hears this, she frowns and quickly steps into the store.'}
+15	15		201							{1: '1', 2: '500236'}
+16	16		301							"{1: '1', 2: 'Shop Owner', 3: ""Oh my! If it isn't Lady Qu herself! What a rare honor!"", 4: '1'}"
+17	17		202							{1: '1'}
+18	18		301							"{3: ""Wearing an overly eager smile, the shop owner steps forward, but Qu's gaze slides right past him and fixes on the shockingly high price tags next to the goods.""}"
+19	19		301							{3: 'Afterward, Qu turns her attention back to the shop owner.'}
+20	20		201							{1: '1', 2: '500236'}
+21	21		301							"{1: '1', 2: 'Shop Owner', 3: ""W-well, the prices here are higher than in Kowloong, but shipping from Kowloong isn't cheap, you know... Once you factor that in..."", 4: '1'}"
+22	22		301							{3: 'Qu shows no emotion.'}
+23	23		301							"{2: 'Shop Owner', 3: ""Then... it's just..."", 4: '1'}"
+24	24		301							{3: 'The shop owner stutters, his voice growing quieter while sweat beads on his forehead.'}
+25	25		301							"{2: 'Shop Owner', 3: ""...I'll revert the price to normal right now."", 4: '1'}"
+26	26		201							{1: '1', 2: '500817'}
+27	27		301							"{1: '1', 2: 'Qu', 3: ""Don't let this happen again."", 4: '1'}"
+28	28		202							{1: '1'}
+29	29		301							"{3: ""From start to finish, Qu hardly says a thing. She only speaks up at the very end, and it's just a brief line.""}"
+30	30		301				AniZhuanchangBegin			{3: 'Once the shop owner adjusts the prices, Qu meets your gaze, silently telling you to follow her out.'}
+31	31		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory172.png'}
+32	32		301			AniZhuanchangEnd				{3: 'You walk alongside Qu for a bit before you head into a clothing store with a Kowloong vibe.'}
+33	33		301							{3: 'Qu goes straight for a rack in the back and picks out a silk jacket.'}
+34	34		201							{1: '1', 2: '500817'}
+35	35		301							{1: '1', 2: 'Qu', 3: '【kuroname】, I think this outfit will look perfect on you. Why not try it on?', 4: '1'}
+36	36		302							{2: 'Sure.', 3: '37', 4: 'No need. I trust your taste.', 5: '38'}
+37	37	40	301							{3: 'Qu drapes the coat over your shoulders.'}
+38	38		301							{2: 'Qu', 3: 'I want to see you wearing it.', 4: '1'}
+39	39		301							"{3: ""As Qu speaks, she's already slipping the coat over your shoulders.""}"
+40	40		301							{3: 'Then she presses all ten fingers against your arm, slowly measuring downward...'}
+41	41		301							"{2: 'Qu', 3: ""The shoulders look fine—now... let's see the waist."", 4: '1'}"
+42	42		301							"{3: ""Bit by bit, Qu's fingertips slide along the garment and settle at your waist.""}"
+43	43		302							"{2: 'Haha, Qu, easy...', 3: '44', 4: ""Good thing I'm not ticklish."", 5: '44'}"
+44	44		301							{3: 'After you put on the coat, Qu steps back two paces, carefully checks it over, then nods in approval.'}
+45	45		204							{1: '1', 2: '1'}
+46	46		301							"{2: 'Qu', 3: ""Looks great. It's exactly how I like it—though I wonder if you like it, too?"", 4: '1'}"
+47	47		302							"{2: 'I do.', 3: '48', 4: ""If you think it's fine, then there's no problem..."", 5: '48'}"
+48	48		301							"{2: 'Qu', 3: ""Now that the coat is all set, it's time to find some matching pants."", 4: '1'}"
+49	49		302							"{2: ""I'll leave it to you."", 3: '50', 4: 'I... will take care of this myself.', 5: '50'}"
+50	50		202							{1: '1'}
+51	51		301							{3: 'Qu browses through the different pants hanging on the rack.'}
+52	52		201							{1: '1', 2: '500817'}
+53	53		301							"{1: '1', 2: 'Qu', 3: ""Since you rarely come here, I won't let you leave until we find the perfect match."", 4: '1'}"
+54	54		301							"{2: 'Qu', 3: ""By the way, I hear there's a special performance here tonight."", 4: '1'}"
+55	55		301							{2: 'Qu', 3: 'Coincidentally, I just bought a skirt in the same color scheme a few days ago.', 4: '1'}
+56	56		204							{1: '1', 2: '1'}
+57	57		301							"{2: 'Qu', 3: ""It's Double Seventh Festival, and I'm sure you haven't forgotten you're my partner."", 4: '1'}"
+58	58		302							{2: 'Obviously.', 3: '59', 4: 'How could I forget?', 5: '59'}
+59	59		301							"{2: 'Qu', 3: ""Alright, I'll go back and change in a little while."", 4: '1'}"
+60	60		204							{1: '1', 2: '1'}
+61	61		301							{2: 'Qu', 3: 'See you tonight.', 4: '1'}
+62	62		301		1		AniZhuanchangBegin			"{2: 'Qu', 3: ""Get yourself ready too, and don't let me down."", 4: '1'}"

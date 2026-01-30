@@ -1,0 +1,123 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '176'}
+3	3		201							{1: '1', 2: '500146', 3: '4'}
+4	4		301			DialogEnable				{1: '1', 3: 'He calmly issues command after command, directing Cerberus to move Simon and Noan to somewhere safe.'}
+5	5		301							{3: 'Planning the next move on the terminal, Murray has never felt as calm as he is now.'}
+6	6		301							{3: 'Tactics, deployment, and medical replenishment... That is not all, even unmemorable fragments of his past are all clearly displayed in his brain like books on a bookshelf.'}
+7	7		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.5'}
+8	8		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+9	9		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+10	10		301							{3: 'He had thought his happy memories with his brother would be what supports him in these trying times, however, all that flashes across his mind are those of missed opportunities and regrets.'}
+11	11		202							{1: '1', 6: '1'}
+12	12		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3201_12.jpg', 3: '0', 4: '1', 5: '0.5'}
+13	13		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+14	14		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3201_12.jpg'}
+15	15		301							{3: 'The regret of not pushing open the door on the night of the festival—'}
+16	16		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cgqz403.png', 3: '0', 4: '1', 5: '0.5'}
+17	17		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+18	18		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz403.png'}
+19	19		301							{3: 'The regret of not being able to do anything but watch his brother be turned into a Construct—'}
+20	20		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+21	21		504							{1: '0.7'}
+22	22		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+23	23		201							{1: '1', 2: '500146', 3: '19', 4: '-400'}
+24	24		201							{1: '2', 2: '500026', 4: '400'}
+25	25		301							"{1: '1', 2: 'Murray', 3: ""Because you never thought we'd be of any help to you, right?"", 4: '1'}"
+26	26		301							{2: 'Lee', 3: 'You know full well I never saw you that way.', 4: '2'}
+27	27		301							{3: 'Those missed moments of truth hidden under worries concerns, and anger.'}
+28	28		301				AniZhuanchangBegin			{3: 'These tiny moments all point toward a normal, forgettable afternoon in the end.'}
+29	29		504			DialogDisable				{1: '0'}
+30	30		202							{1: '1', 2: '2', 6: '1'}
+31	31		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+32	32		509						600.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory266.png', 2: '1'}
+33	33		201							{1: '1', 2: '500146', 3: '4', 4: '500'}
+34	34		201							{1: '2', 2: '500168', 4: '-500'}
+35	35		301			DialogEnable				{1: '1', 2: 'Murray', 3: 'How is Simon?', 4: '1'}
+36	36		301							"{2: 'Vera', 3: ""...He'll live."", 4: '2'}"
+37	37		301							{3: 'Vera pants as she turns to fight the haywire Construct that had caught up.'}
+38	38		301							"{2: 'Murray', 3: ""I've marked the location again, move toward the safe area."", 4: '1'}"
+39	39		301							{2: 'Vera', 3: 'Hey... is everything all right over there?', 4: '2'}
+40	40		204							{1: '1', 2: '1'}
+41	41		301							"{2: 'Murray', 3: ""Ha... I'll live."", 4: '1'}"
+42	42		301							"{3: ""Murray smiles and returns Vera's words to her, his hands still moving swiftly with precision across the projected screen.""}"
+43	43		301				AniZhuanchangBegin			"{2: 'Vera', 3: ""Hmph, looks like someone's full of spirit. You know I'm asking about..."", 4: '2'}"
+44	44		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+45	45		510						800.0	{1: '1', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory439.jpg'}
+46	46		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgCg/Cg3201_16.jpg'}
+47	47		301			DialogEnable				"{3: 'It was just another ""normal day"" in Babylonia.'}"
+48	48		301							"{2: 'Classmate', 3: ""Murray? We're gonna be late, what are you looking at?""}"
+49	49		301							{2: 'Murray', 3: 'Ah... Coming.'}
+50	50		301							{2: 'Classmate', 3: 'Hm? That Construct? He looks familiar... He visited you before, right?'}
+51	51		301							"{2: 'Murray', 3: ""...Yeah, he's my brother.""}"
+52	52		301							"{2: 'Classmate', 3: 'Oh! Your ""incredible Construct soldier"" brother!'}"
+53	53		301							"{2: 'Classmate', 3: ""Constructs aren't normally allowed to come out freely, right? Are you not gonna go say hi?""}"
+54	54		301							{2: 'Murray', 3: 'Yeah...'}
+55	55		301							{3: 'Murray looked over expectantly, but Lee did not see him. He checks his gear skillfully and heads toward the mission location without looking over at all.'}
+56	56		301							{2: 'Murray', 3: '...'}
+57	57		301							{3: 'Murray has been enrolled in F.O.S. for some time now, this college is his best chance to establish connections with leaders of Babylonia.'}
+58	58		301							{3: 'He does not have the advantage of a good family background. If he wants to make it into the inner circle of Babylonia as quickly as possible, then he has no time to waste and will have to utilize all the resources available to him.'}
+59	59		301							{3: 'All will go according to his plan, he will get to his desired position without attracting much attention. Then he will be able to protect Morian from up there and his brother will not even know about it.'}
+60	60		301							"{3: '—This was his ""ridiculous plan"" that he formed when he was young and naive.'}"
+61	61		301							{3: 'But for now, he is no different than his classmates who enthusiastically talk about Construct soldiers, he can only stand on the side and watch.'}
+62	62		301				AniZhuanchangBegin			{3: 'He feels so far away from Morian, and no matter how fast he runs, he can never seem to catch up with him.'}
+63	63		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+64	64		509				AniZhuanchangEnd		600.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory266.png', 2: '1'}
+65	65		201							{1: '1', 2: '500146', 3: '4', 4: '500'}
+66	66		201							{1: '2', 2: '500168', 4: '-500'}
+67	67		301			DialogEnable				{1: '1', 2: 'Vera', 3: 'Dammit... The original location has been taken over by those Section 2 mad scientists.', 4: '2'}
+68	68		301							"{2: 'Murray', 3: ""What's the situation?"", 4: '1'}"
+69	69		301							"{2: 'Vera', 3: ""Ha... Noan is carrying Simon on his back, we're heading toward the marked location, and we've lost all the pursuing Constructs."", 4: '2'}"
+70	70		301							{2: 'Murray', 3: 'Well done. After you replenish your weapon and medical supplies there...', 4: '1'}
+71	71		301							{3: 'Murray summarizes all the information currently known to him, and under his instructions, Cerberus was able to relocate a group of conscious commandants and Constructs.'}
+72	72		301				AniZhuanchangBegin			{3: 'He looks over the map of functioning areas in Eden and the location of shelters, formulating a plan in his mind. What move should he make next?'}
+73	74		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+74	75		510						800.0	{1: '1', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory439.jpg'}
+75	76		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+76	77		504							{1: '0.7'}
+77	78		301			DialogEnable				"{3: ""But now... it's not the same anymore.""}"
+78	79		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory39.jpg', 3: '0', 4: '1', 5: '0.5'}
+79	80		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+80	81		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory39.jpg'}
+81	82		201							{1: '1', 2: '1011001', 4: '-400'}
+82	83		201							{1: '2', 2: '500146', 4: '400'}
+83	84		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '2'}
+84	85		301							"{1: '1', 2: 'Lee', 3: ""...I'm sorry."", 4: '1'}"
+85	86		301							{2: 'Lee', 3: '...Never again.', 4: '1'}
+86	87		301							"{2: 'Murray', 3: ""No matter what happens, we won't keep secrets from each other anymore."", 4: '2'}"
+87	88		301				AniZhuanchangBegin			{2: 'Lee', 3: 'I promise.', 4: '1'}
+88	89		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+89	90		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+90	91		504							
+91	92		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+92	93		201							{1: '1', 2: '500146', 3: '4'}
+93	94		301			DialogEnable				"{1: '1', 3: 'The thought of ""making his brother happy"" is not the only thing that is supporting him. That call from Morian one night and that small promise—they have always been in Murray\'s heart, lighting up the darkness in his path.'}"
+94	95		301							{3: 'No more hidden pain and no more secrets, they now trust each other and rely on one another.'}
+95	96		301							{3: 'Even though they are physically separated by the distance between Babylonia and the surface, Murray can still feel his brother by his side.'}
+96	97		301							{3: 'Morian is on the surface, fighting against the unknown for humanity. So Murray also has to fulfill his promise to Morian—protect Morian and all that Morian wants to protect.'}
+97	98		301							{3: 'His body is not suitable to fight on the front lines. It would not do if he died before achieving his goal... He would not allow it.'}
+98	99		301							{3: 'There is still a lot he wants to say to his brother, a lot of experiences he wants to share...'}
+99	100		301							{3: 'No more regrets behind the door—'}
+100	101		301							{3: 'No more helpless anger—'}
+101	102		301							{3: 'Words spoken out of worry, concern, and anger no longer separate the two of them.'}
+102	103		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+103	104		504							{1: '0.7'}
+104	105		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+105	106		201							{1: '1', 2: '500146', 4: '-400'}
+106	107		201							{1: '2', 2: '500026', 4: '400'}
+107	108		301							{1: '1', 2: 'Lee', 3: 'Just... be careful.', 4: '2'}
+108	109		301							"{2: 'Murray', 3: ""I know. I won't be going to the surface because I'll be using a remote connection. I'll be okay."", 4: '1'}"
+109	110		301							"{2: 'Lee', 3: ""I'll come and find you when this is over."", 4: '2'}"
+110	111		301							{2: 'Murray', 3: '...Sure.', 4: '1'}
+111	112		301				AniZhuanchangBegin			"{2: 'Murray', 3: ""I'll be waiting."", 4: '1'}"
+112	113		202							{1: '1', 2: '2', 6: '1'}
+113	114		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+114	115		504							
+115	116		509				AniZhuanchangEnd		600.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory266.png', 2: '1'}
+116	117		201							{1: '1', 2: '500146', 3: '4', 4: '500'}
+117	118		201							{1: '2', 2: '500168', 4: '-500'}
+118	119		301			DialogEnable				{1: '1', 2: 'Vera', 3: 'The conscious commandants and Constructs are all here.', 4: '2'}
+119	120		301							{3: 'Murray lets out a sigh of relief as he circles the location on the map of Eden.'}
+120	121		301							{2: 'Murray', 3: 'First... Cerberus...', 4: '1'}
+121	122		301							"{3: ""Morian's heart beats strongly in his chest. He relies on his brother to survive, thus he shall become someone his brother can rely on—""}"
+122	123		301		1		AniZhuanchangBegin			{3: 'That is his way of keeping his promise.'}

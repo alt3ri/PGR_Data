@@ -1,0 +1,1021 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+3	3		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory710.jpg'}
+4	4		401							{1: '1', 2: '6203', 3: '0.6'}
+5	5		301			DialogEnable				{1: '1', 3: 'In the stillness of midnight, a boy stirs in his sleep, as if roused by something unknown. He awakens on his creaking wooden bed.'}
+6	6		301							{3: 'Ever since the plague, day and night have blurred into one. A hazy light constantly fills the orphanage dormitory. But tonight, the usual chorus of breathing is gone. In its place is an unsettling silence.'}
+7	7		201							{1: '1', 2: '500940', 4: '20', 5: '30', 6: '-10'}
+8	8		401							{2: '4833'}
+9	9		203							{1: '1', 2: '0.5', 3: '0.7'}
+10	10		301							{1: '1', 3: 'He sits up, wipes the clinging drowsiness from his face, staggers to the next bed, and discovers not only that his companions are gone, but the entire dormitory is deserted.'}
+11	11		301							{2: 'Wanshi', 3: '...', 4: '1'}
+12	12		301							{2: 'Wanshi', 3: 'They went to the kitchen for candy without me?', 4: '1'}
+13	13		202							{1: '1'}
+14	14		301				AniZhuanchangBegin			"{3: ""The boy feels a flicker of panic, but doesn't dwell on it. He quickly lights the candlestick by the cabinet, throws on a thin coat, and steps out of the room.""}"
+15	15		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory643.jpg'}
+16	16		502						500.0	{1: 'AniZhuanchangEnd'}
+17	17		401							{1: '2', 2: '1513', 3: '1'}
+18	18		104						300.0	{1: '0|50|-50', 2: '0.25'}
+19	19		104						300.0	{1: '0|0|-100', 2: '0.25'}
+20	20		104						300.0	{1: '0|50|-150', 2: '0.25'}
+21	21		104						300.0	{1: '0|0|-200', 2: '0.25'}
+22	22		301			DialogEnable				"{3: ""His hurried footsteps echo through the orphanage's narrow, dim hallway. The boy moves fast, fearful his foster mother might still be awake, yet more afraid he will miss the secret party his companions never told him about.""}"
+23	23		401							{2: '5828'}
+24	24		301							{2: '??', 3: 'Buzz... buzz...'}
+25	25		402							{1: '5828'}
+26	26		201							{1: '1', 2: '500940'}
+27	27		301							{1: '1', 2: 'Wanshi', 3: 'Anna?... Yorsen?', 4: '1'}
+28	28		202							{1: '1'}
+29	29		301							"{3: ""Hearing the faint hum of vibrating wings from somewhere nearby, the boy cautiously calls out, but there's no response.""}"
+30	30		401							{1: '2', 2: '5828'}
+31	31		301							"{3: ""A low, rasping hum builds into dense waves of sound, crashing invisibly against his eardrums. It leaves him vaguely unsettled, but he can't find a way to block it out.""}"
+32	32		301				DialogDisable			{3: 'To shake off this vague sense of unease, he chooses to leave and keeps moving forward.'}
+33	33		306							{1: '1'}
+34	34		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory643.jpg', 3: '0', 4: '1', 5: '0.5'}
+35	35		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+36	36		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory643.jpg'}
+37	37		401							{1: '2', 2: '1513', 3: '1'}
+38	38		104						300.0	{1: '0|50|-100', 2: '0.25'}
+39	39		104						300.0	{1: '0|0|-150', 2: '0.25'}
+40	40		104						300.0	{1: '0|50|-200', 2: '0.25'}
+41	41		104							{1: '0|0|-250', 2: '0.25'}
+42	42		301			DialogEnable	DialogDisable			{3: 'Perhaps careless, perhaps too rushed to think, he fails to notice that every door he passed now stands open.'}
+43	43		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory643.jpg', 3: '0', 4: '1', 5: '0.5'}
+44	44		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+45	45		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory643.jpg'}
+46	46		401							{1: '2', 2: '1513', 3: '1'}
+47	47		104						300.0	{1: '0|50|-150', 2: '0.25'}
+48	48		104						300.0	{1: '0|0|-250', 2: '0.25'}
+49	49		104						300.0	{1: '0|50|-350', 2: '0.25'}
+50	50		104						300.0	{1: '0|0|-400', 2: '0.25'}
+51	51		301			DialogEnable				{3: 'Each door hangs ajar, and rows of empty beds lie beyond it.'}
+52	52		401							{1: '2', 2: '5828'}
+53	53		301							{2: '??', 3: 'Buzz... buzz... buzz...'}
+54	54		301				DialogDisable			{3: 'The buzzing grows louder. Whatever is making the sound ahead is now impossible to ignore.'}
+55	55		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory643.jpg', 3: '0', 4: '1', 5: '0.5'}
+56	56		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+57	57		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory643.jpg'}
+58	58		401							{1: '2', 2: '1513', 3: '1'}
+59	59		104						300.0	{1: '0|50|-150', 2: '0.25'}
+60	60		104						300.0	{1: '0|0|-250', 2: '0.25'}
+61	61		104						300.0	{1: '0|50|-350', 2: '0.25'}
+62	62		104						300.0	{1: '0|0|-450', 2: '0.25'}
+63	63		301			DialogEnable				"{3: ""The small figure carrying a faint light passes through the empty kitchen and lounge, heading toward the orphanage's front gate.""}"
+64	64		306							
+65	65		401						300.0	{1: '2', 2: '4113'}
+66	66		402							{1: '4113'}
+67	67		301							{1: '1', 3: 'Steeling himself, he takes a breath, rises on his toes, and pulls the brass ring embedded in the heavy oak plank.'}
+68	68		401							{1: '2', 2: '5370'}
+69	69		301							{3: 'He pulls the handle downward. It slides into his palm more smoothly than expected, and the door swings open faster than usual.'}
+70	70		202							{1: '1', 6: '1'}
+71	71		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+72	72		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+73	73		301				DialogDisable			{3: 'Before he can react, everything behind the door comes into view.'}
+74	74		401							{1: '1', 2: '155', 3: '1'}
+75	75		401							{1: '2', 2: '2595'}
+76	76		109							{1: '1', 2: '<color=#ff4e4eff><size=70><b>Blood</b></size></color>', 3: '0', 4: '10', 9: '3'}
+77	77		301							{3: 'Blood', 9: '3'}
+78	78		110							
+79	79		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+80	80		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '1'}
+81	81		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab', 2: '1'}
+82	82		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1211.jpg'}
+83	83		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+84	84		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+85	85		104						250.0	{1: '150|0|-100', 2: '0.2'}
+86	86		104						150.0	{1: '-100|100|-200', 2: '0.1'}
+87	87		104						250.0	{1: '-100|0|0', 2: '0.2'}
+88	88		104						150.0	{1: '0|50|-200', 2: '0.1'}
+89	89		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+90	90		301			DialogEnable	DialogDisable			{3: 'The sky blazes blood-red, its eerie crimson light flooding the courtyard and leaving nothing hidden.'}
+91	91		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab'}
+92	92		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+93	93		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+94	94		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+95	95		401							{1: '2', 2: '2595'}
+96	96		109							{1: '1', 2: '<color=#ff4e4eff><size=100><b>Corpses</b></size></color>', 3: '0', 4: '20', 9: '3'}
+97	97		301							{3: 'Corpses', 9: '3'}
+98	98		110							
+99	99		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+100	100		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '1'}
+101	101		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab', 2: '1'}
+102	102		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1211.jpg'}
+103	103		401							{1: '2', 2: '2593'}
+104	104		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '4'}
+105	105		201							{1: '1', 2: '500940', 4: '-30', 7: '1'}
+106	106		205							{1: '1', 3: '0', 4: '0', 5: '0'}
+107	107		502							{1: 'DialogEnable'}
+108	108		301			RImgBg1Shake	DialogDisable			"{3: ""In a garden once bursting with blooms, bodies now lie everywhere. Bloated blood locusts slice the children's throats with jointed limbs, then plunge their long mouthparts deep to drink the fluid churning in their windpipes.""}"
+109	109		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab'}
+110	110		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '4', 5: '1'}
+111	111		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+112	112		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+113	113		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+114	114		401							{1: '2', 2: '2595'}
+115	115		109							{1: '1', 2: '<color=#ff4e4eff><size=120><b>Calamity</b></size></color>', 3: '0', 4: '30', 9: '3'}
+116	116		301							{3: 'Calamity', 9: '3'}
+117	117		110							
+118	118		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+119	119		205							{1: '1', 3: '0', 4: '1', 5: '0.3'}
+120	120		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory643.jpg'}
+121	121		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+122	122		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '4'}
+123	123		502							{1: 'PanelActor1Shake'}
+124	124		203							{1: '1', 2: '0.25', 3: '-30', 5: '-300'}
+125	125		104							{1: '0|50|-250', 2: '0.2'}
+126	126		301			DialogEnable	DialogDisable			"{3: ""When the oak door creaks open, the executors of calamity turn in unison. Their sharp gaze cuts through the narrow gap and drives raw terror into the boy's shaking golden eyes.""}"
+127	127		205							{1: '1', 3: '1', 4: '0', 5: '0'}
+128	128		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+129	129		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '4', 5: '1'}
+130	130		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+131	131		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+132	132		402							{1: '5828'}
+133	133		401							{1: '2', 2: '9335029'}
+134	134		109							{1: '1', 2: '<color=#ff4e4eff><size=200><b>RUN!!</b></size></color>', 3: '0', 4: '50', 9: '3'}
+135	135		301							{3: 'RUN!!', 9: '3'}
+136	136		110							
+137	137		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+138	138		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '1'}
+139	139		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab', 2: '1'}
+140	140		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1211.jpg'}
+141	141		104							{1: '0|50|-200', 2: '0'}
+142	142		401							{1: '2', 2: '4681'}
+143	143		401							{1: '2', 2: '4348'}
+144	144		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab', 2: '1'}
+145	145		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '1'}
+146	146		401							{1: '2', 2: '213'}
+147	147		301			DialogEnable	DialogDisable			{3: 'Overcome with terror, the boy drops the candlestick from his hands. It crashes to the floor, spilling the remaining wax across the door. The wax catches fire, and blazing tongues of flame instantly form a barrier between him and the world drenched in blood and stench.'}
+148	148		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+149	149		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory643.jpg'}
+150	150		402							{1: '213'}
+151	151		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab'}
+152	152		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab'}
+153	153		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+154	154		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+155	155		203							{1: '1', 2: '0', 4: '-50', 5: '-100'}
+156	156		205						400.0	{1: '1', 3: '0', 4: '1', 5: '0.3'}
+157	157		104							{1: '0|0|0', 2: '0.25'}
+158	158		203						300.0	{1: '1', 2: '0.25', 4: '-100', 5: '-60'}
+159	159		203							{1: '1', 2: '0.25'}
+160	160		301			DialogEnable	DialogDisable			{3: 'He stumbles back two steps, then turns and instinctively runs in the direction untouched by the locust swarm.'}
+161	161		203							{1: '1', 2: '0.3', 3: '-550'}
+162	162		509						450.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 2: '2'}
+163	163		201							{1: '2', 2: '500954', 4: '550'}
+164	164		402							{1: '5828'}
+165	165		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Melvie', 3: ""Come here! I've been looking everywhere for you!"", 4: '2'}"
+166	166		203						250.0	{1: '2', 2: '0.2', 3: '-200'}
+167	167		203							{1: '1', 2: '0.3', 3: '250'}
+168	168		203						200.0	{1: '2', 2: '0.3', 3: '600'}
+169	169		510							{1: '1', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+170	170		202							{1: '1', 2: '2'}
+171	171		301			DialogEnable				{3: 'Urgent shouts rise from behind, and a pair of familiar hands drags him into the darkness.'}
+172	172		401							{1: '2', 2: '4341'}
+173	173		301				AniZhuanchangBegin			{3: 'Two hands gently cup his cheeks for a brief moment, as if trying to remember his face one last time.'}
+174	174		510						400.0	{1: '2'}
+175	175		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory710.jpg'}
+176	176		201							{1: '1', 2: '500941', 3: '14'}
+177	177		301			AniZhuanchangEnd	DialogDisable			"{1: '1', 2: 'Melvie', 3: ""You're okay... Thank goodness, I finally made it in time..."", 4: '1'}"
+178	178		203							{1: '1', 2: '0.3', 3: '400'}
+179	179		201							{1: '2', 2: '500943', 4: '-400'}
+180	180		401							{1: '2', 2: '4833'}
+181	181		301			DialogEnable				{1: '1', 3: 'After making sure Wanshi is unhurt, Melvie supports another small, heavy body to his side. A sudden rush of fresh blood stings the air.'}
+182	182		301							{3: 'She lifts the candlestick, strides to the doorway, yanks down the hanging curtain, and feeds it to the flames.'}
+183	183		202							{1: '1', 2: '2', 6: '1'}
+184	184		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3801_10.jpg', 3: '0.1', 4: '0.1', 5: '0.5'}
+185	185		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+186	186		301							"{3: ""Melvie's silence fills Wanshi with unease. He has never seen his foster mother look like that.""}"
+187	187		201							{1: '1', 2: '500940'}
+188	188		301							{1: '1', 2: 'Wanshi', 3: 'Aunt Melvie...', 4: '1'}
+189	189		202							{1: '1'}
+190	190		301							"{3: ""He has to call her name now. If he hesitates, there won't be another chance.""}"
+191	191		201							{1: '1', 2: '500941'}
+192	192		301			DialogShake				{1: '1', 2: 'Melvie', 3: 'Wanshi, take Anna and get out through the back!', 4: '1'}
+193	193		202							{1: '1', 6: '1'}
+194	194		201							{1: '1', 2: '500940', 4: '200'}
+195	195		201							{1: '2', 2: '500943', 4: '-200'}
+196	196		301							{1: '1', 2: 'Wanshi', 3: 'What are you doing...?!', 4: '1'}
+197	197		203							{1: '1', 2: '0.24', 3: '150'}
+198	198		301							{3: 'His companion is fading fast from blood loss. Wanshi presses the wound with both hands while demanding an answer.'}
+199	199		202							{1: '1', 2: '2', 6: '1'}
+200	200		201							{1: '1', 2: '500941', 3: '5'}
+201	201		301				DialogDisable			{1: '1', 2: 'Melvie', 3: 'Stop talking and move as fast as you can!', 4: '1'}
+202	202		401							{1: '2', 2: '13081710'}
+203	203		203						100.0	{1: '1', 2: '0.14', 5: '-200'}
+204	204		202							{1: '1'}
+205	205		401							{1: '2', 2: '4882'}
+206	206		301			DialogEnable				"{3: ""Melvie hoists the candlestick and rams the tiny flame deep into the blood locust's gaping maw.""}"
+207	207		201							{1: '1', 2: '500941', 3: '5'}
+208	208		301			DialogShake				{1: '1', 2: 'Melvie', 3: 'Go!', 4: '1'}
+209	209		202							{1: '1', 6: '1'}
+210	210		201							{1: '1', 2: '500940', 4: '200'}
+211	211		201							{1: '2', 2: '500943', 4: '-200'}
+212	212		301				DialogDisable			"{1: '1', 3: ""The foster mother's final, faintly angry command rings out behind him. This time he hesitates no more. Supporting his injured companion, he turns and runs the other way.""}"
+213	213		203						250.0	{1: '1', 2: '0.25', 3: '0'}
+214	214		202						250.0	{1: '1', 2: '2'}
+215	215		401							{1: '2', 2: '213'}
+216	216		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab', 2: '1'}
+217	217		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '1'}
+218	218		502							{1: 'RImgBg1Shake'}
+219	219		401							{1: '2', 2: '2939'}
+220	220		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront18.png', 4: '4'}
+221	221		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab', 2: '1'}
+222	222		301			DialogEnable	DialogDisable			{3: 'Flames roar up behind them. Charred curtains and locust-shattered glass flutter down, the overture to the coming calamity.'}
+223	223		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront18.png', 4: '4', 5: '1'}
+224	224		205							{1: '999', 3: '1', 4: '0', 5: '0.5'}
+225	225		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+226	226		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab'}
+227	227		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab'}
+228	228		402							{1: '213'}
+229	229		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory643.jpg', 3: '0', 4: '1', 5: '0.5'}
+230	230		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+231	231		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '1'}
+232	232		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory643.jpg'}
+233	233		401							{1: '2', 2: '1504'}
+234	234		104						200.0	{1: '0|50|-100', 2: '0.15'}
+235	235		104						200.0	{1: '0|0|-150', 2: '0.15'}
+236	236		104						200.0	{1: '0|50|-200', 2: '0.15'}
+237	237		104							{1: '0|0|-250', 2: '0.15'}
+238	238		301			DialogEnable	DialogDisable			"{3: ""Head down, he races on, supporting another child. It's his foster mother's last request and the only thing he can still do.""}"
+239	239		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+240	240		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+241	241		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+242	242		401							{1: '1', 2: '36'}
+243	243		401						1000.0	{1: '2', 2: '1504'}
+244	244		401						600.0	{1: '2', 2: '2930'}
+245	245		402							{1: '2930'}
+246	246		401						1000.0	{1: '2', 2: '1504'}
+247	247		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1182.jpg', 3: '0', 4: '1', 5: '1'}
+248	248		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+249	249		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1182.jpg'}
+250	250		104						200.0	{1: '0|50|-100', 2: '0.15'}
+251	251		104						200.0	{1: '0|0|-150', 2: '0.15'}
+252	252		104						200.0	{1: '0|50|-200', 2: '0.15'}
+253	253		104						200.0	{1: '0|0|-250', 2: '0.15'}
+254	254		505						200.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+255	255		402							{1: '1504'}
+256	256		201							{1: '1', 2: '500940'}
+257	257		301			DialogEnable				{1: '1', 2: 'Wanshi', 3: 'A-Anna, can you still run?', 4: '1'}
+258	258		401							{1: '1', 2: '6172'}
+259	259		203							{1: '1', 2: '0.14', 3: '200'}
+260	260		201							{1: '2', 2: '500943', 4: '-200'}
+261	261		301			PanelActor2Shake				{1: '1', 2: 'Anna', 3: '...Ugh.', 4: '2'}
+262	262		301							"{3: ""The girl beside him suddenly lets out a pained moan. The boy turns, only to see her abdomen soaked in blood. He doesn't even know when it started.""}"
+263	263		203							{1: '1', 2: '0.14', 3: '120', 4: '-20'}
+264	264		203							{1: '2', 2: '0.14', 3: '-150', 4: '-20'}
+265	265		301							"{2: 'Wanshi', 3: ""Don't move. I'll patch you up...!"", 4: '1'}"
+266	266		401							{1: '2', 2: '2987'}
+267	267		301							{3: 'Panicking, the boy tears at his clothes, ripping the fabric into strips and wrapping them tightly around the wound.'}
+268	268		301							"{2: 'Wanshi', 3: ""Aunt Melvie taught us about herbs. Hang in there, I'll go find something to stop the bleeding..."", 4: '1'}"
+269	269		204							{1: '1', 2: '14'}
+270	270		301			DialogShake				"{2: 'Wanshi', 3: ""Wait, wait... why won't the bleeding stop..."", 4: '1'}"
+271	271		202							{1: '1', 2: '2', 6: '1'}
+272	272		401							{1: '2', 2: '2593'}
+273	273		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '4'}
+274	274		301			RImgBg1Shake				{3: 'The more he tries to seal the wound, the more the blood pours out, gushing in an endless stream.'}
+275	275		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '4', 5: '1'}
+276	276		401							{1: '2', 2: '4306'}
+277	277		301							{3: 'Her body grows heavier. Desperate, the boy grabs her arm, trying to lift her off the ground.'}
+278	278		201							{1: '1', 2: '500940'}
+279	279		301							"{1: '1', 2: 'Wanshi', 3: ""...Hey, don't fall asleep here. Wake up!"", 4: '1'}"
+280	280		202							{1: '1'}
+281	281		306							{1: '1'}
+282	282		201							{1: '1', 2: '500957'}
+283	283		301							{1: '1', 3: 'No response. Her pupils are already dull and unfocused.'}
+284	284		202							{1: '1'}
+285	285		306							
+286	286		201							{1: '1', 2: '500940', 3: '14'}
+287	287		301							{1: '1', 2: 'Wanshi', 3: '...', 4: '1'}
+288	288		202							{1: '1'}
+289	289		401							{1: '2', 2: '5828'}
+290	290		301							{3: 'Before the blood in his palms even has a chance to cool, that dreadful buzzing of locust wings echoes behind him again.'}
+291	291		402							{1: '5828'}
+292	292		401							{1: '2', 2: '5804'}
+293	293		301			RImgBg1Shake	DialogDisable			{3: 'A bloated blood locust lands beside them. Its intricate compound eyes lock onto the only child still alive.'}
+294	294		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '5'}
+295	295		201							{1: '1', 2: '500940'}
+296	296		104							{1: '0|0|-200', 2: '0.3'}
+297	297		401							{1: '2', 2: '2919'}
+298	298		203			AniZhuanchangEnd			250.0	{1: '1', 2: '0.14', 5: '-100'}
+299	299		502							{1: 'PanelActor1Shake'}
+300	300		203						1000.0	{1: '1', 2: '1', 4: '40', 5: '-100'}
+301	301		505							{1: 'PanelActor1Shake'}
+302	302		402							{1: '2919'}
+303	303		301			DialogEnable				"{1: '1', 3: ""It extends a jointed limb, clamping around the boy's neck, and studies him for several seconds.""}"
+304	304		204							{1: '1', 2: '14'}
+305	305		301			PanelActor1Shake				{2: 'Wanshi', 3: 'Ugh...', 4: '1'}
+306	306		401							{1: '2', 2: '3077'}
+307	307		203							{1: '1', 2: '0.14'}
+308	308		104							{1: '0|0|0', 2: '0.2'}
+309	309		301							{3: 'But just moments later, as if tired of hunting humans, it throws him to the ground.'}
+310	310		301			PanelActor1Shake				{2: 'Wanshi', 3: 'Cough, cough, cough...!', 4: '1'}
+311	311		202							{1: '1', 6: '1'}
+312	312		101							{4: '5', 5: '1'}
+313	313		401							{1: '2', 2: '4044'}
+314	314		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+315	315		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '1'}
+316	316		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab', 2: '1'}
+317	317		401							{1: '2', 2: '9357061'}
+318	318		301							{3: 'The boy crashes into a bed of dead leaves, dazed and gasping. Before he can catch his breath, flames flare up in front of him.'}
+319	319		301							{3: 'In the withered forest, fire erupts skyward. The blaze from the orphanage swallows half the sky.'}
+320	320		301							{3: 'Swarms of locusts dart through the fire in search of new prey.'}
+321	321		201							{1: '1', 2: '500940', 3: '16'}
+322	322		301							{1: '1', 2: 'Wanshi', 3: '...Ugh!', 4: '1'}
+323	323		202							{1: '1', 6: '1'}
+324	324		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+325	325		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab'}
+326	326		402							{1: '9357061'}
+327	327		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+328	328		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+329	329		301							"{3: ""In that moment, a rage beyond words takes root deep within the boy's heart, growing wildly.""}"
+330	330		301							{3: 'Why is it so easy for these locusts to take their lives? Why do disasters strike without warning? Why is it always the innocent who suffer...'}
+331	331		301							{3: 'He refuses to accept such a cruel fate.'}
+332	332		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+333	333		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1182.jpg'}
+334	334		201							{1: '1', 2: '500940', 3: '16'}
+335	335		301			DialogShake				{1: '1', 2: 'Wanshi', 3: '...Aunt Melvie... Anna!', 4: '1'}
+336	336		202							{1: '1', 6: '1'}
+337	337		306							{1: '1'}
+338	338		301							{3: 'All of it burrows into his young heart, planting a stubborn, burning need, a need to uncover the truth.'}
+339	339		301				DialogDisable			{3: 'He has to know the truth. He has to find justice for the ones lost in this catastrophe.'}
+340	340		401							{1: '2', 2: '2936'}
+341	341		401							{1: '2', 2: '4331'}
+342	342		104						200.0	{1: '0|50|-100', 2: '0.15'}
+343	343		401							{1: '2', 2: '2936'}
+344	344		104						200.0	{1: '0|0|-150', 2: '0.15'}
+345	345		104						200.0	{1: '0|50|-200', 2: '0.15'}
+346	346		401							{1: '2', 2: '2936'}
+347	347		104						200.0	{1: '0|0|-250', 2: '0.15'}
+348	348		201							{1: '18', 2: '500940', 6: '100'}
+349	349		301			DialogEnable				{1: '1', 2: 'Wanshi', 3: 'Ha... ha...', 4: '18'}
+350	350		202				DialogDisable			{1: '18', 6: '1'}
+351	351		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1182.jpg', 3: '0', 4: '1', 5: '0.5'}
+352	352		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+353	353		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1182.jpg'}
+354	354		401							{1: '2', 2: '4331'}
+355	355		401							{1: '2', 2: '2936'}
+356	356		104						200.0	{1: '0|50|-100', 2: '0.15'}
+357	357		104						200.0	{1: '0|0|-150', 2: '0.15'}
+358	358		104						200.0	{1: '0|50|-200', 2: '0.15'}
+359	359		401							{1: '2', 2: '2936'}
+360	360		104						200.0	{1: '0|0|-250', 2: '0.15'}
+361	361		301			DialogEnable				{3: 'He runs through a forest of dead leaves, following the wind. Stones slice his tender soles, leaving a trail of blood that coils through his memory.'}
+362	362		301							{3: 'Since turning back is impossible, the only choice as a survivor is to run farther than anyone else.'}
+363	363		301				AniZhuanchangBegin			{3: 'At eight years old, the boy is forced onto an endless journey with no destination in sight.'}
+364	364		401						1000.0	{1: '1', 2: '36'}
+365	365		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+366	366		306							
+367	367		102							{1: 'The Godfall Revelation', 2: 'Soft Amber', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+368	368		502						5000.0	{1: 'ThemeEnable'}
+369	369		101						5000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory539.jpg'}
+370	370		401							{1: '2', 2: '1543'}
+371	371		201							{1: '1', 2: '501296', 4: '310', 5: '30', 6: '-50', 7: '1'}
+372	372		203							{1: '1', 2: '0.2', 3: '330'}
+373	373		301			AniZhuanchangEnd				{1: '1', 2: 'Wanshi', 3: '—!!', 4: '1'}
+374	374		401							{1: '1', 2: '207'}
+375	375		202							{1: '1'}
+376	376		301							{3: 'He jolts awake from a damp, stifling nightmare, only to find the sun still hanging overhead, tireless and unmoving.'}
+377	377		301							{3: 'Wanshi narrows his eyes, letting his lashes block out the blinding light. He pushes the heavy memory that just resurfaced back down into the depths of his mind.'}
+378	378		201							{1: '1', 2: '501296', 4: '330'}
+379	379		301							{1: '1', 2: 'Wanshi', 3: 'What... time is it?', 4: '1'}
+380	380		202							{1: '1'}
+381	381		301							{3: 'Murmuring to himself, he opens his pocket watch. The hands have stopped at just the right moment.'}
+382	382		301							{3: 'If he leaves now, he can reach the next relay station in roughly three hours.'}
+383	383		301				DialogDisable			{3: 'He tilts his head up and yawns into the sunlight, then quickly slings the packs stacked by the camp back onto his shoulders.'}
+384	384		401							{1: '2', 2: '4779'}
+385	385		402					800.0		{1: '4779'}
+386	386		401							{1: '2', 2: '10028805'}
+387	387		301			DialogEnable				"{3: ""He flips open the revolver's cylinder, spins it lightly with his finger, then slides it back into place. The cylinder clicks smoothly into the frame.""}"
+388	388		201							{1: '1', 2: '501296', 3: '1', 4: '330'}
+389	389		301							"{1: '1', 2: 'Wanshi', 3: ""Alright. Weapon's ready."", 4: '1'}"
+390	390		202							{1: '1'}
+391	391		401						200.0	{1: '2', 2: '13015111'}
+392	392		402							{1: '13015111'}
+393	393		301				AniZhuanchangBegin			{3: 'He holsters the gun, puts out the fire that kept beasts away, and fastens the herb-scented plague mask back over his face. The silver-haired young man sets out once more.'}
+394	394		306						400.0	{1: '1'}
+395	395		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+396	396		301			AniZhuanchangEnd				{3: 'Years after the blood locust plague, Wanshi is still walking this lonely road.'}
+397	397		301							{3: 'Following the faded, bloodied footprints from his childhood, he has grown tall, donned a leather coat soaked in oil, and armed himself with needles, thread, and a lantern for the mist...'}
+398	398		301				DialogDisable			{3: 'At last, he wears the mask filled with medicinal herbs.'}
+399	399		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg', 3: '0', 4: '1', 5: '1.5'}
+400	400		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+401	401		205							{1: '999'}
+402	402		201							{1: '1', 2: '501295', 4: '330'}
+403	403		301			DialogEnable				"{1: '1', 3: 'A silent ""plague doctor"" stands in the middle of the road.'}"
+404	404		202							{1: '1'}
+405	405		301							{3: 'He wields his scalpel with precise skill to cut out diseased flesh, but sometimes, he can only watch helplessly as souls fade away.'}
+406	406		301				AniZhuanchangBegin			{3: 'To stop more lives from being lost, this plague doctor keeps moving forward...'}
+407	407		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory744.jpg'}
+408	408		504							{1: '0.7'}
+409	409		306						400.0	{1: '1'}
+410	410		201							{1: '1', 2: '500294', 4: '400', 7: '1'}
+411	411		201							{1: '2', 2: '500616', 4: '-400', 7: '1'}
+412	412		301			AniZhuanchangEnd				{1: '1', 2: 'Passing Villager', 3: 'Did you hear? Those lunatics in the old castle took more kids from the neighboring village.', 4: '1'}
+413	413		301							{3: 'That day, the plague doctor walking the road overhears two passersby talking.'}
+414	414		301							"{2: 'Passing Village Woman', 3: ""I know that lot. They're tribal folk from the forest. They kidnap kids for live sacrifices!"", 4: '2'}"
+415	415		301							"{2: 'Passing Village Woman', 3: ""Why don't the angels kill them instead of bringing ruin to us honest folk?"", 4: '2'}"
+416	416		202							{1: '1', 2: '2', 6: '1'}
+417	417		306							
+418	418		201							{1: '1', 2: '501295', 4: '330'}
+419	419		301							"{1: '1', 3: ""Hearing this, Wanshi's eyes lift slightly.""}"
+420	420		301							{2: 'Wanshi', 3: 'Live sacrifices...?', 4: '1'}
+421	421		202							{1: '1', 6: '1'}
+422	422		306							{1: '1'}
+423	423		201							{1: '1', 2: '500294', 4: '400'}
+424	424		201							{1: '2', 2: '500616', 4: '-400'}
+425	425		301							"{1: '1', 2: 'Passing Village Woman', 3: ""It's more than that. Those lunatics hole up in that castle every day, studying weird dark magic. I bet they're the ones who brought the catastrophe and those blood locusts."", 4: '2'}"
+426	426		202							{1: '1', 2: '2', 6: '1'}
+427	427		306							
+428	428		201							{1: '1', 2: '501295', 4: '330'}
+429	429		301							"{1: '1', 3: ""Wanshi's brow twitches at that.""}"
+430	430		202							{1: '1'}
+431	431		301							{1: '1', 3: 'After saying goodbye to the traveling couple, he changes his destination on a whim and starts walking toward the old castle they described.'}
+432	432		301							"{3: ""Whether it's to stop the atrocities committed by those tribal raiders, or to chase down some elusive truth...""}"
+433	433		301				AniZhuanchangBegin			{3: 'He has to go and find out for himself.'}
+434	434		504							{1: '0'}
+435	435		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory511.jpg'}
+436	436		201							{1: '1', 2: '501295', 4: '330'}
+437	437		301			AniZhuanchangEnd				{1: '1', 2: 'Wanshi', 3: '...This is it.', 4: '1'}
+438	438		202							{1: '1'}
+439	439		301							{3: 'The masked young man stops in front of a dilapidated castle. Around the courtyard, several human bones stand crookedly in the ground, like a fence, or a warning.'}
+440	440		301							{3: 'Unsurprisingly, those bones are human thighbones.'}
+441	441		201							{1: '1', 2: '501295', 4: '330'}
+442	442		301							{1: '1', 2: 'Wanshi', 3: '...Looks like these people are too far gone to reason with. I need to be ready for the worst.', 4: '1'}
+443	443		401							{1: '2', 2: '10028806'}
+444	444		301							{3: 'Wanshi draws his weapon from the holster, carefully disables the safety, then raises the barrel over his right shoulder.'}
+445	445		301							{2: 'Wanshi', 3: 'Better make it quick...', 4: '1'}
+446	446		202							{1: '1', 6: '1'}
+447	447		402							{1: '207'}
+448	448		401							{1: '2', 2: '4933'}
+449	449		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+450	450		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+451	451		301				AniZhuanchangBegin			"{3: ""Then, he kicks the castle's crumbling gate open.""}"
+452	452		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '1'}
+453	453		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory638.jpg'}
+454	454		401							{1: '1', 2: '6210'}
+455	455		201							{1: '1', 2: '500434'}
+456	456		301			AniZhuanchangEnd				{1: '1', 2: 'Tribal Cultist A', 3: 'What...', 4: '1'}
+457	457		202							{1: '1'}
+458	458		301							{3: 'Inside the dim foyer, several raggedly dressed tribal people sit cross-legged in a circle, muttering chants. When the gate slams open, they freeze in place, still kneeling.'}
+459	459		201							{1: '1', 2: '500895'}
+460	460		301							{1: '1', 2: 'Tribal Cultist B', 3: 'Who is this guy?', 4: '1'}
+461	461		203							{1: '1', 2: '0.2', 3: '450'}
+462	462		201							{1: '2', 2: '500434', 4: '-450'}
+463	463		301							"{1: '1', 2: 'Tribal Cultist A', 3: ""Don't look at me, I'm not on guard duty today!"", 4: '2'}"
+464	464		301							{2: 'Tribal Cultist B', 3: 'Then we can kill him.', 4: '1'}
+465	465		202							{1: '1', 2: '2'}
+466	466		401							{1: '2', 2: '4432'}
+467	467		301							"{3: ""Two of the bolder cultists exchange a glance. After confirming it's okay to act, they snatch weapons off the ground and charge straight at him.""}"
+468	468		201							{1: '1', 2: '500895'}
+469	469		301							"{1: '1', 2: 'Tribal Cultist B', 3: ""You think you can interrupt Carcosa's ritual? You'll pay for that in blood!"", 4: '1'}"
+470	470		202							{1: '1', 6: '1'}
+471	471		201							{1: '1', 2: '500454', 4: '-600'}
+472	472		201							{1: '2', 2: '500460'}
+473	473		201							{1: '3', 2: '500624', 4: '600'}
+474	474		301			DialogShake				{1: '1', 2: 'Jeering Cultists', 3: 'Sacrifice him... sacrifice him!', 4: '1', 5: '2', 6: '3'}
+475	475		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+476	476		401							{1: '2', 2: '9317013'}
+477	477		401							{1: '2', 2: '1512'}
+478	478		301			RImgBg1Shake				"{3: ""Wanshi leans back, dodging the wooden club swinging down at his head, then pivots and strikes the cultist's neck with his knuckles. The man's eyes roll back, and he crumples to the floor.""}"
+479	479		201							{1: '1', 2: '501295', 4: '300'}
+480	480		401							{1: '2', 2: '5705'}
+481	481		301							"{1: '1', 2: 'Wanshi', 3: ""Don't put up futile resistance."", 4: '1'}"
+482	482		202							{1: '1'}
+483	483		301							"{3: ""The black barrel of his gun is aimed squarely at the cultists' bloodshot eyes, but it does nothing to reduce their fanaticism.""}"
+484	484		201							{1: '1', 2: '500896'}
+485	485		301			RImgBg1Shake				"{1: '1', 2: 'Tribal Cultist C', 3: ""Don't be afraid. To reach salvation, we must overcome fear. This is the test the divine has given us!"", 4: '1'}"
+486	486		202							{1: '1'}
+487	487		201							{1: '1', 2: '500454', 4: '-600'}
+488	488		201							{1: '2', 2: '500460'}
+489	489		201							{1: '3', 2: '500624', 4: '600'}
+490	490		301			RImgBg1Shake				{1: '1', 2: 'Jeering Cultists', 3: 'Just offer him up too! Make him a live sacrifice!', 4: '1', 5: '2', 6: '3'}
+491	491		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+492	492		201							{1: '1', 2: '501295', 4: '300'}
+493	493		301							"{1: '1', 2: 'Wanshi', 3: ""Have they already lost their minds? It's probably the drugged smoke."", 4: '1'}"
+494	494		202							{1: '1'}
+495	495		301				DialogDisable			{3: 'Wanshi quickly notices the strange smoke rising in the stifling air. He tightens his mask with one hand and dives into the frenzied crowd of cultists.'}
+496	496		201							{1: '1', 2: '500624', 4: '-600'}
+497	497		203						190.0	{1: '1', 2: '0.14', 5: '-50'}
+498	498		401							{1: '2', 2: '1512'}
+499	499		104						200.0	{1: '20|20|-50', 2: '0.14'}
+500	500		202							{1: '1', 6: '1'}
+501	501		201							{1: '1', 2: '500460', 4: '600'}
+502	502		203						190.0	{1: '1', 2: '0.14', 5: '-50'}
+503	503		401							{1: '2', 2: '1512'}
+504	504		104						500.0	{1: '-20|-20|-50', 2: '0.14'}
+505	505		202							{1: '1', 6: '1'}
+506	506		201							{1: '1', 2: '500454', 4: '-40', 5: '100'}
+507	507		203						190.0	{1: '1', 2: '0.14', 4: '40', 5: '-200'}
+508	508		401							{1: '2', 2: '1512'}
+509	509		104						190.0	{1: '0|0|0', 2: '0.14'}
+510	510		202							{1: '1'}
+511	511		301			DialogEnable	AniZhuanchangBegin			{3: 'Frenzied cultists surge forward to block Wanshi, but each receives a precise chop to the back of the neck and collapses unconscious.'}
+512	512		505						500.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+513	513		301			AniZhuanchangEnd				{3: 'Within seconds, only one cultist in the back row keeps resisting. Seeing Wanshi approach, he pales with fear.'}
+514	514		201							{1: '1', 2: '500773'}
+515	515		301				DialogDisable			{1: '1', 2: 'The Last Cultist', 3: 'I-I offer myself as a sacrifice. Carcosa, protect me—', 4: '1'}
+516	516		401							{1: '2', 2: '5321'}
+517	517		401							{1: '2', 2: '2593'}
+518	518		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '5'}
+519	519		502						700.0	{1: 'PanelActor1Shake'}
+520	520		505							{1: 'PanelActor1Shake'}
+521	521		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '5', 5: '1'}
+522	522		203						200.0	{1: '1', 2: '0.25', 4: '-150'}
+523	523		401							{1: '2', 2: '3077'}
+524	524		202							{1: '1'}
+525	525		301			DialogEnable				{3: 'After speaking, the cultist suddenly drives a dagger into his own chest and collapses as blood gushes out.'}
+526	526		301							"{3: ""The plague doctor's hand freezes in midair. He didn't make it in time to stop this absurd act of self-sacrifice.""}"
+527	527		201							{1: '1', 2: '501295', 4: '330'}
+528	528		301							{1: '1', 2: 'Wanshi', 3: '...', 4: '1'}
+529	529		203						450.0	{1: '1', 2: '0.4', 3: '330', 4: '-100', 5: '-50'}
+530	530		301							{3: 'Frowning, he crouches, snuffs the corner hearth with a poker, and scrapes a clump of charred herbs from the grate.'}
+531	531		301							{2: 'Wanshi', 3: 'Moonshade belladonna, silver-veined poppy, delirium mint... all plants that excite the mind and twist vision.', 4: '1'}
+532	532		301							{2: 'Wanshi', 3: 'So the tribe even has a drug specialist... The situation is worse than those travelers described.', 4: '1'}
+533	533		202							{1: '1'}
+534	534		401							{1: '2', 2: '4429'}
+535	535		301							{3: 'Smack—'}
+536	536		301							{3: 'A sudden noise behind makes Wanshi swing his gun around. A white-haired girl in a goat-skull mask crawls from a hidden door, wrists bound and body curled tight.'}
+537	537		201							{1: '1', 2: '500656', 5: '-100'}
+538	538		301							{1: '1', 2: '??', 3: 'H-help me...', 4: '1'}
+539	539		301							"{3: ""Her voice is faint, yet terror shines clear in her eyes, untouched by the cultists' madness.""}"
+540	540		203							{1: '1', 2: '0.2', 3: '-300', 4: '-100'}
+541	541		201						200.0	{1: '2', 2: '501296', 4: '630'}
+542	542		203						350.0	{1: '2', 2: '0.3', 3: '630', 4: '-50'}
+543	543		401							{1: '2', 2: '5526'}
+544	544		301							{3: 'Wanshi holsters the pistol and kneels to untie her.'}
+545	545		301							{2: 'Wanshi', 3: 'How long have they kept you here? Did they feed you at all?', 4: '2'}
+546	546		301							"{2: '??', 3: ""I was taken two days ago, so I'm still okay. But they just took Tankun and Sasibi..."", 4: '1'}"
+547	547		301							{2: '??', 3: 'They must be planning to use them as sacrifices for the ritual. Please... save them...', 4: '1'}
+548	548		401							{1: '2', 2: '4833'}
+549	549		203							{1: '1', 2: '0.2', 3: '-300'}
+550	550		203						500.0	{1: '2', 2: '0.2', 3: '630'}
+551	551		402							{1: '4833'}
+552	552		203							{1: '1', 2: '0.3', 3: '-450'}
+553	553		203							{1: '2', 2: '0.3', 3: '780'}
+554	554		301							{3: 'Wanshi checks quickly: she is weak yet stable. He props her against the wall and gives her medicine and food from his kit.'}
+555	555		301							{2: 'Wanshi', 3: 'Tell me where they hold the live-sacrifice ritual.', 4: '2'}
+556	556		202							{1: '1', 2: '2'}
+557	557		401						300.0	{1: '2', 2: '911'}
+558	558		301							{3: 'She nods and sketches a simple map on the dirt with her finger.'}
+559	559		301							{3: 'Wanshi quickly memorizes the layout and gets to his feet again.'}
+560	560		201							{1: '1', 2: '501296', 4: '750'}
+561	561		201							{1: '2', 2: '500656', 4: '-420'}
+562	562		301							"{1: '1', 2: 'Wanshi', 3: ""I tied every cultist here. Don't waste time. If you can stand, run."", 4: '1'}"
+563	563		301							{2: '??', 3: '...Alright.', 4: '2'}
+564	564		202							{1: '1', 2: '2'}
+565	565		301							{3: 'She gives a soft reply, then raises her voice as Wanshi starts to leave.'}
+566	566		201							{1: '1', 2: '500656', 3: '4'}
+567	567		301							{1: '1', 2: 'Canary', 3: 'My name is Canary, Canary of the Haruka tribe.', 4: '1'}
+568	568		301				DialogDisable			{2: 'Canary', 3: 'I will repay your kindness someday.', 4: '1'}
+569	569		202							{1: '1', 6: '1'}
+570	570		201						500.0	{1: '1', 2: '501296', 4: '330'}
+571	571		202							{1: '1', 6: '1'}
+572	572		401							{1: '2', 2: '1543'}
+573	573		201							{1: '1', 2: '501295', 3: '1', 4: '330'}
+574	574		301			DialogEnable	AniZhuanchangBegin			{1: '1', 3: 'Wanshi nods from a distance, lowers his mask, and shows he has heard the pledge.'}
+575	575		202							{1: '1'}
+576	576		401							{1: '1', 2: '36'}
+577	577		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory636.jpg'}
+578	578		401							{1: '1', 2: '226'}
+579	579		301			AniZhuanchangEnd				{3: 'The beaked plague doctor runs through the dark castle with an oil lamp in hand.'}
+580	580		301							{3: 'Ritual tools and pallid bones litter the corridors, raising gooseflesh at every turn.'}
+581	581		301							"{3: ""The closer he gets to his destination, the stronger the rot stench grows. In the lamp's wavering glow, every corner seems to hide an ambush.""}"
+582	582		401							{1: '2', 2: '10028806'}
+583	583		301							{3: 'He draws his pistol and aims into the pitch-dark passage ahead.'}
+584	584		201							{1: '1', 2: '500084', 4: '300'}
+585	585		401							{1: '2', 2: '2974'}
+586	586		203							{1: '1', 2: '0.14'}
+587	587		301			DialogShake				{1: '1', 2: '??', 3: 'Garwh—!', 4: '1'}
+588	588		301							{3: 'At the next bend, a mangled corpse charges straight at him—'}
+589	589		401							{1: '2', 2: '2513'}
+590	590		101				RImgBg1Shake		200.0	{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '5'}
+591	591		202							{1: '1'}
+592	592		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '5', 5: '1'}
+593	593		301							"{3: ""Without hesitation Wanshi fires. The hot muzzle flash bursts the living dead's skull into a spray of blood.""}"
+594	594		201							{1: '1', 2: '501295', 3: '5', 4: '330'}
+595	595		301				DialogDisable			{1: '1', 2: 'Wanshi', 3: '...Rotting corpse!', 4: '1'}
+596	596		202							{1: '1', 6: '1'}
+597	597		201							{1: '1', 2: '500084', 4: '-600', 6: '-50'}
+598	598		201							{1: '2', 2: '500084', 6: '-50'}
+599	599		201						300.0	{1: '3', 2: '500084', 4: '600', 6: '-50'}
+600	600		502							{1: 'RImgBg1Shake'}
+601	601		401							{1: '2', 2: '2513'}
+602	602		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2', 3: '1'}
+603	603		203						190.0	{1: '1', 2: '0.14', 3: '-900', 4: '-50', 5: '100'}
+604	604		202						200.0	{1: '1'}
+605	605		401							{1: '2', 2: '2513'}
+606	606		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2', 3: '2'}
+607	607		203						190.0	{1: '2', 2: '0.14', 4: '-50', 5: '100'}
+608	608		202						200.0	{1: '2'}
+609	609		401							{1: '2', 2: '2513'}
+610	610		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2', 3: '3'}
+611	611		203						190.0	{1: '3', 2: '0.14', 3: '900', 4: '-50', 5: '100'}
+612	612		202							{1: '3'}
+613	613		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 4: '1'}
+614	614		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 4: '2'}
+615	615		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 4: '3'}
+616	616		301			DialogEnable	DialogDisable			{3: 'He moves straight toward the source of the stench, firing as he goes and pinning each emerging living dead to the wall.'}
+617	617		401							{1: '2', 2: '2974'}
+618	618		201							{1: '1', 2: '500084', 4: '-600'}
+619	619		203						250.0	{1: '1', 2: '0.2', 3: '-450'}
+620	620		401							{1: '2', 2: '2974'}
+621	621		201							{1: '2', 2: '500084', 4: '600'}
+622	622		203						250.0	{1: '2', 2: '0.2', 3: '450'}
+623	623		301			DialogEnable				{3: 'Yet the living dead show no fear, trampling their own fallen to keep coming.'}
+624	624		202							{1: '1', 2: '2'}
+625	625		301							{3: 'Harsh, grating howls echo through the castle, making him want to cover his ears.'}
+626	626		201							{1: '1', 2: '501295', 3: '5', 4: '330'}
+627	627		301							{1: '1', 2: 'Wanshi', 3: '...Vile noise.', 4: '1'}
+628	628		202							{1: '1'}
+629	629		401							{1: '2', 2: '8220025'}
+630	630		301						200.0	"{3: ""Seeing bullets won't stop the horde, he holsters the gun, raises his right leg, and kicks at a living dead's head—""}"
+631	631		401							{1: '2', 2: '4480'}
+632	632		401							{1: '2', 2: '2921'}
+633	633		301			RImgBg1Shake				{3: 'Splat! The grotesque head, trailing rotten flesh, smacks wetly against the wall.'}
+634	634		201							{1: '1', 2: '501295', 4: '330'}
+635	635		301							{1: '1', 2: 'Wanshi', 3: 'Clawing over each other for a mouthful of fresh flesh?', 4: '1'}
+636	636		204							{1: '1', 2: '8'}
+637	637		301							{2: 'Wanshi', 3: 'Pathetic... but I forgive you.', 4: '1'}
+638	638		204							{1: '1'}
+639	639		301			DialogShake	DialogDisable			{2: 'Wanshi', 3: 'Sleep!', 4: '1'}
+640	640		202							{1: '1'}
+641	641		201							{1: '1', 2: '500084', 4: '-20', 5: '50'}
+642	642		203						500.0	{1: '1', 2: '0.2', 4: '20', 5: '-100'}
+643	643		401						200.0	{1: '2', 2: '4480'}
+644	644		401							{1: '2', 2: '2921'}
+645	645		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+646	646		203						200.0	{1: '1', 2: '0.25', 3: '-400'}
+647	647		202							{1: '1'}
+648	648		301			DialogEnable	DialogDisable			{3: 'Another corpse lunges before the word is finished. The doctor smashes it apart again.'}
+649	649		306							{1: '1'}
+650	650		504							{1: '0.8'}
+651	651		201							{1: '1', 2: '500129', 4: '300'}
+652	652		203						450.0	{1: '1', 2: '0.4', 3: '-300'}
+653	653		202						200.0	{1: '1'}
+654	654		301			DialogEnable				{3: 'Amid the clash, a shadowy figure flits behind the snarling corpses.'}
+655	655		301							{3: 'Wanshi notices at once.'}
+656	656		306							
+657	657		504							{1: '0'}
+658	658		201							{1: '1', 2: '501295', 4: '330'}
+659	659		301				DialogDisable			"{1: '1', 2: 'Wanshi', 3: ""You can't escape. Step out and face me."", 4: '1'}"
+660	660		202							{1: '1'}
+661	661		104						300.0	{1: '0|0|-100', 2: '0.25'}
+662	662		104							{1: '30|0|-100', 2: '0.2'}
+663	663		401							{1: '2', 2: '819043'}
+664	664		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '3'}
+665	665		301			DialogEnable				{3: 'He charges toward the hiding place and flicks a blood-letting knife into the gloom.'}
+666	666		201							{1: '1', 2: '500129'}
+667	667		301				DialogDisable			{1: '1', 2: '??', 3: '—!!', 4: '1'}
+668	668		202							{1: '1', 6: '1'}
+669	669		201							{1: '1', 2: '501295', 4: '330'}
+670	670		104							{1: '0|0|-100', 2: '0.2'}
+671	671		203							{1: '1', 2: '0.24', 3: '30'}
+672	672		401							{1: '2', 2: '819043'}
+673	673		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '3'}
+674	674		301			DialogEnable				{3: 'The figure jerks, then bursts forward toward Wanshi. A second dagger whistles past his cheek.'}
+675	675		202							{1: '1', 6: '1'}
+676	676		201							{1: '1', 2: '500129'}
+677	677		301							{1: '1', 2: '??', 3: '...', 4: '1'}
+678	678		202							{1: '1'}
+679	679		301				AniZhuanchangBegin			{3: 'Seeing that his opponent has no intention of fighting back, he turns and dashes for the altar. Wanshi sprints after him.'}
+680	680		401							{1: '1', 2: '36'}
+681	681		401						200.0	{1: '2', 2: '2689'}
+682	682		401						200.0	{1: '2', 2: '2689'}
+683	683		401						200.0	{1: '2', 2: '2689'}
+684	684		401						200.0	{1: '2', 2: '2689'}
+685	685		401						200.0	{1: '2', 2: '2689'}
+686	686		401						200.0	{1: '2', 2: '2689'}
+687	687		401						200.0	{1: '1', 2: '6210'}
+688	688		104							{1: '0|0|0', 2: '0'}
+689	689		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory634.jpg'}
+690	690		301			AniZhuanchangEnd				{3: 'Far below the surface, an altar holds several fresh offerings. Blood reeks in the stagnant air; thin flames hop across the stone platform.'}
+691	691		301							{3: 'A black-robed man stands at the center, chanting under his breath.'}
+692	692		201							{1: '1', 2: '501295', 4: '330'}
+693	693		301			DialogShake	DialogDisable			"{1: '1', 2: 'Wanshi', 3: ""—Don't you dare run!"", 4: '1'}"
+694	694		202							{1: '1', 6: '1'}
+695	695		502							{1: 'RImgBg1Shake'}
+696	696		401						200.0	{1: '2', 2: '5151'}
+697	697		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '3'}
+698	698		401						200.0	{1: '2', 2: '819043'}
+699	699		401						200.0	{1: '2', 2: '5151'}
+700	700		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '3'}
+701	701		401						330.0	{1: '2', 2: '819043'}
+702	702		401							{1: '2', 2: '10028808'}
+703	703		301			DialogEnable				"{3: ""Bullets reach him even before Wanshi's shout, yet the silent man slices every round from the air with ease. Spent shells clink to the floor.""}"
+704	704		301							{3: 'Wanshi stops firing, squares off against him, and waits for the next move.'}
+705	705		201							{1: '1', 2: '500129'}
+706	706		301							{1: '1', 2: '??', 3: '...Great Carcosa, heed our prayer.', 4: '1'}
+707	707		202							{1: '1'}
+708	708		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+709	709		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3801_10.jpg', 3: '0', 4: '0.1', 5: '0.3'}
+710	710		301							"{3: ""The man behaves as if Wanshi isn't there, standing at the ritual's center while flames on the altar surge upward, licking the ceiling like dragon tongues.""}"
+711	711		301				DialogDisable			{3: 'Wanshi holsters his weapon and moves in bare-handed, but the man easily dodges every attack.'}
+712	712		201							{1: '1', 2: '501295', 4: '930'}
+713	713		201							{1: '2', 2: '500129'}
+714	714		401						300.0	{1: '2', 2: '13015111'}
+715	715		402							{1: '13015111'}
+716	716		203						100.0	{1: '2', 2: '0.14', 3: '-450'}
+717	717		203							{1: '1', 2: '0.14', 3: '200'}
+718	718		401							{1: '2', 2: '1084'}
+719	719		502						300.0	{1: 'RImgBg1Shake'}
+720	720		505							{1: 'RImgBg1Shake'}
+721	721		203						200.0	{1: '1', 2: '0.14', 3: '630'}
+722	722		301			DialogEnable				{2: 'Wanshi', 3: 'What is this ritual? And what exactly is Carcosa?!', 4: '1'}
+723	723		202							{1: '1', 2: '2'}
+724	724		301							"{3: ""The man's movements show not the slightest hesitation despite Wanshi's assault. Between phrases of the chant, he gives a short reply.""}"
+725	725		201							{1: '1', 2: '500129'}
+726	726		301							"{1: '1', 2: '??', 3: ""You'll find out soon enough."", 4: '1'}"
+727	727		202							{1: '1', 6: '1'}
+728	728		401							{1: '2', 2: '4348'}
+729	729		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab', 2: '1'}
+730	730		301							{3: '—Whoosh!'}
+731	731		401							{1: '2', 2: '9357061'}
+732	732		301							{3: 'Fire on the altar swells, devouring every laid-out offering, turning flesh and bone to charcoal.'}
+733	733		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab'}
+734	734		402							{1: '9357061'}
+735	735		301							"{3: ""Watching this, Wanshi's brow knots. At last, he draws the silver needles hidden inside his coat.""}"
+736	736		201							{1: '1', 2: '501295', 4: '330'}
+737	737		301							"{1: '1', 2: 'Wanshi', 3: ""It's time to put you to sleep and end this madness."", 4: '1'}"
+738	738		401							{1: '2', 2: '4797'}
+739	739		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+740	740		301							{3: 'The instant the needle leaves its sheath, a cold flash flares behind him.'}
+741	741		203						190.0	{1: '1', 2: '0.14', 3: '350'}
+742	742		301							{2: 'Wanshi', 3: '!!', 4: '1'}
+743	743		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '3'}
+744	744		401							{1: '2', 2: '5321'}
+745	745		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '3'}
+746	746		101						20.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory844.jpg'}
+747	747		401							{1: '2', 2: '2975'}
+748	748		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory634.jpg'}
+749	749		301				DialogDisable			"{3: ""Feeling the murderous intent, he starts to turn, but a hidden figure bursts from the shadow and drives a blade straight into the plague doctor's chest.""}"
+750	750		204							{1: '1', 2: '5'}
+751	751		101						20.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 4: '5'}
+752	752		401							{1: '2', 2: '2975'}
+753	753		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 4: '5', 5: '1'}
+754	754		203						190.0	{1: '1', 2: '0.14', 3: '330', 4: '-20', 5: '-50'}
+755	755		104							{1: '0|0|-50', 2: '0.1'}
+756	756		502						700.0	{1: 'PanelActor1Shake'}
+757	757		505							{1: 'PanelActor1Shake'}
+758	758		401							{1: '2', 2: '4303'}
+759	759		101						20.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 4: '5'}
+760	760		401							{1: '2', 2: '2975'}
+761	761		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 4: '5', 5: '1'}
+762	762		402							{1: '4303'}
+763	763		301			DialogEnable				{3: 'The cold steel tip pierces through his leather coat, plunges into warm flesh, and slices soft organs beneath the ribs clean apart.'}
+764	764		301							{3: 'The attacker savors the warmth for only a heartbeat, then jerks the knife free. Blood arcs through the air in a perfect crimson circle.'}
+765	765		401							{1: '2', 2: '2593'}
+766	766		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '5'}
+767	767		502						700.0	{1: 'PanelActor1Shake'}
+768	768		505							{1: 'PanelActor1Shake'}
+769	769		203						190.0	{1: '1', 2: '0.14', 3: '330', 4: '-20', 5: '-50'}
+770	770		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '5', 5: '1'}
+771	771		204							{1: '1', 2: '17'}
+772	772		301			PanelActor1Shake				{2: 'Wanshi', 3: 'Cough...', 4: '1'}
+773	773		401							{1: '2', 2: '4006'}
+774	774		203							{1: '1', 2: '0.15', 3: '330', 4: '-120', 5: '-50'}
+775	775		301							{3: 'Wanshi drops to his knees and struggles to raise his head to glimpse the assailant, but the figure has already vanished.'}
+776	776		301							{2: 'Wanshi', 3: 'Mmm...', 4: '1'}
+777	777		101						20.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 4: '5'}
+778	778		401							{1: '2', 2: '2975'}
+779	779		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 4: '5', 5: '1'}
+780	780		202							{1: '1'}
+781	781		301							{3: 'Both hands press the wound, but hot blood keeps gushing from between his fingers.'}
+782	782		301				DialogDisable			{3: 'A healer cannot heal himself—the nightmare he dreads has finally come true.'}
+783	783		104							{1: '0|0|-500', 2: '0.8'}
+784	784		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory634.jpg', 3: '0', 4: '1', 5: '1'}
+785	785		401						850.0	{1: '2', 2: '4387'}
+786	786		205							{1: '999'}
+787	787		104							{1: '0|0|0', 2: '0'}
+788	788		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory634.jpg'}
+789	789		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+790	790		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+791	791		301			DialogEnable				{3: 'Through the haze, the dark world gradually distorts and spins before his eyes.'}
+792	792		201							{1: '1', 2: '501295', 3: '17', 4: '330', 5: '-120', 6: '-50'}
+793	793		301							{1: '1', 2: 'Wanshi', 3: 'The two children Canary mentioned... still not... cough!', 4: '1'}
+794	794		202							{1: '1'}
+795	795		301							{3: 'The silver-haired doctor wipes blood from his lip and barks at the madman lost in heresy.'}
+796	796		201							{1: '1', 2: '501295', 3: '17', 4: '330', 5: '-120', 6: '-50'}
+797	797		301							{1: '1', 2: 'Wanshi', 3: '...Use me... as the sacrifice.', 4: '1'}
+798	798		202							{1: '1', 6: '1'}
+799	799		201							{1: '1', 2: '500129'}
+800	800		301							{1: '1', 2: '??', 3: '...', 4: '1'}
+801	801		202							{1: '1', 6: '1'}
+802	802		201							{1: '1', 2: '501295', 3: '17', 4: '330', 5: '-120', 6: '-50'}
+803	803		301							{1: '1', 2: 'Wanshi', 3: 'Even if it saves just one...', 4: '1'}
+804	804		301							"{2: 'Wanshi', 3: ""...Take me instead. I won't resist. I no longer can."", 4: '1'}"
+805	805		202							{1: '1'}
+806	806		301							"{3: ""He combs his mind for any last bargaining chip, hoping to rouse the man's buried conscience.""}"
+807	807		202							{1: '1', 6: '1'}
+808	808		201							{1: '1', 2: '501295', 3: '17', 4: '330', 5: '-120'}
+809	809		301							"{1: '1', 2: 'Wanshi', 3: ""Forcing children to atone for the world's sins... that is the greatest sin of all."", 4: '1'}"
+810	810		202							{1: '1', 6: '1'}
+811	811		201							{1: '1', 2: '500129'}
+812	812		301							{1: '1', 2: '??', 3: 'You know nothing—', 4: '1'}
+813	813		203						500.0	{1: '1', 2: '0.14', 3: '50', 4: '-50', 5: '50'}
+814	814		203							{1: '1', 2: '0.14', 3: '50', 5: '100'}
+815	815		301							{3: 'The black-robed man parts his lips to speak, then blanches, as though he has seen an omen beyond imagining.'}
+816	816		202							{1: '1', 6: '1'}
+817	817		104							{1: '60|0|-100', 2: '0.3'}
+818	818		301							"{3: ""Wanshi follows the man's gaze but sees nothing in the murk. The sheer terror on the man's face, however, is unmistakable.""}"
+819	819		401							{1: '2', 2: '5828'}
+820	820		301							{2: '??', 3: 'Buzz buzz buzz...'}
+821	821		402							{1: '5828'}
+822	822		301							"{3: ""The sound of wings beating reaches Wanshi's ears.""}"
+823	823		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+824	824		104						1050.0	{1: '-60|0|-100', 2: '1'}
+825	825		301							{3: 'He turns slowly toward the window lattice.'}
+826	826		401							{1: '2', 2: '5828'}
+827	827		301				DialogDisable			{2: '??', 3: 'Buzz buzz buzz...'}
+828	828		401							{1: '2', 2: '4387'}
+829	829		104							{1: '0|0|0', 2: '0'}
+830	830		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 4: '5'}
+831	831		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+832	832		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 4: '5', 5: '1'}
+833	833		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+834	834		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBianHong.prefab', 2: '1'}
+835	835		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab', 2: '1'}
+836	836		301			DialogEnable				{3: 'An eerie red flash skims the edge of his vision. One heartbeat later, crimson floods the sky and the familiar blood rain begins to fall.'}
+837	837		301							{3: 'Far off, the roar of blood locust wings rises. Leagues away, calamity executors gather like an army and surge toward the earth.'}
+838	838		301							{3: 'Wherever the blood locusts sweep, nothing survives; even burrowed rats are dug out, drained, and left as empty skins.'}
+839	839		301							{3: 'The familiar tide reaches him again, bringing the howl from memories and nightmares into the present.'}
+840	840		301							{3: 'So from the very start, fate left him no room to bargain.'}
+841	841		201							{1: '1', 2: '501295', 3: '17', 4: '330', 5: '-120', 6: '-50'}
+842	842		301				DialogDisable			{1: '1', 2: 'Wanshi', 3: '...So not even one child can be saved.', 4: '1'}
+843	843		202							{1: '1', 6: '1'}
+844	844		501						2500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab', 2: '3'}
+845	845		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+846	846		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+847	847		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab'}
+848	848		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+849	849		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+850	850		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+851	851		401							{1: '2', 2: '4006'}
+852	852		301			DialogEnable				{3: 'He closes his weary eyes and lets his body slump onto the floor.'}
+853	853		201							{1: '1', 2: '501295', 3: '8', 4: '330', 5: '-120', 6: '-50'}
+854	854		301							{1: '1', 2: 'Wanshi', 3: 'Is this really the only ending left?', 4: '1'}
+855	855		202							{1: '1', 6: '1'}
+856	856		401							{1: '2', 2: '4895'}
+857	857		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '2'}
+858	858		301				AniZhuanchangBegin			{3: 'As he speaks the final syllable, his thoughts are suddenly torn away by chaos. Consciousness slips from him, and he plunges into darkness.'}
+859	859		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+860	860		402							{1: '5828'}
+861	861		401						2000.0	{1: '1', 2: '36'}
+862	862		401							{1: '1', 2: '33'}
+863	863		301			AniZhuanchangEnd				{3: '...'}
+864	864		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionInvitation/FxUiRegressionInvitationShine.prefab', 2: '2'}
+865	865		301							{3: 'Through the long passage of time, the spindle of fate spins without rest, weaving the years into thread.'}
+866	866		301							{3: 'For a second, it feels as if he pauses beneath the tree of life, yet also sees a million buds bloom and wither.'}
+867	867		301							{3: 'The dream wraps around him like a soft cradle, enclosing him in a gentle cocoon again.'}
+868	868		301							{3: 'He opens his mouth, blowing bubbles like an infant floating in warm womb water.'}
+869	869		301				DialogDisable			"{3: 'For an instant, he ""remembers"" a pain that should have been carved into his soul.'}"
+870	870		401						700.0	{1: '2', 2: '772'}
+871	871		111						250.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab'}
+872	872		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionInvitation/FxUiRegressionInvitationShine.prefab'}
+873	873		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+874	874		301			DialogEnable				{3: 'Pain and awareness travel together. As soon as he snatches the reins of consciousness, the soft amber that cradles him shatters.'}
+875	875		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab'}
+876	876		301				DialogDisable			{3: 'He opens his eyes and sees everything clearly.'}
+877	877		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+878	878		101						1000.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3401_06.jpg'}
+879	879		201							{1: '1', 2: '501340'}
+880	880		301			DialogEnable				{1: '1', 2: '??', 3: '...', 4: '1'}
+881	881		301							{3: 'A silent angelic girl sits on a holy throne, watching with cold indifference as he hangs nailed to a cross.'}
+882	882		202							{1: '1'}
+883	883		301							{3: 'Wanshi has seen this scene in dreams countless times, and even on the brink of death he cannot escape it.'}
+884	884		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '3'}
+885	885		201							{1: '1', 2: '501295', 4: '330', 7: '1'}
+886	886		301			PanelActor1Shake				{1: '1', 2: 'Wanshi', 3: 'Cough cough... have you come to see me off?', 4: '1'}
+887	887		202							{1: '1'}
+888	888		301							{3: 'He tries to speak clearly, but his lungs expel only foamy blood that slides down his lips.'}
+889	889		301							{3: 'The angel stays silent, rises from the seat, and lifts her hand again.'}
+890	890		401							{1: '2', 2: '4507'}
+891	891		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 2: '2', 5: '5'}
+892	892		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 2: '2', 5: '6'}
+893	893		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 2: '2', 5: '7'}
+894	894		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 2: '2', 5: '8'}
+895	895		511							{1: '5', 2: '0', 3: '-400|315|0'}
+896	896		511							{1: '6', 2: '0', 3: '440|95|0'}
+897	897		511							{1: '7', 2: '0', 3: '-640|-50|0'}
+898	898		511							{1: '8', 2: '0', 3: '695|-160|0'}
+899	899		301							{3: 'Golden circles light up. Hundreds of cold iron nails appear and align into the shape of a cross.'}
+900	900		301							{3: 'The young man asks no more, closes his eyes, and braces for his fate.'}
+901	901		301							{3: 'Moments before the nails fall, the girl murmurs a string of syllables as if in farewell.'}
+902	902		201							{1: '1', 2: '501340'}
+903	903		301							{1: '1', 2: '??', 3: '...Everything is over.', 4: '1'}
+904	904		401							{1: '2', 2: '2690'}
+905	905		502				AniZhuanchangBegin		500.0	{1: 'RImgBg1Shake'}
+906	906		202							{1: '1', 6: '1'}
+907	907		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 5: '5'}
+908	908		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 5: '6'}
+909	909		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 5: '7'}
+910	910		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 5: '8'}
+911	911		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+912	912		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+913	913		401							{1: '2', 2: '5150'}
+914	914		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab', 2: '2'}
+915	915		301			AniZhuanchangEnd				{3: 'The spinning wheel stops. A thin crack splits the amber from within, and light pours through.'}
+916	916		301							{3: 'In the thick darkness, he opens his eyes and sees a figure wavering in brilliant light.'}
+917	917		301							"{3: ""Surprise, hesitation, excitement... all kinds of emotions churn in his chest, yet none fully capture what he's feeling now.""}"
+918	918		301							{3: 'He feels like a winter insect that has slumbered underground its whole life, now seeing light above. He longs to reach it, to embrace spring, but fears the sunlight will burn him alive.'}
+919	919		302							{2: 'Will you come with me? Will you leave this place?', 3: '920'}
+920	920		301							{3: 'A calm, steady voice calls out to him. He nods before even realizing it.'}
+921	921		302							"{2: ""Come here. I'm waiting for you."", 3: '922'}"
+922	922		401							{1: '2', 2: '3077'}
+923	923		301							{3: 'He tries to move his stiff limbs, loses balance, and crashes to the floor.'}
+924	924		302							{2: 'No rush. Take it slow.', 3: '925'}
+925	925		301							{3: 'The voice beyond the amber is gentle, soothing like a lullaby. Like a toddler taking first steps, he rises, wobbling.'}
+926	926		301							{2: 'Wanshi', 3: '...How much time has passed?'}
+927	927		302							"{2: ""Not long since you fell at the altar... There's still time for everything."", 3: '928'}"
+928	928		301							{3: 'The answer pours warmth into him. Fresh strength bubbles in his heart.'}
+929	929		301							{2: 'Wanshi', 3: 'Everything?'}
+930	930		302							{2: 'Everything.', 3: '931'}
+931	931		401							{1: '2', 2: '10042416'}
+932	932		301				DialogDisable			{3: 'With that firm reply comes a hand, reaching out from the light.'}
+933	933		401							{1: '2', 2: '2975'}
+934	934		109							{1: '1', 2: '<color=#ff4e4eff><size=70><b>Light</b></size></color>', 3: '0', 4: '70', 9: '3'}
+935	935		301							{3: 'Light', 9: '3'}
+936	936		110							
+937	937		401							{1: '2', 2: '12033206'}
+938	938		301			DialogEnable	DialogDisable			{3: 'The fragile shell breaks apart. Shoots spiral up from the ground, winding around him. Within moments, they sprout branches, push out buds, and bloom with pure white petals.'}
+939	939		401							{1: '2', 2: '2975'}
+940	940		109							{1: '1', 2: '<color=#ff4e4eff><size=100><b>Bloom</b></size></color>', 3: '0', 4: '70', 9: '3'}
+941	941		301							{3: 'Bloom', 9: '3'}
+942	942		110							
+943	943		401							{1: '2', 2: '4294'}
+944	944		301			DialogEnable				{3: 'In an instant, he hears the wind chimes on a dreamcatcher jingling. The sound fills his whole world...'}
+945	945		301							"{3: ""He can't tell whether it's the childhood charm that once hung by his bed or a new sign of his slide toward demonhood.""}"
+946	946		301				DialogDisable			{3: 'All he knows is that he has awakened from the dream.'}
+947	947		401							{1: '2', 2: '2975'}
+948	948		109							{1: '1', 2: '<color=#ff4e4eff><size=120><b>Reborn</b></size></color>', 3: '0', 4: '70', 9: '3'}
+949	949		301							{3: 'Reborn', 9: '3'}
+950	950		110							
+951	951		301			DialogEnable				{3: 'He rises from the murky flow, glares toward the far horizon, and confronts the light with a question.'}
+952	952		301							{3: '—Not of where he came from, but of the path ahead.'}
+953	953		301							{2: 'Wanshi', 3: 'Where are you taking me?'}
+954	954		302							{2: 'To the Sanctuary.', 3: '955', 4: 'To a place of mercy.', 5: '955'}
+955	955		301				DialogDisable			{3: 'A human voice rings out.'}
+956	956		401							{1: '2', 2: '2975'}
+957	957		109							{1: '1', 2: '<color=#ffffffff><size=200><b>Come!</b></size></color>', 3: '0', 4: '100', 9: '3'}
+958	958		301							{3: 'Come!', 9: '3'}
+959	959		110							
+960	960		301			DialogEnable				{2: 'Wanshi', 3: '...'}
+961	961		301							"{3: ""There's still time here for him to hesitate, but he makes his choice and takes the outstretched hand.""}"
+962	962		301				DialogDisable			{2: 'Wanshi', 3: 'All right. Take me... to the world you dream of.'}
+963	963		401							{1: '1', 2: '36'}
+964	964		401						700.0	{1: '2', 2: '772'}
+965	965		111						250.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab'}
+966	966		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab'}
+967	967		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+968	968		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3401_06.jpg'}
+969	969		401							{1: '2', 2: '5316'}
+970	970		502							{1: 'DialogEnable'}
+971	971		301			RImgBg1Shake				{3: 'CLANG—'}
+972	972		401							{1: '1', 2: '146'}
+973	973		401							{1: '2', 2: '992'}
+974	974		301			RImgBg1Shake				{3: 'Something crashes through the Sanctuary dome. A tall figure stands before the cross, raising an arm to block the countless iron nails flying over.'}
+975	975		104							{1: '0|0|-100', 2: '0.3'}
+976	976		401							{1: '2', 2: '10042416'}
+977	977		401							{1: '2', 2: '4341'}
+978	978		301							"{3: ""The cloaked stranger turns, pulls the nails from the youth's wrists, and opens arms to the newly freed soul.""}"
+979	979		201							{1: '1', 2: '501295', 4: '330'}
+980	980		203							{1: '1', 2: '0.3', 3: '330', 4: '-20', 5: '-50'}
+981	981		301				DialogDisable			{3: 'The condemned man, freshly awake, staggers forward. He lifts his eyes and collapses into the savior who spoke to him in the void.'}
+982	982		302							"{2: 'I crown you ""Pestilence"".', 3: '983'}"
+983	983		401							{1: '2', 2: '5804'}
+984	984		203							{1: '1', 2: '0.3', 3: '330', 4: '-20', 5: '-70'}
+985	985		301			DialogEnable				{3: 'The human catches the reborn Son of God. The covenant is formed.'}
+986	986		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront87.png', 3: '0', 4: '1', 5: '0.3'}
+987	987		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3Loading.prefab', 2: '3', 5: '1'}
+988	988		511							{1: '1', 2: '0', 3: '0|0|-200'}
+989	989		301							{3: 'Crimson threads race through their veins, plunge into their hearts, and ignite a violent pulse.'}
+990	990		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront87.png', 3: '1', 4: '0', 5: '0.4'}
+991	991		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3Loading.prefab', 5: '1'}
+992	992		202						400.0	{1: '1'}
+993	993		104							{1: '0|-50|-100', 2: '0.4'}
+994	994		301				DialogDisable			{3: 'A gun spun from magic forms in their joined hands. Steady fingers aim the crosshairs at the angel above.'}
+995	995		302							{2: 'By the blood covenant, we declare:', 3: '996'}
+996	996		302							{2: 'The hour to raise rebellion against the Sanctuary has come.', 3: '997'}
+997	997		201							{1: '1', 2: '501295', 4: '330'}
+998	998		301			DialogEnable				"{1: '1', 2: '""Pestilence""', 3: 'In the name of ""Pestilence Knight""...', 4: '1'}"
+999	999		202							{1: '1'}
+1000	1000		301				DialogDisable			{3: 'He murmurs.'}
+1001	1001		401							{1: '2', 2: '4092'}
+1002	1002		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+1003	1003		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1148.jpg'}
+1004	1004		307							{1: '<b>In the name of Gray Raven.</b>', 3: '120', 4: 'CFCFCF', 6: '1'}
+1005	1005		301							{3: 'In the name of Gray Raven.'}
+1006	1006		307							{2: '1'}
+1007	1007		401							{1: '2', 2: '4092'}
+1008	1008		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+1009	1009		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3401_06.jpg'}
+1010	1010		301			DialogEnable	DialogDisable			"{2: '""Pestilence"" & Gray Raven', 3: 'This is where your fate ends.'}"
+1011	1011		402							{1: '4817'}
+1012	1012		401							{1: '2', 2: '2513'}
+1013	1013		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+1014	1014		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable02.prefab'}
+1015	1015		101				AniZhuanchangBegin		1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+1016	1016		101			AniZhuanchangEnd			250.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+1017	1017		304							"{1: ""Listen! The storm outside roars. It's the sun and moon raging at justice's demise."", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 7: '-3', 10: '1'}"
+1018	1018		304							{1: 'Open your eyes and witness heaven and earth overturned and all things remade.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 10: '1'}
+1019	1019		304							{1: '<size=40>If you lose your way, raise your voice and cry our names.</size>', 2: 'ff4e4eff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 10: '1'}
+1020	1020		304		1		AniZhuanchangBegin			{1: '<size=40>We will once more lift the beacon that lights every path.</size>', 2: 'ff4e4eff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 10: '1'}

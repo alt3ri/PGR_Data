@@ -1,0 +1,101 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory120.png'}
+2	1000		401							{1: '1', 2: '201'}
+3	2		201							{1: '1', 2: '500019'}
+4	3		301			DialogEnable				{1: '1', 2: 'Forsaken Construct', 3: 'Mr. Watanabe, you are too close!', 4: '1'}
+5	4		202							{1: '1', 6: '1'}
+6	5		301							{3: 'Four nuclear bombs launch from the aircraft—'}
+7	6		201							{1: '1', 2: '500080'}
+8	7		301				AniZhuanchangBegin			{1: '1', 2: 'Watanabe', 3: '…………', 4: '1'}
+9	8		202							{1: '1', 6: '1'}
+10	9		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory111.png'}
+11	10		301			AniZhuanchangEnd				{3: 'Watanabe pushes the lever to its limit as his aircraft struggles to turn. However...'}
+12	11		301							{3: 'A few seconds later...'}
+13	12		301				AniZhuanchangBegin			{3: 'The missiles are in contact with the Punishing core...'}
+14	13		301							{1: '1', 3: '...'}
+15	15		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg901_5.jpg'}
+16	16		401			RImgBg1Shake				{1: '2', 2: '10007502'}
+17	17		301			AniZhuanchangEnd				{3: '...'}
+18	18		301							{3: 'Fire swallows everything—'}
+19	1001		401							{1: '2', 2: '10007502'}
+20	19		301				AniZhuanchangBegin			{3: 'A giant fireball appears miles above Earth from the four nuclear explosions...'}
+21	21		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory45.jpg'}
+22	22		301			AniZhuanchangEnd				{3: 'Babylonia Command, now—'}
+23	23		201							{1: '1', 2: '500011'}
+24	24		301							"{1: '1', 2: 'Hassen', 3: ""Watanabe's signal?"", 4: '1'}"
+25	25		202							{1: '1', 6: '1'}
+26	26		301							"{2: 'Operator', 3: ""It's gone...""}"
+27	27		301							{2: 'Operator', 3: 'All Forsaken signals are also gone...'}
+28	28		201							{1: '1', 2: '500011'}
+29	29		301				AniZhuanchangBegin			{1: '1', 2: 'Hassen', 3: '...', 4: '1'}
+30	30		202							{1: '1', 6: '1'}
+31	31		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory110.png'}
+32	32		301			AniZhuanchangEnd				{3: '...'}
+33	33		301							{3: 'In another corner of the space station...'}
+34	34		201							{1: '1', 2: '500109'}
+35	35		301							{1: '1', 2: 'Selena', 3: '...', 4: '1'}
+36	36		201							{1: '1', 2: '500101'}
+37	37		301							{1: '1', 2: 'Gabriel', 3: 'Unfortunately, your fate is not in your own hands.', 4: '1'}
+38	38		201							{1: '1', 2: '500109'}
+39	39		301							{1: '1', 2: 'Selena', 3: '...', 4: '1'}
+40	40		202							{1: '1', 6: '1'}
+41	41		301							{3: 'Gabriel takes his eyes away from the broken body of Selena in his arms.'}
+42	42		301							{3: 'Punishing relay communication initiated—'}
+43	43		201							{1: '1', 2: '500105'}
+44	44		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+45	45		301							{1: '1', 2: 'Luna', 3: 'Gabriel, how is it?', 4: '1'}
+46	46		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+47	47		201							{1: '1', 2: '500101'}
+48	48		301							{1: '1', 2: 'Gabriel', 3: 'Target Construct successfully captured. Both the corruption rate and functionality are in line with our estimations.', 4: '1'}
+49	49		203							{1: '1', 2: '0.25', 3: '400'}
+50	50		201							{1: '2', 2: '500105', 4: '-400'}
+51	51		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+52	52		301							{1: '1', 2: 'Luna', 3: 'Good.', 4: '2'}
+53	53		301							{2: 'Luna', 3: 'Roland and I will be waiting for you at the planned destination.', 4: '2'}
+54	54		201							{1: '1', 2: '500008', 3: '9', 4: '400'}
+55	55		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+56	56		301							{1: '1', 2: 'Roland', 3: 'Ugh—', 4: '1'}
+57	57		301							"{2: 'Luna', 3: ""You know he's not going to last..."", 4: '2'}"
+58	58		301							"{2: 'Luna', 3: ""You mustn't be late."", 4: '2'}"
+59	59		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+60	60		201							{1: '1', 2: '500101', 4: '400'}
+61	61		301							{1: '1', 2: 'Gabriel', 3: 'Understood.', 4: '1'}
+62	62		301							{2: 'Gabriel', 3: 'What about the other side?', 4: '1'}
+63	63		202							{1: '1', 6: '1'}
+64	64		203							{1: '2', 2: '0.25'}
+65	65		301							"{2: 'Luna', 3: ""Sister's operation has also begun."", 4: '2'}"
+66	66		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+67	67		201							{1: '2', 2: '500101'}
+68	68		301							{1: '1', 2: 'Gabriel', 3: 'I see...', 4: '2'}
+69	69		202							{1: '2', 6: '1'}
+70	70		301							{3: 'After the conversation, Gabriel puts Selena into the launch capsule before squeezing himself in.'}
+71	71		201							{1: '1', 2: '500101'}
+72	72		301							{1: '1', 2: 'Gabriel', 3: '...', 4: '1'}
+73	73		202							{1: '1', 6: '1'}
+74	74		301							"{3: ""Gabriel adjusts Selena's pose, then closes the gate and presses the launch button.""}"
+75	75		301				AniZhuanchangBegin			{3: '...'}
+76	77		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory121.png'}
+77	78		301			AniZhuanchangEnd				{3: '…………'}
+78	79		301							{3: 'Meanwhile, somewhere else on Earth—'}
+79	80		301							{3: 'The Eternal Engine, the last uninfected train on Earth, is cruising through the desert.'}
+80	81		301							{3: 'Ahead of its track, fire rains down the navy blue sky as the comets fall from space.'}
+81	82		301							{3: 'The burning red light has painted the exterior of the train scarlet.'}
+82	83		301							{3: 'On the lavish balcony outside one of its carts, two figures watch as this calamity descends from the sky...'}
+83	84		301							{2: '???', 3: 'That beacon will attract all kinds of attention. People will take advantage.'}
+84	85		201							{1: '1', 2: '500121'}
+85	86		301							{1: '1', 2: '???', 3: '...', 4: '1'}
+86	87		202							{1: '1', 6: '1'}
+87	88		301							{2: '???', 3: 'Sophia.'}
+88	89		201							{1: '1', 2: '500121'}
+89	90		301							"{1: '1', 2: 'Sophia', 3: ""I'm here."", 4: '1'}"
+90	91		202							{1: '1', 6: '1'}
+91	92		301							"{2: '???', 3: ""What's the progress?""}"
+92	93		201							{1: '1', 2: '500121'}
+93	94		301							"{1: '1', 2: 'Sophia', 3: ""The scouts returned. It's as you expected."", 4: '1'}"
+94	95		301							{2: 'Sophia', 3: 'Also, a new face showed up in the Commoner Carriage...', 4: '1'}
+95	96		202							{1: '1', 6: '1'}
+96	97		301							"{2: '???', 3: 'Don\'t mind it. I\'ll have ""him"" keep an eye out.'}"
+97	98		301							"{2: '???', 3: ""For now, proceed as we've planned.""}"
+98	99		301							"{2: '???', 3: ""What's done is done. We have to get our leverage before others make their moves.""}"
+99	100		201							{1: '1', 2: '500121'}
+100	101		301		1		AniZhuanchangBegin			{1: '1', 2: 'Sophia', 3: 'Understood.', 4: '1'}

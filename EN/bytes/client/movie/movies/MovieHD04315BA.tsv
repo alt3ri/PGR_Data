@@ -1,0 +1,109 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory394.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500342'}
+4	4		301			DialogEnable				{1: '1', 2: 'Staff Member A', 3: 'This lady who told us her name was Luna... drew these Amour Concerto Vouchers for you and herself.', 4: '1'}
+5	5		202							{1: '1'}
+6	6		301							"{3: ""Says the person with a mysterious smile. When you turn it over, you see a line of words staring back at you—Dare Challenge: Reach Lake Moon's Edge by nightfall.""}"
+7	7		301							"{3: ""Lake Moon's Edge? You remember it being a scenic spot somewhere in Constellia. According to the map, it's a stone's throw away from where you are now.""}"
+8	8		301							"{3: ""There is, however, no sign of Luna anywhere. She's most likely already on her way to the lake.""}"
+9	9		302							"{2: ""Let's go."", 3: '10'}"
+10	10		301							"{3: ""Just as you start walking, you see a massive mountain that stands right between you and Lake Moon's Edge.""}"
+11	11		301							"{3: ""To reach the lake, you'd need to climb over this mountain, and you can't even see how far up it goes from where you're standing.""}"
+12	12		301							{3: 'Scaling the mountain, you know, is out of the question...'}
+13	13		201							{1: '1', 2: '500462'}
+14	14		301							"{1: '1', 2: 'Staff Member B', 3: '""A shortcut to Lake Moon\'s Edge? Well, it\'s right on the other side of this tunnel.""', 4: '1'}"
+15	15		202							{1: '1'}
+16	16		301							"{3: ""The elderly backcountry caretaker yawns as he points to a deep, dark tunnel entrance nearby. The twilight sunlight stops right before it reaches the tunnel's entrance, and the weeds growing alongside have reached half a person's height.""}"
+17	17		301							"{3: ""The pitch-black tunnel gives off a bone-chilling coldness... but it's the only available alternative to the mountain.""}"
+18	18		302							"{2: ""(Well, guess I don't have much of a choice here.)"", 3: '19', 4: '(Luna is waiting for me.)', 5: '19'}"
+19	19		401							{1: '1', 2: '36'}
+20	20		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+21	21		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0'}
+22	22		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory143.png'}
+23	23		401							{1: '1', 2: '386'}
+24	24		301							{3: 'You start off at a brisk pace, hoping to make it in time to see Luna.'}
+25	25		301							{3: 'As time slowly wears you off, however, you find yourself slowing down.'}
+26	26		301							{3: 'As you carry yourself forward, the smell of damp earth fills your nostrils...'}
+27	27		401							{1: '2', 2: '981'}
+28	28		301							{3: 'Ethereal drip-drop of water echoes throughout the tunnel.'}
+29	29		301							{3: 'Beyond that, there is only silence.'}
+30	30		301							{3: 'You try but to no avail to see where you are with your terminal, having been stripped of reception. You turn on your flashlight, only to see its beam devoured by the enveloping darkness.'}
+31	31		301							{3: 'Walking through this boundless tunnel... you find your feet growing numb and thoughts dull by the second.'}
+32	32		301							"{3: ""You can't help but wonder if there really is an exit.""}"
+33	33		301							"{3: ""You've come so far now, that the entrance has long since been swallowed by darkness. Turning back now would present the same problems as moving forward.""}"
+34	34		301							{3: 'No mountain spirits, no demons.'}
+35	35		301							"{3: ""The imaginary spooks don't seem to bother you as much as this endless solitude you now find yourself in...""}"
+36	36		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '0', 5: '3'}
+37	37		301							{3: 'You shake your head. Having cast away the jumbled thoughts, you carry yourself forth on the muddy ground. Out of the blue, however, you seem to see a cluster of hazy glow up ahead...'}
+38	38		301							{3: 'The glow draws closer as it gradually takes the shape of a young woman...'}
+39	39		201							{1: '1', 2: '501183'}
+40	40		301							{1: '1', 2: '??', 3: 'There you are.', 4: '1'}
+41	41		302							{2: 'Luna?'}
+42	42		201							{1: '1', 2: '500886'}
+43	43		301							{1: '1', 2: 'Luna', 3: '...', 4: '1'}
+44	44		301							{3: 'It looks like she changed into this coating for her rendezvous with you tonight.'}
+45	45		302							{2: 'How did you know I was here?', 3: '46', 4: 'What are you doing here?', 5: '46'}
+46	46		204							{1: '1', 2: '4'}
+47	47		301							"{2: 'Luna', 3: ""Don't you know your location signal was gone for a long time?"", 4: '1'}"
+48	48		301							{2: 'Luna', 3: 'Your last signal came from the entrance of this abandoned tunnel.', 4: '1'}
+49	49		301							"{2: 'Luna', 3: ""Within a ten-mile radius, this tunnel is the only place without a signal, so I didn't have to guess too far."", 4: '1'}"
+50	50		301							"{3: ""She sounds calm enough, but she goes on bombarding you with questions—which is something she's never done.""}"
+51	51		302							{2: 'I was running short on time, so...', 3: '52', 4: 'I wanted to find you as soon as possible...', 5: '52'}
+52	52		204							{1: '1', 2: '1'}
+53	53		301							{2: 'Luna', 3: '...I could have waited for you, 【kuroname】.', 4: '1'}
+54	54		301							"{2: 'Luna', 3: ""Forget about this adventure. We don't have to do as they say. We could even just meet up at the summit even if we were mountain climbing."", 4: '1'}"
+55	55		301							"{2: 'Luna', 3: ""Why did you choose this tunnel? What if there were Corrupted in here? What if you got lost? What if I couldn't find you?"", 4: '1'}"
+56	56		202							{1: '1'}
+57	57		301							{3: 'Luna falls silent, perhaps having realized she was becoming increasingly agitated.'}
+58	58		301							{3: 'She turns her face away and falls into an awkward silence.'}
+59	59		301							{3: 'With nowhere to rest your gaze in the awkward silence, you notice the source of the glow around her—the night light you gave her.'}
+60	60		301							{3: 'And this tunnel is so narrow and endlessly dark.'}
+61	61		301							{3: 'Getting here meant enduring prolonged loneliness and darkness—and having experienced all that firsthand yourself, you know that Luna must have had to go through the same torment, too, coming to search for you.'}
+62	62		302							"{2: ""(Take Luna's hand)"", 3: '63'}"
+63	63		301							{3: 'Her slender wrist wiggles for a few seconds in your palm before reluctantly settling down.'}
+64	64		302							{2: 'Thank you for coming to look for me.', 3: '65'}
+65	65		301				DialogDisable			"{3: ""She doesn't respond, her face still turned away, making it impossible to read her expression.""}"
+66	66		302							{2: 'Have you ever gone through something like this before?', 3: '67'}
+67	67		302							{2: 'Like this—walking alone on an endless path?', 3: '68'}
+68	68		201							{1: '1', 2: '500886'}
+69	69		301			DialogEnable				{1: '1', 2: 'Luna', 3: '...No, never.', 4: '1'}
+70	70		301							"{2: 'Luna', 3: ""I've always had my sister with me... until a silly human came into my life one day."", 4: '1'}"
+71	71		301							"{2: 'Luna', 3: ""Anyway, I've never had it as bad as you might think."", 4: '1'}"
+72	72		301							{2: 'Luna', 3: 'But what you said reminds me of a story.', 4: '1'}
+73	73		302							{2: 'Hm?', 3: '74', 4: 'What story?', 5: '74'}
+74	74		301							{2: 'Luna', 3: '...', 4: '1'}
+75	75		301							{2: 'Luna', 3: 'Once upon a time, there was a girl who got separated from her family when she stumbled into a waste processing facility.', 4: '1'}
+76	76		301							{3: 'Luna speaks softly, her tone detached, as if the story itself holds little significance or importance.'}
+77	77		301							{2: 'Luna', 3: 'It was as dark as this tunnel, and just as long—stretching endlessly beyond sight.', 4: '1'}
+78	78		301							"{2: 'Luna', 3: '""If only there was someone beside me, if only there was a light to guide me...""', 4: '1'}"
+79	79		301							{2: 'Luna', 3: '...I bet these thoughts crossed her mind when she was wandering around.', 4: '1'}
+80	80		301							{3: 'Luna pauses briefly, skipping over some details of the story.'}
+81	81		301							{2: 'Luna', 3: 'And the girl grows up.', 4: '1'}
+82	82		301							{2: 'Luna', 3: 'She was all alone when she was a kid, which is why...', 4: '1'}
+83	83		301							{2: 'Luna', 3: 'She never wants the people she cherishes to experience what she once did.', 4: '1'}
+84	84		301							{2: 'Luna', 3: 'And no matter how far she has to go...', 4: '1'}
+85	85		301							{3: 'Luna sounds so quiet now that she might as well be talking to herself.'}
+86	86		302							{2: 'Thanks, Luna.', 3: '87', 4: 'Thank you for coming to look for me.', 5: '87'}
+87	87		301							"{2: 'Luna', 3: ""I told you already, I didn't."", 4: '1'}"
+88	88		301				DialogDisable			{3: 'Luna wiggles her hand for a while in protest.'}
+89	89		302							{2: 'Actually, I feel the same way.', 3: '90'}
+90	90		302							"{2: ""I'd never let someone I care about be alone on a day like this."", 3: '91'}"
+91	91		302							"{2: ""That's precisely why I chose this dangerous path."", 3: '92'}"
+92	92		204							{1: '1', 2: '1'}
+93	93		301			DialogEnable				{2: 'Luna', 3: '...Is that so? Then you really are just like that little girl from the story I was just telling you.', 4: '1'}
+94	94		302							{2: '...?', 3: '95'}
+95	95		301							"{2: 'Luna', 3: ""In that you're every bit as silly as she is, that is."", 4: '1'}"
+96	96		301							{3: 'Luna still has her face turned the other way, yet slowly she tries to grasp your hand.'}
+97	97		301							"{2: 'Luna', 3: ""Alright, let's get going."", 4: '1'}"
+98	98		301				AniZhuanchangBegin			"{2: 'Luna', 3: ""We still need to go to Lake Moon's Edge, don't we?"", 4: '1'}"
+99	99		202							{1: '1', 6: '1'}
+100	100		401							{1: '1', 2: '36'}
+101	101		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+102	102		401							{1: '1', 2: '181'}
+103	103		301			AniZhuanchangEnd				"{3: ""A long journey doesn't feel half as long when you aren't traveling alone.""}"
+104	104		301							"{3: ""When the two of you arrive at Lake Moon's Edge's shore, the silver moon hangs high in the sky, flanked by countless stars.""}"
+105	105		301							{3: 'Gentle waves caress the shoreline, offering a romantic blessing to the travel-worn souls.'}
+106	106		201							{1: '1', 2: '500886', 3: '1'}
+107	107		301							{1: '1', 2: 'Luna', 3: 'Well then, 【kuroname】, since you were late...', 4: '1'}
+108	108		301		1		AniZhuanchangBegin			"{2: 'Luna', 3: ""You're all mine tonight. No objections, right?"", 4: '1'}"

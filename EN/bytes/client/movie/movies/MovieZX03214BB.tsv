@@ -1,0 +1,175 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory35.jpg'}
+2	2		401						400.0	{1: '2', 2: '661'}
+3	3		401							{1: '2', 2: '658'}
+4	4		401							{1: '2', 2: '1513'}
+5	5		401							{1: '1', 2: '202'}
+6	6		201							{1: '1', 2: '500060'}
+7	7		301			DialogEnable				{1: '1', 3: 'He runs for his life through the dark underground factory, a shower of bullets and lasers strike from behind, sparks flying from the metal racks they hit.'}
+8	8		301							{3: 'The safety door had long been shut when the alarm was first triggered. He could only keep dodging behind the huge machine tool and storage shelves. As he turns the corner, a laser beam catches his left arm, sending up a wave of excruciating pain.'}
+9	9		401							{1: '2', 2: '662'}
+10	10		203							{1: '1', 2: '0.15', 3: '200'}
+11	11		301							{3: 'At the same time, he slides into an inconspicuous air duct and crawls to the other side of the room.'}
+12	12		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory83.jpg', 3: '0', 4: '1', 5: '0.5'}
+13	13		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+14	14		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory83.jpg'}
+15	15		203							{1: '1', 2: '0.25'}
+16	16		301							{2: 'Lee', 3: 'Tsk, my clothes...!', 4: '1'}
+17	17		301							"{3: ""He will have to come up with another excuse. Murray seems to have noticed something recently and looked like he had something to say to Lee. Murray's situation is also worsening again, he cannot make him worry anymore—""}"
+18	18		201							{1: '1', 2: '500005'}
+19	19		301							"{1: '1', 2: 'Guard A', 3: ""Where'd that bastard go?! Find him!"", 4: '1'}"
+20	20		201							{1: '1', 2: '500060'}
+21	21		301							"{1: '1', 2: 'Lee', 3: ""...Now's not the time to think, I need to focus on getting out of this place."", 4: '1'}"
+22	22		201							{1: '1', 2: '500005'}
+23	23		301							"{1: '1', 2: 'Guard B', 3: ""Relax, there's no way out for him here. He's probably cowering in fear already. Let's have a bit of fun with him before Boss comes."", 4: '1'}"
+24	24		301							{2: 'Guard B', 3: 'Never thought someone would be so brave to come stealing alone.', 4: '1'}
+25	25		201							{1: '1', 2: '500060'}
+26	26		301							{1: '1', 2: 'Lee', 3: 'One... Two... Three... So I got four shots left.', 4: '1'}
+27	27		301							{3: 'Lee wipes away the blood stains outside the air duct. With a roll of gauze in his teeth, he bandages his wounded arm and starts counting his ammunition in a corner of the room.'}
+28	28		301							"{2: 'Comrade', 3: ""Lee, do you copy? What's your situation?""}"
+29	29		301							"{3: ""Hearing his teammate's voice from his tiny terminal, Lee lowers his voice to reply.""}"
+30	30		301							{2: 'Lee', 3: 'I have the target, currently evacuating the site.', 4: '1'}
+31	31		301							{2: 'Comrade', 3: 'Your cover is not blown, is it?'}
+32	32		301							{2: 'Lee', 3: 'I was. Our intel was wrong, there were four security keys to their security system.', 4: '1'}
+33	33		301							{2: 'Lee', 3: 'Cracking that took up some extra time, your pre-set surveillance interference ended up three seconds short.', 4: '1'}
+34	34		301							{2: 'Comrade', 3: '...Well, as long as you got the goods. Do they know our plan?'}
+35	35		301							"{2: 'Lee', 3: ""They think I'm working alone."", 4: '1'}"
+36	36		301							"{2: 'Comrade', 3: ""Good, I'll meet you at our rendezvous point.""}"
+37	37		301							{3: 'The communication is swiftly cut off by the other side.'}
+38	38		301							{2: 'Lee', 3: 'There are two guards inside the factory and at least six outside... I need a plan.', 4: '1'}
+39	39		301							{3: 'He surveys his dimly lit surroundings. The room he is in appears to be a mechanical warehouse filled with failed experimental objects and defective parts.'}
+40	40		301				AniZhuanchangBegin			{3: 'And he found what he needed in this heap of junk.'}
+41	41		202			DialogDisable				{1: '1', 6: '1'}
+42	42		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory83.jpg'}
+43	43		201							{1: '1', 2: '500005', 4: '400'}
+44	44		201							{1: '2', 2: '500005', 4: '-400'}
+45	45		301			DialogEnable				"{1: '1', 2: 'Guard A', 3: ""There's blood!"", 4: '1'}"
+46	46		301							"{2: 'Guard B', 3: ""He's hurt so he won't be able to run far."", 4: '2'}"
+47	47		301							{2: 'Guard A', 3: 'Over there! He went to the right!', 4: '1'}
+48	48		301							{2: 'Guard B', 3: 'Follow him!', 4: '2'}
+49	49		301							"{2: 'Guard A', 3: ""That's strange... I swear I saw someone here..."", 4: '1'}"
+50	50		301							{2: 'Guard B', 3: 'There!', 4: '2'}
+51	51		301							{3: 'A black shadow bursts out from the racks and hides behind the cargo in the corner. A sticky substance drips onto the floor with its movements.'}
+52	52		301							"{2: 'Guard A', 3: ""Seriously? I expected better. He probably can't move much with such a serious wound."", 4: '1'}"
+53	53		401						300.0	{1: '2', 2: '659'}
+54	54		401							{1: '2', 2: '659'}
+55	55		301							{3: 'They laugh manically as they fire two shots into the corner.'}
+56	56		301							"{2: 'Guard B', 3: ""Make sure he's still alive for questioning."", 4: '2'}"
+57	57		301							"{2: 'Guard B', 3: ""Wait... That's not..."", 4: '2'}"
+58	58		301							{3: 'They approach the corner, only to find that what lay in the pile of cargo is not the wounded intruder they expected, but a broken humanoid machine.'}
+59	59		301							"{2: 'Guard A', 3: ""****, that wasn't a human we saw!"", 4: '1'}"
+60	60		301							"{2: 'Guard B', 3: ""It's a defect from the warehouse! Impossible, why was it moving?!"", 4: '2'}"
+61	61		301							"{2: 'Guard A', 3: ""Wait, where'd the bastard go then?!"", 4: '1'}"
+62	62		202							{1: '2', 6: '1'}
+63	63		201							{1: '1', 2: '500060'}
+64	64		301							{1: '1', 2: 'Lee', 3: 'You talk too much.', 4: '1'}
+65	65		203						100.0	{1: '1', 2: '0.15', 5: '-100'}
+66	66		202							{1: '1', 6: '1'}
+67	67		401							{1: '2', 2: '10002001'}
+68	68		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+69	69		301							{3: 'In the end, the two guards never saw how the figure manifested from the darkness behind them, nor how quickly he slit their throats.'}
+70	70		201							{1: '1', 2: '500060'}
+71	71		301				AniZhuanchangBegin			{1: '1', 3: 'Lee sheathes his blade back into his belt, freely letting the two lifeless bodies slide down to the ground. He fishes out a key card and leaves without a second glance.'}
+72	72		202			DialogDisable				{1: '1', 6: '1'}
+73	73		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory34.jpg'}
+74	74		201							{1: '1', 2: '500060'}
+75	75		301				DialogEnable			{1: '1', 2: 'Lee', 3: '...What is the meaning of this?', 4: '1'}
+76	76		301							{3: 'What awaited him at the rendezvous point was not an aiding teammate, but the cold barrel of a gun pointing at his forehead.'}
+77	77		203							{1: '1', 2: '0.25', 3: '400'}
+78	78		201							{1: '2', 2: '500340', 4: '-400'}
+79	79		301							{1: '1', 2: 'Comrade', 3: 'Put down your weapon and give me the goods. No funny business!', 4: '2'}
+80	80		301							{2: 'Lee', 3: '...', 4: '1'}
+81	81		301							"{2: 'Comrade', 3: ""Don't make me repeat myself!"", 4: '2'}"
+82	82		301							{3: 'Lee takes out an object from his pocket—a storage device in the shape of a stick.'}
+83	83		301							{2: 'Comrade', 3: 'Very good.', 4: '2'}
+84	84		301							{3: 'Satisfied, he inconspicuously lets out a sigh of relief as he takes the storage device from Lee. He then puts on a show of pity.'}
+85	85		301							"{2: 'Comrade', 3: ""I'm really impressed with your abilities, it's a real pity that you must die today."", 4: '2'}"
+86	86		301							{2: 'Lee', 3: 'Is this why you withheld information?', 4: '1'}
+87	87		301							"{3: ""Lee's heart pounds in his chest as his body starts to grow cold. The wound he hastily treated had opened up while he was escaping, and he starts to feel faint and weak from the excess blood loss. He grits his teeth, trying to regulate his breathing.""}"
+88	88		301							"{2: 'Comrade', 3: 'You\'re quite sharp, I\'ll give you that, which is why I ""trusted"" that you would be able to crack that complicated security system even under those circumstances.', 4: '2'}"
+89	89		301							{2: 'Comrade', 3: 'Oh, you hear that? Looks like their backup is here.', 4: '2'}
+90	90		301							"{2: 'Comrade', 3: 'I\'ll leave the rest to you then, ""teammate.""', 4: '2'}"
+91	91		301							"{3: ""He retreats with a smile on his face and gun in hand. Lowering the gun, he aims at Lee's leg.""}"
+92	92		401				AniZhuanchangBegin			{1: '2', 2: '1510'}
+93	93		401						1000.0	{1: '1', 2: '36'}
+94	94		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+95	95		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+96	96		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+97	97		401				AniZhuanchangEnd			{1: '2', 2: '1509'}
+98	98		301			DialogEnable				{3: '—Infection level decreasing, calibrating basic function modules.'}
+99	99		301							{2: '???', 3: '...'}
+100	100		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory19.jpg', 3: '0', 4: '0.2', 5: '1'}
+101	101		401							{1: '1', 2: '175'}
+102	102		301							{3: '—Audio module calibration complete.'}
+103	103		301							{2: '???', 3: 'Lee!'}
+104	104		301							"{2: '???', 3: ""...I'm going to put you down now. Please wait a moment while I heal you!""}"
+105	105		301							{3: 'Someone is calling me.'}
+106	106		301							"{3: ""After a round of dissonance, Lee could faintly hear the calls of his teammates—Liv and Lucia's voices.""}"
+107	107		201							{1: '1', 2: '1011001', 3: '9'}
+108	108		301							{1: '1', 2: 'Lee', 3: '(My memory is all scrambled... Is it because of the infection?)', 4: '1'}
+109	109		202							{1: '1', 6: '1'}
+110	110		301							{3: 'But he could not reply to the calls. The Punishing Virus messed up his visual module, eerie black and red squares keep changing in his view, exploding in his M.I.N.D. like twisted spirals.'}
+111	111		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory19.jpg', 3: '0.2', 4: '0.5', 5: '1'}
+112	112		301							{3: 'Immense pain hacks away at his will as the Punishing Virus devours his thoughts. It tries to take over his mind and Lee gives it his all to try to remain conscious.'}
+113	113		301							"{3: ""He uses his body to block Tifa's last strike and the Punishing Virus invades his frame through the wound. It is only thanks to the connection with Commandant's Mind Beacon that the infection level did not exceed the limit and is starting to decrease.""}"
+114	114		301							{3: 'Liv had performed some emergency treatment on Lee and they are currently waiting for pick up in a safe corner of the subway station.'}
+115	115		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+116	116		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory19.jpg', 3: '0.5', 4: '1', 5: '1'}
+117	117		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+118	118		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory19.jpg'}
+119	119		301							{3: '—Visual module calibration complete.'}
+120	120		201							{1: '1', 2: '1031001', 3: '19', 4: '-400'}
+121	121		201							{1: '2', 2: '1021001', 3: '4', 4: '400'}
+122	122		301							{1: '1', 3: 'Lucia, who is usually calm and collected, is now fretting with worry. Lee has never seen her this anxious in all his time as a member of Gray Raven.'}
+123	123		301							"{3: ""Liv grits her teeth as she continues to treat Lee's wound. Lee leans against Commandant as Commandant holds him close by his shoulders, supporting half of his weight. He may not be able to see Commandant's expression, but he could feel the hands on his shoulders slightly trembling.""}"
+124	124		301							{3: 'Lee finds that he is not used to situations like this.'}
+125	125		202							{1: '1', 2: '2', 6: '1'}
+126	126		201							{1: '1', 2: '1011001', 3: '9'}
+127	127		301							"{1: '1', 3: 'No need to worry, I will be fine. He wants to say ""Don\'t worry,"" but he could not even find the breath to do so.'}"
+128	128		301							{2: 'Lee', 3: '(My M.I.N.D. and the connection to frame control... is being blocked?)', 4: '1'}
+129	129		301							{2: 'Lee', 3: '(The infection levels have started to lower, I should be able to control my frame... This leaves one possibility.)', 4: '1'}
+130	130		301							{2: 'Lee', 3: '(...I need to find a way to inspect my M.I.N.D.)', 4: '1'}
+131	131		301							{3: 'To inspect the M.I.N.D., one needs to enter a comatose-like self-inspection mode. This means that there will be a period of time when he will have to cut off all sensations to the outside world. He would be powerless in the face of danger.'}
+132	132		301							{2: 'Lee', 3: '(How foolish would it be if it all ended here, but...)', 4: '1'}
+133	133		301							"{3: 'In desperate times, the most efficient strategy is to abandon those who have lost their mobility and evacuate. If needed, those ""members"" can also be used as ""bait""—that is one of the unspoken ""rules"" of Kurono.'}"
+134	134		301							{3: 'Although the speed of evacuation is severely hindered and they have been surrounded by the Corrupted several times, Gray Raven does not entertain the thought of abandoning him for even one second.'}
+135	135		301							{3: '—Entering self-inspection mode means he will have to cut ties with the outside world, but he has Gray Raven by his side now.'}
+136	136		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+137	137		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory327.png'}
+138	138		504							{1: '0.7'}
+139	139		201							{1: '1', 2: '500029'}
+140	140		301							"{1: '1', 2: 'Lucia', 3: '""Each of us is an indispensable feather necessary for Gray Raven to soar undeterred by opposing forces.""', 4: '1'}"
+141	141		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+142	142		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory19.jpg'}
+143	143		504							{1: '0'}
+144	144		202							{1: '1', 6: '1'}
+145	145		301							{3: 'None of them have once renounced their vows.'}
+146	146		201							{1: '1', 2: '1011001', 3: '9'}
+147	147		301							"{1: '1', 2: 'Lee', 3: ""(I can't... make them worry like that any longer. At least now, there is something I can do.)"", 4: '1'}"
+148	148		204							{1: '1', 2: '10'}
+149	149		301							{2: 'Lee', 3: '(Cutting off external sensations temporarily. Preparing for self-inspection.)', 4: '1'}
+150	150		301				AniZhuanchangBegin			{3: 'He has numerous experiences with almost fainting from injuries, but this is the first time he feels... safe.'}
+151	151		401						700.0	{1: '1', 2: '36'}
+152	152		202			DialogDisable				{1: '1', 6: '1'}
+153	153		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory645.png'}
+154	154		401							{1: '1', 2: '172'}
+155	155		301			DialogEnable				{3: '...'}
+156	156		301							{3: 'What appears in front of him is not his M.I.N.D., but a realm of chaos.'}
+157	157		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+158	158		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory658.jpg'}
+159	159		301							{2: '???', 3: '...'}
+160	160		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+161	161		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory645.png'}
+162	162		201							{1: '1', 2: '1011001'}
+163	163		301							{1: '1', 2: 'Lee', 3: 'What was that?!', 4: '1'}
+164	164		301							{2: 'Lee', 3: 'A moment of data error... Is this caused by the Punishing Virus?', 4: '1'}
+165	165		301							"{2: 'Lee', 3: ""There's no time to waste here."", 4: '1'}"
+166	166		301				AniZhuanchangBegin			"{2: 'Lee', 3: ""I'll have to inspect them one by one."", 4: '1'}"
+167	167		202			DialogDisable				{1: '1', 6: '1'}
+168	168		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory645.png'}
+169	169		201							{1: '1', 2: '1011001'}
+170	170		301			DialogEnable				{1: '1', 3: 'In the vast sea of his M.I.N.D., Lee sees a red crystal floating in the sky.'}
+171	171		301							"{2: 'Lee', 3: ""Looks like that's the source of the abnormalities..."", 4: '1'}"
+172	172		301							"{2: 'Lee', 3: ""This is... Tifa's data shard? To think this was planted in me all this time..."", 4: '1'}"
+173	173		301							{2: 'Lee', 3: 'I need to get rid of this quickly.', 4: '1'}
+174	174		301		1		AniZhuanchangBegin			{3: 'The moment he touched the crystal, Lee is sucked into another eerie dimension.'}

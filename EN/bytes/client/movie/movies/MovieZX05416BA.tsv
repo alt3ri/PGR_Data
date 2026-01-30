@@ -1,0 +1,327 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+2	2		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '1'}
+3	3		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+4	4		401							{1: '1', 2: '5042'}
+5	5		401							{1: '2', 2: '4323'}
+6	6		301			DialogEnable				{3: 'Machines, Horst hates machines the most.'}
+7	7		301							{3: 'Pallid bed sheets, cold fluorescent lights, the acrid smell of disinfectant... along with the constant mechanical beeping of monitoring equipment and the irritating creaking of rehabilitation devices.'}
+8	8		301							"{3: ""All of this constitutes the entirety of Horst Schmidt's memories for the past two years.""}"
+9	9		301							"{3: ""At first, he writes in his diary about the day's events, his feelings, and his wishes for tomorrow. However, after just a few months, this practice loses all meaning.""}"
+10	10		301							"{3: 'Because every day, he can only write down one sentence—""Today: medication, injections, rehabilitation exercises.""'}"
+11	11		301							{3: 'The only thing he can look forward to is the weekly visiting hours, those moments when his parents appear in his hospital room—even if they can only stay with him for a short while.'}
+12	12		301							"{3: ""But today's visiting hours are almost over, and their familiar figures have yet to appear.""}"
+13	13		401							{1: '2', 2: '4280'}
+14	14		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+15	15		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+16	16		301							{3: 'Could something have delayed them on the way...? Horst wonders groggily, his mind clouded by the side effects of his medication.'}
+17	17		301							{3: '...'}
+18	18		301							"{3: ""In his drowsy state, he seems to hear his parents' voices—fragmented and interrupted, mingled with the doctor's voice. From their tone, it sounds like they are arguing about something.""}"
+19	19		201							{1: '1', 2: '500138'}
+20	20		301							"{1: '1', 2: 'Doctor', 3: ""Mr. and Mrs. Schmidt, your son's condition has shown significant improvement after treatment. Given more time, complete recovery is entirely possible."", 4: '1'}"
+21	21		301							{2: 'Doctor', 3: 'This child has been so brave all this time. To give up now... it would be such a terrible waste!', 4: '1'}
+22	22		202						250.0	{1: '1'}
+23	23		201							{1: '1', 2: '500462', 4: '400'}
+24	24		201							{1: '2', 2: '500463', 4: '-400'}
+25	25		301							"{1: '1', 2: 'Mr. Schmidt', 3: ""Hmph, nearly three years of treatment, so much money spent, and he still can't even get out of bed."", 4: '1'}"
+26	26		301							"{2: 'Mr. Schmidt', 3: ""My efforts were wasted on him. He's a disgrace to our family!"", 4: '1'}"
+27	27		301							"{2: 'Mrs. Schmidt', 3: ""Even if he's discharged, who knows what lasting effects he'll have? Am I supposed to take care of him for the rest of my life?"", 4: '2'}"
+28	28		301							"{2: 'Mrs. Schmidt', 3: ""If that happens, just imagine how people would mock our family. We'd be better off pretending we never had a son!"", 4: '2'}"
+29	29		301							"{2: 'Mrs. Schmidt', 3: ""Once we've spent the last of our money, don't ask us for anything else—whether he's cured or not."", 4: '2'}"
+30	30		301							{2: 'Horst', 3: '...'}
+31	31		401							{1: '2', 2: '4690'}
+32	32		301							"{3: ""No, Dad, Mom, don't give up on me... I want to live...""}"
+33	33		301							{3: 'He wants to cry out, but no sound escapes his parched throat. Fear washes over his foggy mind.'}
+34	34		301							{3: 'In the darkness, what appear to be the silhouettes of his father and mother materialize before his eyes. He tries to reach out and touch them, but their figures remain forever beyond his grasp.'}
+35	35		301							"{3: ""He can't decipher the expressions on his parents' faces. Is it weariness? Indifference? Or... disgust?""}"
+36	36		202							{1: '1', 2: '2', 6: '1'}
+37	37		201							{1: '1', 2: '500138'}
+38	38		301							{1: '1', 2: '???', 3: 'Sigh. Poor kid.', 4: '1'}
+39	39		501				AniZhuanchangBegin			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab', 2: '2'}
+40	40		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+41	41		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+42	42		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+43	43		111							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+44	44		202							{1: '1', 6: '11'}
+45	45		301			AniZhuanchangEnd	AniZhuanchangBegin			"{3: ""The doctor's voice reaches him faintly as Horst slips back into unconsciousness.""}"
+46	46		402							{1: '4323'}
+47	47		401							{1: '1', 2: '36'}
+48	48		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+49	49		401							{1: '1', 2: '242'}
+50	50		301			AniZhuanchangEnd				{3: 'After that conversation between his parents and the doctor, Horst has never received another visit from them.'}
+51	51		201							{1: '1', 2: '500138'}
+52	52		301							"{1: '1', 2: 'Doctor', 3: ""Horst, your parents have been very busy lately and haven't had time to visit. But they're very concerned about you. You just focus on getting better, all right?"", 4: '1'}"
+53	53		201							{1: '1', 2: '500053'}
+54	54		301							{1: '1', 2: 'Horst', 3: 'All right. Thank you, Doctor. Please tell my father and mother... I miss them so much.', 4: '1'}
+55	55		202							{1: '1'}
+56	56		301							"{3: ""Horst doesn't expose this clumsy yet well-intentioned lie. Instead, he retrieves the diary he hasn't touched for a long time.""}"
+57	57		401							{1: '2', 2: '910'}
+58	58		304							"{1: '<size=42>""Today: Took medicine, got injections, worked hard in rehab, asked doctor for extra exercises.""</size>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1'}"
+59	59		402							{1: '910'}
+60	60		401							{1: '2', 2: '910'}
+61	61		304							"{1: '<size=42>""Today: Halved pain meds, stepped up rehab exercises, challenged myself to be independent in daily tasks.""</size>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1'}"
+62	62		402							{1: '910'}
+63	63		401							{1: '2', 2: '910'}
+64	64		304							"{1: '<size=42>""Today: In pain, but chose to refuse painkillers. Requested removal of the support braces.""</size>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1'}"
+65	65		402							{1: '910'}
+66	66		401							{1: '2', 2: '910'}
+67	67		304							{1: '<size=42>...</size>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1'}
+68	68		402							{1: '910'}
+69	69		401							{1: '2', 2: '910'}
+70	70		304				AniZhuanchangBegin			"{1: '<size=42>""Today, completed discharge procedures.""</size>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 9: '1'}"
+71	71		401							{1: '1', 2: '36'}
+72	72		402							{1: '910'}
+73	73		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory424.jpg'}
+74	74		401							{1: '1', 2: '120'}
+75	75		301			AniZhuanchangEnd				{3: 'Horst stands at the hospital entrance, tugging at his coat that refuses to fit properly no matter how he adjusts it.'}
+76	76		301							{3: 'He stands at the hospital entrance from early morning until noon before finally catching sight of his father coming to pick him up.'}
+77	77		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+78	78		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront47.png', 4: '4'}
+79	79		401							{1: '2', 2: '2597'}
+80	80		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '1'}
+81	81		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory378.png'}
+82	82		301							{3: 'Through the curtain of rain, the car winds along the mountain road. Inside, nothing breaks the awkward silence except for the faint hum of the engine.'}
+83	83		301							"{3: ""A three-year gap exists in Horst's memories of living with his father. Though he sits once more in the familiar car seat, an unshakable sense of unease lingers.""}"
+84	84		201							{1: '1', 2: '500053', 4: '400'}
+85	85		201							{1: '2', 2: '500462', 4: '-400'}
+86	86		301							{1: '1', 2: 'Horst', 3: 'Dad...', 4: '1'}
+87	87		301							{2: 'Mr. Schmidt', 3: 'Hm?', 4: '2'}
+88	88		301							"{2: 'Horst', 3: ""I-I just wanted to say that from now on, I'll work harder than before. I won't disappoint you again..."", 4: '1'}"
+89	89		301							"{2: 'Mr. Schmidt', 3: ""Don't just talk the talk, Horst. Follow through on your words with actions."", 4: '2'}"
+90	90		301							"{2: 'Mr. Schmidt', 3: ""Make yourself presentable. When we get home, I'll introduce you to your younger brother."", 4: '2'}"
+91	91		301							{2: 'Horst', 3: 'Younger brother?', 4: '1'}
+92	92		202							{1: '1', 2: '2'}
+93	93		301							"{3: ""His father doesn't respond, continuing to focus his gaze on the road ahead.""}"
+94	94		401							{1: '2', 2: '4386'}
+95	95		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+96	96		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+97	97		402							{1: '2597'}
+98	98		504							{1: '0.7'}
+99	99		101							{4: '4', 5: '1'}
+100	100		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+101	101		201							{1: '1', 2: '500462', 4: '400'}
+102	102		201							{1: '2', 2: '500463', 4: '-400'}
+103	103		301							"{1: '1', 2: 'Mr. Schmidt', 3: ""My efforts were wasted on him. He's a disgrace to our family!"", 4: '1'}"
+104	104		301							"{2: 'Mrs. Schmidt', 3: ""If that happens, just imagine how people would mock our family. We'd be better off pretending we never had a son!"", 4: '2'}"
+105	105		401							{1: '2', 2: '4386'}
+106	106		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+107	107		504							{1: '0'}
+108	108		401							{1: '2', 2: '2597'}
+109	109		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '1'}
+110	110		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront47.png', 4: '4'}
+111	111		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory378.png'}
+112	112		201							{1: '1', 2: '500053', 4: '400'}
+113	113		201							{1: '2', 2: '500462', 4: '-400'}
+114	114		301							"{1: '1', 3: ""That's just reality, Horst. You'll understand.""}"
+115	115		301							"{3: ""Horst, don't upset your father. You need to be sensible.""}"
+116	116		301				AniZhuanchangBegin			"{2: 'Horst', 3: ""Right, that's wonderful, Dad!"", 4: '1'}"
+117	117		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+118	118		402							{1: '2597'}
+119	119		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory366.png'}
+120	120		101							{4: '4', 5: '1'}
+121	121		202							{1: '1', 2: '2', 6: '1'}
+122	122		301			AniZhuanchangEnd				"{3: ""The car drives into the family courtyard. This is Horst's first time setting foot here in three years. His mother walks out upon hearing their arrival, then gestures for a child behind her to come forward.""}"
+123	123		201							{1: '1', 2: '500722'}
+124	124		301							{1: '1', 2: '???', 3: 'Welcome home, brother.', 4: '1'}
+125	125		301							"{3: 'His ""little brother"" is not some cute, rosy-cheeked baby. Upon seeing a figure identical to himself, Horst\'s gaze freezes—', 4: '1'}"
+126	126		203							{1: '1', 2: '0.25', 3: '-400'}
+127	127		201							{1: '2', 2: '500463', 4: '400'}
+128	128		301							{1: '1', 2: 'Mrs. Schmidt', 3: 'Come here, Horst. This is your brother, Dennis.', 4: '2'}
+129	129		202						250.0	{1: '2'}
+130	130		203						250.0	{1: '1', 2: '0.25'}
+131	131		301							"{2: 'Dennis', 3: ""I finally get to meet you, brother! I'm so happy. I've been so eager to see you."", 4: '1'}"
+132	132		203							{1: '1', 2: '0.25', 3: '-400'}
+133	133		201							{1: '2', 2: '500053', 4: '400', 8: '1'}
+134	134		301							{1: '1', 3: 'Same height, same features—he stands before Horst like a reflection in a mirror, wearing a dutiful smile and opening his arms for a hug.'}
+135	135		202							{1: '1', 2: '2'}
+136	136		301							"{3: 'He notices a QR code on the other\'s neck, along with a glaring line of small text—""Leibowitz Limited. Household Android MTHD-III Model.""'}"
+137	137		201							{1: '1', 2: '500053'}
+138	138		301							{1: '1', 2: 'Horst', 3: '...T-this is... an android?!', 4: '1'}
+139	139		301							{3: 'Dennis maintains his friendly, proper smile, while that face, all too identical to his own, utterly repulses Horst.'}
+140	140		301							{2: 'Horst', 3: 'Why... why would you do something like this?!', 4: '1'}
+141	141		301							{2: 'Horst', 3: 'How can he look identical to me? This is revolting!', 4: '1'}
+142	142		203							{1: '1', 2: '0.25', 3: '400'}
+143	143		201							{1: '2', 2: '500463', 4: '-400'}
+144	144		301							"{1: '1', 2: 'Mrs. Schmidt', 3: ""Horst, you need to learn to control your emotions. You're grown up now—you can't keep being willful like you were as a child."", 4: '2'}"
+145	145		301							"{2: 'Mrs. Schmidt', 3: ""Perhaps you should learn some of Dennis's good sense and politeness."", 4: '2'}"
+146	146		301							"{2: 'Horst', 3: ""I don't want this piece of scrap metal as my brother! It's just a monster that looks like me!"", 4: '1'}"
+147	147		301							{2: 'Horst', 3: 'You... you... why would you do this to me?!', 4: '1'}
+148	148		202						250.0	{1: '2'}
+149	149		201							{1: '2', 2: '500462', 4: '-400'}
+150	150		301							"{1: '1', 2: 'Mr. Schmidt', 3: ""That's enough, Horst! Is this how you speak to your parents?"", 4: '2'}"
+151	151		301							"{2: 'Mr. Schmidt', 3: ""Go to the storage room and cool off. When you've realized your mistake, come back and properly apologize to us."", 4: '2'}"
+152	152		202							{1: '1', 2: '2', 6: '1'}
+153	153		401							{1: '2', 2: '971'}
+154	154		301							{3: 'His father shoves him into the storage room as if he were picking up a baby chick. As the door closes, Horst can still hear the voice of that damned android.'}
+155	155		201							{1: '1', 2: '500722'}
+156	156		301							"{1: '1', 2: 'Dennis', 3: ""Mom, Dad, please don't be angry. Horst might just not be feeling well. I promise I'll be his best friend."", 4: '1'}"
+157	157		301							"{2: 'Dennis', 3: ""Dad, I've already made you coffee. Mom, I've tidied up my room as well. I'll go continue my piano practice for today now."", 4: '1'}"
+158	158		202						250.0	{1: '1'}
+159	159		201							{1: '1', 2: '500462', 4: '400'}
+160	160		201							{1: '2', 2: '500463', 4: '-400'}
+161	161		301							{1: '1', 2: 'Mr. & Mrs. Schmidt', 3: 'What a good boy you are,?Dennis.', 4: '1', 5: '2'}
+162	162		202							{1: '1', 2: '2'}
+163	163		301							"{3: ""Horst is so hungry—he hasn't had any lunch or dinner. The aroma of food and coffee wafts in from outside, along with the sound of piano music.""}"
+164	164		301							"{3: ""Eventually, all those sounds fade away. It's bedtime now, but Horst remains locked in the dark, cold storage room.""}"
+165	165		301							"{3: ""Horst feels like an unwanted stranger in his own home. There's no place for him anymore.""}"
+166	166		301							"{3: 'Why? Why does that metal head with its worthless chip get praised for being ""well-behaved and polite"" just for spouting a few pre-programmed lines? Does he deserve it? Is he even human? He...'}"
+167	167		301				AniZhuanchangBegin			"{3: ""Horst spends the entire night consumed by rage, but when he's finally released from the storage room the next morning, his hunger overpowers his anger.""}"
+168	168		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory369.png'}
+169	169		201							{1: '1', 2: '500053', 4: '400'}
+170	170		201							{1: '2', 2: '500462', 4: '-400'}
+171	171		301			AniZhuanchangEnd				{1: '1', 2: 'Mr. Schmidt', 3: 'What should you say now, Horst?', 4: '2'}
+172	172		301							"{2: 'Horst', 3: ""I-I'm sorry, Mom... Dad. I know I was wrong... I shouldn't have treated Dennis like that."", 4: '1'}"
+173	173		202							{1: '1', 2: '2'}
+174	174		301							"{3: ""Meanwhile, that disgusting android stands next to Horst's parents, still wearing its perfect smile.""}"
+175	175		201							{1: '1', 2: '500722', 4: '400'}
+176	176		201							{1: '2', 2: '500463', 4: '-400'}
+177	177		301							"{1: '1', 2: 'Dennis', 3: ""It's okay, Horst."", 4: '1'}"
+178	178		301							"{2: 'Mrs. Schmidt', 3: ""Hmm, I suppose that's barely acceptable. Clean yourself up properly—your face is filthy. I can hardly stand to look at you."", 4: '2'}"
+179	179		202							{1: '1', 2: '2', 6: '1'}
+180	180		201							{1: '1', 2: '500053', 4: '-400'}
+181	181		301							"{1: '1', 2: 'Horst', 3: ""I'll go wash up now... Dennis, I'll come find you later, and then we can play a new game together."", 4: '1'}"
+182	182		202						250.0	{1: '1'}
+183	183		201							{1: '1', 2: '500722', 4: '400'}
+184	184		301				AniZhuanchangBegin			{1: '1', 2: 'Dennis', 3: 'Okay.', 4: '1'}
+185	185		202							{1: '1', 6: '1'}
+186	186		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory367.png'}
+187	187		301			AniZhuanchangEnd				"{3: 'Standing on the rooftop, Horst carefully peeks down to gauge the height. This should be high enough, he thinks. With his parents away from home, it\'s the perfect time to ""play a game.""'}"
+188	188		201							{1: '18', 2: '500053'}
+189	189		301							{1: '1', 2: 'Horst', 3: 'Hey, Dennis, the game starts now. Jump down from here.', 4: '18'}
+190	190		201							{1: '1', 2: '500722'}
+191	191		301							{1: '1', 2: 'Dennis', 3: 'But what kind of game is this? Why should I jump down? I might get hurt.', 4: '1'}
+192	192		301							"{2: 'Horst', 3: ""No, it won't hurt. Just jump onto that tree over there. Let's play a game—you be the criminal, and I'll be the police officer. You jump down, and then I'll catch you."", 4: '18'}"
+193	193		301							{2: 'Horst', 3: 'Got it? Then hurry up and jump! What are you waiting for?', 4: '18'}
+194	194		202							{1: '18'}
+195	195		301							{2: 'Dennis', 3: 'Okay.', 4: '1'}
+196	196		401							{1: '2', 2: '4802'}
+197	197		203							{1: '1', 2: '0.25', 4: '-300'}
+198	198		104						200.0	{1: '0|100|-100', 2: '0.25'}
+199	199		104						100.0	{2: '0.25'}
+200	200		104						100.0	{1: '0|-50|0', 2: '0.25'}
+201	201		104						100.0	{2: '0.25'}
+202	202		202						250.0	{1: '1'}
+203	203		301							{3: 'The android leaps forward, jumping toward the tree in the courtyard. The still-growing branches clearly cannot withstand the impact of an android falling from such a height.'}
+204	204		401							{1: '2', 2: '2603'}
+205	205		301			RImgBg1Shake				{3: 'A loud crack followed by the thud of a heavy object hitting the ground echoes through the air. Horst walks to the scene, satisfied to see the android lying on the ground with twisted limbs.'}
+206	206		201							{1: '1', 2: '500053'}
+207	207		301							{1: '1', 2: 'Horst', 3: 'Hmph, stupid tin can. Not so smug now, are you?', 4: '1'}
+208	208		301							{2: 'Horst', 3: 'If Mom and Dad ask what happened, tell them you fell by accident. Got it?', 4: '1'}
+209	209		201							{1: '1', 2: '500722'}
+210	210		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 2: '2', 3: '1'}
+211	211		301							{1: '1', 2: 'Dennis', 3: 'Under...stood... Ho...rst...', 4: '1'}
+212	212		202							{1: '1'}
+213	213		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+214	214		301							"{3: ""What Horst doesn't realize is that his parents have returned home early and witnessed the entire scene.""}"
+215	215		201							{1: '1', 2: '500462', 4: '400'}
+216	216		201							{1: '2', 2: '500463', 4: '-400'}
+217	217		301							{1: '1', 2: 'Mrs. Schmidt', 3: 'Explain yourself! Why would you do such a thing?! Were you trying to kill him?!', 4: '2'}
+218	218		301							{2: 'Mrs. Schmidt', 3: 'How did you turn out like this? I never should have given birth to a child like you!', 4: '2'}
+219	219		301							"{2: 'Mr. Schmidt', 3: ""You're grounded, Horst. I don't want to see you for the next week."", 4: '1'}"
+220	220		301							{2: 'Mr. Schmidt', 3: 'Dennis, are you alright?', 4: '1'}
+221	221		301							{2: 'Mr. Schmidt', 3: 'Come with us to the company dinner tonight instead of staying home alone.', 4: '1'}
+222	222		202							{1: '1', 2: '2', 6: '1'}
+223	223		201							{1: '1', 2: '500722'}
+224	224		301							"{1: '1', 2: 'Dennis', 3: ""I'm fine, Dad. I've already run my self-repair program. Everything's working properly now."", 4: '1'}"
+225	225		301							"{2: 'Dennis', 3: ""A company dinner? That's wonderful! Can I play the piano there? I practiced some new pieces yesterday."", 4: '1'}"
+226	226		203							{1: '1', 2: '0.25', 3: '400'}
+227	227		201							{1: '2', 2: '500462', 4: '-400'}
+228	228		301							"{1: '1', 2: 'Mr. Schmidt', 3: 'Of course you can. Oh, and when you introduce yourself tonight, tell everyone your name is ""Horst."" Be a good boy and remember that, alright?', 4: '2'}"
+229	229		301							"{2: 'Horst', 3: ""I'll remember, Dad."", 4: '1'}"
+230	230		202							{1: '1', 2: '2', 6: '1'}
+231	231		201							{1: '1', 2: '500053'}
+232	232		301							{1: '1', 3: 'Horst stands there watching them chat happily together, feeling like nothing more than a piece of furniture in this home.'}
+233	233		301							"{3: ""That android has stolen his parents' love, his position in the family, and now even his name.""}"
+234	234		301							"{2: 'Horst', 3: ""What brother?! This isn't a person!! This is just a dis—gus—ting MA—CHINE!!!"", 4: '1'}"
+235	235		203							{1: '1', 2: '0.25', 3: '400'}
+236	236		201							{1: '2', 2: '500463', 4: '-400'}
+237	237		301							"{1: '1', 2: 'Mrs. Schmidt', 3: ""You shut your mouth! You're no son of ours."", 4: '2'}"
+238	238		301							"{3: ""His parents' eyes have never looked so unfamiliar. This place is no longer his home.""}"
+239	239		301							{2: 'Horst', 3: 'Fine then! Let this worthless heap of metal be your son instead!', 4: '1'}
+240	240		301							"{2: 'Horst', 3: 'Hey, tinhead, go ahead and make your ""mom and dad"" proud. When they\'re dying, you\'d better stay right by their side!', 4: '1'}"
+241	241		202							{1: '1', 2: '2'}
+242	242		306							{1: '1'}
+243	243		401							{1: '2', 2: '2701'}
+244	244		301							{3: 'Horst screams these words until his voice breaks, then bolts out the door without looking back.'}
+245	245		301							{3: 'Many years later, Horst realized that those words had, in some sense, sounded the death knell for Mr. and Mrs. Schmidt.'}
+246	246		301							"{3: 'Later that day, as the Punishing Virus strikes, the android with the surname ""Schmidt"" carries out the final instruction it received from its young master.'}"
+247	247		301							{3: 'On a street filled with haywire mechanoids and blood, Horst once again sees Mr. and Mrs. Schmidt—or what remains of their broken bodies.'}
+248	248		301							"{3: 'Their dear son ""Horst"" is by their side, continuously calling out ""Mom and Dad.""'}"
+249	249		301							{3: 'All the while, he is methodically tearing the bodies of the two humans in evening wear into pieces.'}
+250	250		201							{1: '1', 2: '500722'}
+251	251		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 2: '2', 3: '1'}
+252	252		301							"{1: '1', 2: 'Horst', 3: ""When they die, I'll stay right by their side."", 4: '1'}"
+253	253		301							{2: 'Horst', 3: 'Mom and Dad... are finally dead now.', 4: '1'}
+254	254		401							{1: '2', 2: '4692'}
+255	255		301				AniZhuanchangBegin			{3: 'Horst turns to face the real Horst, red eyes glowing intensely as they lock onto him, his neck emitting creaking mechanical grinding sounds.'}
+256	256		306							
+257	257		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1231.jpg'}
+258	258		202							{1: '1'}
+259	259		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+260	260		401							{1: '1', 2: '6168'}
+261	261		401							{1: '2', 2: '4692'}
+262	262		301			AniZhuanchangEnd				"{3: ""The mechanical grinding continues to echo—the sound of the Clown's factory manufacturing Corrupted.""}"
+263	263		301							{3: 'The memory abruptly ends. Horst deeply despises mechanoids, and yet ironically, this hatred grants him unmatched insight into their internal structures—like how to best dismantle and exploit them.'}
+264	264		301							{3: 'Leibowitz, of course, recognizes his talent in this area and recruits him as a senior manager.'}
+265	265		201							{1: '1', 2: '500050', 4: '-400'}
+266	266		201							{1: '2', 2: '501196', 4: '400'}
+267	267		301							{1: '1', 2: 'Horst', 3: 'Are you done yet?', 4: '1'}
+268	268		301							"{2: 'Subordinate', 3: ""There seems to be some issues with the factory's detonation program..."", 4: '2'}"
+269	269		202							{1: '1', 2: '2'}
+270	270		301							"{3: 'After ""Gwynplaine"" was blasted by Jetavie\'s shot, he started heading back to the factory on instinct.'}"
+271	271		301							"{3: ""The factory's existence is direct evidence that Horst deliberately manufactured Corrupted to attack company-owned cities.""}"
+272	272		301							"{3: 'To prevent others from detecting ""Gwynplaine\'s"" movements, Horst must destroy this factory ahead of schedule.'}"
+273	273		201							{1: '1', 2: '500050', 4: '-400'}
+274	274		201							{1: '2', 2: '501196', 4: '400'}
+275	275		301							{1: '1', 2: 'Horst', 3: 'Is. It. Done. Yet?', 4: '1'}
+276	276		301							{3: 'He asks, enunciating each word separately, as the grinding gears amplify the anxiety churning within him.'}
+277	277		301							"{2: 'Subordinate', 3: ""All set. I'm ready, but we need to synchronize the detonation with Jack and Paul's teams."", 4: '2'}"
+278	278		301							{2: 'Horst', 3: 'Tell those two to hurry up.', 4: '1'}
+279	279		301							{2: 'Subordinate', 3: '004802 to 004803 and 004801, requesting synchronized status reports on your control stations.', 4: '2'}
+280	280		301							"{3: ""No response. Horst's brow twitches with unease.""}"
+281	281		301							{3: 'He glances back over his shoulder—gone. Of the guards he brought with him, not a single one remains.'}
+282	282		301							{3: 'His hair stands on end.'}
+283	283		301							{2: 'Subordinate', 3: 'Sir, maybe we should detonate them now—AAGH—', 4: '2'}
+284	284		202							{1: '1', 2: '2'}
+285	285		301							"{3: ""The subordinate's body vanishes into the darkness.""}"
+286	286		201							{1: '1', 2: '501192', 3: '1'}
+287	287		301							{1: '1', 2: 'Gwynplaine', 3: 'Hahahahaha...', 4: '1'}
+288	288		301							{2: 'Gwynplaine', 3: 'So fun... so much fun...', 4: '1'}
+289	289		301							"{2: 'Gwynplaine', 3: 'I want more... I want more ""dance partners""... Hahaha!', 4: '1'}"
+290	290		301							{2: 'Gwynplaine', 3: 'Dance! Dance!', 4: '1'}
+291	291		202							{1: '1'}
+292	292		301							"{3: 'In the dim light, the clown\'s surroundings come into view—""dance partners"" sprawled everywhere, with rivers of dark red blood flowing into the darkness.'}"
+293	293		301							"{3: 'The ""clown"" changes direction, staggering unsteadily toward Horst.'}"
+294	294		201							{1: '1', 2: '501192', 3: '1'}
+295	295		301			PanelActor1Shake	DialogDisable			{2: 'Gwynplaine', 3: 'Dance! Dance with me!'}
+296	296		202							{1: '1'}
+297	297		401							{1: '2', 2: '4448'}
+298	298		307							{1: 'NINTH DIRECTIVE—CONSCIOUSNESS SUPPRESSION COMMAND: EXECUTE', 4: '34aff8ff', 5: '0'}
+299	299		301							{3: 'NINTH DIRECTIVE—CONSCIOUSNESS SUPPRESSION COMMAND: EXECUTE'}
+300	300		307							{2: '1'}
+301	301		401							{1: '2', 2: '4448'}
+302	302		307							{1: 'TENTH DIRECTIVE—EMERGENCY SHUTDOWN COMMAND: EXECUTE', 4: '34aff8ff', 5: '0'}
+303	303		301							{3: 'TENTH DIRECTIVE—EMERGENCY SHUTDOWN COMMAND: EXECUTE'}
+304	304		307							{2: '1'}
+305	305		401							{1: '2', 2: '4063'}
+306	306		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteAnimationJingGao.prefab', 2: '2'}
+307	307		307							{1: 'COMMAND REJECTED COMMAND REJECTED COMMAND REJECTED COMMAND REJECTED COMMAND REJECTED COMMAND REJECTED COMMAND REJECTED COMMAND REJECTED COMMAND REJECTED COMMAND REJECTED COMMAND REJECTED COMMAND REJECTED', 4: 'ff4e4eff', 5: '0'}
+308	308		301							{3: 'COMMAND REJECTED COMMAND REJECTED COMMAND REJECTED COMMAND REJECTED COMMAND REJECTED COMMAND REJECTED COMMAND REJECTED COMMAND REJECTED COMMAND REJECTED COMMAND REJECTED COMMAND REJECTED COMMAND REJECTED'}
+309	309		402							{1: '4063'}
+310	310		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteAnimationJingGao.prefab'}
+311	311		307							{2: '1'}
+312	312		301			DialogEnable				"{3: 'The ""clown"" draws closer, ...his body spinning frantically like the high-speed saw whirling in his hand.'}"
+313	313		201							{1: '1', 2: '501192', 3: '1'}
+314	314		301							{1: '1', 2: 'Gwynplaine', 3: 'Hahahahaha...', 4: '1'}
+315	315		203							{1: '1', 2: '0.25', 3: '500'}
+316	316		201							{1: '2', 2: '500050', 4: '-400'}
+317	317		301			PanelActor2Shake				{2: 'Horst', 3: 'Nnngh—!!!', 4: '2'}
+318	318		301							{2: 'Gwynplaine', 3: 'Spin—round—and—round—with—me—', 4: '1'}
+319	319		202							{1: '1', 2: '2'}
+320	320		306							{1: '1'}
+321	321		301							"{3: 'Amidst the ruins of the Machine Factory, the ""clown"" continues his waltz.'}"
+322	322		301							"{3: ""He holds Horst's hand and spins round and round at the center of the factory, as if it were the stage for a gruesome waltz. They slide across a floor slick with blood and strewn with corpses.""}"
+323	323		301							"{3: 'However, his ""dance partner"" can no longer follow his steps.'}"
+324	324		301							{3: 'Because the lifeless, shattered remains of Horst are unable to witness this scene—'}
+325	325		301							"{3: ""The clown clutches Horst's cold, rigid arm, continuing his frenzied dance.""}"
+326	326		301		1		AniZhuanchangBegin			{3: 'Until the day when this Machine Factory and this city are completely forgotten by humanity.'}

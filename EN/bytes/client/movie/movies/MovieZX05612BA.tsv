@@ -1,0 +1,85 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1249.jpg'}
+2	2		502						250.0	{1: 'DialogDisable'}
+3	3		107							{1: 'Babel Tower, 39th Floor'}
+4	4		301							{3: 'Babel Tower, 39th Floor.'}
+5	5		108							{1: '1'}
+6	6		401							{1: '2', 2: '5650'}
+7	7		401							{1: '1', 2: '6182'}
+8	8		201							{1: '2', 2: '501234', 4: '-400'}
+9	9		201							{1: '1', 2: '501235', 4: '400'}
+10	10		301			DialogEnable				"{1: '1', 2: 'Dante', 3: ""Alright, one more minute. If they don't show up, we're going up without them."", 4: '1'}"
+11	11		301							"{3: ""Dante and Vergil stand idly on the Babel Tower's 39th floor, boredom evident in their postures.""}"
+12	12		301							{2: 'Dante', 3: 'So, who is she?', 4: '1'}
+13	13		204							{1: '2', 2: '3'}
+14	14		301							{2: 'Vergil', 3: 'What?', 4: '2'}
+15	15		204							{1: '1', 2: '13'}
+16	16		301							"{2: 'Dante', 3: ""Oh c'mon, you know who. That woman, Nero's mom."", 4: '1'}"
+17	17		204							{1: '1', 2: '1'}
+18	18		301							"{2: 'Dante', 3: ""Seriously, I'm dying to know what kind of woman could've won Vergil's heart."", 4: '1'}"
+19	19		301							{2: 'Dante', 3: 'Next time we see Nero, we should have a little dinner together. You know, a family dinner. Heh!', 4: '1'}
+20	20		204							{1: '2', 2: '8'}
+21	21		301							"{3: ""In response to Dante's question, Vergil simply rolls his eyes.""}"
+22	22		204							{1: '2', 2: '13'}
+23	23		301							"{2: 'Vergil', 3: ""You're hardly one to ask. What of the women around you? Have you given thought to their fates?"", 4: '2'}"
+24	24		204							{1: '1', 2: '10'}
+25	25		301							{2: 'Dante', 3: '...I take back my question.', 4: '1'}
+26	26		202							{1: '1', 2: '2'}
+27	27		301							{3: 'Another moment of silence falls between them.'}
+28	28		201							{1: '2', 2: '501234', 3: '4'}
+29	29		301							{1: '1', 2: 'Vergil', 3: 'Coming.', 4: '2'}
+30	30		202							{1: '2'}
+31	31		401							{1: '2', 2: '1516'}
+32	32		401							{1: '2', 2: '5656'}
+33	33		301							{3: 'Footsteps echo as you and Alpha appear by the door.'}
+34	34		201							{1: '1', 2: '501235'}
+35	35		301							{1: '1', 2: 'Dante', 3: 'So?', 4: '1'}
+36	36		302							"{2: ""I've collected all the data."", 3: '37'}"
+37	37		301				AniZhuanchangBegin			"{2: 'Dante', 3: ""Nice work. Don't wreck it though. We'll need that for our return."", 4: '1'}"
+38	38		502						100.0	{1: 'DialogDisable'}
+39	39		402							{1: '5650'}
+40	40		202							{1: '1', 6: '1'}
+41	41		401							{1: '1', 2: '36'}
+42	42		306						200.0	{1: '1'}
+43	43		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1248.jpg'}
+44	44		401							{1: '2', 2: '5159'}
+45	45		104				AniZhuanchangEnd			{1: '0|150|-250', 2: '0'}
+46	46		401							{1: '1', 2: '6183'}
+47	47		301			DialogEnable				"{3: ""The 39th floor of Babel Tower is different from the ones before. There aren't many doors, just a long staircase stretching out into the open.""}"
+48	48		402							{1: '5159'}
+49	49		306							
+50	50		201							{1: '1', 2: '500610'}
+51	51		301				DialogDisable			{1: '1', 2: 'Alpha', 3: 'Next up is the 40th floor.', 4: '1'}
+52	52		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+53	53		202							{1: '1'}
+54	54		401							{1: '2', 2: '5651'}
+55	55		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1251.jpg'}
+56	56		401							{1: '2', 2: '5159'}
+57	57		104						200.0	{1: '0|30|-50', 2: '0.2'}
+58	58		104							{1: '0|0|-150', 2: '0.3'}
+59	59		402							{1: '5159'}
+60	60		301			DialogEnable				{3: 'You all move forward cautiously. Ahead of you stands the emaciated figure of Thomas, waiting in silence.'}
+61	61		201							{1: '1', 2: '501235'}
+62	62		301							"{1: '1', 2: 'Dante', 3: ""Looks like we've made it to the top."", 4: '1'}"
+63	63		201							{1: '1', 2: '501267', 3: '1'}
+64	64		301							"{1: '1', 2: 'Thomas Hell?', 3: ""It's a pity that this tower only has 40 floors now. If I had just bided my time a bit longer, handling you all would have been much easier..."", 4: '1'}"
+65	65		201							{1: '1', 2: '501235', 3: '4'}
+66	66		301							{1: '1', 2: 'Dante', 3: 'Hmph, your little games end here.', 4: '1'}
+67	67		201							{1: '1', 2: '501267', 3: '7'}
+68	68		301							{1: '1', 2: 'Thomas Hell?', 3: 'Games? You dare call it games?', 4: '1'}
+69	69		201							{1: '1', 2: '501234', 3: '2'}
+70	70		301							{1: '1', 2: 'Vergil', 3: 'Hardly worthy of being called games... just the futile thrashing of a pest.', 4: '1'}
+71	71		201							{1: '1', 2: '501267', 3: '2'}
+72	72		301			PanelActor1Shake				{1: '1', 2: 'Thomas Hell?', 3: 'Oh, let me see... the blue big brother... hee... haha...', 4: '1'}
+73	73		204							{1: '1', 2: '7'}
+74	74		301							{2: 'Thomas Hell?', 3: 'Shamefully defeated by the Demon Emperor Mundus...', 4: '1'}
+75	75		204							{1: '1', 2: '2'}
+76	76		301			PanelActor1Shake				{2: 'Thomas Hell?', 3: 'And the red little brother, cowering in the Human World after the fire... playing house with his precious humans... hee...', 4: '1'}
+77	77		201							{1: '1', 2: '501235', 3: '5'}
+78	78		301							"{1: '1', 2: 'Dante', 3: ""Alright, now you've pissed me off. You better be ready for what's coming."", 4: '1'}"
+79	79		203							{1: '1', 2: '0.25', 3: '400'}
+80	80		201							{1: '2', 2: '501234', 3: '5', 4: '-400'}
+81	81		301							{1: '1', 2: 'Vergil', 3: 'Time to die...', 4: '2'}
+82	82		202							{1: '1', 2: '2', 6: '1'}
+83	83		201							{1: '3', 2: '501267', 3: '2'}
+84	84		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Thomas Hell?', 3: 'No, no, no. Before that, you\'ll have to face another entity... a ""mirror image"" first.', 4: '3'}"

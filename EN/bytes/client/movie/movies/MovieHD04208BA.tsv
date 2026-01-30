@@ -1,0 +1,50 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				{3: 'Seeing how Vera has made herself comfortable, you assume she intends to rest in the Gray Raven lounge for a while. You instinctively quiet down while working, and you even prepare an unused sleeping pod for her.'}
+4	4		301							{3: 'But upon activating the sleeping pod, you notice the Construct behind you has opened her eyes at some point, quietly watching you.'}
+5	5		302							{2: 'Hmm? When did you wake up?'}
+6	6		201							{1: '1', 2: '500345'}
+7	7		301							"{1: '1', 2: 'Vera', 3: ""Your chair's uncomfortable, so I couldn't sleep. Get me a pillow next time."", 4: '1'}"
+8	8		302							{2: 'Sure.', 3: '9', 4: 'You sure know how to boss people around.', 5: '13'}
+9	9		301							"{2: 'Vera', 3: ""...Don't be so obedient next time. People will keep pushing you around if you do, got it?"", 4: '1'}"
+10	10		302							"{2: ""I don't mind it if it's certain people.""}"
+11	11		301							{2: 'Vera', 3: '...', 4: '1'}
+12	12	16	301							"{2: 'Vera', 3: ""Forget it. There's no reasoning with someone like you."", 4: '1'}"
+13	13		301							{2: 'Vera', 3: 'These everyday moments where you can exchange banter with someone else are more precious than you realize. You should be grateful for them.', 4: '1'}
+14	14		302							"{2: ""Yeah, I suppose that's fair."", 3: '15'}"
+15	15		301							"{2: 'Vera', 3: 'Unfortunately, your choices have made ""everyday life"" into a rare commodity.', 4: '1'}"
+16	16		202							{1: '1'}
+17	17		301							{3: 'Vera suddenly sits up straight.'}
+18	18		201							{1: '1', 2: '500345'}
+19	19		301							{1: '1', 2: 'Vera', 3: 'If the surface is so dangerous, why did you choose to become a Task Force commandant in the first place? Almost any other job would be safer than running to the frontline every day like you do now.', 4: '1'}
+20	20		204							{1: '1', 2: '2'}
+21	21		301							"{2: 'Vera', 3: ""Oh, and you won't have to hear shocking rumors about yourself every now and then."", 4: '1'}"
+22	22		301				DialogDisable			"{2: 'Vera', 3: ""Shouldn't you get to choose any post you want as a Chief of F.O.S.? Was someone pressuring you?"", 4: '1'}"
+23	23		302							{2: 'No one pressured me. It was my choice.', 3: '24'}
+24	24		302							{2: 'As for why...', 3: '25'}
+25	25		301			DialogEnable				{3: 'You cannot help but recall the events surrounding your graduation. The prior training, the ceremony, the career paths... And yet there is always a hollow emptiness that remains unfilled.'}
+26	26		204							{1: '1'}
+27	27		301							{2: 'Vera', 3: 'Was it because of something you saw on the surface?', 4: '1'}
+28	28		301							"{3: ""And Vera's answer precisely fills that void—this seems to be the explanation.""}"
+29	29		302							{2: 'I...', 3: '30'}
+30	30		202							{1: '1'}
+31	31		401							{1: '2', 2: '4280'}
+32	32		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+33	33		301							{3: 'A dull pain throbs in your head, even though your last medical examination assured you that everything was fine.'}
+34	34		302							{2: 'Have I... forgotten something?', 3: '35'}
+35	35		201							{1: '1', 2: '500345'}
+36	36		301							{1: '1', 2: 'Vera', 3: 'Who can say?', 4: '1'}
+37	37		301							"{3: ""Vera's expression remains unchanged. She simply gazes at you quietly, saying nothing.""}"
+38	38		302							{2: 'And you, Vera?', 3: '39'}
+39	39		301				DialogDisable			{2: 'Vera', 3: 'Me?', 4: '1'}
+40	40		302							{2: 'Yeah. Why did you come to Babylonia, Vera?', 3: '41'}
+41	41		302							"{2: ""Lee once told me you were part of Kurono's Special Force."", 3: '42'}"
+42	42		302							{2: 'Was Nikola pressuring you?', 3: '43'}
+43	43		301			DialogEnable				"{3: ""You mimic Vera's tone while you ask the question, and you cannot help but chuckle as well. Vera's expression also softens a bit.""}"
+44	44		204							{1: '1', 2: '2'}
+45	45		301							"{2: 'Vera', 3: ""Haha, my story is a long and exhausting tale. There's nothing particularly interesting."", 4: '1'}"
+46	46		301							{2: 'Vera', 3: 'From considering joining Babylonia to finally making the decision, it was a long process.', 4: '1'}
+47	47		301							{2: 'Vera', 3: 'Someone gave me a push along the way as well.', 4: '1'}
+48	48		301							{3: 'Vera looks at you again.'}
+49	49		301		1		AniZhuanchangBegin			"{2: 'Vera', 3: ""If you've got nothing better to do, I suppose I can tell you about it."", 4: '1'}"

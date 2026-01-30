@@ -1,0 +1,16 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory79.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		201							{1: '2', 2: '1101001'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Watanabe', 3: ""Liv, hold on! We'll... find a way to..."", 4: '2'}"
+5	5		301							"{2: 'Watanabe', 3: ""Before that, you mustn't allow yourself to be captured by that pseudo-consciousness. Or else, you'll be taken and imprisoned."", 4: '2'}"
+6	6		301							{2: 'Watanabe', 3: 'And it will usurp your M.I.N.D.', 4: '2'}
+7	7		202							{1: '2', 6: '1'}
+8	8		201							{1: '1', 2: '1031001'}
+9	9		301							"{1: '1', 2: 'Liv', 3: ""Okay... I'll try holding on longer..."", 4: '1'}"
+10	10		202							{1: '1', 6: '1'}
+11	11		201							{1: '2', 2: '1101001'}
+12	12		301							{1: '1', 2: 'Watanabe', 3: 'Damn it!', 4: '2'}
+13	13		202							{1: '2', 6: '1'}
+14	14		201							{1: '3', 2: '500005'}
+15	15		301		1		AniZhuanchangBegin			{1: '1', 2: 'Forsaken Soldier', 3: 'Watanabe...', 4: '3'}

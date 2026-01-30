@@ -1,0 +1,108 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1077.jpg'}
+2	2		401							{1: '1', 2: '6187'}
+3	3		401							{2: '4495'}
+4	4		306							{1: '1'}
+5	5		301			DialogEnable				{3: 'Ding-a-ling... The sound of bells rings out from somewhere at the festival, while vendors call out to passing crowds.'}
+6	6		301							"{3: 'As dusk settles and the sky darkens, you spot an unassuming stall at the corner of the street. Neon letters flash brightly above its sign: ""Balloon Shooting: Hit More, Win More"".'}"
+7	7		301				DialogDisable			{3: 'Old-fashioned air rifles are lined up next to a wall of balloons. Just looking at it stirs an urge to take on the challenge.'}
+8	8		306							
+9	9		302							{2: 'Um, Watanabe...', 3: '10'}
+10	10		201							{1: '1', 2: '500783'}
+11	11		301			DialogEnable				{1: '1', 2: 'Watanabe', 3: '【kuroname】...', 4: '1'}
+12	12		301							{3: 'You both speak at the same time, your voices overlapping.'}
+13	13		301							"{3: ""Noticing Watanabe glance unconsciously toward the stall, you realize you're thinking the exact same thing.""}"
+14	14		301							{2: 'Watanabe', 3: 'Looks like we had the same idea. Want to give it a try together?', 4: '1'}
+15	15		302							{2: 'Perfect.', 3: '16', 4: '(Nod without a word)', 5: '16'}
+16	16		202							{1: '1'}
+17	17		306							{1: '1'}
+18	18		301							{3: 'The shooting stall is manned by a surveillance robot, apparently without a voice module. Seeing you two approach, it silently hands each of you a rusted vintage air rifle.'}
+19	19		301							"{3: ""You take the gun, flick off the safety, load a round, and aim, just like you're used to.""}"
+20	20		401							{2: '5151'}
+21	21		301			DialogShake				{3: '—Snap.'}
+22	22		301							{3: 'The rubber bullet veers off wildly in the wrong direction.'}
+23	23		401							{2: '5500'}
+24	24		301							{3: 'You go to try again, only to realize the gun is already empty. The robot silently points up at the neon sign above its head.'}
+25	25		301							"{3: 'Only then do you notice the fine print below the sign: ""First shot free. Each additional shot costs two festival coins. Hit a balloon to earn a free bullet.""'}"
+26	26		306							
+27	27		201							{1: '1', 2: '500783'}
+28	28		301							{1: '1', 2: 'Watanabe', 3: 'These old guns were probably rebuilt from scrap. No wonder the trajectory is a mess.', 4: '1'}
+29	29		204							{1: '1', 2: '8'}
+30	30		301							"{2: 'Watanabe', 3: ""Still, that's pretty standard for festival stalls. A little trickery's part of the game."", 4: '1'}"
+31	31		202							{1: '1'}
+32	32		401							{2: '4079'}
+33	33		301							{3: 'Rather than put him off, the unfair setup seems to fire Watanabe up. He slaps two festival coins on the counter and picks up another rifle.'}
+34	34		201							{1: '1', 2: '500783'}
+35	35		301							{1: '1', 2: 'Watanabe', 3: 'Try aiming a little more to this side...', 4: '1'}
+36	36		202							{1: '1'}
+37	37		301							{3: 'Watanabe moves behind you, arms loosely wrapping around your waist, guiding your right hand into a slightly downward angle.'}
+38	38		201							{1: '1', 2: '500783'}
+39	39		301							{1: '1', 2: 'Watanabe', 3: 'And when you fire, let your shoulder absorb a bit of the recoil...', 4: '1'}
+40	40		202							{1: '1'}
+41	41		301							{3: 'His broad hand rests on yours, gently coaxing your finger toward the trigger.'}
+42	42		301							{3: 'Taking the hint, you adjust your aim as he showed you.'}
+43	43		201							{1: '1', 2: '500783'}
+44	44		301							{1: '1', 2: 'Watanabe', 3: 'Ready... three, two—', 4: '1'}
+45	45		302							{2: '(Pull the trigger)'}
+46	46		401							{2: '4102'}
+47	47		301							{3: 'A faint popping sound follows, and the small balloon bursts.'}
+48	48		201							{1: '1', 2: '500488', 5: '-250', 6: '400'}
+49	49		401							{2: '5500'}
+50	50		301							{1: '1', 2: 'Robot Vendor', 3: '...(silently claps, then hands over a new bullet.)', 4: '1'}
+51	51		201							{1: '1', 2: '500783', 3: '1'}
+52	52		301							{1: '1', 2: 'Watanabe', 3: 'Nicely done. Looks like your training at F.O.S. College paid off.', 4: '1'}
+53	53		301							{3: 'One eye is covered by his hair, but the grin tugging at the corner of his mouth and the pride in his voice are impossible to miss.'}
+54	54		302							{2: 'So, do I get a prize?', 3: '55'}
+55	55		204							{1: '1', 2: '8'}
+56	56		301							"{3: ""A simple, offhand question is all it takes to shake the calm composure of the white-haired Construct in front of you. His smile fades, replaced by a surprisingly serious look, as if he's genuinely troubled by the question.""}"
+57	57		204							{1: '1'}
+58	58		301							{2: 'Watanabe', 3: 'What... kind of gift would you like?', 4: '1'}
+59	59		204							{1: '1', 2: '7'}
+60	60		301				DialogDisable			"{2: 'Watanabe', 3: ""Sorry. I don't really have anything on me that would make a proper gift... If you're okay with it, I can give you the prize from this shooting game."", 4: '1'}"
+61	61		302							"{2: ""Alright, it's a deal."", 3: '62', 4: '(Tease him a little)', 5: '64'}"
+62	62		204							{1: '1', 2: '1'}
+63	63	67	301			DialogEnable				"{2: 'Watanabe', 3: ""Then I'll have to do my best and win you the best prize they have."", 4: '1'}"
+64	64		302							{2: 'Nope. I want something better.', 3: '65'}
+65	65		204							{1: '1'}
+66	66		301			DialogEnable				"{2: 'Watanabe', 3: ""Then... I'll do my best and win you the top prize at this stall."", 4: '1'}"
+67	67		202							{1: '1'}
+68	68		301							{3: 'He lets go of your wrist, takes a small step back, and lifts his own rifle.'}
+69	69		301							"{3: ""From here on, it's a total sweep.""}"
+70	70		301				AniZhuanchangBegin			"{3: 'Together, Watanabe and you burst every balloon in a single run. The stall owner reluctantly hands over the top-shelf prize, then ""politely"" asks you two to leave.'}"
+71	71		401							{2: '36'}
+72	72		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory802.jpg'}
+73	73		401							{2: '6226'}
+74	74		301			AniZhuanchangEnd				{3: 'The top prize turns out to be a huge broccoli plush. Its fluffy top is styled like hair, and its thick green stalk features two stubby black eyes that squint at you two with a silly grin.'}
+75	75		301							{3: 'Carrying something that large makes walking awkward, so Watanabe suggests you rest a while. The two of you, and the broccoli, sit down on a nearby bench.'}
+76	76		301							{3: 'He sits beside you, gently fingering the tag on the back of the plush toy. As he speaks, his tone turns thoughtful.'}
+77	77		201							{1: '1', 2: '500783', 3: '8'}
+78	78		301							{1: '1', 2: 'Watanabe', 3: 'This broccoli plush was originally made by a well-known toy brand during the Golden Age.', 4: '1'}
+79	79		204							{1: '1'}
+80	80		301							{2: 'Watanabe', 3: 'There were others in the set too—tomato, carrot, corn... Apparently, the idea was to help kids get over being picky eaters.', 4: '1'}
+81	81		302							{2: 'You know a lot about this kind of thing.', 3: '82', 4: 'So kids back then actually got to complain about what they ate.', 5: '82'}
+82	82		301							"{2: 'Watanabe', 3: ""Yeah. Sounds like a luxury, doesn't it?"", 4: '1'}"
+83	83		301							"{2: 'Watanabe', 3: ""Still... I wouldn't mind living in that kind of time."", 4: '1'}"
+84	84		202							{1: '1'}
+85	85		301							"{3: 'He slowly presses down on the plush\'s ""<color=#ff4e4eff>:)</color>"" smile, crumpling it into a wrinkled mess.'}"
+86	86		201							{1: '1', 2: '500783', 3: '8'}
+87	87		301							"{1: '1', 2: 'Watanabe', 3: 'If I had the choice, I\'d want the children of Oasis to grow up like that too, to be able to say ""no"" to food they don\'t like.', 4: '1'}"
+88	88		301							"{2: 'Watanabe', 3: ""We've solved most of the food shortage issues, but it's still a long way from what I hope for."", 4: '1'}"
+89	89		204							{1: '1'}
+90	90		301							"{2: 'Watanabe', 3: ""As the leader, there's still a lot I need to do."", 4: '1'}"
+91	91		301							"{3: ""As he speaks, he notices that you've gone quiet. He stops kneading the plush's face, lifts his head, and looks you in the eye.""}"
+92	92		301							"{2: 'Watanabe', 3: ""But I'm not worried about whether it will really happen."", 4: '1'}"
+93	93		204							{1: '1', 2: '1'}
+94	94		301							"{2: 'Watanabe', 3: ""Because you're here, 【kuroname】. Someone who believes in what I'm trying to do. And because you believe... I do too. I believe that future is coming. Soon."", 4: '1'}"
+95	95		301							"{2: 'Watanabe', 3: ""We've already done everything we need to. Now we just wait for the seeds to sprout."", 4: '1'}"
+96	96		302							{2: 'In time, all good things will come our way, right?', 3: '97'}
+97	97		204							{1: '1', 2: '1'}
+98	98		301							{2: 'Watanabe', 3: 'Yeah.', 4: '1'}
+99	99		301							"{2: 'Watanabe', 3: ""Next time you're free, come visit Oasis."", 4: '1'}"
+100	100		203							{1: '1', 2: '0.25', 5: '-50'}
+101	101		301							{3: 'Setting aside the green plush toy, he takes your hand in his.'}
+102	102		204							{1: '1'}
+103	103		301							"{2: 'Watanabe', 3: ""It's been a long time since your last visit... I'd like to show you how much the camp has changed since then."", 4: '1'}"
+104	104		301							"{2: 'Watanabe', 3: ""And besides, you're always the one inviting me to festivals. I think it's my turn now."", 4: '1'}"
+105	105		301							{3: 'His fingers tighten slightly around yours. The warmth of his palm spreads through your hand, hot enough to almost sting.'}
+106	106		301							{3: 'The golden eyes fixed on you reflect the flickering, dappled glow of the streetlights.'}
+107	107		301		1		AniZhuanchangBegin			{2: 'Watanabe', 3: 'So, where should we meet next time?', 4: '1'}

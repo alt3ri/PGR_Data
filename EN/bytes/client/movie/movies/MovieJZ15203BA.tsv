@@ -1,0 +1,42 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory82.jpg'}
+2	2		401							{1: '1', 2: '18'}
+3	3		201							{1: '1', 2: '500220'}
+4	4		301			DialogEnable				{1: '1', 2: 'Qu', 3: 'There you are, Villier.', 4: '1'}
+5	5		203							{1: '1', 2: '0.25', 3: '400'}
+6	6		201							{1: '2', 2: '500215', 4: '-400'}
+7	7		301							{1: '1', 2: 'Villier', 3: 'You made it. Looks like the press conference is over.', 4: '2'}
+8	8		301							{2: 'Qu', 3: 'Looks like it. Without the stars of the show that is...', 4: '1'}
+9	9		301							"{2: 'Villier', 3: ""You know I'm bad with the press. You're a natural though."", 4: '2'}"
+10	10		301							"{2: 'Qu', 3: ""But you're key to revolutionizing the Musashi series."", 4: '1'}"
+11	11		301							"{2: 'Villier', 3: ""That being said, I'd rather be in the company of machinery than be surrounded by a group of businessmen and politicians."", 4: '2'}"
+12	12		301							"{2: 'Villier', 3: ""I don't have to deal with awful human emotions when I'm with my machines."", 4: '2'}"
+13	13		301							{2: 'Villier', 3: 'A perfect creation like that is only suitable for people like you and me.', 4: '2'}
+14	14		301							{2: 'Villier', 3: 'Sorry, getting ahead of myself...', 4: '2'}
+15	15		202							{1: '1', 2: '2', 6: '1'}
+16	16		301							{3: 'Villier puts away his book and gets up from his seat.'}
+17	17		201							{1: '1', 2: '500220', 4: '400'}
+18	18		201							{1: '2', 2: '500215', 4: '-400'}
+19	19		301							"{1: '1', 2: 'Villier', 3: ""Now that the press conference is over, let's move on to our next destination."", 4: '2'}"
+20	20		301							{2: 'Villier', 3: 'The family transport craft will arrive here in about 20 minutes.', 4: '2'}
+21	21		301							"{2: 'Qu', 3: ""Alright, but didn't you turn off that machine?"", 4: '1'}"
+22	22		301							"{2: 'Villier', 3: ""What machine? I was just sitting here reading. I didn't touch any machine."", 4: '2'}"
+23	23		301							{2: 'Qu', 3: '...', 4: '1'}
+24	24		301							{2: 'Villier', 3: '?!', 4: '2'}
+25	25		202							{1: '1', 2: '2', 6: '1'}
+26	26		301							{3: 'Just as Villier is lost in confusion, Qu kicks a screwdriver on the floor straight at him.'}
+27	27		301							{3: 'Villier barely reacts in time just as he turns to dodge the attack. The screwdriver brushes his cheek as it flies past. Turning his head, he sees that one of the exhibits has somehow entered attack mode.'}
+28	28		301							{3: 'Musashi VI picks up the cannon and swings it at Villier standing in front of it.'}
+29	29		201							{1: '1', 2: '500215'}
+30	30		301							{1: '1', 2: 'Villier', 3: 'Tsk.', 4: '1'}
+31	31		202							{1: '1', 6: '1'}
+32	32		301							"{3: ""Qu's attack offsets Musashi VI's swing, allowing Villier to jump over to her side before the next attack arrives.""}"
+33	33		201							{1: '1', 2: '500215', 3: '5'}
+34	34		301							{1: '1', 2: 'Villier', 3: 'Damn it.', 4: '1'}
+35	35		203							{1: '1', 2: '0.25', 3: '-400'}
+36	36		201							{1: '2', 2: '500220', 4: '400'}
+37	37		301							{1: '1', 2: 'Qu', 3: 'Short circuit?', 4: '2'}
+38	38		301							"{2: 'Villier', 3: ""No, doesn't look like it. Let's take it out first. This isn't worthy of being called my creation."", 4: '1'}"
+39	39		301							{2: 'Qu', 3: 'Yup.', 4: '2'}
+40	40		202							{1: '1', 2: '2', 6: '1'}
+41	41		301		1		AniZhuanchangBegin			{3: 'Qu nods and walks toward Musashi VI as it struggles to break free from its electronic restraints.'}

@@ -1,0 +1,121 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		201							{1: '1', 2: '1081001'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Kamui', 3: ""Capt! We've made contact with the squad near the Dead Zone! They're heading for the rendezvous in Zone C!"", 4: '1'}"
+5	5		203							{1: '1', 2: '0.25', 3: '-400'}
+6	6		201							{1: '2', 2: '500273', 4: '400'}
+7	7		301							{1: '1', 2: 'Wanshi', 3: 'Retreat route secured. Ready to receive the squad.', 4: '2'}
+8	8		202							{1: '1', 2: '2', 6: '1'}
+9	9		201							{1: '1', 2: '500155'}
+10	10		301							{1: '1', 2: 'Chrome', 3: 'Good job.', 4: '1'}
+11	11		301							{2: 'Chrome', 3: 'Now, we just have to make sure that Squad Two can meet with the retreating team...', 4: '1'}
+12	12		301							{2: 'Chrome', 3: 'Based on what we arranged, they should have retreated by now...', 4: '1'}
+13	13		301							{2: 'Chrome', 3: 'This is Chrome from Strike Hawk. Squad Two, please respond.', 4: '1'}
+14	14		301							"{2: 'Chrome', 3: ""I'm at the rendezvous. Please approach the target location ASAP."", 4: '1'}"
+15	15		201							{1: '1', 2: '500006'}
+16	16		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+17	17		301							"{1: '1', 2: '???', 3: ""Forget it. I'm the only one left."", 4: '1'}"
+18	18		203							{1: '1', 2: '0.25', 3: '400'}
+19	19		201							{1: '2', 2: '500155', 4: '-400'}
+20	20		301							{1: '1', 2: 'Chrome', 3: '?!', 4: '2'}
+21	21		301							"{2: '???', 3: ""Squad Two is down... Cough... I'm carrying out my commandant's last order."", 4: '1'}"
+22	22		301							"{2: 'Chrome', 3: ""What order? I... wasn't notified..."", 4: '2'}"
+23	23		301							{2: 'Construct', 3: 'Blow up the factory.', 4: '1'}
+24	24		301							{2: 'Construct', 3: 'To do so... I have to lure as many Corrupted here as possible.', 4: '1'}
+25	25		301							"{2: 'Chrome', 3: ""Understood. You still have enough time to retreat after the explosives are primed. I'll meet you as we planned."", 4: '2'}"
+26	26		301							"{2: 'Construct', 3: ""That won't be necessary."", 4: '1'}"
+27	27		301							{2: 'Construct', 3: 'This is the end of the line for me.', 4: '1'}
+28	28		301							"{2: 'Chrome', 3: ""What are you talking about? There's still time—"", 4: '2'}"
+29	29		301							{2: 'Construct', 3: 'This time I live.', 4: '1'}
+30	30		301							{2: 'Construct', 3: 'What about next time?', 4: '1'}
+31	31		301							{2: 'Construct', 3: 'Will I still be that lucky next time?', 4: '1'}
+32	32		301							"{2: 'Chrome', 3: ""If you can't move because you're hurt, just stay where you are! I'm coming to get you!"", 4: '2'}"
+33	33		301							{2: 'Construct', 3: 'Chrome... take a look around you.', 4: '1'}
+34	34		301							{2: 'Construct', 3: 'Look at the collapsed walls and ruins. Look at how all breathing things are surviving on food in rusted cans and water in filthy pools.', 4: '1'}
+35	35		301							"{2: 'Construct', 3: ""Fight all we want, but the virus is always a step ahead of us. I can feel it, Chrome. It's... evolving."", 4: '1'}"
+36	36		301							"{2: 'Construct', 3: ""A teammate from my last squad is still lying in the Construct Maintenance Department. I haven't seen him step out of that room since he was wounded in our last mission."", 4: '1'}"
+37	37		301							"{2: 'Construct', 3: ""Sometimes, I think... I'll never get to see him again."", 4: '1'}"
+38	38		301							"{2: 'Construct', 3: ""Like how we'll never get to see the day we win this war."", 4: '1'}"
+39	39		301							{2: 'Chrome', 3: 'We will win.', 4: '2'}
+40	40		301							{3: 'A bitter chuckle comes through the comms amidst the buzzing from signal interference.'}
+41	41		301							"{2: 'Construct', 3: ""Even... if we live to see the day we win... there won't be a future for us, will there?"", 4: '1'}"
+42	42		301				AniZhuanchangBegin			"{2: 'Construct', 3: ""Do those humans on Babylonia know about the sacrifices we've made here on the surface? Do they care?"", 4: '1'}"
+43	43		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+44	44		202							{1: '1', 2: '2', 6: '1'}
+45	45		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory121.png'}
+46	46		504							{1: '0.7'}
+47	47		201							{1: '1', 2: '500310'}
+48	48		301			AniZhuanchangEnd				"{1: '1', 2: 'Elites', 3: '""Perform well! The future of Earth lies on your shoulders!""', 4: '1'}"
+49	49		301				AniZhuanchangBegin			"{2: 'Elites', 3: '""Bring home some medals, yeah? I\'m sure your father will be pleased.""', 4: '1'}"
+50	50		504							{1: '0'}
+51	51		202							{1: '1', 6: '1'}
+52	52		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+53	53		201							{1: '1', 2: '500006', 4: '400'}
+54	54		201							{1: '2', 2: '500155', 4: '-400'}
+55	55		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+56	56		301			AniZhuanchangEnd				{1: '1', 2: 'Chrome', 3: 'You...', 4: '2'}
+57	57		301							"{2: 'Construct', 3: ""To them, we're just tools."", 4: '1'}"
+58	58		301							{2: 'Construct', 3: 'Even if our bodies are decimated by the Corrupted, we can still fight as long as our M.I.N.D.s are intact.', 4: '1'}
+59	59		301							{2: 'Construct', 3: 'But we have to risk losing our memories... forgetting why we fight, forgetting those we love.', 4: '1'}
+60	60		301							"{2: 'Construct', 3: ""I became a Construct... because someone wanted me to. But it's been so long... since I've seen that person."", 4: '1'}"
+61	61		301				AniZhuanchangBegin			"{2: 'Construct', 3: ""Have you not lost a teammate before? Don't you know how the big shots feel about those Constructs who are heavily wounded or even sacrificed?"", 4: '1'}"
+62	62		202							{1: '1', 2: '2', 6: '1'}
+63	63		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg'}
+64	64		504							{1: '0.7'}
+65	65		201							{1: '1', 2: '500149', 4: '400'}
+66	66		201							{1: '2', 2: '500155', 4: '-400'}
+67	67		301			AniZhuanchangEnd				{1: '1', 2: 'Chrome', 3: 'What happened to the original squad, Mr. Smith?', 4: '2'}
+68	68		301							"{2: 'John', 3: ""They're no longer deployable. Don't worry about that for now—the Science Council will handle it based on the circumstances."", 4: '1'}"
+69	69		301							"{2: 'Chrome', 3: ""...Can't they return to the battlefield?"", 4: '2'}"
+70	70		301				AniZhuanchangBegin			"{2: 'John', 3: ""They'll return to where they belong. That's how wars go."", 4: '1'}"
+71	71		504							{1: '0'}
+72	72		202							{1: '1', 2: '2', 6: '1'}
+73	73		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+74	74		201							{1: '1', 2: '500006', 4: '400'}
+75	75		201							{1: '2', 2: '500155', 4: '-400'}
+76	76		301			AniZhuanchangEnd				{1: '1', 2: 'Chrome', 3: '...', 4: '2'}
+77	77		301							{2: 'Construct', 3: 'If surviving the war is already too much for us to wish for, what hope do we have when it comes to living after it?', 4: '1'}
+78	78		301							{3: 'Unintelligible mumbles come through his comms, the mourning of a person who can no longer move with the weight on his shoulders.'}
+79	79		301							{2: 'Construct', 3: 'I really am... so very tired.', 4: '1'}
+80	80		301							"{2: 'Construct', 3: ""This... isn't that bad a way to go."", 4: '1'}"
+81	81		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+82	82		202							{1: '1', 2: '2', 6: '1'}
+83	83		201							{1: '2', 2: '500155'}
+84	84		301							{1: '1', 2: 'Chrome', 3: 'Almost there...', 4: '2'}
+85	85		202							{1: '2'}
+86	86		401							{1: '2', 2: '1513'}
+87	87		301							"{3: ""Chrome knows that nothing he can say will comfort the Construct on the other end. All he can do now is run as fast as he can toward the Construct's direction.""}"
+88	88		301				AniZhuanchangBegin			{3: 'Sparks fly as his frame runs at maximum speed, the cooling system inside struggling to keep up with the heat it is generating. A single misstep now means a devastating fall.'}
+89	89		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory9.jpg'}
+90	90		201							{1: '2', 2: '500155'}
+91	91		301			AniZhuanchangEnd				{1: '1', 2: 'Chrome', 3: 'The cooling system... is not enough, and my mobility...', 4: '2'}
+92	92		202							{1: '2'}
+93	93		401							{1: '2', 2: '1513'}
+94	94		301							{3: 'Just a little faster—'}
+95	95		201							{1: '1', 2: '500006'}
+96	96		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+97	97		301							"{1: '1', 2: 'Construct', 3: ""It's an honor to talk to you in my last moments."", 4: '1'}"
+98	98		301							"{2: 'Construct', 3: ""I respect you. I've heard... that you volunteered."", 4: '1'}"
+99	99		301							{2: 'Construct', 3: 'I thought you were just another perfect facade the folks at the top created to comfort us.', 4: '1'}
+100	100		301							"{2: 'Construct', 3: ""But the things you've done... have changed my mind."", 4: '1'}"
+101	101		301							"{2: 'Construct', 3: ""I respect it. You could've... lived a comfortable life on Babylonia."", 4: '1'}"
+102	102		301							{2: 'Construct', 3: 'If it were you, maybe...', 4: '1'}
+103	103		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+104	104		202							{1: '1', 6: '1'}
+105	105		301				AniZhuanchangBegin			"{3: ""The Construct's voice slowly fades, barely audible.""}"
+106	106		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory4.jpg'}
+107	107		401							{1: '2', 2: '1513'}
+108	108		201							{1: '2', 2: '500155'}
+109	109		301			AniZhuanchangEnd				{1: '1', 2: 'Chrome', 3: 'I should be able to get there quickly from here.', 4: '2'}
+110	110		202							{1: '2'}
+111	111		301							{3: '—Now is not the time to be overcome by emotions.'}
+112	112		301				AniZhuanchangBegin			{3: 'He has to act to prevent something like this from happening again.'}
+113	113		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory36.jpg'}
+114	114		401							{1: '2', 2: '1513'}
+115	115		301			AniZhuanchangEnd				{3: 'Chrome crashes into the factory, frantically searching for any ally signal in the area.'}
+116	116		301							{3: 'Eventually, he finds a Construct lying in the corner of an assembly workshop.'}
+117	117		301							{3: 'Eyes closed, the Construct is no longer conscious.'}
+118	118		201							{1: '2', 2: '500155'}
+119	119		301							"{1: '1', 2: 'Chrome', 3: ""...His frame is still running in preservation mode. It's not too late!"", 4: '2'}"
+120	120		301		1		AniZhuanchangBegin			"{2: 'Chrome', 3: ""This is Chrome from Strike Hawk—target found! I repeat—target found! We're coming back!"", 4: '2'}"

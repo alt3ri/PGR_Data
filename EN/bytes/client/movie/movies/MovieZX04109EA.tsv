@@ -1,0 +1,242 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory827.jpg'}
+2	2		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+3	3		401							{1: '1', 2: '36'}
+4	4		401							{1: '2', 2: '2782'}
+5	5		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab', 2: '2'}
+6	6		301			DialogEnable				"{2: 'Broadcast', 3: ""Attention! Gestalt's core program has been tampered with. Execute Level 1 protocol!""}"
+7	7		301							"{2: 'Broadcast', 3: ""Attention! Gestalt's core program has been tampered with. Execute Level 1 protocol!""}"
+8	8		401							{1: '1', 2: '245'}
+9	9		301							{3: 'The piercing alarm echoes throughout the underground space. Moments later, another alarm sounds and overlaps with it.'}
+10	10		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab'}
+11	11		201							{1: '1', 2: '500005'}
+12	12		301							{1: '1', 2: 'Soldier A', 3: 'The Punishing concentration is skyrocketing. It is about to breach the warning line!', 4: '1'}
+13	13		202							{1: '1', 6: '1'}
+14	14		201							{1: '1', 2: '1101001'}
+15	15		301							"{1: '1', 2: 'Watanabe', 3: ""Don't panic!"", 4: '1'}"
+16	16		301							{3: 'Having experienced a failure before, Watanabe knows that panicking in such moments would lead to unsalvageable loss.'}
+17	17		301							"{2: 'Watanabe', 3: ""Nithart, what's the status of Gestalt?"", 4: '1'}"
+18	18		203							{1: '1', 2: '0.25', 3: '400'}
+19	19		201							{1: '2', 2: '500794', 4: '-400'}
+20	20		301							{1: '1', 2: 'Nithart', 3: '10 minutes!', 4: '2'}
+21	21		301							"{2: 'Watanabe', 3: ""You can't handle the Punishing concentration in here. Evacuate immediately."", 4: '1'}"
+22	22		301							"{2: 'Nithart', 3: ""I'm the Chief's lieutenant. I won't leave."", 4: '2'}"
+23	23		301							{2: 'Nithart', 3: '(We must also greet them with victory.)', 4: '2'}
+24	24		301							{3: 'For the first time, the voice that has always remained calm in the face of Corrupted attacks sounds a bit anxious.'}
+25	25		301							"{2: 'Watanabe', 3: ""Alright, we'll buy you time!"", 4: '1'}"
+26	26		202							{1: '2', 6: '1'}
+27	27		203							{1: '1', 2: '0.25'}
+28	28		301							{2: 'Watanabe', 3: 'All units, defense formation!', 4: '1'}
+29	29		401							{1: '2', 2: '2919'}
+30	30		301							{3: 'Aside from the annoying alarms, the auditory module picks up the sound of metal noises from the tunnels.'}
+31	31		401							{1: '2', 2: '1508'}
+32	32		301							{3: 'Corrupted from all directions are converging, aiming to devour the prey at the center of the web.'}
+33	33		401							{1: '2', 2: '1511'}
+34	34		301							{3: 'The sound of metal clashing pierces their ears.'}
+35	35		301							{2: 'Watanabe', 3: '!', 4: '1'}
+36	36		202							{1: '1', 6: '1'}
+37	37		401							{1: '2', 2: '9332011'}
+38	38		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+39	39		301							{3: 'Watanabe turns and throws his scimitar toward a hidden corner near the connecting pillar.'}
+40	40		401						300.0	{1: '2', 2: '844006'}
+41	41		401							{1: '2', 2: '10001004'}
+42	42		201							{1: '1', 2: '1101001'}
+43	43		301			RImgBg1Shake				"{1: '1', 3: ""The scimitar deflects the bullet, swings back into Watanabe's hand, and the squad members immediately fire onto the exposed Corrupted.""}"
+44	44		204							{1: '1', 2: '5'}
+45	45		301							"{2: 'Watanabe', 3: ""They're here!"", 4: '1'}"
+46	46		202							{1: '1', 6: '1'}
+47	47		401						200.0	{1: '2', 2: '1508'}
+48	48		401							{1: '2', 2: '1508'}
+49	49		301			RImgBg1Shake				{3: 'Exhaust pipes, wiring conduits, weighing columns... Corrupted are oozing out of every hidden corner like crimson sludge.'}
+50	50		201							{1: '1', 2: '1101001', 3: '5'}
+51	51		301							{1: '1', 2: 'Watanabe', 3: 'Open fire!', 4: '1'}
+52	52		202							{1: '1', 6: '1'}
+53	53		401						500.0	{1: '2', 2: '10001004'}
+54	54		401							{1: '2', 2: '10001004'}
+55	55		301							{3: 'The island is beginning to resist the crashing waves.'}
+56	56		401							{1: '2', 2: '4047'}
+57	57		201							{1: '1', 2: '500794'}
+58	58		301							{1: '1', 2: 'Nithart', 3: '(Why...?)', 4: '1'}
+59	59		301							"{3: ""Nithart's fingers dance over the terminal, but she is still struggling to fend off the corruption of Gestalt by the unknown virus.""}"
+60	60		301				AniZhuanchangBegin			{2: 'Nithart', 3: '(I did exactly as the Chief instructed... Why is this still happening?)', 4: '1'}
+61	61		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+62	62		402							{1: '2919'}
+63	63		402							{1: '4047'}
+64	64		402							{1: '2782'}
+65	65		401							{1: '1', 2: '36'}
+66	66		202			DialogDisable				{1: '1', 6: '1'}
+67	67		504							{1: '0.7'}
+68	68		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+69	69		301			DialogEnable				{3: '24 hours earlier.'}
+70	70		201							{1: '1', 2: '500797'}
+71	71		301							"{1: '1', 2: 'Nithart', 3: ""Chief, are you sure it's okay to leave Gestalt to me?"", 4: '1'}"
+72	72		301							{2: 'Nithart', 3: 'This is such an important task... Surely there are better candidates...', 4: '1'}
+73	73		502						300.0	{1: 'DialogDisable'}
+74	74		307							{1: 'Every task is important. We believe you are the most suitable candidate.'}
+75	75		301							{3: 'Every task is important. We believe you are the most suitable candidate.'}
+76	76		307							{2: '1'}
+77	77		301			DialogEnable				"{2: 'Nithart', 3: ""Leaving me here means you likely won't be able to return from the Zero-point Reactor, right?"", 4: '1'}"
+78	78		502						300.0	{1: 'DialogDisable'}
+79	79		307							"{1: ""We don't plan missions based on sacrifice, but we also don't fear sacrifices during missions.""}"
+80	80		301							"{3: ""We don't plan missions based on sacrifice, but we also don't fear sacrifices during missions.""}"
+81	81		307							{2: '1'}
+82	82		301			DialogEnable				"{2: 'Nithart', 3: ""What's that?"", 4: '1'}"
+83	83		502						300.0	{1: 'DialogDisable'}
+84	84		307							{1: 'If Gestalt goes haywire, connect it to this.'}
+85	85		301				AniZhuanchangBegin			{3: 'If Gestalt goes haywire, connect it to this.'}
+86	86		202							{1: '1', 6: '1'}
+87	87		307							{2: '1'}
+88	88		504							
+89	89		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory827.jpg'}
+90	90		401							{1: '1', 2: '245'}
+91	91		201							{1: '1', 2: '500794', 7: '1'}
+92	92		301			DialogEnable				"{1: '1', 2: 'Nithart', 3: ""(Why isn't it working?)"", 4: '1'}"
+93	93		301							"{3: ""She has already connected Dominik's data disk to Gestalt, but the firewall is still being breached layer by layer.""}"
+94	94		306							{1: '1'}
+95	95		301							{2: 'Nithart', 3: '(Could the Chief be wrong?)', 4: '1'}
+96	96		401							{1: '2', 2: '4006'}
+97	97		301							"{3: ""As the Chief's lieutenant, Nithart has unconditional faith in him.""}"
+98	98		202							{1: '1', 6: '1'}
+99	99		502						200.0	{1: 'DialogDisable'}
+100	100		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+101	101		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+102	102		504							{1: '0.7'}
+103	103		307							{1: 'We will definitely return.'}
+104	104		301							{3: 'We will definitely return.'}
+105	105		307							{2: '1'}
+106	106		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+107	107		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory827.jpg'}
+108	108		504							
+109	109		201							{1: '1', 2: '500794', 7: '1'}
+110	110		301			DialogEnable				{1: '1', 3: 'Believing in those words, she gives up her insistence on following them into the No.1 Reactor contamination zone.'}
+111	111		502						200.0	{1: 'DialogDisable'}
+112	112		202							{1: '1', 6: '1'}
+113	113		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+114	114		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+115	115		504							{1: '0.7'}
+116	116		307							{1: 'You are the most suitable candidate. You will complete the mission.'}
+117	117		301							{3: 'You are the most suitable candidate. You will complete the mission.'}
+118	118		307							{2: '1'}
+119	119		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+120	120		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory827.jpg'}
+121	121		504							
+122	122		201							{1: '1', 2: '500794', 7: '1'}
+123	123		301			DialogEnable				{1: '1', 3: 'Believing in those words, she abandons her usual conservative methods and chooses the most aggressive approach.'}
+124	124		502						200.0	{1: 'DialogDisable'}
+125	125		202							{1: '1', 6: '1'}
+126	126		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+127	127		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+128	128		504							{1: '0.7'}
+129	129		307							{1: 'If Gestalt goes haywire, connect it to this.'}
+130	130		301							{3: 'If Gestalt goes haywire, connect it to this.'}
+131	131		307							{2: '1'}
+132	132		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+133	133		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory827.jpg'}
+134	134		504							
+135	135		201							{1: '1', 2: '500794', 7: '1'}
+136	136		301			DialogEnable				"{1: '1', 3: ""But she has done everything as instructed and still hasn't succeeded. Is the Chief wrong...""}"
+137	137		301							{3: 'So... did we make a mistake from the very beginning when we sought Zero-point Energy...'}
+138	138		306							
+139	139		401							{1: '2', 2: '3077'}
+140	140		301			RImgBg1Shake				{3: 'A violent impact pulls Nithart back to reality.'}
+141	141		201							{1: '1', 2: '500005', 5: '-100'}
+142	142		301							{1: '1', 2: 'Soldier A', 3: 'Damn it!', 4: '1'}
+143	143		401							{1: '2', 2: '10001004'}
+144	144		301							{3: 'The soldier was thrown to the side and broke his legs. Vital fluid is oozing from his wounds, but he still grips his gun tightly, firing bullets into the Corrupted.'}
+145	145		202							{1: '1', 6: '1'}
+146	146		301							{3: 'Not far away, the other squad members also suffered varying degrees of injury and are surrounded by the remnants of the Corrupted.'}
+147	147		301							{3: 'This island is on the brink of being devoured by the waves.'}
+148	148		201							{1: '1', 2: '500794'}
+149	149		301							{1: '1', 2: 'Nithart', 3: 'Time... How much time do I have left?', 4: '1'}
+150	150		502						400.0	{1: 'DialogDisable'}
+151	151		307							{1: '13:42.2', 3: '60', 4: 'ff4e4eff', 6: '1'}
+152	152		301							{3: '13:42.2'}
+153	153		307							{2: '1'}
+154	154		301			DialogEnable				{3: 'She took way more time than she promised, yet no one mentioned it, doing their utmost to buy her more time.'}
+155	155		502						200.0	{1: 'DialogDisable'}
+156	156		202							{1: '1', 6: '1'}
+157	157		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+158	158		401							{1: '1', 2: '36'}
+159	159		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+160	160		504							{1: '0.7'}
+161	161		307							{1: 'Lastly, but most importantly.', 3: '50'}
+162	162		201							{1: '1', 2: '500797', 7: '1'}
+163	163		301							{1: '1', 3: 'Lastly, but most importantly.'}
+164	164		307							{1: 'Trust your comrades and trust yourself.', 3: '50'}
+165	165		301							{3: 'Trust your comrades and trust yourself.'}
+166	166		307							{2: '1'}
+167	167		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+168	168		202							{1: '1', 6: '1'}
+169	169		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory827.jpg'}
+170	170		504							
+171	171		401							{1: '1', 2: '146'}
+172	172		201							{1: '2', 2: '500794', 7: '1'}
+173	173		301			DialogEnable				{1: '1', 2: 'Nithart', 3: 'Just like... how they trust me!', 4: '2'}
+174	174		203							{1: '1', 2: '0.15', 5: '-70'}
+175	175		301							{3: 'She removes her earpiece and focuses all her energy on thinking.'}
+176	176		301							{3: 'She is more familiar with the inner workings of this machine than anyone else. She has iterated it hundreds of times and inspected it tens of thousands of times.'}
+177	177		301							{3: 'The code within this machine is essentially an extension of her brain. Now, she just needs to find the source of her headache.'}
+178	178		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen03.prefab', 2: '2'}
+179	179		401							{1: '2', 2: '2759'}
+180	180		401							{1: '2', 2: '4047'}
+181	181		301							{3: 'The scene before her gradually disappears, transforming into a torrent of characters. It is as if each keystroke shatters a rogue serpent.'}
+182	182		301							{3: 'The serpents shatter into shards, falling into the depths of the darkness.'}
+183	183		301							{2: 'Nithart', 3: 'These... and these!', 4: '2'}
+184	184		301							{3: 'Nithart feels her thoughts racing through even faster, so fast they seem to break free from her body.'}
+185	185		301							{2: 'Nithart', 3: '(The targets of these erroneous commands are... No!)', 4: '2'}
+186	186		301							{3: 'She finally discovers another threat hidden beneath the Gestalt crisis, sending a shiver down her spine...'}
+187	187		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+188	188		301							"{2: 'Nithart', 3: ""It's targeting our greatest weakness..."", 4: '2'}"
+189	189		301							{2: 'Nithart', 3: 'Could these viruses be intelligent?', 4: '2'}
+190	190		301							{2: 'Nithart', 3: 'We have to stop them!', 4: '2'}
+191	191		301							"{3: 'She ""reaches out,"" grasping three delayed commands with her ""hand.""'}"
+192	192		301							{2: 'Nithart', 3: 'Two more...', 4: '2'}
+193	193		301							"{3: 'She stretches her hand ""outward,"" not caring if it breaks.'}"
+194	194		301							{2: 'Nithart', 3: 'Almost...', 4: '2'}
+195	195		203							{1: '2', 2: '0.15', 3: '-400'}
+196	196		202							{1: '2'}
+197	197		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+198	198		401							{1: '2', 2: '9342045'}
+199	199		401							{1: '1', 2: '36'}
+200	200		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen03.prefab'}
+201	201		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+202	202		402							{1: '2759'}
+203	203		402						400.0	{1: '4047'}
+204	204		201							{1: '1', 2: '1101001', 3: '5'}
+205	205		301			RImgBg1Shake				{1: '1', 2: 'Watanabe', 3: 'Nithart!', 4: '1'}
+206	206		401							{1: '1', 2: '245'}
+207	207		301							{3: 'Watanabe pulls her away from a Corrupted just in time, just before she reaches into its hammering blade.'}
+208	208		202							{1: '1'}
+209	209		301							"{3: ""The Gestalt's broadcast is no longer repeating warnings, and the blinding red has turned into a serene azure.""}"
+210	210		301							{3: 'The only remaining red at the scene is human blood seeping through the protective suits.'}
+211	211		201							{1: '1', 2: '500794', 4: '-400', 5: '-150'}
+212	212		201							{1: '2', 2: '1101001', 4: '400'}
+213	213		301							{1: '1', 2: 'Nithart', 3: 'Did I... did I succeed?', 4: '1'}
+214	214		301							"{2: 'Nithart', 3: ""Tell me... I can't see..."", 4: '1'}"
+215	215		301							{2: 'Watanabe', 3: 'You did well...', 4: '2'}
+216	216		301							"{3: ""Watanabe's blade severs a Corrupted lunging at them, and Watanabe kicks it into a pile of debris.""}"
+217	217		301							"{2: 'Watanabe', 3: ""You've successfully restored Gestalt. Your job is done..."", 4: '2'}"
+218	218		203							{1: '1', 2: '0.3', 3: '-400', 4: '-80'}
+219	219		301							{2: 'Nithart', 3: 'Gestalt... No!', 4: '1'}
+220	220		203							{1: '1', 2: '0.14', 3: '-400', 4: '-150'}
+221	221		401						150.0	{1: '2', 2: '3077'}
+222	222		502							{1: 'PanelActor1Shake'}
+223	223		301							{3: 'Nithart tries to stand but quickly falls to the ground, making a noise that sounds like a water balloon hitting the floor.'}
+224	224		301							{3: 'She wants to walk, but her body feels like it is soaked in viscous fluid. It is actually her own blood and flesh.'}
+225	225		301							{3: 'She tries to crawl but realizes she has no strength left.'}
+226	226		301							"{2: 'Watanabe', 3: ""Hang in there. We'll break through together with you."", 4: '2'}"
+227	227		301							"{2: 'Nithart', 3: ""No... I can't leave yet. Restoring Gestalt is only one thing..."", 4: '1'}"
+228	228		301							{2: 'Nithart', 3: 'The targets of the erroneous commands are the troops in space!', 4: '1'}
+229	229		204							{1: '2', 2: '5'}
+230	230		301							{2: 'Watanabe', 3: 'What?!', 4: '2'}
+231	231		202							{1: '1', 2: '2', 6: '1'}
+232	232		401							{1: '2', 2: '1099'}
+233	233		509						700.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory732.jpg', 2: '2'}
+234	234		201							{1: '13', 2: '500686', 3: '5', 4: '550'}
+235	235		201							{1: '2', 2: '1101001', 3: '5', 4: '-650'}
+236	236		301							{1: '1', 2: 'Ballard', 3: 'Watanabe, report the situation immediately!', 4: '13'}
+237	237		301							{3: 'With the Gestalt chaos resolved, communication with the temporary command post seems to have been restored.'}
+238	238		301							"{2: 'Watanabe', 3: ""Gestalt is back to normal, but we're surrounded. Nithart is severely infected, with large areas of necrosis."", 4: '2'}"
+239	239		301							{2: 'Ballard', 3: '!', 4: '13'}
+240	240		301							{2: 'Ballard', 3: 'Backups, follow me!', 4: '13'}
+241	241		301		1		AniZhuanchangBegin			{2: 'Ballard', 3: 'Hold on, backups are on the way!', 4: '13'}

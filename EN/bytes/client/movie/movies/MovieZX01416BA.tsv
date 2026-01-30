@@ -1,0 +1,70 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory226.png'}
+2	2		401							{1: '1', 2: '9'}
+3	3		201							{1: '1', 2: '500209'}
+4	4		301			DialogEnable				{1: '1', 3: 'In the surreal projection of M.I.N.D. space, you see another Amberia—the real Amberia.'}
+5	5		301							"{3: ""Guided by the narwhal's voice, you see the true master of the bionics, Amberia, in the deepest recesses of her mind, festered by nightmares.""}"
+6	6		301							"{2: 'Amberia', 3: ""Who is it...? You're not Derek? Who are you?"", 4: '1'}"
+7	1000		302							{2: '(Explain)', 3: '7'}
+8	7		301							{2: 'Amberia', 3: '【kuroname】, commandant from Babylonia.', 4: '1'}
+9	8		301							{2: 'Amberia', 3: 'I know why you are here, but I decline your request.', 4: '1'}
+10	9		301							"{2: 'Amberia', 3: ""I won't stop the bionics... And I won't sleep again. I don't want to dream anymore."", 4: '1'}"
+11	10		301							"{2: 'Amberia', 3: ""I'm going outside. I'm going to open my eyes and escape from this place."", 4: '1'}"
+12	1001		302							{2: 'Are you not going berserk?', 3: '11', 4: 'If you promise not to hurt anyone else.', 5: '13'}
+13	11	12	301							{2: 'Amberia', 3: 'Berserk... You call this fear of mine, berserk?', 4: '1'}
+14	12	16	301							"{2: 'Amberia', 3: ""I'm just trying to protect myself! Protect myself from those people!"", 4: '1'}"
+15	13	14	301							{2: 'Amberia', 3: 'Hurt others... No, I never wanted to hurt anyone. I just wanted the ones that hurt me gone...', 4: '1'}
+16	14	15	301							"{2: 'Amberia', 3: ""You'd do the same in my shoes. I'm going to eliminate the ARU and everything that stands in my way. That way, I won't be imprisoned in this ice cave ever again."", 4: '1'}"
+17	15	16	301							"{2: 'Amberia', 3: ""I don't want anyone to call me a monster ever again!"", 4: '1'}"
+18	16		301				AniZhuanchangBegin			{2: 'Amberia', 3: 'So... As long as you have the code, 【kuroname】, I will never let you leave this place!', 4: '1'}
+19	1002		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory224.png'}
+20	17		301			AniZhuanchangEnd				{3: '——'}
+21	18		301							{1: '1', 2: 'Amberia (Atiel)', 3: 'Ngh... Where am I...', 4: '1'}
+22	1003		201							{1: '1', 2: '500214', 3: '1'}
+23	19		301							"{1: '1', 2: 'Rosetta', 3: ""Looks like Commandant's succeeded. The pain in my M.I.N.D. is easing..."", 4: '1'}"
+24	20		301							"{3: ""During Rosetta's defensive bout, she suddenly finds a massive weight lifted from her M.I.N.D. A glance at the Polar Soldier, silent in the rear, tells her that 【kuroname】 has entered the depths of Amberia's M.I.N.D.""}"
+25	1004		201							{1: '1', 2: '500209'}
+26	21		301							{1: '1', 2: 'Amberia (Atiel)', 3: 'How did you squirm out of my hold? Wait, why is my frame so slow!', 4: '1', 6: '1'}
+27	1005		201							{1: '1', 2: '500214', 3: '1'}
+28	22		301							"{1: '1', 2: 'Rosetta', 3: ""Thank the commandant. Also, weren't you just in misery as well?"", 4: '1'}"
+29	1006		201							{1: '1', 2: '500209'}
+30	23		301							{1: '1', 2: 'Amberia (Atiel)', 3: 'Hmph... That was just pain caused by M.I.N.D. integration. Once it is complete, Amberia will no longer exist, and I can perfectly control this frame!', 4: '1'}
+31	1007		201							{1: '1', 2: '500214', 3: '5'}
+32	24		301							"{1: '1', 2: 'Rosetta', 3: ""Then you'll become the monster in Amberia's stead. Won't you?"", 4: '1'}"
+33	1008		201							{1: '1', 2: '500209'}
+34	25		301							{1: '1', 2: 'Amberia (Atiel)', 3: '...I am not a—MONSTER!', 4: '1'}
+35	1009		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '3'}
+36	1010		401							{1: '2', 2: '10002001'}
+37	26		301							"{3: ""Verbal and armed exchanges fly in the air. With Amberia's M.I.N.D. integration paused, Rosetta can finally make use of her lightning-fast speed and destructive power to gain an upper hand.""}"
+38	1011		201							{1: '1', 2: '500214', 3: '5'}
+39	27		301							"{1: '1', 2: 'Rosetta', 3: ""If you're not a monster, why do you want to become Amberia and destroy your home?!"", 4: '1'}"
+40	1012		201							{1: '1', 2: '500209'}
+41	28		301							{1: '1', 2: 'Amberia (Atiel)', 3: 'Take a look at yourself...! Why would you protect those bastards!', 4: '1'}
+42	1013		201							{1: '1', 2: '500214', 3: '5'}
+43	29		301							{1: '1', 2: 'Rosetta', 3: 'Because I love this snowland; the feeling of snow beneath my feet... I want to be proud of this place.', 4: '1'}
+44	1014		201							{1: '1', 2: '500209'}
+45	30		301							{1: '1', 2: 'Amberia (Atiel)', 3: 'What?', 4: '1'}
+46	1015		201							{1: '1', 2: '500214', 3: '14'}
+47	31		301							"{1: '1', 2: 'Rosetta', 3: ""I've always believed that the ARU can change. I thought I could find this change through the outside world."", 4: '1'}"
+48	32		301							{2: 'Rosetta', 3: 'But when I got out, I realized... We ourselves, have to be the change we want to see.', 4: '1'}
+49	1016		204							{1: '1', 2: '4'}
+50	33		301							{2: 'Rosetta', 3: 'Putting the past to rest to prevent another tragedy like you and me—that is my answer!', 4: '1'}
+51	34		301							"{3: ""Rosetta throws a thrust at Amberia's upper body, but before it could connect, Atiel regains control of her frame and swipes Rosetta away.""}"
+52	1017		401							{1: '2', 2: '1506'}
+53	35		301			PanelActor1Shake				{1: '1', 2: 'Rosetta', 3: 'How unlucky...', 4: '1'}
+54	36		301							{3: 'Rosetta is knocked to the ground. Her light wings have softened the impact, but she still crashes into an icicle.'}
+55	1018		201							{1: '1', 2: '500209'}
+56	37		301							{1: '1', 2: 'Amberia (Atiel)', 3: 'Always going on about your luck. I am—Amberia is—the actual unlucky one!', 4: '1'}
+57	1019		201							{1: '1', 2: '500214'}
+58	38		301							{1: '1', 2: 'Rosetta', 3: 'Indeed. By unlucky, I meant you two.', 4: '1'}
+59	1020		201							{1: '1', 2: '500209'}
+60	39		301							{1: '1', 2: 'Amberia (Atiel)', 3: 'Huh?', 4: '1'}
+61	1021		201							{1: '1', 2: '500214', 3: '8'}
+62	40		301							"{1: '1', 2: 'Rosetta', 3: ""I've always thought the entire world was down on its luck. That's why the Punishing Virus broke out. That's why I have no choice but to defeat you."", 4: '1'}"
+63	41		301							"{2: 'Rosetta', 3: ""Because we're all marred by misfortune, that's why we all suffer. This is why we are bound..."", 4: '1'}"
+64	1022		201							{1: '1', 2: '500209'}
+65	42		301							"{1: '1', 2: 'Amberia (Atiel)', 3: 'Rosetta... Spare the talk. Do you think you can defeat Amberia, the ""perfect"" humanoid-hybrid Construct?!', 4: '1'}"
+66	44		301							"{3: ""The particles emitted by Rosetta's light wings disperse, forming a thin reflective film over the fractured ice.""}"
+67	45		301							"{3: ""Rosetta's mixed expression, taken by hints of sadness, can be seen on the glinting ice.""}"
+68	1023		201							{1: '1', 2: '500214', 3: '5'}
+69	46		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Rosetta', 3: ""I'm not just defeating you! I'm going forward!"", 4: '1'}"

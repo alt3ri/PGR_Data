@@ -1,0 +1,346 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1320.jpg'}
+2	2		401							{1: '1', 2: '6244'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCerberusGameChapter/FxUiCerberusGameChapterLizi01.prefab', 2: '1'}
+5	5		401							{1: '2', 2: '968'}
+6	6		306							{1: '1'}
+7	7		301			DialogEnable				{3: 'Day by day, time flowed on, and day by day, the wind grew bolder and wilder.'}
+8	8		301				DialogDisable			{3: 'The air turned crisp, the grasses faded from green to gold. Autumn had settled over the land, and winter drew near.'}
+9	9		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCerberusGameChapter/FxUiCerberusGameChapterLizi01.prefab'}
+10	10		306							
+11	11		402							{1: '968'}
+12	12		201							{1: '1', 2: '501396', 3: '8'}
+13	13		502						300.0	{1: 'PanelActor1Shake'}
+14	14		401							{1: '2', 2: '4044'}
+15	15		203						450.0	{1: '1', 2: '0.4', 4: '-100'}
+16	16		202							{1: '1'}
+17	17		301			DialogEnable				{1: '1', 3: 'Once more, the maiden gifted particles of her own light to kindle life anew, then sank gently onto the fading grass.'}
+18	18		401							{1: '2', 2: '759'}
+19	19		301							{3: 'The little gray raven fluttered about her anxiously, but could do nothing to help.'}
+20	20		201							{1: '1', 2: '501396', 3: '10'}
+21	21		301				AniZhuanchangBegin			{1: '1', 2: 'Maiden', 3: 'Do not blame yourself, my little gray raven... Your company alone is a comfort to me.', 4: '1', 18: '100013190'}
+22	22		502						400.0	{1: 'DialogDisable'}
+23	23		202							{1: '1'}
+24	24		304			AniZhuanchangEnd				{1: 'Maybe this was not how it should be, thought the little gray raven.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-2', 10: '1'}
+25	25		304							{1: 'In another world somewhere, it would have wings broad enough to wrap around the maiden, to shield her from the biting gales.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+26	26		304							{1: 'In another world somewhere, it would have gentle hands, like hers, to wipe the tears from her eyes and paint a smile upon her face.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+27	27		304							{1: 'Perhaps it was in a distant past, or perhaps in a future far, far away.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+28	28		304				AniZhuanchangBegin			{1: 'That world would not be so harsh, so lonely as this.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 9: '1', 10: '1'}
+29	29		201							{1: '1', 2: '501396', 3: '14'}
+30	30		502						400.0	{1: 'DialogEnable'}
+31	31		301			AniZhuanchangEnd				{1: '1', 2: 'Maiden', 3: 'Why... do I remain here?', 4: '1', 18: '100013191'}
+32	32		204							{1: '1', 2: '10'}
+33	33		301							"{2: 'Maiden', 3: ""Because I'm still waiting..."", 4: '1', 18: '100013192'}"
+34	34		302							{2: 'Waiting for what?', 3: '35'}
+35	35		204							{1: '1', 2: '14'}
+36	36		301							"{2: 'Maiden', 3: ""Hmm... I can't remember anymore... It's been so long... so very long..."", 4: '1', 18: '100013193'}"
+37	37		306							{1: '1'}
+38	38		301							"{3: ""A soft mist of confusion clouded the maiden's gaze.""}"
+39	39		306							
+40	40		301							{2: 'Maiden', 3: 'Maybe I stayed for these scattered pages... worried these wounded little ones would never find their way home.', 4: '1', 18: '100013194'}
+41	41		204							{1: '1', 2: '15'}
+42	42		301				DialogDisable			{2: 'Maiden', 3: 'The wind grows colder... little gray raven, you should fly home now, before it sweeps you too far away.', 4: '1', 18: '100013195'}
+43	43		302							"{2: ""I can't remember anymore..."", 3: '44', 4: '...', 5: '47'}"
+44	44		302							"{2: ""It's been so long... so very long..."", 3: '45'}"
+45	45		401							{1: '2', 2: '759'}
+46	46	49	301			DialogEnable				{3: 'The little gray raven echoed her words, answering with feigned solemnity. It circled around her, refusing to leave her side.'}
+47	47		401							{1: '2', 2: '759'}
+48	48		301			DialogEnable				{3: 'The little gray raven circled around her in silence, refusing to leave her side.'}
+49	49		204							{1: '1', 2: '10'}
+50	50		301							{2: 'Maiden', 3: '...Oh, you silly thing.', 4: '1', 18: '100013196'}
+51	51		204							{1: '1', 2: '9'}
+52	52		301				DialogDisable			{2: 'Maiden', 3: 'Come then... let me hold you close, that we may keep each other warm.', 4: '1', 18: '100013197'}
+53	53		202							{1: '1'}
+54	54		205						2050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '2'}
+55	55		205							{1: '999'}
+56	56		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+57	57		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+58	58		307				AniZhuanchangBegin			{1: '——The Maiden of Eden IV——', 3: '80', 6: '1'}
+59	59		301							{3: '——The Maiden of Eden IV——'}
+60	60		307							{2: '1'}
+61	61		401							{1: '1', 2: '36'}
+62	62		502						2000.0	{1: 'DialogEnable'}
+63	63		401							{1: '1', 2: '5061'}
+64	64		401							{1: '2', 2: '5517'}
+65	65		301			AniZhuanchangEnd				{3: 'Wind...'}
+66	66		401							{1: '2', 2: '5517'}
+67	67		301				DialogDisable			{3: 'A wind far too brisk for early morning whispers beside your ears.'}
+68	68		302							{2: '(Open eyes)', 3: '69'}
+69	69		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+70	70		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+71	71		201							{1: '1', 2: '501378', 3: '2'}
+72	72		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Good morning, 【kuroname】.', 4: '1', 18: '100013198'}
+73	73		202							{1: '1'}
+74	74		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+75	75		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+76	76		301							{3: 'A soft touch caresses your cheek...'}
+77	77		201							{1: '1', 2: '501378', 3: '1'}
+78	78		301							{1: '1', 2: 'Liv', 3: 'What were you dreaming about? You look like you want to drift back to sleep.', 4: '1', 18: '100013199'}
+79	79		401							{1: '2', 2: '4276'}
+80	80		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab', 2: '2'}
+81	81		301							{3: 'Sunlight streams into the room as Liv gently wipes your face with a warm towel.'}
+82	82		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab'}
+83	83		302							{2: 'I can do it myself.', 3: '84', 4: '(Lie back and let Liv continue)', 5: '87'}
+84	84		204							{1: '1', 2: '2'}
+85	85		301							{2: 'Liv', 3: 'Let me take care of it. We should hurry. I have something I want to do with you today.', 4: '1', 18: '100013200'}
+86	86	94	301				AniZhuanchangBegin			{3: 'She seems to be in high spirits, humming a cheerful little tune.'}
+87	87		204							{1: '1', 2: '3'}
+88	88		301				DialogDisable			{2: 'Liv', 3: 'Ah... lying back down again, are we?', 4: '1', 18: '100013201'}
+89	89		203						350.0	{1: '1', 2: '0.3', 4: '-50'}
+90	90		203						350.0	{1: '1', 2: '0.3'}
+91	91		301			DialogEnable				{3: 'In a flash, she catches you back into her arms and continues gently dabbing your face with the towel.'}
+92	92		204							{1: '1', 2: '10'}
+93	93		301				AniZhuanchangBegin			{2: 'Liv', 3: 'No sleeping in today! We should hurry. I have something I want to do with you.', 4: '1', 18: '100013202'}
+94	94		202							{1: '1', 6: '1'}
+95	95		401							{1: '1', 2: '36'}
+96	96		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1322.jpg'}
+97	97		401							{1: '1', 2: '6224'}
+98	98		201							{1: '1', 2: '501378', 3: '2'}
+99	99		301			AniZhuanchangEnd				"{1: '1', 2: 'Liv', 3: ""We've arrived."", 4: '1', 18: '100013203'}"
+100	100		202							{1: '1'}
+101	101		301							"{3: 'A gray aircraft has also ""arrived"" at your destination.'}"
+102	102		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+103	103		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+104	104		301							{3: 'You rub the sleep from your eyes, struggling to piece together the situation before you.'}
+105	105		306							{1: '1'}
+106	106		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+107	107		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+108	108		301				DialogDisable			{3: 'In a drowsy stupor, you washed up, got dressed, were practically fed an overly generous breakfast...'}
+109	109		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1322.jpg', 3: '0', 4: '1', 5: '1'}
+110	110		205							{1: '999'}
+111	111		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1322.jpg'}
+112	112		301			DialogEnable				{3: '...and then led to this nearby hillside—all while barely conscious.'}
+113	113		201							{1: '1', 2: '501378', 3: '2'}
+114	114		301				DialogDisable			"{1: '1', 3: 'And the ""mastermind"" behind it all is none other than the girl now smiling at you with sparkling eyes.'}"
+115	115		306							
+116	116		302							{2: 'So... what exactly did we come here for?', 3: '117'}
+117	117		204							{1: '1', 2: '9'}
+118	118		301			DialogEnable	DialogDisable			{2: 'Liv', 3: 'The wind is rising... Can you feel it?', 4: '1', 18: '100013204'}
+119	119		203							{1: '1', 2: '0.3', 3: '-100'}
+120	120		202						350.0	{1: '1'}
+121	121		104						1000.0	{1: '-100|-100|-200', 2: '0.8'}
+122	122		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg', 3: '0', 4: '1', 5: '0.8'}
+123	123		104						1000.0	{1: '0|-300|-450', 2: '0', 4: '3'}
+124	124		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg'}
+125	125		104							{1: '0|-300|-450', 2: '0'}
+126	126		205							{1: '999'}
+127	127		104							{1: '0|0|0', 2: '0', 4: '3'}
+128	128		301			DialogEnable				{3: 'She turns slightly, gazing at the vast sea of clouds behind her, where a lone windmill stands tall against the sky like a solitary deity.'}
+129	129		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab', 2: '2'}
+130	130		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlinkNew.prefab', 2: '2'}
+131	131		301							{3: 'Humidity and heat cling to your clothes as the sunlight blazes almost too bright to bear. For one beautifully hazy moment, the entire scene freezes, as if captured on a single frame of film.'}
+132	132		401							{1: '2', 2: '5517'}
+133	133		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCerberusGameChapter/FxUiCerberusGameChapterLizi01.prefab', 2: '2'}
+134	134		301				AniZhuanchangBegin			{3: 'Then, a powerful gust of wind sweeps through.'}
+135	135		502						400.0	{1: 'DialogDisable'}
+136	136		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1322.jpg'}
+137	137		201			AniZhuanchangEnd				{1: '1', 2: '501378', 3: '9', 7: '1'}
+138	138		401							{1: '2', 2: '4276'}
+139	139		205						1050.0	{1: '1', 3: '1', 4: '0.3', 5: '1'}
+140	140		205						1050.0	{1: '1', 3: '0.3', 4: '1', 5: '1'}
+141	141		205						1050.0	{1: '1', 3: '1', 4: '0.3', 5: '1'}
+142	142		205						1050.0	{1: '1', 3: '0.3', 4: '1', 5: '1'}
+143	143		301			DialogEnable	DialogDisable			{1: '1', 3: 'Bathed in the rushing air, the girl seems to shimmer, as though at any moment she might drift away with the wind and dissolve into the distant sky.'}
+144	144		302							"{2: ""(Take Liv's hand)"", 3: '145'}"
+145	145		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCerberusGameChapter/FxUiCerberusGameChapterLizi01.prefab'}
+146	146		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab'}
+147	147		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlinkNew.prefab'}
+148	148		401							{1: '2', 2: '4044'}
+149	149		104							{1: '0|0|-100', 2: '0.3'}
+150	150		203						350.0	{1: '1', 2: '0.3', 5: '-100'}
+151	151		204							{1: '1', 2: '3'}
+152	152		301			DialogEnable				{2: 'Liv', 3: 'Hmm? What is it?', 4: '1', 18: '100013205'}
+153	153		301							"{3: '""I felt like... the wind might carry you away."" ...There\'s no way you could actually say something that cheesy out loud.'}"
+154	154		302							{2: 'So, that thing you wanted to do with me...', 3: '155'}
+155	155		204							{1: '1', 2: '1'}
+156	156		301							{2: 'Liv', 3: 'I want you to come fly with me. In the aircraft my mom left here.', 4: '1', 18: '100013206'}
+157	157		302							{2: 'What about the search for your fairy tale?', 3: '158'}
+158	158		204							{1: '1', 2: '14'}
+159	159		301							"{2: 'Liv', 3: ""Well... we've looked everywhere at home, and my secret base, and through all of Mom's old books, but I still haven't found it."", 4: '1', 18: '100013207'}"
+160	160		204							{1: '1', 2: '10'}
+161	161		301							{2: 'Liv', 3: 'The town library might have a copy, but that can wait.', 4: '1', 18: '100013208'}
+162	162		204							{1: '1'}
+163	163		301							"{2: 'Liv', 3: ""The wind is just right today, perfect for two people to fly. If we don't go now, we might miss our chance!"", 4: '1', 18: '100013209'}"
+164	164		301							{3: 'She gently tightens her grip on your hand. Behind the mist in her eyes lies a heartfelt sincerity, unmistakable and true.'}
+165	165		204							{1: '1', 2: '6'}
+166	166		301							{2: 'Liv', 3: 'So... shall we? Please?', 4: '1', 18: '100013210'}
+167	167		301				DialogDisable			"{3: ""It's rare to see you so excited about something... How could I say no to that?""}"
+168	168		302							"{2: ""Let's go."", 3: '169'}"
+169	169		204							{1: '1', 2: '2'}
+170	170		203						350.0	{1: '1', 2: '0.3', 4: '-50', 5: '-150'}
+171	171		202							{1: '1'}
+172	172		401							{1: '2', 2: '4331'}
+173	173		104						350.0	{1: '0|0|-200', 2: '0.3'}
+174	174		301			DialogEnable	DialogDisable			{3: 'She excitedly grabs your hand and pulls you toward Gray Wing.'}
+175	175		401							{1: '1', 2: '36'}
+176	176		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+177	177		401							{1: '1', 2: '6244'}
+178	178		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront33.png', 3: '0', 4: '1', 5: '0'}
+179	179		401							{1: '2', 2: '13015204'}
+180	180		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '1'}
+181	181		104						550.0	{1: '0|0|-250', 2: '0.5', 4: '1'}
+182	182		301			DialogEnable	DialogDisable			{3: 'Together, you push down on the pedals, and the craft surges up the hillside.'}
+183	183		104						550.0	{1: '0|-150|-250', 2: '0.5', 4: '1'}
+184	184		401							{1: '2', 2: '4663'}
+185	185		502						300.0	{1: 'RImgBg1Shake'}
+186	186		301			DialogEnable				{3: '—It takes off.'}
+187	187		301							"{3: ""But contrary to all your hopes, it doesn't soar. Instead, it barely climbs, skimming the grass before lurching over the cliff's edge.""}"
+188	188		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+189	189		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront33.png', 3: '1', 4: '0', 5: '0'}
+190	190		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+191	191		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory537.jpg'}
+192	192		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront33.png', 3: '0', 4: '1', 5: '0'}
+193	193		301			RImgBg1Shake				"{3: ""You're now airborne above the sea surface, but just barely. Gray Wing wobbles drunkenly through the air, threatening to plunge into the waves below at any second.""}"
+194	194		302							{2: 'Liv, is the wind engine generating any power?', 3: '195'}
+195	195		201							{1: '1', 2: '501378', 3: '10'}
+196	196		301							"{1: '1', 2: 'Liv', 3: ""Yes, but just barely. The wind's still not strong enough today. We're almost entirely on pedal power now..."", 4: '1', 18: '100013211'}"
+197	197		204							{1: '1', 2: '2'}
+198	198		301				DialogDisable			"{2: 'Liv', 3: ""Don't worry, Commandant. Constructs are much stronger than humans. Just relax and leave this to me."", 4: '1', 18: '100013212'}"
+199	199		202							{1: '1'}
+200	200		302							{2: '(Pedal harder)', 3: '201', 4: '(Lean backward)', 5: '205'}
+201	201		401							{1: '2', 2: '764'}
+202	202		301			DialogEnable	DialogDisable			{3: 'The thought of Liv facing this alone is unthinkable. It fuels you, and you drive your feet against the pedals with a desperate, newfound strength. Your exoskeleton whines in protest, its servos humming with a dangerous heat as it forces energy into your burning muscles.'}
+203	203		104						350.0	{1: '0|-100|-150', 2: '0.3'}
+204	204	208	301			DialogEnable				{3: 'And then, a miracle—Gray Wing answers. The faltering craft bucks, then surges upward, climbing steadily as if lifted by your burst of force.'}
+205	205		301			DialogEnable	DialogDisable			"{3: ""Liv is right. Even with your exoskeleton, human strength is nothing compared to a Construct's. You might as well let her handle everything.""}"
+206	206		104						350.0	{1: '0|-100|-150', 2: '0.3'}
+207	207		301			DialogEnable				{3: 'The moment you stop pedaling, a miracle happens. The aircraft starts climbing higher and higher...'}
+208	208		201							{1: '1', 2: '501378', 3: '2'}
+209	209		301							{1: '1', 2: 'Liv', 3: 'Phew... Looks like we caught an updraft. We can rest for a bit now.', 4: '1', 18: '100013213'}
+210	210		204							{1: '1', 2: '10'}
+211	211		301							{2: 'Liv', 3: 'If only the wind were stronger today... Gray Wing is built to climb higher as the wind grows stronger.', 4: '1', 18: '100013214'}
+212	212		302							{2: 'What happens if the wind gets too strong?', 3: '213'}
+213	213		204							{1: '1', 2: '8'}
+214	214		301							"{2: 'Liv', 3: ""I'm not actually sure... This is my first time flying it, to be honest."", 4: '1', 18: '100013215'}"
+215	215		204							{1: '1', 2: '2'}
+216	216		301							{2: 'Liv', 3: 'But this aircraft did survive a category 10 windstorm once.', 4: '1', 18: '100013216'}
+217	217		302							"{2: ""It's hard to picture your mother flying in this."", 3: '218'}"
+218	218		204							{1: '1', 2: '10'}
+219	219		301							{2: 'Liv', 3: 'My mom came from a family of pilots. This was part of her dowry when she moved south to marry my dad.', 4: '1', 18: '100013217'}
+220	220		204							{1: '1', 2: '15'}
+221	221		301							"{2: 'Liv', 3: ""But she wasn't feeling well enough to fly, so Dad kept it in the yard. That way, she could still come sit inside whenever she had a moment."", 4: '1', 18: '100013218'}"
+222	222		204							{1: '1', 2: '10'}
+223	223		301							"{2: 'Liv', 3: ""When I was little, she'd tell me stories right here in this cockpit. I'd be sitting exactly where I am now."", 4: '1', 18: '100013219'}"
+224	224		302							{2: 'Is that why you wanted me to fly in it with you?', 3: '225'}
+225	225		204							{1: '1', 2: '6'}
+226	226		301							"{2: 'Liv', 3: ""Well... yes. But that's not the only reason..."", 4: '1', 18: '100013220'}"
+227	227		301							"{3: ""For some reason, her cheeks are flushed bright red. She seems to be straining, though her feet aren't even on the pedals.""}"
+228	228		301				DialogDisable			"{3: ""You should be riding an updraft. There's no reason for any exertion...""}"
+229	229		302							{2: 'Liv, are you alright?', 3: '230'}
+230	230		401							{1: '2', 2: '10028615'}
+231	231		502						350.0	{1: 'RImgBg1Shake'}
+232	232		204							{1: '1', 2: '8'}
+233	233		401							{1: '2', 2: '4044'}
+234	234		203						400.0	{1: '1', 2: '0.35', 4: '-50'}
+235	235		301			DialogEnable	DialogDisable			{3: 'Without warning, the steady cabin lurches violently. Liv stumbles and collapses back into her seat. You stomp on the pedals, one hand flying out to catch her.'}
+236	236		204							{1: '1', 2: '15'}
+237	237		203						550.0	{1: '1', 2: '0.5'}
+238	238		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Mmph!', 4: '1', 18: '100013221'}
+239	239		301			PanelActor1Shake				"{3: ""Your fingers touch a body gone completely limp. Despite no battle, she's in a state of total exhaustion.""}"
+240	240		302							"{2: ""Liv... were you secretly using your frame's lifting power this whole time...?"", 3: '241'}"
+241	241		204							{1: '1', 2: '5'}
+242	242		301							"{2: 'Liv', 3: ""I wasn't! It's... it's just that the updraft suddenly dropped!"", 4: '1', 18: '100013222'}"
+243	243		202							{1: '1'}
+244	244		401							{1: '2', 2: '10028615'}
+245	245		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+246	246		301			RImgBg1Shake				"{3: ""Gray Wing drifts aimlessly, wobbly as the girl's confused emotions. You fight to adjust its course, wrestling it toward the shoreline.""}"
+247	247		401							{1: '2', 2: '4892'}
+248	248		301			RImgBg1Shake				{3: 'Thud. Mid-flight, something tumbles from a shadowed corner.'}
+249	249		301				AniZhuanchangBegin			{3: 'A thick book? You barely glimpse its cover before you crash onto the shallow shore in a staggering landing.'}
+250	250		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront33.png', 3: '1', 4: '0', 5: '0'}
+251	251		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+252	252		401							{1: '1', 2: '36'}
+253	253		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory533.jpg'}
+254	254		401							{1: '1', 2: '162'}
+255	255		301			AniZhuanchangEnd				{3: 'After the brief, jarring flight, you and Liv finally push Gray Wing out of the shallow shore.'}
+256	256		302							"{2: 'So if we really need to fly, you could just carry me with your frame, right?', 3: '257', 4: ""Maybe Gray Wing just doesn't like this weather."", 5: '264'}"
+257	257		201							{1: '1', 2: '501378', 3: '10'}
+258	258		301							"{1: '1', 2: 'Liv', 3: ""Umm... even if we used my frame's lifting power to fly instead..."", 4: '1', 18: '100013223'}"
+259	259		302							"{2: ""Is there something wrong with using your frame's lifting power?"", 3: '260'}"
+260	260		301							"{2: 'Liv', 3: ""It's not that, exactly... It just feels different from soaring with the wind..."", 4: '1', 18: '100013224'}"
+261	261		301							"{3: ""Now, for reasons she hasn't shared, Liv seems utterly determined to handle the flight using nothing but the raw power of nature itself.""}"
+262	262		204							{1: '1', 2: '8'}
+263	263	266	301							{2: 'Liv', 3: 'Remember? Gray Wing is built to climb higher as the wind grows stronger.', 4: '1', 18: '100013225'}
+264	264		201							{1: '1', 2: '501378', 3: '10'}
+265	265		301							"{1: '1', 2: 'Liv', 3: ""That's right. It really does prefer constant, strong winds."", 4: '1', 18: '100013226'}"
+266	266		204							{1: '1', 2: '14'}
+267	267		301							{2: 'Liv', 3: 'But today the wind suddenly died down.', 4: '1', 18: '100013227'}
+268	268		204							{1: '1', 2: '8'}
+269	269		301							{2: 'Liv', 3: 'If we miss this chance, we might not get another day with winds this strong our entire vacation.', 4: '1', 18: '100013228'}
+270	270		204							{1: '1', 2: '15'}
+271	271		301							{2: 'Liv', 3: 'Who knows when the next chance will be? Without a good gust, Gray Wing might not even get off the ground.', 4: '1', 18: '100013229'}
+272	272		301							"{2: 'Liv', 3: ""And if it can't fly... then we won't get the..."", 4: '1', 18: '100013230'}"
+273	273		302							{2: 'Get what?', 3: '274'}
+274	274		204							{1: '1', 2: '5'}
+275	275		301							"{2: 'Liv', 3: ""Then we won't get the God of Wind's blessing..."", 4: '1', 18: '100013231'}"
+276	276		302							{2: 'Blessing? What kind of blessing?', 3: '277', 4: '...', 5: '277'}
+277	277		204							{1: '1', 2: '7'}
+278	278		301							{2: 'Liv', 3: 'My mom said... according to legend, if you soar through the winds with someone you love, the God of Wind will bless you to be together for a lifetime.', 4: '1', 18: '100013232'}
+279	279		302							{2: '...', 3: '280'}
+280	280		202							{1: '1', 6: '1'}
+281	281		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+282	282		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory752.jpg'}
+283	283		504							{1: '0.7'}
+284	284		201							{1: '1', 2: '501378', 3: '10'}
+285	285		301							{1: '1', 2: 'Liv', 3: 'But... I really do believe in them.', 4: '1', 18: '100013233'}
+286	286		301							{2: 'Liv', 3: 'I believe that stories like those are truly happening, somewhere in the world.', 4: '1', 18: '100013234'}
+287	287		202							{1: '1', 6: '1'}
+288	288		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+289	289		504							{1: '0'}
+290	290		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory533.jpg'}
+291	291		401							{1: '2', 2: '2635'}
+292	292		201							{1: '1', 2: '501378', 3: '7'}
+293	293		301							{1: '1', 3: 'Liv stares at the ground, scuffing her foot through the sand. Absorbed in her frustration over the failed flight, she refuses to lift her flushed face.'}
+294	294		302							{2: 'Liv.', 3: '295'}
+295	295		202							{1: '1'}
+296	296		306							{1: '1'}
+297	297		401							{1: '2', 2: '4095'}
+298	298		301							{3: 'Hoping to comfort her, you produce the book that had tumbled from the cabin. You present it with a flourish, like a magic trick.'}
+299	299		306							
+300	300		201							{1: '1', 2: '501378', 3: '3'}
+301	301		301							{1: '1', 2: 'Liv', 3: 'Oh... is this a fairy tale book?', 4: '1', 18: '100013235'}
+302	302		204							{1: '1', 2: '2'}
+303	303		301				DialogDisable			{2: 'Liv', 3: 'It might be from when my mother sat with me in Gray Wing and read me stories!', 4: '1', 18: '100013236'}
+304	304		203						550.0	{1: '1', 2: '0.5', 4: '-50', 5: '-100'}
+305	305		401							{1: '2', 2: '5307'}
+306	306		203						350.0	{1: '1', 2: '0.3'}
+307	307		301			DialogEnable	AniZhuanchangBegin			{3: 'Her eyes light up. She takes the book with delight, her previous disappointment replaced by rapt concentration.'}
+308	308		204						1000.0	{1: '1', 2: '15'}
+309	309		301			AniZhuanchangEnd				{3: 'Fifteen minutes later, she finally looks up, her expression now unreadably complex.'}
+310	310		302							"{2: ""Any luck? Is the story you're looking for in there?"", 3: '311'}"
+311	311		301							"{2: 'Liv', 3: ""No... it's not this one, either."", 4: '1', 18: '100013237'}"
+312	312		302							{2: '...I see.', 3: '313', 4: '...', 5: '313'}
+313	313		204							{1: '1', 2: '10'}
+314	314		301							"{2: 'Liv', 3: ""But it's okay. I still like these stories... You know, most of them start out so sad, but they always find a way to end happily. I guess that was just the author's style."", 4: '1', 18: '100013238'}"
+315	315		204							{1: '1', 2: '8'}
+316	316		301							{2: 'Liv', 3: 'Tilmin Kj{195|166}reste... Liv...', 4: '1', 18: '100013239'}
+317	317		302							{2: '...?', 3: '318'}
+318	318		204							{1: '1', 2: '3'}
+319	319		301							"{2: 'Liv', 3: ""Tilmin Kj{195|166}reste Liv. That's the author's name."", 4: '1', 18: '100013240'}"
+320	320		301							{3: 'Fairy tales by Liv... for Liv? You exchange a glance, mutual shock giving way to profound bewilderment.'}
+321	321		204							{1: '1', 2: '10'}
+322	322		301							"{2: 'Liv', 3: 'This ""Liv"" must be the one who wrote that story.', 4: '1', 18: '100013241'}"
+323	323		302							{2: 'What makes you so sure all of a sudden?', 3: '324'}
+324	324		204							{1: '1', 2: '14'}
+325	325		301							"{2: 'Liv', 3: ""It's all coming back to me. The stories, the pictures... Not only did I hear these stories from my mother, but the illustrations look so familiar too... I feel like I've seen them somewhere before."", 4: '1', 18: '100013242'}"
+326	326		204							{1: '1', 2: '10'}
+327	327		301							{2: 'Liv', 3: 'Actually... I think it was seeing a painting like this that made me remember the story in the first place... But it was just recently...', 4: '1', 18: '100013243'}
+328	328		202							{1: '1', 6: '1'}
+329	329		401							{1: '2', 2: '558'}
+330	330		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+331	331		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory259.png'}
+332	332		504							{1: '0.7'}
+333	333		301				DialogDisable			{3: 'The painting that once left Liv so entranced suddenly flashes through your mind.'}
+334	334		504							{1: '0'}
+335	335		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+336	336		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1305.jpg'}
+337	337		302							{2: 'At the art exhibition? In Babylonia?', 3: '338'}
+338	338		201							{1: '1', 2: '501378', 3: '1'}
+339	339		301			DialogEnable				"{1: '1', 2: 'Liv', 3: ""Yes! That's the one. Now, we just need to find out the illustrator's name..."", 4: '1', 18: '100013244'}"
+340	340		202							{1: '1'}
+341	341		401							{1: '2', 2: '5307'}
+342	342		301				DialogDisable			{3: 'Together, you anxiously flip through the pages until you find the name at last—'}
+343	343		307							{1: 'Vimine.', 3: '50'}
+344	344		301							{3: 'Vimine.'}
+345	345		307		1		AniZhuanchangBegin			{2: '1'}

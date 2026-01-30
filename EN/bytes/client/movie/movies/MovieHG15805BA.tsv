@@ -1,0 +1,464 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_01_01.jpg'}
+2	2		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '3'}
+4	4		401			AniZhuanchangEnd				{1: '1', 2: '6205'}
+5	5		401							{1: '2', 2: '5165'}
+6	6		301			DialogEnable	DialogDisable			{3: 'After the north wind howls again, silence falls abruptly over the land.'}
+7	7		302							{2: '(Open your eyes)', 3: '8'}
+8	8		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+9	9		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+10	10		505						1800.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+11	11		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_01_02.png', 3: '0', 4: '1', 5: '1'}
+12	12		104							{1: '0|80|0', 2: '0', 4: '3'}
+13	13		104						1500.0	{1: '0|0|0', 2: '1', 4: '3'}
+14	14		301			DialogEnable				{3: 'The woman in silver stands alone in the wind and snow.'}
+15	15		301							{2: 'Bianca', 3: '...', 18: '100010909'}
+16	16		301							{3: 'Pure white snowflakes freeze her despair and extinguish her faith... The snow falls on her shoulders and upon the lives she took with her own hands.'}
+17	17		502							{1: 'DialogDisable'}
+18	18		205							{1: '1003', 3: '0', 4: '1', 5: '0'}
+19	19		101			AniZhuanchangEnd			300.0	{1: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_01_03.jpg'}
+20	20		301			DialogEnable				{3: 'She stands there, dazed, frozen in place.'}
+21	21		302							{2: 'Bianca...', 3: '22'}
+22	22		301							{2: 'Bianca', 3: '...?', 18: '100010910'}
+23	23		502						500.0	{1: 'DialogDisable'}
+24	24		401						200.0	{1: '2', 2: '13081710'}
+25	25		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_01_06.jpg', 3: '0', 4: '1', 5: '1.5'}
+26	26		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_01_06.jpg'}
+27	27		205							{1: '999'}
+28	28		301			DialogEnable				"{3: ""Bianca slowly turns around, and crimson bursts into view. Her silver attire is stained with the blood of her sins. It's undeniable proof that she has slain those closest to her.""}"
+29	29		502						500.0	{1: 'DialogDisable'}
+30	30		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0.7'}
+31	31		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_01_04.png', 3: '0', 4: '1', 5: '1'}
+32	32		104							{1: '-200|0|0', 2: '0', 4: '4'}
+33	33		104						1200.0	{1: '0|0|0', 2: '1', 4: '4'}
+34	34		301			DialogEnable	AniZhuanchangBegin			{2: 'Bianca', 3: 'Commandant...?', 18: '100010911'}
+35	35		205							{1: '1003', 3: '0', 4: '1', 5: '0'}
+36	36		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+37	37		502						500.0	{1: 'DialogDisable'}
+38	38		401							{1: '2', 2: '1514'}
+39	39		101			AniZhuanchangEnd			500.0	{1: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_01_05.jpg'}
+40	40		301			DialogEnable				{3: 'The bloody Sacred Sword is dragging across the snow as the figure in red and white approaches you slowly.'}
+41	41		301							"{3: 'The ""Witch,"" like the one in the eerie fairy tale that the children whisper about. Will you become another soul taken by that blade?'}"
+42	42		302							{2: '(Try to escape)', 3: '43', 4: '(Wait quietly for her)', 5: '44'}
+43	43	45	301				AniZhuanchangBegin			{3: 'Your body is too wounded and overwhelmed by fatigue, making you no longer able to escape.'}
+44	44		301				AniZhuanchangBegin			{3: 'Your intuition is reminding you that Bianca is still the same Bianca.'}
+45	45		502						500.0	{1: 'DialogDisable'}
+46	46		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_02_01.jpg'}
+47	47		104							{1: '0|50|0', 2: '0'}
+48	48		104			AniZhuanchangEnd			1000.0	{1: '0|0|0', 2: '1'}
+49	49		401						500.0	{1: '2', 2: '1543'}
+50	50		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_02_04.png', 3: '0', 4: '1', 5: '1'}
+51	51		205						1200.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_02_03.png', 3: '0', 4: '1', 5: '0.3'}
+52	52		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_02_04.png'}
+53	53		205							{1: '1003', 3: '0', 4: '1', 5: '0'}
+54	54		104						1500.0	{1: '0|0|-50', 2: '3'}
+55	55		301			DialogEnable			1500.0	"{3: 'The ""Witch"" leans close, her weary eyes struggling to make out the human face before her.'}"
+56	56		301						1500.0	{2: 'Bianca', 3: 'Ah... Thank goodness... Thank goodness...', 18: '100010912'}
+57	57		301							{3: '<color=#DDA117><size=40><i>Commandant, you see, my sword is dripping with the blood of countless of our own...</i></size></color>', 18: '100010913'}
+58	58		502						500.0	{1: 'DialogDisable'}
+59	59		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_02_06.png', 3: '0', 4: '1', 5: '1.5'}
+60	60		205						2000.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_02_05.png', 3: '0', 4: '1', 5: '1.5'}
+61	61		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_02_07.png', 3: '0', 4: '1', 5: '0.5'}
+62	62		104							{1: '-400|-200|0', 2: '0', 4: '4'}
+63	63		104						3000.0	{1: '0|0|0', 2: '3', 4: '4'}
+64	64		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_02_08.png'}
+65	65		205							{1: '1003', 3: '0', 4: '1', 5: '0'}
+66	66		205							{1: '1005', 3: '0', 4: '1', 5: '0'}
+67	67		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+68	68		301			DialogEnable	AniZhuanchangBegin	300.0		{3: '<color=#DDA117><size=40><i>I killed my beloved friends, killed the father who raised me, ruined this church that was once... filled with moments of joy and laughter with you...</i></size></color>', 18: '100010914'}
+69	69		502						500.0	{1: 'DialogDisable'}
+70	70		205							{1: '1007', 3: '0', 4: '1', 5: '0'}
+71	71		101			AniZhuanchangEnd			500.0	{1: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_02_09.jpg'}
+72	72		301			DialogEnable				"{3: '""Those who wield the Sacred Sword will one day be cut by its thorns."" This is the price of her powers.'}"
+73	73		502						500.0	{1: 'DialogDisable'}
+74	74		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_02_10.jpg', 3: '0', 4: '1', 5: '1.5'}
+75	75		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_02_10.jpg'}
+76	76		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+77	77		301			DialogEnable				{3: '<color=#DDA117><size=40><i>I loathe the virus, but I hate myself even more. I hate that all I could do was take lives with my own hands.</i></size></color>', 18: '100010915'}
+78	78		502						500.0	{1: 'DialogDisable'}
+79	79		401							{1: '2', 2: '1505'}
+80	80		205						1700.0	{1: '1003', 2: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_02_11.png', 3: '0', 4: '1', 5: '1.2'}
+81	81		301			DialogEnable	AniZhuanchangBegin			{3: '<color=#DDA117><size=40><i>By the time I came to my senses, my sins were already beyond redemption...</i></size></color>', 18: '100010916'}
+82	82		502						500.0	{1: 'DialogDisable'}
+83	83		205							{1: '1003', 3: '0', 4: '1', 5: '0'}
+84	84		101			AniZhuanchangEnd			500.0	{1: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_03_01.jpg'}
+85	85		301			DialogEnable				"{2: 'Bianca', 3: ""I'm sorry... Commandant..."", 18: '100010917'}"
+86	86		502						500.0	{1: 'DialogDisable'}
+87	87		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_03_02.png', 3: '0', 4: '1', 5: '1'}
+88	88		104							{1: '50|0|0', 2: '0', 4: '3'}
+89	89		401							{1: '2', 2: '1543'}
+90	90		104						1500.0	{1: '0|0|0', 2: '1', 4: '3'}
+91	91		205							{1: '1003', 3: '0', 4: '1', 5: '0'}
+92	92		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_03_03.jpg'}
+93	93		301			DialogEnable				{3: '<color=#DDA117><size=40><i>These hands no longer deserve to hold anyone close.</i></size></color>', 18: '100010918'}
+94	94		301							{3: '<color=#DDA117><size=40><i>But... Commandant... I am so grateful...</i></size></color>', 18: '100010919'}
+95	95		502						500.0	{1: 'DialogDisable'}
+96	96		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_03_04.png', 3: '0', 4: '1', 5: '1'}
+97	97		104							{1: '0|-100|0', 2: '0', 4: '3'}
+98	98		401							{1: '2', 2: '4895'}
+99	99		104						1500.0	{1: '0|0|0', 2: '0.8', 4: '3'}
+100	100		302							"{2: ""...Don't go."", 3: '101', 4: ""...Bianca, this isn't your fault."", 5: '101', 6: ""Let's sit down and talk, okay?"", 7: '101'}"
+101	101		205						1500.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_03_05.jpg', 3: '0', 4: '1', 5: '1'}
+102	102		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_03_05.jpg'}
+103	103		205							{1: '1003', 3: '0', 4: '1', 5: '0'}
+104	104		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+105	105		301			DialogEnable				{3: '<color=#DDA117><size=40><i>...I get to see you one last time... before I leave...</i></size></color>', 18: '100010920'}
+106	106		502						500.0	{1: 'DialogDisable'}
+107	107		101			AniZhuanchangEnd			300.0	{1: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_04_01.jpg'}
+108	108		301			DialogEnable				{3: '<color=#DDA117><size=40><i>I will pray for you... pray for the calamity to end, for the living to find solace, for the dead to find peace... and pray that your life continues to unfold with peace and joy...</i></size></color>', 18: '100010921'}
+109	109		502						500.0	{1: 'DialogDisable'}
+110	110		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_04_02.jpg', 3: '0', 4: '1', 5: '1.5'}
+111	111		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_04_02.jpg'}
+112	112		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+113	113		301			DialogEnable	AniZhuanchangBegin			"{2: 'Bianca', 3: ""Don't worry... reinforcements will come for you soon..."", 18: '100010922'}"
+114	114		502						500.0	{1: 'DialogDisable'}
+115	115		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_05_01.png'}
+116	116		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_05_02.png', 4: '3'}
+117	117		104							{1: '200|0|0', 2: '0'}
+118	118		104							{1: '-200|0|0', 2: '0', 4: '3'}
+119	119		104			AniZhuanchangEnd				{1: '0|0|0', 2: '5.5'}
+120	120		104						2000.0	{1: '0|0|0', 2: '5.5', 4: '3'}
+121	121		301			DialogEnable			2000.0	{3: '<color=#DDA117><size=40><i>Until then... I may have to commit one last sin.</i></size></color>', 18: '100010923'}
+122	122		301						2500.0	{2: 'Bianca', 3: 'Please take care of yourself... Commandant...', 18: '100010924'}
+123	123		502						500.0	{1: 'DialogDisable'}
+124	124		101							{4: '3', 5: '1'}
+125	125		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_05_03.jpg', 4: '4'}
+126	126		104						800.0	{1: '0|110|0', 2: '1', 4: '4'}
+127	127		205						2000.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_05_04.png', 3: '0', 4: '1', 5: '1.5'}
+128	128		301			DialogEnable	AniZhuanchangBegin			{3: 'She grips your hand tightly, very tightly... Then she gradually lets go, gently prying apart your fingers.'}
+129	129		502						500.0	{1: 'DialogDisable'}
+130	130		205							{1: '1005', 3: '0', 4: '1', 5: '0'}
+131	131		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_05_05.png', 4: '4'}
+132	132		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_05_06.png'}
+133	133		205			AniZhuanchangEnd				{1: '1003', 2: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_05_07.png', 3: '0', 4: '1', 5: '1'}
+134	134		104							{1: '60|0|-50', 2: '0', 4: '3'}
+135	135		104						1200.0	{1: '0|0|0', 2: '0.8', 4: '3'}
+136	136		101							{4: '3', 5: '1'}
+137	137		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_05_08.jpg'}
+138	138		301			DialogEnable				"{3: ""The Witch//Holy Maiden's figure slowly fades into the distance...""}"
+139	139		502						500.0	{1: 'DialogDisable'}
+140	140		101							{4: '4', 5: '1'}
+141	141		401							{1: '2', 2: '1514'}
+142	142		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_05_09.jpg', 3: '0', 4: '1', 5: '1.5'}
+143	143		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Bianca/V360_05_09.jpg'}
+144	144		205							{1: '999'}
+145	145		301			DialogEnable	AniZhuanchangBegin			{3: 'The footprints buried deep in the snow look like the path once taken, or the way home.'}
+146	146		402							{1: '5165'}
+147	147		401						2000.0	{1: '1', 2: '36'}
+148	148		401							{1: '1', 2: '120'}
+149	149		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+150	150		308							{1: '151', 2: '153'}
+151	151		301			AniZhuanchangEnd				{2: '???', 3: '【kuroname】, wake up!', 18: '100010925'}
+152	152		308							{3: '155'}
+153	153		301			AniZhuanchangEnd				{2: '???', 3: '【kuroname】, wake up!', 18: '100010926'}
+154	154		308							{3: '155'}
+155	155		301							{3: 'You are so cold.'}
+156	156		302							{2: '(Open your eyes)', 3: '157'}
+157	157		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+158	158		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3401_06.jpg'}
+159	159		201							{1: '1', 2: '500726', 7: '1'}
+160	160		301							{1: '1', 3: 'You struggle to focus your vision as a girl with purple hair anxiously shakes your body.'}
+161	161		301							{2: '???', 3: 'Wake up... We need to go back!', 4: '1', 18: '100010927'}
+162	162		302							{2: 'Rosie?', 3: '163', 4: 'Bianca...?', 5: '168'}
+163	163		202							{1: '1'}
+164	164		301							{3: 'As consciousness returns, bone-piercing cold seeps into your bones. Pain is chiseling at your joints like ice picks, and each shiver drives the sharp agony even deeper.'}
+165	165		201							{1: '1', 2: '500726'}
+166	166		301							"{1: '1', 3: ""Hearing her name, the girl's tense expression finally eases.""}"
+167	167	173	301							{2: 'Rosie', 3: 'Thank goodness. You still remember me.', 4: '1', 18: '100010928'}
+168	168		202							{1: '1'}
+169	169		301							{3: 'As consciousness returns, bone-piercing cold seeps into your bones. Pain is chiseling at your joints like ice picks, and each shiver drives the sharp agony even deeper.'}
+170	170		301							"{3: ""The surface under you is hard and cold. It's not a bed and certainly not an embrace... Bianca isn't here. Your mind quickly registers this fact.""}"
+171	171		201							{1: '1', 2: '500726'}
+172	172		301							"{1: '1', 2: 'Rosie', 3: 'I\'m ""Rosie"". Bianca... she\'s gone.', 4: '1', 18: '100010929'}"
+173	173		301				DialogDisable			{2: 'Rosie', 3: 'How do you feel?', 4: '1', 18: '100010930'}
+174	174		302							{2: '...I had a nightmare.', 3: '175'}
+175	175		302							{2: 'In it... Bianca was forced to kill her father figure...', 3: '176'}
+176	176		302							{2: '...And kindhearted soldiers...', 3: '177'}
+177	177		301			DialogEnable				{2: 'Rosie', 3: 'What happened after that?', 4: '1', 18: '100010931'}
+178	178		302							{2: 'After that, she left me in the wind and snow, and never came back...', 3: '179'}
+179	179		301							"{2: 'Rosie', 3: ""Yeah... that was her nightmare, but now we're living in it."", 4: '1', 18: '100010932'}"
+180	180		202							{1: '1'}
+181	181		306							{1: '1'}
+182	182		301							"{3: ""Rosie silently steps to the side, revealing a blue-black dome adorned with religious murals. This church is familiar, but it's not the one where you first met Bianca.""}"
+183	183		301							{3: 'Voices of abuse and mockery surge in from all directions.'}
+184	184		306							
+185	185		201							{1: '1', 2: '500813', 4: '400'}
+186	186		201							{1: '2', 2: '500133', 4: '-400'}
+187	187		301							{1: '1', 2: 'Reinforcement', 3: 'She killed them! When we got there, she was covered in blood, running off alone with her sword!', 4: '1', 18: '100010933'}
+188	188		301							"{2: 'Sister A', 3: ""O Lord... but she's the Holy Maiden chosen by You!"", 4: '2', 18: '100010934'}"
+189	189		202							{1: '1', 2: '2', 6: '1'}
+190	190		201							{1: '1', 2: '500055'}
+191	191		301							{1: '1', 2: 'Bonnie', 3: 'The Holy Maiden must have her reasons. She prayed for us, for everyone, even at the cost of her own life. The children and I saw this with our own eyes.', 4: '1', 18: '100010935'}
+192	192		202							{1: '1', 6: '1'}
+193	193		201							{1: '1', 2: '500133', 7: '1'}
+194	194		301			PanelActor1Shake				"{1: '1', 2: 'Sister A', 3: ""It's a curse... It must be the Sacred Sword's curse!"", 4: '1', 18: '100010936'}"
+195	195		301				DialogDisable			"{2: 'Sister A', 3: ""Anyone who tries to use the Sacred Sword's power will be consumed by it... She drew the Sacred Sword, so she turned into a killer!"", 4: '1', 18: '100010937'}"
+196	196		302							{2: 'The infected will only kill more people.', 3: '197'}
+197	197		302							{2: 'She had no choice but to put an end to their sins.', 3: '198'}
+198	198		203							{1: '1', 2: '0.25', 3: '-400'}
+199	199		201							{1: '2', 2: '500813', 4: '400'}
+200	200		301			DialogEnable				"{1: '1', 2: 'Reinforcement', 3: ""It's you? Are you that commandant? The only one who survived?"", 4: '2', 18: '100010938'}"
+201	201		301							{2: 'Reinforcement', 3: 'Did you know that she killed Father Snow? The priest who raised her?', 4: '2', 18: '100010939'}
+202	202		301							"{2: 'Reinforcement', 3: ""And Toby! That man was my brother-in-arms! We faced life and death together! He promised to bring me wine from the Snowfields, but I'll never get to drink with him again because he died under her sword!"", 4: '2', 18: '100010940'}"
+203	203		301				DialogDisable			{2: 'Sister A', 3: 'I watched Toby grow up! He was a ball of sunshine and was always so cheerful and kind to everyone. He had a bright future ahead of him, but the Witch took it all...', 4: '1', 18: '100010941'}
+204	204		302							{2: 'She betrayed her sacred role and killed those she loves...', 3: '205', 4: '...', 5: '206'}
+205	205		302							"{2: ""Can't you tell she's suffering the most?"", 3: '206'}"
+206	206		301			DialogEnable				{2: 'Sister A', 3: 'Regardless, her hands are already stained with blood, and the church will never accept a witch like her!', 4: '1', 18: '100010942'}
+207	207		202							{1: '1', 2: '2', 6: '1'}
+208	208		201							{1: '1', 2: '500055'}
+209	209		301			RImgBg1Shake				"{1: '1', 2: 'Bonnie', 3: ""Why can't we wait until she comes back?"", 4: '1', 18: '100010943'}"
+210	210		202							{1: '1', 6: '1'}
+211	211		201							{1: '1', 2: '500813', 4: '400'}
+212	212		201							{1: '2', 2: '500133', 4: '-400'}
+213	213		301							{1: '1', 2: 'Sister A', 3: 'Then why did she kill them? Is this how she treats people who once helped her? Will she do the same to us? Like how she killed Father Snow and Toby?!', 4: '2', 18: '100010944'}
+214	214		301							"{2: 'Reinforcement', 3: ""I'm going to avenge Toby and Father Snow! Don't stop me!"", 4: '1', 18: '100010945'}"
+215	215		301							{3: 'Surprisingly, these angry people refuse to believe a word from you and Bonnie and only grow more furious.'}
+216	216		202							{1: '1', 2: '2', 6: '1'}
+217	217		201							{1: '1', 2: '500539', 3: '14'}
+218	218		203							{1: '1', 2: '0.25', 5: '-20'}
+219	219		301							{1: '1', 3: 'As you try to explain some more, Rosie tugs at the corner of your shirt.'}
+220	220		308							{1: '221', 2: '223'}
+221	221		301							"{2: 'Rosie?', 3: ""【kuroname】... It's no use... Let's go back..."", 4: '1', 18: '100010946'}"
+222	222		308							{3: '225'}
+223	223		301							"{2: 'Rosie?', 3: ""【kuroname】... It's no use... Let's go back..."", 4: '1', 18: '100010947'}"
+224	224		308							{3: '225'}
+225	225		202							{1: '1', 6: '1'}
+226	226		201							{1: '1', 2: '501148'}
+227	227		301							{1: '1', 2: 'Father Leon', 3: 'The bloodthirsty witch who has defiled this sacred ground will one day be banished from this world by divine will!', 4: '1', 18: '100010948'}
+228	228		202							{1: '1', 6: '1'}
+229	229		401							{1: '2', 2: '4982'}
+230	230		201							{1: '3', 2: '500426', 4: '-600'}
+231	231		201							{1: '4', 2: '500133'}
+232	232		201							{1: '5', 2: '500813', 4: '600'}
+233	233		301			RImgBg1Shake				"{1: '1', 3: '""Kill the Witch, kill the Witch!"" The seething crowd shouts with their arms high, yelling the merciless judgment their respective ""Gods"" have brought down upon Bianca.'}"
+234	234		402							{1: '4982'}
+235	235		201							{1: '1', 2: '500539', 3: '14', 4: '100', 6: '-20'}
+236	236		203							{1: '1', 2: '0.25', 3: '50', 5: '-20'}
+237	237		301							{1: '1', 3: 'Rosie tugs at the corner of your clothes, pulling you out of the crowds.'}
+238	238		306							{1: '1'}
+239	239		301							{3: 'Even a child could easily accomplish that—'}
+240	240		401							{1: '2', 2: '4833'}
+241	241		203							{1: '1', 2: '0.5'}
+242	242		203							{1: '3', 2: '0.5', 3: '-600', 4: '-100', 5: '-200'}
+243	243		203							{1: '4', 2: '0.5', 4: '-100', 5: '-200'}
+244	244		203						450.0	{1: '5', 2: '0.5', 3: '600', 4: '-100', 5: '-200'}
+245	245		402							{1: '4833'}
+246	246		202							{1: '3', 2: '4', 3: '5'}
+247	247		301							{3: 'For your semi-transparent bodies can pass directly through other people, like souls without physical form.'}
+248	248		306				DialogDisable			
+249	249		302							{2: 'What in the world is going on...', 3: '250'}
+250	250		302							{2: 'Rosa.', 3: '251', 4: 'Rosie.', 5: '252'}
+251	251	253	301			DialogEnable				{2: 'Rosa', 3: 'So you already know...', 4: '1', 18: '100010949'}
+252	252		301			DialogEnable				"{2: 'Rosa', 3: ""It's me, Rosa! Asimov's assistant!"", 4: '1', 18: '100010950'}"
+253	253		302							{2: 'Why are you here?', 3: '254'}
+254	254		202							{1: '1', 6: '1'}
+255	255		401							{1: '2', 2: '4387'}
+256	256		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+257	257		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+258	258		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '4'}
+259	259		504							{1: '0.7'}
+260	260		201							{1: '1', 2: '500004', 7: '1'}
+261	261		301				DialogDisable			"{1: '1', 2: 'Asimov', 3: ""We'll have people monitoring the data at all times, but it still comes down to you two in the end..."", 4: '1', 18: '100010951'}"
+262	262		202							{1: '1', 6: '1'}
+263	263		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+264	264		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3401_06.jpg'}
+265	265		101							{4: '4', 5: '1'}
+266	266		504							{1: '0'}
+267	267		201							{1: '1', 2: '500539', 3: '14', 7: '1'}
+268	268		302							"{2: ""So you're the one who was sent to collect data..."", 3: '272', 4: ""Why didn't you tell me sooner?"", 5: '269'}"
+269	269		301			DialogEnable				"{2: 'Rosa', 3: ""Asimov said... I'm just there to collect data... He told me to just play my role."", 4: '1', 18: '100010952'}"
+270	270		301							{2: 'Rosa', 3: 'He also said we should try not to interfere with the dream world before Bianca wakes up.', 4: '1', 18: '100010953'}
+271	271	273	301							{2: 'Rosa', 3: 'But the conditions for her waking up have been met, so I came to bring you back with me.', 4: '1', 18: '100010954'}
+272	272		301			DialogEnable				{2: 'Rosa', 3: 'Yes... Now that the conditions for Bianca to wake up have been met, we can leave together.', 4: '1', 18: '100010955'}
+273	273		302							{2: 'The conditions...? What conditions?', 3: '274'}
+274	274		301							{2: 'Rosa', 3: 'Her drawing the <color=#ff4e4eff><b>Sacred Sword</b></color>.', 4: '1', 18: '100010956'}
+275	275		302							{2: 'But Asimov said keep her from things that cause her pain.', 3: '276'}
+276	276		202							{1: '1'}
+277	277		301							{3: 'And the Sacred Sword is obviously one.'}
+278	278		201							{1: '1', 2: '500539', 3: '14'}
+279	279		301							"{1: '1', 2: 'Rosa', 3: ""To be honest... I found that strange, too. Maybe it's because she's now able to directly face her most painful past. After using the Sacred Sword, Bianca's frame readings are all improving."", 4: '1', 18: '100010957'}"
+280	280		301							"{2: 'Rosa', 3: ""This means she can now safely use the power of her Crepuscule frame, and we've achieved our goal, so we can leave her dream world now."", 4: '1', 18: '100010958'}"
+281	281		302							{2: 'But this nightmare is still going on.', 3: '282'}
+282	282		301							"{2: 'Rosa', 3: ""That's true..."", 4: '1', 18: '100010959'}"
+283	283		302							{2: 'If I had cleared the snow from the west side earlier, maybe everyone could have evacuated safely.', 3: '284', 4: '...', 5: '290'}
+284	284		301							{2: 'Rosa', 3: 'Then the monsters from the east would have attacked even earlier.', 4: '1', 18: '100010960'}
+285	285		302							"{2: ""If I had ended Toby and the priest's lives earlier, Bianca wouldn't have had to do it herself."", 3: '286', 4: '...', 5: '290'}"
+286	286		301							"{2: 'Rosa', 3: ""You couldn't kill them... Only the Sacred Sword can..."", 4: '1', 18: '100010961'}"
+287	287		302							{2: 'If we had tried harder, everyone would have understood what Bianca did.', 3: '288', 4: '...', 5: '290'}
+288	288		301							{2: 'Rosa', 3: 'We could never have won because that was her own inner voice...', 4: '1', 18: '100010962'}
+289	289		302							{2: '...', 3: '290'}
+290	290		301							{2: 'Rosa', 3: 'Before you performed the Deep M.I.N.D. connection, I had already collected several rounds of data. This world has its own laws, and certain things are bound to happen according to its logic.', 4: '1', 18: '100010963'}
+291	291		301							"{2: 'Rosa', 3: 'Asimov told me that human dreams are all constructed from past experiences. We can change the ""future,"" but we cannot change the ""past""...', 4: '1', 18: '100010964'}"
+292	292		301							"{2: 'Rosa', 3: ""By helping her draw the Sacred Sword and face the painful past that is tormenting her, you've already done so much for her. That's why she can wake up now."", 4: '1', 18: '100010965'}"
+293	293		302							{2: '...And then? Will she still have nightmares like this?', 3: '294'}
+294	294		301				DialogDisable			"{2: 'Rosa', 3: ""I don't know... She might, since memories can't be changed..."", 4: '1', 18: '100010966'}"
+295	295		302							{2: 'If I leave right now...', 3: '296'}
+296	296		302							{2: 'She might be able to use her Crepuscule frame...', 3: '297'}
+297	297		302							{2: 'But her nightmares would continue to torment her...', 3: '298'}
+298	298		301			DialogEnable	DialogDisable			{2: 'Rosa', 3: 'Wait, Commandant! Where are you going?', 4: '1', 18: '100010967'}
+299	299		302							{2: 'To find Bianca.', 3: '300'}
+300	300		302				AniZhuanchangBegin			"{2: 'To change the ""future.""', 3: '301'}"
+301	301		202							{1: '1', 6: '1'}
+302	302		502							{1: 'DialogEnable'}
+303	303		401						2000.0	{1: '1', 2: '36'}
+304	304		401							{1: '1', 2: '100'}
+305	305		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1089.jpg'}
+306	306		301			AniZhuanchangEnd	DialogDisable			{3: 'It is April, the season of recovery, yet swirling snow is hiding the lush spring scenery beneath its veil.'}
+307	307		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1092.jpg', 3: '0', 4: '1', 5: '1.5'}
+308	308		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1092.jpg'}
+309	309		205							{1: '999'}
+310	310		201							{1: '1', 2: '500539'}
+311	311		301			DialogEnable				"{1: '1', 2: 'Rosa', 3: ""They're saying that after the Abyss monsters appeared, many people became followers of the Abyss."", 4: '1', 18: '100010968'}"
+312	312		302							{2: 'Followers of the Abyss?', 3: '313'}
+313	313		204							{1: '1', 2: '14'}
+314	314		301							{2: 'Rosa', 3: 'Yes, followers of the Abyss are supposed to be immune to the Abyss and thus find happiness.', 4: '1', 18: '100010969'}
+315	315		301							"{2: 'Rosa', 3: 'And Bianca became the ""Witch."" The sword she carried also became the Devil Sword... They believe she takes their happiness away.', 4: '1', 18: '100010970'}"
+316	316		202							{1: '1'}
+317	317		301							{3: 'You spend your time searching and asking around the town with Rosa, yet all you learn are nothing but rumors.'}
+318	318		401							{1: '2', 2: '4387'}
+319	319		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+320	320		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory698.jpg'}
+321	321		301							{3: 'Clinging to a glimmer of hope, you ride back together to the Snowfields.'}
+322	322		201							{1: '1', 2: '500539'}
+323	323		308							{1: '324', 2: '326'}
+324	324		301							"{1: '1', 2: 'Rosa', 3: ""We're here, 【kuroname】."", 4: '1', 18: '100010971'}"
+325	325		308							{3: '328'}
+326	326		301							"{1: '1', 2: 'Rosa', 3: ""We're here, 【kuroname】."", 4: '1', 18: '100010972'}"
+327	327		308							{3: '328'}
+328	328		204							{1: '1', 2: '14'}
+329	329		301							{2: 'Rosa', 3: 'There are no signs of monsters here, just like I thought... but...', 4: '1', 18: '100010973'}
+330	330		202							{1: '1'}
+331	331		301							{3: 'But... it is now nothing but ruins.'}
+332	332		401							{1: '2', 2: '4636'}
+333	333		301							"{3: ""You dismount with Rosa and walk toward the once-magnificent church. It's now buried in a thick blanket of snow and is as silent as a tombstone.""}"
+334	334		301							{3: 'Could Bianca be here?'}
+335	335		201							{1: '1', 2: '500539', 3: '14'}
+336	336		301				DialogDisable			{1: '1', 2: 'Rosa', 3: 'This is where we used to listen to Bianca tell stories. You were here, too. All of us gathered around you...', 4: '1', 18: '100010974'}
+337	337		202							{1: '1'}
+338	338		401							{1: '2', 2: '4876'}
+339	339		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory707.jpg', 3: '0', 4: '1', 5: '1'}
+340	340		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory707.jpg'}
+341	341		205							{1: '999'}
+342	342		301			DialogEnable				{3: 'You walk with Rosa among ruins, pull open the frozen windows, and step into what was once the courtyard...'}
+343	343		201							{1: '1', 2: '500539', 3: '14'}
+344	344		301							{1: '1', 2: 'Rosa', 3: 'We used to have snowball fights. Bianca tried to catch the misbehaving kids, but always ended up catching you instead.', 4: '1', 18: '100010975'}
+345	345		202							{1: '1', 6: '1'}
+346	346		401							{1: '2', 2: '2593'}
+347	347		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+348	348		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 4: '4'}
+349	349		504							{1: '0.7'}
+350	350		201							{1: '1', 2: '501280', 3: '5', 7: '1'}
+351	351		301							{1: '1', 3: 'The day Bianca chose to draw the Sacred Sword, the courtyard was stained with blood.'}
+352	352		202							{1: '1', 6: '1'}
+353	353		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+354	354		101							{4: '4', 5: '1'}
+355	355		504							{1: '0'}
+356	356		301							{3: 'You know very well she had a painful past, but not even in dreams can she have the slightest peace.'}
+357	357		201							{1: '1', 2: '500539'}
+358	358		301							"{1: '1', 2: 'Rosa', 3: ""...The snow in front of the steps is so thin, and there's even a small shelter in the middle of the courtyard. Huh... was someone here?"", 4: '1', 18: '100010976'}"
+359	359		202							{1: '1'}
+360	360		301							{3: 'Beyond the steps is the courtyard that holds memories, and at its center are seeds that crystallize hope. The snow has been carefully cleared, while the seeds are sheltered beneath a roof.'}
+361	361		401							{1: '2', 2: '4385'}
+362	362		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+363	363		504							{1: '0.7'}
+364	364		201							{1: '1', 2: '501280', 3: '1', 7: '1'}
+365	365		301							"{1: '1', 2: 'Bianca', 3: ""When spring comes, you'll return to the church and watch the lilies bloom with me."", 4: '1', 18: '100010979'}"
+366	366		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+367	367		504							{1: '0'}
+368	368		201							{1: '1', 2: '500539', 3: '14', 7: '1'}
+369	369		301							{1: '1', 2: 'Rosa', 3: 'Spring has arrived...', 4: '1', 18: '100010977'}
+370	370		202							{1: '1'}
+371	371		301							{3: 'But the buds beneath the snow have already withered in the bitter cold.'}
+372	372		301							{3: 'The seeds you planted together lie buried deep in the earth alongside your unfinished feelings, never to bloom.'}
+373	373		302				AniZhuanchangBegin			{2: '...Bianca, we made a promise.', 3: '374', 4: '...', 5: '374'}
+374	374		401						2000.0	{1: '1', 2: '36'}
+375	375		401							{1: '1', 2: '229'}
+376	376		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory699.jpg'}
+377	377		201							{1: '1', 2: '501280', 3: '9', 7: '1'}
+378	378		301			AniZhuanchangEnd				{1: '1', 3: 'It is the end of March. Having just buried the last body from the church in the white graveyard, Bianca puts her hands together to pray.'}
+379	379		301							{2: 'Bianca', 3: '...Please welcome their souls and let them rest in eternal peace...', 4: '1', 18: '100010978'}
+380	380		202							{1: '1'}
+381	381		301				DialogDisable			{3: 'After confirming your safety from a hidden corner of the town, she sets off once again to return to this church.'}
+382	382		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory707.jpg', 3: '0', 4: '1', 5: '1.5'}
+383	383		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory707.jpg'}
+384	384		205							{1: '999'}
+385	385		301			DialogEnable				"{3: ""The extreme cold has driven away the reinforcements who came to investigate, so Bianca arrives at the church's courtyard and clears the snow from its steps alone.""}"
+386	386		301							{3: 'But she still silently cleans the courtyard, tills the soil, waters and fertilizes it, and finally sets up a small shelter...'}
+387	387		201							{1: '1', 2: '501280', 3: '9'}
+388	388		301							"{1: '1', 2: 'Bianca', 3: '""When spring comes, you\'ll return to the church and watch the lilies bloom with me.""', 4: '1', 18: '100010979'}"
+389	389		204							{1: '1'}
+390	390		301							{2: 'Bianca', 3: 'Spring has arrived.', 4: '1', 18: '100010980'}
+391	391		202							{1: '1'}
+392	392		301							{3: 'She stands up with a soft sigh, white mist drifting into the snow.'}
+393	393		306							{1: '1'}
+394	394		301							{3: 'She senses that she has unrealistic hopes for these seeds—she longs for them to bloom.'}
+395	395		301							{3: 'But does she want to see her commandant or not?'}
+396	396		301							"{3: ""Does she wish for the petals to bring her commandant back to her, or does she wish for the children to stay by her commandant's side in her place?""}"
+397	397		301				AniZhuanchangBegin			{3: 'She struggles to find her answers.'}
+398	398		502							{1: 'DialogDisable'}
+399	399		509							{1: 'Assets/Product/Texture/Image/BgStory/BgStory954.png', 2: '2'}
+400	400		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1039.png'}
+401	401		306						400.0	
+402	402		501				AniZhuanchangEnd			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHit01.prefab', 2: '3'}
+403	403		401						2500.0	{1: '2', 2: '2905'}
+404	404		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHit01.prefab'}
+405	405		301			DialogEnable				{3: 'That day, the light from the sword that cut through the sin also split her memories into two parts—one bitter yet radiant, the other drowned in darkness.'}
+406	406		201							{1: '1', 2: '501280', 4: '-680'}
+407	407		201							{1: '2', 2: '500678', 4: '550'}
+408	408		301				AniZhuanchangBegin			{1: '1', 3: 'Bianca stands on one end, 【kuroname】 the other.'}
+409	409		202							{1: '1', 2: '2', 6: '1'}
+410	410		510						450.0	{1: '2'}
+411	411		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory707.jpg'}
+412	412		201							{1: '1', 2: '501280', 7: '1'}
+413	413		301			AniZhuanchangEnd				{1: '1', 2: 'Bianca', 3: '...No matter what, I hope you stay in the light.', 4: '1', 18: '100010981'}
+414	414		202							{1: '1'}
+415	415		401							{1: '2', 2: '1543'}
+416	416		301				AniZhuanchangBegin			{3: 'After securing the greenhouse, she gently closes the gate to the courtyard.'}
+417	417		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '3'}
+418	418		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1112.jpg'}
+419	419		301			AniZhuanchangEnd				{3: 'Horses gallop as you ride together with Rosa toward the snowy mountain where Bianca once prayed.'}
+420	420		201							{1: '1', 2: '500539', 3: '14'}
+421	421		301							"{1: '1', 2: 'Rosa', 3: ""It's so cold..."", 4: '1', 18: '100010982'}"
+422	422		301							{3: 'Lost in thought, Rosa watches the icy crystals drift into the distance.'}
+423	423		301							"{2: 'Rosa', 3: ""...She's crying..."", 4: '1', 18: '100010983'}"
+424	424		302							{2: '...', 3: '425', 4: '...?', 5: '427'}
+425	425		202							{1: '1'}
+426	426	430	301							{3: 'Snowflakes fall with desolate beauty, clear and fragile like teardrops.'}
+427	427		301							{2: 'Rosa', 3: '...Bianca is crying.', 4: '1', 18: '100010984'}
+428	428		202							{1: '1'}
+429	429		301							{3: 'Rosa repeats her words. She watches the snowflakes fall with desolate beauty, clear and fragile like teardrops.'}
+430	430		401							{1: '2', 2: '5165'}
+431	431		104						300.0	{1: '0|10|-5', 2: '0.25'}
+432	432		104							{1: '0|0|-10', 2: '0.25'}
+433	433		301							{3: 'You slowly climb the frozen path, as frosty winds hurl fragments of crystal as sharp as ice blades against you.'}
+434	434		301							{3: 'Could she be here?'}
+435	435		302							{2: 'Bianca—!', 3: '436', 4: '...', 5: '450'}
+436	436		301							{3: 'The only response is the chaotic sound of wind in your ears.'}
+437	437		302							{2: '(Push forward)', 3: '438', 4: '...', 5: '450'}
+438	438		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFreezeScreen.prefab', 2: '2'}
+439	439		104						300.0	{1: '0|10|-15', 2: '0.4'}
+440	440		104						300.0	{1: '0|10|-10', 2: '0.4'}
+441	441		104						300.0	{1: '0|15|-15', 2: '0.25'}
+442	442		104							{1: '0|0|-20', 2: '0.25'}
+443	443		301							"{3: ""You two struggle upward with each step, only to be blown back by the wind... By the time you're halfway up, you can no longer move another inch.""}"
+444	444		302							{2: '(Beat against the snow veil)', 3: '445', 4: '...', 5: '450'}
+445	445		401							{1: '2', 2: '1514'}
+446	446		502						250.0	{1: 'RImgBg1Shake'}
+447	447		402							{1: '1514'}
+448	448		301							{3: 'Dense snowflakes form a spinning whirl before you, trapping the upper mountain within.'}
+449	449		302							{2: '(Force your way through)', 3: '450', 4: '...', 5: '450'}
+450	450		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+451	451		401							{1: '2', 2: '3077'}
+452	452		402							{1: '5165'}
+453	453		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFreezeScreen.prefab'}
+454	454		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+455	455		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+456	456		301							{3: 'The world before your eyes plunges into darkness.'}
+457	457		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+458	458		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory105.png'}
+459	459		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+460	460		301							"{3: ""When your vision clears again, you find yourself back at the mountain's base with Rosa.""}"
+461	461		306							{1: '1'}
+462	462		301							{3: 'The two of you drift like a tiny ship in a vast, white ocean. You move forward, only to be dragged back to the beginning by waves of snow.'}
+463	463		301		1		AniZhuanchangBegin			"{3: ""Whether she's still here or not, her heart has already sealed itself off.""}"

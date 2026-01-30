@@ -1,0 +1,12 @@
+Id	Name	MethodName	ParamNames
+1	Base Price	GetCommodityPriceBubble	['Id']
+2	Price Bonus	GetCommodityPriceAddBubble	['Id']
+3	Price Fluctuation This Quarter	GetCommodityPriceFluctuationBubble	['Id']
+4	Final Price Increase	GetCommodityPriceAddFixedBubble	['Id']
+5	Sale CRIT Rate	GetCommodityPriceCritAddBubble	['Id']
+6	Sale CRIT Effect	GetCommodityPriceCritHurtAddBubble	['Id']
+7	Base Output	GetCommodityProductionBubble	['Id']
+8	Productivity Bonus	GetCommodityProductionAddBubble	['Id']
+9	Output Fluctuation This Quarter	GetCommodityProductionFluctuationBubble	['Id']
+10	Production CRIT Rate	GetCommodityProductionCritAddBubble	['Id']
+11	Production CRIT Effect	GetCommodityProductionCritHurtAddBubble	['Id']

@@ -1,0 +1,114 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '204'}
+3	3		301			DialogEnable	AniZhuanchangBegin			{3: 'Finally finishing a long-term project, you collapse into bed and drift off to sleep... In your hazy slumber, you seem to hear faint whispers.'}
+4	4		502							{1: 'DialogDisable'}
+5	5		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '2'}
+6	6		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+7	7		201							{1: '1', 2: '500589'}
+8	8		301			DialogEnable				{1: '1', 2: '??', 3: 'Just like this... And then this...', 4: '1'}
+9	9		301							{2: '??', 3: 'Definitely... Love it!', 4: '1'}
+10	10		301				DialogDisable			{2: '??', 3: '...Add some... to help with sleep...', 4: '1'}
+11	11		202							{1: '1'}
+12	12		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+13	13		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+14	14		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+15	15		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+16	16		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '1'}
+17	17		401							{1: '2', 2: '4044'}
+18	18		301			DialogEnable				{3: 'You feel thrown around in the dream as that familiar sensation of falling hits you.'}
+19	19		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+20	20		201							{1: '1', 2: '500589'}
+21	21		301							{1: '1', 2: '??', 3: 'Wake up. Can you hear me?', 4: '1'}
+22	22		301				DialogDisable			"{2: '??', 3: ""Commandant, it's... about time to get up."", 4: '1'}"
+23	23		202				AniZhuanchangBegin			{1: '1'}
+24	24		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+25	25		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory672.jpg'}
+26	26		301			DialogEnable				"{3: ""You finally wake up in a groggy state amid irregular jostling. Looking around, you see that you aren't in the dorm for commandants, nor are you... at the Star of Life?""}"
+27	27		401							{1: '1', 2: '205'}
+28	28		201							{1: '1', 2: '500576', 4: '-300', 7: '1'}
+29	29		201							{1: '2', 2: '500929', 4: '300', 7: '1'}
+30	30		301							"{1: '1', 3: ""The culprits—a smiling Ayla and the little robot Cathy—stand right in front of you. You rub your eyes vigorously, hoping that you're not seeing things.""}"
+31	31		202						300.0	{1: '2'}
+32	32		203							{1: '1', 2: '0.2', 3: '0'}
+33	33		204							{1: '1', 2: '2'}
+34	34		301							"{2: 'Ayla', 3: ""I see you're awake, Commandant."", 4: '1'}"
+35	35		302				DialogDisable			{2: 'Where in the world is this?!', 3: '36', 4: 'You... you kidnapped...', 5: '36'}
+36	36		202							{1: '1', 6: '1'}
+37	37		201							{1: '2', 2: '500929', 7: '1'}
+38	38		502							{1: 'RImgBg1Shake'}
+39	39		401							{1: '2', 2: '4081'}
+40	40		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiDlcCasual/FxUiDlcCasualDate.prefab', 2: '2'}
+41	41		401							{1: '2', 2: '5388'}
+42	42		301			DialogEnable				{2: 'Cathy', 3: 'Poof-poof beep-beep—deet-deet-deet da-da-da!{226|153|171}', 4: '2'}
+43	43		402							{1: '5388'}
+44	44		302							{2: '(Brushing away the colorful sequins blown into your face)', 3: '45', 4: '(Now fully awake)', 5: '45'}
+45	45		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiDlcCasual/FxUiDlcCasualDate.prefab'}
+46	46		301							"{2: 'Cathy', 3: ""We're in Constellia! And this place will soon become a happy love nest and an ocean of joy!"", 4: '2'}"
+47	47		301							"{2: 'Cathy', 3: ""Because it's Valentine's Day today! And since it's such an important day and everyone has been looking forward to it, I'm sure you'll join us, right, 【kuroname】?"", 4: '2'}"
+48	48		301							"{3: ""These people seem to be completely nonchalant about the fact that they've completely reset a commandant's geographical coordinates.""}"
+49	49		302							{2: 'I still have work to do...', 3: '50'}
+50	50		201							{1: '2', 2: '500576'}
+51	51		301							"{1: '1', 2: 'Ayla', 3: ""Eh? I've already cleared your schedule with Celica! Commandant, leave all your mundane troubles behind and have some fun with us already!"", 4: '2'}"
+52	52		302							"{2: ""And why wasn't I informed at all?"", 3: '53', 4: 'When did that ever happen?', 5: '53'}"
+53	53		204							{1: '2', 2: '1'}
+54	54		301							{2: 'Ayla', 3: 'Hehe, I just wanted to give you a special limited-time surprise!', 4: '2'}
+55	55		302							"{2: ""Well, you're definitely doing a good job here."", 3: '56', 4: ""I guess I'm more shocked than surprised."", 5: '58'}"
+56	56		204							{1: '2', 2: '2'}
+57	57	60	301							"{2: 'Ayla', 3: ""I'm absolutely honored!"", 4: '2'}"
+58	58		204							{1: '2', 2: '0'}
+59	59		301							"{2: 'Ayla', 3: ""You don't need to tell me what you think just yet! I'll gather opinions when you're done experiencing the whole thing."", 4: '2'}"
+60	60		204							{1: '2', 2: '0'}
+61	61		301							{2: 'Ayla', 3: 'Our staff from WGAA will be distributing these special Amour Concerto Vouchers! With one of these, you can enjoy a free activity with someone special!', 4: '2'}
+62	62		301							"{2: 'Ayla', 3: ""—Commandant, have you decided what you'd like to try?"", 4: '2'}"
+63	63		204							{1: '2', 2: '2'}
+64	64		301							"{2: 'Ayla', 3: ""Actually, more importantly, have you decided who you're going to invite?"", 4: '2'}"
+65	65		204							{1: '2', 2: '0'}
+66	66		301				DialogDisable			"{2: 'Ayla', 3: ""WGAA has gone to great lengths to organize this event! We've not only set up all kinds of limited-time activities, but we've also hidden a little game in the vouchers to help couples grow even more intimate."", 4: '2'}"
+67	67		202						500.0	{1: '2'}
+68	68		201						50.0	{1: '1', 2: '500929', 5: '-1080'}
+69	69		203						100.0	{1: '1', 2: '0.2', 5: '0'}
+70	70		203						150.0	{1: '1', 2: '0.1', 3: '-200'}
+71	71		203						200.0	{1: '1', 2: '0.1', 3: '200'}
+72	72		203							{1: '1', 2: '0.1', 3: '0', 5: '-200'}
+73	73		502							{1: 'RImgBg1Shake'}
+74	74		401							{1: '2', 2: '5388'}
+75	75		301			DialogEnable				{2: 'Cathy', 3: 'Poof-poof beep-beep—deet-deet-deet da-da-da!{226|153|171}', 4: '1'}
+76	76		402							{1: '5388'}
+77	77		301							{2: 'Cathy', 3: 'Please do give it a try!', 4: '1'}
+78	78		203							{1: '1', 2: '0.25', 5: '-300'}
+79	79		301			PanelActor1Shake				"{2: 'Cathy', 3: ""It's Truth or Dare—!"", 4: '1'}"
+80	80		302							"{2: 'I get it, enough with the hype!', 3: '81', 4: ""At least don't get so excited in my face...!"", 5: '81'}"
+81	81		203							{1: '1', 2: '0.25', 3: '0', 4: '0', 5: '0'}
+82	82		301							"{2: 'Cathy', 3: ""I can't wait to hear your piece, Commandant! Do enjoy yourself here today!"", 4: '1'}"
+83	83		202							{1: '1'}
+84	84		301				AniZhuanchangBegin			{3: 'Ayla and Cathy bid you farewell for now and go on to distribute vouchers to visitors through a mini-game.'}
+85	85		502						500.0	{1: 'DialogDisable'}
+86	86		401							{1: '1', 2: '36'}
+87	87		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+88	88		401							{1: '1', 2: '294'}
+89	89		401							{1: '2', 2: '2915'}
+90	90		301			DialogEnable				{3: 'A sweet aroma of food drifts from the street as countless chocolates line the shop windows. Light, cheerful waltz music plays all around you.'}
+91	91		302							"{2: '(It feels so wonderfully warm.)', 3: '92', 4: ""(Ah, it's Voices of Spring.)"", 5: '92'}"
+92	92		301							"{3: 'At the city\'s event entrance, balloons and fresh flowers frame the big words ""Amour Concerto"". Seemingly trying to match the theme, all kinds of instrumental sounds gradually blend into the main melody.'}"
+93	93		306						500.0	{1: '1'}
+94	94		104							{1: '0|50|-50', 2: '2'}
+95	95		301							{3: 'Looking closer, you see that even the usually ordinary city stairs have been spiced up—the music changes with every step you take.'}
+96	96		301							"{3: ""While it's still early morning, eager visitors have already gathered around the event venue that's been transformed into a sea of roses.""}"
+97	97		306						500.0	
+98	98		502						800.0	{1: 'RImgBg1BlowUp'}
+99	99		201						50.0	{1: '1', 2: '500965', 4: '-600', 7: '1'}
+100	100		203						500.0	{1: '1', 2: '3', 3: '-600', 5: '-800'}
+101	101		202						100.0	{1: '1'}
+102	102		201						50.0	{1: '2', 2: '500342', 4: '600', 7: '1'}
+103	103		203						500.0	{1: '2', 2: '3', 3: '600', 5: '-800'}
+104	104		202						150.0	{1: '2'}
+105	105		201						50.0	{1: '3', 2: '501025', 4: '-300', 7: '1'}
+106	106		203						500.0	{1: '3', 2: '3', 3: '-300', 5: '-800'}
+107	107		202						50.0	{1: '3'}
+108	108		201						50.0	{1: '4', 2: '500463', 4: '300', 7: '1'}
+109	109		203						500.0	{1: '4', 2: '3', 3: '300', 5: '-800'}
+110	110		202							{1: '4'}
+111	111		301							{1: '1', 3: 'People chatter noisily as they rush headlong into the pink-hued city of early spring. It seems like people have spent a lot of time getting themselves ready for this event.'}
+112	112		301							{3: 'Love scores and music vouchers, huh? Caught up in the surrounding atmosphere, you find yourself growing excited, too, as you hum a formless tune.'}
+113	113		301		1		AniZhuanchangBegin			"{3: ""Well, guess I gotta figure out what I'm gonna do.""}"

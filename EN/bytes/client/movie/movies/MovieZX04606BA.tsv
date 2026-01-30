@@ -1,0 +1,403 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory949.jpg'}
+2	2		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+3	3		401							{1: '1', 2: '201'}
+4	4		401			AniZhuanchangEnd				{1: '2', 2: '2982'}
+5	5		301			DialogEnable				{2: '????', 3: 'Come see me.'}
+6	6		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+7	7		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+8	8		402							{1: '2982'}
+9	9		201							{1: '1', 2: '500922', 7: '1'}
+10	10		301				DialogDisable			{1: '1', 2: 'Aleksei', 3: '...Hmm?', 4: '1'}
+11	11		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+12	12		401							{1: '2', 2: '2959'}
+13	13		201							{1: '2', 2: '500922', 3: '1', 4: '-250', 7: '1'}
+14	14		205							{1: '2', 3: '1', 4: '0.5', 5: '0'}
+15	15		501					500.0		{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+16	16		202							{1: '2', 6: '1'}
+17	17		301			DialogEnable	DialogDisable			{3: 'For a moment, his mind drifts into a daze.'}
+18	18		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+19	19		504							{1: '0.7'}
+20	20		401							{1: '2', 2: '2959'}
+21	21		201							{1: '1', 2: '500922', 7: '1'}
+22	22		201							{1: '2', 2: '500922', 3: '2', 4: '-200', 7: '1'}
+23	23		201							{1: '3', 2: '500922', 3: '2', 4: '200', 7: '1'}
+24	24		201							{1: '4', 2: '500922', 3: '2', 4: '-450', 7: '1'}
+25	25		201							{1: '5', 2: '500922', 3: '2', 4: '450', 7: '1'}
+26	26		205							{1: '2', 3: '1', 4: '0.7', 5: '0'}
+27	27		205							{1: '3', 3: '1', 4: '0.7', 5: '0'}
+28	28		205							{1: '4', 3: '1', 4: '0.4', 5: '0'}
+29	29		205							{1: '5', 3: '1', 4: '0.4', 5: '0'}
+30	30		501					650.0		{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+31	31		504							{1: '0'}
+32	32		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '1'}
+33	33		201							{1: '1', 2: '500922'}
+34	34		301			DialogEnable				{1: '1', 2: 'Aleksei', 3: 'Cough...', 4: '1'}
+35	35		202							{1: '1'}
+36	36		301							{3: 'The cold wind bites sharply as he doubles over, coughing. The wounds from the earlier attack begin to throb with a dull ache.'}
+37	37		201							{1: '1', 2: '500922'}
+38	38		301							{1: '1', 2: 'Aleksei', 3: 'Did I black out again...', 4: '1'}
+39	39		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+40	40		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+41	41		401							{1: '2', 2: '2982'}
+42	42		202							{1: '1', 6: '1'}
+43	43		301							{2: '????', 3: '...Come see me.'}
+44	44		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+45	45		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+46	46		402							{1: '2982'}
+47	47		301							{3: 'The voice through the comm carries a hint of impatience.'}
+48	48		201							{1: '1', 2: '500922'}
+49	49		301							{1: '1', 2: 'Aleksei', 3: '...Got it, Veronica.', 4: '1'}
+50	50		301							{2: 'Veronica', 3: '...'}
+51	51		301				AniZhuanchangBegin			{3: 'No further instructions come from the other end.'}
+52	52		202							{1: '1', 6: '1'}
+53	53		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory947.jpg'}
+54	54		401							{1: '1', 2: '229'}
+55	55		401							{1: '2', 2: '2599'}
+56	56		401							{1: '2', 2: '1514'}
+57	57		301			AniZhuanchangEnd				{3: 'Step by step, his boots crunch through the snow as he ascends the stairs like a pilgrim on a sacred journey.'}
+58	58		301							{3: 'From this high rooftop, the snow-blanketed cityscape unfolds beneath, stretching as far as the eye can see.'}
+59	59		301							"{3: ""The wind howls past as he comes to a halt, keeping a safe distance from the building's edge.""}"
+60	60		402							{1: '2599'}
+61	61		201							{1: '1', 2: '500922'}
+62	62		301							{1: '1', 2: 'Aleksei', 3: '...', 4: '1'}
+63	63		202							{1: '1'}
+64	64		201							{1: '1', 2: '500920'}
+65	65		301							{1: '1', 2: 'Veronica', 3: 'You know what to report.', 4: '1'}
+66	66		202							{1: '1'}
+67	67		301							{3: 'The speaker remains facing away, with wind and snow whipping between them like a wall.'}
+68	68		201							{1: '1', 2: '500922'}
+69	69		301							{1: '1', 2: 'Aleksei', 3: 'Cough... Humans continue to sow chaos here and there as usual.', 4: '1'}
+70	70		301							"{3: ""There's an almost imperceptible complexity in his tone now, making him seem like a different person from when he entered the city not long ago.""}"
+71	71		203							{1: '1', 2: '0.25', 3: '-400'}
+72	72		201							{1: '2', 2: '500920', 4: '400'}
+73	73		301							"{1: '1', 2: 'Veronica', 3: 'But I haven\'t heard anything about that ""usual"" chaos requiring you to leave the city yourself.', 4: '2'}"
+74	74		202							{1: '1', 2: '2'}
+75	75		301							{3: 'The woman on the rooftop turns around, her stern expression as frigid as the winter air around her.'}
+76	76		201							{1: '1', 2: '500922', 4: '-400'}
+77	77		201							{1: '2', 2: '500920', 4: '400'}
+78	78		301							"{1: '1', 2: 'Veronica', 3: ""You're hurt. Was it the humans' doing?"", 4: '2'}"
+79	79		301							"{3: ""Aleksei turns his head, revealing several distinct bullet holes and scratches on his mechanical arm. His hand instinctively tightens around the mechanoid memory units—something he's been desperately trying to protect.""}"
+80	80		301							"{2: 'Aleksei', 3: ""It's just a scratch. Only the prosthetic part was damaged."", 4: '1'}"
+81	81		204							{1: '2', 2: '5'}
+82	82		301							{2: 'Veronica', 3: 'Wandering into a crossfire zone for no reason—were you trying to get yourself killed?', 4: '2'}
+83	83		301							{2: 'Aleksei', 3: 'I was just trying to bring back some deactivated mechanoids in that area. You know, I am the best machinist in the city...', 4: '1'}
+84	84		301							{2: 'Veronica', 3: 'And my kin had to sacrifice themselves to protect you.', 4: '2'}
+85	85		301							"{2: 'Aleksei', 3: ""I'm sorry, I didn't expect those rebels to show up. I've managed to preserve their memory units though. If we can just connect them..."", 4: '1'}"
+86	86		301							{2: 'Veronica', 3: 'Is this all you have to offer as your explanation?', 4: '2'}
+87	87		301							{2: 'Aleksei', 3: 'Veronica...', 4: '1'}
+88	88		202							{1: '1', 2: '2'}
+89	89		301							{3: 'He lets out a soft sigh.'}
+90	90		201							{1: '1', 2: '500922', 4: '-400'}
+91	91		201							{1: '2', 2: '500920', 4: '400'}
+92	92		301							{1: '1', 2: 'Veronica', 3: 'Tell me the truth.', 4: '2'}
+93	93		301							"{2: 'Aleksei', 3: ""...When I regained consciousness, I was already outside the city. It's been happening more often lately—maybe it's the rejection from the mechanical parts..."", 4: '1'}"
+94	94		301							"{2: 'Veronica', 3: ""You should've learned your lesson by now. This isn't the first time."", 4: '2'}"
+95	95		301							"{2: 'Aleksei', 3: ""...I'm sorry. I will..."", 4: '1'}"
+96	96		301							"{3: ""Before he can finish, Veronica's features harden, evidently displeased.""}"
+97	97		301							"{2: 'Aleksei', 3: ""It won't happen again, Veronica. When I snapped out of it, I was already in the city with that person from Kowloong. Given how tense things have been, I shouldn't have..."", 4: '1'}"
+98	98		301							{2: 'Veronica', 3: 'Hold on.', 4: '2'}
+99	99		401							{1: '2', 2: '4321'}
+100	100		301							{3: 'Veronica motions for Aleksei to hush. Turning her head, she listens intently, her features sharpening with renewed vigilance.'}
+101	101		301							"{2: 'Veronica', 3: ""...It's happening again."", 4: '2'}"
+102	102		401							{1: '2', 2: '4321'}
+103	103		301							{3: 'The faint sounds of gunfire drown in the relentless howling of the blizzard.'}
+104	104		301							{2: 'Veronica', 3: 'Wait for me at the Administrative Hall.', 4: '2'}
+105	105		202							{1: '1', 2: '2'}
+106	106		301							{3: 'She turns and strides toward the source of the gunfire.'}
+107	107		201							{1: '1', 2: '500922'}
+108	108		301							"{1: '1', 2: 'Aleksei', 3: ""...It can't go on like this, Veronica."", 4: '1'}"
+109	109		301							{2: 'Aleksei', 3: 'Both humans and mechanoids have suffered for far too long in this endless cycle of conflict. The increasingly frequent clashes only serve to prove that...', 4: '1'}
+110	110		202							{1: '1'}
+111	111		401							{1: '2', 2: '2789'}
+112	112		301			RImgBg1Shake				{3: '—BOOM!!!'}
+113	113		401							{1: '2', 2: '2927'}
+114	114		301							{3: 'Now, the sound of gunfire rings out dangerously close.'}
+115	115		201							{1: '1', 2: '500920'}
+116	116		301							{1: '1', 2: 'Veronica', 3: 'You see it now, Aleksei?', 4: '1'}
+117	117		301							{2: 'Veronica', 3: 'This is what your beloved fellow humans are truly like.', 4: '1'}
+118	118		202							{1: '1'}
+119	119		301							{3: 'Chaos erupts in the streets as the once-orderly mechanoids start to flash warning lights, electricity crackling through their metallic frames. Humans wielding makeshift weapons emerge from the shadows, ready for confrontation.'}
+120	120		201							{1: '1', 2: '500922'}
+121	121		301							{1: '1', 2: 'Aleksei', 3: '...', 4: '1'}
+122	122		202							{1: '1'}
+123	123		402							{1: '2927'}
+124	124		201							{1: '1', 2: '500920'}
+125	125		301							"{1: '1', 2: 'Veronica', 3: ""Head back to the Administrative Hall and tend to your wounds. I'll handle the situation here."", 4: '1'}"
+126	126		301							"{2: 'Veronica', 3: ""Don't worry about that Kowloong person. I'll take care of her by myself."", 4: '1'}"
+127	127		202							{1: '1'}
+128	128		401							{1: '2', 2: '2589'}
+129	129		301				AniZhuanchangBegin			{3: 'The female mechanoid turns around and leaps off the rooftop.'}
+130	130		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory574.jpg'}
+131	131		104							{1: '50|200|-300', 2: '0'}
+132	132		301			AniZhuanchangEnd				{3: 'After parting ways with Aleksei, Hanying walks alone through the snow-dusted streets.'}
+133	133		301							"{3: ""Most mechanoids in this city seem to merely follow their preset programming, or perhaps, they're acting on someone's directives.""}"
+134	134		301							{3: 'But she finds that aerospace mechanoid from earlier rather peculiar. Despite there being no charging station, it stopped on its own and bowed toward that execution ground.'}
+135	135		301							{3: 'Such behavior resembles that of an awakened machine... If she could talk to it, she might learn more about this city.'}
+136	136		301							{3: 'She is in dire need of comprehending this city and locating the key left behind by Sage.'}
+137	137		301							{3: 'She glances back to where the aerospace mechanoid had previously stood, yet the space now lies vacant.'}
+138	138		201							{1: '1', 2: '500916'}
+139	139		301							{1: '1', 2: 'Hanying', 3: 'It left? But...', 4: '1'}
+140	140		202							{1: '1'}
+141	141		301							{3: 'The dispersed footprints speckle the snow-covered terrain akin to droplets of ink, trailing off like an ellipsis.'}
+142	142		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory575.jpg', 3: '0', 4: '1', 5: '1.5'}
+143	143		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory575.jpg'}
+144	144		205							{1: '999'}
+145	145		301							{3: 'Following the prints in the snow, she weaves through several alleyways. The shadows cast by buildings diminish steadily as the footprints meander across the uneven landscape, ultimately vanishing at the brink of a hill.'}
+146	146		301							{3: 'A sharp scent of rust cuts through the air as she realizes the rugged terrain is not that of a hill, but rather...'}
+147	147		301							{3: 'That of a graveyard—a mechanoid graveyard.'}
+148	148		301							{3: 'Rusted steel beams lie entangled beneath the thick snow, masquerading as an ordinary hill. Mechanical limbs protrude defiantly from the snow as wandering mechanoids scavenge for compatible parts—collecting, installing, discarding... endlessly repeating this desperate cycle.'}
+149	149		201							{1: '1', 2: '500916', 3: '10'}
+150	150		301							{1: '1', 2: 'Hanying', 3: 'Is this... the only way they can repair themselves?', 4: '1'}
+151	151		202							{1: '1'}
+152	152		301							{2: 'Mechanoid A', 3: 'Will we... meet again?'}
+153	153		104						600.0	{1: '30|100|-200', 2: '0.5'}
+154	154		401							{1: '2', 2: '9351040'}
+155	155		301							{3: 'Following the voice, she looks over to find a mechanoid who, instead of using the debris for self-repair, is arranging the fragments into the shape of another mechanoid atop the ruins.'}
+156	156		201							{1: '1', 2: '500470', 5: '-150', 6: '200'}
+157	157		301							{1: '1', 2: 'Mechanoid A', 3: 'We... promised...', 4: '1'}
+158	158		202							{1: '1'}
+159	159		301							{3: 'Yet no matter how well assembled, a shell without a core will never move again.'}
+160	160		401							{1: '2', 2: '9351040'}
+161	161		301							{3: 'The mechanoids seem to refuse this reality, stubbornly fitting parts into the shells. Like a silent prayer, their signal lights flicker on and off, again and again.'}
+162	162		201							{1: '1', 2: '500916', 3: '14'}
+163	163		301							"{1: '1', 2: 'Hanying', 3: ""There won't be... any response anymore."", 4: '1'}"
+164	164		202							{1: '1'}
+165	165		201							{1: '1', 2: '500470', 5: '-150', 6: '200'}
+166	166		301							{1: '1', 2: 'Mechanoid A', 3: 'We... promised...', 4: '1'}
+167	167		301							{2: 'Mechanoid A', 3: 'Will we... meet again?', 4: '1'}
+168	168		202							{1: '1'}
+169	169		301							"{3: 'The little mechanoid busily repeats its ""task"" with mechanical precision.'}"
+170	170		301							{3: 'An overwhelming wave of sadness suddenly engulfs her.'}
+171	171		301							{3: 'She feels as though she has become that empty shell herself, forced to witness her kin assembling her over and over, endlessly waiting for her return...'}
+172	172		201							{1: '1', 2: '500916', 3: '14'}
+173	173		301				DialogDisable			{1: '1', 2: 'Hanying', 3: 'Such endless waiting... must be so painful...', 4: '1'}
+174	174		202							{1: '1'}
+175	175		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4601_08.jpg', 3: '0', 4: '1', 5: '1.5'}
+176	176		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4601_08.jpg'}
+177	177		205							{1: '999'}
+178	178		301			DialogEnable				"{3: ""Synthetic tears trickle from the female mechanoid's eyes as she sits down gracefully in the falling snow, slowly raising the instrument in her arms.""}"
+179	179		301							{2: 'Hanying', 3: 'May this melody bring you some solace.'}
+180	180		301							{3: 'Her fingers gently pluck the strings, the melody flowing into the distance. The mechanoids, captivated by the music, slowly gather around her like children listening to a bedtime story.'}
+181	181		301							{3: 'The falling snow envelops the mechanoids in a frosty coat. Through the misty veil of snow, she notices their signal lights no longer flickering in distress.'}
+182	182		301				AniZhuanchangBegin			{3: 'Before she knows it, the small mechanoids wandering through the graveyard have all gathered around her, appearing from every direction.'}
+183	183		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory575.jpg'}
+184	184		201							{1: '1', 2: '500916'}
+185	185		301			AniZhuanchangEnd				{1: '1', 2: 'Hanying', 3: 'Are you feeling better now?', 4: '1'}
+186	186		202							{1: '1'}
+187	187		301							"{3: ""Instinctively, she reaches out to pat a mechanoid's head. Seemingly unable to grasp such complex words, it simply blinks at her in response.""}"
+188	188		201							{1: '1', 2: '500470', 5: '-150', 6: '200'}
+189	189		301							{1: '1', 2: 'Mechanoid A', 3: 'Thank you.', 4: '1'}
+190	190		301							{2: 'Mechanoid A', 3: 'You are. Human.', 4: '1'}
+191	191		301							{2: 'Mechanoid A', 3: 'Please, follow, me.', 4: '1'}
+192	192		202							{1: '1'}
+193	193		301							{3: 'The mechanoid moves toward the place where it previously assembled its companion, pausing occasionally and glancing back to ensure Hanying is keeping up.'}
+194	194		201							{1: '1', 2: '500470', 5: '-150', 6: '200'}
+195	195		301							{1: '1', 2: 'Mechanoid A', 3: 'You are. Kind. Human.', 4: '1'}
+196	196		301							{2: 'Mechanoid A', 3: 'But. Here. Human. Not safe.', 4: '1'}
+197	197		301							{2: 'Mechanoid A', 3: 'Please, follow, me.', 4: '1'}
+198	198		202							{1: '1'}
+199	199		301							"{3: ""Sensing the mechanoid's intent to lead her somewhere, Hanying follows along.""}"
+200	200		201							{1: '1', 2: '500916', 3: '7'}
+201	201		301							{1: '1', 2: 'Hanying', 3: 'This is...', 4: '1'}
+202	202		202							{1: '1'}
+203	203		301							{3: 'The path gradually levels out, and scattered footprints appear once again in the snow.'}
+204	204		301				AniZhuanchangBegin			{3: 'Her enhanced optical sensors quickly discern the footprints—they belong to the mechanoid from the Foundation Plaza earlier.'}
+205	205		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory942.jpg'}
+206	206		401							{1: '1', 2: '5016'}
+207	207		201							{1: '1', 2: '500923', 4: '-400'}
+208	208		201							{1: '2', 2: '500924', 4: '400'}
+209	209		301			AniZhuanchangEnd				{1: '1', 2: 'Yulia', 3: 'Where have you been?', 4: '2'}
+210	210		301							{2: 'Dimitri', 3: 'I went to the Foundation Plaza.', 4: '1'}
+211	211		301							{2: 'Yulia', 3: '...Is it nearing that time of year already? Thank you... for always doing this for me.', 4: '2'}
+212	212		202							{1: '1', 2: '2'}
+213	213		301							{3: 'She glances at her wheelchair, a bitter smile crossing her face.'}
+214	214		201							{1: '1', 2: '500923'}
+215	215		301							{1: '1', 2: 'Dimitri', 3: 'Miss Yula, no thanks are necessary. I was also paying my respects to my kin.', 4: '1'}
+216	216		401							{1: '2', 2: '957'}
+217	217		301							"{3: ""The distant rumble of gunfire draws closer, and Yulia's smile fades, her expression turning grave.""}"
+218	218		301							"{2: 'Dimitri', 3: ""The clashes between humans and mechanoids have been getting more frequent. The city hasn't known peace for a while now."", 4: '1'}"
+219	219		301							{3: 'The girl remains silent, seemingly waiting for something.'}
+220	220		301							"{3: ""Dimitri's shoulders slump, his small frame betraying a hint of resignation.""}"
+221	221		301							"{2: 'Dimitri', 3: ""I'll try to stay inside as much as possible these days."", 4: '1'}"
+222	222		203							{1: '1', 2: '0.25', 3: '-400'}
+223	223		201							{1: '2', 2: '500924', 4: '400'}
+224	224		301							"{1: '1', 2: 'Yulia', 3: ""Mm. I don't mean to blame you."", 4: '2'}"
+225	225		301							{3: 'Having received his promise, the young girl breathes a sigh of relief, her tone growing gentler.'}
+226	226		301							"{2: 'Yulia', 3: ""You don't have any combat capability. It's dangerous for you to be involved in conflicts. And..."", 4: '2'}"
+227	227		301							{3: 'She glances toward a corner of the factory, where a figure in pale pink busies herself amid the bustling crowd.'}
+228	228		301				AniZhuanchangBegin			"{2: 'Yulia', 3: ""I don't think we can take in any more guests here."", 4: '2'}"
+229	229		202							{1: '1', 2: '2', 6: '1'}
+230	230		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory596.jpg'}
+231	231		201							{1: '1', 2: '1031001'}
+232	232		301			AniZhuanchangEnd				{1: '1', 2: 'Liv', 3: 'Another case of hypothermia... Thank goodness I brought extra portable heat sources...', 4: '1'}
+233	233		301							{2: 'Liv', 3: 'Katina, your wound is still worsening... The treatment might sting a bit...', 4: '1'}
+234	234		203							{1: '1', 2: '0.25', 3: '-400'}
+235	235		201							{1: '2', 2: '500251', 4: '400'}
+236	236		301							"{1: '1', 2: 'Elder Woman', 3: ""...Thank you. I didn't know you had such impressive medical skills."", 4: '2'}"
+237	237		301							"{2: 'Elder Woman', 3: ""Cough, could you please take a look at this kid? He won't stop crying, and I'm worried he might be sick..."", 4: '2'}"
+238	238		301							{2: 'Liv', 3: 'Of course... He seems to have a fever, too. Do you have any extra clothes...', 4: '1'}
+239	239		202							{1: '1', 2: '2'}
+240	240		301				DialogDisable			"{3: ""Under Liv's gentle care, the child stops crying, settled into another small bed in the corner.""}"
+241	241		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory942.jpg', 3: '0', 4: '1', 5: '1.5'}
+242	242		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory942.jpg'}
+243	243		205							{1: '999'}
+244	244		201							{1: '1', 2: '500923', 4: '-400'}
+245	245		201							{1: '2', 2: '500924', 4: '400'}
+246	246		301			DialogEnable				{1: '1', 2: 'Dimitri', 3: 'But Miss Yula, those two refugees are helping us.', 4: '1'}
+247	247		301							"{2: 'Yulia', 3: ""Those two... aren't refugees, Dima. That woman with white hair is a Construct."", 4: '2'}"
+248	248		301							"{3: ""Despite their attempts at disguise, Yulia recognizes the hair clip on the woman's head for what it truly is—an Inver-Device.""}"
+249	249		301							{2: 'Yulia', 3: 'This is... something you taught me yourself.', 4: '2'}
+250	250		202							{1: '1', 2: '2'}
+251	251		301							{3: 'Being one of the few awakened machines in Aerospace City, Dimitri naturally acquired some minor privileges after Veronica assumed control.'}
+252	252		301							{3: 'With these minor privileges, he obtained access to additional information from the outside world, which he shared with the young Yulia back then.'}
+253	253		201							{1: '1', 2: '500923', 4: '-400'}
+254	254		201							{1: '2', 2: '500924', 4: '400'}
+255	255		301							{1: '1', 2: 'Dimitri', 3: 'There are many Constructs taking refuge outside the city, and this lady is helping us.', 4: '1'}
+256	256		301							"{2: 'Yulia', 3: ""I won't deny that, but she and her companion possess power that could pose a threat to us."", 4: '2'}"
+257	257		301							"{2: 'Yulia', 3: ""You have to look out for yourself, Dima. You can't always count on outsiders' goodwill."", 4: '2'}"
+258	258		301							{2: 'Dimitri', 3: 'I know how to identify suspicious individuals, Miss Yula.', 4: '1'}
+259	259		301							{2: 'Dimitri', 3: 'Today, Governor Aleksei brought a strange visitor with him. After he left, she tried to talk to me, but I managed to lose her at the graveyard.', 4: '1'}
+260	260		301				AniZhuanchangBegin			"{3: ""Yulia gives a slight nod. Out of the corner of her eye, she notices that the Construct has returned to her companion's side.""}"
+261	261		202							{1: '1', 2: '2', 6: '1'}
+262	262		201							{1: '1', 2: '1031001'}
+263	263		301			AniZhuanchangEnd				{1: '1', 2: 'Liv', 3: 'Everything has been taken care of, Commandant.', 4: '1'}
+264	264		302							"{2: 'I see.', 3: '265', 4: ""You've worked hard, Liv."", 5: '265'}"
+265	265		301							{2: 'Liv', 3: 'I never imagined the situation in Aerospace City would be like this...', 4: '1'}
+266	266		302							{2: 'Neither did I.', 3: '267'}
+267	267		202							{1: '1'}
+268	268		301							{3: 'Initially, you had imagined a city occupied by mechanoids to be similar to Constellia—sparsely populated yet orderly.'}
+269	269		301							"{3: ""However, upon entering Dimitri's sanctuary, you were taken aback by the actual living conditions of the humans here.""}"
+270	270		301							"{3: 'Medical supplies are scarce, and people are displaced. According to the locals, only humans deemed ""innocent"" by the mechanoids can secure employment in the city that offers enough to survive.'}"
+271	271		302							{2: 'Any response from Babylonia?', 3: '272'}
+272	272		201							{1: '1', 2: '1031001'}
+273	273		301							"{1: '1', 2: 'Liv', 3: ""The military's latest orders are to proceed with our investigation. Since this doesn't entail direct conflict with Babylonia, they likely won't send people into the city anytime soon."", 4: '1'}"
+274	274		302							"{2: ""Let's see how things play out first."", 3: '275'}"
+275	275		301							{3: 'Investigating Aerospace City is just one aspect of the mission. The communication from Asimov before departure springs to your mind...'}
+276	276		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+277	277		504							{1: '0.7'}
+278	278		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+279	279		201							{1: '1', 2: '500004', 7: '1'}
+280	280		301							{1: '1', 2: 'Asimov', 3: 'Tsiolkovsky Aerospace City... You should be aware of this location.', 4: '1'}
+281	281		302							"{2: ""I don't remember it."", 3: '282', 4: 'I remember it.', 5: '282'}"
+282	282		301							{2: 'Asimov', 3: 'It oversaw the launch mission of the Dawn-III spacecraft and conducted the research, development, and technical verification of Eden-I... This city holds considerable strategic importance.', 4: '1'}
+283	283		301							"{2: 'Asimov', 3: 'Try to understand the situation inside thoroughly. If the data is accurate, the final structure being constructed in Aerospace City should be that... project codenamed ""Bifrost"".', 4: '1'}"
+284	284		301							{2: 'Asimov', 3: 'Get me as much detailed information about it as possible... You have my thanks.', 4: '1'}
+285	285		202							{1: '1', 6: '1'}
+286	286		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory942.jpg'}
+287	287		504							{1: '0'}
+288	288		401							{1: '1', 2: '36'}
+289	289		401							{1: '2', 2: '9351042'}
+290	290		301							{3: 'Clomp, clomp...'}
+291	291		301							{3: 'From outside, a strange sound reaches your ears, interrupting your contemplation.'}
+292	292		401							{1: '1', 2: '203'}
+293	293		302							{2: 'Liv, be on guard.', 3: '294'}
+294	294		201							{1: '1', 2: '1031001'}
+295	295		301							{1: '1', 2: 'Liv', 3: 'Understood.', 4: '1'}
+296	296		202							{1: '1'}
+297	297		301							{3: 'Despite the indoor clamor, footsteps echo loudly through the empty corridor leading to the factory.'}
+298	298		201							{1: '1', 2: '500923', 4: '-400'}
+299	299		201							{1: '2', 2: '500930', 4: '400'}
+300	300		301							"{1: '1', 2: 'Dimitri', 3: ""Who's there?"", 4: '1'}"
+301	301		203							{1: '2', 2: '0.25', 3: '300'}
+302	302		301							{2: 'Yulia', 3: 'Dima, hide yourself first.', 4: '2'}
+303	303		301							"{3: ""Yulia grabs Dimitri's arm and urges him to hide away.""}"
+304	304		301							"{2: 'Yulia', 3: ""Not many know about this place... I'll stay to check if they're friend or foe. You need to hide, now!"", 4: '2'}"
+305	305		301							{2: 'Dimitri', 3: 'No, Miss Yula, you should go first, and—', 4: '1'}
+306	306		301							{3: 'He maximizes his voice output capacity and shouts toward the crowd.'}
+307	307		203							{1: '1', 2: '0.25'}
+308	308		202							{1: '2'}
+309	309		301							{2: 'Dimitri', 3: 'An unknown signal detected is approaching. Everyone, please take cover.', 4: '1'}
+310	310		202							{1: '1'}
+311	311		301							{3: 'Panic erupts through the crowd as people push and shove their way toward the emergency exit.'}
+312	312		201							{1: '1', 2: '500930'}
+313	313		301							{1: '1', 2: 'Yulia', 3: 'Hurry, Dima! You need to get out of here too!', 4: '1'}
+314	314		202							{1: '1'}
+315	315		401							{1: '2', 2: '10021517'}
+316	316		301							"{3: ""An unusual hint of anxiety seeps into Yulia's voice as she prompts the mechanoid beside her, all the while drawing the gun mounted on her wheelchair.""}"
+317	317		401							{1: '2', 2: '4113'}
+318	318		301							"{3: ""The rusty iron door lets out a hoarse screech, setting everyone's nerves on edge. The once-noisy crowd now stands frozen in place, afraid to make even the slightest sound.""}"
+319	319		301							{3: 'A small mechanoid peeks out from behind the corner of the door.'}
+320	320		201							{1: '1', 2: '500924'}
+321	321		301							"{1: '1', 2: 'Yulia', 3: ""Nia? It's you..."", 4: '1'}"
+322	322		202							{1: '1'}
+323	323		401							{1: '2', 2: '2672'}
+324	324		401							{1: '1', 2: '36'}
+325	325		301							{3: 'The crowd, seemingly acquainted with the small mechanoid, starts to stir back to life as the iron door creaks open wider.'}
+326	326		201							{1: '1', 2: '500916'}
+327	327		301							{1: '1', 2: '??', 3: 'Pardon my intrusion...', 4: '1'}
+328	328		301				AniZhuanchangBegin			{3: 'A woman in traditional Kowloong attire appears before the crowd.'}
+329	329		202				DialogDisable			{1: '1', 6: '1'}
+330	330		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory595.jpg'}
+331	331		307			AniZhuanchangEnd			2000.0	{1: 'A few minutes ago...', 3: '65', 4: 'ffffffff'}
+332	332		301							{3: 'A few minutes ago...'}
+333	333		401							{1: '2', 2: '4376'}
+334	334		401							{1: '2', 2: '4204'}
+335	335		307							{2: '1'}
+336	336		301			DialogEnable				"{3: ""The small mechanoid's path mysteriously matches the footprints on the ground. Following its lead, Hanying enters an abandoned factory.""}"
+337	337		301							{3: 'Distant voices and commotion reverberate through the space, still some distance away from her position.'}
+338	338		201							{1: '1', 2: '500916'}
+339	339		301							{1: '1', 2: 'Hanying', 3: '...Humans?', 4: '1'}
+340	340		202							{1: '1'}
+341	341		301							"{3: ""The biosignatures don't lie—dozens of humans are hiding within this derelict factory.""}"
+342	342		401							{1: '2', 2: '4376'}
+343	343		301							"{3: ""Clomp, clomp—the mechanoid's footsteps echo through the empty factory. Suddenly, she notices an eerie silence has fallen. The previous commotion has dissipated, as though everyone is holding their breath, anticipating her arrival.""}"
+344	344		301							{3: 'They seem to have marked her as an intruder...'}
+345	345		301				DialogDisable			{3: 'Even though the small mechanoid has guided her here, the intentions of those residing inside remain unclear. She ought to remain on guard...'}
+346	346		401							{1: '2', 2: '4542'}
+347	347		402							{1: '4204'}
+348	348		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory942.jpg', 3: '0', 4: '1', 5: '1.5'}
+349	349		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory942.jpg'}
+350	350		205							{1: '999'}
+351	351		401							{1: '2', 2: '4312'}
+352	352		301			DialogEnable				{3: 'She cautiously pushes open the rust-covered iron door, revealing several ranged weapons aimed at her.'}
+353	353		301							{3: 'Her gaze sweeps across the room before settling on a human wearing basic combat gear.'}
+354	354		401							{1: '1', 2: '169'}
+355	355		201							{1: '1', 2: '500916'}
+356	356		301							"{1: '1', 2: '??', 3: ""Gray Raven Commandant... It's you..."", 4: '1'}"
+357	357		302							"{2: ""And you're...?"", 3: '358', 4: 'Hanying?', 5: '360'}"
+358	358		301							{3: 'This woman, though a stranger to you, evokes a peculiar sense of familiarity. Yet in your memory, you have never met her before.'}
+359	359	363	301							"{2: 'Hanying', 3: ""Commandant... I'm Hanying. We briefly crossed paths back in Kowloong, but I've upgraded my frame since then, so you might not recognize me..."", 4: '1'}"
+360	360		301							"{3: ""Even though you find this frame unfamiliar, there's something about her face that confirms her identity.""}"
+361	361		204							{1: '1', 2: '1'}
+362	362		301							{2: 'Hanying', 3: 'Oh, you remember me. How wonderful.', 4: '1'}
+363	363		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+364	364		202							{1: '1', 6: '1'}
+365	365		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory760.jpg'}
+366	366		504							{1: '0.7'}
+367	367		306							{1: '1'}
+368	368		301							{3: 'The chaotic scenes from that time flood back into your memory.'}
+369	369		301							"{3: 'The mechanoid named Schulz appeared suddenly and attacked Hanying, who was supposed to be his ""comrade.""'}"
+370	370		301							"{3: ""Only when her vital fluid splashed out did you realize the truth—she wasn't human at all.""}"
+371	371		301							{3: 'Even though you have only met once, her gaze toward you somehow exudes warmth and tenderness.'}
+372	372		301							"{3: ""Perhaps there's another reason for this sense of familiarity... but the memories have grown too hazy to recall.""}"
+373	373		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+374	374		504							{1: '0'}
+375	375		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory942.jpg'}
+376	376		306							
+377	377		201							{1: '1', 2: '1031001'}
+378	378		301							{1: '1', 2: 'Liv', 3: 'Hanying?', 4: '1'}
+379	379		203							{1: '1', 2: '0.25', 3: '-400'}
+380	380		201							{1: '2', 2: '500924', 4: '400'}
+381	381		301							{1: '1', 2: 'Yulia', 3: '...Do you know each other?', 4: '2'}
+382	382		202							{1: '1'}
+383	383		201							{1: '1', 2: '500916', 4: '-400'}
+384	384		301							"{1: '1', 2: 'Hanying', 3: ""I apologize for showing up uninvited... It's rather presumptuous of me."", 4: '1'}"
+385	385		301							{2: 'Hanying', 3: 'I came here in search of... a friend I lost contact with long ago. Back at that plaza, I saw one of my kin, so I followed them here, hoping to ask if they had any information about my friend...', 4: '1'}
+386	386		202							{1: '2'}
+387	387		201							{1: '2', 2: '500923', 4: '400'}
+388	388		301							"{1: '1', 2: 'Dimitri', 3: ""That's impossible. My tracks should have disappeared at the dumping ground."", 4: '2'}"
+389	389		301							{3: 'Sensing no hostility from Hanying, the mechanoid hiding behind the wheelchair cautiously peers out to look at her.'}
+390	390		301							{2: 'Hanying', 3: 'I did lose my way at the dumping ground, but then I ran into another fellow mechanoid there...', 4: '1'}
+391	391		202							{1: '1'}
+392	392		201							{1: '1', 2: '500470', 4: '-500', 5: '-150', 6: '200'}
+393	393		301							{1: '1', 2: 'Nia', 3: 'This, is, thank you, right?', 4: '1'}
+394	394		301							"{3: ""The tiny mechanoid emerges from beside Hanying's feet, speaking with a stutter.""}"
+395	395		301							{2: 'Dimitri', 3: 'So, you were the one who brought her here... Miss Yula, this fellow mechanoid named Hanying appears to mean no harm. Nia has told me everything that happened.', 4: '2'}
+396	396		202							{1: '1', 2: '2'}
+397	397		301							{3: 'Yulia lowers her hunting rifle, yet her gaze remains wary toward Hanying.'}
+398	398		201							{1: '1', 2: '500924'}
+399	399		301							"{1: '1', 2: 'Yulia', 3: 'Humans rarely refer to each other as ""kin"" precisely because the word is too simplistic to capture the complexity of human nature.', 4: '1'}"
+400	400		301							"{2: 'Yulia', 3: ""This hideout has always been secluded. Whether I welcome you or not hardly matters now that you're already here."", 4: '1'}"
+401	401		202							{1: '1'}
+402	402		301		1		AniZhuanchangBegin			"{3: ""She closes her eyes and wearily turns her wheelchair halfway around, silently accepting Hanying's arrival.""}"

@@ -1,0 +1,77 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory84.jpg'}
+2	2		401							{1: '1', 2: '204'}
+3	3		301			DialogEnable				{3: '3:20 p.m. F6 Military Warehouse, Command Central'}
+4	4		301							{2: '??', 3: 'Three packages of serum, injectors, bio-type filters...'}
+5	5		301							{3: 'A worker is reading out a catalogue of supplies while adjusting his glasses.'}
+6	6		301							"{2: '??', 3: ""But hey, Gray Raven's commandant, right? Did something happen to the usual girl?""}"
+7	7		302				AniZhuanchangBegin			{2: 'Liv has something to take care of.', 3: '8'}
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+9	9		504							{1: '1'}
+10	10		201							{1: '1', 2: '1031001', 3: '6'}
+11	11		301			AniZhuanchangEnd				{1: '1', 2: 'Liv', 3: 'Sorry, Commandant. I might need your help...', 4: '1'}
+12	12		301							"{2: 'Liv', 3: ""I'm usually the one to claim supplies for the squad every Thursday, but there's an emergency at the Star of Life. I'll have to go help..."", 4: '1'}"
+13	13		302							{2: 'No worries.', 3: '14', 4: 'Leave this to me.', 5: '14'}
+14	14		301							"{2: 'Liv', 3: ""The officer there is called Ailes, and he's a very nice person! So don't worry, Commandant! Just give him the list and he'll get the supplies ready."", 4: '1'}"
+15	15		301				AniZhuanchangBegin			{2: 'Liv', 3: 'Thank you, Commandant!', 4: '1'}
+16	16		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory84.jpg'}
+17	17		201							{1: '1', 2: '500019'}
+18	18		504							{1: '0'}
+19	19		301			AniZhuanchangEnd				{1: '1', 2: 'Ailes', 3: 'Ah, I see... Hmm... Must be the squad that went missing in the frontlines. Heard Walker and the others talking about them this morning.', 4: '1'}
+20	20		301							"{2: 'Ailes', 3: ""What a world we live in. War that just never ends... Oh, the rack's empty, hang on a sec."", 4: '1'}"
+21	21		302							{2: 'Thanks.', 3: '22', 4: 'Missing...?', 5: '22'}
+22	22		202							{1: '1', 3: 'Ailes turns and scans his ID card, entering a room to the side. While waiting, you look around casually—some hurried-looking workers from other departments, and some Constructs here for military supplies...'}
+23	23		301							{3: 'A red shade suddenly flirts into your eyes. That person seems to be in conversation.'}
+24	24		201							{1: '1', 2: '500005', 4: '-400'}
+25	25		201							{1: '2', 2: '500168', 4: '400'}
+26	26		301							{1: '1', 3: 'A woman with red hair. Furrowing her brows, she seems to be talking to a stranger. The man is gesturing brusquely and talking gruffly, to which she responds with a condescending smirk.'}
+27	27		301							{3: 'The woman then mutters something, which deflates the man almost instantly. He begins looking around nervously.'}
+28	28		302							{2: '(What are they doing...?)', 3: '29'}
+29	29		202							{1: '1', 2: '2', 6: '1'}
+30	30		201							{1: '1', 2: '500019'}
+31	31		301							"{1: '1', 2: 'Ailes', 3: ""Commandant? What's the matter? Took me ages to find you!"", 4: '1'}"
+32	32		302							{2: '...!', 3: '33', 4: '...', 5: '33'}
+33	33		301							{3: 'The sudden exclamation removes you from your voyeuristic venture.'}
+34	34		301							{2: 'Ailes', 3: 'Here. These should be the supplies you need. Please check and confirm.', 4: '1'}
+35	35		302							{2: 'Alright.', 3: '36', 4: 'Thanks.', 5: '36'}
+36	36		202							{1: '1'}
+37	37		301							{3: 'Ailes leaves after he hands the trunk of resources over to you. As if drawn by a flame, your gaze is helplessly tugged back to the corner with the woman, only to find her already absent.'}
+38	38		301							{2: '??', 3: 'Need anything?'}
+39	39		201							{1: '1', 2: '500168', 3: '1'}
+40	40		301							"{1: '1', 2: 'Vera', 3: ""Peeping around like a rat, you can't be looking for me, can you?"", 4: '1'}"
+41	41		302							{2: 'Yes.', 3: '42', 4: 'No.', 5: '44'}
+42	42		301							{2: 'Vera', 3: 'Honest to a fault, hm?', 4: '1'}
+43	43	46	301							"{2: 'Vera', 3: ""But, well. I'm not in the mood right now. Need me for something—try booking earlier. I might consider entertaining you for a few seconds."", 4: '1'}"
+44	44		301							{2: 'Vera', 3: 'Tsk, tsk—liar, liar.', 4: '1'}
+45	45		301							{2: 'Vera', 3: 'Not into liars, uh-uh.', 4: '1'}
+46	46		301							{3: 'Vera crosses her arms, revealing a medical bag—something she just acquired—before her torso. Noticing your eyes being drawn downward, she props both hands on her hips. A bemused shadow flickers past her eyes.'}
+47	47		301							{2: 'Vera', 3: 'Whatcha looking at?', 4: '1'}
+48	48		301							{2: 'Vera', 3: 'Ah. Or, should I say? You like what you see?', 4: '1'}
+49	49		204							{1: '1', 2: '13'}
+50	50		301							{2: 'Vera', 3: 'Having such true-to-yourself eyes—you must have a death wish.', 4: '1'}
+51	51		302							"{2: ""I didn't mean to."", 3: '52', 4: 'S-sorry.', 5: '56'}"
+52	52		301							{2: 'Vera', 3: 'Apologize.', 4: '1'}
+53	53		302							{2: 'Sorry.', 3: '54'}
+54	54		204							{1: '1', 2: '1'}
+55	55	58	301							{2: 'Vera', 3: 'Apology accepted.', 4: '1'}
+56	56		204							{1: '1', 2: '1'}
+57	57		301							{2: 'Vera', 3: 'Apology accepted.', 4: '1'}
+58	58		301							{2: 'Vera', 3: 'But before that... You wondering about what I was doing?', 4: '1'}
+59	59		302							{2: 'Yes.', 3: '63', 4: 'No...?', 5: '60'}
+60	60		301							{2: 'Vera', 3: 'Then why are you staring at me?', 4: '1'}
+61	61		301							"{2: 'Vera', 3: '...Oh. I get it now. You were wondering about ""me?""', 4: '1'}"
+62	62		301							{2: 'Vera', 3: 'Pfft, you sorry little fool. But, well...', 4: '1'}
+63	63		301							{2: 'Vera', 3: 'If you want to know more...', 4: '1'}
+64	64		301							{3: 'Vera shuffles closer and whispers.'}
+65	65		301							"{2: 'Vera', 3: ""Come closer, shh, I'll tell you."", 4: '1'}"
+66	66		302							{2: '(Approach)', 3: '67', 4: 'Okay?', 5: '67'}
+67	67		301			RImgBg1Shake				{3: 'You lean closer to Vera, only to be met with biting pain on your forehead.'}
+68	68		302							{2: 'Ow!', 3: '69'}
+69	69		301							{3: 'Ignoring your yelp, Vera curls her fingers and knocks you on the forehead once more. The force that she knocks you with almost sends you reeling. People call her a hyena for a reason.'}
+70	70		204							{1: '1', 2: '13'}
+71	71		301							{2: 'Vera', 3: 'Dimwit!', 4: '1'}
+72	72		301							{3: 'Vera scoffs, then crosses her arms again.'}
+73	73		301							"{2: 'Vera', 3: ""Stop sticking your nose into other people's business. Get it?"", 4: '1'}"
+74	74		302							{2: 'You viper.', 3: '75', 4: 'Rude.', 5: '75'}
+75	75		204							{1: '1', 2: '1'}
+76	76		301		1		AniZhuanchangBegin			{2: 'Vera', 3: 'Thanks. Now get out of my sight.', 4: '1'}

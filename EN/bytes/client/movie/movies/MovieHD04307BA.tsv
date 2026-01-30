@@ -1,0 +1,129 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+2	2		401							{1: '2', 2: '212'}
+3	3		401							{1: '1', 2: '282'}
+4	4		401						200.0	{1: '2', 2: '4912'}
+5	5		402							{1: '4912'}
+6	6		401						100.0	{1: '2', 2: '4495'}
+7	7		402							{1: '4495'}
+8	8		301			DialogEnable				{3: 'After inserting the fun ticket into the lottery machine, the shop attendant rings the brass bell a few times.'}
+9	9		201							{1: '1', 2: '500965'}
+10	10		301							"{1: '1', 2: 'Staff', 3: 'Doo-doo-doo! Congratulations... on getting ""Rooftop Race"" for your adventure!', 4: '1'}"
+11	11		301							"{2: 'Staff', 3: ""This is the most exciting thing in our adventure prize pool! I'm sure it's going to be unforgettable for both of you!"", 4: '1'}"
+12	12		201							{1: '1', 2: '1081001', 3: '2', 7: '1'}
+13	13		301							{1: '1', 2: 'Kamui', 3: 'Really? Looks like we got lucky today, Commandant!', 4: '1'}
+14	14		301							"{2: 'Kamui', 3: ""Never thought we'd get to try something this exciting for free with this adventure program! Let's go and check it out now!"", 4: '1'}"
+15	15		301				DialogDisable			"{3: ""Kamui seems very pleased with this exciting-sounding adventure, so much so that he's rubbing his hands together in excitement.""}"
+16	16		202							{1: '1'}
+17	17		302							"{2: ""Wait... Rooftop Race? Don't tell me we'll actually be running across building rooftops in Constellia?"", 3: '18'}"
+18	18		201							{1: '1', 2: '500965'}
+19	19		301			DialogEnable				"{1: '1', 2: 'Staff', 3: ""Don't worry! We've implemented comprehensive safety measures. There's going to be absolutely no risk during the race."", 4: '1'}"
+20	20		301							{2: 'Staff', 3: 'Both this Construct gentleman here and you, Commandant, will enjoy yourselves thoroughly. Satisfaction guaranteed.', 4: '1'}
+21	21		202							{1: '1'}
+22	22		301				DialogDisable			{3: 'Is it just me, or does that shop attendant seem to be trying awfully hard to hide something?'}
+23	23		401							{1: '2', 2: '4387'}
+24	24		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+25	25		401							{1: '2', 2: '4388'}
+26	26		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg'}
+27	27		301			DialogEnable				"{3: ""Led by Kamui's excitement, the two of you arrive together at the race site buzzing with the crowd's noises.""}"
+28	28		301							{3: 'The moment you step onto the rooftop, it dawns on you why the shop attendant was trying so hard to make you both join the race.'}
+29	29		509						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg', 2: '1'}
+30	30		201							{1: '11', 2: '500488', 4: '-600', 5: '-250', 6: '300'}
+31	31		301							"{1: '1', 2: 'Excited Little Mechanoid A', 3: ""I can't believe we just needed tickets to see the Gray Raven Commandant and Kamui from Strike Hawk in a rooftop race!"", 4: '11'}"
+32	32		201							{1: '11', 2: '500471', 4: '-600', 5: '-200', 6: '300'}
+33	33		301							"{1: '1', 2: 'Excited Little Mechanoid B', 3: ""I know, right?! I've never seen the Gray Raven Commandant in person. I'm so excited!"", 4: '11'}"
+34	34		301				DialogDisable			{3: 'The audience area in the distance is packed with mechanoids who rushed here after hearing the news, filling the venue to the brim.'}
+35	35		202							{1: '11'}
+36	36		510						1000.0	{1: '1'}
+37	37		302							{1: '1', 2: 'Kamui, I... think the shop was probably just using us to sell their tickets.', 3: '38'}
+38	38		201							{1: '1', 2: '1081001', 3: '2'}
+39	39		204							{1: '1', 2: '4'}
+40	40		301			DialogEnable				"{1: '1', 2: 'Kamui', 3: 'So that\'s why we ""happened"" to draw the ""most exciting thing"" in their prize pool?', 4: '1'}"
+41	41		301							"{3: ""It takes a few seconds before your words sink in. Looks like he's still caught up in his excitement from earlier.""}"
+42	42		204							{1: '1', 2: '2'}
+43	43		301							"{2: 'Kamui', 3: ""But you know what... since we've got such a perfect stage for our performance anyway."", 4: '1'}"
+44	44		301							"{2: 'Kamui', 3: ""【kuroname】, let's put on a show that's gonna blow 'em all away!"", 4: '1'}"
+45	45		202							{1: '1'}
+46	46		401							{1: '2', 2: '4432'}
+47	47		306							{1: '1'}
+48	48		301							{3: 'Both you and Kamui quickly ready yourselves for the race.'}
+49	49		301							{3: 'This race is far from a simple sprint. Contestants have to leap multiple rooftops while keeping their hands tied together throughout the entire time—which is nothing short of a truly difficult challenge.'}
+50	50		301							"{3: ""A staff member binds your left hand to Kamui's right. The two of you stand shoulder to shoulder at the starting line.""}"
+51	51		306							
+52	52		201							{1: '1', 2: '1081001', 3: '2'}
+53	53		301							"{1: '1', 2: 'Kamui', 3: ""When we're good to go, run as fast as you can. I'll match your pace."", 4: '1'}"
+54	54		204							{1: '1', 2: '1'}
+55	55		301							"{2: 'Kamui', 3: ""I'll catch you if you're ever about to fall."", 4: '1'}"
+56	56		302							"{2: ""Sounds good. I'm counting on you, then."", 3: '57', 4: 'I think you should try to catch up to me if anything.', 5: '59'}"
+57	57		204							{1: '1', 2: '2'}
+58	58	60	301							"{2: 'Kamui', 3: ""Yeah! Let's win first place together, Commandant!"", 4: '1'}"
+59	59		204							{1: '1', 2: '2'}
+60	60		301							"{2: 'Kamui', 3: ""That's right! I'm sure you're gonna blow the other contestants away, Commandant!"", 4: '1'}"
+61	61		401							{1: '1', 2: '36'}
+62	62		201							{1: '1', 2: '500965', 7: '1'}
+63	63		301				DialogDisable			{1: '1', 2: 'Judge', 3: 'Ladies and gentlemen, on your marks—', 4: '1'}
+64	64		202							{1: '1'}
+65	65		401				RImgBg1Shake			{1: '2', 2: '4601'}
+66	66		401							{1: '1', 2: '29'}
+67	67		401							{1: '2', 2: '1504'}
+68	68		306							{1: '1'}
+69	69		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+70	70		301			DialogEnable	DialogDisable			{3: 'BEEEEEEP—As the starting whistle blows, all teams surge forward from the starting line.'}
+71	71		402							{1: '212'}
+72	72		401						1000.0	{1: '2', 2: '4331'}
+73	73		402							{1: '4331'}
+74	74		401						800.0	{1: '2', 2: '4341'}
+75	75		402							{1: '4341'}
+76	76		104							{1: '0|50|-100', 2: '0.3'}
+77	77		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory30.jpg', 3: '0', 4: '1', 5: '0.5'}
+78	78		301			DialogEnable				{3: 'The other teams, too, seem to consist of a commandant and a Construct. While rooftop racing is no easy feat by any standard, everyone moves with surprising speed and agility.'}
+79	79		301				DialogDisable			{3: 'You expected at least one or two pairs to fail at the rooftop jumps, but glancing back, you see everyone has kept up—not a single team has fallen behind.'}
+80	80		401							{1: '2', 2: '4341'}
+81	81		104							{1: '0|150|-150', 2: '0.3'}
+82	82		402							{1: '4341'}
+83	83		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg', 3: '0', 4: '1', 5: '0.6'}
+84	84		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg'}
+85	85		205							{1: '999'}
+86	86		301			DialogEnable	DialogDisable			"{3: 'The finish line is now in sight. You know that you\'ll have to pull some ""tricks"" to speed yourself and Kamui up if you want to come out on top.'}"
+87	87		302							"{2: ""Kamui, let's take a shortcut!"", 3: '88', 4: '(Give Kamui a meaningful look)', 5: '88'}"
+88	88		201							{1: '18', 2: '1081001', 3: '2', 4: '-400', 5: '-100', 6: '500'}
+89	89		301			DialogEnable				"{1: '1', 2: 'Kamui', 3: ""Yes, ma'am!"", 4: '18'}"
+90	90		202			DialogDisable			500.0	{1: '18', 6: '1'}
+91	91		401							{1: '2', 2: '4341'}
+92	92		104						100.0	{1: '0|-100|-150', 2: '0.3'}
+93	93		402							{1: '4341'}
+94	94		104							{1: '0|-120|-250', 2: '0.5'}
+95	95		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0.7', 4: '1', 5: '0.4'}
+96	96		104							{1: '0|-120|-250', 2: '0'}
+97	97		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory106.png', 3: '1', 4: '1', 5: '0'}
+98	98		104							{1: '0|-120|-250', 2: '0'}
+99	99		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory106.png'}
+100	100		205							{1: '999'}
+101	101		301			DialogEnable				"{3: ""A split second later, Kamui, having understood exactly what you meant, scoops you up by the waist, plants his foot on the rooftop's safety barrier, and leaps down along the exterior of the building.""}"
+102	102		301							"{2: 'Judge', 3: ""Woaaaaaah?! 【kuroname】 and Kamui aren't taking the stairs. They just jumped off a building!""}"
+103	103		301							"{2: 'Judge', 3: ""But it doesn't count as a violation since they still have their rope tied to both their hands!""}"
+104	104		306							
+105	105		201							{1: '1', 2: '1081001', 3: '4'}
+106	106		301							{1: '1', 2: 'Kamui', 3: 'Hold on tight, 【kuroname】! The wind might get pretty loud!', 4: '1'}
+107	107		302							"{2: 'Always have been.', 3: '108', 4: ""(Grab Kamui's shoulders)"", 5: '108'}"
+108	108		204							{1: '1', 2: '1'}
+109	109		301				DialogDisable			"{2: 'Kamui', 3: ""Alright, we're about to speed up in 3, 2..."", 4: '1'}"
+110	110		202							{2: '1', 6: '1'}
+111	111		401							{1: '2', 2: '4341'}
+112	112		104						100.0	{1: '0|-190|-260', 2: '0.3'}
+113	113		402							{1: '4341'}
+114	114		104							{1: '0|-180|-260', 2: '0.5'}
+115	115		301			DialogEnable				"{3: ""Having made sure you're safe, Kamui gives the building's wall a kick and begins accelerating toward the ground in a rapid descent.""}"
+116	116		505						100.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+117	117		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '1'}
+118	118		104							{1: '0|-150|-260', 2: '3'}
+119	119		401							{1: '2', 2: '4332'}
+120	120		301				DialogDisable			"{3: ""The wind howls fiercely past your ears, but in Kamui's arms, you feel completely safe. You're filled with a sensation of weightlessness, which you've rarely ever felt, and excitement.""}"
+121	121		201							{1: '1', 2: '1081001', 3: '1'}
+122	122		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Kamui', 3: ""Commandant, I'm happy to share this unique moment with you."", 4: '1'}"
+123	123		202							{2: '1'}
+124	124		104							{1: '0|-120|-250', 2: '3'}
+125	125		301			DialogEnable				"{3: ""Seconds before reaching the ground, Kamui quickly but gently utters these words like he's making a confession.""}"
+126	126		302							{2: 'Me too.', 3: '127'}
+127	127		201							{1: '1', 2: '1081001', 3: '2'}
+128	128		301		1		AniZhuanchangBegin			{1: '1', 2: 'Kamui', 3: 'Yup, I love being with you, and that matters more than whatever prize this event has to offer.', 4: '1'}

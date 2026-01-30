@@ -1,0 +1,36 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+2	2		401							{1: '1', 2: '101'}
+3	3		201							{1: '1', 2: '1021001'}
+4	4		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'Commandant, target Corrupted is making a run for it.', 4: '1'}
+5	5		302							"{2: ""Don't let it go!"", 3: '6', 4: 'Estimate its trajectory!', 5: '7'}"
+6	6	9	301							{2: 'Lucia', 3: 'Roger, Commandant.', 4: '1'}
+7	7		201							{1: '1', 2: '1031001'}
+8	8		301							"{1: '1', 2: 'Liv', 3: ""The radar isn't looking good..."", 4: '1'}"
+9	9		401							{1: '2', 2: '1508'}
+10	10		201							{1: '1', 2: '500013'}
+11	11		301							{1: '1', 2: 'Corrupted', 3: '—!', 4: '1'}
+12	12		201							{1: '1', 2: '1021001'}
+13	13		301							"{1: '1', 2: 'Lucia', 3: ""What's wrong, Commandant? If we keep chasing it, we'll be charging right into enemy territory."", 4: '1'}"
+14	14		203							{1: '1', 2: '0.25', 3: '-400'}
+15	15		201							{1: '2', 2: '1011001', 4: '400'}
+16	16		301							{1: '1', 2: 'Lee', 3: 'If you enter enemy territory, the mission will...', 4: '2'}
+17	17		202							{1: '1', 2: '2', 6: '1'}
+18	18		201							{1: '1', 2: '500196'}
+19	19		301							"{1: '1', 2: 'Karenina', 3: ""Then don't let it in!"", 4: '1'}"
+20	20		201							{1: '1', 2: '1021001'}
+21	21		301							{1: '1', 2: 'Lucia', 3: 'Karen, what are you doing?', 4: '1'}
+22	22		201							{1: '1', 2: '500196'}
+23	23		301							{1: '1', 2: 'Karenina', 3: 'Doing what I do best!', 4: '1'}
+24	24		201							{1: '1', 2: '1011001'}
+25	25		301							{1: '1', 2: 'Lee', 3: 'Wait, the border is a minefield! If you blow it up...', 4: '1'}
+26	26		201							{1: '1', 2: '500196'}
+27	27		301							"{1: '1', 2: 'Karenina', 3: ""I'll just avoid the blast!"", 4: '1'}"
+28	28		301							"{2: 'Karenina', 3: ""We'll blow up a ravine so it can't climb out!"", 4: '1'}"
+29	29		302							"{2: ""Don't be so reckless, Karenina!"", 3: '30', 4: 'Everyone, brace yourselves!', 5: '31'}"
+30	30	33	301							{2: 'Karenina', 3: 'Everything will be fine, Commandant.', 4: '1'}
+31	31		201							{1: '1', 2: '1011001'}
+32	32		301							{1: '1', 2: 'Lee', 3: 'Hey, Commandant! Think of a way to stop her!', 4: '1'}
+33	33		202							{1: '1', 6: '1'}
+34	34		401							{1: '2', 2: '10007502'}
+35	35		301		1	RImgBg1Shake	AniZhuanchangBegin			{3: '——————'}

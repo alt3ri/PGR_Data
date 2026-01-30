@@ -1,0 +1,600 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory710.jpg'}
+2	2		401							{1: '1', 2: '386'}
+3	3		201							{1: '1', 2: '500979', 3: '8'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Luna', 3: ""Cry not if you're before my grave..."", 4: '1', 18: '100004852'}"
+5	5		301							"{3: ""The girl's voice trails off softly. These past few nights, 【kuroname】 comes here to teach Luna how to sing, and today she finally has it down.""}"
+6	6		204							{1: '1', 2: '1'}
+7	7		301				DialogDisable			{2: 'Luna', 3: 'So, what do you think? Does it sound good?', 4: '1', 18: '100004853'}
+8	8		302							"{2: ""It's lovely."", 3: '9'}"
+9	9		302							{2: 'How are your memories? Are they coming back yet?', 3: '10'}
+10	10		204							{1: '1', 2: '3'}
+11	11		301			DialogEnable				{2: 'Luna', 3: 'No.', 4: '1', 18: '100004854'}
+12	12		302							{2: '...', 3: '13'}
+13	13		202							{1: '1'}
+14	14		301							"{3: ""Luna tilts her head, studying the person before her. She senses real joy in 【kuroname】 over her mastering the song, but there's a faint trace of unease lurking beneath it all.""}"
+15	15		301							{3: 'She pauses for a moment, then invites the human.'}
+16	16		201							{1: '1', 2: '500979', 3: '1'}
+17	17		301							{1: '1', 2: 'Luna', 3: 'Would you like to go for a walk on the beach?', 4: '1', 18: '100004855'}
+18	18		302							{2: 'Hmm?', 3: '19', 4: 'Sure.', 5: '31'}
+19	19		301							{2: 'Luna', 3: 'Are you surprised?', 4: '1', 18: '100004856'}
+20	20		302							{2: 'A little, yes.', 3: '21'}
+21	21		204							{1: '1', 2: '7'}
+22	22		301				DialogDisable			{2: 'Luna', 3: 'Why?', 4: '1', 18: '100004857'}
+23	23		302							"{2: ""The Luna I know isn't usually this... gentle."", 3: '24', 4: 'Didn\'t expect ""Luna"" to make this kind of invitation.', 5: '24'}"
+24	24		302							"{2: 'If it\'s the Luna I know, she\'d just come right out and say, ""Come with me to the beach.""', 3: '25'}"
+25	25		204							{1: '1'}
+26	26		301			DialogEnable				"{2: 'Luna', 3: ""Hmm... The me you know isn't here."", 4: '1', 18: '100004858'}"
+27	27		202							{1: '1'}
+28	28		301							{3: 'Luna finishes speaking, then turns and heads downstairs.'}
+29	29		301				DialogDisable			{3: 'The human stays quiet for a moment.'}
+30	30		302							"{2: ""Isn't here..."", 3: '31', 4: '...', 5: '31'}"
+31	31		401			AniZhuanchangBegin			2000.0	{1: '1', 2: '36'}
+32	32		202							{1: '1', 6: '1'}
+33	33		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+34	34		401							{1: '1', 2: '100'}
+35	35		401				DialogEnable			{1: '2', 2: '903'}
+36	36		301			AniZhuanchangEnd				{3: 'The two of you walk in silence under the night sky, leaving footprints of different depths in the sand, only for the waves to wash them away moments later.'}
+37	37		301							"{3: ""Even though it's already the height of summer, the night air still has a chill, so starting on the second night, you put on a hoodie.""}"
+38	38		301							"{3: ""The atmosphere feels awkward; you think you should say something, but Luna's amnesia still troubles you.""}"
+39	39		301							"{3: ""It seems reality isn't anything like a soap opera after all.""}"
+40	40		301							"{3: ""M.I.N.D. is notoriously difficult to study. Even the Science Council can't claim to fully understand it.""}"
+41	41		301							{3: 'Jumbled thoughts race through your head until you suddenly realize the girl beside you is speaking.'}
+42	42		402							{1: '903'}
+43	43		201							{1: '1', 2: '500979'}
+44	44		301							{1: '1', 2: 'Luna', 3: '【kuroname】, are you listening?', 4: '1', 18: '100004859'}
+45	45		302							{2: 'Sorry, I was lost in thought just now.', 3: '46'}
+46	46		204							{1: '1', 2: '1'}
+47	47		301				DialogDisable			{2: 'Luna', 3: 'What are you thinking right now?', 4: '1', 18: '100004860'}
+48	48		302							"{2: ""I'm trying to figure out how to restore your memory."", 3: '49'}"
+49	49		302							"{2: ""After all, singing doesn't seem to help much."", 3: '50'}"
+50	50		204							{1: '1'}
+51	51		301			DialogEnable				{2: 'Luna', 3: 'Hmm... I see.', 4: '1', 18: '100004861'}
+52	52		204							{1: '1', 2: '1'}
+53	53		301							"{2: 'Luna', 3: 'I don\'t think it\'s a total waste. I do recall a lot over these past few days, but I\'m still nowhere near the ""Luna"" you want.', 4: '1', 18: '100004862'}"
+54	54		301							{3: 'She is a lot more lively than the Luna you know... You find yourself unaccustomed to it.'}
+55	55		302							{2: 'What do you remember now?', 3: '56'}
+56	56		204							{1: '1'}
+57	57		301							"{2: 'Luna', 3: ""They're all fragments—mostly everyday, mundane memories."", 4: '1', 18: '100004863'}"
+58	58		301							{3: 'Luna frowns slightly, bowing her head in thought as she speaks in a hushed tone.'}
+59	59		204							{1: '1', 2: '8'}
+60	60		301							"{2: 'Luna', 3: ""I'm with my sister... in this huge place, and we're really happy. There are lots of kids my age, and we all study together..."", 4: '1', 18: '100004864'}"
+61	61		302							{2: 'That place is called a school.'}
+62	62		204							{1: '1'}
+63	63		301							{2: 'Luna', 3: 'Yes... I remember now...', 4: '1', 18: '100004865'}
+64	64		204							{1: '1', 2: '1'}
+65	65		301							"{2: 'Luna', 3: ""So I'm a high school girl after all."", 4: '1', 18: '100004866'}"
+66	66		302							"{2: 'You have memories like those?', 3: '67', 4: ""Isn't it a bit too far away from reality...?"", 5: '69'}"
+67	67		301							"{2: 'Luna', 3: ""Yeah, it's a beautiful world—completely unlike this one."", 4: '1', 18: '100004867'}"
+68	68	73	301							"{2: 'Luna', 3: ""I mean, it's nothing like the usual memory fragments—there isn't even the Punishing Virus there."", 4: '1', 18: '100004868'}"
+69	69		202							{1: '1'}
+70	70		301							{3: 'Luna playfully taps your shoulder.'}
+71	71		201							{1: '1', 2: '500979', 3: '7'}
+72	72		301							"{1: '1', 2: 'Luna', 3: 'Come on, your world is the weird one, and there\'s this ""Punini"" thing...', 4: '1', 18: '100004869'}"
+73	73		302							"{2: ""So, what's that world like?"", 3: '74'}"
+74	74		204							{1: '1', 2: '1'}
+75	75		301							{2: 'Luna', 3: 'They call it the Golden Age. People there do whatever they want and learn anything they like. Compared to here, it really feels like... a dream world.', 4: '1', 18: '100004870'}
+76	76		301							"{2: 'Luna', 3: ""My sister loves cooking. She's amazing at it and always lets me try her latest creations."", 4: '1', 18: '100004871'}"
+77	77		301							"{2: 'Luna', 3: ""I'm into photography and post tons of pictures online. I figure I might become a photographer one day."", 4: '1', 18: '100004872'}"
+78	78		301							"{2: 'Luna', 3: ""We're running an online cooking channel..."", 4: '1', 18: '100004873'}"
+79	79		301							{2: 'Luna', 3: 'All in all, these days are pretty ordinary.', 4: '1', 18: '100004874'}
+80	80		302							{2: 'Ordinary...', 3: '81', 4: 'That does sound nice.', 5: '81'}
+81	81		301							{2: 'Luna', 3: 'Anyway, I came across a movie script in that castle yesterday.', 4: '1', 18: '100004875'}
+82	82		301							{3: 'Now that she mentions it, you indeed recall mechanoids telling you the story about that castle.'}
+83	83		302							"{2: ""So, what's it all about?"", 3: '84'}"
+84	84		301							{2: 'Luna', 3: 'It tells of a sea goddess who visited the human world for the very first time—and ended up falling for one.', 4: '1', 18: '100004876'}
+85	85		301							"{2: 'Luna', 3: ""Oh, and speaking of which, my outfit is actually inspired by the sea goddess's costume."", 4: '1', 18: '100004877'}"
+86	86		306							{1: '1'}
+87	87		301							"{3: ""So this is how she gets this outfit. You've been so caught up in Luna's amnesia that you didn't even think to ask about it until now.""}"
+88	88		301							"{3: ""But considering Luna's temperament, would she really go for this style?""}"
+89	89		306							
+90	90		302							{2: 'It feels a bit cliche.', 3: '91'}
+91	91		204							{1: '1', 2: '8'}
+92	92		301							{2: 'Luna', 3: 'Sure does.', 4: '1', 18: '100004878'}
+93	93		204							{1: '1'}
+94	94		301							{2: 'Luna', 3: 'A goddess fell for a human—taboo in every sense—and so a curse takes hold.', 4: '1', 18: '100004879'}
+95	95		301							"{2: 'Luna', 3: ""The sea goddess slumbered in her castle, only awakening on the day this human's life ended."", 4: '1', 18: '100004880'}"
+96	96		301							{2: 'Luna', 3: 'While that human had two choices.', 4: '1', 18: '100004881'}
+97	97		301							{2: 'Luna', 3: 'The first choice was to hold on to his longing for the goddess, waiting until his final moment, when she finally woke.', 4: '1', 18: '100004882'}
+98	98		301							{2: 'Luna', 3: 'The second was to embark on a quest to break the curse by awakening the moon, letting its cleansing moonlight wash over the sea. The price, however, was the goddess must forever forget this human.', 4: '1', 18: '100004883'}
+99	99		301							{3: 'This story...'}
+100	100		302							{2: 'Did that human awaken the goddess?', 3: '101'}
+101	101		301							"{3: ""Luna doesn't respond immediately. She just smiles and turns the question back on you.""}"
+102	102		204							{1: '1', 2: '1'}
+103	103		301							"{2: 'Luna', 3: ""What do you think this story's ending should be?"", 4: '1', 18: '100004884'}"
+104	104		302							"{2: ""I don't know."", 3: '105', 4: '...Maybe... it ended in failure.', 5: '107', 6: ""I think it'd be a success."", 7: '109'}"
+105	105		204							{1: '1', 2: '3'}
+106	106	110	301							{2: 'Luna', 3: 'I see.', 4: '1', 18: '100004885'}
+107	107		204							{1: '1', 2: '3'}
+108	108	110	301							"{2: 'Luna', 3: ""So that's how you think about it?"", 4: '1', 18: '100004886'}"
+109	109		301							"{2: 'Luna', 3: 'That\'s quite the ideal response, like a fairy-tale ending—""And the two live happily ever after.""', 4: '1', 18: '100004887'}"
+110	110		302							{2: 'So how does the story actually end?', 3: '111'}
+111	111		204							{1: '1', 2: '8'}
+112	112		301							{2: 'Luna', 3: 'Well...', 4: '1', 18: '100004888'}
+113	113		204							{1: '1', 2: '1'}
+114	114		301							"{2: 'Luna', 3: ""I'm keeping that a secret for now."", 4: '1', 18: '100004889'}"
+115	115		202							{1: '1'}
+116	116		301							"{3: ""The evening tide laps at her feet, covering her footprints again as though it's erasing the final chapter of this story.""}"
+117	117		201							{1: '1', 2: '500979', 3: '1'}
+118	118		301							{1: '1', 2: 'Luna', 3: 'Hey!', 4: '1', 18: '100004890'}
+119	119		202							{1: '1'}
+120	120		301							"{3: ""Maybe it's the sand that bothers her. Luna undoes her shoe clasps, laughs as she flicks them into the air, then dashes over to pick them up.""}"
+121	121		301							{3: 'Right now, she looks just like a bright, carefree girl.'}
+122	122		301							{3: 'Standing in the distance, Luna waves, motioning for you to head her way.'}
+123	123		201							{1: '1', 2: '500979', 3: '1'}
+124	124		301							{1: '1', 2: 'Luna', 3: 'Hold my shoes, will you?', 4: '1', 18: '100004891'}
+125	125		302							{2: 'Why am I even doing this...?', 3: '126'}
+126	126		301							"{2: 'Luna', 3: ""Hmm... I guess it's because I'm a high school girl. We get certain privileges."", 4: '1', 18: '100004892'}"
+127	127		202							{1: '1'}
+128	128		301							"{3: ""Luna stands with her back to the sea, moonlight and waves dancing behind her. Though it's night, the view seems blinding—perhaps due to her smile that shines so brightly under the moon's gentle glow.""}"
+129	129		301							"{3: ""You take the shoes from Luna's hand.""}"
+130	130		302							"{2: ""The Luna I used to know definitely wouldn't do something like this..."", 3: '131'}"
+131	131		201							{1: '1', 2: '500979', 3: '1'}
+132	132		301							{1: '1', 2: 'Luna', 3: 'Alright, tell me how you see her.', 4: '1', 18: '100004893'}
+133	133		302							"{2: ""She's... confident and strong."", 3: '134', 4: ""She's got an unbreakable spirit."", 5: '135', 6: ""She's... really not the easiest person to figure out."", 7: '136'}"
+134	134	136	301							"{3: 'When you picture Luna in that agent stance, you hesitate before choosing words like ""confident"" and ""strong.""'}"
+135	135		301							"{3: 'Taking a moment to ponder, you think ""unbreakable"" suits her best.'}"
+136	136		302				AniZhuanchangBegin			{2: 'She...', 3: '137'}
+137	137		202						2000.0	{1: '1', 6: '1'}
+138	138		301			AniZhuanchangEnd				{3: 'You sit side by side on the beach, her shoes neatly lined up next to you.'}
+139	139		201							{1: '1', 2: '500979', 3: '8', 5: '-50'}
+140	140		301							"{1: '1', 2: 'Luna', 3: ""So that's the story of our past."", 4: '1', 18: '100004894'}"
+141	141		302							{2: 'Are you remembering anything?', 3: '142'}
+142	142		204							{1: '1', 2: '1'}
+143	143		301							"{2: 'Luna', 3: ""Sorry, I'm still drawing a blank."", 4: '1', 18: '100004895'}"
+144	144		302							{2: 'What do you plan to do next?', 3: '145'}
+145	145		204							{1: '1', 2: '3'}
+146	146		301							"{2: 'Luna', 3: ""...I'm not really sure."", 4: '1', 18: '100004896'}"
+147	147		204							{1: '1'}
+148	148		301							"{2: 'Luna', 3: ""First, I'll look for my sister—though I suspect she might not be the same as I remember."", 4: '1', 18: '100004897'}"
+149	149		202							{1: '1'}
+150	150		301							{3: 'She lifts her right hand, and a bright red glow forms in her palm before fading away.'}
+151	151		201							{1: '1', 2: '500979', 3: '1', 5: '-50'}
+152	152		301							"{1: '1', 2: 'Luna', 3: ""At this moment, I'm not just a high school girl. For all I know, I might actually be a magical girl."", 4: '1', 18: '100004898'}"
+153	153		301							"{2: 'Luna', 3: ""Then again, maybe I'll wake up tomorrow and go right back to being my old self. Magic is funny like that."", 4: '1', 18: '100004899'}"
+154	154		301							{3: 'Her smile is filled with pure innocence and a fearless sense of wonder.'}
+155	155		302							"{2: ""So this is what a high school girl is like? You're pretty impressive."", 3: '156', 4: ""No wonder you're a magical girl."", 5: '156'}"
+156	156		301							{2: 'Luna', 3: 'What do you plan to do next? I remember you saying you want to help me recover my memories, right?', 4: '1', 18: '100004900'}
+157	157		301				DialogDisable			"{3: ""As you share your past experiences with Luna, you can't help hoping that once she hears it all, her memories will come back.""}"
+158	158		302							"{2: ""But maybe letting things run their course isn't such a bad idea."", 3: '159', 4: 'And that has already proven a failure.', 5: '159'}"
+159	159		302							"{2: ""If we can't bring things back to how they once were, we might as well start making new memories."", 3: '160'}"
+160	160		204							{1: '1', 2: '7'}
+161	161		203						120.0	{1: '1', 2: '0.1', 4: '-50', 5: '-10'}
+162	162		203							{1: '1', 2: '0.1', 4: '-50'}
+163	163		301			DialogEnable				{3: 'The girl hears this, halts for a second, and feels a few memories stir. Then, just as quickly, those memories fade back into silence.'}
+164	164		202							{1: '1'}
+165	165		301							{3: 'Luna shakes her head, deciding not to overthink, and just keeps her gaze on you.'}
+166	166		301							{3: 'She understands the weight behind those words and what they truly mean.'}
+167	167		201							{1: '1', 2: '500979', 3: '14'}
+168	168		301							"{1: '1', 2: 'Luna', 3: ""So you're giving up, just like that? You... really don't care about the memories we shared?"", 4: '1', 18: '100004901'}"
+169	169		301							{3: 'From the moment Luna first sees you, her heart flutters. She knows how important you are to her—and she knows exactly what that feeling is.'}
+170	170		301							{3: 'Because of that, she stares intently at you in front of her, carefully listening for what you say next.'}
+171	171		301							"{2: '【kuroname】', 3: ""It's not that I don't care...""}"
+172	172		301							"{2: '【kuroname】', 3: ""It's just that there's only so much anyone can do. Some things won't change just because you want them to. After all, life isn't some unreal comic.""}"
+173	173		301							"{2: '【kuroname】', 3: ""I'll figure something out later.""}"
+174	174		301							"{2: '【kuroname】', 3: ""If we really can't change anything, maybe... we just have to accept it.""}"
+175	175		301							{3: 'At these words, you pause and smile gently.'}
+176	176		301							"{2: '【kuroname】', 3: ""After all, there's still the future. I believe in us.""}"
+177	177		301							"{2: '【kuroname】', 3: ""And besides, didn't you say that in a few years you'd remember everything?""}"
+178	178		204							{1: '1', 2: '3'}
+179	179		301							{2: 'Luna', 3: 'The future...', 4: '1', 18: '100004902'}
+180	180		203							{1: '1', 2: '0.25', 4: '-50', 5: '-50'}
+181	181		301							"{3: ""Luna steps closer to you, your cheeks almost touching. At this distance, you can feel each other's breath.""}"
+182	182		204							{1: '1', 2: '14'}
+183	183		301				AniZhuanchangBegin			"{2: 'Luna', 3: ""I want to hear what you're really thinking deep down."", 4: '1', 18: '100004903'}"
+184	184		202							{1: '1', 6: '1'}
+185	185		301			AniZhuanchangEnd				{3: 'She notices how unsteady the breathing of 【kuroname】 is.'}
+186	186		301							"{3: ""In reality, she's been lying. She recalls far more than the human can possibly imagine.""}"
+187	187		301							"{3: ""She understands now that the real issue isn't here—it's with that Luna.""}"
+188	188		301							{3: 'Of course, she knows exactly how she feels inside.'}
+189	189		301							{3: 'Naturally, any teenage girl can relate to these shy, youthful emotions.'}
+190	190		306							{1: '1'}
+191	191		201							{1: '1', 2: '500979', 3: '1', 5: '-50', 6: '-50'}
+192	192		301							{1: '1', 2: 'Luna', 3: '(<phonetic=I>Luna</phonetic> is such a fool, worrying over something like this.)', 4: '1', 18: '100004904'}
+193	193		301							"{2: 'Luna', 3: ""(All right, I'll help you one more time. You just have to love boldly.)"", 4: '1', 18: '100004905'}"
+194	194		306							
+195	195		301							{3: 'In the next moment, a human hand rests gently against her cheek, radiating warmth.'}
+196	196		301							"{3: ""You're so close, locked in each other's gaze. Some feelings can't be contained; even if you cover your mouth, they spill out through your eyes.""}"
+197	197		301							{3: 'She sees the flicker of panic in your eyes.'}
+198	198		301							{3: 'She recognizes that the person standing before her shares the same emotion.'}
+199	199		301							{3: 'So speak up—lay bare that selfish longing hidden deep inside.'}
+200	200		301				AniZhuanchangBegin			"{3: 'The very emotion people call ""love.""'}"
+201	201		202			DialogDisable				{1: '1', 6: '1'}
+202	202		302			AniZhuanchangEnd				{2: 'Even so, I still want to say something completely willful.', 3: '203'}
+203	203		301			DialogEnable				"{3: ""You've heard all the lofty truths and the so-called right things to say, but you're still just human.""}"
+204	204		301							"{3: ""A kinder, more lively Luna is lovely, but the thing is... she isn't the Luna she used to be.""}"
+205	205		301				DialogDisable			"{3: ""She doesn't remember the past you once shared.""}"
+206	206		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+207	207		504							{1: '0.7'}
+208	208		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory282.png'}
+209	209		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+210	210		401							{1: '2', 2: '895'}
+211	211		201						500.0	{1: '1', 2: '500238', 3: '3', 7: '1'}
+212	212		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+213	213		504							{1: '0'}
+214	214		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+215	215		202							{1: '1', 6: '1'}
+216	216		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+217	217		302							{1: '1', 2: 'Luna...', 3: '218'}
+218	218		302							{2: 'Come on... wake up...', 3: '219'}
+219	219		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1.5'}
+220	220		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+221	221		205							{1: '999'}
+222	222		301			DialogEnable				{3: 'These words are what bind your destinies together.'}
+223	223		301							"{3: ""The butterfly sets a storm in motion, sunlight melts away the ice and snow, ripples shimmer across the lake, and the girl's memories come rushing back.""}"
+224	224		501						1500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+225	225		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+226	226		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+227	227		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+228	228		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+229	229		301							{3: 'Luna clasps the hand against her cheek.'}
+230	230		201							{1: '1', 2: '500979', 3: '8'}
+231	231		301							"{1: '1', 2: 'Luna', 3: ""In that story's ending, the human awakened the moon, and the goddess did indeed lose every trace of her memories of that human."", 4: '1', 18: '100004906'}"
+232	232		204							{1: '1'}
+233	233		301							{2: 'Luna', 3: 'But as soon as she saw that human again, she fell head over heels in love once more.', 4: '1', 18: '100004907'}
+234	234		301							"{3: ""No need for further words. It's obvious Luna's memory is back.""}"
+235	235		302							{2: 'Welcome back.', 3: '236'}
+236	236		301							"{2: 'Luna', 3: 'Close your eyes and let me show you something ""magical.""', 4: '1', 18: '100004908'}"
+237	237		302							{2: 'Mr.【kuroname】will gladly oblige.', 3: '238', 4: 'Ms.【kuroname】will gladly oblige.', 5: '419'}
+238	238		301				AniZhuanchangBegin			{3: 'You gently close your eyes.'}
+239	239		401			DialogDisable			2000.0	{1: '1', 2: '36'}
+240	240		401							{1: '1', 2: '181'}
+241	241		202							{1: '1', 6: '1'}
+242	242		101			AniZhuanchangEnd			1000.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_01.jpg'}
+243	243		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_02.jpg', 3: '0', 4: '1', 5: '1'}
+244	244		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+245	245		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_02.jpg'}
+246	246		301			DialogEnable	DialogDisable			"{3: ""Luna takes 【kuroname】's hand and heads straight for the ocean.""}"
+247	247		401							{1: '2', 2: '4144'}
+248	248		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_03.jpg', 3: '0', 4: '1', 5: '1'}
+249	249		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+250	250		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_03.jpg'}
+251	251		301			DialogEnable	DialogDisable			"{3: ""As soon as she steps onto the water, the agent's fingers shift slightly. A wave of crimson spreads beneath the surface, creating a bridge hidden below sea level.""}"
+252	252		401							{1: '2', 2: '4298'}
+253	253		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_04.jpg', 3: '0', 4: '1', 5: '1'}
+254	254		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+255	255		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_04.jpg'}
+256	256		301			DialogEnable				{3: 'One step, then another—the two walk across the sea.'}
+257	257		402							{1: '4298'}
+258	258		301				DialogDisable			"{3: ""The agent isn't who she used to be. She effortlessly manipulates the Punishing Virus, molding it into shapes that don't infect the human before her.""}"
+259	259		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_05.jpg', 3: '0', 4: '1', 5: '1'}
+260	260		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+261	261		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_05.jpg'}
+262	262		301			DialogEnable				{3: 'Luna occasionally looks back at 【kuroname】, who keeps eyes shut, completely trusting her.'}
+263	263		301				AniZhuanchangBegin			{3: 'At some point, she realizes just how special this human is to her.'}
+264	264		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_06.jpg'}
+265	265		301			AniZhuanchangEnd				{3: 'Beneath the Inver-Hetero Tower, she once said those words.'}
+266	266		301				DialogDisable			{2: 'Luna', 3: 'I, and the Ascendants under my command, trust only 【kuroname】.', 18: '100004909'}
+267	267		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_07.jpg', 3: '0', 4: '1', 5: '1'}
+268	268		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+269	269		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_07.jpg'}
+270	270		301			DialogEnable				{3: 'Why did she say that back then?'}
+271	271		301				DialogDisable			{3: 'Was it truly just the most advantageous choice?'}
+272	272		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_08.jpg', 3: '0', 4: '1', 5: '1'}
+273	273		401							{1: '2', 2: '4298'}
+274	274		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+275	275		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_08.jpg'}
+276	276		301			DialogEnable	DialogDisable			{3: 'With each step she takes, another vivid scene flickers through her M.I.N.D.'}
+277	277		402							{1: '4298'}
+278	278		401							{1: '2', 2: '981'}
+279	279		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_09.jpg', 3: '0', 4: '1', 5: '1'}
+280	280		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+281	281		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_09.jpg'}
+282	282		301			DialogEnable				"{3: ""It's the futures she once envisioned during her deep dive into the Ascension-Network.""}"
+283	283		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+284	284		401							{1: '2', 2: '2959'}
+285	285		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+286	286		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_10.jpg'}
+287	287		301				DialogDisable			{3: 'Before the colossal wave of machinery that darkens the sky.'}
+288	288		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_11.jpg', 3: '0', 4: '1', 5: '1'}
+289	289		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+290	290		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_11.jpg'}
+291	291		301			DialogEnable	DialogDisable			{3: 'When the crimson tide devours the world.'}
+292	292		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_12.jpg', 3: '0', 4: '1', 5: '1'}
+293	293		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+294	294		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_12.jpg'}
+295	295		301			DialogEnable	DialogDisable			{3: 'In the end of days, surrounded by desolation and storms.'}
+296	296		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_13.jpg', 3: '0', 4: '1', 5: '1'}
+297	297		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+298	298		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_13.jpg'}
+299	299		301			DialogEnable	DialogDisable			{3: 'Amid the ruins of a city entombed in ice and snow.'}
+300	300		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_14.jpg', 3: '0', 4: '1', 5: '1'}
+301	301		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+302	302		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_14.jpg'}
+303	303		301			DialogEnable	AniZhuanchangBegin			{3: 'Inside the garden as it glimmers under the morning sun.'}
+304	304		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_15.jpg'}
+305	305		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+306	306		301			AniZhuanchangEnd	DialogDisable			{3: 'Every time, 【kuroname】 is right there by her side.'}
+307	307		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_16.jpg', 3: '0', 4: '1', 5: '1'}
+308	308		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+309	309		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_16.jpg'}
+310	310		301			DialogEnable				{3: 'Ten times, twenty times, hundreds of times...'}
+311	311		301							"{3: ""She can't recall how many simulations she has run.""}"
+312	312		301							{3: 'Yet one thing stays the same: the person standing next to her never changes.'}
+313	313		301				AniZhuanchangBegin			{3: 'That human stands firmly by her side, always.'}
+314	314		101			DialogDisable	AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+315	315		301			DialogEnable				{3: 'She runs endless simulations, weighed down by confusion, hoping for clarity—only to uncover even more confusion.'}
+316	316		301				DialogDisable			{2: 'Luna', 3: 'Why... are you doing this?', 18: '100004910'}
+317	317		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_17.jpg', 3: '0', 4: '1', 5: '1'}
+318	318		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+319	319		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_17.jpg'}
+320	320		301			DialogEnable	AniZhuanchangBegin			{3: 'What is this <phonetic=love>emotion</phonetic> in her heart?'}
+321	321		401			DialogDisable			3000.0	{1: '1', 2: '36'}
+322	322		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+323	323		301			DialogEnable				{3: '...'}
+324	324		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+325	325		105							{1: 'Assets/Product/Ui/Spine/2-11Spine/UimovieSpine/UimovieLuna/UimovieLuna01.prefab'}
+326	326		401							{1: '1', 2: '359'}
+327	327		301							{3: 'Confident, strong, and composed...'}
+328	328		301							{3: 'These traits form the <phonetic=labels>armor</phonetic> that the agent wears.'}
+329	329		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+330	330		105							
+331	331		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+332	332		301							{3: 'But what lies beneath the <phonetic=labels>armor</phonetic>?'}
+333	333		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+334	334		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+335	335		401							{1: '2', 2: '895'}
+336	336		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2101.jpg'}
+337	337		301							{3: 'Fate plays a perfect cruel joke on her—neither allowing her the mercy of death, nor granting her the peace of life.'}
+338	338		301							{3: 'She just keeps struggling, over and over, standing on that thin line between life and death.'}
+339	339		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+340	340		401							{1: '2', 2: '895'}
+341	341		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2103.jpg'}
+342	342		301							{3: 'Tormented by hatred.'}
+343	343		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+344	344		401							{1: '2', 2: '895'}
+345	345		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_09.jpg'}
+346	346		301							{3: 'Dragged down by resentment.'}
+347	347		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+348	348		401							{1: '2', 2: '895'}
+349	349		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg612_2.jpg'}
+350	350		301							{3: 'Deceived by lies.'}
+351	351		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+352	352		401							{1: '2', 2: '895'}
+353	353		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_25.jpg'}
+354	354		104							{1: '0|-200|-400', 2: '0'}
+355	355		301							{3: 'Shackled by expectations.'}
+356	356		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+357	357		401							{1: '2', 2: '895'}
+358	358		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2102.jpg'}
+359	359		301							{3: 'There is no black or white—only the stifling weight of endless gray.'}
+360	360		301							{3: 'The agent who soars toward the blood-red sky is simply just a child abandoned among the ruins.'}
+361	361		301				AniZhuanchangBegin			"{3: ""That forsaken child can only send out a silent cry—like a cicada's muted call—to the world ravaged beyond repair.""}"
+362	362		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+363	363		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_17.jpg'}
+364	364		301			AniZhuanchangEnd				{3: 'Stumbling onward step by step, Luna now looks back on the <phonetic=Luna>child</phonetic> she used to be with quiet acceptance.'}
+365	365		301							"{3: 'She can now turn to <phonetic=herself>[that child]</phonetic> and say, ""You\'ve come quite a long way.""'}"
+366	366		301							{3: 'At this moment, she hopes for a future where the people she cares about stay safe.'}
+367	367		301							{3: 'So she goes, to see that future with her own eyes, and to make it hers.'}
+368	368		301							"{3: ""So she taps into the Ascension-Network's power, running countless simulations again and again.""}"
+369	369		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+370	370		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+371	371		201							{1: '1', 2: '500678', 7: '1'}
+372	372		301							"{1: '1', 3: ""It's just the figure who's been beside her all along catches her off guard.""}"
+373	373		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+374	374		202							{1: '1', 6: '1'}
+375	375		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_17.jpg'}
+376	376		301							"{3: ""She thought she wouldn't hesitate, but when those hands reach out so close, she still pauses for a heartbeat...""}"
+377	377		301							{3: 'She thinks to herself, does she still have the right to love?'}
+378	378		301							{3: 'Her vulnerability is exposed, and the cost of her power follows immediately. A torrent of data and memories from endless simulations floods her M.I.N.D., threatening to drown her sense of self.'}
+379	379		104						4000.0	{1: '0|-50|-500', 2: '4'}
+380	380		301							{3: 'Just before everything spins out of control, she sends a message to the Gray Raven Commandant, pouring all her strength into preserving every bit of her [beauty and kindness].'}
+381	381		301							{3: 'A girl nurtured by love, pure and flawless...'}
+382	382		301							{3: 'The life she might have had.'}
+383	383		301							{3: 'As she closes her eyes, a gentle <phonetic=love>phrase</phonetic> travels back through time and wraps her in a tender embrace.'}
+384	384		301							"{3: ""That memory is already hazy—her mother's soft bedside blessing.""}"
+385	385		301				DialogDisable			{2: 'Mother', 3: 'May our little Luna always be loved.', 18: '100004911'}
+386	386		401							{1: '1', 2: '36'}
+387	387		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '0', 4: '1', 5: '2'}
+388	388		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+389	389		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+390	390		401							{1: '2', 2: '903'}
+391	391		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_18.jpg', 3: '0', 4: '1', 5: '2'}
+392	392		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+393	393		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_18.jpg'}
+394	394		301			DialogEnable	DialogDisable			{3: 'The two pause, standing shoulder to shoulder between the broad ocean and the glowing full moon.'}
+395	395		401						1000.0	{1: '2', 2: '4135'}
+396	396		402							{1: '4135'}
+397	397		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_19.jpg', 3: '0', 4: '1', 5: '1'}
+398	398		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+399	399		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_19.jpg'}
+400	400		301			DialogEnable	DialogDisable			"{3: ""A rush of thoughts floods Luna's mind as she gently lifts her hand.""}"
+401	401		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_20.jpg', 3: '0', 4: '1', 5: '1'}
+402	402		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+403	403		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_20.jpg'}
+404	404		301			DialogEnable	DialogDisable			{3: 'Countless crimson strands of the Punishing Virus gather above her head, drawn by her <phonetic=love>power</phonetic>, coalescing into the shape of mistletoe.'}
+405	405		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_21.jpg', 3: '0', 4: '1', 5: '1'}
+406	406		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+407	407		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_21.jpg'}
+408	408		301			DialogEnable				{2: 'Luna', 3: 'You can open your eyes now.', 18: '100004912'}
+409	409		301				AniZhuanchangBegin			"{3: 'Luna looks at the person before her and suddenly remembers the question she asked herself by the window—""Why... am I here?""'}"
+410	410		402			DialogDisable				{1: '903'}
+411	411		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_22.jpg'}
+412	412		501				AniZhuanchangEnd		500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+413	413		401						2000.0	{1: '2', 2: '9327108'}
+414	414		401							{1: '1', 2: '236'}
+415	415		301			DialogEnable				"{2: 'Luna', 3: ""(Of course... it's because you're here.)"", 18: '100004913'}"
+416	416		301							{3: 'She slowly extends her hand.'}
+417	417		301							{3: 'And this time, the human responds—'}
+418	418		302		1		AniZhuanchangBegin			{2: 'Of course, my moon<//luna>.', 3: '599'}
+419	419		301				AniZhuanchangBegin			{3: 'You gently close your eyes.'}
+420	420		401			DialogDisable			2000.0	{1: '1', 2: '36'}
+421	421		401							{1: '1', 2: '181'}
+422	422		202							{1: '1', 6: '1'}
+423	423		101			AniZhuanchangEnd			1000.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4802_01.jpg'}
+424	424		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4802_02.jpg', 3: '0', 4: '1', 5: '1'}
+425	425		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+426	426		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4802_02.jpg'}
+427	427		301			DialogEnable	DialogDisable			"{3: ""Luna takes 【kuroname】's hand and heads straight for the ocean.""}"
+428	428		401							{1: '2', 2: '4144'}
+429	429		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4802_03.jpg', 3: '0', 4: '1', 5: '1'}
+430	430		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+431	431		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4802_03.jpg'}
+432	432		301			DialogEnable	DialogDisable			"{3: ""As soon as she steps onto the water, the agent's fingers shift slightly. A wave of crimson spreads beneath the surface, creating a bridge hidden below sea level.""}"
+433	433		401							{1: '2', 2: '4298'}
+434	434		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4802_04.jpg', 3: '0', 4: '1', 5: '1'}
+435	435		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+436	436		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4802_04.jpg'}
+437	437		301			DialogEnable				{3: 'One step, then another—the two walk across the sea.'}
+438	438		402							{1: '4298'}
+439	439		301				DialogDisable			"{3: ""The agent isn't who she used to be. She effortlessly manipulates the Punishing Virus, molding it into shapes that don't infect the human before her.""}"
+440	440		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4802_05.jpg', 3: '0', 4: '1', 5: '1'}
+441	441		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+442	442		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4802_05.jpg'}
+443	443		301			DialogEnable				{3: 'Luna occasionally looks back at 【kuroname】, who keeps eyes shut, completely trusting her.'}
+444	444		301				AniZhuanchangBegin			{3: 'At some point, she realizes just how special this human is to her.'}
+445	445		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_06.jpg'}
+446	446		301			AniZhuanchangEnd				{3: 'Beneath the Inver-Hetero Tower, she once said those words.'}
+447	447		301				DialogDisable			{2: 'Luna', 3: 'I, and the Ascendants under my command, trust only 【kuroname】.', 18: '100004909'}
+448	448		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_07.jpg', 3: '0', 4: '1', 5: '1'}
+449	449		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+450	450		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_07.jpg'}
+451	451		301			DialogEnable				{3: 'Why did she say that back then?'}
+452	452		301				DialogDisable			{3: 'Was it truly just the most advantageous choice?'}
+453	453		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4802_06.jpg', 3: '0', 4: '1', 5: '1'}
+454	454		401							{1: '2', 2: '4298'}
+455	455		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+456	456		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4802_06.jpg'}
+457	457		301			DialogEnable	DialogDisable			{3: 'With each step she takes, another vivid scene flickers through her M.I.N.D.'}
+458	458		402							{1: '4298'}
+459	459		401							{1: '2', 2: '981'}
+460	460		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4802_07.jpg', 3: '0', 4: '1', 5: '1'}
+461	461		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+462	462		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4802_07.jpg'}
+463	463		301			DialogEnable				"{3: ""It's the futures she once envisioned during her deep dive into the Ascension-Network.""}"
+464	464		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+465	465		401							{1: '2', 2: '2959'}
+466	466		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+467	467		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4802_08.jpg'}
+468	468		301				DialogDisable			{3: 'Before the colossal wave of machinery that darkens the sky.'}
+469	469		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4802_09.jpg', 3: '0', 4: '1', 5: '1'}
+470	470		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+471	471		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4802_09.jpg'}
+472	472		301			DialogEnable	DialogDisable			{3: 'When the crimson tide devours the world.'}
+473	473		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4802_10.jpg', 3: '0', 4: '1', 5: '1'}
+474	474		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+475	475		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4802_10.jpg'}
+476	476		301			DialogEnable	DialogDisable			{3: 'In the end of days, surrounded by desolation and storms.'}
+477	477		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4802_11.jpg', 3: '0', 4: '1', 5: '1'}
+478	478		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+479	479		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4802_11.jpg'}
+480	480		301			DialogEnable	DialogDisable			{3: 'Amid the ruins of a city entombed in ice and snow.'}
+481	481		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4802_12.jpg', 3: '0', 4: '1', 5: '1'}
+482	482		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+483	483		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4802_12.jpg'}
+484	484		301			DialogEnable	AniZhuanchangBegin			{3: 'Inside the garden as it glimmers under the morning sun.'}
+485	485		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_15.jpg'}
+486	486		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+487	487		301			AniZhuanchangEnd	DialogDisable			{3: 'Every time, 【kuroname】 is right there by her side.'}
+488	488		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_16.jpg', 3: '0', 4: '1', 5: '1'}
+489	489		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+490	490		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_16.jpg'}
+491	491		301			DialogEnable				{3: 'Ten times, twenty times, hundreds of times...'}
+492	492		301							"{3: ""She can't recall how many simulations she has run.""}"
+493	493		301							{3: 'Yet one thing stays the same: the person standing next to her never changes.'}
+494	494		301				AniZhuanchangBegin			{3: 'That human stands firmly by her side, always.'}
+495	495		101			DialogDisable	AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+496	496		301			DialogEnable				{3: 'She runs endless simulations, weighed down by confusion, hoping for clarity—only to uncover even more confusion.'}
+497	497		301				DialogDisable			{2: 'Luna', 3: 'Why... are you doing this?', 18: '100004910'}
+498	498		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_17.jpg', 3: '0', 4: '1', 5: '1'}
+499	499		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+500	500		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_17.jpg'}
+501	501		301			DialogEnable	AniZhuanchangBegin			{3: 'What is this <phonetic=love>emotion</phonetic> in her heart?'}
+502	502		401			DialogDisable			3000.0	{1: '1', 2: '36'}
+503	503		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+504	504		301			DialogEnable				{3: '...'}
+505	505		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+506	506		105							{1: 'Assets/Product/Ui/Spine/2-11Spine/UimovieSpine/UimovieLuna/UimovieLuna01.prefab'}
+507	507		401							{1: '1', 2: '359'}
+508	508		301							{3: 'Confident, strong, and composed...'}
+509	509		301							{3: 'These traits form the <phonetic=labels>armor</phonetic> that the agent wears.'}
+510	510		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+511	511		105							
+512	512		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+513	513		301							{3: 'But what lies beneath the <phonetic=labels>armor</phonetic>?'}
+514	514		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+515	515		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+516	516		401							{1: '2', 2: '895'}
+517	517		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2101.jpg'}
+518	518		301							{3: 'Fate plays a perfect cruel joke on her—neither allowing her the mercy of death, nor granting her the peace of life.'}
+519	519		301							{3: 'She just keeps struggling, over and over, standing on that thin line between life and death.'}
+520	520		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+521	521		401							{1: '2', 2: '895'}
+522	522		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2103.jpg'}
+523	523		301							{3: 'Tormented by hatred.'}
+524	524		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+525	525		401							{1: '2', 2: '895'}
+526	526		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_09.jpg'}
+527	527		301							{3: 'Dragged down by resentment.'}
+528	528		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+529	529		401							{1: '2', 2: '895'}
+530	530		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg612_2.jpg'}
+531	531		301							{3: 'Deceived by lies.'}
+532	532		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+533	533		401							{1: '2', 2: '895'}
+534	534		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_25.jpg'}
+535	535		104							{1: '0|-200|-400', 2: '0'}
+536	536		301							{3: 'Shackled by expectations.'}
+537	537		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+538	538		401							{1: '2', 2: '895'}
+539	539		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2102.jpg'}
+540	540		301							{3: 'There is no black or white—only the stifling weight of endless gray.'}
+541	541		301							{3: 'The agent who soars toward the blood-red sky is simply just a child abandoned among the ruins.'}
+542	542		301				AniZhuanchangBegin			"{3: ""That forsaken child can only send out a silent cry—like a cicada's muted call—to the world ravaged beyond repair.""}"
+543	543		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+544	544		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_17.jpg'}
+545	545		301			AniZhuanchangEnd				{3: 'Stumbling onward step by step, Luna now looks back on the <phonetic=Luna>child</phonetic> she used to be with quiet acceptance.'}
+546	546		301							"{3: 'She can now turn to <phonetic=herself>[that child]</phonetic> and say, ""You\'ve come quite a long way.""'}"
+547	547		301							{3: 'At this moment, she hopes for a future where the people she cares about stay safe.'}
+548	548		301							{3: 'So she goes, to see that future with her own eyes, and to make it hers.'}
+549	549		301							"{3: ""So she taps into the Ascension-Network's power, running countless simulations again and again.""}"
+550	550		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+551	551		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+552	552		201							{1: '1', 2: '500678', 7: '1'}
+553	553		301							"{1: '1', 3: ""It's just the figure who's been beside her all along catches her off guard.""}"
+554	554		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+555	555		202							{1: '1', 6: '1'}
+556	556		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_17.jpg'}
+557	557		301							"{3: ""She thought she wouldn't hesitate, but when those hands reach out so close, she still pauses for a heartbeat...""}"
+558	558		301							{3: 'She thinks to herself, does she still have the right to love?'}
+559	559		301							{3: 'Her vulnerability is exposed, and the cost of her power follows immediately. A torrent of data and memories from endless simulations floods her M.I.N.D., threatening to drown her sense of self.'}
+560	560		104						4000.0	{1: '0|-50|-500', 2: '4'}
+561	561		301							{3: 'Just before everything spins out of control, she sends a message to the Gray Raven Commandant, pouring all her strength into preserving every bit of her [beauty and kindness].'}
+562	562		301							{3: 'A girl nurtured by love, pure and flawless...'}
+563	563		301							{3: 'The life she might have had.'}
+564	564		301							{3: 'As she closes her eyes, a gentle <phonetic=love>phrase</phonetic> travels back through time and wraps her in a tender embrace.'}
+565	565		301							"{3: ""That memory is already hazy—her mother's soft bedside blessing.""}"
+566	566		301				DialogDisable			{2: 'Mother', 3: 'May our little Luna always be loved.', 18: '100004911'}
+567	567		401							{1: '1', 2: '36'}
+568	568		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '0', 4: '1', 5: '2'}
+569	569		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+570	570		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+571	571		401							{1: '2', 2: '903'}
+572	572		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4802_13.jpg', 3: '0', 4: '1', 5: '2'}
+573	573		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+574	574		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4802_13.jpg'}
+575	575		301			DialogEnable	DialogDisable			{3: 'The two pause, standing shoulder to shoulder between the broad ocean and the glowing full moon.'}
+576	576		401						1000.0	{1: '2', 2: '4135'}
+577	577		402							{1: '4135'}
+578	578		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4802_14.jpg', 3: '0', 4: '1', 5: '1'}
+579	579		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+580	580		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4802_14.jpg'}
+581	581		301			DialogEnable	DialogDisable			"{3: ""A rush of thoughts floods Luna's mind as she gently lifts her hand.""}"
+582	582		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4802_15.jpg', 3: '0', 4: '1', 5: '1'}
+583	583		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+584	584		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4802_15.jpg'}
+585	585		301			DialogEnable	DialogDisable			{3: 'Countless crimson strands of the Punishing Virus gather above her head, drawn by her <phonetic=love>power</phonetic>, coalescing into the shape of mistletoe.'}
+586	586		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4802_16.jpg', 3: '0', 4: '1', 5: '1'}
+587	587		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+588	588		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4802_16.jpg'}
+589	589		301			DialogEnable				{2: 'Luna', 3: 'You can open your eyes now.', 18: '100004912'}
+590	590		301				AniZhuanchangBegin			"{3: 'Luna looks at the person before her and suddenly remembers the question she asked herself by the window—""Why... am I here?""'}"
+591	591		402			DialogDisable				{1: '903'}
+592	592		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_22.jpg'}
+593	593		501				AniZhuanchangEnd		500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+594	594		401						2000.0	{1: '2', 2: '9327108'}
+595	595		401							{1: '1', 2: '236'}
+596	596		301			DialogEnable				"{2: 'Luna', 3: ""(Of course... it's because you're here.)"", 18: '100004913'}"
+597	597		301							{3: 'She slowly extends her hand.'}
+598	598		301							{3: 'And this time, the human responds—'}
+599	599		302		1		AniZhuanchangBegin			{2: 'Of course, my moon<//luna>.', 3: '600'}

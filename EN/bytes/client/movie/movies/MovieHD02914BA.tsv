@@ -1,0 +1,67 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory420.png'}
+2	2		401							{1: '1', 2: '137'}
+3	3		301			DialogEnable				"{3: 'You received a message from Kamui that reads, ""Will be waiting for you in the lounge. Gotta make time for me today!""'}"
+4	4		301							"{3: 'Given Kamui\'s track record of ""amazing performances"" over the years, it wasn\'t hard for you to guess what kind of surprise would be lying in store for you today.'}"
+5	5		301							{3: 'You put your hand on the doorknob.'}
+6	6		302							{2: '(Take a deep breath)', 3: '7'}
+7	7		302							{2: '(Open the door)', 3: '8'}
+8	8		502				AniZhuanchangBegin			{1: 'DialogDisable'}
+9	9		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+10	10		201							{1: '1', 2: '1081001', 3: '2', 7: '1'}
+11	11		301			DialogEnable				{1: '1', 2: 'Kamui', 3: 'Commandant, Happy Birthday!', 4: '1'}
+12	12		401							{1: '2', 2: '4081'}
+13	13		301							{3: 'In the darkness comes the sound of streamers and confetti popping, followed by a sweet scent in the air. A split second later, you feel something light landing on your head.'}
+14	14		301				DialogDisable			{2: 'Kamui', 3: 'Oh no, I forgot to turn on the lights!', 4: '1'}
+15	15		202						800.0	{1: '1'}
+16	16		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+17	17		301			DialogEnable				{3: 'Kamui quickly runs over to flip the switch, finally revealing the lounge—now decorated in a vibrant array of colors.'}
+18	18		301							"{3: ""Bright streamers hang in bunches on the walls, crooked little flags dangle from the ceiling, and the table is piled high with various rainbow sodas, making the lounge look like a children's restaurant.""}"
+19	19		302							"{2: ""So far, you've been enjoying Kamui's idea of a surprise."", 3: '20'}"
+20	20		201							{1: '1', 2: '1081001', 3: '2'}
+21	21		301							{1: '1', 2: 'Kamui', 3: 'Wait a sec. Put this on!', 4: '1'}
+22	22		301							{3: 'Kamui places a small red-and-white party hat on your head and another on himself.'}
+23	23		301							"{2: 'Kamui', 3: ""This is a replica of an old birthday hat from WGAA's archives. They said everyone used to wear these at birthday parties."", 4: '1'}"
+24	24		301							"{2: 'Kamui', 3: ""Look who's the star of the day!"", 4: '1'}"
+25	25		302							"{2: ""Thanks, but I don't think everyone had to wear one..."", 3: '26'}"
+26	26		301							{2: 'Kamui', 3: 'Oops, gotta take those freshly baked fortunate cookies out of the oven!', 4: '1'}
+27	27		302				DialogDisable			{2: '...Wait, I thought you were done already!', 3: '28'}
+28	28		101			AniZhuanchangEnd		400.0		{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+29	29		301			DialogEnable				{3: 'After the fortune cookies, Kamui comes up with a big birthday cake.'}
+30	30		301							"{3: ""You can't help but wonder how Kamui managed to plan so many things. Every time you think the party has come to an end, he would come up with another surprise, turning the birthday party into a marathon.""}"
+31	31		101			AniZhuanchangEnd		400.0		{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+32	32		301							"{2: 'Kamui', 3: ""Guess that's a little too much food, no? Should we take a break before continuing?"", 4: '1'}"
+33	33		301							{2: 'Kamui', 3: 'So, Commandant, how do you like this birthday party?', 4: '1'}
+34	34		302							"{2: ""Can't be happier..."", 3: '35', 4: 'Feeling a little exhausted actually...', 5: '36'}"
+35	35	34	301							"{2: 'Kamui', 3: ""Great! I totally knew you'd enjoy it!"", 4: '1'}"
+36	36		301							"{2: 'Kamui', 3: ""Oh no, guess we did a little too much? I'll try to tone things down next year."", 4: '1'}"
+37	37		302							{2: 'Quick question.', 3: '38'}
+38	38		302							{2: 'How in the world did you come up with all these things to do?', 3: '39'}
+39	39		204							{1: '1', 2: '1'}
+40	40		301							{2: 'Kamui', 3: 'Well... so I went to WGAA to pick their brains on how people prepare birthday parties.', 4: '1'}
+41	41		301							{2: 'Kamui', 3: 'I picked a whole bunch of brains while I was at it and learned about how people celebrate their birthdays and what kinds of gifts make them happy.', 4: '1'}
+42	42		301							{2: 'Kamui', 3: 'I ended up with a whole bunch of feedback, and I decided to keep all of it because I wanted to throw you an unforgettable party.', 4: '1'}
+43	43		301							"{2: 'Kamui', 3: ""I was in over my head trying to come up with surprises for you, and that's how I ended up with a party like this."", 4: '1'}"
+44	44		302							{2: 'I see, thank you.', 3: '45'}
+45	45		302							{2: 'Things were a little chaotic, but I really enjoyed this party.', 3: '46'}
+46	46		302							{2: 'Because I could see how much work you put into putting it together.', 3: '47'}
+47	47		301							{2: 'Kamui', 3: 'Really?', 4: '1'}
+48	48		204							{1: '1', 2: '2'}
+49	49		301							{2: 'Kamui', 3: 'Haha, how nice of you...', 4: '1'}
+50	50		301							{3: 'Kamui blushes as he scratches the back of his head, looking unusually shy.'}
+51	51		301							{2: 'Kamui', 3: 'Wanshi and Camu would always ask me to hold my horses with these things because they thought I always went a little too far.', 4: '1'}
+52	52		301							"{2: 'Kamui', 3: ""You're the first one to go through all of these things with me and actually enjoy it."", 4: '1'}"
+53	53		301							{2: 'Kamui', 3: 'Which makes me super happy, too.', 4: '1'}
+54	54		302							"{2: ""Let's throw another party like this for you next year."", 3: '55'}"
+55	55		302							"{2: ""Sure... although I'd be careful with time management if I were you."", 3: '57', 4: ""Sure. Name me a day and I'll make myself free for ya."", 5: '56'}"
+56	56	58	301							{2: 'Kamui', 3: 'Oh wow, be ready to get blown away next year, then!', 4: '1'}
+57	57		301							{2: 'Kamui', 3: 'Sure, be ready to get blown away next year!', 4: '1'}
+58	58		301							{2: 'Kamui', 3: 'And every single year down the road, Commandant.', 4: '1'}
+59	59		301							"{2: 'Kamui', 3: ""So stay tuned, Commandant. It's just gonna get better every year."", 4: '1'}"
+60	60		301							{3: 'Kamui beams with a wide smile, opening his arms as if to give you a big hug.'}
+61	61		301							{2: 'Kamui', 3: 'I want to make every single one of your birthdays the most memorable one.', 4: '1'}
+62	62		302							"{2: ""I'm sure I can totally count on you to make that happen."", 3: '63'}"
+63	63		302							"{2: ""For sure. We'll be celebrating my birthday every year going forward."", 3: '64'}"
+64	64		301							"{3: ""You reach out and fix the slightly crooked paper hat on Kamui's head.""}"
+65	65		301							"{3: ""Seeing each other's heads covered in confetti, both you and Kamui burst out laughing.""}"
+66	66		301		1		AniZhuanchangBegin			"{3: ""The birthday party was noisy indeed, but it's been the most memorable one you've spent so far with Kamui.""}"

@@ -1,0 +1,80 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory669.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500650', 3: '8'}
+4	4		301			DialogEnable				"{1: '1', 2: 'No. 21', 3: ""Commandant, I'm catching a whiff of various scents."", 4: '1'}"
+5	5		301							"{2: 'No. 21', 3: ""In addition to the commandant's scent, there's a whole mix of smells—foods, fabrics, mechnoids..."", 4: '1'}"
+6	6		302							{2: 'This is a shop here, after all.', 3: '7'}
+7	7		204							{1: '1'}
+8	8		301				AniZhuanchangBegin			"{2: 'No. 21', 3: ""And there's something special in the air... Commandant, can we go see it together?"", 4: '1'}"
+9	9		502						400.0	{1: 'DialogDisable'}
+10	10		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory672.jpg'}
+11	11		204							{1: '1', 2: '2'}
+12	12		301			DialogEnable				{2: 'No. 21', 3: 'Hey, over here, Commandant!', 4: '1'}
+13	13		204							{1: '1', 2: '4'}
+14	14		301							"{2: 'No. 21', 3: ""I'm not quite tall enough. Hold me up, Commandant."", 4: '1'}"
+15	15		301							{3: 'No. 21 reaches up like a kitten, but ends up knocking down a few things.'}
+16	16		203							{1: '1', 2: '0.18', 4: '-50'}
+17	17		401							{1: '2', 2: '4044'}
+18	18		301			RImgBg1Shake				"{3: ""A box of soap comes crashing down on No. 21's head, prompting her to grab it with both hands.""}"
+19	19		203							{1: '1', 2: '0.25'}
+20	20		204							{1: '1', 2: '5'}
+21	21		301							{2: 'No. 21', 3: 'Ouch! That soap is not behaving!', 4: '1'}
+22	22		204							{1: '1', 2: '4'}
+23	23		301							{2: 'No. 21', 3: 'What a troublemaker.', 4: '1'}
+24	24		301							{3: 'Colorful deodorizers fall on the ground.'}
+25	25		302							{2: 'So this is what No. 21 called nice-smelling.', 3: '26'}
+26	26		204							{1: '1', 2: '8'}
+27	27		301							{3: 'No. 21 picks up a blue-wrapped one and takes a whiff...'}
+28	28		204							{1: '1'}
+29	29		301							{2: 'No. 21', 3: 'Smells like lilacs in May.', 4: '1'}
+30	30		204							{1: '1', 2: '8'}
+31	31		301							{3: 'Then, she tries a golden one.'}
+32	32		204							{1: '1'}
+33	33		301							{2: 'No. 21', 3: 'Morning nectar and dew.', 4: '1'}
+34	34		204							{1: '1', 2: '8'}
+35	35		301							{3: 'And then, a black item.'}
+36	36		204							{1: '1'}
+37	37		301							{2: 'No. 21', 3: 'Wait, this smells like you, Commandant.', 4: '1'}
+38	38		301							"{3: ""On closer inspection, it's not a deodorizer, but a fallen wallet.""}"
+39	39		301							{2: 'No. 21', 3: 'Here you go, Commandant. Gotta look after your stuff.', 4: '1'}
+40	40		204							{1: '1', 2: '4'}
+41	41		301							{2: 'No. 21', 3: '!!!', 4: '1'}
+42	42		301				AniZhuanchangBegin			"{3: ""Suddenly on high alert, No. 21's eyes widen.""}"
+43	43		204							{1: '1'}
+44	44		502						400.0	{1: 'DialogDisable'}
+45	45		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory669.jpg'}
+46	46		301			DialogEnable				"{3: ""Following No. 21's lead, you stumble upon a children's section awash with crayons.""}"
+47	47		302							{2: 'Quite the connoisseur of scents and colors.', 3: '48'}
+48	48		301							"{3: ""No. 21 snatches up a crayon, swiftly doodling on the shop's proffered paper.""}"
+49	49		301							{3: 'Before you know it, the blank canvas transforms into a scene depicting you and No. 21 hand in hand.'}
+50	50		204							{1: '1', 2: '2'}
+51	51		301							"{2: 'No. 21', 3: 'I call this ""No. 21 and Good Buddy Playing Together"".', 4: '1'}"
+52	52		204							{1: '1'}
+53	53		301							"{2: 'No. 21', 3: ""Commandant's the good buddy... uh, I mean, a good person."", 4: '1'}"
+54	54		302							{2: 'Thank you, No. 21.', 3: '55'}
+55	55		301							{2: 'No. 21', 3: 'Commandant, where to next?', 4: '1'}
+56	56		301							{3: 'No. 21 plucks a white wolf cub plushie from a nearby shelf.'}
+57	57		302							{2: '(Hand the plushie to No. 21.)', 3: '58'}
+58	58		301							{2: 'No. 21', 3: 'Sniff, sniff. Clean as a whistle. A gift from you, Commandant?', 4: '1'}
+59	59		302							{2: 'Indeed.', 3: '60'}
+60	60		204							{1: '1', 2: '2'}
+61	61		301							"{2: 'No. 21', 3: ""I like this gift, because it's like me. It's comforting."", 4: '1'}"
+62	62		302							"{2: ""Let's give it a name."", 3: '63'}"
+63	63		204							{1: '1'}
+64	64		301							"{2: 'No. 21', 3: ""I'm No. 21, so what about No. 22?"", 4: '1'}"
+65	65		302							"{2: ""Let's go for something more affectionate."", 3: '66'}"
+66	66		301							{2: 'No. 21', 3: 'Hmm... Buddy No. 2.', 4: '1'}
+67	67		302							{2: 'Reusing names could lead to confusion.', 3: '68'}
+68	68		301							{2: 'No. 21', 3: 'How about Commandant No. 2?', 4: '1'}
+69	69		302							{2: 'Why?', 3: '70'}
+70	70		301							{2: 'No. 21', 3: 'I feel safe with you by my side, Commandant.', 4: '1'}
+71	71		301							"{2: 'No. 21', 3: ""But it doesn't quite resemble you, Commandant."", 4: '1'}"
+72	72		302							"{2: ""Let's reconsider."", 3: '73'}"
+73	73		301							"{2: 'No. 21', 3: ""I'm not the best at naming things. My suggestions never quite hit the mark. Commandant, perhaps you could choose."", 4: '1'}"
+74	74		302							"{2: ""Since it's Valentine's Day, let's call it Vali."", 3: '75'}"
+75	75		301							"{2: 'No. 21', 3: ""Vali... sounds fitting. I don't fully understand, but if it pleases you, Commandant, it pleases me."", 4: '1'}"
+76	76		301							{3: 'No. 21 cradles Vali against her chest.'}
+77	77		301							{2: 'No. 21', 3: 'Vali smells good, just like you, Commandant.', 4: '1'}
+78	78		301							{2: 'No. 21', 3: 'Would you mind spending some time with Vali and me later?', 4: '1'}
+79	79		301		1		AniZhuanchangBegin			"{2: 'No. 21', 3: ""There's an array of scents in this shop waiting to be explored..."", 4: '1'}"

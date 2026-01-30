@@ -1,0 +1,15 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1052.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '501040', 3: '4'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Yata', 3: ""Oh? They're even selling oden here."", 4: '1'}"
+5	5		302							{2: 'Smells delicious.', 3: '6'}
+6	6		301							"{2: 'Yata', 3: ""Let's see how it tastes..."", 4: '1'}"
+7	7		204							{1: '1', 2: '10'}
+8	8		301							{2: 'Yata', 3: 'Hmm, not bad at all.', 4: '1'}
+9	9		204							{1: '1'}
+10	10		301							{2: 'Yata', 3: 'Here, 【kuroname】, you try some too.', 4: '1'}
+11	11		302							"{2: ""I'll try a skewer first. Any recommendations?"", 3: '12'}"
+12	12		301							"{2: 'Yata', 3: ""Then you've got to try the daikon radish. One bite and the broth just floods your mouth—that's the true essence of oden right there."", 4: '1'}"
+13	13		204							{1: '1', 2: '10'}
+14	14		301		1		AniZhuanchangBegin			"{2: 'Yata', 3: ""...It's rare to find food from home, so this one's on me."", 4: '1'}"

@@ -1,0 +1,39 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory85.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		302							{2: '(Raise hammer)', 3: '4'}
+4	4		401							{1: '2', 2: '1512'}
+5	5		301							{3: 'Thud!'}
+6	6		301							{3: 'The hammer strikes the nail, ringing as it sinks into the ground.'}
+7	7		302							{2: '(Raise hammer)', 3: '8'}
+8	8		301							{3: 'With another heavy blow of the hammer, the nail is buried deeper into the frozen soil, until it strikes a hard layer of ice.'}
+9	9		301							{3: 'This should be enough for pitching a tent. Any further into the ice, and it will be a pain to get out.'}
+10	10		302							{2: 'Whew...', 3: '11'}
+11	11		201							{1: '1', 2: '500026', 7: '1'}
+12	12		301							{1: '1', 2: 'Lee', 3: 'Here.', 4: '1'}
+13	13		301							{3: 'Lee hands over a steaming tin cup. The faint smell of pine needles fills your nose.'}
+14	14		301							"{2: 'Lee', 3: ""It's pine needle tea just brewed by Diana and Sylvia."", 4: '1'}"
+15	15		302							{2: 'Thank you.', 3: '16'}
+16	16		301							"{2: 'Lee', 3: ""Sylvia... Apparently, she's a technical assistance consultant sent by the Science Council."", 4: '1'}"
+17	17		301							{2: 'Lee', 3: 'She used to be a negotiator for the Northern Counter-terrorism Department as well.', 4: '1'}
+18	18		301							"{2: 'Lee', 3: ""Don't know why the council would send a negotiator to work part-time as a technical adviser, but Asimov attests to her technical prowess."", 4: '1'}"
+19	19		301							"{2: 'Lee', 3: ""Commandant, drink some tea and have a rest. We'll finish pitching the tent."", 4: '1'}"
+20	20		302							{2: 'I really appreciate it...', 3: '21'}
+21	21		302							"{2: ""But please don't."", 3: '22'}"
+22	22		204							{1: '1', 2: '6'}
+23	23		301							{2: 'Lee', 3: '...We know the appropriate power output this time.', 4: '1'}
+24	24		302							"{2: ""Promise you won't turn the nails into pancakes?"", 3: '25'}"
+25	25		301							{2: 'Lee', 3: '...Do we have spare nails we can practice on?', 4: '1'}
+26	26		202							{1: '1'}
+27	27		201							{1: '1', 2: '500166', 4: '400'}
+28	28		201							{1: '2', 2: '1031001', 4: '-400'}
+29	29		301							"{1: '1', 2: 'Lucia', 3: ""We're back, Commandant. We brought food and ice from the ARU."", 4: '1'}"
+30	30		301							"{1: '1', 2: 'Liv', 3: ""They're organizing a dinner party in the evening, and they invited us as well."", 4: '2'}"
+31	31		302							{2: 'Nice.', 3: '32'}
+32	32		301							{2: 'Lucia', 3: 'The dinner is on the Maria, which is quite far from the settlement. We might want to hurry.', 4: '1'}
+33	33		302							{2: 'But... the tent...', 3: '34'}
+34	34		301							"{2: 'Lucia', 3: ""We'll help with the tent! We Constructs can get it done in no time!"", 4: '1'}"
+35	35		302							{2: 'Hold...', 3: '36'}
+36	36		202							{1: '1', 2: '2'}
+37	37		201							{1: '1', 2: '500026'}
+38	38		301		1		AniZhuanchangBegin			{1: '1', 2: 'Lee', 3: '...up.', 4: '1'}

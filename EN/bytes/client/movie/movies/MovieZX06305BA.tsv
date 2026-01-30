@@ -1,0 +1,225 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1394.jpg'}
+2	2		501							{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieBgSnow.prefab', 2: '2'}
+3	3		401							{1: '1', 2: '7100'}
+4	4		201							{1: '1', 2: '501449', 3: '4'}
+5	5		502							{1: 'DialogEnable'}
+6	6		301			RImgBg1Shake				{1: '1', 2: 'Rosetta', 3: 'Assemble!', 4: '1'}
+7	7		401							{1: '2', 2: '4557'}
+8	8		202							{1: '1'}
+9	9		301							"{3: ""Along the ice-cast trenches, frost encrusts the joints of Constructs' armor and the collars of soldiers' thermal gear. Their breath hangs in sluggish clouds in the frigid air.""}"
+10	10		301							"{3: ""Following orders, Babylonia's Constructs stand shoulder-to-shoulder with the ARU captain-rank soldiers. Every gaze is fixed on the trench's highest point, awaiting the command.""}"
+11	11		402							{1: '4557'}
+12	12		306							{1: '1'}
+13	13		201							{1: '1', 2: '501449', 3: '4'}
+14	14		301							"{1: '1', 3: ""Rosetta stands there, her silver-white Malkuth frame gleaming with a cold radiance, light sword in hand. Her spine is straight as a battle standard—a figure steadying the army's resolve, bearing the weight of their expectation, doubt, and scrutiny.""}"
+15	15		301				AniZhuanchangBegin			{3: 'Seeing her now... you recall a conversation from before you arrived.'}
+16	16		306							
+17	17		505							{2: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieBgSnow.prefab'}
+18	18		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+19	19		401						2000.0	{1: '1', 2: '36'}
+20	20		401							{1: '1', 2: '50'}
+21	21		504							{1: '0.7'}
+22	22		202							{1: '1', 6: '1'}
+23	23		201							{1: '1', 2: '501449', 7: '1'}
+24	24		301			AniZhuanchangEnd				"{1: '1', 2: 'Rosetta', 3: ""Commandant, after discussions between Babylonia and the port authorities, it's been decided... that I should serve as the chief commander of this joint operation."", 4: '1'}"
+25	25		302							{2: 'Why that arrangement?', 3: '26', 4: 'Feeling the pressure? I can take over if you prefer.', 5: '33'}
+26	26		204							{1: '1', 2: '3'}
+27	27		301							"{2: 'Rosetta', 3: ""Because this is, ultimately, the Union's fight. If someone from Babylonia took command, the local forces might... feel uneasy."", 4: '1'}"
+28	28		204							{1: '1'}
+29	29		301							"{2: 'Rosetta', 3: ""It might sound unreasonable, but when the city was being built, I met many people like that. People who trust only what they've lived through and view the outside with suspicion."", 4: '1'}"
+30	30		301							{2: 'Rosetta', 3: 'I imagine some in Babylonia might also resent having to provide support... which is why someone from the Union needs to step forward and make our stance clear.', 4: '1'}
+31	31		204							{1: '1', 2: '8'}
+32	32	35	301							"{2: 'Rosetta', 3: ""But honestly, I don't believe my presence alone carries enough weight as a commander, so..."", 4: '1'}"
+33	33		204							{1: '1', 2: '3'}
+34	34		301							"{2: 'Rosetta', 3: ""I never expected you'd be able to read my thoughts like that, Commandant..."", 4: '1'}"
+35	35		204							{1: '1'}
+36	36		301							"{2: 'Rosetta', 3: ""I'll still take the public role of commander in the upcoming battle, but I hope to incorporate as much of your strategic insight as possible... because this is a war we absolutely cannot lose."", 4: '1'}"
+37	37		204							{1: '1', 2: '3'}
+38	38		301							"{2: 'Rosetta', 3: 'Ah, right... using a term from those old films I\'ve been watching lately, I suppose we\'d be... ""co-bosses.""', 4: '1'}"
+39	39		302							"{2: 'I actually thought you wanted me to take the commander position.', 3: '40', 4: ""If you ask for my help, I'll be there."", 5: '42'}"
+40	40		204							{1: '1', 2: '1'}
+41	41	44	301							"{2: 'Rosetta', 3: ""That would be shirking my duty... Of course, if you wish it, Commandant, I'm prepared to step aside and yield the position to you."", 4: '1'}"
+42	42		204							{1: '1', 2: '1'}
+43	43		301							{2: 'Rosetta', 3: 'Thank you... I knew you would say that, Commandant.', 4: '1'}
+44	44		204							{1: '1'}
+45	45		301							"{2: 'Rosetta', 3: ""Before we land, I'd like your first piece of strategic advice. The Arctic region will soon enter deep winter, which would put us at a disadvantage in a protracted war... What do you think we should do?"", 4: '1'}"
+46	46		302							"{2: 'How are our logistics?', 3: '47', 4: ""What's the enemy's offensive capability?"", 5: '51'}"
+47	47		204							{1: '1', 2: '8'}
+48	48		301							{2: 'Rosetta', 3: 'Not good. The Corrupted have disrupted shipping lanes across the Arctic region, and New Sophiasburgh is still a fledgling city with underdeveloped infrastructure.', 4: '1'}
+49	49		204							{1: '1'}
+50	50	52	301							{2: 'Rosetta', 3: 'In short, we lack the supplies to sustain a long battle.', 4: '1'}
+51	51		301							"{2: 'Rosetta', 3: ""Their initial assault was fierce, but it's stabilized now. I believe they've noticed our limited supplies... They're trying to wear us down slowly."", 4: '1'}"
+52	52		302							{2: 'Then our only option is to end it quickly.', 3: '53'}
+53	53		204							{1: '1', 2: '4'}
+54	54		301							{2: 'Rosetta', 3: 'Yes, I also believe our only recourse is to force a decisive battle as soon as possible... but that raises another problem: the enemy is unlikely to accommodate our plans.', 4: '1'}
+55	55		302							{2: 'What if we take the offensive?', 3: '56'}
+56	56		204							{1: '1', 2: '3'}
+57	57		301							{2: 'Rosetta', 3: 'You mean... we launch an assault on their position, Commandant?', 4: '1'}
+58	58		302							{2: 'Do you think it could work?', 3: '59'}
+59	59		204							{1: '1', 2: '8'}
+60	60		301							{3: 'Rosetta paused, seemingly caught off guard. She fell silent for a moment, thinking deeply, then spoke again.'}
+61	61		204							{1: '1'}
+62	62		301							"{2: 'Rosetta', 3: ""It's possible... Although we're outnumbered, we have several elite vanguards who could serve as our tactical spearhead."", 4: '1'}"
+63	63		204							{1: '1', 2: '4'}
+64	64		301							"{2: 'Rosetta', 3: ""Plus, they're currently on the defensive. A surprise strike with our vanguards leading the charge could catch them off guard! Morale is high; this maneuver might just shift the battle in our favor..."", 4: '1'}"
+65	65		301							{3: 'Rosetta paused briefly, a question half-formed, before she remembered herself—her rank, her duty. She took a sharp breath, her voice now firm with newfound resolve.'}
+66	66		204							{1: '1', 2: '2'}
+67	67		301							"{2: 'Rosetta', 3: ""Always leaning on your judgment wouldn't make me a worthy commander..."", 4: '1'}"
+68	68		204							{1: '1'}
+69	69		301				DialogDisable			"{2: 'Rosetta', 3: ""Commandant, I'll announce the offensive strategy to all forces and personally lead the close-quarters assault."", 4: '1'}"
+70	70		302							{2: 'Then go ahead.', 3: '71'}
+71	71		204							{1: '1'}
+72	72		302				AniZhuanchangBegin			"{2: ""I'll fill in wherever you need me."", 3: '73'}"
+73	73		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1394.jpg'}
+74	74		502							{1: 'DialogEnable'}
+75	75		401						2000.0	{1: '1', 2: '36'}
+76	76		401							{1: '1', 2: '6166'}
+77	77		504							{1: '0'}
+78	78		204							{1: '1', 2: '4'}
+79	79		301			AniZhuanchangEnd	DialogDisable			{2: 'Rosetta', 3: 'Then, I will announce the operational plan.', 4: '1'}
+80	80		202							{1: '1', 6: '1'}
+81	81		401							{1: '2', 2: '4422'}
+82	82		501						350.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTRPGMaze/FxUiTRPGMaze01.prefab', 2: '3'}
+83	83		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '3'}
+84	84		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1409.jpg', 3: '0', 4: '1', 5: '0.3'}
+85	85		301			DialogEnable	AniZhuanchangBegin			{3: 'As you snap back to reality, Rosetta raises a hand and activates a projection. A satellite map of the battlefield materializes in the air, its details crisp: the outline of the old Sophiasburgh and the breach point in the surrounding ice.'}
+86	86		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1394.jpg'}
+87	87		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTRPGMaze/FxUiTRPGMaze01.prefab'}
+88	88		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+89	89		205							{1: '999'}
+90	90		201							{1: '1', 2: '500522', 7: '1'}
+91	91		301			AniZhuanchangEnd				{1: '1', 2: 'Palma', 3: 'First, answer me one thing. Are you serious about taking the fight to them?', 4: '1'}
+92	92		203							{1: '1', 2: '0.25', 3: '400'}
+93	93		201							{1: '2', 2: '501073', 4: '-400'}
+94	94		301							"{1: '1', 2: 'Construct Captain A', 3: ""Sigh, are we really going on the offensive? I thought we'd be digging trenches and establishing a defensive perimeter."", 4: '2'}"
+95	95		202							{1: '1', 2: '2', 6: '1'}
+96	96		201							{1: '1', 2: '500773'}
+97	97		301							"{1: '1', 2: 'ARU Captain', 3: ""Don't tell me we're charging into the city."", 4: '1'}"
+98	98		203							{1: '1', 2: '0.25', 3: '-400'}
+99	99		201							{1: '2', 2: '501076', 4: '400'}
+100	100		301							"{1: '1', 2: 'Construct Captain B', 3: ""Yeah. Wouldn't it be reckless to assault the city with our current numbers?"", 4: '2'}"
+101	101		202							{1: '1', 6: '1'}
+102	102		201							{1: '1', 2: '500208', 4: '-400'}
+103	103		301							"{1: '1', 2: 'Bionic Ursa', 3: ""Come to think of it... isn't there a breach at Sophiasburgh's main gate?"", 4: '1'}"
+104	104		202							{1: '1', 2: '2', 6: '1'}
+105	105		201							{1: '1', 2: '501449', 3: '4'}
+106	106		301							"{1: '1', 2: 'Rosetta', 3: ""Correct. We won't need to fight for the gate or scale the walls. This siege is essentially a battle on more complex terrain. Besides, both my team and Babylonia's elite squads have breaching capabilities. Entering through the breach won't be difficult."", 4: '1'}"
+107	107		202							{1: '1', 6: '1'}
+108	108		201							{1: '1', 2: '500506'}
+109	109		301							"{1: '1', 2: 'Noan', 3: ""True. Though I don't know why the city gate is breached, using it would make things much easier for us."", 4: '1'}"
+110	110		202							{1: '1', 2: '2', 6: '1'}
+111	111		201							{1: '1', 2: '500522'}
+112	112		301							"{1: '1', 2: 'Palma', 3: ""So you want us to spearhead a direct assault into the city... It's doable. But then what?"", 4: '1'}"
+113	113		203							{1: '1', 2: '0.25', 3: '-400'}
+114	114		201							{1: '2', 2: '501449', 3: '4', 4: '400'}
+115	115		301							{1: '1', 2: 'Rosetta', 3: 'Strike directly at their command center. The Corrupted are currently being controlled by Zack the Frostheart Emperor and the three Frostheart Warlords. Once we break into the city and eliminate those four, we win this war.', 4: '2'}
+116	116		301							"{2: 'Palma', 3: ""Isn't that a bit too optimistic?"", 4: '1'}"
+117	117		202							{1: '1', 2: '2'}
+118	118		301							"{3: ""Facing Palma's skepticism, Rosetta reiterates the strategic assessment she formed during the flight. As Palma hears the reasons that have forced Rosetta into such aggressive tactics, she can only furrow her brow in silent unease.""}"
+119	119		201							{1: '1', 2: '500522'}
+120	120		301							{1: '1', 2: 'Palma', 3: '【kuroname】, do you really think this plan can work?', 4: '1'}
+121	121		302							"{2: ""Our goal is to eliminate the enemy, isn't it?"", 3: '122', 4: ""If it doesn't work, we'll formulate another."", 5: '125'}"
+122	122		202							{1: '1', 6: '1'}
+123	123		201							{1: '1', 2: '500201'}
+124	124	129	301							"{1: '1', 2: 'Simon', 3: ""Right. Now that we know the Corrupted are gathering near human settlements, we can't just ignore them. Taking out their command center is probably the most effective way to eliminate these Corrupted."", 4: '1'}"
+125	125		202							{1: '1', 6: '1'}
+126	126		201							{1: '1', 2: '500201'}
+127	127		301							{1: '1', 2: 'Simon', 3: 'Right... I believe the key is actually entering the city itself. Compared to fighting in the open snowfields, the constrained tactical space inside the city would work to our advantage.', 4: '1'}
+128	128		301							"{2: 'Simon', 3: ""Once we're inside and have secured a foothold, everything else becomes manageable."", 4: '1'}"
+129	129		202							{1: '1', 6: '1'}
+130	130		201							{1: '1', 2: '500522'}
+131	131		301							{1: '1', 2: 'Palma', 3: '...Guess this is our only option.', 4: '1'}
+132	132		202							{1: '1', 6: '1'}
+133	133		201							{1: '1', 2: '500568'}
+134	134		301							"{1: '1', 2: 'Lee', 3: ""Noan, what's your take on this?"", 4: '1'}"
+135	135		203							{1: '1', 2: '0.25', 3: '-400', 6: '1'}
+136	136		201							{1: '2', 2: '500506', 3: '1', 4: '400'}
+137	137		301							"{1: '1', 2: 'Noan', 3: ""I likely share your thoughts, Lee. I trust 【kuroname】's judgment."", 4: '2'}"
+138	138		202							{1: '1', 2: '2', 6: '1'}
+139	139		201							{1: '1', 2: '500201'}
+140	140		301				DialogDisable			"{1: '1', 2: 'Simon', 3: ""Well, it seems we have a consensus. 【kuroname】, assuming we successfully infiltrate the city, what's our plan afterward?"", 4: '1'}"
+141	141		202							{1: '1', 6: '1'}
+142	142		302							{2: '...First, we secure a foothold. I intend to split our forces into two groups.', 3: '143'}
+143	143		302							{2: 'One advancing through the mountain pass, the other along the coast.', 3: '144'}
+144	144		201							{1: '1', 2: '500506', 3: '4'}
+145	145		301			DialogEnable				{1: '1', 2: 'Noan', 3: 'Is splitting our forces wise?', 4: '1'}
+146	146		202							{1: '1', 6: '1'}
+147	147		201							{1: '1', 2: '500201'}
+148	148		301							{1: '1', 2: 'Simon', 3: 'It is. The enemy will definitely respond to our movements, and encountering their commanders is inevitable.', 4: '1'}
+149	149		301							"{2: 'Simon', 3: ""Setting aside the Frostheart Emperor, we know very little about the Frostheart Warlords. If they consolidate their forces, we'd be in serious trouble. By splitting up, we force them to divide as well. That's likely our best approach."", 4: '1'}"
+150	150		202							{1: '1', 6: '1'}
+151	151		201							{1: '1', 2: '501449'}
+152	152		301							{1: '1', 2: 'Rosetta', 3: 'Regarding their capabilities... we actually do know about one of them.', 4: '1'}
+153	153		302							"{2: 'You mean ""Amberia""?', 3: '154'}"
+154	154		204							{1: '1', 2: '4'}
+155	155		301							"{2: 'Rosetta', 3: ""Yes. Though her true identity is unknown, based on her behavioral patterns from our previous encounter, I believe her tactical approach is very similar to Amberia's."", 4: '1'}"
+156	156		203							{1: '1', 2: '0.25', 3: '400'}
+157	157		201							{1: '2', 2: '500522', 4: '-400'}
+158	158		301							{1: '1', 2: 'Palma', 3: 'So if we face her, can we win?', 4: '2'}
+159	159		301							"{2: 'Rosetta', 3: ""I've faced her before... We can definitely win."", 4: '1'}"
+160	160		202							{1: '1', 2: '2', 6: '1'}
+161	161		201							{1: '1', 2: '500506', 3: '14'}
+162	162		301							"{1: '1', 2: 'Noan', 3: ""Then the question becomes whether she'll appear near the mountains or along the coast..."", 4: '1'}"
+163	163		302							{2: 'Along the coast.', 3: '164'}
+164	164		202							{1: '1', 6: '1'}
+165	165		201							{1: '1', 2: '501449'}
+166	166		301							"{1: '1', 2: 'Rosetta', 3: 'Right. Commandant and I briefly encountered that ""Amberia"" at the front line earlier. Though we only exchanged a few words, she appeared to be at odds with the other Warlords and mentioned she would be calibrating the bionic whales alone.', 4: '1'}"
+167	167		203							{1: '1', 2: '0.25', 3: '400'}
+168	168		201							{1: '2', 2: '500568', 4: '-400'}
+169	169		301							"{1: '1', 2: 'Lee', 3: ""Indeed... Though I never expected they'd have bionic whales."", 4: '2'}"
+170	170		204							{1: '1', 2: '8'}
+171	171		301							"{2: 'Rosetta', 3: ""This is the old capital we're talking about... That's the only explanation."", 4: '1'}"
+172	172		204							{1: '1', 2: '4'}
+173	173		202							{1: '2', 6: '1'}
+174	174		201							{1: '2', 2: '500201', 4: '-400'}
+175	175		301							"{1: '1', 2: 'Simon', 3: 'Then our objectives are clear: one team will engage the two Warlords near the mountains, while the other confronts ""Amberia"" along the coast. Rosetta, you\'ll head to the coastal front with 【kuroname】, correct?', 4: '2'}"
+176	176		301							{2: 'Rosetta', 3: 'Yes. So for the other front, theoretically... I suppose only the Dark Aries under your command, Simon, can take the lead.', 4: '1'}
+177	177		302							{2: 'Is it too much to ask Dark Aries to handle two of them?', 3: '178'}
+178	178		204							{1: '2', 2: '1'}
+179	179		301							"{2: 'Simon', 3: 'Chief, there\'s a saying: ""Those who aren\'t obsessed with winning never truly lose."" If you\'re confident in your chances, then I\'ll have my own strategy too. You can leave it to me without worry.', 4: '2'}"
+180	180		202							{1: '1', 2: '2', 6: '1'}
+181	181		201							{1: '1', 2: '500522'}
+182	182		301							"{1: '1', 2: 'Palma', 3: ""Wait, isn't there a chance the Frostheart Emperor might join the battle as well?"", 4: '1'}"
+183	183		203							{1: '1', 2: '0.25', 3: '-400'}
+184	184		201							{1: '2', 2: '501449', 4: '400'}
+185	185		301							"{1: '1', 2: 'Rosetta', 3: ""It's unlikely. Because he previously risked infiltrating Babylonia to extract the black box data from this frame."", 4: '2'}"
+186	186		302							"{2: ""You think he's processing that data now?"", 3: '187'}"
+187	187		204							{1: '2', 2: '4'}
+188	188		301							"{2: 'Rosetta', 3: ""Right. The fact he specifically came for it means it's valuable enough. Now that he has it, he'll naturally be analyzing it. But even Babylonia couldn't decrypt that black box, so I imagine it will take him considerable time as well."", 4: '2'}"
+189	189		301							{2: 'Palma', 3: 'That just makes me more uneasy...', 4: '1'}
+190	190		301							{2: 'Rosetta', 3: 'I know this strategy carries inherent risks, which is exactly why I called this meeting.', 4: '2'}
+191	191		202							{1: '1', 2: '2'}
+192	192		301							{3: 'With her words spoken, Rosetta sweeps her gaze across the gathered group.'}
+193	193		201							{1: '1', 2: '501073'}
+194	194		301							{1: '1', 2: 'Construct Captain A', 3: 'A vote to decide, right?', 4: '1'}
+195	195		202							{1: '1', 6: '1'}
+196	196		201							{1: '1', 2: '501449', 3: '2'}
+197	197		301							"{1: '1', 2: 'Rosetta', 3: ""Yes. Though I'm the commander, I know I haven't accomplished enough to earn everyone's trust. My words alone can't convince you all, and any doubts will only magnify on the battlefield..."", 4: '1'}"
+198	198		204							{1: '1', 2: '4'}
+199	199		401							{1: '1', 2: '36'}
+200	200		301							"{2: 'Rosetta', 3: ""I don't want our operation to fail because of that."", 4: '1'}"
+201	201		202							{1: '1', 6: '1'}
+202	202		401							{1: '1', 2: '8'}
+203	203		201							{1: '1', 2: '500773'}
+204	204		301							"{1: '1', 2: 'ARU Captain', 3: ""Then you're worrying for nothing. We all know how much the Forest Guards have sacrificed for this place. I have no objections."", 4: '1'}"
+205	205		202							{1: '1', 6: '1'}
+206	206		201							{1: '1', 2: '501073', 4: '400'}
+207	207		201							{1: '2', 2: '501076', 4: '-400'}
+208	208		301							"{1: '1', 2: 'Construct Captain A', 3: ""I don't fully understand everything, but you all are the strongest ones here. If this is what you've decided, then I'll follow."", 4: '1'}"
+209	209		301							"{2: 'Construct Captain B', 3: ""Coming here means fighting the Corrupted; that has always been the deal. As long as you don't treat our lives as expendable, we've already made our peace with everything else."", 4: '2'}"
+210	210		202							{1: '1', 2: '2', 6: '1'}
+211	211		201							{1: '1', 2: '500208'}
+212	212		301							"{1: '1', 2: 'Bionic Ursa', 3: 'Well, that about covers it... Look, we don\'t want to be ""amalgamated"" again. You give the orders, and we\'ll fight!', 4: '1'}"
+213	213		202							{1: '1'}
+214	214		301							{3: 'A consensus has been reached. Despite their diverse perspectives and positions, everyone here shares a personal reason to fight, and because of that, they are willing to stand together.'}
+215	215		302							{2: 'Then give your orders, Commander.', 3: '216'}
+216	216		201							{1: '1', 2: '501449', 3: '3'}
+217	217		301							{1: '1', 2: 'Rosetta', 3: '...Yes, Commandant.', 4: '1'}
+218	218		204							{1: '1'}
+219	219		301							"{2: 'Rosetta', 3: ""I know not everyone acknowledges my past accomplishments, but I believe we're all professional soldiers with proper training. That's why I want to express my aspirations for this operation."", 4: '1'}"
+220	220		204							{1: '1', 2: '8'}
+221	221		301							"{2: 'Rosetta', 3: ""Whatever the purpose of the old Union was, or why the old Sophiasburgh existed—none of that matters to us now. No matter what anyone says, I refuse to hand over this peace we've fought so hard for, this sanctuary we've built, to anyone else."", 4: '1'}"
+222	222		204							{1: '1', 2: '4'}
+223	223		301							{2: 'Rosetta', 3: 'Allies from Babylonia, I ask you to lend us your full strength. And to my Arctic comrades, this is our city, and we will defend it ourselves!', 4: '1'}
+224	224		301		1		AniZhuanchangBegin			{2: 'Rosetta', 3: 'For our future... Operation, begin!', 4: '1'}

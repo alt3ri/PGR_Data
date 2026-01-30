@@ -1,0 +1,137 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory171.png'}
+2	2		401							{1: '1', 2: '18'}
+3	3		301			DialogEnable				{2: 'Electronic Voice', 3: 'They say that on the seventh day of the seventh month, the ship enters a hidden valley. The sky darkens, the world dims, and pale fog swirls. Through the haze, a dance pavilion slowly appears...'}
+4	4		301							"{2: 'Electronic Voice', 3: ""This place remains abandoned for years, flattened by the Bixi Crew—so where does this pavilion come from? Today, a scholar named 【kuroname】 follows the Golden Hairpin's guidance to explore these grounds...""}"
+5	5		302							{2: 'How does it come to this...', 3: '6'}
+6	6		301				AniZhuanchangBegin			"{3: ""Just a few minutes ago, you arrived at the Nighter exhibit at Hanying's invitation, but now...""}"
+7	7		201							{1: '1', 2: '500239'}
+8	8		301			AniZhuanchangEnd				"{1: '1', 2: 'Mechanoid A', 3: 'Step right up, folks! Introducing the all-new live-action escape room, ""The Golden Hairpin and the Dancer"", packed with genuine thrills and chills, and free on the Double Seventh Festival! Right this way, esteemed Experience Officer!', 4: '1'}"
+9	9		302							"{2: 'You got me wrong.', 3: '10', 4: ""I'm here to wait for someone named Hanying..."", 5: '10'}"
+10	10		301							"{2: 'Mechanoid A', 3: ""Hey, don't shut me down so fast! Take this golden hairpin—it's a tool to help you beat the challenge. And if you pull it off, we'll let you keep it at no extra cost!"", 4: '1'}"
+11	11		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+12	12		301				AniZhuanchangBegin			"{2: 'Mechanoid A', 3: ""It's the Double Seventh Festival right now—this hairpin makes the perfect gift! No time to lose—everyone, on your marks! We're starting right away!"", 4: '1'}"
+13	13		202							{1: '1', 6: '1'}
+14	14		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+15	15		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory157.png'}
+16	16		301			AniZhuanchangEnd				"{3: ""The mechanoid's speech suddenly goes into overdrive, words tumbling out like someone hit fast-forward. At their enthusiastic urging, you're <phonetic=inexplicably>politely</phonetic> ushered into the Nighter haunted house.""}"
+17	17		302							{2: 'I still have a bit of time before the scheduled meeting...', 3: '18', 4: 'Guess I can give it a shot.', 5: '18'}
+18	18		401							{1: '2', 2: '4085'}
+19	19		301							{3: 'You hear the faint strains of an ancient dance. Looking up, you suddenly notice a massive crowd before. On stage, the performer moves gracefully, her silhouette gliding across the folding screen. For some reason, these motions feel strangely familiar...'}
+20	20		302							{2: 'Is that her?', 3: '21', 4: 'I have to check.', 5: '21'}
+21	21		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory156.png', 3: '0', 4: '1', 5: '1'}
+22	22		201							{1: '1', 2: '500918', 7: '1'}
+23	23		301							"{1: '1', 3: ""You push through the buzzing crowd, and with each step forward, the dancer on stage becomes clearer. Even though she is shielded by the screen, you can tell by the choreography that it's exactly the same routine she practices every day.""}"
+24	24		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory156.png'}
+25	25		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory156.png', 3: '1', 4: '0', 5: '0'}
+26	26		302							{2: 'Hanying!!', 3: '27'}
+27	27		402							{1: '4085'}
+28	28		202							{1: '1'}
+29	29		401							{1: '1', 2: '36'}
+30	30		301							{3: 'No one answers.'}
+31	31		301				DialogDisable			"{3: ""In a split second, the music, dancing, and cheers all fade away. The performer freezes, and the once-thrilling crowd goes quiet... It's as if you're the only one left in this entire world.""}"
+32	32		401							{1: '2', 2: '2645'}
+33	33		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+34	34		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+35	35		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+36	36		104							{1: '0|0|-100', 2: '0.25'}
+37	37		101						320.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory243.png'}
+38	38		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+39	39		104							{1: '0|0|-200', 2: '0.25'}
+40	40		101						320.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory156.png'}
+41	41		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+42	42		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory243.png'}
+43	43		302							{2: '...!', 3: '44'}
+44	44		401							{1: '2', 2: '4265'}
+45	45		301			DialogEnable				"{3: ""A brilliant flash of white light flares, and when it fades, you're met with a scene of complete desolation...""}"
+46	46		301							"{3: ""But in the darkness around, a faint, warm glow shimmers at the far edge of the stage, as though it's guiding you onward.""}"
+47	47		302							{2: '(Stop on purpose)', 3: '48', 4: '(Approach)', 5: '49'}
+48	48	50	301							{3: 'Noticing your inaction, the light flickers nervously twice, making it abundantly clear that it wants you to step onto the stage.'}
+49	49		301							{3: 'You can sense the glow guiding you forward. Its flicker slows, shifting into a comforting, warm light that puts you at ease.'}
+50	50		301				DialogDisable			"{3: ""But the moment you step onto the stage, that guiding glow vanishes. Instead, the golden hairpin at your waist starts blinking non-stop. With this uneasy light, you spot a groove on the altar in the darkness—it looks like it's meant for the hairpin.""}"
+51	51		302							{2: 'Is that... a talisman?', 3: '52'}
+52	52		302							{2: '(It must hold some sort of clue.)', 3: '53', 4: '(It has to be something horrifying.)', 5: '54'}
+53	53	55	301			DialogEnable				"{3: '""Anyone who arrives here must bow three times before this altar, keeping their gaze low and never looking straight ahead.""'}"
+54	54		301			DialogEnable				"{3: '""The owner of the Golden Hairpin is bound to reunite with their beloved—whether in the mortal world... or deep within the underworld!!!""'}"
+55	55		301							"{3: ""But that's not actually what happens. Instead...""}"
+56	56		402							{1: '4265'}
+57	57		301							"{3: '""It\'s a bit chilly in this escape room... I\'ve left a warm blanket by the altar. Go ahead and wrap it around yourself so you don\'t get cold.""'}"
+58	58		302							{2: 'Huh?', 3: '59', 4: '(Read the talisman again)', 5: '59'}
+59	59		301							"{3: ""This elegant handwriting really pops against all this gloom. You examine the talisman closely, double-checking that the cold isn't messing with your head.""}"
+60	60		401							{1: '1', 2: '181'}
+61	61		302							"{2: 'Oh, come on...', 3: '62', 4: ""Guess that means it's not scary anymore, huh..."", 5: '62', 6: '(Pull the blanket around your shoulders)', 7: '62'}"
+62	62		301							{2: '???', 3: 'Huff... Puff...'}
+63	63		301							{3: 'But... you can feel a trace of warmth in the breeze. Are you just imagining it?'}
+64	64		302							{2: '(Turn around)', 3: '69', 4: '(Pretend not to notice)', 5: '65'}
+65	65		301							"{3: ""As if it's annoyed by your obliviousness, the breeze on your neck grows even warmer...""}"
+66	66		302							{2: '(Turn around)', 3: '69', 4: '(Keep ignoring)', 5: '67'}
+67	67		301							"{3: ""A figure now blocks the airflow completely, and instead of a cold gust, you sense someone's soft, steady breathing.""}"
+68	68		302							{2: '(Turn around)', 3: '69'}
+69	69		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory159.png', 3: '0', 4: '1', 5: '0.25'}
+70	70		201							{1: '1', 2: '500917', 3: '1'}
+71	71		301							{1: '1', 2: '???', 3: 'Hey!', 4: '1'}
+72	72		302							"{2: ""Hanying... I've finally found you."", 3: '73', 4: '(Pretend to be startled)', 5: '74'}"
+73	73	76	301							{3: 'She looks delighted to have met you without any trouble, and a faint blush creeps across her cheeks.'}
+74	74		204							{1: '1', 2: '14'}
+75	75		301							"{3: 'You play along by making a quick shake. She then hastily pats your back, as if trying to calm your ""fear.""'}"
+76	76		302							"{2: ""Got you! I'm not scared at all."", 3: '77'}"
+77	77		204							{1: '1', 2: '10'}
+78	78		301							"{2: 'Hanying', 3: 'I guess I\'m just not cut out for scaring people... I can\'t seem to pull off being a proper ""dancer.""', 4: '1'}"
+79	79		204							{1: '1', 2: '1'}
+80	80		301							{3: 'She smiles, a bit flustered, then lifts her eyes to meet yours again.'}
+81	81		302							"{2: 'Miss Dancer, why do you dress up like a ghost to scare the ""scholar""?', 3: '82', 4: 'Why does the ""scholar"" make a special trip just to let the ""dancer"" spook him?', 5: '82'}"
+82	82		204							{1: '1', 2: '8'}
+83	83		301							"{2: 'Hanying', 3: ""Hmm... If you're wondering why, we need to go back to the story behind The Golden Hairpin and the Dancer."", 4: '1'}"
+84	84		204							{1: '1'}
+85	85		301							"{2: 'Hanying', 3: ""It's actually a two-person stage production disguised as an escape room, put on by the lovers themselves: the scholar and the dancer."", 4: '1'}"
+86	86		302							{2: 'Did the dancer scare her lover because her love has turned into hate?', 3: '87', 4: 'Have they turned on each other?', 5: '87'}
+87	87		301				AniZhuanchangBegin			"{2: 'Hanying', 3: ""No... It's actually the opposite. The dancer did it out of love."", 4: '1'}"
+88	88		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory159.png', 3: '1', 4: '0', 5: '0'}
+89	89		101							{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading18.jpg'}
+90	90		301			AniZhuanchangEnd				{2: 'Hanying', 3: 'Long ago, the scholar and the dancer relied on each other to survive aboard the Nighter. Commandant, you have set foot there so you should know how everyone there toiled tirelessly to keep their journey going.', 4: '1'}
+91	91		301							{2: 'Hanying', 3: 'In her endless dancing, the dancer injured her foot. Meanwhile, the scholar, exhausted from caring for his beloved, soon succumbed to illness.', 4: '1'}
+92	92		204							{1: '1', 2: '10'}
+93	93		301							"{2: 'Hanying', 3: ""As their remaining miles continued to shrink, the dancer knew these days couldn't last much longer..."", 4: '1'}"
+94	94		301							"{2: 'Hanying', 3: ""On the Double Seventh Festival, she sold her most cherished golden hairpin, hiring a black market doctor to cure the scholar's illness and wipe his memories of her. After that, the dancer was never seen again."", 4: '1'}"
+95	95		204							{1: '1'}
+96	96		301							"{2: 'Hanying', 3: ""The hairpin circulates through the black market, eventually landing back in the scholar's hands by a twist of fate."", 4: '1'}"
+97	97		301							{2: 'Hanying', 3: 'On another Double Seventh Festival, guided by the hairpin, the scholar arrived at the very stage where he first encountered the dancer.', 4: '1'}
+98	98		204							{1: '1', 2: '8'}
+99	99		301				AniZhuanchangBegin			"{2: 'Hanying', 3: ""It's said that her spirit still haunted this stage, bound by her unfulfilled wish to reunite with her beloved..."", 4: '1'}"
+100	100		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory159.png'}
+101	101		204							{1: '1'}
+102	102		302			AniZhuanchangEnd				"{2: ""So why didn't she meet him right from the start...?"", 3: '103', 4: 'Why did she scare the scholar instead?', 5: '103'}"
+103	103		301			DialogEnable				{2: 'Hanying', 3: 'If they were to meet again, she would fulfill her final wish and leave this world. At the same time, her beloved would regain every memory of their time together.', 4: '1'}
+104	104		204							{1: '1', 2: '10'}
+105	105		301							"{2: 'Hanying', 3: ""From that moment on, the scholar could only live out his days alone—a fate that's undoubtedly a form of torment."", 4: '1'}"
+106	106		301							"{2: 'Hanying', 3: ""That's why she went to such lengths to stop him from seeing her..."", 4: '1'}"
+107	107		302							{2: 'In that case, why did she suddenly change her mind and guide the scholar over?', 3: '108'}
+108	108		204							{1: '1'}
+109	109		301							{2: 'Hanying', 3: 'Because she saw clearly that even after scaring the scholar many times, he stayed resolute in his determination to meet her.', 4: '1'}
+110	110		301							{2: 'Hanying', 3: 'No matter how often it happened or how many obstacles appeared, her beloved always broke through—just as he did when they first met—to return the lost golden hairpin to her hands.', 4: '1'}
+111	111		204							{1: '1', 2: '1'}
+112	112		301							{2: 'Hanying', 3: 'Just like you did today... 【kuroname】.', 4: '1'}
+113	113		301							{3: 'She speaks while clasping your hand, the warmth in her palm silently revealing her gentle nature.'}
+114	114		301							"{3: 'Whether it\'s the scholar from that story or you, both make the same choice for the sake of their ""dancer.""'}"
+115	115		301							{2: 'Hanying', 3: 'If she stopped the scholar, she knew that this year, next year, and every year that followed, he would just keep trying to return here—to the place where they first met—forever trapped in the past and unable to move forward.', 4: '1'}
+116	116		204							{1: '1', 2: '10'}
+117	117		301							{2: 'Hanying', 3: 'She could shield her beloved from loneliness, but in doing so, she also denied him the right to yearn. So eventually, the dancer no longer stood in his way. Instead, she led the scholar to meet her once again.', 4: '1'}
+118	118		204							{1: '1', 2: '1'}
+119	119		301							{2: 'Hanying', 3: '【kuroname】...', 4: '1'}
+120	120		301							{3: 'She touches your cheek, and her gentle breath caresses your skin with a faint, tingling sensation.'}
+121	121		301							{2: 'Hanying', 3: 'Only after meeting you do I finally understand... human longing is like a bittersweet ache—it carries both melancholy and delight.', 4: '1'}
+122	122		301							"{2: 'Hanying', 3: ""Whether parted by life or death—like the cowherd and the weaver girl, or the dancer and the scholar—longing clings to every heart that's been left behind... and I'm no different."", 4: '1'}"
+123	123		204							{1: '1', 2: '10'}
+124	124		301							"{2: 'Hanying', 3: ""【kuroname】, it's the Double Seventh Festival today. I believe I'm not just that dancer from the story, but also a woman who patiently waits, keeping her beloved close in her thoughts."", 4: '1'}"
+125	125		301							"{2: 'Hanying', 3: '""I want to see you right away."" ""I want to make things easier for you."" Because of these selfish desires, I was acting so clumsy that I couldn\'t even give you a proper scare...', 4: '1'}"
+126	126		204							{1: '1', 2: '1'}
+127	127		301							"{2: 'Hanying', 3: 'Still... ""to hold my beloved in my arms again""—perhaps that\'s a wish the dancer and I share with all our hearts...', 4: '1'}"
+128	128		301							"{3: ""If a single gaze can enfold someone in warmth, you're the one she's holding now.""}"
+129	129		302							{2: '(Spread arms)', 3: '130', 4: '(Hug Hanying)', 5: '132'}
+130	130		202							{1: '1'}
+131	131	134	301							{3: 'Hanying slips her arms around your waist, gently yet firmly drawing you into her embrace.'}
+132	132		202							{1: '1'}
+133	133		301							{3: 'She rests her hands on your back, and you sense her subtle trembling—an unmistakable sign of the joy she feels in this moment.'}
+134	134		301							{3: 'Her soft skin carries the clamorous pulse of her artificial heart, and her gentle heat seeps into you, chasing away the cold of the exhibit hall.'}
+135	135		201							{1: '1', 2: '500917', 3: '1'}
+136	136		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Hanying', 3: ""【kuroname】, the Double Seventh Festival night is still young... Now that we've run into each other, let's head somewhere else and relax for a bit."", 4: '1'}"

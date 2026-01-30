@@ -1,0 +1,262 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory26.jpg'}
+2	2		401							{1: '1', 2: '102'}
+3	3		401							{1: '2', 2: '915'}
+4	4		502							{1: 'RImgBg1Shake'}
+5	5		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+6	6		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+7	7		301			DialogEnable				{3: 'Explosion after explosion threatens to deafen everyone on the field.'}
+8	8		201							{1: '1', 2: '500425'}
+9	9		301							{1: '1', 3: 'Zachery has seen such explosions in the past. Old records show that people used to level abandoned buildings with explosives.'}
+10	10		301							{3: 'But that is too inelegant for a mechanical engineer like him. The construction mech he designed would be able to safely demolish even the most robust high-rise.'}
+11	11		301							{3: 'He never thought he would witness the demolishing of his own design.'}
+12	12		301				AniZhuanchangBegin			{3: 'Neither was he sure if his mechanoid could be taken down by explosives.'}
+13	13		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+14	14		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+15	15		509						800.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory26.jpg', 2: '1'}
+16	16		201							{1: '1', 2: '500005', 4: '550'}
+17	17		201							{1: '11', 2: '1101001', 4: '-550'}
+18	18		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+19	19		301			AniZhuanchangEnd				{1: '1', 2: 'Soldier Pietro', 3: 'This is the rescue team reporting! All personnel have been evacuated from the camp!', 4: '1'}
+20	20		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory31.jpg'}
+21	21		202							{1: '1', 6: '1'}
+22	22		201							{1: '1', 2: '500005', 4: '550'}
+23	23		301							{1: '1', 2: 'Soldier Leon', 3: 'This is the distraction team! We can see the Corrupted Colossus taking damage!', 4: '1'}
+24	24		301							{2: 'Watanabe', 3: 'Good work!', 4: '11'}
+25	25		301							{3: 'Watanabe puts away his dagger and concludes their battle with encouragement on the radio.'}
+26	26		301							"{2: 'Watanabe', 3: ""The target has sustained heavy injury and nearly stopped moving and attacking, but we haven't exhausted its battery yet. Close-quarter attacks can be lethal to us."", 4: '11'}"
+27	27		301							{2: 'Watanabe', 3: 'All units retreat on my command—', 4: '11'}
+28	28		301							{2: 'Soldier Leon', 3: '—Hold on! Boss!', 4: '1'}
+29	29		301							"{2: 'Soldier Leon', 3: ""The target is moving away from our estimated route! It's moving toward its two o'clock direction—fast approaching the rescue route!"", 4: '1'}"
+30	30		301							{2: 'Watanabe', 3: '...Rescue team! Report!', 4: '11'}
+31	31		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+32	32		202							{1: '1', 6: '1'}
+33	33		201							{1: '1', 2: '500005', 4: '550'}
+34	34		301							"{1: '1', 2: 'Soldier Pietro', 3: ""This is the rescue team. We've finished evacuating the camp! We're making sure there's no one remaining..."", 4: '1'}"
+35	35		301							{2: 'Soldier Pietro', 3: '...There is still one person left in the camp!', 4: '1'}
+36	36		301							{2: 'Soldier Pietro', 3: 'Requesting support! Is there anyone near the rescue route?!', 4: '1'}
+37	37		202							{1: '11', 2: '1', 6: '1'}
+38	38		510						800.0	{1: '2', 2: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+39	39		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+40	40		201							{1: '1', 2: '500398'}
+41	41		301							"{1: '1', 2: 'Suma', 3: ""This is Suma from the demolition team! I'm near the route! I'm heading there to rescue—"", 4: '1'}"
+42	42		401							{1: '2', 2: '718'}
+43	43		301							{3: 'Bzzzz—bzzzz—'}
+44	44		402							{1: '718'}
+45	45		301							"{2: 'Soldier Pietro', 3: ""Suma! Answer! The target is approaching your direction—what's your status?!""}"
+46	46		301							"{2: 'Suma', 3: ""Cough—cough—you don't have to warn me, captain obvious...!"", 4: '1'}"
+47	47		401							{1: '2', 2: '957'}
+48	48		301							"{3: ""There is a brief silence, followed by loud clashes through the radio that almost cover up Suma's desperate voice.""}"
+49	49		301							"{2: 'Suma', 3: ""This is Suma! I'm inside the attack range of the Corrupted Colossus, and I'm impacted by the impact! Calling for Zachery from the engineering team! The target Corrupted is deviating from its path! I need guidance!"", 4: '1'}"
+50	50		301							{2: 'Suma', 3: 'Zachery! Zachery! Do you hear me?! We talked about what to do if this happens! Do it!', 4: '1'}
+51	51		301							{2: 'Suma', 3: 'Hello? Anyone?! This is Suma! Zachery?!', 4: '1'}
+52	52		301							{2: 'Suma', 3: 'Dammit! Is the radio getting interference—', 4: '1'}
+53	53		202							{1: '1', 6: '1'}
+54	54		509						800.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory5.jpg', 2: '2'}
+55	55		201							{1: '1', 2: '500398', 4: '-600'}
+56	56		201							{1: '2', 2: '1101001', 4: '500'}
+57	57		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+58	58		301							"{1: '1', 2: 'Watanabe', 3: ""This is Watanabe! I hear you, Suma. Your radio is working. I've just arrived where Zachery is."", 4: '2'}"
+59	59		301							"{2: 'Watanabe', 3: ""We're dispatching reinforcement to draw the attention of the Corrupted Colossus."", 4: '2'}"
+60	60		301							{2: 'Watanabe', 3: 'And Zachery...', 4: '2'}
+61	61		301							{3: 'Watanabe looks down. Holding the blueprint in his hands, Zachery stares at the colossus in the distance, sweating.'}
+62	62		201							{1: '2', 2: '500565', 4: '500', 7: '1'}
+63	63		301			PanelActor2Shake				{1: '1', 2: 'Zachery', 3: 'Ah... ah...', 4: '2'}
+64	64		301							{3: 'His hands are shaking, and his blueprint falls to the ground.'}
+65	65		301							"{2: 'Suma', 3: ""What's wrong with him?! This is a critical moment—cough! Cough!"", 4: '1'}"
+66	66		301							{2: 'Suma', 3: 'Hey! Hello?! This is Suma, calling for Zachery...!', 4: '1'}
+67	67		401							{1: '2', 2: '1503'}
+68	68		401							{1: '2', 2: '567'}
+69	69		301							"{3: ""Suma's furious shouts and coughs and the colossus' heavy footsteps blend together in Zachery's earpiece, sounding less and less real.""}"
+70	70		301				AniZhuanchangBegin			{2: 'Suma', 3: 'Hey! Hello?!', 4: '1'}
+71	71		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+72	72		401							{1: '1', 2: '36'}
+73	73		202							{1: '1', 2: '2', 6: '1'}
+74	74		510							{1: '2'}
+75	75		510							{1: '1'}
+76	76		101						800.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+77	77		504							{1: '0.7'}
+78	78		401							{1: '1', 2: '209'}
+79	79		301			AniZhuanchangEnd				{2: 'Suma', 3: 'Hey! Hello?!', 4: '1'}
+80	80		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory28.jpg', 3: '0', 4: '1', 5: '2'}
+81	81		201							{1: '1', 2: '500398', 4: '400'}
+82	82		201							{1: '2', 2: '500565', 4: '-400'}
+83	83		301							{1: '1', 2: 'Zachery', 3: 'Ah...', 4: '2'}
+84	84		301							{2: 'Suma', 3: 'Stop daydreaming and start explaining the blueprint! The boss is still waiting for us to come up with a plan.', 4: '1'}
+85	85		301							{3: 'After a brief daze, Zachery concentrates and collects himself. Suma has already laid out several blueprints on the floor.'}
+86	86		301							"{2: 'Zachery', 3: ""Ah, yes. I'm here. We can start."", 4: '2'}"
+87	87		301							{2: 'Suma', 3: 'How much do you know about the capability and mechanism of explosives?', 4: '1'}
+88	88		301							{2: 'Zachery', 3: 'Boss has gone through some fundamentals with me, so I know the basics...', 4: '2'}
+89	89		301							"{2: 'Suma', 3: ""Good. Take a look at my drafts, and I'll look at yours. Let's confirm how many bombs we'll need."", 4: '1'}"
+90	90		301							{2: 'Zachery', 3: 'Oh, alright. Sure.', 4: '2'}
+91	91		301							{3: 'Blueprints of another trade are not easy to understand, but standardized plans share a similar lexicon. The two of them quickly find a way in and begin their reviews.'}
+92	92		301							"{3: ""But Zachery's attention soon turns away from the blueprint before him toward Suma.""}"
+93	93		301							{3: 'Hesitating briefly, Zachery finally speaks.'}
+94	94		301							"{2: 'Zachery', 3: ""I-I just want to say that I didn't go to Babylonia because..."", 4: '2'}"
+95	95		301							"{2: 'Suma', 3: ""There was someone who looked after you for a long time, and they weren't qualified to go to Babylonia despite you did, so you chose to stay on the surface. Am I right?"", 4: '1'}"
+96	96		301							{3: 'Suma does not even turn to look at him.'}
+97	97		301							{2: 'Zachery', 3: 'Eh... um... H-how did you know...?', 4: '2'}
+98	98		301							"{2: 'Suma', 3: ""People who could go to Babylonia but didn't were either deceived or had something they couldn't leave behind. Getting an IV solution from the boss means you have someone that requires chronic care."", 4: '1'}"
+99	99		301							{2: 'Suma', 3: 'Given how mousy you are, I bet it was an elder brother or sister that kept you here.', 4: '1'}
+100	100		301							{2: 'Zachery', 3: 'Right, right. You guessed it. It was my brother... He had been looking after me since I was a kid, heh...', 4: '2'}
+101	101		301							"{2: 'Zachery', 3: ""Babylonia's policy was very strict. I was offered a ticket for my level of expertise, but it was for me and me only. Where could I possibly go by myself, right...? But at least... I could stay behind for him."", 4: '2'}"
+102	102		301							{2: 'Zachery', 3: 'He never abandoned me... He always shared the food he got with me. Hehe, heh...', 4: '2'}
+103	103		301							{2: 'Zachery', 3: 'U-until the day when... w-when my brother...', 4: '2'}
+104	104		301							"{2: 'Suma', 3: ""When he got hurt and couldn't take care of you anymore?"", 4: '1'}"
+105	105		301							{2: 'Zachery', 3: 'Yeah... yeah.', 4: '2'}
+106	106		301							{2: 'Zachery', 3: 'It... was a concussion. He was rescued in time, but there were complications. He can still walk around, but his mind...', 4: '2'}
+107	107		301							"{2: 'Suma', 3: ""I assumed so. Who doesn't have someone like that if they stayed after the Great Evacuation?"", 4: '1'}"
+108	108		301							{2: 'Zachery', 3: 'S-so, you too...?', 4: '2'}
+109	109		301							"{2: 'Suma', 3: ""Worse than you. They're all gone now."", 4: '1'}"
+110	110		301							"{2: 'Suma', 3: ""My grandparents went first. Old people, y'know? Pretty much screwed once the serums stopped coming."", 4: '1'}"
+111	111		301							{2: 'Suma', 3: 'Then it was my younger sister. Slow runner, she. Caught by the Corrupted.', 4: '1'}
+112	112		301							"{2: 'Suma', 3: ""And the rest... I don't know if they were lucky or not. All of them were crushed to their deaths at the same time. It was quick."", 4: '1'}"
+113	113		301							{2: 'Suma', 3: 'Oh, right. You designed that mechanoid.', 4: '1'}
+114	114		301							{2: 'Suma', 3: 'The IUSL construction mech.', 4: '1'}
+115	115		301							{2: 'Zachery', 3: 'Oh, oh. I-is that so...', 4: '2'}
+116	116		301							{3: 'Zachery pretends not to hear Suma and fiddles with the map in his hands while facing away.'}
+117	117		301							{3: 'Unscrolling the map on the ground, he sees one of the corners rolling back and grabs some sand and rock to weigh it down, only for another corner to roll up.'}
+118	118		301							"{2: 'Suma', 3: ""...What are you doing? What's the point of fighting with the map?"", 4: '1'}"
+119	119		301							{3: 'Zachery keeps repeating this action for a few minutes.'}
+120	120		301							"{2: 'Zachery', 3: ""I-it's nothing. I just want the map to lie flat so it's easier for us to see..."", 4: '2'}"
+121	121		301							{2: 'Suma', 3: 'Any more bullshit? Can you look at me when you speak?', 4: '1'}
+122	122		401							{1: '2', 2: '9332001'}
+123	123		203							{1: '1', 2: '0.25', 3: '200'}
+124	124		502							{1: 'PanelActor2Shake'}
+125	125		301							{3: 'Before he knows it, Zachery is spun around, and Suma grabs him by his collar.'}
+126	126		505							{1: 'PanelActor2Shake'}
+127	127		301							"{2: 'Suma', 3: ""What's with that expression? Just speak your mind already. What's the point of holding back?"", 4: '1'}"
+128	128		301							{2: 'Zachery', 3: 'Eh... um... I...', 4: '2'}
+129	129		301							{3: 'He mumbles for a while before saying something comprehensible.'}
+130	130		301							{2: 'Zachery', 3: 'D-do you blame me...? For creating something like that?', 4: '2'}
+131	131		301							"{2: 'Suma', 3: ""No. I don't blame anyone. I just blame myself."", 4: '1'}"
+132	132		301							{2: 'Suma', 3: 'I blame myself... for being alive.', 4: '1'}
+133	133		301							{2: 'Zachery', 3: 'I-I see. Heh...', 4: '2'}
+134	134		301							{2: 'Zachery', 3: '—Aaah! Ouch...', 4: '2'}
+135	135		203							{1: '1', 2: '0.25', 3: '400'}
+136	136		203							{1: '2', 2: '0.25', 3: '-400', 4: '-100'}
+137	137		401							{1: '2', 2: '3077'}
+138	138		502							{1: 'PanelActor2Shake'}
+139	139		301							{1: '1', 3: 'Suma lets go of Zachery before he can laugh, and he falls on his buttocks.'}
+140	140		505							{1: 'PanelActor2Shake'}
+141	141		301							"{2: 'Suma', 3: ""Stop being so sentimental! I was indulging in your therapy session only because you were taking your time to sulk! Now you're getting me all schmaltzy!"", 4: '1'}"
+142	142		301							{2: 'Suma', 3: 'Just tell me where to blow up. Boss is still waiting for us.', 4: '1'}
+143	143		301							"{2: 'Suma', 3: ""I don't care how you feel about your robot. It's threatening all of us right now. Their survival depends on us destroying that mechanoid."", 4: '1'}"
+144	144		301							"{2: 'Suma', 3: ""That's right—their survival! You've decided to stay. Do you want to watch your brother die? I don't know if Boss or Leon cares to live another day, but if you want to take care of your brother, take care of this first."", 4: '1'}"
+145	145		301							"{2: 'Zachery', 3: ""Okay, okay! Fine, fine, fine. Just take a look at page three of the blueprint and get an understanding of its structure. I'll elaborate on them after I take a look at your demolition plan..."", 4: '2'}"
+146	146		301							{2: 'Suma', 3: 'Alright.', 4: '1'}
+147	147		202							{1: '1', 2: '2'}
+148	148		301							"{3: ""Suma throws a blueprint into Zachery's arms before turning around and grabbing one of Zachery's to study.""}"
+149	149		301							{3: 'And she misses Zachery muttering as he reads the composition of the explosion.'}
+150	150		201							{1: '1', 2: '500565'}
+151	151		301							{1: '1', 2: 'Zachery', 3: 'How I feel... Sigh... Why would I feel anything about it...?', 4: '1'}
+152	152		301							{2: 'Zachery', 3: 'My brother... was hurt by that mechanoid, after all...', 4: '1'}
+153	153		301				AniZhuanchangBegin			{2: 'Zachery', 3: 'No one wants to destroy this thing more than me... No one...', 4: '1'}
+154	154		401							{1: '1', 2: '36'}
+155	155		504							{1: '0'}
+156	156		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+157	157		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory5.jpg'}
+158	158		401							{1: '1', 2: '102'}
+159	159		301			AniZhuanchangEnd				{2: 'Zachery', 3: 'No one... no one...', 4: '1'}
+160	160		301							{3: 'He wanted to destroy it sooner. He could have destroyed it sooner.'}
+161	161		301							"{2: 'Zachery', 3: ""But... why couldn't I do it..."", 4: '1'}"
+162	162		202							{1: '1', 6: '1'}
+163	163		301							{3: 'Zachery remembers the last time this machine was infected.'}
+164	164		301							"{3: 'He thought he had done his best and turned off the mechanoid\'s power and scanning function, but he did not expect the machine was still operating... and carrying out its ""mission.""'}"
+165	165		301							{3: 'That was one of his designs. The mechanoid can draw power from other sources so that it has backup power to continue its operation when it loses its main power supply.'}
+166	166		301							{3: 'He even remembers how he gloated to his colleagues when he proposed this design.'}
+167	167		301							{3: 'He also remembers clearly how he risked his life to shut down the mechanoid last time, only for it to survive with its power reserve—and crush a dozen of his companions with its feet.'}
+168	168		301							{3: 'He also remembered how he told the others everything about these designs.'}
+169	169		301							{3: 'But he still has not worked out... how much energy a motionless mechanoid has gathered buried underneath the heated sand.'}
+170	170		201							{1: '1', 2: '1101001', 3: '5'}
+171	171		301							{1: '1', 2: 'Watanabe', 3: 'Zachery! Wake up!', 4: '1'}
+172	172		401							{1: '2', 2: '907504'}
+173	173		301							"{3: ""Slap! Distracted, Zachery finds Watanabe's face before him—as well as Watanabe's two hands.""}"
+174	174		301							"{3: ""Zachery's face is once again sandwiched between Watanabe's hands. The scars on Watanabe from the battle with the Corrupted Colossus smell like rust, and his palms feel rough on Zachery's cheeks.""}"
+175	175		301							{3: 'But Zachery cannot feel any pain this time.'}
+176	176		301							{2: 'Watanabe', 3: 'Zachery, you also looked like this the last time you saw the Corrupted Colossus.', 4: '1'}
+177	177		301							"{3: ""Watanabe's tone is so low that he is almost inaudible against the noise the Corrupted Colossus makes.""}"
+178	178		301							{3: 'Zachery, however, can hear his words clearly, as if they are pierced into his mind.'}
+179	179		301							"{2: 'Watanabe', 3: ""You're scared. You're sorry. You're thinking about what happened last time and how you failed."", 4: '1'}"
+180	180		201							{1: '1', 2: '500565'}
+181	181		301							{1: '1', 2: 'Zachery', 3: 'Boss... I-I...', 4: '1'}
+182	182		201							{1: '1', 2: '1101001'}
+183	183		301							"{1: '1', 2: 'Watanabe', 3: ""You're right. That thing is terrifying. We're all afraid. You're its maker—you're also afraid that you're responsible for every life it hurts and takes."", 4: '1'}"
+184	184		301							{2: 'Watanabe', 3: 'But you have to remember that this is not your fault. Without the Punishing Virus, the machine would have been your pride.', 4: '1'}
+185	185		201							{1: '1', 2: '500565'}
+186	186		301							{1: '1', 2: 'Zachery', 3: 'Pride...? Me...?', 4: '1'}
+187	187		201							{1: '1', 2: '1101001'}
+188	188		301							"{1: '1', 2: 'Watanabe', 3: ""Yes, you, Zachery—an engineering genius of tomorrow. I've heard the people from Cosmos Industries mention your name. That was something you were proud of."", 4: '1'}"
+189	189		301							{2: 'Watanabe', 3: 'And now, you have another chance to achieve something you can be proud of—save our teammates and both of our camps.', 4: '1'}
+190	190		301							{2: 'Watanabe', 3: 'You might have failed in the past and missed the chance to save someone you cared about, but what you have now is another opportunity and us. You still have a chance to protect that person... and all of us.', 4: '1'}
+191	191		301							{2: 'Watanabe', 3: 'This can be your pride.', 4: '1'}
+192	192		201							{1: '1', 2: '500565'}
+193	193		301							{1: '1', 2: 'Zachery', 3: 'I...', 4: '1'}
+194	194		301							{3: 'Zachery bends down and crouches, the cold sweat on his forehead dripping onto the sand.'}
+195	195		301							{2: 'Zachery', 3: 'I...', 4: '1'}
+196	196		301							{3: 'Then he shakes his head and picks up the blueprint he dropped on the ground.'}
+197	197		301							"{2: 'Zachery', 3: ""Right... I won't waste this chance."", 4: '1'}"
+198	198		301				AniZhuanchangBegin			{2: 'Zachery', 3: 'Engineering team! This is Zachery. I need you to coordinate with the demolition team to execute an emergency rescue mission!', 4: '1'}
+199	199		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory26.jpg'}
+200	200		201							{1: '1', 2: '500398'}
+201	201		301			AniZhuanchangEnd				{1: '1', 2: 'Suma', 3: 'Huff... Puff...', 4: '1'}
+202	202		301							{3: 'Despite the numerous hits to its core, the heavy colossus is still slowly advancing. Every small step it makes raises a storm of stones, dispersing the soldiers that are attacking and drawing its attention.'}
+203	203		301							{3: 'Behind the colossus, Suma crawls slowly underneath a shower of stone.'}
+204	204		301							{2: 'Suma', 3: 'This is Suma reporting! The distraction is working. The Corrupted Colossus is being drawn back to our planned route for now.', 4: '1'}
+205	205		301							"{2: 'Suma', 3: ""I've arrived at the camp to rescue the remaining person!"", 4: '1'}"
+206	206		301							{2: 'Suma', 3: '—What are you staying here for? Get going! No one has time for your crap!', 4: '1'}
+207	207		301							"{3: ""Suma crosses a large field to tear away a tent damaged in the colossus' path, revealing a shivering young man underneath. She tries to pull him away, but his body seems to have taken root, not moving an inch.""}"
+208	208		301							{3: 'He keeps his eyes on the Colossus Corrupted that is treading nearby and watches his old camp crumble to pieces.'}
+209	209		301							"{2: 'Suma', 3: ""You're the lieutenant from Humanity Corp, aren't you? What is so precious here that you can't look away?!"", 4: '1'}"
+210	210		201							{1: '1', 2: '500382'}
+211	211		301							"{1: '1', 2: 'Lieutenant', 3: ""I... I can't go..."", 4: '1'}"
+212	212		301							{2: 'Lieutenant', 3: 'Everything I have... the photos I took with my family, the trinkets my brothers gave me... all of them... were destroyed by that thing...', 4: '1'}
+213	213		301							"{2: 'Lieutenant', 3: ""They're all gone now. I'm the only one left... What else do I even live for...? I'd rather just..."", 4: '1'}"
+214	214		301							{3: 'The lieutenant stares at the approaching colossus, his gaze misty.'}
+215	215		301							{3: 'Suma lets go of his arms, allowing them to fall to his sides.'}
+216	216		201							{1: '1', 2: '500398'}
+217	217		301							"{1: '1', 2: 'Suma', 3: ""Yeah, isn't it nice? Get it over with, and you get to see your family again."", 4: '1'}"
+218	218		301							"{2: 'Suma', 3: ""Although no one here is gonna remember your family if you're gone."", 4: '1'}"
+219	219		301							"{2: 'Suma', 3: ""You told me you loved the beach and the parks, and your family worked multiple jobs to afford a trip to Venus Splash Park on your birthday. You hadn't forgotten the Shark-speare you saw, the photos your family took, and the new years you spent together..."", 4: '1'}"
+220	220		301							"{2: 'Suma', 3: ""There won't be anyone to remember any of that if you're gone."", 4: '1'}"
+221	221		301							{2: 'Suma', 3: 'Will you pay that price to die alone?', 4: '1'}
+222	222		201							{1: '1', 2: '500382'}
+223	223		301							{1: '1', 2: 'Lieutenant', 3: '...', 4: '1'}
+224	224		301							{3: 'The lieutenant is silent. Eventually, he raises his trembling arms again.'}
+225	225		301							"{3: ""This time, he holds Suma's hands.""}"
+226	226		201							{1: '1', 2: '500398'}
+227	227		301							{1: '1', 2: 'Suma', 3: 'Good.', 4: '1'}
+228	228		301							{2: 'Suma', 3: 'Now, get up and run! The big guy is going to squash us!', 4: '1'}
+229	229		202							{1: '1', 6: '1'}
+230	230		509						500.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory5.jpg', 2: '1'}
+231	231		201							{1: '1', 2: '500398', 4: '550'}
+232	232		201							{1: '11', 2: '1101001', 4: '-550'}
+233	233		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+234	234		301							{1: '1', 2: 'Suma', 3: 'This is Suma! Personnel rescued! Where should we go?!', 4: '1'}
+235	235		301							"{2: 'Watanabe', 3: ""Copy! A rescue vehicle is coming for you in your three o'clock direction. Another vehicle on distraction duty is coming from your nine o'clock! Get out of there ASAP!"", 4: '11'}"
+236	236		301							"{2: 'Suma', 3: ""Get out of here...? We're too late!"", 4: '1'}"
+237	237		301							"{2: 'Suma', 3: ""We're too close to the detonation location. The Corrupted will trigger the bomb!"", 4: '1'}"
+238	238		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+239	239		202							{1: '1', 2: '11', 6: '1'}
+240	240		510						500.0	{1: '1'}
+241	241		201							{1: '1', 2: '500398', 4: '400'}
+242	242		201							{1: '2', 2: '500382', 4: '-400'}
+243	243		301							{1: '1', 2: 'Suma', 3: 'Tch. Desperate times. The big one is coming. Hold on, kid.', 4: '1'}
+244	244		301							{2: 'Lieutenant', 3: 'The what?!', 4: '2'}
+245	245		401							{1: '2', 2: '3077'}
+246	246		203							{1: '1', 2: '0.15', 3: '400', 4: '-200'}
+247	247		203							{1: '2', 2: '0.15', 3: '-400', 4: '-200'}
+248	248		301							{3: 'Before the lieutenant understands what is happening, Suma has already pushed his head into the sand before hunkering down herself.'}
+249	249		202							{1: '1', 2: '2', 6: '1'}
+250	250		401							{1: '2', 2: '555'}
+251	251		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+252	252		502							{1: 'RImgBg1Shake'}
+253	253		301							{3: 'Right then, a massive shockwave hits them from behind, pressing them deep into the desert sand.'}
+254	254		401							{1: '2', 2: '884'}
+255	255		401							{1: '2', 2: '957'}
+256	256		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '1'}
+257	257		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab'}
+258	258		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+259	259		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+260	260		505					10.0		{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+261	261		301		1		AniZhuanchangBegin			{3: 'The explosion feels like it has buried the whole world. When the dust settles, there is nothing but silence.'}

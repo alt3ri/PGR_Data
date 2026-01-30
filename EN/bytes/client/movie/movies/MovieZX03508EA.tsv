@@ -1,0 +1,166 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '27'}
+3	3		401							{1: '2', 2: '2888'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+5	5		401							{1: '2', 2: '2889'}
+6	6		301			DialogEnable	AniZhuanchangBegin			{3: '~May the heavens stand unchanging.~'}
+7	7		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory723.jpg'}
+8	8		201							{1: '1', 2: '500445'}
+9	9		301			AniZhuanchangEnd				"{1: '1', 2: 'Pulao', 3: ""Three o'clock—up the rock face!"", 4: '1'}"
+10	10		301							"{2: 'Pulao', 3: ""They're closing in!"", 4: '1'}"
+11	11		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+12	12		401							{1: '2', 2: '10007502'}
+13	13		201							{1: '1', 2: '500224', 4: '-450'}
+14	14		201							{1: '2', 2: '500224', 4: '450'}
+15	15		301			RImgBg1Shake				{1: '1', 2: 'Pulao Crew', 3: 'Up there—right above us!', 4: '1'}
+16	16		301				AniZhuanchangBegin			{2: 'Pulao Crew', 3: 'Strike them, strike them down!', 4: '2'}
+17	17		202							{1: '1', 2: '2', 6: '1'}
+18	18		401							{1: '2', 2: '2889'}
+19	19		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+20	20		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: '~May fate unfold in a gentle sway.~'}
+21	21		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory723.jpg'}
+22	22		201							{1: '1', 2: '500445'}
+23	23		401							{1: '2', 2: '1513'}
+24	24		301			AniZhuanchangEnd				{1: '1', 2: 'Pulao', 3: 'Back into formation!', 4: '1'}
+25	25		301							"{2: 'Pulao', 3: ""The passage—they're destroying the wooden passage!"", 4: '1'}"
+26	26		301							{2: 'Pulao', 3: 'Watch out—', 4: '1'}
+27	27		301				AniZhuanchangBegin			{2: 'Pulao', 3: 'Shannai! Hold my hand!', 4: '1'}
+28	28		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+29	29		202							{1: '1', 6: '1'}
+30	30		401							{1: '2', 2: '2889'}
+31	31		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: '~To spiritual peaks, may you find your way.~'}
+32	32		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory723.jpg'}
+33	33		201							{1: '1', 2: '500224', 4: '-450', 7: '1'}
+34	34		201							{1: '2', 2: '500224', 4: '450', 7: '1'}
+35	35		502							{1: 'PanelActor1Shake'}
+36	36		301			AniZhuanchangEnd				"{1: '1', 2: 'Pulao Crew', 3: ""I-It's so cold... I... I don't want to die!"", 4: '1'}"
+37	37		301				DialogDisable			"{2: 'Pulao Crew', 3: ""Don't let go! Hold on!"", 4: '2'}"
+38	38		202							{1: '1', 2: '2', 6: '1'}
+39	39		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+40	40		401							{1: '2', 2: '884'}
+41	41		502						1500.0	{1: 'RImgBg1Shake'}
+42	42		201							{1: '1', 2: '500224', 4: '-450'}
+43	43		201							{1: '2', 2: '500224', 4: '450'}
+44	44		301			DialogEnable				{1: '1', 2: 'Pulao Crew', 3: 'Quick, hurry! Please... let the bleeding stop!', 4: '1'}
+45	45		301				AniZhuanchangBegin			"{2: 'Pulao Crew', 3: ""That won't do. Get the soldering iron! We gotta seal it off!"", 4: '2'}"
+46	46		202							{1: '1', 2: '2', 6: '1'}
+47	47		401							{1: '2', 2: '2889'}
+48	48		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+49	49		301			AniZhuanchangEnd	AniZhuanchangBegin			"{3: ""~May you, dear one, find well-being's embrace.~""}"
+50	50		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+51	51		402							{1: '2888'}
+52	52		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory725.jpg'}
+53	53		401							{1: '1', 2: '33'}
+54	54		301			AniZhuanchangEnd				{3: '...'}
+55	55		201							{1: '1', 2: '500445', 4: '-400'}
+56	56		201							{1: '2', 2: '500224', 4: '400'}
+57	57		301							{1: '1', 2: 'Pulao Crew', 3: 'My lady.', 4: '2'}
+58	58		301							{2: 'Pulao', 3: 'Yes?', 4: '1'}
+59	59		301							{2: 'Pulao Crew', 3: 'Casualty check is complete.', 4: '2'}
+60	60		301							{2: 'Pulao Crew', 3: 'Three... killed...', 4: '2'}
+61	61		301							{2: 'Pulao Crew', 3: 'The two severely wounded are being attended to.', 4: '2'}
+62	62		301							{2: 'Pulao', 3: '...', 4: '1'}
+63	63		301							{2: 'Pulao', 3: 'I see.', 4: '1'}
+64	64		301							{2: 'Pulao Crew', 3: 'But Shannai...', 4: '2'}
+65	65		301							{2: 'Pulao', 3: 'We will find her on our way down. No, we have to.', 4: '1'}
+66	66		301							{2: 'Pulao Crew', 3: 'Yes, understood.', 4: '2'}
+67	67		301							"{2: 'Pulao', 3: ""...Let's get some rest now."", 4: '1'}"
+68	68		301							{2: 'Pulao Crew', 3: 'Copy that.', 4: '2'}
+69	69		202							{1: '1', 2: '2', 6: '1'}
+70	70		201							{1: '1', 2: '500445'}
+71	71		301							{1: '1', 3: 'After giving out the instructions, Pulao leans against a wooden pillar outside the corridor alone and digs out another piece of salted plum candy from her pocket.'}
+72	72		301							{3: '...'}
+73	73		301							{3: 'It takes her three tries to get the wrapper off with her fingers still trembling.'}
+74	74		204							{1: '1', 2: '14'}
+75	75		301							{3: 'Is she feeling exhausted?'}
+76	76		301							{3: 'For a brief moment, she is on the verge of tears, but she manages to hold them back.'}
+77	77		204							{1: '1', 2: '8'}
+78	78		301				AniZhuanchangBegin			{3: 'She tosses the candy into her mouth and falls into a deep slumber next to heaps of wreckage, surrounded by the cold mist, and amidst the verdant peaks.'}
+79	79		401							{1: '1', 2: '36'}
+80	80		202							{1: '1', 6: '1'}
+81	81		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory159.png'}
+82	82		401							{1: '1', 2: '207'}
+83	83		301			AniZhuanchangEnd				{3: '...'}
+84	84		201							{1: '1', 2: '500442'}
+85	85		301							{1: '1', 2: 'Hanying', 3: 'Here, hold your hand just a bit higher... right here.', 4: '1'}
+86	86		301							{2: 'Hanying', 3: 'One, two, three... Keep your eyes on your hand, like this... and lift slowly—up to here.', 4: '1'}
+87	87		301							{2: 'Hanying', 3: 'Got it?', 4: '1'}
+88	88		201							{1: '1', 2: '500447'}
+89	89		301							{1: '1', 2: 'Yoyo', 3: 'Um...', 4: '1'}
+90	90		201							{1: '1', 2: '500442'}
+91	91		301							"{1: '1', 2: 'Hanying', 3: ""Here, I'll show you."", 4: '1'}"
+92	92		301							"{2: 'Hanying', 3: ""~Yearning for winter's touch. Atop snowy peaks, snow dances...~"", 4: '1'}"
+93	93		301							{2: 'Hanying', 3: 'Your eyes and hand have to move together. Except for this last line, when they have to part.', 4: '1'}
+94	94		301							"{2: 'Hanying', 3: ""Don't look back, Yoyo. Don't look back."", 4: '1'}"
+95	95		301							"{2: 'Hanying', 3: ""The key to this dance is that you can't look back."", 4: '1'}"
+96	96		201							{1: '1', 2: '500447'}
+97	97		301							{1: '1', 2: 'Yoyo', 3: 'Hmm... let me try again.', 4: '1'}
+98	98		201							{1: '1', 2: '500442'}
+99	99		301							{1: '1', 2: 'Hanying', 3: 'Good. Practice makes perfect.', 4: '1'}
+100	100		301							"{2: 'Backup Dancer', 3: ""Huh? You guys are still here? It's getting late.""}"
+101	101		301							"{2: 'Hanying', 3: ""Yoyo's entrance exam is coming up the day after tomorrow, so I'm helping her with her practice."", 4: '1'}"
+102	102		202							{1: '1', 6: '1'}
+103	103		301							"{2: 'Backup Dancer', 3: ""Oh my, don't be so harsh on your little sister.""}"
+104	104		301							"{2: 'Backup Dancer', 3: ""See, she's sweaty all over.""}"
+105	105		201							{1: '1', 2: '500447'}
+106	106		301							"{1: '1', 2: 'Yoyo', 3: ""I'm not done yet! I want to practice some more."", 4: '1'}"
+107	107		202							{1: '1', 6: '1'}
+108	108		301							{2: 'Backup Dancer', 3: 'But I mean, Hanying, we can let her in without a test if you just put in a word for her.'}
+109	109		301							"{2: 'Backup Dancer', 3: ""Everyone knows how you've been taking care of us all these years.""}"
+110	110		201							{1: '1', 2: '500442'}
+111	111		301							{1: '1', 2: 'Hanying', 3: 'No, because I know she can do it if she just puts in the hard work.', 4: '1'}
+112	112		202							{1: '1', 6: '1'}
+113	113		301							{2: 'Backup Dancer', 3: 'That goes to show that you really are sisters from the same mother.'}
+114	114		301							"{2: 'Backup Dancer', 3: ""Good luck, then. I'll be off. Remember to take a break.""}"
+115	115		301							{2: 'Backup Dancer', 3: 'Uncle Cai saved some food for you two. Remember to go see him before you head back.'}
+116	116		201							{1: '1', 2: '500442'}
+117	117		301				AniZhuanchangBegin			{1: '1', 2: 'Hanying', 3: 'Oh, thank you very much...', 4: '1'}
+118	118		202							{1: '1', 6: '1'}
+119	119		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+120	120		301			AniZhuanchangEnd				{3: '...'}
+121	121		301							{3: 'What did the food taste like that evening?'}
+122	122		301				AniZhuanchangBegin			"{3: ""It's the taste of... being a human.""}"
+123	123		201							{1: '1', 2: '500447', 3: '2'}
+124	124		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory233.png'}
+125	125		301			AniZhuanchangEnd				{1: '1', 2: 'Yoyo', 3: 'Uncle Cai!', 4: '1'}
+126	126		202							{1: '1', 6: '1'}
+127	127		301							{2: 'Uncle Cai', 3: 'Oh? Yoyo and Hanying? Quick, sit down.'}
+128	128		201							{1: '1', 2: '500442'}
+129	129		301							{1: '1', 2: 'Hanying', 3: 'Sorry for keeping you waiting, Uncle Cai.', 4: '1'}
+130	130		202							{1: '1', 6: '1'}
+131	131		301							"{2: 'Uncle Cai', 3: ""Oh, don't worry about it. I need to head out on night patrol anyway—plenty of time to save some food for you.""}"
+132	132		301							"{2: 'Uncle Cai', 3: ""We've got spicy boiled fish, white-cut chicken, and eggplant with minced pork for dinner tonight.""}"
+133	133		201							{1: '1', 2: '500447', 3: '2'}
+134	134		301							{1: '1', 2: 'Yoyo', 3: 'Wow! Smells amazing! And there is a whole lot of food!', 4: '1'}
+135	135		301							{2: 'Uncle Cai', 3: 'I saved a lot for you. A few hungry bears tried to ask for some, but I said no!'}
+136	136		301							{2: 'Yoyo', 3: 'Thank you, Uncle Cai!', 4: '1'}
+137	137		301							"{2: 'Uncle Cai', 3: ""Well, kids need to eat more while they're growing bones.""}"
+138	138		301							{2: 'Yoyo', 3: 'Mmm... yummy!', 4: '1'}
+139	139		301							"{2: 'Uncle Cai', 3: ""I'm glad you like it. I'm going to head out for my patrol now. Enjoy your meal.""}"
+140	140		301							{2: 'Yoyo', 3: 'Bye, Uncle Cai!', 4: '1'}
+141	141		202							{1: '1', 6: '1'}
+142	142		201							{1: '1', 2: '500442', 4: '-400'}
+143	143		201							{1: '2', 2: '500447', 3: '2', 4: '400'}
+144	144		301							{1: '1', 2: 'Hanying', 3: 'Thank you.', 4: '1'}
+145	145		301							"{2: 'Hanying', 3: ""...Slow down or you'll choke. How are you feeling?"", 4: '1'}"
+146	146		301							"{2: 'Yoyo', 3: ""I'm fine! Working on the basics should make anyone tired. My muscles are just a little sore, but nothing that can't be solved with a table of yummy food!"", 4: '2'}"
+147	147		301							"{2: 'Hanying', 3: ""You'll feel better after taking a hot bath when we get home."", 4: '1'}"
+148	148		301							{2: 'Hanying', 3: 'Here, have some of this.', 4: '1'}
+149	149		301				AniZhuanchangBegin			{2: 'Yoyo', 3: 'Okay!', 4: '2'}
+150	150		401							{1: '1', 2: '36'}
+151	151		202							{1: '1', 2: '2', 6: '1'}
+152	152		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+153	153		401							{1: '1', 2: '242'}
+154	154		301			AniZhuanchangEnd				"{3: ""I've never... tasted anything like the meal that night ever since.""}"
+155	155		301							"{3: ""Ever since that night, I've never seen her smile again.""}"
+156	156		201							{1: '1', 2: '500639'}
+157	157		301				AniZhuanchangBegin			{1: '1', 2: 'Yoyo?', 3: 'Hanying...', 4: '1'}
+158	158		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory725.jpg'}
+159	159		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+160	160		201							{1: '1', 2: '500445', 3: '8'}
+161	161		301			AniZhuanchangEnd				{1: '1', 2: 'Pulao', 3: '...', 4: '1'}
+162	162		204							{1: '1'}
+163	163		301							"{2: 'Pulao', 3: ""It's just... a dream?"", 4: '1'}"
+164	164		301							{3: 'Pulao moves her mouth around only to realize that the salty plum candy has already melted, leaving a sweet flavor with a tinge of sourness and bitterness.'}
+165	165		301		1		AniZhuanchangBegin			{3: 'Coming into sight are the same lush mountains, the same chilly fog, and a path forward that seems to have no end.'}

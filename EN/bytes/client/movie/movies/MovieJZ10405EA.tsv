@@ -1,0 +1,24 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory54.jpg'}
+2	100		401							{1: '1', 2: '103'}
+3	2		201							{1: '1', 2: '500013'}
+4	101		401							{1: '2', 2: '1510'}
+5	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 3: '1'}
+6	4		301			DialogEnable				{1: '1', 2: 'Corrupted', 3: '——!!————!!', 4: '1'}
+7	5		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 4: '1'}
+8	6		202							{1: '1', 6: '1'}
+9	7		201							{1: '1', 2: '500024', 4: '-450'}
+10	8		201							{1: '2', 2: '500062', 4: '450'}
+11	9		301							{1: '1', 2: 'Bianca', 3: '...A headshot.', 4: '2'}
+12	10		301							{2: 'Bianca', 3: 'Sister, we will take care of the rest of them.', 4: '2'}
+13	11		301							{2: 'Bianca', 3: 'Please escort the others to the crossroad up ahead. My team is stationed there and it should be safe.', 4: '2'}
+14	12		301							{2: 'Bruce', 3: 'Understood, I will safely lead everyone—', 4: '1'}
+15	13		301							"{2: 'Bianca', 3: ""Oh right, if you see a soldier with his hair tied up, tell him that he's in charge of leading team Oasis now."", 4: '2'}"
+16	14		301							"{2: 'Bruce', 3: ""...I won't deliver these kinds of messages! If you have something to tell him, come back alive and tell him yourself!"", 4: '1'}"
+17	15		301							"{2: 'Bianca', 3: ""Hah, you're a tough one, Sister."", 4: '2'}"
+18	16		202							{1: '1', 2: '2', 6: '1'}
+19	17		201							{1: '1', 2: '500013'}
+20	102		401							{1: '2', 2: '1508'}
+21	18		301							{1: '1', 2: 'Corrupted', 3: '——!!————!!', 4: '1'}
+22	19		201							{1: '1', 2: '500062'}
+23	20		301		1		AniZhuanchangBegin			{1: '1', 2: 'Bianca', 3: '(Ugh, they keep increasing in numbers... This is getting a bit out of hand...)', 4: '1'}

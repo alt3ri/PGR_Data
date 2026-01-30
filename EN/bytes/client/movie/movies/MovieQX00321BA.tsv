@@ -1,0 +1,68 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory670.jpg'}
+2	2		401							{1: '1', 2: '204'}
+3	3		301			DialogEnable				{3: 'You spot something rather unusual on the street.'}
+4	4		201							{1: '1', 2: '500127'}
+5	5		301							{1: '1', 2: 'Sophia', 3: 'ACA... ACA...', 4: '1'}
+6	6		301							{2: 'Sophia', 3: 'Mini Asslam... Mini Asslam...', 4: '1'}
+7	7		301							{2: 'Sophia', 3: 'Sponsored by the ACA, the Mini Asslam is preparing for departure...', 4: '1'}
+8	8		301							{2: 'Sophia', 3: 'Last call for boarding! Passengers onboard, please secure yourselves to avoid any mishaps!', 4: '1'}
+9	9		301							{3: 'Sophia is holding a sign with both hands right in the middle of the street. Behind her, a line of children are making playful faces.'}
+10	10		301							"{3: ""The first child is clinging to Sophia's mechanical arm, with the others holding onto the shoulders of the child in front, forming a long line.""}"
+11	11		301							{3: 'Parents on either side of the line are chatting and laughing.'}
+12	12		301							{3: 'Checking for stragglers, Sophia then notices you.'}
+13	13		301							{2: 'Sophia', 3: 'Good evening, Commandant.', 4: '1'}
+14	14		502							{1: 'DialogDisable'}
+15	15		302							{2: 'Good evening.', 3: '16'}
+16	16		302							{2: 'And you are...', 3: '17'}
+17	17		301			DialogEnable				{2: 'Sophia', 3: 'This is the remarkable Mini Asslam, courtesy of the esteemed ACA.', 4: '1'}
+18	18		301							"{2: 'Sophia', 3: ""I offer personalized tours of Constellia's renowned shops, complete with detailed explanations and exceptional service."", 4: '1'}"
+19	19		301							{2: 'Sophia', 3: 'Care to join us, Commandant?', 4: '1'}
+20	20		301							{2: 'Sophia', 3: 'Children under four feet travel free, but a 50% service charge applies to adults.', 4: '1'}
+21	21		302							{2: 'Unfortunately, my finances are rather limited at the moment.', 3: '22'}
+22	22		301							"{2: 'Sophia', 3: ""I see. The train's about to pull out. Watch yourself, Commandant."", 4: '1'}"
+23	23		301							{3: 'You step back to make room, watching Sophia lead a long line forward.'}
+24	24		301							{3: 'The line of children explodes in giggles and laughter.'}
+25	25		502							{1: 'DialogDisable'}
+26	26		302							{2: 'Free?', 3: '27'}
+27	27		302							"{2: ""Didn't peg the ACA for such philanthropy."", 3: '28'}"
+28	28		301			DialogEnable				{3: 'Just as you are wrapping your head around it, the child-train led by Sophia veers off to a block on the left.'}
+29	29		301							"{3: ""That's where all the Akdilek toy stores and candy stalls are.""}"
+30	30		301							"{3: ""The shopkeepers' faces light up with sly smiles as the gaggle of children approaches.""}"
+31	31		502							{1: 'DialogDisable'}
+32	32		302							{2: '...', 3: '33'}
+33	33		302							"{2: ""So, that's their game, huh?"", 3: '34'}"
+34	34		301			DialogEnable				{3: 'You follow the train for a while, passing through several areas, until someone else takes the reins from Sophia.'}
+35	35		301							{3: 'After handing off the sign, she saunters back toward you.'}
+36	36		302							{2: 'Wrapped up your shift?', 3: '37'}
+37	37		301							"{2: 'Sophia', 3: ""Sales are on target, but my work's not quite done."", 4: '1'}"
+38	38		301							{2: 'Sophia', 3: 'I have one last VIP to take care of.', 4: '1'}
+39	39		301							{3: 'Sophia bows to you, then turns around.'}
+40	40		301							"{2: 'Sophia', 3: ""Sophia of Akdilek Commercial Alliance's Asslam at your service."", 4: '1'}"
+41	41		301							"{2: 'Sophia', 3: ""The train's about to depart, so hop aboard quickly!"", 4: '1'}"
+42	42		301							{3: 'Does she want you to line up behind her?'}
+43	43		301							{3: 'You are hardly a kid anymore. This feels a little... awkward.'}
+44	44		302							"{2: ""I can't exactly afford the ticket price."", 3: '45'}"
+45	45		301							{2: 'Sophia', 3: 'This is a special train, tickets are on the house.', 4: '1'}
+46	46		302							{2: 'Alright, fine.', 3: '47'}
+47	47		301							"{3: ""It'd be rude to say no after all that.""}"
+48	48		301							"{2: 'Sophia', 3: ""The train's about to depart. Please grab a handrail for safety."", 4: '1'}"
+49	49		301							{3: 'Remembering the children, you grab her mechanical arms instead.'}
+50	50		302							{2: 'Huh?', 3: '51'}
+51	51		301							"{3: ""Instead of her mechanical arms, you grab Sophia's hands instead.""}"
+52	52		301							{2: 'Sophia', 3: 'Jamilah always said... precious guests deserve a special kind of welcome.', 4: '1'}
+53	53		301							"{2: 'Sophia', 3: 'I... not sure ""special"" is the word I\'d use.', 4: '1'}"
+54	54		301							"{2: 'Sophia', 3: ""If you don't feel like it, I can switch anytime."", 4: '1'}"
+55	55		302							{2: 'No, I love it.', 3: '56'}
+56	56		301							{3: 'You master the four-finger clasp, just like Sophia. You link hands like train cars chugging along.'}
+57	57		301							"{2: 'Sophia', 3: ""Constellia's commercial street... So, Commandant, where is our next stop of your choice?"", 4: '1'}"
+58	58		502							{1: 'DialogDisable'}
+59	59		302							{2: 'My choice?', 3: '60'}
+60	60		302							{2: 'Well, then... wherever you choose, Sophia.', 3: '61'}
+61	61		301			DialogEnable				{2: 'Sophia', 3: 'I choose?', 4: '1'}
+62	62		301							{2: 'Sophia', 3: 'There are... two, actually.', 4: '1'}
+63	63		301							"{2: 'Sophia', 3: ""One we've already arrived at."", 4: '1'}"
+64	64		301							{2: 'Sophia', 3: 'The other... well, that lies in a future yet unseen.', 4: '1'}
+65	65		301							{2: 'Sophia', 3: 'You certain about this, Commandant?', 4: '1'}
+66	66		302							{2: 'This could be a lengthy journey.', 3: '67'}
+67	67		302		1		AniZhuanchangBegin			"{2: ""Since the ride's on you, I'm not getting off until the final destination, no matter the distance.""}"

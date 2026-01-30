@@ -1,0 +1,285 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory314.png'}
+2	2		401							{1: '1', 2: '245'}
+3	3		107						3000.0	{1: 'City 027', 2: 'Gray Raven, at Mission Point Three', 3: 'Floor'}
+4	4		108							{1: '1'}
+5	5		201						500.0	{1: '1', 2: '500013'}
+6	6		401							{1: '2', 2: '1510'}
+7	7		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+8	8		502						300.0	{1: 'PanelActor1Shake'}
+9	9		401						300.0	{1: '2', 2: '1510'}
+10	10		505							{1: 'PanelActor1Shake'}
+11	11		401							{1: '2', 2: '2603'}
+12	12		203							{1: '1', 2: '0.2', 4: '-1200'}
+13	13		202						500.0	{1: '1'}
+14	14		301			DialogEnable				{3: 'Bang! Bang!'}
+15	15		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+16	16		401							{1: '2', 2: '1513'}
+17	17		201							{1: '1', 2: '1031001', 3: '5'}
+18	18		301							"{1: '1', 2: 'Liv', 3: ""Turn right 60 meters ahead and there'll be an internal path! It'll take us through the buildings!"", 4: '1'}"
+19	19		201							{1: '1', 2: '500568'}
+20	20		301				DialogDisable			{1: '1', 2: 'Lee', 3: 'Roger!', 4: '1'}
+21	21		202							{1: '1', 2: '2'}
+22	22		104						300.0	{1: '0|50|-50', 2: '0.3'}
+23	23		104						300.0	{1: '0|-50|-100', 2: '0.3'}
+24	24		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory330.png', 3: '0', 4: '1', 5: '0.5'}
+25	25		104						300.0	{1: '0|50|-150', 2: '0.3'}
+26	26		104							{1: '0|-50|-200', 2: '0.3'}
+27	27		201							{1: '1', 2: '1031001', 3: '5'}
+28	28		301			DialogEnable				"{1: '1', 2: 'Liv', 3: ""Commandant, we're here!"", 4: '1'}"
+29	29		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+30	30		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory330.png'}
+31	31		202							{1: '1', 6: '1'}
+32	32		302							{2: '(Raise gun)', 3: '33'}
+33	33		502							{1: 'RImgBg1Shake'}
+34	34		401						300.0	{1: '2', 2: '1510'}
+35	35		401						300.0	{1: '2', 2: '1510'}
+36	36		401							{1: '2', 2: '1510'}
+37	37		301							{3: 'Bang! Bang! Bang!'}
+38	38		302							"{2: ""Door is down! Let's go!"", 3: '39'}"
+39	39		401							{1: '2', 2: '1504'}
+40	40		301							{3: 'Through the destroyed side door barge a human and two Constructs—behind whom is a bubbling red marsh that threatens to lick them by the ankle.'}
+41	41		301							"{3: ""In the lead is Liv, who's monitoring the environmental data as she clears their path of anything that stands in their way.""}"
+42	42		301							{3: 'You find yourself in between Liv and Lee, a relatively safe position.'}
+43	43		401							{1: '2', 2: '10021506'}
+44	44		301			RImgBg1Shake	DialogDisable			"{3: ""Ever since running into the first Hetero-Creature you saw here, Lee has been firing shots nonstop. While Lee is immune to the Punishing Virus in his specialized frame, his immunity doesn't prevent the frame itself from being worn down and the ensuing fatigue.""}"
+45	45		302							{2: 'Head upstairs!', 3: '46'}
+46	46		104							{1: '0|0|-100', 2: '0.8'}
+47	47		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory327.png', 3: '0', 4: '1', 5: '1'}
+48	48		401						800.0	{1: '2', 2: '1513'}
+49	49		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+50	50		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory327.png'}
+51	51		301			DialogEnable				{3: 'As you rush their way up, the clanks and clunks coming off the rusty stairs sound the furthest things from melodious.'}
+52	52		401							{1: '2', 2: '844087'}
+53	53		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+54	54		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory327.png'}
+55	55		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+56	56		301							{3: 'A few seconds later, the metallic staircase lets out a heart-wrenching cry as the Hetero-Creatures flood up the stairs, painting the path crimson in the blink of an eye.'}
+57	57		302							{2: 'Destroy the stairs, Lee!', 3: '58'}
+58	58		401							{1: '2', 2: '10021506'}
+59	59		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+60	60		402							{1: '844087'}
+61	61		301			RImgBg1Shake				"{3: ""With no hesitation, Lee switches his Composite Armaments to Rifle Mode in a split second—before firing a barrage of shots that lands squarely on the staircase's point of application...""}"
+62	62		401							{1: '2', 2: '915'}
+63	63		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+64	64		301			RImgBg1Shake				{3: 'THUD—!'}
+65	65		301							{3: 'With it, the wavering staircase plummets to the bottom—with all the Hetero-Creatures still on it.'}
+66	66		401							{1: '1', 2: '36'}
+67	67		301							{3: 'Coming to a halt, you take a few deep breaths to soothe your pounding heart.'}
+68	68		401							{1: '1', 2: '201'}
+69	69		302							"{2: ""Phew... What's the situation, Liv?"", 3: '70'}"
+70	70		201							{1: '1', 2: '1031001', 4: '-400'}
+71	71		201							{1: '2', 2: '500568', 4: '400'}
+72	72		301							"{1: '1', 2: 'Liv', 3: ""This floor we're on now... I haven't picked up on any other Hetero-Creatures yet in the building, but the biggest bunch in this area is the bunch we just ran into, right under our feet."", 4: '1'}"
+73	73		301							"{2: 'Lee', 3: ""We caught the attention of a bunch of enemies along the way, so it's highly likely that we're looking at a bunch about 20% to 30% bigger than what we detected at first."", 4: '2'}"
+74	74		301							{3: 'Lee speaks from where the staircase has snapped, looking down at the bunch of Hetero-Creatures engaged in seemingly meaningless behaviors.'}
+75	75		301							"{3: ""Every last one of the Hetero-Creatures wiggles its body toward the second floor, apparently still remembering that the targets they're after are up there. Fortunately, however, there is nothing for them to make their way up.""}"
+76	76		301				DialogDisable			"{2: 'Lee', 3: ""I might be able to get rid of them with the ammo I have left, but there is no telling if we're going to run into a bunch this big again before supplies arrive."", 4: '2'}"
+77	77		302							{2: 'True.', 3: '78'}
+78	78		302							"{2: ""Let's wait them out."", 3: '79'}"
+79	79		302							{2: 'We can try to circumvent them.', 3: '80'}
+80	80		302							"{2: ""Let's stay put for now."", 3: '81'}"
+81	81		302							"{2: ""But don't let your guard down."", 3: '82'}"
+82	82		301			DialogEnable				{2: 'Lee & Liv', 3: 'Copy that.', 4: '1', 5: '2'}
+83	83		204							{1: '2', 2: '10'}
+84	84		301							{2: 'Lee', 3: 'Sigh...', 4: '2'}
+85	85		204							{1: '2'}
+86	86		301							"{3: ""Lee lets out a long sigh. It's likely that something else weighs on his mind now, since he isn't one that complains about missions, no matter how difficult they might be.""}"
+87	87		302							"{2: ""What's wrong?"", 3: '88'}"
+88	88		301							"{2: 'Lee', 3: ""How's Lucia doing?"", 4: '2'}"
+89	89		204							{1: '1', 2: '19'}
+90	90		301				AniZhuanchangBegin			"{3: ""Liv droops her head at Lee's question. This is probably the question they've been meaning to ask the entire way but never had a chance to.""}"
+91	91		202							{1: '1', 2: '2', 6: '1'}
+92	92		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+93	93		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory263.png'}
+94	94		306							{1: '1'}
+95	95		301			AniZhuanchangEnd				{3: 'Many people have never missed a chance to ask you about Lucia ever since she got back to Babylonia.'}
+96	96		301							"{3: 'Lucia\'s M.I.N.D. has been put under round-the-clock surveillance, as she was deemed a potential risk for having ""private contact with Ascendant.""'}"
+97	97		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg', 3: '0', 4: '1', 5: '2'}
+98	98		301							"{3: 'With the Science Council in charge, the Control Court has been monitoring and investigating Lucia\'s M.I.N.D. and will eventually deliver to multiple parties their findings based on Lucia\'s memory data from ""when she was in contact with Ascendant"".'}"
+99	99		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+100	100		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+101	101		301							{3: 'On the surface, it all seems like a harmless enough process of investigation and data collection—except no one can say for sure when the surveillance is going to stop.'}
+102	102		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg', 3: '0', 4: '1', 5: '2'}
+103	103		301							"{3: 'Having experienced what they call ""benign surveillance"" firsthand, you, for one, know for sure that being watched round the clock poses no less stress than the battlefield does.'}"
+104	104		301				AniZhuanchangBegin			{3: 'You, however, take comfort in the only saving grace of it all... one that currently works at the Science Council.'}
+105	105		502							{1: 'DialogDisable'}
+106	106		504							{1: '0.7'}
+107	107		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+108	108		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+109	109		201							{1: '1', 2: '500004', 7: '1'}
+110	110		306						500.0	
+111	111		302			AniZhuanchangEnd				{2: 'So, I guess that makes us partners in crime now, no?', 3: '112'}
+112	112		301			DialogEnable				{3: 'You hold your hand out to Asimov.', 4: '1'}
+113	113		301				AniZhuanchangBegin			"{3: ""After a brief moment of hesitation, Asimov's hand grasps yours. It feels a little cold."", 4: '1'}"
+114	114		504							{1: '0'}
+115	115		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory327.png'}
+116	116		202							{1: '1', 6: '1'}
+117	117		401							{1: '2', 2: '1515'}
+118	118		301			AniZhuanchangEnd				"{3: ""Before you can answer Lee's question, however, you see an email on your terminal that's arrived right on time from the Science Council.""}"
+119	119		302							{2: 'There we go.', 3: '120'}
+120	120		201							{1: '1', 2: '1031001', 4: '-400'}
+121	121		201							{1: '2', 2: '500568', 4: '400'}
+122	122		301							"{1: '1', 3: ""You turn your terminal to face both Lee and Liv so they can see what's on the screen.""}"
+123	123		301							{3: 'On your screen now is a partial record of M.I.N.D. overloads from experiments on the Hyperreal Frame, except the record comes with detailed notes and analysis.'}
+124	124		204							{1: '2', 2: '7'}
+125	125		301							{2: 'Lee', 3: 'Wait, what is this...', 4: '2'}
+126	126		204						1.0	{1: '2'}
+127	127		204							{1: '1', 2: '3'}
+128	128		301							"{2: 'Liv', 3: ""Uh, Lee, I think you'll probably want to..."", 4: '1'}"
+129	129		204							{1: '1'}
+130	130		301							{3: 'Dumbfounded, Lee looks at you, apparently awaiting some sort of approval.'}
+131	131		301							"{3: ""You project your terminal's virtual keyboard to Lee. With it, Lee works away immediately.""}"
+132	132		301							"{3: 'About half a minute later, having been extracted and reordered, the ""notes and analysis"" that came with the report have been turned into an email with just words.'}"
+133	133		304							{1: '[Code 006]', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}
+134	134		304							{1: '[Did a regular check-up today. She felt a little tired but she was doing fine.]', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}
+135	135		304							"{1: ""[Kuroro raised a few questions late last night about the open report. It's all under control, though, so worry not.]"", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}"
+136	136		304							"{1: ""[The Control Court has asked for a reanalysis of certain data. I demanded an explanation given our shortage of manpower. They haven't replied yet.]"", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}"
+137	137		304				AniZhuanchangBegin			{1: '[Their motive is yet to be determined. Best not to let our guard down.]', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 9: '1'}
+138	138		301			AniZhuanchangEnd				"{1: '1', 2: 'Liv', 3: '""Doing fine..."" That refers to Lucia, right?', 4: '1'}"
+139	139		301							{2: 'Lee', 3: 'Glad to know that we have him there to help us from the inside, but exactly when did this...', 4: '2'}
+140	140		301				DialogDisable			"{3: ""Lee has apparently guessed the identity of the email's sender, since that person has helped him out on countless occasions when it comes to the Hyperreal Frame and the Hetero Tower incident.""}"
+141	141		302							{2: 'When Lucia just got back to Babylonia.', 3: '142'}
+142	142		302							"{2: ""I didn't see any of this coming at all."", 3: '143'}"
+143	143		302							{2: 'Which is why I failed to bring you all up to speed. My apologies.', 3: '144'}
+144	144		204							{1: '1', 2: '2'}
+145	145		301			DialogEnable				"{2: 'Liv', 3: ""No, that's fine, Commandant... We know you're always looking out for us."", 4: '1'}"
+146	146		301							{2: 'Lee', 3: 'There was no need for you to bring this up anyways if nothing happened.', 4: '2'}
+147	147		302							{2: 'True.', 3: '148'}
+148	148		204							{1: '1'}
+149	149		301							"{2: 'Liv', 3: ""I'm glad that Lucia is doing just fine... But, well..."", 4: '1'}"
+150	150		301							"{3: 'Liv seems to have recalled the whole ""surveillance"" incident from before, her face growing heavier by the second.'}"
+151	151		401							{1: '2', 2: '2917'}
+152	152		301							"{3: ""Right when you're about to say a few words to cheer up both Lee and Liv, you pick up a barely audible noise.""}"
+153	153		401							{1: '1', 2: '36'}
+154	154		301							"{3: ""You keep your eyes closed for two seconds—and, through the silence, you hear something you'd describe as a metallic object being pulled lengthwise or twisted.""}"
+155	155		402							{1: '2917'}
+156	156		401							{1: '1', 2: '246'}
+157	157		204							{1: '1', 2: '5'}
+158	158		301							{3: 'Before you can tell them about the weird noise, however, Liv is already busy surveying your surroundings again, while Lee trains his weapon straight at where the staircase has just snapped.'}
+159	159		301							{2: 'Liv', 3: '...No new target found. The enemies downstairs are still our main targets of interest.', 4: '1'}
+160	160		301							"{2: 'Lee', 3: ""The staircase is gone, but they're still trying to make their way up here."", 4: '2'}"
+161	161		202							{1: '1', 2: '2', 6: '1'}
+162	162		301							"{3: ""The staircase has completely snapped away from the floor you are on—and you can't even begin to imagine just how these Hetero-Creatures would ever be able to make their way up here when they literally lack the cognitive ability to do something as complicated as this.""}"
+163	163		301							{3: 'From the severely destroyed staircase, a few razor-sharp parts stand coldly in the air, reminiscent of the sharp fangs of a menacing beast and making it close to impossible for anyone to set their foot on the staircase.'}
+164	164		301							{3: 'The staircase now lies lopsided against sand and gravel, making its tilted surface an almost unscalable hill.'}
+165	165		301							{3: 'Anyone in their right mind who might want to try their luck at getting up here would definitely seek a different path—or work with some sort of tools, at the very least. The Hetero-Creatures down there, however, have for this entire time been trying to make their way up with the destroyed staircase.'}
+166	166		301							{3: '...And then, you hear a weird noise coming from the staircase.'}
+167	167		301							"{3: ""It's the same noise you heard just moments ago—a metallic object being pulled lengthwise or twisted. Then, it hits you that it's the Hetero-Creatures that are making the noise as they crawl over what's left of the destroyed staircase.""}"
+168	168		201							{1: '1', 2: '1031001', 3: '5'}
+169	169		301							{1: '1', 2: 'Liv', 3: 'Wait, do you see what that one is doing over there...?', 4: '1'}
+170	170		202							{1: '1', 6: '1'}
+171	171		401							{1: '2', 2: '2919'}
+172	172		301							"{3: ""Looking at where Liv is pointing, you see a Hetero-Creature slowly inching its body toward the staircase's razor-sharp skeleton that's poking out of one of the stairs.""}"
+173	173		301							"{3: 'With its ""belly""—the softest part of a Hetero-Creature—against the needle-sharp skeleton of the staircase, the Hetero-Creature does not come to a halt.'}"
+174	174		401							{1: '2', 2: '2921'}
+175	175		301							"{3: 'Right when the skeleton pokes through the Hetero-Creature\'s ""belly,"" you can almost hear a crispy snap inside your head.'}"
+176	176		301							"{3: 'Despite the cut in its ""belly,"" however, the Hetero-Creature keeps moving, the liquid coming out of the wound slowly dripping down among the fragments—turning, before you know it, into a river underneath the other Hetero-Creatures.'}"
+177	177		301							"{3: 'When that first Hetero-Creature finally grinds to a halt, a second one is already stepping on its dead body, commencing a ritual of ""path paving"" one stair up.'}"
+178	178		301							{3: 'Where the Hetero-Creatures were unable to set their foot on the destroyed staircase, they can now safely do so with the corpses of their kind underfoot.'}
+179	179		301							{3: 'And the weird noise you heard earlier is the sound of the staircase being squeezed under the weight of all the Hetero-Creatures trying to make their way up.'}
+180	180		301							{3: 'Flashing past your mind at a moment like this, however, is the story of the Tower of Babel.'}
+181	181		301				DialogDisable			"{3: ""At the same time, you see yourself as the very God who can't wait to topple the tower.""}"
+182	182		402							{1: '2919'}
+183	183		302							"{2: ""We aren't safe here."", 3: '184'}"
+184	184		302							"{2: ""They probably won't ever make it up here."", 3: '185'}"
+185	185		302							{2: 'But I think we should leave, just to be safe.', 3: '186'}
+186	186		201							{1: '1', 2: '1031001', 3: '5', 4: '-400'}
+187	187		201							{1: '2', 2: '500568', 4: '400'}
+188	188		301			DialogEnable				{1: '1', 2: 'Lee', 3: 'Copy that.', 4: '2'}
+189	189		301				AniZhuanchangBegin			{2: 'Liv', 3: 'Calculating evacuation route. Will take another 30 seconds!', 4: '1'}
+190	190		401							{1: '1', 2: '36'}
+191	191		202							{1: '1', 2: '2', 6: '1'}
+192	192		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory328.png'}
+193	193		401							{1: '1', 2: '201'}
+194	194		301			AniZhuanchangEnd				{3: 'Half an hour later.'}
+195	195		201							{1: '1', 2: '1031001', 4: '-400'}
+196	196		201							{1: '2', 2: '500568', 4: '400'}
+197	197		301							"{1: '1', 2: 'Liv', 3: ""Done scanning. We're safe for the time being, except we don't have a geographical advantage here. I'll keep scanning our surroundings, though, in case of anything."", 4: '1'}"
+198	198		302							{2: 'Thank you, Liv.', 3: '199'}
+199	199		204							{1: '1', 2: '1'}
+200	200		301							"{2: 'Liv', 3: ""Don't mention it."", 4: '1'}"
+201	201		302							{2: 'And thank you, too, Lee.', 3: '202'}
+202	202		301							{2: 'Lee', 3: 'Taking out those little fries was nothing but a cakewalk.', 4: '2'}
+203	203		301							"{2: 'Lee', 3: ""And I was able to try out the silencer on my Composite Armaments, too. Will send you a request for certain optimizations once we're back."", 4: '2'}"
+204	204		302							{2: 'Sure thing.', 3: '205'}
+205	205		301				DialogDisable			"{2: 'Lee', 3: ""So, what's our plan now?"", 4: '2'}"
+206	206		302							"{2: ""Liv, can you pull out the mission info we've gathered so far?"", 3: '207'}"
+207	207		302							"{2: ""Let's go through what we already have first."", 3: '208'}"
+208	208		204							{1: '1'}
+209	209		301			DialogEnable				{2: 'Liv', 3: 'Sure! Just one sec...', 4: '1'}
+210	210		301							"{3: ""Liv works away on her terminal and arranges the projections in a layout in which they're all simultaneously viewable.""}"
+211	211		301							"{2: 'Liv', 3: ""We had three sets of mission coordinates in total. We have been investigating them in descending order and are so far done with the first two, and we're at the third location now."", 4: '1'}"
+212	212		301							{2: 'Liv', 3: 'The first set of coordinates is located 16 km outside the area of coverage of the CPFs. Characteristics of the location are the speed at which the plants wither and the excessive density of the Punishing found in the soil.', 4: '1'}
+213	213		301							"{2: 'Lee', 3: 'Normally and theoretically speaking, an area of coverage should be slightly bigger than what\'s publicly announced—forming what they call a ""partly-shrouded area"" that falls short of being as effective as the actual area of coverage.', 4: '2'}"
+214	214		301							"{2: 'Lee', 3: 'I\'ve just double-checked and confirmed that the CPFs closest to the first set of coordinates are still functional—which is why it makes no sense for the Punishing Virus to be found in such high density in the ""partly-shrouded area.""', 4: '2'}"
+215	215		301							{2: 'Liv', 3: 'Right... Not to mention that the Hetero-Creatures there are tougher than the ones we usually have to fight.', 4: '1'}
+216	216		301							"{2: 'Lee', 3: 'Bet they got a power boost from the Punishing Virus. Question is—where did these ""nutrients"" come from?', 4: '2'}"
+217	217		301							{2: 'Lee', 3: 'Nothing has occurred in that area recently that might have caused the density of the Punishing Virus to rise.', 4: '2'}
+218	218		302							{2: 'What about the second set of coordinates?', 3: '219'}
+219	219		301							"{2: 'Liv', 3: ""The second set of coordinates is located five km southwestward of where Conservation Area 46 used to be. It's within an area of coverage, but the CPF there has stopped working."", 4: '1'}"
+220	220		301							{2: 'Liv', 3: 'The Punishing was no longer the densest there by the time we got there. It was seven km southwestward of the conservation area, instead.', 4: '1'}
+221	221		301							{2: 'Liv', 3: 'And at the new location seven km southwestward of the conservation area, we came across a pile of dead bodies of Hetero-Creatures... that occupied about 96 square meters.', 4: '1'}
+222	222		301							{2: 'Liv', 3: 'Based on our observation, we believe some of the corpses have degraded and made their way into the soil.', 4: '1'}
+223	223		301							"{2: 'Liv', 3: ""Fortunately, though, given the conservation area's proximity to the Inver-Hetero Tower, the citizens from the conservation area have migrated to the Clean Zone, and they were the first people to have done so."", 4: '1'}"
+224	224		301				DialogDisable			{2: 'Liv', 3: 'Which is why there were no casualties when all the Hetero-Creatures showed up.', 4: '1'}
+225	225		302							{2: 'Based on the discussion we had on the way...', 3: '226'}
+226	226		302							"{2: ""It's possible that the same thing happened to these two locations."", 3: '227'}"
+227	227		301			DialogEnable				{2: 'Lee', 3: 'You mean how a bunch of Hetero-Creatures died and their bodies degraded into the soil?', 4: '2'}
+228	228		301							{2: 'Lee', 3: 'That sounds logical enough.', 4: '2'}
+229	229		301							"{2: 'Lee', 3: ""On the assumption that things happened faster at the first location than they did at the second location, which is why we didn't see any half-degraded corpses of Hetero-Creatures at the first location."", 4: '2'}"
+230	230		301							"{2: 'Lee', 3: ""I bet those corpses had completely made their way into the soil at the first location, which is why we're seeing the Punishing in such high density there."", 4: '2'}"
+231	231		302							"{2: ""There is one question we need to answer if we're working with that assumption, though."", 3: '232'}"
+232	232		301				DialogDisable			{2: 'Liv', 3: 'Which is?', 4: '1'}
+233	233		302							{2: 'Just who in the world smoked all those Hetero-Creatures...', 3: '234'}
+234	234		302							"{2: ""Without catching anyone's attention?"", 3: '235'}"
+235	235		204							{1: '1', 2: '3'}
+236	236		204							{1: '2', 2: '7'}
+237	237		301			DialogEnable				{3: 'Dumbfounded, Lee and Liv say nothing. The three of you fall silent together.'}
+238	238		204							{1: '1'}
+239	239		204							{1: '2'}
+240	240		301				DialogDisable			{2: 'Liv', 3: 'Could have been a new Ascendant... no?', 4: '1'}
+241	241		302							"{2: ""We can't tell for sure."", 3: '242'}"
+242	242		302							"{2: ""But we don't need to have a definite conclusion now."", 3: '243'}"
+243	243		301			DialogEnable				"{2: 'Liv', 3: ""Well, let me go ahead and bring us up to speed about the location we're currently at, then."", 4: '1'}"
+244	244		301							{2: 'Liv', 3: 'The third set of coordinates is what remains of City 027, located inside an effective area of coverage because it was slated to be turned into a conservation area.', 4: '1'}
+245	245		301							{2: 'Liv', 3: 'No one came to fix the roads here after an earthquake destroyed them six months ago. Construction effort of City 027 has been indefinitely suspended ever since.', 4: '1'}
+246	246		301							{2: 'Liv', 3: 'Most of the refugees here live in a small conservation area in the other half of the area of coverage.', 4: '1'}
+247	247		301							{2: 'Liv', 3: 'Despite an overload, the CPFs here are operating normally.', 4: '1'}
+248	248		301							"{2: 'Liv', 3: ""In the mission summary we received, they made no note of there being Hetero-Creatures in great numbers here in the data they'd sent back from Earth."", 4: '1'}"
+249	249		204							{1: '1', 2: '3'}
+250	250		301							"{2: 'Liv', 3: ""So it's possible that what happened at the first two locations is going to happen here as well, but progress more slowly?"", 4: '1'}"
+251	251		204							{1: '1'}
+252	252		301				DialogDisable			{2: 'Lee', 3: 'Which means something is probably going to show up here soon and kill all the Hetero-Creatures here and come up with a pile of dead bodies?', 4: '2'}
+253	253		302							"{2: ""We're missing something from the equation."", 3: '254'}"
+254	254		302							"{2: ""The CPFs at the first two locations weren't working..."", 3: '255'}"
+255	255		302							{2: 'But the ones here are.', 3: '256'}
+256	256		301			DialogEnable				{2: 'Lee', 3: 'Right. There is no way anyone can tell there are CPFs here just looking at the data.', 4: '2'}
+257	257		301							"{2: 'Lee', 3: ""And I'm guessing that means the Hetero-Creatures here might have a higher resistance against CPFs?"", 4: '2'}"
+258	258		301							"{3: ""The theory from the discussion among the three of you just now won't stand if you can't work out the inconsistency observed among the CPFs at the three locations.""}"
+259	259		301							{2: 'Liv', 3: 'Could it be that the three places operate by slightly different mechanisms?', 4: '1'}
+260	260		302							"{2: ""That's possible."", 3: '261'}"
+261	261		301							{2: 'Lee', 3: 'All we can say about the three locations is that they all have Hetero-Creatures in great numbers that, for some reason, have developed a higher resistance against CPFs.', 4: '2'}
+262	262		301							{2: 'Lee', 3: 'And the only way to take this discussion further is if we figure out what brought them about.', 4: '2'}
+263	263		301							"{3: ""With the discussion once again reaching a stalemate, you run a mental search in your head, hoping to find any missing pieces that might explain what's happening. Right then, all the projections go poof without a trace.""}"
+264	264		401							{1: '1', 2: '202'}
+265	265		204							{1: '1', 2: '5'}
+266	266		301							{2: 'Liv', 3: 'We got company, Commandant. The Hetero-Creatures are coming this way and we need to get out of here.', 4: '1'}
+267	267		302							{2: 'Get the transport craft to pick us up as we go!', 3: '268'}
+268	268		301				DialogDisable			"{2: 'Lee', 3: ""Wait, are we heading straight back? Aren't we going to stick around and wait for whatever can kill all the Hetero-Creatures to show up?"", 4: '2'}"
+269	269		302							{2: 'There is no telling if we can make it out of here with the thing around.', 3: '270'}
+270	270		302							{2: 'We should err on the side of caution without Lucia around.', 3: '271'}
+271	271		301			DialogEnable				{2: 'Lee', 3: 'Right. One sec now.', 4: '2'}
+272	272		401							{1: '2', 2: '10021516'}
+273	273		301							{3: 'Pulling out what seems like a magazine and switching into his Composite Armaments, Lee fires a shot toward the highest point of the building.'}
+274	274		301							"{3: ""What comes out of his weapon, however, isn't a bullet—but a claw-looking object, one that travels through the air following a trajectory.""}"
+275	275		302							"{2: ""What's that?"", 3: '276'}"
+276	276		301							"{2: 'Lee', 3: ""A monitoring bot that I can control remotely. It'll stay here and keep an eye out on things for us."", 4: '2'}"
+277	277		301							"{2: 'Lee', 3: ""But it's just a toy that I came up with on a whim and isn't meant to be durable against powerful enemies. Better than nothing, I suppose."", 4: '2'}"
+278	278		301							"{2: 'Liv', 3: ""Just heard back from the transport craft, Commandant. They can't meet us at the rendezvous point given what's at stake. We need to keep a distance away from the rendezvous point!"", 4: '1'}"
+279	279		302							{2: 'What do you suggest we do instead?', 3: '280'}
+280	280		301							"{2: 'Liv', 3: ""Let's see... There is a mid-sized conservation area southward of where we are with a mission squad from Babylonia. We can take cover there for the time being!"", 4: '1'}"
+281	281		301							"{2: 'Lee', 3: ""We should probably give them a heads-up before we go, in case we can't get rid of all these creatures on our own. We don't want these things following us into the conservation area!"", 4: '2'}"
+282	282		301							{2: 'Liv', 3: 'Right. And the one in charge of the mission squad... is Vera from Cerberus. Message sent!', 4: '1'}
+283	283		302							"{2: ""Great. Let's stay on the down-low and head southward now."", 3: '284'}"
+284	284		301		1		AniZhuanchangBegin			{2: 'Lee & Liv', 3: 'Roger that!', 4: '1', 5: '2'}

@@ -1,0 +1,16 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory31.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		201							{1: '2', 2: '1101001'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Watanabe', 3: ""Liv, you're nearing your goal!"", 4: '2'}"
+5	5		301							{2: 'Watanabe', 3: 'Just pass through another M.I.N.D.', 4: '2'}
+6	6		202							{1: '2', 6: '1'}
+7	7		201							{1: '1', 2: '1031001'}
+8	8		301							{1: '1', 2: 'Liv', 3: 'Understood.', 4: '1'}
+9	9		202							{1: '1', 6: '1'}
+10	10		201							{1: '3', 2: '500005'}
+11	11		301							"{1: '1', 2: 'Forsaken Soldier', 3: ""Watanabe! The reaction before... It's appearing again!"", 4: '3'}"
+12	12		301							"{2: 'Forsaken Soldier', 3: ""It's the pseudo-consciousness of Miss Liv!"", 4: '3'}"
+13	13		202							{1: '3', 6: '1'}
+14	14		201							{1: '2', 2: '1101001'}
+15	15		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Watanabe', 3: ""It's blocking Liv's path..."", 4: '2'}"

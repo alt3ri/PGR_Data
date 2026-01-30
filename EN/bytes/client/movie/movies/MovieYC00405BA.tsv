@@ -1,0 +1,13 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory24.jpg'}
+2	100		401							{1: '1', 2: '201'}
+3	2		301			DialogEnable				{2: 'Emma', 3: 'Daddy!'}
+4	3		301							"{2: 'Copperfield', 3: ""Without them, you'll never see your mom and dad again.""}"
+5	4		201							{1: '1', 2: '500097', 3: 'Thank you, Leon... Thank you, Zack...'}
+6	5		301							{1: '1', 2: 'Estate Butler', 3: 'Well then. Master, milady. I wish you two a safe journey.', 4: '1'}
+7	6		301							{2: 'Emma', 3: 'Daddy... Are Leon and Zack not coming with us?'}
+8	7		301							{2: 'Copperfield', 3: 'Emma, Babylonia entry is limited...'}
+9	8		301							{2: 'Estate Butler', 3: 'Do not worry, milady. Master has already made backups of our data. We will be with you through another form in Babylonia.', 4: '1'}
+10	9		301							{2: 'Emma', 3: 'But...'}
+11	10		201							{1: '1', 2: '500020'}
+12	11		301		1		AniZhuanchangBegin			{2: 'Zack', 3: 'Goodbye... Emma...', 4: '1'}

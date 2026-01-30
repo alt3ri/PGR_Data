@@ -1,0 +1,161 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory744.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				"{3: ""Rainwater drips off the leaves onto the combat suit's waterproof coating, and the forest glimmers under the scattered sunlight after the downpour.""}"
+4	4		301							"{3: ""A moist, earthy smell fills the air, and Lucia's voice, routed through the comm channel, passes softly by your ears.""}"
+5	5		201							{1: '1', 2: '500994'}
+6	6		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+7	7		401							{1: '2', 2: '2983'}
+8	8		301							{1: '1', 2: 'Lucia', 3: 'Move three steps forward.', 4: '1'}
+9	9		302							{2: '(Move three steps forward)', 4: 'Yes, Commandant Lucia.'}
+10	10		204							{1: '1', 2: '2'}
+11	11		301							{2: 'Lucia', 3: '...', 4: '1'}
+12	12		204							{1: '1'}
+13	13		301							"{2: 'Lucia', 3: ""Ahem. The target is at twelve o'clock. The signal's faint—probably buried in the dirt."", 4: '1'}"
+14	14		202							{1: '1', 6: '1'}
+15	15		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+16	16		301							"{3: ""Thanks to the Construct's quick tracking and precise navigation, you find one of your mission targets in the grass after just a minute.""}"
+17	17		302							{2: 'Found it.', 3: '18'}
+18	18		301							"{3: ""A small, heavily worn sound device lies quietly in the soil. Its indicator light flickers, hinting it's still active, but it's completely silent.""}"
+19	19		301							"{3: ""This newly developed sound device, crafted by scavengers, emits low-frequency waves that humans can't hear, driving away nearby beasts.""}"
+20	20		301							"{3: ""According to the conservation area's patrol squads, it does repel beasts to some extent—but the frequency also attracts Corrupted and Hetero-Creatures.""}"
+21	21		301							{3: 'In a matter of days, those attracted creatures have already wiped out three small scavenger camps. As a result, Babylonia issued an urgent directive, ordering the Task Force to destroy these devices...'}
+22	22		302							{2: 'Any left around here?', 3: '23'}
+23	23		201							{1: '1', 2: '500994'}
+24	24		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+25	25		401							{1: '2', 2: '2983'}
+26	26		301							"{1: '1', 2: 'Lucia', 3: ""Yeah, I'm all done collecting on my end and I'm heading your way. In four minutes... actually, make that three. I'll find you then."", 4: '1'}"
+27	27		301							"{3: ""Although the wind is muffled by noise reduction as it rushes through the channel, it can't hide the excitement in her voice.""}"
+28	28		301							{3: 'Right now, Lucia is soaring at high speed. Her new frame handles beautifully in the air, massively boosting her mobility.'}
+29	29		302							{2: '(Open the terminal)', 3: '30'}
+30	30		401							{1: '2', 2: '897'}
+31	31		301							"{3: ""The holographic display shows Pyroath's parameters fluctuating within normal ranges, maintaining expected values.""}"
+32	32		301				AniZhuanchangBegin			{3: 'Collecting the sound device is only one part of your mission. During this ground operation, your top priority remains the routine testing of the Pyroath frame.'}
+33	33		202							{1: '1', 6: '1'}
+34	34		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+35	35		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+36	36		504							{1: '0.7'}
+37	37		301			AniZhuanchangEnd				{3: 'Three days ago...'}
+38	38		201							{1: '1', 2: '500004'}
+39	39		301							{1: '1', 2: 'Asimov', 3: '...', 4: '1'}
+40	40		301							{3: 'Wearing a stern look, the Chief Technician swiftly checked the data on his terminal. Across the training room, Lucia expertly swung her designated weapon.'}
+41	41		302							{2: 'Asimov?', 3: '42', 4: 'Any update?', 5: '42'}
+42	42		301							"{2: 'Asimov', 3: ""It seems there's no compatibility issue, and the performance is steady. But..."", 4: '1'}"
+43	43		302							{2: 'But?', 3: '44', 4: 'What about it?', 5: '44'}
+44	44		301							{2: 'Asimov', 3: '...', 4: '1'}
+45	45		301							{3: 'He kept cross-referencing multiple data sets on the terminal, then logged the latest changes at the end.'}
+46	46		301							"{2: 'Asimov', 3: ""The Science Council's live training room is enough to test ordinary Constructs, but for Pyroath, it's still too restrictive."", 4: '1'}"
+47	47		301							"{2: 'Asimov', 3: ""Just to be safe, I recommend you head out on a few standard missions to put your frames' performance to the test in actual combat."", 4: '1'}"
+48	48		302							{2: 'Any specific requirements for the mission type?', 3: '49', 4: 'How do we apply?', 5: '50'}
+49	49	51	301							"{2: 'Asimov', 3: ""Follow the standard procedure. If there's anything to be added, I'll let you know."", 4: '1'}"
+50	50		301							"{2: 'Asimov', 3: ""Just go through the standard procedure. Talk to Celica and she'll handle the rest."", 4: '1'}"
+51	51		301				AniZhuanchangBegin			{2: 'Asimov', 3: 'Data will be uploaded in real time. If you come across any area with interference, make sure you flag it for special attention during the process.', 4: '1'}
+52	52		504							{1: '0'}
+53	53		202							{1: '1', 6: '1'}
+54	54		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory744.jpg'}
+55	55		301			AniZhuanchangEnd				{3: 'Standard mission tests range from easy to hard, and a commandant can pick any task freely—hence the scene you find yourself in today.'}
+56	56		302							{2: 'Three months...', 3: '57'}
+57	57		301							{3: 'Everything has just started.'}
+58	58		401							{1: '2', 2: '2902'}
+59	59		301							"{3: ""You haven't even gathered your thoughts when a soft breeze rustles the treetops above. Right behind it comes a call that bridges the gap between the virtual and the real.""}"
+60	60		201							{1: '1', 2: '500994'}
+61	61		301							{1: '1', 2: 'Lucia', 3: 'Commandant!', 4: '1'}
+62	62		302							"{2: ""It's now Captain 【kuroname】."", 3: '63'}"
+63	63		204							{1: '1', 2: '2'}
+64	64		301							{2: 'Lucia', 3: 'Ahem... Captain 【kuroname】.', 4: '1'}
+65	65		204							{1: '1'}
+66	66		301							{3: 'Barely three minutes have passed. Faster than Lucia herself are her voice and everything that comes with her.'}
+67	67		301							{3: 'In the comm channel, the roaring wind is just background noise; by the time it reaches you, it feels like a gentle breeze.'}
+68	68		401							{1: '2', 2: '4373'}
+69	69		301							{3: 'Now, the sunlit canopy parts, and Lucia descends slowly. Dawn spreads out behind her, casting her silhouette in a soft golden radiance.'}
+70	70		204							{1: '1', 2: '1'}
+71	71		301							{2: 'Lucia', 3: 'Sorry to keep you waiting.', 4: '1'}
+72	72		301							{3: 'She raises her hand, palm up.'}
+73	73		301							"{2: 'Lucia', 3: ""There's only one sound device left in this area. Follow me."", 4: '1'}"
+74	74		301							{3: 'The Red Tide still sweeps through the forest, where a group of scavengers lingers. Your mission is to collect all remaining sound devices and, if possible, find those scavengers and guide them to the conservation area.'}
+75	75		301							"{3: ""Because human ears can't pick up the low-frequency signals of the sound device, the job of navigation naturally falls to the Construct. That's why you two split up, hoping to find the devices quickly and keep more of the Corrupted from closing in.""}"
+76	76		301				DialogDisable			"{3: ""With the command now reassigned, Lucia still doesn't seem used to being called by her new title. She always looks a bit uncomfortable whenever she hears it.""}"
+77	77		302							{2: '(Grab her hand)', 3: '78'}
+78	78		302							"{2: ""Then I'll leave it to you, Commandant Lucia."", 3: '79'}"
+79	79		301			DialogEnable				{2: 'Lucia', 3: '...All right. Leave it to me, Captain 【kuroname】.', 4: '1'}
+80	80		202							{1: '1'}
+81	81		301							{3: 'The young girl presses on through every thorn and bramble, and yet she still offers her gentle palm to the one following in her footsteps.'}
+82	82		301							"{3: ""The forest doesn't just harbor danger; it also reveals unexpected wonders. Morning light filters through the uneven treetops, illuminating a nearby lake. Sunlight scatters across the surface, sending gentle ripples dancing through the water.""}"
+83	83		201							{1: '1', 2: '500994', 3: '6'}
+84	84		301							{1: '1', 2: 'Lucia', 3: '...Hmm?', 4: '1'}
+85	85		301							{3: 'Lucia comes to a quiet halt.'}
+86	86		302							"{2: 'Something up?', 3: '87', 4: ""What's wrong?"", 5: '87'}"
+87	87		301							{2: 'Lucia', 3: 'Looks like...', 4: '1'}
+88	88		203							{1: '1', 2: '0.25', 4: '-80'}
+89	89		401							{1: '2', 2: '1543'}
+90	90		202							{1: '1'}
+91	91		301							{3: 'The acting Commandant for this mission stops, then crouches in front of a bush where blossoms sway gently.'}
+92	92		302							{2: '(Crouch down beside her)', 3: '93'}
+93	93		401							{1: '2', 2: '2704'}
+94	94		301							{3: 'She carefully pushes aside the grass. A short distance away, a bird chick stumbles clumsily through the dirt, and right next to it is that familiar sound device.'}
+95	95		301							{3: 'Oblivious to your distant presence, the gray adult bird flutters down into this tiny world. It hands over the food in its beak to its chick, then cranes its neck to check its surroundings.'}
+96	96		301							{3: 'Here in the sprawling forest, the adult bird offers its little one a small, sheltered sanctuary.'}
+97	97		201							{1: '1', 2: '500994', 3: '2'}
+98	98		301							{1: '1', 2: 'Lucia', 3: 'How wonderful... a newborn life.', 4: '1'}
+99	99		301							"{2: 'Lucia', 3: ""If we head over there now, we'll probably spook them. Let's wait a moment, Commandant."", 4: '1'}"
+100	100		302							{2: 'Sure.', 3: '101'}
+101	101		301							"{3: ""It's not the first time you've noticed animals around the sound device.""}"
+102	102		301							{3: 'Whenever Lucia and you split up, she often lets out a little gasp of excitement and shares whatever she sees over the comms.'}
+103	103		301							{3: 'From squirrels to deer, she always describes these woodland creatures with such wonder, and she truly feels happy every time she encounters new life here.'}
+104	104		301							{2: 'Lucia', 3: 'Until recently... none of these little critters were around.', 4: '1'}
+105	105		301							{3: 'She speaks in a hushed voice, worried she might startle this tiny family.'}
+106	106		302							"{2: 'Until recently?', 3: '107', 4: ""You've been here before?"", 5: '107'}"
+107	107		301							"{2: 'Lucia', 3: ""Mm, I did run a mission around here once, but I'm not sure if this is the exact spot I visited back then..."", 4: '1'}"
+108	108		202							{1: '1', 6: '1'}
+109	109		301							{3: 'The fledgling finishes its meal, and the adult bird stretches its wings again, showing off the sleek, razor-sharp lines underneath. Lucia instinctively brushes her fingers over the winged motif painted on her coating.'}
+110	110		401							{1: '2', 2: '759'}
+111	111		301							{3: 'In a flash, the adult bird disappears into the sky, and the fledgling slips back into its nest—this seems like the perfect moment to retrieve the sound device.'}
+112	112		201							{1: '1', 2: '500994'}
+113	113		301							"{1: '1', 2: 'Lucia', 3: ""That's the collection work done for this area."", 4: '1'}"
+114	114		401							{1: '2', 2: '2902'}
+115	115		301							{3: 'The final sound device here gleams under the light. Lucia lifts it from the soil, and on its polished surface, she spots her own reflection—along with the gently swaying grass behind her...'}
+116	116		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+117	117		301							{2: 'Lucia', 3: 'Commandant!', 4: '1'}
+118	118		302							{2: '(Dodge left)'}
+119	119		202							{1: '1'}
+120	120		401							{1: '2', 2: '9332011'}
+121	121		104							{1: '50|50|-100', 2: '0.5'}
+122	122		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+123	123		301							{3: 'The showdown she expects never happens. The dark shape that springs out pulls up short right before her.'}
+124	124		104							{1: '0|0|0', 2: '1'}
+125	125		301							{3: 'It sticks out its tongue and pants obediently, tail wagging nonstop.'}
+126	126		201							{1: '1', 2: '500994', 3: '4'}
+127	127		301							{1: '1', 2: 'Lucia', 3: 'This is...?', 4: '1'}
+128	128		302							"{2: ""The patrol team's dog. Check its collar."", 3: '129'}"
+129	129		301							"{3: ""Word has it that trained hounds can pick up low-frequency sound waves. This one's likely on a mission to track down some sort of sound-emitting device, but...""}"
+130	130		302							{2: '...Where are the patrol team members who should be with it?', 3: '131', 4: 'Why is it out here on its own?', 5: '131'}
+131	131		203							{1: '1', 2: '0.25', 4: '-80'}
+132	132		401							{1: '2', 2: '1543'}
+133	133		301							{3: 'Lucia crouches down and ruffles its fur, noticing the pleasure in its gaze.'}
+134	134		204							{1: '1', 2: '2'}
+135	135		301							{2: 'Lucia', 3: 'Hey there, little buddy. Did you lose track of everyone else?', 4: '1'}
+136	136		202							{1: '1', 6: '1'}
+137	137		301							{2: 'Patrol Dog', 3: 'Woof... Woof, woof!'}
+138	138		301							"{3: ""Before Lucia can even finish her sentence, the patrol dog slips out of her hand. It barks and keeps turning its head toward one spot, as though it's leading you somewhere.""}"
+139	139		302							{2: 'Did something happen?', 3: '140', 4: 'It seems like it wants us to tag along.', 5: '140'}
+140	140		201							{1: '1', 2: '500994'}
+141	141		301							{1: '1', 2: 'Lucia', 3: 'Hang on—I need to check its ID tag...', 4: '1'}
+142	142		202							{1: '1', 6: '1'}
+143	143		401							{1: '2', 2: '1515'}
+144	144		301							{3: 'The chip inside its collar verifies in a flash, and a green light glows—proof that no one has tampered with it.'}
+145	145		301							{2: 'Patrol Dog', 3: 'Woof!'}
+146	146		301							"{3: ""Seeing there's still no action on your side, the patrol dog becomes a bit restless.""}"
+147	147		401							{1: '1', 2: '36'}
+148	148		401							{1: '2', 2: '2704'}
+149	149		301							{3: 'Crack—'}
+150	150		401							{1: '1', 2: '203'}
+151	151		401							{1: '2', 2: '9342045'}
+152	152		401							{1: '2', 2: '2902'}
+153	153		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+154	154		301							{3: 'In the distance, the grass rustles again. Lucia and the patrol dog both turn to look. The dog, now even bolder, pounces straight into the short shrub.'}
+155	155		201							{1: '1', 2: '500994'}
+156	156		301							"{1: '1', 2: 'Lucia', 3: ""...There's someone over there!"", 4: '1'}"
+157	157		302							{2: 'A scavenger!', 3: '158'}
+158	158		301							{3: 'Before the mission even started, the patrol captain mentioned a stubborn group of scavengers who linger in the forest, doing everything they can to avoid capture...'}
+159	159		302							{2: 'Go after it!', 3: '160'}
+160	160		301		1		AniZhuanchangBegin			{2: 'Lucia', 3: 'Copy that!', 4: '1'}

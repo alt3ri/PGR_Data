@@ -1,0 +1,87 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory318.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: 'The dawning sun rises above the horizon, outlining the silhouette of Conservation Area 112.'}
+4	4		201							{1: '1', 2: '500702', 3: '17'}
+5	5		301							"{1: '1', 2: 'Echo', 3: ""It's right ahead... Ugh."", 4: '1'}"
+6	6		302							{2: 'Is everything okay?', 3: '7'}
+7	7		301							"{2: 'Echo', 3: ""My M.I.N.D. is hurting a little bit. I guess it's the aftereffects of yesterday's interference."", 4: '1'}"
+8	8		204							{1: '1'}
+9	9		301							"{2: 'Echo', 3: ""It's nothing major. Let's keep moving."", 4: '1'}"
+10	10		202							{1: '1', 6: '1'}
+11	11		301							"{3: 'Babylonia has registered Conservation Area 112 as a ""Hetero-Creature-ambushed conservation area"", an outpost destroyed because of Hetero-Creatures.'}"
+12	12		301							{3: 'Only a few residents who went out to gather supplies managed to escape. Everyone else inside the conservation area, including the Task Force that went to help, did not survive the incident.'}
+13	13		301							{3: 'It was a while before some remains were found in the nearby field, but even those could not be confirmed to belong to residents from Conservation Area 112.'}
+14	14		301							{3: 'However, if Asimov saw records of this conservation area in the internal experiment reports from Fort Winter...'}
+15	15		302							{2: 'Is the destruction of Conservation Area 112 related to Utopia as well?', 3: '16'}
+16	16		201							{1: '1', 2: '500702'}
+17	17		301							"{1: '1', 2: 'Echo', 3: ""I can't remember exactly, but Utopia did take in a lot of people every once in a while. Some of them were humans, and some were heavily injured Constructs."", 4: '1'}"
+18	18		301							{2: 'Echo', 3: 'I occasionally talked to them in between classes. All I remember is they seemed to come from many different places—conservation areas, Forsaken, even... Babylonia.', 4: '1'}
+19	19		301							{2: 'Echo', 3: 'Cecily came from Babylonia, as a matter of fact. For some reason, she always shook her head with a smile when I asked about Babylonia as if... she was upset.', 4: '1'}
+20	20		204							{1: '1', 2: '17'}
+21	21		301			PanelActor1Shake				{2: 'Echo', 3: 'Ugh...', 4: '1'}
+22	22		301							{3: 'Echo presses her forehead again.'}
+23	23		302							{2: 'Your M.I.N.D. is still in pain?', 3: '24'}
+24	24		204							{1: '1', 2: '14'}
+25	25		301							{2: 'Echo', 3: '...Yeah, but it should be nothing severe.', 4: '1'}
+26	26		302							"{2: ""Let's take a break."", 3: '27'}"
+27	27		301							{2: 'Echo', 3: '...Sounds good.', 4: '1'}
+28	28		202							{1: '1'}
+29	29		301							{3: 'Surprisingly, Echo does not protest your request to rest for once. You choose a somewhat cleaner spot by the road to sit down.'}
+30	30		301							"{3: 'You take this time to send Lee all the information you have gathered from Echo\'s ""story"" and ask him to encrypt it before sending it to Asimov.'}"
+31	31		301							{3: 'From what you have gathered, Kurono likely has a secret force called Aurora Squadron on the surface based in a flying fortress called Utopia.'}
+32	32		301							{3: 'Dr. Pickman was apparently in charge of Utopia, and Utopia took in some Constructs from Babylonia as one of them was named Cecily...'}
+33	33		301							{3: 'Would Kurono really create a place that was meant to take in injured Constructs and folks from conservation areas out of the kindness of their heart?'}
+34	34		401							{1: '1', 2: '36'}
+35	35		401							{1: '2', 2: '988'}
+36	36		201							{1: '1', 2: '500582'}
+37	37		301							{1: '1', 3: 'You quickly finish editing your message before calling for Echo to continue the journey, but you hear the humming of the armor instead.'}
+38	38		402							{1: '988'}
+39	39		401							{1: '1', 2: '202'}
+40	40		302							{2: 'Echo?!', 3: '41'}
+41	41		201							{1: '1', 2: '500702', 3: '17', 7: '1'}
+42	42		301			PanelActor1Shake				{1: '1', 2: 'Echo', 3: 'Ugh... Cecily...', 4: '1'}
+43	43		301							{2: 'Echo', 3: 'No... Father... N-no...', 4: '1'}
+44	44		302							{2: '—A M.I.N.D. interference?', 3: '45'}
+45	45		301							{3: 'You hear a low buzz from ahead of you... and notice a drone equipped with a M.I.N.D. disruptor!'}
+46	46		301							"{3: ""Lee is nearby. You immediately message him for reinforcement while inspecting Echo's status.""}"
+47	47		302							{2: 'Echo? Echo?!', 3: '48'}
+48	48		301							{2: 'Echo', 3: '...Commandant?', 4: '1'}
+49	49		301							{3: 'Echo seems still somewhat conscious...'}
+50	50		302							{2: '(Contact Asimov through an encrypted channel)', 3: '51'}
+51	51		202							{1: '1', 6: '1'}
+52	52		401							{1: '2', 2: '1515'}
+53	53		509						800.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg', 2: '1'}
+54	54		201							{1: '11', 2: '500004', 4: '-500'}
+55	55		301							{1: '1', 2: 'Asimov', 3: '...【kuroname】?', 4: '11'}
+56	56		301							"{2: 'Asimov', 3: ""Speak quickly. It's risky to contact me this way."", 4: '11'}"
+57	57		302							{2: 'How to stabilize a M.I.N.D. being interfered with this way?', 3: '58'}
+58	58		301							{2: 'Asimov', 3: 'You want me to diagnose this through a call? What kind of magical doctor do you think I am?', 4: '11'}
+59	59		302							{2: '(Briefly describe the M.I.N.D. disruptor you saw)', 3: '60'}
+60	60		301							{2: 'Asimov', 3: '...A device that attacks the M.I.N.D. directly?', 4: '11'}
+61	61		301							{3: 'Asimov finally sounds intrigued.'}
+62	62		301							{2: 'Asimov', 3: 'If she is still conscious, connect to her and enter her deep M.I.N.D. Try to stabilize her from within.', 4: '11'}
+63	63		301							"{2: 'Asimov', 3: ""But it's risky. After all, you have to perform a Deep M.I.N.D. connection with her using your Mind Beacon. No one knows what exists in the M.I.N.D. of a Construct Babylonia hasn't registered."", 4: '11'}"
+64	64		301							{2: 'Asimov', 3: 'How did you get involved with her?', 4: '11'}
+65	65		302							{2: 'This is a temporary alliance.', 3: '66'}
+66	66		301							{2: 'Asimov', 3: 'A temporary alliance...', 4: '11'}
+67	67		302							{2: 'She has something we want.', 3: '68'}
+68	68		301							{3: 'If you can bring Echo back to Babylonia before the Purifying Force does, you will be a step ahead of Kurono.'}
+69	69		301							"{2: 'Asimov', 3: ""It's dangerous, but it's plausible. Be careful."", 4: '11'}"
+70	70		301							{2: 'Asimov', 3: 'Bring me a sample of that M.I.N.D. disruptor device.', 4: '11'}
+71	71		301				DialogDisable			"{2: 'Asimov', 3: ""...I have to hang up. Call me on this channel again if there's an emergency."", 4: '11'}"
+72	72		202							{1: '11', 6: '1'}
+73	73		401							{1: '2', 2: '2566'}
+74	74		510						500.0	{1: '1'}
+75	75		301			DialogEnable				{3: 'Asimov ends the call.'}
+76	76		302							{2: 'Can you hear me, Echo?', 3: '77'}
+77	77		201							{1: '1', 2: '500702', 3: '17'}
+78	78		301							{1: '1', 2: 'Echo', 3: 'Ugh...', 4: '1'}
+79	79		301							{3: 'Echo struggles to respond to you.'}
+80	80		302							{2: 'I have to establish a M.I.N.D. connection with you to stabilize your M.I.N.D.', 3: '81'}
+81	81		301							{3: 'Echo raises a finger, indicating that she is ready.'}
+82	82		301							{3: 'Commencing M.I.N.D. connection!'}
+83	83		401							{1: '2', 2: '2616'}
+84	84		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie2New.prefab', 2: '3'}
+85	85		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie3New.prefab', 2: '3'}
+86	86		501		1		AniZhuanchangBegin		500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie4New.prefab', 2: '3'}

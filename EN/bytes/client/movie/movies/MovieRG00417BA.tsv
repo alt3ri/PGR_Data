@@ -1,0 +1,40 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory92.png'}
+2	2		401							{1: '1', 2: '210'}
+3	3		201							{1: '1', 2: '500199'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Staessen', 3: ""Everything's just not going to plan..."", 4: '1'}"
+5	5		301							{2: 'Staessen', 3: 'What do you think, 【kuroname】?', 4: '1'}
+6	6		302							{2: 'What I think?', 3: '7'}
+7	7		302							"{2: ""Why don't we lay out all the cards on the table?"", 3: '8'}"
+8	8		302							"{2: ""Don't just stick to your hand."", 3: '9'}"
+9	9		301							{2: 'Staessen', 3: '...?', 4: '1'}
+10	10		201							{1: '1', 2: '500087'}
+11	11		301							"{1: '1', 2: 'Sergey', 3: ""...Staessen, where did you find this young 'un?"", 4: '1'}"
+12	12		201							{1: '1', 2: '500199'}
+13	13		301							{1: '1', 2: 'Staessen', 3: 'This is the Gray Raven Commandant. We were finally able to bring closure to Derek and Amberia thanks to this person.', 4: '1'}
+14	15		201							{1: '1', 2: '500086'}
+15	16		301							"{1: '1', 2: 'Antonov', 3: '...Oh! You\'re ""the"" commandant?', 4: '1'}"
+16	17		301							"{2: 'Antonov', 3: ""Why didn't you say so! Have a seat! Bring me a glass of the best kvass!"", 4: '1'}"
+17	18		202							{1: '1', 2: '2', 6: '1'}
+18	19		201							{1: '1', 2: '500087'}
+19	20		301							{1: '1', 2: 'Sergey', 3: 'First of all, the Commune wants a secure place to live. The two icebreakers are our only hope of survival. However, they also limit our population.', 4: '1'}
+20	21		201							{1: '1', 2: '500214'}
+21	22		301							{1: '1', 2: 'Rosetta', 3: 'The Forest Guards are willing to accept absolution and move to a new settlement, provided that the interests of others are not harmed.', 4: '1'}
+22	23		201							{1: '1', 2: '500086'}
+23	24		301							{1: '1', 2: 'Antonov', 3: 'Wait... We might have something on our hands here!', 4: '1'}
+24	25		201							{1: '1', 2: '500199'}
+25	26		301							{1: '1', 2: 'Staessen', 3: 'This... might work.', 4: '1'}
+26	27		201							{1: '1', 2: '500087'}
+27	28		301							{1: '1', 2: 'Sergey', 3: 'So, if the Forest Guards are willing to clear safe passage for a land-based supply route, the Commune can sail the ships to New Murmansk without worries.', 4: '1'}
+28	29		201							{1: '1', 2: '500214'}
+29	30		301							{1: '1', 2: 'Rosetta', 3: 'Once we resupply at New Murmansk, the Commune and Forest Guards will set out toward the new settlement.', 4: '1'}
+30	31		201							{1: '1', 2: '500199', 4: '1'}
+31	32		301							{1: '1', 2: 'Staessen', 3: 'And with a new transportation line established, the ARU can also establish contact with you. The new environment will be far more hospitable than where you live now!', 4: '1'}
+32	33		201							{1: '1', 2: '500086'}
+33	34		301							{1: '1', 2: 'Antonov', 3: '...Looks like we were too focused on ourselves.', 4: '1'}
+34	35		203							{1: '1', 2: '0.25', 3: '-400'}
+35	36		201							{1: '2', 2: '500087', 4: '400'}
+36	37		301							"{1: '2', 2: 'Sergey', 3: ""If that's the case, we'd be more than willing."", 4: '2'}"
+37	38		202							{1: '1', 2: '2', 6: '1'}
+38	39		201							{1: '1', 2: '500214'}
+39	40		301		1		AniZhuanchangBegin			{1: '1', 2: 'Rosetta', 3: 'The Forest Guards are also willing to comply with this operation.', 4: '1'}

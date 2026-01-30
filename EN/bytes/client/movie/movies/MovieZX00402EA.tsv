@@ -1,0 +1,34 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory6.jpg'}
+2	100		401							{1: '1', 2: '203'}
+3	2		201							{1: '1', 2: '1021001'}
+4	3		301			DialogEnable				"{1: '1', 2: 'Lucia', 3: ""Lee, I'll leave the long-distance attacking to you."", 4: '1'}"
+5	4		201							{1: '1', 2: '1011001'}
+6	5		301							{1: '1', 2: 'Lee', 3: 'No problem.', 4: '1'}
+7	6		202							{1: '1', 6: '1'}
+8	7		201							{1: '1', 2: '1081001', 4: '400'}
+9	8		301							"{1: '1', 2: 'Kamui', 3: ""Liv, how's it going?"", 4: '1'}"
+10	9		201							{1: '2', 2: '1031001', 4: '-400'}
+11	10		301							{1: '1', 2: 'Liv', 3: 'Just a bit more... and done!', 4: '2'}
+12	11		204							{1: '1', 2: '1'}
+13	12		301							"{2: 'Kamui', 3: ""Man, that's quick!"", 4: '1'}"
+14	13		202							{1: '1', 2: '2', 6: '1'}
+15	101		401							{1: '2', 2: '1515'}
+16	14		301							{2: 'System', 3: 'Building foundation analysis complete, commencing real-time calculations.'}
+17	15		301							{2: 'System', 3: 'Real-time calculations synced, time overlapped: 2 seconds.'}
+18	16		301							{2: 'System', 3: 'Determining the best route...'}
+19	17		201							{1: '1', 2: '1021001', 4: '-400'}
+20	18		301							"{1: '1', 2: 'Lucia', 3: ""What's the result?"", 4: '1'}"
+21	19		201							{1: '2', 2: '1031001', 4: '400'}
+22	20		301							{1: '1', 2: 'Liv', 3: 'The result is... there are no routes...', 4: '2'}
+23	21		301							{2: 'Lucia', 3: 'What if... we lower the safety limit without decreasing the member count?', 4: '1'}
+24	22		301							{2: 'Liv', 3: '...Let me try again.', 4: '2'}
+25	23		202							{1: '1', 2: '2', 6: '1'}
+26	24		301							{2: 'System', 3: 'Calculations complete.'}
+27	25		301							{2: 'System', 3: 'Plausible plans: 0.'}
+28	26		201							{1: '1', 2: '1081001', 4: '400'}
+29	27		301							{1: '1', 2: 'Kamui', 3: 'Still 0?', 4: '1'}
+30	28		201							{1: '2', 2: '1031001', 4: '-400'}
+31	29		301							{1: '1', 2: 'Liv', 3: 'At the moment... yes.', 4: '2'}
+32	30		301							"{2: 'Kamui', 3: ""Dammit... I'm not gonna accept any plans to leaves someone behind!"", 4: '1'}"
+33	31		301		1		AniZhuanchangBegin			{2: 'Liv', 3: 'Then we need more information other than topography. Is there any other way...', 4: '2'}

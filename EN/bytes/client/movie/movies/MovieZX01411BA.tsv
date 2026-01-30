@@ -1,0 +1,21 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory217.png'}
+2	2		401							{1: '1', 2: '202'}
+3	3		201							{1: '1', 2: '500204'}
+4	4		301			DialogEnable				{1: '1', 2: 'Forest Guards', 3: 'Found her tracks. Over here!', 4: '1'}
+5	5		301							{3: 'The attack may have failed, but you managed to place a tracker on Atiel.'}
+6	6		301							"{3: ""Leaking vital fluid and broken Construct parts are visibly scattered on the white snow. Leaving the battle, the Forest Guard have dispersed, trying to track Atiel's whereabouts.""}"
+7	1000		201							{1: '1', 2: '500214', 4: '-400'}
+8	1001		201							{1: '2', 2: '500088', 3: '4', 4: '400'}
+9	7		301							{1: '1', 2: 'Rosetta', 3: 'Her tracks end here...', 4: '1'}
+10	8		301							{3: 'After tracking her for a short while, however, her trails end abruptly.'}
+11	1002		302							{2: 'Maybe she performed emergency repairs?', 3: '9', 4: 'Looks like we found our place.', 5: '11'}
+12	9	10	301							"{2: 'Rosetta', 3: ""If she could, she'd have likely done it on the move, rather than leaving us clues to follow her all the way here."", 4: '1'}"
+13	10	12	301							"{2: 'Diana', 3: ""This place is likely Atiel's destination. But where...?"", 4: '2'}"
+14	11	12	301							{2: 'Diana', 3: 'I think so too. But everything looks the same here. How are we going to find her...?', 4: '2'}
+15	12		301							{2: 'Rosetta', 3: 'Up ahead, I think.', 4: '1'}
+16	13		301							"{3: ""Following the tip of Rosetta's spear, you see a building that you never noticed in the snow before.""}"
+17	14		301							{2: 'Diana', 3: 'What could that place be?', 4: '2'}
+18	15		301							"{2: 'Rosetta', 3: ""I don't know, Commandant. But this likely has something to do with Atiel."", 4: '1'}"
+19	1003		302							"{2: ""Let's go."", 3: '16'}"
+20	16		301		1		AniZhuanchangBegin			{2: 'Rosetta', 3: 'Alright, everyone, after Commandant!', 4: '1'}

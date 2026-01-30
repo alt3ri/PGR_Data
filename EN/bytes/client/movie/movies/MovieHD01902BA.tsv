@@ -1,0 +1,39 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory730.jpg'}
+2	2		401							{1: '1', 2: '5'}
+3	3		201							{1: '1', 2: '500568', 3: '6'}
+4	4		301			DialogEnable				{1: '1', 3: 'Lee is used to the smoke and fire of the battlefield. Standing in such a romantic environment, he seems slightly restless.'}
+5	5		301							"{2: 'Lee', 3: ""Ahem... Weren't we taking a photo together? Let's get it over with and leave."", 4: '1'}"
+6	6		301							"{2: 'Lee', 3: ""Don't you have reports you haven't finished?"", 4: '1'}"
+7	7		302							{2: 'Is that all you want to say to me?', 3: '8'}
+8	8		204							{1: '1', 2: '10'}
+9	9		301							{2: 'Lee', 3: 'What else do you want to hear? Should I tell you the errors the Science Council made regarding the benchmarks of IUO-9?', 4: '1'}
+10	10		302							{2: 'Well, I want to take this opportunity to thank you, Lee.', 3: '11'}
+11	11		204							{1: '1', 2: '6'}
+12	12		301							"{2: 'Lee', 3: ""...Where'd that come from?"", 4: '1'}"
+13	13		301							{3: 'Lee never shows it, but you can always tell how much he cares about you and Gray Raven.'}
+14	14		301							{3: 'Whether it is how he calibrates the weapons and exoskeletons of the Gray Raven members himself or the coffees he brews at late night, you are always comforted to find Lee with you, even though he never says anything.'}
+15	15		302							"{2: ""I'm glad we can be together, Lee."", 3: '16'}"
+16	16		204							{1: '1', 2: '7'}
+17	17		301							{2: 'Lee', 3: '...', 4: '1'}
+18	18		204							{1: '1'}
+19	19		301							{3: 'Lee sighs, gently rubbing his forehead.'}
+20	20		204							{1: '1', 2: '10'}
+21	21		301							"{2: 'Lee', 3: ""In that case... There's something I want to tell you, too."", 4: '1'}"
+22	22		204							{1: '1'}
+23	23		301							{3: 'He looks down, hesitating.'}
+24	24		301							"{2: 'Lee', 3: ""Good job exploring the maze this time. You can invite me again if there's an event like this in the future."", 4: '1'}"
+25	25		301							{2: 'Lee', 3: 'We know each other well enough that we can finish exploring a place like this with maximum efficiency.', 4: '1'}
+26	26		302							{2: 'Is that all...', 3: '27'}
+27	27		204							{1: '1', 2: '10'}
+28	28		301							{2: 'Lee', 3: '...What else did you want to hear? You had better not expect me to say something sappy.', 4: '1'}
+29	29		204							{1: '1', 2: '6'}
+30	30		301							{2: 'Lee', 3: 'Those kinds of things...', 4: '1'}
+31	31		301							"{3: ""Lee has turned away. You're wondering if you've actually caught a faint blush on his cheeks.""}"
+32	32		204							{1: '1', 2: '1'}
+33	33		301							{2: 'Lee', 3: 'Right. As a thank you for inviting me, I can grant you one request—nothing too unreasonable, though.', 4: '1'}
+34	34		502							{1: 'DialogDisable'}
+35	35		302							{2: 'How about...', 3: '36'}
+36	36		302							{2: 'Changing the voice of my tiny robot into yours, Lee?', 3: '37'}
+37	37		204							{1: '1', 2: '10'}
+38	38		301		1	DialogEnable	AniZhuanchangBegin			"{2: 'Lee', 3: ""...Don't you even think about it!"", 4: '1'}"

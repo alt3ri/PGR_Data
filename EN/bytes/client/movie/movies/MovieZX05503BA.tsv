@@ -1,0 +1,651 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangBegin				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '4'}
+3	3		301				DialogDisable			{3: 'Data Synchronization Progress: 42%'}
+4	4		401							{1: '2', 2: '4823'}
+5	5		401							{1: '1', 2: '6172'}
+6	6		109			AniZhuanchangEnd			250.0	{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>8%</color></size>', 9: '3'}
+7	7		401							{1: '2', 2: '4823'}
+8	8		109						100.0	{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>10%</color></size>', 9: '3'}
+9	9		401							{1: '2', 2: '4823'}
+10	10		109						100.0	{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>13%</color></size>', 9: '3'}
+11	11		401							{1: '2', 2: '4823'}
+12	12		109						100.0	{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>18%</color></size>', 9: '3'}
+13	13		401							{1: '2', 2: '4823'}
+14	14		109						100.0	{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>22%</color></size>', 9: '3'}
+15	15		401							{1: '2', 2: '4823'}
+16	16		109						100.0	{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>25%</color></size>', 9: '3'}
+17	17		401							{1: '2', 2: '4823'}
+18	18		109						100.0	{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>29%</color></size>', 9: '3'}
+19	19		401							{1: '2', 2: '4823'}
+20	20		109						100.0	{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>34%</color></size>', 9: '3'}
+21	21		401							{1: '2', 2: '4823'}
+22	22		109						100.0	{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>39%</color></size>', 9: '3'}
+23	23		401							{1: '2', 2: '4823'}
+24	24		109						100.0	{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>40%</color></size>', 9: '3'}
+25	25		401							{1: '2', 2: '4823'}
+26	26		109	1						{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>42%</color></size>', 9: '3'}
+27	27		110			AniZhuanchangBegin				
+28	28		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '4', 5: '1'}
+29	29		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 3: '0', 4: '1', 5: '0.25'}
+30	30		205							{1: '1001', 2: 'Assets/Product/Texture/Image/BgStory/BgStory663.jpg', 3: '0', 4: '1', 5: '0.25'}
+31	31		109			AniZhuanchangEnd				"{1: '1', 2: ""<size=40>It's been a long time since the Punishing outbreak. So long that even Vera has begun to forget those days.</size>"", 3: '0'}"
+32	32		301				AniZhuanchangBegin			"{3: ""It's been a long time since the Punishing outbreak. So long that even Vera has begun to forget those days.""}"
+33	33		110							{1: '1'}
+34	34		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 3: '1', 4: '0', 5: '0'}
+35	35		101			DialogEnable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1238.jpg'}
+36	36		301			AniZhuanchangEnd				{3: 'Yet the scene before her eyes is strikingly similar to back then.'}
+37	37		201							{1: '1', 2: '500463'}
+38	38		301							{1: '1', 2: 'Nurse', 3: 'Make way, make way! Let the gurney through first!', 4: '1'}
+39	39		203							{1: '1', 2: '0.25', 3: '-400'}
+40	40		201							{1: '2', 2: '500138', 4: '400'}
+41	41		301							{1: '1', 2: 'Doctor', 3: 'How many wounded are still in the corridor?', 4: '2'}
+42	42		301							"{2: 'Nurse', 3: ""Too many to count... Is the operating room available yet? A couple of them can't wait any longer."", 4: '1'}"
+43	43		301							{3: 'After the abnormal outbreak, people have repurposed this abandoned hospital as a makeshift field hospital.'}
+44	44		301							"{2: 'Doctor', 3: ""The one on the operating table is beyond help. If there's no way, just take them off."", 4: '2'}"
+45	45		202						250.0	{1: '1'}
+46	46		201							{1: '1', 2: '501239', 3: '6', 4: '-400'}
+47	47		301							{1: '1', 2: 'Vera', 3: 'Why are they beyond help?', 4: '1'}
+48	48		301							"{2: 'Doctor', 3: ""The Corrupted tore a huge hole through the patient's body. It's already a miracle they've lasted this long. What's your relationship to the patient? Are you people from Babylonia?"", 4: '2'}"
+49	49		301							{3: 'The doctor quickly sizes up this unusually distinctive Construct.'}
+50	50		301							"{3: ""Vera carries a box with a coat draped over her arm—the coat's side bears a large bloodstained hole, telling the entire story of the patient's condition in the operating room.""}"
+51	51		301							"{2: 'Doctor', 3: ""Let me explain this one last time. The patient has head trauma, and the abdominal wound cannot be repaired. We can't stop the bleeding."", 4: '2'}"
+52	52		301							"{2: 'Doctor', 3: ""This is just a temporary medical station. We don't have enough wound repair materials to handle this kind of situation right now."", 4: '2'}"
+53	53		301							"{2: 'Doctor', 3: ""Your earlier suggestion won't work either. We don't have modification capabilities here. Unless we contact Babylonia for rescue right now, and ideally evacuate all patients from this temporary medical station, there's nothing more we can do."", 4: '2'}"
+54	54		204							{1: '1'}
+55	55		301							{2: 'Vera', 3: '...', 4: '1'}
+56	56		204							{1: '1', 2: '4'}
+57	57		301							"{2: 'Vera', 3: ""I have some emergency repair materials here that should temporarily patch large wounds. It'll keep them alive until support arrives."", 4: '1'}"
+58	58		301							{3: 'She lifts the box with both hands, holding it out to the doctor—after one glance at the markings on it, the doctor furrows their brow.'}
+59	59		301							"{2: 'Doctor', 3: ""This is... I can't use this without authorization."", 4: '2'}"
+60	60		301							"{2: 'Vera', 3: ""Don't overthink it. I'll take full responsibility. Use it now to treat their wounds."", 4: '1'}"
+61	61		301							{2: 'Doctor', 3: '...Sure.', 4: '2'}
+62	62		202						250.0	{1: '2'}
+63	63		203							{1: '1', 2: '0.25'}
+64	64		301							"{3: ""The doctor's gaze lingers on the red-haired Construct for a moment, but they choose not to question where these life-saving materials came from. They simply take the box and hurry back to the operating room.""}"
+65	65		301							{2: 'Vera', 3: '...', 4: '1'}
+66	66		301							"{3: ""Before the door closes, Vera's gaze falls once more on your body lying in the operating room, a face twisted in agony, trapped in the grip of nightmares.""}"
+67	67		202							{1: '1'}
+68	68		301							"{3: ""Oblivious to the world beyond the darkness you're in, your stamina drains away as you remain trapped in dreams of the past.""}"
+69	69		401							{1: '2', 2: '4689'}
+70	70		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '2'}
+71	71		402							{1: '4689'}
+72	72		301							{3: 'Even the vital sign monitors keep triggering alarms.'}
+73	73		302							{2: 'That hurt...', 3: '74'}
+74	74		301							{3: 'Before being wounded by the Corrupted... what exactly happened to them?'}
+75	75		301							{3: 'Back then... why did they get separated from the F.O.S. squad?'}
+76	76		401							{1: '2', 2: '4388'}
+77	77		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+78	78		401							{1: '1', 2: '203'}
+79	79		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '0'}
+80	80		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg'}
+81	81		504							{1: '0.7'}
+82	82		301							{3: 'At that moment... the communication device at her waist seems to transmit a condescending taunt.'}
+83	83		401							{1: '2', 2: '2983'}
+84	84		201							{1: '1', 2: '501249'}
+85	85		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteMainNoise.prefab', 2: '3'}
+86	86		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+87	87		301							{1: '1', 2: '???', 3: 'Well, well, 【kuroname】 is actually 30 seconds late.', 4: '1'}
+88	88		301							"{2: '???', 3: ""My display clearly shows you've reached the target location, so where's your report? Don't tell me you're actually scared on your first trip to the surface?""}"
+89	89		302							{2: '...', 3: '90', 4: 'Vanessa?', 5: '97'}
+90	90		401						500.0	{1: '2', 2: '4921'}
+91	91		401							{1: '2', 2: '4768'}
+92	92		301							{3: 'The communication device crackles with static, seemingly affected by some signal interference. After being smacked firmly a couple of times, it returns to normal, and the figure on the other end comes into view.'}
+93	93		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteMainNoise.prefab'}
+94	94		202						250.0	{1: '1'}
+95	95		201							{1: '1', 2: '500293'}
+96	96	104	301							"{1: '1', 2: 'Vanessa', 3: ""Well, looks like you're awake after all. Something wrong?"", 4: '1'}"
+97	97		401						500.0	{1: '2', 2: '4921'}
+98	98		401							{1: '2', 2: '4768'}
+99	99		301							{3: 'The communication device crackles with static, seemingly affected by some signal interference. After being smacked firmly a couple of times, it returns to normal, and the figure on the other end comes into view.'}
+100	100		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteMainNoise.prefab'}
+101	101		202						250.0	{1: '1'}
+102	102		201							{1: '1', 2: '500293'}
+103	103		301				DialogDisable			"{1: '1', 2: 'Vanessa', 3: ""It's me. What's wrong? Not happy to see me?"", 4: '1'}"
+104	104		302							"{2: ""Nothing... just feels like something's not right here."", 3: '105'}"
+105	105		302							"{2: ""But there's nothing wrong on my end."", 3: '107'}"
+106	106		204							{1: '1', 2: '4'}
+107	107		301			DialogEnable				{2: 'Vanessa', 3: '...', 4: '1'}
+108	108		301							{3: 'Vanessa takes a deep breath.'}
+109	109		204							{1: '1', 2: '5'}
+110	110		301							"{2: 'Vanessa', 3: ""I don't need this kind of vague response. If you're really not clear-headed, then get the hell out of the squad now. Just because we were unlucky enough to be teammates today and I rolled the dice to become the Red Team Commandant doesn't mean I'll bite my tongue to earn credits by putting up with your worthless mouth—"", 4: '1'}"
+111	111		301							{2: 'Vanessa', 3: '—and besides, this is just a combat exercise location. The surrounding areas are all established conservation areas that have been stable for years. If anything were to actually happen here, you might as well do nothing and just pray where you stand.', 4: '1'}
+112	112		302							{2: '...', 3: '113'}
+113	113		204							{1: '1', 2: '4'}
+114	114		301							{3: 'Both her emotional venting and necessary instructions conclude at precisely the right moment. Vanessa takes another breath before issuing commands to all Red Team members.'}
+115	115		301							{2: 'Vanessa', 3: 'Alright, everyone spread out and continue the operation!', 4: '1'}
+116	116		301							{2: 'Vanessa', 3: 'I heard the Blue Team has left plenty of traps for us. Stay alert.', 4: '1'}
+117	117		302							{2: 'Roger that.', 3: '118'}
+118	118		301				DialogDisable			"{2: 'Vanessa', 3: ""We're currently in the ruins of some Copperfield Group high-rise... tch, there's burnt ash everywhere... 【kuroname】, report your progress."", 4: '1'}"
+119	119		302							{2: 'Zone E 2nd to 6th Street: 81% clear.', 3: '120'}
+120	120		302							{2: 'Seven traps neutralized. Steady forward advance.', 3: '121'}
+121	121		301			DialogEnable				"{3: ""After hearing your report, the team communication channel, previously dead silent under Vanessa's command, finally fills with scattered, faint cheers, as if they're relieved to have such a capable teammate.""}"
+122	122		301							"{2: 'Vanessa', 3: ""...We haven't even found where the Blue Team hid their flag, and you're already celebrating this minor success? Looks like you're all perfectly suited for the bottom ranks."", 4: '1'}"
+123	123		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteMainNoise.prefab', 2: '3'}
+124	124		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStrongholdMain/FxUiStrongholdMainFlashing01.prefab', 2: '3'}
+125	125		401							{1: '2', 2: '4921'}
+126	126		204							{1: '1', 2: '4'}
+127	127		301							"{2: 'Vanessa', 3: ""You think everything will be smooth sailing just because 【kuroname】 and I are on your team? The combat exercise isn't just about team performance, the Instructors monitor each of your individual performances... Before you slack off..."", 4: '1'}"
+128	128		401							{1: '2', 2: '4921'}
+129	129		204							{1: '1', 2: '4'}
+130	130		301							"{2: 'Vanessa', 3: ""And 【kuroname】, you too, don't think... can just... act superior... for anyone's..."", 4: '1'}"
+131	131		401							{1: '1', 2: '36'}
+132	132		302							{2: 'Vanessa?', 3: '133', 4: 'Your signal is breaking up.', 5: '133'}
+133	133		301							{3: 'After adjusting the terminal, the voices on all channels remain unclear and distorted.'}
+134	134		302							"{2: 'Is my terminal malfunctioning...?', 3: '135', 4: ""Is there a problem with this area's communications?"", 5: '135'}"
+135	135		202							{1: '1'}
+136	136		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+137	137		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteMainNoise.prefab'}
+138	138		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStrongholdMain/FxUiStrongholdMainFlashing01.prefab'}
+139	139		301							{3: 'A sound seems to come from the distance. You remove your tactical headphones and looks up—'}
+140	140		401							{1: '1', 2: '273'}
+141	141		201							{1: '1', 2: '500013'}
+142	142		301			PanelActor1Shake	DialogDisable			"{3: 'A Corrupted is squeezing through a gap in the fence, struggling to extend its ""hand"" in this direction.'}"
+143	143		302							{2: '!!', 3: '144', 4: 'Why are there Corrupted here?', 5: '144'}
+144	144		401							{1: '2', 2: '1510'}
+145	145		501			PanelActor1Shake			500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 2: '2', 3: '1'}
+146	146		203						250.0	{1: '1', 2: '0.25', 4: '-1500'}
+147	147		202							{1: '1'}
+148	148		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+149	149		301			DialogEnable				"{3: ""Raising the service pistol, even as your brain still tries to process that this is just a ground base used for combat exercises, your muscle memory proves more reliable—instantly firing a bullet that pierces the Corrupted's core.""}"
+150	150		306							{1: '1'}
+151	151		201							{1: '1', 2: '500013', 4: '1500'}
+152	152		201							{1: '2', 2: '500013', 4: '-1500'}
+153	153		201							{1: '3', 2: '500013', 5: '-1500'}
+154	154		203							{1: '1', 2: '0.25', 3: '600'}
+155	155		203						400.0	{1: '2', 2: '0.25', 3: '-600'}
+156	156		203							{1: '3', 2: '0.25'}
+157	157		301							{1: '1', 3: 'In the next moment, more red lights flicker through the gaps in the fence. One, two, three...'}
+158	158		302							"{2: ""Something's wrong!"", 3: '159', 4: '...This is definitely not part of the exercise!', 5: '159'}"
+159	159		301				DialogDisable			"{3: 'You maintain a standard shooting stance, locking eyes with the ""gaze"" peering through the gaps.'}"
+160	160		202							{1: '1', 2: '2', 3: '3'}
+161	161		306							
+162	162		401							{1: '2', 2: '2975'}
+163	163		104							{1: '0|0|-500', 2: '0.4'}
+164	164		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg', 3: '0', 4: '1', 5: '0.4'}
+165	165		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg', 3: '1', 4: '0', 5: '0'}
+166	166		104							{1: '0', 2: '0'}
+167	167		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg'}
+168	168		401							{1: '2', 2: '2975'}
+169	169		104							{1: '0|0|-500', 2: '0.4'}
+170	170		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg', 3: '0', 4: '1', 5: '0.4'}
+171	171		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg', 3: '1', 4: '0', 5: '0'}
+172	172		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg'}
+173	173		301			DialogEnable				{3: 'Your heart pounds uncontrollably. This is your first time on the ground for practical training, and more importantly, your first encounter with real Corrupted.'}
+174	174		301							"{3: 'But neither the images from textbooks nor the virtual reality simulations back in Babylonia can compare to this face-to-face ""welcoming party"" with a group of Corrupted.'}"
+175	175		302							{2: 'Calling in—', 3: '176'}
+176	176		201							{1: '1', 2: '500293', 3: '5'}
+177	177		401							{1: '2', 2: '4921'}
+178	178		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+179	179		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteMainNoise.prefab', 2: '3'}
+180	180		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStrongholdMain/FxUiStrongholdMainFlashing01.prefab', 2: '3'}
+181	181		301							{1: '1', 2: 'Vanessa', 3: '...Problem here...! Corrupted...', 4: '1'}
+182	182		301							{2: 'Vanessa', 3: 'Must evacuate...', 4: '1'}
+183	183		202							{1: '1'}
+184	184		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+185	185		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteMainNoise.prefab'}
+186	186		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStrongholdMain/FxUiStrongholdMainFlashing01.prefab'}
+187	187		401							{1: '2', 2: '4921'}
+188	188		301				DialogDisable			{3: 'The terminal in hand continues to crackle with static, clearly indicating that more people have been affected by this sudden attack.'}
+189	189		306						200.0	{1: '1'}
+190	190		104						200.0	{1: '0|0|-500', 2: '0.6'}
+191	191		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory736.jpg', 3: '0', 4: '1', 5: '0.4'}
+192	192		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory736.jpg', 3: '1', 4: '0', 5: '0'}
+193	193		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory736.jpg'}
+194	194		104						200.0	{1: '0|0|-500', 2: '0.6'}
+195	195		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg', 3: '0', 4: '1', 5: '0.4'}
+196	196		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg', 3: '1', 4: '0', 5: '0'}
+197	197		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+198	198		104						200.0	{1: '0|0|-500', 2: '0.6'}
+199	199		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory940.png', 3: '0', 4: '1', 5: '0.4'}
+200	200		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory940.png', 3: '1', 4: '0', 5: '0'}
+201	201		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory940.png'}
+202	202		306							
+203	203		301			DialogEnable				{3: 'Unable to face the growing number of Corrupted, you quickly decide to retreat, rushing toward the nearest conservation area.'}
+204	204		401							{1: '2', 2: '4387'}
+205	205		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+206	206		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory547.jpg'}
+207	207		301							{3: 'But soon, the wave of people flowing in the opposite direction reveals the harsh truth—even the conservation area has fallen.'}
+208	208		302							{2: 'What happened?!', 3: '209'}
+209	209		301							{3: 'You shout questions at the scattered, panicking crowd, but no one can provide a clear answer—only frantic responses:'}
+210	210		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+211	211		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+212	212		201							{1: '1', 2: '500624'}
+213	213		301			PanelActor1Shake				"{2: '??', 3: ""Massive swarm of Corrupted appeared... In an instant... Couldn't organize evacuation!"", 4: '1'}"
+214	214		201							{1: '1', 2: '500564'}
+215	215		301			PanelActor1Shake	DialogDisable			{2: '???', 3: 'Run! The Corrupted are already catching up!!', 4: '1'}
+216	216		202							{1: '1'}
+217	217		306						500.0	{1: '1'}
+218	218		502						800.0	{1: 'RImgBg1BlowUp'}
+219	219		201						50.0	{1: '1', 2: '500624', 4: '-600', 7: '1'}
+220	220		203						500.0	{1: '1', 2: '0.8', 3: '-600', 5: '-800'}
+221	221		202						100.0	{1: '1'}
+222	222		201						50.0	{1: '2', 2: '500564', 4: '600', 7: '1'}
+223	223		203						500.0	{1: '2', 2: '0.8', 3: '600', 5: '-800'}
+224	224		202						150.0	{1: '2'}
+225	225		201						50.0	{1: '3', 2: '501114', 4: '-300', 7: '1'}
+226	226		203						500.0	{1: '3', 2: '0.8', 3: '-300', 5: '-800'}
+227	227		202						50.0	{1: '3'}
+228	228		201						50.0	{1: '4', 2: '500779', 4: '300', 7: '1'}
+229	229		203						500.0	{1: '4', 2: '0.8', 3: '300', 5: '-800'}
+230	230		202							{1: '4'}
+231	231		306							
+232	232		505							{1: 'RImgBg1BlowUp'}
+233	233		301			DialogEnable				{3: 'The dust-covered crowd jostles you as they flee for their lives, choking clouds of smoke and dust filling the air.'}
+234	234		302							{2: 'Ugh... *Cough*!', 3: '235'}
+235	235		306							{1: '1'}
+236	236		201							{1: '1', 2: '501240'}
+237	237		301							{1: '1', 3: 'But through the mass of fleeing silhouettes and dust clouds, a fiery red figure stands motionless not far away.'}
+238	238		302							{2: '?!'}
+239	239		301							{3: 'The relentlessly pursuing Corrupted are closing in, yet that figure seems frozen in fear, showing no intention of running at all.'}
+240	240		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+241	241		302							{2: '—Hey!', 3: '242', 4: 'Retreat, now!', 5: '242'}
+242	242		202							{1: '1'}
+243	243		401							{1: '2', 2: '4388'}
+244	244		104						400.0	{1: '0|0|-500', 2: '0.4'}
+245	245		301							{3: 'You instinctively spring into action, rushing toward the figure.'}
+246	246		201							{1: '1', 2: '500013', 5: '-1500'}
+247	247		203						400.0	{1: '1', 2: '0.4', 4: '-200'}
+248	248		401							{1: '2', 2: '844090'}
+249	249		301			PanelActor1Shake	DialogDisable			{1: '1', 2: 'Corrupted', 3: 'Aargh—!!', 4: '1'}
+250	250		202						250.0	{1: '1'}
+251	251		104						250.0	{1: '-300|0|-400', 2: '0.25'}
+252	252		302							{2: 'Watch out!!', 3: '253'}
+253	253		201						1000.0	{1: '1', 2: '500013', 4: '-500', 5: '-200'}
+254	254		203						250.0	{1: '1', 2: '0.25', 3: '-100', 4: '-200'}
+255	255		202							{1: '1'}
+256	256		401							{1: '2', 2: '2593'}
+257	257		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '5'}
+258	258		201							{1: '1', 2: '501242'}
+259	259		301			DialogEnable				{1: '1', 2: '??', 3: '...!', 4: '1'}
+260	260		301				DialogDisable			"{3: ""As you lunge toward the red figure—a Corrupted tears through their abdomen. The pain strikes so suddenly that you can't even scream.""}"
+261	261		501						2500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab', 2: '3'}
+262	262		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '5', 5: '1'}
+263	263		202							{1: '1', 6: '1'}
+264	264		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+265	265		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+266	266		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+267	267		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteMainNoise.prefab'}
+268	268		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStrongholdMain/FxUiStrongholdMainFlashing01.prefab'}
+269	269		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+270	270		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+271	271		301			DialogEnable				{3: 'Pain invades your vision like a dense black fog clouding their sight. The screams of refugees around them fade to insignificance.'}
+272	272		301							{3: 'Trembling, the you try to cover the wound on your side, but your hand only passes through slick, warm blood.'}
+273	273		302							{2: 'I...', 3: '274'}
+274	274		401							{1: '1', 2: '36'}
+275	275		301							"{2: '??', 3: ""...You're insane! You idiot!""}"
+276	276		301				AniZhuanchangBegin			{3: 'In the darkness, only that angry shout pierces through your mind—after that, everything fades to nothing.'}
+277	277		504				DialogDisable			{1: '0'}
+278	278		306							
+279	279		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+280	280		501				AniZhuanchangEnd			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+281	281		301			DialogEnable				{3: 'On the first day after surgery, you regains consciousness, your head wrapped in bandages.'}
+282	282		401							{1: '1', 2: '169'}
+283	283		301							"{3: ""Perhaps due to your regular physical training, your initial waking state is better than the doctors predicted. You're already able to keep your eyes open and scan your surroundings, gathering information and getting a rough grasp on the situation at hand.""}"
+284	284		301							{3: 'Complex medical equipment surrounds you, with tubes connected all over your body.'}
+285	285		401							{1: '2', 2: '5536'}
+286	286		301							{3: 'More intriguing, however, is the unexpected sight of a red-haired female Construct peeling an apple beside the hospital bed.'}
+287	287		201							{1: '1', 2: '501239'}
+288	288		301							"{1: '1', 2: '??', 3: ""You're awake. Take a guess at where you're at. Heaven or hell, take your pick."", 4: '1'}"
+289	289		402							{1: '5536'}
+290	290		302							{2: '...', 3: '291', 4: '(Hospital?)', 5: '291'}
+291	291		301							{3: 'The dryness in your mouth is irritating. You instinctively move your cracked lips, trying to form words.'}
+292	292		301							"{2: '??', 3: ""Don't bother talking. It's pointless, they haven't even removed the tubes yet."", 4: '1'}"
+293	293		301							"{2: '??', 3: ""I'm sorry to say this but: this isn't hell. You're, unfortunately, still alive."", 4: '1'}"
+294	294		302							"{2: ""You're..."", 3: '295', 4: 'This is...', 5: '295'}"
+295	295		301							"{2: '??', 3: 'Just call me your ""great savior."" This is a temporary medical station on the ground—I\'m a Construct from Babylonia who happened to pick you up during the chaos. Remember now?', 4: '1'}"
+296	296		301							{3: 'Perhaps noticing the your confused and faintly disapproving look, the female Construct smiles and changes her tone, introducing herself properly.'}
+297	297		204							{1: '1', 2: '1'}
+298	298		301							"{2: 'Hound', 3: 'I\'ll stop messing with you. My codename is ""Hound."" You can call me that.', 4: '1'}"
+299	299		301							{2: 'Hound', 3: 'Want some fruit? We only have apples here.', 4: '1'}
+300	300		401							{1: '2', 2: '5538'}
+301	301		301				DialogDisable			"{3: '""Hound"" offers the fruit but then brings the apple to her own lips, taking an exaggerated bite that crunches into the crisp flesh.'}"
+302	302		302							"{2: ""I... don't... want any..."", 3: '303', 4: 'So tired...', 5: '303'}"
+303	303		302							{2: '...', 3: '304'}
+304	304		501						2500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab', 2: '3'}
+305	305		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+306	306		202							{1: '1', 6: '1'}
+307	307		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+308	308		301			DialogEnable				{3: 'Your return to the embrace of darkness, falling into a deep sleep.'}
+309	309		201							{1: '1', 2: '501242'}
+310	310		301							{1: '1', 2: 'Hound', 3: 'Hmph, how boring.', 4: '1'}
+311	311		301							"{2: 'Hound', 3: ""We'll talk about other things after you've recovered for a few days and moved to a regular ward."", 4: '1'}"
+312	312		301				AniZhuanchangBegin			"{2: 'Hound', 3: ""Don't make me waste the test subject I've handed over. I'd hate for you to lose your life on top of me failing this mission."", 4: '1'}"
+313	313		202							{1: '1'}
+314	314		101				DialogDisable			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+315	315		501				AniZhuanchangEnd			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+316	316		301			DialogEnable				{3: 'On the second day after surgery, you regain consciousness in the intensive care unit.'}
+317	317		401							{1: '2', 2: '5536'}
+318	318		301							{3: 'An unfamiliar Construct stands by the bedside, peeling an apple.'}
+319	319		201							{1: '1', 2: '501239'}
+320	320		301							"{1: '1', 2: 'Hound', 3: ""Your body clock's pretty consistent. You woke up around this time yesterday too."", 4: '1'}"
+321	321		402							{1: '5536'}
+322	322		302							{2: '(Yesterday?)', 3: '323', 4: '(But yesterday, I was definitely still in F.O.S..)', 5: '323'}
+323	323		301							"{3: ""You feel a familiar dryness in their mouth, as if you've been in this state for a long time.""}"
+324	324		302							"{2: ""You're..."", 3: '325', 4: 'This is...', 5: '325'}"
+325	325		204							{1: '1', 2: '10'}
+326	326		301							"{2: 'Hound', 3: ""Huh? You don't remember me? Do you even remember how you got here?"", 4: '1'}"
+327	327		302							"{2: ""I don't remember..."", 3: '328'}"
+328	328		204							{1: '1', 2: '13'}
+329	329		301							"{2: 'Hound', 3: ""...Fantastic. Should I congratulate you on the unfortunate awakening once again, only to discover your head's been damaged?"", 4: '1'}"
+330	330		302							{2: 'I need... to go back... to F.O.S...', 3: '331', 4: 'Where is... the Instructor... and the others...', 5: '331'}
+331	331		204							{1: '1', 2: '4'}
+332	332		301							"{2: 'Hound', 3: ""You won't be going back to the organization anytime soon. If you can understand basic instructions, just listen to me. I'm the Babylonia Construct specifically assigned to you... Ugh, I can't believe I have to repeat this nonsense again."", 4: '1'}"
+333	333		301							"{2: 'Hound', 3: ""The doctor says you have an intracranial hematoma. It's not serious and can heal on its own, so they didn't perform surgery. But it might be temporarily compressing some nerves. In simple terms, your brain's going to be malfunctioning for a while."", 4: '1'}"
+334	334		204							{1: '1', 2: '10'}
+335	335		301							"{2: 'Hound', 3: ""From the looks of it, you've lost your memory... What a cliché turn of events."", 4: '1'}"
+336	336		302							{2: 'Amnesia...?', 3: '337', 4: 'What have I forgotten...', 5: '337'}
+337	337		204							{1: '1'}
+338	338		301							"{2: 'Hound', 3: ""I don't know how far back your memories are intact. Let's run a test now, especially since you're in better shape today than yesterday."", 4: '1'}"
+339	339		401							{1: '2', 2: '5538'}
+340	340		301							{3: 'The female Construct takes a bite of the apple.'}
+341	341		204							{1: '1', 2: '1'}
+342	342		301				DialogDisable			"{2: 'Hound', 3: ""What's your name? Where are you from? What's the last thing you remember? Think carefully about each one."", 4: '1'}"
+343	343		302							"{2: ""I'm..."", 3: '344'}"
+344	344		302							{2: '【kuroname】.', 3: '350', 4: 'Jane.', 5: '345', 6: 'John.', 7: '345'}
+345	345		204							{1: '1', 2: '8'}
+346	346		301			DialogEnable				{2: 'Hound', 3: '...', 4: '1'}
+347	347		204							{1: '1'}
+348	348		301				DialogDisable			"{2: 'Hound', 3: ""There's no need to be suspicious of me, and even less need to mess with me just because you're feeling a bit better. Unless you want me to send you back to the operating room."", 4: '1'}"
+349	349		302							{2: '...Fine, my name is 【kuroname】.', 3: '350'}
+350	350		302							"{2: ""I'm a student at F.O.S. Military College... on the verge of graduating."", 3: '351'}"
+351	351		302							{2: 'My last memory is...', 3: '352'}
+352	352		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+353	353		306							{1: '1'}
+354	354		401							{1: '2', 2: '4388'}
+355	355		202							{1: '1', 6: '1'}
+356	356		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg'}
+357	357		504							{1: '0.7'}
+358	358		201							{1: '1', 2: '501249'}
+359	359		301			DialogEnable				{1: '1', 3: 'I think I was participating in some kind of ground combat simulation... Who were my teammates? I should be able to remember.'}
+360	360		202							{1: '1'}
+361	361		301							{3: 'Neurons search for pathways through your skull, but the moment they touch your memories, intense pain erupts.'}
+362	362		401							{1: '2', 2: '4280'}
+363	363		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+364	364		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+365	365		302							{2: 'Argh! It hurts...', 3: '366'}
+366	366		301							{3: 'Your memories are like a hazy cloud of mist—right before your eyes, yet impossible to grasp no matter how you try.'}
+367	367		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+368	368		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+369	369		306							
+370	370		202							{1: '1', 6: '1'}
+371	371		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+372	372		504							{1: '0'}
+373	373		201							{1: '1', 2: '501239'}
+374	374		301							"{1: '1', 3: 'Pain envelops your every attempt to reach for that ""mist."" Within mere seconds, cold sweat breaks out across your forehead.'}"
+375	375		302							"{2: ""I can't remember..."", 3: '376', 4: 'How could I not remember?', 5: '376'}"
+376	376		204							{1: '1'}
+377	377		301							"{2: 'Hound', 3: ""Seems like you only remember things from before landing. Alright, that's enough, forcing yourself won't do anything."", 4: '1'}"
+378	378		204							{1: '1', 2: '10'}
+379	379		301							"{2: 'Hound', 3: 'Do I still need to update you on the situation? It doesn\'t seem very worthwhile though. According to the doctor, this memory loss you\'re experiencing will likely recur. I could tell you everything now, but tomorrow you might just ""reboot"" again.', 4: '1'}"
+380	380		302							"{2: 'Tell me about it.', 3: '381', 4: ""It's absolutely necessary."", 5: '381'}"
+381	381		301				DialogDisable			{3: 'You raise your arm with the needle in it, pointing to your belongings in the corner that still bear the unified F.O.S. insignia.'}
+382	382		302							{2: 'My terminal should be in that bag.', 3: '383', 4: 'My terminal should be in the outermost compartment.', 5: '383'}
+383	383		302							{2: 'Please bring it to me, thank you.', 3: '384'}
+384	384		301			DialogEnable				{3: 'The red-haired Construct curiously rummages through the backpack and quickly finds a terminal with a spider-web of cracks across its screen. She hands the battle-damaged device over.'}
+385	385		204							{1: '1', 2: '1'}
+386	386		301				DialogDisable			"{2: 'Hound', 3: ""Surprisingly, it still turns on. The quality of your terminals isn't half bad."", 4: '1'}"
+387	387		302							"{2: 'If my memory keeps ""rebooting,""', 3: '388'}"
+388	388		302							"{2: ""then I'll record the important information."", 3: '389'}"
+389	389		302							"{2: ""What's your name?"", 3: '390'}"
+390	390		302							{2: 'Why are you following me, and why are you helping me?', 3: '392'}
+391	391		204							{1: '1', 2: '13'}
+392	392		301			DialogEnable				{3: 'Watching you struggling to hold up the terminal with shaking hands while asking questions with such a serious expression, the female Construct suddenly bursts into laughter, waving the fruit knife in her hand up and down as peals of laughter escape her throat.'}
+393	393		204							{1: '1', 2: '13'}
+394	394		301							{2: 'Hound', 3: 'Are all you F.O.S. folks this funny? Why so serious? Think you can earn extra credit or something? Hahaha!', 4: '1'}
+395	395		302							{2: '...', 3: '396'}
+396	396		301							{3: 'She laughs so hard that tears form in her eyes, completely forgetting the slightly yellowed, oxidized apple in her hand.'}
+397	397		301							"{2: 'Hound', 3: ""Hahaha... okay, okay, I'll tell you... I've changed my mind!"", 4: '1'}"
+398	398		204							{1: '1', 2: '1'}
+399	399		301							"{2: 'Vera', 3: 'My real name is ""Vera,"" and you can call me that in private.', 4: '1'}"
+400	400		302							"{2: '—""Vera.""', 3: '401'}"
+401	401		301							"{2: 'Vera', 3: ""Don't record that in your terminal."", 4: '1'}"
+402	402		301							"{2: 'Vera', 3: 'You can record my codename in your terminal, ""Hound."" Call me that when other people are around.', 4: '1'}"
+403	403		301							"{2: 'Vera', 3: 'I\'m a Construct from Babylonia, though I usually work on the ground. Recently, the higher-ups ordered F.O.S.\'s little masters and mistresses to come down for field training, so I got assigned to ""babysit"" them.', 4: '1'}"
+404	404		302							"{2: 'We\'re not ""masters and mistresses,"" nor are we ""children""...', 3: '405'}"
+405	405		301				DialogDisable			"{2: 'Vera', 3: 'Think whatever you want. Fragile flowers raised in the greenhouse of Babylonia are terrible at self-assessment—if you want me to drop this ""prejudice,"" why not show some real substance and prove yourself?', 4: '1'}"
+406	406		302							{2: '...', 3: '407'}
+407	407		302							{2: 'Sounds nice.', 3: '408'}
+408	408		204							{1: '1', 2: '13'}
+409	409		301			DialogEnable				"{2: 'Vera', 3: ""Ahahaha... clamming up like that... this one's a complete fool... hahaha..."", 4: '1'}"
+410	410		302							{2: '...Is there any other information? About you.', 3: '411', 4: '...And stop laughing at me.', 5: '413'}
+411	411		204							{1: '1', 2: '1'}
+412	412	414	301							"{2: 'Vera', 3: ""That's all I'll tell you for now. The rest depends on your condition tomorrow. That's all for now, you should get some rest."", 4: '1'}"
+413	413		301							"{2: 'Vera', 3: ""Fine, fine, fine, I won't laugh... hehe... That's all I'll tell you for now. The rest depends on your condition tomorrow. That's all for now, you should get some rest."", 4: '1'}"
+414	414		202							{1: '1'}
+415	415		401							{1: '2', 2: '5538'}
+416	416		301				DialogDisable			{3: 'Vera takes a bite of her apple, then rests her other hand on your forehead, gently stroking it as if soothing a small animal.'}
+417	417		302							{2: 'Well...', 3: '418', 4: 'But you...', 5: '418'}
+418	418		302							"{2: ""(Is a Construct's hair really all synthetic fiber?)"", 3: '419'}"
+419	419		301			DialogEnable				{3: 'You part your lips slightly, as if wanting to say something—but for some reason, you swallow your words.'}
+420	420		201							{1: '1', 2: '501239', 3: '1'}
+421	421		301							"{1: '1', 2: 'Vera', 3: 'That\'s right, just like that. No matter how many questions my ""little hatchling"" has, put them aside for now.', 4: '1'}"
+422	422		301							"{2: 'Vera', 3: ""Return to your dreams, that's the best place for someone who's injured. Get well soon."", 4: '1'}"
+423	423		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '2'}
+424	424		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+425	425		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+426	426		301							"{3: ""Your eyelids grow heavy. Perhaps it's the medicine, or perhaps it's the miraculous way the human body repairs itself... Either way, drowsiness overtakes you once again.""}"
+427	427		301							"{2: 'Vera', 3: ""If you recover well, you'll be moved to the regular ward tomorrow..."", 4: '1'}"
+428	428		301				DialogDisable			"{2: 'Vera', 3: ""What a pain... having to play nice with those Babylonia people... I should've just taken the test materials back to headquarters... Whatever... My M.I.N.D. must have short-circuited... to decide to use that thing... to save your life..."", 4: '1'}"
+429	429		302							{2: 'W... h... at...', 3: '430'}
+430	430		501						2500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab', 2: '3'}
+431	431		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+432	432		202							{1: '1', 6: '1'}
+433	433		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+434	434		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+435	435		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+436	436		301			DialogEnable	AniZhuanchangBegin			"{3: ""Vera's voice gradually fades away, sinking into the dark waters of unconsciousness.""}"
+437	437		101				DialogDisable			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory466.jpg'}
+438	438		501				AniZhuanchangEnd			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+439	439		401							{1: '1', 2: '36'}
+440	440		301			DialogEnable	DialogDisable			"{3: ""The third day after surgery—or at least, that's what you learn from the notes on your terminal. It's already been three days since the operation.""}"
+441	441		401							{1: '1', 2: '5061'}
+442	442		306							{1: '1'}
+443	443		104						700.0	{1: '-100|0|-100', 2: '0.7'}
+444	444		104						700.0	{1: '100|0|-100', 2: '0.7'}
+445	445		104						500.0	{2: '0.5'}
+446	446		301			DialogEnable				"{3: ""You glance around once more and conclude you've been successfully transferred to a regular ward. This is tremendously good news, as it means neither trauma, Punishing, nor any potential infections were able to claim your life.""}"
+447	447		306							
+448	448		301							{3: 'When Vera walks into the hospital room carrying a bag of apples, this is the scene that greets her:'}
+449	449		301							"{3: ""The unfortunate soul from F.O.S. apparently couldn't contact anyone. They're holding up their terminal, using its spider-webbed screen as a mirror while gently tugging at the bandages and gauze on their face.""}"
+450	450		301							{3: 'Seeing the Construct enter, you freeze, then set down your terminal.'}
+451	451		302							{2: 'Who are you?', 3: '452'}
+452	452		201							{1: '1', 2: '501239', 3: '10'}
+453	453		301							"{1: '1', 2: 'Vera', 3: 'Great, looks like they\'ve ""rebooted"" again.', 4: '1'}"
+454	454		302							"{2: ""You're Vera."", 3: '461', 4: ""You're the Construct assigned by the Academy to accompany me."", 5: '461', 6: '<i><color=#34aff8ff>You are, Vera.</color></i>', 7: '455'}"
+455	455		204							{1: '1', 2: '7'}
+456	456		301							{3: 'Vera pauses abruptly, as if hearing a distant call.'}
+457	457		204							{1: '1', 2: '10'}
+458	458		301							{2: 'Vera', 3: '...', 4: '1'}
+459	459		204							{1: '1', 2: '8'}
+460	460		301							{3: 'But the brief moment of discomfort quickly subsides into the depths of her M.I.N.D. She brushes it off.'}
+461	461		204							{1: '1'}
+462	462		301							"{2: 'Vera', 3: ""Not bad, you've got all this recorded in your terminal? Let me see."", 4: '1'}"
+463	463		302							{2: '(Warily puts away the terminal.)', 3: '464', 4: 'Not right now.', 5: '464'}
+464	464		204							{1: '1', 2: '4'}
+465	465		301							"{2: 'Vera', 3: ""Is that another school regulation? I'm your assigned Construct, but I can't look at your terminal?"", 4: '1'}"
+466	466		204							{1: '1', 2: '4'}
+467	467		301							"{2: 'Vera', 3: 'Let me say it again. The higher-ups want to further develop ""Commandant-Construct collaborative tactics."" That\'s why they assigned Constructs to assist you reserve Commandants for this graduation assessment. That\'s how I got transferred here, which means I have the right to access...', 4: '1'}"
+468	468		302							{2: '...', 3: '469'}
+469	469		204							{1: '1', 2: '5'}
+470	470		301							{2: 'Vera', 3: 'Tsk, I can tell from your face. You think I have no right to access it? Is this how Babylonia usually treats Constructs?', 4: '1'}
+471	471		302							"{2: 'Sorry, according to Section 19 of the ""Field Combat Exercise Manual""...', 3: '472', 4: ""I really can't..."", 5: '472'}"
+472	472		204							{1: '1', 2: '13'}
+473	473		301							"{2: 'Vera', 3: ""What if I wait until you're asleep and force my way into it?"", 4: '1'}"
+474	474		302							"{2: ""It doesn't use a password. Force-hacking it won't work."", 3: '475'}"
+475	475		204							{1: '1', 2: '10'}
+476	476		301							"{2: 'Vera', 3: '...Well, isn\'t that just perfect. ""The Commandant\'s absolute authority,"" right?', 4: '1'}"
+477	477		202							{1: '1'}
+478	478		401							{1: '2', 2: '5536'}
+479	479		301							{3: 'Vera pulls up a chair beside the bed and sits down. In her hands, an apple appears, waiting to be peeled.'}
+480	480		201							{1: '1', 2: '501239', 3: '10'}
+481	481		301							"{1: '1', 2: 'Vera', 3: ""I can't be bothered with this nonsense anymore. Whatever. I promised you yesterday that I'd explain more about the current situation."", 4: '1'}"
+482	482		302							{2: 'Go ahead.', 3: '484'}
+483	483		204							{1: '1'}
+484	484		301							"{2: 'Vera', 3: ""Let's start with how you got this wound."", 4: '1'}"
+485	485		402							{1: '5536'}
+486	486		301							"{3: ""Vera's gaze briefly lingers on your side.""}"
+487	487		204							{1: '1'}
+488	488		301							{2: 'Vera', 3: 'At that time, we were both in the middle of a combat assessment, about to rendezvous with the main force.', 4: '1'}
+489	489		204							{1: '1', 2: '8'}
+490	490		301							"{2: 'Vera', 3: ""But then an unexpected incident burst out of nowhere. Abnormally active Corrupted not only broke through the base defenses specifically designed for combat training, but even the two nearby conservation areas couldn't escape unscathed."", 4: '1'}"
+491	491		204							{1: '1'}
+492	492		301							"{2: 'Vera', 3: ""We got separated from F.O.S.'s team. You were severely injured while helping evacuate the conservation area, so I had no choice but to keep you in the danger zone temporarily to save your life first."", 4: '1'}"
+493	493		301							{2: 'Vera', 3: 'I had no choice but to use the test materials.', 4: '1'}
+494	494		302							{2: 'Test materials?', 3: '495'}
+495	495		301							"{2: 'Vera', 3: ""Yes, it's a new type of repair material we were supposed to collect for our combat mission. It's still in the testing phase. The expected effect is that it can better contain the Punishing Virus while maintaining good compatibility with the human body."", 4: '1'}"
+496	496		301							"{2: 'Vera', 3: ""It might become a better material for protective suits and surgical repairs in the future—I'm deliberately explaining this in simple terms. From this, you can imagine just how valuable it actually is."", 4: '1'}"
+497	497		302							{2: 'Such valuable material...', 3: '498', 4: '(Would these assets really be used so casually in combat simulations?)', 5: '500'}
+498	498		204							{1: '1', 2: '8'}
+499	499	502	301							"{2: 'Vera', 3: ""Yes, they're very valuable. Originally, we only needed to deliver the material to the next base to complete the assessment mission. But now, as you can see..."", 4: '1'}"
+500	500		204							{1: '1', 2: '8'}
+501	501		301							{2: 'Vera', 3: 'Originally, we only needed to deliver the material to the next base to complete the assessment mission. But now, as you can see...', 4: '1'}
+502	502		202							{1: '1'}
+503	503		301							"{3: ""Vera lifts up the clothing around the Commandant's waist, exposing the bandaged wound to the air.""}"
+504	504		201							{1: '1', 2: '501239', 3: '4'}
+505	505		301							"{1: '1', 2: 'Vera', 3: 'This is the gash where a Corrupted pierced through you. I used the ""oh-so-precious"" test material to fill your wound.', 4: '1'}"
+506	506		302							{2: '...', 3: '507'}
+507	507		204							{1: '1', 2: '1'}
+508	508		301							"{2: 'Vera', 3: ""Don't blame yourself or panic. Once your condition is stable, we'll turn you in along with the material. When we get back to Babylonia's territory, professionals will remove it for you, and your abdominal wound will receive better treatment."", 4: '1'}"
+509	509		302							{2: 'Have you reported this matter to your superiors over the past few days?', 3: '510'}
+510	510		204							{1: '1', 2: '10'}
+511	511		301							{3: 'Vera shakes her head.'}
+512	512		204							{1: '1'}
+513	513		301							"{2: 'Vera', 3: ""Didn't you just try to contact the outside world yourself? I saw you when I walked in. Were you able to reach anyone?"", 4: '1'}"
+514	514		302							"{2: ""You're right. I couldn't reach anyone."", 3: '515'}"
+515	515		301							"{2: 'Vera', 3: ""That's right. All communication signals in this area have been affected. You can't get through, and neither can I."", 4: '1'}"
+516	516		204							{1: '1', 2: '1'}
+517	517		301							"{2: 'Vera', 3: ""But there's some good news, I've gathered some important intel. These are the coordinates to a temporary Babylonia connection point. We just need to get there."", 4: '1'}"
+518	518		301							{3: 'As she speaks, Vera points to another marked location.'}
+519	519		302							"{2: ""I don't recall Babylonia ever setting up a connection point there."", 3: '520', 4: '(Frown)', 5: '520'}"
+520	520		204							{1: '1'}
+521	521		301							"{2: 'Vera', 3: ""Tem-po-rary. That's what I said. There's been an unusual amount of Corrupted activity in this area, so all arrangements have changed."", 4: '1'}"
+522	522		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.4'}
+523	523		201							{1: '2', 2: '501239', 3: '13', 7: '1'}
+524	524		504							{1: '0.3', 2: '2'}
+525	525		203							{1: '2', 2: '0.4', 3: '-250', 5: '-150'}
+526	526		301				DialogDisable			"{2: 'Vera', 3: ""(I'm lying. It's actually a Kurono Stronghold. You need to come back with me and hand over those materials, or I won't be able to complete my mission.)"", 4: '1'}"
+527	527		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '0.3'}
+528	528		203						300.0	{1: '2', 2: '0.25'}
+529	529		202							{1: '2', 6: '1'}
+530	530		504							{1: '0', 2: '2'}
+531	531		302							{2: '...', 3: '532'}
+532	532		301			DialogEnable				{2: 'Vera', 3: 'So, after three days, do you understand our current situation now?', 4: '1'}
+533	533		302							"{2: 'I think so. Thank you, Vera.', 3: '534', 4: ""I've noted everything down."", 5: '534'}"
+534	534		301							"{2: 'Vera', 3: ""Now we just need your body to recover quickly. Once you're mobile, we'll immediately leave this temporary medical station. The Corrupted are moving strangely this time... I suspect it might spread further. If it reaches here..."", 4: '1'}"
+535	535		301							"{3: ""Vera doesn't finish her sentence, but it's clear that time is a luxury for both of them.""}"
+536	536		302							{2: 'Roger that.', 3: '537'}
+537	537		301							"{2: 'Vera', 3: ""Good, we've covered everything important... Would you like some apples?"", 4: '1'}"
+538	538		202							{1: '1', 2: '2'}
+539	539		301							{3: 'Vera cuts a small piece of apple and hands it over.'}
+540	540		201							{1: '1', 2: '501239', 3: '1'}
+541	541		301							"{1: '1', 2: 'Vera', 3: ""You haven't eaten anything these past two days, but whenever I had an apple, you kept eyeing it hungrily. I doubt you'd bother recording something like that."", 4: '1'}"
+542	542		301							"{2: 'Vera', 3: ""You still can't eat today, but... we can do it like this."", 4: '1'}"
+543	543		301							{3: 'She gently squeezes the fruit, and a drop of pearlescent juice falls onto your cracked lips, a drop of blessed rain on parched earth.'}
+544	544		301							{3: 'Watching you lick your lips, she smiles in response.'}
+545	545		301							{2: 'Vera', 3: 'Look at you with your face all wrapped in bandages... 【kuroname】, how about I give you a codename too?', 4: '1'}
+546	546		204							{1: '1', 2: '13'}
+547	547		301				DialogDisable			{2: 'Vera', 3: 'Little Mummy? Or Big Mummy? Take your pick.', 4: '1'}
+548	548		302							{2: 'Both. Both are good.', 3: '549', 4: 'Are you kidding me?', 5: '551'}
+549	549		301			DialogEnable				"{2: 'Vera', 3: ""You like them? Too bad, I won't use them then."", 4: '1'}"
+550	550	556	301							"{2: 'Vera', 3: 'I\'ll just call you ""little Commandant"" and be done with it.', 4: '1'}"
+551	551		302							{2: 'Just call me Commandant.', 3: '552'}
+552	552		301			DialogEnable				"{2: 'Vera', 3: ""It doesn't really suit your current state anyway. Don't forget your head's still a bit messed up."", 4: '1'}"
+553	553		301							"{2: 'Vera', 3: 'I\'m going with ""little Commandant"" then. It\'s settled.', 4: '1'}"
+554	554		202							{1: '1'}
+555	555		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '2'}
+556	556		202							{1: '1'}
+557	557		401							{1: '1', 2: '36'}
+558	558		301				AniZhuanchangBegin			{3: '...'}
+559	559		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '0'}
+560	560		401							{1: '1', 2: '6186'}
+561	561		301			AniZhuanchangEnd				"{3: 'The ""little Commandant"" diligently notes down every conversation with Vera.'}"
+562	562		301							"{3: 'And so, three more days pass with memory ""resets"" each morning, until today.'}"
+563	563		301							"{3: ""You recover quickly. Today, you're already able to get out of bed while holding onto the handrail, improving at a pace that surprises even Vera.""}"
+564	564		301							"{3: ""More importantly, today your memory doesn't reset to before your arrival on the surface.""}"
+565	565		201							{1: '1', 2: '501239', 3: '6'}
+566	566		401							{1: '2', 2: '5536'}
+567	567		301				DialogDisable			{1: '1', 2: 'Vera', 3: 'You actually remember me today?', 4: '1'}
+568	568		302							{2: 'I even remember you staying by my side last night.', 3: '569'}
+569	569		302							{2: 'I woke up in the middle of the night and saw you resting in the chair.', 3: '570'}
+570	570		302							{2: 'It seemed like you were... having a nightmare?', 3: '571'}
+571	571		302							"{2: 'Can it really be called that? A ""nightmare.""', 3: '572'}"
+572	572		402							{1: '5536'}
+573	573		301			DialogEnable				{3: 'You look at Vera, and she can almost see her own furrowed brow from last night reflected in your eyes.'}
+574	574		204							{1: '1'}
+575	575		301							{2: 'Vera', 3: 'Yes, Constructs have nightmares too.', 4: '1'}
+576	576		302							"{2: ""In that regard... maybe we're not so different after all?"", 3: '577'}"
+577	577		301							"{2: 'Vera', 3: ""There was never much difference to begin with. We're all just living the same life. The fact you'd even ask such a question shows you haven't spent enough time around Constructs."", 4: '1'}"
+578	578		302							"{2: 'School is nothing like the battlefield.', 3: '579', 4: ""I'll learn more through our time together going forward."", 5: '579'}"
+579	579		204							{1: '1', 2: '1'}
+580	580		301							"{2: 'Vera', 3: ""...Enough of that. Here, if you beg me for it, maybe I'll let you have some fruit."", 4: '1'}"
+581	581		301							{3: 'Vera peels another apple and offers you a small piece. It seems you can finally eat a little something now.'}
+582	582		301							"{2: 'Vera', 3: ""Your memory retention has improved. Seems the intracranial hematoma is getting better. That's good."", 4: '1'}"
+583	583		302							{2: 'Thank you for taking care of me, Vera.', 3: '584'}
+584	584		204							{1: '1', 2: '4'}
+585	585		301							"{2: 'Vera', 3: ""You absolutely should thank me, but rather than that, why don't you try to recall what happened before while you're in good condition?"", 4: '1'}"
+586	586		301				DialogDisable			"{3: ""A hint of scrutiny creeps into Vera's gaze.""}"
+587	587		302							"{2: ""My memory hasn't reset today, but I still only remember what happened before the landing."", 3: '588'}"
+588	588		302							"{2: ""I don't remember anything about the Corrupted activity or getting separated from the organization that you mentioned..."", 3: '589'}"
+589	589		204							{1: '1', 2: '1'}
+590	590		301			DialogEnable				"{2: 'Vera', 3: ""That's fine then. Same as before."", 4: '1'}"
+591	591		301							{3: 'Vera seems to let out a slight sigh of relief.'}
+592	592		301							"{2: 'Vera', 3: ""Why don't you tell me about yourself instead? I don't really know much about you, little Commandant."", 4: '1'}"
+593	593		302							{2: 'About me?', 3: '594', 4: 'Like what?', 5: '594'}
+594	594		301							{2: 'Vera', 3: 'Just talk about... your life in F.O.S., what kind of mentors and friends you had, things like that.', 4: '1'}
+595	595		302							"{2: ""That's quite a long story..."", 3: '596'}"
+596	596		301							"{3: ""Even though your memory hasn't retained much, this past week of your interactions has been meticulously recorded on your terminal.""}"
+597	597		301							"{3: ""Holding this terminal is like holding all the care and attentive treatment you've received from Constructs these past few days.""}"
+598	598		301							{3: 'After some thought, you select a specific point and begin talking.'}
+599	599		302							"{2: ""Let's start with when I entered F.O.S. College."", 3: '600'}"
+600	600		301				AniZhuanchangBegin			{3: '...'}
+601	601		202							{1: '1', 6: '1'}
+602	602		301			AniZhuanchangEnd				{3: 'The sun gradually climbs higher outside the hospital room window, their shadows shifting with it.'}
+603	603		301							{3: 'You have not only lost your memories since arriving on the surface, but even your past memories are fragmented and intermittent.'}
+604	604		301							{3: 'Nevertheless, after several exchanges, Vera has pretty much figured out what life and studies were like at F.O.S., even learning about that silver-haired girl who consistently placed second in the rankings.'}
+605	605		302							"{2: ""...That's about everything."", 3: '606'}"
+606	606		201							{1: '1', 2: '501239', 3: '1'}
+607	607		301							"{1: '1', 2: 'Vera', 3: 'You people are so lucky. While the surface is in turmoil, Babylonia at least provides you with a peaceful place to grow up in. ""Babylonia""... calling you greenhouse flowers wouldn\'t be an exaggeration.', 4: '1'}"
+608	608		302							"{2: ""I'll prove that I'm more than that."", 3: '609', 4: ""You'll change your mind about that."", 5: '609'}"
+609	609		204							{1: '1', 2: '13'}
+610	610		301							"{2: 'Vera', 3: 'So should I just play along and say ""I\'m looking forward to that day""?', 4: '1'}"
+611	611		204							{1: '1', 2: '13'}
+612	612		301							"{2: 'Vera', 3: ""Don't take other people's opinions too seriously. This world can't eliminate prejudice... unless Punishing wipes out all of humanity, haha."", 4: '1'}"
+613	613		302							{2: 'What about you, Vera?', 3: '614'}
+614	614		204							{1: '1', 2: '10'}
+615	615		301				DialogDisable			{2: 'Vera', 3: 'Me?', 4: '1'}
+616	616		302							{2: 'Why did you become a Construct?', 3: '617'}
+617	617		302							{2: 'And what was your past like?', 3: '618'}
+618	618		204							{1: '1', 2: '10'}
+619	619		301			DialogEnable				{2: 'Vera', 3: '...', 4: '1'}
+620	620		301							{3: 'Vera suddenly freezes mid-bite.'}
+621	621		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+622	622		306							{1: '1'}
+623	623		401							{1: '2', 2: '4388'}
+624	624		202							{1: '1', 6: '1'}
+625	625		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1264.jpg'}
+626	626		504							{1: '0.7'}
+627	627		301							{3: 'For a moment, she seems transported back in time, to a time before she became a Construct... even before she graduated from the military academy.'}
+628	628		201							{1: '1', 2: '501236'}
+629	629		301							"{1: '1', 3: 'She can almost see that arrogant, neurotic old man sitting on the hospital bed, responding to her life story with a sneer—""You\'re making that up.""'}"
+630	630		301							"{3: ""The person she was back then isn't so different from the Commandant now.""}"
+631	631		306							
+632	632		202						250.0	{1: '1'}
+633	633		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5501_2.jpg', 3: '0', 4: '1', 5: '0.25'}
+634	634		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5501_2.jpg', 3: '1', 4: '0', 5: '0'}
+635	635		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5501_2.jpg'}
+636	636		301							{3: 'They share the same sharpness and passion, but hers was buried beneath the coldness that the Punishing brought after 2160.'}
+637	637		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+638	638		202							{1: '1', 2: '2', 6: '1'}
+639	639		504							{1: '0'}
+640	640		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory466.jpg'}
+641	641		201							{1: '1', 2: '501239'}
+642	642		301							"{1: '1', 3: 'She blinks, and the old, ugly figure flashes away. Sitting across from her now is only a ""new generation"" human still studying at the military academy, looking at her with eyes full of curiosity.'}"
+643	643		301							"{3: 'She finds herself at a loss for words, finding it difficult even to ""fabricate"" a response.'}"
+644	644		204							{1: '1', 2: '10'}
+645	645		301							{2: 'Vera', 3: 'Eh...', 4: '1'}
+646	646		204							{1: '1', 2: '13'}
+647	647		301							"{3: ""Vera's lips curl into her trademark smirk.""}"
+648	648		301							"{2: 'Vera', 3: ""So that's it... That's why I'm interested in you."", 4: '1'}"
+649	649		302							{2: 'What?', 3: '650'}
+650	650		301		1		AniZhuanchangBegin			"{2: 'Vera', 3: ""It's nothing. You wanted to hear it, so I'll tell you. Consider it an exchange of intelligence, since you've already told me quite a bit about yourself."", 4: '1'}"

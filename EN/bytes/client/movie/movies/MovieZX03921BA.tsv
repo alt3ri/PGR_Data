@@ -1,0 +1,182 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '280'}
+3	3		107							{1: 'T-minus 33.5 hours'}
+4	4		401						2000.0	{1: '2', 2: '9335029'}
+5	5		108				AniZhuanchangBegin			
+6	6		401							{1: '1', 2: '280'}
+7	7		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory787.jpg'}
+8	8		502							{1: 'DialogEnable'}
+9	9		201							{1: '1', 2: '500740', 3: '14', 7: '1'}
+10	10		301			PanelActor1Shake				{1: '1', 2: 'Lamia', 3: '...Huff... Ah...', 4: '1'}
+11	11		301							"{3: ""Emerging from the looping illusion, Lamia can't stop herself from shaking.""}"
+12	12		204							{1: '1', 2: '3'}
+13	13		301							"{3: 'She glances at the human commandant—covered from head to toe in wounds—in front of her and ""Noan"" who stands so far away she can barely see him.'}"
+14	14		301							{3: 'Looking at the sludge around her that used to be Hetero-Creatures, she quickly realizes what happened.'}
+15	15		204							{1: '1', 2: '19'}
+16	16		301							{2: 'Lamia', 3: 'Was that... a M.I.N.D. fusion?', 4: '1'}
+17	17		301							{3: 'She realizes that the egg in her arms is the root of all evil, but she clutches tightly to it all the same, like an orphan holding a weapon on the battlefield.'}
+18	18		302							"{2: ""It's all good now, Lamia."", 3: '19'}"
+19	19		301							{2: 'Lamia', 3: 'How long have I been here?', 4: '1'}
+20	20		302							{2: 'Not counting the time it took me to come here, about 1 hour.', 3: '21'}
+21	21		301							{2: 'Lamia', 3: 'Why did you come here?', 4: '1'}
+22	22		302							{2: 'To give you this ID card.', 3: '23'}
+23	23		204							{1: '1', 2: '3'}
+24	24		301							{3: 'Lamia falls silent when you pass her the ID card with XX003 written on it.'}
+25	25		301							"{2: 'Lamia', 3: ""...Let's just hope we've got enough money putting these two together."", 4: '1'}"
+26	26		302							{2: 'Uh? What do you mean?', 3: '27'}
+27	27		301							{3: 'Lamia quickly brings you up to speed about the illusions she saw during her M.I.N.D. fusion.'}
+28	28		301				DialogDisable			"{2: 'Lamia', 3: ""These Hetero-Creatures are so organized they've got to be under someone's command... It could be Lithos, no? Did I flatten these guys?"", 4: '1'}"
+29	29		302							{2: 'You did.', 3: '30'}
+30	30		302							{2: 'Your M.I.N.D. was already in chaos when I got here.', 3: '31', 4: 'You were going crazy attacking those Hetero-Creatures when I got here.', 5: '31'}
+31	31		302							{2: 'And you only calmed down after reconnection.', 3: '32'}
+32	32		302							"{2: ""You've been sitting here zoning out for quite some time since."", 3: '33'}"
+33	33		301			DialogEnable				{2: 'Lamia', 3: '...I was zoning out?', 4: '1'}
+34	34		301							{2: 'Lamia', 3: '...', 4: '1'}
+35	35		301							"{2: 'Lamia', 3: ""So why... didn't you just take the egg? Humans might not be able to touch it, but you have someone with you who can."", 4: '1'}"
+36	36		302							{2: 'Because I trust you.', 3: '37'}
+37	37		204							{1: '1'}
+38	38		301				DialogDisable			{2: 'Lamia', 3: 'Wh-what?', 4: '1'}
+39	39		302							{2: 'I said I trust you, Lamia.', 3: '40'}
+40	40		302							"{2: ""I trust that you don't hate this world as much as you make yourself seem..."", 3: '41'}"
+41	41		302							{2: '...And that you care more about the humans who brought you into this world. Am I right?', 3: '42'}
+42	42		204							{1: '1', 2: '14'}
+43	43		301			DialogEnable				{2: 'Lamia', 3: '...', 4: '1'}
+44	44		301							{3: 'Lamia lowers her head, deep in memory because of these words.'}
+45	45		204							{1: '1', 2: '19'}
+46	46		301				DialogDisable			"{2: 'Lamia', 3: ""...Do you... really mean it? That this isn't just some temporary partnership sort of thing... but that you actually trust me?"", 4: '1'}"
+47	47		302							{2: 'I did, or else I would have done things differently.', 3: '48'}
+48	48		302							{2: 'Why do you think I connected with you knowing that my Mind Beacon would get contaminated?', 3: '49'}
+49	49		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+50	50		202							{1: '1', 6: '1'}
+51	51		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory789.jpg'}
+52	52		504							{1: '0.7'}
+53	53		301			DialogEnable				{3: 'This is an utter lie.'}
+54	54		201							{1: '1', 2: '500734'}
+55	55		301				DialogDisable			"{1: '1', 3: 'You proposed taking the egg when ""Noan"" told you that Lithos was coming this way.'}"
+56	56		302							"{2: ""She's calming down with the connection. This is our only chance."", 3: '57'}"
+57	57		302							{2: 'The egg is very important to Lamia and she is not going to hand it over without putting up a fight.', 3: '58'}
+58	58		302							{2: 'There is no way I can keep her tamed with a M.I.N.D. connection once she gets out of the deep sea with it.', 3: '59'}
+59	59		302							{2: 'What would she do with the egg then?', 3: '60', 4: 'If this ends up in the hands of another Ascendant who hates humans even more...', 5: '60'}
+60	60		302							"{2: ""...We can't afford to bear another catastrophe."", 3: '61'}"
+61	61		302							{2: 'We have to make this opportunity count and take control into our own hands.', 3: '62'}
+62	62		302							"{2: ""You can touch the egg. It's going to make the M.I.N.D. connection between me and the Transcendant easier, too."", 3: '63'}"
+63	63		301			DialogEnable				{2: 'Noan?', 3: 'Lithos can still mess with my frame, though.', 4: '1'}
+64	64		301							{2: 'Noan?', 3: 'He might not be able to make me do what he wants me to do, but giving me the egg is like handing it right to him because he can control the Punishing around me.', 4: '1'}
+65	65		302							"{2: ""...C'mon. I need a workaround."", 3: '66'}"
+66	66		301							"{2: 'Noan?', 3: ""I don't have one."", 4: '1'}"
+67	67		301							"{2: 'Noan?', 3: ""Lithos is going to merge with Cthylla's consciousness even if he dies in her womb. Being an Ascendant just makes it that much easier for him."", 4: '1'}"
+68	68		302							{2: '...', 3: '69'}
+69	69		301							{2: 'Noan?', 3: 'Ever thought about charming the enemy into working for us? I can hold the egg for as long as you want me to if we get Lithos out of the way.', 4: '1'}
+70	70		302							"{2: 'When I barely fit the dictionary definition of ""presentable""?', 3: '71'}"
+71	71		301							"{2: 'Noan?', 3: ""C'mon, you look presentable with a capital P."", 4: '1'}"
+72	72		504							{1: '0'}
+73	73		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+74	74		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory787.jpg'}
+75	75		201							{1: '1', 2: '500740'}
+76	76		301							{1: '1', 3: 'Here goes nothing.'}
+77	77		302							{2: '(Keep up your smile)', 3: '78', 4: '(Squeeze out an affectionate look)', 5: '78'}
+78	78		301							{2: 'Lamia', 3: '...', 4: '1'}
+79	79		301							"{3: ""Lamia is oblivious to your desperate will to survive. To her, you're a battered and bruised human with a wry smile who's putting a world of trust in her.""}"
+80	80		301							{3: 'In your eyes—having clouded from all the damage you have taken and the corruption—she sees sadness, separation, and trust, all of which she has seen.'}
+81	81		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+82	82		202							{1: '1', 6: '1'}
+83	83		504							{1: '0.7'}
+84	84		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2101_1.jpg'}
+85	85		301							{3: '...like what she saw on that rainy day.'}
+86	86		504							{1: '0'}
+87	87		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+88	88		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory787.jpg'}
+89	89		201							{1: '1', 2: '500740', 7: '1'}
+90	90		301							{1: '1', 2: 'Lamia', 3: '...You...', 4: '1'}
+91	91		301							{3: 'The fragile walls of her swaying heart buckle under the weight of her memories, and yet Lamia is holding on to the last bit of her rationality.'}
+92	92		301							"{3: ""Lamia can't measure how much truth there is to your words, but she now doesn't see a point for her to argue with you about anything besides the egg.""}"
+93	93		301							{3: 'Besides, she somewhat enjoys this hard-earned respect.'}
+94	94		301							{2: 'Lamia', 3: 'Do you think humans and Ascendants can coexist peacefully?', 4: '1'}
+95	95		301				DialogDisable			{3: 'Seizing a rare opportunity for dialogue, Lamia asks you—someone whom she believes thinks about world peace and all—raises a question that crosses her mind every now and then.'}
+96	96		302							"{2: ""...That's for sure, although..."", 3: '97'}"
+97	97		302							"{2: ""...There is no telling whether they'll be of equal standing when that day comes."", 3: '98'}"
+98	98		204							{1: '1', 2: '3'}
+99	99		301			DialogEnable				"{2: 'Lamia', 3: ""...Well, I've observed a bit of a change in Luna's attitude these days..."", 4: '1'}"
+100	100		301							"{3: ""With the clock ticking down on you, Lamia drifts away from the here and now—into that journey dreamy journey of hers that she hasn't yet had enough of.""}"
+101	101		302							{2: 'Lamia...', 3: '102'}
+102	102		204							{1: '1'}
+103	103		301							{2: 'Lamia', 3: '...Ah.', 4: '1'}
+104	104		301				DialogDisable			{3: 'She looks this way with a dreamy look in her eyes.'}
+105	105		302							{2: 'Listen... Lithos is coming this way.', 3: '106'}
+106	106		302							{2: 'He and Cthylla will find you as long as you have the egg with you.', 3: '107'}
+107	107		302							"{2: ""We'll only get to use those two ID cards if we defeat Lithos..."", 3: '108'}"
+108	108		302							"{2: ""There is no future if we don't get rid of Lithos now!"", 3: '109'}"
+109	109		204							{1: '1', 2: '19'}
+110	110		301			DialogEnable				{2: 'Lamia', 3: 'Get rid of Lithos...', 4: '1'}
+111	111		401							{1: '1', 2: '36'}
+112	112		202							{1: '1', 6: '1'}
+113	113		201							{1: '2', 2: '500526'}
+114	114		301							{1: '1', 2: 'Lithos', 3: 'Get rid of me?', 4: '2'}
+115	115		401							{1: '1', 2: '284'}
+116	116		302							{2: '...Lithos.'}
+117	117		301							{3: 'It took him a little longer than you thought, but here he is.'}
+118	118		302							"{2: ""Thought you wouldn't come."", 3: '119'}"
+119	119		202							{1: '2'}
+120	120		201							{1: '1', 2: '500513', 3: '2'}
+121	121		301							{1: '1', 2: 'Lithos', 3: 'Dealing with those rooms that you people messed up and left to rot definitely took me some time.', 4: '1'}
+122	122		301							"{2: 'Lithos', 3: ""And it doesn't help that you aren't the easiest person to find in this world."", 4: '1'}"
+123	123		201							{1: '2', 2: '500737', 4: '300', 7: '1'}
+124	124		205							{1: '2', 3: '0', 4: '0', 5: '0'}
+125	125		301							"{2: 'Lithos', 3: ""You've been staying holed up knowing that the last shot takes 48 hours. Either you know what's going on, or..."", 4: '1'}"
+126	126		204							{1: '1', 2: '1'}
+127	127		301							{3: 'Lithos scoffs at the young man behind you.'}
+128	128		301							{2: 'Lithos', 3: '...someone has been feeding you information and guiding you?', 4: '1'}
+129	129		201							{1: '1', 2: '500734'}
+130	130		301							{1: '1', 2: 'Noan?', 3: 'Why bother asking when you already know the answer?', 4: '1'}
+131	131		201							{1: '1', 2: '500513', 3: '2'}
+132	132		301							"{1: '1', 2: 'Lithos', 3: ""And the whole story about how you can't see—that's a lie, too?"", 4: '1'}"
+133	133		201							{1: '1', 2: '500734'}
+134	134		301							"{1: '1', 2: 'Noan?', 3: 'You think everyone and everything in this world needs to meet all your needs and wants, Lithos—and so do your ""fathers"" whose guts you hate.', 4: '1'}"
+135	135		201							{1: '1', 2: '500513'}
+136	136		301							{1: '1', 2: 'Lithos', 3: '...', 4: '1'}
+137	137		203							{1: '1', 2: '0.25', 3: '-300'}
+138	138		205							{1: '2', 3: '0', 4: '1', 5: '0.5'}
+139	139		301							{3: 'The purple-haired Ascendant says no more, his smile fading away as he turns around coldly. Behind him, another shadow emerges in the darkness.'}
+140	140		302							{2: '...Cthylla.', 3: '141'}
+141	141		204							{1: '1', 2: '2'}
+142	142		301							{2: 'Lithos', 3: 'Lamia, give Cinderelik back to Mother now.', 4: '1'}
+143	143		202							{1: '1', 2: '2', 6: '1'}
+144	144		201							{1: '1', 2: '500740', 3: '19'}
+145	145		301							"{1: '1', 2: 'Lamia', 3: ""Is that really Cinderelik's mother?"", 4: '1'}"
+146	146		401							{1: '2', 2: '2921'}
+147	147		301							"{3: ""The egg in Lamia's arms twitches like a fish out of water.""}"
+148	148		202							{1: '1', 6: '1'}
+149	149		201							{1: '1', 2: '500513', 3: '2', 4: '-300'}
+150	150		201							{1: '2', 2: '500737', 4: '300'}
+151	151		301							{1: '1', 2: 'Lithos', 3: '...', 4: '1'}
+152	152		301							{2: 'Lithos', 3: 'Tsk, Lamia, those are some very hurtful words that just came out of your mouth.', 4: '1'}
+153	153		202							{1: '1', 2: '2', 6: '1'}
+154	154		201							{1: '1', 2: '500740', 3: '19'}
+155	155		301							"{1: '1', 2: 'Lamia', 3: ""But you've been feeding her nothing but lies. She's not going to find herself even if she's reborn—she's just going to become one of your tools again."", 4: '1'}"
+156	156		202							{1: '1', 6: '1'}
+157	157		201							{1: '1', 2: '500513', 3: '2', 4: '-300'}
+158	158		201							{1: '2', 2: '500737', 4: '300'}
+159	159		301							"{1: '1', 2: 'Lithos', 3: ""Says someone who's been using the kid as a tool this entire time?"", 4: '1'}"
+160	160		202							{1: '1', 2: '2', 6: '1'}
+161	161		201							{1: '1', 2: '500740', 3: '19'}
+162	162		301							{1: '1', 2: 'Lamia', 3: '...', 4: '1'}
+163	163		302							{2: 'Do it, Lamia', 3: '164'}
+164	164		401							{1: '2', 2: '9351042'}
+165	165		301							{3: 'The mermaid silently raises her weapon.'}
+166	166		202							{1: '1', 6: '1'}
+167	167		201							{1: '1', 2: '500513', 3: '2', 4: '-300'}
+168	168		201							{1: '2', 2: '500737', 4: '300'}
+169	169		301							{1: '1', 3: 'Saying nothing, Lithos walks up this way, all the while keeping Cthylla behind himself.'}
+170	170		301							"{2: 'Lithos', 3: ""Let's get down to dealing with the traitor first."", 4: '1'}"
+171	171		302							"{2: 'Noan, watch out!', 3: '172', 4: ""We can't lose anyone here. Lamia, we need your help!"", 5: '172'}"
+172	172		202							{1: '1', 2: '2', 6: '1'}
+173	173		201							{1: '1', 2: '500740'}
+174	174		301							"{1: '1', 2: 'Lamia', 3: 'Lithos! ""She"" is here. There is no way you can bypass ""her"" enhanced permissions to control the Punishing!', 4: '1'}"
+175	175		301							"{3: 'During that fragmented, hallucinatory journey she had, Lamia caught glimpses of the truth within the ""egg.""'}"
+176	176		202							{1: '1', 6: '1'}
+177	177		201							{1: '1', 2: '500513', 3: '2', 4: '-300'}
+178	178		201							{1: '2', 2: '500737', 4: '300'}
+179	179		301							{1: '1', 2: 'Lithos', 3: '...', 4: '1'}
+180	180		301							{2: 'Lithos', 3: 'I can do this all day, Lamia.', 4: '1'}
+181	181		301		1		AniZhuanchangBegin			"{2: 'Lithos', 3: ""And the rest of you... I'm sure Cthylla will have no trouble dealing with."", 4: '1'}"

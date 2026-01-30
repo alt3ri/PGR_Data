@@ -1,0 +1,25 @@
+Id	GroupId	Type	ShowBullet	Desc	BtnExStr	BtnStr	BtnTag
+10101	1			Perhaps there is nothing in the end, but does that mean it is pointless?			[10102]
+10102	1			Even if you win, this may not change anything. Is this really what you want to do?		['Decline', 'Accept']	[10201, 10301]
+10201	1			If you decide to stick to your choice...		['Select quit', 'Continue fighting']	[10202, 10301]
+10202	1	1					
+10301	1	2					
+20101	2			It may not be possible... to fight against fate in the end.			[20102]
+20102	2		1	Even if unwilling, even if angry, perhaps this will result in nothing.			[20103]
+20103	2			Is this really worth your persistence?		['Decline', 'Accept']	[20201, 20301]
+20201	2			If that is what you want, so be it.		['Accept', 'Decline']	[20202, 20301]
+20202	2	1					
+20301	2			If you decide to stick to your choice...		['Decline', 'Accept']	[20201, 20302]
+20302	2	2				['Decline', 'Accept']	[20201]
+30101	3			To make the impossible possible by relying on others...			[30102]
+30102	3			If it was the commandant... Perhaps it's not that hard to understand.			[30103]
+30103	3			Somewhere on the network, perhaps there are other commandants caught in a struggle.			[30104]
+30104	3			"Similar to just now, you can make the same ""sacrifice"" to help them."		['Decline', 'Accept']	[30201, 30301]
+30201	3			Well, cowardice and weakness may happen if that's what you wish.		['Leave', 'Make a Sacrifice']	[30202, 30301]
+30202	3	1					
+30301	3			"Making such a ""sacrifice"" means changing something forever. Do you accept it?"		['Decline', 'Accept']	[30201, 30302]
+30302	3			"And you have no right to decide what kind of people will benefit from this ""sacrifice."" Do you accept it?"		['Decline', 'Accept']	[30201, 30303]
+30303	3			Well, is there anything else you want to say?		['Edit Message']	[30304]
+30304	3	2					
+40101	4			Your sacrifice and will have been recognized.	Press anywhere to leave		[40102]
+40102	4	2					

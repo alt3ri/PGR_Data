@@ -1,0 +1,312 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1401.jpg'}
+2	2		401							{1: '1', 2: '7105'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviejiguang.prefab', 2: '1'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviejiguangred.prefab', 2: '1', 5: '11'}
+5	5		511							{1: '11', 2: '0', 3: '0|-100|0'}
+6	6		502							{1: 'AniZhuanchangEnd'}
+7	7		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiChopping03.prefab', 2: '2'}
+8	8		401							{1: '2', 2: '9342060'}
+9	9		502							{1: 'RImgBg1Shake'}
+10	10		301			DialogEnable				"{3: ""The green aurora surges across the horizon like a tidal wave, suppressing the dark crimson trails below. The movement mirrors the clash on the ground, where Rosetta's blade locks Zack's own advance in place.""}"
+11	11		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviejiguang.prefab'}
+12	12		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviejiguangred.prefab', 5: '11'}
+13	13		201							{1: '1', 2: '501449', 3: '5'}
+14	14		301							{1: '1', 2: 'Rosetta', 3: 'It ends here, Zack!', 4: '1'}
+15	15		202							{1: '1', 6: '1'}
+16	16		201							{1: '1', 2: '501457'}
+17	17		301							{1: '1', 2: 'Zack', 3: 'As the Frostheart Emperor, I will not be defeated!', 4: '1'}
+18	18		202							{1: '1', 6: '1'}
+19	19		201							{1: '1', 2: '501449', 3: '5'}
+20	20		301			DialogShake				{1: '1', 2: 'Rosetta', 3: 'Sophiasburgh fell long ago. What meaning does your empty title hold now?!', 4: '1'}
+21	21		202							{1: '1', 6: '1'}
+22	22		201							{1: '1', 2: '501457'}
+23	23		301			DialogShake				{1: '1', 2: 'Zack', 3: 'Then what, pray tell, are you fighting to restore?!', 4: '1'}
+24	24		202							{1: '1', 6: '1'}
+25	25		401							{1: '2', 2: '819016'}
+26	26		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+27	27		301							{3: 'Zack suddenly sweeps his ice-infused lance in a wide, forcing arc, driving Rosetta back half a step. He then plants his feet and unleashes a roar of pure rage.'}
+28	28		201							{1: '1', 2: '501457'}
+29	29		301							{1: '1', 2: 'Zack', 3: 'Powerful memetics are inherited endlessly, shaping the will of every soul. Look upon this battlefield, Rosetta. It is precisely such memetics that drive your ferocity!', 4: '1'}
+30	30		301				DialogDisable			{2: 'Zack', 3: 'Deny it all you wish, but this is what the world requires!', 4: '1'}
+31	31		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+32	32		203						300.0	{1: '1', 2: '0.2', 5: '-200'}
+33	33		202							{1: '1', 6: '1'}
+34	34		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+35	35		401							{1: '2', 2: '819016'}
+36	36		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '3'}
+37	37		401							{1: '2', 2: '819016'}
+38	38		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '3'}
+39	39		502							{1: 'RImgBg1Shake'}
+40	40		401							{1: '2', 2: '4349'}
+41	41		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '3'}
+42	42		301			DialogEnable				{3: 'Zack charges Rosetta again, lance raised. Its tip slithers like a venomous snake past her light sword, aiming straight for her chest. In the same instant, Rosetta spins her weapon, deflecting the thrust with a sharp, forceful parry.'}
+43	43		201							{1: '1', 2: '501449', 3: '5'}
+44	44		301							"{1: '1', 2: 'Rosetta', 3: ""We don't need some grand, unifying ideal! Fighting for humanity—that single belief is enough to unite us!"", 4: '1'}"
+45	45		202							{1: '1', 6: '1'}
+46	46		201							{1: '1', 2: '501457'}
+47	47		301							"{1: '1', 2: 'Zack', 3: ""A naive ideal, just like your Amalgamation. These are merely flashes of conscience that emerge when death is imminent. Human nature is the most unreliable thing of all; that's exactly why we create rules and various forms of social order."", 4: '1'}"
+48	48		301			DialogShake				{2: 'Zack', 3: 'To restrain that nature!', 4: '1'}
+49	49		202							{1: '1', 6: '1'}
+50	50		201							{1: '1', 2: '501449', 3: '5'}
+51	51		301							"{1: '1', 2: 'Rosetta', 3: ""That's not meant to be restraints! Why must you force everything into rigid frameworks?!"", 4: '1'}"
+52	52		202							{1: '1', 6: '1'}
+53	53		201							{1: '1', 2: '501457'}
+54	54		301							"{1: '1', 2: 'Zack', 3: 'This is wisdom paid for in blood! ""Amalgamation"" is the answer this world needs!', 4: '1'}"
+55	55		202							{1: '1', 6: '1'}
+56	56		201							{1: '1', 2: '501449', 3: '5'}
+57	57		301				DialogDisable			{1: '1', 2: 'Rosetta', 3: 'What answer? What wisdom? Do you know how much suffering your kind has brought to this land?!', 5: '1'}
+58	58		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+59	59		202							{1: '1', 6: '1'}
+60	60		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviejiguang.prefab', 2: '1', 5: '11'}
+61	61		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviejiguangred.prefab', 2: '1', 5: '13'}
+62	62		511							{1: '11', 2: '0', 3: '0|100|0'}
+63	63		511							{1: '13', 2: '0', 3: '0|-100|0'}
+64	64		401							{1: '2', 2: '819016'}
+65	65		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '3'}
+66	66		401							{1: '2', 2: '819016'}
+67	67		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '3'}
+68	68		502							{1: 'RImgBg1Shake'}
+69	69		401							{1: '2', 2: '4349'}
+70	70		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '3'}
+71	71		505							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviejiguang.prefab', 5: '11'}
+72	72		505							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviejiguangred.prefab', 5: '13'}
+73	73		301			DialogEnable				"{3: ""Propelled by her armored skirt, Rosetta rockets upward just as Zack's wings carry him aloft. They meet in a violent aerial duel. Every impact distorts the very air, their clashing energies compressing space and making the auroras ripple like banners in a storm.""}"
+74	74		201							{1: '1', 2: '501457'}
+75	75		301							{1: '1', 2: 'Zack', 3: 'I concede: some lessons are born of desire. But there were also those who gave their passion, their lives, sincerely.', 4: '1'}
+76	76		301							{2: 'Zack', 3: 'For them, for all who acted in service of a prosperous people... their efforts shall not fade into nothingness! I will make the Arctic Route Union the most powerful memetic of all!', 4: '1'}
+77	77		202							{1: '1', 6: '1'}
+78	78		201							{1: '1', 2: '501449', 3: '5'}
+79	79		301							{1: '1', 2: 'Rosetta', 3: 'Everything you speak of is the past!', 4: '1'}
+80	80		202							{1: '1', 6: '1'}
+81	81		201							{1: '1', 2: '501457'}
+82	82		301				DialogDisable			{1: '1', 2: 'Zack', 3: 'It is not over. We—and Sophiasburgh—still remain!', 4: '1'}
+83	83		202							{1: '1'}
+84	84		302							{2: 'Rosetta! Use that power, now!', 3: '85'}
+85	85		201							{1: '1', 2: '501449', 3: '5'}
+86	86		502							{1: 'RImgBg1Shake'}
+87	87		301			DialogEnable	DialogDisable			{1: '1', 2: 'Rosetta', 3: 'Answer my call, Malkuth!', 4: '1'}
+88	88		401							{1: '2', 2: '1509'}
+89	89		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenBlueEx.prefab', 2: '2'}
+90	90		501						1600.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab', 2: '2'}
+91	91		401							{1: '2', 2: '4676'}
+92	92		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+93	93		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '0', 4: '1', 5: '0'}
+94	94		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab'}
+95	95		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenBlueEx.prefab'}
+96	96		202						50.0	{1: '1', 6: '1'}
+97	97		201						300.0	{1: '2', 2: '501451', 3: '8', 4: '288', 7: '1'}
+98	98		205						1000.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '1', 4: '0', 5: '2'}
+99	99		204						1700.0	{1: '2'}
+100	100		204							{1: '2', 2: '5'}
+101	101		203							{1: '2', 2: '0.25', 3: '288', 5: '-250'}
+102	102		202							{1: '2'}
+103	103		401							{1: '2', 2: '819016'}
+104	104		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+105	105		501						800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '2'}
+106	106		401							{1: '2', 2: '4172'}
+107	107		201							{1: '1', 2: '501457', 5: '-150', 6: '-300'}
+108	108		203							{1: '1', 2: '0.25', 4: '-150'}
+109	109		502						1200.0	{1: 'RImgBg1Shake'}
+110	110		401							{1: '2', 2: '2938'}
+111	111		201						1000.0	{1: '15', 2: '501458', 3: '4', 5: '-150'}
+112	112		301			DialogEnable	DialogDisable			"{3: ""Noticing Zack's unsteady movements, you bark an immediate command. Rosetta shifts into her centaur form mid-air, her twin cannons flaring into wings of light that drive Zack into the ground. His mask cracks with a sharp snap, scattering fragments across the snow.""}"
+113	113		202							{1: '1', 6: '1'}
+114	114		401							{1: '2', 2: '1543'}
+115	115		203						700.0	{1: '15', 2: '0.5', 3: '-30', 4: '-70'}
+116	116		401							{1: '2', 2: '1543'}
+117	117		203						1000.0	{1: '15', 2: '0.5', 3: '0', 4: '0'}
+118	118		502							{1: 'PanelActor15Shake'}
+119	119		301			DialogEnable				{2: 'Zack', 3: 'Cough—', 4: '15'}
+120	120		306							{1: '1'}
+121	121		301							{3: 'Zack staggers upright, leaning heavily on his blade. The last of his mask shatters away, and for the first time in this state, he faces Rosetta fully exposed. Without the mask, the exhaustion and fanaticism in his eyes are laid completely bare.'}
+122	122		202							{1: '15', 6: '1'}
+123	123		201							{1: '1', 2: '501451', 3: '4', 4: '300'}
+124	124		301							"{1: '1', 3: ""Meanwhile, the energy reserves in Rosetta's frame bleed toward empty. This centaur transformation will be her last.""}"
+125	125		306							
+126	126		301							{2: 'Rosetta', 3: 'Past glories, your sacred mission, the righteous cause behind your war... none of that matters to me. From the start, I never cared about the Arctic Route Union itself—only the people living within it.', 4: '1'}
+127	127		202							{1: '1'}
+128	128		306							{1: '1'}
+129	129		401							{1: '2', 2: '2927'}
+130	130		401							{1: '2', 2: '5387'}
+131	131		301				DialogDisable			"{3: ""Rosetta withdraws her weapon's energy beams, gathering herself for a final strike. In that moment, the distant bombardment intensifies; the deep rumble of artillery, soldiers' cries, screams of agony, and whale songs merge into a single, unbroken wail on the wind.""}"
+132	132		306							
+133	133		402							{1: '5387'}
+134	134		402							{1: '2927'}
+135	135		201						1500.0	{1: '1', 2: '501458'}
+136	136		204						800.0	{1: '1', 2: '8'}
+137	137		204							{1: '1', 2: '4'}
+138	138		401							{1: '2', 2: '1509'}
+139	139		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineBaozhaNew.prefab', 2: '1'}
+140	140		301			DialogEnable				"{3: ""Zack jerks his head up, a flicker of hesitation crossing his eyes before he quashes it. Then, matching Rosetta's stance, he begins to muster his own remaining energy for a decisive blow.""}"
+141	141		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineBaozhaNew.prefab'}
+142	142		202							{1: '1', 6: '1'}
+143	143		201							{1: '1', 2: '501451', 3: '4', 4: '300'}
+144	144		301							"{1: '1', 2: 'Rosetta', 3: 'If your memetic, if the ""Arctic Route Union"" only brings this kind of suffering... then it has lost all meaning to me.', 4: '1'}"
+145	145		301							{2: 'Rosetta', 3: 'I will show Commandant a new Sophiasburgh. One where people no longer live in fear of the past. That is why I will now do exactly what you are doing.', 4: '1'}
+146	146		202							{1: '1'}
+147	147		306							{1: '1'}
+148	148		401							{1: '2', 2: '9380001'}
+149	149		301							{3: 'Their charge completes. The cores within Rosetta and Zack glow with an identical, blinding intensity. Weapons are gripped, bodies are lowered. In a mirrored stance, they brace for the end.'}
+150	150		306							
+151	151		402							{1: '9380001'}
+152	152		201							{1: '1', 2: '501451', 3: '5', 4: '300'}
+153	153		301							"{1: '1', 2: 'Rosetta', 3: 'I will destroy the ""Arctic Route Union"" right here! Destroy all of you, memetics that bring nothing but pain!', 4: '1'}"
+154	154		202							{1: '1', 6: '1'}
+155	155		201							{1: '1', 2: '501458', 3: '5'}
+156	156		301			DialogShake				{1: '1', 2: 'Zack', 3: 'Rosetta!', 4: '1'}
+157	157		202							{1: '1', 6: '1'}
+158	158		201							{1: '1', 2: '501451', 3: '5', 4: '300'}
+159	159		301			DialogShake	DialogDisable			{1: '1', 2: 'Rosetta', 3: 'Zack!', 4: '1'}
+160	160		202							{1: '1', 6: '1'}
+161	161		401							{1: '2', 2: '819016'}
+162	162		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+163	163		502							{1: 'RImgBg1Shake'}
+164	164		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab', 2: '2', 5: '11'}
+165	165		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab', 2: '2', 5: '13'}
+166	166		511							{1: '11', 2: '0', 3: '-500|0|0'}
+167	167		511							{1: '13', 2: '0', 3: '500|0|0'}
+168	168		401							{1: '2', 2: '9389038'}
+169	169		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+170	170		502							{1: 'RImgBg1Shake'}
+171	171		201							{1: '1', 2: '501451', 3: '5', 4: '1450', 7: '1'}
+172	172		201							{1: '2', 2: '501458', 4: '-1380', 7: '1'}
+173	173		203							{1: '1', 2: '0.1', 3: '300'}
+174	174		203						100.0	{1: '2', 2: '0.1', 3: '-180'}
+175	175		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+176	176		502							{1: 'RImgBg1Shake'}
+177	177		401						500.0	{1: '2', 2: '9342060'}
+178	178		203							{1: '1', 2: '0.2', 3: '1250'}
+179	179		203							{1: '2', 2: '0.2', 3: '-1180'}
+180	180		202						500.0	{1: '1', 2: '2'}
+181	181		301			DialogEnable	DialogDisable			"{3: ""Zack roars, charging forward just as flames erupt from Rosetta's metal hooves. Their collision echoes across the ice with a deafening metallic crash, fracturing the ground into a web of fissures. The resulting shockwave blasts nearby snowdrifts into the air, making even the distant auroras tremble.""}"
+182	182		502							{1: 'RImgBg1Shake'}
+183	183		401							{1: '2', 2: '9389038'}
+184	184		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+185	185		205						500.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '0', 4: '1', 5: '0'}
+186	186		205						2500.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '1', 4: '0', 5: '2.2'}
+187	187		301			DialogEnable				{3: '...'}
+188	188		301				AniZhuanchangBegin			{3: 'This final, all-out strike crowns the victor.'}
+189	189		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab', 5: '11'}
+190	190		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab', 5: '13'}
+191	191		401						2000.0	{1: '1', 2: '36'}
+192	192		401							{1: '1', 2: '7103'}
+193	193		201							{1: '1', 2: '501458', 4: '-400'}
+194	194		201							{1: '2', 2: '501451', 4: '700'}
+195	195		301			AniZhuanchangEnd				{1: '1', 2: 'Zack', 3: '...', 4: '1'}
+196	196		301							{2: 'Rosetta', 3: '...', 4: '2'}
+197	197		301							{2: 'Zack', 3: 'Damn it.', 4: '1'}
+198	198		202							{1: '1', 2: '2', 6: '1'}
+199	199		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+200	200		301							{3: 'Rosetta stands victorious. Zack is frozen in place, his armor smoldering, joints sparking from overload. His body is a landscape of scars and fresh damage.'}
+201	201		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+202	202		201							{1: '1', 2: '501458'}
+203	203		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 2: '2', 3: '1', 5: '99'}
+204	204		511							{1: '99', 2: '0', 3: '0|-500|0'}
+205	205		301							{1: '1', 2: 'Zack', 3: 'Even if you reject me, the world will still fracture. Dissonant memetics will keep emerging... and humanity will fall to corruption.', 4: '1'}
+206	206		204							{1: '1', 2: '8'}
+207	207		301							"{3: ""Zack's arms fall limply to his sides, his voice drained of all strength, leaving nothing but desolation.""}"
+208	208		204							{1: '1'}
+209	209		301							{2: 'Zack', 3: 'When that time comes, will you truly be able to suppress those memetics... as you have today?', 4: '1'}
+210	210		306							
+211	211		302							{2: 'Rosetta is not alone in this world.', 3: '212'}
+212	212		301							{2: 'Zack', 3: '...Hmph.', 4: '1'}
+213	213		301							"{2: 'Zack', 3: 'If I had to say why... it\'s all because of you, 【kuroname】. ""Not alone in this world""... Haha.', 4: '1'}"
+214	214		202							{1: '1'}
+215	215		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1', 5: '99'}
+216	216		301							{3: 'Zack appears unsatisfied, his brow furrowed in a silent protest. But the tension melts away as quickly as it came, and his voice softens to a whisper, quiet as falling snow.'}
+217	217		201							{1: '1', 2: '501458'}
+218	218		301							{1: '1', 2: 'Zack', 3: '...Rosetta, I have a request.', 4: '1'}
+219	219		202							{1: '1', 6: '1'}
+220	220		201							{1: '1', 2: '501451', 4: '300'}
+221	221		301							{1: '1', 2: 'Rosetta', 3: 'Speak.', 4: '1'}
+222	222		202							{1: '1', 6: '1'}
+223	223		201							{1: '1', 2: '501458'}
+224	224		301							"{1: '1', 2: 'Zack', 3: ""I ask this only as a patriot, Rosetta. Please... let this snow-white land become Earth's brightest beacon, visible even from the depths of space."", 4: '1'}"
+225	225		202							{1: '1'}
+226	226		501							{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieBgSnow.prefab', 2: '2'}
+227	227		401							{1: '2', 2: '1504'}
+228	228		301							{3: 'Snow and wind scour the battlefield as Rosetta adjusts her stance. Fragments of ice cling to her hooves.'}
+229	229		402							{1: '1504'}
+230	230		505							{2: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieBgSnow.prefab'}
+231	231		201							{1: '1', 2: '501451', 4: '300'}
+232	232		301							{1: '1', 2: 'Rosetta', 3: 'I refuse.', 4: '1'}
+233	233		204							{1: '1', 2: '8'}
+234	234		301							"{2: 'Rosetta', 3: ""If we make it too conspicuous... I cannot guarantee others won't target it later."", 4: '1'}"
+235	235		202							{1: '1'}
+236	236		301							{3: 'Zack is left speechless. His mouth opens, closes, and settles into a weak, strained smile before he turns toward the palace. Under the shimmering aurora, his silhouette stands alone—a rigid, solitary figure clinging to his dignity.'}
+237	237		302							{2: 'Where are you going?', 3: '238'}
+238	238		201							{1: '1', 2: '501458'}
+239	239		301							{1: '1', 2: 'Zack', 3: 'To end this war. You... go and declare your victory.', 4: '1'}
+240	240		202							{1: '1', 6: '1'}
+241	241		201							{1: '1', 2: '501451', 4: '300'}
+242	242		301							"{1: '1', 2: 'Rosetta', 3: ""...Let's go, Commandant."", 4: '1'}"
+243	243		302							{2: '...Mm.', 3: '245', 4: 'Is it wise to let him leave?', 5: '244'}
+244	244		301							{2: 'Rosetta', 3: 'He is the Frostheart Emperor, after all... I believe he can handle what comes next.', 4: '1'}
+245	245		202							{1: '1'}
+246	246		501							{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieBgSnow.prefab', 2: '2'}
+247	247		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviejiguang.prefab', 2: '1'}
+248	248		301				AniZhuanchangBegin			"{3: ""Emerald auroras ripple across the icy plains. Wind drives snow and fine ice crystals beneath collars and cuffs. Though unanswered questions linger, Zack's words hold true: the moment has come to declare victory.""}"
+249	249		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMoviejiguang.prefab'}
+250	250		505							{2: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieBgSnow.prefab'}
+251	251		401						2000.0	{1: '1', 2: '36'}
+252	252		401							{1: '1', 2: '5046'}
+253	253		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1407.jpg'}
+254	254		301			AniZhuanchangEnd				{3: 'Zack returns to the palace, intent on halting the production of Corrupted, ending his amalgamation, and drawing a final line under the war.'}
+255	255		301							{3: 'But as he enters the throne room, he notices Duryodhana waiting beside the throne, a faint aura of Punishing swirling around her form.'}
+256	256		201							{1: '1', 2: '501445', 3: '4'}
+257	257		301							{1: '1', 2: 'Duryodhana', 3: 'Your method of control was more entertaining.', 4: '1'}
+258	258		202							{1: '1'}
+259	259		301							"{3: ""Duryodhana's voice carries amusement, but her eyes are cold as ice.""}"
+260	260		301							"{3: ""She was the first to sense a Sefirah's existence, the one who shattered the glacier and found the awakened Zack. Though she intended to simply turn him into a Corrupted and take him away, Zack made her a counteroffer:""}"
+261	261		301							{3: 'His help in waging war on humanity in exchange for her power and forces, with himself as payment once it was over.'}
+262	262		301							"{3: ""While the terms were hardly favorable, waging war against humanity suited Duryodhana's purposes. Now that the fighting has ended, she has come to collect—a perfectly reasonable claim.""}"
+263	263		201							{1: '1', 2: '501458'}
+264	264		301							"{1: '1', 2: 'Zack', 3: ""...I'm sorry."", 4: '1'}"
+265	265		301							{2: 'Zack', 3: 'I have nothing to offer the Punishing Virus.', 4: '1'}
+266	266		202							{1: '1', 6: '1'}
+267	267		201							{1: '1', 2: '501445'}
+268	268		301							{1: '1', 2: 'Duryodhana', 3: 'Expected.', 4: '1'}
+269	269		401							{1: '2', 2: '4895'}
+270	270		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryRedSmokeNew.prefab', 2: '2', 3: '1'}
+271	271		301							{3: 'Duryodhana shrugs. Then, the Punishing energy surges around her as she gathers her strength.'}
+272	272		301			DialogShake				"{2: 'Duryodhana', 3: ""I've been betrayed before, and I don't believe you'd admit defeat without a fight!"", 4: '1'}"
+273	273		203							{1: '1', 2: '0.25', 3: '400'}
+274	274		401							{1: '1', 2: '36'}
+275	275		201							{1: '2', 2: '500633', 3: '1', 4: '-400'}
+276	276		301							{1: '1', 2: 'Rumyantsev', 3: 'Stand down, Ascendant.', 4: '2'}
+277	277		204							{1: '1', 2: '5'}
+278	278		301			PanelActor1Shake				{2: 'Duryodhana', 3: '!', 4: '1'}
+279	279		202							{1: '1', 2: '2'}
+280	280		401							{1: '1', 2: '50'}
+281	281		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+282	282		306							{1: '1'}
+283	283		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryRedSmokeNew.prefab', 4: '1'}
+284	284		301							"{3: ""Just as she's about to move, Rumyantsev emerges from the shadows. His scale-covered hand seizes Duryodhana's wrist in an iron grip. From every corner of the hall, a red light begins to pulse, a dire warning of imminent overload.""}"
+285	285		306							
+286	286		201							{1: '1', 2: '501445', 3: '5'}
+287	287		301			PanelActor1Shake				{1: '1', 2: 'Duryodhana', 3: 'Frostheart Emperor!', 4: '1'}
+288	288		202							{1: '1', 6: '1'}
+289	289		201							{1: '1', 2: '501458', 5: '-20'}
+290	290		301							{1: '1', 2: 'Zack', 3: 'For humanity. For the homeland I love.', 4: '1'}
+291	291		306							{1: '1'}
+292	292		204							{1: '1', 2: '1'}
+293	293		301				DialogDisable			{2: 'Zack', 3: 'Go to hell with me, Ascendant.', 4: '1'}
+294	294		306							
+295	295		202							{1: '1', 6: '1'}
+296	296		401							{1: '2', 2: '558'}
+297	297		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+298	298		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+299	299		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1210.jpg'}
+300	300		401							{1: '1', 2: '36'}
+301	301		502							{1: 'RImgBg1Shake'}
+302	302		401							{1: '2', 2: '2926'}
+303	303		301			DialogEnable				{3: 'BOOM—!'}
+304	304		401							{1: '1', 2: '7103'}
+305	305		301				DialogDisable			{3: 'For an instant, a red inferno swallows the palace, flames and violent energy erupting through its shattered roof before the snowstorms and auroras cloak the devastation.'}
+306	306		401							{1: '2', 2: '558'}
+307	307		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+308	308		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory334.png'}
+309	309		301			DialogEnable	DialogDisable			"{3: ""In that fleeting burst of light, Zack's mind flashes to his first glimpse of Earth: a perfect, serene blue orb, encircled by a tapestry of distant, glittering stars.""}"
+310	310		307							{1: 'The war has finally come to an end.', 3: '70', 4: 'ffffffff'}
+311	311		301		1		AniZhuanchangBegin			{3: 'The war has finally come to an end.'}

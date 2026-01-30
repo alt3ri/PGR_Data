@@ -1,0 +1,119 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		107						3000.0	{1: 'Gray Raven Lounge', 4: 'Yesterday'}
+4	4		108							{1: '1'}
+5	5		201							{1: '1', 2: '500576'}
+6	6		301			DialogEnable				"{1: '1', 2: 'Ayla', 3: ""...And that's how I did it! I've finally secured the rights to host the latest Golden Age Cultural Festival!"", 4: '1'}"
+7	7		301							{3: 'Just as you finish the paperwork, the pink-haired Construct arrives at the door with impeccable timing.'}
+8	8		301							"{2: 'Ayla', 3: ""Now, the question is—who should we appoint as the festival's site planner?"", 4: '1'}"
+9	9		202							{1: '1'}
+10	10		401							{1: '2', 2: '4112'}
+11	11		301							{3: 'After laying out all the festival details, Ayla finally reveals her true intentions, placing a letter of appointment on the desk.'}
+12	12		502						400.0	{1: 'DialogDisable'}
+13	13		302							{2: '...?', 3: '14', 4: 'I knew it...', 5: '14'}
+14	14		201							{1: '1', 2: '500576', 3: '2'}
+15	15		301			DialogEnable				"{1: '1', 2: 'Ayla', 3: ""Hehe, it's gotta be you, of course!"", 4: '1'}"
+16	16		204							{1: '1'}
+17	17		301							"{2: 'Ayla', 3: ""Everyone at the WGAA was super impressed by your work at the Spring Gala, Commandant! They're all hoping you'll take on the planner role this time too."", 4: '1'}"
+18	18		204							{1: '1', 2: '2'}
+19	19		301							"{2: 'Ayla', 3: ""And that includes me, of course! I've always been a huge fan of your event-planning skills, Commandant!"", 4: '1'}"
+20	20		204							{1: '1', 2: '4'}
+21	21		301							"{2: 'Ayla', 3: '""The Golden Age Cultural Festival, personally planned by the legendary multi-tasking Gray Raven Commandant""—now that\'s gonna be trending!', 4: '1'}"
+22	22		202							{1: '1'}
+23	23		502						400.0	{1: 'DialogDisable'}
+24	24		302							"{2: ""So there's even a PR angle to this..."", 3: '25', 4: 'Stop adding weird titles to my name!', 5: '25'}"
+25	25		401							{1: '2', 2: '2764'}
+26	26		301			DialogEnable				{3: 'You take the letter from Ayla. A careful review reveals quite a generous profit-sharing arrangement for the festival.'}
+27	27		401							{1: '2', 2: '4628'}
+28	28		301							{3: 'A quick check of the mission schedule on the terminal confirms that there are no time conflicts with the festival dates.'}
+29	29		502						400.0	{1: 'DialogDisable'}
+30	30		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+31	31		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '3'}
+32	32		401							{1: '2', 2: '895'}
+33	33		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3101_13.jpg'}
+34	34		301			DialogEnable				{3: 'The memories of the Spring Gala are still fresh in your mind—all in all, it was a pleasant and enjoyable experience.'}
+35	35		301				AniZhuanchangBegin			"{3: ""You cannot help but think of your team members' constant reminders to take care of yourself... Perhaps participating in an event like this would be a good break from all the paperwork.""}"
+36	36		502						400.0	{1: 'DialogDisable'}
+37	37		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab'}
+38	38		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+39	39		302							"{2: ""All right, I'll do it."", 3: '44', 4: ""If it helps you, I'm willing to give it a try."", 5: '40'}"
+40	40		201							{1: '1', 2: '500576', 3: '2'}
+41	41		301			DialogEnable				"{1: '1', 2: 'Ayla', 3: ""Woohoo! I'm so touched!"", 4: '1'}"
+42	42		204							{1: '1'}
+43	43	46	301							"{1: '1', 2: 'Ayla', 3: 'All right then! Commandant, you will be the planner for this year\'s ""Golden Age Cultural Festival""!', 4: '1'}"
+44	44		201							{1: '1', 2: '500576'}
+45	45	46	301			DialogEnable				"{1: '1', 2: 'Ayla', 3: 'All right then! Commandant, you will be the planner for this year\'s ""Golden Age Cultural Festival""!', 4: '1'}"
+46	46		401							{1: '2', 2: '4341'}
+47	47		203						250.0	{1: '1', 2: '0.25', 4: '-50', 5: '-150'}
+48	48		401							{1: '2', 2: '2766'}
+49	49		203						250.0	{1: '1', 4: '-50', 5: '-150'}
+50	50		301							{3: 'Ayla excitedly reaches across the desk for a high-five.'}
+51	51		204							{1: '1', 2: '6'}
+52	52		301							"{2: 'Ayla', 3: ""I'll take care of the logistics. Just come to me if you need anything."", 4: '1'}"
+53	53		204							{1: '1'}
+54	54		301							"{2: 'Ayla', 3: ""Speaking of which, I've also got you a special advisor, Commandant. She'll fill you in on the other festival details."", 4: '1'}"
+55	55		204							{1: '1', 2: '1'}
+56	56		301				AniZhuanchangBegin			{2: 'Ayla', 3: 'I believe in you, Commandant!', 4: '1'}
+57	57		401							{1: '1', 2: '36'}
+58	58		202							{1: '1'}
+59	59		502						400.0	{1: 'DialogDisable'}
+60	60		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1055.jpg'}
+61	61		401							{1: '1', 2: '205'}
+62	62		201							{1: '1', 2: '501040', 3: '4'}
+63	63		301			DialogEnable				{1: '1', 2: 'Yata', 3: 'So... you agreed, just like that?', 4: '1'}
+64	64		202							{1: '1'}
+65	65		301							{3: 'Yata leans against the railing, casually opening a can of electrolyte drink with one hand while listening to your story with amusement.'}
+66	66		302							"{2: ""I'm treating it as a vacation."", 3: '67', 4: ""She gave me an offer I couldn't refuse..."", 5: '67'}"
+67	67		301							{3: 'Behind Yata lies the event site, where the WGAA staff and mechanoids are bustling about, loading and unloading event supplies.'}
+68	68		302							"{2: 'So this ""special advisor"" Ayla mentioned...', 3: '69'}"
+69	69		302							{2: 'Is that you, Yata?', 3: '70'}
+70	70		201							{1: '1', 2: '501040'}
+71	71		301							"{1: '1', 2: 'Yata', 3: ""...Surprising, isn't it? Though it's really just a coincidence."", 4: '1'}"
+72	72		301							{3: 'Yata shrugs and lets out a light sigh.'}
+73	73		301							"{2: 'Yata', 3: 'This cultural festival\'s theme is ""Hydrangea"", in an attempt to mimic the cultural festivals held on Hydrangea Island during the Golden Age.', 4: '1'}"
+74	74		301							{2: 'Yata', 3: 'I used to go to Misono High there, so they roped me in as an advisor.', 4: '1'}
+75	75		204							{1: '1', 2: '8'}
+76	76		301							"{2: 'Yata', 3: ""I didn't want to get dragged into this mess at first, but V... Valeria got me an extra week of annual leave, so I took the job."", 4: '1'}"
+77	77		301							{3: 'After finishing her electrolyte drink, Yata crushes the can with her bare hands and tosses it perfectly into a trash bin several meters away.'}
+78	78		301							"{2: 'Yata', 3: ""I always see you on the frontlines, so I've been quite curious about what the Gray Raven Commandant is like off-duty."", 4: '1'}"
+79	79		302							"{2: 'Not much different, really.', 3: '80', 4: ""There's quite a contrast. You'd be surprised."", 5: '80'}"
+80	80		301							{2: 'Yata', 3: 'Heh, still better than Valeria, at least.', 4: '1'}
+81	81		302							{2: 'Your new frame has changed quite a bit too.', 3: '82'}
+82	82		204							{1: '1'}
+83	83		301							{2: 'Yata', 3: '...Oh? Like what?', 4: '1'}
+84	84		302							{2: 'You look cooler now.', 3: '85', 4: 'You seem more approachable now.', 5: '85'}
+85	85		204							{1: '1', 2: '7'}
+86	86		301							{2: 'Yata', 3: '...', 4: '1'}
+87	87		204							{1: '1', 2: '6'}
+88	88		301							"{2: 'Yata', 3: ""Ahem, let's get back to the topic."", 4: '1'}"
+89	89		302							{2: 'Tell me about the cultural festival at your school then.', 3: '90'}
+90	90		204							{1: '1', 2: '1'}
+91	91		301							{2: 'Yata', 3: 'That was many years ago... I need some time to think.', 4: '1'}
+92	92		301							{2: 'Yata', 3: 'If I had to sum it up in one phrase, it would be... youthful and free-spirited?', 4: '1'}
+93	93		302							{2: 'Oh?', 3: '94'}
+94	94		204							{1: '1'}
+95	95		301							"{2: 'Yata', 3: ""During the cultural festival, the school would invite popular shops to set up stalls on campus, and they'd also give lots of booth spaces to the student council so students could organize their own activities."", 4: '1'}"
+96	96		301							{2: 'Yata', 3: 'I remember the arcade machines would always be swarmed during the festival, and some people were particularly obsessed with the photo booths.', 4: '1'}
+97	97		301							{2: 'Yata', 3: 'There were also talent showcase areas where students could draw or perform. It was quite a lively event overall.', 4: '1'}
+98	98		302							{2: 'What did you like to do during the cultural festival, Yata?', 3: '99'}
+99	99		301							{2: 'Yata', 3: '...I was ranked No.1 on Boxing Champion across the whole server. Can you believe that?', 4: '1'}
+100	100		302							"{2: ""That's so you."", 3: '101', 4: 'No way.', 5: '101'}"
+101	101		204							{1: '1', 2: '1'}
+102	102		301							"{2: 'Yata', 3: ""That's all in the past now, but if you're interested, I wouldn't mind playing a few rounds with you sometime."", 4: '1'}"
+103	103		301							{3: 'Her lips curl into a slight smile, a hint of pride showing on her face.'}
+104	104		301							{3: 'These words act like hooks, drawing fragments of memories back in front of her eyes.'}
+105	105		301							{2: 'Yata', 3: 'In essence, a cultural festival is about creating a paradise where students can enjoy what they love without worrying about their studies or future.', 4: '1'}
+106	106		204							{1: '1'}
+107	107		301							{2: 'Yata', 3: 'So, got any ideas yet?', 4: '1'}
+108	108		202							{1: '1'}
+109	109		502						400.0	{1: 'DialogDisable'}
+110	110		302							{2: 'Getting there.', 3: '111', 4: 'Not yet...', 5: '115'}
+111	111		201							{1: '1', 2: '501041', 3: '1'}
+112	112		401							{1: '2', 2: '4044'}
+113	113		301			DialogEnable				{1: '1', 3: 'Yata extends a mechanical arm and gives you a gentle pat on the shoulder.'}
+114	114		301		1		AniZhuanchangBegin			{2: 'Yata', 3: 'Well then, show me what the Gray Raven Commandant can come up with.', 4: '1'}
+115	115		201							{1: '1', 2: '501041', 3: '1'}
+116	116		401							{1: '2', 2: '4044'}
+117	117		301			DialogEnable				{1: '1', 3: 'Yata extends a mechanical arm and gives you a gentle pat on the shoulder.'}
+118	118		301		1		AniZhuanchangBegin			"{2: 'Yata', 3: ""Just go with your gut feeling. I'll help you out."", 4: '1'}"

@@ -1,0 +1,410 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		502						250.0	{1: 'DialogDisable'}
+4	4		107							{1: 'Babylonia', 2: 'Conference Room'}
+5	5		301							{3: 'Conference Room, Babylonia.'}
+6	6		108							{1: '1'}
+7	7		201							{1: '1', 2: '500555', 3: '4'}
+8	8		301			DialogEnable				"{1: '1', 3: 'Vanessa stands at the podium, expressionless, presenting the report on <b><ud><color=#34aff8ff><link=24>""Kurono?Orphanage""</link></color></ud></b>. Below her, several commandants invited to the briefing whisper among themselves.'}"
+9	9		301							{2: 'Vanessa', 3: 'During this operation, together with Construct? Bambinata and Construct? Vera of the Cerberus squad, we recovered early research logs on the Inver?Device—', 4: '1'}
+10	10		201							{1: '18', 2: '500342', 4: '150', 5: '-50', 6: '-150'}
+11	11		301							"{1: '1', 2: 'Female Commandant', 3: ""So that's Vanessa... I hear she loves customizing coatings for her Constructs..."", 4: '18'}"
+12	12		201							{1: '18', 2: '500965', 4: '-160', 5: '-230', 6: '200'}
+13	13		301							{1: '1', 2: 'Male Commandant', 3: 'Tsk, wasting resources on that in times like these.', 4: '18'}
+14	14		202				DialogDisable			{1: '18'}
+15	15		302							{2: '...', 3: '17'}
+16	16		204							{1: '1', 2: '4'}
+17	17		301			DialogEnable				{2: 'Vanessa', 3: '...', 4: '1'}
+18	18		301							"{2: 'Vanessa', 3: '<color=#ffffffff><size=42>The ""owner"" of the orphanage is a semi-awakened mechanoid. Originally just a caretaker monitoring test data, it developed self-awareness under the influence of the Punishing Virus...</size></color>', 4: '1'}"
+19	19		301							{3: 'Vanessa raises her voice. The room goes quiet for a moment, but the murmurs soon return.'}
+20	20		201							{1: '18', 2: '500342', 4: '150', 5: '-50', 6: '-150'}
+21	21		301							{1: '1', 2: 'Female Commandant', 3: 'Yeah, and I heard one of the Constructs under her has problems too—something about her memory modules? She can only hold data for a short time.', 4: '18'}
+22	22		201							{1: '18', 2: '500965', 4: '-160', 5: '-230', 6: '200'}
+23	23		301							{1: '1', 2: 'Male Commandant', 3: 'Oh, right. I heard something like that from logistics. What a waste, using resources on that instead of repairs...', 4: '18'}
+24	24		301							{2: 'Male Commandant', 3: 'Ugh...', 4: '18'}
+25	25		202							{1: '18', 2: '1', 6: '1'}
+26	26		301							{3: 'The male commandant, who had been gossiping, suddenly falls silent. An eerie hush descends upon the conference room, rendering even their hushed whispers deafening in the stillness.'}
+27	27		201							{1: '1', 2: '500555', 3: '4'}
+28	28		301							{1: '1', 3: 'From the podium, Vanessa watches the two of them without a word. The others in the room follow her gaze.'}
+29	29		202							{1: '1', 6: '1'}
+30	30		201							{1: '1', 2: '500342', 4: '400'}
+31	31		201							{1: '2', 2: '500965', 4: '-400'}
+32	32		301							{1: '1', 3: 'After a few awkward coughs and chuckles, the two commandants quickly compose themselves.'}
+33	33		202							{1: '1', 2: '2', 6: '1'}
+34	34		201							{1: '1', 2: '500555', 3: '13'}
+35	35		301							"{1: '1', 2: 'Vanessa', 3: ""If you can't respect others, at least respect the occasion."", 4: '1'}"
+36	36		301							{3: 'She let the words hang in the air. Her gaze sweeps across the audience like a blade, pausing deliberately on someone in particular.'}
+37	37		301							{2: 'Vanessa', 3: 'Hmph...', 4: '1'}
+38	38		302							{2: '...?', 3: '39', 4: '(Shrug helplessly)', 5: '39'}
+39	39		204							{1: '1', 2: '4'}
+40	40		301							{3: 'Vanessa lets out a cold scoff, then turns her attention back to the report.'}
+41	41		301							{2: 'Vanessa', 3: 'Among the samples we recovered, the most valuable are fragments of consciousness data that can no longer be replicated. They might help improve the Inver-Device...', 4: '1'}
+42	42		301				AniZhuanchangBegin			"{2: 'Vanessa', 3: 'We\'re hoping to modify the Inver-Device enough to try ""metabolizing"" the Punishing Virus...', 4: '1'}"
+43	43		101					1000.0		{1: 'Assets/Product/Texture/Image/BgStory/Bgstory226.png'}
+44	44		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg2001_7.jpg', 3: '0', 4: '0.7', 5: '0'}
+45	45		401						2000.0	{1: '1', 2: '36'}
+46	46		401							{1: '1', 2: '201'}
+47	47		201							{1: '1', 2: '500568'}
+48	48		301			AniZhuanchangEnd				"{1: '1', 2: 'Lee', 3: '""Metabolize"" the Punishing Virus...', 4: '1'}"
+49	49		301							{3: 'Lee murmurs the words on the screen, distracted as he follows the calibration instructions, adjusting each module in sequence.'}
+50	50		301							{2: 'Lee', 3: 'Can this specialized Inver-Device really accomplish something like that?', 4: '1'}
+51	51		203							{1: '1', 2: '0.25', 3: '-400'}
+52	52		201							{1: '2', 2: '500004', 4: '400'}
+53	53		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+54	54		301							{1: '1', 2: 'Asimov', 3: 'Theoretically.', 4: '2'}
+55	55		301							"{3: ""Asimov's voice comes through the system. Data scrolls across Lee's screen, and a new set of instructions appears.""}"
+56	56		301							{2: 'Asimov', 3: 'Also, at full capacity, your frame could theoretically surpass time and dimensional constraints.', 4: '2'}
+57	57		301							{2: 'Lee', 3: '...I suppose only you could propose such a theory and get it approved for evaluation.', 4: '1'}
+58	58		301							"{3: ""Lee's frame movements become larger, and on the monitors, every parameter begins to spike rapidly.""}"
+59	59		204							{1: '2', 2: '8'}
+60	60		301							"{2: 'Asimov', 3: ""That's not my concern. I'm only responsible to what I've verified. Whether they believe it or not is up to them."", 4: '2'}"
+61	61		204							{1: '2'}
+62	62		301							{2: 'Asimov', 3: 'More importantly, are you feeling any discomfort?', 4: '2'}
+63	63		301							{2: 'Asimov', 3: 'This frame relies heavily on the Heteromer Shard analysis. If anything feels wrong, stop immediately.', 4: '2'}
+64	64		301							{2: 'Lee', 3: 'Understood. Everything is stable for now.', 4: '1'}
+65	65		301							"{2: 'Asimov', 3: ""Alright. Moving to the next stage... I've unlocked the frame's full computing capacity. Give it a try."", 4: '2'}"
+66	66		202							{1: '1', 2: '2', 6: '1'}
+67	67		301							"{3: ""As Asimov's voice fades, Lee senses a change in the frame. Many module restrictions lift, and some disabled functions reactivate.""}"
+68	68		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+69	69		201							{1: '1', 2: '500013', 4: '-400'}
+70	70		201							{1: '2', 2: '500067'}
+71	71		201							{1: '3', 2: '500068', 4: '400'}
+72	72		401							{1: '2', 2: '777'}
+73	73		301			RImgBg1Shake				{1: '1', 2: '??', 3: 'Rargh—!', 4: '1', 5: '2', 6: '3'}
+74	74		301							"{3: ""A distorted growl sharpens into clarity, catching Lee's attention as simulated monsters begin to form around him.""}"
+75	75		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+76	76		201							{1: '1', 2: '500568'}
+77	77		301							{1: '1', 2: 'Lee', 3: 'Roger that.', 4: '1'}
+78	78		301				AniZhuanchangBegin			{3: 'The live feed shows Lee, now in his Hyperreal frame, opening Hypermatrix abilities and calmly mowing down the simulated monsters.'}
+79	79		205				DialogDisable			{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg2001_7.jpg', 3: '0', 4: '0', 5: '0'}
+80	80		202							{1: '1', 6: '1'}
+81	81		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+82	82		302			AniZhuanchangEnd				{2: '...', 3: '83'}
+83	83		302							{2: '...Is specialized frame switching always this dangerous?', 3: '84', 4: 'Looks dangerous.', 5: '84'}
+84	84		201							{1: '1', 2: '500004'}
+85	85		301			DialogEnable				"{1: '1', 2: 'Asimov', 3: ""It's just a standard adaptation routine."", 4: '1'}"
+86	86		302							"{2: ""...Something doesn't feel right."", 3: '87', 4: 'Did the procedure get more complex?', 5: '87'}"
+87	87		301							"{2: 'Asimov', 3: ""You didn't get the updated protocol?"", 4: '1'}"
+88	88		301							"{2: 'Asimov', 3: ""This isn't the dangerous part. Actually, the dangerous part's already past."", 4: '1'}"
+89	89		301							"{2: 'Asimov', 3: ""Lee didn't tell you?"", 4: '1'}"
+90	90		302							{2: 'Tell me... what?', 3: '91'}
+91	91		301							"{2: 'Asimov', 3: ""The real concern isn't the complexity. Some steps in the process can risk damaging the M.I.N.D. Seems no one briefed you."", 4: '1'}"
+92	92		302				AniZhuanchangBegin			{2: 'Lee...', 3: '93'}
+93	93		202							{1: '1'}
+94	94		401						2000.0	{1: '1', 2: '36'}
+95	95		401							{1: '1', 2: '169'}
+96	96		105							{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLi/UiMovieLi01/UiMovieLi01.prefab'}
+97	97		301			AniZhuanchangEnd				{3: 'The Gray?Raven lounge is bright. Lee sits there, tool in hand, fine?tuning the delicate parts in his right arm.'}
+98	98		302							{2: 'Why not let the maintenance team handle it...', 3: '99'}
+99	99		301							"{2: 'Lee', 3: ""...I'm just more comfortable here.""}"
+100	100		301							"{2: 'Lee', 3: ""And I don't want to make people do for me what I can just do for myself.""}"
+101	101		301							{3: 'Lee always looks like a lone wolf, but people who do know him know that he is just used to putting the burden on his own shoulders.'}
+102	102		302							"{2: ""How's everything coming along with the adaptation tests?"", 3: '103'}"
+103	103		301				DialogDisable			{2: 'Lee', 3: 'I believe I sent you a report every time there was a test.'}
+104	104		302							"{2: ""I've seen them."", 3: '105'}"
+105	105		302							"{2: ""But I'm curious about what didn't go into the reports."", 3: '106', 4: 'The data in the reports were pretty limited, though.', 5: '106'}"
+106	106		301			DialogEnable				"{3: '""Sudden M.I.N.D. overload,"" ""hallucinations during adaptation""—none of that sounds like ""everything\'s fine.""'}"
+107	107		301							"{2: 'Lee', 3: 'Now, about the ""sudden M.I.N.D. overload""... I don\'t know what\'s causing it, but it hasn\'t affected the frame or its battle performance.'}"
+108	108		301							{2: 'Lee', 3: 'Everything about the new frame is within normal standards...'}
+109	109		301				AniZhuanchangBegin			{3: 'The hushed conversation fades into the shroud of night.'}
+110	110		105							
+111	111		401						2000.0	{1: '1', 2: '36'}
+112	112		401							{1: '1', 2: '201'}
+113	113		201							{1: '1', 2: '500004', 3: '8'}
+114	114		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+115	115		301			AniZhuanchangEnd				"{1: '1', 2: 'Asimov', 3: ""Because of confidentiality protocols and the Construct M.I.N.D. stability agreement, I can't share the full process with you."", 4: '1'}"
+116	116		204							{1: '1'}
+117	117		301							"{2: 'Asimov', 3: 'If you\'re concerned, you should ask him directly what ""the dangerous part"" means.', 4: '1'}"
+118	118		301							"{2: 'Asimov', 3: 'All I can say is—thanks to your ""visions,"" we were able to avoid a lot of setbacks when reconstructing certain technologies.', 4: '1'}"
+119	119		301							"{3: ""Asimov pulls up the status overview for Lee's frame. Data streams down the screen—mostly yellow and green, almost no red alerts.""}"
+120	120		202							{2: '1', 6: '1'}
+121	121		306							{1: '1'}
+122	122		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory226.png'}
+123	123		201							{1: '1', 2: '500568', 4: '400'}
+124	124		201							{1: '2', 2: '500013', 4: '-400'}
+125	125		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '3'}
+126	126		401						300.0	{1: '2', 2: '1510'}
+127	127		502						500.0	{1: 'PanelActor2Shake'}
+128	128		202							{1: '1', 2: '2'}
+129	129		301							{1: '1', 3: 'He minimizes the window. The screen now shows Lee turning with precision and gunning down the last simulated Corrupted. After a pause, Asimov takes out a document.'}
+130	130		306							
+131	131		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+132	132		201							{1: '1', 2: '500004'}
+133	133		301							{1: '1', 2: 'Asimov', 3: 'The evaluation still has a few steps left, but everything looks good. Go ahead and sign off. Approve the switch to the Hyperreal frame.', 4: '1'}
+134	134		301							"{2: 'Asimov', 3: ""After that, we'll continue collecting calibration data through live missions."", 4: '1'}"
+135	135		202							{2: '1', 6: '1'}
+136	136		401							{1: '2', 2: '4094'}
+137	137		301							{3: 'As soon as those words are spoken, a crisp electronic female voice sounds.'}
+138	138		301							{2: 'Electronic Voice', 3: 'Test complete. Combat simulation shutting down.'}
+139	139		201							{1: '1', 2: '500568', 3: '10'}
+140	140		301				DialogDisable			{1: '1', 3: 'The chamber door opens slowly. Lee wakes inside the experimental pod.'}
+141	141		302							"{2: 'How do you feel, Lee?', 3: '147', 4: ""Don't usually see you from this angle..."", 5: '142'}"
+142	142		204							{1: '1'}
+143	143		301			DialogEnable				"{2: 'Lee', 3: ""That's because most of the time, I'm the one looking at you—lying in a medic pod, or at Star of Life."", 4: '1'}"
+144	144		301							{3: 'Lee opens his eyes, looking mildly exasperated.'}
+145	145		302				DialogDisable			"{2: ""Don't sweat the details."", 3: '146', 4: 'Ahem...', 5: '146'}"
+146	146		302							{2: 'How do you feel?', 3: '148'}
+147	147		204							{1: '1'}
+148	148		302							{2: '(Extend your hand)', 3: '149'}
+149	149		301			DialogEnable				{3: 'Lee pauses, then takes your hand and uses it to pull himself up.'}
+150	150		301							{2: 'Lee', 3: 'No abnormalities detected. The frame is adapting well.', 4: '1'}
+151	151		301							"{2: 'Lee', 3: ""We haven't even come close to its performance ceiling. We should try other combat scenarios in upcoming field missions to see how it holds up."", 4: '1'}"
+152	152		203							{1: '1', 2: '0.25', 3: '-400'}
+153	153		201							{1: '2', 2: '500004', 4: '400'}
+154	154		301							"{1: '1', 2: 'Asimov', 3: ""Alright, let's switch you back to the Entropy frame for now. I'll make one last adjustment to the Hyperreal."", 4: '2'}"
+155	155		301							"{2: 'Asimov', 3: ""It'll take about an hour. Come back after that for the switch."", 4: '2'}"
+156	156		302							{2: 'Copy.', 3: '157'}
+157	157		301							{2: 'Lee', 3: 'Alright.', 4: '1'}
+158	158		202							{1: '1', 2: '2', 6: '1'}
+159	159		301				AniZhuanchangBegin			{3: 'After Asimov turns back to his lab bench, you and Lee exchange a glance and leave the lab.'}
+160	160		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+161	161		201							{1: '1', 2: '500026'}
+162	162		401						2000.0	{1: '1', 2: '36'}
+163	163		401							{1: '1', 2: '207'}
+164	164		301			AniZhuanchangEnd				{3: 'The afternoon sun shines brightly over Babylonia.'}
+165	165		301							"{2: 'Lee', 3: ""Let's get lunch first, Commandant. By the time we finish, it'll be about time..."", 4: '1'}"
+166	166		302							{2: 'Asimov told me something dangerous happened during the adaptation process.', 3: '167'}
+167	167		204							{1: '1', 2: '10'}
+168	168		301							{2: 'Lee', 3: '...', 4: '1'}
+169	169		204							{1: '1'}
+170	170		301							{2: 'Lee', 3: 'It was just a minor M.I.N.D. overload. I can handle it...', 4: '1'}
+171	171		302							"{2: 'Asimov wouldn\'t call it ""dangerous"" if it were just a minor issue.', 3: '172', 4: 'I don\'t think it\'s ""minor.""', 5: '172'}"
+172	172		301							{2: 'Lee', 3: 'Commandant...', 4: '1'}
+173	173		302				DialogDisable			"{2: ""...I'm sorry."", 3: '174'}"
+174	174		302							"{2: ""It's just... every time one of you switches to a specialized frame, something happens—something I can't control."", 3: '175'}"
+175	175		306							{1: '1'}
+176	176		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+177	177		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+178	178		201							{1: '1', 2: '500166', 4: '400'}
+179	179		201							{1: '2', 2: '500400', 4: '-400'}
+180	180		301			DialogEnable				{1: '1', 3: 'It was the same with Plume. And with Empyrea.'}
+181	181		202							{1: '1', 2: '2'}
+182	182		306							
+183	183		201							{1: '1', 2: '500026'}
+184	184		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+185	185		301							{1: '1', 3: 'Sensing a change in your tone, Lee pauses before continuing quietly.'}
+186	186		301				DialogDisable			"{2: 'Lee', 3: ""Don't worry. This time, nothing's going to happen."", 4: '1'}"
+187	187		302							{2: 'I know you can handle a lot on your own, Lee.', 3: '188'}
+188	188		302							{2: 'But... please try to trust me more.', 3: '189', 4: 'But... please try to trust Gray Raven more.', 5: '191'}
+189	189		302							"{2: ""I don't know what you're carrying inside. I can't see it."", 3: '190'}"
+190	190		302							"{2: ""But I hope you'll let me share some of your burden."", 3: '191'}"
+191	191		204							{1: '1', 2: '10'}
+192	192		301			DialogEnable				{2: 'Lee', 3: '...I will.', 4: '1'}
+193	193		204							{1: '1'}
+194	194		301							{3: 'The sun is too bright for you to clearly see his expression.'}
+195	195		301							"{2: 'Lee', 3: ""Let's eat first. Once the frame switch is done, we'll have more time to talk about the M.I.N.D. overload."", 4: '1'}"
+196	196		302				AniZhuanchangBegin			{2: '...', 3: '197', 4: 'Mm.', 5: '197'}
+197	197		401						2000.0	{1: '1', 2: '36'}
+198	198		401							{1: '1', 2: '201'}
+199	199		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+200	200		202							{2: '1', 6: '1'}
+201	201		301			AniZhuanchangEnd				{3: 'Time passes quickly.'}
+202	202		301							{3: 'You and Lee return to the Science Council lab. He gives you a reassuring nod before lying back in the experimental pod.'}
+203	203		301							{3: 'Just like before, Lee skillfully takes the connection cable and connects it to the port at the back of his neck. At that moment—'}
+204	204		302				DialogDisable			{2: '...?', 3: '205'}
+205	205		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3', 6: '1'}
+206	206		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+207	207		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory663.jpg'}
+208	208		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+209	209		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+210	210		301			DialogEnable				"{3: ""The sensation returns—another wave of deja vu. It's quick and light this time, so much so that the word slips out before you even realize it.""}"
+211	211		302							{2: 'Lee.', 3: '212'}
+212	212		301							{2: 'Lee', 3: 'Commandant?', 4: '1'}
+213	213		302							"{2: ""...Nothing. It's just that this is the first time I've seen one of you switch to a specialized frame in person."", 3: '214'}"
+214	214		301							"{3: ""Clearly, this isn't the right moment to continue that conversation.""}"
+215	215		301							{2: 'Lee', 3: '...Relax.', 4: '1'}
+216	216		301							{3: 'Lee gives you a gentle nod before settling into the pod.'}
+217	217		202							{1: '1', 6: '1'}
+218	218		401							{1: '2', 2: '585'}
+219	219		301							{3: 'For now, the only sound in the lab is the faint hum of machines.'}
+220	220		401							{1: '2', 2: '1515'}
+221	221		304							{1: '>>>> Commencing frame switch authorization, please enter the activation parameter.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '1', 9: '1'}
+222	222		201							{1: '1', 2: '500004'}
+223	223		301							{1: '1', 3: 'Asimov inputs the startup parameters one by one.'}
+224	224		401							{1: '2', 2: '1515'}
+225	225		304							{1: '>>>> Authorization successful. Starting consciousness transfer.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '2'}
+226	226		304							{1: '>>>> Please refrain from interrupting the connection during consciousness transfer.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '1'}
+227	227		304							{1: '>>>> Please refrain from interrupting the connection during consciousness transfer.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '1'}
+228	228		304							{1: '>>>> Please refrain from interrupting the connection during consciousness transfer.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '1', 9: '1'}
+229	229		302							{2: 'Lee?', 3: '230'}
+230	230		301							{3: 'You glance at Asimov in confusion after hearing the system repeat the transfer notice three times in a row.'}
+231	231		402							{1: '585'}
+232	232		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+233	233		301							"{2: 'Asimov', 3: ""...I hear it. I'm checking now."", 4: '1'}"
+234	234		301							"{3: ""He seems unfazed, casually scanning a few lines of data like it's routine.""}"
+235	235		301							"{2: 'Asimov', 3: ""Hmm. Everything's looking good. No issues."", 4: '1'}"
+236	236		202				DialogDisable			{1: '1'}
+237	237		302							{2: '...?', 3: '238'}
+238	238		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+239	239		201							{1: '1', 2: '500568', 3: '10'}
+240	240		301			DialogEnable				{1: '1', 3: 'Hyperreal lies still in the pod. His eyes remain closed.'}
+241	241		202							{1: '1', 6: '1'}
+242	242		401							{1: '2', 2: '1515'}
+243	243		304				AniZhuanchangBegin			{1: '>>>> Please refrain from interrupting the connection during consciousness transfer.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '1', 9: '1'}
+244	244		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+245	245		201							{1: '1', 2: '500026', 3: '7'}
+246	246		301			AniZhuanchangEnd				{1: '1', 2: 'Lee', 3: 'Ugh...', 4: '1'}
+247	247		202							{1: '1'}
+248	248		401							{1: '2', 2: '558', 6: '1'}
+249	249		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokeRed.prefab', 2: '3'}
+250	250		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+251	251		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory951.png', 3: '0', 4: '0.7', 5: '0.25'}
+252	252		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+253	253		301							{3: 'Flashes of light flicker across his vision as crimson fog engulfs everything.'}
+254	254		201							{1: '1', 2: '500026', 3: '7'}
+255	255		301							{1: '1', 2: 'Lee', 3: '...Transfer... failed?', 4: '1'}
+256	256		202							{1: '1', 6: '1'}
+257	257		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+258	258		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokeRed.prefab'}
+259	259		401							{1: '2', 2: '1515'}
+260	260		304							{1: '>>>> Please refrain from interrupting the connection during consciousness transfer.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '1', 9: '1'}
+261	261		301							"{3: ""But there was no sign of a failed transfer. No alerts. And Asimov didn't intervene...""}"
+262	262		301							{3: 'Time seems to freeze. It stops being just a concept, and becomes a real, twisting four-dimensional axis, spiraling endlessly in the fog.'}
+263	263		401							{1: '2', 2: '558'}
+264	264		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '3'}
+265	265		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+266	266		205							{1: '1', 3: '0.5', 4: '0.5'}
+267	267		201						100.0	{1: '1', 2: '1011001', 4: '400', 7: '1'}
+268	268		201						100.0	{1: '1', 2: '500026', 3: '7', 7: '1'}
+269	269		201						100.0	{1: '1', 2: '500568', 3: '9', 4: '-400', 7: '1'}
+270	270		202							{1: '1', 6: '1'}
+271	271		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+272	272		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+273	273		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokeRed.prefab', 2: '3'}
+274	274		201							{1: '1', 2: '500026', 3: '7'}
+275	275		301							{1: '1', 2: 'Lee', 3: 'What...?', 4: '1'}
+276	276		301							{3: 'What is this place? Where is he right now?'}
+277	277		202							{1: '1', 6: '1'}
+278	278		401							{1: '2', 2: '558'}
+279	279		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory951.png', 3: '0.7', 4: '0'}
+280	280		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+281	281		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory664.jpg'}
+282	282		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory663.jpg'}
+283	283		301							{3: 'His M.I.N.D. stretches outward. Suspended by spider-silk threads, a twisted spiral tower hangs in the air. Its blinding gateway begins to open.'}
+284	284		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+285	285		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignSun01.prefab', 2: '3'}
+286	286		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+287	287		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory951.png', 3: '0', 4: '0.7', 5: '0'}
+288	288		301							{3: 'A beam of light breaks through the mist, pouring in from beyond the sky.'}
+289	289		302							{2: 'Lee?', 3: '290'}
+290	290		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory951.png', 3: '0.7', 4: '0', 5: '2'}
+291	291		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignSun01.prefab'}
+292	292		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+293	293		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokeRed.prefab'}
+294	294		301							{3: 'Tiny specks of golden light dispel the crimson fog.'}
+295	295		401							{1: '2', 2: '1515'}
+296	296		304				AniZhuanchangBegin			{1: '>>>> Consciousness transfer completed.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '1', 9: '1'}
+297	297		201							{1: '1', 2: '500568', 3: '9'}
+298	298		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+299	299		301			AniZhuanchangEnd				{1: '1', 2: 'Lee', 3: 'Cough—!', 4: '1'}
+300	300		502							{1: 'PanelActor1Shake'}
+301	301		301							{3: 'The chamber door opens as you rush toward him.'}
+302	302		302							{2: 'Lee!', 3: '303'}
+303	303		301							"{2: 'Lee', 3: ""Cough, cough... I'm... cough... I'm fine."", 4: '1'}"
+304	304		204							{1: '1', 2: '10'}
+305	305		301							{3: 'He grabs your hand and slowly rises from the pod.'}
+306	306		204							{1: '1'}
+307	307		301							{2: 'Lee', 3: 'Asimov, how long did the consciousness transfer take?', 4: '1'}
+308	308		203							{1: '1', 2: '0.25', 3: '-400'}
+309	309		201							{1: '2', 2: '500004', 4: '400'}
+310	310		301							{1: '1', 2: 'Asimov', 3: 'Same as before. About three seconds longer than expected, but no errors, no abnormalities.', 4: '2'}
+311	311		301							{2: 'Asimov', 3: 'So, what did you see this time?', 4: '2'}
+312	312		204							{1: '1', 2: '10'}
+313	313		301							{2: 'Lee', 3: '...', 4: '1'}
+314	314		202							{1: '1', 2: '2', 6: '1'}
+315	315		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '3'}
+316	316		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+317	317		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory951.png', 3: '0', 4: '0.7', 5: '0'}
+318	318		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+319	319		301							"{3: ""The crimson fog vanishes from his M.I.N.D. just as suddenly as it appeared. There's barely a trace left.""}"
+320	320		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+321	321		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory951.png', 3: '0.7', 4: '0', 5: '0'}
+322	322		201							{1: '1', 2: '500568'}
+323	323		301							"{1: '1', 2: 'Lee', 3: ""...I don't remember."", 4: '1'}"
+324	324		203							{1: '1', 2: '0.25', 3: '-400'}
+325	325		201							{1: '2', 2: '500004', 4: '400'}
+326	326		301							{1: '1', 2: 'Asimov', 3: 'I see...', 4: '2'}
+327	327		204							{1: '2', 2: '8'}
+328	328		301							{3: 'Asimov scrolls through the records in silence, deep in thought.'}
+329	329		204							{1: '2'}
+330	330		301							{2: 'Asimov', 3: 'Most likely, there was an unexpected spike during the deep-layer transfer stage of your M.I.N.D.', 4: '2'}
+331	331		301							"{2: 'Asimov', 3: ""Lucia and Liv's specialized frames adapted smoothly. This only happens with yours... so it has to be something with your deep M.I.N.D.—"", 4: '2'}"
+332	332		301							{2: 'Lee', 3: 'Understood. Thank you.', 4: '1'}
+333	333		301							{3: 'Lee cuts him off before he can finish the analysis.'}
+334	334		302							{2: 'Deep M.I.N.D.?', 3: '335'}
+335	335		301							{2: 'Lee', 3: '...', 4: '1'}
+336	336		301							"{2: 'Lee', 3: ""Right. It's possible there's some corrupted data in my deep M.I.N.D., which caused the delay during the transfer."", 4: '1'}"
+337	337		301							"{3: ""He's not lying. It's the truth.""}"
+338	338		302							{2: 'Will it affect the frame?', 3: '339'}
+339	339		301							{2: 'Asimov', 3: 'Technically yes, but practically speaking, no.', 4: '2'}
+340	340		301							"{2: 'Asimov', 3: ""There are many things that could impact the frame. This one just isn't high on the list."", 4: '2'}"
+341	341		301							"{2: 'Asimov', 3: ""Today's delay isn't new. Earlier tests also took about three seconds longer than average during consciousness transfer. Everything else looks fine."", 4: '2'}"
+342	342		202				DialogDisable			{1: '2', 6: '1'}
+343	343		203							{1: '1', 2: '0.25', 3: '0'}
+344	344		302							{2: '...I see.', 3: '345'}
+345	345		301			DialogEnable				"{2: 'Lee', 3: ""It's all right, Commandant."", 4: '1'}"
+346	346		301							{3: 'Lee sits up in the pod, now in his Hyperreal frame.'}
+347	347		301							"{2: 'Lee', 3: ""Once the frame switch is done, I'll sort the data and file regular reports with the Science Council."", 4: '1'}"
+348	348		302				DialogDisable			{2: '...Okay.', 3: '349'}
+349	349		202							{1: '1', 6: '1'}
+350	350		306							{1: '1'}
+351	351		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory663.jpg', 3: '0', 4: '1', 5: '0.25'}
+352	352		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory663.jpg'}
+353	353		301			DialogEnable				{3: 'A faint unease stays with you.'}
+354	354		301							"{3: 'When Lee entered the pod, you saw that ""tower""...'}"
+355	355		301							{3: 'A crimson spiral piercing the clouds.'}
+356	356		301				AniZhuanchangBegin			{3: 'Could it be the same tower Vonnegut mentioned at the aquarium?'}
+357	357		201							{1: '1', 2: '500305'}
+358	358		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory663.jpg'}
+359	359		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1284.jpg'}
+360	360		504							{1: '0.7'}
+361	361		301			AniZhuanchangEnd				"{1: '1', 2: 'Vonnegut', 3: 'What did you do to the ""Tower""?', 4: '1'}"
+362	362		301							{2: 'Vonnegut', 3: 'Ascending the Tower with a mortal body?', 4: '1'}
+363	363		301							"{2: 'Vonnegut', 3: ""That's impossible."", 4: '1'}"
+364	364		202							{1: '1', 6: '1'}
+365	365		504							{1: '0'}
+366	366		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+367	367		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory663.jpg'}
+368	368		301							{3: 'If this tower really is the same one Vonnegut mentioned...'}
+369	369		301							"{3: ""How's everything connected?""}"
+370	370		306							
+371	371		401						2000.0	{1: '1', 2: '36'}
+372	372		401							{1: '1', 2: '208'}
+373	373		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+374	374		301			AniZhuanchangEnd				{3: 'Questions keep piling up. By the time you snap back to reality, Lee and you have left the Science Council.'}
+375	375		201							{1: '1', 2: '500568'}
+376	376		301							"{1: '1', 2: 'Lee', 3: ""Commandant? You've seemed distracted since the frame switch..."", 4: '1'}"
+377	377		301							"{2: 'Lee', 3: 'Did you see something? Like... the ""visions"" you had before?', 4: '1'}"
+378	378		302							"{2: 'I saw a ""tower.""', 3: '379'}"
+379	379		301							{2: 'Lee', 3: 'The Tower...', 4: '1'}
+380	380		202							{1: '1', 6: '1'}
+381	381		401							{1: '2', 2: '558'}
+382	382		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3', 6: '1'}
+383	383		101						400.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory663.jpg'}
+384	384		201							{1: '1', 2: '500568'}
+385	385		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+386	386		301							"{1: '1', 3: ""Something flickers in Lee's M.I.N.D. at that word, but he can't catch it.""}"
+387	387		301				DialogDisable			{2: 'Lee', 3: 'Did you see anything else?', 4: '1'}
+388	388		302							{2: 'No.', 3: '389'}
+389	389		302							"{2: 'Since the aquarium incident, the ""deja vu"" moments have become few and far between.', 3: '390'}"
+390	390		301			DialogEnable				"{2: 'Lee', 3: ""...Maybe that's a good thing."", 4: '1'}"
+391	391		401							{1: '2', 2: '2979'}
+392	392		301							{3: 'He nods and is about to say more when his terminal beeps.'}
+393	393		204							{1: '1', 2: '10'}
+394	394		301							{2: 'Lee', 3: '...', 4: '1'}
+395	395		204							{1: '1'}
+396	396		301							"{2: 'Lee', 3: ""Looks like I've got to go. A frame?performance test just came in."", 4: '1'}"
+397	397		301							"{2: 'Lee', 3: ""It's a Dead Zone operation to clear out Hetero-Creatures. The mission ID will be released once I land on the surface."", 4: '1'}"
+398	398		302							{2: 'Solo?', 3: '399'}
+399	399		301							{2: 'Lee', 3: 'Yes. Some parameters need to be tested through solo action.', 4: '1'}
+400	400		301							"{2: 'Lee', 3: ""Don't worry. The Hyperreal frame is built for this. I'll also make sure I'm fully prepared."", 4: '1'}"
+401	401		302							{2: '...Alright.', 3: '402'}
+402	402		301							"{3: ""You hold back your concern, deciding to respect Lee's judgment, then exchange a light fist bump with Lee.""}"
+403	403		302							{2: 'Good luck out there. See you when you get back.', 3: '404'}
+404	404		204							{1: '1', 2: '1'}
+405	405		301							{2: 'Lee', 3: 'See you when I get back.', 4: '1'}
+406	406		302							{2: 'Come back to us safe.', 3: '407'}
+407	407		301							{2: 'Lee', 3: 'Of course.', 4: '1'}
+408	408		301							{3: 'Lee stands with his back to the sunlight, looking at you.'}
+409	409		301		1		AniZhuanchangBegin			{2: 'Lee', 3: 'I will return safely, I promise.', 4: '1'}

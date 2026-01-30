@@ -1,0 +1,30 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory712.jpg'}
+2	2		301			DialogEnable				{3: 'Three.'}
+3	3		301							{3: 'Two.'}
+4	4		301							{3: 'One.'}
+5	5		401							{1: '1', 2: '61'}
+6	6		502							{1: 'RImgBg1Shake'}
+7	7		301							{3: 'Noctis presses a button on his left shoulder, causing an explosion nearby.'}
+8	8		201							{1: '1', 2: '500854', 3: '2'}
+9	9		301							"{1: '1', 2: 'Noctis', 3: ""Did I tell you that this is actually the biggest bomb on me? Don't worry! My arm is also the most blast-proof part of my body."", 4: '1', 18: '100003302'}"
+10	10		202							
+11	11		301							{3: 'No. 21 easily shreds the steel railing with her claws.'}
+12	12		201							{1: '1', 2: '500846', 3: '4'}
+13	13		301							"{1: '1', 2: 'No. 21', 3: ""Let's go!"", 4: '1', 18: '100003303'}"
+14	14		201							{1: '1', 2: '500444'}
+15	15		301							"{1: '1', 2: 'Guard', 3: ""Oh no! I've been defeated..."", 4: '1', 18: '100003304'}"
+16	16		202							{1: '1'}
+17	17		201							{1: '1', 2: '500854', 3: '3'}
+18	18		301							{1: '1', 2: 'Noctis', 3: 'I thought we agreed to a real fight yesterday!', 4: '1', 18: '100003305'}
+19	19		202							{1: '1'}
+20	20		301							{3: 'The guard immediately jumps back up. Just as he is about to punch, Noctis has already thrown him against the wall.'}
+21	21		201							{1: '1', 2: '500633'}
+22	22		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '2'}
+23	23		301							"{1: '1', 2: 'Action Star', 3: ""Don't pull your punches when the time comes. We've stopped rehearsing action moves since we were awakened. A good actor knows how to get hit! I'll be prepared! Oh, and I just came up with a new name for myself!"", 4: '1', 18: '100003306'}"
+24	24		202							{1: '1'}
+25	25		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab'}
+26	26		301							{3: 'Vera picks up her banner spear from the corner and tosses the claw blades to No. 21.'}
+27	27		301							"{3: ""Meanwhile, the mechanoids blocking your way are carrying Noctis' arm with them. They are immediately subdued, and Noctis quickly attaches his mechanical arm back.""}"
+28	28		201							{1: '1', 2: '500825', 3: '13'}
+29	29		301		1		AniZhuanchangBegin			{1: '1', 2: 'Vera', 3: 'You charlatans! Cerberus has arrived!', 4: '1', 18: '100003307'}

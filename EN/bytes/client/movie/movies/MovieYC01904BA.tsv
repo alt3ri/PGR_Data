@@ -1,0 +1,125 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory347.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable	AniZhuanchangBegin			{3: 'Alpha leaps into the fumes, and those in the distance also notice some movement. Alpha quickly darts into the sewers to avoid any contact with them.'}
+4	444		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory345.jpg'}
+5	4		201							{1: '1', 2: '500100'}
+6	5		301			AniZhuanchangEnd				{1: '1', 2: 'α', 3: 'Based on my last exploration, one end of this tunnel leads to Cinderelik and the cultivation pod, while the other has a pit that drops to the lower level.', 4: '1'}
+7	6		202							{1: '1', 6: '1'}
+8	7		301							{3: 'She raises her Katana and dashes in the direction of the pit, but comes upon a sturdy lock.'}
+9	8		201							{1: '1', 2: '500100'}
+10	9		301							{1: '1', 2: 'α', 3: '...How annoying.', 4: '1'}
+11	10		401							{1: '2', 2: '10002001'}
+12	11		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+13	12		301							{3: 'Alpha slashes with her weapon, and a crack just large enough for one person appears.'}
+14	13		201							{1: '1', 2: '500100'}
+15	14		301							{1: '1', 2: 'α', 3: 'Give me a hand.', 4: '1'}
+16	15		202							{1: '1', 6: '1'}
+17	16		301							{3: 'She grabs the fish-shaped Hetero-Creatures floating around her, and leaps into the narrow passage below.'}
+18	17		201							{1: '1', 2: '500100'}
+19	18		301							"{1: '1', 2: 'α', 3: ""They're pretty useful after all."", 4: '1'}"
+20	19		202							{1: '1', 6: '1'}
+21	20		301							{3: 'She lets go and the two fish-shaped Hetero-Creatures slowly make their way into the passage, but get stuck in the crack because they try to get out at the same time, thrashing their tails.'}
+22	21		201							{1: '1', 2: '500100'}
+23	22		301							"{1: '1', 2: 'α', 3: ""Now... there are two places I haven't searched yet."", 4: '1'}"
+24	23		202							{1: '1', 6: '1'}
+25	24		301				AniZhuanchangBegin			{3: 'Alpha walks briskly toward her target.'}
+26	25		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory349.jpg'}
+27	26		201							{1: '1', 2: '500100'}
+28	27		301			AniZhuanchangEnd				{1: '1', 2: 'α', 3: 'Is this...', 4: '1'}
+29	28		202							{1: '1', 6: '1'}
+30	29		301							"{3: 'In front of her is a medium-sized ""reservoir."" The Red Tide surges within, forming a large vortex. At the center is a mechanical apparatus, pumping the Red Tide through the sewer pipes like a heart.'}"
+31	30		201							{1: '1', 2: '500100'}
+32	31		301							{1: '1', 2: 'α', 3: '...Is this the transport core of the Red Tide?', 4: '1'}
+33	32		301							{3: 'As to where it is being transported to, Alpha has a rough idea.'}
+34	33		301							"{2: 'α', 3: ""It's being sent there?"", 4: '1'}"
+35	34		202							{1: '1', 6: '1'}
+36	35		301							{3: 'While exploring the sewers, she found a strange room filled with plants.'}
+37	36		301							{3: 'Poking around the room, Alpha noticed that there was a passage hidden under a red tree.'}
+38	37		301							"{3: ""She wanted to head down for a look, but Cinderelik's sudden appearance threw a wrench in her plans.""}"
+39	38		301							{3: 'Although she is not sure, she has scoured almost the entirety of the area, with only the hidden room remaining unexplored.'}
+40	39		201							{1: '1', 2: '500100'}
+41	40		301							"{1: '1', 2: 'α', 3: ""Looks like that's the most suspicious place."", 4: '1'}"
+42	41		301							"{2: 'α', 3: ""But I'd better do a thorough search of this place before leaving."", 4: '1'}"
+43	42		202							{1: '1', 6: '1'}
+44	43		301							{3: 'Alpha frowns, looking for a safe area from which to dive into the Red Tide vortex.'}
+45	44		301							{2: '??', 3: '...Oh!'}
+46	45		301							{3: 'Alpha hears a familiar voice from behind, and turns around, trying to make out the shadowy figure blending into the darkness.'}
+47	46		201							{1: '1', 2: '500100'}
+48	47		301							{1: '1', 2: 'α', 3: 'Roland?', 4: '1'}
+49	48		301							{3: 'Alpha cautiously walks toward the darkness to confirm her suspicion.'}
+50	49		301							"{2: 'Roland', 3: ""D-don't come any closer.""}"
+51	50		301							{3: 'His voice trembles slightly, and his voice module shows traces of damage.'}
+52	51		301							"{2: 'Roland', 3: ""I look horrible right now. Don't want to startle my audience, you know?""}"
+53	52		301							{2: 'α', 3: 'What are you doing here?', 4: '1'}
+54	53		301							"{2: 'Roland', 3: ""What else? I'm here for the same purpose as you.""}"
+55	54		301							"{2: 'α', 3: ""You're also looking for Luna?"", 4: '1'}"
+56	55		301							"{2: 'Roland', 3: ""That's right. To tell you the truth, I just came from below.""}"
+57	56		301							{2: 'α', 3: '...No luck either, eh?', 4: '1'}
+58	57		301							"{2: 'Roland', 3: ""I've searched every nook and cranny, but other than some hazardous items, there's nothing else down there .""}"
+59	58		301							{2: 'Roland', 3: 'It seems that Luna is not here, but whether this is good or bad news is hard to say.'}
+60	59		301							{3: 'The two fell silent amidst the sound of running water in the background.'}
+61	60		301							"{2: 'α', 3: 'You are still alive. Does that mean that you\'ve dealt with Gabriel\'s ""backup""?', 4: '1'}"
+62	61		301							{2: 'Roland', 3: 'Of course.'}
+63	62		301							{2: 'α', 3: 'Did you see Luna?', 4: '1'}
+64	63		301							{2: 'Roland', 3: 'Unfortunately... It took everything I had to defeat her.'}
+65	64		301							{2: 'α', 3: '...', 4: '1'}
+66	65		301							"{2: 'Roland', 3: ""Don't give me that look. Even Luna had trouble dealing with it.""}"
+67	66		301							{3: 'Roland laughs awkwardly with his damaged voice module.'}
+68	67		301							{2: 'α', 3: 'If even Luna found it hard, how could you possibly handle it?', 4: '1'}
+69	68		301							"{2: 'α', 3: ""Roland, I used to suspect that you've been hiding your true strength."", 4: '1'}"
+70	69		301							{2: 'α', 3: 'Even while I was in the M.I.N.D., I suspected that. Why were you able to hold off the Gray Ravens?', 4: '1'}
+71	2001		301							"{2: 'Roland', 3: ""You don't have to be on guard against me. It's only because I've grown. I'm no longer the same as before.""}"
+72	70		301							"{2: 'Roland', 3: ""I've been hiding my true strength, but it's Babylonia I'm hiding it from.""}"
+73	71		301							{2: 'Roland', 3: 'If I showed my true power from the very beginning, that would have changed the tactics they used against me, no?'}
+74	72		301							{2: 'Roland', 3: 'The reason I was able to deal with someone that even Luna had trouble dealing with is easy.'}
+75	73		301							"{2: 'Roland', 3: ""I watched her grow up. I'm familiar with her battle tactics.""}"
+76	74		301							"{2: 'Roland', 3: ""Gabriel was proud of the sisters he trained because they were able to replicate the enemy's attack.""}"
+77	75		301							"{2: 'Roland', 3: ""But a replica is only an imitation after all, and she wasn't able to differentiate a good move from a bad one.""}"
+78	76		301							{2: 'Roland', 3: 'During the Golden Age, there was a joke about how to prevent kitties from learning to open the door.'}
+79	77		301							{2: 'Roland', 3: 'The reason I was able to defeat her was easy. It was just as what the joke implied.'}
+80	78		301							{2: 'α', 3: 'Using meaningless battle tactics to mislead the opponent?', 4: '1'}
+81	79		301							"{2: 'Roland', 3: ""No, it's a little more cunning than that. And for that, I have to thank you.""}"
+82	80		301							{2: 'α', 3: '?', 4: '1'}
+83	81		301							{2: 'Roland', 3: 'I prepared a disguise in advance to mislead her into thinking that the wounds you gave me were self-inflicted during battle to strengthen myself.'}
+84	82		301							{2: 'Roland', 3: 'She was skeptical at first, but once I cut off my left arm, she finally started to imitate my behavior.'}
+85	83		301							{2: 'α', 3: '...', 4: '1'}
+86	84		301							{2: 'Roland', 3: 'Most people have a hard time defeating a learning machine, especially one that can quickly surpass the original... Well, unless she has a terrible teacher like me, that is.'}
+87	85		301							"{3: ""Roland's voice is almost drowned out by the churning of the Red Tide. He gives a dry laugh and pauses for a bit, as if his stamina could no longer support the chit-chat and laughter like before.""}"
+88	86		301							{2: 'Roland', 3: 'As for the connection between you and Lucia in the M.I.N.D... or that battle between the Gray Ravens and me...'}
+89	87		301							"{2: 'Roland', 3: ""It wasn't actually a real battle.""}"
+90	88		301							"{2: 'Roland', 3: 'After our talk, I temporarily retreated and prepared a little ""gift"" to delay them and stood on the sidelines, waiting.'}"
+91	89		301							{2: 'Roland', 3: 'I had planned to use it to delay you, but at least it came in handy...'}
+92	90		301							{2: 'α', 3: '...Where will you go next?', 4: '1'}
+93	91		301							{2: 'Roland', 3: 'Please allow me to keep that to myself for now.'}
+94	92		301							{2: 'α', 3: 'Oh? Fine then.', 4: '1'}
+95	93		202							{1: '1'}
+96	94		301							{3: 'She turns around, her back to the shadow standing behind the machine, and starts to walk out.'}
+97	95		301							{2: 'Roland', 3: 'Hold on.'}
+98	96		301							{3: 'Alpha stops, but does not turn back.'}
+99	97		301							"{2: 'Roland', 3: 'If Luna\'s disappearance is related to ""Lucia"" after all...'}"
+100	98		301							{2: 'Roland', 3: 'Will you keep on searching for her?'}
+101	99		301							{2: 'Roland', 3: 'Luna has always yearned for...'}
+102	100		201							{1: '1', 2: '500100'}
+103	101		301							{1: '1', 2: 'α', 3: 'Roland, I know what you want to say.', 4: '1'}
+104	102		301							"{2: 'α', 3: ""Even if Luna wavers in her responsibility to Ascnet and loses sight of what she wants, I'll still know what it is that she wishes for."", 4: '1'}"
+105	103		301							"{2: 'α', 3: ""I've never brought it up because this wish will never come true."", 4: '1'}"
+106	104		301							"{2: 'α', 3: 'We are Ascendants, and we can\'t place our hopes in Babylonia. Nor can we count on ""Lucia"" and her commandant, who we know nothing about.', 4: '1'}"
+107	105		301							{2: 'α', 3: 'Unless the Gray Ravens have changed their position.', 4: '1'}
+108	106		301							{2: 'α', 3: 'I know what happened in the Arctic was the last straw for her...', 4: '1'}
+109	107		301							{2: 'α', 3: 'But to get to that goal, we need time to prepare.', 4: '1'}
+110	108		301							{2: 'Roland', 3: '...'}
+111	109		301							{3: 'Roland seems to have murmured something from behind the machine, but his words were swallowed up by the whirling vortex.'}
+112	110		301							{2: 'α', 3: 'This base has been destroyed, and there is still a team from Babylonia on the upper level. They should have encountered the other agent by now.', 4: '1'}
+113	111		301							"{2: 'α', 3: ""It is now up to him to settle the score for the accumulated conflicts with the humans. I'll also be able to get out of this mess and continue my search for Luna."", 4: '1'}"
+114	112		301							{2: 'α', 3: 'In any case, the heap of problems that was piling up collapsed during this battle.', 4: '1'}
+115	113		301							{2: 'α', 3: 'When the remaining issues have been resolved, I shall take Luna away to fulfill her true desire.', 4: '1'}
+116	114		301							"{2: 'α', 3: ""Although you have learned things you shouldn't have, we still have a chance to fix this because of you."", 4: '1'}"
+117	115		301							{2: 'Roland', 3: 'Is this your way of saying thank you?'}
+118	116		301							{2: 'α', 3: 'Take it as you will.', 4: '1'}
+119	117		301							{2: 'Roland', 3: 'How heartless.'}
+120	118		301							{2: 'Roland', 3: 'I have searched through the sewers. Are you still planning to look for Luna here?'}
+121	119		301							{2: 'α', 3: 'I have some unfinished business.', 4: '1'}
+122	120		301							{2: 'Roland', 3: 'In that case, good luck.'}
+123	121		301							{2: 'Roland', 3: 'Hasta luego.'}
+124	122		301		1		AniZhuanchangBegin			{2: 'α', 3: '...', 4: '1'}

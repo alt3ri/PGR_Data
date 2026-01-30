@@ -1,0 +1,226 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		504							{1: '0.7'}
+2	2		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory767.png'}
+3	3		401							{1: '1', 2: '373'}
+4	4		301			DialogEnable				{3: 'Many years ago—'}
+5	5		301							"{3: ""Even the prosperous Kowloong cannot escape the Punishing virus's destruction across the land. A mother stares in despair at the collapsed building before her.""}"
+6	6		301							{3: 'Flames rage as the Corrupted, gleaming with crimson light, surge forward in a mass.'}
+7	7		201							{1: '1', 2: '500938', 3: '14'}
+8	8		301							{1: '1', 2: 'Wanxu', 3: '...the children... and...', 4: '1'}
+9	9		201							{1: '1', 2: '500462'}
+10	10		301							"{1: '1', 2: 'Refugee', 3: ""Run! The hospital's burning to the ground! The Corrupted are coming!""}"
+11	11		201							{1: '1', 2: '500938', 3: '14'}
+12	12		301							{1: '1', 2: 'Wanxu', 3: 'There are still so many people inside...', 4: '1'}
+13	13		202							{1: '1'}
+14	14		301							"{3: ""Clutching a small bundle in her arms, Wanxu takes one last look at the Kowloong People's Hospital engulfed in flames before being pulled away by soldiers helping with the evacuation.""}"
+15	15		301							{3: 'She has little experience caring for children. She unwraps the bundle to see the infant inside is barely breathing, ravaged by extensive wounds and a high fever.'}
+16	16		201							{1: '1', 2: '500938', 3: '14'}
+17	17		301							{1: '1', 2: 'Wanxu', 3: 'Disinfect him... please save him...', 4: '1'}
+18	18		201							{1: '1', 2: '500005'}
+19	19		301							"{1: '1', 2: 'Soldier', 3: ""You're Wanxu, right?!"", 4: '1'}"
+20	20		301							{3: 'The soldier calls out to confirm her identity amidst the raging battle.'}
+21	21		201							{1: '1', 2: '500938', 3: '4'}
+22	22		301							{1: '1', 2: 'Wanxu', 3: '...Yes! Both Wanshi and I qualify to board the transport aircraft!', 4: '1'}
+23	23		201							{1: '1', 2: '500005'}
+24	24		301							{1: '1', 2: 'Soldier', 3: 'This way! Sir! I found them!!', 4: '1'}
+25	25		202							{1: '1'}
+26	26		301							{3: 'The soldier reports the search status to their leader through the comms while fending off attacks from the Corrupted.'}
+27	27		201							{1: '1', 2: '500005'}
+28	28		301							{1: '1', 2: 'Soldier', 3: 'Once we find the transport aircraft, someone will ensure your safety...', 4: '1'}
+29	29		301			PanelActor1Shake				{1: '1', 2: 'Soldier', 3: 'Aargh!', 4: '1'}
+30	30		202							{1: '1'}
+31	31		301							"{3: ""A Corrupted sinks its teeth into the human soldier's thigh.""}"
+32	32		201							{1: '1', 2: '500005'}
+33	33		301							{1: '1', 2: 'Soldier', 3: 'Go! The transport aircraft is right ahead!', 4: '1'}
+34	34		202							{1: '1'}
+35	35		401							{1: '2', 2: '4511'}
+36	36		301			RImgBg1Shake	AniZhuanchangBegin			{3: 'A thunderous roar erupts, followed by a blast of heat. Wanxu clutches Wanshi tightly to her chest and drops to the ground.'}
+37	37		504							{1: '0'}
+38	38		401							{1: '1', 2: '36'}
+39	39		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory983.jpg'}
+40	40		401							{1: '1', 2: '201'}
+41	41		201							{1: '1', 2: '500938', 3: '8'}
+42	42		301			AniZhuanchangEnd				{1: '1', 2: '056', 3: '...', 4: '1'}
+43	43		204							{1: '1'}
+44	44		301							{3: '056 opens her eyes in the research facility dormitory, holding her head as she suppresses a dull ache.'}
+45	45		301							"{2: '056', 3: ""It's already this late..."", 4: '1'}"
+46	46		202							{1: '1'}
+47	47		301							"{3: ""056 checks the time before putting on her coat and leaving the room. In the harsh white light reflecting off the research facility's corridor walls, 056 adjusts her collar and checks today's required items.""}"
+48	48		301							{3: 'A notebook, a pen, and an old-fashioned wristwatch.'}
+49	49		301							{3: 'As the watch hand strikes the hour, 056 steps into the transparent laboratory chamber.'}
+50	50		201							{1: '1', 2: '500617'}
+51	51		301							{1: '1', 2: 'Elderly Researcher', 3: 'Right on the dot again today?', 4: '1'}
+52	52		203							{1: '1', 2: '0.25', 3: '400'}
+53	53		201							{1: '2', 2: '500938', 4: '-400'}
+54	54		301							"{1: '1', 2: '056', 3: ""I hope I'm not interrupting anyone's experiment?"", 4: '2'}"
+55	55		301							{3: 'The other researchers, busy at their stations, pause their work to look up.'}
+56	56		301							"{2: 'Elderly Researcher', 3: ""...Don't worry. Just do what you need to do. Today, your mission is—"", 4: '1'}"
+57	57		301							"{2: '056', 3: '""Check the status of test subjects, dispose of experimental waste.""', 4: '2'}"
+58	58		301							"{2: 'Elderly Researcher', 3: ""If you don't have any questions, proceed immediately."", 4: '1'}"
+59	59		301							"{2: '056', 3: ""There's a problem."", 4: '2'}"
+60	60		301							"{2: '056', 3: ""Last month I was still directly processing data from the connection experiments. But ever since Dr. Pickman arrived, you've removed me from the project and given me these menial tasks. I want to know why."", 4: '2'}"
+61	61		301							"{2: 'Elderly Researcher', 3: ""It's just a simple task reassignment. Your job now is to keep the lab rats healthy."", 4: '1'}"
+62	62		301							"{2: '056', 3: ""...They're not lab rats."", 4: '2'}"
+63	63		301							{2: 'Elderly Researcher', 3: 'This is why you had to be transferred.', 4: '1'}
+64	64		202							{1: '1', 2: '2'}
+65	65		301							"{3: '056 silently observes her ""former colleagues"" at work. Some shake their heads with bitter smiles, while others make no attempt to hide their disgust.'}"
+66	66		301							"{3: ""056 doesn't linger in the lab. She leaves immediately.""}"
+67	67		301				AniZhuanchangBegin			"{3: 'The elevator takes 056 to the basement, to the ""Cultivation Area"" where they keep the lab rats. A few test subjects are playing in the corridor.'}"
+68	68		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory986.jpg'}
+69	69		201							{1: '1', 2: '500972', 4: '-400'}
+70	70		201							{1: '2', 2: '500975', 4: '400'}
+71	71		301			AniZhuanchangEnd				{1: '1', 2: 'Aviana', 3: '056 is here!', 4: '1'}
+72	72		301							{2: 'Eamon', 3: 'Aviana, Theodore, get behind me.', 4: '2'}
+73	73		202							{1: '1', 2: '2'}
+74	74		301							{3: 'All the test subjects are human children under ten years old, and Eamon is the eldest among them.'}
+75	75		301							{3: '—Except for Aviana and Theodore, all the other children have been modified into Constructs.'}
+76	76		301							"{3: 'Their M.I.N.D.s display various ""disease symptoms""—almost every child carries the results of an entire research team, euphemistically dubbed ""special research"".'}"
+77	77		201							{1: '1', 2: '500938'}
+78	78		301							{1: '1', 2: '056', 3: 'Everyone out. I need to do a headcount.', 4: '1'}
+79	79		301							{3: 'Other test subjects come out from the Cultivation Area. Several are hiding behind Eamon, who is also backing away.'}
+80	80		301							{2: '056', 3: 'Where is Joshua?', 4: '1'}
+81	81		301							{3: 'A boy is missing from the group today.'}
+82	82		203							{1: '1', 2: '0.25', 3: '-400'}
+83	83		201							{1: '2', 2: '500975', 4: '400'}
+84	84		301							{1: '1', 2: 'Eamon', 3: 'Joshua was taken away by other adults early this morning.', 4: '2'}
+85	85		301							{2: '056', 3: '...They took him away?', 4: '1'}
+86	86		301							"{2: 'Eamon', 3: 'He failed his ""class"" again yesterday... That was his third ""x"". He failed, so the adults took him to the disposal site.', 4: '2'}"
+87	87		301							{3: 'Eamon calmly recounts what happened to Joshua this morning.'}
+88	88		301							{2: '056', 3: '...', 4: '1'}
+89	89		202							{1: '1', 2: '2'}
+90	90		301							"{3: '056 looks at the performance chart hanging in the Cultivation Area\'s corridor. The ""√"" and ""x"" marks stand out sharply. Those with too many failing marks are crossed out with a single stroke—indicating the subject has been sent to the ""disposal site"".'}"
+91	91		301							"{3: 'And today, 056 happens to be assigned to this task—""disposal of experimental waste"".'}"
+92	92		201							{1: '1', 2: '500974'}
+93	93		301							{1: '1', 2: 'Theodore', 3: 'Will Joshua and the others ever come back?', 4: '1'}
+94	94		203							{1: '1', 2: '0.25', 3: '400'}
+95	95		201							{1: '2', 2: '500938', 4: '-400'}
+96	96		301							"{1: '1', 2: '056', 3: ""...They'll come back. Now, Aviana, and Theodore, show me your arms."", 4: '2'}"
+97	97		202							{1: '1', 2: '2', 6: '1'}
+98	98		201							{1: '1', 2: '500975'}
+99	99		301							{1: '1', 2: 'Eamon', 3: 'Tch! Why do they need more injections again?!', 4: '1'}
+100	100		202							{1: '1'}
+101	101		301							{3: 'The Construct Eamon grits his teeth and turns away, refusing to watch as Theodore and Aviana obediently roll up their restraint suit sleeves, revealing thin arms with purple veins pulsing weakly beneath the skin.'}
+102	102		301							"{3: ""As the long needle pierces their arms, Theodore remains silent while tears well up in Aviana's big eyes.""}"
+103	103		201							{1: '1', 2: '500972', 4: '-400'}
+104	104		201							{1: '2', 2: '500938', 4: '400'}
+105	105		301							{1: '1', 2: 'Aviana', 3: '056... It hurts...', 4: '1'}
+106	106		301							"{2: '056', 3: ""This is a necessary procedure. I'm sorry."", 4: '2'}"
+107	107		202							{1: '1', 2: '2', 6: '1'}
+108	108		201							{1: '1', 2: '500974'}
+109	109		301							"{1: '1', 2: 'Theodore', 3: ""Eamon said if they're giving us medicine today, it means we'll be the next ones to undergo modification in a few days."", 4: '1'}"
+110	110		201							{1: '1', 2: '500975'}
+111	111		301							{1: '1', 2: 'Eamon', 3: 'Stop talking.', 4: '1'}
+112	112		202							{1: '1'}
+113	113		301							{3: 'Eamon tries to stop his companions from discussing it, but 056 hears everything anyway.'}
+114	114		301							{3: '056 watches the medicine drip down the syringe, remembering the last arrangement they discussed before reassigning her—after converting Aviana and Theodore into Constructs, they plan to use these children as test subjects for as many experiments as possible.'}
+115	115		301							"{3: ""These two children weren't left unmodified because of poor conditions. On the contrary, the researchers seem particularly interested in their future modifications—it's as if they're using all the previous test subjects as practice runs for these two.""}"
+116	116		301							"{3: 'If these two children fail as well, it means this batch of test subjects will be completely used up. They\'ll need to ""procure"" new materials from the Orphanage of Light.'}"
+117	117		301							"{3: ""I heard the Orphanage of Light is gone, but any other orphanage will do. Mary's Cathedral? The House of Love? Whichever works.""}"
+118	118		301							"{3: ""There's no shortage of orphans in this world anyway.""}"
+119	119		301							"{3: ""Young and naive, with barely any social connections. People are too preoccupied with their own affairs to notice the world's desolate corners.""}"
+120	120		301							{3: 'Injection complete.'}
+121	121		201							{1: '1', 2: '500938'}
+122	122		301							"{1: '1', 2: '056', 3: ""We're done. Now, head back, all of you. Try to be good and don't make the adults angry."", 4: '1'}"
+123	123		301							"{2: '056', 3: ""Eamon, are you listening? Don't get yourself thrown into solitary confinement again."", 4: '1'}"
+124	124		202							{1: '1'}
+125	125		301				AniZhuanchangBegin			{3: 'Though clearly disgruntled at being singled out, Eamon still helps usher the other children away.'}
+126	126		401							{1: '1', 2: '36'}
+127	127		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory983.jpg'}
+128	128		401							{1: '1', 2: '175'}
+129	129		301			AniZhuanchangEnd				{3: 'Her next job is dispose of experimental waste.'}
+130	130		301							{3: '056 passes through the Cultivation Area, pushes open another door at its rear, and proceeds down the corridor.'}
+131	131		301							"{3: ""At the end of the road, 056 opens the landfill gates. As they slowly slide open on both sides, rare rays of sunlight fall upon 056's face.""}"
+132	132		301							"{3: 'The sunlight shines impartially on everything in the disposal site—the ""mountain"" of waste, the sewage, and the fresh experimental waste just dumped at its entrance.'}"
+133	133		301							"{3: 'Joshua\'s remains are carelessly dumped in front of 056. His bionic skin is gleaming faintly, and the ID number ""S0145"" is still visible on its surface.'}"
+134	134		301							"{3: ""During this morning's experiment, he was discarded due to complications that were completely predictable.""}"
+135	135		301							"{3: ""Perhaps earlier was the last time 056 would ever be able to call Aviana or Theodore's names.""}"
+136	136		301							"{3: ""056 picks up a large garbage bag, bends down to pick up the tiny Construct's body, and puts it inside.""}"
+137	137		301							"{3: ""After filling the bag, 056 struggles to climb the mountain of garbage. She puts the garbage bag at the top to bathe in the sunlight streaming down through the hole in the landfill's ceiling.""}"
+138	138		301							{3: '056 tilts her head upward and stares at the sun, letting the unbearable light turn everything before her into a blur.'}
+139	139		201							{1: '1', 2: '500938'}
+140	140		301							{1: '1', 2: '056', 3: 'For... Wanshi...?', 4: '1'}
+141	141		301							"{2: '056', 3: ""For Wanshi's sake... should I keep going?"", 4: '1'}"
+142	142		202							{1: '1'}
+143	143		301							{3: 'A considerable amount of time has passed since she left Babylonia for this highly classified ground research facility.'}
+144	144		301							"{3: ""When 056 made the decision, she didn't know exactly what the research facility would look like, but she had a vague idea of what to expect.""}"
+145	145		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+146	146		504							{1: '0.7'}
+147	147		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory266.png'}
+148	148		301							{3: 'Shortly after leaving the Science Council, someone contacted her.'}
+149	149		201							{1: '1', 2: '500938', 4: '400'}
+150	150		201							{1: '2', 2: '500361', 4: '-400'}
+151	151		301							{1: '1', 2: 'Researcher', 3: 'Well, Wanxu? Have you made up your mind?', 4: '2'}
+152	152		301							"{2: 'Researcher', 3: ""They're very interested in our research direction and have provided ample resources. They'll support whatever you want to do next."", 4: '2'}"
+153	153		301							"{2: 'Wanxu', 3: 'That\'s what everyone says when they want to recruit you. And when you say ""abundant resources,"" you mean the ""excellent test subjects,"" don\'t you?', 4: '1'}"
+154	154		301							{2: 'Wanxu', 3: 'You should know exactly what they are.', 4: '1'}
+155	155		301							"{2: 'Researcher', 3: ""We all know what it means, so there's no need to spell it out, right?"", 4: '2'}"
+156	156		301							"{2: 'Wanxu', 3: ""What I'm more interested in finding out is who leaked our team's data."", 4: '1'}"
+157	157		301							"{2: 'Researcher', 3: ""What difference would it make if you found the person? There are always opportunists eager to achieve results, and others looking to trade what they have for profit. They'll exploit anything and everything they can get their hands on."", 4: '2'}"
+158	158		301							"{2: 'Researcher', 3: ""Even if you stop one or two of them, there'll always be more people trying to do the same anyway. There are even those outside specifically searching for these. Don't be naive."", 4: '2'}"
+159	159		301							{2: 'Wanxu', 3: '...', 4: '1'}
+160	160		301							"{2: 'Researcher', 3: ""You're so obsessed with experiments, yet you're no longer with the Science Council. You have no other options... I thought you'd be the easiest to convince."", 4: '2'}"
+161	161		301							{2: 'Wanxu', 3: 'Give me some time to think about it.', 4: '1'}
+162	162		301							{2: 'Researcher', 3: 'Make it quick. Oh, by the way, ask that woman, Melvie, for me as well—', 4: '2'}
+163	163		301							"{2: 'Wanxu', 3: ""No, she's not suitable."", 4: '1'}"
+164	164		202							{1: '1', 2: '2', 6: '1'}
+165	165		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+166	166		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+167	167		301							{3: 'After the fire at the Zelenograd Laboratory, Melvie showed profound disgust and guilt towards the experimental data they sent back.'}
+168	168		301							"{3: ""The night before the Science Council's official investigation order arrives, Wanxu sits in Wanshi's hospital room, racing to analyze the blood-stained data.""}"
+169	169		301							{3: 'She sets aside these results—all derived from children like him—and turns to look at Wanshi, who is surrounded by his array of life support equipment.'}
+170	170		301							{3: 'A revelation comes to her.'}
+171	171		301							"{3: ""At first, she attempts to transfer Wanshi's consciousness into a simulated M.I.N.D. through a remote connection pod, but the crude and fragmented simulation nearly devours Wanshi's weak consciousness instead.""}"
+172	172		301							{3: 'She grips onto monitor in frustration and looks at the infant on the hospital bed, who is too fragile to even withstand a gentle embrace.'}
+173	173		301							"{3: 'She implants brain chips in both of them—this time, she ""enters"" Wanshi\'s artificial M.I.N.D. with him, only to find nothing but a vast expanse of white.'}"
+174	174		301							"{3: ""Fighting severe dizziness, she pulls out of the artificial M.I.N.D. before it collapses, dropping to her knees by the hospital bed and checking Wanshi's condition with trembling hands.""}"
+175	175		201							{1: '1', 2: '500938', 3: '14'}
+176	176		301							{1: '1', 2: 'Wanxu', 3: 'What in the world...', 4: '1'}
+177	177		301							{3: 'Wanxu extends a hopeful finger toward the infant in a deep coma but receives no grasping reflex in response.'}
+178	178		301							{2: 'Wanxu', 3: 'Sorry, I have failed again.', 4: '1'}
+179	179		301							{2: 'Wanxu', 3: 'The simulated M.I.N.D. is still not stable enough... not nearly enough...', 4: '1'}
+180	180		301							{3: 'The data that once inspired her flashes through her mind again.'}
+181	181		301							{2: 'Wanxu', 3: 'What if... I use a real M.I.N.D.?', 4: '1'}
+182	182		301							"{2: 'Wanxu', 3: ""It's all for Wanshi. Everything I do is for him..."", 4: '1'}"
+183	183		202							{1: '1'}
+184	184		301							{3: 'Wanxu picks up her terminal and initiates a call with the researcher.'}
+185	185		301							{3: '...'}
+186	186		301			AniZhuanchangEnd				{3: 'Keeping her true purpose for going to the surface hidden, Wanxu summons Melvie.'}
+187	187		301							"{3: ""She exploits Melvie's empathy and trust, making a seemingly heartfelt plea that convinces Melvie to take in the sickly Wanshi.""}"
+188	188		201							{1: '1', 2: '500938', 4: '400'}
+189	189		201							{1: '2', 2: '500941', 4: '-400'}
+190	190		301							{1: '1', 2: 'Melvie', 3: 'When are you leaving?', 4: '2'}
+191	191		301							"{2: 'Wanxu', 3: ""I'm leaving tomorrow. Tonight, I'll stay here and watch him a little longer."", 4: '1'}"
+192	192		301							"{2: 'Melvie', 3: ""I'll leave you two alone, then."", 4: '2'}"
+193	193		204							{1: '1', 2: '14'}
+194	194		301							{2: 'Wanxu', 3: 'Melvie.', 4: '1'}
+195	195		202							{1: '1', 2: '2'}
+196	196		301							{3: 'The weight of her conscience makes her call out to Melvie.'}
+197	197		201							{1: '1', 2: '500941'}
+198	198		301							{1: '1', 2: 'Melvie', 3: '...Is there something else?', 4: '1'}
+199	199		301							{3: 'Melvie is holding the hospital room door open and turning back to look at Wanxu.'}
+200	200		203							{1: '1', 2: '0.25', 3: '-400'}
+201	201		201							{1: '2', 2: '500938', 3: '14', 4: '400'}
+202	202		301							{1: '1', 2: 'Wanxu', 3: 'Um...', 4: '2'}
+203	203		301							"{3: ""Wanxu's mouth opens, but nothing comes out.""}"
+204	204		301							{3: 'The M.I.N.D. research, Recall, surgeries, and ethics and morality... she no longer cares about any of it. With her heart shattering silently, she only wants to tell Melvie everything she plans to do.'}
+205	205		301							{2: 'Wanxu', 3: 'Would you condemn me?', 4: '2'}
+206	206		301							"{2: 'Melvie', 3: ""What's there to condemn? The surgery you performed on Wanshi? I understand how you feel—we're already this far down. How much worse could things possibly get?"", 4: '1'}"
+207	207		301							"{2: 'Wanxu', 3: ""No, that's not it... I'll do anything, everything, for Wanshi."", 4: '2'}"
+208	208		301							"{3: ""Wanxu can't tell if Melvie caught the deeper meaning in her words. Melvie, known for her quick temper, only responds with a pitying glance.""}"
+209	209		301							"{2: 'Melvie', 3: ""These children, modified before they even turned ten, were no different from Wanshi—remember that, and you won't lose your humanity to madness."", 4: '1'}"
+210	210		301							{2: 'Wanxu', 3: '...', 4: '2'}
+211	211		202							{1: '1', 2: '2'}
+212	212		301				AniZhuanchangBegin			"{3: ""After spending the night by her child's sickbed, she leaves Babylonia at the scheduled time the next day to become Researcher No. 056.""}"
+213	213		504							{1: '0'}
+214	214		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory983.jpg'}
+215	215		301			AniZhuanchangEnd				{3: 'Despite her previous research experience, 056 receives no special treatment. She performs mundane tasks at the facility, collecting and analyzing experimental data from the children.'}
+216	216		301							{3: 'She has never seen the process of children being transformed into Constructs firsthand. By the time she arrived, only Theodore and Aviana were not yet transformed.'}
+217	217		301							"{3: ""Even so, she can imagine what it must have been like for them from the terror on the children's faces whenever they speak of the transformation surgery.""}"
+218	218		301							"{3: 'Some were already unhappy with her ""pretentious concern"" for the test subjects. After Dr. Pickman came, Wanxu was further sidelined to handle menial tasks.'}"
+219	219		301							{3: 'She needs continued access to the consciousness connection device in the central lab, but her current position is far from where she needs to be.'}
+220	220		301							"{3: 'If adopting the ""proper attitude"" toward test subjects will help regain their trust, then for the sake of Wanshi, she can sacrifice what remains of her conscience.'}"
+221	221		201							{1: '1', 2: '500938'}
+222	222		301							{1: '1', 2: '056', 3: 'Keep going. The day of success has yet to come.', 4: '1'}
+223	223		202							{1: '1'}
+224	224		401							{1: '2', 2: '4655'}
+225	225		301		1		AniZhuanchangBegin			"{3: '056 emerges from the ""disposal site"", touches the control panel, and seals its gates shut.'}"

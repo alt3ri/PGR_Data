@@ -1,0 +1,363 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory699.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		301			DialogEnable				{3: 'Three hours passed after Gray Raven received the mission to support and rescue Lucia.'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+5	5		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory351.jpg'}
+6	6		504							{1: '0.7'}
+7	7		201							{1: '1', 2: '500012'}
+8	8		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+9	9		301							{1: '1', 2: 'Nikola', 3: 'Asking too many questions is not going to do you any good. You should stay out of this.', 4: '1'}
+10	10		502							{1: 'DialogDisable'}
+11	11		302							{2: 'Actually, while I was in the coma...', 3: '12'}
+12	12		302							{2: 'I saw a research institute from the perspective of someone else.', 3: '13'}
+13	13		301			DialogEnable				{2: 'Nikola', 3: '...', 4: '1'}
+14	14		301							{2: 'Nikola', 3: 'Keep speaking.', 4: '1'}
+15	15		502							{1: 'DialogDisable'}
+16	16		302							{2: 'After matching the coniferous forest and landscape against the satellite map...', 3: '17'}
+17	17		302							{2: 'We have located the approximate position.', 3: '18'}
+18	18		301			DialogEnable				{2: 'Nikola', 3: 'What do you think about that perspective?', 4: '1'}
+19	19		302							"{2: ""I'm guessing it's from Ascendant Alpha's point of view."", 3: '20'}"
+20	20		301							{2: 'Nikola', 3: 'Why?', 4: '1'}
+21	21		302							{2: 'I had a similar experience before.', 3: '22'}
+22	22		301							{2: 'Nikola', 3: '...Wells was right. You are just a magnet for trouble.', 4: '1'}
+23	23		302							"{2: ""How's Lucia now...?"", 3: '24'}"
+24	24		301							"{2: 'Nikola', 3: ""The Science Council believes Lucia was affected by Alpha's M.I.N.D. activity signals. They are using this connection to search for this signal source."", 4: '1'}"
+25	25		302							{2: 'Put Gray Raven in this operation then.', 3: '26'}
+26	26		301							"{2: 'Nikola', 3: ""I didn't want to tell you because I didn't want you to get involved again."", 4: '1'}"
+27	27		301							{2: 'Nikola', 3: 'Now, give me a reason why you must step into this mess.', 4: '1'}
+28	28		502							{1: 'DialogDisable'}
+29	29		302							{2: 'First, if the signal really came from Alpha...', 3: '30'}
+30	30		302							{2: 'Gray Raven would be the best candidate, given that they have fought her many times and are now equipped with the latest specialized frames.', 3: '31'}
+31	31		301			DialogEnable				"{2: 'Nikola', 3: ""I'll take that as a reason, but not good enough. Gray Raven is not in the best shape now that Lucia is out of combat."", 4: '1'}"
+32	32		301							"{2: 'Nikola', 3: ""The power armor is meant to provide commandants with bonus protection so they don't get killed in battles, especially for some younger ones who are always reckless."", 4: '1'}"
+33	33		301							"{2: 'Nikola', 3: ""Don't ever think that you can make up for the missing Constructs, let alone that she is a specialized frame."", 4: '1'}"
+34	34		502							{1: 'DialogDisable'}
+35	35		302							"{2: ""The second reason is, Kurono still hasn't given up on me."", 3: '36'}"
+36	36		302							"{2: 'So why don\'t we just get a little more of their ""attention""?', 3: '37'}"
+37	37		301			DialogEnable				{2: 'Nikola', 3: 'Hmph. Good that you know it.', 4: '1'}
+38	38		301							"{2: 'Nikola', 3: ""...Alright, since you are already prepared to become a bait, I won't say no."", 4: '1'}"
+39	39		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+40	40		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+41	41		202							{1: '1', 6: '1'}
+42	42		504							
+43	43		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory699.jpg'}
+44	44		301							{3: 'You arrived at the destination in a shuttle. After discussing with Liv and Lee, you decided to split up for the best rescue efficiency.'}
+45	45		301							{3: 'The snowstorm hinders your vision and slows you down, as you have to constantly watch out for the landscape under your feet.'}
+46	46		301							{3: 'You continue to walk through the storm, trying to find a place with good visibility to look for shuttle debris.'}
+47	47		301							{2: 'AI', 3: 'Biosignal approaching.'}
+48	48		301							{3: 'You look at the direction pointed out by the AI.'}
+49	49		301							{3: 'A vague figure appears in the storm, giving you a familiar feel. A word slips out of your lips.'}
+50	50		302							{2: 'Lucia!', 3: '51'}
+51	51		301				AniZhuanchangBegin			{3: 'The figure halts slightly, then walks over.'}
+52	52		401							{1: '1', 2: '36'}
+53	53		502						300.0	{1: 'DialogDisable'}
+54	54		105				AniZhuanchangEnd			{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLuxiya2S/UiMovieLuxiya2S01/UiMovieLuxiya2S01.prefab'}
+55	55		401							{1: '1', 2: '229'}
+56	56		301			DialogEnable				"{2: 'Alpha', 3: ""You're finally here. If you come a little later, I'll have to send her somewhere else.""}"
+57	57		302							{2: 'Alpha?', 3: '58'}
+58	58		301							"{3: ""The black-haired girl quietly lies in Alpha's arms. There are not many marks on her frame, but her face rarely looks so exhausted.""}"
+59	59		301							"{3: ""Keeping a close eye on Alpha, you press the button to call for assistance while checking Lucia's condition through M.I.N.D. Connection.""}"
+60	60		301							{3: 'Alpha remains silent, with no intention to stop you.'}
+61	61		302							{2: 'The blocker of her Inver-Device... Is it damaged?', 3: '62'}
+62	62		301							"{2: 'Alpha', 3: ""She doesn't need it anymore.""}"
+63	63		302							{2: 'Why?', 3: '64', 4: 'Why would I believe you?', 5: '65'}
+64	64	66	301							"{2: 'Alpha', 3: ""Ask her when she wakes up. You'll trust her words better.""}"
+65	65		301							"{2: 'Alpha', 3: ""It's up to you.""}"
+66	66		301							{2: 'Alpha', 3: '【kuroname】...'}
+67	67		301							{3: 'Alpha looks over. You notice that she is no longer covering her left eye.'}
+68	68		301							"{2: 'Alpha', 3: ""You know what happened to her, don't you?""}"
+69	69		302							{2: 'I know it very well.', 3: '70'}
+70	70		301							"{2: 'Alpha', 3: ""Can't believe they didn't hide it from you this time... No, someone must have leaked the information to you.""}"
+71	71		301							"{2: 'Alpha', 3: 'They surely ""trusted"" you a lot.'}"
+72	72		301							{2: 'Alpha', 3: 'What would you do if they were to seal her up?'}
+73	73		502							{1: 'DialogDisable'}
+74	74		302							"{2: ""I'll carry on fighting for her."", 3: '75'}"
+75	75		302							{2: 'So she can see the situation getting better upon her return.', 3: '76'}
+76	76		301			DialogEnable				{2: 'Alpha', 3: 'Are you so sure that you can survive till that day?'}
+77	77		502							{1: 'DialogDisable'}
+78	78		302							"{2: ""If I can't make it..."", 3: '79'}"
+79	79		302							{2: 'She can witness it for me.', 3: '80'}
+80	80		301			DialogEnable				{2: 'Alpha', 3: 'Is that so?'}
+81	81		301							{3: 'Her fierce gaze pierces through the storm and your exoskeleton armor, as if she will see through your heart.'}
+82	82		301							{2: 'Alpha', 3: 'Do you know that... To some people, protecting a Corrupted Construct can be seen as a sign of defecting?'}
+83	83		502							{1: 'DialogDisable'}
+84	84		302							{2: 'The choice I made was never meant to just impact the present.', 3: '85'}
+85	85		302							{2: 'I want more than just a result.', 3: '86'}
+86	86		301			DialogEnable				"{2: 'Alpha', 3: ""What's the future world like in your vision? Will it regain the glory of the Golden Age?""}"
+87	87		502							{1: 'DialogDisable'}
+88	88		302							{2: '...', 3: '89'}
+89	89		302							{2: 'I hope it can be a little better than that.', 3: '90'}
+90	90		301			DialogEnable				{2: 'Alpha', 3: 'A little better...'}
+91	91		301							{3: 'After a brief moment of silence, Alpha passes Lucia to you.'}
+92	92		301				AniZhuanchangBegin			{2: 'Alpha', 3: 'Take her.'}
+93	93		502						300.0	{1: 'DialogDisable'}
+94	94		105							
+95	95		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory699.jpg'}
+96	96		201							{1: '1', 2: '500610'}
+97	97		301			DialogEnable				{1: '1', 3: 'You hold Lucia firmly and find out she has a storage unit in her hand.'}
+98	98		302							"{2: ""What's this?"", 3: '99'}"
+99	99		301							"{2: 'Alpha', 3: ""It contains the records of Project Winter. Haven't you been investigating it?"", 4: '1'}"
+100	100		302							{2: 'Why?', 3: '101'}
+101	101		301							"{2: 'Alpha', 3: ""I already have what I want and don't care about the rest."", 4: '1'}"
+102	102		301							{2: 'Alpha', 3: 'And since you are taking action to bring another possibility into practice, it would be a shame if you keep repeating the past mistakes.', 4: '1'}
+103	103		301							"{2: 'Alpha', 3: ""You can't stay ignorant if you want to uphold your beliefs."", 4: '1'}"
+104	104		301							{2: 'Alpha', 3: 'But knowing the truth also means peering into the abyss. Are you truly ready?', 4: '1'}
+105	105		302							"{2: ""I won't go on that path."", 3: '106'}"
+106	106		301							{2: 'Alpha', 3: 'Is that so?', 4: '1'}
+107	107		301							{2: 'Alpha', 3: 'Then struggle with all your might. Even if only one can reach the finishing line...', 4: '1'}
+108	108		301							"{2: 'Alpha', 3: ""I'd also like to see how far you can go."", 4: '1'}"
+109	109		502							{1: 'DialogDisable'}
+110	110		302							{2: '...', 3: '111'}
+111	111		302							{2: 'What are you going to do next?', 3: '112'}
+112	112		301			DialogEnable				{2: 'Alpha', 3: '...', 4: '1'}
+113	113		301							{2: 'Alpha', 3: 'Your members are here. Go.', 4: '1'}
+114	114		301							{3: 'Alpha looks into the distance beyond the snowstorm.'}
+115	115		301							"{2: 'Alpha', 3: ""We have our own paths to walk. It's not the time for them to cross yet."", 4: '1'}"
+116	116		301							{2: 'Alpha', 3: 'Before that, I suggest you focus on things beyond the reach of the other agent and the Tower.', 4: '1'}
+117	117		302							{2: 'What do you mean?', 3: '118'}
+118	118		202							{1: '1'}
+119	119		301							{3: 'Alpha seems to have lost interest in explaining. She turns away and disappears in the storm alone.'}
+120	120		301							{3: 'You hear rushed footsteps from behind.'}
+121	121		201							{1: '1', 2: '500568', 4: '400'}
+122	122		201							{1: '2', 2: '1031001', 4: '-400'}
+123	123		301							{1: '1', 2: 'Lee & Liv', 3: 'Commandant! Lucia!', 4: '1', 5: '2'}
+124	124		301							{3: 'You turn around and see your members quickly running to you, along with some Purifying Force members who seem to be heavily wounded.'}
+125	125		302				AniZhuanchangBegin			"{2: ""All good. Let's go back.""}"
+126	126		202			DialogDisable			3000.0	{1: '1', 2: '2', 6: '1'}
+127	127		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+128	128		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory53.jpg'}
+129	129		301			DialogEnable				{3: 'Lucia finds herself in an empty hall. There are no people nearby, not even a sound. Only pale light shines on gray metal walls to reflect her shadow.'}
+130	130		301							{3: 'The vast emptiness brings her a level of anxiety that she has never felt before. She cannot help but retreat to the corner.'}
+131	131		301							{3: 'The white light feels heavy and suffocating.'}
+132	132		301							{3: 'The light seems to have its own will. The more she tries to move back into the shadow, the more closely it follows, mercilessly exposing her.'}
+133	133		301							"{3: '""Sample for observation"", ""the key to capturing the Punishing Virus"", ""key subject""...'}"
+134	134		301							{3: 'Ever since learning the truth, she has become used to these comments.'}
+135	135		301							{3: 'At least...'}
+136	136		301							{3: 'She touches her palm as if she can feel the familiar warmth... When she held that hand, it pulled her out of the void.'}
+137	137		301							{3: 'That person gave meaning to her life. For the first time, she felt connected to the world... It all started with their encounter.'}
+138	138		301							"{2: ""Nikola's Voice"", 3: 'Have you arranged a commandant for ■■■? Better get it done before the activation program.'}"
+139	139		301							{3: 'She suddenly hears a discordant voice in her memory. Her palm begins to feel cold.'}
+140	140		301							{2: '???', 3: 'Already done.'}
+141	141		301							{3: 'Wait...'}
+142	142		301							"{2: ""Nikola's Voice"", 3: 'Yeah, the surveillance on her takes top priority. Get her a smart commandant.'}"
+143	143		301							"{2: '???', 3: ""Don't worry. We picked a great graduate after many rounds of selection.""}"
+144	144		401						800.0	{1: '2', 2: '772'}
+145	145		402							{1: '772'}
+146	146		301							{3: 'Her precious memories begin to crack like a mirror. She grasps her own hand, her metal joints squeaking in terror. Is this what she has always been fearing?'}
+147	147		301							{3: 'If meeting each other was also a carefully arranged coincidence, what else would be left in her?'}
+148	148		301							{3: '...'}
+149	149		301							"{3: ""No. After she had learned that person's way of thinking and doing things, she realized that person had never lied to her.""}"
+150	150		301							{3: 'She desired to get closer to that person. Her feelings were genuine. These bonds were not fake.'}
+151	151		301							{3: 'So, even if...'}
+152	152		301							"{2: ""Nikola's Voice"", 3: 'Someone took it first?'}"
+153	153		301							{2: '???', 3: 'Um... My bad. I thought nobody would pick an incomplete squad.'}
+154	154		301							"{2: '???', 3: ""But don't worry, I had already put ■■■ into hibernation in the name of frame maintenance. We can transfer her to the care of one of our people later.""}"
+155	155		301							"{2: ""Nikola's Voice"", 3: 'Who took the squad?'}"
+156	156		301							"{2: '???', 3: ""Here's the information.""}"
+157	157		301							"{2: ""Nikola's Voice"", 3: 'Tch, not again.'}"
+158	158		301							{2: '???', 3: 'Commander?'}
+159	159		301							"{2: ""Nikola's Voice"", 3: 'Nothing. Just a graduate who refused the transfer order.'}"
+160	160		301							"{2: ""Nikola's Voice"", 3: 'Let it be.'}"
+161	161		301							{2: '???', 3: 'What?'}
+162	162		301							"{2: ""Nikola's Voice"", 3: 'I say just let this one be the new commandant of Gray Raven.'}"
+163	163		301							"{2: ""Nikola's Voice"", 3: 'Hah. I wonder what the Chief of F.O.S. will bring for us.'}"
+164	164		301							{3: 'Turns out... There was never any carefully arranged coincidence...'}
+165	165		301							{3: 'The light no longer feels cold, but warm.'}
+166	166		301							{3: 'Instead, that person has probably saved her from another emptiness.'}
+167	167		301							{2: '???', 3: 'The new Chief of F.O.S... Oh, I remember.'}
+168	168		301				AniZhuanchangBegin			{3: 'The name is...'}
+169	169		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+170	170		502						300.0	{1: 'DialogDisable'}
+171	171		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+172	172		201							{1: '1', 2: '500166'}
+173	173		301			DialogEnable				{1: '1', 2: 'Lucia', 3: '【kuroname】...', 4: '1'}
+174	174		302							"{2: ""I'm here, Lucia."", 3: '175'}"
+175	175		301							{3: 'Calibrating the vision module took Lucia some time. She finds the ceiling somewhat familiar.'}
+176	176		301							{2: 'Lucia', 3: 'Commandant... Where are we?', 4: '1'}
+177	177		302							"{2: ""You're in the Construct department of Star of Life."", 3: '178'}"
+178	178		204							{1: '1', 2: '5'}
+179	179		301							"{2: 'Lucia', 3: ""Star of Life... Oh! How's your injury, Commandant?"", 4: '1'}"
+180	180		302							"{2: ""The wound wasn't deep. I'm already fine."", 3: '181'}"
+181	181		204							{1: '1', 2: '1'}
+182	182		301							{2: 'Lucia', 3: 'Thank goodness... And sorry.', 4: '1'}
+183	183		302							"{2: ""It wasn't your fault. Besides, you already pushed me away."", 3: '184'}"
+184	184		204							{1: '1'}
+185	185		301							{3: 'Lucia tries to sit up, but fails to do so due to the fatigue in the frame and a sharp pain in her mind.'}
+186	186		502							{1: 'DialogDisable'}
+187	187		302							"{2: ""Don't push yourself too hard. Your frame was badly damaged."", 3: '188'}"
+188	188		302							{2: 'Not to mention your M.I.N.D. It needs multiple repair sessions.', 3: '189'}
+189	189		301			DialogEnable				{3: 'She tries to feel her frame. This time, the fatigue is slightly different from the past injuries.'}
+190	190		301							{2: 'Lucia', 3: 'Frame damage is probably not the sole reason for my fatigue...', 4: '1'}
+191	191		502							{1: 'DialogDisable'}
+192	192		302							{2: '...', 3: '193'}
+193	193		302							{2: 'I will prove your innocence.', 3: '194'}
+194	194		204							{1: '1', 2: '1'}
+195	195		301			DialogEnable				"{3: ""Seeing the human's serious face, Lucia smiles. She is about to say something when the ward's door is suddenly opened.""}"
+196	196		202							{1: '1', 6: '1'}
+197	197		401							{1: '2', 2: '754'}
+198	198		201							{1: '1', 2: '500627'}
+199	199		301							{1: '1', 2: 'Discord', 3: '【kuroname】, the visiting time is over. You need to go.', 4: '1'}
+200	200		302							{2: 'Can I have a little more time?', 3: '201'}
+201	201		301							"{2: 'Discord', 3: ""She's still under observation. There is no room for negotiation. Your understanding is appreciated."", 4: '1'}"
+202	202		202							{1: '1', 6: '1'}
+203	203		201							{1: '1', 2: '500166'}
+204	204		301							{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+205	205		204							{1: '1', 2: '1'}
+206	206		301							"{2: 'Lucia', 3: 'Commandant, can you help me say ""I\'m back"" to Liv and Lee?', 4: '1'}"
+207	207		302							{2: '...Sure.'}
+208	208		301				AniZhuanchangBegin			{3: 'Lucia waves goodbye to the human and watches the ward door close again.'}
+209	209		401							{1: '1', 2: '36'}
+210	210		202			DialogDisable			3000.0	{1: '1', 6: '1'}
+211	211		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+212	212		401							{1: '1', 2: '201'}
+213	213		201							{1: '1', 2: '500627'}
+214	214		301			DialogEnable				{1: '1', 2: 'Discord', 3: 'We have finished the inspection of this thing. You can have it back now.', 4: '1'}
+215	215		302							"{2: ""Lucia's terminal?"", 3: '216'}"
+216	216		301							{2: 'Discord', 3: 'Apart from one new message, there is nothing special. A decision has been made to return it to her commandant.', 4: '1'}
+217	217		301							{2: 'Discord', 3: 'Once again, I would like to thank Gray Raven on behalf of my squad.', 4: '1'}
+218	218		502							{1: 'DialogDisable'}
+219	219		302							{2: 'It was Lee and Liv who found you.', 3: '220'}
+220	220		302							{2: 'You should thank them.', 3: '221'}
+221	221		301			DialogEnable	AniZhuanchangBegin			{2: 'Discord', 3: 'I will.', 4: '1'}
+222	222		202			DialogDisable				{1: '1', 6: '1'}
+223	223		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg'}
+224	224		301			DialogEnable				{3: 'Among the crowd, a girl Construct has come to the front desk of a hospital.'}
+225	225		301							{2: 'Receptionist', 3: 'Hi there. What can I do for you? Are you looking for the Construct department?'}
+226	226		301							{2: 'Girl Construct', 3: 'No.'}
+227	227		301							{3: 'The girl shakes her head. Her presence is so weak that it feels like she will disappear into the crowd in the next instant.'}
+228	228		301							{2: 'Girl Construct', 3: 'Could you please tell me... Where is Mr. Kugawa Kurono?'}
+229	229		301							{3: 'Someone is gazing upon her from not far behind, but she has not noticed it.'}
+230	230		201							{1: '1', 2: '500380'}
+231	231		301				AniZhuanchangBegin			{1: '1', 2: 'Ishmael', 3: '...', 4: '1'}
+232	232		202			DialogDisable				{1: '1', 6: '1'}
+233	233		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory328.png'}
+234	234		201							{1: '1', 2: '500615', 4: '-500'}
+235	235		201							{1: '2', 2: '500305', 4: '400'}
+236	236		301			DialogEnable				"{1: '1', 2: 'Lilith', 3: ""That was it. She didn't seem to be interested in joining us. In fact, she was strongly against it."", 4: '1'}"
+237	237		301							{2: 'Lilith', 3: 'Did you also see this coming, Mr. Vonnegut?', 4: '1'}
+238	238		301							{3: 'He did not answer.'}
+239	239		301							"{2: 'Lilith', 3: ""Why did you set a test that I wouldn't be able to pass? That was harsh."", 4: '1'}"
+240	240		301							{2: 'Vonnegut', 3: 'Not really. I now have a basic understanding of their purpose and abilities. More importantly, I needed to confirm whether she would interfere with our upcoming plan.', 4: '2'}
+241	241		301							"{2: 'Vonnegut', 3: ""Besides, that would make you work even harder to complete the other task, don't you think?"", 4: '2'}"
+242	242		301							{3: 'Lilith opens her palm. A storage unit lies on it.'}
+243	243		204							{1: '1', 2: '1'}
+244	244		301							"{2: 'Lilith', 3: ""I wouldn't be able to catch it from the endless sea of data if my dear auntie didn't generously share the key with me."", 4: '1'}"
+245	245		301							{3: 'Vonnegut takes the storage unit from Lilith. He puts it in front of his eyes, admiring it like a piece of treasure.'}
+246	246		204							{1: '1'}
+247	247		301							"{2: 'Lilith', 3: ""Pardon my rudeness, but there is a small question I'd like to ask. What do you plan to do with this sample?"", 4: '1'}"
+248	248		301							"{2: 'Vonnegut', 3: ""There's a promise from long ago that I need to honor."", 4: '2'}"
+249	249		301							{2: 'Vonnegut', 3: 'You did well in the test. We are almost ready to awaken Cthylla.', 4: '2'}
+250	250		301							{2: 'Lilith', 3: 'What about the Forsakens? Shall we keep going?', 4: '1'}
+251	251		301							{2: 'Lilith', 3: 'Their leader is quite sharp. He has already begun investigating.', 4: '1'}
+252	252		301							"{2: 'Vonnegut', 3: ""No need to worry. They won't have time for us."", 4: '2'}"
+253	253		301							{2: 'Lilith', 3: 'Are you talking about those deserters from Babylonia?', 4: '1'}
+254	254		301				AniZhuanchangBegin			{2: 'Vonnegut', 3: 'Not only them... Well, to a certain extent, all the events and conflicts can be attributed to one thing to begin with.', 4: '2'}
+255	255		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+256	256		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory31.jpg'}
+257	257		201							{1: '1', 2: '1101001'}
+258	258		301			DialogEnable				{1: '1', 3: 'Watanabe looks at the newly piled-up mound in front. He puts a paper flower on it.'}
+259	259		301							"{2: 'Watanabe', 3: ""We wouldn't be able to stop the kidnapping without the intelligence you sent us, Watt, Walker."", 4: '1'}"
+260	260		301							{2: 'Watanabe', 3: 'Your sacrifice will not be in vain. One day, the original orders will be restored on this land.', 4: '1'}
+261	261		301							{3: 'Watanabe looks up. Old and new burial mounds line up in the cemetery, with paper flowers on each of them.'}
+262	262		301							{3: 'The ashes of the sacrificed merge with the sand under the mounds, returning to this land.'}
+263	263		301							"{3: ""He remembers everybody's name here. Nothing is forgotten.""}"
+264	264		301							"{2: 'Watanabe', 3: ""I'll see you later. Next time, I will bring some good news."", 4: '1'}"
+265	265		301							{3: 'Watanabe rises to his feet and leaves the small cemetery.'}
+266	266		203							{1: '1', 2: '0.25', 3: '400'}
+267	267		201							{1: '2', 2: '500005', 4: '-400'}
+268	268		301							{1: '1', 2: 'Forsaken Soldier', 3: 'Boss, we have more newcomers.', 4: '2'}
+269	269		301							"{2: 'Watanabe', 3: ""Help them settle down first. Don't forget to verify the identities."", 4: '1'}"
+270	270		301							"{2: 'Forsaken Soldier', 3: ""Got it... But I'm afraid we don't have enough people to train them. I mean, we aren't much better than new recruits ourselves. It would be quite a challenge for us to take care of so many newcomers."", 4: '2'}"
+271	271		301							"{2: 'Watanabe', 3: ""I'll go to the training camp myself. Another senior of mine will also come to help them train."", 4: '1'}"
+272	272		301							{2: 'Forsaken Soldier', 3: 'Your senior? I thought you were senior enough, Leader.', 4: '2'}
+273	273		301							{2: 'Watanabe', 3: 'Of course.', 4: '1'}
+274	274		301							{2: 'Watanabe', 3: 'I respect him a lot.', 4: '1'}
+275	275		301							"{3: ""Watanabe said with a complex look, but he did not reveal that person's name.""}"
+276	276		301							{2: 'Watanabe', 3: 'Is there anything else I need to know?', 4: '1'}
+277	277		301							"{2: 'Forsaken Soldier', 3: ""Um... It's about the Clean Zone. Babylonia has sent someone here again."", 4: '2'}"
+278	278		301							"{2: 'Watanabe', 3: ""It's only a matter of time before they come again. I just didn't expect them to be so impatient."", 4: '1'}"
+279	279		301				AniZhuanchangBegin			{2: 'Watanabe', 3: 'Where are they now? Take me to them.', 4: '1'}
+280	280		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+281	281		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+282	282		301			DialogEnable				{3: 'The closed doors of the Science Council are now open.'}
+283	283		201							{1: '1', 2: '500539'}
+284	284		301							{1: '1', 2: 'Rosa', 3: 'Oh, hello, 【kuroname】.', 4: '1'}
+285	285		302							{2: 'Hi, Rosa.', 3: '286'}
+286	286		203							{1: '1', 2: '0.25', 3: '-400'}
+287	287		201							{1: '2', 2: '500004', 4: '400'}
+288	288		301							"{1: '1', 2: 'Asimov', 3: ""This isn't your appointment time."", 4: '2'}"
+289	289		302							{2: 'I was just passing by and wanted to say thank you.', 3: '290'}
+290	290		301							"{2: 'Asimov', 3: ""Lucia's situation was the Science Council's responsibility. I just did what I should."", 4: '2'}"
+291	291		302							{2: 'You did more than that.', 3: '292'}
+292	292		204							{1: '2', 2: '8'}
+293	293		301							{2: 'Asimov', 3: '...', 4: '2'}
+294	294		301							{3: 'Hearing your words, Asimov could not help but stop.'}
+295	295		204							{1: '2'}
+296	296		301							{2: 'Asimov', 3: 'Rosa.', 4: '2'}
+297	297		204							{1: '1', 2: '11'}
+298	298		301							{2: 'Rosa', 3: 'Yes?!', 4: '1'}
+299	299		301							{2: 'Asimov', 3: 'Go to the archives room. I want a copy of all the records related to M.I.N.D. overload in the experiments of Hyperreal.', 4: '2'}
+300	300		301							{2: 'Rosa', 3: 'Huh?!', 4: '1'}
+301	301		301							{2: 'Rosa', 3: 'I-I see.', 4: '1'}
+302	302		202							{1: '1', 6: '1'}
+303	303		203							{1: '2', 2: '0.25'}
+304	304		301							"{3: 'Slightly anxious, Rosa rushed out immediately. ""When will I get to finish going through so many records?"" She mumbled.'}"
+305	305		301							{2: 'Asimov', 3: 'When did you guess that?', 4: '2'}
+306	306		302							{2: 'During the conversation just now.'}
+307	307		204							{1: '2', 2: '8'}
+308	308		301							{2: 'Asimov', 3: '...Right. I was the one who added the encrypted comms address.', 4: '2'}
+309	309		204							{1: '2'}
+310	310		301							{2: 'Asimov', 3: 'So, why are you here?', 4: '2'}
+311	311		302							{2: 'Just to say thank you.', 3: '312'}
+312	312		301							"{3: ""You put a storage unit in Asimov's hand.""}"
+313	313		204							{1: '2', 2: '7'}
+314	314		301							"{2: 'Asimov', 3: ""What's this..."", 4: '2'}"
+315	315		301							"{3: ""Asimov's pupils contract slightly. He has obviously guessed something.""}"
+316	316		302							"{2: ""It's a record of the experiments in Fort Winter."", 3: '317'}"
+317	317		204							{1: '2'}
+318	318		301							{2: 'Asimov', 3: 'You should submit it to Commander Nikola.', 4: '2'}
+319	319		302							"{2: ""It's just a backup."", 3: '320'}"
+320	320		301							{2: 'Asimov', 3: 'Why did you do that?', 4: '2'}
+321	321		502							{1: 'DialogDisable'}
+322	322		302							{2: 'You have always stayed neutral. For you to do something so risky...', 3: '323'}
+323	323		302							{2: 'There must be something that you really want.', 3: '324'}
+324	324		204							{1: '2', 2: '8'}
+325	325		301			DialogEnable				"{2: 'Asimov', 3: ""...I'll take it for now."", 4: '2'}"
+326	326		204							{1: '2'}
+327	327		302							{2: 'Can I ask a question?', 3: '328'}
+328	328		301							{2: 'Asimov', 3: 'Bring it on.', 4: '2'}
+329	329		302							{2: 'What will you do with this data?', 3: '330'}
+330	330		301							"{2: 'Asimov', 3: ""...Whether it's the army or Kurono, they always withhold some information when sharing it with the Science Council."", 4: '2'}"
+331	331		301							{2: 'Asimov', 3: 'Not to mention their real purpose is to use the information to advance their plans. In a way, it makes the Science Council their accomplice.', 4: '2'}
+332	332		301							{2: 'Asimov', 3: 'Perhaps President wants to stop Project Winter through politics, but as long as someone still hopes to exploit this project for their own good, it will only be a matter of time before it is restarted.', 4: '2'}
+333	333		302							{2: 'Are you trying to end Project Winter completely?', 3: '334'}
+334	334		301							{2: 'Asimov', 3: 'Right, but in a scientific way.', 4: '2'}
+335	335		301							{2: 'Asimov', 3: 'The only way to completely crush their hope is to prove it is wrong from the roots.', 4: '2'}
+336	336		301							{2: 'Asimov', 3: 'Which is why this complete information comes at just the right time.', 4: '2'}
+337	337		301							{2: 'Asimov', 3: 'What about you? What is your goal?', 4: '2'}
+338	338		302				AniZhuanchangBegin			"{2: ""I don't want to see the same things happen again."", 3: '339'}"
+339	339		401							{1: '1', 2: '36'}
+340	340		202			DialogDisable			1000.0	{1: '2', 6: '1'}
+341	341		504							{1: '0.7'}
+342	342		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory105.png'}
+343	343		401							{1: '1', 2: '225'}
+344	344		201							{1: '1', 2: '500166', 3: '5'}
+345	345		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'This is Lucia from Gray Raven. The following recording is not subject to any form of coercion or interference. It is entirely of my own volition.', 4: '1'}
+346	346		301							{2: 'Lucia', 3: 'My frame has developed unprecedented abnormal symptoms, which even caused me to hurt my commandant.', 4: '1'}
+347	347		301							{2: 'Lucia', 3: 'Based on the message left by the escort team and my own evaluation, I cannot guarantee when I will go completely out of control before the problem is resolved.', 4: '1'}
+348	348		301							{2: 'Lucia', 3: 'In order to avoid irreversible consequences and prevent innocent people from being hurt, before I can fix this issue of myself...', 4: '1'}
+349	349		301							{2: 'Lucia', 3: 'I, Lucia, would like to step down as the Captain of Gray Raven.', 4: '1'}
+350	350		301							{2: 'Lucia', 3: 'I know this terminal will probably be discovered by the Purifying Force team who escorted me. If you can, please pass my words to Lee, Liv and my commandant.', 4: '1'}
+351	351		204							{1: '1', 2: '1'}
+352	352		301							{2: 'Lucia', 3: 'I will safely return... No matter how long it will take me.', 4: '1'}
+353	353		204							{1: '1', 2: '5'}
+354	354		301				AniZhuanchangBegin			"{2: 'Lucia', 3: ""That's all."", 4: '1'}"
+355	355		202			DialogDisable				{1: '1', 6: '1'}
+356	356		504							
+357	357		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+358	358		201							{1: '1', 2: '500004'}
+359	359		301			DialogEnable				{1: '1', 3: 'You tightly grip the terminal, which is already getting warm in your pocket.'}
+360	360		302							{2: 'We in the same team now?', 3: '361'}
+361	361		301							{3: 'You reach out to Asimov.'}
+362	362		301		1		AniZhuanchangBegin			"{3: ""After a brief moment of hesitation, Asimov's hand grasps yours. It feels a little cold.""}"

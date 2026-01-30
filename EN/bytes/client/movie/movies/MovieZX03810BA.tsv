@@ -1,0 +1,224 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_12.jpg'}
+2	2		401							{1: '1', 2: '278'}
+3	3		401							{1: '2', 2: '213'}
+4	4		301			DialogEnable				{3: 'It is late at night. The soldiers of the Aurora Squadron have entered the woods before you. In order to keep an eye on them, Echo and you have set up a simple camp here.'}
+5	5		301							"{2: 'Echo', 3: ""They've stopped. Their base must be nearby.""}"
+6	6		302							{2: 'Are you scared?', 3: '7'}
+7	7		301							"{2: 'Echo', 3: ""I'm not.""}"
+8	8		301							"{2: 'Echo', 3: ""It's just... the closer I get here, the clearer some memories become.""}"
+9	9		301				AniZhuanchangBegin			{2: 'Echo', 3: 'Back then, right after Cecily passed...'}
+10	10		402							{1: '213'}
+11	11		502						500.0	{1: 'DialogDisable'}
+12	12		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory762.jpg'}
+13	13		201							{1: '1', 2: '500702', 3: '5', 4: '-400'}
+14	14		201							{1: '2', 2: '500709', 3: '1', 4: '400'}
+15	15		301			DialogEnable				{1: '1', 2: 'Alisa', 3: 'Why would you do that, Father?!', 4: '1'}
+16	16		301							{2: 'Pickman', 3: 'Hm? Alisa? Is something wrong?', 4: '2'}
+17	17		204							{1: '2', 2: '2'}
+18	18		301							{2: 'Pickman', 3: 'Alright, I can give you ten minutes...', 4: '2'}
+19	19		204							{1: '2', 2: '1'}
+20	20		301							{3: 'The doctor in a white coat smiles gently as he looks at the time.'}
+21	21		301							"{2: 'Pickman', 3: ""Are you here to recite the Utopia Protocols to me? Or has someone violated one of our little Alisa's rules?"", 4: '2'}"
+22	22		301							"{2: 'Alisa', 3: ""...You know I'm talking about Cecily!"", 4: '1'}"
+23	23		204							{1: '1', 2: '14'}
+24	24		301							{2: 'Alisa', 3: 'Devote everything to kindness and love. Never disregard what is righteous. Walk in the path of wisdom without arrogance or faltering...', 4: '1'}
+25	25		301							"{2: 'Alisa', 3: ""Didn't you make those rules?"", 4: '1'}"
+26	26		301							{2: 'Alisa', 3: 'Experimenting on Cecily... Was that kindness and love? Was that righteous and just?', 4: '1'}
+27	27		301							{2: 'Pickman', 3: 'Of course, Alisa.', 4: '2'}
+28	28		301							{3: 'Pickman smiles assuredly.'}
+29	29		204							{1: '2', 2: '2'}
+30	30		301							{2: 'Pickman', 3: 'It is the most wonderful place, somewhere even better than our Utopia here.', 4: '2'}
+31	31		204							{1: '2', 2: '1'}
+32	32		301							{2: 'Pickman', 3: 'Everyone can live together happily there. Everyone gets to wield incredible power.', 4: '2'}
+33	33		301							{2: 'Pickman', 3: 'It is the most wonderful thing, Alisa.', 4: '2'}
+34	34		301							"{2: 'Pickman', 3: ""But our research isn't complete. Once it is done, everything will be even greater."", 4: '2'}"
+35	35		301							{2: 'Pickman', 3: 'Alright, I still have some things to do. Go play by yourself.', 4: '2'}
+36	36		202							{1: '2', 6: '1'}
+37	37		401							{1: '2', 2: '1516'}
+38	38		203							{1: '1', 2: '0.25'}
+39	39		301							{3: 'He smiles as he pats Alisa on the shoulder before quickly stepping away, leaving Alisa by herself.'}
+40	40		301							{2: 'Alisa', 3: 'No... That is wrong...', 4: '1'}
+41	41		301							{2: 'Alisa', 3: 'That... is wrong...', 4: '1'}
+42	42		301							"{3: 'She keeps repeating the same phrase helplessly. Despite her heart telling her that everything Pickman said was wrong, the education she has received fails to rebut those ""reasons.""'}"
+43	43		301							{3: 'Is that really right? Do righteousness and justice, fairness and order... look like this?'}
+44	44		202							{1: '1', 6: '1'}
+45	45		201							{1: '2', 2: '500712'}
+46	46		301							"{1: '1', 2: 'Aurora Squadron Soldier', 3: ""Alisa? What are you doing here? We just took in a new batch of Constructs, and we can use some help. Shouldn't you be working today?"", 4: '2'}"
+47	47		202							{1: '2', 6: '1'}
+48	48		201							{1: '1', 2: '500702', 3: '14'}
+49	49		301				AniZhuanchangBegin			"{1: '1', 2: 'Alisa', 3: ""...I see. I'll head there right now."", 4: '1'}"
+50	50		401							{1: '1', 2: '36'}
+51	51		202			DialogDisable			800.0	{1: '1'}
+52	52		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory759.jpg'}
+53	53		401							{1: '1', 2: '201'}
+54	54		201							{1: '1', 2: '500712'}
+55	55		301			DialogEnable				{1: '1', 3: 'Arriving at the door, Alisa sees a few Constructs approaching her. The soldiers from Aurora Squadron are walking behind them as if escorting the Constructs.'}
+56	56		301							"{2: 'Proud Soldier', 3: ""This is Utopia! Most people don't get to come here despite how much they want to, so you're lucky!"", 4: '1'}"
+57	57		301							{2: 'Proud Soldier', 3: 'Here lies the only Utopia in this apocalypse!', 4: '1'}
+58	58		203							{1: '1', 2: '0.25', 3: '-400'}
+59	59		201							{1: '2', 2: '500706', 4: '400'}
+60	60		301							{1: '1', 2: '???', 3: 'Psst...', 4: '2'}
+61	61		301							"{2: '???', 3: ""Why didn't Babylonia move here if this place is so great?"", 4: '2'}"
+62	62		301							{2: 'Proud Soldier', 3: 'Babylonia is nothing compared to this. You should treasure what you have here.', 4: '1'}
+63	63		204							{1: '2', 2: '5'}
+64	64		301							"{2: '???', 3: ""I don't know anything about treasuring, so why don't you let me head back?"", 4: '2'}"
+65	65		301							"{2: 'Proud Soldier', 3: ""You can't come back if you leave!"", 4: '1'}"
+66	66		301							{2: '???', 3: 'Who would want to come to a place like this?', 4: '2'}
+67	67		301							{2: 'Proud Soldier', 3: 'You—!', 4: '1'}
+68	68		202							{1: '1', 2: '2', 6: '1'}
+69	69		201							{1: '1', 2: '500702'}
+70	70		301							{1: '1', 3: 'He is about to say something when he sees Alisa approaching.'}
+71	71		203							{1: '1', 2: '0.25', 3: '400'}
+72	72		201							{1: '2', 2: '500712', 4: '-400'}
+73	73		301							"{1: '1', 2: 'Proud Soldier', 3: ""Hmph. Alisa, I'll leave them to you. I have other business to attend to."", 4: '2'}"
+74	74		301							{2: 'Proud Soldier', 3: 'Be careful. This Lena leading the group is a troublemaker.', 4: '2'}
+75	75		301							{2: 'Alisa', 3: 'I thought... all Constructs volunteered to come here?', 4: '1'}
+76	76		301							{2: 'Proud Soldier', 3: 'Well, yeah. She was heavily injured, and we rescued her, so she has to pay us back, so to speak.', 4: '2'}
+77	77		301							"{2: 'Proud Soldier', 3: ""Fairness, am I right? Nothing's free."", 4: '2'}"
+78	78		301							{2: 'Alisa', 3: '...', 4: '1'}
+79	79		301							{2: 'Alisa', 3: 'I see. You can go take care of your business.', 4: '1'}
+80	80		202							{1: '2', 6: '1'}
+81	81		203							{1: '1', 2: '0.25'}
+82	82		301							{3: 'The soldier hurriedly salutes Alisa before running off. Alisa returns the gesture properly before turning around and looking at the Constructs they just took in.'}
+83	83		204							{1: '1', 2: '1'}
+84	84		301							"{2: 'Alisa', 3: ""Hello, my name is Alisa. I'm in charge of moral education here in Utopia. You can come find me if you need anything..."", 4: '1'}"
+85	85		203							{1: '1', 2: '0.25', 3: '400'}
+86	86		201							{1: '2', 2: '500706', 3: '5', 4: '-400'}
+87	87		204							{1: '1', 2: '7'}
+88	88		301							{1: '1', 2: 'Lena', 3: 'Hypocrite.', 4: '2'}
+89	89		301							{3: 'A sharp voice interrupts Alisa.'}
+90	90		301							{2: 'Lena', 3: 'How moral can a secret Kurono laboratory be?', 4: '2'}
+91	91		301							"{2: 'Lena', 3: ""Enough with your crocodile tears. You caught me, so I admit defeat. But don't you brainwash me with your morals."", 4: '2'}"
+92	92		301							{2: 'Alisa', 3: 'But he said they saved you and brought you back here because you were badly injured...', 4: '1'}
+93	93		301							{3: 'Lena lets out a disdainful sneer.'}
+94	94		204							{1: '2'}
+95	95		301							{2: 'Lena', 3: 'Yeah, whatever floats your boat.', 4: '2'}
+96	96		301				AniZhuanchangBegin			{3: 'She looks daggers at Alisa without saying another word.'}
+97	97		401						600.0	{1: '1', 2: '36'}
+98	98		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+99	99		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory762.jpg'}
+100	100		401							{1: '1', 2: '120'}
+101	101		201							{1: '1', 2: '500702', 3: '14'}
+102	102		301			DialogEnable				{1: '1', 3: 'Night has fallen by the time Alisa has done helping the newly arrived Constructs settle in.'}
+103	103		301							"{3: ""Long overdue for maintenance, the ventilation system in the public area screeches in painful creaks. Alisa sits in Cecily's favorite corner, her M.I.N.D. a mess.""}"
+104	104		301							{3: 'They said they saved Lena when it was so obvious that she was brought here against her will... Who is lying here?'}
+105	105		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+106	106		504							{1: '0.7'}
+107	107		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+108	108		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory760.jpg'}
+109	109		201							{1: '1', 2: '500711', 3: '1'}
+110	110		301							"{1: '1', 2: 'Cecily', 3: ""You need to see everything with your very own eyes, Alisa. People's words need to be taken with a grain of salt."", 4: '1'}"
+111	111		301							{2: 'Cecily', 3: 'You need to see things with your own eyes and listen with your own ears.', 4: '1'}
+112	112		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+113	113		504							
+114	114		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+115	115		202							{1: '1', 6: '1'}
+116	116		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory762.jpg'}
+117	117		201							{1: '1', 2: '500706'}
+118	118		301							{1: '1', 3: 'See things with her own eyes and listen with her own ears...'}
+119	119		202							{1: '1'}
+120	120		306							{1: '1'}
+121	121		301							"{3: ""Keeping her eyes slightly closed, Alisa replays in her head what's happened recently.""}"
+122	122		301							"{3: 'Utopia has grown increasingly tense since Cecily ""passed on.""'}"
+123	123		301							"{3: 'Her father has upped patrol around the gate, and Utopia has seen an influx of ""voluntary"" newcomers these days. The people she has just received mark the fourth group today...'}"
+124	124		301							"{3: ""...Which is why she's starting to entertain the idea of having a conversation with that Construct going by Lena. She seems to know a lot of things... that Alisa has never been told...""}"
+125	125		301				AniZhuanchangBegin			"{3: '...Such as ""Kurono"" and how people see this place as a ""laboratory base.""'}"
+126	126		306							
+127	127		502						500.0	{1: 'DialogDisable'}
+128	128		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+129	129		301			DialogEnable				"{3: ""Past midnight, in one of Utopia's flying fortresses.""}"
+130	130		201							{1: '1', 2: '500706'}
+131	131		301							{1: '1', 3: 'Lena keeps her eyes partially closed, feigning sleep as she observes the patroller outside and quietly leaves a mark on the wall behind her.'}
+132	132		301							"{3: ""Never has she thought she'd find herself in for a ride like this while trying to track down Kurono's research base.""}"
+133	133		301							"{3: ""What exactly is Kurono doing here, though? Does Babylonia seriously have no clue about this research base when it's so big and obvious?""}"
+134	134		301							{3: 'One step, two steps... The patroller stops in his tracks and starts having a conversation with someone...'}
+135	135		203							{1: '1', 2: '0.25', 3: '-600'}
+136	136		509						600.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory580.jpg', 2: '2'}
+137	137		201							{1: '2', 2: '500702', 4: '500'}
+138	138		301							{1: '1', 2: 'Alisa', 3: '...Hello.', 4: '2'}
+139	139		301							{2: 'Lena', 3: '?', 4: '1'}
+140	140		301							"{3: ""Isn't she the Construct from the afternoon... that claimed to be in charge of Utopia's moral education?""}"
+141	141		301							"{2: 'Lena', 3: ""Well, what brought you here? Your rooms aren't here, if my memory serves me correctly."", 4: '1'}"
+142	142		301							"{2: 'Alisa', 3: 'I wanted to talk to you about... this ""Kurono"" and ""laboratory base"" that you mentioned earlier today.', 4: '2'}"
+143	143		301							{2: 'Lena', 3: '...And you have no clue as to what those are even though you live here?', 4: '1'}
+144	144		204							{1: '1', 2: '5'}
+145	145		301							"{2: 'Lena', 3: ""Good job trying to trick that out of me, but I'm not going to tell you anything."", 4: '1'}"
+146	146		301							"{2: 'Alisa', 3: ""I'm not tricking you into telling me anything. I-I'm just trying to figure things out..."", 4: '2'}"
+147	147		204							{1: '2', 2: '14'}
+148	148		301							"{2: 'Alisa', 3: 'Everyone here knows this place as ""Utopia"". Does that ""Kurono"" have anything to do with it?', 4: '2'}"
+149	149		204							{1: '1'}
+150	150		301							{3: 'Without saying a word, Lena fixes her gaze on the Construct before her.'}
+151	151		301							{3: 'The Caribous specializes in tracking and spying—and being a Caribou herself, Lena naturally has these skills down to fine art.'}
+152	152		301							"{3: ""It appears that this Construct called Alisa doesn't have a full grasp of what's going on at this laboratory base, except Lena still can't rule out the possibility that she's just playing dumb to pry things out of her.""}"
+153	153		301							{2: 'Lena', 3: '...I have nothing to say about that.', 4: '1'}
+154	154		301							{3: 'She squints her eyes again and looks away from Alisa.'}
+155	155		301							"{2: 'Alisa', 3: ""...I need to go now, but I'll be back."", 4: '2'}"
+156	156		202							{1: '2', 6: '1'}
+157	157		510							{1: '2', 2: 'Assets/Product/Texture/Image/BgStory/BgStory580.jpg'}
+158	158		301							{3: 'Alisa does a complicated salute before turning around quietly and leaving.'}
+159	159		203							{1: '1', 2: '0.25'}
+160	160		301				AniZhuanchangBegin			{3: '…………'}
+161	161		202			DialogDisable			500.0	{1: '1', 6: '1'}
+162	162		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+163	163		201							{1: '1', 2: '500706'}
+164	164		301			DialogEnable				"{1: '1', 3: ""It's been 10 days since Lena arrived in Utopia.""}"
+165	165		301							"{3: 'Under cover of night, Lena documents the landscape of this place as part of her daily ""work,"" noting that these flying fortresses do not stay forever at one location—and that they can be dissembled and reassembled if needed...'}"
+166	166		301							{3: '...Which spells trouble.'}
+167	167		301							{3: 'Lena is trying to come up with a way to get out of this place. Right when she gets back to her room, however, she hears a quiet voice coming from the other side of the window.'}
+168	168		203							{1: '1', 2: '0.25', 3: '-600'}
+169	169		509						600.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory580.jpg', 2: '2'}
+170	170		201							{1: '2', 2: '500702', 4: '500'}
+171	171		301							{1: '1', 2: 'Alisa', 3: 'Lena?', 4: '2'}
+172	172		301							{2: 'Lena', 3: '...What are you doing here again?', 4: '1'}
+173	173		204							{1: '2', 2: '1'}
+174	174		301							{2: 'Alisa', 3: 'I assigned you this room because I pass by during my night patrols here...', 4: '2'}
+175	175		301							{2: 'Alisa', 3: 'How was your day today?', 4: '2'}
+176	176		301							{3: 'When Lena hears a few quiet rustles of clothes coming through the window...'}
+177	177		301							{3: '...She can almost picture Alisa doing her complicated salute even without seeing her.'}
+178	178		301							{3: 'How did they manage to raise a child so pure and naive in a place as messed up as this one...'}
+179	179		301							"{2: 'Lena', 3: ""...You've been standing sentry here for 10 nights in a row now. Don't you feel tired?"", 4: '1'}"
+180	180		301							"{2: 'Alisa', 3: ""I feel fine. Work is work, and they don't really want to do night patrols these days. According to the Utopia Protocols, we're supposed to look out for one another, so I thought I could do night patrols in their place."", 4: '2'}"
+181	181		301							{2: 'Lena', 3: '...Are you stupid or what?', 4: '1'}
+182	182		204							{1: '2'}
+183	183		301							"{2: 'Alisa', 3: 'Well, I was hoping to learn about ""Kurono"" today, if you don\'t mind. And while we\'re at it... why do people call Utopia the ""laboratory base""?', 4: '2'}"
+184	184		204							{1: '1', 2: '5'}
+185	185		301							"{2: 'Lena', 3: ""Do you really have no clue what's going on here? I mean, they're doing vivisection with Constructs here. What else can it be called? An orphanage home?"", 4: '1'}"
+186	186		204							{1: '2', 2: '7'}
+187	187		301							"{2: 'Alisa', 3: ""B-but that's not all that they are..."", 4: '2'}"
+188	188		301							{2: 'Lena', 3: '...Are you really that naive?', 4: '1'}
+189	189		301							{2: 'Lena', 3: 'Anyone here—and yes, that includes you—could be the next guinea pig.', 4: '1'}
+190	190		301							{2: 'Lena', 3: 'Why do you think they only take people in but never let them out? Have you ever set foot beyond this place?', 4: '1'}
+191	191		301							{2: 'Alisa', 3: 'I...', 4: '2'}
+192	192		301							"{3: ""Lena's last question seems to have hit home.""}"
+193	193		301							"{3: ""All Alisa knows about Utopia is that it's a gigantic flying fortress flanked by numerous smaller flying fortresses.""}"
+194	194		301							{3: 'All she knows is that everyone living in Utopia abides by the rules here and that they can all live happily together as long as they abide by these rules.'}
+195	195		301							{3: 'And she knows the skies out there to be blue, the grass to be green, and the ocean to be boundless. And yet...'}
+196	196		204							{1: '2', 2: '14'}
+197	197		301							{3: '...She has never set foot outside Utopia.'}
+198	198		204							{1: '1'}
+199	199		301							{2: 'Lena', 3: '...', 4: '1'}
+200	200		301							{3: 'Lena lets out a barely noticeable sigh.'}
+201	201		301							{3: 'Having spent quite some time now observing this girl, she now knows for certain... that Alisa knows nothing about anything here.'}
+202	202		301							"{2: 'Alisa', 3: ""I've seen them... in the middle of an experiment."", 4: '2'}"
+203	203		301							{2: 'Alisa', 3: 'They... Dr. Pickman took Cecily.', 4: '2'}
+204	204		301							"{2: 'Alisa', 3: ""And I'm going to stop them... because what they do goes against the Utopia Protocols. People are supposed to help one another, devote everything to kindness and love, and never disregard what is righteous..."", 4: '2'}"
+205	205		301							{2: 'Alisa', 3: 'I will do what I can... to help you and your people get out of this place.', 4: '2'}
+206	206		202							{1: '2'}
+207	207		204							{1: '1', 2: '5'}
+208	208		301							"{2: 'Lena', 3: ""...Wait, don't!"", 4: '1'}"
+209	209		301							{3: 'Her words disappearing into the silent air, Lena hears nothing more from the other side of the wall. With a frown, she tries to think of something to stop Alisa as she hears the same quiet footsteps approaching the wall again.'}
+210	210		204							{1: '1'}
+211	211		201							{1: '2', 2: '500702', 4: '500'}
+212	212		301							{1: '1', 2: 'Lena', 3: 'You...', 4: '1'}
+213	213		301							{3: 'Before Lena even finishes her words, she hears rustles of clothes again.'}
+214	214		204							{1: '2', 2: '1'}
+215	215		301				AniZhuanchangBegin			{2: 'Alisa', 3: 'Good night, Lena. The stars tonight, too, shall shine upon your dream.', 4: '2'}
+216	216		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+217	217		510						1000.0	{1: '2', 2: 'Assets/Product/Texture/Image/BgStory/BgStory580.jpg'}
+218	218		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_12.jpg'}
+219	219		301			DialogEnable				{2: 'Echo', 3: 'It took Lena a long time to finally let her guard down around me.'}
+220	220		301							{2: 'Echo', 3: 'She would say hi to me at recess sometimes, tell me what was going on out there, and occasionally teach me how to shoot with a bow.'}
+221	221		301							{2: 'Echo', 3: 'When she looked me in the eye, I always had this feeling that she was seeing someone else through me.'}
+222	222		301							"{2: 'Echo', 3: ""She wouldn't tell me anything, though, when I asked her. She only told me to keep myself safe and never fully trust anyone, no matter who they were.""}"
+223	223		301		1		AniZhuanchangBegin			{2: 'Echo', 3: 'When she trusted me so much herself...'}

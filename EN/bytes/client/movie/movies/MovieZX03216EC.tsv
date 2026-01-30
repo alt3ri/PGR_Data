@@ -1,0 +1,31 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory651.jpg'}
+2	2		401							{1: '1', 2: '54'}
+3	3		401							{1: '2', 2: '2559'}
+4	4		301			DialogEnable				{3: 'As if a candle flame burning out its last ounce of oxygen, the crimson glow at the core of the top of the tower slowly fades in a low buzzing sound.'}
+5	5		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory654.jpg', 3: '0', 4: '1', 5: '1'}
+6	6		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+7	7		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory654.jpg'}
+8	8		301							{3: 'His surroundings darken. He can hear a low rumble from deep down below the tower. Suddenly the tower lets out a struggling growl like a beast that got hit by a tranquilizer dart.'}
+9	9		301							{3: 'The bursting red tide immediately ceases its outflow as the core terminal shatters.'}
+10	10		201							{1: '1', 2: '500568'}
+11	11		301							"{1: '1', 2: 'Lee', 3: ""This way, the people outside won't need to worry about the threat of radiation. Hopefully, it'll give them more time too."", 4: '1'}"
+12	12		301							{2: 'Lee', 3: 'But...', 4: '1'}
+13	13		202							{1: '1', 6: '1'}
+14	14		502							{1: 'DialogDisable'}
+15	15		401							{1: '2', 2: '9326036'}
+16	16		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory651.jpg', 3: '0', 4: '1', 5: '1'}
+17	17		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+18	18		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory651.jpg'}
+19	19		301			DialogEnable				{3: 'The low hum gradually grows louder. Time inside the tower seems to have been reversed in an instant. The monitors broken during battle slowly revert to their original state and the core at the top is relit in the darkness.'}
+20	20		301							{3: 'The crimson Punishing Virus gushes out from all directions of the tower, surrounding the core and fortifying its guard. The fake starry skies spin rapidly, and sticky red tides drip down from the gaps, condensing into ominous shadows.'}
+21	21		201							{1: '1', 2: '500026', 7: '1'}
+22	22		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryShuju.prefab', 2: '2', 3: '1'}
+23	23		301							"{1: '1', 2: 'Lee (?)', 3: ""That's just the core's duplicate. As long as the tower is still here, it'll keep regenerating."", 4: '1'}"
+24	24		301							"{2: 'Lee (?)', 3: ""If you don't completely change the tower's rules, you won't be able to truly stop the core from exploding. You're this close to succeeding."", 4: '1'}"
+25	25		203							{1: '1', 2: '0.25', 3: '400'}
+26	26		201							{1: '2', 2: '500568', 4: '-400'}
+27	27		301							{1: '1', 2: 'Lee', 3: 'So, now is not the time to let my guard down.', 4: '2'}
+28	28		202							{1: '1', 2: '2', 6: '1'}
+29	29		305							{1: '2', 2: '1511'}
+30	30		301		1		AniZhuanchangBegin			{3: 'Lee turns around, firmly gripping his weapons.'}

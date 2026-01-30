@@ -1,0 +1,10 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory76.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				"{2: 'Little Girl', 3: ""Big brother, I'm hungry...""}"
+4	4		301							{2: 'Little Boy', 3: 'Sister...'}
+5	5		201							{1: '1', 2: '500055'}
+6	6		301							{1: '1', 2: 'Nun', 3: 'You again? You two eat up more than the normal bunch.', 4: '1'}
+7	7		301							"{2: 'Little Boy', 3: ""My sister's growing, mam. She'll have to eat a lot to grow into someone as beautiful as you.""}"
+8	8		301							{2: 'Nun', 3: '...Alright, alright. Just take it. But only this once. No next time!', 4: '1'}
+9	9		301		1		AniZhuanchangBegin			{2: 'Little Boy', 3: 'Tch, stingy old hag...'}

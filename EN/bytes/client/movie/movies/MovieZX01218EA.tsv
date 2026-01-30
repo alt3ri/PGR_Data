@@ -1,0 +1,36 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory172.png'}
+2	200		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustLightWall.prefab', 2: '1'}
+3	2		401							{1: '1', 2: '202'}
+4	3		201							{1: '1', 2: '500155'}
+5	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '3'}
+6	5		301			DialogEnable				{1: '1', 2: 'Chrome', 3: 'Kamui, what on earth are you doing?', 4: '1'}
+7	10		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustBrokenLightWall.prefab', 2: '2'}
+8	302		201							{1: '2', 2: '1081001', 4: '-400'}
+9	6		301							"{1: '1', 2: 'Kamui', 3: ""I'm... keeping the hole open..."", 4: '2'}"
+10	303		203							{1: '2', 2: '1.5', 3: '-600'}
+11	7		301							{3: 'As expected, the explosives tear a crack in the light wall. Yet the explosives were only meant for combat, not wall-breaching. The light wall takes minimal damage.'}
+12	8		301			PanelActor2Shake				{3: 'The crack seals itself almost instantaneously. In a last ditch effort, Kamui tosses his weapon aside and dives in, forcefully keeping the aperture open with his back against one side.'}
+13	11		301							{1: '1', 2: 'Chrome', 3: 'You idiot!', 4: '1'}
+14	304		203							{1: '1', 2: '1.5', 3: '600'}
+15	12		301							{3: 'Despite saying so, Chrome is already in action. He leaps across the idiotic Kamui, and together they hold the small crack open.'}
+16	13		301							{3: 'The two close their eyes and grit their teeth out of the unendurable pain.'}
+17	306		203							{1: '1', 2: '2', 3: '200'}
+18	307		203							{1: '2', 2: '2', 3: '-200'}
+19	308		502							{1: 'PanelActor1Shake'}
+20	309		502							{1: 'PanelActor2Shake'}
+21	100		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '1'}
+22	14		301							{1: '1', 2: 'Chrome', 3: 'Still too small... Only a kid could fit through. Keep pushing, Kamui.', 4: '1'}
+23	15		301							{2: 'Kamui', 3: 'I know!', 4: '2'}
+24	16		301							{3: 'The light wall behind them cuts open their clothes and grazes their skin. Their synth-skin vaporizes almost instantly, revealing bare mechanical parts.'}
+25	17		301							{2: 'Kamui', 3: 'Honestly, Chrome, this kinda hurts...', 4: '2'}
+26	18		301							"{2: 'Chrome', 3: 'Just... ""kinda?"" Kamui, you need to get your pain receptors checked when we get back.', 4: '1'}"
+27	19		301							{2: 'Kamui', 3: 'Bleeeugh, I hate getting body checks though...', 4: '2'}
+28	20		301							"{2: 'Chrome', 3: ""...Keep pushing, and maybe I'll consider letting you skip one."", 4: '1'}"
+29	314		203							{1: '1', 2: '3', 3: '400'}
+30	315		203							{1: '2', 2: '3', 3: '-400'}
+31	316		502							{1: 'PanelActor1Shake'}
+32	317		502							{1: 'PanelActor2Shake'}
+33	21		301							{1: '1', 3: 'Joining like a sword and a buckler, the two enlarge the crack to the size of a hatch door. The parts of their body in contact with the light wall, however, sinks deeper and deeper, letting off geysers of sparks.'}
+34	22		301							{2: 'Bridget', 3: 'You guys done yet? Lucia is almost here!'}
+35	23		301		1		AniZhuanchangBegin			{2: 'Chrome', 3: 'All set. Let her dive through!', 4: '1'}

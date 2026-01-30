@@ -1,0 +1,186 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500994'}
+4	4		301			DialogEnable				{1: '1', 2: 'Lucia', 3: '...The renovations at the old Catania estate are complete. According to family tradition, a portrait of the heir must be hung in their room.', 4: '1'}
+5	5		301							"{2: 'Lucia', 3: ""Lady Dawne understands you're busy with official duties, so she's already hired the most professional photography team in all of Catania. They're on standby, ready whenever you are."", 4: '1'}"
+6	6		301							{2: 'Lucia', 3: 'She kindly asks that when you have some free time, you notify the family in advance so they can schedule the shoot quickly without taking up too much of your day.', 4: '1'}
+7	7		204							{1: '1', 2: '1'}
+8	8		301							{2: 'Lucia', 3: 'With sincere regards—The Catania Autonomous Council.', 4: '1'}
+9	9		202							{1: '1'}
+10	10		301							"{3: ""It's been a long time since you and Lucia resolved the crisis in Catania. ""}"
+11	11		301							{3: 'The message she just read aloud is a formal follow-up from that same island.'}
+12	12		201							{1: '1', 2: '500994', 3: '1'}
+13	13		301				DialogDisable			{1: '1', 2: 'Lucia', 3: 'Now that I think about it, we took plenty of video and audio back in Catania, but... no proper photos together.', 4: '1'}
+14	14		302							"{2: 'Since it\'s an official ""heir"" portrait...', 3: '15'}"
+15	15		302							"{2: ""We'll need to look our best."", 3: '16'}"
+16	16		302							{2: 'Still, with a professional team, we can let them handle it when we get some time off.', 3: '17', 4: 'But for now, duty first.', 5: '17'}
+17	17		204							{1: '1', 2: '4'}
+18	18		301			DialogEnable				{2: 'Lucia', 3: 'Right. Let me check our schedule... Our next break is...', 4: '1'}
+19	19		204							{1: '1', 2: '7'}
+20	20		301				AniZhuanchangBegin			{2: 'Lucia', 3: '...The Double Seventh Festival. In Constellia. At the souvenir exhibition?', 4: '1'}
+21	21		202							{1: '1', 6: '1'}
+22	22		401							{1: '1', 2: '36'}
+23	23		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+24	24		401							{1: '1', 2: '6159'}
+25	25		301			AniZhuanchangEnd				{3: 'The days have been packed and fragmented with mission after mission. Before you even realize it, the Double Seventh Festival arrives, offering you and Lucia a rare moment of peace.'}
+26	26		201							{1: '1', 2: '500863'}
+27	27		301							{1: '1', 2: 'Photographer', 3: 'Both of you, look this way, please!', 4: '1'}
+28	28		202							{1: '1'}
+29	29		301							{3: 'Soft sunlight pours across the rainbow-colored streets. The noon bell has just rung, drawing crowds to the food stalls and leaving behind the perfect empty backdrop for photos.'}
+30	30		201							{1: '1', 2: '501166', 3: '1'}
+31	31		301							{1: '1', 2: 'Lucia', 3: 'Is this good?', 4: '1'}
+32	32		202							{1: '1'}
+33	33		301							"{3: ""Following the photographers' suggestions, the two of you change into the formal outfits you wore during the Catania ceremony.""}"
+34	34		201							{1: '1', 2: '500863'}
+35	35		301							{1: '1', 2: 'Photographer', 3: 'Great, keep smiling! Yes, just like that, Miss Lucia. Perfect.', 4: '1'}
+36	36		202							{1: '1'}
+37	37		301							{3: 'Hearing the praise, Lucia keeps smiling, but turns slightly to look at you, as if wondering what expression you are wearing right now.'}
+38	38		302							{2: '(Smile)', 3: '39', 4: '(Put on a serious expression)', 5: '40'}
+39	39	41	301							{3: 'When she meets your smile, hers softens even more.'}
+40	40		301							{3: 'Seeing your serious look, she adjusts her posture too, trying to match your vibe perfectly.'}
+41	41		401							{2: '925'}
+42	42		201							{1: '1', 2: '500863'}
+43	43		301							"{1: '1', 2: 'Photographer', 3: ""3, 2, 1... Got it. Now let's try a different pose."", 4: '1'}"
+44	44		201							{1: '1', 2: '501166', 3: '2'}
+45	45		301							{1: '1', 2: 'Lucia', 3: 'Commandant, do you have a pose in mind?', 4: '1'}
+46	46		302							{2: '(Strike a playful pose)', 3: '47', 4: '(Strike a cool pose)', 5: '55', 6: 'You decide, Lucia.', 7: '62'}
+47	47		202							{1: '1'}
+48	48		301							{3: 'You take a bouquet of roses from one of the crew and lift it high.'}
+49	49		201							{1: '1', 2: '501166', 3: '7'}
+50	50		301							{1: '1', 2: 'Lucia', 3: 'Commandant...?', 4: '1'}
+51	51		301							{3: 'A breeze picks up. Red petals flutter between the two of you like shooting stars, drifting gently through the air.'}
+52	52		302							"{2: ""(Take Lucia's hand)"", 3: '53'}"
+53	53		204							{1: '1', 2: '1'}
+54	54	66	301				AniZhuanchangBegin			{3: 'Lucia sees your gesture and seems to understand. She smiles and links her fingers with yours, turning toward the camera.'}
+55	55		301							"{3: ""You adjust your stance and face the lens with sharp, steely focus, like you're back on a battlefield.""}"
+56	56		204							{1: '1', 2: '1'}
+57	57		301							{2: 'Lucia', 3: 'This reminds me of that day, when we stood side by side, protecting what was ours against countless enemies.', 4: '1'}
+58	58		202							{1: '1'}
+59	59		301							{3: 'Flames spark between her fingers. Her luminous core forms a cherry-white blade that flashes under the sun.'}
+60	60	66	301				AniZhuanchangBegin			{3: 'In front of the camera, you and Lucia look like warriors—battlefield bride and godchild—radiating a fierce energy that completely contrasts with the lighthearted festival scene around you.'}
+61	61		204							{1: '1', 2: '2'}
+62	62		301							{2: 'Lucia', 3: 'Now, Commandant, come a little closer.', 4: '1'}
+63	63		202							{1: '1'}
+64	64		301							{3: 'She steps toward you and gently takes your hand.'}
+65	65		301				AniZhuanchangBegin			{3: 'No dramatic poses. No grand displays. Just a calm smile as she looks at you, then guides your gaze so the two of you face the lens together.'}
+66	66		201						2000.0	{1: '1', 2: '500863'}
+67	67		401							{2: '925'}
+68	68		301			AniZhuanchangEnd				"{1: '1', 2: 'Photographer', 3: ""3, 2, 1... Perfect. That's a wrap."", 4: '1'}"
+69	69		202							{1: '1'}
+70	70		301							"{3: ""The photographer lowers the camera, scrolling through the shots. There's a faint look of regret, like he isn't ready to be done.""}"
+71	71		201							{1: '1', 2: '500863'}
+72	72		301							"{1: '1', 2: 'Photographer', 3: ""We've got plenty of photos, but I feel like we're missing variety. Not enough different scenes..."", 4: '1'}"
+73	73		202							{1: '1'}
+74	74		301							{3: 'Lucia seems to pick up on that comment. She lightly takes your arm.'}
+75	75		201							{1: '1', 2: '501166'}
+76	76		301							{1: '1', 2: 'Lucia', 3: '—Hello. Excuse me.', 4: '1'}
+77	77		302							{2: '...?', 4: 'Lucia?'}
+78	78		203						300.0	{1: '1', 2: '0.25', 3: '500'}
+79	79		201							{1: '2', 2: '500863', 4: '-450'}
+80	80		301							{1: '1', 2: 'Photographer', 3: 'Hmm? Something else, Miss Lucia?', 4: '2'}
+81	81		301							{2: 'Lucia', 3: 'Would your team be available later today? Since we rarely get a chance like this...', 4: '1'}
+82	82		301							{2: 'Lucia', 3: 'I want to take a few more photos with 【kuroname】.', 4: '1'}
+83	83		301							{3: 'Lucia turns toward you, voicing her suggestion naturally.'}
+84	84		301							"{2: 'Lucia', 3: ""Not just the streets—I think Constellia's grand theater, art gallery, and windmill tower would also be great places for our photos."", 4: '1'}"
+85	85		301							"{2: 'Photographer', 3: ""Of course, no problem! It's Solasso Industries' honor to photograph the esteemed godchild and Miss Lucia!"", 4: '2'}"
+86	86		204							{1: '1', 2: '1'}
+87	87		301							{2: 'Lucia', 3: 'What do you think, Commandant?', 4: '1'}
+88	88		202							{1: '1', 2: '2'}
+89	89		301							{3: 'Without realizing it, you feel the familiar grip of her hand tighten just a little.'}
+90	90		302							"{2: ""I'd also like to take a few more photos with you, Lucia."", 3: '91', 4: 'Sure. After all, we still have plenty of time left on our vacation.', 5: '91'}"
+91	91		201							{1: '1', 2: '501166'}
+92	92		301				DialogDisable			"{1: '1', 2: 'Lucia', 3: ""Then let's think of this as... making up for the photos we never took in Catania."", 4: '1'}"
+93	93		302							"{2: ""Sure, and since we're in Constellia..."", 3: '94'}"
+94	94		302							"{2: 'We can fulfill that wish you made ""that night.""', 3: '95'}"
+95	95		301			DialogEnable				{2: 'Lucia', 3: 'You mean...?', 4: '1'}
+96	96		401							{2: '4386'}
+97	97		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+98	98		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_03.jpg'}
+99	99		202							{1: '1', 6: '1'}
+100	100		504							{1: '0.7'}
+101	101		301							{2: 'Lucia', 3: '...No matter when or where, in joy or in sorrow, I want to stay by your side and share everything with you.'}
+102	102		301							"{2: 'Lucia', 3: ""I want to collect Froggies with you, watch the sunrise together at Heaven's Cape...""}"
+103	103		301							"{2: 'Lucia', 3: ""And visit Constellia's couple discount shops together.""}"
+104	104		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+105	105		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+106	106		504							{1: '0'}
+107	107		301							{3: 'Warm memories wash over her mind, and with understanding, she steps closer, a gentle smile forming on her lips.'}
+108	108		201							{1: '1', 2: '501166'}
+109	109		301							"{1: '1', 2: 'Lucia', 3: ""I understand now. Let's treat the rest of today as a continuation of that ceremony."", 4: '1'}"
+110	110		202							{1: '1'}
+111	111		301							{3: 'Seeing the tacit understanding between the two, the photographer enthusiastically lifts the camera.'}
+112	112		201							{1: '1', 2: '500863'}
+113	113		301							"{1: '1', 2: 'Photographer', 3: ""Feel free to explore the city however you'd like. Pretend the camera isn't even here. That way, the photos we capture will look more natural."", 4: '1'}"
+114	114		302							"{2: ""Let's go.""}"
+115	115		201							{1: '1', 2: '501166', 3: '2'}
+116	116		301							"{1: '1', 2: 'Lucia', 3: ""Yes, let's go."", 4: '1'}"
+117	117		202							{1: '1'}
+118	118		301				AniZhuanchangBegin			{3: 'Your feelings flow warmly between your fingertips, guiding your footsteps forward together.'}
+119	119		306							{1: '1'}
+120	120		401							{2: '36'}
+121	121		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1016.jpg'}
+122	122		401							{2: '6145'}
+123	123		201							{1: '1', 2: '501166', 3: '1'}
+124	124		301			AniZhuanchangEnd	DialogDisable			"{1: '1', 3: ""Hand in hand with Lucia, you run happily along the theater's red carpet, surrounded by flowers and sunlight...""}"
+125	125		202							{1: '1', 6: '1'}
+126	126		205						650.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg', 3: '0', 4: '1', 5: '0.6'}
+127	127		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg', 3: '1', 4: '0', 5: '0'}
+128	128		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+129	129		201							{1: '1', 2: '501166', 3: '2'}
+130	130		301			DialogEnable	DialogDisable			{1: '1', 3: 'You tour the streets with Lucia in a flower-decorated carriage, then help her step down, offering a respectful hand kiss as per Catanian custom...'}
+131	131		202							{1: '1', 6: '1'}
+132	132		205						650.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory677.jpg', 3: '0', 4: '1', 5: '0.6'}
+133	133		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory677.jpg', 3: '1', 4: '0', 5: '0'}
+134	134		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory677.jpg'}
+135	135		201							{1: '1', 2: '501166', 3: '8'}
+136	136		301			DialogEnable	AniZhuanchangBegin			{1: '1', 3: 'Surrounded by a mechanoid orchestra, you joyfully embrace each other and dance gracefully to the music...'}
+137	137		202							{1: '1', 6: '1'}
+138	138		306							
+139	139		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory617.jpg'}
+140	140		301			AniZhuanchangEnd				{3: 'Finally, as twilight colors the sky, the exhibition nears its end. You and Lucia walk hand in hand up a fragrant slope lined with blooming peach blossoms.'}
+141	141		301							"{3: ""Constellia's towering windmill stands at the end of the slope, sparkling in the late-afternoon sun.""}"
+142	142		301							{3: 'Lucia cradles a Froggie plush from the discount shop in her left arm, walking lightly while keeping her gaze steadily fixed on you.'}
+143	143		201							{1: '1', 2: '501166', 3: '2'}
+144	144		301							"{1: '1', 2: 'Lucia', 3: ""Mr. Solasso said they've captured lots of great photos today."", 4: '1'}"
+145	145		204							{1: '1', 2: '1'}
+146	146		301				DialogDisable			{2: 'Lucia', 3: 'The exhibition is almost over. Did you have fun today, Commandant?', 4: '1'}
+147	147		302							{2: 'I had a wonderful time.', 3: '148'}
+148	148		302							{2: 'Because you are right here by my side.', 3: '149', 4: 'What about you, Lucia?', 5: '149'}
+149	149		301			DialogEnable				{3: 'A shy blush flashes across her cheeks as the warmth in her palm grows hotter.'}
+150	150		204							{1: '1', 2: '2'}
+151	151		301							"{2: 'Lucia', 3: ""Mm-hmm, I feel the same. I'm really, really happy."", 4: '1'}"
+152	152		301							"{2: 'Lucia', 3: ""Time with you always seems to fly by... but that's okay. Even if this moment is short, there are so many tomorrows waiting for us."", 4: '1'}"
+153	153		301							{2: 'Lucia', 3: '【kuroname】, when the sun sets, I want to take just one last photo to remember this day.', 4: '1'}
+154	154		302							{2: 'One last photo... to remember this day?', 3: '155'}
+155	155		202							{1: '1'}
+156	156		301				AniZhuanchangBegin			"{3: ""You're still processing her words when Lucia gently tugs your left hand and leads you toward the top of the slope.""}"
+157	157		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory783.jpg'}
+158	158		306							{1: '1'}
+159	159		301			AniZhuanchangEnd				{3: 'You pass through golden twilight. All the noise and bustle seem to fade away behind you.'}
+160	160		301							{3: 'You laugh, breathe, let go of worries past and future.'}
+161	161		301							{3: 'Together the two of you run in perfect harmony, leaving behind a brief, fairytale-like silhouette against the world.'}
+162	162		301							"{3: ""The cameras don't matter anymore. The thundering of your hearts is more than enough to etch this moment into time.""}"
+163	163		301							{3: 'In this dazzling moment, you two turn and look back—'}
+164	164		301				DialogDisable			{3: 'And realize that the light that brightens your world has already been living in your hearts all along.'}
+165	165		401							{2: '4387'}
+166	166		205						850.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5301_03.jpg', 3: '0', 4: '1', 5: '0.8'}
+167	167		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5301_03.jpg', 3: '1', 4: '0', 5: '0'}
+168	168		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_03.jpg'}
+169	169		401							{2: '4387'}
+170	170		205						850.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5301_04.jpg', 3: '0', 4: '1', 5: '0.8'}
+171	171		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5301_04.jpg', 3: '1', 4: '0', 5: '0'}
+172	172		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_04.jpg'}
+173	173		401							{2: '4387'}
+174	174		205						850.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5301_05.jpg', 3: '0', 4: '1', 5: '0.8'}
+175	175		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5301_05.jpg', 3: '1', 4: '0', 5: '0'}
+176	176		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_05.jpg'}
+177	177		306							
+178	178		205						850.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory783.jpg', 3: '0', 4: '1', 5: '0.8'}
+179	179		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory783.jpg', 3: '1', 4: '0', 5: '0'}
+180	180		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory783.jpg'}
+181	181		502							{1: 'RImgBg1BlowUp'}
+182	182		307							{1: 'So you squeeze her hand, and together, you take the next step forward—', 3: '50', 5: '0'}
+183	183		301							{3: 'So you squeeze her hand, and together, you take the next step forward—'}
+184	184		307							{1: 'Toward tomorrow, without ever looking back.', 3: '50', 5: '0'}
+185	185		301		1		AniZhuanchangBegin			{3: 'Toward tomorrow, without ever looking back.'}

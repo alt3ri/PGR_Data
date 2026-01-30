@@ -1,0 +1,237 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory105.png'}
+2	2		401							{1: '1', 2: '184'}
+3	3		201							{1: '1', 2: '500611'}
+4	4		301			DialogEnable				{1: '1', 3: 'In the woods, Alpha finds herself surrounded by the rioters, her eyes staring coldly at the man leading the group.'}
+5	5		203							{1: '1', 2: '0.25', 3: '-400'}
+6	6		201							{1: '2', 2: '500136', 4: '400'}
+7	7		301							{1: '1', 2: 'Armed Rioter A', 3: 'A Construct?! But I thought everyone had left that slimehole of a conservation area already!', 4: '2'}
+8	8		301							"{3: ""Having no intention to answer the preposterous question, Alpha places her hand on her katana's grip.""}"
+9	9		301							{2: 'Alpha', 3: 'Give me the thing and get lost.', 4: '1'}
+10	10		301							{2: 'Armed Rioter A', 3: '...And what do we get in return?', 4: '2'}
+11	11		301							"{2: 'Armed Rioter A', 3: ""This thing didn't just follow us out of that conservation area, you know..."", 4: '2'}"
+12	12		301							"{2: 'Alpha', 3: ""I'll let you walk away in one piece."", 4: '1'}"
+13	13		301							{2: 'Armed Rioter A', 3: '...', 4: '2'}
+14	14		301							{3: 'The man sizes up Alpha with menacing eyes, apparently trying to determine whether they stand a chance of toughing the situation out.'}
+15	15		301							{2: 'Alpha', 3: 'You probably want to hurry up.', 4: '1'}
+16	16		401							{1: '2', 2: '10022001'}
+17	17		301							"{3: ""Pushed ever so lightly out of the sheath, Alpha's katana seems aglow with a chill. Alpha squints, her patience quickly running out.""}"
+18	18		401							{1: '2', 2: '1510'}
+19	19		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+20	20		301							{3: 'Bam!'}
+21	21		301							"{3: ""Much to everyone's surprise, the man pulls out his gun and fires a decisive shot at Alpha.""}"
+22	22		301							{2: 'Alpha', 3: '...Tsk.', 4: '1'}
+23	23		301							"{3: ""Alpha blocks the bullet with a slash of her katana, stirring up a gust of wind that disperses the smoke from the smoke grenade that's thrown her way immediately after the shot.""}"
+24	24		301							"{2: 'Alpha', 3: ""I hope that wasn't your best move already."", 4: '1'}"
+25	25		301							{2: 'Armed Rioter A', 3: 'Scatter out and run!', 4: '2'}
+26	26		301							"{2: 'Armed Rioter A', 3: ""Make sure the thing is safe and y'all will get a cut!"", 4: '2'}"
+27	27		202							{1: '1', 2: '2', 6: '1'}
+28	28		301							{3: 'Shouts the man as he waves his arm excitedly. Then, rolling over, he dodges a slash from Alpha and rolls away downhill.'}
+29	29		301							"{3: ""With the man's order, the rioters scatter every which way.""}"
+30	30		301							{3: 'Ready to give chase, Alpha mounts her motorcycle—but stops in her tracks.'}
+31	31		301							{2: '???', 3: 'Alpha!'}
+32	32		301							{3: 'Apparently having taken the shortcut, a human comes darting out of the woods with mud and leaves all over.'}
+33	33		301				AniZhuanchangBegin			"{3: ""It's 【kuroname】.""}"
+34	34		502							{1: 'DialogDisable'}
+35	35		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory105.png'}
+36	36		201							{1: '1', 2: '500610', 3: '13'}
+37	37		301			DialogEnable				{1: '1', 2: 'Alpha', 3: 'Well done. Well done indeed.', 4: '1'}
+38	38		301							"{2: 'Alpha', 3: ""But you'll have to fight for what you came seeking."", 4: '1'}"
+39	39		502							{1: 'DialogDisable'}
+40	40		302							{2: 'Wait.', 3: '41'}
+41	41		302							{2: 'Let me cut you a deal.', 3: '42'}
+42	42		204							{1: '1'}
+43	43		301			DialogEnable				{2: 'Alpha', 3: '...', 4: '1'}
+44	44		301							{2: 'Alpha', 3: 'Trying to stall me here, huh?', 4: '1'}
+45	45		301							{2: 'Alpha', 3: 'Another day, maybe.', 4: '1'}
+46	46		401							{1: '2', 2: '13061404'}
+47	47		301							"{3: ""Gunning her motorcycle's engine, Alpha speeds down the road in pursuit of the rioters.""}"
+48	48		302							{2: 'Help from Babylonia is on the way.', 3: '49'}
+49	49		201							{1: '1', 2: '500611', 7: '1'}
+50	50		301							{1: '1', 2: 'Alpha', 3: 'Is that a... threat?', 4: '1'}
+51	51		301							"{3: 'Hearing you utter the word ""Babylonia"", Alpha turns around with a dangerous look.'}"
+52	52		202							{1: '1', 6: '1'}
+53	53		201							{1: '1', 2: '500567'}
+54	54		301							{1: '1', 3: 'You mark a new path on your terminal and sync the path with Crowe.'}
+55	55		502							{1: 'DialogDisable'}
+56	56		302							"{2: ""Let's act according to the plan, Crowe."", 3: '57'}"
+57	57		202							{1: '1'}
+58	58		301			DialogEnable				{3: 'Bemused by the Construct that seemed to have come out of nowhere, Crowe takes your order all the same and starts pursuing Alpha with the given coordinates.'}
+59	59		201							{1: '1', 2: '500610'}
+60	60		301							{1: '1', 2: 'Alpha', 3: '...I wonder what Babylonia would say about you being alone with an Ascendant.', 4: '1'}
+61	61		301							{3: 'Alpha looks at you, her face devoid of emotions.'}
+62	62		302							"{2: ""Let's talk."", 3: '63'}"
+63	63		301							{3: 'You know you have the upper hand here to initiate a talk.'}
+64	64		301							{2: 'Alpha', 3: 'About what?', 4: '1'}
+65	65		302							"{2: 'About us working together—and if you refuse to, the only thing you\'ll have to count on for your pursuit of the rioters will be your ""instincts.""', 3: '66'}"
+66	66		301							{3: 'Even with the help of the two squads that are on their way here, the rioters still stand a pretty good chance of making their way out of here with the hard drive, given their sheer number.'}
+67	67		301							{3: 'In your plan, the only way for both you and Alpha to win is if the two of you work together.'}
+68	68		302							{2: 'Whoever gets their hands on the thing can always share it with the other person.', 3: '69'}
+69	69		301							{3: 'But if the rioters make it out of here, the thing you both came looking for might be gone for good.'}
+70	70		301							{2: 'Alpha', 3: '...Spell out the details, then.', 4: '1'}
+71	71		301							"{3: ""Her motorcycle's engine coming to a halt, Alpha looks dubiously at you.""}"
+72	72		301							{3: 'Glad that Alpha is willing to lend you a listening ear, you pull out your terminal and circle a few locations.'}
+73	73		502							{1: 'DialogDisable'}
+74	74		302							"{2: ""This is the only passable path up here in this mountain, and no matter how the rioters plan to get out of here, they're bound to pass through these checkpoints."", 3: '75'}"
+75	75		302							"{2: ""I've put two squads in place at these checkpoints, and Crowe is heading over now."", 3: '76'}"
+76	76		302							"{2: ""Now, if we can meet the rioters head-on from these three checkpoints here, we'll have a 90% chance of stopping them."", 3: '77'}"
+77	77		301			DialogEnable				{2: 'Alpha', 3: '...', 4: '1'}
+78	78		204							{1: '1', 2: '13'}
+79	79		301							"{2: 'Alpha', 3: ""This really reminds me of how good Babylonia is at catching their prey—except I'm no longer a crybaby."", 4: '1'}"
+80	80		301							{3: 'Alpha looks at you with a faint smile, her mind unreadable through her eyes.'}
+81	81		502							{1: 'DialogDisable'}
+82	82		302							"{2: ""Since Crowe isn't around, there is just going to be me and you from here on out."", 3: '83'}"
+83	83		302							{2: 'Are you going to trust me? Or would you rather go it alone and make life harder for yourself?', 3: '84'}
+84	84		204							{1: '1'}
+85	85		301			DialogEnable				{2: 'Alpha', 3: '...', 4: '1'}
+86	86		301							{3: 'A moment of silence later, Alpha kicks her motorcycle into gear.'}
+87	87		301							"{2: 'Alpha', 3: ""Sure you're ready to join hands with an Ascendant?"", 4: '1'}"
+88	88		301							{3: 'Done deal.'}
+89	89		302							{2: 'Never been more ready.', 3: '90'}
+90	90		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+91	91		301							{3: 'Wasting no time, Alpha twists the throttle as soon as you mount her motorcycle.'}
+92	92		301							"{2: 'Alpha', 3: ""...Well, let's hope you've got enough serum to burn through, then."", 4: '1'}"
+93	600		401						1000.0	{1: '2', 2: '13061404'}
+94	601		402							{1: '13061404'}
+95	93		301							"{3: ""Blasting out an ear-splitting vroom, Alpha's motorcycle zips through the snowfield at full throttle like a blood-red thunder, her arms all the while aglow in red.""}"
+96	94		301							"{3: ""As Alpha's motorcycle zips past everything in sight, the reading of the Punishing Virus density on your terminal seems to be skyrocketing, too.""}"
+97	95		301							{3: '50%... 60%... 70%...'}
+98	96		302							{2: '...', 3: '97'}
+99	97		204							{1: '1', 2: '13'}
+100	98		301							"{3: ""You hold your breath, feeling your heart pounding faster by the second. Right when the virus has become so dense that it's only a split second from penetrating your protective suit, you hear a sneer.""}"
+101	99		301							{2: 'Alpha', 3: 'Scared?', 4: '1'}
+102	100		301							{3: 'The virus density stops right before it breaks the critical point.'}
+103	101		302							"{2: 'Nah.', 3: '102', 4: 'I have every confidence in this ""partnership"" we have here.', 5: '102'}"
+104	102		204							{1: '1'}
+105	103		401							{1: '2', 2: '1099'}
+106	104		301							{3: 'Right then, your terminal receives a connection request.'}
+107	105		302							{2: '(Crowe?)'}
+108	106		301							"{3: ""Crowe's voice comes right out as soon as the request has been accepted.""}"
+109	107		301							"{2: 'Crowe', 3: ""Commandant, we're suddenly picking up a high concentration of Punishing Virus here! And it's moving toward the checkpoints at top speed!""}"
+110	108		301							"{2: 'Crowe', 3: ""And I can see that you're with the Punishing Virus reaction... What in the world is happening?!""}"
+111	109		301							{2: 'Crowe', 3: 'The support squads are on their way, so please just hang in th...'}
+112	110		502							{1: 'DialogDisable'}
+113	111		302							{2: 'No, just stick with the plan.', 3: '112'}
+114	112		302							{2: 'Unless I instruct you to do otherwise.', 3: '113'}
+115	113		301			DialogEnable				{2: 'Crowe', 3: 'But...'}
+116	114		301							"{3: ""With a sharp electrical noise that comes through the channel, Crowe's voice blurs beyond understanding.""}"
+117	115		301							"{3: ""As Alpha's motorcycle comes to a sudden stop, you feel yourself hurled against her back.""}"
+118	116		302							{2: '...Aargh!'}
+119	117		201							{1: '1', 2: '500611', 7: '1'}
+120	118		301							"{1: '1', 2: 'Alpha', 3: ""You're going to involve a third party for help?"", 4: '1'}"
+121	119		301							{2: 'Crowe', 3: 'The [BUZZ—] Punishing... interference... [BUZZ—]...'}
+122	120		301							{2: 'Alpha', 3: 'For this deal we have here, there is only me, you, and no one else, period.', 4: '1'}
+123	121		401							{1: '2', 2: '558'}
+124	122		301							"{3: '""Communication Terminated""'}"
+125	123		502							{1: 'DialogDisable'}
+126	124		302							"{2: ""I'm the one that proposed working together..."", 3: '125'}"
+127	125		302							"{2: ""And you know I'm not going to do that."", 3: '126', 4: 'My people will stick with the plan.', 5: '126'}"
+128	126		201							{1: '1', 2: '500610', 3: '13', 7: '1'}
+129	127		301			DialogEnable				"{1: '1', 2: 'Alpha', 3: ""And you really don't think I'm going to take you hostage, huh?"", 4: '1'}"
+130	128		302							"{2: 'I\'m sure you won\'t—unless the ""thing"" doesn\'t mean anything to you anymore, that is.', 3: '129'}"
+131	129		301							"{2: 'Alpha', 3: ""You're either helplessly naive or incredibly brave, and I can't decide which one you are."", 4: '1'}"
+132	130		502							{1: 'DialogDisable'}
+133	131		302							"{2: ""I just don't think my proposal is so bad that you'll want to take me hostage..."", 3: '132'}"
+134	132		302							{2: 'Because you stand to gain something from it, too.', 3: '133'}
+135	133		204							{1: '1'}
+136	134		301			DialogEnable				{2: 'Alpha', 3: '...Hmph.', 4: '1'}
+137	135		202							{1: '1', 6: '1'}
+138	605		401							{1: '2', 2: '13061404'}
+139	136		301							{3: 'With a cold huff, Alpha speeds down the road again, leaving waves of snowy dust behind her.'}
+140	137		301							{3: 'Alpha seems to be saying something to you, except you can barely make out her words in the deafening winds.'}
+141	138		201							{1: '1', 2: '500610'}
+142	139		301							{1: '1', 2: 'Alpha', 3: '...Tight.', 4: '1'}
+143	140		302							{2: 'What?', 3: '141'}
+144	141		301							{2: 'Alpha', 3: 'Hold on tight, I said.', 4: '1'}
+145	142		104					500.0		{1: '0|0|-300', 2: '0.5'}
+146	143		203							{1: '1', 2: '0.14', 5: '-120'}
+147	144		104					300.0		{1: '0|0|0', 2: '0.3'}
+148	145		301							{3: 'No sooner does Alpha finish speaking do you feel the motorcycle gunned into top gear, threatening to fling you off into the waves of snow behind.'}
+149	146		301							"{3: ""When you've recovered yourself, you find your hands around Alpha's waist.""}"
+150	147		301							{3: 'Through your protective suit, Alpha feels soft and warm—and awkwardly stiff—to the touch.'}
+151	148		301							{2: 'Alpha', 3: '...', 4: '1'}
+152	149		302							"{2: '...', 3: '150', 4: ""I don't know where else to put my hands."", 5: '150'}"
+153	150		301							{3: 'Surprisingly, however, Alpha says nothing as she tightens her grip around the throttle.'}
+154	151		202							{1: '1'}
+155	152		301							{3: 'The chilly winds bite at your skin as snowflakes speed past you, transforming the world as you see it into a great grayish mass.'}
+156	153		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory95.png', 3: '0', 4: '1', 5: '1'}
+157	154		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+158	155		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory95.png'}
+159	156		301							{3: 'The snowfield appears to have deprived you of your sense of space and time, leaving you and Alpha the only souls traveling through the bombardment of snow...'}
+160	157		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory96.png', 3: '0', 4: '1', 5: '1'}
+161	158		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+162	159		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory96.png'}
+163	160		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+164	161		201							{1: '1', 2: '500136'}
+165	162		301							{1: '1', 3: 'After God only knows how long, the motorcycle does a tactful semicircular turn—before it screeches to a stop right before a figure.'}
+166	163		302							"{2: ""It's him!"", 3: '164'}"
+167	164		301							{3: 'Scared soulless seeing the two of you, the person turns out to be the man leading the group of rioters.'}
+168	165		301							{3: 'The man tries to run for dear life—only to find his attempt futile when he sees Alpha already standing in his way.'}
+169	166		203							{1: '1', 2: '0.25', 3: '400'}
+170	167		201							{1: '2', 2: '500610', 3: '13', 4: '-400'}
+171	168		301							{1: '1', 2: 'Alpha', 3: 'There you are.', 4: '2'}
+172	169		301							"{2: 'Alpha', 3: ""You have the thing, don't you?"", 4: '2'}"
+173	170		301							"{2: 'Armed Rioter A', 3: ""Like hell I'm going to give it to you!"", 4: '1'}"
+174	171		301							{2: 'Alpha', 3: 'Uh-huh.', 4: '2'}
+175	172		401							{1: '2', 2: '10022001'}
+176	173		301							"{3: ""Pulled out of the sheath, Alpha's katana swooshes through the wind. With her weapon, Alpha begins a chase.""}"
+177	174		302							{2: '(Fire dart gun)', 3: '175'}
+178	175		401						300.0	{1: '2', 2: '661'}
+179	176		204							{1: '2'}
+180	177		401							{1: '2', 2: '819043'}
+181	178		202							{1: '1', 6: '1'}
+182	179		203							{1: '2', 2: '0.25'}
+183	180		301							{3: 'The dart hits the man, knocking him out cold right away. With a swing, Alpha puts her katana back into her sheath.'}
+184	181		301							{2: 'Alpha', 3: 'Playing the saint now, huh?', 4: '2'}
+185	182		502							{1: 'DialogDisable'}
+186	183		302							"{2: ""Not trying to say they're innocent..."", 3: '184'}"
+187	184		302							"{2: ""But there are other ways to make them pay for what they've done."", 3: '185'}"
+188	185		301			DialogEnable				{2: 'Alpha', 3: '...Hmph.', 4: '2'}
+189	186		301							{3: 'Alpha says no more, her katana still resting in the sheath.'}
+190	187		202							{1: '2', 6: '1'}
+191	188		301							{3: 'Right before Alpha starts walking up to the man to look for the hard drive you both have been trying to hunt the rioters down for, the man thrusts forward—and drops the hard drive from his hand down the cliff.'}
+192	189		201							{1: '1', 2: '500136'}
+193	190		301							{1: '1', 2: 'Armed Rioter A', 3: 'Try to get that now!', 4: '1'}
+194	191		401							{1: '1', 2: '202'}
+195	192		302							{2: 'Alpha!', 3: '193'}
+196	193		202							{1: '1', 6: '1'}
+197	194		301							{3: 'With the man still shouting, Alpha wastes no time jumping off the cliff herself.'}
+198	195		301							"{3: ""It's only halfway up the mountain where you all are—but the seemingly bottomless gorge off the cliff abounds with rocks of all sizes, and Alpha is nowhere to be seen anymore.""}"
+199	196		201							{1: '1', 2: '500567'}
+200	197		301							{1: '1', 2: 'Crowe', 3: 'Commandant! Are you alright?!', 4: '1'}
+201	198		301							{3: 'Seeing you right beside the cliff, Crowe scuttles over from the dilapidated road.'}
+202	199		301							{2: 'Crowe', 3: 'What... is going on?', 4: '1'}
+203	200		302							{2: 'An Ascendant just jumped off.', 3: '201'}
+204	201		301							{2: 'Crowe', 3: 'Is it the virus reaction I picked up earlier?!', 4: '1'}
+205	202		302							{2: 'Correct.', 3: '203'}
+206	203		301							{3: 'You bring Crowe up to speed.'}
+207	204		301							"{2: 'Crowe', 3: ""So the Ascendant is after the same thing we are? But, I mean... we aren't going to jump off this cliff here ourselves now, are we?"", 4: '1'}"
+208	205		301							{2: 'Crowe', 3: 'Boy, this is a real shame... We were this close.', 4: '1'}
+209	206		502							{1: 'DialogDisable'}
+210	207		302							{2: 'No.', 3: '208'}
+211	208		302							{2: 'I put a tracker on her.', 3: '209'}
+212	209		301			DialogEnable				{3: 'When you tap on the screen of your terminal, a map pops up that shows a flashing red dot.'}
+213	210		301							{3: 'You put the tracker on Alpha during the ride, which now shows that Alpha is on the move.'}
+214	211		302							"{2: ""(Although it's probably only a matter of time before she finds out...)"", 3: '212'}"
+215	212		301							{3: 'But the deal is still on.'}
+216	213		302							{2: 'How are the other squads doing?', 3: '214'}
+217	214		301							{2: 'Crowe', 3: 'With the exception of three rioters who have been neutralized for staging resistance, the rest of the rioters have been captured.', 4: '1'}
+218	215		301							{2: 'Crowe', 3: 'Commandant, what exactly are we going to...', 4: '1'}
+219	216		302							{2: '...', 3: '217'}
+220	217		301							"{3: ""Your heart still pounding, you take another look down the cliff—and, for one split second, seem to still see Alpha's figure down below.""}"
+221	218		302							"{2: ""Let's keep moving."", 3: '219'}"
+222	219		301				AniZhuanchangBegin			{3: 'The red dot on the map continues to flash invitingly.'}
+223	220		401						500.0	{1: '1', 2: '36'}
+224	221		202			DialogDisable				{1: '1', 6: '1'}
+225	222		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory103.png'}
+226	223		401							{1: '1', 2: '45'}
+227	224		301			DialogEnable				{3: 'The darkness of night slowly envelops the world.'}
+228	225		201							{1: '1', 2: '500610'}
+229	226		301							{1: '1', 3: 'From where she is standing up on the cliff, Alpha can see the conservation area down below.'}
+230	227		301							{3: 'With the sun setting, specks of light start appearing across the conservation area. This particular conservation area seems relatively unaffected by the Punishing Virus—and despite what little resource it has, its citizens have welcomed refugees with open arms.'}
+231	228		301							{3: '【kuroname】 is in there, too.'}
+232	229		301							{3: 'The specks of light faintly aglow in her eyes, Alpha tightens her hand around the grip of her katana as she lowers her head.'}
+233	230		301							{3: 'Going forward, she is to trust no one but herself—for hope is flimsy at best when given by others.'}
+234	231		301							"{3: ""Dark and full of uncertainty is the path she's chosen, and time and time again she's bound to stumble and fall...""}"
+235	232		301							{3: 'Still, Alpha is ready to face all odds head-on.'}
+236	233		301		1		AniZhuanchangBegin			{3: 'Quickly patching up her wounds from the fall off the cliff, Alpha turns around and starts heading for the peak.'}

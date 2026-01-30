@@ -1,0 +1,99 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory172.png'}
+2	2		401							{1: '1', 2: '278'}
+3	3		201							{1: '1', 2: '500702', 3: '10'}
+4	4		301			DialogEnable				{1: '1', 2: 'Echo', 3: 'Phew...', 4: '1'}
+5	5		204							{1: '1', 2: '1'}
+6	6		301							"{2: 'Echo', 3: ""I never thought I'd end up at an event like this. Thanks for inviting me, Commandant... uh..."", 4: '1'}"
+7	7		204							{1: '1', 2: '6'}
+8	8		203							{1: '1', 2: '0.5', 4: '-100', 5: '-100'}
+9	9		301							{3: 'You struggle to signal Echo from within the shopping bags that you are okay, but she looks troubled and quickly steps in to help carry two of them.'}
+10	10		203							{1: '1', 2: '0.5', 3: '-200', 4: '-50', 5: '-50'}
+11	11		201							{1: '2', 2: '500582', 4: '200', 6: '-100'}
+12	12		301							"{1: '1', 3: ""Even though she's got her hands full, her armor decked out like a Christmas tree.""}"
+13	13		202							{1: '2', 6: '1'}
+14	14		203							{1: '1', 2: '0.5'}
+15	15		204							{1: '1', 2: '10'}
+16	16		301							"{2: 'Echo', 3: ""I'm sorry, Commandant. I should've been more controlled..."", 4: '1'}"
+17	17		302							{2: 'No worries.', 3: '18', 4: 'This shopping street is seriously tempting, though.', 5: '18'}
+18	18		204							{1: '1', 2: '14'}
+19	19		301							"{2: 'Echo', 3: ""But... I've pretty much blown through all the coins we busted our butts to earn together, Commandant..."", 4: '1'}"
+20	20		302							"{2: 'Spending money seems to be the ""rule"" of this place.'}"
+21	21		202							{1: '1', 6: '1'}
+22	22		104						1000.0	{1: '-100|50|-200', 2: '1'}
+23	23		301							"{3: 'You motion for Echo to check out the sign at the entrance of the commercial street, which clearly lays out several ""Guidelines"".'}"
+24	24		104						1000.0	{1: '0|0|0', 2: '1'}
+25	25		201							{1: '1', 2: '500702', 3: '6'}
+26	26		301							{1: '1', 2: 'Echo', 3: 'But still... what I did back there was kind of rude. Sorry about that.', 4: '1'}
+27	27		301							{3: 'Echo struggles a bit, nearly dropping the shopping bags, as she performs a fancy apology gesture.'}
+28	28		302							"{2: '...', 3: '29', 4: ""Let's put these bags down over there for now."", 5: '29'}"
+29	29		301				AniZhuanchangBegin			{3: 'There is a nearby square where we can take a load off.'}
+30	30		202			DialogDisable				{1: '1', 6: '1'}
+31	31		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory252.png'}
+32	32		301			DialogEnable				{3: 'After you drop the bags, Echo settles down gracefully, checking out the whole scene of the commercial street.'}
+33	33		201							{1: '1', 2: '500702', 3: '1'}
+34	34		301							"{1: '1', 2: 'Echo', 3: ""Valentine's Day... I never knew about these festivals before. This is way cooler than I expected."", 4: '1'}"
+35	35		302							"{2: ""But wait, there's more."", 3: '36', 4: ""(You quickly fill Echo in on the story and poems behind these lovers' days in the Golden Age.)"", 5: '36'}"
+36	36		204							{1: '1', 2: '7'}
+37	37		301							{2: 'Echo', 3: 'Ah, now it all makes sense... No wonder the coins have those magpie designs.', 4: '1'}
+38	38		204							{1: '1'}
+39	39		301							{2: 'Echo', 3: 'Beneath faint moon, vast sky tranquil, Milky Way aligns, eternal... Those Kowloong verses are something else. I gotta jot them down before I forget.', 4: '1'}
+40	40		301							"{2: 'Echo', 3: ""Love, enduring time's vast stages, dawn to dusk, mere fleeting pages..."", 4: '1'}"
+41	41		204							{1: '1', 2: '1'}
+42	42		301							"{2: 'Echo', 3: ""The poetry of Kowloong... it's just captivating, isn't it?"", 4: '1'}"
+43	43		301							{3: 'She recites the verses with grace, from the majestic to the simple. It takes a while before Echo finally stops writing.'}
+44	44		204							{1: '1', 2: '7'}
+45	45		301							{2: 'Echo', 3: 'Ah! Sorry about that... l lost track of time and kept you waiting, Commandant.', 4: '1'}
+46	46		302							"{2: 'No worries.', 3: '47', 4: ""Well, then you'll just have to make it up to me."", 5: '47'}"
+47	47		301							{2: 'Echo', 3: 'Hmm... maybe this will make up for it, Commandant.', 4: '1'}
+48	48		204							{1: '1'}
+49	49		301							{3: 'She digs into the shopping bag at her feet. With a flourish, she presents a beautifully wrapped box containing a pen adorned with a galaxy pattern.'}
+50	50		204							{1: '1', 2: '1'}
+51	51		301							"{2: 'Echo', 3: 'I spotted this in a shop over there and thought it was just perfect for you, Commandant. And I paired it with this notebook, featuring a row of magpies, just like the ""Bridge of Magpies"" you mentioned.', 4: '1'}"
+52	52		301							"{2: 'Echo', 3: ""And these pendants shaped like birds and clouds. They'd look great hanging on your personal terminal or in your room. And..."", 4: '1'}"
+53	53		301							"{3: ""The pile of gifts meant for you keeps growing as Echo's shopping bags empty out.""}"
+54	54		302							"{2: 'Wait, all these for me? Seriously?', 3: '55', 4: ""There's so much!"", 5: '55'}"
+55	55		301							{2: 'Echo', 3: 'Yep, every bit of it. These are all things I thought would be perfect for you, Commandant.', 4: '1'}
+56	56		301							{2: 'Echo', 3: 'And these... are for my sister.', 4: '1'}
+57	57		301							{3: 'After distributing the gifts, only one bag remains on the ground.'}
+58	58		302							{2: 'Wait, did you only get this one for yourself?', 3: '59'}
+59	59		204							{1: '1'}
+60	60		301							"{2: 'Echo', 3: ""Yes, I didn't really see anything else I needed."", 4: '1'}"
+61	61		204							{1: '1', 2: '1'}
+62	62		301							"{2: 'Echo', 3: ""I never imagined I'd be doing something like this before. This place is really something..."", 4: '1'}"
+63	63		204							{1: '1'}
+64	64		301							{3: 'Echo relaxes her usually stiff posture.'}
+65	65		302							"{2: ""Now it's my turn to give you a gift."", 3: '66', 4: ""(Pull out a book that's been tucked away in your pocket for a while)"", 5: '66'}"
+66	66		204							{1: '1', 2: '7', 4: '1'}
+67	67		301							{2: 'Echo', 3: 'This is... a collection of Kowloong poetry! Amazing!', 4: '1'}
+68	68		302							"{2: ""I'm glad you like it."", 3: '69', 4: ""Getting this wasn't a walk in the park."", 5: '69'}"
+69	69		204							{1: '1', 2: '1'}
+70	70		301							{2: 'Echo', 3: 'Thank you, Commandant! I really like it!', 4: '1'}
+71	71		202							{1: '1', 6: '1'}
+72	72		201							{1: '1', 2: '500582'}
+73	73		301				DialogDisable			"{1: '1', 3: ""Silently, Echo's armor sidles up from the side, leaving behind a gift for her.""}"
+74	74		202							{1: '1', 6: '1'}
+75	75		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory783.jpg', 3: '0', 4: '1', 5: '1'}
+76	76		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+77	77		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory783.jpg'}
+78	78		301			DialogEnable	DialogDisable			"{3: ""With the sun sinking low, the fading light marks the end of today's adventures.""}"
+79	79		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory252.png', 3: '0', 4: '1', 5: '1'}
+80	80		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+81	81		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory252.png'}
+82	82		201							{1: '1', 2: '500702', 3: '1'}
+83	83		301			DialogEnable				{1: '1', 2: 'Echo', 3: 'If only today lasts forever...', 4: '1'}
+84	84		302							"{2: ""So, what's the plan for tomorrow?"", 3: '85'}"
+85	85		204							{1: '1', 2: '7'}
+86	86		301							"{2: 'Echo', 3: ""My calendar says we're hitting up another conservation area..."", 4: '1'}"
+87	87		204							{1: '1'}
+88	88		301							"{2: 'Echo', 3: ""It means I'll be away from you for a bit again, Commandant."", 4: '1'}"
+89	89		204							{1: '1', 2: '1'}
+90	90		301							{2: 'Echo', 3: 'But hey, no biggie.', 4: '1'}
+91	91		301							{2: 'Echo', 3: 'After all... Dawn to dusk, mere fleeting pages, right?', 4: '1'}
+92	92		301							{3: 'In the fading light, she flashes a gentle smile.'}
+93	93		302							"{2: '(Smile)', 3: '94', 4: ""Yeah, that's right."", 5: '97'}"
+94	94		204							{1: '1', 2: '6'}
+95	95		301							"{2: 'Echo', 3: ""W-what's with that grin? Don't tell me... this poem isn't saying what I think it is?"", 4: '1'}"
+96	96		301		1		AniZhuanchangBegin			{2: 'Echo', 3: 'Oh, come on... quit laughing!...', 4: '1'}
+97	97		204							{1: '1', 2: '6'}
+98	98		301		1		AniZhuanchangBegin			{2: 'Echo', 3: 'Alright!', 4: '1'}

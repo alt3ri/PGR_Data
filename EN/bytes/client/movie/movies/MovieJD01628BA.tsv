@@ -1,0 +1,19 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory285.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '1031001'}
+4	6		301			DialogEnable				{1: '1', 3: 'Following the path, you see the projection of a female scavenger sitting beside a bonfire.'}
+5	7		301							"{2: 'Liv', 3: ""Oh, she's the same scavenger we saw back there just a while ago. Seems like she's been here for quite some time now."", 4: '1'}"
+6	8		301							{3: 'When Liv walks up to her, she saw the woman staring at a faded photo.'}
+7	9		301							{2: 'Liv', 3: 'Older scavengers usually travel as a group so they have one another to rely on...', 4: '1'}
+8	10		301							{2: 'Liv', 3: 'Why is she here alone, then?', 4: '1'}
+9	11		302							{2: 'Probably has to do with the photo.', 3: '12'}
+10	12		301							{3: 'The woman stares at the pictures, her tears reflecting the light of the bonfire.'}
+11	13		301				DialogDisable			"{2: 'Liv', 3: ""...Who's the person in the photo?"", 4: '1'}"
+12	14		305							{1: '15', 2: '20'}
+13	15		301			DialogEnable				"{2: 'Liv', 3: ""It's too blurry to tell, but judging from the way she's touching the photo, it might be a family member."", 4: '1'}"
+14	16		201							{1: '1', 2: '500166'}
+15	17		301							{1: '1', 2: 'Lucia', 3: 'Could it have to do with the young Construct?', 4: '1'}
+16	18		201							{1: '1', 2: '1031001'}
+17	19		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Liv', 3: ""I can't say for sure, but it's very likely... We should gather more clues."", 4: '1'}"
+18	20		202		1		AniZhuanchangBegin			{1: '1', 6: '1'}

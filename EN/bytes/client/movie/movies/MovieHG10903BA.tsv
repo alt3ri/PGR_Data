@@ -1,0 +1,34 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+2	2		401							{1: '1', 2: '204'}
+3	3		301			DialogEnable				{3: 'And so, you accompany Ayla to the modern art exhibition upon her invitation...'}
+4	4		201							{1: '1', 2: '500110'}
+5	5		301							"{1: '1', 2: 'Ayla', 3: ""My piece won't be displayed here until later, but we can at least look at others' artwork and get hyped for the event."", 4: '1'}"
+6	6		301				AniZhuanchangBegin			{2: 'Ayla', 3: 'Commandant, let go on in.', 4: '1'}
+7	7		301			AniZhuanchangEnd				{2: 'Ayla', 3: 'Commandant, have you heard about the life of Eugene Nakahara?', 4: '1'}
+8	8		301							"{2: 'Ayla', 3: 'Look! It\'s Lina Ono\'s ""Magenta Wave""!', 4: '1'}"
+9	9		202							{1: '1', 6: '1'}
+10	10		301							{3: 'After taking a big lap around the exhibition hall, Ayla is now filled with excitement...'}
+11	11		301				AniZhuanchangBegin			{3: 'Full of energy at a time like this, no one would have guessed that she works late into the night...'}
+12	12		301			AniZhuanchangEnd				{3: '...'}
+13	13		301							"{3: 'Ayla stops in front of a picture titled ""Early Spring"".'}"
+14	14		301							{3: 'She seems full of regret... but why?'}
+15	15		302							{2: 'What is it?', 3: '16'}
+16	16		201							{1: '1', 2: '500110'}
+17	17		301							{1: '1', 2: 'Ayla', 3: 'Hey...', 4: '1'}
+18	18		301							"{2: 'Ayla', 3: ""This paint... is an old piece of mine. Maybe it's here as a replacement for the original exhibit."", 4: '1'}"
+19	19		301							"{2: 'Ayla', 3: 'It\'s not my best work... It\'s too constrained and pays too much attention on expressing ""objective existence.""', 4: '1'}"
+20	20		301							"{2: 'Ayla', 3: 'But looking at it now... it seems as if this is a reminder not to be constrained to such a simple ""form""...', 4: '1'}"
+21	21		301							{2: 'Ayla', 3: '...', 4: '1'}
+22	22		302							{2: '...', 3: '23'}
+23	23		202							{1: '1', 6: '1'}
+24	24		301							{3: 'The exhibition is closing...'}
+25	25		201							{1: '1', 2: '500110'}
+26	26		301							{1: '1', 2: 'Ayla', 3: 'Sorry for making you be with me all day.', 4: '1'}
+27	27		302							{2: 'No worries.', 3: '28'}
+28	28		301							{2: 'Ayla', 3: 'So... How did you know that the question mark could be filled in?', 4: '1'}
+29	29		302							{2: 'Um...', 3: '30'}
+30	30		301							{2: 'Ayla', 3: 'Regardless of how you did it...', 4: '1'}
+31	31		302							{2: '?', 3: '32'}
+32	32		301							{2: 'Ayla', 3: 'I think I got some inspiration.', 4: '1'}
+33	33		301		1		AniZhuanchangBegin			{2: 'Ayla', 3: 'Think I can trouble you for a bit tomorrow?', 4: '1'}

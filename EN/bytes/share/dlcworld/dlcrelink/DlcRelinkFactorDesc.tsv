@@ -1,0 +1,51 @@
+Id	AttributeName	AttributeType	LevelOverlyingType	DetailShowType	Name	Desc	Icon	IsPercent	MaxLevel	Order
+11000	Life	1	1	1	HP	Increases Base HP			13	102
+12001	Life	4	1	1	HP Buff	HP Bonus		1	13	103
+11001	Attack	1	1	1	Attack	Increases Base ATK			39	101
+11005	CritP	1	1	1	Critical	CRIT chance when dealing damage		1	24	105
+11007	CritDmgRateP	1	1	1	CRIT DMG	CRIT DMG multiplier when dealing damage		1	13	106
+11010	ShieldAmpP	1	1	1	Shield Bonus	Shield Bonus		1	13	108
+11014	Attack1AmpP	1	1	1	DMG Bonus Buff	DMG Bonus		1	26	110
+11029	SignalSkillDmgAmpP	1	1	1	Skill DMG Increase	Regular Skill DMG Bonus		1	26	112
+11030	CoreSkillDmgAmpP	1	1	1	Core DMG Bonus	Core Skill DMG Bonus		1	26	113
+11031	NormalAtkDmgAmpP	1	1	1	Basic Attack DMG Increase	Basic Attack DMG Bonus		1	26	111
+11032	ExSkillDmgAmpP	1	1	1	Signature DMG Increase	Signature Move DMG Bonus		1	26	114
+11067	DmgReduction	1	1	1	DMG Reduction	Reduces DMG taken		1	13	104
+11072	Attack3AmpP	1	1	1	ATK Up	Increases DMG dealt.		1	26	115
+11077	DmgLimitP	1	1	1	Max DMG	Increases character's max DMG.		1	39	107
+11083	HealAmpP	1	1	1	Healing Efficiency Buff	Healing Boost		1	13	109
+11084	BreakDmg	1	1	1	Imbalance Buff	Increases balance damage against bosses			13	116
+11096	CauseDamageThreatCoe	1	1	1	Aggro Focus	<color=#ffdd93>Increases</color> <color=#ffdd93>Aggro Multiplier</color> when dealing DMG.		1	13	117
+13096	CauseDamageThreatCoe	1	1	1	Aggro Concealment	<color=#ffdd93>Decreases</color> <color=#ffdd93>Aggro Multiplier</color> when dealing DMG.		1	13	118
+21001		1	1	1	Starting Energy	Gains <color=#ffdd93>Signature Energy</color> upon entering battle.			13	1001
+21006		1	1	1	Follow-Up Skill DMG Increase	Follow-Up Skill DMG Bonus			26	1006
+21007	RelinkChainSkillAmpP	1	1	1	Chain DMG Increase	Hyperlink Co-Strike DMG Bonus		1	13	1007
+21008		1	1	1	Bloodburn Bonus	Lower <color=#ffdd93>remaining HP</color> grants a greater <color=#ffdd93>total DMG Bonus</color>.			13	1008
+21009		1	1	1	Healing Assault	<color=#ffdd93>Extra DMG Bonus</color> increases for 20s after <color=#ffdd93>healing</color> other players.			13	1009
+21010		1	1	1	Shield Slam Boost	Increases <color=#ffdd93>Extra DMG Bonus</color> while <color=#ffdd93>shielded</color> and for 3 seconds after <color=#ffdd93>the shield disappears</color>.			13	1010
+21011		1	1	1	Support DMG Reduction	<color=#ffdd93>DMG Reduction</color> increases while <color=#ffdd93>reviving other players</color>.			13	1011
+21012		1	1	1	CRIT DMG Buff	When ATK Amplification ≥50%, <color=#ffdd93>CRIT DMG</color> increases.			13	1012
+21013		1	1	1	Absolute Advantage	When HP ≥16000, <color=#ffdd93>CRIT DMG</color> increases.			13	1013
+21014		1	1	1	Wrath Strike	Deals more <color=#ffdd93>Extra DMG</color> against enemies in <color=#ffdd93>Wrath</color> state.			26	1014
+21015		1	1	1	Imbalance Specialist	Deals more <color=#ffdd93>Extra DMG</color> against enemies in <color=#ffdd93>Imbalanced</color> state.			26	1015
+21016		1	1	1	Miraculous Survival	Triggers <color=#ffdd93>Auto Revival</color> when dying. Can trigger again after <color=#ffdd93>cooldown</color> ends.			16	1016
+21017		1	1	1	Bloodburn Assault	Increases <color=#ffdd93>ATK Amplification</color> but reduces Max HP by 20%.			13	1017
+21018		1	1	1	Victory Pursuit	Higher <color=#ffdd93>remaining HP</color> grants a greater <color=#ffdd93>total DMG Bonus</color>.			13	1018
+31001		1	2	3	Thunder Brand (Unique)	[Crimson Weave]'s [Wildfire Slash], [Shadow Strike], and [Thunderous Bash] all gain a <color=#ffdd93>DMG bonus</color>. [Lucia: Crimson Weave]'s attacks have a chance to leave [Wounds] on enemies. Up to 5 [Wounds] can exist. When [Wildfire Slash] deals DMG, detonates all [Wounds] to call down <color=#ffdd93>lightning strikes that deal Extra DMG</color>.			2	1
+31002		1	2	3	Ashen Memory (Unique)	[Crimson Weave]'s [swordwaves] and [Swordwave Attack] gain a <color=#ffdd93>DMG bonus</color>. When casting [Swordwave Attack], heals for 0.5% Max HP. When attacking targets with [Swordbreak Marks], deals additional Swordbreak DMG without consuming [Swordbreak Mark stacks]. This effect can trigger once every 0.5s.			2	2
+31003		1	2	3	Chain Blaze (Unique)	When casting [Whirling Thrash], [Crimson Weave] gains interruption resistance. When [Whirling Thrash] deals DMG, gains a <color=#ffdd93>DMG bonus</color> and increases the <color=#ffdd93>max DMG</color>.			1	7
+31004		1	2	3	Void Sheath (Unique)	When [Crimson Weave] casts [Iaido Slash β] while holding a movement button, triggers [Dash Iaido] and returns to the original casting position. When [Iaido Slash β] is cast, gains a <color=#ffdd93>DMG bonus</color>.			1	8
+31005		1	2	3	Void Silence (Unique)	When [Crimson Weave] casts [Splashing Thunder], <color=#ffdd93>DMG bonus</color> and <color=#ffdd93>Extra DMG Reduction</color> gained are enhanced.			1	9
+31006		1	2	3	Arc Scar (Unique)	When casting [Thunderous Bash], [Alpha: Crimson] Weave leaves fissures on the ground. <color=#ffdd93>Fissures</color> deal DMG to targets within range once per second for 8s.			1	10
+31007		1	2	3	Radiant Guard (Unique)	When [Startrail] performs a Block Counter, she gains increased <color=#ffdd93>Extra DMG Reduction</color>, and the Block Counter gains a <color=#ffdd93>DMG bonus</color>. When a Perfect Block is performed in [Sword & Shield] State and [Starcore Value] is full, press and hold Basic Attack to cast [Meteoric Doom].			2	3
+31008		1	2	3	Stellar Focus (Unique)	While in [Shield & Axe State], [Startrail] gains interruption resistance, <color=#ffdd93>Extra DMG Reduction</color>, and an increased <color=#ffdd93>Imbalance buff</color>. When enemies are Imbalanced, gains a <color=#ffdd93>DMG bonus</color> for 15s. If in <color=#ffdd93>[Mad Dissection] Form</color>, extends the duration of the bonus to 60s.			2	4
+31009		1	2	3	Jet Boost (Unique)	When [Startrail] casts [Comet Burst], increases [Comet Burst]'s movement distance, and activates Block detection during the cast. Can be cast using the joystick.			1	11
+31010		1	2	3	Cosmic Edge (Unique)	For 10s after [Startrail] casts [Aetherstrike] or [Prismatic Thrust], increases the efficiency of gaining [Starcore Value], [Infinitas Value], and [Sharpness Value], and gains <color=#ffdd93>DMG Bonus</color>. Reduces the <color=#ffdd93>cooldown</color> of [Aetherstrike] and [Prismatic Thrust]. While casting either skill, gains interruption resistance and <color=#ffdd93>Extra DMG Reduction</color>.			1	12
+31011		1	2	3	Guided Focus (Unique)	After [Startrail] casts [Splashing Thunder], <color=#ffdd93>Aggro Focus</color> increases whenever she deals DMG. For a period of time, attacking taunted enemies deals <color=#ffdd93>one additional instance of DMG</color>. This effect can trigger at most once per second.			1	13
+31012		1	2	3	Unfurled Stars (Unique)	When [Startrail] performs the 3rd hit of [Wandering Starburst] while in [Sword & Shield] state, tap [Thunderflare Storm] to gain an Enhanced Combo Strike and a large amount of [Sharpness Value].			1	14
+31013		1	2	3	Sacred Hymn (Unique)	At max [Chant Stacks], [Empyrea] enhances the next [Nighttime Prayer] and [Azure Firmament]. Enhanced [Nighttime Prayer] and [Azure Firmament] will heal other players while <color=#ffdd93>additionally restoring HP to all players</color>.			2	5
+31014		1	2	3	Divine Decree (Unique)	When [Empyrea]'s [Radiant Judgment II] strikes an enemy with its final hit, creates an additional <color=#ffdd93>explosion</color> and gains 2 [Chant Stacks].			2	6
+31015		1	2	3	Final Verdict (Unique)	After casting [Crimson Crown], [Empyrea] enters [Empyreal Form].			1	15
+31016		1	2	3	Sacred Dawn (Unique)	After casting [Empyreal Oath], [Empyrea] gains a <color=#ffdd93>healing buff</color> for 20s and casts [Nighttime Prayer] once.			1	16
+31017		1	2	3	Absolution Turn (Unique)	When a boss in [Wrath Form] casts high-threat skills, immediately refreshes [Azure Firmament] and gains 12 [Chant Stacks].			1	17
+31018		1	2	3	Devout Chant (Unique)	When [Empyrea] enters [Empyreal Form], reduces cooldown by 33% for [Nighttime Prayer], [Azure Firmament], and [Crimson Crown].			1	18

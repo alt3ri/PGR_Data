@@ -1,0 +1,64 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory67.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: 'Record ID: HX-GA-49447-Kowloon End. Confirm recovery?'}
+4	4		301							"{2: 'Huaxu', 3: 'Recovery confirmed. Verify keywords ""Kowloong"""" and """"War""?'}"
+5	5		301							{3: 'Confirmed.'}
+6	6		301							{2: 'Huaxu', 3: '...'}
+7	7		301							{3: 'No response received from Huaxu within the predetermined response time.'}
+8	8		301							{3: 'This does not comply with standard procedures.'}
+9	9		301							{2: 'Huaxu', 3: 'Ignore procedure warning and execute.'}
+10	10		301				AniZhuanchangBegin			{3: 'Understood.'}
+11	11		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory246.png'}
+12	525		401							{1: '1', 2: '202'}
+13	12		301			AniZhuanchangEnd				{3: 'Rolling billows of smoke are the first to appear. Flames pierce the pale sky, and a subtle burning smell fills the ruins.'}
+14	13		301							{3: '—People know better than to guess at what is emitting the foul odor.'}
+15	14		301							{3: 'Fires burn intermittently throughout the ruins, followed by the sounds of two heavy objects crashing onto the ground.'}
+16	15		301							{3: 'The firelight and the sounds of falling cut through the long confrontation, but they do nothing to restore this war-torn city to normal.'}
+17	16		301							{3: 'Among the ruins, a figure is walking through the fires of war.'}
+18	17		301							{3: 'She climbs over a destroyed wall, through a fallen cement pipe, and turns over an inconspicuous slab of cement.'}
+19	18		301							{3: '—Only to see four gun barrels pointed at her.'}
+20	19		201							{1: '1', 2: '500223'}
+21	20		301							"{1: '1', 2: 'Pulao Crew', 3: ""Don't shoot! I'm one of you!"", 4: '1'}"
+22	21		301							"{3: ""Realizing that the visitor isn't the enemy, the muzzles of the gun quickly move away from the hole, and the Pulao Crew member immediately jumps in.""}"
+23	22		301							{3: 'Landing into a roll, the Pulao Crew member stops in front of a figure, half-kneeling.'}
+24	23		301							{2: 'Pulao Crew', 3: 'Pu 3953 reporting!', 4: '1'}
+25	24		203							{1: '1', 2: '0.25', 3: '-400'}
+26	25		201							{1: '2', 2: '500220', 3: '5', 4: '400'}
+27	26		301							{1: '1', 2: 'Qu', 3: 'Speak.', 4: '2'}
+28	27		301							{2: 'Pulao Crew', 3: 'Report! Nodes Alpha 4 to Alpha 41 and Omega 6 to Omega 9 confirmed to be lost!', 4: '1'}
+29	28		301							{2: 'Pulao Crew', 3: 'The commander of the East Wall Defense Line suggests that you fall back three blocks, and then blast the buildings to fall back!', 4: '1'}
+30	29		301							{2: 'Qu', 3: 'What about the commander?', 4: '2'}
+31	30		301							"{2: 'Pulao Crew', 3: 'The commander only had me tell you: ""Thank you for not killing me eight years ago.""', 4: '1'}"
+32	31		301							"{2: 'Qu', 3: ""...So he's trying to die on the battlefield after all."", 4: '2'}"
+33	32		301							{2: 'Qu', 3: 'Go. Retreat three blocks and relay the news for me.', 4: '2'}
+34	33		301							"{2: 'Qu', 3: ""...That'll give them some time to prepare."", 4: '2'}"
+35	34		301							{2: 'Pulao Crew', 3: 'Roger!', 4: '1'}
+36	35		202							{1: '1', 6: '1'}
+37	36		203							{1: '2', 2: '0.25'}
+38	37		301							{3: 'The Pulao crew member quickly turns and nimbly jumps out of the hole.'}
+39	38		301							"{2: 'Guard', 3: ""Lady Qu, shouldn't we also start making preparations to retreat?""}"
+40	39		301							{2: 'Qu', 3: '...', 4: '2'}
+41	40		301							{2: 'Guard', 3: 'Lady Qu?'}
+42	41		301							{2: 'Qu', 3: 'Take whatever supplies you can and retreat first.', 4: '2'}
+43	42		301							{2: 'Qu', 3: 'The defense line extends from the Alpha Line to the Iota Lina. Some nodes must have held their positions.', 4: '2'}
+44	43		301							{2: 'Qu', 3: 'They need someone to hold the frontline to give them time to retreat.', 4: '2'}
+45	44		301							{2: 'Guard', 3: 'But!'}
+46	45		301							{2: 'Qu', 3: 'No buts. We all have Kowloong blood flowing in us.', 4: '2'}
+47	46		301							{2: 'Qu', 3: 'Go.', 4: '2'}
+48	47		301							{2: 'Guard', 3: 'R-roger!'}
+49	48		202							{1: '2', 6: '1'}
+50	49		301				AniZhuanchangBegin			{3: 'Following this, Qu jumps out of the bunker and rushes into the infernal battlefield.'}
+51	50		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory246.png'}
+52	51		201							{1: '1', 2: '500223', 4: '-400'}
+53	52		301			AniZhuanchangEnd				{1: '1', 2: 'Pulao Crew', 3: 'Alpha 3 and Iota 6 have lost communication with the Iota 8 barricade!', 4: '1'}
+54	53		201							{1: '2', 2: '500223', 4: '400'}
+55	54		301							{2: 'Chiwen Crew', 3: 'Corrupted! The Corrupted are here! We still need time to withdraw the standard industrial blueprints! Can anyone from a nearby garrison offer support?!', 4: '2'}
+56	55		301							{2: 'Crowd', 3: 'Ah—! No! Stay away!'}
+57	56		202							{1: '1', 2: '2', 6: '1'}
+58	57		301							{3: 'The once prosperous Kowloong City has become a hellhole. Here, Qu could not help but tighten her grip on her weapon.'}
+59	58		201							{1: '1', 2: '500220', 3: '5'}
+60	59		301							{1: '1', 2: 'Qu', 3: '...', 4: '1'}
+61	60		301							{3: 'Qu shakes her head, perhaps at the unbearable sight of such tragedy. She takes a deep breath, putting her mind at ease momentarily.'}
+62	61		301							"{2: 'Qu', 3: ""I'm the KCC leader—Qu."", 4: '1'}"
+63	62		301		1		AniZhuanchangBegin			{2: 'Qu', 3: 'This battle—is my responsibility.', 4: '1'}

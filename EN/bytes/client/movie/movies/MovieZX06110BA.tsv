@@ -1,0 +1,581 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		104							{1: '0|0|-50', 2: '0'}
+2	2		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory69.jpg'}
+3	3		401			AniZhuanchangEnd				{1: '1', 2: '36'}
+4	4		502						250.0	{1: 'DialogDisable'}
+5	5		107							{1: 'Conservation Area 368', 2: 'Morning'}
+6	6		301							{3: 'Conservation Area 368\\nMorning'}
+7	7		108							{1: '1'}
+8	8		401							{1: '1', 2: '208'}
+9	9		301			DialogEnable				"{3: '""All compelling narratives must be built on a fundamental structure, and a story\'s resolution must feel earned through its characters to be believable.""'}"
+10	10		401							{1: '2', 2: '510'}
+11	11		201							{1: '1', 2: '501385', 3: '3'}
+12	12		301							{1: '1', 3: 'Liv reads the words on her terminal, her eyes skimming the forum post without truly seeing it. Her attention is scattered, her mind adrift in a fog.'}
+13	13		301							{2: 'Liv', 3: 'Well...', 4: '1'}
+14	14		301							{3: 'Lately, it seems every article and post has echoed the same sentiment... Just like yesterday...'}
+15	15		204							{1: '1', 2: '8'}
+16	16		301							{3: 'Yesterday... What had she seen yesterday?'}
+17	17		301							{3: 'Her thoughts plunge into an unexpected void, a perfect blankness where the memory should have been. She suddenly could recall nothing from yesterday at all...'}
+18	18		401							{1: '2', 2: '4697'}
+19	19		301							{3: 'Knock, knock—'}
+20	20		301							{3: 'A faint knocking sound echoes at the door, like a small animal seeking shelter.'}
+21	21		204							{1: '1', 2: '7'}
+22	22		301							{2: 'Liv', 3: '?!!', 4: '1'}
+23	23		301							{3: 'Liv jolts, the sudden movement startling you as you approach the table, two steaming cups of coffee in your hands.'}
+24	24		301							{3: 'Liv?'}
+25	25		204							{1: '1', 2: '0'}
+26	26		301				DialogDisable			"{2: 'Liv', 3: ""Ah... Oh! I'm so sorry!"", 4: '1'}"
+27	27		202							{1: '1', 6: '1'}
+28	28		104						650.0	{1: '0|0|0', 2: '0.6'}
+29	29		301			DialogEnable				{3: 'For a few seconds, Liv remains frozen under your gaze. Then, blinking, she shakes herself free and hurries to the door. A small girl with long blue hair stands there, twisting her hands.'}
+30	30		401							{1: '2', 2: '754'}
+31	31		301							{3: 'Upon seeing Liv, the girl carefully extends her hands, offering a handful of wild fruits.'}
+32	32		201							{1: '2', 2: '501382', 4: '-450'}
+33	33		201							{1: '1', 2: '501385', 3: '2', 4: '100'}
+34	34		301							{1: '1', 2: 'Aisling', 3: 'Good... morning!', 4: '2'}
+35	35		401							{1: '2', 2: '5286'}
+36	36		203							{1: '1', 2: '0.4', 3: '400'}
+37	37		301							"{3: ""She crouches down with a smile, bringing herself to the girl's eye level, and accepts the gift with both hands.""}"
+38	38		301							"{2: 'Liv', 3: ""Good morning, Aisling! Thank you. You must've worked really hard to get these."", 4: '1'}"
+39	39		301							"{2: 'Liv', 3: ""Though, you really don't have to bring fruits... every day?"", 4: '1'}"
+40	40		301							"{3: ""Liv's words hitch for a fraction of a second as she tries to recall their time spent together. The thought doesn't break her sentence, but it settles in her mind, sending quiet ripples across the surface.""}"
+41	41		301							{2: 'Aisling', 3: 'You helped me. Fresh fruits... for you.', 4: '2'}
+42	42		401							{1: '2', 2: '4331'}
+43	43		203							{1: '2', 2: '0.25', 3: '-650'}
+44	44		202							{1: '2'}
+45	45		204							{1: '1', 2: '7'}
+46	46		301							{3: 'Aisling shakes her head, then nods, before scampering off.'}
+47	47		203							{1: '1', 2: '0.3', 3: '0'}
+48	48		301							{2: 'Liv', 3: 'Ah! Wait...', 4: '1'}
+49	49		301				DialogDisable			"{3: ""Liv's sentence hangs in the air, unfinished. The girl is already gone, her retreat so immediate and seamless it feels like a well-worn routine.""}"
+50	50		202							{1: '1', 6: '1'}
+51	51		104						550.0	{1: '0|0|-100', 2: '0.5'}
+52	52		301			DialogEnable				{3: 'With a final, fruitless glance, Liv carries the fruits back to her room. She lays them gently on the table beside the commandant, who is already absorbed in work.'}
+53	53		301							{3: 'Aisling again?'}
+54	54		201							{1: '1', 2: '501385'}
+55	55		301							"{1: '1', 2: 'Liv', 3: ""I've told her a few... a few times already? But she just keeps coming."", 4: '1'}"
+56	56		301							"{2: 'Liv', 3: ""Commandant? You're still working?"", 4: '1'}"
+57	57		301							{3: 'Yeah... Just finishing up the report on our mission at the mine for Babylonia.'}
+58	58		204							{1: '1', 2: '3'}
+59	59		301							{2: 'Liv', 3: 'The mission at the mine... You mean the operation to clear the Hetero-Creatures from the mining area, right?', 4: '1'}
+60	60		306							{1: '1'}
+61	61		203							{1: '1', 2: '0.25', 5: '-50'}
+62	62		204							{1: '1', 2: '0'}
+63	63		301							{3: 'A flicker of confusion prompts Liv to lean in, but the commandant responds by putting the terminal to sleep and drawing subtly back.'}
+64	64		306							{1: '0'}
+65	65		301							"{3: ""Yes. I'm starting to suspect a larger Hetero-Creature was present, one that could control the others. I think we need to reassess the situation...""}"
+66	66		401							{1: '2', 2: '510'}
+67	67		301							"{3: 'With the terminal shut down, the commandant\'s focus now fully shifts to a serious analysis of the ""anomaly"" in the mine.'}"
+68	68		204							{1: '1', 2: '7'}
+69	69		301				DialogDisable			"{3: ""Liv freezes for a moment. As she begins to speak, the commandant's voice cuts her off.""}"
+70	70		202							{1: '1', 6: '1'}
+71	71		104						550.0	{1: '0|0|0', 2: '0.5'}
+72	72		201							{1: '2', 2: '501387'}
+73	73		301			DialogEnable				{1: '1', 3: '...Melinoe?'}
+74	74		203							{1: '2', 2: '0.25', 3: '450'}
+75	75		201							{1: '1', 2: '501385', 3: '2', 4: '-450'}
+76	76		301							"{1: '1', 3: ""Following the commandant's gaze, Liv turns to see Melinoe standing in the exact spot where Aisling was before, waving to her.""}"
+77	77		204							{1: '2', 2: '2'}
+78	78		301							{2: 'Melinoe', 3: 'Good morning, Liv.', 4: '2'}
+79	79		204							{1: '1', 2: '2'}
+80	80		301				DialogDisable			"{3: ""Sunlight dapples Melinoe through the swaying tree shadows. In the shifting light, Liv's mind sharpens, her eyes narrowing with newfound clarity.""}"
+81	81		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+82	82		202							{1: '1', 2: '2', 6: '1'}
+83	83		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory317.png'}
+84	84		301			DialogEnable				{3: 'Liv and Melinoe stroll through the conservation area, talking idly on their way to the central plaza.'}
+85	85		201							{1: '1', 2: '501385', 3: '3', 4: '-450'}
+86	86		201							{1: '2', 2: '501387', 4: '450'}
+87	87		301							"{1: '1', 2: 'Melinoe', 3: ""...Those medical techniques you shared have been incredibly useful. I'm planning to compile them into a pocket handbook to improve field safety for everyone."", 4: '2'}"
+88	88		204							{1: '1', 2: '2'}
+89	89		301				DialogDisable			"{2: 'Liv', 3: ""...I see. I'm glad to hear it."", 4: '1'}"
+90	90		202							{1: '1', 2: '2', 6: '1'}
+91	91		306							{1: '1'}
+92	92		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory315.png', 3: '0', 4: '1', 5: '0.4'}
+93	93		301			DialogEnable	DialogDisable			{3: 'Liv gazes into the deep reaches of the conservation area, where a heavy mist clings to the overlapping mountain peaks, blurring all boundaries between sky and earth.'}
+94	94		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory315.png', 3: '1', 4: '0', 5: '0.4'}
+95	95		306							
+96	96		201							{1: '1', 2: '501385', 3: '3', 4: '-400'}
+97	97		201							{1: '2', 2: '501387', 4: '400'}
+98	98		301			DialogEnable				"{1: '1', 2: 'Melinoe', 3: ""...You don't seem very interested in this topic?"", 4: '2'}"
+99	99		204							{1: '1', 2: '0'}
+100	100		301							{2: 'Liv', 3: '...Oh, not at all. I was just lost in thought.', 4: '1'}
+101	101		301							"{2: 'Melinoe', 3: ""I thought... you'd be happy to hear about this."", 4: '2'}"
+102	102		301							{2: 'Liv', 3: '...I am happy. Really. It was just something else that crossed my mind...', 4: '1'}
+103	103		301							{3: 'Liv pulls her gaze away from the distance and turns to face Melinoe.'}
+104	104		301							"{2: 'Liv', 3: ""You don't seem as wary around me as before."", 4: '1'}"
+105	105		204							{1: '2', 2: '4'}
+106	106		301							{2: 'Melinoe', 3: '...', 4: '2'}
+107	107		301							{2: 'Liv', 3: 'When we first met, you were always very honest, but I could feel you keeping a careful distance from Commandant and me.', 4: '1'}
+108	108		204							{1: '2', 2: '0'}
+109	109		301							"{2: 'Melinoe', 3: ""Uh... you... you don't like it?"", 4: '2'}"
+110	110		301							{2: 'Melinoe', 3: 'I thought... our relationship would be closer because of Aisling...', 4: '2'}
+111	111		202							{1: '1', 2: '2'}
+112	112		301							{3: 'An odd sense of dissonance hangs between them as they enter the central plaza.'}
+113	113		201							{1: '1', 2: '500460', 4: '650', 5: '-50'}
+114	114		201							{1: '2', 2: '500136', 4: '-600', 5: '-30'}
+115	115		201							{1: '3', 2: '500965', 4: '200', 5: '-50'}
+116	116		201							{1: '4', 2: '500268', 4: '-200', 5: '-30'}
+117	117		301				DialogDisable			{1: '1', 3: 'The plaza is dotted with small clusters of people. From within one group, a familiar small figure with blue hair catches their eyes.'}
+118	118		203							{1: '1', 2: '0.5', 3: '700', 4: '-50'}
+119	119		203							{1: '2', 2: '0.5', 3: '-700', 4: '-30'}
+120	120		202							{1: '1', 2: '2'}
+121	121		104						350.0	{1: '0|30|-30', 2: '0.3'}
+122	122		104							{1: '0|0|-50', 2: '0.4'}
+123	123		203							{1: '3', 2: '0.5', 3: '650', 4: '-50'}
+124	124		203							{1: '4', 2: '0.5', 3: '-600', 4: '-30'}
+125	125		201							{1: '5', 2: '501382', 3: '2'}
+126	126		203							{1: '5', 2: '0.25'}
+127	127		301			DialogEnable				{1: '1', 3: 'Gazing at the playful Aisling in the distance, Melinoe takes a few steps forward and seizes the opportunity to change the subject.', 4: '1'}
+128	128		202							{1: '3', 2: '4', 3: '5', 6: '1'}
+129	129		201							{1: '1', 2: '501385', 4: '-400'}
+130	130		201							{1: '2', 2: '501387', 4: '400'}
+131	131		301							"{1: '1', 2: 'Melinoe', 3: ""...I know I've said this many times already, but I still want to thank you both for saving Aisling."", 4: '2'}"
+132	132		204							{1: '2', 2: '8'}
+133	133		301							"{2: 'Melinoe', 3: ""Back then, if you hadn't been there..."", 4: '2'}"
+134	134		204							{1: '1', 2: '3'}
+135	135		301							"{2: 'Liv', 3: '""Back then.""', 4: '1'}"
+136	136		301							"{3: ""Liv's voice is soft, but it deftly catches the words Melinoe let slip.""}"
+137	137		204							{1: '2', 2: '4'}
+138	138		301							{2: 'Melinoe', 3: '...Hm?', 4: '2'}
+139	139		301							{3: 'The conversation cuts off mid-sentence as Melinoe goes momentarily still. Her head turns slowly, and she fixes Liv with a look of bewilderment.'}
+140	140		301							"{2: 'Liv', 3: ""Back then, if Commandant and I hadn't been there, Aisling would have been lost in the mine forever."", 4: '1'}"
+141	141		204							{1: '2', 2: '0'}
+142	142		301							{2: 'Melinoe', 3: 'Y-yes... Without your help, she would have died in the mine a few days ago...', 4: '2'}
+143	143		401							{1: '1', 2: '36'}
+144	144		204							{1: '1', 2: '4'}
+145	145		301							"{2: 'Liv', 3: 'So... when exactly do you mean by ""a few days ago""?', 4: '1'}"
+146	146		204							{1: '2', 2: '4'}
+147	147		301							{2: 'Melinoe', 3: '...', 4: '2'}
+148	148		401							{1: '1', 2: '6245'}
+149	149		301							{2: 'Liv', 3: 'How many days have passed since we brought Aisling back, Melinoe?', 4: '1'}
+150	150		301							"{2: 'Liv', 3: ""You said that you'd find a new adoptive family for her. May I ask... how that's coming along?"", 4: '1'}"
+151	151		301							"{3: ""The warmth gradually drains from Liv's voice.""}"
+152	152		204							{1: '2', 2: '1'}
+153	153		301							"{2: 'Melinoe', 3: ""I'm sorry, I don't understand what you mean... You seem upset."", 4: '2'}"
+154	154		301							"{2: 'Melinoe', 3: ""Has Aisling been misbehaving? Is that what's bothered you?"", 4: '2'}"
+155	155		204							{1: '1', 2: '8'}
+156	156		301							{2: 'Liv', 3: 'This has nothing to do with Aisling, Melinoe.', 4: '1'}
+157	157		204							{1: '1', 2: '4'}
+158	158		301							"{2: 'Liv', 3: ""Someone has been keeping Commandant from me. That's why I'm upset."", 4: '1'}"
+159	159		202							{1: '1', 2: '2', 6: '1'}
+160	160		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+161	161		504							{1: '0.7'}
+162	162		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory69.jpg'}
+163	163		301							{3: 'Ever since that disorienting moment at the dining table, Liv has been running constant diagnostics on her internal perception modules. She has meticulously sorted through the fragments of inconsistency, again and again.'}
+164	164		301							{3: 'The blurred sense of time. The endlessly stretching autumn days. And...'}
+165	165		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+166	166		504							{1: '0'}
+167	167		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory317.png'}
+168	168		201							{1: '1', 2: '501385', 3: '8', 7: '1'}
+169	169		301							{1: '1', 3: 'Liv lowers her gaze.'}
+170	170		203							{1: '1', 2: '0.25', 3: '-450'}
+171	171		204							{1: '1', 2: '4'}
+172	172		201							{1: '2', 2: '501387', 3: '4', 4: '450'}
+173	173		301							"{1: '1', 2: 'Melinoe', 3: ""...I don't really understand what you're saying, Liv. Are you feeling unwell?"", 4: '2'}"
+174	174		301							{2: 'Liv', 3: 'Such a convincing illusion you crafted... You almost completely got me.', 4: '1'}
+175	175		204							{1: '1', 2: '9'}
+176	176		301							"{3: ""A faint smile touches Liv's lips, the ghost of a memory in her eyes.""}"
+177	177		301							"{2: 'Liv', 3: ""But that's not the Gray Raven Commandant."", 4: '1'}"
+178	178		204							{1: '1', 2: '4'}
+179	179		301							"{3: ""The smile drops from Liv's face. She regards Melinoe, her expression wiped clean of all emotion.""}"
+180	180		202							{1: '2'}
+181	181		203							{1: '1', 2: '0.3', 3: '0', 4: '0', 5: '0'}
+182	182		301				AniZhuanchangBegin			{2: 'Liv', 3: 'Tell me, where is Commandant?', 4: '1'}
+183	183		502							{1: 'DialogDisable'}
+184	184		202							{1: '1', 6: '1'}
+185	185		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStoryFront/UiFightDetailMapBg.png'}
+186	186		107							{1: 'Mine Tunnel', 2: 'Time Unknown'}
+187	187		301							{3: 'Mine Tunnel\\nTime Unknown'}
+188	188		108						500.0	
+189	189		401							{1: '2', 2: '5318'}
+190	190		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1346.jpg'}
+191	191		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '1', 5: '0'}
+192	192		301			DialogEnable				"{3: ""The mine tunnel twists through the deep earth like a serpent's coil. The portable light from your terminal throws a frail pool of illumination, pushing back only a few feet of the oppressive darkness.""}"
+193	193		201							{1: '1', 2: '501382', 3: '14'}
+194	194		301							{1: '1', 2: 'Aisling', 3: 'Where... are we... now...', 4: '1'}
+195	195		401							{1: '2', 2: '5286'}
+196	196		301				DialogDisable			"{3: ""A timid voice breaks the silence at your side. You maintain your alert posture, eyes scanning the unseen threats in the gloom, but one hand finds the child's head, offering a gentle, reassuring pat.""}"
+197	197		302							"{2: ""Shh, it's okay. Don't worry. We'll get out of here soon."", 3: '198'}"
+198	198		202							{1: '1', 6: '1'}
+199	199		104						550.0	{1: '0|0|-80', 2: '0.5'}
+200	200		401							{1: '2', 2: '10042608'}
+201	201		301			DialogEnable				{3: 'As you round a corner, still murmuring comfort, you draw a knife and score a fresh mark into the rocky wall.'}
+202	202		401							{1: '2', 2: '5286'}
+203	203		301				DialogDisable			{3: 'With the motion, a torn strip of cloth bound tightly around your arm flutters. Your gaze involuntarily catches on it, and the sight unleashes the recent memories.'}
+204	204		401							{1: '2', 2: '4387'}
+205	205		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+206	206		205							{1: '1007'}
+207	207		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1351.jpg'}
+208	208		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+209	209		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+210	210		301			DialogEnable	DialogDisable			{3: 'Some time earlier, the two of you were preparing to leave the mine with the little girl. Then—'}
+211	211		401							{1: '2', 2: '846106'}
+212	212		104						100.0	{1: '0|0|-100', 2: '0.15'}
+213	213		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1351.jpg', 3: '0', 4: '0.8', 5: '0'}
+214	214		104							{1: '0|0|-100', 2: '0', 4: '3'}
+215	215		104						100.0	{1: '0|0|-200', 2: '0.15'}
+216	216		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1351.jpg', 3: '0', 4: '0.6', 5: '0'}
+217	217		104							{1: '0|0|-200', 2: '0', 4: '4'}
+218	218		104						100.0	{1: '0|0|-300', 2: '0.15'}
+219	219		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1351.jpg', 3: '0', 4: '0.4', 5: '0'}
+220	220		104							{1: '0|0|-300', 2: '0', 4: '5'}
+221	221		104						100.0	{1: '0|0|-400', 2: '0.15'}
+222	222		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1351.jpg', 3: '0', 4: '0.2', 5: '0'}
+223	223		104							{1: '0|0|-400', 2: '0', 4: '7'}
+224	224		104						100.0	{1: '0|0|-500', 2: '0.15'}
+225	225		104						100.0	{1: '0|0|-400', 2: '0.15', 4: '7'}
+226	226		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1351.jpg', 3: '0.2', 4: '0', 5: '0'}
+227	227		104							{1: '0|0|-400', 2: '0', 4: '7'}
+228	228		104						100.0	{1: '0|0|-300', 2: '0.15'}
+229	229		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1351.jpg', 3: '0.4', 4: '0', 5: '0'}
+230	230		104							{1: '0|0|-300', 2: '0', 4: '5'}
+231	231		104						100.0	{1: '0|0|-200', 2: '0.15'}
+232	232		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1351.jpg', 3: '0.6', 4: '0', 5: '0'}
+233	233		104							{1: '0|0|-200', 2: '0', 4: '4'}
+234	234		104						100.0	{1: '0|0|-100', 2: '0.15'}
+235	235		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1351.jpg', 3: '0.8', 4: '0', 5: '0'}
+236	236		104							{1: '0|0|-100', 2: '0', 4: '3'}
+237	237		104						100.0	{1: '0|0|0', 2: '0.15'}
+238	238		301			DialogEnable				{3: 'A deep, thunder-like rumbling echoes through the rocky cavern.'}
+239	239		205							{1: '1003', 3: '0', 4: '1', 5: '0'}
+240	240		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+241	241		205							{1: '1005', 3: '0', 4: '1', 5: '0'}
+242	242		205							{1: '1007', 3: '0', 4: '1', 5: '0'}
+243	243		104							{1: '0|0|0', 2: '0', 4: '3'}
+244	244		104							{1: '0|0|0', 2: '0', 4: '4'}
+245	245		104							{1: '0|0|0', 2: '0', 4: '5'}
+246	246		104							{1: '0|0|0', 2: '0', 4: '7'}
+247	247		301				DialogDisable			{3: 'The mine shuddered in intermittent spasms, likely caused by aftershocks from the explosion earlier. From the darkness occasionally came the sound of rock layers cracking and shifting.'}
+248	248		401							{1: '2', 2: '5790'}
+249	249		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '3'}
+250	250		104						200.0	{1: '0|0|-150', 2: '0.2'}
+251	251		104							{1: '0|0|0', 2: '0.2'}
+252	252		201							{1: '1', 2: '501385', 3: '7'}
+253	253		301			DialogEnable	DialogDisable			{1: '1', 2: 'Liv', 3: 'Ugh...', 4: '1'}
+254	254		104						200.0	{1: '0|0|-150', 2: '0.2'}
+255	255		104							{1: '0|0|0', 2: '0.2'}
+256	256		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+257	257		204							{1: '1', 2: '16'}
+258	258		301			DialogEnable	DialogDisable			{3: 'Liv pressed a hand to her temple, her steps faltering.'}
+259	259		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+260	260		302							{2: 'Your M.I.N.D...', 3: '261'}
+261	261		302							{2: 'Hmm...', 3: '262'}
+262	262		401							{1: '2', 2: '5790'}
+263	263		201							{1: '2', 2: '501385', 4: '600', 7: '1'}
+264	264		201							{1: '3', 2: '501385', 4: '-600', 7: '1'}
+265	265		203							{1: '3', 2: '0.5', 3: '0'}
+266	266		203							{1: '2', 2: '0.5', 3: '0'}
+267	267		201							{1: '1', 2: '501385', 3: '12', 7: '1'}
+268	268		202							{1: '2', 2: '3'}
+269	269		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+270	270		202							{1: '2', 2: '3'}
+271	271		301			DialogEnable				{3: 'The moment you tried to steady her fluctuating M.I.N.D., a searing, needle-like pain stabbed into your own mind. The very surroundings began to blur, split, and double before your eyes.'}
+272	272		302							"{2: ""What's... going on?"", 3: '273'}"
+273	273		204							{1: '1', 2: '7'}
+274	274		203							{1: '1', 2: '0.25', 5: '-50'}
+275	275		401							{1: '2', 2: '5286'}
+276	276		301							{3: 'There was no time to determine if it was the minerals or the Hetero-Creatures. You grabbed your coat and forcefully tore a long strip from it.'}
+277	277		301							{2: 'Liv', 3: 'Commandant...?', 4: '1'}
+278	278		302							"{2: ""(Tie the strip firmly around Liv's wrist)"", 3: '279'}"
+279	279		401							{1: '2', 2: '2987'}
+280	280		301							"{3: ""You then wound the other end tightly around your own forearm. It was a physical anchor. So even if your minds descended into chaos together, you wouldn't lose each other.""}"
+281	281		401							{1: '2', 2: '4388'}
+282	282		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+283	283		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1346.jpg'}
+284	284		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '1', 5: '0'}
+285	285		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+286	286		201							{1: '1', 2: '501382', 3: '7', 7: '1'}
+287	287		301							{1: '1', 2: 'Aisling', 3: 'Are you... alright?', 4: '1'}
+288	288		401							{1: '2', 2: '5286'}
+289	289		301				DialogDisable			{3: 'Aisling timidly tugs at the edge of your clothes, pulling you back from the grip of memory.'}
+290	290		202							{1: '1', 6: '1'}
+291	291		104						550.0	{1: '-30|0|-100', 2: '0.5'}
+292	292		104						650.0	{1: '30|0|-100', 2: '0.6'}
+293	293		104						750.0	{1: '0|0|0', 2: '0.7'}
+294	294		301			DialogEnable	DialogDisable			{3: 'The broken half of the cloth strip remains tightly wound around your arm, but Liv is nowhere to be seen.'}
+295	295		302							"{2: ""I'm ok—"", 3: '296', 4: ""I'm fi—"", 5: '296'}"
+296	296		302							{2: 'Urgh!!!', 3: '297'}
+297	297		401							{1: '2', 2: '9389034'}
+298	298		104						200.0	{1: '0|0|-150', 2: '0.2'}
+299	299		104							{1: '0|0|0', 2: '0.2'}
+300	300		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+301	301		401							{1: '2', 2: '10042416'}
+302	302		502							{1: 'RImgBg1Shake'}
+303	303		301			DialogEnable				{3: 'A sudden, searing pain lances through your skull. You stumble, the world tilting, and barely catch yourself from falling.'}
+304	304		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+305	305		201							{1: '1', 2: '501382', 3: '2'}
+306	306		301			DialogShake				{1: '1', 2: 'Aisling', 3: '!!!!', 4: '1'}
+307	307		301							{2: 'Aisling', 3: 'Are you... okay?', 4: '1'}
+308	308		302							"{2: 'I...', 3: '309', 4: ""I'm alright..."", 5: '309'}"
+309	309		202							{1: '1', 6: '1'}
+310	310		306							{1: '1'}
+311	311		301							{3: 'Ever since the separation from Liv, a presence has been trying to attack your consciousness, or more precisely, your Mind Beacon that still connects you to her.'}
+312	312		401							{1: '2', 2: '13081710'}
+313	313		301				DialogDisable			{3: 'The assaults have repeated, wave after wave, but each has shattered against your mental defenses. Now, as the latest one recedes, you push back against the rock wall, steadying yourself as you struggle to your feet.'}
+314	314		306							{1: '0'}
+315	315		302							"{2: ""I'm fine. Let's keep moving."", 3: '316'}"
+316	316		104						450.0	{1: '0|50|-80', 2: '0.4', 4: '1'}
+317	317		104							{1: '0|0|-150', 2: '0.5', 4: '1'}
+318	318		301			DialogEnable	AniZhuanchangBegin			{3: 'With the child close, you advance. At every fork in the tunnel, you leave a clear mark—a guide for Liv, and a trail of breadcrumbs for yourself.'}
+319	319		502							{1: 'DialogDisable'}
+320	320		401						2000.0	{1: '1', 2: '36'}
+321	321		205							{1: '1007'}
+322	322		104							{1: '0|0|0', 2: '0'}
+323	323		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory317.png'}
+324	324		107							{1: 'Conservation Area 368', 2: 'Morning'}
+325	325		301							{3: 'Conservation Area 368\\nMorning'}
+326	326		108							{1: '1'}
+327	327		401							{1: '1', 2: '6247'}
+328	328		201							{1: '1', 2: '501385', 3: '4'}
+329	329		301			DialogEnable				"{1: '1', 3: ""Liv stands motionless in the shade, her gaze locked on Melinoe. After a prolonged silence, the latter's lips twist into an unsettling smile.""}"
+330	330		201							{1: '1', 2: '501387', 3: '5'}
+331	331		301							{1: '1', 2: 'Melinoe', 3: 'So you noticed...', 4: '1'}
+332	332		301				DialogDisable			{2: 'Melinoe', 3: 'Then this place... has no value anymore.', 4: '1'}
+333	333		401							{1: '2', 2: '2690'}
+334	334		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieWhiteline.prefab', 2: '3'}
+335	335		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieWhiteline.prefab'}
+336	336		502							{1: 'RImgBg1Shake'}
+337	337		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndWhite.prefab', 2: '2'}
+338	338		202							{1: '1', 6: '1'}
+339	339		301			DialogEnable				"{3: ""Her voice is hoarse, distorted—like a soulless marionette's. And in that same instant, Melinoe's empty shell collapses before Liv's eyes.""}"
+340	340		201							{1: '2', 2: '501385', 3: '4'}
+341	341		301							{1: '1', 2: 'Liv', 3: 'Another puppet in disguise...', 4: '2'}
+342	342		401							{1: '2', 2: '4142'}
+343	343		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab', 2: '2'}
+344	344		502							{1: 'RImgBg1Shake'}
+345	345		204							{1: '2', 2: '7'}
+346	346		301							{2: 'Liv', 3: '!', 4: '2'}
+347	347		202							{1: '2'}
+348	348		301				DialogDisable			{3: 'The very ground beneath her rots away, collapsing into a seemingly bottomless whirlpool that threatens to swallow the world whole.'}
+349	349		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFallStone.prefab', 2: '2'}
+350	350		505						300.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab'}
+351	351		205						850.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.8'}
+352	352		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+353	353		205							{1: '999'}
+354	354		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFallStone.prefab'}
+355	355		401							{1: '2', 2: '13081709'}
+356	356		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '2'}
+357	357		402							{1: '4142'}
+358	358		401							{1: '2', 2: '4134'}
+359	359		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+360	360		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/UiFightDetailMapBg.png'}
+361	361		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+362	362		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+363	363		301			DialogEnable				{3: 'Liv lurches into the air as the sky shatters like a mirror, fragmenting into a thousand glittering shards.'}
+364	364		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+365	365		401							{1: '2', 2: '5790'}
+366	366		201							{1: '1', 2: '501385', 3: '8'}
+367	367		301			PanelActor1Shake				{1: '1', 2: 'Liv', 3: '...!', 4: '1'}
+368	368		301							"{3: ""And then, a pulse of abnormal sounds echoes through her M.I.N.D. It's the deep, resonant hum of the mine tunnel that floods her audio receptors.""}"
+369	369		401							{1: '1', 2: '36'}
+370	370		401							{1: '2', 2: '1543'}
+371	371		204							{1: '1', 2: '7'}
+372	372		502							{1: 'RImgBg1Shake'}
+373	373		301				DialogDisable			{3: 'Liv jolts awake in absolute darkness. Commandant is nowhere to be seen. The ground trembles faintly. An earthquake, perhaps.'}
+374	374		401							{1: '2', 2: '841'}
+375	375		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1347.jpg', 3: '0', 4: '1', 5: '0.5'}
+376	376		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1347.jpg'}
+377	377		205							{1: '999'}
+378	378		201							{1: '1', 2: '501385', 3: '7'}
+379	379		301			DialogEnable				{1: '1', 3: 'Before her lies the mine tunnel: damp, dark, dripping with stalactites. Eerie minerals glow from the walls, and a twisting abyss coils ahead like the spine of some massive serpent.'}
+380	380		401							{1: '1', 2: '6245'}
+381	381		306							{1: '1'}
+382	382		204							{1: '1', 2: '4'}
+383	383		301				DialogDisable			{3: '—She never left the mine.'}
+384	384		306							{1: '0'}
+385	385		401							{1: '2', 2: '5790'}
+386	386		104						200.0	{1: '0|0|-150', 2: '0.2'}
+387	387		104							{1: '0|0|0', 2: '0.2'}
+388	388		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+389	389		204							{1: '1', 2: '16'}
+390	390		301			DialogEnable				{1: '1', 3: 'A fracturing pain radiates from her M.I.N.D., a relentless cycle of memories being stripped away and clumsily rebuilt across countless moments—'}
+391	391		202							{1: '1'}
+392	392		301							{3: 'Then, everything seizes, freezing into a single, stark point in time.'}
+393	393		401							{1: '2', 2: '4278'}
+394	394		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+395	395		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+396	396		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg'}
+397	397		504							{1: '0.7'}
+398	398		201							{1: '1', 2: '501385', 3: '15', 4: '200', 7: '1'}
+399	399		201							{1: '2', 2: '501408', 3: '7', 4: '-200', 7: '1'}
+400	400		301							{1: '1', 2: 'Girl', 3: 'Why are they sleeping there... like that?', 4: '2'}
+401	401		301							"{3: ""The child seems unable to grasp the concept of death. She only stares at the two adults lying on the ground with puzzlement, wondering why they don't simply stand up and continue on their way.""}"
+402	402		203							{1: '1', 2: '0.4', 3: '200', 4: '-100'}
+403	403		301							"{2: 'Liv', 3: ""They must be... just very tired. They'll wake up later."", 4: '1'}"
+404	404		301							{3: 'Liv kneels down and gently pulls the child into her arms, shielding her from the grim spectacle.'}
+405	405		202							{1: '1', 2: '2', 6: '1'}
+406	406		201							{1: '1', 2: '501385', 3: '12'}
+407	407		301							{1: '1', 2: 'Liv', 3: 'Commandant, could you please take her to the next junction ahead?', 4: '1'}
+408	408		301				DialogDisable			"{2: 'Liv', 3: ""I'll take care of things here and join you later."", 4: '1'}"
+409	409		202							{1: '1', 6: '1'}
+410	410		401							{1: '2', 2: '846106'}
+411	411		104						100.0	{1: '0|0|-100', 2: '0.15'}
+412	412		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg', 3: '0', 4: '0.8', 5: '0'}
+413	413		104							{1: '0|0|-100', 2: '0', 4: '3'}
+414	414		104						100.0	{1: '0|0|-200', 2: '0.15'}
+415	415		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg', 3: '0', 4: '0.6', 5: '0'}
+416	416		104							{1: '0|0|-200', 2: '0', 4: '4'}
+417	417		104						100.0	{1: '0|0|-300', 2: '0.15'}
+418	418		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg', 3: '0', 4: '0.4', 5: '0'}
+419	419		104							{1: '0|0|-300', 2: '0', 4: '5'}
+420	420		104						100.0	{1: '0|0|-400', 2: '0.15'}
+421	421		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg', 3: '0', 4: '0.2', 5: '0'}
+422	422		104							{1: '0|0|-400', 2: '0', 4: '7'}
+423	423		104						100.0	{1: '0|0|-500', 2: '0.15'}
+424	424		104						100.0	{1: '0|0|-400', 2: '0.15', 4: '7'}
+425	425		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg', 3: '0.2', 4: '0', 5: '0'}
+426	426		104							{1: '0|0|-400', 2: '0', 4: '7'}
+427	427		104						100.0	{1: '0|0|-300', 2: '0.15'}
+428	428		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg', 3: '0.4', 4: '0', 5: '0'}
+429	429		104							{1: '0|0|-300', 2: '0', 4: '5'}
+430	430		104						100.0	{1: '0|0|-200', 2: '0.15'}
+431	431		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg', 3: '0.6', 4: '0', 5: '0'}
+432	432		104							{1: '0|0|-200', 2: '0', 4: '4'}
+433	433		104						100.0	{1: '0|0|-100', 2: '0.15'}
+434	434		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg', 3: '0.8', 4: '0', 5: '0'}
+435	435		104							{1: '0|0|-100', 2: '0', 4: '3'}
+436	436		104						100.0	{1: '0|0|0', 2: '0.15'}
+437	437		302							{2: 'Alright.', 3: '438', 4: 'Okay.', 5: '438'}
+438	438		301			DialogEnable				{3: 'A deep, thunder-like rumbling echoes through the rocky cavern.'}
+439	439		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+440	440		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+441	441		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab'}
+442	442		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1347.jpg'}
+443	443		504							{1: '0'}
+444	444		402							{1: '4142'}
+445	445		201							{1: '1', 2: '501385', 3: '8', 7: '1'}
+446	446		301							{1: '1', 2: 'Liv', 3: 'So it started back then...', 4: '1'}
+447	447		204							{1: '1', 2: '4'}
+448	448		301							{3: 'Pain still flickers through her perception modules, but Liv pushes past it, pulling out her terminal to contact the commandant.'}
+449	449		202							{1: '1', 6: '1'}
+450	450		401							{1: '2', 2: '825'}
+451	451		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab', 2: '2'}
+452	452		301							{3: 'Beeeep—'}
+453	453		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab'}
+454	454		301							{3: 'The terminal emits a weak, final dead tone. A complete comms blackout.'}
+455	455		201							{1: '1', 2: '501385', 3: '8'}
+456	456		301				DialogDisable			"{1: '1', 3: ""As a last resort, she closes her eyes and plunges her consciousness into the depths of her M.I.N.D., reaching for the familiar signal of the commandant's Mind Beacon...""}"
+457	457		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/UiFightDetailMapBg.png', 3: '0', 4: '1', 5: '0.4'}
+458	458		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/UiFightDetailMapBg.png'}
+459	459		205							{1: '999'}
+460	460		205						550.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgCg/Cg2601_11.jpg', 3: '0', 4: '1', 5: '0.5'}
+461	461		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2601_11.jpg'}
+462	462		205							{1: '1004'}
+463	463		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+464	464		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+465	465		204							{1: '1', 2: '16'}
+466	466		301			DialogEnable				{2: 'Liv', 3: 'Ugh...', 4: '1'}
+467	467		301				DialogDisable			{3: 'Her vision blurs and trembles violently, the environment smearing into a dizzying double-exposure.'}
+468	468		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1347.jpg', 3: '0', 4: '1', 5: '0.5'}
+469	469		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1347.jpg'}
+470	470		205							{1: '999'}
+471	471		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+472	472		204							{1: '1', 2: '15'}
+473	473		203						250.0	{1: '1', 2: '0.2', 3: '-30', 4: '-30'}
+474	474		203							{1: '1', 2: '0.3', 3: '0', 4: '-50'}
+475	475		301			DialogEnable				{3: 'With no other option, she has to terminate the attempt within her M.I.N.D.'}
+476	476		204							{1: '1', 2: '16'}
+477	477		301			PanelActor1Shake				{3: 'She sags against the tunnel wall, calibrating the fluctuations of her visual module. Her trembling hand slides down the cold stone, and her fingers find an unnatural etching carved into the rock.'}
+478	478		204							{1: '1', 2: '7'}
+479	479		301				DialogDisable			{2: 'Liv', 3: '!!!', 4: '1'}
+480	480		202							{1: '1', 6: '1'}
+481	481		306							{1: '1'}
+482	482		104						550.0	{1: '0|-80|-150', 2: '0.5'}
+483	483		301			DialogEnable				"{3: ""It's... a mark left by Commandant!""}"
+484	484		301							"{3: 'A triangular symbol, meaning ""enter from here,"" is etched into the rough rock.'}"
+485	485		301				DialogDisable			{3: 'Return from here, and then... the next mark.'}
+486	486		306							
+487	487		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1346.jpg', 3: '0', 4: '1', 5: '0.5'}
+488	488		104							{1: '0|0|0', 2: '0', 5: '1'}
+489	489		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1346.jpg'}
+490	490		205							{1: '999'}
+491	491		301			DialogEnable	DialogDisable			{3: 'Further along this path lies the side tunnel where she buried the two foster parents. A quick check confirms nothing is amiss; the temporarily sealed branch entrance remains as she left it, obscured by rubble and soil.'}
+492	492		104						350.0	{1: '0|50|-80', 2: '0.3'}
+493	493		104							{1: '0|0|-150', 2: '0.4'}
+494	494		301			DialogEnable				{3: 'And then—'}
+495	495		301							{3: 'As her fingers trace the rock wall, a voice suddenly calls out, freezing Liv in her tracks.'}
+496	496		301							{2: '????', 3: 'Aisling—'}
+497	497		201							{1: '1', 2: '501385', 3: '7'}
+498	498		301							{1: '1', 2: 'Liv', 3: '...Melinoe?', 4: '1'}
+499	499		204							{1: '1', 2: '4'}
+500	500		301							{3: 'Her visual module has been glitching with M.I.N.D. interference, but her audio is clear. She knows that voice instantly.'}
+501	501		301							"{2: 'Liv', 3: ""How come she's in the mine...?"", 4: '1'}"
+502	502		301				DialogDisable			"{3: 'Could she still be trapped in the ""illusion"" right now?'}"
+503	503		202							{1: '1', 6: '1'}
+504	504		104						350.0	{1: '0|50|-150', 2: '0.3'}
+505	505		104							{1: '0|0|-250', 2: '0.4'}
+506	506		301			DialogEnable	DialogDisable			"{3: ""Holding her breath, Liv slowly moves toward the sound of Melinoe's voice.""}"
+507	507		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+508	508		104							{1: '0|0|0', 2: '0', 4: '1'}
+509	509		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1350.jpg'}
+510	510		201							{1: '1', 2: '501387', 3: '14'}
+511	511		301			DialogEnable				{1: '1', 2: 'Melinoe', 3: 'Aisling... are you there? Aisling?', 4: '1'}
+512	512		301							"{3: ""Melinoe paces anxiously through the dark, winding tunnels, calling Aisling's name in a hushed tone, likely afraid of drawing the attention of Hetero-Creatures.""}"
+513	513		204							{1: '1', 2: '7'}
+514	514		301							{2: 'Melinoe', 3: '...Aisling? Can you... can you hear me?', 4: '1'}
+515	515		202							{1: '1'}
+516	516		301							{3: 'She seems equally unfamiliar with the passages; in just twenty minutes, she has backtracked through this same branch three or four times, repeatedly taking wrong turns.'}
+517	517		306							{1: '1'}
+518	518		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront89.png', 3: '1', 4: '1', 5: '0'}
+519	519		201							{1: '1', 2: '501385', 3: '4'}
+520	520		301							{1: '1', 3: 'Concealed in shadow, Liv watches, scrutinizing her every move.'}
+521	521		301							"{3: ""She doesn't trust Melinoe.""}"
+522	522		301							{3: 'Whoever—or whatever—is weaving this illusion must know Melinoe intimately to use her as such a central puppet...'}
+523	523		301							{3: 'That alone suggests Melinoe may not be as innocent as she seems.'}
+524	524		301							"{3: ""It's just that...""}"
+525	525		301							{3: 'Liv weighs her options carefully.'}
+526	526		205							{1: '999'}
+527	527		306							{1: '0'}
+528	528		204							{1: '1', 2: '16'}
+529	529		401							{1: '2', 2: '5790'}
+530	530		104						200.0	{1: '0|0|-150', 2: '0.2'}
+531	531		104							{1: '0|0|0', 2: '0.2'}
+532	532		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+533	533		301			PanelActor1Shake				"{3: 'With her visual module compromised, she can\'t tell if her ""disorientation"" stems from M.I.N.D. fluctuations or physical shifts in the tunnel layout.'}"
+534	534		301							"{3: ""Communications are still down; she can't reach Commandant. Recalibrating her M.I.N.D. to locate Commandant's Mind Beacon would cost more precious time.""}"
+535	535		204							{1: '1', 2: '4'}
+536	536		301							"{3: ""Under these conditions, anyone in the mine could be a clue to break the stalemate. She must reunite with Commandant quickly. She can't leave Commandant alone in this dangerous illusion.""}"
+537	537		201							{1: '18', 2: '501388', 3: '7', 5: '-100', 6: '-50'}
+538	538		301							{1: '1', 2: 'Melinoe', 3: 'Aisling... are you there?', 4: '18'}
+539	539		202							{1: '18', 6: '1'}
+540	540		301							"{3: ""Nearby, Melinoe drifts through the deep passages like a mournful specter, her voice a haunting echo as she calls the child's name.""}"
+541	541		301							{2: 'Liv', 3: '...', 4: '1'}
+542	542		301							{3: 'After forcibly recalibrating her visual module once more and confirming her battle systems are nominal, Liv finally speaks, her voice soft.'}
+543	543		202							{1: '1', 6: '1'}
+544	544		201							{1: '18', 2: '501385', 3: '3', 4: '200', 5: '-110', 6: '-190'}
+545	545		201							{1: '3', 2: '501387', 3: '14'}
+546	546		301							{1: '18', 2: 'Liv', 3: 'Melinoe... is that you?', 4: '18'}
+547	547		202				DialogDisable			{1: '18', 6: '1'}
+548	548		204							{1: '3', 2: '7'}
+549	549		301			DialogEnable				"{2: 'Melinoe', 3: ""Who's there?! Who is it?!"", 4: '3'}"
+550	550		201							{1: '1', 2: '501385', 4: '-700'}
+551	551		203							{1: '1', 2: '0.3', 3: '-450'}
+552	552		203							{1: '3', 2: '0.25', 3: '500'}
+553	553		301							{1: '1', 3: 'Melinoe stumbles backward in a panic, her shoulders pressing flat against the tunnel wall.'}
+554	554		301							"{2: 'Liv', 3: ""It's me, Liv."", 4: '1'}"
+555	555		301							{3: 'From the mouth of the shadowy side passage, Liv steps into the faint light.'}
+556	556		301							{2: 'Liv', 3: 'I heard your voice...', 4: '1'}
+557	557		204							{1: '3', 2: '3'}
+558	558		203							{1: '3', 2: '0.3', 3: '400'}
+559	559		301							{2: 'Melinoe', 3: '...Thank goodness! It really is you!', 4: '3'}
+560	560		301							"{3: ""Recognizing the familiar face, Melinoe's fear shatters, replaced by a wave of pure, visible relief.""}"
+561	561		204							{1: '3', 2: '14'}
+562	562		301							{2: 'Melinoe', 3: 'H-have you seen Aisling?!', 4: '3'}
+563	563		204							{1: '1', 2: '3'}
+564	564		301							{2: 'Liv', 3: 'Aisling...', 4: '1'}
+565	565		204							{1: '3', 2: '7'}
+566	566		204							{1: '1', 2: '4'}
+567	567		301							"{2: 'Melinoe', 3: ""Ah, you probably don't know her by that name..."", 4: '3'}"
+568	568		301							{3: 'The look on her face is raw with urgency and unmistakably sincere.'}
+569	569		301							{2: 'Melinoe', 3: 'You know, the one with the blue hair and amber eyes! The little girl you gave the gruel to, and you helped her once, too. Do you remember her?', 4: '3'}
+570	570		204							{1: '1', 2: '7'}
+571	571		301							{2: 'Liv', 3: '...Her name is Aisling?', 4: '1'}
+572	572		204							{1: '1', 2: '3'}
+573	573		204							{1: '3', 2: '14'}
+574	574		301							"{2: 'Melinoe', 3: ""Yes, that's... that's the name I gave her."", 4: '3'}"
+575	575		204							{1: '1', 2: '4'}
+576	576		204							{1: '3', 2: '0'}
+577	577		301							"{2: 'Melinoe', 3: ""The family that adopted her never called her that. It's... a secret just between the two of us."", 4: '3'}"
+578	578		301							{3: 'A melancholic smile forms on her face.'}
+579	579		204							{1: '3', 2: '14'}
+580	580		301		1		AniZhuanchangBegin			"{2: 'Melinoe', 3: ""But... I have this feeling. That I'm going to lose her again."", 4: '3'}"

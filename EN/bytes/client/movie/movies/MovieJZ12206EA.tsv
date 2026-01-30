@@ -1,0 +1,91 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory209.png'}
+2	2		401							{1: '1', 2: '211'}
+3	3		401							{1: '2', 2: '1515'}
+4	4		301			DialogEnable				"{2: 'Announcement', 3: '""After investigation, the desertion charge held against Construct soldier Lloyd has been lifted. The headquarters has identified his action as tactical breakthrough.""'}"
+5	5		301							"{2: 'Announcement', 3: '""Lloyd used discretion and decided the situation was impossible for the entire Construct troop to safely escape. He single-handedly broke through the encirclement in order to distract the Corrupted and seek reinforcements.""'}"
+6	6		301							"{2: 'Announcement', 3: '""Due to unknown communication interference, Lloyd was unable to contact the HQ and was hence incorrectly marked as a deserter.""'}"
+7	7		301				AniZhuanchangBegin			"{2: 'Announcement', 3: '""We have confirmed that Lloyd managed to recall at the last moment but his M.I.N.D. was significantly damaged. He will undergo a lengthy recovery and...""'}"
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+9	9		301			AniZhuanchangEnd				"{3: ""Nikola and Vera stare at each other in the commander's office. Neither of them intends to speak first.""}"
+10	10		201							{1: '1', 2: '500012', 4: '400'}
+11	11		201							{1: '2', 2: '500168', 4: '-400'}
+12	12		301							{1: '1', 2: 'Nikola', 3: '...', 4: '1'}
+13	13		301							{2: 'Vera', 3: '...', 4: '2'}
+14	14		401							{1: '2', 2: '1515'}
+15	15		202							{1: '1', 2: '2', 6: '1'}
+16	16		301							{3: 'Finally, an incoming communication cuts the awkward atmosphere.'}
+17	17		301							{3: 'Nikola glances at Vera and picks up the phone.'}
+18	18		201							{1: '1', 2: '500012', 4: '400'}
+19	19		201							{1: '2', 2: '500001', 3: '4', 4: '-400'}
+20	20		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+21	21		301							{1: '1', 2: 'Nikola', 3: 'Nikola speaking... What is it?', 4: '1'}
+22	22		301							"{2: 'Celica', 3: ""Um, Commander... Remember that guy named Collins, who looks like great trouble? He's here again. Should I still tell him off this time?"", 4: '2'}"
+23	23		301							{3: 'Nikola rubs his eyebrows. He looks extremely annoyed.'}
+24	24		301							"{2: 'Nikola', 3: ""No need. Let him wait in the meeting room. I'll be there in a sec."", 4: '1'}"
+25	25		202							{1: '1', 2: '2', 6: '1'}
+26	26		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+27	27		301							{3: 'After hanging up, Nikola looks at Vera again, but this time he starts to talk.'}
+28	28		201							{1: '1', 2: '500012', 4: '400'}
+29	29		201							{1: '2', 2: '500168', 4: '-400'}
+30	30		301							{1: '1', 2: 'Nikola', 3: 'Your action was beyond the mission scope and was completely unauthorized.', 4: '1'}
+31	31		204							{1: '2', 2: '1'}
+32	32		301							{2: 'Vera', 3: 'Really? As far as I can remember, I only promised you to get the job done. Everything apart from the mission objective is up to me.', 4: '2'}
+33	33		301							{2: 'Nikola', 3: 'I could turn a blind eye in the past, but this time you have crossed the line. I still need to clean up the mess you left.', 4: '1'}
+34	34		301							{2: 'Nikola', 3: 'By rescuing those Constructs, you made the situation unnecessarily complicated and exposed the new frame way too early...', 4: '1'}
+35	35		301							"{3: ""Vera's new frame is still unregistered. Ever since that operation, it was temporarily banned from service to avoid troubles.""}"
+36	36		204							{1: '2'}
+37	37		301							"{2: 'Vera', 3: ""That's your job to fix, not mine."", 4: '2'}"
+38	38		301							{2: 'Nikola', 3: 'Really? You could have died there. Just why did you do that...?', 4: '1'}
+39	39		202							{1: '1', 2: '2', 6: '1'}
+40	40		301							{3: 'Vera smiles again. She turns back and opens the door.'}
+41	41		201							{1: '1', 2: '500168', 3: '1'}
+42	42		301							"{1: '1', 2: 'Vera', 3: 'Who knows? Maybe I just wanted to be a ""hero"" for once?', 4: '1'}"
+43	43		201							{1: '1', 2: '500012'}
+44	44		301							{1: '1', 2: 'Nikola', 3: 'Hero...', 4: '1'}
+45	45		301				AniZhuanchangBegin			"{3: ""Nikola shakes his head and closes Lloyd's archive on his desk. He sighs, then falls into a long silence.""}"
+46	46		202							{1: '1', 6: '1'}
+47	47		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory53.jpg'}
+48	48		301			AniZhuanchangEnd				"{3: ""Vera walks out of Nikola's office and leans on the corridor. She pulls out the remaining half of her katana and starts laughing at herself.""}"
+49	49		201							{1: '1', 2: '500168', 3: '1'}
+50	50		301							{1: '1', 2: 'Vera', 3: 'How ridiculous. What am I even doing...?', 4: '1'}
+51	51		301							{3: 'Nikola was absolutely right. Illogical actions would only lead to unreasonable consequences. Vera is completely unfit to be a banner to guide others, and nobody knows this better than herself.'}
+52	52		301							{3: 'This banner only leads to a road to hell, full of thorns, pain and death...'}
+53	53		201							{1: '1', 2: '500359'}
+54	54		301							{1: '1', 2: '???', 3: 'But at least you took them back from Death this time. This banner of yours never wavered. It saved everybody.', 4: '1'}
+55	55		201							{1: '1', 2: '500168', 3: '1'}
+56	56		301							{1: '1', 3: 'Vera smiles and puts the broken katana back in the sheath.'}
+57	57		301							"{2: 'Vera', 3: ""At least I'm not regretting my choice... for now."", 4: '1'}"
+58	58		201							{1: '1', 2: '500359'}
+59	59		301							{1: '1', 2: '???', 3: 'Even without that banner, you already have followers that believe in you.', 4: '1'}
+60	60		202							{1: '1', 6: '1'}
+61	61		301							"{3: 'Right. Vera is no longer ""Death"" from Kurono. Now, she is the Captain of Cerberus.'}"
+62	62		201							{1: '1', 2: '500168', 3: '1'}
+63	63		301				AniZhuanchangBegin			{1: '1', 2: 'Vera', 3: 'Better go back now. Those two may have already blown the lounge up.', 4: '1'}
+64	64		202							{1: '1', 6: '1'}
+65	65		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory263.png'}
+66	66		301			AniZhuanchangEnd				"{3: 'Many Constructs are talking behind Vera\'s back as she walks back to the Cerberus lounge. Although not officially reported, the rumors about her killing ""The Undying Loy"" still become widespread.'}"
+67	67		301							"{3: 'People mourn for the fall of the hero and condemn the ruthless ""Death"". However, some are also grateful to Vera.'}"
+68	68		301							{3: 'They are the Construct soldiers that were trapped in the previous operation. Vera saved their lives. It is a fact.'}
+69	69		201							{1: '1', 2: '500250'}
+70	70		301							"{1: '1', 2: 'Injured Construct', 3: ""Miss Vera, please take these flowers... We'd like to thank you."", 4: '1'}"
+71	71		301							{3: 'A Construct soldier hands Vera a bouquet of bionic flowers and nods with a smile.'}
+72	72		201							{1: '1', 2: '500019', 4: '-400'}
+73	73		201							{1: '2', 2: '500028', 4: '400'}
+74	74		301							{1: '1', 2: 'Construct Captain', 3: 'Without you, we would have been wiped out long ago.', 4: '2'}
+75	75		301							{2: 'Construct Soldier', 3: 'You probably also had your reasons to kill Lloyd...', 4: '1'}
+76	76		301							{3: 'But Vera did not even look at them. She just takes the bouquet and throws it on the ground.'}
+77	77		202							{1: '1', 2: '2', 6: '1'}
+78	78		201							{1: '1', 2: '500168'}
+79	79		301							"{1: '1', 2: 'Vera', 3: ""You may have some misunderstandings. I'm no hero, and I only saved you because that was my job. You don't have to fawn on me."", 4: '1'}"
+80	80		301							{3: 'Vera gives them a cold stare, then smiles.'}
+81	81		204							{1: '1', 2: '13'}
+82	82		301							{2: 'Vera', 3: 'Killing Lloyd was also just a mission. Whoever appears on my mission list, I will not hesitate to kill them. Maybe you will be my next target.', 4: '1'}
+83	83		204							{1: '1'}
+84	84		301							"{3: ""Vera's stare makes them cower and retreat.""}"
+85	85		301							"{3: ""—That's good. I'm not a hero, and never will I be.""}"
+86	86		301							{3: 'Vera walks away without looking back. Just when she is about to step on the bouquet, she picks it up and throws it back to the soldiers with a smile.'}
+87	87		301							"{2: 'Vera', 3: 'Better save this for the real ""hero"" who saves you...', 4: '1'}"
+88	88		301							"{3: 'Maybe one day, another hero named ""Lloyd"" will show up again. Maybe he no longer remembers what happened in the past, but as long as he is carrying the name of ""Lloyd"", he will make the same decision.'}"
+89	89		204							{1: '1', 2: '1'}
+90	90		301		1		AniZhuanchangBegin			"{2: 'Vera', 3: '—Don\'t forget to smile to him and say ""thank you.""', 4: '1'}"

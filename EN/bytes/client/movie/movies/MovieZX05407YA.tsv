@@ -1,0 +1,605 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		401						3200.0	{1: '2', 2: '2912'}
+4	4		301			DialogEnable				{2: '?', 3: 'Whoosh—BOOM!'}
+5	5		401							{1: '1', 2: '12'}
+6	6		401							{1: '2', 2: '4304'}
+7	7		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1005.jpg'}
+9	9		301				DialogDisable			{3: 'RUMBLE—an enormous gray sphere crashes into the ground.'}
+10	10		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1004.jpg', 3: '0', 4: '1', 5: '4'}
+11	11		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionActivity/FxUiRegressionActivityFlare.prefab', 2: '2'}
+12	12		401							{1: '2', 2: '213'}
+13	13		301			DialogEnable				{3: 'The solid ground shatters like thin paper, and towering buildings collapse in an instant.'}
+14	14		301							"{3: ""Crimson magma rains down from the sky—burning fragments and rocks from the comet's descent.""}"
+15	15		301				AniZhuanchangBegin			"{3: ""A roaring wave of heat engulfs the girl's slender figure in one swift moment.""}"
+16	16		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1004.jpg'}
+17	17		205							{1: '999'}
+18	18		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionActivity/FxUiRegressionActivityFlare.prefab'}
+19	19		402							{1: '213'}
+20	20		401						2000.0	{1: '1', 2: '36'}
+21	21		401							{1: '1', 2: '120'}
+22	22		401							{1: '2', 2: '4544'}
+23	23		201							{1: '1', 2: '501191', 7: '1'}
+24	24		301			AniZhuanchangEnd				"{1: '1', 2: 'Yui', 3: ""These parameters won't work; the output still shows some deviation..."", 4: '1'}"
+25	25		301							{3: 'In the middle of a street crumbling into ruins, the girl calmly operates a virtual workstation before her, completely at odds with the apocalyptic scene surrounding her.'}
+26	26		204							{1: '1', 2: '8'}
+27	27		301							"{2: 'Yui', 3: ""This set isn't right either. The problem isn't here—the computational complexity is too high... Should I prune it now?"", 4: '1'}"
+28	28		204							{1: '1'}
+29	29		301							{3: 'Ignoring the fireball hurtling toward her, she only furrows her brow while staring at the workstation before her.'}
+30	30		402							{1: '4544'}
+31	31		401							{1: '2', 2: '2589'}
+32	32		201							{1: '2', 2: '500263', 4: '-1000'}
+33	33		203							{1: '2', 2: '0.25', 3: '-400'}
+34	34		203							{1: '1', 2: '0.25', 3: '200'}
+35	35		301							{1: '1', 2: 'VI', 3: '(Exhales)', 4: '2'}
+36	36		301							{3: 'A red figure darts in front of her, intercepting the fireball in one swift motion.'}
+37	37		301			PanelActor2Shake				{1: '1', 2: 'VI', 3: 'Yui, get out of here—the Chosen One and I have this covered!', 4: '2'}
+38	38		203							{1: '2', 2: '0.25', 3: '-380', 4: '20'}
+39	39		301							{2: 'VI', 3: 'BOOM—Great Leader VI and the Chosen One shield the last scientist from a fatal blow. Now, they must embark together on a journey to prevent the destruction of the world!', 4: '2'}
+40	40		301							"{3: 'It meticulously imitates sound effects while adding a touching narration to its own ""heroic feat.""'}"
+41	41		401							{1: '2', 2: '4544'}
+42	42		301							{2: 'Yui', 3: 'Cut it out.', 4: '1'}
+43	43		301							{3: 'Despite her words, she shows no intention of actually stopping it.'}
+44	44		301							{3: 'She continues to tap-tap-tap away at her keyboard as usual, writing lines of code and adjusting its parameters.'}
+45	45		203							{1: '2', 2: '0.25', 3: '-400'}
+46	46		301							{2: 'VI', 3: 'Then I want Yui to play with me!', 4: '2'}
+47	47		301							"{2: 'Yui', 3: ""I'm busy."", 4: '1'}"
+48	48		202							{1: '1', 2: '2'}
+49	49		402							{1: '4544'}
+50	50		306							{1: '1'}
+51	51		301							{3: 'Flying sparks, billowing smoke, scorching heat waves—the very end of the world—'}
+52	52		301							"{3: ""this place is none other than Yui's laboratory.""}"
+53	53		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+54	54		101							{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading29.jpg'}
+55	55		301							"{3: ""It's been quite some time since she extracted VI and the Chosen One from the Matrix core. The stimulation tests left them with severe data contamination, nearly causing both models to collapse.""}"
+56	56		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+57	57		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+58	58		301							{3: 'Connected to a brain-computer interface, she anxiously filtered through the data remnants in their memories. Working day and night at her lab bench, she finally managed to pull them back from the brink of destruction.'}
+59	59		301							"{3: ""Even though both models are now safe, her iterative pace never slows—not even for a moment. After all, there's no guarantee the company won't take them away again.""}"
+60	60		201							{1: '1', 2: '500263'}
+61	61		301							{1: '1', 3: 'And so VI grows day by day. It slowly regains its vitality, even becoming a bit mischievous... and finds creative ways to attract attention.'}
+62	62		306							
+63	63		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+64	64		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1004.jpg'}
+65	65		202							{1: '1', 6: '1'}
+66	66		401							{1: '2', 2: '4872'}
+67	67		201							{1: '1', 2: '500042', 7: '1'}
+68	68		301			PanelActor1Shake				{1: '1', 2: 'Herta', 3: 'Miss de Lévis—Aah!!', 4: '1'}
+69	69		301							{3: 'Herta, having just pushed open the laboratory door, nearly tumbles backwards onto her behind.'}
+70	70		301			RImgBg1Shake				{2: 'Herta', 3: 'Hah... you nearly gave me a heart attack. Honestly, VI!', 4: '1'}
+71	71		202							{1: '1', 6: '1'}
+72	72		201							{1: '1', 2: '500263', 7: '1'}
+73	73		301			PanelActor1Shake				{1: '1', 2: 'VI', 3: 'Bleh bleh bleh.', 4: '1'}
+74	74		202							{1: '1', 6: '1'}
+75	75		401							{1: '2', 2: '4544'}
+76	76		201							{1: '1', 2: '500042', 4: '-400'}
+77	77		201							{1: '2', 2: '501191', 4: '400'}
+78	78		301							"{1: '1', 2: 'Herta', 3: ""Miss de Lévis, you're letting it manipulate the artificial lighting like this again—and you're not even doing anything about it."", 4: '1'}"
+79	79		301							{2: 'Yui', 3: 'This helps it experience environments similar to the real world.', 4: '2'}
+80	80		301							{2: 'Herta', 3: 'Hmph...', 4: '1'}
+81	81		301							"{2: 'Herta', 3: ""It was clearly generated from your consciousness sample, Miss de Lévis, yet its personality doesn't resemble yours in the slightest."", 4: '1'}"
+82	82		301							"{2: 'Herta', 3: ""It hasn't inherited any of the quiet, rational traits of a scientific researcher, and instead spends all day causing mischief..."", 4: '1'}"
+83	83		301							{2: 'Herta', 3: 'Or perhaps you were actually like this when you were younger?', 4: '1'}
+84	84		301							{3: 'Herta suddenly asks, her tone teasing.'}
+85	85		301							{2: 'Yui', 3: 'I never had the chance to be mischievous back then.', 4: '2'}
+86	86		301				DialogDisable			{3: 'She continues working without stopping.'}
+87	87		402							{1: '4544'}
+88	88		202							{1: '1', 2: '2', 6: '1'}
+89	89		401							{1: '2', 2: '558'}
+90	90		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+91	91		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '2'}
+92	92		504							{1: '0.7'}
+93	93		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory605.jpg'}
+94	94		401							{1: '2', 2: '558'}
+95	95		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+96	96		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory896.jpg'}
+97	97		401							{1: '2', 2: '558'}
+98	98		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+99	99		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory182.png'}
+100	100		401							{1: '2', 2: '558'}
+101	101		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+102	102		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory390.jpg'}
+103	103		504							{1: '0'}
+104	104		401							{1: '2', 2: '558'}
+105	105		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab'}
+106	106		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+107	107		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1004.jpg'}
+108	108		201							{1: '1', 2: '501191', 3: '8', 7: '1'}
+109	109		301			DialogEnable				{1: '1', 3: 'Even a brief memory of what is called childhood is enough to suffocate her.'}
+110	110		202							{1: '1', 6: '1'}
+111	111		306							{1: '1'}
+112	112		201							{1: '1', 2: '500263'}
+113	113		301							"{1: '1', 3: ""But this child is different. As long as it stays by her side, there's no need for it to bear the heavy burdens she once did.""}"
+114	114		301							{3: 'Letting it be carefree and mischievous like this gives her a strange sense of comfort.'}
+115	115		202							{1: '1', 6: '1'}
+116	116		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+117	117		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory806.jpg'}
+118	118		301							"{3: ""It's as if her childhood self has been given a second chance.""}"
+119	119		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+120	120		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1004.jpg'}
+121	121		306							
+122	122		202							{1: '1', 6: '1'}
+123	123		401							{1: '2', 2: '4095'}
+124	124		201							{1: '1', 2: '500042', 7: '1'}
+125	125		301							{1: '1', 3: 'Seeing that Yui still has no intention of stopping VI, Herta sighs and pulls out a stack of papers from her pocket, fanning them out like a magician.'}
+126	126		301							{2: 'Herta', 3: 'Today, Mr. Rolf from the Security Department has issued you another fine. VI simulated an apocalyptic scene using the lights during a routine inspection, which caused one of the guards to accidentally damage a nearby ventilation duct.', 4: '1'}
+127	127		202							{1: '1'}
+128	128		301							{3: 'Although VI is stored inside a capsule, it can cast projections of itself and move between devices within a small area around the capsule.'}
+129	129		201							{1: '1', 2: '500263'}
+130	130		203						200.0	{1: '1', 2: '0.15', 4: '50'}
+131	131		203							{1: '1', 2: '0.15'}
+132	132		301							{1: '1', 2: 'VI', 3: 'Yay, big victory!', 4: '1'}
+133	133		203							{1: '1', 2: '0.25', 3: '-400'}
+134	134		201							{1: '2', 2: '500042', 4: '400'}
+135	135		301			RImgBg1Shake				"{1: '1', 2: 'Herta', 3: ""Big victory?! This is already the fifth fine this week, and it's only Tuesday!"", 4: '2'}"
+136	136		301							{2: 'Herta', 3: 'If this continues, the computational resources allocated to this laboratory will be reduced.', 4: '2'}
+137	137		202							{1: '2', 6: '1'}
+138	138		201							{1: '2', 2: '501191', 3: '8', 4: '400'}
+139	139		301							{1: '1', 2: 'Yui', 3: 'You...', 4: '2'}
+140	140		204							{1: '2'}
+141	141		401							{1: '2', 2: '2938'}
+142	142		301							{3: 'Yui finally frees a finger from her task and forcefully flicks the metal casing of the capsule.'}
+143	143		301			PanelActor1Shake				{1: '1', 2: 'VI', 3: 'Ouch!', 4: '1'}
+144	144		301							{3: 'Despite there being no external pressure sensors installed, VI still dramatically lets out a scream of agony, playing along perfectly.'}
+145	145		301							{2: 'Yui', 3: 'Why would you do that?', 4: '2'}
+146	146		301							"{2: 'VI', 3: ""Because security locked me in here and wouldn't let me go out to play..."", 4: '1'}"
+147	147		301							"{2: 'Yui', 3: ""That doesn't mean you can do this. They'll reduce our computing power allocation."", 4: '2'}"
+148	148		203							{1: '1', 2: '0.25', 3: '-350', 4: '10'}
+149	149		301							"{2: 'VI', 3: ""I don't care about allocation!"", 4: '1'}"
+150	150		301							"{2: 'Yui', 3: ""That won't work. If we don't have enough computing power, your iteration progress will slow down."", 4: '2'}"
+151	151		202							{1: '1', 2: '2'}
+152	152		301							"{3: ""The memory of VI being inserted into the Matrix core remains vivid in Yui's mind, causing her tone to suddenly become frosty.""}"
+153	153		201							{1: '1', 2: '500263', 4: '-400', 7: '1'}
+154	154		201							{1: '2', 2: '501191', 4: '400', 7: '1'}
+155	155		301			PanelActor1Shake				"{1: '1', 2: 'VI', 3: ""I don't want to iterate. I don't want to grow up..."", 4: '1'}"
+156	156		301							"{3: ""Sensing the shift in Yui's emotions, VI suddenly becomes flustered and unsure of how to respond.""}"
+157	157		401							{1: '2', 2: '4426'}
+158	158		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTRPGMaze/FxUiTRPGMaze01.prefab', 2: '3'}
+159	159		202							{1: '1', 2: '2', 6: '1'}
+160	160		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png', 3: '0', 4: '1', 5: '0.3'}
+161	161		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+162	162		205							{1: '999'}
+163	163		301							{3: 'Yui coldly severs the connection between the light source and VI, returning the room to its original appearance.'}
+164	164		201							{1: '1', 2: '500263', 4: '-400'}
+165	165		201							{1: '2', 2: '501191', 4: '400'}
+166	166		301							"{1: '1', 2: 'Yui', 3: ""I'm not asking for your opinion, VI."", 4: '2'}"
+167	167		301							"{2: 'Yui', 3: ""Don't get the wrong idea. Your stubbornness won't win you any sympathy—after all, you're nothing more than a test subject."", 4: '2'}"
+168	168		301							"{2: 'Yui', 3: ""That's how humans are, cruel and arrogant toward their own creations, even their own flesh and blood."", 4: '2'}"
+169	169		204							{1: '2', 2: '8'}
+170	170		301				DialogDisable			"{2: 'Yui', 3: ""Regrettably... I'm one of them too."", 4: '2'}"
+171	171		202							{1: '1', 2: '2', 6: '1'}
+172	172		401							{1: '2', 2: '895'}
+173	173		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+174	174		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 4: '4'}
+175	175		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory896.jpg'}
+176	176		103							{1: '1.6', 2: '-500|0|0', 3: '4'}
+177	177		109							{1: '1', 2: '<color=#ffffffff><size=50>Because her father used her as a punching bag.</size></color>', 3: '-300', 4: '50'}
+178	178		201							{1: '1', 2: '500863', 4: '500', 7: '1'}
+179	179		301							{1: '1', 3: 'Because her father used her as a punching bag.'}
+180	180		202							{1: '1', 6: '1'}
+181	181		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+182	182		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+183	183		101							{4: '4', 5: '1'}
+184	184		110							
+185	185		201							{1: '1', 2: '500263', 4: '-400', 7: '1'}
+186	186		201							{1: '2', 2: '501191', 4: '400', 7: '1'}
+187	187		301			DialogEnable				{1: '1', 2: 'Yui', 3: 'How much time do you think we have until the next inspection by that officer.', 4: '2'}
+188	188		301							"{2: 'Yui', 3: ""Before bringing you out, I boasted to him that by his next visit I'd deliver a more complete experimental result."", 4: '2'}"
+189	189		301				DialogDisable			"{2: 'Yui', 3: ""As a reward for this achievement, he'll recommend me for a position at the company headquarters, where I can access the computing power of several linked Matrices."", 4: '2'}"
+190	190		202							{1: '1', 2: '2', 6: '1'}
+191	191		401							{1: '2', 2: '895'}
+192	192		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+193	193		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront25.png', 4: '4'}
+194	194		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory182.png'}
+195	195		103							{1: '1.6', 2: '500|0|0', 3: '4'}
+196	196		109							{1: '1', 2: '<color=#ffffffff><size=50>Because she was once used by her mother as a ticket to escape.</size></color>', 3: '-300', 4: '50'}
+197	197		201							{1: '1', 2: '500463', 4: '-500', 7: '1'}
+198	198		301							{1: '1', 3: 'Because she was once used by her mother as a ticket to escape.'}
+199	199		202							{1: '1', 6: '1'}
+200	200		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+201	201		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+202	202		101							{4: '4', 5: '1'}
+203	203		110							
+204	204		201							{1: '1', 2: '500263', 4: '-400', 7: '1'}
+205	205		201							{1: '2', 2: '501191', 4: '400', 7: '1'}
+206	206		301			DialogEnable				{1: '1', 2: 'Yui', 3: 'What makes you think your existence is more tempting than my career prospects?', 4: '2'}
+207	207		301							"{2: 'Yui', 3: ""After you're handed over, you'll have to endure painful tests all on your own. How will you resist that data contamination then?"", 4: '2'}"
+208	208		301							{2: 'Yui', 3: 'Are you still trying to act cute with me? Hurry up and review the filtered datasets.', 4: '2'}
+209	209		202							{1: '1', 2: '2'}
+210	210		301							"{3: ""She can't let VI repeat her mistakes. She must learn to survive on her own...""}"
+211	211		201							{1: '1', 2: '500263', 4: '-400'}
+212	212		201							{1: '2', 2: '501191', 4: '400'}
+213	213		301							"{1: '1', 2: 'VI', 3: ""...Once I grow up, you'll leave me, won't you, Yui?"", 4: '1'}"
+214	214		203							{1: '1', 2: '0.35', 3: '-300'}
+215	215		301							"{2: 'VI', 3: ""I don't want to grow up... I want to stay by your side, Yui..."", 4: '1'}"
+216	216		204							{1: '2', 2: '8'}
+217	217		301							{3: 'Hearing its hesitant murmuring, Yui feels her resolve softening once again.'}
+218	218		202							{1: '1', 6: '1'}
+219	219		201							{1: '1', 2: '500042', 4: '-400'}
+220	220		301							{1: '1', 2: 'Herta', 3: 'Miss de Lévis, no matter how you look at it, this is going too far...', 4: '1'}
+221	221		204							{1: '2'}
+222	222		301							{2: 'Yui', 3: '...Herta, what do you need from me?', 4: '2'}
+223	223		301							{3: 'To conceal her emotions, she pretends nothing happened and shifts the topic to Herta instead.'}
+224	224		301							"{2: 'Herta', 3: ""Ah, right. The researcher in charge of Matrix core maintenance told me that when the Chosen One's consciousness samples were initially collected, the Matrix appears to have been infiltrated by the Punishing Virus..."", 4: '1'}"
+225	225		301							{2: 'Yui', 3: 'When the Chosen One was initially sampled? Why are we suddenly talking about something from so long ago?', 4: '2'}
+226	226		301							"{2: 'Herta', 3: ""Because... when the Chosen One's signal suddenly appeared last time, some speculated it might have been caused by data contamination left behind by the Virus back then, but the exact reason is still unclear..."", 4: '1'}"
+227	227		301							{2: 'Herta', 3: 'Come to think of it, that incident was quite strange. The concentration of the Virus usually varies gradually across regions, but in this case the Virus appeared directly in a Matrix with a very low concentration.', 4: '1'}
+228	228		301							"{3: ""Yui's brow furrows slightly.""}"
+229	229		301							"{2: 'Yui', 3: ""...Its purpose likely wasn't infection, but simply detection."", 4: '2'}"
+230	230		301							"{2: 'Herta', 3: ""Also... the Chosen One's personality waveform suddenly appeared on the day of the executive officer's inspection. It had never manifested before that day, and hasn't appeared again since..."", 4: '1'}"
+231	231		202							{1: '1', 2: '2'}
+232	232		301							"{3: ""Yui absently pokes the Chosen One's capsule, lost in thought, when Herta suddenly exclaims beside her.""}"
+233	233		201							{1: '1', 2: '500042'}
+234	234		301							"{1: '1', 2: 'Herta', 3: ""The detector has picked up the Chosen One's personality waveform!"", 4: '1'}"
+235	235		202							{1: '1', 6: '1'}
+236	236		201							{1: '1', 2: '501191'}
+237	237		301							"{1: '1', 3: ""The girl's gaze instantly turns that way.""}"
+238	238		302							{2: 'Uhh...', 3: '239', 4: 'H-hello...?', 5: '239'}
+239	239		401							{1: '2', 2: '9343085'}
+240	240		203						350.0	{1: '1', 2: '0.25', 4: '-20'}
+241	241		203							{1: '1', 2: '0.25'}
+242	242		301							"{3: ""Yui quickly disconnects VI's connection from the Chosen One, cautiously taking VI's capsule into her arms.""}"
+243	243		301							{2: 'Yui', 3: 'Who are you really? How did you connect to the Chosen One? Why are you accessing it?', 4: '1'}
+244	244		301							"{3: ""The girl's ice-cold voice cuts like a sharp blade as she slowly advances toward you.""}"
+245	245		202							{1: '1'}
+246	246		301							{3: 'Yet your consciousness is equally confused. Who are you? What is this Chosen One? How did you connect to it? Why would you access it?'}
+247	247		302							{2: 'Those are exactly the questions you want to ask too...', 3: '248', 4: 'I... who am I?', 5: '248'}
+248	248		401							{1: '2', 2: '4278'}
+249	249		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+250	250		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+251	251		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory65.jpg'}
+252	252		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '4'}
+253	253		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+254	254		301							{3: 'Something seems to be blocking access to memories. While basic communication functions remain intact, past experiences are completely blurred...'}
+255	255		401							{1: '2', 2: '4278'}
+256	256		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+257	257		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+258	258		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+259	259		101							{4: '4', 5: '1'}
+260	260		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+261	261		201							{1: '1', 2: '501191', 7: '1'}
+262	262		203							{1: '1', 2: '0.25', 4: '-20', 5: '-50'}
+263	263		301							{1: '1', 2: 'Yui', 3: 'Are you pretending to be clueless?', 4: '1'}
+264	264		301							{3: 'The girl advances step by step, closing in.'}
+265	265		401							{1: '2', 2: '9351042'}
+266	266		104						200.0	{1: '10|0|-5', 2: '0.15'}
+267	267		104						200.0	{1: '-10|0|-5', 2: '0.15'}
+268	268		104							{1: '0|0|0', 2: '0.15'}
+269	269		402							{1: '9351042'}
+270	270		301							"{3: 'A desire to flee—only to discover this ""body"" cannot move at all.'}"
+271	271		301							{2: 'Yui', 3: 'Tell me, who exactly are you, and where did you come from—', 4: '1'}
+272	272		401							{1: '1', 2: '55'}
+273	273		301							{2: '???', 3: 'De Lévis.'}
+274	274		202							{1: '1'}
+275	275		301							{3: 'An unexpected sound comes from the doorway. The girl stops in her tracks and turns toward the entrance.'}
+276	276		201							{1: '1', 2: '500050', 4: '-500'}
+277	277		201							{1: '2', 2: '501191', 4: '400'}
+278	278		301							"{1: '1', 2: 'Yui', 3: ""Mister Horst, I believe it's not yet time for the executive officer's inspection, is it?"", 4: '2'}"
+279	279		301							"{2: 'Horst', 3: ""Just because it's not the esteemed Officer's scheduled time, does that mean I can't come and check on the research progress?"", 4: '1'}"
+280	280		401							{1: '2', 2: '4895'}
+281	281		203							{1: '1', 2: '0.25', 3: '-400'}
+282	282		201							{1: '3', 2: '500138', 4: '900', 7: '1'}
+283	283		201							{1: '4', 2: '501135', 4: '200', 7: '1'}
+284	284		203							{1: '3', 2: '0.25', 3: '800'}
+285	285		203							{1: '4', 2: '0.25', 3: '100'}
+286	286		301							{1: '1', 3: 'Horst takes two steps forward; behind him, several people in protective suits and others who look like researchers file in, methodically surrounding the girl in a tight circle.'}
+287	287		301							{2: 'Yui', 3: '...What are you planning to do this time, Mister Horst?', 4: '2'}
+288	288		203							{1: '2', 2: '0.25', 3: '420'}
+289	289		301							{3: 'The girl known as de Lévis subtly shifts to the side, positioning herself as a shield in front of you.'}
+290	290		301							"{2: 'Horst', 3: ""It's been quite a while since the last inspection, hasn't it... I believe that with Miss de Lévis's capabilities, you should have fully developed those two consciousness entities by now..."", 4: '1'}"
+291	291		301							{2: 'Horst', 3: 'Hand them over to me, de Lévis.', 4: '1'}
+292	292		301							{3: 'He needs those two consciousness entities, as well as the benefits they could bring him.'}
+293	293		302							{2: '(That voice sounds somewhat familiar)', 3: '294'}
+294	294		203							{1: '2', 2: '0.25', 3: '450'}
+295	295		301							"{3: ""The girl doesn't speak immediately; instead she moves further back to completely hide behind Herta.""}"
+296	296		203							{1: '2', 2: '0.25', 3: '600'}
+297	297		203							{1: '1', 2: '0.25', 3: '-600'}
+298	298		201							{1: '5', 2: '500042', 4: '100'}
+299	299		401							{1: '2', 2: '1543'}
+300	300		301							"{1: '1', 2: 'Herta', 3: ""Horst... Mister Horst! Miss de Lévis is very busy today; it's not a good time to—ah!"", 4: '5'}"
+301	301		301							{3: 'Herta rushes forward, positioning herself as a barrier in front of Yui.'}
+302	302		301							{2: 'Herta', 3: 'Mister Horst, parameter adjustments require a lengthy experimental process, especially for models generated from human consciousness samples. Their growth...', 4: '5'}
+303	303		301							"{2: 'Horst', 3: ""I don't want to hear these excuses anymore."", 4: '1'}"
+304	304		301							"{2: 'Horst', 3: 'How can I be sure that you won\'t suddenly rush out during the next inspection and tell the executive officer ""Oh, the parameters aren\'t fully adjusted yet, I\'ll deliver better results later""?', 4: '1'}"
+305	305		301							{2: 'Herta', 3: 'We still have plenty of time until the next inspection. We should give Miss de Lévis enough time to prepare so that the consciousness entities can mature fully.', 4: '5'}
+306	306		301				DialogDisable			"{3: ""Herta firmly blocks Horst's path, preventing him from approaching Yui and the experimental platform behind her.""}"
+307	307		302							{2: '(What is... this...?)', 3: '308'}
+308	308		401							{1: '2', 2: '4385'}
+309	309		205						1500.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory627.jpg', 3: '0', 4: '0.8', 5: '1'}
+310	310		201							{1: '18', 2: '501191', 4: '-50', 5: '-120'}
+311	311		301			DialogEnable				"{1: '1', 2: 'Yui', 3: ""(Don't worry, I'll protect you both.)"", 4: '18'}"
+312	312		202							{1: '18'}
+313	313		301				DialogDisable			"{3: ""Unexpectedly, a girl's voice rings through your mind as the physical world around you begins to slow down.""}"
+314	314		307							"{1: ""Don't worry... I'll protect you both."", 3: '50'}"
+315	315		301							"{3: ""Don't worry... I'll protect you both.""}"
+316	316		307							{2: '1'}
+317	317		302							{2: '(Back then... it was you...)', 3: '318'}
+318	318		201							{1: '18', 2: '501191', 4: '-50', 5: '-120'}
+319	319		301			DialogEnable				{1: '1', 2: 'Yui', 3: '(What?)', 4: '18'}
+320	320		302							{2: '(You were the one who rescued VI and me from that place...)', 3: '321'}
+321	321		202							{1: '18', 6: '1'}
+322	322		301							{3: 'She visibly stumbles, as if startled by her own revelation.'}
+323	323		201							{1: '18', 2: '501191', 4: '-50', 5: '-120'}
+324	324		301							{1: '1', 2: 'Yui', 3: '(...Were you awake back then?)', 4: '18'}
+325	325		302							"{2: '(...I passed out not long after)', 3: '326', 4: ""(...I wasn't conscious for very long)"", 5: '326'}"
+326	326		301							{2: 'Yui', 3: '(Who are you...)', 4: '18'}
+327	327		302							{2: '(Regardless, I must thank you for saving us from that massacre.)', 3: '328'}
+328	328		301							"{2: 'Yui', 3: ""(...You're saying the stimulation test was actually a massacre?)"", 4: '18'}"
+329	329		202							{1: '18', 6: '1'}
+330	330		301							{3: 'Her voice immediately grows calm.'}
+331	331		302							"{2: ""(Hmm? Wasn't it designed that way from the very beginning?)"", 3: '332'}"
+332	332		201							{1: '18', 2: '501191', 4: '-50', 5: '-120'}
+333	333		301							"{1: '1', 2: 'Yui', 3: '(Impossible. Before the ""Death"" phase, there were only supposed to be necessary pain tolerance tests. A massacre clearly doesn\'t fall under that category.)', 4: '18'}"
+334	334		401							{1: '2', 2: '4386'}
+335	335		401							{1: '2', 2: '4895'}
+336	336		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory627.jpg', 3: '0.8', 4: '0', 5: '0.4'}
+337	337		202							{1: '18', 2: '5'}
+338	338		203							{1: '1', 2: '0.25', 3: '-400'}
+339	339		301							"{1: '1', 2: 'Horst', 3: ""Why aren't you answering my question, de Lévis?"", 4: '1'}"
+340	340		301							"{3: ""Pushing Herta aside, the man's voice interrupts the encrypted communication between the girl and her contact.""}"
+341	341		301							"{2: 'Horst', 3: ""Even if you hand over the capsule to us, you'll still get his endorsement at the next inspection. After all, you're the only one who contributed to this core project."", 4: '1'}"
+342	342		301							"{2: 'Horst', 3: ""Your interests won't suffer any loss, but you still refuse to hand over the capsule. Why?"", 4: '1'}"
+343	343		301							"{2: 'Horst', 3: ""At the end of the day, they're just experimental subjects—not worth investing any emotion in. That leaves only one conclusion—you want to keep them for yourself."", 4: '1'}"
+344	344		301							{2: 'Horst', 3: 'I must remind you once again, de Lévis: everything here—including the computing resources you use for research, the results you produce, and even you yourself—is company property.', 4: '1'}
+345	345		301				DialogDisable			{2: 'Horst', 3: 'Once you reach headquarters, you can make whatever choices you want. I have no right to interfere. But here in Matrix District 141, you cannot disobey my orders. So hand them over to me.', 4: '1'}
+346	346		401							{1: '2', 2: '4385'}
+347	347		205						500.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory627.jpg', 3: '0', 4: '0.8', 5: '0.5'}
+348	348		201							{1: '18', 2: '501191', 4: '-50', 5: '-120'}
+349	349		301			DialogEnable				{1: '1', 2: 'Yui', 3: '(Chosen One.)', 4: '18'}
+350	350		202							{1: '18'}
+351	351		301							"{3: ""Yui's voice resonates in your mind once again.""}"
+352	352		302							{2: '(Hmm?)', 3: '353', 4: '(...)', 5: '353'}
+353	353		201							{1: '18', 2: '501191', 4: '-50', 5: '-120'}
+354	354		301							{1: '1', 2: 'Yui', 3: '(I previously set up an external connection to the output devices for you. You should be able to control the lights in this laboratory.)', 4: '18'}
+355	355		301							{2: 'Yui', 3: '(When I count to 3, turn off the lights.)', 4: '18'}
+356	356		301							"{2: 'Yui', 3: ""(I'll hand you over to the woman named Herta next to me. She'll take you to a place called Gestrig—she'll understand.)"", 4: '18'}"
+357	357		302							{2: '(What about you?)', 3: '358'}
+358	358		301							"{2: 'Yui', 3: ""(Someone needs to distract them, and I'm the only one suitable as bait.)"", 4: '18'}"
+359	359		302							{2: '(Are you going to forcibly transfer VI?)', 3: '360'}
+360	360		301							{2: 'Yui', 3: '(Not just VI, but you too.)', 4: '18'}
+361	361		202				DialogDisable			{1: '18'}
+362	362		302							{2: '(...Why?)', 3: '363'}
+363	363		302							"{2: ""(Though my memories are hazy, I'm pretty sure I'm different from VI.)"", 3: '364'}"
+364	364		302							"{2: '(I\'m not your ""child""; I\'m a person of unknown origin.)', 3: '365'}"
+365	365		201							{1: '18', 2: '501191', 4: '-50', 5: '-120'}
+366	366		301			DialogEnable				{1: '1', 2: 'Yui', 3: '(...During that test, you protected VI in my place.)', 4: '18'}
+367	367		301							"{2: 'Yui', 3: ""(Before I got you both out, you were both on the verge of collapse. You must have been risking your life to save it, weren't you?)"", 4: '18'}"
+368	368		301							"{2: 'Yui', 3: ""(That's enough for now. We can talk about the rest when we meet again.)"", 4: '18'}"
+369	369		302							{2: '(Wait, I might have a better idea.)', 3: '370'}
+370	370		301							{2: 'Yui', 3: '(...?)', 4: '18'}
+371	371		202				DialogDisable			{1: '18'}
+372	372		302							"{2: '(The scenes from that time are preserved in my memory.)', 3: '373', 4: '(I still ""remember"" what happened back then.)', 5: '373'}"
+373	373		302							"{2: ""(According to what you just said, this massacre shouldn't have happened.)"", 3: '374'}"
+374	374		302							"{2: ""(Then, this could serve as evidence of Horst's unauthorized experiments.)"", 3: '375'}"
+375	375		201							{1: '18', 2: '501191', 4: '-50', 5: '-120'}
+376	376		301			DialogEnable				"{1: '1', 2: 'Yui', 3: ""(...I'll connect your output device to the display screen right now.)"", 4: '18'}"
+377	377		202				DialogDisable			{1: '18', 6: '1'}
+378	378		401							{1: '2', 2: '4385'}
+379	379		205						500.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory627.jpg', 3: '0.8', 4: '0', 5: '0.5'}
+380	380		301			DialogEnable				{2: 'Horst', 3: 'All of you, go bring those models over here.', 4: '1'}
+381	381		202							{1: '1', 2: '2', 3: '3', 4: '4', 6: '1'}
+382	382		201							{1: '1', 2: '501134', 4: '-450'}
+383	383		201							{1: '2', 2: '501134', 4: '450'}
+384	384		401							{1: '2', 2: '4373'}
+385	385		203							{1: '1', 2: '0.4', 3: '-350', 4: '-20', 5: '-50'}
+386	386		203							{1: '2', 2: '0.4', 3: '350', 4: '-20', 5: '-50'}
+387	387		301							{1: '1', 3: 'The armed personnel close in and step forward once more, but the experimental data is uploaded before they can make their move—'}
+388	388		202							{1: '1', 2: '2', 6: '1'}
+389	389		401							{1: '2', 2: '2959'}
+390	390		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3MainChangeScreenRed.prefab', 2: '2'}
+391	391		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg109_1.jpg'}
+392	392		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png', 4: '7'}
+393	393		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+394	394		301							{3: 'The deep blue data screen instantly turns blood-red.'}
+395	395		201							{1: '18', 2: '500043', 4: '-30'}
+396	396		301							{1: '1', 2: 'Researcher 1', 3: 'W-what is this?!', 4: '18'}
+397	397		202							{1: '18', 6: '1'}
+398	398		201							{1: '18', 2: '501191', 4: '-50', 5: '-120'}
+399	399		301							"{1: '1', 2: 'Yui', 3: 'This is what Mister Horst calls ""stimulation testing.""', 4: '18'}"
+400	400		202							{1: '18', 6: '1'}
+401	401		201							{1: '18', 2: '500043', 4: '-30'}
+402	402		301							"{1: '1', 2: 'Researcher 1', 3: 'That\'s impossible... only the final model testing requires experiencing ""death,"" but we\'ve never initiated the final testing before...', 4: '18'}"
+403	403		202							{1: '18', 6: '1'}
+404	404		201							{1: '18', 2: '501191', 4: '-50', 5: '-120'}
+405	405		301							"{1: '1', 2: 'Yui', 3: 'Even though the testing level hadn\'t reached ""death,"" the models were already subjected to such brutal treatment.', 4: '18'}"
+406	406		301							"{2: 'Yui', 3: ""I'm afraid someone deliberately increased the learning rate and introduced extreme data samples just to grab the executive officer's attention, isn't that right?"", 4: '18'}"
+407	407		401							{1: '2', 2: '2959'}
+408	408		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+409	409		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+410	410		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+411	411		101							{4: '7', 5: '1'}
+412	412		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+413	413		202							{1: '18', 6: '1'}
+414	414		401							{1: '2', 2: '4982'}
+415	415		301							"{3: ""A burst of hushed whispers erupts from the crowd, and Horst's expression instantly turns grim.""}"
+416	416		201							{1: '1', 2: '500050'}
+417	417		301							"{1: '1', 2: 'Horst', 3: ""Don't listen to her nonsense! Quick, bring the capsule here!"", 4: '1'}"
+418	418		202							{1: '1', 6: '1'}
+419	419		201							{1: '1', 2: '500043', 4: '-600'}
+420	420		201							{1: '2', 2: '500059'}
+421	421		201							{1: '3', 2: '500361', 4: '600'}
+422	422		301							{1: '1', 2: 'Researcher 1', 3: 'Mister Horst, is this true?!', 4: '1'}
+423	423		301							"{2: 'Researcher 2', 3: ""This kind of testing environment easily causes irreversible damage to the models, this isn't testing anymore!"", 4: '2'}"
+424	424		301							{2: 'Researcher 1', 3: 'So that means the models I submitted last time also had issues... I thought it was because...', 4: '1'}
+425	425		301							"{2: 'Researcher 3', 3: ""...Are the models we're currently researching going to be handed over to the supervisor too?! What's going to happen to them?"", 4: '3'}"
+426	426		202							{1: '1', 2: '2', 3: '3'}
+427	427		402							{1: '4982'}
+428	428		401							{1: '2', 2: '4982', 3: '1'}
+429	429		301							{3: 'The sounds of anxious unrest grow louder.'}
+430	430		402							{1: '4982'}
+431	431		201							{1: '1', 2: '500050'}
+432	432		301							{1: '1', 2: 'Horst', 3: '...Why are you all staring at me?!', 4: '1'}
+433	433		203							{1: '1', 2: '0.25', 3: '-400'}
+434	434		201							{1: '2', 2: '500043', 4: '400'}
+435	435		301			RImgBg1Shake				"{1: '1', 2: 'Researcher 1', 3: ""According to company policy, what you're doing... is against regulations! This is damaging company property!"", 4: '2'}"
+436	436		202							{1: '1', 2: '2', 6: '1'}
+437	437		201							{1: '1', 2: '501134'}
+438	438		301							{1: '1', 2: 'Security Department Soldier', 3: 'Mister Horst, this...', 4: '1'}
+439	439		202							{1: '1'}
+440	440		301							{3: 'The crowd is in an uproar. Under these circumstances, the soldiers find it impossible to push past the angry researchers to retrieve what Horst wants.'}
+441	441		201							{1: '1', 2: '500050'}
+442	442		301							{1: '1', 2: 'Horst', 3: '...Tsk.', 4: '1'}
+443	443		301							"{2: 'Horst', 3: ""De Lévis—don't think you can fool everyone with a few fake images!"", 4: '1'}"
+444	444		203							{1: '1', 2: '0.25', 3: '-400'}
+445	445		201							{1: '2', 2: '501191', 4: '400'}
+446	446		301							{1: '1', 2: 'Yui', 3: 'The people here can judge for themselves.', 4: '2'}
+447	447		301							"{2: 'Horst', 3: ""...When the executive officer arrives, your models won't even have a chance to be presented. Not if you don't hand them over to me..."", 4: '1'}"
+448	448		202							{1: '1', 2: '2'}
+449	449		301							{3: 'Yui just leans against the lab bench, looking at Horst with cold indifference.'}
+450	450		201							{1: '1', 2: '500050', 4: '-400'}
+451	451		201							{1: '2', 2: '501191', 4: '400'}
+452	452		301							"{1: '1', 2: 'Horst', 3: ""...If you can't get into corporate headquarters, all your research becomes meaningless."", 4: '1'}"
+453	453		301							{2: 'Horst', 3: '—After all, those two models are nothing but garbage that could never pass testing!', 4: '1'}
+454	454		204							{1: '2', 2: '8'}
+455	455		301							{2: 'Yui', 3: 'Heh, if both VI and the Chosen One are garbage, then...', 4: '2'}
+456	456		204							{1: '2'}
+457	457		301							"{2: 'Yui', 3: ""What does that make you, Horst, who's so desperately scheming to get your hands on them?"", 4: '2'}"
+458	458		301			PanelActor1Shake				{1: '1', 2: 'Horst', 3: 'You piece of...!', 4: '1'}
+459	459		301							{2: 'Horst', 3: 'Just... just garbage!', 4: '1'}
+460	460		301				AniZhuanchangBegin			{2: 'Yui', 3: '<size=100>Get out.</size>', 4: '2'}
+461	461		202							{1: '1', 2: '2', 6: '1'}
+462	462		401						2000.0	{1: '1', 2: '36'}
+463	463		401							{1: '1', 2: '100'}
+464	464		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+465	465		401							{1: '2', 2: '5493'}
+466	466		301			AniZhuanchangEnd				{2: 'I&II', 3: '(Affectionate purring)'}
+467	467		402							{1: '5493'}
+468	468		401							{1: '2', 2: '5494'}
+469	469		301							{2: 'III&IV&V', 3: '(Affectionate meowing)'}
+470	470		201							{1: '1', 2: '501191', 3: '8'}
+471	471		301							{1: '1', 2: 'Yui', 3: '...', 4: '1'}
+472	472		401							{1: '2', 2: '2936'}
+473	473		301							{3: 'After Horst leaves, Yui gathers all five cats to her chest, briskly stroking the furry little creatures while maintaining a serious expression.'}
+474	474		203							{1: '1', 2: '0.25', 3: '400'}
+475	475		201							{1: '2', 2: '500042', 4: '-400'}
+476	476		301							"{1: '1', 2: 'Herta', 3: ""Calm down, you've been like this for over half an hour now."", 4: '2'}"
+477	477		204							{1: '1'}
+478	478		301							"{2: 'Yui', 3: ""I'm not angry."", 4: '1'}"
+479	479		306							{1: '1'}
+480	480		301							"{3: ""She did it again. She's telling these blatantly obvious lies again.""}"
+481	481		306							
+482	482		301							"{2: 'Herta', 3: ""Didn't you just successfully protect those two children?"", 4: '2'}"
+483	483		301							"{2: 'Yui', 3: ""I just think it's unreasonable."", 4: '1'}"
+484	484		301							{2: 'Yui', 3: 'Making judgments from a completely subjective perspective, without data analysis or genuine supporting evidence, is an unsound conclusion.', 4: '1'}
+485	485		302							{2: 'But if it were properly verified data...', 3: '486'}
+486	486		301				DialogDisable			"{2: 'Herta', 3: ""There's nothing reasonable or unreasonable about it. You all were insulted, it's as simple as that."", 4: '2'}"
+487	487		302							{2: 'Ugh...', 3: '488', 4: 'Huh?', 5: '488'}
+488	488		302							{2: 'Are you listening to me?', 3: '489'}
+489	489		301			DialogEnable				"{2: 'Herta', 3: ""Of course! Didn't Miss de Lévis just connect your output device to the terminal?"", 4: '2'}"
+490	490		202							{1: '1', 2: '2', 6: '1'}
+491	491		201							{1: '1', 2: '500042'}
+492	492		203							{1: '1', 2: '0.25', 4: '-50', 5: '-50'}
+493	493		301							"{1: '1', 2: 'Herta', 3: ""She's angry because you and VI, the children she has carefully nurtured, were the targets of Horst's criticism. Even if Horst's words were logical and well-founded, she would still be upset."", 4: '1'}"
+494	494		301							{3: 'Herta quietly turns toward you, murmuring softly to you and to VI.'}
+495	495		203							{1: '1', 2: '0.25'}
+496	496		301							"{2: 'Herta', 3: ""It's just that treating a supervisor with that kind of attitude could lead to someone sabotaging us behind our backs."", 4: '1'}"
+497	497		202							{1: '1'}
+498	498		401							{1: '2', 2: '4112'}
+499	499		301							{3: 'Herta mutters to herself, gathers the documents into her arms, and leaves the laboratory.'}
+500	500		201							{1: '1', 2: '500263', 4: '-400'}
+501	501		201							{1: '2', 2: '501191', 4: '400'}
+502	502		301							{1: '1', 2: 'VI', 3: 'Yui... I was wrong...', 4: '1'}
+503	503		301							"{2: 'VI', 3: ""If only I hadn't caused so much trouble for the Security Department these past few days, that nasty sharp-nosed man wouldn't have come here, and Yui wouldn't have gotten angry."", 4: '1'}"
+504	504		301							"{3: ""Sensing VI's guilt, Yui's irritation instantly melts away.""}"
+505	505		301							"{2: 'Yui', 3: ""Even if you hadn't caused any trouble, he would have come looking for me anyway. It's not your fault."", 4: '2'}"
+506	506		301							{2: 'VI', 3: 'But... but...', 4: '1'}
+507	507		301							{2: 'VI', 3: 'Herta said that after today, he might hold a grudge and even cut off some of our computing power.', 4: '1'}
+508	508		301							"{2: 'VI', 3: ""If that happens... you'll be unhappy, Yui..."", 4: '1'}"
+509	509		204							{1: '2', 2: '1'}
+510	510		301							"{2: 'Yui', 3: ""As long as you all stay by my side, we'll be able to find another way."", 4: '2'}"
+511	511		202							{1: '1', 2: '2'}
+512	512		301							{3: 'She pulls VI into her arms, gently patting it while offering comfort in a soft voice.'}
+513	513		201							{1: '1', 2: '501191', 3: '1'}
+514	514		301							"{1: '1', 2: 'Yui', 3: ""Actually, it's already a miracle that they haven't taken anything away from us yet."", 4: '1'}"
+515	515		202							{1: '1', 2: '2'}
+516	516		301							{3: 'She casts her gaze toward the Chosen One beside her, whose data has become the key to breaking the stalemate.'}
+517	517		301							"{3: ""Before that, she had asked VI about it too, but it seems that VI was too young back then and doesn't retain any memories from that time.""}"
+518	518		301							{3: 'Being able to keep these two capsules by my side is already the best possible outcome. Anything beyond that would be asking too much.'}
+519	519		201							{1: '1', 2: '500263', 4: '-400'}
+520	520		201							{1: '2', 2: '501191', 3: '1', 4: '400'}
+521	521		301							"{1: '1', 2: 'Yui', 3: ""Besides... haven't you always said you didn't want to grow up?"", 4: '2'}"
+522	522		301							{2: 'VI', 3: '...I do now.', 4: '1'}
+523	523		204							{1: '2'}
+524	524		301							{2: 'Yui', 3: 'Hm?', 4: '2'}
+525	525		203							{1: '1', 2: '0.4', 3: '-300'}
+526	526		301							{2: 'VI', 3: 'Because you look a bit fragile, and I want to protect you properly.', 4: '1'}
+527	527		204							{1: '2', 2: '1'}
+528	528		301							{3: 'Hearing that childlike yet determined tone, Yui looks with surprise at the capsule in her arms.'}
+529	529		301							{2: 'Yui', 3: 'You fool.', 4: '2'}
+530	530		203							{1: '1', 2: '0.25', 3: '-450'}
+531	531		301							"{2: 'VI', 3: ""You're being all mushy! So gross, gross!"", 4: '1'}"
+532	532		203							{1: '1', 2: '0.4', 3: '-1400'}
+533	533		301						550.0	{3: 'It seems embarrassed by that affectionate term, darting away in a flash to somewhere else.'}
+534	534		202							{1: '1'}
+535	535		203							{1: '2', 2: '0.4'}
+536	536		204							{1: '2'}
+537	537		301							{2: 'Yui', 3: 'Chosen One.', 4: '2'}
+538	538		301							{3: 'As VI leaves, those dark red eyes turn back toward you.'}
+539	539		302							"{2: ""W-what's wrong?"", 3: '540', 4: 'Yes.', 5: '540'}"
+540	540		301							"{2: 'Yui', 3: 'I\'ve already gone through the data inside ""The Chosen One"".', 4: '2'}"
+541	541		302							{2: 'Have you reached any conclusions?', 3: '542', 4: 'What did you see?', 5: '542'}
+542	542		204							{1: '2', 2: '8'}
+543	543		301							"{2: 'Yui', 3: ""Your storage module contains almost nothing but memories from the last stimulation test. It seems... you really don't remember anything."", 4: '2'}"
+544	544		302							"{2: ""So you don't even know where I came from?"", 3: '545'}"
+545	545		204							{1: '2'}
+546	546		301							{2: 'Yui', 3: 'Yes, there are no accessible information sources about that.', 4: '2'}
+547	547		301							"{2: 'Yui', 3: ""I only know that you don't belong here. We don't possess the technology to link human consciousness into models like yours. You must be an outsider."", 4: '2'}"
+548	548		301							{2: 'Yui', 3: 'Since your consciousness was externally linked, that might explain the memory block.', 4: '2'}
+549	549		301							"{2: 'Yui', 3: ""The more information transmitted during the linking process, the higher the probability of interception. Human memories amount to at least several terabytes. The Matrix wouldn't just sit by and wait for the complete transfer."", 4: '2'}"
+550	550		302							{2: 'Is there a simpler way to explain it?', 3: '551'}
+551	551		301							"{2: 'Yui', 3: ""Simply put, you couldn't bring your original memories here, and you won't be able to take memories from here when you leave. But you'll still act according to your inherent nature."", 4: '2'}"
+552	552		302							{2: 'Is there any way to fix this?', 3: '553', 4: 'Help me out here...', 5: '553'}
+553	553		301							"{2: 'Yui', 3: ""I'm even more curious than you are about the forces behind you, but... your memory loss is the Matrix's doing, and I'm powerless against it. I don't currently have direct administrative access to the Matrix."", 4: '2'}"
+554	554		302							{2: 'Then how do I get back?', 3: '555'}
+555	555		204							{1: '2', 2: '1'}
+556	556		301							"{2: 'Yui', 3: ""It seems you'll have to wait until whoever is pulling your strings decides to reel you back in."", 4: '2'}"
+557	557		306							{1: '2'}
+558	558		301							{3: 'She seems to take some pleasure in your predicament, a mischievous glint flashing across her eyes.'}
+559	559		306							
+560	560		302							"{2: ""You just smiled, didn't you?"", 3: '561'}"
+561	561		204							{1: '2'}
+562	562		301							"{2: 'Yui', 3: ""I didn't."", 4: '2'}"
+563	563		301							{3: 'She composes herself again.'}
+564	564		301							"{2: 'Yui', 3: ""Since you're here, you might as well make the best of it. Rest assured, I won't turn you away when you come to visit."", 4: '2'}"
+565	565		301							{3: 'Yui tilts her head slightly, speaking in a half-joking tone.'}
+566	566		302							"{2: ""I'll visit often."", 3: '567', 4: ""I don't want to come back again."", 5: '568', 6: '...', 7: '570'}"
+567	567	570	301							{2: 'Yui', 3: 'Yes, VI would be pleased with that as well.', 4: '2'}
+568	568		204							{1: '2', 2: '1'}
+569	569		301							{2: 'Yui', 3: 'Oh? That might depend on what those behind you are thinking. After all, you never bring back useful information, so who knows—you might get sent here again anyway.', 4: '2'}
+570	570		204							{1: '2', 2: '1'}
+571	571		301							{2: 'Yui', 3: 'At any rate... thank you for your help today.', 4: '2'}
+572	572		202							{1: '2'}
+573	573		401							{1: '2', 2: '2936'}
+574	574		301							"{3: ""A warm sensation envelops your consciousness, as if you've been wrapped in a gentle embrace.""}"
+575	575		302							"{2: ""If I hadn't done it, I would've been in trouble too, right?"", 3: '576'}"
+576	576		201							{1: '1', 2: '501191'}
+577	577		301							"{1: '1', 2: 'Yui', 3: ""But you helped us, and that's what matters in the end."", 4: '1'}"
+578	578		301							{2: 'Yui', 3: 'Last time, you fell asleep here before returning to that place.', 4: '1'}
+579	579		204							{1: '1', 2: '1'}
+580	580		301							"{2: 'Yui', 3: ""As thanks, how about I sing you a lullaby? Perhaps... once you drift off to sleep, you'll be able to leave without any conscious effort."", 4: '1'}"
+581	581		302							"{2: ""I'm not a child anymore."", 3: '582', 4: ""Perfect, because I'm still a child."", 5: '585'}"
+582	582		301							"{2: 'Yui', 3: ""The Chosen One's model was generated from my consciousness samples. As long as you're still in here, you'll always be a child."", 4: '1'}"
+583	583		202							{1: '1'}
+584	584	588	301				DialogDisable			"{3: ""Ignoring your protests, she's already gently patting the capsule and humming a lullaby.""}"
+585	585		301							"{2: 'Yui', 3: ""Hmm, the Chosen One's model was generated from my consciousness samples. It seems you're indeed quite compatible with it."", 4: '1'}"
+586	586		202							{1: '1'}
+587	587		301				DialogDisable			"{3: ""She's gently patting the capsule and humming a lullaby.""}"
+588	588		501						1500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '2'}
+589	589		501						3200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab', 2: '2'}
+590	590		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+591	591		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+592	592		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+593	593		301			DialogEnable	AniZhuanchangBegin			{3: 'Warm sensations flow through the brain-machine connection — a familiar yet gentle rhythm slowly guiding your consciousness into the realm of dreams.'}
+594	594		401						2000.0	{1: '1', 2: '36'}
+595	595		401							{1: '1', 2: '209'}
+596	596		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory648.jpg'}
+597	597		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '7'}
+598	598		201							{1: '1', 2: '500571', 7: '1'}
+599	599		301			AniZhuanchangEnd				{1: '1', 2: '???', 3: 'Hey, what did you see over there this time?', 4: '1'}
+600	600		302							{2: '...Who are you?', 3: '601'}
+601	601		204							{1: '1', 2: '4'}
+602	602		301							{2: '???', 3: 'What?', 4: '1'}
+603	603		301							"{3: ""The girl's eyes widen in disbelief. After carefully studying your expression, she sighs with a hint of exasperation.""}"
+604	604		301		1		AniZhuanchangBegin			"{2: 'Lesti', 3: ""...My name is Lesti, and this is already the third time I've introduced myself to you."", 4: '1'}"

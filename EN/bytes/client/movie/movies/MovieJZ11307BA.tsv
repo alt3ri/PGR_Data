@@ -1,0 +1,44 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory18.jpg'}
+2	2		401							{1: '1', 2: '102'}
+3	3		201							{1: '1', 2: '500019'}
+4	4		301			DialogEnable				{1: '1', 2: 'Construct', 3: 'Ugh... Cough...', 4: '1'}
+5	5		201							{1: '1', 2: '500168', 3: '1'}
+6	6		301							{1: '1', 2: 'Vera', 3: 'A total wipeout, huh.', 4: '1'}
+7	7		201							{1: '1', 2: '500015'}
+8	8		301							{1: '1', 2: 'Tifa', 3: 'Your turn, Captain?', 4: '1'}
+9	9		201							{1: '1', 2: '500168', 3: '13'}
+10	10		301							"{1: '1', 2: 'Vera', 3: ""Nope. No, thanks. We're just temporary acquaintances."", 4: '1'}"
+11	11		201							{1: '1', 2: '500015'}
+12	12		301							"{1: '1', 2: 'Tifa', 3: ""I don't care!"", 4: '1'}"
+13	13		202							{1: '1'}
+14	14		301							{3: 'The dark subway station is paved with bodies. Standing in front of a Corrupted, as if mocking it, is a redheaded girl.'}
+15	15		301							{3: 'The Corrupted charges towards Vera. The spikes on the ground shoot out like bullets, forcing Vera to back up into a run-down wall.'}
+16	16		201							{1: '1', 2: '500168', 3: '13'}
+17	17		301							{1: '1', 2: 'Vera', 3: 'I could simply end you here... but I know a better way to torture you.', 4: '1'}
+18	18		301				AniZhuanchangBegin			"{2: 'Vera', 3: ""Gray Raven... You'll be perfect for this. Heh."", 4: '1'}"
+19	19		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+20	101		204							{1: '1'}
+21	20		401							{1: '1', 2: '211'}
+22	21		301			AniZhuanchangEnd				"{2: 'Vera', 3: ""I'll set you down here."", 4: '1'}"
+23	22		301							"{2: 'Vera', 3: ""That ravenling sure is birdbrained, saying that I can have the body right after they're done with their investigation."", 4: '1'}"
+24	102		204							{1: '1', 2: '1'}
+25	23		301							{2: 'Vera', 3: 'Is it out of naivety? Or something ulterior? Well, interesting either way.', 4: '1'}
+26	103		202							{1: '1'}
+27	24		301							{3: 'Vera unloads the preservation pod holding the Corrupted Tifa in a corridor. Without a thought to any repercussions, she connects Tifa to power.'}
+28	25		301							"{3: ""With her brain damaged, the only place she can show her bewilderment is through the screen on top of the pod. Tifa's battered form is now no more than a coffin imprisoning her consciousness.""}"
+29	26		301							{3: 'On the screen, Tifa exhibits panic and regret. Through the connection established by Gray Raven, she is forced to remember all that happened between her and her Commandant.'}
+30	27		301							{3: 'And understand what she did wrong.'}
+31	28		301				DialogDisable			"{3: ""Vera strokes Tifa's cheek, as if comforting her.""}"
+32	29		202				RImgBg1Disable			{1: '1'}
+33	30		101			RImgBg1Enable				{1: 'Assets/Product/Texture/Image/BgCg/Cgqz1703.jpg'}
+34	100		502							{1: 'RImgBg1BlowUp'}
+35	31		301			DialogEnable				{2: 'Tifa', 3: 'I... I... Just what—'}
+36	32		301							"{2: 'Vera', 3: ""I know you're crying, Tifa. Now that you've regained your humanity, you can feel pain.""}"
+37	33		301							{2: 'Tifa', 3: 'Commandant... Why... Why do they have a Commandant while my... my Commandant...'}
+38	34		301							"{2: 'Vera', 3: ""Those who don't feel pain are not actually alive. Without pain, you can't prove that you exist.""}"
+39	35		301							{2: 'Vera', 3: 'My mission is to kill Tifa. And Tifa, you exist right here, right now.'}
+40	36		301							"{3: ""Vera places a gentle hand on Tifa's cheek comfortingly.""}"
+41	37		301							"{2: 'Vera', 3: ""And that's why I'll give you a way out. Leave all your pain to me—just like how everyone else did.""}"
+42	38		301							"{2: 'Vera', 3: ""That's all I can do for you, Tifa.""}"
+43	39		301		1		AniZhuanchangBegin			"{3: ""—And then Vera raises her hand. She punches straight through Tifa's brain and the pod, crushing it all.""}"

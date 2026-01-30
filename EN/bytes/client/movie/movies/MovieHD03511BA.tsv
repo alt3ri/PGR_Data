@@ -1,0 +1,100 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory184.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		107						2000.0	{1: 'Constellia Water Park'}
+4	4		108							{1: '1'}
+5	5		401							{1: '2', 2: '903'}
+6	6		201							{1: '1', 2: '500600', 3: '2'}
+7	7		301			DialogEnable				{1: '1', 2: 'Ayla', 3: 'Commandant, are you ready? This is the final stage!', 4: '1'}
+8	8		302							{2: '(Take a deep breath)', 3: '9'}
+9	9		202							{1: '1'}
+10	10		301							"{3: ""A balance beam, floating buoys... behind you lie the challenges you've already cleared, and beneath your feet, the bridge stretches high over a massive pool.""}"
+11	11		301							"{2: 'Staff Member A', 3: ""Looks like today's two challengers are fired up and ready to roll!""}"
+12	12		301							{2: 'Staff Member B', 3: 'Next up is a challenge that calls for spot-on calculations, a smooth running start, and flawless bouncing...'}
+13	13		301							"{2: 'Staff Member B', 3: ""This is the track's ultimate showdown!""}"
+14	14		201							{1: '1', 2: '500600'}
+15	15		203							{1: '1', 2: '0.3', 4: '-100'}
+16	16		301							"{1: '1', 3: ""Ayla sets herself in a running stance but stays put, like she's waiting for the go-ahead.""}"
+17	17		302							"{2: '(Nod)', 3: '18', 4: ""Alright, I'm all set too."", 5: '19'}"
+18	18	20	301							{3: 'Ayla gives a quick blink and flashes an OK sign.'}
+19	19	20	301							"{2: 'Ayla', 3: ""Excellent! Let's go!"", 4: '1'}"
+20	20		301							"{3: 'Still, you find it curious—there\'s only a suspended bridge ahead, so what exactly is this ""bouncing"" test supposed to be?'}"
+21	21		203							{1: '1', 2: '0.3', 3: '-250', 4: '-100'}
+22	22		301							"{2: 'Ayla', 3: ""Whoa! It's so slippery! How are we supposed to run on this?!"", 4: '1'}"
+23	23		301							{3: 'She takes her first step and almost loses her balance.'}
+24	24		203							{1: '1', 2: '0.25', 3: '-500', 4: '-500'}
+25	25		202							{1: '1'}
+26	26		301							{3: 'After a few quick steps, you see the truth: the bridge is soaked, giving you practically no grip at all.'}
+27	27		201							{1: '1', 2: '500600'}
+28	28		301							"{1: '1', 2: 'Ayla', 3: ""It's tougher than I imagined, but that only makes it more thrilling!"", 4: '1'}"
+29	29		301							{3: 'She looks toward the finish line on the far side, her eyes shining with excitement.'}
+30	30		301							{3: 'It feels like a spell has taken hold—the center of the bridge starts folding in, leaving only the two takeoff platforms at each end.'}
+31	31		301							{2: 'Ayla', 3: 'Sure enough, we have to leap all the way to the other side.', 4: '1'}
+32	32		204							{1: '1', 2: '2'}
+33	33		301							{2: 'Ayla', 3: 'Commandant, grab my hand!', 4: '1'}
+34	34		302							"{2: 'You want to jump together?', 3: '35', 4: ""(Take Ayla's offered hand)"", 5: '35'}"
+35	35		301							"{2: 'Ayla', 3: ""If we pull this off, Commandant, you're buying me ice cream!"", 4: '1'}"
+36	36		301							{2: 'Ayla', 3: 'One, two, three, ready...', 4: '1'}
+37	37		302							{2: 'Jump!', 3: '38'}
+38	38		203							{1: '1', 2: '0.15', 5: '-100'}
+39	39		401							{1: '2', 2: '9342045'}
+40	40		202							{1: '1'}
+41	41		301							{3: 'You call out in unison and spring toward the platform on the other side.'}
+42	42		301							{3: 'Your hands are clasped tight as they swing into the air, and your toes nearly brush the edge of the finish line.'}
+43	43		301							{3: 'But a moment later, you feel that all-too-familiar slippery sensation beneath your feet.'}
+44	44		104						250.0	{1: '0|50|-25', 2: '0.25'}
+45	45		201							{1: '1', 2: '500600'}
+46	46		203							{1: '1', 2: '0.15', 5: '-200'}
+47	47		301							{1: '1', 2: 'Ayla', 3: '【kuroname】!', 4: '1'}
+48	48		202							{1: '1'}
+49	49		401							{1: '2', 2: '4044'}
+50	50		301			RImgBg1Shake				{3: 'Your balance shifts backward. Before you can react, a soft body approaches you.'}
+51	51		301							{3: 'She quickly grabs your hand, which almost slips free in the sudden loss of balance, and your interlocked fingers never let go.'}
+52	52		302							{2: '(Tighten your grip even more)', 3: '53', 4: '(Am I really going to fall?)', 5: '53'}
+53	53		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+54	54		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+55	55		401							{1: '2', 2: '4156'}
+56	56		301							{3: 'Splash!'}
+57	57		301							{3: 'A wave of dizziness overwhelms you. The sun-baked air is scorching, and the blistering wind burns your ears.'}
+58	58		401							{1: '2', 2: '4685'}
+59	59		301				AniZhuanchangBegin			{3: 'Then, as you hit the water, its cool rush closes in from every direction, enveloping you completely.'}
+60	60		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory537.jpg'}
+61	61		402							{1: '2', 2: '4156'}
+62	62		402							{1: '2', 2: '4685'}
+63	63		301			AniZhuanchangEnd				"{2: 'Staff Member A', 3: ""It's such a pity—our two challengers ended up losing to the biggest, baddest Slip-And-Slide Disaster in history...""}"
+64	64		301							{3: 'You come up for air alongside Ayla, and the instant you break the surface, the staff delivers a deflating announcement.'}
+65	65		301				DialogDisable			{3: 'Of course, the staff is not just standing there. He presses a switch that triggers an inflatable cushion under the pool, sending you to shore.'}
+66	66		302				AniZhuanchangBegin			{2: 'What a twisted name for that stage.', 3: '67'}
+67	67		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory184.png'}
+68	68		201			AniZhuanchangEnd				{1: '1', 2: '500600'}
+69	69		301			DialogEnable				{1: '1', 2: 'Ayla', 3: 'Huh? This totally gives off a nonsensical gag-manga vibe!', 4: '1'}
+70	70		301							"{1: '1', 2: 'Ayla', 3: ""And today's challenge is a total success!"", 4: '1'}"
+71	71		302							{2: 'Hmm?', 3: '72'}
+72	72		301							{1: '1', 2: 'Ayla', 3: 'Could this bridge be our very own Magpie Bridge, Commandant?', 4: '1'}
+73	73		302							{2: 'Magpie Bridge?', 3: '74'}
+74	74		204							{1: '1', 2: '2'}
+75	75		301							"{1: '1', 2: 'Ayla', 3: ""Commandant, don't you know? Today is the day Altair and Vega meet!"", 4: '1'}"
+76	76		301							{1: '1', 2: 'Ayla', 3: 'The bridge we need to cross together is missing a chunk right in the middle...', 4: '1'}
+77	77		204							{1: '1'}
+78	78		301							{1: '1', 2: 'Ayla', 3: 'Although, sometimes a little imperfection makes things that much more beautiful...', 4: '1'}
+79	79		301							"{1: '1', 2: 'Ayla', 3: 'But today, I won\'t stand for this so-called ""art form.""', 4: '1'}"
+80	80		301							{1: '1', 2: 'Ayla', 3: 'If you go across the broken magpie bridge by yourself, the blessing might just stop working.', 4: '1'}
+81	81		301							"{3: ""Ayla's spontaneous comment is so typical of her. But you understand her point.""}"
+82	82		302							{2: 'Your clothes are soaked... Is that all right?', 3: '83'}
+83	83		301							"{2: 'Ayla', 3: ""No problem at all! I'm wearing this summer-themed coating on purpose."", 4: '1'}"
+84	84		401							{1: '2', 2: '9339045'}
+85	85		301							{3: 'With that said, she raises the hem of her clothes and lightly wrings it out with both hands.'}
+86	86		301							{3: 'Water splashes into the pool, and Ayla exhales a soft sigh of relief.'}
+87	87		301							{2: 'Ayla', 3: '【kuroname】, does it still bother you?', 4: '1'}
+88	88		302							"{2: ""Yeah... I'm still a bit frustrated about it."", 3: '89', 4: 'I want to give it another shot.', 5: '89'}"
+89	89		204							{1: '1', 2: '2'}
+90	90		301							"{1: '1', 2: 'Ayla', 3: ""Don't feel down! Today is really special, and I've got a unique surprise just for you, 【kuroname】!"", 4: '1'}"
+91	91		302							{2: 'What kind of surprise?', 3: '92', 4: 'Unique, huh?', 5: '92'}
+92	92		203							{1: '1', 2: '0.15', 5: '-100'}
+93	93		401							{1: '2', 2: '841'}
+94	94		301							{3: 'Before you can blink, she moves in with a warm smile, slipping her arms around your waist.'}
+95	95		402							{1: '4298'}
+96	96		401							{1: '2', 2: '4044'}
+97	97		301							{3: 'The summer air, mingled with the softness of her hair, wraps around this moment.'}
+98	98		204							{1: '1', 2: '6'}
+99	99		301		1		AniZhuanchangBegin			"{2: 'Ayla', 3: ""Take a quick breather, then let's tackle this challenge again, 【kuroname】."", 4: '1'}"

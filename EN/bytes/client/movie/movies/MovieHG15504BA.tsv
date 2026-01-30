@@ -1,0 +1,214 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		306							{1: '1'}
+3	3		401							{1: '1', 2: '5016'}
+4	4		401							{1: '2', 2: '5303'}
+5	5		301			DialogEnable				{3: 'The transport aircraft takes off.'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory718.jpg'}
+7	7		306							
+8	8		402							{1: '5303'}
+9	9		401							{1: '2', 2: '648'}
+10	10		301							{3: 'When Selena arrives in Babylonia, Allen immediately sends her to the Science Council for a series of meticulous examinations.'}
+11	11		401							{1: '2', 2: '5159'}
+12	12		301							{3: 'Asimov hurries over as soon as the examination report arrives on his terminal.'}
+13	13		402							{1: '5159'}
+14	14		201							{1: '1', 2: '500004'}
+15	15		301							{1: '1', 2: 'Asimov', 3: 'Her current frame is barely holding together. Only the core and the M.I.N.D. are still hers.', 4: '1', 18: '100008788'}
+16	16		301							"{2: 'Asimov', 3: ""The rest... isn't really a Construct anymore. It's more like something built out of Red Tide matter."", 4: '1', 18: '100008789'}"
+17	17		302							{2: 'A Red Tide creation?', 3: '18'}
+18	18		301							"{2: 'Asimov', 3: ""That's right. With the tech we've got in Babylonia, we can't repair it, and we probably shouldn't try."", 4: '1', 18: '100008790'}"
+19	19		301							"{2: 'Asimov', 3: ""Her case isn't like Camu or Noan."", 4: '1', 18: '100008791'}"
+20	20		301							"{2: 'Asimov', 3: ""Camu's frame could resist the virus, but it deteriorates fast and needs to have his consciousness regularly transferred back into Kamui's frame. Noan's frame was originally built as a Construct—it just got modified by an Ascendant..."", 4: '1', 18: '100008792'}"
+21	21		204							{1: '1', 2: '8'}
+22	22		401							{1: '2', 2: '5307'}
+23	23		301							{3: 'Asimov sinks into deep thought as he flips through the reports.'}
+24	24		302							{2: '...', 3: '25'}
+25	25		302							{2: 'Is there a solution?', 3: '26'}
+26	26		301							{2: 'Asimov', 3: '...It might be doable. But the risks are huge.', 4: '1', 18: '100008793'}
+27	27		204							{1: '1'}
+28	28		301							"{2: 'Asimov', 3: ""Selena's M.I.N.D. is still fundamentally a Construct's. We might be able to move the Construct parts from her old frame to the new one without damaging her M.I.N.D."", 4: '1', 18: '100008794'}"
+29	29		302							{2: 'A Capriccio frame?', 3: '30', 4: 'But a Capriccio frame...', 5: '30'}
+30	30		301							"{2: 'Asimov', 3: ""The Capriccio frame was built for Constructs. To make it work with a Transcendant's M.I.N.D., we'd have to modify it first."", 4: '1', 18: '100008795'}"
+31	31		301							{2: 'Asimov', 3: 'But this has never been done before, so yeah, huge risk.', 4: '1', 18: '100008796'}
+32	32		203							{1: '1', 2: '0.25', 3: '400'}
+33	33		201							{1: '2', 2: '500111', 3: '4', 4: '-400'}
+34	34		301							"{1: '1', 2: 'Allen', 3: 'If we want to keep using her current ""frame""...', 4: '2', 18: '100008797'}"
+35	35		301							{2: 'Asimov', 3: 'This frame is already on the verge of collapse, kept running only by patchwork parts made from Red Tide.', 4: '1', 18: '100008798'}
+36	36		301							"{2: 'Asimov', 3: ""If she remains outside the Central Purification Filter, this frame will do for now. But the moment she enters an area with low Punishing concentration, she'll begin to weaken... just like now."", 4: '1', 18: '100008799'}"
+37	37		202							{1: '1', 2: '2'}
+38	38		401							{1: '2', 2: '5307'}
+39	39		301							{3: 'Gesturing for the two to look at the isolated Selena, Asimov furrows his brow and continues reading the reports.'}
+40	40		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+41	41		509							{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg', 2: '1'}
+42	42		201							{1: '11', 2: '500291', 3: '8', 4: '-600', 7: '1'}
+43	43		301							"{1: '1', 3: ""Inside the isolation room, Selena's face is deathly pale, her arms hanging at her sides.""}"
+44	44		202							{1: '11', 6: '1'}
+45	45		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+46	46		510							{1: '1'}
+47	47		201							{1: '2', 2: '500111', 3: '4'}
+48	48		301							{1: '1', 2: 'Allen', 3: '...', 4: '2'}
+49	49		301							"{2: 'Allen', 3: ""But she's been wandering like this for far too long."", 4: '2', 18: '100008801'}"
+50	50		302							{2: '...', 3: '51'}
+51	51		301							{3: 'Clearly, no one wants to accept this.'}
+52	52		203							{1: '2', 2: '0.25', 3: '-400'}
+53	53		201							{1: '1', 2: '500004', 4: '400'}
+54	54		301							"{1: '1', 2: 'Asimov', 3: ""If we're going to transfer her into a new frame, it has to be soon. Preparing it will take time, and she doesn't have much left."", 4: '1', 18: '100008802'}"
+55	55		301							{2: 'Allen', 3: '...If the risk is too high, maybe we could just...', 4: '2', 18: '100008803'}
+56	56		301							"{3: ""Allen's brows furrow deeply as he struggles to make a decision.""}"
+57	57		302							"{2: ""Let's ask Selena what she thinks."", 3: '58', 4: ""We can't make this decision for Selena."", 5: '58'}"
+58	58		301							{2: 'Allen', 3: '...', 4: '2'}
+59	59		401							{1: '2', 2: '4044'}
+60	60		203							{1: '2', 2: '0.25', 3: '-350'}
+61	61		401							{1: '2', 2: '4884'}
+62	62		301							{3: 'He steps back, and lets you activate the communication to the isolation room.'}
+63	63		202							{1: '1', 2: '2', 6: '1'}
+64	64		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+65	65		509							{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg', 2: '1'}
+66	66		201							{1: '11', 2: '500291', 3: '1', 4: '-600'}
+67	67		301							{1: '1', 2: 'Selena', 3: '...【kuroname】?', 4: '11', 18: '100008804'}
+68	68		301							{3: 'Despite feeling weak, Selena still manages to smile.'}
+69	69		301							{2: 'Selena', 3: 'Is something wrong with the frame?', 4: '11', 18: '100008805'}
+70	70		301							"{3: ""She notices Allen's troubled expression and asks gently.""}"
+71	71		201							{1: '1', 2: '500004', 4: '600'}
+72	72		301							{1: '1', 2: 'Asimov', 3: 'You know the situation as well as I do. Aside from the M.I.N.D. and core, your current frame is entirely made of Red Tide.', 4: '1', 18: '100008806'}
+73	73		301							"{2: 'Asimov', 3: ""There's only one viable plan: retrofit the Capriccio frame left in Babylonia to be compatible with you, and transfer your core and M.I.N.D. into it."", 4: '1', 18: '100008807'}"
+74	74		204							{1: '11', 2: '3'}
+75	75		301							{2: 'Selena', 3: 'And that frame... it can really support someone like me—a Transcendant?', 4: '11', 18: '100008808'}
+76	76		301							"{3: 'After returning to Babylonia, she noticed people from the Science Council refer to beings like her as ""Constructs"".'}"
+77	77		204							{1: '1', 2: '8'}
+78	78		301							"{2: 'Asimov', 3: ""The risk is during the transfer itself. There's no precedent, so I can't guarantee it'll work."", 4: '1', 18: '100008809'}"
+79	79		301							"{2: 'Asimov', 3: ""But if it does, based on the Science Council's latest research on Transcendants, the frame should function normally."", 4: '1', 18: '100008810'}"
+80	80		301							"{2: 'Asimov', 3: ""Once the transfer is complete, you'll be able to operate freely in Dead Zones as long as you maintain and replace worn parts."", 4: '1', 18: '100008811'}"
+81	81		204							{1: '11', 2: '8'}
+82	82		301							{2: 'Selena', 3: '...', 4: '11'}
+83	83		204							{1: '1'}
+84	84		301							"{2: 'Asimov', 3: ""Of course, you can choose not to swap frames. It's safer short-term, but you won't be able to stay in the Central Purification Filter conservation area or Babylonia for long. And you could end up... Corrupted."", 4: '1', 18: '100008812'}"
+85	85		204							{1: '1', 2: '8'}
+86	86		301							"{2: 'Asimov', 3: ""You have about an hour and twenty minutes left. You won't last much longer in this state—"", 4: '1', 18: '100008813'}"
+87	87		204							{1: '11', 2: '5'}
+88	88		301							"{2: 'Selena', 3: ""I'll proceed with the transfer."", 4: '11', 18: '100008814'}"
+89	89		202							{1: '1', 6: '1'}
+90	90		201							{1: '1', 2: '500111', 3: '4', 4: '600'}
+91	91		301							{1: '1', 2: 'Allen', 3: 'But if it fails, you might—', 4: '1', 18: '100008815'}
+92	92		301							{3: 'Allen anxiously interrupts their conversation.'}
+93	93		202							{1: '1'}
+94	94		301							"{3: ""Either out of respect for Mr. Flora or the duty to protect members of the WGAA, he doesn't want Selena to take such risks.""}"
+95	95		204							{1: '11', 2: '8'}
+96	96		301							{2: 'Selena', 3: 'Chairman, I understand. But still...', 4: '11', 18: '100008816'}
+97	97		204							{1: '11', 2: '4'}
+98	98		301							"{2: 'Selena', 3: ""I want to go through with this. If there's something I can still do... then I want to do it."", 4: '11', 18: '100008817'}"
+99	99		204							{1: '11', 2: '3'}
+100	100		301							"{2: 'Selena', 3: ""I don't want to live in fear, waiting to become a Corrupted. And I don't want to be a burden to everyone anymore."", 4: '11', 18: '100008818'}"
+101	101		204							{1: '11', 2: '1'}
+102	102		301							"{2: 'Selena', 3: ""I've recovered my memories. I've seen what came before, and what might lie ahead."", 4: '11', 18: '100008819'}"
+103	103		301							{2: 'Selena', 3: 'I want to live... Not just exist, but truly live.', 4: '11', 18: '100008820'}
+104	104		202							{1: '11'}
+105	105		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+106	106		510							{1: '1'}
+107	107		301							{3: 'One who has seen the light can no longer bear darkness.'}
+108	108		301							"{3: ""She didn't answer out of optimistic fantasy or naive compliance, but because she had endured storms and hardships, and had traversed darkness and deep chasms.""}"
+109	109		301							{3: 'Her resolve deserves nothing less than respect.'}
+110	110		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+111	111		509							{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg', 2: '1'}
+112	112		201							{1: '11', 2: '500291', 3: '5', 4: '-600'}
+113	113		301							"{1: '1', 2: 'Selena', 3: ""So no, I don't need any more time to decide..."", 4: '11', 18: '100008821'}"
+114	114		301							{2: 'Selena', 3: 'Mr. Asimov, please begin the transfer protocol. Thank you.', 4: '11', 18: '100008822'}
+115	115		401							{1: '2', 2: '4202'}
+116	116		301							"{3: ""Surprised by Selena's decisiveness, Asimov nods and enters an adjacent room to prepare for the Capriccio frame modification. Allen pauses before heading back to the WGAA to apply for joint development of Selena's new frame.""}"
+117	117		204							{1: '11', 2: '1'}
+118	118		301							{2: 'Selena', 3: '【kuroname】...', 4: '11', 18: '100008823'}
+119	119		301							{3: 'In the isolation room, Selena struggles to hold onto the terminal as she calls out softly.'}
+120	120		302							{2: 'Yes.', 3: '121', 4: 'Is there anything wrong?', 5: '121'}
+121	121		301							{2: 'Selena', 3: 'Do you remember what you once told me?', 4: '11', 18: '100008824'}
+122	122		302							{2: 'Are you referring to those letters?', 3: '123'}
+123	123		301							{2: 'Selena', 3: 'Yeah.', 4: '11', 18: '100008825'}
+124	124		301							{2: 'Selena', 3: 'Those words... they became the anchor that kept me from getting lost in the maze of blank memory.', 4: '11', 18: '100008826'}
+125	125		301							{3: 'She clears her throat, her iris-purple eyes gazing tenderly at the human standing beyond the window.'}
+126	126		204							{1: '11'}
+127	127		301							"{2: 'Selena', 3: '""—Iris.""', 4: '11', 18: '100008827'}"
+128	128		301							{2: 'Selena', 3: 'Art is the gentlest way of safeguarding the human soul.', 4: '11', 18: '100008828'}
+129	129		301							{2: 'Selena', 3: 'You might doubt yourself now,', 4: '11', 18: '100008829'}
+130	130		204							{1: '11', 2: '3'}
+131	131		301							"{2: 'Selena', 3: ""but don't turn your back on everything."", 4: '11', 18: '100008830'}"
+132	132		301							{2: 'Selena', 3: 'The fact that this pains you...', 4: '11', 18: '100008831'}
+133	133		301							{2: 'Selena', 3: 'It has already made you all the more radiant.', 4: '11', 18: '100008832'}
+134	134		301							{2: 'Selena', 3: 'We will meet someday.', 4: '11', 18: '100008833'}
+135	135		302							"{2: 'I remember this letter.', 3: '136', 4: ""I don't remember this part..."", 5: '136'}"
+136	136		301							{2: 'Selena', 3: 'That was the last letter I ever received from you before I chose to become a Construct.', 4: '11', 18: '100008834'}
+137	137		204							{1: '11', 2: '1'}
+138	138		301							{2: 'Selena', 3: 'Even though it arrived long after that, your words still brought warmth to my soul.', 4: '11', 18: '100008835'}
+139	139		301							{3: 'A gentle smile curves the corners of her lips.'}
+140	140		204							{1: '11'}
+141	141		301							"{2: 'Selena', 3: ""I've thought about it so many times... about what I should say when we meet again."", 4: '11', 18: '100008836'}"
+142	142		301							{2: 'Selena', 3: 'But none of those rehearsed greetings were ever used. That last meeting... was too rushed. I was a mess.', 4: '11', 18: '100008837'}
+143	143		302							{2: 'Not at all.', 3: '144', 4: 'You were also beautiful then.', 5: '144'}
+144	144		204							{1: '11', 2: '1'}
+145	145		301							"{2: 'Selena', 3: ""It's fine. We have another chance now."", 4: '11', 18: '100008838'}"
+146	146		204							{1: '11', 2: '8'}
+147	147		301							{2: 'Selena', 3: 'When I wake up in the new frame, I want to show you my best self...', 4: '11', 18: '100008839'}
+148	148		204							{1: '11'}
+149	149		301							{2: 'Selena', 3: 'Will you let that be our true first meeting?', 4: '11', 18: '100008840'}
+150	150		301							"{2: 'Selena', 3: ""Because... there's so much I want to tell you when that moment comes."", 4: '11', 18: '100008841'}"
+151	151		302							{2: 'Sure you can.', 3: '154', 4: 'Why so formal?', 5: '152'}
+152	152		301							"{2: 'Selena', 3: ""I've been looking forward to it for so long."", 4: '11', 18: '100008842'}"
+153	153		302							{2: 'Sure.', 3: '154'}
+154	154		204							{1: '11', 2: '1'}
+155	155		301							{2: 'Selena', 3: 'Thank goodness.', 4: '11', 18: '100008843'}
+156	156		301							{3: 'A bright smile lights up her purple eyes.'}
+157	157		401							{1: '2', 2: '2626'}
+158	158		201							{1: '1', 2: '500059', 4: '600'}
+159	159		301							{1: '1', 2: 'Science Council Staff', 3: 'Miss Selena? We need to take some scans of your current frame. Can you come to the data room now?', 4: '1', 18: '100008844'}
+160	160		202							{1: '1'}
+161	161		301							{3: 'As you talk, a staff member gently knocks on the door.'}
+162	162		301							"{2: 'Selena', 3: ""Ah, sorry, of course. I'm on my way."", 4: '11', 18: '100008845'}"
+163	163		301							"{2: 'Selena', 3: ""【kuroname】... I'll see you soon."", 4: '11', 18: '100008846'}"
+164	164		401							{1: '2', 2: '4884'}
+165	165		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+166	166		510							{1: '1'}
+167	167		203							{1: '11', 2: '0.25', 3: '-800'}
+168	168		202							{1: '11'}
+169	169		401							{1: '2', 2: '743'}
+170	170		301							{3: 'Her last words fade to a whisper as she glances once more at the human. You pause before following the staff member out.'}
+171	171		302				AniZhuanchangBegin			{2: 'See you later... Selena.', 3: '172'}
+172	172		502						400.0	{1: 'DialogDisable'}
+173	173		401							{1: '1', 2: '36'}
+174	174		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory642.jpg'}
+175	175		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 4: '4'}
+176	176		401							{1: '1', 2: '6154'}
+177	177		109							{1: '1', 2: '<size=50>The sunlight in Babylonia is as bright as ever.</size>', 3: '-310', 6: '1', 7: '1', 8: '0.5', 9: '3'}
+178	178		301							{3: 'The sunlight in Babylonia is as bright as ever.'}
+179	179		109							"{1: '1', 2: ""<size=50>Since this is a special case, \\nSelena has been placed in the Science Council's isolated testing area for frame adaptation,\\nno visitors are permitted during this process.</size>"", 3: '-310', 6: '1', 7: '1', 8: '0.5', 9: '3'}"
+180	180		301							"{3: ""Since this is a special case, Selena has been placed in the Science Council's isolated testing area for frame adaptation, no visitors are permitted during this process.""}"
+181	181		109							{1: '1', 2: '<size=50>While you think of ways to bypass protocol to see Selena,\\nyou open your personal inbox,</size>', 3: '-310', 6: '1', 7: '1', 8: '0.5', 9: '3'}
+182	182		109	1						{1: '1', 2: '<size=50>A letter sealed with a familiar wax stamp and carrying a faint scent of iris\\nlies quietly in your mailbox.</size>', 3: '-310', 6: '1', 7: '1', 8: '0.5', 9: '3'}
+183	183		301				AniZhuanchangBegin			{3: 'While you think of ways to bypass protocol to see Selena, you open your personal inbox. A letter sealed with a familiar wax stamp and carrying a faint scent of iris lies quietly in your mailbox.'}
+184	184		110							
+185	185		101							{4: '4', 5: '1'}
+186	186		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory968.png'}
+187	187		401							{1: '2', 2: '5307'}
+188	188		304			AniZhuanchangEnd				{1: '<i>【kuroname】,<i>', 2: '0066CC', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 7: '1'}
+189	189		304							"{1: ""<i>Picking up my pen to write to you this time feels completely different. I never thought I'd have another chance to write to you from Babylonia.<i>"", 2: '0066CC', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png'}"
+190	190		304							"{1: ""<i>Although I've saved your terminal number, I still wanted to tell you my thoughts this way. Words are the most beautiful vessels, don't you think?<i>"", 2: '0066CC', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png'}"
+191	191		304							"{1: '<i>Chairman Allen\'s joint development proposal has been approved. He has invited Ms. Leonie, who participated in the ""Whale Song"" data collection, to co-develop this special frame.<i>', 2: '0066CC', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png'}"
+192	192		304							"{1: '<i>""Whale Song""—what a beautiful metaphor...<i>', 2: '0066CC', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png'}"
+193	193		304							{1: '<i>Mr. Asimov says that to minimize any potential risks, they will build another Capriccio frame,<i>', 2: '0066CC', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png'}
+194	194		304							{1: '<i>so that if any issues arise during development, they can immediately activate the backup frame...<i>', 2: '0066CC', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png'}
+195	195		304							{1: '<i>Everything will be fine.<i>', 2: '0066CC', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png'}
+196	196		304							{1: '<i>Looking forward to seeing you.<i>', 2: '0066CC', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png'}
+197	197		304				AniZhuanchangBegin			{1: '<i>Yours, Iris<i>', 2: '0066CC', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 8: '1', 9: '1', 10: '1'}
+198	198		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory642.jpg'}
+199	199		301			DialogEnable				{3: 'Feelings can be conveyed through written words even if you cannot meet in person.'}
+200	200		301							{3: 'Your mind drifts back to long ago, when you were opening letters by the window in F.O.S. A faint woody fragrance mingles with the dazzling sunlight...'}
+201	201		302							{2: '(Pick up a pen to reply)', 3: '202'}
+202	202		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1138.jpg'}
+203	203		401							{1: '2', 2: '4902'}
+204	204		301			AniZhuanchangEnd				"{3: ""From the desk, you select a carefully protected fountain pen. It's a gift from Selena. You pause in thought for a moment.""}"
+205	205		301							{3: 'Gentle light spills onto the soft paper, bathing each word that flows from your pen in a warm, tender glow.'}
+206	206		502						400.0	{1: 'DialogDisable'}
+207	207		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 3: '0', 4: '1', 5: '1'}
+208	208		205							{1: '999'}
+209	209		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory968.png'}
+210	210		401							{1: '2', 2: '910'}
+211	211		304							{1: 'Everything will be fine.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png'}
+212	212		304							{1: 'Looking forward to seeing you.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png'}
+213	213		304		1		AniZhuanchangBegin			{1: 'Yours, 【kuroname】', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 10: '1'}

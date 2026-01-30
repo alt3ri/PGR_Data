@@ -1,0 +1,16 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory281.png'}
+2	2		401							{1: '1', 2: '203'}
+3	3		301			DialogEnable				{3: 'A vibration stronger than before reaches you. A shadow now looms above your head.'}
+4	4		302							"{2: ""What's going on?!"", 3: '5'}"
+5	5		201							{1: '1', 2: '500166'}
+6	6		301							{1: '1', 2: 'Lucia', 3: 'Commandant, up there!', 4: '1'}
+7	7		202							{1: '1', 6: '1'}
+8	8		301				DialogDisable			{3: 'The Polyphage raises its right hand, slamming it down fast to where you are.'}
+9	9		305							{1: '10', 2: '15'}
+10	10		301			DialogEnable				{2: 'Polyphage', 3: 'Ahhhhhhhh!'}
+11	11		301							{3: 'The Polyphage misses, its hand now paralyzed from overloading.'}
+12	12		201							{1: '1', 2: '500166'}
+13	13		301							{1: '1', 2: 'Lucia', 3: 'Now, Commandant!', 4: '1'}
+14	14		302		1		AniZhuanchangBegin			"{2: ""Let's go all the way to the top!""}"
+15	15		502		1					{1: 'AniZhuanchangBegin'}

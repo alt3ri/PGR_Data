@@ -1,0 +1,78 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '211'}
+3	3		301			DialogEnable				{3: 'Darkness. Never-ending darkness.'}
+4	4		301							{3: 'Luna can hear her sister calling.'}
+5	5		301							{3: 'She fears the dark. The loneliness is suffocating.'}
+6	6		301							"{3: ""Why... Why can't I wake up...?""}"
+7	999		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '3'}
+8	7		301							{3: 'A reddish glow flickers in the distance. It is the only thing visible for Luna in the darkness.'}
+9	8		301							{3: 'So... dark...'}
+10	9		301							{3: 'She has never been struck with such pain before in her life.'}
+11	10		301							{3: 'Becoming an Ascendant would mean that she has nothing to fear anymore—or so she once thought.'}
+12	11		301							{3: 'But just a pitiful dream, a piece of memory buried in her mind, has broken her.'}
+13	12		301				AniZhuanchangBegin			{3: 'Sister... anyone... please... She extends her hand to grasp at something.'}
+14	998		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory288.png'}
+15	13		301			AniZhuanchangEnd				{3: 'That red flickering light shines like a lighthouse at sea. She reaches for it like a drowning soul.'}
+16	996		502							{1: 'RImgBg1BlowUp'}
+17	997		301							{3: 'Her minds tells her to not reach for it, but the painful memories in the past is etched into her very instincts... And so, she reaches for the red glow.'}
+18	14		301							{3: 'Something terrible, something painful, must have happened there. That glow must not be light, but a horrible truth.'}
+19	15		301							{3: 'Like a moth drawn to flame, Luna reaches for the light uncontrollably.'}
+20	16		301							{3: 'The memories are a shackle upon her... She is repeating the past, things that she cannot change.'}
+21	17		301							{3: 'Like replaying a video, Luna can only be abandoned, betrayed, and forced on a path of no return, a path built upon innumerable souls—over and over.'}
+22	18		301				AniZhuanchangBegin			{3: 'The red light is getting closer.'}
+23	995		505							{1: 'RImgBg1BlowUp', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+24	994		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+25	19		301			AniZhuanchangEnd				{3: 'No... No...! Luna closes her eyes, afraid of what is about to come.'}
+26	20		301				AniZhuanchangBegin			{3: 'But when she reaches her hand out, she comes into contact with something soft instead.'}
+27	21		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory288.png'}
+28	23		301			AniZhuanchangEnd				{3: '...'}
+29	24		302							{2: 'Luna!', 3: '25'}
+30	25		201							{1: '1', 2: '500254', 3: '19'}
+31	22		401							{1: '1', 2: '208'}
+32	26		301							{1: '1', 2: 'Luna', 3: '...', 4: '1'}
+33	27		301							{3: 'The Luna before you opens her eyes, face full of disbelief. She seems to look even younger than before.'}
+34	28		302							{2: 'Are you okay?', 3: '992'}
+35	992		204							{1: '1', 2: '17'}
+36	29		301							{2: 'Luna', 3: '...', 4: '1'}
+37	30		301							{2: 'Luna', 3: 'The light...', 4: '1'}
+38	31		302							{2: 'Right, this place is too dark here.', 3: '32'}
+39	32		302							"{2: ""Good thing we've got this night light."", 3: '991'}"
+40	991		204							{1: '1', 2: '16'}
+41	33		301							{2: 'Luna', 3: 'Why... are you...', 4: '1'}
+42	34		302							"{2: ""It's not that bright, but pretty handy."", 3: '35', 4: ""It's small, but bright for its size."", 5: '35'}"
+43	35		301							{3: 'You pick the small Luna up. She is so light that you almost feel like you are holding a balloon.'}
+44	36		302							"{2: ""We're getting deeper."", 3: '990'}"
+45	990		204							{1: '1'}
+46	37		301							{2: 'Luna', 3: '...', 4: '1'}
+47	38		302							"{2: ""If I'm right about this..."", 3: '39'}"
+48	39		301							{2: 'Luna', 3: 'Enough.', 4: '1'}
+49	993		401							{1: '1', 2: '202'}
+50	40		302							"{2: ""...What's the matter?"", 3: '41'}"
+51	41		301							{2: 'Luna', 3: 'You speak too much.', 4: '1'}
+52	42		301							{3: 'Luna silences you. You only hear the sound of your breaths as you walk.'}
+53	43		302							{2: '...', 3: '44'}
+54	44		301				AniZhuanchangBegin			{3: 'Under the silence, you two eventually make it out.'}
+55	45		202							{1: '1', 6: '1'}
+56	970		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory291.png'}
+57	46		301			AniZhuanchangEnd				{3: 'The moon is just rising, but already bright enough to light up the entire place. Turns out, you have been in yet another landfill the whole time. The blinding darkness just then feels almost like a dream now.'}
+58	47		302							{2: 'Now?', 3: '48'}
+59	48		201							{1: '1', 2: '500254', 3: '4'}
+60	49		301							"{1: '1', 2: 'Luna', 3: 'What ""now""?', 4: '1'}"
+61	50		302							{2: 'Do you feel better now?', 3: '51'}
+62	51		301							"{2: 'Luna', 3: ""...Stop it. Don't think you know me just because you went through my memories."", 4: '1'}"
+63	52		301							{2: 'Luna', 3: 'We are different—where we stand and everything.', 4: '1'}
+64	53		301							{2: 'Luna', 3: '...', 4: '1'}
+65	54		302							{2: '...I know.', 3: '55'}
+66	55		302							"{2: ""But you're not as cruel as you make out to be."", 3: '56'}"
+67	56		301							{2: 'Luna', 3: '...?', 4: '1'}
+68	57		302							"{2: ""I've been talking to the real you this whole time."", 3: '980', 4: 'Everything here is a part of you.', 5: '980'}"
+69	980		204							{1: '1'}
+70	58		301							{2: 'Luna', 3: '...', 4: '1'}
+71	59		301							"{2: 'Luna', 3: ""I don't need you to pity me."", 4: '1'}"
+72	61		301							{3: 'She stares at you with an expression you have not seen before—one of a malformed pride, welded together from thorns and blood.', 4: '1'}
+73	62		301							{3: 'And these thorns... sprout out and encase her. At the same time, the world is torn apart as if by a tempest.', 4: '1'}
+74	63		301							{3: 'Under the moonlight, Luna perches in the eye of the storm. The rippling winds, her flitting white gown—they come together like mist, like the winter sky, like the traceless clouds, like a dove, dying, plummeting.', 4: '1'}
+75	64		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryShuju.prefab', 2: '2'}
+76	60		202							{1: '1'}
+77	65		301		1		AniZhuanchangBegin			{3: 'And it all falls dark.'}

@@ -1,0 +1,129 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory102.png'}
+2	2		401							{1: '1', 2: '5'}
+3	3		201							{1: '1', 2: '500492'}
+4	4		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Where to next, Commandant?', 4: '1'}
+5	5		302							"{2: 'Want to go somewhere together, Liv?', 3: '6', 4: ""I'm not sure."", 5: '500'}"
+6	6		204							{1: '1', 2: '1'}
+7	7	9	301							"{2: 'Liv', 3: ""Okay. We haven't done anything together in a while, Commandant."", 4: '1'}"
+8	500		204							{1: '1', 2: '1'}
+9	8		301							{2: 'Liv', 3: 'Want to go walk around?', 4: '1'}
+10	9		302							{2: 'Sure.', 3: '10'}
+11	10		301							"{3: ""As soon as you leave, you see a small figure curled up in the chair behind you—the girl who was listening to Liv's story earlier.""}"
+12	11		301							"{3: ""She fell asleep on the chair. Her face has a red mark from the arm of the chair, but she's still sound asleep.""}"
+13	12		302							"{2: ""Where's her family?"", 3: '13'}"
+14	13		204							{1: '1', 2: '3'}
+15	14		301							{2: 'Liv', 3: 'Um... She told me she was all by herself when we first met. No friends or family.', 4: '1'}
+16	15		302							{2: 'Wake her up.', 3: '16', 4: 'How about we wake her up, Liv?', 5: '24'}
+17	16		302							"{2: ""It's too cold to sleep here."", 3: '17'}"
+18	17		204							{1: '1', 2: '1'}
+19	18		301							"{3: ""You gently tap the arm of the chair she's resting her head on. Awoken by the strange sound, she yawns softly and stretches like a tired kitten.""}"
+20	19		301							{3: 'She opens her eyes and, a few moments later, looks at the strangers standing before her.'}
+21	20		203							{1: '1', 2: '0.25', 3: '400'}
+22	21		201							{1: '2', 2: '500260', 4: '-400'}
+23	22		301							{1: '1', 2: 'Girl', 3: 'Who...?', 4: '2'}
+24	23	32	301							"{2: 'Girl', 3: ""...Huh? You're that dancing robot... And the robot telling stories!"", 4: '2'}"
+25	24		204							{1: '1', 2: '1'}
+26	25		301							"{3: ""Liv kneels down and gently strokes the girl's hair.""}"
+27	26		301							"{2: 'Liv', 3: ""Time to wake up. You'll catch a cold if you keep sleeping on the chair."", 4: '1'}"
+28	27		301							"{3: 'Resting her head on the arm of the chair, the tired ""kitten"" hears the strange sound, yawns softly, and stretches.'}"
+29	28		203							{1: '1', 2: '0.25', 3: '400'}
+30	29		201							{1: '2', 2: '500260', 4: '-400'}
+31	30		301							"{2: 'Girl', 3: ""Oh! You're the robot telling stories!"", 4: '2'}"
+32	31		301							"{2: 'Girl', 3: ""Huh... Who's that? Oh, the dancing robot..."", 4: '2'}"
+33	32		302							{2: 'Sure.', 3: '33'}
+34	33		302							{2: 'Why are you here all by yourself?', 3: '34'}
+35	34		301							"{2: 'Girl', 3: ""I'm waiting for my mommy and daddy."", 4: '2'}"
+36	35		204							{1: '1', 2: '3'}
+37	36		301							"{2: 'Girl', 3: ""But I've waited so long... And they're still not back. They don't want me anymore. Do they?"", 4: '2'}"
+38	37		301							{3: 'Hearing this, Liv looks at you gloomily, as if to confirm you are thinking what she is.'}
+39	38		302							{2: '(Nod to Liv)', 3: '39'}
+40	39		204							{1: '1'}
+41	40		301							{3: 'Whether or not they know the answer to this question, most of the children left in the conservation area had lost their parents...'}
+42	41		301							"{3: ""Unfortunately, this child doesn't seem to be the exception.""}"
+43	42		301							{3: 'But who can bring themselves to shatter her hope?'}
+44	43		302							"{2: ""What's your name?"", 3: '44'}"
+45	44		301							"{2: 'Ellie', 3: ""My name's Ellie."", 4: '2'}"
+46	45		204							{1: '1', 2: '1'}
+47	46		301							{2: 'Liv', 3: 'Want to go play with friends?', 4: '1'}
+48	47		301							{2: 'Ellie', 3: '...', 4: '2'}
+49	48		301							{3: 'The girl hesitates a moment and looks at the crowd off in the distance.'}
+50	49		301							"{2: 'Ellie', 3: ""I haven't made any friends here yet. Mommy and Daddy aren't back either..."", 4: '2'}"
+51	50		302							{2: 'Want to come and play with us?', 3: '51'}
+52	51		301							{2: 'Ellie', 3: 'Is that okay?', 4: '2'}
+53	52		301							{3: 'Her dark eyes suddenly burst into light. Seems like she had been waiting for someone to invite her for quite some time.'}
+54	53		301							"{2: 'Liv', 3: ""Of course! We're going to try out some of the activities here."", 4: '1'}"
+55	54		301							{2: 'Ellie', 3: 'The ones for collecting Star Tickets?', 4: '2'}
+56	55		302							{2: 'Got that right.', 3: '56'}
+57	56		301							{2: 'Ellie', 3: 'Oh, I know those. You just need to join the events, and you can ask the old lady for Star Tickets.', 4: '2'}
+58	57		302							"{2: ""Let's go together!"", 3: '58'}"
+59	58		301							{2: 'Ellie', 3: 'Okay!', 4: '2'}
+60	59		301							{2: 'Liv', 3: 'Which one do you wanna do first?', 4: '1'}
+61	60		302							{2: 'Hmm...', 3: '61'}
+62	61		301							{2: 'Ellie', 3: 'Can we try that out?', 4: '2'}
+63	62		301							{3: 'She points to an area beside the convention hall.'}
+64	63		302							"{2: '""Four-legged Race""?', 3: '64'}"
+65	64		301							{2: 'Liv', 3: 'The one where three people tie their legs together and race?', 4: '1'}
+66	65		302							"{2: ""Won't that be hard for Ellie to do with us?"", 3: '66'}"
+67	66		301							"{2: 'Liv', 3: ""She's not as tall as us, but we can run at her speed."", 4: '1'}"
+68	67		302				AniZhuanchangBegin			"{2: ""Then it's settled!""}"
+69	68		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+70	69		401							{1: '1', 2: '29'}
+71	70		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg'}
+72	71		301			DialogEnable				{3: 'You go with Ellie and Liv to the track.'}
+73	72		301							"{3: ""You adjust the bandage tying you and Ellie's legs together. Even though the bandage is wrapped around your foot, it comes up to Ellie's calf.""}"
+74	73		301							{3: 'As long as you and Liv hold her up in the air and let her feet move with your legs, you can avoid tripping over each other due to such a large difference in your strides.'}
+75	74		302							{2: 'Ready, Liv?', 3: '75'}
+76	75		201							{1: '1', 2: '500492'}
+77	76		301							{1: '1', 2: 'Liv', 3: 'Sure.', 4: '1'}
+78	77		301							{3: 'Supporting Ellie with your arms, you and Liv can run together one foot after another.'}
+79	78		302							"{2: 'We need to say ""left, right, left right"" together.'}"
+80	79		203							{1: '1', 2: '0.25', 3: '400'}
+81	80		201							{1: '2', 2: '500260', 4: '-400'}
+82	81		301							{1: '1', 2: 'Ellie', 3: 'Okie-dokie!', 4: '2'}
+83	82		301							{2: 'Staff Member', 3: 'Ready? Set. GO!'}
+84	83		401							{1: '2', 2: '657'}
+85	84		301							"{3: '""Left, right, left, right...""'}"
+86	85		301							"{3: '""Left, right, left, right...""'}"
+87	86		301							"{3: '""Left, right, left, right...""'}"
+88	501		502							{1: 'PanelActor1Shake'}
+89	502		502							{1: 'PanelActor2Shake'}
+90	87		301							{2: 'Ellie', 3: 'Ah!', 4: '2'}
+91	88		301							{3: 'Just as she crosses the finish line, Ellie falls with a scream and drags Liv down to the ground with her.'}
+92	89		302							{2: 'Ellie!', 3: '90', 4: 'Liv!', 5: '91'}
+93	90		301							{2: 'Ellie', 3: 'S-sorry.', 4: '2'}
+94	91		204							{1: '1', 2: '3'}
+95	92		301							{2: 'Liv', 3: 'Commandant?! Are you okay?', 4: '1'}
+96	93		302							"{2: ""I'm okay."", 3: '94'}"
+97	94		301							{2: 'Ellie', 3: 'S-sorry... I...', 4: '2'}
+98	95		302							{2: 'Why are you sorry?', 3: '96'}
+99	96		401							{1: '1', 2: '5'}
+100	97		204							{1: '1'}
+101	98		301							{2: 'Staff Member', 3: 'Congratulations, you three!'}
+102	99		301							{2: 'Staff Member', 3: 'Even though you fell right at the end, you still managed to cross the finish line. Also...'}
+103	100		301							{3: 'She looks at the time.'}
+104	101		301							{2: 'Staff Member', 3: 'You three are the fastest with a child in the race. Here is the prize for first place.'}
+105	102		302							{2: 'We got first place?', 3: '103'}
+106	103		301							"{2: 'Staff Member', 3: ""It's hard enough with three people as it is, let alone with a child.""}"
+107	104		301							{2: 'Liv', 3: '...', 4: '1'}
+108	105		301							{3: 'The staff member smiles and waves.'}
+109	106		301							{2: 'Staff Member', 3: 'Thank you for doing it with Ellie.'}
+110	107		302							{2: '...', 3: '108'}
+111	108		301							"{2: 'Staff Member', 3: ""Here's your reward. The first place prize is candy and chocolate.""}"
+112	109		301							{2: 'Ellie', 3: 'Chocolate...', 4: '2'}
+113	110		301							"{2: 'Liv', 3: ""You don't like chocolate, Ellie?"", 4: '1'}"
+114	111		301							{3: 'The little girl shakes her head like crazy.'}
+115	112		301							{2: 'Ellie', 3: 'I love chocolate! Especially winning it with you two. But...', 4: '2'}
+116	113		301							{3: 'She fixes her gaze on a straw bracelet, which is a commemoration award for anyone who failed to place in a game.'}
+117	114		302							{2: 'Do you like that more?', 3: '115'}
+118	115		301							{2: 'Ellie', 3: 'Yeah... Mommy made one for me. But it was ruined after all the rain...', 4: '2'}
+119	116		204							{1: '1', 2: '1'}
+120	117		301							"{2: 'Liv', 3: ""Okay, we'll go do another event and bring you the prize. How's that sound?"", 4: '1'}"
+121	118		301							"{2: 'Ellie', 3: ""Really? I don't wanna trouble you..."", 4: '2'}"
+122	119		301							{2: 'Liv', 3: 'Is that okay, Commandant?', 4: '1'}
+123	120		302							"{2: 'Well, we still need more Star Tickets.', 3: '121', 4: ""As long as it's with you, Liv."", 5: '122'}"
+124	121		301		1		AniZhuanchangBegin			"{2: 'Liv', 3: ""Alright, Ellie. Let's go."", 4: '1'}"
+125	122		204							{1: '1', 2: '6'}
+126	123		301							{2: 'Liv', 3: 'C-Commandant...', 4: '1'}
+127	124		301							{3: 'Liv lowers her head shyly.'}
+128	125		301		1		AniZhuanchangBegin			{2: 'Liv', 3: 'I... think so, too...', 4: '1'}

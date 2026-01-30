@@ -1,0 +1,355 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101				AniZhuanchangBegin			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		301			DialogDisable				{3: 'Chapter V Hero vs Dragon'}
+3	3		101							{1: 'Assets/Product/Texture/Image/UiTheatre/UiTheatreMainBg1.png', 4: '4'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '1'}
+5	5		109							{1: '1', 2: '<color=#ffffffff><size=40>Chapter ?</size></color>', 4: '50'}
+6	6		109			AniZhuanchangEnd			1000.0	{1: '2', 2: '<color=#ffffffff><size=50>— Hero vs Dragon —</size></color>', 4: '-50'}
+7	7		502							{1: 'AniZhuanchangBegin'}
+8	8		110							
+9	9		101							{1: 'Assets/Product/Texture/Image/UiTheatre/UiTheatreMainBg1.png', 4: '4', 5: '1'}
+10	10		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+11	11		501			AniZhuanchangEnd			2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieShizhong02.prefab', 2: '3'}
+12	12		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieShizhong02.prefab'}
+13	13		401							{1: '2', 2: '4134'}
+14	14		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '3'}
+15	15		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab'}
+16	16		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+17	17		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+18	18		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory708.jpg', 3: '0', 4: '1', 5: '0.25'}
+19	19		301			DialogEnable				{3: 'Noisy shouts find their way to your ears as you slowly regain your senses.'}
+20	20		401							{1: '1', 2: '278'}
+21	21		301							"{3: 'You have the distinct feeling that someone is about to shout, ""It\'s the apocalypse!"" at you again.'}"
+22	22		301							"{2: '??', 3: ""Commandant, wake up! It's the apocalypse!!""}"
+23	23		201							{1: '1', 2: '501070'}
+24	24		301							{1: '1', 3: 'The person who just shouted that slowly helps you sit up. As your senses return to your body, pain shoots through every inch of you. Looking down, you see bandages wrapped tightly around your body, layer upon layer.'}
+25	25		301							"{3: ""You're surprised to see the bad shape you're in...""}"
+26	26		302							{2: 'Ouch...', 3: '27', 4: 'Nanami.', 5: '33'}
+27	27		203							{1: '1', 2: '0.25', 5: '-100'}
+28	28		204							{1: '1', 2: '14'}
+29	29		301							{3: 'You let out a quiet sigh, and instantly the gray-haired girl moves to sit before you, her golden eyes flickering with worry and uncertainty.'}
+30	30		302							{2: 'Nanami.', 3: '31'}
+31	31		204							{1: '1'}
+32	32	37	301							"{3: ""While your senses haven't fully returned, the girl's name comes to your lips naturally, bringing a bright smile to her face.""}"
+33	33		301							{3: 'When her name parts your lips, you get a response from her almost immediately.'}
+34	34		201							{1: '1', 2: '501070', 3: '2'}
+35	35		301							{1: '1', 2: 'Nanami', 3: 'Here!', 4: '1'}
+36	36		301							{3: 'The girl blinks with a smile, her golden eyes reflecting you. Just calling her name is enough to fill her with such joy.'}
+37	37		302							"{2: ""What's going on here? Where are we headed?"", 3: '38'}"
+38	38		203							{1: '1', 2: '0.25'}
+39	39		204							{1: '1', 2: '8'}
+40	40		301							{2: 'Nanami', 3: 'Um... Nanami was going to go treasure hunting with you, Commandant!', 4: '1'}
+41	41		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory708.jpg'}
+42	42		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory708.jpg', 3: '1', 4: '0', 5: '0'}
+43	43		204							{1: '1', 2: '14'}
+44	44		301							{3: 'Nanami lowers her gaze, staring absent-mindedly at the bandages wrapped around your body.'}
+45	45		204							{1: '1', 2: '5'}
+46	46		301							"{2: 'Nanami', 3: ""But this world is facing its end! You and everyone else, Commandant... you're all suffering so much..."", 4: '1'}"
+47	47		202							{1: '1'}
+48	48		301				DialogDisable			{3: 'As she speaks, she lifts her head to look at the bustling crowd nearby.'}
+49	49		302							{2: '(Observe your surroundings)', 3: '50'}
+50	50		104						1000.0	{1: '0|0|-200', 2: '1'}
+51	51		104						1000.0	{1: '200|0|-200', 2: '1'}
+52	52		104						2000.0	{1: '-200|0|-200', 2: '2'}
+53	53		104						1000.0	{2: '1'}
+54	54		201							{1: '1', 2: '500454', 4: '600'}
+55	55		201							{1: '2', 2: '500280', 4: '-600'}
+56	56		201							{1: '3', 2: '500460', 4: '300'}
+57	57		201							{1: '4', 2: '500624', 4: '-300'}
+58	58		301			DialogEnable				{1: '1', 3: 'The two of you are inside a royal palace. All around, people in tattered clothes huddle together in anxious discussion.'}
+59	59		301							{3: 'Most of them crouch on the ground, their faces twisted with fear and uncertainty. Among the crowd are many like you, their agonized screams piercing the air from time to time.'}
+60	60		202							{1: '1', 2: '2', 3: '3', 4: '4'}
+61	61		302							"{2: ""They're all humans..."", 3: '62', 4: 'Just like me...', 5: '62'}"
+62	62		301							{3: 'These puzzling words escape your lips in a murmur. Despite the dire circumstances, an unstoppable joy wells up in you at the sight of fellow humans.'}
+63	63		301							{3: 'Even in this so-called apocalypse, humanity has managed to survive, having endured such long struggles and suffering...'}
+64	64		201							{1: '1', 2: '501070'}
+65	65		301							{1: '1', 2: 'Nanami', 3: 'While you were asleep, Commandant, I did a thorough investigation and... Ouch!', 4: '1'}
+66	66		202							{1: '1'}
+67	67		401							{1: '2', 2: '1503'}
+68	68		401							{1: '1', 2: '5039'}
+69	69		301			RImgBg1Shake				{3: 'A second later, the palace starts shaking violently, and terrified screams instantly erupt from the crowd.'}
+70	70		201							{1: '1', 2: '500294'}
+71	71		301							"{1: '1', 2: 'Scavenger 1', 3: ""It's here! They're here!!!"", 4: '1'}"
+72	72		201							{1: '1', 2: '500259'}
+73	73		301							{1: '1', 2: 'Child', 3: 'M-mom!!', 4: '1'}
+74	74		301							{3: 'Raging flames engulf the entire palace. Nanami raises her sword and shield and steps forward to face the threat.'}
+75	75		201							{1: '1', 2: '501070', 3: '5'}
+76	76		301							{1: '1', 2: 'Nanami', 3: 'Everyone, stay calm! Nanami and my commandant are going to defeat the bad guys together!', 4: '1'}
+77	77		201							{1: '1', 2: '500434'}
+78	78		301							{1: '1', 2: 'Scavenger 2', 3: 'Y-you... What have you done?!', 4: '1'}
+79	79		201							{1: '1', 2: '501070'}
+80	80		301							{1: '1', 2: 'Nanami', 3: 'Nanami is... Cardman Rider!', 4: '1'}
+81	81		302							"{2: 'And I am her commandant!', 3: '82', 4: ""I am Nanami's Commandant."", 5: '84'}"
+82	82		204							{1: '1', 2: '1'}
+83	83	86	301							{3: 'Nanami proudly brandishes the sword and shield in her hands.'}
+84	84		204							{1: '1', 2: '1'}
+85	85		301							{3: 'Nanami holds your hand and stands tall with pride.'}
+86	86		201							{1: '1', 2: '500294', 4: '400'}
+87	87		201							{1: '2', 2: '500434', 4: '-400'}
+88	88		301							{1: '1', 2: 'Scavenger 1', 3: '...Commandant 【kuroname】... the legendary hero!', 4: '1'}
+89	89		301							"{2: 'Scavenger 2', 3: ""But why are you standing with a knight?! We don't welcome the knights here!!"", 4: '2'}"
+90	90		202							{1: '1', 2: '2', 6: '1'}
+91	91		201							{1: '1', 2: '501070', 3: '5'}
+92	92		301							{1: '1', 2: 'Nanami', 3: '...Why... why are the knights not welcome here? What exactly happened?', 4: '1'}
+93	93		202							{1: '1'}
+94	94		301							{3: 'As everyone stands in confusion, a squad of people in knight attire suddenly bursts onto the scene, forming a circle around the refugees.'}
+95	95		201							{1: '1', 2: '500859', 4: '-100'}
+96	96		301							"{1: '1', 2: 'Knight 1', 3: ""They're not getting away! Get them all!"", 4: '1'}"
+97	97		301							{3: 'With heavy yet swift footsteps, the Riders launch their attack against the crowd.'}
+98	98		201							{1: '2', 2: '501070', 3: '15', 4: '500'}
+99	99		301							{1: '1', 2: 'Nanami', 3: 'All of you, stop!', 4: '2'}
+100	100		301							"{2: 'Nanami', 3: ""Take one more step at my commandant or anyone else here and you're gonna feel it from me!"", 4: '2'}"
+101	101		201							{1: '3', 2: '500465', 4: '-500'}
+102	102		301							"{1: '1', 2: 'Knight 2', 3: ""Ma'am, with the dragon running wild, now is the perfect time for us Riders to seize this kingdom!"", 4: '3'}"
+103	103		301							{3: 'Without backing down, Nanami thrusts her sword into her shield in burning anger and raises her shield-axe against the encircling Riders.'}
+104	104		301							"{2: 'Knight 1', 3: ""But you're all alone..."", 4: '1'}"
+105	105		203						250.0	{1: '2', 2: '0.25'}
+106	106		401							{1: '2', 2: '9342060'}
+107	107		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+108	108		203							{1: '1', 2: '0.3', 3: '-800'}
+109	109		203							{1: '3', 2: '0.3', 3: '-800'}
+110	110		202							{1: '1', 2: '3'}
+111	111		301							{1: '1', 2: 'Nanami', 3: 'Hmph!', 4: '2'}
+112	112		204							{1: '2', 2: '4'}
+113	113		301							"{2: 'Nanami', 3: ""Commandant, get everyone out through the back door! I'll hold them off here!"", 4: '2'}"
+114	114		202							{1: '2'}
+115	115		201							{1: '1', 2: '501071'}
+116	116		301							{1: '1', 3: 'The crowd erupts into chaos as they push and shove against one another in panic with danger drawing near.'}
+117	117		302							{2: '(Lead the evacuation)', 3: '129', 4: '(Stay with Nanami)', 5: '118'}
+118	118		301							{1: '1', 2: 'Nanami', 3: 'Stay back!', 4: '1'}
+119	119		202							{1: '1'}
+120	120		301							"{3: ""Nanami dashes in front to shield you from the knights' attacks, keeping you safely behind her. With the defense quickly draining her physically, however, her movements are becoming increasingly labored.""}"
+121	121		302							{2: '(Lead the evacuation)', 3: '129', 4: '(Stand your ground)', 5: '122'}
+122	122		401							{1: '2', 2: '2974'}
+123	123		301			RImgBg1Shake				"{1: '1', 3: ""The dragon's roar pierces the air as hellish flames rage ever stronger, threatening to engulf Nanami.""}"
+124	124		201							{1: '1', 2: '501085', 3: '4'}
+125	125		301							"{1: '1', 2: 'Nanami', 3: ""Commandant, Nanami doesn't like this kind of ending..."", 4: '1'}"
+126	126		301							"{2: 'Nanami', 3: ""Which is all the more reason we can't stop just yet!"", 4: '1'}"
+127	127		302							{2: '(Lead the evacuation)', 3: '129'}
+128	128		202							{1: '1'}
+129	129		301							"{3: ""You know that you'd only add to Nanami's burden by staying and that these panicked people need a hero to lead the way.""}"
+130	130		301				AniZhuanchangBegin			{3: 'With a heavy heart, you guide the survivors out of the palace in search of a safe escape route.'}
+131	131		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory530.jpg'}
+132	132		201							{1: '1', 2: '500437', 5: '200'}
+133	133		301			AniZhuanchangEnd				{1: '1', 3: 'Upon escaping the palace, you finally witness the true mastermind behind it all: the dragon itself.'}
+134	134		202							{1: '1'}
+135	135		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+136	136		301							"{3: ""The dragon rampages through the city walls that once protected its people. All around you, thick black smoke fills the air as torrents of flames pour from the beast's mouth.""}"
+137	137		201							{1: '1', 2: '500280'}
+138	138		301							{1: '1', 2: '??', 3: 'Mom! Mom!', 4: '1'}
+139	139		201							{1: '1', 2: '500485'}
+140	140		301							{1: '1', 2: 'Huge Mecha Rider', 3: 'Shut up, you little brat.', 4: '1'}
+141	141		301							{3: 'Through the flames emerges an imposing Mecha Rider who carries a little girl in his arms as he strides toward you, his back to the thick smoke.'}
+142	142		301							"{2: 'Huge Mecha Rider', 3: ""Take her. She's making too much noise."", 4: '1'}"
+143	143		301							{3: 'He bends down to hand over the little girl. Noticing his presence, the crowd cowers back.'}
+144	144		302							"{2: ""You're... a knight?"", 3: '145'}"
+145	145		301							"{2: 'Huge Mecha Rider', 3: ""Don't make such a fuss. This is Lady Nanami's wish."", 4: '1'}"
+146	146		301							"{3: ""The little girl hides fearfully behind you, yet can't help but take a peek at the knight.""}"
+147	147		302							"{2: ""Where's Nanami? How is she?"", 3: '148'}"
+148	148		301							{2: 'Huge Mecha Rider', 3: 'Lady Nanami is out of danger now.', 4: '1'}
+149	149		301							{2: 'Huge Mecha Rider', 3: 'She sent me to let you all know that you need to head as far north as you can since the lava is coming.', 4: '1'}
+150	150		302				AniZhuanchangBegin			{2: 'The lava?', 3: '151'}
+151	151		202							{1: '1', 6: '1'}
+152	152		401							{1: '1', 2: '36'}
+153	153		101						2000.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg1601_7.jpg'}
+154	154		401							{1: '1', 2: '359'}
+155	155		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+156	156		502							{1: 'AniZhuanchangEnd'}
+157	157		401							{1: '2', 2: '4919'}
+158	158		301			RImgBg1Shake				{3: 'From the high ground, you can see a crimson tide roaring in the distance as it surges forward and devours everything in its path.'}
+159	159		301							{3: 'Facing this sea of lava, you feel an inexplicable anger well up in you—as if it had taken something precious from you at some point.'}
+160	160		301				AniZhuanchangBegin			"{3: ""You're in bad shape now with countless open wounds, having run around wounded for so long. You grit your teeth hard, barely managing to keep your pain-wracked body going.""}"
+161	161		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory530.jpg'}
+162	162		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+163	163		201							{1: '1', 2: '500294'}
+164	164		301			AniZhuanchangEnd				{1: '1', 2: 'Scavenger 1', 3: 'Hey, the dragon is catching up!!', 4: '1'}
+165	165		201							{1: '1', 2: '500437', 5: '200'}
+166	166		401							{1: '2', 2: '2974'}
+167	167		301			PanelActor1Shake				{1: '1', 2: 'Dragon', 3: '(Angry Roar)', 4: '1'}
+168	168		201							{1: '1', 2: '500485'}
+169	169		401							{1: '2', 2: '9342060'}
+170	170		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash.prefab', 2: '2'}
+171	171		301							{1: '1', 2: 'Huge Mecha Rider', 3: 'Tsk—', 4: '1'}
+172	172		202							{1: '1'}
+173	173		301							{3: 'The Mecha Rider fights with everything he has against the dragon but is forced back dozens of meters by its flames.'}
+174	174		201							{1: '1', 2: '500437', 5: '200'}
+175	175		301							"{1: '1', 3: ""Before you can ask why he's helped you, the dragon has already turned and charged toward the crowd.""}"
+176	176		302							{2: '(Draw sword)', 3: '177', 4: '(Run)', 5: '184'}
+177	177		401							{1: '2', 2: '10022001'}
+178	178		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '3'}
+179	179		301							"{3: ""Through searing pain that tears at your body, you draw the sword from your waist and strike at the dragon's head with every ounce of strength.""}"
+180	180		201							{1: '1', 2: '500437', 5: '200'}
+181	181		401							{1: '2', 2: '777'}
+182	182		301			PanelActor1Shake				{1: '1', 2: 'Dragon', 3: '(Painful Roar)', 4: '1'}
+183	183	189	301							"{3: ""The strike successfully halts the dragon's assault, giving people precious moments to evacuate while it catches its breath.""}"
+184	184		301							{3: 'You quickly gauge your wounds and decisively guide the crowd to turn back and flee.'}
+185	185		201							{1: '1', 2: '500437', 5: '200'}
+186	186		401							{1: '2', 2: '777'}
+187	187		301			PanelActor1Shake				{1: '1', 2: 'Dragon', 3: '(Angry Roar)', 4: '2'}
+188	188		301							{3: 'With nothing left to stop it, the dragon ruthlessly slaughters the fleeing crowds, leaving nothing but devastation in its wake.'}
+189	189		301							"{3: ""You manage to cover everyone's escape to the only exit ramp, but your body now refuses to move another inch, your injuries having finally taken their toll.""}"
+190	190		401							{1: '2', 2: '213'}
+191	191		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+192	192		301							"{3: ""The dragon's fury intensifies as it takes a deep breath, gathering its power. Forming in its mouth, a fireball is growing larger and hotter by the second—""}"
+193	193		301							"{3: ""You know that you'll all be dead meat if the fireball hits.""}"
+194	194		302							{2: '(Slash the dragon down with the sword at the cost of your life)', 3: '195', 4: '(Resolutely escape the fireball)', 5: '227'}
+195	195		401							{1: '2', 2: '819016'}
+196	196		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '3'}
+197	197		301							{3: 'You know this strike means certain death, but you make your body move with the sword and deliver your most brilliant strike yet—all for those who suffer.'}
+198	198		301							{3: 'You sprint straight into the fireball as the searing flames threaten to melt your body. Death is imminent—'}
+199	199		301				AniZhuanchangBegin			{2: '??', 3: 'Commandant!! No!!!'}
+200	200		202							{1: '1'}
+201	201		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+202	202		101							{1: 'Assets/Product/Texture/Image/UiTheatre/UiTheatreMainBg1.png', 4: '4'}
+203	203		402							{1: '213'}
+204	204		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+205	205		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+206	206		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '1'}
+207	207		109							{1: '1', 2: '<color=#ffffffff><size=40>Chapter ?+70</size></color>', 4: '50'}
+208	208		109			AniZhuanchangEnd				{1: '2', 2: '<color=#ffffffff><size=50>— Loading... Global Optimal Solution! —</size></color>', 4: '-50'}
+209	209		301							{3: 'Chapter ?+70 Loading... Global Optimal Solution!'}
+210	210		110							
+211	211		501				AniZhuanchangBegin		2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieShizhong02.prefab', 2: '3'}
+212	212		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieShizhong02.prefab'}
+213	213		101							{1: 'Assets/Product/Texture/Image/UiTheatre/UiTheatreMainBg1.png', 4: '4', 5: '1'}
+214	214		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+215	215		101			DialogEnable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory426.jpg'}
+216	216		104							{1: '0|-200|-300', 2: '0'}
+217	217		201							{1: '1', 2: '501071'}
+218	218		301			AniZhuanchangEnd				"{1: '1', 3: ""A radiant figure appears beside you without warning, her hand joining yours on the sword's hilt—""}"
+219	219		301							"{2: 'Nanami', 3: ""Now's our chance, Commandant! Let's go all out!!!"", 5: '1'}"
+220	220		201							{1: '1', 2: '500437', 5: '200'}
+221	221		401							{1: '2', 2: '777'}
+222	222		301			PanelActor1Shake				{1: '1', 2: 'Dragon', 3: '(Agonized Roar)', 4: '1'}
+223	223		401							{1: '2', 2: '9342060'}
+224	224		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+225	225		202							{1: '1'}
+226	226	254	301							"{3: ""The flash of the sword strikes true—the dragon's body writhes in agony as it lets out a pained screech to the heavens. But a fireball tears between you and Nanami and erupts into a towering wall of flames.""}"
+227	227		301							{3: 'With your battered body, you crawl forward—which is the best you can do to escape the brink of despair at the moment.'}
+228	228		301							{3: 'The searing flames threaten to melt your body as death draws close...'}
+229	229		301				AniZhuanchangBegin			{2: '??', 3: 'Commandant!! No!!!'}
+230	230		202							{1: '1'}
+231	231		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+232	232		101							{1: 'Assets/Product/Texture/Image/UiTheatre/UiTheatreMainBg1.png', 4: '4'}
+233	233		402							{1: '213'}
+234	234		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+235	235		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+236	236		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '1'}
+237	237		109							{1: '1', 2: '<color=#ffffffff><size=40>Chapter ?+70</size></color>', 4: '50'}
+238	238		109			AniZhuanchangEnd				{1: '2', 2: '<color=#ffffffff><size=50>— Loading... Global Optimal Solution! —</size></color>', 4: '-50'}
+239	239		301							{3: 'Chapter ?+70 Loading... Global Optimal Solution!'}
+240	240		110							
+241	241		501				AniZhuanchangBegin		2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieShizhong02.prefab', 2: '3'}
+242	242		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieShizhong02.prefab'}
+243	243		101							{1: 'Assets/Product/Texture/Image/UiTheatre/UiTheatreMainBg1.png', 4: '4', 5: '1'}
+244	244		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+245	245		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory426.jpg'}
+246	246		104							{1: '0|-200|-300', 2: '0'}
+247	247		505				DialogEnable			{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieShizhong02.prefab'}
+248	248		201							{1: '1', 2: '501071'}
+249	249		401							{1: '2', 2: '9342060'}
+250	250		301			AniZhuanchangEnd				{1: '1', 3: 'A radiant figure materializes before you, her sword rising to meet the fireball head-on.'}
+251	251		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+252	252		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCommon/FxUi2DLihuiFireGlow1920.prefab', 2: '2', 3: '1', 4: '1'}
+253	253		301							{3: 'The next instant, the flames erupt into a towering inferno that completely engulfs her.'}
+254	254		302							{2: 'Nanami?', 3: '255', 4: 'Why are you here?', 5: '255'}
+255	255		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCommon/FxUi2DLihuiFireGlow1920.prefab', 4: '1'}
+256	256		201							{1: '1', 2: '501085'}
+257	257		301							{1: '1', 2: 'Nanami', 3: 'No matter where you are, Commandant, Nanami will come rushing to find you!', 4: '1'}
+258	258		301							{3: 'Even through the raging wall of flames, you can feel her smiling at you.'}
+259	259		204							{1: '1', 2: '4'}
+260	260		301							"{2: 'Nanami', 3: ""I wish I could stay with you longer, Commandant, but I can't contain these flames anymore—Commandant, run!!"", 4: '1'}"
+261	261		205							{1: '1', 3: '1', 4: '0.2', 5: '2'}
+262	262		301							{3: 'Nanami draws a deep breath and screams with all her might. Within the flames, her body glows ever brighter as she grows more and more transparent.'}
+263	263		302							{2: '(Stay)', 3: '264', 4: '(Turn and leave)', 5: '269'}
+264	264		301							"{2: 'Nanami', 3: ""Commandant... Nanami is so happy. If you hadn't fought so hard to survive, Nanami would never have seen you again..."", 4: '1'}"
+265	265		301							"{2: 'Nanami', 3: ""So please, Commandant, promise Nanami you'll live on—"", 4: '1'}"
+266	266		302							{2: 'Na... na... mi...', 3: '267'}
+267	267		202							{1: '1', 6: '1'}
+268	268	271	301				AniZhuanchangBegin			"{3: ""You call out Nanami's name with a hoarse voice, but your near-fatal wounds prevent any further movement. Your eyelids grow heavier and heavier...""}"
+269	269		202							{1: '1', 6: '1'}
+270	270		301				AniZhuanchangBegin			{3: 'Despite your severe injuries, you maintain enough clarity to make a rational decision. You turn and retreat with the other people, all while you grow increasingly light-headed from your injuries...'}
+271	271		401							{1: '1', 2: '36'}
+272	272		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+273	273		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory394.jpg'}
+274	274		205							{1: '1', 3: '0.2', 4: '1', 5: '0'}
+275	275		201							{1: '1', 2: '500585'}
+276	276		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+277	277		301			AniZhuanchangEnd				{1: '1', 2: '??', 3: 'Hey...?', 4: '1'}
+278	278		301							{3: 'When you wake up again, Nanami is nowhere to be seen. Instead, an elegant yet melancholic gentleman with wild, seaweed-like hair stands before you.'}
+279	279		301							{2: 'Seaweed Puffhead', 3: 'People flee from the palace and abandon their city. They traverse wastelands and mountains, leaving everything far behind.', 4: '1'}
+280	280		202							{1: '1', 6: '1'}
+281	281		301				AniZhuanchangBegin			{3: 'Along the path of exile, he tells you the story of how this world met its end.'}
+282	282		205			DialogDisable				{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 3: '0', 4: '1', 5: '0'}
+283	283		109			AniZhuanchangEnd			500.0	{1: '1', 2: '<color=#FFffffff><size=34>Long, long ago,</size></color>', 3: '-300', 4: '100', 6: '1', 7: '1', 8: '0', 9: '1'}
+284	284		109						1000.0	{1: '2', 2: '<color=#FFffffff><size=34>in a kingdom of boundless prosperity,</size></color>', 3: '-300', 4: '0', 6: '1', 7: '1', 8: '0', 9: '1'}
+285	285		109							{1: '3', 2: '<color=#FFffffff><size=34>there lived loyal knights who protected their people.</size></color>', 3: '-300', 4: '-100', 6: '1', 7: '1', 8: '0', 9: '1'}
+286	286		301							{1: '1', 3: 'Long, long ago, in a kingdom of boundless prosperity, there lived loyal knights who protected their people.'}
+287	287		110							
+288	288		109						500.0	{1: '1', 2: '<color=#FFffffff><size=34>However,</size></color>', 3: '-300', 4: '200', 6: '1', 7: '1', 8: '0', 9: '1'}
+289	289		109							{1: '2', 2: '<color=#FFffffff><size=34>the arrival of an evil dragon shattered their peaceful lives.</size></color>', 3: '-300', 4: '100', 6: '1', 7: '1', 8: '0', 9: '1'}
+290	290		301							{3: 'However, the arrival of an evil dragon shattered their peaceful lives.'}
+291	291		109							{1: '3', 2: '<color=#FFffffff><size=34>The people and knights fought valiantly, but the evil dragon proved too powerful.</size></color>', 3: '-300', 4: '0', 6: '1', 7: '1', 8: '0', 9: '1'}
+292	292		301							{3: 'The people and knights fought valiantly, but the evil dragon proved too powerful.'}
+293	293		109							{1: '4', 2: '<color=#FFffffff><size=34>Its flames melted into lava and slowly devoured the land where people had made their homes.</size></color>', 3: '-300', 4: '-100', 6: '1', 7: '1', 8: '0', 9: '1'}
+294	294		301				AniZhuanchangBegin			{3: 'Its flames melted into lava and slowly devoured the land where people had made their homes.'}
+295	295		110							
+296	296		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory825.jpg'}
+297	297		109			AniZhuanchangEnd			1000.0	{1: '1', 2: '<color=#FFffffff><size=34>In this time of crisis,</size></color>', 3: '-300', 4: '300', 6: '1', 7: '1', 8: '0', 9: '1'}
+298	298		109							{1: '2', 2: '<color=#FFffffff><size=34>some knights turned their swords against the very people they once swore to protect.</size></color>', 3: '-300', 4: '200', 6: '1', 7: '1', 8: '0', 9: '1'}
+299	299		301							{3: 'In this time of crisis, some knights turned their swords against the very people they once swore to protect.'}
+300	300		109						1000.0	{1: '3', 2: '<color=#FFffffff><size=34>perhaps overwhelmed by the weight of the flowing lava,</size></color>', 3: '-300', 4: '100', 6: '1', 7: '1', 8: '0', 9: '1'}
+301	301		109							{1: '4', 2: '<color=#FFffffff><size=34>or perhaps they sought to forge a new era... no one knows for certain.</size></color>', 3: '-300', 4: '0', 6: '1', 7: '1', 8: '0', 9: '1'}
+302	302		301							{3: 'perhaps overwhelmed by the weight of the flowing lava, or perhaps they sought to forge a new era... no one knows for certain.'}
+303	303		109						500.0	{1: '5', 2: '<color=#FFffffff><size=34>The people knew only one thing:</size></color>', 3: '-300', 4: '-100', 6: '1', 7: '1', 8: '0', 9: '1'}
+304	304		109							{1: '6', 2: '<color=#FFffffff><size=34>they now faced not only the evil dragon but also the knights who once stood as their guardians.</size></color>', 3: '-300', 4: '-200', 6: '1', 7: '1', 8: '0', 9: '1'}
+305	305		301				AniZhuanchangBegin			{3: 'The people knew only one thing: they now faced not only the evil dragon but also the knights who once stood as their guardians.'}
+306	306		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 3: '1', 4: '0', 5: '0'}
+307	307		110							
+308	308		401							{1: '1', 2: '36'}
+309	309		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+310	310		401							{1: '1', 2: '22'}
+311	311		201				DialogEnable			{1: '1', 2: '500585'}
+312	312		301			AniZhuanchangEnd				{1: '1', 2: 'Seaweed Puffhead', 3: 'Legend speaks of a sea beyond the mainland, and at its farthest shores lies the answer—one that would grant people the power to resist the evil dragon and bring peace to both the knights and civilians alike.', 4: '1'}
+313	313		301							{2: 'Seaweed Puffhead', 3: 'But those who seek this answer are destined to be forever parted from their loved ones, adrift on an endless journey.', 4: '1'}
+314	314		302							{2: '...!', 3: '315'}
+315	315		301							{2: 'Seaweed Puffhead', 3: 'Lady Nanami asked me to relay a message to you—', 4: '1'}
+316	316		401							{1: '2', 2: '2986'}
+317	317		301							{3: 'Your blood runs cold, and your heart nearly skips a beat.'}
+318	318		302							{2: 'Nanami? Where has Nanami gone?!', 3: '319'}
+319	319		301							{2: 'Seaweed Puffhead', 3: 'There.', 4: '1'}
+320	320		202							{1: '1', 6: '1'}
+321	321		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg', 3: '0', 4: '1', 5: '0.25'}
+322	322		401							{1: '2', 2: '904'}
+323	323		301				AniZhuanchangBegin			{3: 'He points beyond the civilian settlement, where waves crash rhythmically against the shore. Nanami leads her knights aboard the ship as they set sail for distant waters.'}
+324	324		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg', 3: '1', 4: '0', 5: '0'}
+325	325		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+326	326		301			AniZhuanchangEnd				{3: 'Far out at sea, Nanami bears the scars of countless battles, mumbling softly to herself.'}
+327	327		201							{1: '1', 2: '501085', 3: '12'}
+328	328		301							{1: '1', 2: 'Nanami', 3: 'By taking the knights with her, Nanami ensures they will no longer turn their swords against one another.', 4: '1'}
+329	329		204							{1: '1', 2: '5'}
+330	330		301							{2: 'Nanami', 3: 'Nanami loves this kingdom—both its people and its knights alike.', 4: '1'}
+331	331		301							{2: 'Nanami', 3: 'At the end of this river lies a future that shimmers with hope.', 4: '1'}
+332	332		301							{3: 'Right then, she sees a figure frantically rushing toward the shore.'}
+333	333		204							{1: '1', 2: '3'}
+334	334		301							"{2: 'Nanami', 3: ""It's okay, Commandant. Nanami isn't hurt, Nanami really isn't hurt..."", 4: '1'}"
+335	335		301							{3: 'The figure appears to be shouting something, prompting Nanami to stand and call out in return.'}
+336	336		301							{2: 'Nanami', 3: '—', 4: '1'}
+337	337		301							"{3: ""But the roaring waves drown out the girl's heartfelt words.""}"
+338	338		204							{1: '1', 2: '12'}
+339	339		301							"{2: 'Nanami', 3: ""...Ah... We're too far apart. My voice won't reach..."", 4: '1'}"
+340	340		301							"{3: ""Seeing you wave your arms desperately at her, she thinks you're trying to bid her farewell.""}"
+341	341		204							{1: '1', 2: '3'}
+342	342		301							{2: 'Nanami', 3: '...Farewell, Commandant... farewell.', 4: '1'}
+343	343		202							{1: '1'}
+344	344		104							{1: '0|-200|-300', 2: '5'}
+345	345		301							{3: 'A pristine night in the wilderness, far from any artificial light.'}
+346	346		104							{2: '5'}
+347	347		301							{3: 'Countless stars blanket the sky, their reflections dancing across the waters where Nanami sails, turning the surface into a spectacular display of light.'}
+348	348		301				DialogDisable			"{3: ""A child tugs at their mother's clothes and points at the shimmering waters.""}"
+349	349		307							{1: 'Mom, look at this—!', 3: '50', 4: 'ffffffff'}
+350	350		301							{3: 'Mom, look at this—!'}
+351	351		307							{2: '1'}
+352	352		301			DialogEnable	DialogDisable			{3: '...'}
+353	353		307							"{1: ""It's the Milky Way."", 3: '50', 4: 'ffffffff'}"
+354	354		301		1		AniZhuanchangBegin			"{3: ""It's the Milky Way.""}"

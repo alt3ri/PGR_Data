@@ -1,0 +1,63 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory690.jpg'}
+2	2		401							{1: '1', 2: '31'}
+3	500		502							{1: 'RImgBg1Shake'}
+4	501		401							{1: '2', 2: '844006'}
+5	3		301			DialogEnable				{3: 'The clang of metal continues amidst fierce explosions. Cultivation tanks break away from their slots, falling into the magma.'}
+6	4		201							{1: '1', 2: '500615', 3: '13'}
+7	5		301							"{1: '1', 2: 'Lilith', 3: ""That's right! Who will burn out first, us or this place? Let's bet on it!"", 4: '1'}"
+8	6		203							{1: '1', 2: '0.25', 3: '-500'}
+9	7		201							{1: '2', 2: '500610', 4: '500'}
+10	8		301							{1: '1', 2: 'Alpha', 3: 'The battle will end before that.', 4: '2'}
+11	9		502							{1: 'DialogDisable'}
+12	10		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+13	11		401							{1: '2', 2: '844006'}
+14	12		203							{1: '1', 2: '0.14', 3: '-300'}
+15	13		203							{1: '2', 2: '0.14', 3: '300'}
+16	14		502							{1: 'DialogEnable'}
+17	15		301			RImgBg1Shake				{3: 'The katana clashes with the opened umbrella once again, splashing numerous sparks.'}
+18	16		204							{1: '1'}
+19	17		301							{2: 'Lilith', 3: '(Too light...)', 4: '1'}
+20	18		301							"{3: ""When this thought flashes through Lilith's mind, she sees Alpha's katana swirling upward into the sky.""}"
+21	19		203							{1: '1', 2: '0.02', 3: '-470'}
+22	20		203					100.0		{1: '1', 2: '0.04', 3: '-550'}
+23	21		502					100.0	400.0	{1: 'RImgBg1Shake'}
+24	22		505							{1: 'RImgBg1Shake'}
+25	23		204							{1: '1', 2: '5'}
+26	24		301							{3: 'She then takes a sudden kick in her right abdomen.'}
+27	25		301							{2: 'Lilith', 3: 'Wha...', 4: '1'}
+28	26		301							"{3: ""When Lilith is knocked away, she finally sees Alpha's hand without any weapon in it. The swirling slash was nothing but a feint attack.""}"
+29	28		301							"{2: 'Alpha', 3: ""You are terribly wrong if you think I can't fight without a weapon."", 4: '2'}"
+30	29		301							"{3: ""The spinning katana falls back in Alpha's hand. Lilith quickly attempts to summon Punishing Virus to repair herself. However...""}"
+31	30		301							"{2: 'Lilith', 3: ""I can't control the virus anymore... Is this your power as an agent?"", 4: '1'}"
+32	31		301							{3: 'Something seems to be interfering with the temporary access given by Vonnegut. It will not turn Lilith into a Corrupted just yet, but is sufficient to prevent her from adjusting her own virus concentration.'}
+33	32		301				AniZhuanchangBegin			{2: 'Alpha', 3: 'Agent... Is that what you think?', 4: '2'}
+34	33		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+35	34		105				AniZhuanchangEnd			{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLuxiya2S/UiMovieLuxiya2S02Role.prefab'}
+36	35		301			DialogEnable				{3: 'Lilith holds herself up with the moon umbrella as Alpha walks close.'}
+37	36		301							{2: 'Lilith', 3: 'I surrender. Here is the location of that Babylonia Construct.'}
+38	37		301							{3: 'She quickly raises her hands, letting her moon umbrella sway and fall to the ground.'}
+39	38		301							"{3: ""A location appears in Alpha's vision. Lucia is quietly leaning against a tree. Her shoulders are already covered by the fallen snow.""}"
+40	39		301							"{2: 'Alpha', 3: 'I thought you were going to ""burn out"" with me?'}"
+41	40		301							{2: 'Lilith', 3: 'Even the most insane gambler would not challenge the house when there is no chance of winning.'}
+42	41		301							"{2: 'Lilith', 3: ""This place is going to collapse. Babylonia's people will be here at any moment. I would be digging my own grave if I continued to mess around.""}"
+43	42		301							"{3: ""Lilith's hands remain in the air, as if her madness was just a camouflage.""}"
+44	43		301							"{3: ""With a move of her finger, a storage unit slides down Lilith's sleeve into her hand. She tosses it to Alpha.""}"
+45	44		301							"{2: 'Lilith', 3: ""You probably haven't gone to the core database yet. You will need the data in that storage unit, I think.""}"
+46	45		301							{2: 'Alpha', 3: 'Why did you do that?'}
+47	46		301							{2: 'Lilith', 3: 'Sigh. The most important mission Mr. Vonnegut gave me was to invite you to join us.'}
+48	47		301							"{2: 'Lilith', 3: ""But you don't seem keen at all, which makes me wonder... Am I not sincere enough?""}"
+49	48		301							{2: 'Lilith', 3: 'Can you leave me a message if you are satisfied with my additional service? So I can at least bring something back to him.'}
+50	49		301				AniZhuanchangBegin			{3: 'Lilith really takes out a voice recorder from her pocket.'}
+51	50		105			DialogDisable				
+52	51		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory690.jpg'}
+53	52		301			DialogEnable				{3: 'Alpha no longer responds. She just turns away and walks out from the exit.'}
+54	53		201							{1: '1', 2: '500615'}
+55	54		301							{1: '1', 2: 'Lilith', 3: 'How heartless...', 4: '1'}
+56	55		301							"{3: ""Lilith presses the record button. A bunch of flowers pops out from the recorder's top.""}"
+57	56		301							{2: 'Lilith', 3: 'I prepared this surprise for you. What a waste.', 4: '1'}
+58	57		301							{3: 'She seems a little upset as she pulls a petal out of the bouquet and tosses the rest on the ground.'}
+59	58		301							{3: 'Highly corrosive fluid flows out of the bouquet and rapidly spreads, accelerating the fall of the steel platform underneath.'}
+60	59		301							{2: 'Lilith', 3: 'Before anyone arrives, this place would have already sunk into the magma.', 4: '1'}
+61	60		301							"{2: 'Lilith', 3: 'I better go before little ""puppy"" finds me.', 4: '1'}"
+62	61		301		1		AniZhuanchangBegin			{3: 'Lilith also disappears into the white mist produced by the reaction between the corrosive fluid and metal.'}

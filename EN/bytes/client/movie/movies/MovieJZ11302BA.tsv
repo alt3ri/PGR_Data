@@ -1,0 +1,50 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory41.jpg'}
+2	2		401							{1: '1', 2: '207'}
+3	3		201							{1: '1', 2: '500042'}
+4	4		301			DialogEnable				{1: '1', 2: 'Doctor', 3: 'Vera, I need to stay here and observe the serum reactions. Can you take care of the patients that just came in?', 4: '1'}
+5	5		201							{1: '1', 2: '500182'}
+6	6		301							{1: '1', 2: 'Vera', 3: 'Got it.', 4: '1'}
+7	7		301							{3: 'Be it flesh-and-bone soldiers or newly-turned Constructs, all personnel must familiarize themselves with the tense atmosphere on the battlegrounds. It is how things have always worked, and part of their on-site training.'}
+8	8		301							{3: 'Vera is no exception. A new Construct freshly operated on, she is now training as a Support-type Construct who helps with the healing of the wounded units.'}
+9	9		301							{2: 'Vera', 3: 'All our patients are Constructs... And so heavily injured...', 4: '1'}
+10	10		301							{3: 'Vera gazes down at the Constructs sleeping on temporary cots. Though putting them here will not help the Constructs any, there are simply no more healing pods left.'}
+11	11		301							{2: 'Vera', 3: 'There are four of them, two heavily injured, two unconscious.', 4: '1'}
+12	12		301							{2: 'Vera', 3: 'Let me turn off their pain receptors first...', 4: '1'}
+13	13		301							"{2: 'Construct', 3: ""No, don't turn that off...""}"
+14	14		301							{3: 'Before Vera can get to work, a Construct stops her by grabbing her hand.'}
+15	15		301							"{2: 'Vera', 3: ""Your pain receptors are already overloaded with wounds like yours. And when we process your injuries later, we'll have to forcibly disconnect the damaged limbs. Surely you wouldn't want to experience pain like that..."", 4: '1'}"
+16	16		301							"{2: 'Vera', 3: ""If you're worried that your consciousness will deviate while you're out cold, I can perform stabilization before the procedure. I've done this countless times. It'll be fine."", 4: '1'}"
+17	17		301							{3: 'Vera knows that a patient like this would be worried about the side effects of having their senses shut off. However, from a medical perspective, not shutting them off would be way worse.'}
+18	18		301							{3: 'The Construct shakes his head.'}
+19	19		301							"{2: 'Construct', 3: ""But I don't want to lose consciousness... I don't want to have my limbs torn off while I can't feel it...""}"
+20	20		301							"{2: 'Construct', 3: ""It's... terrifying.""}"
+21	21		204							{1: '1', 2: '14'}
+22	22		301							"{2: 'Vera', 3: ""But if we let you remain conscious, you'll have to suffer incredible pain. You might even faint."", 4: '1'}"
+23	23		301							"{2: 'Construct', 3: ""I don't care if it hurts. Please, don't switch off my pain receptors.""}"
+24	24		301							"{2: 'Vera', 3: ""All right, if you say so. I'm starting the procedure now."", 4: '1'}"
+25	25		301							"{3: ""After relaying most of her computing power to medical functions, Vera utilizes the support device she brought to take apart the Construct's damaged parts.""}"
+26	26		301			RImgBg1Shake				{2: 'Construct', 3: 'Ah... Ahhhhhhh!'}
+27	27		301							"{3: ""Though the Construct's pain is alleviated through nano-machines deployed by Vera during the procedure, the effort is like a pebble in the ocean. Vera tries her best not to look at the Construct's face, twisted in agony.""}"
+28	28		301							{3: 'A niggling sense of pain creeps over her, as if she were undergoing the same procedure too.'}
+29	29		301			RImgBg1Shake				{2: 'Construct', 3: 'Aaaaaaaahhhh!'}
+30	30		301							{2: 'Vera', 3: 'Please hang on for a little bit more...', 4: '1'}
+31	31		301							{3: '—'}
+32	32		301							{3: 'After the procedure is finished, the patient falls immediately silent out of relief—yet Vera herself is having trouble dismissing the pain she had just experienced.'}
+33	33		201							{1: '1', 2: '500137'}
+34	34		301							{1: '1', 2: 'Officer', 3: 'Listen up!', 4: '1'}
+35	35		301							{3: 'The voice of an officer jerks her back to reality. All medics turn in unison to look at the door, where the officer just came in.', 6: '1'}
+36	36		301				DialogDisable			"{2: 'Officer', 3: ""We're short of manpower at the front lines, so we need to deploy another batch of units there. Anyone volunteering?"", 4: '1'}"
+37	37		202							{1: '1'}
+38	38		502							{1: 'RImgBg1DisableSlow'}
+39	39		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgCg/Cgqz1701.jpg'}
+40	40		301			DialogEnable				{3: 'Most of the medics turn away. After witnessing first-hand the horrors from the battlefield, they no longer possess the passion and confidence they once had. While not driven to desertion, they are content in stagnation.'}
+41	41		301							{3: '...'}
+42	42		301							{3: 'Tension fills the air immediately. All that remains is the beeping of the machines and the groans of the injured.'}
+43	43		301							{2: 'Officer', 3: 'Well...'}
+44	44		301							"{2: 'Vera', 3: ""I'll do it.""}"
+45	45		301							{3: 'The officer is about draw lots to decide when Vera raises her hand. Everyone turns to stare at the redheaded girl.'}
+46	46		301							"{2: 'Vera', 3: ""I'll do it.""}"
+47	47		301							"{3: ""Gazing straight into the officer's eyes, Vera reaffirms her choice.""}"
+48	48		301							{2: 'Officer', 3: 'Version BPN-13, Support-type Construct. Name... Vera, huh.'}
+49	49		301		1		AniZhuanchangBegin			"{3: ""The officer efficiently locates Vera's files and stamps it.""}"

@@ -1,0 +1,9 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory833.jpg'}
+2	2		401							{1: '1', 2: '36'}
+3	3		301			DialogEnable				{3: 'Test - Background Effect Control'}
+4	4		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+5	5		301							{3: 'Play Effect'}
+6	6		111							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+7	7		301							{3: 'End Effect'}
+8	8		301		1		AniZhuanchangBegin			{3: 'Test Complete'}

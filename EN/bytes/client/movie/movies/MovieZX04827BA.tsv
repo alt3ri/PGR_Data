@@ -1,0 +1,184 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory654.jpg'}
+2	2		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront28.png', 4: '4'}
+3	3		401							{1: '1', 2: '270'}
+4	4		401			DialogEnable				{1: '2', 2: '4816'}
+5	5		301			RImgBg1Shake				{3: 'Tremors shudder through the air as Vonnegut lowers his hands maintaining the force field, allowing the rift to stir before everyone.'}
+6	6		104							{1: '0|0|-50', 2: '0.25'}
+7	7		301							{3: 'Your heartbeat quickens as you instinctively move a step ahead.'}
+8	8		201							{1: '1', 2: '501031'}
+9	9		401							{1: '2', 2: '4637'}
+10	10		203						250.0	{1: '1', 2: '0.25', 4: '-50', 5: '-100'}
+11	11		203						150.0	{1: '1', 2: '0.1', 3: '-5', 4: '-55', 5: '-100'}
+12	12		203						150.0	{1: '1', 2: '0.1', 3: '10', 4: '-50', 5: '-100'}
+13	13		203							{1: '1', 2: '0.1', 4: '-50', 5: '-100'}
+14	14		301							{1: '1', 3: 'As you step forward, a figure tumbles out from within, taking several unsteady steps before barely regaining her balance.'}
+15	15		202							{1: '1', 6: '1'}
+16	16		201							{1: '1', 2: '500994', 3: '4', 5: '-50', 6: '-100'}
+17	17		301							{1: '1', 3: 'Those familiar eyes appear veiled by a gray haze, her gaze drifting aimlessly until finally settling upon you.'}
+18	18		301							{2: 'Lucia', 3: '...Comm...', 4: '1'}
+19	19		302							{2: 'Lucia!', 3: '20'}
+20	20		301							{3: 'Ignoring the ache in your heart, you dash forward without hesitation.'}
+21	21		203						150.0	{1: '1', 2: '0.1', 3: '-5', 4: '-55', 5: '-100'}
+22	22		104							{1: '0|0|-60', 2: '0.2'}
+23	23		203						150.0	{1: '1', 2: '0.1', 3: '10', 4: '-50', 5: '-100'}
+24	24		203							{1: '1', 2: '0.1', 4: '-50', 5: '-100'}
+25	25		301							{3: 'You firmly support the faltering Lucia with both hands. While her frame shows barely any external damage, just as relief begins to set in, an inexplicable unease suddenly wells up within you.'}
+26	26		204							{1: '1'}
+27	27		301							{2: 'Lucia', 3: '...', 4: '1'}
+28	28		301							"{3: ""The unease stems from Lucia's silence and the uncertain state of her M.I.N.D.""}"
+29	29		204							{1: '1', 2: '7'}
+30	30		301							{3: 'In this instant, her eyes lock onto your face as the haze veiling her gaze gradually fades away.'}
+31	31		301							{3: 'As if beholding a bright light, she stares in a daze, her lips trembling, her now-bright eyes reflecting the hope she holds dear.'}
+32	32		302							{2: 'Lucia...', 3: '33'}
+33	33		203							{1: '1', 2: '0.1', 4: '-60', 5: '-160'}
+34	34		401							{1: '2', 2: '4044'}
+35	35		204							{1: '1', 2: '8'}
+36	36		301			RImgBg1Shake				{3: 'Before you can call out again, you sense a sudden weight in your arms as Lucia envelops you in a tight embrace.'}
+37	37		302							{2: 'Mmmph...!', 3: '38'}
+38	38		301							{3: 'Casting aside the prolonged solitude and countless unspoken words, she embraces this long-lost warmth, clutching tightly onto the one to whom her heart belongs.'}
+39	39		301				DialogDisable			{3: 'All the suppressed grief and confusion vanishes like mist. This moment of reunion strips away her shell of numbness, and beneath your touch, Lucia trembles ever so slightly.'}
+40	40		302							{2: '(Gently pat Lucia on the back)', 3: '41'}
+41	41		302							"{2: ""I'm alright. Thanks to you and Lee, the situation at the Hetero Tower hasn't spread any further..."", 3: '42'}"
+42	42		203							{1: '1', 2: '0.3', 4: '-60', 5: '-180'}
+43	43		301			DialogEnable				{3: 'She remains silent, simply tightening her embrace. Her soft murmur of acknowledgment is barely audible, a mere whisper in the air.'}
+44	44		302							{2: 'Lucia?', 3: '45'}
+45	45		204							{1: '1', 2: '4'}
+46	46		301							{2: 'Lucia', 3: 'Commandant...', 4: '1'}
+47	47		301							{3: 'Her voice emerges muffled but steadier now. Lucia scrutinizes the person before her, as if absorbing every familiar detail she once knew all too well.'}
+48	48		302							{2: 'Lucia...', 3: '49'}
+49	49		204							{1: '1'}
+50	50		301			DialogEnable				{2: 'Lucia', 3: '...Yes, Commandant.', 4: '1'}
+51	51		301							{3: 'Her voice grows steadier with each word. As her unease melts away, Lucia lifts her head once more.'}
+52	52		203							{1: '1', 2: '0.25', 4: '-60', 5: '-100'}
+53	53		301							{3: 'She loosens her embrace and steps back, her gaze traveling from head to toe before meeting your eyes again.'}
+54	54		302							{2: 'Lucia.', 3: '55'}
+55	55		301			DialogEnable				{2: 'Lucia', 3: '【kuroname】.', 4: '1'}
+56	56		302							{2: 'Welcome back.', 3: '57'}
+57	57		204							{1: '1', 2: '2'}
+58	58		301							{3: 'She breaks into a smile and responds with another fleeting embrace—so brief that you only catch the sound of her voice echoing softly by your ear.'}
+59	59		301			DialogEnable				{2: 'Lucia', 3: 'Glad to be back.', 4: '1'}
+60	60		204							{1: '1', 2: '3'}
+61	61		203							{1: '1', 2: '0.4'}
+62	62		301							{3: 'Lucia steps back, ending the embrace. After meticulously checking your whole body, she unclenches her fists and gives a wry smile.'}
+63	63		301							"{3: ""Watching Lucia recover, her Pyroath frame appears pristine on the surface, but there's no denying it has been under considerable strain. The earlier unease creeps back into you.""}"
+64	64		301							{3: 'However, Lucia instantly senses your concern and takes the initiative to report her condition.'}
+65	65		204							{1: '1', 2: '2'}
+66	66		301							{2: 'Lucia', 3: 'My frame is functioning normally.', 4: '1'}
+67	67		204							{1: '1', 2: '4'}
+68	68		301							{2: 'Lucia', 3: 'As for my M.I.N.D.... there are no deviation warnings detected.', 4: '1'}
+69	69		204							{1: '1', 2: '2'}
+70	70		301							{3: 'With those words, she initiates a M.I.N.D. connection with you.'}
+71	71		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab', 2: '3'}
+72	72		401							{1: '2', 2: '2567'}
+73	73		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie2New.prefab', 2: '3'}
+74	74		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie3New.prefab', 2: '3'}
+75	75		501				AniZhuanchangBegin		500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie4New.prefab', 2: '3'}
+76	76		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab'}
+77	77		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie2New.prefab'}
+78	78		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie3New.prefab'}
+79	79		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie4New.prefab'}
+80	80		201							{1: '1', 2: '500994', 3: '2', 7: '1'}
+81	81		301			AniZhuanchangEnd				"{1: '1', 3: ""All readings are normal, and her M.I.N.D. displays no sign of deviation. It's just as Lucia said—while under considerable strain, her frame shows no serious issues.""}"
+82	82		202							{1: '1'}
+83	83		301							{3: 'But... why...?'}
+84	84		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+85	85		504							{1: '0.7'}
+86	86		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory627.jpg'}
+87	87		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront28.png', 4: '4', 5: '1'}
+88	88		201							{1: '1', 2: '500994', 3: '8', 7: '1'}
+89	89		301							{1: '1', 3: 'Over thirty years of combat, plus the life-or-death escape from the Fog... and she shows no serious issues at all?'}
+90	90		202							{1: '1', 6: '1'}
+91	91		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+92	92		504							{1: '0'}
+93	93		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory654.jpg'}
+94	94		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront28.png', 4: '4'}
+95	95		301							{3: 'An ominous feeling creeps in, as if everything before you is but a fragile dream, ready to shatter at any moment.'}
+96	96		301							"{3: ""Your fingertips grow cold, the chill of anxiety creeping in, but then Lucia's hand finds yours, pushing back the cold with her warmth.""}"
+97	97		201							{1: '2', 2: '500994', 3: '2'}
+98	98		301							"{1: '1', 2: 'Lucia', 3: ""I'll be fine, Commandant."", 4: '2'}"
+99	99		301							{3: 'Her voice is soft as if hiding something, but before you can grasp this fleeting moment of doubt, your thoughts are interrupted by movement nearby.'}
+100	100		201							{1: '3', 2: '501033', 4: '500'}
+101	101		204							{1: '2'}
+102	102		203							{1: '2', 2: '0.25', 3: '-400'}
+103	103		301							"{1: '1', 2: 'Chaos', 3: ""...She's coming back too."", 4: '3'}"
+104	104		301				DialogDisable			"{3: ""Chaos approaches silently. Though she maintains a relatively safe distance, Lucia's hand drifts instinctively to the hilt of her Pyro Katana.""}"
+105	105		302							{2: 'Lucia, wait.', 3: '106'}
+106	106		302							{2: 'We need to help Chaos.', 3: '107'}
+107	107		301			DialogEnable				"{3: ""Lucia glances back at the rift, gesturing that there's an equally dangerous threat inside.""}"
+108	108		302							"{2: ""Let's kill Cradle first."", 3: '109'}"
+109	109		204							{1: '2', 2: '6'}
+110	110		301							{3: 'Then her gaze turns back to Chaos, suspicion and vigilance still lingering in her eyes.'}
+111	111		302							{2: 'You can give her the core.'}
+112	112		204							{1: '2'}
+113	113		301				DialogDisable			{3: 'After a moment of silence, Lucia nods, fixing a piercing gaze upon Vonnegut.'}
+114	114		302							{2: 'This is a gamble. If he disagrees, a fight between us is inevitable.', 3: '115'}
+115	115		302							{2: 'But this plan is our best bet for now.', 3: '116'}
+116	116		301			DialogEnable				{2: 'Lucia', 3: 'Got it.', 4: '2'}
+117	117		301							"{3: ""With the plan laid clear and intelligence complete, even though it's a gamble, Lucia no longer hesitates.""}"
+118	118		401							{1: '2', 2: '4436'}
+119	119		201							{1: '1', 2: '500894', 4: '-300', 5: '-350', 6: '30'}
+120	120		203							{1: '2', 2: '0.4', 3: '-350'}
+121	121		203							{1: '1', 2: '0.4', 3: '-250', 4: '-350', 5: '30'}
+122	122		301							"{1: '1', 3: 'She reaches into her frame and pulls out the ""Key"", extending it toward Chaos. Right at that moment...', 4: '1'}"
+123	123		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+124	124		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+125	125		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+126	126		401							{1: '2', 2: '4319'}
+127	127		401							{1: '2', 2: '2559'}
+128	128		402							{1: '270'}
+129	129		301			RImgBg1Shake				{3: 'CLANK—!'}
+130	130		401							{1: '1', 2: '380'}
+131	131		301							{3: 'A crisp shattering and a deep howl echo simultaneously.'}
+132	132		201							{1: '1', 2: '500992'}
+133	133		301							{1: '1', 2: 'Lucia', 3: 'Watch out!', 4: '1'}
+134	134		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+135	135		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+136	136		202							{1: '1', 6: '1'}
+137	137		401							{1: '2', 2: '11106007'}
+138	138		301			RImgBg1Shake				{3: 'Clang—'}
+139	139		401							{1: '2', 2: '4830'}
+140	140		301			RImgBg1Shake				{3: 'A cold glint slices through the air as razor-sharp blades, forged from the Red Tide, clatter to the ground.'}
+141	141		201							{1: '1', 2: '500868', 3: '2'}
+142	142		301							"{1: '1', 2: 'Cradle', 3: ""Well, well, we finally meet again. You guys certainly weren't easy to find."", 4: '1'}"
+143	143		204							{1: '1'}
+144	144		301							"{2: 'Cradle', 3: ""Isn't it about time you give up? These futile struggles only make your life read like a tedious, wearisome novel."", 4: '1'}"
+145	145		202							{1: '1', 6: '1'}
+146	146		201							{1: '1', 2: '500992', 7: '1'}
+147	147		301							{1: '1', 2: 'Lucia', 3: 'Commandant, stay back.', 4: '1'}
+148	148		202							{1: '1', 6: '1'}
+149	149		201							{1: '1', 2: '500868', 3: '2'}
+150	150		301							"{1: '1', 2: 'Cradle', 3: ""We're still continuing like this?"", 4: '1'}"
+151	151		203							{1: '1', 2: '0.25', 3: '600'}
+152	152		401						100.0	{1: '2', 2: '819042'}
+153	153		202							{1: '1'}
+154	154		402							{1: '819042'}
+155	155		401						150.0	{1: '2', 2: '638'}
+156	156		402							{1: '638'}
+157	157		301							{3: 'Before Cradle can finish speaking, she swiftly dodges to the side.'}
+158	158		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+159	159		401							{1: '2', 2: '970804'}
+160	160		301							{3: 'An invisible impact grazes past her ear, taking with it a few strands of her long hair.'}
+161	161		201							{1: '1', 2: '500305'}
+162	162		301							{1: '1', 2: 'Vonnegut', 3: '...', 4: '1'}
+163	163		202							{1: '1'}
+164	164		201							{1: '1', 2: '500868'}
+165	165		301							"{1: '1', 2: 'Cradle', 3: ""And here I thought you'd keep watching from the sidelines..."", 4: '1'}"
+166	166		301							"{3: ""She glances at Vonnegut's body as it continues to heal.""}"
+167	167		204							{1: '1', 2: '2'}
+168	168		301							{2: 'Cradle', 3: 'Must have been quite painful for you these days... and yet you still help them?', 4: '1'}
+169	169		204							{1: '1', 2: '4'}
+170	170		301							"{2: 'Cradle', 3: ""Don't tell me you're working together now?"", 4: '1'}"
+171	171		202							{1: '1'}
+172	172		401							{1: '2', 2: '4787'}
+173	173		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+174	174		301							"{3: ""Cradle's frown turns to a sudden realization, and the Red Tide around her begins to roil in response.""}"
+175	175		301							{3: 'With that, her smile fades and her eyes narrow.'}
+176	176		201							{1: '1', 2: '500868', 3: '1'}
+177	177		301							"{1: '1', 2: 'Cradle', 3: ""Excellent. This way, we might just write ourselves a nice, clean ending. Despite the reef's resilience, when faced with the relentless tides..."", 4: '1'}"
+178	178		204							{1: '1', 2: '3'}
+179	179		301							{2: 'Cradle', 3: 'It will eventually yield.', 4: '1'}
+180	180		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory844.jpg', 3: '0', 4: '0.1', 5: '0'}
+181	181		401							{1: '2', 2: '4319'}
+182	182		401			RImgBg1Shake				{1: '2', 2: '4819'}
+183	183		301		1		AniZhuanchangBegin			{3: 'With her declaration, the towering Red Tide comes crashing down with thunderous force.'}

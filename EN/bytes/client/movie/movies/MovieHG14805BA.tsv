@@ -1,0 +1,144 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				"{3: ""The abandoned resort is tucked deep within the forest. If it weren't for the spreading Punishing Virus, it would probably be a perfect place to rest—its infrastructure is intact, and there's even a small room with a disused generator inside.""}"
+4	4		301							{3: 'No wonder those scavengers wanted to settle here.'}
+5	5		201							{1: '1', 2: '500019'}
+6	6		301							"{1: '1', 2: 'Patrol Member A', 3: ""Hey, you'll never believe what Beefy just discovered."", 4: '1'}"
+7	7		301							{3: 'As you look for the sound devices, a patrol member bursts into the investigation site, brimming with excitement.'}
+8	8		301							{2: 'Beefy', 3: 'Woof!'}
+9	9		203							{1: '1', 2: '0.25', 3: '-400'}
+10	10		201							{1: '2', 2: '500019', 4: '400'}
+11	11		301							"{1: '1', 2: 'Patrol Member B', 3: ""Let me say it again: finding raccoons around here is totally normal. If you're about to waste my time by complaining about a raccoon rummaging through our makeshift camp's trash bin again, I swear I'll sock you..."", 5: '2'}"
+12	12		301							{2: 'Patrol Member A', 3: 'Nothing like that! Beefy discovered a hot spring—like, a real hot spring!', 5: '1'}
+13	13		301							"{2: 'Patrol Member A', 3: ""Guess that's what happens when it's a resort, huh? Never thought they'd have something like this..."", 5: '1'}"
+14	14		202							{1: '1', 2: '2', 6: '1'}
+15	15		201							{1: '1', 2: '500994', 3: '7'}
+16	16		301							{1: '1', 2: 'Lucia', 3: 'A hot spring?', 4: '1'}
+17	17		201							{1: '1', 2: '500019'}
+18	18		301							"{1: '1', 2: 'Patrol Member A', 3: ""Yep! It's tucked away behind here. There's a small path—just clear the vines up front and you'll spot it..."", 4: '1'}"
+19	19		301							{3: 'The patrol member waves his arms around excitedly.'}
+20	20		301				DialogDisable			"{2: 'Patrol Member A', 3: ""Ah, if we weren't so swamped these days—and if I didn't have to re-waterproof my frame just to enjoy a hot spring—I'd love to kick back for a while..."", 4: '1'}"
+21	21		202							{1: '1'}
+22	22		302							{2: 'Lucia, are you into hot springs, too?', 3: '23', 4: 'Lucia, you thinking about soaking in the hot spring?', 5: '23'}
+23	23		201							{1: '1', 2: '500994', 3: '4'}
+24	24		301			DialogEnable				{1: '1', 3: 'Seeing Lucia deep in thought, you lean in and quietly ask her.'}
+25	25		204							{1: '1', 2: '2'}
+26	26		301							"{2: 'Lucia', 3: ""I'm only thinking that you've been under a lot of strain lately, Commandant. Maybe you can take a break there."", 4: '1'}"
+27	27		302							"{2: ""Let's check it out after the mission."", 3: '28', 4: 'We can think about it later if we get the chance.', 5: '28'}"
+28	28		301							"{2: 'Lucia', 3: ""Alright, let's finish the mission first and worry about the rest afterward. Our next stop is..."", 4: '1'}"
+29	29		202							{1: '1'}
+30	30		401							{1: '2', 2: '4422'}
+31	31		301							{3: 'She opens her terminal, carefully scanning for the next possible location of a sound device.'}
+32	32		301							"{3: ""According to the scavengers, they set up a large number of sound devices in advance so they could remain here long term. That's why most of today's patrol team is working together in this area.""}"
+33	33		301							{3: 'The sun slowly moves overhead, and for now, the work in this sector comes to a close.'}
+34	34		201							{1: '1', 2: '500994'}
+35	35		301							{1: '1', 2: 'Lucia', 3: 'Commandant, do you want something to eat?', 4: '1'}
+36	36		301							"{3: ""Lucia opens up the supply packs, checking today's provisions.""}"
+37	37		302							"{2: 'Yes, please. Thank you.', 3: '38', 4: ""I'm good for now."", 5: '41'}"
+38	38		401							{1: '2', 2: '2917'}
+39	39		301							{3: 'The small heating unit crackles gently—even in this era of rapid technological advances, emergency rations still rely on devices from the Golden Age, or even earlier.'}
+40	40		402							{1: '2917'}
+41	41		301							"{2: 'Lucia', 3: ""Seems like we're almost done here"", 4: '1'}"
+42	42		301							{3: 'Lucia casually brings it up as she sorts through the supplies.'}
+43	43		302							{2: 'Yes.', 3: '44', 4: '...', 5: '44'}
+44	44		301							"{3: ""According to the plan, once you've retrieved the sound devices, you'll head back to Babylonia for a quick systems tune-up before moving on to the next battlefield.""}"
+45	45		204							{1: '1', 2: '2'}
+46	46		301							{2: 'Lucia', 3: 'Life feels so peaceful here.', 4: '1'}
+47	47		302							{2: 'Sure does.', 3: '48', 4: 'I have to say, I like it this way too.', 5: '48'}
+48	48		301							"{3: 'Sure, it\'s still not the perfectly calm ""everyday"" you might hope for, but compared to the constant warfare and the ever-creeping Red Tide, these recent missions practically feel like a break.'}"
+49	49		302							"{2: ""We've shared this sentiment more times than I can count already."", 3: '50'}"
+50	50		301							"{3: '""Wanna live a life this peaceful,"" ""Want us to be together in a world free from war,"" ""Wanna...""'}"
+51	51		301							{3: 'But is that really possible?'}
+52	52		301							{2: 'Lucia', 3: 'Commandant.', 4: '1'}
+53	53		301							{3: 'It feels like she notices the doubt lingering in your mind—Lucia gently sets her hand over yours.'}
+54	54		301							"{2: 'Lucia', 3: ""It will happen. Someday, we'll stroll side by side under a calm sky."", 4: '1'}"
+55	55		301							"{2: 'Lucia', 3: ""By then, maybe the Punishing Virus, the Red Tide, the Corrupted, the Hetero-Creatures, and all those other horrors will be gone... Maybe we won't even have to run these simple gathering missions anymore."", 4: '1'}"
+56	56		302							{2: 'Will such a moment truly arrive?', 3: '57', 4: 'Yeah, it definitely will happen.', 5: '59'}
+57	57		204							{1: '1', 2: '1'}
+58	58	61	301							"{2: 'Lucia', 3: ""Of course. You're working so hard to make it happen, Commandant, and we're doing our part too. There are so many other Constructs and humans all pushing toward the same goal."", 4: '1'}"
+59	59		204							{1: '1', 2: '1'}
+60	60		301							"{2: 'Lucia', 3: ""You're working so hard to make it happen, Commandant, and we're doing our part too. There are so many other Constructs and humans all pushing toward the same goal."", 4: '1'}"
+61	61		301							"{2: 'Lucia', 3: ""We're absolutely going to see that day."", 4: '1'}"
+62	62		202							{1: '1'}
+63	63		301							{3: 'The girl tightens her grip, holding your hand firmly as if to show her resolve.'}
+64	64		301				AniZhuanchangBegin			{3: '...'}
+65	65		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory12.jpg'}
+66	66		301			AniZhuanchangEnd				{3: 'The next sound device is located in a nearby mall within the resort. The scavengers piled up a large cache of supplies there and placed most of their devices in the same spot.'}
+67	67		301				AniZhuanchangBegin			"{3: ""You're worried the devices' low-frequency signals might have drawn the Corrupted, so you and Lucia decide to take care of the retrieval here yourselves.""}"
+68	68		401							{1: '1', 2: '36'}
+69	69		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory307.png'}
+70	70		401							{1: '1', 2: '209'}
+71	71		301			AniZhuanchangEnd				{3: 'You step over the rubble scattered across the ground and move into the mall. A heavy cloud of dust hits you the moment you enter.'}
+72	72		302							{2: 'This mall is so big...', 3: '73'}
+73	73		201							{1: '1', 2: '500994'}
+74	74		301							"{1: '1', 2: 'Lucia', 3: ""According to the resort's records, because the location is so far from any major city, they built this mall to meet the shopping needs of visiting tourists."", 4: '1'}"
+75	75		202							{1: '1'}
+76	76		301							{3: 'It lies hidden deep in the forest; maybe no one ever set foot inside before the scavengers found it.'}
+77	77		301							"{3: ""Apart from the scavengers' supplies haphazardly piled on the floor, everything else looks like it's been frozen in that chaotic moment in time.""}"
+78	78		301							"{3: ""Broken signs and fallen shelves lie scattered across the floor, sometimes revealing items that still haven't been taken...""}"
+79	79		201							{1: '1', 2: '500994'}
+80	80		301							"{1: '1', 2: 'Lucia', 3: ""...I've found one. It's right here."", 4: '1'}"
+81	81		301							{3: 'Listening closely for that strange low-frequency hum, Lucia carefully lifts the shelf and picks up the sound device from the ground.'}
+82	82		301							"{2: 'Lucia', 3: ""Commandant, I think there's another one at your three o'clock."", 4: '1'}"
+83	83		302							{2: 'Okay.', 3: '84', 4: 'Copy that.', 5: '84'}
+84	84		202							{1: '1'}
+85	85		301							{3: 'As the dust and decay clear away, your blurry vision begins to sharpen. You move aside the scattered goods on the floor and discover not just the small sound device but also a green box.'}
+86	86		301							"{3: ""Though it's been crushed and warped, and its packaging has yellowed over time, that green color is so unmistakably familiar...""}"
+87	87		302							{2: 'Lucia.', 3: '88'}
+88	88		201							{1: '1', 2: '500994', 3: '6'}
+89	89		301							{1: '1', 2: 'Lucia', 3: 'Commandant?', 4: '1'}
+90	90		202							{1: '1'}
+91	91		301							{3: 'She moves warily behind you, her hand instinctively on her weapon.'}
+92	92		302							{2: 'Check this out.', 3: '93'}
+93	93		301							{3: 'Your eyes land at the same time on that unmistakable green color.'}
+94	94		201							{1: '1', 2: '500994', 3: '7'}
+95	95		301							"{1: '1', 2: 'Lucia', 3: ""Oh... It's Froggie."", 4: '1'}"
+96	96		202							{1: '1'}
+97	97		301							{3: 'Moving faster than her frame can process, Lucia swiftly pulls the box out from the narrow space.'}
+98	98		301							"{3: ""Its green wrapping gleams under the light, revealing the Froggie blind box that's finally back in sight.""}"
+99	99		201							{1: '1', 2: '500994', 3: '3'}
+100	100		301							"{1: '1', 2: 'Lucia', 3: ""They stopped making these after the Froggie series bombed. I tried hunting one down before but never had any luck. Never thought I'd run into it here."", 4: '1'}"
+101	101		302							"{2: ""Looks like we're in luck."", 3: '102', 4: 'Our paper four-leaf clovers are working their magic.', 5: '102'}"
+102	102		301							"{3: 'This blind box series is called ""Froggie in Search of Happiness"", and the side of the box shows all the Froggie designs you might find.'}"
+103	103		301							{3: 'From one holding a butterfly to one perched on a cloud, there are eight designs in total. Right at the bottom, you see a black silhouette labeled as the secret edition.'}
+104	104		204							{1: '1', 2: '2'}
+105	105		301							"{2: 'Lucia', 3: ""I wonder which one we'll get."", 4: '1'}"
+106	106		302							"{2: ""Honestly, I'd be happy with any of them."", 3: '107', 4: ""Have some faith—we'll get the secret edition!"", 5: '107'}"
+107	107		204							{1: '1', 2: '4'}
+108	108		301							{3: 'Lucia lowers her eyes, her voice quivering with a hint of nervousness.'}
+109	109		301							"{2: 'Lucia', 3: ""Let's open it together, Commandant."", 4: '1'}"
+110	110		302							{2: '...', 3: '111', 4: 'Alright!', 5: '111'}
+111	111		202							{1: '1'}
+112	112		301							{3: 'You inhale and exhale, quietly counting down in your head.'}
+113	113		301							{3: 'The old cardboard box is opened with utmost care.'}
+114	114		201							{1: '1', 2: '500994', 3: '7'}
+115	115		301							{1: '1', 2: 'Lucia', 3: 'This is...', 4: '1'}
+116	116		202							{1: '1'}
+117	117		301							{3: 'A Froggie plush hugging a four-leaf clover sits in her hands—a variant not found among the regular editions.'}
+118	118		301							"{3: ""It's as if last night's shared feelings and promised blessings have worked their magic. The happiness that went missing yesterday now finds its way back into her hands in the most wondrous way.""}"
+119	119		302							"{2: ""It's the secret edition!"", 4: 'Luck really is on our side today!'}"
+120	120		201							{1: '1', 2: '500994', 3: '2'}
+121	121		301							{1: '1', 2: 'Lucia', 3: 'Finally...', 4: '1'}
+122	122		401							{1: '2', 2: '2782'}
+123	123		301							{3: 'Lucia is about to express her joy when her terminal suddenly sounds an alert.'}
+124	124		204							{1: '1'}
+125	125		301							"{2: 'Lucia', 3: ""...It's the Corrupted."", 4: '1'}"
+126	126		402							{1: '2782'}
+127	127		202							{1: '1'}
+128	128		301							{3: 'The low-frequency signals from all those sound devices have indeed drawn the Corrupted. Lucia glances at the Froggie in her hand, fastens the plush toy to her waist, then takes the lead and pushes open the shop door.'}
+129	129		301							{3: 'You watch this scene unfold, and a surge of familiar memories instantly fills your mind.'}
+130	130		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+131	131		504							{1: '0.7'}
+132	132		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg109_2.jpg'}
+133	133		301							"{3: ""It's almost like time rewinds all the way back to the start, to when it all began.""}"
+134	134		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+135	135		504							{1: '0'}
+136	136		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory307.png'}
+137	137		201							{1: '1', 2: '500994'}
+138	138		301							{1: '1', 3: 'Lucia looks exactly the same as she did then, with Froggie swaying gently at her waist.'}
+139	139		301							{3: 'She stands there, her eyes locked on yours with unyielding determination.'}
+140	140		301							{2: 'Lucia', 3: 'It embodies my past, my present, and even more so, my future.', 4: '1'}
+141	141		301							{2: 'Lucia', 3: 'Above all, it represents the memories that you and I share.', 4: '1'}
+142	142		204							{1: '1', 2: '1'}
+143	143		301		1		AniZhuanchangBegin			"{2: 'Lucia', 3: ""I won't lose it again this time, Commandant."", 4: '1'}"

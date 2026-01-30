@@ -1,0 +1,174 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory924.jpg'}
+2	2		401							{1: '1', 2: '203'}
+3	3		301			DialogEnable				{3: 'After thorough exploration, Bridget finally stops in front of a mining tunnel that shows less structural damage than the others.'}
+4	4		302							{2: 'Is this the place?'}
+5	5		201							{1: '1', 2: '500906'}
+6	6		301							{1: '1', 2: 'Bridget', 3: 'Yes, of course.', 4: '1'}
+7	7		202							{1: '1'}
+8	8		401							{1: '2', 2: '4536'}
+9	9		301							{3: 'She gently taps the rocks before her with a wrench and tilts her head to listen to the resonating sound.'}
+10	10		201							{1: '1', 2: '500906'}
+11	11		301							"{1: '1', 2: 'Bridget', 3: ""The location we confirmed with Karenina and the others should be somewhere around here. Without proper instruments, I can't pinpoint the exact position."", 4: '1'}"
+12	12		301							"{2: 'Bridget', 3: ""We'll start clearing the collapsed rocks from this position, and Engineering Force will be there to work with..."", 4: '1'}"
+13	13		401						500.0	{1: '2', 2: '4421'}
+14	14		301							"{3: ""Before she even finishes her sentence, the terminal crackles to life as Karenina's voice bursts through the speaker.""}"
+15	15		203							{1: '1', 2: '0.25', 3: '-400'}
+16	16		201							{1: '2', 2: '500494', 3: '12', 4: '400'}
+17	17		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '2'}
+18	18		301							{1: '1', 2: 'Karenina', 3: 'Hey—! Hello, hello? Can you hear me?', 4: '2'}
+19	19		302							"{2: 'Loud and clear.', 3: '23', 4: ""Nope, can't hear a thing."", 5: '20'}"
+20	20		301							{2: 'Karenina', 3: '...', 4: '2'}
+21	21		301							"{2: 'Karenina', 3: ""How in the world are you even answering my question if you can't hear me, you ****!"", 4: '2'}"
+22	22		301							"{2: 'Karenina', 3: ""Anyway, I don't have time for this now. Just make it back in one piece—then you'll have hell to pay!"", 4: '2'}"
+23	23		301							{2: 'Karenina', 3: 'Are you near the coordinates I calculated earlier?', 4: '2'}
+24	24		301							"{2: 'Bridget', 3: ""Yes, we're here. This section of the mine has suffered minor cave-ins. We'll reinforce it from the inside to prevent further collapse."", 4: '1'}"
+25	25		301							"{2: 'Karenina', 3: ""I know I can trust your work, but there's this one thing..."", 4: '2'}"
+26	26		301							"{3: ""Karenina falls quiet and says nothing for so long—that you're starting to wonder if there's a signal issue.""}"
+27	27		302							"{2: ""What's wrong?"", 3: '29', 4: 'What was it?', 5: '29'}"
+28	28		203							{1: '1', 2: '0.25', 3: '-400'}
+29	29		201							{1: '2', 2: '500864', 4: '400'}
+30	30		301							"{1: '1', 2: 'Teddy', 3: ""...Ugh, I don't see why this needs to be kept under wraps."", 4: '2'}"
+31	31		301							"{2: 'Teddy', 3: ""To put it simply, whether we're creating rescue access points for supplies or using large-diameter drilling for the rescue, we're going to end up making a lot of noise either way."", 4: '2'}"
+32	32		301							"{2: 'Teddy', 3: ""The mine's condition is unstable, and Karenina's worried it might attract Corrupted. And none of the researchers can fight to save their lives, so..."", 4: '2'}"
+33	33		301							{2: 'Teddy', 3: 'Someone will likely need to stay around to prevent any Constructs in the mine from attacking.', 4: '2'}
+34	34		302							"{2: ""I'll do it."", 3: '35'}"
+35	35		204							{1: '1', 2: '4'}
+36	36		301							"{2: 'Bridget', 3: ""I'll do it!"", 4: '1'}"
+37	37		302							{2: 'But Support Force needs you there to tell them what to do.', 3: '38'}
+38	38		301							"{1: '1', 2: 'Bridget', 3: ""There's no point arguing about this. It's dangerous whether you lead or stay around—no one knows what's gonna come popping out when we open that collapsed mine shaft."", 4: '1'}"
+39	39		301							"{2: 'Bridget', 3: ""That's why you and Lucia need to take point. If anything goes wrong, I'm sure your combat experience will lead everyone to safety."", 4: '1'}"
+40	40		301							"{2: 'Bridget', 3: ""They can handle the reinforcement work without my supervision. That's why I'm clearly the better choice to guard the rear."", 4: '1'}"
+41	41		201							{1: '1', 2: '500166', 4: '-400'}
+42	42		301							{1: '1', 2: 'Lucia', 3: 'Commandant...', 4: '1'}
+43	43		302							"{2: ""Lucia? How's everything like there?"", 3: '44'}"
+44	44		301							{3: 'Lucia comes running from the other end of the mining tunnel, following an anomalous signal.'}
+45	45		301							"{2: 'Lucia', 3: ""They know the layout of this place so well that I just couldn't catch up. I was just going around in circles when I ran into you guys."", 4: '1'}"
+46	46		201							{1: '1', 2: '500906', 4: '-400'}
+47	47		301							"{1: '1', 2: 'Bridget', 3: ""See? With that unidentified... person, or whatever it is, out there, we've got to make it our priority to keep the researchers safe."", 4: '1'}"
+48	48		301							{2: 'Bridget', 3: 'It makes more sense for our two strongest fighters to walk point.', 4: '1'}
+49	49		302							{2: '...', 3: '50', 4: 'Very well.', 5: '50'}
+50	50		301							{2: 'Teddy', 3: 'Done with your discussion? Well then, let me brief you on the rest of the rescue plan.', 4: '2'}
+51	51		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+52	52		202							{1: '1', 2: '2'}
+53	53		301							"{3: ""Some minor disagreement seems to be happening on the other end of the communication line. Karenina mutters something under her breath before Teddy's voice comes through again.""}"
+54	54		201							{1: '2', 2: '500864'}
+55	55		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '2'}
+56	56		301							{1: '1', 2: 'Teddy', 3: 'Engineering Force will proceed with the original plan, creating rescue access points at predetermined locations to pinpoint your exact position.', 4: '2'}
+57	57		301							{2: 'Teddy', 3: 'Before that, the Support Force personnel on the inside need to reinforce the mining tunnels around the planned locations to prevent any secondary collapses during the operation.', 4: '2'}
+58	58		301							{2: 'Teddy', 3: 'According to the reports, there seems to be some operational elevator equipment in the mine...', 4: '2'}
+59	59		401							{1: '2', 2: '4439'}
+60	60		301							{3: 'A soft tapping sound comes from the terminal screen.'}
+61	61		301							"{2: 'Teddy', 3: ""I'll help you gain control of the elevator system from the outside. You can use it to move around."", 4: '2'}"
+62	62		301							"{2: 'Teddy', 3: ""After that, Engineering Force will use the rescue access points to transport supplies, which is going to allow us to continue reinforcing the tunnels from the inside. Once we have the ground's conditions confirmed, we'll begin rescue operation using the large-diameter drilling machine..."", 4: '2'}"
+63	63		301							{2: 'Teddy', 3: '...Are you guys still listening?', 4: '2'}
+64	64		302							"{2: ""I'm listening."", 3: '65', 4: 'Huh? What was that?', 5: '65'}"
+65	65		203							{1: '2', 2: '0.25', 3: '400'}
+66	66		201							{1: '1', 2: '500906', 4: '-400'}
+67	67		301							"{1: '1', 2: 'Bridget', 3: ""Ah...? Yes, I'm listening!"", 4: '1'}"
+68	68		301							"{2: 'Bridget', 3: ""Support Force has brought reinforcement supplies. They'll prioritize reinforcing the areas where we plan to drill to prevent any further cave-ins."", 4: '1'}"
+69	69		301							{2: 'Teddy', 3: 'Very good.', 4: '2'}
+70	70		301							"{2: 'Teddy', 3: ""Alright, let's get the show on the road—and Karenina, don't even think about touching that large-diameter drill. I've got my eye on you!"", 4: '2'}"
+71	71		301							"{2: 'Bridget', 3: ""...Lucky. I'd love to try that drill, too..."", 4: '1'}"
+72	72		302							{2: '?', 3: '75', 4: 'Me too.', 5: '73'}
+73	73		301							{2: 'Bridget', 3: 'Right? I bet it has such a unique feel to it...', 4: '1'}
+74	74		301							"{2: 'Bridget', 3: ""I'll definitely give it a try when I get the chance."", 4: '1'}"
+75	75		301				AniZhuanchangBegin			"{2: 'Bridget', 3: ""Ahem... Alright, let's finish marking the spots and head back."", 4: '1'}"
+76	76		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+77	77		202							{1: '1', 2: '2', 6: '1'}
+78	78		401							{1: '1', 2: '36'}
+79	79		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory938.jpg'}
+80	80		401							{1: '1', 2: '5007'}
+81	81		301			AniZhuanchangEnd				{3: 'At the temporary camp, all tents have been taken down. Members of Support Force are all busy taking inventory of the remaining supplies while Cheryl stands beside Bridget, reporting their findings.'}
+82	82		201							{1: '1', 2: '500405'}
+83	83		301							"{1: '1', 2: 'Cheryl', 3: ""The Punishing's concentration remains within manageable levels. Most of the Corrupted in the tunnels are failed experimental Constructs."", 4: '1'}"
+84	84		301							"{2: 'Cheryl', 3: ""Norman Mining Corp must have installed a virus filtration system similar to a Central Purification Filter inside. Once the mine's power supply is restored to stable levels, we can repair and restart the system."", 4: '1'}"
+85	85		203							{1: '1', 2: '0.25', 3: '400'}
+86	86		201							{1: '2', 2: '500906', 4: '-400'}
+87	87		301							{1: '1', 2: 'Bridget', 3: 'And the conclusion?', 4: '2'}
+88	88		301							"{2: 'Cheryl', 3: ""Reactivating this mining facility isn't going to be much of a challenge, Boss."", 4: '1'}"
+89	89		301							"{2: 'Bridget', 3: ""I'll compile everything into a report and send it back to Babylonia along with the exploration maps. After that, we can..."", 4: '2'}"
+90	90		202							{1: '1', 2: '2', 6: '1'}
+91	91		201							{1: '1', 2: '500910'}
+92	92		301							{1: '1', 2: 'An Jie', 3: 'Bridget?', 4: '1'}
+93	93		203							{1: '1', 2: '0.25', 3: '400'}
+94	94		201							{1: '2', 2: '500906', 4: '-400'}
+95	95		301							{1: '1', 2: 'Bridget', 3: '...Hmm?', 4: '2'}
+96	96		301							{3: 'An Jie stands behind the packed tent, looking as if she has something to say.'}
+97	97		301							"{2: 'Bridget', 3: ""Coming all the way here... You're not planning to assassinate me, are you? The odds aren't in your favor—not when I'm wearing one of the first new frames that Support Force came up with."", 4: '2'}"
+98	98		301							"{2: 'An Jie', 3: ""...That's not what I meant."", 4: '1'}"
+99	99		301							"{2: 'An Jie', 3: ""You're evacuating, aren't you? No one told me, but I can see everyone packing up..."", 4: '1'}"
+100	100		204							{1: '2', 2: '4'}
+101	101		301							{2: 'Bridget', 3: 'Yes, Engineering Force has prepared an evacuation plan. Lucia and the Gray Raven Commandant will assist with your withdrawal.', 4: '2'}
+102	102		301							"{2: 'Bridget', 3: ""We haven't notified Norman Researchers because—"", 4: '2'}"
+103	103		301							"{2: 'An Jie', 3: ""I know Support Force doesn't trust us now."", 4: '1'}"
+104	104		204							{1: '2'}
+105	105		301							{2: 'Bridget', 3: 'Ah, haha.', 4: '2'}
+106	106		301							{3: 'Bridget quietly acknowledges this observation.'}
+107	107		301							"{2: 'An Jie', 3: ""...Since you're evacuating, I probably won't have the chance to come back here again."", 4: '1'}"
+108	108		301							{3: 'She drinks in the surroundings, trying to commit every detail to memory.'}
+109	109		301							"{2: 'An Jie', 3: ""The tantalum copolymer is a promising research topic. I'm convinced that it could yield even better results than Ta-193 copolymer under certain conditions."", 4: '1'}"
+110	110		204							{1: '2', 2: '4'}
+111	111		301							{2: 'Bridget', 3: '...', 4: '2'}
+112	112		301							{2: 'An Jie', 3: '...You have my apologies.', 4: '1'}
+113	113		301							"{2: 'An Jie', 3: ""Anyway, this piece of information... is what I've been keeping as my last lifeline."", 4: '1'}"
+114	114		202							{1: '1', 2: '2'}
+115	115		301							"{3: ""She pulls out a paper map that shows a detailed layout of the underground mine, but this one reveals numerous facilities that don't appear on Norman Mining Corp's map.""}"
+116	116		301							"{3: 'Several ""non-existent"" laboratories, along with a ""non-existent"" <color=#ff4e4eff>monitoring room</color> at the lowest level.'}"
+117	117		201							{1: '1', 2: '500910', 4: '400'}
+118	118		201							{1: '2', 2: '500906', 4: '-400'}
+119	119		301							"{1: '1', 2: 'An Jie', 3: 'Before I left, my professor handed me this map and wished me a safe journey. He told me that the monitoring room at the lowest level was the ""heart"" of the entire mine.', 4: '1'}"
+120	120		301							{2: 'An Jie', 3: 'He must have seen all of this coming...', 4: '1'}
+121	121		301							{3: 'An Jie lets out a weary sigh and falls silent.'}
+122	122		301							"{2: 'An Jie', 3: ""I was hoping... that you'd be able to uncover the research data on copolymers when you're finished with what you came here to do."", 4: '1'}"
+123	123		204							{1: '2', 2: '4'}
+124	124		301							{2: 'Bridget', 3: 'And continue to fill that void with countless more lives?', 4: '2'}
+125	125		301							"{2: 'An Jie', 3: ""...I'm sorry, I'm in no position to have an argument with you as far as this goes."", 4: '1'}"
+126	126		301							{2: 'An Jie', 3: 'I used to believe that sacrifice was just a natural part of scientific progress...', 4: '1'}
+127	127		301							"{3: 'But she never stopped to think about what happened to those ""failed"" test subjects.'}"
+128	128		301							"{3: ""Having witnessed countless power struggles within the laboratory, she understands that defeated factions face elimination. That's why when she first entered the mine and saw the researchers' bodies, she felt only surprise, not panic.""}"
+129	129		301							"{3: 'But... when she fled into the incubation chamber, she witnessed infected Constructs throwing themselves at the doors, watched helplessly as lifeless ""failed specimens"" were piled up before her eyes...'}"
+130	130		301							"{2: 'An Jie', 3: ""But I'll say this now—no technological advancement should ever come at the cost of human lives."", 4: '1'}"
+131	131		301							"{2: 'An Jie', 3: ""I guess this is why my professor always said that he just couldn't bring himself to be ruthless... and maybe that's also why they abandoned me this time."", 4: '1'}"
+132	132		301							{3: 'Bridget offers no words of comfort in response.'}
+133	133		301							"{2: 'An Jie', 3: ""If I make it back to Babylonia alive... I will hand in my resignation and leave Norman Mining Corp's research facility."", 4: '1'}"
+134	134		301							{2: 'An Jie', 3: 'And after that...', 4: '1'}
+135	135		301							{3: 'As for what happens after that, she has no idea.'}
+136	136		301							"{3: ""Perhaps her professor doesn't want her dead after all—seeing as he did give her this life-saving map. Maybe she could turn over a new leaf and seek a position at the Science Council... if they're still willing to take her in, that is.""}"
+137	137		301							{2: 'An Jie', 3: 'I hope this map proves useful to you all.', 4: '1'}
+138	138		202							{1: '1', 2: '2'}
+139	139		301							{3: 'An Jie quietly returns to where she belongs.'}
+140	140		301							{3: 'Holding the map An Jie surrendered, Bridget falls into deep thought.'}
+141	141		301							"{3: ""She isn't surprised that An Jie kept this as a contingency plan—if they weren't about to evacuate the mine, An Jie probably wouldn't have handed over the map at all.""}"
+142	142		301							"{3: ""It's no surprise that An Jie's professor was a Kurono operative infiltrating Norman Mining Corp's research facility. No one knows just how many infiltrators Kurono has trained and planted over the years.""}"
+143	143		301							"{3: ""It's just... it's such a shame.""}"
+144	144		301							{3: 'As Bridget flips through the map pages, a wave of inexplicable sadness washes over her.'}
+145	145		302							{2: 'Bridget?', 3: '146'}
+146	146		201							{1: '1', 2: '500906', 3: '14'}
+147	147		301							{1: '1', 2: 'Bridget', 3: 'Oh, 【kuroname】? Are you all done with the preparations over there?', 4: '1'}
+148	148		302							"{2: ""We're all set."", 3: '149'}"
+149	149		204							{1: '1'}
+150	150		301							{2: 'Bridget', 3: 'Right, you guys always travel light eh, haha.', 4: '1'}
+151	151		204							{1: '1', 2: '4'}
+152	152		302							{2: 'Something seems off about you.', 3: '153'}
+153	153		204							{1: '1', 2: '14'}
+154	154		301							"{2: 'Bridget', 3: ""Don't worry. It just hit me, though..."", 4: '1'}"
+155	155		301							"{2: 'Bridget', 3: ""That this is my second time coming to this place, but I still haven't figured out why my parents went missing."", 4: '1'}"
+156	156		301							{3: 'Found no clues whatsoever? The truth seems pretty clear.'}
+157	157		301							"{3: ""Just like Miner A, who saw or heard something they shouldn't have during the rescue operation... They might have either been taken away by Kurono's Constructs, killed, or... modified...""}"
+158	158		301							"{3: ""But in any case... they're most likely no longer in this world.""}"
+159	159		301							{3: 'With you looking concerned, Bridget blinks hard, forcing herself to put on her usual smile.'}
+160	160		204							{1: '1'}
+161	161		301							"{2: 'Bridget', 3: ""It's okay. I'm pretty sure I'll find them eventually now that the Konstantin Mine is in operation again."", 4: '1'}"
+162	162		301							"{2: 'Bridget', 3: ""Alright, alright, I'd better go and make those slowpokes work harder. Pretty sure Karenina is gonna show up with her giant drill if we don't speed up..."", 4: '1'}"
+163	163		202							{1: '1'}
+164	164		104							{1: '0|0|-50', 2: '0.5'}
+165	165		301							{3: 'She takes big strides toward the center of the temporary camp.'}
+166	166		201							{1: '1', 2: '500906'}
+167	167		301							{1: '1', 2: 'Bridget', 3: 'Hey—! Is everyone ready to move out?!', 4: '1'}
+168	168		201							{1: '1', 2: '500019'}
+169	169		301							{1: '1', 2: 'Support Force Member', 3: 'All ready to go—!', 4: '1'}
+170	170		202							{1: '1'}
+171	171		301							{3: 'Despite several days of resource shortages, every member of Support Force remains in high spirits.'}
+172	172		201							{1: '1', 2: '500906'}
+173	173		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Bridget', 3: ""Everybody ready? Grab your stuff, let's go home!"", 4: '1'}"

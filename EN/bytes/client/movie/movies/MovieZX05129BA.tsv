@@ -1,0 +1,237 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		401							{1: '2', 2: '2975'}
+4	4		301			DialogEnable				{3: 'Thump—'}
+5	5		301							{3: 'The dull beating of a heart echoes in the dark abyss, profound and lingering.'}
+6	6		401							{1: '2', 2: '2975'}
+7	7		301							{3: 'Thump—'}
+8	8		301							{3: 'The lone lost soul has found the way home.'}
+9	9		401							{1: '2', 2: '2975'}
+10	10		301							{3: 'Thump—'}
+11	11		301							{3: 'As if a drowning exile reaching air at last, the cold, sticky heaviness—reminiscent of a soaked cotton coat—is gently peeled away from consciousness by a soft breeze...'}
+12	12		302							{2: 'Is... is it a dream...?', 3: '13'}
+13	13		301				AniZhuanchangBegin			{3: 'Your body seems to have endured tremendous suffering—a suffocating sensation rises from the nasal cavity, while a heart-wrenching, bone-piercing pain seeps through every joint—'}
+14	14		502						400.0	{1: 'DialogDisable'}
+15	15		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '5'}
+16	16		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory45.jpg'}
+17	17		401							{1: '2', 2: '4280'}
+18	18		111						1500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+19	19		301			DialogEnable				{3: 'Where... where are you...'}
+20	20		301							{3: 'The world spins wildly as excessively bright light stabs at your eyes.'}
+21	21		301							{2: '??', 3: '【kuroname】...'}
+22	22		301							{2: '??', 3: '【kuroname】?'}
+23	23		111						1500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+24	24		301							{3: 'A familiar voice, and familiar light—'}
+25	25		401							{1: '1', 2: '5038'}
+26	26		201							{1: '1', 2: '500011'}
+27	27		301							{1: '1', 2: 'Hassen', 3: '【kuroname】... Are you alright? Feeling the effects of your injury?', 4: '1'}
+28	28		302							{2: 'I...', 3: '29'}
+29	29		202							{1: '1', 6: '1'}
+30	30		301							"{3: ""Your consciousness feels like it's been salvaged from a cold, deep sea, carrying with it chilling tremors and biting sorrow.""}"
+31	31		301							{3: 'What... what in the world... happened?'}
+32	32		301							{3: 'Hazy fragments rise and fall in your mind. It feels like countless painful experiences were endured, yet also as if they were merely an all-too-real nightmare.'}
+33	33		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '0.5'}
+34	34		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '5', 5: '1'}
+35	35		301							{3: 'As the ringing in your ears persists, black spots fade from retinas, revealing a concerned-looking Hassen before you.'}
+36	36		201							{1: '1', 2: '500011'}
+37	37		301							{1: '1', 2: 'Hassen', 3: 'Thank you for your hard work on the last mission.', 4: '1'}
+38	38		301				DialogDisable			{2: 'Hassen', 3: 'You mentioned in your report that Lithos has some unique insights on the Red Tide?', 4: '1'}
+39	39		302							{2: 'The Red Tide...', 3: '40', 4: 'Lithos...', 5: '45'}
+40	40		202							{1: '1', 6: '1'}
+41	41		401							{1: '2', 2: '952'}
+42	42		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+43	43		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+44	44	50	101						1000.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg1601_7.jpg'}
+45	45		202							{1: '1', 6: '1'}
+46	46		401							{1: '2', 2: '952'}
+47	47		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+48	48		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+49	49	50	101						1000.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_15.jpg'}
+50	50		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab'}
+51	51		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+52	52		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory45.jpg'}
+53	53		301			DialogEnable	DialogDisable			{3: 'Sorrow follows from the shadows. It feels... as if something has been forgotten...'}
+54	54		302							{2: 'Lucia...', 3: '55', 4: 'Gray Raven...', 5: '59'}
+55	55		401							{1: '2', 2: '952'}
+56	56		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+57	57		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+58	58	63	101						1000.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_100.jpg'}
+59	59		401							{1: '2', 2: '952'}
+60	60		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+61	61		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+62	62	63	101						1000.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_87.jpg'}
+63	63		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab'}
+64	64		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+65	65		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory45.jpg'}
+66	66		401							{1: '2', 2: '4331'}
+67	67		401							{1: '2', 2: '971'}
+68	68		301			DialogEnable				{3: 'Your body acts before your mind can catch up, ignoring the ongoing meeting. You push open the doors and sprint desperately toward the Gray Raven lounge.'}
+69	69		301							{3: 'It has to be now, it has to be at this exact time, you have to confirm it—'}
+70	70		201							{1: '1', 2: '500011', 3: '5'}
+71	71		301							{1: '1', 2: 'Hassen', 3: 'Contact Gray Raven...', 4: '1'}
+72	72		202							{1: '1', 6: '1'}
+73	73		301				AniZhuanchangBegin			"{3: ""Hassen's voice is left far behind.""}"
+74	74		502						400.0	{1: 'DialogDisable'}
+75	75		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgCg/Cg4301_10.jpg'}
+76	76		107							{1: 'Babylonia', 2: '9:00A.M.'}
+77	77		301							{3: 'Babylonia 9:00 A.M.'}
+78	78		108							{1: '1'}
+79	79		301			DialogEnable				{3: 'A summer breeze caresses your cheek, bringing with it a disorienting sense of unreality.'}
+80	80		301				DialogDisable			{3: 'What exactly... have you forgotten? And what exactly are you trying to confirm?'}
+81	81		104					500.0		{1: '0|0|-400', 2: '0.7'}
+82	82		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory263.png', 3: '0', 4: '1', 5: '1'}
+83	83		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+84	84		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory263.png'}
+85	85		104					500.0		{1: '0|0|-400', 2: '0.7'}
+86	86		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory260.png', 3: '0', 4: '1', 5: '1'}
+87	87		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+88	88		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory260.png'}
+89	89		104					500.0		{1: '0|0|-400', 2: '0.7'}
+90	90		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory267.png', 3: '0', 4: '1', 5: '1'}
+91	91		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+92	92		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory267.png'}
+93	93		301			DialogEnable				{3: 'In your mind, a persistent voice keeps urging—Gray Raven lounge, you must get to the Gray Raven lounge—'}
+94	94		104					500.0		{1: '0|0|-400', 2: '0.7'}
+95	95		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg', 3: '0', 4: '1', 5: '1'}
+96	96		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+97	97		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg'}
+98	98		301							{3: 'The despair from the nightmare still pursues you. If only, if only you can reach that place—'}
+99	99		301				DialogDisable			{3: 'The door to the Gray Raven lounge remains closed, as always.'}
+100	100		401							{1: '1', 2: '36'}
+101	101		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+102	102		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+103	103		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+104	104		301			DialogEnable				{3: 'Your fingers quiver subtly, teeth chattering involuntarily, as if gripped by fear—fear of something irreparable—'}
+105	105		401							{1: '2', 2: '4870'}
+106	106		301							{3: 'BANG!'}
+107	107		301				DialogDisable			"{3: ""Before there's time to think further, your body already begins executing the urgent command—""}"
+108	108		401							{1: '1', 2: '334'}
+109	109		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5101_02.jpg', 3: '0', 4: '1', 5: '1'}
+110	110		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+111	111		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5101_02.jpg'}
+112	112		301			DialogEnable				{2: 'Lucia', 3: 'Commandant!'}
+113	113		301							{3: 'Morning light flows through the room, boldly spilling into your field of vision.'}
+114	114		301							{2: 'Lucia', 3: 'What happened, Commandant?'}
+115	115		301							{3: 'A warm hand, faster than the pursuing nightmare, reaches your shoulder.'}
+116	116		301							{2: 'Lucia', 3: 'They say you were in the middle of giving a report when you suddenly fainted. As soon as you regained consciousness, you bolted out of the meeting room and ran straight to the lounge.'}
+117	117		301							"{2: 'Lucia', 3: ""After receiving Hassen's message, Lee rushed back even though he was only halfway through his frame calibration...""}"
+118	118		301							{2: 'Liv', 3: 'Commandant, what happened?'}
+119	119		301							"{2: 'Lee', 3: ""Don't worry, we're all here...""}"
+120	120		111						1500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+121	121		301				DialogDisable			{3: 'The chill is brazenly washed away by the morning light, as sunshine strikes against darkness, mocking the abyss for its impotence.'}
+122	122		401							{1: '2', 2: '4696'}
+123	123		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+124	124		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+125	125		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+126	126		301			DialogEnable				{3: 'By your ear, the crackling of a bonfire and sounds of crying gradually fade away, replaced by the anxious conversation of Gray Raven.'}
+127	127		301							{2: 'Lucia', 3: 'Commandant... Commandant! Vital signs appear normal. Liv, run a thorough examination!'}
+128	128		301							{2: 'Liv', 3: 'No external injuries, confirm again—'}
+129	129		301							"{2: 'Lee', 3: ""I'll contact the Star of Life!""}"
+130	130		301							{3: 'Your gaze loses focus, scattering amidst the warm light filling the room.'}
+131	131		301							{3: 'Now comes the eternal dawn.'}
+132	132		301							{3: 'We find rebirth in our breaking.'}
+133	133		302							{2: 'Lucia...', 3: '134', 4: 'Gray Raven...', 5: '156'}
+134	134		502						400.0	{1: 'DialogDisable'}
+135	135		307							"{1: ""The heroes' feats lie buried beneath the first ray of dawn."", 3: '50'}"
+136	136		301							"{3: ""The heroes' feats lie buried beneath the first ray of dawn.""}"
+137	137		307						400.0	{2: '1'}
+138	138		307							"{1: 'No one will remember the devastating price they have paid for this moment. No one will remember the pain and suffering they have endured for this ""miracle"".', 3: '45'}"
+139	139		301							"{3: 'No one will remember the devastating price they have paid for this moment. No one will remember the pain and suffering they have endured for this ""miracle"".'}"
+140	140		307						400.0	{2: '1'}
+141	141		307							{1: 'But... dawn has broken, the light has come.', 3: '50', 6: '1'}
+142	142		301							{3: 'But... dawn has broken, the light has come.'}
+143	143		307						400.0	{2: '1'}
+144	144		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_98.jpg', 3: '0', 4: '1', 5: '1'}
+145	145		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+146	146		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_98.jpg'}
+147	147		307							{1: 'I shall traverse myriad sufferings and the darkest of nights, to meet with you—', 3: '50'}
+148	148		301							{3: 'I shall traverse myriad sufferings and the darkest of nights, to meet with you—'}
+149	149		307						400.0	{2: '1'}
+150	150		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+151	151		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+152	152		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+153	153		307							{1: 'At the break of dawn, upon the first ray of light.', 3: '50'}
+154	154		301							{3: 'At the break of dawn, upon the first ray of light.'}
+155	155	178	307						400.0	{2: '1'}
+156	156		502						400.0	{1: 'DialogDisable'}
+157	157		307							"{1: ""The heroes' feats lie buried beneath the first ray of dawn."", 3: '50'}"
+158	158		301							"{3: ""The heroes' feats lie buried beneath the first ray of dawn.""}"
+159	159		307						400.0	{2: '1'}
+160	160		307							"{1: 'No one will remember the devastating price they have paid for this moment. No one will remember the pain and suffering they have endured for this ""miracle"".', 3: '45'}"
+161	161		301							"{3: 'No one will remember the devastating price they have paid for this moment. No one will remember the pain and suffering they have endured for this ""miracle"".'}"
+162	162		307						400.0	{2: '1'}
+163	163		307							{1: 'But... dawn has broken, the light has come.', 3: '50', 6: '1'}
+164	164		301							{3: 'But... dawn has broken, the light has come.'}
+165	165		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront11.png', 3: '0', 4: '1', 5: '1'}
+166	166		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+167	167		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront11.png'}
+168	168		307						400.0	{2: '1'}
+169	169		307							{1: 'I shall traverse myriad sufferings and the darkest of nights, to meet with you all—', 3: '50', 6: '1'}
+170	170		301							{3: 'I shall traverse myriad sufferings and the darkest of nights, to meet with you all—'}
+171	171		307						400.0	{2: '1'}
+172	172		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+173	173		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+174	174		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+175	175		307							{1: 'At the break of dawn, upon the first ray of light.', 3: '50'}
+176	176		301							{3: 'At the break of dawn, upon the first ray of light.'}
+177	177	178	307						400.0	{2: '1'}
+178	178		502							{1: 'DialogDisable'}
+179	179		102							{1: '-Wither to Shine-', 2: 'Dawn', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+180	180		502				AniZhuanchangBegin		8000.0	{1: 'ThemeEnable'}
+181	181		401						2000.0	{1: '1', 2: '36'}
+182	182		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory263.png'}
+183	183		107							{1: 'Babylonia', 2: '12:00A.M.'}
+184	184		301							{3: 'Babylonia 12:00 A.M.'}
+185	185		108							{1: '1'}
+186	186		401							{1: '2', 2: '4380'}
+187	187		201							{1: '1', 2: '500303', 4: '400'}
+188	188		201							{1: '2', 2: '500116', 4: '-400'}
+189	189		301			DialogEnable				{1: '1', 2: 'Control Court Officer A', 3: 'Something seems off with the Gray Raven Commandant...', 4: '1'}
+190	190		301							"{2: 'Control Court Officer B', 3: ""Is it about the meeting this morning? I've heard about it too, but I'm not sure what exactly happened..."", 4: '2'}"
+191	191		301							{2: 'Control Court Officer A', 3: 'I heard it might be Mind Beacon disruption during the last mission?', 4: '1'}
+192	192		301							{2: 'Control Court Officer B', 3: 'But it was supposed to be just a routine mission...', 4: '2'}
+193	193		301							{2: 'Control Court Officer B', 3: 'Oh... Ishmael? Back from your mission?', 4: '2'}
+194	194		301							{3: 'The pink-haired woman halts in her tracks as her colleague catches a glimpse of her from the side and greets her with enthusiasm.'}
+195	195		402							{1: '4380'}
+196	196		401							{1: '1', 2: '358'}
+197	197		202							{1: '1', 2: '2', 6: '1'}
+198	198		201							{1: '1', 2: '500380'}
+199	199		301							{1: '1', 2: 'Ishmael', 3: 'Ah... yes, I was on quite a long mission.', 4: '1'}
+200	200		301							{3: 'She speaks in a nonchalant tone.'}
+201	201		301							"{2: 'Ishmael', 3: ""But it's over now, and fortunately, the outcome was still what I had hoped for..."", 4: '1'}"
+202	202		203							{1: '1', 2: '0.25', 3: '-400'}
+203	203		201							{1: '2', 2: '500116', 4: '400'}
+204	204		301							{1: '1', 2: 'Control Court Officer B', 3: 'Well, all good if it went smoothly!', 4: '2'}
+205	205		301							"{2: 'Control Court Officer B', 3: ""It's lunchtime now, want to join us?"", 4: '2'}"
+206	206		301							{2: 'Ishmael', 3: 'Sure.', 4: '1'}
+207	207		301				AniZhuanchangBegin			{3: 'The pink-haired woman smiles in agreement with her colleague and walks slowly into the crowd.'}
+208	208		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+209	209		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory1115.jpg'}
+210	210		301			DialogEnable	DialogDisable			"{3: ""<phonetic=Cradle>Agent Zero</phonetic>, killed by Chaos, has vanished into the crevices between past and future. All traces of Vonnegut's entry into this world have also been completely erased by Chaos.""}"
+211	211		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory334.png', 3: '0', 4: '1', 5: '1'}
+212	212		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+213	213		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory334.png'}
+214	214		301			DialogEnable	DialogDisable			{3: 'Before this civilization reaches a sufficient level of advancement, the Hetero Tower will not descend in haste again.'}
+215	215		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1110.jpg', 3: '0', 4: '1', 5: '1'}
+216	216		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+217	217		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1110.jpg'}
+218	218		301			DialogEnable	AniZhuanchangBegin			"{3: 'Time and causality have been converged piece by piece, forging the final and only path to the ""future"" for this civilization.'}"
+219	219		502						400.0	{1: 'DialogDisable'}
+220	220		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory263.png'}
+221	221		201							{1: '1', 2: '500380'}
+222	222		301			DialogEnable				{1: '1', 2: 'Ishmael', 3: '...', 4: '1'}
+223	223		301				DialogDisable			"{3: 'Though she has paid a great price for it, she is willing to stand here and witness the ""future"" of this civilization.'}"
+224	224		202							{1: '1', 6: '1'}
+225	225		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+226	226		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+227	227		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+228	228		307							{1: 'Everything is now as you wished, Gray Raven.', 3: '50', 6: '1'}
+229	229		301							{3: 'Everything is now as you wished, Gray Raven.'}
+230	230		307						400.0	{2: '1'}
+231	231		401						800.0	{1: '2', 2: '1600'}
+232	232		401							{1: '2', 2: '2824'}
+233	233		402						1000.0	{1: '1600'}
+234	234		401						400.0	{1: '2', 2: '4143'}
+235	235		307							{1: 'So this time... what choice will humanity make?', 3: '50', 6: '1'}
+236	236		301		1		AniZhuanchangBegin			{3: 'So this time... what choice will humanity make?'}

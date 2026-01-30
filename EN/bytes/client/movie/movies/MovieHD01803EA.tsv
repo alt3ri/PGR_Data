@@ -1,0 +1,143 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory655.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		401							{1: '2', 2: '1508'}
+4	4		201							{1: '1', 2: '1031001', 3: '5', 7: '1'}
+5	5		201							{1: '2', 2: '500013', 4: '600', 7: '1'}
+6	6		201							{1: '3', 2: '500013', 4: '-600', 7: '1'}
+7	7		401							{1: '2', 2: '10021516'}
+8	8		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+9	9		502							{1: 'PanelActor2Shake'}
+10	10		502						700.0	{1: 'PanelActor3Shake'}
+11	11		505							{1: 'PanelActor2Shake'}
+12	12		505							{1: 'PanelActor3Shake'}
+13	13		401							{1: '2', 2: '2603'}
+14	14		203							{1: '2', 2: '0.2', 3: '600', 4: '-1200'}
+15	15		203							{1: '3', 2: '0.2', 3: '-600', 4: '-1200'}
+16	16		202						500.0	{1: '2', 2: '3'}
+17	17		301			DialogEnable				{3: 'Before Liv knows it, a gunshot shatters the Corrupted creeping up on her from behind. In pieces, the Corrupted twitches for a few seconds—before disappearing in a puff of smoke.'}
+18	18		202							{1: '1', 6: '1'}
+19	19		301							{3: 'You and the rest of Gray Raven are the only ones left now in the virtual Hetero Tower—in addition to the weird train and, of course, the mechanoid that looks on as everything unfolds.'}
+20	20		401							{1: '1', 2: '36'}
+21	21		201							{1: '1', 2: '500576', 3: '2'}
+22	22		301							{1: '1', 2: '??', 3: 'Commandant!', 4: '1'}
+23	23		401							{1: '1', 2: '208'}
+24	24		301							{3: 'Someone opens a car window and waves this way.'}
+25	25		201							{1: '1', 2: '500166'}
+26	26		301							{1: '1', 2: 'Lucia', 3: 'Ayla?!', 4: '1'}
+27	27		201							{1: '1', 2: '500488'}
+28	28		301				DialogDisable			{1: '1', 2: 'Conductor', 3: 'We now... have a few more passengers aboard.', 4: '1'}
+29	29		202							{1: '1'}
+30	30		502							{1: 'RImgBg1DisableSlow'}
+31	31		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+32	32		301			DialogEnable				{3: 'With the Gray Ravens aboard again, the car now appears slightly crowded.'}
+33	33		301							{3: 'In addition to Ayla, there are Nikola, Allen from WGAA, Sica, Karenina, and Kamui on the train now.'}
+34	34		301							{3: 'Apparently, while you and the rest of Gray Raven were caught up in the fight just now, Conductor already brought everyone else on this train up to speed about what they needed to do here.'}
+35	35		201							{1: '1', 2: '500576', 4: '-400'}
+36	36		201							{1: '2', 2: '500560', 3: '7', 4: '400'}
+37	37		301							{1: '1', 2: 'Sica', 3: '...Which means that we need to relive our past in this virtual space.', 4: '2'}
+38	38		301							"{2: 'Ayla', 3: ""And that's not something you get to do every day, right? I'm excited."", 4: '1'}"
+39	39		204							{1: '2', 2: '4'}
+40	40		301							{2: 'Sica', 3: 'Well, I am not, though...', 4: '2'}
+41	41		202							{1: '2', 6: '1'}
+42	42		201							{1: '2', 2: '1081001', 3: '1', 4: '400'}
+43	43		301							"{1: '1', 2: 'Kamui', 3: ""It's kind of like how you can go back to a certain point in a game, right? I want to go back to yesterday."", 4: '2'}"
+44	44		301							{2: 'Ayla', 3: 'Why is that?', 4: '1'}
+45	45		204							{1: '2'}
+46	46		301							{2: 'Kamui', 3: 'Oh, because I forgot to get Camu the Nightmare-Spicy Chicken Wing Bento that he asked me to get him.', 4: '2'}
+47	47		301							{2: 'Ayla', 3: 'And you just do that for him?', 4: '1'}
+48	48		204							{1: '2', 2: '1'}
+49	49		301							{2: 'Kamui', 3: 'Well, the bento is from this new place that just opened, and Camu just wanted to give it a try.', 4: '2'}
+50	50		204							{1: '2'}
+51	51		301							{2: 'Kamui', 3: 'He asked me to get him that because he was out on a mission before, but they were already sold out when I got there...', 4: '2'}
+52	52		202							{1: '1', 2: '2', 6: '1'}
+53	53		201							{1: '1', 2: '500012'}
+54	54		301							{1: '1', 3: 'With a deep frown, Nikola sits quietly all through the hubbub.'}
+55	55		301							{2: 'Nikola', 3: '...Boy, what a mess.', 4: '1'}
+56	56		301							{2: 'Nikola', 3: 'I got a report from the Science Council before my infiltration.', 4: '1'}
+57	57		301							{2: 'Nikola', 3: 'They think we need to be here inside Gestalt to take care of the situation.', 4: '1'}
+58	58		202							{1: '1', 6: '1'}
+59	59		201							{1: '1', 2: '500568', 4: '400'}
+60	60		201							{1: '2', 2: '500012', 4: '-400'}
+61	61		301							"{1: '1', 2: 'Lee', 3: ""Which means there is nothing the Science Council can do from outside—and that this mechanoid program is a model that's branched out of Gestalt."", 4: '1'}"
+62	62		301							{3: 'Nikola nods in agreement with what Lee said.'}
+63	63		202							{1: '1', 2: '2', 6: '1'}
+64	64		201							{1: '1', 2: '500494', 3: '12', 4: '400'}
+65	65		201							{1: '2', 2: '500488', 4: '-500'}
+66	66		301							{1: '1', 2: 'Karenina', 3: '...And this lousy robot is responsible for all of these?', 4: '1'}
+67	67		301							{2: 'Conductor', 3: 'In conclusion, yes—and with all due respect, I am no lousy robot, and my program happens to be the latest version.', 4: '2'}
+68	68		301							{2: 'Karenina', 3: 'And would you happen to know what we can do to get rid of you?', 4: '1'}
+69	69		301							{2: 'Conductor', 3: '?', 4: '2'}
+70	70		204							{1: '1', 2: '5'}
+71	71		301							"{2: 'Karenina', 3: ""I'm going to put your head on a potato and chuck it into space."", 4: '1'}"
+72	72		301							"{2: 'Conductor', 3: ""Apologies, but I am a 9000, and my operating voltage is higher than the voltage of a potato's bioelectricity."", 4: '2'}"
+73	73		204							{1: '1', 2: '4'}
+74	74		202							{1: '2', 6: '1'}
+75	75		201							{1: '2', 2: '500568', 4: '-400'}
+76	76		301							"{1: '1', 2: 'Lee', 3: ""I have no idea why you want to put this guy's head on a potato, Karenina, but we're in a programmed space now, and this guy has the highest permission here."", 4: '2'}"
+77	77		301							{2: 'Lee', 3: 'From a computer permissions perspective, there is no way you can destroy it with violence.', 4: '2'}
+78	78		204							{1: '1', 2: '12'}
+79	79		301							{2: 'Karenina', 3: '...', 4: '1'}
+80	80		301							"{2: 'Karenina', 3: ""So, in a nutshell, we're getting stuck in Gestalt, and we can't get out until we're done doing what this mechanoid wants us to do. Correct?"", 4: '1'}"
+81	81		202							{1: '1', 2: '2', 6: '1'}
+82	82		201							{1: '1', 2: '500576', 4: '-400'}
+83	83		201							{1: '2', 2: '1081001', 4: '400'}
+84	84		301							"{1: '1', 2: 'Ayla', 3: ""That's basically it."", 4: '1'}"
+85	85		301							"{2: 'Kamui', 3: 'And that means we can go back to ""yesterday""?', 4: '2'}"
+86	86		202							{1: '1', 6: '1'}
+87	87		201							{1: '1', 2: '500488', 4: '-500'}
+88	88		301							{1: '1', 2: 'Conductor', 3: 'If you can prove that the past 24 hours have an indispensable value, I can make that our next stop.', 4: '1'}
+89	89		301							{2: 'Kamui', 3: 'Indispensable value?', 4: '2'}
+90	90		301							{2: 'Conductor', 3: 'Right—that is, prove that your past 24 hours will have a significant impact on the future.', 4: '1'}
+91	91		301							{2: 'Kamui', 3: 'Well... Camu would have been really upset without his Nightmare-Spicy Chicken Wing Bento.', 4: '2'}
+92	92		301							"{2: 'Kamui', 3: ""And things usually don't end well when Camu is upset."", 4: '2'}"
+93	93		301							{2: 'Conductor', 3: '...?', 4: '1'}
+94	94		204							{1: '2', 2: '1'}
+95	95		301							"{2: 'Kamui', 3: ""And it gives you a boost when you get to enjoy food that you've been looking forward to, right? And when you get that boost, you know you're going to do well on that next mission."", 4: '2'}"
+96	96		202							{1: '1', 6: '1'}
+97	97		201							{1: '1', 2: '500568', 4: '-400'}
+98	98		301							"{1: '1', 2: 'Lee', 3: ""I don't think there exists causality between the two."", 4: '1'}"
+99	99		204							{1: '2', 2: '2'}
+100	100		301							"{2: 'Kamui', 3: 'What I am saying is that it makes you happy! See, my commandant always tells us, ""Nothing comes before your happiness.""', 4: '2'}"
+101	101		202							{1: '1', 2: '2', 6: '1'}
+102	102		201							{1: '1', 2: '500568', 4: '450'}
+103	103		201							{1: '2', 2: '500488', 4: '-500'}
+104	104		301							{1: '1', 2: 'Conductor', 3: '...', 4: '2'}
+105	105		301							{2: 'Lee', 3: '...', 4: '1'}
+106	106		202							{1: '1', 2: '2', 6: '1'}
+107	107		201							{1: '1', 2: '500576'}
+108	108		201							{1: '2', 2: '500494', 3: '12', 4: '600'}
+109	109		201							{1: '3', 2: '500012', 4: '-700'}
+110	110		301							{1: '1', 2: 'All', 3: '...', 4: '1', 5: '2', 6: '3'}
+111	111		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+112	112		201							{1: '1', 2: '1081001'}
+113	113		301							"{1: '1', 2: 'Kamui', 3: ""C'mon, guys!"", 4: '1'}"
+114	114		202							{1: '1', 6: '1'}
+115	115		201							{1: '1', 2: '1081001', 4: '400'}
+116	116		201							{1: '2', 2: '500576', 4: '-400'}
+117	117		301							{1: '1', 2: 'Ayla', 3: 'Well... I happen to have free coupons for this restaurant for designing their logo for them...', 4: '2'}
+118	118		301							"{2: 'Ayla', 3: ""And I don't think I can use all of them anyway, so here!"", 4: '2'}"
+119	119		204							{1: '1', 2: '2'}
+120	120		301							"{2: 'Kamui', 3: ""You're the bomb. Thanks!"", 4: '1'}"
+121	121		202							{1: '2', 6: '1'}
+122	122		201							{1: '2', 2: '500488', 4: '-500'}
+123	123		301							"{1: '1', 2: 'Conductor', 3: ""Well, I regret to inform you that we can't make your yesterday our next stop."", 4: '2'}"
+124	124		204							{1: '1'}
+125	125		301							"{2: 'Kamui', 3: ""Is something supposed to be taken as unimportant just because it doesn't have a significant impact on the future?"", 4: '1'}"
+126	126		301							"{2: 'Conductor', 3: ""I don't understand the logic behind the conversation just now, but I'll add your question to the list of questions under review."", 4: '2'}"
+127	127		401							{1: '2', 2: '648'}
+128	128		301							{3: 'Shaking its head, Conductor closes the car door.'}
+129	129		202							{1: '1', 2: '2', 6: '1'}
+130	130		201							{1: '1', 2: '500488'}
+131	131		301							{1: '1', 2: 'Conductor', 3: 'I will be choosing the next stop based on the information of the passengers who just boarded.', 4: '1'}
+132	132		401							{1: '2', 2: '317'}
+133	133		301							{3: 'Clank. Clank...'}
+134	134		301							{3: 'With screeches coming from the tracks below, the train sets in motion again.'}
+135	135		301							{3: 'The train picks up speed, leaving the virtual Hetero Tower behind as it speeds through the barren land outside the window.'}
+136	136		301							{2: 'Conductor', 3: 'I hereby sincerely implore that we prove the value of the upcoming historical data, besides events that are already known to have a significant impact on history.', 4: '1'}
+137	137		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+138	138		301							{2: 'Conductor', 3: 'Let the bygones be bygones, but let not the future stand uncorrected.', 4: '1'}
+139	139		202							{1: '1', 6: '1'}
+140	140		301							{3: 'Clank. Clank...'}
+141	141		401							{1: '2', 2: '2637'}
+142	142		301		1		AniZhuanchangBegin			{3: 'We will soon be making a stop at Second Avenue on the Administrative Layer.'}

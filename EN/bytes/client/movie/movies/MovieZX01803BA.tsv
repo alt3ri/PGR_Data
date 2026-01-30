@@ -1,0 +1,358 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory325.png'}
+2	2		401							{1: '1', 2: '37'}
+3	3		301			DialogEnable				{3: 'You walk with Wanshi for what feels like ages.'}
+4	4		301							{3: 'With drinking water exhausted and your legs equally so, you never knew hiking could be so difficult.'}
+5	5		301							{3: 'The desert is not a place for talking. With sand assaulting your every orifice, opening your mouth is just an invitation for a mouthful of sand.'}
+6	6		301							{3: 'Not only for humans, the yellow sand also causes great trouble for the mechanical joints of Constructs.'}
+7	7		201							{1: '1', 2: '500026', 4: '450'}
+8	8		201							{1: '2', 2: '500166', 4: '-450'}
+9	9		301							"{1: '1', 2: 'Lee', 3: ""After we cross this section of land, let's repair our frames. Sand is clogging up our joints."", 4: '1'}"
+10	10		301							{2: 'Lucia', 3: 'Commandant, your complexion...', 4: '2'}
+11	11		202							{1: '1', 2: '2', 6: '1'}
+12	12		401							{1: '2', 2: '1543'}
+13	13		301							{3: 'Wanshi throws a tarp over to you.'}
+14	14		302							"{2: 'Thank you.', 3: '15', 4: ""Don't you need it?"", 5: '18'}"
+15	15		201							{1: '1', 2: '500273'}
+16	16		301							{1: '1', 2: 'Wanshi', 3: 'Yawn...', 4: '1'}
+17	17	21	301							{3: 'Wanshi just looks away and yawns, showing no sign of responding.'}
+18	18		201							{1: '1', 2: '500273'}
+19	19		301							"{1: '1', 2: 'Wanshi', 3: ""Yawn... I just use it to block the extra light when sniping. Anyway, it's useless now."", 4: '1'}"
+20	20		301							{3: 'Rather than acknowledging the favor, he merely offers a half-hearted explanation.'}
+21	21		202							{1: '1', 6: '1'}
+22	22		301							{3: 'Silence returns, and the party continues onward...'}
+23	23		301							{3: 'The farther you walk, the rock formations continue to lessen along with the density of the tributary.'}
+24	24		301							{3: 'However, the oppressive sense of urgency still remains. If it is from the Red Tide before, it is now from surviving in such hostile conditions.'}
+25	25		301							{3: 'From behind, you hear the whale song again. You are no longer in the area inundated by the Red Tide, and the sound takes on a more ethereal tone.'}
+26	26		301				AniZhuanchangBegin			{3: 'Your eyesight once again begins to fragment.'}
+27	27		504							{1: '0.7'}
+28	28		401							{1: '1', 2: '36'}
+29	29		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg'}
+30	30		201							{1: '1', 2: '500110'}
+31	31		301			AniZhuanchangEnd				"{1: '1', 2: 'Ayla', 3: ""Let me tell you something about her while there's still time."", 4: '1'}"
+32	32		301							{2: 'Ayla', 3: 'We have been close friends since before we became Constructs.', 4: '1'}
+33	33		301							"{2: 'Ayla', 3: ""She may be a starry-eyed idealist, but she's also the most pragmatic person I have ever met. When she acts mature, she's decisive to an extreme. When she acts naive, she's romantic to a fault."", 4: '1'}"
+34	34		302							{2: 'For example?', 3: '35'}
+35	35		301							{2: 'Ayla', 3: 'For example...', 4: '1'}
+36	36		301							{3: 'Ayla turns and glances out the window at the blue planet.'}
+37	37		301							{2: 'Ayla', 3: 'What do you think of that blue planet?', 4: '1'}
+38	38		302							{2: 'Earth?', 3: '39'}
+39	39		301							{2: 'Ayla', 3: 'Yeah.', 4: '1'}
+40	40		301							{3: 'Suddenly...'}
+41	41		301							{3: 'Your mind is filled with official data.'}
+42	42		301							{3: 'The equatorial radius is 6378.137 kilometers. It rotates from west to east and revolves around the sun. It is the third innermost planet of the solar system...'}
+43	43		301							{3: 'It goes without saying that the feeling of gravity upon entering the atmosphere is always a memorable part of each mission.'}
+44	44		302							{2: '(Explain your thoughts to Ayla)', 3: '45'}
+45	45		301							{2: 'Ayla', 3: 'Is that all?', 4: '1'}
+46	46		301							"{2: 'Ayla', 3: ""The Task Force commandants often get deployed to the surface. I don't think most residents born in Babylonia will ever know what true gravity feels like."", 4: '1'}"
+47	47		301							"{2: 'Ayla', 3: ""Some members of the archaeological team haven't even been to the surface."", 4: '1'}"
+48	48		301							"{2: 'Ayla', 3: ""Anyway, what's it like to be on the surface."", 4: '1'}"
+49	49		202							{1: '1', 6: '1'}
+50	50		301							"{3: ""What it's like on the surface?""}"
+51	51		301							{3: 'You close your eyes.'}
+52	52		301				AniZhuanchangBegin			"{3: ""Ayla's face begins to contort.""}"
+53	53		504							{1: '0'}
+54	54		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory325.png'}
+55	55		301			AniZhuanchangEnd				{3: 'Why am I thinking about speaking with Ayla before departure at a time like this?'}
+56	56		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg'}
+57	57		504							{1: '0.7'}
+58	58		201							{1: '1', 2: '500110'}
+59	59		301			AniZhuanchangEnd				"{1: '1', 2: 'Ayla', 3: ""What's it like on the surface?"", 4: '1'}"
+60	60		301				AniZhuanchangBegin			"{3: ""What's it like on the surface?""}"
+61	61		202			DialogDisable				{1: '1', 6: '1'}
+62	62		504							{1: '0'}
+63	63		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory325.png'}
+64	64		401							{1: '1', 2: '37'}
+65	65		302			AniZhuanchangEnd				{2: '(Stop walking)', 3: '66', 4: '(Cover head)', 5: '68'}
+66	66		201							{1: '1', 2: '500166'}
+67	67	70	301			DialogEnable				"{1: '1', 2: 'Lucia', 3: ""What's wrong, Commandant?"", 4: '1'}"
+68	68		201							{1: '1', 2: '500273'}
+69	69		301			DialogEnable				"{1: '1', 2: 'Wanshi', 3: ""Yawns... What's up?"", 4: '1'}"
+70	70		202							{1: '1', 6: '1'}
+71	71		301							{3: 'You remain quiet.'}
+72	72		301							{3: 'Having left the sandstorm, the whale song accompanying you like a shadow gradually fades into the distance.'}
+73	73		301							"{3: ""You can't help but turn to look back.""}"
+74	74		301							{3: 'Amid the dense sand, you seem to spot the faint figure of a woman.'}
+75	75		301							{3: 'Is that a shadow from the Red Tide?'}
+76	76		301							{3: 'Your question remains unanswered as it vanishes in the blink of an eye.'}
+77	77		302							"{2: ""I'm fine."", 3: '78'}"
+78	78		201							{1: '1', 2: '500273'}
+79	79		301				AniZhuanchangBegin			"{1: '1', 2: 'Wanshi', 3: ""...Okay. Let's keep moving..."", 4: '1'}"
+80	80		202							{1: '1', 6: '1'}
+81	81		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory320.png'}
+82	82		301			AniZhuanchangEnd				{3: 'After another long trek...'}
+83	83		301							{3: 'Suddenly, Wanshi stops at the front. He squints and looks ahead.'}
+84	84		201							{1: '1', 2: '500273'}
+85	85		301							"{1: '1', 2: 'Wanshi', 3: ""Hmm? There's a kid at 2 o'clock. 200 meters."", 4: '1'}"
+86	86		203							{1: '1', 2: '0.25', 3: '-450'}
+87	87		201							{1: '2', 2: '500026', 4: '450'}
+88	88		301							"{1: '1', 2: 'Lee', 3: ""What's someone doing in a place like this..."", 4: '2'}"
+89	89		202							{1: '1', 6: '1'}
+90	90		201							{1: '1', 2: '500166', 4: '-450'}
+91	91		301							{1: '1', 2: 'Lucia', 3: '...An enemy?', 4: '1'}
+92	92		201							{1: '1', 2: '500273', 4: '-450'}
+93	93		201							{1: '2', 2: '500026', 4: '450'}
+94	94		301							{1: '1', 2: 'Wanshi', 3: 'This is best left for you to decide, 【kuroname】.', 4: '1'}
+95	95		301							"{2: 'Wanshi', 3: ""You're the Gray Raven Commandant. Only you have the authority to assess our course of action."", 4: '1'}"
+96	96		301							"{2: 'Lee', 3: ""You're just shifting the blame."", 4: '2'}"
+97	97		301							"{2: 'Wanshi', 3: ""Yawns... Of course not. I'm just an observer."", 4: '1'}"
+98	98		301							"{2: 'Wanshi', 3: ""Besides, you trust your commandant's judgment more than I do, don't you?"", 4: '1'}"
+99	99		204							{1: '1', 2: '8'}
+100	100		301							{3: 'Following that, he closes his eyes and stops talking as he quietly waits for the others to make a decision.'}
+101	101		202							{1: '1', 2: '2', 6: '1'}
+102	102		302							"{2: ""(Look toward 2 o'clock)"", 3: '103'}"
+103	103		301							{3: 'Only an expanse of bare hills and steep cliffs outstretches before your eyes.'}
+104	104		302							"{2: ""...There's no sign of anyone."", 3: '105'}"
+105	105		201							{1: '1', 2: '500273'}
+106	106		301							{1: '1', 2: 'Wanshi', 3: 'Hmm...?', 4: '1'}
+107	107		301							{3: 'His eyelids lift up and scan ahead once more.'}
+108	108		301							{2: 'Wanshi', 3: 'Whoever was there is gone. Probably realized that I had taken notice. Clever.', 4: '1'}
+109	109		302							{2: 'If that person is avoiding humans...', 3: '110'}
+110	110		202							{1: '1', 6: '1'}
+111	111		201							{1: '1', 2: '500166', 4: '450'}
+112	112		201							{1: '2', 2: '1031001', 4: '-450'}
+113	113		301							"{1: '1', 2: 'Lucia', 3: ""Then we aren't looking for a Corrupted."", 4: '1'}"
+114	114		301							{2: 'Lucia', 3: 'Commandant, that was a human.', 4: '1'}
+115	115		301							{2: 'Liv', 3: '...Is that a child?', 4: '2'}
+116	116		301							"{2: 'Liv', 3: ""What's a child doing in such a hostile place like this?"", 4: '2'}"
+117	117		302							"{2: ""You're right..."", 3: '118', 4: 'Thoughts, lee?', 5: '120'}"
+118	118		301							"{2: 'Lucia', 3: ""Humans can't survive in a place like this."", 4: '1'}"
+119	119	124	301							{2: 'Lucia', 3: 'Let alone a child.', 4: '1'}
+120	120		202							{1: '1', 2: '2', 6: '1'}
+121	121		201							{1: '1', 2: '500026'}
+122	122		301							{1: '1', 2: 'Lee', 3: 'As a precaution, I suggest investigating the surrounding area.', 4: '1'}
+123	123		301							"{2: 'Lee', 3: ""Something's not adding up here."", 4: '1'}"
+124	124		302				AniZhuanchangBegin			"{2: ""Let's go have a closer look."", 3: '125'}"
+125	125		202							{1: '1', 2: '2', 6: '1'}
+126	126		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory319.png'}
+127	127		301			AniZhuanchangEnd				{3: 'Wanshi refers to a small hill on relatively high terrain.'}
+128	128		301							{3: 'Only upon standing atop the hill do you suddenly get a bigger picture of the surrounding area.'}
+129	129		301							{3: 'You clearly see the desolate desert—a cruel land of death. However, right at this moment, your heart begins to tremble.'}
+130	130		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg'}
+131	131		504							{1: '0.7'}
+132	132		201							{1: '1', 2: '500110'}
+133	133		301			AniZhuanchangEnd	AniZhuanchangBegin			"{1: '1', 2: 'Ayla', 3: ""What's it like on the surface?"", 4: '1'}"
+134	134		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory319.png'}
+135	135		504							{1: '0'}
+136	136		202							{1: '1', 6: '1'}
+137	137		301			AniZhuanchangEnd				{3: 'Vast, primitive, and silent as if it had remained like this since man first walked upright and would continue until the last man is finally laid to rest.'}
+138	138		301							{3: 'The sun hangs high above the distant clouds. Although clouds cover the surface, the residual brilliance still blazes in proclamation of its existence.'}
+139	139		301							{3: 'Obviously, there is only one light source. When seen from Babylonia, it is merely just an incandescent ball of light. Yet, how can it illuminate such a vast land?'}
+140	140		201							{1: '1', 2: '1031001'}
+141	141		301							"{1: '1', 2: 'Liv', 3: ""Commandant, I'm detecting more than one thermal reading..."", 4: '1'}"
+142	142		201							{1: '1', 2: '500026'}
+143	143		301							"{1: '1', 2: 'Lee', 3: ""Wait, that's..."", 4: '1'}"
+144	144		202							{1: '1', 6: '1'}
+145	145		301							{3: 'A gust of wind carries the sound of fighting.'}
+146	146		302				AniZhuanchangBegin			{2: '(Look toward the source of the sound.)', 3: '147'}
+147	147		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory315.png'}
+148	148		301			AniZhuanchangEnd				{3: 'Your first instinct upon reaching the top of the hill is to peer into the distance. However, you miss the makeshift camp just below.'}
+149	149		301							{3: 'A cold gust of wind blows through the makeshift tents and log houses with an eerie scrapping noise.'}
+150	150		301							{3: 'The camp is empty, though not because it had been vacated by its occupants. Rather, because they have gathered outside the camp.'}
+151	151		301							"{3: 'Standing on the opposite side of them is no one else but that ""unyielding pine.""'}"
+152	152		201							{1: '1', 2: '1031001', 4: '-450'}
+153	153		201							{1: '2', 2: '500166', 4: '450'}
+154	154		301							"{1: '1', 2: 'Lucia', 3: ""It's Hans and Team 01."", 4: '2'}"
+155	155		301				AniZhuanchangBegin			{2: 'Liv', 3: 'And also...', 4: '1'}
+156	156		202							{1: '1', 2: '2', 6: '1'}
+157	157		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory317.png'}
+158	158		401							{1: '1', 2: '27'}
+159	159		301			AniZhuanchangEnd				{3: 'In front of the camp, two distinct groups of people are facing each other.'}
+160	160		301							{3: 'To one side, a ragged and close-knit group resembling refugees who have long since lived here.'}
+161	161		301							{3: 'To the other side, a fully armed squadron of elite soldiers sent from Babylonia.'}
+162	162		301							{3: 'The sudden appearance of the latter obviously frightened the former. Now at the breaking point, fear and vigilance have given way to unclad hostility.'}
+163	163		201							{1: '1', 2: '500251'}
+164	164		301							{1: '1', 2: 'Woman', 3: 'Who are you?!', 4: '1'}
+165	165		202							{1: '1', 6: '1'}
+166	166		301							{3: 'Women protect their children like hens to their chicks. The rest of the refugees band together, seemingly ready to take the armed squadron down with them should the soldiers take a step forward.'}
+167	167		301							{3: 'The soldiers on the calibration team grip their weapons tightly.'}
+168	168		201							{1: '1', 2: '500019'}
+169	169		301							"{1: '1', 2: 'Construct A', 3: ""Chief Commander, this camp and its people are near the preset coordinates. They'll be caught in the blast. Should we force them to evacuate?"", 4: '1'}"
+170	170		202							{1: '1', 6: '1'}
+171	171		301							{3: 'Hans turns his head slightly to the side.'}
+172	172		201							{1: '1', 2: '500286'}
+173	173		301							"{1: '1', 2: 'Hans', 3: ""Do not fire unless fired upon. They don't pose any threat."", 4: '1'}"
+174	174		301							{3: 'His gaze shifts back to the refugees.'}
+175	175		301							"{2: 'Hans', 3: ""Do not attempt to attack or resist. I don't want any senseless struggle."", 4: '1'}"
+176	176		302							{2: '(Run over.)', 3: '177'}
+177	177		202							{1: '1', 6: '1'}
+178	178		301							{3: 'The arrival of the Gray Ravens only adds fuel to the fire.'}
+179	179		301							{3: 'A feeble boy pokes his head out from behind the woman who had just spoken and looks at the calibration team with frightened eyes.'}
+180	180		301							{3: 'Standing before the team of heavily armored soldiers, the refugees refrain from acting rashly for the time being.'}
+181	181		201							{1: '1', 2: '500273', 3: '7'}
+182	182		301							"{1: '1', 2: 'Wanshi', 3: ""Oh... It's the kid."", 4: '1'}"
+183	183		202							{1: '1', 6: '1'}
+184	184		301							{1: '1', 3: 'Hans turns his head.'}
+185	185		201							{1: '1', 2: '500286'}
+186	186		301							{1: '1', 2: 'Hans', 3: '...', 4: '1'}
+187	187		301							"{2: 'Hans', 3: ""Gray Ravens, you're here."", 4: '1'}"
+188	188		201							{1: '1', 2: '500166'}
+189	189		301							{1: '1', 2: 'Lucia', 3: 'Chief Commander Hans.', 4: '1'}
+190	190		201							{1: '1', 2: '500286'}
+191	191		301							"{1: '1', 2: 'Hans', 3: 'We lost contact with Team 06 for quite some time. I thought you ""hightailed"" it back to Babylonia.', 4: '1'}"
+192	192		301							"{2: 'Hans', 3: ""Regardless, we've deployed redundancy teams. Your absence would've likely gone unnoticed."", 4: '1'}"
+193	193		202							{1: '1', 6: '1'}
+194	194		301							{3: 'The veteran commander did little to mask his condescending tone.'}
+195	195		201							{1: '1', 2: '500026'}
+196	196		301							{1: '1', 2: 'Lee', 3: 'Our aircraft was hit with turbulence. We had no other choice but to make a crash landing.', 5: '1'}
+197	197		202							{1: '1', 6: '1'}
+198	198		301							{3: 'Hans dismisses it.'}
+199	199		301							{3: 'Tension hangs in the air.'}
+200	200		201							{1: '1', 2: '500273'}
+201	201		301							{1: '1', 2: 'Wanshi', 3: '...Um.', 4: '1'}
+202	202		301							{2: 'Wanshi', 3: 'Sorry, mind if I interrupt?', 4: '1'}
+203	203		301							{3: 'Despite the inquiry, Wanshi continues to talk without waiting for Hans to respond.'}
+204	204		301							{2: 'Wanshi', 3: 'I am the Construct in charge of reporting on the surface to Babylonia, Wanshi of Strike Hawk.', 4: '1'}
+205	205		203							{1: '1', 2: '0.25', 3: '-450'}
+206	206		201							{1: '2', 2: '500286', 4: '450'}
+207	207		301							{1: '1', 2: 'Hans', 3: '...You.', 4: '2'}
+208	208		301							"{2: 'Hans', 3: ""The President informed me that you were the first to report on the proliferation of the Red Tide's tributaries."", 4: '2'}"
+209	209		301							"{2: 'Wanshi', 3: ""Bingo... Let's cut to the chase instead of getting wrapped up in who's right and who's wrong."", 4: '1'}"
+210	210		301							"{2: 'Wanshi', 3: ""Holding them at gunpoint will only make matters worse. Won't it?"", 4: '1'}"
+211	211		301							{3: 'Wanshi glances at the refugees.'}
+212	212		301							{2: 'Hans', 3: '...', 4: '2'}
+213	213		301							{2: 'Hans', 3: 'Lower your weapons, soldiers.', 4: '2'}
+214	214		202							{1: '1', 2: '2', 6: '1'}
+215	215		201							{1: '1', 2: '500019', 4: '600'}
+216	216		201							{1: '2', 2: '500019', 4: '-600'}
+217	217		201							{1: '3', 2: '500019'}
+218	218		301							{1: '1', 2: 'Constructs', 3: 'Roger!', 4: '1', 5: '2', 6: '3'}
+219	219		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+220	220		301							"{3: ""Hans's order relieves the tension with the refugees. An old man comes out from behind the wall of people.""}"
+221	221		201							{1: '1', 2: '500294'}
+222	222		301							{1: '1', 2: 'Old Man', 3: 'Who the hell are you?!', 4: '1'}
+223	223		201							{1: '1', 2: '500019'}
+224	224		301							"{1: '1', 2: 'Construct A', 3: ""We're from Babylonia."", 4: '1'}"
+225	225		202							{1: '1', 6: '1'}
+226	226		301							"{3: ""As if from the flick of a switch, the villagers' expressions change in an instant. Whispers filled the crowd.""}"
+227	227		201							{1: '1', 2: '500136'}
+228	228		301							{1: '1', 2: 'Refugee', 3: 'Babylonia?', 4: '1'}
+229	229		201							{1: '1', 2: '500268'}
+230	230		301							{1: '1', 2: 'Refugee B', 3: 'You mean the space station of legends?', 4: '1'}
+231	231		201							{1: '1', 2: '500259'}
+232	232		301							"{1: '1', 2: 'Refugee Child', 3: ""I guess Grandpa wasn't making it up!"", 4: '1'}"
+233	233		202							{1: '1', 6: '1'}
+234	234		301							{3: 'However, the elderly seemed to look more conflicted.'}
+235	235		201							{1: '1', 2: '500294'}
+236	236		301							"{1: '1', 2: 'Old Man', 3: ""Seems we're in the presence of dignitaries."", 4: '1'}"
+237	237		201							{1: '1', 2: '500166'}
+238	238		301							"{1: '1', 2: 'Lucia', 3: ""We're nothing of the sort. We're just troops on a mission."", 4: '1'}"
+239	239		301							{2: 'Lucia', 3: 'Babylonia will bombard this area with the Longinus Arsenal soon. Please leave at once.', 4: '1'}
+240	240		201							{1: '1', 2: '500259'}
+241	241		301							"{1: '1', 2: 'Refugee Child', 3: ""Longinus Arsenal? What's that?"", 4: '1'}"
+242	242		301							{3: 'Before Liv can respond, the old man lowers his head and lets out a smile at odds with the severity of the confrontation.'}
+243	243		201							{1: '1', 2: '500294'}
+244	244		301							"{1: '1', 2: 'Old Man', 3: ""Put simply, it's a giant bright light that destroys everything it shines light on."", 4: '1'}"
+245	245		202							{1: '1', 6: '1'}
+246	246		301							"{3: ""The child can't understand the implication of what the old man had just said. Instead, he only nods ignorantly.""}"
+247	247		201							{1: '1', 2: '1031001'}
+248	248		301							"{1: '1', 2: 'Liv', 3: ""...You know what we're talking about?"", 4: '1'}"
+249	249		202							{1: '1', 6: '1'}
+250	250		301							{3: 'The old man raises his head once more, revealing the same cheerless expression as before.'}
+251	251		201							{1: '1', 2: '500294'}
+252	252		301							{1: '1', 2: 'Old Man', 3: 'Not only about the Longinus Arsenal, but also about the zero-point reactor, the hyperdrive, the Great Evacuation, and all the history that is about to be forgotten by our children.', 4: '1'}
+253	253		301							{3: 'He sighs deeply.'}
+254	254		301							"{2: 'Old Man', 3: ""I already understand why it is you're here. Do as you will."", 4: '1'}"
+255	255		301							"{2: 'Old Man', 3: ""I just hope you don't make too much of a commotion. The children need their rest."", 4: '1'}"
+256	256		202							{1: '1'}
+257	257		301							{3: 'With that, he returns to the refugees behind him and whispers among the group.'}
+258	258		301							{3: 'After a while, the refugees disperse and return to their homes. A few moments later, only the calibration team is left in the center of the camp.'}
+259	259		201							{1: '1', 2: '1031001'}
+260	260		301							{1: '1', 2: 'Liv', 3: 'What was that...', 4: '1'}
+261	261		202							{1: '1', 6: '1'}
+262	262		401							{1: '2', 2: '1513'}
+263	263		301							{3: 'Off to the side, Lucia takes a few steps forward and catches up to the old man preparing to return to his residence.'}
+264	264		201							{1: '1', 2: '500166', 3: '5', 4: '-450'}
+265	265		201							{1: '2', 2: '500294', 4: '450'}
+266	266		301							"{1: '1', 2: 'Lucia', 3: ""What did you say to them? You know what the weapon is capable of, so you must know that this isn't the time to sit here and await destruction."", 4: '1'}"
+267	267		301							"{2: 'Lucia', 3: ""If you don't leave, you'll all die."", 4: '1'}"
+268	268		301							{2: 'Old Man', 3: 'I told them exactly that.', 4: '2'}
+269	269		301							{2: 'Lucia', 3: '...?!', 4: '1'}
+270	270		201							{1: '1', 2: '500026', 4: '-450'}
+271	271		301							{1: '1', 2: 'Lee', 3: 'Take it easy, Lucia.', 4: '1'}
+272	272		301							"{2: 'Lee', 3: ""Maybe we just weren't clear."", 4: '1'}"
+273	273		301							{2: 'Lee', 3: 'Briefly put, this area will be overrun with Punishing creatures soon, so Babylonia wants to eliminate them all in one fell sweep.', 4: '1'}
+274	274		301							"{2: 'Lee', 3: ""One of the designated coordinates is near this camp. If you continue to stay here, you'll be caught in the shockwave."", 4: '1'}"
+275	275		301							"{2: 'Lee', 3: ""Even if Babylonia doesn't call down the strike, then those monsters will attack you."", 4: '1'}"
+276	276		202							{1: '1', 2: '2', 6: '1'}
+277	277		201							{1: '1', 2: '500294'}
+278	278		301							"{1: '1', 2: 'Old Man', 3: ""You don't need to explain any further. As I've said, I know that you are elite forces from Babylonia."", 4: '1'}"
+279	279		301							{2: 'Old Man', 3: 'As the pride and hope of mankind, after so many years, you return to Earth only to bring us news of destruction.', 4: '1'}
+280	280		301							{2: 'Old Man', 3: 'We know that you came here to destroy that red tide of monsters approaching from the west. We know what it is. Many of our comrades have fallen victim to it.', 4: '1'}
+281	281		301							"{2: 'Old Man', 3: ""When you mentioned the Longinus Arsenal, I already knew what repercussions we were going to face. That's what I told them."", 4: '1'}"
+282	282		301							"{2: 'Old Man', 3: ""Your tactics have always been simple and crude. It was before and it still is. I'm not surprised."", 4: '1'}"
+283	283		301							{2: 'Old Man', 3: 'We will not obstruct your mission or interfere with the coordinates you set.', 4: '1'}
+284	284		301							{2: 'Old Man', 3: 'Once you finish your mission, you are free to go.', 4: '1'}
+285	285		202							{1: '1', 6: '1'}
+286	286		201							{1: '1', 2: '500294', 4: '450'}
+287	287		201							{1: '2', 2: '500026', 4: '-450'}
+288	288		301							"{1: '1', 2: 'Lee', 3: ""You'll die."", 4: '2'}"
+289	289		301							"{2: 'Old Man', 3: ""You've already said that multiple times."", 4: '1'}"
+290	290		301							{2: 'Old Man', 3: 'If we die, so what?', 4: '1'}
+291	291		301							{2: 'Old Man', 3: 'Look around you. This place is home to only a few hundred people scattered throughout.', 4: '1'}
+292	292		301							"{2: 'Old Man', 3: ""We've been through the Great Evacuation. When faced with impending doom, some people boarded Eden. While others just barely missed the boat."", 4: '1'}"
+293	293		301							{2: 'Old Man', 3: 'The former lives a life of ease aboard Eden, while the other is left to eke out a life among the remnants of civilization.', 4: '1'}
+294	294		301							{2: 'Old Man', 3: 'Just look at the old veteran behind you. He no longer concerns himself with the likes of us after receiving his golden ticket onto that doomsday ark.', 4: '1'}
+295	295		202							{1: '1', 2: '2', 6: '1'}
+296	296		201							{1: '1', 2: '500286'}
+297	297		301							{1: '1', 2: 'Hans', 3: '...', 4: '1'}
+298	298		201							{1: '1', 2: '500294'}
+299	299		301							"{1: '1', 2: 'Old Man', 3: ""Ever since the Great Evacuation, we have been living among annihilation. We've grown accustom to it."", 4: '1'}"
+300	300		301							"{2: 'Old Man', 3: ""If that's all, let these ol' bones go home to get some rest."", 4: '1'}"
+301	301		301							"{2: 'Old Man', 3: ""I'd at least like to keep my last ounce of dignity up until the end."", 4: '1'}"
+302	302		401							{1: '2', 2: '1516'}
+303	303		202							{1: '1'}
+304	304		301							{3: 'After he finishes speaking, he turns and walks away out of sight.'}
+305	305		301							{3: 'A deathly silence spreads among the team.'}
+306	306		201							{1: '1', 2: '500286'}
+307	307		301							{1: '1', 2: 'Hans', 3: '...', 4: '1'}
+308	308		301							"{2: 'Hans', 3: ""This was an unexpected turn of events. I'll report this to Babylonia. Wait for my word."", 4: '1'}"
+309	309		203							{1: '1', 2: '0.25', 3: '450'}
+310	310		201							{1: '2', 2: '500019', 4: '-450'}
+311	311		301							{1: '1', 2: 'Construct A', 3: 'What about our mission to configure the nodes...?', 4: '2'}
+312	312		301							{2: 'Hans', 3: 'Proceed as normal.', 4: '1'}
+313	313		202							{1: '2', 6: '1'}
+314	314		201							{1: '2', 2: '500166', 3: '5', 4: '-450'}
+315	315		301							{1: '1', 2: 'Lucia', 3: '...!', 4: '2'}
+316	316		301							{2: 'Lucia', 3: 'Please wait, Chief Commander Hans. There are still people here.', 4: '2'}
+317	317		301							{2: 'Hans', 3: 'Obeying orders is the first requirement of a soldier. Gray Raven Commandant, keep your Constructs under control.', 4: '1'}
+318	318		302							{2: '...', 3: '319', 4: 'Lucia.', 5: '320'}
+319	319	321	301							{2: 'Lucia', 3: '...This has nothing to do with Commandant.', 4: '2'}
+320	320		301							{2: 'Lucia', 3: '...Understood.', 4: '2'}
+321	321		301							{2: 'Hans', 3: 'Now that you understand, why are you standing here? Proceed to your designated location to deploy the bit domain node on the double.', 4: '1'}
+322	322		202							{1: '2', 6: '1'}
+323	323		201							{1: '2', 2: '1031001', 4: '-450'}
+324	324		301							{1: '1', 2: 'Liv', 3: '...', 4: '2'}
+325	325		301							{2: 'Liv', 3: 'About that... Our node was damaged in the crash...', 4: '2'}
+326	326		301							{2: 'Hans', 3: 'Your uselessness is truly amazing.', 4: '1'}
+327	327		301				AniZhuanchangBegin			"{2: 'Hans', 3: ""In that case, take your supplies and find a place to stay put. Don't get in my way."", 4: '1'}"
+328	328		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+329	329		401							{1: '1', 2: '12'}
+330	330		201							{1: '1', 2: '500011', 4: '450'}
+331	331		201							{1: '2', 2: '500012', 4: '-450'}
+332	332		301			AniZhuanchangEnd				"{1: '1', 2: 'Nikola', 3: ""Why didn't you give them further warning during the mission briefing? The scouts relayed back more intel than just that."", 4: '2'}"
+333	333		301							{2: 'Hassen', 3: 'Because I already relayed it to Hans. That will suffice.', 4: '1'}
+334	334		301							"{2: 'Nikola', 3: ""In some regards, you're even more ruthless than me."", 4: '2'}"
+335	335		301							{2: 'Hassen', 3: 'Hah... So, you know what our subordinates think of us too, eh?', 4: '1'}
+336	338		301							"{2: 'Nikola', 3: ""Of course. I'm not deaf, and I'm certainly not a fool."", 4: '2'}"
+337	339		301							"{2: 'Nikola', 3: ""If it was really just a calibrating mission, then the Gray Raven Commandant would've been enough to serve as the chief commander."", 4: '2'}"
+338	340		301							"{2: 'Nikola', 3: ""They've encountered the Red Tide before, and their experience in active combat far exceeds that of others."", 4: '2'}"
+339	341		301							{2: 'Nikola', 3: 'Yet you chose Hans.', 4: '2'}
+340	345		301							"{2: 'Hassen', 3: ""Since the last battle in City 075, the Gray Raven Commandant's condition has become unstable. Asimov still isn't sure whether it has had any permanent impact on 【kuroname】 either mentally or physically."", 4: '1'}"
+341	346		301							"{2: 'Hassen', 3: ""Moreover, the objective of this operation isn't combative. Rather, it requires cooperation to achieve a strategic goal. Since the Gray Ravens are used to fighting in isolation, 【kuroname】 may not be the most suitable choice as chief commander."", 4: '1'}"
+342	347		301							"{2: 'Nikola', 3: ""The suitability of the Gray Ravens isn't the reason why you selected Hans."", 4: '2'}"
+343	349		301							{3: 'Hassen pauses a moment, then continues to speak.'}
+344	351		301							{2: 'Hassen', 3: 'Some decisions and responsibilities cannot be left to the younger generation.', 4: '1'}
+345	352		301							{2: 'Hassen', 3: 'Even if there is only the slightest of risk.', 4: '1'}
+346	353		301							"{2: 'Hassen', 3: ""I trust Hans' judgment. He is our most prominent leader. He has enough experience to deal with any unforeseen issue that should arise."", 4: '1'}"
+347	357		301							"{2: 'Nikola', 3: ""You're too kind and gentle to the younger generation."", 4: '2'}"
+348	358		301							{2: 'Nikola', 3: 'If you keep sheltering them, it will only backfire.', 4: '2'}
+349	359		301							{2: 'Hassen', 3: 'Nikola, you and I have too much weight on our shoulders and too much blood on our hands.', 4: '1'}
+350	360		301							{2: 'Hassen', 3: 'Friend and foe alike.', 4: '1'}
+351	361		301							{2: 'Hassen', 3: 'We are remnants of the past. One day, history will use the guillotine to judge those disgraceful sins.', 4: '1'}
+352	362		301							{2: 'Hassen', 3: 'At least spare the children from having to bear the responsibilities and sins of their forefathers.', 4: '1'}
+353	363		301							{2: 'Hassen', 3: 'Our generation will be the one to sever the chains of hatred.', 4: '1'}
+354	364		301							{2: 'Nikola', 3: 'In that case, why let them go down together?', 4: '2'}
+355	367		301							"{2: 'Hassen', 3: ""First and foremost, to observe whether 【kuroname】 is still suitable for serving as Gray Raven's commandant."", 4: '1'}"
+356	368		301							"{2: 'Hassen', 3: ""Secondly... Sparing them from our responsibility doesn't mean asking them to turn a blind eye forever."", 4: '1'}"
+357	369		301		1		AniZhuanchangBegin			{2: 'Hassen', 3: 'One must face his own weakness to embrace the future.', 4: '1'}

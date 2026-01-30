@@ -1,0 +1,20 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory306.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+4	4		401							{1: '2', 2: '1501'}
+5	5		301			DialogEnable				{2: 'Alarm', 3: 'Vital signs for both faction leaders have been terminated.'}
+6	6		301							{2: 'Alarm', 3: 'Cycle of War #*（）——+& results: null.'}
+7	7		301							"{2: 'Alarm', 3: 'Initiating removal procedure according to Directive Number 2 of the ""Naraka Bastille Protocol"" enacted by the School of Sapienism.'}"
+8	8		301							{2: 'Alarm', 3: 'Humans and mechanoids in target areas, please evacuate the facility before the removal procedure is executed in your area.'}
+9	9		301							"{2: 'Alarm', 3: 'All glory to homo sapiens. May the next ""war"" determine a champion.'}"
+10	10		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+11	11		301							{3: 'Shortly after Lucia defeats the blue mechanoid leader, the deafening sound of air sirens begins to ring.'}
+12	101		401							{1: '2', 2: '1503'}
+13	12		301			RImgBg1Shake				{3: 'A rumbling noise can be heard working its way inward.'}
+14	13		201							{1: '1', 2: '500029'}
+15	14		301							"{1: '1', 2: 'Lucia', 3: ""What's going on?!"", 4: '1'}"
+16	15		201							{1: '1', 2: '1031001'}
+17	16		301							"{1: '1', 2: 'Liv', 3: ""Let's hurry up, and regroup with the commandant."", 4: '1'}"
+18	17		201							{1: '1', 2: '500029'}
+19	18		301		1		AniZhuanchangBegin			{1: '1', 2: 'Lucia', 3: 'Alright. Stay close, Liv.', 4: '1'}

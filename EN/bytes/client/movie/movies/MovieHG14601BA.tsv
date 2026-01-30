@@ -1,0 +1,165 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory390.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				{3: 'Light dances on the afternoon sea, retreating as a small passenger ship leisurely heads toward its destination.'}
+4	4		301				DialogDisable			{3: 'Identified by the Nighter emblem, the ship is not large, but it can comfortably transport a good number of passengers and cargo.'}
+5	5		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory553.jpg', 3: '0', 4: '1', 5: '1'}
+6	6		205							{1: '999'}
+7	7		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory553.jpg'}
+8	8		301			DialogEnable				{3: 'Inside, two mechanoids chat intermittently.'}
+9	9		201							{1: '1', 2: '500231', 4: '-500'}
+10	10		201							{1: '2', 2: '500231', 4: '500'}
+11	11		301							"{1: '1', 2: 'Mechanoid A', 3: ""Once we disembark, if I don't take a rust-proof bath right away, my waist is definitely going to wear out again."", 4: '1'}"
+12	12		301							{2: 'Mechanoid B', 3: 'Got any spare rust-proofing fluid? I lost my self-check module a while back.', 4: '2'}
+13	13		301							"{2: 'Mechanoid A', 3: ""Hmm... Feel free to use mine for now. Just give me a new bottle when you can. We're almost home, after all."", 4: '1'}"
+14	14		301							{2: 'Mechanoid A', 3: 'I do like home, though my last owner hardly ever showed up...', 4: '1'}
+15	15		301							"{2: 'Mechanoid B', 3: ""Same here, but I prefer more freedom. I've already got ideas for what to paint there."", 4: '2'}"
+16	16		401							{1: '2', 2: '759'}
+17	17		202							{1: '1', 2: '2'}
+18	18		301							{3: 'Outside the window, a bionic swallow swoops low, ending its playful dance with a seagull and perching on the deck railing, wings flickering briefly.'}
+19	19		402							{1: '759'}
+20	20		301							{3: 'When it quiets down, it looks into the cabin, where a man and someone dressed like a Dragon Child are seated together.'}
+21	21		201							{1: '1', 2: '500241'}
+22	22		301							"{1: '1', 2: 'Bixi Crew Member', 3: ""My apprentice's got my back. Heh, I'm calling it quits after this gig."", 4: '1'}"
+23	23		301							{2: 'Bixi Crew Member', 3: 'Who wants to spend their whole life laying bricks and hammering iron, eh?', 4: '1'}
+24	24		202							{1: '1', 6: '1'}
+25	25		201							{1: '1', 2: '500241', 4: '-400'}
+26	26		201							{1: '2', 2: '500434', 4: '400'}
+27	27		301							{1: '1', 3: 'With a voice much rougher than his frame suggests, the Bixi Crew member hands over a portable terminal to the other man.'}
+28	28		301							{2: 'Bixi Crew Member', 3: 'Here, see if it works.', 4: '1'}
+29	29		301							"{2: 'Man', 3: ""It's up and running! Thanks!"", 4: '2'}"
+30	30		301							"{2: 'Bixi Crew Member', 3: ""It's nothing. If it were on the Nighter, they'd soak you for every Grub."", 4: '1'}"
+31	31		301							{3: 'Laughing, the Bixi Crew member slaps the man on the back and keeps chuckling to himself.'}
+32	32		301							{2: 'Man', 3: 'By the way, I never caught your name...', 4: '2'}
+33	33		301				AniZhuanchangBegin			{2: 'Bixi Crew Member', 3: 'Oh, you can call me Dazhu from here on out.', 4: '1'}
+34	34		202							{1: '1', 2: '2', 6: '1'}
+35	35		401							{1: '2', 2: '754'}
+36	36		401							{1: '2', 2: '759'}
+37	37		201							{1: '1', 2: '500916', 3: '1'}
+38	38		301			AniZhuanchangEnd				"{1: '1', 3: ""The bionic swallow, drawn to the creaking of the cabin door, cheerfully bounds over to perch on Hanying's shoulder, nuzzling her earring with affection.""}"
+39	39		301				DialogDisable			{3: 'A strand of her hair loosens, dancing in the soothing sea breeze.'}
+40	40		302							{2: 'Those snacks earlier were quite good.', 3: '41'}
+41	41		401							{1: '2', 2: '1516'}
+42	42		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory390.jpg', 3: '0', 4: '1', 5: '1'}
+43	43		205							{1: '999'}
+44	44		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory390.jpg'}
+45	45		301			DialogEnable				{3: 'You walk up to the deck with Hanying and reach out a hand to feel the early summer sea breeze.'}
+46	46		301							{2: 'Hanying', 3: 'Glad you enjoyed it, Commandant. I can make some more for you when we get there.', 4: '1'}
+47	47		301				AniZhuanchangBegin			"{3: 'The ""there"" Hanying refers to is none other than the destination of your trip.'}"
+48	48		202							{1: '1', 6: '1'}
+49	49		306							{1: '1'}
+50	50		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+51	51		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop.prefab', 2: '3'}
+52	52		301			AniZhuanchangEnd				{3: 'Earlier, you received a mail from Hanying.'}
+53	53		301				DialogDisable			{3: 'After what happened at Aerospace City, Hanying resolved to build a settlement with her own hands.'}
+54	54		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop.prefab'}
+55	55		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory556.jpg', 3: '0', 4: '1', 5: '1'}
+56	56		205							{1: '999'}
+57	57		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory556.jpg'}
+58	58		301			DialogEnable				"{3: 'She found an old lodge complex in northern Kowloong and invited you, writing, ""Treat it like a getaway. Also, I\'d love to learn from your home-rebuilding expertise.""'}"
+59	59		301				AniZhuanchangBegin			"{3: ""You figured helping out a place that's essentially a conservation area wouldn't be too tough, so you decided to go.""}"
+60	60		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory390.jpg'}
+61	61		306							
+62	62		301			AniZhuanchangEnd				"{3: ""You left at first light, and now it's almost midday. According to the itinerary, this is the final leg of your journey.""}"
+63	63		301							{3: 'You look back at the cabin. A few sailors in Nighter gear mingle with several mechanoids, while the free-spirited Bixi Crew member stands out the most.'}
+64	64		301							{3: 'You do a quick count—there are maybe a dozen people in all. Before you can say anything, Hanying picks up on your unspoken question.'}
+65	65		201							{1: '1', 2: '500916', 3: '1'}
+66	66		301							{1: '1', 2: 'Hanying', 3: 'A few mechanoid architects have arrived early to build a makeshift shelter for wanderers, and a handful have already moved in.', 4: '1'}
+67	67		301							{2: 'Hanying', 3: 'I also had Chaofeng reach out to the Bixi Crew for assistance.', 4: '1'}
+68	68		202							{1: '1'}
+69	69		301							{3: 'It seems you were worried for nothing.'}
+70	70		301							{3: 'Everything appears on the right track.'}
+71	71		201							{1: '1', 2: '500916', 3: '1'}
+72	72		301							{1: '1', 3: 'Beside you, Hanying retrieves a photo of some Kowloong-style lodges perched on a hillside. Even though your ship has yet to arrive, her thoughts have already wandered off to that place.'}
+73	73		301							"{3: ""The way she's so wrapped up in it sparks something in you, too.""}"
+74	74		301				DialogDisable			"{2: 'Hanying', 3: ""We're not on a mission this time, right? Got anything in mind for your downtime?"", 4: '1'}"
+75	75		302							{2: 'Maybe...', 3: '76'}
+76	76		302							{2: 'Sip some tea...', 3: '77', 4: 'Head out fishing...', 5: '79', 6: 'Spend time with you.', 7: '80'}
+77	77		301			DialogEnable				"{2: 'Hanying', 3: ""Most mechanoids can't really taste the nuances of tea, and I realize it's been ages since I last had a cup with someone."", 4: '1'}"
+78	78	82	301							{2: 'Hanying', 3: 'Pulao just sent over some oolong tea from Kowloong, but I have a few other blends as well.', 4: '1'}
+79	79	82	301			DialogEnable				"{2: 'Hanying', 3: ""Fishing? It's a great way to clear your head, though I'm not exactly an expert. Still, if you'd like to try, I'm up for it."", 4: '1'}"
+80	80		301			DialogEnable				"{2: 'Hanying', 3: ""Please Commandant, you don't have to say that. It's my job to stay by your side."", 4: '1'}"
+81	81		301							"{2: 'Hanying', 3: ""Don't worry. I'll take care of everything. And please do make yourself at home."", 4: '1'}"
+82	82		301							{3: 'Hanying tucks a strand of hair behind her ear.'}
+83	83		301							"{2: 'Hanying', 3: ""I want mechanoids and humans alike to look at this place and feel they're truly home."", 4: '1'}"
+84	84		301							{2: 'Hanying', 3: 'Unlike most dreams, this is something we hold in our own hands.', 4: '1'}
+85	85		301							"{3: 'Having stepped out of a dream, she\'s now ready to bring to life the future once dismissed as a mere ""dream.""'}"
+86	86		202							{1: '1'}
+87	87		401							{1: '2', 2: '2634'}
+88	88		301				DialogDisable			"{3: ""The ship's engine hums its solitary tune over the calm sea. The bionic swallow, weary from its play, perches on the ship's bow and gazes into the distance.""}"
+89	89		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory782.jpg', 3: '0', 4: '1', 5: '1'}
+90	90		205							{1: '999'}
+91	91		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory782.jpg'}
+92	92		301			DialogEnable				{3: 'Under a sky that feels like a grand stage, the sun brushes the horizon, and the air starts to cool.'}
+93	93		301							{3: 'Before the night wind sets in, a small speck on the horizon unfolds into a newly renovated dock.'}
+94	94		201							{1: '18', 2: '500916', 3: '1', 4: '-230', 5: '-100', 6: '200'}
+95	95		301				AniZhuanchangBegin			"{1: '1', 2: 'Hanying', 3: ""Commandant, we're almost there."", 4: '18'}"
+96	96		202							{1: '18', 6: '1'}
+97	97		402							{1: '2634'}
+98	98		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory597.jpg'}
+99	99		301			AniZhuanchangEnd				"{3: ""Unloading luggage and cargo doesn't take long, and after a brief inventory, the passenger ship heads back to the Nighter.""}"
+100	100		301							{3: 'Having spent the entire day traveling, you still feel a bit off-balance after stepping onto solid ground. At this moment, a mechanoid makes its way toward Hanying and you.'}
+101	101		201							{1: '1', 2: '500488', 5: '-180', 6: '300'}
+102	102		301							{1: '1', 2: 'Mechanoid', 3: 'Hanying.', 4: '1'}
+103	103		301							{3: 'The mechanoid nods politely to greet Hanying.'}
+104	104		202							{1: '1', 6: '1'}
+105	105		201							{1: '1', 2: '500916', 3: '1', 4: '450'}
+106	106		201							{1: '2', 2: '500488', 4: '-450', 5: '-180', 6: '300'}
+107	107		301							{1: '1', 2: 'Hanying', 3: 'Boccioni?', 4: '1'}
+108	108		301							"{2: 'Hanying', 3: ""Ah, this is Boccioni, an architect. He's here to help us out."", 4: '1'}"
+109	109		301							{2: 'Hanying', 3: 'Before Kowloong offered its assistance, he was responsible for building the temporary settlement.', 4: '1'}
+110	110		301							"{2: 'Boccioni', 3: ""You must be 【kuroname】, right? It's a pleasure to meet you."", 4: '2'}"
+111	111		301							{2: 'Hanying', 3: 'Hmm, Boccioni, you came all the way to the dock. Has something come up?', 4: '1'}
+112	112		301							"{2: 'Boccioni', 3: ""I believe it's only proper to welcome Babylonia's commandant in person."", 4: '2'}"
+113	113		301							"{2: 'Boccioni', 3: ""However, that isn't my primary goal..."", 4: '2'}"
+114	114		301							"{3: ""The mechanoid in front of you, named Boccioni, speaks in a cold voice. Still, you can tell he's doing his utmost to appear friendly.""}"
+115	115		301							{2: 'Boccioni', 3: 'Today at noon, we took in a group of wanderers, but there are too many for us to accommodate right now...', 4: '2'}
+116	116		301							"{2: 'Boccioni', 3: ""I'm afraid we can't arrange a private room for our esteemed guest."", 4: '2'}"
+117	117		204							{1: '1'}
+118	118		301							"{3: ""Hanying's expression changes—she clearly feels frustrated about not being fully prepared.""}"
+119	119		302							"{2: ""It's fine. I don't really need a private room."", 3: '120'}"
+120	120		301							"{2: 'Boccioni', 3: 'It may not be proper etiquette, but it\'s probably for the best. Or perhaps, you\'re just saying that out of what Kowloong culture calls ""courtesy""? I\'m still learning, so please bear with me.', 4: '2'}"
+121	121		302							{2: 'No, I mean it.', 3: '123', 4: 'Yeah...', 5: '122'}
+122	122		301							"{2: 'Boccioni', 3: ""Unfortunately, that's just how it is."", 4: '2'}"
+123	123		301							{2: 'Boccioni', 3: 'Still, there must be another way, something like...', 4: '2'}
+124	124		301							{2: 'Hanying', 3: 'Hold on.', 4: '1'}
+125	125		301							{2: 'Hanying', 3: 'My room—can we fit another bed in it?', 4: '1'}
+126	126		302							{2: 'Hmm?', 3: '127'}
+127	127		301							{2: 'Boccioni', 3: 'Let me see...', 4: '2'}
+128	128		301							{2: 'Boccioni', 3: 'Based on the measurements, your room can indeed accommodate an extra bed, Hanying.', 4: '2'}
+129	129		301							"{2: 'Boccioni', 3: ""So there's more than enough room for both of you to stay together."", 4: '2'}"
+130	130		302							{2: 'H-huh?!', 3: '131', 4: 'That sounds a bit weird!', 5: '131'}
+131	131		301							"{3: ""Hanying, however, doesn't look nearly as startled as you. She only pauses briefly, then gives a nod.""}"
+132	132		301							"{2: 'Hanying', 3: ""Besides, I'm closer to Commandant than everyone else here."", 4: '1'}"
+133	133		301				DialogDisable			"{2: 'Hanying', 3: ""If it makes you uncomfortable, I can just let you have the whole room—it's not like I can't..."", 4: '1'}"
+134	134		302							"{2: ""No, no, it's fine!"", 3: '135'}"
+135	135		302							"{2: ""Anyway, I don't mind at all."", 3: '136'}"
+136	136		204							{1: '1', 2: '1'}
+137	137		301			DialogEnable				{3: 'With a relieved smile, Hanying relaxes and reaches for your suitcase.'}
+138	138		301							"{2: 'Hanying', 3: ""I'm leaving the rest in your capable hands, Boccioni."", 4: '1'}"
+139	139		202							{1: '2'}
+140	140		301							{3: 'Boccioni nods and returns to his tasks.'}
+141	141		203							{1: '1', 2: '0.3'}
+142	142		301							"{2: 'Hanying', 3: ""Commandant, let's go to our quarters. Tomorrow, I'll show you things around here."", 4: '1'}"
+143	143		301				AniZhuanchangBegin			{3: 'With that, Hanying leads you away from the dock.'}
+144	144		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory752.jpg'}
+145	145		301			AniZhuanchangEnd				{1: '1', 2: 'Hanying', 3: 'One, two...', 4: '1'}
+146	146		401							{1: '2', 2: '4341'}
+147	147		301							{3: 'The sheet billows in the air, and along with Hanying, you spread it neatly over the bed.'}
+148	148		301							{2: 'Hanying', 3: 'If you need anything else, just say the word.', 4: '1'}
+149	149		302							"{2: ""I'm all set now. Thanks."", 3: '150'}"
+150	150		202							{1: '1'}
+151	151		301							"{3: ""Now that there's a second bed in this Kowloong-style room, the space feels a bit tight.""}"
+152	152		301							{3: 'Though modest in size, the room has everything one needs. In fact, the close quarters add to its cozy charm.'}
+153	153		301							{3: 'You do a quick wash and then lie down, completely spent.'}
+154	154		301				AniZhuanchangBegin			{3: 'After a long day, you just want to leave everything behind until tomorrow.'}
+155	155		401							{1: '2', 2: '2683'}
+156	156		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+157	157		401							{1: '1', 2: '36'}
+158	158		301			AniZhuanchangEnd				{3: 'As night settles in, the soft yellow light clicks off.'}
+159	159		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory252.png', 3: '0', 4: '0.3', 5: '2'}
+160	160		401							{1: '1', 2: '36'}
+161	161		401							{1: '2', 2: '2596'}
+162	162		301							"{3: ""In the distance, a row of Kowloong buildings gleams in the moonlight, while the mountains around them, as always, quietly listen to the nightingales' lullaby.""}"
+163	163		401							{1: '2', 2: '759'}
+164	164		301		1		AniZhuanchangBegin			{3: 'A bionic swallow scoops up a twig from the ground and flits to the rooftop.'}

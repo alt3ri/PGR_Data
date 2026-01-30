@@ -1,0 +1,32 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory8.jpg'}
+2	2		401							{1: '1', 2: '5'}
+3	3		201							{1: '1', 2: '500025'}
+4	4		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Although many parts of its structure are damaged, I can still feel the sense of sanctity when standing on the faded carpet like this...', 4: '1'}
+5	5		301							{2: 'Liv', 3: 'During worships, people will gather here for important matters, and music will start playing...', 4: '1'}
+6	6		302							"{2: ""Liv, don't forget our mission."", 3: '7', 4: 'I also like that feeling.', 5: '8'}"
+7	7	9	301							"{2: 'Liv', 3: ""I'm sorry... I was lost in my thoughts again. We're collecting building materials for the base, right?"", 4: '1'}"
+8	8		301							"{2: 'Liv', 3: ""Isn't it nice when time passes in peace and quiet, Commandant?"", 4: '1'}"
+9	9		203							{1: '1', 2: '0.25', 3: '400'}
+10	10		201							{1: '2', 2: '1011001', 4: '-400'}
+11	11		301							"{1: '1', 2: 'Lee', 3: ""Let's save the chatting for after we finish our mission."", 4: '2'}"
+12	12		301							{2: 'Lee', 3: 'Commandant, please help check out what we can bring back as well.', 4: '2'}
+13	13		301							{2: 'Liv', 3: 'There seems to be a projector split into two in the middle of the church...', 4: '1'}
+14	14		302							{2: 'Can you fix it, Lee?', 3: '15', 4: 'Can we find out what it was projecting?', 5: '16'}
+15	15	17	301							{2: 'Lee', 3: 'Bring it over first.', 4: '2'}
+16	16		301							{2: 'Lee', 3: 'Videos of sermons, probably. This kind of device is pretty common before the outbreak, according to our database.', 4: '2'}
+17	17		301							"{2: 'Lee', 3: ""Huh... This wasn't shattered into two. It was designed to work only when the two parts come together."", 4: '2'}"
+18	18		301							{2: 'Liv', 3: 'Like this?', 4: '1'}
+19	100		401							{1: '2', 2: '1509'}
+20	19		301							"{2: 'Lee', 3: ""It'll probably work if you match them here."", 4: '2'}"
+21	20		202							{1: '1', 2: '2', 6: '1'}
+22	21		301							{2: 'Edward', 3: 'My name is Edward.'}
+23	22		301							{2: 'Julie', 3: 'My name is Julie.'}
+24	23		201							{1: '1', 2: '500025'}
+25	24		301							{1: '1', 2: 'Liv', 3: '...Is this a recording from the past?', 4: '1'}
+26	25		202							{1: '1', 6: '1'}
+27	26		301							{2: 'Edward', 3: 'If this is playing, it means someone has found our projection device.'}
+28	27		301							{2: 'Edward', 3: 'What does the world look like now? Are there still Corrupted here?'}
+29	28		301							{2: 'Julie', 3: 'Whoever this is that has found us, are you human? Or are you a Corrupted... or maybe something else entirely?'}
+30	29		301							"{2: 'Edward & Julie', 3: ""Whichever it is, there's something we want to ask you.""}"
+31	30		301		1		AniZhuanchangBegin			{2: 'Edward & Julie', 3: 'Will you please host a wedding for us?'}

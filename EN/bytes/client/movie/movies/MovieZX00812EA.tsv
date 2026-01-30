@@ -1,0 +1,55 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory51.jpg'}
+2	1000		401							{1: '1', 2: '103'}
+3	2		201							{1: '1', 2: '500014', 4: '400'}
+4	3		201							{1: '2', 2: '1081001', 4: '-400'}
+5	4		301			DialogEnable				"{1: '1', 2: 'Camu', 3: ""They'd go so far... for you...?"", 4: '1'}"
+6	5		301							"{2: 'Kamui', 3: ""Because you're wrong from the start, Camu! It's not only power that can protect yourself!"", 4: '2'}"
+7	6		301							{2: 'Kamui', 3: 'My reliable companions will be there for me as well!', 4: '2'}
+8	7		301							{2: 'Kamui', 3: 'But, I must admit, I was wrong too.', 4: '2'}
+9	8		301							"{2: 'Kamui', 3: ""I am weak. Far weaker than you. And it's because of you that I can control Tenebrion and repel the viral corruption."", 4: '2'}"
+10	9		301							"{2: 'Kamui', 3: ""It's with your help that I managed to get this far."", 4: '2'}"
+11	10		301							{2: 'Camu', 3: '...You finally understand that?', 4: '1'}
+12	11		301							{2: 'Camu', 3: 'Yet one body can never have two consciousnesses within it.', 4: '1'}
+13	12		301							{2: 'Kamui', 3: 'I know, but neither of us has to disappear.', 4: '2'}
+14	13		204							{1: '2', 2: '1'}
+15	14		301							"{2: 'Kamui', 3: ""Because, you are me, and I am you. We're both Kamui."", 4: '2'}"
+16	1001		204							{1: '2', 2: '2'}
+17	15		301							{2: 'Kamui', 3: 'And together, we are one.', 4: '2'}
+18	16		301							{2: 'Camu', 3: '...How long did it take you? You finally understood the crux of the problem...', 4: '1'}
+19	17		301							{2: 'Camu', 3: 'Whatever...', 4: '1'}
+20	18		301							{2: 'Camu', 3: 'You know your true weakness now.', 4: '1'}
+21	19		301							{2: 'Camu', 3: 'And you have your trustworthy companions.', 4: '1'}
+22	20		301							{2: 'Camu', 3: 'You have shown me very well that you have the mettle to fulfill your promise of protecting everything.', 4: '1'}
+23	21		301				AniZhuanchangBegin			"{2: 'Camu', 3: ""...I'll resign from this war."", 4: '1'}"
+24	22		202							{1: '1', 2: '2'}
+25	23		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory52.jpg'}
+26	24		201							{1: '1', 2: '1031001', 3: '1', 4: '400'}
+27	25		201							{1: '2', 2: '1091001', 4: '-400'}
+28	26		301			AniZhuanchangEnd				"{1: '1', 2: 'Liv', 3: ""They're back!"", 4: '1'}"
+29	27		204							{1: '1'}
+30	28		301							{2: 'Bianca', 3: 'Did he succeed? Or fail?', 4: '2'}
+31	29		201							{1: '1', 2: '1081001', 4: '400'}
+32	30		301							{1: '1', 2: 'Kamui', 3: '...', 4: '1'}
+33	31		204							{1: '1', 2: '2'}
+34	32		301							"{2: 'Kamui', 3: ""Oh, Bianca, can you stop pointing that thing at my head? It's dangerous!"", 4: '1'}"
+35	33		301							"{2: 'Bianca', 3: ""Looks like it's a success."", 4: '2'}"
+36	34		201							{1: '2', 2: '1031001', 3: '1', 4: '-400'}
+37	35		301							"{1: '2', 2: 'Liv', 3: ""That's great!"", 4: '2'}"
+38	36		302							{2: 'Welcome back, Kamui.', 3: '37'}
+39	37		301							"{2: 'Kamui', 3: ""Ah, Commandant's here as well!"", 4: '1'}"
+40	38		201							{1: '2', 2: '500029', 4: '-400'}
+41	39		301							"{1: '1', 2: 'Lucia', 3: ""I only managed to make contact with you with Commandant's guidance and Liv's assistance."", 4: '2'}"
+42	40		301							"{2: 'Kamui', 3: ""Well, I don't understand the details, but I'm still thankful all the same. It's thanks to you all that I've managed to return."", 4: '1'}"
+43	41		201							{1: '2', 2: '1011001', 4: '-400'}
+44	42		301							"{1: '1', 2: 'Lee', 3: ""Let's leave the talk for later. We need to extract from here now."", 4: '2'}"
+45	43		301							{2: 'Lee', 3: 'If we stay for too long, we might give the Ascendants a chance.', 4: '2'}
+46	44		201							{1: '2', 2: '1031001', 3: '7', 4: '-400'}
+47	45		301							{1: '1', 2: 'Liv', 3: 'N-no!', 4: '2'}
+48	100		202							{1: '1'}
+49	46		204							{1: '2'}
+50	47		203							{1: '2', 2: '0.25', 3: '400'}
+51	48		201							{1: '1', 2: '500029', 4: '-400'}
+52	49		301							"{1: '1', 2: 'Lucia', 3: ""Calm down, what's happening Liv?"", 4: '1'}"
+53	50		301							{2: 'Liv', 3: 'I just received an emergency message—', 4: '2'}
+54	51		301		1		AniZhuanchangBegin			{2: 'Liv', 3: 'Babylonia... is under attack!', 4: '2'}

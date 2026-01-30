@@ -1,0 +1,457 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory912.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				{3: 'But no matter what happens, she should focus on the task of making the bracelet first.'}
+4	4		301							"{3: ""After you collect all the shells needed, you sit down by the shore, waiting for Hanying to finish making the bracelet. It doesn't take long before she completes the rest.""}"
+5	5		201							{1: '1', 2: '500999'}
+6	6		301							{1: '1', 2: 'Hanying', 3: 'Thank you, Commandant. Honestly, I should be the one taking care of this, but I ended up asking you for help.', 4: '1', 18: '100005129'}
+7	7		302							"{2: ""It's no trouble. I actually want to spend more time with you anyway."", 3: '8'}"
+8	8		302							"{2: ""You seem a bit too anxious, so I don't feel right leaving you alone."", 3: '9'}"
+9	9		204							{1: '1', 2: '3'}
+10	10		301							{2: 'Hanying', 3: 'Anxious... am I?', 4: '1', 18: '100005130'}
+11	11		302							"{2: ""Hmm, I can tell you're scared of something."", 3: '12'}"
+12	12		306							{1: '1'}
+13	13		504							{1: '1', 2: '999'}
+14	14		301							"{3: ""The commandant is right. Whether it's the Dance of Goddess Luo or the bracelet, she's honestly terrified—terrified she'll let people down.""}"
+15	15		301							"{3: ""It's like if she doesn't live up to those expectations, she'll be cast aside again.""}"
+16	16		301							{3: 'Is she relying too much on the commandant? Is her vulnerability going to be a burden?'}
+17	17		301							{3: 'If this goes on, she will end up trapped in that endless cycle of indecision all over again.'}
+18	18		301							{3: 'The emotion and motivation for her dance... that motivation...'}
+19	19		306							
+20	20		504							{1: '0'}
+21	21		301							{3: 'She tries to find a quick answer that satisfies her, but the more she rushes, the more it backfires.'}
+22	22		302							{2: 'Now that the bracelet is finished,', 3: '23'}
+23	23		302							{2: 'how about we take a walk and feel that sea breeze?', 3: '24'}
+24	24		301							{3: 'You notice Hanying is still feeling low and suggest the idea, hoping to distract her from her worries.'}
+25	25		201							{1: '1', 2: '500999', 3: '3'}
+26	26		301							"{2: 'Hanying', 3: ""...Is that okay? I feel like I'm taking up too much of your time. It's already late. If you're tired, maybe you should go back and rest, Commandant."", 4: '1', 18: '100005131'}"
+27	27		301							"{3: ""Even though that's not really what she wants, her concern for your health prompts her to confirm.""}"
+28	28		302							"{2: ""Not at all. Being with you helps me unwind. It's like a break for me."", 3: '29'}"
+29	29		302							"{2: ""Actually, I've been meaning to take you out for a breather. I'm just making it happen now."", 3: '30'}"
+30	30		302							"{2: ""Don't stress over it—just treat it like you're keeping me company."", 3: '31'}"
+31	31		204							{1: '1', 2: '1'}
+32	32		301							{3: 'Hanying realizes this unspoken kindness is a quiet show of concern. Feeling grateful, she stops refusing and accepts without hesitation.'}
+33	33		401							{1: '2', 2: '1514'}
+34	34		401							{1: '2', 2: '903'}
+35	35		401							{1: '2', 2: '973'}
+36	36		104						250.0	{1: '0|25|-25', 2: '0.25'}
+37	37		104							{1: '0|0|-50', 2: '0.25'}
+38	38		301							{3: 'You continue along the route you took earlier. The footprints you left on the shore are still there, untouched by the tide.'}
+39	39		401							{1: '2', 2: '1514'}
+40	40		104						250.0	{1: '0|25|-75', 2: '0.25'}
+41	41		104							{1: '0|0|-100', 2: '0.25'}
+42	42		202							{1: '1'}
+43	43		301				DialogDisable			{3: 'Even though the sights along the way remain unchanged, you were so caught up in picking up shells that you barely stopped to admire the scenery around.'}
+44	44		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+45	45		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3501_06.jpg'}
+46	46		104							{1: '0|-250|-505', 2: '0'}
+47	47		301			DialogEnable				"{3: '""No dust has stained the water blending with the skies; A lonely wheel-like moon shines brilliant far and wide.""'}"
+48	48		301							"{3: ""This single verse is all that comes to Hanying's mind when she looks out at the sea and sees the moon's reflection seamlessly merge into the waves.""}"
+49	49		301							"{3: ""Though the poem enchants, it can't mask the moon's lonely glow. That's the chill at the summit: no matter how high you rise, you stand alone.""}"
+50	50		301							{3: 'But...'}
+51	51		502						400.0	{1: 'DialogDisable'}
+52	52		501							{1: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab', 2: '3'}
+53	53		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3501_07.jpg'}
+54	54		104							{1: '0|-250|-505', 2: '0'}
+55	55		301			DialogEnable				{3: 'Things are different for her now.'}
+56	56		301							{3: 'Hanying instinctively turns to gaze at you.'}
+57	57		301							{3: 'On this long night, someone is willing to stay with her, taking in the pale moonlight and the serene breeze together.'}
+58	58		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab'}
+59	59		502				AniZhuanchangBegin			{1: 'DialogDisable'}
+60	60		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory912.jpg'}
+61	61		302							"{2: ""I can't shake the feeling that something's missing..."", 3: '62'}"
+62	62		301			DialogEnable				{3: 'You pause for a moment, then pull out your terminal and start playing a soft, airy tune.'}
+63	63		302							{2: 'Great, it goes perfectly with the view.', 3: '64'}
+64	64		302							{2: 'This feels just right.', 3: '65'}
+65	65		301							{3: 'You walk in step with the music, feeling your pace slow and relaxed. As you stroll along and chat about casual things, Hanying seems to forget her troubles, at least for a little while.'}
+66	66		301							{3: 'Time slips by until Hanying suggests a quick break. The two of you sit on the beach, facing the sea, still talking as you watch the distant waves.'}
+67	67		202				AniZhuanchangBegin			{1: '1'}
+68	68		402							{1: '208'}
+69	69		502						400.0	{1: 'DialogDisable'}
+70	70		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+71	71		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg'}
+72	72		401							{1: '1', 2: '207'}
+73	73		301			DialogEnable				{3: 'The music reaches a line about stars and the moon. Together, you look up at the night sky. The weather is especially clear, revealing a blanket of twinkling stars at a glance.'}
+74	74		502						400.0	{1: 'DialogDisable'}
+75	75		201							{1: '1', 2: '500999'}
+76	76		301			DialogEnable				"{1: '1', 2: 'Hanying', 3: '""Countless stars fall into the water\'s mirror, weaving with moonlight into a feathered gown.""', 4: '1', 18: '100005132'}"
+77	77		202						400.0	{1: '1'}
+78	78		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+79	79		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4601_06.jpg'}
+80	80		501							{1: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiYinghuochong.prefab', 2: '3'}
+81	81		301							{3: 'Hanying quietly speaks the lyrics, her eyes on the distant stars. Memories float to the surface, but instead of sorrow, they only bring a gentle calm to her heart.'}
+82	82		301							{3: 'The past floats away like smoke. She still honors the souls she has lost, but she refuses to sink into sorrow.'}
+83	83		301							{3: 'Every scene carries emotion. The person by her side, this very setting—all of it points her toward a hopeful future.'}
+84	84		301							{2: 'Hanying', 3: 'The sky and the stars tonight look breathtaking.', 4: '1', 18: '100005133'}
+85	85		301				AniZhuanchangBegin			"{3: ""It's not just a compliment to the night's beauty; it also reflects the calm that she feels from being with the one beside her.""}"
+86	86		505				DialogDisable			{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiYinghuochong.prefab'}
+87	87		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+88	88		302							"{2: ""So, Hanying, you're planning to perform the Dance of the Luo Goddess underwater?"", 3: '89'}"
+89	89		301			DialogEnable				{3: 'Hanying nods.'}
+90	90		201							{1: '1', 2: '500999'}
+91	91		301							{1: '1', 2: 'Hanying', 3: 'Yeah, I want to stay as faithful to the legend as possible.', 4: '1', 18: '100005134'}
+92	92		302							{2: 'I see.', 3: '93'}
+93	93		302							"{2: ""It's just a bit of a shame... The view right now seems pretty fitting."", 3: '94'}"
+94	94		302							"{2: ""Dancing on the sea surface under a starry sky and moonlight has its own charm, don't you think?"", 3: '95'}"
+95	95		301							{3: 'Hearing this, Hanying gives you a poised smile.'}
+96	96		204							{1: '1', 2: '1'}
+97	97		301							"{2: 'Hanying', 3: ""Well then, I'll give it a try right now."", 4: '1', 18: '100005135'}"
+98	98		301							{2: 'Hanying', 3: 'This... is a private show meant just for you, Commandant.', 4: '1', 18: '100005136'}
+99	99		202							{1: '1'}
+100	100		401							{1: '2', 2: '4298'}
+101	101		301							{3: 'With those words, Hanying stands and steps forward. The water barely reaches her ankles, reflecting her image like a perfect mirror beneath her feet.'}
+102	102		301				AniZhuanchangBegin			{3: 'Is it because the music sparks a hidden flame in her heart? She feels her body soar like a bird, free and weightless.'}
+103	103		505				DialogDisable			{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiYinghuochong.prefab'}
+104	104		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg3501_01.jpg'}
+105	105		301			DialogEnable				"{3: ""Everything before her becomes her stage. Moonlight pours across the dark curtain of night, and the water's shimmering glow reflects on her, transforming into her dance attire.""}"
+106	106		301							{3: 'She moves like an ethereal silhouette, each step creating a gentle ripple.'}
+107	107		301							{3: 'The music continues, and Hanying stays immersed in the joy of her dance. Even with only one person watching, she gives it her all.'}
+108	108		301				AniZhuanchangBegin			{3: 'Every movement comes from pure instinct, with no conscious need to plan or choreograph. Before she knows it, she has completed the entire dance.'}
+109	109		502						400.0	{1: 'DialogDisable'}
+110	110		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/UiArchiveStoryBanner/Login28.png'}
+111	111		301			DialogEnable				{3: 'As the music fades away, Hanying stops, letting the quiet envelop her, and turns to face her lone spectator.'}
+112	112		301							"{3: ""It's as if a goddess glances back, calming vast seas and soaring mountains with a single look.""}"
+113	113		301							{3: 'Then, a burst of clear applause rings out. The momentary spell of immersion vanishes, and a sudden rush of nerves takes hold of Hanying.'}
+114	114		301				AniZhuanchangBegin			{3: 'She worries that her recent burst of excitement might have made her lose her composure.'}
+115	115		505				DialogDisable			{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiYinghuochong.prefab'}
+116	116		402							{1: '4298'}
+117	117		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+118	118		201							{1: '1', 2: '500999', 3: '3'}
+119	119		301			DialogEnable				"{1: '1', 2: 'Hanying', 3: ""Commandant... do you think I'm acting strange right now?"", 4: '1', 18: '100005137'}"
+120	120		301							"{3: ""She hesitates, finally voicing her concern. Even though the scenery and music fill her with emotion, she doesn't want to come across as rude.""}"
+121	121		301							"{3: ""Did the commandant enjoy her dance? Somehow, that's the only thought lingering in her mind.""}"
+122	122		302							"{2: ""Of course not. I think it's wonderful just the way it is."", 3: '123'}"
+123	123		302							{2: 'It makes me happy to see you follow your heart.', 3: '124'}
+124	124		204							{1: '1'}
+125	125		203							{1: '1', 2: '0.4', 4: '-25', 5: '-100'}
+126	126		301							{3: 'Hearing those words, Hanying brightens up, slipping right back into her earlier carefree mood. She steps toward the beach, and you two keep walking along the shore.'}
+127	127		302							"{2: ""Still, it's a bit shame that I was the only one who got to see that dance."", 3: '128'}"
+128	128		302							{2: 'I wish I could record that performance so everyone can appreciate it.', 3: '129'}
+129	129		301							"{3: ""Hanying smiles softly, as though there's nothing to regret.""}"
+130	130		204							{1: '1', 2: '1'}
+131	131		301							"{2: 'Hanying', 3: ""As long as my dance stays with you, that's all I need."", 4: '1', 18: '100005138'}"
+132	132		306							{1: '1'}
+133	133		504							{1: '1', 2: '999'}
+134	134		301							{3: 'She carries a hidden longing she never voices; under the moonlight, no other scene catches her eye.'}
+135	135		301							"{3: ""The commandant's approval alone gives her all the affirmation she needs.""}"
+136	136		301							"{3: ""Thinking about this, Hanying wonders if it's what she's been looking for all this time.""}"
+137	137		301							"{3: ""She has a clearer idea now, but she still can't be certain.""}"
+138	138		306							
+139	139		504							{1: '0'}
+140	140		204							{1: '1', 2: '7'}
+141	141		301				DialogDisable			{2: 'Hanying', 3: 'Commandant, about that dance... do you think I interpreted and performed it the right way?', 4: '1', 18: '100005139'}
+142	142		302							"{2: 'Hmm... If I\'m being honest, I don\'t think there is such a thing as the ""right"" way.', 3: '143'}"
+143	143		302							{2: 'As they say in Kowloong...', 3: '144'}
+144	144		302							"{2: '""The benevolent see benevolence, the wise see wisdom.""', 3: '145'}"
+145	145		302							"{2: 'Everyone views things differently, so maybe there isn\'t just one ""correct answer.""', 3: '146'}"
+146	146		302							"{2: ""As long as you interpret it in a way that makes sense to you, that's already perfect."", 3: '147'}"
+147	147		302							"{2: ""You already know the answer in your heart, don't you? Just trust your choice."", 3: '148'}"
+148	148		204							{1: '1', 2: '7'}
+149	149		301			DialogEnable				{3: 'These words stir something in Hanying. She thinks back to how she felt just a moment ago—that sudden urge to dance for someone special.'}
+150	150		401							{1: '2', 2: '968'}
+151	151		202							{1: '1'}
+152	152		301							{3: 'As soon as the words are said, a gust of sea breeze whips up, tossing her hair and momentarily blurring her vision.'}
+153	153		301				AniZhuanchangBegin			{3: 'When that ethereal, almost chant-like wind settles and her sight clears, she finds she has somehow ended up on the other side of the beach.'}
+154	154		502						400.0	{1: 'DialogDisable'}
+155	155		402							{1: '207'}
+156	156		402							{1: '968'}
+157	157		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_10.jpg'}
+158	158		401							{1: '1', 2: '204'}
+159	159		401							{1: '2', 2: '213'}
+160	160		301			DialogEnable				"{3: ""This is where Pulao plans to host the bonfire party. To see how long the fuel lasts, she kept the fire going even after everyone left, and it's still burning now.""}"
+161	161		301							{3: 'The two of you step up to the bonfire.'}
+162	162		302							"{2: ""Looks great! I bet it'll be a blast once the party's in full swing."", 3: '163'}"
+163	163		302							"{2: ""Speaking of which... I think it's time to bring this out."", 3: '164'}"
+164	164		301							{3: 'A seashell bracelet appears before Hanying, looking noticeably different from the one she just finished.'}
+165	165		301							"{3: ""There isn't any intricate weaving or fancy pattern—just a simple string of shells, clearly put together in a rush.""}"
+166	166		201							{1: '1', 2: '500999', 3: '7'}
+167	167		301							{1: '1', 2: 'Hanying', 3: 'This is...', 4: '1', 18: '100005140'}
+168	168		302							{2: 'I kept a few shells and made this bracelet.', 3: '169'}
+169	169		302							{2: 'Now that we can see things more clearly with the fire, I decide to give it to you.', 3: '170'}
+170	170		302							{2: 'Consider it a substitute for the lost bracelet. Let it fill the gap and stay by your side.', 3: '171'}
+171	171		302							{2: 'Although your thoughtfulness and concern for others is one of your finest qualities...', 3: '172'}
+172	172		302							"{2: ""I still hope you get the chance to feel what it's like when someone else takes care of you."", 3: '173'}"
+173	173		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+174	174		301							{3: 'Flames blaze before her, and behind her, the moon moves into place. Its glow inches closer until a bright beam bathes the spot in silver.'}
+175	175		301				AniZhuanchangBegin			"{3: ""Hanying can't see how the bracelet's reflection appears in her own eyes, but she knows it must be a view unlike any other.""}"
+176	176		502						400.0	{1: 'DialogDisable'}
+177	177		202							{1: '1'}
+178	178		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+179	179		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading18.jpg'}
+180	180		501							{1: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiYinghuochong.prefab', 2: '2'}
+181	181		301			DialogEnable				"{3: ""Flames flicker, shifting into a dazzling glow—sometimes bursting into fireworks against the night sky. Suddenly, it's like stepping into an old Kowloong poem about a bygone Lantern Festival, a gentle nostalgia stirring as you look back.""}"
+182	182		301							{3: 'Under the fading lights, that special one is already here—right before her eyes, in her heart, and by her side.'}
+183	183		401							{1: '2', 2: '2596'}
+184	184		301							{3: 'Right now, a seabird lands on the shore. The person before her carefully approaches and, once sure the bird is not startled, reaches out and gently pets it.'}
+185	185		301							{3: 'One person and one bird linger together in the calm of the night, sharing a gentle, carefree sense of joy that settles over the darkness.'}
+186	186		301							"{3: ""The person eagerly shares each view and every bit of fun, and Hanying takes it all in. Still, her heart holds only that one's smile.""}"
+187	187		301							"{3: '""You stand on the bridge, gazing at the scenery, while someone on the bridge gazes at you.""'}"
+188	188		301							{3: 'Tonight, these verses Hanying had once read keep drifting through her mind, and she thinks it must be a stirring of emotions, a resonance from within.'}
+189	189		402							{1: '2596'}
+190	190		306							{1: '1'}
+191	191		504							{1: '1', 2: '999'}
+192	192		301							"{3: 'Is this what counts as progress? A new step toward understanding ""emotion""? As Hanying takes in the scenery before her, she feels she has begun to understand a small part of Goddess Luo\'s emotions.'}"
+193	193		301							{3: 'She remembers asking the commandant earlier about going back to rest. Even though her logical side warns her not to act on impulse, she can still hear a voice deep inside her heart, calling out.'}
+194	194		301							"{3: ""It's not enough. Tonight's time together feels too short. It's as though she has forgotten how time slips away, caught up in the joy and unwilling to let it end.""}"
+195	195		301							{3: 'She wonders if the night can stretch on forever, so dawn never arrives. Only now does she realize just how greedy she has become.'}
+196	196		301							"{3: 'Is this what people mean by ""attachment""?'}"
+197	197		301							"{3: ""This subconscious dependence may be seen as one's weakness, but she can't deny how badly she wants it. She craves deeper bonds, a companionship that truly lasts.""}"
+198	198		301							"{3: 'Even someone like her isn\'t immune to this ""greedy longing.""'}"
+199	199		301							{3: 'Was it the same for Goddess Luo? Did her brief encounter by the Luo River stir such longing that she performed the Dance of Goddess Luo?'}
+200	200		301							"{3: ""Hanying tries to use this idea to form an answer, but it still doesn't feel quite right.""}"
+201	201		306							
+202	202		504							{1: '0'}
+203	203		302							"{2: ""...Hanying? What's going on? Is there anything wrong?"", 3: '204'}"
+204	204		301							"{3: ""Hanying snaps back to the present, realizing she's been so absorbed in her own thoughts that she hasn't responded to the person right in front of her.""}"
+205	205		201							{1: '1', 2: '500999', 3: '1'}
+206	206		301							"{1: '1', 2: 'Hanying', 3: ""My apologies, I got carried away. I'm okay—it's just that I'm thinking about the dance... and I already have a few ideas of my own."", 4: '1', 18: '100005141'}"
+207	207		302							"{2: ""That's reassuring. After all, you're the one bringing this dance to life."", 3: '208'}"
+208	208		302							{2: 'So I believe that as long as you follow your own vision...', 3: '209'}
+209	209		302							{2: 'that alone will be enough to shape the soul of the dance.', 3: '210'}
+210	210		204							{1: '1', 2: '7'}
+211	211		301							{2: 'Hanying', 3: 'The soul... of the dance?', 4: '1', 18: '100005142'}
+212	212		401							{1: '2', 2: '2596'}
+213	213		301							{3: 'The lively seabird looks your way. Perhaps drawn by the glimmer of the bracelet Hanying crafted, it swoops in and lands right in front of her.'}
+214	214		204							{1: '1'}
+215	215		203							{1: '1', 2: '0.3', 4: '-50'}
+216	216		301							{3: 'Hanying kneels down, softly running her hand over its feathers. She recalls the earlier topic, and a thoughtful look settles on her face.'}
+217	217		402							{1: '2596'}
+218	218		204							{1: '1', 2: '3'}
+219	219		301							"{2: 'Hanying', 3: ""Commandant, do you think a mechanoid can really perform a dance that's filled with genuine emotions?"", 4: '1', 18: '100005143'}"
+220	220		301							{1: '1', 2: 'Hanying', 3: 'Is it possible for... a mechanoid to capture the same living spark that sets humans and animals apart from cold steel?', 4: '1', 18: '100005144'}
+221	221		202							{1: '1'}
+222	222		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiYinghuochong.prefab'}
+223	223		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+224	224		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz3003.jpg'}
+225	225		301							"{3: 'Like the emotions already mentioned, the word ""soul"" comes across as an unattainable luxury to Hanying.'}"
+226	226		301							"{3: 'The person before her, the seabird she touches so gently, and every living creature she has seen in the ocean—each one harbors a ""soul"" that is uniquely their own.'}"
+227	227		301							"{3: ""It's something she lost before she even had the chance to embrace it.""}"
+228	228		301							"{3: ""Can a mechanoid ever have a soul? She hasn't examined the question in depth. While mechanoids are inherently capable of calculation and imitation, they lack the gift of true perception and empathy.""}"
+229	229		301							"{3: ""There are plenty of things in this world that you simply can't achieve by copying someone else.""}"
+230	230		301							{3: 'Maybe the fear and confusion she felt earlier are actually a subconscious kind of self-denial—something Hanying never even notices herself.'}
+231	231		301				DialogDisable			"{3: 'Deep down, she believes she can\'t truly grasp what ""emotion"" means.'}"
+232	232		302							"{2: ""Well, I'm only human, so I can't answer that for you."", 3: '233'}"
+233	233		302							"{2: ""But if it's you, Hanying, I'd say you definitely can."", 3: '234'}"
+234	234		302							{2: 'I may not grasp everything, but the Hanying I know can surely sense the buried emotions.', 3: '235'}
+235	235		302							{2: 'You show compassion for living beings and empathize with their every joy, anger, and sorrow.', 3: '236'}
+236	236		302							"{2: ""That's the gentle heart you have, indistinguishable from a human's."", 3: '237'}"
+237	237		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+238	238		401						300.0	{1: '2', 2: '2924'}
+239	239		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+240	240		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3501_04.jpg'}
+241	241		301			DialogEnable				"{3: ""Can a mechanoid truly share the same perception and insight as a human? It's an unanswered question that might remain unsolved.""}"
+242	242		301							"{3: 'But how to define ""emotion"" in the first place? Humans can\'t pin it down, and machines can\'t measure it.'}"
+243	243		301							{3: 'If she imitates human actions, does she truly grasp emotion? She cries and laughs like they do—but is that really all it takes?'}
+244	244		301				DialogDisable			"{3: ""Right now, she finally realizes that the answer to this question isn't all that important to her after all.""}"
+245	245		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+246	246		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3501_09.jpg'}
+247	247		301			DialogEnable				{3: 'All she wants is for someone to notice her smiles and tears, to see them completely and hold them in their heart.'}
+248	248		301							"{3: ""Emotion only becomes real when there's genuine, two-way feedback.""}"
+249	249		301							{3: 'Learning to love begins with the awareness that you are loved.'}
+250	250		301				AniZhuanchangBegin			{3: 'As mentioned before, Hanying has been so afraid of losing what she has that she begins to lose herself along the way.'}
+251	251		502						400.0	{1: 'DialogDisable'}
+252	252		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4601_02.jpg'}
+253	253		301			DialogEnable				{3: 'She scours that elusive legend for any sign of the bygone era, hoping to reclaim its lost glory. But the noise around her is overwhelming, and she begins to lose sight of who she really is.'}
+254	254		301							"{3: 'She\'s used to defining her whole existence by holding onto a specific ""value."" When that value can\'t be achieved, she instinctively worries that she no longer has any reason to stay.'}"
+255	255		301							"{3: ""From the moment she comes into being, she follows strict, function-oriented principles—an unbending logic she can't easily escape.""}"
+256	256		301							"{3: ""It's both her comfortable habit and her binding shackle.""}"
+257	257		301				AniZhuanchangBegin			"{3: '""If I can\'t fulfill expectations, I\'ll be discarded."" This fear drives her unease.'}"
+258	258		502						400.0	{1: 'DialogDisable'}
+259	259		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg3501_06.jpg'}
+260	260		301			DialogEnable				"{3: 'Then someone tells her she doesn\'t need a ""useful purpose"" to justify herself. Her mere existence is all the proof she needs for others to stand by her side.'}"
+261	261		301							{3: 'Just like in the legend from a thousand years ago, a passing nobleman gave the lost Goddess Luo a mesmerizing encounter.'}
+262	262		301							"{3: ""This time too, someone reaches out to take Hanying's hand, leading her away from that swirling current.""}"
+263	263		301							"{3: 'At its core, creation is about understanding and expression. Every version of the dance is really just the ""Goddess Luo"" people want to believe in.'}"
+264	264		301							{3: 'Hopeless romantics see a love story, while the ambitious see their grand ideal.'}
+265	265		301							{3: 'The dance is like a mirror, in which each observer sees a unique reflection.'}
+266	266		301							{3: 'Each person who looks upon Goddess Luo only sees the version of themselves they imagine.'}
+267	267		301							"{3: ""As for Hanying, what does she see when she peers into the water's reflection?""}"
+268	268		301							"{2: 'Hanying', 3: ""I think... I've finally found my own motivation and emotion for dancing."", 18: '100005145'}"
+269	269		301							"{2: 'Hanying', 3: ""In other people's eyes, Cao Zhi might be Goddess Luo's beloved or her fated soulmate, but to me..."", 18: '100005146'}"
+270	270		301				AniZhuanchangBegin			"{2: 'Hanying', 3: 'That was her ""rebirth.""', 18: '100005147'}"
+271	271		502						400.0	{1: 'DialogDisable'}
+272	272		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4601_03.jpg'}
+273	273		301			DialogEnable				{3: 'Before she became a radiant deity, Goddess Luo also once sank into the mire of despair.'}
+274	274		301							{3: 'She died unjustly, endured captivity, and trudged through a path strewn with mud and thorns. By the time her flesh was torn and bloodied, she finally reached the moment of divine worship.'}
+275	275		301							{3: 'What did it matter to be revered as a goddess? In all the years since her confinement, she still had never once stepped beyond these boundaries.'}
+276	276		301							{3: 'Until the day that person appeared.'}
+277	277		301							"{3: ""Maybe this encounter was just too short, its breathtaking spark gone in a heartbeat. He didn't know her past, and he couldn't share the future with her.""}"
+278	278		301							"{3: 'But at last, she got to be someone\'s ""most important person,"" even if it was only this once.'}"
+279	279		301							{3: 'The encounter between Cao Zhi and Goddess Luo—that was the world he showed her. His presence and the poem he left behind let her rediscover her own purpose.'}
+280	280		301							{3: 'That is an emotion Hanying knows all too well, something that evokes a vague sense of deja vu.'}
+281	281		301							"{3: 'She offers her own response to the dance, revealing the ""emotion"" she associates with Goddess Luo.'}"
+282	282		301							"{3: ""No need to overthink it—perhaps it's the simplest thing in the world.""}"
+283	283		301							"{3: ""She understands that goddess' intention, because it resonates with her own feelings.""}"
+284	284		301							{3: 'All because she meets someone, she wants to dance for that person, never worrying about where this journey will lead.'}
+285	285		301							{3: 'She only wants that one person to witness her dance—nothing more.'}
+286	286		301							"{1: '1', 2: 'Hanying', 3: ""Thank you, Commandant. I'm certain I won't feel lost anymore after this."", 4: '1', 18: '100005148'}"
+287	287		301							{1: '1', 2: 'Hanying', 3: 'With you here, I have all I need to grasp every emotion and sensation.', 4: '1', 18: '100005149'}
+288	288		301							"{3: 'By the banks of the Luo River, Goddess Luo found her own ""rebirth.""'}"
+289	289		301							"{3: ""At this very moment, on this shore, Hanying, too, encounters the hope she's been yearning for.""}"
+290	290		301							{3: 'She has found... the person she wants to dance for.'}
+291	291		402							{1: '213'}
+292	292		502						400.0	{1: 'DialogDisable'}
+293	293		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab'}
+294	294		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+295	295		301			DialogEnable				{3: 'As this realization dawns on her, Hanying loosens her hair and looks toward the nearby moonlight—her signal to wade into the water and begin her performance.'}
+296	296		201							{1: '1', 2: '500999'}
+297	297		301							{1: '1', 2: 'Hanying', 3: 'I already know how I want to interpret the Dance of Goddess Luo. Commandant, can I invite you to be the very first to witness it?', 4: '1', 18: '100005150'}
+298	298		302							{2: 'Of course! Do you need me to do anything?', 3: '299'}
+299	299		301							"{2: 'Hanying', 3: ""The Dance of Goddess Luo will be performed underwater, so I've set up a projector on the seafloor. Just relax and watch, Commandant."", 4: '1', 18: '100005151'}"
+300	300		301							"{1: '1', 2: 'Hanying', 3: ""There is one part, though... It feels like a ritual, in a way. I'd like your help with it, Commandant."", 4: '1', 18: '100005152'}"
+301	301		204							{1: '1', 2: '1'}
+302	302		301							"{1: '1', 2: 'Hanying', 3: ""It's just a small favor I'm asking for myself."", 4: '1', 18: '100005153'}"
+303	303		202				AniZhuanchangBegin			{1: '1'}
+304	304		502						400.0	{1: 'DialogDisable'}
+305	305		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4601_05.jpg'}
+306	306		301			DialogEnable				{3: 'In that ancient tale, Cao Zhi held the water as his mirror, trying to see his own reflection. Then, all at once, Goddess Luo emerged from the surface.'}
+307	307		301							{3: 'Their brief contact—a single glance—left him spellbound.'}
+308	308		301							"{3: ""Hanying plans to recreate that legendary moment exactly. As she finishes her emergence from the water, she wants you to come closer and watch at the water's edge.""}"
+309	309		301							"{3: 'Hanying sees the transition from beneath the water\'s surface to the shore as the dawn of Goddess Luo\'s rebirth. She wants you to see, with your own eyes, the exact moment she completes her ""transformation"" in this dance.'}"
+310	310		301							"{3: ""Moments ago, the shell bracelet was given to her; now it rests on Hanying's wrist. With every step, its chimes mingle with the sea breeze, echoing like a graceful poem from ancient legends.""}"
+311	311		401							{1: '1', 2: '242'}
+312	312		301							{3: 'The terminal starts playing the accompanying music for the dance, its lyrics adapted from Ode to Goddess Luo.'}
+313	313		301				AniZhuanchangBegin			{3: 'Word by word, the tale gently unfolds.'}
+314	314		202				DialogDisable			{1: '1', 6: '1'}
+315	315		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_46.jpg'}
+316	316		401							{1: '2', 2: '4298'}
+317	317		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_47.jpg', 3: '0', 4: '1', 5: '0.8'}
+318	318		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_47.jpg'}
+319	319		205							{1: '999'}
+320	320		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_48.jpg', 3: '0', 4: '1', 5: '0.8'}
+321	321		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_48.jpg'}
+322	322		205							{1: '999'}
+323	323		301			DialogEnable	DialogDisable			"{3: ""It's the third year of Huangchu; I return to the Luo River's shore,""}"
+324	324		205							{1: '999'}
+325	325		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_49.jpg', 3: '0', 4: '1', 5: '0.8'}
+326	326		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_49.jpg'}
+327	327		205							{1: '999'}
+328	328		301			DialogEnable	DialogDisable			{3: 'Where rocky banks unveil a beauty I cannot ignore.'}
+329	329		205							{1: '999'}
+330	330		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_50.jpg', 3: '0', 4: '1', 5: '0.8'}
+331	331		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_50.jpg'}
+332	332		205							{1: '999'}
+333	333		301	1		DialogEnable	DialogDisable			{3: 'Swift as a startled swan, she glides away from my sight.'}
+334	334		402							{1: '4298'}
+335	335		205							{1: '999'}
+336	336		401							{1: '2', 2: '721'}
+337	337		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_51.jpg', 3: '0', 4: '1', 5: '0.8'}
+338	338		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_51.jpg'}
+339	339		205							{1: '999'}
+340	340		301			DialogEnable	AniZhuanchangBegin			{3: 'I reach for the far shore, but it fades into the night.'}
+341	341		205			DialogDisable				{1: '999'}
+342	342		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_52.jpg'}
+343	343		401							{1: '2', 2: '902'}
+344	344		205							{1: '999'}
+345	345		301			DialogEnable	DialogDisable			"{3: ""The water goddess is Fufei, ensnared by marshland's snare;""}"
+346	346		205							{1: '999'}
+347	347		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_53.jpg', 3: '0', 4: '1', 5: '0.8'}
+348	348		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_53.jpg'}
+349	349		205							{1: '999'}
+350	350		301			DialogEnable	DialogDisable			"{3: ""Luo's depths pull her downward, as though no mortal may care.""}"
+351	351		205							{1: '999'}
+352	352		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_54.jpg', 3: '0', 4: '1', 5: '0.8'}
+353	353		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_54.jpg'}
+354	354		205							{1: '999'}
+355	355		301			DialogEnable	DialogDisable			{3: 'The abyss yawns around her, a vast uncharted sea.'}
+356	356		205							{1: '999'}
+357	357		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_55.jpg', 3: '0', 4: '1', 5: '0.8'}
+358	358		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_55.jpg'}
+359	359		205							{1: '999'}
+360	360		301			DialogEnable	AniZhuanchangBegin			{3: 'Alone, even a goddess stands, with no soul to set her free.'}
+361	361		205			DialogDisable				{1: '999'}
+362	362		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_56.jpg'}
+363	363		205							{1: '999'}
+364	364		301			DialogEnable	DialogDisable			"{3: ""A quiet voice awakens, soft as a dream's secret art.""}"
+365	365		205							{1: '999'}
+366	366		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_57.jpg', 3: '0', 4: '1', 5: '0.8'}
+367	367		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_57.jpg'}
+368	368		301			DialogEnable	DialogDisable			{3: 'A withered tree finds spring, while parted clouds let moonlight start.'}
+369	369		205							{1: '999'}
+370	370		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_58.jpg', 3: '0', 4: '1', 5: '0.8'}
+371	371		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_58.jpg'}
+372	372		205							{1: '999'}
+373	373		301	1		DialogEnable	AniZhuanchangBegin			{3: 'A crimson river tumbles down, a fleeting lull from strife;'}
+374	374		205			DialogDisable				{1: '999'}
+375	375		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_59.jpg'}
+376	376		205							{1: '999'}
+377	377		301			DialogEnable	DialogDisable			"{3: ""Yet at midnight's radiant spark, the yellow-millet dream slips from life.""}"
+378	378		205							{1: '999'}
+379	379		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_60.jpg', 3: '0', 4: '1', 5: '0.8'}
+380	380		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_60.jpg'}
+381	381		301			DialogEnable	DialogDisable			{3: 'Travelers scatter quickly once the final music plays,'}
+382	382		205							{1: '999'}
+383	383		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_61.jpg', 3: '0', 4: '1', 5: '0.8'}
+384	384		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_61.jpg'}
+385	385		301			DialogEnable	DialogDisable			{3: 'Nightmares twist into illusions, merging in haunted arrays.'}
+386	386		205							{1: '999'}
+387	387		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_62.jpg', 3: '0', 4: '1', 5: '0.8'}
+388	388		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_62.jpg'}
+389	389		301	1		DialogEnable	AniZhuanchangBegin			{3: 'Dawn once glimmered softly—now deep gloom sets its stage;'}
+390	390		205			DialogDisable				{1: '999'}
+391	391		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_63.jpg'}
+392	392		205							{1: '999'}
+393	393		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_64.jpg', 3: '0', 4: '1', 5: '0.8'}
+394	394		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_64.jpg'}
+395	395		301			DialogEnable	DialogDisable			{3: 'Life foams and ebbs in moments, where love and hate both rage.'}
+396	396		205							{1: '999'}
+397	397		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_65.jpg', 3: '0', 4: '1', 5: '0.8'}
+398	398		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_65.jpg'}
+399	399		401						500.0	{1: '2', 2: '4144'}
+400	400		301	1		DialogEnable				{3: 'I reclaim what was lost in every greeting and adieu, a silent wish in each goodbye for what I hope is true.'}
+401	401		205			DialogDisable	AniZhuanchangBegin			{1: '999'}
+402	402		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_66.jpg'}
+403	403		205							{1: '999'}
+404	404		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_67.jpg', 3: '0', 4: '1', 5: '0.8'}
+405	405		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_67.jpg'}
+406	406		301			DialogEnable	DialogDisable			{3: 'Mountains cradle tender shoots, and lotus flowers sway;'}
+407	407		205							{1: '999'}
+408	408		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_68.jpg', 3: '0', 4: '1', 5: '0.8'}
+409	409		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_68.jpg'}
+410	410		301			DialogEnable	DialogDisable			{3: 'A guiding light within my heart keeps the darkness at bay.'}
+411	411		205							{1: '999'}
+412	412		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_69.jpg', 3: '0', 4: '1', 5: '0.8'}
+413	413		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_69.jpg'}
+414	414		205							{1: '999'}
+415	415		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_70.jpg', 3: '0', 4: '1', 5: '0.8'}
+416	416		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_70.jpg'}
+417	417		301			DialogEnable	AniZhuanchangBegin			"{3: ""The one I yearn for lingers by the water's gentle edge,""}"
+418	418		205			DialogDisable				{1: '999'}
+419	419		101	1		AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_71.jpg'}
+420	420		205							{1: '999'}
+421	421		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_72.jpg', 3: '0', 4: '1', 5: '0.8'}
+422	422		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_72.jpg'}
+423	423		301			DialogEnable	DialogDisable			{3: 'A galaxy in her gaze, revealed with every pledge.'}
+424	424		205							{1: '999'}
+425	425		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_73.jpg', 3: '0', 4: '1', 5: '0.8'}
+426	426		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_73.jpg'}
+427	427		205							{1: '999'}
+428	428		301			DialogEnable	DialogDisable			{3: 'We journey upstream hand in hand, unafraid of the cold; Frost lingers until dawn breaks—our story yet untold.'}
+429	429		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_74.jpg', 3: '0', 4: '1', 5: '0.8'}
+430	430		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_74.jpg'}
+431	431		205							{1: '999'}
+432	432		301			DialogEnable	DialogDisable			{3: 'I set my heart adrift upon this endless, longing tide,'}
+433	433		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_75.jpg', 3: '0', 4: '1', 5: '0.8'}
+434	434		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_75.jpg'}
+435	435		205							{1: '999'}
+436	436		301			DialogEnable	DialogDisable			{1: '999', 3: 'Drawn so fiercely to the far shore, all else is cast aside.'}
+437	437		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_76.jpg', 3: '0', 4: '1', 5: '0.8'}
+438	438		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_76.jpg'}
+439	439		301			DialogEnable				{3: 'I chase the wind and moon, no barrier in my way to see you.'}
+440	440		205			DialogDisable				{1: '999'}
+441	441		301							{3: ' '}
+442	442		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+443	443		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_86.jpg'}
+444	444		401							{1: '2', 2: '4158'}
+445	445		301			DialogEnable	DialogDisable			"{3: '""Graceful as a startled swan, elegant as a wandering dragon.""'}"
+446	446		301			DialogEnable				"{3: ""The song reaches its final verse, its echo resonating deep in the heart. Moonlight dances on the water's surface, perfectly aligned to catch her gaze.""}"
+447	447		301							{3: 'Had the once-imprisoned goddess found a reborn sense of self? The answer is obvious.'}
+448	448		301							{3: 'Ocean currents distort vision, but once one breaks free, everything becomes crystal clear. So the moment Hanying surfaces, her entire field of vision snaps into sharp focus.'}
+449	449		301							{3: 'She sees it now—her own reflection, mirrored in the eyes that look straight into hers.'}
+450	450		301							"{3: ""Through others as a mirror, one comes to know life's warmth and chill. Like savoring a sip only one can taste, like floating in a sea that carries all.""}"
+451	451		301							"{3: '""At first glance, a closeness so true, we hold this bond as though we always knew.""'}"
+452	452		301							{3: 'If she can turn back time, she wants to deliver a single message to her past self.'}
+453	453		301							"{3: 'She would say, ""The road is treacherous, but tomorrow still shines with hope. One day, someone will be there, waiting for you at the end.""'}"
+454	454		301							"{3: ""The sea is crystal clear, and they are so close that she can see her own reflection mirrored in the other's eyes.""}"
+455	455		301							"{3: ""It's like a spotless mirror, guiding her to see who she truly is.""}"
+456	456		301		1		AniZhuanchangBegin			{3: 'At a glance, the sky becomes a galaxy pouring down, converging in the emerald water at its center.'}

@@ -1,0 +1,36 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				"{3: ""At the physical examination office, several people around Freeman's age are waiting for the results.""}"
+4	4		301							{3: 'Amidst the silence, the only sound that breaks the stillness is the voice of the military staff as they call out names.'}
+5	5		201							{1: '1', 2: '500625'}
+6	6		301							{2: 'Staff Member', 3: 'Freeman.', 4: '1'}
+7	7		201							{1: '1', 2: '500138'}
+8	8		301							{1: '1', 2: 'Freeman', 3: 'Yes sir!', 4: '1'}
+9	9		301				AniZhuanchangBegin			{3: 'Freeman rises from the chair and walks with a stiff gait toward the nearby office.'}
+10	10		202			DialogDisable				{1: '1', 6: '1'}
+11	11		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+12	12		201							{1: '1', 2: '500625'}
+13	13		301			DialogEnable				{1: '1', 2: 'Staff Member', 3: 'Please have a seat.', 4: '1'}
+14	14		301							{3: 'After Freeman sits down, the staff member starts talking at a slow pace.'}
+15	15		301							"{2: 'Staff Member', 3: ""I'll tell you the conclusion first: your Tantalum affinity reaches the threshold."", 4: '1'}"
+16	16		301							"{3: ""Freeman's stiff body slightly relaxes upon hearing the news. This means, at the very least, neither he nor his sister will be forced to leave Babylonia.""}"
+17	17		301							"{2: 'Staff Member', 3: ""Your affinity is very high, actually, so the military has a proposition for you—we'd like you to join our adaptation experiment for specialized frames."", 4: '1'}"
+18	18		301							{2: 'Staff Member', 3: 'If the experiment proves successful, you, equipped with a specialized frame, will have the opportunity to directly join an elite squad.', 4: '1'}
+19	19		201							{1: '1', 2: '500138'}
+20	20		301							{1: '1', 2: 'Freeman', 3: 'Specialized frames... Like the ones Gray Raven has?', 4: '1'}
+21	21		301							{3: 'The staff member gives him a nod.'}
+22	22		301							"{2: 'Freeman', 3: ""Sorry... I'm not interested in joining this program."", 4: '1'}"
+23	23		301							"{2: 'Freeman', 3: ""Actually, what I'd like to join is... the Engineering Force."", 4: '1'}"
+24	24		201							{1: '1', 2: '500625'}
+25	25		301							{1: '1', 2: 'Staff Member', 3: 'Are you sure?', 4: '1'}
+26	26		301							{3: 'The staff member frowns at him.'}
+27	27		301							{2: 'Staff Member', 3: 'Based on your school records, the Task Force would be the ideal place for you to make the most of your expertise.', 4: '1'}
+28	28		301							"{2: 'Staff Member', 3: ""If you join the Engineering Force, you'll have to start everything over."", 4: '1'}"
+29	29		201							{1: '1', 2: '500138'}
+30	30		301							"{1: '1', 2: 'Freeman', 3: ""It's okay. I'd like it to be this way."", 4: '1'}"
+31	31		201							{1: '1', 2: '500625'}
+32	32		301							{1: '1', 2: 'Staff Member', 3: 'Can I ask about the reason?', 4: '1'}
+33	33		301							"{3: ""Under the inquisitive gaze of the staff member, Freeman speaks his mind slowly yet resolutely as he recalls the concerned expression on Nina's face.""}"
+34	34		201							{1: '1', 2: '500138'}
+35	35		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Freeman', 3: ""Because I don't want to die..."", 4: '1'}"

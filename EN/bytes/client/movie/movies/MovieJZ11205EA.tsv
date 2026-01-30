@@ -1,0 +1,20 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	990		401							{1: '1', 2: '201'}
+3	2		201							{1: '2', 2: '500155', 4: '-400'}
+4	3		201							{1: '3', 2: '500149', 4: '400'}
+5	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '3'}
+6	5		301			DialogEnable				"{1: '1', 2: 'John', 3: ""Strike Hawk. This is the next squad you'll be leading."", 4: '3'}"
+7	6		301							{2: 'Chrome', 3: 'What happened to the original squad, Mr. Smith?', 4: '2'}
+8	7		301							"{2: 'John', 3: ""It's useless now, and this isn't what you need to focus on. The Science Council has it all sorted out."", 4: '3'}"
+9	8		301							{2: 'Chrome', 3: '...Can they never return to the battlefield again?', 4: '2'}
+10	9		301							{2: 'John', 3: 'They will be useful in their own way. Such is war.', 4: '3'}
+11	10		301							"{2: 'John', 3: ""That's the best option. The correct answer."", 4: '3'}"
+12	11		301							{2: 'John', 3: 'Sacrifices have to be made.', 4: '3'}
+13	12		301							{2: 'John', 3: 'Your transfer order has been approved already, thanks to how perfectly the mission went.', 4: '3'}
+14	13		301							"{2: 'John', 3: ""Langston... no, I should call you Chrome now. I sent in a request for you especially... You'll be the leader of this outstanding scout team that did not previously belong to any Commandant."", 4: '3'}"
+15	14		301							{2: 'Chrome', 3: 'But I believe my old squad is much more suited to me. And I promised the survivors that—', 4: '2'}
+16	15		301							"{2: 'John', 3: ""Haven't I already taught you how to distinguish between the useful and the useless?"", 4: '3'}"
+17	16		301							{2: 'John', 3: 'Tell me, Chrome. What do you want to become?', 4: '3'}
+18	17		301							{2: 'Chrome', 3: '...Smith.', 4: '2'}
+19	18		301		1		AniZhuanchangBegin			{3: '...Can I really become Smith?'}

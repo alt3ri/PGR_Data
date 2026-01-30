@@ -1,0 +1,35 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		102							{1: 'Fake Ascension', 2: 'Deserted Ruins', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+2	2		502							{1: 'ThemeEnable'}
+3	3		101			AniZhuanchangEnd		5000.0		{1: 'Assets/Product/Texture/Image/BgStory/Bgstory283.png'}
+4	4		401							{1: '1', 2: '208'}
+5	5		502							{1: 'RImgBg1Shake'}
+6	6		301			DialogEnable				"{3: ""With a violent shake, the transport plane lands next to the Support Force's supply vehicles.""}"
+7	7		201							{1: '1', 2: '500167'}
+8	8		301							"{1: '1', 2: 'Bridget', 3: ""Fortunately, they didn't crash into the ruins."", 4: '1'}"
+9	9		301							{3: 'Struggling to adapt to the harsh sunlight of the outside world, you open your eyes to the laughter of the Chief Support Officer. However, the virtual space still appears before you.'}
+10	10		302							"{2: ""Isn't this..."", 3: '11'}"
+11	11		301							{2: 'Bridget', 3: 'Never mind that. Come with me. We have important matters to discuss.', 4: '1'}
+12	12		301				AniZhuanchangBegin			{3: 'Led by Bridget, you four enter the supply vehicle.'}
+13	13		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory256.png'}
+14	14		301			AniZhuanchangEnd				"{2: 'Bridget', 3: ""The Punishing Virus concentration has nearly turned this place into a Dead Zone. You'll need to strengthen your Inver-Device."", 4: '1'}"
+15	15		301							"{2: 'Bridget', 3: ""I'll take your team there. Just wait here for a minute."", 4: '1'}"
+16	16		301							{3: 'Before leaving, she rummages through the mountains of supplies for a few seconds and pulls out a protective suit.'}
+17	17		301							{2: 'Bridget', 3: 'Here is your protective suit. We just finished improving it a few days ago.', 4: '1'}
+18	18		302				AniZhuanchangBegin			{2: '(Take the suit)', 3: '19', 4: 'Thanks.', 5: '19'}
+19	19		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory256.png'}
+20	20		202							{1: '1', 6: '1'}
+21	21		301			AniZhuanchangEnd				{3: 'After changing into the improved protective suit and waiting in the car for a moment, you see Bridget approaching with three other people.'}
+22	22		201							{1: '1', 2: '500167'}
+23	23		301							{1: '1', 2: 'Bridget', 3: 'Alright, ready to go.', 4: '1'}
+24	24		203							{1: '1', 2: '0.25', 3: '400'}
+25	25		201							{1: '2', 2: '1031001', 3: '1', 4: '-400'}
+26	26		301							{1: '1', 2: 'Liv', 3: 'The suits really feel more protective against the virus, Commandant.', 4: '2'}
+27	27		301							{2: 'Bridget', 3: 'Your Inver-Devices have been enhanced, but there is still a limit.', 4: '1'}
+28	28		301							"{2: 'Bridget', 3: ""If you see something too dangerous, don't let curiosity get the best of you."", 4: '1'}"
+29	29		302							"{2: ""We'll be careful."", 3: '30'}"
+30	30		301							"{2: 'Bridget', 3: ""By the way, we'll have more serums ready for you before you go."", 4: '1'}"
+31	31		302							"{2: ""That's very thoughtful."", 3: '32'}"
+32	32		301							{2: 'Bridget', 3: 'Haha, we just got more in stock is all.', 4: '1'}
+33	33		301							{2: 'Bridget', 3: 'Another thing, Asimov told me about the trouble with your vision.', 4: '1'}
+34	34		301		1		AniZhuanchangBegin			{2: 'Bridget', 3: 'Just wait here for him to contact you.', 4: '1'}

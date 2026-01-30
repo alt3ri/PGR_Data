@@ -1,0 +1,89 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory176.png'}
+2	2		401							{1: '1', 2: '205'}
+3	3		301			DialogEnable				{3: 'The three familiar Constructs soon left after you paid with the coins found in the arcade.'}
+4	4		301							{3: 'But no matter how hard you try, you cannot seem to paste the couplets on the door frame. It is already your fifth attempt.'}
+5	5		301							{3: 'As you reach to the sticky tape, someone hands it over in advance.'}
+6	6		201							{1: '1', 2: '500166', 3: '1'}
+7	7		301							"{1: '1', 2: 'Lucia', 3: ""I'm back, Commandant."", 4: '1'}"
+8	8		301							{3: 'Lucia stands behind you with shopping bags in her hands.'}
+9	9		302							{2: 'Welcome home.', 3: '10'}
+10	10		204							{1: '1', 2: '2'}
+11	11		301							{2: 'Lucia', 3: 'Glad to be back.', 4: '1'}
+12	12		301							{3: 'The fifth attempt also failed. The tapes completely disappeared before even adhering.'}
+13	13		301							{3: 'The last challenge only started when you entered the yard. These couplets probably need to be used at the right location to unlock the corresponding trial.'}
+14	14		302							"{2: ""Wait, where's Lee?"", 3: '15'}"
+15	15		204							{1: '1'}
+16	16		301							{2: 'Lucia', 3: 'Lee said there were some spices missing and went to the next street alone.', 4: '1'}
+17	17		301							{2: 'Lucia', 3: 'He should be back soon.', 4: '1'}
+18	18		202							{1: '1', 6: '1'}
+19	19		301				AniZhuanchangBegin			"{3: ""You put the couplets away and bring the ingredients inside the building. After telling Liv about the couplets and Lee's words, three of you wait together for him to return.""}"
+20	20		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg'}
+21	21		301			AniZhuanchangEnd				{3: '4 hours later...'}
+22	22		201							{1: '1', 2: '500166'}
+23	23		301							{1: '1', 2: 'Lucia', 3: 'I think I should go find him.', 4: '1'}
+24	24		201							{1: '1', 2: '1031001'}
+25	25		301							"{1: '1', 2: 'Liv', 3: ""I'll go with you."", 4: '1'}"
+26	26		202							{1: '1', 6: '1'}
+27	27		301							{3: 'As they stand up, you hear the familiar knocking sound on the door.'}
+28	28		301							{3: 'Knock-knock'}
+29	29		302							{2: 'Open the door.', 3: '30'}
+30	30		201							{1: '1', 2: '1101001'}
+31	31		301							{1: '1', 2: 'Watanabe (?)', 3: 'This guy was lost. Is he one of yours?', 4: '1'}
+32	32		203							{1: '1', 2: '0.25', 3: '-400'}
+33	33		201							{1: '2', 2: '500026', 4: '400'}
+34	34		301							{1: '1', 2: 'Lee', 3: 'I just happened to be there by coincidence.', 4: '2'}
+35	35		301							{2: 'Watanabe (?)', 3: 'Just happened to walk to the city border? There is no road over there.', 4: '1'}
+36	36		204							{1: '2', 2: '10'}
+37	37		301							{2: 'Lee', 3: '...', 4: '2'}
+38	38		302							{2: 'Watanabe?', 3: '39'}
+39	39		202							{1: '1', 2: '2', 6: '1'}
+40	40		201							{1: '1', 2: '1101001', 7: '1'}
+41	41		301							"{1: '1', 2: 'Patrol', 3: 'You\'ve got the wrong person. I am ""Patrol"".', 4: '1'}"
+42	42		301							"{2: 'Patrol', 3: ""But I don't blame you. I seldom show up in front of people."", 4: '1'}"
+43	43		301							"{2: 'Patrol', 3: ""Anyway, I've got to go. Don't let him go out alone next time."", 4: '1'}"
+44	44		401							{1: '2', 2: '1516'}
+45	45		202							{1: '1'}
+46	46		301							"{3: '""Patrol"" waved and left.'}"
+47	47		201							{1: '1', 2: '1031001', 3: '1'}
+48	48		301							{1: '1', 2: 'Liv', 3: 'Welcome back, Lee.', 4: '1'}
+49	49		201							{1: '1', 2: '500166', 3: '1'}
+50	50		301							{1: '1', 2: 'Lucia', 3: 'Welcome back, Lee.', 4: '1'}
+51	51		204							{1: '1'}
+52	52		301							{2: 'Lucia', 3: 'Where are the spices?', 4: '1'}
+53	53		201							{1: '1', 2: '500026'}
+54	54		301							{1: '1', 2: 'Lee', 3: '...', 4: '1'}
+55	55		301							"{2: 'Lee', 3: ""I'll be right back."", 4: '1'}"
+56	56		201							{1: '1', 2: '1031001', 3: '7'}
+57	57		301							{1: '1', 2: 'Liv', 3: 'Umm...', 4: '1'}
+58	58		204							{1: '1', 2: '1'}
+59	59		301				AniZhuanchangBegin			"{2: 'Liv', 3: ""Lee must be tired after all that walking. I'll do it."", 4: '1'}"
+60	60		201							{1: '1', 2: '500026'}
+61	61		301			AniZhuanchangEnd				{1: '1', 2: 'Lee', 3: 'Can we really leave this to Lucia?', 4: '1'}
+62	62		302				AniZhuanchangBegin			{2: '...', 3: '63'}
+63	63		202							{1: '1', 6: '1'}
+64	64		301				AniZhuanchangEnd			{3: 'After Liv has come back—'}
+65	65		201							{1: '1', 2: '500166', 3: '1'}
+66	66		301							{1: '1', 2: 'Lucia', 3: 'I will take care of the dinner.', 4: '1'}
+67	67		201							{1: '1', 2: '1031001', 3: '1'}
+68	68		301							"{1: '1', 2: 'Liv', 3: ""I'll help too."", 4: '1'}"
+69	69		302							{2: 'Me too...', 3: '70'}
+70	70		201							{1: '1', 2: '500166', 3: '1'}
+71	71		301							"{1: '1', 2: 'Lucia', 3: ""Commandant, you can take a rest in the living room. The kitchen can't fit so many of us."", 4: '1'}"
+72	72		301							{3: 'Since Lucia has already said so, you can only let her do it. Before two of them enter the kitchen, you cannot help but open your mouth again—'}
+73	73		302							{2: 'Lucia.', 3: '74', 4: 'Liv.', 5: '76'}
+74	74		301							"{2: 'Lucia', 3: ""Don't worry, Commandant."", 4: '1'}"
+75	75	78	301				AniZhuanchangBegin			"{2: 'Lucia', 3: ""I won't put too many spices like last time."", 4: '1'}"
+76	76		201							{1: '1', 2: '1031001', 3: '1'}
+77	77		301				AniZhuanchangBegin			{1: '1', 2: 'Liv', 3: 'I will do my best to help Lucia.', 4: '1'}
+78	78		202							{1: '1', 6: '1'}
+79	79		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory295.png'}
+80	80		302							{2: 'I should have some faith in them.', 3: '81'}
+81	81		401							{1: '1', 2: '36'}
+82	82		401					2000.0		{1: '2', 2: '10007502'}
+83	83		401					1000.0		{1: '2', 2: '957'}
+84	84		502					1000.0		{1: 'RImgBg1Shake'}
+85	85		301			AniZhuanchangEnd				{3: 'Boom'}
+86	86		301							{3: 'Right after your words, a loud explosion comes from the kitchen.'}
+87	87		201							{1: '1', 2: '500026', 3: '10'}
+88	88		301		1		AniZhuanchangBegin			{1: '1', 2: 'Lee', 3: '...The fire extinguisher is over there.', 4: '1'}

@@ -1,0 +1,35 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory437.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500140'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Beardy', 3: ""Still in operation?! What?! But hasn't this place been abandoned for ages?"", 4: '1'}"
+5	5		201							{1: '1', 2: '500136'}
+6	6		301							"{1: '1', 2: 'Zack', 3: ""I thought I saw a red light on top of the tower, which means it's in operation, but I couldn't see it clearly with all the fog from the forest. I thought it was just my imagination."", 4: '1'}"
+7	7		301							"{2: 'Zack', 3: ""But I'm almost positive this tower is still in operation."", 4: '1'}"
+8	8		201							{1: '1', 2: '500384'}
+9	9		301							{1: '1', 2: 'Rolmo', 3: '...'}
+10	10		201							{1: '1', 2: '500136'}
+11	11		301				RImgBg1Shake			{1: '1', 2: 'Zack', 3: 'But why?', 4: '1'}
+12	12		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab', 2: '2'}
+13	13		401						10.0	{1: '2', 2: '1501'}
+14	14		401							{1: '2', 2: '764'}
+15	15		401							{1: '1', 2: '101'}
+16	16		301							{2: 'Zack', 3: 'What was that?!', 4: '1'}
+17	17		401							{1: '2', 2: '752'}
+18	18		301							{3: 'Following the sudden vibration, the facilities in the tower flash with a red warning light. From the dark recesses of the air vent, thick branches break the fan and attack Zack, the closest person to them.'}
+19	19		202							{1: '1', 6: '1'}
+20	20		401							{1: '2', 2: '1501'}
+21	21		301							{2: 'Alarm', 3: 'WARNING! External damage to the Central Purification Filter detected! Damage rate at 50%. Damage rate at 60%——'}
+22	22		301							{2: 'Alarm', 3: 'Punishing Virus filtration will deactivate at 90%. Please follow instructions and evacuate the tower in an orderly fashion—'}
+23	23		301							{3: 'Intermittent broadcasts can be heard all throughout the tower.'}
+24	24		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab'}
+25	25		401							{1: '2', 2: '10007502'}
+26	26		301							{3: 'BANG!'}
+27	27		301							{3: 'Zack shoots and breaks the fast-approaching branch, then notices the change in the vent.'}
+28	28		301							{3: 'Inside the vent, he hears a demonic cacophony of restless stirring and grinding teeth. Suddenly, countless Hetero-Creatures break through the vent and begin pouring out.'}
+29	29		301							{3: 'Mucus from abscesses on the plants is like a torrent of decaying organisms. They entwine, roll, and gather to form new creatures, making a sound just like a swarm of insects.'}
+30	30		201							{1: '1', 2: '500136'}
+31	31		301							{1: '1', 2: 'Zack', 3: '****! We need to get the hell outta here!', 4: '1'}
+32	32		301							"{2: 'Zack', 3: ""Run! No time to shoot! There're too many of them!"", 4: '1'}"
+33	33		201							{1: '1', 2: '500384'}
+34	34		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Rolmo', 3: ""It's too dangerous down below! Head to higher ground!"", 4: '1'}"

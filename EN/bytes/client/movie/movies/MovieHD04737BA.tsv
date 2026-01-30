@@ -1,0 +1,116 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory546.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		502						250.0	{1: 'DialogDisable'}
+4	4		107							{1: 'Babylonia', 2: 'Corridor Outside Conference Room'}
+5	5		301							{3: 'Corridor outside the conference room, Babylonia.'}
+6	6		108							{1: '1'}
+7	7		302							{2: '(Contact Discord via the terminal)', 3: '8'}
+8	8		509							{1: 'Assets/Product/Texture/Image/BgStory/BgStory717.jpg', 2: '1'}
+9	9		201							{1: '11', 2: '501328', 3: '1', 4: '-400'}
+10	10		301			DialogEnable				"{1: '1', 2: 'Discord', 3: ""The meeting's over, Commandant. Do you need anything?"", 4: '11'}"
+11	11		302							{2: 'It was mostly routine announcements, but...', 3: '12'}
+12	12		301							"{3: ""You tell Discord about the Double Seventh Festival Souvenir Exhibition in Constellia, and also mention Celica's request.""}"
+13	13		204							{1: '11', 2: '3'}
+14	14		301							{2: 'Discord', 3: 'Constellia... I just checked. The next transport ship leaves in 30 minutes from Port A3. There are still seats available.', 4: '11'}
+15	15		204							{1: '11'}
+16	16		301				DialogDisable			{2: 'Discord', 3: 'Would you like me to submit your boarding request?', 4: '11'}
+17	17		302							{2: 'Not just yet.', 3: '18'}
+18	18		302							{2: 'By the way, are you in my lounge right now?', 3: '19'}
+19	19		301			DialogEnable				"{3: ""You look at the screen and see a few familiar books scattered on the bed behind Discord. They're the same ones you were reading before falling asleep last night.""}"
+20	20		301							"{2: 'Discord', 3: ""Yes, I'm cleaning your room."", 4: '11'}"
+21	21		302				AniZhuanchangBegin			"{2: ""I'll head over."", 3: '22'}"
+22	22		202							{1: '11', 6: '1'}
+23	23		510							{1: '2'}
+24	24		401					2000.0		{1: '1', 2: '6160'}
+25	25		401							{1: '2', 2: '4359'}
+26	26		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiColorTableStageMain/FxUiColorTableStageRollStarLoop.prefab', 2: '3'}
+27	27		301			AniZhuanchangEnd				{3: 'By the time you arrive at your lounge, Discord has already finished tidying everything. From the ceiling to the smallest furniture gaps, the room is spotless. It almost sparkles.'}
+28	28		402							{1: '4359'}
+29	29		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiColorTableStageMain/FxUiColorTableStageRollStarLoop.prefab'}
+30	30		301							{3: 'The blue-haired Construct stands in the center of the room, head bowed in contemplation.'}
+31	31		201							{1: '1', 2: '501328', 3: '1'}
+32	32		301							{1: '1', 2: 'Discord', 3: '...Ah, Commandant.', 4: '1'}
+33	33		301							{3: 'She seems to hear your footsteps and looks up with a small smile.'}
+34	34		302							"{2: ""You really didn't have to do this. I should clean up myself. I feel bad making you do it."", 3: '35'}"
+35	35		204							{1: '1'}
+36	36		301							"{2: 'Discord', 3: ""You're always busy. You should rest when you can."", 4: '1'}"
+37	37		301							"{2: 'Discord', 3: ""Besides, I offered to help. You don't need to feel guilty. Knowing you can relax in a clean space puts me at ease too."", 4: '1'}"
+38	38		301							{3: 'Discord looks focused. You can tell she takes this task seriously. Since she insists, you decide to prepare a gift for her later as a thank-you.'}
+39	39		204							{1: '1', 2: '1'}
+40	40		301							{2: 'Discord', 3: 'By the way, Commandant, I was thinking... how about adding a scent diffuser to your room?', 4: '1'}
+41	41		301							"{2: 'Discord', 3: ""Some shops recently released a new line of calming scents. They're made with natural essential oils, smell fresh, and help relieve stress. They can even improve sleep."", 4: '1'}"
+42	42		301							"{2: 'Discord', 3: ""If you'd like, I could pick out a few scents. It might help you relax more when you're off duty."", 4: '1'}"
+43	43		302							{2: 'Sounds good. Do you have any recommendations?', 3: '44'}
+44	44		204							{1: '1', 2: '3'}
+45	45		301							{2: 'Discord', 3: 'Maybe... something that suits you?', 4: '1'}
+46	46		203							{1: '1', 2: '0.25', 4: '-50', 5: '-100'}
+47	47		301							{3: 'Right after she says this, she leans in without hesitation. Tilting her head, she brings her face close to your neck and inhales. You feel the warmth of her breath on your skin. It carries a faint, pleasant scent and makes your skin tingle.'}
+48	48		302							{2: 'Discord?', 3: '49', 4: '...', 5: '49'}
+49	49		204							{1: '1', 2: '1'}
+50	50		301							{2: 'Discord', 3: 'I have a few scent ideas to recommend...', 4: '1'}
+51	51		301							{3: 'Her eyes light up slightly, as if completely focused on that moment of inspiration. Only a moment later does she seem to realize how close she got.'}
+52	52		204							{1: '1', 2: '6'}
+53	53		301			DialogShake				{2: 'Discord', 3: 'Sorry! That was too forward of me.', 4: '1'}
+54	54		401							{1: '2', 2: '2689'}
+55	55		203							{1: '1', 2: '0.25', 4: '0', 5: '0'}
+56	56		301							{3: 'She quickly steps back and regains her usual polite and restrained posture. Still, her gaze shifts away a little, and her fingers fidget where they rest at her waist.'}
+57	57		301							{2: 'Discord', 3: 'Ahem. So about the scents... I was thinking...', 4: '1'}
+58	58		302							{2: 'Go with whatever you think works. I trust your taste.', 3: '59'}
+59	59		204							{1: '1', 2: '1'}
+60	60		301							"{2: 'Discord', 3: ""...I promise I won't disappoint you."", 4: '1'}"
+61	61		204							{1: '1', 2: '3'}
+62	62		301							"{2: 'Discord', 3: ""By the way, Commandant. You're heading to Constellia for the festival exhibition, right?"", 4: '1'}"
+63	63		204							{1: '1', 2: '1'}
+64	64		301							{2: 'Discord', 3: 'The Double Seventh Festival is a traditional holiday from Kowloong. If you wore something more festive, you might blend in better.', 4: '1'}
+65	65		302							{2: 'Kowloong-style clothing?', 3: '66'}
+66	66		301							"{2: 'Discord', 3: ""Yes. I designed an outfit for you based on traditional Kowloong styles. I thought there'd be a chance to use it someday. Looks like today's the day."", 4: '1'}"
+67	67		204							{1: '1', 2: '6'}
+68	68		301							{2: 'Discord', 3: 'Would you like to try it on, Commandant?', 4: '1'}
+69	69		301							"{3: ""Her tone shifts slightly higher than usual. You remember her mentioning that making clothes is a hobby of hers, and that she hoped one day you'd wear something she made.""}"
+70	70		302							"{2: ""I'd love to."", 3: '71', 4: '(Nod)', 5: '71'}"
+71	71		204							{1: '1', 2: '1'}
+72	72		301							"{2: 'Discord', 3: ""Please wait a moment. I'll bring it right away."", 4: '1'}"
+73	73		202							{1: '1'}
+74	74		301							"{3: ""Discord's usual composure gives way as joy radiates unmistakably from the depths of her eyes.""}"
+75	75		401							{1: '2', 2: '1513'}
+76	76		201							{1: '1', 2: '501328', 3: '1'}
+77	77		301							"{1: '1', 3: ""She leaves in a hurry. A moment later, she returns, holding a neatly folded outfit. It's elegant, traditional, and detailed with delicate embroidery.""}"
+78	78		204							{1: '1', 2: '6'}
+79	79		301							"{2: 'Discord', 3: ""I'll wait outside. Just call me when you're done changing, Commandant."", 4: '1'}"
+80	80		202							{1: '1'}
+81	81		306							{1: '1'}
+82	82		401							{1: '2', 2: '4434'}
+83	83		301							{3: 'You take the clothes and change in private. The fabric fits you perfectly, clearly made with great care.'}
+84	84		301							"{3: ""The only problem is, traditional clothing like this has a very specific way of being worn. You do your best to figure it out by feel, but you're not sure you've done it right.""}"
+85	85		306							
+86	86		302							{2: 'This outfit... is trickier than I expected.', 3: '87'}
+87	87		301							"{3: ""Just then, you hear Discord's voice from outside the door.""}"
+88	88		201							{1: '18', 2: '501328', 3: '3'}
+89	89		301							{1: '1', 2: 'Discord', 3: 'Having trouble, Commandant? These styles do have a lot of little details.', 4: '18'}
+90	90		202							{1: '18'}
+91	91		401							{1: '2', 2: '1513'}
+92	92		201							{1: '1', 2: '501328'}
+93	93		301							{1: '1', 3: 'You give her permission to enter. She steps in and immediately notices your collar.'}
+94	94		204							{1: '1', 2: '3'}
+95	95		301							{2: 'Discord', 3: 'Ah, I thought so. One moment.', 4: '1'}
+96	96		203							{1: '1', 2: '0.25', 4: '-50', 5: '-100'}
+97	97		306							{1: '1'}
+98	98		301							{3: 'She walks up close—so close that you can see the tips of her eyelashes. Her cool fingertips gently brush your neck as she adjusts the fabric.'}
+99	99		306							
+100	100		204							{1: '1'}
+101	101		301							{2: 'Discord', 3: 'The collar should cross like this. And the cuffs need a bit of fixing too...', 4: '1'}
+102	102		204							{1: '1', 2: '1'}
+103	103		301							"{2: 'Discord', 3: ""There. That's perfect."", 4: '1'}"
+104	104		203							{1: '1', 2: '0.25', 4: '0', 5: '0'}
+105	105		301							{3: 'She takes a step back and examines her work with satisfaction.'}
+106	106		204							{1: '1', 2: '6'}
+107	107		301				DialogDisable			{2: 'Discord', 3: 'Just as I thought. It suits you well, Commandant.', 4: '1'}
+108	108		302							{2: 'It fits perfectly. And it looks amazing. Thank you, Discord.', 3: '109'}
+109	109		302							{2: 'By the way, are you free today?', 3: '110'}
+110	110		204							{1: '1', 2: '1'}
+111	111		301			DialogEnable				"{2: 'Discord', 3: ""I have no tasks scheduled. If you'd like my company, I'm ready."", 4: '1'}"
+112	112		301							"{3: ""Her tone is as formal as always, but then, it seems she feels they aren't quite enough.""}"
+113	113		204							{1: '1', 2: '6'}
+114	114		301							{2: 'Discord', 3: '...No, I mean, please let me come with you.', 4: '1'}
+115	115		302		1		AniZhuanchangBegin			"{2: ""Let's go.""}"

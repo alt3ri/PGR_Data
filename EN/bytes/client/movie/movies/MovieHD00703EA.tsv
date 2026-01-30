@@ -1,0 +1,93 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory26.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500005', 4: '400'}
+4	4		201							{1: '2', 2: '500005', 4: '-400'}
+5	5		301			DialogEnable				"{1: '1', 2: 'Patrol Leader', 3: ""Sir, the fight here's over..."", 4: '1'}"
+6	6		301							"{2: 'Guard Leader', 3: ""But is it really a good idea to take advantage of their tests to get Babylonia's new device to help clear out the Corrupted nearby?"", 4: '2'}"
+7	7		202							{1: '1', 2: '2', 6: '1'}
+8	8		201							{1: '1', 2: '1101001'}
+9	9		301							{1: '1', 2: 'Watanabe', 3: 'Who gives a damn? They wanted authentic, accurate data—nothing beats data from a real fight.', 4: '1'}
+10	10		202							{1: '1', 6: '1'}
+11	11		401							{1: '2', 2: '1508'}
+12	12		301							{3: 'A fallen Corrupted suddenly rises and sprints toward Watanabe at inhuman speed.'}
+13	13		401							{1: '2', 2: '1506'}
+14	14		301							"{3: ""But its head is immediately crushed a few steps out—the CUB goes in and stomps for two more strikes, completely shattering the Corrupted into pieces before swiftly returning to Watanabe's side.""}"
+15	15		201							{1: '1', 2: '1101001', 3: '1'}
+16	16		301							{1: '1', 2: 'Watanabe', 3: 'Hmm, good job...', 4: '1'}
+17	17		301							{3: 'He pats the head of the CUB, revealing an unusual smile.'}
+18	18		201							{1: '1', 2: '500005', 4: '400'}
+19	19		201							{1: '2', 2: '500005', 4: '-400'}
+20	20		301							{1: '1', 2: 'Patrol Leader', 3: 'Hey, is it just me, or is Mr. Watanabe being much gentler to the metal critter than he is to us?', 4: '1'}
+21	21		301							"{2: 'Guard Leader', 3: ""Damn... Stop it. You're gonna make me cry."", 4: '2'}"
+22	22		301							{3: 'All of a sudden, the CUB raises its head and takes a quick scan of the surrounding before running off in a direction.'}
+23	23		301							"{2: 'Patrol Leader', 3: ""Is that a joke? Don't tell me it's broken already, running off like that..."", 4: '1'}"
+24	24		202							{1: '1', 2: '2', 6: '1'}
+25	25		301							{3: 'But Watanabe does not seem to be in a joking mood.'}
+26	26		201							{1: '1', 2: '1101001'}
+27	27		301							{1: '1', 2: 'Watanabe', 3: 'Everyone, get up! Follow it!', 4: '1'}
+28	28		201							{1: '1', 2: '500005'}
+29	29		301							"{1: '1', 2: 'Patrol Leader', 3: ""W-what's wrong?"", 4: '1'}"
+30	30		201							{1: '1', 2: '1101001'}
+31	31		301							"{1: '1', 2: 'Watanabe', 3: ""Get in your vehicles! It detected hidden Corrupted outside of our patrol area, and it's heading there at full speed! The destination is—"", 4: '1'}"
+32	32		202							{1: '1', 6: '1'}
+33	33		301				AniZhuanchangBegin			{3: 'Hearing the location Watanabe says, all the Forsaken soldiers jump to their feet and hop on their vehicles, speeding behind the CUB without delay.'}
+34	34		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory31.jpg'}
+35	35		401							{1: '1', 2: '204'}
+36	36		301			AniZhuanchangEnd				{3: 'After Watanabe departs the campsite, the children turn their attention to you, a stranger from Babylonia.'}
+37	37		301							{3: 'Before the boys can act, the previously timid-looking girl walks up to you.'}
+38	38		201							{1: '1', 2: '500280'}
+39	39		301							{1: '1', 2: 'Ann', 3: '【kuroname】, is it? Nice to meet you, we are the members of the Forsaken Reserves K-107 Squad One—', 4: '1'}
+40	40		302							{2: '107?', 3: '41', 4: 'Reserves?', 5: '41'}
+41	41		301							"{2: 'Ann', 3: ""K-107, that's right! Once we grow up, we will graduate into the proper 107 Squad!"", 4: '1'}"
+42	42		301							{2: 'Ann', 3: 'Anyway, before Uncle—I mean, before Chief Watanabe returns, we will be accompanying you at our campsite.', 4: '1'}
+43	43		301							"{2: 'Ann', 3: ""No need to worry. We'll keep you safe."", 4: '1'}"
+44	44		302							"{1: '698', 2: 'I appreciate it.', 3: '49', 4: ""I'll do the same."", 5: '50'}"
+45	45		203							{1: '1', 2: '0.25', 3: '-600'}
+46	46		201							{1: '2', 2: '500279'}
+47	47		201							{1: '3', 2: '500279', 4: '600'}
+48	48		303							{1: '698'}
+49	49	51	301							"{1: '1', 2: 'Xiuyong', 3: ""Oh, you're welcome."", 4: '2'}"
+50	50		301							"{1: '1', 2: 'Deckard', 3: ""Wonderful! Let's act together, then!"", 4: '3'}"
+51	51		301							"{2: 'Ann', 3: ""In that case... let's continue our previous operation. But now that we have 【kuroname】 with us..."", 4: '1'}"
+52	52		301							"{2: 'Xiuyong', 3: ""We're asking 【kuroname】 to join us now? But we're almost done..."", 4: '2'}"
+53	53		301							"{2: 'Deckard', 3: ""But we'll kill two birds with one stone while also getting to keep an eye on the supplier!"", 4: '3'}"
+54	54		301							"{2: 'Xiuyong', 3: ""Isn't keeping an eye on the supplier the other bird?"", 4: '2'}"
+55	55		301							{2: 'Ann', 3: '...Maybe? Not that we can do it any other way!', 4: '1'}
+56	56		301							{3: 'The three youthful faces turn serious again. They put their heads together, discussing secretly.'}
+57	57		301							{3: 'By the time they talk to you again, they seem to have come to a consensus among themselves, and they look at you with anticipation and barely hidden excitement.'}
+58	58		301							{2: 'Xiuyong', 3: 'Here—take this.', 4: '2'}
+59	59		301							{3: 'The boy reaches his hand out proudly, and in his palm is a poorly made lantern.'}
+60	60		301							"{3: ""Its rough edges are even more noticeable being in a child's hand.""}"
+61	61		301							"{2: 'Xiuyong', 3: ""We've been preparing this."", 4: '2'}"
+62	62		301							{2: 'Ann', 3: 'Exactly... For Uncle Watanabe and his troop!', 4: '1'}
+63	63		302							"{2: ""It's cute."", 3: '64', 4: 'But why?', 5: '65'}"
+64	64	66	301							"{2: 'Ann', 3: ""Hmph! It's my idea, after all!"", 4: '1'}"
+65	65		301							{2: 'Deckard', 3: 'For decoration, obviously!', 4: '3'}
+66	66		301							{2: 'Xiuyong', 3: 'Think about it—Uncle Watanabe just left with his men, right?', 4: '2'}
+67	67		301							"{2: 'Xiuyong', 3: ""We hang this at the entrance of the campsite, and when the squad returns, they'll open the gate and find—"", 4: '2'}"
+68	68		301							"{2: 'Ann', 3: ""Hey, don't say it out loud! You know we aren't allowed near the entrance outside the camp!"", 4: '1'}"
+69	69		301							"{2: 'Deckard', 3: ""What are you so afraid of? We know they're not here."", 4: '3'}"
+70	70		301							"{2: 'Ann', 3: ""...And you just have to spoil it! What good does it do if our mission objective knows we can't go near it?!"", 4: '1'}"
+71	71		301							{2: 'Ann', 3: 'You two bozos!', 4: '1'}
+72	72		301							"{2: 'Xiuyong', 3: ""It's fine! We're just decorating! Nothing will go wrong with an extra pair of hands!"", 4: '2'}"
+73	73		301							{2: 'Xiuyong', 3: 'We can even manage our time better while keeping 【kuroname】 in our line of sight!', 4: '2'}
+74	74		302							{2: 'Are you making me an accomplice?', 3: '75'}
+75	75		301							{2: 'Xiuyong', 3: 'Accomplice? No!', 4: '2'}
+76	76		301							"{2: 'Xiuyong', 3: ""You're the reason Uncle Watanabe and his squad are out at this time of the year—"", 4: '2'}"
+77	77		301							{2: 'Deckard', 3: 'And we got an extra mission because of you!', 4: '3'}
+78	78		301							"{2: 'Xiuyong', 3: ""You aren't an accomplice—you're guilty! Helping us is the least you can do!"", 4: '2'}"
+79	79		301							{3: 'The two boys mean business, and they leave you no room for refusal.'}
+80	80		301							{3: 'And the girl behind them has already laid out all the things she packed earlier, tallying everything carefully.'}
+81	81		301							"{2: 'Ann', 3: ""...It's too late to split up now. We have to take the supplier with us."", 4: '1'}"
+82	82		301							{2: 'Xiuyong', 3: 'Just... to do what, exactly? Decorations... lanterns?', 4: '2'}
+83	83		301							{2: 'Ann', 3: 'Our next step is to clear out the trash near the entrance, then put our preparations to good use.', 4: '1'}
+84	84		301							{3: 'As she finishes, she divides the decorations in front of her into three parts and hands one to each of you.'}
+85	85		301							"{2: 'Ann', 3: '...So, ""supplier,"" do you also make New Year decorations, like, at the place you\'re from?'}"
+86	86		302							"{2: 'Of course.', 3: '87', 4: ""I'm not sure..."", 5: '88'}"
+87	87	89	301							{2: 'Ann', 3: 'I knew it!', 4: '1'}
+88	88		301							"{2: 'Ann', 3: ""That's surprising..."", 4: '1'}"
+89	89		301							"{2: 'Ann', 3: ""It'll be too sad to not even have something like this..."", 4: '1'}"
+90	90		301							{3: 'She lowers her head and thinks for a while.'}
+91	91		301							"{2: 'Ann', 3: ""Um... We've made so many already, so what's one more? It'll be our payment to you once we're done decorating!"", 4: '1'}"
+92	92		302		1		AniZhuanchangBegin			{2: 'I look forward to it.'}

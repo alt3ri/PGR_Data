@@ -1,0 +1,18 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '1031001', 4: '-600'}
+4	4		201							{1: '2', 2: '500026', 4: '600'}
+5	5		201							{1: '3', 2: '500166'}
+6	6		301			DialogEnable				{1: '1', 3: 'Following the route shown in the data, you arrive at a ruin with fragments of Program Ghosts all over the place.'}
+7	7		301							{2: 'Liv', 3: 'What... what happened...', 4: '1'}
+8	8		301							{3: 'Broken remains and fragments of Program Ghosts can be seen everywhere near you.'}
+9	9		301							"{2: 'Lucia', 3: '""Bianca"" is trying to confuse us with multiple bridging...', 4: '3'}"
+10	10		301							"{2: 'Lee', 3: 'With that many bridges, \'Bianca"""" is bound to slip up on how she\'s operating.', 4: '2'}"
+11	11		301				DialogDisable			{2: 'Lee', 3: 'Let me try to see if there is pattern to it.', 4: '2'}
+12	12		302							{2: 'Please do, Lee.', 3: '13'}
+13	13		305							{1: '14', 2: '17'}
+14	14		301			DialogEnable				{2: 'Lee', 3: '...Calculation completed.', 4: '2'}
+15	15		301							"{2: 'Lee', 3: 'The tracks merge around here. It seems like ""Bianca"" didn\'t have enough time to get too far away.', 4: '2'}"
+16	16		301		1		AniZhuanchangBegin			"{2: 'Lucia', 3: ""Let's get moving."", 4: '3'}"
+17	17		202		1		AniZhuanchangBegin			

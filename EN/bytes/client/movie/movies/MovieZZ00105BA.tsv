@@ -1,0 +1,19 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+2	2		401							{1: '1', 2: '12'}
+3	3		201							{1: '1', 2: '500004'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Asimov', 3: ""Oh, you're here... I'll leave this week's test to you."", 4: '1'}"
+5	5		301							"{2: 'Asimov', 3: 'Nikola isn\'t here this time. I think he\'s got to handle some application procedures for the ""Virtual Horizon"" system.', 4: '1'}"
+6	6		301							"{2: 'Asimov', 3: ""Don't know why he's all worked up about it, but getting to continue development on a worthwhile system is a-okay with me."", 4: '1'}"
+7	7		301							{2: 'Asimov', 3: 'The test this time will primarily evaluate Constructs not used in the previous missions. Pay attention to the reminders before completing the missions.', 4: '1'}
+8	8		302							{2: 'Alright, got it.', 3: '9'}
+9	9		301							"{2: 'Asimov', 3: ""Well then, you know the drill. Put on your headset just like last time... I'm not sure what's wrong with the AI prompt, but the voice is getting more and more garbled. Pay no mind, though..."", 4: '1'}"
+10	10		202							{1: '1'}
+11	11		401							{1: '2', 2: '1509'}
+12	12		301							{3: 'Once the system starts, you find your headset blasting you with the noise of static, but you can still make out the feminine electronic voice.'}
+13	13		301							{2: '-AI-', 3: 'Pardon me... Are you the user from last week?'}
+14	14		302							{2: 'Huh? Uh, yes.', 3: '15'}
+15	15		301							{2: '-AI-', 3: 'I see! Accessing data for Commandant 【kuroname】—Complete.'}
+16	16		301							{2: '-AI-', 3: 'Construct data upload—complete.'}
+17	17		301							{2: '-AI-', 3: 'Tactical framework simulation generation—complete.'}
+18	18		301		1		AniZhuanchangBegin			{2: '-AI-', 3: 'Virtual Horizon loaded. Welcome back, Commandant.'}

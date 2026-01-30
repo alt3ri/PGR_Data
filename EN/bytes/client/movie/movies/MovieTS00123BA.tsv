@@ -1,0 +1,30 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory38.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+4	4		502							{1: 'PanelActor1Shake'}
+5	5		201							{1: '1', 2: '500019'}
+6	6		301			DialogEnable				"{1: '1', 2: 'Delirious Forsaken', 3: ""...All infected! We're done for... Infected!"", 4: '1'}"
+7	7		202							{1: '1', 6: '1'}
+8	8		201							{1: '1', 2: '1091001', 3: '4', 4: '-400'}
+9	9		201							{1: '2', 2: '1101001', 4: '400'}
+10	10		301							{1: '1', 2: 'Bianca', 3: 'What are they talking about? Infected... is it the Punishing Virus?', 4: '1'}
+11	11		301							{2: 'Watanabe', 3: 'Help me keep them down! The guards are going to...', 4: '2'}
+12	12		301							"{2: 'Bianca', 3: ""It's too late, they're already..."", 4: '1'}"
+13	13		202							{1: '1', 2: '2', 6: '1'}
+14	14		201							{1: '1', 2: '500019'}
+15	15		301							{1: '1', 2: 'Forsaken', 3: 'Sir! We came immediately when we saw your flare...', 4: '1'}
+16	16		301							{2: 'Forsaken', 3: '...W-what happened to them?', 4: '1'}
+17	17		202							{1: '1'}
+18	18		201							{1: '1', 2: '1091001', 3: '5', 4: '-400'}
+19	19		201							{1: '2', 2: '1101001', 4: '400'}
+20	20		301							"{1: '1', 2: 'Watanabe', 3: ""There's no time to explain... Get our guys out of here!"", 4: '2'}"
+21	21		301							"{2: 'Watanabe', 3: ""We're not going to get any useful information out of them like this."", 4: '2'}"
+22	22		204							{1: '1', 2: '8'}
+23	23		301							{2: 'Bianca', 3: '...', 4: '1'}
+24	24		301							"{2: 'Watanabe', 3: ""Let them go home. I'll help the Purifying Force take out the guards with the rest of the Forsaken."", 4: '2'}"
+25	25		301							"{2: 'Watanabe', 3: ""If they remember anything while they're leaving, I swear on the Forsaken's honor, we won't hide it from the Purifying Force."", 4: '2'}"
+26	26		301							{2: 'Bianca', 3: '...', 4: '1'}
+27	27		204							{1: '1'}
+28	28		301							"{2: 'Bianca', 3: ""Let's hope so. You know how the Purifying Force works."", 4: '1'}"
+29	29		301		1		AniZhuanchangBegin			{2: 'Watanabe', 3: 'Forsakens! Get our people out now!', 4: '2'}

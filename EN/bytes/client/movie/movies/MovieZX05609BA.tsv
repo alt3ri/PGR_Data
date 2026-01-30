@@ -1,0 +1,401 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1245.jpg'}
+2	2		401							{1: '2', 2: '6017'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNewVergil02V350.prefab', 2: '2'}
+4	4		401						300.0	{1: '2', 2: '6017'}
+5	5		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNewVergil03V350.prefab', 2: '2'}
+6	6		401							{1: '1', 2: '5071'}
+7	7		401							{1: '2', 2: '6032'}
+8	8		201							{1: '1', 2: '501265', 6: '-125', 7: '1'}
+9	9		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+10	10		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '1'}
+11	11		502							{1: 'RImgBg1Shake'}
+12	12		301			PanelActor1Shake				{1: '1', 3: 'SCREEEEE—'}
+13	13		401							{1: '2', 2: '2593'}
+14	14		205							{1: '999'}
+15	15		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '5'}
+16	16		203							{1: '1', 2: '0.25', 4: '-75', 5: '-125'}
+17	17		202							{1: '1'}
+18	18		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndRed.prefab', 2: '2'}
+19	19		401							{1: '2', 2: '4306'}
+20	20		301							{3: 'The Hetero-Creature collapses to the ground in defiance, its form slowly fading away.'}
+21	21		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0', 5: '0.5'}
+22	22		101							{4: '5', 5: '1'}
+23	23		401							{1: '2', 2: '10042608'}
+24	24		201							{1: '1', 2: '501234', 3: '4', 4: '-100', 7: '1'}
+25	25		301							"{1: '1', 3: ""Without so much as a glance at the fallen foe, Vergil flicks Yamato to clear the creature's blood before smoothly sheathing the blade.""}"
+26	26		203							{1: '1', 2: '0.25'}
+27	27		204							{1: '1'}
+28	28		301							{2: 'Vergil', 3: 'Do you need to rest, 【kuroname】?', 4: '1'}
+29	29		302							"{2: ""I'm okay."", 3: '30'}"
+30	30		201							{1: '1', 2: '500568'}
+31	31		301							"{1: '1', 2: 'Lee', 3: ""This is the 20th floor. Based on my earlier observations of the Babel Tower's height from a distance, we've now reached the halfway point."", 4: '1'}"
+32	32		203							{1: '1', 2: '0.25', 3: '400'}
+33	33		201							{1: '2', 2: '1031001', 3: '5', 4: '-400'}
+34	34		301				DialogDisable			{1: '1', 2: 'Liv', 3: 'Two doors left.', 4: '2'}
+35	35		302							"{2: ""Let's clear this floor in one go."", 3: '36'}"
+36	36		202							{1: '2', 6: '1'}
+37	37		201						200.0	{1: '1', 2: '500994', 7: '1'}
+38	38		104							{1: '0|0|-50', 2: '0.5', 4: '1'}
+39	39		203							{1: '1', 2: '0.5', 4: '-25', 5: '-75'}
+40	40		401							{1: '2', 2: '2700'}
+41	41		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+42	42		202							{1: '1'}
+43	43		301			DialogEnable	AniZhuanchangBegin			{1: '1', 3: 'Lucia steps forward and pushes one of the doors open.'}
+44	44		402							{1: '2700'}
+45	45		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+46	46		502						400.0	{1: 'DialogDisable'}
+47	47		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1249.jpg'}
+48	48		201							{1: '1', 2: '500994', 3: '7'}
+49	49		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'This is...', 4: '1'}
+50	50		202							{1: '1', 6: '1'}
+51	51		306							{1: '1'}
+52	52		201							{1: '1', 2: '500460', 4: '300'}
+53	53		201							{1: '2', 2: '501058', 4: '800'}
+54	54		201							{1: '3', 2: '500420', 4: '-300'}
+55	55		201							{1: '4', 2: '500454', 4: '-800'}
+56	56		201							{1: '5', 2: '500139'}
+57	57		301							{1: '1', 3: 'Behind the door lies a vast space, its floor packed with people standing shoulder to shoulder, their bodies crammed together. A rough estimate puts their number at two to three hundred.'}
+58	58		401							{1: '2', 2: '1543'}
+59	59		203							{1: '1', 2: '0.25', 3: '600'}
+60	60		203							{1: '2', 2: '0.25', 3: '800'}
+61	61		203							{1: '3', 2: '0.25', 3: '-600'}
+62	62		203							{1: '4', 2: '0.25', 3: '-800'}
+63	63		203						200.0	{1: '5', 2: '0.25', 3: '100'}
+64	64		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5'}
+65	65		301				DialogDisable			{1: '1', 3: 'Noticing the opened door, the crowd recoils in a frantic wave, scrambling backward. Only when their eyes adjust—when they recognize the figures in the doorway—do their cries erupt.'}
+66	66		306						400.0	
+67	67		201							{1: '1', 2: '500896'}
+68	68		301			DialogEnable				"{1: '1', 2: 'Refugee A', 3: ""It's Constructs!"", 4: '1'}"
+69	69		301							{2: 'Refugee A', 3: 'Are you here to save us?', 4: '1'}
+70	70		301							{3: 'Their clothes hang in tatters, their faces hollow with hunger and fear, their frail forms betraying days of starvation.'}
+71	71		302							{2: 'Liv, provide emergency treatment.', 3: '72'}
+72	72		201							{1: '1', 2: '1031001', 3: '5'}
+73	73		301							{1: '1', 2: 'Liv', 3: 'Copy.', 4: '1'}
+74	74		302				DialogDisable			{2: 'What happened here?', 3: '75'}
+75	75		202							{1: '1'}
+76	76		301			DialogEnable				{3: 'A refugee offers you an explanation, his body frail and weakened.'}
+77	77		201							{1: '1', 2: '500895'}
+78	78		301							"{1: '1', 2: 'Refugee B', 3: ""We're residents from conservation areas. Those bats captured us and brought us here."", 4: '1'}"
+79	79		301			PanelActor1Shake				"{2: 'Refugee B', 3: ""That man in the white lab coat, no... he's no man. He's a demon!"", 4: '1'}"
+80	80		301			PanelActor1Shake				{2: 'Refugee B', 3: 'Once I saw wings growing out of his body!', 4: '1'}
+81	81		302							"{2: ""Calm down. You're safe now."", 3: '82'}"
+82	82		301							{2: 'Refugee B', 3: 'He comes here regularly to take people. Drains them dry. Only stops after killing twenty or more...', 4: '1'}
+83	83		301							{2: 'Refugee B', 3: 'And then, he mixes his own blood with the Red Tide. Turns it into those bat things.', 4: '1'}
+84	84		203							{1: '1', 2: '0.25', 3: '400'}
+85	85		201							{1: '2', 2: '500610', 4: '-400', 7: '1'}
+86	86		301							{1: '1', 3: 'Alpha approaches you from the side and speaks in a hushed voice.'}
+87	87		301							"{2: 'Alpha', 3: ""There's a pool formed of the Red Tide inside. It must be where the Mirror Demon breeds those Hetero-Creatures."", 4: '2'}"
+88	88		202							{1: '1', 6: '1'}
+89	89		203							{1: '2', 2: '0.25', 3: '400'}
+90	90		201							{1: '1', 2: '501235', 4: '-400'}
+91	91		301							{1: '1', 2: 'Dante', 3: 'No wonder those bats stink like demons.', 4: '1'}
+92	92		202							{1: '1', 6: '1'}
+93	93		201							{1: '2', 2: '1031001'}
+94	94		301							"{1: '1', 2: 'Liv', 3: ""They're barely holding on, and most are showing symptoms of Punishing Virus infection from going without serum injections for too long. They need to return to a conservation area for treatment."", 4: '2'}"
+95	95		302							"{2: ""But they can't leave on their own..."", 3: '96'}"
+96	96		202							{1: '1', 2: '2', 6: '1'}
+97	97		201							{1: '1', 2: '500610'}
+98	98		301							"{1: '1', 2: 'Alpha', 3: ""Should we leave them behind? We can't battle the Mirror Demon while escorting all these people."", 4: '1'}"
+99	99		306							{1: '1'}
+100	100		201							{1: '1', 2: '500460', 4: '300'}
+101	101		201							{1: '2', 2: '501058', 4: '800'}
+102	102		201							{1: '3', 2: '500420', 4: '-300'}
+103	103		201							{1: '4', 2: '500454', 4: '-800'}
+104	104		301							{1: '1', 3: 'The kidnapped residents fall silent, realizing the upcoming conversation will determine their fate.'}
+105	105		301							{3: 'Hundreds of pairs of eyes are fixed on you.'}
+106	106		202							{1: '1', 2: '2', 3: '3', 4: '4', 6: '1'}
+107	107		201							{1: '1', 2: '500280', 4: '-200'}
+108	108		201							{1: '2', 2: '500564', 4: '200'}
+109	109		401							{1: '2', 2: '4044'}
+110	110		203							{1: '1', 2: '0.25', 3: '-150'}
+111	111		203							{1: '2', 2: '0.25', 3: '200'}
+112	112		301							"{1: '1', 3: ""A young child, overwhelmed by the heavy silence, lets out a choked sob, only for the mother to swiftly clamp a hand over the child's mouth.""}"
+113	113		202				DialogDisable			{1: '1', 2: '2'}
+114	114		306						400.0	
+115	115		302							"{2: ""Lucia, Lee, and Liv, I'll leave the evacuation to you."", 3: '116'}"
+116	116		302							{2: 'Dante, Vergil, Alpha, and I will press forward upstairs.', 3: '117'}
+117	117		201							{1: '1', 2: '1031001'}
+118	118		301			DialogEnable	DialogDisable			{1: '1', 2: 'Liv', 3: 'Commandant...', 4: '1'}
+119	119		302							{2: 'Against demons, Dante and Vergil are indispensable.', 3: '120'}
+120	120		302							"{2: ""Given the Ascnet's connection, we'll need Alpha too."", 3: '121'}"
+121	121		302							{2: 'Liv, you need to provide treatment to the evacuees.', 3: '122'}
+122	122		204							{1: '1', 2: '5'}
+123	123		301			DialogEnable				{2: 'Liv', 3: 'Understood.', 4: '1'}
+124	124		302							{2: 'Lee, establish recon and evacuation routes.', 3: '125'}
+125	125		201							{1: '1', 2: '500568'}
+126	126		301							{1: '1', 2: 'Lee', 3: 'Roger that.', 4: '1'}
+127	127		302							{2: 'Lucia...', 3: '128'}
+128	128		201							{1: '1', 2: '500994', 3: '5'}
+129	129		301				DialogDisable			{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+130	130		302							"{2: ""Lee and Liv can't keep all the evacuees protected."", 3: '131'}"
+131	131		302							{2: 'I need you to lead Gray Raven on this mission!', 3: '132'}
+132	132		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'Roger!', 4: '1'}
+133	133		204							{1: '1'}
+134	134		301							{2: 'Lucia', 3: 'Commandant, take care of yourself.', 4: '1'}
+135	135		302							{2: 'I will.', 3: '136'}
+136	136		201							{1: '1', 2: '501235', 3: '1'}
+137	137		301							"{1: '1', 2: 'Dante', 3: ""Let's go, 【kuroname】."", 4: '1'}"
+138	138		401							{1: '2', 2: '1504'}
+139	139		202							{1: '1'}
+140	140		301							{3: 'As everyone turns to leave, Lucia calls out to Alpha.'}
+141	141		402							{1: '1504'}
+142	142		201							{1: '1', 2: '500994', 3: '4', 4: '-400'}
+143	143		201							{1: '2', 2: '500610', 4: '400'}
+144	144		301							{1: '1', 2: 'Lucia', 3: 'Alpha...', 4: '1'}
+145	145		301							{2: 'Alpha', 3: 'What is it?', 4: '2'}
+146	146		204							{1: '1', 2: '5'}
+147	147		301							{2: 'Lucia', 3: 'Can I trust you?', 4: '1'}
+148	148		301							"{3: ""The girl's gaze fixes on Alpha, unwavering.""}"
+149	149		301							{2: 'Alpha', 3: 'Since when did we become this close?', 4: '2'}
+150	150		301							{2: 'Lucia', 3: '...', 4: '1'}
+151	151		204							{1: '2'}
+152	152		301							"{2: 'Alpha', 3: ""I know what you're going to say. This time, I'll allow it."", 4: '2'}"
+153	153		204							{1: '1'}
+154	154		301							"{2: 'Lucia', 3: ""Then I'll leave Commandant in your care."", 4: '1'}"
+155	155		301							{2: 'Alpha', 3: 'Alright.', 4: '2'}
+156	156		202							{1: '1', 2: '2'}
+157	157		301				AniZhuanchangBegin			"{3: ""Satisfied with Alpha's agreement, Lucia turns and walks away.""}"
+158	158		401							{1: '1', 2: '36'}
+159	159		502						400.0	{1: 'DialogDisable'}
+160	160		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory923.jpg'}
+161	161		401							{1: '1', 2: '5023'}
+162	162		107							{1: 'New Oakley'}
+163	163		301							{3: 'New Oakley.'}
+164	164		108							
+165	165		301			DialogEnable	DialogDisable			"{3: ""The Hetero-Creatures' assault has been ongoing for some time.""}"
+166	166		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+167	167		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1268.jpg'}
+168	168		201							{1: '1', 2: '501260', 3: '14', 4: '-400'}
+169	169		201							{1: '2', 2: '500688', 4: '400'}
+170	170		301			DialogEnable				{1: '1', 3: 'Fann finds Lyca hiding in a corner, and together they head toward the convoy.'}
+171	171		301				AniZhuanchangBegin			"{2: 'Fann', 3: ""Why are you hiding here? I'll take you to the convoy. The captain of the Support Force from Babylonia is looking for you."", 4: '2'}"
+172	172		202							{1: '1', 2: '2', 6: '1'}
+173	173		502						400.0	{1: 'DialogDisable'}
+174	174		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1268.jpg'}
+175	175		301			DialogEnable				{3: 'On the way, she sees a young man carrying the elderly woman from last night toward the convoy, the two of them arguing as they go.'}
+176	176		201							{1: '1', 2: '500689'}
+177	177		301							"{1: '1', 2: 'Strange Resident A', 3: ""Grandma, please... C'mon, we gotta go right now!"", 4: '1'}"
+178	178		203							{1: '1', 2: '0.25', 3: '400'}
+179	179		201							{1: '2', 2: '500251', 4: '-400'}
+180	180		301			PanelActor2Shake				"{1: '1', 2: 'Elderly Woman', 3: ""Put me down! I'm not leaving! What does it matter if these old bones die anyway?"", 4: '2'}"
+181	181		301							{2: 'Elderly Woman', 3: 'Let those young folks leave as they want.', 4: '2'}
+182	182		301							"{2: 'Strange Resident A', 3: ""If you stay, I'll stay too!"", 4: '1'}"
+183	183		202							{1: '1', 2: '2'}
+184	184		301				AniZhuanchangBegin			{3: 'With those words spoken, the elderly woman finally stops arguing.'}
+185	185		502						400.0	{1: 'DialogDisable'}
+186	186		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1252.jpg'}
+187	187		401							{1: '2', 2: '1504'}
+188	188		201			AniZhuanchangEnd				{1: '3', 2: '500688', 4: '400'}
+189	189		201							{1: '4', 2: '501260', 3: '14', 4: '600', 8: '1'}
+190	190		203							{1: '3', 2: '0.25', 3: '100'}
+191	191		203							{1: '4', 2: '0.25', 3: '300'}
+192	192		301			DialogEnable				{1: '1', 3: 'Soon after, Fann brings Lyca to Bridget and Max, who are discussing evacuation arrangements.'}
+193	193		402							{1: '1504'}
+194	194		202							{1: '3', 2: '4', 6: '1'}
+195	195		201							{1: '1', 2: '500906', 3: '4', 4: '400'}
+196	196		201							{1: '2', 2: '500692', 4: '-400'}
+197	197		301							"{1: '1', 2: 'Bridget', 3: ""Some fully-loaded vehicles have already left, and we don't have enough for everyone. That means some of us aren't getting out."", 4: '1'}"
+198	198		301							"{2: 'Bridget', 3: ""You've got any other vehicles in town?"", 4: '1'}"
+199	199		301							"{2: 'Max', 3: ""Everything with wheels is already here. We can't scrounge up any more."", 4: '2'}"
+200	200		301							"{2: 'Max', 3: ""Combat personnel will be last priority. Civilians come first. I'll see who's willing to stay behind."", 4: '2'}"
+201	201		301							"{2: 'Max', 3: ""I'll stay too..."", 4: '2'}"
+202	202		202							{1: '1', 2: '2'}
+203	203		301							{3: 'Despite advance preparations for evacuation, a group of people remains left behind due to the shortage of vehicles.'}
+204	204		201							{1: '1', 2: '500688'}
+205	205		301							"{1: '1', 3: ""Seeing Fann's arrival, Max pauses the discussion.""}"
+206	206		301							"{2: 'Fann', 3: ""Babylonian, I've brought Lyca."", 4: '1'}"
+207	207		203							{1: '1', 2: '0.25', 3: '400'}
+208	208		201							{1: '2', 2: '500906', 4: '-400'}
+209	209		301							{1: '1', 2: 'Bridget', 3: 'Thank you.', 4: '2'}
+210	210		202							{1: '2', 2: '1', 6: '1'}
+211	211		201							{1: '1', 2: '501260', 3: '19'}
+212	212		301							{1: '1', 3: 'Lyca is visibly frightened as she struggles to understand why Fann has brought her here.'}
+213	213		202							{1: '1', 6: '1'}
+214	214		201							{1: '2', 2: '500906', 4: '-400'}
+215	215		401							{1: '2', 2: '1543'}
+216	216		203							{1: '2', 2: '0.25', 3: '-400', 4: '-50'}
+217	217		201							{1: '1', 2: '501260', 3: '14', 4: '400'}
+218	218		301							{1: '1', 3: 'Noticing her distress, Bridget crouches down and offers a reassuring smile.'}
+219	219		301							"{2: 'Bridget', 3: ""I'm Bridget, Captain of the Babylonia Support Force. 【kuroname】 asked me to look after you."", 4: '2'}"
+220	220		301							{2: 'Bridget', 3: 'These vehicles behind me are our transports. You need to get inside and evacuate with everyone else.', 4: '2'}
+221	221		301							{2: 'Lyca', 3: 'I...', 4: '1'}
+222	222		204							{1: '2', 2: '4'}
+223	223		301							{2: 'Bridget', 3: 'What is it?', 4: '2'}
+224	224		301							{3: 'Lyca recalls what happened last night, hesitating for a moment before finally speaking up.'}
+225	225		301				DialogDisable			{2: 'Lyca', 3: 'I think... those Hetero-Creatures are after me. I can...', 4: '1'}
+226	226		202							{1: '1', 2: '2', 6: '1'}
+227	227		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+228	228		401							{1: '1', 2: '36'}
+229	229		401							{1: '2', 2: '2647'}
+230	230		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+231	231		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1210.jpg'}
+232	232		502							{1: 'RImgBg1Shake'}
+233	233		301			DialogEnable	DialogDisable			{3: 'Before Lyca can finish, an explosion resounds in the distance.'}
+234	234		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+235	235		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1252.jpg'}
+236	236		401							{1: '1', 2: '6183'}
+237	237		401							{1: '2', 2: '2983'}
+238	238		502							{1: 'DialogEnable'}
+239	239		301			AniZhuanchangEnd				"{3: ""A transmission from the frontline comes through Max's radio.""}"
+240	240		509							{1: 'Assets/Product/Texture/Image/BgStory/BgStory757.jpg', 2: '1'}
+241	241		201							{1: '11', 2: '500139', 4: '-600'}
+242	242		301				DialogDisable			{1: '1', 2: 'Armed Resident', 3: 'They broke through! Some bat monsters got inside!!', 4: '11'}
+243	243		202							{1: '11', 6: '1'}
+244	244		510						400.0	{1: '1'}
+245	245		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory749.jpg', 4: '8'}
+246	246		201							{1: '19', 2: '501265', 4: '-600', 7: '1'}
+247	247		203							{1: '19', 2: '0.25', 3: '-550', 4: '-25', 5: '-25'}
+248	248		201							{1: '20', 2: '501265', 4: '600', 7: '1'}
+249	249		203							{1: '20', 2: '0.25', 3: '550', 4: '-25', 5: '-25'}
+250	250		301			DialogEnable				{1: '1', 3: 'Lyca faintly makes out several Hetero-Creatures flying in from the distant frontline.'}
+251	251		202							{1: '19', 2: '20', 3: '21', 6: '1'}
+252	252		101							{4: '8', 5: '1'}
+253	253		201							{1: '1', 2: '500906', 3: '5'}
+254	254		301							"{1: '1', 2: 'Bridget', 3: ""I'll stop them!"", 4: '1'}"
+255	255		401							{1: '2', 2: '13088001'}
+256	256		301				DialogDisable			{3: 'Without hesitation, Bridget snaps her tactical tonfas into position and lunges forward.'}
+257	257		401							{1: '2', 2: '970804'}
+258	258		203							{1: '1', 2: '0.25', 5: '-125'}
+259	259		202							{1: '1'}
+260	260		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+261	261		401			RImgBg1Shake			500.0	{1: '2', 2: '1512'}
+262	262		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+263	263		401			RImgBg1Shake			500.0	{1: '2', 2: '1512'}
+264	264		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+265	265		201							{1: '1', 2: '500906', 3: '17'}
+266	266		301			DialogEnable				{1: '1', 2: 'Bridget', 3: 'The Hetero-Creatures this time are much stronger!', 4: '1'}
+267	267		202							{1: '1'}
+268	268		306							{1: '1'}
+269	269		301							{3: 'Faced with numerous enemies, Bridget manages to hold her own against the onslaught, yet struggles to eliminate them quickly.'}
+270	270		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1268.jpg'}
+271	271		401							{1: '2', 2: '213'}
+272	272		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+273	273		301			AniZhuanchangEnd				{3: 'Then, a new alarm comes from another part of the frontline. Another wave of Hetero-Creatures has breached the defenses, flooding into the town.'}
+274	274		301							{3: 'Buildings crumble like sandcastles under their relentless assault, the tranquil haven of last night now a living hell.'}
+275	275		301							{3: 'Lyca watches the scene unfold, her heart twisting with unbearable anguish.'}
+276	276		201							{1: '18', 2: '501260', 3: '14'}
+277	277		301							{1: '1', 2: 'Lyca', 3: 'No...', 4: '18'}
+278	278		202							{1: '18'}
+279	279		201							{1: '1', 2: '500689'}
+280	280		301							{1: '1', 2: 'Strange Resident A', 3: 'Get away from here!', 4: '1'}
+281	281		202							{1: '1', 6: '1'}
+282	282		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+283	283		401							{1: '2', 2: '2513'}
+284	284		301							{3: 'Gunshots erupt nearby.'}
+285	285		401							{1: '2', 2: '6032'}
+286	286		201							{1: '1', 2: '501265', 4: '-550', 6: '25', 7: '1'}
+287	287		203							{1: '1', 2: '0.25', 3: '-600', 4: '-50', 5: '0'}
+288	288		201							{1: '3', 2: '501265', 4: '550', 6: '25', 7: '1'}
+289	289		203							{1: '3', 2: '0.25', 3: '600', 4: '-25', 5: '0'}
+290	290		301							{3: 'Before anyone notices, several Hetero-Creatures have crept dangerously close.'}
+291	291		202							{1: '1', 6: '1'}
+292	292		201						125.0	{1: '2', 2: '501265', 4: '600', 5: '400', 6: '350'}
+293	293		203						125.0	{1: '2', 2: '0.15', 3: '300', 4: '75', 5: '50'}
+294	294		203							{1: '2', 2: '0.15', 3: '0', 4: '0', 5: '-125'}
+295	295		401							{1: '2', 2: '4784'}
+296	296		104						250.0	{1: '0|50|-25', 2: '0.25'}
+297	297		104							{1: '0|0|-50', 2: '0.25'}
+298	298		301							"{3: ""Lyca's breath catches as the young man throws himself between his grandmother and the looming threat—but it's still not enough. A Hetero-Creature lunges from a blind spot, pouncing toward the elderly woman in his arms.""}"
+299	299		202							{1: '1', 2: '2', 3: '3'}
+300	300		201							{1: '18', 2: '501260', 3: '19'}
+301	301		301							{1: '1', 2: 'Lyca', 3: 'No...', 4: '18'}
+302	302		202							{1: '18', 6: '1'}
+303	303		301				DialogDisable			{3: 'She watches as the kind-hearted woman from last night falls to the ground.'}
+304	304		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+305	305		402							{1: '213'}
+306	306		402							{1: '213'}
+307	307		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+308	308		504							{1: '0.7'}
+309	309		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+310	310		301			DialogEnable				{3: 'Ill-timed memories suddenly flood her mind, threatening to overtake her focus.'}
+311	311		301							{3: 'In a stark white hospital room, the curtains hang motionless as a doctor with an indistinct face delivers regretful news.'}
+312	312		301							{3: 'What is it?'}
+313	313		301							{3: 'The air reeks of disinfectant and cold metal, pressing in like a weight.'}
+314	314		301							{3: 'Beneath the bloodstained white sheet, something lies.'}
+315	315		301				DialogDisable			{3: 'What is it?'}
+316	316		501						1500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '2'}
+317	317		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront34.png', 4: '4'}
+318	318		104							{1: '55|781|-500', 2: '0', 4: '4'}
+319	319		104						300.0	{1: '-55|-950|-500', 2: '0.28', 4: '4'}
+320	320		104						300.0	{1: '55|781|-500', 2: '0.28', 4: '4'}
+321	321		104						300.0	{1: '-55|-950|-500', 2: '0.28', 4: '4'}
+322	322		104				AniZhuanchangBegin		300.0	{1: '55|781|-500', 2: '0.28', 4: '4'}
+323	323		401							{1: '2', 2: '4895'}
+324	324		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+325	325		301			DialogEnable	AniZhuanchangBegin			{3: 'A trembling hand of a middle-aged person enters her view, fingers twitching toward the fabric, trying to lift away the white covering.'}
+326	326		504							{1: '0'}
+327	327		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+328	328		101							{4: '4', 5: '1'}
+329	329		306							
+330	330		502						400.0	{1: 'DialogDisable'}
+331	331		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+332	332		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1268.jpg'}
+333	333		501			AniZhuanchangEnd				{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+334	334		401							{1: '2', 2: '213'}
+335	335		401							{1: '1', 2: '36'}
+336	336		201							{1: '1', 2: '501260', 3: '4'}
+337	337		301			DialogEnable				{1: '1', 2: 'Lyca', 3: 'STOP!!!', 4: '1'}
+338	338		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+339	339		401							{1: '2', 2: '4385'}
+340	340		301				DialogDisable			{3: 'Lyca lets out a furious roar as a blinding white light erupts around her.'}
+341	341		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+342	342		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+343	343		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+344	344		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+345	345		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1268.jpg'}
+346	346		201							{1: '1', 2: '500689'}
+347	347		301			DialogEnable				{1: '1', 2: 'Strange Resident A', 3: 'What?!', 4: '1'}
+348	348		201							{1: '1', 2: '500906', 3: '4'}
+349	349		301							{1: '1', 2: 'Bridget', 3: 'This is...', 4: '1'}
+350	350		202							{1: '1', 6: '1'}
+351	351		306							{1: '1'}
+352	352		301							{3: 'The entire town suddenly falls eerily silent as all Hetero-Creatures freeze in midair, as if someone had pressed pause on time itself.'}
+353	353		401							{1: '2', 2: '6032'}
+354	354		201							{1: '1', 2: '501265', 7: '1'}
+355	355		301			PanelActor1Shake				{1: '1', 3: 'But the moment lasts only briefly before the Hetero-Creatures begin to stir restlessly once more.'}
+356	356		301							{3: 'The shadow of death looms again.'}
+357	357		301				DialogDisable			{3: 'The next moment—'}
+358	358		201							{1: '1', 2: '500506', 3: '4', 4: '400'}
+359	359		201							{1: '2', 2: '501265', 4: '-400'}
+360	360		203							{1: '1', 2: '0.25', 3: '0'}
+361	361		203						250.0	{1: '2', 2: '0.25', 3: '-450'}
+362	362		401							{1: '1', 2: '6185'}
+363	363		401							{1: '2', 2: '781'}
+364	364		502							{1: 'RImgBg1Shake'}
+365	365		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '3'}
+366	366		203						250.0	{1: '1', 2: '0.25', 3: '500'}
+367	367		203							{1: '2', 2: '0.25', 3: '-500'}
+368	368		202							{1: '1', 2: '2'}
+369	369		301			DialogEnable				{3: 'Thunder roars as lightning flashes across the sky!'}
+370	370		301							"{3: ""The gleaming edge of the Rev Blade slices through the air, severing the Hetero-Creatures' wings with precision.""}"
+371	371		306						100.0	
+372	372		201							{1: '1', 2: '500506'}
+373	373		301							{1: '1', 2: 'Noan', 3: 'Looks like we came just in time.', 4: '1'}
+374	374		301							"{2: 'Noan', 3: ""Are you alright, ma'am?"", 4: '1'}"
+375	375		203						200.0	{1: '1', 2: '0.25', 3: '100', 4: '-25'}
+376	376		401							{1: '2', 2: '4044'}
+377	377		203							{1: '1', 3: '100'}
+378	378		201							{1: '2', 2: '500251', 4: '-200', 5: '-30'}
+379	379		203							{1: '2', 2: '0.25', 3: '-200'}
+380	380		301							{3: 'The young man helps the elderly woman to her feet with a warm smile.'}
+381	381		202							{1: '1', 2: '2'}
+382	382		301							"{3: ""Bridget, who's rushing back toward the scene, lets out a sigh of relief at the sight.""}"
+383	383		201							{1: '1', 2: '500906'}
+384	384		301							{1: '1', 2: 'Bridget', 3: 'Finally.', 4: '1'}
+385	385		202							{1: '1'}
+386	386		401							{1: '2', 2: '4115010'}
+387	387		301							{3: 'In the distance, a transport vehicle slowly comes to a halt as several figures step out.'}
+388	388		201							{1: '1', 2: '500522'}
+389	389		301							{1: '1', 2: 'Palma', 3: 'Playing the hero again...', 4: '1'}
+390	390		201							{1: '1', 2: '500555'}
+391	391		301							{1: '1', 2: 'Vanessa', 3: 'Bambinata, Leia, reinforce the front line.', 4: '1'}
+392	392		301							{2: 'Vanessa', 3: 'Simon, take Dark Aries with them.', 4: '1'}
+393	393		301							{2: 'Vanessa', 3: 'Bridget, update me on the evacuation status.', 4: '1'}
+394	394		301							{2: 'Vanessa', 3: 'And are you the Lyca mentioned in the reports?', 4: '1'}
+395	395		203							{1: '1', 2: '0.25', 3: '400'}
+396	396		201							{1: '2', 2: '501260', 3: '14', 4: '-400', 5: '-75'}
+397	397		301							{1: '1', 3: 'After issuing orders without allowing any objections, Vanessa turns to Lyca, who kneels on the ground, her face etched with exhaustion.'}
+398	398		301							{3: 'Recalling the flash of white light from earlier, Vanessa frowns.'}
+399	399		204							{1: '1', 2: '4'}
+400	400		301		1		AniZhuanchangBegin			{2: 'Vanessa', 3: 'Tsk.', 4: '1'}

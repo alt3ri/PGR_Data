@@ -1,0 +1,84 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '202'}
+3	3		502						400.0	{1: 'RImgBg1Shake'}
+4	4		505							{1: 'RImgBg1Shake'}
+5	5		401							{1: '2', 2: '10007502'}
+6	6		301			DialogEnable	AniZhuanchangBegin			{3: 'A huge explosion has caused the entire sea to tremble.'}
+7	7		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory392.jpg'}
+8	8		301			AniZhuanchangEnd				{3: 'It sends out a large circle of rapidly expanding waves, with Atlantis as the center.'}
+9	9		401							{1: '2', 2: '1515'}
+10	10		502							{1: 'RImgBg1BlowUp'}
+11	11		301				AniZhuanchangBegin			{3: 'The monitoring system has quickly located the source of the explosion. It comes from an undersea level where the zero-point reactor is located.'}
+12	12		505							{1: 'RImgBg1BlowUp'}
+13	13		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory397.jpg'}
+14	14		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+15	15		301			AniZhuanchangEnd				{3: 'The logistics department is already cleaning up the reactor site.'}
+16	16		301							{3: 'There is debris everywhere, but no signs of burning near the reactor.'}
+17	17		301							"{3: 'This is not surprising, considering that a zero-point reactor does not rely on the ""primitive"" combustion reaction to release its energy.'}"
+18	18		301							{3: 'Lustrous immediately arrives at the scene. She seems to be totally untouched by the disaster and begins asking questions.'}
+19	19		201							{1: '1', 2: '500350', 3: '4', 4: '-400'}
+20	20		201							{1: '2', 2: '500197', 4: '400'}
+21	21		301							"{1: '1', 2: 'Lustrous', 3: ""How's the situation?"", 4: '1'}"
+22	22		301							{2: 'Logistics Staff', 3: 'The disaster prevention system was activated in the first moment to cut off the power supply and isolate the radioactive beams. All facilities and personnel above the reactor level remain unharmed.', 4: '2'}
+23	23		301							{2: 'Lustrous', 3: 'How many casualties?', 4: '1'}
+24	24		301							{2: 'Logistics Staff', 3: 'Two deaths, one seriously injured, fifteen lightly injured. The medical department has taken over the injuries.', 4: '2'}
+25	25		301							{2: 'Lustrous', 3: 'Get the robotics department here to investigate, then upgrade the disaster prevention equipment.', 4: '1'}
+26	26		301							{2: 'Lustrous', 3: 'Who was in charge of the experiment?', 4: '1'}
+27	27		301							"{2: 'Logistics Staff', 3: ""It's Lybia from the research department."", 4: '2'}"
+28	28		301							{2: 'Lustrous', 3: 'Remove her from the position, then send her back to land in the next supply ship.', 4: '1'}
+29	29		301							{2: 'Logistics Staff', 3: 'Um...', 4: '2'}
+30	30		301							{2: 'Lustrous', 3: 'Is there a problem?', 4: '1'}
+31	31		301							"{2: 'Logistics Staff', 3: ""She's the seriously injured one. I'm afraid she won't last long."", 4: '2'}"
+32	32		301							{2: 'Lustrous', 3: '...', 4: '1'}
+33	33		301							"{2: 'Logistics Staff', 3: ""Would you like to see her, ma'am?"", 4: '2'}"
+34	34		204							{1: '1', 2: '3'}
+35	35		301							{3: 'Lustrous closes her eyes.'}
+36	36		301							"{2: 'Lustrous', 3: ""I have no interest in fools, but she doesn't deserve to die of stupidity. Make sure the medical department does all they can."", 4: '1'}"
+37	37		401							{1: '2', 2: '1515'}
+38	38		301							{3: 'The comms terminal suddenly lights up.'}
+39	39		204							{1: '1', 2: '4'}
+40	40		301							"{2: 'Logistics Staff', 3: ""Hello? Yes... She's here. I will let her know."", 4: '2'}"
+41	41		301							"{2: 'Logistics Staff', 3: ""Ma'am, it's from the medical department. Lybia has passed."", 4: '2'}"
+42	42		301							{2: 'Lustrous', 3: 'Why bother me with such news? The admin team will handle the compensation and the funeral.', 4: '1'}
+43	43		301							"{2: 'Logistics Staff', 3: ""Lybia was pregnant. The medical team couldn't save her, but managed to keep her baby alive. They want to know what they should do with the baby. We have never had a newborn here..."", 4: '2'}"
+44	44		301							{2: 'Lustrous', 3: 'Why is there a pregnant staff on the island?', 4: '1'}
+45	45		301							"{2: 'Logistics Staff', 3: ""Lybia was supposed to return to the land with the last supply ship, but she couldn't leave her ongoing research until her due date was close... As far as I can recall, you approved her stay."", 4: '2'}"
+46	46		204							{1: '1', 2: '3'}
+47	47		301							{2: 'Lustrous', 3: '...', 4: '1'}
+48	48		204							{1: '1', 2: '4'}
+49	49		401							{1: '1', 2: '36'}
+50	50		301				AniZhuanchangBegin			{2: 'Lustrous', 3: 'Tell me where the baby is.', 4: '1'}
+51	51		202							{1: '1', 2: '2', 6: '1'}
+52	52		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+53	53		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2101_2.jpg'}
+54	54		401							{1: '1', 2: '45'}
+55	55		301			AniZhuanchangEnd				{3: 'The light in the corridor of the medical department is extremely pale and bright. It seems even the shadows have faded a bit.'}
+56	56		301							{3: 'The ward is divided by a green curtain. On the bed in front of Lustrous lies a small, curled-up infant. Another bed is barely visible behind the curtain with a lifeless figure lying on top of it.'}
+57	57		301							{3: 'Lustrous frowns.'}
+58	58		301							"{2: 'Lustrous', 3: ""What is this, a monkey? Where's Lybia's child?""}"
+59	59		301							"{2: 'Medical Director', 3: ""Ma'am, this is her child. It's a girl.""}"
+60	60		301							{2: 'Lustrous', 3: '...'}
+61	61		301							"{2: 'Lustrous', 3: ""I'm not familiar with physiology. Is this what a normal baby should look like?""}"
+62	62		301							{2: 'Medical Director', 3: 'No. The lower half of her body was crushed in the accident, possibly due to the explosion. We gave her basic first-aid treatment, but...'}
+63	63		301							{2: 'Lustrous', 3: 'How can we cure her?'}
+64	64		301							"{2: 'Medical Director', 3: ""I'm afraid we can't, ma'am. We did everything we could to save a premature newborn from death.""}"
+65	65		301							{2: 'Medical Director', 3: 'Honestly, I think it is a miracle that she is still alive.'}
+66	66		301							"{3: ""Lustrous lifts her eyes to glance at Lybia's body under the green cloth. She frowns.""}"
+67	67		301							{2: 'Lustrous', 3: 'Is it a common thing that the mother has died but the baby is still alive?'}
+68	68		301							{2: 'Medical Director', 3: 'It happened a lot in the old days. Back then, women could possibly die from excessive bleeding during obstructed labor. But modern medical science can save almost all the mothers nowadays.'}
+69	69		301							"{2: 'Lustrous', 3: ""What's with this child then?""}"
+70	70		301							{2: 'Medical Director', 3: 'It was pretty incredible. Lybia had a contraction on the brink of death. She was almost passing out, but she seemed to be determined to have the baby born... And she sort of succeeded. Well, it was us who took the baby out of her broken abdomen eventually.'}
+71	71		301							"{2: 'Lustrous', 3: '...Is this a result of the so-called ""maternal bond""?'}"
+72	72		301							"{2: 'Medical Director', 3: ""I don't know. But I remember a story I once read. A pregnant woman had her head cut off in a car accident, but her body managed to give birth to a healthy baby on the spot.""}"
+73	73		301							{2: 'Lustrous', 3: '...'}
+74	74		301							{2: 'Lustrous', 3: 'When are the supply ships arriving? Send her back to the land with the next shipment.'}
+75	75		301							"{2: 'Medical Director', 3: 'I\'m afraid we can\'t do it anytime soon. The ""Submergence Day"" is just around the corner...'}"
+76	76		301							{3: 'Lustrous frowns again.'}
+77	77		301							{2: 'Lustrous', 3: 'Just keep her for now.'}
+78	78		301							{2: 'Medical Director', 3: 'Would you like to give her a name?'}
+79	79		301							"{2: 'Lustrous', 3: ""Whatever, just give her a code. Don't waste my time with such trivial matters. Names are but an identifier.""}"
+80	80		301							{2: 'Medical Director', 3: '...'}
+81	81		301							{2: 'Lustrous', 3: '...'}
+82	82		301							{3: 'Lustrous lets out a sigh after a long time, as if she is making a compromise.'}
+83	83		301		1		AniZhuanchangBegin			"{2: 'Lustrous', 3: ""Her mother's name is Lybia. Let's just call her Lamia then.""}"

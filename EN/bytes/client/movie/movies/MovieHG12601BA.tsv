@@ -1,0 +1,167 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '18'}
+3	3		301			DialogEnable				{3: '～Of flexile and simulacrous make...～'}
+4	4		301							{3: '～Thusly, it cometh and goeth, at the pluck of digits ten...～'}
+5	5		301				AniZhuanchangBegin			{3: '～How transient its flutter...～'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory160.png'}
+7	7		401							{1: '1', 2: '205'}
+8	8		301			AniZhuanchangEnd				{3: 'Night has fallen over the Nighter. The market is nowhere as crowded as it used to be, but there are still many activities going on.'}
+9	9		301							{3: 'Exotic food and dishes are being sold in the gorgeous pavilion. People are shouting, selling and bargaining.'}
+10	10		301							{3: 'Many stealthy deals are also being made under the night sky.'}
+11	11		301							{3: '——'}
+12	12		201							{1: '1', 2: '500454', 4: '-450'}
+13	13		201							{1: '2', 2: '500148', 4: '450'}
+14	14		301							{1: '1', 2: 'Customer', 3: 'Hey buddy, how much is this one?', 4: '1'}
+15	15		301							{2: 'Vendor', 3: '200 Grubs each.', 4: '2'}
+16	16		301							{2: 'Customer', 3: 'What the ****? Is this painted with gold, or made from gold?', 4: '1'}
+17	17		301							{2: 'Vendor', 3: 'Hehe, I can only say that I got it from special connections. Gotta make my risk pay off, mate.', 4: '2'}
+18	18		301							"{2: 'Customer', 3: ""You stole it, didn't you? That really makes me uncomfortable. I want a discount!"", 4: '1'}"
+19	19		301							"{2: 'Vendor', 3: ""Hey, don't use that word! I just took it while it was unattended. How about 3 for 550?"", 4: '2'}"
+20	20		301							"{2: 'Customer', 3: ""Why would I need so many? I'll think about it if you do 500."", 4: '1'}"
+21	21		301							{2: 'Vendor', 3: 'Deal.', 4: '2'}
+22	22		301							{3: 'The vendor picks up 3 accessories from his stall. The silver paint looks brilliant even under the dim light.'}
+23	23		301							{3: 'As if they have just been painted.'}
+24	24		301							{2: 'Vendor', 3: 'Are these okay?', 4: '2'}
+25	25		301							{2: 'Customer', 3: 'Wait a sec. Are these refurbished?', 4: '1'}
+26	26		301							"{2: 'Vendor', 3: ""What? No way. I don't sell refurbished accessories."", 4: '2'}"
+27	27		301							{2: 'Customer', 3: 'Then why do I see paint on the barcode?', 4: '1'}
+28	28		301							{3: 'There is tension in the air. The vendor suddenly raises his head, staring at the customer, who is giving him a playful look.'}
+29	29		301							"{2: 'Vendor', 3: ""You aren't here to buy, are you? You are looking for trouble."", 4: '2'}"
+30	30		301							{2: 'Customer', 3: 'What are you talking about? I would love to buy if your goods are new.', 4: '1'}
+31	31		202							{1: '1', 2: '2', 6: '1'}
+32	32		301							{3: 'The customer walks up to the vendor as he talks.'}
+33	33		201							{1: '1', 2: '500454', 4: '-450'}
+34	34		201							{1: '2', 2: '500148', 4: '450'}
+35	35		301							"{1: '1', 2: 'Customer', 3: ""But what if they aren't?"", 4: '1'}"
+36	36		301							"{2: 'Vendor', 3: ""Fine. I'll eat them if they aren't new. Happy?"", 4: '2'}"
+37	37		301							"{2: '???', 3: ""I'll grab one too.""}"
+38	38		301							"{2: 'Vendor', 3: ""That's one good customer out there... ****! It's the Pulao Crew!"", 4: '2'}"
+39	39		301							"{2: 'Customer', 3: ""Oh! My wife's due today... Gotta go!"", 4: '1'}"
+40	40		301							"{2: 'Vendor', 3: ""Same! I'm closing up!"", 4: '2'}"
+41	41		202							{1: '1', 2: '2', 6: '1'}
+42	42		201							{1: '1', 2: '500445'}
+43	43		301							{1: '1', 2: 'Pulao', 3: 'Stop!', 4: '1'}
+44	44		202							{1: '1', 2: '2', 6: '1'}
+45	45		301							"{3: ""Hearing Pulao's voice, the vendor immediately drops the accessories and flees, as if he is running for his life.""}"
+46	46		301				RImgBg1Shake		500.0	{3: 'But his wrist and shoulder are soon grasped from behind.'}
+47	47		301							{3: 'Someone with incredible strength slams him down to the ground.'}
+48	48		201							{1: '1', 2: '500445', 4: '-450'}
+49	49		201							{1: '2', 2: '500148', 4: '450'}
+50	50		301							"{1: '1', 2: 'Vendor', 3: ""Madam Pulao, please, let me go. I didn't do anything."", 4: '2'}"
+51	51		301							{2: 'Pulao', 3: 'But your stolen goods suggest otherwise.', 4: '1'}
+52	52		301							{2: 'Vendor', 3: 'Goodness no. I got them from Akdilek through legal trades.', 4: '2'}
+53	53		301							"{2: 'Pulao', 3: '""I just took it while it was unattended.""', 4: '1'}"
+54	54		301							{2: 'Vendor', 3: 'Did you hear everything?', 4: '2'}
+55	55		301							{2: 'Pulao', 3: 'We were nearby before he came to your stall. Now, tell me where you stole them.', 4: '1'}
+56	56		301							"{2: 'Vendor', 3: ""Okay! It's the East District! They were left in the warehouse doing nothing but collecting dust, so I thought I could make some use out of them."", 4: '2'}"
+57	57		301							"{2: 'Pulao', 3: ""The East District... We haven't received any report."", 4: '1'}"
+58	58		202							{1: '1', 2: '2', 6: '1'}
+59	59		201							{1: '1', 2: '500143'}
+60	60		301							{1: '1', 2: 'Yazi', 3: 'Pulao, I caught the other guy.', 4: '1'}
+61	61		202							{1: '1', 2: '2', 6: '1'}
+62	62		301							{3: 'As Pulao interrogates the vendor, a masked Construct comes back from the direction that the other man ran away. She has him in her hand.'}
+63	63		201							{1: '1', 2: '500445', 3: '1', 4: '-450'}
+64	64		201							{1: '2', 2: '500143', 4: '450'}
+65	65		301							{1: '1', 2: 'Pulao', 3: 'Thanks, Yazi. Have you identified him?', 4: '1'}
+66	66		301							{2: 'Yazi', 3: 'I have. This is the fugitive that was targeting the night market vendors.', 4: '2'}
+67	67		301							{3: 'Yazi shows Pulao a dagger with dried blood stains as she speaks.'}
+68	68		301							{2: 'Yazi', 3: 'This is his weapon. Fits the description we previously had.', 4: '2'}
+69	69		202							{1: '1', 2: '2', 6: '1'}
+70	70		201							{1: '1', 2: '500148'}
+71	71		301							{1: '1', 2: 'Vendor', 3: 'Wait a sec... Was he actually not going to buy from me?', 4: '1'}
+72	72		203							{1: '1', 2: '0.25', 3: '-450'}
+73	73		201							{1: '2', 2: '500445', 4: '450'}
+74	74		301							{1: '1', 2: 'Pulao', 3: 'I think so. He probably wanted to stab you with this and rob your goods.', 4: '2'}
+75	75		301							{2: 'Pulao', 3: 'Your stolen goods, I mean...', 4: '2'}
+76	76		301							"{2: 'Pulao', 3: ""That's why I showed up when he approached you."", 4: '2'}"
+77	77		301							{2: 'Vendor', 3: '****! I knew he was suspicious. How dare he!', 4: '1'}
+78	78		301							{2: 'Vendor', 3: 'Good on you, Madam Pulao!', 4: '1'}
+79	79		204							{1: '2', 2: '1'}
+80	80		301							"{2: 'Pulao', 3: ""Yeah, I didn't expect this either."", 4: '2'}"
+81	81		301							{2: 'Vendor', 3: '?', 4: '1'}
+82	82		301							{2: 'Pulao', 3: 'Yazi and I were only after the night market murderer. Never thought we would also catch a thief like you.', 4: '2'}
+83	83		301							"{2: 'Pulao', 3: ""That's what we call killing two birds with one stone, I guess."", 4: '2'}"
+84	84		301							{2: 'Vendor', 3: '...', 4: '1'}
+85	85		301							{2: 'Vendor', 3: '****! You bloody idiot! Ptooey!', 4: '1'}
+86	86		202							{1: '1', 2: '2', 6: '1'}
+87	87		301				AniZhuanchangBegin			"{3: ""The vendor spits on the still unconscious young man's face.""}"
+88	88		401							{1: '1', 2: '204'}
+89	89		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory159.png'}
+90	90		201							{1: '1', 2: '500445', 3: '1', 4: '-450'}
+91	91		201							{1: '2', 2: '500143', 4: '450'}
+92	92		301			AniZhuanchangEnd				"{1: '1', 2: 'Pulao', 3: ""Good, we finally solved another case. Couldn't do it without your help, Yazi."", 4: '1'}"
+93	93		301							"{2: 'Yazi', 3: ""That's my job. After Lady Qu was gone, the Dragon Children all decided to let me out of the shadows and join the Pulao Crew to help with the Nighter's security."", 4: '2'}"
+94	94		301							{2: 'Pulao', 3: 'But I think you would fit the Chaofeng Crew better.', 4: '1'}
+95	95		301							"{2: 'Pulao', 3: ""It's just a feeling."", 4: '1'}"
+96	96		301							"{2: 'Yazi', 3: ""I guess Chaofeng still doesn't want me to get my hands on too much intel."", 4: '2'}"
+97	97		301							{2: 'Yazi', 3: 'Would you like some tea?', 4: '2'}
+98	98		204							{1: '1', 2: '2'}
+99	99		301							"{2: 'Pulao', 3: ""Sure! Why don't you talk to Chaofeng directly next time?"", 4: '1'}"
+100	100		301							"{2: 'Pulao', 3: ""I'll help too."", 4: '1'}"
+101	101		301							"{2: 'Yazi', 3: ""No need. He must have his reasons. Besides, I'm quite happy with where I am now..."", 4: '2'}"
+102	102		301							"{2: 'Yazi', 3: ""Here you go. Careful, it's hot."", 4: '2'}"
+103	103		204							{1: '1', 2: '1'}
+104	104		301							{2: 'Pulao', 3: 'Huff... Puff... Hmm! I can feel my vital fluid getting warm.', 4: '1'}
+105	105		301							{2: 'Yazi', 3: 'Have some of this too.', 4: '2'}
+106	106		301							"{2: 'Pulao', 3: ""Dragon's beard candy! Thanks, Yazi. You make me different snacks every night."", 4: '1'}"
+107	107		301							"{2: 'Pulao', 3: ""Speaking of which, the food intake of a Construct won't really have any real impact on their frame. So... Could I get a little more next time?"", 4: '1'}"
+108	108		301							{2: 'Yazi', 3: 'Constructs still need to assert self-control. Do you want me to take this away too?', 4: '2'}
+109	3000		204							{1: '1', 2: '5'}
+110	109		301							{2: 'Pulao', 3: 'No!', 4: '1'}
+111	110		202							{1: '1', 2: '2', 6: '1'}
+112	111		401							{1: '2', 2: '1515'}
+113	112		301							{3: 'Pulao quickly pounces at the plate with snacks on it and protects it with her slim arms. The terminal on her arm suddenly lights up.'}
+114	113		201							{1: '1', 2: '500445', 4: '-450'}
+115	114		201							{1: '2', 2: '500143', 4: '450'}
+116	115		301							"{1: '1', 2: 'Pulao', 3: ""It's a message from Bixi."", 4: '1'}"
+117	116		301							{2: 'Yazi', 3: 'Should I stay away from you?', 4: '2'}
+118	117		301							"{2: 'Pulao', 3: ""No need. A message this late shouldn't be anything important."", 4: '1'}"
+119	118		301							"{2: 'Pulao', 3: '""An Engineering Force from Babylonia will be coming to the Nighter at 10:00 am tomorrow in order to assist with the installation of communication antennas. The Pulao Crew will be in charge of their security...""', 4: '1'}"
+120	119		204							{1: '1', 2: '5'}
+121	120		301							"{2: 'Pulao', 3: ""Why didn't you tell me earlier!!"", 4: '1'}"
+122	999		401							{1: '2', 2: '1515'}
+123	121		301							{3: '——'}
+124	122		204							{1: '1'}
+125	123		301							"{2: 'Pulao', 3: '""I was going to let you know by noon, but I forgot the time while drawing the blueprints. My apologies...""', 4: '1'}"
+126	124		301							{2: 'Pulao', 3: '...I must not complain! Bixi has a lot to do too.', 4: '1'}
+127	125		301							{3: 'Pulao pats her own cheeks as if she is punishing her misbehavior.'}
+128	126		301							{2: 'Pulao', 3: 'I need to change the patrol plan tomorrow. Oh, must investigate the theft on the East District warehouse too...', 4: '1'}
+129	127		301							"{2: 'Yazi', 3: ""I'll cover that. You can focus on the Babylonia team."", 4: '2'}"
+130	128		301							{2: 'Pulao', 3: 'But...', 4: '1'}
+131	129		301							{3: 'Pulao is about to turn down her offer, but she suddenly remembers their conversation earlier on.'}
+132	130		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+133	131		504							{1: '0.7'}
+134	132		204							{1: '1', 2: '1'}
+135	133		301							"{2: 'Yazi', 3: ""I guess Chaofeng still doesn't want me to get my hands on too much intel..."", 4: '2'}"
+136	134		204							{1: '1', 2: '2'}
+137	135		301							"{2: 'Pulao', 3: ""Why don't you talk to Chaofeng directly next time?"", 4: '1'}"
+138	136		301				AniZhuanchangBegin			"{2: 'Yazi', 3: ""No need. He must have his reasons. Besides, I'm quite happy with where I am now..."", 4: '2'}"
+139	137		504							{1: '0'}
+140	138		204							{1: '1', 2: '6'}
+141	139		301			AniZhuanchangEnd				{2: 'Pulao', 3: 'Alright, thanks!', 4: '1'}
+142	140		301							"{2: 'Pulao', 3: ""Oh, you probably aren't too familiar with the East District yet. There are lots of alleys over there, you will be lost if you simply follow the map. I've got some tips for you."", 4: '1'}"
+143	141		301							{2: 'Yazi', 3: '...', 4: '2'}
+144	142		301							{2: 'Yazi', 3: 'This will probably take a while. I better make more snacks.', 4: '2'}
+145	143		204							{1: '1', 2: '2'}
+146	144		301							{2: 'Pulao', 3: 'Hooray! Love you, Yazi! I want char siu, bubble tea, shrimp dumpling, and...', 4: '1'}
+147	145		301							"{2: 'Yazi', 3: ""I'm pretty sure those snacks aren't for this point of time..."", 4: '2'}"
+148	146		204							{1: '1', 2: '8'}
+149	147		301				AniZhuanchangBegin			{2: 'Pulao', 3: 'Um...', 4: '1'}
+150	148		202							{1: '1', 2: '2', 6: '1'}
+151	149		504							{1: '0.7'}
+152	150		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg'}
+153	151		301			AniZhuanchangEnd				"{3: ""Ten hours before Pulao stuffed herself with dragon's beard candy, char siu, bubble tea, shrimp dumpling, osmanthus cake, jujube paste cake, qingtuan, sweet taro with gingko...""}"
+154	152		301							{3: '1:00 p.m. Babylonia'}
+155	153		201							{1: '1', 2: '500011'}
+156	154		301				DialogDisable			{1: '1', 2: 'Hassen', 3: 'Any question on the mission details?', 4: '1'}
+157	155		302							{2: 'The mission itself is not a problem...', 3: '156'}
+158	156		302							"{2: ""But given that it's an engineering mission,"", 3: '157'}"
+159	157		302							{2: 'I think Karenina would be a better fit.', 3: '158'}
+160	158		301			DialogEnable				{2: 'Hassen', 3: 'Apart from establishing the connection between Babylonia and the Nighter, this mission also has its diplomatic significance. We need to make a good gesture.', 4: '1'}
+161	159		301							{2: 'Hassen', 3: 'To return to the earth, we must unite all forces that can be united. Based on your track record, I think you will be the most suitable candidate for this mission.', 4: '1'}
+162	160		302							{2: 'Understood. I will do my best.', 3: '161'}
+163	161		301							{2: 'Hassen', 3: 'No need to be so serious though. The Engineering Force will take care of the installation. Just take it as a holiday.', 4: '1'}
+164	162		302							{2: 'Holiday... I see.', 3: '163', 4: '...', 5: '164'}
+165	163		301		1		AniZhuanchangBegin			{2: 'Hassen', 3: 'Haha, I promise it will not be like Venus Splash Park again. I heard that the Nighter has many unique views and events. Enjoy yourself.', 4: '1'}
+166	164		301		1		AniZhuanchangBegin			"{2: 'Hassen', 3: ""I know what you're thinking. Venus Splash Park will not happen again, I promise."", 4: '1'}"

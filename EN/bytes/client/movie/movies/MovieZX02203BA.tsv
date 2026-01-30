@@ -1,0 +1,43 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '204'}
+3	3		301			DialogEnable				"{3: ""Babylonia's artificial sun has set for now. Apart from some soldiers on patrol and the lively crowd in the markets, most people have fallen asleep.""}"
+4	4		301							{3: 'As for you, you are sitting in front of the desk inside the Gray Raven break room, going over the recent mission logs.'}
+5	6		301				AniZhuanchangBegin			{3: 'The logs have been arranged from left to right chronologically by Liv. Your fingertip flips over a page, and another memory is reawakened in your mind.'}
+6	5		401						1000.0	{1: '1', 2: '36'}
+7	7		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory256.png'}
+8	8		504							{1: '0.7'}
+9	9		401							{1: '1', 2: '209'}
+10	10		301			AniZhuanchangEnd				"{3: ""Sitting on the transport craft returning from Atlantis, you receive President Hassen's encrypted transmission all of a sudden.""}"
+11	11		201							{1: '1', 2: '500011'}
+12	12		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+13	13		301							{1: '1', 2: 'Hassen', 3: 'First of all, congratulations on completing this confidential special ops. Gray Raven can finally take a rest in the coming days.', 4: '1'}
+14	14		302							"{2: '""Confidential special ops""...', 3: '15', 4: 'Rest?', 5: '15'}"
+15	15		301							"{2: 'Hassen', 3: ""That's right. You must be able to tell from reuniting with your team that Kurono's control over Gray Raven has been dismantled by us."", 4: '1'}"
+16	16		301							"{2: 'Hassen', 3: ""You have proven yourself with your actions, and it's only fair that we reward you with more than just empty words and congratulations."", 4: '1'}"
+17	17		301							"{2: 'Hassen', 3: ""When you're back on Babylonia, we will host the grandest welcome ceremony for you."", 4: '1'}"
+18	18		302							"{2: ""It's not just to congratulate me, I suppose."", 3: '19', 4: '...', 5: '20'}"
+19	19	22	301							"{2: 'Hassen', 3: ""Haha, you're smart. Now's a pretty good time to do this..."", 4: '1'}"
+20	20		301							"{2: 'Hassen', 3: ""Your reaction seems to suggest that you've got something to say."", 4: '1'}"
+21	21		301							"{2: 'Hassen', 3: ""You're a smart person. I suppose this is not that bad a time."", 4: '1'}"
+22	22		301							{3: 'Hassen smiles and nods.'}
+23	23		301							{2: 'Hassen', 3: 'After this ceremony, Gray Raven will no longer be an ordinary squad under the Task Force but war heroes that make the impossible possible.', 4: '1'}
+24	24		301							{2: 'Hassen', 3: 'The people will follow you. They will look up to you. You have brought them a spark of hope for victory and overcome desperate situations time and time again.', 4: '1'}
+25	25		301							{2: 'Hassen', 3: 'They will see every move the Gray Ravens make.', 4: '1'}
+26	26		301							{2: 'Hassen', 3: 'And because of that, Kurono can no longer take Gray Raven away—from the people.', 4: '1'}
+27	27		302							{2: 'Is this necessary?', 3: '28', 4: 'Why this?', 5: '29'}
+28	28	30	301							{2: 'Hassen', 3: 'Absolutely. People are looking for heroes—for hopes that will bring the war to an end, and the Gray Ravens are the perfect candidates.', 4: '1'}
+29	29		301							{2: 'Hassen', 3: 'Because people are looking for heroes—for hopes that will bring the war to an end, and the Gray Ravens are the perfect candidates.', 4: '1'}
+30	30		301							"{2: 'Hassen', 3: ""To carry out this plan, Gray Raven's main mission in the coming days will be to boost morale in each fighting region to establish people's hope for victory."", 4: '1'}"
+31	32		301				AniZhuanchangBegin			"{2: 'Hassen', 3: ""That's what the people want, and that's how we protect you."", 4: '1'}"
+32	31		401							{1: '1', 2: '36'}
+33	33		202							{1: '1', 6: '1'}
+34	34		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+35	35		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+36	36		504							{1: '0'}
+37	37		401							{1: '1', 2: '207'}
+38	38		301			AniZhuanchangEnd				{3: 'You have not seen Vera and the Cerberus members for a long time since the welcoming ceremony.'}
+39	39		301							{3: 'Apart from returning to Babylonia to hand in your mission logs, you and the Gray Ravens have spent most of your time going from safe zone to safe zone among different areas on the surface, far away from the frontline.'}
+40	40		301							"{3: ""It might be more free carrying out the Parliament's mission and being forbidden to contact some people than being locked in Kurono's cell, this overprotection has nonetheless grown weary on you.""}"
+41	41		301							{3: 'The Babylonia night is still far from over. You open the mission log on the desk to confirm the final details before submitting.'}
+42	42		301		1		AniZhuanchangBegin			{3: 'As it opens, the recorded scenes play out before you as projections one by one.'}

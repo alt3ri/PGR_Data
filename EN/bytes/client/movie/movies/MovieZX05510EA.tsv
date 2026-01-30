@@ -1,0 +1,259 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1257.jpg'}
+2	2		401							{1: '1', 2: '6178'}
+3	3		104						500.0	{1: '100|-150|-200', 2: '0.5'}
+4	4		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '4'}
+5	5		401						500.0	{1: '2', 2: '4779'}
+6	6		402							{1: '4779'}
+7	7		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiAreaWarHangUp/FxUiAreaWarHangUpBg01.prefab', 2: '2', 5: '1'}
+8	8		511							{1: '1', 2: '0', 3: '0|100|800'}
+9	9		301			DialogEnable				{3: 'The moment they notice Hetero-Creatures climbing onto the small transport, you and Haniff raise your weapons toward it.'}
+10	10		401							{1: '2', 2: '1099'}
+11	11		301				DialogDisable			"{3: ""Through the comms, Haniff's voice also joins in.""}"
+12	12		104						500.0	{1: '0|0|0', 2: '0.5'}
+13	13		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiAreaWarHangUp/FxUiAreaWarHangUpBg01.prefab', 5: '1'}
+14	14		101							{4: '4', 5: '1'}
+15	15		509						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1258.jpg', 2: '2'}
+16	16		201							{1: '13', 2: '501223', 3: '7', 4: '500'}
+17	17		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '13'}
+18	18		301			DialogEnable				"{1: '1', 2: 'Haniff', 3: ""It's taking off again! We must... can't let it... leave the... island..."", 4: '13'}"
+19	19		301							"{3: 'Actively destroying the transport means cutting off their own escape route, but if they don\'t attack... no one can guarantee the Hetero-Creatures won\'t spread beyond the island through this ""oversight.""'}"
+20	20		301				DialogDisable			{3: 'An overwhelming sense of risk weighs heavily on their chests. Now, the lives of both the people aboard the transport and the three on the island rest in their hands.'}
+21	21		302							{2: 'Come in! Ground calling!', 3: '22'}
+22	22		401							{1: '2', 2: '2983'}
+23	23		301			DialogEnable	DialogDisable			{3: 'You call the pilot repeatedly, desperate for even a glimmer of hope, but only hear chaotic static from the other end.'}
+24	24		401							{1: '2', 2: '4100'}
+25	25		302							{2: 'Answer us!', 3: '26', 4: 'Come in! Please respond if you copy!', 5: '26'}
+26	26		202							{1: '13'}
+27	27		510						250.0	{1: '2'}
+28	28		401						250.0	{1: '2', 2: '1513'}
+29	29		201							{1: '1', 2: '501223', 3: '7', 4: '600'}
+30	30		203							{1: '1', 2: '0.25', 3: '0'}
+31	31		301			DialogEnable				{1: '1', 3: 'Haniff sprints to the scene, his expression growing increasingly grim as he takes in the sight of Vera collapsed on the ground and the transport lurching erratically in the air.'}
+32	32		301							{2: 'Haniff', 3: 'No matter what, we have to make a choice now...!', 4: '1'}
+33	33		302							"{2: ""No... it's already over."", 3: '34'}"
+34	34		401						500.0	{1: '2', 2: '4779'}
+35	35		402							{1: '4779'}
+36	36		301				DialogDisable			{3: 'You lower your gun with a heavy heart and turns to look at Haniff, who stands there panting for breath.'}
+37	37		202							{1: '1'}
+38	38		401							{1: '2', 2: '2983'}
+39	39		502						200.0	{1: 'RImgBg1Shake'}
+40	40		306							{1: '1'}
+41	41		104						500.0	{1: '0|-200|-200', 2: '0.5'}
+42	42		401							{1: '2', 2: '2983'}
+43	43		301			DialogEnable				"{3: 'Both of them simultaneously hear eerie gnawing sounds through their headsets as the violently rocking transport suddenly ""steadies"" for a moment, as if someone has forcibly regained control and adjusted its position to point downward.'}"
+44	44		401							{1: '2', 2: '1226'}
+45	45		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '1'}
+46	46		301							{3: 'Then, it plunges into a steep dive.'}
+47	47		201							{1: '18', 2: '501223', 3: '7', 6: '-100'}
+48	48		301							{1: '1', 2: 'Haniff', 3: '!!', 4: '18'}
+49	49		202				DialogDisable			{1: '18'}
+50	50		104						500.0	{1: '0|-100|0', 2: '0.5'}
+51	51		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory616.jpg', 3: '0', 4: '1', 5: '0.3'}
+52	52		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+53	53		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+54	54		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionL.prefab', 2: '1', 5: '3'}
+55	55		502					200.0		{1: 'RImgBg1Shake'}
+56	56		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+57	57		401							{1: '2', 2: '555'}
+58	58		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+59	59		306							
+60	60		401							{1: '2', 2: '9330025', 3: '0.5'}
+61	61		301			DialogEnable				{3: 'The two of them watch as their last hope—the transport that had barely taken off moments ago—trail black smoke as it plummets toward the ocean below.'}
+62	62		301							{3: 'Clearly, the pilot on board had also realized the severity of the situation and decisively chose self-destruction, sacrificing the vehicle.'}
+63	63		301			RImgBg1Shake				{3: 'The glow of the crash and explosion illuminates half of the night sky before being quickly swallowed by the pitch-black ocean waters.'}
+64	64		301							{3: 'Only the residual shockwaves from the explosion roll in from the distance, stirring up sand and dust from the island that strike your face with unforgiving force.'}
+65	65		402							{1: '9330025'}
+66	66		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+67	67		104							{1: '0|0|0', 2: '0', 4: '1'}
+68	68		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory616.jpg', 3: '1', 4: '0', 5: '0.3'}
+69	69		205							{1: '999'}
+70	70		201					200.0		{1: '1', 2: '501223', 3: '5'}
+71	71		301							{1: '1', 2: 'Haniff', 3: 'Self-destruction... the absolute last resort...!', 4: '1'}
+72	72		301							{3: 'Haniff reloads his weapon with gritted teeth, his voice filled with frustration at their situation—yet also with boundless admiration.'}
+73	73		204							{1: '1', 2: '8'}
+74	74		301							{2: 'Haniff', 3: '...but damn, they died like a true hero!', 4: '1'}
+75	75		203							{1: '1', 2: '0.25', 4: '-50', 5: '-100'}
+76	76		204							{1: '1', 2: '0'}
+77	77		401							{1: '2', 2: '4834'}
+78	78		301							"{2: 'Haniff', 3: 'We won\'t get such a ""glorious"" death! Catch! Just found this new gun from the airdrop!', 4: '1'}"
+79	79		302							{2: '(Catch it.)', 3: '80'}
+80	80		401						500.0	{1: '2', 2: '4779'}
+81	81		402							{1: '4779'}
+82	82		203							{1: '1', 2: '0.25', 4: '0', 5: '0'}
+83	83		301							{2: 'Haniff', 3: 'With our only support aircraft destroyed, we have no way off this island anytime soon.', 4: '1'}
+84	84		204							{1: '1', 2: '0'}
+85	85		301							"{2: 'Haniff', 3: ""As long as we're stuck here, Babylonia can't simply use the Longinus Arsenal to destroy the entire island—fortunately, you and Vera are valuable enough. If I were the only one left, Babylonia wouldn't hesitate for a second."", 4: '1'}"
+86	86		301							"{2: 'Haniff', 3: 'But on the flip side, every second we delay, that damned ""evolution"" on the island accelerates. This ""Eve"" the Ascendant mentioned will assimilate more and more Hetero-Creatures...', 4: '1'}"
+87	87		302							"{2: 'We need to eliminate ""Eve"" as soon as possible, or the situation will only worsen.', 3: '88'}"
+88	88		204							{1: '1', 2: '3'}
+89	89		301							"{2: 'Haniff', 3: ""Easy for you to say! With just us? And a Construct who's already down?!"", 4: '1'}"
+90	90		202						200.0	{1: '1'}
+91	91		104						300.0	{1: '0|100|0', 2: '0.3'}
+92	92		306							{1: '1'}
+93	93		201							{1: '2', 2: '501117'}
+94	94		401							{1: '2', 2: '5286'}
+95	95		301							{1: '1', 3: 'Haniff points at Vera, then irritably holds his head in frustration.'}
+96	96		202							{1: '2'}
+97	97		306							
+98	98		104						300.0	{1: '0|0|0', 2: '0.3'}
+99	99		201							{1: '1', 2: '501223'}
+100	100		301							"{1: '1', 2: 'Haniff', 3: 'Let\'s check the tracker first. Where has that ""Eve"" creature gone now?', 4: '1'}"
+101	101		301							{3: 'The Commandant takes out the tracking device Haniff handed over earlier. The red dot is still blinking, but it has moved to a dark structure at the center of the island.'}
+102	102		204							{1: '1', 2: '0'}
+103	103		301			PanelActor1Shake				"{1: '1', 3: 'Haniff lets out a loud, sharp inhale that screams ""I knew it.""'}"
+104	104		301							"{2: 'Haniff', 3: 'It\'s moving so fast...! I knew that gene bank was trouble! The scanner already showed the highest Punishing readings coming from in there—I bet all those ""new humans"" are gathered inside!', 4: '1'}"
+105	105		301							"{2: 'Haniff', 3: 'So are you getting what I\'m saying?—In our current state, charging into the gene bank to hunt down that ""Eve"" might sound a bit more dignified than standing our ground in a desperate fight while waiting for the Longinus Arsenal to arrive, but it\'s still pure suicide!', 4: '1'}"
+106	106		301				DialogDisable			{2: 'Haniff', 3: 'Is there really no other way...', 4: '1'}
+107	107		202							{1: '1'}
+108	108		302							{2: 'I have to find another way...', 3: '109', 4: 'Vera is badly wounded...', 5: '109', 6: 'When will Gray Raven arrive...', 7: '109'}
+109	109		306						200.0	{1: '1'}
+110	110		201							{1: '2', 2: '500345', 3: '8', 7: '1'}
+111	111		205						200.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '0.5', 5: '0.2'}
+112	112		301			DialogEnable				{1: '1', 3: 'Two all-out battles have pushed her Garnet frame to the brink of total failure. Vital fluid has dyed her hair an even deeper red, with deep wounds covering her body that are painful to behold.'}
+113	113		301				DialogDisable			"{3: ""The situation has deteriorated into a dilemma, without even a moment's respite to think clearly.""}"
+114	114		202							{1: '2'}
+115	115		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0.5', 4: '0', 5: '0'}
+116	116		205							{1: '999'}
+117	117		301			DialogEnable				{3: 'Suddenly, you look once more toward the sea.'}
+118	118		301							"{3: ""The shattered remnants of the transport aircraft still burn as they float on the sea's surface, reflecting as a faint ember in your eyes.""}"
+119	119		302							{2: '(Run toward the sea.)', 3: '120'}
+120	120		201							{1: '1', 2: '501223', 3: '7', 5: '-100'}
+121	121		301				DialogDisable			{1: '1', 2: 'Haniff', 3: 'What the—! What are you doing now?', 4: '1'}
+122	122		202							{1: '1'}
+123	123		401							{1: '2', 2: '4044'}
+124	124		104						200.0	{1: '0|-50|0', 2: '0.2'}
+125	125		104							{1: '0|0|0', 2: '0.1'}
+126	126		301			DialogEnable	DialogDisable			{3: 'You suddenly scoop up Vera, who has entered standby mode, and sprints toward the sea with wild abandon.'}
+127	127		401						200.0	{1: '2', 2: '4635'}
+128	128		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+129	129		104						500.0	{1: '0|0|-150', 2: '0.5'}
+130	130		401							{1: '2', 2: '903'}
+131	131		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory616.jpg', 3: '0', 4: '1', 5: '0.3'}
+132	132		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory616.jpg'}
+133	133		205							{1: '999'}
+134	134		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+135	135		104						500.0	{1: '0|-50|0', 2: '0.5'}
+136	136		104							{1: '0|0|0', 2: '0.2'}
+137	137		301			DialogEnable	DialogDisable			{3: 'The seawater rises past your feet, your knees... rapidly engulfing your entire body as you sink into the brine.'}
+138	138		306							
+139	139		302							{2: 'If you can find some maintenance tools, there might be a chance...', 3: '140', 4: 'Phew...', 5: '140', 6: 'Faster!', 7: '140'}
+140	140		401							{1: '2', 2: '5539'}
+141	141		104						200.0	{1: '-30|0|0', 2: '0.2'}
+142	142		104						100.0	{1: '0|0|0', 2: '0.1'}
+143	143		104						200.0	{1: '30|0|0', 2: '0.2'}
+144	144		104							{1: '0|0|0', 2: '0.1'}
+145	145		301			DialogEnable				"{3: ""Bone-chilling waves crash against your face, even splashing into your mouth, but you don't dare to slow down. Supporting the Garnet frame, you make your way to the transport wreckage and search around with a flashlight.""}"
+146	146		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+147	147		301				DialogDisable			{3: 'Soon, you find your target—the seawater has extinguished most of the flames on the transport wreckage, and by some stroke of luck, the cargo area remains intact.'}
+148	148		302							"{2: ""...Just as you thought, there's a chance!"", 3: '149'}"
+149	149		301			DialogEnable	DialogDisable			{3: 'You struggle to drag Vera up onto the skeletal remains of the transport, then use the power of your exoskeleton to pull off the damaged outer shell.'}
+150	150		302							{2: 'Help me out, Haniff!', 3: '151'}
+151	151		104						200.0	{1: '-30|0|0', 2: '0.2'}
+152	152		104						100.0	{1: '0|0|0', 2: '0.1'}
+153	153		104						200.0	{1: '30|0|0', 2: '0.2'}
+154	154		104							{1: '0|0|0', 2: '0.1'}
+155	155		301			DialogEnable	DialogDisable			{3: 'Haniff follows behind, swimming with difficulty. He suffered numerous cuts during the recent battle, and the salt water is now stinging each wound mercilessly.'}
+156	156		306							{1: '1'}
+157	157		201							{1: '1', 2: '501223', 3: '7', 5: '-100'}
+158	158		301			DialogEnable				{1: '1', 2: 'Haniff', 3: 'First running, now swimming... What is this, a triathlon...? Pfft, this water tastes awful—!', 4: '1'}
+159	159		204							{1: '1', 2: '5'}
+160	160		301			PanelActor1Shake	DialogDisable			{1: '1', 2: 'Haniff', 3: 'Watch out!!', 4: '1'}
+161	161		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+162	162		201							{1: '1', 2: '500928', 4: '600', 7: '1'}
+163	163		203							{1: '1', 2: '0.2', 3: '0'}
+164	164		301			DialogEnable	DialogDisable			{3: 'Haniff suddenly raises his arm and fires at something behind you.'}
+165	165		401							{1: '2', 2: '5151'}
+166	166		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+167	167		401							{1: '2', 2: '5151'}
+168	168		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+169	169		502							{1: 'PanelActor1Shake'}
+170	170		203							{1: '1', 2: '0.2', 4: '-1080'}
+171	171		202							{1: '1'}
+172	172		301			DialogEnable	DialogDisable			{3: 'A Hetero-Creature that was about to launch a sneak attack shrieks as it falls back into the sea, creating a frustrated splash.'}
+173	173		104						200.0	{1: '-30|0|0', 2: '0.2'}
+174	174		104						100.0	{1: '0|0|0', 2: '0.1'}
+175	175		104						200.0	{1: '30|0|0', 2: '0.2'}
+176	176		104							{1: '0|0|0', 2: '0.1'}
+177	177		306							
+178	178		301			DialogEnable				"{3: ""You barely glance at it before turning around to continue tearing at the cargo container's outer shell.""}"
+179	179		201							{1: '1', 2: '501223', 3: '5', 4: '-600', 7: '1'}
+180	180		203				DialogDisable			{1: '1', 2: '0.25', 3: '0'}
+181	181		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Haniff', 3: ""...You didn't even notice that Hetero-Creature behind you?! I get that you're looking for maintenance components, but you've got to keep yourself alive first!!"", 4: '1'}"
+182	182		202							{1: '1'}
+183	183		104						200.0	{1: '-30|0|0', 2: '0.2'}
+184	184		104						100.0	{1: '0|0|0', 2: '0.1'}
+185	185		104						200.0	{1: '30|0|0', 2: '0.2'}
+186	186		104							{1: '0|0|0', 2: '0.1'}
+187	187		302							{2: 'Not just maintenance components!', 3: '188'}
+188	188		302							"{2: ""There's a... Sleeping Pod inside!"", 3: '189'}"
+189	189		201							{1: '1', 2: '501223', 3: '7'}
+190	190		301			DialogEnable				"{1: '1', 3: 'Haniff\'s expression turns serious. He had considered countless solutions, but never anticipated this kind of ""surprise.""'}"
+191	191		401						200.0	{1: '2', 2: '4305'}
+192	192		301			PanelActor1Shake				{1: '1', 3: 'He quickly helps you by delivering several kicks to the cargo container. Fortunately, neither of you has neglected their physical training, and after a burst of exertion, the two of you actually manage to tear off the outer shell.'}
+193	193		202							{1: '1'}
+194	194		301				DialogDisable			{3: 'The Sleeping Pod inside the container immediately slides into the water, bobbing with the waves.'}
+195	195		401						200.0	{1: '2', 2: '4049'}
+196	196		401							{1: '2', 2: '4772'}
+197	197		301			DialogEnable	DialogDisable			{3: 'You lunge for the pod cover, using your authorization to initiate the startup sequence—the same procedure you followed back in Atlantis.'}
+198	198		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+199	199		104						500.0	{1: '30|0|0', 2: '0.5'}
+200	200		306							{1: '1'}
+201	201		301			DialogEnable				"{3: ""Meanwhile, Haniff's gaze catches a detail on the corner of the Sleeping Pod.""}"
+202	202		201							{1: '1', 2: '501223', 3: '7', 5: '-100'}
+203	203		301				DialogDisable			"{1: '1', 2: 'Haniff', 3: ""...Hey, why is this marked with Kurono's emblem?"", 4: '1'}"
+204	204		302							"{2: ""I don't care if it's from the Science Council or Kurono!"", 3: '205'}"
+205	205		302							"{2: ""As long as it's..."", 3: '206'}"
+206	206		401						200.0	{1: '2', 2: '4049'}
+207	207		202							{1: '1'}
+208	208		301			DialogEnable				{3: 'You have no time for caution. After unlocking it, you fling open the pod cover and peer inside.'}
+209	209		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+210	210		302							"{2: ""...As long as it's her."", 3: '211', 4: ""...As long as it's Vera!"", 5: '211'}"
+211	211		401							{1: '2', 2: '2871'}
+212	212		306							
+213	213		201							{1: '1', 2: '501239', 3: '8'}
+214	214		301							"{1: '1', 3: '""Another"" Vera lies in the Sleeping Pod. Her eyes are tightly shut, her hair resting peacefully on her shoulders, her Bionic skin unblemished and pristine.'}"
+215	215		301							"{3: '—This is the ultimate ""weapon,"" yet to be baptized by the fires of battle.'}"
+216	216		301							{3: 'At the sight of this completely undamaged frame, you suddenly feel a pang of emotion.'}
+217	217		202							{1: '1'}
+218	218		301							"{3: ""But Haniff's gaze sweeps once more over the Kurono emblem at the pod's opening, and a certain serial number he's seen before.""}"
+219	219		201							{1: '1', 2: '501223', 3: '3'}
+220	220		301							{1: '1', 2: 'Haniff', 3: '...If Vera transfers to this frame, perhaps she really could wipe out every last one of those damn things.', 4: '1'}
+221	221		301							"{3: ""As you prepare to carry the Garnet frame inside, you catch a hint of sarcasm in Haniff's tone.""}"
+222	222		302							{2: 'What are you hiding?', 3: '223', 4: '...What is Kurono planning?', 5: '223'}
+223	223		204							{1: '1', 2: '0'}
+224	224		301							"{2: 'Haniff', 3: 'Don\'t give me that murderous look. Yes, I know about the core design of these Constructs—they\'re powerful, but just ""powerful,"" nothing more. Aren\'t you being overly cautious?', 4: '1'}"
+225	225		301							"{2: 'Haniff', 3: ""Besides, you don't have any cards left. If you don't help her transfer to a new frame, she'll simply die like this."", 4: '1'}"
+226	226		301							"{3: ""Haniff points to the red warning lights flashing on Vera's Garnet frame, then simply raises both hands in surrender, showing you that he has nowhere to run.""}"
+227	227		301							"{2: 'Haniff', 3: ""Sorry, but there's no time. This is the kind of pressure decision-makers have to bear, F.O.S. must have taught you that."", 4: '1'}"
+228	228		202				DialogDisable			{1: '1'}
+229	229		302							{2: '...', 3: '230'}
+230	230		201							{1: '1', 2: '500345', 3: '8'}
+231	231		301			DialogEnable				{1: '1', 3: 'Your gaze returns to the Construct in your arms.'}
+232	232		301							"{3: ""Just like in every mission before, Vera would claim she didn't care about anyone, yet she always kept everyone well protected.""}"
+233	233		301							"{3: ""Your fingers trace the outlines of countless wounds covering Garnet's body. Vital fluid seeps out, coating your hand, only to be washed away by the ocean waves.""}"
+234	234		301							"{3: ""The battle against countless Hetero-Creatures has completely drained all functions from this frame. In all your time together... you've never seen her in such a state, teetering on the edge of total system failure.""}"
+235	235		301				DialogDisable			{3: 'You take one final look at her, forcibly suppressing an inexplicable sense of familiarity and loss welling up inside.'}
+236	236		202							{1: '1'}
+237	237		302							"{2: ""...If there are any consequences, I'll bear them myself."", 3: '238'}"
+238	238		302							{2: 'Right now, keeping her alive comes first.', 3: '239'}
+239	239		302							{2: '(Place Vera in the chamber.)', 3: '240'}
+240	240		201							{1: '1', 2: '501223'}
+241	241		301			DialogEnable	DialogDisable			{1: '1', 2: 'Haniff', 3: 'How long will it take for her to successfully adapt to it?', 4: '1'}
+242	242		202							{1: '1'}
+243	243		302							"{2: ""I'm not sure. I've never seen her in this frame before."", 3: '244'}"
+244	244		302							"{2: ""But time waits for no one. I'll have to carry her on my back and let her adapt as we move."", 3: '245'}"
+245	245		301			DialogEnable				"{3: ""You tie a rope around their waist and Vera's, hoisting her onto your back, and secure everything with a tight cross-knot.""}"
+246	246		302							"{2: 'Let\'s go. We\'ll follow the coordinates to find that ""Eve"" now.', 3: '247'}"
+247	247		201							{1: '1', 2: '501223', 3: '7'}
+248	248		301							{1: '1', 2: 'Haniff', 3: 'You really are insane. Seeing someone so eager to die is a first... no, second for me.', 4: '1'}
+249	249		302							{2: 'This is not a death wish, Haniff. Every step we take is to escape death, not embrace it.', 3: '250'}
+250	250		202							{1: '1'}
+251	251		301				DialogDisable			"{3: 'You tighten the rope and look toward the building in the distance—that ""Gene Bank""—with a different kind of fire flickering in your eyes.'}"
+252	252		302				AniZhuanchangBegin			"{2: 'It\'s our turn now to fight desperately just to ""stay alive.""', 3: '253'}"
+253	253		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '1'}
+254	254		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '4'}
+255	255		401							{1: '2', 2: '4823'}
+256	256		109						200.0	{1: '1', 2: '<color=#ff4e4eff><size=60>Data Synchronization Progress: Initiating</size></color>', 9: '3'}
+257	257		401							{1: '2', 2: '9335029'}
+258	258		301		1		AniZhuanchangBegin			{3: 'Data Synchronization Progress: Initiating'}

@@ -1,0 +1,623 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+2	2		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+3	3		401							{1: '2', 2: '5951'}
+4	4		401			AniZhuanchangEnd				{1: '1', 2: '5024'}
+5	5		301			DialogEnable	DialogDisable			"{3: 'Etha\'s carriage flies through broad avenues and narrow lanes, carrying two souls bent on ""defying the world,"" leaving behind the stiff crowds, the sinking sun, and the crimson dusk...'}"
+6	6		104							{1: '0|0|-150', 2: '0.4'}
+7	7		401							{1: '2', 2: '5951'}
+8	8		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory366.png', 3: '0', 4: '1', 5: '1.5'}
+9	9		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory366.png'}
+10	10		205							{1: '999'}
+11	11		402							{1: '5951'}
+12	12		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+13	13		301			DialogEnable				{3: 'At last, under the chill gaze of a pallid moon, it draws to a stop before a modest two-story house, its chimney whispering soft curls of smoke.'}
+14	14		201							{1: '1', 2: '501093'}
+15	15		301							"{1: '1', 2: 'Etha', 3: ""Quick, this way! No one ever uses this path after dark. You'll be safe."", 4: '1', 18: '100012492'}"
+16	16		302							{2: 'This is...', 3: '17', 4: '(Vigilantly scan the surroundings)', 5: '17'}
+17	17		202							{1: '1', 6: '1'}
+18	18		201							{1: '1', 2: '501379', 3: '1'}
+19	19		301				AniZhuanchangBegin			"{1: '1', 2: 'Ishmael', 3: ""It's alright. Etha is a dear friend. She's been keeping an eye on you for a while now. You can trust her discretion."", 4: '1', 18: '100012493'}"
+20	20		202							{1: '1', 6: '1'}
+21	21		401						2000.0	{1: '1', 2: '36'}
+22	22		401							{1: '1', 2: '210'}
+23	23		401							{1: '2', 2: '4870'}
+24	24		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory731.jpg'}
+25	25		301			AniZhuanchangEnd				{3: 'Etha pushes the back door open first, releasing a peculiar blend of scents—complex spices, potatoes, and the tang of fish—that spills from a simmering pot and envelops all of you at once.'}
+26	26		201							{1: '1', 2: '501093'}
+27	27		301							"{1: '1', 2: 'Etha', 3: ""Oh, blast. Looks like Ms. Raheleh's prepared dinner. Maybe you two should duck into the backyard for a bit?"", 4: '1', 18: '100012494'}"
+28	28		201							{1: '18', 2: '501097', 4: '40', 5: '-270', 6: '-100'}
+29	29		301							{1: '1', 2: 'Raheleh', 3: 'Etha... I count three sets of footsteps. Who else have you dragged into the mess besides Ishmael?', 4: '18', 18: '100012495'}
+30	30		306							{1: '1'}
+31	31		202							{1: '1', 2: '18', 6: '1'}
+32	32		201							{1: '1', 2: '501097'}
+33	33		301							{1: '1', 3: 'In the high-ceilinged atrium, a tarpaulin drapes over a large, hidden form. The middle-aged woman who spoke is just tucking in the last corner of the cloth before carefully stepping down from her ladder.'}
+34	34		301							"{3: 'Her fingers are impeccably clean, untouched by the ""guidance."" Her eyes rest briefly on Ishmael\'s face with a mild smile, then drift over her shoulder to you, following behind.'}"
+35	35		306							
+36	36		203							{1: '1', 2: '0.25', 3: '400'}
+37	37		201							{1: '2', 2: '501379', 4: '-400'}
+38	38		301							"{1: '1', 2: 'Ishmael', 3: ""Profess... Godmother. This is 【kuroname】, a good friend I've recently made."", 4: '2', 18: '100012496'}"
+39	39		301							"{2: 'Raheleh', 3: 'So you\'re the one... ""A friend,"" is it? Must be quite a friend, to bring this one here in these perilous times. If you say so.', 4: '1', 18: '100012497'}"
+40	40		306							{1: '1'}
+41	41		202							{1: '1', 2: '2', 6: '1'}
+42	42		201							{1: '1', 2: '501097'}
+43	43		401							{1: '2', 2: '5526'}
+44	44		301							"{1: '1', 3: 'Raheleh flashes a knowing smile—one that says, ""I see right through you""—then wipes her hands on a rag, scrubbing away the dark stains that had just marked her skin.'}"
+45	45		301				DialogDisable			{3: 'With a sharp eye, you recognize the residue on her hands as machine oil.'}
+46	46		306							
+47	47		302							{2: '(Machine oil?)', 3: '48'}
+48	48		301			DialogEnable				"{2: 'Raheleh', 3: ""Dinner's on the stove, Etha. Be a dear and ladle it out."", 4: '1', 18: '100012498'}"
+49	49		202							{1: '1', 6: '1'}
+50	50		201							{1: '1', 2: '501093', 4: '-350'}
+51	51		201							{1: '2', 2: '501379', 4: '400'}
+52	52		301			PanelActor1Shake				"{1: '1', 2: 'Etha', 3: ""Do we have to? That looks like glue. Ishmael, save me... Let's just make some fresh juice like we used to when we were kids. That's a perfectly good dinner."", 4: '1', 18: '100012499'}"
+53	53		202							{1: '1', 2: '2'}
+54	54		401							{1: '2', 2: '2661'}
+55	55		301							{3: 'Raheleh returns a silver wrench from the table to her toolbox, closing the lid with deliberate care.'}
+56	56		201							{1: '1', 2: '501097', 4: '-400'}
+57	57		201							{1: '2', 2: '501093', 4: '400'}
+58	58		301							"{1: '1', 2: 'Raheleh', 3: 'It is not ""glue."" It\'s potato soup with several whole skyfish. A delicacy from Bola, and not something we get every day. This is no time to be fussy.', 4: '1', 18: '100012500'}"
+59	59		301							{2: 'Etha', 3: 'Skyfish is skyfish! Potato soup is potato soup! Who in their right mind mashes them together?!', 4: '2', 18: '100012501'}
+60	60		301							"{2: 'Raheleh', 3: ""It's called fusion cuisine, dear. Blending Thebesian tradition with a bit of innovation. Etha, you should always be open to new ideas, even in cooking."", 4: '1', 18: '100012502'}"
+61	61		301							"{2: 'Etha', 3: ""I'm begging you, stick to inventing your giant metal chunks. Please. My stomach thanks you."", 4: '2', 18: '100012503'}"
+62	62		202							{1: '1', 2: '2'}
+63	63		301							"{3: 'The word ""inventing"" springs from Etha\'s lips, and suddenly, all your confusion about this cottage falls into place.'}"
+64	64		302							"{2: ""Oh, so you're an inventor."", 3: '65'}"
+65	65		201							{1: '1', 2: '501097'}
+66	66		301							"{1: '1', 2: 'Raheleh', 3: 'Hahaha... No wonder you\'ve been studying everything since you walked in. I fit the ""inventor"" label perfectly, don\'t I? The eccentric tinker, holed up in her cottage, obsessed with gadgets the world has no use for.', 4: '1', 18: '100012504'}"
+67	67		202							{1: '1', 6: '1'}
+68	68		201							{1: '1', 2: '501379', 3: '11'}
+69	69		301							{1: '1', 2: 'Ishmael', 3: 'Raheleh...', 4: '1', 18: '100012505'}
+70	70		202							{1: '1', 6: '1'}
+71	71		201							{1: '1', 2: '501097'}
+72	72		301							"{1: '1', 2: 'Raheleh', 3: ""Etha moved back in a few years ago. She's been a godsend, really. A wonderful kid."", 4: '1', 18: '100012506'}"
+73	73		202							{1: '1'}
+74	74		401							{1: '2', 2: '5281'}
+75	75		301				DialogDisable			{3: 'Etha pulls a face but acquiesces, resigned to her fate. She grabs a stack of plates and approaches the simmering pot—its eerie, grey-blue glow casting faint shadows—all while pinching her nose tightly.'}
+76	76		302							"{2: ""I don't think you're eccentric. And from what I can see, your work looks..."", 3: '77'}"
+77	77		302							"{2: '...quite ""grand.""', 3: '78'}"
+78	78		306							{1: '1'}
+79	79		104						550.0	{1: '0|-50|-200', 2: '0.5'}
+80	80		301			DialogEnable	DialogDisable			{3: 'Your attention drifts toward the center of the room, where a large form lies shrouded beneath a cloth.'}
+81	81		306							
+82	82		104						550.0	{1: '0|0|0', 2: '0.5'}
+83	83		201							{1: '1', 2: '501097'}
+84	84		301			DialogEnable				"{1: '1', 2: 'Raheleh', 3: ""Now that's a kind thing to say! Would you like a proper look? Though I've just covered it up, I've been waiting for an excuse to pull the cover off with a proper flourish."", 4: '1', 18: '100012507'}"
+85	85		302							"{2: ""I'd be honored to see it."", 3: '86', 4: ""I'd absolutely love to see it!"", 5: '86', 6: ""I'd be honored to be your first audience."", 7: '86'}"
+86	86		301							{2: 'Raheleh', 3: 'Splendid! Now, prepare yourself...', 4: '1', 18: '100012508'}
+87	87		202							{1: '1'}
+88	88		401							{1: '2', 2: '10113408'}
+89	89		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+90	90		306							{1: '1'}
+91	91		301				DialogDisable			{3: 'With a single, swift motion, the tarp is seized by one corner and swept dramatically aside. The smell of the soup swirls through the room, and there, standing amid these most absurd of scents, looms the massive form of—'}
+92	92		307							"{1: '""Mecha""', 3: '55', 4: 'ffffffff'}"
+93	93		301							"{3: '""Mecha""'}"
+94	94		307							{2: '1'}
+95	95		301			DialogEnable	DialogDisable			{3: 'The word—a term never before spoken, never even fully formed in your mind—materializes from the air itself and escapes your lips almost without your consent.'}
+96	96		306							
+97	97		302							{2: 'A mecha?!', 3: '98'}
+98	98		201							{1: '1', 2: '501097'}
+99	99		301			DialogEnable				"{1: '1', 2: 'Raheleh', 3: '""Mecha""? I like that. Far better than Etha\'s ""metal chunks."" You hear that, Etha? Our guest has more of a poet\'s touch than you reporters.', 4: '1', 18: '100012509'}"
+100	100		202							{1: '1', 6: '1'}
+101	101		201							{1: '1', 2: '501093', 7: '1'}
+102	102		301			PanelActor1Shake				{1: '1', 2: 'Etha', 3: 'Oww, hot-hot-hot...', 4: '1', 18: '100012510'}
+103	103		202							{1: '1'}
+104	104		301							{3: 'The highly cultured Ms. Etha, reporter extraordinaire, is currently waging a losing battle against a grotesquely gooey amalgamation of skyfish and mashed potatoes.'}
+105	105		201							{1: '1', 2: '501097'}
+106	106		301							{1: '1', 2: 'Raheleh', 3: 'You recognized it immediately. How have you come across something like this before?', 4: '1', 18: '100012511'}
+107	107		302							"{2: ""I'm not sure. It just feels... familiar. Like I already know how to pilot it."", 3: '108'}"
+108	108		301							"{2: 'Raheleh', 3: '""Pilot""... You even know it can be manually operated, and you still say you\'re not sure?', 4: '1', 18: '100012512'}"
+109	109		401							{1: '2', 2: '4768'}
+110	110		301							"{3: ""Raheleh gives the mecha's gleaming shell an affectionate pat, her smile blooming with pride.""}"
+111	111		301							"{2: 'Raheleh', 3: ""If the chance arises, perhaps you'd like to be the first to take it for a spin. Put its functions to the test. How does that sound?"", 4: '1', 18: '100012513'}"
+112	112		301							"{2: 'Raheleh', 3: 'I dream that one day, these ""mechas"" could help with heavy labor. Hauling cargo, clearing land... all of it.', 4: '1', 18: '100012514'}"
+113	113		302							"{2: 'Sure thing.', 3: '114', 4: ""We'll see."", 5: '114', 6: 'Well, I happen to be a bit of an expert!', 7: '114'}"
+114	114		203							{1: '1', 2: '0.25', 3: '400'}
+115	115		201							{1: '2', 2: '501379', 3: '1', 4: '-400'}
+116	116		301							"{1: '1', 2: 'Ishmael', 3: ""Every time you find someone who can keep up, you just have to rope them into a passionate chat... You two are getting along entirely well, aren't you?"", 4: '2', 18: '100012515'}"
+117	117		302							{2: 'By the way, does it have a name of its own? A project designation?', 3: '119'}
+118	118		301							{2: 'Raheleh', 3: 'Yes. I call it...', 4: '1', 18: '100012516'}
+119	119		301							{3: 'With a sweep of her hand, she directs your attention to its magnificent right arm, where a single line of text is engraved into the metal.'}
+120	120		301							"{2: 'Raheleh', 3: '""Ishmary"".', 4: '1', 18: '100012517'}"
+121	121		204							{1: '2', 2: '7'}
+122	122		301							"{3: 'Ishmael freezes. The gentle look she had worn just a moment before—the soft amusement of observing this ""harmonious meeting""—stiffens on her face.'}"
+123	123		204							{1: '2', 2: '14'}
+124	124		301							{3: 'Then, in a heartbeat, it shatters. Her features shift into an expression of unmistakable melancholy, a raw and fragile emotion rarely, if ever, seen on her face.'}
+125	125		301							{2: 'Ishmael', 3: '...Professor, the more you do, the harder it becomes for me to let you all go.', 4: '2', 18: '100012518'}
+126	126		301							"{2: 'Raheleh', 3: 'Oh, listen to you... ""Professor."" From which god did you even pick up that title? I\'m your godmother, not your professor.', 4: '1', 18: '100012519'}"
+127	127		301							"{3: ""Raheleh pats the back of Ishmael's hand. At the touch, Ishmael's gaze flickers downward. Something glimmers at the corner of her eye, then vanishes as quickly as it came.""}"
+128	128		204							{1: '2', 2: '8'}
+129	129		301							{3: 'All that remains is the faint, almost imperceptible sigh that escapes her lips.'}
+130	130		202							{1: '1', 2: '2', 6: '1'}
+131	131		201							{1: '1', 2: '501093'}
+132	132		301							"{1: '1', 2: 'Etha', 3: 'Alright, alright, food\'s getting cold! Has everyone forgotten how long your poor ""carriage driver"" Etha struggled with this pot of skyfish?', 4: '1', 18: '100012520'}"
+133	133		401						500.0	{1: '2', 2: '5735'}
+134	134		401							{1: '2', 2: '5290'}
+135	135		202							{1: '1'}
+136	136		301							{3: 'With a practiced sweep of her arm, Etha clears the table, her usual workspace littered with documents and newspapers, to make room for several bowls of stew and spoons.'}
+137	137		306							{1: '1'}
+138	138		401							{1: '2', 2: '4892'}
+139	139		301				DialogDisable			{3: 'Rolls of newsprint tumble into a waiting cardboard box on the floor, rustling and colliding as they settle. Your gaze is drawn to several bold headlines, stark and accusing in thick black ink:'}
+140	140		307							"{1: '""The Pontiff\'s Specter Looms Over Thebesia""', 3: '55', 4: 'ffffffff'}"
+141	141		301							"{3: '""The Pontiff\'s Specter Looms Over Thebesia""'}"
+142	142		307						200.0	{2: '1'}
+143	143		307							"{1: '""Inspectorate General Formally Indicts Former Pontiff Ishmael""', 3: '55', 4: 'ffffffff'}"
+144	144		301							"{3: '""Inspectorate General Formally Indicts Former Pontiff Ishmael""'}"
+145	145		307							{2: '1'}
+146	146		306							
+147	147		201							{1: '1', 2: '501093'}
+148	148		301			DialogEnable				"{1: '1', 2: 'Etha', 3: ""Sit, sit! Don't pay any attention to that trash. It's all nonsense. I've already written a brilliant piece that'll counter all of it. It'll be on the presses by dawn. We'll turn this right around, brilliantly!"", 4: '1', 18: '100012521'}"
+149	149		202							{1: '1', 6: '1'}
+150	150		201							{1: '1', 2: '501379', 3: '1'}
+151	151		301							{1: '1', 2: 'Ishmael', 3: 'What sort of article? The paper actually agreed to run it?', 4: '1', 18: '100012522'}
+152	152		202							{1: '1', 6: '1'}
+153	153		201							{1: '1', 2: '501093'}
+154	154		301							"{1: '1', 2: 'Etha', 3: ""Of course they did! I'm their star reporter, remember? They're begging me for copy. I've systematically dismantled every single rumor about you."", 4: '1', 18: '100012523'}"
+155	155		301							"{2: 'Etha', 3: 'For example, regarding the ""corruption"" nonsense, I got the manager of the Pontiff\'s residence to hand over your expense records. Years of them! They show you\'ve lived with absolute austerity. Completely innocent!', 4: '1', 18: '100012524'}"
+156	156		301							"{2: 'Etha', 3: 'But the ""colluding with external forces"" accusation... that\'s the serious one. I tried several cardinal bishops, but they wouldn\'t give me the time of day. I always told you not to trust them. Half of them are in the government\'s pocket!', 4: '1', 18: '100012525'}"
+157	157		301							"{2: 'Etha', 3: ""So, I went to the embassy instead. Got records showing you refused every visitor from Kerentos. You saw this coming, didn't you? You were being so careful to avoid even the appearance of impropriety... and they still pinned it on you."", 4: '1', 18: '100012526'}"
+158	158		301							"{2: 'Etha', 3: ""I've got it all compiled. Just you wait. Though... there is one point that's a bit tricky to explain..."", 4: '1', 18: '100012527'}"
+159	159		202							{1: '1', 6: '1'}
+160	160		201							{1: '1', 2: '501379', 3: '9'}
+161	161		301							{1: '1', 2: 'Ishmael', 3: 'What about me could possibly be tricky to explain?', 4: '1', 18: '100012528'}
+162	162		202							{1: '1'}
+163	163		301							"{3: 'You take your seat at the table and begin to eat, listening absently at first. But after a single bite, you set the spoon down, your focus narrowing entirely on her words. They call to mind, with sudden clarity, a certain ""Pontiff scandal"" that Officer Shorthalt had mentioned.'}"
+164	164		302							"{2: 'It\'s not... ""inappropriate conduct,"" is it?', 3: '165'}"
+165	165		201							{1: '1', 2: '501093'}
+166	166		301							{1: '1', 2: 'Etha', 3: 'Huh, it actually is.', 4: '1', 18: '100012529'}
+167	167		202							{1: '1', 6: '1'}
+168	168		201							{1: '1', 2: '501379', 3: '10'}
+169	169		301							{1: '1', 2: 'Ishmael', 3: '...', 4: '1', 18: '100012530'}
+170	170		301							{3: 'Ishmael sets her spoon down as well. She lifts a hand to her forehead, then shows a resigned smile.'}
+171	171		202							{1: '1', 6: '1'}
+172	172		201							{1: '1', 2: '501093'}
+173	173		301							"{1: '1', 3: 'Suddenly, Etha seems to notice something. Her gaze darts back and forth between Ishmael and you, her ""friend,"" like a squirrel tracking fallen nuts. Then, her eyes widen, alight with the spark of a thrilling realization.'}"
+174	174		301							{2: 'Etha', 3: 'Wait! I just had a genius idea!', 4: '1', 18: '100012531'}
+175	175		202							{1: '1', 6: '1'}
+176	176		201							{1: '1', 2: '501097'}
+177	177		301							"{1: '1', 2: 'Raheleh', 3: ""I have a feeling you've come up with something... remarkably creative."", 4: '1', 18: '100012532'}"
+178	178		202							{1: '1', 6: '1'}
+179	179		201							{1: '1', 2: '501093', 5: '-20'}
+180	180		301							"{1: '1', 2: 'Etha', 3: ""Ishmael, you two, go up to the attic later and sit on Ishmael's old bed. Get cozy if you want!"", 4: '1', 18: '100012533'}"
+181	181		301							{3: 'Etha makes a suggestive circular gesture between Ishmael and you, indicating intimacy.'}
+182	182		301							"{2: 'Etha', 3: 'Then I\'ll take a few photos. Yes, exactly what you\'re thinking! ""Pontiff\'s Intimate Evening with Mystery Prosecutor!"" followed by ""Exclusive: Who Is the Pontiff\'s Secret Lover?!"" It\'ll be front-page news! Every eye in Thebesia will be on that!', 4: '1', 18: '100012534'}"
+183	183		301							"{2: 'Etha', 3: 'First, we leak the ""intimate photos,"" play up the story of a long-time secret devotion...', 4: '1', 18: '100012535'}"
+184	184		301							{2: 'Etha', 3: 'Then we catch a few celebrities in some juicy scandals, and bam! Public attention shifts completely!', 4: '1', 18: '100012536'}
+185	185		203							{1: '1', 2: '0.25'}
+186	186		401							{1: '2', 2: '4079'}
+187	187		104						200.0	{1: '0|50|0', 2: '0.15'}
+188	188		104							{1: '0|0|0', 2: '0.15'}
+189	189		301							{3: 'Etha leaps to her feet, slamming both hands on the table with unrestrained excitement. The impact sends a tremor through the bowls, causing the poorly cooked skyfish to quiver indignantly across the tabletop.'}
+190	190		301							"{2: 'Etha', 3: 'Yes, that\'s it! We let it simmer for a few months, then we explain it all away: ""The Pontiff, in her mercy, was merely absolving a troubled follower of afflictions...""', 4: '1', 18: '100012537'}"
+191	191		302							{2: '(Cough violently)', 3: '192'}
+192	192		203							{1: '1', 2: '0.25', 3: '-400'}
+193	193		201							{1: '2', 2: '501379', 3: '7', 4: '400'}
+194	194		301							{1: '1', 3: 'Ishmael appears to be breaking into a sweat.'}
+195	195		204							{1: '2', 2: '9'}
+196	196		301							"{2: 'Ishmael', 3: ""Etha... Etha, sit down and take a breath. It's alright. Let's think this through. We might not need to go that route..."", 4: '2', 18: '100012538'}"
+197	197		301							"{2: 'Etha', 3: ""This is about your life! Shouldn't you be a little more supportive of my brilliant plans?"", 4: '1', 18: '100012539'}"
+198	198		202							{1: '2', 6: '1'}
+199	199		201							{1: '2', 2: '501097', 4: '400'}
+200	200		301							{1: '1', 2: 'Raheleh', 3: '...Etha, let it go.', 4: '2', 18: '100012540'}
+201	201		301							{2: 'Etha', 3: 'Mother! You were on my side a second ago! Talk some sense into her—', 4: '1', 18: '100012541'}
+202	202		202							{1: '2', 6: '1'}
+203	203		201							{1: '2', 2: '501379', 3: '10', 4: '400'}
+204	204		301							"{1: '1', 2: 'Ishmael', 3: '...It\'s no use, Etha. We all know the truth. The public\'s been ""guided."" They won\'t listen. My sins are already nailed to the cross... There\'s no point in any of this now.', 4: '2', 18: '100012542'}"
+205	205		204							{1: '2', 2: '1'}
+206	206		301							"{2: 'Ishmael', 3: ""I warned you both. If things went wrong, even this cottage where I was raised wouldn't be safe. We agreed we'd share one last meal, then pack our things and leave the capital of Thebesia. Remember?"", 4: '2', 18: '100012543'}"
+207	207		301							"{3: ""Even Ishmael's smile seems strained now.""}"
+208	208		204							{1: '2'}
+209	209		301							{2: 'Ishmael', 3: 'Raheleh took us in when we needed shelter. The least we can do is bring her somewhere she can pursue her inventions in peace.', 4: '2', 18: '100012544'}
+210	210		301							{2: 'Etha', 3: '...I know. But I... but you... What happens to you is what matters...', 4: '1', 18: '100012545'}
+211	211		301							{3: 'Etha leans forward, palms pressed flat against the table as she hangs her head low, locked in a silent standoff with the skyfish on her plate.'}
+212	212		302							{2: '...', 3: '213'}
+213	213		202							{1: '1', 2: '2'}
+214	214		301							{3: 'It seems everyone at the table already knows the truth: these beautiful, fleeting days of peace are nearing their end.'}
+215	215		201							{1: '1', 2: '501093', 4: '-400'}
+216	216		201							{1: '2', 2: '501379', 4: '400'}
+217	217		301							{1: '1', 2: 'Etha', 3: 'Raheleh and I... we should have stopped them. We never should have let those lords and ladies take you away.', 4: '1', 18: '100012546'}
+218	218		301							"{2: 'Etha', 3: 'All that talk about an innate ""divine power."" Such nonsense! That water you drank turned to wine? The stones you touched yielded gold? Wounds healed with your pardon? And just like that, you were their new Pontiff.', 4: '1', 18: '100012547'}"
+219	219		301							"{2: 'Etha', 3: ""But we know you. We squeezed those vegetable juices with you. We drank them too. So why aren't we divine? Why aren't we immortal?"", 4: '1', 18: '100012548'}"
+220	220		301							"{2: 'Etha', 3: ""We watched them take your handkerchief. The candlestick you'd touched. They even cut down the tree you used to climb in the courtyard! I heard they made a new desk out of it for some minister!"", 4: '1', 18: '100012549'}"
+221	221		301							"{2: 'Etha', 3: 'So tell me, Ishmael. Do you? Do you really have this ""divine power""? Did those people truly receive your ""merciful forgiveness""?', 4: '1', 18: '100012550'}"
+222	222		301							"{3: 'Etha\'s fingers almost dig into the wood. You watch her whitened knuckles, half-terrified that her anguish will manifest into something tangible, that those ""tendrils"" might erupt from her very fingertips. But nothing happens.'}"
+223	223		202							{1: '1', 2: '2'}
+224	224		301							{3: 'Every choked word she speaks comes from the heart, woven from memories—true and tender—that she, Ishmael, and Raheleh once shared.'}
+225	225		201							{1: '15', 2: '501093', 4: '-400'}
+226	226		201							{1: '16', 2: '501379', 4: '400'}
+227	227		301							"{1: '1', 2: 'Etha', 3: ""If you really have this power... then why is the world like this? Why does everything feel so... confused? Like you're keeping us in the dark on purpose."", 4: '15', 18: '100012551'}"
+228	228		301							"{2: 'Etha', 3: ""I did what you told me to these past few days, keeping my distance and watched. I saw you open your eyes in a coffin. I saw your neck pierced in that elevator... but after all that, you're still alive somehow like it was nothing."", 4: '15', 18: '100012552'}"
+229	229		301							"{2: 'Etha', 3: ""And I've been having these... dreams. The world was completely different, but it felt so real. You were my classmate, my friend. Raheleh was your professor... I wake up and I don't know which one is the real world anymore."", 4: '15', 18: '100012553'}"
+230	230		301							{2: 'Etha', 3: 'Ishmael, what happened to you? What happened to the world? What do you have to do with all of it?', 4: '15', 18: '100012554'}
+231	231		204							{1: '16', 2: '14'}
+232	232		301							"{2: 'Ishmael', 3: ""...I'm sorry. This is my fault."", 4: '16', 18: '100012555'}"
+233	233		401							{1: '2', 2: '2936'}
+234	234		203							{1: '15', 2: '0.25', 3: '-450'}
+235	235		203							{1: '16', 2: '0.25', 3: '450'}
+236	236		201							{1: '1', 2: '501097'}
+237	237		301							"{1: '1', 3: ""Then, at just the right moment, Raheleh's hands reach out. She gently strokes the hair of both girls, a quiet anchor in the storm.""}"
+238	238		301							"{2: 'Raheleh', 3: 'Oh, my dear girls... Don\'t push so hard, Etha. What Ishmael ""becomes""... that is her own path. Her truth might be beyond our understanding. And if it is, then we don\'t need to understand it.', 4: '1', 18: '100012556'}"
+239	239		301							"{2: 'Raheleh', 3: 'And don\'t you carry that guilt, Ishmael. ""Pontiff"" or not, you are still you. Your title never changed how we see you. Etha is just worried.', 4: '1', 18: '100012557'}"
+240	240		301							"{2: 'Raheleh', 3: 'As for me... my work is done. I finished the final oiling today. ""Ishmary"" is ready. Even if I had to leave tomorrow, I\'d have no regrets.', 4: '1', 18: '100012558'}"
+241	241		204							{1: '16', 2: '8'}
+242	242		301							"{2: 'Ishmael', 3: 'No... my apology is for more than that. It\'s for this... ""world""...', 4: '16', 18: '100012559'}"
+243	243		301							{2: 'Raheleh', 3: 'None of that matters to us.', 4: '1', 18: '100012560'}
+244	244		204							{1: '16', 2: '14'}
+245	245		301							"{2: 'Raheleh', 3: 'Ishmael, seeing you like this is what worries me. Do what you want to do. Forget this ""divine power."" Follow your own desires.', 4: '1', 18: '100012561'}"
+246	246		301							{2: 'Raheleh', 3: 'We will always be right behind you. No matter what.', 4: '1', 18: '100012562'}
+247	247		401							{1: '2', 2: '2936'}
+248	248		203							{1: '16', 2: '0.4', 3: '350', 4: '-135'}
+249	249		301							"{3: ""Her fingers brush through Ishmael's soft pink strands. For a moment, Ishmael simply absorbs the touch, silent and still, then finally yields, burying her face deeply into her godmother's embrace.""}"
+250	250		204							{1: '16', 2: '8'}
+251	251		301							{2: 'Ishmael', 3: '...Yes. You always have been.', 4: '16', 18: '100012563'}
+252	252		301							"{2: 'Raheleh', 3: ""Now, everyone should get some rest. I'll clean up. We leave at first light, just as we planned."", 4: '1', 18: '100012564'}"
+253	253		301							{2: 'Raheleh', 3: 'Wherever you are, our journey begins tomorrow. You are free to choose your path. And so are we.', 4: '1', 18: '100012565'}
+254	254		204							{1: '16', 2: '14'}
+255	255		301				AniZhuanchangBegin			{2: 'Ishmael', 3: '...I see.', 4: '16', 18: '100012566'}
+256	256		202							{1: '1', 2: '15', 3: '16', 6: '1'}
+257	257		306							{1: '1'}
+258	258		401						2000.0	{1: '1', 2: '36'}
+259	259		401							{1: '1', 2: '120'}
+260	260		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory752.jpg'}
+261	261		301			AniZhuanchangEnd				"{3: ""At ten o'clock, Ishmael ascends to the attic, her hand gliding silently along the railing.""}"
+262	262		301				DialogDisable			{3: 'She finds you leaning in the shadowed corner, talking, your back turned to her, the telephone receiver gripped tightly in your hand.'}
+263	263		306							
+264	264		509						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 2: '1'}
+265	265		401							{1: '2', 2: '886'}
+266	266		301			DialogEnable				{2: 'Operator', 3: 'Hello, the number you are trying to reach is... Very well, connecting you now.', 18: '100012567'}
+267	267		302							"{2: ""I'm a legal prosecutor..."", 3: '268'}"
+268	268		402							{1: '886'}
+269	269		301							{3: 'After a brief pause, you decide to use a different name for this call.'}
+270	270		302							{2: 'This is May, from the Inspectorate General. I need to speak with...', 3: '271', 4: 'This is Ken, from the Inspectorate General. I need to speak with...', 5: '271'}
+271	271		301							"{2: 'Operator', 3: ""One moment, please. The line is still ringing. We'll have your connection shortly."", 18: '100012568'}"
+272	272		401							{1: '2', 2: '886'}
+273	273		302				AniZhuanchangBegin			{2: '...', 3: '274'}
+274	274		402							{1: '886'}
+275	275		401							{1: '2', 2: '887'}
+276	276		301			AniZhuanchangEnd				"{3: ""After a long series of rings that seem to stretch into the void, the line finally connects. But it is only the operator's voice that answers: rehearsed, smooth, and faintly apologetic.""}"
+277	277		402							{1: '887'}
+278	278		301							"{2: 'Operator', 3: ""I'm sorry, there's no answer from that extension."", 18: '100012569'}"
+279	279		302							{2: '...Can you patch me through to the police station, then? Detective Shorthalt, Criminal Investigations. The number is...', 3: '280'}
+280	280		301				DialogDisable			"{2: 'Operator', 3: ""I apologize, the other party... Oh! He's picked up. Mr. Shorthalt? I have a legal prosecutor from the capital on the line for you."", 18: '100012570'}"
+281	281		510						800.0	{1: '1'}
+282	282		509						350.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 2: '1'}
+283	283		201							{1: '11', 2: '500730', 4: '-550'}
+284	284		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '11'}
+285	285		301			DialogEnable				"{1: '1', 2: 'Shorthalt', 3: ""Save the introduction. Who else calls at this hour? Alright, 【kuroname】, where are you holed up? The whole city's turning over every rock looking for you."", 4: '11', 18: '100012571'}"
+286	286		302							{2: 'The police are in on the hunt too?', 3: '287'}
+287	287		301							"{2: 'Shorthalt', 3: ""You bet. Look out any attic window or peek from sewer grate, and you'll see blinding searchlights and police dogs swarming every alley."", 4: '11', 18: '100012572'}"
+288	288		301							"{2: 'Shorthalt', 3: 'Capturing the Pontiff and her so-called ""lover"" has become the operation of the century. You\'ve been gone one day, and the rumors have already spiraled out of control. Even folks at the station are starting to buy into it. I don\'t know if I\'m losing my mind or if the whole world has.', 4: '11', 18: '100012573'}"
+289	289		302							"{2: ""It's the world."", 3: '290'}"
+290	290		301							"{2: 'Shorthalt', 3: ""Yeah, I'd rather believe that too."", 4: '11', 18: '100012574'}"
+291	291		302							"{2: ""So you're not turning us in?"", 3: '292'}"
+292	292		301							"{2: 'Shorthalt', 3: ""...Ever since our little trip to the central tower, things started making sense. Everything clicked. I'm turning in my badge tomorrow, done with being a cop for good."", 4: '11', 18: '100012575'}"
+293	293		301				DialogDisable			"{2: 'Shorthalt', 3: ""I'm heading back to my hometown to confess to that shrew I've loved for years... I'll get down on my knees if I have to, even if she challenges me to a duel. After that, I'll become an artist. Or her personal bodyguard, if she'll have me."", 4: '11', 18: '100012576'}"
+294	294		302							"{2: ""That's quite the artistic approach."", 3: '295', 4: 'Good luck with that.', 5: '295', 6: '(Cough)', 7: '295'}"
+295	295		302							{2: 'Before you go throwing yourself at her feet, can I ask a favor?', 3: '296'}
+296	296		302							"{2: ""Just some information. That's all."", 3: '297'}"
+297	297		301			DialogEnable				{2: 'Shorthalt', 3: 'Tell me what you want to know first.', 4: '11', 18: '100012577'}
+298	298		302							{2: 'Any large public gatherings coming up? The bigger, the better.', 3: '299'}
+299	299		301							"{2: 'Shorthalt', 3: ""Well, there is one... In seven days, there's an inauguration ceremony for the new Pontiff, nominated by the College of Cardinals and chosen by the faithful. It's hastily arranged, so I doubt the scale will be too big."", 4: '11', 18: '100012578'}"
+300	300		301							{2: 'Shorthalt', 3: 'What are you planning? Blow up the venue and turn that illegitimate Pontiff into human fireworks?', 4: '11', 18: '100012579'}
+301	301		302							{2: 'Something like that, maybe.', 3: '302'}
+302	302		301							"{2: 'Shorthalt', 3: ""...You'd make a better artist than me."", 4: '11', 18: '100012580'}"
+303	303		301							{2: 'Shorthalt', 3: 'But take some advice: Thebesia is losing its mind, on the verge of going completely mad. Better to lie low than charge straight into that chaos.', 4: '11', 18: '100012581'}
+304	304		301							"{2: 'Shorthalt', 3: ""I bought tickets to Kerentos under my name. Two of them. We both know why there are two. It's the last ship out, so I suggest you take this chance."", 4: '11', 18: '100012582'}"
+305	305		301							"{2: 'Shorthalt', 3: ""Next time you call the station, I won't be here to answer."", 4: '11', 18: '100012583'}"
+306	306		302							{2: 'Thank you, Shorthalt.', 3: '307'}
+307	307		301				DialogDisable			"{2: 'Shorthalt', 3: ""You're welcome."", 4: '11', 18: '100012584'}"
+308	308		401							{1: '2', 2: '825'}
+309	309		510						250.0	{1: '1'}
+310	310		202							{1: '11'}
+311	311		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '11'}
+312	312		301			DialogEnable	DialogDisable			{3: 'He promptly hangs up, without the slightest hint of hesitation.'}
+313	313		509						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 2: '1'}
+314	314		301			DialogEnable				"{2: 'Operator', 3: ""Hello, will there be anyone else you'd like to speak with today?"", 18: '100012585'}"
+315	315		302							{2: '...', 3: '316'}
+316	316		301							{3: 'After a few seconds of silence with the receiver in hand, you hesitantly voice your thought.'}
+317	317		302							{2: 'Is it possible to place an overseas call?', 3: '318'}
+318	318		301							{2: 'Operator', 3: 'Where to? Be advised, wartime rates are considerably higher.', 18: '100012586'}
+319	319		302							{2: 'The capital of Kerentos. The area code is...', 3: '320'}
+320	320		301							"{2: 'Operator', 3: ""I'm sorry. All lines to Kerentos are currently under government control. Perhaps you could contact a special liaison office for authorization..."", 18: '100012587'}"
+321	321		302				AniZhuanchangBegin			"{2: ""I understand. That won't be necessary. Thank you."", 3: '322'}"
+322	322		510							{1: '1'}
+323	323		502						500.0	{1: 'DialogDisable'}
+324	324		101			AniZhuanchangEnd			500.0	{1: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_05_01.jpg'}
+325	325		301			DialogEnable				{2: 'Ishmael', 3: 'Trouble?', 4: '1', 18: '100012588'}
+326	326		302				DialogDisable			"{2: ""The whole city's lost its mind."", 3: '327'}"
+327	327		205						600.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_05_02.jpg', 3: '0', 4: '1', 5: '0.5'}
+328	328		101							{1: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_05_02.jpg'}
+329	329		205							{1: '999'}
+330	330		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_05_03.png', 3: '0', 4: '1', 5: '0.5'}
+331	331		104							{1: '0|0|180', 2: '0', 4: '3'}
+332	332		104						800.0	{1: '0|0|0', 2: '0.6', 4: '3'}
+333	333		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_05_04.png', 3: '0', 4: '1', 5: '0'}
+334	334		205							{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_05_05.png', 3: '0', 4: '1', 5: '0'}
+335	335		104							{1: '-400|0|0', 2: '0', 4: '6'}
+336	336		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_05_06.png', 3: '0', 4: '1', 5: '0'}
+337	337		104							{1: '400|0|0', 2: '0', 4: '4'}
+338	338		401							{1: '2', 2: '5957'}
+339	339		104							{1: '0|0|0', 2: '0.5', 4: '6'}
+340	340		104						1000.0	{1: '0|0|0', 2: '0.5', 4: '4'}
+341	341		301			DialogEnable				{3: 'Ishmael, who had been listening in silence all this while, gently lowers the edge of the curtain, blocking the faint, ominous glow of the gas lamps from the alley. Just as Shorthalt had warned, they are hunting for the two of you.'}
+342	342		301				DialogDisable			"{2: 'Ishmael', 3: 'Yes. The ""world"" has known we were here all along. It\'s only because of me that it hasn\'t reached in and crushed this little house.', 4: '1', 18: '100012589'}"
+343	343		302							{2: 'How much longer can you hold it back?', 3: '344'}
+344	344		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_05_07.png', 3: '0', 4: '1', 5: '0.5'}
+345	345		104							{1: '-100|0|0', 2: '0.8', 4: '7'}
+346	346		104						1000.0	{1: '0|0|0', 2: '0.8', 4: '7'}
+347	347		301			DialogEnable	AniZhuanchangBegin			{2: 'Ishmael', 3: 'Long enough for you to get a few nights of peaceful sleep.', 4: '1', 18: '100012590'}
+348	348		205							{1: '1003', 3: '0', 4: '1', 5: '0'}
+349	349		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+350	350		205							{1: '1005', 3: '0', 4: '1', 5: '0'}
+351	351		205							{1: '1006', 3: '0', 4: '1', 5: '0'}
+352	352		205							{1: '1007', 3: '0', 4: '1', 5: '0'}
+353	353		502						500.0	{1: 'DialogDisable'}
+354	354		101			AniZhuanchangEnd			500.0	{1: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_06_01.jpg'}
+355	355		302							{2: 'Tomorrow, while Raheleh and Etha head to somewhere safe, we prepare to make our move.', 3: '356'}
+356	356		301			DialogEnable				"{2: 'Ishmael', 3: 'You\'re thinking of converging the ""guidance"" at the Pontiff\'s ceremony seven days from now? The Cardinals would prefer to hold that behind closed doors. And the ""world"" already anticipates our intention. It will do everything to keep the people from gathering.', 4: '1', 18: '100012591'}"
+357	357		502						500.0	{1: 'DialogDisable'}
+358	358		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_06_02.png', 3: '0', 4: '1', 5: '0.5'}
+359	359		104							{1: '100|0|0', 2: '0', 4: '3'}
+360	360		104						1200.0	{1: '0|0|0', 2: '0.8', 4: '3'}
+361	361		301			DialogEnable				"{2: 'Ishmael', 3: 'Unless something explosive happens... like ""disgraced former Pontiff is captured at last."" Something that would drive the public into a frenzy and flood the streets. Otherwise, converging the threads of ""guidance"" on such a scale will be nearly impossible.', 4: '1', 18: '100012592'}"
+362	362		302							"{2: ""We can't use that plan. It's too dangerous."", 3: '363', 4: ""We can't afford to let them control the narrative."", 5: '363'}"
+363	363		301				AniZhuanchangBegin			"{3: ""Ishmael glances at you as you rack your brain for solutions, then after a moment's consideration, steps away from the window and approaches.""}"
+364	364		502							{1: 'DialogDisable'}
+365	365		205							{1: '999'}
+366	366		401						1000.0	{1: '1', 2: '36'}
+367	367		401							{1: '1', 2: '278'}
+368	368		401							{1: '2', 2: '1543'}
+369	369		101			AniZhuanchangEnd			500.0	{1: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_06_03.jpg'}
+370	370		301			DialogEnable				"{2: 'Ishmael', 3: ""...Alright. Rest now. You've been running for days. You deserve to breathe. I doubt you slept much in that cell, either. Here. Drink this."", 18: '100012593'}"
+371	371		301							"{3: ""Ishmael offers you a cup of warm milk, the same pot she'd been tending to downstairs.""}"
+372	372		502						500.0	{1: 'DialogDisable'}
+373	373		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_06_04.jpg', 3: '0', 4: '1', 5: '1'}
+374	374		101							{1: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_06_04.jpg'}
+375	375		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+376	376		401							{1: '2', 2: '5288'}
+377	377		302							{2: '(Drink in big gulps)', 3: '378'}
+378	378		302							{2: '...!!', 3: '379'}
+379	379		502						800.0	{1: 'RImgBg1Shake'}
+380	380		301			DialogEnable				{3: 'It is sickeningly, overwhelmingly sweet. The cloying liquid coats your throat and attacks your taste buds. You barely manage to swallow, fighting the visceral urge to spray it across the room.'}
+381	381		502						500.0	{1: 'DialogDisable'}
+382	382		302			RImgBg1Shake				"{2: 'COUGH! COUGH! COUGH!', 3: '383', 4: ""It's so sweet!"", 5: '383'}"
+383	383		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_06_05.jpg', 3: '0', 4: '1', 5: '1'}
+384	384		101							{1: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_06_05.jpg'}
+385	385		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+386	386		301			DialogEnable				{2: 'Ishmael', 3: '...Oh, did I add too many sugar cubes?', 18: '100012594'}
+387	387		302				AniZhuanchangBegin			"{2: ""It's fine..."", 3: '388', 4: '(Wipe mouth)', 5: '388'}"
+388	388		502						500.0	{1: 'DialogDisable'}
+389	389		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_07_01.png', 3: '0', 4: '1', 5: '0'}
+390	390		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_07_02.png', 3: '0', 4: '1', 5: '0'}
+391	391		101			AniZhuanchangEnd			500.0	{1: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_07_03.png'}
+392	392		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_07_04.png', 3: '0', 4: '1', 5: '0'}
+393	393		104							{1: '-20|-400|-50', 2: '0', 4: '3'}
+394	394		104						1200.0	{1: '-20|0|-50', 2: '1.2', 4: '3'}
+395	395		104							{1: '0|0|0', 2: '0.3', 4: '3'}
+396	396		401						300.0	{1: '2', 2: '5281'}
+397	397		301			DialogEnable				{3: 'Still reeling from the sugary assault, you set the cup down on the bedside stand and finally take a proper look around the small attic bedroom.'}
+398	398		301							{3: 'The furnishings are dated, yet everything is impeccably kept. The bedding is fresh, and not a single speck of dust or strand of cobweb dares to linger. Clearly, this room is tended to with care.'}
+399	399		502						500.0	{1: 'DialogDisable'}
+400	400		205						1500.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_07_05.png', 3: '0', 4: '1', 5: '1.2'}
+401	401		101							{1: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_07_05.png'}
+402	402		205							{1: '1003'}
+403	403		205							{1: '1004'}
+404	404		205						300.0	{1: '1005'}
+405	405		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_07_06.png', 3: '0', 4: '1', 5: '1'}
+406	406		101							{1: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_07_06.png'}
+407	407		205							{1: '999'}
+408	408		301			DialogEnable				{3: 'On the desk rests an array of delicate trinkets fit to charm any young girl: an elegantly carved box of wax seals, a row of hardbound classics... Noticing your curious gaze, Ishmael offers a soft smile before gently pulling open the desk drawer.'}
+409	409		502						500.0	{1: 'DialogDisable'}
+410	410		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_07_09.png', 3: '0', 4: '1', 5: '1.5'}
+411	411		205						2000.0	{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_07_07.png', 3: '0', 4: '1', 5: '1.5'}
+412	412		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_07_08.png', 3: '0', 4: '1', 5: '0'}
+413	413		104							{1: '-400|300|0', 2: '0', 4: '4'}
+414	414		104						1500.0	{1: '0|0|0', 2: '1.2', 4: '4'}
+415	415		301			DialogEnable				{2: 'Ishmael', 3: 'Raheleh took Etha and me in. I had slept in this little attic since I was a child, and everything in the drawer belongs to me.', 18: '100012595'}
+416	416		502						500.0	{1: 'DialogDisable'}
+417	417		401							{1: '2', 2: '5954'}
+418	418		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_07_01.png', 3: '1', 4: '0', 5: '1.2'}
+419	419		205						1500.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_07_10.jpg', 3: '0', 4: '1', 5: '1.2'}
+420	420		101							{1: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_07_10.jpg'}
+421	421		205							{1: '1005', 3: '0', 4: '1', 5: '0'}
+422	422		205							{1: '1003', 3: '0', 4: '1', 5: '0'}
+423	423		205							{1: '1006', 3: '0', 4: '1', 5: '0'}
+424	424		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+425	425		301			DialogEnable				{3: 'Inside lies a leather roll of carving knives and fine tools, nestled among a collection of wooden carvings.'}
+426	426		302							"{2: ""They're all... dice?"", 3: '427'}"
+427	427		301				AniZhuanchangBegin			{3: 'Without exception, they are dice. Some are minimalist, bearing only stark numerals; others are lavishly adorned with intricate patterns and painted in vivid color. A few even feature delicate openwork, carved into fragile shells.'}
+428	428		502						500.0	{1: 'DialogDisable'}
+429	429		205							{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_07_11.png', 3: '0', 4: '1', 5: '0'}
+430	430		101			AniZhuanchangEnd			500.0	{1: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_07_12.png'}
+431	431		301			DialogEnable				"{2: 'Ishmael', 3: ""Carving is a wonderful way to clear the mind... Someone once carved a die for me by hand, and that's how I learned."", 18: '100012596'}"
+432	432		301							"{3: ""You pick up one of the openwork dice and raise it to your eye, peering through its intricate patterns. From just two steps away, Ishmael's gaze meets yours through the tiny apertures.""}"
+433	433		502						500.0	{1: 'DialogDisable'}
+434	434		104						1800.0	{1: '0|0|-100', 2: '2'}
+435	435		205						1200.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_07_13.jpg', 3: '0', 4: '1', 5: '1'}
+436	436		101							{1: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_07_13.jpg'}
+437	437		205							{1: '1005', 3: '0', 4: '1', 5: '0'}
+438	438		205							{1: '1006', 3: '0', 4: '1', 5: '0'}
+439	439		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_07_14.png', 3: '0', 4: '1', 5: '0'}
+440	440		301			DialogEnable				{3: 'In that moment, through the delicate web of wood, you catch glimpses of another life: a girlish pastime, a lingering tenderness for the person who carved her first die.'}
+441	441		502						500.0	{1: 'DialogDisable'}
+442	442		104						1800.0	{1: '0|0|-100', 2: '2'}
+443	443		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_07_15.jpg', 3: '0', 4: '1', 5: '1.5'}
+444	444		101							{1: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_07_15.jpg'}
+445	445		205							{1: '999'}
+446	446		205							{1: '1003', 3: '0', 4: '1', 5: '0'}
+447	447		301			DialogEnable				"{3: 'Through the tiny openings of the die, Ishmael smiles at ""that person.""'}"
+448	448		302							{2: '...!', 3: '449'}
+449	449		301							{3: 'A memory trembles at the edge of your mind, then breaks through.'}
+450	450		302							"{2: '""Wish-Mael"".', 3: '451'}"
+451	451		301							"{2: 'Ishmael', 3: '...Yes, ""Gray Raven"".', 18: '100012597'}"
+452	452		301							{3: 'For an instant, as you look at one another through the die, you touch something true. Something real.'}
+453	453		301				AniZhuanchangBegin			"{3: 'But fate has little mercy for the one dragged unwillingly into this ""world."" The moment of clarity shatters as quickly as it formed, vanishing like smoke.'}"
+454	454		502						500.0	{1: 'DialogDisable'}
+455	455		101							{1: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_06.png'}
+456	456		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_05.png', 3: '0', 4: '1', 5: '0'}
+457	457		104							{1: '-400|50|0', 2: '0', 4: '3'}
+458	458		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_04.png', 3: '0', 4: '1', 5: '0'}
+459	459		205							{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_03.png', 3: '0', 4: '1', 5: '0'}
+460	460		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_02.png', 3: '0', 4: '1', 5: '0'}
+461	461		104							{1: '-400|50|0', 2: '0', 4: '5'}
+462	462		205						500.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_01.png', 3: '0', 4: '1', 5: '0'}
+463	463		104			AniZhuanchangEnd				{1: '0|0|0', 2: '1.5', 4: '3'}
+464	464		104						1800.0	{1: '0|0|0', 2: '1.5', 4: '5'}
+465	465		104							{1: '-400|50|0', 2: '2', 4: '3'}
+466	466		104							{1: '-400|50|0', 2: '2', 4: '5'}
+467	467		104						2050.0	{1: '-400|50|0', 2: '2', 4: '4'}
+468	468		205							{1: '1006', 3: '0', 4: '1', 5: '0'}
+469	469		205							{1: '1003', 3: '0', 4: '1', 5: '0'}
+470	470		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+471	471		205							{1: '1005', 3: '0', 4: '1', 5: '0'}
+472	472		104							{1: '0|0|0', 2: '0', 4: '3'}
+473	473		104							{1: '0|0|0', 2: '0', 4: '5'}
+474	474		104							{1: '0|0|0', 2: '0', 4: '4'}
+475	475		101						500.0	{1: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_07.png'}
+476	476		205						1500.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_08.png', 3: '0', 4: '1', 5: '1'}
+477	477		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_10.png', 3: '0', 4: '1', 5: '1'}
+478	478		205						1500.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_09.png', 3: '0', 4: '1', 5: '1'}
+479	479		104						2500.0	{1: '-400|50|0', 2: '2', 4: '4'}
+480	480		205							{1: '1007', 3: '0', 4: '1', 5: '0'}
+481	481		101							{1: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_10.png'}
+482	482		205							{1: '1003', 3: '0', 4: '1', 5: '0'}
+483	483		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+484	484		104							{1: '0|0|0', 2: '0', 4: '4'}
+485	485		205							{1: '1006', 3: '0', 4: '1', 5: '0'}
+486	486		205						250.0	{1: '1005', 3: '0', 4: '1', 5: '0'}
+487	487		205						1800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_11.jpg', 3: '0', 4: '1', 5: '1.2'}
+488	488		101							{1: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_11.jpg'}
+489	489		205							{1: '999'}
+490	490		205						1600.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_12.jpg', 3: '0', 4: '1', 5: '1.2'}
+491	491		101							{1: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_12.jpg'}
+492	492		205							{1: '999'}
+493	493		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_13.jpg', 3: '0', 4: '1', 5: '0.8'}
+494	494		101							{1: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_13.jpg'}
+495	495		205							{1: '999'}
+496	496		205						1800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_14.jpg', 3: '0', 4: '1', 5: '1.2'}
+497	497		101							{1: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_14.jpg'}
+498	498		205							{1: '999'}
+499	499		301			DialogEnable				{3: 'Ishmael gently takes the die from your hand, returns it to the drawer, and locks it away. Then she turns and blows out the candle by the bed.'}
+500	500		301							{2: 'Ishmael', 3: 'Rest now. The bed is made. It should suit your liking.', 18: '100012598'}
+501	501		502						500.0	{1: 'DialogDisable'}
+502	502		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V300cibeizhe/V300_00.png', 3: '0', 4: '1', 5: '0'}
+503	503		401							{1: '2', 2: '2936'}
+504	504		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_15.jpg', 3: '0', 4: '1', 5: '1'}
+505	505		101							{1: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_15.jpg'}
+506	506		205							{1: '999'}
+507	507		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_16.jpg', 3: '0', 4: '1', 5: '1.5'}
+508	508		101							{1: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_16.jpg'}
+509	509		205							{1: '999'}
+510	510		104						500.0	{1: '0|0|200', 2: '2'}
+511	511		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_17.png', 3: '0', 4: '1', 5: '0'}
+512	512		104							{1: '0|-800|0', 2: '0', 4: '3'}
+513	513		104						2500.0	{1: '0|0|0', 2: '2', 4: '3'}
+514	514		205						2000.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Ishmael/V400_08_18.png', 3: '0', 4: '1', 5: '1.5'}
+515	515		205							{1: '1003', 3: '0', 4: '1', 5: '0'}
+516	516		301			DialogEnable				"{2: 'Ishmael', 3: ""Either way, try to get some real sleep. Whatever tomorrow brings, you'll need your strength."", 18: '100012599'}"
+517	517		301				AniZhuanchangBegin			{3: 'On the eve of the coming storm, the two of you share a single bed, falling asleep facing one another.'}
+518	518		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+519	519		205							{1: '1005', 3: '0', 4: '1', 5: '0'}
+520	520		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory752.jpg'}
+521	521		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+522	522		301			AniZhuanchangEnd				"{3: ""But less than fifteen minutes later, your eyes open again, and you realize at once yours aren't the only ones gleaming in the dim light.""}"
+523	523		201							{1: '1', 2: '501379', 3: '14'}
+524	524		301							"{1: '1', 3: ""Ishmael is also awake, watching you. There's a trace of something unspoken in her gaze... something like sorrow.""}"
+525	525		302							{2: 'Ishmael?', 3: '526'}
+526	526		204							{1: '1', 2: '14'}
+527	527		301				DialogDisable			"{2: 'Ishmael', 3: ""I'm here. Those eyes of yours are brimming with unspoken thoughts again... I won't stop you. Go ahead."", 4: '1', 18: '100012600'}"
+528	528		302							{2: 'The officer... he gave me another option.', 3: '529'}
+529	529		204							{1: '1', 2: '14'}
+530	530		302							{2: 'I mean, if everyone is set on leaving...', 3: '531'}
+531	531		301			DialogEnable				"{3: ""You measure your words carefully, unsure whether what you're about to offer will be enough.""}"
+532	532		302							{2: 'I have a cottage back in Kerentos.', 3: '533'}
+533	533		202							{1: '1', 6: '1'}
+534	534		401							{1: '2', 2: '4387'}
+535	535		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+536	536		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory609.jpg'}
+537	537		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignSun01.prefab', 2: '2'}
+538	538		401							{1: '2', 2: '2596'}
+539	539		301							"{3: ""You begin to describe it: a hidden refuge, far from the city's grasp, nestled with mountains at its back and a clear stream running beside it.""}"
+540	540		301				DialogDisable			{3: 'The yard holds shelters for livestock, rows of vegetable gardens, and beyond, vast farmlands stretch out like a promise of peace.'}
+541	541		402							{1: '2596'}
+542	542		401							{1: '2', 2: '4388'}
+543	543		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignSun01.prefab'}
+544	544		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+545	545		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory752.jpg'}
+546	546		302							"{2: ""...I've already gathered textbooks for the children. Saved some money, too."", 3: '547'}"
+547	547		201							{1: '1', 2: '501379', 3: '8'}
+548	548		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Ishmael', 3: ""Thebesia will eventually rewrite those textbooks. And if war breaks out, that money may not be worth the paper it's printed on."", 4: '1', 18: '100012601'}"
+549	549		204							{1: '1'}
+550	550		302							"{2: ""I have gold. And I'll teach the children the true history myself."", 3: '551'}"
+551	551		302							{2: 'We could live far from the crowds, far from the war. Grow our own food, rely on no one.', 3: '552'}
+552	552		302							"{2: ""It wouldn't be grand, but... it could be a good life. A happy one."", 3: '553'}"
+553	553		204							{1: '1', 2: '10'}
+554	554		301			DialogEnable				{2: 'Ishmael', 3: '...', 4: '1', 18: '100012602'}
+555	555		204							{1: '1', 2: '1'}
+556	556		301							"{2: 'Ishmael', 3: 'I\'ve heard many tales of ""escape"": young lords and ladies, princes and princesses. But never one about a pontiff ""eloping"" like some romantic fugitive.', 4: '1', 18: '100012603'}"
+557	557		204							{1: '1', 2: '9'}
+558	558		301							"{2: 'Ishmael', 3: ""Still... it's a far more appealing story than Etha's."", 4: '1', 18: '100012604'}"
+559	559		302							{2: 'So... is that a path you would take?', 3: '560'}
+560	560		204							{1: '1', 2: '1'}
+561	561		301							{2: 'Ishmael', 3: '...Your affection, offered so openly... it does bring me joy.', 4: '1', 18: '100012605'}
+562	562		301							{3: 'Ishmael suddenly smiles, as if brushing aside an impossible dream.'}
+563	563		204							{1: '1', 2: '9'}
+564	564		301							"{2: 'Ishmael', 3: ""Hah... But you wouldn't choose this path."", 4: '1', 18: '100012606'}"
+565	565		204							{1: '1'}
+566	566		301							"{2: 'Ishmael', 3: ""You've never been one for small solutions. Your choices have always shaped the world. That is who you are. Who you always were."", 4: '1', 18: '100012607'}"
+567	567		204							{1: '1', 2: '1'}
+568	568		301				DialogDisable			{2: 'Ishmael', 3: 'Even if time, law, or guidance rewrite everything else... they cannot change that.', 4: '1', 18: '100012608'}
+569	569		302							{2: '...', 3: '570'}
+570	570		302							{2: '...Why were you chosen to be the Pontiff? To become the voice of the Holy?', 3: '571'}
+571	571		302							{2: 'Those questions Etha asked... I want to know the answers, too.', 3: '572'}
+572	572		301			DialogEnable				"{2: 'Ishmael', 3: 'Because I am one with the ""world."" The power of ""guidance"" it wields... originally came from me.', 4: '1', 18: '100012609'}"
+573	573		204							{1: '1', 2: '4'}
+574	574		301							"{2: 'Ishmael', 3: 'That power, the ""guidance"" I scattered into this ""world,"" began to spiral out of control. It dragged you... and those three from Gray Raven into this.', 4: '1', 18: '100012610'}"
+575	575		204							{1: '1'}
+576	576		301							{2: 'Ishmael', 3: 'So I chose to become the Pontiff. To reclaim that power, reprogram it, and disperse it more evenly.', 4: '1', 18: '100012611'}
+577	577		204							{1: '1', 2: '1'}
+578	578		301							{2: 'Ishmael', 3: '...Do you understand? In your current state, you might not fully grasp this. Perhaps it would be clearer if I showed you... through feeling.', 4: '1', 18: '100012612'}
+579	579		302							{2: '...', 3: '580'}
+580	580		204							{1: '1'}
+581	581		301							"{2: 'Ishmael', 3: 'The power of choice has always been in your hands as you are the ""outsider."" It\'s just that I want to ease you into it slowly. You never would have accepted it otherwise.', 4: '1', 18: '100012613'}"
+582	582		302							{2: 'What power of choice?', 3: '583'}
+583	583		204							{1: '1', 2: '8'}
+584	584		301							"{2: 'Ishmael', 3: ""I can show you now... There won't be another chance, after all."", 4: '1', 18: '100012614'}"
+585	585		302							{2: '...What do you mean?', 3: '586'}
+586	586		301							{3: 'Ishmael lies on her side, extending her right hand to intertwine her fingers with yours.'}
+587	587		204							{1: '1', 2: '1'}
+588	588		301							"{2: 'Ishmael', 3: 'It\'s alright... Just relax, and imagine. If the collective power of ""guidance"" were placed in your hands, what would you do?', 4: '1', 18: '100012615'}"
+589	589		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+590	590		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+591	591		301							"{2: 'Ishmael', 3: 'Would you kill the ""guidance,"" scattering its influence evenly? Or would you wield it, reshaping the world as you see fit?', 4: '1', 18: '100012616'}"
+592	592		202							{1: '1'}
+593	593		301							"{3: ""A divine power seems to flow from Ishmael's palm, quickly lulling you into drowsiness.""}"
+594	594		201							{1: '1', 2: '501379', 3: '8'}
+595	595		301							"{1: '1', 2: 'Ishmael', 3: 'So many have tried to take this power from me... They treat objects I\'ve touched like holy relics, coveting what they can\'t possess. Even after my ""death,"" they\'d fight over my crown, my staff...', 4: '1', 18: '100012617'}"
+596	596		101						100.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '7'}
+597	597		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '3'}
+598	598		101							{4: '7', 5: '1'}
+599	599		201							{1: '1', 2: '501379', 4: '-30', 7: '1'}
+600	600		201							{1: '2', 2: '501379', 7: '1'}
+601	601		201							{1: '3', 2: '501379', 4: '25', 7: '1'}
+602	602		205							{1: '1', 3: '1', 4: '0.4', 5: '0'}
+603	603		205							{1: '2', 3: '1', 4: '0.8', 5: '0'}
+604	604		205							{1: '3', 3: '1', 4: '0.4', 5: '0'}
+605	605		301							{1: '1', 2: 'Ishmael', 3: 'Or perhaps... you would find a way to master it completely...?', 4: '1', 5: '2', 6: '3', 18: '100012618'}
+606	606		302							{2: 'What... is this...', 3: '607'}
+607	607		301				DialogDisable			"{3: 'Something ineffable stirs within Ishmael\'s gentle gaze, a presence that seems to reach across the space between you and ""brush"" softly against you.'}"
+608	608		501						3000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab', 2: '3'}
+609	609		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+610	610		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+611	611		205							{1: '1', 3: '0', 4: '1', 5: '0'}
+612	612		205							{1: '2', 3: '0', 4: '1', 5: '0'}
+613	613		205							{1: '3', 3: '0', 4: '1', 5: '0'}
+614	614		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+615	615		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+616	616		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+617	617		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+618	618		301			DialogEnable				{3: 'Golden blueprints gradually unfold before your eyes, spinning and interlocking in a silent, dazzling dance. They call to you in a language beyond words, giving you no choice but to slowly, helplessly, close your eyes.'}
+619	619		301							"{2: 'Ishmael', 3: ""It's alright... show me your choice. Hold nothing back. I will always respect your decision... and forgive your sins."", 18: '100012619'}"
+620	620		401							{1: '2', 2: '5324'}
+621	621		401							{1: '2', 2: '5948'}
+622	622		301		1		AniZhuanchangBegin			{3: 'The symphony of gears and dice echoes once more within your mind—this time, guiding you to the very summit of that tower.'}

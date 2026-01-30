@@ -1,0 +1,51 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		102							{1: 'Fake Ascension', 2: 'Dark Reflections', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+2	2		502							{1: 'ThemeEnable'}
+3	3		101			AniZhuanchangEnd		5000.0		{1: 'Assets/Product/Texture/Image/BgStory/Bgstory279.png'}
+4	4		401							{1: '1', 2: '201'}
+5	5		301			DialogEnable				"{3: ""With Alpha stuck with Roland, you carry Huaxu's key and swiftly leave the Core Area platform lift.""}"
+6	6		201							{1: '1', 2: '1031001', 3: '7'}
+7	7		301							{1: '1', 2: 'Liv', 3: 'The Punishing Virus is highly concentrated up ahead. Let me treat your wounds here now.', 4: '1'}
+8	8		302							"{2: ""I'll count on you."", 3: '500'}"
+9	500		204							{1: '1', 2: '1'}
+10	501		301							{2: 'Liv', 3: '(Nods) I got this.', 4: '1'}
+11	502		301							{3: 'Liv gently lifts your torn protective suit, disinfecting the cuts and applying medications on the wounds before bandaging your arm.'}
+12	503		301							"{2: 'Liv', 3: ""We'll need to fix your suit as well. We have more than enough supplies, so you can just replace the damaged parts."", 4: '1'}"
+13	504		301							"{3: ""Thanks to Bridget's generous offerings before you departed, you can save so much time swapping gears instead of repairing them.""}"
+14	505		301							{2: 'Liv', 3: 'Now, to put on the enhanced protective gears...', 4: '1'}
+15	506		302							{2: 'Gotta carry that weight.', 3: '507'}
+16	507		204							{1: '1', 2: '14'}
+17	508		301							{2: 'Liv', 3: 'The virus concentration ahead is lethal to you, after all.', 4: '1'}
+18	509		301							{3: 'Liv speedily attaches the required parts to the corresponding spots of your suit.'}
+19	510		204							{1: '1'}
+20	511		301							"{2: 'Liv', 3: ""Alright, let's go."", 4: '1'}"
+21	512		202							{1: '1', 6: '1'}
+22	513		301							{3: 'Walking along the narrow passage, you enter a hollow cavern a few times larger than the structure above ground. Standing inside is an inconceivably gargantuan monster.'}
+23	514		201							{1: '1', 2: '1031001', 3: '7'}
+24	515		301							"{1: '1', 2: 'Liv', 3: ""What's that?!"", 4: '1'}"
+25	9		202							{1: '1', 6: '1'}
+26	10		301							{2: 'Polyphage', 3: 'ROARRRR!'}
+27	11		301							{3: 'Underneath this behemoth is a lake composed of the Red Tide, shimmering in its fearsome scarlet glow.'}
+28	12		201							{1: '1', 2: '500166', 3: '5'}
+29	13		301							{1: '1', 2: 'Lucia', 3: 'It must be the actual source of the Red Tide!', 4: '1'}
+30	14		201							{1: '1', 2: '500026'}
+31	15		301							{1: '1', 2: 'Lee', 3: 'They do have a trump card with them!', 4: '1'}
+32	16		201							{1: '1', 2: '1031001', 3: '7'}
+33	17		301							"{1: '1', 2: 'Liv', 3: ""Based on our previous estimation, if this thing reaches the surface, Earth... no, even Babylonia won't survive its wrath!"", 4: '1'}"
+34	18		301							"{2: 'Liv', 3: ""We can't fight it alone. Let's ask for backup."", 4: '1'}"
+35	19		302							{2: 'No, that would be unwise.', 3: '20'}
+36	20		201							{1: '1', 2: '500026'}
+37	21		301							"{1: '1', 2: 'Lee', 3: ""Indeed. With how large its mass is, and with the Ascendants guarding along the path, I don't think any reinforcement can make it here in time."", 4: '1'}"
+38	22		301							"{2: 'Lee', 3: ""Maybe we can destroy it with a WMD before it leaves, but given how our signals are blocked here and how long the trip back to the surface is, it might be too late when it's ready."", 4: '1'}"
+39	23		201							{1: '1', 2: '500166', 3: '5'}
+40	24		301							{1: '1', 2: 'Lucia', 3: 'Best we approach first, scouting a safe path of entry.', 4: '1'}
+41	25		302							{2: '(Nod) In that case, the reinforcement can arrive in safety.', 3: '26'}
+42	26		201							{1: '1', 2: '1031001', 3: '14'}
+43	27		301							{1: '1', 2: 'Liv', 3: 'How do we get near that thing?', 4: '1'}
+44	28		202							{1: '1', 6: '1'}
+45	29		301							{3: 'Between the opening and the monster is a gap that completely cuts off any entry points, making the creature unapproachable.'}
+46	30		201							{1: '1', 2: '500026'}
+47	31		301							{1: '1', 2: 'Lee', 3: 'It can easily attack us when we move if we use our short-range jet engines.', 4: '1'}
+48	32		302							"{2: ""Let's take a look around first."", 3: '33'}"
+49	33		201							{1: '1', 2: '500166', 3: '5'}
+50	34		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Lucia', 3: ""Understood. Let's move."", 4: '1'}"

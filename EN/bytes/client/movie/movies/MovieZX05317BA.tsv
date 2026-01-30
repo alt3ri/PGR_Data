@@ -1,0 +1,305 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd	AniZhuanchangBegin			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '6155'}
+3	3		301				DialogDisable			{3: 'Selena—'}
+4	4		101							{1: 'Assets/Product/Texture/Image/BgCg/CgHg101.jpg'}
+5	5		104							{1: '460|0|0', 2: '0'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront22.png', 4: '4'}
+7	7		109	1		AniZhuanchangEnd				{1: '1', 2: '<color=#ffffffff><size=80>Selena—</size></color>', 3: '-620', 4: '50'}
+8	8		401							{1: '2', 2: '2959'}
+9	9		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+10	10		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+11	11		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_10.jpg'}
+12	12		104							{1: '-380|-100|-50', 2: '0'}
+13	13		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront21.png', 4: '4'}
+14	14		109							{1: '1', 2: '<color=#ffffffff><size=80>—Iris</size></color>', 3: '620', 4: '50'}
+15	15		301							{3: '—Iris'}
+16	16		110							
+17	17		401							{1: '2', 2: '2959'}
+18	18		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+19	19		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+20	20		101							{4: '4', 5: '1'}
+21	21		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+22	22		301			DialogEnable	DialogDisable			{3: 'The memories of fighting beside Selena feel close yet worlds away. They are shattered chips sliced by distorted time, interweaving and rising in your mind.'}
+23	23		401						350.0	{1: '2', 2: '4331'}
+24	24		201							{1: '1', 2: '500539', 3: '11', 4: '-300'}
+25	25		203							{1: '1', 2: '0.5'}
+26	26		301			DialogEnable				{1: '1', 2: 'Rosa', 3: 'We found them... Mr. Asimov!', 4: '1'}
+27	27		301							"{2: 'Rosa', 3: 'The Task Force members brought the ""White Noise"" devices they found!', 4: '1'}"
+28	28		301							"{3: 'Rosa trots along, cradling several more ""White Noise"" sealed in boxes.'}"
+29	29		301							{2: 'Rosa', 3: 'We have... 6 in total!', 4: '1'}
+30	30		302							{2: '...', 3: '31', 4: 'Is that enough?', 5: '31'}
+31	31		201							{1: '1', 2: '500004'}
+32	32		301							"{1: '1', 2: 'Asimov', 3: ""That's good enough."", 4: '1'}"
+33	33		301							{3: 'Asimov takes the devices and pauses for a moment before turning toward Hamlet, which is connected to various cables.'}
+34	34		302							{2: 'How long will it take?', 3: '35'}
+35	35		301							"{2: 'Asimov', 3: 'Not long. I planned for ""more than one White Noise,"" so now I just need to add connection ports and increase the computing power.', 4: '1'}"
+36	36		301							"{2: 'Asimov', 3: ""Get ready and stand by... if you're sure about going through with this."", 4: '1'}"
+37	37		302							{2: '...Please do so.', 3: '38'}
+38	38		202							{1: '1'}
+39	39		301							{3: 'Night smears the sunlight by your ear into a piercing white, as discordant voices urge you to hurry... hurry...'}
+40	40		401							{1: '2', 2: '4278'}
+41	41		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+42	42		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+43	43		504							{1: '0.7'}
+44	44		201							{1: '18', 2: '500380', 7: '1'}
+45	45		301							"{1: '1', 2: 'Ishmael', 3: ""Remember... it's the final cycle."", 4: '18'}"
+46	46		202							{1: '18', 6: '1'}
+47	47		504							{1: '0'}
+48	48		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+49	49		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+50	50		301							"{3: '""The final cycle""... which specific time does that refer to?'}"
+51	51		301							{3: 'Going through all memories that are still clear, you search desperately for the most likely answer...'}
+52	52		401							{1: '2', 2: '4278'}
+53	53		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+54	54		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1030.jpg'}
+55	55		504							{1: '0.7'}
+56	56		201							{1: '1', 2: '501165', 7: '1'}
+57	57		301							{1: '1', 2: 'Dandelion', 3: 'Um... really? I thought, in the beginning, you told me...', 4: '1'}
+58	58		301							"{2: 'Dandelion', 3: 'That it\'s only ""over"" after the formal signing of the codex? Don\'t we have one more week...?', 4: '1'}"
+59	59		202							{1: '1', 6: '1'}
+60	60		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+61	61		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+62	62		504							{1: '0'}
+63	63		301							{3: 'One week...'}
+64	64		301							"{3: 'After leaving the ""Time Prison"", you and Asimov determined that the flow of time inside the ""Time Prison"" should match the flow of time here.'}"
+65	65		301							{3: 'Today... marks the 7th day since you returned to Babylonia.'}
+66	66		401							{1: '2', 2: '9351041'}
+67	67		301							"{3: ""Asimov calmly yet quickly assembles the components, attaching them to the other end of Hamlet's connection cable.""}"
+68	68		201							{1: '1', 2: '500004'}
+69	69		301							{1: '1', 2: 'Asimov', 3: 'Preparing to connect White Noise No. 2. First test preparations complete. Recording data.', 4: '1'}
+70	70		201							{1: '1', 2: '500539'}
+71	71		301							{1: '1', 2: 'Rosa', 3: 'Starting first data recording—', 4: '1'}
+72	72		202							{1: '1'}
+73	73		401							{1: '2', 2: '4921', 3: '0.5'}
+74	74		301							{3: 'White noise imperceptible to humans echoes through the room.'}
+75	75		401							{1: '2', 2: '2959'}
+76	76		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+77	77		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+78	78		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+79	79		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1184.jpg'}
+80	80		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+81	81		401							{1: '2', 2: '8220025'}
+82	82		201							{1: '1', 2: '501186'}
+83	83		203							{1: '1', 2: '0.35', 5: '-100'}
+84	84		301							"{1: '1', 2: 'Lueya', 3: ""You're falling behind, Iris."", 4: '1'}"
+85	85		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+86	86		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+87	87		401							{1: '2', 2: '9342045'}
+88	88		201							{1: '1', 2: '501160', 3: '3', 4: '200', 7: '1'}
+89	89		203							{1: '1', 2: '0.35'}
+90	90		301							{1: '1', 2: 'Iris', 3: '...', 4: '1'}
+91	91		306							{1: '1'}
+92	92		301							{3: 'Hidden under the theater steps, a familiar melody in her mind urges her to press forward.'}
+93	93		301				DialogDisable			{3: 'Almost...'}
+94	94		306							
+95	95		202							{1: '1', 6: '1'}
+96	96		401							{1: '2', 2: '4297'}
+97	97		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+98	98		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+99	99		109							{1: '1', 2: '<color=#535F6Bff><size=89>Line Spacing: 4</size></color>', 4: '74'}
+100	100		301							{3: 'Line Spacing: 4'}
+101	101		110							
+102	102		401							{1: '2', 2: '2959'}
+103	103		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+104	104		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+105	105		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+106	106		201							{1: '1', 2: '500539'}
+107	107		301			DialogEnable				{1: '1', 2: 'Rosa', 3: 'Data recording complete. No anomalies detected.', 4: '1'}
+108	108		203							{1: '1', 2: '0.25', 3: '-400'}
+109	109		201							{1: '2', 2: '500004', 4: '400'}
+110	110		301							{1: '1', 2: 'Asimov', 3: 'Preparing to connect White Noise No. 4. Third test preparations complete. Recording data.', 4: '2'}
+111	111		301							{2: 'Rosa', 3: 'Starting third data recording—', 4: '1'}
+112	112		202							{1: '1', 2: '2', 6: '1'}
+113	113		401							{1: '2', 2: '2959'}
+114	114		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+115	115		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+116	116		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+117	117		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1184.jpg'}
+118	118		201							{1: '1', 2: '501186'}
+119	119		301							"{1: '1', 2: 'Lueya', 3: ""It's too late, Iris. Even if you had double the time, it still wouldn't be enough."", 4: '1'}"
+120	120		301							{2: 'Lueya', 3: 'I can easily crush you to pieces before I sink into the abyss.', 4: '1'}
+121	121		202							{1: '1', 6: '1'}
+122	122		201							{1: '1', 2: '501160', 3: '5'}
+123	123		301							{1: '1', 2: 'Iris', 3: '...', 4: '1'}
+124	124		306							{1: '1'}
+125	125		301							{3: 'Iris stays quiet under the relentless pressure. Her breathing grows increasingly loud as the strain on every part of her body intensifies.'}
+126	126		301							{3: 'Gears spin fast. Cracks grow bigger. The light on the surface of the body dims for a moment and suddenly shines bright.'}
+127	127		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0.3'}
+128	128		203							{1: '1', 2: '0.3', 5: '-50'}
+129	129		204							{1: '1', 2: '9'}
+130	130		301							{3: 'Almost there... Iris... Hang in there...'}
+131	131		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '0', 5: '0.3'}
+132	132		203							{1: '1', 2: '0.3'}
+133	133		204							{1: '1', 2: '3'}
+134	134		306							
+135	135		301				DialogDisable			{3: 'Iris bites his lips as they tremble. Vital fluid comes out, but he looks more determined.'}
+136	136		202							{1: '1', 6: '1'}
+137	137		401							{1: '2', 2: '4297'}
+138	138		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+139	139		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+140	140		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainLoop.prefab', 2: '2', 5: '1'}
+141	141		511							{1: '1', 2: '0', 3: '130|-30|-375'}
+142	142		109							{1: '1', 2: '<color=#535F6Bff><size=89>Line Spacing: 4</size></color>', 3: '-222', 4: '74'}
+143	143		301							{3: 'Line Spacing: 4...'}
+144	144		110							
+145	145		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainLoop.prefab', 5: '1'}
+146	146		401							{1: '2', 2: '2959'}
+147	147		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+148	148		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+149	149		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+150	150		201							{1: '1', 2: '500004', 7: '1'}
+151	151		301			DialogEnable				{1: '1', 2: 'Asimov', 3: 'Final confirmation.', 4: '1'}
+152	152		301							"{2: 'Asimov', 3: ""I'll use the seven White Noise we have to pinpoint locations using three-phase noise patterns to reverse-trace the coordinates of their parent device."", 4: '1'}"
+153	153		301							{2: 'Asimov', 3: 'This might disrupt your Mind Beacon. You need to keep your mind clear while you search for signals from the Construct and figure out if the signal is the correct one.', 4: '1'}
+154	154		301							"{2: 'Asimov', 3: ""Once the connection is established, you'll be able to use the Mind Beacon for communication."", 4: '1'}"
+155	155		301							{2: 'Asimov', 3: 'In theory, as long as her M.I.N.D. is still active, your Mind Beacon should be able to find her.', 4: '1'}
+156	156		301							{2: 'Asimov', 3: 'Be careful out there.', 4: '1'}
+157	157		301							{3: 'All preparations are complete. You connect with Hamlet once again.'}
+158	158		301							"{2: 'Asimov', 3: 'Remote connection technology allows you to synchronize with Constructs, but I\'m not sure if it\'s possible to use ""White Noise"" at this distance.', 4: '1'}"
+159	159		301							{2: 'Asimov', 3: 'This is our only chance.', 4: '1'}
+160	160		302							{2: 'I understand.', 3: '161'}
+161	161		202							{1: '1', 6: '1'}
+162	162		401							{1: '2', 2: '2959'}
+163	163		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+164	164		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+165	165		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+166	166		401							{1: '2', 2: '5388'}
+167	167		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefBaseNiuqu02.prefab', 2: '2', 5: '1'}
+168	168		511							{1: '1', 2: '0', 3: '0|-88|-750'}
+169	169		301				AniZhuanchangBegin			{3: 'Your eyes close, and an intense buzzing jams your ears as your brain seems to tremble with the vibrations.'}
+170	170		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefBaseNiuqu02.prefab', 5: '1'}
+171	171		402							{1: '5388'}
+172	172		502						100.0	{1: 'DialogDisable'}
+173	173		401							{1: '2', 2: '952'}
+174	174		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+175	175		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+176	176		101			AniZhuanchangEnd			300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg2401_10.jpg'}
+177	177		401							{1: '2', 2: '952'}
+178	178		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+179	179		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/CgHg101.jpg'}
+180	180		401							{1: '2', 2: '952'}
+181	181		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+182	182		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2301.jpg'}
+183	183		401							{1: '2', 2: '952'}
+184	184		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+185	185		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2905.jpg'}
+186	186		401							{1: '2', 2: '952'}
+187	187		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+188	188		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2903.jpg'}
+189	189		301			DialogEnable	AniZhuanchangBegin			{3: 'Countless vague images flicker before you, then everything plunges into darkness.'}
+190	190		502						300.0	{1: 'DialogDisable'}
+191	191		401						2000.0	{1: '1', 2: '36'}
+192	192		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2905.jpg'}
+193	193		401							{1: '2', 2: '5387'}
+194	194		307							{1: 'A whale song resonates from the depths of your consciousness.', 3: '60'}
+195	195		301							{3: 'A whale song resonates from the depths of your consciousness.'}
+196	196		402							{1: '5387'}
+197	197		307							{2: '1'}
+198	198		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+199	199		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+200	200		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+201	201		302							{2: 'Iris...', 3: '203', 4: 'Sel...', 5: '202'}
+202	202		302							{2: 'Se... le... na...', 3: '203'}
+203	203		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+204	204		401							{1: '1', 2: '6105'}
+205	205		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1185.jpg'}
+206	206		401							{1: '2', 2: '4510'}
+207	207		401							{1: '2', 2: '752'}
+208	208		201							{1: '1', 2: '501160', 3: '5', 6: '-100'}
+209	209		203							{1: '1', 2: '0.25'}
+210	210		502							{1: 'DialogEnable'}
+211	211		301			RImgBg1Shake				{1: '1', 3: 'BANG—'}
+212	212		401							{1: '2', 2: '4536'}
+213	213		301			PanelActor1Shake				"{1: '1', 2: 'Iris', 3: ""What's happening..."", 4: '1'}"
+214	214		301				DialogDisable			{3: 'A violent explosion slams Iris into a wall. Debris rains down, leaving hideous wounds across her body. Her arm was nearly torn from the joint.'}
+215	215		202							{1: '1', 6: '1'}
+216	216		201							{1: '1', 2: '501186', 5: '5', 6: '-20'}
+217	217		203						250.0	{1: '1', 2: '0.25', 4: '5', 5: '-20'}
+218	218		401							{1: '2', 2: '4376'}
+219	219		203						250.0	{1: '1', 2: '0.25', 4: '-5'}
+220	220		301			DialogEnable				"{1: '1', 3: ""Without giving Iris a break, Lueya's steps close in on her again.""}"
+221	221		301							"{2: 'Lueya', 3: ""It's time for your curtain call, no matter how reluctant you are. A performer should know when to exit the stage."", 4: '1'}"
+222	222		202							{1: '1', 6: '1'}
+223	223		201							{1: '1', 2: '501160', 3: '5', 5: '-20', 7: '1'}
+224	224		203							{1: '1', 2: '0.5'}
+225	225		401							{1: '2', 2: '4341'}
+226	226		301				AniZhuanchangBegin		500.0	{1: '1', 2: 'Iris', 3: 'Hnngh—hnngh—', 4: '1'}
+227	227		202							{1: '1', 6: '1'}
+228	228		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+229	229		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg'}
+230	230		401						2000.0	{1: '1', 2: '36'}
+231	231		401							{1: '1', 2: '6153'}
+232	232		301			AniZhuanchangEnd				{3: 'Iris lifts her head with great effort. Her unfocused pupils look past Lueya at the dome beyond, where the artificial starry sky slowly detaches from the true universe.'}
+233	233		401							{1: '2', 2: '4276'}
+234	234		111						250.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+235	235		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1148.jpg', 3: '0', 4: '0.5', 5: '0.5'}
+236	236		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+237	237		301							{3: 'Light and shadows shift. Time stretches.'}
+238	238		301				AniZhuanchangBegin			"{3: 'The ""branches and leaves"" are about to split from the ""trunk."" This space... this theater, is about to become the final prison that traps Lueya.'}"
+239	239		205							{1: '999'}
+240	240		502						300.0	{1: 'DialogDisable'}
+241	241		201							{1: '1', 2: '501160', 3: '14', 4: '-176', 5: '-115', 6: '-300'}
+242	242		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+243	243		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+244	244		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+245	245		109			AniZhuanchangEnd				"{1: '1', 2: ""<color=#ffffffff><size=70>Conductor... I'm sorry...</size></color>"", 3: '439', 4: '30', 9: '3'}"
+246	246		301				AniZhuanchangBegin			"{1: '1', 3: ""Conductor... I'm sorry..."", 4: '1'}"
+247	247		110							
+248	248		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+249	249		201							{1: '1', 2: '500678'}
+250	250		201							{1: '2', 2: '500678'}
+251	251		203							{1: '1', 2: '0.6', 3: '-80'}
+252	252		203			AniZhuanchangEnd				{1: '2', 2: '0.6', 3: '-80'}
+253	253		205							{1: '1', 3: '1', 4: '0', 5: '1'}
+254	254		205							{1: '2', 3: '1', 4: '0', 5: '1'}
+255	255		301			DialogEnable	DialogDisable			{1: '1', 3: 'In her hazy vision, the silhouette of her beloved disperses into mist.'}
+256	256		401							{1: '2', 2: '895'}
+257	257		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+258	258		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_15.jpg'}
+259	259		109							"{1: '10', 2: ""<color=#ffffffff><size=80><i>I'm sorry, my love, please forgive me...</i></size></color>"", 4: '50', 9: '3'}"
+260	260		109							"{1: '1', 2: ""<color=#4d4d4dff><size=80><i>I'm sorry, my love, please forgive me...</i></size></color>"", 3: '4.8', 4: '45'}"
+261	261		301							"{3: ""I'm sorry, my love, please forgive me...""}"
+262	262		401							{1: '2', 2: '895'}
+263	263		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+264	264		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_07.jpg'}
+265	265		109							"{1: '10', 2: ""<color=#ffffffff><size=80><i>I'm sorry, my love, please don't be sad...</i></size></color>"", 4: '50', 9: '3'}"
+266	266		109							"{1: '1', 2: ""<color=#4d4d4dff><size=80><i>I'm sorry, my love, please don't be sad...</i></size></color>"", 3: '4.8', 4: '45'}"
+267	267		301				AniZhuanchangBegin			"{3: ""I'm sorry, my love, please don't be sad...""}"
+268	268		502						200.0	{1: 'DialogEnable'}
+269	269		110							
+270	270		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1185.jpg'}
+271	271		401							{1: '2', 2: '10042608'}
+272	272		201							{1: '1', 2: '501160', 3: '8', 5: '-20', 6: '-100', 7: '1'}
+273	273		205							{1: '1', 3: '0', 4: '1', 5: '0'}
+274	274		301			AniZhuanchangEnd				{1: '1', 3: 'Iris whispers as she closes her eyes, her arm falls limp, stirring dust as it hits the ground. She can feel the cold light of a blade closing in on her face.'}
+275	275		204							{1: '1', 2: '15'}
+276	276		301				DialogDisable			{2: 'Iris', 3: 'Conductor...', 4: '1'}
+277	277		202							{1: '1', 6: '1'}
+278	278		401							{1: '2', 2: '4297'}
+279	279		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+280	280		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+281	281		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainLoop.prefab', 2: '2', 5: '1'}
+282	282		511							{1: '1', 2: '0', 3: '130|-30|-375'}
+283	283		109							{1: '1', 2: '<color=#535F6Bff><size=89>Line Spacing: 4</size></color>', 3: '-222', 4: '74'}
+284	284		301							{3: 'Line Spacing: 4...'}
+285	285		401							{1: '2', 2: '4092'}
+286	286		111						250.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab'}
+287	287		401							{1: '2', 2: '778'}
+288	288		110							
+289	289		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainLoop.prefab', 5: '1'}
+290	290		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+291	291		401							{1: '2', 2: '5387'}
+292	292		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_27.jpg'}
+293	293		104							{1: '103|-148|-175', 2: '0'}
+294	294		109							{1: '10', 2: '<color=#ffffffff><size=60><i>An epic whale song suddenly erupts from her Deep M.I.N.D., dispelling the farewell on her lips.</i></size></color>', 4: '50', 9: '3'}
+295	295		109							{1: '1', 2: '<color=#4d4d4dff><size=60><i>An epic whale song suddenly erupts from her Deep M.I.N.D., dispelling the farewell on her lips.</i></size></color>', 3: '4.8', 4: '45'}
+296	296		301							{3: 'An epic whale song suddenly erupts from her Deep M.I.N.D., dispelling the farewell on her lips.'}
+297	297		110							
+298	298		402							{1: '5387'}
+299	299		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+300	300		401							{1: '2', 2: '4134'}
+301	301		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+302	302		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab', 2: '2'}
+303	303		301			DialogEnable	DialogDisable			{3: 'The familiar lighthouse shines blinding rays through her muddled consciousness. Echoes reach her ears, and Iris feels confused for a moment.'}
+304	304		302		1		AniZhuanchangBegin			{2: 'Yes.', 3: '304'}

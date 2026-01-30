@@ -1,0 +1,175 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1334.jpg'}
+2	2		401							{1: '1', 2: '210'}
+3	3		401							{1: '2', 2: '885'}
+4	4		502						500.0	{1: 'RImgBg1Shake'}
+5	5		301			DialogEnable	DialogDisable			{3: 'The vehicle creaks and grinds as it starts up, trembling precariously but ultimately roaring to life.'}
+6	6		302							"{2: ""Phew... That did the trick. Luck's still on our side."", 3: '7'}"
+7	7		302							{2: 'So, find anything useful in those documents?', 3: '8'}
+8	8		401							{1: '2', 2: '4231'}
+9	9		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '1'}
+10	10		502						500.0	{1: 'RImgBg1Shake'}
+11	11		301			DialogEnable				"{3: ""After successfully starting the mining cart, you turn back to Liv's side. The only surviving vehicle in the mine begins to move forward, gradually picking up speed.""}"
+12	12		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+13	13		402							{1: '4231'}
+14	14		201							{1: '1', 2: '501385', 3: '3'}
+15	15		301				DialogDisable			"{1: '1', 2: 'Liv', 3: ""Let's see... We have Rodent's exploration logs, some laboratory protocols, equipment inventories..."", 4: '1'}"
+16	16		401							{1: '2', 2: '5307'}
+17	17		203						450.0	{1: '1', 2: '0.4', 4: '-50'}
+18	18		203						450.0	{1: '1', 2: '0.4'}
+19	19		401							{1: '2', 2: '897'}
+20	20		301			DialogEnable				"{3: ""Liv sifts through the documents gathered from the lab's perimeter, her eyes catching on crucial data which she swiftly feeds into her terminal.""}"
+21	21		204							{1: '1', 2: '7'}
+22	22		301				DialogDisable			"{2: 'Liv', 3: ""It doesn't seem like there's anything of immediate value. Maybe... Hm?"", 4: '1'}"
+23	23		204							{1: '1', 2: '3'}
+24	24		401							{1: '2', 2: '5307'}
+25	25		203						300.0	{1: '1', 2: '0.25', 4: '-50'}
+26	26		203						300.0	{1: '1', 2: '0.25'}
+27	27		202							{1: '1'}
+28	28		401							{1: '2', 2: '897'}
+29	29		205						1550.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1145.jpg', 3: '0', 4: '0.7', 5: '1.5'}
+30	30		301			DialogEnable	DialogDisable			{3: 'Suddenly, her fingers freeze, then move rapidly as a report materializes on the screen.'}
+31	31		307							{1: 'Psychologist Generation III, Serial Number III-0007...', 3: '40'}
+32	32		301							{3: 'Psychologist Generation III, Serial Number III-0007...'}
+33	33		307							{2: '1'}
+34	34		201							{1: '18', 2: '501385', 3: '7', 4: '50', 5: '-170'}
+35	35		301			DialogEnable				"{1: '1', 2: 'Liv', 3: ""Psychologist Generation III... Are these Melinoe's treatment records?"", 4: '18'}"
+36	36		202			DialogDisable				{1: '18'}
+37	37		304							{1: 'Initial Patient Intake', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+38	38		304							{1: 'Name: Andre', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+39	39		304							{1: 'Age: 36', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+40	40		304							{1: 'Marital Status: Married', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+41	41		304							{1: 'Position: Coal Mining Machine Operator, Sector Two', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+42	42		304							{1: 'First Consultation Date: xx/xx/xxxx', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 8: '1', 10: '1'}
+43	43		304							{1: 'Presenting Issue: Severe occupational burnout', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-4', 10: '1'}
+44	44		304				AniZhuanchangBegin			{1: 'Family Status: Married with one son. Has not returned to his home city in 3 years.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 8: '1', 9: '1', 10: '1'}
+45	45		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1145.jpg', 3: '0.7', 4: '0', 5: '0'}
+46	46		401							{1: '1', 2: '36'}
+47	47		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory604.jpg'}
+48	48		401							{1: '1', 2: '249'}
+49	49		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+50	50		504							{1: '0.7'}
+51	51		502							{1: 'DialogEnable'}
+52	52		201							{1: '1', 2: '500086'}
+53	53		301			AniZhuanchangEnd				"{1: '1', 2: 'Andre', 3: ""I can't work anymore. I just can't do this... I want to go home...!"", 4: '1'}"
+54	54		203						300.0	{1: '1', 2: '0.25', 3: '-400'}
+55	55		201							{1: '2', 2: '501387', 4: '400'}
+56	56		301							{1: '1', 2: 'Melinoe', 3: 'Please state your request.', 4: '2'}
+57	57		301							{2: 'Andre', 3: 'I already told you! I want to go home! I want to go HOME!', 4: '1'}
+58	58		301			DialogShake				"{2: 'Andre', 3: 'To hell with ""occupational burnout""! There\'s nothing wrong with my mind! I\'m not sick!', 4: '1'}"
+59	59		204							{1: '2', 2: '8'}
+60	60		401							{1: '2', 2: '1509'}
+61	61		401							{1: '2', 2: '908'}
+62	62		301							{2: 'Melinoe', 3: 'Emotion extraction protocol activated.', 4: '2'}
+63	63		301							{2: 'Melinoe', 3: 'Protocol in progress—', 4: '2'}
+64	64		204							{1: '2'}
+65	65		402							{1: '908'}
+66	66		301							{2: 'Melinoe', 3: 'Emotion extraction protocol complete.', 4: '2'}
+67	67		301							{2: 'Andre', 3: '...', 4: '1'}
+68	68		301							{3: 'Andre, still connected to several electrode pads, stares blankly into space.'}
+69	69		301							{2: 'Melinoe', 3: 'Please state your request.', 4: '2'}
+70	70		301							{2: 'Andre', 3: 'My... request...', 4: '1'}
+71	71		301							{2: 'Andre', 3: 'What did I... want to do just now?', 4: '1'}
+72	72		204							{1: '2', 2: '1'}
+73	73		301				DialogDisable			{2: 'Melinoe', 3: 'Your psychological consultation is complete. Thank you for your compliance. Please rate your experience. We look forward to your next visit.', 4: '2'}
+74	74		202							{1: '1', 2: '2', 6: '1'}
+75	75		504							{1: '0'}
+76	76		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+77	77		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+78	78		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1334.jpg'}
+79	79		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1145.jpg', 3: '0', 4: '0.7', 5: '0'}
+80	80		304							{1: 'Initial Patient Intake', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+81	81		304							{1: 'Name: Jennica', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+82	82		304							{1: 'Age: 40', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+83	83		304							{1: 'Marital Status: Married', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+84	84		304							{1: 'Position: Hydraulic Support Technician, Sector Three', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+85	85		304							{1: 'First Consultation Date: xx/xx/xxxx', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 8: '1', 10: '1'}
+86	86		304							{1: 'Presenting Issue: Severe occupational burnout, marital tensions', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-4', 8: '1', 10: '1'}
+87	87		304							{1: '...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-4', 8: '1', 10: '1'}
+88	88		304							{1: 'Initial Patient Intake', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+89	89		304							{1: 'Name: Monnan', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+90	90		304							{1: 'Age: 47', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+91	91		304							{1: 'Marital Status: Married', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+92	92		304							{1: 'Position: Researcher, Laboratory Team Three', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+93	93		304							{1: 'First Consultation Date: xx/xx/xxxx', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 8: '1', 10: '1'}
+94	94		304							{1: 'Presenting Issue: Severe occupational burnout', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-4', 8: '1', 10: '1'}
+95	95		304							{1: '...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-4', 8: '1', 9: '1', 10: '1'}
+96	96		401							{1: '2', 2: '897'}
+97	97		205						1550.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1145.jpg', 3: '0.7', 4: '0', 5: '1.5'}
+98	98		301			DialogEnable				{3: 'The treatment records alone amount to over 1,300 entries.'}
+99	99		201							{1: '1', 2: '501385', 3: '16'}
+100	100		301							{1: '1', 2: 'Liv', 3: '...', 4: '1'}
+101	101		302							{2: '...', 3: '102'}
+102	102		301							"{3: 'You both release a synchronized, weary sigh at the 2,600-page testament to Melinoe\'s ""work.""'}"
+103	103		202							{1: '1', 6: '1'}
+104	104		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+105	105		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory604.jpg'}
+106	106		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+107	107		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '2'}
+108	108		504							{1: '0.7'}
+109	109		201							{1: '1', 2: '501387', 7: '1'}
+110	110		301							"{1: '1', 3: 'Next, surveillance footage unfolds, years of it, recorded from inside the ""psychological treatment room.""'}"
+111	111		204							{1: '1', 2: '2'}
+112	112		301				DialogDisable			{3: 'There she sits, Melinoe, a constant, smiling figure receiving a stream of mine workers and lab staff.'}
+113	113		203						300.0	{1: '1', 2: '0.25', 3: '400'}
+114	114		201							{1: '2', 2: '500624', 4: '-700'}
+115	115		401							{1: '2', 2: '1516'}
+116	116		203						1000.0	{1: '2', 2: '0.5', 3: '-400'}
+117	117		401							{1: '2', 2: '1516'}
+118	118		203						500.0	{1: '2', 2: '0.5', 3: '-700'}
+119	119		202						500.0	{1: '2'}
+120	120		201							{1: '2', 2: '500460', 4: '-700'}
+121	121		401							{1: '2', 2: '1516'}
+122	122		203						1000.0	{1: '2', 2: '0.5', 3: '-400'}
+123	123		401							{1: '2', 2: '1516'}
+124	124		203						550.0	{1: '2', 2: '0.5', 3: '-700'}
+125	125		202							{1: '2', 2: '1'}
+126	126		301			DialogEnable				{3: 'One by one, they enter bristling with rage, and one by one, they depart, their burdens seemingly lifted.'}
+127	127		401							{1: '1', 2: '36'}
+128	128		301							{3: 'Time lurches forward...'}
+129	129		401							{1: '1', 2: '354'}
+130	130		201							{1: '1', 2: '500460'}
+131	131		301							"{1: '1', 2: 'Mine Employee A', 3: ""The machines...! They've all gone crazy!"", 4: '1'}"
+132	132		203						300.0	{1: '1', 2: '0.25', 3: '400'}
+133	133		201							{1: '2', 2: '500454', 4: '-400', 8: '1'}
+134	134		301			PanelActor2Shake				"{1: '1', 2: 'Mine Employee B', 3: ""They're evacuating everyone. Come on, we have to move! Now— Agh!"", 4: '2'}"
+135	135		401							{1: '2', 2: '4044'}
+136	136		203						350.0	{1: '2', 2: '0.3', 3: '-400', 4: '-80'}
+137	137		202							{1: '2'}
+138	138		301			DialogShake				{2: 'Mine Employee A', 3: 'Hey! Stay with me... ****! What are we supposed to do now?!', 4: '1'}
+139	139		201							{1: '2', 2: '500624', 4: '-400', 8: '1'}
+140	140		301							{1: '1', 2: 'Mine Employee C', 3: 'What does it look like?! We run!', 4: '2'}
+141	141		301							"{2: 'Mine Employee A', 3: ""But what about Melinoe? She's the company's asset!"", 4: '1'}"
+142	142		301				DialogDisable			"{2: 'Mine Employee C', 3: ""Forget the company! We're not gonna make it, and you're worried about that?!"", 4: '2'}"
+143	143		202							{1: '1', 2: '2'}
+144	144		401							{1: '2', 2: '1506'}
+145	145		104						300.0	{1: '0|100|-200', 2: '0.25'}
+146	146		104						450.0	{1: '0|-100|-200', 2: '0.4'}
+147	147		502						500.0	{1: 'RImgBg1Shake'}
+148	148		301			DialogEnable				{3: 'A violent crash of sound—metal shrieks, screams are cut short. The camera shudders and tilts, casting the world at a nauseating angle.'}
+149	149		401							{1: '2', 2: '4100'}
+150	150		301							{3: 'Perhaps a backup generator deep in the mine hums on, because the lens remains a living eye.'}
+151	151		301							{3: 'More time, unmeasured, slips away...'}
+152	152		201						1000.0	{1: '1', 2: '501387', 3: '8'}
+153	153		204							{1: '1'}
+154	154		301							"{1: '1', 3: 'The ""Model III-0007-Psychiatrist Generation III"" sits silently behind the desk. Then, without any human activation, it slowly opens its eyes.'}"
+155	155		401							{1: '2', 2: '4150'}
+156	156		203						350.0	{1: '1', 2: '0.3', 4: '-50', 5: '-100'}
+157	157		203						350.0	{1: '1', 2: '0.3', 5: '-150'}
+158	158		402							{1: '4150'}
+159	159		301				DialogDisable			{3: 'With the slow, grating creak of dry metal, she stands and walks toward the fallen camera—'}
+160	160		202							{1: '1'}
+161	161		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+162	162		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab'}
+163	163		504							{1: '0'}
+164	164		401							{1: '1', 2: '36'}
+165	165		401							{1: '2', 2: '4896'}
+166	166		501						4000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+167	167		401							{1: '1', 2: '201'}
+168	168		402							{1: '4896'}
+169	169		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+170	170		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1334.jpg'}
+171	171		201							{1: '1', 2: '501385', 3: '12', 7: '1'}
+172	172		502							{1: 'DialogEnable'}
+173	173		301			AniZhuanchangEnd				"{1: '1', 2: 'Liv', 3: ""...We're almost at the lab on the other side, Commandant."", 4: '1'}"
+174	174		302		1		AniZhuanchangBegin			"{2: ""Alright, let's get ready.""}"

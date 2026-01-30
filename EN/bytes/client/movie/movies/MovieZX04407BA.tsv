@@ -1,0 +1,181 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				"{3: ""By the time you reach the location Lamia marked on the terminal, it's well past midnight.""}"
+4	4		301							{3: 'With no clouds to obscure it, the forest is bright enough at night to clearly see the Ascendants standing ahead, even without using any artificial lights.'}
+5	5		201							{1: '1', 2: '500238', 4: '-300'}
+6	6		201							{1: '2', 2: '500335', 3: '19', 4: '300'}
+7	7		301							{1: '1', 2: 'Luna', 3: '...', 4: '1', 5: '2'}
+8	8		301							{3: 'You stop at what could be considered a safe distance, then take a small step forward to face Luna directly.'}
+9	9		302							{2: 'You really bring a hostage with you?', 3: '10'}
+10	10		204							{1: '2', 2: '11'}
+11	11		301			PanelActor2Shake	DialogDisable			{1: '1', 2: 'Lillian', 3: 'Eek... p-please... please h-help... help me.', 4: '2'}
+12	12		302							{2: '...', 3: '13'}
+13	13		302							{2: 'Lee, eliminate her along with the Ascendant.', 3: '14'}
+14	14		202							{1: '1', 2: '2', 6: '1'}
+15	15		401							{1: '2', 2: '10022001'}
+16	16		401							{1: '2', 2: '2880'}
+17	17		401							{1: '2', 2: '1511'}
+18	18		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+19	19		301			DialogEnable				{3: 'Right as you speak, Lee, Lucia, Liv, and Roland across from you all raise their weapons together.'}
+20	20		201							{1: '1', 2: '500335', 3: '11'}
+21	21		301							"{1: '1', 2: 'Lillian', 3: ""Huh... eh? Wait! W-why?! Aren't you here to save me?!"", 4: '1'}"
+22	22		201							{1: '1', 2: '500238', 3: '3'}
+23	23		301							{1: '1', 2: 'Luna', 3: '...You gave yourself away the moment you spoke.', 4: '1'}
+24	24		204							{1: '1'}
+25	25		301							"{2: 'Luna', 3: ""Lower your weapon, Roland. 【kuroname】 isn't going to kill anyone."", 4: '1'}"
+26	26		201							{1: '1', 2: '500334', 3: '1'}
+27	27		301							"{1: '1', 2: 'Roland', 3: ""True enough, but we have to go through the motions. It'd be pretty disrespectful to the Gray Raven Commandant otherwise, right?"", 4: '1'}"
+28	28		401							{1: '2', 2: '1543'}
+29	29		301							{3: 'Roland shrugs with a friendly smile, then holsters his weapon and puts his hands in his pockets, appearing completely defenseless.'}
+30	30		202							{1: '1', 6: '1'}
+31	31		201							{1: '1', 2: '500238', 4: '-400'}
+32	32		201							{1: '2', 2: '500739', 3: '19', 4: '500'}
+33	33		301							{1: '1', 3: 'Lamia, somewhat bewildered, drops her disguise and stands stiffly behind Luna.'}
+34	34		202							{1: '1', 2: '2', 6: '1'}
+35	35		201							{1: '1', 2: '500166', 3: '5'}
+36	36		301							{1: '1', 2: 'Lucia', 3: 'Commandant?', 4: '1'}
+37	37		302							"{2: ""Let's hear what they have to say first."", 3: '38'}"
+38	38		201							{1: '1', 2: '500238'}
+39	39		301							"{1: '1', 2: 'Luna', 3: ""Given our relationship, I'll share some intel first as a sign of good faith."", 4: '1'}"
+40	40		301				DialogDisable			{3: 'With that, Luna pinpoints the exact second when the Ascension-Network experienced the anomaly.'}
+41	41		201						500.0	{1: '1', 2: '500568'}
+42	42		302							{2: '...Lee?', 3: '43'}
+43	43		301			DialogEnable				"{2: 'Lee', 3: '...It matches the time when the ""dark star"" appeared in Gestalt, within an acceptable margin of error.', 4: '1'}"
+44	44		301							"{2: 'Lee', 3: ""Most importantly, this timestamp can't be deduced from the data of the fallen spaceport."", 4: '1'}"
+45	45		201							{1: '1', 2: '500238'}
+46	46		301							"{1: '1', 2: 'Luna', 3: ""That's when I felt Selene leave. Something must have gone down in Babylonia then, right?"", 4: '1'}"
+47	47		302							{2: 'Who is Selene?', 3: '48', 4: 'That name sounds like your forum username.', 5: '49'}
+48	48	50	301							{2: 'Luna', 3: 'That will cost you extra.', 4: '1'}
+49	49		301							{2: 'Luna', 3: '...If only it were that simple.', 4: '1'}
+50	50		302							{2: 'What do you want?', 3: '51'}
+51	51		301							{2: 'Luna', 3: 'I want you, 【kuroname】.', 4: '1'}
+52	52		202							{1: '1', 6: '1'}
+53	53		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+54	54		401							{1: '2', 2: '10022001'}
+55	55		401							{1: '2', 2: '1511'}
+56	56		401							{1: '2', 2: '4356'}
+57	57		201							{1: '1', 2: '1031001', 3: '5', 4: '-700'}
+58	58		201							{1: '2', 2: '500166', 3: '5', 4: '-50'}
+59	59		201							{1: '3', 2: '500568', 4: '600'}
+60	60		301							{1: '1', 3: 'Snap—Shing—Buzz—'}
+61	61		301							{3: 'Bullets loaded, a blade unsheathed, and a cannon charged. Lucia, Lee, and Liv snap into alert mode.'}
+62	62		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+63	63		401							{1: '2', 2: '1511'}
+64	64		201							{1: '1', 2: '500334', 3: '1', 4: '-400'}
+65	65		201							{1: '2', 2: '500739', 4: '400'}
+66	66		301							{1: '1', 3: 'In response, Roland raises his dual guns at the same moment.'}
+67	67		401							{1: '2', 2: '2440'}
+68	68		204							{1: '2', 2: '19', 6: '1'}
+69	69		301							{3: 'Beside him, Lamia keeps nodding absentmindedly until she finally catches on to the tense atmosphere and hesitantly raises her Halberd Blade.'}
+70	70		202							{1: '1', 2: '2', 6: '1'}
+71	71		201							{1: '1', 2: '500238'}
+72	72		301							{1: '1', 2: 'Luna', 3: 'I believed that providing immediate information would help alleviate the tension between us. Your reaction appears a little exaggerated.', 4: '1'}
+73	73		301							{2: 'Luna', 3: 'What I want is a M.I.N.D. connection, 【kuroname】. I need your help to stabilize my M.I.N.D.', 4: '1'}
+74	74		302							{2: 'What can you offer me in return?', 3: '75'}
+75	75		301							{2: 'Luna', 3: 'Information about the Ascension-Network, including the key players in this incident, and other related intelligence.', 4: '1'}
+76	76		301							{2: 'Luna', 3: 'At least my intel can point you and Babylonia in the right direction instead of groping around in the dark like you are now.', 4: '1'}
+77	77		302							{2: '...', 3: '78'}
+78	78		301							{2: 'Luna', 3: 'Are you questioning whether what I said is true?', 4: '1'}
+79	79		302							"{2: ""There's something else you're not telling me."", 3: '80'}"
+80	80		301							"{2: 'Luna', 3: ""I need Gray Raven to help me find and confront Cradle. For specific reasons, I have to engage with Red Tide—that's why I need the M.I.N.D. connection. Also..."", 4: '1'}"
+81	81		301							{2: 'Luna', 3: 'I need information on the Inver-Hetero Tower.', 4: '1'}
+82	82		302							"{2: ""Aren't you going to at least try to hide your intentions for the Inver-Hetero Tower?"", 3: '83'}"
+83	83		301							"{2: 'Luna', 3: ""I don't need to hide it from you. By now, Babylonia can't do anything about the Inver-Hetero Tower, right?"", 4: '1'}"
+84	84		301							"{2: 'Luna', 3: 'My plan to enter the tower is to resolve the troubles brought by ""Selene"". Nothing more.', 4: '1'}"
+85	85		302							{2: '...', 3: '86'}
+86	86		301							{2: 'Luna', 3: 'If you need to discuss this with your companions, feel free to do so.', 4: '1'}
+87	87		202							{1: '1'}
+88	88		301							{3: 'The Ascendant team withdraws partially into the shadows, allowing the Gray Raven members plenty of room to talk.'}
+89	89		201							{1: '1', 2: '1031001', 3: '5'}
+90	90		301				DialogDisable			{1: '1', 2: 'Liv', 3: 'Commandant, this is dangerous.', 4: '1'}
+91	91		302							{2: 'I understand.', 3: '92'}
+92	92		302							{2: 'But for now, this is our only lead regarding the Inver-Hetero Tower.', 3: '93'}
+93	93		302							"{2: ""Besides, lingering around the Inver-Hetero Tower won't accomplish anything either."", 3: '94'}"
+94	94		302							"{2: ""Even if she's plotting something, we'll only get concrete intel once she makes her move."", 3: '95'}"
+95	95		201							{1: '1', 2: '500568'}
+96	96		301			DialogEnable				"{1: '1', 2: 'Lee', 3: ""I agree. Any discussion now would be mere speculation. Let's focus on finding Cradle with them first, then we can plan our next move based on the situation."", 4: '1'}"
+97	97		302							"{2: ""Yes. Just locating Cradle's position alone makes this risk worth taking."", 3: '98'}"
+98	98		301							"{3: ""With this thought, you instinctively reach for the external storage compartment of your powered armor, swallowing the rest of your words. After all, there's no way to be sure if they're truly polite enough to refrain from eavesdropping.""}"
+99	99		302							"{2: ""(Besides, I'm carrying a personal-grade Omega Weapon...)"", 3: '100'}"
+100	100		202							{1: '1', 6: '1'}
+101	101		301							{3: 'With the decision made, the Ascendants approach once again.'}
+102	102		201							{1: '1', 2: '500166', 3: '5'}
+103	103		301							"{1: '1', 2: 'Lucia', 3: ""We can travel together for now, but we'll decide whether to cooperate or not."", 4: '1'}"
+104	104		201							{1: '1', 2: '500238'}
+105	105		301							"{1: '1', 2: 'Luna', 3: ""Very well. Let's move out now. We can share intel on the way—neither of us has time to waste."", 4: '1'}"
+106	106		302							{2: 'Wait a sec.', 3: '107'}
+107	107		301				DialogDisable			{2: 'Luna', 3: 'What else?', 4: '1'}
+108	108		302							{2: 'Can we establish a M.I.N.D. connection right now?', 3: '109'}
+109	109		302							{2: 'I just need a little while.', 3: '110'}
+110	110		301			DialogEnable				"{2: 'Luna', 3: ""...If you're fine with it, then go ahead."", 4: '1'}"
+111	111		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab', 2: '3'}
+112	112		401							{1: '2', 2: '2567'}
+113	113		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie2New.prefab', 2: '3'}
+114	114		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie3New.prefab', 2: '3'}
+115	115		501				AniZhuanchangBegin		500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie4New.prefab', 2: '3'}
+116	116		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab'}
+117	117		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie2New.prefab'}
+118	118		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie3New.prefab'}
+119	119		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie4New.prefab'}
+120	120		301			AniZhuanchangEnd				{3: 'A M.I.N.D. connection is established with Luna, lasting only for the briefest moment before disconnecting.'}
+121	121		301							"{3: ""Unlike the last M.I.N.D. connection with her, there's no corruption seeping in from the Ascension-Network—something has definitely changed between Luna and the Network.""}"
+122	122		301				DialogDisable			{2: 'Luna', 3: 'Any other questions?', 4: '1'}
+123	123		302							"{2: ""That's it."", 3: '124'}"
+124	124		302							{2: 'You alright?', 3: '125'}
+125	125		301			DialogEnable				"{2: 'Luna', 3: ""Me? Of course I'm fine."", 4: '1'}"
+126	126		301							"{2: 'Luna', 3: ""Get ready. We're heading out now."", 4: '1'}"
+127	127		302							{2: '...', 3: '128'}
+128	128		202							{1: '1'}
+129	129		301							{3: 'Luna turns around, apparently about to speak with her fellow Ascendants.'}
+130	130		301				AniZhuanchangBegin			{3: 'Though it is only for a moment, you clearly see Luna crossing her arms, her hands tightly gripping them, her fingers digging in with tension.'}
+131	131		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory897.jpg'}
+132	132		301			AniZhuanchangEnd				"{3: ""After reporting in and completing all preparations, Gray Raven sets out with the Ascendants, following Roland's directions.""}"
+133	133		301							"{3: ""The group makes its way through the deep night until dawn, stopping and starting, until you finally reach the vicinity of Cradle's hideout.""}"
+134	134		201							{1: '1', 2: '500334', 3: '1'}
+135	135		301							"{1: '1', 2: 'Roland', 3: ""This Hetero Forest is pretty much where Cradle is, but I can't give you the exact coordinates because of my frame's limitations."", 4: '1'}"
+136	136		301							"{2: 'Roland', 3: ""Of course, the area we're looking at isn't too large—we might just need to search around in there for a little while."", 4: '1'}"
+137	137		301							"{2: 'Roland', 3: ""Miss Luna, please hold on for a moment. Lamia, Gray Raven, and I will soon pinpoint Cradle's exact location."", 4: '1'}"
+138	138		201							{1: '1', 2: '500739', 3: '19'}
+139	139		301							{1: '1', 2: 'Lamia', 3: 'Eh? Me?', 4: '1'}
+140	140		204							{1: '1'}
+141	141		301							{3: 'Lamia steals a nervous glance at Luna.'}
+142	142		204							{1: '1', 2: '19'}
+143	143		301							"{2: 'Lamia', 3: ""M-Miss Luna, you can count on me! I'll do my very best!"", 4: '1'}"
+144	144		201							{1: '1', 2: '500610'}
+145	145		301							"{1: '1', 2: 'α', 3: ""I'll stay here with Luna. Once you've located Cradle, we'll make our move."", 4: '1'}"
+146	146		201							{1: '1', 2: '500238'}
+147	147		301							{1: '1', 2: 'Luna', 3: '...Alright.', 4: '1'}
+148	148		201							{1: '1', 2: '500166', 3: '5'}
+149	149		301							"{1: '1', 2: 'Lucia', 3: ""Making decisions for us without asking isn't a good habit."", 4: '1'}"
+150	150		201							{1: '1', 2: '500334', 3: '1'}
+151	151		301							{1: '1', 2: 'Roland', 3: 'Ah, of course, if you Gray Ravens are okay with the Ascendants moving around unseen, then by all means, stay here with Miss Luna.', 4: '1'}
+152	152		301							{2: 'Roland', 3: 'After all, I have complete trust in your integrity.', 4: '1'}
+153	153		301							"{3: ""Roland chuckles and spreads his hands, as if to show he's never taken away anyone's right to choose.""}"
+154	154		201							{1: '1', 2: '500568'}
+155	155		301							{1: '1', 2: 'Lee', 3: '...', 4: '1'}
+156	156		201							{1: '1', 2: '500166', 3: '5'}
+157	157		301							"{1: '1', 2: 'Lucia', 3: ""Dancing to someone else's tune puts us at a disadvantage, but this time they've shown their hand openly. We can't let the Ascendants act alone."", 4: '1'}"
+158	158		301							"{2: 'Lucia', 3: ""Commandant, I'll stay with you. Liv and Lee are going with Roland and the rest into the Hetero Forest to find Cradle."", 4: '1'}"
+159	159		201							{1: '1', 2: '500568'}
+160	160		301							{1: '1', 2: 'Lee', 3: 'No need. I can handle this alone. Liv and Lucia would serve better by staying with you.', 4: '1'}
+161	161		302							"{2: ""Don't take unnecessary risks. Take Liv with you."", 3: '162'}"
+162	162		201							{1: '1', 2: '1031001'}
+163	163		301							"{1: '1', 2: 'Liv', 3: ""That's right. Facing an Ascendant alone is too dangerous. Let me come with you—I should be able to help in tracking down Cradle."", 4: '1'}"
+164	164		201							{1: '1', 2: '500568'}
+165	165		301				DialogDisable			{1: '1', 2: 'Lee', 3: 'But then, you...', 4: '1'}
+166	166		302							"{2: ""Don't worry."", 3: '167'}"
+167	167		302							"{2: ""I'm wearing enhanced powered armor this time."", 3: '168'}"
+168	168		302							{2: 'Besides, I can call for air support at any time.', 3: '169'}
+169	169		301			DialogEnable				{2: 'Lee', 3: '...Alright.', 4: '1'}
+170	170		201							{1: '1', 2: '1031001', 3: '1'}
+171	171		301							"{1: '1', 2: 'Liv', 3: ""Lucia, we're leaving Commandant in your care."", 4: '1'}"
+172	172		201							{1: '1', 2: '500166', 3: '5'}
+173	173		301							"{1: '1', 2: 'Lucia', 3: ""Rest assured, I will ensure Commandant's safety at all costs."", 4: '1'}"
+174	174		202							{1: '1'}
+175	175		301							{3: 'Lee and Liv head over to Roland and Lamia.'}
+176	176		201							{1: '1', 2: '500568', 4: '400'}
+177	177		201							{1: '2', 2: '500334', 3: '1', 4: '-400'}
+178	178		301							"{1: '1', 2: 'Lee', 3: ""From now on, we'll be the advance team, heading into the Hetero Forest to pinpoint Cradle's exact location... And I'll be calling the shots for all operations."", 4: '1'}"
+179	179		301							"{2: 'Roland', 3: ""Of course, you're the boss."", 4: '2'}"
+180	180		301		1		AniZhuanchangBegin			"{2: 'Lee', 3: ""Let's go."", 4: '1'}"

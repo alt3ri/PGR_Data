@@ -1,0 +1,621 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		306							{1: '1'}
+3	3		401							{1: '1', 2: '5039'}
+4	4		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: '<color=#ff4e4eff>44 days</color> have passed since Group 013 of the Kurono Special Force arrived at Seaside Town.'}
+5	5		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory924.jpg'}
+6	6		201							{1: '1', 2: '500483', 4: '-600', 5: '-50', 7: '1'}
+7	7		201							{1: '2', 2: '500343', 4: '0', 7: '1'}
+8	8		201							{1: '3', 2: '500927', 4: '600', 7: '1'}
+9	9		301			AniZhuanchangEnd				{1: '1', 3: 'The three Constructs are all severely damaged, but fortunately, the very people they have protected reach out and pull them back from the frontlines.'}
+10	10		301							"{3: 'They continue ""patching up"" themselves among the refugees for two days until their maintenance kit completely fails and their nano-reinforcement materials run out.'}"
+11	11		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+12	12		201							{1: '1', 2: '500661'}
+13	13		301							{1: '1', 3: 'Vera can no longer lift her injured arm, but at least she has survived.'}
+14	14		202							{1: '1', 6: '1'}
+15	15		201							{1: '1', 2: '500250', 5: '-120', 6: '50'}
+16	16		301							{1: '1', 3: 'Hush, on the other hand, is not doing well. She was caught in the explosion, and a Corrupted gouged a hole in her back, exposing her internal structure. Her vital fluid keeps leaking, and nothing Vera does stops the flow.'}
+17	17		202							{1: '1'}
+18	18		301							{3: 'She has been cycling between hibernation and sudden awakening to conserve power, unable to stay conscious for more than a few minutes each time.'}
+19	19		401							{1: '2', 2: '4161'}
+20	20		301							"{3: ""Hey's anxiety was written all over her face. After pacing back and forth several times in the narrow space, she announces her decision to everyone still alive.""}"
+21	21		402							{1: '4161'}
+22	22		306							
+23	23		402							{1: '1516'}
+24	24		201							{1: '1', 2: '500405'}
+25	25		301							"{1: '1', 2: 'Hey', 3: ""I've been investigating the underground fortress for the past few days, and I believe we need to make another breakout attempt."", 4: '1'}"
+26	26		301							"{2: 'Hey', 3: ""I've reviewed the old blueprints, and that path leads to another exit that wasn't completely excavated. We couldn't find the opening last time because we didn't have a specific target, but maybe this time..."", 4: '1'}"
+27	27		203							{1: '1', 2: '0.25', 3: '-400'}
+28	28		201							{1: '2', 2: '500896', 4: '400'}
+29	29		301							{1: '1', 2: 'Refugee', 3: 'But we only have one explosive device left.', 4: '2'}
+30	30		301							{2: 'Hey', 3: 'If we take it there, we may still have a chance.', 4: '1'}
+31	31		202							{1: '1', 2: '2'}
+32	32		301							"{3: ""People listen to her words numbly, perhaps having been exhausted by the Corrupted's constant encroachment. With their supplies depleted, everyone has already accepted their inevitable demise.""}"
+33	33		201							{1: '1', 2: '500405', 5: '-25'}
+34	34		301							{1: '1', 2: 'Hey', 3: 'Get up, all of you! What good is sitting around?!', 4: '1'}
+35	35		203							{1: '1', 2: '0.25', 3: '-400', 4: '-25'}
+36	36		201							{1: '2', 2: '500294', 4: '400', 5: '-50'}
+37	37		301							"{1: '1', 2: 'Refugee', 3: ""We're tired... I've lost count of... how many days we've been in this hellhole..."", 4: '2'}"
+38	38		201							{1: '2', 2: '500895', 4: '400', 5: '-50'}
+39	39		301							{1: '1', 2: 'Refugee', 3: 'Please, stop with this nonsense. We have one explosive device left—are you going to waste it on another pointless exploration? How many times have you already tried taking people out there... Has anything ever come of it?', 4: '2'}
+40	40		301				DialogDisable			"{2: 'Hey', 3: '...What wouldn\'t be a ""waste"", then? Should we wait until the Corrupted breaks through so we can blow ourselves up?', 4: '1'}"
+41	41		202							{1: '2', 2: '1', 6: '1'}
+42	42		201							{1: '2', 2: '500661', 3: '5', 4: '400', 5: '-75', 7: '1'}
+43	43		201							{1: '3', 2: '500250', 4: '-400', 5: '-120', 6: '50', 7: '1'}
+44	44		203						250.0	{1: '2', 2: '0.25', 3: '400'}
+45	45		401							{1: '2', 2: '4432'}
+46	46		301			DialogEnable				"{1: '1', 2: 'Vera', 3: ""Ungrateful bastards... Hey! They're not going to listen to you this way. Just look at their filthy, lifeless faces. Heh."", 4: '2'}"
+47	47		301							{3: 'Vera rises shakily, making sure to support the still-unconscious Hush before standing fully.'}
+48	48		203							{1: '2', 2: '0.25', 3: '200'}
+49	49		204							{1: '2'}
+50	50		301							"{2: 'Vera', 3: ""That's how most people are. They won't even fight for their own survival. They won't do anything unless you push them... like a flock of starving sheep. Unless you crack the whip hard, none of them will move."", 4: '2'}"
+51	51		203						250.0	{1: '2', 2: '0.25', 4: '-25'}
+52	52		203							{1: '2', 2: '0.25'}
+53	53		203							{1: '3', 2: '0.25', 4: '-50', 5: '50'}
+54	54		401							{1: '2', 2: '4044'}
+55	55		202							{1: '3'}
+56	56		301							"{3: ""Vera speaks from a corner as she slowly places Hush on her back, draping the girl's limp arms around her neck.""}"
+57	57		301							"{2: 'Vera', 3: 'Our dear captain is still so ""gentle"", but not me.', 4: '2'}"
+58	58		204							{1: '2', 2: '1'}
+59	59		301							"{2: 'Vera', 3: ""I've always been that black sheep that rams into the fence."", 4: '2'}"
+60	60		203						250.0	{1: '2', 2: '0.25', 5: '-50'}
+61	61		203							{1: '2', 2: '0.25'}
+62	62		401							{1: '2', 2: '4547'}
+63	63		301			RImgBg1Shake				{3: 'Vera raises her foot—then furiously kicks a metal bucket!'}
+64	64		301							{3: 'Clang! The deafening crash sends precious supplies spilling across the floor, jolting everyone to attention.'}
+65	65		204							{1: '2', 2: '5'}
+66	66		301							"{2: 'Vera', 3: ""Send your best fighter to challenge me if you dare. Otherwise, you'll eat only when I say so!"", 4: '2'}"
+67	67		204							{1: '2'}
+68	68		203							{1: '2', 2: '0.25', 3: '400'}
+69	69		201							{1: '3', 2: '500294', 4: '-400'}
+70	70		301							{1: '1', 2: 'Refugee', 3: '...', 4: '1'}
+71	71		204							{1: '2', 2: '1'}
+72	72		301							"{2: 'Vera', 3: ""What's wrong? Scared?"", 4: '2'}"
+73	73		204							{1: '2', 2: '5'}
+74	74		301							"{2: 'Vera', 3: ""Then do as I say! I want everyone who can still move to get up and follow us! Those who can't can lie down and die here—I won't waste resources on freeloaders!"", 4: '2'}"
+75	75		301							"{2: 'Vera', 3: ""If you don't want to die now, keep up with us even if you have to crawl!"", 4: '2'}"
+76	76		202							{1: '2', 2: '3', 6: '1'}
+77	77		201							{1: '1', 2: '500895', 7: '1'}
+78	78		301				AniZhuanchangBegin			{1: '1', 2: 'Refugee', 3: '...', 4: '1'}
+79	79		202							{1: '1', 2: '2', 6: '1'}
+80	80		502						400.0	{1: 'DialogDisable'}
+81	81		306							{1: '1'}
+82	82		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory924.jpg'}
+83	83		301			DialogEnable				{3: 'And so, the remaining survivors follow the three Constructs, trudging along as they once again make their way toward the exit.'}
+84	84		401							{1: '2', 2: '1504'}
+85	85		104				AniZhuanchangBegin			{1: '0|0|-150', 2: '1'}
+86	86		401							{1: '1', 2: '36'}
+87	87		502						400.0	{1: 'DialogDisable'}
+88	88		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+89	89		301			DialogEnable				{3: '...'}
+90	90		401						800.0	{1: '1', 2: '169'}
+91	91		401							{1: '2', 2: '2617'}
+92	92		301				AniZhuanchangBegin			{3: 'They grope their way through the dark, cramped space for what feels like an eternity, until... all that can be heard are the labored breaths of the refugees and the creaking of worn mechanical joints.'}
+93	93		402							{1: '2617'}
+94	94		402							{1: '1504'}
+95	95		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory926.jpg'}
+96	96		306							
+97	97		201							{1: '1', 2: '500294'}
+98	98		301			AniZhuanchangEnd				{1: '1', 2: 'Refugee', 3: 'What time is it... Is it... night... or...', 4: '1'}
+99	99		202							{1: '1'}
+100	100		301							"{3: ""There is no answer except for Hush's feeble voice.""}"
+101	101		201							{1: '1', 2: '500250', 5: '-120', 6: '50', 7: '1'}
+102	102		301							{1: '1', 2: 'Hush', 3: '...Day.', 4: '1'}
+103	103		201							{1: '1', 2: '500661', 7: '1'}
+104	104		301							"{1: '1', 2: 'Vera', 3: ""You're awake? Don't talk. Save your strength."", 4: '1'}"
+105	105		202							{1: '1'}
+106	106		301							{3: 'Hush slightly raises her hand instead, gesturing for Vera to approach the wall.'}
+107	107		401							{1: '2', 2: '5323'}
+108	108		301							"{2: 'Bot', 3: '<i>""...My audio module is very sensitive. You probably haven\'t noticed this before.""</i>'}"
+109	109		402							{1: '5323'}
+110	110		301							"{3: ""Vera pauses briefly before following Hush's words and letting her heavy head rest against the wall.""}"
+111	111		401							{1: '2', 2: '903'}
+112	112		201							{1: '1', 2: '500661', 7: '1'}
+113	113		301							"{1: '1', 3: ""Vera's eyes immediately widen—she can hear the sound of distant waves.""}"
+114	114		202							{1: '1'}
+115	115		301							"{2: 'Bot', 3: '<i>""It\'s daytime when the tide reaches this point.""</i>'}"
+116	116		301							"{2: 'Bot', 3: '<i>""We can\'t see the faintest glimmer of light, but the sound of waves still reaches us...""</i>'}"
+117	117		301				DialogDisable			"{2: 'Bot', 3: '<i>""This is probably the right direction. We\'re not far from the outside now.""</i>'}"
+118	118		401						2100.0	{1: '2', 2: '9327108', 3: '5'}
+119	119		402							{1: '9327108'}
+120	120		402							{1: '903'}
+121	121		301			DialogEnable				{3: 'Splash.'}
+122	122		301							{3: 'The exhausted crowd huddles together as they walk. No one notices the coming and going of the waves—no one knows that night has already passed and another peaceful day has dawned beyond the underground fortress.'}
+123	123		301							"{2: 'Bot', 3: '<i>""Dying in such quietness wouldn\'t be so bad.""</i>'}"
+124	124		201							{1: '1', 2: '500250', 4: '-400', 5: '-120', 6: '50'}
+125	125		201							{1: '2', 2: '500661', 3: '5', 4: '100'}
+126	126		301							"{1: '1', 2: 'Vera', 3: ""Don't talk like that."", 4: '2'}"
+127	127		203						250.0	{1: '2', 2: '0.25', 3: '100', 4: '-25', 5: '50'}
+128	128		203						250.0	{1: '2', 2: '0.25', 3: '100'}
+129	129		202							{1: '1', 2: '2'}
+130	130		401							{1: '2', 2: '4044'}
+131	131		301							{3: 'Vera irritably adjusts Hush on her back.'}
+132	132		301							{3: 'She wants to find the culprit who attracted the Corrupted, but the tracking device she tore from one of them has temporarily stopped responding, making it impossible to further determine its source.'}
+133	133		301							{3: 'Even though Vera has already decided to let Hey go, Hey is probably still the only one who seems suspicious right now.'}
+134	134		301							{3: 'But this suicidal action has also put Hey in danger if she just wants to desert.'}
+135	135		201							{1: '1', 2: '500661', 3: '1'}
+136	136		301							{1: '1', 2: 'Vera', 3: 'Ha.', 4: '1'}
+137	137		202							{1: '1'}
+138	138		301							{3: 'Vera suddenly lets out a self-mocking sneer.'}
+139	139		301							{3: 'If she had not hesitated and had been ruthless enough to eliminate Hey back on Day 30, they would not have ended up in this inescapable situation.'}
+140	140		301							{3: 'Vera shakes her head and abandons these thoughts as she watches Hey scout ahead. It is pointless to dwell on such things now. The only thing that matters is keeping everyone alive.'}
+141	141		201							{1: '1', 2: '500250', 5: '-120', 6: '50'}
+142	142		301							{1: '1', 2: 'Hush', 3: 'Ve-wa? Did you see?', 4: '1'}
+143	143		202							{1: '1'}
+144	144		301							"{3: ""Vera snaps out of her jumbled thoughts to find a line of text displayed on Hush's bot, while Hey watches her with an inscrutable expression from up ahead.""}"
+145	145		401							{1: '2', 2: '5323'}
+146	146		301							"{2: 'Bot', 3: '<i>""How did you join Kurono?""</i>'}"
+147	147		402							{1: '5323'}
+148	148		201							{1: '1', 2: '500661'}
+149	149		301							{1: '1', 2: 'Vera', 3: '...', 4: '1'}
+150	150		301							{3: 'Noticing the silence from the other two, Hush assumes they do not like the question and carefully rephrases it. A new line of text appears.'}
+151	151		301							"{2: 'Bot', 3: '<i>""How did all of us end up in Group 013?""</i>'}"
+152	152		203							{1: '1', 2: '0.25', 3: '400'}
+153	153		201							{1: '3', 2: '500405', 4: '-400'}
+154	154		301							{1: '1', 2: 'Hey', 3: '...Why... are you bringing this up again?', 4: '3'}
+155	155		301							"{2: 'Bot', 3: '<i>""After I left my island, Kurono took me in and gave me a rather powerful frame... What about you two?""</i>'}"
+156	156		204							{1: '1'}
+157	157		301							{3: 'Vera lets out a dry laugh. She realizes that Hush has probably sensed her unease again.'}
+158	158		301							{2: 'Vera', 3: 'You always bring up this hometown nonsense for something like this... Absolutely ridiculous.', 4: '1'}
+159	159		301							{2: 'Hey', 3: '...', 4: '3'}
+160	160		204							{1: '1'}
+161	161		301							"{3: ""Hush slumps against Vera's back, the strands of Vera's hair brushing her face as text keeps appearing on her bot.""}"
+162	162		301							"{2: 'Bot', 3: '<i>""I want to know... Talk with me.""</i>'}"
+163	163		301							{3: 'Vera wipes away the condensation liquid on her face. She knows that Hush should minimize communication in order to conserve what stamina she has left.'}
+164	164		301							"{3: ""But liquid keeps trickling down her arm, dripping onto the ground as Vera cradles Hush—Hush's vital fluid is seeping away.""}"
+165	165		301							{3: 'Vera can no longer come up with an excuse to refuse.'}
+166	166		301							"{2: 'Vera', 3: ""...Fine. You go first, Hush. Tell us your story. We're listening."", 4: '1'}"
+167	167		301							"{2: 'Bot', 3: '<i>""I...""</i>'}"
+168	168		202							{1: '1', 2: '3', 3: '3'}
+169	169		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageOpen.prefab', 2: '2'}
+170	170		401							{1: '2', 2: '1515'}
+171	171		301							"{3: ""As Vera continues walking forward, the cursor on Hush's bot begins to blink. Hush starts to recount her memories.""}"
+172	172		301							{3: 'Disconnected and incoherent, her mind seems to be fading away as if piecing together fragments of memories in her final moments.'}
+173	173		301				AniZhuanchangBegin			{3: 'A wave rolls in, washing away the past of everyone.'}
+174	174		502						400.0	{1: 'DialogDisable'}
+175	175		401							{1: '1', 2: '36'}
+176	176		401							{1: '2', 2: '2634'}
+177	177		504							{1: '0.9'}
+178	178		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory390.jpg'}
+179	179		401							{1: '1', 2: '211'}
+180	180		301			DialogEnable				"{2: 'Bot', 3: '<i>""There was a sound of waves just like this back then... My hearing was already very sensitive before my modifications, so that day... I heard something unusual.""</i>'}"
+181	181		301							"{2: 'Bot', 3: '<i>""I was with my big brother out at sea when the Punishing Virus broke out. We didn\'t make it homebound that day. I could hear the Corrupted on the shore as we approached it. Our mother whistled and told us not to come back.""</i>'}"
+182	182		402							{1: '2634'}
+183	183		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '3'}
+184	184		401							{1: '2', 2: '9330025'}
+185	185		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory389.jpg'}
+186	186		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+187	187		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+188	188		301				AniZhuanchangBegin			"{2: 'Bot', 3: '<i>""We drifted at sea for two days, but when we heard nothing from our mother, we made landfall elsewhere on the island.""</i>'}"
+189	189		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory616.jpg'}
+190	190		201							{1: '1', 2: '500013', 4: '650', 5: '-100', 7: '1'}
+191	191		201							{1: '2', 2: '500013', 5: '-200', 6: '-50', 7: '1'}
+192	192		201							{1: '3', 2: '500013', 4: '-650', 5: '-100', 7: '1'}
+193	193		301			AniZhuanchangEnd				"{1: '1', 2: 'Bot', 3: '<i>""There were a lot of Corrupted on the shore, and my brother and I got separated. I searched for him for two days but couldn\'t find him, and a group of refugees eventually took me with them.""</i>'}"
+194	194		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+195	195		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+196	196		402							{1: '9330025'}
+197	197		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory648.jpg'}
+198	198		301				AniZhuanchangBegin			"{2: 'Bot', 3: '<i>""It was Kurono who fed me, turned me into a Construct, and installed this bot—something other Constructs don\'t have.""</i>'}"
+199	199		504							{1: '0'}
+200	200		202							{1: '1', 6: '1'}
+201	201		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory926.jpg'}
+202	202		201							{1: '1', 2: '500661'}
+203	203		301			AniZhuanchangEnd				{1: '1', 2: 'Vera', 3: 'And what did you have to do to repay that small kindness?', 4: '1'}
+204	204		301							{3: 'The bot falls silent for a moment.'}
+205	205		301							{2: 'Vera', 3: 'Say it. What did Kurono ask you to do?', 4: '1'}
+206	206		401							{1: '2', 2: '5323'}
+207	207		301							"{2: 'Bot', 3: '<i>""Stand on the frontline and charge forward. That\'s all.""</i>', 4: '2'}"
+208	208		402							{1: '5323'}
+209	209		301							"{2: 'Vera', 3: ""...Do you just do whatever you're told? You can't talk straight, and you're not too sharp either."", 4: '1'}"
+210	210		301							{3: 'Hey, who has been quiet this whole time, suddenly speaks up.'}
+211	211		203							{1: '1', 2: '0.25', 3: '400'}
+212	212		201							{1: '3', 2: '500405', 4: '-400'}
+213	213		301							{1: '1', 2: 'Hey', 3: 'Perhaps only people like this can make it in the Special Force.', 4: '3'}
+214	214		301							"{2: 'Hey', 3: 'It\'s not just physical pain she can\'t feel—she feels no ""pain"" in every sense of the word... I\'ve noticed this ever since she first joined our group.', 4: '3'}"
+215	215		301							{2: 'Hey', 3: 'She used to bluntly ask critically wounded soldiers how hurt they were... Ha, that was just asking for trouble. She caused so much chaos in the base camp that I had to take her somewhere more suitable—like the Special Force.', 4: '3'}
+216	216		301							"{2: 'Hey', 3: ""At first, she couldn't feel the dead along her path, so she never tripped on the rotting bones."", 4: '3'}"
+217	217		301							"{2: 'Hey', 3: 'In the end... she got ""burned"" because she learned to care about others\' pain... That\'s inevitable.', 4: '3'}"
+218	218		301							"{3: ""Hey glances over at Hush's wound-laden body before quickly turning her head away, unable to bear the sight.""}"
+219	219		301							"{2: 'Bot', 3: '<i>""What about you two? How did you end up in this group?""</i>', 4: '2'}"
+220	220		301							{2: 'Vera', 3: 'All my old teammates are dead. Are you sure you want to know the details?', 4: '1'}
+221	221		301							{3: 'Seeing no objection from her teammates, Vera steps forward, squeezing through a narrow passage between rock walls as she begins her story.'}
+222	222		301							"{2: 'Vera', 3: ""It's simple. I voluntarily became a Construct, then killed some Corrupted during an operation and ended up as the only survivor. That was when Kurono extended their invitation."", 4: '1'}"
+223	223		301							"{2: 'Vera', 3: ""After becoming Kurono's Construct, I joined a few more operations against Corrupted. Each time, I was the only one to survive..."", 4: '1'}"
+224	224		301							"{2: 'Hey', 3: 'How many is ""a few""?', 4: '3'}"
+225	225		301							"{2: 'Vera', 3: ""Not that many. I've done a dozen missions or so this year. The higher-ups started worrying about the casualty rate, so they've mostly stopped assigning me to team missions lately."", 4: '1'}"
+226	226		301							{2: 'Hey', 3: '...What about your most recent one? Your last mission before you joined Group 013...', 4: '3'}
+227	227		301							{2: 'Vera', 3: 'That one was a bit complicated. Both my two teammates were planning to desert...', 4: '1'}
+228	228		301							{3: 'Vera pauses briefly.'}
+229	229		301							{2: 'Vera', 3: 'They were going to kill me.', 4: '1'}
+230	230		301							{2: 'Vera', 3: 'They brought me to a cliff and threatened me. Told me to jump and be done with it.', 4: '1'}
+231	231		204							{1: '1', 2: '1'}
+232	232		301							"{2: 'Vera', 3: ""I'd never be the type to just jump off a cliff when cornered. I turned the tables and killed them both, then finished off all the Corrupted they'd lured there too."", 4: '1'}"
+233	233		301							{3: 'Vera casually glances at Hey.'}
+234	234		204							{1: '1'}
+235	235		301							"{2: 'Vera', 3: ""I'm not going to be the first to die."", 4: '1'}"
+236	236		301							{2: 'Hey', 3: '...', 4: '3'}
+237	237		201							{1: '18', 2: '500250'}
+238	238		301							{1: '1', 2: 'Hush', 3: 'I-impressive.', 4: '18'}
+239	239		202							{1: '18'}
+240	240		301							"{3: 'Hush offers a gentle ""praise"""", while Hey wears a sour expression. An awkward silence falls over—Hush is the only one who seems genuinely relieved that Vera """"survived"".'}"
+241	241		301							"{2: 'Vera', 3: ""Who's next? What about you, Hey?"", 4: '1'}"
+242	242		301							"{2: 'Hey', 3: 'I have nothing to say. My ""story"" isn\'t important.', 4: '3'}"
+243	243		301							{2: 'Vera', 3: 'Are you unwilling to talk, or are you—', 4: '1'}
+244	244		201							{1: '18', 2: '500250'}
+245	245		301							"{1: '1', 2: 'Hush', 3: ""Captain's... also i-impressive."", 4: '18'}"
+246	246		202							{1: '18'}
+247	247		301							"{3: ""Perhaps hoping her teammates can communicate better, Hush begins to recount Hey's stories despite her labored breathing making it difficult.""}"
+248	248		401							{1: '2', 2: '5323'}
+249	249		301							"{2: 'Bot', 3: '<i>""Captain is really impressive as well. Vera, you might not know that, but I\'ve known her for a while now. She\'s always been meticulous in everything she does, and during missions...""</i>', 4: '2'}"
+250	250		402							{1: '5323'}
+251	251		301							"{2: 'Hey', 3: ""That's enough. Hound should focus on the road."", 4: '3'}"
+252	252		301							"{2: 'Bot', 3: '<i>""She was already working hard before joining the Special Force. She\'s a good person with inspiring goals.""</i>', 4: '2'}"
+253	253		301							"{2: 'Bot', 3: '<i>""My bot malfunctioned before, and she helped me find someone to repair it. She even taught me how to use my vocal module. That\'s how I can say so many things now.""</i>', 4: '2'}"
+254	254		301							"{2: 'Bot', 3: '<i>""Also, I heard her hometown is...""</i>', 4: '2'}"
+255	255		301							"{2: 'Hey', 3: ""...That's enough, Moth."", 4: '3'}"
+256	256		202							{1: '1', 2: '3', 6: '1'}
+257	257		401							{1: '2', 2: '9343085'}
+258	258		301							{3: 'Hey stops in her tracks and turns to face her two teammates, her expression hidden in darkness.'}
+259	259		201							{1: '3', 2: '500405'}
+260	260		301							"{1: '1', 2: 'Hey', 3: 'None of that matters. Kurono doesn\'t need Constructs with ""backgrounds"""" or """"identities"". They just need dogs that follow orders.', 4: '3'}"
+261	261		301							{2: 'Hey', 3: 'To live comfortably in such an inhumane place, you either have to be born for this line of work or completely abandon whatever you once believed in.', 4: '3'}
+262	262		301							"{2: 'Hey', 3: 'The two of you... One of you is called ""Death"", bringing nothing but trouble wherever you go, and the other can\'t feel pain, being exploited as a disposable soldier who can keep killing even with both legs broken.', 4: '3'}"
+263	263		301							"{2: 'Hey', 3: ""...But in a way, that's how I've made it this far too."", 4: '3'}"
+264	264		301							"{3: ""She lowers her head slightly toward Vera, her gaze meeting the light on Vera's chest.""}"
+265	265		301							{3: 'Vera sees her expression clearly—a textbook display of sorrow.'}
+266	266		301							{2: 'Hey', 3: 'Moth, Hound, have you ever thought about... leaving this kind of life behind?', 4: '3'}
+267	267		301							"{2: 'Hey', 3: 'We\'re ""alive"", even if we are Constructs. We shouldn\'t have to accept such a fate.', 4: '3'}"
+268	268		301							{2: 'Hey', 3: 'If Kurono has kept us imprisoned within their system... perhaps trying to break free is a good thing after all?', 4: '3'}
+269	269		202							{1: '3', 6: '1'}
+270	270		306							{1: '1'}
+271	271		301							{3: 'Someone raises a lantern, and the soft light illuminates the silent faces in the dim tunnel. Their thoughts, similarly, remain partially shrouded in darkness.'}
+272	272		301							"{3: ""Vera remains quiet. She notices the probing look in her captain's eyes, but she cannot decide whether it is meant to incite betrayal or if it is a genuine display of her emotions.""}"
+273	273		301							"{3: ""Most importantly, Hey's words seem to have touched parts of Vera's feelings she usually avoids—that's why she doesn't know how to respond.""}"
+274	274		301							"{3: ""Only Hush's bot softly answers.""}"
+275	275		306							
+276	276		401							{1: '2', 2: '5323'}
+277	277		301							"{2: 'Bot', 3: '<i>""Never.""</i>'}"
+278	278		402							{1: '5323'}
+279	279		301							"{3: ""The faint light in Hey's eyes dims as she forces a smile.""}"
+280	280		201							{1: '3', 2: '500405'}
+281	281		301							{1: '1', 2: 'Hey', 3: 'Yeah, I understand. Kurono suits you...', 4: '3'}
+282	282		202							{1: '3', 6: '1'}
+283	283		401							{1: '2', 2: '4044'}
+284	284		201							{1: '1', 2: '500250', 4: '-300', 5: '-120', 6: '50', 7: '1'}
+285	285		301			PanelActor1Shake				"{1: '1', 3: ""Suddenly, Hush begins tussling on Vera's back.""}"
+286	286		203						250.0	{1: '1', 2: '0.25', 4: '-120', 5: '50'}
+287	287		202							{1: '1'}
+288	288		301							"{3: ""Realizing what is happening, Vera does not try to stop Hush despite how her actions might make her condition worse. Hush reaches over Vera's shoulder and grabs her captain's arm.""}"
+289	289		201							{1: '3', 2: '500405'}
+290	290		301							{1: '1', 2: 'Hey', 3: '!', 4: '3'}
+291	291		301							"{2: 'Bot', 3: '<i>""No, captain. It\'s not Kurono that suits me.""</i>'}"
+292	292		301							"{2: 'Bot', 3: '<i>""If Kurono didn\'t take me in, I wouldn\'t have a team I belong to, and I wouldn\'t have met all of you.""</i>'}"
+293	293		301							{2: 'Hey', 3: '...', 4: '3'}
+294	294		301							{3: 'Hush looks at Vera and Hey, managing a strained smile.'}
+295	295		301							"{2: 'Bot', 3: '<i>""Everyone\'s family and friends have passed... I lost my mother and brother long ago.""</i>'}"
+296	296		301							"{2: 'Bot', 3: '<i>""Captain and Vera... have been good to me. You\'ve taught me... so much.""</i>'}"
+297	297		301							"{2: 'Bot', 3: '<i>""Captain contacted people to repair my damaged parts... Vera taught me how to retreat from the frontlines... and more...""</i>'}"
+298	298		301							"{2: 'Bot', 3: '<i>""...Perhaps there\'s no one else in this world but us.""</i>'}"
+299	299		301							{2: 'Hey', 3: '...', 4: '3'}
+300	300		301							"{3: ""Hey's lips tremble momentarily, wanting to say something, but nothing except an apology comes out in the end.""}"
+301	301		301							"{2: 'Hey', 3: ""I'm sorry."", 4: '3'}"
+302	302		202							{1: '3', 6: '1'}
+303	303		401							{1: '2', 2: '4341'}
+304	304		201							{1: '2', 2: '500250', 4: '-300', 5: '-120', 6: '50', 7: '1'}
+305	305		201							{1: '1', 2: '500661', 7: '1'}
+306	306		203						250.0	{1: '2', 2: '0.25', 3: '-300', 4: '-100', 5: '-25'}
+307	307		203							{1: '2', 2: '0.25', 3: '-300', 4: '-120', 5: '50'}
+308	308		301							"{1: '1', 3: ""Hey gently lowers Hush's hand and carefully repositions her on Vera's back, then turns around and continues forging ahead.""}"
+309	309		301							{2: 'Vera', 3: '...', 4: '1'}
+310	310		301							{2: 'Vera', 3: 'Hush, teach me more of those... whistles.', 4: '1'}
+311	311		301							{3: 'Feeling the weight on her back grow heavier, Vera initiates a conversation for the first time.'}
+312	312		301							{2: 'Hush', 3: '...W-what... you want to learn...', 4: '2'}
+313	313		301							{3: 'Hush is beginning to drift in and out of consciousness.'}
+314	314		301							"{2: 'Vera', 3: 'Teach me something other than ""homebound"". I want to learn another whistle.', 4: '1'}"
+315	315		301							{2: 'Hush', 3: 'A-another... another... wooo...', 4: '2'}
+316	316		301							{2: 'Vera', 3: '...', 4: '1'}
+317	317		301							"{2: 'Vera', 3: 'Then ""Homebound"" it is. Sticking to just that one is fine too.', 4: '1'}"
+318	318		301							{2: 'Hush', 3: 'Okay.', 4: '2'}
+319	319		202							{1: '1', 2: '2'}
+320	320		301				DialogDisable			{3: 'Hush slowly raises her hands to her mouth.'}
+321	321		401						1600.0	{1: '2', 2: '5322'}
+322	322		402							{1: '5323'}
+323	323		301			DialogEnable				{3: 'Wooo...'}
+324	324		301							"{3: 'The sound of ""homebound"" is no longer lingering and powerful.'}"
+325	325		301							{3: 'Her voice is so faint that it cannot contest with the sound of waves outside. It may even be inaudible to those at the back.'}
+326	326		301							{3: 'Hush manages a brief whistle before her strength fails her.'}
+327	327		201							{1: '18', 2: '500250'}
+328	328		301							{1: '1', 2: 'Hush', 3: 'Huff...', 4: '18'}
+329	329		301							{3: 'Vera understands that Hush is slowly sinking into that sea.'}
+330	330		301							{2: 'Hush', 3: '...Go home.', 4: '18'}
+331	331		201							{1: '1', 2: '500661'}
+332	332		301				AniZhuanchangBegin			{1: '1', 2: 'Vera', 3: 'What?', 4: '1'}
+333	333		202							{1: '1', 2: '18', 7: '1'}
+334	334		502						400.0	{1: 'DialogDisable'}
+335	335		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+336	336		401							{1: '2', 2: '5323'}
+337	337		109			AniZhuanchangEnd	AniZhuanchangBegin			"{1: '1', 2: '<size=60><i>""...I want to... go home with you.""</i></size>', 6: '1', 7: '6'}"
+338	338		301							"{2: 'Bot', 3: '<i>""...I want to... go home with you.""</i>'}"
+339	339		402							{1: '5323'}
+340	340		110							
+341	341		202							{1: '18'}
+342	342		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory926.jpg'}
+343	343		301			DialogEnable				"{3: ""Hush's bot stutters a line of text.""}"
+344	344		401							{1: '2', 2: '4341'}
+345	345		201							{1: '1', 2: '500661', 7: '1'}
+346	346		203						500.0	{1: '1', 2: '0.25', 4: '-80', 5: '-50'}
+347	347		203						500.0	{1: '1', 2: '0.25'}
+348	348		301							"{1: '1', 3: ""Straining to support Hush, Vera pulls Hush's arm around her neck, urging Hush to hold tight—like offering one last piece of driftwood to someone drowning.""}"
+349	349		301							"{2: 'Vera', 3: ""Alright, we're going home. Back to your paradise."", 4: '1'}"
+350	350		301							"{2: 'Vera', 3: ""...Hey! Aren't you going to turn around and see what she's saying?"", 4: '1'}"
+351	351		301							{3: 'The silhouette of her captain looms faintly ahead in the darkness. She does not answer.'}
+352	352		301							"{2: 'Vera', 3: ""There's no use avoiding it at a time like this... Whatever. Don't fall asleep, Moth. Keep talking."", 4: '1'}"
+353	353		301							{2: 'Vera', 3: 'Tell me about that island, your family, the whistles, and that rainbow-colored beach.', 4: '1'}
+354	354		301							{2: 'Vera', 3: 'And then we can go home.', 4: '1'}
+355	355		202							{1: '1'}
+356	356		301							"{3: ""Hush's eyes lose focus as she stares wordlessly at her captain ahead. Her bot begins to flow with texts once more.""}"
+357	357		301				DialogDisable			{3: 'This is the last time Hush gets to describe her paradise.'}
+358	358		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+359	359		504							{1: '0.9'}
+360	360		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_13.jpg'}
+361	361		301			DialogEnable				"{2: 'Bot', 3: '<i>""My big brother would go fishing every day... I went to school in town, and my mom occasionally went into town for groceries.""</i>'}"
+362	362		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+363	363		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+364	364		301							"{2: 'Bot', 3: '<i>""I wouldn\'t go out to class... we\'d gather at home for lunch instead. My big brother\'s pickled fish was the best, and Mom\'s cake... was delicious, too.""</i>'}"
+365	365		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+366	366		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory206.png'}
+367	367		301							"{2: 'Bot', 3: '<i>""After lunch, I... would play on the beach. The coral and fish there were colorful... The fish weren\'t afraid of people. They\'d nibble at your toes, and if one got stranded in the shallows, I\'d always put it back...""</i>'}"
+368	368		301							"{2: 'Bot', 3: '<i>""There were no tourists... only...""</i>'}"
+369	369		301							"{2: 'Bot', 3: '<i>""The most peaceful life...""</i>'}"
+370	370		301				AniZhuanchangBegin			"{2: 'Bot', 3: '<i>""...""</i>'}"
+371	371		504							{1: '0'}
+372	372		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory926.jpg'}
+373	373		201							{1: '1', 2: '500661', 7: '1'}
+374	374		301			AniZhuanchangEnd				"{1: '1', 2: 'Vera', 3: ""...Don't stop. Keep talking."", 4: '1'}"
+375	375		301							"{2: 'Vera', 3: ""We'll leave soon and check out that island of yours... Tch, you'd better wake up right now so we can find your brother together."", 4: '1'}"
+376	376		301							{2: 'Vera', 3: 'Even if it means desertion...', 4: '1'}
+377	377		301							"{3: 'The figure ahead seems to pause briefly at the mention of the word ""desertion,"" but before Hey can react, Hush weakly speaks again.'}"
+378	378		201							{1: '18', 2: '500250'}
+379	379		301							{1: '1', 2: 'Hush', 3: 'Hurts...', 4: '18'}
+380	380		202							{1: '18', 6: '1'}
+381	381		301							"{2: 'Bot', 3: '<i>""I\'m not going to find my brother.""</i>'}"
+382	382		301							{2: 'Vera', 3: 'Why?', 4: '1'}
+383	383		301							"{2: 'Bot', 3: '<i>""My brother... was hurting.""</i>'}"
+384	384		301							"{2: 'Bot', 3: '<i>""He was trapped with the Corrupted... I heard it...""</i>'}"
+385	385		301							{3: 'Her unfocused gaze searches for something but ultimately gives up.'}
+386	386		301							"{3: ""Hush rests her head on Vera's shoulder and slowly closes her eyes.""}"
+387	387		301							"{2: 'Bot', 3: '<i>""He said it hurts, and I heard it.""</i>'}"
+388	388		301							{2: 'Vera', 3: '...', 4: '1'}
+389	389		301							"{2: 'Bot', 3: '<i>""Because... back then... Vera said it hurts. I heard it too.""</i>'}"
+390	390		301							"{3: ""Vera's footsteps suddenly halt. The memory of Hush dragging her through the shaking corridor feels like it happened just yesterday.""}"
+391	391		202							{1: '1', 6: '1'}
+392	392		502						400.0	{1: 'DialogDisable'}
+393	393		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+394	394		504							{1: '0.9'}
+395	395		401							{1: '2', 2: '4387'}
+396	396		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory924.jpg'}
+397	397		201							{1: '1', 2: '500661', 4: '150'}
+398	398		301			DialogEnable				"{1: '1', 2: 'Vera', 3: ""Tsk! Why the hell are you looking after me when you're so badly injured yourself?!"", 4: '1'}"
+399	399		201							{1: '2', 2: '500250', 4: '-400', 5: '-200'}
+400	400		301							{1: '1', 2: 'Hush', 3: 'Because... y-you, said it hurts.', 4: '2'}
+401	401		301							{3: 'Hush tries her best to lift her head and gives Vera a smile, and her equally battered bot also starts to make noise again.'}
+402	402		401							{1: '2', 2: '5323'}
+403	403		301							"{2: 'Bot', 3: '<i>""Because you said it hurts.""</i>', 4: '2'}"
+404	404		301							"{2: 'Bot', 3: '<i>""I don\'t know what pain is... but I don\'t want to hear you say you\'re hurting.""</i>', 4: '2'}"
+405	405		402							{1: '5323'}
+406	406		202							{1: '1', 2: '2', 6: '1'}
+407	407		502						400.0	{1: 'DialogDisable'}
+408	408		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+409	409		504							{1: '0'}
+410	410		401							{1: '2', 2: '4387'}
+411	411		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory926.jpg'}
+412	412		201							{1: '1', 2: '500661'}
+413	413		301			DialogEnable				{1: '1', 2: 'Vera', 3: '...', 4: '1'}
+414	414		202							{1: '1'}
+415	415		301							{3: 'Memory suddenly floods back as Vera recalls what happened two days ago.'}
+416	416		301							{3: 'As she was being attacked by the Corrupted and struggling, a moth-like shadow darted forward and shielded her from the blow.'}
+417	417		301							{3: 'Then she dragged her out, one step at a time.'}
+418	418		201							{1: '1', 2: '500661'}
+419	419		301							{1: '1', 2: 'Vera', 3: '...So that was why you wanted to save me?', 4: '1'}
+420	420		301							"{2: 'Bot', 3: '<i>""I don\'t want you to hurt... I want you to live.""</i>'}"
+421	421		301				DialogDisable			{2: 'Vera', 3: '...', 4: '1'}
+422	422		202							{1: '1'}
+423	423		401							{1: '2', 2: '4383'}
+424	424		104						250.0	{1: '0|50|-25', 2: '0.25'}
+425	425		104							{1: '0|0|-50', 2: '0.25'}
+426	426		301			DialogEnable	DialogDisable			{3: 'Slowly... ever so slowly...'}
+427	427		402							{1: '4383'}
+428	428		401							{1: '2', 2: '4383'}
+429	429		104						250.0	{1: '0|50|-75', 2: '0.25'}
+430	430		104							{1: '0|0|-100', 2: '0.25'}
+431	431		301			DialogEnable				"{3: ""Moth's life slowly leaves her as Vera steps forward. Like a tiny insect falling for the candlelight, her spirit gently dissipates like floating ashes.""}"
+432	432		402							{1: '4383'}
+433	433		301							"{3: ""Like a delirious whisper, Moth's bot displays her final words.""}"
+434	434		301							"{2: 'Bot', 3: '<i>""...So this is what pain feels like.""</i>'}"
+435	435		301							"{2: 'Bot', 3: '<i>""Just like Vera said... a memorable sensation... a feeling of... \'separation.\'""</i>'}"
+436	436		401							{1: '2', 2: '4634'}
+437	437		301							{3: 'The bot follows its master and ceases operation, falling into complete silence.'}
+438	438		301							{3: 'The destiny of the moth and the flame concludes as Death carries another departed soul.'}
+439	439		201							{1: '1', 2: '500661'}
+440	440		301							{1: '1', 2: 'Vera', 3: 'Hah... This burden is getting heavy.', 4: '1'}
+441	441		203							{1: '1', 2: '0.25', 3: '400'}
+442	442		201							{1: '2', 2: '500405', 4: '-400', 7: '1'}
+443	443		301							{1: '1', 3: 'Hey realizes something and turns around, looking behind Vera.'}
+444	444		301							"{3: ""For a moment, Vera catches a glimpse of profound sorrow on her face—despite having long foreseen Hush's fate, Hey seems unable to accept it.""}"
+445	445		301							{2: 'Vera', 3: '...What are you staring at? Mind the road. I can take point if we need to charge in.', 4: '1'}
+446	446		301							{2: 'Hey', 3: '...', 4: '2'}
+447	447		301							"{2: 'Hey', 3: ""We've reached the end, Hound."", 4: '2'}"
+448	448		301							"{2: 'Hey', 3: ""The exit exists... and it's even better than we thought—it was already opened."", 4: '2'}"
+449	449		301							{2: 'Hey', 3: 'And...', 4: '2'}
+450	450		401							{1: '1', 2: '36'}
+451	451		202							{1: '1', 2: '2', 6: '1'}
+452	452		401							{1: '2', 2: '4933'}
+453	453		104						500.0	{1: '0|75|-100', 2: '0.5'}
+454	454		104							{1: '0|0|0', 2: '0.5'}
+455	455		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+456	456		301							{3: 'Hey brushes away the dust and rams her shoulder against the sealed exit, forcing open a narrow gap.'}
+457	457		301							"{3: ""Precious fresh air rushes through the gap, strong enough to lift the hair off Vera's forehead.""}"
+458	458		401							{1: '2', 2: '647'}
+459	459		301							{3: '—But as the door opens, a jarring red light suddenly appears outside the gap of the promised escape.'}
+460	460		301							{3: 'Two dots, three dots... One after another, the red lights gradually emerge and form a sea of crimson.'}
+461	461		301							{3: 'Vera instinctively recalls those bioluminescent creatures that wash ashore with the waves.'}
+462	462		401							{1: '1', 2: '270'}
+463	463		201							{1: '2', 2: '500405', 7: '1'}
+464	464		301							"{1: '1', 2: 'Hey', 3: ""...We've lost our gamble, Hound."", 4: '2'}"
+465	465		301							"{3: ""The light is dim, and Vera cannot see clearly, but she catches a glimpse of a single tear rolling down Hey's cheek.""}"
+466	466		301							{2: 'Hey', 3: 'So Moth... is gonna stay here too?', 4: '2'}
+467	467		401							{1: '2', 2: '9351040'}
+468	468		401							{1: '2', 2: '2970'}
+469	469		201							{1: '1', 2: '500013', 4: '650', 5: '-100', 7: '1'}
+470	470		201							{1: '2', 2: '500067', 5: '-200', 6: '-50', 7: '1'}
+471	471		201							{1: '3', 2: '500068', 4: '-650', 5: '-100', 7: '1'}
+472	472		301							{1: '1', 2: 'Corrupted Horde', 3: 'Grrrrr—', 4: '1', 5: '2', 6: '3'}
+473	473		202							{1: '1', 2: '2', 3: '3'}
+474	474		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+475	475		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+476	476		401							{1: '2', 2: '4816'}
+477	477		301			RImgBg1Shake				{3: 'As if fate were mocking them, the Corrupted horde blocking the exit begins to move before Hey finishes her words. The entire passage trembles, dust trickling down from above.'}
+478	478		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+479	479		301							{3: 'Vera also feels a faint vibration in her arms from the tracking device she has concealed.'}
+480	480		201							{1: '1', 2: '500661', 4: '-400'}
+481	481		201							{1: '2', 2: '500405', 4: '400'}
+482	482		301							{1: '1', 2: 'Vera', 3: '...', 4: '1'}
+483	483		301							{2: 'Hey', 3: '...Looks like so... Put her down.', 4: '2'}
+484	484		202							{1: '1', 2: '2'}
+485	485		301							{3: 'The refugees in the back faintly overhear their conversation, and the despair of their failure quickly spreads from the front to the back. Bitter sobs of resentment rise from behind amid the shock.'}
+486	486		201							{1: '1', 2: '500294'}
+487	487		301							"{1: '1', 2: 'Refugee', 3: ""I knew it! We never should've followed these Constructs on this wild-goose chase... Look where it's gotten us now!"", 4: '1'}"
+488	488		202							{1: '1', 6: '1'}
+489	489		201							{1: '1', 2: '500661', 4: '-400', 7: '1'}
+490	490		201							{1: '2', 2: '500405', 4: '400', 7: '1'}
+491	491		203						500.0	{1: '1', 2: '0.5', 3: '-450', 4: '-75'}
+492	492		203						500.0	{1: '1', 2: '0.5', 3: '-400'}
+493	493		401							{1: '2', 2: '4044'}
+494	494		301							"{3: 'Vera gently sets down the ""moth"" consumed by flames, laying her to rest in a corner.'}"
+495	495		301							"{2: 'Vera', 3: ""Hey, allow me to say something unprofessional—I'm used to dealing with Kurono... I was actually thinking of letting you go."", 4: '1'}"
+496	496		301							{2: 'Hey', 3: '...', 4: '2'}
+497	497		301							{2: 'Vera', 3: 'Special Force... Is it really how it is? I was so young when I first joined Kurono, and now I see it confirms all those rumors... This place turns good people into monsters and the living into the walking dead.', 4: '1'}
+498	498		301							"{2: 'Vera', 3: ""I thought you were different from those two who backed me into a corner before. I didn't think you'd sell out your teammates to save your own skin."", 4: '1'}"
+499	499		301							"{2: 'Vera', 3: 'I\'m just upset that the kid died for nothing... I mean, she at least tried to pronounce ""captain"" correctly.', 4: '1'}"
+500	500		301							{3: 'Vera pulls out the tracking device, staring at its blinking light in silence.'}
+501	501		301							"{2: 'Hey', 3: ""What's that?"", 4: '2'}"
+502	502		301							{2: 'Vera', 3: 'A tracking device. I snatched it from a group of attacking Corrupted. This thing is what drew them to us.', 4: '1'}
+503	503		301							{2: 'Hey', 3: 'Impossible.', 4: '2'}
+504	504		301							{2: 'Vera', 3: 'Why else would this secret exit be completely surrounded by Corrupted?', 4: '1'}
+505	505		203							{1: '1', 2: '0.25', 3: '-300'}
+506	506		301							"{3: ""Vera extends her arm with the tracking device forward, and as it nears Hey's chest, the blinking light begins to glow steadily.""}"
+507	507		203							{1: '1', 2: '0.25', 3: '-400'}
+508	508		301							{3: 'The answer is obvious.'}
+509	509		301							{3: 'Vera smiles bitterly, prepared to strike in the next moment.'}
+510	510		301							"{2: 'Hey', 3: ""Impossible... You're still suspecting me?"", 4: '2'}"
+511	511		301							"{2: 'Vera', 3: ""I can't afford the consequences of hesitation. Be honest with me, so we can talk it through and I can judge for myself."", 4: '1'}"
+512	512		401							{1: '2', 2: '10042608'}
+513	513		301							{3: 'Vera slowly unsheathes Sariel.'}
+514	514		301							{2: 'Vera', 3: '...How about we negotiate this way?', 4: '1'}
+515	515		203							{1: '1', 2: '0.25', 3: '-100'}
+516	516		203						250.0	{1: '2', 2: '0.25', 3: '450'}
+517	517		401							{1: '2', 2: '819016'}
+518	518		502							{1: 'RImgBg1Shake'}
+519	519		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+520	520		203						250.0	{1: '1', 2: '0.25', 3: '-500'}
+521	521		203							{1: '2', 2: '0.25', 3: '500'}
+522	522		301							{3: 'In the next moment, the sound of two blades colliding reverberates through the air—a clash that is similar to the previous one yet carries a subtly different meaning.'}
+523	523		301							{3: 'Each blade reflects a twisted expression.'}
+524	524		301							{2: 'Hey', 3: 'Impossible! I never intended to hurt any of you!', 4: '2'}
+525	525		301							{2: 'Vera', 3: 'Sure! Kill me and your testimony will be taken as truth—ugh!', 4: '1'}
+526	526		203							{1: '2', 2: '0.25'}
+527	527		203							{1: '1', 2: '0.25', 3: '-500', 4: '-25'}
+528	528		401							{1: '2', 2: '4044'}
+529	529		301							"{3: ""Hey suddenly grabs Vera's injured arm and twists it, forcefully pinning her to the ground as she winces in pain.""}"
+530	530		401							{1: '2', 2: '10042608'}
+531	531		301							{3: 'SHING—'}
+532	532		301							"{3: ""Hey points her knife at Vera's throat, gaining the upper hand in this preemptive strike.""}"
+533	533		301							"{2: 'Hey', 3: ""I don't want to make your injury worse! Don't make any sudden moves!"", 4: '2'}"
+534	534		301							{2: 'Vera', 3: '...Good!', 4: '1'}
+535	535		301				DialogDisable			{3: 'Completely disregarding the knife, Vera suddenly thrusts her head upward with all her might.'}
+536	536		203							{1: '1', 2: '0.25', 3: '-500'}
+537	537		401							{1: '2', 2: '5321'}
+538	538		301			DialogEnable				{3: 'Immediately—snikt!'}
+539	539		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+540	540		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '1'}
+541	541		205							{1: '999'}
+542	542		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '5'}
+543	543		401							{1: '2', 2: '2593'}
+544	544		301			RImgBg1Shake				"{3: ""Vital fluid splatters as the blade plunges into Vera's left eye, destroying her visual module.""}"
+545	545		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0', 5: '1'}
+546	546		101							{4: '5', 5: '1'}
+547	547		301							{2: 'Hey', 3: 'Have you lost your mind?!', 4: '2'}
+548	548		204							{1: '1', 2: '1'}
+549	549		301							{2: 'Vera', 3: 'It hurts... It hurts so much!!!', 4: '1'}
+550	550		401							{1: '2', 2: '2690'}
+551	551		203							{1: '1', 2: '0.25', 3: '0'}
+552	552		203							{1: '2', 2: '0.25', 3: '100'}
+553	553		301							"{3: ""As Vera cries out in pain, she quickly retaliates and reaches for Hey's arm that is restraining her, twisting and snapping it with a violent crack.""}"
+554	554		203						250.0	{1: '2', 2: '0.25', 3: '200'}
+555	555		203						250.0	{1: '2', 2: '0.25', 3: '200', 4: '-75'}
+556	556		202							{1: '2'}
+557	557		401							{1: '2', 2: '4802'}
+558	558		301							{3: 'Hey falls backward, clutching her broken arm, her body spasming from pain. Before she can recover, Vera pins her down with a foot pressed firmly against her throat.'}
+559	559		204							{1: '1', 2: '1'}
+560	560		301							"{2: 'Vera', 3: ""Ha... ha... We're even now! What a bunch of dogs of war!"", 4: '1'}"
+561	561		203							{1: '1', 2: '0.25', 4: '-50'}
+562	562		401							{1: '2', 2: '2593'}
+563	563		301							{3: 'Pinning Hey down, Vera smiles as she grips and yanks out the knife in her eye socket in one swift motion. She points the vital fluid-drenched blade at the deserter, reversing their positions of power.'}
+564	564		301							{2: 'Vera', 3: 'I knew you were thinking about deserting long before we set out.', 4: '1'}
+565	565		201							{1: '18', 2: '500405'}
+566	566		301							{1: '1', 2: 'Hey', 3: 'You crazy Kurono lapdog... So this is your true mission...?!', 4: '18'}
+567	567		301							{2: 'Vera', 3: 'So what? Now you get to listen to me bark at you. You better avoid any sudden movements and answer my questions honestly.', 4: '1'}
+568	568		301							"{3: ""Vera places the tip of the knife into Hey's mouth—one shout and the blade will cut open her lips.""}"
+569	569		204							{1: '1'}
+570	570		301							"{2: 'Vera', 3: ""What did Daedalus offer you that you're handing over a Special Force team on a silver platter with a bunch of clueless refugees?"", 4: '1'}"
+571	571		301							{2: 'Hey', 3: '...', 4: '18'}
+572	572		301							"{2: 'Vera', 3: ""You idiot... Daedalus is just using you to weaken Kurono's Construct forces. They have no intention of sparing your life. Just look at the amount of Corrupted they have drawn in!"", 4: '1'}"
+573	573		301							"{2: 'Vera', 3: ""You didn't just kill your teammates, you've also doomed the entire town. Even the nearby conservation areas can be threatened if this many Corrupted get out."", 4: '1'}"
+574	574		301							{2: 'Hey', 3: '...', 4: '18'}
+575	575		301							{3: 'Drip. Drop.'}
+576	576		301							{3: 'Vera draws her blade and squints her injured eye as crimson vital fluid drips from her socket.'}
+577	577		301							{2: 'Vera', 3: '...I was going to let you go.', 4: '1'}
+578	578		301							"{2: 'Vera', 3: 'Trusting your ""teammates"" really does drown you in their beautiful fantasies.', 4: '1'}"
+579	579		301							{2: 'Hey', 3: '...I was contacted by Daedalus, but I never accepted their invitation.', 4: '18'}
+580	580		301							"{2: 'Hey', 3: 'I just wanted to be free and escape Kurono so that I don\'t have to endure the cruelty of ""survival of the fittest"""" and join a Construct task force, fighting like dogs to earn the """"reward"" of staying alive.', 4: '18'}"
+581	581		301							{2: 'Vera', 3: '...', 4: '1'}
+582	582		301							{2: 'Hey', 3: 'But I never meant to drag you and Moth into it. Neither of you needed to get tangled up in my trouble. She was practically a child, and you... I heard you were just a student back then.', 4: '18'}
+583	583		301							{2: 'Hey', 3: 'Who would have thought that merely harboring the intention to escape would lead to a hunt like this?', 4: '18'}
+584	584		301							"{2: 'Hey', 3: 'So that mission to find the ""Key"" was just for show...? Obtaining it so easily after all the trouble we went through did make me suspicious for quite a while...', 4: '18'}"
+585	585		301							"{2: 'Vera', 3: 'No, the mission to find the ""Key"" was real.', 4: '1'}"
+586	586		301							{2: 'Hey', 3: '...Huh?', 4: '18'}
+587	587		401							{1: '2', 2: '4803'}
+588	588		301							{3: 'The tracking device taken from the Corrupted lies nearby, its light still blinking. Both of them glance at it simultaneously.'}
+589	589		301							{2: 'Hey', 3: '...', 4: '18'}
+590	590		301							"{2: 'Hey', 3: 'Grab the ""Key""... Grab it! It\'s on me.', 4: '18'}"
+591	591		301							"{3: ""Vera's eyes flash with realization as she reaches for the mission objective hanging around Hey's neck and yanks it off.""}"
+592	592		301							{3: 'A plain, unassuming access card, looking almost like an insignificant trinket.'}
+593	593		301							"{3: 'Under Hey\'s glare of nearly tangible hatred, Vera brings the tracking device to the ""Key"", and the urgent blinking intensifies into a steady glow.'}"
+594	594		301							{2: 'Vera', 3: '...', 4: '1'}
+595	595		301							{2: 'Hey', 3: 'Heh...', 4: '18'}
+596	596		301							{2: 'Hey', 3: 'Hahaha.', 4: '18'}
+597	597		202							{1: '1', 2: '18', 6: '1'}
+598	598		201							{1: '1', 2: '500661', 4: '-400'}
+599	599		201							{1: '2', 2: '500405', 4: '400', 5: '-400'}
+600	600		203						250.0	{1: '2', 2: '0.25', 3: '400'}
+601	601		401							{1: '2', 2: '4044'}
+602	602		301							"{1: '1', 3: 'Vera\'s grip loosens, and Hey breaks free almost instantly. She scrambles to her feet, snatches the ""Key"", and crushes it in her fist with all her might.'}"
+603	603		301							"{3: 'The memory of buying this ""Key"" in that Seaside Street remains crystal clear. Even their simple haggling seems absurdly laughable now.'}"
+604	604		301							{3: 'They simply bought a fake and signed a death warrant for Group 013.'}
+605	605		301							"{2: 'Hey', 3: ""We've been fooled by a simple trick all along..."", 4: '2'}"
+606	606		301							{3: 'She laughs, savagely mocking her own stupidity.'}
+607	607		301							{2: 'Hey', 3: 'Hahaha... To think we spent all that time suspecting each other... wearing each other down until we ended up in this disaster.', 4: '2'}
+608	608		301							"{2: 'Hey', 3: ""I've had enough. This ends now."", 4: '2'}"
+609	609		301							{3: 'The tracking device continues to blink sarcastically. She holds this mockery close to her chest, taking it in.'}
+610	610		301							{2: 'Hey', 3: 'We still have a chance, Hound... No.', 4: '2'}
+611	611		301							"{3: 'She looks at Vera, a crazed light flashing in her eyes. Now she truly embodies the spirit of ""Group 013"".'}"
+612	612		301							{2: 'Hey', 3: 'Can you... help me complete one final mission?', 4: '2'}
+613	613		301							{2: 'Vera', 3: '...', 4: '1'}
+614	614		301							"{2: 'Hey', 3: ""I'll make this d*mn thing useful for once. You take care of these clueless refugees—don't turn our last bit of effort into another joke."", 4: '2'}"
+615	615		401							{1: '2', 2: '4547'}
+616	616		203						250.0	{1: '2', 2: '0.25', 3: '300'}
+617	617		203							{1: '2', 2: '0.25', 3: '400'}
+618	618		301							{3: 'With that, Hey kicks the door open. Sensing something, the Corrupted below all turn their red lights upward in unison.'}
+619	619		301							{2: 'Hey', 3: 'You were only assigned to our team to keep an eye on me. This mission was just for me and Moth—you were dragged into this.', 4: '2'}
+620	620		301		1		AniZhuanchangBegin			"{2: 'Hey', 3: 'You\'re the one who needs to ""live"".', 4: '2'}"

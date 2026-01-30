@@ -1,0 +1,27 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory27.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '1101001'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Watanabe', 3: ""I... I'll ask you again—"", 4: '1'}"
+5	5		301							{2: 'Watanabe', 3: 'Does your belief really align with ours?', 4: '1'}
+6	6		302							{2: 'Fundamentally speaking.', 3: '8', 4: 'Some of it, at the very least.', 5: '7'}
+7	7		301							{2: 'Watanabe', 3: 'Hmph, what a diplomatic way to put it...', 4: '1'}
+8	8		301							{2: 'Watanabe', 3: 'Sigh...', 4: '1'}
+9	9		301							"{2: 'Watanabe', 3: ""Not that I don't believe in you. I've seen the choices you made during our previous fights together."", 4: '1'}"
+10	10		301							{2: 'Watanabe', 3: 'But Oasis is still too fragile at the moment. I have to protect it as its leader.', 4: '1'}
+11	11		301							"{2: 'Watanabe', 3: ""One day... I'll let you be among them. Truly among them."", 4: '1'}"
+12	12		301							{2: 'Watanabe', 3: 'But... not today.', 4: '1'}
+13	13		302							{2: 'Why will that day come?', 3: '14', 4: 'How long do humans have to wait?', 5: '14'}
+14	14		301							"{2: 'Watanabe', 3: ""If we can work on it together... I'm sure it won't be long..."", 4: '1'}"
+15	100		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+16	101		401							{1: '1', 2: '202'}
+17	15		301			RImgBg1Shake				{3: 'BOOM!'}
+18	16		203							{1: '1', 2: '0.25', 3: '-450'}
+19	17		201							{1: '2', 2: '500019', 4: '450'}
+20	18		301							{1: '1', 2: 'Watanabe', 3: 'What was that?!', 4: '1'}
+21	19		301							{2: 'Forsaken Construct', 3: 'Sir! A group of Corrupted spotted in the west! They launched an attack!', 4: '2'}
+22	20		202							{1: '2', 6: '1'}
+23	21		203							{1: '1', 2: '0.25'}
+24	22		301							{2: 'Watanabe', 3: 'Dammit, not now!', 4: '1'}
+25	23		301							{2: 'Watanabe', 3: 'You...', 4: '1'}
+26	24		301		1		AniZhuanchangBegin			"{2: 'Watanabe', 3: ""You stay right here! Don't get any closer!"", 4: '1'}"

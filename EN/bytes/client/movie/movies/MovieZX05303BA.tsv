@@ -1,0 +1,244 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3301_04.jpg'}
+2	2		104							{1: '-100|-150|-300', 2: '0'}
+3	3		401							{1: '1', 2: '5016'}
+4	4		107			AniZhuanchangEnd			2000.0	{1: 'World Government Association of Art', 2: '9:30', 4: 'Babylonia', 5: 'Line Spacing: 0'}
+5	5		108							{1: '1'}
+6	6		401							{1: '2', 2: '4044'}
+7	7		201							{1: '1', 2: '500110', 3: '4', 4: '-25'}
+8	8		203							{1: '1', 2: '0.5', 3: '0'}
+9	9		301			DialogEnable				{1: '1', 3: 'In her private studio, Ayla grabs her wrist and tears herself away from the canvas.'}
+10	10		301							"{3: ""It's not because of her sketch, but a sense that something is wrong.""}"
+11	11		204							{1: '1', 2: '19'}
+12	12		301							{2: 'Ayla', 3: '【kuroname】, are you alright...?', 4: '1'}
+13	13		202							{1: '1'}
+14	14		301							"{3: ""Ayla's voice fades in and out. Sweat covers your body as you focus on your own condition instead of the canvas.""}"
+15	15		104						1000.0	{1: '-100|-80|-50', 2: '2'}
+16	16		104							{1: '100|80|-50', 2: '2'}
+17	17		301							{3: 'Your consciousness jumps up and down until it finally restores the edges of your form, stabilizing you.'}
+18	18		104				AniZhuanchangBegin			{1: '0|0|0', 2: '1'}
+19	19		504							{1: '0.9'}
+20	20		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory718.jpg'}
+21	21		401						400.0	{1: '2', 2: '743'}
+22	22		201							{1: '1', 2: '500059'}
+23	23		301			AniZhuanchangEnd				"{1: '1', 2: 'Star of Life Doctor', 3: ""...These are very clear symptoms of overexertion. The test shows no other problems, so I won't give you any meds. Rest is the most effective. Take some time off, if you can."", 4: '1'}"
+24	24		402							{1: '743'}
+25	25		301				AniZhuanchangBegin			{3: 'The Star of Life doctor continuously scrolls through the test reports on the screen, offering reassurance.'}
+26	26		202							{1: '1', 6: '1'}
+27	27		502						400.0	{1: 'DialogDisable'}
+28	28		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+29	29		504							{1: '0'}
+30	30		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg3301_04.jpg'}
+31	31		301			DialogEnable				"{3: ""It's not overwork or fatigue.""}"
+32	32		301				AniZhuanchangBegin			{3: 'Neither mental nor physical exhaustion would cause a reaction like this.'}
+33	33		502						400.0	{1: 'DialogDisable'}
+34	34		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '2'}
+35	35		401							{1: '2', 2: '4386'}
+36	36		504							{1: '0.9'}
+37	37		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_14.jpg'}
+38	38		401							{1: '2', 2: '4921'}
+39	39		502							{1: 'RImgBg1BlowUp'}
+40	40		301			DialogEnable				"{2: '???', 3: '""Despite your ravages...""'}"
+41	41		505							{1: 'RImgBg1BlowUp'}
+42	42		301				AniZhuanchangBegin			"{2: '???', 3: '""My lover shall be young forever in my poetry.""'}"
+43	43		402							{1: '4921'}
+44	44		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab'}
+45	45		504							{1: '0'}
+46	46		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3301_04.jpg'}
+47	47		301			AniZhuanchangEnd				"{3: ""Something's wrong. Is it the sounds I'm hearing? Or the images I'm seeing?""}"
+48	48		301				AniZhuanchangBegin			{3: 'You look up again. The blank face on the canvas shifts in your vision and seems tangible and elusive at the same time.'}
+49	49		401							{1: '2', 2: '2661'}
+50	50		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg'}
+51	51		301			AniZhuanchangEnd				{3: 'You take out fresh writing paper the moment you close the cabinet.'}
+52	52		301							{3: 'Your motion is fluid, as if closing the mail cabinet and writing a reply to someone is a habit, instinct, a natural consequence of countless repetitions.'}
+53	53		301				AniZhuanchangBegin			{3: 'But as pen meets paper, discomfort makes your hand freeze. Even though you already know the opening lines and just need to write them down.'}
+54	54		502							{1: 'DialogDisable'}
+55	55		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg3301_04.jpg'}
+56	56		301			DialogEnable				"{3: 'There\'s an emotion that ""I"" have forgotten but my body remembers.'}"
+57	57		201							{1: '1', 2: '500110', 3: '19'}
+58	58		301							{1: '1', 2: 'Ayla', 3: '【kuroname】...', 4: '1'}
+59	59		202							{1: '1'}
+60	60		301							"{3: 'Ayla\'s voice becomes a bit clearer. She\'s reaching out to ""me,"" showing concern for ""me."" The emotion and care in her tone help define ""my"" sense of self.'}"
+61	61		301							{3: 'The emotional experience fades. Things lie on the chopping board of rationality. Just as the blade of scrutiny is about to fall, they struggle to take concrete form again.'}
+62	62		301							"{3: 'Something ""I"" don\'t know about is happening. ""My"" perception has blind spots—the problem is with ""me.""'}"
+63	63		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+64	64		401							{1: '2', 2: '4386'}
+65	65		504							{1: '0.7'}
+66	66		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+67	67		201							{1: '1', 2: '500110', 3: '4'}
+68	68		301							"{1: '1', 2: 'Ayla', 3: ""I'm fine, Commandant. It's just that I... just had a strange feeling just now..."", 4: '1'}"
+69	69		204							{1: '1', 2: '19'}
+70	70		301							{2: 'Ayla', 3: 'It felt... a little weird...', 4: '1'}
+71	71		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+72	72		202							{1: '1', 6: '1'}
+73	73		401							{1: '2', 2: '4386'}
+74	74		504							{1: '0'}
+75	75		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3301_04.jpg'}
+76	76		301							"{3: 'No... perhaps the problem isn\'t just with ""me,"" but with us—with some larger concept altogether.'}"
+77	77		301							{3: 'You reach the conclusion and your spirit and flesh become calm again. The unknown is the ultimate fear—yet when trouble shows its tip on the ocean surface, past experiences become the best sedative.'}
+78	78		301							{3: 'No disturbance of consciousness can shake a Commandant on active duty.'}
+79	79		302							{2: 'Ayla', 3: '80'}
+80	80		401						300.0	{1: '2', 2: '4341'}
+81	81		104							{1: '0|-10|0', 2: '0.25'}
+82	82		402							{1: '4341'}
+83	83		201							{1: '1', 2: '500110', 3: '4'}
+84	84		301							{1: '1', 3: 'You abruptly look up, sweat dripping down your face. Your gaze fixes on Ayla.'}
+85	85		301							{2: 'Ayla', 3: 'Yes.', 4: '1'}
+86	86		302							"{2: '""Take a photo of this canvas. We\'re going to the Star of Life.""', 3: '87'}"
+87	87		301							{2: 'Ayla', 3: '...Sure.', 4: '1'}
+88	88		202							{1: '1'}
+89	89		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+90	90		203							{1: '1', 2: '0.25', 4: '-25'}
+91	91		401						400.0	{1: '2', 2: '4628'}
+92	92		402							{1: '4628'}
+93	93		301			DialogEnable	DialogDisable			{3: 'You pull out your terminal to book a session at the Star of Life while explaining to a confused Ayla, who trusts your judgment.'}
+94	94		302							{2: 'A few days ago, I started experiencing symptoms similar to war trauma.', 3: '95'}
+95	95		302							{2: 'The doctor said it was just fatigue.', 3: '96'}
+96	96		302							{2: 'But at the opera house, I experienced hallucinations.', 3: '97'}
+97	97		302							{2: 'I dismissed it as a one-time occurrence, but now...', 3: '98'}
+98	98		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+99	99		201							{1: '1', 2: '500110', 3: '4'}
+100	100		301			DialogEnable				"{1: '1', 2: 'Ayla', 3: ""This canvas triggered it again, didn't it?"", 4: '1'}"
+101	101		301							{2: 'Ayla', 3: 'What did you see? Or rather, what did you remember?', 4: '1'}
+102	102		302							"{2: ""I didn't see anything, nor did I remember anything."", 3: '103'}"
+103	103		302							{2: 'However—', 3: '104'}
+104	104		401							{1: '2', 2: '5286'}
+105	105		301							{3: 'You raise your right hand toward Ayla, your fingertips still stained with paint from the canvas.'}
+106	106		301							{2: 'Ayla', 3: 'Your body reacted before you noticed... I see.', 4: '1'}
+107	107		204							{1: '1'}
+108	108		301							{2: 'Ayla', 3: 'However... it would make more sense if it only triggered hallucinations.', 4: '1'}
+109	109		204							{1: '1', 2: '4'}
+110	110		301							{2: 'Ayla', 3: 'But this time, you were unconsciously compelled to act, suggesting the stimulus is stronger and affecting you more deeply.', 4: '1'}
+111	111		401							{1: '2', 2: '5290'}
+112	112		203						250.0	{1: '1', 2: '0.25', 4: '-25'}
+113	113		203							{1: '1', 2: '0.25'}
+114	114		301							"{3: ""Ayla puts down her camera and steps back to look at the canvas, only to realize something isn't right.""}"
+115	115		301							{2: 'Ayla', 3: 'But this painting is inspired by scenes from my own M.I.N.D...', 4: '1'}
+116	116		302							"{2: ""Yes, that's why you need to get examined as well."", 3: '117'}"
+117	117		203							{1: '1', 2: '0.75', 4: '-50', 5: '-150'}
+118	118		401							{1: '2', 2: '4044'}
+119	119		202							{1: '1'}
+120	120		301				DialogDisable			{3: 'You hand over your terminal with a blank medical appointment form for Ayla to verify.'}
+121	121		302				AniZhuanchangBegin			"{2: ""We need to figure out what's really happening."", 3: '122'}"
+122	122		401							{1: '1', 2: '36'}
+123	123		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory718.jpg'}
+124	124		401							{1: '1', 2: '371'}
+125	125		107			AniZhuanchangEnd			2000.0	{1: 'Star of Life', 2: '10:20', 4: 'Babylonia', 5: 'Line Spacing: 0'}
+126	126		108							{1: '1', 2: '5019'}
+127	127		301			DialogEnable				{3: 'The pristine white decor and scent of antiseptic create a reassuring atmosphere for every visitor.'}
+128	128		301							{3: 'You arrive at the Star of Life with Ayla and spot several familiar faces before you even reach the reception.'}
+129	129		201							{1: '1', 2: '500404'}
+130	130		301							"{1: '1', 2: 'Hippocrates', 3: ""I usually wouldn't say this, but since I've seen it, I have to say, you've crossed a line."", 4: '1'}"
+131	131		301							{2: 'Hippocrates', 3: 'The Star of Life is a place for healing and saving lives, not a tool for covering up your messes.', 4: '1'}
+132	132		203							{1: '1', 2: '0.25', 3: '400'}
+133	133		201							{1: '2', 2: '500319', 4: '-400'}
+134	134		301							{1: '1', 2: 'Collins', 3: 'Of course, I completely agree. Where else in Babylonia could you find a cleaner place than this?', 4: '2'}
+135	135		301							"{2: 'Collins', 3: ""But what we're doing is also a form of treatment. Some troubles on the surface can be fixed with a bit of money, but if it happens in space..."", 4: '2'}"
+136	136		401							{1: '2', 2: '4802'}
+137	137		301							{3: 'Collins taps his foot on the floor, his tone overflowing with a sincerity that seems to come from the heart.'}
+138	138		301							"{2: 'Collins', 3: ""That's not a sight anyone would want to see."", 4: '2'}"
+139	139		301							{2: 'Hippocrates', 3: '...Medical practice requires a license, and treatments must follow proper protocols.', 4: '1'}
+140	140		301							"{2: 'Collins', 3: ""Of course. Everything we're doing is within the scope of medical protocols."", 4: '2'}"
+141	141		301							"{3: ""Collins' smile stays intact as he passes the conversation to the man behind him.""}"
+142	142		202							{1: '1', 2: '2', 6: '1'}
+143	143		201							{1: '1', 2: '500004'}
+144	144		301							{1: '1', 2: 'Asimov', 3: '...', 4: '1'}
+145	145		201							{1: '1', 2: '500404'}
+146	146		301							{2: 'Hippocrates', 3: '...', 4: '1'}
+147	147		301							{3: 'The silence lasts only a few seconds before Hippocrates reluctantly hands over what appears to be an official notice, which Asimov takes and signs.'}
+148	148		301							{2: 'Hippocrates', 3: 'You know about this?', 4: '1'}
+149	149		203							{1: '1', 2: '0.25', 3: '400'}
+150	150		201							{1: '2', 2: '500004', 4: '-400'}
+151	151		301							{1: '1', 2: 'Asimov', 3: '...Yes and no. They moved too quickly.', 4: '2'}
+152	152		301							{3: 'Asimov hesitates, as if wanting to explain something, but just lets out a sigh.'}
+153	153		301							"{2: 'Asimov', 3: ""You know, I've never been able to figure out how they think, and I don't want to waste time trying. But I'll keep a closer eye from now on."", 4: '2'}"
+154	154		301							{2: 'Hippocrates', 3: 'If you say so.', 4: '1'}
+155	155		301							"{2: 'Hippocrates', 3: ""Let's go, Attending Physician Collins. I'll show you Babylonia's illness."", 4: '1'}"
+156	156		202							{1: '1', 2: '2', 6: '1'}
+157	157		201							{1: '1', 2: '500319'}
+158	158		301							"{1: '1', 2: 'Collins', 3: ""You must be joking. Hasn't he already been cleared? I'm here to offer condolences and compensation."", 4: '1'}"
+159	159		401							{1: '2', 2: '2704'}
+160	160		301							{3: 'To show his sincerity, Collins produces a basket of gifts, with the most expensive item being an anonymous credit chip nestled among the flowers.'}
+161	161		401							{1: '2', 2: '4341'}
+162	162		401							{1: '2', 2: '4383'}
+163	163		301							{3: 'Hippocrates responds with a grunt, shoves his hands back into his pockets, and turns to leave.'}
+164	164		202							{1: '1'}
+165	165		301							{3: 'The two walk away while Asimov remains still.'}
+166	166		402							{1: '4383'}
+167	167		302							{2: 'What happened?', 3: '168', 4: 'Asimov?', 5: '168'}
+168	168		201							{1: '1', 2: '500004', 3: '7'}
+169	169		301							{1: '1', 2: 'Asimov', 3: '【kuroname】?', 4: '1'}
+170	170		301							{3: 'Startled, Asimov looks up and tucks his pen back into his collar. His tone shows mild irritation.'}
+171	171		204							{1: '1'}
+172	172		301							{2: 'Asimov', 3: 'A minor issue with the Science Council. The Control Court has taken several researchers in for questioning.', 4: '1'}
+173	173		201							{1: '2', 2: '500110', 3: '7', 4: '400'}
+174	174		203							{1: '1', 2: '0.25', 3: '-400', 4: '4'}
+175	175		301							{1: '1', 2: 'Ayla', 3: 'The Control Court? Not Kurono?', 4: '2'}
+176	176		301							"{2: 'Asimov', 3: ""They're involved, but they weren't the cause."", 4: '1'}"
+177	177		301							{3: 'Asimov pauses briefly, thinking about whether to explain further.'}
+178	178		301							"{2: 'Asimov', 3: ""Discrepancies between the actual results and what was reported were found for a project at one of the Science Council's research institutions."", 4: '1'}"
+179	179		301							{2: 'Asimov', 3: 'So the Control Court intervened under counter-espionage and confidentiality breach regulations.', 4: '1'}
+180	180		302							{2: 'Sounds like standard procedure.', 3: '181'}
+181	181		301							"{2: 'Asimov', 3: ""But Kurono doesn't see it that way. They've interpreted the Control Court's crackdown on the Science Council as a premeditated collaboration."", 4: '1'}"
+182	182		301				DialogDisable			"{2: 'Ayla', 3: ""I don't understand... Why would Kurono interpret the Control Court's attack as cooperation?"", 4: '2'}"
+183	183		302							{2: 'The Control Court confronts the Science Council...', 3: '184'}
+184	184		302							"{2: 'And their ""investigation"" extends to other projects in the process...', 3: '185'}"
+185	185		302							"{2: 'Kurono\'s projects get ""accidentally"" caught up in it...', 3: '186'}"
+186	186		302							"{2: ""...That's what they're worried about."", 3: '187'}"
+187	187		301			DialogEnable				{2: 'Ayla', 3: '...How exactly does this all relate? The reasoning seems a bit off.', 4: '2'}
+188	188		301							"{2: 'Asimov', 3: ""Because this isn't the first time. Kurono secretly interfering with Science Council research projects is nothing new."", 4: '1'}"
+189	189		301							"{2: 'Asimov', 3: ""The Control Court and Science Council responding to or retaliating against such actions is also common. I don't like getting involved in these political games, but..."", 4: '1'}"
+190	190		302							{2: 'Did they cross the line this time?', 3: '191'}
+191	191		301							"{3: ""Asimov's brows furrow together, showing he's deep in thought.""}"
+192	192		301							{2: 'Asimov', 3: 'To prove their innocence, they started treating all involved researchers as criminals during interrogations.', 4: '1'}
+193	193		301							"{2: 'Asimov', 3: ""The worst suffered severe psychological trauma that the Control Court's own medical team couldn't handle, so they transferred them to the Star of Life."", 4: '1'}"
+194	194		204							{1: '2', 2: '4'}
+195	195		301							{2: 'Ayla', 3: 'Sounds very much like they were trying to destroy evidence.', 4: '2'}
+196	196		301							"{2: 'Asimov', 3: ""That's what I thought, too, but Kurono released recordings of the entire process."", 4: '1'}"
+197	197		301							{2: 'Asimov', 3: 'This time they are genuinely innocent, so of course they made a point of being open about the investigation.', 4: '1'}
+198	198		301							{2: 'Asimov', 3: 'Besides, this incident was very unusual.', 4: '1'}
+199	199		301							"{3: ""Asimov's expression grows increasingly serious as he delves into the details.""}"
+200	200		301							"{2: 'Asimov', 3: ""There was a glaring, inexplicable gap in the project's research progression."", 4: '1'}"
+201	201		301							{2: 'Asimov', 3: 'Like a skyscraper that appeared out of thin air.', 4: '1'}
+202	202		302							{2: 'Appeared out of thin air...', 3: '203'}
+203	203		301							"{2: 'Asimov', 3: ""The project's latest technology had already been implemented on several frames and even deployed on a small scale, yet the most recent batch of experimental results was only produced last month."", 4: '1'}"
+204	204		301							{2: 'Asimov', 3: 'But the earlier derivation process and prototype technologies seem to have vanished.', 4: '1'}
+205	205		204							{1: '2', 2: '4'}
+206	206		301							{2: 'Ayla', 3: '...Did they not notice anything unusual?', 4: '2'}
+207	207		301							"{2: 'Asimov', 3: ""No. The project members' reactions to this question were so consistent they seemed more like a rehearsed performance than a coordinated cover-up."", 4: '1'}"
+208	208		301							{2: 'Asimov', 3: 'Complete ignorance, bewilderment, and excuses—even the sequence of their reactions was nearly identical across the board.', 4: '1'}
+209	209		301							"{3: ""Asimov's brow furrows even deeper.""}"
+210	210		301							{2: 'Asimov', 3: 'This left every investigator confused, so they drew the simplest conclusion—that the researchers sold their findings and then falsified their progress reports.', 4: '1'}
+211	211		302							{2: 'But if their goal was to steal and sell classified information,', 3: '212'}
+212	212		302							{2: 'it makes no sense that they would implement the research results.', 3: '213'}
+213	213		301							{2: 'Asimov', 3: 'This is another point the investigation fails to explain. Something must have gone wrong, but neither the Control Court nor Kurono have given me time to figure it out.', 4: '1'}
+214	214		301							"{2: 'Asimov', 3: ""It's simple—without one, there cannot be two. Without materials and a manufacturing process, there will not be a finished product."", 4: '1'}"
+215	215		302							{2: '...', 3: '216'}
+216	216		301							"{3: ""Asimov's words coherently connect several abstract concepts.""}"
+217	217		302							{2: '...Ayla.', 3: '218'}
+218	218		204							{1: '2'}
+219	219		301							{2: 'Ayla', 3: 'Hm?', 4: '2'}
+220	220		301				DialogDisable			{3: 'You pull out the letters you discovered in the cabinet.'}
+221	221		302							{2: 'They have recipients and broken wax seals.', 3: '222'}
+222	222		302							{2: 'Letters that are just like the finished products.', 3: '223'}
+223	223		302							{2: 'But the paper inside is completely blank.', 3: '224'}
+224	224		204							{1: '2', 2: '8'}
+225	225		301			DialogEnable				{2: 'Ayla', 3: 'It sounds a bit far-fetched, but...', 4: '2'}
+226	226		301							"{2: 'Asimov', 3: ""...Looks like you've run into trouble as well."", 4: '1'}"
+227	227		204							{1: '2', 2: '4'}
+228	228		301							"{2: 'Ayla', 3: ""That's why 【kuroname】 and I came to the Star of Life."", 4: '2'}"
+229	229		204							{1: '2'}
+230	230		301							{2: 'Ayla', 3: 'Asimov, does this project have any connection to the WGAA?', 4: '2'}
+231	231		301							"{2: 'Asimov', 3: ""I don't know your situation, but this project has nothing to do with the WGAA."", 4: '1'}"
+232	232		301							"{2: 'Asimov', 3: ""It's military research, primarily for the battlefield. They study Tenebrion energy, which you should know about."", 4: '1'}"
+233	233		301							{3: 'Asimov pauses for a moment before continuing.'}
+234	234		301							"{2: 'Asimov', 3: ""The project's official codename is <color=#ff4e4eff>Abess</color>. Its predecessor was a research institution from the Golden Age called the Abess Research Institute."", 4: '1'}"
+235	235		301							{2: 'Asimov', 3: 'Does what happened to you have anything to do with this name?', 4: '1'}
+236	236		204							{1: '2', 2: '4'}
+237	237		301							{3: 'You exchange a look with Ayla, both shaking your heads.'}
+238	238		401							{1: '2', 2: '1099'}
+239	239		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab', 2: '2'}
+240	240		301							"{2: 'Electronic Voice', 3: '""H0584, 【kuroname】. RS0585, Ayla, please proceed to window twenty-seven.""'}"
+241	241		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab'}
+242	242		202							{1: '1', 2: '2'}
+243	243		301		1		AniZhuanchangBegin			"{3: ""Ayla is about to say something when a cold electronic voice sounds in the lobby. It's their scheduled consultation.""}"

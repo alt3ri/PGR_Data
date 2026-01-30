@@ -1,0 +1,120 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory26.jpg'}
+2	2		306							{1: '1'}
+3	3		501				AniZhuanchangEnd		300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+4	4		401							{1: '2', 2: '649'}
+5	5		401							{1: '1', 2: '36'}
+6	6		301			DialogEnable				{2: 'Vera', 3: 'Alright. Your turn.'}
+7	7		301							{2: 'Noctis', 3: 'What? That was quick! I thought we were swapping every half an hour!'}
+8	8		301							{2: 'Vera', 3: 'Yeah. That was half an hour.'}
+9	9		301							{2: 'Noctis', 3: 'Sigh. Fine. I guess pushing the car is less tiring now with this money.'}
+10	10		301							{2: 'No. 21', 3: 'Noctis will definitely overspend.'}
+11	11		301							"{2: 'Noctis', 3: ""Impossible! I'm the best at managing finances!""}"
+12	12		301							{2: 'Vera', 3: 'Sure. You can keep the money, then. Make sure to double it in 3 months.'}
+13	13		301							{2: 'Noctis', 3: 'Right. If I lend it with an interest rate of 70%...'}
+14	14		301							"{2: 'No. 21', 3: ""Don't worry. I'll throw away the trash Noctis has in the lounge when he is in jail.""}"
+15	15		301							{2: 'Noctis', 3: 'Will I get court-martialed for this?'}
+16	16		301							{2: 'No. 21', 3: 'Yes? Yes.'}
+17	17		301							"{2: 'Vera', 3: ""I don't think financial crimes apply to Constructs... but I don't remember for sure. Give it a shot, and we'll find out.""}"
+18	18		301							"{2: 'Vera', 3: ""Simply put, don't get too hung up with this bounty. Save it for the inevitable future when you need to clean up your mess.""}"
+19	19		301							{2: 'No. 21', 3: 'Hmm... The car is much lighter after Noctis got out.'}
+20	20		301							"{2: 'Noctis', 3: ""It's because of my muscles! Muscles!""}"
+21	21		301							{2: 'Noctis', 3: 'Unlike you, whose claws are heavier than your brain!'}
+22	22		301							{2: 'No. 21', 3: 'But claws tear muscles apart!'}
+23	23		301							{2: 'Noctis', 3: 'Ha! Is that a challenge?'}
+24	24		301							{2: 'Vera', 3: 'What is this? Kill one, lose one free? Sounds good to me.'}
+25	25		301							{2: 'No. 21', 3: '...Forget it.'}
+26	26		301							{2: 'Noctis', 3: 'Hey, Captain! How far away are we from the extraction point?'}
+27	27		301							"{2: 'Noctis', 3: ""I don't want to push anymore.""}"
+28	28		301							"{2: 'Vera', 3: ""Let's see... We'll be there after this part of the no man's land. Another 30 km or so.""}"
+29	29		301				AniZhuanchangBegin			"{2: 'Noctis', 3: ""We've completed our mission already! Why is it still so exhausting?!""}"
+30	30		502						1000.0	{1: 'DialogDisable'}
+31	31		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory318.png'}
+32	32		104				AniZhuanchangEnd			{1: '0|-180|-300', 2: '0'}
+33	33		401							{1: '2', 2: '759'}
+34	34		301			DialogEnable				{3: 'It is a sunny day—a little too sunny, perhaps. The sun shines blatantly upon the asphalt road that lies within hundreds of miles of deserted fields and sands.'}
+35	35		104							{1: '0|0|0', 2: '5'}
+36	36		301							{3: 'The physical conditions of humans have determined that such an environment is not ideal for their survival. However, this place is a paradise for some other life forms.'}
+37	37		301							{3: 'Lizards, bharals, hares, wolves, the flying vultures...'}
+38	38		402							{1: '649'}
+39	39		301				AniZhuanchangBegin			{3: '...And the members of Cerberus, who are pushing their car on an endless highway.'}
+40	40		306							
+41	41		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+42	42		502						400.0	{1: 'DialogDisable'}
+43	43		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+44	44		401							{1: '1', 2: '169'}
+45	45		201							{1: '1', 2: '500345'}
+46	46		201							{1: '2', 2: '500682', 3: '3', 4: '600'}
+47	47		201							{1: '3', 2: '500650', 4: '-600'}
+48	48		301			DialogEnable				"{1: '1', 2: 'Noctis', 3: ""That's it?"", 4: '2'}"
+49	49		301							"{2: 'No. 21', 3: ""That's it."", 4: '3'}"
+50	50		301							{2: 'Noctis', 3: 'This film thing looked kind of blurry.', 4: '2'}
+51	51		204							{1: '2', 2: '2'}
+52	52		301							{2: 'Noctis', 3: 'I still looked pretty handsome, though!', 4: '2'}
+53	53		204							{1: '1', 2: '4'}
+54	54		301							{2: 'No. 21', 3: 'Right.', 4: '3'}
+55	55		301							{2: 'Vera', 3: 'So... he shot this during the journey?', 4: '1'}
+56	56		204							{1: '1'}
+57	57		204							{1: '2', 2: '3'}
+58	58		301							{2: 'Noctis', 3: 'I guess.', 4: '2'}
+59	59		301							{2: 'Noctis', 3: 'Dammit. Is this violating my image rights?', 4: '2'}
+60	60		204							{1: '1', 2: '2'}
+61	61		301							{2: 'Vera', 3: 'I saw him hold up his camera occasionally. So this is what he was recording.', 4: '1'}
+62	62		301							{2: 'Noctis', 3: 'Oh, by the way...', 4: '2'}
+63	63		301							{2: 'Noctis', 3: 'What happened to the money in the end? The bounty?', 4: '2'}
+64	64		204							{1: '1'}
+65	65		301							"{2: 'Vera', 3: ""I know we happened to take care of that thug from the mechanic's shop, but this money still counts as illegal income to Babylonia."", 4: '1'}"
+66	66		301							"{2: 'No. 21', 3: ""...I can't believe we took care of our mission target right at the beginning."", 4: '3'}"
+67	67		301							{2: 'Noctis', 3: 'That bedridden commandant must be bored. Sending us to take care of some bully on the surface?', 4: '2'}
+68	68		301							{2: 'Noctis', 3: 'We have to do all the dirty work—', 4: '2'}
+69	69		502						200.0	{1: 'RImgBg1Shake'}
+70	70		505							{1: 'RImgBg1Shake'}
+71	71		301							{3: 'Vera suddenly gives Noctis a kick.'}
+72	72		301							"{2: 'Vera', 3: ""Be glad you're not locked up."", 4: '1'}"
+73	73		204							{1: '2', 2: '2'}
+74	74		301							{2: 'Noctis', 3: 'Fine. At least we got the bounty.', 4: '2'}
+75	75		301							"{2: 'Vera', 3: ""You were paid by a bunch of Scavengers who were not Babylonia citizens. Sure, you can spend it, but it'll land you in jail, like No. 21 said."", 4: '1'}"
+76	76		301							{2: 'No. 21', 3: 'I want a new audiovisual terminal.', 4: '3'}
+77	77		301							"{2: 'Vera', 3: ""Sure, fine. We'll have to find a way to legitimize the money first."", 4: '1'}"
+78	78		301							{2: 'Noctis', 3: 'What if we invest in WGAA for some grenades?', 4: '2'}
+79	79		301							"{2: 'Vera', 3: ""No one's going to willingly lose their money like this."", 4: '1'}"
+80	80		301							"{2: 'Noctis', 3: ""What about movies? Didn't 21 say something about a movie with a red motorcycle?"", 4: '2'}"
+81	81		301							"{2: 'Noctis', 3: ""I'm kind of interested."", 4: '2'}"
+82	82		301							"{2: 'No. 21', 3: '""Light""? Beardy told me that\'s the name of the movie.', 4: '3'}"
+83	83		301							"{2: 'No. 21', 3: ""It's an old movie. I wonder if they can find it."", 4: '3'}"
+84	84		301							{2: 'No. 21', 3: 'The new audiovisual terminal I want may have this movie on it.', 4: '3'}
+85	85		301							{3: 'As she says that, No. 21 takes out the film roll from the projector and examines it in detail.'}
+86	86		204							{1: '2', 2: '3'}
+87	87		301							{2: 'Noctis', 3: 'Be careful. We borrowed it from WGAA.', 4: '2'}
+88	88		301							{2: 'Noctis', 3: 'The people there said they stopped producing films like this decades ago. The machine itself is pretty expensive as well.', 4: '2'}
+89	89		301							{3: 'While No. 21 curiously looks at her own images on the film, a note falls quietly from the tin box holding the roll.'}
+90	90		202						500.0	{1: '1', 2: '2', 3: '3', 6: '1'}
+91	91		401							{1: '2', 2: '2768'}
+92	92		304							"{1: ""I don't know where you are now. I bet you'll be back on Babylonia at some point."", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}"
+93	93		304							"{1: ""So I feel like it's safer to send this film to Babylonia."", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}"
+94	94		304							{1: 'Although I still have to lie in this clinic for a while, the doctor in the settlement said I should be able to get back on my feet soon.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}
+95	95		304							{1: 'I still have a job to do, after all.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}
+96	96		304							{1: 'I took the opportunity to finish editing this footage.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}
+97	97		304							"{1: ""I've been recording every now and then with my camera ever since I met you."", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}"
+98	98		304							{1: 'My editing is pretty shit.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 8: '1'}
+99	99		304							"{1: ""I'm bad at critiquing movies, and I'm bad at making them, too."", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}"
+100	100		304							"{1: 'But... I think the most important thing is to ""see.""', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}"
+101	101		304							"{1: ""It's already very impressive that I can record what I've experienced."", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}"
+102	102		304							{1: 'I think this is the best gift I can offer you.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}
+103	103		304							{1: 'Oh. One more thing.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}
+104	104		304							{1: 'I never told you how that movie ended.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}
+105	105		304							"{1: ""The knight reached the top of the tower, but he didn't find any relics."", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}"
+106	106		304							{1: 'But the gods gave him a spark of hope and told him the catastrophe would pass one day.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 8: '1'}
+107	107		304							{1: 'Golden crops would cover the land again, and the sun would brighten the sky once more.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}
+108	108		304							"{1: ""It's a cheesy ending, but it's a good ending as well."", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}"
+109	109		304							{1: 'Perhaps I wanted to live because of Zack and this movie.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}
+110	110		304							{1: 'Anyway... Thank you.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}
+111	111		304							"{1: ""As for the film in your hands, I've privately given it a name."", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}"
+112	112		304							"{1: ""That's all. I have to keep going and try to find the old fella's daughter."", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}"
+113	113		304							"{1: ""Perhaps we'll see each other again in a conservation area one day."", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}"
+114	114		304							{1: 'With plenty of whisky and movies.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 8: '1'}
+115	115		304							{1: 'Wait. The doctor just told me you paid for my medical bill with the bounty?', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}
+116	116		304							{1: 'Goddammit. How many more times do I have to owe you?!', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}
+117	117		304							{1: '—For Cerberus', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 10: '1'}
+118	118		304							"{1: '""The Meandering Three""', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 10: '1'}"
+119	119		304		1		AniZhuanchangBegin			{1: 'Beardy', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 9: '1', 10: '1'}

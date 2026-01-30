@@ -1,0 +1,43 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory6.jpg'}
+2	100		401							{1: '1', 2: '201'}
+3	101		401							{1: '2', 2: '1515'}
+4	2		301			DialogEnable				{2: 'System', 3: 'Calculations complete.'}
+5	3		301							{2: 'System', 3: 'Available routes: 0.'}
+6	4		201							{1: '1', 2: '1081001', 4: '400'}
+7	5		301							{1: '1', 2: 'Kamui', 3: 'A-alright... Probably not going to work even if we retry it.', 4: '1'}
+8	6		201							{1: '2', 2: '1011001', 4: '-400'}
+9	7		301							{1: '1', 2: 'Lee', 3: 'Do you have any other equipment that might help with the situation?', 4: '2'}
+10	8		301							{2: 'Kamui', 3: 'Other equipment... Lemme see...', 4: '1'}
+11	9		202							{1: '1', 2: '2', 6: '1'}
+12	10		201							{1: '1', 2: '1021001'}
+13	11		301							"{1: '1', 2: 'Lucia', 3: ""(Closes in) Commandant, I think it's about time we expand our tool repertoire for missions as well..."", 4: '1'}"
+14	12		202							{1: '1', 6: '1'}
+15	13		201							{1: '1', 2: '1081001', 4: '400'}
+16	14		201							{1: '2', 2: '1011001', 4: '-400'}
+17	15		301							{1: '1', 2: 'Kamui', 3: 'Only some EMP grenades left...', 4: '1'}
+18	16		202							{1: '1', 2: '2', 6: '1'}
+19	17		201							{1: '1', 2: '1021001'}
+20	18		301							{1: '1', 2: 'Lucia', 3: 'EMP... Would those be helpful in the current situation, Commandant?', 4: '1'}
+21	19		302							"{2: ""I don't think so."", 3: '20', 4: 'Probably.', 5: '20'}"
+22	20		201							{1: '1', 2: '1081001', 3: '1', 4: '400'}
+23	21		201							{1: '2', 2: '1011001', 4: '-400'}
+24	22		301							"{1: '1', 2: 'Kamui', 3: ""Commandant, your answer's too hazy! Of course it's helpful!"", 4: '1'}"
+25	23		301							"{2: 'Kamui', 3: ""But your uncertainty is understandable. I mean, you don't use these puppies that often!"", 4: '1'}"
+26	24		204							{1: '1'}
+27	25		204							{1: '2', 2: '10'}
+28	26		301							{1: '1', 2: 'Lee', 3: 'And here I thought you had an actual idea...', 4: '2'}
+29	27		204							{1: '2'}
+30	28		301							"{2: 'Lee', 3: ""EMP isn't going to be useful here."", 4: '2'}"
+31	29		301							"{2: 'Lee', 3: ""Not just us, but also the Corrupted, and even the door, they're all built with EMP in mind."", 4: '2'}"
+32	30		202							{1: '1', 2: '2', 6: '1'}
+33	102		401							{1: '2', 2: '10007502'}
+34	31		301			RImgBg1Shake				{3: 'Boom—The cave-in continues...'}
+35	32		201							{1: '1', 2: '1081001', 3: '1', 4: '400'}
+36	33		201							{1: '2', 2: '1011001', 4: '-400'}
+37	34		301							"{1: '1', 2: 'Kamui', 3: ""Wasn't there a saying? Simple is best! Wait, is that how it goes? Anyway, no time to explain."", 4: '1'}"
+38	35		204							{1: '1'}
+39	36		301							{2: 'Kamui', 3: 'We just need to place them in a few critical locations...', 4: '1'}
+40	37		301							"{2: 'Lee', 3: ""It's all rubble around here... Are you trying to fry something through the walls?"", 4: '2'}"
+41	38		204							{1: '1', 2: '1'}
+42	39		301		1		AniZhuanchangBegin			{2: 'Kamui', 3: 'Hahaha, you know your stuff, my technician Lee.', 4: '1'}

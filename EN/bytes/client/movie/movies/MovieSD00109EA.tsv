@@ -1,0 +1,93 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory102.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '1011001'}
+4	4		301			DialogEnable				{1: '1', 2: 'Lee', 3: 'Alright. Commandant, Liv, get into position.', 4: '1'}
+5	5		401							{1: '2', 2: '1516'}
+6	6		301					500.0		{2: 'Lee', 3: '3, 2, 1—', 4: '1'}
+7	7		202				RImgBg1Shake			{1: '1', 6: '1'}
+8	8		301							{3: '(Crash!)'}
+9	9		201							{1: '1', 2: '1041001'}
+10	10		301							{1: '1', 2: 'Nanami', 3: 'OUCH—!', 4: '1'}
+11	11		203							{1: '1', 2: '0.25', 3: '400'}
+12	12		201							{1: '2', 2: '1111001', 4: '-400'}
+13	13		301							"{1: '1', 2: 'Nanami', 3: ""What's the big idea! Who ran into me! I'm gonna saw you in half!"", 4: '1'}"
+14	14		301							{2: 'Karenina', 3: 'Am I... Am I too late?! For... For the...', 4: '2'}
+15	15		201							{1: '1', 2: '1021001', 4: '400'}
+16	16		301							{1: '1', 2: 'Lucia', 3: 'Karenina...?', 4: '1'}
+17	17		301							{2: 'Karenina', 3: 'Picture...! Did I make it in time?!', 4: '2'}
+18	18		201							{1: '1', 2: '1011001', 3: '10', 4: '400'}
+19	19		301							"{1: '1', 2: 'Lee', 3: ""You made it just in time. Had you not run into Nanami and made her take out her chainsaw, we would've already taken the group photo..."", 4: '1'}"
+20	20		204							{1: '1'}
+21	21		301							{2: 'Karenina', 3: 'Phew!', 4: '2'}
+22	22		301							{2: 'Lee', 3: 'What are you doing...?', 4: '1'}
+23	23		301							"{2: 'Karenina', 3: ""...Huh? Isn't it a group photo? Are you gonna make me do all this hard work for nothing?!"", 4: '2'}"
+24	24		201							{1: '1', 2: '1021001', 4: '400'}
+25	25		301							{1: '1', 2: 'Lucia', 3: 'Wait... Nanami—Huh? What are you doing?', 4: '1'}
+26	26		201							{1: '1', 2: '1041001', 3: '1', 4: '400'}
+27	27		301							{1: '1', 2: 'Nanami', 3: 'Tehe! I wanna picture, too!', 4: '1'}
+28	28		201							{1: '1', 2: '1021001', 4: '400'}
+29	29		301							{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+30	30		201							{1: '1', 2: '1011001', 3: '10', 4: '400'}
+31	31		301							"{1: '1', 2: 'Lee', 3: ""Well... I guess there's no turning back now..."", 4: '1'}"
+32	32		302							"{2: 'This works too.', 3: '33', 4: ""Let's all take a photo together."", 5: '33'}"
+33	33		201							{1: '1', 2: '1021001', 4: '400'}
+34	34		301							{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+35	35		201							{1: '1', 2: '1011001', 4: '400'}
+36	36		301				AniZhuanchangBegin			"{1: '1', 2: 'Lee', 3: ""I guess there's no other choice, but the cabin's too crowded. Let's take the photo outside. It's finally snowing."", 4: '1'}"
+37	37		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory105.png'}
+38	38		204							{1: '2', 2: '5'}
+39	39		301			AniZhuanchangEnd				{1: '1', 2: 'Karenina', 3: 'Hey! Quit pushing me!', 4: '2'}
+40	40		301							{1: '1', 2: 'Lee', 3: 'Sorry...!', 4: '1'}
+41	41		201							{1: '1', 2: '1041001', 4: '-400'}
+42	42		201							{1: '2', 2: '1031001', 4: '400'}
+43	43		301							"{1: '1', 2: 'Liv', 3: ""Put your chainsaw away, Nanami. You'll hurt the commandant..."", 4: '2'}"
+44	44		301							"{2: 'Nanami', 3: ""Scooch over, Liv. You're in the way! I won't be in the photo!"", 4: '1'}"
+45	45		201							{1: '2', 2: '1011001', 4: '400'}
+46	46		301							{1: '1', 2: 'Lee', 3: 'Everyone ready?', 4: '2'}
+47	47		202							{1: '1', 2: '2', 6: '1'}
+48	48		201							{1: '1', 2: '1021001', 4: '-400'}
+49	49		201							{1: '2', 2: '1031001', 4: '400'}
+50	50		301							{1: '1', 2: 'Liv', 3: 'Wait! What about Lucia?', 4: '2'}
+51	51		301							{2: 'Lucia', 3: '...', 4: '1'}
+52	52		301							"{2: 'Lucia', 3: ""Okay, I'll..."", 4: '1'}"
+53	53		202							{1: '1', 2: '2', 6: '1'}
+54	54		301							{3: '...'}
+55	55		201							{1: '1', 2: '1021001', 4: '-400'}
+56	56		201							{1: '2', 2: '1011001', 4: '400'}
+57	57		301							{1: '1', 2: 'Lee', 3: 'Get ready, everyone! 3, 2, 1—', 4: '2'}
+58	58		301							{2: 'Lucia', 3: 'Wait! I heard a noise coming from the chimney.', 4: '1'}
+59	59		301							{2: 'Lucia', 3: 'Wait...', 4: '1'}
+60	60		202							{1: '1', 2: '2', 6: '1'}
+61	61		201							{1: '1', 2: '1031001', 3: '6'}
+62	62		301				AniZhuanchangBegin			"{1: '1', 2: 'Liv', 3: ""Everyone, you're the best!"", 4: '1'}"
+63	63		202							{1: '1', 6: '1'}
+64	64		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgsd001.jpg'}
+65	65		301			AniZhuanchangEnd				{2: 'Nanami', 3: 'Hehehe! Livy! Liv!'}
+66	66		301							"{2: 'Liv', 3: ""Sigh... Careful, Nanami. You're going to fall...""}"
+67	67		301							{2: 'Lee', 3: 'Well... Looks there were too many people. The commandant got pushed out of frame...'}
+68	68		301							{2: 'Lucia', 3: 'Want to take another?'}
+69	69		301							"{2: 'Liv', 3: ""Let's take another one... After all, a precious occasion like this is hard to come by!""}"
+70	70		301							"{2: 'Karenina', 3: ""It's just a silly group photo. Who cares if the commandant's in it? I know I don't...! But if you insist...""}"
+71	71		301							{2: 'Nanami', 3: '(Sobs) You guys made me look hideous! I wanna take another one!'}
+72	72		302							{2: 'You pushed me completely...', 3: '73', 4: 'I demand a reshoot...!', 5: '73'}
+73	73		301							"{2: 'Lucia', 3: ""Oh, no. There's no more film left in the camera. That was the last one...""}"
+74	74		301							{2: 'Lucia', 3: 'How about we give it to the commandant as a gift from everyone!'}
+75	75		301							"{2: 'Liv', 3: ""Good idea, Lucia. It's too bad, but I'm really happy with how everyone's work paid off.""}"
+76	76		301							"{2: 'Liv', 3: ""The snowy sky, the howling wind, the dazzling fireworks—I couldn't have asked for a better Christmas this year.""}"
+77	77		301							"{2: 'Liv', 3: ""Thank you so much for today, everyone! I'm super, super happy!""}"
+78	78		301							"{2: 'Lucia', 3: ""Wait, Liv. There's something even more important.""}"
+79	79		301							{2: 'Liv', 3: 'Huh? Something even more important?'}
+80	80		301							"{2: 'Lee', 3: ""Lucia's right. Since the group photo turned out to be a gift from everyone to the commandant, you still need to give a gift.""}"
+81	81		301							"{2: 'Liv', 3: ""Oh, you're right...""}"
+82	82		301							{2: 'Nanami', 3: 'I know! I know! Liv has been secretly researching M.I.—'}
+83	83		301							{2: 'Liv', 3: 'Nanami!! My gift to the commandant is—'}
+84	84		301							"{2: 'Liv', 3: ""—Isn't ready yet!""}"
+85	85		301							"{2: 'Liv', 3: ""This is my first Christmas gift to the commandant. I need to make sure it's perfect. I hope you'll like it.""}"
+86	86		302				AniZhuanchangBegin			{2: 'I look forward to it.', 3: '87'}
+87	87		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+88	88		201							{1: '1', 2: '1021001', 3: '1'}
+89	89		301			AniZhuanchangEnd				{1: '1', 2: 'Lucia', 3: 'Alright then. Looks like Operation Christmas is finally complete.', 4: '1'}
+90	90		301							"{2: 'Lucia', 3: ""I'd say it when perfectly—aside from a few bumps along the way."", 4: '1'}"
+91	91		201							{1: '1', 2: '1111001', 3: '5', 4: '1'}
+92	92		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Karenina', 3: ""...Well, for me... All I got to do was spend Christmas with Corrupted outside in the freezing wind...! I don't want another Christmas like this ever again!"", 4: '1'}"

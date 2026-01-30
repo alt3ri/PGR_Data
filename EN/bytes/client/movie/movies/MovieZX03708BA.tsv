@@ -1,0 +1,409 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory351.jpg'}
+2	2		401							{1: '1', 2: '120'}
+3	3		201							{1: '1', 2: '500019', 4: '400'}
+4	4		201							{1: '2', 2: '500567', 3: '1', 4: '-400'}
+5	5		301			DialogEnable				"{1: '1', 2: 'Construct A', 3: ""What's the point of just giving this to me?!"", 4: '1'}"
+6	6		301							{3: 'In a decrepit camp, a Construct smashes a metal object onto the face of the other Construct.'}
+7	7		301							{2: 'Construct B', 3: '...', 4: '2'}
+8	8		301							{3: 'The Construct, wearing a Purifying Force emblem, silently picks up the name tag from the ground and wipes off the dirt on it with the not-so-clean cuff of his uniform.'}
+9	9		301							"{2: 'Construct B', 3: ""I'll take it back if you don't need it."", 4: '2'}"
+10	10		301							{3: 'He puts the name tag in his pocket and turns away.'}
+11	11		301							"{2: 'Construct A', 3: ""Is that all? Don't you have something else to say?"", 4: '1'}"
+12	12		301							{2: 'Construct B', 3: 'No. I have said everything.', 4: '2'}
+13	13		301							{2: 'Construct A', 3: 'Is he still alive?', 4: '1'}
+14	14		301							{2: 'Construct B', 3: 'No comment.', 4: '2'}
+15	15		301							{2: 'Construct A', 3: 'What did he do wrong?', 4: '1'}
+16	16		301							{2: 'Construct B', 3: 'No comment.', 4: '2'}
+17	17		301							{2: 'Construct A', 3: 'Did you... do it yourself?', 4: '1'}
+18	18		301							{3: 'The Construct in the Task Force uniform asks one last question with a trembling voice. The Purifying Force member falls silent for a moment.'}
+19	19		301							{2: 'Construct B', 3: '...No comment.', 4: '2'}
+20	20		301							{3: 'He still replies with the same cold-hearted response.'}
+21	21		301							{3: 'But the Task Force member already has his answer from his hesitation.'}
+22	22		301							{2: 'Construct A', 3: 'It really was you... Three of us grew up together... How could you?!', 4: '1'}
+23	23		301							{2: 'Construct A', 3: 'You Purifying Force bastard! All you do is climb up the ranks on dead bodies!', 4: '1'}
+24	24		301							"{3: ""Unable to accept the reality, he raises his fist, completely forgetting the other Construct's identity as a Purifying Force member.""}"
+25	25		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+26	26		401							{1: '1', 2: '203'}
+27	27		401							{1: '2', 2: '3077'}
+28	28		202							{1: '1', 2: '2', 6: '1'}
+29	29		201							{1: '1', 2: '500684', 3: '2'}
+30	30		301							"{1: '1', 2: '???', 3: ""Sorry, but I can't just ignore that."", 4: '1'}"
+31	31		301							{3: 'Before his fist lands, it is grabbed by another stronger hand.'}
+32	32		203							{1: '1', 2: '0.25', 3: '400'}
+33	33		201							{1: '2', 2: '500019', 4: '-400'}
+34	34		301							{1: '1', 2: 'Construct A', 3: 'What are you doing? Let me go!', 4: '2'}
+35	35		202							{1: '1', 2: '2', 6: '1'}
+36	36		201							{1: '2', 2: '500567', 3: '1'}
+37	37		301							"{1: '1', 2: 'Construct B', 3: ""Noctis... I'm fine. Set him free."", 4: '2'}"
+38	38		202							{1: '2', 6: '1'}
+39	39		201							{1: '1', 2: '500684', 3: '2'}
+40	40		301							"{1: '1', 2: 'Noctis', 3: ""Hah... Do you really think I'm helping you?"", 4: '1'}"
+41	41		301							{3: 'The red-haired man shows a sinister smile with taunting eyes under his wind goggles.'}
+42	42		301							"{2: 'Noctis', 3: ""Honestly, I don't like either of you. But I just dislike this guy more."", 4: '1'}"
+43	43		301							{2: 'Noctis', 3: 'Stop being wishy-washy... Move aside!', 4: '1'}
+44	44		301							{3: 'Noctis shows no courtesy even to his colleague.'}
+45	45		301							{2: 'Noctis', 3: 'Where was I up to...? Right, you called him a Purifying Force bastard.', 4: '1'}
+46	46		301							"{2: 'Noctis', 3: ""I'm not as nice as the others. Apologize, or get beaten up. Which one will you choose?"", 4: '1'}"
+47	47		203							{1: '1', 2: '0.25', 3: '400'}
+48	48		201							{1: '2', 2: '500019', 4: '-400'}
+49	49		301							{1: '1', 2: 'Construct A', 3: 'Did I say anything wrong? You Purifying Force people always get merits from killing our own folks!', 4: '2'}
+50	50		301							{2: 'Construct A', 3: 'We are all Constructs. Who gives you the right to determine our fate?', 4: '2'}
+51	51		301							{2: 'Noctis', 3: 'What nonsense are you spouting? Your fate only depends on whether you are loyal or not.', 4: '1'}
+52	52		301							"{2: 'Noctis', 3: ""I wouldn't feel bad at all to kill a traitor."", 4: '1'}"
+53	53		301							{2: 'Construct A', 3: 'Then tell me clearly, what did he do wrong?!', 4: '2'}
+54	54		301							{2: 'Noctis', 3: 'Why would I know? We were just following orders from above.', 4: '1'}
+55	55		301							"{2: 'Construct A', 3: ""Hah, you're just a puppy wagging your tail to your master."", 4: '2'}"
+56	56		204							{1: '1', 2: '4'}
+57	57		301							{2: 'Noctis', 3: 'What did you say?', 4: '1'}
+58	58		301							{3: 'Noctis raises his eyebrows. Those who know him well would know this is a sign of him resorting to violence.'}
+59	59		301							{2: 'Construct A', 3: 'You must have enjoyed yourself in safe zones while we risked our lives fighting Corrupted in the frontline, huh?', 4: '2'}
+60	60		301							{2: 'Construct A', 3: 'You never have to worry about being infected, or lack of supplies.', 4: '2'}
+61	61		301							{2: 'Construct A', 3: 'When we become too weak to fight, you just come to get rid of us... You filthy scavengers!', 4: '2'}
+62	62		301							{2: 'Construct A', 3: 'Ballard used to be a hero... But he has now become a watchdog for the powerful ones, slaughtering his own people with you pups.', 4: '2'}
+63	63		301							"{2: 'Noctis', 3: ""Fine, you don't need to apologize."", 4: '1'}"
+64	64		301							{3: 'Noctis lets go of his hand.'}
+65	65		202							{1: '1', 2: '2', 6: '1'}
+66	66		201							{1: '1', 2: '500567', 3: '1'}
+67	67		301							{1: '1', 2: 'Construct B', 3: 'Noctis!', 4: '1'}
+68	68		301							{3: 'Sensing what may happen next, the Purifying Force Construct warns Noctis.'}
+69	69		202							{1: '1', 6: '1'}
+70	70		201							{1: '1', 2: '500684', 3: '2', 4: '400'}
+71	71		201							{1: '2', 2: '500019', 4: '-400'}
+72	72		301							"{1: '1', 2: 'Noctis', 3: ""Even if you beg me, I'm going to beat you so hard that you have only one breath left!"", 4: '1'}"
+73	73		301							"{2: 'Construct A', 3: ""Bring it on! I've had enough of you!"", 4: '2'}"
+74	74		401							{1: '2', 2: '1512'}
+75	75		203						140.0	{1: '1', 2: '0.14', 3: '300'}
+76	76		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+77	77		401							{1: '2', 2: '1512'}
+78	78		203						140.0	{1: '2', 2: '0.14', 3: '-500'}
+79	79		203						130.0	{1: '2', 2: '0.13', 3: '-300'}
+80	80		401			RImgBg1Shake				{1: '2', 2: '1512'}
+81	81		203						160.0	{1: '1', 2: '0.16', 3: '400'}
+82	82		202							{1: '1', 2: '2', 6: '1'}
+83	83		201							{1: '3', 2: '500567', 3: '1'}
+84	84		401							{1: '2', 2: '1512'}
+85	85		301			RImgBg1Shake				{1: '1', 2: 'Construct B', 3: 'Stop...!', 4: '3'}
+86	86		203						140.0	{1: '3', 2: '0.14', 4: '-70'}
+87	87		202						600.0	{1: '3'}
+88	88		201							{1: '1', 2: '500684', 3: '2'}
+89	89		301				AniZhuanchangBegin			{1: '1', 2: 'Noctis', 3: 'Sorry. My hand just slipped.', 4: '1'}
+90	90		401						1000.0	{1: '1', 2: '36'}
+91	91		202			DialogDisable				{1: '1', 6: '1'}
+92	92		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+93	93		401							{1: '1', 2: '207'}
+94	94		201							{1: '1', 2: '500686'}
+95	95		301			DialogEnable				{1: '1', 2: 'Ballard', 3: 'This is your fifth time receiving disciplinary action this month.', 4: '1'}
+96	96		301							"{3: ""A Construct with a middle-aged look sits opposite to Noctis in an overly simple room. He speaks unemotionally while reading Noctis' disciplinary report.""}"
+97	97		203							{1: '1', 2: '0.25', 3: '-500'}
+98	98		201							{1: '2', 2: '500684', 4: '500'}
+99	99		301							"{1: '1', 2: 'Noctis', 3: ""It was his bad for saying things he shouldn't say..."", 4: '2'}"
+100	100		301							"{3: ""Noctis never fears anything or anyone, but the man's scrutinizing look still makes him feel like sitting on a hot chair... He was not even asked to sit though.""}"
+101	101		301							{3: 'This man defeated him during his most difficult, out-of-control times, then adopted and raised him, bringing him back from the abyss of despair.'}
+102	102		301							{3: 'But after spending such a long time together, Ballard is still a man of mystery to Noctis.'}
+103	103		301							{3: 'Still, it does not mean there is any estrangement between Ballard and him. Quite the opposite, Noctis has nothing but unspoken respect for this man who almost gave him a second life.'}
+104	104		204							{1: '2', 2: '2'}
+105	105		301							{2: 'Noctis', 3: 'Captain, can you take them off already? I feel like my head is getting flat.', 4: '2'}
+106	106		301							{3: 'Noctis is balancing a stack of steel plates on his head like a circus performer. To avoid them from falling on his feet, he has to stand straight.'}
+107	107		301							"{2: 'Ballard', 3: ""You can only take them off when I say so. I can't really change your temper, so this is all I can do."", 4: '1'}"
+108	108		204							{1: '2'}
+109	109		301							{2: 'Noctis', 3: 'I thought the penalty was less severe than last month. Why did you put more plates on me?', 4: '2'}
+110	110		301							"{2: 'Ballard', 3: ""Because it's only a week into this month! You even laid hands on someone from the same unit, didn't you?!"", 4: '1'}"
+111	111		301							"{2: 'Noctis', 3: ""Because that sissy guy was helping an outsider against me. I was just trying to protect the Purifying Force's dignity... Wait, why did you put more plates on me, Cap?!"", 4: '2'}"
+112	112		301							{3: 'Noctis barely keeps his balance under the suddenly increased load. He has no energy left to argue back.'}
+113	113		301							"{2: 'Ballard', 3: ""If you continue to act this way, the next time, it will be the Control Court coming for you. I won't be able to help you then."", 4: '1'}"
+114	114		301							"{2: 'Ballard', 3: ""Let others say whatever they want. Don't make the situation even more unstable."", 4: '1'}"
+115	115		301							"{2: 'Ballard', 3: ""What we are doing may not be understood by others. Still, it's necessary justice."", 4: '1'}"
+116	116		301							"{2: 'Ballard', 3: ""The third evacuation has just ended. Too many people are trying to do their dirty deeds under the table. Someone's got to keep an eye on them."", 4: '1'}"
+117	117		301							{2: 'Ballard', 3: 'That is why I proposed to establish the Purifying Force in the first place.', 4: '1'}
+118	118		301							"{2: 'Ballard', 3: 'The Purifying Force was supposed to be a ""silent watch,"" just like its emblem. But your personality is way too...', 4: '1'}"
+119	119		301							{3: 'Seeing Noctis still struggling to stay still with many steel plates on his head, Ballard shakes his head.'}
+120	120		301							"{2: 'Ballard', 3: ""Maybe I should send you back to Bianca's squad, so you have more time watching and learning from them."", 4: '1'}"
+121	121		204							{1: '2', 2: '5'}
+122	122		301							"{2: 'Noctis', 3: ""No! Don't!"", 4: '2'}"
+123	123		301							"{3: ""Noctis sounds like a dog whose tail has been stepped on. He probably would have already jumped up if he didn't have the plates on his head.""}"
+124	124		301							"{2: 'Noctis', 3: ""Please, don't put me in her squad ever again. You don't know how much I suffered under her. She has a rule for every single thing."", 4: '2'}"
+125	125		301							"{3: ""Noctis' face becomes twisted from the painful memories.""}"
+126	126		301							{2: 'Noctis', 3: 'Even if I was late for a little while, or landed a couple more punches on the tough suspect, she would make me write two or three pages to explain.', 4: '2'}
+127	127		301							{2: 'Noctis', 3: 'I feel like my frame has aged ten years just by staying with that stubborn and cranky one.', 4: '2'}
+128	128		301							"{2: 'Noctis', 3: ""I'd rather go on a mission with Nigel."", 4: '2'}"
+129	129		202							{1: '1', 2: '2', 6: '1'}
+130	130		201							{1: '1', 2: '500701'}
+131	131		301							"{1: '1', 2: '???', 3: ""Sorry, but I don't have the habit of bringing a loudspeaker with me."", 4: '1'}"
+132	132		301							{3: 'A Construct in a black coat walks past Noctis. Noctis did not even notice him before he spoke up.'}
+133	133		202							{1: '1', 6: '1'}
+134	134		201							{1: '2', 2: '500684', 3: '5', 7: '1'}
+135	135		301			PanelActor2Shake				{1: '1', 2: 'Noctis', 3: '****! I know you walk without a sound, but how did you manage to open the door so quietly?', 4: '2'}
+136	136		203							{1: '2', 2: '0.25', 3: '-400'}
+137	137		201							{1: '1', 2: '500694', 3: '1', 4: '400'}
+138	138		301							"{1: '1', 2: 'Nigel', 3: ""Because someone with a stegosaurus' brain forgot to close the door."", 4: '1'}"
+139	139		204							{1: '2', 2: '5'}
+140	140		301							"{2: 'Noctis', 3: ""I don't know why you suddenly mentioned a dinosaur, but it must be sarcasm, right?"", 4: '2'}"
+141	141		301							{2: 'Nigel', 3: 'The steel plates on your head are about to fall off.', 4: '1'}
+142	142		204							{1: '2'}
+143	143		301							{2: 'Noctis', 3: 'Tch.', 4: '2'}
+144	144		306							{1: '1'}
+145	145		301							"{3: ""As Ballard's right-hand men, Nigel and Noctis have a similar past, but completely opposite personalities.""}"
+146	146		301							{3: 'One is noisy, the other silent. One excels in direct confrontations, the other in stealthy assassinations. One is known for getting frequent disciplinary actions, and the other never fails to kill his target but remains unknown.'}
+147	147		301							{3: 'Their personalities make them incompatible, yet their similar experience makes them like brothers.'}
+148	148		306							
+149	149		202							{1: '1', 2: '2', 6: '1'}
+150	150		201							{1: '1', 2: '500686'}
+151	151		301							{1: '1', 2: 'Ballard', 3: 'Did you find out everything?', 4: '1'}
+152	152		202							{1: '1', 6: '1'}
+153	153		201							{1: '2', 2: '500694'}
+154	154		301							{1: '1', 2: 'Nigel', 3: 'Yeah.', 4: '2'}
+155	155		202							{1: '2', 6: '1'}
+156	156		201							{1: '1', 2: '500686'}
+157	157		301							{1: '1', 2: 'Ballard', 3: 'Noctis, your punishment is over. You can go back now.', 4: '1'}
+158	158		202							{1: '1', 6: '1'}
+159	159		201							{1: '2', 2: '500684', 3: '2'}
+160	160		301							{1: '1', 2: 'Noctis', 3: 'Alrighty!', 4: '2'}
+161	161		301							{3: 'Noctis immediately puts the steel plates down as soon as Ballard finishes his words.'}
+162	162		301							"{2: 'Noctis', 3: ""Phew... It's finally over."", 4: '2'}"
+163	163		301							{3: 'He rubs his red hair, making it all fluffy again.'}
+164	164		301							"{2: 'Noctis', 3: ""Found another group of guilty guys? It's time for me to come into action."", 4: '2'}"
+165	165		301							{3: 'Noctis flexes his wrists, eager to get involved.'}
+166	166		202							{1: '2', 6: '1'}
+167	167		201							{1: '1', 2: '500686'}
+168	168		301							"{1: '1', 2: 'Ballard', 3: ""These targets don't suit you. They need to be handled covertly."", 4: '1'}"
+169	169		301							{3: 'Ballard speaks as he flips through the list submitted by Nigel.'}
+170	170		301							{2: 'Ballard', 3: 'Just stay on standby for now. Wait until your accumulated penalties are cleared.', 4: '1'}
+171	171		202							{1: '1', 6: '1'}
+172	172		201							{1: '2', 2: '500684'}
+173	173		301							{1: '1', 2: 'Noctis', 3: 'Alright...', 4: '2'}
+174	174		301							"{3: 'Noctis may have boasted about ""don\'t underestimate me"" in front of someone else, but he just cannot utter those words to Ballard.'}"
+175	175		203							{1: '2', 2: '0.25', 3: '-400'}
+176	176		201							{1: '1', 2: '500694', 4: '400'}
+177	177		301							{1: '1', 2: 'Nigel', 3: 'Close the door when you leave.', 4: '1'}
+178	178		301							{3: 'Nigel speaks unexpectedly as Noctis walks past him.'}
+179	179		204							{1: '2', 2: '2'}
+180	180		301							{2: 'Noctis', 3: 'I will.', 4: '2'}
+181	181		301				AniZhuanchangBegin			"{3: 'Noctis gives his taciturn ""brother"" a ""friendly hand gesture,"" then slams the door shut.'}"
+182	182		401			DialogDisable				{1: '1', 2: '36'}
+183	183		401							{1: '2', 2: '2661'}
+184	184		202						600.0	{1: '1', 2: '2', 6: '1'}
+185	185		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+186	186		401							{1: '2', 2: '2617'}
+187	187		307				AniZhuanchangBegin		2000.0	"{1: '""Gasp... Gasp...""'}"
+188	188		307							{2: '1'}
+189	189		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+190	190		401							{1: '1', 2: '63'}
+191	191		502							{1: 'DialogEnable'}
+192	192		301			AniZhuanchangEnd				{3: 'Heavy breaths pump air into the frame, bringing the heavy odor of Construct vital fluid into the sensor of smell.'}
+193	193		301							{3: 'For Constructs, breathing is not a necessary activity. But right now, it is these remaining human instincts that are still holding him up.'}
+194	194		301				DialogDisable			"{3: ""He pushes himself up with his remaining right arm, stumbling toward the cliff's edge, where the person he must kill awaits.""}"
+195	195		402							{1: '2617'}
+196	196		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+197	197		307							"{1: '""Get up... Get up!""'}"
+198	198		301							"{3: '""Get up... Get up!""'}"
+199	199		307							"{1: '""Answer my question!""'}"
+200	200		301							"{3: '""Answer my question!""'}"
+201	201		307							{2: '1'}
+202	202		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+203	203		401							{1: '2', 2: '1512'}
+204	204		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+205	205		502							{1: 'RImgBg1Shake'}
+206	206		301			DialogEnable				{3: 'Gnashing his teeth, he throws a punch at the man struggling to get on his feet, only to find his opponent still maintaining that infuriating silence like he always knew.'}
+207	207		301							"{3: 'Silent, reserved, calm and reliable as always. His one and only ""brother.""'}"
+208	208		301							{3: 'Yet, that silence is deeply hurting him at this very moment, as he is unable to vent his anger and sorrow.'}
+209	209		301							{3: 'The victims of this anger—Nigel, along with one of his arms—quietly lie on the battle-worn ground.'}
+210	210		301				AniZhuanchangBegin			"{3: ""Not far from them is the origin of his sorrow. Ballard, the person that Noctis respects the most, lies lifeless at Nigel's feet.""}"
+211	211		502						400.0	{1: 'DialogDisable'}
+212	212		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+213	213		301			DialogEnable	AniZhuanchangBegin			{3: 'It was nothing but a simple mission to begin with. Considering that Ballard, Noctis and Nigel all participated, it could be considered a piece of cake.'}
+214	214		502						400.0	{1: 'DialogDisable'}
+215	215		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory462.jpg'}
+216	216		201							{1: '1', 2: '500684', 3: '2'}
+217	217		301			DialogEnable	AniZhuanchangBegin			{1: '1', 3: 'However, just as Noctis tied up his target to a concrete pillar while muttering how long it had been since he last had such an easy mission, he lost contact with Ballard and Nigel together.'}
+218	218		202			DialogDisable				{1: '1', 6: '1'}
+219	219		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+220	220		401							{1: '1', 2: '36'}
+221	221		401							{1: '2', 2: '2975'}
+222	222		201							{1: '1', 2: '500684', 3: '15'}
+223	223		301			DialogEnable				{1: '1', 3: 'Following the combat traces left behind, Noctis finally found two of them... Or, just the remaining one.'}
+224	224		401							{1: '2', 2: '2975'}
+225	225		401							{1: '1', 2: '260'}
+226	226		301							"{3: ""Having no time to ponder why Ballard fell next to Nigel's feet, or why Nigel pulled his battlestaff from Ballard's chest, Noctis' body moves first.""}"
+227	227		301							{2: 'Noctis', 3: 'Gargh... Aaargh!', 4: '1'}
+228	228		203						140.0	{1: '1', 2: '0.14', 5: '-80'}
+229	229		202							{1: '1', 6: '1'}
+230	230		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '3'}
+231	231		401							{1: '2', 2: '819016'}
+232	232		301							"{3: ""Charging over like a beast, Noctis chops off Nigel's arm, which still has vital fluid on it. Nigel soon recovers and picks up a katana from the ground with his foot...""}"
+233	233		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '3'}
+234	234		401							{1: '2', 2: '10022001'}
+235	235		201							{1: '1', 2: '500695', 7: '1'}
+236	236		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+237	237		401							{1: '2', 2: '2624'}
+238	238		301							{1: '1', 2: 'Noctis', 3: 'Nigel!'}
+239	239		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+240	240		104							{1: '0|0|100', 2: '0.5'}
+241	241		203						140.0	{1: '1', 2: '0.14', 5: '-100'}
+242	242		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+243	243		401							{1: '2', 2: '1512'}
+244	244		104							{1: '0|0|0', 2: '1'}
+245	245		203							{1: '1', 2: '0.18'}
+246	246		301							"{3: ""Despite having his left arm separated from his body, Noctis rams his forehead into Nigel's, as if he is not feeling any pain.""}"
+247	247		301							{2: 'Noctis', 3: 'Why?!'}
+248	248		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+249	249		401							{1: '2', 2: '819016'}
+250	250		301							{3: 'Using every part of his frame, Noctis completely disregards the damage to himself with every strike, leaving no room for Nigel to utilize his mobility.'}
+251	251		401							{1: '2', 2: '9342060'}
+252	252		301			RImgBg1Shake				{3: 'Katanas have snapped from collisions. The temperature of their frames continues to rise from intense actions, stirring up their M.I.N.D.'}
+253	253		301							"{3: ""Slowly, the man in black has been pushed to the cliff's edge.""}"
+254	254		301							"{2: 'Noctis', 3: '""You just won\'t say anything, huh... Fine!""'}"
+255	255		301							{3: 'Clenching his teeth, Noctis picks up a heavily damaged katana and holds it up, trembling.'}
+256	256		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+257	257		402							{1: '2624'}
+258	258		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+259	259		202							{1: '1', 6: '1'}
+260	260		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3701_01.jpg'}
+261	261		301							{2: 'Noctis', 3: 'Okay then...'}
+262	262		301							{2: 'Noctis', 3: 'Just die!'}
+263	263		401							{1: '1', 2: '36'}
+264	264		301							{2: 'Nigel', 3: 'Sigh...'}
+265	265		401							{1: '1', 2: '202'}
+266	266		301							{3: 'Watching Noctis coming at him, Nigel sighs, as if he has given up.'}
+267	267		301							"{2: 'Nigel', 3: ""This is probably our last conversation, so I'm only going to say this once.""}"
+268	268		301							{2: 'Nigel', 3: 'Use your brain and think. Who else, other than Ballard, can give me orders?'}
+269	269		301							{3: 'Nigel utters an unusually long sentence, but Noctis has not lowered the broken blade.'}
+270	270		301							"{2: 'Noctis', 3: ""It can't be...""}"
+271	271		301							{2: 'Nigel', 3: 'Yes, someone above.'}
+272	272		301							"{3: ""Nigel affirms Noctis' unspoken guess.""}"
+273	273		301							{2: 'Noctis', 3: 'Why?'}
+274	274		301							{2: 'Nigel', 3: 'Because he crossed the line. Because they found him annoying.'}
+275	275		301							{2: 'Noctis', 3: 'No way! Captain will never betray humanity.'}
+276	276		301							{2: 'Nigel', 3: 'Maybe... But to some people, seeking equal rights, or even privileges for Constructs, can be considered a betrayal of humanity.'}
+277	277		301							"{3: ""Even at this moment, Noctis can only hear a hint of self-mockery in Nigel's tone. There is no sign of emotional changes on his face.""}"
+278	278		301							"{2: 'Nigel', 3: ""Of course, that's not the most important point. What matters most is that the Purifying Force has already ripened, but Ballard has become a scarecrow that is standing in their way.""}"
+279	279		301							{2: 'Noctis', 3: 'What do you mean?'}
+280	280		301							"{2: 'Nigel', 3: ""Ballard hadn't told you anything, had he...? It makes sense though. Otherwise, you would have gone into an argument long ago.""}"
+281	281		301							"{2: 'Nigel', 3: ""The situation in Babylonia is very complex. There are a lot of problems that cannot be exposed. Sometimes, it's a lot easier to eliminate the problem maker than the problem itself.""}"
+282	282		301							{2: 'Nigel', 3: 'But when Ballard refused to let them use the Purifying Force in such a manner, he became a problem maker too.'}
+283	283		301							"{2: 'Noctis', 3: ""Even so, you wouldn't... Besides, you never used your poison on me just now. You must have a reason, right?""}"
+284	284		301							"{3: ""Noctis grits his teeth, looking for a reason. Maybe Nigel was threatened, maybe it was Ballard's own plan all along. Or, any reason will do, even if it does not make much sense.""}"
+285	285		301							{2: 'Nigel', 3: 'Do you think Ballard could be easily dealt with? I finished all my poison in the battle with him.'}
+286	286		301							"{2: 'Nigel', 3: ""If you don't want to believe it, just forget what I said after you kill me.""}"
+287	287		301							{2: 'Nigel', 3: 'Other people will take care of the rest. Just pretend as if you know nothing.'}
+288	288		301							{2: 'Noctis', 3: 'Nigel!'}
+289	289		301							"{3: ""Nigel's indifferent tone stings Noctis' already battle-worn heart. He forces himself to not swing the blade, squeezing out every syllable from between his teeth.""}"
+290	290		301							{2: 'Noctis', 3: 'No. You are coming back with me.'}
+291	291		301							"{2: 'Noctis', 3: ""Whoever asked you to kill Cap... I'll dig their names out of your mouth, and make sure they get the punishment they deserve.""}"
+292	292		301							"{2: 'Noctis', 3: ""That's the justice Cap believed in!""}"
+293	293		301							{2: 'Nigel', 3: 'Noctis... You really are too kind for the Purifying Force.'}
+294	294		301							"{2: 'Nigel', 3: ""But I can do the things you can't do.""}"
+295	295		502							{1: 'DialogDisable'}
+296	296		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+297	297		401							{1: '1', 2: '36'}
+298	298		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+299	299		401							{1: '2', 2: '3077'}
+300	300		101				AniZhuanchangEnd		600.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+301	301		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+302	302		401						200.0	{1: '2', 2: '2959'}
+303	303		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+304	304		401							{1: '1', 2: '155'}
+305	305		201							{1: '1', 2: '500695'}
+306	306		301			DialogEnable				{1: '1', 2: 'Noctis', 3: '(Did he just... kick me away?)'}
+307	307		301							"{3: ""The broken blade falls into Nigel's hand in the blink of an eye.""}"
+308	308		301							{2: 'Nigel', 3: 'Time to finish you off now.', 4: '1'}
+309	309		301							"{3: ""The attacker and defender have switched their roles. Noctis tries to get up, but he feels a numbness in his chest where Nigel's kick landed.""}"
+310	310		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg', 3: '0.5', 4: '0.5', 5: '0'}
+311	311		104						1000.0	{1: '30|50|-70', 2: '1'}
+312	312		104						500.0	{1: '0|0|0', 2: '0.5'}
+313	313		301							{2: 'Noctis', 3: 'The poison... You said it was all used up!'}
+314	314		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg', 3: '0.5', 4: '0', 5: '0'}
+315	315		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+316	316		301							{2: 'Nigel', 3: 'I gave you a chance, but you were so naive and disappointing.', 4: '1'}
+317	317		301							{2: 'Nigel', 3: 'Never trust your enemy again in your next life.', 4: '1'}
+318	318		301							{2: 'Noctis', 3: 'Haha—Hahaha—Hahahaha!'}
+319	319		301							{3: 'Noctis suddenly bursts into a hoarse, sharp laughter that sounds like a desperate roar from the underground.'}
+320	320		301							"{2: 'Noctis', 3: ""If you don't want to come with me...""}"
+321	321		301							"{3: ""The sensor on Nigel's head was severely damaged from the previous battle, significantly compromising his perception.""}"
+322	322		301							"{3: 'So he did not notice that Noctis left an inconspicuous ""rock"" before he was kicked away.'}"
+323	323		301							"{2: 'Noctis', 3: ""Then let's die together!""}"
+324	324		202							{1: '1', 6: '1'}
+325	325		401							{1: '2', 2: '2789'}
+326	326		101			RImgBg1Shake				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory294.png'}
+327	327		301				AniZhuanchangBegin			{3: 'A violent explosion engulfs Nigel and Ballard. It also sends Noctis flying.'}
+328	328		401							{1: '1', 2: '36'}
+329	329		502						2000.0	{1: 'DialogDisable'}
+330	330		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+331	331		401							{1: '1', 2: '209'}
+332	332		201							{1: '1', 2: '500303'}
+333	333		301			DialogEnable				{1: '1', 2: 'Inquisitor', 3: 'Is that everything?', 4: '1'}
+334	334		203							{1: '1', 2: '0.25', 3: '-400'}
+335	335		201							{1: '2', 2: '500684', 3: '4', 4: '400'}
+336	336		301							{1: '1', 2: 'Noctis', 3: 'No matter how many times you ask, I have nothing more to tell.', 4: '2'}
+337	337		301							{3: 'After regaining consciousness in Star of Life, Noctis was visited by a Control Court inquisitor.'}
+338	338		301							{2: 'Inquisitor', 3: 'I hope you can understand. Based on the residual from the explosion, if what you said was true...', 4: '1'}
+339	339		301							{2: 'Inquisitor', 3: 'It will be quite challenging for us to find the intact bodies of former Purifying Force member Nigel and former Purifying Force captain Ballard.', 4: '1'}
+340	340		301							{2: 'Inquisitor', 3: 'And that is also a fact. Still, we are unable to determine whether they had fallen off the cliff, or were blown into pieces by your explosive.', 4: '1'}
+341	341		301							{2: 'Inquisitor', 3: 'Or...', 4: '1'}
+342	342		301							"{2: 'Noctis', 3: ""Or it was just my lie. Is that what you're trying to imply?"", 4: '2'}"
+343	343		301							{3: 'Noctis wants to shoo away the person in front like swatting a fly, but realizes he can only move his lips.'}
+344	344		204							{1: '2', 2: '5'}
+345	345		301							"{2: 'Noctis', 3: ""You can access the memory data of my M.I.N.D., can't you? Just take a look yourself."", 4: '2'}"
+346	346		301							{2: 'Inquisitor', 3: 'We will. But considering your current injuries, in conjunction with the advice from the military commander and the new Purifying Force captain, it will be carried out after you recover.', 4: '1'}
+347	347		204							{1: '2', 2: '4'}
+348	348		301							{2: 'Noctis', 3: 'What, the Purifying Force has a new captain already?', 4: '2'}
+349	349		301							{2: 'Inquisitor', 3: 'Strictly speaking, she is just taking over temporarily. Well, now that we have brought the topic up, I shall let her talk about it.', 4: '1'}
+350	350		401							{1: '2', 2: '754'}
+351	351		301							{3: 'As the door opens, Noctis finds a familiar figure in the ward.'}
+352	352		301							"{2: 'Noctis', 3: ""It's you. Tsk."", 4: '2'}"
+353	353		202							{1: '1', 2: '2', 6: '1'}
+354	354		201							{1: '1', 2: '1091001'}
+355	355		301							"{1: '1', 3: ""Ignoring Noctis' somewhat sarcastic greeting, Bianca just nods at him and turns toward the inquisitor.""}"
+356	356		203							{1: '1', 2: '0.25', 3: '400'}
+357	357		201							{1: '2', 2: '500303', 4: '-400'}
+358	358		301							{1: '1', 2: 'Bianca', 3: 'Inquisitor, I still insist on my original viewpoint. Until concrete evidence of betrayal is obtained, Noctis should not be moved out of the Purifying Force.', 4: '1'}
+359	359		301							{2: 'Inquisitor', 3: 'But you have also heard about the recent rumors within the Purifying Force. They have been saying he killed those two.', 4: '2'}
+360	360		301							"{2: 'Inquisitor', 3: ""I think it's better to take him away for the sake of the Purifying Force's internal relationship."", 4: '2'}"
+361	361		301							{2: 'Bianca', 3: 'Rumors are just rumors. If we force him to leave just because of those ungrounded accusations, that would be a violation of justice.', 4: '1'}
+362	362		301							"{2: 'Bianca', 3: ""Please give me some time. I'll sort this out."", 4: '1'}"
+363	363		301							{3: 'Watching the two of them arguing, Noctis suddenly recalls the conversation he had above the cliff.'}
+364	364		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+365	365		202							{1: '1', 2: '2', 6: '1'}
+366	366		401							{1: '2', 2: '2687'}
+367	367		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+368	368		504							{1: '0.7'}
+369	369		201							{1: '1', 2: '500695'}
+370	370		301							"{1: '1', 2: 'Nigel', 3: ""Of course, that's not the most important point. What matters most is that the Purifying Force has already ripened, but Ballard has become a scarecrow that is standing in their way."", 4: '1'}"
+371	371		301							"{2: 'Nigel', 3: ""Ballard hadn't told you anything, had he...? It makes sense though. Otherwise, you would have gone into an argument long ago."", 4: '1'}"
+372	372		301							"{2: 'Nigel', 3: ""The situation in Babylonia is very complex. There are a lot of problems that cannot be exposed. Sometimes, it's a lot easier to eliminate the problem maker than the problem itself."", 4: '1'}"
+373	373		301							{2: 'Nigel', 3: 'But when Ballard refused to let them use the Purifying Force in such a manner, he became a problem maker too.', 4: '1'}
+374	374		301							{2: 'Nigel', 3: 'Noctis... You really are too kind for the Purifying Force.', 4: '1'}
+375	375		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+376	376		202							{1: '1', 6: '1'}
+377	377		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+378	378		504							
+379	379		201							{1: '1', 2: '500303', 4: '-400'}
+380	380		201							{1: '2', 2: '1091001', 4: '400'}
+381	381		301							"{1: '1', 2: 'Inquisitor', 3: ""Why don't we just ask him?"", 4: '1'}"
+382	382		202							{1: '1', 2: '2', 6: '1'}
+383	383		201							{1: '1', 2: '500684'}
+384	384		301							{1: '1', 2: 'Noctis', 3: '...', 4: '1'}
+385	385		204							{1: '1', 2: '2'}
+386	386		301							{2: 'Noctis', 3: 'Hmm... I think I want a change of mood after all.', 4: '1'}
+387	387		301							{3: 'With a somewhat mocking tone, Noctis wants to stretch like he always did, but the immense pain all over his body stops him from doing so.'}
+388	388		301							"{2: 'Noctis', 3: ""Besides, I really don't want to work under this woman. Spare me, please..."", 4: '1'}"
+389	389		203							{1: '1', 2: '0.25', 3: '400'}
+390	390		201							{1: '2', 2: '1091001', 4: '-400', 8: '1'}
+391	391		301							{1: '1', 2: 'Bianca', 3: 'Noctis...', 4: '2'}
+392	392		204							{1: '1'}
+393	393		301							"{1: '1', 3: ""Noctis turns his head away from Bianca's gaze, pretending to be distracted by the devices on his bedside.""}"
+394	394		301							"{1: '1', 2: 'Noctis', 3: ""Basically, I don't want to stay in the Purifying Force anymore. Can you just let me go, dear Captain?"", 4: '1'}"
+395	395		301							{1: '1', 2: 'Bianca', 3: 'Alright... I respect your wish. Still, I will take care of the rumors.', 4: '2'}
+396	396		301							"{1: '1', 2: 'Bianca', 3: ""One more thing. Just take this as if I'm talking to myself..."", 4: '2'}"
+397	397		202							{1: '2', 6: '1'}
+398	398		201							{1: '2', 2: '1091001', 4: '-400', 7: '1'}
+399	399		301							{1: '1', 2: 'Bianca', 3: 'Running away is not going to fix any problem.', 4: '2'}
+400	400		203							{1: '2', 2: '0.3', 3: '-600'}
+401	401		202						600.0	{1: '2'}
+402	402		201							{1: '3', 2: '500303', 4: '-400'}
+403	403		301							{1: '1', 3: 'Bianca has left. Once again, there are only Noctis and the inquisitor in the ward.'}
+404	404		204							{1: '1', 2: '4'}
+405	405		301							{2: 'Noctis', 3: 'Why are you still here? I thought you had already asked all your questions.', 4: '1'}
+406	406		301							{3: 'The inquisitor turns off the video camera on his chest and closes the screen.'}
+407	407		301							{2: 'Inquisitor', 3: 'Actually, I have a suggestion regarding your new assignment.', 4: '3'}
+408	408		301		1		AniZhuanchangBegin			"{2: 'Inquisitor', 3: ""It was also President Hassen's suggestion..."", 4: '3'}"

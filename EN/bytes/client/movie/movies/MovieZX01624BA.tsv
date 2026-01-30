@@ -1,0 +1,85 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		501						1500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+2	2		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+3	3		504							{1: '0.8'}
+4	4		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory1.jpg'}
+5	5		401							{1: '1', 2: '211'}
+6	6		301			DialogEnable				{3: 'The riot in front of you lets out a strange roar, then turns into remains like before.'}
+7	7		201							{1: '1', 2: '1021001'}
+8	8		301							"{1: '1', 2: ""Lucia's Projection"", 3: ""It's abnormal for Commandant to not respond. Murol, Xun, we're pulling out."", 4: '1'}"
+9	9		202							{1: '1', 6: '1'}
+10	10		504							{1: '0'}
+11	11		201							{1: '1', 2: '500166'}
+12	12		301							{1: '1', 2: 'Lucia', 3: '...I remember saying that before, but...', 4: '1'}
+13	13		202							{1: '1', 6: '1'}
+14	14		301							"{3: ""The projections then fill in the blanks in Lucia's memory.""}"
+15	15		504							{1: '0.8'}
+16	16		201							{1: '1', 2: '500019', 4: '-600'}
+17	17		201							{1: '2', 2: '500019', 4: '600'}
+18	18		201							{1: '3', 2: '1021001'}
+19	19		301							"{1: '1', 2: ""Murol's Projection"", 3: 'Lucia... Go...', 4: '1'}"
+20	20		301							"{2: ""Xun's Projection"", 3: ""I'm worried... the commandant is also... in danger... A-after all, we only just escaped."", 4: '2'}"
+21	21		301							"{2: ""Lucia's Projection"", 3: 'How could I leave you here?!', 4: '3'}"
+22	22		301							{3: 'She goes to Murol and Xun, trying her best to carry one of them first. At that moment, the long-disconnected former commandant finally contacts her.'}
+23	23		301							{2: 'Former Commandant', 3: '...Lucia!'}
+24	24		301							{3: 'He gasps for air as if he has just been through an arduous battle.'}
+25	25		301							"{2: ""Lucia's Projection"", 3: 'Commandant! Murol and Xun are seriously wounded. I need support!', 4: '3'}"
+26	26		301							"{2: 'Former Commandant', 3: ""We can't! I know it's cruel to say this, but leave them there.""}"
+27	27		301							"{2: 'Former Commandant', 3: ""I've been ambushed! Get over here and provide backup!""}"
+28	28		301							"{2: ""Lucia's Projection"", 3: ""I can't abandon our comrades!"", 4: '3'}"
+29	29		301							"{2: ""Murol's Projection"", 3: ""Don't worry about us... Xun and I can transfer our memories... We'll see you again... in no time."", 4: '1'}"
+30	30		301							"{2: ""Lucia's Projection"", 3: 'Memory transfer? But that technology is still...', 4: '3'}"
+31	31		301							"{2: ""Xun's Projection"", 3: ""Don't worry... We might lose some memories, but... we'll be fine."", 4: '2'}"
+32	32		301							{3: 'Xun forces a smile under unbearable pain.'}
+33	33		301							"{2: 'Former Commandant', 3: ""LUCIA!!! Get back here ASAP! We don't have much time!""}"
+34	34		301							"{3: ""Lucia's projection grits her teeth, showing a sign of reluctance as she leaves her fallen comrades.""}"
+35	35		301							"{2: ""Xun's Projection"", 3: ""D-don't look so dismal... We'll see each other... in our new frames."", 4: '2'}"
+36	36		301							"{2: ""Lucia's Projection"", 3: ""Okay... Don't break your promise!"", 4: '3'}"
+37	37		202							{1: '3', 6: '1'}
+38	38		301							{3: 'The two of them on the ground struggle to give her a thumbs up, watching Lucia leave.'}
+39	39		301							"{2: ""Murol's Projection"", 3: ""If we keep laying here... we'll become Corrupted... won't we?"", 4: '1'}"
+40	40		301							"{2: ""Xun's Projection"", 3: 'Memory transfer takes time... Hold on a little longer.', 4: '2'}"
+41	41		301				DialogDisable			{3: 'Panting, their projections fade overr time, finally disappearing where they lie.'}
+42	42		202							{1: '1', 2: '2', 6: '1'}
+43	43		501						1500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+44	44		504							{1: '0'}
+45	45		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory287.png'}
+46	46		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+47	47		201							{1: '1', 2: '500166'}
+48	48		301			DialogEnable				{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+49	49		302							{2: 'Remember anything?', 3: '50'}
+50	50		301							{3: 'Lucia shakes her head. Even though she saw her projection, she still cannot recall any relevant memory data in her M.I.N.D.'}
+51	51		301							{2: 'Lucia', 3: 'But seeing them there confirms what the commandant said about the incident. It really did happen here.', 4: '1'}
+52	52		302				AniZhuanchangBegin			{2: '(Hassen said...)', 3: '53'}
+53	53		202							{1: '1', 6: '1'}
+54	54		504							{1: '1'}
+55	55		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory45.jpg'}
+56	56		201							{1: '1', 2: '500011'}
+57	57		301			AniZhuanchangEnd				"{1: '1', 2: 'Hassen', 3: ""Now that her frame contains data from Alpha, maybe it's time she has her full memories back."", 4: '1'}"
+58	58		301							{2: 'Hassen', 3: 'Nikola withheld part of it at first out of concerns. He believed doing so would benefit our ongoing fight.', 4: '1'}
+59	59		301							"{2: 'Hassen', 3: ""But that only solves our immediate problem. The longer it's held back, the easier Lucia gets lost in confusion and doubt."", 4: '1'}"
+60	60		301							{2: 'Hassen', 3: 'I believe her bond with the Gray Ravens can keep her from crossing that line.', 4: '1'}
+61	61		203							{1: '1', 2: '0.25', 3: '-400'}
+62	62		201							{1: '2', 2: '500004', 4: '400'}
+63	63		301							"{1: '1', 2: 'Asimov', 3: ""I've sent an access key to your terminal. It'll allow you to use the Spear of F.O.S. to access Lucia's Deep M.I.N.D."", 4: '2'}"
+64	64		301							"{2: 'Hassen', 3: ""That's where Alpha's memories are locked. You should know what that means."", 4: '1'}"
+65	65		301				AniZhuanchangBegin			"{2: 'Hassen', 3: ""It's up to you to decide when to use it."", 4: '1'}"
+66	66		202							{1: '1', 2: '2', 6: '1'}
+67	67		504							{1: '0'}
+68	68		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory287.png'}
+69	69		301			AniZhuanchangEnd				{3: 'Now that Lucia has accepted the first half of this memory, maybe you can give her permission now?'}
+70	70		302							{2: 'Lucia, you...', 3: '71', 5: '71'}
+71	71		301							{3: 'Just as you try to persuade her, you receive an emergency notification on your comms.'}
+72	72		201							{1: '1', 2: '500146', 3: '1'}
+73	73		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+74	74		301							{1: '1', 2: 'Murray', 3: 'Any issues?', 4: '1'}
+75	75		302							{2: 'Nothing so far.', 3: '76'}
+76	76		301							"{2: 'Murray', 3: ""I noticed that you've been in the same location for a while now. I was worried you were in danger."", 4: '1'}"
+77	77		302							"{2: ""We're just having a rest."", 3: '78'}"
+78	78		301							{2: 'Murray', 3: 'Alright, but time is of the essence. The Red Tide is incoming.', 4: '1'}
+79	79		302							{2: '?!', 3: '80'}
+80	80		301							{2: 'Murray', 3: 'Evacuate the premises immediately. Bridget should be nearby, she should be able to give you a ride.', 4: '1'}
+81	81		302							"{2: ""(Now's not the right time)"", 3: '82', 4: '(Tell her next time)', 5: '82'}"
+82	82		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+83	83		202							{1: '1', 6: '1'}
+84	84		301		1		AniZhuanchangBegin			{3: 'After receiving this information, without further ado, you terminate the call and quickly proceed to the designated entrance—'}

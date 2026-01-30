@@ -1,0 +1,991 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd	AniZhuanchangBegin			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1306.jpg'}
+3	3		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront21.png', 3: '0', 4: '0.95', 5: '0'}
+4	4		104							{1: '-130|0|-100', 2: '0'}
+5	5		104							{1: '-250|0|-200', 2: '0', 4: '4'}
+6	6		301			DialogDisable				{3: 'Isis huddles in the darkness, unmoving in the floating dust.'}
+7	7		401				AniZhuanchangEnd			{1: '1', 2: '120'}
+8	8		109	1					200.0	{1: '10', 2: '<size=31><i>Isis huddles in the darkness, unmoving in the floating dust.</i></size>', 3: '946', 4: '300', 6: '1', 7: '1', 10: '1'}
+9	9		109						200.0	{1: '11', 2: '<size=31><i>She was trained to keep quiet, even during rest.</i></size>', 3: '946', 4: '200', 6: '1', 7: '1', 10: '1'}
+10	10		301							{3: 'She was trained to keep quiet, even during rest.'}
+11	11		109						200.0	{1: '12', 2: '<size=31><i>Making even the slightest sound is vulgar, \\nbeneath someone of proper breeding.</i></size>', 3: '946', 4: '85', 6: '1', 7: '1', 10: '1'}
+12	12		301							{3: 'Making even the slightest sound is vulgar, beneath someone of proper breeding.'}
+13	13		109						200.0	{1: '13', 2: '<size=31><i>When the golden light filters through the narrow window crack \\nand touches the pale wallpaper in the distance,</i></size>', 3: '946', 4: '-60', 6: '1', 7: '1', 10: '1'}
+14	14		301							{3: 'When the golden light filters through the narrow window crack and touches the pale wallpaper in the distance,'}
+15	15		109						800.0	{1: '14', 2: '<size=31><i>Madam Monzano will soon be coming for her again.</i></size>', 3: '946', 4: '-185', 6: '1', 7: '1', 10: '1'}
+16	16		301							{3: 'Madam Monzano will soon be coming for her again. She huddles in the darkness, unmoving in the floating dust.'}
+17	17		109						500.0	{1: '15', 2: '<size=31><i>She must be loyal. She must be a servant that Madam Monzano finds useful.</i></size>', 3: '946', 4: '-285', 6: '1', 7: '1', 10: '1'}
+18	18		301							{3: 'She must be loyal. She must be a servant that Madam Monzano finds useful.'}
+19	19		110							{1: '10', 2: '11', 3: '12', 4: '13', 5: '14', 6: '15'}
+20	20		109						200.0	{1: '16', 2: '<size=32><i>The moment her feet touch the ground,</i></size>', 3: '996', 4: '300', 6: '1', 7: '1', 10: '1'}
+21	21		301							{3: 'The moment her feet touch the ground,'}
+22	22		109						200.0	{1: '17', 2: '<size=32><i>whenever any part of her body is visible to others,</i></size>', 3: '996', 4: '200', 6: '1', 7: '1', 10: '1'}
+23	23		301							{3: 'whenever any part of her body is visible to others,'}
+24	24		109						200.0	{1: '18', 2: '<size=32><i>she has to keep a smile on and be ready to serve.</i></size>', 3: '996', 4: '100', 6: '1', 7: '1', 10: '1'}
+25	25		301							{3: 'she has to keep a smile on and be ready to serve.'}
+26	26		109						200.0	{1: '19', 2: '<size=32><i>That is what makes a proper maid of the Monzano household.</i></size>', 3: '996', 4: '0', 6: '1', 7: '1', 10: '1'}
+27	27		301							{3: 'That is what makes a proper maid of the Monzano household.'}
+28	28		109						200.0	{1: '20', 2: '<size=32><i>Only in the brief minutes before dawn, \\nin that hazy space between sleep and waking,</i></size>', 3: '996', 4: '-110', 6: '1', 7: '1', 10: '1'}
+29	29		301							{3: 'Only in the brief minutes before dawn, in that hazy space between sleep and waking,'}
+30	30		109						200.0	{1: '21', 2: '<size=32><i>can she truly have control over her own body.</i></size>', 3: '996', 4: '-231', 6: '1', 7: '1', 10: '1'}
+31	31		301				AniZhuanchangBegin			{3: 'can she truly have control over her own body.'}
+32	32		110							{1: '16', 2: '17', 3: '18', 4: '19', 5: '20', 6: '21'}
+33	33		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1305.jpg'}
+34	34		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+35	35		104				AniZhuanchangEnd			{1: '0|0|0', 2: '0', 4: '4'}
+36	36		401							{1: '2', 2: '13015304'}
+37	37		301			DialogEnable				"{3: ""A polite tapping on the metal pipes breaks Isis' happiest time of day, her pre-dawn meditation.""}"
+38	38		201							{1: '1', 2: '501326', 3: '5', 5: '-80'}
+39	39		301							"{1: '1', 2: 'Isis', 3: ""Hey! The sun isn't even up yet!"", 4: '1'}"
+40	40		203							{1: '1', 2: '0.25', 3: '350', 4: '-80'}
+41	41		201							{1: '2', 2: '501332', 4: '-350'}
+42	42		301							{1: '1', 2: 'Discord', 3: 'Isis, you are hiding here again. The guests are on their way.', 4: '2'}
+43	43		401							{1: '2', 2: '5286'}
+44	44		204							{1: '1', 2: '19'}
+45	45		203						250.0	{1: '1', 2: '0.2', 3: '300', 4: '-50'}
+46	46		203							{1: '1', 2: '0.3', 3: '350', 4: '0'}
+47	47		301							{3: 'She swallows the complaints poised on her lips and jumps up in a panic.'}
+48	48		202							{1: '1', 2: '2', 6: '1'}
+49	49		201							{1: '3', 2: '501337'}
+50	50		301							{1: '1', 2: 'Head Maid', 3: 'You selfish girl, you finally show yourself. Hurry up and get ready.', 4: '3'}
+51	51		301							{2: 'Head Maid', 3: 'Why is your apron dirty?', 4: '3'}
+52	52		201							{1: '3', 2: '501326', 3: '1', 7: '1'}
+53	53		301							{1: '1', 2: 'Isis', 3: 'Hehe!', 4: '3'}
+54	54		201							{1: '3', 2: '501337', 7: '1'}
+55	55		301							{1: '1', 2: 'Head Maid', 3: 'Do not laugh!', 4: '3'}
+56	56		306							{1: '1'}
+57	57		202							{1: '3'}
+58	58		502							{1: 'RImgBg1BlowUp'}
+59	59		301							{3: 'Isis, learn from Discord!'}
+60	60		301							"{3: ""The head maid's brows snap upward. She looks ready to beat her with a stick.""}"
+61	61		301							{3: 'None of them ever laughs out loud. Every servant is trained to suppress even the slightest chuckle.'}
+62	62		301							{3: 'If the master or the guests hear a servant laugh, they will think they are being mocked.'}
+63	63		301							{3: 'In this household, even small mistakes are punished quickly and without mercy.'}
+64	64		301							{3: 'Worse than the physical pain is the mental torture, a torment much harder to endure.'}
+65	65		301							{3: 'Isis curls her lip in contempt. Of course, between the two of them, Discord is the good one and she is the bad example.'}
+66	66		505							{1: 'RImgBg1BlowUp'}
+67	67		306						200.0	
+68	68		201							{1: '1', 2: '501337'}
+69	69		301				AniZhuanchangBegin			{1: '1', 2: 'Head Maid', 3: 'Confirm the guest list. For now, go report to Madam Monzano.', 4: '1'}
+70	70		502							{1: 'DialogDisable'}
+71	71		202						800.0	{1: '1', 6: '1'}
+72	72		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory894.jpg'}
+73	73		401							{1: '2', 2: '5159'}
+74	74		301			DialogEnable				{3: 'The maids set out spotless tableware with precision, moving back and forth as they dust the furniture and polish the floors.'}
+75	75		402							{1: '5159'}
+76	76		301							{3: 'Madam Monzano sits alone at the dining table. The young lady is nowhere to be seen.'}
+77	77		301							{3: 'They rarely dine together. Both are constantly consumed by the family business.'}
+78	78		301							{3: 'In pursuit of a lofty ideal, Madam Monzano naturally expects everyone to pull together.'}
+79	79		201							{1: '1', 2: '501123'}
+80	80		301							{1: '1', 2: 'Madam Monzano', 3: 'I want this dinner to be flawless. Not a single mistake. Every guest must be satisfied.', 4: '1'}
+81	81		202							{1: '1'}
+82	82		301							{2: 'The Maids', 3: 'Yes, Madam.'}
+83	83		201							{1: '1', 2: '501123'}
+84	84		301							{1: '1', 2: 'Madam Monzano', 3: 'Keep your behavior in check. Do not let me learn that anyone plans to embarrass me again.', 4: '1'}
+85	85		202							{1: '1'}
+86	86		301							{2: 'The Maids', 3: 'Yes, Madam.'}
+87	87		401							{1: '2', 2: '5839'}
+88	88		301				AniZhuanchangBegin			"{3: ""Ice cubes crack as they melt in the madam's pre-dinner whiskey. The maids bow in perfect unison.""}"
+89	89		401							{1: '1', 2: '36'}
+90	90		306							{1: '1'}
+91	91		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory121.png'}
+92	92		401							{1: '1', 2: '6179'}
+93	93		301			AniZhuanchangEnd				{3: 'The grand dinner is about to begin.'}
+94	94		301							"{3: ""The mansion's great hall gleams under branching chandeliers. Rainbows of light play over the ornate gold-leaf furniture. This is not the popular virtual reality, but tangible luxury you can see and touch.""}"
+95	95		301							{3: 'The mansion now bears the name Adrianna Monzano.'}
+96	96		301							{3: 'Every maid in this house is expected to give her all to honor that distinguished name.'}
+97	97		301							{3: 'Their black-and-white uniforms are crisp, the lace immaculate. Polished shoes click across the floor. They file in with silver trays of crystal flutes, each one filled with golden champagne.'}
+98	98		306							
+99	99		401							{1: '2', 2: '5840'}
+100	100		201							{1: '1', 2: '501332', 3: '1'}
+101	101		301							{1: '1', 3: 'As guests step onto the red carpet with loud, careless laughter, Discord greets them with a steady smile and a respectful nod, all part of the performance.'}
+102	102		203						400.0	{1: '1', 2: '0.4', 4: '-80'}
+103	103		203							{1: '1', 2: '0.3', 4: '0'}
+104	104		301							{2: 'Discord', 3: 'Welcome.', 4: '1'}
+105	105		202							{1: '1'}
+106	106		301							{3: 'Everything runs like clockwork, a ballet set to precise choreography.'}
+107	107		301							"{3: ""Only a well-trained, elegant microcosm like this can prove that Madam Monzano's promised bright future is not empty talk.""}"
+108	108		201							{1: '1', 2: '501123'}
+109	109		301							"{1: '1', 3: ""Madam Monzano's gold nails glitter, hinting that wealth can buy not only luxury but a future of beauty and obedience like this.""}"
+110	110		202							{1: '1', 6: '1'}
+111	111		201							{1: '2', 2: '501332', 4: '-400'}
+112	112		201							{1: '3', 2: '501326', 4: '400'}
+113	113		301							"{1: '1', 3: ""Discord's eyes meet Isis'. They both know they are bait in Madam's game, props in a lie sold to rich guests who refuse to see them as people.""}"
+114	114		202							{1: '2', 2: '3'}
+115	115		301							{3: 'The dinner reaches its height as taste stimulants take effect. Enthusiasm rises with the level of intoxication.'}
+116	116		402							{1: '5840'}
+117	117		201							{1: '1', 2: '501123'}
+118	118		301							"{1: '1', 2: 'Madam Monzano', 3: ""I'm sure you know that the world's most consequential decisions are not made in public chambers or at some conference that captivates the masses."", 4: '1'}"
+119	119		301							"{2: 'Madam Monzano', 3: ""They're made just like this, discussed and weighed in quiet, secluded mansions."", 4: '1'}"
+120	120		301				DialogDisable			"{2: 'Madam Monzano', 3: ""That's why I invited you here, so you can witness ahead of time the great achievement we are about to unveil."", 4: '1'}"
+121	121		202							{1: '1', 6: '1'}
+122	122		401							{1: '2', 2: '4688'}
+123	123		502						200.0	{1: 'RImgBg1Shake'}
+124	124		306						350.0	{1: '1'}
+125	125		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteMainNoise.prefab', 2: '1'}
+126	126		205						450.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory3.jpg', 3: '0', 4: '1', 5: '0.4'}
+127	127		301			DialogEnable	DialogDisable			{3: 'A holographic projection of a groundbreaking vessel appears above the long table, rotating slowly as details are magnified so every guest can see.'}
+128	128		307							{1: 'Eden III.', 3: '60'}
+129	129		301							{3: 'Eden III.'}
+130	130		307							{2: '1'}
+131	131		201							{1: '18', 2: '501123', 4: '-250', 6: '250'}
+132	132		301			DialogEnable				{1: '1', 2: 'Madam Monzano', 3: 'Even if disaster strikes outside, it cannot breach the thick walls of our well-forged, stable, comfortable life.', 4: '18'}
+133	133		301							{2: 'Madam Monzano', 3: 'And what does the world beyond these walls have to do with our Eden in the sky? Your wealth remains here. Your life will not change.', 4: '18'}
+134	134		301							{2: 'Madam Monzano', 3: 'All you need is a more comprehensive will, one that ensures you and your descendants can settle everything once and for all and enjoy your later years.', 4: '18'}
+135	135		202				DialogDisable			{1: '18', 6: '1'}
+136	136		205						450.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory3.jpg', 3: '1', 4: '0', 5: '0.4'}
+137	137		205							{1: '1005', 3: '0', 4: '1', 5: '0'}
+138	138		401							{1: '2', 2: '4688'}
+139	139		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteMainNoise.prefab'}
+140	140		306						350.0	
+141	141		401							{1: '2', 2: '5840'}
+142	142		301			DialogEnable				{3: 'No one believes there will be new wars or upheaval. In a rational age of space exploration, extreme violence seems impossible.'}
+143	143		301				DialogDisable			"{3: ""This is Madam's most effective pitch to persuade guests to board the ark. Passengers need only exchange a portion of their wealth, and a measure of loyalty, for a ticket.""}"
+144	144		401							{1: '2', 2: '4044'}
+145	145		201							{1: '1', 2: '500838'}
+146	146		203						250.0	{1: '1', 2: '0.25', 5: '-100'}
+147	147		203							{1: '1', 2: '0.25'}
+148	148		301			DialogEnable				{1: '1', 3: 'Suddenly, a staggering figure bursts into the banquet at its peak.'}
+149	149		201							{1: '1', 2: '501123', 3: '2', 7: '1'}
+150	150		301							"{1: '1', 2: 'Madam Monzano', 3: ""Why, if it isn't Baron Houseman! You're late. Look, I even kept your seat for you."", 4: '1'}"
+151	151		201							{1: '1', 2: '500838', 7: '1'}
+152	152		301			PanelActor1Shake				{1: '1', 2: 'Baron Houseman', 3: 'Monzano! You poisoned me! Do not drink! None of you drink that poison!', 4: '1'}
+153	153		202							{1: '1'}
+154	154		402							{1: '5840'}
+155	155		301							{3: 'Heat drains from the room like hail on hot stone. Everyone turns to the hostess.'}
+156	156		201							{1: '1', 2: '501123', 3: '2'}
+157	157		301							{1: '1', 3: 'Monzano toys with a lock of hair at her temple, enjoying the attention.'}
+158	158		301							"{2: 'Madam Monzano', 3: ""It's only been a few days. How did you become so haggard? Is your heart condition keeping you from enjoying good wine?"", 4: '1'}"
+159	159		301							{2: 'Madam Monzano', 3: 'With everyone watching, you really do have a knack for jokes.', 4: '1'}
+160	160		204							{1: '1'}
+161	161		301							{2: 'Madam Monzano', 3: 'Discord, take Baron Houseman to the VIP room to rest. When he looks better, he can rejoin us.', 4: '1'}
+162	162		202							{1: '1', 6: '1'}
+163	163		201							{1: '2', 2: '501332', 4: '280', 5: '-75'}
+164	164		201							{1: '3', 2: '500838', 4: '-200', 5: '-100'}
+165	165		401							{1: '2', 2: '1543', 4: '  '}
+166	166		203							{1: '2', 2: '0.25', 3: '280'}
+167	167		203							{1: '3', 2: '0.25', 3: '-200', 4: '-25'}
+168	168		301							{1: '1', 2: 'Discord', 3: 'Yes, Madam.', 4: '2'}
+169	169		202							{1: '2', 2: '3', 6: '1'}
+170	170		401							{1: '2', 2: '5291'}
+171	171		201							{1: '1', 2: '501123'}
+172	172		301							{1: '1', 3: 'The maid quietly helps the guest out. Monzano stays composed, walks to the vacant seat, and lifts the untouched flute. In the lights it shines like liquid gold.'}
+173	173		301							{2: 'Madam Monzano', 3: 'Everyone here has status and ability. Poisoning is such a low trick... I fear our friend has a persecution complex.', 4: '1'}
+174	174		401							{1: '2', 2: '1516'}
+175	175		301							{3: 'Some huddle and whisper. Others murmur and wave their attendants away.'}
+176	176		401							{1: '2', 2: '5281'}
+177	177		301							{2: 'Madam Monzano', 3: 'To our never-ending feast of pleasure, and to our... true Eden.', 4: '1'}
+178	178		401							{1: '2', 2: '5288'}
+179	179		301							{3: 'None of it matters anyway. Monzano smiles and drains the glass. Then she signals for a fresh champagne tower.'}
+180	180		202							{1: '1'}
+181	181		401							{1: '2', 2: '2915'}
+182	182		301				AniZhuanchangBegin			{3: 'As the fountain spills from tier to tier, smiles return to every wrinkled face.'}
+183	183		402							{1: '2915'}
+184	184		401						2000.0	{1: '1', 2: '36'}
+185	185		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory1190.jpg'}
+186	186		502							{1: 'RImgBg1BlowUp'}
+187	187		401							{1: '1', 2: '6230'}
+188	188		201							{1: '18', 2: '501332', 3: '1', 7: '1'}
+189	189		301							{1: '1', 2: 'Discord', 3: 'This is a nitroglycerin injection, sir. It should relieve your angina.', 4: '18'}
+190	190		202				DialogDisable			{1: '18', 6: '1'}
+191	191		505							{1: 'RImgBg1BlowUp'}
+192	192		306						250.0	{1: '1'}
+193	193		104						850.0	{1: '0|-80|-150', 2: '0.8'}
+194	194		401							{1: '2', 2: '4044'}
+195	195		201							{1: '1', 2: '500838'}
+196	196		203							{1: '1', 2: '0.1', 4: '-100'}
+197	197		502							{1: 'RImgBg1Shake'}
+198	198		301			DialogEnable				{1: '1', 3: 'The guest lies back on a black velvet chaise. As the elegant maid approaches, his face twists in terror, as if Death herself stands before him.'}
+199	199		202							{1: '1', 6: '1'}
+200	200		306							
+201	201		201							{1: '1', 2: '501332', 3: '1'}
+202	202		301							{1: '1', 2: 'Discord', 3: 'Madam hopes you will think it over.', 4: '1'}
+203	203		201							{1: '1', 2: '500838', 5: '-100'}
+204	204		301			PanelActor1Shake	DialogDisable			{1: '1', 2: 'Baron Houseman', 3: 'Cough cough... Think what over? Boarding a ship full of holes that could sink at any time?', 4: '1'}
+205	205		202							{1: '1', 6: '1'}
+206	206		401						400.0	{1: '2', 2: '4900'}
+207	207		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2'}
+208	208		402							{1: '4900'}
+209	209		301			DialogEnable				"{3: ""He swings his gold-inlaid rosewood cane with all his might. It hits Discord's leg with a hollow metallic clang.""}"
+210	210		201							{1: '1', 2: '500838', 5: '-100'}
+211	211		301							{1: '1', 2: 'Baron Houseman', 3: 'Or should I praise her for seizing the family fortune to stage a mass delusion, and applaud her for discarding the noble Sinclair name?', 4: '1'}
+212	212		301			PanelActor1Shake	DialogDisable			{2: 'Baron Houseman', 3: 'And you, what are you exactly?! A mechanical monstrosity kept by Monzano!', 4: '1'}
+213	213		502							{1: 'RImgBg1Shake'}
+214	214		401						300.0	{1: '2', 2: '4900'}
+215	215		402							{1: '4900'}
+216	216		401							{1: '2', 2: '2617'}
+217	217		203						300.0	{1: '1', 2: '0.25', 3: '20', 4: '-120'}
+218	218		203							{1: '1', 2: '0.3', 3: '0', 4: '-150'}
+219	219		301			DialogEnable				{3: 'The effort of swinging the cane empties his last strength. His chest wheezes like a broken bellows.'}
+220	220		202							{1: '1'}
+221	221		301							{3: 'When one is forced into a passive position, even deciding their own fate becomes hard.'}
+222	222		402							{1: '2617'}
+223	223		201							{1: '1', 2: '501332'}
+224	224		301							{1: '1', 2: 'Discord', 3: 'I am only... a maid. An asset belonging to Madam Monzano.', 4: '1'}
+225	225		301							"{3: ""Her face shows no pain. She's simply reciting rules she cannot disobey.""}"
+226	226		401							{1: '2', 2: '2617'}
+227	227		401							{1: '2', 2: '4833'}
+228	228		201							{1: '1', 2: '500838', 5: '-150', 7: '1'}
+229	229		301							"{1: '1', 3: ""Colorless liquid beads at the needle tip. The baron's bulging eyes dart wildly. He thrashes like a fish bound to a cutting board.""}"
+230	230		301			PanelActor1Shake				{2: 'Baron Houseman', 3: 'What are Monzano and her kind?! Rootless shades who survive by cunning and paranoia!', 4: '1'}
+231	231		202							{1: '1'}
+232	232		402							{1: '2617'}
+233	233		301							{3: 'Even though the baron refuses to accept being a victim, the course of events has already swept past his own thoughts and efforts.'}
+234	234		301							"{3: ""He distrusts technology and rejects reason. Either way, since he doesn't plan to board...""}"
+235	235		301							"{3: ""Even if he sprinted across the deck now, it wouldn't matter; the ship has already departed.""}"
+236	236		201							{1: '1', 2: '500838', 5: '-150', 7: '1'}
+237	237		301			PanelActor1Shake				"{1: '1', 2: 'Baron Houseman', 3: ""No... Don't...""}"
+238	238		401							{1: '2', 2: '2975'}
+239	239		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1190.jpg', 3: '0', 4: '0.8', 5: '0.3'}
+240	240		104						300.0	{1: '0|0|-250', 2: '0.3', 4: '3'}
+241	241		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1190.jpg', 3: '0.8', 4: '0', 5: '0.3'}
+242	242		104						350.0	{1: '0|0|0', 2: '0.3', 4: '3'}
+243	243		301							{3: 'The injection goes into his vein. His features, scrunched like dried orange peel, have no choice but to loosen.'}
+244	244		301			PanelActor1Shake				"{3: ""His high cheekbones stand in sharp contrast to his sunken eye sockets. Gray-white stubble has pushed through his skin. He hasn't had the strength or time to groom himself.""}"
+245	245		202							{1: '1'}
+246	246		301							"{3: ""Everyone who steps into this mansion is already tied to the same single straw. Those who won't be tied will soon burn through their strength and, exhausted, sink and drown.""}"
+247	247		201							{1: '1', 2: '501332', 3: '1'}
+248	248		301				AniZhuanchangBegin			{1: '1', 2: 'Discord', 3: 'Now, you can sleep in peace.', 4: '1'}
+249	249		401							{1: '2', 2: '4202'}
+250	250		502							{1: 'DialogDisable'}
+251	251		202							{1: '1', 6: '1'}
+252	252		401						2000.0	{1: '1', 2: '36'}
+253	253		401							{1: '1', 2: '207'}
+254	254		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1304.jpg'}
+255	255		401							{1: '2', 2: '753'}
+256	256		301			DialogEnable				{3: 'The VIP room door eases shut. Discord tosses sterile gloves and ampules into the incinerator, then spots Isis leaning against the hall, idly fidgeting with the hem of her clothes as she waits.'}
+257	257		201							{1: '1', 2: '501326'}
+258	258		301							"{1: '1', 2: 'Isis', 3: ""Discord! Tonight's feast is over. The guests are leaving. We can finally rest."", 4: '1'}"
+259	259		203							{1: '1', 2: '0.25', 3: '400'}
+260	260		201							{1: '2', 2: '501332', 4: '-400'}
+261	261		301							{1: '1', 2: 'Discord', 3: 'Right.', 4: '2'}
+262	262		202							{1: '1', 2: '2'}
+263	263		401							{1: '2', 2: '5159'}
+264	264		301							"{3: ""Since the guest hasn't changed his mind, there's no need to report back and trouble Madam.""}"
+265	265		401							{1: '2', 2: '2968'}
+266	266		301				DialogDisable			"{3: ""They head back to their assigned area together, and from the maids' break room comes the sound of broken, on-and-off sobbing.""}"
+267	267		402							{1: '5159'}
+268	268		401							{1: '2', 2: '1543'}
+269	269		104						550.0	{1: '-80|0|-150', 2: '0.5'}
+270	270		201							{1: '1', 2: '501326', 3: '7', 4: '-600'}
+271	271		203							{1: '1', 2: '0.25', 3: '0'}
+272	272		301			DialogEnable				{1: '1', 3: 'Isis presses her ear to the door and listens for a moment.'}
+273	273		301							"{2: 'Isis', 3: ""She's been crying all night. Everyone's trying to comfort her."", 4: '1'}"
+274	274		204							{1: '1', 2: '5'}
+275	275		301							"{2: 'Isis', 3: ""Madam handed her over to Senator Richard during the dinner, but she doesn't want to go live with that decrepit old man who can barely move anything but his eyes."", 4: '1'}"
+276	276		204							{1: '1', 2: '0'}
+277	277		301							{2: 'Isis', 3: 'Is staying here... really any better?', 4: '1'}
+278	278		301							"{2: 'Isis', 3: ""At least she'll never be punished again."", 4: '1'}"
+279	279		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+280	280		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1186.jpg'}
+281	281		104							{1: '0|0|0', 2: '0'}
+282	282		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.5', 5: '0'}
+283	283		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '0.8', 5: '0'}
+284	284		202							{1: '1', 6: '1'}
+285	285		301							{3: 'Discord snaps her head toward the loose-lipped Isis, grabs her hand, and strides past the break room to the hiding spot only the two of them know.'}
+286	286		201							{1: '1', 2: '501326', 3: '5', 4: '-180'}
+287	287		201							{1: '2', 2: '501332', 4: '250'}
+288	288		301							"{1: '1', 2: 'Isis', 3: ""What's wrong, Discord? Why aren't you talking?"", 4: '1'}"
+289	289		401							{1: '2', 2: '5286'}
+290	290		203							{1: '1', 2: '0.25', 3: '-350'}
+291	291		203							{1: '2', 2: '0.25', 3: '350'}
+292	292		301							{3: 'Isis shakes her wrist, sore from being twisted, and puts on a playful, complaining face.'}
+293	293		301							"{2: 'Discord', 3: 'There are ""eyes"" everywhere.', 4: '2'}"
+294	294		204							{1: '1', 2: '0'}
+295	295		301				DialogDisable			{2: 'Isis', 3: 'Yeah, but not here.', 4: '1'}
+296	296		202							{1: '1', 2: '2'}
+297	297		401							{1: '2', 2: '4895'}
+298	298		306						250.0	{1: '1'}
+299	299		104						250.0	{1: '0|-50|0', 2: '0.2'}
+300	300		104							{1: '0|0|0', 2: '0.3'}
+301	301		301			DialogEnable				{3: 'Isis giggles and nimbly sidesteps along the wine racks, then climbs up.'}
+302	302		301							"{3: ""Discord sighs and follows her. There isn't room to stretch at the top, so they lie down hugging their knees, curled into small bundles.""}"
+303	303		306							
+304	304		201							{1: '1', 2: '501332'}
+305	305		301							"{1: '1', 2: 'Discord', 3: ""...So that's how your apron got dirty."", 4: '1'}"
+306	306		203							{1: '1', 2: '0.25', 3: '300'}
+307	307		201							{1: '2', 2: '501326', 3: '1', 4: '-300'}
+308	308		301							"{1: '1', 2: 'Isis', 3: ""It won't happen again! I already cleaned it spotless!"", 4: '2'}"
+309	309		301							{3: 'The maid looks surprisingly proud of herself.'}
+310	310		204							{1: '1', 2: '8'}
+311	311		301							{2: 'Discord', 3: 'We have to go back on time... If we break the rules, Madam has plenty of ways to brand them back onto our faces... and into our hearts.', 4: '1'}
+312	312		204							{1: '1', 2: '0'}
+313	313		204							{1: '2', 2: '0'}
+314	314		301							{2: 'Isis', 3: 'Hmm. Tell me, are we just stuck like this?', 4: '2'}
+315	315		301							"{2: 'Isis', 3: 'Are we going to live out our days with ""worthless"" and ""disgraceful"" written all over them?', 4: '2'}"
+316	316		301							{3: 'Discord is very good at silence.'}
+317	317		301							"{2: 'Isis', 3: ""Don't you have any dreams?"", 4: '2'}"
+318	318		204							{1: '1', 2: '3'}
+319	319		301							{2: 'Discord', 3: 'Dreams...', 4: '1'}
+320	320		301							"{3: ""Even she's shaken by the power held inside that word.""}"
+321	321		204							{1: '1', 2: '8'}
+322	322		301							"{2: 'Discord', 3: ""It's not important..."", 4: '1'}"
+323	323		204							{1: '2', 2: '5'}
+324	324		301							"{2: 'Isis', 3: ""It's very important!"", 4: '2'}"
+325	325		202							{1: '1', 2: '2'}
+326	326		301							"{3: ""Isis' lashes flutter. Her eyes sparkle even in the dim light.""}"
+327	327		201							{1: '1', 2: '501326', 3: '7'}
+328	328		301							"{1: '1', 2: 'Isis', 3: ""Instead of giving everything to Monzano's dream, why not chase our own?"", 4: '1'}"
+329	329		204							{1: '1', 2: '1'}
+330	330		301				DialogDisable			{2: 'Isis', 3: 'Me, I want to be a star singer!', 4: '1'}
+331	331		202							{1: '1', 2: '2', 6: '1'}
+332	332		306							{1: '1'}
+333	333		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0.8', 4: '0', 5: '0.4'}
+334	334		205						450.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory121.png', 3: '0', 4: '1', 5: '0.4'}
+335	335		301			DialogEnable				"{3: ""At Monzano's banquets, she'd sometimes see those people—dressed in finery and jewels, refusing food to protect their voices, drinking only water.""}"
+336	336		301							"{3: ""Discord can't remember their ever-changing faces, blurred by rejuvenation treatments, and can only tell them apart by the style of their clothes.""}"
+337	337		301				DialogDisable			{3: 'Las Prados cannot exist without them, just as they cannot exist without Las Prados.'}
+338	338		306							
+339	339		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '0.8', 5: '0.4'}
+340	340		205						450.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory121.png', 3: '1', 4: '0', 5: '0.4'}
+341	341		205							{1: '1007', 3: '0', 4: '1', 5: '0'}
+342	342		201							{1: '1', 2: '501326', 3: '1', 4: '-300'}
+343	343		201							{1: '2', 2: '501332', 4: '300'}
+344	344		301			DialogEnable				"{1: '1', 3: ""Whether it's just a whim or not, Isis looks like a satisfied little squirrel, and Discord can't bring herself to ruin it.""}"
+345	345		301							{2: 'Isis', 3: 'Hey—', 4: '1'}
+346	346		301							{3: 'The maid reads her thoughts at a glance and puffs out her cheeks.'}
+347	347		204							{1: '1'}
+348	348		301							"{2: 'Isis', 3: ""No, not like those arrogant peacocks we've seen here."", 4: '1'}"
+349	349		204							{1: '1', 2: '1'}
+350	350		301							{2: 'Isis', 3: 'I mean the kind who can start singing anywhere, anytime, and draw a crowd!', 4: '1'}
+351	351		204							{1: '1'}
+352	352		301							"{2: 'Isis', 3: ""Music's wonderful. No moral preaching, no dividing the audience into high or low."", 4: '1'}"
+353	353		301							{2: 'Isis', 3: 'Some sway to the rhythm, some join in singing, and everyone feels joy, hope, just for the music itself.', 4: '1'}
+354	354		204							{1: '2', 2: '3'}
+355	355		301							"{3: '""Hope."" Discord imagines it—faces in the crowd lighting up with joy, caught up in the melody.'}"
+356	356		204							{1: '2', 2: '0'}
+357	357		301							{2: 'Discord', 3: 'Alright, when you become a singer...', 4: '2'}
+358	358		204							{1: '1', 2: '5'}
+359	359		301							{2: 'Isis', 3: 'A star singer!', 4: '1'}
+360	360		204							{1: '2', 2: '1'}
+361	361		301							"{2: 'Discord', 3: ""A star singer, then. I'll be right there, clapping and playing along."", 4: '2'}"
+362	362		204							{1: '1', 2: '1'}
+363	363		301							{2: 'Isis', 3: 'No! You have to come sing with me!', 4: '1'}
+364	364		401							{1: '2', 2: '5286'}
+365	365		203							{1: '1', 2: '0.25', 3: '-100'}
+366	366		301							"{3: ""Isis sways her head and hums a tune she just made up, pulling Discord's hands into hers.""}"
+367	367		202							{1: '1', 2: '2'}
+368	368		301							"{3: ""Palm to palm—it's a warmth she remembers.""}"
+369	369		301							"{3: ""Looking at Isis' innocent face, Discord finds herself unable to say no.""}"
+370	370		201							{1: '1', 2: '501326', 4: '-300'}
+371	371		201							{1: '2', 2: '501332', 3: '1', 4: '300'}
+372	372		301							{1: '1', 2: 'Discord', 3: '...Alright.', 4: '2'}
+373	373		204							{1: '1', 2: '1'}
+374	374		301				AniZhuanchangBegin			{2: 'Isis', 3: 'Wooow—thank you, Discord! You really are my best friend!', 4: '1'}
+375	375		202							{1: '1', 2: '2', 6: '1'}
+376	376		502							{1: 'DialogDisable'}
+377	377		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+378	378		205							{1: '1005', 3: '0', 4: '1', 5: '0'}
+379	379		401						2000.0	{1: '1', 2: '36'}
+380	380		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory121.png'}
+381	381		401							{1: '1', 2: '6179'}
+382	382		301			DialogEnable				{3: 'The days only move forward. The eve-of-festival banquet is still in full swing.'}
+383	383		301							"{3: ""Monzano's guests, draped in glittering silk and gold, drift from one end of the hall to the other, chatting in clusters.""}"
+384	384		201							{1: '1', 2: '501331'}
+385	385		301							{1: '1', 2: 'Discord', 3: '...', 4: '1'}
+386	386		203						250.0	{1: '1', 2: '0.25', 4: '-50'}
+387	387		401							{1: '2', 2: '5286'}
+388	388		201						250.0	{1: '1', 2: '501332', 5: '-80', 7: '1'}
+389	389		203							{1: '1', 2: '0.3', 4: '0'}
+390	390		301				DialogDisable			{1: '1', 3: 'Discord takes off her glasses to wipe them, and when she puts them back on, a familiar figure flashes past in a corner.'}
+391	391		205						450.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.4'}
+392	392		204							{1: '1', 2: '3'}
+393	393		301			DialogEnable				{2: 'Discord', 3: '(...Eleanor?)', 4: '1'}
+394	394		301				DialogDisable			{2: 'Discord', 3: '(Has she come back from Fort Winter?)', 4: '1'}
+395	395		205						450.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '0.4'}
+396	396		401							{1: '2', 2: '1516'}
+397	397		203							{1: '1', 2: '0.25', 3: '600'}
+398	398		202							{1: '1'}
+399	399		201							{1: '2', 2: '501326', 3: '7', 4: '-600'}
+400	400		203							{1: '2', 2: '0.25', 3: '0'}
+401	401		301			DialogEnable				{1: '1', 2: 'Isis', 3: 'Discord! The head maid wants us to take these plates... hey, where are you going?!', 4: '2'}
+402	402		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+403	403		202							{1: '2', 6: '1'}
+404	404		401							{1: '1', 2: '36'}
+405	405		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory385.png'}
+406	406		401							{1: '1', 2: '6230'}
+407	407		301							"{3: ""Monzano had forbidden her to meet Eleanor in private or speak with her, telling her to behave like any other maid. But she can't resist—she follows under the excuse of returning dishes to the kitchen.""}"
+408	408		301				DialogDisable			"{3: ""Just a glance, just to be sure she's alright.""}"
+409	409		104						250.0	{1: '0|-20|-50', 2: '0.2'}
+410	410		104							{1: '0|0|-100', 2: '0.3'}
+411	411		201							{1: '1', 2: '501332'}
+412	412		301			DialogEnable				"{1: '1', 3: ""She trails the shadow to the madam's study. The door is half open, almost inviting.""}"
+413	413		204							{1: '1', 2: '19'}
+414	414		301				DialogDisable			{3: 'If Monzano finds her here, the punishment will be severe. But...'}
+415	415		202							{1: '1', 6: '1'}
+416	416		401							{1: '2', 2: '4872'}
+417	417		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1303.jpg', 3: '0', 4: '1', 5: '0.4'}
+418	418		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1303.jpg'}
+419	419		205							{1: '999'}
+420	420		301			DialogEnable				"{3: ""Discord takes a deep breath and pushes open the door she shouldn't.""}"
+421	421		301				DialogDisable			{3: 'The room is empty. Was she mistaken?'}
+422	422		401							{1: '2', 2: '1516'}
+423	423		104						1550.0	{1: '200|-150|-250', 2: '1.5'}
+424	424		306						200.0	{1: '1'}
+425	425		301			DialogEnable				{3: 'Wine-red velvet curtains are tied back with braided cords. The desk is a single slab of ebony, with a golden pen tip suspended eerily in its holder.'}
+426	426		301				DialogDisable			{3: 'A hardbound notebook with gilt edges lies fully open on the desk, ink still wet on the page. The final flourish of a cursive letter has bled into a faint blur.'}
+427	427		306							
+428	428		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1303.jpg', 3: '0', 4: '1', 5: '0.8'}
+429	429		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1303.jpg'}
+430	430		205							{1: '999'}
+431	431		301			DialogEnable	DialogDisable			"{3: ""From across the room, she can already guess what's inside.""}"
+432	432		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.7', 5: '1'}
+433	433		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront92.png', 3: '0', 4: '1', 5: '0'}
+434	434		401							{1: '2', 2: '5735'}
+435	435		104							{1: '1000|0|0', 2: '0', 4: '4'}
+436	436		104						1000.0	{1: '-80|0|0', 2: '1', 4: '4'}
+437	437		109							{1: '1', 2: '<color=#000000ff><size=50>REGISTRY</size></color>', 3: '580', 4: '300'}
+438	438		109							{1: '2', 2: '<color=#000000ff><size=35>Atiel van Wilmont Strazo</size></color>', 3: '580', 4: '200'}
+439	439		109							{1: '3', 2: '<color=#000000ff><size=35>Otto Rotti</size></color>', 3: '580', 4: '100'}
+440	440		109							{1: '4', 2: '<color=#000000ff><size=35>Walter Benjamin</size></color>', 3: '580', 4: '0'}
+441	441		109							{1: '5', 2: '<color=#000000ff><size=35>...</size></color>', 3: '580', 4: '-100'}
+442	442		109							{1: '6', 2: '<color=#000000ff><size=35>...</size></color>', 3: '580', 4: '-200'}
+443	443		109							{1: '7', 2: '<color=#000000ff><size=35>Houseman</size></color>', 3: '580', 4: '-300'}
+444	444		301							{3: 'Registry\\n\\nAtiel van Wilmont Strazo, Otto Rotti, Walter Benjamin... and the most recent addition, Houseman.'}
+445	445		110							
+446	446		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.7', 4: '0', 5: '1'}
+447	447		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront92.png', 3: '0', 4: '1', 5: '0'}
+448	448		104						1200.0	{1: '1000|0|0', 2: '1', 4: '4'}
+449	449		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+450	450		104							{1: '0|0|0', 2: '0', 4: '4'}
+451	451		301			DialogEnable	DialogDisable			{3: 'Each is a trophy, with a story behind it. But none is as important as the first two.'}
+452	452		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.7', 5: '1'}
+453	453		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront92.png', 3: '0', 4: '1', 5: '0'}
+454	454		401							{1: '2', 2: '5735'}
+455	455		104							{1: '1000|0|0', 2: '0', 4: '4'}
+456	456		104						1000.0	{1: '-80|0|0', 2: '1', 4: '4'}
+457	457		109							{1: '8', 2: '<color=#000000ff><size=40>Sinclair.</size></color>', 3: '580', 4: '100'}
+458	458		301							{3: 'Sinclair.'}
+459	459		110							{1: '8'}
+460	460		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.7', 4: '0', 5: '1'}
+461	461		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront92.png', 3: '0', 4: '1', 5: '0'}
+462	462		104						1200.0	{1: '1000|0|0', 2: '1', 4: '4'}
+463	463		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+464	464		104							{1: '0|0|0', 2: '0', 4: '4'}
+465	465		401							{1: '2', 2: '4280'}
+466	466		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+467	467		201							{1: '1', 2: '501332', 3: '19', 7: '1'}
+468	468		301			DialogEnable				"{1: '1', 3: ""Discord's teeth chatter, and her vision blurs.""}"
+469	469		301				DialogDisable			"{3: ""Reading is still difficult and slow for her, but this surname, the one that would be placed after Eleanor's...""}"
+470	470		401							{1: '2', 2: '4387'}
+471	471		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+472	472		504							{1: '0.7'}
+473	473		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1158.jpg'}
+474	474		201							{1: '1', 2: '501125', 7: '1'}
+475	475		301			DialogEnable				"{1: '1', 2: 'Rosewater', 3: ""Eleanor's got a new home."", 4: '1'}"
+476	476		301							"{2: 'Rosewater', 3: ""...Isn't that great?"", 4: '1'}"
+477	477		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+478	478		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory824.jpg'}
+479	479		202							{1: '1', 6: '1'}
+480	480		301							{3: 'Potassium nitrate, when diluted enough, is completely harmless. But if injected repeatedly over the span of several days...'}
+481	481		301							{3: 'The body can metabolize it cleanly, leaving no trace. Until the burial, the cause of death will appear to be natural weakness, a quiet and silent passing.'}
+482	482		301							{3: 'On damp, foul-smelling turf among rows of decaying gravestones, the young girl sits in the punishment chair prepared for her, because that was the order.'}
+483	483		401							{1: '2', 2: '4387'}
+484	484		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+485	485		504							{1: '0'}
+486	486		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1303.jpg'}
+487	487		201							{1: '1', 2: '501332', 3: '8', 7: '1'}
+488	488		203							{1: '1', 2: '0.25', 3: '-100', 4: '-80'}
+489	489		301			PanelActor1Shake				{1: '1', 3: 'Her stomach churns violently. She cannot stop the acid from surging up her throat and collapses to her knees.'}
+490	490		401							{1: '2', 2: '4697'}
+491	491		204							{1: '1', 2: '19'}
+492	492		201							{1: '18', 2: '501326', 3: '19'}
+493	493		301							"{1: '1', 2: 'Isis', 3: ""Discord, come out! Discord! Someone's coming!"", 4: '18'}"
+494	494		202				DialogDisable			{1: '18'}
+495	495		201							{1: '2', 2: '501326', 3: '19', 4: '300', 5: '-20'}
+496	496		401							{1: '2', 2: '1543'}
+497	497		203							{1: '1', 2: '0.25', 3: '-100', 4: '0'}
+498	498		203							{1: '2', 2: '0.25', 3: '300', 4: '0'}
+499	499		301			DialogEnable				{1: '1', 3: 'The maid rushes in, grabbing her stiff, kneeling companion.'}
+500	500		301							"{2: 'Discord', 3: ""The floor... it's dirty..."", 4: '1'}"
+501	501		301				DialogDisable			{2: 'Isis', 3: 'Forget it!', 4: '2'}
+502	502		202							{1: '1', 2: '2'}
+503	503		401						200.0	{1: '2', 2: '2987'}
+504	504		401							{1: '2', 2: '5841'}
+505	505		301			DialogEnable				{3: 'Isis yanks off her own apron, drops to her knees to wipe at the mess, then grabs the perfume bottle from the desk and sprays it heavily into the air.'}
+506	506		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+507	507		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory385.png'}
+508	508		401							{1: '2', 2: '5836'}
+509	509		301							{3: 'The sound of footsteps is getting closer...'}
+510	510		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+511	511		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1303.jpg'}
+512	512		402							{1: '5836'}
+513	513		201							{1: '1', 2: '501123'}
+514	514		301							{1: '1', 2: 'Madam Monzano', 3: 'Huh?', 4: '1'}
+515	515		401						100.0	{1: '2', 2: '2689'}
+516	516		401							{1: '2', 2: '2689'}
+517	517		202							{1: '1', 6: '1'}
+518	518		306							{1: '1'}
+519	519		301			DialogEnable	DialogDisable			{3: 'The madam slows her pace, sniffing the air, her eyes scanning the study for anything unusual.'}
+520	520		104						1550.0	{1: '100|-80|-250', 2: '1.5'}
+521	521		401							{1: '2', 2: '5735'}
+522	522		301			DialogEnable	DialogDisable			{3: 'Hiss... Her long, armored nails scrape across the solid wood of the desk, over the leather chair, across the spotless cabinet.'}
+523	523		104						1550.0	{1: '-100|-80|-250', 2: '1.5'}
+524	524		301			DialogEnable	DialogDisable			{3: 'Finally, her gaze falls on the rare Kadupul flowers at the window. The Queen of the Night blooms only after dark, then wilts completely by morning.'}
+525	525		104						1550.0	{1: '0|0|0', 2: '1.5'}
+526	526		306							
+527	527		201							{1: '1', 2: '501123', 3: '4'}
+528	528		301			DialogEnable				{1: '1', 2: 'Madam Monzano', 3: 'I have told you not to spray so much perfume on the flowers. The smell is disgusting.', 4: '1'}
+529	529		202							{1: '1'}
+530	530		401							{1: '2', 2: '5838'}
+531	531		301							{3: 'She tears apart the miraculous blossoms and tosses them carelessly to the floor.'}
+532	532		401							{1: '2', 2: '5482'}
+533	533		401							{1: '1', 2: '36'}
+534	534		301							{3: 'Then she gathers the notebook from the desk and moves to put it away in the cabinet.'}
+535	535		301							{3: 'Her hand has not yet touched the handle when a firm voice interrupts.'}
+536	536		401							{1: '1', 2: '6230'}
+537	537		201							{1: '1', 2: '501121'}
+538	538		301							{1: '1', 2: '??', 3: 'Aunt, there you are. I have completed the task you assigned me.', 4: '1'}
+539	539		201							{1: '1', 2: '501123', 3: '4', 7: '1'}
+540	540		301							{1: '1', 2: 'Madam Monzano', 3: 'Did the target confess?', 4: '1'}
+541	541		201							{1: '1', 2: '501121', 7: '1'}
+542	542		301							{1: '1', 2: '??', 3: 'Yes. The interrogation was entertaining. Luckily, he spoke before I lost interest.', 4: '1'}
+543	543		201							{1: '1', 2: '501123', 7: '1'}
+544	544		301							{1: '1', 2: 'Madam Monzano', 3: 'Very good, Eleanor. Come to the casino with me tonight.', 4: '1'}
+545	545		203							{1: '1', 2: '0.25', 3: '-400'}
+546	546		201							{1: '2', 2: '501120', 4: '400', 7: '1'}
+547	547		301				AniZhuanchangBegin			{1: '1', 2: 'Eleanor', 3: 'Yes, Aunt.', 4: '2'}
+548	548		202							{1: '1', 2: '2', 6: '1'}
+549	549		401							{1: '2', 2: '5291'}
+550	550		104							{1: '-200|40|-300', 2: '0'}
+551	551		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0'}
+552	552		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront58.png', 3: '1', 4: '1', 5: '0'}
+553	553		301			AniZhuanchangEnd				{1: '1', 3: 'The sound of heels fades into the distance. Inside the cabinet, the maid takes deep breaths, her terror still raw.'}
+554	554		402							{1: '5836'}
+555	555		401							{1: '2', 2: '2986'}
+556	556		301							"{3: ""Her heart beats again, trembling as if it had just been freed from the hangman's rope.""}"
+557	557		201							{1: '2', 2: '501326', 3: '5'}
+558	558		301							"{1: '1', 2: 'Isis', 3: ""Let's run away."", 4: '2'}"
+559	559		301							"{3: ""Through the haze, Isis' eyes are unwavering.""}"
+560	560		301							{2: 'Isis', 3: 'Staying here means giving up on any hope for a future.', 4: '2'}
+561	561		301							{2: 'Discord', 3: '...'}
+562	562		301							{2: 'Discord', 3: 'You are insane. The madam will not be pleased.'}
+563	563		301							{3: 'She forces the words out through the burn in her throat.'}
+564	564		204							{1: '2', 2: '0'}
+565	565		301							{2: 'Isis', 3: 'She will not find out.', 4: '2'}
+566	566		301							{2: 'Discord', 3: 'Impossible. How will you avoid all those cameras that watch everything?'}
+567	567		301							{2: 'Discord', 3: 'And what happened today... she will know as soon as she checks the recordings.'}
+568	568		301				DialogDisable			"{2: 'Isis', 3: ""We'll find a way."", 4: '2'}"
+569	569		202							{2: '2', 6: '1'}
+570	570		201							{1: '1', 2: '501332', 3: '10'}
+571	571		307							{1: 'Escape? And go where?', 3: '60', 5: '0'}
+572	572		301							{1: '1', 3: 'Escape? And go where?'}
+573	573		307							{2: '1'}
+574	574		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+575	575		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+576	576		204							{1: '1', 2: '8'}
+577	577		301			DialogEnable				{3: 'Freedom... sweet as the purest spring water, poisonous as the deadliest liquor.'}
+578	578		301							"{3: 'She still has orders to follow. She must report back to Kurono and to Monzano. And ""she"" is still here, moving like a marionette with its strings pulled day after day.'}"
+579	579		301							{3: 'Is this the unchanging fate of those who are nothing but tools? The world feels as if it has never changed.'}
+580	580		301							{3: 'The thought has circled her mind countless times.'}
+581	581		301				DialogDisable			{3: 'Perhaps... perhaps fate will finally extend an olive branch, perhaps it will let them go.'}
+582	582		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+583	583		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+584	584		204				AniZhuanchangBegin		500.0	{1: '1', 2: '10'}
+585	585		202							{1: '1', 6: '1'}
+586	586		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+587	587		301			DialogEnable				"{3: ""Isis' face wavers in Discord's narrow field of view, and her heart flickers like a candle, swinging between fear and hope.""}"
+588	588		301				AniZhuanchangBegin			{2: 'Isis', 3: 'Promise me, no one can ever know about our plan.'}
+589	589		502							{1: 'DialogDisable'}
+590	590		205							{1: '1003', 3: '0', 4: '1', 5: '0'}
+591	591		205							{1: '1007', 3: '0', 4: '1', 5: '0'}
+592	592		104							{1: '0|0|0', 2: '0'}
+593	593		401						2000.0	{1: '1', 2: '36'}
+594	594		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1304.jpg'}
+595	595		401							{1: '2', 2: '4293'}
+596	596		301			DialogEnable				{3: 'Howling wind drives rolling storm clouds across the dark sky.'}
+597	597		401							{1: '2', 2: '4931'}
+598	598		301							{3: 'The storm lashes the ground with impartial fury. Inside the mansion, the rush of footsteps is busier than the rain.'}
+599	599		301				DialogDisable			{3: 'The head maid shouts at the maids as they appear and disappear along their work routes.'}
+600	600		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+601	601		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+602	602		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+603	603		201							{1: '1', 2: '501337'}
+604	604		301			DialogEnable				"{1: '1', 2: 'Head Maid', 3: ""Power outage? It's fine. The backup will switch on automatically in a moment."", 4: '1'}"
+605	605		301							{2: 'Head Maid', 3: 'Who opened all the windows? Quick, close every one of them!', 4: '1'}
+606	606		301							{2: 'Head Maid', 3: 'Someone, help! A guest is drunk and making a scene! Who dosed the drinks with too much palate stimulant?', 4: '1'}
+607	607		301			DialogShake				{2: 'Head Maid', 3: 'The banquet... the banquet must go on!', 4: '1'}
+608	608		202							{1: '1'}
+609	609		301							{3: 'Break times, camera angles, guard posts, process flow—every detail and blind spot. She never knew Isis understood so much.'}
+610	610		301				AniZhuanchangBegin			"{3: ""The only place without surveillance, the gateway to freedom, isn't the thorn-ringed estate entrance. It's Monzano's bedroom.""}"
+611	611		502							{1: 'DialogDisable'}
+612	612		402							{1: '4293'}
+613	613		401						1500.0	{1: '1', 2: '36'}
+614	614		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory121.png'}
+615	615		401							{1: '1', 2: '6179'}
+616	616		201							{1: '1', 2: '501067'}
+617	617		301			DialogEnable				{1: '1', 2: 'Kephart', 3: 'Whether people believe the facts depends on how we tell them.', 4: '1'}
+618	618		401							{1: '2', 2: '4423'}
+619	619		202							{1: '1'}
+620	620		301							"{3: ""The blond man swirls his wine, leaning on the railing at the mansion's highest terrace. He switches off the hologram on the glass and takes in the rare, chaotic downpour.""}"
+621	621		201							{1: '1', 2: '501123'}
+622	622		301							"{1: '1', 2: 'Madam Monzano', 3: ""What's the largest terrarium in the world? You've already seen it."", 4: '1'}"
+623	623		301							{2: 'Madam Monzano', 3: 'Creatures trapped in a bottle live each day in that tiny world, breeding and thriving until their lives end.', 4: '1'}
+624	624		301							{2: 'Madam Monzano', 3: 'Nothing is wasted. Everything feeds back into the cycle of life.', 4: '1'}
+625	625		202							{1: '1'}
+626	626		301							{3: 'No one will notice that, on this stormy night, two maids have slipped away from the feast in a hurry.'}
+627	627		201							{1: '1', 2: '501123'}
+628	628		301							{1: '1', 2: 'Madam Monzano', 3: 'And every creature in the ecological bottle shares the same source, Mother. So what?', 4: '1'}
+629	629		201							{1: '1', 2: '501067'}
+630	630		301				DialogDisable			"{1: '1', 2: 'Kephart', 3: ""Madam, you're not preaching some relic of old morality, are you? It seems the Sinclair name gives you more pain than glory."", 4: '1'}"
+631	631		202							{1: '1', 6: '1'}
+632	632		401							{1: '2', 2: '4928'}
+633	633		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.7', 5: '0'}
+634	634		401							{1: '2', 2: '4928'}
+635	635		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+636	636		401							{1: '2', 2: '5283'}
+637	637		301			DialogEnable				{3: 'One by one, the corridor cameras with their red lights go dark, drooping as if nodding off, then flicker back to life a few seconds later.'}
+638	638		201							{1: '1', 2: '501123', 3: '4'}
+639	639		301							"{1: '1', 2: 'Madam Monzano', 3: ""Since childhood my brother and I studied together. He was taught the way of emperors. I was trained to be the perfect adviser who'd never dishonor the Sinclair name."", 4: '1'}"
+640	640		301							{2: 'Madam Monzano', 3: 'People sing of greatness. Because greatness is sacrifice, greatness is being nameless in the shadows.', 4: '1'}
+641	641		301							"{2: 'Madam Monzano', 3: 'Calling the ""virtuous wife and mother"" a sacred duty is like praising a slave\'s obedience as virtue. Quick to feel others\' pain but numb to your own desires.', 4: '1'}"
+642	642		301							{2: 'Madam Monzano', 3: 'I refuse to be like that.', 4: '1'}
+643	643		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+644	644		202							{1: '1', 6: '1'}
+645	645		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1304.jpg'}
+646	646		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+647	647		502							{1: 'RImgBg1Shake'}
+648	648		301				DialogDisable			{3: 'Some guards are knocked out. Others are led astray.'}
+649	649		401							{1: '2', 2: '4278'}
+650	650		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+651	651		101						250.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1307.jpg'}
+652	652		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+653	653		101						400.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1304.jpg'}
+654	654		401							{1: '2', 2: '4278'}
+655	655		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+656	656		101						250.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1305.jpg'}
+657	657		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+658	658		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1304.jpg'}
+659	659		301			DialogEnable				{3: 'Eager shadows race through the maze-like corridors, running toward their dreams.'}
+660	660		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+661	661		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+662	662		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory121.png'}
+663	663		201							{1: '1', 2: '501067', 7: '1'}
+664	664		301							{1: '1', 2: 'Kephart', 3: 'Only ambition that matches your desire can lead to a future worthy of it.', 4: '1'}
+665	665		201							{1: '1', 2: '501123'}
+666	666		301							"{1: '1', 2: 'Madam Monzano', 3: ""Can't anyone see it? The nobility are nothing more than thieves made legitimate by the system. Why should the privileges earned by one generation be passed on intact to the next?"", 4: '1'}"
+667	667		204							{1: '1', 2: '4'}
+668	668		301							{2: 'Madam Monzano', 3: 'The ugliest, most despicable thing in this world is when someone inherits wealth and power without the ability or effort to deserve it. Usurpation is a thousand times more noble than inheritance.', 4: '1'}
+669	669		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+670	670		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1304.jpg'}
+671	671		201							{1: '1', 2: '501337'}
+672	672		301							{1: '1', 2: 'Head Maid', 3: 'Wait, where are the guards?', 4: '1'}
+673	673		301			DialogShake				{2: 'Head Maid', 3: 'Hey, hey! The drones are malfunctioning!', 4: '1'}
+674	674		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+675	675		202							{1: '1', 6: '1'}
+676	676		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory121.png'}
+677	677		502							{1: 'RImgBg1Shake'}
+678	678		401							{1: '2', 2: '2511'}
+679	679		301							"{3: ""The towering tiered cake for the evening banquet is demolished by a malfunctioning drone plummeting from above. White cream floods across the ballroom's center like a rushing river, throwing the entire gathering into chaos.""}"
+680	680		201							{1: '1', 2: '501067'}
+681	681		301				DialogDisable			{1: '1', 2: 'Kephart', 3: 'Perfect. Now that is how you start a party... no, a banquet. Look around, so many people gathered here, and yet there is only one real star—Madam Monzano and her pride and joy.', 4: '1'}
+682	682		401							{1: '2', 2: '5286'}
+683	683		203						600.0	{1: '1', 2: '0.5', 4: '-100'}
+684	684		203							{1: '1', 2: '0.3', 4: '0'}
+685	685		301			DialogEnable				{3: 'The blond man gives an exaggerated, theatrical bow.'}
+686	686		201							{1: '1', 2: '501123'}
+687	687		301							{1: '1', 2: 'Madam Monzano', 3: 'I can certainly be a mother. Once Project Bokonon is complete, I will be the mother of a new world, a new era.', 4: '1'}
+688	688		301							{2: 'Madam Monzano', 3: 'Until then, you will continue to address me as...', 4: '1'}
+689	689		204							{1: '1', 2: '2'}
+690	690		301							{2: 'Madam Monzano', 3: '...Madam Monzano.', 4: '1'}
+691	691		301							{3: 'The hostess surveys the chaos in the ballroom with cold pride before she speaks again.'}
+692	692		204							{1: '1'}
+693	693		301							{2: 'Madam Monzano', 3: 'The education of an emperor is simple.', 4: '1'}
+694	694		301				AniZhuanchangBegin			{2: 'Madam Monzano', 3: 'We have only one path before us, and that is success.', 4: '1'}
+695	695		502							{1: 'DialogDisable'}
+696	696		202							{1: '1', 6: '1'}
+697	697		401						1000.0	{1: '1', 2: '36'}
+698	698		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1306.jpg'}
+699	699		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0'}
+700	700		307			AniZhuanchangEnd			100.0	{1: 'Little did they know that the door they were opening led not to freedom, but to the abyss.', 3: '50'}
+701	701		301				AniZhuanchangBegin			{3: 'Little did they know that the door they were opening led not to freedom, but to the abyss.'}
+702	702		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+703	703		307							{2: '1'}
+704	704		401							{1: '2', 2: '5836'}
+705	705		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1175.jpg'}
+706	706		402							{1: '5836'}
+707	707		401							{1: '1', 2: '6230'}
+708	708		201							{1: '18', 2: '501123', 4: '-250', 6: '250'}
+709	709		301			DialogEnable				"{1: '1', 2: 'Madam Monzano', 3: ""Hey, you're in my way."", 4: '18'}"
+710	710		202							{1: '18', 6: '1'}
+711	711		401							{1: '2', 2: '4006'}
+712	712		301			DialogShake				{3: 'At the sound of that familiar voice, Isis sinks weakly to the floor.'}
+713	713		201							{1: '18', 2: '501332', 3: '19'}
+714	714		301							{1: '1', 2: 'Discord', 3: 'How...', 4: '18'}
+715	715		202							{1: '18', 6: '1'}
+716	716		301				DialogDisable			{3: 'Monzano strides into her bedroom with a bottle of red wine and a diamond-encrusted crystal glass.'}
+717	717		401							{1: '2', 2: '5291'}
+718	718		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5201_10.jpg', 3: '0', 4: '1', 5: '0.4'}
+719	719		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5201_10.jpg'}
+720	720		205							{1: '999'}
+721	721		402							{1: '5291'}
+722	722		401							{1: '2', 2: '5368'}
+723	723		301			DialogEnable	DialogDisable			{3: 'She sits on the leather sofa, setting the bottle on the low marble table in front of her.'}
+724	724		104						1800.0	{1: '350|180|-300', 2: '1.4'}
+725	725		104						1500.0	{1: '-300|-150|-300', 2: '1.4'}
+726	726		301			DialogEnable	DialogDisable			{3: 'One by one, she removes the glittering jewelry from her hands, neck, and hair, tossing each piece carelessly onto the floor. There is no need to keep up the show anymore.'}
+727	727		104						1350.0	{1: '0|0|0', 2: '1.3'}
+728	728		401							{1: '2', 2: '5281'}
+729	729		301			DialogEnable				{3: 'The deep red wine pours into the glass like silk, the rising sound of the liquid filling the crystal echoing like a slow, final funeral bell.'}
+730	730		301							{2: 'Madam Monzano', 3: 'I remember telling you to stay here and not go anywhere.'}
+731	731		301							{2: 'Madam Monzano', 3: 'If all you wanted was to report to those old men, you did not need to sneak around here.'}
+732	732		401							{1: '2', 2: '5673'}
+733	733		301							{3: 'She raises her right hand, the golden revolver glinting as she idly spins the cylinder with her fingertip. Into the communicator on her hat brim, she gives a command.'}
+734	734		301							"{2: 'Madam Monzano', 3: ""Alright, the party's over. See our guests out.""}"
+735	735		401							{1: '2', 2: '2766'}
+736	736		401							{1: '1', 2: '36'}
+737	737		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+738	738		301							{3: 'A single clap breaks the silence.'}
+739	739		301				AniZhuanchangBegin			{2: 'Madam Monzano', 3: 'A final gift for our visitors.'}
+740	740		502							{1: 'DialogDisable'}
+741	741		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1175.jpg'}
+742	742		104							{1: '-100|-150|-300', 2: '0', 4: '1'}
+743	743		205				AniZhuanchangEnd			{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png', 3: '1', 4: '1', 5: '0'}
+744	744		401							{1: '2', 2: '4381'}
+745	745		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTempleBattle/FxUiTempleBattleYanhuan02.prefab', 2: '2'}
+746	746		301			DialogEnable				{3: 'Bang.'}
+747	747		301							{3: 'The endless banquet is finally ending. The maids will soon be freed from their duties. This vessel, carrying monstrous distortions and tangled desires, is about to begin its first and final voyage.'}
+748	748		301							{3: 'Bang. Bang.'}
+749	749		301				AniZhuanchangBegin			{3: 'Fireworks explode in the clear night sky after the passing of the storm.'}
+750	750		502							{1: 'DialogDisable'}
+751	751		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTempleBattle/FxUiTempleBattleYanhuan02.prefab'}
+752	752		402							{1: '4381'}
+753	753		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png', 3: '0', 4: '0', 5: '0'}
+754	754		401							{1: '1', 2: '36'}
+755	755		401							{1: '2', 2: '5669'}
+756	756		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+757	757		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+758	758		401							{1: '2', 2: '5669'}
+759	759		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+760	760		401							{1: '2', 2: '5669'}
+761	761		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+762	762		301			DialogEnable	DialogDisable			{3: 'Bang! Bang! Bang!'}
+763	763		401						200.0	{1: '2', 2: '4802'}
+764	764		401							{1: '2', 2: '5373'}
+765	765		301			DialogEnable	DialogDisable			{3: 'Thud—a heavy weight hits the floor. A wine bottle shatters on the veined marble table, sending shards and liquid in every direction.'}
+766	766		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5801_06.jpg'}
+767	767		104				AniZhuanchangEnd		1000.0	{1: '300|200|-300', 2: '0', 4: '1'}
+768	768		104						2000.0	{1: '300|-150|-300', 2: '1.8', 4: '1'}
+769	769		401							{1: '2', 2: '2680'}
+770	770		301			DialogEnable				"{3: ""Blood-dark wine spreads from beneath the maid's head, twisting into strange patterns on the handwoven natural fiber carpet.""}"
+771	771		301							{2: 'Madam Monzano', 3: 'What a mess. Take it away and dispose of it.'}
+772	772		401							{1: '2', 2: '2825'}
+773	773		301							{3: 'The madam raises her glass and drains the crimson liquid in one gulp before tossing it aside.'}
+774	774		301				DialogDisable			{2: 'Madam Monzano', 3: 'To myself.'}
+775	775		104						3200.0	{1: '0|0|0', 2: '3', 4: '1'}
+776	776		301			DialogEnable	DialogDisable			{3: 'Discord stares in exhaustion at the corpse of herself, forced into silence.'}
+777	777		401							{1: '2', 2: '4292'}
+778	778		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+779	779		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+780	780		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+781	781		307							{1: '<b>The world is so bright, so terrifying.</b>', 3: '60'}
+782	782		301				AniZhuanchangBegin			{3: 'The world is so bright, so terrifying.'}
+783	783		402							{1: '4292'}
+784	784		307						500.0	{2: '1'}
+785	785		502							{1: 'AniZhuanchangEnd'}
+786	786		301			DialogEnable				"{2: 'Isis', 3: ""So I'm not the protagonist after all.""}"
+787	787		301							{2: 'Isis', 3: 'So the world has no interest in me.'}
+788	788		301							{2: 'Isis', 3: 'So I am someone who can be discarded, ignored, left unchosen. Someone without value.'}
+789	789		301				DialogDisable			"{2: 'Isis', 3: ""Someone who shouldn't exist, pushed out to be sacrificed, told to step aside for someone else's gain... just a supporting role.""}"
+790	790		502							{1: 'DialogEnable'}
+791	791		301			DialogShake				{2: 'Isis', 3: '<color=#ff4e4eff>Discord!!!! And you!!!!</color>'}
+792	792		301							"{2: 'Isis', 3: ""You're the lucky one, aren't you?""}"
+793	793		301							{2: 'Isis', 3: 'You were supposed to be expendable, to die with your spine broken.'}
+794	794		301			DialogShake	DialogDisable			{2: 'Isis', 3: '<color=#ff4e4eff>You gave in. You ran away. Why?!!!</color>'}
+795	795		104						2000.0	{1: '300|-150|-350', 2: '1.8', 4: '1'}
+796	796		301			DialogEnable				"{2: 'Isis', 3: ""If the ending you get is just a little better than the one they planned for you, you're fine with it. You lie there pretending to be dead, cold as steel.""}"
+797	797		301				DialogDisable			"{2: 'Isis', 3: ""There's nothing good about living like that.""}"
+798	798		401							{1: '2', 2: '4292'}
+799	799		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+800	800		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+801	801		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+802	802		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5801_05.jpg'}
+803	803		104						500.0	{1: '300|-150|-350', 2: '0'}
+804	804		301			DialogEnable	DialogDisable			"{2: 'Isis', 3: ""You can't even make a sound.""}"
+805	805		402							{1: '4292'}
+806	806		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5801_06.jpg', 3: '0', 4: '1', 5: '2.5'}
+807	807		104							{1: '300|-150|-350', 2: '0', 4: '3'}
+808	808		104							{1: '0|0|0', 2: '3', 4: '1'}
+809	809		104						3200.0	{1: '0|0|0', 2: '3', 4: '3'}
+810	810		301			DialogEnable	AniZhuanchangBegin			"{3: ""The maid's face is frozen in its final contortion. Discord's eyes are wide with shock, fear tightening her chest. And in the next heartbeat, she's no longer watching—she's in it, forced to feel it for herself.""}"
+811	811		502							{1: 'DialogDisable'}
+812	812		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+813	813		402						1000.0	{1: '2680'}
+814	814		401							{1: '1', 2: '6172'}
+815	815		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory894.jpg'}
+816	816		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.5', 5: '0'}
+817	817		205				AniZhuanchangEnd			{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '0.8', 5: '0'}
+818	818		201							{1: '1', 2: '501130', 3: '4'}
+819	819		301			DialogEnable				"{1: '1', 2: 'Lilith', 3: ""Why won't you stop? Why act like you don't see?"", 4: '1'}"
+820	820		301							{2: 'Lilith', 3: 'Is that something Aunt told you to do?', 4: '1'}
+821	821		202							{1: '1'}
+822	822		301							{3: 'She drops her head and hurries away without answering.'}
+823	823		201							{1: '2', 2: '501326', 3: '1'}
+824	824		301							{1: '1', 2: 'Isis', 3: 'Wooow—thank you, Discord! You really are my best friend!', 4: '2'}
+825	825		301							"{3: ""In the pitch-black wine cellar, Isis takes Discord's hand, humming softly.""}"
+826	826		204							{1: '2', 2: '0'}
+827	827		301							{2: 'Isis', 3: 'Promise me, no one can ever know about our plan.', 4: '2'}
+828	828		202							{1: '2', 6: '1'}
+829	829		201							{1: '1', 2: '501130', 3: '4', 7: '1'}
+830	830		301							{1: '1', 2: 'Lilith', 3: 'Who were you just talking to?', 4: '1'}
+831	831		301							{2: 'Lilith', 3: 'What game are you playing?', 4: '1'}
+832	832		204							{1: '1', 2: '0'}
+833	833		301				DialogDisable			"{2: 'Lilith', 3: ""And why are you making a face I've never seen before?"", 4: '1'}"
+834	834		202							{1: '1'}
+835	835		205						1000.0	{1: '1006', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1299.jpg', 3: '0', 4: '0.9', 5: '0.9'}
+836	836		301			DialogEnable				{3: 'Discord tries to step back, but Lilith seizes her hand, curling her fingers around it like a snake tightening around prey.'}
+837	837		201							{1: '1', 2: '501130'}
+838	838		301				DialogDisable			"{1: '1', 2: 'Lilith', 3: ""That won't do."", 4: '1'}"
+839	839		202							{1: '1'}
+840	840		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1299.jpg', 3: '0', 4: '1', 5: '0.6'}
+841	841		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.5', 4: '0', 5: '0.6'}
+842	842		205						1000.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0.8', 4: '0', 5: '0.6'}
+843	843		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1299.jpg'}
+844	844		205							{1: '1006', 3: '0', 4: '1', 5: '0'}
+845	845		205							{1: '1007', 3: '0', 4: '1', 5: '0'}
+846	846		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+847	847		205							{1: '1005', 3: '0', 4: '1', 5: '0'}
+848	848		201							{1: '1', 2: '501130', 3: '9'}
+849	849		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Lilith', 3: ""I won't allow it."", 4: '1'}"
+850	850		401							{1: '2', 2: '4278'}
+851	851		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+852	852		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+853	853		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+854	854		202							{1: '1', 6: '1'}
+855	855		401							{1: '2', 2: '4548'}
+856	856		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5801_04.jpg', 3: '1', 4: '1', 5: '0'}
+857	857		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5801_04.jpg'}
+858	858		205							{1: '999'}
+859	859		301			DialogEnable				"{3: ""Like a moth trapped in a spider's web, her fragile wings beat against sticky threads. Each movement only makes the strands pull tighter, heavier.""}"
+860	860		104							{1: '0|0|-100', 2: '2'}
+861	861		205						2200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront87.png', 3: '0', 4: '1', 5: '1.5'}
+862	862		301							"{3: ""Her faint heartbeat is sewn shut with invisible silk. The vision of freedom shimmers in front of her, but every time she reaches for it, it's dragged back into the suffocating dark.""}"
+863	863		301				AniZhuanchangBegin			{3: 'The ending is already decided.'}
+864	864		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+865	865		502						400.0	{1: 'DialogDisable'}
+866	866		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1175.jpg'}
+867	867		104				AniZhuanchangEnd			{1: '0|0|0', 2: '0', 4: '1'}
+868	868		201							{1: '1', 2: '501123'}
+869	869		301			DialogEnable				"{1: '1', 2: 'Madam Monzano', 3: ""So you want freedom? Fine. I'll let you go. I won't interfere in anything you do. You'll go back to Kurono, give them your report. They're testing new tech, and they'll give you new legs."", 4: '1'}"
+870	870		301							"{2: 'Madam Monzano', 3: ""Only one condition: you'll be my eyes and ears."", 4: '1'}"
+871	871		301							"{2: 'Madam Monzano', 3: ""I don't punish tools. Tools only cause trouble in the hands of bad craftsmen."", 4: '1'}"
+872	872		202							{1: '1'}
+873	873		301							"{3: 'The maid\'s eyes are empty, unmoved by words like ""tools"" or ""bad craftsmen.""'}"
+874	874		201							{1: '1', 2: '501123', 3: '2'}
+875	875		301							{1: '1', 2: 'Madam Monzano', 3: 'Before you answer, ask yourself this: are you even worthy of it?', 4: '1'}
+876	876		204							{1: '1'}
+877	877		301							"{2: 'Madam Monzano', 3: ""Sharper instincts, stronger body and combat skills, faster data processing... and the expensive upkeep that comes with all of it. You'd better prove you're worth the trouble and not just dead weight."", 4: '1'}"
+878	878		204							{1: '1', 2: '2'}
+879	879		301							"{2: 'Madam Monzano', 3: ""If you won't do it for yourself... then do it for Eleanor."", 4: '1'}"
+880	880		301							"{3: 'The madam swallows the phrase she\'s always spouting about ""mutual progress"" and studies the maid\'s face instead.'}"
+881	881		301							{2: 'Madam Monzano', 3: 'No reason to say no, is there?', 4: '1'}
+882	882		201							{1: '1', 2: '501332', 3: '10', 7: '1'}
+883	883		301				DialogDisable			"{1: '1', 3: ""For a second, Discord's expression flickers, then smooths away.""}"
+884	884		401							{1: '2', 2: '5286'}
+885	885		204							{1: '1', 2: '8'}
+886	886		203						250.0	{1: '1', 2: '0.2', 4: '-50'}
+887	887		203							{1: '1', 2: '0.3', 4: '0'}
+888	888		301			DialogEnable				"{3: ""Under Monzano's sharp, hawk-like stare, she lowers her head, closes her eyes, and dips into a curtsy.""}"
+889	889		204							{1: '1', 2: '0'}
+890	890		301							{2: 'Discord', 3: 'As you wish, Madam Monzano.', 4: '1'}
+891	891		202							{1: '1'}
+892	892		301				AniZhuanchangBegin			{3: 'Monzano smiles with satisfaction.'}
+893	893		502							{1: 'DialogDisable'}
+894	894		401						800.0	{1: '1', 2: '36'}
+895	895		306						250.0	{1: '1'}
+896	896		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory1300.jpg'}
+897	897		401							{1: '1', 2: '6224'}
+898	898		301			DialogEnable				{3: 'Before the final banquet, Discord is told to deliver the completed gown to the young lady.'}
+899	899		301							{3: 'Golden vines embroidered by hand, lace light enough to seem like it could take flight—no longer confined to the frame, stretching beyond the cage of tradition.'}
+900	900		301							{3: 'Every stitch comes from long hours hunched in a chair, without rest—sewing in her whispers, her despair, her sighs, and her fragile dream of leaving it all behind.'}
+901	901		306							{1: '0'}
+902	902		201							{1: '1', 2: '501130'}
+903	903		301							"{1: '1', 2: 'Lilith', 3: ""Creativity might be humanity's greatest treasure, but Icarus kept flying higher and higher with his wax wings, thinking he could reach the sun."", 4: '1'}"
+904	904		301							{2: 'Lilith', 3: 'In the end, his body drifted among the feathers that once carried him.', 4: '1'}
+905	905		301							{2: 'Lilith', 3: 'No one cared when he fell. History just repeats itself.', 4: '1'}
+906	906		204							{1: '1', 2: '9'}
+907	907		301							"{2: 'Lilith', 3: ""It's obvious what my aunt wants. Even a blind man could hear it in her voice."", 4: '1'}"
+908	908		204							{1: '1', 2: '0'}
+909	909		301							{3: 'She takes a sip of tea and offers the kind of perfect, polite smile that hides her teeth.'}
+910	910		301							{2: 'Lilith', 3: 'Remember what we talked about in Polard?', 4: '1'}
+911	911		202							{1: '1'}
+912	912		301							{3: 'Across the table, the chair is empty. Behind the door, the blue-haired maid clutches her chest, knowing no one will ever sing for her again.'}
+913	913		301				AniZhuanchangBegin			{3: 'She is about to fasten wax wings to her back and fly toward an ocean waiting to drown her.'}
+914	914		502							{1: 'DialogDisable'}
+915	915		401						2000.0	{1: '1', 2: '36'}
+916	916		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory691.jpg'}
+917	917		107							{1: 'Kurono Ground Research Base'}
+918	918		301							{3: 'Kurono Ground Research Base'}
+919	919		108							{1: '1'}
+920	920		401							{1: '1', 2: '66'}
+921	921		201							{1: '1', 2: '500116'}
+922	922		301			DialogEnable				{1: '1', 2: 'Researcher', 3: 'Excellent neural reflexes, good adaptability to the Tantalum-193 copolymer, but...', 4: '1'}
+923	923		301							{2: 'Researcher', 3: 'The M.I.N.D. stability is too low. The modification could fail at any moment.', 4: '1'}
+924	924		203							{1: '1', 2: '0.25', 3: '-450'}
+925	925		201							{1: '2', 2: '500617', 4: '450'}
+926	926		301							"{1: '1', 2: 'Research Director', 3: ""...Failure is not an option. We don't have many experimental samples left from the ground organization."", 4: '2'}"
+927	927		301							{2: 'Researcher', 3: 'B-but...', 4: '1'}
+928	928		301							"{2: 'Researcher', 3: ""This data and these protocols haven't been validated..."", 4: '1'}"
+929	929		202							{1: '1', 2: '2'}
+930	930		301							{3: 'The researcher is drenched in sweat, tugging at the white lab coat that has darkened and clings to her skin.'}
+931	931		201							{1: '2', 2: '500617'}
+932	932		301							"{1: '1', 2: 'Research Director', 3: ""We are validating them right now, aren't we?"", 4: '2'}"
+933	933		301							"{2: 'Research Director', 3: ""If we can't produce results, how do you expect me to report to Kurono-San?"", 4: '2'}"
+934	934		301							"{2: 'Research Director', 3: ""Increase the pain output. Force the M.I.N.D. and the subject's consciousness to sync. Everything else... can be cut away."", 4: '2'}"
+935	935		202							{1: '2'}
+936	936		301							{3: 'Apart from the director who gave the order, none of the other researchers can keep a detached expression anymore.'}
+937	937		301				DialogDisable			{3: 'After going through all of this, can anyone truly keep their original soul? Will they still be the same person they once were?'}
+938	938		104						1000.0	{1: '-150|100|-280', 2: '0.9'}
+939	939		301			DialogEnable				{3: 'Every machine keeps working without mercy, denying her even the quiet release of death.'}
+940	940		301				AniZhuanchangBegin			{3: 'Finally...'}
+941	941		104							{1: '0|0|0', 2: '0'}
+942	942		502							{1: 'DialogDisable'}
+943	943		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1145.jpg'}
+944	944		304							{1: '<size=45>>></size>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1'}
+945	945		401							{1: '2', 2: '5510'}
+946	946		304							{1: '<size=45>>>>>Operation complete. Subject ID...</size>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1'}
+947	947		304							{1: '<size=45>>>>>>>>></size>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1'}
+948	948		304							{1: '<size=45>>>>>></size>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '1'}
+949	949		304							{1: '<size=40>>>No record found.</size>', 2: 'ff4e4eff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '1'}
+950	950		304							{1: '<size=40>>>No record found.</size>', 2: 'ff4e4eff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '1'}
+951	951		304				AniZhuanchangBegin			{1: '<size=40>>>No record found.</size>', 2: 'ff4e4eff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '1', 9: '1'}
+952	952		402							{1: '5510'}
+953	953		306						200.0	{1: '1'}
+954	954		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+955	955		301			DialogEnable				{3: 'She shuts off the terminal in the preparation room and drifts back to her lounge like a blue ghost. The door slides open as the security system reads her Construct ID.'}
+956	956		401							{1: '2', 2: '2873'}
+957	957		306							
+958	958		301							{3: 'The room is plain and bare. It makes no difference where she sleeps. She looks at her reflection in the mirror—it feels less and less like her own face.'}
+959	959		301				AniZhuanchangBegin			"{3: ""Why... this wasn't part of the plan they described to her.""}"
+960	960		502							{1: 'DialogDisable'}
+961	961		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png'}
+962	962		401							{1: '2', 2: '895'}
+963	963		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+964	964		109						600.0	{1: '9', 2: '<size=80>ORDER</size>', 3: '0', 4: '100', 9: '3'}
+965	965		110							{1: '9'}
+966	966		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+967	967		401							{1: '2', 2: '895'}
+968	968		109						600.0	{1: '10', 2: '<size=90>MISSION</size>', 3: '0', 4: '100', 9: '3'}
+969	969		110							{1: '10'}
+970	970		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+971	971		401							{1: '2', 2: '895'}
+972	972		109						600.0	{1: '11', 2: '<size=100>ORDER</size>', 3: '0', 4: '100', 9: '3'}
+973	973		110							{1: '11'}
+974	974		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+975	975		401							{1: '2', 2: '895'}
+976	976		109						600.0	{1: '12', 2: '<size=110>MISSION</size>', 3: '0', 4: '100', 9: '3'}
+977	977		110							{1: '12'}
+978	978		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+979	979		401							{1: '2', 2: '895'}
+980	980		109						600.0	{1: '13', 2: '<size=120>ORDER</size>', 3: '0', 4: '100', 9: '3'}
+981	981		110							{1: '13'}
+982	982		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+983	983		401							{1: '2', 2: '895'}
+984	984		109						600.0	{1: '14', 2: '<size=130>MISSION</size>', 3: '0', 4: '100', 9: '3'}
+985	985		110						200.0	
+986	986		301			DialogEnable	DialogDisable			{3: 'Mission, order. Mission, order. Stacked higher and higher. She is starting not to recognize the words she once knew better than any others.'}
+987	987		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+988	988		502							{1: 'RImgBg1BlowUp'}
+989	989		301			DialogEnable				{3: 'What is she supposed to do now? Where did Eleanor go? Why has she not contacted her? Did I... get left behind again?'}
+990	990		301		1		AniZhuanchangBegin			{3: 'Alone, Discord stares up at the changing virtual sky above Babylonia, stubbornly searching for an answer through questions that threaten to drown her.'}

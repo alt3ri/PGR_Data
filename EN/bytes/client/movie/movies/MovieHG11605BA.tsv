@@ -1,0 +1,148 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory98.png'}
+2	2		401							{1: '1', 2: '202'}
+3	3		301			DialogEnable				{3: 'Your mind wanders in the dark. As you slowly regain consciousness, the voices around you trickle into your ears, gradually and sparingly, like raindrops dripping down the eaves.'}
+4	4		201							{1: '1', 2: '500226'}
+5	5		301							{1: '1', 2: 'Gravelly Male Voice', 3: 'Akdilek must be very shorthanded to send a child like you.', 4: '1'}
+6	6		201							{1: '1', 2: '500225'}
+7	7		301							"{1: '1', 2: 'Changyu', 3: ""It's gonna cost you, judging a book by its cover."", 4: '1'}"
+8	8		201							{1: '1', 2: '500226'}
+9	9		301							"{1: '1', 2: 'Gravelly Male Voice', 3: ""Watch it. I'll let it slide this time, but only because you've brought me my mark."", 4: '1'}"
+10	10		302							{2: '(His mark?)', 3: '11', 4: '(Does he mean me?)', 5: '11'}
+11	11		202							{1: '1', 6: '1'}
+12	12		301							{3: 'It does not matter for now. You are treading on a tightrope—better keep up the unconscious act and observe quietly.'}
+13	13		401							{1: '2', 2: '1516'}
+14	14		301							{3: 'Right then, you hear footsteps closing in, and with them a sense of hostility that further weighs down your heavy breaths.'}
+15	15		201							{1: '1', 2: '500225'}
+16	16		301							{1: '1', 2: 'Changyu', 3: 'Hey, hands off the goods! 【kuroname】 is not yours yet. How about your part of the deal?', 4: '1'}
+17	17		301							"{3: ""Changyu's protest is followed by the sound of a connected hit, and the hostile presence stumbles away from you.""}"
+18	18		302				DialogDisable			{2: '(Changyu...)', 3: '19', 4: '(Right, what was that he said...)', 5: '19'}
+19	19		202				RImgBg1Disable			{1: '1', 6: '1'}
+20	20		101			RImgBg1Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+21	21		301			DialogEnable				"{1: '1', 2: 'Changyu', 3: ""Hm? Relax, the drug I gave you wasn't that powerful to begin with. You'll wake up in no time."", 4: '1'}"
+22	22		502				RImgBg1Disable			{1: 'DialogDisable'}
+23	23		101			RImgBg1Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory98.png'}
+24	24		302							"{2: ""(Did he know I'll be awake by now?)"", 3: '25'}"
+25	25		301			DialogEnable				{2: 'Serious Female Voice', 3: 'What are you doing?!'}
+26	26		201							{1: '1', 2: '500225'}
+27	27		301							"{1: '1', 2: 'Changyu', 3: ""Reminding you of the terms of our deal. No one benefits if you violate 'em."", 4: '1'}"
+28	28		301							{2: 'Changyu', 3: 'Or maybe you do want to fight a Construct?', 4: '1'}
+29	29		301							"{2: 'Changyu', 3: ""My left wrist comes with a special little trinket today. Perhaps y'all want a demonstration?"", 4: '1'}"
+30	30		302							{2: '(Left wrist?)', 3: '32', 4: '(Is he talking about...)', 5: '32'}
+31	31		202							{1: '1', 6: '1'}
+32	32		301							"{3: ""Taking Changyu's hint, you stealthily twist your left arm under the cover of the wall, activating the beacon in your bracelet.""}"
+33	33		301							{2: 'Serious Female Voice', 3: 'Trinket? What are you talking about?'}
+34	34		301							{3: 'Changyu only answers with a disdainful grunt.'}
+35	35		201							{1: '1', 2: '500226'}
+36	36		301							{1: '1', 2: 'Gravelly Male Voice', 3: 'Just show him the thing.', 4: '1'}
+37	37		401							{1: '2', 2: '1509'}
+38	38		301							{3: 'You hear the sound of a suitcase unlocking.'}
+39	39		301							{2: 'Gravelly Male Voice', 3: 'Take a look.', 4: '1'}
+40	40		301							{3: 'Changyu takes a few steps and stops nearby.'}
+41	41		201							{1: '1', 2: '500225', 3: '1'}
+42	42		301							"{1: '1', 2: 'Changyu', 3: ""Yep, looks good. This device'll help us sort out the knockoffs."", 4: '1'}"
+43	43		202							{1: '1', 6: '1'}
+44	44		301							"{2: 'Calm Female Voice', 3: 'If everyone\'s happy with their merchandise, let\'s move on and pay your... ""deposits.""'}"
+45	45		301							"{2: 'Calm Female Voice', 3: ""Once we've sealed our deal, Akdilek will remove our enemies for us; in exchange, we will no longer adulterate your products. Perhaps that's enough to salvage your name, or whatever's left of it.""}"
+46	46		302							"{2: '(I see...)', 3: '47', 4: ""(So that's what Changyu's after...)"", 5: '47'}"
+47	47		301							{2: 'Calm Female Voice', 3: 'However, in the event of a breach of contract...'}
+48	48		201							{1: '1', 2: '500225', 3: '13'}
+49	49		301							"{1: '1', 2: 'Changyu', 3: ""You'll go kaboom with your inside men on our train?"", 4: '1'}"
+50	50		202							{1: '1', 6: '1'}
+51	51		401							{1: '2', 2: '1516'}
+52	52		301							{3: 'Changyu sneers in the far corner of the room. He turns around, the sound of his footsteps heading toward you.'}
+53	53		302							{2: '(Carefully open your eyes)'}
+54	54		301							{3: 'In your hazy vision, you can see Changyu approaching and flexing his wrists. He, however, is brimming with satisfaction, without a trace of his mocking sneer.'}
+55	55		201							{1: '1', 2: '500225', 3: '1'}
+56	56		301							{1: '1', 2: 'Changyu', 3: 'Hey, you awake?', 4: '1'}
+57	57		302							"{2: ""What's going on?"", 3: '58', 4: ""...Didn't you already know?"", 5: '59'}"
+58	58	61	301							"{2: 'Changyu', 3: ""I'm really sorry. I promise I'll make it up to you in a sec."", 4: '1'}"
+59	59		301							"{2: 'Changyu', 3: ""Yeah... Truth is, I don't think I can handle this by myself."", 4: '1'}"
+60	60		204							{1: '1'}
+61	61		301							{3: 'Quiet as you two may be, you have alerted the others in the room.'}
+62	62		201							{1: '1', 2: '500226'}
+63	63		301							"{1: '1', 2: 'Gravelly Male Voice', 3: ""That piece of trash's awake?"", 4: '1'}"
+64	64		201							{1: '1', 2: '500225'}
+65	65		301							"{1: '1', 2: 'Changyu', 3: ""I'll explain later. Prepare to bolt—"", 4: '1'}"
+66	66		301							{3: 'Before he can finish, the female guard leaps onto Changyu with her weapon in hand, only to receive a kick from him square in the stomach that sends her flying.'}
+67	67		201							{1: '1', 2: '500226'}
+68	68		301							"{1: '1', 2: 'Gravelly Male Voice', 3: ""You dare?! Everyone, charge! Kill the Babylonian first, we'll settle the boy's debt later!"", 4: '1'}"
+69	69		302							{1: '1000', 2: '...!', 3: '72', 4: '...Changyu!', 5: '73'}
+70	70		201							{1: '1', 2: '500225', 3: '1'}
+71	71		303							{1: '1000'}
+72	72	75	301							{1: '1', 2: 'Changyu', 3: 'In your dreams, you old coot.', 4: '1'}
+73	73		301							"{1: '1', 2: 'Changyu', 3: ""Easy, I'm right here."", 4: '1'}"
+74	74		202							{1: '1'}
+75	6450		401							{1: '2', 2: '1512'}
+76	75		301							{3: 'Changyu dodges the attacks coming from the front, and he sends the attackers reeling on the floor with a well-placed uppercut. A dash—and he is right next to the suitcase he is after. He picks it up and throws it backward.'}
+77	76		302							{2: '(Catch the suitcase)', 3: '77'}
+78	77		201							{1: '1', 2: '500225', 3: '1'}
+79	78		301							{1: '1', 2: 'Changyu', 3: 'Nice catch! Now GO!', 4: '1'}
+80	79		401							{1: '2', 2: '1502'}
+81	80		301							{3: 'Seeing his human followers are no match to a Construct, the leader sounds the alarm, and the place is immediately swarmed with mechanoid guards.'}
+82	81		204							{1: '1', 2: '3'}
+83	82		301							{2: 'Changyu', 3: 'Well... Shit.', 4: '1'}
+84	83		202							{1: '1', 6: '1'}
+85	84		401							{1: '2', 2: '10002001'}
+86	85		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '2'}
+87	86		301							{3: 'Out of nowhere, a flurry of blades tear apart the front door, alongside the mechanoid guards that were flooding in—and as the dust settles, there stand the three members of Gray Raven.'}
+88	87		201							{1: '1', 2: '500166'}
+89	88		301							{1: '1', 2: 'Lucia', 3: 'Commandant! Are you alright?!', 4: '1'}
+90	89		302							"{2: ""I'm fine."", 3: '90', 4: ""I don't think so..."", 5: '92'}"
+91	90		201							{1: '1', 2: '1031001', 3: '6'}
+92	91		301							"{1: '1', 2: 'Liv', 3: ""You don't look fine..."", 4: '1'}"
+93	92		201							{1: '1', 2: '500026', 3: '10'}
+94	93		301							{1: '1', 2: 'Lee', 3: 'You better have a good explanation on what the hell is happening—', 4: '1'}
+95	94		201							{1: '1', 2: '500225', 3: '14'}
+96	95		301							{1: '1', 2: 'Changyu', 3: 'Oh shut it, just run!', 4: '1'}
+97	96		201							{1: '1', 2: '500226'}
+98	97		301							"{1: '1', 2: 'Gravelly Male Voice', 3: ""Stop! Do you have any idea what you're doing?! Do you understand what this transgression would cost Akdilek?!"", 4: '1'}"
+99	98		201							{1: '1', 2: '500225', 3: '1'}
+100	99		301							"{1: '1', 2: 'Changyu', 3: ""Oh, I'm afraid you're the one in the dark. When was the last time you heard from your guy?"", 4: '1'}"
+101	100		201							{1: '1', 2: '500226'}
+102	101		301							"{1: '1', 2: 'Gravelly Male Voice', 3: ""Enough with your bullshit! I've just heard from him!"", 4: '1'}"
+103	102		201							{1: '1', 2: '500225', 3: '1'}
+104	103		301							"{1: '1', 2: 'Changyu', 3: ""You mean you've heard this?"", 4: '1'}"
+105	104		301							{3: 'Changyu takes out a small cubic apparatus from his pocket, and with a tap comes a familiar voice.'}
+106	105		301							"{3: '""All is good, bossman. No need to worry.""'}"
+107	106		204							{1: '1'}
+108	107		301							"{2: 'Changyu', 3: ""He kept following me around, so I decided to record everything he said... The trick is to hide the cuts with some static, y'know? As for the trash you placed on our train... I haven't heard from them, have ya?"", 4: '1'}"
+109	108		302							"{2: 'That\'s what you meant by ""cleaning""?', 3: '110'}"
+110	109		204							{1: '1', 2: '2'}
+111	110		301							"{2: 'Changyu', 3: ""That's right, with the time you bought me."", 4: '1'}"
+112	111		201							{1: '1', 2: '500226'}
+113	112		301							{1: '1', 2: 'Gravelly Male Voice', 3: 'Kill them!', 4: '1'}
+114	113		401							{1: '2', 2: '1509'}
+115	114		201							{1: '1', 2: '500142', 4: '-600'}
+116	115		201							{1: '2', 2: '500142', 4: '0'}
+117	116		201							{1: '3', 2: '500142', 4: '600'}
+118	117		301							{1: '1', 3: 'At the sound of his howl, all the mechanoid guards burst in the house through the broken door, the smashed windows, even the torn down air ducts—and surround the group in a swirl of chaos.', 4: '1', 5: '2', 6: '3'}
+119	118		302							{2: '(Raise your gun)', 3: '119'}
+120	119		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+121	120		201							{1: '1', 2: '500225'}
+122	121		301							{1: '1', 2: 'Changyu', 3: 'Follow me!', 4: '1'}
+123	122		202							{1: '1', 6: '1'}
+124	123		301							{3: 'The incoming mechanoid guards keep shoving each other into the confined space, causing more and more mayhem.'}
+125	124		301							{3: 'Fortunately, each fallen mechanoid guard becomes another brick of a metal wall that shields you. Unfortunately, the more they fall, the more your escape route is clogged.'}
+126	125		301							{3: 'You cannot reach the three Gray Ravens at the door, and you are getting further away from Changyu, as the two of you are slowly forced to the two sides of the room.'}
+127	126		201							{1: '1', 2: '500225', 3: '3'}
+128	127		301							"{1: '1', 2: 'Changyu', 3: ""Hey, shouldn't we be retreating?"", 4: '1'}"
+129	128		302							{2: 'The best-laid plans go astray.', 3: '129', 4: 'Hey, dream, meet reality.', 5: '129'}
+130	129		301							{3: 'Taking a step away from this metal wall of fallen machines means an open season for the rest of them.'}
+131	130		302							"{2: 'Humans are kind of fragile!', 3: '131', 4: ""I'm not a Construct!"", 5: '131'}"
+132	131		301							{3: 'Changyu lets out a sigh. The fight is straining on him, but he manages to turn around; with his punches leading the way, he moves toward you, one mechanoid at a time.'}
+133	132		301							{3: 'Suddenly, the faint sound of a ticking clock catches his attention.'}
+134	133		204							{1: '1', 2: '5'}
+135	134		301							{1: '1', 2: 'Changyu', 3: 'No! 【kuroname】!', 4: '1'}
+136	135		302							{2: '?', 3: '136'}
+137	136		301							"{3: ""Changyu's moves become frantic, his fists swinging wildly—but none of it matters, as he still fails to breach the walls of mechanoids and fallen machines.""}"
+138	137		301							{2: 'Changyu', 3: '—GET OUT OF MY WAY!!!', 4: '1'}
+139	138		202							{1: '1', 6: '1'}
+140	139		301			RImgBg1Shake				"{3: ""Changyu's cry rings with a thunderous quake, shattering a wall nearby and the mechanoid guards in his way—but then—""}"
+141	140		301							"{3: '""Tick—""'}"
+142	141		401							{1: '2', 2: '1503'}
+143	142		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+144	143		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+145	144		301							{3: 'A blinding white light coats your vision; a deafening buzz pierces your eardrums. You are deprived of your senses—and yet, amid this pulsating chaos, a voice, almost heartbreaking in its desperation, reaches you.'}
+146	145		301							{2: 'Changyu', 3: '【kuroname】!'}
+147	146		301		1		AniZhuanchangBegin			{3: '...Chang Yu, did he manage to reach you?'}

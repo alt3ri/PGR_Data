@@ -1,0 +1,18 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory31.jpg'}
+2	2		401							{1: '1', 2: '2'}
+3	3		201							{1: '2', 2: '1021001', 4: '-400'}
+4	4		201							{1: '1', 2: '1031001', 4: '400'}
+5	5		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'The enemy is flanking us!', 4: '1'}
+6	6		202							{1: '2', 6: '1'}
+7	7		201							{1: '3', 2: '1011001', 4: '-400'}
+8	8		301							{1: '1', 2: 'Lee', 3: 'They move in coordination. There must be someone behind them.', 4: '3'}
+9	9		202							{1: '3', 6: '1'}
+10	10		201							{1: '3', 2: '1091001', 4: '-400'}
+11	11		301							"{1: '1', 2: 'Bianca', 3: ""Let's focus on getting out of our current predicament first."", 4: '3'}"
+12	12		302							{2: 'How much longer until help arrives?', 3: '13'}
+13	13		301							{2: 'Liv', 3: 'Babylonia has adjusted its orbit and is readying firepower support. There are still two to three minutes left.', 4: '1'}
+14	14		302							{2: '(Load gun) Get ready to fight our way out!', 3: '15'}
+15	15		202							{1: '3', 6: '1'}
+16	16		401							{1: '2', 2: '1511'}
+17	17		301		1		AniZhuanchangBegin			{2: 'Liv', 3: 'Yes, Commandant!', 4: '1'}

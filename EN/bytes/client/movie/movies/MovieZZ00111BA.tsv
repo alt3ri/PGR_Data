@@ -1,0 +1,27 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg'}
+2	2		401							{1: '1', 2: '102'}
+3	3		201							{1: '1', 2: '500004'}
+4	4		301							"{1: '1', 2: 'Asimov', 3: ""Rosetta? Why are you here all alone... Where's our dear lab rat?"", 4: '1'}"
+5	5		203							{1: '1', 2: '0.25', 3: '-400'}
+6	6		201							{1: '2', 2: '500098', 4: '400'}
+7	7		301							{1: '1', 2: 'Rosetta', 3: 'If you mean the commandant—currently testing the command system.', 4: '2'}
+8	8		301							"{2: 'Asimov', 3: ""Oh boy, that's trouble... Forget it, I'll go look..."", 4: '1'}"
+9	9		204							{1: '2', 2: '4'}
+10	10		301							{2: 'Rosetta', 3: 'Wait! What do you mean by trouble?', 4: '2'}
+11	11		301							"{2: 'Asimov', 3: ""You wouldn't understand anyway."", 4: '1'}"
+12	12		301							"{2: 'Rosetta', 3: ""Then please explain in a way that I can. Aren't you an expert at that?"", 4: '2'}"
+13	13		301							{2: 'Asimov', 3: 'Sigh, fine... I found code for an early prototype of a M.I.N.D. system in the system shell.', 4: '1'}
+14	14		301							"{2: 'Asimov', 3: ""After all, most of the systems developed by the ARU at this time were like this—for example, the mech narwhal. So, I didn't pay much attention to it."", 4: '1'}"
+15	15		301							"{2: 'Asimov', 3: 'But recently, when I checked the noise mixed in the AI voice used in ""Virtual Horizon"", I discovered that it was actually an encrypted waveform file.', 4: '1'}"
+16	16		301							{2: 'Rosetta', 3: 'A waveform file...?', 4: '2'}
+17	17		301							{2: 'Asimov', 3: 'Like electromagnetic waves, seismic waves, or most commonly—sound.', 4: '1'}
+18	18		301							{2: 'Rosetta', 3: 'Can you convert the waveform into sound and play it for me?', 4: '2'}
+19	19		401							{1: '2', 2: '1515'}
+20	20		301							{3: 'Asimov sends the translated waveform audio to Rosetta.'}
+21	21		301							"{2: 'Asimov', 3: ""Sure, of course. But I've already tried that. It doesn't appear to have any meaning..."", 4: '1'}"
+22	22		301							{2: 'Rosetta', 3: 'Lonely. World. Loop. Eternal. Dream. 【kuroname】... My dream.. dream... dream...', 4: '2'}
+23	23		301							"{2: 'Asimov', 3: ""What's wrong?"", 4: '1'}"
+24	24		301							"{2: 'Rosetta', 3: ""It's the meaning of the audio—Derek's voice... It contains some simple words, but it mentions the commandant..."", 4: '2'}"
+25	25		301							"{2: 'Asimov', 3: ""It's not a message that a simple AI guide can convey."", 4: '1'}"
+26	26		301		1		AniZhuanchangBegin			{2: 'Rosetta', 3: 'Looks like my hunch was right... Take me to the commandant!', 4: '2'}

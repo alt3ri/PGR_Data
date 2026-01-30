@@ -1,0 +1,32 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory45.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	100		201							{1: '1', 2: '500012'}
+4	3		301			DialogEnable				"{1: '1', 2: 'Nikola', 3: ""It's 16:33. You're late by three minutes."", 4: '1'}"
+5	101		302							{2: 'Sorry, Chief...', 3: '4'}
+6	4		301							{2: 'Nikola', 3: 'Hah... Maybe I should make an appointment the next time I want to see you, hmm?', 4: '1'}
+7	5		301							"{2: 'Nikola', 3: ""Forget it. Let's make haste. Asimov, are the equipment ready?"", 4: '1'}"
+8	102		203							{1: '1', 2: '0.25', 3: '400'}
+9	103		201							{1: '2', 2: '500004', 4: '-400'}
+10	6		301							"{1: '1', 2: 'Asimov', 3: ""Well, the energy system and safety release valves are slightly different from Babylonia standards, but they're all based off of our tech, so it wasn't that hard to fix."", 4: '2'}"
+11	7		301							{2: 'Nikola', 3: 'Just give me your conclusions.', 4: '1'}
+12	8		301							"{2: 'Asimov', 3: ""It's ready for use. It just needs to be tested for us to know for sure."", 4: '2'}"
+13	9		301							"{2: 'Nikola', 3: ""I'm sure you know why you're summoned here. You're here today to test the team formation system developed by the ARU."", 4: '1'}"
+14	104		302							{2: 'Why me?', 3: '10', 4: 'Team formation system?', 5: '11'}
+15	10	13	301							"{2: 'Nikola', 3: ""You're the F.O.S. top graduate. You're the most ideal candidate for testing the system's limits. That's all."", 4: '1'}"
+16	11	12	301							"{2: 'Asimov', 3: ""We found a program framework located in the Niflheim labs in the Arctic. It's old stuff, but the design direction is revolutionary and of great reference value."", 4: '2'}"
+17	12	13	301							{2: 'Asimov', 3: 'After all, when it comes to war, people at that time were much more experienced than us.', 4: '2'}
+18	13		301							{2: 'Nikola', 3: 'Enough chit-chat. Any other questions?', 4: '1'}
+19	105		302							{2: 'Nope... Not that the moment.', 3: '14'}
+20	14		301							{2: 'Asimov', 3: 'Alright. Then come here and put on this headset.', 4: '2'}
+21	15		301							"{2: 'Nikola', 3: ""It's not a deep dive kinda deal?"", 4: '1'}"
+22	16		301							"{2: 'Asimov', 3: ""The ARU didn't have that sorta tech back then. This is just an audiovisual simulation program."", 4: '2'}"
+23	17		301							"{2: 'Nikola', 3: ""It doesn't matter. Or maybe we can test your true mettle more accurately this way. Let's begin."", 4: '1'}"
+24	18		301							{2: 'Asimov', 3: 'Okay. Here goes...', 4: '2'}
+25	19		301				AniZhuanchangBegin			{3: 'As Asimov presses the start button, you hear the unstable electronic voice of a female AI.'}
+26	106		202							{1: '1', 2: '2'}
+27	107		401							{1: '2', 2: '1515'}
+28	108		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+29	20		301			AniZhuanchangEnd				{2: '-AI-', 3: 'Construct data upload—complete.'}
+30	21		301							{2: '-AI-', 3: 'Tactical framework simulation generation—complete.'}
+31	22		301		1		AniZhuanchangBegin			{2: '-AI-', 3: 'Virtual Horizon loaded. Welcome, Commandant.'}

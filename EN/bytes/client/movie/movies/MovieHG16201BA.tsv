@@ -1,0 +1,560 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		401							{1: '2', 2: '1016'}
+4	4		109						2500.0	{1: '1', 2: '<color=#ffffffff><size=40>*** SYSTEM ERROR ***\\nCode: 408\\nModule: HEART.exe\\nDescription: Request Timeout. Heartbeat not detected.</size></color>', 4: '100', 9: '3', 10: '1', 11: '1'}
+5	5		309							{2: '<color=#ffffffff><size=40>*** SYSTEM ERROR ***\\nCode: 408\\nModule: HEART.exe\\nDescription: Request Timeout. Heartbeat not detected.</size></color>'}
+6	6		401							{1: '2', 2: '1016'}
+7	7		109						1500.0	{1: '1', 2: '<color=#ffffffff><size=40>>>> Initiating nearby device scan...\\n>>> ! Match Found: [User: Teddy] - Signal: Strong & Stable</size></color>', 4: '250', 9: '3', 10: '1', 11: '1'}
+8	8		309							{2: '<color=#ffffffff><size=40>>>> Initiating nearby device scan...\\n>>> ! Match Found: [User: Teddy] - Signal: Strong & Stable</size></color>'}
+9	9		401							{1: '2', 2: '1016'}
+10	10		109						2500.0	"{1: '2', 2: '<color=#ffffffff><size=40>>>> >>> Location: Spaceport\\n>>> Proposed solution: Initiate ""handshake"" protocol at coordinates?\\n>>> Execute meeting_protocol? (Y/Y) _</size></color>', 4: '60', 9: '3', 10: '1', 11: '1'}"
+11	11		309							"{2: '<color=#ffffffff><size=40>>>> >>> Location: Spaceport\\n>>> Proposed solution: Initiate ""handshake"" protocol at coordinates?\\n>>> Execute meeting_protocol? (Y/Y) _</size></color>'}"
+12	12		110				AniZhuanchangBegin			{1: '1', 2: '2'}
+13	13		401							{1: '1', 2: '5008'}
+14	14		110							
+15	15		501			AniZhuanchangEnd			50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+16	16		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1355.png'}
+17	17		301			DialogEnable				{3: 'In the golden morning light softened by sheer curtains, tiny specks of dust drift lazily, spinning themselves into stars without a care.'}
+18	18		301							{3: 'The rich, mellow scent of coffee feels like a warm hand. Gentle music flows between the fingers, and amid the sweet-tart notes of cherry, your mind slowly wakes to the first morning of vacation.'}
+19	19		306							{1: '1'}
+20	20		301							{3: 'Wait a second...'}
+21	21		302							{2: '(Did I ever set up morning music...?)', 3: '22', 4: '(And cherry-flavored coffee...?)', 5: '22', 6: '(Is this even the alarm music I picked...?)', 7: '22'}
+22	22		306							
+23	23		301							"{3: ""Your drowsy mind jolts awake from the cozy warmth of vacation. Rubbing your temples, you walk over to the coffee machine, where a cup has been waiting—blending cherry's bright sweetness with the deep bitterness of alkaloids.""}"
+24	24		401							{1: '2', 2: '1515'}
+25	25		301							"{3: ""The coffee machine, usually reliable and no-nonsense, seems to have undergone a professional breakthrough today. Not only has it delivered a stunning cherry brew, but it's also moonlighting as a speaker playing morning music.""}"
+26	26		301				DialogDisable			{3: 'Judging by the loud and proud error message flashing on the screen, this little holiday surprise must be the work of someone with a fondness for pranks.'}
+27	27		401							{1: '2', 2: '558'}
+28	28		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+29	29		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1145.jpg'}
+30	30		401							{1: '2', 2: '1016'}
+31	31		109						2500.0	"{1: '1', 2: '<color=#ffffffff><size=40>>>> Location: Spaceport\\n>>> Proposed solution: Initiate ""handshake"" protocol at coordinates?\\n>>> Execute meeting_protocol? (Y/Y) _</size></color>', 4: '100', 9: '3', 10: '1', 11: '1'}"
+32	32		309							"{2: '<color=#ffffffff><size=40>>>> Location: Spaceport\\n>>> Proposed solution: Initiate ""handshake"" protocol at coordinates?\\n>>> Execute meeting_protocol? (Y/Y) _</size></color>'}"
+33	33		110							{1: '1'}
+34	34		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+35	35		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1355.png'}
+36	36		301			DialogEnable	DialogDisable			"{3: ""Maybe it's the thought of those clever, bright eyes behind the lines of code, but even the rigid font feels unexpectedly playful and charming.""}"
+37	37		302							"{2: ""Doesn't seem like I was given much of a choice here..."", 3: '38', 4: 'Looks like I have no choice but to go along with her again...', 5: '38'}"
+38	38		302							"{2: ""Meeting at the spaceport? That's cryptic."", 3: '39', 4: 'Location... Spaceport. So we really are meeting there?', 5: '39'}"
+39	39		401							{1: '2', 2: '5288'}
+40	40		401							{1: '2', 2: '5281'}
+41	41		301			DialogEnable	AniZhuanchangBegin			{3: 'You swallow the last of the oddly flavored coffee—a quiet ritual of accepting the invitation. The cup meets the counter with a soft tap, echoing with a cheerful little clink.'}
+42	42		502							{1: 'DialogDisable'}
+43	43		401						2000.0	{1: '1', 2: '36'}
+44	44		401							{1: '1', 2: '204'}
+45	45		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory3.jpg'}
+46	46		401							{1: '2', 2: '5548'}
+47	47		301			DialogEnable				{3: 'Ding—'}
+48	48		301							"{3: ""After you arrive at the spaceport, a cheerful, clear tone rings through your comms channel. Teddy's voice follows.""}"
+49	49		401							{1: '2', 2: '897'}
+50	50		509						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4301_10.jpg', 2: '1'}
+51	51		201							{1: '11', 2: '501413', 3: '2', 4: '-500'}
+52	52		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '11'}
+53	53		301							"{1: '1', 2: 'Teddy: Comms', 3: ""Tsk... You're wearing your uniform even on vacation?"", 4: '11', 18: '100013614'}"
+54	54		301							"{3: ""The morning at the spaceport is chilly. The wandering wind carries a cold bite, like a lone traveler drifting past. But now, with a girl's teasing laughter in your ear, the warmth and color of the world arrives—a little late, but right on time.""}"
+55	55		204							{1: '11', 2: '1'}
+56	56		301							"{2: 'Teddy: Comms', 3: ""Since you're in uniform, I won't be holding back!"", 4: '11', 18: '100013615'}"
+57	57		302							{2: 'What does that mean...?', 3: '58', 4: 'Huh? Where are you?', 5: '58', 6: '...', 7: '58'}
+58	58		204							{1: '11', 2: '10'}
+59	59		301							{2: 'Teddy: Comms', 3: 'Commandant...', 4: '11', 18: '100013616'}
+60	60		301							"{3: ""Teddy's voice suddenly pauses.""}"
+61	61		401							{1: '2', 2: '6354'}
+62	62		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+63	63		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '5'}
+64	64		401							{1: '1', 2: '36'}
+65	65		301				AniZhuanchangBegin			"{3: ""Thud. A heavy, distant impact echoes deep within the Construct girl's M.I.N.D. Teddy blanks out for a moment, then looks toward the human, you, waiting ahead.""}"
+66	66		101							{4: '5', 5: '1'}
+67	67		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '11'}
+68	68		510							{1: '1'}
+69	69		502							{1: 'DialogDisable'}
+70	70		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+71	71		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory3.jpg'}
+72	72		401							{1: '1', 2: '210'}
+73	73		302			AniZhuanchangEnd				{2: 'Teddy?', 3: '74'}
+74	74		301			DialogEnable				{3: 'A burst of static crackles through the channel before the comms cut off abruptly.'}
+75	75		201							{1: '18', 2: '501413', 3: '2', 5: '-150', 6: '-50'}
+76	76		401							{1: '2', 2: '5548'}
+77	77		301							{1: '1', 2: 'Teddy: ??', 3: 'Look this way...', 4: '18', 18: '100013617'}
+78	78		202							{1: '18'}
+79	79		104							{1: '100|0|-100', 2: '0.4'}
+80	80		301							"{3: ""You turn toward the voice, but there's no sign of the pink-haired Construct. Just a surveillance camera blinking with red light—that's where Teddy's voice came from.""}"
+81	81		201							{1: '18', 2: '501413', 3: '2', 5: '-150', 6: '-50'}
+82	82		401							{1: '2', 2: '4553'}
+83	83		301							{1: '1', 2: 'Teddy: Surveillance', 3: 'Now, give me a smile.', 4: '18', 18: '100013618'}
+84	84		202							{1: '18'}
+85	85		301							{3: 'You shake your head resignedly.'}
+86	86		302							{2: 'Stop in place and face the camera.', 3: '87', 4: 'Take a step back.', 5: '133'}
+87	87		301							{3: 'The surveillance camera captures it all.'}
+88	88		401							{1: '1', 2: '5045'}
+89	89		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+90	90		401							{1: '2', 2: '737'}
+91	91		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+92	92		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiDlcCasual/FxUiDlcCasualDate.prefab', 2: '2'}
+93	93		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiRestaurant/FxUiRestaurantUnlockFood.prefab', 2: '2'}
+94	94		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokePurple.prefab', 2: '2'}
+95	95		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokeRed.prefab', 2: '2'}
+96	96		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCourseCombatlicense/FxUiCourseCombatlicenseFog01.prefab', 2: '2'}
+97	97		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiArenaOnlineFuben/FxUiArenaOnlineSectionSmoke01.prefab', 2: '2'}
+98	98		301			RImgBg1Shake				{3: 'The next moment, a paintball zips past your shoulder and bursts right in front of the camera, splattering it with a riot of color.'}
+99	99		301							{3: 'Standing within the splash range, you get caught in the crossfire.'}
+100	100		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+101	101		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiRestaurant/FxUiRestaurantUnlockFood.prefab'}
+102	102		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokePurple.prefab'}
+103	103		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokeRed.prefab'}
+104	104		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiDlcCasual/FxUiDlcCasualDate.prefab'}
+105	105		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCourseCombatlicense/FxUiCourseCombatlicenseFog01.prefab'}
+106	106		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiArenaOnlineFuben/FxUiArenaOnlineSectionSmoke01.prefab'}
+107	107		201							{1: '18', 2: '501413', 3: '2', 5: '-150', 6: '-50'}
+108	108		301							{1: '1', 2: 'Teddy', 3: 'Oops. Looks like I got your uniform a little messy.', 4: '18', 18: '100013619'}
+109	109		202							{1: '18'}
+110	110		301							{3: 'A light tap lands on your left shoulder. The pink-haired Construct speaks behind you, her voice cheerful and utterly unapologetic.'}
+111	111		302							{2: 'I knew you did that on purpose.', 3: '112', 4: 'How could I let you down? Happy now?', 5: '112', 6: '...', 7: '112'}
+112	112		202							{1: '1'}
+113	113		401							{1: '2', 2: '4895'}
+114	114		301							"{3: 'Teddy pulls a brand-new ""uniform"" out of her backpack, then calmly tucks the paintball gun back inside to erase the evidence.'}"
+115	115		201							{1: '1', 2: '501413', 3: '1'}
+116	116		301							"{1: '1', 2: 'Teddy', 3: ""Since your clothes are dirty now, it's the perfect excuse to change into the vacation outfit I picked for you."", 4: '1', 18: '100013620'}"
+117	117		302							{2: 'Vacation outfit?', 3: '118'}
+118	118		204							{1: '1', 2: '1'}
+119	119		301							{2: 'Teddy', 3: 'I ordered it from Constellia, remember? We never got to go, so I went and picked it up myself.', 4: '1', 18: '100013621'}
+120	120		302							{2: 'Are these the ones you designed for me back then?', 3: '121'}
+121	121		202							{1: '1'}
+122	122		301							"{3: ""You'd missed that beach trip with Teddy. Back then, you'd talked about picking out one of her designs from a boutique in Constellia.""}"
+123	123		201							{1: '1', 2: '501413', 3: '3'}
+124	124		301				DialogDisable			"{1: '1', 2: 'Teddy', 3: 'So you\'ll only wear something if I designed it? In that case, why not wear this special ""camouflage"" I made for our trip?', 4: '1', 18: '100013622'}"
+125	125		302							{2: '...', 3: '126'}
+126	126		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+127	127		202							{1: '1', 6: '1'}
+128	128		301			DialogEnable				"{3: ""After changing into the vacation outfit Teddy designed, you stand in front of her, ready for the designer's inspection.""}"
+129	129		201							{1: '1', 2: '501413', 3: '4'}
+130	130		301							{1: '1', 2: 'Teddy', 3: 'Is the collar a little too tight?', 4: '1', 18: '100013623'}
+131	131		202							{1: '1'}
+132	132	175	301							{3: 'The pink-haired Construct rises onto her toes, reaching out to adjust the collar.'}
+133	133		104							{1: '0|0|0', 2: '0.4'}
+134	134		301							"{3: ""You're not sure what she's up to, but long experience in your games of wits with Teddy kicks in. You instinctively take a step back and tilt your head, moving out of the surveillance camera's direct line of sight.""}"
+135	135		401							{1: '1', 2: '5045'}
+136	136		401							{1: '2', 2: '737'}
+137	137		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiDlcCasual/FxUiDlcCasualDate.prefab', 2: '2'}
+138	138		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiRestaurant/FxUiRestaurantUnlockFood.prefab', 2: '2'}
+139	139		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokePurple.prefab', 2: '2'}
+140	140		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokeRed.prefab', 2: '2'}
+141	141		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCourseCombatlicense/FxUiCourseCombatlicenseFog01.prefab', 2: '2'}
+142	142		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiArenaOnlineFuben/FxUiArenaOnlineSectionSmoke01.prefab', 2: '2'}
+143	143		301			RImgBg1Shake				"{3: ""A split second later, a paintball whistles past your cheek, hitting the exact spot you'd dodged. It bursts in front of the camera, splattering it with brilliant color.""}"
+144	144		302							{2: '(Thought so...)', 3: '145'}
+145	145		201							{1: '18', 2: '501413', 3: '2', 5: '-150', 6: '-50'}
+146	146		301							{1: '1', 2: 'Teddy', 3: 'Caught me already? Why do you always have to be so clever...', 4: '18', 18: '100013624'}
+147	147		202							{1: '18', 6: '1'}
+148	148		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiRestaurant/FxUiRestaurantUnlockFood.prefab'}
+149	149		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokePurple.prefab'}
+150	150		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokeRed.prefab'}
+151	151		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiDlcCasual/FxUiDlcCasualDate.prefab'}
+152	152		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCourseCombatlicense/FxUiCourseCombatlicenseFog01.prefab'}
+153	153		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiArenaOnlineFuben/FxUiArenaOnlineSectionSmoke01.prefab'}
+154	154		301							{3: 'A light tap lands on your left shoulder. The pink-haired Construct speaks behind you, her voice carrying more of a smile than any real frustration.'}
+155	155		401							{1: '2', 2: '4895'}
+156	156		301							{3: 'You turn around calmly, spreading your hands to show off your clean, proper outfit. Thanks to your quick step back, none of the elaborate paint splashed onto the Gray Raven uniform that Teddy was so hung up on.'}
+157	157		201							{1: '1', 2: '501413', 3: '2'}
+158	158		301							"{1: '1', 2: 'Teddy', 3: ""Hmph. I knew you'd catch on... But even the wisest slip up sometimes, you know."", 4: '1', 18: '100013625'}"
+159	159		301							"{3: ""Teddy's gaze sweeps across your face.""}"
+160	160		204							{1: '1', 2: '3'}
+161	161		301							{2: 'Teddy', 3: 'But you, oh wise one, it looks like you slipped up too.', 4: '1', 18: '100013626'}
+162	162		204							{1: '1', 2: '2'}
+163	163		301							{2: 'Teddy', 3: 'Now then... allow me to fix it.', 4: '1', 18: '100013627'}
+164	164		202							{1: '1'}
+165	165		301							{3: 'The pink-haired Construct rises onto her toes and tilts her head upward, checking her angle.'}
+166	166		306							{1: '1'}
+167	167		401							{1: '2', 2: '4895'}
+168	168		301							{3: 'Her cool fingertips touch your cheek, where a small dot of paint had landed. Using that speck of color, she draws a tiny heart on your skin with the tip of her finger.'}
+169	169		306							
+170	170		201							{1: '1', 2: '501413', 3: '1'}
+171	171		301							{1: '1', 2: 'Teddy', 3: '...', 4: '1', 18: '100013628'}
+172	172		204							{1: '1', 2: '4'}
+173	173		301							"{2: 'Teddy', 3: ""...Hmm... It's a little crooked..."", 4: '1', 18: '100013629'}"
+174	174		202							{1: '1'}
+175	175		306							{1: '1'}
+176	176		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '8'}
+177	177		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront54.png', 4: '4'}
+178	178		201							{1: '19', 2: '501413', 5: '-150', 6: '-500', 7: '1'}
+179	179		301							"{1: '1', 3: ""Teddy's eyes shimmer with a dreamy gradient of pink and purple. Maybe it's the closeness, but that soft pastel glow now seems hazy and deep, like a whirlpool pulling you in.""}"
+180	180		203						650.0	{1: '19', 2: '0.6', 4: '35', 5: '-500'}
+181	181		301							"{3: ""Her long hair isn't tied to the sides like her original frame. It now falls freely over her shoulders, just like the day you first met—a beautiful canvas for those eyes.""}"
+182	182		302							"{2: '...', 3: '183', 4: '(Her eyes...)', 5: '183', 6: ""(Something's not quite right...)"", 7: '183'}"
+183	183		202							{1: '19'}
+184	184		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront54.png', 4: '4', 5: '1'}
+185	185		101							{4: '8', 5: '1'}
+186	186		306							
+187	187		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory3.jpg'}
+188	188		301							{3: 'The moment your eyes meet, the pink-haired Construct blinks, slowly lowers her hand, and turns to head into the spaceport.'}
+189	189		201							{1: '1', 2: '501413', 3: '1'}
+190	190		301							"{1: '1', 2: 'Teddy', 3: ""There we go. That's your music festival-exclusive face paint now."", 4: '1', 18: '100013630'}"
+191	191		302							{2: 'Music festival?', 3: '192'}
+192	192		301							"{2: 'Teddy', 3: ""Yup. Remember those mechanoids from Constellia? They're putting together a mini music festival, and guess who's got a VIP invite?"", 4: '1', 18: '100013631'}"
+193	193		202							{1: '1'}
+194	194		301							"{3: 'The ""Thunder Sparks""—that mechanoid band you and Teddy helped lead to victory—have apparently grown enough to host their own music festival now.'}"
+195	195		201							{1: '1', 2: '501413', 3: '1'}
+196	196		301							"{1: '1', 2: 'Teddy', 3: ""I checked your schedule. You're on break, aren't you? Good. That means you're coming with me."", 4: '1', 18: '100013632'}"
+197	197		202							{1: '1'}
+198	198		301							{3: 'Your eyes drift casually across the color-smeared surveillance camera.'}
+199	199		302							{2: 'No objections here. But tell me, what are you not saying?', 3: '200'}
+200	200		201							{1: '1', 2: '501413', 3: '2'}
+201	201		301							"{1: '1', 2: 'Teddy', 3: ""Oh? You caught that too? You're really paying close attention to me, Commandant."", 4: '1', 18: '100013633'}"
+202	202		301							"{3: ""Teddy notices the way you're watching her, but she has no intention of giving in.""}"
+203	203		204							{1: '1', 2: '1'}
+204	204		301				DialogDisable			"{2: 'Teddy', 3: ""Alright, fine. My new song's finished, and I'm debuting it at the festival. You might want to look forward to it. It's the best thing I've written so far."", 4: '1', 18: '100013634'}"
+205	205		302							{2: 'A new song? Sounds great. What else are you hiding?', 3: '206', 4: 'Teddy, that was a pretty lazy way to change the subject.', 5: '206'}
+206	206		302							"{2: ""It's just a music festival. You didn't need to mess with the cameras for that, did you?"", 3: '207'}"
+207	207		204							{1: '1', 2: '16'}
+208	208		301			DialogEnable				{3: 'The Construct girl lets out a light sigh.'}
+209	209		204							{1: '1', 2: '8'}
+210	210		301							"{2: 'Teddy', 3: ""Ugh, so perceptive, as always. Relax, it's just harmless paint. I'll have someone clean it up later."", 4: '1', 18: '100013635'}"
+211	211		204							{1: '1'}
+212	212		301							"{2: 'Teddy', 3: ""You know, I really do admire how sharp you are... though sometimes I wish you'd go easier on me."", 4: '1', 18: '100013636'}"
+213	213		306							{1: '1'}
+214	214		204							{1: '1', 2: '2'}
+215	215		301				AniZhuanchangBegin			{2: 'Teddy', 3: 'But I guess that just makes things more fun.', 4: '1', 18: '100013637'}
+216	216		202							{1: '1', 6: '1'}
+217	217		306						300.0	
+218	218		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory266.png'}
+219	219		301			AniZhuanchangEnd				{3: 'Teddy stops in front of a quiet docking bay, turns around, and flashes that same adorably mischievous smile.'}
+220	220		201							{1: '1', 2: '501413', 3: '2'}
+221	221		301							"{1: '1', 2: 'Teddy', 3: ""Sorry, Commandant. I'm taking you hostage. For the next few days, you're officially mine."", 4: '1', 18: '100013638'}"
+222	222		302							"{2: ""That's not how hostages work, you know."", 3: '223'}"
+223	223		301							"{3: ""You're not the least bit startled by her obvious joke, and you play along easily.""}"
+224	224		302							{2: 'I came here because you asked. That makes me an accomplice, not a victim.', 3: '225'}
+225	225		204							{1: '1', 2: '1'}
+226	226		301							{2: 'Teddy', 3: 'Then, my dear accomplice, shall we make our grand escape?', 4: '1', 18: '100013639'}
+227	227		301							"{2: 'Teddy', 3: ""To keep things quiet, my dear accomplice, we won't be taking the usual direct route to Constellia this time."", 4: '1', 18: '100013640'}"
+228	228		301							{2: 'Teddy', 3: 'So? Starting to feel like an adventure yet?', 4: '1', 18: '100013641'}
+229	229		302							"{2: ""Yeah. It's fun."", 3: '230', 4: '...', 5: '230'}"
+230	230		202							{1: '1'}
+231	231		104							{1: '-50|0|-150', 2: '0.4'}
+232	232		301							{3: 'You shrug in mock resignation and fall in step beside her.'}
+233	233		302							"{2: ""If we're trying to disappear, shouldn't we avoid leaving such obvious paintball evidence behind?"", 3: '234', 4: ""If we're trying to disappear, hacking the surveillance would have been easier and a lot safer..."", 5: '234'}"
+234	234		201							{1: '1', 2: '501413', 3: '7'}
+235	235		301							{1: '1', 2: 'Teddy', 3: 'Why do you always have to be so clever...', 4: '1', 18: '100013642'}
+236	236		301				DialogDisable			"{3: ""Teddy pouts, looking adorably defeated. You can't help but laugh—it's rare to see her act this childish.""}"
+237	237		302							"{2: ""I still have no idea what you're up to, but that's fine. The unknown always makes the trip more interesting."", 3: '238'}"
+238	238		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+239	239		202							{1: '1', 6: '1'}
+240	240		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+241	241		301			DialogEnable				{3: 'The two of you board a reserve transport ship usually used for dispatch missions.'}
+242	242		302							"{2: ""Besides, you seem different today. Livelier, somehow. I'm curious what brought that on."", 3: '243', 4: 'Besides, you seem different today. Livelier... and cuter, somehow.'}"
+243	243		301							{3: 'Teddy glances at you in surprise, but quickly looks away, pressing a hand to her chest as if to steady herself under your gentle gaze.'}
+244	244		201							{1: '1', 2: '501413', 3: '7'}
+245	245		301							{1: '1', 2: 'Teddy', 3: 'What a weird thing to say.', 4: '1', 18: '100013643'}
+246	246		204							{1: '1', 2: '9'}
+247	247		301							{2: 'Teddy', 3: 'Anyway, I had my reasons for all this. I was trying to...', 4: '1', 18: '100013644'}
+248	248		202							{1: '1'}
+249	249		306							{1: '1'}
+250	250		401							{1: '1', 2: '36'}
+251	251		401							{1: '2', 2: '6399'}
+252	252		301							{3: 'Tap tap tap—'}
+253	253		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLianyi.prefab', 2: '2'}
+254	254		301							"{3: ""A special string is plucked, sending out strange, rippling waves. Crisp drumbeats echo in the pink-haired Construct's ears, and her unspoken words dissolve silently in her throat.""}"
+255	255		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLianyi.prefab'}
+256	256		306							
+257	257		201							{1: '18', 2: '501413', 3: '10', 5: '-150', 6: '-50'}
+258	258		301							{1: '1', 2: 'Teddy', 3: '(Is that... what I think it is?)', 4: '18', 18: '100013645'}
+259	259		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+260	260		401							{1: '1', 2: '209'}
+261	261		402							{1: '6399'}
+262	262		202							{1: '18', 6: '1'}
+263	263		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2601_11.jpg'}
+264	264		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '2'}
+265	265		501							{1: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab', 2: '2'}
+266	266		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+267	267		301							{3: 'Teddy frowns as her M.I.N.D. ripples with strange, unfamiliar vibrations. She feels herself being pulled by an invisible force, helpless as she spirals into free fall.'}
+268	268		301							"{3: ""It's a soundless fall. Before she can react, Teddy finds herself standing within her own consciousness space.""}"
+269	269		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+270	270		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab'}
+271	271		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+272	272		201							{1: '1', 2: '501418'}
+273	273		401							{1: '2', 2: '5563'}
+274	274		301							"{1: '1', 2: '???', 3: ""It's for being found... and stopped."", 4: '1', 18: '100013646'}"
+275	275		204							{1: '1', 2: '2'}
+276	276		301							{2: '???', 3: 'Now, give me a smile.', 4: '1', 18: '100013647'}
+277	277		202							{1: '1'}
+278	278		301							"{3: ""Teddy knows her M.I.N.D. well, yet she frowns. She's certain she has never seen this strange little doll before—the one beating a military drum before her eyes.""}"
+279	279		301							"{3: ""She's also sure her earlier patchwork fix couldn't have caused this so soon.""}"
+280	280		201							{1: '1', 2: '501413', 3: '16'}
+281	281		301							{1: '1', 2: 'Teddy', 3: '...', 4: '1', 18: '100013648'}
+282	282		202							{1: '1', 6: '1'}
+283	283		201							{1: '1', 2: '501418'}
+284	284		401							{1: '2', 2: '5563'}
+285	285		301							"{1: '1', 2: '???', 3: ""Running around while your M.I.N.D. is unstable... that's not something you'd normally do, is it?"", 4: '1', 18: '100013649'}"
+286	286		301							{2: '???', 3: 'I have to say, I like the paintball idea. Even when our M.I.N.D. is in trouble, we still manage to leave such a clear trail of clues. Shows just how strong our self-defense instincts are.', 4: '1', 18: '100013650'}
+287	287		301							"{2: '???', 3: ""It won't be long before someone comes to stop us."", 4: '1', 18: '100013651'}"
+288	288		204							{1: '1', 2: '2'}
+289	289		301							{2: '???', 3: 'At the very least... Karenina will be quick to act.', 4: '1', 18: '100013652'}
+290	290		203							{1: '1', 2: '0.25', 3: '400'}
+291	291		201							{1: '2', 2: '501413', 4: '-400'}
+292	292		301							{1: '1', 3: 'The girl who had seemed so lively just moments ago now looks calm and composed as she studies the chatty little bear, her gaze steady and mature.'}
+293	293		204							{1: '2', 2: '5'}
+294	294		301							"{2: 'Teddy', 3: ""Tch, don't lump me in with you."", 4: '2', 18: '100013653'}"
+295	295		204							{1: '1', 2: '3'}
+296	296		401							{1: '1', 2: '122'}
+297	297		301			PanelActor1Shake				"{3: ""Such arrogance, such nerve! The teddy bear in the little deer onesie stares in disbelief, as if it can't fathom that anyone could be this rude.""}"
+298	298		301							"{3: ""The doll's round, fluffy face shows a very human kind of anxiety, as if the thought of being rejected had never even occurred to it.""}"
+299	299		301							"{2: 'Deerbear', 3: ""Hey... but we ARE a pair. You can call me Deerbear... I'm..."", 4: '1', 18: '100013654'}"
+300	300		301							{3: 'That timid, wavering voice makes Teddy wince, her face twisting like someone who just drank cherry electrolyte mixed with baby formula.'}
+301	301		204							{1: '2', 2: '5'}
+302	302		301							{2: 'Teddy', 3: 'Stop! End process, right now. And stop using my voice for whatever that is.', 4: '2', 18: '100013655'}
+303	303		204							{1: '1'}
+304	304		301							{2: 'Deerbear', 3: 'Huh? You recognized your own voice already. Do I really need to explain? Come on, you know exactly what I am!', 4: '1', 18: '100013656'}
+305	305		204							{1: '2', 2: '16'}
+306	306		301							{2: 'Teddy', 3: 'How was I supposed to know Cyber Counterpunch would trigger this fast...', 4: '2', 18: '100013657'}
+307	307		202							{1: '1', 2: '2'}
+308	308		301				AniZhuanchangBegin			{3: 'Teddy mutters to herself as she flips through her memory logs, tracing back to earlier that morning.'}
+309	309		502							{1: 'DialogDisable'}
+310	310		401						2000.0	{1: '1', 2: '36'}
+311	311		401							{1: '1', 2: '208'}
+312	312		504							{1: '0.7'}
+313	313		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+314	314		107							{1: 'Engineering Force Laboratory', 2: 'Three hours earlier'}
+315	315		301							{3: '3 hours earlier, Engineering Force laboratory.'}
+316	316		108							
+317	317		201							{1: '1', 2: '501411'}
+318	318		301			DialogEnable				{1: '1', 2: 'Teddy', 3: 'Did Karenina head back?', 4: '1', 18: '100013658'}
+319	319		202							{1: '1'}
+320	320		301							{3: 'As the repair pod finishes its cycle, Teddy opens her eyes.'}
+321	321		201							{1: '1', 2: '500311'}
+322	322		301							"{1: '1', 2: 'Research Assistant', 3: ""Yes, the captain's gone. How are you feeling?"", 4: '1', 18: '100013659'}"
+323	323		202							{1: '1'}
+324	324		301							{3: 'During the earlier experiment, an operational mistake by the assistant caused Teddy to get injured.'}
+325	325		201							{1: '1', 2: '501411', 3: '2'}
+326	326		301							{1: '1', 2: 'Teddy', 3: 'Who are you talking to?', 4: '1', 18: '100013660'}
+327	327		301							"{2: 'Teddy', 3: ""Anyway, make sure you write up a full report on the incident. Submit it within two days. Don't worry, I patched things up fast enough. You won't get hit with a serious penalty."", 4: '1', 18: '100013661'}"
+328	328		203							{1: '1', 2: '0.25', 3: '-400'}
+329	329		201							{1: '2', 2: '500311', 4: '400'}
+330	330		301							{1: '1', 2: 'Research Assistant', 3: 'I understand, but...', 4: '2', 18: '100013662'}
+331	331		204							{1: '1', 2: '5'}
+332	332		301							{3: 'Teddy frowns.'}
+333	333		301							"{2: 'Teddy', 3: ""What's the problem?"", 4: '1', 18: '100013663'}"
+334	334		301							"{2: 'Research Assistant', 3: ""When the system failed just now, you shouldn't have stepped in to help me. At the very least, you shouldn't have stood in front of me. Vice-Captain, please... don't ever do that again."", 4: '2', 18: '100013664'}"
+335	335		204							{1: '1', 2: '7'}
+336	336		301							"{2: 'Teddy', 3: ""Do you even hear what you're saying?"", 4: '1', 18: '100013665'}"
+337	337		301							"{2: 'Research Assistant', 3: ""No, I mean it. You're far more important to this lab than I am. The Engineering Force would be fine without an assistant like me, but if something happened to you..."", 4: '2', 18: '100013666'}"
+338	338		204							{1: '1', 2: '16'}
+339	339		301							"{2: 'Teddy', 3: ""Oh, so that's it?"", 4: '1', 18: '100013667'}"
+340	340		204							{1: '1', 2: '4'}
+341	341		301							"{2: 'Teddy', 3: ""Relax. I know exactly how valuable I am, probably better than you do. I wouldn't have jumped in unless I was absolutely sure I'd be fine."", 4: '1', 18: '100013668'}"
+342	342		204							{1: '1', 2: '16'}
+343	343		301							{2: 'Teddy', 3: 'Before the counter-defense program could attack my M.I.N.D., I had already slipped in a virus program to mislead it. It worked as a rough makeshift firewall.', 4: '1', 18: '100013669'}
+344	344		204							{1: '1'}
+345	345		301							"{2: 'Teddy', 3: ""That's why I was confident enough to shield you. The rest of the project is just repetitive observation logs anyway. If you got hurt, I'd be the one stuck with all your work."", 4: '1', 18: '100013670'}"
+346	346		301							"{2: 'Teddy', 3: ""Give me some credit. I'm not that reckless."", 4: '1', 18: '100013671'}"
+347	347		301							"{2: 'Research Assistant', 3: ""I know... you're just saying that to make me feel better."", 4: '2', 18: '100013672'}"
+348	348		204							{1: '1', 2: '5'}
+349	349		301							"{2: 'Teddy', 3: ""Stop right there. I just meant you're important for the next stage of the project. Don't get the wrong idea."", 4: '1', 18: '100013673'}"
+350	350		301							"{2: 'Research Assistant', 3: ""Alright... but that virus program, what exactly is it? Are you sure it's safe to have it inside your M.I.N.D.?"", 4: '2', 18: '100013674'}"
+351	351		204							{1: '1'}
+352	352		301							{2: 'Teddy', 3: 'Just something I built for fun... I call it Cyber Counterpunch. I was planning to fine-tune it during my vacation.', 4: '1', 18: '100013675'}
+353	353		301							"{2: 'Research Assistant', 3: ""Uh... about that vacation. When Captain Karenina left earlier, she said your leave's been canceled because of the accident..."", 4: '2', 18: '100013676'}"
+354	354		204							{1: '1', 2: '10'}
+355	355		301			DialogShake				"{2: 'Teddy', 3: ""You could've told me that sooner!"", 4: '1', 18: '100013677'}"
+356	356		204							{1: '1', 2: '4'}
+357	357		301							{2: 'Teddy', 3: 'No way. I need to leave before the cancellation order goes through.', 4: '1', 18: '100013678'}
+358	358		301							"{2: 'Research Assistant', 3: ""Then we're still going to F.O.S. as planned—"", 4: '2', 18: '100013679'}"
+359	359		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+360	360		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLianyi.prefab', 2: '1'}
+361	361		401							{1: '2', 2: '4624'}
+362	362		301							"{3: ""Suddenly, a special string deep within the Construct's M.I.N.D. is plucked. The program she named Cyber Counterpunch quietly activates, sending out strange, elegant ripples.""}"
+363	363		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLianyi.prefab'}
+364	364		204							{1: '1', 2: '8'}
+365	365		301							"{2: 'Teddy', 3: ""Sorry, that's not happening."", 4: '1', 18: '100013680'}"
+366	366		301				AniZhuanchangBegin			{2: 'Research Assistant', 3: '...Teddy?', 4: '2', 18: '100013681'}
+367	367		202							{1: '1', 2: '2', 6: '1'}
+368	368		401							{1: '1', 2: '209'}
+369	369		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+370	370		501							{1: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab', 2: '2'}
+371	371		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+372	372		201							{1: '1', 2: '501411', 3: '8', 7: '1'}
+373	373		301			AniZhuanchangEnd				"{1: '1', 3: ""The pink-haired Construct slowly turns her head, as if lost in deep confusion. For a long moment, she doesn't reply.""}"
+374	374		301							{3: 'The once-calm M.I.N.D. begins to churn with layers of mist. Shadowy figures flicker and blur, as if different silhouettes are passing through her vision.'}
+375	375		201							{1: '18', 2: '500311'}
+376	376		301							{1: '1', 2: 'Research Assistant', 3: 'Are you alright? Can you hear me?', 4: '18', 18: '100013682'}
+377	377		202							{1: '18'}
+378	378		301							{3: 'The color of her eyes seems to deepen.'}
+379	379		204							{1: '1'}
+380	380		301				DialogDisable			"{2: 'Teddy', 3: ""Hmm? I'm fine."", 4: '1', 18: '100013683'}"
+381	381		204						500.0	{1: '1', 2: '16'}
+382	382		204						200.0	{1: '1', 2: '8'}
+383	383		301			DialogEnable				{3: 'The girl blinks slowly. Her usually bright pink and purple eyes now carry a hazy gleam, almost like a deep whirlpool.'}
+384	384		202							{1: '1'}
+385	385		301							{3: 'Her thoughts seem to sink into a clouded, chaotic space.'}
+386	386		201							{1: '1', 2: '501411', 3: '1'}
+387	387		301							{1: '1', 2: 'Teddy', 3: 'I just... have something I need to do.', 4: '1', 18: '100013684'}
+388	388		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+389	389		202							{1: '1', 6: '1'}
+390	390		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab'}
+391	391		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+392	392		401							{1: '1', 2: '208'}
+393	393		301							{3: 'Suddenly, she smiles. The haze in her eyes clears, light returns, and her fingers move in a blur as she hacks into a dormitory coffee machine, setting the brew and music exactly as she wants.'}
+394	394		201							{1: '1', 2: '501411', 3: '1'}
+395	395		301				DialogDisable			{1: '1', 2: 'Teddy', 3: 'Something very important.', 4: '1', 18: '100013685'}
+396	396		202							{1: '1'}
+397	397		301			DialogEnable				"{3: 'After making sure that the intended person would see this ""sudden,"" yet unmistakably ""Teddy-style"" invitation upon waking up, the Construct girl loosens her tied-up hair. She runs her fingers through it a few times, letting it fall freely from its restraints.'}"
+398	398		301							{3: 'Realizing something is wrong, the research assistant immediately recalls the unknown virus program.'}
+399	399		201							{1: '1', 2: '500311'}
+400	400		301							"{1: '1', 2: 'Research Assistant', 3: 'Are you sure you\'re okay? What even is this ""Cyber Counterpunch""? Shouldn\'t we run a quick diagnostic on your M.I.N.D. first?', 4: '1', 18: '100013686'}"
+401	401		202							{1: '1'}
+402	402		301							"{3: ""The research assistant shakes Teddy's shoulders in worry, realizing she's completely lost in her own world. Getting no response, the assistant waves a hand in front of her eyes.""}"
+403	403		201							{1: '1', 2: '500311'}
+404	404		301			PanelActor1Shake	AniZhuanchangBegin			"{1: '1', 2: 'Research Assistant', 3: ""Vice-Captain? What are you doing? Say something, please... You're starting to scare me..."", 4: '1', 18: '100013687'}"
+405	405		202							{1: '1'}
+406	406		401						2000.0	{1: '1', 2: '36'}
+407	407		401							{1: '2', 2: '6347'}
+408	408		401							{1: '2', 2: '4263'}
+409	409		401							{1: '2', 2: '307'}
+410	410		504							{1: '0'}
+411	411		502							{1: 'DialogDisable'}
+412	412		401							{1: '1', 2: '205'}
+413	413		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+414	414		301			DialogEnable				{3: 'The hand waving before her eyes finally pulls Teddy back to reality.'}
+415	415		301							{3: 'Seeing her snap out of it, the assistant lets go of her.'}
+416	416		402							{1: '4263'}
+417	417		402							{1: '307'}
+418	418		302							"{2: ""Teddy? Why'd you suddenly zone out like that?"", 3: '419'}"
+419	419		201							{1: '1', 2: '501413', 3: '1'}
+420	420		301							{1: '1', 3: 'Pulling her focus back from memory to reality, Teddy gives you a gentle smile.'}
+421	421		301							{2: 'Teddy', 3: 'Hm? Was I out for long?', 4: '1', 18: '100013688'}
+422	422		302							"{2: ""Just for a bit. You sure you're alright?"", 3: '423'}"
+423	423		204							{1: '1'}
+424	424		301							"{2: 'Teddy', 3: ""I'm fine. I was just thinking about your question... Leaving such a bold clue should be enough to make Karenina lose her mind."", 4: '1', 18: '100013689'}"
+425	425		302							"{2: '...', 3: '426', 4: ""(That's such a Teddy thing to say.)"", 5: '426', 6: '(Fighting with Karenina again, I see...)', 7: '426'}"
+426	426		202							{1: '1'}
+427	427		301				DialogDisable			"{3: ""Teddy laughs softly, then lowers her head to set the transport's route and destination. In her M.I.N.D., that strange deer-bear creature keeps chattering away.""}"
+428	428		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+429	429		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2601_11.jpg'}
+430	430		401							{1: '2', 2: '5563'}
+431	431		201							{1: '1', 2: '501418', 7: '1'}
+432	432		301			DialogEnable				"{1: '1', 2: 'Deerbear', 3: ""Remember when Cyber Counterpunch turned against you? I'm a simulated consciousness born from that little incident."", 4: '1', 18: '100013690'}"
+433	433		301							{2: 'Deerbear', 3: 'Put simply, you can think of me as your alter ego.', 4: '1', 18: '100013691'}
+434	434		204							{1: '1', 2: '3'}
+435	435		301							"{2: 'Deerbear', 3: ""Wait, what's with that look on your face?"", 4: '1', 18: '100013692'}"
+436	436		202							{1: '1', 6: '1'}
+437	437		201							{1: '1', 2: '501413', 3: '5'}
+438	438		301							{1: '1', 2: 'Teddy', 3: 'This is how I look when I see something unpleasant.', 4: '1', 18: '100013693'}
+439	439		202							{1: '1'}
+440	440		301							{3: 'After pinpointing the source of the problem, Teddy quickly locates the meddling program and prepares to completely wipe it out.'}
+441	441		301							{3: 'But the next moment, she hesitates.'}
+442	442		301							"{3: 'During the morning experiment, this so-called ""Cyber Counterpunch"" had acted as bait to intercept the counter-defense program\'s attack, and now it\'s tightly fused with her frame.'}"
+443	443		306							{1: '1'}
+444	444		301							{3: 'Forcefully deleting it now would damage her M.I.N.D., and that would likely mean canceling the entire trip.'}
+445	445		301							{3: 'Staying in Babylonia to carefully dismantle it would cost her several days of vacation all the same, and the trip would be ruined anyway.'}
+446	446		306							
+447	447		201							{1: '1', 2: '501413', 3: '16'}
+448	448		301							"{1: '1', 2: 'Teddy', 3: ""(Guess I'll just have to tolerate this thing for now...)"", 4: '1', 18: '100013694'}"
+449	449		204							{1: '1', 2: '4'}
+450	450		301							"{3: 'Teddy gives a dangerous look to the stuffed toy that calls itself her ""alter ego.""'}"
+451	451		301							"{2: 'Teddy', 3: ""An alter ego, huh? With a bear's head and a deer's body? Maybe try looking human first."", 4: '1', 18: '100013695'}"
+452	452		202							{1: '1', 6: '1'}
+453	453		201							{1: '1', 2: '501418', 3: '3'}
+454	454		401							{1: '2', 2: '5563'}
+455	455		301							{1: '1', 2: 'Deerbear', 3: 'Huh?', 4: '1', 18: '100013696'}
+456	456		203							{1: '1', 2: '0.25', 3: '400'}
+457	457		201							{1: '2', 2: '501413', 3: '4', 4: '-400'}
+458	458		301							{1: '1', 2: 'Teddy', 3: 'A stuffed toy in an animal onesie, banging a drum... What ancient relic did you dig out from the depths of my brain?', 4: '2', 18: '100013697'}
+459	459		301							"{2: 'Teddy', 3: ""And that outfit—what is it supposed to be, a spotted deer? A simulated consciousness? Don't tell me you're copying my taste from when I was six."", 4: '2', 18: '100013698'}"
+460	460		301							{3: 'Deerbear is completely stunned by the storm of ridicule.'}
+461	461		204							{1: '2', 2: '4'}
+462	462		301							"{2: 'Teddy', 3: ""Cat got your tongue? Listen, I don't have time to deal with a viral personality like you right now."", 4: '2', 18: '100013699'}"
+463	463		306							{1: '1'}
+464	464		204							{1: '1', 2: '5'}
+465	465		203							{1: '2', 2: '0.4', 3: '-300'}
+466	466		301							"{2: 'Teddy', 3: ""This is a carefully planned two-person trip. So you'd better stay right here and behave."", 4: '2', 18: '100013700'}"
+467	467		306							
+468	468		204							{1: '1', 2: '4'}
+469	469		301							{3: 'Deerbear says nothing, just pouts at Teddy with its plush little mouth.'}
+470	470		301							{2: 'Teddy', 3: 'And what exactly is that supposed to mean?', 4: '2', 18: '100013701'}
+471	471		301							"{2: 'Deerbear', 3: ""Just letting you feel what's in my heart. As your alter ego, I can't hide anything from you, and the same goes for you too."", 4: '1', 18: '100013702'}"
+472	472		204							{1: '2', 2: '16'}
+473	473		301							{2: 'Teddy', 3: '...', 4: '2', 18: '100013703'}
+474	474		204							{1: '2', 2: '4'}
+475	475		301							{2: 'Teddy', 3: 'In that case, you should also know I meant every word I said.', 4: '2', 18: '100013704'}
+476	476		204							{1: '2', 2: '5'}
+477	477		301				AniZhuanchangBegin			"{2: 'Teddy', 3: ""I've been waiting a long time for this vacation. If you ruin it for me... Alter ego, you know what'll happen."", 4: '2', 18: '100013705'}"
+478	478		202						100.0	{1: '1', 2: '2', 6: '1'}
+479	479		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+480	480		401						1000.0	{1: '1', 2: '36'}
+481	481		401							{1: '1', 2: '204'}
+482	482		301			AniZhuanchangEnd				"{3: ""As Teddy's voice grows colder, Deerbear's figure fades away within the M.I.N.D. like ink dissolving in water.""}"
+483	483		401							{1: '2', 2: '1515'}
+484	484		301							"{3: ""The scene before her slowly comes back into focus. Teddy glances at her hand hovering over the virtual display—the transport's route and destination are already set.""}"
+485	485		301							{3: 'She lets out a quiet breath, turns her head, and smiles softly at you beside her.'}
+486	486		201							{1: '1', 2: '501413', 3: '1'}
+487	487		301							"{1: '1', 2: 'Teddy', 3: ""Ready, Commandant? Our journey's about to begin."", 4: '1', 18: '100013706'}"
+488	488		301				AniZhuanchangBegin			{3: 'The smile makes her eyes narrow slightly. Unlike their usual appearance, they now hold a misty quality—so deep they seem ready to melt into feathery cirrus clouds at any moment.'}
+489	489		202							{1: '1', 6: '1'}
+490	490		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory700.jpg'}
+491	491		401							{1: '2', 2: '2866'}
+492	492		201							{1: '1', 2: '500303'}
+493	493		301			AniZhuanchangEnd				"{1: '1', 2: 'Stronghold Staff Member B', 3: ""Squad 32H's transport has been repaired. You're clear for departure."", 4: '1', 18: '100013707'}"
+494	494		202							{1: '1', 6: '1'}
+495	495		401							{1: '2', 2: '4416'}
+496	496		401							{1: '2', 2: '5303'}
+497	497		201							{1: '1', 2: '500405'}
+498	498		301							{1: '1', 2: 'Stronghold Staff Member C', 3: 'Transport mission No. 78 has been added. Prepare medical supplies as needed and follow up on this.', 4: '1', 18: '100013708'}
+499	499		202							{1: '1'}
+500	500		301							"{3: ""The transport's landing barely stirs the rhythm of this bustling conservation area. Here, where logistics and resource transfers are handled simultaneously, everything moves in noisy yet perfect order.""}"
+501	501		301							{3: 'The two visitors from Babylonia slip into the crowd as seamlessly as fish returning to the sea.'}
+502	502		201							{1: '1', 2: '501413'}
+503	503		301							{1: '1', 2: 'Teddy', 3: 'Hmm... Warehouse 10-43... it should be this way.', 4: '1', 18: '100013709'}
+504	504		302							{2: 'Warehouse?', 3: '505'}
+505	505		301							"{2: 'Teddy', 3: ""Of course. I'm not about to make us walk all the way to Constellia, so right now, we're going to find our ride."", 4: '1', 18: '100013710'}"
+506	506		204							{1: '1', 2: '2'}
+507	507		301				DialogDisable			"{2: 'Teddy', 3: ""I had Leonardo set up a vintage ride for us—the perfect embodiment of Golden Age design. It's stored here in the warehouse. Stay close, Commandant."", 4: '1', 18: '100013711'}"
+508	508		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+509	509		202							{1: '1', 6: '1'}
+510	510		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory672.jpg'}
+511	511		301			DialogEnable				{3: 'After winding through several aisles of storage bays, Teddy stops before a warehouse door covered in massive graffiti.'}
+512	512		401							{1: '2', 2: '764'}
+513	513		301							{3: 'The moment the iris scan completes, a deep hum echoes from within.'}
+514	514		401							{1: '2', 2: '1086'}
+515	515		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+516	516		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory456.jpg'}
+517	517		301							"{3: ""The awakened door rises smoothly into the ceiling, and a conveyor lined with cold strip lights flows like a river of light. To the refined notes of Bach's cello suite, a vehicle glides forward in perfect grace.""}"
+518	518		402							{1: '1086'}
+519	519		201							{1: '1', 2: '501413'}
+520	520		301							{1: '1', 2: 'Teddy', 3: 'Now that is one dramatic entrance.', 4: '1', 18: '100013712'}
+521	521		302							"{2: ""Hmm... Definitely Leonardo's style."", 3: '522', 4: 'Hmm... Perfect style for a vacation.', 5: '522'}"
+522	522		202							{1: '1'}
+523	523		301							{3: 'Fortunately, the convertible-styled vehicle lives up to its flair. Its elegant curves and light colors clearly please the pink-haired Construct girl.'}
+524	524		201							{1: '1', 2: '501413', 3: '1'}
+525	525		301							{1: '1', 2: 'Teddy', 3: 'Told you. Leonardo was born for things like this.', 4: '1', 18: '100013713'}
+526	526		202							{1: '1'}
+527	527		301							{3: 'Teddy pats the white dove graffiti on the hood with satisfaction, then vaults up with a one-handed push and drops neatly into the passenger seat.'}
+528	528		302							{2: '(Is it the vacation? She really does seem... happier than usual.)', 3: '529'}
+529	529		301							"{3: ""But right after that flawless move, she reaches for the driver's door, and her arm comes up just short of the handle. A tiny, silent tragedy.""}"
+530	530		302							"{2: ""(Can't help but laugh.)"", 3: '531', 4: '(Try hard not to laugh.)', 5: '531', 6: '...', 7: '531'}"
+531	531		201							{1: '1', 2: '501413', 3: '16'}
+532	532		301							{1: '1', 2: 'Teddy', 3: '...', 4: '1', 18: '100013714'}
+533	533		204							{1: '1', 2: '7'}
+534	534		301							"{2: 'Teddy', 3: ""Go ahead, laugh. I'm not that petty."", 4: '1', 18: '100013715'}"
+535	535		204							{1: '1', 2: '1'}
+536	536		301							"{2: 'Teddy', 3: ""I'll get you back for it later, twice over."", 4: '1', 18: '100013716'}"
+537	537		301				AniZhuanchangBegin			"{3: ""As she says it, the pink-haired Construct can't help but laugh too.""}"
+538	538		202							{1: '1'}
+539	539		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront47.png', 4: '4'}
+540	540		301			AniZhuanchangEnd				"{3: ""Though styled after the Golden Age, the vehicle is fitted with Norman Mining Corp's latest tech. When the manual attempt fails, the system automatically raises the driver's door, opening its arms in silent welcome.""}"
+541	541		301							"{3: ""Under Teddy's watchful gaze, you climb into the driver's seat as plainly as possible, doing your best to protect her pride. You give the steering wheel a restrained tap.""}"
+542	542		302							"{2: 'So, ready to hit the road?', 3: '543', 4: ""Let's go!"", 5: '543'}"
+543	543		201							{1: '1', 2: '501413', 3: '1'}
+544	544		301				AniZhuanchangBegin			{1: '1', 2: 'Teddy', 3: 'Here we go!', 4: '1', 18: '100013717'}
+545	545		202							{1: '1'}
+546	546		401							{1: '1', 2: '159'}
+547	547		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront47.png', 4: '4', 5: '1'}
+548	548		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1322.jpg'}
+549	549		502							{1: 'RImgBg1Shake2Loop'}
+550	550		401						200.0	{1: '2', 2: '4115006'}
+551	551		401							{1: '2', 2: '885'}
+552	552		301			AniZhuanchangEnd				{3: 'After a sharp squeal, the tires grip the road. Acceleration presses you back as the scenery stretches into streaks of color, the road ahead unfurling endlessly.'}
+553	553		401							{1: '2', 2: '4231'}
+554	554		301							{3: 'Teddy props her hands on the window frame and rises from her seat.'}
+555	555		302							"{2: ""Teddy! Sit down, that's not safe!"", 3: '556', 4: 'Safety first, Teddy.', 5: '556'}"
+556	556		201							{1: '1', 2: '501413', 3: '15', 5: '-50'}
+557	557		502							{1: 'PanelActor1Shake2Loop'}
+558	558		301							"{1: '1', 2: 'Teddy', 3: ""The wind's too loud, can't hear you!"", 4: '1', 18: '100013718'}"
+559	559		301		1		AniZhuanchangBegin			{3: 'Her laughter flows faster than the wind itself. Gusts sweep freely across her cheeks, and her pale pink hair flutters like a proud banner rising from the gleam in her eyes.'}

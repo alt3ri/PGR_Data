@@ -1,0 +1,176 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500292', 3: '6'}
+4	4		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Ngh... I acted without thinking. Commandant... Are you okay?', 4: '1'}
+5	5		301							{3: 'The pink force field around Liv barely manages to leave space to maneuver around in the pitch-black ruins.'}
+6	6		301							"{2: 'Liv', 3: ""Seems like I had a flashback while unconscious... Guess I'll have no choice but to confront my demons."", 4: '1'}"
+7	7		301							{2: 'Liv', 3: 'Even faced with someone such as me, the commandant has continued to respect me for who I am...', 4: '1'}
+8	8		401							{1: '2', 2: '1510'}
+9	9		301			RImgBg1Shake				{3: 'Bang—!'}
+10	10		204							{1: '1', 2: '5'}
+11	11		301							"{2: 'Liv', 3: ""That's... the commandant's pistol!"", 4: '1'}"
+12	12		301				AniZhuanchangBegin			{2: 'Liv', 3: 'Are they still in danger?', 4: '1'}
+13	13		202							{1: '1', 6: '1'}
+14	14		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory19.jpg'}
+15	15		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+16	16		301			AniZhuanchangEnd				{1: '1', 3: 'Liv props herself up again and slowly pushes outward, causing the darkness to gradually turn to light. The oppressive ruins around her begin to give way, exposing the familiar architecture before her.'}
+17	17		301							{3: 'Liv charges in the direction of the gunshot to discover 【kuroname】 pointing a gun at Vanessa.'}
+18	18		301							{3: 'After 【kuroname】 shoots, Lee follows in turn by drawing his guns and pointing them at Teasell and Bambinata. The two opposing Constructs raise their weapons and point them at the Gray Ravens. Lucia steps in front of 【kuroname】 and Lee with her blade drawn.'}
+19	19		201							{1: '1', 2: '500293', 3: '9'}
+20	20		301							{1: '1', 2: 'Vanessa', 3: 'What a remarkable first gift you gave me.', 4: '1'}
+21	21		302							{2: '...', 3: '22'}
+22	22		301							{3: 'Vanessa wipes the blood off her cheek.'}
+23	23		204							{1: '1', 2: '13'}
+24	24		301							"{2: 'Vanessa', 3: ""Attacking a superior? You won't be getting out of this that easily, 【kuroname】."", 4: '1'}"
+25	25		302							"{2: ""I won't let you continue to insult my comrades and our soldiers so easily either."", 3: '26'}"
+26	26		301							{2: 'Vanessa', 3: 'Soldiers? Do you think dolls that resemble humans are worthy of being called soldiers?', 4: '1'}
+27	27		301							"{2: 'Vanessa', 3: ""They're nothing more than toys and tools to serve humanity's bidding."", 4: '1'}"
+28	28		301							{2: 'Vanessa', 3: 'Are you so naive as to think everyone who has chosen to become a Construct really wishes to save the Earth?', 4: '1'}
+29	29		301							{2: 'Vanessa', 3: 'As a commandant, you should know that Babylonia has given us preferential treatment when it comes to resources.', 4: '1'}
+30	30		301				DialogDisable			{2: 'Vanessa', 3: 'Follow my orders until the end of the war, and I can assure you as many Constructs as you need. Bored of your toys? Are your toys broken? Replace them as you see fit.', 4: '1'}
+31	31		302							"{2: ""They're not toys to be played with."", 3: '32'}"
+32	32		302							{2: 'They have they own thoughts. They can make their own decisions.', 3: '33'}
+33	33		302							{2: 'Liv is the reason why the three of us stand here today.', 3: '35'}
+34	34		202							{1: '1', 6: '1'}
+35	35		201							{1: '1', 2: '500292', 3: '9'}
+36	36		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Commandant...', 4: '1'}
+37	37		302							{2: 'Liv?!'}
+38	38		203							{1: '1', 2: '0.25', 3: '-400'}
+39	39		201							{1: '2', 2: '500293', 3: '5', 4: '400'}
+40	40		301				AniZhuanchangBegin			"{1: '1', 2: 'Vanessa', 3: ""Hmm? Guess you're not dead. How disappointing... Seeing you this filthy is appalling."", 4: '2'}"
+41	41		202							{1: '1', 2: '2', 6: '1'}
+42	42		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1801_1.jpg'}
+43	43		401							{1: '1', 2: '211'}
+44	44		301			AniZhuanchangEnd				"{3: ""Just as Vanessa is about to continue ridiculing Liv, she takes Lucia's blade and cuts off her long hair.""}"
+45	45		301							{2: 'Liv', 3: 'Vanessa, this is the artificial hair you picked for me.'}
+46	46		301							"{2: 'Liv', 3: ""I have obeyed your orders because I'm bound to my duty as a soldier. But that doesn't mean everything will go according to your plan.""}"
+47	47		301							{2: 'Liv', 3: 'I understand that your ruthlessness is a necessity for achieving victory in this war.'}
+48	48		301							{2: 'Liv', 3: 'But this kind of victory does not exist in my ideal future.'}
+49	49		301				DialogDisable			{2: 'Liv', 3: 'Everyone deserves to be respected.'}
+50	50		302							{2: 'Lee, who never speaks his mind.', 3: '51'}
+51	51		302							"{2: ""Lucia, who's determined yet fragile."", 3: '52'}"
+52	52		302							{2: 'Liv, who cares too much for others.', 3: '53'}
+53	53		301			DialogEnable				{2: 'Liv', 3: 'Even Teasell and Bambinata... Everyone we encounter.'}
+54	54		301							{2: 'Liv', 3: 'They are all living individuals with their own will, not toys for your disposal.'}
+55	55		301							{2: 'Liv', 3: 'The magnitude of standing on the front line makes it difficult to breathe.'}
+56	56		301							{2: 'Liv', 3: 'But feelings in my heart fill me with excitement.'}
+57	57		301							{2: 'Liv', 3: 'Long ago, I first stepped foot on the battlefield as a medic in the Star of Life.'}
+58	58		301							{2: 'Liv', 3: 'I had grown numb after so much time on the battlefield. I had even forgotten what it felt like to be excited...'}
+59	59		301							"{2: 'Liv', 3: ""But now that I'm a Gray Raven, I can finally help my comrades and heal the wounded when I step foot on the battlefield.""}"
+60	60		301							{2: 'Liv', 3: 'I am Liv, a soldier of Babylonia—not the lifeless doll you speak of.'}
+61	61		301							"{2: 'Liv', 3: ""We're four versus three now that I'm here. Looks like the scales have started to tip in our favor.""}"
+62	62		301							"{2: 'Liv', 3: ""Stand down, Vanessa. I'm sure you'd know the outcome anyway if you just thought about it.""}"
+63	63		301							{2: 'Vanessa', 3: 'You guys...'}
+64	64		301							{2: 'Liv', 3: 'Commandant, let them leave.'}
+65	65		302							{2: '(Open fire)', 3: '66', 4: '(Lower weapon)', 5: '71'}
+66	66		401						500.0	{1: '2', 2: '1510'}
+67	67		401						500.0	{1: '2', 2: '1510'}
+68	68		401						500.0	{1: '2', 2: '1510'}
+69	69		401						500.0	{1: '2', 2: '1510'}
+70	70	72	301							{3: 'You point your gun away from Vanessa and fire into the sky. The gunshot echoes throughout the cityscape.'}
+71	71		301							{3: 'You lower your pistol away from Vanessa and look at the others. A long silence fills the streets.'}
+72	72		301							{2: 'Vanessa', 3: '?!'}
+73	73		302							"{2: ""It's over, Vanessa."", 3: '75'}"
+74	74		401							{1: '2', 2: '1516'}
+75	75		301							{3: 'Vanessa stands there and ponders for a few moments, then takes Teasell and Bambinata down the street, disappearing around the corner.'}
+76	76		301				AniZhuanchangBegin			{3: 'After confirming that the Egret team had left, Liv relaxes her clenched hands. Her long white hair flutters away in the hot wind on the battlefield.'}
+77	77		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory327.png'}
+78	78		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+79	79		401							{1: '1', 2: '208'}
+80	80		301			AniZhuanchangEnd				"{3: ""Lee ignites the flare, signaling that the area has been cleared. After cleaning his weapon, he begins to think about how to improve his frame's resistance to EMP interference.""}"
+81	81		301							{3: 'Each unit releases their signal flares, indicating that their areas have all been cleared and that this large-scale operation is drawing to end.'}
+82	82		301							{3: 'You let out an involuntary sigh, and your increased heart rate from the conflict finally returns to normal.'}
+83	83		201							{1: '1', 2: '500021'}
+84	84		301							"{1: '1', 3: ""You feel someone gently touch your hands—it's Liv. She lowers her head and begins to tend to your wounds that had re-opened from firing your weapon.""}"
+85	85		301							{3: 'Without saying a word, she bandages your cleaned wounds one after another.'}
+86	86		302							"{2: 'Thank you.', 3: '87', 4: ""Isn't it wrapped a bit too thick...?"", 5: '89'}"
+87	87		204							{1: '1', 2: '6'}
+88	88	91	301							{2: 'Liv', 3: '...', 4: '1'}
+89	89		204							{1: '1', 2: '6'}
+90	90		301							{2: 'Liv', 3: 'Sorry, Commandant...', 4: '1'}
+91	91		301							{3: 'Liv shows a familiar look of guilt. Unlike before, this time, she looks into your eyes and her gaze turns serious.'}
+92	92		204							{1: '1', 2: '5'}
+93	93		301							{2: 'Liv', 3: 'I... went against the Chief Commander and caused you to get wrapped up in unnecessary conflict.', 4: '1'}
+94	94		301							{2: 'Liv', 3: 'My sincerest apologies.', 4: '1'}
+95	95		301							"{2: 'Liv', 3: ""But, I don't regret what I just did. I had to tell Vanessa and my former teammates about my will as a soldier and member of the Gray Ravens."", 4: '1'}"
+96	96		301							{2: 'Liv', 3: 'Because this is the most precious thing I have received after meeting you.', 4: '1'}
+97	97		301							"{2: 'Liv', 3: ""You all have made me face what I've been running away from all this time."", 4: '1'}"
+98	98		204							{1: '1', 2: '6'}
+99	99		301							{2: 'Liv', 3: 'But from what I know about Vanessa, my behavior... is bound to have a negative impact on the Gray Ravens.', 4: '1'}
+100	100		301				DialogDisable			"{2: 'Liv', 3: ""After going back, I will submit a departure application to the commanding superiors. I won't let my personal behavior bring trouble to the Gray Ravens..."", 4: '1'}"
+101	101		302							{2: 'Liv.', 3: '102'}
+102	102		302							"{2: ""I won't agree to that."", 3: '103'}"
+103	103		301			DialogEnable	DialogDisable			{2: 'Liv', 3: 'Huh? But I...', 4: '1'}
+104	104		302							{2: 'Together we are the Gray Ravens.', 3: '105'}
+105	105		302							{2: 'Whatever happens, we face it together.', 3: '106'}
+106	106		302							"{2: ""Also, you weren't the only one who offended her just now. I did, too."", 3: '107'}"
+107	107		201							{1: '2', 2: '1011001', 4: '600'}
+108	108		201							{1: '3', 2: '500029', 4: '-600'}
+109	109		301			DialogEnable				"{1: '1', 2: 'Lee', 3: ""I always took you for someone who was a pushover. I wasn't expecting you to stand up to her like that."", 4: '2'}"
+110	110		302							{2: 'Who do you think I am...', 3: '111', 4: 'After all, I AM your commandant.', 5: '112'}
+111	111	116	301							"{2: 'Lee', 3: ""...Well, you're not a bad person."", 4: '2'}"
+112	112		301							{2: 'Lee', 3: 'Hmph, and a peculiar one at that.', 4: '2'}
+113	113		302							"{2: ""That's right."", 3: '114', 4: 'Is there a problem?', 5: '115'}"
+114	114	116	301							"{3: ""Lee's hand stops for a second from calibrating his weapons, then he turns his back to you.""}"
+115	115		301							{2: 'Lee', 3: '...No.', 4: '2'}
+116	116		301							{2: 'Lee', 3: 'This mission sure has taught us how to act more like a team. Our effectiveness has also improved remarkably.', 4: '2'}
+117	117		301							{2: 'Lee', 3: 'I think the current team configuration is... satisfactory. Acclimating to a new member would be troublesome.', 4: '2'}
+118	118		301							{2: 'Lucia', 3: 'Indeed. Liv, you are without a doubt an outstanding addition to the team.', 4: '3'}
+119	500		204							{1: '3', 2: '6'}
+120	119		301							"{2: 'Lucia', 3: ""Also, I... want to keep fighting by your side. This isn't out of combat necessity. I just want to..."", 4: '3'}"
+121	501		204							{1: '3', 2: '1'}
+122	120		301							{2: 'Lucia', 3: 'Each of us is an indispensable feather necessary for Gray Raven to soar undeterred by opposing forces.', 4: '3'}
+123	121		302							"{2: ""That's right."", 3: '122'}"
+124	122		301							"{3: ""Sunlight penetrates the thick clouds and dense smoke with mottled rays of light that descend upon the desolated streets. In the dazzling glow, Liv's hair shines with even more radiance.""}"
+125	123		302							{2: 'Liv, your new hair looks great.', 3: '124'}
+126	124		301				DialogDisable			{2: 'Liv', 3: 'Oh? R-really...?', 4: '1'}
+127	125		302							{2: 'So...', 3: '126'}
+128	126		302							"{2: ""Let's take a group photo to mark the occasion!"", 3: '127'}"
+129	127		301			DialogEnable				{3: 'Before the dust had even settled on the battlefield, you suddenly speak without thinking.'}
+130	128		301							{2: 'Liv', 3: 'Group photo..?', 4: '1'}
+131	502		204							{1: '3', 2: '6'}
+132	129		301							{2: 'Lucia', 3: 'Mark the occasion?', 4: '3'}
+133	130		301							{2: 'Lee', 3: 'Why would you want to do that?', 4: '2'}
+134	131		302							{2: 'This is the first time that the Gray Ravens have successfully completed such a large-scale operation.', 3: '132'}
+135	132		302							{2: 'Today is a memorable day for us.', 3: '133'}
+136	133		301							"{3: ""You say this while attempting to activate the camera module on your exoskeleton. But to your dismay, one of the previous explosions seems to have blasted a hole where the camera should've been.""}"
+137	134		302							{2: '...', 3: '135', 4: 'Just our lucky day...', 5: '135'}
+138	135		301							{2: 'Lee', 3: '...', 4: '2'}
+139	136		301							"{2: 'Lee', 3: ""You should've said the module was broken earlier."", 4: '2'}"
+140	137		301							{3: 'Lee throws a device to you.'}
+141	138		301							"{2: 'Lee', 3: ""I removed this from a recon bot. It can't be focused manually, and can only take video."", 4: '2'}"
+142	139		301							{2: 'Lee', 3: 'Anyway... At least it can capture the moment. If you want to grab any screenshots from it, you can do that later.', 4: '2'}
+143	140		302							{2: 'Thanks.', 3: '141'}
+144	141		301							{3: 'Looking at the other two, Lucia nods gently.'}
+145	503		204							{1: '3', 2: '1'}
+146	142		301				AniZhuanchangBegin			{2: 'Lucia', 3: 'Just do what the commandant says.', 4: '3'}
+147	143		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+148	144		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1801_4.jpg'}
+149	145		401							{1: '1', 2: '204'}
+150	146		301			AniZhuanchangEnd				{3: 'After confirming that the equipment is operating normally, you step back to find the most appropriate distance.'}
+151	147		301							{3: 'You lift your hands and make a square to frame your cherished companions in the shot.'}
+152	148		302							{2: '3...', 3: '149'}
+153	149		301							{3: 'Noticing that Liv appears uneasy, Lucia scoots closer to her, grabs her hand and smiles at her comfortingly.'}
+154	150		301							"{3: ""Lucia's sudden closeness causes Liv to blush slightly, but her tense shoulders relax.""}"
+155	151		302							{2: '2...', 3: '152'}
+156	152		301							"{3: 'Standing farther away, Lee hears your deliberately slow counting, sighs gently, then turns to the camera and reveals an awkward expression vaguely passable as a ""smile.""'}"
+157	153		302							{2: '1!', 3: '154'}
+158	154		301							"{3: ""Oddly enough, none of them are very good at expressing their feelings. However, they have already begun to detect each other's thoughts just based on their actions.""}"
+159	155		301							{3: 'They could all convey their hearts without uttering a word.'}
+160	156		301							"{3: ""As the disputes in the factory area dissipate, the Gray Ravens' first large-scale operation finally comes to a temporary end.""}"
+161	157		301							{3: 'Prior to receiving further orders, a gust of wind passes through the city ruins. Although it fails to disperse the smoke over the battlefield, it also brought a moment of peace to the Gray Ravens.'}
+162	158		301							{3: 'Although they had won the battle, the war is still underway. More battles, perilous danger and difficult choices await the Gray Ravens.'}
+163	159		301							{3: 'However, the Gray Ravens will face the coming adversity together.'}
+164	160		301							{3: '—Lucia, Liv, Lee, and their commandant.'}
+165	161		301				AniZhuanchangBegin			{3: 'The electronic photo frame on the table in the lounge finally has a suitable picture.'}
+166	162		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory330.png'}
+167	163		401							{1: '1', 2: '202'}
+168	164		201							{1: '1', 2: '500293', 3: '5'}
+169	165		301			AniZhuanchangEnd				{1: '1', 2: 'Vanessa', 3: 'So... the Constructs of the Gray Ravens are willing to go this far to protect 【kuroname】.', 4: '1'}
+170	166		301							{2: 'Vanessa', 3: 'Could my method really... No, my method is the most efficient way to use Constructs.', 4: '1'}
+171	167		301							{2: 'Vanessa', 3: 'Bambinata, what are your thoughts?', 4: '1'}
+172	168		301							{2: 'Bambinata', 3: 'Master...'}
+173	169		204							{1: '1'}
+174	170		301							"{2: 'Vanessa', 3: ""Silence. Clearly I don't have my wits about me if I'm asking a toy for advice."", 4: '1'}"
+175	171		301		1		AniZhuanchangBegin			"{2: 'Vanessa', 3: ""Hehe... 【kuroname】, I'll make you regret your decision today sooner or later."", 4: '1'}"

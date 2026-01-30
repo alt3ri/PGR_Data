@@ -1,0 +1,578 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory995.jpg'}
+2	2		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+3	3		401			AniZhuanchangEnd				{1: '1', 2: '245'}
+4	4		201							{1: '1', 2: '501197'}
+5	5		301							{1: '1', 2: 'No. 19', 3: 'Level 3 structural deformation detected in the East District wall section B2, with a new breach forming.', 4: '1'}
+6	6		401							{1: '2', 2: '4553'}
+7	7		201							{1: '18', 2: '501205'}
+8	8		301							{1: '1', 2: 'No. 20', 3: 'Estimate number of Corrupted, report remaining personnel in Section B, and prepare to update tactical strategy.', 4: '18'}
+9	9		202							{1: '18', 6: '1'}
+10	10		301							{2: 'No. 19', 3: 'Estimated at 85, still increasing, approaching in waves. Five personnel remaining in Section B, currently establishing a new defense network.', 4: '1'}
+11	11		301							{2: 'No. 19', 3: 'Query: Can Section A provide reinforcements?', 4: '1'}
+12	12		401							{1: '2', 2: '4553'}
+13	13		201							{1: '18', 2: '501205'}
+14	14		301							"{1: '1', 2: 'No. 20', 3: ""Reinforcements not possible. Section A breach is larger, and we're down to only nine people ourselves."", 4: '13'}"
+15	15		202							{1: '1', 2: '18', 6: '1'}
+16	16		401							{1: '2', 2: '3077'}
+17	17		201							{1: '1', 2: '500260', 7: '1'}
+18	18		201							{1: '2', 2: '500013', 4: '-650', 7: '1'}
+19	19		201							{1: '3', 2: '500013', 4: '650', 7: '1'}
+20	20		203							{1: '1', 2: '0.25', 4: '-100'}
+21	21		203							{1: '2', 2: '0.25', 3: '-550'}
+22	22		203							{1: '3', 2: '0.25', 3: '550'}
+23	23		301			PanelActor1Shake				{1: '1', 2: 'Girl', 3: 'Aah—Mom!!', 4: '1'}
+24	24		401							{1: '2', 2: '1508'}
+25	25		301			RImgBg1Shake				{2: 'Corrupted Horde', 3: 'SCREECH!!', 4: '2', 5: '3'}
+26	26		201							{1: '18', 2: '501197'}
+27	27		301							{1: '1', 2: 'No. 19', 3: 'Pulse munitions deployed.', 4: '18'}
+28	28		202							{1: '18', 6: '1'}
+29	29		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiAreaWarHangUp/FxUiAreaWarHangUpBg01.prefab', 2: '2', 5: '1'}
+30	30		511							{1: '1', 2: '0', 3: '0|250|500'}
+31	31		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '5'}
+32	32		203							{1: '1', 2: '0', 4: '-300'}
+33	33		203							{1: '2', 2: '0', 3: '-400'}
+34	34		203							{1: '3', 2: '0', 3: '400'}
+35	35		401							{1: '2', 2: '1508'}
+36	36		301			AniZhuanchangEnd	DialogDisable			{1: '1', 2: 'Corrupted Horde', 3: 'Grrrr...', 4: '2', 5: '3'}
+37	37		401							{1: '2', 2: '15039005'}
+38	38		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiAreaWarHangUp/FxUiAreaWarHangUpBg01.prefab', 5: '1'}
+39	39		101							{4: '5', 5: '1'}
+40	40		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+41	41		502							{1: 'PanelActor2Shake'}
+42	42		502						1000.0	{1: 'PanelActor3Shake'}
+43	43		401							{1: '2', 2: '4306'}
+44	44		203							{1: '2', 2: '0.25', 3: '-550', 4: '-1200'}
+45	45		203						400.0	{1: '3', 2: '0.25', 3: '550', 4: '-1200'}
+46	46		202							{1: '2', 2: '3'}
+47	47		401							{1: '2', 2: '5286'}
+48	48		201							{1: '2', 2: '501197', 4: '400', 5: '-100'}
+49	49		203							{1: '1', 2: '0.4', 4: '0'}
+50	50		203							{1: '2', 2: '0.4', 3: '400', 4: '0'}
+51	51		401						450.0	{1: '2', 2: '4553'}
+52	52		301			DialogEnable				{1: '1', 2: 'No. 19', 3: 'Human child detected. Refugee shelter located 300 meters directly from the breach. Corrupted estimated to arrive within 10 minutes.', 4: '2'}
+53	53		401							{1: '2', 2: '4553'}
+54	54		201							{1: '18', 2: '501205'}
+55	55		301				AniZhuanchangBegin			{1: '1', 2: 'No. 20', 3: '—Intel relayed. Requesting reinforcements from Gestrig.', 4: '18'}
+56	56		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+57	57		202				DialogDisable			{1: '1', 2: '2', 3: '18', 6: '1'}
+58	58		401						2000.0	{1: '1', 2: '36'}
+59	59		401							{1: '1', 2: '6166'}
+60	60		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory946.jpg'}
+61	61		107			AniZhuanchangEnd				{1: 'Tactical Control Room'}
+62	62		301							{3: 'Tactical Control Room.'}
+63	63		108							{1: '1'}
+64	64		201							{1: '1', 2: '501194'}
+65	65		301			DialogEnable				{1: '1', 2: 'Ewig', 3: 'Intel received. Processing.', 4: '1'}
+66	66		202							{1: '1', 6: '1'}
+67	67		401							{1: '2', 2: '558'}
+68	68		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+69	69		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory547.jpg'}
+70	70		301							{3: 'Due to extensive damage to communication stations during the fifth test, signal coverage here only extends to the battle zone near the edge of Wall No. 141.'}
+71	71		301							"{3: ""In other words, the fact that we can once again detect the Corrupted's movement patterns means the city is already in grave danger.""}"
+72	72		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+73	73		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory946.jpg'}
+74	74		201							{1: '1', 2: '501194', 4: '-350', 7: '1'}
+75	75		201							{1: '2', 2: '501193', 4: '350', 7: '1'}
+76	76		301							{1: '1', 2: 'Ewig', 3: 'Query: Will reinforcements be dispatched?', 4: '1'}
+77	77		301							{2: 'Martha', 3: 'After organizing by rotation numbers and excluding those with moderate to severe damage, how many units remain?', 4: '2'}
+78	78		301							{2: 'Ewig', 3: '23 units.', 4: '1'}
+79	79		301							{2: 'Martha', 3: 'Include those with moderate damage.', 4: '2'}
+80	80		301							{2: 'Ewig', 3: '30 units.', 4: '1'}
+81	81		301							{2: 'Martha', 3: '...Include the company guards in the count as well. Prepare immediately.', 4: '2'}
+82	82		202							{1: '1', 2: '2'}
+83	83		301							{3: 'Even when facing such dire circumstances, her stern expression never changes.'}
+84	84		301							{3: 'On a nearby screen, crimson circles continuously surround the blue defensive walls. At the breach in the blue perimeter, a crimson line forms, connecting a series of points.'}
+85	85		301							"{3: ""They're temporarily contained at the narrow breach, thanks to the blocking efforts of the few stationed student forces. But that line grows increasingly wider, surging like a flood toward the gap.""}"
+86	86		302							"{2: ""With just these forces, there's no way we can hold them back, right?"", 3: '87'}"
+87	87		201							{1: '1', 2: '501193'}
+88	88		301				DialogDisable			{1: '1', 2: 'Martha', 3: 'The breach forms a natural chokepoint where we can overcome a numerical disadvantage.', 4: '1'}
+89	89		302							"{2: ""If our elimination and containment rate falls below their influx rate, we'll be stuck battling in circles."", 3: '90'}"
+90	90		302							"{2: ""By then, it'll be too late."", 3: '91'}"
+91	91		301			DialogEnable				"{2: 'Martha', 3: ""Once deployed, they'll need to assess the situation and make tactical decisions on their own."", 4: '1'}"
+92	92		302							{2: 'If they can coordinate their attacks, their battle power will increase significantly.', 3: '93'}
+93	93		301							{2: 'Martha', 3: 'Your words are identical to those of the previous commandants.', 4: '1'}
+94	94		301							{2: 'Martha', 3: 'You coordinated the operation under your command, but nearly 60% casualties were incurred to secure that victory—all for the sake of protecting high-value, non-essential assets.', 4: '1'}
+95	95		302							{2: 'But this time, civilians will also fall victim if we fail to hold our position.', 3: '96'}
+96	96		301							"{2: 'Martha', 3: ""They will protect the civilians. There's a non-automated armory in the mid-ring zone that can be used to establish a new stronghold."", 4: '1'}"
+97	97		301							"{2: 'Martha', 3: ""I've placed my trust in them many times already. If they fail to deliver results this time, I won't be able to save them."", 4: '1'}"
+98	98		301							{3: 'She coldly withdraws her gaze, focusing her attention on the screen, offering no further explanation.'}
+99	99		202							{1: '1', 6: '1'}
+100	100		201							{1: '1', 2: '501187'}
+101	101		301							{1: '1', 2: 'Jetavie', 3: '...', 4: '1'}
+102	102		202							{1: '1', 6: '1'}
+103	103		201							{1: '1', 2: '501193', 4: '400'}
+104	104		201							{1: '2', 2: '501194', 4: '-400'}
+105	105		301							{1: '1', 2: 'Ewig', 3: 'Officer Martha, preparations are complete.', 4: '2'}
+106	106		301							"{2: 'Martha', 3: ""Let's go."", 4: '1'}"
+107	107		202							{1: '1', 2: '2'}
+108	108		301							{3: 'As the assembly orders are issued, the silhouette of a young girl appears in the distance once more.'}
+109	109		201							{1: '1', 2: '501187', 3: '4'}
+110	110		301							{1: '1', 2: 'Jetavie', 3: 'Teacher...', 4: '1'}
+111	111		202							{1: '1'}
+112	112		301							"{3: ""From her slightly parted lips, you can tell she's calling out to you.""}"
+113	113		301							{3: 'In that same moment, five or six pairs of eyes lock onto you—armed guards stationed in Gestrig, each equipped with standard-issue sidearms.'}
+114	114		301				DialogDisable			{3: 'What should you do?'}
+115	115		302							{2: '(Force your way onto the battlefield)', 3: '116', 4: '(Call out to Jetavie)', 5: '170'}
+116	116		401							{1: '2', 2: '558'}
+117	117		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+118	118		504							{1: '0.7'}
+119	119		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory609.jpg'}
+120	120		201						300.0	{1: '1', 2: '501198', 7: '1'}
+121	121		202							{1: '1', 6: '1'}
+122	122		401							{1: '2', 2: '558'}
+123	123		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+124	124		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1212.jpg'}
+125	125		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0'}
+126	126		201						300.0	{1: '1', 2: '501187', 3: '10', 5: '-100', 6: '-100', 7: '1'}
+127	127		202							{1: '1', 6: '1'}
+128	128		205							{1: '999'}
+129	129		504							{1: '0'}
+130	130		401							{1: '2', 2: '558'}
+131	131		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+132	132		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory946.jpg'}
+133	133		301			DialogEnable				"{3: ""Pale faces and Jetavie's shattered body flash before your eyes. Who else will you lose this time?""}"
+134	134		301							{3: 'The critical situation demands immediate action. Your sense of duty as a soldier compels you to step forward.'}
+135	135		401							{1: '2', 2: '10028804'}
+136	136		201							{1: '1', 2: '501134'}
+137	137		301							{1: '1', 2: 'Company Soldier', 3: 'Stand down at once!', 4: '1'}
+138	138		202							{1: '1', 6: '1'}
+139	139		201							{1: '3', 2: '501187'}
+140	140		201							{1: '1', 2: '501134', 4: '-500'}
+141	141		201							{1: '2', 2: '501134', 4: '500'}
+142	142		401						100.0	{1: '2', 2: '10028804'}
+143	143		401							{1: '2', 2: '10028804'}
+144	144		301							{1: '1', 3: 'Six or seven sidearms are instantly trained on you. The soldiers form a tight circle, blocking Jetavie from your view once again.'}
+145	145		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+146	146		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+147	147		504							{1: '0.7'}
+148	148		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1213.jpg'}
+149	149		201							{1: '1', 2: '501193', 7: '1'}
+150	150		301							{1: '1', 3: 'Martha has warned you more than once to follow company orders.'}
+151	151		202							{1: '1', 6: '1'}
+152	152		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+153	153		504							{1: '0'}
+154	154		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1215.jpg'}
+155	155		301							{3: 'As a Babylonian officer infiltrating Gestrig for investigation, regardless of the many questions about Leibowitz that remain unanswered, ensuring your own safety must take priority.'}
+156	156		301							{3: 'Staying in Gestrig serves your interests in two ways—facilitating the long-term investigation and ensuring your own safety, but...'}
+157	157		401							{1: '2', 2: '4387'}
+158	158		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+159	159		504							{1: '0.7'}
+160	160		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1217.jpg'}
+161	161		201							{1: '1', 2: '501187', 3: '11'}
+162	162		301							{1: '1', 2: 'Jetavie', 3: 'Trust me, Teacher... trust Jetavie.', 4: '1'}
+163	163		204							{1: '1', 2: '1'}
+164	164		301				DialogDisable			"{2: 'Jetavie', 3: ""Just reach out your hand, and I promise I won't leave it hanging."", 4: '1'}"
+165	165		202							{1: '1', 6: '1'}
+166	166		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+167	167		504							{1: '0'}
+168	168		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory946.jpg'}
+169	169		302							{2: '(Call out to Jetavie)', 3: '170'}
+170	170		302							{2: 'Jetavie—!', 3: '171'}
+171	171		201							{1: '1', 2: '501187', 3: '11'}
+172	172		301			DialogEnable				{1: '1', 2: 'Jetavie', 3: 'Hoo—aah...', 4: '1'}
+173	173		202							{1: '1'}
+174	174		301							{3: 'Hearing your call, Jetavie stretches with a long, lazy arch of her back.'}
+175	175		201							{1: '1', 2: '501187', 3: '1'}
+176	176		301							{1: '1', 2: 'Jetavie', 3: 'I hear your voice, Teacher—', 4: '1'}
+177	177		202							{1: '1', 6: '1'}
+178	178		201							{1: '1', 2: '501134'}
+179	179		201							{1: '2', 2: '501134', 4: '-500'}
+180	180		201							{1: '3', 2: '501134', 4: '500'}
+181	181		301							{1: '1', 3: 'Following your movement, the soldiers raise their guns once more—'}
+182	182		301							"{2: 'Company Soldier', 3: ""Stand down immediately, I won't say it a second—"", 4: '1'}"
+183	183		401							{1: '2', 2: '1085'}
+184	184		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+185	185		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+186	186		301			RImgBg1Shake				{3: 'Snap—all the raised weapons are suddenly knocked to the ground.'}
+187	187		201							{1: '1', 2: '501187', 3: '4'}
+188	188		301							{1: '1', 2: 'Jetavie', 3: 'You dare to lay a finger on this person?', 4: '1'}
+189	189		202							{1: '1', 6: '1'}
+190	190		201							{1: '1', 2: '501134'}
+191	191		301							{1: '1', 2: 'Company Soldier', 3: 'Jetavie, obey our orders, or else—', 4: '1'}
+192	192		202							{1: '1', 6: '1'}
+193	193		201							{1: '1', 2: '501187', 3: '2'}
+194	194		301							"{1: '1', 2: 'Jetavie', 3: ""Don't stand in my way, okay?"", 4: '1'}"
+195	195		202							{1: '1', 6: '1'}
+196	196		401							{1: '2', 2: '844'}
+197	197		101						250.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+198	198		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory946.jpg'}
+199	199		401							{1: '2', 2: '846'}
+200	200		201							{1: '1', 2: '501134', 7: '1'}
+201	201		301			PanelActor1Shake				{1: '1', 2: 'Company Soldier', 3: 'Aargh!', 4: '1'}
+202	202		202							{1: '1'}
+203	203		401							{1: '2', 2: '4306'}
+204	204		301			RImgBg1Shake				{3: 'A black shadow flashes before you, and by the time you regain your senses, all the armed soldiers have been completely incapacitated.'}
+205	205		201							{1: '1', 2: '501187', 3: '1'}
+206	206		301							"{1: '1', 2: 'Jetavie', 3: ""I said it before. Just reach out your hand, and I promise I won't leave it hanging."", 4: '1'}"
+207	207		203							{1: '1', 2: '0.25', 5: '-50'}
+208	208		301							{3: 'She triumphantly takes your hand in hers.'}
+209	209		204							{1: '1', 2: '15'}
+210	210		301				AniZhuanchangBegin			{2: 'Jetavie', 3: 'Alright, come with me now, dear Teacher!', 4: '1'}
+211	211		202							{1: '1', 6: '1'}
+212	212		401						2000.0	{1: '1', 2: '36'}
+213	213		401							{1: '1', 2: '6168'}
+214	214		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory995.jpg'}
+215	215		201							{1: '1', 2: '501197', 5: '-100'}
+216	216		301			AniZhuanchangEnd				{1: '1', 2: 'No. 19', 3: 'I successfully lured 15 Corrupted to Section B, but my remaining frame components no longer support high-mobility operations.', 4: '1'}
+217	217		301							{3: 'She forcefully tears off her infected lower leg and slumps weakly against the wall.'}
+218	218		201							{1: '18', 2: '501205'}
+219	219		301							{1: '1', 2: 'No. 20', 3: 'Hang in there—reinforcements will arrive in 3 minutes.', 4: '18'}
+220	220		202							{1: '18', 6: '1'}
+221	221		301							"{2: 'No. 19', 3: ""They'll prioritize Section A, where the remaining computational nodes are more valuable to the company... That's why I lured them away."", 4: '1'}"
+222	222		201							{1: '18', 2: '501205'}
+223	223		301							{1: '1', 2: 'No. 20', 3: 'By reinforcements—I mean, just me—', 4: '18'}
+224	224		202							{1: '18'}
+225	225		401							{1: '2', 2: '807'}
+226	226		301							{3: 'The sound of high-speed movement cutting through air comes through the communicator.'}
+227	227		301			PanelActor1Shake				"{1: '1', 2: 'No. 19', 3: ""Don't—it's too late, ugh!"", 4: '1'}"
+228	228		203							{1: '1', 2: '0.25', 3: '200', 4: '-100'}
+229	229		201							{1: '2', 2: '500013', 4: '-800', 7: '1'}
+230	230		203							{1: '2', 2: '0.25', 3: '-400'}
+231	231		401							{1: '2', 2: '1508'}
+232	232		301			RImgBg1Shake				{1: '1', 2: 'Corrupted', 3: 'SCREECH!!', 4: '2'}
+233	233		302							{2: '(Fire)', 3: '234'}
+234	234		401							{1: '2', 2: '2513'}
+235	235		401							{1: '2', 2: '1508'}
+236	236		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+237	237		301			PanelActor2Shake	DialogDisable			{1: '1', 2: 'Corrupted', 3: 'Grrrr...', 4: '2'}
+238	238		401							{1: '2', 2: '4306'}
+239	239		203						400.0	{1: '2', 2: '0.25', 3: '-400', 4: '-1200'}
+240	240		203							{1: '1', 2: '0.25', 4: '-100'}
+241	241		301			DialogEnable				{2: 'No. 19', 3: 'Teacher?! How can you be here?!', 4: '1'}
+242	242		302							"{2: ""Let's get out of here first."", 3: '243'}"
+243	243		202							{1: '1', 6: '1'}
+244	244		401							{1: '2', 2: '2513'}
+245	245		401							{1: '2', 2: '2593'}
+246	246		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+247	247		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '4'}
+248	248		301							{3: 'While helping No. 19 to her feet, the teacher fires continuously. Crimson bullets follow, blooming into explosions among the mass of Corrupted.'}
+249	249		101							{4: '4', 5: '1'}
+250	250		401							{1: '2', 2: '15039028'}
+251	251		201							{1: '1', 2: '501187', 3: '16'}
+252	252		301			RImgBg1Shake	DialogDisable			{1: '1', 2: 'Jetavie', 3: 'Bang!', 4: '1'}
+253	253		202							{1: '1', 6: '1'}
+254	254		302							{2: 'All units, lure the Corrupted toward Section A, then retreat to the rear.', 3: '255'}
+255	255		201							{1: '1', 2: '501197'}
+256	256		301			DialogEnable	DialogDisable			{1: '1', 2: 'No. 19', 3: 'But the computational nodes there—', 4: '1'}
+257	257		302							"{2: ""They'll serve perfectly as bait and obstacles."", 3: '258'}"
+258	258		302							{2: 'In this battle, we need to preserve as many combat-ready forces as possible.', 3: '259'}
+259	259		301			DialogEnable				{2: 'No. 19', 3: 'This contradicts the strategy of protecting high-value assets, but humanoid combat units must prioritize human commands.', 4: '1'}
+260	260		202							{1: '1'}
+261	261		301				AniZhuanchangBegin			{3: 'She decisively joins in firing at the Corrupted.'}
+262	262		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory915.jpg'}
+263	263		301			AniZhuanchangEnd				{3: 'After clearing Section B and luring the Corrupted, they retreat behind Section A. This position sits on the inner side of the road leading to the urban area, an almost mandatory passage for any invasion.'}
+264	264		301				DialogDisable			{3: 'The large server racks known as computational nodes have transformed into crimson crystal clusters after being infected by the Punishing Virus, scattered around the perimeter of their battle line.'}
+265	265		302							{2: 'Maintain suppressive crossfire.', 3: '266'}
+266	266		302							{2: 'Odd numbers, fan sweep the left flank. Even numbers, cover during reloads.', 3: '267'}
+267	267		302							{2: 'Force them toward the center as much as possible.', 3: '268'}
+268	268		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+269	269		502							{1: 'RImgBg1Shake'}
+270	270		401							{1: '2', 2: '4642'}
+271	271		301			DialogEnable				"{3: ""Wave after wave of bullets methodically hammer into the horde of Corrupted, dropping the slow, zombie-like entities as soon as they're hit.""}"
+272	272		402							{1: '4642'}
+273	273		201							{1: '1', 2: '501187', 3: '4', 4: '-600'}
+274	274		201							{1: '2', 2: '500013', 4: '200'}
+275	275		203						200.0	{1: '1', 2: '0.25'}
+276	276		401							{1: '2', 2: '4806'}
+277	277		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+278	278		203							{1: '2', 2: '0.25', 4: '-1200'}
+279	279		301				DialogDisable			"{3: ""Jetavie's silhouette weaves through the center of the battlefield, harvesting Corrupted as swiftly as an angel of death.""}"
+280	280		202							{1: '2', 6: '1'}
+281	281		401							{1: '2', 2: '1105'}
+282	282		307						100.0	{1: 'POWER OUTPUT EXCEEDED', 3: '60', 4: 'ff4e4eff'}
+283	283		301							{3: 'POWER OUTPUT EXCEEDED'}
+284	284		401							{1: '2', 2: '1105'}
+285	285		307						100.0	{1: 'ENERGY REMAINING: 29%', 3: '60', 4: 'ff4e4eff'}
+286	286		301							{3: 'ENERGY REMAINING: 29%'}
+287	287		307							{2: '1'}
+288	288		204							{1: '1', 2: '3'}
+289	289		301			DialogEnable				{2: 'Jetavie', 3: 'Hah... this frame always has the same damn problem.', 4: '1'}
+290	290		202							{1: '1', 6: '1'}
+291	291		201							{1: '1', 2: '500013', 7: '1'}
+292	292		201							{1: '2', 2: '500013', 4: '-500', 7: '1'}
+293	293		201							{1: '3', 2: '500013', 4: '500', 7: '1'}
+294	294		401							{1: '2', 2: '1508'}
+295	295		301			RImgBg1Shake				{1: '1', 2: 'Corrupted Horde', 3: '(Angry roaring)', 4: '1', 5: '2', 6: '3'}
+296	296		401							{1: '2', 2: '1508'}
+297	297		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+298	298		203							{1: '1', 2: '0.25', 5: '-100'}
+299	299		203							{1: '2', 2: '0.25', 3: '-500', 5: '-50'}
+300	300		203							{1: '3', 2: '0.25', 3: '500', 5: '-50'}
+301	301		301							{3: 'The Corrupted behind immediately fill the vacant positions, violently charging toward the defensive line.'}
+302	302		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+303	303		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+304	304		201							{1: '1', 2: '501187', 3: '4'}
+305	305		301				DialogDisable			{1: '1', 2: 'Jetavie', 3: 'Will these things ever stop coming?', 4: '1'}
+306	306		401							{1: '2', 2: '937'}
+307	307		307						100.0	{1: 'LOADING WEAPONS... LOADING...', 3: '60', 4: '34aff8ff'}
+308	308		301							{3: 'LOADING WEAPONS... LOADING...'}
+309	309		307							{2: '1'}
+310	310		401							{1: '2', 2: '15039028'}
+311	311		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+312	312		502							{1: 'RImgBg1Shake'}
+313	313		301			DialogEnable				{3: 'Jetavie pulls back to charge power, then unleashes red particle beams that blast through the horde of Corrupted.'}
+314	314		202							{1: '1', 6: '1'}
+315	315		401							{1: '2', 2: '1508'}
+316	316		201							{1: '1', 2: '500013'}
+317	317		201							{1: '2', 2: '500013', 4: '-500'}
+318	318		201							{1: '3', 2: '500013', 4: '500'}
+319	319		301			RImgBg1Shake				{1: '1', 2: 'Corrupted Horde', 3: 'RAAAHH!!', 4: '1', 5: '2', 6: '3'}
+320	320		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHit01.prefab', 2: '3'}
+321	321		401						2200.0	{1: '2', 2: '819016'}
+322	322		401							{1: '2', 2: '4306'}
+323	323		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+324	324		301							{3: 'Though this blast takes down numerous foes, it also sends the survivors into a frenzy of rage. Jetavie swiftly draws her Greatsword, cleanly cleaving the Corrupted charging toward her in half.'}
+325	325		201							{1: '1', 2: '501187', 7: '1'}
+326	326		205							{1: '1', 3: '1', 4: '0.9', 5: '0'}
+327	327		201							{1: '2', 2: '501187', 7: '1'}
+328	328		205							{1: '2', 3: '1', 4: '0.3', 5: '0'}
+329	329		201							{1: '3', 2: '501187', 7: '1'}
+330	330		205							{1: '3', 3: '1', 4: '0.3', 5: '0'}
+331	331		203							{1: '2', 2: '0.25', 3: '-15'}
+332	332		203						250.0	{1: '3', 2: '0.25', 3: '15'}
+333	333		301			RImgBg1Shake	DialogDisable			{1: '1', 2: 'Jetavie', 3: 'Ugh!', 4: '1', 5: '2', 6: '3'}
+334	334		401							{1: '2', 2: '1105'}
+335	335		307						100.0	{1: 'ENERGY REMAINING: 20%', 3: '60', 4: 'ff4e4eff'}
+336	336		301							{3: 'ENERGY REMAINING: 20%'}
+337	337		307							{2: '1'}
+338	338		204							{1: '1', 2: '4'}
+339	339		301			DialogEnable	DialogDisable			"{2: 'Jetavie', 3: ""Damn it... it's happening again..."", 4: '1', 5: '2', 6: '3'}"
+340	340		401							{1: '2', 2: '1105'}
+341	341		307						100.0	{1: 'INSUFFICIENT ENERGY DETECTED—', 3: '60', 4: 'ff4e4eff'}
+342	342		301							{3: 'INSUFFICIENT ENERGY DETECTED—'}
+343	343		307							{2: '1'}
+344	344		203							{1: '2', 2: '0.25'}
+345	345		203						300.0	{1: '3', 2: '0.25'}
+346	346		205							{1: '2', 3: '0', 4: '1', 5: '0'}
+347	347		205							{1: '3', 3: '0', 4: '1', 5: '0'}
+348	348		202							{1: '2', 2: '3'}
+349	349		401							{1: '2', 2: '819042'}
+350	350		203						200.0	{1: '1', 2: '0.25', 5: '-100'}
+351	351		202							{1: '1'}
+352	352		301			DialogEnable				{3: 'The young woman among the Corrupted staggers momentarily. When she steadies herself again, she launches into the enemy ranks like a burning comet.'}
+353	353		201							{1: '1', 2: '501194'}
+354	354		301							"{1: '1', 2: 'Ewig', 3: ""This is bad—she's gone haywire again."", 4: '1'}"
+355	355		202							{1: '1', 6: '1'}
+356	356		306							{1: '1'}
+357	357		201							{1: '1', 2: '501187'}
+358	358		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 2: '2', 3: '1'}
+359	359		301				DialogDisable			"{1: '1', 3: ""As she pulls back from the horde, you glimpse wounds of various sizes covering her body, armor plating cracked and mechanical skeleton exposed. If this continues, she'll completely fall apart again.""}"
+360	360		306							
+361	361		302							{2: 'Jetavie...', 3: '362', 4: 'Jetavie?', 5: '362'}
+362	362		301			DialogEnable				{2: 'Jetavie', 3: '...', 4: '1'}
+363	363		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+364	364		202							{1: '1'}
+365	365		301				DialogDisable			{3: 'She continues fighting as if deaf to your calls, leaving a trail of afterimages in her wake.'}
+366	366		302							{2: '(Attempting to reach her consciousness)', 3: '367'}
+367	367		401							{1: '2', 2: '4051'}
+368	368		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory65.jpg', 3: '0', 4: '1', 5: '0.3'}
+369	369		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory65.jpg'}
+370	370		205							{1: '999'}
+371	371		201							{1: '18', 2: '501187', 3: '3'}
+372	372		301			DialogEnable				{1: '1', 2: 'Jetavie', 3: '...?', 4: '18'}
+373	373		302							{2: 'Calm down, just like when we first fought side by side.', 3: '374'}
+374	374		202							{1: '18'}
+375	375		301							{3: 'You guide her mind, encouraging her to follow your movements.'}
+376	376		302							{2: '(Fire)', 3: '377'}
+377	377		401							{1: '2', 2: '4779'}
+378	378		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory915.jpg'}
+379	379		201							{1: '1', 2: '500013', 7: '1'}
+380	380		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiAreaWarHangUp/FxUiAreaWarHangUpBg01.prefab', 2: '2', 3: '1', 5: '1'}
+381	381		511							{1: '1', 2: '0', 3: '0|250|500'}
+382	382		301			AniZhuanchangEnd				{3: 'In her daze, Jetavie raises her gun and fires at the Corrupted in her sights.'}
+383	383		401							{1: '2', 2: '2513'}
+384	384		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+385	385		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiAreaWarHangUp/FxUiAreaWarHangUpBg01.prefab', 4: '1', 5: '1'}
+386	386		401							{1: '2', 2: '1508'}
+387	387		301			PanelActor1Shake				{1: '1', 2: 'Corrupted', 3: 'Grrrr...', 4: '1'}
+388	388		202							{1: '1', 6: '1'}
+389	389		201							{1: '1', 2: '501187'}
+390	390		301							{1: '1', 2: 'Jetavie', 3: 'Teacher...', 4: '1'}
+391	391		202							{1: '1'}
+392	392		301							{3: 'Her consciousness seems to clear somewhat.'}
+393	393		302							{2: '(Fires continuously)', 3: '394'}
+394	394		401							{1: '2', 2: '2513'}
+395	395		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+396	396		301							{3: 'The Corrupted in their line of fire drops instantly.'}
+397	397		301							"{3: ""Aim, pull the trigger, bullets fly—the two of you match each other's movements, gradually forcing the remaining Corrupted toward the center of the road.""}"
+398	398		201							{1: '1', 2: '501187', 3: '18', 7: '1'}
+399	399		301			PanelActor1Shake				{1: '1', 2: 'Jetavie', 3: 'Huff... hah...', 4: '1'}
+400	400		202							{1: '1'}
+401	401		301							"{3: ""The girl's consciousness slowly rises from a murky swamp—""}"
+402	402		301				DialogDisable			{3: 'She grips her gun with both hands.'}
+403	403		401							{1: '2', 2: '937'}
+404	404		307						100.0	{1: 'WEAPON CHARGING... 30%', 3: '60', 4: '34aff8ff'}
+405	405		301							{3: 'WEAPON CHARGING... 30%'}
+406	406		401							{1: '2', 2: '937'}
+407	407		307						100.0	{1: 'WEAPON CHARGING... 70%', 3: '60', 4: '34aff8ff'}
+408	408		301							{3: 'WEAPON CHARGING... 70%'}
+409	409		401							{1: '2', 2: '937'}
+410	410		307						100.0	{1: 'WEAPON CHARGING... 100%', 3: '60', 4: '34aff8ff'}
+411	411		301							{3: 'WEAPON CHARGING... 100%'}
+412	412		307							{2: '1'}
+413	413		401							{1: '2', 2: '15039028'}
+414	414		401							{1: '2', 2: '4538'}
+415	415		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+416	416		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5401_07.jpg'}
+417	417		502							{1: 'RImgBg1Shake'}
+418	418		301			DialogEnable				{2: 'Jetavie', 3: 'bang!'}
+419	419		301							{3: 'Everything around her seems to darken in an instant as the gun erupts with brilliant red flames, waves of scorching heat billowing outward.'}
+420	420		301							{3: 'Accompanied by a thunderous roar reverberating in your ears, magnificent light tears through the thick gunsmoke, piercing the dense battle line from above all the way to the end of the road.'}
+421	421		301				DialogDisable			{3: 'The horde of Corrupted collapses like brittle twigs, leaving only a few bodies still standing from sheer inertia, before they too topple to the ground like broken reeds.'}
+422	422		401							{1: '2', 2: '1105'}
+423	423		307						100.0	{1: 'ENERGY REMAINING: 2%', 3: '60', 4: 'ff4e4eff'}
+424	424		301				AniZhuanchangBegin			{3: 'ENERGY REMAINING: 2%'}
+425	425		307							{2: '1'}
+426	426		502						400.0	{1: 'DialogEnable'}
+427	427		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory915.jpg'}
+428	428		201							{1: '1', 2: '501187', 7: '1'}
+429	429		301			AniZhuanchangEnd				{1: '1', 2: 'Jetavie', 3: '...That should do it.', 4: '1'}
+430	430		203							{1: '1', 2: '0.25', 3: '400'}
+431	431		201							{1: '2', 2: '501194', 4: '-400'}
+432	432		301							"{1: '1', 2: 'Ewig', 3: ""Corrupted signal—ten o'clock position."", 4: '2'}"
+433	433		202							{1: '1', 2: '2', 6: '1'}
+434	434		201							{1: '1', 2: '500260', 4: '400', 7: '1'}
+435	435		201							{1: '2', 2: '500013', 4: '-400'}
+436	436		203							{1: '1', 2: '0.25', 3: '425', 4: '-20'}
+437	437		203							{1: '2', 2: '0.25', 3: '-380', 4: '-10'}
+438	438		401							{1: '2', 2: '1508'}
+439	439		301			PanelActor1Shake				"{1: '1', 2: 'Girl', 3: ""No, don't come any closer—"", 4: '1'}"
+440	440		301				DialogDisable			{3: 'A feeble cry echoes from the distant ruins—a Corrupted hiding in the corner raises its butcher knife toward a shivering little girl.'}
+441	441		202							{1: '1', 2: '2', 6: '1'}
+442	442		401							{1: '2', 2: '4092'}
+443	443		307						100.0	{1: '[ULTIMATE MODE]', 3: '60', 4: 'FFD700'}
+444	444		301							{3: '[ULTIMATE MODE]'}
+445	445		307							{2: '1'}
+446	446		201							{1: '1', 2: '501187', 3: '4'}
+447	447		301			DialogEnable				{1: '1', 2: 'Jetavie', 3: 'Tsk.', 4: '1'}
+448	448		302							{2: '—Jetavie, no!', 3: '449', 4: 'Jetavie!', 5: '449'}
+449	449		202							{1: '1'}
+450	450		301							{3: 'Her consciousness oscillates violently, though she still maintains her connection to the beacon.'}
+451	451		301							{3: 'But clearly the beacon can no longer fully restrict her actions.'}
+452	452		401							{1: '2', 2: '2924'}
+453	453		301				AniZhuanchangBegin			"{3: ""A streak of red electricity suddenly flashes around her, and before she realizes it, she's already rushing toward the little girl.""}"
+454	454		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab', 2: '2', 5: '1'}
+455	455		511							{1: '1', 2: '0', 3: '0|200|0'}
+456	456		301			AniZhuanchangEnd				{3: 'It takes at least 10 seconds for you and Ewig to reach the predetermined location.'}
+457	457		201							{1: '1', 2: '501187', 3: '10'}
+458	458		201							{1: '2', 2: '500260', 4: '290'}
+459	459		301							{1: '1', 2: 'Jetavie', 3: '...', 4: '1'}
+460	460		401							{1: '2', 2: '4386'}
+461	461		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab', 5: '1'}
+462	462		301							{3: 'Brushing aside the rising dust, you see Jetavie with the sobbing little girl in her arms, the light gone from her eyes.'}
+463	463		202							{1: '1', 2: '2', 6: '1'}
+464	464		201							{1: '1', 2: '501194'}
+465	465		301							{1: '1', 2: 'Ewig', 3: '...She cleared all the Corrupted in this area by herself.', 4: '1'}
+466	466		301				AniZhuanchangBegin			"{2: 'Ewig', 3: ""Teacher, give me a hand. Looks like we'll have to carry her back ourselves."", 4: '1'}"
+467	467		202							{1: '1', 6: '1'}
+468	468		502							{1: 'DialogDisable'}
+469	469		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1218.jpg'}
+470	470		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront22.png', 4: '5'}
+471	471		103							{1: '1', 2: '0|0|0', 3: '5'}
+472	472		401						2000.0	{1: '1', 2: '36'}
+473	473		401							{1: '1', 2: '12'}
+474	474		101			AniZhuanchangEnd			250.0	{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 4: '7'}
+475	475		101							{4: '7', 5: '1'}
+476	476		304							{1: 'The world is ending.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1'}
+477	477		304							{1: 'Only one person wanders alone at the center of this dying world.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1'}
+478	478		401							{1: '2', 2: '4537'}
+479	479		304			RImgBg1Shake				{1: 'Rocks crash down suddenly from the domed ceiling as the ground beneath gives way in an instant.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1'}
+480	480		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1217.jpg', 3: '0', 4: '1', 5: '1.5'}
+481	481		104						2000.0	{1: '-14|-239|-400', 2: '0', 4: '3'}
+482	482		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1217.jpg'}
+483	483		104							{1: '-14|-239|-400', 2: '0'}
+484	484		205							{1: '999'}
+485	485		104							{1: '0|0|0', 2: '0', 4: '3'}
+486	486		304							{1: 'In the moment of falling, her vacant eyes fix upon an inverted clock—she has tried everything, yet nothing can be done.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1', 8: '1'}
+487	487		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory523.jpg', 3: '0', 4: '1', 5: '1.5'}
+488	488		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory523.jpg'}
+489	489		205							{1: '999'}
+490	490		304							"{1: ""The march of destruction does not halt for one person's despair. She simply moves toward the end alongside the dying world."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1'}"
+491	491		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1218.jpg', 3: '0', 4: '1', 5: '1.5'}
+492	492		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1218.jpg'}
+493	493		205							{1: '999'}
+494	494		304							{1: 'How many times has she returned to the starting point of the Matrix?', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1'}
+495	495		304							{1: 'The weeping girl reminds her so much of her former self. She has stirred this lightless dream, and now Jetavie must awaken from it.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1'}
+496	496		304							{1: 'So she reaches out her hand, transcending countless cycles of despair, just as that person once extended their hand to her at the beginning.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1', 8: '1', 9: '1'}
+497	497		101							{4: '5', 5: '1'}
+498	498		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+499	499		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+500	500		401							{1: '2', 2: '2595'}
+501	501		307							{1: 'Jetavie...', 3: '100', 4: 'ffffffff', 6: '1'}
+502	502		301							{3: 'Jetavie...'}
+503	503		307							{2: '1'}
+504	504		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+505	505		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1218.jpg'}
+506	506		301			DialogEnable				{3: 'A voice calls her name. Whose is it? The collapsing world suddenly freezes in place.'}
+507	507		301							{3: 'Chosen One?'}
+508	508		302							{2: 'Jetavie!', 3: '509'}
+509	509		301							{3: 'The cycle of destruction gradually resets itself.'}
+510	510		201							{1: '1', 2: '501187', 3: '1'}
+511	511		301							{1: '1', 2: 'Jetavie', 3: 'The Chosen One—', 4: '1'}
+512	512		202							{1: '1'}
+513	513		301				AniZhuanchangBegin			{3: 'So Jetavie desperately seizes your hand.'}
+514	514		402							{1: '4869'}
+515	515		401						2000.0	{1: '1', 2: '36'}
+516	516		401							{1: '1', 2: '201'}
+517	517		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+518	518		301			AniZhuanchangEnd				{3: 'Inside the transport vehicle on the return journey.'}
+519	519		401							{1: '2', 2: '4895'}
+520	520		201							{1: '1', 2: '501187', 5: '-150', 7: '1'}
+521	521		203							{1: '1', 2: '0.25', 3: '4'}
+522	522		301							{1: '1', 2: 'Jetavie', 3: 'The Chosen One!!', 4: '1'}
+523	523		203							{1: '1', 2: '0.25', 5: '-50'}
+524	524		301							{3: 'The girl lying down suddenly bolts upright, tightly gripping your hand.'}
+525	525		301			RImgBg1Shake				"{3: ""A mechanoid's strength is no joke—even through the exoskeleton, intense pain shoots through your palm.""}"
+526	526		302							{2: 'Jetavie, my hand really hurts.', 3: '527', 4: 'Chosen One?', 5: '527'}
+527	527		204							{1: '1', 2: '6'}
+528	528		301							{2: 'Jetavie', 3: 'Huh...?', 4: '1'}
+529	529		204							{1: '1'}
+530	530		203							{1: '1', 2: '0.25'}
+531	531		301							{3: 'She stares blankly for a moment, then, as if suddenly comprehending the situation, abruptly withdraws her hand.'}
+532	532		204							{1: '1', 2: '3'}
+533	533		301							"{2: 'Jetavie', 3: ""Oh... it's just you, Teacher..."", 4: '1'}"
+534	534		301				DialogDisable			{3: 'She turns her face away in disappointment.'}
+535	535		302							{2: 'Who is the Chosen One?', 3: '536'}
+536	536		302							{2: 'You were repeatedly calling out that name just now.', 3: '537'}
+537	537		204							{1: '1', 2: '4'}
+538	538		301			DialogEnable				{2: 'Jetavie', 3: 'Could you see my dream just now?', 4: '1'}
+539	539		401						300.0	{1: '2', 2: '4779'}
+540	540		402							{1: '4779'}
+541	541		301							{3: 'She eyes you warily, instinctively reaching for the sidearm beside her.'}
+542	542		302							{2: 'Your consciousness was highly unstable, so I attempted to connect with you...', 3: '543'}
+543	543		301							"{2: 'Jetavie', 3: ""That's impossible. Even if connected, you shouldn't have the clearance to initiate a Deep M.I.N.D. connection..."", 4: '1'}"
+544	544		302							{2: 'You opened yourself up.', 3: '545'}
+545	545		204							{1: '1'}
+546	546		301							{2: 'Jetavie', 3: 'What?', 4: '1'}
+547	547		302							{2: 'While your consciousness was unstable, you opened your Deep M.I.N.D. connection interface to me.', 3: '548'}
+548	548		301							{2: 'Jetavie', 3: 'I apologize for my rudeness, teacher. Regardless, I must thank you for your assistance. My consciousness has indeed stabilized.', 4: '1'}
+549	549		204							{1: '1', 2: '4'}
+550	550		301							"{2: 'Jetavie', 3: ""However, I'd ask you not to casually browse through my data blocks. Some of that information could put your consciousness at risk."", 4: '1'}"
+551	551		202							{1: '1'}
+552	552		301							{3: 'She releases her grip on the gun and curtsies respectfully, lifting the edge of her skirt—a gesture that also conveniently puts more distance between the two of you.'}
+553	553		301							"{3: ""Just as you're about to continue discussing the matter, Ewig's voice interrupts the conversation between you and Jetavie.""}"
+554	554		201							{1: '1', 2: '501194'}
+555	555		301				AniZhuanchangBegin			"{1: '1', 2: 'Ewig', 3: ""We've returned to Gestrig."", 4: '1'}"
+556	556		202							{1: '1', 6: '1'}
+557	557		401						2000.0	{1: '1', 2: '36'}
+558	558		401							{1: '1', 2: '55'}
+559	559		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory870.jpg'}
+560	560		201							{1: '1', 2: '500137', 4: '-400', 7: '1'}
+561	561		201							{1: '2', 2: '501204', 4: '400', 7: '1'}
+562	562		301			AniZhuanchangEnd				"{1: '1', 2: '???', 3: ""What's happening? Weren't the traction frequencies already set up? Why are the Corrupted only just breaching the city walls?"", 4: '1'}"
+563	563		301							{2: '??', 3: 'The scouts spotted a human participating in the battle. Probably the new tactical teacher sent by the company.', 4: '2'}
+564	564		301							"{2: '???', 3: ""New tactical teacher?! Didn't that woman already prohibit instructors from participating in combat?"", 4: '1'}"
+565	565		301							"{2: '??', 3: ""However, the tactical coordination of those weapons has been exceptional—there's no way they coordinated that well on their own."", 4: '2'}"
+566	566		301							"{2: '??', 3: ""The fact that they've managed to contain the Corrupted in the outer ring is likely thanks to that Commandant's leadership."", 4: '2'}"
+567	567		301							"{2: '???', 3: ""Tsk. Always meddling where they shouldn't. That battle wasn't even supposed to be the Commandant's responsibility."", 4: '1'}"
+568	568		301							"{2: '??', 3: ""Our plan has been delayed. If this continues, they'll likely have time to prepare their defenses."", 4: '2'}"
+569	569		301							{2: '???', 3: 'How long until the factory can organize the next wave of attacks?', 4: '1'}
+570	570		301							{2: '??', 3: 'At least 12 hours.', 4: '2'}
+571	571		301							{2: '???', 3: 'Speed it up. The faster, the better.', 4: '1'}
+572	572		301							"{2: '??', 3: ""But if we produce the Corrupted at maximum capacity, the equipment will overheat. I'm afraid the attack after the next will be delayed much longer."", 4: '2'}"
+573	573		301							"{2: '???', 3: ""That's fine. We can't give them too much time to recover between attacks."", 4: '1'}"
+574	574		301							{2: '??', 3: 'What about that tactical teacher?', 4: '2'}
+575	575		301							"{2: '???', 3: ""...I'll find time to have a little chat with the teacher. We can't let that teacher interfere with the transfer of control."", 4: '1'}"
+576	576		301							{2: '??', 3: 'What if they refuse to relinquish command?', 4: '2'}
+577	577		301		1		AniZhuanchangBegin			"{2: '???', 3: ""It's best if they surrender willingly. If not, we won't wait any longer. The longer we delay, the more complications arise."", 4: '1'}"

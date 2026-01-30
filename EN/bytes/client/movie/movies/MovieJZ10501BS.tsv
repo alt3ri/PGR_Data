@@ -1,0 +1,108 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		401							{1: '2', 2: '1509'}
+4	4		301			DialogEnable				{2: 'System', 3: 'Rebooting... System rebooted.'}
+5	5		301							{2: 'System', 3: 'Mission information updated.'}
+6	6		301							{2: 'System', 3: 'Mission level: High, Hazard: High, Clearance: High, Insufficient mission data.'}
+7	7		301							{2: 'System', 3: 'Please authenticate your identity.'}
+8	8		302							{2: '—Verify', 3: '9'}
+9	9		301							{2: 'System', 3: 'Fingerprint authenticated. Identity: 【kuroname】.'}
+10	10		301							{2: 'System', 3: 'Region Number: 049, Region Type: Ruined City, Locational data retrieval failed, unable to download region map.'}
+11	11		301							{2: 'System', 3: 'Mission details confirmation check. Mission already assigned, cannot reassign mission. Please confirm again.'}
+12	12		302							{2: 'Confirm.', 3: '13', 4: 'Hm?', 5: '13'}
+13	13		301							{2: 'System', 3: 'Confirmation failed.'}
+14	14		201							{1: '1', 2: '1021001'}
+15	15		301							"{1: '1', 2: 'Lucia', 3: ""Commandant, what's the matter?"", 4: '1'}"
+16	16		302							"{2: ""Looks like there's a system error."", 3: '17'}"
+17	17		201							{1: '1', 2: '1011001'}
+18	18		301							{1: '1', 2: 'Lee', 3: 'Let me see.', 4: '1'}
+19	19		301							"{2: 'Lee', 3: ""It's a high-security clearance mission, so it's got restrictions. It should be okay now."", 4: '1'}"
+20	20		301							{2: 'Lee', 3: 'Hmm? It says the mission is ongoing. Has it been accepted or checked before?', 4: '1'}
+21	21		302							"{2: ""I don't think so."", 3: '22', 4: ""I don't remember."", 5: '22'}"
+22	22		201							{1: '1', 2: '1021001', 3: '3'}
+23	23		301							{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+24	24		204							{1: '1'}
+25	25		301							{2: 'Lucia', 3: 'Commandant, I read the mission information.', 4: '1'}
+26	26		204							{1: '1', 2: '4'}
+27	27		301							{2: 'Lucia', 3: 'The mission brief mentions that most individual Constructs sent to City 049 from Babylonia went missing within a day or two.', 4: '1'}
+28	28		301							"{2: 'Lucia', 3: ""They seem to have been attacked by an unknown source. Only a few survivors managed to recall in time. Their consciousness data are still under analysis and repair, so there isn't enough info."", 4: '1'}"
+29	29		301							{2: 'Lucia', 3: 'HQ wants the Gray Raven squad to investigate City 049 under the command network of Commandant.', 4: '1'}
+30	30		204							{1: '1'}
+31	31		301							{2: 'Lucia', 3: 'From what I can see, the mission is indeed not yet accepted.', 4: '1'}
+32	32		204							{1: '1', 2: '4'}
+33	33		301							{2: 'Lucia', 3: 'Regarding this error about the mission status, can you try to repair it, Lee?', 4: '1'}
+34	34		201							{1: '1', 2: '1011001'}
+35	35		301							"{1: '1', 2: 'Lee', 3: ""Systems are normal. As for the mission authentication, only Commandant has access to it, there shouldn't be anyone else..."", 4: '1'}"
+36	36		204							{1: '1', 2: '10'}
+37	37		301							"{1: '1', 2: 'Lee', 3: ""I know what's wrong."", 4: '1'}"
+38	38		202							{1: '1', 6: '1'}
+39	39		401							{1: '2', 2: '1515'}
+40	40		401							{1: '1', 2: '5'}
+41	41		301							{3: 'Replaying video information of central control room. Time: Before system reboot.'}
+42	42		301							{3: '——!'}
+43	43		201							{1: '1', 2: '500091', 3: '1'}
+44	44		301							{1: '1', 2: 'Nanami', 3: 'Commandant! Commandant!', 4: '1'}
+45	45		301							"{2: 'Nanami', 3: ""Nanami's got a new shiny frame! I wanted you to see it first!"", 4: '1'}"
+46	46		204							{1: '1'}
+47	47		301							"{2: 'Nanami', 3: ""These super-duper-cooler IR-005 wheels are fitted in by Nanami herself! Hmm... No one's here?"", 4: '1'}"
+48	48		301							{2: 'System', 3: 'New emergency mission. Mission level: High, Hazard: High, Clearance: High, Insufficient mission data.'}
+49	49		301							{2: 'Nanami', 3: 'High hazard? Are they giving some strange mission to Commandant again?', 4: '1'}
+50	50		301							{2: 'System', 3: 'Please authenticate your identity.'}
+51	51		301							{2: 'Nanami', 3: 'Hm...? Hm-hm...? Nanami needs to put her finger here?', 4: '1'}
+52	52		301							{2: 'System', 3: 'Authentication failed.'}
+53	53		204							{1: '1', 2: '1'}
+54	54		301							{2: 'Nanami', 3: 'PULSE! ARMOR! TRANS—FORM!', 4: '1'}
+55	55		301							"{2: 'Nanami', 3: ""...Okay fine, Nanami can't transform."", 4: '1'}"
+56	56		204							{1: '1'}
+57	57		301							"{2: 'Nanami', 3: ""It's so boring here without Commandant."", 4: '1'}"
+58	58		204							{1: '1', 2: '1'}
+59	59		301							{2: 'Nanami', 3: 'Hmmm... Ahah... then... Nanami will just... got it!', 4: '1'}
+60	60		204							{1: '1'}
+61	61		301							{2: 'System', 3: 'Unknown authentication method. Authenticated. Identity: Unknown.'}
+62	62		202							{1: '1', 6: '1'}
+63	63		301							{3: '...'}
+64	64		201							{1: '1', 2: '500091', 3: '1'}
+65	65		301							{1: '1', 2: 'Nanami', 3: 'Yep, yep. Nanami understands it a hundred and ten percent.', 4: '1'}
+66	66		204							{1: '1'}
+67	67		301							{2: 'Nanami', 3: 'Commandant has to leave for missions again right after returning.', 4: '1'}
+68	68		301							"{2: 'Nanami', 3: ""Hm... If that's the case..."", 4: '1'}"
+69	69		204							{1: '1', 2: '1'}
+70	70		301							{2: 'Nanami', 3: 'Then Nanami will just finish this mission before Commandant comes back! Haha!', 4: '1'}
+71	71		301							{2: 'Nanami', 3: 'Nanami! Preparing for launch!', 4: '1'}
+72	72		204							{1: '1'}
+73	73		301							{2: 'Nanami', 3: 'Ah! Right! Almost forgot! I need to leave a note for the commandant!', 4: '1'}
+74	74		204							{1: '1', 2: '1'}
+75	75		301							{2: 'Nanami', 3: 'Okie...', 4: '1'}
+76	76		301							{2: 'Nanami', 3: 'Pulse Construct, Nanami, blast off!', 4: '1'}
+77	77		202							{1: '1', 6: '1'}
+78	78		301							{3: 'Replay has ended.'}
+79	79		201							{1: '1', 2: '1011001', 3: '10'}
+80	80		301							"{1: '1', 2: 'Lee', 3: ""I don't think she understood a single percent of what she read."", 4: '1'}"
+81	81		302							{2: 'Where was the last message left?', 3: '82', 4: 'Have more faith.', 5: '82'}
+82	82		204							{1: '1'}
+83	83		301							{2: 'Lee', 3: 'I checked the entire system.', 4: '1'}
+84	84		204							{1: '1', 2: '10'}
+85	85		301							"{1: '1', 2: 'Lee', 3: ""...And there's a comment by Nanami written in the underlying core architecture..."", 4: '1'}"
+86	86		202							{1: '1', 6: '1'}
+87	87		301							"{3: '""Commandant, Nanami\'s on a mission! Wait for Nanameeee! (<ゝω?)☆""'}"
+88	88		201							{1: '1', 2: '1011001', 4: '400'}
+89	89		201							{1: '2', 2: '1021001', 4: '-400'}
+90	90		301							"{1: '1', 2: 'Lucia', 3: ""Lee, do you know what that symbol at the end means? I can't find any relevant information in the database, and it might be an important message from Nanami."", 4: '2'}"
+91	91		301							"{2: 'Lee', 3: ""No dice. I'll need some time to decipher it."", 4: '1'}"
+92	92		302							"{2: 'No need to investigate that.', 3: '93', 4: ""It's just a cute emoticon."", 5: '93'}"
+93	93		202							{1: '1', 2: '2', 6: '1'}
+94	94		201							{1: '1', 2: '1021001'}
+95	95		301							{1: '1', 2: 'Lucia', 3: 'Understood, Commandant.', 4: '1'}
+96	96		201							{1: '1', 2: '1011001', 3: '10'}
+97	97		301							"{1: '1', 2: 'Lee', 3: ""My database on the corpus of human culture is not as wide as Nanami's... How can this be..."", 4: '1'}"
+98	98		201							{1: '1', 2: '1021001', 3: '3'}
+99	99		301							{1: '1', 2: 'Lucia', 3: 'Commandant, most of the Constructs losing contact moved on their own to investigate war zone 049.', 4: '1'}
+100	100		301							"{2: 'Lucia', 3: ""That should be why HQ wants us to move in as a team, with Commandant as well to ensure our safety. But now Nanami's out there on her own..."", 4: '1'}"
+101	101		302							{2: 'I believe in Nanami.', 3: '102', 4: 'That is a bit worrying.', 5: '104'}
+102	102		201							{1: '1', 2: '1011001'}
+103	103	107	301							"{1: '1', 2: 'Lee', 3: ""I agree, though she's uncontrollable, she's still a powerful ally to have on our side."", 4: '1'}"
+104	104		201							{1: '1', 2: '1031001', 3: '6'}
+105	105		301							{1: '1', 2: 'Liv', 3: 'Commandant... should we go take a look?'}
+106	106		201							{1: '1', 2: '1011001'}
+107	107		301		1		AniZhuanchangBegin			"{2: 'Lee', 3: ""But, from the video replay, that new frame of Nanami's—Pulse, seems to be installed with two new acceleration boosters. To catch up with her wouldn't be easy."", 4: '1'}"

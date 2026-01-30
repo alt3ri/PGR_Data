@@ -1,0 +1,36 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+2	2		401							{1: '1', 2: '278'}
+3	3		107						1500.0	{1: '03: Unequal Exchange'}
+4	4		108							{1: '1'}
+5	5		301			DialogEnable				{3: 'After getting to know Noan for a bit, he always swings by whenever you fall ill or get hurt.'}
+6	6		301							"{3: ""While he's not exactly a medic outside of emergencies, having someone to chat with during recovery is a real comfort.""}"
+7	7		201							{1: '1', 2: '500506'}
+8	8		301							{1: '1', 2: 'Noan', 3: 'Feeling any better today?', 4: '1'}
+9	9		302							{2: '(Nod)', 3: '10'}
+10	10		301							{3: 'He pulls out some apples and starts peeling them on the table.'}
+11	11		301							{3: 'Suddenly, you remember him finding an apple among his gifts when he first landed in Babylonia.'}
+12	12		301							{3: 'He split it with you then...'}
+13	13		502							{1: 'DialogDisable'}
+14	14		302							"{2: 'You always ""split"" your supplies.', 3: '15'}"
+15	15		302							{2: 'Is that a tradition among traveling merchants?', 3: '16'}
+16	16		301			DialogEnable				"{2: 'Noan', 3: ""Yep. When you're facing a long journey, you can't just hand over all your stuff to someone else."", 4: '1'}"
+17	17		302							{2: 'How do you determine prices?', 3: '18'}
+18	18		301							"{2: 'Noan', 3: ""Every base is different, depending on what they're lacking and what they've got in abundance."", 4: '1'}"
+19	19		301							"{2: 'Noan', 3: ""Sometimes, lending a hand can be traded for goods, and the cost isn't set in stone. The bill hidden in freebies or services can sometimes be steeper."", 4: '1'}"
+20	20		301							{3: 'He passes over the peeled apple.'}
+21	21		502							{1: 'DialogDisable'}
+22	22		302							{2: 'Should I give you something too?', 3: '23'}
+23	23		302							{2: 'After all, you just said the freebies could be pricier.', 3: '24'}
+24	24		301			DialogEnable				"{2: 'Noan', 3: ""Well, you're the one who got the ball rolling."", 4: '1'}"
+25	25		301							"{2: 'Noan', 3: ""If it weren't for those acts of kindness, if you hadn't helped me out, I wouldn't be here shooting the breeze with you."", 4: '1'}"
+26	26		302							"{2: 'Is that all there is to it?', 3: '27', 4: ""I doubt you're just looking to repay a favor."", 5: '27'}"
+27	27		301							"{2: 'Noan', 3: ""There are a few things I haven't mentioned."", 4: '1'}"
+28	28		302							{2: 'Like what?', 3: '29'}
+29	29		204							{1: '1', 2: '2'}
+30	30		301							"{2: 'Noan', 3: ""I'll tell you in fifty years."", 4: '1'}"
+31	31		302							{2: 'That long?', 3: '32'}
+32	32		204							{1: '1', 2: '1'}
+33	33		301							{2: 'Noan', 3: 'Yep.', 4: '1'}
+34	34		204							{1: '1', 2: '11'}
+35	35		301		1		AniZhuanchangBegin			{2: 'Noan', 3: 'So... make sure you stay hale and hearty.', 4: '1'}

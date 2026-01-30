@@ -1,0 +1,193 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory318.png'}
+2	2		205				AniZhuanchangEnd			{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 3: '1', 4: '1', 5: '0'}
+3	3		401							{1: '1', 2: '210'}
+4	4		401							{1: '2', 2: '4231'}
+5	5		201							{1: '1', 2: '500783'}
+6	6		301			DialogEnable				"{1: '1', 2: 'Watanabe', 3: ""It's been almost three hours and still no sign of the oasis..."", 4: '1'}"
+7	7		302							"{2: ""I figured as much. It's not that easy to find..."", 3: '8'}"
+8	8		301							{3: 'Tired of the unchanging yellow sands outside, you recline and close your eyes to rest.'}
+9	9		301							{2: 'Watanabe', 3: 'What are you planning to do when you get back to Babylonia?', 4: '1'}
+10	10		302							{2: 'Relax and rest up first...', 3: '11', 4: 'Right back to the grind again...', 5: '12'}
+11	11	13	301							{2: 'Watanabe', 3: 'Sounds good. Take a break to recover from this journey.', 4: '1'}
+12	12		301							{2: 'Watanabe', 3: 'Is your work at Babylonia that heavy?', 4: '1'}
+13	13		301							"{2: 'Watanabe', 3: ""Anyway, your help was crucial in dismantling Schneider's group."", 4: '1'}"
+14	14		301				DialogDisable			{2: 'Watanabe', 3: 'The Forsaken will always welcome you with open arms.', 4: '1'}
+15	15		302							"{2: ""You're welcome."", 3: '16'}"
+16	16		302							{2: 'What about you? Any plans to rest after this mission?', 3: '17'}
+17	17		301			DialogEnable				{2: 'Watanabe', 3: 'No, I hardly have any time to rest.', 4: '1'}
+18	18		302							"{2: ""Because there's always something going on with the Forsaken?"", 3: '19'}"
+19	19		301							{2: 'Watanabe', 3: 'Yeah. I mean, I bet the Gray Ravens keep you up at night, too.', 4: '1'}
+20	20		302							"{2: ""Now that you mention it, I haven't contacted them since my transmitter died...""}"
+21	21		204							{1: '1', 2: '1'}
+22	22		301							{3: 'Watanabe chuckles lightly, in a slightly teasing tone.'}
+23	23		301							"{2: 'Watanabe', 3: ""So, it's best we stay on our respective battlefields."", 4: '1'}"
+24	24		204							{1: '1'}
+25	25		301							"{2: 'Watanabe', 3: ""Wait, what's that?"", 4: '1'}"
+26	26		401							{1: '2', 2: '4115010'}
+27	27		402							{1: '4231'}
+28	28		301							{3: 'The vehicle, which has been moving at a constant speed, suddenly comes to a halt. You open your eyes and see a tiny green point on the distant horizon.'}
+29	29		302							{2: 'Is it another mirage?', 3: '30'}
+30	30		301							"{2: 'Watanabe', 3: ""Mirages hover above the horizon. Their height doesn't change."", 4: '1'}"
+31	31		302							{2: 'Is it the real deal this time?'}
+32	32		301							"{2: 'Watanabe', 3: ""Let's go check it out."", 4: '1'}"
+33	33		202							{1: '1', 6: '1'}
+34	34		401							{1: '2', 2: '885'}
+35	35		301							{3: 'Watanabe turns the steering wheel and drives straight toward the green spot.'}
+36	36		502							{1: 'RImgBg1DisableSlow'}
+37	37		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory539.jpg'}
+38	38		301				AniZhuanchangBegin			{3: 'As you get closer, the green area becomes clearer until a lush oasis appears before you in the desert.'}
+39	39		402							{1: '4231'}
+40	40		205							{1: '999'}
+41	41		401							{1: '1', 2: '36'}
+42	42		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory539.jpg'}
+43	43		401							{1: '1', 2: '163'}
+44	44		301			AniZhuanchangEnd				{3: 'As you step out of the vehicle, a fresh, woody scent fills the air.'}
+45	45		301							"{3: ""A few desert foxes lie quietly in the grass, shrubs encircling the lake like lace on a forest fairy's dress, and the emerald green lake is as clear as a giant gem, reflecting specks of light.""}"
+46	46		401							{1: '2', 2: '759'}
+47	47		301							{3: 'As you approach the Oasis, a few white birds take flight, soaring across the azure sky before disappearing into the forest.'}
+48	48		401							{1: '2', 2: '9339045'}
+49	49		301							{3: 'Watanabe reaches his hand into the lake, his black steel hand effortlessly breaking the calm surface, causing ripples to spread across the water.'}
+50	50		201							{1: '1', 2: '500783'}
+51	51		301							"{1: '1', 2: 'Watanabe', 3: ""Looks like it's real this time."", 4: '1'}"
+52	52		302							{2: 'We finally found it.', 3: '53'}
+53	53		301							{2: 'Watanabe', 3: 'Want to rest here for a bit? The water is surprisingly clean.', 4: '1'}
+54	54		401							{1: '2', 2: '9339045'}
+55	55		301							"{3: ""You crouch down, mimicking Watanabe's gesture, and dip your hand into the lake. The cool sensation slowly creeps up your body, easing much of your fatigue.""}"
+56	56		302							{2: 'It feels refreshing, even revitalizing.', 3: '57'}
+57	57		301							"{2: 'Watanabe', 3: ""Then let's stay here for a while. A little break won't hurt."", 4: '1'}"
+58	58		202							{1: '1'}
+59	59		401							{1: '2', 2: '2936'}
+60	60		301							{3: 'You and Watanabe sit by the lake, quietly observing this oasis in the desert.'}
+61	61		301							{3: 'The desert foxes notice the new visitors but merely glance lazily before resuming their nap in the bushes.'}
+62	62		301							{3: 'The fish that have fled you slowly return, swimming as if flying through transparent air, casting only faint shadows on the lakebed.'}
+63	63		301							"{3: ""It's easy to forget that peaceful corners like this still exist in the world when you've spent so much time on gruesome battlefields.""}"
+64	64		301							"{3: ""Here, there's no threat from the Punishing Virus, no endless human scheming, no constant fear for tomorrow. Only the basic laws of nature are quietly in operation.""}"
+65	65		301							{3: 'Even in the barren sands, life thrives.'}
+66	66		201							{1: '1', 2: '500783'}
+67	67		301							"{1: '1', 2: 'Watanabe', 3: ""【kuroname】, I'm glad you made it back safely."", 4: '1'}"
+68	68		401							{1: '1', 2: '36'}
+69	69		301							{3: 'You turn to see Watanabe gazing intently at you, his eyes filled with complex emotions beyond words.'}
+70	70		401							{1: '1', 2: '359'}
+71	71		301							"{2: 'Watanabe', 3: ""I've walked a long path, met many people, and bid farewell to many more."", 4: '1'}"
+72	72		301							{2: 'Watanabe', 3: 'To save more people, I chose to become the leader of the Forsaken. But once I became the leader, I realized that I had to make even more decisions.', 4: '1'}
+73	73		301							{2: 'Watanabe', 3: 'Because everyone places their lives in my hands, I constantly question myself. Is this the right choice? Have I lived up to their expectations?', 4: '1'}
+74	74		204							{1: '1', 2: '14'}
+75	75		301							{2: 'Watanabe', 3: 'Have I really honored... their sacrifices?', 4: '1'}
+76	76		202							{1: '1', 6: '1'}
+77	77		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+78	78		504							{1: '0.7'}
+79	79		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz602.jpg'}
+80	80		301							"{2: 'Bruce', 3: ""Don't mourn the dead with sorrow, Watanabe.""}"
+81	81		301							{2: 'Bruce', 3: 'Let them become your power to carry on.'}
+82	82		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+83	83		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory55.jpg'}
+84	84		201							{1: '1', 2: '500062', 7: '1'}
+85	85		301							"{1: '1', 2: 'Bruce', 3: ""I'll be back here in an hour..."", 4: '1'}"
+86	86		301							"{2: 'Bruce', 3: ""...It'll be fine, Watanabe."", 4: '1'}"
+87	87		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory100.png'}
+88	88		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+89	89		201							{1: '1', 2: '500106'}
+90	90		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+91	91		301							"{1: '1', 2: 'Cyril', 3: ""You watched my son die in front of you. Aren't you his best friend? Aren't you going to fight for him? Will you really forgive these bastards?"", 4: '1'}"
+92	92		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+93	93		301							{2: 'Cyril', 3: '...What about my hope? There are tens of thousands of soldiers like me, abandoned, stranded on the surface. What about our hope?', 4: '1'}
+94	94		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+95	95		301							"{2: 'Cyril', 3: ""I still can't forgive... Hmm... Maybe the person I can't forgive is myself..."", 4: '1'}"
+96	96		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+97	97		301							{2: 'Cyril', 3: 'Go back... kid. Someone needs to remember us...', 4: '1'}
+98	98		301							{2: 'Cyril', 3: 'Never let this land... forget that we once fought for it...', 4: '1'}
+99	99		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+100	100		202							{1: '1', 6: '1'}
+101	101		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+102	102		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg901_4.jpg'}
+103	103		301							{2: 'Watanabe', 3: 'Attention to all Forsakens. Prepare to evacuate the space station immediately!'}
+104	104		301							{2: 'Forsaken Construct', 3: 'Roger!'}
+105	105		301							{2: 'Forsaken Construct', 3: 'Mr. Watanabe, the evacuation route has been sent to you.'}
+106	106		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+107	107		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg901_5.jpg'}
+108	108		301							{3: '...'}
+109	109		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4101_10.jpg'}
+110	110		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+111	111		301							{2: 'Zong', 3: 'Can I ask you one last favor?'}
+112	112		301							{2: 'Zong', 3: 'Please tell Watanabe that the little crybaby who used to be a burden...'}
+113	113		301							{2: 'Zong', 3: '...Can now protect others too.'}
+114	114		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+115	115		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4101_06.jpg'}
+116	116		301				DialogDisable			"{2: 'Backhaus', 3: ""It's too early for you to be here, you little brat.""}"
+117	117		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '1'}
+118	118		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab'}
+119	119		504							{1: '0'}
+120	120		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+121	121		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+122	122		505					10.0		{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+123	123		205						3000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory539.jpg', 3: '0', 4: '1', 5: '3'}
+124	124		205							{1: '999'}
+125	125		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory539.jpg'}
+126	126		201							{1: '1', 2: '500783'}
+127	127		301			DialogEnable				{1: '1', 2: 'Watanabe', 3: 'Thank you for trusting me back then, and for coming back safely.', 4: '1'}
+128	128		301							"{2: 'Watanabe', 3: ""Even though it's just a thought, if I were to make another mistake and let you bear the consequences alone..."", 4: '1'}"
+129	129		301							{2: 'Watanabe', 3: 'The cost would be too high for me to bear.', 4: '1'}
+130	130		301							"{3: ""Watanabe's hand, holding the old tag, is trembling slightly.""}"
+131	131		301							"{3: 'The tag, inscribed with ""Watanabe"", is rusted and worn, clearly not from this era.'}"
+132	132		301				DialogDisable			{3: 'Sensing the hidden unease beneath his calm facade, you reach out to grab his hand.'}
+133	133		302							{2: 'None of what happened was a mistake.', 3: '134'}
+134	134		302							"{2: 'They chose to entrust their tomorrow to you and willingly became the ""cost.""', 3: '135'}"
+135	135		302							"{2: 'And as survivors, it\'s our duty to bear the cost of these ""mistakes"" together.', 3: '136'}"
+136	136		202							{1: '1', 6: '1'}
+137	137		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+138	138		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg901_5.jpg'}
+139	139		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+140	140		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory426.jpg'}
+141	141		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+142	142		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory734.jpg'}
+143	143		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+144	144		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory539.jpg'}
+145	145		201							{1: '1', 2: '500783', 7: '1'}
+146	146		301			DialogEnable	DialogDisable			{1: '1', 3: 'Scenes of aircraft falling from the space station, the burning flames in Pulia Forest Park, and soldiers battling at the edge of the Hetero Zone forest flash through your mind.'}
+147	147		302							"{2: ""I've made mistakes too, and it's thanks to countless sacrifices and protection that I'm still here today."", 3: '148'}"
+148	148		302							{2: 'So from now on, let me share your burdens and worries.', 3: '149'}
+149	149		302							"{2: ""Whatever choices you make, they're never just for yourself."", 3: '150'}"
+150	150		302							{2: 'But for all of us survivors, together.', 3: '151'}
+151	151		204							{1: '1', 2: '1'}
+152	152		301			DialogEnable				"{3: ""Hearing these resolute words, the ice in Watanabe's golden eye begins to melt, like a frozen lake thawing in the spring.""}"
+153	153		204							{1: '1', 2: '1'}
+154	154		301							{3: 'His palm is warm, silently conveying his emotions.'}
+155	155		301							{3: 'You clasp your hand that is covering the tag in his palm.'}
+156	156		301							"{3: ""You want him to know that he's never alone in his decisions.""}"
+157	157		301							"{3: ""You don't want him to bear all the responsibility alone.""}"
+158	158		301							"{2: 'Watanabe', 3: ""Yeah, I don't know why I forgot that."", 4: '1'}"
+159	159		301							{3: 'Watanabe also grabs onto your hand. His grip is gentle yet firm.'}
+160	160		301							{2: 'Watanabe', 3: 'We have always been a team, doing everything together. Every life is inscribed with the trust of others.', 4: '1'}
+161	161		301							{2: 'Watanabe', 3: 'We... are never alone.', 4: '1'}
+162	162		301							"{2: 'Watanabe', 3: ""I won't ask this question again, because even sorrow itself... contains the weight of life."", 4: '1'}"
+163	163		301							{3: 'He gently pats your shoulder, as if to brush off the dust from your cloak.'}
+164	164		301							{3: 'His gaze is brimming with a tenderness that no one has ever seen before.'}
+165	165		301							{2: 'Watanabe', 3: '【kuroname】, we must all live on.', 4: '1'}
+166	166		301							{2: 'Watanabe', 3: 'I will always remember this sorrow. As one who lives, I must remember how they fought.', 4: '1'}
+167	167		301				DialogDisable			{2: 'Watanabe', 3: 'And to honor their trust, we must see the day Earth is restored to their memory.', 4: '1'}
+168	168		302							{2: 'It will return to how it once was.', 3: '169'}
+169	169		302							{2: 'And their stories will always be remembered.', 3: '170'}
+170	170		302							{2: 'As long as Earth exists... And as long as human civilization endures.', 3: '171'}
+171	171		301			DialogEnable				{3: 'Sunlight filters through the leaves, casting irregular patches of light on Watanabe.'}
+172	172		301							{3: 'A soft halo surrounds Watanabe. The scattered sunlight dances on his hair, shimmering with life.'}
+173	173		301							{2: 'Watanabe', 3: 'So, to fulfill this promise, we must protect this place.', 4: '1'}
+174	174		301							"{2: 'Watanabe', 3: ""Yes, absolutely, just like we've always done."", 4: '1'}"
+175	175		202							{1: '1'}
+176	176		301							{3: 'Watanabe stands up by the water and looks out at the endless plains as if finally making a decision.'}
+177	177		401							{1: '2', 2: '9339035'}
+178	178		201							{1: '1', 2: '500785'}
+179	179		301							{1: '1', 3: 'He turns to gaze at you who is standing by the water, his eyes no longer confused. He then throws the old tag into the pool.'}
+180	180		204							{1: '1', 2: '1'}
+181	181		301				AniZhuanchangBegin			"{2: 'Watanabe', 3: ""Let's go, 【kuroname】. It's time to leave for our next destination."", 4: '1'}"
+182	182		401							{1: '1', 2: '36'}
+183	183		202							{1: '1', 6: '1'}
+184	184		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory318.png'}
+185	185		401							{1: '2', 2: '885'}
+186	186		401							{1: '1', 2: '358'}
+187	187		301			AniZhuanchangEnd				{3: 'The vehicle slowly leaves the oasis, the clear green colors gradually trailing behind until they become a tiny, indistinguishable dot.'}
+188	188		301							{3: 'In the endless desert, the tracks you left are quickly erased by sand.'}
+189	189		301							{3: 'You both know that the oasis is just a chance encounter and that, after this brief rest, you might never set foot there again.'}
+190	190		301							{3: 'But to embark on a new journey is to find a new destination.'}
+191	191		301							"{3: ""All the nostalgia for the past is left in that oasis, becoming memories forever sleeping at the lake's bottom.""}"
+192	192		301		1		AniZhuanchangBegin			{3: 'To reach the promised tomorrow, the travelers of this desert set out on a new adventure.'}

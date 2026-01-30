@@ -1,0 +1,252 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '203'}
+3	3		401							{1: '2', 2: '10007502'}
+4	4		301			DialogEnable				"{2: 'Lucia', 3: ""We're through! Assume reconnaissance formation!""}"
+5	5		302							{2: 'Proceed with caution.', 3: '6'}
+6	6		301							{2: 'Lee', 3: 'Entering!'}
+7	7		301							{3: 'Lee enters the narrow hole from the blast first and aims his gun forward.'}
+8	8		301							{1: '1', 3: 'Following Lee, Lucia and Liv go in one after another.'}
+9	9		301							{2: 'Lucia', 3: '...'}
+10	10		301				AniZhuanchangBegin			"{2: 'Lee', 3: ""...What's this?""}"
+11	11		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory302.png'}
+12	12		401							{1: '1', 2: '201'}
+13	13		201							{1: '1', 2: '500029'}
+14	14		301			AniZhuanchangEnd				{1: '1', 2: 'Lucia', 3: 'Gray Raven reporting to Babylonia.', 4: '1'}
+15	15		203							{1: '1', 2: '0.25', 3: '-450'}
+16	16		201							{1: '2', 2: '500019', 4: '450'}
+17	17		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+18	18		301							"{1: '1', 2: 'Controller', 3: ""What's the matter? You just got there..."", 4: '2'}"
+19	19		201							{1: '1', 2: '1011001', 4: '-450'}
+20	20		301							{1: '1', 2: 'Lee', 3: 'Quiet. Transferring visuals.', 4: '1'}
+21	21		301							{2: 'Controller', 3: '...What the hell?', 4: '2'}
+22	22		301							{2: 'Lee', 3: 'We wanted to ask the same thing.', 4: '1'}
+23	23		301							{2: 'Lee', 3: '—Why are the coordinates of a confidential facility hiding an underground city?', 4: '1'}
+24	24		301							"{2: 'Controller', 3: ""Honestly, you know as much as we do... That's why we dispatched you there."", 4: '2'}"
+25	25		301							"{2: 'Controller', 3: ""Your mission is to infiltrate the facility's interior. So... I'm sure you understand that we don't have any answers for you."", 4: '2'}"
+26	26		401							{1: '2', 2: '1543'}
+27	27		301							"{2: 'Lee', 3: ""We've got a situation here. Over and out."", 4: '1'}"
+28	28		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+29	29		202							{1: '1', 2: '2', 6: '1'}
+30	30		201							{1: '1', 2: '500029'}
+31	31		301							{1: '1', 2: 'Lucia', 3: 'Move left. Take cover.', 4: '1'}
+32	32		202							{1: '1', 6: '1'}
+33	33		301							{3: 'Before the source of the sound approaches, you all cram into a collapsed bus stop and take cover.'}
+34	34		301							{3: 'Looking through a hole in the debris, you peer out into the street, well hidden.'}
+35	35		301							{3: '—A few odd-looking but familiar mechanoids wander on the street.'}
+36	36		201							{1: '1', 2: '1011001'}
+37	37		301							{1: '1', 2: 'Lee', 3: '(We should be able to take them out.)', 4: '1'}
+38	38		302							{2: '(Stay put.)', 3: '39'}
+39	39		203							{1: '1', 2: '0.25', 3: '-450'}
+40	40		201							{1: '2', 2: '500029', 4: '450'}
+41	41		301							"{1: '1', 2: 'Lucia', 3: ""(You're right. There might be other patrols not far behind.)"", 4: '2'}"
+42	42		301							{2: 'Lee', 3: '(Think attacking them will alert the others...?)', 4: '1'}
+43	43		301							{2: 'Lucia', 3: '(Correct.)', 4: '2'}
+44	44		202							{1: '1', 2: '2', 6: '1'}
+45	45		301							{3: 'And so, you wait for the wandering mechanoids to disappear from view.'}
+46	46		301							{3: 'As expected, another group of mechanoids follows at the rear in the same formation.'}
+47	47		201							{1: '1', 2: '500029'}
+48	48		301							"{1: '1', 2: 'Lucia', 3: ""(Wait for this patrol group to pass. There can't be that many patrol groups.)"", 5: '1'}"
+49	49		202							{1: '1', 6: '1'}
+50	50		201							{1: '1', 2: '1011001', 4: '450'}
+51	51		201							{1: '2', 2: '1031001', 4: '-450'}
+52	52		301				AniZhuanchangBegin			{1: '1', 2: 'Liv & Lee', 3: '(Roger.)', 4: '1', 5: '2'}
+53	53		202							{1: '1', 2: '2', 6: '1'}
+54	54		301			AniZhuanchangEnd				{3: '...'}
+55	55		301							{3: 'Five groups of scattered patrols pass by and, after the fifth group disappears from view, you wait in silence for another ten minutes.'}
+56	56		301							{3: 'No additional patrol groups appear. Along the silent street, the sound of shifting debris echoes clearly among the abandoned buildings.'}
+57	57		201							{1: '1', 2: '500029'}
+58	58		301							{1: '1', 2: 'Lucia', 3: '(Looks like that was the last of them.)', 4: '1'}
+59	59		302							{2: 'Lucia.', 3: '60'}
+60	60		202							{1: '1', 6: '1'}
+61	61		301							{3: 'Lucia rolls out of the bus stop in a flash and approaches the intersection in front of her.'}
+62	62		301							{3: 'After confirming that there are no mechanoids on the street, Lucia quietly messages the rest of you on her comms, giving the all-clear.'}
+63	63		301							{3: 'Following that, Lee and Liv exit the bus stop and walk over to the intersection.'}
+64	64		201							{1: '1', 2: '1031001', 4: '-600'}
+65	65		201							{1: '2', 2: '1011001', 4: '600'}
+66	66		201							{1: '3', 2: '500029'}
+67	67		301							"{1: '1', 2: 'Lee', 3: ""So, the mechanoids ARE conducting backup patrols... That's not exactly common among Corrupted."", 4: '2'}"
+68	68		301							"{2: 'Liv', 3: ""The mechanoids we defeated and the patrols... don't show sufficient evidence of infection from the Punishing Virus."", 4: '1'}"
+69	69		301							"{2: 'Lee', 3: ""So... they aren't Corrupted?"", 4: '2'}"
+70	70		302							{2: '?', 3: '71'}
+71	71		301							"{2: 'Lucia', 3: ""...Let's keep going. We won't know what the mechanoids are protecting or monitoring unless we see it with our own eyes."", 4: '3'}"
+72	72		301							{2: 'Everyone', 3: 'Understood.', 4: '1', 5: '2', 6: '3'}
+73	73		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+74	74		301				AniZhuanchangBegin			{3: 'You cross the intersection in silence, moving forward.'}
+75	75		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory306.png'}
+76	76		401							{1: '1', 2: '202'}
+77	77		201							{1: '1', 2: '500275'}
+78	78		301			AniZhuanchangEnd				{1: '1', 2: '???', 3: 'Move. Faster!', 4: '1'}
+79	79		201							{1: '1', 2: '500276'}
+80	80		301							{1: '1', 2: '???', 3: 'Where. Are we. Going?', 4: '1'}
+81	81		201							{1: '1', 2: '500275'}
+82	82		301							{1: '1', 2: '???', 3: 'There.', 4: '1'}
+83	83		202							{1: '1', 6: '1'}
+84	84		301							{3: 'Two figures stumble underneath the shadows between the buildings and hide in a collapsed dumpster.'}
+85	85		401							{1: '2', 2: '1504'}
+86	86		301							{3: 'Following that, a group of mechanoids passes by the dumpster.'}
+87	87		301							{2: 'Mechanoids', 3: 'We! Need! War!'}
+88	88		301							{2: 'Mechanoids', 3: 'To the death! To the death!'}
+89	89		301							{2: 'Mechanoids', 3: 'To the death! To the death!'}
+90	90		301							{2: 'Mechanoids', 3: 'Destroy! Destroy! Only our faction! Can rule the world!'}
+91	91		301							{3: 'The scattered footsteps of the mechanoids splash dirt and gravel, some of which hit the side of the collapsed dumpster.'}
+92	92		201							{1: '1', 2: '500276'}
+93	93		301							{1: '1', 2: '???', 3: 'Danger. Incoming!', 4: '1'}
+94	94		201							{1: '1', 2: '500275'}
+95	95		301							{1: '1', 2: '???', 3: 'Be. Quiet!', 4: '1'}
+96	96		201							{1: '1', 2: '500276'}
+97	97		301							"{1: '1', 2: '???', 3: ""D-don't. Make. Noise!"", 4: '1'}"
+98	98		202							{1: '1', 6: '1'}
+99	99		301							{3: 'The two figures huddle in the dumpster and weather the storm of scattered footsteps outside. The sound of footsteps and metal scrapping make it sound like the dumpster is about to be torn open.'}
+100	100		301							{3: '—The chaotic noise continues, showing no sign of ending.'}
+101	101		301							"{3: ""But they have no choice except to wait. They know what happens to those who don't.""}"
+102	102		301							{3: '—Their parts are interspersed throughout the area outside, between buildings and the abandoned grocery store, shattered and scattered.'}
+103	103		301							{3: 'So... all they can do is wait.'}
+104	104		401							{1: '2', 2: '1507'}
+105	105		301							{3: 'Woosh... Woosh...'}
+106	106		401							{1: '2', 2: '10007502'}
+107	107		301			RImgBg1Shake				{3: 'Clang... Clatter... Wham... Ka-cha...'}
+108	108		401							{1: '2', 2: '10002001'}
+109	109		301							{3: 'Shuffle... Smack... Scratch...'}
+110	110		301							{3: '...'}
+111	111		301							{3: '...Then everything goes quiet.'}
+112	112		201							{1: '1', 2: '500276'}
+113	113		301							{1: '1', 2: '???', 3: 'Are. They. Gone?', 4: '1'}
+114	114		201							{1: '1', 2: '500275'}
+115	115		301							"{1: '1', 2: '???', 3: ""Yes. Let's. Go."", 4: '1'}"
+116	116		202							{1: '1', 6: '1'}
+117	117		301							{3: 'The two figures exit the dumpster and walk away from where the scattered footsteps were heading.'}
+118	118		201							{1: '1', 2: '500276'}
+119	119		301							{1: '1', 2: '???', 3: 'Are we. Almost. There?', 4: '1'}
+120	120		201							{1: '1', 2: '500275'}
+121	121		301							{1: '1', 2: '???', 3: 'We. Will. Stop. Somewhere.', 4: '1'}
+122	122		301							"{2: '???', 3: 'There. Must be. A place. Without ""war.""', 4: '1'}"
+123	123		202							{1: '1', 6: '1'}
+124	124		301				AniZhuanchangBegin			{3: 'The two figures disappear one after another into the shadow of a deserted building.'}
+125	125		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory301.png'}
+126	126		301			AniZhuanchangEnd				{3: 'You walk along a wide road. The shadows cast by the deserted buildings on both sides of the road have divided it into irregular sections of black and gray.'}
+127	127		301							{3: 'Your faces become intermittently visible and then dim.'}
+128	128		301							{3: 'Suddenly, Liv raises her right hand and motions for the squad to stop.'}
+129	129		201							{1: '3', 2: '1011001', 4: '-600'}
+130	130		201							{1: '2', 2: '500029', 4: '600'}
+131	131		201							{1: '1', 2: '1031001', 3: '7'}
+132	132		301							"{1: '1', 2: 'Liv', 3: ""—I've got a reading on multiple mechanoids!"", 4: '1'}"
+133	133		301							{2: 'Lee', 3: 'A patrol group?!', 4: '3'}
+134	134		204							{1: '1'}
+135	135		301							"{2: 'Liv', 3: ""No... They're just wandering around aimlessly..."", 4: '1'}"
+136	136		301							{2: 'Lucia', 3: '...Why?', 4: '2'}
+137	137		302							"{2: ""We won't know unless we go check it out."", 3: '138'}"
+138	138		301							"{2: 'Lee', 3: ""Let's go. There's no point guessing."", 4: '3'}"
+139	139		301							{2: 'Lucia', 3: 'Stay on alert. Proceed with caution.', 4: '2'}
+140	140		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+141	141		301							{3: 'Your footsteps slow down as you walk cautiously around the street corner, looking out for any possible enemies along the way—'}
+142	142		301							{3: '—But there are none. There is not even any trace of the patrol guards.'}
+143	143		201							{1: '1', 2: '1031001', 4: '-600'}
+144	144		201							{1: '2', 2: '1011001', 4: '600'}
+145	145		201							{1: '3', 2: '500029'}
+146	146		301							{1: '1', 2: 'Lucia', 3: '(Any results from the scan?)', 4: '3'}
+147	147		301							{2: 'Liv', 3: '(No signs of mechanoids. Nowhere except the group over there.)', 4: '1'}
+148	148		301							{2: 'Lee', 3: '(A group...? Why? Did they spot us?)', 4: '2'}
+149	149		301							"{2: 'Lucia', 3: ""(No, I don't think we're exposed. Maybe they're responding to the noise we made at the entrance just now?)"", 4: '3'}"
+150	150		301							{2: 'Lee', 3: '(...Looks like we just gave ourselves a diversion.)', 4: '2'}
+151	151		301							"{2: 'Lucia', 3: ""(...Let's keep going. We'll know what's going on once we get there.)"", 4: '3'}"
+152	152		301				AniZhuanchangBegin			{3: 'And so, you continue onward.'}
+153	153		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory305.png'}
+154	154		401							{1: '1', 2: '203'}
+155	155		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+156	156		301			AniZhuanchangEnd				{3: 'Among the deserted cityscape stands a peculiar wall built from unknown machinery and building materials.'}
+157	157		301							{3: 'At the center of the high wall is a rudimentary but heavy gate. Scattered before the gate—'}
+158	158		301							{3: '—Stands a crowd of mechanoids arranged in smaller groups.'}
+159	159		301							{3: 'But this appears only temporary. The smaller groups of mechanoids assemble into a larger collective.'}
+160	160		301							{3: 'Two groups form a squad, three squads form a platoon, and three platoons form a company...'}
+161	161		301							{3: 'You observe the mechanoids for five minutes as they spontaneously form several companies. Each predetermined commander carves identification marks on themselves with stones.'}
+162	162		201							{1: '1', 2: '1031001', 4: '-600'}
+163	163		201							{1: '2', 2: '1011001', 4: '600'}
+164	164		201							{1: '3', 2: '500029'}
+165	165		301							"{1: '1', 2: 'Lucia', 3: ""(That was fast! Even Babylonia's most well-trained brigade couldn't organize themselves this quickly.)"", 4: '3'}"
+166	166		301							"{2: 'Lee', 3: ""(We just used a small breach charge. Isn't this a bit of an overkill?)"", 4: '2'}"
+167	167		301							{2: 'Liv', 3: '(Look, those mechanoids with the markings are standing in front of the others.)', 4: '1'}
+168	168		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+169	169		301							{3: '...'}
+170	170		201							{1: '1', 2: '500277'}
+171	171		301							{1: '1', 2: 'Mechanoid Commander', 3: 'Our! MISSION!', 4: '1'}
+172	172		301							{2: 'Mechanoids', 3: 'MISSION! MISSION!'}
+173	173		301							{2: 'Mechanoid Commander', 3: 'WAR! HUMANITY! DUTY!', 4: '1'}
+174	174		301							{2: 'Mechanoids', 3: 'DUTY! DUTY!'}
+175	175		301							{2: 'Mechanoid Commander', 3: 'SOLDIERS! WE ASSEMBLE. FROM. THROUGHOUT. NARAKA!', 4: '1'}
+176	176		301							{2: 'Mechanoid Commander', 3: 'ASSEMBLE! TO WAR!', 4: '1'}
+177	177		301							{2: 'Mechanoids', 3: 'WAR! WAR!'}
+178	178		202							{1: '1', 6: '1'}
+179	179		301							{3: 'The mechanoids raise their fists in a display of force with their commanders before forming a large battalion and marching out.'}
+180	180		301							{3: '—Within the space of twenty minutes, you have witnessed the formation and departure of an army.'}
+181	181		301							{3: 'Except for a few stragglers left to guard the gate, there is hardly any trace of the army that has just formed.'}
+182	182		301							{3: '—Perhaps, this is a characteristic of mechanoids. Without the need for supplies, their strength is in numbers.'}
+183	183		201							{1: '1', 2: '1031001', 4: '-600'}
+184	184		201							{1: '2', 2: '1011001', 4: '600'}
+185	185		201							{1: '3', 2: '500029'}
+186	186		301							"{1: '1', 2: 'Lee', 3: ""(They're gone... Should we follow them?)"", 4: '2'}"
+187	187		301							"{2: 'Lucia', 3: ""(Our top priority is to infiltrate the facility. Let's continue our mission.)"", 4: '3'}"
+188	188		302							{2: '(Agreed.)'}
+189	189		301							{2: 'Lee', 3: '(Understood.)', 4: '2'}
+190	190		301							{2: 'Lucia', 3: '(Scan the area, Liv.)', 4: '3'}
+191	191		301							{2: 'Liv', 3: '(Scanning... The number of enemies has reduced by 92%. As long as the threat in front of the door is cleared, we should have enough room to blast open the door.)', 4: '1'}
+192	192		301							"{2: 'Lucia', 3: ""(Then that's enough. Let's move.)"", 4: '3'}"
+193	193		301				AniZhuanchangBegin			{2: 'Everyone', 3: '(Understood.)', 4: '1', 5: '2', 6: '3'}
+194	194		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory302.png'}
+195	195		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+196	196		401							{1: '1', 2: '202'}
+197	197		201							{1: '1', 2: '500275'}
+198	198		301			AniZhuanchangEnd				{1: '1', 2: '???', 3: 'Take. Cover. Here.', 4: '1'}
+199	199		301							{3: 'The larger figure hides the smaller figure in an alcove, then walks in another direction.'}
+200	200		201							{1: '1', 2: '500276'}
+201	201		301							{1: '1', 2: '???', 3: 'Where. Are you. Going?', 4: '1'}
+202	202		201							{1: '1', 2: '500275'}
+203	203		301							{1: '1', 2: '???', 3: 'Check. If road. Safe.', 4: '1'}
+204	204		202							{1: '1', 6: '1'}
+205	205		301							{3: 'The larger figure struggles to move a huge steel plate from the pile of garbage on the side of the road in an attempt to block the narrow alcove.'}
+206	206		201							{1: '1', 2: '500277', 4: '-600'}
+207	207		201							{1: '2', 2: '500277', 4: '600'}
+208	208		201							{1: '3', 2: '500277'}
+209	209		301							{1: '1', 2: 'Mechanoid', 3: 'Not. One of us! Enemy! Enemy!', 4: '3'}
+210	210		301							{3: 'Noticing the sound, a few dark figures approach from the distance.'}
+211	211		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+212	212		201							{1: '1', 2: '500276'}
+213	213		301							{1: '1', 2: '???', 3: 'Hurry. Get in!', 4: '1'}
+214	214		201							{1: '1', 2: '500275'}
+215	215		301							{1: '1', 2: '???', 3: 'No. I will. Fight them. Off!', 4: '1'}
+216	216		202							{1: '1', 6: '1'}
+217	217		301				AniZhuanchangBegin			{3: 'The bigger figure forcefully moves the steel panel, completely covering the alcove.'}
+218	218		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+219	219		301			AniZhuanchangEnd				{3: 'The smaller figure hiding in the alcove is powerless in moving the steel panel. Instead, it can only hide in its shadow.'}
+220	220		301							{3: 'Then, another vague and distant sound, rumbling like a storm, is picked up by its receptor.'}
+221	221		301							{3: '—However, the sound is completely different from before.'}
+222	222		301							{2: '???', 3: 'Let there. Be. WAR!'}
+223	223		301							{2: 'Mechanoid', 3: 'You. Are not. Chosen! Not this time! Who is. The other?!'}
+224	224		301							{2: '???', 3: 'You want. War! I. Give you. War!'}
+225	225		401							{1: '2', 2: '10002001'}
+226	226		301							"{3: 'Following this, the loud ""CLANG!"" of swords meeting can be heard.'}"
+227	227		401							{1: '2', 2: '1512'}
+228	228		301							"{3: 'Another ""CLANG!"" follows, after which is a loud ""THUD!"" as if a heavy object is thrown to the ground.'}"
+229	229		401							{1: '2', 2: '1512'}
+230	230		301							"{3: 'Another ""THUD!"" from a heavy object falling in the opposite direction.'}"
+231	231		301							{3: 'Finally—silence.'}
+232	232		401							{1: '2', 2: '1503'}
+233	233		301							{3: 'That is, until a heavy object slams against the steel panel.'}
+234	234		301				AniZhuanchangBegin			{3: 'At that point, the steel panel is dragged away from the small figure, revealing—'}
+235	235		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory302.png'}
+236	236		201							{1: '1', 2: '500275'}
+237	237		301			AniZhuanchangEnd				{1: '1', 2: '???', 3: 'Are you. Okay?', 4: '1'}
+238	238		201							{1: '1', 2: '500276'}
+239	239		301							"{1: '1', 2: '???', 3: ""I'm. Fine..."", 4: '1'}"
+240	240		201							{1: '1', 2: '500275'}
+241	241		301							"{1: '1', 2: '???', 3: ""Let's. Go."", 4: '1'}"
+242	242		301							{2: '???', 3: 'Here. Not safe.', 4: '1'}
+243	243		201							{1: '1', 2: '500276'}
+244	244		301							{1: '1', 2: '???', 3: 'Go. Where?', 4: '1'}
+245	245		201							{1: '1', 2: '500275'}
+246	246		301							"{1: '1', 2: '???', 3: ""Don't. Ask. Let's. Go!"", 4: '1'}"
+247	247		202							{1: '1', 6: '1'}
+248	248		301							{3: 'The two figures stumble and hesitate as they walk around the fallen bodies opposite where they came.'}
+249	249		301							{3: 'Farther into the city, a towering building can be seen at the other end.'}
+250	250		301							{3: 'Tugging at each other, the two figures eventually help one another move forward, as if one of them has successfully convinced the other.'}
+251	251		301		1		AniZhuanchangBegin			{3: 'Staggering, they slowly disappear along the bend of the road.'}

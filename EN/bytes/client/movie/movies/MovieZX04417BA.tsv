@@ -1,0 +1,59 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory898.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		107						2000.0	{1: 'Hetero Forest'}
+4	4		108							{1: '1'}
+5	5		301			DialogEnable				"{3: ""Luna's condition is worse than anticipated—during the search for Cradle, her exhaustion triggered a severe M.I.N.D. fluctuation.""}"
+6	6		301				AniZhuanchangBegin			{3: 'With no other options, you must perform a premature M.I.N.D. connection—a rehearsal for the upcoming Red Tide confrontation.'}
+7	7		501			DialogDisable				{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+8	8		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory913.jpg'}
+9	9		401							{1: '2', 2: '904'}
+10	10		301			DialogEnable				{3: 'Coarse sand scratches your ankles as thick clouds blot out the sky, casting the world in shadow.'}
+11	11		301							{3: 'The wind howls in from the sea, stinging your face. The air carries not the familiar saltiness of the ocean, but something else—an inexplicable, unsettling scent. The dark sea churns violently, sending wave after wave crashing toward you.'}
+12	12		301							"{3: ""As the waves surge, an unseen force seems to stifle you, draining your power. But even weakened, the aftershocks slamming into the island's cliffs still dislodge rocks that plunge into the sea.""}"
+13	13		302							{2: '...'}
+14	14		104							{1: '0|50|0', 2: '1'}
+15	15		301							{3: 'You bend down and touch the seawater with your fingers. Excruciating pain sears through skin and bone, tearing through flesh as it penetrates deeper.'}
+16	16		104							{1: '0|-100|0', 2: '1'}
+17	17		301							"{3: ""Looking toward the distant island, it stands untouched by the murky waters below. Partly because the tide isn't raging yet, and partly because...""}"
+18	18		301							{3: 'Twisted steel beams rise from the tide, forming a dense grid that lifts the island and holds back the sea.'}
+19	19		302							"{2: ""Disconnecting from the Ascension-Network means losing oneself... So that's what it means."", 3: '20'}"
+20	20		401							{1: '2', 2: '9327108'}
+21	21		301							{3: 'Splash—'}
+22	22		301							{3: 'As the words fade, thunder cracks through dark clouds and waves rise.'}
+23	23		302							{2: 'I should focus on stabilizing her M.I.N.D. first.', 3: '24'}
+24	24		301				AniZhuanchangBegin			{3: 'Pure energy fills your hands as the ground beneath your feet softens. The power of order and stability begins to transform this small corner of existence.'}
+25	25		402							{1: '904'}
+26	26		502							{1: 'DialogDisable'}
+27	27		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory366.png'}
+28	28		301			DialogEnable				"{3: ""As you step onto the island—a manifestation of Luna's consciousness—your power purifies the seawater clinging to your body, causing it to evaporate.""}"
+29	29		301							"{3: ""There, at the center of the island, a familiar building appears. This was once Luna's home—entering and completing the remaining steps would stabilize her M.I.N.D. But...""}"
+30	30		301							{3: 'Your footsteps halt in the sand.'}
+31	31		302							{2: 'Should the cooperation really go this far?', 3: '32'}
+32	32		301							"{3: ""The non-aggression pact is just Luna's verbal promise—one-sided and unenforceable.""}"
+33	33		301							"{3: ""Trusting one's fate to another is a foolish endeavor.""}"
+34	34		301							{3: 'After the anomaly at the Inver-Hetero Tower, Luna and her allies can now draw your attention with feint attacks on the medical center—proof that the Clean Zone can no longer defend itself from the Ascendants.'}
+35	35		301							"{3: ""The Punishing Virus has reached the tower's doorstep and is burrowing deep within. If Cradle unleashes another Red Tide attack...""}"
+36	36		302							{2: 'If Luna desires, once this is over, both Gray Raven and the Clean Zone will be deep in trouble.', 3: '37'}
+37	37		302							"{2: ""There's no way to guarantee Luna's compliance with the future cooperation treaty."", 3: '38'}"
+38	38		301							{3: 'Lost in thought, you continue toward the building.'}
+39	39		302							{2: 'Something must be done...', 3: '40'}
+40	40		104							{1: '100|0|-100', 2: '1'}
+41	41		401							{1: '2', 2: '4113'}
+42	42		301							"{3: ""Approaching the building, the iron gate groans against its hinges. Luna's words from earlier still ring in your ears.""}"
+43	43		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+44	44		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory898.jpg', 3: '1', 4: '1'}
+45	45		504							{1: '0.8'}
+46	46		201							{1: '1', 2: '500238'}
+47	47		301							"{1: '1', 2: 'Luna', 3: ""Gray Raven Commandant, I need your mind linked to mine. When I make contact with the Red Tide, I'll need your help to keep my M.I.N.D. stable."", 4: '1'}"
+48	48		301							"{2: 'Luna', 3: ""I won't harm you or the Gray Ravens."", 4: '1'}"
+49	49		301							{2: 'Luna', 3: 'Why trust me?', 4: '1'}
+50	50		301				DialogDisable			"{2: 'Luna', 3: ""Hmm... You'll find out soon enough."", 4: '1'}"
+51	51		202							{1: '1', 6: '1'}
+52	52		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+53	53		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory366.png', 3: '1', 4: '1'}
+54	54		104							{1: '100|0|-100', 2: '0'}
+55	55		504							{1: '0'}
+56	56		302							"{2: ""Luna, I hope you won't make this any harder than it already is."", 3: '57'}"
+57	57		401							{1: '1', 2: '4129'}
+58	58		301		1	DialogEnable	AniZhuanchangBegin			{3: 'With renewed determination, you push open the iron door without hesitation, focus your mind, and step inside.'}

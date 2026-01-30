@@ -1,0 +1,17 @@
+Id	GroupId	Note	ConditionType	ConditionArg	ConditionState	ShowButtonName	ButtonType	ButtonArg	InteractPoint	BehaviorType
+1	1	Bed Decor Interaction				Lay Down	1		1	SLEEP
+2	2	Chair Decor Interaction				Sit Down	1		1	CHAIR
+3	3	Stool Decor Interaction (Action Height Different From Chair)				Sit Down	1		1	BENCH
+4	4	Shelf Decor Interaction				Search	1		1	CABINET
+5	5	Fireworks Decor Interaction				Set off Fireworks	1		1	FIREWORK
+101	100	Tactical terminal decor interaction. Opens the Simulated Siege interface.				Simulated Siege	2	84040	1	
+102	200	Music player interaction. Opens the player interface.				Player	2	85014	1	
+103	300	Fortune Machine interaction not signed in mainly due to different button display contents	3	CONDITION_GUILD_SIGN_REWARD	1	Get an Oracle	2	88001	1	
+104	300	Fortune Machine interaction signed in mainly due to different button display contents	3	CONDITION_GUILD_SIGN_REWARD		Check Oracle	2	88001	1	
+6	6	Fireworks Decor Interaction				Set off Fireworks	1		1	NEWFIREWORK
+7	7	Trash Can Interaction				Search	4		1	
+8	8	Drink Machine				What to Drink	5		1	
+9	9	Statue				Stare at the Statue	4		1	
+10	10	European Tea Table				Look closely	4		1	
+11	11	Lotus				Look closely	4		1	
+12	400	I want to play the piano				Play the Piano	1	90019	1	PLAYPIANO

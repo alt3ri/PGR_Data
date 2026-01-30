@@ -1,0 +1,122 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		105							{1: 'Assets/Product/Ui/Spine/2-12Spine/UiMovieBulijite/UiMovieBulijite.prefab'}
+3	3		401							{1: '1', 2: '204'}
+4	4		502							{1: 'DialogEnable'}
+5	5		301			AniZhuanchangEnd				{2: 'Bridget', 3: 'What happened next? I just met up with Karenina and others, then returned to earth—'}
+6	6		301							{2: 'Support Force Member', 3: 'Ah...'}
+7	7		301							{3: 'Scattered sighs and murmurs fill the air as the story comes to an end.'}
+8	8		301							{2: 'Bridget', 3: 'Haha, what else did you expect to happen? Some spectacular mine escape? Some mysterious force suddenly appearing out of nowhere?'}
+9	9		301							{2: 'Support Force Member', 3: 'Did any of that really happen, though?'}
+10	10		301							{2: 'Bridget', 3: '—Stop daydreaming and get back to work, all of you.'}
+11	11		301							{2: 'Bridget', 3: 'This is a mission brief, not a Golden Age movie. There are no twists and turns.'}
+12	12		301							"{3: 'After getting a playful bonk on the head and hearing the ""story"", Support Force members return to their posts, perfectly content.'}"
+13	13		301							{2: 'Bridget', 3: 'These new rookies are getting harder to handle with each batch...'}
+14	14		301							"{3: ""Despite her words, a smile plays at the corners of Bridget's lips.""}"
+15	15		302							{2: 'That was quite a story.', 3: '16'}
+16	16		301							{2: 'Bridget', 3: '【kuroname】? What brings you here...'}
+17	17		302							{2: 'Just running an errand for someone.', 3: '18'}
+18	18		301							{2: 'Bridget', 3: 'Hm? Is this... a letter from Trojan?'}
+19	19		301							"{3: ""You can call it that, but it's really just a folded note.""}"
+20	20		401							{1: '2', 2: '4095'}
+21	21		304			AniZhuanchangEnd				{1: 'Hey sunshine, I thought I was the one who saved you... but I guess you saved me again.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 7: '-4', 10: '1'}
+22	22		304							"{1: ""Let's skip the formalities—we should grab a drink together whenever we're free."", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 7: '1', 9: '1', 10: '1'}"
+23	23		301			AniZhuanchangEnd				"{3: ""The note carries two short lines on it—exactly what you'd expect from Trojan.""}"
+24	24		301							"{2: 'Bridget', 3: ""Thanks, I'll take that. But... why are you the one delivering it?""}"
+25	25		302							{2: 'I ran into her when I was trying to submit my mission report.', 3: '26'}
+26	26		301							"{3: ""Trojan was checking in at the military department when you were there to hand in your mission report. She's the only Construct modified with tantalum copolymers, so there's no way Babylonia would ever let her back to Norman Mining Corp.""}"
+27	27		301							"{3: ""Apparently on her way to a new mission and not having much time to spare, Trojan asked you to pass along this note, knowing that you'd see Bridget in a bit at a meeting.""}"
+28	28		301							{2: 'Bridget', 3: 'How is she doing?'}
+29	29		302							{2: 'Pretty good.', 3: '30'}
+30	30		301							"{3: ""Trojan's data was transferred from the Star of Life to the Science Council when the unique condition of her frame was discovered.""}"
+31	31		301							"{3: ""After a thorough examination, Asimov concludes that Trojan's successful modification using tantalum copolymers can only be described as a miraculous coincidence.""}"
+32	32		301							{3: 'Whatever made the mission a success remains unclear, but one thing is certain: that the memories she lost may never be recovered.'}
+33	33		301							"{2: 'Bridget', 3: ""Indeed, completely losing those memories might not be such a bad thing for Trojan—as long as she doesn't mind it herself.""}"
+34	34		301							"{2: 'Bridget', 3: ""Oops, it's about time... You're going to that meeting, too, right?""}"
+35	35		302							{2: 'Yes.', 3: '36'}
+36	36		301							{2: 'Bridget', 3: 'Well then, shall we?'}
+37	37		301							{2: 'Bridget', 3: 'Say... would you have a few minutes to spare after the meeting?'}
+38	38		301				AniZhuanchangBegin			{3: 'She reaches her hand out at you with a smile.'}
+39	39		105							
+40	40		502							{1: 'DialogDisable'}
+41	41		401							{1: '1', 2: '36'}
+42	42		101						3000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory427.jpg'}
+43	43		401							{1: '1', 2: '5007'}
+44	44		107			AniZhuanchangEnd			2000.0	{1: 'Babylonia', 2: 'Conference Room'}
+45	45		108							{1: '1'}
+46	46		301			DialogEnable				{3: 'The Science Council called for this meeting following a preliminary analysis of the data Bridget had retrieved from the underground facility.'}
+47	47		301							{3: '...'}
+48	48		201							{1: '1', 2: '500004'}
+49	49		301							{1: '1', 2: 'Asimov', 3: 'Based on our findings, Science Council Section 1 has concluded that the research on tantalum copolymers was merely in its conceptual stages.', 4: '1'}
+50	50		301							{2: 'Asimov', 3: 'While the tantalum copolymer can be classified as a new branch of research, I personally do not find it promising.', 4: '1'}
+51	51		301							{2: 'Asimov', 3: 'This might become a new beginning in time, but not just yet.', 4: '1'}
+52	52		301							{2: 'Asimov', 3: 'The Science Council has incorporated this project into the Tantalum Theory Laboratory of the Section 1, where further research will be conducted.', 4: '1'}
+53	53		202							{1: '1', 6: '1'}
+54	54		201							{1: '1', 2: '500004', 4: '400'}
+55	55		201							{1: '2', 2: '500863', 4: '-400'}
+56	56		301							{1: '1', 2: 'Councilor A', 3: 'So... did the Science Council also retrieve all the laboratory data from that time? If, as stated in the mission report, the lab used the data from live subject experimentation...', 4: '2'}
+57	57		301							{2: 'Councilor A', 3: 'Then, would this not indicate that the Science Council has violated the regulations prohibiting unauthorized experimentation?', 4: '2'}
+58	58		301							{2: 'Asimov', 3: 'I regret to inform you, sir, that we did not utilize any of their laboratory data. All recovered illegal data has been completely destroyed.', 4: '1'}
+59	59		301							{2: 'Councilor A', 3: 'Why?!', 4: '2'}
+60	60		301							"{2: 'Asimov', 3: ""According to the data that Support Force has retrieved, all experimental models recovered from the Konstantin Mine's underground laboratory were fundamentally flawed. Their theoretical data was built entirely on incorrect premises."", 4: '1'}"
+61	61		301							{2: 'Asimov', 3: 'To put it another way, their approach was flawed from the very beginning.', 4: '1'}
+62	62		301							{2: 'Asimov', 3: 'Trojan and the underground giant Construct were successfully modified because their compatibility with tantalum-193 copolymer was naturally at a low threshold value. Even then, both subjects invariably developed adverse effects.', 4: '1'}
+63	63		301							"{2: 'Asimov', 3: ""Therefore, all experimental data retrieved from the mine's underground facilities can only serve as evidence of criminal activity. The Science Council will compile all of it and submit it to Babylonia for processing."", 4: '1'}"
+64	64		301							"{2: 'Asimov', 3: 'If this, to you, counts as ""using illegal experimental data"", well... you\'re free to see it that way if you so wish.', 4: '1'}"
+65	65		301							{2: 'Councilor A', 3: '...', 4: '2'}
+66	66		202							{1: '1', 2: '2', 6: '1'}
+67	67		201							{1: '1', 2: '500906'}
+68	68		301							{1: '1', 2: 'Bridget', 3: 'Wow... That was really impressive.', 4: '1'}
+69	69		302							"{2: ""That's true."", 3: '70'}"
+70	70		301							{3: 'When it comes to this subject, Asimov never yields an inch.'}
+71	71		301							"{3: 'Before entering the mine, no one knew about the illegal experiments in the laboratory. The way they\'re now making a fuss after retrieving ""experimental results"" only shows how desperate they\'ve become.'}"
+72	72		301							"{2: 'Bridget', 3: ""Glad to see the data being used as evidence against Kurono. Thank God I didn't risk my life bringing it back for nothing."", 4: '1'}"
+73	73		202							{1: '1', 6: '1'}
+74	74		201							{1: '1', 2: '500004', 4: '400'}
+75	75		201							{1: '2', 2: '500863', 4: '-400'}
+76	76		301							{1: '1', 2: 'Asimov', 3: 'Besides, the core objective of this mission is to restart the Konstantin Tantalum Mine. The project regarding tantalum copolymers was first proposed during the Golden Age.', 4: '1'}
+77	77		301							{2: 'Asimov', 3: 'Any other questions?', 4: '1'}
+78	78		301							{2: 'Councilor A', 3: '...Humph.', 4: '2'}
+79	79		301							{3: 'Sheepishly, the councilor drops the subject.'}
+80	80		202							{1: '1', 2: '2', 6: '1'}
+81	81		201							{1: '1', 2: '500906'}
+82	82		301							"{1: '1', 2: 'Bridget', 3: ""With the Konstantin Mine being reactivated... I'm sure they'll be able to find Mom and Dad's remains one day."", 4: '1'}"
+83	83		301							"{2: 'Bridget', 3: 'I suppose this is the best ending to this ""story"".', 4: '1'}"
+84	84		301				AniZhuanchangBegin			{3: 'She gently closes the final page of the mission briefing in her hands.'}
+85	85		202							{1: '1', 6: '1'}
+86	86		401							{1: '2', 2: '2768'}
+87	87		401							{1: '1', 2: '36'}
+88	88		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory896.jpg'}
+89	89		401							{1: '1', 2: '209'}
+90	90		201							{1: '1', 2: '500873', 7: '1'}
+91	91		301			AniZhuanchangEnd				"{1: '1', 3: ""A gust of night wind blows outside as heavy curtains shield the room from the cold. In the dim light, Victoria sits upright in Norman Mining Corp's conference room, closing the Joint Statement in her hands.""}"
+92	92		202							{1: '1', 6: '1'}
+93	93		201							{1: '1', 2: '500138'}
+94	94		301							"{1: '1', 2: 'Norman Researcher', 3: ""...Ma'am, a comprehensive report of everything that occurred in the mines has been sent to your terminal."", 4: '1'}"
+95	95		301							{2: 'Norman Researcher', 3: 'Overall, everything appears to be in order.', 4: '1'}
+96	96		201							{1: '1', 2: '500873'}
+97	97		301							{1: '1', 2: 'Victoria', 3: 'Mm, excellent.', 4: '1'}
+98	98		301							{3: 'With a wave of her hand, she dismisses the researcher from the conference room.'}
+99	99		204							{1: '1', 2: '2'}
+100	100		301							{2: 'Victoria', 3: 'Well then, pleasure doing business with you.', 4: '1'}
+101	101		202							{1: '1', 6: '1'}
+102	102		301							{2: '???', 3: '...Likewise.'}
+103	103		401							{1: '2', 2: '2825'}
+104	104		301							{3: 'She raises her porcelain cup and gently clinks it with that of the figure sitting in the shadows.'}
+105	105		301							"{2: '???', 3: ""But... we haven't achieved what you initially promised...""}"
+106	106		201							{1: '1', 2: '500873', 3: '2'}
+107	107		301							"{1: '1', 2: 'Victoria', 3: ""Heh, and I was never aware that you had already extended your reach into Norman Mining Corporation's laboratories."", 4: '1'}"
+108	108		301							{2: 'Victoria', 3: 'We recovered the Konstantin Mine and you obtained part of the experimental data. Our laboratories were investigated, and you now have new criminal charges.', 4: '1'}
+109	109		301							"{2: 'Victoria', 3: ""Fair and square, wouldn't you say?"", 4: '1'}"
+110	110		202							{1: '1', 6: '1'}
+111	111		301							"{2: '???', 3: ""...Yes, ma'am.""}"
+112	112		301							{3: 'A deep chuckle emanates from the figure sitting in the shadows.'}
+113	113		301							"{2: '???', 3: ""What became of that test subject... the Construct by the name Skych? Your household butler, if I'm not mistaken?""}"
+114	114		201							{1: '1', 2: '500873', 3: '2'}
+115	115		301							"{1: '1', 2: 'Victoria', 3: ""He's just a dog loyal to a bygone era... heh."", 4: '1'}"
+116	116		301							{2: 'Victoria', 3: 'As a final courtesy, we buried his remains in the Norman family cemetery on earth.', 4: '1'}
+117	117		202							{1: '1', 6: '1'}
+118	118		301							{2: '???', 3: 'Well then... I sure look forward to working with you again.'}
+119	119		201							{1: '1', 2: '500873', 3: '2'}
+120	120		301							{1: '1', 2: 'Victoria', 3: 'Likewise.', 4: '1'}
+121	121		301		1		AniZhuanchangBegin			{3: 'She raises her porcelain cup once more toward the figure sitting in the shadows.'}

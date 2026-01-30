@@ -1,0 +1,750 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory140.png'}
+2	2		401							{1: '1', 2: '102'}
+3	3		301			DialogEnable				{3: '8:41 AM'}
+4	4		509						600.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory288.png', 2: '2'}
+5	5		201							{1: '1', 2: '500511', 4: '400'}
+6	6		301							{1: '1', 3: 'There is a commotion on the lower level. Noan flips open the vent cover to find over thirty upper-level guards charging into the Commoner Carriage and blocking the narrow passageways, causing many to groan and complain.'}
+7	7		301							"{2: 'Noan', 3: ""(What's happening...)"", 4: '1'}"
+8	8		201							{1: '2', 2: '500197', 4: '-650'}
+9	9		301							"{1: '1', 3: ""Crawling inside the air duct toward where most guards have gathered, Noan begins to see a trail of blood as if someone was dragged across the floor. Then he sees Assad's blood-soaked clothes.""}"
+10	10		204							{1: '1', 2: '4'}
+11	11		301							{2: 'Noan', 3: '...!', 4: '1'}
+12	12		301							"{3: ""Assad's broken bones are exposed in the air and coated in dried blood, piercing through his flesh and skin. Part of his head is missing—his toothless mouth is silently bemoaning the pain he suffered before his death.""}"
+13	13		301							{3: 'Tight ropes used to tie Assad up are twisting his body unnaturally. The guards around him seem to be displaying the cruel scene on purpose, showcasing how Assad was killed.'}
+14	14		301							"{2: 'Upper-Level Guard 1', 3: ""Stay silent all you want, but the rest of the core members of the Cargo Crew are next! You'll witness how they're all dragged to their deaths on the train track!"", 4: '2'}"
+15	15		301							"{2: 'Upper-Level Guard 1', 3: ""Tell us where you've hidden the things if you don't want that to happen!"", 4: '2'}"
+16	16		202							{1: '2', 6: '1'}
+17	17		201							{1: '2', 2: '500515', 3: '5', 4: '-550'}
+18	18		301							{1: '1', 2: 'Rachel', 3: '...', 4: '2'}
+19	19		202							{1: '2', 6: '1'}
+20	20		201							{1: '2', 2: '500197', 4: '-650'}
+21	21		301							"{1: '1', 2: 'Upper-Level Guard 2', 3: ""Rachel, this isn't like one of the little brawls in the past. We could take them at face value and only punish those on the scene."", 4: '2'}"
+22	22		301							"{2: 'Upper-Level Guard 2', 3: ""But this time, it's threatening all of us. Your silence is only going to escalate things. Our boss will send us to our deaths if we don't have it all sorted out today."", 4: '2'}"
+23	23		202							{1: '2', 6: '1'}
+24	24		201							{1: '2', 2: '500515', 3: '5', 4: '-550'}
+25	25		301							{1: '1', 2: 'Rachel', 3: 'Escalate things? The aristocrats upstairs have pushed our folks to their deaths! Does that not escalate things? Or the times when desperate people take their own lives? When you lot beat up and kill whoever you want?', 4: '2'}
+26	26		202							{1: '2', 6: '1'}
+27	27		201							{1: '2', 2: '500197', 4: '-650'}
+28	28		301							{1: '1', 2: 'Upper-Level Guard 3', 3: 'Do you think your little stunt here is going to solve anything?', 4: '2'}
+29	29		202							{1: '2', 6: '1'}
+30	30		201							{1: '2', 2: '500197', 4: '-650'}
+31	31		301							"{1: '1', 2: 'Upper-Level Guard 2', 3: 'We don\'t want to make it difficult for you. There\'s no need for us to make a scene here—we\'re ""all"" working for the people upstairs. Just hand over the things, and no one else gets hurt.', 4: '2'}"
+32	32		202							{1: '2', 6: '1'}
+33	33		201							{1: '2', 2: '500515', 4: '-550'}
+34	34		301							{1: '1', 3: 'Rachel sneers without answering. Instead, she turns and looks at the entrance to the vents.'}
+35	35		301							{2: 'Noan', 3: '...', 4: '1'}
+36	36		301							"{3: ""Noan knows that Rachel needs to receive a signal that confirms Noan's presence.""}"
+37	37		301				AniZhuanchangBegin			{3: 'But he must take advantage of the dark air ducts right now without making a sound.'}
+38	38		510						300.0	{1: '2', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory288.png'}
+39	39		202							{1: '1', 2: '2', 6: '1'}
+40	40		504			DialogDisable				{1: '0.7'}
+41	41		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory602.jpg'}
+42	42		201							{1: '1', 2: '500515', 3: '1'}
+43	43		301			DialogEnable	AniZhuanchangBegin			"{1: '1', 2: 'Rachel', 3: ""...You know, sometimes I really wish you'd stick that firefly on your shoulder."", 4: '1'}"
+44	44		504			DialogDisable				{1: '0'}
+45	45		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory140.png'}
+46	46		509						800.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory288.png', 2: '2'}
+47	47		502							{1: 'AniZhuanchangEnd'}
+48	48		201							{1: '1', 2: '500511', 4: '400'}
+49	49		201							{1: '2', 2: '500515', 4: '-550'}
+50	50		301			DialogEnable				{1: '1', 3: 'Quietly, Noan takes out his clockwork firefly and turns on the little light bulb on its tail, gently waving it by the vent.'}
+51	51		204							{1: '2', 2: '1'}
+52	52		301							{2: 'Rachel', 3: '...', 4: '2'}
+53	53		202							{1: '2', 6: '1'}
+54	54		201							{1: '2', 2: '500197', 4: '-650'}
+55	55		301							"{1: '1', 2: 'Upper-Level Guard 2', 3: ""You're stalling, aren't you? Waiting for somebody?"", 4: '2'}"
+56	56		301							{2: 'Noan', 3: '...', 4: '1'}
+57	57		301							"{2: 'Upper-Level Guard 2', 3: ""If you're waiting for the two squads you sent out, I can tell you that they're already dead."", 4: '2'}"
+58	58		301							{3: 'The guard takes out his terminal and shows Rachel a recording.'}
+59	59		301							{2: 'Upper-Level Guard 2', 3: 'Thanks to this coward, the upper level is killing two birds with one stone today.', 4: '2'}
+60	60		301							"{3: ""He kicks Assad's body, laughing.""}"
+61	61		202							{1: '2', 6: '1'}
+62	62		201							{1: '2', 2: '500515', 3: '5', 4: '-550'}
+63	63		301							"{1: '1', 2: 'Rachel', 3: ""Fine. I'll go with you."", 4: '2'}"
+64	64		502							{1: 'DialogDisable'}
+65	65		202							{1: '1', 2: '2', 6: '1'}
+66	66		510						800.0	{1: '2', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory288.png'}
+67	67		201							{1: '1', 2: '500093'}
+68	68		301			DialogEnable				"{1: '1', 2: 'Cargo Captain Niino', 3: ""Rachel! You can't—"", 4: '1'}"
+69	69		401							{1: '1', 2: '36'}
+70	70		401						200.0	{1: '2', 2: '1510'}
+71	71		401							{1: '2', 2: '1510'}
+72	72		301			RImgBg1Shake				{3: 'Before he can finish, two shots from two different guards graze his shoulder, hitting a young man standing behind him. The young man falls down as the people burst into screams and protests.'}
+73	73		202							{1: '1', 6: '1'}
+74	74		401							{1: '1', 2: '31'}
+75	75		101						400.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+76	76		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory288.png'}
+77	77		201							{1: '1', 2: '500511', 3: '4', 7: '1'}
+78	78		301							{1: '1', 2: 'Noan', 3: '(I have to act now!)', 4: '1'}
+79	79		202							{1: '1', 6: '1'}
+80	80		101						350.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+81	81		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory140.png'}
+82	82		201							{1: '1', 2: '500197', 7: '1'}
+83	83		301							{1: '1', 2: 'Upper-Level Guard 2', 3: 'Look at you all huddling together. How many do you think will go down with just one grenade?', 4: '1'}
+84	84		202							{1: '1', 6: '1'}
+85	85		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+86	86		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory140.png'}
+87	87		201							{1: '1', 2: '500093', 7: '1'}
+88	88		301							{1: '1', 2: 'Cargo Captain Niino', 3: 'You ******* monsters!', 4: '1'}
+89	89		202							{1: '1', 6: '1'}
+90	90		101						250.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+91	91		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory140.png'}
+92	92		201							{1: '1', 2: '500515', 3: '5', 7: '1'}
+93	93		301							{1: '1', 2: 'Rachel', 3: 'Enough! Niinon! How many defenseless people are here?! Do you want to get them all killed?!', 4: '1'}
+94	94		202							{1: '1', 6: '1'}
+95	95		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+96	96		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory140.png'}
+97	97		201							{1: '1', 2: '500454', 7: '1'}
+98	98		301							"{1: '1', 2: 'Cargo Member Weyland', 3: ""Boss! We can't let you—"", 4: '1'}"
+99	99		401						50.0	{1: '2', 2: '1510'}
+100	100		401							{1: '2', 2: '10002001'}
+101	101		202							{1: '1', 6: '1'}
+102	102		101						20.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+103	103		401							{1: '2', 2: '2559'}
+104	104		301							{3: 'Another gunshot interrupts him. Taking advantage of the erupted chaos, Noan throws the short sword in his hand at the light on the ceiling. Darkness and shattered glass befall the carriage instantly.'}
+105	105		504							{1: '0.8'}
+106	106		101						400.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory140.png'}
+107	107		101						400.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+108	108		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory140.png'}
+109	109		201							{1: '1', 2: '500197', 7: '1'}
+110	110		301							{1: '1', 2: 'Upper-Level Guard 2', 3: 'Sound the alarm!', 4: '1'}
+111	111		401			DialogDisable				{1: '2', 2: '2601'}
+112	112		202							{1: '1', 6: '1'}
+113	113		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+114	114		201							{1: '1', 2: '500515', 7: '1'}
+115	115		101						280.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory140.png'}
+116	116		202							{1: '1', 6: '1'}
+117	117		101						250.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+118	118		201							{1: '1', 2: '500197', 7: '1'}
+119	119		101						220.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory140.png'}
+120	120		202							{1: '1', 6: '1'}
+121	121		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+122	122		201							{1: '1', 2: '500511', 7: '1'}
+123	123		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory288.png'}
+124	124		202							{1: '1', 6: '1'}
+125	125		101						150.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+126	126		101						150.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory140.png'}
+127	127		101						100.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+128	128		101						100.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory140.png'}
+129	129		101						50.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+130	130		101						50.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory140.png'}
+131	131		101						20.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+132	132		101						20.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory140.png'}
+133	133		101						20.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+134	134		101						20.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory140.png'}
+135	135		101						3000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+136	136		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory140.png'}
+137	137		201							{1: '1', 2: '500398', 7: '1'}
+138	138		301			DialogEnable				{1: '1', 2: 'Cargo Member Shauna', 3: 'Move!', 4: '1'}
+139	139		401							{1: '2', 2: '1510'}
+140	140		202							{1: '1', 6: '1'}
+141	141		101						50.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+142	142		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory140.png'}
+143	143		201							{1: '1', 2: '500427', 4: '400', 7: '1'}
+144	144		201							{1: '2', 2: '500427', 4: '-400', 7: '1'}
+145	145		301							{1: '1', 3: 'The Cargo Crew members do not hesitate upon receiving the signal, charging toward the nearby guards immediately.'}
+146	146		202							{1: '1', 2: '2', 7: '1'}
+147	147		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+148	148		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory140.png'}
+149	149		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+150	150		401							{1: '2', 2: '10002001'}
+151	151		301			RImgBg1Shake				"{3: ""Making use of the darkness and confusion, Noan drops down from the vent and stabs the guard with the grenade with his Rev Blade before grabbing the guard's spare long sword and throwing it to the teammate beside him.""}"
+152	152		201							{1: '1', 2: '500093'}
+153	153		301							{1: '1', 2: 'Cargo Captain Niino', 3: 'Nice!', 4: '1'}
+154	154		301							{3: 'The guards have expected some conflicts, but they have not foreseen how determined the people are.'}
+155	155		301							{2: 'Upper-Level Guard 1', 3: 'Catch him... Aargh!'}
+156	156		203						100.0	{1: '1', 2: '0.1', 5: '-150'}
+157	157		202							{1: '1', 6: '1'}
+158	158		401						300.0	{1: '2', 2: '13015111'}
+159	159		402							{1: '13015111'}
+160	160		401							{1: '2', 2: '819016'}
+161	161		301			RImgBg1Shake				"{3: ""Niino leaps toward the still-standing guard, parrying a strike to his face. Shifting his body, he pushes his blade through the guard's unarmored throat, and the gushing blood shuts the guard up.""}"
+162	162		401							{1: '2', 2: '10001004'}
+163	163		401							{1: '2', 2: '1512'}
+164	164		401							{1: '2', 2: '737'}
+165	165		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+166	166		301							{3: 'Right after that, the sound of screaming and explosions blend together, almost deafening everyone in the cart.'}
+167	167		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+168	168		504							{1: '0'}
+169	169		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab'}
+170	170		301							{3: 'By the time the emergency lights turn on, the thirty or so guards are now silent corpses alongside a few innocent bystanders, leaving only the blood-drenched people panting and trembling.'}
+171	171		201							{1: '1', 2: '500515'}
+172	172		301							"{1: '1', 2: 'Rachel', 3: ""There's no turning back now that we've killed their guards."", 4: '1'}"
+173	173		203							{1: '1', 2: '0.25', 3: '-400'}
+174	174		201							{1: '2', 2: '500093', 4: '400'}
+175	175		301							"{1: '1', 2: 'Cargo Captain Niino', 3: ""Good with me. I'm done waiting."", 4: '2'}"
+176	176		202							{1: '1', 2: '2', 7: '1'}
+177	177		201							{1: '1', 2: '500454', 4: '-400'}
+178	178		201							{1: '2', 2: '500398', 4: '400'}
+179	179		301							"{1: '1', 2: 'Cargo Member Weyland', 3: ""Let's kick it off! They're just going to send more people down if we wait any longer!"", 4: '1'}"
+180	180		301							{2: 'Cargo Member Shauna', 3: 'We await your order.', 4: '2'}
+181	181		202							{1: '1', 2: '2', 6: '1'}
+182	182		201							{1: '1', 2: '500515'}
+183	183		301							{1: '1', 2: 'Rachel', 3: '...Alright!', 4: '1'}
+184	184		301						100.0	{3: 'Rachel steps over the pools of blood and smashes the alarm of the lower floor before slotting in her ID card as the Cargo Crew Chief Captain, stopping its earsplitting shriek.'}
+185	185		402							{1: '2601'}
+186	186		301							{2: 'Rachel', 3: 'Do you remember your vow when you joined the Cargo Crew?', 4: '1'}
+187	187		301							{3: 'Rachel clenches her fist as the people watch her in silence. Her hands are covered in the blood of their enemies.'}
+188	188		203							{1: '1', 2: '0.25', 3: '400'}
+189	189		201							{1: '2', 2: '500454', 4: '-400'}
+190	190		301							"{1: '2', 2: 'Cargo Member Weyland', 3: ""We'll free everyone from oppression! We'll lay the dead to rest ourselves and let them know their sacrifices are not for naught!"", 4: '2'}"
+191	191		202							{1: '2', 6: '1'}
+192	192		203							{1: '1', 2: '0.25'}
+193	193		301				AniZhuanchangBegin			"{2: 'Rachel', 3: ""Now's the time to fulfill your promise...!"", 4: '1'}"
+194	194		401			DialogDisable			400.0	{1: '1', 2: '36'}
+195	195		202							{1: '1', 7: '1'}
+196	196		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory142.png'}
+197	197		401				AniZhuanchangEnd			{1: '1', 2: '42'}
+198	198		301			DialogEnable				"{3: 'They have not bought as much time as they wanted. The aristocrats on the upper level quickly realize what is happening and unanimously decide to quench the ""riot"" on the lower level, sanctioning all forms of violence.'}"
+199	199		301							{3: 'In this short period of time, those who are willing to fight gather at Carriage G, arming themselves with the weapons hidden there, while those not willing to or cannot fight move to the back of the train.'}
+200	200		301							{3: 'The two sides clash inside a carriage at the lower-middle section of Asslam.'}
+201	201		301							{3: 'The guards have the upper hand initially, suppressing the lower level with their superior equipment. But with Rachel and other core members leading the lower level, the people respond with superior tactical maneuvers.'}
+202	202		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory126.png', 3: '0', 4: '1', 5: '1'}
+203	203		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+204	204		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory126.png'}
+205	205		201							{1: '1', 2: '500197'}
+206	206		301							"{1: '1', 2: 'Messenger', 3: ""Our people are ambushed in various parts of the train during their advances... We've already lost contact with over eight squads."", 4: '1'}"
+207	207		202							{1: '1', 6: '1'}
+208	208		201							{1: '1', 2: '500340'}
+209	209		301							{1: '1', 2: 'Upper-Level Commander', 3: 'Dammit... Where the hell are those rats hiding?! Find them!', 4: '1'}
+210	210		202							{1: '1', 6: '1'}
+211	211		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+212	212		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory603.jpg'}
+213	213		301							"{3: 'With their knowledge of the train, the people strike from unexpected, shrouded locations, from the ducts to the roofs. They cut the power and the light to the carriages while making many inconspicuous ""traps.""'}"
+214	214		301							{3: 'The traps are made with crude materials—a spike that is sticking out, an easily-shattered glass box, some torn wires on the floor, or even the frame of a broken umbrella abandoned in an unknown corner.'}
+215	215		301							{3: 'Simple as they may be, they are all incredibly useful tools in a close-quarter fight in a confined space.'}
+216	216		301							{3: 'Noan can hear the guards not too far in the distance shouting about retreating, only for them to choose to stay and fight instead.'}
+217	217		201							{1: '1', 2: '500515', 3: '13'}
+218	218		301							{1: '1', 2: 'Rachel', 3: 'Ha! Good luck having those aristocrats allowing them to bring the fight to the upper level.', 4: '1'}
+219	219		202							{1: '1'}
+220	220		301							{3: 'After deciding to stay, the guards are soon given new weaponry and launch another assault.'}
+221	221		301							"{3: ""Facing their heavy fire, the people's tactics quickly become ineffective.""}"
+222	222		301							"{3: ""The desperate people must sacrifice more to deter the guard's impenetrable advance.""}"
+223	223		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+224	224		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory142.png'}
+225	225		201							{1: '1', 2: '500427', 4: '-600'}
+226	226		201							{1: '3', 2: '500515'}
+227	227		201							{1: '2', 2: '500427', 4: '600'}
+228	228		301							"{1: '1', 2: 'Rachel', 3: ""This is the moment we've been waiting for! If we back down now, what will happen to the people hiding behind us?"", 4: '3'}"
+229	229		301							{2: 'Cargo Crew Members', 3: 'To the death!', 4: '1', 5: '2'}
+230	230		202							{1: '1', 2: '2', 3: '3'}
+231	231		301							{3: 'The Cargo Crew can last as long as they have against the guards because of how they navigate and assign their forces in the narrow carriages. Once they initiate an advance, however, all their advantages vanish immediately.'}
+232	232		301							{3: 'A Cargo Crew member near Noan howls with his weapon raised, running past Noan without noticing a flashing red light near a broken chair to the side.'}
+233	233		201							{1: '1', 2: '500511', 3: '4'}
+234	234		301							{1: '1', 2: 'Noan', 3: 'Watch out!', 4: '1'}
+235	235		202							{1: '1', 6: '1'}
+236	236		501			DialogDisable				{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+237	237		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory294.png'}
+238	238		401				RImgBg1Shake			{1: '2', 2: '884'}
+239	239		304							{1: 'Every bullied person living on the lower level has dreamed about this day.', 2: 'ff4e4eff', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 6: '1'}
+240	240		304							{1: 'In their dreams, they will find true equality, fairness, and liberty the moment they cross the line weaved by gunfire.', 2: 'ff4e4eff', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 6: '1'}
+241	241		304							{1: 'The people believe that their combined will can triumph over any amount of guards from the upper level.', 2: 'ff4e4eff', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 6: '1'}
+242	242		304							{1: 'Only when the real fight begins does everyone involved truly understand how fragile life is.', 2: 'ff4e4eff', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 6: '1', 9: '1'}
+243	243		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+244	244		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+245	245		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory142.png'}
+246	246		401							{1: '2', 2: '1504'}
+247	247		401							{1: '2', 2: '752'}
+248	248		301			DialogEnable				{3: 'Dust and smoke fill the lower-level carriage. Explosions and screams come out of every corner.'}
+249	249		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+250	250		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory143.png'}
+251	251		401							{1: '2', 2: '10001004'}
+252	252		201							{1: '1', 2: '500197', 4: '600', 7: '1'}
+253	253		201							{1: '2', 2: '500197', 7: '1'}
+254	254		201							{1: '3', 2: '500197', 4: '-600', 7: '1'}
+255	255		301							"{1: '1', 3: ""The well-armed guards are pushed back by the angry people while the superior weapons of the guards take the people's lives away.""}"
+256	256		203						80.0	{1: '3', 2: '0.1', 3: '-600', 4: '-150'}
+257	257		202							{1: '3', 6: '1'}
+258	258		203						80.0	{1: '1', 2: '0.1', 3: '600', 4: '-150'}
+259	259		202							{1: '1', 6: '1'}
+260	260		301			RImgBg1Shake				{3: 'Every life on Asslam—privileged or poor—is dissolving like an ice cube amidst fire, wailing and roaring in despair.'}
+261	261		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+262	262		202							{1: '2', 6: '1'}
+263	263		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab', 2: '1'}
+264	264		201							{1: '1', 2: '500511', 7: '1'}
+265	265		301							{1: '1', 3: 'Noan can see blood gushing out under the light that seeps through the loose train doors.'}
+266	266		202							{1: '1', 6: '1'}
+267	267		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+268	268		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory603.jpg'}
+269	269		104							{1: '100|-100|-250', 2: '0'}
+270	270		401						200.0	{1: '2', 2: '959'}
+271	271		401							{1: '2', 2: '819016'}
+272	272		301			RImgBg1Shake				{1: '1', 3: 'The red liquid, the metallic shells, the debris, and the human flesh are all fused together, splattering all over the narrow passage.'}
+273	273		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+274	274		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory142.png'}
+275	275		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+276	276		401						300.0	{1: '2', 2: '10007502'}
+277	277		401							{1: '2', 2: '1504'}
+278	278		301			RImgBg1Shake				{3: 'Bodies still warm pave the floor. Without a way forward, someone has blown away the door, letting the speeding train hurl the bodies and blood away, leaving behind a trail of blood on the tunnel wall.'}
+279	279		401			DialogDisable				{1: '2', 2: '772'}
+280	280		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+281	281		201							{1: '1', 2: '500280', 7: '1'}
+282	282		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory600.jpg'}
+283	283		401							{1: '2', 2: '558'}
+284	284		201							{1: '1', 2: '500164', 7: '1'}
+285	285		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory142.png'}
+286	286		401							{1: '2', 2: '558'}
+287	287		201							{1: '1', 2: '500462', 7: '1'}
+288	288		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory595.jpg'}
+289	289		401							{1: '2', 2: '558'}
+290	290		201							{1: '1', 2: '500425', 7: '1'}
+291	291		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory602.jpg'}
+292	292		401							{1: '2', 2: '558'}
+293	293		202							{1: '1', 6: '1'}
+294	294		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+295	295		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory143.png'}
+296	296		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab'}
+297	297		301			DialogEnable				{3: 'Countless lives and dreams, quarrels and prejudices, oppression and hate... Death erases them all.'}
+298	298		301							{3: 'The bustling carriage of yesterday is now silent after the ceaseless explosions.'}
+299	299		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory142.png', 3: '0', 4: '1', 5: '1'}
+300	300		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+301	301		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory142.png'}
+302	302		301							{3: 'Fewer than 50 people remain in the Cargo Crew by the next morning. There is no shouting in the frontline, just the sound of guns firing at each other.'}
+303	303		301							{3: 'Lying beside them are thousands of corpses and their blood, silently declaring the outcome of their fight.'}
+304	304		301							{3: 'The remaining people will be able to cross the connecting carriage and storm the upper level after they take down the few enemies still standing.'}
+305	305		301							{3: 'Before they can breathe a sigh of relief for their tragic victory, however, they hear unnerving thumping and cranking entering the connecting carriage.'}
+306	306		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+307	307		201							{1: '1', 2: '500016'}
+308	308		401						300.0	{1: '2', 2: '764'}
+309	309		402							{1: '764'}
+310	310		301							{1: '1', 2: '???', 3: '—!', 4: '1'}
+311	311		301							{3: 'An enormous orb-shaped mechanoid appears, stepping over the dead bodies on the floor and firing blood-red lasers at everyone still breathing.'}
+312	312		301							{3: 'Right then, the train enters a tunnel, the carriage unlit by the damaged lights.'}
+313	313		501			DialogDisable				{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+314	314		202							{1: '1', 6: '1'}
+315	315		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+316	316		401						200.0	{1: '2', 2: '819016'}
+317	317		401							{1: '2', 2: '819016'}
+318	318		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+319	319		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory142.png'}
+320	320		301			DialogEnable				{3: 'Seven seconds pass, and the brief darkness fades away, revealing nine more lives having been taken.'}
+321	321		201							{1: '1', 2: '500093', 3: '9'}
+322	322		301							"{1: '1', 2: 'Cargo Captain Niino', 3: ""****! They couldn't beat us, and now they're sending in that thing!"", 4: '1'}"
+323	323		401							{1: '2', 2: '10001004'}
+324	324		301							"{3: ""Niino runs as he shouts, picking up a rifle from a dead guard before aiming and contributing to the fray of fire. Nonetheless, all their bullets ricochet off the mechanoid's metal shell, barely damaging it.""}"
+325	325		301							"{2: 'Cargo Captain Niino', 3: ""****! It's tough!"", 4: '1'}"
+326	326		202							{1: '1', 6: '1'}
+327	327		201							{1: '1', 2: '500399'}
+328	328		301							{1: '1', 2: 'Cargo Member Shauna', 3: 'Get out of my way, then!', 4: '1'}
+329	329		401							{1: '2', 2: '1511'}
+330	330		301							{3: 'Shauna brings out a grenade launcher from who-knows-where, dashing near Niino and firing even before he has safely retreated. The anti-tank projectile flies through the greenish-grey smoke, hitting the giant machine.'}
+331	331		401			DialogDisable				{1: '2', 2: '13015319'}
+332	332		202							{1: '1', 6: '1'}
+333	333		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+334	334		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+335	335		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory294.png'}
+336	336		401							{1: '2', 2: '957'}
+337	337		104						3000.0	{1: '400|200|-500', 2: '0'}
+338	338		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory142.png', 3: '0', 4: '1', 5: '2'}
+339	339		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+340	340		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory142.png'}
+341	341		201							{1: '1', 2: '500511', 3: '9', 4: '-400'}
+342	342		201							{1: '2', 2: '500399', 4: '400'}
+343	343		301			DialogEnable				{1: '1', 2: 'Noan', 3: 'Did that do it?', 4: '1'}
+344	344		301							{2: 'Cargo Member Shauna', 3: 'It should.', 4: '2'}
+345	345		401						300.0	{1: '2', 2: '764'}
+346	346		402							{1: '764'}
+347	347		301							{3: 'Before the smoke and fire dissipate, the unnerving cranking makes itself known once again.'}
+348	348		204							{1: '1', 2: '5'}
+349	349		201							{1: '2', 2: '500093', 3: '9', 4: '400'}
+350	350		301							"{1: '2', 2: 'Cargo Captain Niino', 3: ""It's not dead!"", 4: '2'}"
+351	351		301							{2: 'Noan', 3: 'Any idea, Shauna?', 4: '1'}
+352	352		201							{1: '2', 2: '500399', 4: '400'}
+353	353		301							{1: '1', 2: 'Cargo Member Shauna', 3: 'That was my idea!', 4: '2'}
+354	354		201							{1: '2', 2: '500093', 3: '9', 4: '400'}
+355	355		301							"{1: '1', 2: 'Cargo Captain Niino', 3: ""What do we do? The guards are still behind it! Where's Rachel?!"", 4: '2'}"
+356	356		301							{2: 'Noan', 3: 'She led another group to the front. This thing has separated us!', 4: '1'}
+357	357		301							"{2: 'Noan', 3: ""Fall back for now! We'll take cover using the heavy blast doors near the coupling. That should buy us some time to regroup."", 4: '1'}"
+358	358		301							"{2: 'Cargo Captain Niino', 3: ""Alright! That's the only thing we can do for now!"", 4: '2'}"
+359	359		201							{1: '2', 2: '500399', 4: '400'}
+360	360		301							{2: 'Cargo Member Shauna', 3: 'Make sure to pick up anything useful on your way out!', 4: '2'}
+361	361		401							{1: '2', 2: '10001004', 4: '400'}
+362	362		301							{3: 'Guided by the three core members, the other Cargo Crew members cover each other as they quickly retreat to the lower level. The scattered guards, meanwhile, take the chance to advance again, staying behind the mechanoid.'}
+363	363		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+364	364		201							{1: '1', 2: '500087', 4: '-400', 7: '1'}
+365	365		201							{1: '2', 2: '500093', 3: '9', 4: '400', 7: '1'}
+366	366		301							{1: '1', 2: 'Bumblebee Member Mike', 3: 'Hey, what are they doing?!', 4: '1'}
+367	367		301							{3: 'Looking at where he is pointing, they can see that a large group of guards is climbing onto the roof of the carriage, covered by the orb-shaped mechanoid.'}
+368	368		301							{2: 'Cargo Captain Niino', 3: 'What are they trying to do?', 4: '2'}
+369	369		201							{1: '1', 2: '500511', 3: '9', 4: '-400'}
+370	370		301							"{1: '1', 2: 'Noan', 3: ""They're avoiding direct confrontations... to sneak to the back? Wait! The people who can't fight are all in the back!"", 4: '1'}"
+371	371		201							{1: '1', 2: '500164', 4: '-400'}
+372	372		201							{1: '2', 2: '500399', 4: '400'}
+373	373		301							{1: '1', 2: 'Cargo Member Jimmy', 3: 'They always use the people as hostages! What do we do? Should we go up and fight?', 4: '1'}
+374	374		301							"{2: 'Cargo Member Shauna', 3: ""We can't. There are too many of them. I didn't think their rich *** is still hiding so many people."", 4: '2'}"
+375	375		201							{1: '1', 2: '500511', 3: '9', 4: '-400'}
+376	376		301							"{1: '1', 2: 'Noan', 3: ""According to Rachel's number, these must be Ashlar's bodyguards."", 4: '1'}"
+377	377		202							{1: '2', 6: '1'}
+378	378		203							{1: '1', 2: '0.25', 3: '-500'}
+379	379		509						800.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory144.png', 2: '2'}
+380	380		201							{1: '2', 2: '500515', 3: '5', 4: '400'}
+381	381		301							{1: '1', 2: 'Rachel', 3: 'Shauna, Noan! A lot of guards have just gotten past us!', 4: '2'}
+382	382		201							{1: '1', 2: '500399', 4: '-550'}
+383	383		301							{1: '1', 2: 'Cargo Member Shauna', 3: 'We see them! What should we do?', 4: '1'}
+384	384		301							"{2: 'Rachel', 3: ""Move back! Asslam is approaching Tunnel 204! The ceiling of the tunnel is not high enough for the guards to move freely, even if they're up on the roof!"", 4: '2'}"
+385	385		301							{2: 'Rachel', 3: 'We have 15 minutes before we enter the 204! Make sure everyone has retreated behind Carriage G! Secure yourselves!', 4: '2'}
+386	386		201							{1: '1', 2: '500511', 3: '9', 4: '-500'}
+387	387		301							{1: '1', 2: 'Noan', 3: 'Carriage G?! What are you planning to do?!', 4: '1'}
+388	388		301				AniZhuanchangBegin			"{2: 'Rachel', 3: ""I'm going to blow it up!"", 4: '2'}"
+389	389		401			DialogDisable				{1: '1', 2: '36'}
+390	390		510						3000.0	{1: '2', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory144.png'}
+391	391		202							{1: '1', 2: '2', 6: '1'}
+392	392		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+393	393		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+394	394		301			DialogEnable				{3: '9:01 AM'}
+395	395		301							{3: 'The winter sky just shows the briefest glimpse of light through the dark clouds, and it already begins to snow.'}
+396	396		401							{1: '2', 2: '957'}
+397	397		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory465.jpg', 3: '0', 4: '1', 5: '1'}
+398	398		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+399	399		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory465.jpg'}
+400	400		401							{1: '2', 2: '13015319'}
+401	401		401							{1: '1', 2: '42'}
+402	402		301			RImgBg1Shake				{3: 'The moment the speeding train exits Tunnel 204, Carriage G explodes, splitting the train in two.'}
+403	403		301				AniZhuanchangBegin			{3: 'The locomotive drags the upper-level carriages onward for a while before gradually stopping five kilometers away.'}
+404	404		501			DialogDisable				{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+405	405		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory455.jpg'}
+406	406		301			DialogEnable				{3: 'The lower-level carriages shake violently from the explosion, flipping over some of the storage carriages nearby. Luckily, preparations have been made, so most people in the Commoner Carriage are safe.'}
+407	407		201							{1: '1', 2: '500511', 3: '9', 4: '-400'}
+408	408		201							{1: '2', 2: '500399', 4: '400'}
+409	409		301							{1: '1', 2: 'Noan', 3: 'I got a message. The front is stopping.', 4: '1'}
+410	410		301							"{2: 'Cargo Captain Shauna', 3: ""I'm not surprised. These are a lot of carriages they're otherwise leaving behind. Those aristocrats can't give up that much money."", 4: '2'}"
+411	411		201							{1: '2', 2: '500093', 3: '9', 4: '400'}
+412	412		301							{1: '1', 2: 'Cargo Captain Niino', 3: 'Is that giant military mechanoid following us?', 4: '2'}
+413	413		301							{2: 'Noan', 3: 'Not yet.', 4: '1'}
+414	414		301							{3: 'Most members who can still fight have stayed in the front with Rachel. The only ones left with the rest of the people are Shauna, Niino, Noan, a Cargo Crew member named Jimmy, and Mike, a Bumblebee member.'}
+415	415		301							"{2: 'Cargo Captain Niino', 3: ""Get everyone off the train first. We're not that far from the other side. This is all for nothing if they manage to pursue us."", 4: '2'}"
+416	416		201							{1: '1', 2: '500399', 4: '-400'}
+417	417		301							"{1: '1', 2: 'Cargo Captain Shauna', 3: ""Does going outside mean we're safe? The guards have legs, too, you know."", 4: '1'}"
+418	418		301							"{2: 'Cargo Captain Shauna', 3: ""Quiet! What's that sound?!"", 4: '1'}"
+419	419		301							{3: 'They can hear a sound most familiar to the Cargo Crew approaching from the distant sky.'}
+420	420		201							{1: '1', 2: '500087', 4: '-400'}
+421	421		301							{1: '1', 2: 'Bumblebee Member Mike', 3: 'A helicopter?!', 4: '1'}
+422	422		401							{1: '2', 2: '3077'}
+423	423		203						80.0	{1: '1', 2: '0.15', 3: '-600'}
+424	424		202							{1: '1'}
+425	425		203						80.0	{1: '2', 2: '0.15', 3: '600'}
+426	426		202							{1: '2'}
+427	427		401							{1: '2', 2: '10001004'}
+428	428		401							{1: '2', 2: '822'}
+429	429		301			RImgBg1Shake				{3: 'Before they can react, intense gunfire disseminates the broken carriage.'}
+430	430		201							{1: '1', 2: '500511', 3: '9', 4: '-400'}
+431	431		201							{1: '2', 2: '500093', 3: '9', 4: '400'}
+432	432		301							{1: '1', 2: 'Cargo Captain Niino', 3: 'Those psychopaths! Is this necessary?!', 4: '2'}
+433	433		301							{2: 'Noan', 3: 'Take cover now!', 4: '1'}
+434	434		202							{1: '1', 2: '2', 6: '1'}
+435	435		401						300.0	{1: '2', 2: '3079'}
+436	436		401							{1: '2', 2: '10001004'}
+437	437		301							{3: 'Bullets shoot through the smoke from the explosion and strike where the people are. Sparks fly as bullet holes riddle the walls and the floor of the carriage.'}
+438	438		201							{1: '1', 2: '500164'}
+439	439		301			RImgBg1Shake				{1: '1', 2: 'Cargo Member Jimmy', 3: 'Aargh!', 4: '1'}
+440	440		502						400.0	{1: 'PanelActor1Shake'}
+441	441		505							{1: 'PanelActor1Shake'}
+442	442		301							{3: 'Jimmy fails to dodge in time and is hit on his left shoulder.'}
+443	443		203						80.0	{1: '1', 2: '0.15', 4: '-150'}
+444	444		202							{1: '1', 6: '1'}
+445	445		401							{1: '2', 2: '3077'}
+446	446		301							{3: 'Noan is about to reach for Jimmy when Mike grabs Noan by his collar and pulls him behind a cover.'}
+447	447		201							{1: '1', 2: '500511', 3: '5'}
+448	448		301							{1: '1', 2: 'Noan', 3: 'Jimmy!', 4: '1'}
+449	449		301							{3: 'Still trying to rush out, Noan is stopped by both Mike and Shauna. He looks at them, confused, but Mike simply shakes his head, speaking only when Noan has slightly calmed down.'}
+450	450		203							{1: '1', 2: '0.25', 3: '400'}
+451	451		201							{1: '2', 2: '500087', 4: '-400'}
+452	452		301							"{1: '1', 2: 'Bumblebee Member Mike', 3: ""Let go. You'll just become another corpse if you go out."", 4: '2'}"
+453	453		202							{1: '1', 2: '2', 6: '1'}
+454	454		201							{1: '1', 2: '500164'}
+455	455		301							{3: 'Jimmy is moaning on the ground in pain. Dense but sporadic bullets land around him, never hitting Jimmy directly.'}
+456	456		401						300.0	{1: '2', 2: '10001004'}
+457	457		401							{1: '2', 2: '752'}
+458	458		502						400.0	{1: 'PanelActor1Shake'}
+459	459		505							{1: 'PanelActor1Shake'}
+460	460		301							{3: 'Jimmy tries to crawl toward the cover, but a bullet hits one of his limbs every time he moves, accompanied by teasing laughter from the other end of the floodlight—the guards are playing with the dying man.'}
+461	461		201							{1: '1', 2: '500093', 3: '9', 4: '-400', 7: '1'}
+462	462		201							{1: '2', 2: '500399', 4: '400', 7: '1'}
+463	463		301							"{1: '1', 2: 'Cargo Captain Niino', 3: ""Those *******! I'm going to kill them all!"", 4: '1'}"
+464	464		301							"{2: 'Cargo Captain Shauna', 3: ""You idiot! Can't you see?! That's what they want!"", 4: '2'}"
+465	465		202							{1: '1', 2: '2', 6: '1'}
+466	466		301							{3: 'They are keeping Jimmy alive to draw out the people hiding behind covers to slaughter them.'}
+467	467		201							{1: '1', 2: '500164'}
+468	468		301							{2: 'Cargo Member Jimmy', 3: 'It hurts... it hurts so much...', 4: '1'}
+469	469		301							{3: 'The wounded Jimmy, still a teenager at this point, is trembling. His tears briefly wash away the bloodstains, revealing his still-adolescent face.'}
+470	470		301							{3: 'But he crawls up despite the pain and raises his pistol even as he cries—hurt and broken as he is, he refuses to kneel and instead fires at the blinding light.'}
+471	471		401							{1: '2', 2: '1510'}
+472	472		301							{2: 'Cargo Member Jimmy', 3: 'Aaaargh... you... you people...', 4: '1'}
+473	473		401							{1: '2', 2: '1510'}
+474	474		301							{3: 'He can barely see the enemy against the light—he can barely hold his gun as it is. But the ricocheting bullets still frighten the cowardly guards, forcing them to put him down. That is the last thing Jimmy can do.'}
+475	475		401						100.0	{1: '2', 2: '662'}
+476	476		401							{1: '2', 2: '662'}
+477	477		203						120.0	{1: '1', 2: '0.2', 4: '-150'}
+478	478		202							{1: '1', 6: '1'}
+479	479		401							{1: '2', 2: '3077'}
+480	480		301			RImgBg1Shake				"{3: 'Following a dehumanizing ""Tch!"", a few rounds pierce Jimmy\'s chest, ending his rasping cry. His eyes are still open as his body hits the ground, those crystal-clear irises of his blurred by a mixture of tears and blood.'}"
+481	481		201							{1: '1', 2: '500093', 3: '9', 4: '400', 7: '1'}
+482	482		201							{1: '2', 2: '500087', 4: '-400', 7: '1'}
+483	483		301							{1: '1', 2: 'Cargo Captain Niino', 3: 'Bastards... Those ***********...!', 4: '1'}
+484	484		301							"{2: 'Bumblebee Member Mike', 3: ""What should we do now... We don't stand a chance confronting them directly."", 4: '2'}"
+485	485		301							"{2: 'Cargo Captain Niino', 3: ""Staying here won't save us anyway. Let's head out and go down fighting!"", 4: '1'}"
+486	486		201							{1: '1', 2: '500399', 4: '400'}
+487	487		301							"{1: '1', 2: 'Cargo Captain Shauna', 3: ""It isn't time for our last stand yet... Check that out."", 4: '1'}"
+488	488		301							{3: 'Shauna points to where Carriage G broke off. The guards are standing near the pneumatics—devices Asslam used to open the train doors during an emergency before the train shifts to Helium-3 as their energy source.'}
+489	489		301							{2: 'Cargo Captain Shauna', 3: 'There is a large amount of heated compressed air inside. I learned about it from the people in Maintenance in the past... If we can get it to leak, it will distract them for a good while.', 4: '1'}
+490	490		201							{1: '2', 2: '500093', 3: '9', 4: '-400'}
+491	491		301							{1: '1', 2: 'Cargo Captain Niino', 3: 'We can take the opportunity to split up and hide, ambushing them from the dark... Do we still have any explosives? Grenades? Anything...?', 4: '2'}
+492	492		201							{1: '2', 2: '500087', 4: '-400'}
+493	493		301							"{1: '1', 2: 'Bumblebee Member Mike', 3: ""We'd have used them if we did!"", 4: '2'}"
+494	494		201							{1: '2', 2: '500093', 3: '9', 4: '-400'}
+495	495		301							"{1: '1', 2: 'Cargo Captain Niino', 3: ""Then it's pointless! We can't get that thing to break from here...!"", 4: '2'}"
+496	496		301							"{2: 'Cargo Captain Shauna', 3: ""I know how to open it. I can do it with a screwdriver if I'm close enough."", 4: '1'}"
+497	497		301							{3: 'Niino looks at her in silence for a few seconds before turning away.'}
+498	498		301							{2: 'Cargo Captain Niino', 3: 'No way...', 4: '2'}
+499	499		301							{2: 'Cargo Captain Shauna', 3: 'If you can all open fire at the same time and cover me for five seconds... no—three. Three seconds is all I need to get to that track behind covers.', 4: '1'}
+500	500		301							"{2: 'Cargo Captain Niino', 3: ""I said no! How's that different from taking your own life? You were just lecturing me!"", 4: '2'}"
+501	501		301							"{2: 'Cargo Captain Shauna', 3: ""How are they the same... That's the only way out now. Didn't Rachel say that you have to listen to me if we disagree on something?"", 4: '1'}"
+502	502		301							"{2: 'Cargo Captain Niino', 3: ""****! I don't remember!"", 4: '2'}"
+503	503		401						100.0	{1: '2', 2: '662'}
+504	504		401						100.0	{1: '2', 2: '662'}
+505	505		401						100.0	{1: '2', 2: '662'}
+506	506		401							{1: '2', 2: '752'}
+507	507		301			RImgBg1Shake				{3: 'A barrage of bullets is fired at them again. Several rounds graze past their covers, impacting the ground and sending sparks flying.'}
+508	508		201							{1: '2', 2: '500087', 4: '-400'}
+509	509		301							"{1: '1', 2: 'Bumblebee Member Mike', 3: ""Shit... They're flanking us!"", 4: '2'}"
+510	510		301							"{2: 'Cargo Captain Shauna', 3: ""No time to hesitate. I'm going to count to three, and you start firing for at least three seconds! Split up once their formation is disrupted, understood?"", 4: '1'}"
+511	511		201							{1: '2', 2: '500511', 3: '5', 4: '-400'}
+512	512		301							{1: '1', 2: 'Noan', 3: 'Is there no other way?', 4: '2'}
+513	513		301							{3: 'Everyone else stays quiet, leaving only Noan to ask this question.'}
+514	514		301							{2: 'Cargo Captain Shauna', 3: 'No, there is no other way.', 4: '1'}
+515	515		301							"{2: 'Cargo Captain Shauna', 3: ""Don't be afraid. As long as there are those who live—as long as the people we want to protect get to live—I have made the right choice."", 4: '1'}"
+516	516		301							"{2: 'Cargo Captain Shauna', 3: ""By the way, Niino... that thing you mentioned last week. My answer is yes. Let's move in together after this."", 4: '1'}"
+517	517		201							{1: '2', 2: '500093', 3: '9', 4: '-400'}
+518	518		301							"{1: '1', 2: 'Cargo Captain Niino', 3: ""What?! You're talking about that now?!"", 4: '2'}"
+519	519		301							"{2: 'Cargo Captain Shauna', 3: ""It's too late, isn't it?"", 4: '1'}"
+520	520		202							{1: '2', 6: '1'}
+521	521		203							{1: '1', 2: '0.25'}
+522	522		301							{1: '1', 3: 'Niino wants to say something in return, but Shauna has started counting down for her plan... and her life.'}
+523	523		301							{2: 'Cargo Captain Shauna', 3: '—Three!', 4: '1'}
+524	524		301							{3: 'She knows clearly that her life is no longer hers after these three seconds as she offers it to the Grim Reaper.'}
+525	525		301							{2: 'Cargo Captain Shauna', 3: '—Two!', 4: '1'}
+526	526		301							{3: 'Grinding his teeth, Niino curses under his breath as his rifle aims at exactly where he needs to fire.'}
+527	527		301							{2: 'Cargo Captain Shauna', 3: '—One!', 4: '1'}
+528	528		301							{3: 'Shauna never stops thinking about dying. She is used to seeing her people die. She thought she would be ready when her time came, but now, taking one last look at her comrades, she allows herself a moment of vulnerability.'}
+529	529		301							{2: 'Cargo Captain Shauna', 3: 'Open fire!', 4: '1'}
+530	530		203						80.0	{1: '1', 2: '0.1', 5: '-120'}
+531	531		202							{1: '1'}
+532	532		401				RImgBg1Shake			{1: '2', 2: '10001004'}
+533	533		401							{1: '2', 2: '1510'}
+534	534		401						80.0	{1: '2', 2: '662'}
+535	535		401					200.0		{1: '2', 2: '10007502'}
+536	536		401					50.0	120.0	{1: '2', 2: '658'}
+537	537		401							{1: '2', 2: '959'}
+538	538		301							"{3: ""Shouts and gunshots come from behind the Cargo Crew's covers, sending the surrounding guards into disarray. Unable to see where they are firing from, the guards are forced to find cover as well.""}"
+539	539		301							"{3: ""An eagle-eyed guard notices a figure dashing out a cover, but the Cargo Crew's suppressive fire causes the guard's shot to go wild.""}"
+540	540		201							{1: '1', 2: '500093', 3: '9'}
+541	541		301							"{1: '1', 2: 'Cargo Captain Niino', 3: ""Keep shooting! Don't stop!"", 4: '1'}"
+542	542		401						200.0	{1: '2', 2: '10001004'}
+543	543		401							{1: '2', 2: '1510'}
+544	544		401							{1: '2', 2: '662'}
+545	545		401							{1: '2', 2: '10001004'}
+546	546		301							{3: 'This is the only thing they can do for Shauna now. They also know that if they do not replace their tears with their bullets and roars, their grief will simply break them.'}
+547	547		301							{3: 'The Cargo Crew is out of ammo to sustain their suppression after three seconds. The brief pause is quickly filled by the return fire of the guards, which pins down the remaining crew members instead.'}
+548	548		202							{1: '1', 6: '1'}
+549	549		301							{3: 'But before long, the guards start screaming as steaming gas bursts from the door, breaking up their formation.'}
+550	550		201							{1: '1', 2: '500154', 7: '1'}
+551	551		301							{1: '1', 2: 'Upper-Level Guard', 3: '****! That woman there! Kill her!', 4: '1'}
+552	552		401						200.0	{1: '2', 2: '1510'}
+553	553		401						200.0	{1: '2', 2: '1510'}
+554	554		401							{1: '2', 2: '737'}
+555	555		301			RImgBg1Shake				"{3: ""Following that are a few gunshots and an explosion, and Shauna's life comes to an end somewhere too far away for her comrades to see. The steaming air is dispersed by the explosion, no longer threatening the guards.""}"
+556	556		201							{1: '1', 2: '500093', 3: '9'}
+557	557		301							{1: '1', 2: 'Cargo Captain Niino', 3: 'Split up!', 4: '1'}
+558	558		203						80.0	{1: '1', 2: '0.15', 5: '-150'}
+559	559		202							{1: '1', 6: '1'}
+560	560		301							{3: 'The three of them take this brief window of opportunity to leave their covers, splitting up into the different parts of the carriage, hiding among its many intertwining ducts and machines.'}
+561	561		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+562	562		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory142.png', 3: '0', 4: '1', 5: '1'}
+563	563		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+564	564		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory142.png'}
+565	565		505							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+566	566		301							{3: 'They are fearless even when confronting enemies ten times their power. Unlike the guards, they are the people who actually know the train thoroughly.'}
+567	567		401							{1: '2', 2: '1510'}
+568	568		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+569	569		504							{1: '0.7', 2: '999'}
+570	570		301							{3: 'First, a bullet breaks the lamp on the ceiling, enshrouding the depths of the carriage once again. Not only does it make it harder for the guards to find them, but the sunlight also turns the guards into shining targets.'}
+571	571		301							{3: 'Then comes a volley of gunshots. The head of a guard who has veered off tracking them explodes; another guard who is hiding behind a cover finds himself somehow riddled with bullet holes...'}
+572	572		301							{3: 'The guards are getting impatient, seeing other guards dropping one by one, and decide to bring down everything that can be used as a cover; after a round of explosions, the Cargo Crew stops firing.'}
+573	573		201							{1: '1', 2: '500154'}
+574	574		301							{1: '1', 2: 'Upper-Level Guard', 3: 'Push forward in groups of three! We have to find them!', 4: '1'}
+575	575		401						200.0	{1: '2', 2: '1510'}
+576	576		203						80.0	{1: '1', 2: '0.15', 4: '-120'}
+577	577		202							{1: '1'}
+578	578		401							{1: '2', 2: '3077'}
+579	579		301							{3: 'The guards advance carefully, but they have not expected to hear gunshots firing from behind them. Several of their groups are immediately taken out, sending the guards into chaos.'}
+580	580		201							{1: '1', 2: '500093', 3: '9'}
+581	581		301							{1: '1', 2: 'Cargo Captain Niino', 3: 'Take that, you armed thugs!', 4: '1'}
+582	582		202							{1: '1', 6: '1'}
+583	583		201							{1: '1', 2: '500511', 3: '9'}
+584	584		301							"{1: '1', 3: ""Retrieving his blade from the enemy's chest, Noan finds Niino sneaking toward a corner of the carriage.""}"
+585	585		301							"{2: 'Noan', 3: ""Niino! What do you think you're doing?"", 4: '1'}"
+586	586		301							{3: 'The fire caused by the explosives the guards deployed is beginning to spread. The area with the pneumatics is flooded with fire—it will not be long before the whole place burns to ashes.'}
+587	587		202							{1: '1', 6: '1'}
+588	588		201							{1: '1', 2: '500093', 3: '9'}
+589	589		301							"{1: '1', 2: 'Cargo Captain Niino', 3: ""We have to get their bodies back, at the very least. There's no way we're leaving them in a place like this... I'll get Shauna; you two go grab Jimmy..."", 4: '1'}"
+590	590		301							{3: 'Before Noan can stop him, Niino is already on his way to the corner of the carriage, crouching and dashing from cover to cover right underneath the watchful gaze of the guards.'}
+591	591		301							{3: 'He quickly reaches Shauna. For a second, Niino even thinks Shauna might be alive before he sees her body with his own eyes.'}
+592	592		301			RImgBg1Shake				"{3: ""But before he can move Shauna's body to a safe location, he feels a sudden excruciating pain from one of his feet—his left foot has stepped on a bear trap hidden among the debris.""}"
+593	593		301							{3: 'His years of training have kept him from screaming despite the bone-shattering pain, but the sound of the trap activating is loud enough to get the attention of the alerted guards.'}
+594	594		401							{1: '2', 2: '10001004'}
+595	595		301			RImgBg1Shake				{3: 'A hailstorm of bullets fires toward where Niino is. He immediately ducks away, but not before he is hit twice on his abdomen.'}
+596	596		301							{3: 'Niino remembers every trap in this place, and he would not have made such a rookie mistake. It must have been moved—the guards must have moved it near the corpses in order to catch anyone coming back for them.'}
+597	597		301							{2: 'Cargo Captain Niino', 3: '****! Dirty bastards...!', 4: '1'}
+598	598		202							{1: '1'}
+599	599		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory603.jpg', 3: '0', 4: '1', 5: '1'}
+600	600		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+601	601		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory603.jpg'}
+602	602		504							{1: '0'}
+603	603		301							"{3: ""Noan and Mike have successfully moved Jimmy's body to somewhere safe when they realize the guards have Niino pinned down.""}"
+604	604		201							{1: '1', 2: '500087'}
+605	605		301							"{1: '1', 2: 'Bumblebee Member Mike', 3: ""Hey! Rachel's boy! Looks like Niino is hurt... We have to save him! Can we do it? There aren't a lot of enemies left."", 4: '1'}"
+606	606		202							{1: '1', 6: '1'}
+607	607		201							{1: '1', 2: '500511', 3: '9'}
+608	608		301							{1: '1', 3: 'Noan moves his wrists and nods, his short sword and Rev Blade in hand.'}
+609	609		401							{1: '2', 2: '1510'}
+610	610		203						120.0	{1: '1', 2: '0.15', 5: '-150'}
+611	611		202							{1: '1', 6: '1'}
+612	612		301							"{3: ""As Mike fires, Noan dashes across the difficult terrain of the carriage toward the group of guards nearest Niino. With their attention on Niino, Noan's blades smoothly go through one of them.""}"
+613	613		401						300.0	{1: '2', 2: '819016'}
+614	614		401							{1: '2', 2: '1510'}
+615	615		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+616	616		301							"{3: ""His teammate turns and aims at Noan, but Noan's short sword slices through his wrist. Distracted by the scream of the unhanded guard, the last guard fires in panic, only to allow Mike to hit him from a distance.""}"
+617	617		301							"{3: ""Taking advantage of this window of opportunity, Noan slices toward Niino and drags him away from the shooting and the spreading fire—leaving Shauna's body behind in the process, watching as the flame devours her.""}"
+618	618		301							{3: 'Retreating behind a secured cover, they have nonetheless exposed their location. Suppressive fire rains upon them, trapping them where they are.'}
+619	619		201							{1: '1', 2: '500087', 4: '-400'}
+620	620		201							{1: '2', 2: '500093', 3: '9', 4: '400'}
+621	621		301							"{1: '1', 2: 'Cargo Captain Niino', 3: ""****! This is... a-all my fault! I couldn't get Shauna, and now the two of you are..."", 4: '2'}"
+622	622		301							"{2: 'Bumblebee Member Mike', 3: ""Save it after we've left this place."", 4: '1'}"
+623	623		401							{1: '2', 2: '1099'}
+624	624		301							"{3: ""Niino's terminal suddenly receives a comms request. Heartened, Noan helps Niino up while Mike returns fire with his limited ammo, holding the guards back.""}"
+625	625		202							{1: '1', 6: '1'}
+626	626		203							{1: '2', 2: '0.25', 3: '550'}
+627	627		509						800.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory143.png', 2: '1'}
+628	628		201							{1: '1', 2: '500454', 4: '-600'}
+629	629		301							"{1: '1', 2: 'Cargo Captain Niino', 3: ""This is Niino... We're stuck at the back of Carriage G... We lost a lot of people, including Jimmy and... Shauna... What is your status?"", 4: '2'}"
+630	630		301							"{2: 'Cargo Member Weyland', 3: ""Is that so... We... we're almost wiped out too... We were hoping you can help us."", 4: '1'}"
+631	631		301							"{3: ""Weyland's voice is faint as if it will stop any moment.""}"
+632	632		301							"{2: 'Cargo Captain Niino', 3: ""What about the rest of you? Where's Rachel?!"", 4: '2'}"
+633	633		301							{3: 'Weyland answers after a brief silence.'}
+634	634		301							{2: 'Cargo Member Weyland', 3: 'We got separated from Rachel. We tried to contact her but there were no responses...', 4: '1'}
+635	635		202							{1: '1', 6: '1'}
+636	636		510						800.0	{1: '1', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory143.png'}
+637	637		203							{1: '2', 2: '0.25'}
+638	638		301							{3: 'Niino wants to keep asking, but they hear nothing back, not even the sound of sparse gunshots.'}
+639	639		203							{1: '2', 2: '0.25', 3: '400'}
+640	640		201							{1: '1', 2: '500087', 4: '-400'}
+641	641		301							"{1: '1', 2: 'Bumblebee Member Mike', 3: ""The giant mechanoid is on their side, isn't it? We didn't really stand a chance against it, to begin with."", 4: '1'}"
+642	642		301							{2: 'Bumblebee Member Mike', 3: 'This rebellion... has probably failed...', 4: '1'}
+643	643		301							{2: 'Cargo Captain Niino', 3: 'No way...', 4: '2'}
+644	644		301							"{2: 'Bumblebee Member Mike', 3: ""They've lost... We've lost!"", 4: '1'}"
+645	645		202							{1: '1', 6: '1'}
+646	646		201							{1: '1', 2: '500511', 3: '9', 4: '-400'}
+647	647		301							{1: '1', 2: 'Noan', 3: 'The guards have also taken a heavy hit. I bet—', 4: '1'}
+648	648		301							"{3: ""That is when Noan realizes how warm his palms have been. He looks down at Niino in his arms to find Niino's blood soaking through his shirt and hands.""}"
+649	649		301							"{2: 'Noan', 3: ""Niino?! You're losing a lot of blood! We have to stop the bleeding right now..."", 4: '1'}"
+650	650		301							"{3: ""Noan puts pressure on Niino's wound, but there is no way he can stop the blood from gushing out. He watches as Niino's life fades away before him little by little.""}"
+651	651		301							{2: 'Noan', 3: 'No...', 4: '1'}
+652	652		301							{3: 'Niino does not seem to be in pain, however. He just holds his terminal in his hands, saddened.'}
+653	653		301							"{2: 'Cargo Captain Niino', 3: ""It'll be quite tragic if this is what we've been working toward and looking forward to..."", 4: '2'}"
+654	654		301							{3: 'Niino is slowly losing consciousness from his blood loss. They have to do something about it, or he will die of shock soon enough.'}
+655	655		301							{3: 'But the guards are not giving them a chance to breathe. Having restored the public address system on the train, the guards speak to the two of them amidst their ceaseless gunfire.'}
+656	656		202							{1: '1', 2: '2', 6: '1'}
+657	657		201							{1: '1', 2: '500154'}
+658	658		301							{1: '1', 2: 'Upper-Level Guard', 3: 'This is a message to the rioters in hiding: come out now! Otherwise—', 4: '1'}
+659	659		301							{3: 'The sound of a child screaming and his parents crying can be heard from the system.'}
+660	660		301							"{2: 'Upper-Level Guard', 3: ""We'll start executing these accomplices to your riot! Do you hear me?!"", 4: '1'}"
+661	661		202							{1: '1', 6: '1'}
+662	662		201							{1: '1', 2: '500087', 4: '-400', 7: '1'}
+663	663		201							{1: '2', 2: '500511', 3: '9', 4: '400', 7: '1'}
+664	664		301							"{1: '1', 2: 'Bumblebee Member Mike', 3: ""Accomplice, my ***! They're just taking hostages!"", 4: '1'}"
+665	665		301							"{2: 'Noan', 3: ""We can't drag the others into this..."", 4: '2'}"
+666	666		301							"{2: 'Bumblebee Member Mike', 3: ""But we're the only ones left! We can't save anyone without putting our lives at risk!"", 4: '1'}"
+667	667		301							"{2: 'Noan', 3: ""There's still a way."", 4: '2'}"
+668	668		301							{2: 'Bumblebee Member Mike', 3: 'Faking our surrender?', 4: '1'}
+669	669		301				AniZhuanchangBegin			{3: 'Noan nods.'}
+670	670		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+671	671		401						1000.0	{1: '1', 2: '36'}
+672	672		401							{1: '1', 2: '148'}
+673	673		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory603.jpg'}
+674	674		504				AniZhuanchangEnd			{1: '0'}
+675	675		201							{1: '1', 2: '500511', 3: '9'}
+676	676		301			DialogEnable				{1: '1', 3: 'A hand slowly rises from behind the cover, followed by another hand.'}
+677	677		202							{1: '1', 6: '1'}
+678	678		201							{1: '3', 2: '500154'}
+679	679		201							{1: '1', 2: '500154', 4: '-500'}
+680	680		201							{1: '2', 2: '500154', 4: '500'}
+681	681		301							{1: '1', 2: 'Upper-Level Guard', 3: 'Hold fire!', 4: '3'}
+682	682		301							{3: 'The guards stop shooting, but their rifles still point at where Noan and Mike hide—the guards know full well how cunning the Cargo Crew members are by now.'}
+683	683		301							"{3: ""Noan and Mike slowly stand up, with the unconscious Niino on Mike's back. The three of them step out from their cover, unnerved and fully exposed to their enemies.""}"
+684	684		301							"{2: 'Upper-Level Guard', 3: ""Not bad... Walk here slowly, just like this. Don't try to pull any stunts."", 4: '3'}"
+685	685		301							{3: 'The guard gently smacks the face of the child kneeling beside him with his pistol. The child is so scared that he cannot even cry.'}
+686	686		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+687	687		201							{1: '1', 2: '500511', 3: '9'}
+688	688		301							{1: '1', 3: 'Noan nods, approaching them slowly and naturally—no one notices the combat knife he hides behind his leg.'}
+689	689		201							{1: '1', 2: '500251'}
+690	690		201							{1: '2', 2: '500154', 4: '600'}
+691	691		201							{1: '3', 2: '500154', 4: '-600'}
+692	692		301							{1: '1', 3: 'As he approaches the hostages, Noan notices Hill once again—the old, timid woman who has been watching over him since he was young.'}
+693	693		301							{2: 'Hill', 3: '...'}
+694	694		301							"{3: 'Rachel always says that ""not everyone has what it takes to stand up to the bad guys.""'}"
+695	695		301							"{3: '""They might be silent, but that doesn\'t mean they approve of what\'s happening.""'}"
+696	696		301							{3: 'Many on the lower level disagree with Rachel. They believe those who do not fight are a waste of resources, but they forget that people like Hill have been contributing in their own way inside this moving cage.'}
+697	697		301							{3: 'How many children has Hill looked after? How many torn clothes has she fixed?'}
+698	698		301							{3: 'Noan never questions his choices because he has noticed it all.'}
+699	699		301							{3: 'The people he has to protect are right there beside him. They are safe, even though they are scared... He does not regret what he has done. He just wishes he was powerful enough to have done more.'}
+700	700		301							"{2: 'Hill', 3: ""...I'm sorry... I'm so sorry...""}"
+701	701		301							"{3: ""The old woman's tears soak her wrinkled face.""}"
+702	702		301							{2: 'Hill', 3: 'Why have I... always... failed to protect you...'}
+703	703		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+704	704		201							{1: '1', 2: '500511', 3: '15'}
+705	705		301							"{1: '1', 2: 'Noan', 3: ""Don't be sorry, Aunt Hill. It's okay."", 4: '1'}"
+706	706		301							{3: 'He wants to offer her a smile, but he cannot. He keeps walking as the guards watch.'}
+707	707		201							{1: '1', 2: '500251', 7: '1'}
+708	708		201							{1: '2', 2: '500154', 4: '600', 7: '1'}
+709	709		201							{1: '3', 2: '500154', 4: '-600', 7: '1'}
+710	710		301							"{1: '1', 2: 'Hill', 3: ""I've seen what Barbra did after they took Julie, but I was too scared to tell her... too scared to tell you...""}"
+711	711		301							{3: 'She is sobbing frantically behind the guards.'}
+712	712		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+713	713		201							{1: '1', 2: '500511', 3: '15'}
+714	714		301							{1: '1', 2: 'Noan', 3: '...?', 4: '1'}
+715	715		201							{1: '1', 2: '500251', 7: '1'}
+716	716		201							{1: '2', 2: '500154', 4: '600', 7: '1'}
+717	717		201							{1: '3', 2: '500154', 4: '-600', 7: '1'}
+718	718		301							{1: '1', 2: 'Hill', 3: 'I just looked... as she ate them... Just watched... as she died...!'}
+719	719		301							"{3: ""Hill's wailing gets louder and louder, and then...""}"
+720	720		301							{3: 'Right before Noan and Mike get to the guards—'}
+721	721		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+722	722		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+723	723		401							{1: '2', 2: '1510'}
+724	724		401							{1: '2', 2: '737'}
+725	725		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory294.png'}
+726	726		104							{1: '400|200|-500', 2: '0'}
+727	727		301							{3: '—The gunfire and the explosion almost happen at the same time.'}
+728	728		301							{2: 'Noan', 3: 'Aunt... Hill...?'}
+729	729		301							{3: 'Noan will never know when she took the grenade, and when she made up her mind.'}
+730	730		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+731	731		202							{1: '1', 6: '1'}
+732	732		504							{1: '0.7'}
+733	733		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory140.png'}
+734	734		201							{1: '1', 2: '500251', 7: '1'}
+735	735		301							"{1: '1', 2: 'Hill', 3: ""I'm sorry, my children. Your Aunt Hill was too scared to do anything back there."", 4: '1'}"
+736	736		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+737	737		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory603.jpg', 7: '1'}
+738	738		301							"{2: 'Hill', 3: ""...I'm sorry... I'm so sorry..."", 4: '1'}"
+739	739		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+740	740		202							{1: '1', 6: '1'}
+741	741		504							{1: '0'}
+742	742		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory603.jpg'}
+743	743		201							{1: '1', 2: '500511', 3: '15'}
+744	744		301							{1: '1', 2: 'Noan', 3: '...', 4: '1'}
+745	745		301							{3: '...Not everyone has what it takes to stand up to the bad guys. Noan thought he understood what it meant.'}
+746	746		301							{3: '—But is that true for humankind?'}
+747	747		202							{1: '1'}
+748	748		301							{3: 'The young mature as they grow, and the old change as they mature.'}
+749	749		301		1		AniZhuanchangBegin			{3: 'Even the dying cinder contains the courage to ignite itself and burn.'}

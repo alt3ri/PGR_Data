@@ -1,0 +1,649 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1262.jpg'}
+2	2		104							{1: '0|0|-125', 2: '0'}
+3	3		401							{1: '1', 2: '391'}
+4	4		201							{1: '1', 2: '501239', 3: '8', 7: '1'}
+5	5		502							{1: 'DialogEnable'}
+6	6		301			AniZhuanchangEnd				"{1: '1', 3: ""Vera's frame suddenly burns, the tips of her hair igniting into a fiery red, her eyebrows tightly knitted together.""}"
+7	7		203							{1: '1', 2: '0.25', 3: '-400'}
+8	8		201							{1: '2', 2: '500928', 4: '400', 7: '1'}
+9	9		301							"{1: '1', 3: 'Meanwhile, the Hetero-Creature named ""Eve"" lifts its head from the Ascendant\'s mangled remains.'}"
+10	10		202							{1: '1', 2: '2'}
+11	11		401							{1: '2', 2: '5544'}
+12	12		301							{3: 'It watches two haggard humanoids gathering supplies, then the mother<//father> forcefully pushes away the one-armed waste material.'}
+13	13		201							{1: '1', 2: '500928', 5: '-75', 6: '-50'}
+14	14		203							{1: '1', 2: '0.25', 4: '-50', 5: '-50'}
+15	15		301							{1: '1', 2: 'Eve', 3: 'Mother<//Father>...', 4: '1'}
+16	16		202							{1: '1', 6: '1'}
+17	17		401							{1: '2', 2: '2919'}
+18	18		301							"{3: ""It climbs off the Ascendant's remains, slowly approaching the humans as the other assimilated Hetero-Creatures begin to follow suit.""}"
+19	19		402							{1: '2919'}
+20	20		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+21	21		201							{1: '1', 2: '500928', 4: '-100'}
+22	22		104							{1: '0|0|-50', 2: '1'}
+23	23		401							{1: '2', 2: '10021516'}
+24	24		202							{1: '1'}
+25	25		301							"{3: ""You cover Haniff's movements, opening fire on the slowly crawling Hetero-Creatures approaching you, driving back its siblings.""}"
+26	26		301							"{3: 'Yet it nimbly dodges the bullets, understanding that it is a more ""advanced"" being—a child more worthy of getting close to Mother<//Father>.'}"
+27	27		301							{3: 'Until Haniff vanishes at the far end of the corridor.'}
+28	28		302							{2: '(Steps back.)', 3: '29'}
+29	29		104							{1: '0|0|-25', 2: '1'}
+30	30		201							{1: '1', 2: '500928', 7: '1'}
+31	31		301							{1: '1', 2: 'Eve', 3: 'Be... [gentle]... please...', 4: '1'}
+32	32		201							{1: '1', 2: '500928', 4: '650', 5: '-75', 6: '25'}
+33	33		201							{1: '2', 2: '500928', 6: '-50'}
+34	34		201							{1: '3', 2: '500928', 4: '-650', 5: '-75', 6: '25'}
+35	35		401							{1: '2', 2: '4784'}
+36	36		301							{1: '1', 2: 'Hetero-Creature', 3: 'Tch...', 4: '1', 5: '2', 6: '3'}
+37	37		302							{2: '(Raises the gun again.)', 3: '38'}
+38	38		401							{1: '2', 2: '4779'}
+39	39		202							{1: '1', 2: '2', 3: '3'}
+40	40		301							"{3: 'Raising the gun is now almost pointless, as the Hetero-Creature before them seems to understand that ""this black thing is about to lose its killing power""—it has indirectly grasped the concept that ""the bullets are almost depleted.""'}"
+41	41		201							{1: '1', 2: '500928', 7: '1'}
+42	42		301							{1: '1', 2: 'Eve', 3: 'Gurgle...', 4: '1'}
+43	43		203						250.0	{1: '1', 2: '0.25', 4: '-75', 5: '-100'}
+44	44		202							{1: '1'}
+45	45		301							{3: 'It stares at you, lowering its body even closer to the ground.'}
+46	46		301							{3: 'It vividly remembers that underwater entanglement, which provided it with incredibly rich yet refined information, leaving it deeply enchanted to this day.'}
+47	47		301							{3: 'But humans are too fragile, with bones that snap with a mere bend, and remarkably soft muscles, blood vessels, and skin.'}
+48	48		301							{3: 'Simply allowing itself to get close would corrode everything.'}
+49	49		301							"{3: ""Can't act affectionate, can't press too close.""}"
+50	50		301							{3: 'Just getting a little closer... just being intimate for a moment would be enough.'}
+51	51		401							{1: '2', 2: '2919'}
+52	52		301							{3: 'So it approaches with extreme caution, not daring to make even a sound, longing for closeness.'}
+53	53		402							{1: '2919'}
+54	54		201							{1: '1', 2: '500928'}
+55	55		301							{1: '1', 2: 'Eve', 3: 'Mother<//Father>...', 4: '1'}
+56	56		202							{1: '1'}
+57	57		301							{3: 'It longs for Mother<//Father> to give it a hug.'}
+58	58		302							{2: 'Dammit...', 3: '59'}
+59	59		401							{1: '2', 2: '1543'}
+60	60		104							{1: '0|0|0', 2: '1'}
+61	61		301				DialogDisable			"{3: 'Only one bullet remains in the gun, yet the Hetero-Creature continues to approach with ""curiosity."" You have no choice but to pull Vera along while dragging your injured leg backward inch by inch.'}"
+62	62		202							{1: '2'}
+63	63		302							"{2: 'Tch, what a pathetic sight.', 3: '64', 4: ""If Vera saw me like this, she'd definitely mock me, wouldn't she?"", 5: '64'}"
+64	64		302							"{2: ""So close, it's already at 98% synchronization..."", 3: '65'}"
+65	65		201							{1: '1', 2: '501239', 3: '8', 5: '-75', 6: '-125', 7: '1'}
+66	66		301			DialogEnable	DialogDisable			{1: '1', 3: 'The sleeping beauty furrows her brow, seemingly irritated by everything in the outside world. You can also feel her struggles firsthand through her turbulent M.I.N.D.'}
+67	67		302							{2: 'From that time at sea until now...', 3: '68'}
+68	68		302							{2: 'No, not just that.', 3: '69'}
+69	69		302				AniZhuanchangBegin			"{2: ""It's from the end of the Golden Age until now."", 3: '70'}"
+70	70		202							{1: '1', 6: '1'}
+71	71		504							{1: '0.7'}
+72	72		306							{1: '1'}
+73	73		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5501_34.jpg'}
+74	74		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+75	75		502							{1: 'RImgBg1BlowUp'}
+76	76		401							{1: '2', 2: '1516'}
+77	77		502							{1: 'DialogEnable'}
+78	78		301			AniZhuanchangEnd				"{3: ""Your Mind Beacon detects numerous blurred fragments within Vera's M.I.N.D.""}"
+79	79		301				AniZhuanchangBegin			"{3: 'The most emotionally conflicting of these is undoubtedly the fragment seen through Vera\'s ""third-person perspective""... the fragment about yourself.'}"
+80	80		502							{1: 'DialogDisable'}
+81	81		402							{1: '1516'}
+82	82		505							{1: 'RImgBg1BlowUp'}
+83	83		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1262.jpg'}
+84	84		504							{1: '0'}
+85	85		306							{1: '1'}
+86	86		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+87	87		306							
+88	88		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1262.jpg'}
+89	89		302							"{2: ""I still haven't fully figured it out..."", 3: '90', 4: ""I haven't fully remembered yet."", 5: '90'}"
+90	90		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+91	91		401							{1: '2', 2: '4280'}
+92	92		301			DialogEnable				{3: 'Sharp pains repeatedly shoot through your head as long-dormant memory shards bob up and down on the surface, still impossible to grasp with certainty.'}
+93	93		301							"{3: 'But without a doubt, both of you need a proper ""reunion.""'}"
+94	94		402							{1: '4280'}
+95	95		302							{2: 'So... how can I fall here?', 3: '96'}
+96	96		401							{1: '2', 2: '4779'}
+97	97		201							{1: '1', 2: '500928', 7: '1'}
+98	98		301							{1: '1', 3: 'You grit your teeth, raising your gun once more to aim at the Corrupted lunging toward the two of you.'}
+99	99		402							{1: '4779'}
+100	100		301							"{2: 'Eve', 3: ""Put it down... Don't resist..."", 4: '1'}"
+101	101		202							{1: '1'}
+102	102		301							"{3: ""Even with just one bullet left, you'll fight with everything you've got.""}"
+103	103		302							{2: 'Come closer... just a little bit closer...', 3: '104'}
+104	104		401							{1: '1', 2: '4044'}
+105	105		301				DialogDisable			"{3: ""Your other hand grips Vera's wrist tightly, unable to ignore the increasingly violent tempest raging within her M.I.N.D.""}"
+106	106		302							{2: 'Are you anxious too, Vera?', 3: '107'}
+107	107		302							"{2: ""I'm doing exactly what you told me."", 3: '108'}"
+108	108		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+109	109		401							{1: '2', 2: '4387'}
+110	110		504							{1: '0.7'}
+111	111		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg'}
+112	112		201							{1: '2', 2: '500013', 4: '-500', 5: '-50', 6: '50', 7: '1'}
+113	113		201							{1: '3', 2: '500013', 4: '500', 5: '-50', 6: '50', 7: '1'}
+114	114		201							{1: '1', 2: '501239', 3: '4'}
+115	115		301			DialogEnable				{1: '1', 2: 'Vera', 3: 'No matter what happens, even if you end up crawling pathetically, you must always drag yourself one step further.', 4: '1'}
+116	116		301							{2: 'Vera', 3: 'As long as you refuse to be trapped by despair, someone will always be there to catch you.', 4: '1'}
+117	117		302				AniZhuanchangBegin			"{2: ""Even if I have to crawl, I'll still drag myself forward, one step at a time...!"", 3: '118'}"
+118	118		502						400.0	{1: 'DialogDisable'}
+119	119		401							{1: '1', 2: '36'}
+120	120		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+121	121		401							{1: '2', 2: '2624'}
+122	122		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+123	123		504							{1: '0'}
+124	124		402							{1: '2624'}
+125	125		301			DialogEnable				{3: 'And Vera, being called upon by you, hears something.'}
+126	126		401							{1: '1', 2: '119'}
+127	127		201							{1: '1', 2: '501239', 3: '7'}
+128	128		301							{1: '1', 2: 'Vera', 3: '!', 4: '1'}
+129	129		202							{1: '1'}
+130	130		401							{1: '2', 2: '903'}
+131	131		301							{3: 'She awakens with a start, only to find herself in complete darkness, with what feels like tides ebbing and flowing beneath her, washing over her limbs.'}
+132	132		201							{1: '1', 2: '501239'}
+133	133		301				DialogDisable			{1: '1', 2: 'Vera', 3: '...What was that sound just now...', 4: '1'}
+134	134		202							{1: '1', 6: '1'}
+135	135		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+136	136		504							{1: '0.7'}
+137	137		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg'}
+138	138		301			DialogEnable	DialogDisable			"{3: 'Her memory data is fragmented. She only remembers using her ""Little Commandant"" to pull out the safety pin, completely unleashing the full power of this test frame. Then she cut the ropes and watched as that person ran toward the base with the sample.'}"
+139	139		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+140	140		504							{1: '0'}
+141	141		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+142	142		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+143	143		201							{1: '1', 2: '501239', 3: '6'}
+144	144		301			DialogEnable				{1: '1', 2: 'Vera', 3: 'What about me?', 4: '1'}
+145	145		202							{1: '1', 6: '1'}
+146	146		401							{1: '2', 2: '1543'}
+147	147		301							{3: 'She tries to lift her hand, only to see it covered in bright red. Her own vital fluid.'}
+148	148		201							{1: '1', 2: '501239'}
+149	149		301							{1: '1', 2: 'Vera', 3: '...', 4: '1'}
+150	150		202							{1: '1', 6: '1'}
+151	151		301							{3: 'She remembers fragments—she chose to stay behind as the rear guard, continuously slaying Corrupted until vital fluid poured from every opening in her body, crimson flooding her vision... Only when the red deepened into darkness did she finally collapse upon the ruins.'}
+152	152		201							{1: '1', 2: '501239', 3: '8'}
+153	153		301							{1: '1', 2: 'Vera', 3: 'Am I... dead...?', 4: '1'}
+154	154		301							{2: 'Vera', 3: '...How could I die now? I was looking forward to teasing that fearless Little Commandant, it was going to be the perfect opportunity.', 4: '1'}
+155	155		202							{1: '1'}
+156	156		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab', 2: '2'}
+157	157		401							{1: '2', 2: '2683'}
+158	158		301							{3: 'At that moment, a beam of light slowly illuminates the dark waters.'}
+159	159		301							"{3: ""She stares intently at that beam of light, taking a full two seconds to realize what it is—someone's Mind Beacon. Her consciousness is still stuck in an earlier state, not yet fully adjusted to Mind Beacon connection methods.""}"
+160	160		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab'}
+161	161		201							{1: '1', 2: '501239'}
+162	162		301							{1: '1', 2: 'Vera', 3: '【kuroname】...', 4: '1'}
+163	163		202							{1: '1'}
+164	164		301							{3: 'As she instinctively says your name, she props herself up, wading through the data streams of her M.I.N.D., and hurries forward.'}
+165	165		401							{1: '2', 2: '4298'}
+166	166		301							{3: 'The splashing of water echoes all around. With each step, she crosses another fragment of reality, restoring another piece of her memories.'}
+167	167		402							{1: '4298'}
+168	168		201							{1: '1', 2: '501239'}
+169	169		301				AniZhuanchangBegin			{1: '1', 2: 'Vera', 3: '...I remember now.', 4: '1'}
+170	170		202							{1: '1', 6: '1'}
+171	171		502						400.0	{1: 'DialogDisable'}
+172	172		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg'}
+173	173		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 4: '4'}
+174	174		201						250.0	{1: '1', 2: '500678', 4: '150', 5: '-100', 7: '1'}
+175	175		304			AniZhuanchangEnd				{1: 'Now she remembers everything—during the data synchronization process, she promised her Little Commandant she would return to reality just one second later.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 6: '1', 7: '1', 8: '1'}
+176	176		202							{1: '1', 6: '1'}
+177	177		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1262.jpg'}
+178	178		304							{1: 'And the reality is—you and her, with you as the Gray Raven Commandant, encountered Ascendants at sea and became stranded on this island with its hidden gene repository.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 6: '1', 7: '1'}
+179	179		304							{1: 'Her Garnet frame was on the verge of complete failure and automatically entered hibernation mode, but the support aircraft sent by Kurono only dropped that old test frame from years ago.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 6: '1', 7: '1'}
+180	180		304				AniZhuanchangBegin			{1: 'You chose to save her—you had to save her—by replacing her frame.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 6: '1', 7: '1', 8: '1', 9: '1'}
+181	181		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 4: '4', 5: '1'}
+182	182		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+183	183		504							{1: '0'}
+184	184		502							{1: 'DialogEnable'}
+185	185		201							{1: '1', 2: '501239', 3: '4'}
+186	186		301			AniZhuanchangEnd				{1: '1', 2: 'Vera', 3: '...Damn it! That frame barely passed the berserk test back then... and it was recalled after going haywire during its very first mission!', 4: '1'}
+187	187		202							{1: '1'}
+188	188		301							{3: 'She knows Kurono loves exploiting loopholes, but never expected they would take advantage of even this situation, actually reactivating a frame that should have been sealed away long ago—and worse, she discovers that the internal circuitry seems even more extreme than it was back then.'}
+189	189		201							{1: '1', 2: '501239', 3: '4'}
+190	190		301							"{1: '1', 2: 'Vera', 3: ""So you've been iterating on this design all these years..."", 4: '1'}"
+191	191		202							{1: '1'}
+192	192		301							"{3: 'She suddenly notices something even more important and touches the area between her collarbones. Only now does she realize that where the ""safety lock"" should be, there\'s nothing but empty space.'}"
+193	193		201							{1: '1', 2: '501239'}
+194	194		301							{1: '1', 2: 'Vera', 3: '...', 4: '1'}
+195	195		301							"{2: 'Vera', 3: ""...Removing the safety lock before deployment... are they trying to test this frame's upper limits?"", 4: '1'}"
+196	196		202							{1: '1'}
+197	197		301							{3: 'And once again, the mandatory testing protocol executes by default, trapping her within her M.I.N.D.'}
+198	198		301				DialogDisable			{3: 'An electronic voice resonates above her:'}
+199	199		401							{1: '1', 2: '36'}
+200	200		401							{1: '2', 2: '1105'}
+201	201		307							{1: 'I was the shadow of the waxwing slain, by the false azure in the window pane'}
+202	202		301							{3: 'I was the shadow of the waxwing slain, by the false azure in the window pane.—Test commencing.'}
+203	203		401							{1: '2', 2: '1105'}
+204	204		307	1						{1: '—Test commencing.', 3: '60'}
+205	205		307							{2: '1'}
+206	206		401							{1: '1', 2: '5040'}
+207	207		109							"{1: '1', 2: '<size=40><i>""The battlefield of Punishing is complex. Your companions could be <b>killed</b> by Hetero-Creatures at any moment. This fills you with rage.""</i></size>', 9: '2'}"
+208	208		301							"{2: '????', 3: '""The battlefield of Punishing is complex. Your companions could be killed by Hetero-Creatures at any moment. This fills you with rage.""'}"
+209	209		110							{1: '1'}
+210	210		201							{1: '1', 2: '501239', 3: '5', 5: '-75', 6: '-125'}
+211	211		301			DialogEnable				{1: '1', 2: 'Vera', 3: 'No! I absolutely will not allow this!', 4: '1'}
+212	212		202							{1: '1'}
+213	213		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+214	214		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab', 2: '3'}
+215	215		401							{1: '2', 2: '4331'}
+216	216		301							"{3: ""Vera sprints forward, watching as the Mind Beacon's light begins to flicker erratically—she senses the massive number of Hetero-Creatures surrounding them, while you keep firing to hold them back, dragging an injured leg.""}"
+217	217		301				DialogDisable			{3: 'But there are almost no more bullets left.'}
+218	218		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+219	219		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab'}
+220	220		109	1						"{1: '1', 2: '<size=40><i>""After witnessing your companion\'s sacrifice, you believe you\'ve developed psychological <b>trauma</b>, or more severe symptoms of M.I.N.D. drift.""</i></size>', 9: '2'}"
+221	221		301							"{2: '????', 3: '""After witnessing your companion\'s sacrifice, you believe you\'ve developed psychological trauma, or more severe symptoms of M.I.N.D. drift.""'}"
+222	222		110							{1: '1'}
+223	223		401							{1: '2', 2: '4806'}
+224	224		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+225	225		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1262.jpg'}
+226	226		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '1'}
+227	227		401							{1: '2', 2: '2593', 4: '4'}
+228	228		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png'}
+229	229		401							{1: '2', 2: '4802'}
+230	230		301			DialogEnable	DialogDisable			"{1: '1', 3: 'She realizes that ""Eve"" has nimbly dodged the bullets and sunk its teeth into your side.'}"
+231	231		205							{1: '999'}
+232	232		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '4', 5: '1'}
+233	233		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+234	234		401							{1: '2', 2: '4331'}
+235	235		201							{1: '1', 2: '501239', 3: '4', 5: '-75', 6: '-125'}
+236	236		301			DialogEnable	DialogDisable			{1: '1', 2: 'Vera', 3: '...Faster, I need to move faster!', 4: '1'}
+237	237		202							{1: '1', 6: '1'}
+238	238		109	1						"{1: '1', 2: '<size=40><i>""While fighting for the goal of reclaiming Earth, you feel that all of this might be <b>false</b>.""</i></size>', 9: '2'}"
+239	239		301							"{2: '????', 3: '""While fighting for the goal of reclaiming Earth, you feel that all of this might be false.""'}"
+240	240		110							{1: '1'}
+241	241		201							{1: '1', 2: '501239', 3: '5', 5: '-75', 6: '-125'}
+242	242		301			DialogEnable				{1: '1', 2: 'Vera', 3: 'I know what is real...!', 4: '1'}
+243	243		202							{1: '1', 6: '1'}
+244	244		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab', 2: '3'}
+245	245		301							{3: 'Where you stand is still on the living shore of the River Styx.'}
+246	246		301				DialogDisable			{3: 'She lunges toward the Mind Beacon—but in that very same second:'}
+247	247		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab'}
+248	248		401							{1: '2', 2: '1105'}
+249	249		401							{1: '1', 2: '36'}
+250	250		307							"{1: '""Test failed, authorization terminated.""', 3: '60', 4: 'ff4e4eff'}"
+251	251		301							"{2: '????', 3: '""Test failed, authorization terminated.""'}"
+252	252		307							{2: '1'}
+253	253		201							{1: '1', 2: '501239', 3: '7', 5: '-75', 6: '-125'}
+254	254		301			DialogEnable				{1: '1', 2: 'Vera', 3: '...!!!', 4: '1'}
+255	255		202							{1: '1'}
+256	256		401							{1: '2', 2: '5539'}
+257	257		301				AniZhuanchangBegin			{3: 'She plummets back into the sea.'}
+258	258		402							{1: '903'}
+259	259		502							{1: 'DialogDisable'}
+260	260		401							{1: '1', 2: '36'}
+261	261		402							{1: '2624'}
+262	262		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory417.jpg'}
+263	263		401							{1: '1', 2: '6172'}
+264	264		301			DialogEnable				"{3: 'Frame authorization terminated, with data synchronization declaring ""failure"" at the final moment.'}"
+265	265		301							{3: 'Her M.I.N.D. is confined within a narrow corner of starless night, as her data model instantly degrades back to that of a Garnet frame.'}
+266	266		201							{1: '1', 2: '500345', 3: '4'}
+267	267		301							{1: '1', 2: 'Vera', 3: '...', 4: '1'}
+268	268		202							{1: '1'}
+269	269		301				DialogDisable			{3: 'The electronic voice monotonously delivers its final statement.'}
+270	270		401							{1: '2', 2: '4639'}
+271	271		109	1						"{1: '1', 2: '<size=40><i>""You harbor resentment toward the world and everything around you. You decide to shatter the <b>window</b>.""</i></size>'}"
+272	272		301							"{2: '????', 3: '""You harbor resentment toward the world and everything around you. You decide to shatter the window.""'}"
+273	273		402							{1: '4639'}
+274	274		110							{1: '1'}
+275	275		301			DialogEnable				{3: 'Still refusing to accept failure, she gradually turns her head to look out the window.'}
+276	276		301							{3: 'Beyond the window stretches an endless sea, and the building she occupies resembles a tombstone rooted in the deep ocean—she realizes that within her M.I.N.D., the most tranquil sanctuary is actually at the highest point of Atlantis.'}
+277	277		201							{1: '1', 2: '500345', 3: '8'}
+278	278		301							{1: '1', 2: 'Vera', 3: '...', 4: '1'}
+279	279		204							{1: '1', 2: '4'}
+280	280		301				AniZhuanchangBegin			{2: 'Vera', 3: 'I... refuse to accept this...', 4: '1'}
+281	281		202							{1: '1', 6: '1'}
+282	282		502						400.0	{1: 'DialogDisable'}
+283	283		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+284	284		401							{1: '2', 2: '4897'}
+285	285		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTRPGMaze/FxUiTRPGMaze01.prefab', 2: '2'}
+286	286		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '4'}
+287	287		401							{1: '2', 2: '4823'}
+288	288		109						800.0	{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60>98%</size></color>', 9: '3'}
+289	289		401							{1: '2', 2: '9335029'}
+290	290		109	1						{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60>99%</size></color>', 9: '3'}
+291	291		301				AniZhuanchangBegin			{3: 'Data Synchronization Progress: 99%'}
+292	292		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '4', 5: '1'}
+293	293		110							{1: '1'}
+294	294		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1262.jpg'}
+295	295		301			DialogEnable				{3: 'You aim your gun at Eve, down to your final bullet. For the first time, your hand trembles slightly as the gun wavers.'}
+296	296		302							"{2: ""I'll climb one step further, please... you have to catch me."", 3: '297'}"
+297	297		301							"{3: ""The Mind Beacon persists within Vera's M.I.N.D. as you call out for her, eyes fixed on the data synchronization progress stalled at 99%.""}"
+298	298		301							{3: 'Simultaneously, you pull the trigger.'}
+299	299		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+300	300		401							{1: '2', 2: '10021516'}
+301	301		301			RImgBg1Shake				{3: 'Bang!'}
+302	302		301				AniZhuanchangBegin			"{3: ""In this mission that has devolved into disaster, you have lost count of how many gunshots you've heard... but this will be the last one.""}"
+303	303		401							{1: '1', 2: '36'}
+304	304		502							{1: 'DialogDisable'}
+305	305		503							{1: '10183'}
+306	306		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+307	307		401						500.0	{1: '2', 2: '772'}
+308	308		501			AniZhuanchangEnd			250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab', 2: '2'}
+309	309		401							{1: '1', 2: '6177'}
+310	310		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory417.jpg'}
+311	311		301			DialogEnable				"{3: ""The dual-blade gun pierces through the sable night, sending transparent shards flying through the air, each one reflecting Vera's resolute face.""}"
+312	312		201							{1: '1', 2: '501239', 3: '4'}
+313	313		301							"{1: '1', 2: 'Vera', 3: ""Kurono's preset program... what the hell does it think it is!"", 4: '1'}"
+314	314		301							{3: 'Flames of fury sweep through her M.I.N.D. as the enraged Valkyrie forcibly seizes control of her frame.'}
+315	315		204							{1: '1', 2: '5'}
+316	316		301				DialogDisable			"{2: 'Vera', 3: ""Since it's MY body, I WILL be the one to control it!!"", 4: '1'}"
+317	317		202							{1: '1', 6: '1'}
+318	318		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+319	319		401							{1: '2', 2: '4897'}
+320	320		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTRPGMaze/FxUiTRPGMaze01.prefab', 2: '2'}
+321	321		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '4'}
+322	322		401							{1: '2', 2: '4823'}
+323	323		109						800.0	{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60>99%</size></color>', 9: '3'}
+324	324		401							{1: '2', 2: '9335029'}
+325	325		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenRedEx.prefab', 2: '2'}
+326	326		401							{1: '2', 2: '2924'}
+327	327		109							{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60><b>100%</b></size></color>', 9: '3'}
+328	328		301				AniZhuanchangBegin			{3: 'Data Synchronization Progress: 100%'}
+329	329		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenRedEx.prefab'}
+330	330		110							{1: '1'}
+331	331		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '4', 5: '1'}
+332	332		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1262.jpg'}
+333	333		104							{1: '0|0|-225', 2: '1'}
+334	334		401							{1: '2', 2: '4312'}
+335	335		501			AniZhuanchangEnd				{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiAreaWarHangUp/FxUiAreaWarHangUpBg01.prefab', 2: '2', 4: '1'}
+336	336		301			DialogEnable				{3: 'Vera burns with fury, her visual module precisely locking onto the figure before her.'}
+337	337		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiAreaWarHangUp/FxUiAreaWarHangUpBg01.prefab'}
+338	338		104							{1: '0|0|0', 2: '1'}
+339	339		201							{1: '2', 2: '500928', 7: '1'}
+340	340		301							{1: '1', 3: 'Meanwhile, Eve is covering the still-smoking gun barrel, its arms locked in a death grip around your waist as it sinks its teeth into your side.'}
+341	341		203							{1: '2', 2: '0.25', 4: '-225', 5: '-250'}
+342	342		401							{1: '2', 2: '5530'}
+343	343		302							{2: 'Argh!', 3: '344'}
+344	344		401							{1: '2', 2: '4640'}
+345	345		202							{1: '2'}
+346	346		301							"{3: ""The grotesque sound of flesh being chewed fills Vera's auditory module.""}"
+347	347		402							{1: '4640'}
+348	348		301							{3: 'Witnessing this scene, Vera almost believes herself trapped in the past... once again watching you press the opening of the box against your side.'}
+349	349		201							{1: '1', 2: '501239', 3: '5'}
+350	350		301			PanelActor1Shake				{1: '1', 2: 'Vera', 3: '**** OFF!!!', 4: '1'}
+351	351		401							{1: '2', 2: '4319'}
+352	352		203						200.0	{1: '1', 2: '0.2', 5: '-100'}
+353	353		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+354	354		202							{1: '1'}
+355	355		301			RImgBg1Shake				{3: 'Vera hurls her dual-blade gun with tremendous force—striking the Hetero-Creature square in the side of its face, tearing a gaping hole through its insolent visage as black mud-like substance splatters everywhere.'}
+356	356		301				AniZhuanchangBegin			"{3: 'But even with its ""head"" impaled by Vera, the final evolution has already begun within the human host.'}"
+357	357		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+358	358		201							{1: '1', 2: '500928'}
+359	359		301			AniZhuanchangEnd				{1: '1', 2: 'Eve', 3: 'Bit down... Tore away...', 4: '1'}
+360	360		301							{2: 'Eve', 3: 'Tasted... flesh... information...', 4: '1'}
+361	361		202							{1: '1'}
+362	362		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory970.jpg'}
+363	363		301			AniZhuanchangEnd				"{3: 'Incredibly rich information floods into it, resembling a web of trees stretching across and encompassing countless ""branches""—all of this, coming from a single human.'}"
+364	364		301							"{3: ""It wasn't mistaken after all. No wonder you sparked both hunger and dependency within it.""}"
+365	365		201							{1: '1', 2: '500928'}
+366	366		301							{1: '1', 2: 'Eve', 3: 'Must devour... seize... mimic... learn... evolve...', 4: '1'}
+367	367		301							{2: 'Eve', 3: 'Hehehehe...', 4: '1'}
+368	368		301							{3: 'An immense satisfaction envelops it, a series of uncontrollable giggles spilling from its maw as it worms its way into your memories.'}
+369	369		301							{2: 'Eve', 3: 'Where should I start?', 4: '1'}
+370	370		202							{1: '1'}
+371	371		301							"{3: ""That's a good question—but soon, a piece of information as sweet as honey firmly draws its attention.""}"
+372	372		301							{3: 'Seeking benefit while avoiding harm is instinctive, and now, it finds itself infinitely drawn toward this concept of [love].'}
+373	373		201							{1: '1', 2: '500928'}
+374	374		301							{1: '1', 2: 'Eve', 3: '[Love], I must learn it.', 4: '1'}
+375	375		202							{1: '1'}
+376	376		301				DialogDisable			{3: 'It touches upon your love.'}
+377	377		302							{2: 'Uhh...', 3: '378'}
+378	378		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+379	379		401							{1: '1', 2: '36'}
+380	380		401							{1: '2', 2: '4385'}
+381	381		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+382	382		301			DialogEnable				{3: 'Not just for Gray Raven, but for many others—close friends, battle comrades, even passing acquaintances... These people coalesce into countless beautiful bonds, collectively surrounding you<//Eve>.'}
+383	383		301				AniZhuanchangBegin			{3: 'Like a fantastical, beautiful dreamscape.'}
+384	384		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg'}
+385	385		504							{1: '0.7'}
+386	386		401							{1: '1', 2: '6186'}
+387	387		201							{1: '1', 2: '500026'}
+388	388		301			AniZhuanchangEnd				"{1: '1', 2: 'Lee', 3: ""Are you sure we don't need to accompany you on this mission? Is the mission assessment really that simple? Is Vera doing this on purpose?"", 4: '1'}"
+389	389		201							{1: '1', 2: '1031001', 3: '3'}
+390	390		301				DialogDisable			"{1: '1', 2: 'Liv', 3: ""I heard you're heading out to sea, so I'll prepare some extra emergency equipment... What's with this red medical kit? Why doesn't it even have painkillers..."", 4: '1'}"
+391	391		202							{1: '1'}
+392	392		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+393	393		301			DialogEnable				{3: 'The perspective shifts backward, where the captain of Gray Raven waits silently.'}
+394	394		201							{1: '1', 2: '500166', 3: '4'}
+395	395		301							{1: '1', 2: 'Lucia', 3: 'Commandant...', 4: '1'}
+396	396		301							{2: 'Lucia', 3: 'Please, you must...', 4: '1'}
+397	397		302							"{2: 'I will return safely, I promise.', 3: '398', 4: ""Don't worry, Lucia."", 5: '398'}"
+398	398		202							{1: '1'}
+399	399		301							"{3: ""There's no need to finish every sentence—they already understand each other's hearts.""}"
+400	400		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+401	401		504							{1: '0'}
+402	402		401							{1: '2', 2: '4386'}
+403	403		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+404	404		201							{1: '1', 2: '500928'}
+405	405		301							{1: '1', 2: 'Eve', 3: '...', 4: '1'}
+406	406		301							{2: 'Eve', 3: 'Very delicious.', 4: '1'}
+407	407		202							{1: '1'}
+408	408		301				AniZhuanchangBegin			{3: 'You<//Eve> bypass a section of long-silent memories and venture into a space of pure white.'}
+409	409		504							{1: '0.7'}
+410	410		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory466.jpg'}
+411	411		301			AniZhuanchangEnd				{3: 'White doors, white ceiling, and white bedding.'}
+412	412		201							{1: '1', 2: '501239', 3: '6'}
+413	413		301							"{1: '1', 2: 'Vera', 3: 'Is this person really okay? Their memory keeps resetting like a ""reboot."" Could there be other serious side effects?', 4: '1'}"
+414	414		203							{1: '1', 2: '0.25', 3: '-400'}
+415	415		201							{1: '2', 2: '500138', 4: '400'}
+416	416		301							"{1: '1', 2: 'Doctor', 3: ""Don't worry too much. The only real problem is that gaping hole in their side where the Corrupted stabbed them. The brain hematoma will go down on its own, it just needs some time."", 4: '2'}"
+417	417		204							{1: '1'}
+418	418		301							"{2: 'Vera', 3: ""...Fine, I get it. As long as the hematoma doesn't go away, this ****** situation will continue."", 4: '1'}"
+419	419		202							{1: '2'}
+420	420		203							{1: '1', 2: '0.25'}
+421	421		301							{3: 'The doctor hastily departs. This is a temporary medical station, and a disaster has just swept through the area outside. There are too many people in need of treatment.'}
+422	422		301							"{2: 'Vera', 3: ""Little Commandant, I'm stepping out for a bit. You should rest."", 4: '1'}"
+423	423		302							{2: '...'}
+424	424		202							{1: '1'}
+425	425		301				AniZhuanchangBegin			{3: 'The red-haired Construct waves her hand at the hospital bed, then leaves the room and disappears for a short while.'}
+426	426		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab', 2: '2'}
+427	427		502						400.0	{1: 'DialogDisable'}
+428	428		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+429	429		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+430	430		502							{1: 'DialogEnable'}
+431	431		301			AniZhuanchangEnd				"{3: ""When she returns, it's already late. She's cleaning her hands while letting her hair down, looking as if she's been helping the medical staff.""}"
+432	432		201							{1: '1', 2: '501239'}
+433	433		301							{1: '1', 2: 'Vera', 3: '...What are you staring at? Have you been awake this whole time, or did you just wake up from your rest?', 4: '1'}
+434	434		302							{2: '...Just woke up.', 3: '435'}
+435	435		301							"{3: 'Your voice is extremely hoarse, with a metallic taste of blood seemingly rising continuously in the throat. Even though Eve is merely ""inhabiting"" and experiencing the body, it can understand just how severely the patient is injured.'}"
+436	436		302							{2: '...Vera.', 3: '437'}
+437	437		204							{1: '1', 2: '8'}
+438	438		301							"{2: 'Vera', 3: 'Don\'t keep calling me ""Vera"" this and ""Vera"" that. It\'s irritating.', 4: '1'}"
+439	439		204							{1: '1'}
+440	440		301				DialogDisable			"{2: 'Vera', 3: ""Here, moisten your lips, then go back to sleep... Don't swallow it. Following the doctor's orders and focusing on recovery is the most important thing for you right now. Do you understand?"", 4: '1'}"
+441	441		302							{2: 'Thank you.', 3: '442', 4: '(Moisten lips with water.)', 5: '442'}
+442	442		302							{2: 'By the way... you should get some rest too.', 3: '443'}
+443	443		301			DialogEnable				{2: 'Vera', 3: 'Thanks for the concern, but mind your own business.', 4: '1'}
+444	444		204							{1: '1', 2: '4'}
+445	445		301							"{2: 'Vera', 3: ""Look away too, stop staring at me. I've already promised I'll stay here and watch over you, so hurry up and sleep."", 4: '1'}"
+446	446		302				DialogDisable			{2: '(Close eyes peacefully.)', 3: '447'}
+447	447		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab', 2: '2'}
+448	448		202							{1: '1', 6: '1'}
+449	449		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+450	450		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+451	451		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+452	452		502							{1: 'DialogEnable'}
+453	453		301			AniZhuanchangEnd				{2: 'Vera', 3: '...', 4: '1'}
+454	454		301							{2: 'Vera', 3: '...', 4: '1'}
+455	455		301							{3: 'You<//Eve> have seemingly closed your eyes for a long time, yet you fail to drift away into the darkness of sleep. Instead, chaotic memories intermingle in your mind, causing you frustration.'}
+456	456		301							{2: 'Vera', 3: '...Get... away...!', 4: '1'}
+457	457		301				AniZhuanchangBegin			{2: 'Vera', 3: '...Hummingbird... give me the coordinates...', 4: '1'}
+458	458		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory466.jpg'}
+459	459		201							{1: '1', 2: '501239', 3: '8', 7: '1'}
+460	460		302							{2: '...Vera?', 3: '461'}
+461	461		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+462	462		301			AniZhuanchangEnd				{1: '1', 3: 'Vera sits upright in the bedside chair with her arms crossed. Her eyes are tightly shut and her brow deeply furrowed, likely experiencing something unpleasant in her sleep mode.'}
+463	463		302							{2: '(Should I help her out?)', 3: '464'}
+464	464		401							{1: '2', 2: '4044'}
+465	465		202							{1: '1'}
+466	466		104							{1: '0|0|-50', 2: '0.25'}
+467	467		301							{3: 'The view shifts upward with effort—you<//Eve> rise up from the hospital bed and reach out toward the red-haired Construct.'}
+468	468		302				DialogDisable			{2: '(Let me try... a M.I.N.D. connection.)', 3: '469'}
+469	469		401							{1: '2', 2: '2567'}
+470	470		501				AniZhuanchangBegin		2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab', 2: '3'}
+471	471		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab'}
+472	472		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+473	473		301			DialogEnable				{3: 'You sink into the connection, doing your best to soothe her turbulent M.I.N.D.'}
+474	474		301							{3: 'But before long, you pull away with a look of surprise, uttering a single name.'}
+475	475		302							{2: '...Kurono...?', 3: '476'}
+476	476		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory466.jpg'}
+477	477		301			AniZhuanchangEnd				{3: 'You stare silently at Vera for a long time, then reach out to touch the bandage on your side.'}
+478	478		301							{3: 'Your gaze shifts to the apple at the bedside, along with a glass of water—the stale water has been replaced.'}
+479	479		302							"{2: ""...This isn't right."", 3: '480', 4: 'What will you do?', 5: '480'}"
+480	480		301							{3: 'You reach for your terminal and make note of something.'}
+481	481		301				DialogDisable			"{3: ""Then, taking a deep breath, you reconnect to Vera's M.I.N.D.""}"
+482	482		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+483	483		504							{1: '0'}
+484	484		401							{1: '2', 2: '4386'}
+485	485		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+486	486		201							{1: '1', 2: '500928'}
+487	487		301			DialogEnable				{1: '1', 2: 'Eve', 3: '...Why would you do this? Why am I [happy]?', 4: '1'}
+488	488		302							{2: 'Can you understand?', 3: '489', 4: 'How do you like it?', 5: '490'}
+489	489	491	301							{2: 'Eve', 3: 'Understand...?', 4: '1'}
+490	490	491	301							{2: 'Eve', 3: 'Is it... good?', 4: '1'}
+491	491		202							{1: '1'}
+492	492		301							{3: 'You<//Eve> wander through your memories.'}
+493	493		301							{3: 'After tasting a portion of it, Eve gradually lost her smile, feeling that she was becoming entangled in the threads of fate just like her mother<//father>.'}
+494	494		301							{3: 'Their thoughts grow heavy, each successive interpretation becoming more and more burdensome.'}
+495	495		201							{1: '1', 2: '500928'}
+496	496		301							{1: '1', 2: 'Eve', 3: '[Love], incomprehensible.', 4: '1'}
+497	497		301							{2: 'Eve', 3: 'What else? Is there anything easier to understand?', 4: '1'}
+498	498		202							{1: '1'}
+499	499		401							{1: '1', 2: '36'}
+500	500		301							{3: 'With the aid of Punishing energy, they step into yet another place.'}
+501	501		401							{1: '1', 2: '296'}
+502	502		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+503	503		504							{1: '0.7'}
+504	504		401							{1: '2', 2: '4386'}
+505	505		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory10.jpg'}
+506	506		201							{1: '3', 2: '500293', 3: '7', 7: '1'}
+507	507		301							{1: '1', 2: 'Vanessa', 3: 'So the eavesdropper... has taken an interest in our casual chat...?', 4: '3'}
+508	508		202							{1: '3', 6: '1'}
+509	509		201							{1: '1', 2: '500260', 4: '-200', 5: '-100', 7: '1'}
+510	510		201							{1: '2', 2: '501236', 4: '200', 7: '1'}
+511	511		301							{1: '1', 2: 'Girl', 3: 'Die... die... DIE!!', 4: '1'}
+512	512		301			PanelActor1Shake				{2: 'Girl', 3: 'Let him die! Kill him, now!!!', 4: '1'}
+513	513		202							{1: '1', 2: '2', 6: '1'}
+514	514		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+515	515		504							{1: '0'}
+516	516		401							{1: '2', 2: '4386'}
+517	517		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+518	518		201							{1: '1', 2: '500928'}
+519	519		301							{1: '1', 2: 'Eve', 3: '(Rapidly exits.)', 4: '1'}
+520	520		301							{2: 'Eve', 3: 'W-wait, wait... Is this right?', 4: '1'}
+521	521		202							{1: '1'}
+522	522		301							{3: 'They glimpse Haynes, the creator who made them, while emotions splash out like blood drenching their entire being. Instinctively, they choose to withdraw.'}
+523	523		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+524	524		504							{1: '0.7'}
+525	525		401							{1: '2', 2: '4386'}
+526	526		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory10.jpg'}
+527	527		201							{1: '1', 2: '501236', 3: '5'}
+528	528		301							{1: '1', 2: 'Haynes', 3: '...All... wrong...', 4: '1'}
+529	529		301							{2: 'Haynes', 3: 'You think...', 4: '1'}
+530	530		204							{1: '1'}
+531	531		301							{1: '1', 2: 'Haynes', 3: 'You... deserve this... hah...', 4: '1'}
+532	532		301							{2: 'Haynes', 3: 'Hah hah hah... I... did it... The new seed... has already...', 4: '1'}
+533	533		202							{1: '1', 6: '1'}
+534	534		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+535	535		504							{1: '0'}
+536	536		401							{1: '2', 2: '4386'}
+537	537		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+538	538		301							{3: 'They cannot understand why humans are slaughtering each other, with their own creator leading the carnage.'}
+539	539		201							{1: '1', 2: '500928'}
+540	540		301							"{1: '1', 2: 'Eve', 3: ""No, no... Don't look at these."", 4: '1'}"
+541	541		301							"{3: 'But ""silk threads"" have already silently entwined themselves around Eve, preventing her escape attempt.'}"
+542	542		301							{3: 'You seem to be looking down at her past as well, responding to her panic with a contemptuous laugh.'}
+543	543		302							{2: 'Is it [painful]?', 3: '544', 4: 'Can you shoulder the burden?', 5: '544'}
+544	544		301				DialogDisable			{2: 'Eve', 3: 'No... Let me go!', 4: '1'}
+545	545		302							{2: '...cunning and arrogant beast.', 3: '546'}
+546	546		302							{2: 'You want this? Then take it.', 3: '547'}
+547	547		301			DialogEnable				{2: 'Eve', 3: '!', 4: '1'}
+548	548		401							{1: '2', 2: '721'}
+549	549		203							{1: '1', 2: '0.25', 4: '-125'}
+550	550		301							{3: 'You raise your hand and forcefully push yourself<//Eve> deeper into the murky depths.'}
+551	551		301			PanelActor1Shake				{2: 'Eve', 3: 'Guh!!', 4: '1'}
+552	552		202							{1: '1'}
+553	553		301				DialogDisable			"{3: ""The sensation of drowning—now it's their turn to experience it.""}"
+554	554		104							{1: '0|0|-100', 2: '0.8'}
+555	555		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory970.jpg', 3: '0', 4: '1', 5: '1'}
+556	556		205							{1: '999'}
+557	557		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory970.jpg'}
+558	558		301			DialogEnable				{3: 'Eve is forcibly confined within a human body, every scar across her form reawakening with its original pain.'}
+559	559		301							"{3: 'It begins with some ""insignificant"" bruises and scrapes—all from training courses at F.O.S. Military College. Minor scuffles, minor ailments, things every student experiences.'}"
+560	560		301							{3: 'A vibrant vitality would gently erase these wounds, as if they had never existed.'}
+561	561		201							{1: '1', 2: '500928'}
+562	562		301							{1: '1', 2: 'Eve', 3: 'Tch...', 4: '1'}
+563	563		202							{1: '1'}
+564	564		301							{3: 'After entering the battlefield, her wounds grew increasingly severe.'}
+565	565		301							{3: 'A Corrupted sliced open her abdomen while she was evacuating civilians. Cranial trauma.'}
+566	566		301							{3: 'To protect a damaged sample container, she pressed its breach against a wound in her side.'}
+567	567		201							{1: '1', 2: '500928'}
+568	568		301							{1: '1', 2: 'Eve', 3: 'Sss-hisss!!', 4: '1'}
+569	569		302							"{2: ""Don't struggle. You can't escape."", 3: '570', 4: ""Don't struggle. This is what you wanted."", 5: '570'}"
+570	570		202							{1: '1'}
+571	571		301							{3: 'While fighting Vonnegut alongside Strike Hawk, she was buried under a collapsing wall. Fractured ribs. Lung damage.'}
+572	572		301							{3: 'While fighting a Hetero-Hive Mother, she was impaled through her side by Punishing tentacles. Minor organ rupture. Fractured hand bones. Cranial trauma. Subdural hematoma.'}
+573	573		201							{1: '1', 2: '500928'}
+574	574		301							{1: '1', 2: 'Eve', 3: 'HISSSSS!!', 4: '1'}
+575	575		202							{1: '1'}
+576	576		301							{3: 'Countless knife wounds. Countless explosions. Countless falls.'}
+577	577		301							{3: '...'}
+578	578		301							{3: 'Heroes are sculpted by disaster—sculpted by the disasters crashing down upon the fragile human body, wave after wave, cycle after cycle, endlessly overlapping.'}
+579	579		301				DialogDisable			{3: 'It is pressed down into the mire, experiencing [pain] firsthand. You had anticipated this reaction all along, and you issued your warning accordingly.'}
+580	580		302							{2: 'Listen carefully—', 3: '581'}
+581	581		302							{2: 'This is what forged every scar on my body!', 3: '582'}
+582	582		302							{2: 'Keep dreaming of replacing humans, you primitive beast!', 3: '583'}
+583	583		201							{1: '1', 2: '500928'}
+584	584		301			DialogEnable				{1: '1', 2: 'Eve', 3: 'Get out! Run fast!! [Pain]!! [PAIN]!!!', 4: '1'}
+585	585		401							{1: '2', 2: '3077'}
+586	586		203						200.0	{1: '1', 2: '0.2', 4: '-75', 5: '100'}
+587	587		202							{1: '1'}
+588	588		301							{3: 'You shove Eve forcefully, tearing apart the two of you that had begun to merge, with fine intricate threads, stretching like half-dried adhesive.'}
+589	589		302				DialogDisable			{2: 'Stay away from me. Go face the fate you deserve.', 3: '590'}
+590	590		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+591	591		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '2'}
+592	592		502							{1: 'DialogEnable'}
+593	593		301			AniZhuanchangEnd				{3: 'Eve immediately accepts this, even [ecstatically] embracing being expelled by you. It never wants to make contact with you again.'}
+594	594		301							{3: 'For a brief moment, it believes it is finally free.'}
+595	595		301				DialogDisable			"{3: ""But reality isn't so kind—no sooner has its mental agony subsided than its body is seized by new [pain].""}"
+596	596		401							{1: '1', 2: '36'}
+597	597		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+598	598		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1262.jpg'}
+599	599		401							{1: '1', 2: '6178'}
+600	600		401							{1: '2', 2: '9327108'}
+601	601		201							{1: '1', 2: '500928', 5: '-75', 6: '-150', 7: '1'}
+602	602		401						200.0	{1: '2', 2: '2690'}
+603	603		203							{1: '1', 2: '0.25', 5: '-150'}
+604	604		301			DialogEnable				{1: '1', 3: 'Splash—'}
+605	605		301							{3: 'In this bleak reality, Eve is violently torn from your abdomen, and in the next moment, hangs suspended in midair.'}
+606	606		401							{1: '2', 2: '4807'}
+607	607		301			PanelActor1Shake				{2: 'Eve', 3: 'HISSSSSSS!!!', 4: '1'}
+608	608		201							{1: '1', 2: '501239', 3: '5', 4: '-200'}
+609	609		301							{1: '1', 2: 'Vera', 3: '...Who gave you permission to hurt my Commandant...?!', 4: '1'}
+610	610		301				DialogDisable			{3: 'A delicate face, contorted with rage, presses close against its eyes.'}
+611	611		202							{1: '1', 2: '2', 6: '1'}
+612	612		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+613	613		401							{1: '2', 2: '2924'}
+614	614		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '3'}
+615	615		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5501_8.jpg'}
+616	616		401							{1: '2', 2: '558'}
+617	617		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+618	618		101						800.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5501_9.jpg'}
+619	619		401							{1: '2', 2: '558'}
+620	620		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+621	621		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+622	622		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5501_8.jpg'}
+623	623		401							{1: '2', 2: '558'}
+624	624		301			DialogEnable				"{3: '""Eve\'s"" vision blurs. In her delirium, the woman before her merges with the silhouette from the sea, the one who nearly killed her before.'}"
+625	625		301							{1: '1', 2: 'Eve', 3: 'You...', 4: '2'}
+626	626		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1262.jpg'}
+627	627		502							{1: 'DialogEnable'}
+628	628		201							{1: '1', 2: '501239', 3: '5', 4: '-400'}
+629	629		201							{1: '2', 2: '500928', 4: '400', 5: '-50'}
+630	630		301			AniZhuanchangEnd				{1: '1', 2: 'Vera', 3: 'You... goddamned Hetero-Creature!!', 4: '1'}
+631	631		302							{2: 'Kill it now, Vera!', 3: '632'}
+632	632		301							"{3: ""You press down on the wound where Eve's corrosion has eaten through your flesh, voice strained with pain as you issue the command to Vera.""}"
+633	633		204							{1: '1', 2: '4'}
+634	634		401							{1: '2', 2: '4796'}
+635	635		203							{1: '1', 2: '0.25', 3: '-200'}
+636	636		203			PanelActor2Shake				{1: '2', 2: '0.25', 3: '450'}
+637	637		502							{1: 'RImgBg1Shake'}
+638	638		301							"{3: ""Vera raises her hand, driving her gunlance deep into the Hetero-Creature's body, twisting it to shred the flesh within. This time, she won't let this cunning creature escape.""}"
+639	639		202							{1: '2', 6: '1'}
+640	640		306							{1: '1'}
+641	641		201							{1: '1', 2: '501239', 3: '4', 5: '-75', 6: '-200'}
+642	642		502							{1: 'RImgBg1BlowUp'}
+643	643		301							{1: '1', 3: 'Eve hangs suspended in mid-air, quietly gazing at the red Construct before her.'}
+644	644		301							"{3: 'No one knows what it\'s ""thinking.""'}"
+645	645		401							{1: '2', 2: '4408'}
+646	646		301							"{3: 'The two of you can only watch as—in its moment of death, amid the spine-chilling sound of flesh being shredded, Eve unsteadily opens her ""arms"" toward Vera.'}"
+647	647		301							{3: 'In the final moment of its life, it chose to embrace [pain].'}
+648	648		301		1		AniZhuanchangBegin			{3: 'And then, it ceased to move.'}

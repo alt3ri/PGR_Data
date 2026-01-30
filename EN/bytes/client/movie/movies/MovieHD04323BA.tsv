@@ -1,0 +1,76 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory802.jpg'}
+2	2		401							{1: '1', 2: '6153'}
+3	3		201							{1: '1', 2: '500334', 3: '1'}
+4	4		301			DialogEnable				{1: '1', 2: 'Roland', 3: 'Boo, long time no see, Gray Raven Commandant! Surprised to see me?', 4: '1'}
+5	5		302							{2: 'Roland? What are you doing here?', 3: '6'}
+6	6		301							"{2: 'Roland', 3: ""No way I'm ever gonna miss out on the fun today."", 4: '1'}"
+7	7		301							"{2: 'Roland', 3: ""And I want to see nowhere else but you now, and there's no way I'd let this chance slip."", 4: '1'}"
+8	8		302							{2: '(Remain silent)', 3: '9', 4: '(Slowly draw out your gun)', 5: '9'}
+9	9		301							"{2: 'Roland', 3: ""Easy now, I'm actually here to help you."", 4: '1'}"
+10	10		301							"{2: 'Roland', 3: ""I noticed you got a voucher but couldn't find yourself a partner yeah?"", 4: '1'}"
+11	11		301							"{2: 'Roland', 3: 'I\'ve heard about this event. It\'s a game that was quite popular during the Golden Age. People back then called these games ""script murder games.""', 4: '1'}"
+12	12		301							"{2: 'Roland', 3: ""It's essentially theatrical performance, and you know that means you want to do it with me."", 4: '1'}"
+13	13		302							{2: '(Speechless)', 3: '14'}
+14	14		301							"{2: 'Roland', 3: ""Your silence means consent, so I'll take that as a yes."", 4: '1'}"
+15	15		302							{2: '...Just remember not to get carried away.', 3: '16'}
+16	16		204							{1: '1', 2: '2'}
+17	17		301							"{2: 'Roland', 3: 'Yup, I\'ll follow your every ""command"" to the letter.', 4: '1'}"
+18	18		301							"{2: 'Roland', 3: ""I'll be on my absolute best behavior."", 4: '1'}"
+19	19		204							{1: '1', 2: '1'}
+20	20		301							{3: 'This game essentially works like a theatrical performance, where the participants role-play as characters from the script, follow the storyline to complete their personal objectives, conduct deductive investigations, and ultimately reach specific endings.'}
+21	21		301							{3: 'With the other players already in their positions online, there are exactly two spots remaining. The game begins as soon as you and Roland join the game, and it starts with character assignment.'}
+22	22		301				DialogDisable			{3: 'Though something seems... not quite right.'}
+23	23		302							"{2: ""Are you sure you really didn't tamper with character assignment?"", 3: '24'}"
+24	24		302							{2: 'I mean, with all these other people in the game...', 3: '25'}
+25	25		302							{2: 'What are the odds of us ending up as a couple, right?', 3: '26'}
+26	26		204							{1: '1', 2: '2'}
+27	27		301			DialogEnable				{2: 'Roland', 3: 'God knows.', 4: '1'}
+28	28		301							{2: 'Roland', 3: 'But feel free to take a guess, yeah?', 4: '1'}
+29	29		302							{2: '......', 3: '30'}
+30	30		204							{1: '1', 2: '1'}
+31	31		301							"{2: 'Roland', 3: ""Well, let's play along for now, shall we?"", 4: '1'}"
+32	32		301							{3: 'The system shows the game has already started. You have no choice but to continue with your assigned role.'}
+33	33		301				DialogDisable			"{3: ""You're supposed to look into the murder case without exposing your identity, which isn't too difficult at all to you, except...""}"
+34	34		302							"{2: '""A couple who has fallen in love at first sight later discover their families share a bloody, deep-seated vendetta, forcing them apart.""', 3: '35'}"
+35	35		302							{2: 'This story is so cliche that it almost sounds like...', 3: '36'}
+36	36		301			DialogEnable				"{2: 'Roland', 3: 'Yup, it\'s ""Romeo and Juliet"". That\'s what this story is based on.', 4: '1'}"
+37	37		301							"{2: 'Roland', 3: ""Sometimes the more dramatic a story is, the more likely it becomes a classic. That's probably what makes the story so attractive."", 4: '1'}"
+38	38		302							"{2: 'Guess you do have a point.', 3: '39', 4: ""Guess we can't really call it quits now, can we..."", 5: '39'}"
+39	39		301							{3: 'People gradually come to have a clear picture of the murder case as the story unfolds.'}
+40	40		301							{3: 'Before you know it, the case is coming to an end.'}
+41	41		301							{3: 'The process advances step by step. The story unfolds, the case evolves, followed by the gathering of clues and fact-checking. Everyone continues the game carrying their own objective and thoughts, experiencing life and death, love and hate within this virtual world.'}
+42	42		301				DialogDisable			"{3: ""There's only one thing one needs to do to clear the game—find the murderer. Several rounds later, everyone finds themselves at the stage where they have to name the person they believe to be the murderer.""}"
+43	43		302							{2: 'So... according to all the evidence we have here.', 3: '44'}
+44	44		302							{2: 'You have to be the murderer.', 3: '45'}
+45	45		301			DialogEnable				"{3: ""The name of Roland's character shows up on the screen as the culprit.""}"
+46	46		204							{1: '1'}
+47	47		301							"{2: 'Roland', 3: 'Well, that\'d be correct indeed, but are you sure you want your ""lover"" condemned?', 4: '1'}"
+48	48		301				DialogDisable			{2: 'Roland', 3: 'Not trying to go easy on me at all, I see.', 4: '1'}
+49	49		302							"{2: '(You waver but hold your own)', 3: '50', 4: ""I'm just doing what I'm supposed to without letting my personal feelings get in the way."", 5: '51'}"
+50	50	52	302							{2: 'Say whatever you want. I know you have to be the murderer.', 3: '52'}
+51	51		302							{2: 'Everything points to you, and nothing more you say will change that.', 3: '52'}
+52	52		301			DialogEnable				{2: 'Roland', 3: 'Very well then, as you wish.', 4: '1'}
+53	53		202							{1: '1'}
+54	54		301				DialogDisable			{3: 'When Roland presses the accept button, the system shows that the murderer has been correctly identified.'}
+55	55		302							{2: 'Wait, what in the world is...', 3: '56'}
+56	56		302							"{2: '""Your character died. Game over""?!', 3: '57'}"
+57	57		301			DialogEnable				"{3: 'The screen is now showing ""Investigation Successful"" and ""Mission Complete"", but your character is now dead for no apparent reason.'}"
+58	58		201							{1: '1', 2: '500334', 3: '1'}
+59	59		301							"{1: '1', 2: 'Roland', 3: 'There\'s nothing to be surprised about. ""Truth"" and ""satisfaction"" never hold the same weight to begin with.', 4: '1'}"
+60	60		301							{2: 'Roland', 3: 'You might be super analytical, Commandant, but... we have ourselves an emotionally charged love story here.', 4: '1'}
+61	61		301							"{2: 'Roland', 3: 'If you ignore ""love"" and focus only on the judgment... you will lead your character to nothing but death.', 4: '1'}"
+62	62		301							"{2: 'Roland', 3: ""I mean, if you truly love someone, you'd never be able to bring yourself to kill them, would you?"", 4: '1'}"
+63	63		302							{2: 'You mean I accidentally killed myself... when I identified you as the murderer?', 3: '64'}
+64	64		301							"{2: 'Roland', 3: ""You lose the power to carry on with life when you lose the one you love... and soon enough you'll find yourself gnawed away by guilt and all those negative feelings..."", 4: '1'}"
+65	65		301							"{2: 'Roland', 3: ""That's what's supposed to happen to your character based on the way the game was designed."", 4: '1'}"
+66	66		301							"{2: 'Roland', 3: ""Gotta say that's very classic, though."", 4: '1'}"
+67	67		302							{2: '...Never even saw that coming.', 3: '68'}
+68	68		301							"{2: 'Roland', 3: ""Makes sense, though, if you take into account the fact that this is a Valentine's Day game. Gotta be in keeping with the theme, right?"", 4: '1'}"
+69	69		301							"{2: 'Roland', 3: ""The game is over, so it's time for me to take my leave. You can keep the prize."", 4: '1'}"
+70	70		301							{3: 'Says Roland as he shoves the prize—an exquisite preserved rose—into your hand.'}
+71	71		204							{1: '1', 2: '2'}
+72	72		301							"{2: 'Roland', 3: ""Mind you, though, this is not a holographic image... It's tangible, and you can even smell the fragrance on the petals if you hold it close enough."", 4: '1'}"
+73	73		301							"{2: 'Roland', 3: 'By the way, I very much enjoyed being your ""love,"" as short-lived as our relationship was.', 4: '1'}"
+74	74		301							{2: 'Roland', 3: 'Whatever happened today stays right here, yeah?', 4: '1'}
+75	75		301		1		AniZhuanchangBegin			"{2: 'Roland', 3: ""You're free to do as you please, but I'll reciprocate you with this fire that burns in me—like this rose that will never wither."", 4: '1'}"

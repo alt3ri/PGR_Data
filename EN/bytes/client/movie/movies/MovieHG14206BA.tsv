@@ -1,0 +1,140 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+2	2		401							{1: '1', 2: '204'}
+3	3		201							{1: '1', 2: '500817', 3: '3'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Qu', 3: ""So I guess you didn't notice you were injured?"", 4: '1'}"
+5	5		302							"{2: ""Didn't feel anything."", 3: '6'}"
+6	6		301							{3: 'Carefully, you take off your protective suit.'}
+7	7		301							"{2: 'Qu', 3: ""You probably had a bunch of adrenaline flowing through your body just now when we almost lost you out there. Bet that's why you didn't feel a thing."", 4: '1'}"
+8	8		301							"{2: 'Qu', 3: ""It's nothing serious, though. Just a scrape on the elbow."", 4: '1'}"
+9	9		301							{3: 'With it, you raise your arm to check on it—and see a splotch of red.'}
+10	10		301							{3: 'You got scrapes here and there all the time as a child, and this one now looks no bigger than one of those.'}
+11	11		302							"{2: ""Not really something I'd worry about."", 3: '12'}"
+12	12		301							{3: 'You roll up your sleeve and continue organizing the equipment box.'}
+13	13		204							{1: '1', 2: '4'}
+14	14		301							{2: 'Qu', 3: 'Hold on.', 4: '1'}
+15	15		301							"{2: 'Qu', 3: ""Can't you see that I'm really worried about you here?"", 4: '1'}"
+16	16		202							{1: '1'}
+17	17		301							{3: 'Qu grabs your wrist.'}
+18	18		201							{1: '1', 2: '500817', 3: '3'}
+19	19		301							"{1: '1', 2: 'Qu', 3: ""Just because it isn't big doesn't mean it's okay to just ignore it. You might end up with a fever if you get an infection, and that's just one of the many things that can happen."", 4: '1'}"
+20	20		301							"{2: 'Qu', 3: ""Can't believe I need to tell you all these when you've been out there fighting all these battles, Chief."", 4: '1'}"
+21	21		301							"{2: 'Qu', 3: ""And it's partly my fault that you ended up with the scrape, so here, let me take care of it for you."", 4: '1'}"
+22	22		202							{1: '1'}
+23	23		301							{3: 'Qu takes out a medical kit and finds half a bottle of iodine, cotton swabs, and clean bandages.'}
+24	24		301							{3: 'She soaks a cotton swab in the brown iodine, pauses for a moment, and then gently rolls the swab over your wound.'}
+25	25		301							{3: 'Qu is deep in thought while treating you.'}
+26	26		201							{1: '1', 2: '500817', 3: '4'}
+27	27		301							{1: '1', 2: 'Qu', 3: 'Flesh and blood, the pain of the body... injuries, comas, even death.', 4: '1'}
+28	28		301							"{2: 'Qu', 3: ""I've seen all of these way too many times, and again and again I've lost people who fought alongside me."", 4: '1'}"
+29	29		301							"{2: 'Qu', 3: ""The human body has its limits. There is no fixing it once it's damaged beyond a certain point."", 4: '1'}"
+30	30		301							"{2: 'Qu', 3: ""You remind me of my comrades from back in the day. Well, not saying you're exactly like them, of course..."", 4: '1'}"
+31	31		301							"{2: 'Qu', 3: ""We should count our blessings that we're living through such peaceful times, no?"", 4: '1'}"
+32	32		301							"{2: 'Qu', 3: ""Guess Hengzhu was hoping that I wouldn't be all alone on my own when the going got tough..."", 4: '1'}"
+33	33		301							"{2: 'Qu', 3: ""So that there would be someone to take care of me and show me open and I'd be able to do the same for that person."", 4: '1'}"
+34	34		204							{1: '1', 2: '1'}
+35	35		301							"{2: 'Qu', 3: ""And I think that's exactly what we are..."", 4: '1'}"
+36	36		202							{1: '1'}
+37	37		301							"{3: ""You turn your face around when Qu's hair brushes against your face and causes an itch.""}"
+38	38		301							{3: 'Seeing you turn your face around, she casts you a curious look...'}
+39	39		201							{1: '1', 2: '500817', 3: '3'}
+40	40		301							{1: '1', 2: 'Qu', 3: 'Does it hurt?', 4: '1'}
+41	41		302							"{2: 'Nope.', 3: '42', 4: ""I'm just feeling a little itchy."", 5: '43'}"
+42	42	45	301							{2: 'Qu', 3: 'Great. Thought I was being too rough with you.', 4: '1'}
+43	43		301							{2: 'Qu', 3: 'Psh, suck it up already.', 4: '1'}
+44	44		202							{1: '1'}
+45	45		301							"{3: ""When she's done patching you up, Qu pats you on the shoulder.""}"
+46	46		201							{1: '1', 2: '500817'}
+47	47		301							"{1: '1', 2: 'Qu', 3: ""All done. Now, let's go and check out the hologram together."", 5: '1'}"
+48	48		302							{2: 'Alright.', 3: '49'}
+49	49		202							{1: '1'}
+50	50		301							{3: 'As the two of you walk up to the holographic projector, you see a note on the console.'}
+51	51		301							{3: 'Qu picks it up and starts reading it carefully.'}
+52	52		201							{1: '1', 2: '500817'}
+53	53		301							{1: '1', 2: 'Qu', 3: 'Qiqi left us this. We just need to follow it to get the holographic projector up and running.', 4: '1'}
+54	54		301				DialogDisable			"{2: 'Qu', 3: ""It's no rocket science. We just need to punch in the correct coordinates and adjust the range."", 4: '1'}"
+55	55		202			AniZhuanchangBegin				{1: '1', 6: '1'}
+56	56		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+57	57		301			DialogEnable				{3: 'Qu activates the full-coverage holographic projection, casting distant stars onto the observatory.'}
+58	58		301				DialogDisable			{3: 'At first, the indoor lights go out one by one. In the darkness, several pale green beams of light crisscross...'}
+59	59		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg'}
+60	60		301			DialogEnable				{3: 'Then, one star lights up. Then another. Then another... like blooming flowers.'}
+61	61		301							{3: 'The entire Milky Way emerges from the void. Some stars gather in clusters, others stand alone, some are far apart, while some are right next to one another...'}
+62	62		301							{3: 'Stars of all shapes flicker and leap against the black background, forming a magnificent cosmic tapestry.'}
+63	63		301							{3: 'The stars move slowly across the sky. As you gaze at the stars, it feels like you can feel them as they slowly make their way across the sky. This is not unlike watching an endlessly fascinating time-lapse video.'}
+64	64		301							{2: 'Qu', 3: 'These stars shine every bit as brightly as human civilization itself.'}
+65	65		301							"{2: 'Qu', 3: ""These stars are almost insignificant when they're on their own, but they shine brightly all the same.""}"
+66	66		301							{2: 'Qu', 3: 'These scattered points of light weave into a net and form a dazzling and beautiful galaxy.'}
+67	67		301							{2: 'Qu', 3: 'I believe that both Kowloong and Babylonia are symbols of the undying spark of human civilization.'}
+68	68		301							{2: 'Qu', 3: 'We just might be able to unite all on Earth somewhere down the road...'}
+69	69		301							"{2: 'Qu', 3: ""And that's when we'll have a blazing beacon of hope to guide humanity toward the vast cosmos.""}"
+70	70		301							{3: 'You look up at the starry sky, appreciating the vast and grand universe Qu described.'}
+71	71		301							"{2: 'Qu', 3: ""The observatory is bigger than this place, but we're closer to the stars where we are now.""}"
+72	72		301							{2: 'Qu', 3: 'Gotta say Babylonia is full of surprises.'}
+73	73		301							"{2: 'Qu', 3: ""I wouldn't mind staying here a bit longer for some research, though.""}"
+74	74		301							"{2: 'Qu', 3: ""But that's not the kind of luxury I get to enjoy as the ruler of Kowloong.""}"
+75	75		301							{2: 'Qu', 3: 'Well, I actually meant to tell you this...'}
+76	76		302							{2: 'Yes?', 3: '77'}
+77	77		301							"{2: 'Qu', 3: ""Kowloong has come this far thanks to everyone who's been there for it along the way, and that's something I've learned from Hengzhu.""}"
+78	78		301							"{2: 'Qu', 3: ""Be it our predecessors or Kowloong's past citizens, countless souls have shed blood and sweat to make Kowloong a better place.""}"
+79	79		301							"{2: 'Qu', 3: ""I've always needed someone smart to work for me but haven't really come across anyone to fill that role.""}"
+80	80		301							{2: 'Qu', 3: 'But you, I think you have exactly what it takes to fill the role.'}
+81	81		204							{1: '1', 2: '1'}
+82	82		301							{2: 'Qu', 3: 'Yes, to me, you are unique.'}
+83	83		301							{2: 'Qu', 3: 'Not only as my right hand but also as my partner...'}
+84	84		301							"{2: 'Qu', 3: ""I hope you can truly step into my life and search for humanity's hope with me.""}"
+85	85		301							{2: 'Qu', 3: 'What do you say?'}
+86	86		302							{2: 'I gotta think about it.', 3: '87', 4: '...', 5: '87'}
+87	87		301				DialogDisable			{3: 'The lights around the two of you slowly come back to life when the holographic projection ends.'}
+88	88		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+89	89		201							{1: '1', 2: '500817'}
+90	90		301			DialogEnable				{1: '1', 3: 'With the starry sky gone, all that you see now is Qu.'}
+91	91		204							{1: '1', 2: '2'}
+92	92		301							"{3: ""Her face carries a tinge of red and she seems somewhat reserved, probably because it's a little warm in here.""}"
+93	93		301							"{2: 'Qu', 3: ""If you're not gonna say anything, I'll take that as a yes, then."", 4: '1'}"
+94	94		202							{1: '1'}
+95	95		301							{3: 'Qu takes your hand.'}
+96	96		301							{3: 'You look quietly at Qu, lost for words.'}
+97	97		301							{3: 'Awkward silence envelops the two of you.'}
+98	98		301							{3: 'Right then, you hear a rolling noise coming from behind.'}
+99	99		301							"{3: ""When you turn around to see what's making the noise, you see Robot A coming this way.""}"
+100	100		201							{1: '1', 2: '500354'}
+101	101		401							{1: '1', 2: '205'}
+102	102		301							{1: '1', 2: 'Robot A', 3: 'Hello, welcome to the Astronomical Observatory.', 4: '1'}
+103	103		302							"{2: ""Yup, we've all heard that several times already."", 3: '104'}"
+104	104		301							"{2: 'Robot A', 3: 'Coming up next is ""Love of the Neutron Star"".', 4: '1'}"
+105	105		301							{2: 'Robot A', 3: 'My love for you is like tidal forces...', 4: '1'}
+106	106		301							{2: 'Robot A', 3: 'Imploding non-stop...', 4: '1'}
+107	107		301							{2: 'Robot A', 3: 'Ah—', 4: '1'}
+108	108		202							{1: '1'}
+109	109		302							"{2: ""What's the deal with this thing?""}"
+110	110		201							{1: '1', 2: '500817'}
+111	111		301							{1: '1', 2: 'Qu', 3: '...', 4: '1'}
+112	112		301							{2: 'Qu', 3: 'Someone, stop it already.', 4: '1'}
+113	113		302							"{2: ""Can't find the button."", 3: '114'}"
+114	114		301							"{2: 'Qu', 3: ""I don't understand how this thing works."", 4: '1'}"
+115	115		301							{2: 'Qu', 3: 'It starts singing out of the blue and there is no way to make it stop. What in the world is going on??', 4: '1'}
+116	116		202							{1: '1'}
+117	117		302							{2: 'Gotta do it the hard way, I guess.', 3: '118'}
+118	118		201							{1: '1', 2: '500354'}
+119	119		301							{1: '1', 2: 'Robot A', 3: 'My love for you is stronger than the gravitational pull of a black hole...', 4: '1'}
+120	120		202							{1: '1'}
+121	121		302							"{2: ""It's singing the chorus now."", 3: '122'}"
+122	122		302							{2: 'Give it a punch a see what happens!', 3: '123'}
+123	123		301							{3: 'With a punch, Robot A comes to a stop.'}
+124	124		201							{1: '1', 2: '500354'}
+125	125		301							{1: '1', 2: 'Robot A', 3: 'Ahh...', 4: '1'}
+126	126		202							{1: '1'}
+127	127		201							{1: '1', 2: '500817', 3: '3'}
+128	128		301							{1: '1', 2: 'Qu', 3: 'Guess that did the trick.', 4: '1'}
+129	129		401							{1: '1', 2: '36'}
+130	130		301							{2: 'Qu', 3: 'See, I was totally right when I said you had what it took to fill the role.', 4: '1'}
+131	131		302							"{2: ""Didn't really have a choice there..."", 3: '132'}"
+132	132		301							{2: 'Qu', 3: 'But, you remember what you promised me earlier, right?', 4: '1'}
+133	133		302							{2: 'Yes.', 3: '134', 4: 'No.', 5: '137'}
+134	134		204							{1: '1', 2: '1'}
+135	135	138	301							{2: 'Qu', 3: 'Good.', 4: '1'}
+136	136		204							{1: '1', 2: '1'}
+137	137		301							{2: 'Qu', 3: 'I want you to be my assistant and partner.', 4: '1'}
+138	138		301							"{2: 'Qu', 3: ""Which means you'll be hanging around me for the foreseeable future down the road."", 4: '1'}"
+139	139		301		1		AniZhuanchangBegin			"{2: 'Qu', 3: ""So as far as work and life go, you're allowed to get to know me better."", 4: '1'}"

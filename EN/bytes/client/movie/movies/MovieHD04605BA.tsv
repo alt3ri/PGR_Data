@@ -1,0 +1,210 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1294.jpg'}
+2	2		502						250.0	{1: 'DialogDisable'}
+3	3		107							{1: 'Shrine Mountain Path', 2: 'Late Night'}
+4	4		301							{3: 'Late Night, Shrine Mountain Path'}
+5	5		108							{1: '1'}
+6	6		401							{1: '1', 2: '6202'}
+7	7		401							{1: '2', 2: '2930', 3: '0.5'}
+8	8		301			DialogEnable	DialogDisable			"{3: ""Walking with Selena along the bright mountain path, the shrine's silhouette soon comes into view up ahead.""}"
+9	9		502							{1: 'RImgBg1BlowUp'}
+10	10		301			DialogEnable				{3: 'The whole area buzzes with activity as all sorts of visitors arrive—some emerge from the woods lining the path, others pop out from branching trails, and, remarkably, some even descend from the sky or rise right up from the earth.'}
+11	11		301							"{3: ""As they go, a few spirits who recognize Selena's wisteria magic greet her in passing, and she gracefully acknowledges each one.""}"
+12	12		301							{3: 'Moving closer to the shrine entrance, a masked figure stands there, calmly greeting all the arriving visitors.'}
+13	13		301							"{3: ""As they get nearer, the figure's gaze shifts to meet theirs.""}"
+14	14		505							{1: 'RImgBg1BlowUp'}
+15	15		402							{1: '2930'}
+16	16		211							{1: '1', 2: '1021048', 7: '1'}
+17	17		301							{1: '1', 2: 'Shrine Priest', 3: '...', 4: '101'}
+18	18		301							{2: 'Shrine Priest', 3: 'Please forgive me for not greeting you sooner, Miss Viola... and...', 4: '101', 18: '100011346'}
+19	19		301							"{2: 'Shrine Priest', 3: ""I've heard that you wish to form a union with someone important once the Divine Wedding is over, Miss Viola. Could this be the one?"", 4: '101', 18: '100011347'}"
+20	20		211							{1: '1', 2: '1021050', 3: '12', 7: '1'}
+21	21		301							{1: '1', 2: 'Selena', 3: 'Yes, this is indeed the one I adore, 【kuroname】.', 4: '101', 18: '100011348', 19: '1', 21: 'v360Selena'}
+22	22		211							{1: '1', 2: '1021048', 7: '1'}
+23	23		301							{1: '1', 2: 'Shrine Priest', 3: 'You are most merciful.', 4: '101', 18: '100011349'}
+24	24		401							{1: '2', 2: '5290'}
+25	25		211							{1: '1', 2: '1021049', 7: '1'}
+26	26		301			DialogEnable	DialogDisable			{1: '1', 3: 'At this, the priest unexpectedly takes off his mask. His casual demeanor visibly drops as he offers a deep, formal bow.'}
+27	27		401							{1: '2', 2: '5286'}
+28	28		213						450.0	{1: '1', 2: '0.3', 4: '-50'}
+29	29		213							{1: '1', 2: '0.5'}
+30	30		301			DialogEnable				{2: 'Shrine Priest', 3: 'Your esteemed presence tonight truly honors our humble shrine.', 4: '101', 18: '100011350', 19: '1', 21: 'v360Selena'}
+31	31		302							"{2: ""You're too kind."", 3: '32', 4: '(Bow in return)', 5: '32'}"
+32	32		301							"{2: 'Shrine Priest', 3: ""It's just..."", 4: '101', 18: '100011351', 19: '1', 21: 'v360Selena'}"
+33	33		211							{1: '1', 2: '1021050', 7: '1'}
+34	34		301							{1: '1', 2: 'Selena', 3: 'Do you have any other questions, priest?', 4: '101', 18: '100011352', 19: '1', 21: 'v360Selena'}
+35	35		301							{3: 'Selena asks with a calm face, but you still pick up on her wariness from the subtle shifts in her demeanor.'}
+36	36		211							{1: '1', 2: '1021049', 7: '1'}
+37	37		301							"{1: '1', 2: 'Shrine Priest', 3: ""I wouldn't dream of it, Miss Viola. It's an immense honor for the Shrine of Union to have both of you here. I wouldn't have it any other way, and I certainly wouldn't dare to harbor any doubts."", 4: '101', 18: '100011353', 19: '1', 21: 'v360Selena'}"
+38	38		301							"{2: 'Shrine Priest', 3: ""Meeting you both today, I can't help but admire you. The determination you two show is truly commendable."", 4: '101', 18: '100011354', 19: '1', 21: 'v360Selena'}"
+39	39		211							{1: '1', 2: '1021050', 7: '1'}
+40	40		301							{1: '1', 2: 'Selena', 3: 'How so?', 4: '101', 18: '100011355'}
+41	41		211							{1: '1', 2: '1021049', 7: '1'}
+42	42		301							{1: '1', 2: 'Shrine Priest', 3: 'Hmm...? Is it possible you two have never given a thought to the barrier between you?', 4: '101', 18: '100011356', 19: '1', 21: 'v360Selena'}
+43	43		301							{2: 'Shrine Priest', 3: 'Miss Viola, even with some progress in your spiritual journey, your lifespan only stretches to a few hundred years.', 4: '101', 18: '100011357', 19: '1', 21: 'v360Selena'}
+44	44		301							"{2: 'Shrine Priest', 3: ""This Mountain Lord, though, is quite something—a form woven from spiritual energy, divine magic at his fingertips, and an aura that is just beyond us. I can't help but feel he's on a completely different plane."", 4: '101', 18: '100011358', 19: '1', 21: 'v360Selena'}"
+45	45		301							"{2: 'Shrine Priest', 3: ""Despite such a huge gulf between you, you've still decided to forge a bond of union. How can I not admire that?"", 4: '101', 18: '100011359', 19: '1', 21: 'v360Selena'}"
+46	46		211							{1: '1', 2: '1021050', 3: '4', 7: '1'}
+47	47		301							{1: '1', 2: 'Selena', 3: '...', 4: '101'}
+48	48		301							"{3: ""Selena suddenly goes quiet, her gaze drifting off a bit. She doesn't look stumped by his question or unsure of what to say. Instead, it's as if something else entirely has popped into her mind.""}"
+49	49		214							{1: '1', 2: '1'}
+50	50		301							{3: 'After a long moment, she finally speaks.'}
+51	51		301							{2: 'Selena', 3: 'Priest, do you really think status and how long someone lives stand in the way of love?', 4: '101', 18: '100011360', 19: '1', 21: 'v360Selena'}
+52	52		211							{1: '1', 2: '1021049', 7: '1'}
+53	53		301							{1: '1', 2: 'Shrine Priest', 3: 'In my humble opinion, yes... and no.', 4: '101', 18: '100011361', 19: '1', 21: 'v360Selena'}
+54	54		301							"{2: 'Shrine Priest', 3: ""I just have to ask: down the line, when one of you is still in their prime and the other is getting on in years—the mere thought sends shivers down my spine, and I can't even bear to think about it further. How do you two see that playing out?"", 4: '101', 18: '100011362', 19: '1', 21: 'v360Selena'}"
+55	55		211							{1: '1', 2: '1021050', 3: '4', 7: '1'}
+56	56		301							{1: '1', 2: 'Selena', 3: '...', 4: '101'}
+57	57		301							"{3: ""Selena doesn't answer right away. Even though she stays silent, her hand tightens its grip on yours.""}"
+58	58		211							{1: '1', 2: '1021049', 7: '1'}
+59	59		301							{1: '1', 3: 'Noticing this, the shrine priest offers a small smile and shifts his gaze.'}
+60	60		301							"{2: 'Shrine Priest', 3: ""And what's your take on all this, esteemed one?"", 4: '101', 18: '100011363', 19: '1', 21: 'v360Selena'}"
+61	61		301							"{2: 'Shrine Priest', 3: ""When Miss Viola's beauty fades and age withers her form, will you still hold her with the same devotion, your heart unwavering?"", 4: '101', 18: '100011364', 19: '1', 21: 'v360Selena'}"
+62	62		302							{2: 'Of course.', 3: '63', 4: 'That goes without saying.', 5: '64'}
+63	63	65	301							{2: 'Shrine Priest', 3: 'These words weigh heavy as a mountain, yet they flow from your lips with such ease. I suppose only someone of your caliber could manage that.', 4: '101', 18: '100011365', 19: '1', 21: 'v360Selena'}
+64	64		301							{2: 'Shrine Priest', 3: 'A truly admirable response, esteemed one.', 4: '101', 18: '100011366', 19: '1', 21: 'v360Selena'}
+65	65		214							{1: '1', 2: '2'}
+66	66		301							"{2: 'Shrine Priest', 3: ""However, I must be so bold as to ask one more question: Have you considered that Miss Viola's entire lifetime will be but a fleeting, insignificant moment in your long years of existence?"", 4: '101', 18: '100011367', 19: '1', 21: 'v360Selena'}"
+67	67		301							"{3: ""As he speaks, the priest's expression grows increasingly solemn.""}"
+68	68		212							{1: '1', 6: '1'}
+69	69		306							{1: '1'}
+70	70		301							{3: 'Even nearby spirits sense the unusual tension, observing from a distance with respectful attention.'}
+71	71		301							"{3: ""He doesn't seem to be asking questions so much as looking for reassurance, using others' words to put the nagging doubts in his heart to rest.""}"
+72	72		306							
+73	73		302							{2: 'In that case...', 3: '74'}
+74	74		211							{1: '1', 2: '1021049', 3: '2', 7: '1'}
+75	75		301							{1: '1', 2: 'Shrine Priest', 3: 'Please enlighten me with your thoughts, esteemed one.', 4: '101', 18: '100011368', 19: '1', 21: 'v360Selena'}
+76	76		302							"{2: ""All the more reason to cherish our time together now, wouldn't you agree?"", 3: '77'}"
+77	77		301							{2: 'Shrine Priest', 3: '...', 4: '101'}
+78	78		214							{1: '1', 2: '1'}
+79	79		301							{2: 'Shrine Priest', 3: 'Hahahaha! Hahahahaha!', 4: '101', 18: '100011369', 19: '1', 21: 'v360Selena'}
+80	80		301							{2: 'Shrine Priest', 3: 'You speak with admirable candor. I am truly impressed.', 4: '101', 18: '100011370', 19: '1', 21: 'v360Selena'}
+81	81		301							"{2: 'Shrine Priest', 3: ""Miss Viola, you've certainly found an exceptional partner in this one. I'm so sorry for prying earlier—it really wasn't my place."", 4: '101', 18: '100011371', 19: '1', 21: 'v360Selena'}"
+82	82		401							{1: '2', 2: '2704'}
+83	83		213							{1: '1', 2: '0.4', 3: '450'}
+84	84		301				DialogDisable			"{2: 'Shrine Priest', 3: ""Please, head to the shrine and get some rest. I won't intrude on your present moment with Miss Viola any longer."", 4: '101', 18: '100011372', 19: '1', 21: 'v360Selena'}"
+85	85		212							{1: '1', 6: '1'}
+86	86		104				AniZhuanchangBegin		1150.0	{1: '0|0|-100', 2: '1'}
+87	87		502							{1: 'AniZhuanchangEnd'}
+88	88		301			DialogEnable				"{3: ""After you both say your goodbyes to the priest, you pass through the torii gate and step into the shrine grounds. It isn't until you've walked past several buildings and the priest is finally out of sight that Selena lets out a sigh of relief.""}"
+89	89		211							{1: '1', 2: '1021050', 3: '2', 7: '1'}
+90	90		301							{1: '1', 2: 'Selena', 3: 'Phew...', 4: '101', 18: '100011373', 19: '1', 21: 'v360Selena'}
+91	91		302							{2: 'Are you alright?', 3: '92'}
+92	92		214							{1: '1', 2: '1'}
+93	93		301							"{2: 'Selena', 3: ""I'm fine, Conductor."", 4: '101', 18: '100011374', 19: '1', 21: 'v360Selena'}"
+94	94		301				DialogDisable			"{2: 'Selena', 3: ""I'm just... thinking about the question he asked earlier."", 4: '101', 18: '100011375', 19: '1', 21: 'v360Selena'}"
+95	95		302							{2: '...', 3: '96'}
+96	96		302							{2: 'Are you wondering why he came at us like that?', 3: '97'}
+97	97		301			DialogEnable				"{2: 'Selena', 3: ""No, it's..."", 4: '101', 18: '100011376', 19: '1', 21: 'v360Selena'}"
+98	98		301							{3: 'Selena suddenly stops, turns to face you, and her expression turns serious.'}
+99	99		214							{1: '1', 2: '11'}
+100	100		301							{2: 'Selena', 3: 'I never give it much thought because, for me, a future is way too much of a luxury.', 4: '101', 18: '100011377', 19: '1', 21: 'v360Selena'}
+101	101		301							{2: 'Selena', 3: 'But after seeing you again, happiness crept in so fast that I completely forgot about certain distant realities.', 4: '101', 18: '100011378', 19: '1', 21: 'v360Selena'}
+102	102		301							"{2: 'Selena', 3: ""I get that some things are better left unsaid, and bringing them up now probably won't do much good. But..."", 4: '101', 18: '100011379', 19: '1', 21: 'v360Selena'}"
+103	103		301							{3: 'Selena takes a beat and then looks you in the eye, not holding anything back.'}
+104	104		301				DialogDisable			{2: 'Selena', 3: 'Years from now, when one of us stays exactly the same while the other gets old and frail... even then, Conductor, will you still be set on sticking by my side?', 4: '101', 18: '100011380', 19: '1', 21: 'v360Selena'}
+105	105		302							{2: '(Nod gently)', 3: '106', 4: '(Quip to lighten the mood)', 5: '113'}
+106	106		302							{2: 'Well, there is.', 3: '107'}
+107	107		214							{1: '1', 2: '12'}
+108	108		301			DialogEnable				"{3: ""Selena's lips purse, her expression subtly shifting. After a beat, a smile breaks across her face.""}"
+109	109		301							{2: 'Selena', 3: 'You really ought to think this through, Conductor. A promise made in the Shrine of Union is set in stone.', 4: '101', 18: '100011381', 19: '1', 21: 'v360Selena'}
+110	110		401							{1: '2', 2: '13081710'}
+111	111		213							{1: '1', 2: '0.4', 4: '-50', 5: '-80'}
+112	112	122	301				AniZhuanchangBegin			{3: 'After these words, Selena goes up on her tiptoes and gently leans in, her warm softness melting right into your embrace.'}
+113	113		302							"{2: ""By then, I'll be the one who's aged. Why would I even need to be resolved to stay with you?"", 3: '114'}"
+114	114		302							"{2: ""As long as the one by my side doesn't grow to dislike me, that's all that matters."", 3: '115'}"
+115	115		301			DialogEnable				"{3: ""Unlike usual, Selena doesn't quite pick up on the vibe you're going for.""}"
+116	116		214							{1: '1', 2: '2'}
+117	117		401							{1: '2', 2: '13081710'}
+118	118		213							{1: '1', 2: '0.4', 4: '-50', 5: '-80'}
+119	119		301							{3: 'Instead, she closes her eyes and slowly inches closer to you.'}
+120	120		301							{3: 'Her warm softness melts into your embrace as her breath ghosts against your ear, her barely-there whispers carried off by the mountain breeze.'}
+121	121		301				AniZhuanchangBegin			{2: 'Selena', 3: 'My devotion to you stays constant, my heart unwavering.', 4: '101', 18: '100011382', 19: '1', 21: 'v360Selena'}
+122	122		502							{1: 'DialogDisable'}
+123	123		212							{1: '1', 6: '1'}
+124	124		401							{1: '1', 2: '36'}
+125	125		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1007.jpg'}
+126	126		104				AniZhuanchangEnd			{1: '0|0|0', 2: '0'}
+127	127		107							{1: 'Shrine of Union', 2: 'Late Night'}
+128	128		301							{3: 'Union Shrine - Late Night'}
+129	129		108							{1: '1'}
+130	130		401							{1: '1', 2: '5061'}
+131	131		301			DialogEnable				{3: 'After a brief pause, lights lead them as they weave their way through the shrine until they hit a locked building.'}
+132	132		401							{1: '2', 2: '4893'}
+133	133		301							{3: 'They pick the lock, and no sooner do they step inside than Yun Ye eagerly shifts into her fox spirit form and darts ahead.'}
+134	134		211							{1: '1', 2: '1021051', 7: '1'}
+135	135		301							{1: '1', 2: 'Yun Ye', 3: 'Whoa! You actually did it!', 4: '101', 18: '100011383', 19: '1', 21: 'v360Selena'}
+136	136		211							{1: '1', 2: '1021050', 3: '4', 7: '1'}
+137	137		301							{1: '1', 2: 'Selena', 3: 'Is it safe for you to show your true form right now?', 4: '101', 18: '100011384', 19: '1', 21: 'v360Selena'}
+138	138		211							{1: '1', 2: '1021051', 7: '1'}
+139	139		301							"{1: '1', 2: 'Yun Ye', 3: ""Don't sweat it! This is where I first got my worship, so coming back here means I'm safe as houses!"", 4: '101', 18: '100011385', 19: '1', 21: 'v360Selena'}"
+140	140		301							{2: 'Yun Ye', 3: 'And once we get our hands on that object, I can reclaim my spot as the Goddess of Union.', 4: '101', 18: '100011386', 19: '1', 21: 'v360Selena'}
+141	141		212							{1: '1', 6: '1'}
+142	142		306							{1: '1'}
+143	143		301							{3: 'As the priest speaks, the fox lifts her head, looking up. They follow its gaze to a delicate, exquisite bell hovering in midair.'}
+144	144		301							{3: 'Numerous red threads stretch from various points along the rafters, encircling and guarding the bell.'}
+145	145		306							
+146	146		211							{1: '1', 2: '1021050', 3: '4', 7: '1'}
+147	147		301							"{1: '1', 2: 'Selena', 3: ""The sacred token is a bell? I figured it'd be something like a knotted cord or a handkerchief."", 4: '101', 18: '100011387', 19: '1', 21: 'v360Selena'}"
+148	148		211							{1: '1', 2: '1021051', 7: '1'}
+149	149		301							"{1: '1', 2: 'Yun Ye', 3: ""Heh, bet you didn't see that coming, did you?"", 4: '101', 18: '100011388', 19: '1', 21: 'v360Selena'}"
+150	150		301							{2: 'Yun Ye', 3: 'Because, you see...', 4: '101', 18: '100011389', 19: '1', 21: 'v360Selena'}
+151	151		401							{1: '1', 2: '5023'}
+152	152		211							{1: '1', 2: '1021049', 7: '1'}
+153	153		301							{1: '1', 2: 'Shrine Priest', 3: 'Because this was my very first gift to Yun Ye, and the start of our union.', 4: '101', 18: '100011390', 19: '1', 21: 'v360Selena'}
+154	154		301							{3: 'A voice, thick with nostalgia, drifts from behind them.'}
+155	155		212							{1: '1', 6: '1'}
+156	156		401						200.0	{1: '2', 2: '2589'}
+157	157		401							{1: '2', 2: '5701'}
+158	158		301							{3: 'The shrine priest, at some point, has followed them to the doorway. With a gentle flick of the ritual wand in his hand, the bell zips into his grasp.'}
+159	159		211							{1: '1', 2: '1021051', 7: '1'}
+160	160		301							{1: '1', 2: 'Yun Ye', 3: 'You...!', 4: '101', 18: '100011391', 19: '1', 21: 'v360Selena'}
+161	161		211							{1: '1', 2: '1021049', 3: '2', 7: '1'}
+162	162		301							"{1: '1', 2: 'Shrine Priest', 3: ""You really shouldn't have latched onto Miss Viola's accessories... No, truth be told, it wouldn't matter what object you hide in. I'd have sensed you all the same."", 4: '101', 18: '100011392', 19: '1', 21: 'v360Selena'}"
+163	163		301							"{2: 'Shrine Priest', 3: ""And this person isn't Miss Viola either, right?"", 4: '101', 18: '100011393', 19: '1', 21: 'v360Selena'}"
+164	164		401							{1: '2', 2: '5709'}
+165	165		211							{1: '1', 2: '1021051', 7: '1'}
+166	166		301							{1: '1', 3: 'The fox steps in front of them, not defensively, but with a mix of confusion and a hint of hurt etched on her face. She looks at the priest, a question in her eyes.'}
+167	167		301							{2: 'Yun Ye', 3: 'Rain... why are you doing this?', 4: '101', 18: '100011394', 19: '1', 21: 'v360Selena'}
+168	168		211							{1: '1', 2: '1021049', 3: '2', 7: '1'}
+169	169		301							{1: '1', 2: 'Rain', 3: '...', 4: '101'}
+170	170		301							{3: 'The priest remains silent for a moment, having been called by his true name, before calmly responding.'}
+171	171		301							{2: 'Rain', 3: 'Have you never thought about why, Yun Ye?', 4: '101', 18: '100011395', 19: '1', 21: 'v360Selena'}
+172	172		301							"{2: 'Rain', 3: ""Of course you haven't. You always worry about everyone else, thinking of every little detail on their behalf. But when it comes to me, when it comes to yourself, it's like you don't give it a second thought."", 4: '101', 18: '100011396', 19: '1', 21: 'v360Selena'}"
+173	173		211							{1: '1', 2: '1021051', 7: '1'}
+174	174		301							"{1: '1', 2: 'Yun Ye', 3: ""I... I don't get what you mean. Is marrying the Heavenly Path really that big of a deal to you?"", 4: '101', 18: '100011397', 19: '1', 21: 'v360Selena'}"
+175	175		301							"{2: 'Yun Ye', 3: ""If you wanted to cultivate spiritual power, you could've just told me. I could've taught you. You know, divine blessings from worship can be shared with others too."", 4: '101', 18: '100011398', 19: '1', 21: 'v360Selena'}"
+176	176		211							{1: '1', 2: '1021049', 3: '2', 7: '1'}
+177	177		301							"{1: '1', 2: 'Rain', 3: ""Never mind. You just wouldn't get it."", 4: '101', 18: '100011399', 19: '1', 21: 'v360Selena'}"
+178	178		301							{3: 'Rain lets out a soft sigh, turning his gaze toward you.'}
+179	179		301							"{2: 'Rain', 3: ""What about you, esteemed one? Do you understand why I'm doing all this?"", 4: '101', 18: '100011400', 19: '1', 21: 'v360Selena'}"
+180	180		212							{1: '1', 6: '1'}
+181	181		301							"{3: ""When you piece together what the priest said and did with Yun Ye's story, something just doesn't add up.""}"
+182	182		301							"{3: ""But these clues are all over the place, so you can't really make heads or tails of it.""}"
+183	183		302							"{2: ""I'm not sure I follow."", 3: '184', 4: ""I'm afraid I don't know."", 5: '184'}"
+184	184		211							{1: '1', 2: '1021049', 3: '2', 7: '1'}
+185	185		301							"{1: '1', 2: 'Rain', 3: ""Even you're giving me that answer?"", 4: '101', 18: '100011401', 19: '1', 21: 'v360Selena'}"
+186	186		301							{2: 'Rain', 3: 'I figured you showing up here with your beloved partner meant you were on board.', 4: '101', 18: '100011402', 19: '1', 21: 'v360Selena'}
+187	187		301							{2: 'Rain', 3: 'Looking back, your answer actually had the truth in it all along. I was just too dense to catch on.', 4: '101', 18: '100011403', 19: '1', 21: 'v360Selena'}
+188	188		401							{1: '2', 2: '5286'}
+189	189		211							{1: '1', 2: '1021048', 7: '1'}
+190	190		301							{1: '1', 3: 'With that, the priest picks up his mask and puts it back on.'}
+191	191		402							{1: '5061'}
+192	192		301							"{2: 'Rain', 3: ""Since you're so keen on helping Yun Ye fix things, go on, make your move."", 4: '101', 18: '100011404', 19: '1', 21: 'v360Selena'}"
+193	193		301							"{2: 'Rain', 3: ""Even if it's a long shot, I still want to give it a try."", 4: '101', 18: '100011405', 19: '1', 21: 'v360Selena'}"
+194	194		401							{1: '1', 2: '5017'}
+195	195		212							{1: '1', 6: '1'}
+196	196		205						350.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.3'}
+197	197		401							{1: '2', 2: '301'}
+198	198		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryRedSmokeNew.prefab', 2: '2'}
+199	199		301							{3: 'As he speaks, the bell starts overflowing with the spiritual energy of offerings.'}
+200	200		401							{1: '2', 2: '906607'}
+201	201		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+202	202		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryRedSmokeNew.prefab'}
+203	203		402							{1: '301'}
+204	204		211							{1: '1', 2: '1021052', 7: '1'}
+205	205		301							{1: '1', 3: 'Soon, Rain is completely engulfed by the spiritual energy of offerings, and his appearance begins to change.'}
+206	206		301			DialogEnable				{1: '1', 2: 'Rain', 3: 'Show me what you two can do.', 4: '101', 18: '100011406', 19: '1', 21: 'v360Selena'}
+207	207		212							{1: '1', 6: '1'}
+208	208		502							{1: 'RImgBg1Shake'}
+209	209		301		1		AniZhuanchangBegin			{3: 'As his words trail off, worshippers, brimming with spiritual energy, start appearing one by one from every nook and cranny of the shrine.'}

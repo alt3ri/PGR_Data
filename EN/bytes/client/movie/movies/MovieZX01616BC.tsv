@@ -1,0 +1,24 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory12.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				"{3: ""...Looks like we've found a path with less Corrupted.""}"
+4	4		201							{1: '1', 2: '1031001', 4: '-600'}
+5	5		201							{1: '2', 2: '500166', 4: '0'}
+6	6		201							{1: '3', 2: '500026', 4: '600'}
+7	7		301				AniZhuanchangBegin			"{1: '1', 2: 'Lucia', 3: ""Let's look for clues here."", 4: '2'}"
+8	8		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+9	9		301			AniZhuanchangEnd				{3: 'You reconvene after investigating for quite some time.'}
+10	10		201							{1: '1', 2: '1031001', 4: '-600'}
+11	11		201							{1: '2', 2: '500166', 4: '0'}
+12	12		201							{1: '3', 2: '500026', 4: '600'}
+13	13		301							"{1: '1', 2: 'Lucia', 3: ""I didn't find any clues. Anything that matched the search criteria turned up useless."", 4: '2'}"
+14	14		301							{3: 'Such as a record of Roland sitting on the roof or Gabriel passing by on the street.'}
+15	15		301							{2: 'Liv', 3: 'Some Constructs fought with the Ascendants here, but by the look of them... the record is pretty old.', 4: '1'}
+16	16		302							{2: 'Lee?', 3: '17'}
+17	17		301							{2: 'Lee', 3: 'I found another record on the farewell letter. They came back here sometime after for a short while.', 4: '3'}
+18	18		301							{2: 'Lee', 3: 'They were carrying heavy luggage.', 4: '3'}
+19	19		301							{2: 'Lucia', 3: 'Looks like they really did find something.', 4: '2'}
+20	20		301							{2: 'Liv', 3: 'Can you tell what it is from the look of their luggage?', 4: '1'}
+21	21		301							{2: 'Lee', 3: 'No. It was just an automated suitcase.', 4: '3'}
+22	22		301							{2: 'Liv', 3: 'What could it be?', 4: '1'}
+23	23		301		1		AniZhuanchangBegin			"{2: 'Lucia', 3: ""We still don't have enough clues. Let's continue searching, Commandant."", 4: '2'}"

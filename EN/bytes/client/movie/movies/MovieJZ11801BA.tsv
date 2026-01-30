@@ -1,0 +1,175 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2201.jpg'}
+2	2		401							{1: '1', 2: '203'}
+3	3		301			DialogEnable				{2: 'Wanshi', 3: 'Hook up the artificial heart, use the suction device to suck the vital fluid away, block the local pain signals, and transfer the feedback to the external terminal.'}
+4	4		301							{2: 'Assistant A & B', 3: 'Understood.'}
+5	5		301							"{3: ""The assistants help prepare the Construct on the maintenance bed according to Wanshi's instructions. Wanshi changes into dustproof clothes and stands in the center of the maintenance room. An assistant approaches him at that moment.""}"
+6	6		301							{2: 'Assistant A', 3: 'Doctor Wanshi, a Construct was taken to maintenance room 13.'}
+7	7		301							{2: 'Wanshi', 3: 'Turn on data projection.'}
+8	8		301							{3: 'Wanshi nods as he looks at the scan of the Construct in maintenance room 13 and says to the assistant.'}
+9	9		301							{2: 'Wanshi', 3: 'The auxiliary circulatory system of the lower chamber is damaged. Help me start the remote maintenance kit in maintenance room 13.'}
+10	10		301							{2: 'Assistant A', 3: 'Huh, but that would take a huge toll on your mind.'}
+11	11		301							"{3: ""Wanshi takes several connecting wires from the kit terminal aside and attaches them to his head, ignoring the assistant's persuasion.""}"
+12	12		301							{2: 'Wanshi', 3: 'Testing connection.'}
+13	13		301							"{3: ""The view of maintenance room 13 is revealed by the kit terminal, several robotic arms lifting the maintenance tools in turn under Wanshi's control. The damaged parts of the Construct are magnified through the microscope, and the gathered data is displayed on the dials of the robotic arms.""}"
+14	14		301				AniZhuanchangBegin			"{2: 'Wanshi', 3: ""That's alright. We'll fix them at the same time.""}"
+15	15		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory109.png'}
+16	16		401							{1: '1', 2: '201'}
+17	17		201							{1: '1', 2: '500289', 3: '1'}
+18	18		301			AniZhuanchangEnd				"{1: '1', 2: 'Wanshi', 3: 'Maintenance over. I\'ll leave the module ""stitiching"" to you.', 4: '1'}"
+19	19		301							{3: 'Wanshi pushes the maintenance tools aside. The robotic arms slowly lower in the projection of the terminal, putting an end to the work in maintenance room 13.'}
+20	20		201							{1: '1', 2: '500058', 6: '1'}
+21	21		301							{1: '1', 2: 'Assistant B', 3: 'Yes, Doctor.', 4: '1'}
+22	22		202							{1: '1', 6: '1'}
+23	23		301							{3: 'The assistant takes a step forward and takes over the maintenance tool after hearing this. Wanshi stretches out and steps back to make room for the assistant.'}
+24	333		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+25	334		401							{1: '1', 2: '36'}
+26	24		301							{3: 'However, when Wanshi is stepping back, he suddenly stumbles on his feet. Everything in the maintenance room seems illusory and distant to him. He reaches out to the left, and the touch of the wall brings him back to reality. He keeps his footing by holding onto the wall.'}
+27	335		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory109.png'}
+28	1000		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+29	25		201							{1: '1', 2: '500058', 6: '1'}
+30	336		401							{1: '1', 2: '201'}
+31	26		301							{1: '1', 2: 'Assistant B', 3: 'Doctor!', 4: '1'}
+32	27		202							{1: '1', 6: '1'}
+33	28		301							{3: 'Wanshi leans against the wall and takes a few deep breaths. He gets back on his feet again and takes a few pills.'}
+34	29		201							{1: '1', 2: '500289', 3: '1', 4: '400'}
+35	30		201							{1: '2', 2: '500058', 4: '-400'}
+36	31		301							"{1: '1', 2: 'Wanshi', 3: ""I'm... I'm okay."", 4: '1'}"
+37	32		301							{2: 'Assistant B', 3: 'It seems that you are much more serious when it comes to maintenance, Doctor.', 4: '2'}
+38	33		301							"{2: 'Wanshi', 3: ""Is that so... I didn't feel any different."", 4: '1'}"
+39	34		301							"{2: 'Wanshi', 3: ""Constructs can feel pain just as well as humans. Isn't it a doctor's job to ease their pain?"", 4: '1'}"
+40	35		301							{2: 'Assistant B', 3: 'We could just turn off their pain module or use recalling after the frame is fixed.', 4: '2'}
+41	2000		204							{1: '1'}
+42	36		301							"{2: 'Wanshi', 3: ""We only advise them to do so when they're suffering unbearable pain."", 4: '1'}"
+43	37		301							{2: 'Wanshi', 3: 'Besides, making a new frame is much more difficult than maintaining it... Otherwise, our work would be meaningless.', 4: '1'}
+44	38		301							{2: 'Assistant B', 3: 'Speaking of which, I often heard you use recalling to comfort the Constructs during the adjustment.', 4: '2'}
+45	39		301							"{2: 'Wanshi', 3: ""Well... it's part of our duty to help them return to the battlefield."", 4: '1'}"
+46	40		202							{1: '1', 2: '2', 6: '1'}
+47	41		201							{1: '1', 2: '500116'}
+48	42		301							{1: '1', 2: 'Assistant A', 3: 'Yeah, right, you get all talkative about such topics.', 4: '1'}
+49	43		203							{1: '1', 2: '0.25', 3: '-400'}
+50	44		201							{1: '2', 2: '500058', 4: '400'}
+51	45		301							"{1: '1', 2: 'Assistant B', 3: ""Right, but it's hard for us to understand it anyway. They're just machines, aren't they?"", 4: '2'}"
+52	46		301							{2: 'Assistant A', 3: 'Exactly.', 4: '1'}
+53	47		202							{1: '1', 2: '2', 6: '1'}
+54	48		201							{1: '1', 2: '500289'}
+55	49		301							{1: '1', 2: 'Wanshi', 3: 'Well...', 4: '1'}
+56	50		201							{1: '1', 2: '500116'}
+57	51		301							"{1: '1', 2: 'Assistant A', 3: ""Enough of that. Doctor, it's almost time for the follow-up adjustment of the Construct, right?"", 4: '1'}"
+58	52		201							{1: '1', 2: '500289'}
+59	53		301							"{1: '1', 2: 'Wanshi', 3: ""It seems so. I'll get going then."", 4: '1'}"
+60	54		202							{1: '1', 6: '1'}
+61	1004		401							{1: '2', 2: '1516'}
+62	55		301				AniZhuanchangBegin			{3: 'Wanshi says it as he hangs up the dustproof clothing in the closet of the maintenance room and walks outside.'}
+63	56		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+64	57		401							{1: '1', 2: '36'}
+65	58		301			AniZhuanchangEnd				{3: 'Lies are everywhere in human society.'}
+66	59		301							{3: 'Lies are around each of us from the moment we come into this world. And everyone will come into contact with them as part of the social network.'}
+67	60		301							{3: 'Lies, ill-intended or not, are alterations to reality.'}
+68	61		301							{3: 'The moment you see beyond the lies and find reality, a certain string will begin to tighten... or snap.'}
+69	62		301				AniZhuanchangBegin			{3: 'And what might have sounded inconsequential in daily life may turn deadly dangerous after the wall of lies is breached.'}
+70	63		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+71	64		401							{1: '1', 2: '201'}
+72	65		301			AniZhuanchangEnd				{3: 'The confusion caused by the shocking news from the professor makes Wanshi forget when he was called into the office and when did the topic come up.'}
+73	66		301							{3: 'Wanshi, frozen in place, swallows hard, trying to suppress the shock and find the words.'}
+74	67		201							{1: '1', 2: '500290', 4: '-400'}
+75	68		201							{1: '2', 2: '500270', 4: '400'}
+76	69		301							{1: '1', 2: 'Wanshi', 3: 'Professor, what you just said...', 4: '1'}
+77	70		301							{2: 'Professor', 3: 'Yes, some lives are more equal than others in the Star of Life, a place that is supposed to save all lives.', 4: '2'}
+78	71		301							{2: 'Professor', 3: 'Our Construct Maintenance Department, which was established by the military and the Science Council, is basically a slaughterhouse covered with lies.', 4: '2'}
+79	72		301							{2: 'Wanshi', 3: 'Then the so-called recalling...', 4: '1'}
+80	73		301							{2: 'Professor', 3: 'The Constructs known to the public that have been recalled and returned to the battlefields are nothing more than exceptions shaped by the military to be inspirations.', 4: '2'}
+81	74		301							"{2: 'Professor', 3: ""They weren't using recalls, but an arduous operation that extracted the Constructs' memories. By controlling the time difference, they created an illusion of a recall."", 4: '2'}"
+82	200		301				AniZhuanchangBegin			{2: 'Professor', 3: 'This means that not every Construct is immortal. Their demise on the fields also spells their farewell to this world.', 4: '2'}
+83	75		202							{1: '1', 2: '2', 6: '1'}
+84	76		401							{1: '1', 2: '211'}
+85	77		504							{1: '0.7'}
+86	500		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory109.png'}
+87	78		201							{1: '1', 2: '500058'}
+88	79		301			AniZhuanchangEnd	AniZhuanchangBegin			{1: '1', 2: 'Assistant B', 3: 'Speaking of which, I often heard you use recalling to comfort the Constructs during the adjustment.', 4: '1'}
+89	504		504							{1: '0.7'}
+90	501		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+91	80		202							{1: '1', 6: '1'}
+92	81		301			AniZhuanchangEnd				{3: 'Stop it...'}
+93	82		301							"{3: ""If it's a lie, then what I did before...""}"
+94	83		504							{1: '0'}
+95	84		201							{1: '1', 2: '500290', 4: '-400'}
+96	85		201							{1: '2', 2: '500270', 4: '400'}
+97	86		301							{1: '1', 2: 'Wanshi', 3: '...', 4: '1'}
+98	87		301							{2: 'Professor', 3: 'The memory extraction operation is different from the frame replacement one, which is done with precise instruments and professional assistance.', 4: '2'}
+99	88		301							"{2: 'Professor', 3: ""It's a dangerous and complicated technique to perform memory extractions on the battlefield and strip the M.I.N.D. from the frame, which might even result in the loss of memory data."", 4: '2'}"
+100	89		301							{2: 'Professor', 3: 'And what is recalling known for?', 4: '2'}
+101	1001		301							"{2: 'Professor', 3: ""That we could quickly activate it on the verge of death and safely transfer the Constructs' memories to Babylonia at the cost of a slight deviation in their M.I.N.D.s."", 4: '2'}"
+102	1002		301							"{2: 'Professor', 3: ""If it's so easy to achieve the same effect as a memory extraction, why would we continue to delve into the mysteries of the M.I.N.D. to improve the success rate of those operations?"", 4: '2'}"
+103	1003		301							{2: 'Professor', 3: 'Recall... has been a trick for the Constructs from the very beginning.', 4: '2'}
+104	90		202							{1: '1', 2: '2', 6: '1'}
+105	301		504							{1: '0.7'}
+106	91		301							{3: 'Stop it.'}
+107	92		301							"{3: ""Perhaps it's just that we don't have enough clearance to know the higher-up's intentions...""}"
+108	302		504							{1: '0'}
+109	93		201							{1: '1', 2: '500290', 4: '-400'}
+110	94		201							{1: '2', 2: '500270', 4: '400'}
+111	95		301							"{1: '1', 2: 'Wanshi', 3: ""It can't be... the Science Council, the military, the Parliament members—they must have some ways to make recalling possible that they can't share with us..."", 4: '1'}"
+112	96		301							{2: 'Professor', 3: 'Take a look at this data.', 4: '2'}
+113	97		301							{2: 'Wanshi', 3: 'This is...', 4: '1'}
+114	98		301							"{2: 'Professor', 3: ""It's a list of Constructs that have enabled recalling. It also records the flow of data shortly after that."", 4: '2'}"
+115	99		301							{2: 'Wanshi', 3: 'How could it be... All those memories were...', 4: '1'}
+116	100		301							"{2: 'Professor', 3: ""Exactly. All of them were led into a void. They couldn't feel anything in the outside world, like a computer being shut down."", 4: '2'}"
+117	101		301							{2: 'Professor', 3: 'They thought their minds were freed, and one day someone outside will turn them on again.', 4: '2'}
+118	102		301				AniZhuanchangBegin			{2: 'Professor', 3: 'But the truth is that their memories were never separated from reality—they were also shattered by this war along with their fallen frames.', 4: '2'}
+119	103		202							{1: '1', 2: '2', 6: '1'}
+120	104		504							{1: '0.7'}
+121	502		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory109.png'}
+122	105		201							{1: '1', 2: '500289'}
+123	106		301			AniZhuanchangEnd	AniZhuanchangBegin			"{1: '1', 2: 'Wanshi', 3: ""Constructs can feel pain just as well as humans. Isn't it a doctor's job to ease their pain?"", 4: '1'}"
+124	107		202							{1: '1', 6: '1'}
+125	505		504							{1: '0.7'}
+126	503		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+127	108		301			AniZhuanchangEnd				"{3: ""This can't be real.""}"
+128	109		301							{3: 'Professor, please tell me this is a bad joke. Or else I...'}
+129	110		504							{1: '0'}
+130	111		201							{1: '1', 2: '500290', 4: '-400'}
+131	112		201							{1: '2', 2: '500270', 4: '400'}
+132	113		301							{1: '1', 2: 'Wanshi', 3: '...', 4: '1'}
+133	114		301							"{2: 'Wanshi', 3: ""If it's a lie, why are you telling me?"", 4: '1'}"
+134	115		301							"{2: 'Wanshi', 3: ""Aren't you afraid that I'll tell the Constructs the truth?"", 4: '1'}"
+135	116		301							{2: 'Professor', 3: 'Will you?', 4: '2'}
+136	117		301							{2: 'Wanshi', 3: 'I...', 4: '1'}
+137	118		301							"{2: 'Professor', 3: ""You won't."", 4: '2'}"
+138	119		202							{1: '1', 2: '2', 6: '1'}
+139	303		504							{1: '1'}
+140	120		301							{3: 'Stop it.'}
+141	304		504							{1: '0'}
+142	121		201							{1: '1', 2: '500270'}
+143	122		301							{1: '1', 2: 'Professor', 3: 'To let them step into battles with false hopes, or to let them know the truth, to face the harsh reality and confront their end in pain...', 4: '1'}
+144	123		301							{2: 'Professor', 3: '...I know what your choice would be just by the look on your face when you were helping those Constructs.', 4: '1'}
+145	124		301							{2: 'Professor', 3: 'It is the same choice as the one I made before...', 4: '1'}
+146	125		202							{1: '1', 6: '1'}
+147	305		504							{1: '0.7'}
+148	126		301							{3: 'Stop it...'}
+149	127		301							{3: '...How should I respond to the weight of your trust?'}
+150	306		504							{1: '0'}
+151	128		201							{1: '1', 2: '500290'}
+152	129		301							"{1: '1', 2: 'Wanshi', 3: ""That's selfish of you."", 4: '1'}"
+153	130		201							{1: '1', 2: '500270'}
+154	131		301							{1: '1', 2: 'Professor', 3: 'Selfish? Perhaps...', 4: '1'}
+155	133		301							"{2: 'Professor', 3: ""Maybe I'm just a jester that couldn't hold it together on my own anymore. Maybe I just want to find someone to talk to."", 4: '1'}"
+156	134		301							"{2: 'Professor', 3: ""The blood-soaked facts won't be changed by individuals. Our department has compromised with their lies due to so many factors, which is probably my sin, this cowardice."", 4: '1'}"
+157	135		202							{1: '1', 6: '1'}
+158	307		504							{1: '0.7'}
+159	136		301							{3: 'Stop it.'}
+160	137		301							"{3: ""Wanshi's hands clench tightly in agony as he feels the warmth of blood oozing from his palms.""}"
+161	138		301							{3: 'He wants to question, to scold, and to get rid of the past.'}
+162	139		301							{3: 'He slowly raises his hands, trying to do something, only to see the sad and haggard face of the professor when looking up.'}
+163	140		301							{3: 'The professor who brought him into the Star of Life has already grown so old already.'}
+164	141		301							{3: 'The hands in the air finally freeze before his chest.'}
+165	308		504							{1: '0'}
+166	142		201							{1: '1', 2: '500290'}
+167	143		301							{1: '1', 2: 'Wanshi', 3: '...', 4: '1'}
+168	144		301							{2: 'Wanshi', 3: 'This is no excuse to keep lying to the Constructs.', 4: '1'}
+169	145		201							{1: '1', 2: '500270'}
+170	146		301							"{1: '1', 2: 'Professor', 3: ""I didn't mean to coerce you by telling you the truth. I... wish that you'd find a different answer..."", 4: '1'}"
+171	147		201							{1: '1', 2: '500290'}
+172	148		301							"{1: '1', 2: 'Wanshi', 3: ""I... I'll never end up like you, telling lies in the name of salvation."", 4: '1'}"
+173	149		202							{1: '1', 6: '1'}
+174	150		301		1		AniZhuanchangBegin			"{3: ""Wanshi tears off the badge of the Star of Life and drops it on the professor's desk with the sole wish of leaving this suffocating room as soon as possible without looking at him again.""}"

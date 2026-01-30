@@ -1,0 +1,26 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	100		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory84.jpg'}
+2	2		401							{1: '1', 2: '10'}
+3	102		201							{1: '1', 2: '500127'}
+4	103		301			DialogEnable				{1: '1', 2: 'Sophia', 3: 'Hinges——16... Regulators——4... Security valves——multi-layered...', 4: '1'}
+5	104		301							{1: '1', 2: 'Sophia', 3: 'Alright. So a cutting it here... and here should...', 4: '1'}
+6	900		202							{1: '1'}
+7	105		301							{3: '...'}
+8	106		301							{3: 'With all the hinges cut off, the colossal door collapses onto the ground with a dull and resounding thud.'}
+9	901		201							{1: '1', 2: '500127'}
+10	107		301							"{1: '1', 2: 'Sophia', 3: ""...and we're through!"", 4: '1'}"
+11	108		301							"{1: '1', 2: 'Sophia', 3: ""Even if you're running on Kamui, you know the Corrupted will react to the noise we just made."", 4: '1'}"
+12	109		302							"{2: ""Let's move."", 3: '110'}"
+13	110		201							{1: '1', 2: '1021001'}
+14	111		301				AniZhuanchangBegin			{1: '1', 2: 'Lucia', 3: 'Understood.', 4: '1'}
+15	112		202							{1: '1', 6: '1'}
+16	113		201							{1: '1', 2: '1011001', 7: '1'}
+17	114		201							{1: '2', 2: '1031001', 4: '-600', 7: '1'}
+18	115		201							{1: '3', 2: '500127', 4: '600', 7: '1'}
+19	116		301			AniZhuanchangEnd				{1: '1', 2: 'Liv', 3: 'Multiple signals to the rear! Corrupted!', 4: '2'}
+20	117		301							"{1: '1', 2: 'Lee', 3: ""Rats, they're fast!"", 4: '1'}"
+21	118		301							{1: '1', 2: 'Sophia', 3: 'We should split! The rearguard holds off hostiles while the rest reboots the tower!', 4: '3'}
+22	119		301							"{1: '1', 2: 'Lee', 3: ""Commandant, I second Sophia's proposal."", 4: '1'}"
+23	120		302							"{2: ""Then let's do it."", 3: '121'}"
+24	121		302							{2: 'Withdraw when it starts looking bad.', 3: '122'}
+25	122		301		1		AniZhuanchangBegin			{1: '1', 2: 'Everyone', 3: 'Understood!', 4: '1', 5: '2', 6: '3'}

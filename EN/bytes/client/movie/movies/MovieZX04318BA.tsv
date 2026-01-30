@@ -1,0 +1,351 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		107						1000.0	{1: 'Science Council'}
+4	4		108							{1: '1'}
+5	5		201							{1: '1', 2: '500004', 4: '400', 7: '1'}
+6	6		201							{1: '2', 2: '500864', 4: '-400', 7: '1'}
+7	7		302							{2: '...Are you sure this will work?', 3: '8'}
+8	8		301			DialogEnable				{3: 'Gazing at the peculiar machine that seems poised to turn against you at any moment, you shoot an uncertain glance at Asimov and Teddy, who stand nearby.'}
+9	9		204							{1: '1', 2: '8'}
+10	10		301							{2: 'Asimov', 3: 'Hmm...', 4: '1'}
+11	11		204							{1: '1'}
+12	12		301							"{2: 'Asimov', 3: ""It may appear strange, but this is indeed the form that emerges from assembling it according to Nanami's blueprints."", 4: '1'}"
+13	13		301							"{2: 'Asimov', 3: ""I've tested it using some keys she left behind, and it doesn't pose any danger."", 4: '1'}"
+14	14		301							"{2: 'Asimov', 3: ""But I can't guarantee whether the experience is merely an illusion created by this machine."", 4: '1'}"
+15	15		301							{2: 'Teddy', 3: 'After all, not everyone is eager to watch a chaotic dance of code.', 4: '2'}
+16	16		301							"{2: 'Teddy', 3: ""In any case, give it a shot. Once you step inside, I'll input the corresponding key, and Asimov will keep a close watch on the machine. If anything goes awry, we'll shut it down right away."", 4: '2'}"
+17	17		301							"{2: 'Asimov', 3: ""This key is for one-time use only. If there's information within, make sure to record it in detail."", 4: '1'}"
+18	18		302							{2: 'Okay.', 3: '20', 4: 'I trust you.', 5: '19'}
+19	19		301							"{2: 'Teddy', 3: ""Well... it's not like you have anyone else to depend on here."", 4: '2'}"
+20	20		204							{1: '2', 2: '15'}
+21	21		301							"{2: 'Teddy', 3: ""Alright, let's go, Commandant!"", 4: '2'}"
+22	22		202							{1: '1', 2: '2'}
+23	23		301							{3: 'You put on that oddly-shaped helmet and snap on the mask—'}
+24	24		401							{1: '1', 2: '36'}
+25	25		401							{1: '2', 2: '1511'}
+26	26		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+27	27		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+28	28		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+29	29		301				AniZhuanchangBegin			{3: 'A wave of dizziness washes over you.'}
+30	30		502						3000.0	{1: 'DialogDisable'}
+31	31		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '5'}
+32	32		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+33	33		401						300.0	{1: '2', 2: '4424'}
+34	34		401							{1: '1', 2: '382'}
+35	35		301			DialogEnable				"{2: '????', 3: ""You've finally obtained the key.""}"
+36	36		302							{2: '...', 3: '37', 4: 'Who are you?', 5: '37'}
+37	37		301							{2: '????', 3: 'No need to worry, ■ is merely a ghost drifting through the data space, a fragment of history that no longer exists.'}
+38	38		302							{2: 'Are you Dominik?', 3: '39'}
+39	39		301							{2: 'Dominik', 3: 'Yes... and no.'}
+40	40		301							"{2: 'Dominik', 3: ""■ is simply the echo of Dominik's consciousness, left behind before he entered Reactor 1.""}"
+41	41		301							"{2: 'Dominik', 3: '■ has little time to converse and a limited opportunity to record ""information"". ■\'s purpose is to deliver this invitation into your hands.'}"
+42	42		401							{1: '2', 2: '4425'}
+43	43		301							{3: 'A scroll woven from strands of data slowly unfurls from the darkness.'}
+44	44		301							{2: 'Dominik', 3: 'This invitation, which only you can open, is meant to extend a request to you.'}
+45	45		301							{3: 'The mechanical voice resonates through the desolate darkness.'}
+46	46		301							"{2: 'Dominik', 3: 'Are you willing to accept the test and integrate your data into ""Dominik""?'}"
+47	47		302							{2: 'What?', 3: '48', 4: 'Integrate... into Dominik?', 5: '48'}
+48	48		301							"{2: 'Dominik', 3: 'Yes. To become ""Dominik"", sowing hope into the very soil of humanity.'}"
+49	49		301							{2: 'Dominik', 3: 'To bring glory to the world, to become the new Prometheus.'}
+50	50		301				DialogDisable			"{2: 'Dominik', 3: 'Humanity needs the fire of ""Dominik"".'}"
+51	51		302							{2: '...', 3: '52'}
+52	52		302							{2: 'I have a few questions.', 3: '53'}
+53	53		301			DialogEnable				{2: 'Dominik', 3: 'Please.'}
+54	54		302							{2: 'Where is the real Dominik?', 3: '55'}
+55	55		301							{2: 'Dominik', 3: '■ cannot answer that question for you.'}
+56	56		301							{2: 'Dominik', 3: 'His true whereabouts may be linked to the Ω Effect, but ■ has no opportunity to verify this theory.'}
+57	57		302							{2: 'What is the nature of the Punishing Virus? And why did it erupt from a Zero Point Reactor?', 3: '58'}
+58	58		301							"{2: 'Dominik', 3: ""That information doesn't belong to this civilization.""}"
+59	59		301							"{2: 'Dominik', 3: ""It's not a mistake; rather, it has pointed toward a new direction, a future rich with possibilities.""}"
+60	60		301							"{2: 'Dominik', 3: ""It just appeared at a time when it shouldn't have.""}"
+61	61		301							{2: 'Dominik', 3: '■ cannot discern right from wrong, yet ■ undeniably attracted a flame that humanity cannot control.'}
+62	62		301							{2: 'Dominik', 3: 'The Inver-Device was born from this; ■ is seeking to rekindle hope in this transient civilization.'}
+63	63		302							"{2: ""So, why has no one been able to dismantle the Inver-Device's structure yet?"", 3: '64'}"
+64	64		301							{2: 'Dominik', 3: 'Because that technology is not of this era.'}
+65	65		302							{2: 'Are you referring to the Golden Age?', 3: '66'}
+66	66		301							{2: 'Dominik', 3: 'No... perhaps it belongs to an even earlier time, or maybe a later one.'}
+67	67		301							{2: 'Dominik', 3: '■ cannot provide a specific answer to your question. If you integrate into Dominik, all the answers will eventually unfold before you.'}
+68	68		302							{2: '...', 3: '69'}
+69	69		301							{3: 'Integrate... into Dominik?'}
+70	70		301							{3: 'This is a path never imagined before.'}
+71	71		301				DialogDisable			{3: 'But...'}
+72	72		302							{2: 'Does this world...', 3: '73'}
+73	73		302							{2: 'Do we still need Dominik?', 3: '74'}
+74	74		301			DialogEnable				{2: 'Dominik', 3: '...'}
+75	75		301							{3: 'The figure hidden in the void falls silent.'}
+76	76		301							{2: 'Dominik', 3: '■ cannot answer that question for you.'}
+77	77		301							{2: 'Dominik', 3: 'Countless days and nights sealed within the Gestalt, ■ have witnessed too many miracles of this era.'}
+78	78		301							"{2: 'Dominik', 3: 'Those... are miracles that even if ""Dominik"" still existed, might never be replicated.'}"
+79	79		301							"{2: 'Dominik', 3: ""Time—there's little left. This information will soon be lost.""}"
+80	80		401							{1: '2', 2: '4417'}
+81	81		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '3'}
+82	82		505						400.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+83	83		401							{1: '2', 2: '4417'}
+84	84		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '3'}
+85	85		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+86	86		301							{3: 'An emotionless mechanical voice emits intermittent waves.'}
+87	87		201							{1: '1', 2: '500263'}
+88	88		301							{1: '1', 2: 'Dominik', 3: 'Upon being uploaded to the Gestalt, this consciousness data has already been contaminated.', 4: '1'}
+89	89		301							{2: 'Dominik', 3: '■ trapped itself and the contaminating memetics deep within the Gestalt, but the data wall ■ built is about to fail, ■ can only deceive it to sneak this information out.', 4: '1'}
+90	90		301							{2: 'Dominik', 3: 'A nascent consciousness still cannot rival human wisdom...', 4: '1'}
+91	91		301							"{2: 'Dominik', 3: ""Even if it's a living brain made of cortex and nerve fibers, something it can never fully understand."", 4: '1'}"
+92	92		302							{2: 'It?', 3: '93'}
+93	93		301							"{2: 'Dominik', 3: '■ cannot speak its name directly, but ""it"" will eventually emerge.', 4: '1'}"
+94	94		301							{2: 'Dominik', 3: 'Come, child.', 4: '1'}
+95	95		301				DialogDisable			"{2: 'Dominik', 3: 'Are you willing to accept this invitation and integrate into ""Dominik""?', 4: '1'}"
+96	96		302							{2: '...', 3: '97'}
+97	97		302							{2: 'What will I sacrifice to integrate into Dominik?', 3: '98', 4: 'No.', 5: '106'}
+98	98		301			DialogEnable				{2: 'Dominik', 3: '...', 4: '1'}
+99	99		301							"{2: 'Dominik', 3: ""■ doesn't know."", 4: '1'}"
+100	100		301							"{2: 'Dominik', 3: '■ is simply the echo of Dominik\'s consciousness, left behind before entering Reactor 1. In ■\'s limited memory, ■ can\'t remember anything from before ■ integrated into ""Dominik"".', 4: '1'}"
+101	101		301							{2: 'Dominik', 3: 'So, what is your answer?', 4: '1'}
+102	102		401						5000.0	{1: '1', 2: '36'}
+103	103		401							{1: '1', 2: '146'}
+104	104		502							{1: 'DialogDisable'}
+105	105		302							{2: 'The answer is still no.', 3: '107'}
+106	106		401							{1: '1', 2: '146'}
+107	107		302							{2: 'This era needs us, not a relic of the past.', 3: '109'}
+108	108		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+109	109		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '5', 5: '1'}
+110	110		401							{1: '2', 2: '952'}
+111	111		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory45.jpg'}
+112	112		201						400.0	{1: '1', 2: '500011', 7: '1'}
+113	113		401							{1: '2', 2: '952'}
+114	114		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+115	115		201						400.0	{1: '1', 2: '500012', 7: '1'}
+116	116		401							{1: '2', 2: '952'}
+117	117		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory584.jpg'}
+118	118		201						400.0	{1: '1', 2: '500004', 7: '1'}
+119	119		401							{1: '2', 2: '952'}
+120	120		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+121	121		201						400.0	{1: '1', 2: '500001', 7: '1'}
+122	122		401							{1: '2', 2: '952'}
+123	123		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+124	124		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+125	125		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 3: '1', 4: '1', 5: '0'}
+126	126		202							{1: '1', 6: '1'}
+127	127		201							{1: '1', 2: '500263', 7: '1'}
+128	128		301			DialogEnable				{1: '1', 3: 'It calls for Hassen, Nikola, Asimov, Celica...'}
+129	129		502							{1: 'DialogDisable'}
+130	130		202							{1: '1'}
+131	131		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 3: '1', 4: '0', 5: '1'}
+132	132		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront9.png', 3: '0', 4: '1', 5: '1'}
+133	133		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+134	134		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront9.png'}
+135	135		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront10.png', 3: '0', 4: '1', 5: '1'}
+136	136		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+137	137		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront10.png'}
+138	138		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront11.png', 3: '0', 4: '1', 5: '1'}
+139	139		205							{1: '999', 3: '1', 4: '0', 5: '1'}
+140	140		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront11.png'}
+141	141		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3801_03.jpg', 3: '0', 4: '1', 5: '1'}
+142	142		205							{1: '999', 3: '1', 4: '0', 5: '1'}
+143	143		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_03.jpg'}
+144	144		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg2301_15.jpg', 3: '0', 4: '1', 5: '0.4'}
+145	145		205							{1: '999', 3: '1', 4: '0', 5: '1'}
+146	146		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg2301_15.jpg'}
+147	147		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4101_16.jpg', 3: '0', 4: '1', 5: '0.4'}
+148	148		205							{1: '999', 3: '1', 4: '0', 5: '1'}
+149	149		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4101_16.jpg'}
+150	150		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3801_09.jpg', 3: '0', 4: '1', 5: '0.4'}
+151	151		205							{1: '999', 3: '1', 4: '0', 5: '1'}
+152	152		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_09.jpg'}
+153	153		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3601_04.jpg', 3: '0', 4: '1', 5: '0.4'}
+154	154		205							{1: '999', 3: '1', 4: '0', 5: '1'}
+155	155		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3601_04.jpg'}
+156	156		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3401_16.jpg', 3: '0', 4: '1', 5: '0.4'}
+157	157		205							{1: '999', 3: '1', 4: '0', 5: '1'}
+158	158		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3401_16.jpg'}
+159	159		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3301_03.jpg', 3: '0', 4: '1', 5: '0.4'}
+160	160		205							{1: '999', 3: '1', 4: '0', 5: '1'}
+161	161		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3301_03.jpg'}
+162	162		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3201_02.jpg', 3: '0', 4: '1', 5: '0.4'}
+163	163		205							{1: '999', 3: '1', 4: '0', 5: '1'}
+164	164		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3201_02.jpg'}
+165	165		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3001_11.jpg', 3: '0', 4: '1', 5: '0.4'}
+166	166		205							{1: '999', 3: '1', 4: '0', 5: '1'}
+167	167		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3001_11.jpg'}
+168	168		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg2801_08.jpg', 3: '0', 4: '1', 5: '0.4'}
+169	169		205							{1: '999', 3: '1', 4: '0', 5: '1'}
+170	170		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg2801_08.jpg'}
+171	171		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg2301_7.jpg', 3: '0', 4: '1', 5: '0.4'}
+172	172		205							{1: '999', 3: '1', 4: '0', 5: '1'}
+173	173		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg2301_7.jpg'}
+174	174		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg2101_6.jpg', 3: '0', 4: '1', 5: '0.4'}
+175	175		205							{1: '999', 3: '1', 4: '0', 5: '1'}
+176	176		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg2101_6.jpg'}
+177	177		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg2201_1.jpg', 3: '0', 4: '1', 5: '0.4'}
+178	178		205							{1: '999', 3: '1', 4: '0', 5: '1'}
+179	179		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg2201_1.jpg'}
+180	180		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4101_10.jpg', 3: '0', 4: '1', 5: '0.4'}
+181	181		205							{1: '999', 3: '1', 4: '0', 5: '1'}
+182	182		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4101_10.jpg'}
+183	183		401							{1: '2', 2: '952'}
+184	184		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+185	185		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '5'}
+186	186		201							{1: '1', 2: '500263', 7: '1'}
+187	187		301			DialogEnable	DialogDisable			"{1: '1', 3: ""It calls for the Task Force, the Engineering Force, the Support Force—soldiers battling for Earth's revival in Babylonia, and the people striving to survive and keep the flame of humanity alive.""}"
+188	188		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '5', 5: '1'}
+189	189		202							{1: '1', 6: '1'}
+190	190		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory782.jpg', 3: '0', 4: '1', 5: '1'}
+191	191		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+192	192		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory782.jpg'}
+193	193		201						400.0	{1: '1', 2: '500869', 4: '400', 7: '1'}
+194	194		202						700.0	{1: '1'}
+195	195		201						400.0	{1: '1', 2: '500696', 4: '-400', 7: '1'}
+196	196		202						700.0	{1: '1'}
+197	197		201						400.0	{1: '1', 2: '500286', 4: '400', 7: '1'}
+198	198		202						700.0	{1: '1'}
+199	199		201						400.0	{1: '1', 2: '500420', 4: '-400', 7: '1'}
+200	200		202						700.0	{1: '1'}
+201	201		201						400.0	{1: '1', 2: '500779', 4: '400', 7: '1'}
+202	202		202						700.0	{1: '1'}
+203	203		201						400.0	{1: '1', 2: '500136', 4: '-400', 7: '1'}
+204	204		202						700.0	{1: '1'}
+205	205		201						400.0	{1: '1', 2: '500564', 4: '400', 7: '1'}
+206	206		202							{1: '1'}
+207	207		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+208	208		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+209	209		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '5'}
+210	210		201							{1: '1', 2: '500263'}
+211	211		301			DialogEnable				{1: '1', 3: 'What this era needs is all those who are dedicated to building a better tomorrow.'}
+212	212		301							{3: 'Not a vague shadow of what once was.'}
+213	213		301							{3: 'The spirit and will of the Golden Age will resonate forever, but...'}
+214	214		301							{3: 'This era needs us'}
+215	215		301							"{3: ""Not a new Pandora's box.""}"
+216	216		301							{2: 'Dominik', 3: '...Haha, that is the answer ■ expected.', 4: '1'}
+217	217		301							{2: 'Dominik', 3: 'Only with such determination can one qualify to open the invitation.', 4: '1'}
+218	218		301							{2: 'Dominik', 3: 'Perhaps your choice... is the right one...', 4: '1'}
+219	219		202							{1: '1'}
+220	220		301				AniZhuanchangBegin			{3: 'The dark world sinks back into silence.'}
+221	221		401							{1: '1', 2: '36'}
+222	222		101			DialogDisable			2000.0	{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '5', 5: '1'}
+223	223		401							{1: '2', 2: '4280'}
+224	224		101				AniZhuanchangEnd		1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+225	225		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png', 3: '0', 4: '1', 5: '1'}
+226	226		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+227	227		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+228	228		301			DialogEnable				{3: 'Eardrums thrum with a piercing buzz, visual nerves jolted by blinding light, and tears spill from the corners of the eyes.'}
+229	229		401							{1: '1', 2: '201'}
+230	230		201							{1: '1', 2: '500004', 4: '400'}
+231	231		201							{1: '2', 2: '500864', 4: '-400'}
+232	232		301							{1: '1', 2: 'Teddy', 3: '...Are you awake now, 【kuroname】? Hmm?', 4: '2'}
+233	233		301							{2: 'Asimov', 3: 'The physiological readings suggest that 【kuroname】 should be conscious now...', 4: '1'}
+234	234		302							{2: 'Awake, awake.', 3: '241', 4: '(Still pretending to sleep.)', 5: '236'}
+235	235		204							{1: '2', 2: '2'}
+236	236		301							"{2: 'Teddy', 3: ""You're just pretending, aren't you?"", 4: '2'}"
+237	237		204							{1: '2', 2: '13'}
+238	238		301							{2: 'Teddy', 3: 'Maybe we should send this person to the Star of Life for a couple of shots.', 4: '2'}
+239	239		302							"{2: ""No need. I'm awake now."", 3: '240'}"
+240	240		204							{1: '2'}
+241	241		301							{2: 'Asimov', 3: 'What did you see?', 4: '1'}
+242	242		302				AniZhuanchangBegin			{2: 'Dominik.', 3: '243'}
+243	243		502						1000.0	{1: 'DialogDisable'}
+244	244		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+245	245		301			DialogEnable				{3: 'You briefly explain to Asimov and Teddy what you have seen in the full-sense simulation device.'}
+246	246		301							{2: 'Asimov', 3: 'You did the right thing.', 4: '1'}
+247	247		301							"{2: 'Asimov', 3: ""Given that we can't tell if they're friend or foe, this is the safest choice."", 4: '1'}"
+248	248		301							{2: 'Asimov', 3: 'As for that data wall...', 4: '1'}
+249	249		301							{2: 'Teddy', 3: 'As for that data wall... Whether it leads to destruction or a fresh start, it needs to be torn down.', 4: '2'}
+250	250		301							"{2: 'Teddy', 3: ""The parliament has approved the resolution, and I've already been assigned to assist with the hijacking."", 4: '2'}"
+251	251		301				AniZhuanchangBegin			{2: 'Teddy', 3: 'The mission is set for tomorrow.', 4: '2'}
+252	252		202			DialogDisable			1000.0	{1: '1', 2: '2', 6: '1'}
+253	253		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgCg/Cg4301_03.jpg'}
+254	254		107							{1: 'Science Council', 2: 'Testing Ground'}
+255	255		301							"{3: ""At the Science Council's testing ground.""}"
+256	256		108							{1: '1'}
+257	257		301			DialogEnable				"{3: ""The Oversight Committee rejected Parliament's request for direct access to the Gestalt's computing power center. Instead, they opted to carry out their operation here.""}"
+258	258		301							{3: 'The testing ground hums with renewed energy as researchers weave in and out, diligently checking line after line of complex code.'}
+259	259		301							{2: 'Teddy', 3: 'Protocol decryption is complete.'}
+260	260		301							{2: 'Asimov', 3: 'Initiating hijack.'}
+261	261		301							{3: 'The giant screen projected by the terminal scrolled with the latest updates, as layers of the data wall are systematically hijacked.'}
+262	262		301							{2: 'Teddy', 3: '—Hijack complete.'}
+263	263		301							"{2: 'Researcher A', 3: ""...It's here!""}"
+264	264		301							"{3: ""At the moment Teddy presses the final key, Gestalt's terminal flickers, unleashing a torrent of unknown data, with countless lost technologies cascading into the terminal's memory.""}"
+265	265		301							{2: 'Researcher A', 3: 'Fantastic!'}
+266	266		401							{1: '1', 2: '36'}
+267	267		301							{2: 'Teddy', 3: 'Wait!'}
+268	268		301							{2: 'Researcher B', 3: '...What is that?'}
+269	269		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+270	270		401							{1: '1', 2: '273'}
+271	271		401							{1: '2', 2: '4436'}
+272	272		401							{1: '2', 2: '2782'}
+273	273		301							{3: 'A deep crimson glow spills across the device monitor.'}
+274	274		301							{2: 'Asimov', 3: 'Emergency shutdown!'}
+275	275		301							"{2: 'Teddy', 3: ""It's too late!""}"
+276	276		301							"{3: ""Teddy's fingers fly across the keyboard, desperately cutting off the data stream, but the crimson pixels have already engulfed most of the data.""}"
+277	277		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab', 2: '2'}
+278	278		301							"{3: ""The urgent alarms blare deafeningly, with glaring WARNING messages crawling across everyone's screens.""}"
+279	279		301							{2: 'Worker A', 3: 'Warning! Warning!'}
+280	280		301							{3: 'The cacophony of noise spreads outward, sharp explosions resonating throughout the entire Babylonia.'}
+281	281		301							"{2: 'Worker A', 3: ""We've lost contact—lost contact with all satellites!""}"
+282	282		301							{2: 'Worker B', 3: 'Communication systems are down! Power systems are failing!'}
+283	283		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab'}
+284	284		401							{1: '2', 2: '2692'}
+285	285		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+286	286		301							{3: 'No sooner had the words been spoken than the hall plunged into darkness, with only the frantic red alerts flashing on the screens.'}
+287	287		301							{2: 'Karenina', 3: '****—Engineering Force! Power repairs needed!'}
+288	288		401							{1: '2', 2: '4331'}
+289	289		401							{1: '2', 2: '1504'}
+290	290		301							{3: 'Almost everyone rushes out of the hall, hurrying to fix the faltering Babylonia.'}
+291	291		301							{2: 'Teddy', 3: 'Contaminated area lockdown complete—'}
+292	292		301							{3: 'All erroneous codes are sealed within the isolation zone, along with the lost technologies, once again packed into the bottomless black box.'}
+293	293		205						700.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4301_04.jpg', 3: '0', 4: '1', 5: '0.7'}
+294	294		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+295	295		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4301_04.jpg'}
+296	296		104							{1: '0|0|-300', 2: '7'}
+297	297		301							{3: 'Turning back, the hall stands deserted once more.'}
+298	298		301							{2: 'Teddy', 3: '...Is this the ending you all wanted?'}
+299	299		301							{2: 'Teddy', 3: 'Is this... the legacy of the Golden Age, the legacy of Dominik that you sought?'}
+300	300		104							{1: '0|0|0', 2: '0'}
+301	301		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4301_05.jpg', 3: '0', 4: '1', 5: '1'}
+302	302		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+303	303		301				AniZhuanchangBegin			{2: 'Teddy', 3: 'All of this... what is it for, really?'}
+304	304		205							{1: '999', 3: '0', 4: '0', 5: '1'}
+305	305		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+306	306		402							{1: '2782'}
+307	307		502						400.0	{1: 'DialogDisable'}
+308	308		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory700.jpg'}
+309	309		107							{1: 'Surface Conservation Area'}
+310	310		301							{3: 'In the Surface Conservation Area.'}
+311	311		108							{1: '1'}
+312	312		401							{1: '2', 2: '2601'}
+313	313		301			DialogEnable				{2: 'Conservation Area Worker', 3: 'Alert! Alert! Abnormal Punishing Virus concentration detected!'}
+314	314		301							{2: 'Conservation Area Worker', 3: 'Everyone, quickly retreat to the Clean Zone!'}
+315	315		401							{1: '2', 2: '4330'}
+316	316		301							{3: 'Hearing the piercing alarm, all the residents working outside drop their tasks and rush back to the Clean Zone.'}
+317	317		301							{3: 'The child, clutching two small pots with seedlings, cannot keep up with the adults and falls hard to the ground. Before a cry can escape, an adult scoops the child up by the collar and hurries back inside the conservation area.'}
+318	318		201							{1: '1', 2: '500392', 4: '400'}
+319	319		201							{1: '2', 2: '500260', 4: '-400'}
+320	320		301							"{1: '1', 2: 'Child', 3: ""Elean... my bottle, the one Liv gave me, it's broken..."", 4: '2'}"
+321	321		301							"{3: ""The child's grubby little hands tightly hold the shattered serum vial.""}"
+322	322		301							{2: 'Elean', 3: '...', 4: '1'}
+323	323		301							"{2: 'Elean', 3: ""It's okay. We have plenty of other containers. We can replant them."", 4: '1'}"
+324	324		301							{2: 'Child', 3: 'Hmm...', 4: '2'}
+325	325		202							{1: '1', 2: '2'}
+326	326		301							"{3: ""The gate to the Clean Zone slowly closes, and those who don't make it back in time begin to show red lesions on their skin.""}"
+327	327		201							{1: '1', 2: '500392', 4: '400'}
+328	328		201							{1: '2', 2: '500260', 4: '-400'}
+329	329		301							{1: '1', 2: 'Child', 3: 'Elean...', 4: '2'}
+330	330		301							{2: 'Child', 3: 'Are we going to live like this forever?', 4: '2'}
+331	331		301							{2: 'Elean', 3: '...', 4: '1'}
+332	332		301							{2: 'Elean', 3: 'Lane.', 4: '1'}
+333	333		203							{1: '1', 2: '0.35', 3: '200', 4: '-100'}
+334	334		301							"{3: ""She crouches down, gently wiping the tears from the child's face.""}"
+335	335		301							"{2: 'Elean', 3: ""I... I don't know."", 4: '1'}"
+336	336		301							{2: 'Elean', 3: 'But I do know that we need to survive. We have to keep going.', 4: '1'}
+337	337		301							"{2: 'Elean', 3: ""One day... one day we'll understand what all of this was for, and why we had to suffer like this."", 4: '1'}"
+338	338		301							{2: 'Child', 3: 'Then... what about now?', 4: '2'}
+339	339		301							{2: 'Elean', 3: 'Right now... we just have to survive. We must survive.', 4: '1'}
+340	340		301				AniZhuanchangBegin			{3: 'She pulls the child close in a tight hug.'}
+341	341		202			DialogDisable				{1: '1', 2: '2'}
+342	342		402							{1: '4330'}
+343	343		402							{1: '2601'}
+344	344		101				AniZhuanchangEnd		2000.0	{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading.jpg'}
+345	345		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory460.jpg', 3: '0', 4: '1', 5: '1'}
+346	346		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+347	347		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory460.jpg'}
+348	348		205						3000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '3'}
+349	349		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+350	350		101		1				2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}

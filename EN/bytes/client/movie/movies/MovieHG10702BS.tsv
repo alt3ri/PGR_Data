@@ -1,0 +1,31 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '1091001', 3: '4'}
+4	4		301			DialogEnable				{1: '1', 2: 'Bianca', 3: 'You really need to reflect on your last mission, Karenina.', 4: '1'}
+5	5		203							{1: '1', 2: '0.25', 3: '-400'}
+6	6		201							{1: '2', 2: '500196', 4: '400'}
+7	7		301							"{1: '1', 2: 'Karenina', 3: ""Why? Didn't we take care of the new variant? Are the Gray Ravens alright?"", 4: '2'}"
+8	8		301							{2: 'Bianca', 3: 'Only because the commandant acted accordingly and the Gray Ravens have enough experience under their belt.', 4: '1'}
+9	9		301							{2: 'Bianca', 3: 'If it was someone else...', 4: '1'}
+10	10		301							{2: 'Karenina', 3: 'Since when did you like hearing yourself talk so much, Bianca?', 4: '2'}
+11	11		301							"{2: 'Karenina', 3: ""Just the person I need. Ask the commandant yourself. Didn't headquarters approve of our results last mission?"", 4: '2'}"
+12	12		302							"{2: ""I can't say I approve of it either."", 3: '13', 4: ""Regardless, the same can't be done next time."", 5: '13'}"
+13	13		301							{2: 'Karenina', 3: 'What?', 4: '2'}
+14	14		202							{1: '1', 6: '1'}
+15	15		203							{1: '2', 2: '0.25'}
+16	16		301							"{2: 'Karenina', 3: ""Then what, just watch the new variant run away?! That'd be an even bigger loss!"", 4: '2'}"
+17	17		301							{2: 'Karenina', 3: 'Same for Lucia, you, and the commandant...', 4: '2'}
+18	18		301							"{2: 'Karenina', 3: ""I did what I had to complete the mission. Now I'm taking all the blame even though it was a success."", 4: '2'}"
+19	19		203							{1: '2', 2: '0.25', 3: '400'}
+20	20		201							{1: '1', 2: '1091001', 3: '4', 4: '-400'}
+21	21		301							"{1: '1', 2: 'Bianca', 3: ""That's because what you did was too dangerous. We can use all sorts of other methods to track down the new variant."", 4: '1'}"
+22	22		301							"{2: 'Bianca', 3: ""Not just throw yourself into harm's way."", 4: '1'}"
+23	23		301							"{2: 'Karenina', 3: ""Enough already! I don't want to talk about this anymore."", 4: '2'}"
+24	24		301							{2: 'Karenina', 3: 'I was just... I was just...', 4: '2'}
+25	25		302							{1: '1001', 2: 'Karenina...', 3: '29', 4: 'Maybe we were a bit too harsh...', 5: '30'}
+26	26		202							{1: '1', 2: '2', 6: '1'}
+27	27		201							{1: '1', 2: '1091001'}
+28	28		303							{1: '1001'}
+29	29		301		1		AniZhuanchangBegin			{1: '1', 2: 'Bianca', 3: 'She gets the point, Commandant.', 4: '1'}
+30	30		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Bianca', 3: ""It's necessary, Commandant. Karenina's more than meets the eye."", 4: '1'}"

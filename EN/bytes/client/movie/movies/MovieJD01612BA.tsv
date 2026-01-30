@@ -1,0 +1,16 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory260.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '1031001', 4: '-600'}
+4	4		201							{1: '2', 2: '500026', 4: '600'}
+5	5		201							{1: '3', 2: '500166'}
+6	6		301			DialogEnable				"{1: '1', 3: 'The invaders seem to have detected the defeat of ""Bianca"", and they are personally directing the Program Ghosts to capture the Gray Raven.'}"
+7	7		301							"{3: ""On Liv's suggestion, the four of you decide to travel through the secondary channel for emergency data transmission.""}"
+8	8		301							{3: 'When there is no emergency, the channel remains locked with an emergency protocol.'}
+9	9		301							{3: 'The only way to pass through this channel is to deactivate the blockades in order.'}
+10	10		301							{3: '—But ultimately, this will save you time and energy. The invader can send an infinite amount of Program Ghosts after you, while you do not have the energy to fight them forever.'}
+11	11		301							{2: 'System Notice', 3: 'Security Line Code E-02-00436, Security Lock L1.'}
+12	12		301							{2: 'Liv', 3: '...Found it.', 4: '1'}
+13	13		301				DialogDisable			"{2: 'Lee', 3: ""Let's get to work."", 4: '2'}"
+14	14		305							{1: '15', 2: '15'}
+15	15		202		1		AniZhuanchangBegin			{1: '1', 2: '2', 3: '3', 6: '1'}

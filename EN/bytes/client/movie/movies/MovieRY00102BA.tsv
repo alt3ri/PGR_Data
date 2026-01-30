@@ -1,0 +1,51 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab', 2: '2'}
+4	4		401							{1: '2', 2: '1509'}
+5	5		301			DialogEnable				{2: 'System', 3: '...Establishing connection...'}
+6	6		301				AniZhuanchangBegin			{2: 'System', 3: 'Connected.'}
+7	7		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab'}
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory6.jpg'}
+9	9		401							{1: '1', 2: '101'}
+10	10		301			AniZhuanchangEnd				{3: '...'}
+11	11		201							{1: '1', 2: '500013'}
+12	12		401							{1: '2', 2: '1508'}
+13	13		301							{1: '1', 2: 'Corrupted', 3: '—! —!', 4: '1'}
+14	14		201							{1: '1', 2: '1021001'}
+15	15		301							"{1: '1', 2: 'Lucia', 3: ""The number of Corrupted is beyond my expectation... I shouldn't have separated with Liv and Lee."", 4: '1'}"
+16	16		302							{2: 'Lucia!', 3: '17'}
+17	17		204							{1: '1', 2: '3'}
+18	18		301							{2: 'Lucia', 3: 'Commandant, why...', 4: '1'}
+19	19		201							{1: '1', 2: '500013'}
+20	20		401							{1: '2', 2: '1508'}
+21	21		301							{1: '1', 2: 'Corrupted', 3: '—!', 4: '1'}
+22	22		201							{1: '1', 2: '1021001'}
+23	23		401							{1: '4', 2: '102005'}
+24	24		301							{1: '1', 2: 'Lucia', 3: 'Out of my way!', 4: '1'}
+25	25		201							{1: '1', 2: '500013'}
+26	26		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 3: '1'}
+27	27		401							{1: '2', 2: '10002001'}
+28	28		301			PanelActor1Shake				{1: '1', 2: 'Corrupted', 3: '!', 4: '1'}
+29	29		202							{1: '1', 6: '1'}
+30	30		401						1000.0	{1: '2', 2: '1506'}
+31	31		201							{1: '1', 2: '1021001', 3: '3'}
+32	32		301							{1: '1', 2: 'Lucia', 3: 'All good now. Commandant, why are you remotely connecting to me...? Do you mind explaining?', 4: '1'}
+33	33		302							{2: '(Explain the situation)', 3: '34'}
+34	34		204							{1: '1'}
+35	35		401							{1: '4', 2: '102002'}
+36	36		301							{2: 'Lucia', 3: 'I see. You were kidnapped, and are now connecting to me using the chamber she mentioned. Is that right?', 4: '1'}
+37	37		204							{1: '1', 2: '3'}
+38	38		301							"{2: 'Lucia', 3: ""This connection chamber... how amazing it is. It not only increases my power output... I feel like you're standing right next to me as well."", 4: '1'}"
+39	39		401							{1: '4', 2: '102003'}
+40	40		301							"{2: 'Lucia', 3: ""We'll be able to implement more tactics if we can make good use of them."", 4: '1'}"
+41	41		204							{1: '1'}
+42	42		302							"{2: ""We'll explore the possibilities later."", 3: '43', 4: ""Then let's put our first tactic to the test!"", 5: '45'}"
+43	43		204							{1: '1', 2: '6'}
+44	44	46	301							"{2: 'Lucia', 3: ""You're right. Let's locate you first."", 4: '1'}"
+45	45		301							"{2: 'Lucia', 3: ""(Nods) Let's find your whereabouts and get you out of there."", 4: '1'}"
+46	46		201							{1: '1', 2: '500142'}
+47	47		401							{1: '2', 2: '1508'}
+48	48		301							{1: '1', 2: 'Corrupted', 3: '—! ——————!!!!', 4: '1'}
+49	49		201							{1: '1', 2: '1021001', 3: '4'}
+50	50		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Lucia', 3: ""The noise must have alerted these Corrupted. Commandant, let's go."", 4: '1'}"

@@ -1,0 +1,11 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory15.jpg'}
+2	100		401							{1: '1', 2: '201'}
+3	2		201							{1: '1', 2: '500028'}
+4	3		301			DialogEnable				{1: '1', 2: 'Construct Leader', 3: 'Ascendant trails extended all the way here!', 4: '1'}
+5	4		203							{1: '1', 2: '0.25', 3: '-400'}
+6	5		201							{1: '2', 2: '500019', 4: '400'}
+7	6		301							{1: '1', 2: 'Construct Soldier', 3: 'Leader, is it really okay for us to go in this deep?', 4: '2'}
+8	7		301							"{2: 'Construct Leader', 3: ""This is our mission. If we don't manage to provide intel, then our already scarce military cannot be deployed effectively."", 4: '1'}"
+9	8		301							"{2: 'Construct Leader', 3: ""If there are any dangers, I'll be the last to recall my consciousness, and I'll keep you all safe!"", 4: '1'}"
+10	9		301		1		AniZhuanchangBegin			{2: 'Construct Soldier', 3: 'Understood! Leader!', 4: '2'}

@@ -1,0 +1,173 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory318.png'}
+2	2		401							{1: '1', 2: '226'}
+3	3		401							{1: '2', 2: '1510'}
+4	4		201							{1: '1', 2: '500013', 7: '1'}
+5	5		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+6	6		502							{1: 'DialogEnable'}
+7	7		301			PanelActor1Shake				{1: '1', 3: 'Your bullets puncture the frail joints of the Corrupted accurately. You are not trying to take them down but slow their advance.'}
+8	8		302							{2: 'Lee!', 3: '9'}
+9	9		201							{1: '1', 2: '500568'}
+10	10		301							{1: '1', 2: 'Lee', 3: 'Copy.', 4: '1'}
+11	11		202							{1: '1', 6: '1'}
+12	12		301							{3: 'You have intentionally led the Corrupted into one place, taking advantage of their predatory instincts. Their slowed movement means there is enough time for you to get to safety.'}
+13	13		401							{1: '2', 2: '11105405'}
+14	14		401							{1: '2', 2: '10021506'}
+15	15		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+16	16		301			RImgBg1Shake				{3: 'An ion beam arrives from afar, hitting the Corrupted group in the center and decimating them in a wave of blue flame.'}
+17	17		301							{3: 'You load a new magazine into your pistol, chambering a round and cocking the gun.'}
+18	18		401							{1: '2', 2: '1511'}
+19	19		301							{3: 'The pistol slide springs back with a sharp click, ready to fire the next bullet.'}
+20	20		201							{1: '1', 2: '500013'}
+21	21		201							{1: '2', 2: '500013', 4: '-600'}
+22	22		201							{1: '3', 2: '500013', 4: '600'}
+23	23		301							{1: '1', 3: 'This is your last magazine against an endless wave of Corrupted that is still charging toward you. Your wound is bleeding again, weighing down the bandages.'}
+24	24		302							{2: 'We still have to hold on a little bit longer...'}
+25	25		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+26	26		401						300.0	{1: '2', 2: '1510'}
+27	27		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+28	28		401							{1: '2', 2: '1510'}
+29	29		301			RImgBg1Shake				{3: 'You open fire while trying to come up with a plan.'}
+30	30		301							{3: 'Skills and tactics are negligible at this point, considering the difference in numbers and armament.'}
+31	31		302							"{2: ""There isn't another way..."", 3: '32'}"
+32	32		301							{3: 'Although you are fighting side by side with Constructs, commandants often require their protection in battles.'}
+33	33		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+34	34		401						300.0	{1: '2', 2: '1510'}
+35	35		401							{1: '2', 2: '10021517'}
+36	36		301			RImgBg1Shake				"{3: ""With a sharp ping from the gun's hammer, you fire your last bullet.""}"
+37	37		302							{2: '(Take out combat knife)', 3: '38'}
+38	38		301							"{3: ""You realize how powerless you really are at this moment. As Constructs become more and more powerful, a human's frailty becomes the weak link of the team.""}"
+39	39		301							{3: 'You can hear Lee and Liv responding to your call for help in your comms. You must hold on for a little longer.'}
+40	40		401							{1: '2', 2: '2826'}
+41	41		301							{2: 'Corrupted', 3: '%#... $*&Evo... &...', 4: '1'}
+42	42		301				AniZhuanchangBegin			"{3: ""The rotting vocal modules of the Corrupted make an unintelligible sound like a beast's growl before its hunt.""}"
+43	43		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+44	44		402							{1: '2826'}
+45	45		401							{1: '1', 2: '36'}
+46	46		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory699.jpg'}
+47	47		401							{1: '2', 2: '968'}
+48	48		301			AniZhuanchangEnd				{2: '???', 3: 'Ascend... Evolve...'}
+49	49		201							{1: '1', 2: '500100', 3: '5'}
+50	50		301							"{1: '1', 2: 'Alpha', 3: ""Who's there?"", 4: '1'}"
+51	51		301							{3: 'After landing on a snow mountain near Fort Winter, Alpha has been haunted by an unshakable feeling of being watched.'}
+52	52		204							{1: '1'}
+53	53		301							{2: 'Alpha', 3: 'Is it the noise again...? No. This is a little different.', 4: '1'}
+54	54		202							{1: '1', 6: '1'}
+55	55		301							{3: 'Unable to gauge what it is, Alpha continues onward, trudging through snow and parting the trees until her vision clears up.'}
+56	56		502							{1: 'RImgBg1DisableSlow'}
+57	57		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory698.jpg'}
+58	58		201							{1: '1', 2: '500100'}
+59	59		301							{1: '1', 2: 'Alpha', 3: 'You can see the tower even from here?', 4: '1'}
+60	60		301							{3: 'Standing in an empty field, Alpha can see the blue spiral tower behind layers of mountains.'}
+61	61		401							{1: '1', 2: '202'}
+62	62		301							{3: 'A breeze lifts the hair that covers her left eye, and the image of the spiral tower is branded into her greyed iris.'}
+63	63		202							{1: '1', 6: '1'}
+64	64		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory663.jpg'}
+65	65		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+66	66		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory698.jpg'}
+67	67		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+68	68		201							{1: '1', 2: '500066'}
+69	69		203							{1: '1', 2: '0.25', 4: '-100'}
+70	70		401							{1: '2', 2: '3077'}
+71	71		301							{1: '1', 2: 'Alpha', 3: 'Aargh!', 4: '1'}
+72	72		301							{3: 'Her damaged vision module is suddenly filled with a horrifying red. The intense sensation makes Alpha drop to her knees.'}
+73	73		301							{2: 'Alpha', 3: 'Ugh...', 4: '1'}
+74	74		401							{1: '2', 2: '2828'}
+75	75		301							{3: 'Suppress<//ELIMINATE>... Accept<//DOMINATE>... Transform<//FILTER>...'}
+76	76		301							{3: 'The noise in her audio module is slowly replaced by the overlapping chant. The vital fluid dripping from her left eye is leaving black scorch marks on the ground.'}
+77	77		202							{1: '1', 6: '1'}
+78	78		201							{1: '2', 2: '500013', 4: '-400'}
+79	79		201							{1: '3', 2: '500013', 4: '400'}
+80	80		301							{1: '1', 2: 'Corrupted', 3: 'Ascend... Evolve...', 4: '2', 5: '3'}
+81	81		301							{2: 'Alpha', 3: 'Corrupted?'}
+82	82		301							{3: 'Alpha has no idea when the Corrupted surrounded her. She does not even bother to check if they are real or not.'}
+83	83		301							{2: 'Corrupted', 3: 'Devour... Dominate...', 4: '2', 5: '3'}
+84	84		301							{3: 'They are like vultures hovering above, hoping to share the dying lion.'}
+85	85		202							{1: '2', 2: '3', 6: '1'}
+86	86		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 2: '2'}
+87	87		301							{3: 'The Punishing Virus gathers around Alpha, burning her painfully.'}
+88	88		301							{3: 'The Punishing Virus converted by the Inver-Hetero Tower never truly disappeared. Instead, they use this opportunity to locate the Ascendants, providing them with the nutrients to evolve, or...'}
+89	89		301							{3: 'Devouring them whole.'}
+90	90		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+91	91		301							{3: 'The vital fluid leaking from her eye slowly becomes a blackish tar. Flickering, murky blocks of colors cover her whole body like a malfunctioning monitor.'}
+92	600		301							{3: 'The corrosion is burning her whole body. An anger that does not belong to her fills her M.I.N.D.'}
+93	601		301							{3: 'Her clothes, her blade, and even her frame are being deconstructed and reconstructed.'}
+94	602		301							{3: 'Like the River Styx that Achilles bathed in, the highly concentrated Punishing Virus envelopes Alpha completely, transforming her frame while corrupting her spirit.'}
+95	603		301							{3: 'This time, there is no Thetis to pull her back.'}
+96	92		201							{1: '5', 2: '500619', 5: '-100'}
+97	93		301							{1: '1', 2: 'Alpha?', 3: '...', 4: '5'}
+98	94		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+99	95		201							{1: '2', 2: '500013', 4: '-600'}
+100	96		201							{1: '3', 2: '500013', 4: '600'}
+101	97		301							{1: '1', 3: 'Seeing its motionless prey, one of the carrion-eating vultures can no longer suppress its hunger and leap toward its target.'}
+102	98		401							{1: '2', 2: '1508'}
+103	99		203							{1: '2', 2: '0.25', 3: '-400', 5: '-100'}
+104	100		203							{1: '3', 2: '0.25', 3: '400', 5: '-100'}
+105	101		301							{2: 'Corrupted', 3: 'Rawrgh...', 4: '2', 5: '3'}
+106	102		203							{1: '5', 2: '0.1', 4: '-100', 5: '100'}
+107	103		401							{1: '2', 2: '2511'}
+108	104		501					400.0		{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+109	105		401							{1: '2', 2: '608'}
+110	106		203							{1: '2', 2: '0.3', 3: '-1500'}
+111	107		203							{1: '3', 2: '0.3', 3: '1500'}
+112	108		301							{3: 'But a mud-coated hand snatches its head instead, crushing it into a ball in an instant.'}
+113	109		501					400.0		{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+114	110		401							{1: '2', 2: '10112007'}
+115	111		203							{1: '5', 2: '0.1'}
+116	112		301							{3: 'The figure covered in dirt stands up, tossing away the corpse in her hand.'}
+117	113		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab'}
+118	114		202							{1: '5', 2: '2', 3: '3'}
+119	115		201							{1: '4', 2: '500612'}
+120	116		301							{1: '1', 2: 'Alpha?', 3: 'Hah...', 4: '4'}
+121	117		301				AniZhuanchangBegin			{3: 'Facing a tidal wave of Corrupted, the person who has fallen into the abyss sneers.'}
+122	118		402							{1: '968'}
+123	119		401							{1: '1', 2: '36'}
+124	120		202							{1: '4', 6: '1'}
+125	121		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory204.png'}
+126	122		401							{1: '1', 2: '209'}
+127	123		301			AniZhuanchangEnd				{3: 'Two figures are sitting opposite each other inside an old underground casino.'}
+128	124		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3401_12.jpg', 3: '0', 4: '1', 5: '1'}
+129	125		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+130	126		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3401_12.jpg'}
+131	127		301							{3: 'The smiling woman gently places her finger on a stack of spread cards.'}
+132	128		301							{2: '???', 3: 'Do you want me to hit it, Vonnegut?'}
+133	129		301							{3: 'The man opposite her nods.'}
+134	130		301							{3: 'This was a private underground casino during the Golden Age. The spacious venue and the million-dollar poker chips speak to its glorious past.'}
+135	131		301							{3: 'Nowadays, it is a ruin with debris piling on the floor. Poker chips that were once valuable scatter everywhere, while decorated machines are smashed into pieces. It took Lilith quite a while to find two intact chairs.'}
+136	132		301							{3: 'The man in a mask stares at the cards on the table without flipping them over, seemingly not caring if his hand is good or bad.'}
+137	133		301							{3: 'Lilith pushes a card to her opponent before taking one herself.'}
+138	134		301							"{2: 'Lilith', 3: ""Are you sure you don't want to take a look at your hand, Vonnegut?""}"
+139	135		301							{2: 'Vonnegut', 3: 'The unknown is part of the joy of a gamble.'}
+140	136		301							{2: 'Lilith', 3: 'Are you planning to leave everything to luck, or...'}
+141	137		301							{2: 'Vonnegut', 3: 'Luck is just a part of it.'}
+142	138		301							"{2: 'Vonnegut', 3: ""Is that what you've been meaning to ask?""}"
+143	139		301							{2: 'Lilith', 3: '...I can never hide anything from you.'}
+144	140		301							"{2: 'Lilith', 3: 'I don\'t get it. Babylonia\'s Purifying Force is getting close to the truth, and we let the Forsaken discover the list of names ""just in time.""'}"
+145	141		301							"{2: 'Lilith', 3: ""They're going to find out the exact location of Fort Winter.""}"
+146	142		301							"{2: 'Lilith', 3: ""Are you sure it's a good idea to let them take the research institute? Isn't Kurono still working with us?""}"
+147	143		301							{2: 'Vonnegut', 3: 'Information is only useful if it is delivered to where it should be.'}
+148	144		301							{2: 'Vonnegut', 3: 'The information in Fort Winter is meaningless to me now. This is the best time to play this card.'}
+149	145		301							{2: 'Lilith', 3: 'Why does it have to be now?'}
+150	146		301							{2: 'Vonnegut', 3: 'Morality only concerns humans after basic survival is guaranteed.'}
+151	147		301							{2: 'Vonnegut', 3: 'A new world needs to bury these people in the graves of the past.'}
+152	148		301							{2: 'Vonnegut', 3: 'Humans get their justice, and I get what I want. This is a win-win situation that benefits everyone.'}
+153	149		301							"{2: 'Vonnegut', 3: ""Stopping them from their victory will only incite a fiercer resistance. This isn't a zero-sum game. We just need to win more every time.""}"
+154	150		301							"{2: 'Vonnegut', 3: ""That's why I won't hold you responsible for leading Alpha to the Kurono forces that were after Lucia.""}"
+155	151		301							"{3: ""Lilith's grip tightens reflexively, slightly bending the cards.""}"
+156	152		301							"{2: 'Lilith', 3: ""I didn't know. I just wanted her to owe me one.""}"
+157	153		301							{3: 'Silence brews in the dark room. Lilith sits straight without realizing it, while the man on the other side still looks relaxed and calm.'}
+158	154		301				AniZhuanchangBegin			{3: 'Right then, a small figure appears at the door.'}
+159	155		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory204.png'}
+160	156		201							{1: '1', 2: '500308'}
+161	157		301			AniZhuanchangEnd				{1: '1', 2: 'Cinderelik', 3: 'Lilith, it is ready.', 4: '1'}
+162	158		201							{1: '1', 2: '500615', 3: '2'}
+163	159		301							{1: '1', 2: 'Lilith', 3: 'Thank you so much, Cinderelik. Do you want me to bring anything back?', 4: '1'}
+164	160		204							{1: '1'}
+165	161		301							{2: 'Lilith', 3: 'For example... news on Kugawa Kurono?', 4: '1'}
+166	162		201							{1: '1', 2: '500308'}
+167	163		301							"{1: '1', 2: 'Cinderelik', 3: ""...That's not necessary. Mother is all I need."", 4: '1'}"
+168	164		201							{1: '1', 2: '500305'}
+169	165		301							{1: '1', 2: 'Vonnegut', 3: 'Go. Confirm her status.', 4: '1'}
+170	166		301							"{2: 'Vonnegut', 3: ""Whether she is devoured and becomes the Ascension-Network's sharpest blade or gives in and accepts the Ascension-Network's gift, it is our duty to know."", 4: '1'}"
+171	167		301							{3: 'Vonnegut pushes his unrevealed cards back to the stack.'}
+172	168		301		1		AniZhuanchangBegin			{2: 'Vonnegut', 3: 'This is your final trial.', 4: '1'}

@@ -1,0 +1,554 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png'}
+2	2		401							{1: '2', 2: '981'}
+3	3		501						1500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLianyi.prefab', 2: '2'}
+4	4		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5501_26.jpg', 3: '0', 4: '1', 5: '0.5'}
+5	5		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5501_26.jpg'}
+6	6		205							{1: '999'}
+7	7		301			DialogEnable	AniZhuanchangBegin			"{3: 'Within Vera\'s past<//M.I.N.D.>, she was borne on a sea of hands to the ""little Commandant,"" offering her own flesh and blood.'}"
+8	8		306						200.0	{1: '1'}
+9	9		502							{1: 'DialogDisable'}
+10	10		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5501_42.jpg'}
+11	11		104				AniZhuanchangEnd			{1: '0|200|-330', 2: '0'}
+12	12		301			DialogEnable	DialogDisable			{3: 'She pulls you along for the final leg of your journey together.'}
+13	13		104						1000.0	{1: '0|-200|-330', 2: '1'}
+14	14		301			DialogEnable	AniZhuanchangBegin			"{3: 'Yet ""reality"" seems like a projection of the M.I.N.D., only in reverse.'}"
+15	15		502							{1: 'DialogDisable'}
+16	16		104							{1: '0|0|0', 2: '0'}
+17	17		306						200.0	{1: '0'}
+18	18		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1262.jpg'}
+19	19		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+20	20		401							{1: '1', 2: '397'}
+21	21		401							{1: '2', 2: '3077'}
+22	22		502						200.0	{1: 'RImgBg1Shake'}
+23	23		301			DialogEnable	DialogDisable			"{3: 'Amid a shower of dust, three people—or more accurately, one person plus a pair of ""conjoined individuals""—tumble unceremoniously from a duct, crashing onto the floor of a corridor in the gene repository.'}"
+24	24		401							{1: '2', 2: '4044'}
+25	25		104						200.0	{1: '0|-10|0', 2: '0.2'}
+26	26		104							{1: '0|0|0', 2: '0.1'}
+27	27		301			DialogEnable	DialogDisable			"{3: ""As you carry the Construct on your back you take a hard fall, but after just catching your breath twice, you immediately push yourself up to check on Vera's condition.""}"
+28	28		401							{1: '2', 2: '4823'}
+29	29		307						1000.0	{1: '11%...', 3: '60', 4: '47f57fff', 5: '0'}
+30	30		401							{1: '2', 2: '4823'}
+31	31		307							{1: '12%...', 3: '60', 4: '47f57fff', 5: '0'}
+32	32		301							{3: '11%，12%……'}
+33	33		307							{2: '1'}
+34	34		301			DialogEnable	DialogDisable			"{3: ""The Mind Beacon reflects the frame's data synchronization status, progressing abnormally slowly.""}"
+35	35		302							{2: 'Why is the data synchronization so slow?', 3: '36', 4: 'It was so much faster during the Atlantis operation.', 5: '36'}
+36	36		302							"{2: '(Maintain connection.)', 3: '37', 4: ""Let me boost the Mind Beacon's assistance..."", 5: '37'}"
+37	37		201							{1: '1', 2: '501223', 4: '600'}
+38	38		203							{1: '1', 2: '0.2', 3: '0'}
+39	39		401							{1: '2', 2: '4044'}
+40	40		301			DialogEnable				{1: '1', 3: 'Haniff is the first to roll over and get back on his feet.'}
+41	41		301							{2: 'Haniff', 3: 'How many followed us?!', 4: '1'}
+42	42		302							{2: 'I blocked the tunnel exit. No Hetero-Creatures have followed us yet.', 3: '43'}
+43	43		301			PanelActor1Shake				{2: 'Haniff', 3: '...Impressive. You managed to block it while carrying such a large Construct... Cough, cough! Dust everywhere...', 4: '1'}
+44	44		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+45	45		302							{2: 'The powered exoskeleton, kid.', 3: '46', 4: 'Thank goodness, it still works...', 5: '46'}
+46	46		301							"{2: 'Haniff', 3: 'Let\'s check the tracker first. Where\'s ""Eve""?', 4: '1'}"
+47	47		302							{2: '(Take out the tracking device.)', 3: '48'}
+48	48		301							"{3: 'The dot\'s glow is fainter, but they can confirm ""Eve"" is somewhere nearby.'}"
+49	49		204							{1: '1', 2: '7'}
+50	50		301							"{2: 'Haniff', 3: ""Just as I thought, it escaped into this gene bank. Let's move."", 4: '1'}"
+51	51		204							{1: '1', 2: '0'}
+52	52		301							{3: 'Haniff kindly helps you to your feet—that exoskeleton is certainly cumbersome.'}
+53	53		401							{1: '2', 2: '13081710'}
+54	54		104						200.0	{1: '0|-10|0', 2: '0.2'}
+55	55		104							{1: '0|0|0', 2: '0.1'}
+56	56		204							{1: '1', 2: '3'}
+57	57		301							{3: 'Meanwhile, he catches your scrutinizing gaze, taking advantage of the moment to observe you.'}
+58	58		204							{1: '1', 2: '0'}
+59	59		301							"{2: 'Haniff', 3: ""What's up? You look like you've got something on your mind."", 4: '1'}"
+60	60		302							{2: 'How did you find that tunnel entrance so quickly?', 3: '61'}
+61	61		301							"{2: 'Haniff', 3: ""Because I'm Kurono personnel. Of course I know about these little secrets..."", 4: '1'}"
+62	62		302							"{2: ""I thought you weren't familiar with this island?"", 3: '63', 4: ""There are too many holes in your story. You've been lying the whole time."", 5: '63'}"
+63	63		301							{2: 'Haniff', 3: '...I admit I researched this Genomic Resource Center a bit before we departed, but I absolutely had no intention of harming any of you.', 4: '1'}
+64	64		301							"{2: 'Haniff', 3: 'I told you before, I want you to get me away from Kurono, and in exchange, I\'d lead you to the ""treasure""... We just happened to run into some major trouble.', 4: '1'}"
+65	65		302							{2: 'How exactly did you join Kurono?', 3: '66', 4: 'Why are you so desperate to escape from Kurono?', 5: '66'}
+66	66		204							{1: '1', 2: '1'}
+67	67		301							{2: 'Haniff', 3: 'Why the sudden interest in these finicky details? After two whole days of going through hell, have you finally been charmed by me? Looking to whisk me away on a white horse?', 4: '1'}
+68	68		204							{1: '1', 2: '0'}
+69	69		301							{3: 'Haniff quickens his pace forward, words flowing smoothly from his mouth, as if the questions themselves are of little concern to him.'}
+70	70		306							{1: '1'}
+71	71		203							{1: '1', 2: '0.2', 4: '50', 5: '-100'}
+72	72		301							"{3: 'You look once more at Haniff\'s lapel. In fact, when you first ""escorted"" him onto that transport ship, you had already discovered a small F.O.S. badge hidden in the inner lining of his coat.'}"
+73	73		203							{1: '1', 2: '0.2', 4: '0', 5: '0'}
+74	74		306							
+75	75		302							"{2: ""I'll be blunt. You smell of F.O.S.."", 3: '76', 4: '...You have F.O.S. written all over you.', 5: '76'}"
+76	76		301							"{2: 'Haniff', 3: 'What\'s this ""smell of F.O.S."" you\'re talking about? Like how yesterday you nearly strangled me, then pointed a gun at me—all because I ""acted"" a bit too much? Was it actually because I was too smelly?', 4: '1'}"
+77	77		302							"{2: ""Answer with another question and I'll sew your mouth shut."", 3: '78', 4: 'Cut the crap.', 5: '79'}"
+78	78		301							{2: 'Haniff', 3: '...You and Vera really are cut from the same cloth.', 4: '1'}
+79	79		301							"{2: 'Haniff', 3: ""...Fine, no point in hiding it. I did graduate from F.O.S. Military College, but I severed ties with Babylonia long ago. Now I'm just Kurono's little dog."", 4: '1'}"
+80	80		302							"{2: ""You must have done well at F.O.S., otherwise Kurono wouldn't have taken an interest in you."", 3: '81'}"
+81	81		204							{1: '1', 2: '3'}
+82	82		301							"{3: 'Haniff raises an eyebrow, maintaining his dismissive ""think what you want"" attitude.'}"
+83	83		301				DialogDisable			{2: 'Haniff', 3: 'Nothing special. Just ranked in the top ten overall.', 4: '1'}
+84	84		302							"{2: ""That's impressive."", 3: '85'}"
+85	85		302							"{2: 'Is ""Haniff"" your real name? I\'ve never seen it on any Chief registry from previous years.', 3: '86'}"
+86	86		301			DialogEnable				"{2: 'Haniff', 3: 'I was never a ""Chief."" That position...', 4: '1'}"
+87	87		302							"{2: ""Someone wouldn't allow it?"", 3: '88', 4: ""You weren't interested?"", 5: '88'}"
+88	88		301							"{2: 'Haniff', 3: 'No, that\'s not it. Being that kind of ""hero"" standing in the spotlight just doesn\'t suit me, that\'s all.', 4: '1'}"
+89	89		204							{1: '1', 2: '8'}
+90	90		301							{3: 'Haniff takes a deep breath.'}
+91	91		204							{1: '1', 2: '0'}
+92	92		301							"{2: 'Haniff', 3: ""I doubt anyone would believe me if I said it—I'm here to find my family."", 4: '1'}"
+93	93		302							{2: '?', 3: '94'}
+94	94		301							"{2: 'Haniff', 3: ""Don't misunderstand—I'm no kin with those vicious Hetero-Creatures."", 4: '1'}"
+95	95		301							"{2: 'Haniff', 3: ""I want to find my true origins, and my investigation just happened to lead me here. I don't believe anyone could be under Kurono's control from the moment of birth, so I want to figure out what exactly made them take an interest in me."", 4: '1'}"
+96	96		302							"{2: ""You've been under Kurono's since you were born?"", 3: '97'}"
+97	97		204							{1: '1', 2: '3'}
+98	98		301							"{2: 'Haniff', 3: ""See? You don't believe me, as expected. And I'm guessing you won't like this kind of story—all this secrecy and mystery, only to end up being about some trivial family matter."", 4: '1'}"
+99	99		302							{2: '...', 3: '100'}
+100	100		204							{1: '1', 2: '0'}
+101	101		301							"{2: 'Haniff', 3: ""Silent again... I suppose that's one of your virtues, staying quiet about things you don't understand."", 4: '1'}"
+102	102		301							"{2: 'Haniff', 3: ""But this is my story. Heroic epics like yours that are known all over the world are a rarity. Mine is just the tale of a small shadow drifting through the world, the type you'd be able to find anywhere."", 4: '1'}"
+103	103		301				DialogDisable			"{2: 'Haniff', 3: ""I've said everything that I can tell you. If you have no other questions, please trust me a little longer. Besides, our current situation is extremely urgent—"", 4: '1'}"
+104	104		302							"{2: ""The situation is already complicated. I don't want to deal with a betrayal on top of everything else."", 3: '105'}"
+105	105		302							{2: 'Got it?', 3: '106'}
+106	106		301			DialogEnable				{3: 'You interrupt Haniff, tapping the gun in your hand as you deliver a warning.'}
+107	107		401						400.0	{1: '2', 2: '4779'}
+108	108		402							{1: '4779'}
+109	109		204							{1: '1', 2: '0'}
+110	110		301							{2: 'Haniff', 3: '...', 4: '1'}
+111	111		301				DialogDisable			{2: 'Haniff', 3: 'Alright, understood.', 4: '1'}
+112	112		302							"{2: 'Let\'s pick up the pace and focus on capturing ""Eve.""', 3: '113'}"
+113	113		302							"{2: ""By the way—I'll take point. You were injured earlier."", 3: '114'}"
+114	114		204							{1: '1', 2: '3'}
+115	115		301			DialogEnable				{2: 'Haniff', 3: '...Why are you suddenly willing to turn your back to me?', 4: '1'}
+116	116		302							"{2: ""You still carry F.O.S.'s badge with you to this day."", 3: '117'}"
+117	117		204							{1: '1', 2: '1'}
+118	118		301							{2: 'Haniff', 3: '...Oh, so you noticed that.', 4: '1'}
+119	119		202							{1: '1'}
+120	120		301				DialogDisable			{3: 'Like a bird with its beak held shut, he folds his wings and follows quietly for once.'}
+121	121		401							{1: '2', 2: '5159'}
+122	122		104						300.0	{1: '0|30|-50', 2: '0.3'}
+123	123		104							{1: '0|0|-100', 2: '0.2'}
+124	124		301			DialogEnable	DialogDisable			{3: 'With Vera on your back, you stride forward through the darkness while using the Mind Beacon to connect with the frame M.I.N.D., accelerating the adaptation process.'}
+125	125		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 3: '0', 4: '0.8', 5: '0.3'}
+126	126		104							{1: '200|0|-150', 2: '0'}
+127	127		304							"{1: ""Everything seems to be progressing naturally—a hero's presence is reassuring, promising a happy end."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-2'}"
+128	128		304							"{1: ""The dim corridor lights stretch into long shadows behind them, with Haniff caught in the protagonist's silhouette. He repeatedly inhales as if to speak, then hesitates."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-1'}"
+129	129		304							{1: 'Countless times his lips move, but each time he swallows his words back down.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-1'}
+130	130		304							"{1: 'He remains silent. After all, his innate destiny has always been ""imitation,"" and years of experience have accustomed him to being a mere ""shadow.""', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-1', 8: '1'}"
+131	131		304							{1: 'And all his actions until now have been rebellious attempts to defy this fate.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-2'}
+132	132		304							{1: 'Whether playing mind games or deliberately sabotaging situations, he uses these tactics to gain more freedom.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-1'}
+133	133		304				AniZhuanchangBegin			"{1: 'Yet deep inside, he can\'t help but feel curious about the ""hero"" he was meant to imitate.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-1', 9: '1'}"
+134	134		401							{1: '1', 2: '36'}
+135	135		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 3: '0', 4: '0', 5: '0'}
+136	136		205							{1: '999'}
+137	137		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory972.jpg'}
+138	138		104							{1: '0|0|0', 2: '0'}
+139	139		306				AniZhuanchangEnd		200.0	{1: '1'}
+140	140		401							{1: '1', 2: '120'}
+141	141		301			DialogEnable				"{3: 'Originally, he didn\'t even have an ""origin"" to speak of.'}"
+142	142		301							{3: '—Only a name he was born with.'}
+143	143		201							{1: '1', 2: '500956', 4: '-600'}
+144	144		301							{1: '1', 2: 'Staff Member', 3: 'His name is...', 4: '1'}
+145	145		201							{1: '2', 2: '500163', 4: '0'}
+146	146		301							{1: '1', 2: 'Teacher', 3: 'Your name is...', 4: '2'}
+147	147		201							{1: '3', 2: '500957', 4: '600'}
+148	148		301				DialogDisable			{1: '1', 2: 'Classmate', 3: 'You are...', 4: '3'}
+149	149		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+150	150		401							{1: '2', 2: '895'}
+151	151		306							
+152	152		201							{1: '4', 2: '500958'}
+153	153		307							{1: 'Haynes.', 3: '65', 5: '0'}
+154	154		301							{1: '1', 3: 'Haynes.'}
+155	155		307				AniZhuanchangBegin			{2: '1', 5: '0'}
+156	156		202							{1: '4', 6: '1'}
+157	157		501							{1: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab', 2: '2'}
+158	158		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+159	159		301			DialogEnable				"{3: 'From developing from a tiny embryo into human form, to gradually gaining knowledge of the world, to the rapid emergence of ""self-awareness""... most of his memories revolve around this name.'}"
+160	160		301							"{3: 'In his hazy childhood memories, there were 10 ""Haynes"" in total, and he was Number 10.'}"
+161	161		301							"{3: 'Numbers 1 through 9 were successively deemed to have ""genetic defects"" or be ""unsuitable"" by the adults, then immediately died.'}"
+162	162		301							"{3: 'But he was born with a stronger instinct for self-preservation than others—he feared death, so he deeply understood the importance of being ""obedient and well-behaved.""'}"
+163	163		301				AniZhuanchangBegin			"{3: 'He was more suited than anyone to be a perfect ""shadow.""'}"
+164	164		502							{1: 'DialogDisable'}
+165	165		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab'}
+166	166		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory972.jpg'}
+167	167		201							{1: '1', 2: '500340'}
+168	168		301			DialogEnable				"{1: '1', 2: 'Kurono Sponsor', 3: 'You\'re... ""Haynes""? The last one to survive screening... so you were assigned to Babylonia?', 4: '1'}"
+169	169		301							{2: 'Kurono Sponsor', 3: 'Who knows what kind of scheme that old bastard is cooking up now.', 4: '1'}
+170	170		201							{1: '1', 2: '500958', 7: '1'}
+171	171		301							{1: '1', 2: 'Haynes', 3: '...', 4: '1'}
+172	172		201							{1: '1', 2: '501251'}
+173	173		301							"{1: '1', 3: ""Bearing this name, he was sent to Babylonia's Youth Development Center, occasionally receiving support from kind-hearted individuals from Kurono, and lived through his bewildering teenage years in what could be called exceptional stability.""}"
+174	174		301							"{3: ""He followed his sponsors' every command without question—studying whatever they told him to study, helping with whatever small tasks they asked him to help with.""}"
+175	175		301				AniZhuanchangBegin			{3: 'He had no demands, no desires. The driving force behind all his actions was simply fear of death. After all, the deaths of the previous nine Haynes subjects were genuinely terrifying.'}
+176	176		502							{1: 'DialogDisable'}
+177	177		202							{1: '1', 6: '1'}
+178	178		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+179	179		201							{1: '1', 2: '501251', 7: '1'}
+180	180		301			DialogEnable				{1: '1', 3: 'But from some point on, a certain name began to frequently reach his ears.'}
+181	181		301				DialogEnable			"{3: ""That day, he stopped in front of one of the promotional videos commonly seen throughout Babylonia, where everyone couldn't help but focus on the gray figure within it.""}"
+182	182		202							{1: '1', 6: '1'}
+183	183		104						500.0	{1: '-200|-150|-250', 2: '0.5'}
+184	184		201							{1: '2', 2: '500138'}
+185	185		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+186	186		301			DialogEnable				"{1: '2', 2: 'Promotional Video', 3: ""Welcome Back ceremony... Construct squad... the Gray Raven Commandant... and Cerberus squad's..."", 4: '2'}"
+187	187		301				DialogEnable			{2: 'Promotional Video', 3: '...repelled the Ascendants, scattering sparks of hope across the sea...', 4: '2'}
+188	188		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+189	189		202							{2: '2', 6: '1'}
+190	190		104						500.0	{1: '0|0|0', 2: '0.5'}
+191	191		201							{1: '1', 2: '501251'}
+192	192		301			DialogEnable	AniZhuanchangBegin			{1: '1', 2: 'Haynes', 3: '...', 4: '1'}
+193	193		502							{1: 'DialogDisable'}
+194	194		202							{1: '1', 6: '1'}
+195	195		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory972.jpg'}
+196	196		301			DialogEnable				{3: 'For the first time, he wanted to express his own hopes and dreams.'}
+197	197		301							{3: 'But before he could speak, the sponsor from Kurono arrived to inform him of a new mission.'}
+198	198		201							{1: '1', 2: '501251', 4: '-400'}
+199	199		201							{1: '2', 2: '500340', 4: '400', 6: '-100'}
+200	200		301							{1: '1', 2: 'Kurono Sponsor', 3: 'Your mission is to enter F.O.S. Military College as a student.', 4: '2'}
+201	201		301							"{3: 'This could be considered the first positive ""coincidence"" in his life. He immediately sat up straight.'}"
+202	202		301							"{2: 'Haynes', 3: ""—I understand. I'll apply right away."", 4: '1'}"
+203	203		301							{2: 'Kurono Sponsor', 3: '...You seem eager to do so. Is there any reason for your enthusiasm?', 4: '2'}
+204	204		301							{3: 'The man looks somewhat puzzled.'}
+205	205		301							"{2: 'Kurono Sponsor', 3: ""I thought you'd pursue scientific research when you grew up, yet you've had a change of heart. Could you really be the most different one after all?"", 4: '2'}"
+206	206		301							{2: 'Haynes', 3: '...Which one?', 4: '1'}
+207	207		301							"{2: 'Haynes', 3: '""Haynes,"" besides those nine... are there many more?', 4: '1'}"
+208	208		301							"{2: 'Kurono Sponsor', 3: ""No, there aren't any more, haha..."", 4: '2'}"
+209	209		301							"{2: 'Haynes', 3: ""What's so funny?"", 4: '1'}"
+210	210		301							{3: 'Haynes suddenly feels like a lab rat, lifted by its tail by the people who have been experimenting on him for years, suspended in the air as they scrutinize his defenseless body from all angles.'}
+211	211		301							"{3: ""His displeasure with this name suddenly bursts forth, along with the years of surveillance and control he's endured because of it.""}"
+212	212		301							"{2: 'Haynes', 3: '...So, do I keep on being ""Haynes""? Then go to F.O.S. with that name while I work for Kurono?', 4: '1'}"
+213	213		301							"{2: 'Kurono Sponsor', 3: ""What's with all the questions today? Just do as you're told."", 4: '2'}"
+214	214		301				AniZhuanchangBegin			{3: 'The man pulls up several consent forms and turns the screen toward him.'}
+215	215		202							{2: '1', 3: '2'}
+216	216		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory973.jpg'}
+217	217		301			AniZhuanchangEnd				{3: 'The consent forms are lengthy, and the man only finishes his explanation as the artificial daylight fades.'}
+218	218		201							{1: '1', 2: '501251', 4: '-400'}
+219	219		201							{1: '2', 2: '500340', 4: '400', 6: '-100'}
+220	220		301							"{1: '1', 2: 'Kurono Sponsor', 3: '...In short, once you enter F.O.S. College, you must remain competitive for the ""Chief"" position by any means necessary. As long as you can do that, Kurono will continue to support you.', 4: '2'}"
+221	221		301							"{2: 'Haynes', 3: ""And if I can't, I die?"", 4: '1'}"
+222	222		301							"{2: 'Kurono Sponsor', 3: ""It's not that severe. You'd still be useful to us."", 4: '2'}"
+223	223		301							"{2: 'Haynes', 3: '...Fine, I\'ll do it. Let me repeat my understanding of these documents—you want to create another ""Chief,"" right?', 4: '1'}"
+224	224		301							"{2: 'Kurono Sponsor', 3: ""Good, you understand. Your overall qualities are excellent, and you're obedient too. I feel this mission will suit you perfectly."", 4: '2'}"
+225	225		301							"{2: 'Kurono Sponsor', 3: 'Besides, we haven\'t mistreated you, have we? For a ""hostage"" of the Haynes family, your life in Babylonia has been quite luxurious.', 4: '2'}"
+226	226		301							"{2: 'Haynes', 3: ""...I don't understand. Where do I sign?"", 4: '1'}"
+227	227		401							{1: '2', 2: '4051'}
+228	228		301							{3: 'The man points to a corner of the screen.'}
+229	229		301							"{2: 'Kurono Sponsor', 3: ""Don't worry, this is a good opportunity. After you graduate from F.O.S., Kurono will arrange your future placement."", 4: '2'}"
+230	230		301							{2: 'Haynes', 3: 'Whatever you say.', 4: '1'}
+231	231		301							{3: '—As long as I get into F.O.S. College, things should be different.'}
+232	232		401							{1: '2', 2: '4052'}
+233	233		301							{3: 'Thinking this to himself, he raises his hand and signs the name that has accompanied him for over a decade.'}
+234	234		301				AniZhuanchangBegin			"{2: 'Kurono Sponsor', 3: 'Very good. Now go become the next ""Chief.""', 4: '3'}"
+235	235		502							{1: 'DialogDisable'}
+236	236		202							{1: '1', 2: '2', 6: '1'}
+237	237		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory146.png'}
+238	238		301			DialogEnable				"{3: 'On his first day at F.O.S., he immediately began ""diligently"" gathering information.'}"
+239	239		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory205.png', 3: '0', 4: '1', 5: '0.3'}
+240	240		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '1', 4: '1', 5: '0'}
+241	241		401							{1: '2', 2: '2768'}
+242	242		301				DialogDisable			{3: 'He pored over the roster of past students, tracing down the names of each successive Chief one by one.'}
+243	243		401							{1: '2', 2: '2768'}
+244	244		304							{1: '<size=50><b>At the founding of F.O.S. Military College, the first Chief student, ■■■■, disappeared.</b></size>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-3', 8: '1'}
+245	245		401							{1: '2', 2: '2768'}
+246	246		304							{1: '<size=50><b>Second class, ■■■■, confirmed KIA.</b></size>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-3', 8: '1'}
+247	247		401							{1: '2', 2: '2768'}
+248	248		304							{1: '<size=50><b>Third class, ■■■■, disappeared.</b></size>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-3', 8: '1'}
+249	249		401							{1: '2', 2: '2768'}
+250	250		304							{1: '<size=50><b>Fourth class, ■■■■, underwent Construct modification, currently assigned to Purifying Force...</b></size>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-3', 8: '1'}
+251	251		401							{1: '2', 2: '2768'}
+252	252		304							{1: '<size=50><b>Fifth class, ■■■■, confirmed KIA.</b></size>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-3', 8: '1', 9: '1'}
+253	253		401							{1: '2', 2: '2768'}
+254	254		304							{1: '...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-3', 8: '1', 9: '1'}
+255	255		401							{1: '2', 2: '2768'}
+256	256		304							{1: '<size=50><b>Class ?, Chrome, underwent Construct modification, currently assigned to Strike Hawk Squad of the Task Force...</b></size>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-3', 8: '1'}
+257	257		401							{1: '2', 2: '2768'}
+258	258		304							{1: '<size=50><b>Class ?, 【kuroname】, currently assigned to Gray Raven Squad of the Task Force...</b></size>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-3', 9: '1'}
+259	259		401							{1: '2', 2: '907504'}
+260	260		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0', 4: '0', 5: '0'}
+261	261		205						200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory205.png', 3: '1', 4: '0', 5: '0.2'}
+262	262		205							{1: '999'}
+263	263		301			DialogEnable				{3: 'Clap!'}
+264	264		201							{1: '1', 2: '501251'}
+265	265		301							{1: '1', 2: 'Haynes', 3: '...', 4: '1'}
+266	266		301							{3: 'He closes the roster of past students, no longer wanting to continue reading.'}
+267	267		301							{3: 'He still remembers attending the enrollment ceremony that day. The auditorium spotlights were rather stingy, casting their beams upon only a lucky few.'}
+268	268		301							"{3: 'He silently stared at those few beams of light, a vision of the end of this ""mission"" flashing through his mind—he knew that those standing where the light couldn\'t reach would be reduced to a single line reading ""disappeared"" or ""confirmed KIA.""'}"
+269	269		203							{1: '1', 2: '0.25', 3: '-400'}
+270	270		201							{1: '2', 2: '500722', 4: '400'}
+271	271		301							{1: '1', 2: '??', 3: '<size=30>Hey,</size> classmate, why did you choose to come to F.O.S.?', 4: '2'}
+272	272		301							{3: 'Another young man beside him leans in with a whispered question.'}
+273	273		301							{2: 'Haynes', 3: '...', 4: '1'}
+274	274		202							{1: '2', 2: '1'}
+275	275		301							"{3: ""He doesn't answer. He can only hear his heart pounding like a drum, feeling the delayed tremors coursing through his body.""}"
+276	276		301				AniZhuanchangBegin			"{3: ""He fears death, yet suddenly realizes he's chosen the path that brings him closest to it.""}"
+277	277		502							{1: 'DialogDisable'}
+278	278		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory260.png'}
+279	279		301			DialogEnable				{3: 'This trembling persists until the first class for freshmen.'}
+280	280		301							{3: 'The first lesson contains neither theory nor practice, but takes place at Memorial Plaza, before the monument.'}
+281	281		301							{3: 'The monument serves as a boundary stone—the only true divider between life and death.'}
+282	282		301							{3: 'He stares at the densely packed list of fallen on the monument, unable to even locate the names of those Chiefs he had just seen in the register.'}
+283	283		301							{3: 'He trembles uncontrollably, the anthem unique to F.O.S. echoing in his mind as his fingers trace across the monument.'}
+284	284		301			DialogEnable	DialogDisable			{3: 'For the second time, he wanted to express his hopes and dreams to the world.'}
+285	285		201							{1: '1', 2: '501251', 4: '-400'}
+286	286		201							{1: '2', 2: '500722', 4: '400'}
+287	287		301			DialogEnable				{1: '1', 2: 'Bieble', 3: 'Why are you still spacing out?', 4: '2'}
+288	288		301							{2: 'Haynes', 3: '?', 4: '1'}
+289	289		301			PanelActor2Shake				"{1: '1', 2: 'Bieble', 3: ""Wow, dressed like that too. Just wait, the Instructor's gonna remove all those dangly things from your ears tomorrow. He was already eyeing you several times during the assembly."", 4: '2'}"
+290	290		301							"{2: 'Haynes', 3: ""...You got a problem with it? If I can't mess with anything else, what's wrong with messing with my own appearance?"", 4: '1'}"
+291	291		301							{2: 'Bieble', 3: 'Wha?', 4: '2'}
+292	292		301							{3: 'The overly friendly youth across him freezes for a moment, not expecting his future classmate to respond like that.'}
+293	293		301							{2: 'Bieble', 3: 'Are you upset? I-I was just trying to make conversation. They pointed you out to me, said you ranked first overall in the entrance exams.', 4: '2'}
+294	294		301							"{2: 'Bieble', 3: ""Maybe you'll become our class's Chief in the future? Haha."", 4: '2'}"
+295	295		301				DialogDisable			"{2: 'Haynes', 3: ""I won't be first in class."", 4: '1'}"
+296	296		307							"{1: ""He keeps Kurono's plans firmly in mind, but far exceeding those plans are the seeds of rebellion deeply rooted in his heart."", 3: '48'}"
+297	297		301							"{3: ""He keeps Kurono's plans firmly in mind, but far exceeding those plans are the seeds of rebellion deeply rooted in his heart.""}"
+298	298		307							{2: '1'}
+299	299		301			DialogEnable				"{2: 'Bieble', 3: ""Of course, I'll be competing for it too, haha..."", 4: '2'}"
+300	300		301							{2: 'Haynes', 3: 'Ridiculous.', 4: '1'}
+301	301		401							{1: '2', 2: '5286'}
+302	302		203							{1: '2', 2: '0.25', 3: '200'}
+303	303		301							"{2: 'Bieble', 3: ""I haven't introduced myself yet. I'm Bieble. What's your name?"", 4: '2'}"
+304	304		301							{3: 'Bieble extends his hand to Haynes, while their nearby classmates turn to watch.'}
+305	305		301							{2: 'Haynes', 3: '...', 4: '1'}
+306	306		301							{2: 'Haynes', 3: 'My name is—', 4: '1'}
+307	307		301							{3: 'The name that had been attached to him for years gets stuck on the tip of his tongue, and he suddenly halts.'}
+308	308		301							{3: 'Various thoughts lead his anxious gaze to search—until finally, his eyes land on an unremarkable name from the memorial.'}
+309	309		401							{1: '2', 2: '4387'}
+310	310		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+311	311		301							{2: 'Haynes', 3: '...', 4: '1'}
+312	312		401							{1: '2', 2: '5286'}
+313	313		203						100.0	{1: '1', 2: '0.25', 3: '-300'}
+314	314		301							"{3: ""He snaps back to reality and grasps Bieble's outstretched hand.""}"
+315	315		301							"{3: 'The ""shadow"" within him grips that hand tightly. In this span of a single day, it\'s the third time he wants to voice his hopes.'}"
+316	316		301							{2: 'Haynes', 3: 'My name is...', 4: '1'}
+317	317		202							{1: '1', 2: '2'}
+318	318		301							"{3: ""But this time, he doesn't hesitate. He immediately fulfills his own wish—he gives himself a true name.""}"
+319	319		201							{1: '1', 2: '501251'}
+320	320		301				AniZhuanchangBegin			{1: '1', 2: 'Haniff', 3: '—Haniff. Please call me Haniff.', 4: '1'}
+321	321		502							{1: 'DialogDisable'}
+322	322		202							{6: '1'}
+323	323		201			AniZhuanchangEnd				{1: '1', 2: '501223', 6: '1'}
+324	324		301			DialogEnable				{1: '1', 2: 'Haniff', 3: 'My name is Haniff, student ID 1364.', 4: '1'}
+325	325		301							{2: 'Academic Affairs Staff', 3: 'Haniff... student ID 1364... no problem. Graduation qualifications approved. You are permitted to participate in the graduation assessment.', 4: '2'}
+326	326		203							{1: '1', 2: '0.25', 3: '600'}
+327	327		202							{1: '1'}
+328	328		301				DialogDisable			"{3: ""Haniff's terminal immediately receives the test announcement from Academic Affairs. He browses through it while walking toward the crowd nearby.""}"
+329	329		205						300.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0', 4: '1', 5: '0.3'}
+330	330		304							{1: 'Time passes in the blink of an eye. It feels like the school anthem had been echoing in their ears for only a brief moment before their graduation arrived.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-2'}
+331	331		304							{1: 'The moment he named himself became a turning point. He grew more ambitious and cunning, developing many demands while accumulating countless small acts of rebellion over the years.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-1'}
+332	332		304							"{1: ""Like adding more small components to his body, or deliberately scoring right at Kurono's passing threshold..."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-1'}"
+333	333		304				AniZhuanchangBegin			{1: 'But none of it was enough.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-1', 9: '1'}
+334	334		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0', 4: '0', 5: '0'}
+335	335		205							{1: '1005'}
+336	336		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory147.png'}
+337	337		201							{1: '1', 2: '500138'}
+338	338		301			DialogEnable				"{1: '1', 2: 'Freeman', 3: ""...canceled the field drill... because of severe casualties among Commandants and Constructs... can't spare any personnel..."", 4: '1'}"
+339	339		201							{1: '1', 2: '500722', 6: '-165'}
+340	340		301							"{1: '1', 2: 'Bieble', 3: ""Now I feel like they're totally underestimating us. If they were to let me go to the surface, I would get a perfect score, just like the Gray Raven Commandant!"", 4: '1'}"
+341	341		201							{1: '1', 2: '501223'}
+342	342		301							"{1: '1', 2: 'Haniff', 3: ""(It's the Gray Raven Commandant again.)"", 4: '1'}"
+343	343		301							{3: 'He pushes through the crowd engaged in heated discussion and walks away.'}
+344	344		301							"{2: 'Haniff', 3: ""It's still daytime. You'd better save the sleep talking for the night."", 4: '1'}"
+345	345		401							{1: '2', 2: '1512'}
+346	346		201							{1: '1', 2: '500722', 6: '-165'}
+347	347		301							{1: '1', 2: 'Bieble', 3: 'Get a load of this!', 4: '1'}
+348	348		301							{3: 'Bieble turns around and delivers a precise elbow strike, only to be effortlessly blocked.'}
+349	349		201							{1: '1', 2: '501223'}
+350	350		301							{1: '1', 2: 'Haniff', 3: 'Immature.', 4: '1'}
+351	351		201							{1: '1', 2: '500722', 6: '-165'}
+352	352		301				DialogDisable			{1: '1', 2: 'Bieble', 3: 'You just never have anything nice to say, huh?', 4: '1'}
+353	353		202							{1: '1', 6: '1'}
+354	354		205						300.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0', 4: '1', 5: '0.3'}
+355	355		304							{1: 'The young graduates, soon to leave the nest of F.O.S., share a moment of laughter before dispersing to their individual holographic simulation pods.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-2'}
+356	356		304				AniZhuanchangBegin			{1: 'The assessment begins much easier than expected, with the first base station being quickly conquered by their team.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-2', 9: '1'}
+357	357		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0', 4: '0', 5: '0'}
+358	358		205							{1: '1005'}
+359	359		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory711.jpg'}
+360	360		301			DialogEnable				{3: 'After confirming his ranking, Haniff exits his holographic simulation pod.'}
+361	361		301							{3: 'The room is as cramped as a small box, so confined it might as well be a prison cell.'}
+362	362		301							{3: 'Haniff presses the button by the door, and after a brief electric noise, an emotionless voice emanates from the speaker.'}
+363	363		301							{2: 'Kurono Member', 3: 'Ranking?', 4: '2'}
+364	364		201							{1: '1', 2: '501223'}
+365	365		301							{1: '1', 2: 'Haniff', 3: 'Currently at 10th place. That should meet your requirement, right?', 4: '1'}
+366	366		301							"{3: ""The voice on the other end of the call falls silent, as if it is pausing to verify Haniff's words.""}"
+367	367		301							{3: 'After a brief moment of silence, the voice echoes again.'}
+368	368		301							{2: 'Kurono Member', 3: 'Ranking verified. You can now go to the cafeteria.', 4: '2'}
+369	369		401							{1: '2', 2: '2670'}
+370	370		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory712.jpg', 3: '0', 4: '1', 5: '1'}
+371	371		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+372	372		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory712.jpg'}
+373	373		301							{3: 'Before him, a deep and dark corridor unfolds, lined with identical metal doors on both sides.'}
+374	374		204							{1: '1', 2: '1'}
+375	375		301							"{2: 'Haniff', 3: 'They\'re really trying to create a ""Chief,"" huh?', 4: '1'}"
+376	376		301				AniZhuanchangBegin			{3: 'In the darkness, he lets out a quiet snort.'}
+377	377		502							{1: 'DialogDisable'}
+378	378		202							{1: '1', 6: '1'}
+379	379		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory767.png'}
+380	380		306				AniZhuanchangEnd		200.0	{1: '1'}
+381	381		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+382	382		401							{1: '2', 2: '2927'}
+383	383		301			DialogEnable				{3: 'By the third day, problems arise with capturing the nodes. The students who advocated for a direct assault initially planned to head straight for the strategic points, only to have their advance severely hindered by ambush forces along the way.'}
+384	384		301							{3: 'Everyone suffers heavy casualties, and the injuries simulated based on real battlefield data are truly horrifying to witness.'}
+385	385		401							{1: '2', 2: '5530'}
+386	386		201							{1: '1', 2: '500138'}
+387	387		301			PanelActor1Shake				{1: '1', 2: 'Freeman', 3: 'URGH!', 4: '1'}
+388	388		401							{1: '2', 2: '3077'}
+389	389		203							{1: '1', 2: '0.25', 4: '-1080'}
+390	390		202							{1: '1'}
+391	391		401							{1: '2', 2: '1508'}
+392	392		201							{1: '2', 2: '500013', 5: '-100'}
+393	393		301							"{1: '1', 3: ""A Corrupted slices open Freeman's abdomen, ripping out his internal organs."", 4: '2'}"
+394	394		202							{1: '2', 6: '1'}
+395	395		201							{1: '1', 2: '500722', 6: '-165'}
+396	396		301							"{1: '1', 2: 'Bieble', 3: ""Freeman! I'm coming right—"", 4: '1'}"
+397	397		201							{1: '1', 2: '501223', 3: '7'}
+398	398		301							"{1: '1', 2: 'Haniff', 3: ""Don't go! He can't be saved! There are too many Corrupted over there!"", 4: '1'}"
+399	399		401							{1: '2', 2: '4434'}
+400	400		301			RImgBg1Shake				{3: 'Haniff yanks Bieble by the arm and pulls him into nearby cover before the Corrupted can deliver another blow.'}
+401	401		201							{1: '1', 2: '500722', 6: '-165'}
+402	402		301							"{1: '1', 2: 'Bieble', 3: ""Weren't we told that everything would get better if we launched another attack?! What other options do we have... what do we do now...!"", 4: '1'}"
+403	403		201							{1: '1', 2: '501223', 3: '5'}
+404	404		301							"{1: '1', 2: 'Haniff', 3: ""We have no support or supplies right now. We need to wait for reinforcements. We can't afford to advance recklessly anymore."", 4: '1'}"
+405	405		201							{1: '1', 2: '500722', 6: '-165'}
+406	406		301							"{1: '1', 2: 'Bieble', 3: ""...Okay, okay! There must be another way... We'll try again! Haniff, let's fall back, wait for the others, and look for another opportunity!"", 4: '1'}"
+407	407		301							{3: 'Bieble grits his teeth as he bandages his wound, his face revealing a stubborn determination that only grows stronger with each setback.'}
+408	408		201							{1: '1', 2: '501223', 3: '8'}
+409	409		301							{1: '1', 2: 'Haniff', 3: '...', 4: '1'}
+410	410		301							{2: 'Haniff', 3: '...As expected, this could only be a simulation test.', 4: '1'}
+411	411		301				AniZhuanchangBegin			{3: 'Haniff temporarily withdraws from the test.'}
+412	412		402							{1: '2927'}
+413	413		502							{1: 'DialogDisable'}
+414	414		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+415	415		306							
+416	416		202							{1: '1'}
+417	417		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory711.jpg'}
+418	418		301			DialogEnable				{2: 'Kurono Member', 3: 'The test is not over yet. Why did you stop?', 4: '2'}
+419	419		201							{1: '1', 2: '501223'}
+420	420		301							"{1: '1', 2: 'Haniff', 3: ""It's clear that I can't complete the next mission on my own. I'll have to wait for others to catch up."", 4: '1'}"
+421	421		301							"{2: 'Haniff', 3: ""F.O.S.'s graduation test this time is unlike the previous ones. Instead of squad tactics, it places more emphasis on overall strategic planning."", 4: '1'}"
+422	422		301							"{2: 'Haniff', 3: ""Have you considered the possibility that the military no longer intends to produce the kind of Chief you're looking for?"", 4: '1'}"
+423	423		301				AniZhuanchangBegin			{2: 'Kurono Member', 3: '...Focus on your own tasks. Do not speculate, and do not test us.', 4: '2'}
+424	424		202							{1: '1', 6: '1'}
+425	425		502							{1: 'DialogDisable'}
+426	426		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory260.png'}
+427	427		201							{1: '1', 2: '501223'}
+428	428		301			DialogEnable				"{1: '1', 2: 'Haniff', 3: '""Focus on your own tasks. Do not speculate, and do not test us"" ...How interesting.', 4: '1'}"
+429	429		202							{1: '1'}
+430	430		301				DialogDisable			"{3: 'He uses his precious ""30-minute free activity period"" to visit the memorial plaza, habitually placing a bundle of white flowers beneath the countless names of the fallen heroes.'}"
+431	431		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory711.jpg', 3: '0', 4: '1', 5: '0.3'}
+432	432		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory711.jpg'}
+433	433		205							{1: '999'}
+434	434		301			DialogEnable				{3: 'After that, he returns to his dormitory and enters a name he has heard countless times over the years into the archives center.'}
+435	435		201							{1: '1', 2: '501223'}
+436	436		301				DialogDisable			"{1: '1', 2: 'Haniff', 3: ""If the simulation tests are based on events that actually happened... I'll search for the Gray Raven Commandant's combat records."", 4: '1'}"
+437	437		202							{1: '1', 6: '1'}
+438	438		401							{1: '2', 2: '4422'}
+439	439		205						300.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0', 4: '1', 5: '0.3'}
+440	440		304							{1: 'The limited publicly available data appears before his eyes, illuminating his small dormitory room.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-1'}
+441	441		304							"{1: ""—The first-person battle footage replays on Haniff's retina, showing how unusually determined the owner of the camera was,"", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-1'}"
+442	442		304							{1: 'crawling forward desperately yet refusing to abandon any comrade, finally reaching the destination in an utterly devastated state.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-1'}
+443	443		304							"{1: ""But even so, the people they dragged back didn't survive."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-1'}"
+444	444		304							{1: 'The camera recording the battle footage has no emotions, yet profound sadness is still transmitted through the images into the heart of everyone who watches it.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-1', 9: '1'}
+445	445		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0', 4: '0', 5: '0'}
+446	446		205							{1: '1005'}
+447	447		201							{1: '1', 2: '501223', 3: '3'}
+448	448		301			DialogEnable				{1: '1', 2: 'Haniff', 3: '...Great, what a complete waste of time.', 4: '1'}
+449	449		301							"{2: 'Haniff', 3: 'Why would the Gray Raven Commandant even do something like this... Bieble better not learn from this. It\'s the dumbest approach—trying to save everyone naturally results in saving no one. The right thing to do is to abandon those ""shadows"" that are doomed to die early.', 4: '1'}"
+450	450		401							{1: '2', 2: '4423'}
+451	451		301							{3: 'He closes the battle record, thinking in the darkness that once again falls silent around him.'}
+452	452		204							{1: '1', 2: '8'}
+453	453		301							"{2: 'Haniff', 3: ""That's right. The existence of shadows... what is the purpose of someone like me?"", 4: '1'}"
+454	454		301				AniZhuanchangBegin			"{2: 'Haniff', 3: ""Haha... even giving myself a name didn't really help with anything."", 4: '1'}"
+455	455		202							{1: '1', 6: '1'}
+456	456		301			AniZhuanchangEnd				{2: 'Kurono Member', 3: 'No. 1364, report your schedule today.', 4: '2'}
+457	457		201							{1: '1', 2: '501223'}
+458	458		301							{1: '1', 2: 'Haniff', 3: '16:00 departed, 16:12 arrived at the shopping street, bought a serving of grilled artificial meat there... 16:42 arrived at Dominik Memorial Plaza, sat there for a while; 17:00 returned.', 4: '1'}
+459	459		301							"{2: 'Kurono Member', 3: ""This week, you've been going to the Dominik Memorial Plaza every day during your break. What's the reason?"", 4: '2'}"
+460	460		301							{2: 'Haniff', 3: 'Just want to pick a good spot for myself on that monument.', 4: '1'}
+461	461		301							{2: 'Kurono Member', 3: 'Please answer it seriously.', 4: '2'}
+462	462		301							{2: 'Haniff', 3: 'I am being serious, though...', 4: '1'}
+463	463		301							{3: 'Haniff raises his hand in a gesture of surrender toward the camera.'}
+464	464		204							{1: '1', 2: '3'}
+465	465		301							"{2: 'Haniff', 3: ""It's a job with a very high mortality rate. Didn't you explicitly acknowledge that in the contract?"", 4: '1'}"
+466	466		301							"{2: 'Haniff', 3: ""I'm just trying to confirm one thing: where are you planning to assign me after graduation? The Task Force? Purifying Force? Or as your private soldiers?"", 4: '1'}"
+467	467		301							"{2: 'Kurono Member', 3: ""It's not for you to decide. Do not pry into matters you shouldn't."", 4: '2'}"
+468	468		204							{1: '1', 2: '0'}
+469	469		301							"{2: 'Haniff', 3: ""If there's an option, I'd prefer to join the Task Force."", 4: '1'}"
+470	470		301							"{3: ""As if not hearing the voice's warning, Haniff continues to talk.""}"
+471	471		301				DialogDisable			{2: 'Haniff', 3: 'At the very least... I can leave behind my name to be remembered.', 4: '1'}
+472	472		203							{1: '1', 2: '0.25', 3: '-500'}
+473	473		509						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory712.jpg', 2: '2'}
+474	474		201							{1: '13', 2: '500722', 4: '500', 6: '-150'}
+475	475		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '13'}
+476	476		301			DialogEnable				"{1: '1', 3: ""After Kurono's monitor temporarily leaves, Haniff contacts Bieble.""}"
+477	477		301							"{2: 'Bieble', 3: ""Are you also looking at the battle records? I don't think they're very useful. I've already tried arranging combat tactics based on them, but it still ended in complete annihilation."", 4: '13'}"
+478	478		301							"{2: 'Haniff', 3: ""Don't lump me together with a paramecium like you. I've already tossed those records aside."", 4: '1'}"
+479	479		301							{2: 'Bieble', 3: 'Oh? So what new ideas do you have?', 4: '13'}
+480	480		204							{1: '1', 2: '3'}
+481	481		301							"{2: 'Haniff', 3: ""I wouldn't call it an excellent new idea, but it should be useful for these simulated combat assessments."", 4: '1'}"
+482	482		204							{1: '1', 2: '0'}
+483	483		301							{2: 'Haniff', 3: 'Starting with the next battle, help mobilize all nearby combat personnel and integrate all team members so we can act together.', 4: '1'}
+484	484		301							{2: 'Bieble', 3: 'Human wave tactics, huh?', 4: '13'}
+485	485		301							"{2: 'Haniff', 3: 'Since our only goal is to succeed, sacrificing those who were already destined to never become ""Chief"" doesn\'t matter. It\'s the difference between heroes and shadows, even novels have always divided them clearly.', 4: '1'}"
+486	486		301							"{2: 'Haniff', 3: ""Besides, we have countless opportunities to try, which is what makes this different from those battle records. We'll succeed eventually—"", 4: '1'}"
+487	487		301							{3: 'Bieble suddenly interrupts him with a question.'}
+488	488		301							"{2: 'Bieble', 3: ""Wait, so what's your own role in all this? Are you a hero or a shadow?"", 4: '13'}"
+489	489		301							"{2: 'Haniff', 3: ""I've said before, I have no interest in competing for Chief. I'll always stay at tenth place..."", 4: '1'}"
+490	490		301							"{2: 'Bieble', 3: ""Yeah, yeah, yeah, I've heard you say it before, everyone dreams of becoming someone like the Gray Raven Commandant, while your dream is to be just another name on the memorial for the sacrificed, right?"", 4: '13'}"
+491	491		204							{1: '1', 2: '3'}
+492	492		301							{2: 'Haniff', 3: 'I truly...', 4: '1'}
+493	493		301							"{2: 'Bieble', 3: '""Truly"" what? Don\'t give me that—are you really okay with something like being a few words on a piece of stone?', 4: '13'}"
+494	494		301							"{3: ""Bieble, seeing through years of Haniff's insincere words, questions him point-blank.""}"
+495	495		301				DialogDisable			"{2: 'Bieble', 3: 'Do you truly, willingly want to be that sacrificed ""shadow""?', 4: '13'}"
+496	496		202							{1: '13', 6: '1'}
+497	497		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab'}
+498	498		510							{1: '2'}
+499	499		203							{1: '1', 2: '0.25', 3: '0'}
+500	500		301			DialogEnable				{2: 'Haniff', 3: '...', 4: '1'}
+501	501		301				AniZhuanchangBegin			"{3: ""Haniff has to admit that it took someone as blunt as Bieble to ask the question he couldn't bring himself to voice.""}"
+502	502		502							{1: 'DialogDisable'}
+503	503		202							{1: '1', 6: '1'}
+504	504		401							{1: '1', 2: '36'}
+505	505		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1262.jpg'}
+506	506		401							{1: '1', 2: '397'}
+507	507		302							{2: 'Haniff.', 3: '508'}
+508	508		201							{1: '1', 2: '501223', 3: '3'}
+509	509		301			DialogEnable				{1: '1', 2: 'Haniff', 3: '...', 4: '1'}
+510	510		302							{2: 'Haniff, do you hear me?', 3: '511'}
+511	511		204							{1: '1', 2: '7'}
+512	512		301							{2: 'Haniff', 3: '...!', 4: '1'}
+513	513		301							{3: 'Haniff looks up to see that reassuring figure ahead has turned around and is now giving him instructions.'}
+514	514		302							{2: 'Listen, we need to consider the worst-case scenario.', 3: '515'}
+515	515		204							{1: '1', 2: '0'}
+516	516		301				DialogDisable			{2: 'Haniff', 3: '...Go on.', 4: '1'}
+517	517		302							{2: 'If something happens to Vera and me...', 3: '518'}
+518	518		302							{2: 'Then the mission falls to you to continue.', 3: '519'}
+519	519		302							"{2: 'You must find ""Eve,"" kill it, and prevent the new crisis from spreading.', 3: '520'}"
+520	520		301			DialogEnable				{2: 'Haniff', 3: '...', 4: '1'}
+521	521		301				DialogDisable			{3: 'After giving these instructions, you stride forward with purpose.'}
+522	522		302							"{2: ""Don't worry too much. Think of it as a relay race,"", 3: '523'}"
+523	523		302							{2: 'you must have had similar training back at F.O.S..', 3: '524'}
+524	524		204							{1: '1', 2: '7'}
+525	525		301			DialogEnable				{3: 'The figure ahead sways under the weight they carry. From their tone, they seem genuinely lost in memories of their school days.'}
+526	526		204							{1: '1', 2: '1'}
+527	527		301							"{2: 'Haniff', 3: ""No, you've made the wrong decision. You and Vera are the strongest fighters here. If something really goes wrong, I should be the first one to die."", 4: '1'}"
+528	528		301							"{2: 'Haniff', 3: 'Or are you going to heroically declare that ""I won\'t leave anyone behind"" on a battlefield?', 4: '1'}"
+529	529		301				DialogDisable			{3: 'He scoffs, unable to help but recall that ridiculous battle record he saw years ago—a record that came from the very person walking ahead of him.'}
+530	530		302							{2: '(Stops walking.)', 3: '531', 4: '(Turns around.)', 5: '531'}
+531	531		302							"{2: ""...You're right. I don't need to sacrifice anyone, and that includes you."", 3: '532'}"
+532	532		302							"{2: 'If I were to sacrifice you, I would definitely regret it.', 3: '533', 4: ""I don't want to make a decision I'm bound to regret."", 5: '533'}"
+533	533		204							{1: '1', 2: '0'}
+534	534		301			DialogEnable				"{2: 'Haniff', 3: ""...Enough. You don't need to spare my feelings or pretend everything's fine while explaining things to me. I understand perfectly well."", 4: '1'}"
+535	535		301							"{2: 'Haniff', 3: ""I may be your junior, but I'm not a child. I'll surpass you, since you and I are different."", 4: '1'}"
+536	536		302							{2: '...?', 3: '537', 4: '(Why is he suddenly so talkative?)', 5: '537'}
+537	537		202							{1: '1'}
+538	538		401							{1: '2', 2: '5159'}
+539	539		301							{3: 'Haniff suddenly quickens his pace, overtaking his superior and insisting on walking at the very front.'}
+540	540		201							{1: '1', 2: '501223', 3: '1'}
+541	541		301				DialogDisable			{1: '1', 2: 'Haniff', 3: 'I only have some minor wounds. No need to treat me like an invalid and keep me in the back. Let me scout ahead.', 4: '1'}
+542	542		302							{2: 'Okay.', 3: '543', 4: '...', 5: '543'}
+543	543		302							{2: 'By the way, after we leave this place, do you want to go back to Babylonia?', 3: '544'}
+544	544		204							{1: '1', 2: '0'}
+545	545		301			DialogEnable				"{2: 'Haniff', 3: ""That's a death flag if I've ever heard one."", 4: '1'}"
+546	546		301							{3: 'Haniff suppresses all his emotions and cuts off any potential conversation—but once again, a new hope has bloomed within him.'}
+547	547		401							{1: '2', 2: '5286'}
+548	548		306							{1: '1'}
+549	549		203							{1: '1', 2: '0.2', 4: '-100', 5: '-50'}
+550	550		401							{1: '1', 2: '36'}
+551	551		204							{1: '1', 2: '7'}
+552	552		301							"{2: 'Haniff', 3: '<size=30>Shh, we\'re getting close to ""Eve.""</size>', 4: '1'}"
+553	553		301		1		AniZhuanchangBegin			"{2: 'Haniff', 3: ""<size=30>Listen... there's someone there.</size>"", 4: '1'}"

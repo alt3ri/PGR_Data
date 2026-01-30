@@ -1,0 +1,14 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		301			DialogEnable	DialogDisable			{3: 'V4.1'}
+4	4		105	1						{1: 'Assets/Product/Ui/Spine/4_1Spine/UiMovie_S_BuouxiongHJTV41/UiMovie_S_BuouxiongHJTV41.prefab'}
+5	5		301			DialogEnable				{3: '布偶熊 换机体'}
+6	6		105							
+7	7		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+8	8		301				DialogDisable			{3: 'V4.0'}
+9	9		105	1						{1: 'Assets/Product/Ui/Spine/4-0Spine/CiBeiZheYHPassportSkinV40/CiBeiZheYHPassportSkinV40.prefab'}
+10	10		301			DialogEnable	DialogDisable			{3: '慈悲者 羽化'}
+11	11		105	1						{1: 'Assets/Product/Ui/Spine/4-0Spine/UiMovieLiFuJRV40/UiMovieLiFuJRV40.prefab'}
+12	12		301			DialogEnable				{3: '丽芙 家人'}
+13	13		301		1		AniZhuanchangBegin			{3: 'Test Completed'}

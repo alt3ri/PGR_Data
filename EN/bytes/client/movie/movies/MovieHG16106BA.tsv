@@ -1,0 +1,596 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		104							{1: '0|0|-110', 2: '0', 4: '1'}
+2	2		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory601.jpg'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+4	4		401							{1: '1', 2: '229'}
+5	5		401							{1: '2', 2: '2597'}
+6	6		301			DialogEnable	DialogDisable			{3: 'Leaving the windmill tower, you are met by a maelstrom—thunderous roars, a pitch-black sky, and torrential rain.'}
+7	7		401							{1: '2', 2: '2567'}
+8	8		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab', 2: '3'}
+9	9		505			AniZhuanchangBegin				{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab'}
+10	10		502							{1: 'AniZhuanchangEnd'}
+11	11		301			DialogEnable	DialogDisable			"{3: ""Sensing the storm within Liv's M.I.N.D., you decisively initiate a Deep M.I.N.D. connection, but she remains silent, lost in overwhelming grief.""}"
+12	12		302							{2: 'Liv, Liv!', 3: '13'}
+13	13		201							{1: '1', 2: '501397', 6: '-110'}
+14	14		301			DialogEnable				{1: '1', 2: 'Liv', 3: '...', 4: '1'}
+15	15		401							{1: '2', 2: '846106'}
+16	16		301				DialogDisable			{3: 'The rain falls harder, heavier, until it completely floods your sight.'}
+17	17		201							{1: '2', 2: '501397', 4: '-30', 6: '-110', 7: '1'}
+18	18		201							{1: '3', 2: '501397', 4: '25', 6: '-110', 7: '1'}
+19	19		205							{1: '1', 3: '1', 4: '0.8', 5: '1'}
+20	20		205							{1: '2', 3: '0', 4: '0.4', 5: '1'}
+21	21		205							{1: '3', 3: '0', 4: '0.4', 5: '1'}
+22	22		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu01.prefab'}
+23	23		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu02.prefab'}
+24	24		301			DialogEnable	DialogDisable			{3: 'Everything turns hazy: light, shadow, and form blur into a watery dream.'}
+25	25		302							"{2: ""(Hold Liv's hand)"", 3: '26'}"
+26	26		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+27	27		401						1000.0	{1: '2', 2: '968'}
+28	28		401							{1: '2', 2: '1543'}
+29	29		203							{1: '1', 2: '0.4', 5: '-95'}
+30	30		203							{1: '2', 2: '0.4', 3: '-30', 5: '-95'}
+31	31		203							{1: '3', 2: '0.4', 3: '25', 5: '-95'}
+32	32		104						900.0	{1: '0|0|-95', 2: '0.4'}
+33	33		401							{1: '2', 2: '1543'}
+34	34		203							{1: '1', 2: '0.4', 5: '-75'}
+35	35		203							{1: '2', 2: '0.4', 3: '-30', 5: '-75'}
+36	36		203							{1: '3', 2: '0.4', 3: '25', 5: '-75'}
+37	37		104						900.0	{1: '0|0|-75', 2: '0.4'}
+38	38		401							{1: '2', 2: '4895'}
+39	39		203							{1: '1', 2: '0.5', 5: '-100'}
+40	40		203							{1: '2', 2: '0.5', 3: '-30', 5: '-100'}
+41	41		203							{1: '3', 2: '0.5', 3: '25', 5: '-100'}
+42	42		104						1200.0	{1: '0|0|-100', 2: '0.5'}
+43	43		401							{1: '2', 2: '4339'}
+44	44		203							{1: '1', 2: '0.8', 5: '0'}
+45	45		203							{1: '2', 2: '0.8', 3: '-30', 5: '0'}
+46	46		203							{1: '3', 2: '0.8', 3: '25', 5: '0'}
+47	47		104						500.0	{1: '0|0|0', 2: '0.8'}
+48	48		205						1000.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.5'}
+49	49		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+50	50		301			DialogEnable	DialogDisable			"{3: ""The gale tosses you like a toy in a giant's hand—your vision dims, your steps falter—yet you push forward against the storm.""}"
+51	51		402							{1: '968'}
+52	52		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+53	53		205							{1: '1', 3: '1', 4: '1', 5: '0'}
+54	54		205							{1: '2', 3: '1', 4: '1', 5: '0'}
+55	55		205							{1: '3', 3: '1', 4: '1', 5: '0'}
+56	56		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory605.jpg'}
+57	57		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+58	58		111							
+59	59		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '3'}
+60	60		401							{1: '2', 2: '5703'}
+61	61		104						1500.0	{1: '0|0|-50', 2: '1', 4: '1'}
+62	62		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+63	63		401							{1: '2', 2: '5703'}
+64	64		104						1500.0	{1: '0|0|-100', 2: '1', 4: '1'}
+65	65		301			DialogEnable	DialogDisable			{3: 'And then, you step into a vision: the abandoned town is now aglow with countless lights; silent streets pulse with sudden life.'}
+66	66		402							{1: '2597'}
+67	67		401							{1: '2', 2: '2595'}
+68	68		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.9', 5: '0.5'}
+69	69		109						1000.0	{1: '11', 2: '<size=65>But Liv is gone.</size>', 4: '50', 9: '1', 11: '1'}
+70	70		301							{3: 'But Liv is gone.'}
+71	71		110							{1: '11|1'}
+72	72		205						600.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.9', 4: '0', 5: '0.5'}
+73	73		302							{2: 'Liv, Liv!', 3: '74', 4: '...', 5: '74'}
+74	74		306						600.0	{1: '1'}
+75	75		104						1000.0	{1: '-200|0|-200', 2: '0.5'}
+76	76		104						1200.0	{1: '180|150|-200', 2: '0.5'}
+77	77		104						1000.0	{1: '0|0|0', 2: '0.7'}
+78	78		301			DialogEnable	AniZhuanchangBegin			"{3: ""The wind has truly carried the girl away... A thorough search of the area yields nothing but rain and dread. With no other leads, your only choice is to head for Liv's home.""}"
+79	79		401							{1: '1', 2: '36'}
+80	80		401							{1: '2', 2: '214'}
+81	81		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory355.png'}
+82	82		401							{1: '1', 2: '169'}
+83	83		301			AniZhuanchangEnd				{3: 'You brave the downpour and step into her courtyard. The streetlights cast a pallid, indifferent glow, starkly contrasting the clamor of raised voices spilling from within the house.'}
+84	84		306							
+85	85		301				DialogDisable			{2: '??', 3: 'Coming—', 18: '100013327'}
+86	86		402							{1: '214'}
+87	87		401						500.0	{1: '2', 2: '4800'}
+88	88		201							{1: '1', 2: '500051', 4: '-200'}
+89	89		203							{1: '1', 2: '0.5'}
+90	90		301			DialogEnable				"{1: '1', 2: 'Middle-Aged Woman', 3: ""Oh, sorry to keep you waiting. You're just in time for the party..."", 4: '1', 18: '100013328'}"
+91	91		301							{2: 'Middle-Aged Woman', 3: '...Who are you?', 4: '1', 18: '100013329'}
+92	92		302							"{2: ""I think that's my line."", 3: '93'}"
+93	93		301							"{2: 'Middle-Aged Woman', 3: ""This is my house. So I'll ask again: who are you and what do you want?"", 4: '1', 18: '100013330'}"
+94	94		302							"{2: ""I'm looking for Liv."", 3: '95'}"
+95	95		301							"{3: ""She bursts into laughter as if she'd just heard the funniest joke in the world.""}"
+96	96		301			DialogShake				"{2: 'Middle-Aged Woman', 3: ""Hahaha! I suppose you could call me Liv's mother. How... unusual. You, looking for Liv? What's your business with her?"", 4: '1', 18: '100013331'}"
+97	97		302							"{2: ""I'm her commandant."", 3: '98', 4: ""I'm her friend."", 5: '99', 6: ""I'm here to see Liv. That's all you need to know."", 7: '100'}"
+98	98	101	301							"{2: 'Middle-Aged Woman', 3: '""Commandant,"" what a fancy title. Since when did Liv join the military?', 4: '1', 18: '100013332'}"
+99	99	101	301							"{2: 'Middle-Aged Woman', 3: ""That's humorous of you. I've never heard of her having any friends."", 4: '1', 18: '100013333'}"
+100	100		301							"{2: 'Middle-Aged Woman', 3: ""You barge up to my door, won't give a straight answer, and still expect me to just fetch her for you?"", 4: '1', 18: '100013334'}"
+101	101		301							"{2: 'Middle-Aged Woman', 3: ""You know what? I don't have time for this. I'll call her out to see you."", 4: '1', 18: '100013335'}"
+102	102		301							{2: 'Middle-Aged Woman', 3: 'Liv! Liv—', 4: '1', 18: '100013336'}
+103	103		301							{3: 'The clamor from inside the room continues. She frowns and calls out twice more, but no one responds to her.'}
+104	104		301							"{2: 'Middle-Aged Woman', 3: ""Hmph. She must be asleep. Or maybe she's not even home."", 4: '1', 18: '100013337'}"
+105	105		302							"{2: ""You call yourself her mother and you don't even know if your daughter is home?"", 3: '106'}"
+106	106		301							"{2: 'Middle-Aged Woman', 3: ""And what's it to you? She's not your daughter."", 4: '1', 18: '100013338'}"
+107	107		202							{1: '1'}
+108	108		301							"{2: 'Authoritative Voice', 3: ""Someone's here for Liv? It's pouring out there. Please, come in."", 18: '100013339'}"
+109	109		201							{1: '1', 2: '500051'}
+110	110		301				DialogDisable			"{1: '1', 2: 'Middle-Aged Woman', 3: ""Darling, you're just letting a stranger into the house?"", 4: '1', 18: '100013340'}"
+111	111		401							{1: '2', 2: '1516'}
+112	112		202						700.0	{1: '1'}
+113	113		201							{1: '2', 2: '500050', 4: '-200'}
+114	114		203							{1: '2', 2: '0.5'}
+115	115		301			DialogEnable				"{1: '1', 2: 'Middle-Aged Man', 3: ""Liv has always been a shy child. It's good to know she has a friend. Come in, get out of the weather."", 4: '2', 18: '100013341'}"
+116	116		301							{3: 'A middle-aged man in a suit rushes past you toward the door, briefcase in hand.'}
+117	117		301				DialogDisable			"{2: 'Middle-Aged Man', 3: ""I'm afraid I have to head out to a meeting. You all enjoy the party."", 4: '2', 18: '100013342'}"
+118	118		203							{1: '2', 2: '0.5', 5: '-100'}
+119	119		202							{1: '2'}
+120	120		401						2500.0	{1: '2', 2: '1516'}
+121	121		401							{1: '2', 2: '4895'}
+122	122		301			DialogEnable	DialogDisable			{3: 'He takes a few quick steps, then pauses as if remembering something. He turns back to look at you.'}
+123	123		201						500.0	{1: '1', 2: '500050'}
+124	124		203							{1: '1', 2: '0.3', 4: '-70', 5: '-15'}
+125	125		401						1000.0	{1: '2', 2: '1543'}
+126	126		401							{1: '2', 2: '1543'}
+127	127		203						1000.0	{1: '1', 2: '0.5'}
+128	128		301			DialogEnable	DialogDisable			{2: 'Middle-Aged Man', 3: 'Please, look after Liv for me.', 4: '1', 18: '100013343'}
+129	129		202							{1: '1'}
+130	130		301			DialogEnable	AniZhuanchangBegin			{3: 'He gives you a meaningful look, offers a slight bow, then turns and slips into a black car waiting for him.'}
+131	131		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+132	132		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory368.png'}
+133	133		201							{1: '1', 2: '500053', 4: '400', 7: '1'}
+134	134		201							{1: '2', 2: '500052', 4: '-400', 7: '1'}
+135	135		301			AniZhuanchangEnd				"{1: '1', 2: 'Boy', 3: ""Aren't my ten balloons ready yet?"", 4: '1', 18: '100013344'}"
+136	136		301							"{2: 'Girl', 3: ""Didn't Liv finish everything already? Why are we still short ten balloons?"", 4: '2', 18: '100013345'}"
+137	137		301							"{2: 'Boy', 3: ""Ugh, don't you remember? We both got into State School, but I crushed you by ten whole points. So I deserve ten more balloons than you."", 4: '1', 18: '100013346'}"
+138	138		301							{2: 'Boy', 3: 'Hey, go drag Liv out of her room. Tell her we need help.', 4: '1', 18: '100013347'}
+139	139		302							"{2: ""She's not in there. I already looked."", 3: '140'}"
+140	140		301			DialogShake				{2: 'Boy', 3: 'Who... who are you?', 4: '1', 18: '100013348'}
+141	141		302							"{2: ""I'm looking for Liv."", 3: '142'}"
+142	142		301							"{2: 'Girl', 3: ""Liv has a friend? Seriously? Now that's a first."", 4: '2', 18: '100013349'}"
+143	143		302							"{2: ""What's your deal? Why is she the one setting up your party?"", 3: '144'}"
+144	144		301							"{2: 'Boy', 3: ""If you must know, she's our sister."", 4: '1', 18: '100013350'}"
+145	145		302							"{2: '""If you must know""?', 3: '146'}"
+146	146		301							"{2: 'Girl', 3: ""She... she's just our sister, that's all. She's the type who likes helping out. Our mom just asked if she'd pitch in for our acceptance party, and she said yes."", 4: '2', 18: '100013351'}"
+147	147		301							"{2: 'Boy', 3: ""Yeah, we got into State School. You know it, right? Some of the senior students are even members of the Science Council. It's kind of a big deal."", 4: '1', 18: '100013352'}"
+148	148		302							"{2: ""I don't have time for this. Where is she? Why hasn't she come home?"", 3: '149'}"
+149	149		301				DialogDisable			"{2: 'Girl', 3: ""I think today's the anniversary of her mom's passing. She was pretty upset. She just took off... We don't know where she went..."", 4: '2', 18: '100013353'}"
+150	150		302							{2: '(Turn and leave)', 3: '151'}
+151	151		301			DialogEnable				"{2: 'Girl', 3: ""Hey, wait. It's really nasty out. Why don't you just hang here? She'll probably be back soon."", 4: '2', 18: '100013354'}"
+152	152		301							"{2: 'Boy', 3: ""You're blowing off the future leaders of the known world to go look for little Liv?"", 4: '1', 18: '100013355'}"
+153	153		302							{2: 'What did you say?', 3: '154', 4: '...', 5: '154'}
+154	154		301			PanelActor1Shake				"{2: 'Boy', 3: ""...I didn't mean it like that."", 4: '1', 18: '100013356'}"
+155	155		301							"{2: 'Boy', 3: ""Look, all I'm saying is, Liv's... Liv. She's not going to change the world. You'd be better off hanging with us."", 4: '1', 18: '100013357'}"
+156	156		302							"{2: ""You're wrong. She's going to be more than any of you could ever imagine."", 3: '157'}"
+157	157		301				DialogDisable			{2: 'Boy', 3: 'Yeah? And how can you be so sure about that?', 4: '1', 18: '100013358'}
+158	158		302							"{2: ""Because that's simply the truth."", 3: '159'}"
+159	159		302							"{2: ""But just so we're perfectly clear, let me make one thing plain."", 3: '160'}"
+160	160		302							"{2: ""It doesn't matter who she becomes. I'll love her all the same."", 3: '161', 4: ""It doesn't matter who she becomes. It will never change how I feel about her."", 5: '161'}"
+161	161		302							"{2: ""And it doesn't matter where she is, or how far I have to go."", 3: '162'}"
+162	162		302				AniZhuanchangBegin			{2: 'I will find her, and I will stay with her.', 3: '163'}
+163	163		202							{1: '1', 2: '2', 6: '1'}
+164	164		401							{1: '1', 2: '36'}
+165	165		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory373.png'}
+166	166		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+167	167		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+168	168		401							{1: '1', 2: '6236'}
+169	169		401							{1: '2', 2: '968'}
+170	170		502							{1: 'AniZhuanchangEnd'}
+171	171		301			DialogEnable	DialogDisable			"{3: ""Leaving Liv's home, the wind hits you with a deafening howl, threatening to burst your eardrums.""}"
+172	172		401							{1: '2', 2: '2704'}
+173	173		104						1500.0	{1: '0|50|-100', 2: '1', 4: '1'}
+174	174		401							{1: '2', 2: '2704'}
+175	175		104						1500.0	{1: '0|50|-180', 2: '1', 4: '1'}
+176	176		401							{1: '2', 2: '2704'}
+177	177		104						1000.0	{1: '0|50|-250', 2: '1', 4: '1'}
+178	178		401							{1: '2', 2: '2711'}
+179	179		104						350.0	{1: '-250|100|-280', 2: '0.35', 4: '1'}
+180	180		402							{1: '2711'}
+181	181		401							{1: '2', 2: '3077'}
+182	182		502						1200.0	{1: 'RImgBg1Shake'}
+183	183		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+184	184		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+185	185		301			DialogEnable	DialogDisable			{3: 'You press forward, leaning into the gale with a lowered center of gravity, when suddenly your feet lose all traction. Your body is flung sideways, slamming hard against the trunk of a massive tree.'}
+186	186		302							{2: 'Liv—', 3: '187'}
+187	187		301			DialogEnable	DialogDisable			{3: 'The impact rings through your bones. Dizziness swims in your skull as you cling to the rough bark—a mere human at the absolute mercy of nature.'}
+188	188		401							{1: '2', 2: '4276'}
+189	189		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining01.prefab', 2: '2', 5: '2'}
+190	190		511						50.0	{1: '2', 2: '0', 3: '50|0|0'}
+191	191		511						3500.0	{1: '2', 2: '3', 3: '50|0|-600'}
+192	192		301			DialogEnable	DialogDisable			"{3: ""Suddenly, a glimmer of light cuts through the gloom. Something luminous wobbles violently against the wind's current, fighting its way toward you.""}"
+193	193		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+194	194		301			DialogEnable	AniZhuanchangBegin			{3: 'A paper airplane.'}
+195	195		502							{1: 'DialogDisable'}
+196	196		104							{1: '0|0|0', 2: '0', 4: '1'}
+197	197		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining01.prefab', 5: '2'}
+198	198		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+199	199		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+200	200		402							{1: '968'}
+201	201		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '1'}
+202	202		104							{1: '0|280|-200', 2: '0', 4: '3'}
+203	203		104							{1: '0|280|-200', 2: '0', 4: '4'}
+204	204		104							{1: '0|280|-200', 2: '0', 4: '6'}
+205	205		104							{1: '0|280|-200', 2: '0', 4: '5'}
+206	206		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_01_01.png', 3: '0', 4: '1', 5: '0'}
+207	207		502						300.0	{1: 'AniZhuanchangEnd'}
+208	208		401							{1: '2', 2: '4276'}
+209	209		104							{1: '0|-160|-200', 2: '7', 4: '3'}
+210	210		104							{1: '0|-160|-200', 2: '7', 4: '4'}
+211	211		104							{1: '0|-160|-200', 2: '7', 4: '6'}
+212	212		104						2000.0	{1: '0|-160|-200', 2: '7', 4: '5'}
+213	213		401							{1: '2', 2: '4276'}
+214	214		205						2500.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_01_02.png', 3: '0', 4: '1', 5: '1.5'}
+215	215		401							{1: '2', 2: '4276'}
+216	216		205						1500.0	{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_01_03.png', 3: '0', 4: '1', 5: '1'}
+217	217		401							{1: '2', 2: '4276'}
+218	218		205						1800.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_01_04.png', 3: '0', 4: '1', 5: '1'}
+219	219		104							{1: '0|0|0', 2: '0', 4: '3'}
+220	220		104							{1: '0|0|0', 2: '0', 4: '4'}
+221	221		104							{1: '0|0|0', 2: '0', 4: '6'}
+222	222		205							{1: '1004'}
+223	223		205							{1: '1006'}
+224	224		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_01_04.png', 3: '0', 4: '1', 5: '0'}
+225	225		205						2000.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_01_04.png', 3: '1', 4: '0', 5: '1.5'}
+226	226		301			DialogEnable	DialogDisable			{3: 'Then another. And another. One, two, three... until a small fleet of glimmering paper planes emerges from the turbulent air.'}
+227	227		104							{1: '0|0|0', 2: '0', 4: '5'}
+228	228		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_01_14.png', 3: '0', 4: '1', 5: '0'}
+229	229		104							{1: '20|-125|-300', 2: '0', 4: '5'}
+230	230		401							{1: '2', 2: '4770'}
+231	231		205						1500.0	{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_01_05.png', 3: '0', 4: '1', 5: '1'}
+232	232		301			DialogEnable	DialogDisable			{3: 'And hovers around you.'}
+233	233		205						2000.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_01_05.png', 3: '0', 4: '1', 5: '1.5'}
+234	234		301			DialogEnable	AniZhuanchangBegin			"{3: '""Come with us?"" they whisper in unison, their voices childlike and tender.'}"
+235	235		502							{1: 'DialogDisable'}
+236	236		402							{1: '4770'}
+237	237		104							{1: '0|0|0', 2: '0', 4: '5'}
+238	238		205							{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_01_06.png', 3: '0', 4: '1', 5: '0'}
+239	239		205							{1: '1005'}
+240	240		104							{1: '18|150|-350', 2: '0', 4: '5'}
+241	241		205							{1: '999'}
+242	242		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_01_07.png', 3: '0', 4: '1', 5: '0'}
+243	243		401							{1: '2', 2: '2597'}
+244	244		401							{1: '2', 2: '968'}
+245	245		502						1000.0	{1: 'AniZhuanchangEnd'}
+246	246		104						2500.0	{1: '20|80|-200', 2: '5', 4: '6'}
+247	247		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_01_06.png', 3: '0', 4: '1', 5: '2'}
+248	248		104						3000.0	{1: '18|150|-430', 2: '2.8', 4: '5'}
+249	249		301			DialogEnable	DialogDisable			{3: 'Forming a protective escort, they guide you to a clearing in the forest. There, a solitary wooden cabin stands, a bastion against the storm.'}
+250	250		205							{1: '1006'}
+251	251		205						50.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_01_08.jpg', 3: '0', 4: '1', 5: '0'}
+252	252		205						2000.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_01_06.png', 3: '1', 4: '0', 5: '1.5'}
+253	253		104							{1: '0|0|0', 2: '0', 4: '6'}
+254	254		104							{1: '0|0|0', 2: '0', 4: '5'}
+255	255		301			DialogEnable	DialogDisable			{3: 'Through the rain-streaked window, you see her. Her young face is illuminated by the flickering light of a kerosene lamp.'}
+256	256		205						2000.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_01_07.png', 3: '1', 4: '0', 5: '1.8'}
+257	257		302							{2: 'Liv!', 3: '258'}
+258	258		402							{1: '2597'}
+259	259		402						500.0	{1: '968'}
+260	260		205						1800.0	{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_01_09.jpg', 3: '0', 4: '1', 5: '1.5'}
+261	261		301			DialogEnable	DialogDisable			{2: 'Liv', 3: '...', 18: '100013359'}
+262	262		205						700.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_01_10.jpg', 3: '0', 4: '1', 5: '0.6'}
+263	263		205						800.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_01_10.jpg', 3: '1', 4: '0', 5: '0.8'}
+264	264		301			DialogEnable	DialogDisable			{2: 'Liv', 3: 'Still no one...', 18: '100013360'}
+265	265		401							{1: '2', 2: '2597'}
+266	266		401							{1: '2', 2: '968'}
+267	267		205						1500.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_01_08.jpg', 3: '0', 4: '1', 5: '1'}
+268	268		301			DialogEnable	AniZhuanchangBegin			{3: 'She is too far away to hear. You push on, driven by a desperate need to reach her.'}
+269	269		402							{1: '2597'}
+270	270		402							{1: '968'}
+271	271		401							{1: '2', 2: '4907'}
+272	272		502							{1: 'DialogDisable'}
+273	273		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_01_12.jpg', 3: '0', 4: '1', 5: '0'}
+274	274		205							{1: '1006'}
+275	275		205							{1: '1005'}
+276	276		205						50.0	{1: '1007'}
+277	277		401							{1: '2', 2: '5722'}
+278	278		502						500.0	{1: 'AniZhuanchangEnd'}
+279	279		205						900.0	{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_01_11.jpg', 3: '0', 4: '1', 5: '0.7'}
+280	280		205						1200.0	{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_01_11.jpg', 3: '1', 4: '0', 5: '1'}
+281	281		301			DialogEnable	DialogDisable			{3: 'She sits at a table, meticulously folding sheet after sheet of paper into airplanes, whispering to them as if they were her only friends.'}
+282	282		402							{1: '4907'}
+283	283		205						2000.0	{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_01_13.jpg', 3: '0', 4: '1', 5: '1.5'}
+284	284		301			DialogEnable				"{2: 'Liv', 3: ""You're the only ones still by my side."", 18: '100013361'}"
+285	285		301				AniZhuanchangBegin			{2: 'Liv', 3: 'Mommy used to say that paper planes are little wind fairies... that they will keep me company.', 18: '100013362'}
+286	286		402							{1: '5722'}
+287	287		502							{1: 'DialogDisable'}
+288	288		104							{1: '0|0|0', 2: '0', 4: '3'}
+289	289		104							{1: '0|-100|-150', 2: '0', 4: '4'}
+290	290		104							{1: '0|0|0', 2: '0', 4: '6'}
+291	291		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_02_03.png', 3: '0', 4: '1', 5: '0'}
+292	292		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_02_02.png', 3: '0', 4: '1', 5: '0'}
+293	293		205						1000.0	{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_02_04.png', 3: '0', 4: '1', 5: '0'}
+294	294		401							{1: '2', 2: '2597'}
+295	295		401							{1: '2', 2: '968'}
+296	296		502						500.0	{1: 'AniZhuanchangEnd'}
+297	297		104						2500.0	{1: '0|-50|-100', 2: '2', 4: '4'}
+298	298		302							{2: 'Liv!', 3: '299', 4: 'Liv—', 5: '299', 6: '...', 7: '299'}
+299	299		401							{1: '2', 2: '2704'}
+300	300		104							{1: '0|-30|-60', 2: '1', 4: '4'}
+301	301		104						1500.0	{1: '0|0|-30', 2: '1', 4: '3'}
+302	302		401							{1: '2', 2: '2704'}
+303	303		104							{1: '0|0|0', 2: '1', 4: '4'}
+304	304		104						1700.0	{1: '0|0|-80', 2: '1', 4: '3'}
+305	305		401							{1: '2', 2: '2711'}
+306	306		104							{1: '0|-30|-80', 2: '0.2', 4: '4'}
+307	307		104						200.0	{1: '0|0|-30', 2: '0.2', 4: '3'}
+308	308		402							{1: '2711'}
+309	309		401							{1: '2', 2: '3077'}
+310	310		502							{1: 'RImgBg3Shake'}
+311	311		502							{1: 'RImgBg4Shake'}
+312	312		502						1800.0	{1: 'RImgBg6Shake'}
+313	313		301			DialogEnable	AniZhuanchangBegin			{3: 'Your footsteps quicken into a reckless sprint. You ignore the danger, the wind that claws at your clothes, threatening to throw you to the ground. Yet the closer you get to Liv, the more ferocious the storm becomes.'}
+314	314		502							{1: 'DialogDisable'}
+315	315		104							{1: '0|-130|0', 2: '0', 4: '3'}
+316	316		104							{1: '0|0|0', 2: '0', 4: '4'}
+317	317		205							{1: '999'}
+318	318		205							{1: '1004'}
+319	319		205							{1: '1006'}
+320	320		402							{1: '2597'}
+321	321		402						2000.0	{1: '968'}
+322	322		401							{1: '2', 2: '5722'}
+323	323		502						300.0	{1: 'AniZhuanchangEnd'}
+324	324		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_02_05.png', 3: '0', 4: '1', 5: '1'}
+325	325		104						2500.0	{1: '0|0|0', 2: '2.5', 4: '3'}
+326	326		301			DialogEnable	AniZhuanchangBegin			"{2: 'Liv', 3: ""You know... even though I've been by myself since Mommy left, I really believe someone will come. Someone who'll protect me, just like she did."", 18: '100013363'}"
+327	327		502							{1: 'DialogDisable'}
+328	328		205							{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_02_08.png', 3: '0', 4: '1', 5: '0'}
+329	329		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_02_09.png', 3: '0', 4: '0', 5: '0'}
+330	330		205							{1: '999'}
+331	331		205							{1: '1004'}
+332	332		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_02_07.png', 3: '0', 4: '1', 5: '0'}
+333	333		104							{1: '0|0|0', 2: '0', 4: '3'}
+334	334		104						500.0	{1: '0|-100|0', 2: '0', 4: '5'}
+335	335		502						300.0	{1: 'AniZhuanchangEnd'}
+336	336		401							{1: '2', 2: '2936'}
+337	337		104							{1: '0|0|0', 2: '2.5', 4: '5'}
+338	338		205						3000.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_02_09.png', 3: '0', 4: '1', 5: '1.5'}
+339	339		104							{1: '0|-50|-80', 2: '0', 4: '4'}
+340	340		301			DialogEnable	DialogDisable			{2: 'Liv', 3: 'And I want to protect that person, too.', 18: '100013364'}
+341	341		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_02_11.png', 3: '0', 4: '1', 5: '0'}
+342	342		205						50.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_02_12.png', 3: '0', 4: '1', 5: '0'}
+343	343		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_02_09.png', 3: '1', 4: '0', 5: '1.3'}
+344	344		205						1000.0	{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_02_08.png', 3: '1', 4: '0', 5: '1.3'}
+345	345		402							{1: '5722'}
+346	346		401							{1: '2', 2: '2597'}
+347	347		401						800.0	{1: '2', 2: '968'}
+348	348		104						3000.0	{1: '0|0|0', 2: '2.5', 4: '4'}
+349	349		205						2000.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_02_07.png', 3: '1', 4: '0', 5: '1.5'}
+350	350		301			DialogEnable	DialogDisable			"{2: 'Liv', 3: ""Because... I might have to wait a long, long time for them. And until we meet, maybe they're feeling just as lonely as I am right now."", 18: '100013365'}"
+351	351		402							{1: '968'}
+352	352		401							{1: '2', 2: '967'}
+353	353		205						700.0	{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_02_14.png', 3: '0', 4: '1', 5: '0.5'}
+354	354		205							{1: '999'}
+355	355		205						200.0	{1: '1004'}
+356	356		401						200.0	{1: '2', 2: '5517'}
+357	357		205							{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_02_14.png', 3: '1', 4: '0', 5: '1.5'}
+358	358		104						1500.0	{1: '0|0|-100', 2: '1.5', 4: '6'}
+359	359		301			DialogEnable	DialogDisable			{3: 'The driving rain soaks the paper airplanes around you. Their lights flicker and die; they fall to the mud, one by one. And then you feel it—an immense, unnatural force pulling from behind. It is a gravitational anchor, growing stronger and stronger, trying to wrench your body away from this place, out of this time.'}
+360	360		104							{1: '0|0|0', 2: '0', 4: '6'}
+361	361		205							{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_02_16.png', 3: '0', 4: '1', 5: '0'}
+362	362		104						500.0	{1: '0|-100|0', 2: '0', 4: '3'}
+363	363		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_02_15.png', 3: '0', 4: '1', 5: '1.5'}
+364	364		104						1300.0	{1: '0|-40|0', 2: '1.5', 4: '3'}
+365	365		401						250.0	{1: '2', 2: '2711'}
+366	366		104						1200.0	{1: '0|-150|0', 2: '0.4', 4: '3'}
+367	367		104						4300.0	{1: '0|0|0', 2: '4', 4: '3'}
+368	368		301			DialogEnable	AniZhuanchangBegin			{3: 'The force becomes absolute. You cannot move forward even an inch. It is a final, immutable warning:\\nYou were not part of her childhood. You do not belong here.'}
+369	369		502							{1: 'DialogDisable'}
+370	370		205							{1: '999'}
+371	371		402							{1: '2597'}
+372	372		402							{1: '967'}
+373	373		402							{1: '968'}
+374	374		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_03_01.png', 3: '0', 4: '1', 5: '0'}
+375	375		205							{1: '1004'}
+376	376		205							{1: '1006'}
+377	377		104						500.0	{1: '0|-100|0', 2: '0', 4: '3'}
+378	378		401							{1: '2', 2: '5722'}
+379	379		502							{1: 'AniZhuanchangEnd'}
+380	380		104						1500.0	{1: '0|-20|0', 2: '1.3', 4: '3'}
+381	381		301			DialogEnable	DialogDisable			{2: 'Liv', 3: 'Little fairies, can you help me find that person?', 18: '100013366'}
+382	382		104							{1: '0|-20|0', 2: '0', 4: '4'}
+383	383		205						900.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_03_02.png', 3: '0', 4: '1', 5: '0.7'}
+384	384		205						1200.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_03_02.png', 3: '1', 4: '0', 5: '1'}
+385	385		205						900.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_03_02.png', 3: '0', 4: '1', 5: '0.7'}
+386	386		205						1200.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_03_02.png', 3: '1', 4: '0', 5: '1'}
+387	387		301			DialogEnable	AniZhuanchangBegin			{2: 'Liv', 3: 'Please watch over that person, wherever they may be. May happiness find that person, even before we find each other...', 18: '100013367'}
+388	388		104							{1: '0|0|0', 2: '0', 4: '4'}
+389	389		502							{1: 'DialogDisable'}
+390	390		402							{1: '5722'}
+391	391		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_03_03.png', 3: '0', 4: '1', 5: '0'}
+392	392		205							{1: '1004'}
+393	393		104						50.0	{1: '0|-150|0', 2: '0', 4: '3'}
+394	394		502						300.0	{1: 'AniZhuanchangEnd'}
+395	395		401							{1: '2', 2: '4800'}
+396	396		104							{1: '400|0|0', 2: '0', 4: '4'}
+397	397		104						2000.0	{1: '0|0|0', 2: '1.5', 4: '3'}
+398	398		401							{1: '2', 2: '2597'}
+399	399		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_03_04.png', 3: '0', 4: '1', 5: '1.5'}
+400	400		401							{1: '1', 2: '36'}
+401	401		401							{1: '2', 2: '4276'}
+402	402		104						1500.0	{1: '0|0|0', 2: '1', 4: '4'}
+403	403		205						650.0	{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_03_05.png', 3: '0', 4: '1', 5: '0.5'}
+404	404		205						950.0	{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_03_05.png', 3: '1', 4: '0', 5: '0.7'}
+405	405		205						650.0	{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_03_05.png', 3: '0', 4: '1', 5: '0.5'}
+406	406		205						950.0	{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_03_05.png', 3: '1', 4: '0', 5: '0.7'}
+407	407		301			DialogEnable	AniZhuanchangBegin			{3: 'She cups the paper airplanes in her palms, ready to open the window and launch them into the sky, but freezes. Amid the storm, she sees a blur of light.'}
+408	408		401							{1: '1', 2: '6172'}
+409	409		502							{1: 'DialogDisable'}
+410	410		401							{1: '2', 2: '968'}
+411	411		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '3'}
+412	412		104							{1: '0|0|0', 2: '0', 4: '3'}
+413	413		104							{1: '0|0|-50', 2: '0', 4: '4'}
+414	414		104							{1: '0|0|-50', 2: '0', 4: '6'}
+415	415		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_03_06.jpg', 3: '0', 4: '1', 5: '0'}
+416	416		205							{1: '1004'}
+417	417		205							{1: '1006'}
+418	418		302			AniZhuanchangEnd				{2: 'Liv, please listen to me. You might not know me yet—', 3: '419'}
+419	419		301			DialogEnable	DialogDisable			{3: 'That light is torn apart by the wind, desperately rushing toward her only to be savagely whipped backward.'}
+420	420		401						500.0	{1: '2', 2: '5517'}
+421	421		104						500.0	{1: '0|0|50', 2: '1.5', 4: '3'}
+422	422		205						1500.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_03_07.jpg', 3: '0', 4: '1', 5: '1'}
+423	423		302							"{2: ""In the future, you'll become a... soldier, and I'll be your commandant—"", 3: '424', 4: ""In the future we'll meet, grow close, fall in love—"", 5: '424'}"
+424	424		401							{1: '2', 2: '5725'}
+425	425		104						300.0	{1: '0|0|0', 2: '1.2', 4: '4'}
+426	426		205						1500.0	{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_03_08.jpg', 3: '0', 4: '1', 5: '0.8'}
+427	427		104							{1: '0|0|-50', 2: '0', 4: '4'}
+428	428		104							{1: '0|0|0', 2: '0', 4: '6'}
+429	429		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_03_08.jpg', 3: '0', 4: '1', 5: '0'}
+430	430		205							{1: '1006'}
+431	431		301			DialogEnable	DialogDisable			"{3: ""Darkness devours the edges of your vision until Liv's tiny figure is visible only through a small, shrinking hole.""}"
+432	432		401							{1: '2', 2: '5725'}
+433	433		104						300.0	{1: '0|0|0', 2: '1.2', 4: '4'}
+434	434		205						1500.0	{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_03_09.jpg', 3: '0', 4: '1', 5: '0.8'}
+435	435		302							{2: 'One day we got separated, so I came looking for you.', 3: '436'}
+436	436		302							{2: 'But I have to go now—', 3: '437'}
+437	437		205							{1: '999'}
+438	438		205							{1: '1004'}
+439	439		401						500.0	{1: '2', 2: '5517'}
+440	440		205						1500.0	{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_03_09.jpg', 3: '1', 4: '0', 5: '1'}
+441	441		104							{1: '0|0|0', 2: '0', 4: '3'}
+442	442		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+443	443		402							{1: '2597'}
+444	444		402							{1: '968'}
+445	445		301			DialogEnable	DialogDisable			{3: 'A voice calls out, but the words are stolen by the downpour, and to her ears, they sound like helpless crying.'}
+446	446		104						50.0	{1: '600|20|50', 2: '0', 4: '4'}
+447	447		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_03_10.jpg', 3: '0', 4: '1', 5: '0.5'}
+448	448		104						500.0	{1: '0|20|50', 2: '0.5', 4: '4'}
+449	449		502							{1: 'RImgBg4Shake'}
+450	450		301			DialogEnable	AniZhuanchangBegin			"{2: 'Liv', 3: ""Don't cry... don't cry..."", 18: '100013368'}"
+451	451		502							{1: 'DialogDisable'}
+452	452		205							{1: '1004'}
+453	453		104							{1: '0|0|0', 2: '0', 4: '4'}
+454	454		104							{1: '50|0|0', 2: '0', 4: '5'}
+455	455		104							{1: '80|0|0', 2: '0', 4: '6'}
+456	456		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_03_11.jpg', 3: '0', 4: '1', 5: '0'}
+457	457		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_03_12.png', 3: '0', 4: '1', 5: '0'}
+458	458		205							{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_03_15.png', 3: '0', 4: '1', 5: '0'}
+459	459		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_03_13.png', 3: '0', 4: '1', 5: '0'}
+460	460		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_03_14.png', 3: '0', 4: '1', 5: '0'}
+461	461		401							{1: '2', 2: '214'}
+462	462		401							{1: '2', 2: '4895'}
+463	463		502						300.0	{1: 'AniZhuanchangEnd'}
+464	464		401							{1: '2', 2: '1513'}
+465	465		104							{1: '-50|0|0', 2: '1.5', 4: '4'}
+466	466		104							{1: '-15|0|0', 2: '1.7', 4: '6'}
+467	467		104						2500.0	{1: '0|0|-80', 2: '1.5', 4: '5'}
+468	468		301			DialogEnable	AniZhuanchangBegin			{3: 'Little Liv wrenches the door open and stumbles into the rain.'}
+469	469		502							{1: 'DialogDisable'}
+470	470		104							{1: '0|0|0', 2: '0', 4: '4'}
+471	471		104							{1: '0|0|0', 2: '0', 4: '6'}
+472	472		104							{1: '0|0|0', 2: '0', 4: '5'}
+473	473		104							{1: '0|0|-180', 2: '0', 4: '3'}
+474	474		104							{1: '0|0|-180', 2: '0', 4: '4'}
+475	475		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_04_01.png', 3: '0', 4: '1', 5: '0'}
+476	476		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_04_02.png', 3: '0', 4: '0'}
+477	477		205							{1: '1006'}
+478	478		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_04_03.png', 3: '0', 4: '1', 5: '0'}
+479	479		205							{1: '1007'}
+480	480		402						50.0	{1: '1513'}
+481	481		401							{1: '2', 2: '1513'}
+482	482		502						300.0	{1: 'AniZhuanchangEnd'}
+483	483		104							{1: '0|0|0', 2: '4', 4: '3'}
+484	484		104						1500.0	{1: '0|0|0', 2: '4', 4: '4'}
+485	485		205						3500.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_04_02.png', 3: '0', 4: '1', 5: '1'}
+486	486		301			DialogEnable	DialogDisable			{3: 'The light is fading, guttering like a candle in the deluge.'}
+487	487		302				AniZhuanchangBegin			"{2: ""Wait for me! I promise I'll come find you—"", 3: '488', 4: 'I will find you. I promise.', 5: '488'}"
+488	488		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_04_04.png', 3: '0', 4: '1', 5: '0'}
+489	489		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_04_05.png', 3: '0', 4: '1', 5: '0'}
+490	490		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_04_06.png', 3: '0', 4: '1', 5: '0'}
+491	491		502						300.0	{1: 'AniZhuanchangEnd'}
+492	492		401							{1: '2', 2: '4462'}
+493	493		104							{1: '0|0|-150', 2: '3.5', 4: '4'}
+494	494		104						1500.0	{1: '0|0|-150', 2: '3.5', 4: '3'}
+495	495		205						2000.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_04_06.png', 3: '1', 4: '0', 5: '1.5'}
+496	496		402						1000.0	{1: '4462'}
+497	497		301			DialogEnable	DialogDisable			{3: 'She runs, arms outstretched for a desperate embrace—'}
+498	498		302							{2: 'Wait for me in the future!', 3: '499', 4: 'Wait for me in the future.', 5: '499', 6: 'Wait for me, Liv.', 7: '499'}
+499	499		402							{1: '214'}
+500	500		401							{1: '2', 2: '4276'}
+501	501		401						100.0	{1: '2', 2: '4770'}
+502	502		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+503	503		502							{1: 'DialogDisable'}
+504	504		104							{1: '0|0|0', 2: '0', 4: '4'}
+505	505		104							{1: '0|0|0', 2: '0', 4: '3'}
+506	506		205							{1: '999'}
+507	507		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_04_07.png', 3: '0', 4: '1', 5: '0'}
+508	508		205							{1: '1005'}
+509	509		104						50.0	{1: '0|0|-300', 2: '0', 4: '4'}
+510	510		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+511	511		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+512	512		104						500.0	{1: '0|0|0', 2: '2', 4: '4'}
+513	513		401						2500.0	{1: '2', 2: '4798'}
+514	514		301			DialogEnable	AniZhuanchangBegin			{3: 'Her fingers touch it. With a soft poof, the light shatters into a flock of white paper airplanes.'}
+515	515		402							{1: '4798'}
+516	516		502							{1: 'DialogDisable'}
+517	517		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_04_09.png', 3: '0', 4: '1', 5: '0'}
+518	518		205							{1: '1004'}
+519	519		205							{1: '1006', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_04_10.png', 3: '0', 4: '1', 5: '0'}
+520	520		402							{1: '4770'}
+521	521		502						300.0	{1: 'AniZhuanchangEnd'}
+522	522		301			DialogEnable	DialogDisable			{2: 'Liv', 3: '...Huh?', 18: '100013369'}
+523	523		104						50.0	{1: '0|150|0', 2: '0', 4: '4'}
+524	524		401							{1: '2', 2: '4798'}
+525	525		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_04_12.png', 3: '0', 4: '1', 5: '1.5'}
+526	526		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_04_11.png', 3: '0', 4: '1', 5: '1.5'}
+527	527		104						3500.0	{1: '0|0|0', 2: '2.5', 4: '4'}
+528	528		205						1000.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_04_13.png', 3: '0', 4: '1', 5: '1'}
+529	529		205							{1: '999'}
+530	530		205							{1: '1004'}
+531	531		205							{1: '1006'}
+532	532		104						50.0	{1: '0|0|0', 2: '0', 4: '4'}
+533	533		401							{1: '2', 2: '4798'}
+534	534		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_04_15.png', 3: '0', 4: '1', 5: '1'}
+535	535		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V400Liv/V400_04_14.png', 3: '0', 4: '1', 5: '1'}
+536	536		104						3000.0	{1: '0|-100|0', 2: '2', 4: '4'}
+537	537		301			DialogEnable				{3: 'They tumble down around her like silent, falling snow, one after another.'}
+538	538		301				AniZhuanchangBegin			{3: 'She remains kneeling in the mud, arms empty, her embrace holding nothing but the memory of light.'}
+539	539		104							{1: '0|0|0', 2: '0', 4: '4'}
+540	540		205							{1: '999'}
+541	541		205							{1: '1004'}
+542	542		205							{1: '1007'}
+543	543		205							{1: '1005'}
+544	544		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory373.png', 4: '1'}
+545	545		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+546	546		201							{1: '1', 2: '500049', 5: '-100'}
+547	547		301			AniZhuanchangEnd				"{1: '1', 2: 'Liv', 3: ""Don't cry... don't cry..."", 4: '1', 18: '100013370'}"
+548	548		301				AniZhuanchangBegin			{3: 'She murmurs to herself.'}
+549	549		402							{1: '4798'}
+550	550		502							{1: 'DialogDisable'}
+551	551		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+552	552		202						2000.0	{1: '1', 6: '1'}
+553	553		304			AniZhuanchangEnd				{1: 'She was alone in her secret base that day, folding paper airplanes.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1'}
+554	554		304							{1: 'Her mother was gone, and no one noticed when the girl slipped away.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1'}
+555	555		304							{1: 'As the storm chilled her small body, she might have dreamed of someone coming to find her.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1'}
+556	556		304							{1: 'But the reality was that no one ever came.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 8: '1'}
+557	557		304							{1: 'On that day, she never met someone who would cherish her for a lifetime.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1'}
+558	558		304							{1: 'The fierce winds brought only a shattered illusion, scattering the fragile hopes she had sent into the sky.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1'}
+559	559		304							{1: 'She would have to wait much, much longer...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1'}
+560	560		304							"{1: ""In her hazy consciousness, her mother's voice echoed in her ear."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 9: '1'}"
+561	561		401							{1: '2', 2: '4134'}
+562	562		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+563	563		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6001_08.jpg'}
+564	564		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '2'}
+565	565		401							{1: '2', 2: '4250'}
+566	566		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+567	567		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+568	568		301			DialogEnable				{3: 'A memory resurfaced: she and her mother, aboard the aircraft, safe and together.'}
+569	569		201							{1: '1', 2: '501399', 5: '-100', 6: '-150'}
+570	570		301							{1: '1', 2: 'Antonia', 3: '...Our town is watched over by the God of Wind. If you soar through the winds with someone you love, the God of Wind will bless you to be together for a lifetime.', 4: '1', 18: '100013371'}
+571	571		301				DialogDisable			{2: 'Antonia', 3: 'Liv, I have to go now.', 4: '1', 18: '100013372'}
+572	572		203							{1: '1', 2: '0.5', 5: '-150'}
+573	573		401						1500.0	{1: '2', 2: '1543'}
+574	574		202						800.0	{1: '1'}
+575	575		301			DialogEnable				{3: 'Antonia rose and stepped off the aircraft.'}
+576	576		201							{1: '18', 2: '501399', 4: '140', 5: '-10', 6: '-150'}
+577	577		301							"{1: '1', 2: 'Antonia', 3: ""But you'll meet someone you'll love, and when that time comes, that person will stay by your side just as I have."", 4: '18', 18: '100013373'}"
+578	578		301				AniZhuanchangBegin			{2: 'Antonia', 3: 'May the God of Wind watch over you both.', 4: '18', 18: '100013374'}
+579	579		401							{1: '2', 2: '968'}
+580	580		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab'}
+581	581		402							{1: '4250'}
+582	582		202							{1: '18', 6: '1'}
+583	583		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+584	584		101						2500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory601.jpg'}
+585	585		301			AniZhuanchangEnd	DialogDisable			{3: 'But the silhouettes of her mother and 【kuroname】 gradually vanish into the storm.'}
+586	586		402							{1: '968'}
+587	587		104						1500.0	{1: '80|-60|-250', 2: '1.8'}
+588	588		306						500.0	{1: '1'}
+589	589		301			DialogEnable				{3: 'She gazes up at the towering windmill, where legend claims the God of Wind dwells within the church at its peak. It sways perilously in the roar of the hurricane.'}
+590	590		301				DialogDisable			{3: 'If it collapses in the storm, countless buildings will be crushed beneath it. The people of Vennquis will face utter devastation...'}
+591	591		205						1500.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory601.jpg', 3: '0', 4: '1', 5: '1'}
+592	592		201							{1: '1', 2: '501378', 3: '8', 6: '-100'}
+593	593		301			DialogEnable				"{1: '1', 3: ""Unwilling to let the storm take everything she cherishes, she wonders... if she can stabilize the tower, perhaps she can summon the God of Wind's blessing for this town, for herself and 【kuroname】.""}"
+594	594		204							{1: '1', 2: '4'}
+595	595		301		1		AniZhuanchangBegin			{3: 'Silently, she makes her decision.'}

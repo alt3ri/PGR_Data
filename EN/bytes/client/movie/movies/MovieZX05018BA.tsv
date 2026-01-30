@@ -1,0 +1,518 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory954.png'}
+2	2		104							{1: '0|0|-100', 2: '0.8'}
+3	3		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory955.png', 3: '0', 4: '1', 5: '1'}
+4	4		401						1000.0	{1: '2', 2: '2711'}
+5	5		205							{1: '999'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory955.png'}
+7	7		104							{1: '0|0|-100', 2: '0.8'}
+8	8		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg2601_11.jpg', 3: '0', 4: '1', 5: '1'}
+9	9		401						1000.0	{1: '2', 2: '2711'}
+10	10		205							{1: '999'}
+11	11		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2601_11.jpg'}
+12	12		104							{1: '0|0|-100', 2: '0.8'}
+13	13		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront29.png', 3: '0', 4: '1', 5: '1'}
+14	14		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory538.png', 3: '0', 4: '1', 5: '1'}
+15	15		401						1000.0	{1: '2', 2: '2711'}
+16	16		205							{1: '999'}
+17	17		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+18	18		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront29.png', 4: '4'}
+19	19		301			DialogEnable				{3: 'Through countless strange worlds, Nanami never lets go of your hand.'}
+20	20		401							{1: '1', 2: '5042'}
+21	21		201							{1: '1', 2: '501085'}
+22	22		301							"{1: '1', 2: 'Nanami', 3: ""Hold on tight, and you'll be safe—"", 4: '1'}"
+23	23		302							{2: 'Of course.', 3: '24', 4: 'Of course.', 5: '24'}
+24	24		202				DialogDisable			{1: '1'}
+25	25		101							{4: '4', 5: '1'}
+26	26		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory460.jpg', 3: '0', 4: '1', 5: '1'}
+27	27		401						1000.0	{1: '2', 2: '2711'}
+28	28		205							{1: '999'}
+29	29		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory460.jpg'}
+30	30		104							{1: '0|0|-100', 2: '0.8'}
+31	31		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory627.jpg', 3: '0', 4: '1', 5: '1'}
+32	32		401						1000.0	{1: '2', 2: '2711'}
+33	33		205							{1: '999'}
+34	34		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory627.jpg'}
+35	35		401							{1: '2', 2: '2711'}
+36	36		104							{1: '0|0|-100', 2: '0.8'}
+37	37		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory914.jpg', 3: '0', 4: '1', 5: '1'}
+38	38		401						1000.0	{1: '2', 2: '2711'}
+39	39		205							{1: '999'}
+40	40		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory914.jpg'}
+41	41		301			DialogEnable				"{3: ""After countless shifts between worlds, just as you're about to follow Nanami to the next area, an abnormal force suddenly grips your spine.""}"
+42	42		502							{1: 'DialogDisable'}
+43	43		401							{1: '2', 2: '2711'}
+44	44		104				AniZhuanchangBegin			{1: '0|0|50', 2: '0.8'}
+45	45		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+46	46		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront29.png', 4: '4'}
+47	47		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+48	48		401							{1: '2', 2: '4278'}
+49	49		201							{1: '1', 2: '501085', 3: '4'}
+50	50		301			DialogEnable	AniZhuanchangBegin			{1: '1', 2: 'Nanami', 3: '—Comman■■■■...', 4: '1'}
+51	51		202							{1: '1'}
+52	52		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+53	53		502						400.0	{1: 'DialogDisable'}
+54	54		101							{4: '4', 5: '1'}
+55	55		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+56	56		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+57	57		111			AniZhuanchangEnd				{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+58	58		401							{1: '2', 2: '2624'}
+59	59		301			DialogEnable				{3: 'The world around you starts spinning violently. Your heart spasms, while the taste of iron creeps up your throat—'}
+60	60		402							{1: '2624'}
+61	61		401							{1: '2', 2: '1509'}
+62	62		301							{3: 'Beep—'}
+63	63		301							{3: 'Weird mechanical sounds echo inside your skull.'}
+64	64		302				AniZhuanchangBegin			{2: '(Struggle to open your eyes)', 3: '65'}
+65	65		402							{1: '5042'}
+66	66		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+67	67		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '2'}
+68	68		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+69	69		301			AniZhuanchangEnd	DialogDisable			{3: 'The world around you seems veiled by a strange filter, blurring everything around you into obscurity.'}
+70	70		302							{2: '(Try to look around)', 3: '71'}
+71	71		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab', 2: '2'}
+72	72		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront16.png', 4: '4'}
+73	73		401							{1: '2', 2: '4897'}
+74	74		307							{1: '—Starting visual module calibration.', 3: '60'}
+75	75		301							{3: '—Starting visual module calibration.'}
+76	76		307							{2: '1'}
+77	77		301			DialogEnable	DialogDisable			{3: 'The mechanical prompt sounds from somewhere around your head.'}
+78	78		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab'}
+79	79		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+80	80		401							{1: '2', 2: '4897'}
+81	81		307							{1: '—Visual module calibration complete.', 3: '60'}
+82	82		301							{3: '—Visual module calibration complete.'}
+83	83		307							{2: '1'}
+84	84		302							{2: 'Visual... module?', 3: '85'}
+85	85		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront16.png', 4: '4', 5: '1'}
+86	86		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+87	87		402							{1: '2624'}
+88	88		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_13.jpg'}
+89	89		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+90	90		401							{1: '2', 2: '212'}
+91	91		301			DialogEnable				"{3: ""With your surroundings gradually coming into focus, you see what appears to be a street you've never seen.""}"
+92	92		301							"{3: ""The buildings in the background look aged and weathered. This seems nothing like the world you're familiar with...""}"
+93	93		302							{2: '(Try to adjust field of vision)', 3: '94', 4: '(Try to call out)', 5: '96'}
+94	94	98	301							{3: 'People hurry back and forth along the street—this place shows no signs of the Punishing Virus.'}
+95	95		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+96	96		401							{1: '2', 2: '4897'}
+97	97	98	301							{3: 'Beep—'}
+98	98		301							"{3: ""It's quite a weird experience—your movement no longer relies on the signals from the central nervous system, but rather on something more tangible, like electrical currents or something else...""}"
+99	99		402							{1: '212'}
+100	100		401							{1: '1', 2: '5061'}
+101	101		301							{2: '??', 3: 'Eh? A robot?'}
+102	102		301							{2: '??', 3: 'Was that you speaking just now? Nanami heard someone talking...'}
+103	103		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+104	104		104						250.0	{1: '0|0|-100', 2: '0.5'}
+105	105		104							{1: '0|0|100', 2: '0.5'}
+106	106		201							{1: '1', 2: '500039'}
+107	107		301							{1: '1', 3: 'Your visual module scatters and refocuses as you adjust the camera to concentrate on a single spot. A little girl with gray hair, appearing about five or six years old, comes into view.'}
+108	108		302							{2: 'N-Nanami?', 3: '109'}
+109	109		401							{1: '2', 2: '4897'}
+110	110		204							{1: '1', 2: '7'}
+111	111		301							{3: 'Beep—'}
+112	112		301							{3: 'No matter how you try to speak, all that comes out is harsh white noise.'}
+113	113		204							{1: '1', 2: '1'}
+114	114		301							"{2: 'Nanami', 3: ""It's this robot... but how does this robot know my name?"", 4: '1'}"
+115	115		302							"{2: 'I am the Gray Raven Commandant.', 3: '116', 4: ""I'm 【kuroname】."", 5: '116'}"
+116	116		401							{1: '2', 2: '1509'}
+117	117		301							"{3: ""Beep—all that you can still produce is harsh noise, yet somehow, Nanami seems to understand what you're trying to say.""}"
+118	118		204							{1: '1'}
+119	119		301							"{2: 'Nanami', 3: ""Hmm... Nanami doesn't know you, and I don't understand what you're saying."", 4: '1'}"
+120	120		302							"{2: ""Don't you remember me?"", 3: '121'}"
+121	121		301							{3: 'Did something go wrong in the simulations? How did Nanami forget about you?'}
+122	122		301							"{2: 'Nanami', 3: ""Good kids don't lie, and Nanami doesn't remember who you are. But..."", 4: '1'}"
+123	123		301							"{2: 'Nanami', 3: ""But you know Nanami's name, and Mommy and Daddy say that means we must be friends..."", 4: '1'}"
+124	124		301							{2: 'Nanami', 3: 'Want to go home with Nanami?', 4: '1'}
+125	125		401							{1: '2', 2: '4044'}
+126	126		203						250.0	{1: '1', 2: '0.25', 4: '-150', 5: '-200'}
+127	127		203						250.0	{1: '1', 2: '0.25', 4: '-100', 5: '-200'}
+128	128		202							{1: '1'}
+129	129		301							{3: 'With a bright smile, Little Nanami extends her small hand toward the robot.'}
+130	130		301							{3: 'This is undoubtedly the best choice for now.'}
+131	131		104							{1: '0|0|-100', 2: '5'}
+132	132		401							{1: '2', 2: '1516'}
+133	133		301							{3: 'The tiny, gray-haired Nanami holds hands with the weathered robot as they slowly walk along a path blooming with flowers.'}
+134	134		301							{3: 'This is a simulated, true Golden Age.'}
+135	135		301							{3: 'True to its name, gold and fine spirits flow through every street, creating a dazzling spectacle of prosperity.'}
+136	136		302							{2: 'Did you say this was... the Golden Age?', 3: '137'}
+137	137		201							{1: '1', 2: '500039', 3: '7', 5: '-100', 6: '-200'}
+138	138		301							"{1: '1', 2: 'Nanami', 3: 'Yep! But Mommy and Daddy don\'t really like that name. They keep saying, ""What rises will eventually fall""... What does that even mean?', 4: '1'}"
+139	139		302							{2: 'It means that when something becomes too prosperous, it will eventually decline...', 3: '140'}
+140	140		204							{1: '1'}
+141	141		301				AniZhuanchangBegin			{2: 'Nanami', 3: 'Hmm... well, I guess that sort of makes sense.', 4: '1'}
+142	142		202							{1: '1'}
+143	143		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory705.jpg'}
+144	144		301			AniZhuanchangEnd				{3: 'Two streets later, an elegant house with a garden comes into view before the two of you.'}
+145	145		201							{1: '18', 2: '500039', 3: '1'}
+146	146		301							"{1: '1', 2: 'Nanami', 3: ""Daddy! Mommy! Mimi! Nanami's home!"", 4: '18'}"
+147	147		201							{1: '1', 2: '501024'}
+148	148		301							"{1: '1', 2: ""Nanami's Mother"", 3: ""Nanami, dinner's ready..."", 4: '1'}"
+149	149		301							"{2: ""Nanami's Mother"", 3: 'Why did you bring a transport robot home?', 4: '1'}"
+150	150		301							"{2: 'Nanami', 3: ""This robot's name is 【kuroname】! It knows my name! Daddy said that when you exchange names with someone, you become friends, so Nanami brought her friend home!"", 4: '18'}"
+151	151		301							"{2: 'Nanami', 3: ""【kuroname】, this is my dad, and this is my mom! And this is Nanami's puppy, Mimi!"", 4: '18'}"
+152	152		301							{3: 'She looks excitedly at the mechanoid housing your human soul.'}
+153	153		302							{2: '(Introduce yourself to them)', 3: '154', 4: '(Remain silent)', 5: '159'}
+154	154		401							{1: '2', 2: '4325'}
+155	155		301							{3: 'Beep—'}
+156	156		402							{1: '4325'}
+157	157		301							"{3: ""A brief burst of static emerges again. Clearly, this mechanoid's voice module doesn't support this action.""}"
+158	158	164	301							"{2: 'Nanami', 3: ""Hehe, I'm sure they're all gonna like you!"", 4: '18'}"
+159	159		401							{1: '2', 2: '4325'}
+160	160		301							"{3: ""You try but to no avail—all that comes out is meaningless static. Clearly, this mechanoid's voice module doesn't support this action.""}"
+161	161		402							{1: '4325'}
+162	162		301							"{2: 'Nanami', 3: ""Aw, don't feel like talking right now? That's okay!"", 4: '18'}"
+163	163	164	301							"{3: ""She gently pats what appears to be this mechanoid's shoulder in a comforting gesture.""}"
+164	164		301							"{2: ""Nanami's Mother"", 3: ""Alright, we've met your new friend. Time for dinner, Nanami."", 4: '1'}"
+165	165		301							{2: 'Nanami', 3: 'Mm-hmm! 【kuroname】, wait here for Nanami! Nanami will be back with Mimi to hang out with you!', 4: '18'}
+166	166		202							{1: '18'}
+167	167		401							{1: '2', 2: '1513'}
+168	168		301							{3: 'Says Nanami as she runs into the room.'}
+169	169		301							"{2: ""Nanami's Mother"", 3: ""Weird how this robot knows Nanami's name..."", 4: '1'}"
+170	170		301							"{2: ""Nanami's Mother"", 3: 'Could it be one of the experimental consciousnesses from the laboratory batch?', 4: '1'}"
+171	171		201							{1: '1', 2: '501024', 4: '-400'}
+172	172		201							{1: '2', 2: '501083', 4: '400'}
+173	173		301							"{1: '1', 2: ""Nanami's Father"", 3: 'Let me see...', 4: '2'}"
+174	174		301							"{2: ""Nanami's Father"", 3: ""No, there's no experimental consciousness with this coding in the database."", 4: '2'}"
+175	175		301							"{2: ""Nanami's Father"", 3: ""Could it be that Nanami is developing emotional fluctuations that are typical of human children's fantasies?"", 4: '2'}"
+176	176		301							"{2: ""Nanami's Mother"", 3: ""...I would hope so, but it's not possible."", 4: '1'}"
+177	177		301							"{2: ""Nanami's Mother"", 3: ""MPA-01 just collected Nanami's emotional readings last week. She still only demonstrates emotional perception and expression capabilities that are above average for an AI."", 4: '1'}"
+178	178		301							"{2: ""Nanami's Mother"", 3: 'Given her original programming as a ""companion-type mechanical consciousness,"" she might have configured this behavior for herself to fulfill her ""companion-type"" objectives.', 4: '1'}"
+179	179		301							"{2: ""Nanami's Father"", 3: '...', 4: '2'}"
+180	180		301							"{2: ""Nanami's Father"", 3: ""Let's request to have this robot transferred here. We can observe how it interacts with Nanami over time."", 4: '2'}"
+181	181		301							"{2: ""Nanami's Mother"", 3: 'Of course.', 4: '1'}"
+182	182		202							{1: '1', 2: '2'}
+183	183		401							{1: '2', 2: '743'}
+184	184		301							{3: 'After their brief conversation, the human female and male enter the room together. Soon, the sound of cheerful laughter echoes from within.'}
+185	185		302							"{2: '(So this is Nanami\'s ""home""?)', 3: '186', 4: '(Observe your surroundings)', 5: '186'}"
+186	186		104						1000.0	{1: '150|0|-200', 2: '0.5'}
+187	187		104						1000.0	{1: '0|0|-200', 2: '0.5'}
+188	188		104							{1: '0|0|0', 2: '0.5'}
+189	189		301							{3: 'The house exudes a warm, homey atmosphere. Its deliberately decorated walls and lush garden indicate that this place has been meticulously maintained.'}
+190	190		301							{3: 'The simulation target has deviated, causing your consciousness anchor point to connect to an incorrect timeline.'}
+191	191		301							{3: 'What... should you do now?'}
+192	192		302							{2: '(Try to contact Nanami)', 3: '194', 4: '(Try to call out to Nanami)', 5: '200'}
+193	193		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFunction.prefab', 2: '2'}
+194	194		401							{1: '2', 2: '4325'}
+195	195		301							{3: 'Slither, slither...'}
+196	196		402							{1: '4325'}
+197	197		301							{3: 'There is no response to the communication attempt. Only the deep background noise from the Big Bang resonates in your communication module.'}
+198	198	207	505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFunction.prefab'}
+199	199		401						250.0	{1: '2', 2: '4325'}
+200	200		201							{1: '1', 2: '500039', 3: '7'}
+201	201		402							{1: '4325'}
+202	202		301							{1: '1', 2: 'Nanami', 3: 'Huh? Are you calling for me?', 4: '1'}
+203	203		204							{1: '1'}
+204	204		301							"{2: 'Nanami', 3: ""Wait. I'm gonna finish eating real soon..."", 4: '1'}"
+205	205		202							{1: '1'}
+206	206	207	301							{3: 'An unexpected response echoes from within the room.'}
+207	207		301							"{3: ""While you can't contact the Nanami who is conducting the simulation with you, surprisingly, Little Nanami seems able to hear your actual voice.""}"
+208	208		301				AniZhuanchangBegin			"{3: ""The misaligned consciousness anchor point seems to have connected to Little Nanami's M.I.N.D.""}"
+209	209		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory706.jpg'}
+210	210		301			AniZhuanchangEnd				{3: 'After a joyful afternoon of playing with her new robot friend, Nanami drifts into a deep sleep in the rocking chair. Before you catch your breath in your mechanical shell, you find yourself and Nanami picked up by someone.'}
+211	211		201							{1: '2', 2: '501083'}
+212	212		301							"{1: '1', 2: ""Nanami's Father"", 3: ""Now, let's take a good look at you..."", 4: '2'}"
+213	213		401							{1: '2', 2: '1506'}
+214	214		301							"{3: ""He unscrews the little robot's parts with practiced precision. Having a part of your body forcibly removed is far from pleasant.""}"
+215	215		302							{2: '(Voice protest)', 3: '216', 4: '(Remain silent)', 5: '221'}
+216	216		401							{1: '2', 2: '4325'}
+217	217		301							{3: 'Beep—'}
+218	218		402							{1: '4325'}
+219	219		301							{3: 'Your voice module emits a disgruntled white noise.'}
+220	220	221	301							"{2: ""Nanami's Father"", 3: ""There, there, it's just a routine check... Wait, why am I talking to a robot like this?"", 4: '2'}"
+221	221		301							"{2: ""Nanami's Father"", 3: 'Chip functionality normal... Base protocols normal... Logic circuits...', 4: '2'}"
+222	222		301							"{2: ""Nanami's Father"", 3: 'Why is the logic circuit overloading?', 4: '2'}"
+223	223		201							{1: '1', 2: '501024', 4: '-400'}
+224	224		201							{1: '2', 2: '501083', 4: '400'}
+225	225		301							"{1: '1', 2: ""Nanami's Mother"", 3: 'Is it because... this robot ""knows"" Nanami?', 4: '1'}"
+226	226		301							"{2: ""Nanami's Father"", 3: 'Is this robot really not from this batch of experimental consciousness?', 4: '2'}"
+227	227		301							"{2: ""Nanami's Mother"", 3: ""I've triple-checked. It's definitely not in there."", 4: '1'}"
+228	228		301							"{2: ""Nanami's Father"", 3: '...', 4: '2'}"
+229	229		301							"{2: ""Nanami's Father"", 3: 'To be on the safe side, we should take it to the laboratory for examination...', 4: '2'}"
+230	230		301							{3: 'Laboratory? What kind of place is that?'}
+231	231		301							"{2: ""Nanami's Father"", 3: ""Alright, let's power down this robot first..."", 4: '2'}"
+232	232		301				AniZhuanchangBegin			"{3: ""The world around you goes pitch-black before you even have time to process what's happened.""}"
+233	233		401							{1: '1', 2: '36'}
+234	234		502							{1: 'DialogDisable'}
+235	235		202							{1: '1', 2: '2'}
+236	236		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+237	237		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory584.jpg'}
+238	238		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '3'}
+239	239		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+240	240		401							{1: '1', 2: '278'}
+241	241		502							{1: 'DialogEnable'}
+242	242		301			AniZhuanchangEnd				{3: 'Being forcibly powered on feels uncomfortable.'}
+243	243		301							{3: 'Like being yanked upright from a dreamless sleep, you feel like your consciousness refuses to settle, like scattered fragments drifting in a haze.'}
+244	244		301							"{2: '????', 3: ""No... this isn't the mechanical consciousness we sent out before.""}"
+245	245		201							{1: '1', 2: '501024'}
+246	246		301							"{1: '1', 2: ""Nanami's Mother"", 3: 'Then what is...', 4: '1'}"
+247	247		301							{2: '????', 3: '...'}
+248	248		301							{3: 'The murmur coming from outside the scope of your monitor falls into a brief silence.'}
+249	249		301							"{2: '????', 3: 'Other than ""Nanami hears robots talking"", has this robot done anything else weird?'}"
+250	250		301							"{2: ""Nanami's Mother"", 3: ""Its logic circuits are overloaded, but this robot's computing power shouldn't be capable of such calculations in the first place..."", 4: '1'}"
+251	251		301							{2: '????', 3: 'Logic circuit overload, huh...'}
+252	252		301							{2: '????', 3: 'I see.'}
+253	253		301							"{2: ""Nanami's Mother"", 3: 'Dominik, I remember you talking about a certain mechanoid before. Could this one be...', 4: '1'}"
+254	254		202							{1: '1'}
+255	255		302							{2: 'Dominik?', 3: '256'}
+256	256		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+257	257		301							{3: 'You snap to attention hearing the name.'}
+258	258		301							{3: 'This person standing right outside the scope of your monitor... is the famous Dominik?'}
+259	259		302							{2: 'Dominik!', 3: '260'}
+260	260		401							{1: '2', 2: '1509'}
+261	261		301							{3: 'Beep—'}
+262	262		301							{3: 'White noise emanates from your sound module, yet the people around you fall silent once again.'}
+263	263		201							{1: '1', 2: '501024'}
+264	264		301							"{1: '1', 2: ""Nanami's Mother"", 3: '...Dominik?', 4: '1'}"
+265	265		301							"{2: 'Dominik', 3: ""...Go and check Nanami's test data first.""}"
+266	266		301							"{2: ""Nanami's Mother"", 3: 'But this robot...', 4: '1'}"
+267	267		301							"{2: 'Dominik', 3: ""I'm sorry. What I mean is that this mechanoid is very special. It might be one of the experimental consciousnesses that I let out before.""}"
+268	268		301							{2: 'Dominik', 3: 'We need to keep the next data experiment confidential...'}
+269	269		301							{3: 'Says Dominik in a strained tone of voice.'}
+270	270		301							"{2: ""Nanami's Mother"", 3: 'I see...', 4: '1'}"
+271	271		202							{1: '1'}
+272	272		401							{1: '2', 2: '4902'}
+273	273		301							{3: 'A chair scrapes against the floor as the man known as Dominik dismisses the female researcher beside him. Outside the monitoring room, only his breathing remains audible.'}
+274	274		302							{2: '...Dominik?', 3: '275'}
+275	275		401							{1: '2', 2: '4897'}
+276	276		301							{3: 'Your sound module continues to emit crackling white noise, grating and unpleasant.'}
+277	277		402							{1: '4325'}
+278	278		401							{1: '2', 2: '911'}
+279	279		301							{3: 'From across the room comes the sound of the tip of a pen scratching against paper, over and over. The man seems to be wrestling with intense agitation.'}
+280	280		301							{3: 'After a long moment, a heavy voice emerges from the monitor.'}
+281	281		301							"{2: 'Dominik', 3: ""You shouldn't be here... Why are you appearing at this point in time...?""}"
+282	282		301							{3: 'This makes no sense... So I guess this means it failed?'}
+283	283		301							{3: 'After the silence, you struggle to produce a sound.'}
+284	284		302							{2: 'What are you talking about?', 3: '285', 4: 'Dominik?', 5: '285'}
+285	285		402							{1: '911'}
+286	286		301							{3: 'A response comes through, and as if confirming his suspicions, the sound of paper rustling from across the room gradually dies down.'}
+287	287		301							{2: 'Dominik', 3: 'I apologize for losing my composure... I just never thought you would actually appear.'}
+288	288		301							"{2: 'Dominik', 3: ""According to my plan, the obstacles should have been cleared, the contaminating memetic should not have manifested, and naturally, you wouldn't have appeared here...""}"
+289	289		302							{2: 'The... what?', 3: '290'}
+290	290		301							"{2: 'Dominik', 3: 'But why are you here... Your presence means that what ""<phonetic=The Primordial One>Dominik</phonetic>"" had once foreseen must have already happened.'}"
+291	291		301							{3: 'He falls silent for a moment.'}
+292	292		301							"{2: 'Dominik', 3: ""You... you must be a Wanderer who's traveled here from far in the future.""}"
+293	293		302							{2: 'A Wanderer?', 3: '294'}
+294	294		301							{3: 'Hearing the response, Dominik lets out a long sigh.'}
+295	295		302							{2: 'What in the world is going on?', 3: '296'}
+296	296		302							"{2: ""So why didn't you..."", 3: '297'}"
+297	297		301							"{2: 'Dominik', 3: ""Why didn't you stop any of this?""}"
+298	298		301							"{2: 'Dominik', 3: 'I\'m sorry, I... I don\'t have that kind of power. Or rather, ""I"" am no longer the person that I once was...'}"
+299	299		302							{2: '...', 3: '300'}
+300	300		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+301	301		401							{1: '2', 2: '2959'}
+302	302		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+303	303		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_41.jpg'}
+304	304		301				AniZhuanchangBegin			"{3: ""Vonnegut's face, covered in cracks, flashes through your mind.""}"
+305	305		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory584.jpg'}
+306	306		301			AniZhuanchangEnd				"{2: 'Dominik', 3: 'To be precise, I\'m merely the ""heir"" chosen by ""<phonetic=The Primordial One>Dominik</phonetic>"". I opened the invitation and inherited the name, but I have no idea where the actual Dominik is.'}"
+307	307		301							"{2: 'Dominik', 3: 'All I know is... the <phonetic=Punishing Virus>contaminating memetic</phonetic> is destined to arrive. Every ""Dominik"" throughout history has tried but failed to stop what\'s coming.'}"
+308	308		301							"{2: 'Dominik', 3: 'Your presence here, coupled with the fact that ""<phonetic=The Primordial One>Dominik</phonetic>"" hasn\'t sent any messages for so long... would seem to mean that ""I,"" too, have failed.'}"
+309	309		301							{3: 'He laughs self-deprecatingly.'}
+310	310		301							{2: 'Dominik', 3: 'When I opened the invitation, I inherited countless pieces of knowledge, but with them came countless curses.'}
+311	311		301							"{2: 'Dominik', 3: ""As time passes, I'm no longer sure if I'm still truly myself, or if perhaps... I've already become Dominik himself.""}"
+312	312		302							{2: 'You are not a failure.', 3: '313'}
+313	313		301							{2: 'Dominik', 3: '...I am a complete and utter failure.'}
+314	314		301							"{2: 'Dominik', 3: ""<phonetic=Dominik>We</phonetic> developed Gestalt, initiated Project Eden, delayed the contaminating memetic's arrival in this world, but...""}"
+315	315		301							"{2: 'Dominik', 3: ""It's meant to be.""}"
+316	316		301							{3: 'The intermittent signals from unknown locations all convey the same message: the crisis has never been averted.'}
+317	317		301							{3: 'The crimson tower will eventually descend, and this peaceful land, this age of gold and wine, will eventually be swallowed by the waves.'}
+318	318		301							{2: 'Dominik', 3: 'Perhaps our very arrival to this place... was a mistake itself.'}
+319	319		301							{3: 'As the man on the other side of the monitor appears to be pulling at his hair in agony, the soft sound of strands rustling carries through.'}
+320	320		301							{2: 'Dominik', 3: 'Right or wrong? Did <phonetic=Dominik>we</phonetic> help this era, or did we destroy it?'}
+321	321		301							{2: 'Dominik', 3: 'What in the world did <phonetic=Dominik>we</phonetic>...'}
+322	322		301							{3: 'An agonized growl erupts from his throat like molten magma and seeps from the corners of his mouth with each breath, his flesh seemingly having been wrung into liquid.'}
+323	323		302							{2: '...', 3: '324'}
+324	324		301							"{3: 'No one can judge the merits and sins of ""Dominik"".'}"
+325	325		302							"{2: 'Is ""Dominik"" truly in the Fog?', 3: '326'}"
+326	326		301							{2: 'Dominik', 3: '...I apologize for losing my composure.'}
+327	327		301							"{3: ""Having crystallized into light, time crawls across the monitor screen. It isn't until you speak again that the heavy breathing from the other side of the monitor finally subsides.""}"
+328	328		301							"{2: 'Dominik', 3: 'You probably have a lot of questions, but most of them I cannot answer. From ""Dominik"", I inherited only cursed knowledge.'}"
+329	329		301							{2: 'Dominik', 3: 'He entered the Hetero Tower to retrieve its Core but never came out.'}
+330	330		301							"{2: 'Dominik', 3: 'Analyzing the Hetero Tower\'s Core might be the final solution—this was the message ""he"" passed on.'}"
+331	331		301							"{2: 'Dominik', 3: 'In the future... when I truly ""find"" Dominik, I, too, will store my ""knowledge"" within the invitation.'}"
+332	332		301							{2: 'Dominik', 3: 'Complete digitization of the mind... perhaps that is true liberation after all.'}
+333	333		302				DialogDisable			{2: '...', 3: '334'}
+334	334		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+335	335		401							{1: '2', 2: '2711'}
+336	336		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+337	337		307							"{1: '""Dominik"", ""Memory Collective"", ""Invitation""...', 3: '60'}"
+338	338		301				AniZhuanchangBegin			"{3: '""Dominik"", ""Memory Collective"", ""Invitation""...'}"
+339	339		307							{2: '1'}
+340	340		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory584.jpg'}
+341	341		301			DialogEnable				"{2: 'Dominik', 3: ""Anyhow, I'm not going to give up.""}"
+342	342		301							"{2: 'Dominik', 3: ""Even if Dominik's name fades into the annals of history, hopefully there will be people down the road who can guide human civilization toward the distant sea of stars.""}"
+343	343		301							"{2: 'Dominik', 3: ""I will keep trying what I haven't and keep seeking new directions, like... the mechanical consciousness experiment.""}"
+344	344		302				AniZhuanchangBegin			{2: '...Nanami?', 3: '345'}
+345	345		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz301.jpg'}
+346	346		301			AniZhuanchangEnd				{2: 'Dominik', 3: 'You must have met her by now, right? An adorable child she is.'}
+347	347		302				AniZhuanchangBegin			{2: 'You were the one who created Nanami...', 3: '348'}
+348	348		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory584.jpg'}
+349	349		301			AniZhuanchangEnd				{2: 'Dominik', 3: 'I selected multiple mechanoids equipped with different levels of AI and conducted morphological control experiments in groups in an attempt to give birth to true consciousness within them.'}
+350	350		301							"{2: 'Dominik', 3: ""Absurd, isn't it... I mean, can machines truly possess a soul?""}"
+351	351		301							{3: 'He lets out a couple of bitter laughs.'}
+352	352		302							{2: '...', 3: '353', 4: 'You succeeded.', 5: '353'}
+353	353		301							"{2: 'Dominik', 3: ""Whether this experiment succeeds or fails, I hope it can serve as kindling in humanity's journey forward.""}"
+354	354		301							"{3: ""May the kindling pile higher, and may civilization's flame burn longer.""}"
+355	355		301							"{2: 'Dominik', 3: ""Well... we're running out of time.""}"
+356	356		401							{1: '2', 2: '4434'}
+357	357		301							{3: 'The rustle of fabric breaks the silence as the person on the other side of the monitor prepares to leave.'}
+358	358		302							{2: 'Dominik, wait!', 3: '359'}
+359	359		301							{2: 'Dominik', 3: '...'}
+360	360		301							"{2: 'Dominik', 3: ""I'm sorry.""}"
+361	361		301							{3: 'He speaks gently.'}
+362	362		301							"{2: 'Dominik', 3: ""Truth is... I've never understood what you were saying.""}"
+363	363		301							"{2: 'Dominik', 3: 'Every conversation we had was merely my simulation based on ""your arrival."" Your anchor point in this space-time isn\'t tied to me, which is why I cannot understand what you say.'}"
+364	364		301							"{2: 'Dominik', 3: ""Thank you for listening to this old madman's ramblings for so long.""}"
+365	365		301							{2: 'Dominik', 3: 'If you do really know Nanami, then I shall continue to entrust you to her care.'}
+366	366		301							{2: 'Dominik', 3: 'Maybe...'}
+367	367		301				AniZhuanchangBegin			"{3: ""He hasn't finished speaking.""}"
+368	368		502							{1: 'DialogDisable'}
+369	369		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+370	370		301			DialogEnable				"{3: '""Think of me as nothing but a coward who chose to hide behind the monitor.""'}"
+371	371		301							"{3: ""I don't want to leave any trace of my appearance in history.""}"
+372	372		301				AniZhuanchangBegin			"{3: '""Let me, a harbinger of calamity, leave nothing but an unmarked epitaph.""'}"
+373	373		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory705.jpg'}
+374	374		301			AniZhuanchangEnd				{3: 'Some time has passed since you returned from the research institute.'}
+375	375		301							"{3: ""Under Dominik's guidance, Nanami's parents naturally came to accept the presence of the robot.""}"
+376	376		201							{1: '1', 2: '500039'}
+377	377		301							{1: '1', 2: 'Nanami', 3: '【kuroname】! Look! I drew this whale today!', 4: '1'}
+378	378		301							"{3: ""The drawing shows a meticulous reproduction of a bionic whale's skeletal structure and mechanical components.""}"
+379	379		302							"{2: ""Nanami, whales don't look like this."", 3: '381'}"
+380	380		301							{2: 'Nanami', 3: 'Eh? But the whales Nanami saw in my terminal looked just like this...', 4: '1'}
+381	381		301							"{3: 'As Nanami\'s parents once said, her innocence and liveliness appear to be merely default settings of her being a ""companion-type mechanical consciousness,"" programmed to fulfill her role as a companion.'}"
+382	382		301							{2: 'Nanami', 3: 'Whales... Whales...', 4: '1'}
+383	383		301							{3: 'The sprout of her soul takes root within her M.I.N.D., yet the mechanical circuits loom like heavy boulders, crushing its tender branches.'}
+384	384		301							{2: 'Nanami', 3: 'What do whales... really look like...', 4: '1'}
+385	385		301							{3: 'Her small, delicate hand clutches the brush as confusion clouds her face.'}
+386	386		302							{2: 'Have you ever seen the ocean?', 3: '387'}
+387	387		301							"{2: 'Nanami', 3: 'Nanami has seen it in virtual reality! The ocean is blue, and it\'s Earth\'s largest body of water. Its central regions are called ""oceans,"" while the edges are called ""seas."" Together, they cover approximately 70% of the planet\'s surface...', 4: '1'}"
+388	388		301							"{3: 'She rattles off a long string of pre-programmed ""answers"" from her neural network.'}"
+389	389		204							{1: '1', 2: '1'}
+390	390		301				DialogDisable			"{2: 'Nanami', 3: ""That's it! Do I get a gift for reciting those facts?"", 4: '1'}"
+391	391		202							{1: '1'}
+392	392		302				AniZhuanchangBegin			"{2: ""What you just said isn't entirely correct, though."", 3: '393'}"
+393	393		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory782.jpg'}
+394	394		301			DialogEnable	AniZhuanchangBegin			"{3: ""The ocean isn't just a body of water—it takes on the colors of the sunset and storm clouds alike.""}"
+395	395		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory783.jpg'}
+396	396		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'At night, it mirrors the moon and stars above; at dawn, it wraps itself in a gentle mist.'}
+397	397		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory705.jpg'}
+398	398		201							{1: '1', 2: '500039'}
+399	399		301			AniZhuanchangEnd				{1: '1', 2: 'Nanami', 3: 'Ah...', 4: '1'}
+400	400		301							"{3: 'Nanami listens to your ""explanation"" with growing uncertainty.'}"
+401	401		204							{1: '1', 2: '1'}
+402	402		301							{2: 'Nanami', 3: 'Is this how you, 【kuroname】, see the world?', 4: '1'}
+403	403		302							"{2: 'Yes.', 3: '404', 4: ""There's more to it than that."", 5: '404'}"
+404	404		301							{3: 'Mechanoids are designed and created with a predetermined purpose—brought into existence with a mission.'}
+405	405		301							{3: 'Unlike machines, humans are born without any predetermined purpose.'}
+406	406		301							"{3: ""It's precisely because we start with no purpose that humans can rely on their most basic emotions to discover, explore, and give meaning to the world around them.""}"
+407	407		204							{1: '1'}
+408	408		301							{2: 'Nanami', 3: 'The ocean... I never knew it could be so wonderful!', 4: '1'}
+409	409		301							{3: 'Within her mechanical circuits, something shifts—like a sprout breaking through stones, new understanding begins to grow.'}
+410	410		301							"{2: 'Nanami', 3: ""Nurturing life, transcending time... Hmm, these concepts are still a bit beyond Nanami's understanding."", 4: '1'}"
+411	411		302							"{2: ""It's okay."", 3: '412'}"
+412	412		301							"{3: 'For a mechanoid to develop a ""soul,"" they need more than experiments, data analysis, and enlightenment—they need love, too.'}"
+413	413		301							{3: 'Only when given enough love can they grow into something more, take their first steps, and learn to observe, think, and explore.'}
+414	414		301				AniZhuanchangBegin			{2: 'Nanami', 3: 'Now then, could you tell Nanami what whales look like through your eyes, 【kuroname】?', 4: '1'}
+415	415		202							{1: '1'}
+416	416		504							{1: '0.8'}
+417	417		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2701_17.jpg'}
+418	418		301			AniZhuanchangEnd				{2: 'Nanami', 3: 'I went to the aquarium with Dad and Mom!', 4: '1'}
+419	419		301							{2: 'Nanami', 3: 'Nanami saw a very large bionic whale and a very large bear.', 4: '1'}
+420	420		301							"{2: 'Nanami', 3: ""It's different when you see the real thing with your own eyes. Not to mention that Nanami wants to visit it with you, Haicma!"", 4: '1'}"
+421	421		301				AniZhuanchangBegin			{2: 'Nanami', 3: 'Wait! Nanami can also draw the things she saw and show you!', 4: '1'}
+422	422		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+423	423		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'Originally, their drawings were all amalgamations of pictures from their image database.'}
+424	424		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2701_05.jpg'}
+425	425		301			AniZhuanchangEnd				"{3: ""At some point, Nanami's drawings began to show obvious changes. She started to draw according to her personal preferences.""}"
+426	426		301							{3: 'She even tried to express her feelings with her drawings.'}
+427	427		301				AniZhuanchangBegin			{3: '...'}
+428	428		502							{1: 'DialogDisable'}
+429	429		504							{1: '0'}
+430	430		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory705.jpg'}
+431	431		301			DialogEnable				{3: 'Time slips away like grains of sand as days and nights pass in an endless blur.'}
+432	432		301							"{3: ""You've tried countless times to reach out to the adult Nanami, but to no avail.""}"
+433	433		201							{1: '1', 2: '500039'}
+434	434		301							{1: '1', 2: 'Nanami', 3: '【kuroname】! The flower we planted together is starting to sprout!', 4: '1'}
+435	435		301							"{2: 'Nanami', 3: ""I gave this flower a name—I'm calling it 【kuroname】!"", 4: '1'}"
+436	436		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+437	437		401							{1: '2', 2: '4419'}
+438	438		301							{2: '??', 3: 'Comman... dant...'}
+439	439		402							{1: '4419'}
+440	440		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+441	441		301							{3: 'A voice emerges intermittently from your Mind Beacon as a long-dormant light begins to flicker once more.'}
+442	442		302							{2: 'Nanami?!', 3: '443'}
+443	443		204							{1: '1', 2: '7'}
+444	444		301							{2: 'Nanami', 3: 'Huh... 【kuroname】?', 4: '1'}
+445	445		301							{3: 'Little Nanami looks at you with confusion.'}
+446	446		401							{1: '1', 2: '36'}
+447	447		202							{1: '1'}
+448	448		301							{2: '??', 3: 'Com—man—dant—!'}
+449	449		301							{3: 'You can now hear the voice loud and clear...'}
+450	450		401							{1: '1', 2: '386'}
+451	451		302							{2: 'Nanami! Where are you?!', 3: '452'}
+452	452		201							{1: '18', 2: '501085'}
+453	453		301							{1: '1', 2: 'Nanami', 3: 'Commandant!', 4: '18'}
+454	454		202							{1: '18', 6: '1'}
+455	455		201							{1: '1', 2: '501085'}
+456	456		301							{1: '1', 3: 'A faint silken tear echoes from the corner as a subtle starry sky begins to shimmer in the air.'}
+457	457		204							{1: '1', 2: '2'}
+458	458		301				AniZhuanchangBegin			"{2: 'Nanami', 3: ""I'm the winner of hide-and-seek this time!"", 4: '1'}"
+459	459		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+460	460		301			AniZhuanchangEnd				{3: 'Covered in wounds all over, Nanami flashes a big smile.'}
+461	461		301				AniZhuanchangBegin			"{3: ""Breaking through the timeline's barriers to reach this place has taken a heavy toll on Nanami. Though she doesn't complain, the numerous wounds covering her frame are a testament to her determination.""}"
+462	462		202							{1: '1'}
+463	463		502							{1: 'DialogDisable'}
+464	464		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory705.jpg'}
+465	465		301			DialogEnable				"{3: 'After a brief rest and repair, Nanami quickly readies herself to move on to the next ""world.""'}"
+466	466		201							{1: '1', 2: '501085', 3: '4'}
+467	467		301							"{1: '1', 2: 'Nanami', 3: ""We can't wait any longer—it's been too long already. If this goes on, your body back on Earth is going to crash."", 4: '1'}"
+468	468		302							"{2: ""But we haven't even taken care of your wounds..."", 3: '469'}"
+469	469		204							{1: '1'}
+470	470		301							"{2: 'Nanami', 3: ""Don't worry! These wounds ain't got nothing on me!"", 4: '1'}"
+471	471		201							{1: '1', 2: '500039'}
+472	472		301							{1: '1', 2: 'Little Nanami', 3: 'Are you... going to leave now?', 4: '1'}
+473	473		202							{1: '1'}
+474	474		301							{3: 'In her innocent confusion, Little Nanami appears to have learned how to think for herself.'}
+475	475		301							"{3: ""Under Nanami and your guidance, she has discovered countless new things, and she... doesn't want these two interesting people to leave.""}"
+476	476		302							"{2: ""Yes, but don't worry."", 3: '477'}"
+477	477		302							"{2: ""We'll see each other again in the future."", 3: '478'}"
+478	478		201							{1: '1', 2: '500039', 4: '-400'}
+479	479		201							{1: '2', 2: '501085', 4: '400'}
+480	480		301							"{1: '1', 2: 'Little Nanami', 3: ""The future... but when's that going to be?"", 4: '1'}"
+481	481		204							{1: '2', 2: '2'}
+482	482		301							"{2: 'Nanami', 3: ""It won't be too long, but it won't be short, either. We'll definitely meet again someday, though!"", 4: '2'}"
+483	483		204							{1: '1', 2: '7'}
+484	484		301							{2: 'Little Nanami', 3: 'What should I do when I miss you guys, then?', 4: '1'}
+485	485		204							{1: '1'}
+486	486		204							{1: '2', 2: '12'}
+487	487		301							"{2: 'Little Nanami', 3: ""It's been so long since I last made a new friend..."", 4: '1'}"
+488	488		302							{2: '...', 3: '489'}
+489	489		302							{2: 'When you miss us, just look up at the stars.', 3: '490'}
+490	490		301							{2: 'Little Nanami', 3: 'The stars...', 4: '1'}
+491	491		301							{2: 'Little Nanami', 3: 'Can stars talk, too? Like you guys?', 4: '1'}
+492	492		204							{1: '2', 2: '3'}
+493	493		301							{2: 'Nanami', 3: '...Of course!', 4: '2'}
+494	494		301							"{2: 'Nanami', 3: ""But you'll probably find it difficult to hear them since they're so far away!"", 4: '2'}"
+495	495		301							"{2: 'Nanami', 3: ""But no matter how far away they are, if you just listen with your heart... you'll always hear what the stars have to say."", 4: '2'}"
+496	496		204							{1: '1', 2: '2'}
+497	497		301							{2: 'Little Nanami', 3: '...Yes! Nanami will try her very best!', 4: '1'}
+498	498		204							{1: '1', 2: '1'}
+499	499		301							{2: 'Little Nanami', 3: 'Um... here, this is for you!', 4: '1'}
+500	500		401							{1: '2', 2: '4044'}
+501	501		203						250.0	{1: '1', 2: '0.25', 3: '-400', 4: '-150', 5: '-200'}
+502	502		203							{1: '1', 2: '0.25', 3: '-400', 4: '-100', 5: '-200'}
+503	503		301				AniZhuanchangBegin			{3: 'She stands on her tiptoes and places a simple flower crown on your head.'}
+504	504		202							{1: '1', 2: '2'}
+505	505		502							{1: 'DialogDisable'}
+506	506		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg5001_19.jpg'}
+507	507		104							{1: '150|-100|-100', 2: '5'}
+508	508		301			DialogEnable				{2: 'Little Nanami', 3: 'These are the flowers we planted together, and this one is 【kuroname】!'}
+509	509		301							{2: 'Little Nanami', 3: 'This one is Little Nanami, and this one is Big Nanami...'}
+510	510		301							{2: 'Little Nanami', 3: 'Best friends should stay together forever!'}
+511	511		301							{3: 'The cat at her feet stretches lazily and paws at your robotic legs.'}
+512	512		301							{3: 'Warm sunlight bathes the courtyard as Nanami stands beneath the eaves, squinting at her younger self.'}
+513	513		301							{3: 'Was there really a robot like this... when she was just a kid?'}
+514	514		301							"{3: ""She can't quite remember anymore—her childhood memories seem to have degraded many times over, but...""}"
+515	515		301							"{3: ""Let's just say it all actually happened.""}"
+516	516		301							{3: 'She has a happy family—a father, a mother, Mimi, and a friend called 【kuroname】.'}
+517	517		301		1		AniZhuanchangBegin			{3: 'This is wonderful.'}

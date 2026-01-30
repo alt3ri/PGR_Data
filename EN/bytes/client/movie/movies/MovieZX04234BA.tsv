@@ -1,0 +1,229 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '365'}
+3	3		107			DialogEnable			3000.0	{1: 'Kowloong', 2: 'November 10, 05:35', 4: 'Before the Huaxu reset and the full-sector self-check in the Tabula Akasha data layer', 5: '1200m under Kowloong, Physical Layer of Tabula Akasha'}
+4	4		108							{1: '1'}
+5	5		304							"{1: '""These were the longest thirty-eight minutes of my life.""', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 10: '1'}"
+6	6		304							"{1: '""It took the scientists thirty-three minutes to begin the Huaxu reset and complete the preparations.""', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 10: '1'}"
+7	7		304							"{1: '""During those thirty-three minutes, the living and the dead coexisted.""', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 10: '1'}"
+8	8		304							"{1: '""The problem was, when they finished preparing to reset Huaxu,', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 10: '1'}"
+9	9		304							"{1: 'no one could make the final decision, and no one could pull the final trigger.""', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 10: '1'}"
+10	10		304							"{1: '""Because once Huaxu was reset, it would expose all of Tabula Akasha\'s data to the Punishing Virus.""', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 10: '1'}"
+11	11		304							"{1: '""Leaving everything in Kowloong, all that remained, defenseless for those five minutes.""', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 10: '1'}"
+12	12		304							"{1: '""We don\'t want others to decide our fate; the people of Kowloong will take fate into our own hands.""', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 10: '1'}"
+13	13		304				AniZhuanchangBegin			"{1: '""And just at that moment, something unexpected happened...""', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 9: '1', 10: '1'}"
+14	14		502						400.0	{1: 'DialogDisable'}
+15	15		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory865.jpg'}
+16	16		201							{1: '1', 2: '500144'}
+17	17		301			DialogEnable				{1: '1', 2: 'Chaofeng', 3: 'No way! Absolutely not!', 4: '1'}
+18	18		301							"{2: 'Chaofeng', 3: ""You're not completely sure about this. And remember, we're still inside the Tabula Akasha. If we expose all our systems to the enemy, it's like walking right into a trap."", 4: '1'}"
+19	19		202							{1: '1', 6: '1'}
+20	20		201							{1: '2', 2: '500215', 7: '1'}
+21	21		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryShuju.prefab', 2: '2', 3: '2'}
+22	22		301							"{1: '1', 2: 'Villier', 3: ""So what? You think you can survive on your own? You're outnumbered."", 4: '2'}"
+23	23		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryShuju.prefab', 4: '2'}
+24	24		202							{1: '2', 6: '1'}
+25	25		201							{1: '1', 2: '500004', 7: '1'}
+26	26		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+27	27		301							"{1: '1', 2: 'Asimov', 3: ""There's another issue. If, like 【kuroname】 mentioned, an external signal has already infiltrated Huaxu, will resetting Huaxu fix that problem?"", 4: '1'}"
+28	28		301							"{2: 'Asimov', 3: ""The intruder could even reverse-engineer the Mind Beacon of 【kuroname】 using Huaxu. If 【kuroname】 hadn't been able to resist Huaxu's control, we wouldn't even be here discussing this."", 4: '1'}"
+29	29		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+30	30		202							{1: '1', 6: '1'}
+31	31		201							{1: '2', 2: '500635', 3: '15', 7: '1'}
+32	32		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '2'}
+33	33		301							"{1: '1', 2: 'Zavier', 3: 'But the conclusion is... ""he"" is here.', 4: '2'}"
+34	34		301							"{3: ""Zavier's voice tinged with disappointment, as if he felt betrayed.""}"
+35	35		301							"{2: 'Zavier', 3: 'And I\'ve already said, ""he"" isn\'t just some simple malicious code.', 4: '2'}"
+36	36		301							"{3: 'After analyzing the Huaxu network packets intercepted by Asimov and comparing them with the recent attacks on Gestalt, Zavier confirmed the identity of the ""malicious"" entity lurking in the shadows.'}"
+37	37		301							"{3: ""It's Schulz, the one who betrayed Hanying.""}"
+38	38		301							"{3: ""According to Villier's analysis, this mechanoid isn't just carrying its own code. It also has a bit of code that's related to Gestalt.""}"
+39	39		301							"{3: ""That's also why Asimov couldn't find the reason for the recent attacks on Gestalt—he couldn't come to the bizarre conclusion that Gestalt was attacking itself.""}"
+40	40		301							"{3: 'Most importantly, Villier, now a data consciousness, has confirmed that ""Schulz"" also originated from the Gestalt project decades ago.'}"
+41	41		301							"{2: 'Zavier', 3: 'If conditions permit, ""he"" can continually rewrite himself, reset to default, change his form, and even take over machines with lower intelligence levels.', 4: '2'}"
+42	42		301							"{2: 'Zavier', 3: 'Maybe ""he"" hurt Hanying just for his twisted amusement because ""he"" has always hated humans.', 4: '2'}"
+43	43		301							"{2: 'Zavier', 3: 'Moreover, ""he"" can also transmit his source code to other controllable machines through the electromagnetic signals from explosions, slowly infiltrating your underground city...', 4: '2'}"
+44	44		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+45	45		202							{1: '2', 6: '1'}
+46	46		201							{1: '1', 2: '500215', 7: '1'}
+47	47		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryShuju.prefab', 2: '2', 3: '1'}
+48	48		301							{1: '1', 2: 'Villier', 3: 'In conclusion, that anomaly is just a piece of code.', 4: '1'}
+49	49		301							{2: 'Villier', 3: 'Why did we miss this despicable scum when we were deleting data...', 4: '1'}
+50	50		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryShuju.prefab', 4: '1'}
+51	51		202							{1: '1', 6: '1'}
+52	52		201							{1: '2', 2: '500004', 7: '1'}
+53	53		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '2'}
+54	54		301							"{1: '1', 2: 'Asimov', 3: 'If we reset Huaxu without dealing with the identified intruder, there\'s a chance ""he"" could take over Huaxu.', 4: '2'}"
+55	55		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+56	56		202							{1: '2', 6: '1'}
+57	57		201							{1: '1', 2: '500215', 3: '5', 7: '1'}
+58	58		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryShuju.prefab', 2: '2', 3: '1'}
+59	59		301							"{1: '1', 2: 'Villier', 3: ""What do you think I'm doing all the time? Playing house in the database?"", 4: '1'}"
+60	60		301							"{2: 'Villier', 3: ""I'm reconstructing the source code every moment you don't notice!"", 4: '1'}"
+61	61		204							{1: '1'}
+62	62		301							"{3: ""Villier's tone was a bit agitated.""}"
+63	63		301							{3: 'Villier understood that this leftover from the decades-old Gestalt project was closely linked to both him and his mentor, deeply connected to Gestalt itself.'}
+64	64		301							"{3: '""He"" is like a ghost in the cyber world, one that ""doesn\'t exist,"" yet holds the keys to every door.'}"
+65	65		301							{3: 'The terminal on the table with the reset command is the final trigger.'}
+66	66		301							{3: 'But right now, deciding who should make this call, who should pull the trigger, is something no one takes lightly.'}
+67	67		302							"{2: ""Villier, we're just one step away now."", 3: '68'}"
+68	68		302							"{2: ""What's the probability that everyone can leave safely after resetting Huaxu?"", 3: '69'}"
+69	69		301							"{2: 'Villier', 3: 'Even with that robot and this ""Chief Technician"", I think...', 4: '1'}"
+70	70		301							"{2: 'Villier', 3: ""The three of us probably can't rebuild the code as quickly as he can take control of Huaxu from the core."", 4: '1'}"
+71	71		301							"{2: 'Villier', 3: 'Essentially, ""he"" is still a piece of code, and his sequence in the digital world is different from ours...', 4: '1'}"
+72	72		302							{2: 'Just get to the point.', 3: '73'}
+73	73		301							{2: 'Villier', 3: '...', 4: '1'}
+74	74		301							{2: 'Villier', 3: 'Fifty percent.', 4: '1'}
+75	75		301							{3: 'Almost immediately, a wave of disappointment spreads.'}
+76	76		302							"{2: ""It's no different from flipping a coin."", 3: '77'}"
+77	77		301							{2: 'Villier', 3: 'Indeed.', 4: '1'}
+78	78		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryShuju.prefab', 4: '1'}
+79	79		202							{1: '1', 6: '1'}
+80	80		301							{3: 'After a long exhale, he immediately picks up the communication terminal on the table.'}
+81	81		401							{1: '2', 2: '1515'}
+82	82		509						700.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory724.jpg', 2: '1'}
+83	83		302							{2: 'Karenina, can you hear me?'}
+84	84		201							{1: '11', 2: '500494', 3: '4', 4: '-400'}
+85	85		301							{1: '1', 2: 'Karenina', 3: '...Hello?', 4: '11'}
+86	86		302							{2: 'How are things on your end? How much longer will it take?', 3: '87'}
+87	87		301							{2: 'Karenina', 3: 'About thirty minutes.', 4: '11'}
+88	88		204							{1: '11', 2: '5'}
+89	89		301							{2: 'Karenina', 3: 'Hey! Teddy!', 4: '11'}
+90	90		301							{2: 'Karenina', 3: 'Go stop them! Hurry!', 4: '11'}
+91	91		301							"{2: 'Karenina', 3: ""If you can't stop them, at least block them outside for now—"", 4: '11'}"
+92	92		302							"{2: ""What's wrong?"", 3: '93'}"
+93	93		301							{2: 'Karenina', 3: 'The troops that arrived later, they are already setting up domain nodes!', 4: '11'}
+94	94		202							{1: '11', 6: '1'}
+95	95		510							{1: '1', 2: 'Assets/Product/Texture/Image/BgStory/BgStory724.jpg'}
+96	96		301							{2: '???', 3: 'Tell them to take those domain nodes and get out of this city.'}
+97	97		201							{1: '1', 2: '500826', 3: '5'}
+98	98		301							{1: '1', 3: 'A weary figure appears outside the tent, carrying someone on her back, with the equally wounded Pulao by her side.'}
+99	99		301							"{2: 'Qu', 3: ""I'll say it again, tell them to get out of this city."", 4: '1'}"
+100	100		301							{2: 'Qu', 3: 'If Babylonia decides to deploy the Longinus Arsenal against Kowloong, I will take down every single person in Babylonia.', 4: '1'}
+101	101		302							{2: 'Qu?!', 3: '102'}
+102	102		301							{3: 'Qu hands the girl on her back to Pulao and walks straight into the tent.'}
+103	103		301							{2: 'Qu', 3: 'Reset it.', 4: '1'}
+104	104		301				AniZhuanchangBegin			"{2: 'Qu', 3: ""I'll take responsibility."", 4: '1'}"
+105	105		401							{1: '1', 2: '36'}
+106	106		202			DialogDisable			500.0	{1: '1', 6: '1'}
+107	107		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory865.jpg'}
+108	108		107							"{1: 'Kowloong', 2: 'November 10, 05:37', 4: ""Three Minutes before Huaxu's Reset"", 5: '1200m under Kowloong, Physical Layer of Tabula Akasha'}"
+109	109		301							"{3: ""Kowloong, November 10 at 05:37 AM, with just three minutes remaining until Huaxu's reset. This is taking place 1200 meters underground in Kowloong, within the Tabula Akasha physical layer.""}"
+110	110		108							{1: '1'}
+111	111		401							{1: '1', 2: '373'}
+112	112		301			DialogEnable				{3: 'Resetting Huaxu feels less tangible than rebooting the Light Wall.'}
+113	113		301							{3: 'After all, within the Tabula Akasha, Huaxu is an intangible AI—unseen and untouchable.'}
+114	114		301							{3: 'From this hillside, however, the effects of the reset are visible.'}
+115	115		301							{3: 'Memory entities start to bond with the Hetero-Creatures, causing a reaction that slowly breaks down their physical forms. They revert to the Punishing Virus, their original state.'}
+116	116		301							"{3: ""This process doesn't completely destroy the Hetero-Creatures, but it significantly slows their ability to regenerate.""}"
+117	117		301							{3: 'The countless memory entities vanish without a trace, leaving no sign of their existence.'}
+118	118		301							{3: 'The time spent resetting Huaxu is the final respite.'}
+119	119		301							"{3: ""Because what comes next, whether it's fortune or calamity, no one knows.""}"
+120	120		201							{1: '1', 2: '500826', 3: '4'}
+121	121		301							{1: '1', 2: 'Qu', 3: 'Huaxu is being reset.', 4: '1'}
+122	122		301							{2: 'Qu', 3: 'But this is not the ideal outcome yet.', 4: '1'}
+123	123		301							{3: 'The crimson light of Tabula Akasha illuminates the hillside. Qu thrusts a semi-automatic rifle into the dirt before her. Surrounding her are countless shattered weapons.'}
+124	124		301							{3: 'She stands alone amidst the graves of blades and firearms.'}
+125	125		204							{1: '1'}
+126	126		301							{2: 'Qu', 3: 'Do you remember their names?', 4: '1'}
+127	127		302							"{2: ""...I don't."", 3: '128'}"
+128	128		301							"{2: 'Qu', 3: ""You haven't experienced loss yet."", 4: '1'}"
+129	129		301							{2: 'Qu', 3: 'Those who were once everything to you might leave for a while, and they will come back in the end.', 4: '1'}
+130	130		301							{2: 'Qu', 3: 'Until then, the only thing you can do is deceive yourself, until you end up deceiving the world as well.', 4: '1'}
+131	131		302							{2: '...', 3: '132'}
+132	132		301							{2: 'Qu', 3: 'Not just them.', 4: '1'}
+133	133		301							{2: 'Qu', 3: 'Not just Kowloong.', 4: '1'}
+134	134		301							{2: 'Qu', 3: 'But countless lives on this planet.', 4: '1'}
+135	135		301							{2: 'Qu', 3: 'Tabula Akasha will remember their names, forever and always.', 4: '1'}
+136	136		302							{2: 'Are you still clinging to Tabula Akasha?', 3: '137'}
+137	137		301							{2: 'Qu', 3: '...Tell me.', 4: '1'}
+138	138		301							{2: 'Qu', 3: 'Chief, what did you see?', 4: '1'}
+139	139		301							{3: 'Her cold gaze seems to pierce through everything.'}
+140	140		302							{2: 'What...?', 3: '141'}
+141	141		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen03.prefab', 2: '2'}
+142	142		401							{1: '2', 2: '9326036'}
+143	143		301			RImgBg1Shake				{3: 'The next moment, the oppressive weight from her consciousness feels like a mountain pressing down on every nerve.'}
+144	144		302							{2: 'A forced connection?!', 3: '145'}
+145	145		301							"{3: ""There's no sharp pain like when connecting with an Ascendant or Corrupted, nor the searing burn of a tainted Mind Beacon.""}"
+146	146		301							{3: 'Only endless information crashing down like overwhelming waves.'}
+147	147		202							{1: '1', 6: '1'}
+148	148		306							{1: '1'}
+149	149		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+150	150		401							{1: '2', 2: '2764'}
+151	151		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory875.jpg'}
+152	152		101						200.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3601_01.jpg'}
+153	153		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory858.jpg'}
+154	154		101						200.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4201_08.jpg'}
+155	155		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory577.jpg'}
+156	156		101						200.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4201_03.jpg'}
+157	157		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory827.jpg'}
+158	158		101						200.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4201_01.jpg'}
+159	159		101						200.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4201_13.jpg'}
+160	160		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory856.jpg'}
+161	161		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory569.jpg'}
+162	162		101						200.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3201_14.jpg'}
+163	163		101						200.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3401_08.jpg'}
+164	164		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory578.jpg'}
+165	165		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory865.jpg'}
+166	166		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+167	167		201							{1: '1', 2: '500826', 3: '4'}
+168	168		301							{1: '1', 2: 'Qu', 3: 'What did you see?', 4: '1'}
+169	169		202							{1: '1'}
+170	170		306							
+171	171		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory825.jpg', 3: '0', 4: '1', 5: '1'}
+172	172		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+173	173		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory825.jpg'}
+174	174		301							"{3: ""If the state of one's M.I.N.D. mirrors the form of the Construct, then Qu's M.I.N.D. should unfold like an endless expanse of towering mountains.""}"
+175	175		301							{3: 'Each mountain harbors eons of time, evolving and decaying within her consciousness. Deep within these mountains, fiery minerals are born.'}
+176	176		301							{3: 'The echoes of countless lives reverberate among these mountains, carrying their histories, desires, and sorrows.'}
+177	177		301							{3: 'These torrents of information, much like the mountains, exert unrelenting pressure.'}
+178	178		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4201_18.jpg', 3: '0', 4: '1', 5: '1'}
+179	179		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+180	180		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4201_18.jpg'}
+181	181		301							{3: 'And within these mountains stands a figure, guarding graves that are hauntingly alike.'}
+182	182		302							{2: 'Qu?', 3: '183'}
+183	183		301							{3: 'For a moment, the illusion emerged from consciousness overlaps with the Qu standing here.'}
+184	184		301							{3: 'But it vanishes just as quickly as it appears.'}
+185	185		502							{1: 'DialogDisable'}
+186	186		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory856.jpg', 3: '0', 4: '1', 5: '1'}
+187	187		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+188	188		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory856.jpg'}
+189	189		401							{1: '2', 2: '952'}
+190	190		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront4.png', 4: '5'}
+191	191		301			DialogEnable				{3: 'Almost at the same time, another shadow, not belonging to her M.I.N.D., envelops the mountains.'}
+192	192		302							{2: 'This is...', 3: '193'}
+193	193		301							{2: 'Qu', 3: 'You saw him too.', 4: '1'}
+194	194		301							"{2: 'Qu', 3: ""He is the one you're looking for, the entity that has invaded Kowloong besides the Punishing Virus."", 4: '1'}"
+195	195		401							{1: '2', 2: '2959'}
+196	196		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront4.png', 4: '5', 5: '1'}
+197	197		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory865.jpg'}
+198	198		302							"{2: 'Is that the code named ""Schulz""?', 3: '199'}"
+199	199		201							{1: '1', 2: '500826', 3: '4'}
+200	200		301							"{1: '1', 2: 'Qu', 3: ""I don't care what he's called."", 4: '1'}"
+201	201		301							"{2: 'Qu', 3: 'He deliberately showed me his ""plight"" and those revolting tricks.', 4: '1'}"
+202	202		301							{3: 'The other broken blade beside Qu also sinks into the soil of Tabula Akasha.'}
+203	203		301							{2: 'Qu', 3: 'I want him dead. That is what I need to do.', 4: '1'}
+204	204		302							{2: 'Your M.I.N.D. and physical condition are deteriorating.', 3: '205'}
+205	205		301							{3: 'After she came back, Liv and Fuxi from the Nighter carefully examined her to confirm her health.'}
+206	206		301							"{3: ""The conclusion was that Qu's infection with the Punishing Virus was suppressed by an external force, with no signs of losing control.""}"
+207	207		301							{3: 'However, because she was reactivated in an unknown manner, some of her Construct functions remain blocked by the special bullet fired by Duheng.'}
+208	208		301							{2: 'Qu', 3: 'That is no longer your concern.', 4: '1'}
+209	209		302							{2: 'But he is just a piece of code.', 3: '210'}
+210	210		302							"{2: ""We can't kill something from the virtual world in reality."", 3: '211'}"
+211	211		301							{2: 'Qu', 3: 'My fate is to protect Kowloong and Tabula Akasha at all costs.', 4: '1'}
+212	212		301							"{2: 'Qu', 3: ""As is Huaxu's."", 4: '1'}"
+213	213		301							{2: 'Qu', 3: 'I want him dead, whether he has rejected death or truly lived.', 4: '1'}
+214	214		204							{1: '1', 2: '5'}
+215	215		301							{2: 'Qu', 3: 'I... will make it happen.', 4: '1'}
+216	216		204							{1: '1'}
+217	217		401							{1: '2', 2: '2566'}
+218	218		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen03.prefab'}
+219	219		301							{3: 'Suddenly, the oppressive mountains in your consciousness recede as Qu severs the forced connection.'}
+220	220		204							{1: '1', 2: '2'}
+221	221		301							{2: 'Qu', 3: 'You have matured.', 4: '1'}
+222	222		302							{2: 'Hmm?', 3: '223'}
+223	223		204							{1: '1', 2: '5'}
+224	224		301							"{2: 'Qu', 3: ""...No, it's nothing."", 4: '1'}"
+225	225		301							{3: 'Qu turns around, still standing amidst the graves, merging with the shattered Tabula Akasha into an eternal sunset.'}
+226	226		301							{2: 'Qu', 3: 'Remember all of this, 【kuroname】. Remember me, remember us.', 4: '1'}
+227	227		301							{2: 'Qu', 3: 'This is the last thing you can do here.', 4: '1'}
+228	228		301		1		AniZhuanchangBegin			{2: 'Qu', 3: 'What happens next, Kowloong must handle on its own.', 4: '1'}

@@ -1,0 +1,389 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory6.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				"{3: ""Staying around Bianca as you've been told, you carefully set foot in the church—where she grew up as a child.""}"
+4	4		302							"{2: ""Let's check and see if there is any activity signal coming from around the corridor."", 3: '5'}"
+5	5		211							{1: '1', 2: '1021012', 3: '7'}
+6	6		301							{1: '1', 2: 'Bianca', 3: 'I did and found nothing, and we have a low infection rate here, too. But...', 4: '101', 18: '100001752', 19: '1'}
+7	7		301							{3: 'With it, Bianca holds up the Phantom Tracer in her hand, looking disturbed.'}
+8	8		509							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory7.jpg', 2: '1'}
+9	9		212							{1: '1', 6: '1'}
+10	10		401							{1: '2', 2: '2567'}
+11	11		301							{3: 'Slowly, the figures on the device sharpen into view, showing all of you with your hands on the door around the corridor.'}
+12	12		211							{1: '1', 2: '1021005', 3: '1', 4: '500', 7: '1'}
+13	13		211							{1: '2', 2: '1021005', 3: '1', 4: '-500', 7: '1'}
+14	14		301				DialogDisable			{1: '1', 2: 'Moony', 3: 'There is Adeline and... another me?', 4: '101', 18: '100001753', 19: '1'}
+15	15		302							"{2: ""Don't worry. These are just virtual images of the past."", 3: '16'}"
+16	16		212							{1: '1', 2: '2', 6: '1'}
+17	17		510						800.0	{1: '2', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory6.jpg'}
+18	18		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+19	19		211							{1: '1', 2: '1021005', 3: '1', 4: '-400', 7: '1'}
+20	20		211							{1: '2', 2: '1021011', 3: '1', 4: '400', 7: '1'}
+21	21		301			DialogEnable				"{1: '1', 2: 'Moony', 3: ""This is where the Child of Revelation last worked his miracle, Ma'am. Please follow us this way."", 4: '101', 18: '100001754', 19: '1'}"
+22	22		301							{2: 'Adeline', 3: 'Rest assured that the altar is going to keep us safe from here on out.', 4: '102', 18: '100001755'}
+23	23		212							{1: '2', 6: '1'}
+24	24		211							{1: '2', 2: '1021010', 4: '400'}
+25	25		301							"{1: '1', 2: 'Renee', 3: ""The altar, huh... Religion sure is amazing, isn't it? All they need are a few statues and fabricated stories to make people devoted enough to sacrifice themselves."", 4: '102', 18: '100001756'}"
+26	26		301							"{2: 'Renee', 3: ""And useless sacrifices are exactly what they've turned you into. Consider yourselves lucky that they're using you for experiments instead of leaving you to rot in the garbage yard."", 4: '102', 18: '100001757'}"
+27	27		301							"{2: 'Moony', 3: ""Did you say something, Ma'am?"", 4: '101', 18: '100001758', 19: '1'}"
+28	28		301				AniZhuanchangBegin			"{2: 'Renee', 3: ""Never mind, let's go. Let's have a look at this altar that commands so much respect from all of you."", 4: '102', 18: '100001759'}"
+29	29		212							{1: '2', 2: '1', 6: '1'}
+30	30		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+31	31		401							{1: '2', 2: '2700'}
+32	32		510						1000.0	{1: '1'}
+33	33		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory708.jpg'}
+34	34		509						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory710.jpg', 2: '1'}
+35	35		301			AniZhuanchangEnd				"{3: ""Pushing through the door, however, they're utterly surprised by what they see.""}"
+36	36		402							{1: '2700'}
+37	37		211							{1: '1', 2: '1021012', 3: '7', 4: '500'}
+38	38		211							{1: '2', 2: '1021010', 3: '1', 4: '-500'}
+39	39		301							{1: '1', 2: 'Bianca & Renee', 3: 'So this... is the altar?', 4: '101', 5: '102', 18: '100001760', 19: '1'}
+40	40		212							{1: '1', 2: '2', 6: '1'}
+41	41		510							{1: '1'}
+42	42		301							{3: 'Once sat on by prayers, the benches now hold pots of flowers, while the morning sun comes through the dusty windows and rains down on the green leaves.'}
+43	43		301							{3: 'Shelves now sit where there used to be little statues, while baskets and wooden boxes—all carrying mud—cover the floor.'}
+44	44		301							{3: 'In the baskets and boxes are all sorts of flowers, vegetables, and grains, in a quantity sufficient to sustain five to six people.'}
+45	45		301							{3: 'The only things she finds familiar are the fallen statue in the main hall and the old heating system in the church.'}
+46	46		211							{1: '1', 2: '1021011', 3: '1'}
+47	47		301							"{1: '1', 2: 'Adeline', 3: ""Yes, everything grows just fine here with God's blessings, and this place is completely safe."", 4: '101', 18: '100001761'}"
+48	48		212							{1: '1', 6: '1'}
+49	49		211							{1: '1', 2: '1021012', 3: '7'}
+50	50		301							{1: '1', 2: 'Bianca', 3: '...', 4: '101', 18: '100001762'}
+51	51		212							{1: '1', 6: '1'}
+52	52		211							{1: '1', 2: '1021005', 3: '1'}
+53	53		301				DialogDisable			"{1: '1', 2: 'Moony', 3: ""You still seem very nervous, though, Ma'am..."", 4: '101', 18: '100001763', 19: '1'}"
+54	54		212							{1: '1', 6: '1'}
+55	55		509						800.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory710.jpg', 2: '1'}
+56	56		211							{1: '1', 2: '1021012', 3: '7', 4: '500', 7: '1'}
+57	57		301			DialogEnable				{1: '1', 3: 'Occasionally looking your way, Bianca keeps an eye on the virtual images as she looks alarmingly around for any signs of Corrupted...'}
+58	58		301							{3: 'As though readying herself for what she knows is about to come.'}
+59	59		302							{2: '(Grab her hand)'}
+60	60		301				DialogDisable			{2: 'Bianca', 3: 'C-Commandant?', 4: '101', 18: '100001764', 19: '1'}
+61	61		302							{2: 'There is no Corrupted here.', 3: '62'}
+62	62		302							"{2: ""Because we didn't pick up any activity signal in here."", 3: '63'}"
+63	63		302							"{2: ""So let's just trust me—and trust yourself."", 3: '64'}"
+64	64		214							{1: '1', 2: '4', 3: '2'}
+65	65		301			DialogEnable				{3: 'A few moments later, Bianca finally puts her weapon away and holds your hand, although still vigilant.'}
+66	66		301							"{2: 'Bianca', 3: ""Right. Let's keep looking around first, then."", 4: '101', 18: '100001765', 19: '1'}"
+67	67		212							{1: '1', 6: '1'}
+68	68		401							{1: '2', 2: '2567'}
+69	69		510						800.0	{1: '2', 2: 'Assets/Product/Texture/Image/BgStory/BgStory708.jpg'}
+70	70		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+71	71		301							{3: 'The virtual images start moving when Bianca taps on the Phantom Tracer with her swordstaff.'}
+72	72		211							{1: '1', 2: '1021010', 3: '1', 4: '-400', 7: '1'}
+73	73		211							{1: '2', 2: '1021006', 3: '1', 4: '400', 7: '1'}
+74	74		301							"{1: '1', 2: 'Renee', 3: ""Are you calling this place an altar when it's obviously a ******* greenhouse? Is this some sort of bad joke?"", 4: '101', 18: '100001766'}"
+75	75		301							"{2: 'Gale', 3: ""B-but how can plants grow out of snow if it isn't a work of God?"", 4: '102', 18: '100001767', 19: '2'}"
+76	76		301							"{2: 'Renee', 3: 'Does your God go by the name ""Heating System""?', 4: '101', 18: '100001768'}"
+77	77		301							"{2: 'Gale', 3: ""No way. The heating system here was all dead when we got here. What's there to power the heating system when the energy furnace is dead?"", 4: '102', 18: '100001769', 19: '2'}"
+78	78		301							"{2: 'Gale', 3: ""Fortunately, though, the Child of Revelation was still here then. He asked the Revelation for help—and with his guidance, we went to all sorts of places to look for energy sources to fix the heating system with, and that's how we were able to create this environment."", 4: '102', 18: '100001770', 19: '2'}"
+79	79		301							{2: 'Renee', 3: 'With his guidance, huh? Has it never occurred to you that you people are the ones that made all of these happen?', 4: '101', 18: '100001771'}
+80	80		212							{1: '2', 6: '1'}
+81	81		211							{1: '2', 2: '1021011', 3: '1', 4: '400'}
+82	82		301							"{2: 'Adeline', 3: ""Such sacrilege. Do you really think people like us would have been able to bring all of these plants and fruit about were it not for God's blessings?"", 4: '102', 18: '100001772'}"
+83	83		301							"{2: 'Renee', 3: ""...Haha, I see. So you people never trust that you can do anything on your own. Why don't you all go and look for this Child of Revelation, then? And I don't see Grace. Still alive, I hope?"", 4: '101', 18: '100001773'}"
+84	84		212							{1: '2', 6: '1'}
+85	85		211							{1: '2', 2: '1021006', 3: '1', 4: '400'}
+86	86		301							"{2: 'Gale', 3: ""There are only so many people a single Child of Revelation can guide. Grace is God's favorite, but she just can't look out for more people than she already is."", 4: '102', 18: '100001774', 19: '2'}"
+87	87		301							{2: 'Renee', 3: 'Reaching full capacity here with Grace hanging out with the Forsaken, huh?', 4: '101', 18: '100001775'}
+88	88		301							"{2: 'Renee', 3: ""Babylonia did send you all to another refuge site, no? Why didn't you just stay there? Don't think it was easy coming back here for you all."", 4: '101', 18: '100001776'}"
+89	89		212							{1: '2', 6: '1'}
+90	90		211							{1: '2', 2: '1021005', 3: '1', 4: '400'}
+91	91		301				DialogDisable			{2: 'Moony', 3: 'I never had a place at those places...', 4: '102', 18: '100001777', 19: '1'}
+92	92		212							{1: '1', 2: '2', 6: '1'}
+93	93		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+94	94		509						800.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory708.jpg', 2: '2'}
+95	95		211							{1: '1', 2: '1021011', 3: '1', 4: '500'}
+96	96		301			DialogEnable				{1: '1', 2: 'Adeline', 3: 'They almost beat her to death, and they did the same to me.', 4: '101', 18: '100001778'}
+97	97		302							{2: 'They, as in those at the refuge sites?', 3: '98'}
+98	98		301							{2: 'Adeline', 3: 'Yes... and I was one of them before I met God, and I did just about anything to stay alive, and so do they.', 4: '101', 18: '100001779'}
+99	99		301							{2: 'Adeline', 3: 'Self-organized refuge sites are not like conservation areas—anything goes, and power is the only thing that can keep you out of trouble.', 4: '101', 18: '100001780'}
+100	100		301							{2: 'Adeline', 3: 'Moony is just a kid, though—one left to die by her parents.', 4: '101', 18: '100001781'}
+101	101		212							{1: '1', 6: '1'}
+102	102		211							{1: '1', 2: '1021005', 3: '1', 4: '500'}
+103	103		301							{1: '1', 2: 'Moony', 3: '...And the Child of Revelation came along and saved us.', 4: '101', 18: '100001782', 19: '1'}
+104	104		212							{1: '1', 6: '1'}
+105	105		211							{1: '1', 2: '1021011', 3: '1', 4: '500'}
+106	106		301							{1: '1', 2: 'Adeline', 3: 'Indeed. At Scarlet Revelation, both He and the Red Tide have shown us that death is not where it all ends, which is how we found the courage in us and never fight again out of panic.', 4: '101', 18: '100001783'}
+107	107		301							{2: 'Adeline', 3: 'And He said He would guide us with the Revelation no matter where we are—be it here in the snow or in the Red Tide, which is why we decided to settle down here.', 4: '101', 18: '100001784'}
+108	108		301				DialogDisable			{2: 'Adeline', 3: 'And this altar here... is proof of the Revelation.', 4: '101', 18: '100001785'}
+109	109		212							{1: '1', 6: '1'}
+110	110		510						800.0	{1: '2'}
+111	111		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+112	112		211							{1: '1', 2: '1021010', 3: '1', 4: '-400', 7: '1'}
+113	113		211							{1: '2', 2: '1021006', 3: '1', 4: '400', 7: '1'}
+114	114		301			DialogEnable				{1: '1', 2: 'Renee', 3: 'So you decided to settle down here because this God of Revelation showed you how to fix the heating system and how to grow plants, huh? Where is everyone else?', 4: '101', 18: '100001786'}
+115	115		301							{2: 'Gale', 3: 'They all went into the Red Tide.', 4: '102', 18: '100001787', 19: '2'}
+116	116		301							"{2: 'Renee', 3: ""And you're the only ones alive, huh... And what happened to this God of Revelation? Dead?"", 4: '101', 18: '100001788'}"
+117	117		301							"{2: 'Renee', 3: 'Well, I guess, ""He went into the Red Tide,"" is how you people would put it.', 4: '101', 18: '100001789'}"
+118	118		301							"{2: 'Gale', 3: ""No, He didn't. He decided to not do that because he ended up severely injured trying to protect us."", 4: '102', 18: '100001790', 19: '2'}"
+119	119		301							{2: 'Renee', 3: 'Where is he, then?', 4: '101', 18: '100001791'}
+120	120		301							{3: 'Saying nothing for a good few seconds, Gale points at the system furnace in the corner.'}
+121	121		301							"{2: 'Gale', 3: ""He threw Himself in there... saying that He'd had enough suffering, and that He did not wish to prolong his suffering with the Red Tide."", 4: '102', 18: '100001792', 19: '2'}"
+122	122		301							{2: 'Renee', 3: '...', 4: '101', 18: '100001793'}
+123	123		212							{1: '1', 6: '1'}
+124	124		211							{1: '1', 2: '1021011', 3: '1', 4: '-400'}
+125	125		301							"{1: '1', 2: 'Adeline', 3: ""We have no idea why He said that, nor do we know why He made that choice. We don't know what we're supposed to do next, which is why we're staying here to learn about the other Children of Revelation."", 4: '101', 18: '100001794'}"
+126	126		301							"{2: 'Gale', 3: ""And then someone came along and told us that we'd be able to see Him again if we passed a test from God."", 4: '102', 18: '100001795', 19: '2'}"
+127	127		301							{2: 'Gale', 3: 'Before we left for the test, we entrusted a friend from the site with the altar—and let the friend pick the vegetables here in exchange for taking care of the altar.', 4: '102', 18: '100001796', 19: '2'}
+128	128		212							{1: '1', 6: '1'}
+129	129		211							{1: '1', 2: '1021005', 3: '1', 4: '-400'}
+130	130		301							"{2: 'Moony', 3: ""And after everything they tried, we were told that we didn't pass the test."", 4: '101', 18: '100001797', 19: '1'}"
+131	131		212							{1: '1', 6: '1'}
+132	132		211							{1: '1', 2: '1021010', 3: '1', 4: '-400'}
+133	133		301							"{2: 'Renee', 3: ""Oh... and that's how I ended up with all these pieces of junk, huh?"", 4: '101', 18: '100001798'}"
+134	134		301				DialogDisable			{2: 'Gale', 3: 'Please stop calling us that. You might be a prophet, but you failed the test all the same.', 4: '102', 18: '100001799', 19: '2'}
+135	135		212							{1: '1', 2: '2', 6: '1'}
+136	136		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+137	137		509						800.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory708.jpg', 2: '2'}
+138	138		211							{1: '1', 2: '1021012', 3: '4', 4: '500'}
+139	139		301			DialogEnable				{1: '1', 2: 'Bianca', 3: 'Wait, what?', 4: '101', 18: '100001800', 19: '1'}
+140	140		212							{1: '1', 6: '1'}
+141	141		211							{1: '1', 2: '1021011', 3: '1', 4: '500'}
+142	142		301							"{1: '1', 2: 'Adeline', 3: 'The person who came to see us off said, ""She might be able to predict revelations, but she failed the test like you all did.""', 4: '101', 18: '100001801'}"
+143	143		212							{1: '1', 6: '1'}
+144	144		211							{1: '1', 2: '1021005', 3: '1', 4: '500'}
+145	145		301							"{1: '1', 2: 'Moony', 3: ""She refused to accept that. We even got into a fight when we told her that she'd failed the test."", 4: '101', 18: '100001802', 19: '1'}"
+146	146		401							{1: '1', 2: '211'}
+147	147		211							{1: '2', 2: '1021010', 3: '1', 4: '-550'}
+148	148		301							"{2: 'Renee', 3: ""I'm not like you people!"", 4: '102', 18: '100001803'}"
+149	149		301							{2: 'Moony', 3: 'Grandpa Gale had a long argument with us—and when he finally convinced her, she started crying...', 4: '101', 18: '100001804', 19: '1'}
+150	150		212							{1: '1', 6: '1'}
+151	151		211							{1: '1', 2: '1021012', 3: '4', 4: '500', 7: '1'}
+152	152		301							"{1: '1', 3: ""Looking down, Bianca rubs Renee's nameplate in her hand.""}"
+153	153		212							{1: '1', 2: '2', 6: '1'}
+154	154		510						500.0	{1: '2'}
+155	155		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+156	156		211							{1: '1', 2: '1021010', 3: '1'}
+157	157		301							{1: '1', 2: 'Renee', 3: 'I just wanted to see him again... and I ended up here before I even knew it.', 4: '101', 18: '100001805'}
+158	158		212							{1: '1', 6: '1'}
+159	159		211							{1: '1', 2: '1021005', 3: '1'}
+160	160		301							{1: '1', 2: 'Moony', 3: 'And so did we. We just wanted to see Him again, too.', 4: '101', 18: '100001806', 19: '1'}
+161	161		212							{1: '1', 6: '1'}
+162	162		211							{1: '1', 2: '1021010', 3: '1'}
+163	163		301							{1: '1', 2: 'Renee', 3: '...', 4: '101', 18: '100001807'}
+164	164		301							{3: 'Seeing these people—people that she thought were no better than garbage—Renee finally realizes how alike they are.'}
+165	165		301							{3: 'Renee bursts into laughter, finally stopping in tears.'}
+166	166		301							"{2: 'Renee', 3: ""Oh boy... We're the same. We don't trust ourselves, we want to get things done with someone's power, and... it never even hit me how wrong I am."", 4: '101', 18: '100001808'}"
+167	167		301							{2: 'Renee', 3: 'I thought that was just an insignificant blunder, but when you put all the blunders and biases together, they become a mountain that can crush you.', 4: '101', 18: '100001809'}
+168	168		301							{3: 'Renee looks up at the statue before her.'}
+169	169		301							{2: 'Renee', 3: 'You said you never wanted to give up on these worshippers, Bianca. Have you ever thought the same of me?', 4: '101', 18: '100001810'}
+170	170		301							{3: 'She then answers her own question.'}
+171	171		301							"{2: 'Renee', 3: ""No, I don't think so... because I've crossed that line that I shouldn't have."", 4: '101', 18: '100001811'}"
+172	172		301							{2: 'Renee', 3: 'Who am I to even laugh at others...', 4: '101', 18: '100001812'}
+173	173		212							{1: '1', 6: '1'}
+174	174		211							{1: '1', 2: '1021006', 3: '1'}
+175	175		301							"{1: '1', 2: 'Gale', 3: ""But not all hope is lost, Ma'am. Together, we're strong, and I'm sure we'll be able to find the Revelation."", 4: '101', 18: '100001813', 19: '1'}"
+176	176		212							{1: '1', 6: '1'}
+177	177		401							{1: '2', 2: '1099'}
+178	178		301							{3: 'Renee is ready to say something in response—when her terminal starts buzzing.'}
+179	179		509						800.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory189.png', 2: '2'}
+180	180		211							{1: '1', 2: '1021010', 3: '1', 4: '-550', 7: '1'}
+181	181		301							"{1: '1', 2: '???', 3: 'We\'ve got a situation here. Bianca asked the Gray Ravens for help and they wiped out the men we sent there. The terminal you lost proved mighty ""helpful"" for Bianca.', 18: '100001814'}"
+182	182		301							{2: 'Renee', 3: 'What are you talking about?', 4: '101', 18: '100001815'}
+183	183		301							{2: '???', 3: 'You need to clean up your own mess.', 18: '100001816'}
+184	184		301							"{2: '???', 3: ""I'm still going to try to trick Bianca into coming to this church. You need to ask those worshippers to meet her—I just started the countdown timers on their EMP collars remotely."", 18: '100001817'}"
+185	185		301							{2: 'Renee', 3: 'Are you trying to sacrifice them to kill Bianca?', 4: '101', 18: '100001818'}
+186	186		301							"{2: '???', 3: ""Look, we're putting garbage to good use here, and I'll have you meet Ascendants once you're done."", 18: '100001819'}"
+187	187		301							"{2: 'Renee', 3: ""And that's what you've been telling me this whole time, you friggin' liar!"", 4: '101', 18: '100001820'}"
+188	188		301							"{2: '???', 3: ""Get ahold of yourself there. I'm just one of the points of contact and I'm just doing what I've been told to do. Getting mad at me isn't going to change anything."", 18: '100001821'}"
+189	189		301							"{2: 'Renee', 3: ""Haha... Right, you're just doing what you've been told to do. So am I, and so are these people. We're all the same, and we're all just items to be dispensed with at the end of the day."", 4: '101', 18: '100001822'}"
+190	190		301							"{2: '???', 3: ""Except I'm nowhere as lousy as you."", 18: '100001823'}"
+191	191		301				AniZhuanchangBegin			{2: 'Renee', 3: 'That happens to be my thought exactly—until today, that is.', 4: '101', 18: '100001824'}
+192	192		510							{1: '2'}
+193	193		510							{1: '1'}
+194	194		505						500.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+195	195		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory708.jpg'}
+196	196		211							{1: '1', 2: '1021005', 3: '1'}
+197	197		301			AniZhuanchangEnd				"{1: '1', 2: 'Moony', 3: 'She threw away the terminal after the call and said she was going to remove this thing she called a ""test band"" from me.', 4: '101', 18: '100001825', 19: '1'}"
+198	198		301							"{2: 'Moony', 3: 'And that\'s when I knew what that band was for... But right when she removed it from me, I heard a ""Bang!"" coming from her head...', 4: '101', 18: '100001826', 19: '1'}"
+199	199		301				AniZhuanchangBegin			{2: 'Moony', 3: 'She seemed in pain all over, but she just kept on talking to us.', 4: '101', 18: '100001827', 19: '1'}
+200	200		212							{1: '1', 6: '1'}
+201	201		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+202	202		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory710.jpg'}
+203	203		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '3'}
+204	204		301			AniZhuanchangEnd				"{2: 'Renee', 3: ""We're out of time... Go now. Go... to the Holy Maiden, the one who's as white and pure as this snowfield. She's on her way here..."", 18: '100001828'}"
+205	205		301							"{2: 'Renee', 3: ""I'm sure she can save you—unlike me, who's a fake..."", 18: '100001829'}"
+206	206		401							{1: '2', 2: '2593'}
+207	207		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3002_03.jpg', 3: '0', 4: '0.5', 5: '2'}
+208	208		301				AniZhuanchangBegin			{2: 'Renee', 3: 'Just go now...! I might turn into a Corrupted any second now...! Go, just go already!', 18: '100001830'}
+209	209		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+210	210		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+211	211		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+212	212		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory708.jpg'}
+213	213		211							{1: '1', 2: '1021011', 3: '1', 4: '300', 7: '1'}
+214	214		211							{1: '2', 2: '1021005', 3: '1', 4: '-300', 7: '1'}
+215	215		301			AniZhuanchangEnd				"{1: '1', 2: 'Adeline', 3: ""And then we met you... Gale was tough and ran the fastest, but he didn't make it..."", 4: '101', 18: '100001831'}"
+216	216		301							{2: 'Moony', 3: 'Adeline... is Grandpa Gale ever coming back?', 4: '102', 18: '100001832', 19: '2'}
+217	217		301							{3: 'Holding Moony in her arms, Adeline shakes her head.'}
+218	218		301							{2: 'Adeline', 3: 'What are we supposed to do now, Holy Maiden?', 4: '101', 18: '100001833'}
+219	219		212							{1: '1', 2: '2', 6: '1'}
+220	220		211							{1: '1', 2: '1021012', 3: '4'}
+221	221		301							{1: '1', 2: 'Bianca', 3: '...', 4: '101', 18: '100001834'}
+222	222		301							"{2: 'Bianca', 3: ""If you don't want to go to the refuge site, then Grace is the only person who can take you in now. She's with the Forsaken."", 4: '101', 18: '100001835', 19: '1'}"
+223	223		212							{1: '1', 6: '1'}
+224	224		211							{1: '1', 2: '1021011', 3: '1', 4: '-400', 7: '1'}
+225	225		211							{1: '2', 2: '1021012', 3: '4', 4: '400', 7: '1'}
+226	226		301				DialogDisable			"{1: '1', 2: 'Adeline', 3: ""I'm afraid the Child of Revelation can't look after more people than she does now."", 4: '101', 18: '100001836'}"
+227	227		302							{2: 'I can help.', 3: '228'}
+228	228		302							"{2: ""I'll ask for resources to be sent the Forsaken's way once Purifying Force is done with the mission report."", 3: '229'}"
+229	229		302							{2: 'The resources will be used to expand Scarlet Revelation there.', 3: '230'}
+230	230		302							{2: 'How does that sound, Captain?', 3: '231'}
+231	231		301			DialogEnable				"{2: 'Bianca', 3: ""That's for the Parliament to decide, but before they come up with a definite plan, would you both be able to travel to one of Babylonia's direct conservation areas with us as witnesses?"", 4: '102', 18: '100001837', 19: '2'}"
+232	232		212							{1: '1', 6: '1'}
+233	233		211							{1: '1', 2: '1021005', 3: '1', 4: '-400'}
+234	234		301							{2: 'Moony', 3: 'Would it be dangerous?', 4: '101', 18: '100001838', 19: '1'}
+235	235		302							{2: 'My team will keep you safe.', 3: '236'}
+236	236		212							{1: '1', 2: '2', 6: '1'}
+237	237		211							{1: '1', 2: '1021012', 3: '1'}
+238	238		301							"{1: '1', 2: 'Bianca', 3: ""Thank you, Commandant. I'll try to be quick with the investigation to get Purifying Force back on track."", 4: '101', 18: '100001839', 19: '1'}"
+239	239		302							"{2: ""Got it. I'll be in touch with Lucia and ask them to come here and pick us up, then."", 3: '240'}"
+240	240		214							{1: '1', 2: '2'}
+241	241		301							{2: 'Bianca', 3: 'Thank you, Commandant.', 4: '101', 18: '100001840', 19: '1'}
+242	242		214							{1: '1', 2: '4'}
+243	243		301				DialogDisable			{3: 'Bianca looks at you thankfully. Then, lowering her hand and tightening her grip around the nameplate in her hand, she walks up to the fallen statue in heavy steps.'}
+244	244		212							{1: '1', 6: '1'}
+245	245		302							{2: '...', 3: '246'}
+246	246		211							{1: '1', 2: '1021005', 3: '1'}
+247	247		301			DialogEnable	DialogDisable			{1: '1', 2: 'Moony', 3: 'Is Holy Maiden sad?', 4: '101', 18: '100001841', 19: '1'}
+248	248		401							{1: '1', 2: '36'}
+249	249		302				AniZhuanchangBegin			{2: '...I bet she is.', 3: '250'}
+250	250		212							{1: '1', 6: '1'}
+251	251		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3401_19.jpg'}
+252	252		401							{1: '1', 2: '169'}
+253	253		211							{1: '1', 2: '1021012', 3: '3', 7: '1'}
+254	254		302			AniZhuanchangEnd				{2: 'Bianca.', 3: '255'}
+255	255		302							{2: 'Are you still looking for activity signals?', 3: '256'}
+256	256		301			DialogEnable				{3: 'Seemingly lost, she looks around at the plants.'}
+257	257		301							"{2: 'Bianca', 3: ""I'm done. It's safe here, unlike how it was back at the church covered in snow. This is good, though... because I don't ever want to see you get hurt."", 4: '101', 18: '100001842', 19: '1'}"
+258	258		302							"{2: ""That's not all you want to say, though, is it?""}"
+259	259		301							{2: 'Bianca', 3: '...', 4: '101', 18: '100001843'}
+260	260		301							"{2: 'Bianca', 3: 'I\'ve never doubted the way Purifying Force handles all the misdeeds committed, but I never wanted to ""deal with"" it after all this has happened.', 4: '101', 18: '100001844', 19: '1'}"
+261	261		301				DialogDisable			"{2: 'Bianca', 3: ""Because it's exactly as they said—we just can't help everyone."", 4: '101', 18: '100001845', 19: '1'}"
+262	262		302							"{2: ""That's why we need to count on one another."", 3: '263'}"
+263	263		302							"{2: ""You're no God, and it's not on you to save everyone."", 3: '264'}"
+264	264		302							"{2: ""People need to pay for the wrongs they do, and people who can't control their emotions seem silly to me. As far as it goes, there is nothing you need to worry about."", 3: '265', 4: 'Everyone can feel lost every now and then, and the times we live in only make life more difficult, which is why we need to rely on one another.', 5: '268'}"
+265	265		301			DialogEnable				"{2: 'Bianca', 3: ""Very logical of you, and that's a quality that a commandant should have that most people don't."", 4: '101', 18: '100001846', 19: '1'}"
+266	266		301							{2: 'Bianca', 3: 'Forcing people to be all cold and logical is both unrealistic and cruel, and people only grow more desperate and end up doing riskier things when threatened with punishment.', 4: '101', 18: '100001847', 19: '1'}
+267	267	270	301							{2: 'Bianca', 3: 'Renee has paid her price, so I just want to prevent something like this from happening instead of looking for ways to punish those in the wrong.', 4: '101', 18: '100001848', 19: '1'}
+268	268		301			DialogEnable				{3: 'Turning around, Bianca looks at you intently.'}
+269	269		301							"{2: 'Bianca', 3: ""And you'd be right, Commandant... There have been times when I was lost and couldn't think with a straight head, and I've only been able to pull through because you've always been by my side."", 4: '101', 18: '100001849', 19: '1'}"
+270	270		301				DialogDisable			{2: 'Bianca', 3: 'Do you remember the dream I told you about?', 4: '101', 18: '100001850', 19: '1'}
+271	271		302				AniZhuanchangBegin			{2: '(Nod)', 3: '272'}
+272	272		212							{1: '1', 6: '1'}
+273	273		105							{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLuxiya2S/UiMovieBiankaSkin01/UiMovieBiankaSkin01.prefab'}
+274	274		502							{1: 'DialogEnable'}
+275	275		301			AniZhuanchangEnd				{3: 'Walking over the flowers, Bianca sits down before the statue.'}
+276	276		105							
+277	277		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+278	278		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '3'}
+279	279		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3401_06.jpg'}
+280	280		301							{2: 'Bianca', 3: 'This is where that dream ended...', 18: '100001851'}
+281	281		301							{2: 'Bianca', 3: 'You came here alone to this church—unaware that there were temporarily inactive Corrupted buried under the snow... because you only saw me, and I was just wandering about.', 18: '100001852'}
+282	282		301							"{2: 'Bianca', 3: ""Everything was blurry in the dream... except for your face, which I'll never forget."", 18: '100001853'}"
+283	283		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+284	284		105							{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLuxiya2S/UiMovieBiankaSkin01/UiMovieBiankaSkin01.prefab'}
+285	285		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+286	286		301							"{3: ""Right then, the clock starts ticking again, when the past and the future cross each other's paths.""}"
+287	287		301							{2: 'Bianca', 3: 'And that... is how you gave me a chance to hurt you... and when the Gray Ravens got here...', 18: '100001854'}
+288	288		301							{3: 'Closing her eyes, Bianca says no more.'}
+289	289		301							"{2: 'Bianca', 3: '...When I became a nun here, the godfather said, ""Understand the heart\'s fragility, for it is because of it that devils and gods persist.""', 18: '100001855'}"
+290	290		301							{2: 'Bianca', 3: 'Right or wrong and legal or not, humans fall prey to emotions, which is why humans love and hate and hurt and protect.', 18: '100001856'}
+291	291		301				DialogDisable			{2: 'Bianca', 3: 'And maybe somewhere down the road, when this church is completely buried under snow, I will be betrayed once more and take my last breath here.', 18: '100001857'}
+292	292		302							"{2: ""The prediction didn't say that's happening now, at least."", 3: '293'}"
+293	293		302				AniZhuanchangBegin			"{2: ""Look, it's not just snow here, but also flowers."", 3: '294'}"
+294	294		105							
+295	295		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3401_20.jpg'}
+296	296		211							{1: '1', 2: '1021012', 3: '1', 7: '1'}
+297	297		502							{1: 'DialogEnable'}
+298	298		401							{1: '1', 2: '163'}
+299	299		301			AniZhuanchangEnd	DialogDisable			{1: '1', 3: 'The human reaches over—with a small bundle of pink roses.'}
+300	300		302							{2: 'Moony gave me these.', 3: '301'}
+301	301		302							{2: 'Because she thought you were down and asked me what to do to cheer you up.', 3: '302'}
+302	302		301			DialogEnable	DialogDisable			{2: 'Bianca', 3: 'Commandant...', 4: '101', 18: '100001858', 19: '1'}
+303	303		302							"{2: ""There are people here that you've saved."", 3: '304'}"
+304	304		302							"{2: ""And I'm here, too."", 3: '305'}"
+305	305		302							{2: 'Not all hope is lost...', 3: '306'}
+306	306		302							"{2: ""Because we still have time to make changes before it's too late."", 3: '307'}"
+307	307		302							{2: 'We need to do better than the kings from all those stories who got led down the path of destruction.', 3: '308'}
+308	308		301			DialogEnable				{2: 'Bianca', 3: 'Changes, huh...', 4: '101', 18: '100001859', 19: '1'}
+309	309		302							{2: 'Yes, and this church is changing, too.', 3: '310'}
+310	310		301							{2: 'Bianca', 3: '...', 4: '101', 18: '100001860'}
+311	311		214							{1: '1', 2: '2'}
+312	312		301							{2: 'Bianca', 3: 'Yes... this church is definitely changing, too.', 4: '101', 18: '100001861', 19: '1'}
+313	313		301							{3: 'Bianca lets out a sigh as she breaks into a smile.'}
+314	314		301							{2: 'Bianca', 3: 'Can you put the roses on my headband, Commandant? I want to remember what happened today and what you said—and that flowers can bloom in the snow, too.', 4: '101', 18: '100001862', 19: '1'}
+315	315		302				AniZhuanchangBegin			{2: 'Sure thing.', 3: '316'}
+316	316		212							{1: '1', 6: '1'}
+317	317		105							{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLuxiya2S/UiMovieBiankaSkin03/UiMovieBiankaSkin03.prefab'}
+318	318		301			AniZhuanchangEnd				{2: 'Bianca', 3: 'Thank you... How does it look?', 18: '100001863'}
+319	319		302							"{2: ""It's pretty."", 3: '320'}"
+320	320		301							"{2: 'Bianca', 3: 'This coating is no longer just a dream in the ""snow""... It looks more like a wedding dress now, like what those people from WGAA said.', 18: '100001864'}"
+321	321		301							"{2: 'Bianca', 3: 'I never thought it possible to have plants grow out of snow, and... I\'d never craved putting flowers on this coating with ""snowfield"" as a motif.', 18: '100001865'}"
+322	322		301				DialogDisable			"{2: 'Bianca', 3: 'I was ready to meet my fate before you came to me... not knowing that my ""dream"" would end differently.', 18: '100001866'}"
+323	323		302							"{2: ""It's not just because of me, though."", 3: '324'}"
+324	324		302							{2: 'Lucia and Liv only made it back out alive from collecting the corpses because of your reminder.', 3: '325'}
+325	325		301			DialogEnable				{3: 'Nodding with a smile, Bianca turns to look at the thriving plants around her.'}
+326	326		302							"{2: ""I'm sure they brought these plants about with courage—courage that they got from faith, that is."", 3: '327'}"
+327	327		301							{2: 'Bianca', 3: 'Yes... flimsy as their faith was, they made it happen despite all odds.', 18: '100001867'}
+328	328		302							"{2: ""So, what's the plan?"", 3: '329'}"
+329	329		301							{3: 'Bianca lets out a quiet sigh.'}
+330	330		301							{2: 'Bianca', 3: 'Nothing binds one down better than sweet home—and knowing that it works, Ascendants have no trouble tricking people into betraying their friends and family.', 18: '100001868'}
+331	331		301							"{2: 'Bianca', 3: ""We shouldn't blame them for choosing to side with the wrong people. Like you said, no one should ever get used to betrayal and parting ways with whom they love."", 18: '100001869'}"
+332	332		301							{2: 'Bianca', 3: 'And these all cause pain—pain that eventually sets the tone for people to part ways for good.', 18: '100001870'}
+333	333		301							{2: 'Bianca', 3: 'People only want to stay where they feel warm. We need to open ourselves up to people, be encouraged, and help each other patch up.', 18: '100001871'}
+334	334		301							{2: 'Bianca', 3: 'Which is why I want to make changes.', 18: '100001872'}
+335	335		302							{2: 'That means adjusting the members of the Purifying Force, I presume?', 3: '336'}
+336	336		301							"{2: 'Bianca', 3: ""Yes, but that's just one of the many changes I want to make. I'll have to come up with a detailed plan and have the Parliament's approval first."", 18: '100001873'}"
+337	337		301							"{2: 'Bianca', 3: 'The Phantom Tracer picked up the voiceprints of some other deserters now—and from that, we know that ""Cthylla"" is likely to be among Ascendants.', 18: '100001874'}"
+338	338		301							"{2: 'Bianca', 3: ""I'm not surprised to find out that Project Winter still has to do with Ascendants, though."", 18: '100001875'}"
+339	339		301							"{2: 'Bianca', 3: 'Every time we try to bust them, they always manage to steer clear of investigation—sometimes by using a scapegoat, sometimes by telling the scapegoat that it\'d be a chance for them to ""redeem"" themselves.', 18: '100001876'}"
+340	340		302							{2: 'Got a whole lot to deal with there, I see...', 3: '341'}
+341	341		301							"{2: 'Bianca', 3: ""Yup, and I'm never going to forgive those wiseasses for crossing that line."", 18: '100001877'}"
+342	342		301							{2: 'Bianca', 3: '...And that goes for you, too, Commandant.', 18: '100001878'}
+343	343		302							{2: 'Me?', 3: '344'}
+344	344		301							{2: 'Bianca', 3: 'Everyone sees the Gray Ravens as heroes, hence all the perks and how the Gray Ravens never really get into trouble for doing things that might be out of line.', 18: '100001879'}
+345	345		301							{2: 'Bianca', 3: 'Which is what puts you in frequent contact with Ascendants, and I just wanted you to never get in any trouble.', 18: '100001880'}
+346	346		302							{2: 'Do I look like someone that might get in trouble?', 3: '347'}
+347	347		301							"{2: 'Bianca', 3: ""You don't, but... I just really hate the idea of having to be the one to purify you down the road."", 18: '100001881'}"
+348	348		302							"{2: ""I can promise you that that's never going to happen."", 3: '356', 4: 'Not going to make any promises here.', 5: '349'}"
+349	349		301							{2: 'Bianca', 3: '...?', 18: '100001882'}
+350	350		301							{2: 'Bianca', 3: 'Well, I guess a quick talk in the interrogation room will probably change your mind.', 18: '100001883'}
+351	351		302							"{2: ""Hey, c'mon, I was just kidding..."", 3: '352'}"
+352	352		301							{2: 'Bianca', 3: '...Are you sure?', 18: '100001884'}
+353	353		301							{3: 'Bianca says with a sigh.'}
+354	354		301				DialogDisable			{2: 'Bianca', 3: 'Jeez, you got me worried for a second, Commandant.', 18: '100001885'}
+355	355		302				AniZhuanchangBegin			{2: 'Apologies.', 3: '362'}
+356	356		301							"{2: 'Bianca', 3: ""I'll take your word for it, then."", 18: '100001886'}"
+357	357		301							"{2: 'Bianca', 3: ""And sorry for always being so nagging, but being Purifying Force's captain, I just know that there will come a day when I'll have to..."", 18: '100001887'}"
+358	358		302							"{2: ""When you'll have to say goodbye?"", 3: '359'}"
+359	359		301							{2: 'Bianca', 3: 'Right, which is why I want to make every moment count.', 18: '100001888'}
+360	360		302							"{2: ""And that's what matters."", 3: '361'}"
+361	361		301				AniZhuanchangBegin			{3: 'Bianca looks down with a quiet smile.'}
+362	362		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3401_20.jpg'}
+363	363		105							
+364	364		401							{1: '1', 2: '36'}
+365	365		211							{1: '1', 2: '1021012', 3: '5', 7: '1'}
+366	366		401							{1: '2', 2: '1099'}
+367	367		502							{1: 'DialogEnable'}
+368	368		301			AniZhuanchangEnd				{1: '1', 3: 'Your terminal beeps, signaling that Lucia is around.'}
+369	369		401							{1: '1', 2: '161'}
+370	370		302							{2: 'Lucia is almost here. Time to rendezvous.', 3: '371'}
+371	371		301							{2: 'Bianca', 3: 'Yup.', 4: '101', 18: '100001889', 19: '1'}
+372	372		301							"{3: ""Gently, Bianca grabs the human's hand as she stands up before the statue.""}"
+373	373		212							{1: '1', 6: '1'}
+374	374		301							{3: 'Before exiting the church, Bianca turns back and takes one last look at the unmoving clock, seeing her young self standing under it with the godfather.'}
+375	375		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory506.jpg'}
+376	376		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+377	377		504							{1: '0.7'}
+378	378		211							{1: '1', 2: '1021003', 3: '2', 7: '1'}
+379	379		301							"{1: '1', 2: 'Bianca', 3: ""How can the lily answer where to best stay? Please don't lie just to make me feel better."", 4: '101', 18: '100001890', 19: '1'}"
+380	380		504							{1: '0'}
+381	381		504							{1: '0.7', 2: '999'}
+382	382		212							{1: '1', 6: '1'}
+383	383		509							{1: 'Assets/Product/Texture/Image/BgCg/Cg3401_20.jpg', 2: '2'}
+384	384		301							{3: 'White and pure as snow, flowers now stand over the ruins once soaked in tears.'}
+385	385		211							{1: '1', 2: '1021012', 3: '5'}
+386	386		301							{1: '1', 3: 'No longer the young girl that would pray to God, she clenches her weapon and, like all struggling in the face of doomsday, walks the earth in place of God—God that has allowed all to occur under His very nose.', 4: '101'}
+387	387		301							{3: 'She <//WE> knows that there exists no god.', 4: '101'}
+388	388		301		1		AniZhuanchangBegin			{3: 'She <//WE> will not stop praying.', 4: '101'}

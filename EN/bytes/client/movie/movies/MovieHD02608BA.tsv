@@ -1,0 +1,214 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory785.jpg'}
+2	2		401							{1: '1', 2: '100'}
+3	3		301			DialogEnable				{3: 'Her hand pauses on a discordant note, interrupting the music.'}
+4	4		301							{3: 'She gazes long and hard at the piano keys, the morning mist in her mind firmly entrenched between the black and white.'}
+5	5		301							{3: 'She knows she must traverse this misty fog.'}
+6	6		301							{3: 'She knows this is a song guided by love.'}
+7	7		301							"{3: 'She knows that she has to be ""completed,"" even if it means that she can no longer be her past self... and that her future self will no longer be her current self.'}"
+8	8		301							{3: 'She is passing through the mist, heading toward another starry sky.'}
+9	9		201							{1: '1', 2: '500584'}
+10	10		301							{1: '1', 2: '???', 3: 'The stars twinkle, forcing us apart...', 4: '1', 18: '100002615'}
+11	11		301				AniZhuanchangBegin			{3: '—Tell me, Iris.'}
+12	12		202			DialogDisable				{1: '1', 6: '1'}
+13	13		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory191.png'}
+14	14		301			DialogEnable				{3: 'Another twenty-four hours earlier.'}
+15	15		301							{3: 'The noon sun shines lazily upon the beaches of Constellia, signaling that all you have left of your vacation is one more afternoon.'}
+16	16		301							{3: 'Compared to your previous busy schedule, this one afternoon feels as vast as a whole galaxy... perhaps because the work before was too exhausting.'}
+17	17		301							"{3: ""Take right now, for example. You get to lie on the beach, unmoving, mind empty, tracing the sun's path across the sky with each passing minute.""}"
+18	18		301							{3: 'Suddenly, a shadow blocks your view...'}
+19	19		201							{1: '1', 2: '500471'}
+20	20		301							{1: '1', 2: '???', 3: 'Is this 【kuroname】?', 4: '1'}
+21	21		302							{2: 'Yes.', 3: '22'}
+22	22		301							"{3: ""You instinctively shift to remove your sunglasses to see who's standing before you, but before you can even finish your sentence, a rectangular, shriveled item falls upon you alongside a scoop of fine sand.""}"
+23	23		302							{2: 'Cough cough... so much sand...', 3: '1001'}
+24	1001		401							{1: '2', 2: '4089'}
+25	24		301							{2: '???', 3: 'Your parcel has been delivered. Please sign here.', 4: '1'}
+26	25		202							{1: '1', 6: '1'}
+27	26		301							{3: 'It turns out to be a courier robot from Constellia. It scans you with its camera before trudging off on its tiny, self-automated tracks.'}
+28	27		302							"{2: ""What's going on..."", 3: '28'}"
+29	28		301							"{3: ""By the time you think to question the robot, it's already far away, seemingly in a hurry to deliver other parcels.""}"
+30	29		301							{3: 'What landed on you was a palm-sized, yellowed kraft paper envelope without a single word written on it.'}
+31	30		302							{2: 'A letter?', 3: '31'}
+32	31		301							{3: 'The sunlight quickly warms the grains of sand on the paper bag, as if even the sun itself is urging you to open it.'}
+33	32		301							{3: 'Without a letter opener at hand, you can only tear open this unknown letter along its width.'}
+34	33		301							{3: 'What falls into your palm is a crushed lilac-colored flower, practically in powder form by this point.'}
+35	34		302							{2: 'Is this...', 3: '35'}
+36	35		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+37	36		504							{1: '0.7'}
+38	37		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory549.jpg'}
+39	38		301							"{3: ""Like how a sword can wear through its sheath, a heart tightly gripped by a single name can also chafe uncomfortably against one's chest.""}"
+40	39		301							{3: 'That name has once reverberated through the night, echoing between lines of text.'}
+41	40		301							{3: 'That name has once described the tempest, the fairies wandering by the flowers, and its very self using the stars in the sky and three bottles of dried ink.'}
+42	41		302							{2: 'Iris...', 3: '42'}
+43	42		302				AniZhuanchangBegin			{2: 'Is that you?', 3: '43'}
+44	43		504			DialogDisable				{1: '0'}
+45	44		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory184.png'}
+46	45		301			DialogEnable				{3: 'Memories wash up on the beach like the tide, only to become helplessly stranded there.'}
+47	46		301							"{3: ""Soon, you have left a trail of footprints along Constellia's lengthy coastline, every step asking the same question.""}"
+48	47		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory202.png', 3: '0', 4: '1', 5: '1'}
+49	48		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+50	49		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory202.png'}
+51	50		301							{3: 'But those friendly mechanoids cannot provide an answer.'}
+52	51		301							"{3: ""You keep walking, keep asking, until you've almost lost track of time. The originally delicate sand on the beach is beginning to sting your feet, forcing you to sit down and rest for a while.""}"
+53	52		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory207.png', 3: '0', 4: '1', 5: '1'}
+54	53		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+55	54		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory207.png'}
+56	55		301							{3: 'You finally find yourself in front of an expanse of pure white stone walls, its sleek form standing out on this stretch of the beach.'}
+57	56		301							{3: 'This intricate expanse of stone walls twists and turns, with one side lower than the other, as if a Bolero dance set by the seaside, as if a never-ending maze.'}
+58	57		301							{3: 'Outside these sleek, white stone walls is a black piano standing on the beach. A wooden sign is nailed on the side of the walls facing the ocean.'}
+59	58		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory191.png', 3: '0', 4: '1', 5: '1'}
+60	59		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+61	60		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory191.png'}
+62	61		301							{3: 'It reads: Seaside Art Garden.'}
+63	62		301							"{3: ""Ayla once mentioned that the city's former manager was a connoisseur of art, so it doesn't seem so strange at all that they'd set up such a place in the city.""}"
+64	63		301							{3: 'The piano, too, was probably placed here to set the mood.'}
+65	64		301							{3: 'However, due to the erosion of the sand and sea breeze, the paint on the piano has started to peel off, revealing the metal and wooden structure inside.'}
+66	65		301							{3: 'The sunlight lands on the deep black lacquer, reflecting a brightness that rivals the white stone walls beside it. The piano, on the other hand, is like a bottomless black hole, and the sunlight orbiting it resembles a mere accretion disk.'}
+67	66		301				AniZhuanchangBegin			{3: 'A profound impulse drives you forward, and you rise and approach the piano, your fingers brushing across the keys—'}
+68	67		504			DialogDisable				{1: '0.7'}
+69	68		401							{1: '1', 2: '36'}
+70	69		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory528.jpg'}
+71	70		201				AniZhuanchangEnd			{1: '1', 2: '500430'}
+72	71		301			DialogEnable				"{1: '1', 2: 'Selena', 3: '""Alles Vergangliche ist nur ein Gleichnis."" [All that is transient is but a parable.]', 4: '1', 18: '100002616'}"
+73	72		301							"{2: 'Selena', 3: '""Das Unzulangliche, hier wird\'s Ereignis."" [The inadequate, here finds fulfillment...]', 4: '1', 18: '100002617'}"
+74	73		301				AniZhuanchangBegin			"{2: 'Selena', 3: '""Das Unbeschreibliche, hier ist\'s getan..."" [The ineffable, here is accomplished...]', 4: '1', 18: '100002618'}"
+75	74		202			DialogDisable				{1: '1', 6: '1'}
+76	75		504							{1: '0'}
+77	76		401							{1: '1', 2: '100'}
+78	77		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory191.png'}
+79	78		301			DialogEnable				{3: 'What should have been a grand chorus performed by thousands, in the end, fuses into a fervor that encompasses the entire universe.'}
+80	79		301							{3: 'Slowly, the notes are gently played with your/her fingers.'}
+81	80		301							{3: 'You suddenly find it hard to remember the hand-copied sheet music, sealed within a thick stack of letters. Your fingers hesitate, as if bound by the lines of musical notation, unable to move on to the next note.'}
+82	81		301							{3: 'Exactly what kind of feeling is this?'}
+83	82		301							"{3: ""You hesitate for a moment, and still can't bring yourself to play the next note in the end.""}"
+84	83		201							{1: '1', 2: '500488'}
+85	84		301							{1: '1', 2: '???', 3: 'Why not play on, esteemed guest?', 4: '1', 18: '100002783'}
+86	85		301							{3: 'A gentle mechanoid voice arises from behind the low, pristine wall.'}
+87	86		301							{3: 'The mechanoid, carrying a small bucket with a shovel inside, seems to be the gardener here.'}
+88	87		302							"{2: ""Sorry, I didn't mean to disturb you."", 3: '88'}"
+89	88		301							"{2: 'Gardener', 3: ""You haven't disturbed me. Your brilliant playing complemented the sound of the waves perfectly."", 4: '1', 18: '100002784'}"
+90	89		301							{2: 'Gardener', 3: 'So, why did you stop?', 4: '1', 18: '100002785'}
+91	90		302							"{2: ""I can't quite remember the rest of the song."", 3: '91'}"
+92	91		302							"{2: ""I can't go any further."", 3: '92'}"
+93	92		301							{2: 'Gardener', 3: 'Too bad. It was the same last night...', 4: '1', 18: '100002786'}
+94	93		302							{2: 'Last night?!', 3: '94'}
+95	94		302							{2: 'Ahem... my apologies.', 3: '95'}
+96	95		301							"{2: 'Gardener', 3: ""It's all right. What were you saying?"", 4: '1', 18: '100002787'}"
+97	96		302							{2: 'You said it was the same last night. What did you mean by that?', 3: '97'}
+98	97		301							{3: 'The mechanoid in front of you twists its head counterclockwise, as if in the process of recalling something.'}
+99	98		301							{2: 'Gardener', 3: 'Last night, while I was on duty here, I heard someone playing a similar song.', 4: '1', 18: '100002788'}
+100	99		301							{2: 'Gardener', 3: 'Unfortunately, my presence must have disturbed the performer. Right as I was approaching, the music ceased.', 4: '1', 18: '100002789'}
+101	100		302							"{2: ""So you didn't catch a glimpse of the person who was playing that piece. Is that correct?"", 3: '101'}"
+102	101		301							{2: 'Gardener', 3: 'Yes.', 4: '1', 18: '100002790'}
+103	102		301							"{3: ""The mechanoid's head spins around once more before it speaks.""}"
+104	103		301							"{2: 'Gardener', 3: ""If there's nothing else I can help you with, I'll get back to my work. I hope you enjoy yourself here."", 4: '1', 18: '100002791'}"
+105	104		301							{2: 'Gardener', 3: 'If you wish to admire the flowers in the garden, please feel free to do so.', 4: '1', 18: '100002792'}
+106	105		301							{2: 'Gardener', 3: 'By the way, the paths in the garden can be complicated... but if you always turn left at every crossroad, you will eventually find your way.', 4: '1', 18: '100002793'}
+107	106		202							{1: '1', 6: '1'}
+108	107		301							{3: 'With that, the gardener turns away, bucket and trowel in hand, and leaves.'}
+109	108		301							{3: 'One hand pressed against the envelope in your pocket, you retract your other hand from the piano.'}
+110	109		301							{3: 'It must have been her who played the piano here last night.'}
+111	110		301							{3: 'But no one remembers... nor even knows that she was here.'}
+112	111		301				AniZhuanchangBegin			{3: 'Sunlight strikes the stone walls of the garden, their pure white, pebble-smooth surfaces echoing like a thousand voices in chorus.'}
+113	112		504			DialogDisable				{1: '0.7'}
+114	113		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory528.jpg'}
+115	114		201				AniZhuanchangEnd			{1: '1', 2: '500430'}
+116	115		301			DialogEnable				{1: '1', 2: 'Selena', 3: 'This symphony was meant to be performed by a choir and orchestra of thousands.', 4: '1', 18: '100002619'}
+117	116		301							{2: 'Selena', 3: 'Angels, with love and joy as their flame, repelled Mephistopheles, thwarting his pact with Faust.', 4: '1', 18: '100002620'}
+118	117		301							"{2: 'Selena', 3: ""Faust's ideals and passion have remained unchanged from the beginning to the end."", 4: '1', 18: '100002621'}"
+119	118		204							{1: '1', 2: '2'}
+120	119		301							{2: 'Selena', 3: 'No matter how the devil tempted him, no matter how heavy reality weighed upon him, Faust never abandoned his quest.', 4: '1', 18: '100002622'}
+121	120		301							{3: 'She sits quietly on the velvet-cushioned piano stool, her fingertips gliding over the closed lid.'}
+122	121		204							{1: '1', 2: '8'}
+123	122		301				AniZhuanchangBegin			{2: 'Selena', 3: 'Perhaps he never truly possessed the truth, but his relentless pursuit of it was more than enough.', 4: '1', 18: '100002623'}
+124	123		202			DialogDisable				{1: '1', 6: '1'}
+125	124		504							{1: '0'}
+126	125		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+127	126		307							"{1: '""Das Ewig-Weibliche zieht uns hinan."" [The eternal feminine draws us onward.]'}"
+128	127		301							"{3: '""Das Ewig-Weibliche zieht uns hinan."" [The eternal feminine draws us onward.]', 18: '100002624'}"
+129	128		401							{1: '1', 2: '36'}
+130	129		307							{2: '1'}
+131	130		401							{1: '1', 2: '903'}
+132	131		301			DialogEnable	AniZhuanchangBegin			"{3: ""The music doesn't stop when you enter the garden.""}"
+133	132		101			DialogDisable	AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory716.jpg'}
+134	133		301			DialogEnable				"{3: ""Though built on sand, the garden harbors many plots especially cultivated with lush greenery and flowers, likely the gardener's handiwork.""}"
+135	134		401							{1: '1', 2: '904'}
+136	135		301							{3: 'Juxtaposed against the backdrop of the white stone walls, the varied colors of the lilies, tulips, and countless other unnamed flowers appear even more vibrant.'}
+137	136		301							{3: 'Initially, the stone walls are low, concealed by greenery and partitioning a shaded path. But as you venture deeper, the walls grow taller, obscuring the view of all the plants, like looming waves of white increasing in height.'}
+138	137		401							{1: '1', 2: '904'}
+139	138		301							{3: 'The paths formed by the stone walls are all uneven, with one side always taller than the other.'}
+140	139		301							{3: 'You progress deeper into the garden, noting small flowers occasionally appearing by the walls on either side.'}
+141	140		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory783.jpg', 3: '0', 4: '1', 5: '1'}
+142	141		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+143	142		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory783.jpg'}
+144	143		301							{3: 'By now, the sun has begun its descent toward the horizon.'}
+145	144		301							{3: 'Are you here to seek something?'}
+146	145		301							{3: 'You clench the letter in your pocket tight once again.'}
+147	146		301							"{3: ""But now that you're thinking about it, what you found in the envelope might not have even been a flower, despite the texture of the fragments resembling one.""}"
+148	147		401							{1: '1', 2: '904'}
+149	148		301							"{3: ""You can't even be certain that it was an iris, once vibrant but now dried and crumbled.""}"
+150	149		301							"{3: 'But it ""probably"" used to be a flower.'}"
+151	150		301							{3: 'The garden paths carry over a hint of sea breeze, dampening even the pure white stone walls with traces of dew, as if dried remnants of the morning mist.'}
+152	151		301							{3: 'Perhaps due to the humidity, you can almost feel the sense of anxiety radiating from within the envelope, marking your hands with similar dew-like traces.'}
+153	152		301							"{3: '""By the way, the paths in the garden can be complicated... but if you always turn left at every crossroad, you will eventually find your way.""'}"
+154	153		401							{1: '1', 2: '904'}
+155	154		301							"{3: ""That's what the gardener had said.""}"
+156	155		301							{3: 'At every left turn of the sand-lined crossroad, there is a track of shallow footprints.'}
+157	156		301							{3: 'These are not the footprints of the mechanical gardener, but rather resemble those of a human.'}
+158	157		301							{3: 'Left... left... left... and left again.'}
+159	158		301							{3: 'Those footprints are present at every left turn.'}
+160	159		301							"{3: ""Judging from the increasing height of the towering stone walls on either side, you're getting closer to the heart of the garden.""}"
+161	160		301							{3: 'The flowers planted at the base of the stone walls seem to flourish even more as you go, as if part of this orderly crescendo.'}
+162	161		401							{1: '1', 2: '904'}
+163	162		301							{3: 'You follow these footprints, turn left, and left again.'}
+164	163		301							"{3: ""At every crossroad, the footprints make a decisive left turn, as if without a moment's hesitation.""}"
+165	164		301							{3: 'Led on by the footprints, you leave new ones in your wake, until finally stopping in front of a narrow flowerbed.'}
+166	166		401							{1: '1', 2: '36'}
+167	167		401							{1: '1', 2: '138'}
+168	168		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory804.jpg', 3: '0', 4: '1', 5: '1'}
+169	169		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+170	170		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory804.jpg'}
+171	165		301							"{3: ""In the flowerbed, an iris blooms in silence, swaying gently, so fragile it's as if it could crumble into dust at any moment.""}"
+172	171		301							{3: 'Yet it sways on, resilient.'}
+173	172		301							{3: 'As if it had always been there, unnoticed, uncared for.'}
+174	173		301							{3: 'A flute lies quietly next to the flowerbed.'}
+175	174		301				AniZhuanchangBegin			{3: 'It makes nary a sound.'}
+176	175		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+177	176		307							"{1: '""...From the greater silence I shall return.""'}"
+178	177		301							"{1: '1', 2: 'Selena', 3: '""...From the greater silence I shall return.""', 4: '1', 18: '100002625'}"
+179	178		307							"{1: '""The mist that drifts away at dawn, leaving but dew in the fields, shall rise and gather into a cloud and then fall down in rain.""'}"
+180	179		301							"{2: 'Selena', 3: '""The mist that drifts away at dawn, leaving but dew in the fields, shall rise and gather into a cloud and then fall down in rain.""', 4: '1', 18: '100002626'}"
+181	180		307							"{1: '""And not unlike the mist have I been.""'}"
+182	181		301				AniZhuanchangBegin			"{2: 'Selena', 3: '""And not unlike the mist have I been.""', 4: '1', 18: '100002627'}"
+183	182		307							{2: '1', 6: '1'}
+184	183		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory783.jpg'}
+185	184		301			DialogEnable				{3: 'The sun is about to set, and dawn is still far away. The entire city is enveloped by the twilight waves.'}
+186	185		301							{3: 'Exiting the garden, you find yourself back on the sandy beach of Constellia.'}
+187	186		301				AniZhuanchangBegin			"{3: ""In a few hours, the transport craft to Babylonia will arrive in the city, and you'll return to your previous life.""}"
+188	187		101			DialogDisable	AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_36.jpg'}
+189	188		301			DialogEnable				{3: 'Between sand and foam, a photograph lies.'}
+190	189		301							{3: 'No one remembers her... no one heard her voice... no one saw her words.'}
+191	190		301							{3: 'Even her name is seldom recalled, abandoned by time like an unspeakable riddle.'}
+192	191		301							{3: 'Not even she herself can freely drink from the well of memory.'}
+193	192		301							{3: 'After all, humans rarely wish to be forgotten.'}
+194	193		301							{3: 'Some have their ways of remaining relevant, yet some cannot even make a feeble squeak in complaint.'}
+195	194		301							{3: 'Some dictate the times, deciding what the memories shall reveal, instead of showing what truly deserves remembrance.'}
+196	195		301							{3: 'Despite knowing that, she strives to speak, to write on, to affirm her own existence.'}
+197	196		301							{3: 'Despite knowing that...'}
+198	197		302							{2: 'I am here, Iris.', 3: '198'}
+199	198		302				AniZhuanchangBegin			{2: 'I hear you, Iris.', 3: '199'}
+200	199		101			DialogDisable	AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+201	200		301			DialogEnable				{3: 'The final note reluctantly fades into the night sky. The night of Constellia is plunged back into gentle silence.'}
+202	201		301							{3: 'The lid of the piano is closed, the same way it had been opened.'}
+203	202		301							"{3: ""As she stands up, she doesn't notice a small photo slipping down from atop the piano.""}"
+204	203		301							"{3: ""It's the only gift the garden has left behind to the world. The gift known as remembrance.""}"
+205	204		301							{3: 'She is still savoring the lingering touch of the keys on her fingertips, yet the force has already led her on a new journey.'}
+206	205		201							{1: '1', 2: '500291', 3: '8'}
+207	206		301							{1: '1', 2: '???', 3: 'I... heard it too.', 4: '1', 18: '100002628'}
+208	207		204							{1: '1'}
+209	208		301				AniZhuanchangBegin			"{2: '???', 3: ""I will find you, just like I've always believed you would find me."", 4: '1', 18: '100002629'}"
+210	212		202			DialogDisable				{1: '1', 6: '1'}
+211	211		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg'}
+212	209		301			DialogEnable				"{3: '—""Thou gazest at the stars, my star;""'}"
+213	210		301		1		AniZhuanchangBegin			"{3: '—""Would I were Heaven, that I might gaze at thee with many eyes.""'}"

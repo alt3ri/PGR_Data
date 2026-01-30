@@ -1,0 +1,28 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory10.jpg'}
+2	1000		401							{1: '1', 2: '203'}
+3	2		201							{1: '1', 2: '1031001', 4: '-400'}
+4	3		201							{1: '2', 2: '500006', 4: '400'}
+5	4		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'What are you trying to do with this Inver-Device?', 4: '1'}
+6	5		301							{2: 'Suzaku Squad Construct', 3: 'Tifa was injected with a foreign power by an enemy... That power allowed Constructs to keep their consciousness stable even under viral influence, all while harnessing the power of the virus...', 4: '2'}
+7	6		301							{2: 'Suzaku Squad Construct', 3: 'But if such immense power comes at the expense of human nature... Those that master it are still slaves to the Punishing Virus...', 4: '2'}
+8	7		301							{2: 'Suzaku Squad Construct', 3: 'Even though Tifa has lost her humanity... we may still be able to recover her M.I.N.D. if she is connected to the Inver-Device...', 4: '2'}
+9	8		301							"{2: 'Suzaku Squad Construct', 3: ""Wait for me, Tifa... I'll... bring you back to... Babylonia..."", 4: '2'}"
+10	9		202							{1: '1', 2: '2', 6: '1'}
+11	10		201							{1: '1', 2: '1021001'}
+12	11		301							{1: '1', 2: 'Lucia', 3: 'We cannot allow him to go by himself.', 4: '1'}
+13	12		302							{2: 'Gather nearby teams.', 3: '13', 4: 'Follow him.', 5: '15'}
+14	13		201							{1: '1', 2: '1031001'}
+15	14	17	301							"{1: '1', 2: 'Liv', 3: ""Okay, I've sent the coordinates to all other squads in the area!"", 4: '1'}"
+16	15		201							{1: '1', 2: '1011001'}
+17	16		301							{1: '1', 2: 'Lee', 3: 'We should still keep a safe distance from him. After all, we have no intel on what the Iron Maiden can do.', 4: '1'}
+18	17		201							{1: '1', 2: '1011001', 3: '10'}
+19	18		301							"{1: '1', 2: 'Lee', 3: ""Lucia, you know he can't be saved, right?"", 4: '1'}"
+20	19		204							{1: '1'}
+21	20		301							"{2: 'Lee', 3: ""Whether we help or not, it won't change the result."", 4: '1'}"
+22	21		201							{1: '1', 2: '1021001', 3: '3'}
+23	22		301							"{1: '1', 2: 'Lucia', 3: ""Even so... I'd still like to at least help him until his end."", 4: '1'}"
+24	23		201							{1: '1', 2: '1011001', 3: '10'}
+25	24		301							"{1: '1', 2: 'Lee', 3: ""Just... don't expect anything to come out of it. Keep an eye out for Tifa and the movement of other Corrupted."", 4: '1'}"
+26	25		201							{1: '1', 2: '1021001', 3: '3'}
+27	26		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Lucia', 3: ""I will, let's follow him then."", 4: '1'}"

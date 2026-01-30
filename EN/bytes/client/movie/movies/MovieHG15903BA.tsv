@@ -1,0 +1,424 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory974.jpg'}
+2	2		401							{1: '1', 2: '6226'}
+3	3		201							{1: '1', 2: '501328', 3: '1'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Discord', 3: ""Today's breakfast is Kowloong fragrant tea, strawberry muffins, and a sausage and cheese omelet..."", 4: '1'}"
+5	5		301							{2: 'Discord', 3: 'Plus banana honey toast, taro croissants, and pumpkin pancakes. And...', 4: '1'}
+6	6		302							{2: 'W-wait, hold on...', 3: '7'}
+7	7		204							{1: '1', 2: '4'}
+8	8		301							{3: 'She pauses mid-serve and looks at you, puzzled.'}
+9	9		202							{1: '1'}
+10	10		401							{1: '2', 2: '4276'}
+11	11		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiChatServeMain/FxUiChatServe01.prefab', 2: '2'}
+12	12		301				DialogDisable			{3: 'The table in front of you is crowded with all kinds of breakfast dishes, their sweet aroma filling the air... and by the time the pumpkin pancakes arrive, there are already six full plates laid out.'}
+13	13		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiChatServeMain/FxUiChatServe01.prefab'}
+14	14		302							{2: 'For breakfast, this might be... a little too much.', 3: '15', 4: '...', 5: '15'}
+15	15		301			DialogEnable				"{3: ""Ever since the three of you formed this little family, Discord's maid-like devotion has only grown. The most obvious sign? Your breakfasts have become more elaborate by the day... to the point of being almost too much.""}"
+16	16		201							{1: '1', 2: '501328'}
+17	17		301							"{1: '1', 2: 'Discord', 3: ""Commandant, it's important that we set a good example for Ksori."", 4: '1'}"
+18	18		401							{1: '2', 2: '5540'}
+19	19		201							{1: '1', 2: '501317'}
+20	20		301							{1: '1', 2: 'Ksori', 3: 'Woof!', 4: '1'}
+21	21		202							{1: '1'}
+22	22		301							"{3: ""Ksori's meals have grown equally extravagant. The bowl that once held plain kibble now has a small mountain of stew.""}"
+23	23		401							{1: '2', 2: '2936'}
+24	24		301				DialogDisable			"{3: ""She nuzzles Discord's hand affectionately, then starts to feast.""}"
+25	25		302							"{2: ""Come to think of it, Ksori doesn't look quite as skinny anymore."", 3: '26'}"
+26	26		201							{1: '1', 2: '501328'}
+27	27		301			DialogEnable				{1: '1', 2: 'Discord', 3: 'Mm. She was in bad shape from the abuse before... severely malnourished.', 4: '1'}
+28	28		204							{1: '1', 2: '1'}
+29	29		301							"{2: 'Discord', 3: ""On missions, I can bring in quite a bit of game. Once the conservation area's storehouses are full, I use the extra to adjust her diet."", 4: '1'}"
+30	30		401							{1: '2', 2: '1543'}
+31	31		301							{3: 'Holding her plate neatly at waist level, Discord turns to face you.'}
+32	32		301							"{2: 'Discord', 3: ""I believe food made by hand carries feelings with it. Whether I'm cooking for you, Commandant, or for Ksori, it's the same."", 4: '1'}"
+33	33		204							{1: '1'}
+34	34		301							"{2: 'Discord', 3: ""People were cold in Las Prados. Everyone in the Purifying Force was a Construct who didn't need to eat, and Valeria was usually tied up with missions."", 4: '1'}"
+35	35		204							{1: '1', 2: '8'}
+36	36		301							"{2: 'Discord', 3: ""...It's been so long..."", 4: '1'}"
+37	37		302							{2: 'So long since what?', 3: '38'}
+38	38		204							{1: '1', 2: '6'}
+39	39		301							"{2: 'Discord', 3: ""So long since I've been able to take care of someone like this. Not a master, not a comrade... something... more special."", 4: '1'}"
+40	40		202							{1: '1'}
+41	41		301				DialogDisable			{3: 'She looks at the table full of food, a hint of warmth in her deep blue eyes.'}
+42	42		302							"{2: '(Dig in with enthusiasm)', 3: '43', 4: ""(Politely mentioning there's a bit too much food)"", 5: '53'}"
+43	43		301			DialogEnable				"{3: ""The overflowing breakfast table carries the weight of her feelings. It may be a little clumsy, but it's a small step toward learning how to connect with the people she cherishes.""}"
+44	44		301							"{3: ""She hides a kind of reliance and longing within the dishes she makes. All you have to do is make sure those feelings don't go unnoticed.""}"
+45	45		201							{1: '1', 2: '501328', 3: '1'}
+46	46		301							"{1: '1', 2: 'Discord', 3: ""That's a relief... I'm out of practice with some of these, but I'm glad I didn't disappoint you."", 4: '1'}"
+47	47		301							{3: 'She seems almost surprised that her cooking has been met with such open enthusiasm. Her smile is bright and childlike.'}
+48	48		401							{1: '2', 2: '5540'}
+49	49		201							{1: '1', 2: '501317'}
+50	50		301							{1: '1', 2: 'Ksori', 3: 'Woof!', 4: '1'}
+51	51		202							{1: '1'}
+52	52	60	301				AniZhuanchangBegin			{3: 'The two of you—human and dog—are caught in the happy problem of too much good food.'}
+53	53		201							{1: '1', 2: '501328', 3: '3'}
+54	54		301			DialogEnable				{1: '1', 2: 'Discord', 3: 'Ah... I just kept thinking you and Ksori both needed proper nutrition, and I may have gotten a little carried away...', 4: '1'}
+55	55		302							"{2: ""But it's all delicious, and I won't waste any of it."", 3: '56'}"
+56	56		204							{1: '1', 2: '1'}
+57	57		301							{2: 'Discord', 3: 'Yeah.', 4: '1'}
+58	58		202							{1: '1'}
+59	59		301				AniZhuanchangBegin			"{3: ""The overflowing breakfast table carries the weight of her feelings. It may be a little clumsy, but it's a small step toward learning how to connect with the people she cherishes.""}"
+60	60		502							{1: 'DialogDisable'}
+61	61		401						2000.0	{1: '1', 2: '36'}
+62	62		401							{1: '1', 2: '5061'}
+63	63		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory975.jpg'}
+64	64		201							{1: '1', 2: '501317', 4: '-900', 5: '-330', 6: '300', 7: '1'}
+65	65		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront93.png', 3: '1', 4: '1', 5: '0'}
+66	66		104							{1: '275|0|0', 2: '0', 4: '4'}
+67	67		401							{1: '2', 2: '910'}
+68	68		109			AniZhuanchangEnd			1200.0	"{1: '11', 2: ""<color=#0e70bdff><size=33>Today's my first day as a trainer... When Ksori first moved in,\\nshe was so on edge, always keeping her distance from us...</size></color>"", 3: '900', 4: '350', 6: '1', 7: '1', 8: '1', 10: '1'}"
+69	69		301							"{1: '1', 3: ""Today's my first day as a trainer... When Ksori first moved in, she was so on edge, always keeping her distance from us..."", 4: '1'}"
+70	70		109						1700.0	"{1: '12', 2: '<color=#0e70bdff><size=33>According to a training book I read,\\nif Commandant and I—the ""parents"" in this case—show we\'re close,\\nthe dog will pick up on that harmony and start to relax too.</size></color>', 3: '900', 4: '150', 6: '1', 7: '1', 8: '1.5', 10: '1'}"
+71	71		301							"{3: 'According to a training book I read, if Commandant and I—the ""parents"" in this case—show we\'re close, the dog will pick up on that harmony and start to relax too.', 4: '1'}"
+72	72		109						1200.0	{1: '13', 2: '<color=#0e70bdff><size=33>So I suggested Commandant and I sit a little closer...\\nand sure enough, Ksori curled up right next to us.</size></color>', 3: '900', 4: '-50', 6: '1', 7: '1', 8: '1', 10: '1'}
+73	73		301							{3: 'So I suggested Commandant and I sit a little closer... and sure enough, Ksori curled up right next to us.', 4: '1'}
+74	74		109						1200.0	"{1: '14', 2: ""<color=#0e70bdff><size=33>...I wonder if she'll start thinking of this place as home. I'd like that.\\nEven more, I'd like it to be our home together...</size></color>"", 3: '900', 4: '-250', 6: '1', 7: '1', 8: '1', 10: '1'}"
+75	75		301				AniZhuanchangBegin			"{3: ""...I wonder if she'll start thinking of this place as home. I'd like that. Even more, I'd like it to be our home together..."", 4: '1'}"
+76	76		110							
+77	77		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory974.jpg'}
+78	78		401							{1: '2', 2: '910'}
+79	79		109			AniZhuanchangEnd			1200.0	"{1: '11', 2: ""<color=#0e70bdff><size=33>Day 5. At first, she wouldn't touch the kibble the organizers sent over...\\nBut she can't resist my cooking.</size></color>"", 3: '900', 4: '350', 6: '1', 7: '1', 8: '1', 10: '1'}"
+80	80		301							"{1: '1', 3: ""Day 5. At first, she wouldn't touch the kibble the organizers sent over... but she can't resist my cooking."", 4: '1'}"
+81	81		109						1200.0	{1: '12', 2: '<color=#0e70bdff><size=33>From what my visual records show, her coat is getting shinier...\\nBut her legs are still thin. Could there be something missing in her diet?</size></color>', 3: '900', 4: '150', 6: '1', 7: '1', 8: '1', 10: '1'}
+82	82		301							{3: 'From what my visual records show, her coat is getting shinier... but her legs are still thin. Could there be something missing in her diet?', 4: '1'}
+83	83		109						1200.0	"{1: '13', 2: ""<color=#0e70bdff><size=33>The Commandant told me not to worry too much, that we're already doing more than enough.\\nKsori will get better... she just needs time.</size></color>"", 3: '900', 4: '-50', 6: '1', 7: '1', 8: '1', 10: '1'}"
+84	84		301				AniZhuanchangBegin			"{3: ""The Commandant told me not to worry too much, that we're already doing more than enough. Ksori will get better... she just needs time."", 4: '1'}"
+85	85		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory975.jpg'}
+86	86		110							
+87	87		401							{1: '2', 2: '910'}
+88	88		109			AniZhuanchangEnd			1200.0	"{1: '11', 2: ""<color=#0e70bdff><size=33>Day 10. These past few days, we've been taking Ksori out around the conservation area.</size></color>"", 3: '900', 4: '370', 6: '1', 7: '1', 8: '1', 10: '1'}"
+89	89		301							"{1: '1', 3: ""Day 10. These past few days, we've been taking Ksori out around the conservation area."", 4: '1'}"
+90	90		109						1200.0	"{1: '12', 2: ""<color=#0e70bdff><size=33>At first, she was nervous and excited all at once...\\nWhenever we saw people, she'd hide behind our legs,\\nand if we ran into other dogs, she'd bark at them like crazy...</size></color>"", 3: '900', 4: '170', 6: '1', 7: '1', 8: '1', 10: '1'}"
+91	91		301							"{3: ""At first, she was nervous and excited all at once... Whenever we saw people, she'd hide behind our legs, and if we ran into other dogs, she'd bark at them like crazy..."", 4: '1'}"
+92	92		109						1200.0	{1: '13', 2: '<color=#0e70bdff><size=33>We tried everything—treats, games, commands...\\nBut the results were limited.</size></color>', 3: '900', 4: '-30', 6: '1', 7: '1', 8: '1', 10: '1'}
+93	93		301				AniZhuanchangBegin			{3: 'We tried everything—treats, games, commands... but the results were limited.', 4: '1'}
+94	94		110							
+95	95		401						500.0	{1: '2', 2: '2768'}
+96	96		401							{1: '2', 2: '910'}
+97	97		109			AniZhuanchangEnd			1700.0	"{1: '11', 2: ""<color=#0e70bdff><size=33>Commandant told me recovery is a long road.\\nTrauma doesn't just disappear—it eases bit by bit over time...\\nfor humans, Constructs, and dogs alike.</size></color>"", 3: '900', 4: '330', 6: '1', 7: '1', 8: '1.5', 10: '1'}"
+98	98		301							"{3: ""Commandant told me recovery is a long road. Trauma doesn't just disappear—it eases bit by bit over time... for humans, Constructs, and dogs alike."", 4: '1'}"
+99	99		109						1200.0	"{1: '12', 2: ""<color=#0e70bdff><size=33>I can tell she's trying to adjust...\\nso today, we took her out again...</size></color>"", 3: '900', 4: '130', 6: '1', 7: '1', 8: '1', 10: '1'}"
+100	100		301							"{3: ""I can tell she's trying to adjust... so today, we took her out again..."", 4: '1'}"
+101	101		109						1200.0	"{1: '13', 2: ""<color=#0e70bdff><size=33>But I didn't expect the clear sky to suddenly turn dark\\nand start pouring rain...</size></color>"", 3: '900', 4: '-70', 6: '1', 7: '1', 8: '1', 10: '1'}"
+102	102		301				AniZhuanchangBegin			"{3: ""But I didn't expect the clear sky to suddenly turn dark and start pouring rain..."", 4: '1'}"
+103	103		205							{1: '1004'}
+104	104		104							{1: '0|0|0', 2: '0', 4: '4'}
+105	105		401							{1: '1', 2: '36'}
+106	106		110							
+107	107		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory605.jpg'}
+108	108		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '1', 5: '0'}
+109	109		202						2000.0	{1: '1', 6: '1'}
+110	110		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+111	111		401							{1: '2', 2: '2597'}
+112	112		306							{1: '1'}
+113	113		502							{1: 'DialogEnable'}
+114	114		301			AniZhuanchangEnd				"{3: ""<i>It's raining.</i>""}"
+115	115		401							{1: '1', 2: '63'}
+116	116		306							
+117	117		402							{1: '2597'}
+118	118		401							{1: '2', 2: '5832'}
+119	119		201							{1: '1', 2: '501318'}
+120	120		301			PanelActor1Shake				{1: '1', 2: 'Ksori', 3: '(Terrified barking)', 4: '1'}
+121	121		306							{1: '1'}
+122	122		202							{1: '1'}
+123	123		301							"{3: ""<i>So much... <color=#ff4e4eff>water</color>. Don't want <color=#ff4e4eff>water</color>.</i>""}"
+124	124		401							{1: '2', 2: '4387'}
+125	125		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+126	126		504							{1: '0.7'}
+127	127		306							
+128	128		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+129	129		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory143.png'}
+130	130		201							{1: '1', 2: '500129', 7: '1'}
+131	131		301							"{1: '1', 2: 'Merchant', 3: ""Where are the spices I told you to find? You still haven't brought them? Some nose you've got."", 4: '1'}"
+132	132		401							{1: '2', 2: '5832'}
+133	133		201							{1: '1', 2: '501318'}
+134	134		301			PanelActor1Shake				{1: '1', 2: 'Ksori', 3: '(Terrified barking)', 4: '1'}
+135	135		201							{1: '1', 2: '500129'}
+136	136		301				DialogDisable			"{1: '1', 2: 'Merchant', 3: ""Then maybe I should dunk you in the spice <color=#ff4e4eff>water</color> so you'll remember what you're supposed to be sniffing out!"", 4: '1'}"
+137	137		202							{1: '1', 6: '1'}
+138	138		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+139	139		401							{1: '2', 2: '4685'}
+140	140		501						2500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '2'}
+141	141		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+142	142		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1281.jpg'}
+143	143		201							{1: '1', 2: '501327', 3: '16', 7: '1'}
+144	144		201							{1: '2', 2: '501318', 4: '-150', 5: '-20', 6: '-5', 7: '1'}
+145	145		205							{1: '1', 3: '0.5', 4: '0.5', 5: '0'}
+146	146		205							{1: '2', 3: '0.9', 4: '0.9', 5: '0'}
+147	147		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '2'}
+148	148		502							{1: 'PanelActor1Shake'}
+149	149		502							{1: 'PanelActor2Shake'}
+150	150		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRpgMakerGame/FxUiFubenRpgMakerGameBubble01.prefab', 2: '2'}
+151	151		401							{1: '2', 2: '5529'}
+152	152		301			DialogEnable				{1: '1', 2: 'Ksori?', 3: 'Whimper—', 4: '1', 5: '2'}
+153	153		205							{1: '1', 3: '0.5', 4: '0', 5: '0.5'}
+154	154		205						600.0	{1: '2', 3: '0.9', 4: '0', 5: '0.5'}
+155	155		202							{1: '1', 2: '2', 6: '1'}
+156	156		301							{3: 'A flood of cold blue terror rushes into her nose, filling her chest and lungs.'}
+157	157		401							{1: '2', 2: '4819'}
+158	158		201							{1: '1', 2: '501327', 3: '16', 7: '1'}
+159	159		201							{1: '2', 2: '501318', 4: '-150', 5: '-20', 6: '-5', 7: '1'}
+160	160		205							{1: '1', 3: '0', 4: '0.8', 5: '1'}
+161	161		205							{1: '2', 3: '0', 4: '0.2', 5: '1'}
+162	162		502							{1: 'PanelActor1Shake'}
+163	163		502							{1: 'PanelActor2Shake'}
+164	164		301							{1: '1', 2: 'Ksori?', 3: 'Gurgle—', 4: '1', 5: '2'}
+165	165		205							{1: '1', 3: '0.8', 4: '0', 5: '0.5'}
+166	166		205						600.0	{1: '2', 3: '0.2', 4: '0', 5: '0.5'}
+167	167		202							{1: '1', 2: '2', 6: '1'}
+168	168		306							{1: '1'}
+169	169		401							{1: '2', 2: '4885'}
+170	170		301							{3: '<i>Must... breathe... must open mouth...</i>'}
+171	171		306							
+172	172		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+173	173		402							{1: '4885'}
+174	174		402							{1: '4819'}
+175	175		201							{1: '1', 2: '501327', 3: '3', 7: '1'}
+176	176		401							{1: '2', 2: '5814'}
+177	177		301			RImgBg1Shake				{1: '1', 2: 'Ksori?', 3: 'Mmm-mph!', 4: '1'}
+178	178		306							{1: '1'}
+179	179		202							{1: '1'}
+180	180		104							{1: '0|0|-200', 2: '0.5'}
+181	181		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+182	182		301							{3: '<i>Must get up... must reach the surface!!</i>'}
+183	183		306							
+184	184		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+185	185		401							{1: '2', 2: '721'}
+186	186		104							{1: '0|0|0', 2: '0.3'}
+187	187		301			RImgBg1Shake				{3: 'A splash—then a hand forces her back under.'}
+188	188		201							{1: '18', 2: '500421', 4: '-500', 5: '-360', 6: '500'}
+189	189		301							"{1: '1', 2: 'Instructor', 3: ""The orphanage doesn't feed you for free. You'll be sent on plenty of missions in extreme conditions. Look at you, can't even hold your breath in <color=#ff4e4eff>water</color> without choking. Pathetic!"", 4: '18'}"
+190	190		301							"{2: 'Instructor', 3: ""Hold it in! Struggle again and I'll make you hold it even longer!"", 4: '18'}"
+191	191		202			DialogDisable				{1: '18', 6: '1'}
+192	192		401							{1: '2', 2: '4133'}
+193	193		205						1500.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1.5'}
+194	194		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+195	195		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRpgMakerGame/FxUiFubenRpgMakerGameBubble01.prefab'}
+196	196		301			DialogEnable				{3: 'The icy darkness spreads from her limbs, carried by the <color=#ff4e4eff>water</color> until it swallows her vision completely.'}
+197	197		205							{1: '1005'}
+198	198		201							{1: '1', 2: '501327', 3: '16'}
+199	199		301			PanelActor1Shake	DialogDisable			{1: '1', 2: 'Ksori?', 3: 'Mmmph!!', 4: '1'}
+200	200		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+201	201		504							{1: '0'}
+202	202		202							{1: '1', 6: '1'}
+203	203		402							{1: '4133'}
+204	204		401							{1: '2', 2: '2595'}
+205	205		109							{1: '11', 2: '<i><size=60>So <color=#34aff8ff>cold</color>, so <color=#34aff8ff>cold</color>, must escape, must get away!</size></i>', 3: '0', 4: '50', 9: '3'}
+206	206		301							{3: '<i>So <color=#34aff8ff>cold</color>, so <color=#34aff8ff>cold</color>, must escape, must get away!</i>'}
+207	207		110							
+208	208		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+209	209		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+210	210		201							{1: '1', 2: '501343', 4: '-400', 7: '1'}
+211	211		201							{1: '2', 2: '500421', 4: '400', 7: '1'}
+212	212		502							{1: 'PanelActor1Shake'}
+213	213		502							{1: 'PanelActor2Shake'}
+214	214		301			DialogEnable				{1: '1', 2: 'Merchant & Instructor', 3: 'Hey!!', 4: '1', 5: '2'}
+215	215		401							{1: '2', 2: '4388'}
+216	216		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+217	217		202							{1: '1', 2: '2', 6: '1'}
+218	218		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+219	219		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory605.jpg'}
+220	220		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+221	221		401							{1: '2', 2: '2597'}
+222	222		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+223	223		306							{1: '1'}
+224	224		401							{1: '2', 2: '4462'}
+225	225		104							{1: '0|0|-200', 2: '0.5'}
+226	226		301							"{3: ""<i>So <color=#34aff8ff>cold</color>, run! Don't look back! No <color=#ff4e4eff>water</color>, <color=#ff4e4eff>water</color> is terrifying!</i>""}"
+227	227		402							{1: '4462'}
+228	228		306							
+229	229		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+230	230		201							{1: '1', 2: '501338', 4: '-400'}
+231	231		201							{1: '4', 2: '500678', 4: '400', 5: '-50', 6: '-150', 8: '1'}
+232	232		301				AniZhuanchangBegin			{1: '1', 2: '??&???', 3: 'Ksori!!', 4: '1', 5: '4'}
+233	233		402							{1: '2597'}
+234	234		502							{1: 'DialogDisable'}
+235	235		202							{1: '1', 2: '4', 6: '1'}
+236	236		306							{1: '1'}
+237	237		401							{1: '2', 2: '4462'}
+238	238		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+239	239		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory13.jpg', 4: '1'}
+240	240		502							{1: 'AniZhuanchangEnd'}
+241	241		104					500.0	500.0	{1: '0|0|-300', 2: '1', 4: '1'}
+242	242		205						500.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory68.jpg', 3: '0', 4: '1', 5: '0.5'}
+243	243		104						500.0	{1: '0|0|-300', 2: '1', 4: '4'}
+244	244		205						500.0	{1: '1006', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg', 3: '0', 4: '1', 5: '0.5'}
+245	245		104						500.0	{1: '0|0|-300', 2: '1', 4: '6'}
+246	246		301			DialogEnable	AniZhuanchangBegin			{2: 'Ksori?', 3: 'Whimper—'}
+247	247		306							
+248	248		402							{1: '4462'}
+249	249		502							{1: 'DialogDisable'}
+250	250		205							{1: '1004'}
+251	251		205							{1: '1006'}
+252	252		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+253	253		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory301.png'}
+254	254		401							{1: '2', 2: '4462'}
+255	255		201							{1: '2', 2: '501327', 3: '14', 7: '1'}
+256	256		502							{1: 'AniZhuanchangEnd'}
+257	257		203						400.0	{1: '2', 2: '1', 3: '1000'}
+258	258		202						1000.0	{1: '2'}
+259	259		402							{1: '4462'}
+260	260		401							{1: '2', 2: '4331'}
+261	261		201							{1: '1', 2: '501328', 3: '3', 4: '-1000'}
+262	262		203						900.0	{1: '1', 2: '1.5', 3: '1000'}
+263	263		202						800.0	{1: '1'}
+264	264		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+265	265		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+266	266		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory637.jpg'}
+267	267		401							{1: '2', 2: '4462'}
+268	268		201							{1: '2', 2: '501327', 3: '16', 4: '-1000'}
+269	269		203						700.0	{1: '2', 2: '1.2', 3: '200'}
+270	270		401							{1: '2', 2: '4331'}
+271	271		201							{1: '1', 2: '501328', 3: '3', 4: '-1000'}
+272	272		203						800.0	{1: '1', 2: '0.5', 3: '-150'}
+273	273		402							{1: '4462'}
+274	274		402							{1: '4331'}
+275	275		401							{1: '2', 2: '1543'}
+276	276		203						500.0	{1: '1', 2: '0.25', 3: '-150', 4: '-150'}
+277	277		301			DialogEnable				{2: '??', 3: 'Ksori!', 4: '1'}
+278	278		401							{1: '1', 2: '36'}
+279	279		202							{1: '1', 2: '2'}
+280	280		306							{1: '1'}
+281	281		301							{3: '<i>Caught again... Am I going back... into the <color=#ff4e4eff>water</color>?</i>'}
+282	282		306							
+283	283		401							{1: '1', 2: '6167'}
+284	284		401							{1: '2', 2: '2936'}
+285	285		201							{1: '1', 2: '501328', 3: '8', 5: '-130', 6: '-200'}
+286	286		301							"{1: '1', 2: '??', 3: ""It's alright now... it's alright..."", 4: '1'}"
+287	287		202							{1: '1'}
+288	288		306							{1: '1'}
+289	289		301							"{3: ""<i>No, no water... it's warm now... not cold anymore...</i>""}"
+290	290		306							
+291	291		401							{1: '2', 2: '2936'}
+292	292		201							{1: '1', 2: '501328', 3: '1', 5: '-130', 6: '-200'}
+293	293		301							"{1: '1', 2: 'Discord', 3: ""We're here, Ksori. We're right here with you."", 4: '1'}"
+294	294		202							{1: '1'}
+295	295		401							{1: '2', 2: '1543'}
+296	296		301				DialogDisable			{3: 'The blue-haired girl holds the dog tightly against her chest.'}
+297	297		302							{2: '...', 3: '298'}
+298	298		401							{1: '2', 2: '4432'}
+299	299		205						2000.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1.5'}
+300	300		205						500.0	{1: '1007'}
+301	301		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '1'}
+302	302		301			DialogEnable	DialogDisable			"{3: ""Beside her, you, clad in gray, stand silently at the storm-battered window. You take off your coat and wrap it snugly around Ksori's drenched body.""}"
+303	303		201						1000.0	{1: '1', 2: '501327', 3: '14', 7: '1'}
+304	304		401							{1: '2', 2: '4278'}
+305	305		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+306	306		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+307	307		201							{1: '1', 2: '501319', 4: '-150', 5: '-20', 6: '-5'}
+308	308		301			DialogEnable				{1: '1', 2: 'Ksori?', 3: '...', 4: '1'}
+309	309		202							{1: '1'}
+310	310		301							{3: 'Realizing you and the girl mean no harm, Ksori stops struggling and quietly lets the girl dry her off.'}
+311	311		401							{1: '2', 2: '4772'}
+312	312		301				AniZhuanchangBegin			"{3: ""Then the blue-haired girl reaches out and touches the dog's name tag.""}"
+313	313		201						2000.0	{1: '1', 2: '501328', 3: '8'}
+314	314		301			AniZhuanchangEnd				"{1: '1', 2: 'Discord', 3: ""And that's what happened."", 4: '1'}"
+315	315		204							{1: '1'}
+316	316		301							{2: 'Discord', 3: 'Ksori was once punished by being held underwater for failing a mission. The sudden downpour earlier must have reminded her of when someone forced her head under.', 4: '1'}
+317	317		302							"{2: ""That's why she ran, desperate to find somewhere dry."", 3: '318'}"
+318	318		301							{2: 'Discord', 3: 'Yeah. She even mistook us for the abuser in her memory.', 4: '1'}
+319	319		302							{2: 'You looked... really pained when you touched her name tag just now.', 3: '320'}
+320	320		204							{1: '1', 2: '8'}
+321	321		301							{2: 'Discord', 3: '...When I was a kid at the orphanage, I went through similar training as part of my prep to become an agent.', 4: '1'}
+322	322		202							{1: '1'}
+323	323		401							{1: '2', 2: '1543'}
+324	324		301							{3: 'The blue-haired girl lowers her gaze, noticing how soaked you are, and quietly moves a little closer.'}
+325	325		201							{1: '1', 2: '501328', 5: '-100', 6: '-200'}
+326	326		301							"{1: '1', 2: 'Discord', 3: ""You're both drenched... this is the only way I can help you stay warm for now..."", 4: '1'}"
+327	327		302							"{2: ""I just looked outside. The rain's almost stopped..."", 3: '328'}"
+328	328		301							"{2: 'Discord', 3: ""But once we leave this narrow alley, there are puddles everywhere... I'm worried Ksori will get triggered again."", 4: '1'}"
+329	329		302							"{2: ""If she stays wet like this, she'll catch a cold."", 3: '330'}"
+330	330		204							{1: '1', 2: '8'}
+331	331		301				AniZhuanchangBegin			{2: 'Discord', 3: '...', 4: '1'}
+332	332		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory605.jpg'}
+333	333		201							{1: '1', 2: '501328'}
+334	334		301			AniZhuanchangEnd				{1: '1', 2: 'Discord', 3: 'The puddles here are unpredictable in depth. If either of you steps in the wrong one, it could be dangerous.', 4: '1'}
+335	335		301				DialogDisable			"{2: 'Discord', 3: ""I'll go ahead. You carry Ksori, Commandant, and keep her out of the water as much as possible."", 4: '1'}"
+336	336		302							"{2: '...', 3: '337', 4: ""I know you're worried about her reaction to water, but in a few days the competition will have a water rescue event."", 5: '341'}"
+337	337		401							{1: '2', 2: '4298'}
+338	338		202						1500.0	{1: '1'}
+339	339		402							{1: '4298'}
+340	340	350	301			DialogEnable				{3: 'She starts walking toward the puddle alone.'}
+341	341		302							"{2: ""If she can't overcome her fear of water before then..."", 3: '342'}"
+342	342		204							{1: '1', 2: '8'}
+343	343		301			DialogEnable				{2: 'Discord', 3: 'Yeah... I know.', 4: '1'}
+344	344		204							{1: '1'}
+345	345		301				DialogDisable			{2: 'Discord', 3: 'But Ksori is an important companion, whether she ever becomes a rescue dog or not...', 4: '1'}
+346	346		401							{1: '2', 2: '4298'}
+347	347		202						1500.0	{1: '1'}
+348	348		402							{1: '4298'}
+349	349		301			DialogEnable				{3: 'She keeps talking as she moves toward the puddle.'}
+350	350		201							{1: '1', 2: '501317'}
+351	351		401							{1: '2', 2: '5540'}
+352	352		301			PanelActor1Shake				{1: '1', 2: 'Ksori', 3: 'Woof!', 4: '1'}
+353	353		202							{1: '1'}
+354	354		301							{3: 'The dog in your arms suddenly struggles violently.'}
+355	355		201							{1: '1', 2: '501317', 4: '-500'}
+356	356		401							{1: '2', 2: '4462'}
+357	357		401							{1: '2', 2: '5540'}
+358	358		203						300.0	{1: '1', 2: '0.5', 3: '0'}
+359	359		401						200.0	{1: '2', 2: '5540'}
+360	360		402							{1: '4462'}
+361	361		301							{1: '1', 2: 'Ksori', 3: 'Woof!', 4: '1'}
+362	362		202							{1: '1'}
+363	363		301							"{3: ""With a sudden jerk, she breaks free from your hold and charges toward Discord's blue figure stepping into the puddle.""}"
+364	364		201							{1: '1', 2: '501328', 3: '3'}
+365	365		301				DialogDisable			{1: '1', 2: 'Discord', 3: 'Ksori?', 4: '1'}
+366	366		201							{1: '1', 2: '501318', 4: '-900', 5: '-430', 6: '500'}
+367	367		401							{1: '2', 2: '2704'}
+368	368		203						1000.0	{1: '1', 2: '0.5', 3: '-800', 4: '-430', 5: '500'}
+369	369		401							{1: '2', 2: '2704'}
+370	370		203						1500.0	{1: '1', 2: '0.5', 3: '-850', 4: '-430', 5: '500'}
+371	371		401							{1: '2', 2: '2704'}
+372	372		203						1500.0	{1: '1', 2: '0.8', 3: '-750', 4: '-430', 5: '500'}
+373	373		301			DialogEnable	DialogDisable			{3: 'The dog circles the edge hesitantly, pawing into the shallow water in obvious anxiety.'}
+374	374		401							{1: '2', 2: '2704'}
+375	375		203						1000.0	{1: '1', 2: '0.8', 3: '-650', 4: '-430', 5: '500'}
+376	376		401							{1: '2', 2: '2704'}
+377	377		203						1500.0	{1: '1', 2: '0.3', 3: '-680', 4: '-430', 5: '500'}
+378	378		401							{1: '2', 2: '2704'}
+379	379		203						1000.0	{1: '1', 2: '0.8', 3: '-580', 4: '-430', 5: '500'}
+380	380		401							{1: '2', 2: '2704'}
+381	381		203						1500.0	{1: '1', 2: '0.3', 3: '-600', 4: '-430', 5: '500'}
+382	382		301			DialogEnable	DialogDisable			{3: 'Step by step, she looks at you and Discord, whimpering as if calling for Discord to return from the puddle.'}
+383	383		401							{1: '2', 2: '1543'}
+384	384		201							{1: '2', 2: '501328', 3: '3', 4: '350', 8: '1'}
+385	385		301			DialogEnable				{1: '1', 2: 'Discord', 3: 'Come here, over here.', 4: '2'}
+386	386		301				DialogDisable			{3: 'She turns around in surprise, softly calling to her companion.'}
+387	387		401							{1: '2', 2: '5703'}
+388	388		104							{1: '0|0|-80', 2: '0.5'}
+389	389		203							{1: '1', 2: '0.5', 3: '-600', 4: '-430', 5: '420'}
+390	390		203						1000.0	{1: '2', 2: '0.5', 3: '350', 4: '0', 5: '-80'}
+391	391		204							{1: '2', 2: '1'}
+392	392		301			DialogEnable	DialogDisable			{3: 'To encourage Ksori, you step toward the puddle as well.'}
+393	393		401							{1: '2', 2: '5540'}
+394	394		201						500.0	{1: '1', 2: '501317', 4: '-600', 5: '-430', 6: '420'}
+395	395		203							{1: '1', 2: '0.5', 3: '-550', 4: '-430', 5: '420'}
+396	396		401							{1: '2', 2: '2704'}
+397	397		401							{1: '2', 2: '5540'}
+398	398		301			DialogEnable	AniZhuanchangBegin			{1: '1', 2: 'Ksori', 3: 'Woof woof woof!', 4: '1'}
+399	399		502							{1: 'DialogDisable'}
+400	400		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+401	401		401						2000.0	{1: '1', 2: '36'}
+402	402		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory975.jpg'}
+403	403		201							{1: '1', 2: '501317', 4: '-900', 5: '-330', 6: '300', 7: '1'}
+404	404		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront93.png', 3: '1', 4: '1', 5: '0'}
+405	405		104							{1: '275|0|0', 2: '0', 4: '4'}
+406	406		401							{1: '1', 2: '5061'}
+407	407		401							{1: '2', 2: '910'}
+408	408		109			AniZhuanchangEnd			1700.0	"{1: '11', 2: ""<color=#0e70bdff><size=33>For the next half hour, Ksori kept sniffing at the puddle's edge.\\n Commandant and I waited patiently,\\nstroking her to reassure her.</size></color>"", 3: '900', 4: '330', 6: '1', 7: '1', 8: '1.5', 10: '1'}"
+409	409		301							"{1: '1', 3: ""For the next half hour, Ksori kept sniffing at the puddle's edge. Commandant and I waited patiently, stroking her to reassure her."", 4: '1'}"
+410	410		109						1700.0	{1: '12', 2: '<color=#0e70bdff><size=33>Maybe it was trust in her companions, maybe it was a desire to protect us,\\nbut just when we were losing hope,\\nshe suddenly leapt into our arms.</size></color>', 3: '900', 4: '130', 6: '1', 7: '1', 8: '1.5', 10: '1'}
+411	411		301							{3: 'Maybe it was trust in her companions, maybe it was a desire to protect us, but just when we were losing hope, she suddenly leapt into our arms.', 4: '1'}
+412	412		109						1200.0	{1: '13', 2: '<color=#0e70bdff><size=33>I could feel her front paws shaking, so I held her close...\\nbut to my surprise, she broke free, trying to pull us out of the puddle with her.</size></color>', 3: '900', 4: '-60', 6: '1', 7: '1', 8: '1', 10: '1'}
+413	413		301							{3: 'I could feel her front paws shaking, so I held her close... but to my surprise, she broke free, trying to pull us out of the puddle with her.', 4: '1'}
+414	414		109						1700.0	{1: '14', 2: '<color=#0e70bdff><size=33>On the way home, we had to cross a lot of puddles.\\nEach time, Ksori would be both scared and eager to pull us out.\\nIt almost became a game for her.</size></color>', 3: '900', 4: '-270', 6: '1', 7: '1', 8: '1.5', 10: '1'}
+415	415		301				AniZhuanchangBegin			{3: 'On the way home, we had to cross a lot of puddles. Each time, Ksori would be both scared and eager to pull us out. It almost became a game for her.', 4: '1'}
+416	416		110							
+417	417		401						500.0	{1: '2', 2: '2768'}
+418	418		401							{1: '2', 2: '910'}
+419	419		109			AniZhuanchangEnd			1200.0	{1: '12', 2: '<color=#0e70bdff><size=33>Well, in any case... we were both surprised and happy\\nthat she managed to face her fear.</size></color>', 3: '900', 4: '350', 6: '1', 7: '1', 8: '1', 10: '1'}
+420	420		301							{3: 'Well, in any case... we were both surprised and happy that she managed to face her fear.', 4: '1'}
+421	421		109						1200.0	"{1: '13', 2: ""<color=#0e70bdff><size=33>The simulation test is in a few days. Let's hope it goes well.</size></color>"", 3: '900', 4: '150', 6: '1', 7: '1', 8: '1', 10: '1'}"
+422	422		301				AniZhuanchangBegin			"{3: ""The simulation test is in a few days. Let's hope it goes well."", 4: '1'}"
+423	423		402		1					{1: '910'}

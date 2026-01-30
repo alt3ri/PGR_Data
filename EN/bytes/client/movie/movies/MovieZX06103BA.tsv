@@ -1,0 +1,389 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		502						250.0	{1: 'DialogDisable'}
+3	3		307							{1: 'Before Entering Conservation Area 368—', 3: '70', 6: '1'}
+4	4		301							{3: 'Before Entering Conservation Area 368—'}
+5	5		307							{2: '1'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+7	7		104							{1: '0|100|-200', 2: '0'}
+8	8		401							{1: '1', 2: '208'}
+9	9		107			AniZhuanchangEnd				{1: 'Transport Craft', 2: 'Babylonia', 4: 'Spaceport'}
+10	10		301							{3: 'Babylonia, Spaceport, Transport Craft.'}
+11	11		108							{1: '1'}
+12	12		401							{1: '2', 2: '5290'}
+13	13		301			DialogEnable	DialogDisable			"{3: '""Evolution"" and ""M.I.N.D.""... You\'re leafing through the mission briefing, lost in thought, when a cup of hot water appears in your periphery.'}"
+14	14		302							{2: 'Thanks...', 3: '15'}
+15	15		104						550.0	{1: '0|0|0', 2: '0.5'}
+16	16		201							{1: '1', 2: '501386', 4: '100', 5: '-20', 6: '50'}
+17	17		301			DialogEnable				{1: '1', 3: 'You murmur automatically, your train of thought scattering. You look up to see Liv withdrawing her hand. She then turns to scan her retina on the new verification device by the hatch.'}
+18	18		401							{1: '2', 2: '2641'}
+19	19		301				DialogDisable			{2: 'System', 3: 'Identity verified—'}
+20	20		202						500.0	{1: '1'}
+21	21		201							{1: '1', 2: '501385'}
+22	22		301			DialogEnable				{1: '1', 3: 'With her identity confirmed, she smooths her dress, takes her seat, and leans over to peer at the terminal in your hands.'}
+23	23		301				DialogDisable			{2: 'Liv', 3: 'Oh, those are the mission reports from before...', 4: '1'}
+24	24		202							{1: '1', 6: '1'}
+25	25		502							{1: 'RImgBg1DisableSlow'}
+26	26		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1145.jpg'}
+27	27		109							{1: '5', 2: '<size=50>Mission List</size>', 3: '-50', 4: '300', 9: '2'}
+28	28		109							{1: '6', 2: '<size=50><color=#646363>Mission List</color></size>', 3: '-48', 4: '298'}
+29	29		109							{1: '1', 2: '<size=25><color=#CECECE><i>Completed</i></color> <INTERNAL> </size><u><color=#CECECE><size=30>Assist with New Central Purification Filter Installation</size></color></u>', 3: '600', 4: '170', 10: '1'}
+30	30		109							{1: '2', 2: '<size=25><color=#CECECE><i>Completed</i></color> <INTERNAL> </size><u><color=#CECECE><size=30>Clear Hetero-Creatures</size></color></u>', 3: '600', 4: '70', 10: '1'}
+31	31		109							{1: '3', 2: '<size=25><color=#CECECE><i>Completed</i></color> <INTERNAL> </size><u><color=#CECECE><size=30>Research Materials</size></color></u>', 3: '600', 4: '-30', 10: '1'}
+32	32		109						300.0	{1: '4', 2: '<size=25><color=#FFECA1><i>New Mission</i></color> <color=#ff4e4eff><CLASSIFIED></color> </size><u><size=30>************</size></u>', 3: '600', 4: '-130', 10: '1'}
+33	33		301			DialogEnable				"{3: 'The terminal screen glows with a list of missions, each one marked ""Completed.""'}"
+34	34		301							{3: 'Assist with the new CPF installation: Completed.\\nClear Hetero-Creatures around the conservation area: Completed.'}
+35	35		301							{3: 'And... Gather research materials requested by Professor Hippocrates: Completed.'}
+36	36		301				DialogDisable			"{3: ""The frame adaptation period isn't even over, and already a new mission is waiting. This one, however, is entirely different from all the others.""}"
+37	37		110							
+38	38		502							{1: 'RImgBg1DisableSlow'}
+39	39		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+40	40		201							{1: '1', 2: '501385', 3: '7'}
+41	41		301			DialogEnable	DialogDisable			{1: '1', 2: 'Liv', 3: '...Commandant?', 4: '1'}
+42	42		202						500.0	{1: '1'}
+43	43		401							{1: '2', 2: '5964'}
+44	44		301			DialogEnable				{3: 'Noticing you staring into space, Liv quietly takes the cup from your hands, refills it with hot water, and sets it back on the table before joining you in gazing worriedly out the window.'}
+45	45		201							{1: '1', 2: '501385', 3: '12'}
+46	46		301							"{1: '1', 2: 'Liv', 3: ""It all happened so suddenly... I only had time to leave a quick message for Lucia and Lee. I feel terrible that I couldn't explain it to them properly... Are you sure this is okay?"", 4: '1'}"
+47	47		204							{1: '1', 2: '10'}
+48	48		301				DialogDisable			"{2: 'Liv', 3: ""I was really looking forward to seeing them... I even promised I'd bring them a few things."", 4: '1'}"
+49	49		302							"{2: ""It's okay. Don't worry about it."", 3: '50'}"
+50	50		302							"{2: ""Don't worry, I left them a message, too."", 3: '51'}"
+51	51		202							{1: '1'}
+52	52		301			DialogEnable				{3: 'Were it not for this unforeseen event, the two of you would be down there with Lucia and Lee, trekking between conservation areas to replace filters and fortify the zones.'}
+53	53		301							"{3: ""Liv's eyes drift to the identity verifier by the cabin door as she speaks. With the hatch sealed, its once-persistent blinking has now ceased.""}"
+54	54		201							{1: '1', 2: '501385', 3: '3'}
+55	55		301				DialogDisable			"{1: '1', 2: 'Liv', 3: ""To think someone managed to sneak onto a Babylonia transport... I don't think anyone's ever done that before."", 4: '1'}"
+56	56		302							{2: 'Yeah.', 3: '57'}
+57	57		202							{1: '1', 6: '1'}
+58	58		502							{1: 'RImgBg1DisableSlow'}
+59	59		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1145.jpg'}
+60	60		201							{1: '1', 2: '500895', 4: '-500', 5: '200', 6: '800', 7: '1'}
+61	61		109							{1: '9', 2: '<size=60>Personnel Intelligence</size>', 3: '150', 4: '250', 9: '2'}
+62	62		109							{1: '10', 2: '<size=60><color=#646363>Personnel Intelligence</color></size>', 3: '152', 4: '248'}
+63	63		109							{1: '7', 2: '<size=40>Name: <i>Kolm Lebrant</i></size>', 3: '950', 4: '100', 10: '1'}
+64	64		109							{1: '8', 2: '<size=40>Gender: <i>Male</i></size>', 3: '950', 4: '0', 10: '1'}
+65	65		109							{1: '11', 2: '<size=40>Residence: <i>Conservation Area 368</i></size>', 3: '950', 4: '-100', 10: '1'}
+66	66		301			DialogEnable	DialogDisable			"{1: '1', 3: ""The mission briefing on the terminal displays a man's headshot at the top of the page. Leaning in closer, Liv studies the information listed beneath his photo.""}"
+67	67		202							{1: '1'}
+68	68		110							
+69	69		502							{1: 'RImgBg1DisableSlow'}
+70	70		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+71	71		201							{1: '1', 2: '501385', 3: '3'}
+72	72		301			DialogEnable				"{1: '1', 2: 'Liv', 3: ""Kolm Lebrant... He doesn't seem to be... in the best mental state."", 4: '1'}"
+73	73		204							{1: '1', 2: '12'}
+74	74		301							"{2: 'Liv', 3: ""Do you think we can really trust what he's told us?"", 4: '1'}"
+75	75		302							"{2: ""That's exactly what we're going to verify."", 3: '76'}"
+76	76		202							{1: '1', 6: '1'}
+77	77		301				AniZhuanchangBegin			"{3: ""As you fall deeper into thought, Kolm's photograph expands in your mind's eye, interweaving with shards of memory until it breaks free from the frame, fully animate.""}"
+78	78		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+79	79		401							{1: '1', 2: '36'}
+80	80		307							{1: 'One Day Ago', 3: '80', 4: 'ffffffff', 6: '1'}
+81	81		301							{3: 'One Day Ago'}
+82	82		307							{2: '1'}
+83	83		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+84	84		401							{1: '1', 2: '201'}
+85	85		107			AniZhuanchangEnd				{1: 'Interrogation Room', 2: 'Babylonia', 4: 'Control Court'}
+86	86		301							{3: 'Babylonia, Control Court, Interrogation Room.'}
+87	87		108							{1: '1'}
+88	88		301			DialogEnable				{3: 'You arrived at the interrogation room as ordered, only to walk in on Hassen in an exchange with members of the Control Court.'}
+89	89		201							{1: '1', 2: '500571', 3: '4', 4: '450'}
+90	90		201							{1: '2', 2: '500011', 3: '5', 4: '-450'}
+91	91		301							{1: '1', 2: 'Lesti', 3: 'The target has been under our supervision from the moment of custody to the transfer. There is no risk of a leak.', 4: '1'}
+92	92		301							"{2: 'Lesti', 3: ""We've also finished debriefing the transport crew. We've left a few... loose ends as bait. If anyone tries to follow that thread, we'll know."", 4: '1'}"
+93	93		301							"{2: 'Hassen', 3: ""Good, good... Ah, 【kuroname】. You're here."", 4: '2'}"
+94	94		202							{1: '1'}
+95	95		203							{1: '2', 2: '0.4', 3: '-200'}
+96	96		301				DialogDisable			{3: 'As the President turned away, Lesti caught your eye with a silent glance of greeting before swiftly taking her leave.'}
+97	97		302							{2: 'President?', 3: '98'}
+98	98		104							{1: '-100|-80|-200', 2: '1'}
+99	99		203							{1: '2', 2: '1', 3: '-600', 4: '-100', 5: '-200'}
+100	100		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu01.prefab'}
+101	101		111							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu01.prefab'}
+102	102		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu02.prefab'}
+103	103		202						400.0	{1: '2'}
+104	104		301			DialogEnable				{3: 'Hassen nodded and gestured for you to come closer. You followed his gaze—'}
+105	105		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu03.prefab'}
+106	106		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg', 3: '0', 4: '1', 5: '0.5'}
+107	107		201							{1: '1', 2: '500895', 5: '-100'}
+108	108		301				DialogDisable			{1: '1', 3: 'Behind the one-way glass, a visibly distraught man was being interrogated by the Control Court.'}
+109	109		202							{1: '1', 6: '1'}
+110	110		104							{1: '0|0|0', 2: '0'}
+111	111		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg', 3: '1', 4: '0', 5: '0.5'}
+112	112		205							{1: '999'}
+113	113		201							{1: '1', 2: '500011', 3: '5'}
+114	114		301			DialogEnable				"{1: '1', 2: 'Hassen', 3: 'Remember the ""choice"" I mentioned to you yesterday?', 4: '1'}"
+115	115		202							{1: '1', 6: '1'}
+116	116		504							{1: '0.7'}
+117	117		306							{1: '1'}
+118	118		401							{1: '2', 2: '4387'}
+119	119		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+120	120		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+121	121		201							{1: '1', 2: '500011', 3: '5', 5: '-100', 6: '10', 7: '1'}
+122	122		301							{1: '1', 2: 'Hassen', 3: 'If one day you were faced with only two choices—an honest extinction, or a hypocritical survival—what would you choose?', 4: '1'}
+123	123		301							{2: 'Hassen', 3: 'Trillard already made that choice for us once.', 4: '1'}
+124	124		301				DialogDisable			"{2: 'Hassen', 3: ""I don't fear my own destruction. I only need to believe that everything we have fought for until now has meaning."", 4: '1'}"
+125	125		202							{1: '1', 6: '1'}
+126	126		401							{1: '2', 2: '4387'}
+127	127		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+128	128		306							
+129	129		504							{1: '0'}
+130	130		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+131	131		201							{1: '1', 2: '500011', 3: '5', 7: '1'}
+132	132		302							"{1: '1', 2: 'So this man... he\'s our connection to the ""choice""?', 3: '133'}"
+133	133		202							{1: '1', 6: '1'}
+134	134		502							{1: 'RImgBg1Shake'}
+135	135		401							{1: '1', 2: '385'}
+136	136		401							{1: '2', 2: '4795'}
+137	137		301			DialogEnable				{3: 'Mid-conversation, Kolm suddenly sprang to his feet behind the glass and slammed both fists onto the table. His voice was so loud that it was audible even without the monitoring headphones.'}
+138	138		201							{1: '18', 2: '500895', 4: '100', 5: '-200', 6: '-200'}
+139	139		301							"{1: '1', 2: 'Kolm Lebrant', 3: ""<size=30>I've told you more than enough already!</size>"", 4: '18'}"
+140	140		301							"{2: 'Kolm Lebrant', 3: ""<size=30>I'm not saying another word! Not until you put the Babylonia residence papers in my hand!!</size>"", 4: '18'}"
+141	141		202			DialogDisable				{1: '18', 6: '1'}
+142	142		306							{1: '1'}
+143	143		401							{1: '2', 2: '1543'}
+144	144		502							{1: 'RImgBg1DisableSlow'}
+145	145		101			RImgBg2Enable			500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+146	146		301			DialogEnable				{3: 'You put on the headphones Hassen handed you, and the voices from the interrogation room suddenly became crystal clear.'}
+147	147		306							
+148	148		201							{1: '1', 2: '500965'}
+149	149		301							"{1: '1', 2: 'Interrogator', 3: ""Calm down, Mr. Lebrant. Take it easy. There's no need to keep repeating your demands."", 4: '1'}"
+150	150		301							{3: 'The Interrogator deliberately paused for a moment.'}
+151	151		301							{2: 'Interrogator', 3: 'We honor requests that follow protocol. Provided, of course, your information is verified.', 4: '1'}
+152	152		301							{2: 'Interrogator', 3: 'Residence is a small matter. I can arrange a provisional pass immediately. Once your information is confirmed, we can proceed to a permanent—', 4: '1'}
+153	153		202							{1: '1'}
+154	154		201							{1: '1', 2: '500895', 6: '-50'}
+155	155		301			DialogShake				{1: '1', 2: 'Kolm Lebrant', 3: 'Provisional? No! No temporary passes! I am NOT going back to the surface!', 4: '1'}
+156	156		301			PanelActor1Shake	DialogDisable			"{2: 'Kolm Lebrant', 3: ""I need it NOW! Don't you dare feed me another empty— ugh..."", 4: '1'}"
+157	157		401							{1: '2', 2: '2692'}
+158	158		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0', 4: '0.5', 5: '0.2'}
+159	159		203			PanelActor1Shake				{1: '1', 2: '0.25', 4: '-100', 5: '-50'}
+160	160		401							{1: '2', 2: '4799'}
+161	161		301			DialogEnable	DialogDisable			"{3: ""A burst of intense light pierced the man's pupils. Agitated, he winced and instinctively fell back into his seat.""}"
+162	162		201						500.0	{1: '1', 2: '500965'}
+163	163		401							{1: '2', 2: '2692'}
+164	164		205						200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0.5', 4: '0', 5: '0.2'}
+165	165		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+166	166		301			DialogEnable				{1: '1', 3: 'The Interrogator flicked a finger, and the harsh light behind him switched off. His tone shifted gradually from placating to detached, draining all emotion from his words.'}
+167	167		301							"{2: 'Interrogator', 3: ""This is my final warning, Mr. Lebrant. You will let me finish. Once we verify your information and confirm that what you've provided is genuine, residency will be the least of your concerns."", 4: '1'}"
+168	168		301							{2: 'Interrogator', 3: 'However, your current behavior is not that of a valuable informant. It is the behavior of a man attempting to bluff his way into a fortress. And we have... very specific protocols for bluffs.', 4: '1'}
+169	169		301							{2: 'Interrogator', 3: 'According to the corresponding law of Babylonia, any individual who gains entry through deception, forged documentation, or stowing away in regulated transport...', 4: '1'}
+170	170		301							{2: 'Interrogator', 3: '...is subject to classification as an illegal entrant and penalties commensurate with the specific circumstances of the violation.', 4: '1'}
+171	171		203							{1: '1', 2: '0.3', 3: '-500'}
+172	172		201							{1: '2', 2: '500895', 4: '500'}
+173	173		301							"{1: '1', 2: 'Kolm Lebrant', 3: ""I didn't... I wasn't trying to..."", 4: '2'}"
+174	174		301							{2: 'Interrogator', 3: 'Furthermore, the law states that any attempt to acquire substantial assets through deception constitutes fraud.', 4: '1'}
+175	175		301							{2: 'Interrogator', 3: 'While residency is not property, it is a regulated resource. It falls under this statute.', 4: '1'}
+176	176		301							{2: 'Interrogator', 3: 'So, Kolm Lebrant, I suggest you adjust your attitude and answer my question...', 4: '1'}
+177	177		301			PanelActor2Shake				{2: 'Kolm Lebrant', 3: 'I... I... Huff... I...', 4: '2'}
+178	178		301							"{3: ""The man's face flushed crimson, his body trembling with pent-up energy. He made an aborted motion to lunge, but the sight of the interrogator's threatening demeanor made him cower. His resolve fractured into a series of twitches and halts, ending in a defeated stillness.""}"
+179	179		301							{2: 'Kolm Lebrant', 3: 'I... I heard things... about M.I.N.D.', 4: '2'}
+180	180		302							{2: '!!', 3: '181'}
+181	181		301							{3: 'You shot an uncertain glance at Hassen. He answered with a firm nod, a clear instruction to keep listening to the interrogation.'}
+182	182		202							{1: '1'}
+183	183		203							{1: '2', 2: '0.3'}
+184	184		301							{2: 'Kolm Lebrant', 3: 'That day, I got bitten by a Hetero-Creature that ran out of the mine. Dr. Melinoe gave me painkillers and told me to rest in the medical station.', 4: '2'}
+185	185		301							{2: 'Kolm Lebrant', 3: 'I-I must have dozed off, but the medication wore off too soon. I woke up groggy... heard people talking...', 4: '2'}
+186	186		301							"{2: 'Kolm Lebrant', 3: ""Two... maybe three men. Whispering. They said they'd been down in the deep mine, on an operation. At the very bottom... they found something."", 4: '2'}"
+187	187		301							"{2: 'Kolm Lebrant', 3: 'They said that inside the mine... there was information about M.I.N.D. ""evolution."" And if they could get it out...', 4: '2'}"
+188	188		302				AniZhuanchangBegin			"{2: ""That's way too convenient..."", 3: '189'}"
+189	189		202							{1: '2'}
+190	190		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+191	191		201							{1: '1', 2: '500011', 3: '5'}
+192	192		301			AniZhuanchangEnd				"{1: '1', 2: 'Hassen', 3: ""Yeah, I'd say the same."", 4: '1'}"
+193	193		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab'}
+194	194		301							{3: 'Behind the one-way glass, Hassen averted his gaze, his focus narrowing to scrutinize the data on his terminal.'}
+195	195		301							{2: 'Hassen', 3: 'An accidental eavesdropping. An accidental arrival in Babylonia. And then, accidentally delivering that very information to our doorstep...', 4: '1'}
+196	196		302							"{2: ""Gestalt's scan didn't pick up anything?"", 3: '197'}"
+197	197		202							{1: '1', 6: '1'}
+198	198		306							{1: '1'}
+199	199		301							"{3: ""Babylonia's inspection protocols were stringent. Any transport vessel carrying supplies from the surface was immediately scanned by Gestalt the moment it entered Babylonian airspace.""}"
+200	200		301							{3: 'Whether it was a conservation area resident attempting to stow away in a cargo container, or a concealed Hetero-Creature or Corrupted, Gestalt had never once failed to detect it.'}
+201	201		306							
+202	202		201							{1: '1', 2: '500011', 3: '5'}
+203	203		301							{1: '1', 2: 'Hassen', 3: 'Celica pulled the scan logs from the past few days. Not a single anomaly.', 4: '1'}
+204	204		301							{2: 'Hassen', 3: 'The Science Council has run the protocols three times, and no errors. The Engineering Force even took a look. Nothing.', 4: '1'}
+205	205		301							"{2: 'Hassen', 3: ""And the Control Court is currently examining his personal belongings, checking for any devices capable of blocking Gestalt's signals—"", 4: '1'}"
+206	206		401							{1: '2', 2: '1099'}
+207	207		301							{3: 'His terminal chimed, alerting Hassen to an incoming message.'}
+208	208		301				DialogDisable			{2: 'Hassen', 3: 'And now, the Control Court reports... nothing unusual in his personal effects.', 4: '1'}
+209	209		302							{2: '...', 3: '210'}
+210	210		302							{2: 'Could he just be bluffing?', 3: '211'}
+211	211		301			DialogEnable				"{2: 'Hassen', 3: ""It's a possibility the Court is considering. We do get the occasional opportunist who picks up a few buzzwords from the ruins and tries their luck."", 4: '1'}"
+212	212		301							"{2: 'Hassen', 3: ""The surface is practically littered by abandoned research facilities. Stumbling across certain keywords by chance isn't entirely surprising. However..."", 4: '1'}"
+213	213		301							"{2: 'Hassen', 3: 'He shouldn\'t know those words have any connection to ""evolution.""', 4: '1'}"
+214	214		401							{1: '2', 2: '4799'}
+215	215		203							{1: '1', 2: '0.3', 4: '-50'}
+216	216		301							{3: 'As Hassen settled into a nearby chair, he disturbed the stack of interrogation files beside him, causing it to tilt and reveal several documents.'}
+217	217		301							"{3: 'On the exposed pages, the bolded and underlined terms ""M.I.N.D."" and ""evolution"" were clearly visible.'}"
+218	218		301							{2: 'Hassen', 3: 'However he came by it, Kolm Lebrant should have no knowledge of this. None at all.', 4: '1'}
+219	219		301				DialogDisable			{2: 'Hassen', 3: 'We need to find the source of his information. This is a sensitive matter, one I can only entrust to you.', 4: '1'}
+220	220		202							{1: '1'}
+221	221		401						500.0	{1: '2', 2: '4047'}
+222	222		402						200.0	{1: '4047'}
+223	223		401							{1: '2', 2: '1099'}
+224	224		301			DialogEnable				{3: 'Hassen retrieved his terminal and tapped a brief command. A moment later, your own device chimed.'}
+225	225		301							{3: 'Purification Mission, Target: Conservation Area 368.'}
+226	226		201							{1: '1', 2: '500011', 3: '5', 5: '-50'}
+227	227		301							"{1: '1', 2: 'Hassen', 3: ""This is the only task I'll give you."", 4: '1'}"
+228	228		302							{2: 'Understood.', 3: '229'}
+229	229		301							"{2: 'Hassen', 3: ""And the rest... it's up to you."", 4: '1'}"
+230	230		302							{2: 'Alright.', 3: '231'}
+231	231		202							{1: '1'}
+232	232		301				AniZhuanchangBegin			{3: 'You gave him a nod and turned to leave.'}
+233	233		401							{1: '2', 2: '2661'}
+234	234		201							{1: '1', 2: '500011', 3: '5', 7: '1'}
+235	235		301			AniZhuanchangEnd				"{1: '1', 3: ""The interrogation room door closed with a soft thud, and as the light from the hallway vanished, it cast a stark divide of shadow and light across Hassen's face.""}"
+236	236		301				AniZhuanchangBegin			"{3: ""He settled his headphones back into place. Kolm Lebrant's voice filtered through once more, but Hassen's mind was already far away.""}"
+237	237		202			DialogDisable				{1: '1', 6: '1'}
+238	238		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg'}
+239	239		401							{1: '1', 2: '359'}
+240	240		401							{1: '2', 2: '5908'}
+241	241		107			AniZhuanchangEnd				{1: 'Late Post-Pandemic Age', 2: 'Night'}
+242	242		301							{3: 'Late Post-Pandemic Age\\nNight'}
+243	243		401							{1: '2', 2: '10028615'}
+244	244		108							{1: '1'}
+245	245		301			DialogEnable				{3: 'The thunderous roar of transport aircraft echoed through the flame-lit night. Chunks of concrete crumbled from the teetering ruins above, landing on exposed rebar with sharp, brittle cracks.'}
+246	246		301							{3: 'A piercing metallic clamor mingled with the staccato roar of gunfire. Every indication suggested that the combatants were far from ordinary humans.'}
+247	247		201							{1: '1', 2: '500011', 3: '5'}
+248	248		301							{1: '1', 2: 'Hassen', 3: '...', 4: '1'}
+249	249		203							{1: '1', 2: '0.3', 3: '500'}
+250	250		201							{1: '2', 2: '500005', 4: '-500'}
+251	251		301							"{1: '1', 2: 'Soldier', 3: ""Sir, we've reached the designated forward perimeter. For your security, we must insist you return to the transport."", 4: '2'}"
+252	252		301							{2: 'Hassen', 3: 'I understand the concern. But I need to see this. I need to see them.', 4: '1'}
+253	253		202							{1: '1', 2: '2'}
+254	254		301							{3: 'A younger Hassen gazed down upon the streets, watching as well-equipped Constructs carved into the Corrupted-occupied districts with the clean efficiency of a scalpel.'}
+255	255		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 4: '4'}
+256	256		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo.prefab', 2: '2'}
+257	257		401							{1: '2', 2: '2982'}
+258	258		301							{2: '???', 3: 'Large Corrupted spotted in Sector D-3! I repeat, large Corrupted spotted in Sector D-3!'}
+259	259		301							{2: '???', 3: 'Snipers in position!'}
+260	260		301							{2: '???', 3: 'Sector F-5, we have multiple casualties! Three wounded, one KIA!'}
+261	261		301							{2: '??', 3: 'Copy that! Support is en route!'}
+262	262		402							{1: '2982'}
+263	263		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 4: '4', 5: '1'}
+264	264		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo.prefab'}
+265	265		301							{3: 'With battle updates streaming through his earpiece, Hassen gripped the railing tightly as he watched the Constructs hold their ground against the massive axe blade of the infected gardener robot.'}
+266	266		201							{1: '2', 2: '500005', 4: '-500'}
+267	267		201							{1: '1', 2: '500011', 3: '9', 4: '500'}
+268	268		301							"{1: '1', 2: 'Soldier', 3: ""...Sir, it's too dangerous here. The observation protocol doesn't allow for..."", 4: '2'}"
+269	269		301							{2: 'Hassen', 3: 'Let me watch them a little longer.', 4: '1'}
+270	270		202							{1: '2'}
+271	271		203							{1: '1', 2: '0.3'}
+272	272		301							{3: 'With the taste of iron flooding his mouth and his knuckles bone-white, he watched the battle in the streets with a desperate hunger, determined to sear every last detail into his mind.'}
+273	273		301							{2: 'Hassen', 3: '...Just a little longer.', 4: '1'}
+274	274		202							{1: '1', 6: '1'}
+275	275		306							{1: '1'}
+276	276		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+277	277		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1325.jpg'}
+278	278		104							{1: '0|0|-350', 2: '0'}
+279	279		301							"{3: ""One Construct met the Corrupted's axe with overwhelming force, batting the weapon away. The impact sent a cascade of blue electricity erupting through the enemy lines, leaving several foes frozen and twitching from the paralyzing shock.""}"
+280	280		301							{3: 'Seizing the moment, a Construct in pink dashed forward to aid the wounded. She deployed her Levi-Guns, laying down a hail of covering fire while helping the injured fall back...'}
+281	281		306							
+282	282		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+283	283		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg'}
+284	284		104							{1: '0|0|0', 2: '0'}
+285	285		201							{1: '2', 2: '500005', 4: '-500', 7: '1'}
+286	286		201							{1: '1', 2: '500011', 3: '9', 4: '500', 7: '1'}
+287	287		301							{1: '1', 2: 'Soldier', 3: 'Sir, the time...', 4: '2'}
+288	288		301							{2: 'Hassen', 3: 'I know... Just a few more minutes...', 4: '1'}
+289	289		202							{1: '1', 2: '2'}
+290	290		401							{1: '1', 2: '358'}
+291	291		301							{3: 'Let him indulge himself one last time.'}
+292	292		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+293	293		306							{1: '1'}
+294	294		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1325.jpg'}
+295	295		104							{1: '160|0|-350', 2: '0'}
+296	296		104							{1: '-160|0|-350', 2: '5'}
+297	297		301							"{3: ""Hassen's gaze followed the agile pink Construct as she wove through the crossfire like a nimble white dove, her Levi-Guns precisely intercepting the Corrupted's attacks on the wounded.""}"
+298	298		301							{3: 'These were the first truly battle-ready military Constructs, the first to be deployed in actual combat.'}
+299	299		301				DialogDisable			{3: 'Whether in terms of M.I.N.D. stability or overall combat performance, they represented the elite among soldiers.'}
+300	300		306							
+301	301		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+302	302		104							{1: '0|0|0', 2: '0'}
+303	303		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg6001_01.jpg', 3: '0', 4: '1', 5: '1'}
+304	304		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+305	305		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6001_01.jpg'}
+306	306		301			DialogEnable				{3: 'Let him watch this a little longer...'}
+307	307		301							{3: 'Watch these Constructs in battle... and this planet they were fighting for.'}
+308	308		301							{3: 'Working in unison, the Constructs steadily reduced the number of Corrupted, expanding the safe zone. The soldier no longer urgently pressed Hassen to return to the transport.'}
+309	309		301							{3: 'This city... was about to be reclaimed by humanity.'}
+310	310		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+311	311		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg'}
+312	312		201							{1: '1', 2: '500011', 7: '1'}
+313	313		301							{1: '1', 2: 'Hassen', 3: '...The Reconquista Age is about to begin.', 4: '1'}
+314	314		203							{1: '1', 2: '0.5', 3: '500'}
+315	315		201							{1: '2', 2: '500005', 4: '-500'}
+316	316		301							"{1: '1', 2: 'Soldier', 3: ""...Sir? I didn't catch that."", 4: '2'}"
+317	317		204							{1: '1', 2: '5'}
+318	318		301				DialogDisable			{2: 'Hassen', 3: '...It was nothing.', 4: '1'}
+319	319		401							{1: '2', 2: '1516'}
+320	320		203						400.0	{1: '1', 2: '0.5', 3: '1000'}
+321	321		202							{1: '1', 2: '2'}
+322	322		301			DialogEnable				{3: 'As the gunfire shifted to another part of the city, Hassen pressed his lips into a thoughtful line, then turned and walked back to the transport.'}
+323	323		201							{1: '1', 2: '500011', 3: '5'}
+324	324		301							"{1: '1', 2: 'Hassen', 3: ""Let's return to Babylonia."", 4: '1'}"
+325	325		202							{1: '1', 6: '1'}
+326	326		201							{1: '1', 2: '500005'}
+327	327		301				DialogDisable			{1: '1', 2: 'Soldier', 3: 'Yes, sir.', 4: '1'}
+328	328		202							{1: '1'}
+329	329		402							{1: '5908'}
+330	330		502							{1: 'RImgBg1DisableSlow'}
+331	331		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg'}
+332	332		304							{1: 'The transport ascended, granting a perfect aerial view of the battlefield.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '-1'}
+333	333		304							{1: 'Below, ruins crumbled beneath artillery crossfire, while electromagnetic barriers carved out temporary safe zones the Corrupted dared not breach.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '-1'}
+334	334		304							{1: 'In just a few decades, the Punishing Virus had devoured millennia of human civilization, forcing mankind to flee into the depths of space.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '-1'}
+335	335		304							{1: 'But from that day forward...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '-1'}
+336	336		304							{1: 'The spark of humanity would be rekindled.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '-1', 8: '1'}
+337	337		304							{1: 'He gazed intently as the frontline pushed ever forward.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '-3'}
+338	338		304				AniZhuanchangBegin			{1: 'That city would soon belong to humanity once more.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '-1', 9: '1'}
+339	339		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory334.png'}
+340	340		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 4: '4'}
+341	341		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront33.png', 4: '6'}
+342	342		201							{1: '1', 2: '500011', 3: '5', 7: '1'}
+343	343		502							{1: 'DialogEnable'}
+344	344		301			AniZhuanchangEnd				{1: '1', 2: 'Hassen', 3: 'And so it begins... the Reconquista Age.', 4: '1'}
+345	345		202							{1: '1'}
+346	346		306							{1: '1'}
+347	347		301							"{3: ""Through the transport's window, he watched Constructs begin cleanup operations across the battlefield below, their work stretching to the horizon.""}"
+348	348		301							{3: 'It was a preview of the future: humanity, piece by piece, taking back their homeland.'}
+349	349		306							
+350	350		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront33.png', 4: '6', 5: '1'}
+351	351		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 4: '4', 5: '1'}
+352	352		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+353	353		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+354	354		401							{1: '1', 2: '36'}
+355	355		401							{1: '2', 2: '4792'}
+356	356		301				DialogDisable			{3: 'Click—'}
+357	357		502							{1: 'RImgBg1DisableSlow'}
+358	358		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+359	359		401							{1: '1', 2: '201'}
+360	360		301			DialogEnable				"{3: ""An alert signaling the interrogation's critical phase jolted Hassen from his memories, and Kolm Lebrant's testimony echoed in the headphones.""}"
+361	361		401							{1: '2', 2: '2982'}
+362	362		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 4: '4'}
+363	363		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo.prefab', 2: '2'}
+364	364		201							{1: '18', 2: '500895', 4: '100', 5: '-200', 6: '-200'}
+365	365		301							"{1: '1', 2: 'Kolm Lebrant', 3: '...They said that inside the lab... there was information about M.I.N.D. ""evolution."" And if they could get it out... the Transatlantic Economic Community or Akdilek would definitely be interested in this technology.', 4: '18'}"
+366	366		301							{2: 'Kolm Lebrant', 3: 'M.I.N.D., the Phylotree, and nodes. Those are really the only key terms.', 4: '18'}
+367	367		402							{1: '2982'}
+368	368		202							{1: '18', 6: '1'}
+369	369		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 4: '4', 5: '1'}
+370	370		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo.prefab'}
+371	371		306							{1: '1'}
+372	372		401							{1: '2', 2: '5735'}
+373	373		301							{3: 'He shifted in his seat and unfolded the paper in his hand. Under the light, a hand-drawn tree bled into view.'}
+374	374		301							{3: 'The Construct technology had ushered in the Reconquista Age for both Babylonia and humanity.'}
+375	375		301							{3: 'If this intelligence—meant to stay buried within Gestalt—proved true, what unforeseen advantages might it offer humanity?'}
+376	376		306							
+377	377		401							{1: '2', 2: '5581'}
+378	378		301							{3: 'Click—'}
+379	379		401							{1: '2', 2: '5702'}
+380	380		301							{3: 'Hassen placed the headphones on the table and strode toward the door.'}
+381	381		402							{1: '5702'}
+382	382		301							{3: 'There was no need to hear the rest of the interrogation; a multitude of arrangements demanded his attention.'}
+383	383		301							{3: 'Whatever form the coming challenges took, he would ensure Babylonia rode the crest of this new tide.'}
+384	384		201							{1: '1', 2: '500011', 3: '5'}
+385	385		301							{1: '1', 2: 'Hassen', 3: 'That would be... the dawn of a new era.', 4: '1'}
+386	386		202							{1: '1'}
+387	387		401							{1: '2', 2: '743'}
+388	388		301		1		AniZhuanchangBegin			{3: 'The door sighed open and shut, leaving only the hollow cycle of question and answer echoing in the dim room.'}

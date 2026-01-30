@@ -1,0 +1,77 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory983.jpg'}
+2	2		401							{1: '1', 2: '5026'}
+3	3		301			DialogEnable				{3: 'As you walk up to Wanshi, wind rushes through the passage behind, carrying what seems to be the metallic scent of blood.'}
+4	4		302							{2: '...You were right, Wanshi. Greg and Sandy are probably in trouble.', 3: '5'}
+5	5		401							{1: '2', 2: '1511'}
+6	6		301							{3: 'Acting on instinct, you carefully dodge aside and raise your gun at the darkness behind you.'}
+7	7		401							{1: '2', 2: '4672'}
+8	8		301							"{3: ""Only static crackles through the comms. Wanshi doesn't respond.""}"
+9	9		402							{1: '4672'}
+10	10		302							{2: '...?', 3: '11'}
+11	11		301							"{3: ""Sensing something amiss, you grip your gun and quickly back up two steps to Wanshi's last known location, carefully peering into the room.""}"
+12	12		401							{1: '2', 2: '1508'}
+13	13		201							{1: '1', 2: '500934', 3: '10'}
+14	14		401							{1: '2', 2: '9342045'}
+15	15		301							{1: '1', 3: 'The scene unfolds before your eyes—something seems off about Wanshi, when a Corrupted suddenly springs from the pitch-black void behind him and drags him into the depths.'}
+16	16		204							{1: '1', 2: '4'}
+17	17		301							{2: 'Wanshi', 3: '!!', 4: '1'}
+18	18		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+19	19		302							{2: 'Wanshi!!'}
+20	20		203							{1: '1', 2: '0.15', 4: '-200'}
+21	21		202							{1: '1'}
+22	22		401							{1: '2', 2: '4701'}
+23	23		301							"{3: ""Pure reflex takes over—you lunge forward and manage to grab Wanshi by the wrist just before he's dragged down.""}"
+24	24		301							{3: 'But the consequences of acting on instinct are all too clear.'}
+25	25		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+26	26		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '2'}
+27	27		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.5'}
+28	28		401							{1: '2', 2: '1506'}
+29	29		401							{1: '2', 2: '992'}
+30	30		301				AniZhuanchangBegin			{3: 'Both you and Wanshi are yanked down into the void, from which a cacophony of crashing sounds comes.'}
+31	31		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+32	32		205							{1: '999'}
+33	33		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory985.jpg'}
+34	34		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+35	35		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '2'}
+36	36		401						300.0	{1: '2', 2: '1510'}
+37	37		401							{1: '2', 2: '1510'}
+38	38		401							{1: '1', 2: '201'}
+39	39		301			AniZhuanchangEnd				{3: 'Despite your spinning vision, you stagger to your feet and fire several shots at the blurry shadows ahead.'}
+40	40		401							{1: '2', 2: '9389039'}
+41	41		301							{3: 'The Corrupted fails to dodge. As the bullet finds its mark, the Corrupted releases its grip on Wanshi and rapidly retreats down the long corridor ahead.'}
+42	42		301							{3: 'When you look in the direction where the Corrupted disappeared, you see nothing but the marks carved into the ground by its exposed framework.'}
+43	43		302							{2: 'Wanshi, are you okay?', 3: '44'}
+44	44		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+45	45		201							{1: '1', 2: '500934', 3: '10'}
+46	46		301							{1: '1', 3: 'As you slowly regain your vision, Wanshi comes into view—with his brows furrowed and revolver clutched tighter, he appears distant and dazed.'}
+47	47		301							{2: 'Wanshi', 3: '...! Ugh...', 4: '1'}
+48	48		301				DialogDisable			"{2: 'Wanshi', 3: ""That Corrupted... something's strange about it."", 4: '1'}"
+49	49		302							"{2: ""Let's forget about it for now."", 3: '50'}"
+50	50		302							{2: 'I suspected there were M.I.N.D. fluctuations in you when we were up there.', 3: '51'}
+51	51		302							{2: 'Is it because of the new frame?', 3: '52'}
+52	52		301			DialogEnable				{2: 'Wanshi', 3: 'But I should be fully adapted to this by now...', 4: '1'}
+53	53		302							{2: 'Establish a M.I.N.D. connection with me now.', 3: '54'}
+54	54		204							{1: '1'}
+55	55		301				AniZhuanchangBegin			{2: 'Wanshi', 3: '...Alright.', 4: '1'}
+56	56		501				AniZhuanchangEnd			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab', 2: '3'}
+57	57		401							{1: '2', 2: '2567'}
+58	58		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie2New.prefab', 2: '3'}
+59	59		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie3New.prefab', 2: '3'}
+60	60		501				AniZhuanchangBegin		500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie4New.prefab', 2: '3'}
+61	61		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab'}
+62	62		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie2New.prefab'}
+63	63		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie3New.prefab'}
+64	64		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie4New.prefab'}
+65	65		301			AniZhuanchangEnd				"{1: '1', 3: ""Unlike the calm of the previous connection, you feel turbulent waves as soon as Wanshi's Mind Beacon enters your M.I.N.D.""}"
+66	66		302							{2: 'Babylonia would never allow you to descend in this condition.', 3: '67'}
+67	67		301							{2: 'Wanshi', 3: 'There were only minor M.I.N.D. fluctuations before, and even Asimov gave it the all-clear... This is the first time something like this has happened.', 4: '1'}
+68	68		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+69	69		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+70	70		204							{1: '1', 2: '17'}
+71	71		401							{1: '2', 2: '203'}
+72	72		301							{2: 'Wanshi', 3: 'This probably has to do with the Corrupted just now... Ugh!', 4: '1'}
+73	73		302							{2: '?!', 3: '74'}
+74	74		301				DialogDisable			"{3: ""Wanshi's memory data spirals out of control, throwing your M.I.N.D. into complete chaos.""}"
+75	75		302							{2: 'No...', 3: '76'}
+76	76		302		1		AniZhuanchangBegin			{2: 'There seems to be... something else in your M.I.N.D.?'}

@@ -1,0 +1,140 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				"{3: ""It didn't take long for your leave request to be approved, and you believe it's because it's been a while since you last submitted one.""}"
+4	4		301							"{3: ""With your leave request approved, you reach out to Ayla as you've promised.""}"
+5	5		301				AniZhuanchangBegin			"{3: ""Since she'll be at Babylonia's library doing some reading to get ready for an upcoming exhibit, she says she'll meet you there for your first lesson.""}"
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory299.png'}
+7	7		301			AniZhuanchangEnd				{3: 'Ambling into the library and taking a turn, you stop in your tracks when you see the same catchy smear of pink right around the corner.'}
+8	8		201							{1: '1', 2: '500110'}
+9	9		401							{1: '2', 2: '2765'}
+10	10		301							{1: '1', 3: 'Ayla appears to have been sitting here for quite some time already, going through a heavy book and stopping occasionally to jot down notes in her notebook.'}
+11	11		301							{3: 'In the slivers of light swimming over the book and the floating dust dancing in the air, Ayla is fully engrossed in the book—a sight that holds you spellbound.'}
+12	12		301							"{3: ""And it hits you... that you've never seen Ayla so quiet.""}"
+13	13		402							{1: '2765'}
+14	14		301							"{3: ""Wanting to preserve this rare moment for just a while longer, you slink closer—except nothing escapes a Construct's sharp ears. Looking up from the book and seeing you, Ayla waves at you excitedly.""}"
+15	15		204							{1: '1', 2: '1'}
+16	16		301							{2: 'Ayla', 3: 'Commandant, over here!', 4: '1'}
+17	17		204							{1: '1'}
+18	18		301							{3: 'When the librarian casts Ayla a menacing look, she quickly puts her index finger next to her mouth and makes an apologetic face.'}
+19	19		301							{2: 'Ayla', 3: 'See, the only thing about a library... is that they want you to whisper every word.', 4: '1'}
+20	20		301							{3: 'Ayla gestures for you to sit in the empty seat next to her—and when you do, she moves over this way to whisper into your ear.'}
+21	21		301							"{2: 'Ayla', 3: ""I see you're here early... Didn't I say you could get some rest first?"", 4: '1'}"
+22	22		301							{3: 'Ayla gives you a bright smile, and the tranquil scene just a few moments ago now seems a world away.'}
+23	23		302							"{2: ""Thought I'd come because I had nothing to do after waking up."", 3: '24'}"
+24	24		301							"{2: 'Ayla', 3: ""Oh? Are you sure you're not just slacking off?"", 4: '1'}"
+25	25		302							"{2: ""I'd never do that."", 3: '26', 4: 'I did not.', 5: '26'}"
+26	26		301							"{2: 'Ayla', 3: ""Well, truth be told, though, I'm the one slacking off here."", 4: '1'}"
+27	27		301							"{2: 'Ayla', 3: ""My agent wanted me to start preparing for my next exhibit, but hey, fast and artists just don't go together!"", 4: '1'}"
+28	28		301							{2: 'Ayla', 3: 'So I told her I needed to get some fresh air outside, and here I am!', 4: '1'}
+29	29		301							"{2: 'Ayla', 3: ""I wasn't about to miss such a beautiful day for the world!"", 4: '1'}"
+30	30		301							{2: 'Ayla', 3: 'Oh, but... this is between us, alright?', 4: '1'}
+31	31		301							"{3: ""With Ayla's impish smile, the floating dust around her seems to jump to life and shine like stars in the otherwise gloomy library.""}"
+32	32		301							"{2: 'Ayla', 3: ""Now, shall we? I've sharpened all the pencils you'll be using!"", 4: '1'}"
+33	33		301							{3: 'Laying pencils of all sizes across the table, Ayla picks one out for you.'}
+34	34		302							{2: 'Where do we start, though...?', 3: '35'}
+35	35		301							{3: 'Staring at the blank piece of paper you took out of the clipboard, you think out loud.'}
+36	36		301							"{3: ""The closest thing to a drawing you've drawn recently is a tactical map—although you believe one wouldn't exactly classify that as art.""}"
+37	37		301							{2: 'Ayla', 3: 'People usually start with sketching... I think?', 4: '1'}
+38	38		301							"{2: 'Ayla', 3: ""My, I was so young when I started drawing that I don't remember what it felt like when I first held a sketching pencil anymore."", 4: '1'}"
+39	39		301							{3: 'Moments later, Ayla seems to have made up her mind about how to structure her first lesson.'}
+40	40		301							{2: 'Ayla', 3: 'Have you ever read this book called On Sketching?', 4: '1'}
+41	41		302							"{2: ""I don't think so."", 3: '42', 4: ""I've heard of it."", 5: '45'}"
+42	42		301							"{3: ""You had to take a few elective art appreciation courses back at F.O.S. for mission needs, but your grasp of art doesn't go beyond that.""}"
+43	43		301							"{3: ""And you can't recall ever reading a single book on art since joining Gray Raven.""}"
+44	44	48	301							{2: 'Ayla', 3: 'I see. Well, let me walk you through the basics systematically, then.', 4: '1'}
+45	45		301							{3: 'You took a few elective art courses out of personal interest when you were young.'}
+46	46		301							{3: 'But ever since joining F.O.S., you never really had the luxury of time to draw again.'}
+47	47		301							{2: 'Ayla', 3: 'I see. Well, let me start you off from the basics, then.', 4: '1'}
+48	48		301							{2: 'Ayla', 3: 'People usually start by sketching to get their feet wet, and mastering sketching can really go a long way to help you with getting the composition and brightness right for other kinds of work.', 4: '1'}
+49	49		301							{2: 'Ayla', 3: 'When it comes to sketching, we use lines to draw things out. Now, lines should be stable, natural, orderly, and come out in a flow, like this...', 4: '1'}
+50	50		301							{3: 'Says Ayla, as she draws down on the paper lines that are so perfectly straight that one would have thought they were drawn with a ruler.'}
+51	51		302							"{2: ""That's amazing."", 3: '52'}"
+52	52		301							{2: 'Ayla', 3: 'These are just the basics, though, and no amount of basic practice will ever be enough.', 4: '1'}
+53	53		301							{2: 'Ayla', 3: 'Here... do you want to give it a try?', 4: '1'}
+54	54		301							{3: 'You try to draw lines like the ones that Ayla just drew—only to find yourself disappointed when you see messy lines of all sizes on the paper.'}
+55	55		301							{2: 'Ayla', 3: 'You need to apply your force with your arm and not your wrist.', 4: '1'}
+56	56		301							{2: 'Ayla', 3: 'Here, try this...', 4: '1'}
+57	57		301							{3: 'Before you know it, Ayla is already next to you grabbing you by the arm.'}
+58	58		301							"{3: ""She first adjusts the way you're holding the pencil with your fingers, before going on to help you control your wrist—and with it, by way of what seems like magic, the pencil becomes so light and is now doing a graceful dance across the paper.""}"
+59	59		301							{2: 'Ayla', 3: 'See, it works wonders.', 4: '1'}
+60	60		301							"{2: 'Ayla', 3: ""This is what you're supposed to do to get the colors even, and it's a nice practice you can do with your arm to get it to apply force the way you want it to."", 4: '1'}"
+61	61		301							"{2: 'Ayla', 3: ""Keep doing this. I'll see if they have On Sketching here at the library. I think they have a hard copy of it..."", 4: '1'}"
+62	62		202							{1: '1'}
+63	63		301							{3: 'Says Ayla as she wanders off toward the bookshelf behind you.'}
+64	64		301							{3: 'With Ayla occasionally mumbling and the sound of her riffling through pages of a book coming from behind you, your mind enters a state of calmness you never experienced before as you carry on drawing lines on the paper.'}
+65	65		301							{3: 'You never knew drawing could calm you down so much.'}
+66	66		401							{1: '1', 2: '36'}
+67	67		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.7', 4: '0.7', 5: '0'}
+68	68		401							{1: '2', 2: '2576'}
+69	69		301							{3: 'Zap'}
+70	70		401							{1: '1', 2: '203'}
+71	71		401							{1: '2', 2: '1503'}
+72	72		301							{3: 'Following the noise, the library suddenly plunges into darkness, leaving Ayla screaming and the bookshelf behind you teetering...'}
+73	73		302							{2: 'Watch out!', 3: '74'}
+74	74		401							{1: '2', 2: '2607'}
+75	75		301			RImgBg1Shake				{3: 'Something seems to have fallen off the bookshelf—and when you quickly turn out of reflex to keep Ayla safe, a book lands heavily on your arm.'}
+76	76		201							{1: '1', 2: '500110', 3: '4'}
+77	77		301							{1: '1', 2: 'Ayla', 3: '【kuroname】, watch out!', 4: '1'}
+78	78		202							{1: '1'}
+79	79		301							{3: 'Having only a split second to act, you grab Ayla and quickly slide under the table. You pull out your terminal immediately and dial out to Gray Raven...'}
+80	80		401							{1: '2', 2: '2637'}
+81	81		301							"{2: 'System', 3: ""May I have your attention, please. Maintenance service for the library's electric power system will now begin and is expected to last for 20 to 30 minutes. Please follow the emergency lighting to exit at once...""}"
+82	82		301							"{2: 'System', 3: ""May I have your attention, please. Maintenance service for the library's electric power system will now begin...""}"
+83	83		401							{1: '1', 2: '36'}
+84	84		301							{3: 'The cold electronic voice seems to be making sport of the two under the table.'}
+85	85		401							{1: '1', 2: '207'}
+86	86		201							{1: '1', 2: '500110', 3: '19'}
+87	87		301							{1: '1', 2: 'Ayla', 3: 'Wait, what...? Did I hear that right?', 4: '1'}
+88	88		301							{2: 'Ayla', 3: 'And I thought it was just an unusually slow day at the library today...', 4: '1'}
+89	89		301							{3: 'Ayla climbs out from under the table and holds her hand out at you.'}
+90	90		301							{3: 'Getting up from under the table, you take out your portable tactical flashlight and light up on the tiny space you are in.'}
+91	91		301							"{3: ""You should have seen this coming from the moment you stepped into the library—except all the missions you've had to deal with recently seem to have dulled your senses...""}"
+92	92		301							{3: 'You thought the librarian was casting Ayla the dirty look back then only because she was making a scene. Looking back now, however, you see that the librarian was probably just confused seeing the two of you here right before the maintenance service...'}
+93	93		301							{2: 'Ayla', 3: 'Hey, your arm...', 4: '1'}
+94	94		301							{3: 'Ayla checks your arm left and right with a worried look on her face.'}
+95	95		301							"{3: 'A book seems to have hit your arm, but you didn\'t pay much attention because of the ""emergency.""'}"
+96	96		301							"{2: 'Ayla', 3: ""It's swollen... C'mon, Commandant. I'm a Construct, and Constructs can't get killed by fallen books."", 4: '1'}"
+97	97		302							"{2: 'I only did that out of reflex.', 3: '98', 4: ""But you're a girl."", 5: '101'}"
+98	98		204							{1: '1'}
+99	99		301							{2: 'Ayla', 3: 'You rock, Commandant.', 4: '1'}
+100	100	108	301							{2: 'Ayla', 3: 'I think... now I know a little bit more about you.', 4: '1'}
+101	101		204							{1: '1'}
+102	102		301							{2: 'Ayla', 3: 'Uhm?', 4: '1'}
+103	103		301							{3: 'Ayla plays with a strand of hair just right above her shoulder, seemingly having just thought of something.'}
+104	104		302							"{2: ""But don't you know that you can still end up with a M.I.N.D. concussion if you get hit on the head by books?"", 3: '105'}"
+105	105		301							{2: 'Ayla', 3: 'Yeah, right!', 4: '1'}
+106	106		301							{2: 'Ayla', 3: 'Nice try, Commandant... but thank you for the kind gesture.', 4: '1'}
+107	107		301							"{2: 'Ayla', 3: ""And I guess I've got nothing to pay you back other than a good lesson!"", 4: '1'}"
+108	108		301							"{3: ""Ayla seems her usual self again. Picking up the books from the floor, however, she doesn't look like she's about to leave the library as instructed.""}"
+109	109		301							"{2: 'Ayla', 3: ""I've had to wait out maintenance service a few times before, and I never got kicked out when the maintenance service was short enough."", 4: '1'}"
+110	110		301							"{2: 'Ayla', 3: ""It's kind of dark in here, but it's not every day that you get to have the whole library to yourself."", 4: '1'}"
+111	111		301							"{2: 'Ayla', 3: ""So I say let's take advantage of the moment and carry on with the drill!"", 4: '1'}"
+112	112		301							{3: 'With your flashlight, Ayla starts poring over the books she borrowed, all the while jotting down notes in her notebook.'}
+113	113		301							{3: 'The zapping noise from the emergency light and the breathing of you two are the only sounds that can be heard amongst the rows of bookshelves now.'}
+114	114		301							"{3: ""Seen through the floating dust that is snowing down in the shaft of light coming out of your flashlight, every strand of Ayla's hair seems to glow.""}"
+115	115		301							{3: 'With the pencil in your hand skimming over the paper, you try to remember what it felt like when Ayla held you by the wrist just now.'}
+116	116		301							"{3: ""When you're done drawing her outline, you start adding shades to it...""}"
+117	117		301							{2: 'Ayla', 3: 'Hey, Commandant, is that... me?', 4: '1'}
+118	118		301							{3: 'Without you knowing it, Ayla is now behind you looking over your shoulder at your drawing.'}
+119	119		301							"{2: 'Ayla', 3: ""Nice tempo, I'd say... although the contours are a bit off. Here, let me show you..."", 4: '1'}"
+120	120		301							"{3: ""With some fine-tuning, the part where the girl's profile comes in contact with the light does seem more well-rounded now.""}"
+121	121		301							"{2: 'Ayla', 3: ""Why did you decide to draw this, though? You're doing a good job, but I wouldn't classify it as beginner-friendly."", 4: '1'}"
+122	122		302							{2: 'I just thought you looked nice back there.', 3: '123'}
+123	123		301							{2: 'Ayla', 3: 'Uhm? Did I, really?', 4: '1'}
+124	124		301							{3: 'Simple and neat, the picture shows Ayla engrossed in the book in her hand in a shaft of light.'}
+125	125		301							{2: 'Ayla', 3: 'Well...', 4: '1'}
+126	126		301							"{2: 'Ayla', 3: ""Are you sure it's not because you just like the quiet side of me?"", 4: '1'}"
+127	127		301							{3: 'Ayla moves closer to study the drawing.'}
+128	128		302							{2: 'But this is still you, no?', 3: '129'}
+129	129		301							{2: 'Ayla', 3: 'Uhm?', 4: '1'}
+130	130		301							{3: 'Not quite understanding you, Ayla tilts her head, letting a few strands of hair slide down her shoulder.'}
+131	131		302							"{2: ""I mean, quiet or cheerful, it's all you."", 3: '132'}"
+132	132		301							{2: 'Ayla', 3: 'Ohh...', 4: '1'}
+133	133		301							{3: 'Deep in thought looking at the drawing, she suddenly pulls it out of the clipboard.'}
+134	134		301							"{2: 'Ayla', 3: ""Well, I guess I'll keep it, then. Thanks!"", 4: '1'}"
+135	135		301							{3: 'Says Ayla as she puts the paper on her own clipboard. Then, she turns around and starts observing the lines you just drew.'}
+136	136		301							{2: 'Ayla', 3: 'I see your lines are pretty orderly. Let me show you how cubes are drawn, then! Now, cubes are part of the basics of sketching...', 4: '1'}
+137	137		202							{1: '1'}
+138	138		301							{3: 'With the maintenance service still underway, it remains dark in the library.'}
+139	139		301		1		AniZhuanchangBegin			{3: 'Time seems to have stopped moving—and all that you can feel now is the light that emanates from this corner.'}

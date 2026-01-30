@@ -1,0 +1,103 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory672.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				"{3: ""Over at the rest area in a corner of Constellia, you're compiling the Double Seventh Festival report for the WGAA.""}"
+4	4		401							{1: '2', 2: '895'}
+5	5		301							"{3: ""You tap out one last period, and your ideas run dry. Your fingers hover over the keyboard, stuck. Even after trying to squeeze out a few more thoughts, you've left with nothing, so you finally give in.""}"
+6	6		401							{1: '2', 2: '1543'}
+7	7		301							"{3: ""Letting go of your tension, you slump backward, the chair's backrest catching your lower body. Unexpectedly, your head comes to rest against something else.""}"
+8	8		201							{1: '1', 2: '500568'}
+9	9		301							{1: '1', 3: 'You turn around and see Lee standing there.'}
+10	10		301							"{3: ""He went across the street to buy some drinks—you really don't expect him back this quickly.""}"
+11	11		301							{2: 'Lee', 3: 'Take a break. Here, have some water.', 4: '1'}
+12	12		301							{3: 'You take the drink he just bought and notice his attention fixed on the report on the screen.'}
+13	13		301							"{2: 'Lee', 3: ""Some of the data I've gathered might come in handy. Give me a moment to examine it carefully."", 4: '1'}"
+14	14		203							{1: '1', 2: '0.3', 4: '-50', 5: '-150'}
+15	15		301							{3: 'Lee leans forward, extending his left arm as he slides his index finger across the screen.'}
+16	16		301							"{3: ""Maybe he doesn't realize how close your faces get in this position. At first, he glances your way from time to time, but before long, he's fully focused on the report on the screen.""}"
+17	17		301							"{3: ""The sunset's glow settles on his profile. In that warm halo of light, his blue eyes shine even brighter.""}"
+18	18		301							"{3: ""Some time passes like this. As if he's just noticing now or perhaps he's been aware all along, Lee turns his head, and your eyes lock.""}"
+19	19		301							{2: 'Lee', 3: '...What are you doing?', 4: '1'}
+20	20		302							"{2: ""I'm looking at you."", 3: '21', 4: 'Nothing.', 5: '24'}"
+21	21		204							{1: '1', 2: '10'}
+22	22		301							{3: 'Lee clears his throat a bit awkwardly, then quickly looks away first.'}
+23	23		204							{1: '1'}
+24	24		301							{2: 'Lee', 3: 'Focus on the report.', 4: '1'}
+25	25		301							{3: 'Lee browses through it, highlighting certain parts as he goes.'}
+26	26		301							"{2: 'Lee', 3: ""We can use the sample data for these sections. Start your draft first, and I'll fill in the rest later."", 4: '1'}"
+27	27		202							{1: '1'}
+28	28		301				DialogDisable			"{3: ""Lee hands over the terminal, then pulls up a rattan chair and sets whatever he's carrying on the table. It's only now that you notice he's been holding a small package this whole time.""}"
+29	29		201							{1: '1', 2: '500568', 7: '1'}
+30	30		302							"{2: ""What's that?"", 3: '31', 4: '(Give Lee a curious look)', 5: '31'}"
+31	31		301			DialogEnable				{2: 'Lee', 3: 'While I was buying the drink, the staff mentioned there was a special offer. Apparently... if there are two of us, we can get a free pastry.', 4: '1'}
+32	32		301							"{3: ""He takes a pause mid-sentence, like he's changed his words at the last second.""}"
+33	33		301							{3: 'You look at the small package on the table, and then turn to Lee, curiosity getting the better of you.'}
+34	34		302							{2: 'So, how did you answer at that moment?', 3: '35'}
+35	35		301							{2: 'Lee', 3: '...Is that report done yet?', 4: '1'}
+36	36		302							{2: 'Almost, almost.', 3: '37', 4: 'I just have a few lines left.', 5: '37'}
+37	37		301							"{3: ""You're trying to finish these last lines, but nothing flows. Your attention drifts, and your eyes keep bouncing between the report and that small, pristine package.""}"
+38	38		204							{1: '1', 2: '10'}
+39	39		301							{3: 'Lee sees this, shakes his head gently, and opens the package.'}
+40	40		204							{1: '1'}
+41	41		301							{2: 'Lee', 3: 'Take a bite first. A little sugar boost would help your brain think.', 4: '1'}
+42	42		301							{3: 'You look inside and find three square pastries stacked up, their colors utterly tempting.'}
+43	43		301							"{3: ""And it seems there's something written on the inside of the box's lid...""}"
+44	44		301							"{3: ""Lee notices as well, lifting the lid so you can read whatever's written there.""}"
+45	45		301							{2: 'Lee', 3: 'Reminder: If someone else feeds you these pastries by hand, they taste even better!', 4: '1'}
+46	46		301							{2: 'Lee', 3: '...', 4: '1'}
+47	47		301							"{2: 'Lee', 3: ""There's no real science behind that, and it's nothing serious. Don't mind it, Commandant."", 4: '1'}"
+48	48		301							{3: 'He says this as he slides the box of pastries toward you.'}
+49	49		302							{2: 'Mind feeding me a piece?', 3: '50', 4: '(Open your mouth)', 5: '50'}
+50	50		301							{2: 'Lee', 3: '...', 4: '1'}
+51	51		204							{1: '1', 2: '10'}
+52	52		301							"{2: 'Lee', 3: ""You're a grown-up now—eat it yourself."", 4: '1'}"
+53	53		302							"{2: ""I'm typing, so my hands are tied."", 3: '54', 4: ""We need to follow the store's instruction."", 5: '54', 6: '(Keep your mouth open)', 7: '54'}"
+54	54		204							{1: '1'}
+55	55		301				DialogDisable			{3: 'After a short standoff, Lee sighs in resignation, picks up the top piece, and—moving a bit stiffly—holds it up to your mouth.'}
+56	56		302							{2: '(Eat it)', 3: '57'}
+57	57		302							{2: 'It really does taste great when you feed me.', 3: '58', 4: 'This tastes pretty good.', 5: '59'}
+58	58	60	301			DialogEnable				"{2: 'Lee', 3: ""Whether the food has direct contact with me or not doesn't change how it tastes."", 4: '1'}"
+59	59	61	301			DialogEnable				{2: 'Lee', 3: '...Care for another piece?', 4: '1'}
+60	60		301							{2: 'Lee', 3: '...Care for another piece?', 4: '1'}
+61	61		302							{2: 'Yeah.', 3: '62', 4: '(Open your mouth)', 5: '62'}
+62	62		301							"{3: ""Lee's actions flow much more smoothly this time.""}"
+63	63		204							{1: '1', 2: '13'}
+64	64		301							"{3: ""You can't tell if you're imagining it, but whenever you finish chewing and swallowing the pastry, there's a barely noticeable curl at the corner of his lips.""}"
+65	65		204							{1: '1'}
+66	66		301							{3: 'Just as Lee reaches for the last piece, you step in and stop him.'}
+67	67		302							"{2: ""Lee, that last piece is all yours—I'm going to finish up this report."", 3: '68'}"
+68	68		301							"{3: ""Maybe it's the sugar boost, but your inspiration flares right back to life, and you knock out the final lines in no time.""}"
+69	69		301							{3: 'You hand the report to Lee for a quick check. Glancing across the desk, you spot the pastry still sitting there.'}
+70	70		302							"{2: ""You're not eating it?"", 3: '71', 4: ""Don't like it?"", 5: '71', 6: 'Are you waiting for me to feed you?', 7: '71'}"
+71	71		301							"{2: 'Lee', 3: ""Constructs don't need food. You should have it, Commandant."", 4: '1'}"
+72	72		301							{3: 'You take another look at the pastry.'}
+73	73		302							{2: '(Offer it by hand)', 3: '74', 4: '(Hold onto it for now)', 5: '90'}
+74	74		301							"{3: ""You pick up the last piece of pastry and hold it to Lee's lips as he remains absorbed in reviewing the report.""}"
+75	75		301							"{3: 'His hands stop on the keyboard, and he gives you a look that practically says, ""Knock it off.""'}"
+76	76		302							"{2: ""Go on, try it. It's really good."", 3: '77', 4: '(Smile)', 5: '77'}"
+77	77		204							{1: '1', 2: '10'}
+78	78		301							{3: 'After another brief standoff, Lee cautiously leans in and takes a small bite.'}
+79	79		302							"{2: ""How's it?"", 3: '80'}"
+80	80		204							{1: '1'}
+81	81		301							{2: 'Lee', 3: '...A bit too sweet.', 4: '1'}
+82	82		302							{2: 'Really...? I actually think it tastes pretty good.', 3: '83', 4: 'Yeah, I felt that way when I ate it.', 5: '83'}
+83	83		301							{3: 'You start to pull your hand back, feeling a bit disappointed, but then you see Lee, looking flustered, raise his hand to stop you.'}
+84	84		301							"{2: 'Lee', 3: ""Ahem... I never said I wasn't going to eat it."", 4: '1'}"
+85	85		301							{3: 'With that, he quickly polishes off the rest of the pastry.'}
+86	86		204							{1: '1', 2: '6'}
+87	87		301							{2: 'Lee', 3: '...', 4: '1'}
+88	88		302							{2: 'Lee, your face...', 3: '89'}
+89	89		301							"{2: 'Lee', 3: ""The self-circulating heat system seems off. I'll run a full diagnostic and fix it as soon as we return..."", 4: '1'}"
+90	90		202							{1: '1', 7: '1'}
+91	91		301							{3: 'You both fall silent. After a moment, Lee hands you the terminal.'}
+92	92		201							{1: '1', 2: '500568'}
+93	93		301							{1: '1', 2: 'Lee', 3: 'The report is done.', 4: '1'}
+94	94		301							{2: 'Lee', 3: 'Do we head back now?', 4: '1'}
+95	95		202							{1: '1'}
+96	96		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg', 3: '0', 4: '1', 5: '1'}
+97	97		301							{3: 'You gaze ahead as the sun dips below the horizon, and lanterns glow brightly on both sides of the street. The crowds are just as big as they were during the day—maybe even bigger.'}
+98	98		301				DialogDisable			{3: 'The entire Double Seventh Festival park is still alive with excitement.'}
+99	99		201							{1: '1', 2: '500568', 7: '1'}
+100	100		302							{2: 'How about we stick around a little longer, maybe until the festival wraps up?', 3: '101'}
+101	101		204							{1: '1', 2: '1'}
+102	102		301		1	DialogEnable	AniZhuanchangBegin			{2: 'Lee', 3: 'Alright.', 4: '1'}

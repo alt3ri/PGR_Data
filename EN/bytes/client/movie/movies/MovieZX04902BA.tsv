@@ -1,0 +1,408 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory100.png'}
+2	2		401							{1: '1', 2: '12'}
+3	3		401							{1: '2', 2: '8510113'}
+4	4		301			DialogEnable				{3: 'The Scarab squad transport aircraft departs from Babylonia and enters automatic cruise mode.'}
+5	5		301							{3: 'Valeria leaves the pilot seat and walks steadily toward the back of the cabin.'}
+6	6		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png', 3: '0', 4: '1', 5: '2'}
+7	7		205							{1: '999'}
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+9	9		201							{1: '1', 2: '500961'}
+10	10		301							{1: '1', 2: 'Valeria', 3: 'Let me go over the mission brief.', 4: '1'}
+11	11		301							{2: 'Valeria', 3: 'The Red Tide is gathering at an artificial island. Two squads have gone missing there.', 4: '1'}
+12	12		301							{2: 'Valeria', 3: 'We might have to deal with the missing squads on top of the Hetero-Creatures there.', 4: '1'}
+13	13		201							{1: '1', 2: '500900'}
+14	14		301							"{1: '1', 2: 'Shiva', 3: ""Ground combat, the Red Tide... Why isn't this mission assigned to a proper Task Force squad... like the Gray Ravens?"", 4: '1'}"
+15	15		201							{1: '1', 2: '500961'}
+16	16		301							{1: '1', 2: 'Valeria', 3: 'The Gray Ravens are still helping Lucia with her frame replacement, but more importantly...', 4: '1'}
+17	17		301							"{2: 'Valeria', 3: ""We've been chosen primarily because one of us is familiar with the mission location."", 4: '1'}"
+18	18		301							"{3: ""Valeria rarely asks questions. In other words, she's the type to pack everything she wants to say into statements.""}"
+19	19		301							{3: 'And right now, this means...'}
+20	20		202							{1: '1', 6: '1'}
+21	21		201							{1: '1', 2: '501041'}
+22	22		301							"{1: '1', 3: ""Yata feels Valeria's gaze turn toward her.""}"
+23	23		301							{2: 'Yata', 3: 'Hydrangea Island. This is where I went to high school.', 4: '1'}
+24	24		301							{2: 'Yata', 3: 'I know my way around there. I can be your guide, assuming there are still paths to follow.', 4: '1'}
+25	25		204							{1: '1', 2: '6'}
+26	26		301							{2: 'Yata', 3: '...', 4: '1'}
+27	27		204							{1: '1'}
+28	28		301							"{2: 'Yata', 3: ""The island was abandoned following the Punishing outbreak. I'm one of the few survivors."", 4: '1'}"
+29	29		301							"{2: 'Yata', 3: ""As for the details, I'm sure the Commander's intel is more comprehensive than what I know."", 4: '1'}"
+30	30		204							{1: '1', 2: '8'}
+31	31		301							{3: 'Seeming to have noticed her own emotions, she adds these explanations before closing her eyes.'}
+32	32		202							{1: '1', 6: '1'}
+33	33		201							{1: '1', 2: '500961'}
+34	34		301							{1: '1', 2: 'Valeria', 3: '...Sure.', 4: '1'}
+35	35		301							"{2: 'Valeria', 3: ""Well then, let's continue."", 4: '1'}"
+36	36		301							{2: 'Valeria', 3: 'Weather satellites have captured continuous movement patterns during the night...', 4: '1'}
+37	37		301							{3: 'After this brief interlude, Valeria resumes explaining the mission details.'}
+38	38		202							{1: '1', 6: '1'}
+39	39		201							{1: '1', 2: '500627', 4: '-400'}
+40	40		201							{1: '2', 2: '500900', 3: '1', 4: '400'}
+41	41		301							"{1: '1', 3: ""Discord reviews the mission's details on her terminal as she listens to Valeria talking, while Shiva reclines in her seat, resting with her eyes closed.""}"
+42	42		202							{1: '1', 2: '2', 6: '1'}
+43	43		201							{1: '1', 2: '501041'}
+44	44		301							{1: '1', 3: 'Yata props her cheek up, twirling her hair with her right index finger as her gaze drifts out the window.'}
+45	45		202							{1: '1'}
+46	46		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory334.png', 3: '0', 4: '1', 5: '1.5'}
+47	47		301							"{3: ""At some point, Earth's silhouette gradually fills her entire view, followed by patches of clouds...""}"
+48	48		301							"{3: ""The approaching blue planet stirs indescribable ripples in Yata's heart.""}"
+49	49		301				AniZhuanchangBegin			{3: 'Certain memories, intentionally locked away, now force their way into her mind...'}
+50	50		502							{1: 'DialogDisable'}
+51	51		205							{1: '999'}
+52	52		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+53	53		307							"{1: ""That blue sky is as much like a spider's web as it is an endless midsummer."", 3: '60'}"
+54	54		301			AniZhuanchangEnd				"{3: ""That blue sky is as much like a spider's web as it is an endless midsummer.""}"
+55	55		307						10.0	{2: '1'}
+56	56		307							{1: 'No one can truly escape.', 3: '60'}
+57	57		301				AniZhuanchangBegin			{3: 'No one can truly escape.'}
+58	58		307							{2: '1'}
+59	59		401							{1: '1', 2: '36'}
+60	60		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1055.jpg'}
+61	61		401							{1: '1', 2: '207'}
+62	62		201							{1: '1', 2: '500863', 7: '1'}
+63	63		502							{1: 'DialogEnable'}
+64	64		301			AniZhuanchangEnd				"{1: '1', 2: ""Yata's Father"", 3: 'Such a deep blue sky, not a cloud in sight.', 4: '1'}"
+65	65		301							"{2: ""Yata's Father"", 3: ""It's rare to have such nice weather on the first day of school. Why don't you take this chance to look around?"", 4: '1'}"
+66	66		202							{1: '1', 6: '1'}
+67	67		201							{1: '1', 2: '501042', 4: '-450'}
+68	68		201							{1: '2', 2: '500863', 4: '450'}
+69	69		301							"{1: '1', 2: 'Yata', 3: ""This is so annoying. I've never seen such a stuffy old school."", 4: '1'}"
+70	70		301							"{2: ""Yata's Father"", 3: 'Haha, keep your voice down, Yata.', 4: '2'}"
+71	71		301							"{2: ""Yata's Father"", 3: 'See, your student handbook proudly states...', 4: '2'}"
+72	72		301							"{2: ""Yata's Father"", 3: '""Misono Academy High School is a private institution renowned for its strict discipline.""', 4: '2'}"
+73	73		301							"{2: ""Yata's Father"", 3: '""We cultivate elite individuals who possess both academic excellence and noble character.""', 4: '2'}"
+74	74		301							"{2: ""Yata's Father"", 3: 'The school motto is ""explore the vast universe, strive for human perfection.""', 4: '2'}"
+75	75		301							"{2: ""Yata's Father"", 3: 'How very...', 4: '2'}"
+76	76		301							"{2: ""Yata's Father"", 3: ""It's less about outdated aesthetics and more about deliberately projecting an air of superiority."", 4: '2'}"
+77	77		301							{2: 'Yata', 3: 'What kind of superiority?', 4: '1'}
+78	78		301							"{2: ""Yata's Father"", 3: 'Hmm... The arrogance of the elite class?', 4: '2'}"
+79	79		301							"{2: ""Yata's Father"", 3: 'Anyhow, this is the best high school there is on the island.', 4: '2'}"
+80	80		301							"{2: ""Yata's Father"", 3: 'Your old man had to call in favors from several friends for recommendation letters just to get you enrolled here.', 4: '2'}"
+81	81		301							{2: 'Yata', 3: '...Why should I care? You never asked for my opinion before moving to the island.', 4: '1'}
+82	82		301				AniZhuanchangBegin			"{2: ""Yata's Father"", 3: 'Sorry, sorry, my bad again. Haha.', 4: '2'}"
+83	83		202							{1: '1', 2: '2', 6: '1'}
+84	84		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+85	85		306							{1: '1'}
+86	86		502							{1: 'DialogDisable'}
+87	87		307							{1: 'Back then, I followed my father to this school, on a day without a cloud in sight.', 3: '60'}
+88	88		301			AniZhuanchangEnd				{3: 'Back then, I followed my father to this school, on a day without a cloud in sight.'}
+89	89		307							{1: '10', 2: '1'}
+90	90		307							{1: 'Directionless in life, I drifted aimlessly through my youth.', 3: '60'}
+91	91		301				AniZhuanchangBegin			{3: 'Directionless in life, I drifted aimlessly through my youth.'}
+92	92		307							{2: '1'}
+93	93		502							{1: 'DialogEnable'}
+94	94		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1055.jpg'}
+95	95		301			AniZhuanchangEnd				{3: 'I gazed at the short school gate built with precious stones, and the emblem emblazoned in gold letters...'}
+96	96		301							{3: 'I failed to sense the elitist arrogance my father had warned me about.'}
+97	97		301							{3: 'Instead, I sensed a kind of fear—a fear that made everyone tread carefully.'}
+98	98		301							{3: 'Rotting petals littered the ground as harsh sunlight bore down mercilessly.'}
+99	99		301							"{3: ""Soon, sweat soaked through my uniform's lining. I undid a button, but the heat remained unbearable.""}"
+100	100		104							{1: '-200|0|-100', 2: '1'}
+101	101		301							{3: 'Seeking shelter from the sun, I weaved through the crowd of new students and their parents.'}
+102	102		201							{1: '1', 2: '501051'}
+103	103		301							{1: '1', 3: 'Under a tree by the school gate stood a fair-skinned girl.'}
+104	104		301							{3: 'Our eyes met by chance. She stood motionless like a doll, her brows furrowed.'}
+105	105		202							{1: '1'}
+106	106		401							{1: '2', 2: '1516'}
+107	107		104							{1: '-250|0|-200', 2: '1'}
+108	108		301							{3: 'Thinking she might need help, I walked over to her.'}
+109	109		306							
+110	110		201							{1: '1', 2: '501042', 4: '-400'}
+111	111		201							{1: '2', 2: '501051', 4: '400'}
+112	112		301							{1: '1', 2: 'Yata', 3: 'Hello there. Are you waiting for someone?', 4: '1'}
+113	113		301							{2: '???', 3: 'Hmm... Yes? Can I help you?', 4: '2'}
+114	114		301							"{2: 'Yata', 3: ""Oh, I'm Yata. I'm a first-year student, too."", 4: '1'}"
+115	115		301							{2: '???', 3: 'Yata...', 4: '2'}
+116	116		301							{2: 'Yata', 3: 'May I know your name?', 4: '1'}
+117	117		301				AniZhuanchangBegin			"{2: '???', 3: ""Nice to meet you, I'm..."", 4: '2'}"
+118	118		401							{1: '1', 2: '36'}
+119	119		202							{1: '1', 2: '2', 6: '1'}
+120	120		401							{1: '2', 2: '8510113'}
+121	121		104							{1: '0|0|0', 2: '0'}
+122	122		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+123	123		201							{1: '1', 2: '501041', 3: '8', 7: '1'}
+124	124		301			AniZhuanchangEnd				"{1: '1', 3: ""The transport's roar pulls Yata back to the cramped cabin.""}"
+125	125		401							{1: '1', 2: '201'}
+126	126		301							{2: 'Yata', 3: 'Hmm.', 4: '1'}
+127	127		201							{1: '1', 2: '500900'}
+128	128		301							"{1: '1', 2: 'Shiva', 3: ""What's wrong?"", 4: '1'}"
+129	129		201							{1: '1', 2: '501041'}
+130	130		301							"{1: '1', 2: 'Yata', 3: ""Oh uh... I'm listening."", 4: '1'}"
+131	131		201							{1: '1', 2: '500961'}
+132	132		301							{1: '1', 2: 'Valeria', 3: 'Besides investigating the Red Tide and locating the missing squads, we have another objective—capture the target alive if possible.', 4: '1'}
+133	133		201							{1: '1', 2: '500627'}
+134	134		301							"{1: '1', 2: 'Discord', 3: ""Who's the target?"", 4: '1'}"
+135	135		201							{1: '1', 2: '500961'}
+136	136		301							"{1: '1', 2: 'Valeria', 3: ""A scientist from the Golden Age. I've sent the details to your terminals."", 4: '1'}"
+137	137		301							{2: 'Valeria', 3: 'The transport is about to reach the designated altitude. Everyone get ready.', 4: '1'}
+138	138		201							{1: '1', 2: '500900'}
+139	139		301							{1: '1', 2: 'Shiva', 3: 'I have a bad feeling about this...', 4: '1'}
+140	140		301							{3: 'Even after all these years, Yata still kicks herself for what happened that day.'}
+141	141		301							{3: 'She regrets being so lost in memories that she failed to stop Shiva from speaking.'}
+142	142		202							{1: '1', 6: '1'}
+143	143		401							{1: '2', 2: '4695'}
+144	144		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab', 2: '1'}
+145	145		401							{1: '1', 2: '36'}
+146	146		301							{3: 'Beep, beep, beep, beep, beep—'}
+147	147		401							{1: '1', 2: '202'}
+148	148		201							{1: '1', 2: '500627'}
+149	149		301							{1: '1', 2: 'Discord', 3: '?', 4: '1'}
+150	150		202							{1: '1', 6: '1'}
+151	151		301							{3: 'Harsh red warning lights suddenly flood the cabin.'}
+152	152		301				DialogDisable			{3: 'Urgent alarms and an automated voice message follow suit.'}
+153	153		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab'}
+154	154		401							{1: '2', 2: '1105'}
+155	155		307							{1: '[WARNING! HIGH-SPEED HEAT SIGNATURE DETECTED!]', 3: '60', 4: 'ff4e4eff'}
+156	156		301							{3: '[WARNING! HIGH-SPEED HEAT SIGNATURE DETECTED!]'}
+157	157		307							{2: '1'}
+158	158		201							{1: '1', 2: '500900'}
+159	159		301			DialogEnable	DialogDisable			{1: '1', 2: 'Shiva', 3: 'RWR response?', 4: '1'}
+160	160		202							{1: '1'}
+161	161		401							{1: '2', 2: '4331'}
+162	162		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+163	163		104							{1: '0|0|-100', 2: '0.8'}
+164	164		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory100.png', 3: '0', 4: '1', 5: '1'}
+165	165		104							{1: '0|0|0', 2: '0'}
+166	166		205							{1: '999'}
+167	167		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory100.png'}
+168	168		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+169	169		301			DialogEnable				{3: 'Shiva rushes to the pilot seat.'}
+170	170		201							{1: '1', 2: '501041', 3: '4'}
+171	171		301							"{1: '1', 2: 'Yata', 3: ""What's wrong? Is this some sort of malfunction?"", 4: '1'}"
+172	172		201							{1: '1', 2: '500961'}
+173	173		301							"{1: '1', 2: 'Valeria', 3: ""It's a radar warning."", 4: '1'}"
+174	174		201							{1: '1', 2: '500900', 3: '1'}
+175	175		301							"{1: '1', 2: 'Shiva', 3: ""Surface-to-air missile detected three o'clock under, moving at high speed."", 4: '1'}"
+176	176		301							{3: 'As Shiva rapidly works the control panel, Discord moves in for a closer look.'}
+177	177		201							{1: '1', 2: '500627'}
+178	178		301							{1: '1', 2: 'Discord', 3: 'Can we make it? Should we try electromagnetic interference?', 4: '1'}
+179	179		201							{1: '1', 2: '500900', 3: '1'}
+180	180		301							{1: '1', 2: 'Shiva', 3: 'ECM system deployed, calculating evasive trajectory.', 4: '1'}
+181	181		301							{2: 'Shiva', 3: 'Wait, the attack source has an IFF signature with a no-lock indicator...', 4: '1'}
+182	182		201							{1: '1', 2: '500961'}
+183	183		301							"{1: '1', 2: 'Valeria', 3: ""...It's friendly fire."", 4: '1'}"
+184	184		201							{1: '1', 2: '500900', 3: '1'}
+185	185		301							"{1: '1', 2: 'Shiva', 3: ""The incoming missiles are from... Babylonia's surface-to-air defense system."", 4: '1'}"
+186	186		201							{1: '1', 2: '500961'}
+187	187		301							{1: '1', 2: 'Valeria', 3: 'Verify IFF protocol.', 4: '1'}
+188	188		201							{1: '1', 2: '500900', 3: '1'}
+189	189		301							"{1: '1', 2: 'Shiva', 3: ""It's been terminated unilaterally!"", 4: '1'}"
+190	190		301							{2: 'Shiva', 3: 'Two seconds!', 4: '1'}
+191	191		301							{2: 'Shiva', 3: 'Deploy chaff and ECM!', 4: '1'}
+192	192		201							{1: '1', 2: '500961'}
+193	193		301							{1: '1', 2: 'Valeria', 3: 'No time! Everyone, hold on tight!', 4: '1'}
+194	194		202							{1: '1', 6: '1'}
+195	195		401							{1: '2', 2: '4321'}
+196	196		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+197	197		301			RImgBg1Shake				"{3: ""As a blinding flash erupts from the left wing, Yata forces Discord's head down.""}"
+198	198		401							{1: '2', 2: '884'}
+199	199		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+200	200		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+201	201		301			RImgBg1Shake				{3: 'A tremendous impact rocks the small cabin, sending violent shockwaves coursing through its walls.'}
+202	202		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+203	203		301							"{3: ""In the explosion's wake, black smoke and the acrid stench of burning seep into the cabin.""}"
+204	204		401							{1: '2', 2: '4044'}
+205	205		201							{1: '2', 2: '501041', 3: '4', 4: '-500', 7: '1'}
+206	206		201							{1: '1', 2: '500961', 4: '800'}
+207	207		203							{1: '1', 2: '0.2', 3: '400'}
+208	208		401							{1: '2', 2: '4802'}
+209	209		301			RImgBg1Shake				"{1: '1', 3: ""Yata reaches out with a mechanical arm and catches Valeria who's been flung to the other side of the cabin.""}"
+210	210		202							{1: '1', 2: '2', 6: '1'}
+211	211		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+212	212		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab', 2: '1'}
+213	213		401							{1: '2', 2: '4695'}
+214	214		301				DialogDisable			{3: 'Piercing alarms blare through the cabin. The danger is far from over...'}
+215	215		402							{1: '4695'}
+216	216		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab'}
+217	217		401							{1: '2', 2: '1105'}
+218	218		307							{1: '[ENGINE THRUST CRITICAL]', 3: '60', 4: 'ff4e4eff'}
+219	219		301							{3: '[ENGINE THRUST CRITICAL]'}
+220	220		307						10.0	{2: '1'}
+221	221		401							{1: '2', 2: '1105'}
+222	222		307							{1: '[FUEL TANK BREACH]', 3: '60', 4: 'ff4e4eff'}
+223	223		301							{3: '[FUEL TANK BREACH]'}
+224	224		307						10.0	{2: '1'}
+225	225		401							{1: '2', 2: '1105'}
+226	226		307							{1: '[FUSELAGE FIRE]', 3: '60', 4: 'ff4e4eff'}
+227	227		301							{3: '[FUSELAGE FIRE]'}
+228	228		307						10.0	{2: '1'}
+229	229		401							{1: '2', 2: '1105'}
+230	230		307							{1: '[RADAR MALFUNCTION]', 3: '60', 4: 'ff4e4eff'}
+231	231		301							{3: '[RADAR MALFUNCTION]'}
+232	232		307							{2: '1'}
+233	233		201							{1: '1', 2: '500961'}
+234	234		301			DialogEnable	DialogDisable			{1: '1', 2: 'Valeria', 3: 'Shiva, give me a status report.', 4: '1'}
+235	235		202							{1: '1'}
+236	236		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory100.png', 3: '0', 4: '1', 5: '0.8'}
+237	237		205							{1: '999'}
+238	238		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory100.png'}
+239	239		201							{1: '1', 2: '500900', 3: '1'}
+240	240		301			DialogEnable				{1: '1', 2: 'Shiva', 3: 'We lost one engine completely, and the other appears to be compromised as well.', 4: '1'}
+241	241		301							{2: 'Shiva', 3: 'The left wing is barely responding to controls, and the autopilot system is practically non-functional.', 4: '1'}
+242	242		301							"{2: 'Shiva', 3: ""Worst of all, we're dealing with a fuel tank breach. We're already below the safety threshold..."", 4: '1'}"
+243	243		201							{1: '1', 2: '500961'}
+244	244		301							"{2: 'Valeria', 3: ""Shiva, I'm authorizing an IFF protocol override. Launch two air-to-ground missiles at the source of attack."", 4: '1'}"
+245	245		201							{1: '1', 2: '500900', 3: '1'}
+246	246		301							{1: '1', 2: 'Shiva', 3: 'IFF protocol disengaged. Anti-radiation missiles locked onto source of attack.', 4: '1'}
+247	247		301							"{2: 'Shiva', 3: ""It's no use, the bomb bay is jammed."", 4: '1'}"
+248	248		201							{1: '1', 2: '500961'}
+249	249		301							{1: '1', 2: 'Valeria', 3: 'Yata, activate emergency protocol and prepare for equipment airdrop to reduce weight.', 4: '1'}
+250	250		201							{1: '1', 2: '501041'}
+251	251		301							{1: '1', 2: 'Yata', 3: 'Copy that, tracking beacon connected to the terminal.', 4: '1'}
+252	252		202							{1: '1', 6: '1'}
+253	253		401							{1: '2', 2: '4695'}
+254	254		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab', 2: '1'}
+255	255		301				DialogDisable			{3: 'Beep, beep, beep, beep, beep—'}
+256	256		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab'}
+257	257		402							{1: '4695'}
+258	258		401							{1: '2', 2: '1105'}
+259	259		307							{1: '[WARNING! HIGH-SPEED HEAT SIGNATURE DETECTED!]', 3: '60', 4: 'ff4e4eff'}
+260	260		301							{3: '[WARNING! HIGH-SPEED HEAT SIGNATURE DETECTED!]'}
+261	261		307							{2: '1'}
+262	262		201							{1: '1', 2: '501041', 3: '4'}
+263	263		301			DialogEnable				"{1: '1', 2: 'Yata', 3: ""You've got to be kidding—another one?"", 4: '1'}"
+264	264		201							{1: '1', 2: '500900', 3: '1'}
+265	265		301							"{1: '1', 2: 'Shiva', 3: ""High-speed SAM, three o'clock under!"", 4: '1'}"
+266	266		301							{2: 'Shiva', 3: 'AI module malfunction, unable to calculate evasive maneuvers.', 4: '1'}
+267	267		201							{1: '1', 2: '500961'}
+268	268		301							{1: '1', 2: 'Valeria', 3: 'Shiva, take control of the aircraft.', 4: '1'}
+269	269		301				DialogDisable			{2: 'Valeria', 3: 'You are authorized to perform high-risk evasive maneuvers.', 4: '1'}
+270	270		202							{1: '1', 6: '1'}
+271	271		401							{1: '2', 2: '1515'}
+272	272		307							{1: '[AUTO-CRUISE DISENGAGED]', 3: '60', 4: '34aff8ff'}
+273	273		301							{3: '[AUTO-CRUISE DISENGAGED]'}
+274	274		307							{2: '1'}
+275	275		201							{1: '1', 2: '500900', 3: '1'}
+276	276		301			DialogEnable				"{1: '1', 2: 'Shiva', 3: ""Everyone, hold on tight—we're diving!"", 4: '1'}"
+277	277		401							{1: '2', 2: '13015204'}
+278	278		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+279	279		301							"{3: ""Shiva pushes the control stick forward to its limit, causing the aircraft's nose to pitch downward.""}"
+280	280		202							{1: '1', 6: '1'}
+281	281		301							{3: 'In that instant, Yata spots a glint of light in the distant clouds.'}
+282	282		201							{1: '1', 2: '501041', 3: '4'}
+283	283		301							{1: '1', 2: 'Yata', 3: 'Shiva! More to the left!', 4: '1'}
+284	284		202							{1: '1', 6: '1'}
+285	285		401							{1: '2', 2: '13015204'}
+286	286		104							{1: '150|0|-150', 2: '0.5'}
+287	287		301							{3: 'Shiva responds by forcefully banking the transport aircraft to the left.'}
+288	288		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+289	289		401							{1: '2', 2: '1506'}
+290	290		301			RImgBg1Shake				{3: 'The sharp evasive maneuver causes something to break loose from the wing.'}
+291	291		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+292	292		401							{1: '2', 2: '4322'}
+293	293		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+294	294		301			RImgBg1Shake				{3: 'As trails of fire mark the path of the deployed flares, another violent explosion erupts nearby.'}
+295	295		401							{1: '2', 2: '4142'}
+296	296		301							{3: 'The cabin shudders slightly, but this time, everyone stays firmly in their seats.'}
+297	297		402							{1: '4142'}
+298	298		201							{1: '1', 2: '500961'}
+299	299		301							{1: '1', 2: 'Valeria', 3: 'Did we dodge it?', 4: '1'}
+300	300		201							{1: '1', 2: '500900', 3: '1'}
+301	301		301							{1: '1', 2: 'Shiva', 3: 'Not completely.', 4: '1'}
+302	302		301							{2: 'Shiva', 3: 'Something on the underside of the transport aircraft must have been hit.', 4: '1'}
+303	303		301							"{2: 'Shiva', 3: ""At least it wasn't the bomb bay. I consider ourselves very lucky, all things considered."", 4: '1'}"
+304	304		201							{1: '1', 2: '500961'}
+305	305		301							{1: '1', 2: 'Valeria', 3: 'How much fuel do we have left?', 4: '1'}
+306	306		201							{1: '1', 2: '500900', 3: '1'}
+307	307		301							"{1: '1', 2: 'Shiva', 3: ""Can't tell. The instruments are dead."", 4: '1'}"
+308	308		201							{1: '1', 2: '500961'}
+309	309		301				DialogDisable			"{1: '1', 2: 'Valeria', 3: ""Abort return mission. We'll make an emergency landing on Hydrangea Island."", 4: '1'}"
+310	310		202							{1: '1', 6: '1'}
+311	311		401							{1: '2', 2: '1105'}
+312	312		307							{1: '[EXCESSIVE SPEED]', 3: '60', 4: 'ff4e4eff'}
+313	313		301							{3: '[EXCESSIVE SPEED]'}
+314	314		307							{2: '1'}
+315	315		201							{1: '1', 2: '500961'}
+316	316		301			DialogEnable				{1: '1', 2: 'Valeria', 3: 'Is the map navigation system still working?', 4: '1'}
+317	317		301							"{2: 'Valeria', 3: ""We're at optimal altitude for shoulder-mounted missiles. We need to act fast."", 4: '1'}"
+318	318		201							{1: '1', 2: '500900', 3: '1'}
+319	319		301							"{1: '1', 2: 'Shiva', 3: ""Hydrangea Island's outline is in view, but we can't confirm the terrain. No data in the database."", 4: '1'}"
+320	320		301							{2: 'Shiva', 3: 'Switching to visual guidance. Initial assessment shows three potential landing zones.', 4: '1'}
+321	321		301							{2: 'Shiva', 3: 'For the highest chance of success, the central inland area would be our best bet.', 4: '1'}
+322	322		201							{1: '1', 2: '500961'}
+323	323		301							"{1: '1', 2: 'Valeria', 3: ""The bay area might be contaminated by the Red Tide. We'll land in the central inland area."", 4: '1'}"
+324	324		301							{2: 'Valeria', 3: 'Brace for impact.', 4: '1'}
+325	325		201							{1: '1', 2: '500627'}
+326	326		301							{1: '1', 2: 'Discord', 3: 'Roger.', 4: '1'}
+327	327		201							{1: '1', 2: '500900', 3: '1'}
+328	328		301							"{1: '1', 2: 'Shiva', 3: ""There's so much vegetation... Even the spaces between buildings are filled with tall trees."", 4: '1'}"
+329	329		301				DialogDisable			"{2: 'Shiva', 3: ""This is annoying. Can't even see where the ground is through all this."", 4: '1'}"
+330	330		202							{1: '1', 6: '1'}
+331	331		401							{1: '2', 2: '1105'}
+332	332		307							{1: '[PROXIMITY WARNING]', 3: '60', 4: 'ff4e4eff'}
+333	333		301							{3: '[PROXIMITY WARNING]'}
+334	334		307							{2: '1'}
+335	335		401							{1: '2', 2: '8510113'}
+336	336		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+337	337		104							{1: '0|0|-100', 2: '0.8'}
+338	338		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory99.png', 3: '0', 4: '1', 5: '1'}
+339	339		205							{1: '999'}
+340	340		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory99.png'}
+341	341		301			DialogEnable				"{3: ""The transport aircraft's last remaining engine fires diagonally forward, attempting to slow itself down as it skims the ground.""}"
+342	342		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+343	343		401							{1: '2', 2: '2607'}
+344	344		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+345	345		401							{1: '2', 2: '18511049'}
+346	346		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory295.png'}
+347	347		401							{1: '2', 2: '2789'}
+348	348		301			RImgBg1Shake				"{3: ""After breaking through countless trees, the transport craft's tail makes contact with the ground.""}"
+349	349		401							{1: '2', 2: '915'}
+350	350		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+351	351		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory767.png'}
+352	352		401							{1: '2', 2: '4008'}
+353	353		301			RImgBg1Shake				{3: 'A massive, muffled explosion follows, as flames rise from the clearing near the forest.'}
+354	354		402							{1: '4008'}
+355	355		401							{1: '2', 2: '4385'}
+356	356		301				AniZhuanchangBegin			{3: 'As smoke billows into the sky, Hydrangea Island falls silent once more.'}
+357	357		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+358	358		301			AniZhuanchangEnd				{3: 'Meanwhile, inside the now-wrecked industrial transport ship...'}
+359	359		201							{1: '1', 2: '500961'}
+360	360		301							{1: '1', 2: 'Valeria', 3: 'Shiva, deploy the drones. Yata, check if the mounted weapons are still operational.', 4: '1'}
+361	361		201							{1: '1', 2: '500900', 3: '1'}
+362	362		301							{1: '1', 2: 'Shiva', 3: 'Two recon drones are still functional. Deploying them now.', 4: '1'}
+363	363		201							{1: '1', 2: '501041'}
+364	364		301							"{1: '1', 2: 'Yata', 3: ""Here's your pulse gun."", 4: '1'}"
+365	365		301							{3: 'Valeria takes the pulse gun from Yata and inspects its energy storage unit.'}
+366	366		201							{1: '1', 2: '500900', 3: '1'}
+367	367		301							{1: '1', 2: 'Shiva', 3: 'Signal lost from both drones.', 4: '1'}
+368	368		201							{1: '1', 2: '500961'}
+369	369		301							{1: '1', 2: 'Valeria', 3: 'Watch out! Enemies nearby!', 4: '1'}
+370	370		201							{1: '1', 2: '501041'}
+371	371		301							{1: '1', 3: 'Just as Yata reaches for the mangled cabin door...'}
+372	372		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+373	373		401							{1: '2', 2: '4306'}
+374	374		401							{1: '2', 2: '964'}
+375	375		204							{1: '1', 2: '5'}
+376	376		203							{1: '1', 2: '0.25', 4: '-80'}
+377	377		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+378	378		301			PanelActor1Shake				{3: 'A powerful electromagnetic pulse strikes from nowhere, forcing her to her knees before she can react.'}
+379	379		201							{1: '1', 2: '500627'}
+380	380		301			PanelActor1Shake				{1: '1', 2: 'Discord', 3: 'Mmph!', 4: '1'}
+381	381		201							{1: '1', 2: '501041', 3: '5', 5: '-80'}
+382	382		301			PanelActor1Shake				{1: '1', 2: 'Yata', 3: 'Dammit, what the hell is this...', 4: '1'}
+383	383		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+384	384		202							{1: '1', 6: '1'}
+385	385		401							{1: '2', 2: '4560'}
+386	386		301							"{3: ""Valeria swiftly establishes a consciousness link to stabilize Yata and Discord's M.I.N.D.""}"
+387	387		201							{1: '1', 2: '500961'}
+388	388		301							"{1: '1', 2: 'Valeria', 3: ""Something's wrong. It's a malicious interference targeting the M.I.N.D."", 4: '1'}"
+389	389		301							{2: 'Valeria', 3: 'Are there other commandants on the island, or perhaps...', 4: '1'}
+390	390		201							{1: '1', 2: '500900', 3: '1'}
+391	391		301							"{1: '1', 2: 'Shiva', 3: ""Radar's picking up infected mechanoids at nine o'clock."", 4: '1'}"
+392	392		201							{1: '1', 2: '500961'}
+393	393		301							{1: '1', 2: 'Valeria', 3: 'Is it one or multiple?', 4: '1'}
+394	394		201							{1: '1', 2: '500900', 3: '1'}
+395	395		301							{1: '1', 2: 'Shiva', 3: 'Should be just one... Wait...', 4: '1'}
+396	396		301							"{2: 'Shiva', 3: ""Suspicious signals detected at three o'clock, six o'clock, and eight o'clock."", 4: '1'}"
+397	397		201							{1: '1', 2: '500961'}
+398	398		301							"{1: '1', 2: 'Valeria', 3: ""We can't stay in the transport craft any longer. We need to fight our way out."", 4: '1'}"
+399	399		301							{2: 'Valeria', 3: 'Shiva, sync the map data from both drones to our terminals.', 4: '1'}
+400	400		201							{1: '1', 2: '500900', 3: '1'}
+401	401		301							{1: '1', 2: 'Shiva', 3: 'Only 12% of environmental data has been collected within range of the transport.', 4: '1'}
+402	402		301							{2: 'Shiva', 3: 'Clear enemy signatures detected behind the trees on the left flank.'}
+403	403		201							{1: '1', 2: '500961'}
+404	404		301							"{1: '1', 2: 'Valeria', 3: ""That'll do."", 4: '1'}"
+405	405		301							{2: 'Valeria', 3: 'Yata, prepare to breach.', 4: '1'}
+406	406		201							{1: '1', 2: '501041', 3: '4'}
+407	407		301		1		AniZhuanchangBegin			{1: '1', 2: 'Yata', 3: 'Roger.', 4: '1'}

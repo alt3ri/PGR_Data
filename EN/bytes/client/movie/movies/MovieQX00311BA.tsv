@@ -1,0 +1,74 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory310.png'}
+2	2		401							{1: '1', 2: '2915'}
+3	3		301			DialogEnable				{3: 'The shop door swings open, ushering in a flurry of chatter.'}
+4	4		201							{1: '1', 2: '500342', 4: '400'}
+5	5		201							{1: '2', 2: '500454', 4: '-400'}
+6	6		301			RImgBg1Shake				"{1: '1', 2: 'Female Customer', 3: ""Miss Ayla? Look, it's Miss Ayla!"", 4: '1'}"
+7	7		301							"{2: 'Male Customer', 3: 'Ayla... Could it be the Ayla who topped the ""Monthly King ART"""" popularity polls for ten months straight, the original creator and lead artist of """"Beautiful Angel ENDLESS""?', 4: '2'}"
+8	8		301							"{2: 'Female Customer', 3: ""Didn't you hear? There's a signing event with Miss Ayla today! I traveled all the way from the new conservation area just to see her in person!"", 4: '1'}"
+9	9		202							{1: '1', 2: '2', 7: '1'}
+10	10		402							{1: '2915'}
+11	11		401							{1: '1', 2: '36'}
+12	12		401							{1: '1', 2: '122'}
+13	13		302							"{2: ""You're quite the sensation, huh?"", 3: '14', 4: 'They\'re even calling you ""Miss"".', 5: '16'}"
+14	14		201							{1: '1', 2: '500576', 3: '12'}
+15	15	18	301				AniZhuanchangBegin			{1: '1', 2: 'Ayla', 3: 'Weird... I always thought my main audience was kids...', 4: '1'}
+16	16		201							{1: '1', 2: '500576', 3: '1'}
+17	17		301				AniZhuanchangBegin			{1: '1', 2: 'Ayla', 3: 'Haha, maybe you should start calling me that too, Commandant?', 4: '1'}
+18	18		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory748.jpg'}
+19	19		201				AniZhuanchangEnd			{1: '1', 2: '500576', 3: '7', 7: '1'}
+20	20		301			DialogEnable				"{1: '1', 2: 'Ayla', 3: 'To ""Red Comet Masha""...? Alright, signed. Make sure to let the ink dry.', 4: '1'}"
+21	21		204							{1: '1', 2: '12'}
+22	22		301							{2: 'Ayla', 3: 'Hmm—finally signed the last one. It was more tiring than I expected.', 4: '1'}
+23	23		204							{1: '1', 2: '8'}
+24	24		301							{3: 'Ayla gives her wrist a shake, closes her eyes, and lets out a stretch.'}
+25	25		302							{2: 'Some folks even tote along the whole comic collection.', 3: '26', 4: 'Seems like folks are really digging your comics, huh?', 5: '28'}
+26	26		204							{1: '1', 2: '2'}
+27	27	30	301							"{2: 'Ayla', 3: ""Haha, gotta admit, I was a bit surprised myself. Didn't realize I'd already published so many volumes."", 4: '1'}"
+28	28		204							{1: '1', 2: '12'}
+29	29	30	301							"{2: 'Ayla', 3: ""It's not that crazy. Some people just love the hype."", 4: '1'}"
+30	30		204							{1: '1', 2: '1'}
+31	31		301							"{2: 'Ayla', 3: 'Oh, by the way, I\'ve got a special edition lined up for you, Commandant. Heard you\'re all hooked on the ""Monthly King ART"" series, right?', 4: '1'}"
+32	32		302							{2: 'Definitely picking that up for some downtime reading.', 3: '33'}
+33	33		302							{2: 'This story feels a bit different from the usual, no?', 3: '34'}
+34	34		204							{1: '1', 2: '12'}
+35	35		301							"{2: 'Ayla', 3: ""It's a special story I drew specifically for this event."", 4: '1'}"
+36	36		204							{1: '1'}
+37	37		301							"{2: 'Ayla', 3: ""Bringing back characters from past stories, the ones who, well, didn't make it, and those who vanished. All of them just hanging out, enjoying some carefree fun."", 4: '1'}"
+38	38		204							{1: '1', 2: '8'}
+39	39		301							"{2: 'Ayla', 3: ""A story that couldn't really happen, but I figured everyone secretly wished it could, so I made it a reality."", 4: '1'}"
+40	40		204							{1: '1'}
+41	41		301							{2: 'Ayla', 3: 'Even though it started as pure fan service, I actually had a blast drawing it.', 4: '1'}
+42	42		204							{1: '1', 2: '12'}
+43	43		301							"{2: 'Ayla', 3: ""It even got me thinking... maybe I shouldn't have been so quick to bump off a certain character or two..."", 4: '1'}"
+44	44		302							{2: 'With a storyteller like you, readers must be ecstatic.'}
+45	45		204							{1: '1', 2: '2'}
+46	46		301							{2: 'Ayla', 3: 'Not really, I started creating to please myself, you know?', 4: '1'}
+47	47		204							{1: '1', 2: '8'}
+48	48		301							"{2: 'Ayla', 3: ""But once I realized my stuff needed to be shared, I figured why make people cry over a story when I can offer them a break from their real-world troubles, even if it's just for a little while."", 4: '1'}"
+49	49		204							{1: '1', 2: '4'}
+50	50		301							{2: 'Ayla', 3: 'Beautiful Angel ENDLESS was clearly made for this very purpose.', 4: '1'}
+51	51		204							{1: '1'}
+52	52		301							"{2: 'Ayla', 3: 'Some ""professionals"" might scoff, but who cares? I don\'t.', 4: '1'}"
+53	53		302							{2: 'Me neither.', 3: '54', 4: 'I really dig your comics.', 5: '54'}
+54	54		302							{2: 'Right, a rare chance...', 3: '55'}
+55	55		302							{2: 'Could you sign something special for me, Miss Ayla?', 3: '56'}
+56	56		204							{1: '1', 2: '7'}
+57	57		301							{3: 'You pull out the prepared comic.'}
+58	58		301							{2: 'Ayla', 3: 'This is...', 4: '1'}
+59	59		302							{2: 'A bit late, but...', 3: '60'}
+60	60		302							"{2: ""That promise still stands, doesn't it?"", 3: '61'}"
+61	61		204							{1: '1', 2: '8'}
+62	62		301							"{2: 'Ayla', 3: ""Looking back, it's definitely got its cringe moments..."", 4: '1'}"
+63	63		301							"{2: 'Ayla', 3: ""The storyboard's chaotic, the dialogue rough, and the characters are more sketches than anything, lacking that comic book feel..."", 4: '1'}"
+64	64		204							{1: '1', 2: '12'}
+65	65		301							"{2: 'Ayla', 3: ""No wonder it wasn't widely loved."", 4: '1'}"
+66	66		302							"{2: ""But I've been a fan ever since."", 3: '67'}"
+67	67		204							{1: '1'}
+68	68		301							{2: 'Ayla', 3: 'Haha, you got it.', 4: '1'}
+69	69		204							{1: '1', 2: '2'}
+70	70		301							{2: 'Ayla', 3: 'Consider this a special token of appreciation for my biggest fan.', 4: '1'}
+71	71		301							{3: 'She signs the comic, but with a completely different font than the one she used at the signing event.'}
+72	72		204							{1: '1'}
+73	73		301		1		AniZhuanchangBegin			"{2: 'Ayla', 3: 'This special ""Ayla"""" is just for the most special """"you.""', 4: '1'}"

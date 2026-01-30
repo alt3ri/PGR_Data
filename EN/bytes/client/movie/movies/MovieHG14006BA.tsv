@@ -1,0 +1,155 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory548.jpg'}
+2	2		401							{1: '1', 2: '280'}
+3	3		301			DialogEnable				{3: 'Aware of the importance of posture when entering the water from a significant height, you try your best to cradle the fragile body in your arms and maintain a vertical position, hoping to minimize the severity of injuries from the high fall.'}
+4	4		301							{3: 'Even with a perfect posture to enter the water, there are limits to the height that one can safely handle.'}
+5	5		301							{3: 'A violent shock surges through your body, originating from the soles, as if a heavy hammer relentlessly smashes against your fragile bones, piercing through the flesh.'}
+6	6		301							{3: 'Your organs are compressed upward, causing a turbulent rush of blood and air. The instinctive attempt to cough only brings forth suffocating pain.'}
+7	7		301							{3: 'The pain, though intense, is fleeting. Seawater surges into your trachea, and the shock extends to your skull as if a pinball is vigorously bouncing and colliding within your brain.'}
+8	8		301				AniZhuanchangBegin			{3: 'In an instant, your consciousness slips away.'}
+9	9		401							{1: '1', 2: '36'}
+10	10		502						3000.0	{1: 'DialogDisable'}
+11	11		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+12	12		401							{1: '2', 2: '278'}
+13	13		301			DialogEnable				{3: 'After an indeterminate period of time, you feel something cold touching your cheek.'}
+14	14		302							{2: 'Enemy?!', 3: '15'}
+15	15		301							{3: 'Despite the desire to roll to the side, the excruciating pain, tearing through every muscle, prevents you from moving even an inch.'}
+16	16		301							{3: 'The same pain, however, brings you back to your senses.'}
+17	17		401							{1: '1', 2: '100'}
+18	18		301				AniZhuanchangBegin			"{2: '???', 3: ""Um... You'd better not move around.""}"
+19	19		306							{1: '1'}
+20	20		502						400.0	{1: 'DialogDisable'}
+21	21		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_40.jpg'}
+22	22		104				AniZhuanchangEnd			{1: '0|350|-400', 2: '0'}
+23	23		301			DialogEnable				{3: 'Slowly opening your eyes, your gaze is met by the sight of a giant fishtail shimmering with deep and light blue hues.'}
+24	24		104							{1: '-200|200|-300', 2: '2'}
+25	25		301							{3: 'As you glance upward, your eyes fall upon a trident that emanates a cold light, resembling more of a regal scepter than a traditional weapon. The chilling sensation you felt earlier seems to come from it.'}
+26	26		104							{1: '0|-200|-400', 2: '2'}
+27	27		301							{3: 'Finally, with a slight lift of your neck, you catch sight of a face that appears faintly familiar. Sea waves crash against the rocks behind her, shattering into sprays of white foam that envelop her like a delicate veil.'}
+28	28		301							"{3: ""A guess begins to form in your mind, drawing upon your previous encounter with Alpha's transformation. The same idea may not be entirely impossible for another Ascendant to...""}"
+29	29		302							{2: 'Lamia?', 3: '30', 4: 'Who are you?', 5: '33'}
+30	30		104							{1: '0|0|0', 2: '2'}
+31	31		306							
+32	32	36	301							{2: 'Lamia', 3: 'You recognized me?'}
+33	33		104							{1: '0|0|0', 2: '2'}
+34	34		306							
+35	35		301							"{2: 'Lamia', 3: ""You already have the answer, don't you?""}"
+36	36		301							{3: 'After you hear her response, many pieces of the puzzle suddenly start to align.'}
+37	37		301							{3: 'The strange behavior of the child, the abrupt breakage of the pile driver, and the sudden appearance of the Punishing Virus.'}
+38	38		502							{1: 'DialogDisable'}
+39	39		302							{2: 'I never thought you could change your body size to such an extent now.', 3: '40'}
+40	40		302							"{2: ""What's the purpose of the Ascendants infiltrating that refugee camp?"", 3: '41'}"
+41	41		301			DialogEnable				"{3: ""As the human's voice takes on a cold and stern tone, Lamia tightens her grip on her weapon.""}"
+42	42		301							{3: 'She has no intent to launch an attack. Instead, only holding something tightly can bring her some sense of ease.'}
+43	43		301							{3: 'Too many things have slipped through her fingers. The tighter she holds onto those tiny little joys, the more they crumble like seafoam.'}
+44	44		301							"{2: 'Lamia', 3: ""I can't tell you...""}"
+45	45		301							{3: 'Lamia lowers her eyes, no longer daring to look into the eyes of the person before her.'}
+46	46		301							{3: 'Even though the human is no stronger than a cat with broken bones, completely at her mercy.'}
+47	47		301							"{3: ""But why can't she meet that gaze... Is it because of what happened in the past?""}"
+48	48		301							"{3: ""The human's gaze mirrors the resilience in the person's eyes in the fortress, and yet, there is something different... What is it?""}"
+49	49		302							{2: 'Thank you.', 3: '50'}
+50	50		301							{2: 'Lamia', 3: 'Eh?'}
+51	51		502							{1: 'DialogDisable'}
+52	52		302							"{2: ""You saved me just now, didn't you?"", 3: '53'}"
+53	53		302							{2: 'At least, I need to thank you for that.', 3: '54'}
+54	54		301			DialogEnable				{3: 'The sudden expression of gratitude leaves Lamia frozen in place, uncertain whether it is a genuine sentiment or a concealed plea for mercy.'}
+55	55		301							"{3: ""She lacks Roland's ability to pry secrets out of people, nor does she possess Alpha's insight to see through hearts.""}"
+56	56		301							{3: 'All she has is... an insignificant... yearning for love.'}
+57	57		301							{3: 'So even though it can be just a lie or mere temporary politeness, she is willing to believe it.'}
+58	58		301							"{2: 'Lamia', 3: ""It's... it's okay?""}"
+59	59		301							"{3: 'Once stripped of the ""Elene"" guise, Lamia retreats into a withdrawn state.'}"
+60	60		301							{3: 'As if harboring a fear of being hurt, she speaks cautiously, showing none of the demeanor expected of an Ascendant.'}
+61	61		301							{3: 'She is used to it, anyway.'}
+62	62		302							{2: 'Can I ask you a question?', 3: '63'}
+63	63		301							"{2: 'Lamia', 3: ""If it's about the Ascendants...""}"
+64	64		301							"{3: ""Lamia's words are left unfinished, as she believes the person can understand her intent.""}"
+65	65		302							"{2: ""It's about you."", 3: '66'}"
+66	66		301							{2: 'Lamia', 3: 'I... I can try to answer.'}
+67	67		301							"{3: ""Suddenly, as if a memory of someone's teachings rushes back to her, Lamia adds some words in a fluster.""}"
+68	68		301							{2: 'Lamia', 3: 'I... I have a question for you too, one each... or maybe you can have one more... but no more than that...'}
+69	69		301							{3: 'Her voice trails off, lost amid the sound of the waves.'}
+70	70		502							{1: 'DialogDisable'}
+71	71		302							{2: 'One for each, then.', 3: '72'}
+72	72		302							{2: 'Hmm... Does that refugee camp have anything to do with you?', 3: '73'}
+73	73		301			DialogEnable				{2: 'Lamia', 3: 'No...'}
+74	74		302							{2: 'Your turn.', 3: '75'}
+75	75		301							{2: 'Lamia', 3: 'So you just believe that?'}
+76	76		502							{1: 'DialogDisable'}
+77	77		302							"{2: ""Combining what I've seen myself."", 3: '78'}"
+78	78		302							"{2: ""I'll take your word for it."", 3: '79'}"
+79	79		301			DialogEnable				"{2: 'Lamia', 3: ""Um... It's my turn...""}"
+80	80		302							"{2: ""I've already answered your question."", 3: '81'}"
+81	81		301							{2: 'Lamia', 3: '??'}
+82	82		301							"{2: 'Lamia', 3: ""You... you're playing unfair.""}"
+83	83		301							{3: 'Lamia lets out a soft protest, and despite being the one voicing her objection, she seems more restless. Her tail flutters nervously in the water, betraying her inner turmoil.'}
+84	84		301							{3: 'The human across from her responds with a quiet smile. Lamia then realizes that it might just be a lighthearted joke.'}
+85	85		301							"{2: 'Lamia', 3: ""Then... then I'll continue... Why did you help me at first?""}"
+86	86		502							{1: 'DialogDisable'}
+87	87		302							"{2: ""Because I didn't see through your disguise."", 3: '88'}"
+88	88		302							{2: 'I thought you were a victim.', 3: '89'}
+89	89		301			DialogEnable				{3: 'A straightforward, honest answer.'}
+90	90		301							{2: 'Lamia', 3: 'Then... if you knew I was an Ascendant from the start, would you still have treated me the same?'}
+91	91		301							{3: 'Her question comes hesitantly, accompanied by a noticeable tremble in her voice as she even forgets the rule of taking turns.'}
+92	92		302							{2: '(Shake head)', 3: '93'}
+93	93		301							"{3: ""Even though she expects such an answer, the human's decisive attitude still sparks in Lamia a desire to run away.""}"
+94	94		302							{2: 'But...', 3: '95'}
+95	95		301							{2: 'Lamia', 3: 'But?'}
+96	96		301							"{3: ""The person's tone takes a sudden turn, igniting a small flame within her. Lamia shifts her gaze back at the human lying on the ground.""}"
+97	97		302							"{2: 'I don\'t regret helping ""Elene"".', 3: '98'}"
+98	98		301							{2: 'Lamia', 3: 'Even though she was just a shell filled with lies?'}
+99	99		302							{2: '(Nod)', 3: '100'}
+100	100		301							"{2: 'Lamia', 3: ""I don't understand. Shouldn't kindness be given to those who are also kind?""}"
+101	101		301							{2: 'Lamia', 3: 'Lies, deceit, and betrayal should be punished from the start.'}
+102	102		302							{2: 'Then how can we know if someone is kind?', 3: '103'}
+103	103		301							{2: 'Lamia', 3: 'I...'}
+104	104		301							"{3: ""Lamia is a master of disguise, capable of adopting anyone's appearance.""}"
+105	105		301							{3: 'However, her ability of disguise only extends to the surface level, as she neither dares nor desires to speculate or delve deeper into the thoughts of others.'}
+106	106		301							{2: 'Lamia', 3: 'Can you tell that?'}
+107	107		302							"{2: ""I can't either."", 3: '108'}"
+108	108		301							{3: 'The human shakes their head.'}
+109	109		502							{1: 'DialogDisable'}
+110	110		302							{2: 'All I have is a brain to discern right from wrong...', 3: '111'}
+111	111		302							{2: 'And a heart unafraid of getting hurt.', 3: '112'}
+112	112		301			DialogEnable				{2: 'Lamia', 3: 'Unafraid of getting hurt... If you know you will get hurt, why still do it?'}
+113	113		502							{1: 'DialogDisable'}
+114	114		302							{2: 'If no one reaches out first...', 3: '115'}
+115	115		302							{2: 'This world will be too cold.', 3: '116'}
+116	116		301			DialogEnable				{2: 'Lamia', 3: 'For things like this...'}
+117	117		301							{3: 'Lamia wants to say more but is interrupted by the sound reaching her ears—a cacophony of noises emanating from several Constructs descending the cliff.'}
+118	118		301							{2: 'Lamia', 3: 'I... I have to go.'}
+119	119		302							{2: 'You still owe me two questions.', 3: '120'}
+120	120		301							{2: 'Lamia', 3: 'Uh... Hurry up, then!'}
+121	121		302							{2: 'Why did you save me?', 3: '122'}
+122	122		301							{2: 'Lamia', 3: 'Because...'}
+123	123		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg', 3: '0', 4: '1', 5: '0.3'}
+124	124		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+125	125		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg'}
+126	126		201							{1: '1', 2: '500567'}
+127	127		301							{1: '1', 2: 'Elite Construct', 3: 'Commandant spotted with... an Ascendant!!', 4: '1'}
+128	128		201							{1: '1', 2: '500739'}
+129	129		301							{1: '1', 3: 'Several lasers instantly lock onto Lamia, and if not for the presence of the human commandant nearby, a tempest of bullets would have already fallen upon her.'}
+130	130		204							{1: '1', 2: '1'}
+131	131		301							"{2: 'Lamia', 3: ""I have to leave now... Let's save the questions for next time."", 4: '1'}"
+132	132		202							{1: '1'}
+133	133		401							{1: '2', 2: '927'}
+134	134		301				AniZhuanchangBegin			{3: 'Lamia leaps back into the sea, leaving behind only a tiny splash.'}
+135	135		502						1000.0	{1: 'DialogDisable'}
+136	136		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+137	137		301			DialogEnable				{3: 'She chases the reflection of the stars in the water, not resurfacing until the shore is nearly out of sight.'}
+138	138		201							{1: '1', 2: '500739'}
+139	139		301							{1: '1', 3: 'Gazing toward the shore, she observes the lively figures amidst the dazzling lights that shimmer like sunlight.'}
+140	140		301							"{3: ""As she watches the distant interplay of light and shadow in silence, she slowly voices the answer she couldn't have the chance to give earlier.""}"
+141	141		301							{2: 'Lamia', 3: 'Because... I want you to live.', 4: '1'}
+142	142		301							{3: 'She finally understands why she was avoiding that gaze all the while yearning for it.'}
+143	143		301							{3: 'Souls that have never been given any importance often yearn for a profound connection with the world—something that serves as proof of their existence, redemption from the suffocating depths of solitude.'}
+144	144		301							{3: 'Lamia suddenly recalls a poem she had read in the past, its meaning once elusive to her.'}
+145	145		301							{3: 'As the lights on the shore gradually fade away, Lamia remains fixated on the diminishing glow. Inwardly, she whispers to herself.'}
+146	146		202							{1: '1', 6: '1'}
+147	147		304							{1: 'Be a guiding light, for you never know who might use it to escape from their endless night.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 10: '1'}
+148	148		304							{1: 'Let kindness bloom in your heart, for you never know who might use it to break free from despair.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 10: '1'}
+149	149		304							"{1: ""Carry a beacon of faith in the haze, for you never know who might use it to walk through life's maze."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 10: '1'}"
+150	150		304							{1: 'Believe in your own strength, for you never know who might start believing in themselves because of you...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 9: '1', 10: '1'}
+151	151		301							{3: 'Over time, the light dissipates, marking the end of this serendipitous encounter.'}
+152	152		201							{1: '1', 2: '500739'}
+153	153		301							"{1: '1', 2: 'Lamia', 3: ""Probably, there won't be a next time."", 4: '1'}"
+154	154		301		1		AniZhuanchangBegin			{3: 'Lamia casts one final glance toward the direction where the figure disappeared from her sight, and dives into the lightless depths of the sea.'}

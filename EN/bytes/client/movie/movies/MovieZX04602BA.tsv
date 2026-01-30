@@ -1,0 +1,150 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '210'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab', 2: '1'}
+4	4		301			DialogEnable				{2: 'Children', 3: 'Zavier, come play with us!'}
+5	5		301							{2: 'Children', 3: 'Zavier, why is Hanying sleeping again?'}
+6	6		301							"{2: 'Zavier', 3: 'Be good, kids. I\'ll play with you once she wakes up... Strange, the Gray Tower data flowing into the ""cocoon"" seems irregular...'}"
+7	7		301							{2: 'Zavier', 3: 'Hey, leave my hat alone...'}
+8	8		401							{1: '2', 2: '2978'}
+9	9		301							"{3: ""The little mechanoids' laughter fades into the depths of darkness.""}"
+10	10		401							{1: '2', 2: '4100'}
+11	11		401							{1: '2', 2: '2982'}
+12	12		401							{1: '1', 2: '36'}
+13	13		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+14	14		505						3000.0	{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab'}
+15	15		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+16	16		301				AniZhuanchangBegin			{3: 'Further ahead, the data in the buffer area becomes completely unreadable.'}
+17	17		401							{1: '1', 2: '201'}
+18	18		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory898.jpg'}
+19	19		201							{1: '1', 2: '500916', 3: '8'}
+20	20		301			AniZhuanchangEnd				{1: '1', 2: 'Hanying', 3: '...', 4: '1'}
+21	21		301							{3: 'In the temporary camp where human soldiers have stationed her, Hanying sits quietly, processing all her readable memories.'}
+22	22		204							{1: '1'}
+23	23		301							{2: 'Hanying', 3: 'Whatever happened must have occurred while I was in dormancy. Zavier must know something about this. If I could just contact the Church...', 4: '1'}
+24	24		202							{1: '1'}
+25	25		301							{3: 'Keeping away from the chattering soldiers, she attempts to contact Zavier.'}
+26	26		401							{1: '2', 2: '2982'}
+27	27		301							{3: 'Unexpectedly, all that comes through on the communication line is a faint, crackling sound of static.'}
+28	28		201							{1: '1', 2: '500916'}
+29	29		301							"{1: '1', 2: 'Hanying', 3: ""Strange, I can't get through..."", 4: '1'}"
+30	30		301							{3: 'She tries to contact several other Church of Machina members, but each attempt returns no connection.'}
+31	31		301							{2: 'Hanying', 3: 'Only one left to try...', 4: '1'}
+32	32		301							{3: 'In her last memory, Cervantes was traveling and not with the Church of Machina. The chances of reaching him now are the slimmest...'}
+33	33		202							{1: '1', 6: '1'}
+34	34		401							{1: '2', 2: '2982'}
+35	35		201							{1: '1', 2: '500916', 4: '-400'}
+36	36		201							{1: '3', 2: '500594', 4: '400'}
+37	37		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '3'}
+38	38		301							{1: '1', 2: 'Cervantes', 3: 'Han&%(**%%#*', 4: '3'}
+39	39		301							{2: 'Hanying', 3: '...Cervantes?', 4: '1'}
+40	40		301							"{3: ""Through the static-filled transmission, Cervantes' face appears increasingly pale.""}"
+41	41		202							{1: '3'}
+42	42		201							{1: '2', 2: '500585', 4: '400'}
+43	43		301							"{1: '1', 2: 'Cervantes', 3: ""Hanying? Ah... you're finally awake."", 4: '2'}"
+44	44		301							"{2: 'Hanying', 3: ""Cervantes, I can't reach Zavier, and all communication within the Church has gone down. What's happening?"", 4: '1'}"
+45	45		301							"{2: 'Cervantes', 3: ""I'm not sure either."", 4: '2'}"
+46	46		301							{2: 'Cervantes', 3: 'The Church members have always depended on the network system centered around the Gray Tower for communications. A blackout of this magnitude probably means something has gone wrong with the Gray Tower itself.', 4: '2'}
+47	47		301							"{2: 'Cervantes', 3: ""In the best-case scenario, the Gray Tower has activated signal blocking to protect against an attack. Worst case... well, as you can see, I'm on my way back to the church to find out for sure."", 4: '2'}"
+48	48		301							"{2: 'Hanying', 3: ""So you're not at the Church either?"", 4: '1'}"
+49	49		301							"{2: 'Cervantes', 3: ""Yes, it looks like the signal blocking only affects transmissions close to the Gray Tower. That's why we can still communicate normally here."", 4: '2'}"
+50	50		301							"{2: 'Cervantes', 3: ""After you got your frame replaced, I got a message from Sage and was getting ready to head back to the Church. But when I tried to reach Zavier after that, I couldn't get through to him anymore."", 4: '2'}"
+51	51		301							"{2: 'Hanying', 3: ""I see... so you don't know what happened while I was in dormancy either..."", 4: '1'}"
+52	52		301							"{2: 'Cervantes', 3: ""You were in a severely weakened state back then, so we should at least be grateful that you're safe now. However..."", 4: '2'}"
+53	53		301							{3: 'His expression grows even more grave as he glances at the Hetero-Forest behind Hanying.'}
+54	54		301							"{2: 'Cervantes', 3: 'Your new frame was lost along with ""it,"" which isn\'t what we expected.', 4: '2'}"
+55	55		301							{2: 'Hanying', 3: 'It?', 4: '1'}
+56	56		301							"{3: ""She keenly notices the deliberate pause in Cervantes' words.""}"
+57	57		301							"{2: 'Cervantes', 3: 'One of the reasons I\'m heading back to the Church is that Sage left behind another ""key"" before she departed.', 4: '2'}"
+58	58		301							"{2: 'Cervantes', 3: 'This ""key"" might unlock the path forward—the future of the Church itself.', 4: '2'}"
+59	59		301							"{2: 'Cervantes', 3: ""We still don't know why you ended up there. Perhaps the Church faced danger and was forced to send you away, or perhaps you were stolen away during the chaos..."", 4: '2'}"
+60	60		301							{3: 'Cervantes pauses, carefully weighing his next words.'}
+61	61		301							"{2: 'Cervantes', 3: 'If the Church comes through safely, the ""key"" will need to be properly secured. But... if something goes wrong, as long as we still hold onto this ""future,"" there\'s still a chance to make things right.', 4: '2'}"
+62	62		204							{1: '1', 2: '8'}
+63	63		301							"{3: ""Hanying closes her eyes as the children's laughter in her ears fades into the depths of her memory buffer.""}"
+64	64		301							"{3: 'She is still unaware of the purpose of the ""key"" that Cervantes speaks of, but the weight of the ""future"" is already all too clear.'}"
+65	65		204							{1: '1'}
+66	66		301							"{2: 'Cervantes', 3: 'It happened so suddenly—we never anticipated such an accident. Although the ""key"" is equipped with a locator, its coordinates haven\'t been updated for a long time...', 4: '2'}"
+67	67		301							"{2: 'Cervantes', 3: ""Its last known location is near you, so I'll leave the search in your hands. Once I check things out at the Church, I'll head your way as soon as I can."", 4: '2'}"
+68	68		301							"{2: 'Hanying', 3: ""These coordinates... they're quite far from my position. What's at that location?"", 4: '1'}"
+69	69		301							"{2: 'Cervantes', 3: ""It's Tsiolkovsky Aerospace City."", 4: '2'}"
+70	70		301							"{2: 'Cervantes', 3: '""Justice"" severed her ties with the Church at that location.', 4: '2'}"
+71	71		301							"{2: 'Hanying', 3: '""Justice""? Oh... you mean the mechanoid named Veronica?', 4: '1'}"
+72	72		301							"{2: 'Hanying', 3: 'Arcana mentioned that she was supposed to bring back the previous ""Hanged Man"", but after reporting their death, she never returned.', 4: '1'}"
+73	73		301							{2: 'Cervantes', 3: 'Yes. Veronica has always been one to act on her own accord. Her last known coordinates were updated near Aerospace City.', 4: '2'}
+74	74		301							{2: 'Hanying', 3: 'The signal was lost... Could something have happened to her?', 4: '1'}
+75	75		301							"{2: 'Cervantes', 3: ""She cut off the connection herself and never returned to the Church. Even though a lot of our fellow members wanted to push for Veronica's excommunication, Mother has been quite lenient with her."", 4: '2'}"
+76	76		301							{2: 'Cervantes', 3: 'We suspect she cut off the signal because of what happened to the previous Hanged Man.', 4: '2'}
+77	77		301							{2: 'Hanying', 3: 'You mean our fellow member who perished on their very first day at the Church...', 4: '1'}
+78	78		204							{1: '2', 2: '3'}
+79	79		301							{2: 'Cervantes', 3: 'Yes. Veronica only reported the death of the previous Hanged Man, but no one knows the details... In any case, be careful.', 4: '2'}
+80	80		301							"{3: ""The situation within the church remains unclear, and the important items entrusted by Sage are still missing. A hint of weariness shows in Cervantes' eyes.""}"
+81	81		204							{1: '2'}
+82	82		301							"{2: 'Cervantes', 3: ""How are you adapting to the new frame? Though we had to rush its activation, Zavier's design should work just fine."", 4: '2'}"
+83	83		301							"{2: 'Hanying', 3: 'The compatibility is fine... but when the new frame activated, I think I had a ""nightmare.""', 4: '1'}"
+84	84		301							"{2: 'Cervantes', 3: ""A nightmare? That's quite an odd occurrence."", 4: '2'}"
+85	85		301							"{2: 'Cervantes', 3: 'Your incubation pod—the ""cocoon""—shapes the frame according to the user\'s thoughts. Given your personality, you wouldn\'t fabricate fears out of nothing...', 4: '2'}"
+86	86		301							"{2: 'Cervantes', 3: ""Perhaps there was already an issue with the Gray Tower's data at that time."", 4: '2'}"
+87	87		301							"{2: 'Cervantes', 3: 'Back when you switched frames, the Gray Tower was also linked to the ""cocoon"" for computing support. Your nightmares might be related to the Gray Tower\'s anomaly. Have you noticed any unusual reactions from your frame since then?', 4: '2'}"
+88	88		301							"{2: 'Hanying', 3: ""I've run a self-diagnosis on my frame. Everything seems fine, but some memories in my buffer are missing..."", 4: '1'}"
+89	89		202							{1: '1', 2: '2', 6: '1'}
+90	90		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '3'}
+91	91		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+92	92		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4601_03.jpg'}
+93	93		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '4'}
+94	94		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/UiFightDetailMapBg.png', 4: '5'}
+95	95		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '0.8', 5: '0'}
+96	96		504							{1: '0.7'}
+97	97		401							{1: '2', 2: '2687'}
+98	98		301							"{3: ""It's like sinking into an ocean of thick ink. She desperately reaches out, yet her fingers grasp nothing but darkness.""}"
+99	99		301							{3: 'Even fear itself drowns in the abyss.'}
+100	100		301							{3: '...'}
+101	101		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab', 2: '2'}
+102	102		401							{1: '2', 2: '4276'}
+103	103		301							"{3: ""The water's surface suddenly sparkles.""}"
+104	104		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+105	105		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab'}
+106	106		205							{1: '999'}
+107	107		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory898.jpg'}
+108	108		101							{4: '4', 5: '1'}
+109	109		101							{4: '5', 5: '1'}
+110	110		504							{1: '0'}
+111	111		201							{1: '1', 2: '500916', 7: '1'}
+112	112		301							{1: '1', 2: 'Hanying', 3: 'That light... it guided me as I floated toward the surface.', 4: '1'}
+113	113		301							{2: 'Hanying', 3: 'Back then, it seemed to keep slipping away from me, yet that connection we shared...', 4: '1'}
+114	114		301				AniZhuanchangBegin			{2: 'Hanying', 3: 'Hmm... it felt so warm.', 4: '1'}
+115	115		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory105.png'}
+116	116		201							{1: '1', 2: '1031001', 3: '3'}
+117	117		301			AniZhuanchangEnd				{1: '1', 2: 'Liv', 3: 'Commandant?', 4: '1'}
+118	118		204							{1: '1'}
+119	119		301							{3: 'She looks over with concern.'}
+120	120		302							{2: 'An unknown signal just tried to connect to my Mind Beacon.', 3: '121'}
+121	121		301							"{2: 'Liv', 3: ""Your Mind Beacon? I didn't notice anything abnormal just now..."", 4: '1'}"
+122	122		301							{3: 'After reviewing all the data, Liv asks again.'}
+123	123		301				DialogDisable			{2: 'Liv', 3: 'Are you feeling all right, Commandant?', 4: '1'}
+124	124		302							"{2: ""It didn't force a connection,"", 3: '125'}"
+125	125		302							{2: 'just followed along with the beacon...', 3: '126'}
+126	126		301			DialogEnable				"{2: 'Liv', 3: ""We should do another check-up once we've settled down in the city."", 4: '1'}"
+127	127		301							{3: 'Liv responds in a soft voice.'}
+128	128		302							"{2: ""Don't worry about it too much."", 3: '132', 4: 'Everything should be fine.', 5: '132', 6: ""Don't underestimate the God of M.I.N.D."", 7: '129'}"
+129	129		204							{1: '1', 2: '1'}
+130	130		301							{2: 'Liv', 3: 'Pfft... We should still be careful though.', 4: '1'}
+131	131		204							{1: '1'}
+132	132		301							{3: 'She checks all the data again, confirming there are no anomalies before moving forward.'}
+133	133		302							{2: 'What about that mechanoid?', 3: '134'}
+134	134		301							"{2: 'Liv', 3: ""We haven't lost him; he's just up ahead. We're far enough away that even a mechanoid won't catch our conversation."", 4: '1'}"
+135	135		301							{2: 'Liv', 3: 'But... can we really follow him through this minefield and into Aerospace City?', 4: '1'}
+136	136		302							{2: 'Probably.', 3: '137', 4: 'Of course.', 5: '137'}
+137	137		301							{3: 'According to what Rosetta told you earlier, the awakened machines from Aerospace City set up this minefield. So, an awakened machine from there should know how to navigate through it.'}
+138	138		301							"{3: ""Even though you don't know what awaits you inside Aerospace City, getting in there is your top priority right now.""}"
+139	139		301							{3: 'Liv gives a gentle nod, her eyes fixed on the target ahead.'}
+140	140		202							{1: '1'}
+141	141		502							{1: 'RImgBg1BlowUp'}
+142	142		401							{1: '2', 2: '2902'}
+143	143		301				AniZhuanchangBegin			"{3: ""Traversing through the snow-laden forest, the narrow snowy path unfolds like a grand scroll, revealing a breathtaking vista at the forest's edge. Through the sea of trees, the silhouette of the city begins to take shape in the distance.""}"
+144	144		505							{1: 'RImgBg1BlowUp'}
+145	145		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory743.jpg'}
+146	146		201							{1: '1', 2: '500926'}
+147	147		301			AniZhuanchangEnd				"{1: '1', 2: '???', 3: ""Tsk... the data trap didn't work..."", 4: '1'}"
+148	148		301							{2: '???', 3: 'Something... pulled her out of the data stream...', 4: '1'}
+149	149		301		1		AniZhuanchangBegin			"{2: '???', 3: ""Hmph, can't stay here much longer. Better head back for now."", 4: '1'}"

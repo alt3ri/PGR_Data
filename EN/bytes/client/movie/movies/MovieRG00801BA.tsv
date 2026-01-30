@@ -1,0 +1,241 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+2	2		401							{1: '2', 2: '4379'}
+3	3		301			DialogEnable				{3: 'Clack... Clack... Clack... Clack...'}
+4	4		401							{1: '2', 2: '1514'}
+5	5		301							"{3: ""The horse's hooves beat against the snow in a crisp, steady rhythm, jolting her out of a shallow doze.""}"
+6	6		301							{3: 'A fleeting memory of that dream still drifts through her mind, but it quickly evaporates under the bite of the icy wind.'}
+7	7		301				AniZhuanchangBegin			{3: 'Survival instincts kick in—as soon as she realizes this bitter cold could steal her very consciousness, she snaps her eyes open, desperate to cling to the fragile thread of reason that represents life.'}
+8	8		402							{1: '4379'}
+9	9		502						400.0	{1: 'DialogDisable'}
+10	10		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+11	11		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+12	12		301			DialogEnable				{3: 'An endless blanket of pure white unfolds before her.'}
+13	13		301							{3: 'Pure white—the color that wipes away every hint of life, a forbidden realm that tolerates no weakness.'}
+14	14		301							{3: 'Pure white—also acts as a spark, triggering every memory to come rushing back in an instant.'}
+15	15		301							{3: 'To survive in this land, one must fight.'}
+16	16		301							{3: 'To survive in this land, one must press on.'}
+17	17		301							{3: 'Yes... How could she forget such a simple truth?'}
+18	18		301							"{3: ""Whether this is a dream or reality, there's only one course of action.""}"
+19	19		301							{3: 'Grip the blade in hand and fight until the final moment...'}
+20	20		502			AniZhuanchangBegin			400.0	{1: 'DialogDisable'}
+21	21		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory105.png'}
+22	22		401							{1: '2', 2: '4379'}
+23	23		401							{1: '1', 2: '201'}
+24	24		201							{1: '1', 2: '500214'}
+25	25		401							{1: '2', 2: '968'}
+26	26		301			DialogEnable				"{1: '1', 2: 'Rosetta', 3: ""You're awake?"", 4: '1'}"
+27	27		301							{3: 'A tall Construct woman sits on the carriage as it rumbles onward, sending a worried look in this direction.'}
+28	28		202							{1: '1', 6: '1'}
+29	29		201							{1: '1', 2: '500214', 4: '-400'}
+30	30		201							{1: '2', 2: '500088', 3: '1', 4: '400'}
+31	31		301							{1: '1', 2: 'Diana', 3: 'The bleeding has finally stopped, but we need to find shelter—fast.', 4: '2'}
+32	32		301							"{1: '1', 2: 'Diana', 3: ""Dusk is closing in, and when the temperature drops, there's no way she'll survive if we keep her in the carriage."", 4: '2'}"
+33	33		301							"{3: ""She glances down at her right leg, pinned beneath another Forest Guard's hands. The makeshift cloth barely slows the trickle of blood, and judging by the wound's severity, it likely struck a major artery.""}"
+34	34		301							{3: 'Out of nowhere, the memories lost to her brief blackout come flooding back. Just moments ago, as their convoy was about to cross the ice-bound sea onto land, they were ambushed by several small Corrupted.'}
+35	35		301							{3: 'Although Forest Guards knew how to protect themselves, several startled members of the Border Commune sprinted into the snowy woods on their own. She ended up getting hurt while trying to chase them down.'}
+36	36		301							"{3: ""Luckily, she wasn't hit directly by the Corrupted. All these injuries came from accidental weapon mishaps during the fight—if it had been worse, she'd be in far more trouble.""}"
+37	37		301							"{2: 'Rosetta', 3: ""We haven't gone that far yet. How about we head back to the icebreaker..."", 4: '1'}"
+38	38		202							{1: '1', 2: '2', 6: '1'}
+39	39		201							{1: '3', 2: '501015', 3: '5'}
+40	40		301							"{1: '1', 2: 'Tatyana', 3: ""No, it's fine."", 4: '3'}"
+41	41		301							"{3: ""Gritting her teeth against the pain, Tatyana rips the cloth off her wrist and tightly secures it on the artery's nearer side to the heart, stopping the bleeding.""}"
+42	42		204							{1: '3', 2: '4'}
+43	43		301							"{2: 'Tatyana', 3: ""Let's... keep going."", 4: '3'}"
+44	44		301							"{3: ""Every breath hurts; the icy dust stings Tatyana's lungs, so she's trying to speak as clearly as she can with every word.""}"
+45	45		301							"{2: 'Tatyana', 3: ""There's a spot about 8km ahead, right against a massive snowy mountain. If we camp there, the storm won't slam into us tonight."", 4: '3'}"
+46	46		301							"{1: '1', 2: 'Tatyana', 3: ""If we go straight for that spot, it's closer than turning back."", 4: '3'}"
+47	47		202							{1: '3', 6: '1'}
+48	48		201							{1: '2', 2: '500088', 3: '4'}
+49	49		301							{1: '1', 2: 'Diana', 3: 'But your condition...', 4: '2'}
+50	50		202							{1: '2', 6: '1'}
+51	51		201							{1: '3', 2: '501015', 3: '4'}
+52	52		301							"{1: '1', 2: 'Tatyana', 3: ""Don't worry about me. Keep moving."", 4: '3'}"
+53	53		301							{3: 'Tatyana cuts Diana off before she can finish voicing her worry.'}
+54	54		301							"{2: 'Tatyana', 3: ""If we turn back now, everything we've done these past few days will go to waste."", 4: '3'}"
+55	55		301							"{1: '1', 2: 'Tatyana', 3: ""From how thick the snow is and the look of the sky, we'll get hit with another major blizzard in a few days. When that happens, we'll be dealing with more than a few scrapes."", 4: '3'}"
+56	56		204							{1: '1', 2: '1'}
+57	57		301							"{2: 'Tatyana', 3: ""So let's keep going. I'm still holding up."", 4: '3'}"
+58	58		202							{1: '3', 6: '1'}
+59	59		201							{1: '1', 2: '500214', 3: '4'}
+60	60		301							"{1: '1', 2: 'Rosetta', 3: ""...Alright. We'll do it your way."", 4: '1'}"
+61	61		202							{1: '1'}
+62	62		401							{1: '2', 2: '4104031'}
+63	63		301							{3: 'Rosetta stops trying to talk her out of it, lifts her whip, and steers the horse in the direction Tatyana indicated, racing ahead.'}
+64	64		301							{3: 'The carriage starts rocking in a steady rhythm again, inching forward to the echo of hooves.'}
+65	65		301				AniZhuanchangBegin			{3: 'Another wave of dizziness hits from all the blood loss, and Tatyana feels her awareness slipping away with her dropping body temperature.'}
+66	66		502						400.0	{1: 'DialogDisable'}
+67	67		401							{1: '2', 2: '1514'}
+68	68		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+69	69		301			DialogEnable				{3: 'When she shuts her eyes, all she can hear is the wind whistling past and the clatter of horseshoes striking the snow.'}
+70	70		301							{3: '...'}
+71	71		301				AniZhuanchangBegin			{3: '...'}
+72	72		402							{1: '1514'}
+73	73		402							{1: '201'}
+74	74		402							{1: '968'}
+75	75		402							{1: '4379'}
+76	76		502						400.0	{1: 'DialogDisable'}
+77	77		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory214.png'}
+78	78		401							{1: '1', 2: '10'}
+79	79		301			DialogEnable				"{3: 'Three days ago, aboard the ""Moses-class"" icebreaker.'}"
+80	80		201							{1: '1', 2: '500086'}
+81	81		301							"{1: '1', 2: 'Antonov', 3: ""I hear you. Now that we're docked and the polar night's almost here, we should head ashore in phases and start setting up a temporary base before the storm cuts off our path."", 4: '1'}"
+82	82		301							"{1: '1', 2: 'Antonov', 3: ""You can't pull this off by yourself. You'll need plenty of people pitching in."", 4: '1'}"
+83	83		202							{1: '1', 6: '1'}
+84	84		201							{1: '1', 2: '500086', 4: '400'}
+85	85		201							{1: '3', 2: '501015', 3: '5', 4: '-400'}
+86	86		301							"{1: '1', 2: 'Tatyana', 3: ""If that's how it is, then why...?"", 4: '3'}"
+87	87		301							{2: 'Antonov', 3: 'Tatyana, remember—everyone in the Border Commune got kicked out by Kyaranta, and they stay because nobody can boss anyone else around here.', 4: '1'}
+88	88		301							{1: '1', 2: 'Antonov', 3: 'Your worry makes perfect sense, but the truth is, nobody wants to leave the ship and tackle this godforsaken ice and snow head-on.', 4: '1'}
+89	89		301							"{1: '1', 2: 'Antonov', 3: ""Sure, if nobody takes action, we'll all just stay here on this ship and wait to die—no different from the days we were stuck in those frozen seas."", 4: '1'}"
+90	90		301							"{1: '1', 2: 'Antonov', 3: ""If I could let go of all my worries, I'd grab an axe with you and head ashore to carve out a fresh start in this barren land... but I can't."", 4: '1'}"
+91	91		301							"{1: '1', 2: 'Antonov', 3: ""And if, once we dock, I suggest they give up the icebreaker they've relied on for years, can you imagine how they'd react?"", 4: '1'}"
+92	92		202							{1: '1', 2: '3'}
+93	93		306							{1: '1'}
+94	94		301							{3: 'Back when the Green-Vanostok Line collapsed, they were driven out of Sophiasburgh and formed the Border Commune, roaming the tundra and wastelands to survive. At first, the Arctic Route Union took them in.'}
+95	95		301							"{3: ""But as more refugees poured into this icy frontier, there just wasn't enough food to go around. So the union had to send them to Port Kyaranta, hoping they'd figure out their own solution to the food crisis.""}"
+96	96		301							"{3: ""Kyaranta's governor, Vardim, wouldn't take on this problem either. Faced with a crisis too big for ordinary manpower, he—like the Arctic Route Union—opted to leave things to chance, banishing the Border Commune yet again to the icy edge of the sea.""}"
+97	97		301							"{3: ""Because of that, until Gray Raven's Commandant came to Kyaranta and suggested teaming up with the Forest Guards to find a new settlement, the Border Commune was stuck hiding out on a worn-down icebreaker, using its reactor's output to stay warm through every harsh winter.""}"
+98	98		306							
+99	99		201							{1: '3', 2: '501015', 3: '4'}
+100	100		301							"{1: '1', 2: 'Tatyana', 3: '...They\'ll all think this place is just another ""Kyaranta"".', 4: '3'}"
+101	101		202							{1: '3', 6: '1'}
+102	102		201							{1: '1', 2: '500086', 4: '400'}
+103	103		201							{1: '3', 2: '501015', 3: '4', 4: '-400'}
+104	104		301							{1: '1', 2: 'Antonov', 3: 'Exactly.', 4: '1'}
+105	105		301							"{3: 'Antonov sounds exhausted. He\'s not really trying to ""convince"" anyone—he\'s just calmly laying out the stark truth everyone has to face.'}"
+106	106		301							"{2: 'Antonov', 3: ""People's spirits here have been shattered since long ago, frozen into dust by this lifeless land."", 4: '1'}"
+107	107		301							"{1: '1', 2: 'Antonov', 3: ""But still, maybe you can break through that layer of ice and pull off what I, given my circumstances, can't."", 4: '1'}"
+108	108		301							"{1: '1', 2: 'Antonov', 3: ""The logistics department doesn't answer to any group—it's basically a leftover from Sophiasburgh's past. Because of that, whatever moves you make probably won't put them on guard."", 4: '1'}"
+109	109		301							"{1: '1', 2: 'Antonov', 3: ""It's a tough mission... but I'm sure you can go further than we ever did."", 4: '1'}"
+110	110		204							{1: '3', 2: '10'}
+111	111		301							{2: 'Tatyana', 3: '...', 4: '3'}
+112	112		202							{1: '1', 2: '3'}
+113	113		301							"{3: ""This isn't a straightforward job, and it's definitely not something they can beat with willpower alone.""}"
+114	114		301							"{3: ""Building a new home out here in the middle of nowhere isn't just about trying hard—it's more like a mortal hoping to snatch a single thread from the goddess of fate's fingers.""}"
+115	115		301							{3: 'The weather, the lay of the land, sudden ambushes by the Corrupted... the challenges that can hold them back are endless.'}
+116	116		301							"{3: ""And like Antonov said, it's stacked against them from the get-go. Nobody wants to shoulder that risk, so nobody steps up to take the task.""}"
+117	117		201							{1: '3', 2: '501015', 3: '4'}
+118	118		301							"{1: '1', 2: 'Tatyana', 3: ""Alright. I'll figure something out."", 4: '3'}"
+119	119		202							{1: '1', 2: '3'}
+120	120		401							{1: '2', 2: '743'}
+121	121		301				AniZhuanchangBegin			"{3: ""With her mind made up, Tatyana doesn't say another word. She hefts her worn hunting rifle and heads out the door.""}"
+122	122		502						400.0	{1: 'DialogDisable'}
+123	123		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory90.png'}
+124	124		301			DialogEnable				"{3: ""The following day, at the edge of the frozen sea, inside the Border Commune's logistics department...""}"
+125	125		201							{1: '1', 2: '500294'}
+126	126		301							{1: '1', 2: 'Valeri', 3: 'Boss, let me come with you.', 4: '1'}
+127	127		301							"{3: ""Once he hears Tatyana's plan, the elder man—whose white hair turned icy by the snow—is the very first to volunteer.""}"
+128	128		301							"{3: ""He's spent years traveling all over with the warhorses and the icebreaker's migration routes, always among the front-line pioneers whenever the commune sets off on a big move.""}"
+129	129		301							{3: 'Tatyana has seen him go from a robust adult to a white-haired elder. Long-term lack of food and constant hard labor have gradually bowed his once-imposing build, like a pine tree sagging under heavy snowfall.'}
+130	130		301							{3: 'She looks at his weathered face, sighs inwardly, and makes a silent decision.'}
+131	131		202							{1: '1', 6: '1'}
+132	132		201							{1: '1', 2: '500294', 4: '400'}
+133	133		201							{1: '3', 2: '501015', 3: '4', 4: '-400'}
+134	134		301							"{1: '1', 2: 'Tatyana', 3: ""...Valeri, I've never doubted your courage for a second."", 4: '3'}"
+135	135		301							"{1: '1', 2: 'Tatyana', 3: ""But you've been fighting all your life. You shouldn't spend your days in this icy tundra—you should be with your grandkids, sharing your heroic tales."", 4: '3'}"
+136	136		301							{1: '1', 2: 'Tatyana', 3: 'Leave the rest to us younger folks.', 4: '3'}
+137	137		301							{2: 'Valeri', 3: 'Let me give you one last lesson, Tatyana. What you said is exactly why we have to keep fighting—until the end.', 4: '1'}
+138	138		301							{3: 'He pushes back with the same fire he had in his younger years.'}
+139	139		301							"{2: 'Valeri', 3: ""Somebody who just lounges at home by the fireplace, guzzling vodka, will never have the respect of their grandkids. And I'm not so old that I've forgotten the things I did when I was young."", 4: '1'}"
+140	140		301							"{1: '1', 2: 'Valeri', 3: 'Back when the cedars on Green-Vanostok\'s snowy peaks were just saplings, we\'d already conquered this brutal winter, pouring our hopes into every step. We built a ""Heaven-blessed city"" where everyone could live safely.', 4: '1'}"
+141	141		301							{1: '1', 2: 'Valeri', 3: 'Now that those days are gone, you expect me to just forget it all and grow old without a fight?', 4: '1'}
+142	142		301							"{1: '1', 2: 'Valeri', 3: ""No. No matter how many years pass, I won't let time or reality get the better of me. If I could handle things back in my younger days, then I can step in to help you now, too."", 4: '1'}"
+143	143		301							{1: '1', 2: 'Valeri', 3: 'All you really have to decide is whether you could use my help at the moment.', 4: '1'}
+144	144		204							{1: '3', 2: '8'}
+145	145		301							{3: 'Tatyana shuts her eyes and thinks for a while before finally speaking up.'}
+146	146		204							{1: '3', 2: '1'}
+147	147		301							{2: 'Tatyana', 3: '...Once we set off, we might never come back.', 4: '3'}
+148	148		301							{3: 'The old man smiles, undaunted.'}
+149	149		301							"{2: 'Valeri', 3: ""I wouldn't expect any less."", 4: '1'}"
+150	150		202				AniZhuanchangBegin			{1: '1', 2: '3'}
+151	151		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+152	152		301			AniZhuanchangEnd				"{3: 'In the end, thanks to Tatyana\'s work, some are swayed by the bold dream of rebuilding the ""Heaven-blessed city,"" while others catch Valeri\'s infectious spirit. Altogether, eleven people step forward to join the logistics department.'}"
+153	153		301							"{3: 'Teaming up with the Forest Guards, they form an expedition of around 20, acting as the ""Moses-class"" icebreaker\'s advance team. Their mission is to find a secure spot for New Sophiasburgh to take root.'}"
+154	154		301							"{3: ""They only have enough supplies for one trip there and back, and just a few weeks' worth of heating fuel. In other words, there's no room for mistakes.""}"
+155	155		301				AniZhuanchangBegin			"{3: ""But no one hesitates to leave, because they're willing to gamble everything on a better future.""}"
+156	156		402				DialogDisable			{1: '10'}
+157	157		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory218.png'}
+158	158		401							{1: '1', 2: '202'}
+159	159		401							{1: '2', 2: '213'}
+160	160		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+161	161		301			DialogEnable				{3: '...'}
+162	162		301							{3: 'The fire crackles where the wood meets the flames, offering a little warmth to the unconscious traveler. Slowly, she reclaims her sense of self and pushes her weary body to stand.'}
+163	163		201							{1: '1', 2: '500214'}
+164	164		301							"{1: '1', 2: 'Rosetta', 3: ""Don't move. The wound only just sealed—if you strain it, it'll split right back open."", 4: '1'}"
+165	165		301							"{3: ""Rosetta's stern warning forces her to lean back against the cave wall.""}"
+166	166		202							{1: '1', 6: '1'}
+167	167		201							{1: '1', 2: '500214', 4: '400'}
+168	168		201							{1: '3', 2: '501014', 3: '4', 4: '-400'}
+169	169		301							{1: '1', 2: 'Tatyana', 3: 'Where are we?', 4: '3'}
+170	170		301							{2: 'Rosetta', 3: 'We headed toward the direction you pointed for a while and spotted the peak of a snowy mountain on the horizon. We figured that must be the natural barrier you were talking about.', 4: '1'}
+171	171		301							"{1: '1', 2: 'Rosetta', 3: ""After getting here, we found a bunch of snow caves inside the mountain that can serve as short-term shelters. A few hundred meters downhill is an old port, and there are plenty of woods on the way. That's why we decided to set up camp here."", 4: '1'}"
+172	172		301							"{3: ""Having a forest means there might be small creatures around that aren't infected by the Punishing Virus, and being next to a port will make it easier for more people to move in later. For their first foothold, this place really is the perfect temporary camp.""}"
+173	173		301							"{2: 'Rosetta', 3: ""We Forest Guards will build some makeshift shelters out in the storm and set up heating devices. Once that's done, though, you'll need to stay in this snow cave for a few days."", 4: '1'}"
+174	174		301							"{2: 'Rosetta', 3: ""You're probably not up to moving around yet, so for now, you can stick around here and help us prep the supplies we bring back."", 4: '1'}"
+175	175		301							{2: 'Tatyana', 3: 'Well...', 4: '3'}
+176	176		401							{1: '2', 2: '10112701'}
+177	177		301							{3: 'Tatyana is about to speak when a loud crash of falling snow rumbles from outside the cave.'}
+178	178		301							{2: '??', 3: 'H-help...'}
+179	179		204							{1: '1', 2: '5'}
+180	180		204							{1: '3', 2: '5'}
+181	181		301							{3: 'The two lock eyes, then both make a dash for the cave entrance. But just as Tatyana stands, searing pain shoots through her leg and halts her in place.'}
+182	182		301							{2: 'Tatyana', 3: 'Tsk!', 4: '3'}
+183	183		301							"{2: 'Rosetta', 3: ""Don't push yourself. I'll take care of things outside."", 4: '1'}"
+184	184		202							{1: '1'}
+185	185		301				AniZhuanchangBegin			{3: 'With those few comforting words, Rosetta rushes off alone toward the collapsed snow.'}
+186	186		202							{1: '3'}
+187	187		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+188	188		502						400.0	{1: 'DialogDisable'}
+189	189		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory217.png'}
+190	190		301			DialogEnable				{3: 'The collapse occurs near a temporary campsite. Some members were setting up tents and accidentally triggered a small slide, leaving several people trapped under the snow.'}
+191	191		301							{3: 'Rosetta, moving with practiced ease, digs through the dense snow. She plants her javelin in the ground for the others to grab so they can pull themselves free.'}
+192	192		201							{1: '2', 2: '500307'}
+193	193		301							"{1: '1', 2: 'Commune Member', 3: ""Th-there's still someone back in that snow cave, but it's so cramped. We're worried if we try crawling in, it'll trigger another slide..."", 4: '2'}"
+194	194		301							{3: 'One of the newly rescued members points to a tiny cave in the mountainside behind them.'}
+195	195		202							{1: '2', 6: '1'}
+196	196		201							{1: '2', 2: '500214', 3: '5'}
+197	197		301							"{1: '1', 2: 'Rosetta', 3: ""Trapped in such a cramped cave... that's a real problem."", 4: '2'}"
+198	198		301							{3: 'Constructs might be way stronger than humans, but in a spot like this, that power can actually work against them. If she charges in, she could trigger an even bigger avalanche.'}
+199	199		202							{1: '2', 6: '1'}
+200	200		201							{1: '3', 2: '501015', 3: '14'}
+201	201		301							"{1: '1', 2: 'Tatyana', 3: ""Don't worry, I'll handle him. You go help the others."", 4: '3'}"
+202	202		301							"{3: ""Glancing back, she notices Tatyana is already here. Axe in hand, Tatyana deftly clears the snow at the cave's entrance and slips inside like an expert.""}"
+203	203		202							{1: '3', 6: '1'}
+204	204		201							{1: '2', 2: '500214', 4: '400'}
+205	205		201							{1: '3', 2: '501015', 3: '1', 4: '-400'}
+206	206		301							{1: '2', 2: 'Rosetta', 3: 'Wait, your leg...', 4: '2'}
+207	207		301							"{2: 'Tatyana', 3: ""It's fine. I've taken care of it."", 4: '3'}"
+208	208		301							{1: '1', 2: 'Tatyana', 3: 'I pressed a vodka-soaked cloth on the cut. In a few minutes, the vodka would freeze solid and keep the wound from getting infected.', 4: '3'}
+209	209		301							"{3: ""Tatyana explains softly as she works, her hands never pausing. By the time she's done talking, she's cleared a small passage at the cave's entrance. She crouches down and calls quietly inside.""}"
+210	210		204							{1: '3', 2: '4'}
+211	211		301				AniZhuanchangBegin			{2: 'Tatyana', 3: 'Shh... Everyone in there, be quiet. The snow can collapse if it picks up too much noise. Just crawl out slowly.', 4: '3'}
+212	212		202							{1: '2', 2: '3'}
+213	213		402							{1: '202'}
+214	214		502						400.0	{1: 'DialogDisable'}
+215	215		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory217.png'}
+216	216		401							{1: '1', 2: '208'}
+217	217		301			DialogEnable				{3: 'After a few dozen minutes, once everyone who was trapped under the snow is safely out, Tatyana gives them a quick warning.'}
+218	218		201							{1: '3', 2: '501015', 3: '4'}
+219	219		301							"{1: '1', 2: 'Tatyana', 3: ""We're out here in the snow now. It's totally different from the icebreaker. Even a small mistake could cause a catastrophic chain reaction, so be careful with every step."", 4: '3'}"
+220	220		202							{1: '3'}
+221	221		301							{1: '1', 2: 'Commune Members', 3: 'Yes, Captain!'}
+222	222		201							{1: '2', 2: '500214', 3: '8', 4: '400'}
+223	223		201							{1: '3', 2: '501015', 4: '-400'}
+224	224		301							"{1: '1', 2: 'Tatyana', 3: ""It's getting late. Let's get the camp set up and call it a day."", 4: '3'}"
+225	225		301							{3: 'The others nod and head back to work.'}
+226	226		301							{2: 'Rosetta', 3: 'Guess I was too quick to judge... I take back my words. You can still do a lot.', 4: '2'}
+227	227		301							{3: 'Rosetta shows up beside Tatyana and hands her a tree-branch crutch.'}
+228	228		204							{1: '2', 2: '1'}
+229	229		301							"{2: 'Rosetta', 3: ""Here, use this. It'll help you get around."", 4: '2'}"
+230	230		301							"{2: 'Tatyana', 3: ""Thanks. And really, you don't have to be so formal—we're just each doing our part and helping each other out."", 4: '3'}"
+231	231		301							{3: 'Tatyana takes the old pine cane. It feels a lot sturdier in her hand than it looks.'}
+232	232		204							{1: '3', 2: '2'}
+233	233		301							"{2: 'Tatyana', 3: ""Plus... now that we're all in this settlement together, we're basically companions. No need to be so stiff about it."", 4: '3'}"
+234	234		301							{3: 'Turning around with a smile, she gestures toward the snowy peak opposite them, indicating it to the tall Construct behind her.'}
+235	235		301							{2: 'Tatyana', 3: 'And now, our real journey is only just beginning.', 4: '3'}
+236	236		301							"{2: 'Tatyana', 3: 'Welcome to the birthplace of ""New Sophiasburgh"", my friend.', 4: '3'}"
+237	237		202							{1: '2', 2: '3'}
+238	238		301							{3: 'Rosetta moves forward, and Tatyana shoulders her hunting rifle once more. Together, they head toward the cliff overlooking the snowy plains.'}
+239	239		301							"{3: ""The frost-blanketed plains stretching out before them are the new home they've dreamed of for so long—yet it's also a desolate land that devours all it touches.""}"
+240	240		301		1		AniZhuanchangBegin			"{3: ""Now, it's their chance to tread firmly across this place, carving out their own future.""}"

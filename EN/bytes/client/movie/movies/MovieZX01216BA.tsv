@@ -1,0 +1,87 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory172.png'}
+2	200		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustLightWall.prefab', 2: '1'}
+3	2		401							{1: '1', 2: '202'}
+4	3		201							{1: '1', 2: '500013'}
+5	4		401							{1: '2', 2: '1508'}
+6	5		301			DialogEnable				{1: '1', 2: 'Corrupted', 3: '—!!', 4: '1'}
+7	6		202							{1: '1'}
+8	7		301							{3: 'Overflowing in this section of the city are corrupted Phecdas. Their bodies wrecked, their weapons broken.'}
+9	8		201							{1: '1', 2: '500170'}
+10	9		301							"{1: '1', 2: 'Phecda Leader', 3: ""Don't go soft. Destroy them!"", 4: '1'}"
+11	10		202							{1: '1'}
+12	11		301							"{3: ""Some guards, yet to be corrupted, are still holding their ground. They line up to form the city's last line of defense, gating the light wall to fend off the invaders.""}"
+13	12		201							{1: '1', 2: '500165', 4: '-400'}
+14	13		201							{1: '2', 2: '500170', 4: '400'}
+15	14		301							"{1: '1', 2: 'Lamia', 3: ""Why don't you just run? Dum vita est, dum-dums..."", 4: '1'}"
+16	15		301							{2: 'Phecda Leader', 3: 'The Kowloong Corp never backs down. You shall not pass, Ascendant!', 4: '2'}
+17	16		301							"{2: 'Lamia', 3: ""Then I'll have to pump more of the virus in you, sorry..."", 4: '1'}"
+18	17		202							{1: '1', 2: '2'}
+19	18		301							"{3: '""Sorry."" The heedless words leave her mouth, all while she scans for more Corrupted to modify into viral explosives.'}"
+20	19		201							{1: '1', 2: '500165', 3: '1'}
+21	20		301							{1: '1', 2: 'Lamia', 3: 'Okay then...', 4: '1'}
+22	21		301							{2: '???', 3: 'Stop right there, Ascendant!'}
+23	22		202							{1: '1'}
+24	23		301			RImgBg1Shake				{3: 'A giant hunk of metal plunges from the sky. Too big, too heavy to be called a sword. Following and landing after the slab of metal is its owner, Kamui.'}
+25	24		201							{1: '1', 2: '500165', 4: '-400'}
+26	25		201							{1: '2', 2: '1081001', 3: '1', 4: '400'}
+27	26		301							"{1: '1', 2: 'Lamia', 3: ""Uh—h-huh...? Hold on, what's going on? How are you still standing?"", 4: '1'}"
+28	27		301							{2: 'Kamui', 3: 'Because I, have a helping hand.', 4: '2'}
+29	28		202							{1: '1', 2: '2'}
+30	29		301							{3: 'Though Lamia is only blathering to herself, Kamui quickly catches on to her reason of puzzlement.'}
+31	30		301							{3: 'Every molecule around Lamia is teeming with the Punishing Virus. Her mere presence alone would cause any approaching Construct to collapse within seconds.'}
+32	31		301							{3: 'But not this one in front of her. With a boisterous smirk that irritates Lamia to the core, he retrieves the sword from out of the ground, as if the virus is nothing to him.'}
+33	32		201							{1: '1', 2: '500165', 4: '-400'}
+34	33		201							{1: '2', 2: '1081001', 3: '5', 4: '400'}
+35	100		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 3: '1'}
+36	34		301							{1: '1', 2: 'Lamia', 3: '...You must be Kamui. The guy Roland mentioned...', 4: '1'}
+37	35		301							"{2: 'Kamui', 3: ""Bleugh, thanks for reminding me of that stinky Roland. Well then, guess I don't have to introduce myself. Time to meet your maker, Ascendant!"", 4: '2'}"
+38	36		301							{2: 'Lamia', 3: '...Protect me!', 4: '1'}
+39	101		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 4: '1'}
+40	37		201							{1: '1', 2: '500013'}
+41	38		201							{1: '2', 2: '500013', 4: '-600'}
+42	39		201							{1: '3', 2: '500013', 4: '600'}
+43	102		401							{1: '2', 2: '1508'}
+44	40		301							{1: '1', 3: 'Realizing that she is ineffective against Kamui, Lamia changes tack. She immediately steps back and fills the space between her and Kamui with a horde of Corrupted.'}
+45	41		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+46	42		201							{1: '1', 2: '500155', 4: '-400'}
+47	43		201							{1: '2', 2: '1081001', 3: '5', 4: '400'}
+48	44		301							{1: '1', 2: 'Kamui', 3: 'Capt.!', 4: '2'}
+49	45		301							{2: 'Chrome', 3: 'Good... Taking aim, and... firing!', 4: '1'}
+50	46		202							{1: '1', 2: '2'}
+51	47		401							{1: '2', 2: '1510'}
+52	48		301			RImgBg1Shake				"{3: ""Chrome's bullet hits Lamia in her arm.""}"
+53	49		201							{1: '1', 2: '500165'}
+54	50		301							{1: '1', 2: 'Lamia', 3: 'My arm...! I spent so long finding a good one...', 4: '1'}
+55	51		201							{1: '1', 2: '500155'}
+56	52		301							{1: '1', 2: 'Chrome', 3: 'Be good and stay still for the next few shots.', 4: '1'}
+57	53		201							{1: '1', 2: '500165'}
+58	54		301							"{1: '1', 2: 'Lamia', 3: ""I'm not going to just sit here and take it!"", 4: '1'}"
+59	55		201							{1: '1', 2: '1081001'}
+60	56		301							"{1: '1', 2: 'Kamui', 3: ""Didn't expect you to anyway."", 4: '1'}"
+61	57		202							{1: '1'}
+62	58		301							"{3: ""Chrome's diversion has kept Lamia busy, creating an opening for a melee attack. With unthinkable speed, Kamui leaps over the Corrupted and dashes right before Lamia.""}"
+63	59		401							{1: '2', 2: '10006001'}
+64	60		301							{3: 'The air whistles as Kamui swings his greatsword, up and across. Mid-swing, he shifts and adjusts, readying to lurch for a monumental follow-up to cleave her in two—'}
+65	61		201							{1: '1', 2: '1081001', 3: '5'}
+66	62		301							{1: '1', 2: 'Kamui', 3: '!!!', 4: '1'}
+67	63		202							{1: '1'}
+68	64		301							{3: 'But the sword halts mid-air.'}
+69	66		201							{1: '2', 2: '500019'}
+70	68		301			PanelActor2Shake				{1: '1', 2: 'Construct', 3: 'Ugh...', 4: '2'}
+71	103		203							{1: '2', 2: '0.5', 3: '400'}
+72	65		201							{1: '1', 2: '500165', 3: '1', 4: '-400'}
+73	67		301							"{1: '1', 2: 'Lamia', 3: ""What's the matter?"", 4: '1'}"
+74	69		202							{1: '1', 2: '2'}
+75	70		301							"{3: ""A barely conscious Construct—somehow not fully infected—is now between Kamui's greatsword and Lamia.""}"
+76	71		201							{1: '1', 2: '500165', 3: '1'}
+77	72		301							{1: '1', 2: 'Lamia', 3: 'You have no qualms about killing your infected comrades, but what about those that can still be saved?', 4: '1'}
+78	73		301							"{2: 'Lamia', 3: ""He's kinda like you, isn't he? Kamui?"", 4: '1'}"
+79	74		201							{1: '1', 2: '1081001', 3: '5'}
+80	75		301							{1: '1', 2: 'Kamui', 3: 'What have you done?! Release them!', 4: '1'}
+81	76		201							{1: '1', 2: '500165', 3: '1'}
+82	77		301							"{1: '1', 2: 'Lamia', 3: ""I tweaked the dosage of the virus, kind of like how Miss Luna does it. It's kind of a me-only-thing, mh-hm."", 4: '1'}"
+83	78		201							{1: '1', 2: '500155'}
+84	79		301							"{1: '1', 2: 'Chrome', 3: ""Careful with this Ascendant, Kamui. Comrades' lives come first!"", 4: '1'}"
+85	80		201							{1: '1', 2: '1081001', 3: '5'}
+86	81		301		1		AniZhuanchangBegin			{1: '1', 2: 'Kamui', 3: 'Understood!', 4: '1'}

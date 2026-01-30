@@ -1,0 +1,210 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory756.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500565'}
+4	4		301			DialogEnable				{1: '1', 2: 'Conservation Resident', 3: 'Sykes? You mean that troublemaker?', 4: '1'}
+5	5		301							"{2: 'Conservation Resident', 3: ""Word on the street is that he's part of the reason why they've been enforcing the curfew regulations."", 4: '1'}"
+6	6		301							"{2: 'Conservation Resident', 3: ""But I'm not even close to being associated with that group, let alone having any of their Wanderer's Biscuits."", 4: '1'}"
+7	7		302							{2: 'I see. Thank you for letting me know.', 3: '8'}
+8	8		202							{1: '1'}
+9	9		301							{3: 'After bidding farewell to that resident, you pull down your scarf slightly and take a deep breath.'}
+10	10		201							{1: '1', 2: '500682'}
+11	11		301							"{1: '1', 2: 'Noctis', 3: ""That makes the seventeenth person. Dude's got quite a name in these parts."", 4: '1'}"
+12	12		302							"{2: ""Pretty well-known, I'd say."", 3: '13'}"
+13	13		301				DialogDisable			"{2: 'Noctis', 3: ""Can't we directly request to view his profile?"", 4: '1'}"
+14	14		302							"{2: ""We're not the Control Court, and he hasn't been accused of any crime."", 3: '15'}"
+15	15		302							"{2: ""Who in their right mind would give a resident's profile to two employees on vacation?"", 3: '16'}"
+16	16		301			DialogEnable				{2: 'Noctis', 3: 'Man, I totally forgot that we are on vacation.', 4: '1'}
+17	17		204							{1: '1', 2: '8'}
+18	18		301							{2: 'Noctis', 3: 'I wish Nikola would work here as well, standing together with Wells at the counter during his vacation.', 4: '1'}
+19	19		204							{1: '1', 2: '2'}
+20	20		301				DialogDisable			"{2: 'Noctis', 3: ""Then, I'll introduce Sykes to them. I'm sure they'll get along."", 4: '1'}"
+21	21		302							"{2: ""C'mon, enough with the complaints."", 3: '22'}"
+22	22		204							{1: '1'}
+23	23		302							{2: 'Here, try this.', 3: '24'}
+24	24		302							"{2: ""(Shove the tanghulu into Noctis' mouth)"", 3: '25'}"
+25	25		301			DialogEnable				{3: 'Noctis opens his mouth, and with a swift bite of his sharp teeth, he slices the tanghulu into flat halves.'}
+26	26		301				DialogDisable			{2: 'Noctis', 3: 'A snack from Kowloong? Maybe we can add it to our menu.', 4: '1'}
+27	27		302							"{2: ""It's good, right? It's all thanks to the Clean Zone."", 3: '28'}"
+28	28		302							{2: 'That people from different regions get to gather here...', 3: '29'}
+29	29		301			DialogEnable				{2: 'Noctis', 3: 'As well as people like Sykes from all over the world...', 4: '1'}
+30	30		302							"{2: ""Here, finish the other half. Don't waste it."", 3: '31'}"
+31	31		301							{2: 'Noctis', 3: '(Chomps) Okay.', 4: '1'}
+32	32		301							{2: 'Noctis', 3: 'Commandant (munches), then what do we (munches) do now? Should we (munches) keep looking?', 4: '1'}
+33	33		302							{2: 'Sometimes, the silliest idea may be the best idea.', 3: '34'}
+34	34		202							{1: '1', 6: '1'}
+35	35		201							{1: '1', 2: '500294'}
+36	36		301							{1: '1', 3: 'Right at the moment, a passing-by old man catches your attention.'}
+37	37		301							{3: 'If Sykes has indeed been openly opposing Babylonia as those people said...'}
+38	38		301							"{3: ""Is it possible that his companions, those people who ate the legitimate Wanderer's Biscuits, may exhibit similar behavioral traits?""}"
+39	39		301				DialogDisable			{3: 'Just like the old man who has been avoiding Constructs and management staff.'}
+40	40		302							{2: '(Pull off the scarf to reveal your face and walk up)', 3: '41'}
+41	41		302							{2: 'Hi, can I talk to you really quick?', 3: '42'}
+42	42		301			DialogEnable	DialogDisable			{2: 'Old Man', 3: '...', 4: '1'}
+43	43		302							"{2: ""I'm an employee of Vegetable Stew... Oh, sorry..."", 3: '44'}"
+44	44		302							"{2: ""I'm the Gray Raven Commandant. Do you mind if I ask you a few questions?"", 3: '45'}"
+45	45		301			DialogEnable	AniZhuanchangBegin			{2: 'Old Man', 3: 'The... Gray Raven Commandant?', 4: '1'}
+46	46		401						2000.0	{1: '1', 2: '36'}
+47	47		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory750.jpg'}
+48	48		401							{1: '2', 2: '213'}
+49	49		401							{1: '1', 2: '207'}
+50	50		301			AniZhuanchangEnd				{3: 'As the fire crackles, the firewood is added piece by piece, fueling the flames and gradually heating the pot of water placed above it.'}
+51	51		301							"{3: ""The old man puts a bunch of ingredients into the pot, but each step he has taken so far only serves to deepen Noctis' confusion.""}"
+52	52		202							{1: '1', 6: '1'}
+53	53		201							{1: '1', 2: '500682', 4: '-400'}
+54	54		201							{1: '2', 2: '500294', 4: '400'}
+55	55		301							"{1: '1', 2: 'Noctis', 3: ""Mister, to make Wanderer's Biscuits, I suggest..."", 4: '1'}"
+56	56		301							{3: 'The old man interrupts him with a hush gesture, silencing any forthcoming words.'}
+57	57		301							{2: 'Old Man', 3: 'After the Great Evacuation, things on the surface turned into a total mess, and food supplies ran out fast.', 4: '2'}
+58	58		301							{2: 'Old Man', 3: 'So we wanderers would eat anything we could find.', 4: '2'}
+59	59		301							"{2: 'Old Man', 3: ""To make the Wanderer's Biscuits, we just took whatever we had on hand and cooked them together."", 4: '2'}"
+60	60		301							"{2: 'Noctis', 3: ""But I use all kinds of ingredients as well. There shouldn't be any mistake about that."", 4: '1'}"
+61	61		301							{2: 'Old Man', 3: 'Where did you get those ingredients?', 4: '2'}
+62	62		204							{1: '1', 2: '3'}
+63	63		301							{2: 'Noctis', 3: 'Huh? The owner ordered them from facilities in the Clean Zone, either fresh stuff or canned food.', 4: '1'}
+64	64		301							"{2: 'Old Man', 3: ""That's what I'm talking about. You see, back when Sykes and we were wanderers, those food cans from Babylonia were like gold. And fresh, undamaged ingredients? They were the epitome of luxury."", 4: '2'}"
+65	65		301							"{2: 'Old Man', 3: ""Whatever we used to whip up those biscuits, it's not even worth mentioning in the Clean Zone now."", 4: '2'}"
+66	66		301							{3: 'As the old man begins to work with the prepared ingredients, he takes the dough and starts to rub and shape it with his bare hands.'}
+67	67		301							"{3: ""Noctis can't help but stare at the inexplicable color of the dough with a concerned look.""}"
+68	68		204							{1: '1'}
+69	69		301							"{2: 'Old Man', 3: ""You don't need to worry. These are all safe to eat."", 4: '2'}"
+70	70		301							{2: 'Old Man', 3: 'For a wanderer group, any food hygiene issue could be a real hassle. It would not only slow down the marching speed but also require extra manpower to take care of the resulting illness.', 4: '2'}
+71	71		301							"{2: 'Old Man', 3: ""Sometimes, it would even... Forget about it. You don't need to know that..."", 4: '2'}"
+72	72		301							{3: 'The old man brushes off the extra flour from his hands and proceeds to bake the biscuit dough.'}
+73	73		301							"{3: ""Noctis, despite witnessing the old man's apparent expertise, can no longer contain his growing concern as the edges of the biscuits begin to show signs of being burnt.""}"
+74	74		301							"{2: 'Noctis', 3: ""Mister, if you keep doing it this way, they'll turn coal-black in no time. Need me to take over for you?"", 4: '1'}"
+75	75		301							"{2: 'Old Man', 3: ""Kid, you really think I'm too old to know what I'm doing? This ain't the right tool for baking biscuits, plain and simple. Even someone like you would end up burning 'em, one way or another..."", 4: '2'}"
+76	76		301							"{2: 'Noctis', 3: ""But they'll be burnt very soon..."", 4: '1'}"
+77	77		301							"{2: 'Old Man', 3: ""Take it easy. It's okay."", 4: '2'}"
+78	78		301							"{3: ""The Gray Raven Commandant asked me to make the Wanderer's Biscuits Sykes wants. If that's what you want, this is a necessary step.""}"
+79	79		301							{3: 'The old man takes out the unfortunate batch of biscuits, placing them in a stacked pile on a plate.'}
+80	80		301							{3: 'With no plating and no condiments, the old man presents the plate with the stacked biscuits directly before you.'}
+81	81		302							{2: 'This is... the biscuits Sykes wants?', 3: '82'}
+82	82		301							{3: 'The old man responds with a silent gesture, indicating that you should taste the biscuits yourself.'}
+83	83		204							{1: '1', 2: '1'}
+84	84		301							{3: 'As you reach for one that seems relatively more acceptable, Noctis snatches it away from your grasp and hastily shoves it into his own mouth before you can take a bite.'}
+85	85		301							"{2: 'Old Man', 3: ""Don't worry. I said, there's not gonna be a problem."", 4: '2'}"
+86	86		204							{1: '1', 2: '14'}
+87	87		301							{2: 'Noctis', 3: '...', 4: '1'}
+88	88		204							{1: '1'}
+89	89		301							{2: 'Noctis', 3: 'Commandant...', 4: '1'}
+90	90		301				DialogDisable			"{2: 'Noctis', 3: ""I don't think you'd want to try this."", 4: '1'}"
+91	91		302							"{2: ""I'll never learn if I don't try it."", 3: '92'}"
+92	92		302							{2: '(Pick up another one and take a big bite)', 3: '93'}
+93	93		302							{2: '...', 3: '94'}
+94	94		301			DialogEnable				{3: 'A bizarre combination of flavors floods your mouth, not to the point of being outright horrible but still much worse than your expectations. The taste and texture prove challenging to adjust to, making swallowing a struggle for you.'}
+95	95		302							{2: 'Cough... cough...', 3: '96'}
+96	96		301							{3: 'Amidst your coughing, you feel a big palm gently patting your back. After a short while, Noctis begins to pose questions to the old man.'}
+97	97		204							{1: '1', 2: '3'}
+98	98		301							"{2: 'Noctis', 3: ""Mister, you didn't get 'em wrong, did you?"", 4: '1'}"
+99	99		301							"{2: 'Noctis', 3: ""Or maybe Sykes is just craving that special flavor from his good ol' wanderer days?"", 4: '1'}"
+100	100		301							{2: 'Old Man', 3: 'What do you think about the taste?', 4: '2'}
+101	101		204							{1: '1'}
+102	102		301							{2: 'Noctis', 3: 'Even worse than the times when I completely messed up following a recipe.', 4: '1'}
+103	103		302							{2: 'Noctis. Cough... cough...', 3: '104'}
+104	104		301							"{2: 'Old Man', 3: ""Haha, it's okay. That's more like an average comment for it."", 4: '2'}"
+105	105		301							"{2: 'Old Man', 3: ""If someone tries to tell me that this stuff is delicious, I'd think they are just messing with me."", 4: '2'}"
+106	106		301							{2: 'Noctis', 3: 'What do you mean?', 4: '1'}
+107	107		301							{2: 'Old Man', 3: 'A special flavor from the good old days? The old days were anything but good, and nobody in their right mind would want to think about that stuff again.', 4: '2'}
+108	108		301							"{2: 'Old Man', 3: ""The actual Wanderer's Biscuits were never meant to taste good or look appealing in the first place. It's nothing like that."", 4: '2'}"
+109	109		301							"{2: 'Old Man', 3: ""Everyone wants their food to taste better, and we understand that, but there's one thing that must come first: the food has to be easy to store and can last long."", 4: '2'}"
+110	110		301							"{2: 'Old Man', 3: 'This food was originally created out of necessity to help people survive, and it has somehow made its way onto Vegetable Stew\'s menu while being marketed as ""the real Wanderer\'s Biscuits"". But let\'s be real here: no matter how you slice it, it\'s just a means to attract more customers.', 4: '2'}"
+111	111		301							"{2: 'Noctis', 3: ""So this is what Sykes' not happy with."", 4: '1'}"
+112	112		301							"{2: 'Old Man', 3: ""There are many things he's not happy with."", 4: '2'}"
+113	113		302							{2: 'Why are you telling me all this?', 3: '114'}
+114	114		301							"{2: 'Old Man', 3: ""Maybe it's because you're the Gray Raven Commandant, like those guys from Babylonia said."", 4: '2'}"
+115	115		301				AniZhuanchangBegin			"{2: 'Old Man', 3: ""I don't have many days left, and neither do they. Whether it's about the surface or Babylonia, Sykes is probably thinking about the same thing as me. All we want is to leave something behind and pass it down..."", 4: '2'}"
+116	116		401							{1: '1', 2: '36'}
+117	117		402							{1: '213'}
+118	118		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory748.jpg'}
+119	119		401							{1: '1', 2: '208'}
+120	120		201							{1: '1', 2: '500682', 4: '400'}
+121	121		201							{1: '2', 2: '500136', 4: '-400'}
+122	122		301			AniZhuanchangEnd				"{1: '1', 2: 'Owner', 3: ""Hey, you're back. Got any leads?"", 4: '2'}"
+123	123		301							{2: 'Noctis', 3: 'Yeah, we pretty much have it figured out.', 4: '1'}
+124	124		301							"{2: 'Owner', 3: ""Really? That's great to hear!"", 4: '2'}"
+125	125		301							"{2: 'Owner', 3: ""I've talked to all my regulars, and they know the tavern's gonna be shut tonight. This is the night, and you're gonna go all out to confront Sykes."", 4: '2'}"
+126	126		204							{1: '1', 2: '2'}
+127	127		301							"{2: 'Noctis', 3: ""Have it all sorted out, eh? That's how the proud owner of Vegetable Stew rolls, I reckon."", 4: '1'}"
+128	128		204							{1: '1'}
+129	129		301							{2: 'Noctis', 3: 'Wait a minute... So all that big talk this morning about handling everything by yourself was just a bunch of bull, and you actually took the whole day off to avoid work?', 4: '1'}
+130	130		301							"{2: 'Owner', 3: ""Hahaha, I didn't say that... Ahem..."", 4: '2'}"
+131	131		301							{2: 'Owner', 3: 'You know what, I gotta run. Remember to turn off the lights before you leave.', 4: '2'}
+132	132		203							{1: '2', 2: '0.1', 3: '-800'}
+133	133		202							{1: '2'}
+134	134		301							{3: 'Having said that, the owner suddenly dashes toward the door with an astonishing speed.'}
+135	135		301							{3: 'Leaving the key behind, his figure swiftly vanishes into the enveloping darkness of the night.'}
+136	136		203							{1: '1', 2: '0.25'}
+137	137		301							{2: 'Noctis', 3: 'Surely a fast runner he is...', 4: '1'}
+138	138		204							{1: '1', 2: '3'}
+139	139		301							"{2: 'Noctis', 3: ""Huh? These glasses... they're still dirty. Did that lazy bum just leave them all for us to clean? This is unacceptable! I'm gonna drag that damn slacker back here. I'll be right back, Commandant..."", 4: '1'}"
+140	140		301				DialogDisable			{2: 'Noctis', 3: 'Commandant?', 4: '1'}
+141	141		302							"{2: ""Oh, I'm fine."", 3: '142'}"
+142	142		302							{2: 'Just a bit tired after a whole day of walking.', 3: '143'}
+143	143		204							{1: '1', 2: '2'}
+144	144		301			DialogEnable				"{2: 'Noctis', 3: ""I see. Don't worry. I got this."", 4: '1'}"
+145	145		301							"{2: 'Noctis', 3: ""Just a few dirty glasses. I'll get it done in no time."", 4: '1'}"
+146	146		401							{1: '2', 2: '2825'}
+147	147		401							{1: '2', 2: '2824'}
+148	148		301							{3: 'With a single fluid motion of his arm, Noctis deftly gathers all the glasses before him, creating a cacophony of clanks and clatters.'}
+149	149		301							{2: 'Noctis', 3: 'Efficiency first, safety later. The owner can always buy new glasses if I happen to break any.', 4: '1'}
+150	150		401							{1: '2', 2: '930104'}
+151	151		301							{3: 'Noctis turns on the water and begins to vigorously wash the glasses.'}
+152	152		302							{2: 'Noctis.', 3: '153'}
+153	153		204							{1: '1'}
+154	154		402							{1: '930104'}
+155	155		301							{2: 'Noctis', 3: 'Yes?', 4: '1'}
+156	156		302							"{2: ""Aren't you gonna try to make the real Wanderer's Biscuits?"", 3: '157'}"
+157	157		301							"{2: 'Noctis', 3: ""I don't even need to bother. It's just a mishmash of random ingredients baked in whatever utensil until it's burnt."", 4: '1'}"
+158	158		302							{2: 'Just as rough as the life they used to have as wanderers...', 3: '159'}
+159	159		301							{2: 'Noctis', 3: 'Like their past...', 4: '1'}
+160	160		301							"{3: ""Upon hearing your words, Noctis' hands come to a halt. The previously created atmosphere of cheerfulness gradually fades away.""}"
+161	161		301				DialogDisable			"{2: 'Noctis', 3: ""Commandant, you're still concerned about that, aren't you? The Great Evacuation and the Clean Zone right now..."", 4: '1'}"
+162	162		302							"{2: ""Even if I don't care, it won't mean things don't exist..."", 3: '163'}"
+163	163		302							"{2: ""I feel it's more like things we must settle after returning to the surface."", 3: '164'}"
+164	164		301			DialogEnable				"{2: 'Noctis', 3: ""But that has nothing to do with you, doesn't it?"", 4: '1'}"
+165	165		301							"{2: 'Noctis', 3: ""During the Great Evacuation, you weren't even admitted to F.O.S. yet."", 4: '1'}"
+166	166		301							"{3: ""But you're aware that there's no such easy escape where you can just enjoy a peaceful life in Babylonia built upon resources and labor from the surface while denying any involvement in it.""}"
+167	167		301							{2: 'Noctis', 3: 'Then what should we do? The best solution might still be having Commander Nikola pay this place a visit and work at the counter during his vacation, right?', 4: '1'}
+168	168		302							{2: '...', 3: '169'}
+169	169		301							{2: 'Noctis', 3: '...', 4: '1'}
+170	170		301							"{2: 'Noctis', 3: ""You're a very kind person, Commandant..."", 4: '1'}"
+171	171		302							{2: '??', 3: '172'}
+172	172		301							"{2: 'Noctis', 3: ""You know, if it were someone else, they probably would've just left this mess behind and pretended it didn't exist. After all, who needs the trouble that comes with it?"", 4: '1'}"
+173	173		302							{2: 'Trouble is not the only thing that comes with it...', 3: '174'}
+174	174		301							"{2: 'Noctis', 3: ""That's what makes you a kind person, Commandant. You've put in your fair share of hard work helping folks on the surface, but you just can't let go of this."", 4: '1'}"
+175	175		301							"{2: 'Noctis', 3: ""If I were in your shoes, I probably wouldn't even bother thinking that much about it."", 4: '1'}"
+176	176		302							{2: '...Do you mean it?', 3: '177'}
+177	177		301							"{2: 'Noctis', 3: ""Of course, I mean it. Folks ain't blind here, you know, and even a guy like Sykes..."", 4: '1'}"
+178	178		302							"{2: ""I'm talking about you. Do you really not care about it?"", 3: '179'}"
+179	179		204							{1: '1', 2: '3'}
+180	180		301				DialogDisable			{2: 'Noctis', 3: '...What gives you the idea that I care?', 4: '1'}
+181	181		302							"{2: ""I just feel like you've been taking my words quite seriously these days."", 3: '182'}"
+182	182		302							{2: 'Especially when it comes to dealing with customers.', 3: '183'}
+183	183		204							{1: '1'}
+184	184		301			DialogEnable				"{2: 'Noctis', 3: ""I wouldn't do anything to them just because of their lousy attitude. It's not like they're causing me real trouble or anything..."", 4: '1'}"
+185	185		302							{2: 'Is that so?', 3: '186'}
+186	186		301							"{2: 'Noctis', 3: ""Also, isn't it normal to follow a commandant's orders? Commander Nikola said this to me many times..."", 4: '1'}"
+187	187		302							{2: 'Okay.', 3: '188'}
+188	188		204							{1: '1', 2: '14'}
+189	189		301							{2: 'Noctis', 3: '...', 4: '1'}
+190	190		204							{1: '1', 2: '8'}
+191	191		301							{2: 'Noctis', 3: 'Ugh, are we washing the glasses or not?', 4: '1'}
+192	192		302							"{2: ""Aren't you the one washing them?"", 3: '193'}"
+193	193		204							{1: '1', 2: '2'}
+194	194		301							"{2: 'Noctis', 3: ""I can't be the only one having fun here. You gotta join the party, Commandant."", 4: '1'}"
+195	195		302							{2: 'Then scoot over.', 3: '196'}
+196	196		301							{2: 'Noctis', 3: 'Roger that.', 4: '1'}
+197	197		204							{1: '1'}
+198	198		301							"{2: 'Noctis', 3: ""...Commandant, if you keep moving like that, you're gonna push me into the wall. Damn, this sink area is so cramped."", 4: '1'}"
+199	199		301							{3: 'You pick a glass from the pile, using water to cleanse away the residue at the bottom.'}
+200	200		302							{2: 'So, have you figured out how to deal with Sykes tomorrow?', 3: '201'}
+201	201		301							{2: 'Noctis', 3: 'Yep.', 4: '1'}
+202	202		204							{1: '1', 2: '1'}
+203	203		301				AniZhuanchangBegin			"{2: 'Noctis', 3: ""I'm not gonna do things at his pace, so get ready for a surprise, Commandant."", 4: '1'}"
+204	204		202							{1: '1', 6: '1'}
+205	205		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+206	206		301			AniZhuanchangEnd				{3: 'The atmosphere in Vegetable Stew today is notably tranquil, likely due to the day off or the only two employees left who diligently wash glasses by the sink and occasionally exchange whispers.'}
+207	207		301							{3: 'You have pretty much figured out what Sykes is looking for.'}
+208	208		301							"{3: ""But that doesn't mean you will just follow his pace and give him what he wants.""}"
+209	209		301		1		AniZhuanchangBegin			{3: 'The weather was nice, and no unusual events occurred. Today was another peaceful day.'}

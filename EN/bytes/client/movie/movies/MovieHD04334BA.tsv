@@ -1,0 +1,113 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1030.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				{3: 'Bridget leans back in the twilight, her shadow elongated and polished by the warm glow.'}
+4	4		201							{1: '1', 2: '501040'}
+5	5		301							"{1: '1', 2: 'Yata', 3: 'Back where I came from, we call this time the ""witching hour."" It\'s when spirits are most likely to appear, and when humans and ghosts can exist in the same space.', 4: '1'}"
+6	6		302							{2: '...', 3: '7', 4: '(Hold your breath)', 5: '7'}
+7	7		204							{1: '1', 2: '6'}
+8	8		301							"{2: 'Yata', 3: ""Why are you being so quiet? Are you scared? Don't worry, I'm right here with you."", 4: '1'}"
+9	9		204							{1: '1', 2: '1'}
+10	10		301							"{2: 'Yata', 3: ""Rest assured, though, that I'm gonna give people a real piece of my mind today if they show up and mess with us."", 4: '1'}"
+11	11		202							{1: '1'}
+12	12		301							{3: 'Bridget gives her nose bridge a suave brush, grinning as she wraps an arm around your shoulder.'}
+13	13		301							{3: 'Taking a bite of the cotton candy Bridget has offered you, you end up with white sugar all over your face.'}
+14	14		201							{1: '1', 2: '501040', 3: '1'}
+15	15		301							"{1: '1', 2: 'Yata', 3: ""Hahaha, you look ridiculous when you eat. So, mind telling me what we're doing here today?"", 4: '1'}"
+16	16		202							{1: '1'}
+17	17		301							{3: 'Trying to stay composed, Yata keeps her hands behind her back while rubbing her running shoes against the ground.'}
+18	18		301							"{3: ""You hand her the voucher you've been holding and explain that it's part of a special holiday event WGAA has organized.""}"
+19	19		201							{1: '1', 2: '501040'}
+20	20		301							{1: '1', 2: 'Yata', 3: 'They... are gonna make you do three laps around the city...?', 4: '1'}
+21	21		204							{1: '1', 2: '1'}
+22	22		301							{2: 'Yata', 3: 'A piece of cake that is.', 4: '1'}
+23	23		302							"{2: 'You probably want to take a closer look at it.', 3: '24', 4: ""You're missing the first half of what it says."", 5: '24'}"
+24	24		301							{3: 'Yata focuses her attention on the voucher and reads out what it says.'}
+25	25		204							{1: '1', 2: '7'}
+26	26		301							{2: 'Yata', 3: 'Challenge... Hold Hands... Around the City... And Run Three Laps.', 4: '1'}
+27	27		301							{2: 'Yata', 3: 'Wait... seriously?', 4: '1'}
+28	28		302							"{2: ""What's wrong?"", 3: '29', 4: ""You don't want to do it?"", 5: '29'}"
+29	29		204							{1: '1', 2: '6'}
+30	30		301							"{2: 'Yata', 3: ""Not at all. It's just holding hands. Not gonna back down at all."", 4: '1'}"
+31	31		301							{2: 'Yata', 3: 'Feel free to choose from all the mechanical hands I have.', 4: '1'}
+32	32		301							"{2: 'Yata', 3: ""I mean I could just carry you and do the laps? That's not against the rules, technically speaking..."", 4: '1'}"
+33	33		302							"{2: 'Thanks but no thanks.', 3: '34', 4: ""That's so weird!"", 5: '34'}"
+34	34		204							{1: '1', 2: '4'}
+35	35		301							{2: 'Yata', 3: 'I could throw you and have you land with centrifugal force like a parabolic trajectory...', 4: '1'}
+36	36		302							"{2: ""Let's just hold hands."", 3: '37', 4: 'Definitely not gonna happen!', 5: '37'}"
+37	37		301				DialogDisable			"{2: 'Yata', 3: ""Well, if you don't mind all the eyes on us... then fine."", 4: '1'}"
+38	38		202						250.0	{1: '1'}
+39	39		401						1000.0	{1: '1', 2: '36'}
+40	40		401							{1: '1', 2: '205'}
+41	41		306							{1: '1'}
+42	42		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+43	43		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+44	44		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+45	45		301			DialogEnable				{3: 'Yata is usually fine with physical contact, but she now looks awkwardly bashful as she gives you her hand. The moment you take her hand, she starts running without saying a word.'}
+46	46		302							{2: 'Wait for me!', 3: '47', 4: 'Slow down!', 5: '47'}
+47	47		201							{1: '1', 2: '501040', 3: '1'}
+48	48		301							"{1: '1', 2: 'Yata', 3: ""【kuroname】, things are gonna be real bad if you don't keep up! I'm gonna drag you and..."", 4: '1'}"
+49	49		202							{1: '1'}
+50	50		301							"{3: ""As she runs, Yata seems to grow more comfortable under her skin. She's now feeling comfortable enough to turn around every now and then to check on you.""}"
+51	51		201							{1: '1', 2: '501040', 3: '1'}
+52	52		301							{1: '1', 2: 'Yata', 3: 'One more lap to go, 【kuroname】! Come on, you can do it!', 4: '1'}
+53	53		202							{1: '1'}
+54	54		301				DialogDisable			"{3: ""Keeping up with a Construct's speed without exoskeleton assistance is practically impossible, but thankfully Yata is deliberately holding back a bit.""}"
+55	55		306							
+56	56		111							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+57	57		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+58	58		401						1000.0	{1: '1', 2: '36'}
+59	59		401							{1: '1', 2: '204'}
+60	60		301			DialogEnable	AniZhuanchangBegin			{3: 'Yata half-drags you the whole way and still blazes through the three-lap run. You only manage to endure it thanks to sheer military resolve and discipline.'}
+61	61		401							{1: '1', 2: '36'}
+62	62		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory802.jpg'}
+63	63		401							{1: '1', 2: '5059'}
+64	64		201							{1: '1', 2: '500342'}
+65	65		301			AniZhuanchangEnd				{1: '1', 2: 'WGAA Staff Member', 3: 'Congratulations on completing the challenge! Please claim your prize! Good job, guys!', 4: '1'}
+66	66		301							{2: 'WGAA Staff Member', 3: 'I saw it all! You two held your hands the whole time, which says a lot!', 4: '1'}
+67	67		202							{1: '1'}
+68	68		301							{3: 'Thankfully, no one saw it when Yata was dragging you so fast that you were practically flying.'}
+69	69		301							"{3: ""The staff member from WGAA hands over your prize with a motherly warm smile. It's an elegantly packaged chocolate.""}"
+70	70		301							"{3: ""After the run, your stomach is growling with hunger. Just as you're about to tear open the packaging, Yata stops you.""}"
+71	71		201							{1: '1', 2: '501040', 3: '1'}
+72	72		301							{1: '1', 2: 'Yata', 3: 'Hold your horses there.', 4: '1'}
+73	73		203						150.0	{1: '1', 2: '0.15', 5: '-50'}
+74	74		203						150.0	{1: '1', 2: '0.15', 4: '-50', 5: '-50'}
+75	75		203						150.0	{1: '1', 2: '0.15', 5: '-80'}
+76	76		301							{2: 'Yata', 3: 'Here, take this instead. Take it.', 4: '1'}
+77	77		301							{3: 'You take the small bag of treats Yata tosses to you and catch a sweet aroma you know by heart.'}
+78	78		301							"{3: ""I see. This is chocolate, and it's handmade, too.""}"
+79	79		302							{2: 'You made these?', 3: '80', 4: 'This... is for me?', 5: '80'}
+80	80		204							{1: '1', 2: '6'}
+81	81		301							"{2: 'Yata', 3: ""I mean... Valentine's Day is all about showing your appreciation to people you care about, right?"", 4: '1'}"
+82	82		301							"{2: 'Yata', 3: ""Whether you see it as just a friendly gesture or something more... that's up to you. J-just so you know, I only made these for you."", 4: '1'}"
+83	83		301							"{2: 'Yata', 3: ""Be warned, though, that I'm not great at this kind of thing. I tried several times, but they still look pretty average and nowhere near as nice as what you'd find in shops..."", 4: '1'}"
+84	84		301							"{2: 'Yata', 3: ""...But I'm sure they taste great."", 4: '1'}"
+85	85		204							{1: '1', 2: '4'}
+86	86		301							{2: 'Yata', 3: 'But, woah, what a day! Guess I should have trained myself a little harder!', 4: '1'}
+87	87		202							{1: '1'}
+88	88		301							{3: 'Says Yata as she lets out a little whine while ruffling her short hair.'}
+89	89		301							{3: 'You take a piece of her handmade chocolate from the bag and, very ceremoniously, place it in your mouth.'}
+90	90		301							{3: 'Yata watches your every move intently while holding her hands together in anticipation of your verdict.'}
+91	91		301							"{3: ""Yata's face looks red... and you can't be sure if it's because of the sunset, or if you're just seeing things.""}"
+92	92		302							"{2: ""It's delicious."", 3: '93', 4: 'I can taste all the hard work you put into making these chocolates.', 5: '93'}"
+93	93		201							{1: '1', 2: '501040', 3: '6'}
+94	94		301							{1: '1', 2: 'Yata', 3: 'Sweeter than marshmallows?', 4: '1'}
+95	95		302							{2: 'Okay.', 3: '96'}
+96	96		301							{2: 'Yata', 3: 'Better than takoyaki?', 4: '1'}
+97	97		302							{2: 'Okay.', 3: '98', 4: 'Everything you make is delicious.', 5: '98'}
+98	98		204							{1: '1', 2: '6'}
+99	99		301							"{2: 'Yata', 3: ""Hah... that's good to hear. Why does this feel like more of a cardio workout than actual running..."", 4: '1'}"
+100	100		301							{3: 'Yata is smiling again as the two of you stroll together through the city. She fidgets with the chocolate in her hands, her thoughts drifting slightly.'}
+101	101		204							{1: '1', 2: '6'}
+102	102		301							{2: 'Yata', 3: 'Back in the day at Misono High, students put their hearts into making homemade sweets for their crushes before holidays. Everyone was so into it... but I never had the chance to join in.', 4: '1'}
+103	103		301							{2: 'Yata', 3: 'But I finally got a chance to do this myself, and now I know exactly how they felt when they pulled all-nighters making sweets for people they cared about.', 4: '1'}
+104	104		301							{2: 'Yata', 3: 'There are countless moments in my life I wish I could redo...', 4: '1'}
+105	105		301							"{2: 'Yata', 3: ""And once again, it's you who helps fill those gaps in my life, 【kuroname】."", 4: '1'}"
+106	106		301							"{2: 'Yata', 3: ""But crying over spilled milk doesn't help, I guess."", 4: '1'}"
+107	107		204							{1: '1', 2: '1', 7: '1'}
+108	108		301							{3: 'She refreshes herself with a quick rub of her face, then turns to you with another invitation.'}
+109	109		203						150.0	{1: '1', 2: '0.15', 5: '-50'}
+110	110		203						150.0	{1: '1', 2: '0.15', 4: '-50', 5: '-50'}
+111	111		203						150.0	{1: '1', 2: '0.15', 5: '-80'}
+112	112		301		1		AniZhuanchangBegin			{2: 'Yata', 3: 'We still have some time left. Want to go somewhere special? Just the two of us, where no one will disturb us?', 4: '1'}

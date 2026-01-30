@@ -1,0 +1,10 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cgqz204.png'}
+2	1000		401							{1: '1', 2: '5'}
+3	2		301			DialogEnable				"{2: 'Mother', 3: ""Is it all ready? Liv, they'll be picking you up... soon.""}"
+4	3		301							"{2: 'Brother', 3: ""Father's made arrangements already. When you're in the war zone, just work safely in the back as a medical officer. As for father... he's got work still and can't be here. You understand, right?""}"
+5	4		301							"{2: 'Sister', 3: ""Um, that white dress of mine, you've always liked it, didn't you? I can tell... You can have it.""}"
+6	5		301							"{2: 'Mother', 3: ""Though you may be leaving this house, but you're still our family. Don't disgrace our name.""}"
+7	6		301							"{2: 'Mother', 3: ""Get changed, Liv... At least, you should leave gracefully. You can do it... I'm sure.""}"
+8	7		301							{2: 'Liv', 3: 'Yes, Mother.'}
+9	8		301		1		AniZhuanchangBegin			{3: 'Before departing, Liv looks at herself one last time in the mirror...'}

@@ -1,0 +1,218 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_10.jpg'}
+2	2		401							{1: '1', 2: '100'}
+3	3		401							{1: '2', 2: '213'}
+4	4		301			DialogEnable				{3: 'When you wake up to the crackling of a campfire, the night has already draped its darkness over the dense forest.'}
+5	5		201							{1: '1', 2: '500934'}
+6	6		301							"{1: '1', 3: ""Wanshi sits by the tent while you find yourself in a thermal sleeping bag with a soft pillow tucked beneath your neck—clearly Wanshi's way of preventing neck strain.""}"
+7	7		302							{2: 'Sorry... how many times have I passed out cold by now?', 3: '8'}
+8	8		402							{1: '213'}
+9	9		301							{2: 'Wanshi', 3: 'I should be the one apologizing. I just double-checked—that herb actually stimulates the poison from the mushrooms temporarily.', 4: '1'}
+10	10		301							"{2: 'Wanshi', 3: ""And you aren't supposed to engage in any intense physical activities for the time being..."", 4: '1'}"
+11	11		204							{1: '1', 2: '10'}
+12	12		301							{3: 'Wanshi lowers his eyes and checks your pulse once more.'}
+13	13		204							{1: '1', 2: '1'}
+14	14		301							"{2: 'Wanshi', 3: ""Good news—you're doing fine."", 4: '1'}"
+15	15		302							"{2: ""Thanks. Well, I hope you don't mind me asking..."", 3: '16'}"
+16	16		202							{1: '1'}
+17	17		301				DialogDisable			"{3: ""Gazing at the darkening sky through the canopy of leaves overhead, you let slip the question that's been sitting on your mind.""}"
+18	18		302							{2: 'Why are we still in the mountains instead of heading back to town...', 3: '19'}
+19	19		302							{2: 'With all the Corrupted taken care of now?', 3: '20'}
+20	20		201							{1: '1', 2: '500934'}
+21	21		301			DialogEnable				"{1: '1', 2: 'Wanshi', 3: ""Hmm, you were out cold. You didn't really think I could just carry you back like that all the way back to the clinic in town, did you?"", 4: '1'}"
+22	22		302							{2: '...', 3: '23'}
+23	23		301							{2: 'Wanshi', 3: 'Plus...', 4: '1'}
+24	24		203							{1: '1', 2: '0.25', 4: '-50'}
+25	25		401						1000.0	{1: '2', 2: '4049'}
+26	26		203							{1: '1', 2: '0.25'}
+27	27		301							"{3: ""Wanshi yawns as he pulls out several positioning and navigation devices... and dumps them in a messy pile next to the sleeping bag, apparently meaning to show you the state they're in.""}"
+28	28		301							{2: 'Wanshi', 3: 'These things have all stopped working.', 4: '1'}
+29	29		301							{2: 'Wanshi', 3: 'I tried retracing our way here, but somehow ended up right back where we started.', 4: '1'}
+30	30		204							{1: '1', 2: '10'}
+31	31		301							"{2: 'Wanshi', 3: ""Looks like we'll have to make do with staying in the mountains tonight, which I don't really mind... yawn... Spending the night here means we get to head back for the Rain Flower Festival tomorrow."", 4: '1'}"
+32	32		301							"{3: ""Watching Wanshi's second lazy yawn and the camping equipment scattered about, you feel more certain about your suspicions.""}"
+33	33		302							"{2: ""You have prepared for this all along, haven't you?"", 3: '34'}"
+34	34		204							{1: '1'}
+35	35		301							"{2: 'Wanshi', 3: ""Yeah, everyone in town knows it's easy to get lost in the mountains at night. We could brute-force our way out, but it'd be a real hassle."", 4: '1'}"
+36	36		301							{2: 'Wanshi', 3: 'I figured the mission might keep us out until nightfall, so I came prepared.', 4: '1'}
+37	37		302							{2: 'These are things only a human would need...', 3: '38'}
+38	38		204							{1: '1'}
+39	39		301							{2: 'Wanshi', 3: '—I might end up staying here with you until evening without realizing it.', 4: '1'}
+40	40		302							"{2: ""Good thing those researchers aren't here, or they might get the wrong idea."", 3: '41'}"
+41	41		301							{2: 'Wanshi', 3: 'What do you mean?', 4: '1'}
+42	42		302							"{2: ""Never mind, it's not like this never happened before..."", 3: '43'}"
+43	43		202							{1: '1'}
+44	44		401							{1: '2', 2: '4254'}
+45	45		301							{3: 'You crawl out of the sleeping bag and stretch your limbs, shaking off the numbness from being wrapped up inside.'}
+46	46		302							"{2: ""You've been watching over me for quite a while again, haven't you? Get some rest now—I'll do the night watch."", 3: '47'}"
+47	47		201							{1: '1', 2: '500934'}
+48	48		301							{1: '1', 2: 'Wanshi', 3: '...Me? Rest?', 4: '1'}
+49	49		302							{2: 'Yes, you heard that right.', 3: '50'}
+50	50		301							"{3: ""You point to the faint dark circles under Wanshi's eyes.""}"
+51	51		301							{2: 'Wanshi', 3: 'Mmm... okay...', 4: '1'}
+52	52		203						500.0	{1: '1', 2: '0.5', 3: '-50', 4: '-50'}
+53	53		204							{1: '1', 2: '8'}
+54	54		301							{3: 'Never one to pass up a chance to rest, Wanshi immediately takes a seat next to you and closes his eyes for a brief respite.'}
+55	55		301							{3: 'The warm campfire sways gently, its light warming the misty mountain air.'}
+56	56		302							{2: 'Are you asleep?', 3: '57'}
+57	57		301							{2: 'Wanshi', 3: 'No, not yet.', 4: '1'}
+58	58		302							"{2: ""Can't sleep without a brick for a pillow?"", 3: '59'}"
+59	59		204							{1: '1', 2: '2'}
+60	60		301							{2: 'Wanshi', 3: 'I probably just need something to rest my head on.', 4: '1'}
+61	61		302							{2: 'Want to use me as a pillow?', 3: '62'}
+62	62		301							{3: 'At these playful words, Wanshi keeps his eyes closed, a gentle smile tugging at his lips.'}
+63	63		301							"{2: 'Wanshi', 3: ""Don't worry about it. Your rest is what matters most. I was planning to recommend this place for your vacation... Never thought you'd come here on a mission and have to deal with all these."", 4: '1'}"
+64	64		301							"{2: 'Wanshi', 3: ""And I can tell you've been worried about me these days."", 4: '1'}"
+65	65		302							{2: 'True... well, because, look...', 3: '66'}
+66	66		204							{1: '1'}
+67	67		301							{2: 'Wanshi', 3: 'Is it because of what you saw in my M.I.N.D. at that time?', 4: '1'}
+68	68		302							"{2: '...', 3: '69', 4: ""...You're still worried, aren't you?"", 5: '69'}"
+69	69		202							{1: '1'}
+70	70		301							"{3: ""Wanshi's long bangs fall over his eyes, suddenly making his expression unreadable.""}"
+71	71		306							{1: '1'}
+72	72		301							"{3: ""Deep in the abandoned research facility, the sudden M.I.N.D. fluctuation caught everyone off guard, not only shattering Wanshi's consciousness but also dragging you into the chaos.""}"
+73	73		301							"{3: ""Your Mind Beacon pierced through the raging waves, embracing Wanshi's consciousness and telling him to seek a new beginning.""}"
+74	74		301							"{3: ""Within Wanshi's M.I.N.D., you walked him through his life with him and saw the memories that had been haunting him.""}"
+75	75		306							
+76	76		201							{1: '1', 2: '500934', 3: '10', 4: '-50', 5: '-60'}
+77	77		301							{1: '1', 2: 'Wanshi', 3: 'Yeah... Those were things I used to be fixated on...', 4: '1'}
+78	78		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+79	79		202							{1: '1', 6: '1'}
+80	80		504							{1: '0.7'}
+81	81		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '2'}
+82	82		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4701_06.jpg'}
+83	83		301							{3: 'From the very beginning, he was forced to walk a path of endless farewells.'}
+84	84		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+85	85		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4701_04.jpg'}
+86	86		301							"{3: ""He's had to cut people out and abandon people... and even bid farewell to his human self. It was only through this endless cycle of sacrifice that he was able to become the Wanshi of today.""}"
+87	87		301							{3: 'He learned to compromise with reality, to let go of what he had to throw away—only then could he preserve what truly defined his core self.'}
+88	88		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+89	89		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4701_09.jpg'}
+90	90		301							"{3: ""But eventually, he's going to have to face the final reckoning of what he has done.""}"
+91	91		301							{3: 'His mother, who gave him his very life; his stepmother, who protected him in her own way; his childhood friends, who trusted him enough to hold an empty medicine box... and countless Constructs who placed their hopes in the lie of Recall...'}
+92	92		301							{3: 'Now, as twilight falls, he stands upon this path walked by many before him, willingly embracing the farewell that awaits.'}
+93	93		301							"{3: ""But this time, he won't let anything be sacrificed ever again.""}"
+94	94		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+95	95		504							{1: '0'}
+96	96		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab'}
+97	97		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_10.jpg'}
+98	98		201							{1: '1', 2: '500934', 7: '1'}
+99	99		301							"{1: '1', 2: 'Wanshi', 3: ""...I've made many wrong choices and paid more than enough for my mistakes."", 4: '1'}"
+100	100		301							{2: 'Wanshi', 3: 'But now I finally understand what I want, since there are more people in my life now who really matter to me.', 4: '1'}
+101	101		202							{1: '1'}
+102	102		301							{3: 'Just like back then, Wanshi is breaking free from amber as he yearns for rebirth.'}
+103	103		301							{3: 'As he says this, Wanshi turns to look at you.'}
+104	104		301							"{3: ""The firelight may be dim, but the resolve in Wanshi's eyes shines crystal clear.""}"
+105	105		201							{1: '1', 2: '500934'}
+106	106		301							"{1: '1', 2: 'Wanshi', 3: ""There's one thing I'm certain of—you won't meet such a dark fate."", 4: '1'}"
+107	107		301							"{2: 'Wanshi', 3: ""Among all the possibilities this world may hold, the one where you don't exist will never come to be."", 4: '1'}"
+108	108		302							{2: 'Of course.', 3: '109'}
+109	109		202							{1: '1'}
+110	110		301							"{3: ""Neither tonight's moonlight, the stars, nor the campfire shine as bright as the golden gleam in Wanshi's eyes.""}"
+111	111		301							"{3: ""Yet amidst all this brilliance, there is but one human meeting Wanshi's gaze with equal intensity.""}"
+112	112		302							{2: 'I know.', 3: '113'}
+113	113		301							{3: 'Hearing your reassured response, Wanshi stops dwelling on matters from the past.'}
+114	114		301							"{3: ""He returns to his usual self, like a child who's just finished trick-or-treating.""}"
+115	115		201							{1: '1', 2: '500934', 3: '1'}
+116	116		301							"{1: '1', 2: 'Wanshi', 3: ""Honest people need to be rewarded, don't they? What's my reward, Commandant?"", 4: '1'}"
+117	117		302							{2: 'Name whatever you want.', 3: '118', 4: 'What would you like as a reward?', 5: '124'}
+118	118		301							"{2: 'Wanshi', 3: ""Well, let's see..."", 4: '1'}"
+119	119		204						500.0	{1: '1', 2: '2'}
+120	120		202							{1: '1'}
+121	121		104							{1: '50|100|-100', 2: '0.4'}
+122	122		401					250.0		{1: '2', 2: '4370'}
+123	123	130	301							{3: 'Hearing what you said, Wanshi sways his body to the side...'}
+124	124		301							"{2: 'Wanshi', 3: ""Hmm... I'll go with this one."", 4: '1'}"
+125	125		204						500.0	{1: '1', 2: '2'}
+126	126		202							{1: '1'}
+127	127		104							{1: '50|100|-100', 2: '0.4'}
+128	128		401					250.0		{1: '2', 2: '4370'}
+129	129		301							{3: 'Suddenly, Wanshi sways his body to the side...'}
+130	130		301							{3: 'He rests his head on your lap and closes his eyes.'}
+131	131		302							"{2: ""I'm still wearing my mechanical exoskeleton... I hope it's not causing you discomfort?"", 3: '132'}"
+132	132		201							{1: '18', 2: '500934', 3: '2'}
+133	133		301							"{1: '1', 2: 'Wanshi', 3: ""Doesn't really matter... Having the right pillow is all that matters."", 4: '18'}"
+134	134		202							{1: '18'}
+135	135		401						250.0	{1: '2', 2: '2936'}
+136	136		402							{1: '2936'}
+137	137		301							"{3: ""Seeing Wanshi's messy curls right before you, you can't help but reach out to smooth them down.""}"
+138	138		401							{1: '2', 2: '2936'}
+139	139		301							{3: 'The white synthetic strands feel delicate against your palm, and they keep springing back up no matter how much you try to smooth them down.'}
+140	140		301							"{3: ""Wanshi's cheek feels somewhat warm when you accidentally touch it.""}"
+141	141		302							{2: 'Wanshi?', 3: '142'}
+142	142		201							{1: '18', 2: '500934', 3: '8'}
+143	143		301							{1: '1', 2: 'Wanshi', 3: 'Still awake. I was just thinking about how fascinated you are with my hair.', 4: '18'}
+144	144		302				AniZhuanchangBegin			{2: '(Continue smoothing his hair.)', 3: '145', 4: '(Let go.)', 5: '145'}
+145	145		202							{1: '18', 6: '1'}
+146	146		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg'}
+147	147		501							{1: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiYinghuochong.prefab', 2: '1'}
+148	148		401							{1: '2', 2: '310'}
+149	149		501					1000.0		{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+150	150		301			AniZhuanchangEnd				{3: 'A gentle breeze rustles by and fireflies dance in the air as you look up to see the Summer Triangle gleaming clearly in the starlit sky.'}
+151	151		301							"{3: ""You can't even remember the last time you were able to rest peacefully on solid ground like this, gazing up at the vast universe above.""}"
+152	152		301							{3: 'Everything feels as beautiful as a dream come true, making you wish you could freeze this moment in time forever.'}
+153	153		402							{1: '310'}
+154	154		201							{1: '18', 2: '500934', 3: '8'}
+155	155		301							"{1: '1', 2: 'Wanshi', 3: ""The night sky looks peaceful from here, doesn't it?"", 4: '18'}"
+156	156		302							{2: 'Sure does.', 3: '157'}
+157	157		204							{1: '18', 2: '10'}
+158	158		301							"{2: 'Wanshi', 3: ""For a long time during the Golden Age, humans living in cities on Earth couldn't see the Milky Way."", 4: '18'}"
+159	159		302							{2: 'Really?', 3: '160'}
+160	160		301							"{2: 'Wanshi', 3: ""In the 1990s, a massive blackout struck a country along the ocean's edge... In darkness, people suddenly discover an unfamiliar sight hanging above their heads."", 4: '18'}"
+161	161		301							{2: 'Wanshi', 3: 'They thought it was the end of the world—some even called the police about it.', 4: '18'}
+162	162		202							{1: '18'}
+163	163		301							"{3: ""The brilliant, vast Milky Way stretches across the entire city's sky, yet for decades, humanity has remained completely oblivious to its presence.""}"
+164	164		301							{3: 'Wanshi lifts his gaze, his eyes piercing through the moonlight toward the zenith above.'}
+165	165		201							{1: '18', 2: '500934'}
+166	166		301							{1: '1', 2: 'Wanshi', 3: 'The Milky Way has been there all along.', 4: '18'}
+167	167		301							{2: 'Wanshi', 3: 'The neon lights of industrial civilization obscure it, blocking out the radiance from billions of light-years away.', 4: '18'}
+168	168		202							{1: '18'}
+169	169		301							"{3: ""Wanshi's gaze returns from the distance, settling once more upon your face.""}"
+170	170		201							{1: '18', 2: '500934'}
+171	171		301							"{1: '1', 2: 'Wanshi', 3: ""Humanity can now explore the cosmos far beyond the Arctic, yet sometimes remains blind to what's happening right here on Earth..."", 4: '18'}"
+172	172		301							"{2: 'Wanshi', 3: ""People can still be a mystery to us even when they're right next to us."", 4: '18'}"
+173	173		301							"{2: 'Wanshi', 3: ""And I don't like that."", 4: '18'}"
+174	174		301							"{2: 'Wanshi', 3: ""I've answered you honestly... Now it's your turn. You know everything about my past. What do you make of me?"", 4: '18'}"
+175	175		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+176	176		202							{1: '18', 6: '1'}
+177	177		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiYinghuochong.prefab'}
+178	178		401							{1: '2', 2: '2938'}
+179	179		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4701_05.jpg'}
+180	180		301							"{3: ""Wanshi's words crack open the amber of distant memories. Countless thoughts pour out from within.""}"
+181	181		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+182	182		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg'}
+183	183		501							{1: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiYinghuochong.prefab', 2: '1'}
+184	184		301				DialogDisable			"{3: ""Within it, you've seen everything about him. You understand what he has given up and what he has chosen along the way.""}"
+185	185		302							{2: 'I understand you.', 3: '186', 4: 'I share the same thoughts as you.', 5: '186'}
+186	186		302							"{2: 'Sometimes I catch myself thinking, ""What if I had done this instead of that?""', 3: '187'}"
+187	187		302							{2: 'But in the end, all these what-ifs are meaningless.', 3: '188'}
+188	188		302							{2: 'For it was those very choices from the past that shaped who we are today.', 3: '189'}
+189	189		201							{1: '18', 2: '500934', 3: '10'}
+190	190		301			DialogEnable				"{1: '1', 2: 'Wanshi', 3: ""Hmm... I think I've heard that line before in class at the Basic Education Center."", 4: '18'}"
+191	191		202							{1: '18'}
+192	192		301							{3: 'Wanshi seems to be getting sleepy, too. He lets out a soft sigh.'}
+193	193		302							"{2: '""The Anthropic Principle"".', 3: '194'}"
+194	194		201							{1: '18', 2: '500934'}
+195	195		301							{1: '1', 2: 'Wanshi', 3: 'Yup.', 4: '18'}
+196	196		202				DialogDisable			{1: '18'}
+197	197		302							"{2: ""—The entire universe exists in humanity's favor, and every choice we make is the right one."", 3: '198'}"
+198	198		302							"{2: ""Otherwise, we wouldn't have been here today to contemplate this question."", 3: '199'}"
+199	199		201							{1: '18', 2: '500934'}
+200	200		301			DialogEnable				"{1: '1', 2: 'Wanshi', 3: ""I don't like the way the principle puts it, though."", 4: '18'}"
+201	201		301							{2: 'Wanshi', 3: 'I prefer what you said before...', 4: '18'}
+202	202		204							{1: '18', 2: '1'}
+203	203		301							{2: 'Wanshi', 3: 'Everything we see now is the culmination of all our past choices.', 4: '18'}
+204	204		202							{1: '18'}
+205	205		301							{3: 'Wanshi takes hold of your hand resting on his hair, his eyes growing heavy with drowsiness.'}
+206	206		201							{1: '18', 2: '500934', 3: '10'}
+207	207		301							"{1: '1', 2: 'Wanshi', 3: ""Hah... I'll keep pressing forth... and I'll never stop protecting those who matter to me..."", 4: '18'}"
+208	208		204							{1: '18', 2: '8'}
+209	209		301							"{2: 'Wanshi', 3: ""We won't have to worry about one another... anymore..."", 4: '18'}"
+210	210		202							{1: '18'}
+211	211		301							{3: 'Wanshi gradually quiets down, as if trying to preserve the tranquil night.'}
+212	212		502							{1: 'RImgBg1BlowUp'}
+213	213		301							{3: 'His words always carry a mysterious charm that inevitably draws one into a sense of peace before gently sending them into sweet dreams.'}
+214	214		301							"{3: ""Before long, you start nodding drowsily as your hand slowly comes to rest in Wanshi's curly hair.""}"
+215	215		301							{3: 'In that hazy moment before you drift off, however...'}
+216	216		301							{3: 'Someone seems to leave a warm trace in your palm.'}
+217	217		302		1		AniZhuanchangBegin			{2: 'Mmh... Am I hallucinating again...?', 3: '218'}

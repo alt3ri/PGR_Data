@@ -1,0 +1,142 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory28.jpg'}
+2	2		401							{1: '1', 2: '210'}
+3	3		301			DialogEnable				{3: 'The supply transfer has been arranged after the routine security check at the outpost to conceal the actual objective of this operation.'}
+4	4		301							{3: 'The desert in winter is still remarkably arid. The sea of yellow sand in front of you has not changed apart from the cooling weather.'}
+5	5		302							{2: 'How far have I traveled in this desert...', 3: '6'}
+6	6		301							{3: 'Your vehicle raises a fog of dust as it glides through the desert, and the sand dispersed in the air like a fleeting cloud.'}
+7	7		301							"{3: ""Today is New Year's Eve. Despite having no notion of festivities, you still feel odd traveling alone on this day.""}"
+8	8		301							{2: 'System', 3: 'Incoming transmission—'}
+9	9		201							{1: '1', 2: '500001'}
+10	10		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+11	11		301							"{1: '1', 2: 'Celica', 3: ""Hello? Don't tell me you've fallen asleep, 【kuroname】? Our tracking suggested that you've entered the safe area, but you should keep an eye out nonetheless."", 4: '1'}"
+12	12		302							"{2: ""I'm awake."", 3: '13', 4: 'Keep an eye out?', 5: '13'}"
+13	13		301							"{2: 'Celica', 3: ""I know we're working with the Forsaken for now, but you can never tell what sort of accidents could happen down there. Just be careful."", 4: '1'}"
+14	14		302							"{2: ""I will. Don't worry."", 3: '15'}"
+15	15		301							"{2: 'Celica', 3: ""Good to hear that. After all, the Gray Ravens aren't by your side this time, and they're all worried sick..."", 4: '1'}"
+16	16		302							"{2: ""Let them know I'm safe and sound, will you?"", 3: '17'}"
+17	17		301							"{2: 'Celica', 3: ""I will. Make sure to keep your comms open and keep tabs on the cruise control. You're about two kilometers from the meeting point. Safe travels!"", 4: '1'}"
+18	18		202							{1: '1'}
+19	19		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+20	20		301							"{3: ""As Celica's message ends, you are immediately connected with the Forsaken.""}"
+21	21		301							{3: 'It follows so swiftly that you cannot help but wonder if they have been trying to call you when Celica was occupying the line.'}
+22	22		201							{1: '1', 2: '1101001'}
+23	23		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+24	24		301							"{1: '1', 2: 'Watanabe', 3: ""You're in Forsaken territory now, 【kuroname】. Maintain your speed. Our envoy will be meeting you at your nine o'clock."", 4: '1'}"
+25	25		301							"{2: 'Watanabe', 3: ""Keep to yourself. We don't need no attention."", 4: '1'}"
+26	26		202							{1: '1'}
+27	27		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+28	28		301							{3: 'You see a layer of white mist fogging up the window of the cockpit. The setting sun lingers on the golden horizon, and everything seems within reach.'}
+29	29		301							{3: 'The visible heatwave rises from the sand, distorting and refracting light, and you can see the dunes transforming into a pot of molten gold.'}
+30	30		301							{3: 'Your transport slowly enters the designated area. You can see the paved path ahead of you as your vehicle gradually stops bumping.'}
+31	31		301							"{3: ""The Forsaken soldiers stop your ride under Watanabe's lead.""}"
+32	32		301							{3: 'You have yet to enter the campsite proper, unlike what you were expecting. You can tell it is still quite a distance away just from the view on your ride.'}
+33	33		301				AniZhuanchangBegin			{3: 'Uncertain about the current situation, you recall what Celica mentioned and prepare for any unforeseen arrangement.'}
+34	34		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory26.jpg'}
+35	35		201							{1: '1', 2: '1101001'}
+36	36		301			AniZhuanchangEnd				"{1: '1', 2: 'Watanabe', 3: ""You're 47 minutes and 6 seconds late."", 4: '1'}"
+37	37		302							{2: 'Have you been waiting here?', 3: '38', 4: 'The journey here took a while...', 5: '39'}
+38	38	40	301							"{2: 'Watanabe', 3: 'Consider this part of my ""goodwill."" I did promise to guarantee your safety.', 4: '1'}"
+39	39		301							"{2: 'Watanabe', 3: ""Not surprising. It's a rough neighborhood."", 4: '1'}"
+40	40		301							"{2: 'Watanabe', 3: ""Sorry for not informing you beforehand, but we'll need you to stop here."", 4: '1'}"
+41	41		301							"{2: 'Watanabe', 3: ""For the sake of both of our sides, I can't allow a Babylonia vessel to enter our camp directly. It's an inconvenient time—you'll understand once you arrive."", 4: '1'}"
+42	42		301							"{2: 'Watanabe', 3: ""But you don't have to worry. No harm will come to you. The Forsaken does not forget the people who fought by our side."", 4: '1'}"
+43	43		302							{2: 'I understand.', 3: '44'}
+44	44		301							{3: 'Watanabe nods and gestures to the soldiers around him, and a senior-looking guard walks up with a detection device.'}
+45	45		203							{1: '1', 2: '0.25', 3: '400'}
+46	46		201							{1: '2', 2: '500005', 4: '-400'}
+47	47		301							{1: '1', 2: 'Guard Leader', 3: 'Pardon me. Please raise your arms—', 4: '2'}
+48	48		301							{3: 'Your pistol, as well as your emergency fire starter kit, are both confiscated.'}
+49	49		301							{2: 'Guard Leader', 3: 'My apologies. No fire-starting items are allowed in the camp, and... what is this?', 4: '2'}
+50	50		302							{2: 'A water bottle... obviously?', 3: '51'}
+51	51		301							"{2: 'Guard Leader', 3: ""Would you mind taking a sip in front of us now? If it's alcohol..."", 4: '2'}"
+52	52		301							"{2: 'Watanabe', 3: ""Enough, no need to be so thorough. Babylonia's not gonna allow a commandant to drink on the job, and this one doesn't seem like the rule-breaking kind."", 4: '1'}"
+53	53		301							{2: 'Watanabe', 3: 'Have you notified the folks in the camp?', 4: '1'}
+54	54		301							{2: 'Guard Leader', 3: 'We did. Although we do recognize the Gray Raven Commandant, there have been many newcomers in the camp...', 4: '2'}
+55	55		302							{2: 'Newcomers?', 3: '56'}
+56	56		202							{1: '1', 2: '2', 6: '1'}
+57	57		301				AniZhuanchangBegin			{3: 'Watanabe does not answer you. He turns and signals everyone to follow him to the Forsaken base.'}
+58	58		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory31.jpg'}
+59	59		301			AniZhuanchangEnd				{3: 'Unlike the calm and quiet campsite you remembered, the one you are seeing is bustling—'}
+60	60		301							{3: 'The military tents by the road have turned into various stalls, where the Forsaken members trade and exchange rare items and supplies.'}
+61	61		301							{3: 'More surprisingly, you notice a large group of children running by the Forsaken headquarter, giggling.'}
+62	62		401							{1: '1', 2: '205'}
+63	63		201							{1: '1', 2: '500005'}
+64	64		301							"{1: '1', 2: 'Guard Leader', 3: ""Hey, kids! Stop running around in here! You're going to bring down the tent!"", 4: '1'}"
+65	65		301							{3: 'The children turn to make a funny face at the guard leader before disappearing into the crowd with a louder wave of laughter.'}
+66	66		302							{1: '6687', 2: 'Who are they?', 3: '69', 4: 'There are kids here!', 5: '70'}
+67	67		201							{1: '1', 2: '1101001', 3: '1'}
+68	68		303							{1: '6687'}
+69	69	71	301							{1: '1', 2: 'Watanabe', 3: 'Children of the Forsaken.', 4: '1'}
+70	70		301							"{1: '1', 2: 'Watanabe', 3: ""Don't be so surprised. This isn't our only camp, and we... are not the only ones forsaken."", 4: '1'}"
+71	71		301							{2: 'Watanabe', 3: 'We built a small shelter to the east of here after what happened with the ARU. The kids and the newcomers are staying there.', 4: '1'}
+72	72		301							"{2: 'Watanabe', 3: ""They should be the actual hope for the future... We couldn't abandon them."", 4: '1'}"
+73	73		302							"{2: ""That's why you were searching me so thoroughly..."", 3: '74'}"
+74	74		202							{1: '1', 6: '1'}
+75	75		301							{3: 'Watanabe stops, giving a soldier that is sorting supplies some kind of order.'}
+76	76		201							{1: '1', 2: '500172'}
+77	77		301							"{1: '1', 2: 'Zong', 3: ""Mr. Watanabe! I'm sorry, the sorting is still ongoing. You might want to take this..."", 4: '1'}"
+78	78		203							{1: '1', 2: '0.25', 3: '400'}
+79	79		201							{1: '2', 2: '1101001', 4: '-400'}
+80	80		301							{1: '1', 2: 'Watanabe', 3: '...Supplier. A supplier for now.', 4: '2'}
+81	81		301							"{2: 'Zong', 3: 'I see! You might want to take this... ""supplier"" elsewhere first?', 4: '1'}"
+82	82		301							"{2: 'Zong', 3: ""And don't forget to answer your comms, Mr. Watanabe. You're about to be late for the call with the blue gentleman."", 4: '1'}"
+83	83		301							"{2: 'Watanabe', 3: ""You don't have to remind me. I'll reply after this—and we aren't the ones who are late, to begin with."", 4: '2'}"
+84	84		202							{1: '1', 2: '2', 6: '1'}
+85	85		301							{3: 'The children who entered the campsite earlier are still hanging around. They shoot a glance at your side every once in a while, and Watanabe waves back with a warm, friendly smile, unlike his usual solemn self.'}
+86	86		301							{3: 'But when he turns back at you, he looks exactly as he was.'}
+87	87		201							{1: '1', 2: '1101001'}
+88	88		301							"{1: '1', 2: 'Watanabe', 3: ""Cough... 【kuroname】, let's talk business."", 4: '1'}"
+89	89		301							"{2: 'Watanabe', 3: ""I've only received a very vague report about this test. But before that... there's something else that I'm more curious about."", 4: '1'}"
+90	90		202							{1: '1', 6: '1'}
+91	91		301							"{3: ""At Watanabe's cue, the Forsaken soldiers open the marked cache.""}"
+92	92		301							"{3: ""The CUB for this testing immediately activates and hovers by Watanabe's side.""}"
+93	93		301							{3: 'Right now, it is just a polygon with red stripes on one side, looking quite ordinary.'}
+94	94		201							{1: '1', 2: '1101001'}
+95	95		301							{1: '1', 2: 'Watanabe', 3: 'This thing can... help in a fight? It looks so...', 4: '1'}
+96	96		202							{1: '1', 6: '1'}
+97	97		301							{3: 'Watanabe activates its second stage with uncertainty.'}
+98	98		301							"{3: ""Its form expands and changes as it transforms to prepare for engagements. The animalistic features and coatings of the machine immediately catch the people's attention... and catch them off guard.""}"
+99	99		301							"{3: ""Watanabe's doubtful gaze and the unexpected reveal have everyone on the scene turn silent.""}"
+100	100		201							{1: '1', 2: '1101001'}
+101	101		301							"{1: '1', 2: 'Watanabe', 3: ""I understand it's supposed to be a support unit, but isn't this design a little bit... excessive?"", 4: '1'}"
+102	102		302							{2: '...', 3: '103', 4: 'There were... thoughts put into it.', 5: '104'}
+103	103	105	301							{2: 'Watanabe', 3: 'I assume there were specific... thoughts put into it?', 4: '1'}
+104	104		301							"{2: 'Watanabe', 3: ""If you say so... I suppose there's no harm in it."", 4: '1'}"
+105	105		301							"{2: 'Watanabe', 3: ""If we're just talking about combat capabilities, it's indeed... quite..."", 4: '1'}"
+106	106		301							{3: 'Watanabe frowns, excruciating, desperately trying to convince himself with his own argument.'}
+107	107		202							{1: '1', 6: '1'}
+108	108		301							{2: 'System', 3: 'Incoming transmission—'}
+109	109		401							{1: '1', 2: '208'}
+110	110		201							{1: '1', 2: '500001'}
+111	111		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+112	112		301							{1: '1', 2: 'Celica', 3: 'Is this a good time? Mind if I cut in?', 4: '1'}
+113	113		301							{3: 'The silence is broken up by a call from Babylonia. As the comms connect, Watanabe reverts to his typical expression.'}
+114	114		301							"{2: 'Celica', 3: ""I know the commandant isn't exactly on time, but our tracking shows that 【kuroname】 has arrived. And it seems that Mr. Watanabe here has a lot to say about our CUB?"", 4: '1'}"
+115	115		301							"{2: 'Celica', 3: ""But we can table that for later—it's one of our proudest creations, after all. Asimov, it's your turn to do the talking."", 4: '1'}"
+116	116		201							{1: '1', 2: '500004'}
+117	117		301							"{1: '1', 2: 'Asimov', 3: ""...I don't have much to say, to be honest."", 4: '1'}"
+118	118		301							{3: 'The Chief Technician is apparently unfamiliar with an occasion like this, or maybe he simply does not care. He pays no attention to how restless he looks.'}
+119	119		301							"{2: 'Asimov', 3: 'Please check the instructions we sent you to see how to use and connect with the ""Combat Unit Booster"". It\'s just a prototype, so the user experience may not be perfect, but it won\'t be lethal.', 4: '1'}"
+120	120		301							"{2: 'Asimov', 3: ""It might just get a little uncomfortable during the connection. But that's what you get from connecting to the M.I.N.D., so just prepare yourselves."", 4: '1'}"
+121	121		301							"{2: 'Asimov', 3: ""Regarding its appearance, we have commissioned experts from the WGAA to design it, so I swear it's more than competent. Don't worry."", 4: '1'}"
+122	122		302							{2: 'Is that true...', 3: '123', 4: 'I guess looks can be deceiving.', 5: '123'}
+123	123		301							"{2: 'Asimov', 3: ""In that case, I'll count on the old models—I mean, the role models of the Forsaken to carry out this test."", 4: '1'}"
+124	124		203							{1: '1', 2: '0.25', 3: '400'}
+125	125		201							{1: '2', 2: '1101001', 4: '-400'}
+126	126		301							"{1: '1', 2: 'Watanabe', 3: ""This is just standard fare. It's nothing to us."", 4: '2'}"
+127	127		301							"{2: 'Asimov', 3: ""I can tell how battle-tested you all must be from the way you've been maintaining yourselves. I simply require data from older frames."", 4: '1'}"
+128	128		301							"{2: 'Watanabe', 3: ""...It seems that Babylonia hasn't forgotten where this frame comes from."", 4: '2'}"
+129	129		301							{2: 'Asimov', 3: 'That... is not for me to say. Do you want me to fetch Hassen for you?', 4: '1'}
+130	130		301							"{2: 'Watanabe', 3: ""That won't be necessary."", 4: '2'}"
+131	131		301							"{2: 'Asimov', 3: ""No offense, but it's probably best that we keep this kind of collaboration a one-time event. Good luck."", 4: '1'}"
+132	132		202							{1: '1', 6: '1'}
+133	133		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+134	134		301							{3: 'And the call ends there.'}
+135	135		201							{1: '1', 2: '500005', 4: '400'}
+136	136		301							"{1: '1', 2: 'Patrol Leader', 3: 'Sir, is our... ""supplier"" clear?', 4: '1'}"
+137	137		204							{1: '2', 2: '1'}
+138	138		301							"{2: 'Watanabe', 3: ""Don't worry. They would have sent someone else if it was a trap."", 4: '2'}"
+139	139		301							{3: 'Facing his hesitant crew, Watanabe casually gives him a pat on the shoulder.'}
+140	140		301							"{2: 'Watanabe', 3: ""For my part, I trust 【kuroname】. We have to have more friends who've fought with us than enemies against us, right?"", 4: '2'}"
+141	141		301		1		AniZhuanchangBegin			{2: 'Watanabe', 3: 'But you, dear supplier, I do have a job for you before my men are done calibrating the machine.', 4: '2'}

@@ -1,0 +1,194 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1171.jpg'}
+2	2		107						2000.0	{1: '30 minutes earlier'}
+3	3		108							{1: '1'}
+4	4		401							{1: '1', 2: '5039'}
+5	5		401							{1: '2', 2: '4545'}
+6	6		301			DialogEnable				{3: 'Crimson emergency lights wash over the seemingly endless corridor, their flickering rhythm allowing brief flashes of the original blue glow to break through.'}
+7	7		104							{1: '0|0|-50', 2: '0.25'}
+8	8		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+9	9		104							{1: '0|0|0', 2: '0.25'}
+10	10		301							{3: 'A pallid, dark-gold filigree stands tarnished by thick, soupy liquid. In her hazy state, Monzano senses the walls pressing in on the very heart of her gaze.'}
+11	11		402							{1: '4545'}
+12	12		201							{1: '1', 2: '501123', 3: '4'}
+13	13		301							{1: '1', 2: 'Madam Monzano', 3: 'Has my frame been compromised as well...?', 4: '1'}
+14	14		301							{3: 'A sudden twitch flickers at the corner of her eye, but that haughty smile quickly takes over her face once more.'}
+15	15		204							{1: '1'}
+16	16		301							"{2: 'Madam Monzano', 3: ""It doesn't matter if Eleanor slipped up or if she's scheming behind our backs... this direct encounter with the Punishing Virus opens a once-in-a-lifetime window for experimentation."", 4: '1'}"
+17	17		202							{1: '1'}
+18	18		301							{3: 'Punishing serves as a vessel of information, and ultimately, any conscious M.I.N.D. can be broken down into pure data.'}
+19	19		301							{3: 'Because the salvaged battlefield data chips are compromised, it also indicates that their stored data has already begun its transfer into another form.'}
+20	20		301							"{3: ""There's no time to reflect. A hulking Corrupted Construct barrels out from around the corner without warning.""}"
+21	21		201							{1: '1', 2: '501123', 4: '-400'}
+22	22		201							{1: '2', 2: '500296', 4: '400'}
+23	23		301							"{1: '1', 2: 'Corrupted Construct', 3: ""There's only one path..."", 4: '2'}"
+24	24		203						250.0	{1: '2', 2: '0.25', 3: '150'}
+25	25		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash.prefab', 2: '2'}
+26	26		401							{1: '2', 2: '11106008'}
+27	27		502							{1: 'RImgBg1Shake'}
+28	28		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+29	29		203							{1: '1', 2: '0.25', 3: '-600'}
+30	30		301							"{3: ""Wildly brandishing its vibro-blade, it shatters the corridor's decorative displays in one savage sweep.""}"
+31	31		301							"{3: ""With deft reflexes, Monzano sidesteps—she notices that the frame's ankle joint has already fallen prey to corrosion.""}"
+32	32		203							{1: '2', 2: '0.25', 3: '150', 4: '-75'}
+33	33		202							{1: '2'}
+34	34		401							{1: '2', 2: '4306'}
+35	35		203							{1: '1', 2: '0.5'}
+36	36		301							"{3: ""The Construct doesn't even manage to lift its weapon before smashing into the floor with a thunderous crash.""}"
+37	37		301							{2: 'Madam Monzano', 3: 'Could it be a lack of combat readiness? Today, these frames seem far more vulnerable than usual.', 4: '1'}
+38	38		401							{1: '2', 2: '2919'}
+39	39		301							{3: 'Even now, that husk jerks on the floor, a grimy blend of oil and fluid oozing from its mouth.'}
+40	40		402							{1: '2919'}
+41	41		203							{1: '1', 2: '0.25', 3: '-400'}
+42	42		201							{1: '2', 2: '500297', 4: '400'}
+43	43		301							"{1: '1', 2: 'Construct Remains', 3: ""If you want to break free, there's only a single way forward..."", 4: '2'}"
+44	44		301							{3: 'Monzano ignores the incoherent whispers, clearly displeased by the result. Even if this was an unforeseen breach, the frame should have endured far longer.'}
+45	45		203							{1: '1', 2: '0.25', 3: '-100'}
+46	46		203						250.0	{1: '2', 2: '0.25', 3: '450'}
+47	47		401							{1: '2', 2: '5321'}
+48	48		502							{1: 'RImgBg1Shake'}
+49	49		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+50	50		203						250.0	{1: '1', 2: '0.25', 3: '-500'}
+51	51		203							{1: '2', 2: '0.25', 3: '500'}
+52	52		301							{3: 'She drives her gilded exoskeletal claws straight through the shattered remains.'}
+53	53		301							{2: 'Construct Remains', 3: 'Graaah!', 4: '2'}
+54	54		401							{1: '2', 2: '4306'}
+55	55		203							{1: '2', 2: '0.25', 3: '500', 4: '-75'}
+56	56		202							{1: '2'}
+57	57		301				AniZhuanchangBegin			{3: 'After a harrowing shriek, it goes still and breathes its last.'}
+58	58		202							{1: '1', 6: '1'}
+59	59		502						400.0	{1: 'DialogDisable'}
+60	60		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1168.jpg'}
+61	61		401							{1: '2', 2: '4341'}
+62	62		203							{1: '1', 2: '0.25'}
+63	63		301			DialogEnable				"{1: '1', 3: ""Monzano hauls the Construct's wreckage behind her, rushes down the corridor to its far end, and returns to the lab housing the central hub data.""}"
+64	64		301							{3: 'Just as she feared, the once-vibrant green glow has been all but consumed by a sinister red, and the quarantine system wails in a shrill alarm.'}
+65	65		201							{1: '1', 2: '501123', 4: '-150'}
+66	66		301							{1: '1', 2: 'Madam Monzano', 3: 'We still have time... Lock everything down first. Then, in this high-density environment, run the return-transmission experiment.', 4: '1'}
+67	67		401							{1: '2', 2: '4779'}
+68	68		301							"{3: ""She draws in a sharp breath and holsters her revolver against her leather pants. Eleanor's timing is always so impeccable.""}"
+69	69		401							{1: '1', 2: '5040'}
+70	70		204							{1: '1', 2: '4'}
+71	71		301							{2: 'Madam Monzano', 3: 'Activate.', 4: '1'}
+72	72		202							{1: '1'}
+73	73		401							{1: '2', 2: '1099'}
+74	74		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '1'}
+75	75		301							{3: 'She stands before the control terminal, her voice ringing with firm resolve as she gives the order.'}
+76	76		301							{2: 'Control Terminal', 3: 'Voiceprint scan in progress... Madam Adrianna Monzano, Construct code UAF-07. Welcome.'}
+77	77		401							{1: '2', 2: '1515'}
+78	78		301							{3: 'The screen flares to life in a flash, her fingers gliding across its surface.'}
+79	79		301							{2: 'Control Terminal', 3: 'Initiating full lockdown on the experimental deck...'}
+80	80		301							{3: 'With the initial phase complete, Monzano turns to inspect the culture dish.'}
+81	81		301							"{3: ""Beyond that wall, hundreds of identical pillars stand, enveloping the volunteers and the frames they're about to inhabit.""}"
+82	82		201							{1: '1', 2: '501123'}
+83	83		301							{1: '1', 2: 'Madam Monzano', 3: 'Unforeseen twists and chance occurrences can so often yield the most pivotal factors in an experiment...', 4: '1'}
+84	84		401							{1: '2', 2: '4044'}
+85	85		203						250.0	{1: '1', 2: '0.25', 3: '-50', 4: '-75'}
+86	86		203							{1: '1', 2: '0.25'}
+87	87		401							{1: '2', 2: '4681'}
+88	88		301							{3: 'She lifts her arm and slams the newly acquired test subject—dragged all the way into the lab—onto the operating table.'}
+89	89		401							{1: '2', 2: '4533'}
+90	90		301							"{3: ""He pulls the Mako-3 data chip straight from the central hub, then slots it into the port just above the wreck's spinal column—no safeguards, no hesitation.""}"
+91	91		301							{2: 'Madam Monzano', 3: 'Mako-3.', 4: '1'}
+92	92		301							"{3: ""Monzano's voice is icy as she repeats the code name, paying no heed to the virus concentration spiking in this airtight space.""}"
+93	93		401							{1: '2', 2: '5323'}
+94	94		301							{2: 'Mako-3', 3: 'Structural integrity is at critical levels!'}
+95	95		402							{1: '5323'}
+96	96		301							{3: 'The code name appears to trigger some reflex, but it stays frozen in place. That eerie proclamation rings out like a pre-recorded alert.'}
+97	97		401							{1: '2', 2: '5323'}
+98	98		301							{2: 'Mako-3', 3: 'System check fails—attempting reboot... Memory data incomplete—initiating emergency format...'}
+99	99		402							{1: '5323'}
+100	100		204							{1: '1', 2: '4'}
+101	101		301							{2: 'Madam Monzano', 3: 'Initiate the plan.', 4: '1'}
+102	102		301							"{3: ""The dead's emissary delivers a succinct order.""}"
+103	103		401							{1: '2', 2: '5323'}
+104	104		301							{2: 'Mako-3', 3: 'Command: Abort formatting. Re-uploading data... Data integrity check fails...'}
+105	105		402							{1: '5323'}
+106	106		301							{3: 'Disjointed electronic signals sputter in and out.'}
+107	107		204							{1: '1'}
+108	108		301							"{2: 'Madam Monzano', 3: ""The backup frame's readiness checks are finished. We're ready to proceed."", 4: '1'}"
+109	109		301							{3: 'She steps away from the operating table, turning toward the incubation chamber.'}
+110	110		401							{1: '2', 2: '5323'}
+111	111		301							{2: 'Mako-3', 3: 'Command: Backup hardware detected. Initiating data transfer...'}
+112	112		402							{1: '5323'}
+113	113		301							"{2: 'Madam Monzano', 3: ""At its core, the Punishing Virus is information, which isn't wholly incompatible with Memory data. Our priority is ensuring the medium remains stable before we send it back, and that every part of the M.I.N.D. has been completely converted into data."", 4: '1'}"
+114	114		301							{2: 'Madam Monzano', 3: 'From a purely theoretical standpoint, your Memory can be backed up through hardware and implanted into any form of data storage.', 4: '1'}
+115	115		204							{1: '1', 2: '4'}
+116	116		301							"{2: 'Madam Monzano', 3: ""Or perhaps... you'd rather rise again as some kind of cleaning drone?"", 4: '1'}"
+117	117		202							{1: '1'}
+118	118		301							{3: 'She casts a sidelong glance at the automated chemical waste cleaner on the floor, her voice dripping with malice as she speaks under her breath.'}
+119	119		301							"{3: ""Monzano knows the husk on the table has lost all sense of self—it can't possibly grasp human words anymore.""}"
+120	120		301							{3: 'Still, she refuses to abandon her hope that this experiment will yield a breakthrough.'}
+121	121		401							{1: '2', 2: '5323'}
+122	122		301							{2: 'Mako-3', 3: 'Target hardware locked. Initiating data transfer...'}
+123	123		402							{1: '5323'}
+124	124		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+125	125		401							{1: '2', 2: '1513'}
+126	126		301							{3: 'Monzano wastes no time, quickly finalizing the initial commands on the control panel.'}
+127	127		301							"{3: ""The battered Construct's sensors flicker weakly, then die out completely. Its half-upright frame slumps to the floor.""}"
+128	128		301							{3: 'For the next few minutes, under that cramped ceiling, an eerie hush settles in—like the hush before the end of all things.'}
+129	129		401							{1: '2', 2: '2674'}
+130	130		301							"{3: ""The drone of the ventilation system and the frame's virus warning fade beneath the low thrum pulsing from the Monzano reactor's core.""}"
+131	131		301							{3: 'As if sparked by the stifling heat in the air, a figure within one of the incubation pods jerks violently.'}
+132	132		201							{1: '1', 2: '501123', 3: '4'}
+133	133		301							{1: '1', 2: 'Madam Monzano', 3: '!!', 4: '1'}
+134	134		301							"{3: ""She stops pacing in impatience and moves closer, accessing the frame's vital-readings data directly.""}"
+135	135		202							{1: '1', 6: '1'}
+136	136		502						400.0	{1: 'DialogDisable'}
+137	137		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '1', 5: '1'}
+138	138		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+139	139		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+140	140		401							{1: '2', 2: '4437'}
+141	141		304							{1: '>System Rebooting...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory876.jpg', 6: '1'}
+142	142		304							{1: '>Reboot Complete.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory876.jpg', 6: '1'}
+143	143		304				AniZhuanchangBegin			{1: '>Importing data... calibrating...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory876.jpg', 6: '1', 7: '1', 9: '1'}
+144	144		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1168.jpg'}
+145	145		201							{1: '1', 2: '501123'}
+146	146		301			DialogEnable				{1: '1', 2: 'Madam Monzano', 3: 'So close... Just one more step...', 4: '1'}
+147	147		202							{1: '1'}
+148	148		301				DialogDisable			{3: 'A blue-white progress bar glides seamlessly across the screen, so flawlessly that it leaves her momentarily stunned.'}
+149	149		401							{1: '2', 2: '2579'}
+150	150		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory876.jpg', 3: '0.8', 4: '1', 5: '1'}
+151	151		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+152	152		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory876.jpg'}
+153	153		304				AniZhuanchangBegin			{1: '>Please enter boot command.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory876.jpg', 6: '1', 9: '1', 10: '1'}
+154	154		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1168.jpg'}
+155	155		401							{1: '2', 2: '1515'}
+156	156		301			DialogEnable				"{3: ""She doesn't hesitate. With the code ingrained in her mind, she keys it into the terminal. Grand speeches are just historians' embellishments for those who follow, while the acts that truly alter civilization often go unnoticed.""}"
+157	157		301							"{3: ""One command, one letter, or just the tap of a holographic screen—that's all it takes.""}"
+158	158		301							{3: 'Harnessing cutting-edge tech to outwit Death—such a bold ambition can enchant even the most zealous follower.'}
+159	159		301							{3: 'Those who can stand unyielding in the face of the Punishing are destined to rule the new world.'}
+160	160		201							{1: '1', 2: '501123', 3: '4'}
+161	161		301							"{1: '1', 2: 'Madam Monzano', 3: ""Those highborn elites who cut and run the moment trouble brews dare to proclaim themselves humanity's final hope..."", 4: '1'}"
+162	162		202							{1: '1'}
+163	163		301							{3: 'Certain of her triumph, the mistress makes no showy display of celebration.'}
+164	164		301							{3: 'Quite the opposite—she grits her teeth and spits out a scornful remark, finding an unexpected release in the act.'}
+165	165		301							"{3: 'It\'s a shame that those who hold creationism sacred view Darwin as a heretic, while those who treat evolution like unbreakable law can never truly understand what ""adaptability"" means in this new age.'}"
+166	166		301				AniZhuanchangBegin			{2: '???', 3: '...'}
+167	167		502							{1: 'DialogDisable'}
+168	168		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2601_11.jpg'}
+169	169		401							{1: '1', 2: '5042'}
+170	170		306							{1: '1'}
+171	171		104			AniZhuanchangEnd				{1: '0|0|-50', 2: '0.25'}
+172	172		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+173	173		104							{1: '0|0|0', 2: '0.25'}
+174	174		301			DialogEnable				{3: 'He once drifted through the sea of terror, lost in the swirl of his own oblivion. But now, he presses on, guided only by the strength of his will.'}
+175	175		301							{3: 'Fragments of thought are carried away by Punishing, then settle like flowing sand into the depths of the mind.'}
+176	176		301							{3: 'He feels no terror toward the swirling abyss itself, but the weightless sensation of having no anchor leaves him shaken: time, space, emotion, reason—all slip beyond his reach. He gazes into the pitch-black veil, gripped by fear and uncertainty.'}
+177	177		301							"{3: ""He slowly regains his clarity. A choice that isn't really a choice—more like destiny. He hurls himself into the endless void, where shifting sands twist into slender silver strands skirting past him. Memories he can't recognize detonate and then fade away at the far edge of the darkness.""}"
+178	178		301							{3: 'The shifting sands recede, leaving behind only the scars of fleshly torment in the lingering darkness. In due time, he will inevitably make his way back to this place.'}
+179	179		301							{3: 'But now, he has returned, taking form in a vessel substantial enough for the real world to contain.'}
+180	180		301							{3: 'He steadies himself, collecting his thoughts.'}
+181	181		306							
+182	182		301							{2: '???', 3: 'I am...'}
+183	183		301							{3: 'He flings his burning question into the depths of his M.I.N.D., and the echoing ripple he expects rises in reply.'}
+184	184		301							"{3: 'What surfaces now isn\'t a combat call sign or a mech code, but the name he once claimed before giving up his human body to answer the call of ""reclaiming Earth"".'}"
+185	185		301							{2: '???', 3: 'System fully activated.'}
+186	186		301							{2: '???', 3: 'I... am Lloyd.'}
+187	187		301				DialogDisable			{3: 'He speaks, slowly and deliberately, the words that mark both the beginning and the end.'}
+188	188		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '2'}
+189	189		301			DialogEnable				{3: 'Then, the light in his eyes fades.'}
+190	190		301							{3: 'This is his final death.'}
+191	191		301							{3: 'In the end, death remains an unconquerable finale.'}
+192	192		501				AniZhuanchangBegin			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab', 2: '2'}
+193	193		101		1					{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}

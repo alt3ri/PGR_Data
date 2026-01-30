@@ -1,0 +1,18 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory568.jpg'}
+2	2		401							{1: '1', 2: '371'}
+3	3		301			DialogEnable				"{3: ""The starship's airlock bursts open as several battered Constructs stumble in behind Nanami.""}"
+4	4		201							{1: '1', 2: '500019'}
+5	5		301							"{1: '1', 2: 'Carson', 3: ""Ain't working. Can't reach them... What should I do..."", 4: '1'}"
+6	6		203							{1: '1', 2: '0.25', 3: '400'}
+7	7		201							{1: '2', 2: '501070', 3: '4', 4: '-400'}
+8	8		301							"{1: '1', 2: 'Nanami', 3: ""You're severely injured. You need to get yourself treated before you die."", 4: '2'}"
+9	9		301							"{2: 'Carson', 3: ""It's too late..."", 4: '1'}"
+10	10		301							{3: 'The Construct looks utterly desperate.'}
+11	11		301							"{2: 'Carson', 3: ""Wait, y-you're a Construct, too, aren't you? I think I've seen you before in Babylonia..."", 4: '1'}"
+12	12		301							"{2: 'Nanami', 3: ""Nanami doesn't remember you, but I did spend some time hanging out in Babylonia."", 4: '2'}"
+13	13		301							{2: 'Carson', 3: 'C-can you reach Babylonia?', 4: '1'}
+14	14		203							{1: '1', 2: '0.25', 3: '200'}
+15	15		301							"{3: ""Like a drowning person grasping for salvation, the Construct desperately clutches at Nanami's arm.""}"
+16	16		301							"{2: 'Carson', 3: ""We have to reach Babylonia immediately! We gotta let them know that they can't keep sending more squads down here—"", 4: '1'}"
+17	17		301		1		AniZhuanchangBegin			{2: 'Carson', 3: 'The Hetero-Creatures are suppressing their Punishing Virus concentration to disguise themselves as humans to lure rescue teams deeper into their trap!', 4: '1'}

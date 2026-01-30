@@ -1,0 +1,56 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory72.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		201							{1: '1', 2: '1111001', 4: '-400'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Karenina', 3: ""Tch... of course it's you."", 4: '1'}"
+5	5		202							{1: '1', 6: '1'}
+6	6		201							{1: '2', 2: '1041001', 4: '400'}
+7	7		401							{1: '2', 2: '1506'}
+8	8		301							"{1: '1', 2: 'Nanami', 3: ""(Removes her weapon from the guard) Huh? Oh! You're both here!"", 4: '2'}"
+9	9		201							{1: '1', 2: '1111001', 4: '-400'}
+10	10		301							{1: '1', 2: 'Karenina', 3: 'Do you have to make such a fuss?', 4: '1'}
+11	11		301							"{2: 'Nanami', 3: ""Well, Nanami can't just let Roland get away..."", 4: '2'}"
+12	12		201							{1: '1', 2: '1081001', 4: '-400'}
+13	13		301			PanelActor1Shake				{1: '1', 2: 'Kamui', 3: 'Roland?! Where is he?', 4: '1'}
+14	14		301							"{2: 'Nanami', 3: ""I don't know! Nanami's looking for him as well!"", 4: '2'}"
+15	15		202							{1: '1', 2: '2', 6: '1'}
+16	16		201							{1: '2', 2: '1111001', 4: '400'}
+17	17		301							"{1: '1', 2: 'Karenina', 3: ""Isn't it Kamui's mission to hunt the Ascendant...?"", 4: '2'}"
+18	18		201							{1: '1', 2: '1081001', 4: '-400'}
+19	19		301							{1: '1', 2: 'Kamui', 3: 'I lost him.', 4: '1'}
+20	20		301							"{2: 'Karenina', 3: ""Can't believe how messy this whole situation is."", 4: '2'}"
+21	21		301							{2: 'Karenina', 3: 'Then, should we... go after the Ascendant? Or continue our mission?', 4: '2'}
+22	22		204							{1: '1', 2: '4'}
+23	23		301							"{2: 'Kamui', 3: ""(Announce his thoughts loudly) I've seen with my own eyes how the antigen affected Roland and the Punishing Virus..."", 4: '1'}"
+24	24		204							{1: '1'}
+25	25		301							"{2: 'Kamui', 3: ""Nanami said Roland's still inside the Golden Vortex... Think about it. He's barely hanging on, but he's still staying here. If you ask me, I bet he's here for one reason—to destroy the antigen."", 4: '1'}"
+26	26		301							"{2: 'Karenina', 3: ""That makes sense. The Ascendants wouldn't allow the antigen to threaten them."", 4: '2'}"
+27	27		301							"{2: 'Karenina', 3: ""The antigen is still a rogue element right now—no one has weaponized it yet. If I were Roland, I'd be mad anxious."", 4: '2'}"
+28	28		301							{2: 'Kamui', 3: 'Before its weaponization, the Ascendants will do whatever it takes to destroy the antigen.', 4: '1'}
+29	29		301							"{2: 'Karenina', 3: ""Although it isn't stable, it's still going to help Earth out in a huge way."", 4: '2'}"
+30	30		301							"{2: 'Kamui', 3: ""You're right. We can't let Roland destroy it."", 4: '1'}"
+31	31		202							{1: '2', 6: '1'}
+32	32		204							{1: '1', 2: '4'}
+33	33		301							"{1: '1', 2: 'Kamui', 3: ""Nanami, I need some leads on Roland. Anything. Don't skip any detail..."", 4: '1'}"
+34	34		202							{1: '1', 6: '1'}
+35	35		201							{1: '2', 2: '1041001', 4: '400'}
+36	36		301							"{1: '1', 2: 'Nanami', 3: ""...Nanami isn't sure, either. But the guards can help!"", 4: '2'}"
+37	37		401							{1: '2', 2: '1506'}
+38	38		301							{1: '1', 3: 'Nanami holds up a circular component in gold taken from a guard.'}
+39	39		201							{1: '1', 2: '1111001', 3: '5', 4: '-400'}
+40	40		301							{1: '1', 2: 'Karenina', 3: 'What are you trying to do? Enough with the theatrics!', 4: '1'}
+41	41		202							{1: '1', 6: '1'}
+42	42		204							{1: '2', 2: '2'}
+43	43		301							{1: '1', 2: 'Nanami', 3: 'This golden circle can control the guards...', 4: '2'}
+44	44		301							{2: 'Nanami', 3: 'Nanami is going to hack it and finds out which guards have been taken down by Roland! Then we just have to follow the bodies!', 4: '2'}
+45	45		204							{1: '2'}
+46	46		201							{1: '1', 2: '1081001', 3: '2', 4: '-400'}
+47	47		301							"{1: '1', 2: 'Kamui', 3: ""That's brilliant, Nanami!"", 4: '1'}"
+48	48		204							{1: '1'}
+49	49		301							"{2: 'Kamui', 3: ""As long as Roland's in the Golden Vortex, the guards here are going to find him before we do! They're going to leave a lot of bodies behind when they fight—finding the bodies means finding Roland!"", 4: '1'}"
+50	50		202							{1: '1', 6: '1'}
+51	51		204							{1: '2', 2: '2'}
+52	52		301							"{2: 'Nanami', 3: ""That's right! Hehe!"", 4: '2'}"
+53	53		202							{1: '2', 6: '1'}
+54	54		201							{1: '1', 2: '1111001', 4: '-400'}
+55	55		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Karenina', 3: ""(Mumbles) Who would've thought... They're pretty alright..."", 4: '1'}"

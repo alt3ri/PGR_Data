@@ -1,0 +1,25 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '5'}
+3	3		301			DialogEnable				{2: 'Puppy', 3: 'Woof!'}
+4	4		201							{1: '1', 2: '1011001'}
+5	5		301							{1: '1', 2: 'Lee', 3: 'Just go to sleep already!', 4: '1'}
+6	6		202							{1: '1', 6: '1'}
+7	7		301							{2: 'Puppy', 3: 'Woof!!'}
+8	8		201							{1: '1', 2: '1021001', 3: '3'}
+9	9		301							{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+10	10		301							"{2: 'Lucia', 3: ""Commandant, you're here. Sorry, I didn't notice..."", 4: '1'}"
+11	11		302							{2: 'Do you want to get closer to the puppy?', 3: '12', 4: 'You look a bit down.', 5: '13'}
+12	12	14	301							{2: 'Lucia', 3: '...Yes, I want to.', 4: '1'}
+13	13		301							"{2: 'Lucia', 3: ""I'm sorry, Commandant, I couldn't turn off my inbuilt emotions expression system in time before I created negative emotions."", 4: '1'}"
+14	14		301							"{2: 'Lucia', 3: ""I want to become closer with the puppy, but I fail every time I try and I don't know what to do."", 4: '1'}"
+15	15		302							{1: '100', 2: 'Let the training commence!', 3: '18', 4: 'Try smiling.', 5: '19'}
+16	16		204							{1: '1', 2: '4'}
+17	17		303							{1: '100'}
+18	18	20	301							{2: 'Lucia', 3: 'Training... Are you talking about the training Lee mentioned before?', 4: '1'}
+19	19		301							{2: 'Lucia', 3: 'Smile...', 4: '1'}
+20	20		301							"{2: 'Lucia', 3: ""Understood, I'll try my best."", 4: '1'}"
+21	21		302							{2: 'Objective: To be able to interact with the puppy normally!', 3: '22', 4: 'Objective: To create a Lucia that everyone loves!', 5: '23'}
+22	22		301		1		AniZhuanchangBegin			{2: 'Lucia', 3: 'Understood.', 4: '1'}
+23	23		204							{1: '1', 2: '3'}
+24	24		301		1		AniZhuanchangBegin			{2: 'Lucia', 3: 'Commandant, the difficulty of this mission may be too high for me right now...', 4: '1'}

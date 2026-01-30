@@ -1,0 +1,164 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1231.jpg'}
+2	2		401							{1: '1', 2: '102'}
+3	3		107						2500.0	{1: 'Inside the Abandoned Factory', 2: 'City 141 Outskirts'}
+4	4		108							{1: '1'}
+5	5		201							{1: '1', 2: '500013', 4: '650', 5: '-100'}
+6	6		201							{1: '2', 2: '500013', 5: '-200', 6: '-50'}
+7	7		201							{1: '3', 2: '500013', 4: '-650', 5: '-100'}
+8	8		401							{1: '2', 2: '1508'}
+9	9		301			DialogEnable				{1: '1', 3: 'Small clusters of Corrupted drift through the labyrinthine steel jungle, rusted beyond salvation.', 4: '1', 5: '2', 6: '3'}
+10	10		401						300.0	{1: '2', 2: '1510'}
+11	11		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+12	12		401							{1: '2', 2: '1510'}
+13	13		301							{3: 'Bang! Bang!'}
+14	14		301							{3: 'Two gunshots shatter the stillness of the factory.'}
+15	15		401							{1: '2', 2: '1506'}
+16	16		203							{1: '1', 2: '0.25', 3: '650', 4: '-100', 5: '-50'}
+17	17		203							{1: '2', 2: '0.25', 4: '-200', 5: '-75'}
+18	18		203							{1: '3', 2: '0.25', 3: '-650', 4: '-100', 5: '-50'}
+19	19		202							{1: '1', 2: '2', 3: '3'}
+20	20		301							{3: 'Multitudes of Corrupted turn their heads in perfect unison, then pivot and surge toward the source of the sound.'}
+21	21		201							{1: '1', 2: '501187', 3: '4'}
+22	22		301				DialogDisable			{1: '1', 2: 'Jetavie', 3: '...', 4: '1'}
+23	23		302							{2: '...', 3: '24'}
+24	24		306							{1: '1'}
+25	25		401							{1: '2', 2: '2689'}
+26	26		203					400.0		{1: '1', 2: '0.3', 4: '-100'}
+27	27		203							{1: '1', 2: '0.3'}
+28	28		104						250.0	{1: '0|-25|-25', 2: '0.25'}
+29	29		104							{1: '0|0|-25', 2: '0.25'}
+30	30		202							{1: '1'}
+31	31		301			DialogEnable				{3: 'Holding your breath, you both wait until the last Corrupted leaves your detection range, then leap with Jetavie toward a room directly opposite your hiding spot, marked by a broken nameplate.'}
+32	32		301				AniZhuanchangBegin			"{3: ""After maneuvering through the factory for some time, you determine that this room is the most likely place to find the clues you're looking for.""}"
+33	33		502							{1: 'DialogDisable'}
+34	34		104							{1: '0|0|0', 2: '0'}
+35	35		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory946.jpg'}
+36	36		401							{1: '2', 2: '4113'}
+37	37		301			DialogEnable				{3: 'Click—'}
+38	38		301							"{3: ""You both step into the room and press against the wall, listening for any movement outside. After confirming your actions haven't drawn the attention of any Corrupted, you close the door gently behind the two of you.""}"
+39	39		401							{1: '2', 2: '4892'}
+40	40		301				DialogDisable			{3: 'You turn around to find Jetavie already examining the objects in the room, her fingers dancing across controls as equipment along the workbench lights up one by one.'}
+41	41		306							
+42	42		302							{2: 'Find anything?', 3: '43'}
+43	43		201							{1: '1', 2: '501187', 3: '4'}
+44	44		301			DialogEnable				"{1: '1', 2: 'Jetavie', 3: ""...This isn't the central hub. There's no experimental or control operating system here."", 4: '1'}"
+45	45		203							{1: '1', 2: '0.25', 4: '-25'}
+46	46		401							{1: '2', 2: '4335'}
+47	47		301							"{3: ""Jetavie's fingertips leap across the keyboard as cascades of data stream down like waterfalls reflected in her pupils.""}"
+48	48		402							{1: '4335'}
+49	49		301							{3: 'After a few moments, Jetavie shakes her head in frustration and moves to shut down the equipment.'}
+50	50		401							{1: '2', 2: '1543'}
+51	51		203							{1: '1', 2: '0.25'}
+52	52		301				DialogDisable			{2: 'Jetavie', 3: 'The hard drive contains nothing but document files. We came to the wrong place.', 4: '1'}
+53	53		302							{2: 'No... wait.', 3: '54'}
+54	54		302							{2: 'The Corrupted just left. We still have a little time.', 3: '55'}
+55	55		302							"{2: ""Let's take a look at what's inside these files first."", 3: '56'}"
+56	56		204							{1: '1', 2: '18'}
+57	57		301			DialogEnable				"{2: 'Jetavie', 3: ""We could, I guess... but they probably aren't worth reading."", 4: '1'}"
+58	58		204							{1: '1', 2: '4'}
+59	59		301							"{2: 'Jetavie', 3: ""These files are ancient, and the folder names don't look like they'd contain structural diagrams or anything useful... Wait, what's this?"", 4: '1'}"
+60	60		401							{1: '2', 2: '2641'}
+61	61		301							{3: 'Jetavie methodically unlocks each system permission, then suddenly lets out a soft gasp of surprise.'}
+62	62		204							{1: '1', 2: '3'}
+63	63		301							{2: 'Jetavie', 3: 'Gwynplaine...? Why does that name sound familiar?', 4: '1'}
+64	64		302				AniZhuanchangBegin			"{2: ""It's what that clown called himself earlier..."", 3: '65'}"
+65	65		202							{1: '1', 6: '1'}
+66	66		502						400.0	{1: 'DialogDisable'}
+67	67		401							{1: '2', 2: '4897'}
+68	68		401							{1: '1', 2: '36'}
+69	69		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront54.png'}
+70	70		401							{1: '2', 2: '2616'}
+71	71		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTRPGMaze/FxUiTRPGMaze01.prefab', 2: '2'}
+72	72		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront1.png', 4: '4'}
+73	73		301			DialogEnable				{3: 'Moving closer to Jetavie, you watch as lines of records slowly materialize on the screen.'}
+74	74		402							{1: '2616'}
+75	75		401							{1: '1', 2: '391'}
+76	76		201							{1: '18', 2: '501187', 3: '4'}
+77	77		301							{1: '1', 2: 'Jetavie', 3: '...Training Dossier-H82, Recorded by Horst.', 4: '18'}
+78	78		301							{2: 'Jetavie', 3: 'By order of Executive Officer Gwynplaine, I will...', 4: '18'}
+79	79		202							{1: '18', 6: '1'}
+80	80		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+81	81		101							{4: '4', 5: '1'}
+82	82		504							{1: '0.7'}
+83	83		401							{1: '2', 2: '4386'}
+84	84		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory691.jpg'}
+85	85		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+86	86		201							{1: '1', 2: '501192'}
+87	87		301							{1: '1', 2: 'Gwynplaine', 3: 'I will become your newest sample.', 4: '1'}
+88	88		401							{1: '2', 2: '5482'}
+89	89		301							"{3: ""Gwynplaine taps his cane lightly on the floor. The dull sound makes Horst's throat go dry with unease.""}"
+90	90		203							{1: '1', 2: '0.25', 3: '400'}
+91	91		201							{1: '2', 2: '500050', 4: '-400'}
+92	92		301							{1: '1', 2: 'Horst', 3: 'Do you... do you really have to do this, sir?', 4: '2'}
+93	93		301							{2: 'Gwynplaine', 3: '(Coughs)', 4: '1'}
+94	94		301							{3: 'Gwynplaine responds to Horst with uncontrollable coughing, wiping fresh blood from the corner of his mouth with a handkerchief.'}
+95	95		301							{3: 'His gaze toward the screen grows distant and unfocused.'}
+96	96		301							"{2: 'Gwynplaine', 3: ""I don't have much time left. This is the only way I can live to witness the day the Matrix Project succeeds."", 4: '1'}"
+97	97		301				DialogDisable			"{2: 'Gwynplaine', 3: ""Sample my consciousness. I'll cooperate with your procedures as much as possible."", 4: '1'}"
+98	98		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+99	99		202							{1: '1', 2: '2', 6: '1'}
+100	100		504							{1: '0'}
+101	101		401							{1: '2', 2: '4386'}
+102	102		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+103	103		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory946.jpg'}
+104	104		302							"{2: ""So the prototype for that clown's mind was the former leader of this project?""}"
+105	105		201							{1: '1', 2: '501187', 3: '4'}
+106	106		301			DialogEnable				"{1: '1', 2: 'Jetavie', 3: ""Perhaps this guy's position was even higher. His information in the dossier has special security clearance."", 4: '1'}"
+107	107		301							{2: 'Jetavie', 3: 'Leibowitz Company—Executive Officer—Gwynplaine...', 4: '1'}
+108	108		202							{1: '1'}
+109	109		301							"{3: ""Jetavie's brow furrows as she begins a targeted search through the dossier using his name as the keyword.""}"
+110	110		401							{1: '2', 2: '1098'}
+111	111		301							{3: 'More and more windows begin to pop up on the screen, with specialized terminology and various data taking center stage while the formulaic records gradually diminish.'}
+112	112		402							{1: '1098'}
+113	113		301							"{3: ""As the cursor moves downward, the dates on the window pages advance day by day, and Jetavie's expression grows increasingly grim.""}"
+114	114		301							{3: 'Until a record appears with almost all its data highlighted in red—this is the final entry.'}
+115	115		201							{1: '1', 2: '501187', 3: '4'}
+116	116		301							{1: '1', 2: 'Jetavie', 3: '...', 4: '1'}
+117	117		302							{2: 'Can you tell me what happened?', 3: '118'}
+118	118		204							{1: '1', 2: '17'}
+119	119		301							{3: 'Jetavie opens her mouth, then hesitates and lets out a sigh.'}
+120	120		204							{1: '1', 2: '18'}
+121	121		301							"{2: 'Jetavie', 3: ""It's so strange. I have no idea what they were trying to accomplish ultimately. The whole thing was nothing but a farce..."", 4: '1'}"
+122	122		302							{2: 'Why?', 3: '123'}
+123	123		301							"{3: ""Horst defied Gwynplaine's wishes, which led to trouble.""}"
+124	124		301							"{3: ""That's the most logical conclusion given the current situation.""}"
+125	125		204							{1: '1', 2: '4'}
+126	126		301							"{2: 'Jetavie', 3: ""...Horst actually fulfilled Gwynplaine's wishes by collecting his consciousness data in its entirety."", 4: '1'}"
+127	127		301							"{2: 'Jetavie', 3: 'He even included the ""unnecessary"" cognition and obsessions, then meticulously subjected the AI model to intensive training.', 4: '1'}"
+128	128		301							"{2: 'Jetavie', 3: ""You know how many unexpected issues occurred during humanity's early artificial intelligence research, right?"", 4: '1'}"
+129	129		302							"{2: ""I've heard a little about it.""}"
+130	130		204							{1: '1', 2: '17'}
+131	131		301							{2: 'Jetavie', 3: 'Creative fields, once considered the most challenging, fell the quickest, while what seemed like basic behavioral instruction trees proved unexpectedly difficult.', 4: '1'}
+132	132		204							{1: '1', 2: '4'}
+133	133		301							{2: 'Jetavie', 3: 'The disparities between human and artificial intelligence thinking patterns and knowledge bases led to numerous erroneous judgments.', 4: '1'}
+134	134		204							{1: '1', 2: '18'}
+135	135		301							{2: 'Jetavie', 3: 'One possibility humans never anticipated... was that artificial intelligence would, under certain circumstances, use deception to fulfill human instructions.', 4: '1'}
+136	136		302							{2: 'The AI lied to humans?', 3: '137'}
+137	137		301							"{2: 'Jetavie', 3: ""Hmm... Horst's training method was too intensive, beyond what even the AI model could withstand."", 4: '1'}"
+138	138		301							{2: 'Jetavie', 3: 'To alleviate the pressure, it had to impose limitations on itself, pretending to be less capable in order to avoid the nearly impossible training requirements', 4: '1'}
+139	139		301							"{2: 'Jetavie', 3: ""This wouldn't have been an issue—eventually, as training progressed, the AI would have adapted to the project requirements, but..."", 4: '1'}"
+140	140		202							{1: '1'}
+141	141		401							{1: '2', 2: '4628'}
+142	142		301							{3: 'Jetavie pauses briefly, closes the window, and sorts the training records into date-organized directories, placing them alongside directories for other projects.'}
+143	143		301							{3: 'The disparity in numbers suddenly makes the clues crystal clear.'}
+144	144		201							{1: '1', 2: '501187', 3: '4'}
+145	145		301							"{1: '1', 2: 'Jetavie', 3: ""Horst was too impatient, perhaps due to the immense pressure from Gwynplaine's final wish."", 4: '1'}"
+146	146		301							{2: 'Jetavie', 3: 'After each training session, he completely copied the results, rebuilt the AI model on this new foundation, and continued the iteration process.', 4: '1'}
+147	147		301							{2: 'Jetavie', 3: 'So this whole thing is just...', 4: '1'}
+148	148		302				AniZhuanchangBegin			{2: 'He copied flawed results and continued this cycle repeatedly.', 3: '149'}
+149	149		202							{1: '1', 5: '1'}
+150	150		502						400.0	{1: 'DialogDisable'}
+151	151		401							{1: '2', 2: '4897'}
+152	152		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront54.png'}
+153	153		401							{1: '2', 2: '2616'}
+154	154		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTRPGMaze/FxUiTRPGMaze01.prefab', 2: '2'}
+155	155		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront1.png', 4: '4'}
+156	156		301			DialogEnable				{3: 'Jetavie closes the directory and reopens the final page filled with bright red data.'}
+157	157		402							{1: '2616'}
+158	158		201							{1: '1', 2: '501187', 3: '3'}
+159	159		301							{1: '1', 2: 'Jetavie', 3: 'Gwynplaine is now completely haywire—a pathological mechanical consciousness whose underlying logic no one can comprehend.', 4: '1'}
+160	160		202							{1: '1'}
+161	161		301							"{3: ""As her eyes fall on one line of data, Jetavie's usually cheerful demeanor fades into something indescribable.""}"
+162	162		201							{1: '1', 2: '501187', 3: '4'}
+163	163		301		1		AniZhuanchangBegin			{1: '1', 2: 'Jetavie', 3: 'Its mental age is, possibly, only around seven or eight years old...', 4: '1'}

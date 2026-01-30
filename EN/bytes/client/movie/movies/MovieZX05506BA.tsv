@@ -1,0 +1,169 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangBegin				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '4'}
+3	3		301				DialogDisable			{3: 'Data Synchronization Progress: 55%'}
+4	4		401							{1: '2', 2: '4823'}
+5	5		109			AniZhuanchangEnd			250.0	{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>49%</color></size>', 9: '3'}
+6	6		401							{1: '2', 2: '4823'}
+7	7		109						100.0	{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>50%</color></size>', 9: '3'}
+8	8		401							{1: '2', 2: '4823'}
+9	9		109						100.0	{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>51%</color></size>', 9: '3'}
+10	10		401							{1: '2', 2: '4823'}
+11	11		109						100.0	{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>52%</color></size>', 9: '3'}
+12	12		401							{1: '2', 2: '4823'}
+13	13		109						100.0	{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>53%</color></size>', 9: '3'}
+14	14		401							{1: '2', 2: '4823'}
+15	15		109						100.0	{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>54%</color></size>', 9: '3'}
+16	16		401							{1: '2', 2: '4823'}
+17	17		109	1						{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>55%</color></size>', 9: '3'}
+18	18		110			AniZhuanchangBegin				
+19	19		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '4', 5: '1'}
+20	20		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg'}
+21	21		401							{1: '1', 2: '6170'}
+22	22		301			DialogEnable				{3: 'In a corner of a ruined street, a woman trembles as she holds up a handgun, aiming at the Corrupted rapidly approaching from a distance.'}
+23	23		201							{1: '1', 2: '500624'}
+24	24		301			PanelActor1Shake				{2: 'Mother', 3: 'Stay back! Aim... aim...', 4: '1'}
+25	25		301							{3: 'She seems to be trying to intimidate the Corrupted with her weapon, but quickly realizes what a pointless gesture it is.'}
+26	26		203							{1: '1', 2: '0.25', 3: '200'}
+27	27		201							{1: '2', 2: '500280', 4: '-200'}
+28	28		301							{1: '1', 3: 'She takes half a step back—only to feel her calf brush against a shivering little girl.'}
+29	29		301							{2: 'Mother', 3: '!', 4: '1'}
+30	30		301							"{2: 'Girl', 3: ""Mommy... it's coming... and that big brother hasn't contacted us either..."", 4: '2'}"
+31	31		301							{3: 'The woman stops retreating.'}
+32	32		301							{2: 'Mother', 3: 'Run... run now! Mommy will catch up soon!', 4: '1'}
+33	33		301							"{2: 'Girl', 3: ""I'm too scared!"", 4: '2'}"
+34	34		301							"{2: 'Mother', 3: ""There's nothing to be afraid of! Go now!"", 4: '1'}"
+35	35		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+36	36		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+37	37		203							{1: '1', 2: '0', 3: '500'}
+38	38		203							{1: '2', 2: '0', 3: '100'}
+39	39		201							{1: '3', 2: '500013', 4: '-500'}
+40	40		401							{1: '2', 2: '844090'}
+41	41		301							{1: '1', 2: 'Corrupted', 3: 'Grrrrr!', 4: '3'}
+42	42		301							{3: 'The Corrupted swiftly closes in on the mother and daughter—the pitch-black shadow rapidly expanding in the reflection of her pupils.'}
+43	43		301			PanelActor1Shake				{2: 'Mother', 3: '!!!', 4: '1'}
+44	44		306							{1: '1'}
+45	45		301							{3: 'The woman suppresses a scream as she raises her gun, finger tensing on the trigger.'}
+46	46		306							
+47	47		201							{1: '18', 2: '501239', 3: '4'}
+48	48		301							{1: '1', 2: 'Vera', 3: 'Get down!!', 4: '18'}
+49	49		202							{1: '1', 2: '2', 3: '3', 4: '18'}
+50	50		401							{1: '2', 2: '3077'}
+51	51		301							{3: 'A red blur lunges forward, tackling both of them to the ground.'}
+52	52		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionL.prefab', 2: '2'}
+53	53		401							{1: '2', 2: '4260'}
+54	54		301			RImgBg1Shake				{3: 'And then, an explosion erupts right in front of them.'}
+55	55		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+56	56		301							{3: 'As the dust settles, the woman coughs a couple of times before finally understanding what just happened:'}
+57	57		301							"{3: ""A red-haired female Construct rises from the ground, dusts herself off, and casually takes the gun from the woman's hand.""}"
+58	58		201							{1: '1', 2: '501239'}
+59	59		301							"{1: '1', 2: 'Vera', 3: ""I'm confiscating this gun. It'll be more useful in the hands of someone who knows how to use it."", 4: '1'}"
+60	60		203						250.0	{1: '1', 2: '0.25', 3: '-400'}
+61	61		201							{1: '2', 2: '500624', 4: '400'}
+62	62		301			PanelActor2Shake				{2: 'Mother', 3: 'No! Give it back!', 4: '2'}
+63	63		301							{3: 'The woman instinctively reaches for it—in these chaotic and dangerous times, that gun is their last means of protection.'}
+64	64		204							{1: '1', 2: '10'}
+65	65		301							"{2: 'Vera', 3: 'Tch, I knew I shouldn\'t get involved in these annoying ""clean-up"" operations... I can\'t be bothered to explain. Let that person do the talking.', 4: '1'}"
+66	66		204							{1: '1'}
+67	67		301							{2: 'Vera', 3: 'Little Commandant!', 4: '1'}
+68	68		301							{3: 'The Construct irritably jerks her chin toward the human beside her.'}
+69	69		301				DialogDisable			{3: 'You are wearing a hospital gown, looking like someone who escaped from a medical facility. Alarming swathes of bandages cover your abdomen and face.'}
+70	70		302							"{2: ""Don't worry, we're from Babylonia."", 3: '71'}"
+71	71		302							{2: 'I spotted some Corrupted up ahead, so I threw a grenade.', 3: '72'}
+72	72		302							"{2: ""I hope I didn't hurt any of you by accident."", 3: '73'}"
+73	73		204							{1: '1', 2: '5'}
+74	74		301			DialogEnable				"{2: 'Vera', 3: ""Got that clear? Still thinking whether we're saviors or bandits? If you can tell the difference, shut up and follow us. I'm only generous once a day."", 4: '1'}"
+75	75		301							"{2: 'Mother', 3: ""Babylonia... You're also from Babylonia?"", 4: '2'}"
+76	76		204							{1: '1', 2: '4'}
+77	77		301							{2: 'Vera', 3: 'You saw other people from Babylonia?', 4: '1'}
+78	78		301							{3: 'Hearing some key information from the woman, Vera looks over vigilantly.'}
+79	79		301							{2: 'Mother', 3: '...Well...', 4: '2'}
+80	80		301							{2: 'Mother', 3: 'Please, you must save those two people as well!', 4: '2'}
+81	81		401							{1: '2', 2: '4432'}
+82	82		203							{1: '2', 2: '0.25', 3: '-100'}
+83	83		204							{1: '1', 2: '6'}
+84	84		301							{2: 'Vera', 3: '!', 4: '1'}
+85	85		301							{3: 'The woman suddenly lunges toward Vera, firmly gripping her arm.'}
+86	86		204							{1: '1'}
+87	87		301							"{2: 'Mother', 3: ""There's a young man who's been helping us escape... but he has an important mission, and the researcher with him is in trouble too... Anyway, he's stuck here now!"", 4: '2'}"
+88	88		301							"{2: 'Mother', 3: ""No, forget it, I can't explain properly! He should still be behind that building, I can take you to him!"", 4: '2'}"
+89	89		301							"{2: 'Mother', 3: ""He said he's from Babylonia! He's with F.O.S. College!"", 4: '2'}"
+90	90		302							{2: 'F.O.S...!'}
+91	91		301							{3: 'Operating on the ground, which feels infinitely more vast and desolate than Babylonia, suddenly hearing this familiar term brings the comfort of home to you.'}
+92	92		301							"{3: ""But Vera obviously doesn't share this sentiment.""}"
+93	93		301							{2: 'Vera', 3: 'I refuse to get involved in unnecessary complications. All I care about is you, little Commandant.', 4: '1'}
+94	94		301							"{2: 'Vera', 3: ""If he were still alive, he would've already shown up here with them, rather than giving away his own gun."", 4: '1'}"
+95	95		401							{1: '2', 2: '10028805'}
+96	96		301							{3: 'Vera tosses the gun she took from the woman to you—its shape and markings clearly identify it as F.O.S. standard issue.'}
+97	97		302							{2: '...', 3: '98'}
+98	98		204							{1: '1', 2: '4'}
+99	99		301							"{2: 'Vera', 3: ""Let go of me. Don't touch me."", 4: '1'}"
+100	100		202							{1: '1', 2: '2'}
+101	101		301							"{3: ""Vera shakes the woman's hands off her arm.""}"
+102	102		301							"{3: ""You stare into Vera's eyes, who's waiting for your response. As she does, you search her gaze for a more fitting reason.""}"
+103	103		301							"{3: 'You can\'t help but recall a ""memory diary"" entry that you personally recorded in your terminal. It documents an incident from one night at the temporary medical post, when she fell asleep beside your sickbed.'}"
+104	104		302							{2: '...', 3: '105', 4: 'I should be the one making this decision.', 5: '107'}
+105	105		201							{1: '1', 2: '501239', 3: '4'}
+106	106	109	301							"{1: '1', 2: 'Vera', 3: 'Then speak. A ""temporary Commandant"" is still a Commandant, so make your decision.', 4: '1'}"
+107	107		201							{1: '1', 2: '501239', 3: '13'}
+108	108		301							"{1: '1', 2: 'Vera', 3: ""Hmph, look who's acting high and mighty. You'd better make the right decision, or I'll sew that mouth of yours shut."", 4: '1'}"
+109	109		302							"{2: ""Let's go rescue those two people she mentioned."", 3: '110'}"
+110	110		204							{1: '1', 2: '13'}
+111	111		301				DialogDisable			"{2: 'Vera', 3: ""You'd better—"", 4: '1'}"
+112	112		302							{2: 'I need to do this.', 3: '113'}
+113	113		302							"{2: '""Mission""—she said that F.O.S. person is carrying a mission.', 3: '114', 4: 'She also mentioned the F.O.S. person is traveling with a researcher.', 5: '114'}"
+114	114		302							"{2: ""We're in better condition than they are, so we should provide support."", 3: '115', 4: 'I believe they have a mission more important than just ""delivering materials.""', 5: '118'}"
+115	115		204							{1: '1', 2: '5'}
+116	116		301			DialogEnable				"{2: 'Vera', 3: ""Someone with a gaping hole in their stomach can say such things? I think the painkillers haven't worn off yet."", 4: '1'}"
+117	117	120	301							"{2: 'Vera', 3: ""Those reasons alone won't convince me—why don't you look in the mirror and see that self-righteous expression of yours? I think you just want to play hero, just like when you saved that mother and daughter."", 4: '1'}"
+118	118		204							{1: '1', 2: '5'}
+119	119		301			DialogEnable				"{2: 'Vera', 3: ""Those reasons alone won't convince me—why don't you look in the mirror and see that self-righteous expression of yours? I think you just want to play hero, just like when you saved that mother and daughter."", 4: '1'}"
+120	120		301							{3: 'Vera looks extremely displeased.'}
+121	121		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.4'}
+122	122		201							{1: '2', 2: '501239', 3: '4', 7: '1'}
+123	123		504							{1: '0.3', 2: '2'}
+124	124		203							{1: '2', 2: '0.4', 3: '-250', 5: '-150'}
+125	125		301							{2: 'Vera', 3: '(Just like when you inexplicably rushed out to save me that time.)', 4: '1'}
+126	126		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '0.3'}
+127	127		203						300.0	{1: '2', 2: '0.25'}
+128	128		202							{1: '2', 6: '1'}
+129	129		504							{1: '0', 2: '2'}
+130	130		204							{1: '1'}
+131	131		301							"{2: 'Vera', 3: 'I\'ve met a few people with that ""natural"" sense of duty and justice, and you\'re just like them. I\'m curious, was it your environment that shaped you this way?', 4: '1'}"
+132	132		301				DialogDisable			"{2: 'Vera', 3: ""Tell me, what's your reason for making these choices?"", 4: '1'}"
+133	133		302							"{2: '...I don\'t understand, ""Hound.""', 3: '134'}"
+134	134		302							{2: 'This is also my first time on the surface.', 3: '135'}
+135	135		302							"{2: ""I'm just following what my heart tells me to do."", 3: '136'}"
+136	136		204							{1: '1', 2: '13'}
+137	137		301			DialogEnable				{2: 'Vera', 3: '...Hah, what nauseating, idiotic words.', 4: '1'}
+138	138		204							{1: '1'}
+139	139		301							"{2: 'Vera', 3: ""Well, sorry to disappoint, but we're complete opposites—when I don't have full control of a situation, I never hesitate to assume the absolute worst of others."", 4: '1'}"
+140	140		202							{1: '1'}
+141	141		301							"{3: ""Vera suddenly places her blade against the woman's neck, right over her artery.""}"
+142	142		201							{1: '1', 2: '500624'}
+143	143		301			PanelActor1Shake				{2: 'Mother', 3: '!', 4: '1'}
+144	144		302							{2: '!', 3: '145'}
+145	145		201							{1: '1', 2: '501239'}
+146	146		301							"{1: '1', 2: 'Vera', 3: ""Listen up, little Commandant: if you want to be a hero, you'll have to bear the consequences alone. I'm not willing to carry you—at least not right now."", 4: '1'}"
+147	147		204							{1: '1', 2: '4'}
+148	148		301							"{2: 'Vera', 3: ""Let's split up, but stay in touch. Since you're so brave, follow that mother and daughter. Maybe you really can save that person from F.O.S. College."", 4: '1'}"
+149	149		301							"{2: 'Vera', 3: 'I\'m kind enough to hold off the Corrupted for you, but only for half an hour at most. If you haven\'t brought back any ""good news"" after that time, I\'ll abandon everyone without hesitation.', 4: '1'}"
+150	150		204							{1: '1', 2: '13'}
+151	151		301							{2: 'Vera', 3: 'Oh, and one more thing...', 4: '1'}
+152	152		301							{3: 'Vera fixes a threatening stare on the mother and daughter, then taps her ear pointedly.'}
+153	153		301							"{2: 'Vera', 3: 'I\'ve seen plenty of ""refugees"" over the years who act weak but are actually wolves in sheep\'s clothing. Don\'t try anything clever. If I hear anyone disobeying, I\'ll hunt you down and slaughter you, no matter where you run.', 4: '1'}"
+154	154		201							{1: '1', 2: '500624'}
+155	155		301							{1: '1', 2: 'Mother', 3: '...', 4: '1'}
+156	156		201							{1: '1', 2: '501239', 3: '13'}
+157	157		301							{1: '1', 2: 'Vera', 3: 'Is that clear to everyone?', 4: '1'}
+158	158		202							{1: '1'}
+159	159		306							{1: '1'}
+160	160		301							"{3: ""Vera taps the woman's neck with the flat of her blade, while pointing the other end directly at her temporary Commandant.""}"
+161	161		302							"{2: '...', 3: '162', 4: 'Understood, thanks, ""Hound.""', 5: '162'}"
+162	162		401							{1: '2', 2: '5556'}
+163	163		301							"{3: ""Meanwhile, a bomber aircraft sweeps across the sky overhead, its ominous sound detected by Vera's sensitive auditory module.""}"
+164	164		306							
+165	165		201							{1: '1', 2: '501239', 3: '13'}
+166	166		301							{1: '1', 2: 'Vera', 3: '...Tch, what rotten luck. The Corrupted are already catching up to us.', 4: '1'}
+167	167		204							{1: '1', 2: '4'}
+168	168		301		1		AniZhuanchangBegin			{2: 'Vera', 3: 'What are you waiting for? Everyone move, now!', 4: '1'}

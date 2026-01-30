@@ -1,0 +1,26 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory13.jpg'}
+2	2		201							{1: '1', 2: '500030'}
+3	3		301			DialogEnable				"{1: '1', 2: 'Karenina', 3: ""...Couldn't find much today."", 4: '1'}"
+4	4		301							"{2: 'Karenina', 3: ""It's getting cold anyway, guess I'll head back earlier. Grandpa must still be waiting for me."", 4: '1'}"
+5	5		202							{1: '1', 6: '1'}
+6	6		301							{3: '——————————————————————————'}
+7	7		401							{1: '1', 2: '102'}
+8	8		201							{1: '1', 2: '500035', 4: '400'}
+9	9		201							{1: '2', 2: '500034', 4: '-400'}
+10	10		301							{1: '1', 2: 'Tom', 3: 'Is there nothing valuable here?', 4: '1'}
+11	11		301							{2: 'Katie', 3: 'I only found these rusted parts, but we should be able to exchange them for something!', 4: '2'}
+12	12		301							"{2: 'Tom', 3: ""This weird thing is too heavy, I can't move it... But it doesn't look like it's worth much anyway."", 4: '1'}"
+13	13		301				AniZhuanchangBegin			"{2: 'Katie', 3: ""Let's go before the dummy comes back."", 4: '2'}"
+14	14		202							{1: '1', 2: '2', 6: '1'}
+15	15		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz504.jpg'}
+16	16		301			AniZhuanchangEnd				{2: 'Karenina', 3: 'You two?!'}
+17	17		301							{2: 'Old Man', 3: '...Karen... (Coughs)'}
+18	18		301							"{2: 'Karenina', 3: ""Grandpa? Grandpa! What happened?! ...There's so much blood?!""}"
+19	19		301							"{2: 'Old Man', 3: ""Grandpa... hid the bread... Look... Karen's... Karen's bread... Ha...""}"
+20	20		301							{2: 'Old Man', 3: 'Ugh!'}
+21	21		301							{2: 'Karenina', 3: 'Stop! You two!'}
+22	22		301							{2: 'Old Man', 3: 'Life is invaluable...'}
+23	23		301							{2: 'Karenina', 3: 'You... What did you do to Grandpa?! Give those back!'}
+24	24		301							"{2: 'Tom', 3: ""The crazy old nutter still hasn't kicked the bucket yet? I should've just—""}"
+25	25		301		1		AniZhuanchangBegin			{2: 'Karenina', 3: '(Clenches fists)'}

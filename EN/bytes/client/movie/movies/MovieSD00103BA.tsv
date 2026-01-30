@@ -1,0 +1,137 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				{3: 'The severe winter in the far north approaches on the edge of the night sky, but the snowflakes have yet to arrive.'}
+4	4		301							{3: 'Tonight will usher in Christmas Eve. Everyone who has just completed the recon mission waits in anticipation...'}
+5	5		301							{3: 'Everyone in Gray Raven is looking to enjoy the festivity in the air.'}
+6	6		301							{3: 'They also hope that everything in the plan can go smoothly.'}
+7	7		301							{3: 'This is their first Christmas Eve.'}
+8	8		201							{1: '1', 2: '1031001'}
+9	9		301							{1: '1', 2: 'Liv', 3: 'Commandant...!', 4: '1'}
+10	10		302							{2: 'What?', 3: '11', 4: 'Liv?', 5: '11'}
+11	11		301							{2: 'Liv', 3: 'Commandant, may I take a moment of your time? There is something I want to discuss with you.', 4: '1'}
+12	12		302							{2: 'O-of course...', 3: '13'}
+13	13		301							{2: 'Liv', 3: 'Thank you, Commandant!', 4: '1'}
+14	14		301							"{2: 'Liv', 3: ""Honestly, I'm not quite sure..."", 4: '1'}"
+15	15		204							{1: '1', 2: '14'}
+16	16		301							{2: 'Liv', 3: 'But everyone has been... acting weird toward me recently...', 4: '1'}
+17	17		202							{1: '1', 6: '1'}
+18	18		301							{3: '(Static)'}
+19	19		302							"{2: ""It's the sound of the encrypted comm link."", 3: '20', 4: 'One second. I need to step away for a moment.', 5: '20'}"
+20	20		201							{1: '1', 2: '1021001'}
+21	21		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+22	22		301							{1: '1', 2: 'Lucia', 3: 'Commandant, is everything going okay?', 4: '1'}
+23	23		301							{2: 'Lucia', 3: 'Someone needs to talk with you? Is it Liv...?', 4: '1'}
+24	24		301							{2: 'Lucia', 3: '...The plan was for you to take the initiative and find her. The next step is the most crucial part.', 4: '1'}
+25	25		204							{1: '1', 2: '4'}
+26	26		301							{2: 'Lucia', 3: 'Plan B, Commandant. Take Liv to the target location to begin the first phase.', 4: '1'}
+27	27		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+28	28		202							{1: '1', 6: '1'}
+29	29		301							{3: 'Beep—'}
+30	30		201							{1: '1', 2: '1031001'}
+31	31		301							{1: '1', 2: 'Liv', 3: 'Commandant?', 4: '1'}
+32	32		302							"{2: ""I'm back."", 3: '33', 4: 'Sorry for the back.', 5: '33'}"
+33	33		301							{2: 'Liv', 3: 'As I was saying...', 4: '1'}
+34	34		301							{2: 'Liv', 3: 'It seems like everyone is avoiding me.', 4: '1'}
+35	35		302							{2: 'What makes you say that?', 3: '36', 4: 'You must be mistaken...', 5: '36'}
+36	36		204							{1: '1', 2: '14', 4: '1'}
+37	37		301							"{2: 'Liv', 3: ""I'm not! I have proof!"", 4: '1'}"
+38	38		301							"{2: 'Liv', 3: ""Lucia's been running around a lot recently. I tried saying hi to her several times, but she ran away like she was avoiding me."", 4: '1'}"
+39	39		301							"{2: 'Liv', 3: ""Lee did the same thing. Whenever I used to go to Lee to repair my attachments, he'd always patiently share all kinds of ways to help maintain my equipment."", 4: '1'}"
+40	40		301							"{2: 'Liv', 3: ""But recently, he's always saying he's too busy. It's like he doesn't even want to see me..."", 4: '1'}"
+41	41		301							"{2: 'Liv', 3: ""So I've been wondering if everyone is upset with me because I've been delaying our mission."", 4: '1'}"
+42	42		302							{2: 'Or are they really just busy?', 3: '43'}
+43	43		301							{2: 'Liv', 3: 'You can be honest with me, Commandant.', 4: '1'}
+44	44		301							{2: 'Liv', 3: 'I know I have a lot of room for improvement. I need to try harder and learn more.', 4: '1'}
+45	45		302							"{2: ""You're always working hard."", 3: '46'}"
+46	46		301							{2: 'Liv', 3: 'Really...?', 4: '1'}
+47	47		204							{1: '1', 2: '6'}
+48	48		301							"{2: 'Liv', 3: ""I really like everyone in Gray Raven. So, I'm afraid of losing you all..."", 4: '1'}"
+49	49		302							"{2: ""I think it's best to speak with the others directly."", 3: '50'}"
+50	50		204							{1: '1', 2: '1'}
+51	51		301							{2: 'Liv', 3: 'Understood, Commandant. Thank you.', 4: '1'}
+52	52		204							{1: '1'}
+53	53		301							{2: 'Liv', 3: '...Also. I have something else I wanted to ask of you.', 4: '1'}
+54	54		302							{2: 'Oh?', 3: '55'}
+55	55		204							{1: '1', 2: '6'}
+56	56		301							"{2: 'Liv', 3: ""I hope you continue to keep an eye on me. I want you to give me guidance whenever I make a mistake, so I can show you that I'm getting stronger."", 4: '1'}"
+57	57		302							"{2: 'Got it.', 3: '58', 4: ""That's what I'm here for."", 5: '58'}"
+58	58		301							{2: 'Liv', 3: 'Okay... Thank you, Commandant, for finding some time in your busy schedule to speak with me.', 4: '1'}
+59	59		302							"{2: 'Liv, see the buildings around us?', 3: '60', 4: ""Why don't we go for a walk to clear your mind?"", 5: '60'}"
+60	60		204							{1: '1', 2: '7'}
+61	61		301							"{2: 'Liv', 3: ""Huh? Um, yeah... The architecture is really different here. I hadn't really noticed."", 4: '1'}"
+62	62		204							{1: '1'}
+63	63		301							{2: 'Liv', 3: '...But there are still Corrupted roaming around...', 4: '1'}
+64	64		302							{2: 'I can relax with you by my side.', 3: '65'}
+65	65		204							{1: '1', 2: '6'}
+66	66		301							"{2: 'Liv', 3: ""I'll keep you safe, Commandant."", 4: '1'}"
+67	67		301							{2: 'Liv', 3: 'And... with you here... I can relax, too.', 4: '1'}
+68	68		302							{2: 'Impromptu Adventure Team, move out!', 3: '69', 4: 'Late night adventure time!', 5: '69'}
+69	69		204							{1: '1', 2: '7'}
+70	70		301				AniZhuanchangBegin			{2: 'Liv', 3: 'Huh?!', 4: '1'}
+71	71		202							{1: '1', 6: '1'}
+72	72		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory106.png'}
+73	73		301			AniZhuanchangEnd				{3: '(Static)'}
+74	74		201							{1: '1', 2: '1021001'}
+75	75		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+76	76		301							{1: '1', 2: 'Lucia', 3: 'Are you ready yet over there, Lee?', 4: '1'}
+77	77		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+78	78		202							{1: '1', 6: '1'}
+79	79		301							"{2: 'Lee', 3: ""We've hit a snag. Who came up with using White Kuroro as a contingency plan?""}"
+80	80		301							{3: '(Static)'}
+81	81		201							{1: '1', 2: '1021001', 4: '-400'}
+82	82		201							{1: '2', 2: '1041001', 3: '2', 4: '400'}
+83	83		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+84	84		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+85	85		301							"{1: '1', 2: 'Nanami', 3: ""Super-duper cute Nanami! That's who! Since it SOMEHOW isn't snowing in December, how else are we gonna create such beautiful snow? The plan's perfect!"", 4: '2'}"
+86	86		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+87	87		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+88	88		202							{1: '1', 2: '2', 6: '1'}
+89	89		301							"{2: 'Lee', 3: ""I should've known...""}"
+90	90		201							{1: '1', 2: '1021001', 4: '-400'}
+91	91		201							{1: '2', 2: '1041001', 3: '2', 4: '400'}
+92	92		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+93	93		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+94	94		301							"{1: '1', 2: 'Nanami', 3: ""Aren't I the best? Hehehe!"", 4: '2'}"
+95	95		301							{2: 'Lucia', 3: 'Need help, Lee?', 4: '1'}
+96	96		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+97	97		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+98	98		202							{1: '1', 2: '2', 6: '1'}
+99	99		301							"{2: 'Lee', 3: ""Just a few minor issues. Nothing that'll get in my way. The snow will fall right on cue.""}"
+100	100		201							{1: '1', 2: '1041001', 3: '1'}
+101	101		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+102	102		301							"{1: '1', 2: 'Nanami', 3: ""Oh, hey! Didn't you ask Karenina for help, too?"", 4: '1'}"
+103	103		204							{1: '1', 2: '2'}
+104	104		301							"{2: 'Nanami', 3: ""I wanna go play with Karenina. I'm bored here. I wanna see if there's anything new and exciting going on over there!"", 4: '1'}"
+105	105		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+106	106		202							{1: '1', 6: '1'}
+107	107		301							{3: 'Beep—'}
+108	108		301							{2: 'Lee', 3: '(Sighs) Finally, I can work in peace.'}
+109	109		301							{3: '(Static)'}
+110	110		201							{1: '1', 2: '1111001', 3: '5'}
+111	111		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+112	112		301							"{1: '1', 2: 'Karenina', 3: ""Hey! You guys! Don't pass your problems off to me—!"", 4: '1'}"
+113	113		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+114	114		202							{1: '1', 6: '1'}
+115	115		301							{2: 'Lee', 3: 'Someone as tiny as Nanami should be easy to take care of with your long-ranged arsenal, right?'}
+116	116		201							{1: '1', 2: '1111001', 3: '5'}
+117	117		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+118	118		301							"{1: '1', 2: 'Karenina', 3: ""Dang it...! You little—! Fine... I'll think of a way to get out of this mess...!"", 4: '1'}"
+119	119		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+120	120		202							{1: '1', 6: '1'}
+121	121		301							"{2: 'Nanami', 3: ""Karenina! Karenina! Your favorite lil' Nanami is here to play!""}"
+122	122		201							{1: '1', 2: '1111001'}
+123	123		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+124	124		301							"{1: '1', 2: 'Karenina', 3: ""How'd you get here so fast?! Lucia, I gotta terminate the call. I'll contact you when I'm up to bat—"", 4: '1'}"
+125	125		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+126	126		202							{1: '1', 6: '1'}
+127	127		301							{3: 'Beep—'}
+128	128		201							{1: '1', 2: '1021001'}
+129	129		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+130	130		301							"{1: '1', 2: 'Lucia', 3: ""...Well, Lee, the commandant is near the scheduled location. It's your time to shine."", 4: '1'}"
+131	131		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+132	132		202							{1: '1', 6: '1'}
+133	133		301							{2: 'Lee', 3: 'Roger. Time to turn this place into a winter wonderland with some Kuroro Cog snow. In a sense, I guess it really does need to shine.'}
+134	134		201							{1: '1', 2: '1021001'}
+135	135		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+136	136		301		1		AniZhuanchangBegin			{1: '1', 2: 'Lucia', 3: 'I will relay the sit rep in each area. Hurry up.', 4: '1'}

@@ -1,0 +1,321 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory616.jpg'}
+2	2		401							{1: '1', 2: '249'}
+3	3		301			DialogEnable				{3: 'The sea surface not far from Copperfield Aquarium.'}
+4	4		401							{1: '2', 2: '907'}
+5	5		301							{3: 'The sky hangs dark and heavy as a massive storm brews on the horizon. A vessel tears through the gloomy clouds.'}
+6	6		201							{1: '1', 2: '500168', 3: '10'}
+7	7		301							"{1: '1', 2: 'Vera', 3: ""...Does it really take this much effort to locate an aquarium's drainage outlets?"", 4: '1'}"
+8	8		202							{1: '1', 6: '1'}
+9	9		201							{1: '1', 2: '500336', 3: '4'}
+10	10		301							"{1: '1', 2: 'Noctis', 3: ""Huh? This hellhole hasn't seen maintenance in ages! The fact I even found this place at all is pretty damn impressive!"", 4: '1'}"
+11	11		203							{1: '1', 2: '0.3', 3: '400'}
+12	12		201							{1: '2', 2: '500328', 4: '-400'}
+13	13		301							{1: '1', 2: 'No. 21', 3: 'I smelled it... the drainage... over there.', 4: '2'}
+14	14		204							{1: '1', 2: '3'}
+15	15		301							{2: 'Noctis', 3: '...', 4: '1'}
+16	16		204							{1: '2', 2: '4'}
+17	17		301							"{2: 'No. 21', 3: ""Gray Raven Commandant's intelligence is very accurate."", 4: '2'}"
+18	18		301							{2: 'Noctis', 3: '...Hey!', 4: '1'}
+19	19		202							{1: '1', 2: '2', 6: '1'}
+20	20		201							{1: '1', 2: '500168', 3: '10'}
+21	21		301							"{1: '1', 2: 'Vera', 3: ""Don't make such a fuss."", 4: '1'}"
+22	22		301							{2: 'Vera', 3: 'Have you checked the Punishing concentration?', 4: '1'}
+23	23		202							{1: '1', 6: '1'}
+24	24		201							{1: '1', 2: '500336', 3: '4'}
+25	25		301							{1: '1', 2: 'Noctis', 3: 'Hold on a second... Whoa, the Punishing concentration here is way higher than in the waters we just came through.', 4: '1'}
+26	26		301							{2: 'Noctis', 3: 'Not bad for the Gray Raven Commandant.', 4: '1'}
+27	27		202							{1: '1', 6: '1'}
+28	28		201							{1: '1', 2: '500168'}
+29	29		301							"{1: '1', 2: 'Vera', 3: ""Enough talk. Let's get off the boat."", 4: '1'}"
+30	30		202							{1: '1'}
+31	31		301				AniZhuanchangBegin			{3: 'The speedboat bobs precariously as it pulls up to the beach.'}
+32	32		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory614.jpg'}
+33	33		402							{1: '907'}
+34	34		301			AniZhuanchangEnd	DialogDisable			{3: 'Turning the corner around a sand dune, they spot a drainage outlet, taller than a person, oozing a small patch of the Red Tide that practically snarls at them.'}
+35	35		401							{1: '2', 2: '2920'}
+36	36		501			RImgBg1Shake			300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '3'}
+37	37		401							{1: '2', 2: '5321'}
+38	38		401						300.0	{1: '2', 2: '2921'}
+39	39		201							{1: '1', 2: '500336', 3: '4'}
+40	40		301			DialogEnable				{1: '1', 2: 'Noctis', 3: '...Those Ascendants are as tasteless as always. Did they really breed all these?', 4: '1'}
+41	41		202							{1: '1'}
+42	42		301							{3: 'Noctis casually eliminates a still-writhing Hetero-Creature, a look of pure disgust on his face.'}
+43	43		201							{1: '1', 2: '500168', 5: '-50'}
+44	44		301							"{1: '1', 2: 'Vera', 3: ""...That's not even the half of it."", 4: '1'}"
+45	45		301							"{3: ""The red-haired Construct kneels, examining the Hetero-Creature's corpse.""}"
+46	46		301							"{2: 'Vera', 3: 'This isn\'t a Hetero-Creature. This ""thing"" used to be human.', 4: '1'}"
+47	47		202							{1: '1'}
+48	48		301							"{3: ""Scraps of fabric, not yet completely corrupted by the Red Tide, cling to the mass of flesh—likely what's left of some unlucky Construct, or maybe just some poor soul who wandered in.""}"
+49	49		201							{1: '1', 2: '500328', 3: '4'}
+50	50		301							{1: '1', 2: 'No. 21', 3: '...Ascendants, annoying.', 4: '1'}
+51	51		202							{1: '1', 6: '1'}
+52	52		201							{1: '1', 2: '500168'}
+53	53		301							{1: '1', 2: 'Vera', 3: 'Keep your eyes peeled. Given the heavy Punishing concentration around here, Ascendants are probably still lurking nearby.', 4: '1'}
+54	54		202							{1: '1', 6: '1'}
+55	55		201							{1: '1', 2: '500336'}
+56	56		301							"{1: '1', 2: 'Noctis', 3: ""That's perfect! Just what I need to warm up these fists!"", 4: '1'}"
+57	57		202							{1: '1', 6: '1'}
+58	58		201							{1: '1', 2: '500168'}
+59	59		301							{1: '1', 2: 'Vera', 3: 'Mission first. Get the Omega Weapons deployed near the sea surface outlet.', 4: '1'}
+60	60		204							{1: '1', 2: '10'}
+61	61		301							"{2: 'Vera', 3: ""Those two from Strike Hawk better pick up the pace. I'm afraid..."", 4: '1'}"
+62	62		301							{3: 'She narrows her eyes, sensing the agitated Punishing Virus in the air.'}
+63	63		301				AniZhuanchangBegin			"{2: 'Vera', 3: ""I'm afraid the Ascendants have already gotten wind of us the moment we hit the beach."", 4: '1'}"
+64	64		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory937.png'}
+65	65		401						2000.0	{1: '1', 2: '36'}
+66	66		401							{1: '1', 2: '398'}
+67	67		201							{1: '1', 2: '500514'}
+68	68		301			AniZhuanchangEnd				"{1: '1', 2: 'Lithos', 3: ""...Mister, it's people from Babylonia. They've discovered the abandoned testing grounds."", 4: '1'}"
+69	69		202							{1: '1', 6: '1'}
+70	70		201							{1: '1', 2: '500305'}
+71	71		301							{1: '1', 2: 'Vonnegut', 3: '...', 4: '1'}
+72	72		202							{1: '1'}
+73	73		301							{3: 'On the monitor, the red-haired Construct stares provocatively at the micro-camera—clearly, tracking down such electronic devices is no sweat for Babylonia personnel.'}
+74	74		201							{1: '1', 2: '500514'}
+75	75		301							{1: '1', 2: 'Lithos', 3: 'Mister, should we drive them away?', 4: '1'}
+76	76		203							{1: '1', 2: '0.35', 3: '400'}
+77	77		201							{1: '2', 2: '500305', 4: '-400'}
+78	78		301							{1: '1', 2: 'Vonnegut', 3: '...How is the fusion of Chiko and the Hetero-Humanoid progressing?', 4: '2'}
+79	79		301							"{2: 'Lithos', 3: ""The incubation isn't complete yet. The progress has been smooth so far, but it'll take more time."", 4: '1'}"
+80	80		301							"{2: 'Vonnegut', 3: ""Open the floodgates. Unleash the Red Tide that's built up at the bottom of the abandoned testing grounds."", 4: '2'}"
+81	81		204							{1: '1', 2: '2'}
+82	82		301							{2: 'Lithos', 3: '...Mister?', 4: '1'}
+83	83		301							{3: 'Lithos is rarely ever stumped.'}
+84	84		301							"{2: 'Lithos', 3: ""Chiko's incubation isn't complete yet. She's still in the storage tank on the lower third level."", 4: '1'}"
+85	85		301							"{2: 'Lithos', 3: ""...What I'm trying to say is, if we release the Red Tide, the experiment might fail."", 4: '1'}"
+86	86		301							"{2: 'Vonnegut', 3: ""Once those floodgates are open, take Chiko and head for the backup facility on the island to keep going. I've already left enough materials there."", 4: '2'}"
+87	87		301							{2: 'Lithos', 3: 'Mister, what about you...', 4: '1'}
+88	88		301							"{2: 'Vonnegut', 3: ""I'll stay behind to handle the storage tank situation. Once I'm done, I'll catch up with you at the island."", 4: '2'}"
+89	89		301							{2: 'Lithos', 3: '...I see.', 4: '1'}
+90	90		202							{1: '1', 2: '2'}
+91	91		301							{3: 'He obediently leaves the monitoring room.'}
+92	92		301							"{3: ""Vonnegut stands in the empty room, his eyes clouded with thought. He flips through the surveillance feeds, watching the Gray Raven Commandant and Lucia's group close in on Bianca's location.""}"
+93	93		201							{1: '1', 2: '500305'}
+94	94		301							{1: '1', 2: 'Vonnegut', 3: '...', 4: '1'}
+95	95		301							{2: 'Vonnegut', 3: 'Gray Raven Commandant... 【kuroname】.', 4: '1'}
+96	96		301							{3: 'He murmurs the name under his breath.'}
+97	97		301				AniZhuanchangBegin			"{2: 'Vonnegut', 3: 'The disappearance of the ""Tower""... could it be because of you?', 4: '1'}"
+98	98		202							{1: '1', 6: '1'}
+99	99		401						2000.0	{1: '1', 2: '36'}
+100	100		401							{1: '1', 2: '5053'}
+101	101		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1283.jpg'}
+102	102		401							{1: '2', 2: '908'}
+103	103		301			AniZhuanchangEnd	DialogDisable			{3: 'The purple-haired Ascendant drifts like a phantom through this graveyard of their own making.'}
+104	104		401							{1: '2', 2: '2920'}
+105	105		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1282.jpg', 3: '0', 4: '1', 5: '1.5'}
+106	106		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1282.jpg'}
+107	107		205							{1: '999'}
+108	108		301			DialogEnable				{3: 'He expertly weaves through the tight spots, with the creepy Hetero-Creatures acting like docile kittens at his command.'}
+109	109		201							{1: '1', 2: '500513'}
+110	110		301							{1: '1', 2: 'Lithos', 3: '...Here.', 4: '1'}
+111	111		301							{3: 'He comes to a halt right over the massive Red Tide storage tank.'}
+112	112		301							"{2: 'Lithos', 3: ""Hmm? Well, that's a new one..."", 4: '1'}"
+113	113		301							"{3: ""He narrows his eyes at the eerie tentacles poking out of the storage tank's sides, a slight frown creasing his brow.""}"
+114	114		301							"{2: 'Lithos', 3: ""No matter, though... it won't derail what we're doing now."", 4: '1'}"
+115	115		301							{2: 'Lithos', 3: 'Alright then... come along, Miss Monster.', 4: '1'}
+116	116		202							{1: '1'}
+117	117		401							{1: '2', 2: '928'}
+118	118		301							"{3: ""The instruments around the storage tank hum along steadily. Everything's playing right into his and Mister's hands.""}"
+119	119		402							{1: '928'}
+120	120		402							{1: '908'}
+121	121		401							{1: '2', 2: '690'}
+122	122		301						500.0	"{3: 'The ""Paper Crane"" execution chair morphs into a huge mechanical contraption, effortlessly lifting the bizarre humanoid figure right out of the storage tank.'}"
+123	123		201							{1: '1', 2: '501286', 3: '8'}
+124	124		301							{1: '1', 2: 'Chiko', 3: '...', 4: '1'}
+125	125		202							{1: '1', 6: '1'}
+126	126		201							{1: '1', 2: '500513'}
+127	127		301				DialogDisable			"{1: '1', 2: 'Lithos', 3: ""It's okay. It's almost over."", 4: '1'}"
+128	128		202							{1: '1', 6: '1'}
+129	129		401							{1: '2', 2: '1507'}
+130	130		401						1200.0	{1: '2', 2: '1507'}
+131	131		401						1200.0	{1: '2', 2: '1507'}
+132	132		301			DialogEnable				"{3: ""His voice is gentle, as if he's trying to soothe the bizarre, unconscious humanoid figure. Paper Crane lifts her up and trails slowly behind Lithos as they press onward.""}"
+133	133		306							{1: '1'}
+134	134		301							"{3: ""There's an underwater passage leading directly to a nearby island—a route Mister established long ago as a backup plan, meticulously prepared in advance.""}"
+135	135		301							{3: 'Now, as long as...'}
+136	136		306							
+137	137		201							{1: '1', 2: '501286'}
+138	138		401							{1: '2', 2: '5815'}
+139	139		301			PanelActor1Shake				{1: '1', 2: 'Chiko', 3: '————', 4: '1'}
+140	140		202							{1: '1', 6: '1'}
+141	141		301							{3: 'Chiko suddenly starts flailing wildly.'}
+142	142		201							{1: '1', 2: '500513'}
+143	143		301							{1: '1', 2: 'Lithos', 3: '...Chiko?', 4: '1'}
+144	144		202							{1: '1', 6: '1'}
+145	145		401							{1: '2', 2: '1506'}
+146	146		301							"{3: ""The execution chair reacts quicker than Lithos can, clamping down hard on Chiko's limbs as metal bits dig deep into her flesh.""}"
+147	147		201							{1: '1', 2: '500513'}
+148	148		301							{1: '1', 2: 'Lithos', 3: 'Chiko...', 4: '1'}
+149	149		202							{1: '1'}
+150	150		301							"{3: ""Lithos moves closer to Chiko to figure out what went sideways. He'd already pared down this Construct's memories; that should have—""}"
+151	151		201							{1: '1', 2: '501286'}
+152	152		401							{1: '2', 2: '5815'}
+153	153		301			PanelActor1Shake				{1: '1', 2: 'Chiko', 3: '————', 4: '1'}
+154	154		202							{1: '1'}
+155	155		301							{3: 'The aberrant humanoid seems to have completely lost its mind.'}
+156	156		401							{1: '2', 2: '5530'}
+157	157		301			RImgBg1Shake				"{3: ""She thrashes wildly, ignoring Paper Crane's restraints. With a grotesque twist of her body and at the cost of chunks of her own flesh, she breaks free from the execution chair.""}"
+158	158		201							{1: '1', 2: '500513'}
+159	159		301							{1: '1', 2: 'Lithos', 3: '...Chiko, over here. Follow me.', 4: '1'}
+160	160		202							{1: '1'}
+161	161		301							{3: 'Just like how he handles other Hetero-Creatures, Lithos tries to get close to Chiko.'}
+162	162		201							{1: '1', 2: '501286'}
+163	163		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '3'}
+164	164		401							{1: '2', 2: '5815'}
+165	165		301			PanelActor1Shake				{1: '1', 2: 'Chiko', 3: '!!!', 4: '1'}
+166	166		202							{1: '1'}
+167	167		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+168	168		301							"{3: ""Lithos immediately unleashes countless Red Tide strands that coil around him like a toxic cloud. But Chiko, now merged with a Hetero-Humanoid, clearly isn't fazed by these attacks.""}"
+169	169		301							"{3: ""She aggressively closes in on the purple-haired Ascendant, slashing at him without a moment's hesitation.""}"
+170	170		401							{1: '2', 2: '10022001'}
+171	171		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '3'}
+172	172		201							{1: '1', 2: '500513'}
+173	173		203							{1: '1', 2: '0.2', 3: '300'}
+174	174		301							{1: '1', 2: 'Lithos', 3: '...', 4: '1'}
+175	175		301							{3: 'Lithos curls up in the execution chair. It envelops him like a custom-made cage, keeping him perfectly protected.'}
+176	176		301							{2: 'Lithos', 3: 'Where... did things go sideways?', 4: '1'}
+177	177		202							{1: '1'}
+178	178		301							"{3: 'Chiko before him clearly has no ""self-consciousness,"" but why would she ""awaken"" at this moment and develop desires to ""break free"" and ""attack""?'}"
+179	179		401							{1: '2', 2: '807'}
+180	180		201							{1: '1', 2: '501286', 4: '-600'}
+181	181		203						250.0	{1: '1', 2: '0.3', 3: '600'}
+182	182		202							{1: '1'}
+183	183		301							"{1: '1', 3: 'After her strike misses, Chiko gives up her attack and vanishes in a flash. Her eyes remain vacant, as if she\'s performing all these actions ""unconsciously.""'}"
+184	184		202							{1: '1'}
+185	185		201							{1: '1', 2: '500513'}
+186	186		301							"{1: '1', 2: 'Lithos', 3: ""...Why can't you just be a good little test subject and play along?"", 4: '1'}"
+187	187		301							"{2: 'Lithos', 3: ""Transcending death... isn't that humanity's pursuit?"", 4: '1'}"
+188	188		202							{1: '1'}
+189	189		401							{1: '2', 2: '1507'}
+190	190		301				AniZhuanchangBegin			{3: 'The purple-haired Ascendant lets out a soft sigh as his Paper Crane, doing exactly what he wants, takes off after Chiko in the direction she ran.'}
+191	191		502						500.0	{1: 'DialogDisable'}
+192	192		101				DialogDisable			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory612.jpg'}
+193	193		401							{1: '1', 2: '297'}
+194	194		107			AniZhuanchangEnd				"{1: ""Near the Aquarium's Drainage Outlet""}"
+195	195		301							"{3: ""Near the Aquarium's Drainage Outlet""}"
+196	196		108							{1: '1'}
+197	197		301			DialogEnable				{3: 'No. 21 squints and cocks her head, listening hard for something after taking out the third mini-surveillance camera.'}
+198	198		201							{1: '1', 2: '500168'}
+199	199		301							{1: '1', 2: 'Vera', 3: 'No. 21?', 4: '1'}
+200	200		202							{1: '1', 6: '1'}
+201	201		201							{1: '1', 2: '500328'}
+202	202		301							{1: '1', 2: 'No. 21', 3: 'Captain, I hear something over there.', 4: '1'}
+203	203		202							{1: '1', 6: '1'}
+204	204		201							{1: '1', 2: '500168'}
+205	205		301							{1: '1', 2: 'Vera', 3: '...Back up.', 4: '1'}
+206	206		202							{1: '1'}
+207	207		401							{1: '2', 2: '5814'}
+208	208		301							{3: 'The three slowly back away. Five minutes later, a thin stream of Red Tide oozes out of the massive drainage outlet, slithering forward with a thick, wriggling movement.'}
+209	209		201							{1: '1', 2: '500336', 3: '3'}
+210	210		301							{1: '1', 2: 'Noctis', 3: '...', 4: '1'}
+211	211		202							{1: '1', 6: '1'}
+212	212		201							{1: '1', 2: '500168'}
+213	213		301							{1: '1', 2: 'Vera', 3: '...', 4: '1'}
+214	214		202							{1: '1', 6: '1'}
+215	215		201							{1: '1', 2: '500336'}
+216	216		301							"{1: '1', 2: 'Noctis', 3: ""Hahahaha!! You're an idiot, 21! This is what you heard?"", 4: '1'}"
+217	217		202							{1: '1', 6: '1'}
+218	218		201							{1: '1', 2: '500168'}
+219	219		301							{1: '1', 2: 'Vera', 3: 'No... wait...', 4: '1'}
+220	220		202							{1: '1'}
+221	221		401							{1: '2', 2: '5812', 3: '0.5'}
+222	222		301							{3: 'A faint but thunder-like echo rumbles from deep inside the pipes.'}
+223	223		201							{1: '1', 2: '500168', 3: '5'}
+224	224		301			RImgBg1Shake				{1: '1', 2: 'Vera', 3: 'FALL BACK!', 4: '1'}
+225	225		202							{1: '1'}
+226	226		401							{1: '2', 2: '807'}
+227	227		301							{3: 'Vera grabs No. 21 and scrambles up the hill above the drainage outlet.'}
+228	228		401							{1: '2', 2: '5812', 3: '1'}
+229	229		301			RImgBg1Shake				"{3: ""In a flash, with a deafening roar, the Red Tide surges forward. It's like a dragon diving into the sea, swallowing everything in its sight.""}"
+230	230		201							{1: '1', 2: '500336', 3: '4'}
+231	231		301							{1: '1', 2: 'Noctis', 3: '...****.', 4: '1'}
+232	232		301							"{2: 'Noctis', 3: ""Damn, they're really going all out just to take us down? We..."", 4: '1'}"
+233	233		202							{1: '1'}
+234	234		301							{3: 'He just stares, dumbfounded, at the Red Tide gushing below.'}
+235	235		201							{1: '1', 2: '500336', 3: '4'}
+236	236		301							"{1: '1', 2: 'Noctis', 3: ""We're really gonna clear this place out... with the handful of Omega Weapons we brought?"", 4: '1'}"
+237	237		202							{1: '1', 6: '1'}
+238	238		201							{1: '1', 2: '500168'}
+239	239		301							"{1: '1', 2: 'Vera', 3: ""...Prioritize sealing off this drainage outlet. Something big must have gone down inside the aquarium. The Ascendants wouldn't just ditch this hideout to deal with us."", 4: '1'}"
+240	240		301							{2: 'Vera', 3: 'Noctis, get around back and bring the boat over here. No. 21, find the floodgates.', 4: '1'}
+241	241		301							{3: 'The red-haired Construct stares down at the Red Tide below, her expression completely cold. Her terminal crackles with a cacophony of static—'}
+242	242		401							{1: '2', 2: '4553'}
+243	243		301				DialogDisable			{2: 'Vera', 3: 'Can you hear me? Gray Raven Commandant?', 4: '1'}
+244	244		203							{1: '1', 2: '0.3', 3: '-610', 6: '1'}
+245	245		509						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 2: '2'}
+246	246		302							{2: '...', 3: '247', 4: '(Raises the terminal)', 5: '247'}
+247	247		301			DialogEnable				{3: 'The signal seems intermittent, and your voice on the other end fades in and out.'}
+248	248		302							{2: 'I... hear... you...', 3: '249', 4: 'Ve... ra?', 5: '249'}
+249	249		301							{2: 'Vera', 3: 'The floodgates of the drainage outlets are open. Have you guys gone head-to-head with the Ascendants yet?', 4: '1'}
+250	250		302							{2: '...What?', 3: '251', 4: 'Not... yet...', 5: '251'}
+251	251		301							"{2: 'Vera', 3: ""...Alright, to cut to the chase, we're deploying all our Omega Weapons near the drainage outlets. If there are any floodgates, we'll try to shut them."", 4: '1'}"
+252	252		301							"{2: 'Vera', 3: ""But right now, even if the three of us dove into the sea with Omega Weapons strapped on, we couldn't halt the Red Tide Influx."", 4: '1'}"
+253	253		302							{2: 'Ka... mui...', 3: '254', 4: 'Ca... mu...', 5: '254'}
+254	254		301							"{2: 'Vera', 3: ""We're a good ways off from the aquarium, and the Punishing Virus is scrambling the location signals. It's going to take them a while to track us down here."", 4: '1'}"
+255	255		204							{1: '1', 2: '1'}
+256	256		301							"{2: 'Vera', 3: ""You've really thrown me a curveball, Gray Raven Commandant."", 4: '1'}"
+257	257		302							{2: 'Be... careful...', 3: '258', 4: 'Stay safe...', 5: '258'}
+258	258		204							{1: '1'}
+259	259		301							"{2: 'Vera', 3: ""Doesn't matter. Cerberus won't fold over this."", 4: '1'}"
+260	260		301							{2: 'Vera', 3: 'With the Red Tide released, the Ascendants might go all-out or try to escape. You should—', 4: '1'}
+261	261		202							{1: '1', 6: '1'}
+262	262		510							{1: '2'}
+263	263		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+264	264		401							{1: '2', 2: '4553'}
+265	265		401							{1: '2', 2: '4919'}
+266	266		301							"{3: ""The Red Tide surges forward, and the Punishing Virus' interference cuts off the communication.""}"
+267	267		201							{1: '1', 2: '500168', 3: '13'}
+268	268		301							{1: '1', 2: 'Vera', 3: '...Heh.', 4: '1'}
+269	269		301							{3: 'Vera smirks at the ever-present danger. With a flick of her wrist, she tucks the terminal away as if the threat means nothing to her.'}
+270	270		203							{1: '1', 2: '0.25', 3: '-400'}
+271	271		201							{1: '2', 2: '500328', 3: '4', 4: '400'}
+272	272		301							"{1: '1', 2: 'No. 21', 3: ""Captain, someone's sabotaged the floodgate controls."", 4: '2'}"
+273	273		301							"{2: 'Vera', 3: ""I knew it... Let's move, we need to meet up with Noctis."", 4: '1'}"
+274	274		301							"{2: 'No. 21', 3: ""These few Omega Weapons won't be enough to block the water outlets..."", 4: '2'}"
+275	275		301							"{2: 'Vera', 3: ""It's okay."", 4: '1'}"
+276	276		202							{1: '1', 2: '2'}
+277	277		301							{3: 'She manages a bitter smile, her gaze fixed on the Red Tide as it floods the sea, concern clouding her eyes.'}
+278	278		201							{1: '1', 2: '500168', 3: '1'}
+279	279		301				AniZhuanchangBegin			"{1: '1', 2: 'Vera', 3: ""Don't we... still have the boat?"", 4: '1'}"
+280	280		202							{1: '1', 6: '1'}
+281	281		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory621.jpg', 2: '2'}
+282	282		201							{1: '18', 2: '500168', 7: '1'}
+283	283		301			AniZhuanchangEnd				{1: '1', 2: 'Vera', 3: 'With the Red Tide released, the Ascendants might go all-out or try to escape. You should—', 4: '18'}
+284	284		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+285	285		401							{1: '1', 2: '226'}
+286	286		202							{1: '18', 6: '1'}
+287	287		401							{1: '2', 2: '4553'}
+288	288		301							{3: 'The transmission suddenly cuts out.'}
+289	289		302							{2: '...', 3: '290'}
+290	290		201							{1: '1', 2: '500166', 3: '5'}
+291	291		301							"{1: '1', 2: 'Lucia', 3: ""Commandant, what's the situation with Cerberus?"", 4: '1'}"
+292	292		302							{2: 'The Red Tide has been released from the drainage outlets. The Ascendants might try to escape or launch an attack.', 3: '293'}
+293	293		301							"{2: 'Lucia', 3: ""But we haven't run into any Ascendants yet..."", 4: '1'}"
+294	294		302							"{2: ""They're probably watching us through surveillance or something..."", 3: '295'}"
+295	295		202							{1: '1', 6: '1'}
+296	296		306							{1: '1'}
+297	297		401							{1: '2', 2: '4771'}
+298	298		301				DialogDisable			"{3: ""Inside the aquarium's massive tank, several bionic fish swim silently.""}"
+299	299		402							{1: '4771'}
+300	300		306							
+301	301		302							"{2: ""We're currently in a corridor on the lower second level."", 3: '302'}"
+302	302		301			DialogEnable				"{3: ""Lulu hasn't been lying—at least not about the directions.""}"
+303	303		301							"{3: ""She has successfully led your group around most of the Red Tide contamination and collapsed areas on the lower second level, bringing you to the lower third level's entrance.""}"
+304	304		302							"{2: ""If we go any deeper, we'll probably lose contact with Babylonia..."", 3: '305'}"
+305	305		301							{3: 'Every single transmission from Bianca and Chiko cut off after they went into the lower second level.'}
+306	306		302							"{2: ""Wanshi, please take the intel and samples we've gathered so far back to Babylonia first."", 3: '307'}"
+307	307		201							{1: '1', 2: '500273'}
+308	308		301							{1: '1', 2: 'Wanshi', 3: 'Roger that.', 4: '1'}
+309	309		202							{1: '1'}
+310	310		301				DialogDisable			"{3: ""This rough, narrow terrain isn't favorable for a sniper to operate effectively; rather than continuing to explore forward, he's better suited to help you secure a return route first.""}"
+311	311		302							{2: 'Anyone who wants to bail now can head back with Wanshi.', 3: '312'}
+312	312		201							{1: '1', 2: '501308', 3: '4'}
+313	313		301			DialogEnable				"{1: '1', 2: 'Lulu', 3: 'What\'s with this ""anyone who wants to bail"" talk? If you\'re talking about me, just spit it out.', 4: '1'}"
+314	314		301							"{2: 'Lulu', 3: ""No way am I leaving. I haven't found Grace yet. Even if the Red Tide swallowed her whole, I'm still dragging her back with me."", 4: '1'}"
+315	315		202							{1: '1', 6: '1'}
+316	316		201							{1: '1', 2: '500309'}
+317	317		301							{1: '1', 2: 'Chrome', 3: '...', 4: '1'}
+318	318		202							{1: '1'}
+319	319		301							"{3: ""Chrome and you exchange a quick glance; he's signaling that Lulu's not going to hold your group back.""}"
+320	320		302		1		AniZhuanchangBegin			"{2: ""Alright, let's go."", 3: '321'}"

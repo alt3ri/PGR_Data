@@ -1,0 +1,30 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory465.jpg'}
+2	2		401							{1: '1', 2: '101'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+4	4		301			DialogEnable				"{3: ""Time slows down in the twins' visions. With ease, they approach Asslam, leaping into the air and launching a deadly strike at the fractured carriages once more.""}"
+5	5		301							{3: 'Bodies of flesh and blood fall off the train amidst desperate cries, like scattered paper in the wind.'}
+6	6		301							{3: 'Before despair can tear him apart, Watanabe charges into the crowd of Hetero-Creatures, his two blades drawn.'}
+7	7		301							{3: 'As the Red Tide threatens to devour everyone, the surviving humans and Constructs all take up arms, unable to stand aside.'}
+8	8		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+9	9		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory455.jpg'}
+10	10		201							{1: '1', 2: '500403'}
+11	11		301			PanelActor1Shake				{1: '1', 2: 'Young Refugee', 3: 'Give me my family back!', 4: '1'}
+12	12		201							{1: '1', 2: '500382'}
+13	13		301			PanelActor1Shake				{1: '1', 2: 'Refugee A', 3: 'Help! Help me!', 4: '1'}
+14	14		201							{1: '2', 2: '500019', 4: '300'}
+15	15		203							{1: '2', 2: '0.25', 3: '200'}
+16	16		301							{1: '1', 2: 'Construct Soldier 1', 3: 'Stay behind me!', 4: '2'}
+17	17		202							{1: '1', 2: '2', 6: '1'}
+18	18		301			RImgBg1Shake				{2: 'Refugee B', 3: 'It hurts! AAARGH!'}
+19	19		201							{1: '1', 2: '500127', 3: '9'}
+20	20		301							{1: '1', 2: 'Sophia', 3: 'Changyu! Jamilah...!', 4: '1'}
+21	21		201							{1: '1', 2: '500406'}
+22	22		301							{1: '1', 2: 'Construct Soldier 2', 3: 'How many more lives are you going to take?!', 4: '1'}
+23	23		202							{1: '1', 2: '2', 6: '1'}
+24	24		301			RImgBg1Shake				{2: 'Refugee C', 3: 'AHHHHHHHHHH!!!'}
+25	25		301			RImgBg1Shake				{2: 'Refugee D', 3: 'God!!!'}
+26	26		301							{3: 'Tears and prayers, howls and vows.'}
+27	27		301							"{3: ""Blood and the Red Tide intermingle along the train tracks, drawing a crimson scar across the earth. As thunder roars in the sky, the cacophony of the crowd's cries composes the symphony of the inferno.""}"
+28	28		301							{3: 'Right now, they are still twelve hours away from arriving at City 210.'}
+29	29		301		1		AniZhuanchangBegin			{3: 'People still believe then that hope awaits them ahead.'}

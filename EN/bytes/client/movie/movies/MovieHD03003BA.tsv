@@ -1,0 +1,83 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory234.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500445', 3: '5', 5: '-50'}
+4	4		301			DialogEnable				{1: '1', 2: 'Pulao', 3: 'You little imp, take my Dragon Subduing!', 4: '1'}
+5	5		401							{1: '2', 2: '4045'}
+6	6		203						800.0	{1: '1', 2: '0.25', 3: '-50', 4: '-50'}
+7	7		203							{1: '1', 2: '0.25', 4: '-50'}
+8	8		301							{3: 'Pulao stands in a horse stance, one fist drawn to her waist and the other thrusting forward, accidentally knocking a glass off the table.'}
+9	9		302							{2: 'Watch out.', 3: '10'}
+10	10		203							{1: '1', 2: '0.25'}
+11	11		204							{1: '1', 2: '2'}
+12	12		301							"{2: 'Pulao', 3: 'Oh! Commandant? You\'re here at the perfect time! Come check out my latest ""cultivation"" breakthrough!', 4: '1'}"
+13	13		204						500.0	{1: '1', 2: '8'}
+14	14		204							{1: '1'}
+15	15		203							{1: '1', 2: '0.25', 3: '50'}
+16	16		301							{2: 'Pulao', 3: 'Check this out! Turtle Strike!', 4: '1'}
+17	17		203							{1: '1', 2: '0.25', 3: '-50', 4: '-20'}
+18	18		301							{2: 'Pulao', 3: 'This I call the Roaming Dragon Arts!', 4: '1'}
+19	19		203							{1: '1', 2: '0.25'}
+20	20		301							"{2: 'Pulao', 3: ""And there's more! The Ninefold Stealth Steps, Dark Abyss Mystic Palm..."", 4: '1'}"
+21	21		301							"{3: ""Pulao moves with blinding speed, calling out exotic moves you've never even heard of.""}"
+22	22		302							{2: 'Is this... some kind of new weapon from Kowloong?', 3: '23', 4: 'Been picking up some dance moves with Hanying lately?', 5: '25'}
+23	23		204							{1: '1', 2: '2'}
+24	24	27	301							"{2: 'Pulao', 3: ""That's right! It's this ancient, mystical weapon from Kowloong—the Immortal Cultivation Arts!"", 4: '1'}"
+25	25		204							{1: '1', 2: '2', 3: '2'}
+26	26		301							{2: 'Pulao', 3: 'Not even close! This is the legendary power from Kowloong lore—the Immortal Cultivation Arts!', 4: '1'}
+27	27		301							"{2: 'Pulao', 3: ""See? The moves I just used all came from this book. It's loaded with all sorts of badass techniques!"", 4: '1'}"
+28	28		202							{1: '1'}
+29	29		301							"{3: 'You take the book from Pulao, its cover emblazoned with the title ""Tales of Kowloong"".'}"
+30	30		201							{1: '1', 2: '500445', 3: '2'}
+31	31		301							"{1: '1', 2: 'Pulao', 3: ""It's hands down the best one. The hero inside flies with his sword, soars through the skies, and dives underground—nothing he can't do!"", 4: '1'}"
+32	32		301							"{2: 'Pulao', 3: ""If I keep at it, I'll be able to do just like the hero in the book, achieving great things with all these powers!"", 4: '1'}"
+33	33		202							{1: '1'}
+34	34		401						400.0	{1: '2', 2: '8220025'}
+35	35		401							{1: '2', 2: '8220025'}
+36	36		301							{3: 'Pulao punches the air a few times, imagining herself as an enlightened master.'}
+37	37		301							{3: 'Suddenly, she remembers something and pulls out a chair from the corner.'}
+38	38		201							{1: '1', 2: '500445', 3: '1'}
+39	39		301							{1: '1', 2: 'Pulao', 3: 'By the way, I got this chair from an antique shop. The book says that the more mystical the artifact, the better it supports your cultivation.', 4: '1'}
+40	40		204							{1: '1', 2: '2'}
+41	41		301							{2: 'Pulao', 3: 'Commandant, want to test it out yourself? If you train with me, we could practice moves on each other and both get better!', 4: '1'}
+42	42		302							{2: 'Hold on... this chair seems...', 3: '43'}
+43	43		401							{1: '2', 2: '4276'}
+44	44		401							{1: '1', 2: '36'}
+45	45		202							{1: '1', 6: '1'}
+46	46		501						1500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+47	47		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+48	48		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+49	49		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+50	50		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory720.jpg'}
+51	51		401							{1: '1', 2: '118'}
+52	52		301							{3: 'You are cut off by a sudden blinding white light. As it dims, the familiar room vanishes, replaced by a strange new space.'}
+53	53		301				DialogDisable			{3: 'The sound of music, deep and resonant, fills the air, and then, words slowly appear before your eyes.'}
+54	54		307						100.0	{1: 'Welcome to Immortal Cultivation...', 3: '75', 4: 'fee82aff'}
+55	55		301							{3: 'Welcome to Immortal Cultivation...'}
+56	56		307							{2: '1'}
+57	57		201							{1: '1', 2: '500445'}
+58	58		301			DialogEnable				"{1: '1', 2: 'Pulao', 3: '""Welcome to Immortal Cultivation... You have the option to accept the Primordial Power offered by the system, then set forth on your personal journey of cultivation...""', 4: '1'}"
+59	59		204							{1: '1', 2: '2'}
+60	60		301							"{2: 'Pulao', 3: 'Is this the legendary ""system\'s golden touch"" mentioned in the book?', 4: '1'}"
+61	61		301							{2: 'Pulao', 3: 'Fate has thrust the protagonist into the world of a cultivation novel, where they will rise from obscurity to ultimate immortality... I get it now, my story is about to begin!', 4: '1'}
+62	62		302							{2: 'No, wait... how could you know already?', 3: '63'}
+63	63		203							{1: '1', 2: '0.25', 5: '-30'}
+64	64		204							{1: '1', 2: '8'}
+65	65		301							{2: 'Pulao', 3: 'I accept the Primordial Power! Hmm...', 4: '1'}
+66	66		301							{3: 'Pulao steps forward, extends her arms, and shuts her eyes. Yet, moments pass with no change.'}
+67	67		204							{1: '1'}
+68	68		301							{2: 'Pulao', 3: 'Huh? What about my Marrow Cleansing? And my Power Infusion?', 4: '1'}
+69	69		302							"{2: ""Looks like there's some new update."", 3: '70'}"
+70	70		301							"{2: 'Pulao', 3: ""Let's see... To wield the Primordial Power, the Destined One needs to select an assistant providing support through the system..."", 4: '1'}"
+71	71		301							{3: 'Realizing this, Pulao gradually shifts her gaze in your direction.'}
+72	72		204							{1: '1', 2: '6'}
+73	73		301							{2: 'Pulao', 3: 'Um, Commandant... Heh, what do you think...?', 4: '1'}
+74	74		302							{2: '...Alright.', 3: '75', 4: 'Sure, sure, go for it.', 5: '77'}
+75	75		204							{1: '1', 2: '2'}
+76	76	79	301							{2: 'Pulao', 3: 'Hehe, I always know you are the most dependable ally!', 4: '1'}
+77	77		204							{1: '1', 2: '2'}
+78	78		301							"{2: 'Pulao', 3: ""The path of cultivation is no easy feat; I'm serious about this!"", 4: '1'}"
+79	79		202							{1: '1'}
+80	80		301							{3: 'Pulao declares her resolve as she follows the prompts to finalize the binding of her assistant, and the white light once again fills the space.'}
+81	81		201							{1: '1', 2: '500445', 3: '2'}
+82	82		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Pulao', 3: ""I'm on my way! The realm of cultivation, prepare for the arrival of your next legend!"", 4: '1'}"

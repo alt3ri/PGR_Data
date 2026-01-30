@@ -1,0 +1,31 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory189.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: 'Meanwhile, on the other end of the explosions...'}
+4	4		201							{1: '1', 2: '500175'}
+5	5		301							{1: '1', 2: 'Camu', 3: '...Well, time to look for a way out now.', 4: '1'}
+6	6		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+7	7		401							{1: '2', 2: '1501'}
+8	8		401							{1: '1', 2: '202'}
+9	9		301							{3: '——WARNING, WARNING——'}
+10	10		301							{3: '—Structural damage to multiple supporting columns within the park—'}
+11	11		301							{3: '—All personnel are kindly obliged to stay under secure cover, or they might be ineligible for insurance coverage due to injuries or deaths stemming from failure to follow safety procedures—'}
+12	12		204							{1: '1', 2: '5'}
+13	13		301				AniZhuanchangBegin			{2: 'Camu', 3: '...****.', 4: '1'}
+14	1301		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+15	1302		202							{1: '1'}
+16	14		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory196.png', 4: '1'}
+17	15		301			AniZhuanchangEnd				{3: '—'}
+18	16		301							{3: 'As of following the chain of explosions from before, even more explosions reverberate throughout the entire park, accompanied by sounds of structural collapse.'}
+19	17		201							{1: '1', 2: '500166', 3: '5'}
+20	18		301							"{1: '1', 2: 'Lucia', 3: ""What's going on?!"", 4: '1'}"
+21	19		201							{1: '1', 2: '500026'}
+22	20		301							{1: '1', 2: 'Lee', 3: 'The explosions from those hyenas are causing the whole place to break down!', 4: '1'}
+23	21		302							"{2: ""What's the situation?!"", 3: '22'}"
+24	22		201							{1: '1', 2: '1031001'}
+25	23		301							{1: '1', 2: 'Liv', 3: 'Direct access is blocked! The only way left is the hidden passage in the Ferris wheel area!', 4: '1'}
+26	24		201							{1: '1', 2: '500166', 3: '5'}
+27	25		301							{1: '1', 2: 'Lucia', 3: 'But Camu is still...!', 4: '1'}
+28	26		302							{2: 'We can only wait.', 3: '27'}
+29	27		201							{1: '1', 2: '500026'}
+30	28		301		1		AniZhuanchangBegin			{1: '1', 2: 'Lee', 3: '...Yeah.', 4: '1'}

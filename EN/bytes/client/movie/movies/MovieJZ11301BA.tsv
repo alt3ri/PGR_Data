@@ -1,0 +1,74 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory12.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		201							{1: '1', 2: '500019', 4: '-400'}
+4	4		201							{1: '2', 2: '500019', 4: '400'}
+5	5		301			DialogEnable				"{1: '1', 2: 'Construct A', 3: ""Hey, how's it going on your end?"", 4: '1'}"
+6	6		301							"{2: 'Construct B', 3: ""The mission's finally complete... but there were a lot of things I couldn't retrieve."", 4: '2'}"
+7	7		301							"{2: 'Construct A', 3: ""At least you're alive..."", 4: '1'}"
+8	8		301							"{3: 'The Constructs speaking are currently located in a ""waiting room"" of sorts outside the battlefield. It\'s where Constructs who had just come out of battle or are about to go into battle end up.'}"
+9	9		301							{3: 'Everyone present seems tense but otherwise expressionless. The consecutive battles have worn them all out. Out of the whole group, a girl who seems to be meditating, eyes closed, stands out because of her red hair.'}
+10	10		202							{1: '1', 2: '2'}
+11	11		201							{1: '1', 2: '500182', 3: '4'}
+12	12		301							{1: '1', 2: 'Vera', 3: '...', 4: '1'}
+13	13		202							{1: '1'}
+14	14		201							{1: '1', 2: '500019', 4: '-400'}
+15	15		201							{1: '2', 2: '500019', 4: '400'}
+16	16		301							"{1: '1', 2: 'Construct A', 3: ""That's Death herself, right?"", 4: '1'}"
+17	17		301							"{2: 'Construct B', 3: ""Redheaded Death... I think that's how they call her."", 4: '2'}"
+18	18		201							{1: '1', 2: '500182', 3: '4', 4: '-400'}
+19	19		301							"{1: '1', 2: 'Vera', 3: ""I'm not Death or whatever you think. You'd better take back what you just said!"", 4: '1'}"
+20	20		301							"{3: ""Though discussing someone's epithet in their face might be an impolite act, most people subject to such comments would usually ignore them. Not the redheaded girl, Vera, however. She is too feisty to let this go.""}"
+21	21		301							"{2: 'Construct B', 3: ""Yeah? I was just telling the truth. Everyone here knows about your records. It seems a lil' suspicious how you're the only one alive on every single one of your missions."", 4: '2'}"
+22	22		301							"{3: 'The Construct who called Vera ""Death"" does not show any signs of backing down despite Vera\'s aggressive stance. Instead, he tries to justify the claim.'}"
+23	23		301							{3: 'Vera is still a new Construct, but she has already been part of over five squads—which all ended up being annihilated by the Corrupted, with Vera as the sole survivor.'}
+24	24		301							{2: 'Construct B', 3: 'You call yourself a Support-type Construct, a battlefield medic, but I bet you saved all the nano-repairers for yourself! Why else would—', 4: '2'}
+25	25		301							{2: 'Vera', 3: 'How dare you!', 4: '1'}
+26	26		401							{1: '2', 2: '1512'}
+27	27		301				PanelActor2Shake			"{3: ""The lengthy battle against the Corrupted is like a plague, slowly eroding everyone's composure. Not liking the Construct's claims, Vera channels her rage into her fists, which she punches the Construct with.""}"
+28	28		301							"{2: 'Construct B', 3: ""Wow, violent much? Told ya she's Death!"", 4: '2'}"
+29	29		202							{1: '1', 2: '2'}
+30	30		201							{1: '1', 2: '500019'}
+31	31		301							{2: 'Construct A', 3: 'Hey! Stop that!', 4: '1'}
+32	32		301							{1: '1', 3: 'The other members, who had ignored the conflict in favor for resting, get up to stop the fight, but it ends up snowballing into a free-for-all brawl.', 6: '1'}
+33	33		301							{3: 'Though both sides remain rational enough to not use weapons or other equipment, Construct fists are still extremely destructive.'}
+34	34		202							{1: '1'}
+35	35		201							{1: '1', 2: '500182', 3: '4', 4: '-400'}
+36	36		201							{1: '2', 2: '500019', 4: '400'}
+37	37		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '3'}
+38	38		401							{1: '2', 2: '1512'}
+39	39		301			RImgBg1Shake				"{1: '1', 2: 'Vera', 3: ""Don't call me Death! It's all your fault... You're the ones at fault!"", 4: '1'}"
+40	40		401							{1: '2', 2: '1512'}
+41	41		301			RImgBg1Shake				"{2: 'Vera', 3: ""I tried too... I tried so hard... but they all died, and I couldn't do anything about it!"", 4: '1'}"
+42	42		301							"{2: 'Construct B', 3: ""Shouldn't she be a Support-type? Why's she so good at fighting?"", 4: '2'}"
+43	43		301							{3: 'All members involved in the fight are wounded in different ways by now. Trying to ignore the pain on her face, Vera blocks one fist and raises her own to deal a final blow on her opponent.'}
+44	44		301							"{2: 'Vera', 3: ""If you really want to see Death in action that much, I'll show you—"", 4: '1'}"
+45	45		202							{1: '1', 2: '2'}
+46	46		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+47	47		201							{1: '1', 2: '500028'}
+48	48		301			RImgBg1Shake				{1: '1', 2: 'Construct Leader', 3: 'Stop it right now!', 4: '1'}
+49	49		201							{1: '1', 2: '500019'}
+50	50		301							{1: '1', 2: 'Construct B', 3: 'Uh... Lieutenant?', 4: '1'}
+51	51		203							{1: '1', 2: '0.25', 3: '400'}
+52	52		201							{1: '2', 2: '500028', 4: '-400'}
+53	53		301							"{1: '1', 2: 'Construct Leader', 3: ""Hooligans! I've stressed countless times that you need to remember who the enemy is. Throw them both into the detention room!"", 4: '2'}"
+54	54		301							{3: 'The officer who stops the fight makes a quick decision on the method of punishment. While Vera seems indifferent towards this arrangement, the other Construct seems a bit nervous.'}
+55	55		301							{2: 'Construct B', 3: 'Wait, I have a mission waiting... Besides, Death started it first!', 4: '1'}
+56	56		202							{1: '1', 2: '2'}
+57	57		201							{1: '1', 2: '500183'}
+58	58		301							"{1: '1', 2: 'Vera', 3: ""I already said don't call me Death!"", 4: '1'}"
+59	59		201							{1: '1', 2: '500019'}
+60	60		401							{1: '2', 2: '1512'}
+61	61		301			PanelActor2Shake				{1: '1', 2: 'Construct B', 3: 'What...?', 4: '1'}
+62	62		202							{1: '1'}
+63	63		401							{1: '2', 2: '1506'}
+64	64		301							"{3: ""Seizing the chance, Vera throws a punch into the Construct's stomach and sends him flying into a pile of rubble nearby.""}"
+65	65		201							{1: '1', 2: '500028'}
+66	66		301							"{1: '1', 2: 'Construct Leader', 3: ""Did you not hear me?! You really like violating military orders or somethin'? Subdue her now!"", 4: '1'}"
+67	67		301				AniZhuanchangBegin			{3: 'The other Constructs swarm upon Vera, and she soon finds herself in the detention room.'}
+68	68		202							{1: '1'}
+69	69		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+70	70		301			AniZhuanchangEnd				{3: 'As the door is slammed in her face, Vera gazes up into the dark surroundings and smiles wanly.'}
+71	71		201							{1: '1', 2: '500183'}
+72	72		301							"{1: '1', 2: 'Vera', 3: ""It's dark, and... ow."", 4: '1'}"
+73	73		301		1		AniZhuanchangBegin			{2: 'Vera', 3: 'Why... Why did it end this way?', 4: '1'}

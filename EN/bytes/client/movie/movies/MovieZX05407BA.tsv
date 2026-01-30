@@ -1,0 +1,335 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory352.jpg'}
+2	2		401							{1: '1', 2: '381'}
+3	3		107						2500.0	"{1: ""Principal's Office"", 2: 'Gestrig Academy'}"
+4	4		108							{1: '1'}
+5	5		301			DialogEnable				"{3: ""Upon returning from City 141, you receive a notice to report to the Principal's Office.""}"
+6	6		301							{3: 'Martha sits behind a spacious desk, the overhead light splitting her face into light and shadow, obscuring her expression.'}
+7	7		201							{1: '1', 2: '501193'}
+8	8		301							{1: '1', 2: 'Martha', 3: 'Sit.', 4: '1'}
+9	9		202							{1: '1'}
+10	10		401							{1: '2', 2: '4902'}
+11	11		301							{3: 'She pulls out a chair, pushing a document marked with red text toward you.'}
+12	12		302							{2: '...', 3: '13'}
+13	13		401							{1: '2', 2: '4095'}
+14	14		301							"{3: ""Without a doubt, it's the delayed punishment for your battlefield insubordination.""}"
+15	15		301				DialogDisable			"{3: ""Repeatedly defying established investigative protocols isn't a good choice. Whatever the punishment might be, it's best to accept it for now.""}"
+16	16		302							{2: '(Sit down and sign the document)', 3: '17'}
+17	17		401						1500.0	{1: '2', 2: '911'}
+18	18		402						200.0	{1: '911'}
+19	19		401							{1: '2', 2: '4095'}
+20	20		301			DialogEnable				"{3: ""You hand back the document, but Martha doesn't immediately take it, instead continuing to flip through other materials.""}"
+21	21		201							{1: '1', 2: '501193'}
+22	22		301							{1: '1', 2: 'Martha', 3: 'No intention to explain yourself or offer a defense?', 4: '1'}
+23	23		302							"{2: ""I don't understand what you mean, ma'am."", 3: '24'}"
+24	24		301							{2: 'Martha', 3: 'I thought you would use your battlefield performance as a bargaining chip.', 4: '1'}
+25	25		301							"{2: 'Martha', 3: ""After all, your involvement ensured the students' safety during the battle—far exceeding what's expected of a teacher."", 4: '1'}"
+26	26		301				DialogDisable			"{3: 'Martha deliberately emphasizes the word ""teacher,"" her statement carrying a pointed implication.'}"
+27	27		302							"{2: ""(Don't give a direct answer)"", 3: '28'}"
+28	28		302							{2: 'Are you suggesting my merits could offset my misconduct and exempt me from punishment?', 3: '29'}
+29	29		301			DialogEnable				{2: 'Martha', 3: 'Of course not.', 4: '1'}
+30	30		301							"{3: ""Martha's tone suddenly turns serious.""}"
+31	31		301							{2: 'Martha', 3: 'The notion that merits can offset misconduct is a social convention that has no place in schools. Students need to learn about right and wrong in absolute terms.', 4: '1'}
+32	32		301							"{2: 'Martha', 3: ""If we allow students to view right and wrong as variables on opposite sides of an equation, their actions will shift from pursuing what's right to merely balancing the moral ledger."", 4: '1'}"
+33	33		301							{2: 'Martha', 3: 'This is deeply misleading logic, especially for our students.', 4: '1'}
+34	34		301							{3: 'Martha raises her head, meeting your gaze. Despite her white hair and wrinkles, the dignified resolve in her eyes remains unmistakable.'}
+35	35		301							{2: 'Martha', 3: 'Good results cannot conceal improper conduct, just as poor outcomes cannot entirely invalidate noble intentions.', 4: '1'}
+36	36		202							{1: '1'}
+37	37		301							"{3: ""[What about you...? What's your purpose behind all of this?]""}"
+38	38		301							{3: 'The challenge remains unvoiced, concluding her cryptic lecture.'}
+39	39		401							{1: '2', 2: '4697'}
+40	40		301							{3: 'Knock, knock—'}
+41	41		402							{1: '4697'}
+42	42		301							{3: 'The abrupt knocking shatters the tense atmosphere in the room.'}
+43	43		201							{1: '1', 2: '501193'}
+44	44		301							{1: '1', 3: 'Martha frowns toward the door and lets out a soft grunt, yet her demeanor noticeably softens.'}
+45	45		301							"{2: 'Martha', 3: ""That's enough for today. Return to your class, Teacher 【kuroname】."", 4: '1'}"
+46	46		302							{2: 'Huh? What about the punishment...', 3: '47'}
+47	47		401							{1: '2', 2: '2768'}
+48	48		202							{1: '1'}
+49	49		301							{3: 'Martha buries herself in her books, not bothering to look up.'}
+50	50		201							{1: '1', 2: '501193'}
+51	51		301							{1: '1', 2: 'Martha', 3: 'According to the relevant regulations, teaching credentials should be revoked from instructors who disobey orders during special circumstances, with suspension pending investigation.', 4: '1'}
+52	52		301							{2: 'Martha', 3: 'Before that can happen, we need to complete other procedures in recognition of your protecting the students.', 4: '1'}
+53	53		301							"{3: ""Martha's tone remains serious, but with a subtle reduction in its severity.""}"
+54	54		204							{1: '1', 2: '8'}
+55	55		301							"{2: 'Martha', 3: ""Go fulfill your duties as a teacher for now. Don't keep your students waiting too long."", 4: '1'}"
+56	56		204							{1: '1'}
+57	57		301							"{2: 'Martha', 3: ""As for the punishment, you'll receive it when the time comes."", 4: '1'}"
+58	58		302							{2: 'Thanks...', 3: '59'}
+59	59		202							{1: '1'}
+60	60		301				AniZhuanchangBegin			"{3: ""Understanding Martha's implied attitude, you thank her and take your leave.""}"
+61	61		502							{1: 'DialogDisable'}
+62	62		401						2000.0	{1: '1', 2: '36'}
+63	63		401							{1: '1', 2: '205'}
+64	64		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory369.png'}
+65	65		201							{1: '1', 2: '501199', 4: '-100', 5: '-75'}
+66	66		301			DialogEnable				"{1: '1', 3: ""As you close the door to the principal's office, you notice a figure peering cautiously from around the corner.""}"
+67	67		203							{1: '1', 2: '0.25'}
+68	68		401							{1: '2', 2: '4044'}
+69	69		202							{1: '1', 6: '1'}
+70	70		201							{1: '1', 2: '501187', 3: '2'}
+71	71		301							"{1: '1', 2: 'Jetavie', 3: ""Oh, you're out already?"", 4: '1'}"
+72	72		301							{2: 'Jetavie', 3: 'Did that old hag give you a hard time?', 4: '1'}
+73	73		302							{2: 'Be respectful to your teachers.', 3: '74'}
+74	74		204							{1: '1', 2: '1'}
+75	75		301							"{2: 'Jetavie', 3: ""But she is an old hag! When Ewig reported to her, her first reaction wasn't happiness, and she snapped that she would hold you responsible."", 4: '1'}"
+76	76		302							{2: 'Because she was worried about all of you.', 3: '77'}
+77	77		204							{1: '1', 2: '18'}
+78	78		301							"{2: 'Jetavie', 3: ""Who? The old hag? No way! That's impossible!"", 4: '1'}"
+79	79		204							{1: '1'}
+80	80		201							{1: '18', 2: '501193', 3: '8', 5: '-25'}
+81	81		301							{1: '1', 2: 'Martha', 3: 'Ahem—', 4: '18'}
+82	82		202							{1: '18', 6: '1'}
+83	83		301							{3: 'No sooner are the words spoken than a deep, deliberate cough emanates through the door.'}
+84	84		201							{1: '18', 2: '501193', 5: '-25'}
+85	85		301							"{1: '1', 2: 'Martha', 3: ""You can still lose points in this week's evaluation."", 4: '18'}"
+86	86		202							{1: '18', 6: '1'}
+87	87		204							{1: '1', 2: '15'}
+88	88		301							{2: 'Jetavie', 3: 'Tch... Sorry to disturb you, Commander Mar-tha!', 4: '1'}
+89	89		202							{1: '1'}
+90	90		301							{3: 'Jetavie rolls her eyes in annoyance, making faces at the closed door while tugging at your sleeve.'}
+91	91		201							{1: '1', 2: '501187', 3: '1'}
+92	92		301				AniZhuanchangBegin			"{1: '1', 2: 'Jetavie', 3: ""Let's go. Ewig says she has something to give you."", 4: '1'}"
+93	93		202							{1: '1', 6: '1'}
+94	94		502							{1: 'DialogDisable'}
+95	95		401						2000.0	{1: '1', 2: '36'}
+96	96		401							{1: '1', 2: '278'}
+97	97		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1161.jpg'}
+98	98		107							{1: 'Student Dormitory', 2: 'Gestrig Academy'}
+99	99		301							{3: 'Gestrig Academy Student Dormitory.'}
+100	100		108							{1: '1'}
+101	101		401							{1: '2', 2: '743'}
+102	102		301			DialogEnable				{3: 'Following Jetavie to the dormitory, you find Ewig deep in thought, holding a physical book in her hands.'}
+103	103		201							{1: '1', 2: '501187', 3: '1'}
+104	104		301							"{1: '1', 2: 'Jetavie', 3: ""I've brought 【kuroname】 back for you."", 4: '1'}"
+105	105		202							{1: '1', 6: '1'}
+106	106		201							{1: '1', 2: '501194'}
+107	107		301							{1: '1', 2: 'Ewig', 3: 'Ah...', 4: '1'}
+108	108		301							{3: 'Ewig snaps out of it, though her expression barely changes. As your eyes meet, her pupils subtly adjust, and she extends the book in her hands toward you.'}
+109	109		302							{2: 'This is...', 3: '110'}
+110	110		301							"{2: 'Ewig', 3: ""White's diary. She asked me to give it to you before she left. It took me a long time to find it."", 4: '1'}"
+111	111		301							"{2: 'Ewig', 3: ""I searched through all possible storage areas under White's access permissions, but found nothing."", 4: '1'}"
+112	112		301							"{2: 'Ewig', 3: ""It wasn't until staff members cleaned out her dormitory and provided an inventory that I discovered she would hide her diary in a specific location before every emergency mission."", 4: '1'}"
+113	113		203							{1: '1', 2: '0.25', 3: '400'}
+114	114		201							{1: '2', 2: '501187', 3: '1', 4: '-400'}
+115	115		301							"{1: '1', 2: 'Jetavie', 3: ""That's what people do with diaries: they hide them. There's nothing strange about that."", 4: '2'}"
+116	116		204							{1: '1', 2: '8'}
+117	117		301							"{2: 'Ewig', 3: ""Is that so? Perhaps. It's not important."", 4: '1'}"
+118	118		204							{1: '1'}
+119	119		301							{2: 'Ewig', 3: 'Actually, I have other matters to discuss...', 4: '1'}
+120	120		204							{1: '2'}
+121	121		301							{2: 'Jetavie', 3: '...Not important?', 4: '2'}
+122	122		301							"{3: ""Jetavie abruptly interrupts Ewig's statement. A hint of confusion crosses Ewig's otherwise detached expression.""}"
+123	123		301							{2: 'Ewig', 3: 'In terms of priority, this indeed falls under...', 4: '1'}
+124	124		204							{1: '2', 2: '18'}
+125	125		301							"{2: 'Jetavie', 3: ""This is White's diary, the only thing she left behind!"", 4: '2'}"
+126	126		301							"{2: 'Ewig', 3: ""That's why I've been trying to find it to fulfill her wishes. It's just that it was hidden differently than I expected, which caused a slight delay."", 4: '1'}"
+127	127		301							"{2: 'Ewig', 3: ""If this is what you're upset about, it is indeed my mistake."", 4: '1'}"
+128	128		301			RImgBg1Shake				"{2: 'Jetavie', 3: ""That's not what I'm talking about! I'm angry because you think White's diary isn't important!"", 4: '2'}"
+129	129		301							{3: 'Ewig responds with bewilderment, her answer coming across as completely matter-of-fact.'}
+130	130		301							{2: 'Ewig', 3: 'We have system logs, which are more convenient and efficient and less likely to be lost.', 4: '1'}
+131	131		204							{1: '2', 2: '4'}
+132	132		401							{1: '2', 2: '4044'}
+133	133		203						200.0	{1: '2', 2: '0.25', 3: '-300'}
+134	134		203							{1: '1', 2: '0.25', 3: '380', 4: '10', 5: '-5'}
+135	135		301				DialogDisable			{1: '1', 2: 'Jetavie', 3: 'You...', 4: '1'}
+136	136		302							{2: 'Alright, Jetavie, calm down.', 3: '137'}
+137	137		302							{2: 'Ewig, what were those other matters you mentioned?', 3: '138'}
+138	138		401							{1: '2', 2: '4044'}
+139	139		203							{1: '2', 2: '0.25', 3: '-400'}
+140	140		203							{1: '1', 2: '0.25', 3: '400'}
+141	141		301			DialogEnable				"{3: ""With visible indignation, Jetavie sets Ewig down. Ewig furrows her brow, not angry, but simply confused and unable to comprehend the purpose behind Jetavie's actions.""}"
+142	142		301							{2: 'Ewig', 3: 'I would like to borrow your permission to visit City 141 during a time when there is no emergency.', 4: '1'}
+143	143		301							{2: 'Ewig', 3: 'As the frequency of Corrupted invasions increases and our sample size expands, the data analysis modules of several students, including myself, have reached similar conclusions.', 4: '1'}
+144	144		301							{2: 'Ewig', 3: 'There are anomalies in the attacks on City 141—the Corrupted invasions appear to have some purpose.', 4: '1'}
+145	145		204							{1: '1', 2: '8'}
+146	146		301							{2: 'Ewig', 3: 'However, we have too few data points and insufficient information to draw any more useful leads.', 4: '1'}
+147	147		302							{2: '...', 3: '148'}
+148	148		202							{1: '1', 2: '2'}
+149	149		301							{3: 'Before Ewig can respond, Jetavie jumps in.'}
+150	150		201							{1: '1', 2: '501187', 3: '4'}
+151	151		301							{1: '1', 2: 'Jetavie', 3: 'Is that how you ask someone for a favor?', 4: '1'}
+152	152		301							"{2: 'Jetavie', 3: ""Or do you think handing over White's diary to 【kuroname】 counts as enough of a favor already?"", 4: '1'}"
+153	153		202							{1: '1', 6: '1'}
+154	154		201							{1: '1', 2: '501194'}
+155	155		301							{1: '1', 2: 'Ewig', 3: 'Why would you think that? That was between them.', 4: '1'}
+156	156		301							"{2: 'Ewig', 3: ""You're right, though. One should give before taking—that's just common sense."", 4: '1'}"
+157	157		301							{3: 'Ewig nods thoughtfully.'}
+158	158		301				DialogDisable			{2: 'Ewig', 3: 'What do I need to give you in return for borrowing your access?', 4: '1'}
+159	159		302							{2: 'Eh...', 3: '160', 4: '...', 5: '160'}
+160	160		302							"{2: ""I don't need anything. I'll help you."", 3: '161'}"
+161	161		301			DialogEnable				{2: 'Ewig', 3: 'Why?', 4: '1'}
+162	162		302							"{2: ""Because I'm your teacher."", 3: '163'}"
+163	163		204							{1: '1', 2: '8'}
+164	164		301							{2: 'Ewig', 3: '...', 4: '1'}
+165	165		302							{2: 'Also... you should apologize to White.', 3: '166'}
+166	166		204							{1: '1'}
+167	167		301							{2: 'Ewig', 3: 'Is that a condition?', 4: '1'}
+168	168		302							"{2: ""No, it's just a suggestion. It has nothing to do with granting you access..."", 3: '169'}"
+169	169		301							"{2: 'Ewig', 3: ""...White, I'm sorry."", 4: '1'}"
+170	170		202							{1: '1'}
+171	171		301							"{3: ""Before finishing her sentence, Ewig turns around and bows deeply toward White's dormitory, causing you to freeze in place with the diary still in your hand.""}"
+172	172		201							{1: '1', 2: '501194'}
+173	173		301							"{1: '1', 2: 'Ewig', 3: ""Is this how it's supposed to work?"", 4: '1'}"
+174	174		302							{2: 'Eh...', 3: '175'}
+175	175		401							{1: '2', 2: '4044'}
+176	176		104							{1: '0|0|-50', 2: '0.15'}
+177	177		203						200.0	{1: '1', 2: '0.15', 4: '-25'}
+178	178		104							{1: '0|0|0', 2: '0.15'}
+179	179		203							{1: '1', 2: '0.15'}
+180	180		204							{1: '1', 2: '8'}
+181	181		301							{3: 'She sighs once more and lightly taps Ewig on the forehead.'}
+182	182		204							{1: '1'}
+183	183		301							{3: 'Ewig covers her forehead, appearing confused, yet remains standing perfectly still, as if waiting for an answer.'}
+184	184		203							{1: '1', 2: '0.25', 3: '400'}
+185	185		201							{1: '2', 2: '501187', 3: '3', 4: '-400'}
+186	186		301				DialogDisable			"{1: '1', 2: 'Jetavie', 3: ""...Ewig, you're absolutely hopeless."", 4: '2'}"
+187	187		204							{1: '2'}
+188	188		302							{2: 'She probably just needs a little more time to understand...', 3: '189'}
+189	189		302							"{2: ""That's good enough. When do we depart?"", 3: '190'}"
+190	190		301			DialogEnable				{2: 'Ewig', 3: 'Ready whenever.', 4: '1'}
+191	191		301							{3: 'As she speaks, Ewig glances at Jetavie beside her and adds a follow-up.'}
+192	192		301				AniZhuanchangBegin			{2: 'Ewig', 3: 'Thank you, Teacher.', 4: '1'}
+193	193		202							{1: '1', 2: '2', 6: '1'}
+194	194		502							{1: 'DialogDisable'}
+195	195		401						2000.0	{1: '1', 2: '36'}
+196	196		401							{1: '1', 2: '208'}
+197	197		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory143.png'}
+198	198		107							{1: 'Transit Gateway', 2: 'City 141'}
+199	199		301							{3: 'City 141 Transit Gateway'}
+200	200		108							{1: '1'}
+201	201		401							{1: '2', 2: '4373'}
+202	202		401							{1: '2', 2: '4923'}
+203	203		104						250.0	{1: '0|50|-25', 2: '0.25'}
+204	204		104							{1: '0|0|-50', 2: '0.25'}
+205	205		301			DialogEnable				{3: 'Amidst synthetic voice system announcements, you lead Jetavie and Ewig out of the train car and onto the platform.'}
+206	206		201							{1: '2', 2: '501194'}
+207	207		301							"{1: '1', 3: ""You glance back at Ewig following behind you. She's merely looking around, observing her surroundings with no apparent intention of taking the lead.""}"
+208	208		203							{1: '2', 2: '0.25', 3: '400'}
+209	209		201							{1: '1', 2: '501187', 4: '-400'}
+210	210		301							{1: '1', 2: 'Jetavie', 3: 'Ewig?', 4: '1'}
+211	211		301							"{2: 'Ewig', 3: ""What's wrong?"", 4: '2'}"
+212	212		301							{2: 'Jetavie', 3: 'Where do we go next?', 4: '1'}
+213	213		204							{1: '2', 2: '8'}
+214	214		301							"{2: 'Ewig', 3: ""I don't know."", 4: '2'}"
+215	215		302							"{2: ""...Didn't you say you had suspicions?"", 3: '216'}"
+216	216		204							{1: '2'}
+217	217		301							{2: 'Ewig', 3: 'Yes, I think the Corrupted invasion has a specific purpose, which is why we came to look around the city.', 4: '2'}
+218	218		301							"{2: 'Ewig', 3: ""But I don't know how to search for relevant clues. There are too many possibilities, which is essentially the same as having nothing."", 4: '2'}"
+219	219		301							{2: 'Ewig', 3: 'Do you have any ideas?', 4: '2'}
+220	220		204							{1: '1', 2: '4'}
+221	221		301							{2: 'Jetavie', 3: 'You... I...', 4: '1'}
+222	222		202							{1: '1', 2: '2'}
+223	223		301							{3: 'Jetavie is at a loss for words. As she tries to formulate a response, her intense demeanor unintentionally frightens a small child nearby.'}
+224	224		201							{1: '1', 2: '500251'}
+225	225		301			RImgBg1Shake				{1: '1', 2: 'Baby', 3: 'Whoa!'}
+226	226		301							"{2: 'Gentle Mother', 3: ""Oh, don't cry, don't cry."", 4: '1'}"
+227	227		301							{3: 'The woman lifts the infant into her arms, gently rocking back and forth while tenderly patting its back with her palm.'}
+228	228		203							{1: '1', 2: '0.25', 3: '-400'}
+229	229		201							{1: '2', 2: '501187', 4: '400'}
+230	230		301							{1: '1', 2: 'Jetavie', 3: 'Um... sorry about that.', 4: '2'}
+231	231		301							"{2: 'Gentle Mother', 3: ""*chuckles* It's quite alright. I recognize you."", 4: '1'}"
+232	232		301							{2: 'Gentle Mother', 3: 'When the Corrupted attacked, my husband and I were with her near the shopping mall in the city center...', 4: '1'}
+233	233		302							"{2: ""I'm surprised there was a shopping mall here..."", 3: '234'}"
+234	234		301							{2: 'Gentle Mother', 3: 'You must be from outside, sir. When Leibowitz Company took over this area, they built the shopping mall in City 141. It served as a place for people to exchange supplies and run small businesses.', 4: '1'}
+235	235		301							"{2: 'Gentle Mother', 3: ""Back then, we were near the mall buying supplies... When the buildings started collapsing, I was terrified. That's when you all appeared."", 4: '1'}"
+236	236		202							{1: '1', 2: '2'}
+237	237		301							"{3: ""The woman smiles, gently lifting the baby's hand toward Jetavie while softly cooing to the infant.""}"
+238	238		201							{1: '1', 2: '500251'}
+239	239		301							"{1: '1', 2: 'Gentle Mother', 3: ""There, there, don't cry. Big sister over here is the hero that saved you, don't you remember?"", 4: '1'}"
+240	240		301							{2: 'Baby', 3: 'Waa... wah?'}
+241	241		202							{1: '1'}
+242	242		301							"{3: ""The baby's emotions shift as quickly as they came. Under the mother's comforting words, the crying gradually subsides.""}"
+243	243		301							"{3: ""The baby's eyes widen with sudden curiosity as it gazes at Jetavie, stretching its tiny hand out even further.""}"
+244	244		201							{1: '1', 2: '501187'}
+245	245		301							{1: '1', 2: 'Jetavie', 3: '...', 4: '1'}
+246	246		202							{1: '1'}
+247	247		301							{3: 'After Jetavie sees this, her face tenses with uncertainty and her usual spirited demeanor is gone as she cautiously extends a finger to touch the baby.'}
+248	248		201							{1: '1', 2: '500251', 4: '-400'}
+249	249		201							{1: '2', 2: '501187', 4: '400'}
+250	250		301							{1: '1', 2: 'Baby', 3: 'Ee-yah... hee-hee...'}
+251	251		301							{2: 'Gentle Mother', 3: 'She seems to really like you. Would you like to hold her?', 4: '1'}
+252	252		204							{1: '2', 2: '4'}
+253	253		301							{2: 'Jetavie', 3: 'Uh... me?', 4: '2'}
+254	254		202							{1: '1', 2: '2', 6: '1'}
+255	255		306							{1: '1'}
+256	256		201							{1: '1', 2: '501187', 3: '7'}
+257	257		301							{1: '1', 3: 'Jetavie turns around, casting a pleading look for help.'}
+258	258		306							
+259	259		203							{1: '1', 2: '0.25', 3: '-400'}
+260	260		201							{1: '2', 2: '501194', 4: '400'}
+261	261		301							"{1: '1', 2: 'Ewig', 3: ""Need help? If you don't want to, I can do it."", 4: '2'}"
+262	262		204							{1: '1', 2: '18'}
+263	263		301			RImgBg1Shake				{1: '1', 2: 'Jetavie', 3: 'Of course I want to!', 4: '1'}
+264	264		202							{1: '1', 2: '2', 6: '1'}
+265	265		201							{1: '1', 2: '501187'}
+266	266		401							{1: '2', 2: '1543'}
+267	267		203						500.0	{1: '1', 2: '0.5', 4: '-75', 5: '-25'}
+268	268		203							{1: '1', 2: '0.5'}
+269	269		301							{3: 'Jetavie immediately objects, then carefully takes the baby in her arms.'}
+270	270		301							{2: 'Baby', 3: 'Ee-yah... ee-ee-'}
+271	271		204							{1: '1', 2: '7'}
+272	272		301							"{2: 'Jetavie', 3: ""Hey hey, don't... don't wiggle... don't wiggle..."", 4: '1'}"
+273	273		202							{1: '1'}
+274	274		301							{3: 'Everyone expects Jetavie to quickly return the baby to the mother, but she carefully cradles him until he drifts into sleep.'}
+275	275		201							{1: '1', 2: '501187', 3: '1', 4: '500'}
+276	276		201							{1: '2', 2: '500251', 4: '-400'}
+277	277		203							{1: '1', 2: '0.25', 3: '400'}
+278	278		301							"{1: '1', 2: 'Jetavie', 3: ""Here... he's fallen asleep."", 4: '1'}"
+279	279		301							{2: 'Gentle Mother', 3: 'Thank you. I hope fate brings us together again.', 4: '2'}
+280	280		202							{1: '1', 2: '2'}
+281	281		301							{3: 'The mother thanks her and leaves. Jetavie responds mechanically and remains clearly lost in thought.'}
+282	282		201							{1: '1', 2: '501187', 4: '-400'}
+283	283		201							{1: '2', 2: '501194', 4: '400'}
+284	284		301							{1: '1', 2: 'Ewig', 3: 'Are you having a hard time letting go? Want me to call her back so you can hold the baby a little longer?', 4: '2'}
+285	285		204							{1: '1', 2: '4'}
+286	286		301							"{2: 'Jetavie', 3: ""Just stop. It's irritating hearing you talk."", 4: '1'}"
+287	287		204							{1: '1', 2: '3'}
+288	288		301							{2: 'Jetavie', 3: '...I was thinking about something else.', 4: '1'}
+289	289		301							{3: 'Jetavie presses her lips together in thought, an unusual gesture for her.'}
+290	290		204							{1: '1'}
+291	291		301							"{2: 'Jetavie', 3: 'Tell me... what do you think our ""childhood"" was like?', 4: '1'}"
+292	292		301							{2: 'Jetavie', 3: 'Did anyone ever hold us like that?', 4: '1'}
+293	293		301							{2: 'Ewig', 3: 'According to the timeline, an individual at that stage would still be in the cognitive cultivation phase with no physical form.', 4: '2'}
+294	294		204							{1: '1', 2: '4'}
+295	295		301							"{2: 'Jetavie', 3: ""...What a waste of time. Let's focus on the task at hand instead."", 4: '1'}"
+296	296		204							{1: '1', 2: '1'}
+297	297		301							{2: 'Jetavie', 3: 'Do you have any thoughts, 【kuroname】?', 4: '1'}
+298	298		202							{1: '1', 2: '2'}
+299	299		301							"{3: ""Watching the woman's retreating figure, certain words she spoke trigger something important in your mind.""}"
+300	300		302							"{2: ""Let's check out the shopping mall first."", 3: '301'}"
+301	301		201							{1: '1', 2: '501194'}
+302	302		301							{1: '1', 2: 'Ewig', 3: 'Yes.', 4: '1'}
+303	303		203							{1: '1', 2: '0.25', 3: '400'}
+304	304		201							{1: '2', 2: '501187', 3: '18', 4: '-400'}
+305	305		301							"{1: '1', 2: 'Jetavie', 3: ""Huh? Wait a second, don't just go along with that!"", 4: '2'}"
+306	306		204							{1: '2'}
+307	307		301							"{2: 'Jetavie', 3: ""Why go to the mall? Don't tell me it's because of something the baby's mom just said."", 4: '2'}"
+308	308		204							{1: '2', 2: '3'}
+309	309		301							"{2: 'Jetavie', 3: ""That's way too random."", 4: '2'}"
+310	310		302							"{2: ""It's not exactly a random choice..."", 3: '311'}"
+311	311		401							{1: '2', 2: '2768'}
+312	312		202							{1: '1', 2: '2'}
+313	313		301				AniZhuanchangBegin			"{3: ""You take White's diary from your pocket, open the cover, and run your finger across the title page.""}"
+314	314		304			AniZhuanchangEnd				"{1: ""Martha allowed us to unwind in City 141. This was the first time we'd ever received such an order."", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1'}"
+315	315		304							"{1: ""I don't quite understand her intentions, nor do I grasp the purpose of unwinding."", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1'}"
+316	316		304							{1: 'But I know my core is spinning rapidly. I suppose people would categorize this emotion as happiness.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1'}
+317	317		304							{1: 'I am happy, and I want to write down this feeling.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1'}
+318	318		304							"{1: ""But Ewig doesn't seem to feel the same way. She also participates in the outing, but it looks more like she's just executing orders."", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1'}"
+319	319		304							"{1: ""I feel like something's not right about this, like we're making a mistake somewhere. But why do I feel this way?"", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1', 8: '1'}"
+320	320		304							{1: 'Obedience is supposed to be a basic principle that must be followed.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1'}
+321	321		304							"{1: ""I can't explain it clearly. No logical formula can give me the answer."", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1'}"
+322	322		304							{1: 'But I found a piece of information.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1'}
+323	323		304							"{1: '""When life has things you can\'t figure out or that make you unhappy, go shopping.""', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1'}"
+324	324		304				AniZhuanchangBegin			"{1: 'I\'ve decided. I\'m going to take Ewig to the ""shopping mall.""', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1', 8: '1', 9: '1'}"
+325	325		502						500.0	{1: 'DialogDisable'}
+326	326		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory143.png'}
+327	327		302			AniZhuanchangEnd				{2: 'Shopping mall...', 3: '328'}
+328	328		302							{2: 'Do you remember this place, Ewig?', 3: '329'}
+329	329		201							{1: '1', 2: '501194'}
+330	330		301			DialogEnable				{1: '1', 2: 'Ewig', 3: '...', 4: '1'}
+331	331		301							{3: 'Ewig tilts her head in confusion, her mechanical pupils rhythmically dilating and contracting.'}
+332	332		301				DialogDisable			{2: 'Ewig', 3: 'No, no keywords related to this place were found in my database.', 4: '1'}
+333	333		302							"{2: ""Let's go take a look anyway."", 3: '334'}"
+334	334		302		1		AniZhuanchangBegin			"{2: ""We don't have clear leads anyway, so this should be fine, right?"", 3: '335'}"

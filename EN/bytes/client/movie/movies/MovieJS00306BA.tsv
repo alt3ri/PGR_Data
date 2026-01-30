@@ -1,0 +1,34 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory260.png'}
+2	2		401							{1: '1', 2: '5'}
+3	3		201							{1: '1', 2: '500472', 3: '3'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+5	5		301			DialogEnable				{1: '1', 2: 'Nanami', 3: 'Commandant! H-E-L-L-O!', 4: '1'}
+6	6		302							{2: 'Huh? Nanami... Why are you messaging me here...', 3: '7'}
+7	7		301							{2: 'Nanami', 3: 'Is that strange, Commandant?', 4: '1'}
+8	8		502							{1: 'DialogDisable'}
+9	9		302							"{2: ""Shouldn't you be at the Science Council right now?"", 3: '10'}"
+10	10		302							{2: 'I thought they were interested in your device thingy...', 3: '11'}
+11	11		204							{1: '1', 2: '5'}
+12	12		301			DialogEnable				{2: 'Nanami', 3: 'Oh! So you sent me to the Science Council to wait for you on purpose, Commandant!', 4: '1'}
+13	13		301							"{2: 'Nanami', 3: 'Nanami just wanted you to try her ""Full Sensory Simulation Device""... Luckily, I managed to escape from the Science Council! They would\'ve bothered Nanami to no end otherwise!', 4: '1'}"
+14	14		204							{1: '1', 2: '1'}
+15	15		301							"{2: 'Nanami', 3: ""By the way... this device is mighty impressive! It can connect all your senses, Commandant, creating a super-human's cognition!"", 4: '1'}"
+16	16		302							"{2: ""It doesn't sound very safe..."", 3: '17'}"
+17	17		204							{1: '1', 2: '3'}
+18	18		301							"{2: 'Nanami', 3: ""Relax! Worst comes to worst, you'll get knocked unconscious for half a day... Right, Nanami is almost at your location."", 4: '1'}"
+19	19		302							{2: 'Really?! How unfortunate! I just happened to be somewhere else...', 3: '20'}
+20	20		204							{1: '1', 2: '7'}
+21	21		301							{2: 'Nanami', 3: 'Why am I hearing someone panting... Are you running, Commandant?', 4: '1'}
+22	22		302							{2: 'Haha, it was probably Kamui running past the door.', 3: '23'}
+23	23		301							{2: 'Nanami', 3: 'Oh, is that so...', 4: '1'}
+24	24		302							{2: 'Of course! I should let him know not to run in the hallway.', 3: '25'}
+25	25		301							{2: 'Nanami', 3: 'But I thought I saw someone like you running away, Commandant! I was too late, though...', 4: '1'}
+26	26		302							{2: 'Huff... Puff... It must be... someone else.', 3: '27'}
+27	27		301							"{2: 'Nanami', 3: ""You're panting very heavily, Commandant... Are you okay?"", 4: '1'}"
+28	28		302							{2: 'I... probably was choking on water because I drank it too fast.', 3: '29'}
+29	29		204							{1: '1', 2: '3'}
+30	30		301							{2: 'Nanami', 3: 'Ah! I found you, Commandant!', 4: '1'}
+31	31		302							{2: 'What... Impossible! Where are you?!', 3: '32'}
+32	32		301							{2: 'Nanami', 3: '...Look behind you!', 4: '1'}
+33	33		302		1		AniZhuanchangBegin			{2: '!?!?!?!?'}

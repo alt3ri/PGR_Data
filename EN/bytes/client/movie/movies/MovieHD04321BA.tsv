@@ -1,0 +1,127 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+2	2		401							{1: '1', 2: '122'}
+3	3		201							{1: '1', 2: '501184'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Selena', 3: 'It says here to ""give your partner a sincere confession""...', 4: '1'}"
+5	5		204							{1: '1', 2: '11'}
+6	6		301							"{2: 'Selena', 3: ""That... is being very straightforward, which is keeping with how people were like back in the Golden Age, I'd say."", 4: '1'}"
+7	7		301							{3: 'Finished reading what it says on the back of the card, Selena presses it to her chest and turns to look at you.'}
+8	8		302							"{2: 'It really is quite a ""passionate and heartfelt"" challenge...', 3: '9'}"
+9	9		204							{1: '1', 2: '1'}
+10	10		301							{2: 'Selena', 3: 'Is this your cup of tea, Conductor?', 4: '1'}
+11	11		301							{3: 'Says Selena with a smile as she tucks a stray lock of hair at her forehead back into place.'}
+12	12		204							{1: '1', 2: '1'}
+13	13		301							"{2: 'Selena', 3: ""I don't find it all that difficult, personally. To me, it's just a different way of telling people what I feel about them."", 4: '1'}"
+14	14		204							{1: '1', 2: '11'}
+15	15		301							"{2: 'Selena', 3: ""It's just..."", 4: '1'}"
+16	16		301							{3: 'Her voice softens again as she struggles to string her thoughts into words.'}
+17	17		301							"{2: 'Selena', 3: ""I think it'd be a shame if we had to do that out on the street."", 4: '1'}"
+18	18		301							{2: 'Selena', 3: 'I would decorate this place and turn it into a romantic opera.', 4: '1'}
+19	19		301							{2: 'Selena', 3: 'So we really want to be ready for that.', 4: '1'}
+20	20		301							{2: 'Selena', 3: 'Say... would you like to do that with me, Conductor?', 4: '1'}
+21	21		302							{2: 'Yes.', 3: '22', 4: 'So where should we go?', 5: '22'}
+22	22		204							{1: '1', 2: '1'}
+23	23		301							{2: 'Selena', 3: 'How about... we find somewhere more quiet?', 4: '1'}
+24	24		201							{1: '1', 2: '500929'}
+25	25		301							{1: '1', 2: 'Cathy', 3: 'Ta-da! There you guys are!', 4: '1'}
+26	26		301							{3: 'Right then, Cathy the robot comes rushing at the two of you, all the while blowing a trumpet and making honking noises along the way.'}
+27	27		302							{2: 'Cathy? What can we do for you?', 3: '28'}
+28	28		301							"{2: 'Cathy', 3: ""Yes! I'd love to have both of you at the Grand Theater to serve as stand-in performers!"", 4: '1'}"
+29	29		301							{2: 'Cathy', 3: 'Pretty please!', 4: '1'}
+30	30		202							{1: '1'}
+31	31		301							{3: 'Cathy shoves two temporary work permits for the Grand Theater into your hands and runs off again making all sorts of noises.'}
+32	32		201							{1: '1', 2: '501184', 3: '13'}
+33	33		301							"{1: '1', 2: 'Selena', 3: ""The Grand Theater... I believe it's on the other side of the street."", 4: '1'}"
+34	34		301							{3: 'Selena holds one of the work permits, deep in thought.'}
+35	35		204							{1: '1', 2: '11'}
+36	36		301							"{2: 'Selena', 3: ""Why don't we take advantage of this opportunity to check things out at the theater, Conductor?"", 4: '1'}"
+37	37		301							{2: 'Selena', 3: 'And... we just might be able to do our little daring challenge there.', 4: '1'}
+38	38		302							"{2: ""Okay, let's go."", 3: '39'}"
+39	39		202							{1: '1', 6: '1'}
+40	40		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+41	41		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory671.jpg'}
+42	42		301							{3: 'The two of you arrive at the theater hoping to check things out, only to see a bunch of robots blocking the ticket booth as soon as you enter.'}
+43	43		301							{3: 'These robots are all here trying to give the event organizers a piece of their minds because the robot theater troupe slated to perform has stood them up.'}
+44	44		201							{1: '1', 2: '500488', 5: '-400', 6: '600'}
+45	45		301							{1: '1', 2: 'Small Mechanoid', 3: 'What nonsense is this?! We want our money back!', 4: '1'}
+46	46		201							{1: '1', 2: '500471', 5: '-400', 6: '600'}
+47	47		201							{1: '2', 2: '500488', 4: '-800', 5: '-400', 6: '600'}
+48	48		201							{1: '3', 2: '500860', 4: '800', 5: '-400', 6: '600'}
+49	49		301							{1: '1', 2: 'The Other Mechanoids', 3: 'We want our money back!', 4: '1', 5: '2', 6: '3'}
+50	50		202							{1: '1', 2: '2', 3: '3'}
+51	51		201							{1: '1', 2: '501184', 3: '6'}
+52	52		301							{1: '1', 2: 'Selena', 3: 'No-show... what a terrible thing to do.', 4: '1'}
+53	53		301							{2: 'Selena', 3: 'Conductor, we have to help them.', 4: '1'}
+54	54		302							"{2: ""I'd be happy to help."", 3: '55', 4: ""Except... I don't really know if we're gonna do a good job."", 5: '55'}"
+55	55		204							{1: '1', 2: '1'}
+56	56		301							{2: 'Selena', 3: 'You can count on me.', 4: '1'}
+57	57		301							"{2: 'Selena', 3: ""I'll lead you straight into the story so you're completely immersed."", 4: '1'}"
+58	58		204							{1: '1'}
+59	59		301				AniZhuanchangBegin			{2: 'Selena', 3: 'Now, just trust me and leave everything to me, Conductor.', 4: '1'}
+60	60		202							{1: '1', 6: '1'}
+61	61		401							{1: '1', 2: '36'}
+62	62		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory528.jpg'}
+63	63		401							{1: '1', 2: '163'}
+64	64		301			AniZhuanchangEnd				{3: 'Seeing the two of you coming to their rescue, the theater staff wastes no time bringing both you and Selena a costume each. After quickly going through your lines backstage, the two of you head up the stage.'}
+65	65		301							"{3: 'Selena decided to go with ""The Tempest"", which is a simple, accessible opera, so that you—playing the fairy—only have to do as Miranda—the protagonist—says if you ever forget your lines.'}"
+66	66		301							{3: 'The curtain rises as Selena steps forward to the center of the stage and begins singing, accompanied by the mechanoid orchestra.'}
+67	67		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignSun01.prefab', 2: '2'}
+68	68		201							{1: '1', 2: '501184', 3: '8', 4: '-300'}
+69	69		301							"{1: '1', 2: 'Selena', 3: '""Mighty fairy! Have you heard my prayer and cast vengeful storms upon my father\'s enemies?""', 4: '1'}"
+70	70		204							{1: '1', 2: '7'}
+71	71		301							"{2: 'Selena', 3: '""Come, my servant, answer my call!""', 4: '1'}"
+72	72		202							{1: '1'}
+73	73		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignSun01.prefab'}
+74	74		301							{3: 'In the story, the Duke of Milan and his daughter Miranda were betrayed and stranded on a deserted island. Twelve years later, their enemy, the King of Naples, sails near the island, and the Duke asks the fairy to summon a tempest with magic to capsize their ship.'}
+75	75		301							"{3: ""However, due to the lack of actors, Selena made a small adaptation, changing the story so that the Duke of Milan's daughter, Miranda, personally carries out this revenge.""}"
+76	76		301							"{3: ""You barely remember the script, but you remember that this is where you're supposed to come up the stage to meet Selena.""}"
+77	77		302							"{2: ""(Can't remember my lines, but I'll give it a try anyway)"", 3: '78', 4: '""Greetings, my mistress. I have summoned the storm as you commanded.""', 5: '78'}"
+78	78		201							{1: '1', 2: '501184', 3: '13', 4: '-300'}
+79	79		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignSun01.prefab', 2: '2'}
+80	80		301							"{1: '1', 2: 'Selena', 3: '""But they didn\'t perish, did they? Please tell me they\'re all safe.""', 4: '1'}"
+81	81		301							{3: 'Hearing footsteps, Selena runs toward you. While the look on her face betrays a hint of nervousness, she handles this part of the story smoothly with her performance.'}
+82	82		204							{1: '1', 2: '1'}
+83	83		301							"{2: 'Selena', 3: '""Excellent! I see they are scattered across the deserted island, yet unharmed. I\'m pleased you heeded my prayer.""', 4: '1'}"
+84	84		302							"{2: '""But the King of Naples committed heinous crimes against you, and may yet plot against you again...""', 3: '85', 4: '""But why do you refuse to drown them?""', 5: '85'}"
+85	85		301							"{2: 'Selena', 3: '""No, fairy. I refuse to be held hostage by hatred and end up becoming what I despise most.""', 4: '1'}"
+86	86		301							"{2: 'Selena', 3: '""Even if my body is mired in this quagmire, my soul shall remain pure. Otherwise, I would cease to be myself.""', 4: '1'}"
+87	87		202							{1: '1'}
+88	88		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignSun01.prefab'}
+89	89		301							"{3: '""Princess Miranda kneels before the \'fairy,\' sorrowfully clutching her chest as she firmly rejects this suggestion.""'}"
+90	90		301							{3: 'Selena carries herself naturally. Rather than simply reciting lines off the script, she appears to have thoroughly studied Princess Miranda and is now acting the character out based on her understanding of it.'}
+91	91		301							{3: 'Meanwhile, the audience of mechanoids under the stage is completely engrossed, their camera eyes fixed intently on the performance.'}
+92	92		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignSun01.prefab', 2: '2'}
+93	93		201							{1: '1', 2: '501184', 3: '9', 4: '-300'}
+94	94		301							"{1: '1', 2: 'Selena', 3: '""...Because revenge is not my final destination. I must journey toward true freedom!""', 4: '1'}"
+95	95		301							"{3: 'Selena\'s murmuring suddenly stops. She takes the ""fairy\'s"" hand and rises to her feet with resolute dignity.'}"
+96	96		301							"{3: ""These lines aren't in the script. Did she make an adaption here?""}"
+97	97		302							"{2: ""(But I guess I'll play along for now)"", 3: '98', 4: '...Freedom?', 5: '98'}"
+98	98		204							{1: '1', 2: '9'}
+99	99		301							"{2: 'Selena', 3: '""I refuse to silently wait here any longer, waiting for their belated repentance. I shall become—""', 4: '1'}"
+100	100		204							{1: '1', 2: '1'}
+101	101		301							"{2: 'Selena', 3: '""The swift that beats its wings and flies beyond the storm!""', 4: '1'}"
+102	102		202							{1: '1'}
+103	103		301							{3: 'She raises her right arm high, reaching toward the massive glass dome ceiling. At that moment, the confetti and streamers on stage burst open all at once.'}
+104	104		201							{1: '1', 2: '501184', 4: '-300'}
+105	105		301							"{1: '1', 2: 'Selena', 3: '""I see now that this island is not my destiny, and the freedom I seek is not here.""', 4: '1'}"
+106	106		204							{1: '1', 2: '8'}
+107	107		301							"{2: 'Selena', 3: '""The suffering fate has imposed upon me, I have long since overcome. No matter how they weep and apologize, I will not grant them a shred of pity.""', 4: '1'}"
+108	108		204							{1: '1', 2: '10'}
+109	109		301							"{2: 'Selena', 3: '""Let us board that ship and sail away from this narrow island together. I shall accompany you to the ends of the earth, to every corner the stars have ever gazed upon.""', 4: '1'}"
+110	110		204							{1: '1', 2: '1'}
+111	111		301							"{2: 'Selena', 3: '""That is the future we should journey toward together.""', 4: '1'}"
+112	112		202							{1: '1'}
+113	113		301							"{3: 'Selena gazes joyfully at the blue sky above the glass dome, as if a distant ""realm of freedom"" truly existed there beyond the island.'}"
+114	114		301							"{3: 'Her ""performance"" continues, her lines having long since departed from the original script.'}"
+115	115		301							"{3: 'Princess Miranda has ""escaped"" the fate written in the script and reached an entirely new ending.'}"
+116	116		301							{3: 'Amidst the shower of glittering confetti, Selena looks profoundly sincere.'}
+117	117		201							{1: '1', 2: '501184', 3: '1', 4: '-300'}
+118	118		301							{1: '1', 2: 'Selena', 3: 'And this time, not even death itself can do us apart.', 4: '1'}
+119	119		301							"{3: 'In that moment, it becomes clear to you that Selena is saying these very words to you as herself and not ""Princess Miranda"".'}"
+120	120		302							{2: 'Me too.', 3: '121', 4: '(Give her hand a gentle squeeze in return)', 5: '121'}
+121	121		203						250.0	{1: '1', 2: '0.25', 3: '-300', 5: '-30'}
+122	122		203						250.0	{1: '1', 2: '0.25', 3: '-300', 4: '-20', 5: '-30'}
+123	123		203						250.0	{1: '1', 2: '0.25', 3: '-300', 5: '-60'}
+124	124		301							"{3: ""Taking advantage of a moment when the audience below hasn't noticed, she leans in and whispers something into your ear.""}"
+125	125		204							{1: '1', 2: '2'}
+126	126		301		1		AniZhuanchangBegin			"{2: 'Selena', 3: '""This performance was meant for you, Conductor... I hope you enjoyed it.""', 4: '1'}"

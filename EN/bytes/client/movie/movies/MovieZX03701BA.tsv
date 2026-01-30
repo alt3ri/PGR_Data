@@ -1,0 +1,204 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		401							{1: '2', 2: '2617'}
+4	4		502							{1: 'DialogDisable'}
+5	5		307				AniZhuanchangBegin		2000.0	"{1: '""Gasp... Gasp...""'}"
+6	6		307							{2: '1'}
+7	7		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+8	8		401							{1: '1', 2: '63'}
+9	9		502							{1: 'DialogEnable'}
+10	10		301			AniZhuanchangEnd				{3: 'Heavy breaths pump air into the frame, bringing the heavy odor of Construct vital fluid into the sensor of smell.'}
+11	11		301							{3: 'For Constructs, breathing is not a necessary activity. But right now, it is these remaining human instincts that are still holding him up.'}
+12	12		301				DialogDisable			"{3: ""He pushes himself up with his remaining right arm, stumbling toward the cliff's edge, where the person he must kill awaits.""}"
+13	13		402							{1: '2617'}
+14	14		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+15	15		307							"{1: '""Get up... Get up!""'}"
+16	16		301							"{3: '""Get up... Get up!""'}"
+17	17		307							"{1: '""Answer my question!""'}"
+18	18		301							"{3: '""Answer my question!""'}"
+19	19		307							{2: '1'}
+20	20		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+21	21		401							{1: '2', 2: '1512'}
+22	22		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+23	23		502							{1: 'RImgBg1Shake'}
+24	24		301			DialogEnable				{3: 'Gnashing his teeth, he throws a punch at the man struggling to get on his feet, only to find his opponent still maintaining that infuriating silence like he always knew.'}
+25	25		301							"{3: 'Silent, reserved, calm and reliable as always. His one and only ""brother.""'}"
+26	26		301				DialogDisable			{3: 'Yet, that silence is deeply hurting him at this very moment, as he is unable to vent his anger and sorrow.'}
+27	27		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+28	28		307							"{1: '""You just won\'t say anything, huh... Fine!""'}"
+29	29		301							"{3: '""You just won\'t say anything, huh... Fine!""'}"
+30	30		307							{2: '1'}
+31	31		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+32	32		301			DialogEnable				{3: 'Clenching his teeth, Noctis picks up a heavily damaged katana and holds it up, trembling.'}
+33	33		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+34	34		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3701_01.jpg'}
+35	35		301							"{3: '""Okay then...""'}"
+36	36		301			RImgBg1Shake	DialogDisable			"{3: '""Just die!""'}"
+37	37		401							{1: '1', 2: '36'}
+38	38		401							{1: '2', 2: '819016'}
+39	39		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+40	40		101					300.0		{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+41	41		401							{1: '2', 2: '2593'}
+42	42		307							{1: '... ...'}
+43	43		301							{3: '... ...'}
+44	44		401					2000.0		{1: '2', 2: '2617'}
+45	45		307							"{1: '""Gasp... Gasp...""'}"
+46	46		301							"{3: '""Gasp... Gasp...""'}"
+47	47		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+48	48		402							{1: '2617'}
+49	49		307							{1: 'Achoo!'}
+50	50		301							{3: 'Achoo!'}
+51	51		307							{2: '1'}
+52	52		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+53	53		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory717.jpg'}
+54	54		502							{1: 'DialogEnable'}
+55	55		401							{1: '1', 2: '5'}
+56	56		301			AniZhuanchangEnd				{3: 'Noctis, reclining on a lounge chair for a midday nap, is abruptly startled awake by his own sneeze.'}
+57	57		201							{1: '1', 2: '500650', 3: '5'}
+58	58		301							{1: '1', 3: 'The first sight that greets him is No. 21, clutching her tail and baring her sharp teeth in a threatening display.'}
+59	59		301							{2: 'No. 21', 3: 'Growl...!!', 4: '1'}
+60	60		202							{1: '1', 6: '1'}
+61	61		201							{1: '1', 2: '500682', 3: '5', 4: '300'}
+62	62		201							{1: '2', 2: '500650', 3: '4', 4: '-300'}
+63	63		301							"{1: '1', 2: 'Noctis', 3: ""Hey! I didn't do anything... Hold on..."", 4: '1'}"
+64	64		204							{1: '1'}
+65	65		301							{3: 'Noctis reaches up to touch his nose and finds a strand of white fur resting upon it.'}
+66	66		204							{1: '1', 2: '5'}
+67	67		301							"{2: 'Noctis', 3: ""Isn't this your tail fur... 21! You put your damn tail on my face again, you little jerk! No wonder I couldn't breathe during my nap, and my nose was itching like hell."", 4: '1'}"
+68	68		204							{1: '1', 2: '4'}
+69	69		301							{3: 'No. 21 shifts her gaze and hides her fluffy tail behind her body.'}
+70	70		301							"{2: 'No. 21', 3: ""I don't know... But Noctis sneezed at my tail. Gross!"", 4: '2'}"
+71	71		301							{2: 'No. 21', 3: 'Captain said, anyone who is not clean should be punished!', 4: '2'}
+72	72		204							{1: '1', 2: '2'}
+73	73		301							"{2: 'Noctis', 3: ""Hmph, alright, let's see who's gonna get themselves punished in the end!"", 4: '1'}"
+74	74		203							{1: '1', 2: '0.25', 3: '400'}
+75	75		201							{1: '2', 2: '500652', 3: '4', 4: '-300'}
+76	76		203							{1: '2', 2: '0.25', 3: '-400'}
+77	77		301							"{1: '1', 3: ""As usual, the two maintain an air of hostility, poised to spring into action and confront each other at a moment's notice.""}"
+78	78		401							{1: '1', 2: '36'}
+79	79		201							{1: '2', 2: '500650', 4: '-400'}
+80	80		204							{1: '1', 2: '8'}
+81	81		301							"{1: '1', 3: ""After a brief standoff, the tension dissipates as No. 21's arched back gradually relaxes. She lowers herself onto the floor, stretching her body in a display of boredom, while Noctis releases a weary sigh and unclenches his fists.""}"
+82	82		401							{1: '1', 2: '169'}
+83	83		301							"{2: 'Noctis', 3: ""Tsk, I'm not feeling up to anything right now."", 4: '1'}"
+84	84		204							{1: '1'}
+85	85		301							{2: 'No. 21', 3: 'I want to go outside and play...', 4: '2'}
+86	86		301							"{3: ""Due to No. 21's unauthorized release of her frame restraints during the event in the Hetero Zone, she and her squad have become the target of the most troublesome faction—the Control Court.""}"
+87	87		301							{3: 'Before the Control Court reaches a conclusion, the members of Cerberus must remain confined to a restricted area surrounding their lounge.'}
+88	88		301							"{2: 'Noctis', 3: ""Hey, 21, you caught wind of what those Control Court guys were saying, right? If they actually find any evidence, what's gonna happen to Vera...?"", 4: '1'}"
+89	89		204							{1: '2', 2: '14'}
+90	90		301							"{3: ""Lying on the floor, No. 21's ears droop as she idly gathers the scattered drink cans. A moment of silence envelops the room before she finally opens her mouth to speak.""}"
+91	91		301							"{2: 'No. 21', 3: ""Uh... The pink-haired person, with a strange vibe, said... If it's true, I will be removed from the squad for investigation, or..."", 4: '2'}"
+92	92		301							{2: 'No. 21', 3: 'They will dismiss Captain from her position... making her leave.', 4: '2'}
+93	93		301							"{3: ""No. 21 blinks, her gaze shifting toward the door of the Cerberus lounge. Today marks the final day of the Control Court's investigation, yet Vera, who had gone to the Control Court, has not returned.""}"
+94	94		301							{3: 'If they manage to endure this day, the Control Court will no longer have any right to intervene in the affairs of the Task Force.'}
+95	95		301							"{2: 'No. 21', 3: ""I... don't want to be away from Captain."", 4: '2'}"
+96	96		204							{1: '1', 2: '4'}
+97	97		301							{3: 'Noctis sits on the lounge table, crossing his legs, his brow furrowed tight. However, before long, his usual unbridled grin manages to break free, spreading across his face.'}
+98	98		204							{1: '1', 2: '2'}
+99	99		301							"{2: 'Noctis', 3: ""Ha, that's why you're just a little kid who can't live without Vera..."", 4: '1'}"
+100	100		204							{1: '2'}
+101	101		301							"{3: ""Anticipating No. 21's typical response of being provoked by his words and starting a bickering match, Noctis is taken aback when instead she meets his gaze with a serious expression, shaking her head.""}"
+102	102		301							"{2: 'No. 21', 3: 'Em... It\'s not true. I\'m different now. It\'s not because I can\'t live without the squad or Captain, but I ""want"" to stay here and stay by Captain\'s side.', 4: '2'}"
+103	103		204							{1: '1', 2: '4'}
+104	104		301							"{2: 'Noctis', 3: 'Heh, ""different now."" Good talk, huh?', 4: '1'}"
+105	105		204							{1: '1', 2: '2'}
+106	106		401							{1: '2', 2: '9332010'}
+107	107		301							{3: 'Noctis playfully tosses the empty drink can he holds into the air, watching as it gracefully rolls through the air. By sheer chance, it lands perfectly on top of the pile of cans that No. 21 has just stacked up.'}
+108	108		301							"{2: 'Noctis', 3: ""Oh—! Did you see that, 21? Isn't it impressive?"", 4: '1'}"
+109	109		301							{3: 'No. 21 only takes a quick glimpse and answers him with the most faked applause.'}
+110	110		204							{1: '2', 2: '4'}
+111	111		301							"{2: 'No. 21', 3: ""Noctis, you're too bored..."", 4: '2'}"
+112	112		301							"{2: 'Noctis', 3: ""You don't understand! It's very hard for my new arm to pull off movements this precise."", 4: '1'}"
+113	113		401						200.0	{1: '2', 2: '9317013'}
+114	114		401							{1: '2', 2: '9317013'}
+115	115		301							{3: 'Noctis throws a series of punches into the air, generating a powerful gust of wind that causes the nearby pile of cans to teeter on the verge of collapse. Pleased by the display of his own ability, he nods with a sense of satisfaction.'}
+116	116		301							{2: 'Noctis', 3: 'Hey, what do you think? The output is not bad, right?', 4: '1'}
+117	117		204							{1: '2', 2: '8'}
+118	118		301							"{3: ""No. 21 squints her eyes, her mouth forming a pout as she observes his actions. Her tail curls around the pile of cans, shielding them from the force of Noctis' strikes.""}"
+119	119		204							{1: '2', 2: '4'}
+120	120		301							{2: 'No. 21', 3: 'Rrgh... Claws are still better.', 4: '2'}
+121	121		301							"{3: ""Shortly after their return from the gruesome forest, much to everyone's surprise, Noctis made a request to the Science Council, asking them to replace his left arm with a full-coverage robotic arm.""}"
+122	122		301							{3: '—As if he had a premonition.'}
+123	123		301							{2: 'Noctis', 3: 'The elbow joint still feels off... That could cause me trouble. Hey, 21, you hang tight here. I gotta swing by the Science Council and sort this out.', 4: '1'}
+124	124		204							{1: '2', 2: '4'}
+125	125		301							"{2: 'No. 21', 3: ""You can't! Captain said we can't get caught by the bad guys of the Control Court. We can't leave the lounge before she comes back."", 4: '2'}"
+126	126		301							{3: 'Noctis snorts in response and waves at No. 21 before walking toward the door.'}
+127	127		204							{1: '1', 2: '8'}
+128	128		301				DialogDisable			"{2: 'Noctis', 3: ""That's not my concern. The Control Court's got their sights set on you, not me."", 4: '1'}"
+129	129		202							{1: '1', 2: '2'}
+130	130		401							{1: '1', 2: '36'}
+131	131		502							{1: 'RImgBg1DisableSlow'}
+132	132		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+133	133		401							{1: '1', 2: '201'}
+134	134		201							{1: '1', 2: '500682', 3: '4'}
+135	135		301			DialogEnable				"{1: '1', 3: ""Noctis' opinion holds true. Throughout the entire investigation, the Control Court has remained oblivious to his presence.""}"
+136	136		202							{1: '1'}
+137	137		301				AniZhuanchangBegin			"{3: ""—And of course, no one would notice that he didn't walk toward the Science Council after leaving the lounge.""}"
+138	138		202							{1: '1', 6: '1'}
+139	139		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory122.png'}
+140	140		301			AniZhuanchangEnd				"{3: ""Along the periphery of the Task Force's lounge area, vacant offices are available for individuals and teams to use with proper authorization. However, inevitably, some people will just occupy them without seeking permission.""}"
+141	141		201							{1: '1', 2: '500146', 3: '4'}
+142	142		301							{1: '1', 3: 'Among all the things that can be seen around these parts, humans are the rarest to be found. However, today, one of the offices is illuminated with light, where a blonde young man is engrossed in reading stacks of documents while rubbing his head.'}
+143	143		301							{3: 'While Murray holds the title of the Cerberus Commandant, the unique nature of the squad makes him not directly engaged in its combat operations or day-to-day management.'}
+144	144		301							{3: 'He usually just plays the role of cleaning up the mess left behind by his troublesome teammates, which is one of the reasons why Nikola assigned him as the Cerberus Commandant.'}
+145	145		204							{1: '1', 2: '8'}
+146	146		301							{2: 'Murray', 3: 'Sigh...', 4: '1'}
+147	147		301							{3: 'Despite being accustomed to his everyday duties, the interference of the Control Court has caused Murray quite a headache. It even takes a toll on his stomach, which is protesting against the past excessive consumption of coffee.'}
+148	148		202							{1: '1', 6: '1'}
+149	149		201							{1: '1', 2: '500682', 4: '400'}
+150	150		201							{1: '2', 2: '500146', 4: '-400'}
+151	151		301							{1: '1', 2: 'Noctis', 3: 'So, Kurono plays a part in this, right?', 4: '1'}
+152	152		301							{3: 'Standing before Murray is Noctis, who has managed to elude the surveillance of the Control Court and make his way here.'}
+153	153		204							{1: '2', 2: '1'}
+154	154		301							"{2: 'Murray', 3: ""Haha, all I can say is it's probably a good bet. The violation in this case isn't that serious, to be honest, but for some reason, the Control Court just won't let it slide."", 4: '2'}"
+155	155		204							{1: '2'}
+156	156		301							"{2: 'Murray', 3: ""But I'm just a commandant, and there's not much I can do about the Control Court's investigation..."", 4: '2'}"
+157	157		301							{3: 'Murray speaks in a slightly awkward manner, even though he has already thought through all the solutions. But if things go down that way, he will undoubtedly find himself in trouble as well.'}
+158	158		204							{1: '2', 2: '8'}
+159	159		301							{2: 'Murray', 3: 'Sigh, the female Construct of the Control Court... is indeed quite rough to deal with.', 4: '2'}
+160	160		204							{1: '2'}
+161	161		301							{3: 'During the Hetero Tower incident, Murray had a chance encounter with Ishmael, but he senses that there is more to her than meets the eye.'}
+162	162		301							"{2: 'Noctis', 3: ""That's why I'm not expecting anything from you. The thing I asked you before... did you get it done?"", 4: '1'}"
+163	163		301							{3: 'After a brief moment of hesitation, Murray retrieves a key from the inner pocket of his jacket and pushes it toward Noctis on the desk.'}
+164	164		301							{2: 'Murray', 3: 'I know asking is unnecessary, but have you really made the decision?', 4: '2'}
+165	165		301							"{2: 'Noctis', 3: ""Don't even bother..."", 4: '1'}"
+166	166		301							{3: 'Concerned that Murray might retract the offer, Noctis swiftly takes hold of the key and secures it in his pocket.'}
+167	167		301							{2: 'Murray', 3: 'Alright, this key is exactly the same as the one held by Vera... The fake data has already been inserted, where you were the one who activated the unlocking program.', 4: '2'}
+168	168		204							{1: '1', 2: '2'}
+169	169		301							"{2: 'Noctis', 3: ""Oh! That's right. I didn't consider that... Thanks. Let me buy you a drink next time!"", 4: '1'}"
+170	170		301							"{3: ""Wearing a bitter smile, Murray gazes down at the contents of his cup, which have changed from black coffee to a soothing Kowloong tea per Lee's request.""}"
+171	171		301							"{2: 'Murray', 3: ""Thanks but no thanks... I'm doing this to help myself as well."", 4: '2'}"
+172	172		301							"{2: 'Noctis', 3: ""Haha, I'm just saying. Maybe I'll never get a chance to see you again after this. Who knows?"", 4: '1'}"
+173	173		301							"{3: ""If Noctis claims the responsibility of unlocking No. 21's restraint program, it is highly likely that those Kurono people in the Control Court would be rendered powerless to intervene against Vera and No. 21.""}"
+174	174		301							{3: 'But as the person responsible for the event, Noctis will probably not be allowed to stay in Cerberus.'}
+175	175		301							"{2: 'Noctis', 3: ""Heh, it's not my first time, anyway. I don't care where I end up, but those two are different..."", 4: '1'}"
+176	176		204							{1: '1'}
+177	177		301							{2: 'Noctis', 3: 'After all, Cerberus will no longer be Cerberus without any of them.', 4: '1'}
+178	178		301							{3: 'Murray raises his gaze, fixing his eyes upon Noctis, but eventually suppresses the urge to voice his thoughts to him.'}
+179	179		301							"{2: 'Murray', 3: ""Oh, by the way, for that other thing you needed my help with, I've got a lead as well."", 4: '2'}"
+180	180		204							{1: '1', 2: '4'}
+181	181		301							{3: 'As Noctis examines the picture that Murray has presented, his expression turns serious, his attention captivated by an exceedingly faint figure captured within the image.'}
+182	182		301							{3: 'Murray initially wondered why Noctis approached him suddenly, expressing a desire for his assistance in fabricating evidence to shoulder the entire blame for this event.'}
+183	183		301							{3: 'Upon reflection, Murray surmises that Noctis may be seeking an opportunity to leave Cerberus and investigate the individual in the picture... who was once his fellow member of the Purifying Force.'}
+184	184		301							"{2: 'Murray', 3: ""Some Task Force members spotted a Construct that looked like the one you've been searching for. They saw him during a mission near the Clean Zone, and here's the location."", 4: '2'}"
+185	185		301							{2: 'Noctis', 3: 'I see. Thanks...', 4: '1'}
+186	186		301							{3: 'Noctis nods to Murray, tucking away the photo and the note containing the location. He offers Murray a not-so-standard military salute before exiting the office.'}
+187	187		202							{1: '1'}
+188	188		301							{1: '1', 3: 'Caught off guard by the salute, Murray is shocked, as he has never witnessed such a gesture from Noctis or any other member of Cerberus before.'}
+189	189		203							{1: '2', 2: '0.25'}
+190	190		204							{1: '1', 2: '8'}
+191	191		301							{2: 'Murray', 3: 'Oh well...', 4: '2'}
+192	192		204							{1: '2'}
+193	193		301							{3: 'Murray releases a sigh, a long-absent genuine smile gracing his face as he savors a sip of his hot tea.'}
+194	194		301							{2: 'Murray', 3: 'Am I more like... a good commandant now?', 4: '2'}
+195	195		301							{3: 'Lost in thought, Murray taps his temple for a little while. He then opens a desk drawer and retrieves a business card he had received recently from it, carefully examining the name printed on it.'}
+196	196		301							{2: 'Murray', 3: 'Okay... one last security measure.', 4: '2'}
+197	197		401							{1: '2', 2: '1099'}
+198	198		301							{3: 'Using a specially modified secret channel, Murray dials the number on the card.'}
+199	199		202							{1: '2', 6: '1'}
+200	200		401							{1: '2', 2: '2566'}
+201	201		201							{1: '1', 2: '500697'}
+202	202		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+203	203		301		1		AniZhuanchangBegin			{1: '1', 2: '???', 3: 'Helloooo? Hi, is this Murray?', 4: '1'}

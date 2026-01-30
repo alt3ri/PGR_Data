@@ -1,0 +1,33 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory19.jpg'}
+2	100		401							{1: '1', 2: '201'}
+3	2		201							{1: '1', 2: '1081001', 3: '1'}
+4	3		301			DialogEnable				{1: '1', 2: 'Kamui', 3: 'Helping people makes me feel good!', 4: '1'}
+5	4		201							{1: '1', 2: '1011001', 3: '10'}
+6	5		301							{1: '1', 2: 'Lee', 3: 'Behind you—', 4: '1'}
+7	6		201							{1: '1', 2: '1081001'}
+8	7		301							"{1: '1', 2: 'Kamui', 3: ""Hmm? Oh, it's not dead yet?"", 4: '1'}"
+9	8		202							{1: '1', 6: '1'}
+10	9		301			RImgBg1Shake				{2: 'Terrapod', 3: '!'}
+11	10		301			RImgBg1Shake				{2: 'Terrapod', 3: 'Schween—'}
+12	11		201							{1: '1', 2: '1011001', 3: '10'}
+13	12		301							{1: '1', 2: 'Lee', 3: 'All clear.', 4: '1'}
+14	13		204							{1: '1'}
+15	14		203							{1: '1', 2: '0.25', 3: '-400'}
+16	15		201							{1: '2', 2: '1081001', 3: '1', 4: '400'}
+17	16		301							"{1: '1', 2: 'Kamui', 3: ""Phew, thanks again! You're pretty good!"", 4: '2'}"
+18	17		301							"{2: 'Lee', 3: ""(Leaving his back open to enemies not dead checked... I can already tell we're not going to be friends.)"", 4: '1'}"
+19	18		301							"{2: 'Kamui', 3: ""Gray Ravens, hello there! I'm Kamui, a Tank-type Construct, member of the Strike Hawks."", 4: '2'}"
+20	19		301							{2: 'Kamui', 3: 'And my mission here is to track down one of the Ascendants.', 4: '2'}
+21	20		301							"{2: 'Lee', 3: ""One of? There's more than one?"", 4: '1'}"
+22	21		204							{1: '2'}
+23	22		301							"{2: 'Kamui', 3: 'Yep. According to our info, they even have something called the ""Ascension-Network"""", and they share strength from it. The core members are the ones we call """"Ascendants"".', 4: '2'}"
+24	23		201							{1: '1', 2: '1021001', 3: '3', 4: '-400'}
+25	24		301							"{1: '1', 2: 'Lucia', 3: ""The one you're after, is there any more information? Is it someone with white long hair in a red outfit?"", 4: '1'}"
+26	25		301							"{2: 'Kamui', 3: ""I don't know, I mean, does it matter?"", 4: '2'}"
+27	26		301							{2: 'Lucia', 3: '...', 4: '1'}
+28	27		201							{1: '1', 2: '1011001', 3: '10', 4: '-400'}
+29	28		301							{1: '1', 2: 'Lee', 3: 'I think I get your work style now.', 4: '1'}
+30	29		201							{1: '1', 2: '1021001', 4: '-400'}
+31	30		301							"{1: '1', 2: 'Kamui', 3: ""Nothing a few punches and slashes won't fix!"", 4: '2'}"
+32	31		301		1		AniZhuanchangBegin			"{2: 'Kamui', 3: ""Anyway, let's go and pluck this Ascendant out!"", 4: '2'}"

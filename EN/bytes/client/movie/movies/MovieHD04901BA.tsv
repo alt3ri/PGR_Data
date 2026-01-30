@@ -1,0 +1,525 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+2	2		304							"{1: '<i>""A unified society demands a scapegoat.""</i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-2', 10: '1'}"
+3	3		304							"{1: '<i>""Be it through destruction or reconciliation, people always take what they desire from that idealized world.""</i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 10: '1'}"
+4	4		304				AniZhuanchangBegin			"{1: '<i>""...The time has come. But the scapegoat has yet to break from its pen.""</i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 9: '1', 10: '1'}"
+5	5		401						2000.0	{1: '1', 2: '36'}
+6	6		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1323.jpg'}
+7	7		401							{1: '1', 2: '165'}
+8	8		401							{1: '2', 2: '5382'}
+9	9		104						2500.0	{1: '0|0|-250', 2: '2'}
+10	10		201							{1: '1', 2: '501393'}
+11	11		301			DialogEnable				"{1: '1', 2: '????', 3: 'I filled this world with my own ""fabrication."" Raheleh, Etha, Lesti... and you.', 4: '1', 18: '100012152'}"
+12	12		301							"{2: '????', 3: 'They are content to remain here, to walk with me in this ""sweet dream""... all except you.', 4: '1', 18: '100012153'}"
+13	13		301							{2: '????', 3: '...Was it too much to ask, to keep this one sweet dream for myself?', 4: '1', 18: '100012154'}
+14	14		302							{2: '...', 3: '15', 4: 'What did you say?', 5: '15', 6: 'Who are you?', 7: '15'}
+15	15		202							{1: '1'}
+16	16		301				DialogDisable			{3: 'You have appeared here suddenly, with no memory of your origin. Disoriented, you can only turn your head toward the voice speaking to you.'}
+17	17		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+18	18		201							{1: '1', 2: '501393'}
+19	19		301			DialogEnable				{1: '1', 3: 'A figure in red and white is nestled close by, but her form remains a stubborn blur, no matter how you strain your eyes.'}
+20	20		203							{1: '1', 2: '0.5', 4: '-100', 5: '-100'}
+21	21		301							{3: 'She lowers her head, her words dissolving into a soft, incomprehensible murmur.'}
+22	22		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+23	23		301							{2: '????', 3: 'I feel... so very lonely.', 4: '1', 18: '100012155'}
+24	24		302							{2: '...', 3: '25', 4: 'Ishmael...?', 5: '25', 6: 'Is that you?', 7: '25'}
+25	25		301							{2: '????', 3: 'But you said this place was wrong. That this power must never be allowed to escape.', 4: '1', 18: '100012156'}
+26	26		301				DialogDisable			{2: '????', 3: 'Now, I understand.', 4: '1', 18: '100012157'}
+27	27		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStrongholdMain/FxUiStrongholdMainFlashing01.prefab', 2: '2'}
+28	28		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStrongholdMain/FxUiStrongholdMainFlashing01.prefab'}
+29	29		301			DialogEnable				{3: 'Her eyelashes seem to be bleaching white, those pale fronds fluttering, dissolving into a stark, white patch in your vision.'}
+30	30		301				DialogDisable			{2: '????', 3: 'And I have made my choice. Forgive me for what I must do.', 4: '1', 18: '100012158'}
+31	31		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStrongholdMain/FxUiStrongholdMainFlashing01.prefab', 2: '2'}
+32	32		203						500.0	{1: '1', 2: '0.5', 4: '-50', 5: '-150'}
+33	33		301			DialogEnable				{3: 'The blur of red and white draws nearer. A pair of hands cradles your cheeks, gently pulling your face closer.'}
+34	34		301							"{2: '????', 3: ""I'm sorry, Gray Raven, but I cannot walk your path."", 4: '1', 18: '100012159'}"
+35	35		301							{3: 'Her restrained voice brushes against your forehead, a murmur filled with reluctance. Then, she leans down and presses a soft kiss to your brow.'}
+36	36		301							{2: '????', 3: 'If we ever get another chance...', 4: '1', 18: '100012160'}
+37	37		203							{1: '1', 2: '0.25', 4: '0', 5: '0'}
+38	38		301				DialogDisable			{2: '????', 3: 'Please... remember me. And love me.', 4: '1', 18: '100012161'}
+39	39		302							{2: '!', 3: '40'}
+40	40		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStrongholdMain/FxUiStrongholdMainFlashing01.prefab'}
+41	41		202							{1: '1', 6: '1'}
+42	42		401							{1: '1', 2: '36'}
+43	43		401							{1: '2', 2: '4044'}
+44	44		104						250.0	{1: '0|0|0', 2: '0.2'}
+45	45		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.3'}
+46	46		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+47	47		205							{1: '999'}
+48	48		401							{1: '2', 2: '2674'}
+49	49		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '3'}
+50	50		504							{1: '0.7'}
+51	51		301			DialogEnable	DialogDisable			{3: 'The hands on your cheeks suddenly tense. With a sharp push, you are thrust backward.'}
+52	52		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1201.jpg', 3: '0', 4: '1', 5: '0.3'}
+53	53		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1201.jpg'}
+54	54		205							{1: '999'}
+55	55		301			DialogEnable				{3: 'The sensation of falling seizes your heart, and only then do you look down:'}
+56	56		301				DialogDisable			{3: 'An infinitely tall tower. The ground rushes up to meet you.'}
+57	57		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1222.jpg', 4: '4'}
+58	58		104							{1: '0|-1080|0', 2: '0', 4: '4'}
+59	59		104							{1: '0|1080|0', 2: '0.5'}
+60	60		104						600.0	{1: '0|0|0', 2: '0.5', 4: '4'}
+61	61		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1222.jpg'}
+62	62		101							{4: '4', 5: '1'}
+63	63		301			DialogEnable	DialogDisable			{3: 'In this desperate descent, the blurred world snaps into terrible focus. Chaotic smears of color sharpen into defined edges.'}
+64	64		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1181.jpg', 4: '4'}
+65	65		504							{1: '0'}
+66	66		104							{1: '0|-1080|0', 2: '0', 4: '4'}
+67	67		104							{1: '0|1080|0', 2: '0.5'}
+68	68		104						600.0	{1: '0|0|0', 2: '0.5', 4: '4'}
+69	69		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1181.jpg'}
+70	70		101							{4: '4', 5: '1'}
+71	71		301			DialogEnable				"{3: ""You start to distinguish the tower's brickwork, the ant-like crowds in the streets, a lone tree, and a white bird circling back to its nest.""}"
+72	72		301				DialogDisable			{3: 'And—'}
+73	73		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.4'}
+74	74		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+75	75		205							{1: '999'}
+76	76		401							{1: '2', 2: '4414'}
+77	77		502							{1: 'DialogEnable'}
+78	78		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+79	79		301			DialogShake				{3: 'Thud.'}
+80	80		301				AniZhuanchangBegin			"{3: ""It's over. The world closes its eyes.""}"
+81	81		502							{1: 'DialogDisable'}
+82	82		102							{1: 'Her Merciful Gaze', 2: 'Nightfall Finale', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+83	83		502						5000.0	{1: 'ThemeEnable'}
+84	84		101						5000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+85	85		302							{2: '(Open your eyes)', 3: '86'}
+86	86		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+87	87		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory823.jpg'}
+88	88		104							{1: '-220|-70|-360', 2: '0', 4: '7'}
+89	89		205				AniZhuanchangEnd			{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront46.png', 3: '1', 4: '1', 5: '0'}
+90	90		401							{1: '2', 2: '212'}
+91	91		401							{1: '2', 2: '2750'}
+92	92		201							{1: '1', 2: '501100', 6: '-100'}
+93	93		301			DialogEnable				"{1: '1', 2: 'Carriage Driver', 3: ""Finally! I called you so many times but you wouldn't stir. Thought I'd have to play the hero and find a constable or something."", 4: '1', 18: '100012162'}"
+94	94		401							{1: '1', 2: '6167'}
+95	95		301							"{3: ""The carriage driver snaps her fingers again, withdrawing the hand she'd extended toward your face.""}"
+96	96		301				DialogDisable			"{2: 'Carriage Driver', 3: ""But you seem alright! And just in time; we've pulled up at the ceremony. You haven't forgotten, have you?"", 18: '100012163'}"
+97	97		202							{1: '1'}
+98	98		302							{2: 'Ceremony...?', 3: '99'}
+99	99		302							{2: 'Oh right, I remember now.', 3: '100'}
+100	100		104							{1: '0|0|-20', 2: '1.5', 4: '1'}
+101	101		104						1100.0	{1: '-220|-150|-360', 2: '1', 4: '7'}
+102	102		205						350.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront46.png', 3: '1', 4: '0', 5: '0.3'}
+103	103		401							{1: '2', 2: '2704'}
+104	104		301			DialogEnable				{3: 'Leaning on your walking stick, you step down from the carriage, your senses dazed and disoriented.'}
+105	105		301							{3: 'The dream was so vivid that the solid ground beneath your feet now feels like an illusion. A faint, phantom ache lingers in your chest, the last echo of that endless fall.'}
+106	106		302							{2: '(Should probably get a check-up soon.)', 3: '107'}
+107	107		306							{1: '1'}
+108	108		201							{1: '1', 2: '500460', 4: '650', 5: '-50'}
+109	109		201							{1: '2', 2: '500136', 4: '-600', 5: '-30'}
+110	110		201							{1: '3', 2: '500965', 4: '200', 5: '-50'}
+111	111		201							{1: '4', 2: '500268', 4: '-200', 5: '-30'}
+112	112		301				DialogDisable			"{3: ""Down the path, a procession of black-clad mourners moves toward the cemetery. They carry a single coffin draped in vibrant red, their pace a slow, measured beat. It's almost time.""}"
+113	113		203							{1: '1', 2: '0.5', 3: '700', 4: '-50'}
+114	114		203							{1: '2', 2: '0.5', 3: '-700', 4: '-30'}
+115	115		202							{1: '1', 2: '2'}
+116	116		104						350.0	{1: '0|30|-30', 2: '0.3'}
+117	117		104							{1: '0|0|-50', 2: '0.4'}
+118	118		203							{1: '3', 2: '0.5', 3: '650', 4: '-50'}
+119	119		203							{1: '4', 2: '0.5', 3: '-600', 4: '-30'}
+120	120		201							{1: '5', 2: '500970'}
+121	121		301			DialogEnable	DialogDisable			{1: '1', 3: 'You check your credentials and hurry to join the somber parade, slipping into step at its rear. There, you spot the figure you are determined to meet today.'}
+122	122		203							{1: '3', 2: '0.5', 3: '700', 4: '-50'}
+123	123		203							{1: '4', 2: '0.5', 3: '-700', 4: '-30'}
+124	124		202							{1: '3', 2: '4'}
+125	125		104						350.0	{1: '0|30|-50', 2: '0.3'}
+126	126		104							{1: '0|0|-80', 2: '0.4'}
+127	127		306							{1: '0'}
+128	128		302							{2: 'Hello, Officer.', 3: '129', 4: 'Hi, Shorthalt.', 5: '129'}
+129	129		401							{1: '2', 2: '1543'}
+130	130		201							{1: '5', 2: '500730', 7: '1'}
+131	131		301			DialogEnable				{1: '1', 2: 'Shorthalt', 3: 'Who are you?', 4: '5', 18: '100012164'}
+132	132		301							{3: 'The tall, middle-aged man turns around upon your tap on his shoulder. His frown is immediate as his eyes find you, a discordant note cutting through the hushed murmur of collective prayers.'}
+133	133		302							"{2: '(Show your credentials)', 3: '134', 4: ""I'm a prosecutor from the Inspectorate General..."", 5: '134'}"
+134	134		301							"{2: 'Shorthalt', 3: ""Oh, it's you. Not here. Keep your voice down and follow me."", 4: '5', 18: '100012165'}"
+135	135		202							{1: '5'}
+136	136		301				DialogDisable			{3: 'Shorthalt gestures with his hand, motioning for you to follow him to a more suitable place to talk.'}
+137	137		104						1550.0	{1: '-150|-100|-180', 2: '1.5'}
+138	138		402							{1: '212'}
+139	139		301			DialogEnable				{3: 'You stop beneath a large tree in a secluded corner of the cemetery.'}
+140	140		201							{1: '1', 2: '500730'}
+141	141		301							"{1: '1', 2: 'Shorthalt', 3: ""No introductions. I remember you, 【kuroname】. Hard to forget someone who's been blowing up my inbox with meeting invites and joint investigation requests for two weeks straight."", 4: '1', 18: '100012166'}"
+142	142		301							"{2: 'Shorthalt', 3: ""I pulled your file. About five years back, you were sent to <b><ud><color=#34aff8ff><link=36>Thebesia</link></color></ud></b> on an exchange. Just a junior prosecutor back then, if I'm not mistaken..."", 4: '1', 18: '100012167'}"
+143	143		302							{2: 'Senior prosecutor, Officer.', 3: '144'}
+144	144		301				DialogDisable			{2: 'Shorthalt', 3: '...Right. Senior prosecutor. From <b><ud><color=#34aff8ff><link=37>Kerentos</link></color></ud></b>. Climbed the ladder, landed a special appointment at our Inspectorate General in Thebesia. Heard you even applied for citizenship. That true?', 4: '1', 18: '100012168'}
+145	145		302							"{2: ""Paperwork's still pending. I'm still Kerentosian, Officer."", 3: '146'}"
+146	146		302							"{2: ""I came from the same nation as the pontiff's assassin."", 3: '147'}"
+147	147		301			DialogEnable				"{2: 'Shorthalt', 3: ""Well, since you said it and not me... you get why I've been keeping my distance, right?"", 4: '1', 18: '100012169'}"
+148	148		301							"{2: 'Shorthalt', 3: 'The Council never should\'ve put an ""outsider"" like you on this case. Makes people nervous. They\'ll think you\'re... sympathetic.', 4: '1', 18: '100012170'}"
+149	149		301							"{2: 'Shorthalt', 3: 'You should go back. Thebesia and Kerentos are one spark away from war. We ""useless cops"" might not get deployed, but we\'re already neck-deep in the chaos the pontiff left behind.', 4: '1', 18: '100012171'}"
+150	150		301							{2: 'Shorthalt', 3: 'No one has the time for a formal investigation request right now anyway.', 4: '1', 18: '100012172'}
+151	151		401							{1: '2', 2: '5286'}
+152	152		301							{3: 'Irritation flashes through him as he scratches his hair. His fingers twitch instinctively, likely searching for the absent comfort of a cigarette.'}
+153	153		301							"{2: 'Shorthalt', 3: 'I\'ve been dodging you for two weeks, and you still track me down. You don\'t give up, do you? Tell you what, after this whole ""grand funeral"" circus is over, I\'ll buy you a drink. How\'s that?', 4: '1', 18: '100012173'}"
+154	154		302							{2: '...', 3: '155', 4: 'I still need to follow proper protocol, Offi—', 5: '155'}
+155	155		301				DialogDisable			"{2: 'Shorthalt', 3: ""...Look, we're buried. I know it's not easy being Kerentosian right now. But it's not exactly a picnic for us, either."", 4: '1', 18: '100012174'}"
+156	156		202							{1: '1', 6: '1'}
+157	157		104						1550.0	{1: '0|0|0', 2: '1.5'}
+158	158		301			DialogEnable				{3: 'Shorthalt falls silent, his gaze drawn to the small, secretive ceremony ahead.'}
+159	159		301							{3: 'The funeral has begun.'}
+160	160		201							{1: '1', 2: '500730'}
+161	161		301							{1: '1', 2: 'Shorthalt', 3: 'Just look at what that assassin did.', 4: '1', 18: '100012175'}
+162	162		301							"{2: 'Shorthalt', 3: 'Or honestly... look at what our ""brilliant"" pontiff brought on herself.', 4: '1', 18: '100012176'}"
+163	163		202							{1: '1', 6: '1'}
+164	164		306							{1: '1'}
+165	165		301							{3: 'A low chant echoes in the air, and you follow his look.'}
+166	166		301							{3: 'There is no burning incense to scent the breeze, no sacred offerings, no bread or wine.'}
+167	167		201							{1: '1', 2: '500460', 4: '650', 5: '-50'}
+168	168		201							{1: '2', 2: '500136', 4: '-600', 5: '-30'}
+169	169		201							{1: '3', 2: '500965', 4: '200', 5: '-50'}
+170	170		201							{1: '4', 2: '500268', 4: '-200', 5: '-30'}
+171	171		301							{1: '1', 3: 'Only a handful of strangers, people with no connection to the pontiff in life, some not even believers. Even the priest recites the rites in a toneless drone, his voice cold with indifference.'}
+172	172		202							{1: '1', 2: '2', 3: '3', 4: '4', 6: '1'}
+173	173		306							{1: '0'}
+174	174		201							{1: '5', 2: '501098'}
+175	175		301				DialogDisable			{1: '1', 2: 'Priest', 3: 'On behalf of... In place of the College of Cardinals, I extend my gratitude for your presence here today.', 4: '5', 18: '100012177'}
+176	176		202							{1: '5'}
+177	177		302							{2: 'Not a single cardinal showed up?', 3: '178'}
+178	178		201							{1: '1', 2: '500730'}
+179	179		301			DialogEnable				"{1: '1', 2: 'Shorthalt', 3: ""A handful are in the back. Wouldn't be caught dead up here, though. Not after all the scandals that surfaced. The controversy is white-hot. They have to keep their distance."", 4: '1', 18: '100012178'}"
+180	180		302							{2: 'And those scandals? From your perspective, are they true?', 3: '181'}
+181	181		301							"{2: 'Shorthalt', 3: ""My side? From a cop's standpoint, every charge we filed through the Procuratorate was backed by hard evidence."", 4: '1', 18: '100012179'}"
+182	182		301				DialogDisable			"{2: 'Shorthalt', 3: ""The list includes, but is not limited to: corruption, bribery, collusion with foreign powers—especially with your people in Kerentos, though that part's staying out of the press, obviously..."", 4: '1', 18: '100012180'}"
+183	183		401							{1: '2', 2: '1543'}
+184	184		203							{1: '1', 2: '0.5', 4: '-50', 5: '-50'}
+185	185		301			DialogEnable				"{2: 'Shorthalt', 3: ""And then there were the private gatherings she kept hosting... let's just say they involved some highly inappropriate conduct."", 4: '1', 18: '100012181'}"
+186	186		302							"{2: 'What?', 3: '187', 4: 'What kind of ""inappropriate conduct""?', 5: '187', 6: '...', 7: '187'}"
+187	187		401							{1: '2', 2: '1543'}
+188	188		203							{1: '1', 2: '0.25', 4: '0', 5: '0'}
+189	189		301							{3: 'Shorthalt gives a meaningful look that says it all.'}
+190	190		201							{1: '18', 2: '501098', 4: '-20', 5: '-200', 6: '0'}
+191	191		301							"{1: '1', 2: 'Priest', 3: '<i>""When deeds of iniquity overwhelm me, you hear my confession, see my despair, and in your mercy, you absolve me.""</i>', 4: '18', 18: '100012182'}"
+192	192		202				DialogDisable			{1: '18', 6: '1'}
+193	193		301			DialogEnable				"{2: 'Shorthalt', 3: ""Shocking, right? But here's the real kicker: When regular people sin, the Pontiff forgives them. But when the Pontiff sins... who forgives her? The Holy?"", 4: '1', 18: '100012183'}"
+194	194		301							"{2: 'Shorthalt', 3: ""However, the Holy hasn't stepped in to save her. So it falls to mortals to have the last word. And until the official verdict, a pontiff this controversial doesn't get the sacred crypt. She gets... this. A plot on the outskirts."", 4: '1', 18: '100012184'}"
+195	195		201							{1: '18', 2: '501098', 4: '-20', 5: '-200', 6: '0'}
+196	196		301							"{1: '1', 2: 'Priest', 3: '<i>""You descend and draw close to me. Your presence meets my brow, and you call me to your courts. I bear your blessing, drawn ever near to you.""</i>', 4: '18', 18: '100012185'}"
+197	197		301							"{2: 'Priest', 3: '<i>""Blessed are those you welcome to inhabit your courts, to tread your sacred floors and share in your feast. My soul is filled with the abundance of your house, your holy temple.""</i>', 4: '18', 18: '100012186'}"
+198	198		202				DialogDisable			{1: '18', 6: '1'}
+199	199		301			DialogEnable				"{2: 'Shorthalt', 3: 'Heh. Some folks are even calling that assassin from your homeland a hero. Saying they... ""did the world a favor.""', 4: '1', 18: '100012187'}"
+200	200		302							{2: '...', 3: '201'}
+201	201		202							{1: '1', 6: '1'}
+202	202		201							{1: '2', 2: '501098'}
+203	203		301							"{1: '1', 2: 'Priest', 3: '<i>""For life is a pilgrimage, and in losing those we love, we learn that no goodness given or received is without purpose. Nothing truly ends here, nor does our existence conclude at the grave.""</i>', 4: '2', 18: '100012188'}"
+204	204		202							{1: '2'}
+205	205		301				DialogDisable			"{3: ""The pallbearers hoist the lead coffin with visible unsteadiness. It's unclear whether they are merely undermanned or if someone is deliberately orchestrating a final, deliberate insult to the pontiff's already ignominious end...""}"
+206	206		401							{1: '2', 2: '4892'}
+207	207		502						400.0	{1: 'RImgBg1Shake'}
+208	208		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg6001_14.jpg', 3: '0', 4: '1', 5: '0.5'}
+209	209		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6001_14.jpg'}
+210	210		205							{1: '999'}
+211	211		401							{1: '2', 2: '4982'}
+212	212		301			DialogEnable				{3: 'As a result, the coffin slips amid a collective gasp from the crowd. The lead coffin crashes to the ground with a deafening clang, its lid bursting open upon impact.'}
+213	213		301							{3: 'Chaos erupts instantly, but the priest drones on, his recitation uninterrupted.'}
+214	214		402							{1: '4982'}
+215	215		201							{1: '18', 2: '501098', 4: '-20', 5: '-200', 6: '0'}
+216	216		301							"{1: '1', 2: 'Priest', 3: '<i>""She sleeps now in your sight... I beseech you, grant her peaceful slumber within your courts. Let the moonlight of your grace wash her clean, and the shadows of trees soothe her soul.""</i>', 4: '18', 18: '100012189'}"
+217	217		202				DialogDisable			{1: '18', 6: '1'}
+218	218		104							{1: '-150|-150|-300', 2: '0', 4: '3'}
+219	219		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg6001_14.jpg', 3: '0', 4: '1', 5: '0.8'}
+220	220		104							{1: '-150|-150|-300', 2: '0', 4: '1'}
+221	221		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6001_14.jpg'}
+222	222		205							{1: '999'}
+223	223		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionInvitation/FxUiRegressionInvitationShine.prefab', 2: '2'}
+224	224		104						3200.0	{1: '0|0|0', 2: '2.8'}
+225	225		301			DialogEnable				"{3: ""Among the onlookers, a single pair of eyes locks onto the contents of the coffin: the keystaff clutched in the corpse's hands and the string of beads adorning her head.""}"
+226	226		401							{1: '1', 2: '36'}
+227	227		401							{1: '2', 2: '4331'}
+228	228		401							{1: '1', 2: '6230'}
+229	229		301							{3: 'The man gives a nervous swallow. Then, in a sudden, decisive movement, he lunges forward, shoving his way through the confused crowd.'}
+230	230		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionInvitation/FxUiRegressionInvitationShine.prefab'}
+231	231		201							{1: '18', 2: '501384'}
+232	232		301			DialogShake				"{1: '1', 2: 'Lady', 3: ""Wait! What do you think you're doing?!"", 4: '18', 18: '100012190'}"
+233	233		202				DialogDisable			{1: '18', 6: '1'}
+234	234		401							{1: '2', 2: '4044'}
+235	235		502							{1: 'RImgBg1Shake'}
+236	236		301			DialogEnable				{3: 'He reaches for the corpse, which shows no signs of decay, and in one frantic motion, yanks the ornament from her brow before desperately trying to wrench the keystaff from her rigid grasp.'}
+237	237		201							{1: '18', 2: '501098', 4: '-20', 5: '-200', 6: '0'}
+238	238		301							"{1: '1', 2: 'Priest', 3: '<i>""...I accept your rod and your guidance. Though I walk through the valley of the shadow of death, I will fear no evil, for you are with me.</i>', 4: '18', 18: '100012191'}"
+239	239		201							{1: '18', 2: '500434', 4: '-60', 5: '-200', 6: '0', 7: '1'}
+240	240		502							{1: 'DialogEnable'}
+241	241		301			DialogShake				"{1: '1', 2: 'Robber', 3: ""Don't anyone try to stop me! I know what you're all thinking! Aren't you all here for the Hierophant's treasures too?! Aren't you just the same as me?!"", 4: '18', 18: '100012192'}"
+242	242		202				DialogDisable			{1: '18', 6: '1'}
+243	243		205						250.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.2'}
+244	244		104							{1: '1000|-10|-50', 2: '0', 4: '5'}
+245	245		205						550.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront90.png', 3: '0', 4: '1', 5: '0.5'}
+246	246		301			DialogEnable	DialogDisable			"{3: ""Suddenly, a filament of crimson extends from the man's fingertips. It writhes in the air like a seeking tendril before, with a swift whoosh, it is sucked into the pontiff's chest.""}"
+247	247		302							{2: '?', 3: '248', 4: '(Rub eyes)', 5: '248'}
+248	248		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+249	249		205						350.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront90.png', 3: '1', 4: '0', 5: '0.3'}
+250	250		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+251	251		301			DialogEnable				"{3: ""You blink, rubbing your eyes at the vanished apparition. But judging from the crowd's uncomprehending stares, you are the only one who witnessed this aberrant phenomenon.""}"
+252	252		301							"{3: 'Even the man who lost the ""tendril"" remains oblivious, his tirade uninterrupted.'}"
+253	253		201							{1: '18', 2: '500434', 4: '-60', 5: '-200', 6: '0', 7: '1'}
+254	254		301							"{1: '1', 2: 'Robber', 3: ""She was the only pontiff in centuries who proved the Holy exists! And you expect me to believe you're not all trying to grab a piece of that sacred blessing for yourselves?!"", 4: '18', 18: '100012193'}"
+255	255		202				DialogDisable			{1: '18', 6: '1'}
+256	256		401						400.0	{1: '2', 2: '4331'}
+257	257		401							{1: '2', 2: '4044'}
+258	258		502							{1: 'RImgBg1Shake'}
+259	259		301			DialogEnable	DialogDisable			"{3: ""The man's words send ripples through the stagnant crowd, and soon enough, another person reaches for the coffin. It's a pale-faced woman in uniform, plucking a feather from the pontiff's remains.""}"
+260	260		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+261	261		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '1', 5: '0'}
+262	262		205						600.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront90.png', 3: '1', 4: '1', 5: '0'}
+263	263		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+264	264		205							{1: '1004'}
+265	265		205							{1: '1005'}
+266	266		301			DialogEnable				{3: 'A crimson flash shoots from her fingertips and is gone in the same instant, a fleeting blur moving too fast to truly see.'}
+267	267		302							{2: '...', 3: '268', 4: 'Hey, Officer, look!', 5: '268'}
+268	268		201							{1: '18', 2: '500434', 4: '-60', 5: '-200', 6: '0'}
+269	269		502							{1: 'DialogEnable'}
+270	270		301			DialogShake				{1: '1', 2: 'Robber', 3: 'Hah! Look for yourselves! Now the masks come off!', 4: '18', 18: '100012194'}
+271	271		201							{1: '18', 2: '501098', 4: '-20', 5: '-200', 6: '0', 7: '1'}
+272	272		301							"{1: '1', 2: 'Priest', 3: '<i>""...The sun and the moon are your eyes. My soul finds peace in your presence, and is satisfied by the light of your gaze.""</i>', 4: '18', 18: '100012195'}"
+273	273		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+274	274		502							{1: 'DialogDisable'}
+275	275		202							{1: '18', 6: '1'}
+276	276		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory823.jpg'}
+277	277		401							{1: '2', 2: '212'}
+278	278		401							{1: '2', 2: '4044'}
+279	279		306						200.0	{1: '1'}
+280	280		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '1'}
+281	281		502							{1: 'RImgBg1Shake'}
+282	282		201							{1: '2', 2: '500460', 4: '-700', 5: '-80', 6: '-150'}
+283	283		203						250.0	{1: '2', 2: '0.2', 3: '-650', 4: '-50', 5: '0'}
+284	284		201							{1: '3', 2: '500270', 4: '700', 5: '-80', 6: '-150'}
+285	285		203						250.0	{1: '3', 2: '0.3', 3: '650', 4: '-10', 5: '0'}
+286	286		201							{1: '4', 2: '500527', 4: '-100', 5: '-80', 6: '-150'}
+287	287		203						250.0	{1: '4', 2: '0.2', 3: '0', 4: '-30', 5: '0'}
+288	288		301			DialogEnable	DialogDisable			"{1: '1', 3: 'Then a second person moves. A third. The desperate hunger for ""sacred blessing"" shatters the last pretense of order. A frenzy begins. Hands claw at the corpse, tearing the crown from her head and scrabbling to claim any fragment of her fading divinity.'}"
+289	289		203							{1: '2', 2: '0.3', 3: '-700', 4: '0', 5: '0'}
+290	290		203							{1: '3', 2: '0.25', 3: '700', 4: '0', 5: '0'}
+291	291		203							{1: '4', 2: '0.2', 3: '-100', 4: '-80', 5: '-180'}
+292	292		202							{1: '4'}
+293	293		502						200.0	{1: 'RImgBg1Shake'}
+294	294		502							{1: 'DialogEnable'}
+295	295		201							{1: '1', 2: '501384', 4: '-450', 5: '0', 6: '0', 7: '1'}
+296	296		203							{1: '1', 2: '0.25', 3: '0', 4: '0', 5: '0'}
+297	297		301			PanelActor1Shake				{1: '1', 2: 'Lady', 3: 'Police! Police!', 4: '1', 18: '100012196'}
+298	298		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+299	299		306							{1: '0'}
+300	300		202							{1: '2', 2: '3', 3: '4', 6: '1'}
+301	301		201							{1: '1', 2: '500730', 7: '1'}
+302	302		301							"{1: '1', 2: 'Shorthalt', 3: ""See, that's my cue. And people wonder why I'm here today."", 4: '1', 18: '100012197'}"
+303	303		302							{2: 'Did you see that?', 3: '304'}
+304	304		301				DialogDisable			"{2: 'Shorthalt', 3: ""Hard to miss the commotion, isn't it? Now quit gawking and stick close. If you're so set on digging into the pontiff's business, the least you could do is make yourself useful."", 4: '1', 18: '100012198'}"
+305	305		202							{1: '1'}
+306	306		104						350.0	{1: '0|-50|-50', 2: '0.3'}
+307	307		104							{1: '0|0|-100', 2: '0.4'}
+308	308		201							{1: '1', 2: '500527', 4: '650', 5: '-100'}
+309	309		201							{1: '2', 2: '500268', 4: '-650', 5: '-100'}
+310	310		201							{1: '3', 2: '500460', 4: '200', 5: '-100'}
+311	311		201							{1: '4', 2: '500136', 4: '-200', 5: '-100'}
+312	312		301			DialogEnable				{1: '1', 3: 'Shorthalt shoots another meaningful glance.'}
+313	313		302							"{2: 'Got it.', 3: '314', 4: ""Wait, that's not what I meant..."", 5: '321'}"
+314	314		401							{1: '2', 2: '4044'}
+315	315		203							{1: '1', 2: '0.25', 3: '750', 4: '-100'}
+316	316		203							{1: '2', 2: '0.25', 3: '-750', 4: '-100'}
+317	317		202							{1: '1', 2: '2'}
+318	318		203							{1: '3', 2: '0.3', 3: '650', 4: '-100'}
+319	319		203							{1: '4', 2: '0.3', 3: '-650', 4: '-100'}
+320	320	328	301							{1: '1', 3: 'Shorthalt and you move forward together, forcefully carving a path through the noisy crowd until you reach the heart of the commotion.'}
+321	321		401							{1: '2', 2: '4044'}
+322	322		203							{1: '1', 2: '0.25', 3: '750', 4: '-100'}
+323	323		203							{1: '2', 2: '0.25', 3: '-750', 4: '-100'}
+324	324		202							{1: '1', 2: '2'}
+325	325		203							{1: '3', 2: '0.3', 3: '650', 4: '-100'}
+326	326		203							{1: '4', 2: '0.3', 3: '-650', 4: '-100'}
+327	327		301							{3: 'Shorthalt grabs your arm and pulls you forward, forcefully carving a path through the noisy crowd until you reach the heart of the commotion.'}
+328	328		401							{1: '2', 2: '4044'}
+329	329		203							{1: '3', 2: '0.3', 3: '750', 4: '-100'}
+330	330		203							{1: '4', 2: '0.3', 3: '-750', 4: '-100'}
+331	331		202							{1: '3', 2: '4'}
+332	332		201							{1: '1', 2: '500730', 7: '1'}
+333	333		301				DialogDisable			{1: '1', 3: 'With swift reflexes, you intercept several opportunistic thieves trying to loot the remains amidst the chaos, promptly handing them over to Shorthalt.'}
+334	334		202							{1: '1', 6: '1'}
+335	335		104						250.0	{1: '0|0|-150', 2: '0.2'}
+336	336		401							{1: '2', 2: '1083'}
+337	337		502							{1: 'RImgBg1Shake'}
+338	338		301			DialogEnable	DialogDisable			{3: 'But just as Shorthalt is securing the offenders with handcuffs, a hand—or perhaps just a phantom one that never truly existed—shoves you violently from behind.'}
+339	339		402							{1: '212'}
+340	340		104						250.0	{1: '0|100|-200', 2: '0.2'}
+341	341		104							{1: '-150|-150|-300', 2: '0', 4: '3'}
+342	342		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg6001_14.jpg', 3: '0', 4: '1', 5: '0.3'}
+343	343		104							{1: '-150|-150|-300', 2: '0', 4: '1'}
+344	344		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6001_14.jpg'}
+345	345		205							{1: '999'}
+346	346		502							{1: 'RImgBg1Shake'}
+347	347		401							{1: '2', 2: '4044'}
+348	348		302							{2: '(Steady yourself)', 3: '349'}
+349	349		104						250.0	{1: '0|0|0', 2: '0.25'}
+350	350		301			DialogEnable	DialogDisable			{3: 'You stumble forward, bracing yourself against the cold edge of the lead coffin, and suddenly find yourself staring into the lifeless countenance inside, your faces mere inches apart.'}
+351	351		302							{2: '...', 3: '352', 4: '!', 5: '352'}
+352	352		301			DialogEnable				{3: 'So... familiar.'}
+353	353		301							"{3: ""Meanwhile, the desperate thief and robber continue to shout beside you, struggling against the officer's grip.""}"
+354	354		201							{1: '18', 2: '500937'}
+355	355		301			DialogShake				"{1: '1', 2: 'Thief', 3: ""I... I didn't have a choice... They say the Pontiff's remains—there's a sacred blessing. That even a sliver... could cure anything..."", 4: '18', 18: '100012199'}"
+356	356		301							"{2: 'Thief', 3: ""I'm too young to... I can't just die from this. Don't you understand? I couldn't let this chance slip away!"", 4: '18', 18: '100012200'}"
+357	357		202				DialogDisable			{1: '18', 6: '1'}
+358	358		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '1', 5: '0'}
+359	359		401							{1: '2', 2: '5282'}
+360	360		104						250.0	{1: '0|0|-150', 2: '0.2'}
+361	361		104							{1: '0|0|-0', 2: '0.3'}
+362	362		205							{1: '999'}
+363	363		401							{1: '2', 2: '2975'}
+364	364		301			DialogEnable				{3: 'The shouts keep ringing in your ears as your heart, already tormented from the recent dream, hammers wildly against your ribs. Then, a sudden, excruciating pain tears through your chest, stealing your breath and triggering a violent coughing fit.'}
+365	365		302							{2: 'Cough, cough...', 3: '366'}
+366	366		201							{1: '18', 2: '500730', 4: '-220', 5: '-200', 6: '200'}
+367	367		301							"{1: '1', 2: 'Shorthalt', 3: ""Whoa, hey, don't tell me you're sick too? Did you come here today also for..."", 4: '18', 18: '100012201'}"
+368	368		202				DialogDisable			{1: '18', 6: '1'}
+369	369		302							"{2: ""I'm fine. It's just a cold..."", 3: '370', 4: '(Will I have one of those tendrils too?)', 5: '370', 6: '(Examine your fingertips)', 7: '370'}"
+370	370		301			DialogEnable				{3: 'You endure the fire in your ribs, but any coherent thought is drowned, utterly lost to the roaring cacophony of the crowd...'}
+371	371		301							{3: 'Then, you sense something is amiss.'}
+372	372		301							{3: 'The sound is gone. All of it.'}
+373	373		104							{1: '-150|-150|-300', 2: '0', 4: '3'}
+374	374		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg6001_14.jpg', 3: '0', 4: '1', 5: '0.5'}
+375	375		104							{1: '-150|-150|-300', 2: '0', 4: '1'}
+376	376		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6001_14.jpg'}
+377	377		205							{1: '999'}
+378	378		301				DialogDisable			{3: 'Your gaze jerks upward, and your eyes widen in shock, staring directly into the lifeless face that lies mere inches from your own.'}
+379	379		104							{1: '-150|-150|-300', 2: '0', 4: '3'}
+380	380		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg6001_15.jpg', 3: '0', 4: '1', 5: '0.3'}
+381	381		104							{1: '-150|-150|-300', 2: '0', 4: '1'}
+382	382		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6001_15.jpg'}
+383	383		205							{1: '999'}
+384	384		301			DialogEnable	DialogDisable			{2: 'Ishmael', 3: '...', 18: '100012202'}
+385	385		104						2000.0	{1: '0|0|0', 2: '2', 4: '1'}
+386	386		301			DialogEnable				"{2: 'Ishmael', 3: ""Hello. It's been a while."", 18: '100012203'}"
+387	387		301							{3: 'She says with a smile.'}
+388	388		301							"{2: 'Ishmael', 3: 'There\'s no need to worry about your fingers. You won\'t be growing any ""tendrils"" yourself.', 18: '100012204'}"
+389	389		302							"{2: ""Aren't you supposed to be dead?"", 3: '390', 4: 'Who exactly are you?', 5: '390', 6: 'Do you mean the thing you just absorbed from them?', 7: '390'}"
+390	390		301							"{2: 'Ishmael', 3: 'Your first instinct is to ask a question...? I expected this world\'s version of you to be more vulnerable. Perhaps a scream, backing away to report the anomaly with my corpse... or even attempting to steal a fragment of this ""divine power"" in the chaos.', 18: '100012205'}"
+391	391		301							"{3: ""Though the former Pontiff Ishmael's lips remain motionless, her voice—laced with amusement—resonates with perfect clarity within your mind.""}"
+392	392		302							"{2: ""That doesn't sound like me."", 3: '393', 4: ""I'd never do that."", 5: '393', 6: '...', 7: '393'}"
+393	393		301							"{2: 'Ishmael', 3: 'Then how much do you remember? About the ""mission"" that brought you here.', 18: '100012206'}"
+394	394		301				DialogDisable			"{2: 'Ishmael', 3: ""After all, you were torn into this anomaly. Your origin, your destination, they are all temporarily erased. You're left with nothing... but that mission."", 18: '100012207'}"
+395	395		302							"{2: '...', 3: '396', 4: ""I'm not sure I follow."", 5: '396'}"
+396	396		302							{2: 'The Inspectorate formed a special committee. My mission is to investigate the truth behind your death.', 3: '397'}
+397	397		301			DialogEnable				"{2: 'Ishmael', 3: ""...So you've forgotten even that. I'm sorry. Everything happened too suddenly."", 18: '100012208'}"
+398	398		301							{2: 'Ishmael', 3: 'You should come to me. In your current state, you need me.', 18: '100012209'}
+399	399		302							"{2: ""But you're right in front of me."", 3: '400', 4: 'You want me to climb into your coffin? For a joint burial?', 5: '401', 6: 'Where to?', 7: '402'}"
+400	400	402	301							{2: 'Ishmael', 3: 'This is just a projection. Unless you prefer me lying in a casket?', 18: '100012210'}
+401	401		301							{2: 'Ishmael', 3: 'An amusing proposal, but being buried alongside this projection of mine would be far less entertaining.', 18: '100012211'}
+402	402		301							{2: 'Ishmael', 3: 'Go to the tower in the city center. That is where I reside. My true self is waiting at the top.', 18: '100012212'}
+403	403		302							"{2: ""You mean the crime scene the police won't tell me about?"", 3: '404'}"
+404	404		301				DialogDisable			"{2: 'Ishmael', 3: 'Indeed. The scene of the ""pontiff\'s assassination.""', 18: '100012213'}"
+405	405		302							"{2: 'Following standard procedure, I should examine the crime scene myself.', 3: '406', 4: ""Thanks for the firsthand information. It's not that I don't want to go. I just can't get access."", 5: '406'}"
+406	406		302							"{2: ""The police haven't been cooperative."", 3: '407'}"
+407	407		301			DialogEnable				{3: 'She studies you briefly, a look of understanding crossing her face.'}
+408	408		301							"{2: 'Ishmael', 3: 'Hmm... It seems you\'ve encountered interference. The ""world"" has taken notice. That\'s why you cannot proceed.', 18: '100012214'}"
+409	409		302							{2: 'What are you implying?', 3: '410'}
+410	410		301							{3: 'In the next moment, sharp snaps of fingers echo from within the coffin. Shorthalt, who had been bellowing to maintain order, suddenly freezes mid-motion.'}
+411	411		301							{2: 'Ishmael', 3: 'There. Try speaking with that officer again. Persuade him to take you. He may be the only one you can sway.', 18: '100012215'}
+412	412		301							{3: 'She blinks meaningfully, then voices the subtle pact sealed between you:'}
+413	413		301							"{2: 'Ishmael', 3: ""I'll be waiting."", 18: '100012216'}"
+414	414		302							{2: '...', 3: '415'}
+415	415		401							{1: '1', 2: '36'}
+416	416		401							{1: '2', 2: '4276'}
+417	417		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+418	418		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory823.jpg'}
+419	419		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+420	420		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+421	421		502							{1: 'RImgBg1Shake'}
+422	422		401							{1: '2', 2: '1504'}
+423	423		401							{1: '2', 2: '4982'}
+424	424		401							{1: '1', 2: '210'}
+425	425		301							"{3: 'The pontiff\'s ""awakening"" dissolves like a fleeting hallucination. The world crashes back in. The clamor of the crowd floods your ears just as Shorthalt\'s firm grip hauls you roughly to your feet.'}"
+426	426		401							{1: '2', 2: '4044'}
+427	427		201							{1: '1', 2: '500730', 4: '-80', 5: '-150'}
+428	428		203							{1: '1', 2: '0.25', 4: '0', 5: '0'}
+429	429		301							"{1: '1', 2: 'Shorthalt', 3: ""You planning on taking a nap in there? C'mon, up you get. The dead aren't known for being great conversationalists."", 4: '1', 18: '100012217'}"
+430	430		301				DialogDisable			"{2: 'Shorthalt', 3: 'Alright, the ""anticipated disturbance"" is handled. Let\'s get this thing sealed up before anything else decides to pop out.', 4: '1', 18: '100012218'}"
+431	431		202							{1: '1', 6: '1'}
+432	432		104						850.0	{1: '0|0|-150', 2: '0.8'}
+433	433		402							{1: '4982'}
+434	434		401							{1: '2', 2: '4557'}
+435	435		301			DialogEnable				"{3: ""In the distance, those driven mad by their scramble for the pontiff's relics are being led away. In the sudden quiet, the remaining pallbearers step forward. With grim solemnity, they lift the heavy, dense lead lid and settle it back into place.""}"
+436	436		402							{1: '4557'}
+437	437		401							{1: '2', 2: '1083'}
+438	438		301							{3: 'Thud. With a final, hollow sound, the coffin is sealed.'}
+439	439		301				DialogDisable			"{3: '""The Preposterous Pontiff"", ""Merciful Ishmael"", ""Holy Incarnate""... Whatever grandiose titles she bore in life, they are now entombed with her, never to rise again.'}"
+440	440		302							{2: '...Officer.', 3: '441'}
+441	441		104						550.0	{1: '0|0|0', 2: '0.5'}
+442	442		201							{1: '1', 2: '500730'}
+443	443		301			DialogEnable				{1: '1', 3: 'You, the prosecutor who witnessed her final moments, speak up. Your gaze is fixed on the unapproachable officer... and on his hands.'}
+444	444		301							"{3: ""Perhaps because you glimpsed a forbidden truth in the chaos, an eerie realization has taken root in your mind, impossible to ignore any longer. You see it clearly now: Shorthalt's fingertips also glow with the same, faint crimson light.""}"
+445	445		301							"{2: 'Shorthalt', 3: ""What now? Don't tell me you still want a look inside."", 4: '1', 18: '100012219'}"
+446	446		202							{1: '1'}
+447	447		401						200.0	{1: '2', 2: '5286'}
+448	448		401							{1: '2', 2: '5533'}
+449	449		301				DialogDisable			{3: 'Shorthalt asks, finally seizing the opportunity to pull a pre-rolled cigarette from his pocket and light it. The gesture forces you to withdraw your gaze from his glowing fingertips and return to the matter at hand.'}
+450	450		302							"{2: ""It's my job. The Special Investigation Committee put me on this case for a reason."", 3: '451'}"
+451	451		302							"{2: ""The public is watching. The Council is demanding answers about the pontiff's death."", 3: '452'}"
+452	452		302							{2: 'And besides...', 3: '453'}
+453	453		301			DialogEnable				{3: 'Coughing sharply, you produce your credentials once more. Just below your name rests a small inscription: Kerentos, the name of your homeland.'}
+454	454		302							"{2: ""Even if not for the assassin's sake, Kerentos deserves the truth."", 3: '455'}"
+455	455		201							{1: '1', 2: '500730'}
+456	456		301							"{1: '1', 2: 'Shorthalt', 3: ""You've got to let that go. That war was decided the moment that bullet flew. No amount of truth-seeking is going to put that genie back in the bottle."", 4: '1', 18: '100012220'}"
+457	457		301				DialogDisable			"{2: 'Shorthalt', 3: 'Look, to the folks in charge? ""Kerentosian assassin"" wasn\'t a tragedy; it was a gift. The perfect excuse they\'d been waiting for. That\'s all this ever was.', 4: '1', 18: '100012221'}"
+458	458		302							"{2: ""I know Thebesia's army has already reached Kerentos' shores..."", 3: '459', 4: 'I know some things are beyond saving from the very beginning...', 5: '459'}"
+459	459		302							"{2: ""But I won't let this condemn Kerentos to the wrong side of history, not if I can help it."", 3: '460'}"
+460	460		301			DialogEnable				{2: 'Shorthalt', 3: 'Sigh...', 4: '1', 18: '100012222'}
+461	461		202							{1: '1'}
+462	462		301				DialogDisable			{3: 'Shorthalt sighs again, tapping a plume of ash from his cigarette. You can already sense another lecture coming your way.'}
+463	463		302							{2: '...', 3: '464'}
+464	464		302							"{2: ""Well, to be honest, I've always found the conflict between Kerentos and Thebesia suspiciously... convenient."", 3: '465', 4: ""I think there's something else pulling the strings. Both Kerentos and Thebesia... they're just puppets."", 5: '465'}"
+465	465		302							"{2: ""Sometimes I get this creeping sensation that our world isn't... real."", 3: '466', 4: ""I saw the pontiff get back up. I saw... tendrils, wriggling from everyone's fingertips."", 5: '465'}"
+466	466		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab', 2: '2'}
+467	467		301			DialogEnable				{3: 'Shorthalt swallows whatever lecture he was about to exhale with his smoke, his expression shifting to one of bewildered suspicion. Even the distant sun seems amused, its light wavering faintly.'}
+468	468		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab'}
+469	469		201							{1: '1', 2: '500730'}
+470	470		301				DialogDisable			{1: '1', 2: 'Shorthalt', 3: 'You feeling alright? Talking about gods and whatnot with a cop. I believe in firepower, not higher power.', 4: '1', 18: '100012223'}
+471	471		302							"{2: 'I\'m serious. And the ""absurdity"" I\'ve seen goes a lot deeper than that.', 3: '472'}"
+472	472		302							{2: 'The most unreal part is that nothing we do seems to matter. It all feels... futile.', 3: '473'}
+473	473		301			DialogEnable				"{3: ""You remember a radio segment about a butterfly's wings birthing a hurricane. Now, you feel like that butterfly, flapping madly, hoping to create a breeze that reaches the officer standing before you.""}"
+474	474		302							"{2: ""Take my file. You've read it, haven't you?"", 3: '475'}"
+475	475		301				DialogDisable			"{2: 'Shorthalt', 3: ""...Now that's a topic I can work with. Yeah, I read it. You've always wanted to... enlist? To become a commandant, right? Those wishes you wrote on paper planes in school... it's all in there."", 4: '1', 18: '100012224'}"
+476	476		202							{1: '1'}
+477	477		302							{2: 'It was the dream. But life kept getting in the way, pulling me further off course.', 3: '478'}
+478	478		302							{2: 'I thought becoming a prosecutor was the next best thing. A different path to the same goal, but...', 3: '479'}
+479	479		301			DialogEnable				"{3: 'You tell him about the cases that once mattered, and how each one crumbled into failure or twisted into something strange and unresolved. That long road of dead ends paved your way to becoming the department\'s ""sewer cleaner,"" the Kerentosian specialist in lost causes.'}"
+480	480		302							"{2: ""...And now they've handed me this. Confirm the pontiff's death and deliver the sentence."", 3: '481'}"
+481	481		301							"{3: 'Something in your tales of ""unfortunate twists"" seems to strike a chord. The officer falls into an unexpected, contemplative silence.'}"
+482	482		201							{1: '1', 2: '500730'}
+483	483		301							"{1: '1', 2: 'Shorthalt', 3: ""...You think that's why I'm here? I read your file, felt a pang of sympathy for the lost kid, and decided to be the one cop in this whole city willing to put up with you?"", 4: '1', 18: '100012225'}"
+484	484		302							{2: 'I doubt it. See, I read your file too, Officer.', 3: '485'}
+485	485		301				DialogDisable			{3: 'Shorthalt raises an eyebrow, though he seems utterly unbothered. A veteran of the procedural dance of mutual investigation, he merely gives a curt nod, a silent command for you to continue.'}
+486	486		302							{2: 'You have a friend... A female commandant stationed in Kerentos.', 3: '487'}
+487	487		302							{2: 'And from your life story, you never actually wanted to be a police officer in the first place?', 3: '488'}
+488	488		301			DialogEnable				{3: 'He takes one final, long drag from his cigarette and exhales a plume of smoke, his entire frame seeming profoundly relieved that you have finally asked that particular question.'}
+489	489		301							{2: 'Shorthalt', 3: 'Let me ask you something else first. What do you think my degree is in?', 4: '1', 18: '100012226'}
+490	490		302							{2: 'Criminal Investigation, at the Academy of Economics and Political Science...', 3: '491'}
+491	491		301							{2: 'Shorthalt', 3: 'Wrong. Fine Arts. Or, it was supposed to be. Flunked the entrance exam, got shuffled into a general studies program. Then the Self-Governing Act reforms hit, and my track got... re-routed. Straight into law enforcement.', 4: '1', 18: '100012227'}
+492	492		302							"{2: ""That doesn't sound so unusual."", 3: '493'}"
+493	493		301							"{2: 'Shorthalt', 3: ""It gets better. Before I even started, a relative on the force died in the line of duty. Through some weird policy, his benefits transferred to me. I could've walked right into a badge, no degree needed."", 4: '1', 18: '100012228'}"
+494	494		302							"{2: '...I see. A ""fortunate coincidence"" like that surely has more to the story.', 3: '495'}"
+495	495		301							"{2: 'Shorthalt', 3: ""I didn't want it, of course. After graduation, I dug my heels in. Turned down a professorial recommendation, refused the force. Took odd jobs instead. Wouldn't even do security work. I'd rather be in the back of some kitchen, up to my elbows in dishwater."", 4: '1', 18: '100012229'}"
+496	496		302							{2: '...', 3: '497'}
+497	497		301							"{2: 'Shorthalt', 3: ""Turns out, that restaurant was a police front. An undercover op. By pure chance, I stumbled into helping them nab a guy they'd been after for weeks. Case closed, front shut down, no more dishes to wash. And they offered me a job. Again."", 4: '1', 18: '100012230'}"
+498	498		301							"{2: 'Shorthalt', 3: '...The day I finally put on this uniform, a voice in my head screamed two things: ""I\'m sick of this job. I should really find something else to do,"" and ""That stubborn woman shouldn\'t be a commandant, she\'ll just get herself killed on the battlefield.""', 4: '1', 18: '100012231'}"
+499	499		302							"{2: ""But no matter how hard you tried, you couldn't escape it."", 3: '500'}"
+500	500		202							{1: '1'}
+501	501		301							{3: 'Shorthalt had tried studying Fine Arts, Literature, even Education, paths meant to lead anywhere but here... yet no matter what he did, he ended up becoming a police officer anyway.'}
+502	502		301							{3: 'Just as you, no matter how you resisted, inevitably traveled from Kerentos to Thebesia on an academic visit. Just as you had to leave your homeland behind to become a prosecutor belonging to Thebesia.'}
+503	503		301				DialogDisable			"{3: ""And just as no matter how you tried to evade it, the pontiff's case would inevitably become your responsibility.""}"
+504	504		302							"{2: ""It's like... something is guiding the world's script. Never giving you another option."", 3: '505'}"
+505	505		302							{2: '<b>...Just like what happened to me.</b>', 3: '506'}
+506	506		401							{1: '2', 2: '1543'}
+507	507		301			DialogEnable	DialogDisable			{3: 'Shorthalt puts out his cigarette.'}
+508	508		302							{2: 'So after my repeated requests, you decided to come see me.', 3: '509'}
+509	509		302							"{2: 'Actually, your only real duty today is ""maintain order at the funeral.""', 3: '510'}"
+510	510		201							{1: '1', 2: '500730'}
+511	511		301			DialogEnable				{1: '1', 3: 'Shorthalt frowns in thought for a moment, as if confirming something to himself. Then, his face finally shows a hint of relief.'}
+512	512		301							"{2: 'Shorthalt', 3: ""I gave up on trying to fight the current of this world a long time ago. But you... you're the most stubborn, obsessive person I've ever met. A complete lunatic, just as I figured."", 4: '1', 18: '100012232'}"
+513	513		301							"{2: 'Shorthalt', 3: ""I never wanted this police life. But this bizarre reality keeps insisting I'm meant to be a worrywart with a badge. So I thought, why not trust my gut? Meet the other person the universe seems to be pushing around. See if you've figured anything out."", 4: '1', 18: '100012233'}"
+514	514		301							"{2: 'Shorthalt', 3: ""...And standing here now, I'm glad I did."", 4: '1', 18: '100012234'}"
+515	515		302							{2: 'Thank you. For hearing me out.', 3: '516'}
+516	516		301							"{2: 'Shorthalt', 3: ""Alright, let's be clear. I do have two missions today: keep the peace at this funeral, and preferably, and preferably address the concerns of the Inspectorate General's prosecutor. There are procedures we can't just ignore, or someone will file a complaint."", 4: '1', 18: '100012235'}"
+517	517		301							{3: 'He pauses for a moment.'}
+518	518		301							"{2: 'Shorthalt', 3: '...And because you\'re <b>""just like me.""</b>', 4: '1', 18: '100012236'}"
+519	519		301							"{3: 'Fortunately, your ""wing-flapping"" attempt has succeeded. You have at least stirred something in the officer, awakening a long-buried seed of doubt and curiosity within him.'}"
+520	520		301							"{3: 'Shorthalt takes one last, measured look at the ""kindred spirit"" before him, the furrow in his brow finally easing.'}"
+521	521		301							{2: 'Shorthalt', 3: 'Any formal request you file will get buried in paperwork forever. But I can satisfy your curiosity. If your questions stay within the bounds of procedure.', 4: '1', 18: '100012237'}
+522	522		301							{2: 'Shorthalt', 3: 'So, cut to the chase. What evidence are you actually looking for?', 4: '1', 18: '100012238'}
+523	523		301							{3: 'You straighten your collar and, following the guidance of what had moments ago seemed a mere hallucination, announce an entirely new destination.'}
+524	524		302		1		AniZhuanchangBegin			{2: 'Please take me to the tallest tower in Thebesia, Officer.', 3: '525'}

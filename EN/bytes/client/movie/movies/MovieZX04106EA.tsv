@@ -1,0 +1,90 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '211'}
+3	3		401							{1: '2', 2: '2593'}
+4	4		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3002_03.jpg', 3: '0', 4: '1', 5: '1'}
+5	5		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_03.jpg'}
+7	7		301			DialogEnable				{3: 'False solace teetered on the brink of collapse. Before the body became ethereal, the pain came first.'}
+8	8		301				AniZhuanchangBegin			{2: 'Watanabe', 3: 'So this... is the truth...'}
+9	9		101			DialogDisable	AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgCg/Cg4101_09.jpg'}
+10	10		301			DialogEnable				{3: 'His knees are quickly becoming feeble. Having found a way out, the blood in his body pours toward his chest.'}
+11	11		301				DialogDisable			"{2: 'Watanabe', 3: ""Yeah... back then, I wasn't ▅▃▆▅ yet. Only one thing could have happened when you were ambushed by a Corrupted of that size...""}"
+12	12		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+13	13		307							{1: 'Death', 3: '60', 4: 'FF0000'}
+14	14		301							{3: 'Death'}
+15	15		307							{2: '1'}
+16	16		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4101_09.jpg'}
+17	17		301			DialogEnable				"{2: 'Watanabe', 3: ""But I'm still alive... because...""}"
+18	18		301							{3: 'As this thought went through his head, his hands, having gone numb, felt the weight and warmth of the young life...'}
+19	19		401							{1: '2', 2: '4044'}
+20	20		301							{3: 'That he was holding tightly in his arms.'}
+21	21		301							{2: 'Watanabe', 3: 'Right... at least I need to get him out...'}
+22	22		301							{3: 'Suddenly, desperate cries filled the air.'}
+23	23		301							"{2: '??', 3: ""Mr. Watanabe! Mr. Watanabe! Don't die, don't die!""}"
+24	24		401							{1: '2', 2: '4044'}
+25	25		104							{1: '50|-50|-150', 2: '1'}
+26	26		301							"{3: ""A small hand pressed against the gaping wound in his chest but couldn't stop the wind from passing through.""}"
+27	27		301							{3: 'Is it really the wind?'}
+28	28		401							{1: '2', 2: '2593'}
+29	29		104							{1: '0|0|-100', 2: '0.5'}
+30	30		301							"{2: '??', 3: ""The blood... it won't stop...""}"
+31	31		301							"{2: '??', 3: ""It's all my fault... You did it all... just for me... I'm sorry!""}"
+32	32		104							{1: '0|-100|-150', 2: '1'}
+33	33		301							"{2: 'Watanabe', 3: ""Don't apologize. I did it because...""}"
+34	34		301							{3: 'This is my responsibility, a vow I made to myself.'}
+35	35		301							{2: 'Watanabe', 3: 'They would have done the same, no?'}
+36	36		301							{3: 'It was then that Watanabe noticed five blurry shadows behind him, one with a severed arm.'}
+37	37		301							{2: 'Watanabe', 3: 'Bruce... did you come to get me?'}
+38	38		301							"{3: ""He could hear the child's cries as Death stood silently behind him.""}"
+39	39		301							{3: 'The gaze of both the living and the dead focused on Watanabe, who was teetering on the edge of life and death.'}
+40	40		301							{3: 'With it, he made his choice.'}
+41	41		301							{2: 'Watanabe', 3: 'Just let me finish this at least...'}
+42	42		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+43	43		401							{1: '2', 2: '3077'}
+44	44		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+45	45		301							{3: 'He tried to lift his already cold legs, breaking out of his chaotic thoughts the moment his decision was made.'}
+46	46		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory542.jpg'}
+47	47		201							{1: '1', 2: '500801', 3: '15'}
+48	48		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '3'}
+49	49		301							{1: '1', 2: '??', 3: 'Go away, go away!', 4: '1'}
+50	50		401							{1: '2', 2: '738'}
+51	51		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+52	52		301							{3: 'Regaining consciousness from a brief daze, he saw the kid picking up stones and hurling them forcefully behind him.'}
+53	53		202							{1: '1', 6: '1'}
+54	54		201							{1: '1', 2: '500067', 4: '-600'}
+55	55		201							{1: '2', 2: '500067', 4: '600'}
+56	56		201							{1: '3', 2: '500067', 4: '300'}
+57	57		201							{1: '4', 2: '500067', 4: '-300'}
+58	58		401							{1: '2', 2: '1508'}
+59	59		301							"{1: '1', 3: ""They're not the souls of the dead—but a few broken Corrupted.""}"
+60	60		202							{1: '1', 2: '2', 3: '3', 4: '4', 6: '1'}
+61	61		201							{1: '1', 2: '500782'}
+62	62		301							{1: '1', 2: 'Watanabe', 3: 'Run...', 4: '1'}
+63	63		301							"{3: ""Watanabe's lips moved, producing a faint sound, while the sound of blood rushing through his veins echoed in his ears.""}"
+64	64		301							{3: 'Life gradually left him, returning to the black soil.'}
+65	65		201							{1: '1', 2: '500801', 3: '15'}
+66	66		301							{2: '??', 3: 'Go away, go away!', 4: '1'}
+67	67		301							"{3: ""The child's anger was tinged with fear and trembling.""}"
+68	68		201							{1: '1', 2: '500782'}
+69	69		301							"{1: '1', 2: 'Watanabe', 3: ""Run. Even if it's just you..."", 4: '1'}"
+70	70		401							{1: '2', 2: '580'}
+71	71		201							{1: '1', 2: '500801', 3: '16'}
+72	72		301							{1: '1', 3: 'As the sound of metal dragging on the ground grew closer, the child went from trembling with anger to looking on with fear.'}
+73	73		401							{1: '2', 2: '738'}
+74	74		301							"{3: ""He dropped the stone and grabbed Watanabe's hand, trying to drag him away.""}"
+75	75		301							{3: 'But how in the world was a starving child supposed to move an adult?'}
+76	76		201							{1: '1', 2: '500782'}
+77	77		301							{1: '1', 2: 'Watanabe', 3: 'Someone, please...', 4: '1'}
+78	78		301							{2: 'Watanabe', 3: 'Save him...', 4: '1'}
+79	79		201							{1: '1', 2: '500802'}
+80	80		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '3'}
+81	81		401						500.0	{1: '2', 2: '13015111'}
+82	82		402							{1: '13015111'}
+83	83		401							{1: '1', 2: '36'}
+84	84		301							{1: '1', 2: '???', 3: 'Get down!', 4: '1'}
+85	85		401						500.0	{1: '2', 2: '959'}
+86	86		401						300.0	{1: '2', 2: '657'}
+87	87		401						500.0	{1: '2', 2: '657'}
+88	88		401							{1: '2', 2: '974'}
+89	89		301		1		AniZhuanchangBegin			"{3: ""Watanabe's eyes closed before gunfire drowned that voice he couldn't be more familiar with.""}"

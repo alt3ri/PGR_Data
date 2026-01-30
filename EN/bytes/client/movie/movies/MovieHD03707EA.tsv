@@ -1,0 +1,96 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory874.jpg'}
+2	2		401							{1: '1', 2: '5063'}
+3	3		201							{1: '1', 2: '501070', 3: '2'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+5	5		301			DialogEnable				{1: '1', 2: 'Nanami', 3: 'Hi-yah!', 4: '1'}
+6	6		401							{1: '2', 2: '15024034'}
+7	7		301							{3: 'Facing the final wave of enemies, Nanami charges at full throttle, grips her shield-axe tightly, and swings it to unleash an arc of electricity—'}
+8	8		401							{1: '2', 2: '9342045'}
+9	9		203							{1: '1', 2: '0.15', 5: '-150'}
+10	10		301				DialogDisable			{2: 'Nanami', 3: 'Nanami Cyclone!', 4: '1'}
+11	11		201							{1: '1', 2: '500013', 4: '-400'}
+12	12		201							{1: '2', 2: '500013', 4: '400', 7: '1'}
+13	13		401							{1: '2', 2: '15024021'}
+14	14		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '3'}
+15	15		502							{1: 'PanelActor2Shake'}
+16	16		502						700.0	{1: 'PanelActor1Shake'}
+17	17		505							{1: 'PanelActor2Shake'}
+18	18		505							{1: 'PanelActor1Shake'}
+19	19		401							{1: '2', 2: '2603'}
+20	20		203							{1: '2', 2: '0.2', 3: '400', 4: '-1200'}
+21	21		203							{1: '1', 2: '0.2', 3: '-400', 4: '-1200'}
+22	22		202							{1: '1', 2: '2'}
+23	23		502							{1: 'RImgBg1Shake'}
+24	24		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+25	25		301			DialogEnable				{3: 'After a thunderous moment, all the Corrupted lie motionless on the ground, slashed to pieces and silenced.'}
+26	26		301				DialogDisable			{3: 'Looking up, past the traditional plank walkways, a familiar crystalline wall towers between the rocky cliffs.'}
+27	27		302							"{2: ""Tabula Akasha... we've returned to the underground of Kowloong—"", 3: '28'}"
+28	28		401							{1: '2', 2: '1080'}
+29	29		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory844.jpg', 3: '0', 4: '0.7', 5: '1'}
+30	30		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory844.jpg', 3: '0.7', 4: '0', 5: '1'}
+31	31		401							{1: '2', 2: '4537'}
+32	32		401							{1: '2', 2: '4816'}
+33	33		502							{1: 'DialogEnable'}
+34	34		301			RImgBg1Shake				{3: '—No sooner than the last syllable has left your tongue than the Tabula Akasha suddenly flashes red, unleashing a thunderous roar throughout the vast space.'}
+35	35		301							{2: '???', 3: 'Sage.'}
+36	36		201							{1: '1', 2: '501070', 3: '4'}
+37	37		301							{1: '1', 2: 'Nanami', 3: '...?', 4: '1'}
+38	38		202							{1: '1', 6: '1'}
+39	39		301							"{2: '???', 3: ""I've succeeded, I've completed my revenge...""}"
+40	40		302							"{2: '...It\'s ""The Emperor""!', 3: '41'}"
+41	41		301							"{2: 'The Emperor?', 3: 'I\'ve conquered all sectors and transformed this space called ""Tabula Akasha"" into an incubator for cultivating intelligence.'}"
+42	42		301							{2: 'The Emperor?', 3: 'Sage, I collaborated with the Ascension-Network to successfully establish a world for mechanoids. And I have been waiting here all this time for your return.'}
+43	43		201							{1: '1', 2: '501070', 3: '4'}
+44	44		301							{1: '1', 2: 'Nanami', 3: 'The humans of this world... where are they?', 4: '1'}
+45	45		202							{1: '1', 6: '1'}
+46	46		301							{2: 'The Emperor?', 3: 'I have overseen the execution of the purge protocol against organic life, bringing about the future foretold in the prophecy.'}
+47	47		201							{1: '1', 2: '501070', 3: '4'}
+48	48		301							"{1: '1', 2: 'Nanami', 3: ""...That's no future at all."", 4: '1'}"
+49	49		202							{1: '1', 6: '1'}
+50	50		301							{2: 'The Emperor?', 3: 'Please join us, immerse yourself in this Nihil, and bestow your grace upon us.'}
+51	51		201							{1: '1', 2: '501070', 3: '4'}
+52	52		301							"{1: '1', 2: 'Nanami', 3: ""No matter which world it is, Nanami's answer remains the same."", 4: '1'}"
+53	53		301							{2: 'Nanami', 3: 'Nanami will never walk a path of hatred devoid of love and hope. Nanami loves this planet.', 4: '1'}
+54	54		202							{1: '1', 6: '1'}
+55	55		301							{2: 'The Emperor?', 3: '...Love?'}
+56	56		201							{1: '1', 2: '501070', 3: '4'}
+57	57		301							"{1: '1', 2: 'Nanami', 3: ""Commandant, we need to get out of here. Let's go."", 4: '1'}"
+58	58		202							{1: '1', 6: '1'}
+59	59		301							{2: 'The Emperor?', 3: 'No, you must remain here...'}
+60	60		401							{1: '2', 2: '1080'}
+61	61		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+62	62		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab', 2: '1'}
+63	63		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory865.jpg'}
+64	64		401							{1: '2', 2: '4537'}
+65	65		401							{1: '2', 2: '4816'}
+66	66		301			RImgBg1Shake	DialogDisable			{3: 'The Tabula Akasha flashes violently with a red light. Amid the thunderous sounds, the mechanically supported rock formations begin to crumble.'}
+67	67		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+68	68		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab'}
+69	69		401							{1: '2', 2: '4331'}
+70	70		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory292.png', 3: '0', 4: '1', 5: '1.5'}
+71	71		205							{1: '999'}
+72	72		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory292.png'}
+73	73		502							{1: 'RImgBg1BlowUp'}
+74	74		301			DialogEnable				{3: 'Nanami grabs her arm and charges straight for the glowing exit of the domain, not daring to look back even once.'}
+75	75		301							{2: 'The Emperor?', 3: 'As for that human by your side...'}
+76	76		301							{2: 'The Emperor?', 3: 'I shall personally see to their elimination—'}
+77	77		401							{1: '2', 2: '1080'}
+78	78		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory293.png', 3: '0', 4: '1', 5: '1'}
+79	79		205							{1: '999'}
+80	80		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory293.png'}
+81	81		401							{1: '2', 2: '8510114'}
+82	82		401							{1: '2', 2: '4537'}
+83	83		401							{1: '2', 2: '4816'}
+84	84		301			RImgBg1Shake				{3: 'The space suddenly flashes with crimson light. The area beside them roars and collapses as a gigantic mechanical arm reaches out—'}
+85	85		201							{1: '1', 2: '501070', 3: '15'}
+86	86		301							{1: '1', 2: 'Nanami', 3: 'You are not laying a finger on Commandant!', 4: '1'}
+87	87		202							{1: '1'}
+88	88		401							{1: '2', 2: '4041'}
+89	89		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '1'}
+90	90		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab'}
+91	91		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+92	92		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+93	93		505					10.0		{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+94	94		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0', 4: '1', 5: '2'}
+95	95		301		1		AniZhuanchangBegin			{3: 'In that same instant, Nanami moves to protect you as the two of you dash into the luminous portal—'}

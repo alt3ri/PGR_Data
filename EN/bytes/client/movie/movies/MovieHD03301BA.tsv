@@ -1,0 +1,268 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+2	2		401							{1: '1', 2: '120'}
+3	3		401							{1: '2', 2: '904'}
+4	4		301			DialogEnable				{3: 'Moonlight shimmers on the ocean, sending ripples of silver dancing across the waves.'}
+5	5		301				DialogDisable			{3: 'Though summer has long since slipped beneath the sea, the seventeen-year cicadas keep chanting through the night, determined to leave a trace of their existence in every echo.'}
+6	6		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory710.jpg', 3: '0', 4: '1', 5: '1.5'}
+7	7		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory710.jpg'}
+8	8		205							{1: '999'}
+9	9		402							{1: '904'}
+10	10		301			DialogEnable				{3: 'By the window, a young girl turns the pages of her book under the soft glow of the moon.'}
+11	11		301							{3: 'At this moment, she senses something.'}
+12	12		301							{3: 'Wearing a slightly dazed expression, the white-haired girl tilts her head and looks outside the window.'}
+13	13		301							{3: 'A soft whisper forms on her lips, emerging between the moonlight and the sea before it disappears again.'}
+14	14		201							{1: '1', 2: '500981'}
+15	15		301							{1: '1', 2: '??', 3: 'Why...', 4: '1', 18: '100004820'}
+16	16		301				AniZhuanchangBegin			{2: '??', 3: '...am I here?', 4: '1', 18: '100004821'}
+17	17		202			DialogDisable				{1: '1', 6: '1'}
+18	18		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory299.png'}
+19	19		107			AniZhuanchangEnd			2000.0	{1: 'A few days ago'}
+20	20		108							{1: '1'}
+21	21		201							{1: '1', 2: '500979', 3: '3'}
+22	22		301			DialogEnable				{1: '1', 3: 'She opens her eyes and finds herself in this unfamiliar room.'}
+23	23		301							"{3: ""Her mind feels jumbled—everything's blank. There's something she can't quite remember.""}"
+24	24		202							{1: '1'}
+25	25		301							{3: 'There are faint traces of someone living here, though not many. It looks like they only stayed for a short time—maybe just a day?'}
+26	26		301							{3: 'A few books sit on the table, and they look oddly familiar:'}
+27	27		301							"{3: '""Fundamentals of Civil Engineering"", ""Start from Zero: Build Your Own Home!"", ""Yes, You Can Have a Garden"", and ""From Beginner to Master: A Newcomer\'s Guide to Gardening"".'}"
+28	28		301							"{3: ""They seem old, not from heavy use, but as though they've been dug up after being buried for years.""}"
+29	29		201							{1: '1', 2: '500979'}
+30	30		301							"{1: '1', 3: 'She picks up the book called ""Beginner to Master: A Newcomer\'s Guide to Gardening"" and gives it a quick once-over.'}"
+31	31		401							{1: '2', 2: '2765'}
+32	32		301							{3: 'On the first few dozen pages, she sees a bunch of notes—some points are underlined, and there are small comments scribbled in the margins.'}
+33	33		301							"{3: ""The handwriting isn't fancy, but it's neat and organized, showing how seriously the writer took these notes.""}"
+34	34		402							{1: '2765'}
+35	35		301							{3: 'As she flips further through the pages, a slip of paper drops out.'}
+36	36		203						350.0	{1: '1', 2: '0.3', 4: '-20'}
+37	37		203							{1: '1', 2: '0.3'}
+38	38		301							{3: 'She stoops down and picks up the note. It seems to be... a poem, or maybe lyrics?'}
+39	39		301							{3: 'When she reads it closely, flashes of images flicker in her mind.'}
+40	40		401							{1: '2', 2: '4385'}
+41	41		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+42	42		202							{1: '1', 6: '1'}
+43	43		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory705.jpg'}
+44	44		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '0', 4: '0.1', 5: '0'}
+45	45		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab', 2: '2'}
+46	46		301							"{3: ""There's a sense of familiarity she can't pin down, but... she knows it's something important.""}"
+47	47		301							"{3: ""It's like trying to see flowers through a thick fog, with only a vague melody drifting through her thoughts.""}"
+48	48		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+49	49		205							{1: '999'}
+50	50		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab'}
+51	51		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory299.png'}
+52	52		306							{1: '1'}
+53	53		301							{3: 'She thinks to herself that she better sort out all the facts she has right now.'}
+54	54		301							{3: 'Her memory is hazy, but she is sure these books are hers—and that note might be the key to regaining what she has lost.'}
+55	55		306							
+56	56		301							{3: 'She glances out the window. The moon hangs there, lonely in the night sky, and she can see a beach and the ocean not too far away.'}
+57	57		301							{3: 'Something inside her insists she stays put. She is waiting for someone who truly matters.'}
+58	58		301				AniZhuanchangBegin			{3: 'Has she known all along that this would happen? If so, can the one she has been waiting for help her get her memories back?'}
+59	59		401							{1: '1', 2: '36'}
+60	60		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory669.jpg'}
+61	61		401							{1: '1', 2: '204'}
+62	62		401							{1: '2', 2: '2979'}
+63	63		301			AniZhuanchangEnd				{3: 'You look at the message on the terminal and fall silent.'}
+64	64		301							"{3: ""The message only shows a set of coordinates, and the sender's name appears as random gibberish.""}"
+65	65		301							{3: 'However, the terminal does come with a basic reverse-decryption tracking feature.'}
+66	66		301							"{3: ""Still, if anyone manages to bypass the reinforced safeguards Lee designed, it's almost certain that this tracking program won't be of much help.""}"
+67	67		301							{3: 'Something about this way of communicating reminds you of someone you know...'}
+68	68		302							{2: '(Reverse tracking)', 3: '69', 4: '(Check coordinates)', 5: '75'}
+69	69		401						500.0	{1: '2', 2: '4422'}
+70	70		401							{1: '2', 2: '4437'}
+71	71		301						500.0	{3: 'You open the reverse-decryption tracking program and lock onto the sender as the target. After a brief pause, the progress bar stalls at 30%.'}
+72	72		401							{1: '2', 2: '4417'}
+73	73		301							"{3: ""Then the program lags and crashes; it seems like there's no way to continue the trace.""}"
+74	74		301							"{3: ""Since you can't do a reverse trace right now, you decide to check these coordinates instead.""}"
+75	75		301				DialogDisable			{3: 'You enter the coordinates into the terminal, and the cursor hovers over a building by the sea.'}
+76	76		402							{1: '4427'}
+77	77		302							{2: 'This spot...', 3: '78'}
+78	78		302							{2: 'That haunted castle?', 3: '79'}
+79	79		301			DialogEnable				{3: 'You only heard rumors about this ancient castle not long ago...'}
+80	80		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+81	81		504							{1: '0.7'}
+82	82		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg'}
+83	83		201							{1: '1', 2: '500488', 4: '-450', 5: '-200', 6: '300'}
+84	84		201							{1: '2', 2: '500354', 4: '450', 5: '-50', 6: '50'}
+85	85		301							"{1: '1', 2: 'Mechanoid A', 3: ""It's a vampire."", 4: '1', 18: '100004822'}"
+86	86		301							{2: 'Mechanoid B', 3: 'No, a human-faced bat sounds more likely.', 4: '2', 18: '100004823'}
+87	87		202							{1: '1'}
+88	88		201							{1: '1', 2: '500470', 4: '-500', 5: '-250', 6: '400'}
+89	89		301							{1: '1', 2: 'Mechanoid C', 3: 'Could it be a siren after all?', 4: '1', 18: '100004824'}
+90	90		202							{1: '1', 2: '2'}
+91	91		301							{3: 'You stop in your tracks at those bizarre words, and your sudden motion makes those mechanoids notice you.'}
+92	92		201							{1: '1', 2: '500488', 5: '-200', 6: '300'}
+93	93		301							{1: '1', 2: 'Mechanoid A', 3: 'Hello, 【kuroname】.', 4: '1', 18: '100004825'}
+94	94		302							{2: 'What are you guys talking about?', 3: '95'}
+95	95		202							{1: '1'}
+96	96		201							{1: '1', 2: '500354', 5: '-50', 6: '50'}
+97	97		301							"{1: '1', 2: 'Mechanoid B', 3: ""It's that seaside castle. Lately, every night, an eerie singing echoes from inside, and we're wondering if there's a monster hiding in there."", 4: '1', 18: '100004826'}"
+98	98		301				AniZhuanchangBegin			{2: 'Mechanoid B', 3: '【kuroname】, you should stay away from that place for the time being. It might be dangerous.', 4: '1', 18: '100004827'}
+99	99		202							{1: '1', 6: '1'}
+100	100		401							{1: '1', 2: '36'}
+101	101		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory373.png'}
+102	102		401							{1: '1', 2: '209'}
+103	103		504							{1: '0'}
+104	104		301			AniZhuanchangEnd				{3: 'Beneath the thick canopy of leaves, the distant castle remains clearly visible.'}
+105	105		301							{3: 'You ultimately choose to come here in person to investigate.'}
+106	106		301							{3: 'Your terminal is set to transmit your coordinates in two hours, and you have your weapon at the ready.'}
+107	107		301				DialogDisable			"{3: ""Those ghostly rumors aren't exactly reliable. Since the message includes coordinates, perhaps you can see it as an invitation? And... the way it's sent reminds you of someone in particular.""}"
+108	108		401							{1: '2', 2: '4278'}
+109	109		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+110	110		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+111	111		201						250.0	{1: '1', 2: '500884', 7: '1'}
+112	112		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+113	113		202							{1: '1', 6: '1'}
+114	114		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory373.png'}
+115	115		301			DialogEnable				{3: '...Could it be you?'}
+116	116		301							"{3: ""A while has passed since the incident in the conservation area, and there's still no word from her. Meanwhile, the orchid in the lounge continues to thrive.""}"
+117	117		301							{3: 'Consciousness crossing time and space seemed like pure fantasy under any circumstances—especially when it involved running into Luna from the future.'}
+118	118		301							{3: 'Maybe it was an unspoken feeling that stirred within you. Instead of reporting it, you decided to stash that experience away like a personal secret.'}
+119	119		401							{1: '2', 2: '2936'}
+120	120		301				AniZhuanchangBegin			{3: 'Following the narrow trail by the oak, you reach a three-way fork: left to the shore, right into deeper darkness.'}
+121	121		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory511.jpg'}
+122	122		104							{1: '0|-200|-300', 2: '0'}
+123	123		301			AniZhuanchangEnd				"{3: ""Under the full moon's glow, the way forward poses no real barrier. You stay on the middle path, and before long, you're standing right outside the castle.""}"
+124	124		301							{3: 'According to the mechanoids in the city, this castle has been here for decades since it was built.'}
+125	125		301							{3: 'Abandoned for years, it shows no trace of modern technology.'}
+126	126		301							{3: 'Quiet, ancient, and mysterious.'}
+127	127		301							"{3: ""That's the first impression the castle gives.""}"
+128	128		301							"{3: ""Unlike the massive medieval fortresses built for war, the castle in front of you seems more like a wizard's lair straight out of a fantasy novel.""}"
+129	129		301							{3: 'You stand at the gates of this old stronghold, ready to push them open, when you notice a strange inscription on the ground.'}
+130	130		302							{2: 'This is...', 3: '131'}
+131	131		104						300.0	{1: '0|-180|-300', 2: '0.25'}
+132	132		301				DialogDisable			{3: 'Leaning in, you can just make out the faint letters scratched into the surface.'}
+133	133		307						100.0	"{1: '""Fated one, awaken the moon.""', 3: '65', 4: 'ffffffff', 5: '0'}"
+134	134		301							"{3: '""Fated one, awaken the moon.""'}"
+135	135		307							{2: '1'}
+136	136		302							{2: 'Awaken... the moon?', 3: '137'}
+137	137		301			DialogEnable				"{3: ""It's almost as if a drama-loving god orchestrated that haunting legend's melody to echo at exactly the right moment.""}"
+138	138		401							{1: '2', 2: '215'}
+139	139		401							{1: '1', 2: '36'}
+140	140		301							"{2: 'Singing', 3: '""...cry... before my grave...""', 18: '100004828'}"
+141	141		301							{3: 'The tune rides the night breeze from afar, allowing only brief snatches of it to be heard.'}
+142	142		302							{2: 'That song...', 3: '143'}
+143	143		301				AniZhuanchangBegin			{3: 'You focus on each lyric and note, feeling a surge of familiarity rise within you.'}
+144	144		402							{1: '215'}
+145	145		401							{1: '1', 2: '386'}
+146	146		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory705.jpg'}
+147	147		301			AniZhuanchangEnd	DialogDisable			{3: 'The orchid from memories gently unfurls, as if awakening once more.'}
+148	148		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+149	149		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory511.jpg'}
+150	150		104							{1: '0|-200|-300', 2: '0'}
+151	151		302							{2: 'Is that you, Luna...?', 3: '152'}
+152	152		401							{1: '2', 2: '2666'}
+153	153		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory503.jpg', 3: '0', 4: '1', 5: '1.5'}
+154	154		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory503.jpg'}
+155	155		205							{1: '999'}
+156	156		301			DialogEnable				{3: 'You push the grand doors wide and stride into the castle.'}
+157	157		301							"{3: ""You follow the faint, broken melody through the castle's winding corridors, each step sharpening its tune and revealing its words.""}"
+158	158		301							"{2: 'Singing', 3: '""The breeze... I shall... become...""', 18: '100004829'}"
+159	159		301							"{3: ""This voice—it's Luna, without a doubt.""}"
+160	160		301							{3: 'And those lyrics prove it: this is indeed that song.'}
+161	161		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory504.jpg', 3: '0', 4: '1', 5: '1.5'}
+162	162		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory504.jpg'}
+163	163		205							{1: '999'}
+164	164		301							{3: 'You stand at the bottom of the stairs. Just above you is the small room on the top floor.'}
+165	165		301							{3: 'The person inside seems to notice your footsteps, and the singing suddenly stops.'}
+166	166		301							{3: 'As you make your way up the spiral staircase, you spot an open door coming into view.'}
+167	167		301							{3: 'With each step, the door grows larger in your vision, until you can finally see what lies inside.'}
+168	168		401							{1: '2', 2: '754'}
+169	169		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory710.jpg', 3: '0', 4: '1', 5: '1.5'}
+170	170		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory710.jpg'}
+171	171		205							{1: '999'}
+172	172		201							{1: '1', 2: '500979', 5: '-50'}
+173	173		301							{1: '1', 3: 'That figure appears before your eyes, as expected.'}
+174	174		301							{3: 'She sits by the window, casting her gaze upon you.'}
+175	175		302				AniZhuanchangBegin			{2: 'Luna.', 3: '176'}
+176	176		202						3000.0	{1: '1', 6: '1'}
+177	177		201							{1: '1', 2: '500979', 3: '3', 5: '-50', 7: '1'}
+178	178		301			AniZhuanchangEnd				{1: '1', 2: 'Girl', 3: 'Why... am I here?', 4: '1', 18: '100004830'}
+179	179		301							{3: 'The girl looks out the window.'}
+180	180		301							{2: 'Girl', 3: 'The moon is almost full.', 4: '1', 18: '100004831'}
+181	181		301							"{3: ""She has been here for days, but that person still doesn't arrive.""}"
+182	182		301							{2: 'Girl', 3: 'I should leave tomorrow.', 4: '1', 18: '100004832'}
+183	183		202							{1: '1'}
+184	184		301							{3: 'She feels weary of waiting.'}
+185	185		301							{3: 'She looks down at the note in her hand and sings along to the familiar tune she remembers.'}
+186	186		301							{3: 'Over the past few days, she keeps repeating this seemingly futile attempt again and again.'}
+187	187		301							"{3: ""Maybe it isn't completely pointless—after these attempts, she does recall a few things, but they only leave her more confused.""}"
+188	188		301							"{3: ""Her recovered fragments span a vast timeline, sometimes clashing. One moment, she's torn from her sister in childhood; the next, they're shopping together as adults.""}"
+189	189		301							"{3: ""All these random memories jumble together in her mind, but she still can't recall her own name.""}"
+190	190		401						800.0	{1: '2', 2: '4163'}
+191	191		201							{1: '1', 2: '500979', 3: '7'}
+192	192		301							{1: '1', 2: 'Girl', 3: 'Hmm?', 4: '1', 18: '100004833'}
+193	193		202							{1: '1'}
+194	194		301							{3: 'She senses footsteps downstairs and quietly waits for whoever is coming.'}
+195	195		301							{3: 'The footsteps grow steadily closer.'}
+196	196		301							{2: '【kuroname】', 3: 'Luna.'}
+197	197		301							{3: 'The young girl looks at the human standing before her. With just one glance, the flutter in her heart tells her this is the person she has been waiting for.'}
+198	198		201							{1: '1', 2: '500979', 3: '1'}
+199	199		301				AniZhuanchangBegin			{1: '1', 2: 'Luna', 3: 'Hello.', 4: '1', 18: '100004834'}
+200	200		202			DialogDisable				{1: '1', 6: '1'}
+201	201		201							{1: '1', 2: '500979', 3: '1', 7: '1'}
+202	202		302			AniZhuanchangEnd				{1: '1', 2: 'Hello.', 3: '203', 4: 'I got your message.', 5: '203'}
+203	203		301			DialogEnable				"{3: ""Luna doesn't reply; she just tilts her head, gazing at you in silence.""}"
+204	204		302							{2: 'Hmm?', 3: '205', 4: 'Luna?', 5: '205'}
+205	205		301							{3: 'After what feels like ages, she finally comes back to the moment.'}
+206	206		204							{1: '1', 2: '1'}
+207	207		301							{2: 'Luna', 3: 'Sorry, my mind drifts off for a second.', 4: '1', 18: '100004835'}
+208	208		204							{1: '1', 2: '3'}
+209	209		301							"{2: 'Luna', 3: ""I believe I'm not quite the person you mentioned."", 4: '1', 18: '100004836'}"
+210	210		204							{1: '1', 2: '1'}
+211	211		301							"{2: 'Luna', 3: ""In short, my memory isn't right."", 4: '1', 18: '100004837'}"
+212	212		302							{2: '???', 3: '214', 4: 'Is this some kind of new trick?', 5: '213'}
+213	213		301							"{2: 'Luna', 3: ""No, I'm just stating a fact."", 4: '1', 18: '100004838'}"
+214	214		204							{1: '1', 2: '1'}
+215	215		301							{2: 'Luna', 3: 'You just called me Luna. Is that my name?', 4: '1', 18: '100004839'}
+216	216		302							{2: '...', 3: '217'}
+217	217		301				DialogDisable			"{3: ""Everything feels so bizarre right now. You can't believe you've fallen into a run-of-the-mill amnesia storyline, like a scene straight out of a prime-time soap.""}"
+218	218		302							{2: 'Yes, your name is Luna.', 3: '219'}
+219	219		302							"{2: ""You're my..."", 3: '220'}"
+220	220		302							{2: '...temporary ally.', 3: '221', 4: 'Friend.', 5: '223', 6: '...acquaintance.', 7: '225'}
+221	221		204							{1: '1', 2: '7'}
+222	222	226	301			DialogEnable				{2: 'Luna', 3: 'Hmm... an ally.', 4: '1', 18: '100004840'}
+223	223		204							{1: '1', 2: '1'}
+224	224	226	301			DialogEnable				{2: 'Luna', 3: 'A friend, huh...', 4: '1', 18: '100004841'}
+225	225		301			DialogEnable				{2: 'Luna', 3: 'Hmm?', 4: '1', 18: '100004842'}
+226	226		302							{2: 'Um...', 3: '227'}
+227	227		301							{3: 'You spot a few books on the table out of the corner of your eye.'}
+228	228		302							{2: 'Are these books yours?', 3: '229'}
+229	229		204							{1: '1'}
+230	230		301							"{2: 'Luna', 3: ""I guess so, but the subject matter feels strange. I'm not sure why I used to read something like this."", 4: '1', 18: '100004843'}"
+231	231		202							{1: '1'}
+232	232		301							{3: 'You move closer and check the titles. Now, you think you know why Luna picks up books like these.'}
+233	233		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+234	234		504							{1: '0.7'}
+235	235		202							{1: '1', 6: '1'}
+236	236		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory705.jpg'}
+237	237		201							{1: '1', 2: '500886', 3: '1', 7: '1'}
+238	238		301							{1: '1', 2: '【kuroname】', 3: 'Is this your childhood home?'}
+239	239		301							{2: 'Luna', 3: 'Yes. My sister and I rebuilt it brick by brick.', 4: '1', 18: '100004844'}
+240	240		301				DialogDisable			{2: 'Luna', 3: 'We studied a lot about architecture. We learned as we went about building it.', 4: '1', 18: '100004845'}
+241	241		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+242	242		504							{1: '0'}
+243	243		202							{1: '1', 6: '1'}
+244	244		201							{1: '1', 2: '500979'}
+245	245		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory710.jpg'}
+246	246		302				AniZhuanchangBegin			{1: '1', 2: 'Could you tell me more about your memories?', 3: '247'}
+247	247		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+248	248		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory710.jpg'}
+249	249		302			AniZhuanchangEnd				"{2: ""So, you're saying that when you look at these lyrics, a few images come to mind?"", 3: '250'}"
+250	250		301			DialogEnable				{2: 'Luna', 3: 'Yes.', 4: '1', 18: '100004846'}
+251	251		301							{3: 'According to Luna, following the melody helps to recall fragments of her past.'}
+252	252		302							"{2: ""So that's why you're practicing singing here?"", 3: '253'}"
+253	253		204							{1: '1', 2: '1'}
+254	254		301							{2: 'Luna', 3: 'Yes, I figure once I learn how to sing the whole song, I can remember everything.', 4: '1', 18: '100004847'}
+255	255		204							{1: '1', 2: '3'}
+256	256		301							"{2: 'Luna', 3: ""But if I rely only on my memory, it's tough to learn all by myself..."", 4: '1', 18: '100004848'}"
+257	257		202							{1: '1'}
+258	258		301							"{3: 'This song was taught to you by the Luna you met when your consciousness traveled to the ""future."" The one sending the message is likely the Luna before she lost her memory. So, does it mean you need to teach this song to the Luna who doesn\'t remember anything?'}"
+259	259		301							{3: 'It seems this song really is the key to bringing her memories back.'}
+260	260		301							"{3: ""But Luna doesn't seem to care much about it.""}"
+261	261		201							{1: '1', 2: '500979', 3: '3'}
+262	262		301							"{1: '1', 2: 'Luna', 3: ""Well, if I can't pick it up, then that's all right."", 4: '1', 18: '100004849'}"
+263	263		204							{1: '1'}
+264	264		301							{2: 'Luna', 3: 'Based on my experiences these past few days, my memories are gradually falling into place anyway.', 4: '1', 18: '100004850'}
+265	265		301				DialogDisable			{2: 'Luna', 3: 'In three to five years, I should be able to remember everything.', 4: '1', 18: '100004851'}
+266	266		302							{2: 'Whenever you cross paths with the Punishing Virus, strange things always happen...', 3: '267', 4: 'Three to five years... that feels like such a long wait.', 5: '267'}
+267	267		302		1		AniZhuanchangBegin			{2: 'Well then, how about I teach you the song?', 3: '268'}

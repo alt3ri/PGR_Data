@@ -1,0 +1,97 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory255.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		401							{1: '2', 2: '10113408'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '1'}
+5	5		301			DialogEnable				"{3: 'Wanshi leaps into the void, followed by Commandant and Rosetta—both in pursuit of ""Wanxu"" and the truth.'}"
+6	6		301							{3: 'Though their paths diverge, they all move toward the same purpose.'}
+7	7		301							{3: 'To seek the truth, to save others, to cut out the poisonous roots left by the previous generation, and...'}
+8	8		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+9	9		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+10	10		301							{3: 'Wanshi closes his eyes.'}
+11	11		401							{1: '1', 2: '386'}
+12	12		301							{3: 'Hush little baby close your eyes.'}
+13	13		301							{3: 'Have a peaceful sleep on the rocking boat.'}
+14	14		301				AniZhuanchangBegin			{3: 'The small boat gently rocks. Wanshi lies on the boat, wrapped in a warm, soft swaddle.'}
+15	15		205							{1: '999'}
+16	16		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+17	17		504							{1: '0.7'}
+18	18		201							{1: '1', 2: '500941'}
+19	19		301			AniZhuanchangEnd				{1: '1', 2: 'Melvie', 3: 'Would you like to take a break? I can hold the child for a while—I have younger siblings at home too.', 4: '1'}
+20	20		301							"{2: 'Melvie', 3: ""I'm Melvie. I noticed you haven't let go of the baby since before we boarded..."", 4: '1'}"
+21	21		202							{1: '1', 6: '1'}
+22	22		201							{1: '1', 2: '500938'}
+23	23		301				RImgBg1Shake			"{1: '1', 2: 'Wanxu', 3: ""Thanks, but I'm alright—ugh!"", 4: '1'}"
+24	24		202							{1: '1'}
+25	25		301							{3: 'The shuttle suddenly shudders, sending passengers stumbling in all directions. The woman clutches the swaddle tightly as her safety belt yanks her back into her seat.'}
+26	26		301							"{3: ""The blanket comes loose, revealing the infant's face.""}"
+27	27		301							"{3: ""He must have survived an explosion with its family—the skin bears scrapes from gravel, and what little undamaged skin remains glows an unhealthy red. It's clearly burning with fever.""}"
+28	28		201							{1: '1', 2: '500941', 3: '7', 4: '-400'}
+29	29		201							{1: '2', 2: '500938', 3: '14', 4: '400'}
+30	30		301							"{1: '1', 2: 'Melvie', 3: ""What's this?!"", 4: '1'}"
+31	31		301							"{2: 'Wanxu', 3: ""The wounds were treated before we boarded. It's just... he's very sick."", 4: '2'}"
+32	32		301							"{2: 'Wanxu', 3: ""But he's still alive... He's using his father's slot too. We aren't taking up any additional space."", 4: '2'}"
+33	33		301							{2: 'Wanxu', 3: 'Let me save him... please.', 4: '2'}
+34	34		204							{1: '1'}
+35	35		301							"{2: 'Melvie', 3: ""...Don't worry. Once we reach Babylonia, there's hope. I'll help save him—I studied medicine, and I'm going up there to do research. We'll have access to cutting-edge technology... Of course, it won't just be me. Everyone will help save him."", 4: '1'}"
+36	36		204							{1: '2'}
+37	37		301							{2: 'Wanxu', 3: '...', 4: '2'}
+38	38		204							{1: '1', 2: '1'}
+39	39		301							"{2: 'Melvie', 3: ""He's just a child, after all."", 4: '1'}"
+40	40		301							{3: 'Melvie gazes tenderly at the infant.'}
+41	41		301							{2: 'Melvie', 3: '—He is the seed of our world.', 4: '1'}
+42	42		301							{2: 'Melvie', 3: 'The seeds will never be abandoned. Trust me... so right now, what you need most is rest. Let us take care of the child for now, alright?', 4: '1'}
+43	43		202							{1: '1', 2: '2', 6: '1'}
+44	44		201							{1: '1', 2: '500463', 4: '-400'}
+45	45		201							{1: '2', 2: '500138', 4: '400'}
+46	46		301							{1: '1', 3: 'People from across the shuttle reach out their hands as well.'}
+47	47		301							"{2: 'Staff Member', 3: ""I've got some rubbing alcohol with me. Let's clean up those wounds."", 4: '1'}"
+48	48		301							"{2: 'Staff Member', 3: ""It's a baby boy... He looks just like his mother! What's his name?"", 4: '2'}"
+49	49		202							{1: '1', 2: '2'}
+50	50		301							{3: 'Countless hands reach out carefully toward the swaddle.'}
+51	51		301							{3: 'Countless hands cradle the seeds with utmost care.'}
+52	52		301							{3: 'The tiny floral-patterned boat begins to rock once more.'}
+53	53		301							{3: 'Hush little baby close your eyes.'}
+54	54		301							{3: 'Have a peaceful sleep on the rocking boat.'}
+55	55		301				AniZhuanchangBegin			{3: 'Grow up slowly, one step at a time.'}
+56	56		504							{1: '0'}
+57	57		401							{1: '1', 2: '36'}
+58	58		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory980.jpg'}
+59	59		201							{1: '1', 2: '500934', 3: '8'}
+60	60		301			AniZhuanchangEnd				{1: '1', 2: 'Wanshi', 3: 'And...', 4: '1'}
+61	61		401							{1: '1', 2: '5031'}
+62	62		301							{3: 'Reach out to grasp those countless hands that lift this <phonetic=child>seed</phonetic> from the mire.'}
+63	63		301							"{3: 'Whether it\'s the lives of forgotten orphans or the ""life"" of Constructs, there are always those who fight to protect them. Every departed person in Wanshi\'s memories chose this path, some without hesitation, some driven by their conscience.'}"
+64	64		204							{1: '1'}
+65	65		301							{2: 'Wanshi', 3: 'Now... I too will walk this path.', 4: '1'}
+66	66		301							{2: 'Wanshi', 3: 'This is the choice I made for myself.', 4: '1'}
+67	67		204							{1: '1', 2: '4'}
+68	68		301							{2: 'Wanshi', 3: 'I believe too that another possibility awaits at the end of this path.', 4: '1'}
+69	69		202							{1: '1', 6: '1'}
+70	70		401							{1: '2', 2: '2513'}
+71	71		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+72	72		301							{3: 'Wanshi opens fire at his feet, causing the insect-like Hetero-Creatures to scatter in panic—some fleeing, others lunging to attack him.'}
+73	73		401							{1: '2', 2: '4537'}
+74	74		502							{1: 'RImgBg1Shake'}
+75	75		301							{3: 'The lights on their backs flicker densely, forming a luminous path. At its end, violent tremors surge forth once again.'}
+76	76		201							{1: '1', 2: '500934', 3: '4'}
+77	77		301							{1: '1', 2: 'Wanshi', 3: 'Shorthalt...', 4: '1'}
+78	78		401							{1: '2', 2: '4641'}
+79	79		301							"{3: 'He lands steadily on the bottom floor, only for Hetero-Creatures to immediately ""welcome"" him with their fangs bared, gnawing at his frame.'}"
+80	80		301							{3: 'Vital fluid leaks from his wounds as Wanshi inches toward the end, step by step, surrounded by Hetero-Creatures. Though he collapsed here before, he must start anew—he must reach the end, he must meet Shorthalt.'}
+81	81		301							"{2: 'Wanshi', 3: ""Even if they're all just phantoms, you kept trying again and again for these children, over and over without end."", 4: '1'}"
+82	82		301							"{2: 'Wanshi', 3: ""In those brief moments of clarity, you left behind clues—even if it's a noose to hang yourself."", 4: '1'}"
+83	83		301							{2: 'Wanshi', 3: 'So stubborn.', 4: '1'}
+84	84		301							"{2: 'Wanshi', 3: ""But it's people like you... who have carried us this far."", 4: '1'}"
+85	85		301							"{3: ""The dangerous path of light now has the Construct's vital fluid scattered on it, a proof that he too has walked this path.""}"
+86	86		401							{1: '2', 2: '4641'}
+87	87		301							{3: 'The Hetero-Creatures screech as drones spread out behind Wanshi, mercilessly eliminating these noisy nuisances.'}
+88	88		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+89	89		502							{1: 'RImgBg1Shake'}
+90	90		401							{1: '2', 2: '4413'}
+91	91		301							"{3: ""After blasting through the last wave of Hetero-Creatures blocking the way, a vast underground chamber unfolds before Wanshi's eyes—the Red Tide churns at the edge of the cage, ready to swallow both the prison and prisoner in the next instant.""}"
+92	92		301							"{2: 'Wanshi', 3: 'Such a ""soul"" should not be bound within this dark ""cage"".', 4: '1'}"
+93	93		401							{1: '2', 2: '10113408'}
+94	94		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+95	95		301							{3: 'Wanshi leaps down into the cage, just like how he, as a military doctor, jumped from the ruins with repair components in his arms years ago.'}
+96	96		301		1		AniZhuanchangBegin			{2: 'Wanshi', 3: '—Shorthalt!', 4: '1'}

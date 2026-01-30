@@ -1,0 +1,23 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory6.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '1021001'}
+4	4		401							{1: '4', 2: '102003'}
+5	5		301			DialogEnable				"{1: '1', 2: 'Lucia', 3: ""I've searched for quite a while, Commandant. I am certain that you are not in this area."", 4: '1'}"
+6	6		204							{1: '1', 2: '3'}
+7	7		301							{2: 'Lucia', 3: '...!', 4: '1'}
+8	8		302							"{1: '799', 2: ""What's wrong?"", 3: '12', 4: ""So I'm in another area, huh..."", 5: '13'}"
+9	9		204							{1: '1'}
+10	10		401							{1: '4', 2: '102005'}
+11	11		303							{1: '799'}
+12	12	14	301							{2: 'Lucia', 3: 'The power of my frame is dropping. I think the connection is breaking off.', 4: '1'}
+13	13		301							"{2: 'Lucia', 3: ""Likely. But we have a bigger problem now. I'm afraid the connection is about to be cut off."", 4: '1'}"
+14	14		301							"{2: 'Lucia', 3: ""I'm not sure if it's a problem on my side or yours, but I think you're safe for the time being."", 4: '1'}"
+15	15		301							"{2: 'Lucia', 3: ""After disconnecting, I'll continue my search and tell as many as possible to expand their search area."", 4: '1'}"
+16	16		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '1'}
+17	17		202							{1: '1', 6: '1'}
+18	18		301							{2: 'Lucia', 3: '…——…Commandan——', 4: '1'}
+19	19		301							"{2: 'Lucia', 3: ""Commandant, I'll do my best to find you soon!"", 4: '1'}"
+20	20		301							{2: 'System', 3: 'Connection ended.'}
+21	21		401							{1: '2', 2: '1509'}
+22	22		301		1		AniZhuanchangBegin			{2: 'System', 3: '...Searching for next target to connect...'}

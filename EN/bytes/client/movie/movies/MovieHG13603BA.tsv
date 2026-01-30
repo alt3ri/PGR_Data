@@ -1,0 +1,262 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory241.png'}
+2	2		401							{1: '1', 2: '234'}
+3	3		201							{1: '1', 2: '500629'}
+4	4		301			DialogEnable				{1: '1', 2: 'Hanying', 3: 'Ah, right...', 4: '1'}
+5	5		301							{3: 'She quickly steps into the courtyard and picks up the bird inside.'}
+6	6		301							{3: 'Holding the umbrella up, you follow her in and discover that the bird is actually a bionic swallow. Intricate and lifelike, it would have fooled you without a close inspection.'}
+7	7		301							"{3: ""However, it is now lying in Hanying's hands quietly, its wings stiff and shivering as they make a low hum that suggests some kind of malfunction.""}"
+8	8		302							"{2: ""I'm sorry for startling it earlier."", 3: '9'}"
+9	9		301							"{2: 'Hanying', 3: ""It wasn't your fault. It was hurt quite badly beforehand."", 4: '1'}"
+10	10		204							{1: '1', 2: '17'}
+11	11		301							{2: 'Hanying', 3: 'Flying here was the most it could do.', 4: '1'}
+12	12		301							{3: 'She looks sorrowful as she gently caresses the bird.'}
+13	13		204							{1: '1'}
+14	14		301							"{2: 'Hanying', 3: ""Thank you for your guidance. This is good enough. I'll take it from here and talk to your owner myself."", 4: '1'}"
+15	15		302							{2: 'Someone from the Dragon Children must be able to fix it.', 3: '16'}
+16	16		301							"{2: 'Hanying', 3: ""It's okay."", 4: '1'}"
+17	17		301				AniZhuanchangBegin			"{2: 'Hanying', 3: ""We're looking for its owner. He will fix this child properly."", 4: '1'}"
+18	18		502						500.0	{1: 'DialogDisable'}
+19	19		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory240.png'}
+20	20		301			DialogEnable				{3: 'You follow Hanying and go deeper into the quiet alley.'}
+21	21		204							{1: '1', 2: '12'}
+22	22		301							"{2: 'Hanying', 3: ""This used to be a hustling and bustling neighborhood, but now it's left in ruins..."", 4: '1'}"
+23	23		502							{1: 'DialogDisable'}
+24	24		302							{2: 'I heard many people chose to return to Kowloong after the ship docked.', 3: '25'}
+25	25		302							{2: 'Which is why there are fewer people on the Nighter now.', 3: '26'}
+26	26		301			DialogEnable				"{2: 'Hanying', 3: 'Leaving this place and returning to Kowloong, their ""home,"" was the wish of many people trapped on this ship in the middle of the sea.', 4: '1'}"
+27	27		301							"{2: 'Hanying', 3: '""Miles"" was the most valuable resource that could support regular people to leave this ship when Lord Villier was in charge of the Nighter.', 4: '1'}"
+28	28		204							{1: '1', 2: '17'}
+29	29		301							"{2: 'Hanying', 3: 'Except... the ""homes"" many people remembered were gone the moment they left Kowloong.', 4: '1'}"
+30	30		301							{2: 'Hanying', 3: 'Most people that are still on the Nighter are trapped in the past.', 4: '1'}
+31	31		301							"{3: ""Hanying's words are equally conflicted and detached, as if... she does not belong to either Kowloong or the Nighter.""}"
+32	32		302							{2: 'Was that when you boarded the Nighter, Hanying?', 3: '33'}
+33	33		204							{1: '1'}
+34	34		301							{2: 'Hanying', 3: 'I used to live here. I know every nook and cranny of this ship.', 4: '1'}
+35	35		301							{2: 'Hanying', 3: 'But I left for a long time because of some past events. I only recently came back for the first time.', 4: '1'}
+36	36		301							"{2: 'Hanying', 3: ""There have been many changes here as well. Many old friends are no longer here. If it weren't for Pulao..."", 4: '1'}"
+37	37		301							{3: 'Hanying stops talking as if realizing she has said too much.'}
+38	38		302							{2: '...', 3: '39', 4: 'Did something happen?', 5: '41'}
+39	39		301							{3: 'Hanying does not seem like she wants to talk about her past, so you choose to stay silent.'}
+40	40		302							{2: 'Right...', 3: '43'}
+41	41		301							"{2: 'Hanying', 3: ""...If we have a chance to talk in the future, I'll tell you everything."", 4: '1'}"
+42	42		301							"{2: 'Hanying', 3: ""But we have something more important on our hands, don't we?"", 4: '1'}"
+43	43		502							{1: 'DialogDisable'}
+44	44		302							{2: 'Regarding what Pulao said...', 3: '45'}
+45	45		302							{2: 'Do you have more details on the source of those forgeries?', 3: '46'}
+46	46		301			DialogEnable				{2: 'Hanying', 3: '...Forgeries?', 4: '1'}
+47	47		301							{2: 'Hanying', 3: 'Ah... Right.', 4: '1'}
+48	48		301							"{2: 'Hanying', 3: ""Pulao mentioned that many counterfeits have appeared in the shops of the Nighter recently. I've seen a few; they all have a well-hidden code on them."", 4: '1'}"
+49	49		301							{2: 'Hanying', 3: 'And the person behind those codes...', 4: '1'}
+50	50		401							{1: '1', 2: '36'}
+51	51		401						600.0	{1: '2', 2: '952'}
+52	52		401							{1: '2', 2: '2879'}
+53	53		401							{1: '1', 2: '201'}
+54	54		204							{1: '1', 2: '4'}
+55	55		301							{3: 'You step on a loose tile while you are talking, and you hear the sound of a triggered spring in the wall on your right simultaneously.'}
+56	56		302							{2: 'Oh no...', 3: '57', 4: 'Watch out!', 5: '57'}
+57	57		401							{1: '2', 2: '906607'}
+58	58		301							{3: 'A dark object shoots out from the wall before you can react.'}
+59	59		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+60	60		401							{1: '2', 2: '18511011'}
+61	61		203							{1: '1', 2: '0.1', 5: '-100'}
+62	62		301			RImgBg1Shake				{3: 'Right then, a gentle but steadfast wind rushes by you as Hanying dashes in front with inhuman speed to shield you. With a loud clang, the arrow shot from the trap pierces the garden wall next to you.'}
+63	63		301							{3: 'The sudden threat has not fazed Hanying. Her movement is as elegant as a dance, her motion reminding you of a certain memory in your mind...'}
+64	64		301							{2: 'Hanying', 3: 'Commandant! Are you okay?', 4: '1'}
+65	65		301							{3: 'Coming to your senses, you see Hanying turning around and putting away her fan before examining you worriedly.'}
+66	66		502							{1: 'DialogDisable'}
+67	67		302							"{2: ""I'm fine."", 3: '68'}"
+68	68		302							"{2: ""I didn't expect this kind of old-school trap on the Nighter."", 3: '69'}"
+69	69		203							{1: '1', 2: '0.25'}
+70	70		301			DialogEnable				{2: 'Hanying', 3: 'It might be old, but these traps are even harder to notice on the Nighter.', 4: '1'}
+71	71		302							{2: 'Why was it here in the first place?', 3: '72'}
+72	72		204							{1: '1', 2: '12'}
+73	73		301							"{2: 'Hanying', 3: '...I\'m guessing that it\'s set up by the ""resident"" still living here. He doesn\'t want untoward visitors.', 4: '1'}"
+74	74		301				AniZhuanchangBegin			"{2: 'Hanying', 3: ""Let's be careful as we move forward, Commandant."", 4: '1'}"
+75	75		401						700.0	{1: '1', 2: '36'}
+76	76		202			DialogDisable				{1: '1', 6: '1'}
+77	77		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory242.png'}
+78	78		401							{1: '1', 2: '234'}
+79	79		301			DialogEnable				"{3: ""The paths afterward are convoluted and intertwined, rendering the map Pulao gave you completely useless at this point. You resort to following Hanying's lead as you go deeper.""}"
+80	80		301							{3: 'The rain begins to stop. You encounter a few more traps here and there on the way, but Hanying and you manage to disarm them before they are triggered.'}
+81	81		301							{3: 'Passing another stretch of empty houses, you find the unchanging landscape before you suddenly shift. The old buildings here have been repaired, and containers sit tidily on shelves instead of being covered in dust.'}
+82	82		401							{1: '2', 2: '212'}
+83	83		301							{3: 'You hear the bustling noises of conversations coming from the depth of the narrow alley you thought to be empty, and you stop to listen.'}
+84	84		301							{2: 'Old Man', 3: 'Did anyone see my cane?'}
+85	85		301							"{2: 'Child', 3: ""Mom—I want dim sum from Peishilin! They'll be out if we don't hurry!""}"
+86	86		301							"{2: 'Mother', 3: ""Alright, alright. Let your mother finish sewing this, and you'll get a new coat to wear! We'll go to West Street for dim sum and lanterns afterward, yeah?""}"
+87	87		301							{2: 'Child', 3: 'Yeah!'}
+88	88		301							{3: 'The girl cheers gleefully, the bells on her ponytails ringing as she moves.'}
+89	89		301							{2: 'Father', 3: 'Test number twenty... I-it moves!'}
+90	90		301							"{2: 'Father', 3: ""Do a flip! Jump! That's right. Hop on the pole and keep jumping! Wait, you didn't lift your leg high enough... Aaargh!""}"
+91	91		301							"{3: ""You hear the heartbreaking sound of a man's scream, followed by the crash of a giant mechanical object crumbling.""}"
+92	92		301							"{2: 'Young Man', 3: ""Dad... stop tinkering with your mechanical lion. It's never been activated successfully since it was made. Tonight's lion dance is...""}"
+93	93		301							"{2: 'Father', 3: ""Stay out of this! It almost made it! You should sit and watch, too! You ought to learn all of this sooner or later. Have you seen Mo's granddaughter next door? She's so young and she's already a civil servant!""}"
+94	94		301							"{2: 'Young Man', 3: ""Stop comparing me with other people! I told you I don't want to learn this!""}"
+95	95		301							"{2: 'Father', 3: ""It's a craft passed down from generation to generation in our family! You don't get a say!""}"
+96	96		301							"{2: 'Mother', 3: ""Alright, alright. Stop arguing, you two. It's the holiday for once!""}"
+97	97		301							"{2: 'Man', 3: ""Hey, Koo! It's about time! Tsai is waiting for us to begin!""}"
+98	98		301							{2: 'Father', 3: 'Got it! Coming!'}
+99	99		301							{3: 'The courtyard begins to get lively. People move about; grandparents chuckle as they try to slow down the sprinting children. Guests with gifts big and small are welcomed inside, stopping and applauding the lion dance.'}
+100	100		301							{3: 'You cannot help but feel the happiness and warmth in the air even when you are only listening in from the other side of the wall.'}
+101	101		302							{2: 'People are living in such a remote place...?', 3: '102', 4: 'How lively.', 5: '104'}
+102	102		201							{1: '1', 2: '500629', 3: '12'}
+103	103	106	301							{1: '1', 2: 'Hanying', 3: 'Yeah...', 4: '1'}
+104	104		201							{1: '1', 2: '500629', 3: '12'}
+105	105		301							{1: '1', 2: 'Hanying', 3: '...Yeah.', 4: '1'}
+106	106		301							{3: 'Hanying answers you quietly as you arrive at the deepest part of the alley. The door at the end of the road is left ajar, and the voices you hear are coming from inside.'}
+107	107		302							{2: 'Anything wrong?', 3: '108'}
+108	108		301							{3: 'Shaking her head, she walks up and extends her hand to push the door.'}
+109	109		202							{1: '1', 6: '1'}
+110	110		401							{1: '2', 2: '754'}
+111	111		401							{1: '1', 2: '36'}
+112	112		402							{1: '212'}
+113	113		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory177.png', 3: '0', 4: '1', 5: '1'}
+114	114		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+115	115		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory177.png'}
+116	116		301							{3: 'As soon as the door swings open, the bustling sounds cease abruptly. The unexpected hush throws you off balance, causing a brief, disconcerting ring in your ears.'}
+117	117		401							{1: '1', 2: '243'}
+118	118		301							{3: 'What unfolds before you is a view utterly different from your anticipations.'}
+119	119		301							{3: 'Inside the yard, there are no signs of a joyful, loving family, no children engaging in playful chase under the watchful, smiling gaze of their mother. Instead, all that meets your eye is a set of worn rattan furniture on the stark, gray ground.'}
+120	120		301							{3: 'Seated on the chair is an antiquated mechanoid, his back facing the yard door. Perched atop his head is a bionic swallow, the same as the one you saw earlier.'}
+121	121		302							{2: 'Were all those sounds made by this mechanoid...?', 3: '122'}
+122	122		201							{1: '1', 2: '500629', 3: '14'}
+123	123		301							{1: '1', 3: 'Hanying offers you a gentle nod, a fleeting glimmer of sympathy crossing her gaze.'}
+124	124		202							{1: '1', 6: '1'}
+125	125		201							{1: '1', 2: '500278'}
+126	126		301							{1: '1', 2: 'Mechanoid', 3: 'Simulation terminated. 1 minute and 39 seconds of new data added. Objective not accomplished. Deleting redundant data.', 4: '1'}
+127	127		301							{2: 'Mechanoid', 3: 'Unidentified intruders detected. Activating armed defense mode.', 4: '1'}
+128	128		302							{2: '...?!', 3: '129', 4: '(Raise gun)', 5: '129'}
+129	129		301							{3: 'You immediately hold your gun up, aiming it at the mechanoid whose face pulsates with an ominous red glow. Given your anticipation of a peaceful encounter on the Nighter, you armed yourself minimally—certainly not prepared for an unexpected confrontation...'}
+130	130		203							{1: '1', 2: '0.25', 3: '-400'}
+131	131		201							{1: '2', 2: '500629', 4: '400'}
+132	132		301							"{1: '1', 2: 'Hanying', 3: ""It's okay, Commandant. He's not a Corrupted."", 4: '2'}"
+133	133		301							"{3: ""A hand gently settles on your arm as Hanying's soothing voice resonates, her tone akin to comforting a startled child.""}"
+134	134		401							{1: '2', 2: '848'}
+135	135		301							{3: 'Almost as if reacting to her words, the extending arm of the mechanoid transforms into a pitch-black barrel. A deafening blast reverberates in the air, succeeded by... the blossoming of a petite smoke flower.'}
+136	136		302							{2: '...', 3: '137'}
+137	137		301							{2: 'Mechanoid', 3: '...', 4: '1'}
+138	138		301							{3: 'Amidst the lingering smoke, you and the mechanoid lock gazes. After a few tense seconds, the red glow emanating from his head morphs into a tranquil green.'}
+139	139		301							{2: 'Mechanoid', 3: '...I lost.', 4: '1'}
+140	140		302							"{2: ""...This isn't a competition or anything."", 3: '141'}"
+141	141		301							{2: 'Mechanoid', 3: 'The winner is decided, regardless. My body is no longer what it used to be. Now I have to enter sleep mode for maintenance once every 10 hours...', 4: '1'}
+142	142		301							"{2: 'Mechanoid', 3: ""However, you destroyed the defensive measures I set outside, and according to Kowloong law, you're obligated to compensate for my losses."", 4: '1'}"
+143	143		301							{3: 'The visibly damaged screen affixed to his chest displays numbers that are incessantly escalating. After a moment, they finally stabilized, settling on an exorbitant price that would take Pulao several seconds just to verbalize it.'}
+144	144		302							"{2: '...I can get reimbursement from the Kowloong Crew for it, right?', 3: '145', 4: ""That's clearly illegal construction!"", 5: '145'}"
+145	145		301							{2: 'Mechanoid', 3: 'Hmph.', 4: '1'}
+146	146		301							"{3: ""A puff of air jets out from the mechanoid's heat vent, almost as if he were snorting in scorn.""}"
+147	147		301							"{2: 'Mechanoid', 3: ""Those pesky human thieves swiped a whole bunch of stuff from me last time. If it weren't for my traps, I wager they would've swiped even these old screws I have remaining on me."", 4: '1'}"
+148	148		301							"{3: 'Despite his weathered appearance, this mechanoid seems to possess a high level of intelligence as well as a sophisticated emotion imitation feature. As for the ""human thieves"" he brought up...'}"
+149	149		301							"{2: 'Hanying', 3: ""I'm sorry... but you've set a signal blocker and turned down all comms requests. This is the only way we could manage to talk with you."", 4: '2'}"
+150	150		301							"{3: ""You glance down at your terminal—it's already in offline mode, just as you anticipated. It appears that in addition to the defensive traps, the mechanoids have also rigged devices to block all incoming signals.""}"
+151	151		302							{2: 'You said people stole stuff from you?', 3: '152'}
+152	152		301							"{2: 'Mechanoid', 3: ""That's right. Those cheeky humans, they robbed me in the middle of my maintenance routine. Good thing I caught on quickly enough."", 4: '1'}"
+153	153		301							"{2: 'Mechanoid', 3: ""...Otherwise, everything my master left behind would've been swiped by now."", 4: '1'}"
+154	154		302							{2: 'What have you lost so far?', 3: '155'}
+155	155		301							{2: 'Mechanoid', 3: 'Invaluable human artworks that Master recreated. If you need it, I can make a detailed list of all the stuff that got taken.', 4: '1'}
+156	156		301							{3: 'You recognize some of the items displayed on his screen as they overlap with what Pulao previously showed you.'}
+157	157		301							"{2: 'Mechanoid', 3: ""By the way, none of Master's works could've been completed without my help. Each one of them is a unique piece with my own code embedded in it."", 4: '1'}"
+158	158		302							{2: 'So all those forgeries are from here...', 3: '159', 4: 'Unique... forgeries?', 5: '159'}
+159	159		301							{2: 'Mechanoid', 3: 'Forgeries?!', 4: '1'}
+160	160		301							"{2: 'Mechanoid', 3: ""I've gotta set the record straight. Those works are the fruits of Master's amazing skills, and that includes me! Master can perfectly imitate and replicate every single detail of the original works. Even the top connoisseurs in Kowloong can't spot the difference. It's artistry at its finest!"", 4: '1'}"
+161	161		301							{3: 'Worked up, the mechanoid waves his barrel arm.'}
+162	162		204							{1: '2', 2: '7'}
+163	163		301							{2: 'Hanying', 3: 'But you are the only one here. Your master...', 4: '2'}
+164	164		301							{2: 'Mechanoid', 3: 'My master is currently not on the Nighter.', 4: '1'}
+165	165		202							{1: '2', 6: '1'}
+166	166		203							{1: '1', 2: '0.25'}
+167	167		301							{2: 'Mechanoid', 3: 'He left not too long ago, saying that he wanted to look for his family up in the mountains.', 4: '1'}
+168	168		301							"{2: 'Mechanoid', 3: ""At Master's command, I'm not allowed to leave this construction until he returns."", 4: '1'}"
+169	169		301							"{2: 'Mechanoid', 3: ""I must obey every command he gives—it's a fundamental directive etched into the logic of my behavioral patterns."", 4: '1'}"
+170	170		502							{1: 'DialogDisable'}
+171	171		302							{2: 'Not long ago?', 3: '172'}
+172	172		302							{2: 'A surprisingly ambiguous description from a machine like you...', 3: '173'}
+173	173		301			DialogEnable				"{2: 'Mechanoid', 3: 'This is a style preference Master programmed into my language module. He\'s not a fan of me sounding too ""stiff.""', 4: '1'}"
+174	174		301							{2: 'Mechanoid', 3: 'The accurate time should be... 2471 hours ago... No. Calculation error. It was 5320 hours ago. Calculation error. It was 7340 hours ago. Calculation error...', 4: '1'}
+175	175		302							{2: '...?', 3: '176'}
+176	176		301							"{3: ""The mechanoid continues to re-calculate the number as if he's malfunctioning, his eye indicator flashing in apparent confusion.""}"
+177	177		203							{1: '1', 2: '0.25', 3: '-400'}
+178	178		201							{1: '2', 2: '500629', 3: '14', 4: '400'}
+179	179		301							{1: '1', 2: 'Hanying', 3: '...His time perception module is malfunctioning due to an overload of redundant data.', 4: '2'}
+180	180		301							"{2: 'Hanying', 3: ""I'm afraid his master has been gone for a very long time."", 4: '2'}"
+181	181		301							"{3: ""After a while, the mechanoid's calculation finally comes to a halt.""}"
+182	182		202							{1: '2', 6: '1'}
+183	183		203							{1: '1', 2: '0.25'}
+184	184		301							{2: 'Mechanoid', 3: '...So Master has been gone for such a long time...', 4: '1'}
+185	185		301							"{2: 'Mechanoid', 3: ""...I remember it now. I wanted to go outside to look for him because he's been away for far too long."", 4: '1'}"
+186	186		301							{2: 'Mechanoid', 3: 'I also wanted to find his works back after they were stolen.', 4: '1'}
+187	187		301							"{2: 'Mechanoid', 3: 'But ""leaving here"" clashes with the command Master gave me.', 4: '1'}"
+188	188		301							"{2: 'Mechanoid', 3: 'I tried to overwrite this command by executing the final command with a higher priority. However, all of my attempts have so far failed due to a lack of real-world parameters regarding ""family"""""""" and """"""""life.""', 4: '1'}"
+189	189		502							{1: 'DialogDisable'}
+190	190		302							{2: 'So the sounds we heard outside...', 3: '191'}
+191	191		302							{2: 'They are all part of your simulation?', 3: '192'}
+192	192		301			DialogEnable				"{2: 'Mechanoid', 3: ""Correct. I want to fulfill Master's final command by using real-life data and image data as references."", 4: '1'}"
+193	193		203							{1: '1', 2: '0.25', 3: '-400'}
+194	194		201							{1: '2', 2: '500629', 3: '12', 4: '400'}
+195	195		301							{1: '1', 2: 'Hanying', 3: 'And his command is...?', 4: '2'}
+196	196		301							"{2: 'Mechanoid', 3: '""Wait for me. When I come back, we\'ll live a happy life as a family.""', 4: '1'}"
+197	197		301							"{2: 'Mechanoid', 3: '""Before that, I\'ll have you help me take care of our home.""', 4: '1'}"
+198	198		301							{2: 'Hanying', 3: '...I see.', 4: '2'}
+199	199		301							{2: 'Mechanoid', 3: 'So this is what you came here for?', 4: '1'}
+200	200		302							"{2: ""We're investigating the source of... some artworks on the market."", 3: '201'}"
+201	201		301							"{2: 'Mechanoid', 3: ""I knew it... Humans have taken Master's artworks to sell."", 4: '1'}"
+202	202		502							{1: 'DialogDisable'}
+203	203		302							{2: 'The Dragon Children have already retrieved most of them.', 3: '204'}
+204	204		302							{2: 'Those lost items will be returned soon after the thieves are found.', 3: '205'}
+205	205		301			DialogEnable				{3: 'Hanying casts a glance in your direction, appearing hesitant to speak.'}
+206	206		301							{2: 'Hanying', 3: 'I received the distress signal that this little one transmitted. It guided us here.', 4: '2'}
+207	207		301							"{3: ""Observing the frail bird curling up in Hanying's hand, the mechanoid lowers his barrel arm in a melancholic manner. The other bionic swallow on his head flutters over and lands on Hanying's hand, tenderly touching its unmoving friend with its beak.""}"
+208	208		301							"{2: 'Mechanoid', 3: ""There's no entry in my memory log about instructing it to transmit a distress signal."", 4: '1'}"
+209	209		301							"{2: 'Hanying', 3: 'But it\'s a part of you that archives the ""redundant"" memory data that you\'ve lost during maintenance.', 4: '2'}"
+210	210		301							"{2: 'Hanying', 3: ""You can retrieve that data once it's fixed."", 4: '2'}"
+211	211		301							{2: 'Mechanoid', 3: '...I see what you mean now. Please give me some time.', 4: '1'}
+212	212		301							{2: 'Mechanoid', 3: 'By the way, may I know your names, intruders?', 4: '1'}
+213	213		204							{1: '1'}
+214	214		301							"{2: 'Hanying', 3: ""I'm Hanying."", 4: '2'}"
+215	215		302							"{2: ""I'm 【kuroname】."", 3: '216'}"
+216	216		301							"{2: 'Mechanoid', 3: ""Hanying, 【kuroname】, I'll keep them in mind."", 4: '1'}"
+217	217		301							"{2: 'Mechanoid', 3: ""It's a pleasure to meet you. I'm KLM-324 Industrial Assistance Mechanoid. You can call me Sturddy."", 4: '1'}"
+218	218		302							{2: 'Sturddy?', 3: '219'}
+219	219		301				AniZhuanchangBegin			"{2: 'Mechanoid', 3: ""It's Master's idea. He said I wouldn't easily break with this kind of name."", 4: '1'}"
+220	220		202			DialogDisable				{1: '1', 6: '1'}
+221	221		204							{1: '2', 2: '12'}
+222	222		203						500.0	{1: '2', 2: '0.25'}
+223	223		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory177.png'}
+224	224		301			DialogEnable				{3: 'While Sturddy undergoes his maintenance session, you and Hanying wait under the withered tree in the yard.'}
+225	225		301							{2: 'Hanying', 3: 'Machines... can never deviate from the commands set for them.', 4: '2'}
+226	226		301							{3: 'Looking into her eyes, you get a sense of understanding about what she is trying to convey.'}
+227	227		302							"{2: 'But the mechanoid himself reached the conclusion of ""looking for Master.""', 3: '228'}"
+228	228		301							"{2: 'Hanying', 3: ""Yes, and that conclusion conflicts with the original command—that's why he's been attempting to resolve the issue repeatedly through simulations."", 4: '2'}"
+229	229		301							"{2: 'Hanying', 3: ""...In my eyes, Sturddy is not simply enslaved by his Master's commands."", 4: '2'}"
+230	230		301							"{2: 'Hanying', 3: ""He's just trapped in the past, like many people on this ship."", 4: '2'}"
+231	231		301							{2: 'Hanying', 3: 'Trapped in an endless dream, neither able to wake up nor willing to...', 4: '2'}
+232	232		301							{3: 'She subtly lowers her head to conceal the flickering emotion in her eyes.'}
+233	233		204							{1: '2'}
+234	234		301							{2: 'Hanying', 3: 'So, I want to help him complete the simulation and break free from the commands.', 4: '2'}
+235	235		302							"{2: 'My thoughts exactly.', 3: '236', 4: ""We can't leave him be anyway, for security reasons."", 5: '237'}"
+236	236	238	301							"{2: 'Hanying', 3: ""I'm so glad to hear that..."", 4: '2'}"
+237	237		301							{2: 'Hanying', 3: 'Thank you, Commandant.', 4: '2'}
+238	238		302							{2: 'But... how should we help him?', 3: '239'}
+239	239		301							"{2: 'Hanying', 3: 'Sturddy can\'t complete the simulation because he lacks real-world data regarding ""family"""""""" and """"""""life""... I think I have an idea.', 4: '2'}"
+240	240		301							{2: 'Hanying', 3: 'So, Commandant...', 4: '2'}
+241	241		301							{3: 'She turns back, her determined and sincere gaze fixed upon you.'}
+242	242		204							{1: '2', 2: '2'}
+243	243		301				AniZhuanchangBegin			"{2: 'Hanying', 3: 'Can we become a ""family"" for the following short period of time?', 4: '2'}"
+244	244		401						700.0	{1: '1', 2: '36'}
+245	245		202			DialogDisable				{1: '2', 6: '1'}
+246	246		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory179.png'}
+247	247		401							{1: '1', 2: '205'}
+248	248		201							{1: '1', 2: '500223', 4: '400'}
+249	249		201							{1: '2', 2: '500223', 4: '-400'}
+250	250		301			DialogEnable				"{1: '1', 3: ""Meanwhile, in the east district of the Nighter, in front of Chen's Pawnshop.""}"
+251	251		301							{2: 'Chiwen Crew Member A', 3: '...Where is the person?', 4: '1'}
+252	252		301							"{2: 'Chiwen Crew Member A', 3: ""Didn't Pulao say she's got us a helper? We've been waiting forever!"", 4: '1'}"
+253	253		301							"{2: 'Chiwen Crew Member B', 3: ""It's getting late. Let's continue first."", 4: '2'}"
+254	254		202							{1: '1', 2: '2', 6: '1'}
+255	255		201							{1: '1', 2: '500240'}
+256	256		301							"{1: '1', 2: 'Shop Owner', 3: ""I paid a fortune for these, and now everyone knows they're forgeries! (Wails) I'm done for good..."", 4: '1'}"
+257	257		301							{2: 'Shop Owner', 3: 'What should I do... Good sirs, you have to help me, please...!!', 4: '1'}
+258	258		202							{1: '1', 6: '1'}
+259	259		201							{1: '1', 2: '500223'}
+260	260		301							"{1: '1', 2: 'Chiwen Crew Member B', 3: ""Don't worry. That's why we're here."", 4: '1'}"
+261	261		301		1		AniZhuanchangBegin			"{2: 'Chiwen Crew Member B', 3: ""Describe the appearance of the person who sold these to you. We'll do our best to track them down and retrieve your money."", 4: '1'}"

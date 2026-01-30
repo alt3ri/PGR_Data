@@ -1,0 +1,454 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory45.jpg'}
+2	2		401							{1: '1', 2: '203'}
+3	3		107						3000.0	{1: 'Bridge Deck'}
+4	4		108							{1: '1'}
+5	5		201							{1: '1', 2: '501123'}
+6	6		301			DialogEnable				{1: '1', 2: 'Madam Monzano', 3: 'The vanguard unit now works outside the military direct command, carrying out reconnaissance in Old Las Prados. Centered on the city, our most recent missions confirm the spread of Punishing contamination across the surrounding desert.', 4: '1'}
+7	7		301							"{3: ""The holographic map glosses over the city's ruins, but that glaring crimson hue refuses to go unnoticed.""}"
+8	8		301							"{2: 'Madam Monzano', 3: ""The skirmishes on the front lines continue, but that isn't our concern. Our priority is to enhance the prototype Constructs' internal shielding. We're deploying them into a high-intensity combat zone to run live tests and gather critical data."", 4: '1'}"
+9	9		301				AniZhuanchangBegin			{2: 'Madam Monzano', 3: 'Old Las Prados—overrun by Corrupted from day one and devoid of human survivors—serves as the ultimate proving ground.', 4: '1'}
+10	10		202							{1: '1', 6: '1'}
+11	11		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory844.jpg', 3: '0', 4: '0.1', 5: '0'}
+12	12		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory605.jpg'}
+13	13		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'The image freezes on a magnified view of the inner city ruins.'}
+14	14		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory844.jpg', 3: '0.1', 4: '0', 5: '0.5'}
+15	15		201							{1: '1', 2: '501123', 4: '400'}
+16	16		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory45.jpg'}
+17	17		201							{1: '2', 2: '501118', 4: '-400'}
+18	18		301			AniZhuanchangEnd				{1: '1', 2: 'Lilith', 3: 'Is this... a homecoming of sorts, returning to a place once known?', 4: '2'}
+19	19		301							"{3: ""She regards the city's spectral outline with a keen fascination.""}"
+20	20		301							"{2: 'Madam Monzano', 3: ""Wagering your life against the unseen Punishing Virus has got to be a bigger thrill than a simple card game—don't you think?"", 4: '1'}"
+21	21		301							{3: 'Monzano seizes the moment, igniting the passion of everyone gathered around him.'}
+22	22		204							{1: '2', 2: '4'}
+23	23		301							"{2: 'Lilith', 3: ""When did you ever get this generous with me, Aunt? You've practically handed me the perfect chance to get ahead."", 4: '2'}"
+24	24		301							"{2: 'Madam Monzano', 3: ""Be sure you don't get so caught up in the fun that you lose sight of the mission. It still needs to be finished—so collect all the data you can..."", 4: '1'}"
+25	25		203						250.0	{1: '1', 2: '0.25', 3: '300'}
+26	26		301							"{2: 'Madam Monzano', 3: ""...Time to put this painstakingly crafted frame through its paces. Let's find out how far it can really go."", 4: '1'}"
+27	27		301							{3: 'The madam moves closer, her voice hushed to a whisper as she addresses Lilith.'}
+28	28		301							"{2: 'Lilith', 3: ""Please, don't worry... I'm every bit as intrigued by this question as you are."", 4: '2'}"
+29	29		301							"{3: ""She appears completely unfazed by Monzano's looming presence, going so far as to offer her a confident smile in return.""}"
+30	30		301							{2: 'Madam Monzano', 3: 'Oh, right... could you look after the Gray Mako fireteam as well?', 4: '1'}
+31	31		202							{1: '1', 2: '2'}
+32	32		301							{3: 'Monzano shifts her gaze to the Constructs stationed in the far corner of the deck.'}
+33	33		301							{3: 'Their leader snaps to attention and salutes without hesitation.'}
+34	34		201							{1: '1', 2: '501153'}
+35	35		301							{1: '1', 2: 'Prototype Construct Leader', 3: 'Gray Mako—three on the roster, but only two have made it. Mako-1, reporting in to Sergeant Eleanor!', 4: '1'}
+36	36		201							{1: '1', 2: '501118', 3: '7'}
+37	37		301							"{1: '1', 2: 'Lilith', 3: ""That's a pretty formal title, huh? I'm still getting used to all these military courtesies."", 4: '1'}"
+38	38		204							{1: '1'}
+39	39		301							"{2: 'Lilith', 3: ""Oh, right... where's our last teammate? Give me a status update."", 4: '1'}"
+40	40		202							{1: '1'}
+41	41		301							{3: 'Her shock flickers away in an instant, and she quickly straightens into the posture of a commander.'}
+42	42		201							{1: '1', 2: '501153'}
+43	43		301							{1: '1', 2: 'Mako-1', 3: 'This is also part of your mission: recovering the missing teammate.', 4: '1'}
+44	44		301							"{2: 'Mako-1', 3: ""On a previous scout mission, Mako-3 never managed to board the evacuation transport. From the faint signals we've picked up, he's still out there somewhere in the city."", 4: '1'}"
+45	45		202							{1: '1'}
+46	46		301							{3: 'Without a trace of feeling, the Construct soldier recounts what might have befallen their ally.'}
+47	47		201							{1: '1', 2: '501123'}
+48	48		301							{1: '1', 2: 'Madam Monzano', 3: 'For them, this mission might as well be a homecoming.', 4: '1'}
+49	49		301							{3: 'With that, the madam hands Lilith the final intel she needs.'}
+50	50		203							{1: '1', 2: '0.25', 3: '400'}
+51	51		201							{1: '2', 2: '501118', 3: '7', 4: '-400'}
+52	52		301							{1: '1', 2: 'Lilith', 3: '...?', 4: '2'}
+53	53		301							{2: 'Madam Monzano', 3: 'All the prototype Construct candidates were volunteers—former residents of Las Prados, each one stepping forward of their own free will.', 4: '1'}
+54	54		301							"{2: 'Lilith', 3: 'What about Kephart? I don\'t see that so-called ""honorary citizen"" volunteering to lead Earth\'s counterstrike.', 4: '2'}"
+55	55		301							{3: 'All that pompous talk is begging for a sarcastic retort.'}
+56	56		301							"{2: 'Madam Monzano', 3: ""He's a key figure in the council—choose your words carefully and show some respect."", 4: '1'}"
+57	57		204							{1: '2'}
+58	58		301							{2: 'Lilith', 3: 'I get it—everyone fights their own battles in the end.', 4: '2'}
+59	59		202							{1: '1', 2: '2'}
+60	60		301							{3: 'Every time she talks to the Madam, she slips right back into that poised, commanding grace.'}
+61	61		201							{1: '1', 2: '501153'}
+62	62		301							{1: '1', 2: 'Mako-1', 3: '...', 4: '1'}
+63	63		301							{3: 'The Construct leader stands there in an unsettling hush, his helmet bristling with sensors, hiding his features from view.'}
+64	64		201							{1: '1', 2: '501123', 3: '2'}
+65	65		301							{1: '1', 2: 'Madam Monzano', 3: 'This concludes our pre-battle briefing.', 4: '1'}
+66	66		301							"{2: 'Madam Monzano', 3: ""Good luck. Let's move out."", 4: '1'}"
+67	67		202							{1: '1'}
+68	68		401							{1: '2', 2: '4649'}
+69	69		301							{3: 'A silent sliding door at the rear of the deck opens, revealing the elevator that leads directly to the hangar.'}
+70	70		201							{1: '1', 2: '501118', 3: '5'}
+71	71		301							"{1: '1', 2: 'Lilith', 3: ""Still... whatever the rules of engagement may be, I'm prepared to face them."", 4: '1'}"
+72	72		202							{1: '1'}
+73	73		301				AniZhuanchangBegin			{3: 'She offers a bow, just as she always does.'}
+74	74		401							{1: '1', 2: '36'}
+75	75		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory605.jpg'}
+76	76		401							{1: '1', 2: '202'}
+77	77		401							{1: '2', 2: '214'}
+78	78		201							{1: '1', 2: '501154'}
+79	79		306							{1: '1'}
+80	80		301			AniZhuanchangEnd				{1: '1', 2: 'Mako-2', 3: 'Get down! Behind you!', 4: '1'}
+81	81		301							"{3: ""The downpour's interference throws off our sensors, leaving the leader—fully engaged in combat—oblivious to the danger closing in behind him.""}"
+82	82		202						250.0	{1: '1'}
+83	83		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+84	84		201							{1: '1', 2: '501153'}
+85	85		301							{1: '1', 2: 'Mako-1', 3: 'Ugh...', 4: '1'}
+86	86		301							{3: 'He tries to swing his gun around, but the Corrupted surge is too close for him to react.'}
+87	87		301							{2: 'Mako-1', 3: 'An umbrella?!', 4: '1'}
+88	88		202							{1: '1'}
+89	89		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+90	90		306							
+91	91		301							{3: 'A swirling mass of purple and black flares up in the tight space between them.'}
+92	92		401							{1: '2', 2: '844090'}
+93	93		301							{2: 'Corrupted', 3: 'SCREEE—'}
+94	94		201							{1: '1', 2: '501138'}
+95	95		301							"{1: '1', 2: 'Lilith', 3: ""Is that really all you've got?"", 4: '1'}"
+96	96		401							{1: '2', 2: '9342060'}
+97	97		301							{3: 'In a sudden flare, the Moon Umbrella snaps open, intercepting a deadly strike aimed straight at the leader.'}
+98	98		306							{1: '1'}
+99	99		301							{2: 'Lilith', 3: 'Get down!', 4: '1'}
+100	100		202							{1: '1'}
+101	101		401							{1: '2', 2: '3077'}
+102	102		301							{3: 'The leader hurls himself flat against the ground in a split second.'}
+103	103		301							"{3: ""Petals and ribs clamp shut in unison, forcing a surge of compressed air to blast out through tiny vents at the Umbrella's tip.""}"
+104	104		401							{1: '2', 2: '844090'}
+105	105		301			RImgBg1Shake				{2: 'Corrupted', 3: 'Raaargh—rrrgghh!'}
+106	106		104						250.0	{1: '0|0|-200', 2: '0.25'}
+107	107		104						250.0	{1: '0|-100|-200', 2: '0.25'}
+108	108		104						250.0	{1: '0|0|-200', 2: '0.25'}
+109	109		104							{2: '0.25'}
+110	110		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+111	111		401							{1: '2', 2: '5321'}
+112	112		301							{3: 'The Corrupted staggers but quickly finds its balance, launching yet another fierce assault on Lilith.'}
+113	113		301							{3: 'That unsettling crimson light only flickers for a moment before going dark.'}
+114	114		401						500.0	{1: '2', 2: '5321'}
+115	115		401							{1: '2', 2: '2593'}
+116	116		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 3: '0', 4: '1', 5: '0.25'}
+117	117		301							"{3: ""The umbrella's tip strikes the sensor with surgical precision, carving out tiny shards of glass.""}"
+118	118		401							{1: '2', 2: '4807'}
+119	119		301							{2: 'Corrupted A', 3: 'Um...'}
+120	120		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 3: '1', 4: '0', 5: '0.25'}
+121	121		306							
+122	122		201							{1: '1', 2: '501118', 3: '2'}
+123	123		301							"{1: '1', 2: 'Lilith', 3: ""What's it like to be taken down by your own carelessness...?"", 4: '1'}"
+124	124		301							"{3: ""She lowers her Moon Umbrella, gazing at the Corrupted's lifeless husk on the ground, a smug smile tugging at her lips.""}"
+125	125		201							{1: '1', 2: '501153'}
+126	126		301							{1: '1', 2: 'Mako-1', 3: 'Th-thank you...', 4: '1'}
+127	127		301							{3: 'The leader, just barely clinging to life a moment ago, struggles for breath.'}
+128	128		201							{1: '1', 2: '501118', 3: '2'}
+129	129		301							"{1: '1', 2: 'Lilith', 3: ""But if it happens again, don't expect me to be so merciful—understand?"", 4: '1'}"
+130	130		201							{1: '1', 2: '501154'}
+131	131		301							{1: '1', 2: 'Mako-2', 3: 'Left side! Last target!', 4: '1'}
+132	132		301							"{3: ""At last, the team leader's instincts kick in, razor-sharp.""}"
+133	133		306							{1: '1'}
+134	134		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+135	135		201							{1: '1', 2: '501153'}
+136	136		301							{1: '1', 2: 'Mako-1', 3: '!!!', 4: '1'}
+137	137		401							{1: '2', 2: '10001004'}
+138	138		401							{1: '2', 2: '13015319'}
+139	139		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionL.prefab', 2: '2'}
+140	140		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionR.prefab', 2: '2'}
+141	141		301							{3: 'Automatic fire erupts in staccato bursts Dark copper casings spin through the rain, carving a brilliant arc in the gloom.'}
+142	142		301							{2: 'Corrupted B', 3: 'Fatal error, self—...'}
+143	143		401							{1: '2', 2: '555'}
+144	144		301							"{3: ""Nickel-plated, semi-armor-piercing high-explosive rounds shred the mechanical ghoul's spine. Its twisted metal frame slams into the mud with a resounding crash—so heavy it briefly eclipses even the deafening roar of the downpour.""}"
+145	145		306							
+146	146		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+147	147		201							{1: '1', 2: '501153'}
+148	148		301							{1: '1', 2: 'Mako-1', 3: 'All hostiles have been taken down—hold your position and remain on high alert!', 4: '1'}
+149	149		201							{1: '1', 2: '501118', 3: '3'}
+150	150		301							"{1: '1', 2: 'Lilith', 3: ""That's more like it."", 4: '1'}"
+151	151		301							"{2: 'Lilith', 3: ""This is my dear aunt's precious masterpiece—if a pack of deranged robots wreck it, there's no way I can explain myself when I get back."", 4: '1'}"
+152	152		202							{1: '1'}
+153	153		301							{3: 'The fireteam ignores the sarcastic remark, pouring all their focus into the screens of their handheld terminals.'}
+154	154		201							{1: '1', 2: '501153', 4: '400'}
+155	155		201							{1: '2', 2: '501154', 4: '-400'}
+156	156		301							"{1: '1', 2: 'Mako-2', 3: ""...It's Mako-3's identification beacon. We're getting close."", 4: '2'}"
+157	157		301							"{2: 'Mako-2', 3: ""Factoring out terrain interference and Punishing-virus distortion, they can pinpoint the signal's source in the abandoned mall at their nine o'clock."", 4: '2'}"
+158	158		301							{2: 'Mako-1', 3: 'Uh...', 4: '1'}
+159	159		301							{3: 'He looks uneasy, as though something is off.'}
+160	160		301							"{3: ""His reaction makes perfect sense—it's one thing to have a theory, but the battlefield itself is always far harsher.""}"
+161	161		301							"{3: ""Although the built-in shielding system doesn't rely on human Mind Beacons to stabilize M.I.N.D. like the Inver-Device, it still doesn't perform much better in high-intensity conditions.""}"
+162	162		301							"{3: ""One system filters the Punishing Virus that slips into the frame; the other forms a protective bubble the virus can't penetrate. Neither can truly absorb it—a technological marvel yet to be achieved.""}"
+163	163		301							{3: 'Still, putting themselves at risk is precisely what missions like this are about.'}
+164	164		202							{1: '1', 2: '2', 6: '1'}
+165	165		201							{1: '1', 2: '501118', 3: '5'}
+166	166		301							{1: '1', 2: 'Lilith', 3: 'Keep your combat data recorder running at all times—any data gathered under these circumstances is priceless.', 4: '1'}
+167	167		301							{2: 'Lilith', 3: 'Keep moving on.', 4: '1'}
+168	168		202							{1: '1'}
+169	169		301				AniZhuanchangBegin			{3: 'She delivers her command with an icy finality.'}
+170	170		402							{1: '214'}
+171	171		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory307.png'}
+172	172		301			AniZhuanchangEnd				{3: 'As they reach the area near the beacon, they find the rain has ceased.'}
+173	173		301							{3: 'Lilith enters the cavernous mall atrium, tilts her gaze skyward, and draws in a deep, measured breath.'}
+174	174		201							{1: '1', 2: '501118'}
+175	175		301							{1: '1', 2: 'Lilith', 3: 'Yeah...', 4: '1'}
+176	176		301							{3: 'She absently runs her tongue over her lips. She relies on her hyper-sensitive taste sensors far more than her sense of smell.'}
+177	177		301							{3: 'The post-rain air is anything but clean, as the tang of iron and the stench of rot sweep in all at once.'}
+178	178		301							"{3: ""But it's not those trinkets that get her heart racing—she can practically taste the thickening aura of the Punishing Virus.""}"
+179	179		301							"{2: 'Lilith', 3: ""I'm not here to babysit you. Just be smart!"", 4: '1'}"
+180	180		202							{1: '1'}
+181	181		301							"{3: ""She seems to have forgotten her role as a mere stand-in sergeant, stepping briskly into the mall's depths without hesitation.""}"
+182	182		301							{3: 'With no alternative, the Constructs press onward.'}
+183	183		201							{1: '1', 2: '501153'}
+184	184		301							{1: '1', 2: 'Mako-1', 3: 'Mako-2, proceed to the escalator.', 4: '1'}
+185	185		202							{1: '1'}
+186	186		401							{1: '2', 2: '2533'}
+187	187		401							{1: '2', 2: '5159'}
+188	188		104						2000.0	{1: '0|0|-200', 2: '2'}
+189	189		301							{3: 'Beneath the dome that has long since crumbled, the only sound is the echo of Construct boots splashing through puddles.'}
+190	190		402							{1: '5159'}
+191	191		201							{1: '1', 2: '501154'}
+192	192		301							{1: '1', 2: 'Mako-2', 3: 'In position. Checking structural integrity.', 4: '1'}
+193	193		202							{1: '1'}
+194	194		301							{3: 'The two carefully examine the corroded metal framework, only to realize the female Construct—brandishing umbrella as blade—has already made it to the second-floor corridor.'}
+195	195		301							{3: 'This instills them with the confidence they need.'}
+196	196		201							{1: '1', 2: '501153', 4: '400'}
+197	197		201							{1: '2', 2: '501154', 4: '-400'}
+198	198		301							"{1: '1', 2: 'Mako-1', 3: ""Take turns covering each other and move out under Sergeant Eleanor's lead."", 4: '1'}"
+199	199		301				DialogDisable			{2: 'Mako-2', 3: 'Understood. Heading to the second floor now.', 4: '2'}
+200	200		202						250.0	{1: '1', 2: '2'}
+201	201		306							{1: '1'}
+202	202		104						3000.0	{1: '0|0|-300', 2: '3'}
+203	203		301			DialogEnable				{3: 'They place their feet on the last step with utmost caution—then everything suddenly changes.'}
+204	204		306							
+205	205		201							{1: '1', 2: '501135'}
+206	206		401						500.0	{1: '2', 2: '844090'}
+207	207		301							"{1: '1', 2: '???', 3: ""...No, that's not right... I'm not... Data corrupted. Attempting to reload... re-re-re..."", 4: '1'}"
+208	208		401							{1: '2', 2: '844090'}
+209	209		301							{2: '???', 3: '...The virus has breached the limit! Fall back...! Beginning Memory upload—upload in progress...', 4: '1'}
+210	210		301							{3: 'A Corrupted Construct staggers in, clinging to a hazy shred of Memory as an eerie, synthesized groan resonates from its throat.'}
+211	211		201							{1: '1', 2: '501153'}
+212	212		301							{1: '1', 2: 'Mako-1', 3: 'Identify yourself!', 4: '1'}
+213	213		201							{1: '1', 2: '501135'}
+214	214		401							{1: '2', 2: '844090'}
+215	215		301							"{1: '1', 2: '???', 3: ""No, no... please, I'm begging you! No—no... just... wait! I'm begging you—don't shoot..."", 4: '1'}"
+216	216		301							"{2: '???', 3: ""No... don't shoot...!"", 4: '1'}"
+217	217		202							{1: '1'}
+218	218		301							{3: 'The wailing Construct is completely unarmed and displays no hostile intent whatsoever.'}
+219	219		201							{1: '1', 2: '501154'}
+220	220		301							{1: '1', 2: 'Mako-2', 3: 'Stop right there!!', 4: '1'}
+221	221		201							{1: '1', 2: '501135'}
+222	222		401							{1: '2', 2: '844090'}
+223	223		301							"{1: '1', 2: '???', 3: ""No... please... I'm begging you... don't... no... no!"", 4: '1'}"
+224	224		202							{1: '1'}
+225	225		301							{3: 'He keeps staggering forward, his steps twisted and wrong. The squad leader shares a quick, tense glance with the others.'}
+226	226		401							{1: '2', 2: '5151'}
+227	227		301							{3: 'Squad member two nods in confirmation, then pulls the trigger.'}
+228	228		301							"{3: ""A single semi-armor-piercing, high-explosive round pierces straight through the Corrupted Construct's forehead, putting an end to its agony.""}"
+229	229		201							{1: '1', 2: '501135'}
+230	230		401							{1: '2', 2: '844090'}
+231	231		301							{1: '1', 2: '???', 3: 'I... am Llo... yd...', 4: '1'}
+232	232		202							{1: '1'}
+233	233		401							{1: '2', 2: '5153'}
+234	234		301							{3: 'The Corrupted Construct rasps out its dying words, then crumples like a puppet with its strings cut.'}
+235	235		201							{1: '1', 2: '501153', 4: '400'}
+236	236		201							{1: '2', 2: '501154', 4: '-400'}
+237	237		301							{1: '1', 2: 'Mako-1', 3: '...?', 4: '1'}
+238	238		301							"{2: 'Mako-2', 3: ""He's probably a straggler from another fireteam, but there's no way to scan his ID beacon."", 4: '2'}"
+239	239		301							{3: 'Neither of them says a word—an indescribable horror has them rooted to the spot.'}
+240	240		301							{3: 'In the end, the Construct speaks the name of its missing comrade.'}
+241	241		301							"{3: ""Within the mall's deserted corridors, there's no sign of Sergeant Eleanor.""}"
+242	242		301				AniZhuanchangBegin			{2: 'Mako-1', 3: '...Keep moving toward the source of the signal.', 4: '1'}
+243	243		301							{2: 'Mako-2', 3: 'Understood.', 4: '2'}
+244	244		202							{1: '1', 2: '2', 6: '1'}
+245	245		401							{1: '1', 2: '36'}
+246	246		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory18.jpg'}
+247	247		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory844.jpg', 3: '0', 4: '0.1', 5: '0'}
+248	248		401							{1: '1', 2: '66'}
+249	249		301			AniZhuanchangEnd				{3: 'Rounding the corner of a nearby shop, they come upon a far more horrifying sight.'}
+250	250		301							{3: 'All trace of standard-issue gear on the third member is gone—eaten away until nothing remains but bone. A tall, silver-haired woman stands there, her razor-sharp heel spearing the exposed skeleton to a jagged piece of rebar jutting from the floor.'}
+251	251		201							{1: '1', 2: '501153', 4: '400'}
+252	252		201							{1: '2', 2: '501154', 4: '-400'}
+253	253		301							{1: '1', 2: 'Mako-1', 3: 'Sergeant Eleanor...?', 4: '1'}
+254	254		301							{2: 'Mako-2', 3: 'What are you doing?', 4: '2'}
+255	255		202							{1: '1', 2: '2'}
+256	256		301							{3: 'At the sound, Lilith spins around, her eerie smile sending shivers deep through their deep M.I.N.D.s.'}
+257	257		201							{1: '1', 2: '501118', 3: '3'}
+258	258		301							"{1: '1', 2: 'Lilith', 3: ""...Don't you see? This place now has the highest level of Punishing contamination."", 4: '1'}"
+259	259		301							{2: 'Lilith', 3: 'With fully automated customer guides and sales robots at every turn... shopping malls have become even more perfect hotbeds for its spread than entertainment venues.', 4: '1'}
+260	260		401							{1: '2', 2: '844090'}
+261	261		301							{2: 'Mako-3', 3: '...I... connection establishing... error, error...'}
+262	262		301							{3: 'The battered remains underfoot still manage a feeble moan.'}
+263	263		201							{1: '1', 2: '501153', 4: '400'}
+264	264		201							{1: '2', 2: '501154', 4: '-400'}
+265	265		301							{1: '1', 2: 'Mako-1', 3: 'Sergeant Eleanor, our orders are to retrieve Mako-3.', 4: '1'}
+266	266		401							{1: '2', 2: '10021517'}
+267	267		301							"{3: ""When he's done speaking, he presses the release catch on the gun's side, slides in a fresh magazine, then yanks back the bolt to ready his weapon.""}"
+268	268		301							"{2: 'Mako-2', 3: ""That's our teammate."", 4: '2'}"
+269	269		202							{1: '1', 2: '2'}
+270	270		301							{3: 'Undeterred by their strained jamming system, the two edge closer to Lilith. After all, they still have a mission to finish.'}
+271	271		201							{1: '1', 2: '501118', 3: '3'}
+272	272		301							"{1: '1', 2: 'Lilith', 3: ""Oh? Hmph... You still don't get it, do you?"", 4: '1'}"
+273	273		301							{2: 'Lilith', 3: 'Moments ago, you used your own hands to kill your comrade—the third member of Gray Mako. Or, to be precise, you erased his backup Memory.', 4: '1'}
+274	274		301							"{2: 'Lilith', 3: ""And what I'm standing on... is him, too."", 4: '1'}"
+275	275		301							{2: 'Lilith', 3: 'I doubt Aunt ever expected her plan to work this quickly... ha.', 4: '1'}
+276	276		201							{1: '1', 2: '501153', 4: '400'}
+277	277		201							{1: '2', 2: '501154', 4: '-400'}
+278	278		301							{1: '1', 2: 'Mako-1', 3: '...!', 4: '1'}
+279	279		301							{2: 'Mako-2', 3: 'Impossible! Recall has never...', 4: '2'}
+280	280		202							{1: '1', 2: '2'}
+281	281		401							{1: '2', 2: '4779'}
+282	282		301							"{3: ""In unison, they drop their weapons, each one echoing the other's cry of astonishment.""}"
+283	283		301							{3: 'Naturally, they recall the vow Madam Monzano gave on the day their bodies were first altered.'}
+284	284		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+285	285		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0'}
+286	286		201							{1: '1', 2: '501123'}
+287	287		301							"{1: '1', 2: 'Madam Monzano', 3: ""A Memory can be moved at will... and bodies? If you want to make more, there's no limit to how many you can churn out."", 4: '1'}"
+288	288		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+289	289		202							{1: '1', 6: '1'}
+290	290		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '0'}
+291	291		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory844.jpg', 3: '0', 4: '0.1', 5: '0'}
+292	292		301							{3: 'The moment the jammer goes down, their Memories are sent straight to the central hub—ready to be installed in fresh frames.'}
+293	293		301							{3: 'This is the method Madam Monzano has set her heart on—a way to create the perfect soldier that stands apart from both the military and Kurono.'}
+294	294		301							"{3: ""They've never put much stock in that kind of talk—yet here they are, staring at a living, breathing example.""}"
+295	295		201							{1: '1', 2: '501118', 3: '3'}
+296	296		301							"{1: '1', 2: 'Lilith', 3: ""Too bad, isn't it? We're still nowhere near a real breakthrough."", 4: '1'}"
+297	297		301							"{2: 'Lilith', 3: ""You saw it yourselves, right? His Memory hasn't returned to Babylonia. It just jumped—through a hardware interface—into another Construct body that had already shut down...and only part of his data made the trip."", 4: '1'}"
+298	298		301							"{2: 'Lilith', 3: ""But these petty details are so dull... Think living a long time automatically makes you strong? By that logic, horseshoe crabs, which have been around for two hundred million years before the virus ever hit, would be Earth's true overlords, don't you think?"", 4: '1'}"
+299	299		202							{1: '1'}
+300	300		301							{3: 'The female Construct remains lost in her whispered delirium, as though drifting into a faint, dreamlike haze.'}
+301	301		201							{1: '1', 2: '501153'}
+302	302		301							"{1: '1', 2: 'Mako-1', 3: ""...Sergeant Eleanor, remove the restraints. We need to reclaim Mako-3's remains."", 4: '1'}"
+303	303		301							"{3: ""He can't make sense of what's unfolding, but that voice is begging all the same.""}"
+304	304		201							{1: '1', 2: '501118'}
+305	305		301							"{1: '1', 2: 'Lilith', 3: ""...Were you calling for me? Oh, don't be so impatient. You've already completed your mission objective."", 4: '1'}"
+306	306		204							{1: '1', 2: '5'}
+307	307		301							"{2: 'Lilith', 3: '""We\'re deploying them into a high-intensity combat zone to run live tests and gather critical data.""', 4: '1'}"
+308	308		202							{1: '1'}
+309	309		401							{1: '2', 2: '2782'}
+310	310		301							"{3: ""In the blink of an eye, the Construct soldier's built-in alarm blares to life.""}"
+311	311		301							{3: 'Warning: Internal shielding is at the critical threshold of its filtration cycle. Evacuate immediately. Warning—internal...'}
+312	312		201							{1: '1', 2: '501153'}
+313	313		301							{1: '1', 2: 'Mako-1', 3: 'Sergeant Eleanor, we have to move now!!', 4: '1'}
+314	314		201							{1: '1', 2: '501154'}
+315	315		301			PanelActor1Shake				{2: 'Mako-2', 3: 'Aaarghhhh!', 4: '1'}
+316	316		202							{1: '1'}
+317	317		301							{3: 'The soldier beside the leader suddenly unleashes a shrill, agonized scream.'}
+318	318		401							{1: '2', 2: '4817'}
+319	319		201							{1: '2', 2: '501153', 7: '1'}
+320	320		205							{1: '2', 3: '1', 4: '0', 5: '0'}
+321	321		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryRedSmokeNew.prefab', 2: '2', 3: '2'}
+322	322		301							{1: '1', 3: 'The unprocessed Punishing Virus surges from the dialysis apparatus, flooding the last fragments of sanity the two can cling to. A torrent of data—impossible for their M.I.N.D.s to grasp—quickly engulfs their mind.'}
+323	323		201							{1: '1', 2: '501153'}
+324	324		301							{1: '1', 2: 'Mako-1', 3: 'Back...up... M...I...', 4: '1'}
+325	325		202							{1: '1'}
+326	326		401							{1: '2', 2: '3077'}
+327	327		301							"{3: ""The leader's memory shell doesn't even finish processing that final thought before he collapses with a thud.""}"
+328	328		301							{3: 'His teammate fights on, desperate and trembling.'}
+329	329		306							{1: '1'}
+330	330		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+331	331		201							{1: '1', 2: '501154'}
+332	332		301			PanelActor1Shake				{2: 'Mako-2', 3: 'This... no... stay out of my head... Aaaah!!!!', 4: '1'}
+333	333		301							{2: 'Mako-2', 3: 'Argh... It hurts... It hurts so much...', 4: '1'}
+334	334		301							{3: 'The poised efficiency from moments ago vanishes, leaving the Construct huddled on the filthy floor.'}
+335	335		301							"{2: 'Mako-2', 3: ""...I don't understand."", 4: '1'}"
+336	336		301							"{2: 'Mako-2', 3: ""You're..."", 4: '1'}"
+337	337		202							{1: '1', 2: '2'}
+338	338		306							
+339	339		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+340	340		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryRedSmokeNew.prefab', 4: '2'}
+341	341		402							{1: '2782'}
+342	342		402							{1: '4817'}
+343	343		301							"{3: ""He turns as though he's speaking to someone who isn't there, but his disjointed whispers soon fade away.""}"
+344	344		301							{3: 'Suddenly, his sensor flares red.'}
+345	345		301							{3: 'The Corrupted Construct snaps upright, stiff as a puppet on display.'}
+346	346		201							{1: '1', 2: '501135'}
+347	347		401							{1: '2', 2: '1508'}
+348	348		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryRedSmokeNew.prefab', 2: '2', 3: '1'}
+349	349		301							{1: '1', 2: 'Corrupted Construct', 3: 'SCREEE—', 4: '1'}
+350	350		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryRedSmokeNew.prefab', 4: '1'}
+351	351		201							{1: '1', 2: '501118', 3: '5'}
+352	352		301							{1: '1', 2: 'Lilith', 3: 'You worthless junk! We only just got you plugged in, and already you...', 4: '1'}
+353	353		301							{2: 'Lilith', 3: 'Pathetic sh*t who never learned to value their chance.', 4: '1'}
+354	354		301							{3: 'She furrows her brow on instinct, her tone laced with regret... and scorn.'}
+355	355		301							{2: 'Lilith', 3: 'Die.', 4: '1'}
+356	356		202							{1: '1'}
+357	357		401						300.0	{1: '2', 2: '5301'}
+358	358		401							{1: '2', 2: '5301'}
+359	359		301							{3: 'With barely a thought, she flicks out two card-shaped, high-carbon steel throwing knives.'}
+360	360		401						300.0	{1: '2', 2: '5321'}
+361	361		401							{1: '2', 2: '4426'}
+362	362		301							"{3: ""One cuts through the Corrupted Construct's processor; the other seals the former leader's fate, ending him where he lies.""}"
+363	363		201							{1: '1', 2: '501118', 3: '5'}
+364	364		301							"{1: '1', 2: 'Lilith', 3: ""Alright, let's find out exactly how far your blind luck has carried you."", 4: '1'}"
+365	365		202							{1: '1'}
+366	366		401							{1: '2', 2: '4824'}
+367	367		301							"{3: ""She drops her eyes to the broken remains beneath her, then taps into the target's M.I.N.D.""}"
+368	368		301							{3: 'In the ravaged mall, jagged walls and rubble seem to stretch endlessly downward. Lilith plunges into a realm where reality itself bends beyond comprehension.'}
+369	369		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory704.jpg', 3: '0', 4: '0.5', 5: '1'}
+370	370		301							{3: 'Shapes she can still make out melt away one after another. She practically senses the Punishing Virus ripping through every nerve in her mind.'}
+371	371		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory704.jpg', 3: '0.5', 4: '1', 5: '1'}
+372	372		301							"{2: 'Lilith', 3: ""That's it... keep going! Don't stop now!"", 4: '1'}"
+373	373		301				AniZhuanchangBegin			{3: 'She beckons the virus closer, inviting it in.'}
+374	374		201							{1: '1', 2: '500305', 7: '1'}
+375	375		205							{1: '1', 3: '1', 4: '0', 5: '0'}
+376	376		401							{1: '1', 2: '36'}
+377	377		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory704.jpg'}
+378	378		401							{1: '1', 2: '390'}
+379	379		301			AniZhuanchangEnd	DialogDisable			"{1: '1', 3: ""Just as she anticipates, a dark red mesh surges forward, carving the machine's agony into hundreds of uniform squares.""}"
+380	380		401							{1: '2', 2: '4817'}
+381	381		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryRedSmokeNew.prefab', 2: '2'}
+382	382		205						3000.0	{1: '1', 3: '0', 4: '1', 5: '3'}
+383	383		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+384	384		402							{1: '4817'}
+385	385		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryRedSmokeNew.prefab'}
+386	386		301			DialogEnable				{3: 'At the boundary of her sight, a crimson tide gathers and solidifies, ultimately coalescing into a figure she recognizes.'}
+387	387		301							{2: 'Vonnegut', 3: 'We meet again.', 4: '1'}
+388	388		301							{2: 'Vonnegut', 3: 'I have to admit, you really outdid yourself this time...', 4: '1'}
+389	389		301							{2: 'Vonnegut', 3: 'Very few have the power to tap into the Ascension-Network all by themselves.', 4: '1'}
+390	390		201							{1: '1', 2: '501118', 3: '4'}
+391	391		301							"{1: '1', 2: 'Lilith', 3: ""Are you hoping I'll fail, sir?"", 4: '1'}"
+392	392		301							{3: 'Fueled by her exhilaration, she boldly flaunts her triumph.'}
+393	393		201							{1: '1', 2: '500305'}
+394	394		301							"{1: '1', 2: 'Vonnegut', 3: ""My power comes from the Network. Who's chosen lies beyond my control."", 4: '1'}"
+395	395		301							"{2: 'Vonnegut', 3: ""The Ascension-Network isn't some array of sharpened blades; it's a finely woven sieve. Of course, it never shows mercy to those who are too fragile."", 4: '1'}"
+396	396		301							{3: 'He states the rules with measured calm.'}
+397	397		203							{1: '1', 2: '0.25', 3: '400'}
+398	398		201							{1: '2', 2: '501118', 4: '-400'}
+399	399		301							{1: '1', 2: 'Lilith', 3: 'So... those few just now, they all gave up halfway?', 4: '2'}
+400	400		301							"{2: 'Vonnegut', 3: ""That's correct. For someone like you—capable of lasting in such a high-intensity environment—the Ascension-Network offers an invitation. But whether you can claim its blessings depends on your conviction and strength."", 4: '1'}"
+401	401		301							{2: 'Lilith', 3: 'Turns out this is the accidental breakthrough Aunt achieved using fragmented data from Project Winter...', 4: '2'}
+402	402		301							"{2: 'Lilith', 3: ""In her eyes, evolution is all about harnessing an internal shield and transferring one's Memory—fully warding off the Punishing Virus."", 4: '2'}"
+403	403		301							{2: 'Lilith', 3: 'A flawed start and a misguided path can still, somehow, knock upon the right door...', 4: '2'}
+404	404		301							{3: 'She gives a soft laugh at the sheer absurdity of it all.'}
+405	405		301							"{2: 'Vonnegut', 3: ""...Take another moment to reflect. You've arrived too soon, and you haven't truly stepped beyond that threshold."", 4: '1'}"
+406	406		301							{3: 'His expression never wavers as he pronounces his judgment.'}
+407	407		204							{1: '2', 2: '5'}
+408	408		301							"{2: 'Lilith', 3: ""...Not satisfied with our last match in the Ascension-Network? Don't worry. I'm fully prepared to entertain your new rules."", 4: '2'}"
+409	409		301							{3: 'A subtle hint of annoyance settles on her brow.'}
+410	410		301							"{2: 'Vonnegut', 3: ""Take it easy. Perhaps Monzano's been piling on too many missions... It's easy for people to slip into new ways of thinking without even noticing."", 4: '1'}"
+411	411		301							"{2: 'Vonnegut', 3: ""For now, I'll trust that you're not the sort who prizes raw power over true insight."", 4: '1'}"
+412	412		204							{1: '2', 2: '5'}
+413	413		301							{2: 'Lilith', 3: 'Force is merely the baseline that ensures a fair fight. I know this all too well.', 4: '2'}
+414	414		301							{2: 'Lilith', 3: 'Sir, perhaps you should speak more plainly.', 4: '2'}
+415	415		301							"{2: 'Vonnegut', 3: ""You haven't spent nearly enough time under the Ascension-Network's influence—and this is just the beginning."", 4: '1'}"
+416	416		301							{2: 'Vonnegut', 3: 'Completely opening oneself to this pain is the only path leading to the Filtering.', 4: '1'}
+417	417		301							"{2: 'Vonnegut', 3: ""You were the one who once set your sights on the throne... and now the plague's very origin lies in your grasp."", 4: '1'}"
+418	418		301							"{2: 'Vonnegut', 3: ""Think it over. The key to that door—I've already handed it to you. Use it wisely."", 4: '1'}"
+419	419		202						250.0	{1: '2'}
+420	420		203						250.0	{1: '1', 2: '0.25'}
+421	421		205						2000.0	{1: '1', 3: '1', 4: '0', 5: '2'}
+422	422		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndRed.prefab', 2: '2'}
+423	423		202							{1: '1', 6: '1'}
+424	424		205							{1: '1', 3: '0', 4: '1', 5: '0'}
+425	425		301							{3: 'That silhouette dissolves, drifts away, and finally disappears into the depths of the twisting space.'}
+426	426		301							{3: 'The wave of euphoria gradually settles, and the thrill drains away.'}
+427	427		301				AniZhuanchangBegin			"{3: ""The pain once fractured into cubes melts away, and her body finally feels as though it's reclaiming its true form in the real world.""}"
+428	428		202							{1: '2'}
+429	429		401							{1: '1', 2: '36'}
+430	430		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory704.jpg', 3: '1', 4: '0', 5: '0'}
+431	431		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory307.png'}
+432	432		401							{1: '1', 2: '66'}
+433	433		301			AniZhuanchangEnd				{3: 'A cold shopping mall corridor comes back into focus in her visual feed.'}
+434	434		201							{1: '1', 2: '501118'}
+435	435		301							{1: '1', 2: 'Lilith', 3: 'Open myself completely...?', 4: '1'}
+436	436		301							{3: 'She lingers on that thought for a moment, then rises onto her toes.'}
+437	437		401							{1: '2', 2: '2983'}
+438	438		301							{2: 'Mission Channel', 3: 'Echo-419 to Gray Mako—requesting your pickup coordinates. Over.'}
+439	439		301							{3: 'A transmission crackles through the comms.'}
+440	440		301							"{2: 'Lilith', 3: ""Gray Mako here—Sergeant Eleanor reporting. Mission clock reads 03:56. Coordinates: N 36°9', W115°3'."", 4: '1'}"
+441	441		301							"{2: 'Lilith', 3: ""All other Gray Mako personnel are KIA. We've recovered the operation data. Over."", 4: '1'}"
+442	442		401							{1: '2', 2: '2983'}
+443	443		301							{2: 'Mission Channel', 3: '...Copy that. Moving to the rendezvous point for pickup. Echo-419, out.'}
+444	444		202							{1: '1'}
+445	445		104						2000.0	{1: '0|0|-200', 2: '2'}
+446	446		401							{1: '2', 2: '5321'}
+447	447		301							{3: 'Lilith steps over to the two fallen Constructs, calmly extracting the data chips embedded above their spines.'}
+448	448		301							{3: 'She casts a sly glance at the third husk—impaled by a steel rod—then turns and makes her way toward the ladder.'}
+449	449		301							{3: 'Petri dishes, test samples, microbial cultures—each one is absolutely vital.'}
+450	450		301							{3: 'And she already has everything she needs to set the filter in motion.'}
+451	451		201							{1: '1', 2: '501118', 3: '3'}
+452	452		301							"{1: '1', 2: 'Lilith', 3: ""My dearest aunt... this time, I'm making the first move."", 4: '1'}"
+453	453		301		1		AniZhuanchangBegin			"{3: ""Driven by a craving to warp every norm, the player is about to leap headlong into the decadent cage they've built for themselves.""}"

@@ -1,0 +1,430 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory619.jpg'}
+2	2		401							{1: '2', 2: '4537'}
+3	3		502							{1: 'RImgBg1Shake'}
+4	4		501				AniZhuanchangBegin			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFallStone.prefab', 2: '2'}
+5	5		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFallStone.prefab'}
+6	6		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+7	7		301			DialogEnable	DialogDisable			{3: 'Rebar curls like dying vines, while cracks spiderweb across the walls and ceiling. The once-magnificent aquarium is now nothing but ruins, its insides completely gutted by the collapse.'}
+8	8		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory771.jpg'}
+9	9		301			DialogEnable	DialogDisable			{3: 'As you navigate the ruins, coordinates that were once a cinch to spot now demand constant calibration and cross-referencing.'}
+10	10		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory610.jpg', 3: '0', 4: '1', 5: '0.4'}
+11	11		401							{1: '2', 2: '1504'}
+12	12		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory610.jpg'}
+13	13		205							{1: '999'}
+14	14		401							{1: '1', 2: '6203'}
+15	15		201							{1: '1', 2: '500166', 3: '5'}
+16	16		301			DialogEnable				"{1: '1', 2: 'Lucia', 3: ""The Red Tide's reached here too..."", 4: '1'}"
+17	17		302							{2: 'But the range is still manageable.', 3: '18'}
+18	18		301				DialogDisable			{2: 'Lucia', 3: 'Yeah... the coordinates Teddy provided should be right around here.', 4: '1'}
+19	19		202							{1: '1'}
+20	20		302							"{2: ""Let's take a breather for now. There aren't any new updates from them."", 3: '21'}"
+21	21		301			DialogEnable	DialogDisable			{3: 'Looking around, this area feels like a performance hall, with small streams of Red Tide weaving through it. The water curtain for shows is still intact, and a massive whale sculpture hangs right in the middle.'}
+22	22		302							{2: '(Approach the whale sculpture in the center)', 3: '23', 4: '(Approach the water curtain nearby)', 5: '28', 6: '(Talk to Lucia)', 7: '33'}
+23	23		401							{1: '2', 2: '4282'}
+24	24		104						1450.0	{1: '0|-100|-150', 2: '1.4'}
+25	25		301			DialogEnable				{3: 'Is this enormous whale... a specimen?'}
+26	26		402							{1: '4282'}
+27	27	33	301				DialogDisable			{3: 'It floats silently in the center of the hall, gazing down at the tiny Construct and human with what looks like sorrow.'}
+28	28		401							{1: '2', 2: '4282'}
+29	29		104						1450.0	{1: '0|100|-150', 2: '1.4'}
+30	30		301			DialogEnable				{3: 'All the water curtain mechanisms have stopped dead, leaving the entire hall vast and eerily silent.'}
+31	31		402							{1: '4282'}
+32	32		301				DialogDisable			{3: 'Only trickles of Red Tide flow silently through the tanks that should be filled with seawater.'}
+33	33		104						1450.0	{1: '0|0|0', 2: '1.4'}
+34	34		201							{1: '1', 2: '500166'}
+35	35		301			DialogEnable				"{1: '1', 2: 'Lucia', 3: ""It's so quiet here... Commandant."", 4: '1'}"
+36	36		301							{2: 'Lucia', 3: 'You can almost hear the echoes...', 4: '1'}
+37	37		204							{1: '1', 2: '5'}
+38	38		301							{3: 'She furrows her brows, her voice dropping to a whisper.'}
+39	39		301							{2: 'Lucia', 3: 'Could the Ascendants have set something up here...', 4: '1'}
+40	40		302							"{2: ""I'm not sure."", 3: '41', 4: 'Maybe?', 5: '41'}"
+41	41		202							{1: '1'}
+42	42		301				DialogDisable			"{3: ""But Teddy's analysis shows this area is prime for safely delivering Bianca's frame.""}"
+43	43		302							"{2: ""Let's just hold tight. They should be here any minute now..."", 3: '44'}"
+44	44		401							{1: '2', 2: '4276'}
+45	45		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab', 2: '3'}
+46	46		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab'}
+47	47		201							{1: '1', 2: '501033'}
+48	48		301			DialogEnable				"{1: '1', 3: ""Suddenly, you catch a flicker of something odd out of the corner of your eye. You spin around, and there's that pale girl, standing silently at the edge of your vision.""}"
+49	49		202							{1: '1'}
+50	50		301							{3: 'She glances up at the enormous whale, but her gaze drifts into nothingness.'}
+51	51		302							{2: 'Chaos?', 3: '52'}
+52	52		201							{1: '1', 2: '501033'}
+53	53		301				DialogDisable			{1: '1', 2: 'Chaos', 3: '...', 4: '1'}
+54	54		104						550.0	{1: '0|0|-150', 2: '0.5'}
+55	55		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+56	56		104							{1: '0|0|0', 2: '0'}
+57	57		202							{1: '1', 6: '1'}
+58	58		401							{1: '1', 2: '36'}
+59	59		401						100.0	{1: '2', 2: '2975'}
+60	60		401							{1: '2', 2: '2559'}
+61	61		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+62	62		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab', 2: '2'}
+63	63		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3001_07.jpg', 3: '0', 4: '1', 5: '0.5'}
+64	64		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3001_07.jpg'}
+65	65		205							{1: '999'}
+66	66		301			DialogEnable				{3: 'The girl looks over. The moment your eyes meet, the scenery around you shatters like glass. Then, Bianca, her shadowy figure in a dark frame, dimly appears beyond the water curtain.'}
+67	67		302							{2: 'Bianca—!', 3: '68'}
+68	68		401							{1: '1', 2: '6210'}
+69	69		301							"{3: ""A tall, twisted monster extends its withered fingers, gently touching Bianca's cheek.""}"
+70	70		301							"{3: 'Bianca\'s lips part, but no words come—only a broken rasp, a voiceless ""ah—ah—"" choking in her throat.'}"
+71	71		301							{2: '???', 3: '...Please... just laugh... at me...'}
+72	72		301							"{3: ""Then, those inhumanly sharp claws rake across Bianca's cheek. Her vital fluid wells up before spilling down her skin in thick, glistening rivulets.""}"
+73	73		301				DialogDisable			{2: '???', 3: '...Please...'}
+74	74		401							{1: '2', 2: '2645'}
+75	75		104						350.0	{1: '0|0|-150', 2: '0.3'}
+76	76		104							{1: '0|0|0', 2: '0.2'}
+77	77		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+78	78		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+79	79		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab'}
+80	80		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+81	81		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+82	82		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1291.jpg'}
+83	83		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+84	84		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+85	85		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+86	86		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+87	87		301			DialogEnable				{3: 'Abruptly, your view is pulled to a more distant scene.'}
+88	88		401							{1: '2', 2: '904'}
+89	89		301							{3: 'Winds howl and rain lashes down as crimson, tens-of-meters-high tidal waves surge from the sea, filling the air with a putrid, fishy stench.'}
+90	90		401							{1: '2', 2: '5539'}
+91	91		502							{1: 'RImgBg1Shake'}
+92	92		301				DialogDisable			{3: 'Violent tremors shake the coastline as the Punishing Virus coalesces into sharp crystals, piercing directly toward the Babylonia soldiers on the shore.'}
+93	93		401						500.0	{1: '2', 2: '9327108'}
+94	94		402							{1: '9327108'}
+95	95		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5701_09.jpg', 3: '0', 4: '1', 5: '0.4'}
+96	96		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_09.jpg'}
+97	97		205							{1: '999'}
+98	98		301			DialogEnable				{3: 'A purple-haired Ascendant is curled up in a cold iron chair, staring out at the sea.'}
+99	99		301							{3: 'There, a massive, pale figure slowly rises from the horizon.'}
+100	100		302							"{2: ""That's..."", 3: '101'}"
+101	101		401							{1: '2', 2: '4005'}
+102	102		301				DialogDisable			{3: 'Dismembered Hetero-Sapien limbs are being grafted onto the pale, humanoid figure. That familiar hair color... it finally hits you who that is.'}
+103	103		302							{2: 'Chiko...', 3: '104'}
+104	104		402							{1: '904'}
+105	105		401							{1: '1', 2: '160'}
+106	106		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+107	107		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+108	108		201						100.0	{1: '1', 2: '500548', 4: '-600', 7: '1'}
+109	109		201						100.0	{1: '1', 2: '500548', 4: '400', 7: '1'}
+110	110		201						100.0	{1: '1', 2: '500548', 4: '-500', 7: '1'}
+111	111		201						100.0	{1: '1', 2: '500548', 4: '200', 7: '1'}
+112	112		201						100.0	{1: '1', 2: '500548', 4: '-400', 7: '1'}
+113	113		201						100.0	{1: '1', 2: '500548', 4: '600', 7: '1'}
+114	114		201						250.0	{1: '1', 2: '500498', 4: '0', 5: '0', 6: '0', 7: '1'}
+115	115		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+116	116		202							{1: '1', 6: '1'}
+117	117		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory610.jpg'}
+118	118		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+119	119		301			DialogEnable				"{3: ""It's like a bucket of ice water just got dumped down your back. Without you even realizing it, your protective suit is drenched in cold sweat.""}"
+120	120		201							{1: '1', 2: '500166', 3: '5'}
+121	121		301							{1: '1', 3: 'Lucia instantly picks up on your strange state beside her.'}
+122	122		301							{2: 'Lucia', 3: 'Commandant, are those... visions back again?', 4: '1'}
+123	123		302							"{2: ""...It's Chiko."", 3: '124'}"
+124	124		204							{1: '1'}
+125	125		301							{2: 'Lucia', 3: '...Chiko?', 4: '1'}
+126	126		302							{2: 'Chiko was taken by the Ascendants and bred into some kind of monster...', 3: '127'}
+127	127		204							{1: '1', 2: '5'}
+128	128		301							{2: 'Lucia', 3: '...', 4: '1'}
+129	129		301							"{2: 'Lucia', 3: ""But we still can't pinpoint Chiko's exact location..."", 4: '1'}"
+130	130		302							{2: '...', 3: '131'}
+131	131		202							{1: '1'}
+132	132		301							"{3: ""Lucia's voice yanks your consciousness back to <b>reality</b>.""}"
+133	133		301							"{3: 'Does this information... really come from the ""Time Prison""?'}"
+134	134		301							"{3: 'Then, if the ""past"" has already been altered, will the ""present"" still unfold according to the events of that ""past""?'}"
+135	135		301				DialogDisable			"{3: 'According to the ""shadows"" you once saw...'}"
+136	136		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+137	137		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+138	138		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3001_03.jpg'}
+139	139		401							{1: '2', 2: '558'}
+140	140		301			DialogEnable	DialogDisable			{3: 'The purple-haired Ascendant is breeding the Red Tide in the sea...'}
+141	141		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+142	142		401							{1: '2', 2: '558'}
+143	143		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_09.jpg'}
+144	144		301			DialogEnable	DialogDisable			{3: 'Chiko is born in the sea, bred through the dense Red Tide in the seawater.'}
+145	145		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+146	146		401							{1: '2', 2: '558'}
+147	147		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3001_01.jpg'}
+148	148		301			DialogEnable	DialogDisable			"{3: 'Bianca sinks deep into the Red Tide and may also transform into a ""witch""...'}"
+149	149		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+150	150		401							{1: '2', 2: '558'}
+151	151		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+152	152		301			DialogEnable				{3: 'But...'}
+153	153		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory427.jpg'}
+154	154		301			AniZhuanchangEnd				"{3: 'Under Chaos\' ""warning,"" Babylonia has made countermeasures against these ""events"" in advance.'}"
+155	155		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory614.jpg'}
+156	156		201							{1: '1', 2: '500168', 4: '0'}
+157	157		201							{1: '2', 2: '500682', 4: '-600'}
+158	158		201							{1: '3', 2: '500650', 4: '600'}
+159	159		301			AniZhuanchangEnd				"{1: '1', 3: ""If everything went off without a hitch, Cerberus would've already sealed off that one outlet where the Red Tide would spill into the sea. And Babylonia has already sent in the Task Force members for backup.""}"
+160	160		202							{1: '1', 2: '2', 3: '3'}
+161	161		301				AniZhuanchangBegin			{3: 'Of course, the biggest wild card...'}
+162	162		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+163	163		401						1600.0	{1: '1', 2: '36'}
+164	164		502						200.0	{1: 'DialogDisable'}
+165	165		306						200.0	{1: '1'}
+166	166		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory611.jpg'}
+167	167		401							{1: '1', 2: '5042'}
+168	168		201							{1: '1', 2: '500534', 3: '8'}
+169	169		301			DialogEnable				{1: '1', 3: 'On a still-standing bench in the hall, the badly wounded Bianca remains unconscious.'}
+170	170		301							"{3: 'In all your ""visions,"" Bianca either morphs into a ""witch"" rising from the deep sea or stays submerged in the aquarium\'s Red Tide. You have never seen her get a new frame, or you successfully reunite.'}"
+171	171		301							"{3: 'With such ""changes"" happening, will the story\'s ""ending""... still be the same as what was seen in the ""shadows""?'}"
+172	172		202							{1: '1'}
+173	173		306							
+174	174		301				AniZhuanchangBegin			{3: 'Can you... still save Chiko?'}
+175	175		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory610.jpg'}
+176	176		401							{1: '2', 2: '5286'}
+177	177		301			AniZhuanchangEnd				"{3: ""An unsettling feeling just won't shake. You keep frequently checking your terminal for Teddy's updates, hoping to calm your nerves.""}"
+178	178		401							{1: '2', 2: '4883'}
+179	179		301							"{3: ""The terminal suddenly chirps with a message from Teddy—they're almost here.""}"
+180	180		401							{1: '2', 2: '4923'}
+181	181		301							{2: 'Broadcast', 3: '(Static noise...)'}
+182	182		301							{3: 'From a corner of the corridor, an intense burst of electrical interference erupts.'}
+183	183		201							{1: '1', 2: '500166', 3: '5'}
+184	184		301							{1: '1', 2: 'Lucia', 3: '!', 4: '1'}
+185	185		401							{1: '2', 2: '4044'}
+186	186		203							{1: '1', 2: '0.25', 5: '-75'}
+187	187		301							{3: 'Lucia instinctively steps forward, shielding you.'}
+188	188		202							{1: '1'}
+189	189		401							{1: '2', 2: '4086'}
+190	190		301							{2: '????', 3: 'Ahem...'}
+191	191		301							{2: '????', 3: 'Gray Raven Commandant, and the captain of Gray Raven... Lucia.'}
+192	192		401							{1: '2', 2: '4923'}
+193	193		301							"{3: ""A man's deep voice cuts through the static. His greeting makes it obvious: he's been watching you.""}"
+194	194		302							{2: 'Vonnegut?', 3: '195', 4: 'All smoke and mirrors.', 5: '198'}
+195	195		301							{3: 'The moment his voice hits your ears, his face pops into your mind, even though you have only met this agent a handful of times.'}
+196	196		201							{1: '18', 2: '500305', 4: '-430', 5: '-150', 6: '500'}
+197	197	202	301							{1: '1', 2: 'Vonnegut', 3: 'I see you remember me... Good.', 4: '18'}
+198	198		201							{1: '18', 2: '500305', 4: '-430', 5: '-150', 6: '500'}
+199	199		301							{1: '1', 2: 'Vonnegut', 3: '...', 4: '18'}
+200	200		301							{2: 'Vonnegut', 3: 'Allow me to reintroduce myself. I am Vonnegut, an... agent.', 4: '18'}
+201	201		302							{2: 'An agent...?', 3: '202'}
+202	202		202							{1: '18', 6: '1'}
+203	203		301							{3: 'This is something you never saw coming... An agent, showing up at the aquarium, of all places.'}
+204	204		201							{1: '18', 2: '500305', 4: '-430', 5: '-150', 6: '500'}
+205	205		301							{1: '1', 2: 'Vonnegut', 3: 'Meet me at the storage tank, Gray Raven Commandant.', 4: '18'}
+206	206		302							"{2: ""You think I'll just show up because you say so?"", 3: '207', 4: 'No way am I going.', 5: '207', 6: 'Why?', 7: '207'}"
+207	207		301							{2: 'Vonnegut', 3: 'I need to clear some things up with you.', 4: '18'}
+208	208		301							"{2: 'Vonnegut', 3: 'About the ""Tower,"" about the Punishing Virus.', 4: '18'}"
+209	209		302							"{2: ""I don't know what you're talking about."", 3: '210', 4: ""I don't understand what you're talking about."", 5: '210'}"
+210	210		301							{2: 'Vonnegut', 3: '...Just dodging the question is only going to waste both our time.', 4: '18'}
+211	211		202							{1: '18', 6: '1'}
+212	212		401							{1: '2', 2: '4923'}
+213	213		301							{3: 'The impatience in the broadcast voice grows heavier before abruptly vanishing. After a few muffled deep breaths, it shifts into a cold, detached announcement.'}
+214	214		201							{1: '18', 2: '500305', 4: '-430', 5: '-150', 6: '500'}
+215	215		301							"{1: '1', 2: 'Vonnegut', 3: 'It\'s an even trade. I don\'t think you truly grasp the ""Tower"" yet. If you did, you probably wouldn\'t be here right now.', 4: '18'}"
+216	216		301							{2: 'Vonnegut', 3: 'Meet me at the storage tank. We will trade questions, trade answers.', 4: '18'}
+217	217		202							{1: '18', 6: '1'}
+218	218		401							{1: '2', 2: '4086'}
+219	219		301							"{3: ""With those words, the broadcast cuts out cold. The speaker's conviction is rock-solid, as if he's absolutely positive you will show up.""}"
+220	220		302							"{2: 'The Tower?', 3: '221', 4: 'Grasp the ""Tower""...', 5: '221'}"
+221	221		301				DialogDisable			{3: 'In a flash, those puzzling words click with the inconsistencies you noticed earlier.'}
+222	222		302							{2: 'Is this tied to those hallucinations?', 3: '223', 4: 'Does this have anything to do with Chaos?', 5: '223'}
+223	223		401							{1: '2', 2: '4280'}
+224	224		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+225	225		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+226	226		301			DialogEnable	DialogDisable			{3: 'The shards of thought slowly connect, like a hazy web forming around you, both there and not there.'}
+227	227		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+228	228		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+229	229		201							{1: '18', 2: '500166', 3: '5'}
+230	230		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'Commandant?', 4: '18'}
+231	231		202				DialogDisable			{1: '18', 6: '1'}
+232	232		301			DialogEnable	DialogDisable			{3: 'Lucia stays on guard, carefully watching your surroundings, but your mind is miles away.'}
+233	233		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '3'}
+234	234		401							{1: '2', 2: '4278'}
+235	235		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+236	236		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory619.jpg'}
+237	237		401							{1: '2', 2: '558'}
+238	238		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+239	239		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory620.jpg'}
+240	240		401							{1: '2', 2: '558'}
+241	241		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+242	242		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory633.jpg'}
+243	243		401							{1: '2', 2: '558'}
+244	244		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+245	245		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory624.jpg'}
+246	246		401							{1: '2', 2: '558'}
+247	247		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+248	248		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory610.jpg'}
+249	249		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+250	250		401							{1: '2', 2: '9389034'}
+251	251		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+252	252		301			DialogEnable				"{3: ""Fragmented images and scenes swirl in your head, blurring the line between what's real and what's not.""}"
+253	253		301							{3: 'Chiko... Lithos... Bianca... the aquarium...'}
+254	254		301							"{3: 'Among the ""shadows"" you\'ve seen so far... it seems...'}"
+255	255		301				DialogDisable			"{3: ""Vonnegut's never there.""}"
+256	256		302							"{2: ""Something's deeply off..."", 3: '257', 4: 'How could this be...', 5: '257'}"
+257	257		302							"{2: ""Vonnegut shouldn't be here, at this time..."", 3: '258'}"
+258	258		301			DialogEnable				"{3: 'The ""shadows"" you glimpse through cracks in time writhe in your mind, and every attempt to dive further only brings a sharp, stabbing pain.'}"
+259	259		301				DialogDisable			{3: 'This world... What exactly... has happened to you?'}
+260	260		401							{1: '1', 2: '6204'}
+261	261		201							{1: '1', 2: '500166', 3: '5'}
+262	262		301			DialogEnable				{1: '1', 2: 'Lucia', 3: '...Commandant, the Red Tide is spreading!', 4: '1'}
+263	263		202							{1: '1'}
+264	264		301							"{3: ""There's no doubt about it: Vonnegut is the mastermind behind the Red Tide assaults on Babylonia—or at least, he's one of them.""}"
+265	265		401							{1: '2', 2: '4984'}
+266	266		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopRed.prefab', 2: '2'}
+267	267		301							{3: 'Under his calculated command, the Red Tide surges upward, instantly filling every crevice between the pathways.'}
+268	268		302							"{2: ""Let's get out of here first!"", 3: '269'}"
+269	269		201							{1: '1', 2: '500166', 3: '5', 4: '200', 5: '-75'}
+270	270		201							{1: '2', 2: '500534', 3: '8', 4: '-200', 5: '-100'}
+271	271		401							{1: '2', 2: '1543'}
+272	272		203							{1: '1', 2: '0.25', 3: '200'}
+273	273		203							{1: '2', 2: '0.25', 3: '-200', 4: '-25'}
+274	274		301							{1: '1', 3: 'Lucia quickly helps up the unconscious Bianca and exits the hall through the side door with you.'}
+275	275		202							{1: '1', 2: '2'}
+276	276		401							{1: '2', 2: '4086'}
+277	277		201							{1: '18', 2: '500305', 4: '-430', 5: '-150', 6: '500'}
+278	278		301							{1: '1', 2: 'Vonnegut', 3: '...', 4: '18'}
+279	279		301							{2: 'Vonnegut', 3: 'Why the futile struggle?', 4: '18'}
+280	280		202							{1: '18', 6: '1'}
+281	281		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+282	282		401							{1: '2', 2: '5539'}
+283	283		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+284	284		301			RImgBg1Shake				{3: 'As if a switch has been flipped, countless torrents of water erupt from the corridors on both sides in an instant.'}
+285	285		201							{1: '18', 2: '500166', 3: '5'}
+286	286		301							"{1: '1', 2: 'Lucia', 3: ""Damn it, it's those bionic fish!"", 4: '18'}"
+287	287		301							{2: 'Lucia', 3: 'Commandant, over here!', 4: '18'}
+288	288		202				DialogDisable			{1: '18', 6: '1'}
+289	289		401							{1: '2', 2: '1504'}
+290	290		306						200.0	{1: '1'}
+291	291		301			DialogEnable				{3: 'The Red Tide, propelled by the surging waves, forces you two and Bianca to higher ground.'}
+292	292		301				DialogDisable			{3: 'The seawater keeps rising.'}
+293	293		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+294	294		306							
+295	295		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+296	296		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopRed.prefab'}
+297	297		402							{1: '4984'}
+298	298		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1278.jpg'}
+299	299		301			DialogEnable				"{3: ""The broadcast pipes into the entire hall's speaker system, letting both Karenina and Teddy hear Vonnegut's voice.""}"
+300	300		201							{1: '1', 2: '500494', 3: '4'}
+301	301		301							{1: '1', 2: 'Karenina', 3: '...An agent!', 4: '1'}
+302	302		301							{2: 'Karenina', 3: 'Teddy, can we head straight down from here?', 4: '1'}
+303	303		201							{1: '1', 2: '500495', 7: '1'}
+304	304		301							"{1: '1', 2: 'Teddy', 3: ""No way. This whole area is surrounded by the aquarium's glass tunnels. There's absolutely no exit."", 4: '1'}"
+305	305		301							"{2: 'Teddy', 3: ""If we try to head down from here, we'll just end up in the water."", 4: '1'}"
+306	306		201							{1: '1', 2: '500494', 3: '7', 7: '1'}
+307	307		301							"{1: '1', 2: 'Karenina', 3: ""Hold on... I hear Lucia! She's close by!"", 4: '1'}"
+308	308		201							{1: '1', 2: '500495', 3: '4', 7: '1'}
+309	309		301							"{1: '1', 2: 'Teddy', 3: ""No way! The Red Tide's already in the water—!"", 4: '1'}"
+310	310		201							{1: '1', 2: '500494', 3: '5', 7: '1'}
+311	311		301							"{1: '1', 2: 'Karenina', 3: ""No time to lose. We've gotta bail and meet up with Gray Raven!"", 4: '1'}"
+312	312		401							{1: '2', 2: '1504'}
+313	313		203							{1: '1', 2: '0.1', 3: '650'}
+314	314		202							{1: '1'}
+315	315		201							{1: '18', 2: '500495'}
+316	316		301							{1: '1', 2: 'Teddy', 3: '...Hey! Wait up—!', 4: '18'}
+317	317		202				DialogDisable			{1: '18', 6: '1'}
+318	318		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionR.prefab', 2: '1'}
+319	319		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionL.prefab', 2: '1', 5: '3'}
+320	320		502					200.0		{1: 'RImgBg1Shake'}
+321	321		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+322	322		401							{1: '2', 2: '555'}
+323	323		301			DialogEnable	DialogDisable			{3: 'BOOM—!!'}
+324	324		401							{1: '2', 2: '5539'}
+325	325		501						5000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBubble.prefab', 2: '3'}
+326	326		205							{1: '1006', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1281.jpg', 3: '0.3', 4: '0.3', 5: '0'}
+327	327		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiArenaOnlineFuben/FxUiArenaOnlineSectionSmoke01.prefab', 2: '2'}
+328	328		401							{1: '2', 2: '2644'}
+329	329		301			DialogEnable	DialogDisable			{3: 'The gravitational waves effortlessly shatter the once-solid metal ceiling structure, sending a fierce rush of water gushing into the ventilation ducts.'}
+330	330		201							{1: '1', 2: '500495', 3: '4'}
+331	331		301			DialogEnable				{1: '1', 2: 'Teddy', 3: 'Cough... Seriously...', 4: '1'}
+332	332		202							{1: '1'}
+333	333		401							{1: '2', 2: '5529'}
+334	334		301							"{3: ""After choking down a mouthful of water, Teddy rolls her eyes and just goes with the flow, hauling Bianca's new frame transport pod as she follows Karenina's lead and jumps down.""}"
+335	335		201							{1: '1', 2: '500494', 3: '4'}
+336	336		301							"{1: '1', 2: 'Karenina', 3: ""The Red Tide's in this water too—watch out!"", 4: '1'}"
+337	337		301							{2: 'Karenina', 3: 'Lucia—!', 4: '1'}
+338	338		202							{1: '1'}
+339	339		301							{3: 'Through the raging currents, Karenina zeroes in on Lucia—the two figures over there are lugging an unconscious Bianca, making a beeline for this area.'}
+340	340		201							{1: '18', 2: '500166', 3: '5'}
+341	341		301							"{1: '1', 2: 'Lucia', 3: ""Commandant, it's Karenina and Teddy!"", 4: '18'}"
+342	342		201							{1: '18', 2: '500494', 3: '5'}
+343	343		301							{1: '1', 2: 'Karenina', 3: 'Dammit, this glass—', 4: '18'}
+344	344		202							{1: '18'}
+345	345		104							{1: '0|0|-100', 2: '1'}
+346	346		401						100.0	{1: '2', 2: '2604'}
+347	347		104							{1: '0|0|0', 2: '1'}
+348	348		301							{3: 'She slams her fist against the glass, letting loose a torrent of gravitational waves.'}
+349	349		301							{1: '1', 2: 'Teddy', 3: 'Hold on! I brought directional explosives for thaaaat—!', 4: '18'}
+350	350		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+351	351		401							{1: '2', 2: '5373'}
+352	352		401							{1: '2', 2: '2644'}
+353	353		301			RImgBg1Shake				{3: 'The moment the glass shatters, water gushes out, creating small whirlpools in its wake.'}
+354	354		401							{1: '2', 2: '4086'}
+355	355		201							{1: '18', 2: '500305', 4: '-430', 5: '-150', 6: '500'}
+356	356		301							{1: '1', 2: 'Vonnegut', 3: '...', 4: '18'}
+357	357		202							{1: '18', 6: '1'}
+358	358		301							{3: 'A sigh from the agent comes through the broadcast, a clear sign of his frustration with this sudden, unwelcome turn of events. Amidst distorted white noise, more water blasts in from both sides.'}
+359	359		401							{1: '2', 2: '5529'}
+360	360		301							{2: 'Teddy', 3: 'Glug glug glug glug—'}
+361	361		301				DialogDisable			{2: 'Karenina', 3: '****—'}
+362	362		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+363	363		205							{1: '1006', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1281.jpg', 3: '0.5', 4: '0.5', 5: '0'}
+364	364		301			DialogEnable				{3: 'Instantly, water floods the entire passageway.'}
+365	365		201							{1: '18', 2: '500494', 3: '4'}
+366	366		301							{1: '1', 2: 'Karenina', 3: '【kuroname】—catch—', 4: '18'}
+367	367		202							{1: '18', 6: '1'}
+368	368		401							{1: '2', 2: '907504'}
+369	369		301				DialogDisable			{3: 'Karenina uses the raging current to her advantage, releasing the safety latch on the frame transport pod, sending it plunging downstream with the rushing water.'}
+370	370		502							{1: 'RImgBg1Shake'}
+371	371		401							{1: '2', 2: '2644'}
+372	372		302							{2: 'The current—', 3: '373', 4: 'Glug glug glug—', 5: '373'}
+373	373		401							{1: '2', 2: '5529'}
+374	374		301			DialogEnable	DialogDisable			{3: 'The current is way too wild, making it impossible to get anywhere near the transport pod.'}
+375	375		302							{2: '(Deep M.I.N.D. connection initiated)', 3: '379', 4: '(Try to awaken Bianca)', 5: '376'}
+376	376		302							{2: 'Bianca!', 3: '377'}
+377	377		301			DialogEnable	DialogDisable			"{3: ""The comatose Construct doesn't react at all; she just seems to be completely shut off from the outside world.""}"
+378	378		302							{2: '(Deep M.I.N.D. connection initiated)', 3: '379'}
+379	379		401							{1: '2', 2: '2567'}
+380	380		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab', 2: '3'}
+381	381		505			AniZhuanchangBegin				{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab'}
+382	382		401			AniZhuanchangEnd				{1: '2', 2: '5790'}
+383	383		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+384	384		301			DialogEnable				{3: 'The instant you link up with the Deep M.I.N.D., a sharp, stabbing pain shoots from your Mind Beacon—'}
+385	385		302							{2: 'Ugh...', 3: '386'}
+386	386		401							{1: '2', 2: '5539'}
+387	387		301			RImgBg1Shake				{3: 'Her M.I.N.D., severely corrupted by the Punishing Virus, is riddled with festering wounds. Crimson waves surge forward, only to be firmly repelled by some unseen barrier.'}
+388	388		302							{2: 'Bianca, wake up!'}
+389	389		201							{1: '18', 2: '500532', 3: '14'}
+390	390		301							{1: '1', 2: 'Bianca', 3: 'I...', 4: '18'}
+391	391		201							{1: '18', 2: '500534', 3: '8'}
+392	392		301							{2: 'Bianca', 3: 'I am...', 4: '18'}
+393	393		202							{1: '18', 6: '1'}
+394	394		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+395	395		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+396	396		401							{1: '2', 2: '4385'}
+397	397		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1273.jpg'}
+398	398		201							{1: '1', 2: '500534', 3: '8'}
+399	399		301				DialogDisable			{1: '1', 2: 'Bianca', 3: '...I...', 4: '1'}
+400	400		302							{2: 'The new frame transport pod—', 3: '401'}
+401	401		302							{2: 'The new frame!', 3: '402'}
+402	402		401							{1: '2', 2: '5562'}
+403	403		202							{1: '1'}
+404	404		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+405	405		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+406	406		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1278.jpg'}
+407	407		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+408	408		401							{1: '1', 2: '36'}
+409	409		301			DialogEnable				{3: 'Before you can even finish that sentence, a sharp pain blasts through your brain.'}
+410	410		401							{1: '1', 2: '360'}
+411	411		402							{1: '5562'}
+412	412		201							{1: '1', 2: '500166', 3: '5'}
+413	413		301							{1: '1', 2: 'Lucia', 3: 'Commandant—!', 4: '1'}
+414	414		302							{2: 'Transport pod!', 3: '415'}
+415	415		301							{2: 'Lucia', 3: 'Copy that!', 4: '1'}
+416	416		202							{1: '1'}
+417	417		301							{3: 'Lucia shoves the frame transport pod your way, then whips up a quick lasso with the climbing rope, cinching Bianca and the pod together.'}
+418	418		401							{1: '2', 2: '4086'}
+419	419		201							{1: '18', 2: '500305', 4: '-430', 5: '-150', 6: '500'}
+420	420		301							{1: '1', 2: 'Vonnegut', 3: '...', 4: '18'}
+421	421		202							{1: '18', 6: '1'}
+422	422		301							{3: 'The agent lets out a soft sigh and triggers yet another mechanism.'}
+423	423		401							{1: '2', 2: '915'}
+424	424		301			RImgBg1Shake				"{3: ""A muffled explosion rips through the air as the lower third level's outer walls blow apart. Seawater gushes in from every direction.""}"
+425	425		301							"{2: 'Karenina', 3: ""****, you've gotta be kidding me—!""}"
+426	426		301							{2: 'Teddy', 3: 'Glug glug glug glug—'}
+427	427		201							{1: '1', 2: '500166', 3: '5'}
+428	428		301							{1: '1', 2: 'Lucia', 3: 'Commandant! Watch out!', 4: '1'}
+429	429		302		1		AniZhuanchangBegin			{2: 'Follow the current—and regroup!', 3: '430'}

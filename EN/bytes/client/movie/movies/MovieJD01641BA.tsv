@@ -1,0 +1,32 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory68.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: 'Now ready, you enter the underground tunnel. Lucia walks in the forefront, her katana in hand, with Liv by your side monitoring the concentration of the Punishing Virus in the area ahead.'}
+4	4		301							{3: 'Your footsteps echo down the tunnel, your searchlights the only source of light in sight.'}
+5	5		201							{1: '1', 2: '1031001'}
+6	6		301							{1: '1', 2: 'Liv', 3: 'It looks like an ordinary entrance to a bomb shelter, but...', 4: '1'}
+7	7		302							{2: 'There are too many Corrupted remains here.', 3: '8'}
+8	8		201							{1: '1', 2: '500026'}
+9	9		301							{1: '1', 2: 'Lee', 3: 'If this place was indeed built in preparation of war, then it makes sense to find a military plant here.', 4: '1'}
+10	10		301							"{2: 'Lee', 3: ""If the production line has been hijacked, it's highly likely that the plant is still pumping out Corrupted."", 4: '1'}"
+11	11		202							{1: '1', 6: '1'}
+12	12		401							{1: '2', 2: '1508'}
+13	13		301							{3: 'As if in response, you hear mechanical sounds ahead of you as a dark shadow approaches.'}
+14	14		201							{1: '1', 2: '500166'}
+15	15		301							{1: '1', 2: 'Lucia', 3: 'Ready to engage!', 4: '1'}
+16	16		201							{1: '1', 2: '1031001'}
+17	17		301							"{1: '1', 2: 'Liv', 3: ""Wait... What's this?"", 4: '1'}"
+18	18		301							{3: 'A severely damaged Corrupted crawls toward you, its damaged speaker making incomprehensible noises that echo down the tunnel.'}
+19	19		301							{2: 'Liv', 3: 'Its identification code... This is a Construct from Babylonia! Why is it here, though...?', 4: '1'}
+20	20		201							{1: '1', 2: '500026', 4: '-400'}
+21	21		201							{1: '2', 2: '500166', 4: '400'}
+22	22		301							"{1: '1', 2: 'Lee', 3: ""The Punishing Virus has damaged its neural circuit. It's too late for us to do anything now..."", 4: '1'}"
+23	23		301				DialogDisable			{2: 'Lucia', 3: 'Commandant...', 4: '2'}
+24	24		305							{1: '25', 2: '31'}
+25	25		301			DialogEnable				"{2: 'Lee', 3: ""This Construct belongs to the Task Force, but as far as I know, Babylonia hasn't assigned any Constructs to this area."", 4: '1'}"
+26	26		301							{2: 'Lucia', 3: 'So how did it get here? And how did it end up being locked up underground...', 4: '2'}
+27	27		302							{2: 'We can only find out if we keep moving.', 3: '28'}
+28	28		202							{1: '1', 2: '2', 6: '1'}
+29	29		201							{1: '1', 2: '1031001'}
+30	30		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Liv', 3: ""Commandant, you are right. Let's keep going."", 4: '1'}"
+31	31		202		1		AniZhuanchangBegin			{1: '1', 2: '2', 6: '1'}

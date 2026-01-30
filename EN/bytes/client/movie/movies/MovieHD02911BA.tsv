@@ -1,0 +1,52 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory617.jpg'}
+2	2		401							{1: '1', 2: '100'}
+3	3		401							{1: '2', 2: '215'}
+4	4		301			DialogEnable				{3: 'The hills are covered in blooming flowers that sway gently in the breeze.'}
+5	5		301							"{3: ""You never thought you'd see a sight like this during this era.""}"
+6	6		301							"{3: ""You arrived at the rendezvous point with Selena's letter in your hand. You have been waiting for quite some time now but haven't seen her.""}"
+7	7		302							{2: 'Wait', 3: '8', 4: 'Try to contact her.', 5: '9'}
+8	8		301							"{3: ""You remember hearing the announcement about an assembly for a temporary mission on your way out this morning, and maybe that's where Selena is now.""}"
+9	9		301							"{3: ""Before opening the communication software, you see the temporary mission notice on the terminal, with Selena's name on the list.""}"
+10	10		301							"{3: ""Babylonia doesn't stop for one person. All rules apply even on a day that's special for someone.""}"
+11	11		301							{3: 'Realizing this, you feel less anxious and walk alone into the flower field.'}
+12	12		301				DialogDisable			{3: 'The tranquil fragrance of the flowers lulls you to sleep and, slowly, your eyelids grow heavy...'}
+13	13		501			AniZhuanchangBegin	AniZhuanchangEnd			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryZhengyan.prefab', 2: '3'}
+14	14		201							{1: '1', 2: '500291'}
+15	15		301			DialogEnable				{1: '1', 2: 'Selena', 3: 'Conductor...', 4: '1'}
+16	16		301							{2: 'Selena', 3: 'Conductor...?', 4: '1'}
+17	17		302							{2: 'Hmm...', 3: '18'}
+18	18		302							{2: 'Oops, guess I dozed off just now.', 3: '19'}
+19	19		301							{2: 'Selena', 3: 'No, I should be the one apologizing. Sorry for making you wait for so long.', 4: '1'}
+20	20		301							"{3: ""Shaking your head clear, you take Selena's hand and stand up. That's when it hits you that the sky is not as you remember it.""}"
+21	21		302							"{2: ""Woah, seems like I've been here for quite some time already."", 3: '22'}"
+22	22		301							{2: 'Selena', 3: 'Because the temporary mission was in the opposite direction of the conservation area, so... uh oh.', 4: '1'}
+23	23		301							"{3: 'Selena lets out a suppressed ""uh oh"" as she lets go, presumably because it hit her that she didn\'t quite do so with the right force.'}"
+24	24		301							"{3: ""That's when you notice that she has a wreath of flowers and leaves around on her left arm, with vital fluid oozing out.""}"
+25	25		302							{2: 'Are you hurt?', 3: '26'}
+26	26		301							"{2: 'Selena', 3: ""I'm... I'm okay."", 4: '1'}"
+27	27		301							{3: 'Selena turns her body, hiding her injured arm.'}
+28	28		302							"{2: ""You didn't rest after the mission?"", 3: '29'}"
+29	29		301							{2: 'Selena', 3: 'Well... I came straight to see you.', 4: '1'}
+30	30		301							{2: 'Selena', 3: 'I was checking my terminal the entire time on my way back. I was kind of expecting you to send me a message telling me how mad you were for getting stood up and telling me that you were going to leave.', 4: '1'}
+31	31		301							"{2: 'Selena', 3: ""And I started to panic because I never got any message from you. I thought you'd been waiting for me this entire time and that you'd be mad."", 4: '1'}"
+32	32		301							{2: 'Selena', 3: 'But then I got scared thinking that you might have just left without saying anything.', 4: '1'}
+33	33		301							"{3: ""Selena's gaze appears a little evasive, and you can't be sure if it's because she's feeling guilty or embarrassed.""}"
+34	34		301							{2: 'Selena', 3: 'And I just felt so glad... when I saw you sleeping among the flowers.', 4: '1'}
+35	35		301							"{2: 'Selena', 3: ""You were waiting for me, you accepted my invitation and did not leave, you didn't just give up on me. You were here all along..."", 4: '1'}"
+36	36		301							{2: 'Selena', 3: 'And all these negative thoughts I had in my head just went poof.', 4: '1'}
+37	37		301							{3: 'Selena places her hand over yours, interlocking your fingers with hers.'}
+38	38		301							{2: 'Selena', 3: 'Please... keep me here, Conductor. Let me be a little selfish for just a little while longer.', 4: '1'}
+39	39		301							{2: 'Selena', 3: 'The whole way back, I was thinking about asking you to dance with me on this special day.', 4: '1'}
+40	40		301							"{3: ""Selena's gentle plea blends with the symphony of the wind and the flowers, like the accompaniment slowly being played out on a stage.""}"
+41	41		301							{3: 'With it, your body moves subconsciously, guided by Selena.'}
+42	42		301							{2: 'Selena', 3: 'Conductor... Conductor...', 4: '1'}
+43	43		202							{1: '1'}
+44	44		301							{3: 'In the moment of your embrace, Selena closes her eyes and whispers by your ear, her breath warm against your skin.'}
+45	45		301							{3: 'As we break away, she opens her eyes, and your heart skips a beat at her watery gaze. At that moment, you seem to understand what she was trying to say.'}
+46	46		301							{3: '—Conductor, can you hear my soft call?'}
+47	47		301							{3: '—Conductor... Conductor...'}
+48	48		301							{3: '—Will you like how I sound?'}
+49	49		301							"{3: ""Selena closes her eyes with a smile before you can answer her questions, seeming as though she's heard what you wanted to say.""}"
+50	50		301							{3: 'The wind and flowers bind the two of you together. The two of you are in a chase after each other, your steps intertwining and figures entwined.'}
+51	51		301		1		AniZhuanchangBegin			{3: 'The two of you dance well into the night, with the moonlight showering upon the two of you.'}

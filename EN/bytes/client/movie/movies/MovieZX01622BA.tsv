@@ -1,0 +1,23 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory287.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				{3: 'Walking along the designated route, the four of you walk cautiously among the dilapidated ruins.'}
+4	4		201							{1: '1', 2: '1031001', 4: '-600'}
+5	5		201							{1: '2', 2: '500166', 4: '0'}
+6	6		201							{1: '3', 2: '500026', 4: '600'}
+7	7		301							{1: '1', 2: 'Liv', 3: 'This place is completely different than what I remember. How long has it been?', 4: '1'}
+8	8		301							"{2: 'Lucia', 3: ""Really? For me, this place feels more and more familiar, but I can't remember why."", 4: '2'}"
+9	9		301							{2: 'Liv', 3: 'Maybe you came here too, Lucia. Maybe even more recently than me.', 4: '1'}
+10	10		301							{2: 'Lucia', 3: 'Does this have anything to do with my suppressed memory?', 4: '2'}
+11	11		301							{3: 'Lucia lowers her head as she contemplates the problem.'}
+12	12		204							{1: '1', 2: '7'}
+13	13		301							{2: 'Liv', 3: 'Watch out!', 4: '1'}
+14	14		204							{1: '1'}
+15	15		301							{3: 'Liv stops her right as she is about to step on a loose stone tile.'}
+16	16		301							{2: 'Lee', 3: 'Looks like there are still traps here.', 4: '3'}
+17	17		301							{3: 'Lee briefly steps on the random stone tile, causing the broken tile to fall into a pit. Looking down into the pit, you see that the bottom is covered with red spikes.'}
+18	18		301							{3: 'If someone had stepped on that, they would have fallen onto the spikes.'}
+19	19		301							"{2: 'Liv', 3: ""There's no way around the collapsed road... Let's find some materials to build a makeshift bridge."", 4: '1'}"
+20	20		302							{2: '(Nod)', 3: '21'}
+21	21		301							{2: 'Lucia', 3: 'Sorry, I was being careless. Looks like there are still traps all over the road. We need to be careful.', 4: '2'}
+22	22		301		1		AniZhuanchangBegin			"{2: 'Liv', 3: ""You're right. Be on the lookout for supplies we can use to get around the traps. Let's go, Commandant."", 4: '1'}"

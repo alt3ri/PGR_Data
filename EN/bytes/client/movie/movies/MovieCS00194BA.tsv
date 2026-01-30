@@ -1,0 +1,23 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory833.jpg'}
+2	2		401							{1: '1', 2: '36'}
+3	3		301							{3: 'Test 1: Read Text Graying Function'}
+4	4		302							{2: 'Yes 2', 3: '5', 4: 'Yes 3', 5: '6', 6: 'Yes 70', 7: '7', 12: '-1', 13: '-1', 14: '-1'}
+5	5	8	301							"{2: 'Nanami', 3: ""Wrong! It's 70! Looks like you're not fully awake yet, Commandant.""}"
+6	6	8	301							"{2: 'Nanami', 3: ""Wrong! It's 70! Looks like you're not fully awake yet, Commandant.""}"
+7	7		301							"{2: 'Nanami', 3: ""Bingo! It's 70! Looks like you're wide awake now, Commandant!""}"
+8	8		301							{3: 'Though everything else remains blank, you somehow remember that the girl before you is called Nanami.'}
+9	9		301							{3: 'You try to move your body, and a slight stinging sensation runs across your back—summer is when the grass grows most abundantly and when its blades are at their prickliest.'}
+10	10		301							{3: 'Test 2-1: Unlock Option - Conditional Node (Before)'}
+11	11		302							"{2: 'Fine.', 3: '12', 4: ""Let's go together! (Available after reading [The season to try being active...])"", 5: '12', 12: '-1', 13: '9'}"
+12	12		301							{2: 'Nanami', 3: 'Hooray—!'}
+13	13		301							{3: 'Test 2-2: Unlock Option - Conditional Node (After)'}
+14	14		302							"{2: ""I'm okay."", 3: '15', 4: ""I'm a bit tired. (Available after reading [Rosa: Should we... connect?])"", 5: '15', 12: '-1', 13: '17'}"
+15	15		301							{3: 'The endless cicada chirping outside the window and the empty streets below echo the cosmic loneliness that quietly creeps into your heart.'}
+16	16		301							{3: 'Test 3: Unlock Option - Dialogue Branch Conditional Options'}
+17	17		301							{2: 'Rosa', 3: 'Should we connect right now?'}
+18	18		302							{2: 'Wait a moment.', 3: '19', 4: 'Connect now. (Only unlocked by selecting [Yes 2])', 5: '21', 12: '-1', 13: '4|1'}
+19	19		301							"{3: ""You have complete faith in Asimov's notes, but...""}"
+20	20		301							"{3: ""You can't be sure if this is actually going to work.  Given that Nanami is lost in the chaos of theoretical simulations, according to Cervantes, you can't be sure if you'll really be able to reach her.""}"
+21	21		301							"{3: ""After all this work, you can't blow it now. Besides, Lucia's still waiting back there in the past.""}"
+22	22		301		1		AniZhuanchangBegin			{3: 'The End'}

@@ -1,0 +1,251 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory547.jpg'}
+2	2		401							{1: '1', 2: '372'}
+3	3		401							{1: '2', 2: '1514'}
+4	4		104						250.0	{1: '0|50|-25', 2: '0.25'}
+5	5		104							{1: '0|0|-50', 2: '0.25'}
+6	6		301			DialogEnable	AniZhuanchangBegin			{3: 'A young girl limps across the battlefield, engulfed in clouds of gunsmoke.'}
+7	7		402							{1: '1514'}
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory547.jpg'}
+9	9		401							{1: '2', 2: '4008'}
+10	10		104							{1: '-100|-150|-300', 2: '0'}
+11	11		104							{1: '-200|-150|-300', 2: '2'}
+12	12		301			AniZhuanchangEnd				{3: 'Collapsed buildings, steel frames, and the dismembered limbs of various creatures lie haphazardly among the rubble.'}
+13	13		402							{1: '4008'}
+14	14		104							{1: '0|0|0', 2: '1'}
+15	15		509							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png', 2: '1'}
+16	16		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+17	17		402							{1: '4640'}
+18	18		401							{1: '2', 2: '2983'}
+19	19		201							{1: '11', 2: '501195', 4: '-500'}
+20	20		301							{1: '1', 2: 'Officer', 3: 'Report.', 4: '11'}
+21	21		401							{1: '2', 2: '4320'}
+22	22		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '2'}
+23	23		201							{1: '2', 2: '501194', 4: '600'}
+24	24		301				DialogDisable			"{1: '1', 2: 'Ewig', 3: ""Power transmission towers malfunctioning, approximately 76% of the area's cables have been disconnected. Stronghold No. 5's power distribution network has most likely collapsed."", 4: '2'}"
+25	25		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab'}
+26	26		402							{1: '4320'}
+27	27		510							{1: '1'}
+28	28		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+29	29		202							{1: '11', 2: '2', 6: '1'}
+30	30		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '2'}
+31	31		111						700.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+32	32		401							{1: '2', 2: '9389034'}
+33	33		301			DialogEnable	DialogDisable			"{3: ""The girl called Ewig's visual module momentarily blurs.""}"
+34	34		402							{1: '9389034'}
+35	35		104							{1: '0|75|-100', 2: '0.2'}
+36	36		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory538.png', 3: '0', 4: '1', 5: '1'}
+37	37		401						200.0	{1: '2', 2: '4802'}
+38	38		205							{1: '999'}
+39	39		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+40	40		401						200.0	{1: '2', 2: '2690'}
+41	41		401							{1: '2', 2: '1505'}
+42	42		301			DialogEnable	AniZhuanchangBegin			{3: 'She hits the ground as soon as she loses sight. CRACK—her broken leg assembly snaps, becoming part of the rubble. Vital fluid pours from the severed joint.'}
+43	43		502						400.0	{1: 'DialogDisable'}
+44	44		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory547.jpg'}
+45	45		509							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png', 2: '1'}
+46	46		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+47	47		401							{1: '2', 2: '2983'}
+48	48		201							{1: '11', 2: '501195', 4: '-500'}
+49	49		301			DialogEnable				{1: '1', 2: 'Officer', 3: 'What else? What took you so long, and why are you using my private channel?', 4: '11'}
+50	50		301							{3: 'A voice, barely suppressing its anger, comes through the comm channel.'}
+51	51		201							{1: '2', 2: '501194', 3: '8', 4: '600', 5: '-150'}
+52	52		301							{1: '1', 2: 'Ewig', 3: 'Communication base stations destroyed, public frequencies down. It took 10 minutes and 23 seconds to switch channels and reestablish contact.', 4: '2'}
+53	53		301							{2: 'Ewig', 3: 'Infrastructure damage amounts to approximately 537 standard supply units.', 4: '2'}
+54	54		301							{3: 'The girl lies there among the rubble, reporting in a robotic tone.'}
+55	55		301							{2: 'Officer', 3: 'Oh, great, great, great. Just what I needed—more good news.', 4: '11'}
+56	56		301							{3: 'The rough voice from the other end of the communication transforms into a sharp, cold laugh.'}
+57	57		301				DialogDisable			{2: 'Ewig', 3: 'And...', 4: '2'}
+58	58		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+59	59		202							{1: '11', 2: '2', 6: '1'}
+60	60		510							{1: '1'}
+61	61		401							{1: '2', 2: '2667'}
+62	62		201							{1: '2', 2: '501205', 4: '300', 5: '-75', 7: '1'}
+63	63		201							{1: '3', 2: '501205', 4: '-400', 5: '-120', 6: '50', 7: '1'}
+64	64		203						250.0	{1: '2', 2: '0.25', 3: '300'}
+65	65		401							{1: '2', 2: '4432'}
+66	66		203						250.0	{1: '2', 2: '0.25', 3: '300', 4: '-25'}
+67	67		203							{1: '2', 2: '0.25', 3: '300'}
+68	68		203							{1: '3', 2: '0.25', 3: '-300', 4: '-50', 5: '50'}
+69	69		401							{1: '2', 2: '4044'}
+70	70		301			DialogEnable				{1: '1', 3: 'Her visual module scans the ruins: the badly injured girls are helping each other, their limbs broken, armor dented, cables spilling out from beneath their synthetic skin.', 4: '2', 5: '3'}
+71	71		202							{1: '3', 2: '2'}
+72	72		301							{3: 'Most are covered in charred soot and nearly blend into the debris. The only difference is that they move, which the visual module recognizes as signs of life.'}
+73	73		201							{1: '2', 2: '501194', 5: '-150'}
+74	74		301							{1: '1', 2: 'Ewig', 3: 'Remaining combat units: 5. Losses: 4. The missing collar IDs are No. 17...', 4: '2'}
+75	75		203							{1: '2', 2: '0.25', 3: '600', 4: '-150'}
+76	76		509							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png', 2: '1'}
+77	77		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+78	78		401							{1: '2', 2: '2983'}
+79	79		201							{1: '11', 2: '501195', 4: '-500'}
+80	80		301							"{1: '1', 2: 'Officer', 3: ""I didn't ask you to report on the loss of expendables."", 4: '11'}"
+81	81		301							{2: 'Ewig', 3: 'Humanoid combat units are company property, just like power and communication facilities.', 4: '2'}
+82	82		301							{2: 'Ewig', 3: 'According to company regulations, losses should be listed in descending order of value in post-battle reports.', 4: '2'}
+83	83		301							"{2: 'Officer', 3: ""That's exactly why—no one cares about the value of expendables listed at the bottom."", 4: '11'}"
+84	84		301							{2: 'Officer', 3: 'And...'}
+85	85		301							{3: 'A somewhat irritated voice comes through from the other end.'}
+86	86		301							{2: 'Officer', 3: 'Where is she?', 4: '11'}
+87	87		301							{2: 'Ewig', 3: 'She is not within tracking signal range. Attempting a fourth search.', 4: '2'}
+88	88		301							"{2: 'Ewig', 3: ""After Unit No. 17's depletion, its frame remains in another battle zone. She's most likely gone to find Unit 17."", 4: '2'}"
+89	89		301							{2: 'Officer', 3: 'If she had just followed orders, we could have saved at least one antenna tower!', 4: '11'}
+90	90		301							"{2: 'Ewig', 3: ""The highest-value unit's action strategy prioritizes protecting humanoid combat units above all else."", 4: '2'}"
+91	91		301							{2: 'Ewig', 3: 'If she had followed orders, estimated losses would have exceeded 7 individuals.', 4: '2'}
+92	92		301							{2: 'Officer', 3: 'Enough!', 4: '11'}
+93	93		301							{2: 'Officer', 3: 'Time and time again, you keep reporting combat unit losses—do you think the company actually cares about losing a few handy weapons?', 4: '11'}
+94	94		301							{2: 'Ewig', 3: '...', 4: '2'}
+95	95		301							{2: 'Officer', 3: 'By disobeying orders and acting on your own, you needlessly prolonged the mission and even damaged our infrastructure.', 4: '11'}
+96	96		301							{2: 'Officer', 3: 'No one blames the weapons—so who ends up paying the price? I do, as your commander!', 4: '11'}
+97	97		301							"{2: 'Officer', 3: ""You've only lost a few combat units, but I'm about to lose my job!"", 4: '11'}"
+98	98		202							{1: '11', 2: '2', 6: '1'}
+99	99		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+100	100		510							{1: '1'}
+101	101		401							{1: '2', 2: '2683'}
+102	102		301							{3: 'Click—the communication cuts off.'}
+103	103		104							{1: '0|-50|-50', 2: '1'}
+104	104		301							{3: 'She lifts her eyes, lacking even a hint of emotion in them.'}
+105	105		104						250.0	{1: '0|-25|-50', 2: '0.25'}
+106	106		104						250.0	{1: '0|-70|-50', 2: '0.25'}
+107	107		104							{1: '0|-50|-50', 2: '0.25'}
+108	108		401							{1: '2', 2: '4414'}
+109	109		301							"{3: ""In front of her, a young girl's eyes gradually lose their spark as her body rolls down from a small mound of rubble.""}"
+110	110		301							{3: 'Just like that, she naturally and silently blends into the ruins, becoming one among the many broken bodies.'}
+111	111		201							{1: '1', 2: '501194', 3: '8', 7: '1'}
+112	112		301							{1: '1', 3: 'New casualty log: Unit No. 11. Remaining combat units: 4, losses: 5.'}
+113	113		204							{1: '1'}
+114	114		301				AniZhuanchangBegin			{3: 'Ewig silently updates the numbers in her report.'}
+115	115		202							{1: '1', 6: '1'}
+116	116		502						400.0	{1: 'DialogDisable'}
+117	117		401							{1: '1', 2: '36'}
+118	118		102							{1: 'Begin Anew', 2: 'ER11', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+119	119		502						5000.0	{1: 'ThemeEnable'}
+120	120		101			AniZhuanchangEnd			5000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+121	121		401							{1: '1', 2: '202'}
+122	122		107							{1: 'Conference Room', 2: 'Babylonia'}
+123	123		301							{3: 'Conference room, Babylonia.'}
+124	124		108							{1: '1'}
+125	125		302							{2: '...An infiltration mission?', 3: '126'}
+126	126		201							{1: '1', 2: '500001', 3: '4'}
+127	127		301			DialogEnable				{1: '1', 2: 'Celica', 3: 'Yes, the mission location is in... City 141 along the Transatlantic coast.', 4: '1'}
+128	128		301							"{2: 'Celica', 3: 'There\'s a recently reclaimed conservation area in that region. The troops stationed there discovered a strange ""unit"" there.', 4: '1'}"
+129	129		301							"{2: 'Celica', 3: ""A group of girls wearing matching uniforms were fighting against the Corrupted. They possess exceptional individual combat skills and teamwork capabilities, but don't belong to any faction we know—"", 4: '1'}"
+130	130		301							{2: 'Celica', 3: 'We even cross-referenced them with major factions that disappeared at the end of the Golden Age, but still found nothing.', 4: '1'}
+131	131		301							{2: 'Celica', 3: 'So, we need you to... undertake a solo infiltration mission.', 4: '1'}
+132	132		401							{1: '2', 2: '4095'}
+133	133		301							{3: 'Celica pulls out the confidential mission documents from her desk and hands them over, looking somewhat confused herself.'}
+134	134		201							{1: '2', 2: '500026', 4: '400'}
+135	135		203							{1: '1', 2: '0.25', 3: '-400'}
+136	136		301							{1: '1', 2: 'Lee', 3: 'Disguise as a hired specialist transported by external vehicle... solo operation... infiltration... City 141...', 4: '2'}
+137	137		301							{2: 'Lee', 3: 'Why is this a solo infiltration mission? These missions are usually assigned to Constructs.', 4: '2'}
+138	138		301							"{2: 'Celica', 3: ""This is the result of Gestalt's calculations."", 4: '1'}"
+139	139		204							{1: '2', 2: '10'}
+140	140		301							{2: 'Lee', 3: '...', 4: '2'}
+141	141		301							"{2: 'Celica', 3: ""According to Gestalt's calculations, solo operation for 【kuroname】 has a 93.14% success rate, while the next best, the Purifying Force construct, the is only 15.11%."", 4: '1'}"
+142	142		302							{2: '...', 3: '143', 4: 'Are you sure there are no errors in the calculations?', 5: '145'}
+143	143		301							"{2: 'Celica', 3: ""Strange, isn't it? We've verified it repeatedly, even inputting different commandants' data into the Gestalt simulation, but only your data shows this anomaly."", 4: '1'}"
+144	144		302							{2: 'Are you sure there are no errors in the calculations?', 3: '145'}
+145	145		301							{2: 'Celica', 3: 'No. We tried questioning Gestalt, but it only displayed a classified mission file about an operation you previously conducted with the Control Court... Do you remember it?', 4: '1'}
+146	146		302							"{2: 'I guess so...', 3: '147', 4: ""I... don't seem to remember."", 5: '148'}"
+147	147	149	301							"{3: ""You have a vague impression that something like that did happen, but you can't recall what happened, no matter how hard you try.""}"
+148	148	149	301							"{3: ""All the negotiations and missions you've experienced have blurred together in your mind, making it impossible to distinguish which is which anymore.""}"
+149	149		301							"{2: 'Celica', 3: ""...The people from the Control Court are always so peculiar. They only report to President Hassen, and there are certain missions even I can't inquire about in detail."", 4: '1'}"
+150	150		301							"{2: 'Celica', 3: ""Anyway, that's the situation in a nutshell."", 4: '1'}"
+151	151		204							{1: '2'}
+152	152		301							"{2: 'Lee', 3: ""No way. A solo mission... That's far too dangerous."", 4: '2'}"
+153	153		204							{1: '1'}
+154	154		301							"{2: 'Celica', 3: ""Don't worry, we've made thorough preparations."", 4: '1'}"
+155	155		301							"{2: 'Celica', 3: ""The nearest conservation area is only about 100 kilometers from this city. At Construct's speed, reinforcements should arrive quickly."", 4: '1'}"
+156	156		301							{2: 'Celica', 3: 'Lee, stay out of counter-reconnaissance distance, but stay as close as possible to 【kuroname】 to provide immediate support if needed.', 4: '1'}
+157	157		301							"{2: 'Celica', 3: ""Once Liv and Lucia complete their current missions, we'll immediately dispatch them to standby positions around City 141."", 4: '1'}"
+158	158		301							"{2: 'Lee', 3: ""But it's still too far away..."", 4: '2'}"
+159	159		204							{1: '1', 2: '4'}
+160	160		301							"{2: 'Celica', 3: ""You're permitted to attempt to infiltrate City 141 yourselves if feasible, but safety and stealth must remain your top priorities."", 4: '1'}"
+161	161		301							"{2: 'Celica', 3: ""After all, we still have limited information about this organization. What we've discovered may only be the tip of the iceberg. The size of their forces, their purpose, their stance—everything remains unclear."", 4: '1'}"
+162	162		301							{2: 'Celica', 3: 'We need to gather sufficient intelligence about them before we can determine how to proceed.', 4: '1'}
+163	163		302							{2: 'I see.', 3: '164'}
+164	164		301							"{2: 'Celica', 3: ""Soldiers from the conservation area have observed transport vehicles entering City 141 at regular intervals. We'll help you infiltrate by disguising you as a specialist."", 4: '1'}"
+165	165		301							{2: 'Celica', 3: 'Your mission is to gather as much intelligence on them as possible, but your personal safety takes absolute priority over everything else.', 4: '1'}
+166	166		302				AniZhuanchangBegin			{2: 'Leave it to me.', 3: '167', 4: 'Okay.', 5: '167'}
+167	167		202							{1: '1', 2: '2', 6: '1'}
+168	168		401							{1: '1', 2: '36'}
+169	169		502						400.0	{1: 'DialogDisable'}
+170	170		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+171	171		401							{1: '1', 2: '5039'}
+172	172		401							{1: '2', 2: '743'}
+173	173		301			DialogEnable				"{3: ""As you leave the meeting room, the mission details are sent to both your terminal and Lee's.""}"
+174	174		201							{1: '1', 2: '500026', 3: '10'}
+175	175		301							"{1: '1', 2: 'Lee', 3: ""...It's still too dangerous."", 4: '1'}"
+176	176		301							{3: 'He scrolls through the mission details on his terminal with disapproval.'}
+177	177		302							"{2: 'It is quite dangerous.', 3: '178', 4: ""Doesn't seem that bad?"", 5: '178'}"
+178	178		202							{1: '1', 6: '1'}
+179	179		306							{1: '1'}
+180	180		301							{3: 'It has been a long time since you have carried out an infiltration mission like this. There is definitely some risk involved, but...'}
+181	181		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+182	182		504							{1: '0.7'}
+183	183		401							{1: '2', 2: '4386'}
+184	184		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+185	185		301							{3: 'What exactly did you do to assist the Control Court when they requested your help?'}
+186	186		301							"{3: ""Even with Celica's prompting and your best efforts to remember, all you can recall are a few brief words from someone.""}"
+187	187		306							
+188	188		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+189	189		504							{1: '0.7'}
+190	190		401							{1: '2', 2: '4386'}
+191	191		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+192	192		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+193	193		201							{1: '1', 2: '500697'}
+194	194		301							"{1: '1', 2: '???', 3: ""...they still assigned you to execute the mission. I'm just here to calibrate... the system."", 4: '1'}"
+195	195		301							{2: '???', 3: 'Whether or not to immerse is up to you.', 4: '1'}
+196	196		202							{1: '1', 6: '1'}
+197	197		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+198	198		401							{1: '2', 2: '4386'}
+199	199		504							{1: '0'}
+200	200		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+201	201		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+202	202		301							"{3: ""These hazy memories and Gestalt's unusual behavior suggest there's something strange about this operation.""}"
+203	203		201							{1: '1', 2: '500026', 3: '10'}
+204	204		301							"{1: '1', 2: 'Lee', 3: ""...Anyway, I'll modify your weapons and request some special equipment support for you."", 4: '1'}"
+205	205		204							{1: '1'}
+206	206		301							"{2: 'Lee', 3: ""Keep in contact with us at all times. If anything unexpected happens, make sure you have at least an hour of buffer time... Once I find an opportunity, I'll figure out a way to get in there myself."", 4: '1'}"
+207	207		302							"{2: 'Yes.', 3: '208', 4: ""Don't worry."", 5: '208'}"
+208	208		301							{2: 'Lee', 3: '...Hmm, the mission will be successful.', 4: '1'}
+209	209		301							"{3: ""It wasn't a wish, but a statement. The moment those words left his lips, he was prepared to make them an established fact.""}"
+210	210		301							{2: 'Lee', 3: 'Remember, stay in contact at all times.', 4: '1'}
+211	211		302				AniZhuanchangBegin			{2: 'Alright.', 3: '212'}
+212	212		202							{1: '1', 6: '1'}
+213	213		401							{1: '1', 2: '36'}
+214	214		502						400.0	{1: 'DialogDisable'}
+215	215		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory750.jpg'}
+216	216		401							{1: '1', 2: '209'}
+217	217		301			DialogEnable				{3: 'Babylonia acted swiftly. Before long, Task Force members who had arrived early at the conservation area successfully intercepted a transport vehicle and apprehended the specialists stationed there.'}
+218	218		201							{1: '1', 2: '500005'}
+219	219		301							{1: '1', 2: 'Task Force Member', 3: '...This is a special ID card from one of the employees. They use it to verify their identity. Keep it safe.', 4: '1'}
+220	220		302							{2: 'Okay.', 3: '221', 4: 'Thanks.', 5: '221'}
+221	221		202							{1: '1'}
+222	222		301				AniZhuanchangBegin			{3: 'The ID card is made of a special material. In the top left corner of the card is a prominent mark—'}
+223	223		502							{1: 'DialogDisable'}
+224	224		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+225	225		109							{1: '1', 2: '<size=60>LEIBOWITZ</size>', 7: '1', 8: '1'}
+226	226		109			AniZhuanchangEnd				{1: '2', 2: '<size=25>Leibowitz</size>', 4: '50', 7: '1', 8: '1'}
+227	227		301				AniZhuanchangBegin			{3: 'Leibowitz'}
+228	228		110							{1: '1', 2: '2'}
+229	229		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory750.jpg'}
+230	230		401							{1: '2', 2: '2983'}
+231	231		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2', 3: '11'}
+232	232		509							{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg', 2: '1'}
+233	233		201							{1: '11', 2: '500001', 3: '4', 4: '-500'}
+234	234		301			DialogEnable				{1: '1', 2: 'Celica', 3: '...Leibowitz?', 4: '11'}
+235	235		301							{3: 'She seems surprised, but quickly finds relevant information.'}
+236	236		301							{2: 'Celica', 3: 'Leibowitz... was a world-renowned AI manufacturing company during the Golden Age and was a crucial pillar of the Transatlantic Economic Community.', 4: '11'}
+237	237		301							"{2: 'Celica', 3: ""During the Golden Age, this company had frequent business and technological exchanges with Copperfield, the Community's leader, particularly regarding cyborg research."", 4: '11'}"
+238	238		301							{2: 'Celica', 3: 'Copperfield was renowned for researching and manufacturing bionic animals, while Leibowitz was famous for producing androids.', 4: '11'}
+239	239		302							{2: 'Leibowitz... that name sounds so familiar.', 3: '240', 4: '...William Leibowitz?', 5: '240'}
+240	240		204							{1: '11'}
+241	241		301							{2: 'Celica', 3: 'The founder of quantum computing process standards and pioneer of Gestalt physics foundations—William Leibowitz.', 4: '11'}
+242	242		301							{2: 'Celica', 3: 'He once worked at this company, or rather, the company originally belonged to the Leibowitz family.', 4: '11'}
+243	243		301							{2: 'Celica', 3: 'But at this time... why would they be active here?', 4: '11'}
+244	244		302							"{2: ""Let's go see for ourselves."", 3: '245', 4: ""I'll get to the bottom of this."", 5: '245'}"
+245	245		301							{2: 'Celica', 3: 'Good work.', 4: '11'}
+246	246		401							{1: '2', 2: '2683'}
+247	247		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+248	248		202							{1: '11'}
+249	249		510							{1: '1'}
+250	250		301		1		AniZhuanchangBegin			{3: 'Beyond the rudimentary protective wall of the conservation area, the silhouette of City 141 is faintly visible in the distance.'}

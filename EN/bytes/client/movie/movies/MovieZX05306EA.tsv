@@ -1,0 +1,262 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory759.jpg'}
+2	2		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab', 2: '2', 5: '1'}
+3	3		511							{1: '1', 2: '0', 3: '0|174|-200'}
+4	4		401			AniZhuanchangEnd				{1: '1', 2: '201'}
+5	5		107						2500.0	{1: 'Babylonia Logistics Warehouse', 2: 'Conservation Area', 4: '15:30', 5: 'Line Spacing: 0'}
+6	6		108							{1: '1'}
+7	7		301			DialogEnable				{3: 'An EMP-like attack momentarily paralyzes Ayla, while a thick fog obscures your vision.'}
+8	8		201							{1: '1', 2: '500110', 3: '4'}
+9	9		301							"{1: '1', 2: 'Ayla', 3: ""The signal is weakening—it's trying to escape!"", 4: '1'}"
+10	10		302							{2: 'My turn.', 3: '11'}
+11	11		202							{1: '1', 6: '1'}
+12	12		401							{1: '2', 2: '9342045'}
+13	13		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+14	14		104							{1: '0|0|-100', 2: '0.25'}
+15	15		301							"{3: ""You pull out tracking and mechanical interference devices from your bag, dashing through the fog toward the enemy's last known location.""}"
+16	16		201							{1: '18', 2: '500110', 3: '4'}
+17	17		301							{1: '1', 2: 'Ayla', 3: 'Commandant, watch out!', 4: '18'}
+18	18		202				DialogDisable			{1: '18', 6: '1'}
+19	19		401							{1: '1', 2: '36'}
+20	20		401							{1: '2', 2: '2687'}
+21	21		401							{1: '2', 2: '4869'}
+22	22		111						1000.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+23	23		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+24	24		301			DialogEnable				"{3: ""Ayla's warning cuts off. Her voice suddenly vanishes, leaving only silence.""}"
+25	25		301				DialogDisable			{3: 'Your defensive countermoves fail to reach the enemy and your punches land on nothing but air.'}
+26	26		302							{2: '...', 3: '27'}
+27	27		401							{1: '2', 2: '4779'}
+28	28		104						300.0	{1: '0|0|0', 2: '0.25'}
+29	29		402							{1: '4779'}
+30	30		301			DialogEnable				{3: 'You jump back, repositioning the tracking device and raising your gun.'}
+31	31		301							"{3: ""Yet your movements achieve nothing. Besides the slowly drifting thick fog, there's nothing in the environment.""}"
+32	32		301				DialogDisable			{3: 'You pause for several seconds and move forward again. In that instant, the fog and air seem to freeze.'}
+33	33		401							{1: '2', 2: '4921'}
+34	34		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen03.prefab', 2: '2'}
+35	35		107							{1: 'Babylonia Logistics Warehouse', 2: 'Conservation Area', 4: '15:30', 5: 'Line Spacing: 0'}
+36	36		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+37	37		111						1200.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+38	38		107							{1: '?', 2: '?', 4: '?', 5: 'Line Spacing: 2'}
+39	39		501						350.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+40	40		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+41	41		505						1200.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+42	42		111						550.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+43	43		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+44	44		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+45	45		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen03.prefab'}
+46	46		108							{1: '1'}
+47	47		302							{2: 'Ayla?', 3: '48'}
+48	48		205							{1: '999'}
+49	49		301			DialogEnable				{3: 'You call out with caution, but receive no reply.'}
+50	50		302							{2: '...Teddy?', 3: '51'}
+51	51		401							{1: '2', 2: '2924'}
+52	52		301							{2: 'Earpiece', 3: 'Bzzzz—'}
+53	53		302				AniZhuanchangBegin			{2: '...', 3: '54'}
+54	54		402						2000.0	{1: '4869'}
+55	55		401							{1: '1', 2: '6155'}
+56	56		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab', 5: '1'}
+57	57		502							{1: 'DialogDisable'}
+58	58		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg'}
+59	59		107			AniZhuanchangEnd				{1: 'Suburban Villa', 2: 'Fast City', 4: '15:30', 5: 'Line Spacing: 2'}
+60	60		301							{3: 'Fast City\\nSuburban Villa\\n15:30\\nLine Spacing: 2'}
+61	61		108							{1: '1'}
+62	62		401							{1: '2', 2: '18511049'}
+63	63		502							{1: 'RImgBg1Shake'}
+64	64		301			DialogEnable				{3: 'A thunderous roar erupts, a giant collapses, and trees fall.'}
+65	65		301							"{3: ""Enora Lueya's vanguard, a walker that perfectly copies her armor, has fallen—yet there's not a trace of joy on Iris's face.""}"
+66	66		201							{1: '1', 2: '501164', 3: '1'}
+67	67		301							"{1: '1', 2: 'Enora Lueya', 3: ""How do you like my gift? You didn't actually think your plans were flawless and I didn't notice, did you?"", 4: '1'}"
+68	68		202							{1: '1', 6: '1'}
+69	69		201							{1: '1', 2: '501184', 3: '4'}
+70	70		301							{1: '1', 2: 'Iris', 3: 'When... did you figure it out?', 4: '1'}
+71	71		202							{1: '1', 6: '1'}
+72	72		201							{1: '1', 2: '501164'}
+73	73		301							{1: '1', 2: 'Enora Lueya', 3: 'Which one are you referring to?', 4: '1'}
+74	74		301							{2: 'Enora Lueya', 3: 'How you tried to stop me from correcting your history by copying segments of time into slices, trapping both yourself and me inside?', 4: '1'}
+75	75		204							{1: '1', 2: '1'}
+76	76		301							"{2: 'Enora Lueya', 3: ""Quite impressive that you came up with this ingenious plan, but it's terribly complicated, isn't it? To maintain these time slices, you'd need to ensure all events within this period remain in stable loops."", 4: '1'}"
+77	77		301							{2: 'Enora Lueya', 3: 'Once a loop is broken, the slice extends into additional futures, which then reconnects with the normal time trunk. Am I right?', 4: '1'}
+78	78		202							{1: '1'}
+79	79		301				DialogDisable			{3: 'Iris is relieved at the words coming from the device. She must have only just discovered the issue and caused trouble. This is why Iris received another warning letter.'}
+80	80		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+81	81		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory968.png'}
+82	82		504							{1: '0.7'}
+83	83		304							{1: '<size=35><color=#0066CC>—The Multilateral Trade Agreement happening at Mirror Sea Twin Towers has been postponed due to an </color><color=#ff4e4eff>unknown attack</color><color=#0066CC>. </color><color=#ff4e4eff>Witnesses reported a metal giant, which some experts claim to be a secret military weapon.</color></size>', 2: 'ffffffff', 3: '1.5', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '1'}
+84	84		304							{1: '<size=35><color=#0066CC>—The Mantaine coastline peace operation of the Tuka Independent Guard has encountered significant resistance.</color> <color=#ff4e4eff>Unknown attackers are throwing the situation into chaos.</color></size>', 2: 'ffffffff', 3: '1.5', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '1'}
+85	85		304							"{1: '<size=35><color=#0066CC>—The 709th Mechanized Brigade of the United Government has entered the Roro Rainforest in accordance with the joint security regulations in the ""The New Earth Codex"" - Roro and United Government Section.</color></size>', 2: 'ffffffff', 3: '1.5', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '1'}"
+86	86		304							{1: '<size=35><color=#ff4e4eff>During the deployment, they were attacked by an unidentified armed organization and suffered heavy casualties. No one has claimed responsibility for the incident.</color></size>', 2: 'ffffffff', 3: '1.5', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '1', 9: '1'}
+87	87		504							{1: '0'}
+88	88		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+89	89		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg'}
+90	90		301			DialogEnable				"{3: ""At least the real plan hasn't...""}"
+91	91		301							{3: 'Iris thinks to herself, but the sarcastic words she hears next freeze her blood.'}
+92	92		201							{1: '1', 2: '501164', 3: '1'}
+93	93		301							"{1: '1', 2: 'Enora Lueya', 3: ""I've known from the very beginning, since you dragged me into this prison at Abess, but I still don't know where you got your time-slicing technology."", 4: '1'}"
+94	94		301							{2: 'Enora Lueya', 3: 'All our fights within these time slices are no different from those in the normal timeline, so my conclusion stands.', 4: '1'}
+95	95		202							{1: '1', 6: '1'}
+96	96		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+97	97		504							{1: '0.7'}
+98	98		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory10.jpg'}
+99	99		201							{1: '1', 2: '501184', 3: '5', 7: '1'}
+100	100		201							{1: '18', 2: '501164', 4: '-50', 5: '-200', 7: '1'}
+101	101		301							"{1: '1', 2: 'Enora Lueya', 3: ""Give up. I don't want to hurt you. This tug-of-war is pointless except a waste of our time."", 4: '18'}"
+102	102		301							"{2: 'Enora Lueya', 3: ""The play that's meant to be performed will eventually be staged. The past cannot be changed."", 4: '18'}"
+103	103		301							{2: 'Enora Lueya', 3: 'I can make countless tries, but you only need to fail once for everything to end up like this research institute.', 4: '18'}
+104	104		202							{1: '1', 2: '18', 6: '1'}
+105	105		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+106	106		504							{1: '0'}
+107	107		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg'}
+108	108		201							{1: '1', 2: '501164'}
+109	109		301							{1: '1', 2: 'Enora Lueya', 3: 'The Hetero Tower will still descend upon this world.', 4: '1'}
+110	110		202							{1: '1', 6: '1'}
+111	111		201							{1: '1', 2: '501184', 3: '4'}
+112	112		301							"{1: '1', 2: 'Iris', 3: ""...I don't know what this Hetero Tower is, but I won't allow you to act like this."", 4: '1'}"
+113	113		202							{1: '1', 6: '1'}
+114	114		201							{1: '1', 2: '501164'}
+115	115		301							"{1: '1', 2: 'Enora Lueya', 3: ""There'll be a day when you won't be able to stop me. Sooner or later, I will break free from this cage."", 4: '1'}"
+116	116		301							"{3: ""Enora Lueya's tone changes again.""}"
+117	117		204							{1: '1', 2: '1'}
+118	118		301							{2: 'Enora Lueya', 3: 'I respect you, Iris, not just because of how similar we are, but because of your resolution.', 4: '1'}
+119	119		301							{2: 'Enora Lueya', 3: 'Detaching yourself from the normal timeline is the same as being forgotten by the world... Are you doing this just to keep me trapped in this loop for a while?', 4: '1'}
+120	120		202							{1: '1', 6: '1'}
+121	121		201							{1: '1', 2: '501184', 3: '4'}
+122	122		301							"{1: '1', 2: 'Iris', 3: ""...I appreciate your consideration, but I don't think so far into the future. I just want to stop you from destroying our last hope."", 4: '1'}"
+123	123		202							{1: '1', 6: '1'}
+124	124		201							{1: '1', 2: '501164', 3: '3'}
+125	125		301							"{1: '1', 2: 'Enora Lueya', 3: ""Hahaha, I don't believe it, Iris... No, Selena—that's what the person you were always with called you, wasn't it?"", 4: '1'}"
+126	126		204							{1: '1', 2: '1'}
+127	127		301							"{2: 'Enora Lueya', 3: ""It's a pity. A name is a blessing from the past to the future, yet the person you cherish has forgotten it. But don't worry, I'll find them and tell them everything about you."", 4: '1'}"
+128	128		202							{1: '1', 6: '1'}
+129	129		201							{1: '1', 2: '501184', 3: '4'}
+130	130		301							"{1: '1', 2: 'Iris', 3: ""I don't know what you're talking about..."", 4: '1'}"
+131	131		301							{3: 'Iris responds in a confused tone, yet her hands instinctively tighten around her weapon.'}
+132	132		202							{1: '1', 6: '1'}
+133	133		201							{1: '1', 2: '501164', 3: '1'}
+134	134		301							"{1: '1', 2: 'Enora Lueya', 3: ""I never thought you'd resort to self-deception. Let me lay it out."", 4: '1'}"
+135	135		301							"{2: 'Enora Lueya', 3: ""You're pushing this time slice away from the normal timeline. You plan to sink this ship with us on it and leave it eternally at the bottom of the sea."", 4: '1'}"
+136	136		301				DialogDisable			"{2: 'Enora Lueya', 3: ""But I've already found the exit, Iris. You've carefully covered your tracks, but, luckily, you have a shadow that's been submerged in countless timelines for too long—and I've caught it."", 4: '1'}"
+137	137		204							{1: '1', 2: '2'}
+138	138		502							{1: 'PanelActor1Shake'}
+139	139		401						800.0	{1: '2', 2: '2913'}
+140	140		402							{1: '2913'}
+141	141		301			DialogEnable				"{1: '1', 3: ""In the next moment, all emotion fades from Enora Lueya's voice, as if her soul has been extracted.""}"
+142	142		301							{2: 'Enora Lueya', 3: 'Reestablishing connection with Frame No. 017, locating coordinates.', 4: '1'}
+143	143		301							{2: 'Enora Lueya', 3: 'Location: Conservation Area—Babylonia Logistics Warehouse.', 4: '1'}
+144	144		202							{1: '1', 6: '1'}
+145	145		401							{1: '2', 2: '4921'}
+146	146		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab', 2: '2'}
+147	147		201							{1: '1', 2: '501184', 3: '4'}
+148	148		301							{1: '1', 3: 'Piercing white noise erupts as thick fog begins to surge, gradually blinding Iris.'}
+149	149		202							{1: '1', 6: '1'}
+150	150		306							{1: '1'}
+151	151		401							{1: '2', 2: '4278'}
+152	152		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+153	153		504							{1: '0.7'}
+154	154		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+155	155		201							{1: '1', 2: '501164', 7: '1'}
+156	156		301							{1: '1', 3: 'She recognizes this fog—Enora Lueya always uses this trick whenever she does something related to time.', 4: '1'}
+157	157		202							{1: '1', 6: '1'}
+158	158		401							{1: '2', 2: '4278'}
+159	159		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+160	160		504							{1: '0'}
+161	161		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg'}
+162	162		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0'}
+163	163		201							{1: '1', 2: '501184', 3: '4', 7: '1'}
+164	164		301							{1: '1', 3: 'She must stop her. She cannot... She absolutely cannot let that world, cannot let the conductor...'}
+165	165		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '0', 5: '0.4'}
+166	166		306							
+167	167		401							{1: '2', 2: '1543'}
+168	168		203						200.0	{1: '1', 2: '0.25', 5: '-25'}
+169	169		203							{1: '1', 2: '0.2', 5: '-10'}
+170	170		204							{1: '1', 2: '13'}
+171	171		301							{3: 'Iris raises her weapon again, ready to lunge forward, when a sound from inside the fog makes her freeze.'}
+172	172		202							{1: '1', 6: '1'}
+173	173		401							{1: '2', 2: '2924'}
+174	174		201							{1: '1', 2: '501164', 3: '2', 7: '1'}
+175	175		301			PanelActor1Shake				{1: '1', 2: 'Enora Lueya', 3: 'Establishing... Bzz... Bzz...', 4: '1'}
+176	176		202							{1: '1'}
+177	177		301							"{3: ""The smooth broadcast suddenly cuts off as static disrupts the orderly performance. When her voice returns, it's filled with emotion—anxiety, confusion, but above all, shock.""}"
+178	178		201							{1: '1', 2: '501164'}
+179	179		301							"{1: '1', 2: 'Enora Lueya', 3: ""How... is... this... possible...? Who's... there...?"", 4: '1'}"
+180	180		202							{1: '1', 6: '1'}
+181	181		401							{1: '2', 2: '4506'}
+182	182		402							{1: '6155'}
+183	183		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab'}
+184	184		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+185	185		301							{3: 'SHING—'}
+186	186		301				DialogDisable			"{3: ""Enora Lueya's voice vanishes in an instant, the white noise falls silent, and the swirling mist freezes in place.""}"
+187	187		401							{1: '2', 2: '4297'}
+188	188		502							{1: 'AniZhuanchangEnd'}
+189	189		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+190	190		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '4'}
+191	191		201							{1: '1', 2: '500678', 5: '-130', 6: '-100', 7: '1'}
+192	192		205							{1: '1', 3: '1', 4: '0.3', 5: '0'}
+193	193		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteGlow.prefab', 2: '2'}
+194	194		301			DialogEnable	DialogDisable			{1: '1', 3: 'Time begins to flow once more as the mist rolls, gradually forming the outline of a human figure.'}
+195	195		101							{4: '4', 5: '1'}
+196	196		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteGlow.prefab'}
+197	197		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+198	198		205							{1: '1', 3: '0', 4: '1', 5: '0'}
+199	199		202							{1: '1', 6: '1'}
+200	200		201							{1: '1', 2: '501184', 3: '13', 7: '1'}
+201	201		306							{1: '1'}
+202	202		401							{1: '2', 2: '4385'}
+203	203		401							{1: '2', 2: '2625'}
+204	204		502							{1: 'AniZhuanchangEnd'}
+205	205		301			DialogEnable	DialogDisable			{1: '1', 3: 'Iris freezes. She can only make out a blurry silhouette, yet it stirs up powerful emotions within her.'}
+206	206		104						1000.0	{1: '0|0|-80', 2: '6'}
+207	207		301			DialogEnable			2000.0	{3: 'An absurd thought flashes through her mind as an indescribable feeling surges up from her chest.'}
+208	208		301						2000.0	{3: 'Hotter than friction, more powerful than lonely, sleepless yearning—her emotions overwhelm reason the instant she realizes who this visitor is.'}
+209	209		301				AniZhuanchangBegin		2000.0	"{3: ""Her body moves before her mind can catch up. The name she's longed for day and night is about to bloom on her lips.""}"
+210	210		306							
+211	211		402							{1: '2625'}
+212	212		401						2000.0	{1: '1', 2: '36'}
+213	213		401							{1: '1', 2: '6153'}
+214	214		202							{1: '1', 6: '1'}
+215	215		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_09.jpg'}
+216	216		104							{1: '279|-88|-220', 2: '0'}
+217	217		301			AniZhuanchangEnd	DialogDisable			{2: 'Iris', 3: 'Conduc—'}
+218	218		302							{2: 'Stay back.', 3: '219'}
+219	219		401							{1: '2', 2: '4779'}
+220	220		104						2500.0	{1: '0|0|60', 2: '5'}
+221	221		301			DialogEnable				{3: 'She is met with a cold, indifferent command.'}
+222	222		301							{3: 'The thick mist dissipates, revealing a figure hidden within. Your adrenaline spikes.'}
+223	223		302							{2: 'Are you working with that thing?', 3: '224'}
+224	224		301							{3: 'The figure comes into focus. An unfamiliar woman. A Construct, apparently, indicated by her physical appearance.'}
+225	225		302							{2: '...', 3: '226'}
+226	226		301							"{3: ""Your brows uncontrollably furrow. You know very well that the weapon in hand won't pose any threat to her...""}"
+227	227		301							{3: 'Yet before you could formulate an approach, the figure before you bites her lips and releases her shaky grip, and her weapon—the only item that could serve as a threat—vanishes into thin air.'}
+228	228		301							"{3: ""Her hopeful gaze meets icy eyes, and her heart shatters. The fragments cut deep into her. The pain has no shape, but is so real it takes away Iris's breath.""}"
+229	229		301							{3: 'She nearly loses her voice.'}
+230	230		301							{3: 'Seeing this, you lower your gun slightly but still hold it in your hand.'}
+231	231		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+232	232		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+233	233		301				AniZhuanchangBegin			{3: 'Conductor... has forgotten who she is.'}
+234	234		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_33.jpg'}
+235	235		301			AniZhuanchangEnd				{3: 'Jumbled sensations crash through her mind and body. The conductor stands right before her, yet feels as distant as the horizon.'}
+236	236		301				DialogDisable			{3: 'She digs her nails deep into her palm. Pain travels into her M.I.N.D. as old wounds throb in unison. With great effort, Iris forces herself to remain calm.'}
+237	237		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5301_32.jpg', 3: '0', 4: '1', 5: '1.5'}
+238	238		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_32.jpg'}
+239	239		205							{1: '999'}
+240	240		301			DialogEnable				{2: 'Iris', 3: 'You...'}
+241	241		301							{2: 'Iris', 3: 'Hello.'}
+242	242		301				DialogDisable			{2: 'Iris', 3: 'Nice to... nice to meet you.'}
+243	243		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5301_31.jpg', 3: '0', 4: '1', 5: '1.5'}
+244	244		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_31.jpg'}
+245	245		205							{1: '999'}
+246	246		301			DialogEnable				{3: 'She tries her best to force a rather ugly smile. There are undercurrents hidden in her soft tone.'}
+247	247		301							{2: 'Iris', 3: 'My name is Iris.'}
+248	248		301							{3: 'Iris finally figures out everything happening before her.'}
+249	249		401							{1: '2', 2: '558'}
+250	250		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+251	251		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory10.jpg'}
+252	252		504							{1: '0.7'}
+253	253		201							{1: '1', 2: '501164', 7: '1'}
+254	254		301							{1: '1', 3: 'Enora Lueya has once again extended her reach into the normal timeline, trying to leave coordinates to escape this prison.'}
+255	255		202							{1: '1', 6: '1'}
+256	256		401							{1: '2', 2: '558'}
+257	257		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+258	258		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_09.jpg'}
+259	259		504							{1: '0'}
+260	260		301							{3: 'But the conductor accidentally interrupted this process and got dragged into it.'}
+261	261		301		1		AniZhuanchangBegin			"{3: ""Fortunately, the conductor's reaction is expected. She can still salvage the situation.""}"

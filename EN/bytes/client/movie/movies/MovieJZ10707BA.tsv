@@ -1,0 +1,12 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory53.jpg'}
+2	2		401							{1: '1', 2: '211'}
+3	3		301			DialogEnable				{2: 'Old Researcher', 3: 'Failure. Failure again...'}
+4	4		201							{1: '1', 2: '500059'}
+5	5		301							"{1: '1', 2: 'Researcher', 3: ""Professor, you haven't rested in quite a while."", 4: '1'}"
+6	6		301							"{2: 'Old Researcher', 3: ""I can't, not now. Every time we fail, we lose another life...""}"
+7	7		301							{2: 'Researcher', 3: 'But they are all necessary sacrifices for research.', 4: '1'}
+8	8		301							{2: 'Old Researcher', 3: 'We need to improve this technology ASAP. Not just for these kids, but for all of humanity...'}
+9	9		202							{1: '1', 6: '1'}
+10	10		301							"{2: 'Old Researcher', 3: ""Let's resume.""}"
+11	11		301		1		AniZhuanchangBegin			{2: 'Old Researcher', 3: 'Clean the operation table and prepare experiment 3145.'}

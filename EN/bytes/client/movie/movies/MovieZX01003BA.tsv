@@ -1,0 +1,60 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory145.jpg'}
+2	2		401				RImgBg1Shake			{1: '1', 2: '111'}
+3	3		301			DialogEnable	AniZhuanchangBegin			{2: 'Rail Heterozygote', 3: '——'}
+4	4		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory129.png'}
+5	5		201							{1: '1', 2: '500124', 3: '1'}
+6	6		301			AniZhuanchangEnd				{1: '1', 2: '???', 3: 'Tsk, it really is here. Sophia, report to the boss immediately!', 4: '1'}
+7	7		203							{1: '1', 2: '0.25', 3: '400'}
+8	8		204							{1: '1'}
+9	9		201							{1: '2', 2: '500127', 4: '-400'}
+10	10		301							{1: '1', 2: 'Sophia', 3: 'The Commoner Carriage that it was attached to...', 4: '2'}
+11	11		301							"{2: '???', 3: ""All dead, probably... Ashlar's work, I reckon. We could've used an empty cart."", 4: '1'}"
+12	12		204							{1: '2', 2: '5'}
+13	13		301							{2: 'Sophia', 3: 'If only I was faster...', 4: '2'}
+14	14		204							{1: '2'}
+15	15		204							{1: '1', 2: '5'}
+16	16		301							{2: '???', 3: 'Stop putting blames on yourself...', 4: '1'}
+17	17		202							{1: '1', 6: '1'}
+18	18		203							{1: '2', 2: '0.25', 3: '0'}
+19	19		204							{1: '2', 2: '10'}
+20	20		301							{2: 'Sophia', 3: 'Movement.', 4: '2'}
+21	21		202							{1: '2', 6: '1'}
+22	22		201							{1: '1', 2: '1031001', 3: '7'}
+23	23		301							{1: '1', 2: 'Liv', 3: 'Hold on, there were people on that carriage?!', 4: '1'}
+24	24		202							{1: '1', 6: '1'}
+25	25		201							{1: '2', 2: '500127'}
+26	26		301							{1: '1', 2: 'Sophia', 3: 'Who are you?', 4: '2'}
+27	27		302							"{2: ""We're from Babylonia."", 3: '28', 4: ""We're Gray Raven."", 5: '31'}"
+28	28		202							{1: '2', 6: '1'}
+29	29		201							{1: '1', 2: '500124', 3: '20'}
+30	30	37	301							{1: '1', 2: '???', 3: 'Babylonia. Just as the boss predicted.', 4: '1'}
+31	31		301							{2: 'Sophia', 3: 'Gray Raven?', 4: '2'}
+32	32		203							{1: '2', 2: '0.25', 3: '-400'}
+33	33		201							{1: '1', 2: '500124', 3: '20', 4: '400'}
+34	34		301							"{1: '1', 2: '???', 3: 'Only the Babylonians make such weird names. They seem to be the ""dealers"" mentioned.', 4: '1'}"
+35	35		202							{1: '2', 6: '1'}
+36	36		203							{1: '1', 2: '0.25', 3: '0'}
+37	37		204							{1: '1', 2: '1'}
+38	38		301							{2: 'Changyu', 3: 'Then let us introduce ourselves. My name is Changyu.', 4: '1'}
+39	39		202							{1: '1', 6: '1'}
+40	40		201							{1: '2', 2: '500127'}
+41	41		301							{1: '1', 2: 'Sophia', 3: 'Sophia.', 4: '2'}
+42	42		301							"{2: 'Sophia', 3: ""We're both working for the Akdilek Commercial Alliance."", 4: '2'}"
+43	43		202							{1: '2', 6: '1'}
+44	44		301							{3: 'Above the speeding train, two figures of similar height stand steadily amidst the roaring wind.'}
+45	45		301							{3: 'You can still notice a hint of childlikeness on their faces, but their expressions reveal a deadly gravitas.'}
+46	46		301							{3: 'Whether it is the massive robotic arm on her back, drastically contrasting her minuscule frame—'}
+47	47		301							{3: '—Or the severed Corrupted limb that the other boy is carrying in his hand, you can tell that these two are more than meet the eyes.'}
+48	48		201							{1: '2', 2: '1021001'}
+49	49		301							"{1: '1', 2: 'Lucia', 3: ""Commandant, they're both Constructs."", 4: '2'}"
+50	50		202							{1: '2', 6: '1'}
+51	51		201							{1: '1', 2: '500124', 3: '1'}
+52	52		301				AniZhuanchangBegin			{1: '1', 2: 'Changyu', 3: 'Surprised? The Construct technology is not a Babylonia exclusive.', 4: '1'}
+53	53		202							{1: '1', 6: '1'}
+54	54		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory145.jpg'}
+55	1006		502							{1: 'RImgBg1Shake'}
+56	1004		301			AniZhuanchangEnd	AniZhuanchangBegin			{2: 'Rail Heterozygote', 3: '—!'}
+57	55		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory129.png'}
+58	56		201							{1: '1', 2: '500124', 3: '20'}
+59	57		301		1	AniZhuanchangEnd	AniZhuanchangBegin			"{1: '1', 2: 'Changyu', 3: ""Almost forgot about this fella. It's looking pissed!"", 4: '1'}"

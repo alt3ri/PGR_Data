@@ -1,0 +1,23 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory11.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '2', 2: '1021001', 3: '4'}
+4	4		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'We have breached the Corrupted frontlines. The Nozzle model is in sight!', 4: '2'}
+5	5		202							{1: '2', 6: '1'}
+6	6		201							{1: '1', 2: '1031001', 4: '-400'}
+7	7		201							{1: '3', 2: '1011001', 4: '400'}
+8	8		301							"{1: '1', 2: 'Liv', 3: ""Its coordinates show that it's been here for some time now... Is it painting again?"", 4: '1'}"
+9	9		301							"{2: 'Lee', 3: ""There are quite a few Corrupted protecting it. They're probably its followers—We'd better brace for combat."", 4: '3'}"
+10	10		204							{1: '3', 2: '10'}
+11	11		301							"{2: 'Lee', 3: ""These graffiti surprisingly captivated a lot of these Corrupted, but it still doesn't change the fact that they look horrid."", 4: '3'}"
+12	12		204							{1: '3'}
+13	13		204							{1: '1', 2: '7'}
+14	14		301							{2: 'Liv', 3: '(Lee holds grudges in strange places...)', 4: '1'}
+15	15		202							{1: '1', 2: '3', 6: '1'}
+16	16		201							{1: '2', 2: '1021001', 3: '4'}
+17	17		301							{1: '1', 2: 'Lucia', 3: 'Nothing left but to get ready for a full-frontal assault now.', 4: '2'}
+18	18		301							"{2: 'Lucia', 3: ""We'll adopt a close formation. Commandant, please follow closely."", 4: '2'}"
+19	19		302							{2: '(Nod)', 3: '20', 4: '(Load gun)', 5: '21'}
+20	20		301	22						{2: 'Lucia', 3: '(Nods)', 4: '2'}
+21	21		301							{3: 'Lucia breaths deeply.', 4: '2'}
+22	22		301		1		AniZhuanchangBegin			"{2: 'Lucia', 3: ""Let's move out."", 4: '2'}"

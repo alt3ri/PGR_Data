@@ -1,0 +1,25 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory147.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				{3: 'F.O.S. Military Command College, 19:00'}
+4	4		301							{3: 'The old man is carefully reading through the application displayed on his terminal. Seated across the desk, Freeman nervously intertwines his fingers.'}
+5	5		201							{1: '1', 2: '500299'}
+6	6		301							"{1: '1', 2: 'Instructor', 3: ""I've finished reading your application."", 4: '1'}"
+7	7		301							"{3: ""Finally, the old man sets down the terminal and begins to speak, but rather than calming Freeman's nerves, his words only serve to further tighten Freeman's body.""}"
+8	8		301							{2: 'Instructor', 3: 'I can tell how determined you are from your application, but I still want to confirm with you one last time as your instructor.', 4: '1'}
+9	9		301							{2: 'Instructor', 3: 'Are you sure you want to become a Construct?', 4: '1'}
+10	10		201							{1: '1', 2: '500138'}
+11	11		301							{1: '1', 2: 'Freeman', 3: 'Yes, I am.', 4: '1'}
+12	12		301							"{3: ""Having mentally prepared himself before the meeting, Freeman's words flow effortlessly from his mouth, devoid of any hesitation.""}"
+13	13		301							"{2: 'Freeman', 3: ""I'm fully aware of my limitations. When it comes to the stability of the Mind Beacon, I don't meet the standard to become a commandant. In terms of strategic and tactical theory, I fall short of the threshold for the General Staff."", 4: '1'}"
+14	14		301							"{2: 'Freeman', 3: ""After my parents died in the war, my sister developed hemophobia, making it impossible for her to study at F.O.S. with the same financial support that I've received."", 4: '1'}"
+15	15		301							"{2: 'Freeman', 3: ""My parents' pension is not enough to cover my sister's education, so I have to become a commandant... or a Construct."", 4: '1'}"
+16	16		301							"{2: 'Freeman', 3: ""Now that I don't seem to have the talent to become a commandant, my only option is to choose the latter."", 4: '1'}"
+17	17		301							"{2: 'Freeman', 3: ""Instructor, it's not that I want to become a Construct. It's that I have no other choice but to become one."", 4: '1'}"
+18	24		202							{1: '1', 6: '1'}
+19	18		301							{3: 'The old man maintains a stoic silence, aware that he cannot show any bias, despite Freeman being his student.'}
+20	19		301							{3: 'Moreover, this rule was originally made by their generation.'}
+21	20		201							{1: '1', 2: '500299'}
+22	21		301							"{1: '1', 2: 'Instructor', 3: ""I'll send your application to the military."", 4: '1'}"
+23	22		301							{2: 'Instructor', 3: 'But before that, I still want you to complete the graduation test.', 4: '1'}
+24	23		301		1		AniZhuanchangBegin			"{2: 'Instructor', 3: ""Even if you can't become a commandant, the knowledge you're acquiring now will undoubtedly prove valuable on the battlefield in the future."", 4: '1'}"

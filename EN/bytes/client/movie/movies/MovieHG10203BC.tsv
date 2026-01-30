@@ -1,0 +1,47 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{2: 'System', 3: 'Warning, high concentration of Punishing Virus detected—'}
+4	4		301							{2: 'System', 3: 'Gray Raven Base, initiating Level 2 alert.'}
+5	5		201							{1: '1', 2: '1021001'}
+6	6		301							{1: '1', 2: 'Lucia', 3: 'Commandant, there are Corrupted outside our base...', 4: '1'}
+7	7		301							{2: 'Lucia', 3: 'I got to go for a while...', 4: '1'}
+8	8		202							{1: '1', 6: '1'}
+9	9		301							{3: 'Lucia has a hesitant look on her face before leaving the room.'}
+10	10		302							"{1: '1000', 2: 'What is it?', 3: '13', 4: ""I'll stay here, don't worry."", 5: '15'}"
+11	11		201							{1: '1', 2: '1021001'}
+12	12		303							{1: '1000'}
+13	13		301							{1: '1', 2: 'Lucia', 3: 'About your relationship with...', 4: '1'}
+14	14	17	301							{2: 'Lucia', 3: 'Nothing...', 4: '1'}
+15	15		301							"{1: '1', 2: 'Lucia', 3: ""Oh, I didn't mean it like that, Commandant."", 4: '1'}"
+16	16		301							"{2: 'Lucia', 3: ""It's only your relationship with… Never mind, nothing."", 4: '1'}"
+17	17		301							"{2: 'Lucia', 3: ""I'm... leaving."", 4: '1'}"
+18	18		202							{1: '1', 6: '1'}
+19	19		301							{3: 'When Lucia left the isolation room, as expected...'}
+20	20		301							{3: 'Forced connection succeeded—'}
+21	21		201							{1: '1', 2: '500100'}
+22	22		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+23	23		301							{1: '1', 2: 'α', 3: '...', 4: '1'}
+24	24		202							{1: '1', 6: '1'}
+25	25		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+26	26		301							{3: 'She seems to have a habit of greeting in silence.'}
+27	27		302							"{2: ""You shouldn't be part of this attack, no?"", 3: '28'}"
+28	28		201							{1: '1', 2: '500100'}
+29	29		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+30	30		301							"{1: '1', 2: 'α', 3: ""Indeed, I'd never do something so petty."", 4: '1'}"
+31	31		301							{2: 'α', 3: '...How did you know, though.', 4: '1'}
+32	32		302							{2: 'The sounds of engines.', 3: '33'}
+33	33		301							{2: 'α', 3: 'Heh, good ear.', 4: '1'}
+34	34		301							{3: 'Alpha deliberately revs up her engine louder.'}
+35	35		302							{2: 'What are you planning to do?'}
+36	36		301							{2: 'α', 3: 'Hunting.', 4: '1'}
+37	37		301							{2: 'α', 3: '...You curious?', 4: '1'}
+38	38		302							{2: 'Not at all.', 3: '39', 4: 'Just a bit.', 5: '40'}
+39	39	42	301							{2: 'α', 3: 'Right, so—', 4: '1'}
+40	40		301							"{2: 'α', 3: ""So let me give you some hints—it's a creature."", 4: '1'}"
+41	41		301							{2: 'α', 3: 'But for more, though...', 4: '1'}
+42	42		202							{1: '1', 6: '1'}
+43	43		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+44	44		301							{3: 'Alpha disconnects.'}
+45	45		301							{3: 'It seems that the connection is merely about some minor topics.'}
+46	46		301		1		AniZhuanchangBegin			{3: 'So what is her purpose for the forced connection?'}

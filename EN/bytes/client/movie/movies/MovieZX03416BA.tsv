@@ -1,0 +1,112 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory351.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		301			DialogEnable				"{3: ""A few hours ago, in Gray Raven's temporary camp.""}"
+4	4		201							{1: '1', 2: '500568'}
+5	5		301							"{1: '1', 2: 'Lee', 3: ""Hacking complete. Turns out it's an encrypted comms address."", 4: '1'}"
+6	6		301							{3: 'As Lee continues to work on it, the lengthy non-disclosure agreement has turned into a simple string of numbers and letters.'}
+7	7		301							{2: 'Lee', 3: 'Shall we connect to this address, Commandant?', 4: '1'}
+8	8		302							{2: '(Nod)', 3: '9'}
+9	9		301							{3: 'Lee nods and connects to the address. After a slight noise, the screen shows no image, but a voice can be heard through the speaker.'}
+10	10		301							"{2: ""Asimov's Voice"", 3: ""I'll jump to the conclusion. The reason why Lucia was...""}"
+11	11		203							{1: '1', 2: '0.25', 3: '400'}
+12	12		201							{1: '2', 2: '1031001', 3: '7', 4: '-400'}
+13	13		301							"{1: '1', 2: 'Liv', 3: ""Hmm? That's Asimov. They are talking about Lucia."", 4: '2'}"
+14	14		301							{3: 'The sound quality is not great, but still enough for you to identify the speaker.'}
+15	15		301							{2: 'Lee', 3: 'Would you like to continue listening to it, Commandant?', 4: '1'}
+16	16		302				AniZhuanchangBegin			{2: '...Keep going.', 3: '17'}
+17	17		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+18	18		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory351.jpg'}
+19	19		301			DialogEnable				"{2: ""Nikola's Voice"", 3: '...It is worth finding out.'}"
+20	20		201							{1: '1', 2: '500568', 4: '400'}
+21	21		201							{1: '2', 2: '1031001', 3: '5', 4: '-400'}
+22	22		301							{1: '1', 3: 'Lee turns off the device when the speaker is no longer making any sound. Three of you remain silent, trying to digest the fact.'}
+23	23		302							{2: 'Liv? Can you check if this is a forged recording?', 3: '24'}
+24	24		301							"{2: 'Liv', 3: ""I already matched the voiceprint and ambient noise halfway through the recording. It wasn't forged..."", 4: '2'}"
+25	25		301							{2: 'Liv', 3: 'What they were talking about... Is it true, Commandant?', 4: '2'}
+26	26		302							"{2: ""At least it's in line with my experience."", 3: '27'}"
+27	27		301							{2: 'Lee', 3: 'What do we do now, Commandant?', 4: '1'}
+28	28		301							"{2: 'Lee', 3: ""The source of this information is unknown, so the actual conversation won't be disclosed to you later, right?"", 4: '1'}"
+29	29		301							{2: 'Lee', 3: 'If we confronted the HQ, they would question where we got this information from.', 4: '1'}
+30	30		301							{2: 'Lee', 3: 'Maybe this recording itself was meant to sow discord among us.', 4: '1'}
+31	31		502							{1: 'DialogDisable'}
+32	32		302							{2: '...', 3: '33'}
+33	33		302							{2: 'Get me Commander Nikola.', 3: '34'}
+34	34		204							{1: '1', 2: '7'}
+35	35		301			DialogEnable				{2: 'Lee', 3: 'Really? He would surely want to find out where you got it from.', 4: '1'}
+36	36		502							{1: 'DialogDisable'}
+37	37		302							"{2: ""It's okay. I won't ask any question that's not related to Lucia."", 3: '38'}"
+38	38		204							{1: '1'}
+39	39		302							{2: 'That will leave some room for explanation.', 3: '40'}
+40	40		301			DialogEnable	AniZhuanchangBegin			{2: 'Lee', 3: 'I understand. Let me wipe off the wiretapping evidence from the terminal first.', 4: '1'}
+41	41		401							{1: '1', 2: '36'}
+42	42		202			DialogDisable			3000.0	{1: '1', 2: '2', 6: '1'}
+43	43		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory693.jpg'}
+44	44		401							{1: '2', 2: '737'}
+45	45		401							{1: '1', 2: '172'}
+46	46		301			DialogEnable				{3: 'Alpha has just opened her eyes when the ground begins to shake violently. All the alarm indicators are screaming like the cries of a dying beast.'}
+47	47		301							{3: 'Through the transparent glass, she sees a strange figure standing where Lucia was before.'}
+48	48		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+49	49		401							{1: '2', 2: '844006'}
+50	50		301							{3: '—CLANG!'}
+51	51		301							{3: 'The dagger she hurled went through the glass, only to be blocked by a purple moon umbrella.'}
+52	52		201							{1: '1', 2: '500610'}
+53	53		301							{1: '1', 2: 'Alpha', 3: 'Who are you?', 4: '1'}
+54	54		203							{1: '1', 3: '500'}
+55	55		201							{1: '2', 2: '500615', 4: '-500'}
+56	56		301							{1: '1', 3: 'The tall, slim female puts away her moon umbrella and picks up the dagger, then gently places it on a desk nearby.'}
+57	57		301							{3: 'She takes off her top hat and bows to Alpha gracefully.'}
+58	58		204							{1: '2', 2: '2'}
+59	59		301							{2: 'Lilith', 3: 'Allow me to apologize again for my inappropriate manner last time.', 4: '2'}
+60	60		204							{1: '2'}
+61	61		301							"{2: 'Lilith', 3: ""It's my honor to meet you, Ascendant... Or should I call you an agent now?"", 4: '2'}"
+62	62		301							"{2: 'Lilith', 3: ""The name's Lilith. I came with good faith."", 4: '2'}"
+63	63		301							{3: 'Lilith puts her hat back on and looks at Alpha with a sincere smile.'}
+64	64		301							{2: 'Alpha', 3: '(This is the same voice I heard before...)', 4: '1'}
+65	65		301							"{2: 'Alpha', 3: ""You opened the gate of Fort Winter, didn't you?"", 4: '1'}"
+66	66		301							"{3: ""Before entering Fort Winter, Alpha already sensed the camera's abnormal movement and zooming. She had been guarding against potential enemies.""}"
+67	67		301							"{2: 'Lilith', 3: ""You could have gone in without my help, couldn't you?"", 4: '2'}"
+68	68		204							{1: '2', 2: '2'}
+69	69		301							{2: 'Lilith', 3: 'Still, it would be great if I saved you some time there.', 4: '2'}
+70	70		301							{2: 'Alpha', 3: 'The best lie is half a truth...', 4: '1'}
+71	71		301							"{3: 'If the Ascendant who said this was here, they had probably already begun their ""sincere"" talks.'}"
+72	72		301							{2: 'Alpha', 3: 'Where did you take her?', 4: '1'}
+73	73		204							{1: '2'}
+74	74		301							{2: 'Lilith', 3: 'She was unconscious due to a M.I.N.D. overload. I left her in a safe location outside Fort Winter.', 4: '2'}
+75	75		301							"{2: 'Lilith', 3: ""I know you care about her a lot, but I don't want others to disturb us."", 4: '2'}"
+76	76		301							{2: 'Alpha', 3: 'Disturb us?', 4: '1'}
+77	77		401							{1: '2', 2: '2647'}
+78	78		301			RImgBg1Shake				{3: 'Another loud explosion has sent the entire Fort Winter trembling.'}
+79	79		301							"{2: 'Lilith', 3: ""Don't look at me that way. It was Kurono's people. They didn't get to run back to the multi-purpose fighter, but still managed to activate the self-destruction program."", 4: '2'}"
+80	80		301							{2: 'Lilith', 3: 'I was so close to stopping them.', 4: '2'}
+81	81		301							{2: 'Alpha', 3: 'What do you want?', 4: '1'}
+82	82		204							{1: '2', 2: '2'}
+83	83		301							"{2: 'Lilith', 3: ""As a relatively new Ascendant, isn't it normal for me to admire my powerful predecessor?"", 4: '2'}"
+84	84		204							{1: '2', 2: '5'}
+85	85		301							{2: 'Lilith', 3: 'May I have the honor to witness your power? That had always been my goal ever since I joined the Ascendants.', 4: '2'}
+86	86		301							{2: 'Alpha', 3: 'I have no interest in that. Go wag your tail at your master.', 4: '1'}
+87	87		204							{1: '2'}
+88	88		301							"{2: 'Lilith', 3: ""Too bad he never revealed his power. Besides, I don't want him to see me as an usurper."", 4: '2'}"
+89	89		301							"{2: 'Lilith', 3: ""Don't you want to know where that Construct is?"", 4: '2'}"
+90	90		301							{2: 'Alpha', 3: 'You can also tell me her location right now and get lost.', 4: '1'}
+91	91		301							"{2: 'Lilith', 3: ""I'm afraid I can't. It took me a lot of effort to find this opportunity."", 4: '2'}"
+92	92		401							{1: '2', 2: '957'}
+93	93		301							{3: 'Although surrounded by explosions, they do not seem to panic at all.'}
+94	94		301				AniZhuanchangBegin			{3: 'Alpha and Lilith both fall down as the ground underneath begins to collapse.'}
+95	95		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+96	96		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory690.jpg'}
+97	97		301			DialogEnable				{3: 'After cutting apart the debris in front, Alpha sees a sea of lava.'}
+98	98		201							{1: '1', 2: '500615'}
+99	99		301							{1: '1', 2: 'Lilith', 3: 'This is where those scientists disposed of their failed work.', 4: '1'}
+100	100		301							{3: 'Lilith is sitting on an exposed steel bar, enjoying the majestic view.'}
+101	101		301							{2: 'Lilith', 3: 'Of course, they were also regarded as failures and thrown into the incinerator in the end.', 4: '1'}
+102	102		301							"{2: 'Lilith', 3: ""Don't you find it sarcastic? Those who claimed to have controlled the direction of evolution ended up being filtered out."", 4: '1'}"
+103	103		203							{1: '1', 2: '0.25', 3: '-500'}
+104	104		201							{1: '2', 2: '500610', 4: '500'}
+105	105		301							{1: '1', 2: 'Alpha', 3: 'How do you know so well?', 4: '2'}
+106	106		301							{2: 'Lilith', 3: 'I had a past similar to yours...', 4: '1'}
+107	107		301							{3: 'She chuckles.'}
+108	108		301							"{2: 'Lilith', 3: 'Are you really not joining us? We can found an ""Association of Project Winter Victims"".', 4: '1'}"
+109	109		301							"{2: 'Alpha', 3: ""I'm not interested. Tell me where she is."", 4: '2'}"
+110	110		204							{1: '1', 2: '13'}
+111	111		301		1		AniZhuanchangBegin			{2: 'Lilith', 3: 'Show me how much you can get from me then.', 4: '1'}

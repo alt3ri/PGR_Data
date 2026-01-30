@@ -1,0 +1,299 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '169'}
+3	3		302							{2: 'The second check-in.', 3: '4'}
+4	4		306							{1: '1'}
+5	5		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageOpen.prefab', 2: '3'}
+6	6		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '3'}
+7	7		401							{1: '2', 2: '1515'}
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory796.jpg'}
+9	9		509							{1: 'Assets/Product/Texture/Image/BgStory/BgStory693.jpg', 2: '2'}
+10	10		201							{1: '1', 2: '500730', 3: '12', 4: '600'}
+11	11		201							{1: '2', 2: '500335', 4: '-600'}
+12	12		301			DialogEnable				"{1: '1', 2: 'Shorthalt', 3: ""Looks like everyone's safe."", 4: '1'}"
+13	13		302							{2: 'Any new findings?', 3: '14'}
+14	14		301							"{2: 'Shorthalt', 3: ""All I found were research materials on the M.I.N.D. I can't understand half of it but picked them up anyway. We can bring them to the Science Council once we escape."", 4: '1'}"
+15	15		301							{2: 'Shorthalt', 3: 'In those reports, I spotted the names Kugawa Kurono, Cinderelik, Loki, Voodoo, and Cthylla.', 4: '1'}
+16	16		302							"{2: ""So Kugawa Kurono was also involved in Project Cthylla. I'm not at all surprised about that."", 3: '17'}"
+17	17		301							{2: 'Lillian', 3: 'What exactly is Cthylla?', 4: '2'}
+18	18		301							"{2: 'Shorthalt', 3: ""The beast that birthed the twins. You know, the thing that's like a giant heart... that's Cthylla's incomplete form. In plain terms, it's her womb... just on legs."", 4: '1'}"
+19	19		204							{1: '2', 2: '19'}
+20	20		301							{2: 'Lillian', 3: 'Huh?', 4: '2'}
+21	21		301							"{2: 'Shorthalt', 3: ""Here, it's all in the files. They also mentioned Loki and Voodoo. We have very little information on her anyway, so this is quite a useful find."", 4: '1'}"
+22	22		204							{1: '2'}
+23	23		301							{3: 'Shorthalt waves the newfound documents in front of the screen.'}
+24	24		302				DialogDisable			{2: 'Let me see...', 3: '25'}
+25	25		304			AniZhuanchangEnd				{1: 'Loki-4654512', 2: 'ffee82ff', 3: '0.7', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory209.png', 6: '1', 7: '1'}
+26	26		304							{1: 'A test subject found in the basement after Project Cthylla ended. She had been imprisoned for years due to aggressiveness and consciousness damage.', 2: 'ffee82ff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory209.png', 6: '1'}
+27	27		304							{1: 'In the concealed basement, she was left behind when all related personnel were cleared out. When they found Loki, she was ramming the cell door nonstop.', 2: 'ffee82ff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory209.png', 6: '1'}
+28	28		304							"{1: ""Her head was severely wounded and it was too late to do anything about it. All I could do was preserve her mind data with Mister's help."", 2: 'ffee82ff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory209.png', 6: '1', 8: '1'}"
+29	29		304			AniZhuanchangEnd				{1: 'Loki-4654517', 2: 'ffee82ff', 3: '0.7', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory209.png', 6: '1', 7: '1'}
+30	30		304							"{1: ""Loki's mind data was also damaged when her head was injured. Forcibly implanting it into a body would only create a completely insane being."", 2: 'ffee82ff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory209.png', 6: '1'}"
+31	31		304							"{1: ""But I don't want to give up on her..."", 2: 'ffee82ff', 3: '0.7', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory209.png', 6: '1'}"
+32	32		304							"{1: ""Her state of consciousness is quite similar to Cthylla's. I hope to find a way to stabilize her condition. This will save not only Loki but also Cthylla."", 2: 'ffee82ff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory209.png', 6: '1', 8: '1'}"
+33	33		304			AniZhuanchangEnd				{1: 'Loki-7964510', 2: 'ffee82ff', 3: '0.7', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory209.png', 6: '1', 7: '1'}
+34	34		304							"{1: ""If one's consciousness is not strong enough to keep their body stable, then it's better to grant that body another consciousness instead."", 2: 'ffee82ff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory209.png', 6: '1'}"
+35	35		304							{1: 'Mister asked me to obtain consciousness fusion technology from the humans and use it on her.', 2: 'ffee82ff', 3: '0.7', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory209.png', 6: '1'}
+36	36		304							"{1: ""The person who received the opportunity was someone from the Akdilek Commercial Alliance, said to be an abandoned illegitimate child of Ashlar's."", 2: 'ffee82ff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory209.png', 6: '1'}"
+37	37		304							{1: 'She had no name, nor any emotions I could sense. In order to survive, she had turned into a mere obedient object with no mind of her own.', 2: 'ffee82ff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory209.png', 6: '1', 8: '1'}
+38	38		304			AniZhuanchangEnd				{1: 'Voodoo-001', 2: 'ff4e4eff', 3: '0.7', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 7: '1'}
+39	39		304							"{1: ""The experiment was a success. She became Loki's new vessel, the host of all her uncontrollable emotions."", 2: 'ff4e4eff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}"
+40	40		304							{1: 'This method can definitely be used to awaken Cthylla, for her consciousness also suffers from similar flaws.', 2: 'ff4e4eff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}
+41	41		304							"{1: 'Next, all we need to do is wait for the ""Gospel"" to arrive, and Cinderelik\'s wish will be fulfilled.', 2: 'ff4e4eff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}"
+42	42		304							{1: 'Mister praised me for this...', 2: 'ff4e4eff', 3: '0.7', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 7: '1'}
+43	43		304							{1: 'If only these studies could be of more use to him.', 2: 'ff4e4eff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 9: '1'}
+44	44		302							{2: 'Looks like some records left by Lithos.', 3: '45'}
+45	45		301			DialogEnable				{2: 'Shorthalt', 3: 'After all, this place is an old haunt of his. Naturally, everything left behind must have belonged to him.', 4: '1'}
+46	46		301							{2: 'Shorthalt', 3: 'Right. By the way, I also saw a name in some of the files that caught my attention.', 4: '1'}
+47	47		302							{2: 'Whose name?', 3: '48'}
+48	48		301							{2: 'Shorthalt', 3: 'Kilgore Trout. He was famous back in the Golden Age. A psychiatrist, psychologist, author... and murderer.', 4: '1'}
+49	49		301							{2: 'Shorthalt', 3: 'Have you heard of this name before?', 4: '1'}
+50	50		301							"{2: 'Lillian', 3: ""No... who's that?"", 4: '2'}"
+51	51		301							"{2: 'Shorthalt', 3: ""You don't know him? He was practically a celebrity."", 4: '1'}"
+52	52		301							"{2: 'Lillian', 3: ""It's not that abnormal to not know much about the Golden Age. But... why do you know so much about it?"", 4: '2'}"
+53	53		301							"{2: 'Shorthalt', 3: ""I was a police officer before becoming a Construct. I've worked on both Project Cthylla and the case of Kilgore Trout."", 4: '1'}"
+54	54		301							"{3: ""Shorthalt's expression dims.""}"
+55	55		301							{2: 'Shorthalt', 3: 'Project Cthylla was especially memorable. It was truly tragic...', 4: '1'}
+56	56		302							{2: 'That accident...', 3: '57'}
+57	57		301							{2: 'Shorthalt', 3: 'Accident? Oh, is that what they call it outside?', 4: '1'}
+58	58		302							"{2: ""Wasn't it an accident?"", 3: '59'}"
+59	59		301							{2: 'Shorthalt', 3: 'Of course not. Also, the purpose of the project might not be as far-fetched as publicly claimed.', 4: '1'}
+60	60		301							{2: 'Shorthalt', 3: 'According to our informants, the purpose of the project might be to create war weapons and divide the World Government once more.', 4: '1'}
+61	61		302							{2: 'So the purpose was war?', 3: '62'}
+62	62		301							"{2: 'Shorthalt', 3: ""Indeed. It's nothing new. Amberia in the ARU was the victim of a similar situation as well."", 4: '1'}"
+63	63		301							{2: 'Lillian', 3: '...', 4: '2'}
+64	64		301							{2: 'Shorthalt', 3: 'We were so close to catching them in the act... but the day before our operation, their incinerator exploded, setting the whole research building ablaze.', 4: '1'}
+65	65		302							"{2: 'An incinerator explosion, huh...', 3: '66', 4: ""...That's why they call it an accident."", 5: '66'}"
+66	66		301							{2: 'Shorthalt', 3: 'Yeah...', 4: '1'}
+67	67		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+68	68		510							{1: '2'}
+69	69		202							{1: '1', 2: '2', 6: '1'}
+70	70		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+71	71		504							{1: '0.7'}
+72	72		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory776.jpg'}
+73	73		301							{2: 'Shorthalt', 3: 'Something must have gone wrong in the last experiment, causing all the subjects to go mad.', 4: '1'}
+74	74		301							{2: 'Shorthalt', 3: 'In turn, they beheaded the researchers and stuffed their heads into their own stomachs.', 4: '1'}
+75	75		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+76	76		504							{1: '0'}
+77	77		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '3'}
+78	78		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory796.jpg'}
+79	79		509							{1: 'Assets/Product/Texture/Image/BgStory/BgStory693.jpg', 2: '2'}
+80	80		201							{1: '1', 2: '500730', 3: '12', 4: '600'}
+81	81		201							{1: '2', 2: '500335', 4: '-600'}
+82	82		301							{1: '1', 3: 'Shorthalt speaks with a scowl.'}
+83	83		301							{2: 'Shorthalt', 3: 'By the time the fire was extinguished, the area around the incinerator was littered with executed subjects, all of them burned beyond recognition.', 4: '1'}
+84	84		301							{2: 'Shorthalt', 3: 'The rest... they were headless scientists with swollen bellies.', 4: '1'}
+85	85		204							{1: '2', 2: '19'}
+86	86		301							{2: 'Lillian', 3: '...Eek!', 4: '2'}
+87	87		301							{2: 'Shorthalt', 3: 'Some speculate that this incident might be connected to Professor Kilgore Trout in some way. Even if he was already dead by then, it could have been a copycat of his who was involved.', 4: '1'}
+88	88		301							"{2: 'Shorthalt', 3: ""There wasn't much we could do about it as we didn't have any concrete evidence... But now, to see his name again in such a place..."", 4: '1'}"
+89	89		204							{1: '2', 2: '19'}
+90	90		301							{2: 'Lillian', 3: 'Why do they think that this professor had something to do with Project Cthylla?', 4: '2'}
+91	91		301							"{2: 'Shorthalt', 3: 'Because... well, see, the goal of Project Cthylla was to have the dead be ""born again"" in the wombs of the subjects.', 4: '1'}"
+92	92		301							"{2: 'Shorthalt', 3: 'The way those scientists died, with their heads stuffed into their stomachs... it was like the killers\' way of declaring, ""If you people want a rebirth this much, then do it yourselves.""', 4: '1'}"
+93	93		301							"{2: 'Shorthalt', 3: ""A similar phrase appeared in Kilgore Trout's final autobiography."", 4: '1'}"
+94	94		204							{1: '2'}
+95	95		301							"{2: 'Lillian', 3: ""I still don't see the connection..."", 4: '2'}"
+96	96		301							"{2: 'Shorthalt', 3: ""Uh, it's a bit complicated to explain. Let's talk about it later."", 4: '1'}"
+97	97		302							{2: 'Okay. You found anything, Lillian?', 3: '98'}
+98	98		301							"{2: 'Lillian', 3: ""I saw a lot of Lithos' remnants... some mechanical parts of his frame, limbs, torso... and there was Red Tide Projection, too."", 4: '2'}"
+99	99		301							"{2: 'Lillian', 3: ""Perhaps he's died way more times than can be counted on two hands."", 4: '2'}"
+100	100		301							{2: 'Lillian', 3: 'The Red Tide Projection keeps showing how he looked just before his death...', 4: '2'}
+101	101		301							{2: 'Shorthalt', 3: 'Can an Ascendant inherit memories through the Red Tide and the remains of their own physical form?', 4: '1'}
+102	102		301							"{2: 'Lillian', 3: ""It's indeed possible... Some Ascendants can even load and read the memories of the Corrupted. Besides, the Red Tide stores a lot of information, which is why Red Tide Projections can appear."", 4: '2'}"
+103	103		301							{2: 'Lillian', 3: 'However, the memories stored this way are mostly fragmented. The Red Tide Projections here are more intact than those outside, though. Perhaps Lithos did something to make it this way.', 4: '2'}
+104	104		301							{2: 'Lillian', 3: 'Also... the Red Tide Projections shown later are very calm... as if he had died by suicide...', 4: '2'}
+105	105		301							{2: 'Shorthalt', 3: 'Suicide? Why would he resort to that?', 4: '1'}
+106	106		302							{2: 'If a large number of stable M.I.N.D.s are urgently needed for Project Cthylla...', 3: '107'}
+107	107		302							"{2: 'Being an Ascendant, Lithos is the perfect ""material.""', 3: '108'}"
+108	108		301							{3: 'But Lithos is no victim. Would he really be willing to sacrifice himself?'}
+109	109		301							"{2: 'Shorthalt', 3: ""It's too early to draw conclusions right now. How are things on your end?"", 4: '1'}"
+110	110		302							{2: 'There are only a few rooms along this path. They all resemble orphanage bedrooms.', 3: '111'}
+111	111		301							{2: 'Shorthalt', 3: 'Orphanages have also become hotbeds of illegal activity.', 4: '1'}
+112	112		301							{2: 'Shorthalt', 3: 'The higher-ups, in order to keep the birth rate from getting too low, lightened the punishment for child abandonment crimes after setting up a bunch of new policies, and they also invested in the construction of multiple orphanages...', 4: '1'}
+113	113		301							{2: 'Shorthalt', 3: 'The initial intentions might have been good, but the execution left much to be desired.', 4: '1'}
+114	114		301							{2: 'Shorthalt', 3: 'You know about this, right, Lillian? Just now, Lithos said he and you both came from the same orphanage.', 4: '1'}
+115	115		204							{1: '2', 2: '11'}
+116	116		301							{2: 'Lillian', 3: 'Ah, y-yeah...', 4: '2'}
+117	117		204							{1: '2', 2: '19'}
+118	118		301							{3: 'She clutches the hem of her shirt nervously and recounts what Lillian had told her.'}
+119	119		301							"{2: 'Lillian', 3: 'There are indeed some orphanages that treat the children as ""goods"" and sell them to various buyers.', 4: '2'}"
+120	120		301							{2: 'Lillian', 3: 'Lillian... I mean, I was part of an early Construct research program...', 4: '2'}
+121	121		301							{2: 'Lillian', 3: 'The other children all died in the experiments... Lithos and I were the only ones to survive.', 4: '2'}
+122	122		204							{1: '2'}
+123	123		301							{2: 'Shorthalt', 3: '...What exactly is the connection between these clues?', 4: '1'}
+124	124		301							{2: 'Shorthalt', 3: 'Any other discoveries?', 4: '1'}
+125	125		302							{2: 'A group photo and some toys.', 3: '126'}
+126	126		302							"{2: ""Rubik's cubes, building blocks, origami..."", 3: '127'}"
+127	127		301							"{2: 'Lillian', 3: ""Did they use to belong to Lithos' friends?"", 4: '2'}"
+128	128		302							{2: 'No idea.', 3: '129'}
+129	129		302							"{2: ""The only other items I found were some hair accessories of Lithos'."", 3: '130'}"
+130	130		301							{2: 'Lillian', 3: '...Hair accessories?', 4: '2'}
+131	131		302							{2: 'Yeah, like that wooden flower on his head.', 3: '132'}
+132	132		302							{2: 'The last room was filled with many such items.', 3: '133'}
+133	133		302							{2: 'There were also wood slices, likely for crafting, along with carving knives and shavings.', 3: '134'}
+134	134		302							{2: 'Looks like this is where he makes the hair accessories for himself.', 3: '135'}
+135	135		301							{2: 'Shorthalt', 3: 'This guy is an enigma indeed.', 4: '1'}
+136	136		302							{2: 'I heard that the hair accessory used to belong to someone else.', 3: '137'}
+137	137		301							{2: 'Shorthalt', 3: 'Oh?', 4: '1'}
+138	138		302							"{2: ""Seems like he's wearing it on his head in memory of someone."", 3: '139'}"
+139	139		301							{2: 'Shorthalt', 3: 'Oh...', 4: '1'}
+140	140		301							"{3: ""Shorthalt stretches out the syllable, as if in understanding, though he's still quite confused.""}"
+141	141		302							"{2: ""Let's continue the investigation. We haven't found where Lithos stored his mind backups yet."", 3: '142'}"
+142	142		301							{2: 'Lillian', 3: 'All right, then... see you in half an hour.', 4: '2'}
+143	143		306							
+144	144		202							{1: '1', 2: '2', 6: '1'}
+145	145		510							{1: '2'}
+146	146		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+147	147		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory792.jpg'}
+148	148		301							{3: 'The two hurriedly end the call, and all is quiet once again.'}
+149	149		302							{2: '...', 3: '150'}
+150	150		301							{3: 'What kind of feelings did that Ascendant harbor while he sat alone in a room filled with belongings of his friends, working on these hair accessories?'}
+151	151		302							{2: '(Pick up a hair accessory and examine it carefully)', 3: '152'}
+152	152		301							"{3: ""No matter how you look at it, it's just an ordinary wooden ornament. There's nothing special about it.""}"
+153	153		301							"{3: ""Could he really have made so many of the same item just to celebrate someone's memory?""}"
+154	154		302							{2: '...Memory, huh...', 3: '155'}
+155	155		301							{3: 'The thought strikes you all of a sudden, effectively clearing the fog in your thoughts.'}
+156	156		302							"{2: ""...I think I've seen this hair accessory before..."", 3: '157'}"
+157	157		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+158	158		504							{1: '0.7'}
+159	159		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory260.png'}
+160	162		301							{3: 'The exact date is no longer possible to recall... It must have been before Lucia started using Plume.'}
+161	163		201							{1: '1', 2: '500726', 5: '-100', 6: '200'}
+162	164		301							{1: '1', 3: 'On Dominik Memorial Square, you saw a little girl whose face was full of sorrow.'}
+163	165		301							{3: 'She was standing there alone, yet the patrolling drones and the seemingly inadvertent glances from passersby all hinted at her conspicuousness.'}
+164	166		301							"{3: 'After confirming the identities of those ""passersby,"" you decided to speak to her.'}"
+165	167		302							{2: 'Hello.', 3: '168'}
+166	168		301							{2: '???', 3: '...', 4: '1'}
+167	169		302							{2: 'I am the Gray Raven Commandant, 【kuroname】.', 3: '170'}
+168	170		302							"{2: ""What's your name?"", 3: '171'}"
+169	171		301							{2: 'Rosa', 3: '...My name is... Rosa...', 4: '1'}
+170	172		301							{3: 'She answered, voice timid, shivering uncontrollably, eyes darting around, trying to meet the piercing gazes directed at her from behind.'}
+171	173		302							"{2: ""Rosa... That's a beautiful name."", 3: '174'}"
+172	174		301							"{3: ""You weren't sure what exactly was going on between the parties present, so you resorted to unrelated small talk as a buffer.""}"
+173	175		301							"{2: 'Rosa', 3: 'Yeah... Mommy said she loved the story of ""The Little Prince"". She told me that I was ""the only rose on the planet"" to her and Daddy.', 4: '1'}"
+174	176		302							{2: 'Your parents must really love you.', 3: '177'}
+175	177		301							"{2: 'Rosa', 3: ""Yeah... but they've already... already passed away..."", 4: '1'}"
+176	178		302							{2: '(Hug Rosa)', 3: '179', 4: '(Gently pat Rosa on the back)', 5: '179'}
+177	179		202							{1: '1', 6: '1'}
+178	180		301							{3: 'She sobbed quietly, speaking in a barely audible voice.'}
+179	181		201							{1: '1', 2: '500726', 5: '-100', 6: '200'}
+180	182		301							{1: '1', 2: 'Rosa', 3: '...Um...', 4: '1'}
+181	183		301							{2: 'Rosa', 3: '...Was it you... who sent me the message...?', 4: '1'}
+182	184		302							{2: '...Message?', 3: '185'}
+183	185		302							"{2: ""...No, I'm just..."", 3: '186'}"
+184	186		203							{1: '1', 2: '0.15', 3: '400', 4: '-100', 5: '200'}
+185	187		201							{1: '2', 2: '500554', 4: '-400'}
+186	188		301							{1: '1', 2: '???', 3: 'Rosa, what are you doing here?', 4: '2'}
+187	189		301							"{2: 'Rosa', 3: ""Aunt Petra? I-I-I'm so sorry! I... I..."", 4: '1'}"
+188	190		203							{1: '1', 2: '0.25', 3: '500', 4: '-100', 5: '200'}
+189	191		302							{2: '(Stand protectively before Rosa)', 3: '192'}
+190	192		302							{2: 'May I ask who you are?', 3: '193'}
+191	193		301							{3: 'The woman in front of you scrutinized you with a stern gaze.'}
+192	194		301							"{2: 'Petra', 3: ""You must be Vanessa's classmate, the Chief from the F.O.S."", 4: '2'}"
+193	195		302							{2: '...', 3: '196', 4: 'Good day. I was indeed a classmate of hers.', 5: '196'}
+194	196		301							"{2: 'Petra', 3: ""I'm Vanessa's mother."", 4: '2'}"
+195	197		302							"{2: ""So she's mentioned me to you before?"", 3: '198'}"
+196	198		301							{2: 'Petra', 3: '...', 4: '2'}
+197	199		301							"{2: 'Petra', 3: ""No. I saw your graduation photo posted on F.O.S.'s public subscription account, that's all."", 4: '2'}"
+198	200		302							"{2: ""Are you Rosa's current guardian?"", 3: '201'}"
+199	201		203							{1: '1', 2: '0.15', 3: '400', 4: '-100', 5: '200'}
+200	202		301							{2: 'Rosa', 3: 'No.', 4: '1'}
+201	203		301							{3: 'Despite her heavy sorrow, the little girl spoke firmly, clutching the hem of her shirt tight.'}
+202	204		301							"{2: 'Rosa', 3: ""But Mommy did tell me that... when she was a little girl, Aunt Petra's grandfather took good care of her."", 4: '1'}"
+203	205		301							{2: 'Petra', 3: '...', 4: '2'}
+204	206		301							"{2: 'Petra', 3: ""All right, let's get out of here, Rosa. What are you standing around here for?"", 4: '2'}"
+205	207		203							{1: '1', 2: '0.15', 3: '500', 4: '-100', 5: '200'}
+206	208		301							{2: 'Rosa', 3: 'No...', 4: '1'}
+207	209		301							{3: 'Rosa refused to come out from behind you, still sounding rather timid.'}
+208	210		302							"{2: ""If you're not her guardian, I'm afraid I can't let her go with you."", 3: '211'}"
+209	211		204							{1: '2', 2: '5'}
+210	212		301							{2: 'Petra', 3: 'No matter what, my connection with this child runs deeper than yours.', 4: '2'}
+211	213		301							"{3: ""Impatience laced the lady's tone.""}"
+212	214		204							{1: '2'}
+213	215		301							{2: 'Petra', 3: 'Her mother was taken in by my grandfather during the Great Evacuation. He believed she must have been a distant relative who got separated from her parents.', 4: '2'}
+214	216		204							{1: '2', 2: '5'}
+215	217		301							"{2: 'Petra', 3: ""Though there was no evidence pointing that way and the timing of the separation didn't match, he still brought that girl named Rose home. He had her take our family name and renamed her Ann."", 4: '2'}"
+216	218		301							"{2: 'Petra', 3: ""I would never harm young Rosa here. In fact, if you weren't the Chief, I'd find your interest in her rather suspicious."", 4: '2'}"
+217	219		302							{2: '...', 3: '220'}
+218	220		301							"{2: 'Petra', 3: ""Stop standing around here, Rosa. It's for your own good."", 4: '2'}"
+219	221		301							"{2: 'Rosa', 3: ""I'm sorry... I'm waiting for someone..."", 4: '1'}"
+220	222		301							"{2: 'Rosa', 3: ""Someone told me they knew how my parents died as heroes... They told me to come here wearing my mother's hair accessory and said I'd be able to find their names here..."", 4: '1'}"
+221	223		204							{1: '2'}
+222	224		301							{2: 'Petra', 3: 'Died as heroes?', 4: '2'}
+223	225		301							{2: 'Petra', 3: 'Ann and Rand died in a household appliance accident, right on your birthday, right in front of you, no less. Have you forgotten?', 4: '2'}
+224	226		301							"{2: 'Petra', 3: ""The names carved on the Dominik Memorial Square are all of the heroes who perished on the battlefield. No way you'd be able to find their names here."", 4: '2'}"
+225	227		204							{1: '2', 2: '5'}
+226	228		301							{2: 'Petra', 3: 'Who would deliberately fool a naive child by sending such a message?', 4: '2'}
+227	229		204							{1: '2'}
+228	230		301							"{3: ""She raised her voice, gripping Rosa's shoulders tightly, as if in warning.""}"
+229	231		301							{2: 'Rosa', 3: '...', 4: '1'}
+230	232		202							{1: '1', 2: '2', 6: '1'}
+231	233		301							"{3: ""Following her words, Rosa's tears began pouring down her face like blood from a wound, yet she seemed to have lost even the strength to sob out loud.""}"
+232	234		302							"{2: ""I'll take her home. Can you trust me with this?"", 3: '235'}"
+233	235		201							{1: '1', 2: '500554'}
+234	236		301							{1: '1', 2: 'Petra', 3: '...', 4: '1'}
+235	237		301							{2: 'Petra', 3: 'Fine.', 4: '1'}
+236	238		202							{1: '1', 6: '1'}
+237	239		301							{3: 'Petra, tucking a strand of hair behind her ear, a gesture that reminded you of Vanessa, turned around to leave.'}
+238	240		302							{2: 'Do you still have a place to go back to?', 3: '241'}
+239	241		201							{1: '1', 2: '500726', 5: '-100', 6: '200'}
+240	242		301							"{1: '1', 2: 'Rosa', 3: ""...Yes... my godfather's place..."", 4: '1'}"
+241	243		302							{2: 'Your godfather?', 3: '244'}
+242	244		301							{3: 'Rosa lifted her hand, pointing toward the direction of the Science Council.'}
+243	245		202							{1: '1', 6: '1'}
+244	246		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+245	247		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+246	248		201							{1: '1', 2: '500004'}
+247	249		301							{1: '1', 3: 'After inquiring with Asimov, you learned that Rosa was the orphan of his friends and seniors at work.'}
+248	250		301							"{3: ""Asimov, still young at the time, had reluctantly agreed to become Rosa's godfather under their insistent convincing.""}"
+249	251		301							{3: 'Even back when they were alive, Ann and Rand often worked outside of Babylonia.'}
+250	252		301							{3: 'Rosa grew up lonely, with the domestic robots at home as her only company. Under their guidance, she picked up a lot of concepts quite advanced for her age.'}
+251	253		301							"{3: ""She was a true prodigy, possessing an astonishing amount of talent beneath her youthful exterior. Despite her age, she became a capable assistant of Asimov's.""}"
+252	254		204							{1: '1', 2: '8'}
+253	255		301							{3: 'Asimov declined to answer any further questions.'}
+254	256		202							{1: '1', 6: '1'}
+255	257		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+256	258		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory717.jpg'}
+257	259		301							{3: 'Long after that, Lucia mentioned the dossier she saw and the intelligence she had gathered.'}
+258	260		301							{3: 'She spoke about the Ascendants connected to Ravenge, about Project Winter, and about Ann and Rand, the Science Council members who died because of it.'}
+259	261		301							{3: 'Why did Asimov look so sorrowful when those two were mentioned?'}
+260	262		301							{3: 'Why would they, members of the Science Council, not work in a safe location such as Babylonia?'}
+261	263		301							{3: 'Or was there perhaps no longer any need to hide the true allegiance of the deceased?'}
+262	264		301							"{3: ""Encrypted dossiers don't lie. They present a reality utterly contradictory to what you thought was the truth.""}"
+263	265		302							{2: 'Died in a household appliance accident...', 3: '266', 4: 'Died due to Project Winter...', 5: '266'}
+264	266		301							{3: 'You now have a vague answer to the question he refused to answer that day.'}
+265	267		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+266	268		504							{1: '0'}
+267	269		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory792.jpg'}
+268	272		301							{3: 'Waking up from your reverie, you look down at the plain hair accessory once again.'}
+269	273		301							"{3: ""You didn't notice the hair accessory back then. But now it seems that there might be a connection between Rosa and Lithos.""}"
+270	274		302							{2: '...', 3: '275'}
+271	275		302							{2: 'Think this over later.', 3: '276'}
+272	276		301							{3: 'Tossing the hair accessory aside, you turn and set off toward another unexplored area.'}
+273	277		302							{2: 'Must find where Lithos stores his memories to defeat him once and for all.', 3: '278'}
+274	278		302			DialogDisable	AniZhuanchangBegin			"{2: ""Can't keep everyone waiting for too long."", 3: '279'}"
+275	279		104			AniZhuanchangEnd				{1: '-150|150|-200', 2: '2'}
+276	280		301			DialogEnable				"{3: ""As the human's silhouette disappears at the end of the corridor, the discarded hair accessory rolls off the table and begins to spin along the floor. Wherever it touches, Red Tide seeps out from underneath the walls.""}"
+277	281		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory289.png', 3: '0', 4: '0.7', 5: '2'}
+278	282		306							{1: '1'}
+279	283		301							"{3: ""The remaining Red Tide Projections, as if phantoms in a haunted painting, keep repeating the words from their owner's memories.""}"
+280	284		401							{1: '2', 2: '2959'}
+281	285		401							{1: '2', 2: '2775'}
+282	286		301							"{2: 'Red Tide Projection', 3: ""It's useless no matter what I do... Mister, they left too soon.""}"
+283	287		301							"{2: 'Red Tide Projection', 3: ""Even if, one day, I manage to create a vessel for the deceased's consciousness, they'll have no consciousness left for me... I can't save them.""}"
+284	288		301							{2: 'Red Tide Projection', 3: 'I once naively believed that Rose might still be alive... But that was just wishful thinking on my part.'}
+285	289		301							{2: 'Red Tide Projection', 3: 'Mister, I want to go help them.'}
+286	290		301							"{2: 'Red Tide Projection', 3: ""I know you don't like that project, but I believe it can help more people...""}"
+287	291		301							"{2: 'Red Tide Projection', 3: ""You've said that your current goal is still to help us survive the disaster brought by the Punishing Virus.""}"
+288	292		301							"{2: 'Red Tide Projection', 3: ""One can't fight against disaster without a good amount of strength... so I'd like to share some strength with humanity...""}"
+289	293		301							"{2: 'Red Tide Projection', 3: ""I don't want to see more people forced to face the same pain I did.""}"
+290	294		301							"{2: 'Red Tide Projection', 3: ""If you're worried that they will control me, that they'll abuse my powers and expose our secrets...""}"
+291	295		301							{2: 'Red Tide Projection', 3: 'Please... implant a seed in my body that can kill me at any moment.'}
+292	296		301							"{2: 'Red Tide Projection', 3: ""It's all right... You saved my life, so of course you can use and kill me at will.""}"
+293	297		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory289.png', 3: '0.5', 4: '0', 5: '1'}
+294	298		306							
+295	299		104							{2: '2'}
+296	300		301							{3: 'The accessory hits the corner of the wall and stops rolling. The Red Tide Projection it stirred up also disappears into the cracks of the floor.'}
+297	301		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3002_03.jpg', 3: '0.2', 4: '0.7', 5: '1'}
+298	302		301		1		AniZhuanchangBegin			{3: 'Like its ill-fated owner, all that remains of it are blood-red flowers blooming in the corner.'}

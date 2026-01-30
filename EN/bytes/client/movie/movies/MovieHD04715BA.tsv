@@ -1,0 +1,124 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1075.jpg'}
+2	2		401							{1: '1', 2: '6151'}
+3	3		401							{1: '2', 2: '2915'}
+4	4		301			DialogEnable				"{3: ""Constellia, a city born from humanity's grand ideals and boundless desires, is wrapped in the warmth of ordinary joy tonight. It sways to the simple rhythms of daily life, filled with lovers whispering to each other... and meow meow meow meow.""}"
+5	5		302							{2: 'Meow meow meow meow?', 3: '6', 4: 'What was that?', 5: '6'}
+6	6		201							{1: '18', 2: '501347', 4: '325', 5: '420', 6: '-400'}
+7	7		301							"{1: '1', 2: 'Evil Chinchilla', 3: ""Hey, you there, meow meow! If you're not buying anything, don't just stand around meow meow! You're scaring off my customers, meow!"", 4: '18'}"
+8	8		202							{1: '18', 6: '1'}
+9	9		201							{1: '1', 2: '500175', 3: '5'}
+10	10		301							{1: '1', 2: 'Camu', 3: 'Grrrrr—', 4: '1'}
+11	11		202							{1: '1'}
+12	12		301							{3: 'Across from the cat stall, the Construct narrows his eyes under his hood. He rubs his cheek with a rough hand, and the tension in his body makes the motion feel less like soothing pain and more like a wild dog baring its teeth.'}
+13	13		201							{1: '18', 2: '501347', 4: '325', 5: '420', 6: '-400'}
+14	14		301			DialogShake				{1: '1', 2: 'Evil Chinchilla', 3: 'Meow, why are you being so mean? Bad dog! Bad dog!', 4: '18'}
+15	15		202							{1: '18'}
+16	16		306							{1: '1'}
+17	17		402							{1: '2915'}
+18	18		301				DialogDisable			"{3: ""The cat vendor fluffs up instantly, clearly agitated. On the other side, Camu's scowl deepens, his fierce gaze sharp enough to cut. One more second and a fight could break out.""}"
+19	19		306							
+20	20		302							{2: 'Camu?', 3: '21'}
+21	21		301			DialogEnable				{3: 'The moment Camu sees you, his scowl softens. His face still looks tense, but the sharp edge in his eyes fades.'}
+22	22		201							{1: '1', 2: '500175'}
+23	23		301							"{1: '1', 2: 'Camu', 3: ""When did you get here? Came to laugh at me, didn't you—tch—"", 4: '1'}"
+24	24		204							{1: '1', 2: '5'}
+25	25		301			PanelActor1Shake				{3: 'Suddenly, pain shoots through him. Camu winces and turns his head, brows pulling tight again as he rubs at his left cheek hard.'}
+26	26		302							{2: 'Camu? Is your mouth hurting?', 3: '27', 4: 'Are you... alright?', 5: '27'}
+27	27		301							{2: 'Camu', 3: 'Just running a calibration! Thanks to that stupid sensitivity test, now the piezo sensor on the left side of my mouth is freaking out.', 4: '1'}
+28	28		301							{2: 'Camu', 3: 'Even light pressure reads as sharp pain now. Damn it, who came up with such a stupid test...', 4: '1'}
+29	29		301				DialogDisable			{2: 'Camu', 3: 'And the more I touch it, the longer it takes to reset. That rookie maintenance engineer told me to just go do something else and distract myself.', 4: '1'}
+30	30		302							"{2: ""So... you've basically got a toothache?"", 3: '31'}"
+31	31		302							{2: 'Then... do you want to walk around together tonight? Might help take your mind off it.', 3: '32'}
+32	32		202							{1: '1'}
+33	33		301			DialogEnable				{3: 'Camu gives a quiet grunt of agreement, but stays put in front of the stall.'}
+34	34		306							{1: '1'}
+35	35		301							{3: 'The stall is full of mechanical cats and dogs waiting to be picked up. The display trays are covered in crystals and flashy accessories.'}
+36	36		301							"{3: 'Noticing your hesitation, the cat swishes its tail and smacks the ""Volunteer"" sign repeatedly, making a loud tapping sound.'}"
+37	37		306							
+38	38		201							{1: '18', 2: '501347', 4: '325', 5: '420', 6: '-400'}
+39	39		301							{1: '1', 2: 'Evil Chinchilla', 3: 'Volunteer for just one night and you can pick any souvenir to take home, meow meow.', 4: '18'}
+40	40		202				DialogDisable			{1: '18'}
+41	41		302							"{2: ""Want one of those mechanical dogs? Looks like you'll need to volunteer."", 3: '42'}"
+42	42		201							{1: '1', 2: '500175'}
+43	43		301			DialogEnable				"{1: '1', 2: 'Camu', 3: ""It's not like... I can't. Hey, 【kuroname】, I'm staying. You sticking around with me or not?"", 4: '1'}"
+44	44		302							{2: 'Of course.', 3: '45', 4: 'Alright.', 5: '45'}
+45	45		202							{1: '1'}
+46	46		301							"{3: ""People come and go, picking up their new pets. Camu does his best to help, but with the pain in his face, it's clear he's not exactly looking friendly.""}"
+47	47		301							{3: 'While turning to grab a power pack for a customer, you catch him rubbing his cheek again, irritated.'}
+48	48		302							{2: 'Camu, stop messing with your piezo sensor.', 3: '49'}
+49	49		201							{1: '1', 2: '500175', 3: '5'}
+50	50		301							{1: '1', 2: 'Camu', 3: 'Yeah, yeah, I got it!', 4: '1'}
+51	51		202							{1: '1'}
+52	52		301							{3: 'You finish helping someone adopt a pet, then glance back, only to see Camu pounding his own cheek with his fist, looking furious and in pain.'}
+53	53		302							"{2: ""Camu, the more you touch it, the worse it's going to get."", 3: '54', 4: '...', 5: '54'}"
+54	54		201							{1: '1', 2: '500175'}
+55	55		301							{1: '1', 2: 'Camu', 3: 'Nngh... Fine, fine, fine!', 4: '1'}
+56	56		202							{1: '1'}
+57	57		301							"{3: ""Grumbling, he tries to act tough, but the way he keeps rubbing at his cheek almost looks like he's trying to punch it.""}"
+58	58		201							{1: '1', 2: '500175', 3: '5', 7: '1'}
+59	59		301			PanelActor1Shake				{1: '1', 2: 'Camu', 3: 'Grrrrr—', 4: '1'}
+60	60		302							"{2: ""Didn't I tell you not to mess with it? Let me take a look."", 3: '61', 4: 'Is it that bad? Let me check.', 5: '61'}"
+61	61		401							{1: '2', 2: '1543'}
+62	62		203							{1: '1', 2: '0.4', 4: '-130', 5: '-200'}
+63	63		301							{3: 'Camu hesitates, then surprisingly crouches a little and turns his left cheek toward you. Surprised he agreed, you pause, then slowly reach out to him.'}
+64	64		306							{1: '1'}
+65	65		301							{3: 'His eyes lower as his breath, warm and lifelike, brushes against your cool fingertips. A shiver runs through you, tiny sparks trailing across your skin and rushing straight to your heart.'}
+66	66		301							"{3: ""You can't even tell if it's your heartbeat or some hum of machinery, but it roars in your ears.""}"
+67	67		306							
+68	68		301							{3: 'You pause for a beat, then gently place your hand on his cheek and start massaging it with light pressure.'}
+69	69		302							{2: 'Let me help you. No more rubbing it yourself.', 3: '70'}
+70	70		301							{2: 'Camu', 3: '...', 4: '1'}
+71	71		301							{2: 'Camu', 3: 'How is it any different if you do it instead of me?', 4: '1'}
+72	72		202							{1: '1'}
+73	73		301							"{3: ""Camu turns away with a grunt, but there's no real fight in him. He doesn't even try to shake off your hand.""}"
+74	74		302							{2: 'You were being too rough. What if you made it worse?', 3: '75'}
+75	75		201							{1: '1', 2: '500175', 3: '5'}
+76	76		301							{1: '1', 2: 'Camu', 3: '...Such a pain.', 4: '1'}
+77	77		302							"{2: ""There. Don't touch it again, alright?"", 3: '78'}"
+78	78		301							"{2: 'Camu', 3: ""...Fine, I won't!"", 4: '1'}"
+79	79		202							{1: '1'}
+80	80		301							"{3: ""As more adopters come by to pick up their pets, the mechanical cats and dogs gradually leave the stall. The feline vendor dozes off without a care. All that's left now are a few scattered accessories, tucked among sparkly stones.""}"
+81	81		302							"{2: 'Camu, looks like the dog you wanted is gone.', 3: '82', 4: ""Camu, there aren't many souvenirs left."", 5: '82'}"
+82	82		201							{1: '1', 2: '500175'}
+83	83		301				AniZhuanchangBegin			"{1: '1', 2: 'Camu', 3: ""Hmm... it's fine. You go take a look around nearby. I'll... I'll pick something out."", 4: '1'}"
+84	84		202							{1: '1', 6: '1'}
+85	85		401						2000.0	{1: '1', 2: '36'}
+86	86		401							{1: '1', 2: '5059'}
+87	87		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory670.jpg'}
+88	88		301			AniZhuanchangEnd				"{3: ""A little while later, the lights at the stall grow dim. The vendor has clearly closed for the night. Under the soft moonlight, Camu slowly walks over. His expression is serious and earnest. From his tactical pocket, he pulls out a small gift he must've been holding onto for a while.""}"
+89	89		201							{1: '1', 2: '500175'}
+90	90		401							{1: '1', 2: '5059'}
+91	91		301							{1: '1', 2: 'Camu', 3: '【kuroname】, this is for you.', 4: '1'}
+92	92		202							{1: '1'}
+93	93		301							{3: 'He opens the box carefully. Inside, a delicate earring glimmers softly.'}
+94	94		306							{1: '1'}
+95	95		301				DialogDisable			"{3: ""The design is simple and clean, just like Camu's usual taste. But this time, the earring is set with a cat's eye gem—vivid, translucent, and unmistakably the most dazzling one from the entire stall.""}"
+96	96		306							
+97	97		302							"{2: ""So that's what you were looking at earlier... that gem?"", 3: '98'}"
+98	98		201							{1: '1', 2: '500175', 3: '1'}
+99	99		301			DialogEnable				{1: '1', 2: 'Camu', 3: 'Yeah... I thought it looked like your eyes.', 4: '1'}
+100	100		202							{1: '1'}
+101	101		301							"{3: ""You've never really thought about your own eyes—not in all the dangerous, fast-paced days you've lived through.""}"
+102	102		301							"{3: ""Tonight, it's like every star in Constellia has found its way into Camu's gaze, more brilliant than any gem. Maybe that's how your eyes look to him too.""}"
+103	103		301							{3: 'The thought stirs something deep in you. So this is why he stayed at the stall all night, enduring that aching pain.'}
+104	104		302							{2: 'Still hurting?', 3: '105'}
+105	105		301							{3: 'He looks a little caught off guard by the question. After hesitating, he turns his face away from you and answers in his usual gruff tone.'}
+106	106		201							{1: '1', 2: '500175'}
+107	107		301							{1: '1', 2: 'Camu', 3: '...A bit. Maybe just rub it again...', 4: '1'}
+108	108		306							{1: '1'}
+109	109		203							{1: '1', 2: '0.4', 4: '-130', 5: '-200'}
+110	110		301				DialogDisable			"{3: ""He moves quickly, and his hood slips slightly off his head. Watching him turn his right face toward you, you can't help but laugh. Instead of reaching for his face, you raise your hand and ruffle his messy hair, then gently fix his hood.""}"
+111	111		306							
+112	112		302							"{2: ""Camu, didn't you say the faulty sensor was on the left side?"", 3: '113'}"
+113	113		301			DialogEnable	DialogDisable			"{2: 'Camu', 3: ""Oh... was it? I can't really tell. Doesn't hurt anymore, I guess. Dumb calibration. Such a pain. Whatever."", 4: '1'}"
+114	114		401							{1: '2', 2: '1543'}
+115	115		203						450.0	{1: '1', 2: '0.4'}
+116	116		301			DialogEnable	DialogDisable			"{3: ""Camu straightens up and walks ahead, all casual on the outside. But you know he's putting every ounce of his Construct-grade control into keeping his expression calm. You shake your head, then follow him toward where the lights shine the brightest.""}"
+117	117		202							{1: '1', 6: '1'}
+118	118		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1075.jpg', 3: '0', 4: '1', 5: '0.8'}
+119	119		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1075.jpg'}
+120	120		301			DialogEnable				"{3: ""All the little animals have been taken home. The prettiest cat eye gem is already gone. Now, the trays sit empty, with only a few leftover crystals huddled together like they're whispering secrets.""}"
+121	121		301							{3: 'The cat vendor is still lying there, belly up and snoozing without a care. The soft murmurs of couples float by in the background, but Evil Chinchilla just rolls over lazily and keeps right on sleeping.'}
+122	122		201							{1: '18', 2: '501347', 4: '325', 5: '420', 6: '-400'}
+123	123		301		1		AniZhuanchangBegin			{1: '1', 2: 'Evil Chinchilla', 3: 'Hmph. Humans are the worst. Bad dogs, bad dogs... meow...', 4: '18'}

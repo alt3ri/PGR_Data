@@ -1,0 +1,43 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory160.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500449'}
+4	4		301			DialogEnable				{1: '1', 2: 'Simpie', 3: 'Can we have another pork knuckle please?', 4: '1'}
+5	5		203							{1: '1', 2: '0.25', 3: '-400'}
+6	6		201							{1: '2', 2: '500445', 3: '6', 4: '400'}
+7	7		301							"{1: '1', 2: 'Pulao', 3: ""No need! There are already so many dishes, and we haven't finished them!"", 4: '2'}"
+8	8		301							"{2: 'Simpie', 3: ""Don't worry, just eat. You're still growing. One pot of osmanthus wine please!"", 4: '1'}"
+9	9		202							{1: '1', 2: '2', 6: '1'}
+10	10		201							{1: '1', 2: '500454'}
+11	11		301							"{1: '1', 2: 'Civilian A', 3: ""Man, that's not good. You have a kid there."", 4: '1'}"
+12	12		201							{1: '1', 2: '500449'}
+13	13		301							{1: '1', 2: 'Simpie', 3: 'My bad. No drinking today.', 4: '1'}
+14	14		301							{2: 'Simpie', 3: 'Excuse me, can we swap the osmanthus wine for juice?', 4: '1'}
+15	15		201							{1: '1', 2: '500236'}
+16	16		301							{1: '1', 2: 'Shop Owner', 3: 'Coming right up.', 4: '1'}
+17	17		202							{1: '1', 6: '1'}
+18	18		301							{3: 'The shop owner walks out from the kitchen, holding multiple plates. The performers have already started their show as diners dig into their food and wine.'}
+19	19		401							{1: '2', 2: '561'}
+20	20		301							{3: 'Bang—!'}
+21	21		201							{1: '1', 2: '500445', 3: '2'}
+22	22		301							{1: '1', 2: 'Pulao', 3: 'Woah. This is so pretty.', 4: '1'}
+23	23		301							{3: 'The fireworks explode in the night sky and excite the crowd, bringing the celebration to a climax.'}
+24	24		301							{3: 'Under the fireworks, mechanical actresses step onto the stage, following the beat. Their dazzling performance has lots of applause from the audience.'}
+25	25		301							"{3: ""It is Pulao's first time in this city, but somehow she feels a little familiar as she watches the performance.""}"
+26	26		201							{1: '1', 2: '500449'}
+27	27		301							{1: '1', 2: 'Simpie', 3: 'Alright, my turn.', 4: '1'}
+28	28		202							{1: '1', 6: '1'}
+29	29		401							{1: '2', 2: '636'}
+30	30		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '2'}
+31	31		301							{3: 'Simpie pulls out his sword, then jumps onto the stage to join the other performers. Their blades collide with one another as they dance, rhyming with the music. When he finishes a song, he invites Pulao to also come to the stage.'}
+32	32		201							{1: '1', 2: '500449'}
+33	33		301							{1: '1', 2: 'Simpie', 3: 'Wanna join, little girl?', 4: '1'}
+34	34		201							{1: '1', 2: '500445', 3: '6'}
+35	35		301							{1: '1', 2: 'Pulao', 3: 'But I...', 4: '1'}
+36	36		202							{1: '1', 6: '1'}
+37	37		301							{2: 'Civilians', 3: 'Go, go, go...'}
+38	38		201							{1: '1', 2: '500084'}
+39	39		301							"{1: '1', 2: 'Birdie', 3: ""It's okay, don't be shy. Good opportunity to show them how good you are."", 4: '1'}"
+40	40		301							"{2: 'Birdie', 3: ""I'm sure it will be an unforgettable memory."", 4: '1'}"
+41	41		201							{1: '1', 2: '500445', 3: '1'}
+42	42		301		1		AniZhuanchangBegin			{1: '1', 2: 'Pulao', 3: 'Alright then... Here I come!', 4: '1'}

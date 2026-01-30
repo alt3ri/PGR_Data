@@ -1,0 +1,260 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory926.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		107						2000.0	{1: 'Deep in the Mine', 2: 'Main Lobby'}
+4	4		108							{1: '1'}
+5	5		301			DialogEnable				{3: 'Three days have passed since they lost contact with the outside world.'}
+6	6		301							"{3: ""They've gone from feeling tense to anxious, and they're just feeling exhausted.""}"
+7	7		301							"{3: ""Even An Jie, who was initially under suspicion, seems affected. She's been remarkably well-behaved for the last three days.""}"
+8	8		301							{3: 'Until—'}
+9	9		201							{1: '1', 2: '500019'}
+10	10		301							"{1: '1', 2: 'Support Force Member', 3: ""Holy, we've got trouble!"", 4: '1'}"
+11	11		202							{1: '1', 6: '1'}
+12	12		201							{1: '1', 2: '500906', 3: '4', 4: '-400'}
+13	13		201							{1: '2', 2: '500019', 4: '400'}
+14	14		301							"{1: '1', 2: 'Bridget', 3: ""What's wrong?!"", 4: '1'}"
+15	15		301							"{2: 'Support Force Member', 3: ""An Jie's gone! We don't see her anywhere!"", 4: '2'}"
+16	16		301							"{2: 'Support Force Member', 3: ""And Silla, too. She was guarding An Jie, but we don't see her anywhere now either!"", 4: '2'}"
+17	17		301							"{2: 'Bridget', 3: ""...Where's Trojan?"", 4: '1'}"
+18	18		202							{1: '1', 2: '2', 6: '1'}
+19	19		201							{1: '1', 2: '500586', 4: '100'}
+20	20		301							"{1: '1', 2: 'Trojan', 3: ""...Oh, I'm right here."", 4: '1'}"
+21	21		301							"{2: 'Trojan', 3: ""Just to be clear, I haven't received any orders from the organization... in terms of helping An Jie escape or anything like that."", 4: '1'}"
+22	22		204							{1: '1', 2: '8'}
+23	23		301							{2: 'Trojan', 3: 'This was entirely her personal decision. I had nothing to do with it.', 4: '1'}
+24	24		301							{3: 'Trojan raises both hands in mock surrender.'}
+25	25		502							{1: 'DialogDisable'}
+26	26		202							{1: '1', 6: '1'}
+27	27		302							{2: '...There are traces of vital fluid.', 3: '28'}
+28	28		201							{1: '1', 2: '500166', 3: '5'}
+29	29		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'The trail leads that way.', 4: '1'}
+30	30		202							{1: '1', 6: '1'}
+31	31		301							{3: 'Scattered traces of vital fluid trail off into the pitch-black mine shaft.'}
+32	32		201							{1: '1', 2: '500906', 3: '4'}
+33	33		301							"{1: '1', 2: 'Bridget', 3: ""An Jie and her deputy couldn't have slipped away so quietly on their own. Someone must have helped them..."", 4: '1'}"
+34	34		301							{2: 'Bridget', 3: 'Cheryl, stay here with your team to guard the supplies. Set up patrol shifts and start repairing the transmitter and receiver. Contact us immediately once communications are restored.', 4: '1'}
+35	35		201							{1: '1', 2: '500405'}
+36	36		301							{1: '1', 2: 'Cheryl', 3: 'Understood.', 4: '1'}
+37	37		201							{1: '1', 2: '500906', 3: '4'}
+38	38		301							{1: '1', 2: 'Bridget', 3: '【kuroname】, Lucia, I need you both with me to track down An Jie.', 4: '1'}
+39	39		301							{2: 'Bridget', 3: 'If there is crossfire, I want them subdued immediately... And that includes you, Trojan.', 4: '1'}
+40	40		306							{1: '1'}
+41	41		301							"{3: ""Bridget's eyes fix on Trojan as he tries to slip away, her brow slightly furrowing.""}"
+42	42		301							{3: 'As she enters the mines, stale mysteries and decaying dust assault her senses. The mounting questions leave her no time to dwell on her complicated history with her former instructor.'}
+43	43		301							{3: 'What exactly is Trojan trying to do down here?'}
+44	44		306							
+45	45		202							{1: '1', 6: '1'}
+46	46		201							{1: '1', 2: '500906', 3: '4', 4: '-400'}
+47	47		201							{1: '2', 2: '500586', 4: '400'}
+48	48		301							"{1: '1', 2: 'Trojan', 3: ""...I'm not your enemy. I've told you this many times before."", 4: '2'}"
+49	49		301							"{2: 'Bridget', 3: ""But I can't take that risk. An Jie belongs to Norman Mining Corp, and so do you. I can't risk leaving you at the camp."", 4: '1'}"
+50	50		204							{1: '2', 2: '3'}
+51	51		301							"{2: 'Trojan', 3: ""It's not easy being the good guy, is it?"", 4: '2'}"
+52	52		301				AniZhuanchangBegin			"{2: 'Bridget', 3: ""Let's move out. We need to find them quickly. Judging by these vital fluid traces, I'm worried Silla won't last much longer."", 4: '1'}"
+53	53		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory568.jpg'}
+54	54		202							{1: '2', 6: '1'}
+55	55		201							{1: '1', 2: '500712'}
+56	56		301			AniZhuanchangEnd				"{1: '1', 2: 'Kurono Soldier A', 3: ""That was almost too easy... Hey, you over there! Researcher, what do you think you're doing?"", 4: '1'}"
+57	57		201							{1: '1', 2: '500910'}
+58	58		301							{1: '1', 2: 'An Jie', 3: '...My assistant is injured and needs medical attention.', 4: '1'}
+59	59		202							{1: '1', 6: '1'}
+60	60		201							{1: '1', 2: '500712', 4: '-400'}
+61	61		201							{1: '2', 2: '500567', 3: '2', 4: '400'}
+62	62		301							"{1: '1', 2: 'Kurono Soldier B', 3: ""Don't waste your time. That Construct got him good—he won't last long anyway."", 4: '2'}"
+63	63		301							"{2: 'Kurono Soldier A', 3: ""You don't seriously expect to find a fully equipped medical bay in a place like this, do you?"", 4: '1'}"
+64	64		301							{3: 'As if proud of their cruel joke, the two Kurono soldiers guffaw in unison.'}
+65	65		202							{1: '1', 2: '2', 6: '1'}
+66	66		201							{1: '1', 2: '500910'}
+67	67		301							{1: '1', 2: 'An Jie', 3: '...', 4: '1'}
+68	68		301							"{2: 'An Jie', 3: ""This wasn't part of our agreement. I made it clear that both my assistant and I needed to remain unharmed before I would help you with the recycling..."", 4: '1'}"
+69	69		201							{1: '1', 2: '500712'}
+70	70		301							"{1: '1', 2: 'Kurono Soldier A', 3: ""Say, do you even know what's up?"", 4: '1'}"
+71	71		301							{3: 'The Kurono soldier stops in his tracks, sizing up An Jie with a glint of malice in his eyes.'}
+72	72		301							"{2: 'Kurono Soldier A', 3: ""We finally managed to escape from Utopia and that madman's pursuit, thinking we could enjoy some damn peace and quiet."", 4: '1'}"
+73	73		301							"{2: 'Kurono Soldier A', 3: ""If it weren't for the mess you people caused, we wouldn't be stuck in this godforsaken place!"", 4: '1'}"
+74	74		201							{1: '1', 2: '500910', 3: '3'}
+75	75		301							{1: '1', 2: 'An Jie', 3: 'I never forced you into anything. You volunteered...', 4: '1'}
+76	76		201							{1: '1', 2: '500712'}
+77	77		301							{1: '1', 2: 'Kurono Soldier A', 3: 'Who the **** said we volunteered!', 4: '1'}
+78	78		301							{3: 'He spits on the ground with contempt.'}
+79	79		301							"{2: 'Kurono Soldier A', 3: ""Your professor proposed the data retrieval mission, and you negotiated the terms. But let me make one thing clear—the person you made that deal with isn't here anymore."", 4: '1'}"
+80	80		202							{1: '1', 6: '1'}
+81	81		201							{1: '1', 2: '500712', 4: '-400'}
+82	82		201							{1: '2', 2: '500567', 3: '2', 4: '400'}
+83	83		301							"{1: '1', 2: 'Kurono Soldier B', 3: ""...Ahem, let's stop there."", 4: '2'}"
+84	84		301							{2: 'Kurono Soldier A', 3: 'Humph.', 4: '1'}
+85	85		301							{3: 'The Kurono soldier makes a show of cleaning his weapon menacingly before falling silent, continuing to escort An Jie forward.'}
+86	86		202							{1: '1', 2: '2', 6: '1'}
+87	87		201							{1: '2', 2: '500138', 4: '100'}
+88	88		201							{1: '1', 2: '500910', 4: '-200'}
+89	89		301							"{1: '2', 3: ""Forced to stumble forward while carrying her gravely wounded deputy on her back, An Jie's mind begins to drift into a haze.""}"
+90	90		301							"{3: ""She should be a rising star in Norman Mining Corp's research division, heading the Norman-Tantalum branch laboratory, calculating data, and exploring material properties...""}"
+91	91		301				AniZhuanchangBegin			{3: 'How did she end up... in this situation?'}
+92	92		202							{1: '1', 2: '2', 6: '1'}
+93	93		401							{1: '1', 2: '36'}
+94	94		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+95	95		401							{1: '1', 2: '373'}
+96	96		504							{1: '0.7'}
+97	97		201							{1: '1', 2: '500910', 4: '-400'}
+98	98		201							{1: '2', 2: '500625', 4: '400'}
+99	99		301			AniZhuanchangEnd				{1: '1', 2: 'An Jie', 3: 'Professor! The data you gave me is all verified now!', 4: '1'}
+100	100		301							{2: 'An Jie', 3: 'How did you obtain these parameters?', 4: '1'}
+101	101		301							"{2: 'Professor', 3: ""Haha, that's my little secret, and I'm not gonna give it away."", 4: '2'}"
+102	102		301							{2: 'An Jie', 3: 'Was this from an experiment conducted long ago? Without experimental foundations... it should be nearly impossible to obtain these parameters.', 4: '1'}
+103	103		301							"{2: 'Professor', 3: ""Since you're so eager to know... here, take a look at these research notes."", 4: '2'}"
+104	104		301				AniZhuanchangBegin			{2: 'Professor', 3: 'These notes contain years of dedication and effort. Truth be told, this is probably my proudest research achievement yet.', 4: '2'}
+105	105		202							{1: '1', 2: '2', 6: '1'}
+106	106		306							{1: '1'}
+107	107		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory205.png'}
+108	108		301			AniZhuanchangEnd				"{3: ""The research notes are filled with meticulous data entries, ranging from studies on tantalum's properties to hypotheses about material enhancement, and finally to the various reactions these materials trigger in test subjects...""}"
+109	109		301							"{3: ""An Jie immerses herself in this paradise, treasuring every moment as if she's discovered an invaluable treasure.""}"
+110	110		301							"{3: ""However, only half of the research notes are present. The crucial test subject reactions and subsequent research directions come to an abrupt end at the notebook's conclusion.""}"
+111	111		301				AniZhuanchangBegin			{3: 'After starting a new project based on the notes, An Jie rushes to find her professor, barely containing her excitement.'}
+112	112		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+113	113		306							
+114	114		201							{1: '1', 2: '500910', 4: '-400', 7: '1'}
+115	115		201							{1: '2', 2: '500625', 4: '400', 7: '1'}
+116	116		301			AniZhuanchangEnd				"{1: '1', 2: 'An Jie', 3: ""Professor, I've conducted multiple experiments based on the notes, but I can't replicate any of the values. Why is that?"", 4: '1'}"
+117	117		301							"{2: 'Professor', 3: ""Hmm... Well, that's because we're using different test subjects, of course."", 4: '2'}"
+118	118		301							{2: 'An Jie', 3: 'Different... test subjects...?', 4: '1'}
+119	119		301							{2: 'Professor', 3: 'The copolymer is meant to be used on humans at the end of the day, not lab rats. How could you possibly get the correct parameters by only experimenting on rats?', 4: '2'}
+120	120		301							"{3: ""An Jie can't be sure if that really makes sense to her. As she stares at her professor in confusion, the man before her suddenly seems like a stranger.""}"
+121	121		301							{2: 'Professor', 3: 'Tell me, An Jie. Do you truly want to... continue walking down this path of research with me?', 4: '2'}
+122	122		301							{3: 'Her professor, usually genial, now takes on an uncharacteristically serious tone.'}
+123	123		301							{2: 'An Jie', 3: 'Yes... of course I do.', 4: '1'}
+124	124		301							"{3: ""What researcher wouldn't want to achieve something in their scientific career? Everyone dreams of becoming the next Asimov.""}"
+125	125		301							{2: 'An Jie', 3: 'If our research on copolymers succeeds...', 4: '1'}
+126	126		301							{3: 'She envisions herself on the highest podium, her name etched at the pinnacle of history.'}
+127	127		301							"{3: ""A cryptic smile plays across the professor's lips.""}"
+128	128		301				AniZhuanchangBegin			"{2: 'Professor', 3: ""As my most brilliant student, you'll certainly have access to the finest resources at my disposal."", 4: '2'}"
+129	129		202							{1: '1', 2: '2', 6: '1'}
+130	130		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory648.jpg'}
+131	131		306							{1: '1'}
+132	132		301			AniZhuanchangEnd				{3: 'He introduces An Jie to Kurono Corporation.'}
+133	133		301							"{3: ""Before An Jie can even process the fact that the head of Norman Mining Corp's research lab has connections to Kurono, she finds herself captivated by Kurono's tantalizing promises.""}"
+134	134		301							{3: 'Generous compensation, expanded laboratory privileges, and...'}
+135	135		301							"{3: ""They offer to provide materials and test subjects free of charge for An Jie's research, with one condition: all research findings must be shared with Kurono.""}"
+136	136		301							"{3: ""As a senior researcher, An Jie stands at a clearance level that's more than sufficient for her to carry out this undertaking.""}"
+137	137		301							"{3: 'The good times prove short-lived. After Babylonia passes a proposal to shut down illegal laboratories and research projects, Kurono\'s operations become more discreet, cutting off An Jie\'s access to additional ""resources"".'}"
+138	138		301				AniZhuanchangBegin			{3: 'But soon, a new opportunity presents itself.'}
+139	139		306							
+140	140		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+141	141		201							{1: '1', 2: '500910', 4: '-400', 7: '1'}
+142	142		201							{1: '2', 2: '500625', 4: '400', 7: '1'}
+143	143		301			AniZhuanchangEnd				{1: '1', 2: 'Professor', 3: 'Babylonia decides to develop the Konstantin Mine in collaboration with Norman Mining Corp.', 4: '2'}
+144	144		301							{2: 'An Jie', 3: '...The Konstantin Mine? That heavily invested tantalum mine?', 4: '1'}
+145	145		301							"{2: 'Professor', 3: ""Indeed. You wanted the other half of the research data, didn't you?"", 4: '2'}"
+146	146		301							{2: 'Professor', 3: 'When the accident struck the Konstantin Mine, I barely managed to escape with just this research notebook. Everything else remains stored in the laboratory deep within the mine.', 4: '2'}
+147	147		301							"{2: 'Professor', 3: ""I've already requested assistance from Kurono. Norman Mining Corp will dispatch several researchers to help them reopen the mine, and I've submitted your name as one of the candidates."", 4: '2'}"
+148	148		301							"{2: 'An Jie', 3: ""But Professor, I'm just a researcher. The mine itself... it's been infected by the Punishing, no?"", 4: '1'}"
+149	149		301							"{3: ""The mine is well-known to every tantalum research laboratory. It was once Norman Mining Corp's crowning achievement—a pinnacle that every tantalum research facility aspired to reach.""}"
+150	150		301							"{3: ""But it's long been occupied by the Corrupted, no?""}"
+151	151		301							{2: 'Professor', 3: 'Kurono will dispatch armed combat units to assist you.', 4: '2'}
+152	152		301							"{2: 'An Jie', 3: ""Isn't there anyone else who could do this? I mean, I don't consider myself knowledgeable about that mine..."", 4: '1'}"
+153	153		301							"{2: 'Professor', 3: ""I'll transfer clearance for the mine to you. My laboratory is down there, and my access level surpasses what you'd get as a Norman researcher."", 4: '2'}"
+154	154		301							{2: 'An Jie', 3: '...', 4: '1'}
+155	155		301							"{3: ""Seeing An Jie's hesitation, the professor shakes his head, his voice taking on a hint of pity.""}"
+156	156		301							"{2: 'Professor', 3: ""I'm not asking, and you don't have the right to refuse, An Jie."", 4: '2'}"
+157	157		301							{2: 'An Jie', 3: 'I...', 4: '1'}
+158	158		301							{3: 'Knowing exactly what her professor is saying, An Jie now seems somewhat disturbed. Noticing this, the professor softens and changes the subject.'}
+159	159		301							"{2: 'Professor', 3: ""You need to understand what we're talking about here, An Jie. We're talking about... extremely valuable data about tantalum copolymers, about humanity's future."", 4: '2'}"
+160	160		301							"{2: 'Professor', 3: ""Once we obtain this data, it will be our pride and Kurono's newest bargaining chip."", 4: '2'}"
+161	161		301				PanelActor2Shake			"{2: 'Professor', 3: ""With this new copolymer research... I wouldn't be stuck in a backwater place like Norman Mining Corp! Cough... cough, cough..."", 4: '2'}"
+162	162		301							{2: 'An Jie', 3: '...Professor, are you feeling okay?', 4: '1'}
+163	163		301							"{2: 'Professor', 3: ""Sigh... I'm getting old."", 4: '2'}"
+164	164		301							{3: 'He composes himself and sinks back into his chair.'}
+165	165		301							{2: 'Professor', 3: 'Therefore, An Jie, all our hopes now rest with you.', 4: '2'}
+166	166		301							"{2: 'Professor', 3: ""Bring back the other half of my life's work, bring back what we seek—it will take us to new heights."", 4: '2'}"
+167	167		301							"{2: 'An Jie', 3: ""...Of course, Professor, but I have a few conditions I'd like Kurono to meet."", 4: '1'}"
+168	168		301							"{2: 'Professor', 3: ""Go ahead. As long as your requests are reasonable, we'll do our best to accommodate them within our means."", 4: '2'}"
+169	169		301							"{2: 'An Jie', 3: ""Add my assistant's name to the list. He has helped me with numerous experiments, and I need his help to organize the data. Also..."", 4: '1'}"
+170	170		301				AniZhuanchangBegin			{3: 'As evening approaches, the artificial sky dome dims to a dusky hue.'}
+171	171		202							{1: '1', 2: '2', 6: '1'}
+172	172		401							{1: '1', 2: '36'}
+173	173		504							{1: '0'}
+174	174		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory198.png'}
+175	175		401							{1: '1', 2: '201'}
+176	176		201							{1: '1', 2: '500712', 7: '1'}
+177	177		301			AniZhuanchangEnd				{1: '1', 2: 'Kurono Soldier A', 3: 'Stop dawdling and get moving. The lab the geezer mentioned should be right up ahead.', 4: '1'}
+178	178		301							{3: 'The crude voice snaps An Jie back to reality, where clouds of dust fill her lungs and send her into a coughing fit.'}
+179	179		301							{2: 'Kurono Soldier A', 3: 'Hey, are you seriously still dragging that corpse around?', 4: '1'}
+180	180		202							{1: '1', 6: '1'}
+181	181		201							{1: '2', 2: '500138', 4: '100'}
+182	182		201							{1: '1', 2: '500910', 4: '-200'}
+183	183		301							"{1: '1', 3: ""The soldier's harsh words jolt An Jie into a horrifying realization—her grievously wounded assistant, whom she had been carrying all this time, has long since drawn his last breath.""}"
+184	184		301							{2: 'An Jie', 3: '...', 4: '1'}
+185	185		203							{1: '1', 2: '0.3', 3: '-200', 4: '-80'}
+186	186		203							{1: '2', 2: '0.3', 3: '100', 4: '-150'}
+187	187		401							{1: '2', 2: '1543'}
+188	188		202							{1: '2'}
+189	189		301							"{3: ""Taking a deep breath, An Jie gently lowers her assistant's body onto the ground beside the mining tunnel.""}"
+190	190		203							{1: '1', 2: '0.3'}
+191	191		301							{2: 'An Jie', 3: 'Sorry, but could you help me bury him? He was an excellent researcher...', 4: '1'}
+192	192		202							{1: '1', 6: '1'}
+193	193		201							{1: '1', 2: '500712', 4: '-400'}
+194	194		201							{1: '2', 2: '500567', 3: '2', 4: '400'}
+195	195		301							{1: '1', 2: 'Kurono Soldier A', 3: 'Cut the chatter!', 4: '1'}
+196	196		301							"{2: 'Kurono Soldier B', 3: ""Look, it's not that we don't want to help, but the ground here is solid rock. We can't even do it damage with bullets."", 4: '2'}"
+197	197		301							{2: 'Kurono Soldier B', 3: 'Just leave him there.', 4: '2'}
+198	198		202							{1: '1', 2: '2', 6: '1'}
+199	199		201							{1: '1', 2: '500910'}
+200	200		301							{1: '1', 2: 'An Jie', 3: '...Got it.', 4: '1'}
+201	201		401							{1: '2', 2: '4316'}
+202	202		301							"{3: ""The Kurono soldier tosses her assistant's body into the abyss below the mining tunnel unceremoniously. An Jie opens her mouth to speak, but the words never come out.""}"
+203	203		202							{1: '1', 6: '1'}
+204	204		301				DialogDisable			{3: 'The professor has drawn An Jie a detailed map of the laboratory that specifically marks the secret passages that they had reinforced.'}
+205	205		502							{1: 'RImgBg1DisableSlow'}
+206	206		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory938.jpg'}
+207	207		301			DialogEnable				{3: 'Following the map, they quickly locate the laboratory entrance, but the dust-covered control panel remains lifeless—as if the secret laboratory never existed at all.'}
+208	208		201							{1: '1', 2: '500910', 4: '-300'}
+209	209		201							{1: '2', 2: '500712', 4: '300'}
+210	210		301							"{1: '1', 2: 'Kurono Soldier A', 3: ""Tch, dammit, where are your researcher's access card?"", 4: '2'}"
+211	211		204							{1: '1', 2: '3'}
+212	212		301							"{2: 'An Jie', 3: ""I've reactivated the card with my palm, and I'm the only one able to make them work."", 4: '1'}"
+213	213		301							{2: 'Kurono Soldier A', 3: 'Dammit, what are you waiting for then?!', 4: '2'}
+214	214		203							{1: '2', 2: '0.15', 3: '200'}
+215	215		401							{1: '2', 2: '4044'}
+216	216		301							"{3: ""As they near the laboratory, Kurono's soldier grows increasingly brazen. He openly prods An Jie with his weapon, demanding she hurry up and unlock the control panel.""}"
+217	217		301							{2: 'An Jie', 3: 'My professor said that all laboratories here are encrypted—only humans with active vital signs can open them.', 4: '1'}
+218	218		401							{1: '2', 2: '4261'}
+219	219		301							"{3: ""As she swiftly passes her hand over the control panel, it gradually becomes aglow—the same panel that had remained stubbornly unresponsive to all the Kurono soldier's attempts.""}"
+220	220		301							{2: 'Kurono Soldier A', 3: 'What a pain in the butt. If you ask me, not a single one of these researchers is worth a damn.', 4: '2'}
+221	221		203						150.0	{1: '2', 2: '0.1'}
+222	222		401							{1: '2', 2: '4044'}
+223	223		203							{1: '1', 2: '0.2', 3: '-800'}
+224	224		202							{1: '1'}
+225	225		301				AniZhuanchangBegin			{3: 'The Kurono soldier spits venomously on the ground, shoves An Jie aside, and storms into the laboratory first.'}
+226	226		202							{1: '2', 6: '1'}
+227	227		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory925.jpg'}
+228	228		201							{1: '1', 2: '500906', 3: '4'}
+229	229		301			AniZhuanchangEnd				"{1: '1', 2: 'Bridget', 3: ""...The vital fluid trail hasn't stopped so far, and there's fresh blood here. Someone's been injured."", 4: '1'}"
+230	230		203							{1: '1', 2: '0.3', 4: '-80'}
+231	231		301							{3: 'She crouches down to examine the bloodstains on the ground more carefully.'}
+232	232		302							"{2: ""It's still fresh."", 3: '233'}"
+233	233		301							"{3: ""There's even a lingering trace of gunpowder in the air. The conflict must have happened very recently.""}"
+234	234		201							{1: '1', 2: '500166', 3: '5'}
+235	235		301							"{1: '1', 2: 'Lucia', 3: ""These drag marks in the blood... They're trying to move this human somewhere."", 4: '1'}"
+236	236		201							{1: '1', 2: '500586', 4: '100'}
+237	237		301							{1: '1', 2: 'Trojan', 3: '...Ugh, are we really going to press forward?', 4: '1'}
+238	238		302							{2: 'Yes.', 3: '242', 4: 'What do you think, Bridget?', 5: '239'}
+239	239		201							{1: '1', 2: '500906', 3: '4'}
+240	240		301							"{1: '1', 2: 'Bridget', 3: ""Yes, we're pressing forward."", 4: '1'}"
+241	241	244	301							{2: 'Bridget', 3: 'Whatever else An Jie was, she came into the mines as a Norman Mining Corp employee.', 4: '1'}
+242	242		201							{1: '1', 2: '500906', 3: '4'}
+243	243		301							{1: '1', 2: 'Bridget', 3: 'Whatever else An Jie was, she came into the mines as a Norman Mining Corp employee.', 4: '1'}
+244	244		301							"{2: 'Bridget', 3: ""Support Force will have a hard time justifying ourselves to Norman Mining Corp and Babylonia if we don't keep looking for her."", 4: '1'}"
+245	245		201							{1: '1', 2: '500586', 4: '100'}
+246	246		301							{1: '1', 2: 'Trojan', 3: 'But this is way out of my jurisdiction...', 4: '1'}
+247	247		201							{1: '1', 2: '500166', 3: '5'}
+248	248		301							"{1: '1', 2: 'Lucia', 3: ""Wait, I'm hearing something... coming from over there."", 4: '1'}"
+249	249		301							{3: 'Lucia furrows her brow, her gaze fixed on a mine tunnel in the distance.'}
+250	250		302							{2: 'So am I.', 3: '251'}
+251	251		401							{1: '2', 2: '580'}
+252	252		301							"{3: ""It's faint, like metal scraping against metal.""}"
+253	253		301							{2: 'Lucia', 3: 'There are many metal doors throughout the mine tunnel. Must be the sound of one of them opening.', 4: '1'}
+254	254		201							{1: '1', 2: '500906', 3: '4'}
+255	255		301							{1: '1', 2: 'Bridget', 3: 'A laboratory in the mines, huh...', 4: '1'}
+256	256		202							{1: '1', 6: '1'}
+257	257		502							{1: 'RImgBg1BlowUp'}
+258	258		301							{3: 'Everyone turns toward the source of the sound in unison.'}
+259	259		301		1		AniZhuanchangBegin			"{3: 'That position is closer to the ""top"" of the inverted tower.'}"

@@ -1,0 +1,62 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+2	2		401							{1: '1', 2: '204'}
+3	3		301			DialogEnable	DialogDisable			{3: 'You just finished a last-minute meeting with Chrome late at night, and the two of you walk leisurely back to the lounge.'}
+4	4		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+5	5		201							{1: '1', 2: '500309'}
+6	6		301			DialogEnable				"{1: '1', 2: 'Chrome', 3: ""Our joint operation was completed with high efficiency, so we should be able to rest well now. By the way, today's your..."", 4: '1'}"
+7	7		202							{1: '1', 6: '1'}
+8	8		301							{3: 'A message suddenly appears on the terminal in your hand. The screen displays a note you have never seen before and a preview of the text.'}
+9	9		301							"{3: '""Dear customer, your order KH5007635101842 has been delivered. For any queries regarding the custom suit, please contact customer service...""'}"
+10	10		301							{3: 'With your recent heavy workload, you have not had the time to buy anything, let alone a custom suit.'}
+11	11		201							{1: '1', 2: '500309'}
+12	12		301							{2: 'Chrome', 3: 'Hmm? What is it?', 4: '1'}
+13	13		301							"{3: 'You tap the terminal screen to open the full text, but you are blocked by a large message, ""Facial Recognition Failed"".'}"
+14	14		302							{2: 'Huh?', 3: '15'}
+15	15		301							{3: 'You carefully examine the terminal in your hand and realize the screen is wiped clean of any fingerprint, while its back is covered in battle scars that do not match the scratches on your terminal.'}
+16	16		302							{2: 'I grabbed the wrong terminal.', 3: '17'}
+17	17		301							{2: 'Chrome', 3: 'The wrong terminal? It was just you and me in the meeting room earlier.', 4: '1'}
+18	18		301							{3: 'You show the terminal in your hand to Chrome. He glances down at the screen and is slightly surprised.'}
+19	19		301							{3: 'Chrome quickly pulls out the other terminal from his pocket—it is indeed yours.'}
+20	20		302							"{2: ""It's good that it's just the two of us. Otherwise, we'd have to go back... Here, let's switch back."", 3: '21'}"
+21	21		301							{3: 'Chrome reaches out to exchange the terminals, but he looks a bit annoyed for some reason as if he has made a rookie mistake.'}
+22	22		204							{1: '1', 2: '1'}
+23	23		301							"{2: 'Chrome', 3: ""You... already guessed it, didn't you?"", 4: '1'}"
+24	24		301							{3: 'His tone is probing yet uncertain.'}
+25	25		302							{2: 'Yeah... Is there another event at your home?', 3: '26'}
+26	26		301							{3: 'He smiles broadly.'}
+27	27		204							{1: '1', 2: '1'}
+28	28		301							{2: 'Chrome', 3: 'Who has time to attend events with how busy things have been lately?', 4: '1'}
+29	29		301				DialogDisable			"{2: 'Chrome', 3: ""You've clearly already guessed its purpose."", 4: '1'}"
+30	30		202				AniZhuanchangBegin			{1: '1'}
+31	31		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+32	32		201							{1: '1', 2: '500309', 3: '1'}
+33	33		301			DialogEnable				"{1: '1', 2: 'Chrome', 3: ""It's a bit regrettable that the plan hasn't unfolded as I anticipated, but since the cat's out of the bag, let me personally deliver your gift to you."", 4: '1'}"
+34	34		301							"{3: ""As Chrome says this with a smile, the two of you reach the Gray Raven's lounge. A delicately and elegantly wrapped package is neatly placed on the storage cabinet by the door.""}"
+35	35		301							{3: 'You can tell that it is a gift from Chrome the moment you see the package.'}
+36	36		302							{2: 'Shall we open it together?', 3: '37'}
+37	37		301							{2: 'Chrome', 3: 'Hold on, I... also prepared a birthday celebration segment originally.', 4: '1'}
+38	38		301							{2: 'Chrome', 3: 'With how things have turned out, it may be even more dramatic.', 4: '1'}
+39	39		301							{3: 'Chrome opens his terminal in front of you and initiates a call on the spot.'}
+40	40		301							{3: 'Ring—ring—'}
+41	41		301							{3: 'Your terminal rings from inside your pocket as expected. You look at Chrome, resigned, as he smiles and looks back.'}
+42	42		302							"{2: ""Hello? Who's this?"", 3: '43'}"
+43	43		301							{2: 'Chrome', 3: 'Is this 【kuroname】, the Gray Raven Commandant?', 4: '1'}
+44	44		302							{2: 'Yes, it is.', 3: '45'}
+45	45		301							{3: 'This game of pretend might be childish but irresistibly fun.'}
+46	46		301							"{2: 'Chrome', 3: ""I am a mysterious gift-giver. Someone has asked me to thank the commandant for always looking after Strike Hawk. I must deliver the gift to the commandant's door before 12 o'clock today."", 4: '1'}"
+47	47		301							{2: 'Chrome', 3: 'The person who gave the gift specifically mentioned how hard the commandant works. Therefore the gift must be a well-fitting, elegant, and easy-to-maintain suit that is suitable for various events in the future.', 4: '1'}
+48	48		301							{2: 'Chrome', 3: 'Now, the gift has arrived outside your door. Would you be willing to step outside and sign for it?', 4: '1'}
+49	49		301							"{3: ""The terminal's receiver adds a hint of reverb to Chrome's voice, making it feel surreal.""}"
+50	50		301							{3: 'The clock in the distance ticks to 11:59, a minute away from 12.'}
+51	51		301							{3: 'After saying this, Chrome puts down the terminal and slowly hands the gift box over.'}
+52	52		301							{3: 'You follow the rules of this game and reach out with a smile, accepting his gift.'}
+53	53		301							{3: 'From that moment on, your conversation no longer requires any terminal.'}
+54	54		301							{2: 'Chrome', 3: 'Happy birthday... Commandant.', 4: '1'}
+55	55		301							{3: 'As soon as those words are spoken, the clock strikes twelve.'}
+56	56		301							{3: 'In the silent night, the two of you stand in the preparation room by yourselves, enjoying this moment of peace.'}
+57	57		302							{2: 'Thank you.', 3: '58'}
+58	58		302							"{2: ""I really like it... I'll wear it on the right occasions as you hoped."", 3: '59'}"
+59	59		301							"{2: 'Chrome', 3: ""And... I'll be glad to share those important moments of your life with you."", 4: '1'}"
+60	60		301							"{3: ""Chrome's ice-blue gaze meets yours without warning.""}"
+61	61		301		1		AniZhuanchangBegin			{2: 'Chrome', 3: '【kuroname】, may you walk toward a brilliant future with my blessings.', 4: '1'}

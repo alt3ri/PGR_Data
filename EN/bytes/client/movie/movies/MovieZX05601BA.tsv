@@ -1,0 +1,304 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '2', 2: '215'}
+3	3		304			AniZhuanchangEnd				{1: '<i>I foresee...<i>', 2: 'ffffffff', 3: '0.5', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '-3', 10: '1'}
+4	4		304							{1: '<i>In the future...<i>', 2: 'ffffffff', 3: '0.5', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '-1', 10: '1'}
+5	5		304				AniZhuanchangBegin			{1: '<i>The land wakes up from sleep.<i>', 2: 'ffffffff', 3: '0.5', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '-1', 9: '1', 10: '1'}
+6	6		402							{1: '215'}
+7	7		102							{1: 'Lamento di Phantasma', 2: 'Extra Story', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+8	8		502				AniZhuanchangBegin		9000.0	{1: 'ThemeEnable'}
+9	9		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg'}
+10	10		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 4: '4'}
+11	11		401							{1: '1', 2: '175'}
+12	12		401							{1: '2', 2: '4643'}
+13	13		401							{1: '2', 2: '4638'}
+14	14		301			DialogEnable				{3: 'The transport vehicle hurtles through the wilderness, its tires churning up a swirling dust storm in its wake.'}
+15	15		401						800.0	{1: '2', 2: '4788'}
+16	16		402							{1: '4788'}
+17	17		301			RImgBg1Shake				{3: 'The road, long forgotten and riddled with potholes, sends the vehicle lurching and shuddering along the broken path.'}
+18	18		302							{2: 'Lucia, how much longer will it take us?'}
+19	19		201							{1: '1', 2: '500994'}
+20	20		301							{1: '1', 2: 'Lucia', 3: 'Fifteen minutes.', 4: '1'}
+21	21		203							{1: '1', 2: '0.25', 3: '400'}
+22	22		201							{1: '2', 2: '1031001', 4: '-400'}
+23	23		301				AniZhuanchangBegin			{1: '1', 2: 'Liv', 3: 'This is already the twelfth conservation area...', 4: '2'}
+24	24		202							{1: '1', 2: '2', 6: '1'}
+25	25		306							{1: '1'}
+26	26		502						400.0	{1: 'DialogDisable'}
+27	27		402							{1: '4638'}
+28	28		402							{1: '4643'}
+29	29		101							{4: '4', 5: '1'}
+30	30		504							{1: '0.7'}
+31	31		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory702.jpg'}
+32	32		301			DialogEnable				{3: 'Two weeks ago, multiple surface conservation areas came under attack by unidentified Hetero-Creatures.'}
+33	33		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory301.png'}
+34	34		301			AniZhuanchangEnd	DialogDisable			{3: 'Worse yet, nearly all personnel from the affected sites have since gone missing.'}
+35	35		401						800.0	{1: '2', 2: '4774'}
+36	36		201							{1: '1', 2: '501265', 4: '-600', 7: '1'}
+37	37		203							{1: '1', 2: '0.25', 3: '-550', 4: '-25', 5: '-25'}
+38	38		201							{1: '2', 2: '501265', 5: '-75', 6: '-25', 7: '1'}
+39	39		203							{1: '2', 2: '0.25', 4: '-75', 5: '-50'}
+40	40		201							{1: '3', 2: '501265', 4: '600', 7: '1'}
+41	41		203							{1: '3', 2: '0.25', 3: '550', 4: '-25', 5: '-25'}
+42	42		301			DialogEnable	DialogDisable			{1: '1', 3: 'What started as a small-scale incursion has swiftly escalated, and the window to rescue the attacked conservation areas is closing fast.'}
+43	43		402							{1: '4774'}
+44	44		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+45	45		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+46	46		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+47	47		201							{1: '1', 2: '500868', 3: '2', 7: '1'}
+48	48		301			DialogEnable	AniZhuanchangBegin			{1: '1', 3: 'These coordinated strikes defy the usual behavior of Hetero-Creatures. Is something—or someone—pulling the strings behind the scenes? Another entity like Cradle, perhaps?'}
+49	49		202							{1: '1', 6: '1'}
+50	50		306							
+51	51		504							{1: '0'}
+52	52		502						400.0	{1: 'DialogDisable'}
+53	53		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg'}
+54	54		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 4: '4'}
+55	55		201							{1: '1', 2: '500568'}
+56	56		301			DialogEnable				{1: '1', 2: 'Lee', 3: 'According to the collected data, over 1600 people have gone missing, with 187 deaths confirmed so far.', 4: '1'}
+57	57		301							{2: 'Lee', 3: 'The majority of casualties occurred during the initial attacks.', 4: '1'}
+58	58		301							{2: 'Lee', 3: 'In just the first 3 days, 5 conservation areas were hit simultaneously, resulting in over 700 missing and more than 60 deaths...', 4: '1'}
+59	59		202							{1: '1'}
+60	60		301							{3: 'Babylonia has swiftly adapted its tactics, deploying its most agile elite squads as vanguard scouts to gather critical intelligence. Based on their findings, the Support Force would then mobilize, ensuring rapid reinforcement where needed.'}
+61	61		301							{3: 'Reports of disappearances and deaths among conservation area residents have dropped sharply since.'}
+62	62		301							"{3: ""But... it's not enough. No matter how fast Babylonia moves, the Hetero-Creatures always seem one step ahead, leaving defenders scrambling to keep up.""}"
+63	63		201							{1: '1', 2: '500568', 3: '10'}
+64	64		301							{1: '1', 2: 'Lee', 3: 'The conservation area requesting aid earlier has a permanent population of around 400 people.', 4: '1'}
+65	65		204							{1: '1'}
+66	66		301							{2: 'Lee', 3: 'If this time...', 4: '1'}
+67	67		202							{1: '1'}
+68	68		301							{3: 'Lee pauses, leaving his thought unfinished.'}
+69	69		301							{3: 'Four hours have passed since you received the distress signal.'}
+70	70		201							{1: '1', 2: '500994', 7: '1'}
+71	71		301							{1: '1', 3: 'Lucia remains silent, her hands clenched around the steering wheel as she fights to keep the vehicle steady on the dilapidated, mud-slicked road.'}
+72	72		302							"{2: ""Lucia, how's everything with your new frame?"", 3: '73'}"
+73	73		204							{1: '1', 2: '1'}
+74	74		301				DialogDisable			"{2: 'Lucia', 3: ""It's functioning well with no adverse reactions."", 4: '1'}"
+75	75		302				AniZhuanchangBegin			{2: 'Good.', 3: '76'}
+76	76		202							{1: '1', 6: '1'}
+77	77		401							{1: '1', 2: '36'}
+78	78		402							{1: '4643'}
+79	79		402							{1: '4638'}
+80	80		502						400.0	{1: 'DialogDisable'}
+81	81		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory301.png'}
+82	82		201							{1: '1', 2: '500994', 3: '5'}
+83	83		301			DialogEnable	AniZhuanchangBegin			"{1: '1', 2: 'Lucia', 3: ""We've reached the target location!"", 4: '1'}"
+84	84		401							{1: '2', 2: '2661'}
+85	85		202							{1: '1', 6: '1'}
+86	86		101							{4: '4', 5: '1'}
+87	87		502						400.0	{1: 'DialogDisable'}
+88	88		104						200.0	{1: '-335|85|-300', 2: '0'}
+89	89		401							{1: '1', 2: '176'}
+90	90		104			AniZhuanchangEnd			3000.0	{1: '255|85|-300', 2: '4'}
+91	91		502							{1: 'DialogEnable'}
+92	92		301							{3: 'The vehicle rolls into the target conservation area, but only a deathly silence answers.'}
+93	93		301							{3: 'The ground is streaked with dark pools of blood, the walls riddled with bullet holes. The acrid tang of gunpowder lingers, sharp in the still air.'}
+94	94		301				DialogDisable			{3: 'Around you, the once-pristine buildings stand broken and skeletal, as hungry flames lick through the wreckage, devouring all they touch.'}
+95	95		306							
+96	96		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory301.png', 3: '0', 4: '1', 5: '1'}
+97	97		104							{1: '0|0|0', 2: '0'}
+98	98		205							{1: '999'}
+99	99		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory301.png'}
+100	100		201							{1: '1', 2: '500994', 3: '9'}
+101	101		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'Dammit. Are we too late?', 4: '1'}
+102	102		302							"{2: ""Let's start searching. Lee, go up and keep watch."", 3: '103'}"
+103	103		201							{1: '1', 2: '500568'}
+104	104		301							{1: '1', 2: 'Lee', 3: 'Understood.', 4: '1'}
+105	105		302							"{2: ""Liv, you're with me. Medical assistance may be needed."", 3: '106'}"
+106	106		201							{1: '1', 2: '1031001'}
+107	107		301							{1: '1', 2: 'Liv', 3: 'Copy that!', 4: '1'}
+108	108		302							"{2: ""Lucia, we'll split up and search."", 3: '109'}"
+109	109		201							{1: '1', 2: '500994'}
+110	110		301							{1: '1', 2: 'Lucia', 3: 'Alright.', 4: '1'}
+111	111		202							{1: '1'}
+112	112		301							{3: 'Chaos envelops the scene, the shattered remnants of Constructs littering the ground.'}
+113	113		201							{1: '1', 2: '1031001', 3: '3'}
+114	114		301							{1: '1', 2: 'Liv', 3: 'Over there...', 4: '1'}
+115	115		202							{1: '1'}
+116	116		104							{1: '0|0|-100', 2: '1'}
+117	117		301							"{3: ""Liv's gaze leads you to a clearing with a sandbox and exercise equipment—what appears to be a public recreation area nestled within the conservation area.""}"
+118	118		301							"{3: ""Amid the open ground, a lone baseball lies abandoned. Perhaps once the children's toy, now its surface is marred by blood.""}"
+119	119		104							{1: '0|0|0', 2: '1'}
+120	120		302				AniZhuanchangBegin			"{2: ""Let's continue searching. Don't let your guard down."", 3: '121'}"
+121	121		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory302.png'}
+122	122		301			AniZhuanchangEnd				{3: 'Moments later, you find the entrance to an underground shelter hidden beneath the conservation area, but its isolation door lies in ruins.'}
+123	123		301							{3: 'The shattered fragments on the ground have unnervingly clean, precise edges.'}
+124	124		302							"{2: ""This precision... it doesn't match Hetero-Creature behavior."", 3: '125'}"
+125	125		201							{1: '1', 2: '1031001', 3: '3'}
+126	126		301							{1: '1', 2: 'Liv', 3: 'It was a blade... Could it be an Ascendant?', 4: '1'}
+127	127		302							{2: 'It could also be a Cradle-like entity.', 3: '128'}
+128	128		201							{1: '1', 2: '500994', 3: '5'}
+129	129		301							{1: '1', 2: 'Lucia', 3: 'Over here!', 4: '1'}
+130	130		202							{1: '1', 6: '1'}
+131	131		104							{1: '0|0|-150', 2: '1'}
+132	132		401							{1: '2', 2: '4931'}
+133	133		201							{1: '2', 2: '501074', 5: '-125', 7: '1'}
+134	134		301							"{1: '1', 3: ""You and Liv rush to Lucia's side, only to find a fallen Construct beside her, barely clinging to life.""}"
+135	135		402							{1: '4931'}
+136	136		302							{2: 'Liv, treat him.', 3: '137'}
+137	137		203							{1: '2', 2: '0.25', 3: '400', 4: '-125'}
+138	138		201							{1: '1', 2: '1031001', 4: '-400', 7: '1'}
+139	139		301							{1: '1', 2: 'Injured Construct', 3: 'Thank you...', 4: '2'}
+140	140		204							{1: '1', 2: '3'}
+141	141		301							{3: 'One look tells Liv all she needs to know—the Construct is past saving with your current medical capabilities.'}
+142	142		204							{1: '1'}
+143	143		301							{2: 'Liv', 3: '...Hang in there.', 4: '1'}
+144	144		301							"{2: 'Injured Construct', 3: ""Don't bother..."", 4: '2'}"
+145	145		301							{2: 'Injured Construct', 3: 'I know my condition...', 4: '2'}
+146	146		301							"{3: ""The Construct barely registers Liv's healing attempts, fully aware of his inevitable fate.""}"
+147	147		301							"{2: 'Injured Construct', 3: ""I'm Danny, one of the Constructs stationed at this conservation area."", 4: '2'}"
+148	148		301							{3: 'He retrieves a terminal slick with his own vital fluid from his chest, handing it over along with his identification tag.'}
+149	149		301							{2: 'Danny', 3: 'I recorded... some footage that might... be useful.', 4: '2'}
+150	150		203							{1: '2', 2: '0.25', 3: '400', 4: '-150'}
+151	151		202							{1: '2'}
+152	152		301							{3: 'With those final words, the light in his eyes immediately fades away.'}
+153	153		204							{1: '1', 2: '19'}
+154	154		203							{1: '1', 2: '0.25'}
+155	155		301				DialogDisable			{2: 'Liv', 3: '...', 4: '1'}
+156	156		202							{1: '1'}
+157	157		302							{2: '...', 3: '158'}
+158	158		302				AniZhuanchangBegin			"{2: ""Let's give him a proper burial."", 3: '159'}"
+159	159		401						2000.0	{1: '1', 2: '36'}
+160	160		502						400.0	{1: 'DialogDisable'}
+161	161		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory301.png'}
+162	162		401							{1: '1', 2: '270'}
+163	163		301			DialogEnable				"{3: ""After erecting a simple memorial for the people of this conservation area, you access Danny's terminal, viewing the footage for answers.""}"
+164	164		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '2'}
+165	165		401							{1: '2', 2: '895'}
+166	166		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '3'}
+167	167		201							{1: '1', 2: '501074'}
+168	168		301			RImgBg1Shake				"{1: '1', 2: 'Danny', 3: ""This is Danny, a Construct stationed at this conservation area. We're under attack!"", 4: '1'}"
+169	169		301							{3: 'Danny faces the camera, speaking rapidly.'}
+170	170		301				DialogDisable			{2: 'Danny', 3: 'There are many Hetero-Creatures...', 4: '1'}
+171	171		201						125.0	{1: '2', 2: '501265', 4: '600', 5: '400', 6: '350'}
+172	172		203						125.0	{1: '2', 2: '0.15', 3: '300', 4: '75', 5: '50'}
+173	173		203							{1: '2', 2: '0.15', 3: '0', 4: '0', 5: '-125'}
+174	174		202							{1: '1', 2: '2'}
+175	175		401							{1: '2', 2: '4784'}
+176	176		104						250.0	{1: '0|50|-25', 2: '0.25'}
+177	177		104							{1: '0|0|-50', 2: '0.25'}
+178	178		401							{1: '2', 2: '4785'}
+179	179		301			DialogEnable				{3: 'SCREEEEE—'}
+180	180		301							{3: 'A Hetero-Creature lunges at Danny from afar, forcing him to dive aside as his terminal clatters to the ground.'}
+181	181		301							"{3: ""The video recorded by the device reveals the creatures' bat-like forms and fluid flight.""}"
+182	182		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab'}
+183	183		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '1'}
+184	184		201							{1: '18', 2: '500994'}
+185	185		301							{1: '1', 2: 'Lucia', 3: 'The Hetero-Creatures match the information previously gathered.', 4: '18'}
+186	186		202							{1: '18'}
+187	187		401							{1: '2', 2: '13015319'}
+188	188		301			RImgBg1Shake				{3: 'In the footage, Danny springs to his feet and opens fire on the Hetero-Creature.'}
+189	189		201							{1: '18', 2: '500994'}
+190	190		301							"{1: '1', 2: 'Lucia', 3: ""The conservation area couldn't have fallen this fast if it was just Hetero-Creatures."", 4: '18'}"
+191	191		202							{1: '18'}
+192	192		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab'}
+193	193		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '2'}
+194	194		301				DialogDisable			"{3: ""As if to confirm Lucia's words, Danny's resistance seems short-lived.""}"
+195	195		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNewVergil01V350.prefab', 2: '1'}
+196	196		502						140.0	{1: 'RImgBg1Shake'}
+197	197		505							{1: 'RImgBg1Shake'}
+198	198		401							{1: '2', 2: '970804'}
+199	199		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNewVergil02V350.prefab', 2: '3'}
+200	200		203					150.0		{1: '1', 2: '0.6', 3: '-450'}
+201	201		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNewVergil03V350.prefab', 2: '2'}
+202	202		401							{1: '2', 2: '844007'}
+203	203		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+204	204		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryJianXue.prefab', 2: '1'}
+205	205		502							{1: 'RImgBg1Shake'}
+206	206		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryJianXue.prefab'}
+207	207		401							{1: '2', 2: '2593'}
+208	208		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+209	209		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '1'}
+210	210		301			DialogEnable				{3: 'A blurry figure appears from the corner of the frame, followed by a brutal, lightning-fast slash.'}
+211	211		205							{1: '999'}
+212	212		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '5'}
+213	213		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0', 5: '1'}
+214	214		301							"{3: ""Danny barely manages to react, but it's too late. His blade shatters right in front of his chest in a spray of vital fluid.""}"
+215	215		401							{1: '2', 2: '10042608'}
+216	216		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0', 5: '1'}
+217	217		301							"{3: ""The unknown figure halts, the responsible weapon glinting briefly before being smoothly sheathed. Yet, due to the camera's angle, only the person's lower body is captured in the frame—""}"
+218	218		401							{1: '2', 2: '1543'}
+219	219		301				AniZhuanchangBegin			"{3: ""It's the hem of a dark blue coat.""}"
+220	220		101							{4: '5', 5: '1'}
+221	221		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab'}
+222	222		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+223	223		502						400.0	{1: 'DialogDisable'}
+224	224		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory301.png'}
+225	225		301			DialogEnable				{3: 'In the rest of the footage, bat-like Hetero-Creatures descend in swarms, snatching up the remaining survivors. One by one, the humans are carried off into the distance.'}
+226	226		301				DialogDisable			{3: 'Now you find the answer to why the people in the attacked conservation areas all went missing.'}
+227	227		401						2000.0	{1: '1', 2: '36'}
+228	228		302							"{2: ""...Let's report our current findings."", 3: '229'}"
+229	229		201							{1: '1', 2: '500568', 3: '5'}
+230	230		401							{1: '1', 2: '5044'}
+231	231		301			DialogEnable				{1: '1', 2: 'Lee', 3: 'Flying Hetero-Creatures spotted behind the mountains to the southeast!', 4: '1'}
+232	232		301							"{2: 'Lee', 3: ""They're moving fast!"", 4: '1'}"
+233	233		302							{2: 'Number?', 3: '234'}
+234	234		301							{2: 'Lee', 3: 'Visual estimate of around 40 to 50.', 4: '1'}
+235	235		302							{2: 'Estimated time to engagement?', 3: '236'}
+236	236		301							{2: 'Lee', 3: 'In about 30 seconds.', 4: '1'}
+237	237		302							{2: 'Assemble in BTB formation. Prepare to engage.'}
+238	238		202							{1: '1'}
+239	239		301				AniZhuanchangBegin			{3: 'The bat-like Hetero-Creatures soon descend upon the conservation area. More than 40 of them swarm in overlapping layers, their ghostly silhouettes blotting out the sun, plunging the ground below into an eerie, bone-chilling darkness.'}
+240	240		502						400.0	{1: 'DialogDisable'}
+241	241		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_9.jpg'}
+242	242		104						1000.0	{1: '-400|-150|-300', 2: '1'}
+243	243		401							{1: '2', 2: '844090'}
+244	244		502							{1: 'DialogEnable'}
+245	245		301			AniZhuanchangEnd				{2: 'Hetero-Creature', 3: 'SCREEEEE—', 4: '1'}
+246	246		301							"{3: ""They circle in the sky, their shrieks and howls rending the air—a cacophony like hell's own laughter, mocking the fragility of the humans beneath them.""}"
+247	247		301							{3: 'Death rides in their wake, their joy found only in the spilling of blood.'}
+248	248		202							{1: '1'}
+249	249		301				DialogDisable			{3: 'Then, as one peels away in a sudden dive, the rest follow in a synchronized frenzy, the swarm surging downward like a tidal wave. The attack has begun.'}
+250	250		104						1000.0	{1: '0|0|0', 2: '3'}
+251	251		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+252	252		401							{1: '2', 2: '4698'}
+253	253		502							{1: 'DialogEnable'}
+254	254		301			RImgBg1Shake				{3: 'Bang!'}
+255	255		301				DialogDisable			{3: 'Lee and Liv open fire in unison, unleashing a storm of bullets.'}
+256	256		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+257	257		401							{1: '2', 2: '819004'}
+258	258		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+259	259		502							{1: 'DialogEnable'}
+260	260		301			RImgBg1Shake				{3: 'Their shots tear through the Hetero-Creatures swarming from above, while Lucia cuts down any that breach their line.'}
+261	261		301							"{3: ""The Gray Raven squad moves with practiced precision. If the four of you keep this rhythm, the creatures won't last much longer.""}"
+262	262		301							{3: 'But unseen, lurking in the shadows beyond your sight, another Hetero-Creature waits.'}
+263	263		301							"{3: ""It doesn't strike from the sky, but instead lunges forward from the ground.""}"
+264	264		301							{3: 'The moment it lunges, you catch its shadow.'}
+265	265		301							"{3: ""Countermeasures flash through your mind, each considered and discarded in rapid succession. You could take it alone, but a careless move could leave you wounded or break the squad's current formation.""}"
+266	266		302							{2: 'Lucia!', 3: '267'}
+267	267		301				AniZhuanchangBegin			{1: '1', 2: 'Lucia', 3: 'Roger!', 4: '1'}
+268	268		502						400.0	{1: 'DialogDisable'}
+269	269		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory302.png'}
+270	270		401							{1: '2', 2: '10022001'}
+271	271		201							{1: '1', 2: '500992', 7: '1'}
+272	272		502							{1: 'DialogEnable'}
+273	273		301			AniZhuanchangEnd				{1: '1', 3: 'Lucia is already poised for the strike, her blade gleaming in anticipation. Once closer, the creature would meet steel.'}
+274	274		202							{1: '1'}
+275	275		401						2000.0	{1: '1', 2: '36'}
+276	276		301				DialogDisable			{3: 'But something else moves faster.'}
+277	277		401							{1: '1', 2: '6185'}
+278	278		301			DialogEnable				"{3: ""A blur—too fast to track—hurls into view. By the time you register the motion, it's already over.""}"
+279	279		401							{1: '2', 2: '6007'}
+280	280		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNewDante03V350.prefab', 2: '2'}
+281	281		401							{1: '2', 2: '844090'}
+282	282		201							{1: '1', 2: '501265'}
+283	283		502							{1: 'RImgBg1Shake'}
+284	284		502							{1: 'DialogEnable'}
+285	285		301			PanelActor1Shake				{1: '1', 2: 'Hetero-Creature', 3: 'SCREEEEE—', 4: '1'}
+286	286		203							{1: '1', 2: '0.25', 4: '-75'}
+287	287		202							{1: '1'}
+288	288		401							{1: '2', 2: '4802'}
+289	289		301							{3: 'The Hetero-Creature crashes to the ground, shrieking, impaled.'}
+290	290		301							{3: 'Only then do you see it clearly—'}
+291	291		301							{3: 'A massive sword.'}
+292	292		301							{3: 'The sword has a strange appearance, its hilt textured like scales, its handguard tipped with four jagged talons. Half of the blade is now buried in the ground.'}
+293	293		301							{3: 'A true devil weapon—anyone who sees it would instinctively think of such a description.'}
+294	294		301				AniZhuanchangBegin			{3: 'While you examine closely, the devil sword pinned in the ground suddenly dissipates into red particles.'}
+295	295		502						400.0	{1: 'DialogDisable'}
+296	296		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_1.jpg'}
+297	297		104						1000.0	{1: '-300|-150|-410', 2: '0'}
+298	298		502							{1: 'DialogEnable'}
+299	299		301			AniZhuanchangEnd				{2: '??', 3: 'Wow...'}
+300	300		104						1000.0	{1: '0|0|0', 2: '3'}
+301	301		301							{3: 'From the direction the sword came from, someone lets out an exclamation.'}
+302	302		301							{3: 'A white-haired man in red stands atop the ruins, posture loose, a smirk tugging at his lips.'}
+303	303		301		1		AniZhuanchangBegin			{2: '??', 3: 'Looks like you guys need some help.'}

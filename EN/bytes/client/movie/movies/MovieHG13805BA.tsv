@@ -1,0 +1,330 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory748.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500454'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Customer A', 3: ""He's here."", 4: '1'}"
+5	5		202							{1: '1'}
+6	6		301				DialogDisable			{3: 'The regular customer, who kindly volunteered to keep watch outside, hastily returns to Vegetable Stew.'}
+7	7		201					500.0	1000.0	{1: '1', 2: '500682'}
+8	8		202							{1: '1'}
+9	9		301			DialogEnable				{1: '1', 3: 'Noctis meets your gaze and nods in acknowledgment before making his way into the kitchen.'}
+10	10		201							{1: '1', 2: '500427'}
+11	11		401							{1: '2', 2: '2511'}
+12	12		301			RImgBg1Shake				{1: '1', 3: 'Bam!'}
+13	13		301							{3: 'Sykes makes his entrance with his usual dramatic demeanor.'}
+14	14		301							{3: 'The same group of people, the same plain expression.'}
+15	15		301							{3: 'He walks straight to the counter and takes a seat there.'}
+16	16		302							{2: 'Good evening, sir. What would you like to...', 3: '17'}
+17	17		301							"{2: 'Sykes', 3: ""I want Wanderer's Biscuits, some real ones as it's claimed on your menu."", 4: '1'}"
+18	18		302							{2: 'Got it. Please give us a minute.', 3: '19'}
+19	19		301							{3: 'Having placed his order, Sykes appears to lose interest in the unfolding situation. He falls into silence, redirecting his gaze toward those around who are observing him intently.'}
+20	20		301							"{3: ""After a round of meeting eyes, Sykes' resolute gaze holds a dominating presence, akin to a forceful gust of wind sweeping over grass. It compels other customers to lower their heads in fear, avoiding direct eye contact with him.""}"
+21	21		301							{3: 'Those who can maintain their composure and not flinch also choose to turn away, not wishing to provoke any trouble for Vegetable Stew.'}
+22	22		202							{1: '1', 6: '1'}
+23	23		201							{1: '1', 2: '500140', 4: '-400'}
+24	24		201							{1: '2', 2: '500382', 4: '400'}
+25	25		301							"{1: '1', 2: ""Sykes' Companions"", 3: 'Hmph...', 4: '1', 5: '2'}"
+26	26		301							{3: 'The prolonged and monotonous wait fills the entire tavern with a heavy silence. The only sound audible is the grating of the lint-free cloth in your hand as it rubs against the glass.'}
+27	27		202							{1: '1', 2: '2', 6: '1'}
+28	28		201							{1: '1', 2: '500427'}
+29	29		301							"{1: '1', 2: 'Sykes', 3: ""Where's Ed?"", 4: '1'}"
+30	30		301							{3: 'To your surprise, it is Sykes who breaks the ice. You pause your current task and begin to recollect the words spoken by the owner.'}
+31	31		302							{2: 'The owner went out.', 3: '32'}
+32	32		301							{2: 'Sykes', 3: 'Out? Is he gonna ditch his tavern or what?', 4: '1'}
+33	33		301							"{2: 'Sykes', 3: ""You're not searching for the gun under the counter, are you?"", 4: '1'}"
+34	34		302							"{2: ""Haha, that can't be possible. This is not a Western cowboy movie."", 3: '35'}"
+35	35		301							"{2: 'Sykes', 3: ""But that's what Ed would do. Search it up, and see if you can find one."", 4: '1'}"
+36	36		301							{3: 'Sykes leans forward, exuding an aura devoid of fear yet filled with provocation.'}
+37	37		302							{2: 'Holding firearms without permission is against the Clean Zone regulations.', 3: '38'}
+38	38		301							{3: 'This is no good... You can feel you are touching something with a dangerous shape...'}
+39	39		301							"{2: 'Sykes', 3: ""Regulations? Who made those? Babylonia? I didn't know there were any regulations that you gave a damn about."", 4: '1'}"
+40	40		302							"{2: ""(Lift your hands and spin around to show him you're unarmed)"", 3: '41'}"
+41	41		301				DialogDisable			{2: 'Sykes', 3: 'Your weapon is in the kitchen.', 4: '1'}
+42	42		302							{2: 'Sir, instead of a weapon,', 3: '43'}
+43	43		302							"{2: ""I'd prefer you call him my companion."", 3: '44'}"
+44	44		301			DialogEnable	DialogDisable			"{2: 'Sykes', 3: ""Your... companion? A commandant who considers a Construct as a companion? Now that's something. And to top it off, it's none other than the commandant of the famous Gray Raven."", 4: '1'}"
+45	45		302							"{2: ""What's wrong with seeing a comrade who fights alongside me as a companion?"", 3: '46'}"
+46	46		302							{2: 'You have someone like that too, right? The owner, for example.', 3: '47'}
+47	47		301			DialogEnable				{2: 'Sykes', 3: 'You investigated me?', 4: '1'}
+48	48		302							{2: 'I hereby declare that all information is compliant and legally obtained.', 3: '49'}
+49	49		301							{2: 'Sykes', 3: '...', 4: '1'}
+50	50		301							{2: 'Sykes', 3: 'I used to think I had him all figured out, but turned out I was the only one feeling that way.', 4: '1'}
+51	51		301							"{2: 'Sykes', 3: ""The moment he made the decision to leave with some of our members, that's when we went our separate ways."", 4: '1'}"
+52	52		302							{2: 'We?', 3: '53'}
+53	53		301							{2: 'Sykes', 3: 'We were just a group of wanderers, victims of the Great Evacuation. Nothing is really noteworthy about us.', 4: '1'}
+54	54		302							"{2: ""Can I learn more about your story if there's a chance?"", 3: '55'}"
+55	55		301							{2: 'Sykes', 3: 'You, the Gray Raven Commandant, are interested in us?', 4: '1'}
+56	56		302							{2: 'Of course, I can also gather some information. Kill two birds with one stone.', 3: '57'}
+57	57		301							"{2: 'Sykes', 3: ""Surprisingly earnest, aren't you..."", 4: '1'}"
+58	58		202							{1: '1', 6: '1'}
+59	59		201							{1: '1', 2: '500682', 3: '2', 4: '400'}
+60	60		201							{1: '2', 2: '500427', 4: '-400'}
+61	61		301							"{1: '1', 2: 'Noctis', 3: ""Here are your Wanderer's Biscuits."", 4: '1'}"
+62	62		301							{3: 'Noctis, as the chef, personally brings the dish from the kitchen and sets it before Sykes.'}
+63	63		301							{3: 'On the plate rests a collection of beautifully baked biscuits. The presentation is simple, yet the attention to detail and the care put in by the chef is evident.'}
+64	64		301							{3: 'However, with just a single glance, Sykes abruptly stands up from his seat and prepares to leave.'}
+65	65		301							"{2: 'Noctis', 3: ""Hey, hold your horses. I put in some serious effort baking those. You're not gonna take a bite?"", 4: '1'}"
+66	66		204							{1: '1'}
+67	67		301							{2: 'Sykes', 3: 'No need. This is not what I want.', 4: '2'}
+68	68		401							{1: '2', 2: '2824'}
+69	69		301							{3: 'Sykes throws some Black Cards onto the table.'}
+70	70		301							{2: 'Sykes', 3: 'Ask Ed to come and meet me...', 4: '2'}
+71	71		301							{2: 'Noctis', 3: 'I know what you want is that coal-black burnt stuff.', 4: '1'}
+72	72		301							{2: 'Sykes', 3: 'Since you know, why did you serve me this?', 4: '2'}
+73	73		301							"{2: 'Noctis', 3: ""Don't get me wrong. I didn't change the ingredients, so they will taste just the same weird."", 4: '1'}"
+74	74		301							{2: 'Noctis', 3: 'However, we will never serve that kind of food here in Vegetable Stew.', 4: '1'}
+75	75		301							"{2: 'Sykes', 3: ""But those are the real Wanderer's Biscuits, or to say, those were what helped us survive."", 4: '2'}"
+76	76		301							"{2: 'Noctis', 3: ""That's why I used all those random ingredients to make them, out of respect for our customer's request."", 4: '1'}"
+77	77		301							"{2: 'Noctis', 3: ""As for using an appropriate utensil to bake them, it's one of the basic rules we hold in this tavern."", 4: '1'}"
+78	78		301				DialogDisable			"{2: 'Sykes', 3: ""Should I see it as Babylonia's answer?"", 4: '2'}"
+79	79		302							{2: 'Babylonia has nothing to do with this.', 3: '80'}
+80	80		302							{2: 'This is the answer that Noctis and I offer.', 3: '81'}
+81	81		204							{1: '1', 2: '4'}
+82	82		301			DialogEnable				"{2: 'Noctis', 3: ""Anyway, I've already given you what you asked for. No matter how many times you make me do it over, I'll never turn them into coal-black lumps."", 4: '1'}"
+83	83		301							"{2: 'Noctis', 3: ""By the way, don't you think it's dumb to reflect on happiness by recalling all the suffering?"", 4: '1'}"
+84	84		301							"{2: 'Noctis', 3: ""The owner wants everyone to chow down and have a blast here, and that's why he's all strict about how we serve stuff in Vegetable Stew, isn't it?"", 4: '1'}"
+85	85		301							{2: 'Noctis', 3: 'Come to visit more often, and the owner may offer you a discount.', 4: '1'}
+86	86		301							{2: 'Sykes', 3: 'Are you kidding me?!', 4: '2'}
+87	87		401							{1: '2', 2: '992'}
+88	88		301			RImgBg1Shake				{3: 'In anger, Sykes knocks the plate and the biscuits off the table.'}
+89	89		301							{3: 'The shattering sound of the plate instantly fills the air, causing a sudden surge of tension that permeates the entire space.'}
+90	90		301							{2: 'Sykes', 3: 'But that was the only damn food we had, and we scarfed it down like there was no tomorrow.', 4: '2'}
+91	91		301							"{2: 'Sykes', 3: ""So you're telling me they only deserve to be used as bait to lure in customers? Our painful past should just be some idle conversation topic, something we casually chat about?"", 4: '2'}"
+92	92		301							"{2: 'Sykes', 3: ""And we're just supposed to pretend like nothing ever happened?"", 4: '2'}"
+93	93		301							{3: '...'}
+94	94		301							"{3: ""As Sykes's harsh words cut through the air, silence engulfs the tavern.""}"
+95	95		301							{3: 'Everyone is holding their breath, casting their gaze upon you.'}
+96	96		301							{3: 'Because you, the Gray Raven Commandant, are standing right before them, and they hope you can offer an answer.'}
+97	97		301				DialogDisable			{3: 'Just like what happened when you first arrived, before you slowly grew more acquainted with one another.'}
+98	98		302							{2: 'This dish was added to the menu by the owner.', 3: '99'}
+99	99		302							{2: 'In other words, he has every right to do so, so his decision stands valid.', 3: '100'}
+100	100		301			DialogEnable	DialogDisable			{2: 'Sykes', 3: 'Ask Ed to come and meet me...', 4: '2'}
+101	101		302							"{2: ""I don't think..."", 3: '102'}"
+102	102		302							"{2: ""I don't think we should let that be ignored and forgotten."", 3: '103'}"
+103	103		302							{2: 'But I can only promise you that...', 3: '104'}
+104	104		301			DialogEnable				"{3: ""That the Task Force will do everything in our power to reclaim the surface and ensure that history doesn't repeat itself.""}"
+105	105		301							{3: 'So we hope all of you from the Clean Zone can join us on this path, pressing onward with us.'}
+106	106		204							{1: '1', 2: '14'}
+107	107		301							{3: 'Noctis rubs his hair after hearing your words. Though reluctant, he still chooses to lower his head.'}
+108	108		301							"{2: 'Noctis', 3: ""My opinion is the same as the commandant's. In short, I will try my best to work with the commandant and wipe out the Punishing Virus or whatever."", 4: '1'}"
+109	109		301							{3: 'You and Noctis bow to everyone present, including Sykes and his companions, to show your respect.'}
+110	110		401							{1: '1', 2: '36'}
+111	111		301							{3: 'In silence, you wait... and wait...'}
+112	112		401						300.0	{1: '2', 2: '2766'}
+113	113		401						300.0	{1: '2', 2: '2766'}
+114	114		401							{1: '2', 2: '2581'}
+115	115		401							{1: '1', 2: '206'}
+116	116		301							{3: 'Until a resounding clap echoes through the air, followed by a spreading wave of applause that completely shatters the silence.'}
+117	117		202							{1: '1', 2: '2', 6: '1'}
+118	118		201							{1: '1', 2: '500454'}
+119	119		301							"{1: '1', 2: 'Customer A', 3: ""That's what I expected from the Gray Raven Commandant!"", 4: '1'}"
+120	120		301							{2: 'Customer A', 3: 'Honestly, when you first showed up, I thought you were just here for some run-of-the-mill marketing gig.', 4: '1'}
+121	121		301							{3: 'More than one pair of hands extend toward your shoulders, offering gentle support as they help you rise from your position.'}
+122	122		202							{1: '1', 6: '1'}
+123	123		201							{1: '1', 2: '500236'}
+124	124		301							"{1: '1', 2: 'Customer B', 3: ""We've all seen how hard you've worked, 【kuroname】. We believe in you."", 4: '1'}"
+125	125		202							{1: '1'}
+126	126		301							{3: 'Other customers join in, affirming their support for you.'}
+127	127		301							{3: 'When you first arrived, you and Noctis encountered numerous misunderstandings and challenges stemming from baseless rumors.'}
+128	128		301							{3: 'But it could have been a plate of delectable fried potatoes or a refreshing beer.'}
+129	129		301							{3: 'Over time, the harsh words and speeches subsided, giving way to lighthearted jokes and casual chitchats among acquaintances and friends.'}
+130	130		301							{3: 'It was during that period that both you and Noctis came to realize that someone who talked big was the last thing they desired.'}
+131	131		301							{3: 'All they truly needed was a person who could stand by their side; this, in itself, was the most effective way of marketing.'}
+132	132		201							{1: '1', 2: '500682', 4: '400'}
+133	133		201							{1: '2', 2: '500236', 4: '-400'}
+134	134		301							"{1: '1', 2: 'Noctis', 3: ""Why ain't nobody got me up? Hello? I'm still down here bowing."", 4: '1'}"
+135	135		301							{2: 'Customer B', 3: 'Hold your horses. Everything has an order, right?', 4: '2'}
+136	136		202							{1: '2', 2: '1', 6: '1'}
+137	137		401							{1: '1', 2: '36'}
+138	138		201							{1: '1', 2: '500427'}
+139	139		301							{1: '1', 2: 'Sykes', 3: 'Is that it?', 4: '1'}
+140	140		401							{1: '1', 2: '219'}
+141	141		301							{3: 'His deep voice dampens the buoyancy that permeates the atmosphere.'}
+142	142		301							{2: 'Sykes', 3: 'You think you can just leave everything in the past behind by doing that?', 4: '1'}
+143	143		202							{1: '1', 6: '1'}
+144	144		201							{1: '1', 2: '500682', 3: '4', 4: '400'}
+145	145		201							{1: '2', 2: '500427', 4: '-400'}
+146	146		301							{1: '1', 2: 'Noctis', 3: 'No one is asking you to say goodbye to your past.', 4: '1'}
+147	147		301							{3: 'Noctis chooses to walk up to Sykes himself this time.'}
+148	148		204							{1: '1', 2: '2'}
+149	149		301							{3: 'He points at himself, with the usual grin on his face.'}
+150	150		301							"{2: 'Noctis', 3: ""Take me as an example. I've got things that I'm not willing to bring up even to this day."", 4: '1'}"
+151	151		301							"{2: 'Noctis', 3: ""But if I look ahead, I'll be able to press on again."", 4: '1'}"
+152	152		301							{3: 'With a contented smile, Noctis runs his hand through his hair, showing a sense of gratitude for the path he has chosen.'}
+153	153		204							{1: '1', 2: '1'}
+154	154		301							"{2: 'Noctis', 3: ""And that's how I met Commandant."", 4: '1'}"
+155	155		301							"{2: 'Noctis', 3: ""So, at the end of the day, I've ended up with more than what I lost."", 4: '1'}"
+156	156		202							{1: '1', 2: '2', 6: '1'}
+157	157		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+158	158		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3701_02.jpg'}
+159	159		301							{2: 'Noctis', 3: 'There was this person, Nigel, one of the people I was close with from back in the Purifying Force days...'}
+160	160		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+161	161		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3701_01.jpg'}
+162	162		301							{2: 'Noctis', 3: 'He was also... the last person I killed with my own hands in the Purifying Force...'}
+163	163		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+164	164		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3701_03.jpg'}
+165	165		301							{2: 'Noctis', 3: 'Commandant...'}
+166	166		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+167	167		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory748.jpg'}
+168	168		201							{1: '1', 2: '500682', 3: '2', 4: '400', 7: '1'}
+169	169		201							{1: '2', 2: '500427', 4: '-400', 7: '1'}
+170	170		301							{1: '1', 3: 'This is the past that Noctis once mentioned to you.'}
+171	171		301							{3: 'Despite his attempt to maintain composure, the subtle narrations still provide you enough glimpses into the hidden echoes of past anguish.'}
+172	172		301							{3: 'As a commandant, you know better than anyone about the courage and determination concealed behind that perpetual smile.'}
+173	173		301							{3: 'In a world ravaged by the Punishing Virus, such memories are abundant and ever-present.'}
+174	174		301							"{3: ""Even to this day, the pain persists, akin to wounds inflicted by blades upon people's minds.""}"
+175	175		301							{3: 'Even so, we still have to press on.'}
+176	176		301							{3: 'We cannot forget or avoid responsibilities, yet we must not stop despite all that.'}
+177	177		301							{3: 'You take a step forward.'}
+178	178		301				DialogDisable			{3: 'Pick up one of the biscuits scattered on the table, holding it in front of your face.'}
+179	179		302							"{2: ""Sykes, about the moral conveyed through Wanderer's Biscuits..."", 3: '180'}"
+180	180		302							"{2: ""It's not sharing joy but rather sharing pain, right?"", 3: '181'}"
+181	181		302							"{2: ""I'll say it again. This is my answer."", 3: '182'}"
+182	182		301			DialogEnable				{3: 'You put the biscuit into your mouth and take a firm bite, letting the peculiar flavors flood your senses.'}
+183	183		301							{2: 'Sykes', 3: '...', 4: '2'}
+184	184		301							"{2: 'Sykes', 3: ""Don't think you can end things this easily."", 4: '2'}"
+185	185		202							{1: '1', 2: '2', 6: '1'}
+186	186		201							{1: '1', 2: '500454'}
+187	187		301							"{1: '1', 2: 'Customer A', 3: ""C'mon, what else do you want?"", 4: '1'}"
+188	188		201							{1: '1', 2: '500427'}
+189	189		301							"{1: '1', 2: 'Sykes', 3: 'Now that we\'ve come this far, let\'s see if you truly mean it when you talk about ""sharing pain,"" Commandant.', 4: '1'}"
+190	190		401							{1: '2', 2: '9342045'}
+191	191		203							{1: '1', 2: '1', 5: '-100'}
+192	192		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+193	193		502							{1: 'RImgBg1BlowUp'}
+194	194		301							{3: 'Having said that, Sykes suddenly throws a punch at you.'}
+195	195		505					1000.0		{1: 'RImgBg1BlowUp'}
+196	196		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+197	197		201							{1: '2', 2: '500682', 3: '15', 4: '600'}
+198	198		401							{1: '2', 2: '1512'}
+199	199		203						150.0	{1: '2', 2: '0.15', 3: '300'}
+200	200		203							{1: '1', 2: '0.15', 3: '-300'}
+201	201		301			RImgBg1Shake				{1: '1', 3: 'Just as the unexpected attack approaches, a strong and formidable arm emerges, swiftly restraining Sykes and preventing him from advancing any closer to you.'}
+202	202		204							{1: '2', 2: '5'}
+203	203		301							"{2: 'Noctis', 3: ""Hey, hey, who do you think you are, attacking the commandant? Now you've really ticked me off..."", 4: '2'}"
+204	204		204							{1: '2', 2: '4'}
+205	205		301							{2: 'Sykes', 3: 'Well, I just wanna see if the commandant chickens out and runs back to Babylonia like some coward after getting hit.', 4: '1'}
+206	206		301							{2: 'Noctis', 3: 'You better drop that idea now...', 4: '2'}
+207	207		204							{1: '2', 2: '2'}
+208	208		301							{2: 'Noctis', 3: 'I should be the one joining the party here.', 4: '2'}
+209	209		302							{2: 'N-Noctis...'}
+210	210		301							"{2: 'Noctis', 3: ""Don't worry, Commandant."", 4: '2'}"
+211	211		204							{1: '2', 2: '13'}
+212	212		301							{2: 'Noctis', 3: 'Let me demonstrate the go-to solution of Vegetable Stew when it comes to handling this kinda problem.', 4: '2'}
+213	213		204							{1: '2', 2: '4'}
+214	214		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+215	215		401							{1: '2', 2: '1512'}
+216	216		203						150.0	{1: '2', 2: '0.15', 3: '200'}
+217	217		203							{1: '1', 2: '0.15', 3: '-400'}
+218	218		301			PanelActor1Shake				"{3: ""In response, Noctis swiftly retaliates by throwing a powerful punch in Sykes' direction.""}"
+219	219		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+220	220		401							{1: '2', 2: '1512'}
+221	221		203						150.0	{1: '1', 2: '0.15', 3: '-200'}
+222	222		203							{1: '2', 2: '0.15', 3: '400'}
+223	223		301							"{3: ""Sykes manages to block Noctis' punch with his arms, his face growing pale from the impact. Despite the strain, he gathers his remaining strength and forces out another strike.""}"
+224	224		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+225	225		401							{1: '2', 2: '1512'}
+226	226		401							{1: '2', 2: '3079'}
+227	227		202							{1: '1', 2: '2', 6: '1'}
+228	228		301			RImgBg1Shake				{3: 'Soon, the two are locked in a relentless exchange of blows.'}
+229	229		201							{1: '1', 2: '500140', 4: '-400'}
+230	230		201							{1: '2', 2: '500382', 4: '400'}
+231	231		301							"{1: '1', 2: ""Sykes' Companions"", 3: 'Boss! Boss, what should we do now?!', 4: '1', 5: '2'}"
+232	232		202							{1: '1', 2: '2', 6: '1'}
+233	233		201							{1: '1', 2: '500427'}
+234	234		301							"{1: '1', 2: 'Sykes', 3: ""Are you dumb? This ain't no fancy knight duel; it's a straight-up brawl! Forget about the rules and come to help me."", 4: '1'}"
+235	235		202							{1: '1', 6: '1'}
+236	236		201							{1: '1', 2: '500140', 4: '-400'}
+237	237		201							{1: '2', 2: '500382', 4: '400'}
+238	238		301				DialogDisable			"{1: '1', 2: ""Sykes' Companions"", 3: ""C'mon, guys, let's go!"", 4: '1', 5: '2'}"
+239	239		202							{1: '1', 2: '2', 6: '1'}
+240	240		201							{1: '1', 2: '500682', 3: '2'}
+241	241		302							{2: 'Noctis.', 3: '242'}
+242	242		301			DialogEnable				"{2: 'Noctis', 3: ""It's okay, Commandant. Even with my strength held back, I can still..."", 4: '1'}"
+243	243		204							{1: '1', 2: '5'}
+244	244		301							"{2: 'Noctis', 3: ""Hey! I thought no weapons were involved. What's with that chair? Man up and use your fists!"", 4: '1'}"
+245	245		202							{1: '1'}
+246	246		301				DialogDisable			{3: 'Noctis... Noctis...'}
+247	247		302							{2: 'Guess nothing can be done but...', 3: '248'}
+248	248		302							{2: '(Roll up sleeves and clench fists for the incoming fight)', 3: '249'}
+249	249		202							{1: '1', 6: '1'}
+250	250		201							{1: '1', 2: '500454', 4: '-400'}
+251	251		201							{1: '2', 2: '500236', 4: '400'}
+252	252		301			DialogEnable				"{1: '1', 2: 'Customer A', 3: ""Guys, we can't let 【kuroname】 lose the fight. Join me if you can!"", 4: '1'}"
+253	253		301							"{2: 'Customer B', 3: ""Sure. You take the lead, and I'll follow right behind. Let's go."", 4: '2'}"
+254	254		202							{1: '1', 2: '2'}
+255	255		401							{1: '2', 2: '2915'}
+256	256		401							{1: '2', 2: '3079'}
+257	257		401							{1: '2', 2: '3077'}
+258	258		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+259	259		301			RImgBg1Shake				{3: 'In a matter of moments, Vegetable Stew transforms into a chaotic battlefield. Some onlookers stand aside, cheering for their companions, while others secretly grab water and douse their perceived adversaries.'}
+260	260		301							{3: 'A few individuals muster up their courage halfway into the fight, hastily gulping down a drink before rolling up their sleeves and joining the fray.'}
+261	261		201							{1: '1', 2: '500682', 3: '13', 4: '600'}
+262	262		201							{1: '2', 2: '500427', 4: '-600'}
+263	263		203							{1: '1', 2: '0.15', 3: '250'}
+264	264		203						150.0	{1: '2', 2: '0.15', 3: '-250'}
+265	265		401							{1: '2', 2: '18511011'}
+266	266		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+267	267		301			RImgBg1Shake				"{1: '1', 3: 'In the heart of the ""battlefield,"" Sykes and Noctis, the protagonists of the brawl, spontaneously opt to clash head-on, colliding with each other.'}"
+268	268		301							{2: 'Sykes', 3: '...', 4: '2'}
+269	269		204							{1: '1', 2: '2'}
+270	270		301							{2: 'Noctis', 3: 'Heehee, get a taste of my metal-made head! Bet that hurts like hell, huh?', 4: '1'}
+271	271		202							{1: '1', 2: '2', 6: '1'}
+272	272		201							{1: '1', 2: '500382'}
+273	273		301							"{1: '1', 2: ""Sykes' Companion"", 3: 'Boss, take the table.', 4: '1'}"
+274	274		302							"{2: ""Don't you dare."", 3: '275'}"
+275	275		401							{1: '2', 2: '1512'}
+276	276		301			PanelActor1Shake				"{2: ""Sykes' Companion"", 3: 'Ouch, that hurts!', 4: '1'}"
+277	277		302							{2: 'Sorry...', 3: '278'}
+278	278		202							{1: '1', 6: '1'}
+279	279		201							{1: '1', 2: '500682', 3: '4', 4: '400'}
+280	280		201							{1: '2', 2: '500427', 4: '-400'}
+281	281		301							{1: '1', 2: 'Sykes', 3: 'What are you staring at? Go get the commandant, now!', 4: '2'}
+282	282		204							{1: '1', 2: '5'}
+283	283		301							"{2: 'Noctis', 3: ""You better not lay a finger on the commandant! Unless you've got the guts to take my unrestricted punches!"", 4: '1'}"
+284	284		202							{1: '2', 6: '1'}
+285	285		201							{1: '2', 2: '500382', 4: '-400'}
+286	286		301							"{1: '1', 2: ""Sykes' Companion"", 3: ""There ain't no rule against it... So quit making excuses and step back if you can't handle it."", 4: '2'}"
+287	287		301				AniZhuanchangBegin			"{2: 'Noctis', 3: ""Well, looks like I just made a new rule on the spot. If you've got a problem with it, then come and fight me."", 4: '1'}"
+288	288		402							{1: '2915'}
+289	289		401							{1: '1', 2: '36'}
+290	290		202							{1: '1', 2: '2', 6: '1'}
+291	291		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory757.jpg'}
+292	292		401							{1: '1', 2: '206'}
+293	293		201							{1: '1', 2: '500136'}
+294	294		301			AniZhuanchangEnd				{1: '1', 3: 'Amidst the chaotic scenes unfolding in Vegetable Stew, the owner, Ed, maintains his composure, standing calmly outside the door.'}
+295	295		301							{3: 'He only moves when chairs and wooden boards are thrown out, picking them up and carefully setting them aside.'}
+296	296		301							{3: 'Resting against the wall, he takes out a box where the lost CD used to be stored. Now, all that remains within is a weathered photograph.'}
+297	297		301							"{2: 'Owner', 3: ""We have to move on, don't we..."", 4: '1'}"
+298	298		301							"{3: ""As he tenderly caresses the faces captured in the photograph, Ed's mind travels back to that afternoon, memories flooding his thoughts.""}"
+299	299		301							{3: 'Like Noctis said, the past continues to resonate as if it were just yesterday...'}
+300	300		202							{1: '1', 6: '1'}
+301	301		301							{2: 'Noctis', 3: 'Done and done!'}
+302	302		401							{1: '2', 2: '2581'}
+303	303		301							{3: 'In response to his announcement of closure, a wave of joyous applause fills the air.'}
+304	304		502							{1: 'RImgBg1DisableSlow'}
+305	305		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory748.jpg'}
+306	306		201							{1: '1', 2: '500682', 3: '1'}
+307	307		301							{1: '1', 3: 'The owner peeks through the door, only to discover that the chaos within Vegetable Stew has already subsided. Noctis stands there, hugging his commandant, both of them cheering in jubilant celebration.'}
+308	308		301							{3: 'Someone flicks on the antique jukebox in the tavern, and a joyful melody instantly sweeps through the space.'}
+309	309		301							{3: 'As if offering a musical tribute to their grand victory.'}
+310	310		401							{1: '1', 2: '205'}
+311	311		201							{1: '1', 2: '500136'}
+312	312		301							{1: '1', 2: 'Owner', 3: 'Huh, turns out my CD is inside the jukebox this whole time. Finally found it.', 4: '1'}
+313	313		201							{1: '1', 2: '500382', 4: '400', 5: '-200'}
+314	314		201							{1: '2', 2: '500427', 4: '-400'}
+315	315		301							"{1: '1', 2: ""Fallen Sykes' Companion"", 3: 'Boss... Ed... is over there.', 4: '1'}"
+316	316		301							"{2: 'Sykes', 3: ""You son of a... Quick... Let's go... beat him up."", 4: '2'}"
+317	317		202							{1: '1', 2: '2', 6: '1'}
+318	318		201							{1: '1', 2: '500136'}
+319	319		301							{1: '1', 2: 'Owner', 3: '??', 4: '1'}
+320	320		301							{2: 'Owner', 3: '【kuroname】, Noctis, help!', 4: '1'}
+321	321		202							{1: '1', 6: '1'}
+322	322		301				AniZhuanchangBegin			{3: '...'}
+323	323		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+324	324		301			AniZhuanchangEnd				{3: 'Vegetable Stew closed early today.'}
+325	325		301							"{3: 'Because of the ""battle,"" all those present were summoned for interrogation by the management staff of the Clean Zone.'}"
+326	326		301							"{3: 'To your surprise, each and every person offered only a vague account of the ""battle,"" insisting that it was merely the result of trivial misunderstandings.'}"
+327	327		301							{3: 'Despite the recent exchange of punches, none of them harbored any lingering grudges, all claiming that the conflict was nothing more than a trivial bickering.'}
+328	328		301							{3: 'At the end of the day, the management staff refrained from further intervention in the situation at Vegetable Stew, thanks to the reassurances provided by Sykes and Noctis, the leaders of the two groups involved.'}
+329	329		301		1		AniZhuanchangBegin			{3: 'Today... em... could be considered a peaceful day.'}

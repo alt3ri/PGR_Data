@@ -1,0 +1,51 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory277.png'}
+2	2		401							{1: '1', 2: '102'}
+3	3		301			DialogEnable				{3: 'After walking down the corridor for nearly ten minutes, you finally arrive at a room similar to the entrance of the bomb shelter.'}
+4	4		201							{1: '1', 2: '500166', 3: '5'}
+5	5		301							"{1: '1', 2: 'Lucia', 3: ""That's..."", 4: '1'}"
+6	6		202							{1: '1', 6: '1'}
+7	7		301							"{3: ""Following Lucia's line of sight, you look around to see a room full of Corrupted.""}"
+8	8		301							"{3: 'Or rather, what used to be ""Corrupted"".'}"
+9	9		301							{3: 'You can distinguish parts of the Corrupted, while others appear to be deliberately crushed. Among all the carnage, the only recognizable parts belonged to Constructs.'}
+10	10		301							{3: 'The dried up vital fluid and Punishing organisms coagulate together. Even though the foul odor is blocked by your respirator, you still seem to be able to smell the dust and decay.'}
+11	11		301							"{3: 'The broken remains remind you of ""corpses.""'}"
+12	12		201							{1: '1', 2: '500166', 3: '5'}
+13	13		301							"{1: '1', 2: 'Lucia', 3: ""I wasn't expecting to see so many Corrupted remains here..."", 4: '1'}"
+14	14		201							{1: '1', 2: '1031001', 3: '14'}
+15	15		301							{1: '1', 2: 'Liv', 3: 'By the looks of their ID codes... A lot of these were Constructs from Babylonia...', 4: '1'}
+16	16		201							{1: '1', 2: '500026'}
+17	17		301							{1: '1', 2: 'Lee', 3: '...Why are they in such a remote place? And... why are there so many of them?', 4: '1'}
+18	18		202							{1: '1', 6: '1'}
+19	19		301							{3: 'In any case, such a large amount of remains means...'}
+20	20		302							{2: 'Be careful, everyone.', 3: '21', 4: 'Liv, do you detect any live Corrupted?', 5: '22'}
+21	21		301							{3: 'Without awaiting orders, Lucia takes out her katana and takes point in front of the rest of you.'}
+22	22		201							{1: '1', 2: '1031001'}
+23	23		301							{1: '1', 2: 'Liv', 3: 'Scanning for energy responses within 500 meters.', 4: '1'}
+24	24		204							{1: '1', 2: '7'}
+25	25		301							{2: 'Liv', 3: 'Multiple Corrupted detected. Many appear to be dormant... Ah! Commandant, watch out—!', 4: '1'}
+26	26		202							{1: '1', 6: '1'}
+27	27		401							{1: '2', 2: '1508'}
+28	28		301							{3: 'Before Liv is able to alert you, something grabs your feet from behind and pulls. A harsh noise like the wind from a broken bellow roars from within the remains.'}
+29	29		302							{2: '(Open fire)', 3: '30', 4: '(Think of a way to free yourself)', 5: '32'}
+30	30		401							{1: '2', 2: '1510'}
+31	31	39	301							{3: 'Without hesitation, you raise your hand and shoot in the direction of the sound. After a dull thud, the Corrupted on the ground stops moving, and the red light among the remains flickers twice before returning to darkness.'}
+32	32		301							{3: 'Opening fire will likely alert other enemies hiding in the dark. First order of business is to shake off the enemy behind you. Fortunately, the bindings on your legs are weak and take little effort to break free.'}
+33	33		201							{1: '1', 2: '500166', 3: '5'}
+34	34		301							{1: '1', 2: 'Lucia', 3: '!', 4: '1'}
+35	35		202							{1: '1', 6: '1'}
+36	36		401							{1: '2', 2: '10002001'}
+37	37		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+38	38		301							"{3: ""Lucia's blade quickly pierces the Corrupted brain with surgical precision. The Corrupted on the ground maintains its grip, but ceases function.""}"
+39	39		201							{1: '1', 2: '500026'}
+40	40		301							{1: '1', 2: 'Lee', 3: '...Dammit.', 4: '1'}
+41	41		202							{1: '1', 6: '1'}
+42	42		301							{3: 'As the Corrupted in front falls silent, the surrounding remains gradually light up with red light. You hear the grinding friction of metal from all directions, and find more than a dozen Corrupted climb out of the ruins.'}
+43	43		201							{1: '1', 2: '500026'}
+44	44		301							"{1: '1', 2: 'Lee', 3: ""—These aren't just obsolete models, they also come with defense mechanisms. They're older than I thought."", 4: '1'}"
+45	45		201							{1: '1', 2: '500166', 3: '5'}
+46	46		301							{1: '1', 2: 'Lucia', 3: 'Commandant!', 4: '1'}
+47	47		202							{1: '1', 6: '1'}
+48	48		302							{2: '(Reload)', 3: '49'}
+49	49		401							{1: '2', 2: '1511'}
+50	50		301		1		AniZhuanchangBegin			"{3: ""Alright, let's deal with the problem at hand—""}"

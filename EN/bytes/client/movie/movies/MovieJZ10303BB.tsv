@@ -1,0 +1,13 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cgqz202.png'}
+2	1000		401							{1: '1', 2: '5'}
+3	2		301			DialogEnable				{2: 'Mother', 3: 'Look at my lovely son and daughter! Oh, they look absolutely fabulous...'}
+4	3		301							"{2: 'Father', 3: ""Liv, why aren't you dressed up yet?""}"
+5	4		301							{2: 'Liv', 3: 'I...'}
+6	5		301							"{2: 'Mother', 3: ""She's not been well, and she doesn't like crowds, right, Liv?""}"
+7	6		301							{2: 'Liv', 3: '...I can stay back and take care of our home.'}
+8	7		301							{2: 'Mother', 3: 'The child likes to be somewhere calm and quiet, so just let her be.'}
+9	8		301							"{2: 'Father', 3: ""Sigh, this child is too absorbed in her own world, I hope she's not been too much trouble.""}"
+10	9		301							"{2: 'Mother', 3: ""Oh heavens no! I've always treated her as my own... How could she be trouble?""}"
+11	10		301							"{2: 'Father', 3: ""Then Liv, you can stay at home and rest. It's about time as well, you and the children go get ready. I'll have to be at the dinner first.""}"
+12	11		301		1		AniZhuanchangBegin			{2: 'Mother', 3: 'Okay, honey. See you there.'}

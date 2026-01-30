@@ -1,0 +1,145 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory197.png'}
+2	2		401							{1: '1', 2: '102'}
+3	3		301			DialogEnable				{3: 'Roland is lying leisurely on the Ferris wheel, juggling his chain blade out of boredom.'}
+4	4		301							{3: 'Suddenly, he pauses. He stands and straightens himself, looking at the sky.'}
+5	6		201							{1: '1', 2: '500008'}
+6	7		301							{1: '1', 2: 'Roland', 3: 'Ha! Those gray birdlings really took the bait.', 4: '1'}
+7	8		301							{3: 'And on the other end, Shome exits the aircraft and deplanes on the beach. He heads in the direction of the theme park.'}
+8	9		301							"{3: ""Roland, at a vantage point, takes it all under his eye. He stretches lazily, then casually leaves the Ferris wheel and heads in Shome's direction.""}"
+9	10		301				AniZhuanchangBegin			{2: 'Roland', 3: 'Finally. Our main dish.', 4: '1'}
+10	11		202							{1: '1', 6: '1'}
+11	12		401							{1: '1', 2: '202'}
+12	604		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory196.png'}
+13	610		301			AniZhuanchangEnd				"{3: ""After Roland and Camu's fight.""}"
+14	609		201							{1: '1', 2: '500008'}
+15	612		301							"{1: '1', 2: 'Roland', 3: ""Let's see how long you can keep barking like that."", 4: '1'}"
+16	607		301							{3: 'Roland turns away from the incapacitated Camu and exits.'}
+17	608		301							{3: 'Leaving only Camu, now leaning on his greatsword, barely staying on his feet.'}
+18	30		301							{1: '1', 2: 'Roland', 3: 'Ah. Right. Here, have a parting gift. No need to thank me.', 4: '1'}
+19	31		301							{3: 'Roland stops in his tracks and turns, lifting his gun and pointing it at Camu. He fires—but Camu easily dodges the moment he pulled the trigger.'}
+20	32		301							{3: '...But the shot was not meant to maim, instead, a robust-looking chain trails from the bullet. It eats into the wall of the theme park behind Camu.'}
+21	33		301							{2: 'Roland', 3: 'Bye-bye, bothersome boyos.', 4: '1'}
+22	34		202							{1: '1'}
+23	35		301							"{3: ""Roland tugs on the chain rope and it retracts, bringing him out of Camu's attacking distance.""}"
+24	36		401							{1: '2', 2: '10007502'}
+25	37		301			RImgBg1Shake	AniZhuanchangBegin			{3: 'Roland presses a remote in his arms midair. Violent explosions flare up all over the park.'}
+26	38		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory187.png'}
+27	39		201							{1: '1', 2: '500008'}
+28	40		301			AniZhuanchangEnd				{1: '1', 2: 'Roland', 3: 'Phew.', 4: '1'}
+29	41		301							"{3: ""After releasing the chain rope, Roland lands inside the theme park. The usual smirk is nowhere to be found on Roland's face. Anger, barely suppressed, is causing his body to tremble.""}"
+30	42		301				AniZhuanchangBegin			{2: 'Roland', 3: 'The rest is in your hands, big guy.', 4: '1'}
+31	43		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory189.png'}
+32	44		401							{1: '1', 2: '102'}
+33	45		401							{1: '2', 2: '10007502'}
+34	46		202							{1: '1', 6: '1'}
+35	47		301			AniZhuanchangEnd				{3: 'Violent tremors pulsate from the ground, but even the sound of explosions cannot drown out the screams of chaotic self-expansion, let out by the infected energy center.'}
+36	48		201							{1: '1', 2: '500101'}
+37	49		301							{1: '1', 2: 'Gabriel', 3: 'Looks like Roland has made contact with the target.', 4: '1'}
+38	50		301							{2: 'Gabriel', 3: 'Then our prey should be arriving soon...', 4: '1'}
+39	51		202							{1: '1'}
+40	52		301				AniZhuanchangBegin			{3: 'Gabriel hides, waiting in the shadows for Shome.'}
+41	53		201							{1: '1', 2: '500184'}
+42	54		301			AniZhuanchangEnd				{1: '1', 2: 'Shome', 3: 'Roland is here... They found out, huh...', 4: '1'}
+43	55		301							{2: 'Shome', 3: 'But no matter. The Babylonians will slow him down.', 4: '1'}
+44	56		301							{2: 'Shome', 3: 'As long as I complete my experiment before he catches up to me, I can turn the tables.', 4: '1'}
+45	57		301							{3: 'Shome readjusts his glasses. Now at the control room of the energy center, his hands are tapping swiftly on the screen. However, Shome soon stills his hands.'}
+46	58		301							{2: 'Shome', 3: '...Hm? The production line should have activated right away. Damn it... the disuse must have caused a jam somewhere...', 4: '1'}
+47	59		301							"{2: 'Shome', 3: ""This won't do. I might not make it..."", 4: '1'}"
+48	60		203							{1: '1', 2: '0.25', 3: '-400'}
+49	61		201							{1: '2', 2: '500101', 4: '400'}
+50	62		301							"{1: '1', 2: 'Gabriel', 3: ""Allow me to apologize. I am sorry for modifying your grandfather's legacy without permission."", 4: '2'}"
+51	63		301							{3: 'Gabriel walks out of the shadows, appearing behind Shome.'}
+52	64		301							"{2: 'Shome', 3: ""What? It's you!"", 4: '1'}"
+53	65		301							"{3: ""Ignoring Shome's surprise, Gabriel straightforwardly continues.""}"
+54	66		301							{2: 'Gabriel', 3: 'Why... did you come here?', 4: '2'}
+55	67		301							{2: 'Shome', 3: '...', 4: '1'}
+56	68		301							{3: 'Shome quickly scans his surroundings for an escape in silence. Gabriel notices, but decides to allow him to liberty. With Gabriel standing guard before the exit of the control room, Shome has no place to run.'}
+57	69		301							{2: 'Shome', 3: 'Will you help me if I tell you?', 4: '1'}
+58	70		301							{2: 'Gabriel', 3: 'Naturally... No.', 4: '2'}
+59	71		301							"{2: 'Shome', 3: ""It won't hurt to listen."", 4: '1'}"
+60	72		301							"{2: 'Shome', 3: ""Besides, you've already turned this place into a dead zone. This saves us one step."", 4: '1'}"
+61	73		301							{2: 'Gabriel', 3: 'It is only done for ease of control, and to shut out foreign parties.', 4: '2'}
+62	74		301							{2: 'Shome', 3: 'Yes, but, the self-expanding machinery also provide us Ascendants with tremendous computing power. With proper modifications, this place can become the highest-output factory for machines.', 4: '1'}
+63	75		301							{2: 'Shome', 3: 'You are interested in machine modification, yes? We are all trying to break our limits. You and me, together with the data I have, we can complete the experiment 60 percent faster.', 4: '1'}
+64	76		401							{1: '2', 2: '10007502'}
+65	77		301			RImgBg1Shake				{3: 'Gabriel stretches out his hand and thumps it heavily on the wall of the control room. The entire room shakes from the tremendous impact.'}
+66	78		301							{2: 'Gabriel', 3: 'The way you stall, weakling, is as obvious as ever.', 4: '2'}
+67	79		301							{3: 'Hearing Gabriel, Shome forces a weak smile and readjusts his glasses.'}
+68	80		301							"{2: 'Shome', 3: ""Well, well. Let's see who is the weakling."", 4: '1'}"
+69	83		301							{2: 'Gabriel', 3: '?!', 4: '2'}
+70	84		401							{1: '2', 2: '1506'}
+71	85		202							{1: '1', 2: '2', 6: '1'}
+72	86		301			RImgBg1Shake				{3: 'The floor of the control room crumbles. Unable to react in time, Gabriel falls to the bottom of the energy center along with the broken floor.'}
+73	87		301							{3: 'During the descent, Gabriel sees that only the floor in front of the control panel remains intact, and Shome is standing on that part of the floor and looking down at him.'}
+74	88		201							{1: '1', 2: '500184'}
+75	89		301							"{1: '1', 2: 'Shome', 3: ""My grandfather left me this theme park. Of course there'd be secret features only I know."", 4: '1'}"
+76	90		301							{2: 'Shome', 3: 'Well then. Farewell.', 4: '1'}
+77	91		301							{3: 'Gabriel flips in mid air, and black wings metal unfold from his back, slowly his descent into a halt. He hovers steadily in the air.'}
+78	92		301							{3: 'He then swings his arm and hurls his cane up.'}
+79	93		301							{2: 'Shome', 3: 'Tsk.', 4: '1'}
+80	94		401							{1: '2', 2: '10008001'}
+81	95		301			RImgBg1Shake				"{3: ""Gabriel's cane cuts past Shome's cheek, and nails firmly into the wall behind him. The wind from the cane cuts Shome's artificial skin, and vital fluid seeps from his wound.""}"
+82	96		301							"{2: 'Shome', 3: ""Looks like my peace and quiet will have to wait until they're all dealt with."", 4: '1'}"
+83	97		301							{3: 'Seeing Gabriel flying, Shome quickly pivots and taps on the screen in the control room. He retrieves a light-blue, rectangular chip from under the screen.'}
+84	98		301							"{2: 'Shome', 3: ""It's all on her now..."", 4: '1'}"
+85	99		202							{1: '1'}
+86	100		301							{3: 'At that, Shome bolts out of the control room and heads for the surface.'}
+87	101		301				AniZhuanchangBegin			{3: 'Dodging the crumbling floor tiles, Gabriel eventually reaches the control room. He lands and straightens his coat, then leaves in pursuit of Shome.'}
+88	102		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory190.png'}
+89	103		201							{1: '1', 2: '500184'}
+90	104		301			AniZhuanchangEnd				{1: '1', 2: 'Shome', 3: 'Damn it, the explosion blocked most of the exits.', 4: '1'}
+91	105		301							{3: 'Shome checks the map of the energy center projected on his glasses. Vibrations from behind him tells him that the traps he set were not of much use.'}
+92	106		301							{2: 'Shome', 3: 'Good thing the elevator up ahead is still accessible.', 4: '1'}
+93	107		201							{1: '1', 2: '500101'}
+94	108		301							{1: '1', 2: 'Gabriel', 3: '...', 4: '1'}
+95	109		201							{1: '1', 2: '500184'}
+96	110		301							{1: '1', 2: 'Shome', 3: 'Tch, a quick one, eh?', 4: '1'}
+97	111		301							{2: 'Shome', 3: 'Turret modules, activate. Disengage the guard security locks... Go, stop that monster.', 4: '1'}
+98	112		201							{1: '1', 2: '500013'}
+99	113		201							{1: '2', 2: '500013', 4: '-600'}
+100	114		201							{1: '3', 2: '500013', 4: '600'}
+101	115		401							{1: '2', 2: '1508'}
+102	116		301							{1: '1', 2: 'Corrupted', 3: '—!', 4: '1', 5: '2', 6: '3'}
+103	117		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+104	118		301							"{3: ""A horde of Corrupted pour out from the corridor that Shome just passed. They all charge in Gabriel's direction.""}"
+105	119		201							{1: '1', 2: '500101'}
+106	120		301							{1: '1', 2: 'Gabriel', 3: 'A futile struggle.', 4: '1'}
+107	121		401							{1: '2', 2: '10007502'}
+108	122		301							{3: 'One of the Corrupted launches itself at Gabriel. He dodges by shifting to the side, as the Corrupted passes by, Gabriel punches it and hammers it into the wall of the corridor.'}
+109	123		301			RImgBg1Shake				{3: 'Then Gabriel plucks a Corrupted from the horde and crushes it into a ball. He hurls it at the incoming Corrupted, and most of them topple and collapse from the impact.'}
+110	124		301							{3: 'After the Corrupted fall, multiple machine guns emerge from the walls of the corridor.'}
+111	125		301							{2: 'Gabriel', 3: 'Cosmos 9735 HMG. A bullet of this caliber cannot penetrate my body.', 4: '1'}
+112	126		401							{1: '2', 2: '10001004'}
+113	127		301							{3: 'Gabriel merely marches ahead, allowing the bullets to rain down upon him. Smoke and gunfire fog up the narrow corridor. The smoke soon clears, revealing only tripods buzzing with sparks, the HMGs nowhere to be seen.'}
+114	128		301							{3: 'In the corridor, Gabriel stands still, looking at the escaping direction of Shome.'}
+115	129		301							{2: 'Gabriel', 3: 'Everything will end here, through a spectacular finale.', 4: '1'}
+116	130		301				AniZhuanchangBegin			{3: 'Tossing the wrenched out machine guns aside, Gabriel exits through the corridor.'}
+117	131		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory199.png'}
+118	132		401							{1: '1', 2: '201'}
+119	133		201							{1: '1', 2: '500184'}
+120	134		301			AniZhuanchangEnd				{1: '1', 2: 'Shome', 3: 'Huff... puff... puff...', 4: '1'}
+121	135		202							{1: '1'}
+122	136		301							{3: 'Shome stumbles out of the elevator, and quickly taps the control panel of the elevator.'}
+123	137		401							{1: '2', 2: '1515'}
+124	138		301							{2: 'System', 3: 'Elevator lockdown procedure, activating. Lockdown complete.'}
+125	139		301							{3: 'Confirming that the elevator is disabled, Shome turns and leans on the control panel, slowly crumbling to the floor.'}
+126	140		301							"{3: ""Looking around the plaza, everything here just like the blueprint his grandfather had shown him. The central statue of Shark-speare is playing a pre-set children's song on a loop.""}"
+127	141		201							{1: '1', 2: '500177'}
+128	142		301							"{1: '1', 2: 'Shark-speare', 3: ""Let's play!"", 4: '1'}"
+129	143		301							{2: 'Shark-speare', 3: 'Shark-speare loves gingerbread men!', 4: '1'}
+130	144		201							{1: '1', 2: '500184'}
+131	145		301							{1: '1', 2: 'Shome', 3: 'Pant... pant...', 4: '1'}
+132	146		301							{3: 'After a few deep breaths, Shome finally calms down. He stands and walks toward the giant statue in the center.'}
+133	147		301							{2: 'Shome', 3: 'Looks like I made it. Next, I just have to activate the statue to buy me more time for escape...', 4: '1'}
+134	148		301							{2: '???', 3: 'Going somewhere?'}
+135	149		301							{2: 'Shome', 3: '?!', 4: '1'}
+136	150		202							{1: '1'}
+137	151		301							{3: 'An imposing female voice rings out from behind the statue. It is a familiar voice, and one that Shome fears greatly.'}
+138	152		301							{3: 'Small beads of sweat seep out from his synth-skin. Fear instinctively dominates his body. Without a second thought, Shome turns and bolts.'}
+139	153		301							{3: 'Against Roland and Gabriel, Shome would still dare dream of a reversal against all hope. But with Luna, only one thought occupies his mind—RUN.'}
+140	154		201							{1: '1', 2: '500101'}
+141	155		301							"{1: '1', 2: 'Gabriel', 3: ""Why aren't you answering Miss Luna's question?"", 4: '1'}"
+142	156		401							{1: '2', 2: '1512'}
+143	157		301			RImgBg1Shake				"{3: ""Gabriel, somehow, is already standing in the way of Shome's escape route. Before he could even react, Gabriel takes a step forward and launches a blow at his abdomen.""}"
+144	158		301		1		AniZhuanchangBegin			{3: 'Shome falls to his knees from the blow. Footsteps approach him from behind, and he knows—everything is over.'}

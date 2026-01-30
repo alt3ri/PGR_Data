@@ -1,0 +1,18 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '203'}
+3	3		302							{2: 'Where are we now?', 3: '4'}
+4	4		301							"{2: 'Pilot', 3: ""We're above Malacca Strait and will arrive in Wuming City soon!""}"
+5	5		301				AniZhuanchangBegin			{3: 'As the pilot says this, a city landscape emerges from the distant horizon.'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory3.jpg'}
+7	7		301			AniZhuanchangEnd				{3: 'Wuming City, with a population of 33,600, is an important supply point along this route.'}
+8	8		301							{3: 'Because of that, its mayor smells the presence of Babylonia.'}
+9	9		301				AniZhuanchangBegin			"{3: ""And that's how the city ends up on President Hassen's list of strongholds.""}"
+10	10		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory160.png'}
+11	12		301			AniZhuanchangEnd				{2: 'Mayor', 3: 'Welcome to Wuming City!'}
+12	13		302							{2: 'Cut to the chase', 3: '14'}
+13	14		301							{2: 'Mayor', 3: 'Are you really willing to help us?'}
+14	15		302							{2: 'Yes', 3: '16'}
+15	16		301							"{2: 'Mayor', 3: ""Then let's get started.""}"
+16	17		301							{2: 'Mayor', 3: 'In fact, because of a malfunction with our Central Purification Filter, the Corrupted were recently spotted wandering near the city walls.'}
+17	18		301		1		AniZhuanchangBegin			{2: 'Mayor', 3: 'You can take the route leading out of the city and clear them out.'}

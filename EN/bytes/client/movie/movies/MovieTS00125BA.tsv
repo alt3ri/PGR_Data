@@ -1,0 +1,31 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory26.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+4	4		201							{1: '1', 2: '1101001', 4: '-400'}
+5	5		201							{1: '2', 2: '500019', 4: '400'}
+6	6		301			DialogEnable				"{1: '1', 2: 'Watanabe', 3: ""You'll be able to rappel down the wall to the desert after we take down this wave of guards."", 4: '1'}"
+7	7		301							{2: 'Forsaken A', 3: 'Retreat with us, sir!', 4: '2'}
+8	8		301							{2: 'Watanabe', 3: '...', 4: '1'}
+9	9		301							{2: 'Watanabe', 3: 'We have an agreement with the Purifying Force.', 4: '1'}
+10	10		301							"{2: 'Forsaken A', 3: ""But they're from Babylonia..."", 4: '2'}"
+11	11		202							{1: '1', 6: '1'}
+12	12		201							{1: '1', 2: '500019', 4: '-400'}
+13	13		301							"{1: '1', 2: 'Forsaken B', 3: ""That's right, sir! They've taken so many of us in the past!"", 4: '1'}"
+14	14		301							{2: 'Forsaken B', 3: 'If you go back on this, they might not help us later.', 4: '1'}
+15	15		301							{2: 'Forsaken A', 3: 'Sir!', 4: '2'}
+16	16		202							{1: '1', 2: '2'}
+17	17		201							{1: '1', 2: '1101001'}
+18	18		204							{1: '1', 2: '5'}
+19	19		301							{1: '1', 2: 'Watanabe', 3: 'Stop wasting time!', 4: '1'}
+20	20		301							{2: 'Watanabe', 3: 'When the Forsaken make a promise, we keep it.', 4: '1'}
+21	21		201							{1: '1', 2: '500019'}
+22	22		301							{1: '1', 2: 'Forsaken A', 3: '...Mister!', 4: '1'}
+23	23		201							{1: '1', 2: '1101001', 3: '5'}
+24	24		401							{1: '2', 2: '1516'}
+25	25		301							"{1: '1', 2: 'Watanabe', 3: ""(Turns away and leaves) That's enough."", 4: '1'}"
+26	26		203							{1: '1', 2: '0.5', 3: '-1200'}
+27	27		202							{1: '1'}
+28	28		201							{1: '2', 2: '500019', 4: '400'}
+29	29		203						300.0	{1: '2', 2: '0.5'}
+30	30		301		1		AniZhuanchangBegin			{1: '1', 2: 'Forsaken B', 3: 'Please, sir... at least take a few elite members with you, just to be safe.', 4: '2'}

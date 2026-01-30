@@ -1,0 +1,106 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory944.jpg'}
+2	2		401							{1: '1', 2: '5014'}
+3	3		301			DialogEnable				{3: 'The biting wind howls through the open hangar gates, its icy chill lingering within the metallic confines of the docking bays.'}
+4	4		301							{3: 'The fierce battle from moments ago has left the air heavy with heated tension.'}
+5	5		201							{1: '1', 2: '500916'}
+6	6		301							{1: '1', 2: 'Hanying', 3: 'His moves are fierce but not smooth.', 4: '1'}
+7	7		301							"{2: 'Hanying', 3: ""Rather than a Construct... he's more like a machine fighting according to a preset behavior pattern."", 4: '1'}"
+8	8		202							{1: '1'}
+9	9		301							{3: 'That sense of dissonance feels just as unsettling as the contradictions you have witnessed in Aleksei.'}
+10	10		301							{3: 'All the nuanced hints you have noticed since entering the city converge together after this confrontation. Behind the rapidly escalating chaos, the unseen force finally puts on a mask, emerging into the spotlight.'}
+11	11		201							{1: '1', 2: '1031001'}
+12	12		301							{1: '1', 2: 'Liv', 3: 'Commandant, that... that mechanical model just now... something feels off about him.', 4: '1'}
+13	13		302							"{2: ""I've noticed it, too."", 3: '14', 4: 'Something feels off?', 5: '15'}"
+14	14	16	301							"{3: '""He"" seems to have merely replicated Lee\'s appearance and fundamental attack strategies, yet to those acquainted with Lee, it would be evident that this imitation is merely skin-deep.'}"
+15	15		301							"{2: 'Liv', 3: 'Yes, ""he"" seems to have merely replicated Lee\'s appearance and fundamental attack strategies, but all the other frame data is entirely different.', 4: '1'}"
+16	16		202							{1: '1'}
+17	17		301							"{3: ""It's as if... someone just caught a brief glimpse of Hyperreal somewhere—maybe not even from live data capture—and hastily replicated this shell from that limited information.""}"
+18	18		301							{3: 'You find this approach oddly familiar. But... where did they even get a chance to see the Hyperreal frame?'}
+19	19		301							"{3: ""Just as the refugees are settled in and you're about to ask Hanying about updates from the outside, she walks right over.""}"
+20	20		302							{2: 'Hanying, entering this area should require an access key.', 3: '21'}
+21	21		302							{2: 'Did you find another way in?', 3: '22'}
+22	22		301							{3: 'When you were brought here, the mechanoid entered a long sequence of access codes at the Administrative Hall entrance before the gates would open.'}
+23	23		301							{3: 'As much as you hate to question Hanying... if Veronica has persuaded her to collaborate, this location may not be secure either.'}
+24	24		201							{1: '1', 2: '500916'}
+25	25		301							"{1: '1', 2: 'Hanying', 3: ""That's actually what I want to talk to you about... Aleksei gave me the access key."", 4: '1'}"
+26	26		302							{2: 'Aleksei?', 3: '27', 4: 'The governor?', 5: '27'}
+27	27		301							"{3: ""The memory of Aleksei's unsettling behavior during the negotiations flashes through your mind. You take a step back, your hand instinctively reaching for the concealed sidearm.""}"
+28	28		301							"{2: 'Hanying', 3: ""I know what's concerning you, Commandant. To be honest, I'm surprised too."", 4: '1'}"
+29	29		204							{1: '1', 2: '8'}
+30	30		301							{3: 'Understanding your concerns, Hanying lowers her eyes and plays footage from the terminal.'}
+31	31		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageOpen.prefab', 2: '3'}
+32	32		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory943.jpg', 3: '0', 4: '1', 5: '0.25'}
+33	33		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+34	34		201							{1: '1', 2: '500922', 4: '-400'}
+35	35		201							{1: '2', 2: '500916', 4: '400'}
+36	36		301							{1: '1', 2: 'Aleksei', 3: 'This is urgent, so please, you have to trust me. I might not stay lucid for long.', 4: '1'}
+37	37		301							{2: 'Aleksei', 3: 'Hangar 3C at the spacecraft docking area.', 4: '1'}
+38	38		301							"{2: 'Aleksei', 3: ""Please, don't let Veronica make an even graver mistake."", 4: '1'}"
+39	39		301							{2: 'Hanying', 3: '...I cannot fully trust you.', 4: '2'}
+40	40		301							"{2: 'Aleksei', 3: ""I'm sorry, but there's no time for more explanations. I'm not sure how long I can stay clear-headed enough to talk. I'll give you the access key to the Administrative Hall—it's clear of any ambush, and I trust you've already scouted the area."", 4: '1'}"
+41	41		301				DialogDisable			{2: 'Aleksei', 3: 'The key is...', 4: '1'}
+42	42		202							{1: '1', 2: '2', 6: '1'}
+43	43		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+44	44		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory943.jpg', 3: '1', 4: '0', 5: '0.25'}
+45	45		302							"{2: '...', 3: '46', 4: ""Something's indeed wrong."", 5: '46'}"
+46	46		301			DialogEnable				{3: 'The Aleksei in this recording is completely different from the one you encountered during the previous negotiation.'}
+47	47		201							{1: '1', 2: '500916'}
+48	48		301							"{1: '1', 2: 'Hanying', 3: 'I can\'t be sure, but I get the feeling that the ""Aleksei"" from before was just a puppet, like someone else was pulling the strings...', 4: '1'}"
+49	49		302							{2: 'Just like this crude mechanical model...', 3: '50'}
+50	50		301							{2: 'Hanying', 3: 'Yes, that Aleksei felt very similar to this mechanical model, and...', 4: '1'}
+51	51		202							{1: '1'}
+52	52		301							"{3: ""Whether manipulating Aleksei to stir up trouble or using a fake Lee to sow discord, these actions seem designed to sabotage others' efforts to defuse the situation.""}"
+53	53		301							{3: 'Once you eliminate the impossible, whatever remains, no matter how improbable, must be the truth. Besides, there is something oddly familiar about these tactics...'}
+54	54		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+55	55		504							{1: '0.7'}
+56	56		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory864.jpg'}
+57	57		201							{1: '1', 2: '500817', 3: '3'}
+58	58		301							"{1: '1', 2: 'Qu', 3: 'But some unforeseen events occurred, like that thing calling itself ""the Emperor"".', 4: '1'}"
+59	59		204							{1: '1', 2: '5'}
+60	60		301				DialogDisable			{2: 'Qu', 3: 'But he seemed to have anticipated everything... as if simulations and predictions were second nature to him.', 4: '1'}
+61	61		202							{1: '1', 6: '1'}
+62	62		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+63	63		504							{1: '0'}
+64	64		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory944.jpg'}
+65	65		302							{2: 'He might have been an experimental subject who escaped from Project Gestalt.', 3: '66'}
+66	66		301			DialogEnable				"{3: 'Could it be... the ""experimental subject"" called ""the Emperor"" who appeared in the Tabula Akasha?'}"
+67	67		201							{1: '1', 2: '500916', 3: '7'}
+68	68		301							{1: '1', 2: 'Hanying', 3: 'You mean... Schulz?', 4: '1'}
+69	69		302							{2: 'The Emperor is Schulz?', 3: '70'}
+70	70		204							{1: '1', 2: '4'}
+71	71		301							{2: 'Hanying', 3: 'Indeed. He was the mechanoid by my side back in Kowloong. His codename is the Emperor.', 4: '1'}
+72	72		302							{2: '...Codename?', 3: '73'}
+73	73		204							{1: '1', 2: '1'}
+74	74		301							"{2: 'Hanying', 3: ""Ah, my apologies... Due to certain circumstances, I can't tell you any more details about this."", 4: '1'}"
+75	75		301							"{3: ""An apologetic smile crosses Hanying's face.""}"
+76	76		204							{1: '1', 2: '4'}
+77	77		301							"{2: 'Hanying', 3: ""But if I'm not mistaken, the special code that appeared in Tabula Akasha... was Schulz."", 4: '1'}"
+78	78		302							"{2: ""So he didn't self-destruct at the Kowloong headquarters..."", 3: '80', 4: 'So it wasn\'t a simple ""self-destruction robot""...', 5: '80'}"
+79	79		301							{2: 'Hanying', 3: 'The last I heard, Sage took him away, but... given his expertise in programming, he might have left backup data somewhere.', 4: '1'}
+80	80		301							"{2: 'Hanying', 3: ""Rumor has it that... he wasn't just your average awakened machine, though I don't have details on what made him special. Still, it wouldn't surprise me if he was the one manipulating Aleksei."", 4: '1'}"
+81	81		302							{2: 'But why would he do this?', 3: '82'}
+82	82		204							{1: '1', 2: '4'}
+83	83		301							{2: 'Hanying', 3: 'Because he hates everyone.', 4: '1'}
+84	84		301							{3: 'Whether or not the Emperor is truly behind this, the proposition that someone is pulling the strings seems to explain all the strange occurrences.'}
+85	85		301							{3: 'The way Aleksei stalled during negotiations, misled the resistance, and provoked their attacks...'}
+86	86		301							"{2: 'Hanying', 3: 'That ""Aleksei"" is deliberately trying to provoke Veronica.', 4: '1'}"
+87	87		301							{3: 'As the only human Veronica truly trusts, Aleksei showing her the brutal wounds from his near-death experience would undoubtedly elicit an intense reaction from her.'}
+88	88		301							{2: 'Hanying', 3: 'Veronica is being deceived... I have to find her.', 4: '1'}
+89	89		302							"{2: ""She won't believe you."", 3: '90'}"
+90	90		204							{1: '1', 2: '1'}
+91	91		301							{2: 'Hanying', 3: 'I have to at least try. We mechanoids do not abandon our own.', 4: '1'}
+92	92		301							{3: 'She answers with a gentle smile.'}
+93	93		301							"{2: 'Hanying', 3: ""I would've remained in that storage pod forever... if it weren't for my fellow mechanoids, who never gave up trying to wake me. That's the only reason I'm talking to you today."", 4: '1'}"
+94	94		301							"{2: 'Hanying', 3: ""It's the same with Veronica... Even if she barely listens to what I say, I won't give up on her as long as there's the slightest chance..."", 4: '1'}"
+95	95		301							"{2: 'Hanying', 3: ""She shouldn't have become fuel for hatred... Someone else is behind these tragedies."", 4: '1'}"
+96	96		202							{1: '1'}
+97	97		301							"{3: ""A sharp glint grows in Hanying's eyes.""}"
+98	98		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4601_01.jpg', 3: '0', 4: '1', 5: '0.25'}
+99	99		301							"{2: 'Hanying', 3: '""The Emperor"" not only turned his back on the Church but nearly brought Kowloong to complete ruin.'}"
+100	100		301							{2: 'Hanying', 3: 'Even now, he continues to incite hatred between mechanoids and humans, going so far as to sacrifice the lives of his kin...'}
+101	101		301							"{2: 'Hanying', 3: ""He deceived his own people, deceived everyone. He... must pay for what he's done.""}"
+102	102		301							"{3: ""The female mechanoid's gaze pierces through the mist, fixing upon the figure lurking behind the scene.""}"
+103	103		301							{3: 'The determination born from her gentle nature proves sharper than any blade.'}
+104	104		301							"{2: 'Hanying', 3: ""Let's start planning our next move.""}"
+105	105		301		1		AniZhuanchangBegin			{3: 'She turns toward you with a gentle smile.'}

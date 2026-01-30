@@ -1,0 +1,29 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory753.jpg'}
+2	2		401							{1: '1', 2: '338'}
+3	3		301							{3: 'The battle soon comes to an end, and the defensive armor becomes more of a hindrance than a help.'}
+4	4		301							{3: 'With limited vision, the agile figure eludes capture. When the squad leader finally comprehends the situation, he finds himself left standing alone.'}
+5	5		201							{1: '1', 2: '500796'}
+6	6		301							{1: '1', 2: 'Squad Leader', 3: 'Aahhhhh!', 4: '1'}
+7	7		401						400.0	{1: '2', 2: '10001004'}
+8	8		401							{1: '2', 2: '2513'}
+9	9		301							{3: 'His random gunfire merely stirs up a flurry of wood chips.'}
+10	10		401							{1: '2', 2: '1512'}
+11	11		301			RImgBg1Shake				{3: 'In an instant, a jolt of force surges from his back armor to his neck, causing him to collapse on the ground.'}
+12	12		502							{1: 'DialogDisable'}
+13	13		202						500.0	{1: '1'}
+14	14		302							"{2: ""It's over?"", 3: '15'}"
+15	15		301			DialogEnable				"{3: ""You and Zong cautiously poke your heads out of the basement, bearing witness to Watanabe's triumphant defeat of the final enemy.""}"
+16	16		201							{1: '1', 2: '500783'}
+17	17		301							{1: '1', 2: 'Watanabe', 3: 'Yeah, but we need to move quickly. This place might not be safe anymore.', 4: '1'}
+18	18		202							{1: '1', 6: '1'}
+19	19		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+20	20		401							{1: '2', 2: '9342045'}
+21	21		401							{1: '2', 2: '11106007'}
+22	22		201							{1: '1', 2: '500815'}
+23	23		301			RImgBg1Shake				"{1: '1', 2: '???', 3: ""You won't have that chance."", 4: '1'}"
+24	24		401							{1: '2', 2: '10022001'}
+25	25		401							{1: '2', 2: '4008'}
+26	26		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+27	27		301							{3: 'A blade soars through the air, igniting sparks and setting the entire warehouse on fire.'}
+28	28		302		1		AniZhuanchangBegin			{2: 'Nigel?!'}

@@ -1,0 +1,25 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500026'}
+4	4		301			DialogEnable				{1: '1', 2: 'Lee', 3: 'So, Commandant, what brings you to the workshop?', 4: '1'}
+5	5		302							{2: 'Remember that tiny robot you gave me...?', 3: '6', 4: 'O-oh, nothing. I was just looking around...', 5: '7'}
+6	6	8	301							{2: 'Lee', 3: 'Is something wrong?', 4: '1'}
+7	7		301							{2: 'Lee', 3: 'Did that tiny robot break?', 4: '1'}
+8	8		301							{2: 'Lee', 3: 'Not surprised. After all, it was assembled out of recycled Corrupted parts dating back to the last century...', 4: '1'}
+9	9		301							"{2: 'Lee', 3: ""It's about at the end of its life expectancy anyway."", 4: '1'}"
+10	10		301							"{2: 'Lee', 3: ""Did you bring it? I'll run some tests on it."", 4: '1'}"
+11	11		302							{2: 'I got it right here.', 3: '12'}
+12	12		401							{1: '2', 2: '1509'}
+13	13		301							"{2: 'Lee', 3: ""I've replaced some of the scrapped parts. But the core chip is too old, and the workshop doesn't have any spares."", 4: '1'}"
+14	14		302							{2: 'Do we have to go kill more Corrupted?', 3: '15', 4: 'What should we do?', 5: '16'}
+15	15	17	301							"{2: 'Lee', 3: ""We can't get this type of chip from dismantling Corrupted. However..."", 4: '1'}"
+16	16		301							"{2: 'Lee', 3: ""If you really can't go without it..."", 4: '1'}"
+17	17		301							{2: 'Lee', 3: 'I know where we can buy one.', 4: '1'}
+18	18		302							"{2: 'Awesome!', 3: '19', 4: ""I'll go get one right now!"", 5: '20'}"
+19	19	21	301							"{2: 'Lee', 3: ""Don't get your hopes up just yet. Do you know what kind of chip?"", 4: '1'}"
+20	20		301							{2: 'Lee', 3: 'Wait a second. You know what kind of chip to buy?', 4: '1'}
+21	21		302							"{2: 'Um...', 3: '22', 4: ""Can't you just go with me?"", 5: '22'}"
+22	22		301							"{2: 'Lee', 3: ""Constructs can only leave if we're on a mission. You'll need to submit an application to your superior if you want me to go with you. Are you sure?"", 4: '1'}"
+23	23		302							"{2: ""If that's what it takes for you to go with me."", 3: '24', 4: ""I don't have any other choice."", 5: '24'}"
+24	24		301		1		AniZhuanchangBegin			"{2: 'Lee', 3: ""...Alright, let's go."", 4: '1'}"

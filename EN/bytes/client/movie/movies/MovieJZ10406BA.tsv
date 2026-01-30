@@ -1,0 +1,33 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory55.jpg'}
+2	100		401							{1: '1', 2: '203'}
+3	2		301			DialogEnable				{2: 'Commotion', 3: 'F-finally, safe...'}
+4	3		201							{1: '1', 2: '500024', 4: '-450'}
+5	4		201							{1: '2', 2: '500063', 4: '450'}
+6	5		301							"{1: '1', 2: 'Bianca', 3: ""You're the guy that soldier mentioned..."", 4: '1'}"
+7	6		301							{2: 'Watanabe', 3: 'Bruce...?', 4: '2'}
+8	7		301							"{2: 'Bianca', 3: ""Just in front of the snow plains, there was a large crowd of corrupted mechanoids, and he told me to lead the people here first. I think he's still in battle..."", 4: '1'}"
+9	8		301							{2: 'Watanabe', 3: 'Bruce! I... I need to go. Oasis squad one, prepare to move out!', 4: '2'}
+10	9		301							{2: 'Bianca', 3: 'Please take me with you!', 4: '1'}
+11	10		301				AniZhuanchangBegin			"{2: 'Watanabe', 3: ""...Fine, but don't cause trouble."", 4: '2'}"
+12	11		202							{1: '1', 2: '2', 6: '1'}
+13	12		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory54.jpg'}
+14	13		301			AniZhuanchangEnd				{3: '...'}
+15	14		201							{1: '1', 2: '500024'}
+16	15		301							{1: '1', 2: 'Bianca', 3: 'Just up ahead—', 4: '1'}
+17	16		201							{1: '1', 2: '500090'}
+18	101		401							{1: '2', 2: '1508'}
+19	17		301							{1: '1', 2: 'Corrupted', 3: 'No... Urgh—', 4: '1'}
+20	18		201							{1: '1', 2: '500005'}
+21	1000		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 3: '1'}
+22	19		301							{1: '1', 2: 'Young Soldier', 3: 'Ahh!', 4: '1'}
+23	20		201							{1: '1', 2: '500024', 3: '17'}
+24	21		301							{1: '1', 2: 'Bianca', 3: '!!!', 4: '1'}
+25	22		201							{1: '1', 2: '500090'}
+26	102		401							{1: '2', 2: '1508'}
+27	23		301							{1: '1', 2: 'Corrupted', 3: 'Urgh!', 4: '1'}
+28	24		201							{1: '1', 2: '500024', 3: '17'}
+29	25		301							{1: '1', 2: 'Bianca', 3: '...Is it... dead...?', 4: '1'}
+30	26		201							{1: '1', 2: '500090'}
+31	103		401							{1: '2', 2: '1508'}
+32	27		301		1		AniZhuanchangBegin			{1: '1', 2: 'Corrupted', 3: '—!', 4: '1'}

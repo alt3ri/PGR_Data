@@ -1,0 +1,106 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		401							{1: '2', 2: '2915'}
+4	4		107			DialogEnable			2500.0	{1: 'Science Council', 2: 'Babylonia'}
+5	5		108						500.0	
+6	6		201							{1: '1', 2: '501235', 4: '-400'}
+7	7		201							{1: '2', 2: '501234', 4: '400'}
+8	8		306							{1: '1'}
+9	9		301							{1: '1', 3: 'Dante knows Vergil, standing beside him, dislikes places like this, but truth be told, neither does he.'}
+10	10		301							{3: 'The sprawling laboratory hums with activity, its space woven into an intricate web of cables. They snake across the floor, connecting workstations spaced at regular intervals. Each station is cluttered with glowing monitors and cups of coffee.'}
+11	11		301							{3: 'The entire lab feels like a living network, workstations acting as nodes linked by those endless cables.'}
+12	12		301							{3: 'Researchers in lab coats—some young, some weathered—weave through the maze of cables, occasionally huddling in small groups to exchange hushed words, their murmurs as constant and indistinct as the hum of a hive.'}
+13	13		301							{3: 'Dante catches the occasional glance from the researchers, their eyes flicking toward him before darting away. And sometimes, with his exceptional hearing, he even picks up fragments of their quiet conversations.'}
+14	14		306							
+15	15		402							{1: '2915'}
+16	16		301							{3: 'Then, abruptly, the murmurs cease. A silence ripples through the room, distant at first but growing louder until—'}
+17	17		301							{3: 'Two Chiefs step into view.'}
+18	18		301							"{2: 'Dante', 3: ""Hey, 【kuroname】, how's it going?"", 4: '1'}"
+19	19		302							"{2: ""I'll let Asimov explain. He's the expert here."", 3: '20'}"
+20	20		301							{3: 'The two humans approach the table where the two half-demons are seated. Their previous battle has depleted much of their stamina, and the table is laden with pizzas and drinks, a treat clearly meant for them.'}
+21	21		302							{2: 'Also, you two need to behave yourselves from now on.', 3: '22', 4: 'Also, could you two... behave yourselves from now on?', 5: '22'}
+22	22		301							"{3: ""A training facility was destroyed during Dante and Vergil's battle.""}"
+23	23		302							{2: 'I wrote so many reports. They might even dock my bonus.', 3: '24'}
+24	24		301							{3: 'Dante watches you wearily rub your forehead across from him, responding with a guilty shrug.'}
+25	25		204							{1: '1', 2: '10'}
+26	26		301							{2: 'Dante', 3: 'Sorry, my bad. Guess we got a little carried away.', 4: '1'}
+27	27		301							{2: 'Dante', 3: 'So your bonus...', 4: '1'}
+28	28		302							"{2: ""It wasn't docked. Commander Nikola shot down that idea."", 3: '29'}"
+29	29		202							{1: '1', 2: '2', 6: '1'}
+30	30		201							{1: '1', 2: '500004'}
+31	31		301							{1: '1', 2: 'Asimov', 3: 'About the data retrieved from the Babel Tower...', 4: '1'}
+32	32		301							{3: 'As Asimov begins his explanation, Dante and you stop your idle chat. Vergil also shifts his gaze toward Asimov.'}
+33	33		301							"{2: 'Asimov', 3: ""According to Thomas' experimental data, his initial research direction was essentially a dead end."", 4: '1'}"
+34	34		301							"{2: 'Asimov', 3: ""There were two crucial turning points afterward. First, the Hetero Tower shard; second, the supplementary data. And tracing back to its origins, it's possible that this data involves... Dominik."", 4: '1'}"
+35	35		302							{2: 'Dominik...', 3: '36'}
+36	36		301							{2: 'Asimov', 3: 'Just possible.', 4: '1'}
+37	37		301							"{2: 'Asimov', 3: ""In fact, the fundamental theory behind Thomas' experiment derives from Dominik's early research. One could even say it's the continuation of an incomplete project Dominik abandoned during the Golden Age."", 4: '1'}"
+38	38		302							"{2: ""Why didn't Dominik continue the research?"", 3: '39'}"
+39	39		301							{2: 'Asimov', 3: 'For several reasons. A human only has limited energy, after all. Even a polymath like Dominik would need to prioritize theories based on strategic necessity and temporal constraints.', 4: '1'}
+40	40		301							{2: 'Asimov', 3: 'Perhaps Dominik picked up old research again during down time, or perhaps it was always just for fun. Either way, Thomas eventually got his hands on the later data and the Hetero Tower shard, which led him to stumble upon the space-time portal.', 4: '1'}
+41	41		204							{1: '1', 2: '8'}
+42	42		301							"{2: 'Asimov', 3: ""Regrettably, given the collapse of the Babel Tower, we can't obtain any more data."", 4: '1'}"
+43	43		204							{1: '1'}
+44	44		203							{1: '1', 2: '0.35', 3: '500', 6: '1'}
+45	45		201							{1: '2', 2: '501235', 4: '-500'}
+46	46		301							{1: '1', 2: 'Dante', 3: 'Not really following. So can we go back?', 4: '2'}
+47	47		202							{1: '2', 6: '1'}
+48	48		201							{1: '2', 2: '501234', 4: '-500'}
+49	49		301							"{1: '1', 2: 'Vergil', 3: ""If you're incapable, I'll try with Yamato."", 4: '2'}"
+50	50		301				AniZhuanchangBegin			"{2: 'Asimov', 3: ""The Science Council alone cannot accomplish this, but with Yamato, it's feasible."", 4: '1'}"
+51	51		202							{1: '1', 2: '2', 6: '1'}
+52	52		502							{1: 'DialogDisable'}
+53	53		401						2000.0	{1: '1', 2: '36'}
+54	54		401							{1: '1', 2: '208'}
+55	55		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+56	56		107			AniZhuanchangEnd				{1: 'Science Council', 2: 'One week later'}
+57	57		301							{3: 'One week later, Science Council.'}
+58	58		108						100.0	
+59	59		301			DialogEnable				"{3: ""Everyone gathers in one of the Science Council's laboratories. At its center stands a massive circular platform constructed according to Thomas's experimental data, surrounded by geometric polygonal prisms and mechanical arms.""}"
+60	60		201							{1: '1', 2: '500004'}
+61	61		301							{1: '1', 2: 'Asimov', 3: 'You just need to stand in the center of the circular platform and use Yamato to open a portal the usual way.', 4: '1'}
+62	62		202							{1: '1', 6: '1'}
+63	63		201							{1: '1', 2: '501235', 4: '-400'}
+64	64		201							{1: '2', 2: '501234', 4: '400'}
+65	65		301							{1: '1', 3: 'Dante and Vergil step onto the platform and turn to face the crowd gathered around the device.'}
+66	66		202							{1: '1', 2: '2', 6: '1'}
+67	67		306							{1: '1'}
+68	68		201							{1: '1', 2: '500678', 4: '-700', 5: '-20', 6: '-150'}
+69	69		201							{1: '2', 2: '500011', 4: '-300'}
+70	70		201							{1: '3', 2: '500012', 4: '300'}
+71	71		201							{1: '4', 2: '500004', 4: '700'}
+72	72		301							"{1: '1', 3: ""【kuroname】, Asimov with his dark circles, the Gray Raven squad they fought alongside before, as well as Hassen, who's supposed to be the President, and another middle-aged man called Nikola.""}"
+73	73		202							{1: '1', 2: '2', 3: '3', 4: '4', 6: '1'}
+74	74		306							
+75	75		201							{1: '1', 2: '501235', 3: '1'}
+76	76		301				DialogDisable			"{1: '1', 2: 'Dante', 3: ""Well, party's over. Time to say goodbye."", 4: '1'}"
+77	77		202						500.0	{1: '1', 6: '1'}
+78	78		401							{1: '2', 2: '5657'}
+79	79		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryShiZiChuanSongMenV350.prefab', 2: '1'}
+80	80		301			DialogEnable				{3: 'Vergil unsheathes Yamato, the blade gleaming as he delivers precise horizontal and vertical slashes. In their wake, a cross-shaped rift slowly yawns open. Then, he turns his head, his gaze locking onto you.'}
+81	81		201							{1: '1', 2: '501234'}
+82	82		301							{1: '1', 2: 'Vergil', 3: '【kuroname】, let Alpha know I have left.', 4: '1'}
+83	83		301							"{3: ""You try to ignore Nikola's questioning gaze beside you as you respond to Vergil.""}"
+84	84		302							{2: '...Alright...', 3: '85'}
+85	85		202							{1: '1'}
+86	86		301							"{3: ""But Vergil doesn't wait for a response, stepping straight through the portal.""}"
+87	87		201							{1: '1', 2: '501235', 3: '1'}
+88	88		301							"{1: '1', 2: 'Dante', 3: ""Well... You've all been good friends. Maybe we'll meet again someday."", 4: '1'}"
+89	89		301				DialogDisable			{2: 'Dante', 3: 'Till then... Adios!', 4: '1'}
+90	90		202						800.0	{1: '1'}
+91	91		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryShiZiChuanSongMenV350.prefab'}
+92	92		402							{1: '5657'}
+93	93		401							{1: '2', 2: '5658'}
+94	94		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryShiZiChuanSongMenV350End.prefab', 2: '2'}
+95	95		301			DialogEnable				{3: 'As Dante steps through the portal, the cross-shaped rift seals behind him.'}
+96	96		301							{3: 'The scene suddenly falls silent.'}
+97	97		301							{3: 'After a moment, voices break the silence in the room.'}
+98	98		201							{1: '1', 2: '1031001', 3: '1', 4: '600'}
+99	99		201							{1: '2', 2: '500994', 3: '1'}
+100	100		201							{1: '3', 2: '500568', 3: '1', 4: '-600'}
+101	101		301							"{1: '1', 2: 'Liv', 3: ""Dante and Vergil really are remarkable in their own ways, aren't they?"", 4: '1'}"
+102	102		301							"{2: 'Liv', 3: ""I feel like I've grown used to having them around Babylonia these days."", 4: '1'}"
+103	103		301							{2: 'Lucia', 3: 'Will we get a chance to see them again in the future?', 4: '2'}
+104	104		301							{2: 'Lee', 3: 'Theoretically, the chances are slim, but...', 4: '3'}
+105	105		302		1		AniZhuanchangBegin			"{2: ""As long as we don't let go of hope, I'm sure we'll meet again!"", 3: '106'}"

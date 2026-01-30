@@ -1,0 +1,38 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500001'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Celica', 3: ""That's it for today's meeting."", 4: '1'}"
+5	5		301							"{2: 'Celica', 3: ""If there's nothing else, you may be dismissed. Remember to turn in your follow-up reports!"", 4: '1'}"
+6	6		301							{2: 'Celica', 3: '【kuroname】.', 4: '1'}
+7	7		301							{3: 'Celica waves over to you.'}
+8	8		302							{2: 'Is something wrong?', 3: '9', 4: '(Walk over)', 5: '9'}
+9	9		301				DialogDisable			"{2: 'Celica', 3: '""World Folklore Enthusiasts""—do you still remember them?', 4: '1'}"
+10	10		302							{2: 'Yeah, kinda.', 3: '11', 4: 'Not really.', 5: '12'}
+11	11		302							{2: 'I remember last Double Seventh Festival, they teamed up with Pulao in Constellia to host a commercial street event.', 3: '14'}
+12	12		301			DialogEnable	DialogDisable			{2: 'Celica', 3: 'Last year on the Double Seventh Festival, people in Constellia worked together with Pulao, Sophia, and Changyu to set up a commercial street. You were there as well.', 4: '1'}
+13	13		302							"{2: ""I remember now. Yeah, that's true."", 3: '14'}"
+14	14		302							"{2: ""So, what's going on with that association?"", 3: '15'}"
+15	15		301			DialogEnable				"{2: 'Celica', 3: ""This year, they're hosting another Double Seventh event in Constellia. It's rumored to be huge, and its branches from all over the world are coming to join in."", 4: '1'}"
+16	16		301							"{2: 'Celica', 3: ""They've rented out an entire park for the occasion, dividing it into different sections. Each section features a distinct environment or culture—like Kowloong, the Polar region, or the desert..."", 4: '1'}"
+17	17		301							"{2: 'Celica', 3: ""They're holding a special Double Seventh event in each of these areas, making every zone feel unique."", 4: '1'}"
+18	18		302							{2: 'It sounds like a lively festival.', 3: '19'}
+19	19		204							{1: '1', 2: '2'}
+20	20		301							"{2: 'Celica', 3: ""The WGAA is on board too, saying it's the perfect chance to observe cultural diversity. They want someone to head over to the festival and gather some info."", 4: '1'}"
+21	21		301							{3: 'Celica explains all this with a knowing smile.'}
+22	22		301							"{3: ""Alright, no need for further explanation—it's pretty clear who they've got in mind.""}"
+23	23		302							"{2: 'Still, when it comes to gathering intel, there must be someone more qualified than me, right?', 3: '24', 4: ""All right, I'm on it."", 5: '26'}"
+24	24		204							{1: '1'}
+25	25		301							"{2: 'Celica', 3: ""We're bringing you in because of your previous collaboration with the World Folklore Enthusiasts."", 4: '1'}"
+26	26		204							{1: '1'}
+27	27		301							"{2: 'Celica', 3: ""No need to stress. This isn't an official task—just keep a casual record of what you see and hear as you enjoy the festival."", 4: '1'}"
+28	28		301							"{2: 'Celica', 3: ""Oh, by the way, there's a special souvenir at this year's Double Seventh Festival..."", 4: '1'}"
+29	29		202							{1: '1'}
+30	30		401							{1: '2', 2: '4422'}
+31	31		301							{3: 'Celica says this as she opens her terminal, which displays a simple yet elegantly crafted wooden keepsake.'}
+32	32		201							{1: '1', 2: '500001'}
+33	33		301							"{1: '1', 2: 'Celica', 3: ""The WGAA offers a reward for recovering these items. If you find any, I'd appreciate you bringing a few back."", 4: '1'}"
+34	34		301							"{2: 'Celica', 3: ""There's a card-guessing game where you predict whether the next card will be higher or lower than the one already flipped. Guess right, and you win a prize."", 4: '1'}"
+35	35		302							{2: 'Sounds like the same setup as before, huh?', 3: '36', 4: 'I see.', 5: '36'}
+36	36		301							"{2: 'Celica', 3: ""Then I'm counting on you."", 4: '1'}"
+37	37		301		1		AniZhuanchangBegin			{2: 'Celica', 3: 'But most importantly, enjoy the festival. Take your time exploring.', 4: '1'}

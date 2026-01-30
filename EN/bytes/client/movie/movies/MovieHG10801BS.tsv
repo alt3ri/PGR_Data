@@ -1,0 +1,26 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory28.jpg'}
+2	3		301			DialogEnable				{3: 'Forsaken Base, Oasis. 4:00 pm.'}
+3	2		401							{1: '1', 2: '202'}
+4	4		301							{3: 'After noticing a surprise assault on Oasis by some wandering Corrupted, Watanabe leaves you right where you are by yourself.'}
+5	5		302							"{2: ""Guess I'll stay put."", 3: '100', 4: 'I should go and see if I can help.', 5: '100'}"
+6	100		401							{1: '2', 2: '1513'}
+7	6		301							{3: 'Soldiers in Oasis are nervously preparing for the incoming attack.'}
+8	7		201							{1: '1', 2: '500005'}
+9	8		301							{1: '1', 2: 'Human Soldier', 3: 'Build up a defense line at the back!', 4: '1'}
+10	9		201							{1: '1', 2: '500019'}
+11	10		301							{1: '1', 2: 'Construct Soldier', 3: 'Watch your surroundings! Beware of the Corrupted breaking through from the sides!', 4: '1'}
+12	11		302							{2: '...', 3: '12', 4: 'Do you need any help?', 5: '12'}
+13	12		201							{1: '1', 2: '500005'}
+14	13		301							"{1: '1', 2: 'Human Soldier', 3: ""Ah? Aren't you the person next to Mr. Watanabe earlier?"", 4: '1'}"
+15	14		302							"{2: 'H-hello there...', 3: '15', 4: ""That's right."", 5: '15'}"
+16	15		301							"{2: 'Human Soldier', 3: ""Relax. Those Corrupted come every once in a while. We're already used to it."", 4: '1'}"
+17	16		301							{2: 'Human Soldier', 3: 'They might be scary, all these bloodthirsty, mindless Corrupted...', 4: '1'}
+18	17		301							{2: 'Human Soldier', 3: 'But with Mr. Watanabe and the many Constructs here on our side...', 4: '1'}
+19	18		301							{2: 'Human Soldier', 3: 'No harm will come to you! So just stay here and relax!', 4: '1'}
+20	19		302							{2: 'Thank you.', 4: 'I believe in him too.'}
+21	20		301							"{2: 'Human Soldier', 3: ""But once you're done resting, remember to contribute to Oasis as well!"", 4: '1'}"
+22	21		301							{2: 'Human Soldier', 3: 'I should get going and assist them!', 4: '1'}
+23	101		202							{1: '1', 6: '1'}
+24	22		302							{2: 'Alright. Now, let me contribute as well!', 3: '23'}
+25	23		301		1		AniZhuanchangBegin			{3: '—Transmission connecting.'}

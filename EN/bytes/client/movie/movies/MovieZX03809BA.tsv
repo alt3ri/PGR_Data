@@ -1,0 +1,66 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		107						2000.0	{1: 'Conservation Area 107'}
+4	4		108							
+5	5		301			DialogEnable				{3: 'There has been a wave of new Hetero-Creature attacks around here recently. Several Constructs who went out patrolling disappeared, and the people inside the conservation area are rightfully scared.'}
+6	6		201							{1: '1', 2: '500567'}
+7	7		301							"{1: '1', 2: 'Conservation Area Staff', 3: ""Hey! You there! Don't move!"", 4: '1'}"
+8	8		301				DialogDisable			{2: 'Conservation Area Staff', 3: 'Who are you?', 4: '1'}
+9	9		302							"{2: ""Babylonia Task Force. I'm here on a mission."", 3: '10'}"
+10	10		302							{2: 'You should have received a notice from me.', 3: '11'}
+11	11		301			DialogEnable				{2: 'Conservation Area Staff', 3: '...', 4: '1'}
+12	12		301							{3: 'The staff member inspects your identification thoroughly before opening the door on the side.'}
+13	13		202							{1: '1'}
+14	14		301							{3: 'Small groups of people gather inside the conservation area, muttering and discussing something. Seeing Echo and you approach, they all pretend nothing is going on and cautiously disperse.'}
+15	15		302							"{2: ""Something's amiss."", 3: '16'}"
+16	16		301							{3: 'People in a conservation area under Babylonia should not have reacted this way when they saw a commandant sent here to investigate.'}
+17	17		301							"{3: ""Back in the other conservation areas you were investigating, some were glad to see Babylonia's arrival, while others were mad that it took Babylonia so long to send someone there.""}"
+18	18		301							{3: 'But none of them were this... alert.'}
+19	19		301							{3: 'As if they are all protecting a secret.'}
+20	20		201							{1: '1', 2: '500702'}
+21	21		301							"{1: '1', 2: 'Echo', 3: ""It should be fine, I think? It doesn't seem too strange to me."", 4: '1'}"
+22	22		301							"{2: 'Echo', 3: ""Doesn't the first chapter of the regulations of conservation areas emphasize the importance of remaining alert and being cautious of outsiders? I don't see what's wrong with how they're acting."", 4: '1'}"
+23	23		302							"{2: ""You're quite the expert with regulations."", 3: '24', 4: '...', 5: '24'}"
+24	24		301							{3: 'The regulations of conservation areas are written into a thick tome. You wonder how she managed to memorize every rule on it...'}
+25	25		301							{2: 'Echo', 3: '...I just thought the book was great referencing material, so I read it a couple of times.', 4: '1'}
+26	26		301							"{2: 'Echo', 3: ""The systems written there are different from what I've learned."", 4: '1'}"
+27	27		302							{2: 'Did you use to learn things like this as well?', 3: '28'}
+28	28		301							{2: 'Echo', 3: 'We all learned from the same book before Utopia changed. Inside the book were all the rules we needed to follow in Utopia.', 4: '1'}
+29	29		301							"{2: 'Echo', 3: ""...It's different from the regulations of conservation areas. Similar, but not the same."", 4: '1'}"
+30	30		301							"{2: 'Echo', 3: ""Utopia's rules emphasized fairness and justice, kindness, and virtues. It requested us to treat our people kindly and respectfully. The rules were so loving that they didn't seem to belong to this era."", 4: '1'}"
+31	31		301							{2: 'Echo', 3: 'Meanwhile, the regulations of conservation areas warn us about outsiders and refugees coming from beyond...', 4: '1'}
+32	32		302							"{2: ""Utopia's rules didn't mention anything similar?"", 3: '33'}"
+33	33		301							"{2: 'Echo', 3: ""Utopia's rules taught us to find Dr. Pickman if we ran into problems. He would help us solve everything."", 4: '1'}"
+34	34		301							"{2: 'Echo', 3: ""Lena said that was wrong. Dr. Pickman couldn't possibly help everyone this way."", 4: '1'}"
+35	35		301							{2: 'Echo', 3: 'But Dr. Pickman said he wanted to create a utopia on Earth, a place that was peaceful and decent, fair and just—somewhere people could coexist lovingly.', 4: '1'}
+36	36		204							{1: '1', 2: '14'}
+37	37		301							{2: 'Echo', 3: 'But...', 4: '1'}
+38	38		301							{3: 'Echo stops talking.'}
+39	39		302							"{2: ""Did Lena's message mention what she planned to do here?"", 3: '40'}"
+40	40		204							{1: '1'}
+41	41		301							"{2: 'Echo', 3: ""She mentioned seeing Kurono's people around this area, and she was coming here to investigate..."", 4: '1'}"
+42	42		401							{1: '1', 2: '36'}
+43	43		204							{1: '1', 2: '13'}
+44	44		301							"{2: 'Echo', 3: ""It's those people."", 4: '1'}"
+45	45		104							{1: '-300|0|-200', 2: '0.8'}
+46	46		202							{1: '1'}
+47	47		401							{1: '2', 2: '1513'}
+48	48		401							{1: '1', 2: '203'}
+49	49		301							{3: 'Echo quickly pulls you away to hide. Not too far from the outer side of the conservation area stands a group of people in strange uniforms.'}
+50	50		201					800.0		{1: '1', 2: '500702', 3: '13'}
+51	51		301							{1: '1', 2: 'Echo', 3: 'Those are the combat uniforms of the Aurora Squadron. What are they doing here?', 4: '1'}
+52	52		104							{1: '200|0|-200', 2: '1'}
+53	53		202							{1: '1', 6: '1'}
+54	54		301							{3: 'You sneak toward them while hiding in an alley. The Aurora Squadron soldiers say something to the residents, and the residents all drop the tools in their hands to follow the soldiers away from the conservation area.'}
+55	55		301							{3: 'A few soldiers lead in the front while the rest bring up the rear as if worried that the residents are going to run away.'}
+56	56		302							{2: 'What... are they doing?', 3: '57'}
+57	57		301							{3: 'An obviously external force entering the conservation area should have alarmed the guards, so why are they not here to stop them?'}
+58	58		201							{1: '1', 2: '500702'}
+59	59		301							"{1: '1', 2: 'Echo', 3: ""...Let's follow them."", 4: '1'}"
+60	60		301							{3: 'Right after they leave the safe zone of the conservation area, the soldiers begin to create strange trails of fighting on the ground.'}
+61	61		301							"{2: 'Echo', 3: ""That's..."", 4: '1'}"
+62	62		302							"{2: 'The ""Hetero-Creatures""?', 3: '63'}"
+63	63		204							{1: '1', 2: '13'}
+64	64		301							{2: 'Echo', 3: '...', 4: '1'}
+65	65		302		1		AniZhuanchangBegin			"{2: ""Time's running out—go after them!""}"

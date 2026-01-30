@@ -1,0 +1,429 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101				AniZhuanchangBegin			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		301			DialogDisable				{3: 'Chapter 1001'}
+3	3		401							{1: '1', 2: '36'}
+4	4		109							{1: '1', 2: '<color=#ffffffff><size=40>Chapter 1001</size></color>', 4: '50'}
+5	5		109			AniZhuanchangEnd				{1: '2', 2: '<color=#ffffffff><size=50>— A Summer of Cicadas and Rising Winds —</size></color>', 4: '-50'}
+6	6		301				AniZhuanchangBegin			{3: 'A Summer of Cicadas and Rising Winds'}
+7	7		110							{1: '1', 2: '2'}
+8	8		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+9	9		401							{1: '2', 2: '4704'}
+10	10		501						4000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieShizhong02.prefab', 2: '2'}
+11	11		505				AniZhuanchangBegin			{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieShizhong02.prefab'}
+12	12		101				DialogEnable			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory609.jpg'}
+13	13		401							{1: '1', 2: '278'}
+14	14		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+15	15		401							{1: '2', 2: '4740'}
+16	16		301			AniZhuanchangEnd				{3: 'Noisy cicada songs fill your ears as physical senses gradually return to your body. You try to open your eyes.'}
+17	17		201							{1: '1', 2: '501070', 3: '3', 5: '-20', 6: '-50'}
+18	18		301							"{1: '1', 2: '??', 3: ""Commandant, can you tell what number I'm making?"", 4: '1'}"
+19	19		301							{3: 'The gray-haired girl waves her hands in front of you, making shapes that look like a gun and a circle. Sunlight filters through the gaps between her fingers and dances gently across my face.'}
+20	20		302							{2: '2', 3: '21', 4: '5', 5: '24', 6: '70', 7: '27'}
+21	21		301							"{3: ""Maybe it's the deafening cicada songs, or perhaps the blinding sunlight, but you can't shake this feeling that you've forgotten something...""}"
+22	22		204							{1: '1', 2: '1'}
+23	23	30	301							"{2: 'Nanami', 3: ""Wrong! It's 70! Looks like you're not fully awake yet, Commandant."", 4: '1'}"
+24	24		301							"{3: ""Maybe it's the deafening cicada songs, or perhaps the blinding sunlight, but you can't shake this feeling that you've forgotten something...""}"
+25	25		204							{1: '1', 2: '1'}
+26	26	30	301							"{2: 'Nanami', 3: ""Wrong! It's 70! Looks like you're not fully awake yet, Commandant."", 4: '1'}"
+27	27		301							"{3: ""Maybe it's the deafening cicada songs, or perhaps the blinding sunlight, but you can't shake this feeling that you've forgotten something...""}"
+28	28		204							{1: '1', 2: '2'}
+29	29		301							"{2: 'Nanami', 3: ""Bingo! It's 70! Looks like you're wide awake now, Commandant!"", 4: '1'}"
+30	30		302							"{2: 'Ah...', 3: '31', 4: ""Ah, it's you, Nanami..."", 5: '31'}"
+31	31		306							{1: '1'}
+32	32		301				DialogDisable			{3: 'Though everything else remains blank, you somehow remember that the girl before you is called Nanami.'}
+33	33		306							
+34	34		202							{1: '1'}
+35	35		402							{1: '4740'}
+36	36		401					300.0		{1: '2', 2: '2704'}
+37	37		104						550.0	{1: '0|10|-5', 2: '0.4'}
+38	38		104							{1: '0|0|0', 2: '0.4'}
+39	39		301			DialogEnable				{3: 'You try to move your body, and a slight stinging sensation runs across your back—summer is when the grass grows most abundantly and when its blades are at their prickliest.'}
+40	40		201							{1: '1', 2: '501070', 3: '2'}
+41	41		301							"{1: '1', 2: 'Nanami', 3: ""It's the apocalypse now, the apocalypse!"", 4: '1'}"
+42	42		302							"{2: ""That's not something to be happy about!"", 3: '43', 4: '...', 5: '43'}"
+43	43		301							{3: 'The scene before you triggers an inexplicable sense of déjà vu, yet something feels subtly different.'}
+44	44		401							{1: '2', 2: '4387'}
+45	45		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+46	46		504							{1: '0.7'}
+47	47		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory566.jpg'}
+48	48		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '4'}
+49	49		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab', 2: '2'}
+50	50		201							{1: '1', 2: '501072', 7: '1'}
+51	51		301							{1: '1', 3: 'Somewhere far, far away, or perhaps in some far, far distant past, someone had uttered these same words to you...'}
+52	52		301							"{3: ""Except you can't quite seem to recall how it all happened.""}"
+53	53		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+54	54		504							{1: '0'}
+55	55		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory609.jpg'}
+56	56		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 4: '4', 5: '1'}
+57	57		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab'}
+58	58		202							{1: '1', 6: '1'}
+59	59		401							{1: '2', 2: '2596'}
+60	60		301							{3: 'This place teems with birdsong and fragrant flowers, brimming with vitality—even the sunlight itself seems alive.'}
+61	61		301							"{3: 'If this is what they call the ""apocalypse,"" it\'s certainly a lot livelier now than the barren wasteland you\'d expect.'}"
+62	62		402							{1: '2596'}
+63	63		201							{1: '1', 2: '501070', 3: '2'}
+64	64		301							{1: '1', 2: 'Nanami', 3: 'Now, Commandant, come on a treasure hunt with Nanami!', 4: '1'}
+65	65		302							"{2: 'What treasure?', 3: '66', 4: ""...What exactly is this treasure you're talking about?"", 5: '66'}"
+66	66		204							{1: '1', 2: '7'}
+67	67		301							"{2: 'Nanami', 3: ""The Cardman Rider's Cosmic Belt!"", 4: '1'}"
+68	68		204							{1: '1'}
+69	69		301				AniZhuanchangBegin			"{2: 'Nanami', 3: ""Anyway, let's head out together, Commandant!"", 4: '1'}"
+70	70		202							{1: '1', 6: '1'}
+71	71		401							{1: '1', 2: '36'}
+72	72		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1030.jpg'}
+73	73		401							{1: '1', 2: '120'}
+74	74		401							{1: '2', 2: '4740'}
+75	75		301			AniZhuanchangEnd				{3: 'You enter the city streets with Nanami. The magnificent buildings stand like crystals, with light bouncing between their staggered forms, painting a dazzling, luxurious panorama.'}
+76	76		301							{3: 'The cicadas sing endlessly. Yet the city offers nothing but a hollow silence.'}
+77	77		402							{1: '4740'}
+78	78		201							{1: '1', 2: '501070', 3: '3'}
+79	79		301							{1: '1', 2: 'Nanami', 3: 'Heeey! Anyooone theeeere?', 4: '1'}
+80	80		202							{1: '1'}
+81	81		301							"{3: 'Such questions usually go unanswered in these ""apocalyptic"" streets, but...'}"
+82	82		401							{1: '2', 2: '825'}
+83	83		301							"{2: 'Electronic Voice', 3: ""Cosmic Rider v1.0 Arcade Edition is now live! Control your Cosmic Rider as you voyage through space in search of civilization's salvation.""}"
+84	84		401							{1: '2', 2: '825'}
+85	85		301							"{2: 'Electronic Voice', 3: ""Players who complete the game have a chance to win a Cosmic Rider's Belt! Don't miss out!""}"
+86	86		201							{1: '1', 2: '501070', 3: '1'}
+87	87		301							"{1: '1', 3: ""Nanami's shout seems to have triggered some kind of voice-activated broadcast. She spins around, her eyes sparkling with excitement, ready to spring into action.""}"
+88	88		301				DialogDisable			{2: 'Nanami', 3: 'There it is! The treasure—our mission target!', 4: '1'}
+89	89		302							{2: 'What? But I thought it was going to be super time-consuming!', 3: '90', 4: 'I will.', 5: '98'}
+90	90		202							{1: '1'}
+91	91		401						100.0	{1: '2', 2: '4331'}
+92	92		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+93	93		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1036.jpg', 3: '0', 4: '1', 5: '1.5'}
+94	94		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1036.jpg'}
+95	95		205							{1: '999'}
+96	96		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+97	97	106	301			DialogEnable				{3: 'As you voice your skepticism, Nanami gives you a knowing smile, then grabs your hand and rushes toward the source of the electronic voice.'}
+98	98		202							{1: '1'}
+99	99		401							{1: '2', 2: '4331'}
+100	100		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+101	101		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1036.jpg', 3: '0', 4: '1', 5: '1.5'}
+102	102		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1036.jpg'}
+103	103		205							{1: '999'}
+104	104		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+105	105		301			DialogEnable				{3: 'Without another word, Nanami grabs your hand and rushes toward the source of the electronic voice.'}
+106	106		401							{1: '2', 2: '825'}
+107	107		301							{2: 'Electronic Voice', 3: 'Please put on your VR simulation helmets. The game will begin shortly.'}
+108	108		302							{2: 'Am I playing, too?', 3: '109'}
+109	109		201							{1: '1', 2: '501070'}
+110	110		301							"{1: '1', 2: 'Nanami', 3: ""I don't fully understand how this game works, but I'm sure Cosmic Rider is a two-player game!"", 4: '1'}"
+111	111		203						500.0	{1: '1', 2: '0.3', 4: '-30', 5: '-50'}
+112	112		204						100.0	{1: '1', 2: '11'}
+113	113		204						150.0	{1: '1'}
+114	114		204						100.0	{1: '1', 2: '11'}
+115	115		204							{1: '1'}
+116	116		301				DialogDisable			{3: 'Nanami points at the two player portraits on the screen, then winks at you with an expectant look.'}
+117	117		302							"{2: 'Fine.', 3: '120', 4: ""Let's do this!"", 5: '118'}"
+118	118		204							{1: '1', 2: '1'}
+119	119		301			DialogEnable	DialogDisable			{2: 'Nanami', 3: 'Hooray—!', 4: '1'}
+120	120		202							{1: '1'}
+121	121		306							{1: '1'}
+122	122		401							{1: '2', 2: '4922'}
+123	123		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '0.2', 4: '5'}
+124	124		401							{1: '2', 2: '4824'}
+125	125		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 3: '1', 4: '4'}
+126	126		401							{1: '2', 2: '4831'}
+127	127		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+128	128		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory539.jpg', 3: '1'}
+129	129		104						200.0	{1: '0|0|-200', 2: '0.15'}
+130	130		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory617.jpg', 3: '1'}
+131	131		104						200.0	{1: '0|0|-200', 2: '0.15'}
+132	132		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory724.jpg', 3: '1'}
+133	133		104						200.0	{1: '0|0|-200', 2: '0.15'}
+134	134		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1017.jpg', 3: '1'}
+135	135		104						200.0	{1: '0|0|-200', 2: '0.15'}
+136	136		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2804.jpg', 3: '1'}
+137	137		104						200.0	{1: '0|0|-200', 2: '0.15'}
+138	138		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory835.jpg', 3: '1'}
+139	139		104						200.0	{1: '0|0|-200', 2: '0.15'}
+140	140		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1010.jpg', 3: '1'}
+141	141		104						200.0	{1: '0|0|-200', 2: '0.15'}
+142	142		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory782.jpg', 3: '1'}
+143	143		104						200.0	{1: '0|0|-200', 2: '0.15'}
+144	144		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory709.jpg', 3: '1'}
+145	145		104						200.0	{1: '0|0|-200', 2: '0.15'}
+146	146		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory825.jpg', 3: '1'}
+147	147		104						200.0	{1: '0|0|-200', 2: '0.15'}
+148	148		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory334.png', 3: '1'}
+149	149		104						200.0	{1: '0|0|-200', 2: '0.15'}
+150	150		401							{1: '2', 2: '4673'}
+151	151		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+152	152		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 3: '1', 4: '4', 5: '1'}
+153	153		306							
+154	154		301			DialogEnable				{3: 'You put on the helmet together with Nanami. The world around you changes in the blink of an eye, and you find yourself in the boundless expanse of space.'}
+155	155		301							{3: 'This virtual reality game is designed for two players, and it offers an incredibly authentic space exploration experience. You can take in the breathtaking cosmic vistas...'}
+156	156		201							{1: '1', 2: '501070', 3: '3'}
+157	157		301							{1: '1', 2: 'Nanami', 3: 'Wow, Nanami is drifting so far, so very far away...', 4: '1'}
+158	158		202							{1: '1'}
+159	159		104							{1: '0|0|0', 2: '5'}
+160	160		301						2500.0	{3: 'Floating beside you, Nanami turns her head to look back at Earth as it grows smaller and smaller behind her.'}
+161	161		301						2500.0	"{3: ""Yet Cosmic Rider doesn't just recreate the beauty of space—it also perfectly simulates the darkness and weightlessness unique to the deep void...""}"
+162	162		301						2000.0	"{3: ""Few can endure the loneliness of traversing deep space alone—perhaps that's why Cosmic Rider was designed for two players.""}"
+163	163		201							{1: '1', 2: '501070', 3: '7'}
+164	164		301							"{1: '1', 2: 'Nanami', 3: ""Thank goodness you're here with me, Commandant!"", 4: '1'}"
+165	165		203							{1: '1', 2: '0.25', 5: '-50'}
+166	166		104							{1: '0|0|-50', 2: '0.25'}
+167	167		301				AniZhuanchangBegin			{3: 'The girl turns around with a bright smile, takes your hand, and pulls you closer to her.'}
+168	168		202			DialogDisable				{1: '1', 6: '1'}
+169	169		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '0.2', 4: '5', 5: '1'}
+170	170		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1106.jpg'}
+171	171		504							{1: '0.5'}
+172	172		304			AniZhuanchangEnd				"{1: ""<para\\>For all its talk of finding civilization's ultimate answer, the game simply has you drift through virtual space <para\\>while collecting various glowing star-like light points."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 7: '1', 10: '1'}"
+173	173		304							"{1: 'While ""Cosmic Rider"" sounds like a title brimming with heroic adventure, the game itself is more of a leisurely journey.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 7: '1', 10: '1'}"
+174	174		304							"{1: 'As you drift through the endless river of stars, you\'ll see that only a few points of starlight could truly be called ""answers.""', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 7: '1', 10: '1'}"
+175	175		304				AniZhuanchangBegin			{1: 'Most of the time, you just keep wandering onward, ever onward, with no particular destination in mind.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 7: '1', 9: '1', 10: '1'}
+176	176		504							{1: '0'}
+177	177		401							{1: '1', 2: '36'}
+178	178		101				DialogEnable		2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+179	179		401							{1: '2', 2: '4832'}
+180	180		301			AniZhuanchangEnd				{3: 'After drifting for what feels like an eternity, you suddenly realize the hand you were holding has slipped away, and darkness engulfs everything around you.'}
+181	181		302							{2: '...!', 3: '182'}
+182	182		301							{3: 'Not a single ray of light remains—you are completely alone in this world.'}
+183	183		302							{2: 'Nanami, Nanami!!', 3: '184', 4: '(Struggle desperately)', 5: '189'}
+184	184		502						450.0	{1: 'DialogDisable'}
+185	185		307						200.0	"{1: ""Commandant! Nanami's here, Nanami's right here!"", 3: '50', 4: 'ffffffff'}"
+186	186		301							"{3: ""Commandant! Nanami's here, Nanami's right here!""}"
+187	187		307							{2: '1'}
+188	188	190	301			DialogEnable				{3: 'The voice by your ear is barely audible, but you manage to grasp onto that single ray of light.'}
+189	189		301							{3: 'The cosmos beats a soft, slow rhythm, drawing the lost rider into slumber.'}
+190	190		302							{2: 'Nanami!!!', 3: '191', 4: '(Struggle with all your might)', 5: '191'}
+191	191		401							{1: '2', 2: '4537'}
+192	192		301						1000.0	{3: 'The space around you starts trembling violently.'}
+193	193		402							{1: '4832'}
+194	194		401							{1: '2', 2: '4044'}
+195	195		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+196	196		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1036.jpg'}
+197	197		201							{1: '1', 2: '501070', 3: '4', 7: '1'}
+198	198		301			RImgBg1Shake				{1: '1', 2: 'Nanami', 3: 'Commandant!!!', 4: '1'}
+199	199		401							{1: '1', 2: '278'}
+200	200		301							{3: 'The sudden sensation of free-falling from a great height overwhelms you, forcing you to gasp for air.'}
+201	201		302							"{2: 'Ugh...', 3: '202', 4: ""(Hold Nanami's hand tightly)"", 5: '203'}"
+202	202	207	301							{3: 'Seeing you wake up, Nanami finally stops shaking you.'}
+203	203		204						500.0	{1: '1', 2: '12'}
+204	204		204							{1: '1'}
+205	205		203							{1: '1', 2: '0.25', 4: '-10', 5: '-30'}
+206	206		301							{3: 'Her hand feels warm and gentle in yours. She pauses for a moment, then smiles and returns your grip. The sensation of falling gradually fades away.'}
+207	207		302							{2: 'I was just floating when I noticed you were gone...', 3: '208', 4: 'And then I was all alone.', 5: '208'}
+208	208		204							{1: '1', 2: '14'}
+209	209		301							"{2: 'Nanami', 3: ""The panoramic simulation helmet seems to have malfunctioned. I didn't see you take off your helmet when we'd cleared the stage together, and I thought you were just having too much fun in there!"", 4: '1'}"
+210	210		301							{3: 'She touches your forehead with concern.'}
+211	211		302							"{2: ""I'm fine."", 3: '212', 4: ""I'm a little tired."", 5: '212'}"
+212	212		202							{1: '1'}
+213	213		401							{1: '2', 2: '4740'}
+214	214		301							{3: 'The endless cicada chirping outside the window and the empty streets below echo the cosmic loneliness that quietly creeps into your heart.'}
+215	215		201							{1: '1', 2: '501070', 3: '12'}
+216	216		301							"{1: '1', 2: 'Nanami', 3: 'And this was only the prologue of ""Cosmic Rider""... I wonder if those Cosmic Riders ever managed to save the world...', 4: '1'}"
+217	217		302							{2: '(Look at Nanami)', 3: '218', 4: '(Look away)', 5: '229'}
+218	218		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+219	219		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory609.jpg'}
+220	220		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '2'}
+221	221		504							{1: '1', 2: '999'}
+222	222		204							{1: '1', 2: '1'}
+223	223		301							{3: 'In this faded world, Nanami is the only vibrant color that remains.', 4: '1'}
+224	224		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+225	225		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1036.jpg'}
+226	226		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab'}
+227	227		504							{1: '0', 2: '999'}
+228	228	231	202							{1: '1', 6: '1'}
+229	229		202							{1: '1'}
+230	230		301							"{3: ""Unable to face the innocent look on Nanami's face, you turn your gaze toward the window instead.""}"
+231	231		502						450.0	{1: 'DialogDisable'}
+232	232		302							{2: 'Say, how did you manage to find me...', 3: '233'}
+233	233		302							{2: 'When the helmet was malfunctioning?', 3: '234'}
+234	234		201							{1: '1', 2: '501070'}
+235	235		301			DialogEnable				"{1: '1', 2: 'Nanami', 3: ""It's super simple! All I had to do was link up with the helmet's central processor, dive into the data stream from the panoramic image generation core, and analyze the data to..."", 4: '1'}"
+236	236		301							{3: 'Realizing her explanation might be a bit too technical, Nanami scratches her head sheepishly.'}
+237	237		204							{1: '1', 2: '7'}
+238	238		301							{2: 'Nanami', 3: '—And then all I had to do was find that one shining star in the universe, Commandant, and yes, that would be you!', 4: '1'}
+239	239		302							"{2: ""I bet it took you a while, didn't it?"", 3: '240', 4: 'Since the place was so big and all.', 5: '240'}"
+240	240		204							{1: '1', 2: '3'}
+241	241		301							"{2: 'Nanami', 3: ""Not really... it's only been a minute in here."", 4: '1'}"
+242	242		301							"{3: 'While it\'s only been a minute ""here"", it felt much longer while she was in the data stream... But before you can ponder this further, your thoughts are pulled back to the present.'}"
+243	243		204							{1: '1', 2: '2'}
+244	244		301							{2: 'Nanami', 3: 'Anyway, no matter where you are, Commandant, Nanami will come rushing to find you!', 4: '1'}
+245	245		202							{1: '1'}
+246	246		301							{3: 'Humming cheerfully, she flashes a peace sign and gives you a playful wink.'}
+247	247		401							{1: '2', 2: '825'}
+248	248		301							"{2: 'Electronic Voice', 3: 'Congratulations, players! You\'ve achieved first place in the global leaderboard for ""Cosmic Rider""! Please claim your rewards at the shop counter.'}"
+249	249		201							{1: '1', 2: '501070', 3: '7'}
+250	250		301							"{1: '1', 2: 'Nanami', 3: ""Yay!! Come on, Commandant, let's go to claim our treasure!"", 4: '1'}"
+251	251		202							{1: '1'}
+252	252		301							{3: 'Still...'}
+253	253		301							"{3: 'The ""global"" leaderboard meant to celebrate winners only displays two names: yours and Nanami\'s.'}"
+254	254		201							{1: '1', 2: '501070', 3: '3'}
+255	255		301							"{1: '1', 2: 'Nanami', 3: ""Hey, what's going on?! Why are we the only ones on the leaderboard?!"", 4: '1'}"
+256	256		401							{1: '2', 2: '825'}
+257	257		301							"{2: 'Electronic Voice', 3: 'Congratulations, players! You\'ve achieved first place in the global leaderboard for ""Cosmic Rider""! Please claim your rewards at the shop counter.'}"
+258	258		301							"{3: ""The pre-programmed system cannot answer Nanami's question and is now repeating its default response instead.""}"
+259	259		204							{1: '1', 2: '5'}
+260	260		301							"{2: 'Nanami', 3: ""No, that's impossible! I'm sure people have played this game—it even went through beta testing!"", 4: '1'}"
+261	261		401							{1: '2', 2: '825'}
+262	262		301							"{2: 'Electronic Voice', 3: 'Congratulations, players! You\'ve achieved first place in the global leaderboard for ""Cosmic Rider""! Please claim your rewards at the shop counter.'}"
+263	263		202							{1: '1'}
+264	264		301							"{3: ""On the electronic screen, the barren leaderboard displays only a single, solitary entry at the very top—your name and Nanami's, with an ID code of 000000001.""}"
+265	265		301							{3: 'The vast arcade echoes with nothing but the looping electronic voice and the endless drone of cicadas.'}
+266	266		301							{3: 'Despite the world being filled with noise and life, you and Nanami are the only ones able to communicate with each other here.'}
+267	267		201							{1: '1', 2: '501070', 3: '14'}
+268	268		301							{1: '1', 2: 'Nanami', 3: 'Where is everyone...', 4: '1'}
+269	269		301							"{2: 'Nanami', 3: ""I'm sure we're getting more rewards than just this for winning first place... right?"", 4: '1'}"
+270	270		302				AniZhuanchangBegin			{2: '...', 3: '271', 4: 'Sigh.', 5: '271'}
+271	271		402							{1: '4740'}
+272	272		202			DialogDisable				{1: '1', 6: '1'}
+273	273		401							{1: '1', 2: '36'}
+274	274		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+275	275		109							{1: '1', 2: '<color=#ffffffff><size=40>Chapter 1071</size></color>', 4: '50'}
+276	276		109			AniZhuanchangEnd				{1: '2', 2: '<color=#ffffffff><size=50>— Midsummer Hide and Seek —</size></color>', 4: '-50'}
+277	277		301				AniZhuanchangBegin			{3: 'Chapter 1071\\nMidsummer Hide and Seek'}
+278	278		110							{1: '1', 2: '2'}
+279	279		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+280	280		401							{1: '2', 2: '4704'}
+281	281		501						4000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieShizhong02.prefab', 2: '2'}
+282	282		505				AniZhuanchangBegin			{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieShizhong02.prefab'}
+283	283		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1036.jpg'}
+284	284		104							{1: '0|200|-400', 2: '0'}
+285	285		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '2'}
+286	286		302			AniZhuanchangEnd				{2: 'Hm?', 3: '287', 4: '...?', 5: '287'}
+287	287		401							{1: '2', 2: '4280'}
+288	288		401							{1: '2', 2: '4740'}
+289	289		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+290	290		104						1800.0	{1: '-100|-200|-400', 2: '1.5'}
+291	291		104						1800.0	{1: '50|-200|-300', 2: '1.5'}
+292	292		301			DialogEnable				{3: 'That strange sensation returns—a faint ringing in your ears, followed by an endless, deafening chorus of cicadas. Beside you, Nanami continues her relentless questioning.'}
+293	293		201							{1: '1', 2: '501071'}
+294	294		301							"{1: '1', 2: 'Nanami', 3: ""I'm sure we're getting more rewards than just this for winning first place... right?"", 4: '1'}"
+295	295		111						200.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+296	296		205							{1: '1', 3: '1', 4: '0.7', 5: '0.8'}
+297	297		301				AniZhuanchangBegin			"{3: ""The midsummer sun blazes overhead, and beneath its rays, Nanami's body begins to shimmer—becoming just a little more transparent than before.""}"
+298	298		202			DialogDisable				{1: '1', 6: '1'}
+299	299		104							{1: '0|0|0', 2: '0'}
+300	300		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+301	301		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+302	302		401			AniZhuanchangEnd		700.0		{1: '2', 2: '825'}
+303	303		402							{1: '4740'}
+304	304		301			DialogEnable				{2: 'Electronic Voice', 3: '...'}
+305	305		401							{1: '2', 2: '825'}
+306	306		301							{2: 'Electronic Voice', 3: 'We sincerely apologize for any inconvenience... While the mall is scheduled to be closed for the holiday, this system has issued a return-to-post command to all staff. Your patience is greatly appreciated...'}
+307	307		302							"{2: '?', 3: '308', 4: ""(What's going on?)"", 5: '308'}"
+308	308		401						200.0	{1: '2', 2: '9351040'}
+309	309		401							{1: '2', 2: '9351041'}
+310	310		301							"{3: ""After about 10 seconds, the mall's mechanoids begin to emerge one after another and surround you and Nanami.""}"
+311	311		401							{1: '1', 2: '5061'}
+312	312		201							{1: '1', 2: '500488', 4: '-500', 5: '-250', 6: '400'}
+313	313		201							{1: '2', 2: '500354', 4: '500', 5: '-50', 6: '50'}
+314	314		301							"{1: '1', 2: 'Mechanoid A', 3: ""Hello! This is the first time I've seen anyone clear Cosmic Rider!"", 4: '1'}"
+315	315		301							{2: 'Mechanoid B', 3: 'Yes, and we have many, many more games here! Please try them all out!', 4: '2'}
+316	316		202							{1: '1', 6: '1'}
+317	317		201							{1: '1', 2: '500470', 4: '-500', 5: '-250', 6: '400'}
+318	318		301							{1: '1', 2: 'Mechanoid C', 3: 'The bonus prizes are this way—', 4: '1'}
+319	319		202							{1: '1', 2: '2', 6: '1'}
+320	320		201							{1: '1', 2: '501070', 3: '1'}
+321	321		301				DialogDisable			"{1: '1', 2: 'Nanami', 3: ""Oh! Everyone's playing hide and seek with Nanami!"", 4: '1'}"
+322	322		202							{1: '1'}
+323	323		306							{1: '1'}
+324	324		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1030.jpg', 3: '0', 4: '1', 5: '0.8'}
+325	325		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1030.jpg'}
+326	326		205							{1: '999'}
+327	327		301			DialogEnable				{3: 'The street gradually comes alive—flying cars weave freely through the air, virtual windows float everywhere, and robots fill the sidewalks. The city now takes on the vibes of a high-tech metropolis.'}
+328	328		301							"{3: ""The cicadas' song gradually drowns beneath the city's clamor. Having been attracted by the cheerful atmosphere, Nanami has run off somewhere and is no nowhere to be seen.""}"
+329	329		306							
+330	330		201							{1: '1', 2: '500585'}
+331	331		301							{1: '1', 2: '??', 3: 'Hello.', 4: '1'}
+332	332		203						500.0	{1: '1', 2: '0.4', 4: '-20'}
+333	333		203						500.0	{1: '1', 2: '0.4'}
+334	334		301							{3: 'A pale-faced young man removes his top hat and offers you a slight bow.'}
+335	335		302							{2: 'Hey, Seaweed Puffhead!', 3: '336', 4: 'Hello.', 5: '338'}
+336	336		204							{1: '1', 2: '1'}
+337	337	340	301							{3: 'The young man responds with a gentle smile, unfazed by the rather playful nickname.'}
+338	338		204							{1: '1', 2: '1'}
+339	339		301							{3: 'The young man returns a smile.'}
+340	340		301							"{2: 'Seaweed Puffhead', 3: ""What a beautiful world this is, wouldn't you say?"", 4: '1'}"
+341	341		202							{1: '1', 6: '1'}
+342	342		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+343	343		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1014.jpg'}
+344	344		301				DialogDisable			{3: 'Golden sunlight, a boundlessly prosperous city, an advanced world of artificial intelligence...'}
+345	345		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+346	346		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1030.jpg'}
+347	347		201							{1: '1', 2: '500585', 3: '1', 7: '1'}
+348	348		302							{2: 'Perhaps.', 3: '349', 4: 'But what lies beneath?', 5: '350'}
+349	349	351	301			DialogEnable				{2: 'Seaweed Puffhead', 3: 'Yes, this world is indeed beautiful, but...', 4: '1'}
+350	350		301			DialogEnable				{2: 'Seaweed Puffhead', 3: 'You are quite perceptive.', 4: '1'}
+351	351		204							{1: '1'}
+352	352		301							{2: 'Seaweed Puffhead', 3: 'Following a great catastrophe, the original inhabitants of this planet—the humans—faced extinction.', 4: '1'}
+353	353		301							{2: 'Seaweed Puffhead', 3: 'There were no heroes in that catastrophe. They had no choice but to accept their extinction.', 4: '1'}
+354	354		301							"{2: 'Seaweed Puffhead', 3: ""The machines, the humans' creations, managed to survive—though only a handful remained."", 4: '1'}"
+355	355		301							{2: 'Seaweed Puffhead', 3: 'We recreated <phonetic=Golden Age>the most glorious era</phonetic> of humanity. Yet such a futile endeavor cannot bring them back.', 4: '1'}
+356	356		204							{1: '1', 2: '1'}
+357	357		301							{2: 'Seaweed Puffhead', 3: 'You and the young lady known as Nanami are the most extraordinary beings our establishment has ever hosted. It is my honor to meet you both.', 4: '1'}
+358	358		202							{1: '1'}
+359	359		301							{3: 'A warm, stuffy breeze drifts by as the young man glances at the gray-haired girl playing nearby, then turns his gaze back to you.'}
+360	360		302							{2: '...Is there nothing else we can do about this?', 3: '361'}
+361	361		201							{1: '1', 2: '500585', 3: '14'}
+362	362		301							{1: '1', 2: 'Seaweed Puffhead', 3: 'No, unfortunately.', 4: '1'}
+363	363		301				DialogDisable			{3: 'He answers the question with just two words.'}
+364	364		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+365	365		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+366	366		202							{1: '1', 6: '1'}
+367	367		307						200.0	"{1: ""That's not true."", 3: '55', 4: 'ffffffff'}"
+368	368		301							"{3: ""That's not true.""}"
+369	369		307							{2: '1'}
+370	370		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+371	371		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1030.jpg'}
+372	372		301			DialogEnable				{3: 'A voice within your heart cries out, unbidden and inexplicable.'}
+373	373		301							{3: 'Buried within those hazy memories lies a conclusion that contradicts everything.'}
+374	374		302							{2: 'I seem to have experienced many different worlds.', 3: '375'}
+375	375		301							"{3: ""If there's anything I can do...""}"
+376	376		302							"{2: ""Perhaps there exists an apocalypse that isn't as bleak as today's."", 3: '377'}"
+377	377		201							{1: '1', 2: '500585', 3: '2'}
+378	378		301							{1: '1', 2: 'Seaweed Puffhead', 3: 'Mm, perhaps.', 4: '1'}
+379	379		301							{3: 'The young man remains noncommittal.'}
+380	380		204							{1: '1', 2: '14'}
+381	381		301							"{2: 'Seaweed Puffhead', 3: ""But... an apocalypse that isn't as bleak would probably come with an unimaginable burden."", 4: '1'}"
+382	382		301							{2: 'Seaweed Puffhead', 3: '...', 4: '1'}
+383	383		204							{1: '1', 2: '1'}
+384	384		301				AniZhuanchangBegin			"{2: 'Seaweed Puffhead', 3: ""It's just speculation. More importantly, the prize for clearing Cosmic Rider is a bit far from here. I hope you don't mind making the journey."", 4: '1'}"
+385	385		202							{1: '1', 6: '1'}
+386	386		401							{1: '1', 2: '36'}
+387	387		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory670.jpg'}
+388	388		401							{1: '1', 2: '5059'}
+389	389		301			AniZhuanchangEnd				"{3: ""After leaving the game store, you stroll down the street with Nanami. She happily hugs her newfound treasure—the Cosmic Rider's Belt—close to her chest.""}"
+390	390		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+391	391		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory609.jpg'}
+392	392		301							{3: 'In this post-apocalyptic world, vegetation springs back to life and all things recover. The intelligent mechanoids have recreated a human civilization even more splendid than that from before the apocalypse.'}
+393	393		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+394	394		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory670.jpg'}
+395	395		301							{3: 'The city night is remarkably clear... Yet the interweaving neon lights fill the canvas of the sky with their dazzling radiance, leaving no room for starlight to peek through.'}
+396	396		301							"{3: ""This prosperity... it doesn't belong to you...""}"
+397	397		302							{2: 'I wonder if those Cosmic Riders ever managed to save the world...', 3: '398'}
+398	398		201							{1: '1', 2: '501070', 3: '12'}
+399	399		301							"{1: '1', 2: 'Nanami', 3: ""Nanami doesn't know either."", 4: '1'}"
+400	400		202							{1: '1'}
+401	401		301							{3: 'She answers softly. After a moment of contemplation, she bounces her way around to face you.'}
+402	402		201							{1: '1', 2: '501070', 3: '4'}
+403	403		301							{1: '1', 2: 'Nanami', 3: 'Hey Commandant, you know what? You look so down now that even someone chewing on a bitter melon would look happier than you.', 4: '1'}
+404	404		204							{1: '1', 2: '1'}
+405	405		301							{3: 'She furrows her brows in an exaggerated imitation of your expression, then breaks into a cheerful laugh.'}
+406	406		204							{1: '1'}
+407	407		301							"{2: 'Nanami', 3: ""Nanami doesn't know if they saved the world or not, but what I do know, though, is that..."", 4: '1'}"
+408	408		301							{2: 'Nanami', 3: 'We need to do something about that look on your face!', 4: '1'}
+409	409		203							{1: '1', 2: '0.25', 4: '-20', 5: '-100'}
+410	410		104						300.0	{1: '-5|10|-5', 2: '0.25'}
+411	411		104						300.0	{1: '0|0|-5', 2: '0.25'}
+412	412		104						300.0	{1: '5|10|-5', 2: '0.25'}
+413	413		104							{1: '0|0|0', 2: '0.25'}
+414	414		301							{3: 'She cups your own cheeks and gently squishes them to form an exaggerated smile.'}
+415	415		301				DialogDisable			{2: 'Nanami', 3: 'Somewhere out there, there must be a world where you can truly smile...', 4: '1'}
+416	416		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0.5'}
+417	417		204						200.0	{1: '1', 2: '8'}
+418	418		307						200.0	{1: 'After all, I...', 3: '55', 4: 'ffffffff'}
+419	419		301							{3: 'After all, I...', 4: '1'}
+420	420		307							{2: '1'}
+421	421		205						650.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '0', 5: '0.5'}
+422	422		205							{1: '999'}
+423	423		204							{1: '1'}
+424	424		301			DialogEnable				"{3: ""Time seems to slow as her lips move ever so slightly, her words lost to the city's clamor.""}"
+425	425		111						250.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+426	426		205						1500.0	{1: '1', 3: '1', 4: '0', 5: '1.2'}
+427	427		202							{1: '1', 6: '1'}
+428	428		301		1		AniZhuanchangBegin			{3: 'The dazzling neon lights blur together, and her figure slowly fades into nothing...'}

@@ -1,0 +1,125 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500168', 3: '13'}
+4	4		301							{1: '1', 2: 'Vera', 3: 'Meet me tomorrow. The current time. C-Labs. F23-C04.', 4: '1'}
+5	5		202							{1: '1'}
+6	6		301				DialogDisable			{3: 'Should you go... Or not?'}
+7	7		502							{1: 'RImgBg1DisableSlow'}
+8	8		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory39.jpg'}
+9	9		301			DialogEnable				"{3: ""You were only masticating Vera's words, but before you knew it, you already found yourself before the lab block entrance.""}"
+10	10		502							{1: 'AniZhuanchangBegin'}
+11	11		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory109.png'}
+12	12		301			AniZhuanchangEnd				"{3: 'You arrive at the designated lab. The ""In Use"" sign on the door is alight, a jarring sight in this barren building. You are about to enter, when someone suddenly muffles your mouth.'}"
+13	13		302							{2: '?!', 3: '14'}
+14	14		201							{1: '1', 2: '500168'}
+15	15		301							{1: '1', 2: 'Vera', 3: 'Shh.', 4: '1'}
+16	16		301				DialogDisable			{3: 'It is Vera. Her face takes up the entirety of your vision. She pulls you inside, and you hear low conversations under the dim light of the lab.', 4: '1'}
+17	17		502							{1: 'RImgBg1DisableSlow'}
+18	18		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory53.jpg'}
+19	19		301			DialogEnable				{2: 'Deep Voice', 3: 'This the last batch?'}
+20	20		301							"{2: 'Helpless Voice', 3: ""They be clamping down on this stuff, mate. Went through many hoops for 'em.""}"
+21	21		302							{2: 'These people...', 3: '22', 4: 'Smugglers?!', 5: '22'}
+22	22		301							"{2: 'Vera', 3: ""Tch—shut the hell up. If we get found, I'm shoving you out."", 4: '1'}"
+23	23		302							{2: '(Lightly) Are they talking about Haelios?', 3: '24'}
+24	24		301							{2: 'Vera', 3: 'Why else would I be here?', 4: '1'}
+25	25		301							"{2: 'Helpless Voice', 3: ""Welp. This'll be the last batch for a while to come.""}"
+26	26		301							"{2: 'Helpless Voice', 3: ""All thanks to them council people, it's been getting harder and harder to acquire this stuff. And the price's more than doubled.""}"
+27	27		301							"{2: 'Vera', 3: ""Wow. Your bosses have so much time on their butts. They're sticking their noses into this?"", 4: '1'}"
+28	28		302							"{2: ""Don't ask me..."", 3: '29', 4: 'Of course!', 5: '29'}"
+29	29		301							"{2: 'Vera', 3: ""These two pieces of trash too. They're quitting just because of some lil' government restriction?"", 4: '1'}"
+30	30		302							"{2: ""Who wouldn't?!"", 3: '31', 4: '...', 5: '31'}"
+31	31		202							{1: '1'}
+32	32		301							"{2: 'Deep Voice', 3: ""Can't be helped, I guess... Give me all that you have right now.""}"
+33	33		301							"{2: 'Helpless Voice', 3: ""There's still more inside. I'll go grab 'em.""}"
+34	34		401							{1: '2', 2: '1516'}
+35	35		301							{3: 'The footsteps grow louder and closer.'}
+36	36		201							{1: '1', 2: '500168', 7: '1'}
+37	37		302							"{2: ""They're coming over."", 3: '40', 4: 'What do we do?', 5: '38'}"
+38	38		301							"{2: 'Vera', 3: ""Chill. I've got something. They won't find me."", 4: '1'}"
+39	39		302							{2: 'What something?', 3: '42'}
+40	40		301							"{2: 'Vera', 3: ""Duh? I can hear. Don't worry, though. I've got something. They won't find me."", 4: '1'}"
+41	41		302							{2: 'What something?', 3: '42'}
+42	42		202							{1: '1', 6: '1'}
+43	43		301							{3: 'Vera blinks at you in the dark before sliding her gaze outward. Her hands on you tighten up, and you tense up as well, as if infected by Vera.'}
+44	44		301							{2: 'Helpless Voice', 3: 'Huh... Should be here...'}
+45	45		301							{2: 'Helpless Voice', 3: 'Ah, right. Down here.'}
+46	46		401							{1: '2', 2: '1516'}
+47	47		301							{3: 'The footsteps grow, but pause around a meter before where you and Vera are hiding. You feel momentary relief from not being found out.'}
+48	48		201							{1: '1', 2: '500168', 3: '1'}
+49	49		301							{1: '1', 2: 'Vera', 3: 'Ready?', 4: '1'}
+50	50		202							{1: '1', 6: '1'}
+51	51		301							"{3: ""Vera's musky whisper tickles your ear. Before you even manage to register that word, you were already forcefully shoved out.""}"
+52	52		502							{1: 'RImgBg1Shake'}
+53	53		302							{2: '?????', 3: '54'}
+54	54		201				PanelActor1Shake			{1: '1', 2: '500137', 7: '1'}
+55	55		301							{3: 'You crash into the smuggler. He seems to be quite taken aback and is fumbling like a drunkard. The medication vials scatter to the floor.'}
+56	56		302							{2: '(Snatch one vial)', 3: '57'}
+57	57		301							"{2: 'Smuggler A', 3: ""The hell?! Where'd you come from?! Wait, no! Catch this clown!"", 4: '1'}"
+58	58		301							{3: 'The man before you yelps hysterically. The other smuggler, finally realizing the situation, quickly aims his weapon at you.'}
+59	59		203							{1: '1', 2: '0.25', 3: '-400'}
+60	60		201							{1: '2', 2: '500138', 4: '400'}
+61	61		401							{1: '2', 2: '1504'}
+62	62		301							"{1: '1', 2: 'Smuggler B', 3: ""What? What's happening? Hey!"", 4: '2'}"
+63	63		401							{1: '2', 2: '1511'}
+64	9999		401							{1: '1', 2: '111'}
+65	64		301							{3: 'Two deathly muzzles—silenced—point over at you.'}
+66	65		302							{2: '(Run)', 3: '66', 4: '(RUN)', 5: '66'}
+67	66		301							{2: 'Smuggler B', 3: 'Hey, get back here you lil shit!', 4: '2'}
+68	67		301				DialogDisable			{2: 'Smuggler A', 3: 'W-wait!', 4: '1'}
+69	75577		202							{1: '1', 2: '2'}
+70	68		502							{1: 'RImgBg1DisableSlow'}
+71	70		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory52.jpg'}
+72	69		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '3'}
+73	71		401				RImgBg1DisableSlow			{1: '2', 2: '1504'}
+74	72		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory51.jpg'}
+75	73		401				RImgBg1DisableSlow			{1: '2', 2: '1504'}
+76	74		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+77	75		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory39.jpg'}
+78	76		301			DialogEnable				{3: 'You run like mad. When you finally realize that the two smugglers are no longer on your trail, you raggedly jog to a halt. Hands on your knees, you fill your lungs with gulps of air to the drumming of your heart.'}
+79	77		301				DialogDisable			{3: '...'}
+80	78		201						1500.0	{1: '1', 2: '500168', 3: '1', 7: '1'}
+81	8888		401							{1: '1', 2: '208'}
+82	79		301			DialogEnable				"{1: '1', 2: 'Vera', 3: ""Not bad. You're pretty useful. Bringing you was the right choice."", 4: '1'}"
+83	80		301							{3: '...The same place yesterday. The same streetlamp. Same Vera.'}
+84	81		301							"{2: 'Vera', 3: ""Thanks to your valiant effort, the juice is all mine. Now we're even."", 4: '1'}"
+85	82		302							{2: 'Even?', 3: '83'}
+86	83		301							"{2: 'Vera', 3: ""You didn't forget about yesterday already, didn't you? Those anesthetics don't come cheap. I've even given you a discount."", 4: '1'}"
+87	84		202							{1: '1', 6: '1'}
+88	85		301							{3: 'Vera is wiggling the vial in her hands. She seems to be in a good mood.'}
+89	86		201							{1: '1', 2: '500168', 3: '1'}
+90	87		301							{1: '1', 2: 'Vera', 3: 'Well, then. This is mine, so. Buh-bye. I had fun on our little date.', 4: '1'}
+91	88		302							{2: 'Forget something?', 3: '89'}
+92	89		301							"{3: ""You fish out the medication vial from your pocket. Vera's expression turns into one of amazement.""}"
+93	90		204							{1: '1'}
+94	91		301							{2: 'Vera', 3: 'You...', 4: '1'}
+95	92		301							"{2: 'Vera', 3: ""Okay. Guess I've underestimated you. Name a price."", 4: '1'}"
+96	93		302							{2: 'What?', 3: '94'}
+97	94		301							{2: 'Vera', 3: 'That thing on your hand. Sell it to me.', 4: '1'}
+98	95		302							{2: 'Nope.', 3: '96', 4: 'Sure.', 5: '102'}
+99	96		301							{2: 'Vera', 3: 'You what?', 4: '1'}
+100	97		301							"{2: 'Vera', 3: ""I'm not the patient sort. I'll give you another chance. Name a price, or I'm wrenching it out of your hand."", 4: '1'}"
+101	98		302							"{2: 'You pirate!', 3: '99', 4: ""Don't you already have 'em?"", 5: '100'}"
+102	99	108	301							"{2: 'Vera', 3: ""I don't care what you think! Gimme that!"", 4: '1'}"
+103	100		301							"{2: 'Vera', 3: ""You heard 'em, yeah? This thing's getting clamped. Doesn't hurt to stock up."", 4: '1'}"
+104	101	108	301							"{2: 'Vera', 3: ""Whatever. I don't care what you think! Gimme that!"", 4: '1'}"
+105	102		301							{2: 'Vera', 3: 'Then name a price.', 4: '1'}
+106	103		302							{2: '10k BC.', 3: '104', 4: '100k BC.', 5: '104'}
+107	104		204							{1: '1', 2: '13'}
+108	105		301							"{2: 'Vera', 3: ""You lil' pecker face... You are turning into bird meat right this instant! Minced, then fried in a hot pan of regrets!"", 4: '1'}"
+109	106		302							"{2: ""That's worse than death!"", 3: '107'}"
+110	107		301							"{2: 'Vera', 3: ""I don't care what you think! Gimme that!"", 4: '1'}"
+111	108		202							{1: '1'}
+112	109		301							{3: 'Vera takes on an offensive stance. She will undoubtedly feel no remorse for robbing you blind.'}
+113	110		302							"{2: ""I'm not giving you that."", 3: '111', 4: 'I need it myself.', 5: '111'}"
+114	111		201							{1: '1', 2: '500168'}
+115	112		301							{1: '1', 2: 'Vera', 3: 'Is that so?', 4: '1'}
+116	8585		204							{1: '1', 2: '1'}
+117	113		301							{2: 'Vera', 3: '...Oh whatever. What point is it trifling with a mere human.', 4: '1'}
+118	114		301							"{2: 'Vera', 3: ""And it's only one vial. Not even enough for a party. You can have it all for yourself."", 4: '1'}"
+119	115		302							"{2: '??', 3: '858555', 4: ""It's mine anyways!"", 5: '858555'}"
+120	858555		204							{1: '1'}
+121	116		301							"{2: 'Vera', 3: ""Tch, you're such a weirdo."", 4: '1'}"
+122	117		301							{2: 'Vera', 3: 'But. I guess being weird has its own charms.', 4: '1'}
+123	118		204							{1: '1', 2: '1'}
+124	119		301		1		AniZhuanchangBegin			"{2: 'Vera', 3: 'I guess I don\'t dislike the you right now. So, keep it up, ""Commandant.""', 4: '1'}"

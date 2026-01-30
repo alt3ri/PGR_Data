@@ -1,0 +1,326 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		107						3000.0	{1: 'Babylonia', 2: 'Support Force'}
+4	4		108							{1: '1'}
+5	5		201							{1: '1', 2: '500394'}
+6	6		301			DialogEnable				"{1: '1', 2: 'Support Force Captain', 3: ""All right, let's review Support Force mandate."", 4: '1'}"
+7	7		202							{1: '1'}
+8	8		201							{1: '1', 2: '500296', 4: '-500'}
+9	9		201							{1: '2', 2: '500296'}
+10	10		201							{1: '3', 2: '500296', 4: '500'}
+11	11		301							{1: '1', 2: 'Support Force Member', 3: 'Efficiently manage on-field demands—', 4: '1', 5: '2', 6: '3'}
+12	12		301							{2: 'Support Force Member', 3: 'Ensure precise coordination, targeted support, and timely assistance—', 4: '1', 5: '2', 6: '3'}
+13	13		301							{2: 'Support Force Member', 3: 'Hold on to every spark of hope, no matter how small—', 4: '1', 5: '2', 6: '3'}
+14	14		202							{1: '1', 2: '2', 3: '3'}
+15	15		301							{3: 'The exhausted Support Force members mechanically recite their mandate.'}
+16	16		201							{1: '1', 2: '500028', 4: '-400'}
+17	17		201							{1: '2', 2: '500311', 4: '400'}
+18	18		301							"{1: '1', 2: 'Support Force Member A', 3: ""...Why are we getting another mission already? I'm going to be worked to death."", 4: '1'}"
+19	19		301							"{2: 'Support Force Member B', 3: ""I heard there's big trouble at the Konstantin Mine. That's probably why they're sending so many of us."", 4: '2'}"
+20	20		301							"{2: 'Support Force Member A', 3: ""It's just a mine, isn't it... Shouldn't Task Force be handling this?"", 4: '1'}"
+21	21		301							"{2: 'Support Force Member B', 3: ""It is no ordinary mine—it's a tantalum mine. Intel says there's been a sudden Punishing virus outbreak. Several underground Norman Mining Corp tantalum labs have suffered heavy losses."", 4: '2'}"
+22	22		301							"{2: 'Support Force Member B', 3: ""The Punishing virus has been around for so long... Why are they only reporting it now? Who knows what's really going on there..."", 4: '2'}"
+23	23		301							{2: 'Support Force Member B', 3: 'The job landed on us because this mission requires both rescue and scouting teams, and most of Task Force is still fighting the Corrupted on the surface.', 4: '2'}
+24	24		301							"{2: 'Support Force Member B', 3: ""See that newcomer there, the one with brown hair? She shouldn't even be here. She literally just got out of training."", 4: '2'}"
+25	25		301							"{2: 'Support Force Member B', 3: ""Our captain would never have let her join if this wasn't an emergency, and if she didn't have a relative on the rescue team for the Konstantin Mine collapse..."", 4: '2'}"
+26	26		202							{1: '1', 2: '2'}
+27	27		301							{3: 'Bridget looks around nervously in the crowd.'}
+28	28		201							{1: '1', 2: '500909', 3: '1'}
+29	29		301							{1: '1', 2: 'Ruolin', 3: 'Bridget... Over here!', 4: '1'}
+30	30		203							{1: '1', 2: '0.25', 3: '-400'}
+31	31		201							{1: '2', 2: '500167', 4: '400'}
+32	32		301							{1: '1', 2: 'Bridget', 3: 'Ruolin! What are you doing here? I thought you applied to transfer to Task Force?', 4: '2'}
+33	33		204							{1: '1'}
+34	34		301							"{2: 'Ruolin', 3: ""The application will take a while since it's an interdepartmental transfer with no special circumstances."", 4: '1'}"
+35	35		204							{1: '1', 2: '1'}
+36	36		301							"{2: 'Ruolin', 3: ""I heard you applied for this ground mission. I might not be as strong in combat as you are, but at least I'm familiar with Support Force's other operations..."", 4: '1'}"
+37	37		301							"{2: 'Bridget', 3: ""Looks like we'll get to fight side by side again!"", 4: '2'}"
+38	38		301							{2: 'Ruolin', 3: 'Yeah! And also with Instructor Trojan!', 4: '1'}
+39	39		301							{2: 'Bridget', 3: 'Instructor Trojan? Is she part of this mission, too?', 4: '2'}
+40	40		301							{2: 'Ruolin', 3: 'I saw her over there earlier... There!', 4: '1'}
+41	41		202							{1: '1', 2: '2'}
+42	42		104						500.0	{1: '-100|-30|-100', 2: '0.25'}
+43	43		401							{1: '2', 2: '4288'}
+44	44		201							{1: '1', 2: '500586', 3: '4'}
+45	45		301							{1: '1', 3: 'The blue-haired Construct is fiddling with her assigned weapons.'}
+46	46		301							{2: 'Bridget', 3: 'Instructor Trojan!'}
+47	47		204							{1: '1', 2: '3'}
+48	48		301							"{2: 'Trojan', 3: ""...One of these days, I'll need to get rid of this flashy hair color."", 4: '1'}"
+49	49		202							{1: '1', 6: '1'}
+50	50		205			DialogDisable			1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory266.png', 3: '0', 4: '1', 5: '1.5'}
+51	51		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory266.png'}
+52	52		205							{1: '999'}
+53	53		301			DialogEnable				{3: 'They quickly pack up and load all the supplies onto the transport aircraft.'}
+54	54		301							{3: 'For this mission, Support Force will split into teams to enter different areas of the Konstantin Mine.'}
+55	55		301				AniZhuanchangBegin			{3: 'It was no surprise that Trojan, Bridget, and Ruolin were assigned to the same team.'}
+56	56		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+57	57		201							{1: '1', 2: '500909', 3: '7'}
+58	58		301			AniZhuanchangEnd				{1: '1', 2: 'Ruolin', 3: '...So the mine never gave a reasonable explanation even after you went to Babylonia?', 4: '1'}
+59	59		202							{1: '1'}
+60	60		201							{1: '1', 2: '500167', 3: '4'}
+61	61		301							"{1: '1', 2: 'Bridget', 3: ""...Yeah. According to the rescue team's code of conduct, if anything happens to rescue workers, the responsible party must issue an accident report."", 4: '1'}"
+62	62		301							{2: 'Bridget', 3: 'But even after I sent a formal inquiry as a Support Force Construct from Babylonia, they still refused to respond.', 4: '1'}
+63	63		301							"{2: 'Bridget', 3: ""It's clear they're hiding a bigger secret, and revealing it would cause them more trouble than being investigated by a Construct."", 4: '1'}"
+64	64		202							{1: '1'}
+65	65		201							{1: '1', 2: '500586', 3: '2'}
+66	66		301							{1: '1', 2: 'Trojan', 3: 'Tch, heartless bastards.', 4: '1'}
+67	67		202							{1: '1'}
+68	68		201							{1: '1', 2: '500167', 3: '4'}
+69	69		301							"{1: '1', 2: 'Bridget', 3: 'I have a feeling whatever caused this ""accident"" this time also caused the previous collapse. The only difference is that this time, they lost control of the situation.', 4: '1'}"
+70	70		301							{2: 'Bridget', 3: 'I will find the truth of what happened to my parents. I refuse to let them fade into the darkness without a trace.', 4: '1'}
+71	71		203							{1: '1', 2: '0.25', 3: '400'}
+72	72		201							{1: '2', 2: '500909', 3: '1', 4: '-400'}
+73	73		301							"{1: '1', 2: 'Ruolin', 3: ""Yeah! You're Bridget! I know you can do it!"", 4: '2'}"
+74	74		202							{1: '1', 2: '2'}
+75	75		301				AniZhuanchangBegin			"{3: ""Ruolin clenches her fists to show support while Trojan's face remains hidden in the shadows.""}"
+76	76		401							{1: '1', 2: '209'}
+77	77		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+78	78		504							{1: '0.7'}
+79	79		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory926.jpg'}
+80	80		306							{1: '1'}
+81	81		301			AniZhuanchangEnd				{3: 'The Konstantin Mine was one of the early mines that Norman Mining Corp invested in.'}
+82	82		401							{1: '2', 2: '4278'}
+83	83		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+84	84		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory938.jpg'}
+85	85		301							{3: 'The advancement of Construct Tech helped them see its true value and resulted in the construction of this massive underground tower.'}
+86	86		401							{1: '2', 2: '4278'}
+87	87		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+88	88		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory833.jpg'}
+89	89		301							"{3: ""Even the most experienced Konstantin miners wouldn't dare claim to know each of the vast underground tunnels.""}"
+90	90		306							
+91	91		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.7', 5: '0'}
+92	92		504							{1: '0'}
+93	93		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+94	94		301							{3: 'With all residents evacuated from Konstantin Town, Support Force is left working in the dark, relying on the most basic methods for rescue and investigation.'}
+95	95		502							{1: 'RImgBg1BlowUp'}
+96	96		301							{3: 'Nearly all power to the mine was lost in the accidents, so the only lights are the dim glow of flashlights from Support Force members.'}
+97	97		301							{3: 'The team is linked together in a single file by safety ropes to prevent anyone from getting separated.'}
+98	98		301							"{3: ""The caves grow more expansive as they go deeper. They eliminate several Corrupted and continue slowly, relying only on a map from the mine's administrators.""}"
+99	99		505							{1: 'RImgBg1BlowUp'}
+100	100		201							{1: '1', 2: '500028'}
+101	101		301							{1: '1', 2: 'Support Force Member A', 3: 'Bridget?', 4: '1'}
+102	102		201							{1: '18', 2: '500167', 7: '1'}
+103	103		301							{2: 'Bridget', 3: 'Yes.', 4: '18'}
+104	104		202							{1: '18'}
+105	105		301							{2: 'Support Force Member A', 3: 'Ruolin?', 4: '1'}
+106	106		201							{1: '18', 2: '500909', 7: '1'}
+107	107		301							{2: 'Ruolin', 3: 'Here.', 4: '18'}
+108	108		202							{1: '18'}
+109	109		301							{2: 'Support Force Member A', 3: 'Trojan?', 4: '1'}
+110	110		301							{2: 'Trojan', 3: '...'}
+111	111		301							{2: 'Support Force Member A', 3: 'Trojan?', 4: '1'}
+112	112		201							{1: '18', 2: '500586', 7: '1'}
+113	113		301							{2: 'Trojan', 3: '...Present.', 4: '18'}
+114	114		202							{1: '1', 2: '18'}
+115	115		301							"{3: ""Trojan's signature lazy voice finally comes through After several calls.""}"
+116	116		301							{3: 'Underground communications are unstable, so they rely on calling each other to make sure no one falls behind.'}
+117	117		201							{1: '1', 2: '500167', 3: '4'}
+118	118		301							{1: '1', 2: 'Bridget', 3: '...I smell blood. Over here.', 4: '1'}
+119	119		202							{1: '1'}
+120	120		104						500.0	{1: '50|100|-100', 2: '0.4'}
+121	121		301							{3: 'The searchlight finds no survivors—only grotesque bloodstains that silently testify to the tragedy that had unfolded here.'}
+122	122		201							{1: '1', 2: '500909'}
+123	123		203						300.0	{1: '1', 2: '0.25', 4: '-100'}
+124	124		301							"{1: '1', 2: 'Ruolin', 3: ""These marks don't look like the work of a Corrupted..."", 4: '1'}"
+125	125		301							{3: 'Ruolin crouches down to examine the fresh bloodstains more closely.'}
+126	126		301							{2: 'Ruolin', 3: 'These are blood spatter from impact, gunshot wounds, and... over here—drag marks.', 4: '1'}
+127	127		203						300.0	{1: '1', 2: '0.25'}
+128	128		301							{2: 'Ruolin', 3: 'Someone moved the bodies.', 4: '1'}
+129	129		203							{1: '1', 2: '0.25', 3: '-400'}
+130	130		201							{1: '2', 2: '500167', 3: '4', 4: '400'}
+131	131		301							{1: '1', 2: 'Bridget', 3: '...I knew something was off about this place.', 4: '2'}
+132	132		202							{1: '2'}
+133	133		201							{1: '2', 2: '500028', 4: '400'}
+134	134		301							{1: '1', 2: 'Support Force Member A', 3: 'Can you tell which way they went? The fresh blood might mean there are survivors.', 4: '2'}
+135	135		301							{2: 'Ruolin', 3: 'That way.', 4: '1'}
+136	136		202							{1: '1', 2: '2'}
+137	137		301				AniZhuanchangBegin			"{3: ""They all dash forward following Ruolin's direction.""}"
+138	138		401							{1: '1', 2: '36'}
+139	139		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory925.jpg'}
+140	140		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.7', 5: '0'}
+141	141		401						2000.0	{1: '2', 2: '4421'}
+142	142		401							{1: '1', 2: '51'}
+143	143		301			AniZhuanchangEnd				{3: 'Another thirty minutes pass. The squad leader slows down and starts another roll call.'}
+144	144		201							{1: '1', 2: '500028'}
+145	145		301							{1: '1', 2: 'Support Force Member A', 3: 'Trojan...?', 4: '1'}
+146	146		301							"{3: ""The Construct's voice rings through the deep, dark tunnel, trailing into an unsettling hum.""}"
+147	147		301							"{2: 'Support Force Member A', 3: ""...Trojan, report in, or I'll have to cut your attendance points."", 4: '1'}"
+148	148		301							{2: 'Support Force Member A', 3: 'Trojan!', 4: '1'}
+149	149		301							"{3: ""The Construct's voice module almost produces a shriek, but there is no answer.""}"
+150	150		203							{1: '1', 2: '0.25', 3: '-400'}
+151	151		201							{1: '2', 2: '500019', 4: '400'}
+152	152		301							{1: '1', 2: 'Support Force Member C', 3: 'She... Trojan... Trojan is gone!', 4: '2'}
+153	153		301							{2: 'Support Force Member A', 3: '...What about the safety rope? Did she fall behind?', 4: '1'}
+154	154		301							{2: 'Support Force Member C', 3: 'The safety rope... the safety rope...', 4: '2'}
+155	155		401							{1: '2', 2: '2902'}
+156	156		301							{3: 'Frantic rustling sounds fill the air as they fumble in the dark, reeling in the safety rope. Panic begins to spread.'}
+157	157		301							"{2: 'Support Force Member C', 3: ""The safety rope... it's been cut!"", 4: '2'}"
+158	158		301							{2: 'Support Force Member A', 3: 'Turn on the searchlights!', 4: '1'}
+159	159		401							{1: '2', 2: '2576'}
+160	160		202							{1: '1', 2: '2', 6: '1'}
+161	161		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.5', 4: '0'}
+162	162		205							{1: '999'}
+163	163		301							{3: 'The searchlights that were dimmed to save energy, suddenly flare to full power, bathing the ground in light.'}
+164	164		201							{1: '1', 2: '500019'}
+165	165		301							{1: '1', 2: 'Support Force Member C', 3: 'There are traces of vital fluid... T-Trojan, did she...!', 4: '1'}
+166	166		201							{1: '1', 2: '500167', 3: '5'}
+167	167		301							"{2: 'Bridget', 3: ""That's impossible! Everyone, stay calm! Instructor Trojan is a seasoned fighter—no one could take her down without making any noise."", 4: '1'}"
+168	168		301							"{2: 'Bridget', 3: ""Something's not right... I would like to request permission to head back to assist Trojan!"", 4: '1'}"
+169	169		203							{1: '1', 2: '0.25', 3: '-400'}
+170	170		201							{1: '2', 2: '500028', 4: '400'}
+171	171		301							"{1: '1', 2: 'Support Force Member A', 3: ""Request denied. It's too dangerous and you're just a rookie. Split from the squad and you'll be dead before you know it."", 4: '2'}"
+172	172		204							{1: '1', 2: '4'}
+173	173		301							"{2: 'Bridget', 3: ""I'll follow the fluorescent markers we left along the way and cross-check with the map."", 4: '1'}"
+174	174		301							"{2: 'Bridget', 3: ""Twenty minutes. Give me twenty minutes. If I can't find Trojan in twenty minutes, I'll regroup immediately."", 4: '1'}"
+175	175		301							{2: 'Support Force Member A', 3: 'This is not a game.', 4: '2'}
+176	176		203							{1: '1', 2: '0.25'}
+177	177		203							{1: '2', 2: '0.25', 3: '600'}
+178	178		201							{1: '3', 2: '500909', 4: '-600'}
+179	179		301							"{1: '1', 2: 'Ruolin', 3: ""I-I'll go with Bridget."", 4: '3'}"
+180	180		301							{2: 'Support Force Member A', 3: '...You?', 4: '2'}
+181	181		301							{2: 'Ruolin', 3: 'I may not be a good fighter, but I can track your trail... and help Bridget catch back up with the squad...', 4: '3'}
+182	182		301							"{2: 'Support Force Member A', 3: ""...Don't make me regret this."", 4: '2'}"
+183	183		301							"{2: 'Support Force Member A', 3: ""Twenty minutes. Only twenty minutes. If you can't find her, catch up with us immediately."", 4: '2'}"
+184	184		301				AniZhuanchangBegin			{2: 'Bridget & Ruolin', 3: 'Yes, sir!', 4: '1', 5: '3'}
+185	185		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+186	186		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory833.jpg'}
+187	187		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0'}
+188	188		301			AniZhuanchangEnd				{3: 'Meanwhile, Trojan is moving effortlessly through a dark, craggy tunnel, not even using the portable lamp issued by Support Force.'}
+189	189		301							{3: 'No matter how much she dreads working, duty calls. She hopes her getaway was smooth enough to avoid raising suspicion among the squad.'}
+190	190		301							"{3: ""As for her excuse for being in the lab... She could say she was kidnapped and fought her way out... They'd probably buy that, right?""}"
+191	191		301							"{3: ""What if Bridget comes looking for her? Oh, well, she won't be able to get past the authentication system and into the lab, anyway...""}"
+192	192		201							{1: '1', 2: '500586', 3: '3'}
+193	193		301				AniZhuanchangBegin			{1: '1', 2: 'Trojan', 3: '...How rude. They just had to blow up my shortcut.', 4: '1'}
+194	194		202							{1: '1', 6: '1'}
+195	195		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory924.jpg'}
+196	196		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0'}
+197	197		301			AniZhuanchangEnd				{3: 'Trojan avoids the collapsed shaft and takes a detour. She dusts off a control panel and activates the emergency power switch.'}
+198	198		401						1500.0	{1: '2', 2: '4540'}
+199	199		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '0', 5: '0'}
+200	200		205							{1: '999'}
+201	201		401						2000.0	{1: '2', 2: '2980'}
+202	202		301							{2: 'System', 3: '—Authentication successful.'}
+203	203		201							{1: '1', 2: '500586', 3: '1'}
+204	204		301				DialogDisable			{1: '1', 2: 'Trojan', 3: 'Well, at least these halfwits made a backup power system that actually works.', 4: '1'}
+205	205		202							{1: '1'}
+206	206		401						2000.0	{1: '2', 2: '4129'}
+207	207		301			DialogEnable				{3: 'The door hidden behind the rocks slowly opens, revealing a dimly lit corridor.'}
+208	208		201							{1: '1', 2: '500586', 3: '3'}
+209	209		301							"{1: '1', 2: 'Trojan', 3: ""Sigh. Don't say I don't care about my old colleagues..."", 4: '1'}"
+210	210		204							{1: '1', 2: '5'}
+211	211		301							{2: 'Trojan', 3: 'I mean, Kurono paid good money for this.', 4: '1'}
+212	212		202							{1: '1'}
+213	213		301				AniZhuanchangBegin			{3: 'With another sigh, she steps over several lifeless bodies and presses onward.'}
+214	214		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory41.jpg'}
+215	215		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.7', 5: '0'}
+216	216		201							{1: '1', 2: '500586'}
+217	217		301			AniZhuanchangEnd				"{1: '1', 2: 'Trojan', 3: ""They already killed pretty much everyone here... What's the point of making me come back... Huh?"", 4: '1'}"
+218	218		202							{1: '1'}
+219	219		401							{1: '2', 2: '4433'}
+220	220		301							{3: 'Faint noises come from a laboratory ahead.'}
+221	221		201							{1: '1', 2: '500586', 3: '4', 4: '-400'}
+222	222		201							{1: '2', 2: '500361', 4: '400'}
+223	223		301							{1: '1', 2: 'Trojan', 3: 'Oh? Did I miss one?', 4: '1'}
+224	224		301							"{2: 'Hyde', 3: ""W-wait, wait! Goddammit! It's me!"", 4: '2'}"
+225	225		301							{2: 'Trojan', 3: 'Tch.', 4: '1'}
+226	226		301							{3: 'Trojan clicks her tongue in irritation, but keeps her gun trained on Hyde.'}
+227	227		301							{2: 'Trojan', 3: 'Why are you still... here?', 4: '1'}
+228	228		301							{2: 'Hyde', 3: 'Those Kurono ******* started spraying bullets the moment they got in! Luckily, I was quick enough to dodge back there.', 4: '2'}
+229	229		301							"{2: 'Hyde', 3: ""Quick, get me out of here! I have all the data on the copolymers with me. Come with me—I promise, whatever I get, you'll get your share... Hey!"", 4: '2'}"
+230	230		401							{1: '1', 2: '36'}
+231	231		401				PanelActor2Shake			{1: '2', 2: '2513'}
+232	232		203							{1: '2', 2: '0.25', 3: '450', 4: '-50'}
+233	233		301							"{3: ""BANG! Smoke wisps from Trojan's gun barrel as Hyde clutches his bloody shoulder in shock.""}"
+234	234		401							{1: '1', 2: '54'}
+235	235		204							{1: '1', 2: '5'}
+236	236		301							"{2: 'Trojan', 3: ""That's your best offer for your life? Besides... why should I trust you?"", 4: '1'}"
+237	237		204							{1: '1', 2: '2'}
+238	238		301							{2: 'Trojan', 3: 'Hmm... Maybe this is an opportunity from God.', 4: '1'}
+239	239		204							{1: '1', 2: '5'}
+240	240		301							"{2: 'Trojan', 3: ""I never thought I'd get this lucky when I took this mission."", 4: '1'}"
+241	241		203							{1: '2', 2: '0.2', 3: '400'}
+242	242		301							"{2: 'Hyde', 3: ""Trojan! You vile rat! If it weren't for me, you'd have ******* rotted in that pile of corpses!"", 4: '2'}"
+243	243		301							{2: 'Trojan', 3: 'Perhaps? Though I may have preferred that.', 4: '1'}
+244	244		204							{1: '1', 2: '4'}
+245	245		401							{1: '2', 2: '10021517'}
+246	246		301							"{3: ""She loads another bullet and aims once more at Hyde's head.""}"
+247	247		301							"{2: 'Hyde', 3: ""Y-you can't kill me! Your frame... I modified your frame! If I die, you won't get away with it either!"", 4: '2'}"
+248	248		204							{1: '1', 2: '8'}
+249	249		301							{2: 'Trojan', 3: 'Sigh... How can you still be so clueless?', 4: '1'}
+250	250		204							{1: '1', 2: '4'}
+251	251		301							{2: 'Trojan', 3: 'Living or dead... makes no difference to me.', 4: '1'}
+252	252		301							{2: 'Trojan', 3: 'I live... only to receive pointless missions like this, to have you rip apart, modify, and experiment on my frame... Maybe death is the sensible choice.', 4: '1'}
+253	253		204							{1: '1', 2: '2'}
+254	254		301							{2: 'Trojan', 3: 'So... die here with me.', 4: '1'}
+255	255		203							{1: '1', 2: '0.8', 3: '-300'}
+256	256		203						300.0	{1: '2', 2: '0.25', 3: '450'}
+257	257		203							{1: '2', 2: '0.25', 3: '500', 4: '-50'}
+258	258		301							{3: 'The corners of her mouth twitch into a chilling smile.'}
+259	259		301							"{2: 'Hyde', 3: ""No, no... you can't—!"", 4: '2'}"
+260	260		204							{1: '1', 2: '4'}
+261	261		301			RImgBg1Shake				{2: '????', 3: 'Trojan! What are you doing?!'}
+262	262		401							{1: '2', 2: '4557'}
+263	263		301							{3: 'Before the gunshot sounds, heavy footsteps echo from the hallway...'}
+264	264		301							{2: 'Trojan', 3: '...****! Those ignorant idiots! How did they blow a hole over there...', 4: '1'}
+265	265		501						1500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+266	266		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+267	267		202							{1: '1', 2: '2', 6: '1'}
+268	268		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4501_01.jpg'}
+269	269		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+270	270		301							{3: 'Blinding lights flood in.'}
+271	271		301							"{3: ""This lab only had one entrance. There's only one way Bridget could have bypassed the authentication system—Kurono's soldiers must have accidentally blasted open a new path.""}"
+272	272		301							{2: 'Bridget', 3: 'Lower your weapon! Trojan, who is this? Why are you pointing your gun at him?'}
+273	273		301							{2: 'Trojan', 3: 'His face pisses me off.'}
+274	274		301							{2: 'Trojan', 3: 'By the way, are you sure you want to point your gun at me? I am your instructor.'}
+275	275		301							{3: 'Trojan finds herself moving her gun away from Hyde, despite what she says.'}
+276	276		301							"{3: ""She can't let Babylonia know about her real identity just yet.""}"
+277	277		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory41.jpg'}
+278	278		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.7', 5: '0'}
+279	279		201							{1: '1', 2: '500361', 5: '-1080', 7: '1'}
+280	280		203							{1: '1', 2: '0.2'}
+281	281		301							"{1: '1', 2: 'Hyde', 3: ""A-are you the rescue team from Babylonia? Oh, thank goodness! I-I'm just a researcher from Norman here to study tantalum ore!"", 4: '1'}"
+282	282		301							"{3: ""Hyde cries out as if he's found salvation.""}"
+283	283		202							{1: '1'}
+284	284		201							{1: '1', 2: '500586', 3: '4'}
+285	285		301							{1: '1', 2: 'Trojan', 3: 'Shut up.', 4: '1'}
+286	286		202							{1: '1'}
+287	287		201							{1: '1', 2: '500167', 3: '4'}
+288	288		301							{1: '1', 2: 'Bridget', 3: 'Are you really just a researcher?', 4: '1'}
+289	289		202							{1: '1'}
+290	290		301							{3: 'The man sitting slumped on the ground darts his eyes back and forth. Guilt is written all over his face.'}
+291	291		201							{1: '1', 2: '500361'}
+292	292		301							{1: '1', 2: 'Hyde', 3: 'O-of course! Th-these are my identification documents...', 4: '1'}
+293	293		301							{3: 'He fumbles to fish out his access card and ID badge.'}
+294	294		203							{1: '1', 2: '0.25', 3: '-400'}
+295	295		201							{1: '2', 2: '500586', 4: '400'}
+296	296		301							"{1: '1', 2: 'Trojan', 3: 'Humph, you don\'t strike me as ""just a researcher.""', 4: '2'}"
+297	297		301							"{2: 'Trojan', 3: 'If you\'re ""just a researcher"", how do you explain all the bodies outside?', 4: '2'}"
+298	298		301							"{2: 'Hyde', 3: ""T-that's..."", 4: '1'}"
+299	299		301							{2: 'Hyde', 3: 'The Constructs did it! They went haywire from the Punishing Virus! I-I had nothing to do with it...', 4: '1'}
+300	300		301							{2: 'Trojan', 3: 'Oh, nothing to do with it? Then why were you acting so strange?', 4: '2'}
+301	301		204							{1: '2', 2: '2'}
+302	302		301							"{2: 'Trojan', 3: ""Could it be that you're the mastermind behind all this? Wouldn't surprise me one bit..."", 4: '2'}"
+303	303		301							"{3: 'A malicious smile spreads across Trojan\'s face as she emphasizes the word ""mastermind"".'}"
+304	304		301							{2: 'Hyde', 3: 'W-what are you saying? I... I understand why you might think I did it, but...', 4: '1'}
+305	305		202							{1: '1', 2: '2', 6: '1'}
+306	306		201							{1: '1', 2: '500167', 3: '4'}
+307	307		301							{1: '1', 2: 'Bridget', 3: '...', 4: '1'}
+308	308		301							{3: 'These two seem to be putting on some kind of show. Did they really just run into each other...?'}
+309	309		301							"{2: 'Bridget', 3: ""...Regardless of who this person is or what he did, Support Force does not have the authority to execute anyone. Instructor Trojan... you're violating Support Force protocols."", 4: '1'}"
+310	310		301							"{3: ""Bridget carefully observes Trojan's reaction.""}"
+311	311		301							"{3: ""She can't quite grasp what's going on, nor can she determine who is lying based on their brief exchange.""}"
+312	312		301							{3: 'The best solution is to bring them both back to Babylonia and let the experts find the truth.'}
+313	313		301							{2: 'Bridget', 3: 'Instructor Trojan, hand your weapon over to Ruolin.', 4: '1'}
+314	314		202							{1: '1'}
+315	315		201							{1: '1', 2: '500586', 3: '4'}
+316	316		301							{1: '1', 2: 'Trojan', 3: '...Here.', 4: '1'}
+317	317		401							{1: '2', 2: '4102'}
+318	318		301							{3: 'She carelessly tosses her sidearm to the ground.'}
+319	319		301							"{3: ""Things couldn't possibly get any worse than this—mission failed, Hyde is still alive, and now Bridget has found them.""}"
+320	320		301							{3: 'There is one solution—she could set off the bombs beneath the lab and blow everyone to bits. That would tie up all loose ends.'}
+321	321		204						500.0	{1: '1', 2: '8'}
+322	322		301							"{3: ""But... they've done nothing wrong.""}"
+323	323		204						500.0	{1: '1', 2: '4'}
+324	324		203						500.0	{1: '1', 2: '0.5', 4: '-20', 5: '50'}
+325	325		301		1		AniZhuanchangBegin			{3: 'Regretting her infuriating indecision, Trojan steps back with a sigh.'}

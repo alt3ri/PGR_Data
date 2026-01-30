@@ -1,0 +1,32 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory730.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500168'}
+4	4		301			DialogEnable				{1: '1', 3: 'Jumping onto the stage, Vera stamps the floor, bored.'}
+5	5		301							"{2: 'Vera', 3: ""I shouldn't expect a Corrupted or something jumping out of here, should I?"", 4: '1'}"
+6	6		302							"{2: ""There shouldn't be any Corrupted here."", 3: '7'}"
+7	7		204							{1: '1', 2: '1'}
+8	8		301							{2: 'Vera', 3: 'Psst...', 4: '1'}
+9	9		301							"{2: 'Vera', 3: ""Although my time with you isn't exactly boring, a maze this devoid of danger is..."", 4: '1'}"
+10	10		204							{1: '1'}
+11	11		301							"{2: 'Vera', 3: ""It's so safe it makes me uncomfortable."", 4: '1'}"
+12	12		301							{3: 'Vera leans onto the pillar lazily, staring at her surroundings.'}
+13	13		302							"{2: ""You look like you don't like it here, Vera."", 3: '14'}"
+14	14		301							"{2: 'Vera', 3: ""I don't."", 4: '1'}"
+15	15		301							"{2: 'Vera', 3: ""This kind of place isn't for me. I don't like this girly color, either."", 4: '1'}"
+16	16		301							"{2: 'Vera', 3: '""Romance,"" ""flowers,"" ""balloons""... Ha.', 4: '1'}"
+17	17		204							{1: '1', 2: '1'}
+18	18		301							"{2: 'Vera', 3: ""But it's fun to spend time with you on these trivial minigames occasionally, I suppose."", 4: '1'}"
+19	19		301							{3: 'Vera turns around and grins, glancing at you with the corner of her eyes.'}
+20	20		301							{2: 'Vera', 3: 'Do you want to do something interesting instead?', 4: '1'}
+21	21		302							{2: '?', 3: '22'}
+22	22		203							{1: '1', 2: '0.25', 5: '-100'}
+23	23		301							{2: 'Vera', 3: 'What—are—you—thinking—about?!', 4: '1'}
+24	24		301							"{3: ""Before you realize it, Vera's face is in front of yours. She curls her finger and flicks you on your forehead mercilessly.""}"
+25	25		302							{2: 'Ouch!', 3: '26', 4: 'Hey!', 5: '26'}
+26	26		301							"{2: 'Vera', 3: ""You can only invite me if there's another event like this."", 4: '1'}"
+27	27		302							"{2: ""I thought you didn't like it."", 3: '28', 4: 'How greedy.', 5: '29'}"
+28	28	30	301							{2: 'Vera', 3: 'Ha, you moron.', 4: '1'}
+29	29		301							"{2: 'Vera', 3: ""What's wrong with that?"", 4: '1'}"
+30	30		301							{2: 'Vera', 3: 'Just make sure you remember it.', 4: '1'}
+31	31		301		1		AniZhuanchangBegin			"{2: 'Vera', 3: 'You can only invite me to these ""themed events.""', 4: '1'}"

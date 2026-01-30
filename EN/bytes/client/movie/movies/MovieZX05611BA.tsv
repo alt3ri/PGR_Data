@@ -1,0 +1,369 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory757.jpg'}
+2	2		502						250.0	{1: 'DialogDisable'}
+3	3		107							{1: 'New Oakley'}
+4	4		301							{3: 'New Oakley.'}
+5	5		108							{1: '1'}
+6	6		401							{1: '1', 2: '6182'}
+7	7		201							{1: '1', 2: '500675'}
+8	8		301			DialogEnable				"{1: '1', 2: 'Armed Resident A', 3: ""Hey, how's the situation on your end?"", 4: '1'}"
+9	9		203							{1: '1', 2: '0.25', 3: '450'}
+10	10		201							{1: '2', 2: '500139', 4: '-450'}
+11	11		301							"{1: '1', 2: 'Armed Resident B', 3: ""Pretty much wiped them all out. Now we're just cleaning up the battlefield."", 4: '2'}"
+12	12		301			PanelActor1Shake				{2: 'Armed Resident A', 3: 'Geez, these bats have gone completely nuts. Over two damn hours... Last attack was barely over an hour.', 4: '1'}
+13	13		301							"{2: 'Armed Resident B', 3: ""They sure have. If the people from Babylonia hadn't come when they did, we'd probably be done for this time."", 4: '2'}"
+14	14		203							{1: '1', 2: '0.25', 3: '400'}
+15	15		301							{2: 'Armed Resident A', 3: 'Have you heard about it?', 4: '1'}
+16	16		203							{1: '2', 2: '0.25', 3: '-400'}
+17	17		301							{2: 'Armed Resident B', 3: 'What is it?', 4: '2'}
+18	18		301							{2: 'Armed Resident A', 3: 'That white light just now that made the bats freeze.', 4: '1'}
+19	19		301							{2: 'Armed Resident B', 3: 'Must be some new type of flash grenade designed for Hetero-Creatures, right?', 4: '2'}
+20	20		301							{2: 'Armed Resident A', 3: 'I heard it was a little girl. She controlled those bats with that white light.', 4: '1'}
+21	21		301			PanelActor2Shake	DialogDisable			"{2: 'Armed Resident B', 3: ""...You've got to be kidding."", 4: '2'}"
+22	22		401							{1: '1', 2: '36'}
+23	23		202							{1: '1', 2: '2'}
+24	24		401							{1: '1', 2: '169'}
+25	25		306						200.0	{1: '1'}
+26	26		104						800.0	{1: '0|0|-150', 2: '0.8'}
+27	27		201							{1: '1', 2: '501260', 4: '-200'}
+28	28		301			DialogEnable				{1: '1', 3: 'Many people witnessed the strange sight caused by Lyca earlier, and already, rumors have begun to spread. Every now and then, someone would glance her way, their eyes sharp with curiosity.'}
+29	29		306							
+30	30		201							{1: '2', 2: '500906', 4: '650'}
+31	31		203							{1: '2', 2: '0.25', 3: '450'}
+32	32		301							{1: '1', 3: 'Bridget, finally catching a free moment, approaches Lyca. She softens her voice, trying to make herself sound as gentle as possible.'}
+33	33		203							{1: '2', 2: '0.25', 3: '400'}
+34	34		204							{1: '1', 2: '7'}
+35	35		301				DialogDisable			{2: 'Bridget', 3: 'Come with me, Lyca.', 4: '2'}
+36	36		202							{1: '1', 2: '2'}
+37	37		104							{1: '0|0|-250', 2: '0.5'}
+38	38		301			DialogEnable	DialogDisable			"{3: ""She takes Lyca's hand and leads her to a nearby room.""}"
+39	39		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+40	40		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+41	41		301			DialogEnable	DialogDisable			"{3: ""Lyca follows Bridget's lead in a daze, her mind filled with fragmented memories.""}"
+42	42		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+43	43		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0', 4: '1', 5: '0.5'}
+44	44		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory718.jpg'}
+45	45		301			DialogEnable	DialogDisable			{3: 'The razor-sharp fragments of memories reappear and rush to the coast of reality with the waves.'}
+46	46		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '1', 4: '0', 5: '0.5'}
+47	47		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory718.jpg'}
+48	48		504							{1: '0.7'}
+49	49		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '2'}
+50	50		205							{1: '999'}
+51	51		401							{1: '2', 2: '4388', 3: '1'}
+52	52		201							{1: '1', 2: '501268', 4: '-400'}
+53	53		201							{1: '2', 2: '500043', 4: '650'}
+54	54		203							{1: '2', 2: '0.25', 3: '400'}
+55	55		301			DialogEnable				{1: '1', 3: 'A man in a white lab coat approaches quietly, his movements stiff, his words trapped in his throat.'}
+56	56		301							{2: 'Man in a Lab Coat', 3: 'I heard about what happened... Everyone in the project team is worried about you.', 4: '2'}
+57	57		301							{2: 'Man in a Lab Coat', 3: '...', 4: '2'}
+58	58		301							"{2: 'Man in a Lab Coat', 3: ""The department has approved some time off for you. You can come back once you're feeling better."", 4: '2'}"
+59	59		301							"{2: 'Man in a Lab Coat', 3: ""Sorry... I shouldn't keep talking about work, it's just..."", 4: '2'}"
+60	60		301				AniZhuanchangBegin			{2: 'Man in a Lab Coat', 3: 'Take some rest, ■■■. Take some rest.', 4: '2'}
+61	61		502						200.0	{1: 'DialogDisable'}
+62	62		202							{1: '1', 2: '2', 6: '1'}
+63	63		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg'}
+64	64		401							{1: '2', 2: '1516'}
+65	65		201							{1: '1', 2: '501268'}
+66	66		203							{1: '1', 2: '0.3', 3: '-300'}
+67	67		301			DialogEnable				{1: '1', 3: '■■■ says nothing, turning instead toward the memorial altar in the living room, eyes lingering on the black-and-white photograph.'}
+68	68		401							{1: '2', 2: '4543'}
+69	69		301							{3: 'Outside, the doorbell rings a few times before falling silent. Then comes the soft click of the door unlocking, the fingerprint reader granting entry.'}
+70	70		201							{1: '2', 2: '500043', 4: '700'}
+71	71		203							{1: '2', 2: '0.25', 3: '450'}
+72	72		301							{1: '1', 2: 'Man in a Lab Coat', 3: '■■■, sorry for coming uninvited. I just wanted to make sure my friend was safe.', 4: '2'}
+73	73		301							"{2: 'Man in a Lab Coat', 3: ""It's been three months. It's time to..."", 4: '2'}"
+74	74		301				DialogDisable			{2: 'Man in a Lab Coat', 3: '...■■■?', 4: '2'}
+75	75		401							{1: '2', 2: '4388'}
+76	76		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+77	77		202							{1: '1', 2: '2', 6: '1'}
+78	78		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab'}
+79	79		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+80	80		504							{1: '0'}
+81	81		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+82	82		201							{1: '1', 2: '501249', 4: '-400'}
+83	83		201							{1: '2', 2: '501250', 4: '400'}
+84	84		301			DialogEnable	DialogDisable			{1: '1', 2: 'Vanessa', 3: 'Can you hear me, Lyca?', 4: '1'}
+85	85		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+86	86		201							{1: '1', 2: '500555', 4: '-400', 7: '1'}
+87	87		201							{1: '2', 2: '500201', 4: '400', 7: '1'}
+88	88		301			DialogEnable				{3: 'The question pulls Lyca back to reality.'}
+89	89		306							{1: '1'}
+90	90		301							"{3: ""She glances around, taking in her surroundings—she's indoors now, with Bridget beside her, the one who led her inside. At the center of the room, a woman with a commanding presence sits at the table, while next to her is a frail-looking man.""}"
+91	91		306							
+92	92		301							"{2: 'Vanessa', 3: ""I'm Vanessa, the Egret Commandant from Babylonia. This is Simon, the Dark Aries Commandant."", 4: '1'}"
+93	93		301							"{2: 'Vanessa', 3: ""Looks like you're able to communicate now."", 4: '1'}"
+94	94		301							{2: 'Vanessa', 3: 'Tell me the details about that white light from before. What connection do you have with the Hetero-Creatures?', 4: '1'}
+95	95		202							{1: '1', 2: '2'}
+96	96		201							{1: '3', 2: '501260', 3: '7'}
+97	97		301							"{1: '1', 3: ""Lyca's face still shows traces of disorientation.""}"
+98	98		204							{1: '3', 2: '19'}
+99	99		301							"{2: 'Lyca', 3: ""I... I'm not really sure."", 4: '3'}"
+100	100		202							{1: '3', 6: '1'}
+101	101		201							{1: '1', 2: '500555', 3: '4', 7: '1'}
+102	102		301							{1: '1', 2: 'Vanessa', 3: '...', 4: '1'}
+103	103		301				DialogDisable			"{3: ""Vanessa's gaze locks onto Lyca, her face unreadable, for so long that Lyca can't help but feel an intense interrogation coming next.""}"
+104	104		203							{1: '1', 2: '0.25', 3: '-500'}
+105	105		401							{1: '2', 2: '1099'}
+106	106		509						350.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png', 2: '2'}
+107	107		201							{1: '13', 2: '500004', 4: '450'}
+108	108		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '13'}
+109	109		301			DialogEnable				{1: '1', 3: 'But Vanessa simply pulls out a terminal and activates a comms projection, revealing the figure of a man materializing from the device.'}
+110	110		301							{2: 'Vanessa', 3: 'Continue with your report, Asimov.', 4: '1'}
+111	111		301							"{2: 'Asimov', 3: 'In front of ""Lyca""?', 4: '13'}"
+112	112		301							{2: 'Vanessa', 3: 'No objection to that.', 4: '1'}
+113	113		301							"{2: 'Asimov', 3: ""...I've checked the Science Council records and found information on Thomas Hell."", 4: '13'}"
+114	114		301							{2: 'Asimov', 3: 'Thomas Hell is a former member of Science Council Section 2, under the mentorship of Ms. Valentina.', 4: '13'}
+115	115		301							"{2: 'Asimov', 3: ""According to the records, Thomas' wife died of a genetic disease. Seven years after his wife's death, his daughter Lyca..."", 4: '13'}"
+116	116		301				DialogDisable			{2: 'Asimov', 3: 'Also died from the same disease, at the age of 14.', 4: '13'}
+117	117		401							{1: '1', 2: '36'}
+118	118		202							{1: '1', 6: '1'}
+119	119		201							{1: '2', 2: '501260', 3: '7', 4: '-550'}
+120	120		301			DialogEnable	DialogDisable			{1: '1', 2: 'Lyca', 3: '...', 4: '2'}
+121	121		510						350.0	{1: '2', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+122	122		202							{1: '13', 6: '1'}
+123	123		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '13'}
+124	124		203						300.0	{1: '2', 2: '0.25', 3: '0'}
+125	125		401							{1: '1', 2: '229'}
+126	126		401							{1: '2', 2: '4280'}
+127	127		204							{1: '2', 2: '19'}
+128	128		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+129	129		401							{1: '2', 2: '4388'}
+130	130		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+131	131		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+132	132		301			DialogEnable	DialogDisable			{3: 'The pristine white curtains of the hospital room resurface in her mind, accompanied by a searing headache.'}
+133	133		401							{1: '2', 2: '4388'}
+134	134		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+135	135		202							{1: '2', 6: '1'}
+136	136		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+137	137		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+138	138		301			DialogEnable	DialogDisable			{3: 'Her earlier confusion slowly crystallizes into clarity as the hazy fragments of memory sharpen into focus.'}
+139	139		401							{1: '2', 2: '4388'}
+140	140		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+141	141		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory750.jpg'}
+142	142		504							{1: '0.8'}
+143	143		201							{1: '2', 2: '501260', 3: '19'}
+144	144		301			DialogEnable	DialogDisable			{1: '1', 2: 'Lyca', 3: 'The person in the hospital bed... was it Mom, or... me?', 4: '2'}
+145	145		307							{1: 'It was her mom, and also herself.', 3: '60'}
+146	146		301							{3: 'It was her mom, and also herself.'}
+147	147		307							{2: '1'}
+148	148		401							{1: '2', 2: '4388'}
+149	149		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+150	150		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+151	151		301			DialogEnable	DialogDisable			{3: 'Beneath the bloodstained white sheet, something lies.'}
+152	152		307							"{1: ""Of course it's <phonetic=me>Lyca</phonetic>."", 3: '46'}"
+153	153		301							"{3: ""Of course it's <phonetic=me>Lyca</phonetic>.""}"
+154	154		307							{2: '1'}
+155	155		401							{1: '2', 2: '4388'}
+156	156		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+157	157		202							{1: '2', 6: '1'}
+158	158		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory718.jpg'}
+159	159		201							{1: '1', 2: '501268', 4: '-300'}
+160	160		201							{1: '2', 2: '500043', 4: '450'}
+161	161		301			DialogEnable	DialogDisable			{1: '1', 2: 'Man in a Lab Coat', 3: 'Take some rest, Thomas. Take some rest.', 4: '2'}
+162	162		401							{1: '2', 2: '4388'}
+163	163		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+164	164		202							{1: '1', 2: '2', 6: '1'}
+165	165		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+166	166		504							{1: '0'}
+167	167		509						350.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png', 2: '2'}
+168	168		201							{1: '13', 2: '500004', 4: '450', 7: '1'}
+169	169		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '13'}
+170	170		201							{1: '3', 2: '501260', 3: '7', 4: '-550'}
+171	171		301			DialogEnable	DialogDisable			{1: '1', 2: 'Asimov', 3: '...Thomas left the Science Council afterward, and went missing two years later...', 4: '13'}
+172	172		204							{1: '3', 2: '19'}
+173	173		510						350.0	{1: '2', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+174	174		202							{1: '13', 6: '1'}
+175	175		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '13'}
+176	176		203							{1: '3', 2: '0.25', 3: '0'}
+177	177		301			DialogEnable	DialogDisable			"{3: ""She can no longer catch the man's report in the transmission.""}"
+178	178		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+179	179		301			DialogEnable	DialogDisable			{3: 'More memories begin to surface, pulling Lyca back to where everything started.'}
+180	180		401							{1: '2', 2: '4388'}
+181	181		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+182	182		202							{1: '3', 6: '1'}
+183	183		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory789.jpg'}
+184	184		301			DialogEnable	DialogDisable			{3: 'Crimson alarms shriek throughout the laboratory, wrenching Thomas awake from unconsciousness, who finds his body sprawled on the floor.'}
+185	185		401							{1: '2', 2: '4280'}
+186	186		111						2000.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+187	187		402							{1: '4280'}
+188	188		301			DialogEnable				{3: 'As he fights to piece together the last moments, a knife-sharp headache splits his skull, scattering his thoughts.'}
+189	189		301				DialogDisable			{3: 'In his daze, he only recalls a few blurry fragments.'}
+190	190		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+191	191		401							{1: '2', 2: '9330023'}
+192	192		402							{1: '4063'}
+193	193		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+194	194		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+195	195		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '5'}
+196	196		401							{1: '2', 2: '5316', 3: '1'}
+197	197		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+198	198		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory971.jpg'}
+199	199		401							{1: '2', 2: '4007', 3: '1'}
+200	200		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+201	201		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory294.png'}
+202	202		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+203	203		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg'}
+204	204		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+205	205		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryYaoHe.prefab', 2: '2'}
+206	206		401						1900.0	{1: '2', 2: '2919'}
+207	207		402							{1: '2919'}
+208	208		401						800.0	{1: '2', 2: '5530', 3: '1'}
+209	209		202							{1: '1', 6: '1'}
+210	210		402							{1: '9330023'}
+211	211		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+212	212		101							{4: '5', 5: '1'}
+213	213		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+214	214		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+215	215		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+216	216		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryYaoHe.prefab'}
+217	217		401							{1: '2', 2: '844090'}
+218	218		205						1800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_14.jpg', 3: '0', 4: '1', 5: '1.2'}
+219	219		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_14.jpg'}
+220	220		205							{1: '999'}
+221	221		205						1800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+222	222		205							{1: '999'}
+223	223		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+224	224		401							{1: '2', 2: '2938'}
+225	225		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront18.png', 3: '1', 4: '1', 5: '0'}
+226	226		104							{1: '0|0|-250', 2: '0', 4: '4'}
+227	227		301			DialogEnable	DialogDisable			{1: '1', 3: 'Space splintering like glass. A deafening explosion. And then... a demon emerges from the fractured space.'}
+228	228		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab'}
+229	229		401							{1: '2', 2: '4006'}
+230	230		301			DialogEnable	DialogDisable			"{3: ""The demon is grievously wounded, its form nearly obliterated, and what's left is gradually dissipating.""}"
+231	231		401							{1: '2', 2: '2559'}
+232	232		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+233	233		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory951.png'}
+234	234		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab', 2: '2'}
+235	235		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+236	236		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront18.png', 3: '0', 4: '0', 5: '0'}
+237	237		205							{1: '999'}
+238	238		301			DialogEnable	DialogDisable			"{1: '1', 3: ""A mirror slips from the demon's body, cracking down the middle.""}"
+239	239		401							{1: '2', 2: '2975'}
+240	240		104						200.0	{1: '0|0|-150', 2: '0.2'}
+241	241		104							{1: '0|0|0', 2: '0.3'}
+242	242		201							{1: '2', 2: '501268', 5: '-50'}
+243	243		301			DialogEnable	DialogDisable			{1: '1', 3: 'With its last, desperate effort, the demon drives its core into the only human nearby—Thomas.'}
+244	244		502						250.0	{1: 'PanelActor2Shake'}
+245	245		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab', 2: '2'}
+246	246		401							{1: '2', 2: '5373'}
+247	247		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+248	248		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+249	249		202							{1: '2', 6: '1'}
+250	250		301			DialogEnable	DialogDisable			{1: '1', 3: 'The instant the mirror touches him, it erupts into two pieces, one half clattering to the ground.'}
+251	251		401							{1: '2', 2: '5283'}
+252	252		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront61.png', 3: '1', 4: '1', 5: '0'}
+253	253		201							{1: '3', 2: '501269'}
+254	254		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '1'}
+255	255		301			DialogEnable	DialogDisable			"{1: '1', 3: ""Thomas's body, ravaged by the explosion's impact, is equally in critical condition. Darkness creeps in, but before it swallows him whole, his fading mind conjures one final thought—his daughter.""}"
+256	256		203							{1: '3', 2: '0.8', 4: '-300', 5: '300'}
+257	257		104						800.0	{1: '0|0|300', 2: '0.8', 4: '4'}
+258	258		202							{1: '3', 6: '1'}
+259	259		401							{1: '2', 2: '4276'}
+260	260		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab', 2: '2'}
+261	261		201							{1: '2', 2: '501260'}
+262	262		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab'}
+263	263		301			DialogEnable	DialogDisable			"{1: '1', 3: ""Then, amid a blinding flash of white light, the fallen mirror shard transforms into Lyca's form.""}"
+264	264		401							{1: '1', 2: '36'}
+265	265		401							{1: '2', 2: '4388'}
+266	266		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+267	267		202							{1: '2', 6: '1'}
+268	268		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront61.png', 3: '0', 4: '0', 5: '0'}
+269	269		205							{1: '999'}
+270	270		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab'}
+271	271		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+272	272		401							{1: '1', 2: '211'}
+273	273		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+274	274		201							{1: '1', 2: '501260', 3: '7'}
+275	275		301			DialogEnable				{1: '1', 2: 'Lyca', 3: '...I remember now.', 4: '1'}
+276	276		204							{1: '1', 2: '19'}
+277	277		301			PanelActor1Shake				"{2: 'Lyca', 3: ""I'm a demon... born from my father's obsession..."", 4: '1'}"
+278	278		202							{1: '1'}
+279	279		201							{1: '2', 2: '500555', 3: '4', 4: '-650', 5: '-50'}
+280	280		201							{1: '3', 2: '500201', 4: '-100', 5: '-50'}
+281	281		201							{1: '4', 2: '500906', 3: '4', 4: '550', 5: '-50'}
+282	282		301				DialogDisable			{1: '1', 2: 'Vanessa & Simon & Bridget', 3: '!!!', 4: '2', 5: '3', 6: '4'}
+283	283		202							{1: '2', 2: '3', 3: '4'}
+284	284		509						350.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png', 2: '2'}
+285	285		201							{1: '13', 2: '500004', 4: '450'}
+286	286		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '13'}
+287	287		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Asimov', 3: ""That's what I thought."", 4: '13'}"
+288	288		202							{1: '13'}
+289	289		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '13'}
+290	290		510						250.0	{1: '2', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+291	291		201							{1: '1', 2: '501260', 3: '19'}
+292	292		301			DialogEnable				"{1: '1', 2: 'Lyca', 3: ""The Mirror Demon's true form is the mirror inside its body. It shattered into two pieces when it came to this world."", 4: '1'}"
+293	293		301							"{2: 'Lyca', 3: ""One piece holds the Mirror Demon's consciousness, which possessed my father."", 4: '1'}"
+294	294		204							{1: '1', 2: '14'}
+295	295		301							{2: 'Lyca', 3: 'The other half is me...', 4: '1'}
+296	296		201							{1: '1', 2: '500555', 3: '3', 7: '1'}
+297	297		301							"{1: '1', 2: 'Vanessa', 3: ""Now that's... unexpected."", 4: '1'}"
+298	298		201							{1: '1', 2: '501260', 3: '14', 7: '1'}
+299	299		301							{1: '1', 2: 'Lyca', 3: '...', 4: '1'}
+300	300		201							{1: '1', 2: '500555', 7: '1'}
+301	301		301							{1: '1', 2: 'Vanessa', 3: 'To be honest, I never expected things would turn out this way.', 4: '1'}
+302	302		203							{1: '1', 2: '0.25', 3: '-400'}
+303	303		201							{1: '2', 2: '500201', 4: '400'}
+304	304		301							{1: '1', 2: 'Simon', 3: 'Things are getting complicated. What should we do now?', 4: '2'}
+305	305		301							"{2: 'Vanessa', 3: ""Let's wait until 【kuroname】 returns from the Babel Tower. I recall the commandant mentioned an expert who handles these situations in a report."", 4: '1'}"
+306	306		202							{1: '1', 2: '2', 6: '1'}
+307	307		201							{1: '1', 2: '501260', 3: '14'}
+308	308		301							{1: '1', 2: 'Lyca', 3: 'The Babel Tower...', 4: '1'}
+309	309		306							{1: '1'}
+310	310		204							{1: '1', 2: '4'}
+311	311		301							"{3: ""Lyca's expression suddenly hardens, resolve flashing in her eyes.""}"
+312	312		306							
+313	313		301							{2: 'Lyca', 3: 'I need to go to the Babel Tower!', 4: '1'}
+314	314		201							{1: '1', 2: '500555', 3: '4', 7: '1'}
+315	315		301							"{1: '1', 2: 'Vanessa', 3: ""Now's not the time for you to be willful."", 4: '1'}"
+316	316		201							{1: '1', 2: '501260', 3: '4', 7: '1'}
+317	317		301			PanelActor1Shake				"{1: '1', 2: 'Lyca', 3: ""You don't understand. There's a connection between the two mirror shards. As long as I exist, the other half of the mirror won't disappear."", 4: '1'}"
+318	318		201							{1: '1', 2: '500555', 3: '7', 7: '1'}
+319	319		301							"{1: '1', 2: 'Vanessa', 3: ""Which means the Mirror Demon can't be defeated?"", 4: '1'}"
+320	320		201							{1: '1', 2: '501260', 3: '4', 7: '1'}
+321	321		301							"{1: '1', 2: 'Lyca', 3: ""That's why I need to go to the Babel Tower, to see my father."", 4: '1'}"
+322	322		201							{1: '1', 2: '500555', 3: '4', 7: '1'}
+323	323		301							{1: '1', 2: 'Vanessa', 3: '...We need to have a private discussion. Go outside and wait for now.', 4: '1'}
+324	324		201							{1: '1', 2: '501260', 7: '1'}
+325	325		301							{1: '1', 2: 'Lyca', 3: '...Okay.', 4: '1'}
+326	326		401							{1: '2', 2: '753'}
+327	327		203							{1: '1', 2: '0.25', 3: '600'}
+328	328		202							{1: '1'}
+329	329		301							{3: 'Lyca turns and leaves the room. As the wooden door clicks shut behind her, a hushed debate erupts inside.'}
+330	330		201							{1: '1', 2: '500555', 3: '4', 4: '-400'}
+331	331		201							{1: '2', 2: '500201', 4: '400'}
+332	332		301							"{1: '1', 2: 'Vanessa', 3: ""I don't agree with letting her go to the Babel Tower."", 4: '1'}"
+333	333		301							{2: 'Simon', 3: 'But she mentioned the connection between the two mirror shards. If our goal is to defeat the Mirror Demon, sending her to the Babel Tower is an essential step.', 4: '2'}
+334	334		301				DialogDisable			"{2: 'Vanessa', 3: ""That's just her one-sided claim."", 4: '1'}"
+335	335		202							{1: '1', 2: '2'}
+336	336		401							{1: '2', 2: '1099'}
+337	337		509						350.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png', 2: '2'}
+338	338		201							{1: '13', 2: '500004', 4: '450'}
+339	339		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '13'}
+340	340		301			DialogEnable	AniZhuanchangBegin			{1: '1', 2: 'Asimov', 3: 'Hmm...', 4: '13'}
+341	341		401							{1: '1', 2: '36'}
+342	342		502							{1: 'DialogDisable'}
+343	343		510						350.0	{1: '2', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+344	344		202							{1: '13', 6: '1'}
+345	345		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '13'}
+346	346		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1268.jpg'}
+347	347		104				AniZhuanchangEnd			{1: '250|-100|-200', 2: '0'}
+348	348		401							{1: '1', 2: '169'}
+349	349		201							{1: '1', 2: '501260', 3: '14'}
+350	350		301			DialogEnable				{1: '1', 3: 'Lyca leans against the doorframe, occasionally catching scattered words from inside.'}
+351	351		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+352	352		204							{1: '1', 2: '8'}
+353	353		301							{3: 'Each fragmented phrase tugs at her—hope flaring one moment, disappointment crashing in the next.'}
+354	354		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+355	355		204							{1: '1', 2: '14'}
+356	356		301				AniZhuanchangBegin			{2: 'Lyca', 3: 'Dad...', 4: '1'}
+357	357		202							{1: '1', 6: '1'}
+358	358		502							{1: 'DialogDisable'}
+359	359		502							{1: 'AniZhuanchangEnd'}
+360	360		301			DialogEnable	DialogDisable			{3: '20 minutes pass by before the voices finally still. Lyca realizes that a decision has been made.'}
+361	361		104						800.0	{1: '0|0|0', 2: '0.8'}
+362	362		201							{1: '1', 2: '501260', 3: '14', 4: '-350'}
+363	363		201							{1: '2', 2: '500555', 3: '4', 4: '400'}
+364	364		401							{1: '2', 2: '743'}
+365	365		203							{1: '2', 2: '0.3', 3: '250'}
+366	366		301			DialogEnable				{1: '1', 3: 'As the wooden door creaks open again, Vanessa appears before Lyca.'}
+367	367		301							{2: 'Vanessa', 3: 'Tsk...', 4: '2'}
+368	368		301		1		AniZhuanchangBegin			{2: 'Vanessa', 3: 'You can go as you wish. Bridget will take you to the Babel Tower.', 4: '2'}

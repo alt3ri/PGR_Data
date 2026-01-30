@@ -1,0 +1,25 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '5'}
+3	3		201							{1: '1', 2: '1021001'}
+4	4		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'As the Support Force member said, can I trouble you to help me decide on a new look for the frame, Commandant?', 4: '1'}
+5	5		302							"{2: ""I can't really decide so suddenly."", 3: '6', 4: ""I think it's already great as it is."", 5: '7'}"
+6	6	8	301							{2: 'Lucia', 3: 'The Support Force already sent me a few sketches, Commandant, maybe you can choose one from them...', 4: '1'}
+7	7		301							{2: 'Lucia', 3: '...The original, no, the Support Force already sent me a few sketches, Commandant, maybe you can choose a more suitable one...', 4: '1'}
+8	8		201							{1: '1', 2: '1011001'}
+9	9		301							{1: '1', 2: 'Lee', 3: 'For the record, I have to say, none of these sketches should ever be approved.', 4: '1'}
+10	10		203							{1: '1', 2: '0.25', 3: '400'}
+11	11		201							{1: '2', 2: '1021001', 4: '-400'}
+12	12		301							{1: '1', 2: 'Lucia', 3: 'Lee?', 4: '2'}
+13	13		301							"{2: 'Lee', 3: ""I don't know who submitted these, but no one would want to lay their eyes on a gorilla or a pitch-black version of Lucia."", 4: '1'}"
+14	14		301							"{2: 'Lee', 3: ""It's not only meaningless but it'll also cause immense damage to our team's overall image."", 4: '1'}"
+15	15		202							{1: '1', 6: '1'}
+16	16		203							{1: '2', 2: '0.25', 3: '0'}
+17	17		301							{2: 'Lucia', 3: 'I never thought Lee would be so against it... What if I chose a design similar to my current frame?', 4: '2'}
+18	18		302							"{2: ""Similar designs... What's the difference?"", 3: '19'}"
+19	19		301							{2: 'Lucia', 3: '...The hairstyle changed.', 4: '2'}
+20	20		301							{2: 'Lucia', 3: 'Because... The twin tails...', 4: '2'}
+21	21		302							{2: 'Twin tails?', 3: '23', 4: 'I think that looks great.', 5: '22'}
+22	22		301							{2: 'Lucia', 3: 'It looks good, but this hairstyle...', 4: '2'}
+23	23		301							"{2: 'Lucia', 3: ""...They don't make sense on the battlefield."", 4: '2'}"
+24	24		301		1		AniZhuanchangBegin			"{2: 'Lucia', 3: ""I don't think twin tails should appear in battle."", 4: '2'}"

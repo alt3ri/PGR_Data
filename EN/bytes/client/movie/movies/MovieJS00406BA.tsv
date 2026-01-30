@@ -1,0 +1,49 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory672.jpg'}
+2	2		401							{1: '1', 2: '5'}
+3	3		201							{1: '1', 2: '500494', 3: '13'}
+4	4		301			DialogEnable				{1: '1', 2: 'Karenina', 3: 'Here we go... and here... Alright, think we can call it a day here.', 4: '1'}
+5	5		301							"{2: 'Karenina', 3: ""We're done for the day. We can start with paving tomorrow, and hopefully we'll be done with reconstructing the area by the end of this month."", 4: '1'}"
+6	6		302							{2: 'Thank you, Karenina.', 3: '7'}
+7	7		204							{1: '1', 2: '1'}
+8	8		301							"{1: '1', 2: 'Karenina', 3: ""Nah. We're glad to have you here to help when you're supposed to be off duty."", 4: '1'}"
+9	9		301							{2: 'Karenina', 3: 'Although I never really asked you for help in the first place...', 4: '1'}
+10	10		302							"{2: ""Couldn't help but notice how busy you were."", 3: '11'}"
+11	11		204							{1: '1', 2: '13'}
+12	12		301							{2: 'Karenina', 3: 'And do you see what your kindness always gets you?!', 4: '1'}
+13	13		204							{1: '1', 2: '14'}
+14	14		301							"{2: 'Karenina', 3: ""W-well, I mean... You see, all I'm trying to say is it never hurts to be a little nicer to yourself. Never mind."", 4: '1'}"
+15	15		204							{1: '1', 2: '12'}
+16	16		502							{1: 'DialogDisable'}
+17	17		302							"{2: ""Well, nothing beats hanging out after a good day's of work, I suppose?"", 3: '18'}"
+18	18		302							{2: 'Some mechanoid started a drink bar down at Main.', 3: '19'}
+19	19		302							{2: 'And apparently they started selling drinks to Constructs, too. Wanna give it a try?', 3: '20'}
+20	20		301			DialogEnable				{2: 'Karenina', 3: 'Their drinks always come with a gasoline smell, though...', 4: '1'}
+21	21		204							{1: '1', 2: '1'}
+22	22		301							"{2: 'Karenina', 3: ""Don't get me wrong—I do want to go, but I'm afraid I'll have to take a rain check today because I have a meeting to catch at WGAA."", 4: '1'}"
+23	23		302							{2: 'A meeting, you said?'}
+24	24		204							{1: '1', 2: '4'}
+25	25		301							"{2: 'Karenina', 3: ""Remember how they're trying to rebuild Constellia? I just hope they can actually spend some time going over basic math and structural mechanics before coming up with whatever plans they have..."", 4: '1'}"
+26	26		301							"{2: 'Karenina', 3: ""A meeting with them usually lasts for two to three hours, but I've grown used to that."", 4: '1'}"
+27	27		204							{1: '1', 2: '13'}
+28	28		301							{2: 'Karenina', 3: 'My job is to make their needs realistically achievable, and turn those realistically achievable needs into humanly acceptable tasks for my people to work on.', 4: '1'}
+29	29		302							{2: 'Sounds like a handful.', 3: '30'}
+30	30		204							{1: '1', 2: '1'}
+31	31		301							"{2: 'Karenina', 3: ""That's the life of a captain for ya."", 4: '1'}"
+32	32		301							"{2: 'Karenina', 3: 'And talking to them isn\'t always a waste of time. How does that saying go again? ""Beauty is in the eye of the beholder."" Engineering is beautiful in its own way, and I pick up useful knowledge here and there every now and then.', 4: '1'}"
+33	33		302							{2: 'Count me in, then.'}
+34	34		204							{1: '1', 2: '7'}
+35	35		301							{2: 'Karenina', 3: 'Uh, what? I mean, I could totally do that, but...', 4: '1'}
+36	36		502							{1: 'DialogDisable'}
+37	37		302							"{2: ""I'm in frequent contact with WGAA, so it's all good."", 3: '38'}"
+38	38		204							{1: '1', 2: '12'}
+39	39		302							{2: 'We just might be able to hang out somewhere if we get the meeting over with fast enough.', 3: '40'}
+40	40		204							{1: '1', 2: '1'}
+41	41		301			DialogEnable				{2: 'Karenina', 3: 'Well... as far as efficiency goes, you do have a point there...', 4: '1'}
+42	42		502							{1: 'DialogDisable'}
+43	43		302							"{2: ""You've never taken a good look at the area you rebuilt, have you?"", 3: '44'}"
+44	44		302							{2: 'Which makes it a perfect chance for you to reexamine it and judge it from an aesthetic perspective, no?', 3: '45'}
+45	45		301			DialogEnable				"{2: 'Karenina', 3: ""Alright, alright. Point taken. Let's stop with the persuasion here."", 4: '1'}"
+46	46		301							"{2: 'Karenina', 3: ""I haven't taken a good look at the city since I came down to Earth this time, though."", 4: '1'}"
+47	47		301							"{2: 'Karenina', 3: ""And never have I imagined I'd be doing that with you... Uh-hum, 'nuff said."", 4: '1'}"
+48	48		301		1		AniZhuanchangBegin			"{2: 'Karenina', 3: ""Anyhow, let's get going, shall we?"", 4: '1'}"

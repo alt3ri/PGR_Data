@@ -1,0 +1,111 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+2	2		401							{1: '1', 2: '386'}
+3	3		301			DialogEnable				"{3: ""You've heard that Constellia's east district is lined with beautiful decorations for the Double Seventh Festival. Out of curiosity—and because Luna once said she was a little interested—you both agreed to come see them.""}"
+4	4		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.5', 5: '0.5'}
+5	5		401							{1: '2', 2: '214'}
+6	6		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '1'}
+7	7		301							"{3: ""You haven't been walking long when you hear the sound of light rain. A fine mist starts to fall, covering the streets in a soft, silvery layer.""}"
+8	8		201							{1: '1', 2: '500884'}
+9	9		301				DialogDisable			"{1: '1', 2: 'Luna', 3: ""Looks like this rain won't stop any time soon."", 4: '1'}"
+10	10		302							{2: 'Yeah... seems that way.', 3: '11'}
+11	11		202							{1: '1'}
+12	12		401							{1: '2', 2: '2597'}
+13	13		301			DialogEnable				{3: 'You check your terminal. The rain is expected to last at least another thirty minutes.'}
+14	14		302							{2: '(Share this info with Luna)', 3: '15'}
+15	15		301							{3: 'She stands quietly beneath the eaves, her expression calm as she gazes out into the rain.'}
+16	16		201							{1: '1', 2: '500884', 3: '4'}
+17	17		301							{1: '1', 2: 'Luna', 3: 'More people are showing up.', 4: '1'}
+18	18		202							{1: '1', 6: '1'}
+19	19		306							{1: '1'}
+20	20		301							"{3: ""You've noticed it too. Small groups of tourists are rushing toward the nearest shelter. Luna's presence is unique. If she stays in a crowd too long, it's bound to draw attention.""}"
+21	21		301				DialogDisable			"{3: ""And she's never liked being in crowds anyway.""}"
+22	22		306							
+23	23		302				AniZhuanchangBegin			{2: 'Then...', 3: '24'}
+24	24		502						400.0	{1: 'DialogEnable'}
+25	25		301			AniZhuanchangEnd				{3: 'To help those who enjoy walking in the rain, the event organizers have prepared umbrellas. You contact them and share your location. A moment later, someone brings you an umbrella. However...'}
+26	26		302							{2: 'Just one?', 3: '27'}
+27	27		301							"{3: ""Didn't I mention there were two of us?""}"
+28	28		201							{1: '1', 2: '500488', 5: '-250', 6: '400'}
+29	29		301							"{1: '1', 2: 'Event Staff', 3: 'Oh, you needed two? I thought this was the ""share one umbrella"" activity. I\'ll go grab another right away—', 4: '1'}"
+30	30		202							{1: '1', 6: '1'}
+31	31		201							{1: '1', 2: '500884'}
+32	32		301							{1: '1', 2: 'Luna', 3: 'No need.', 4: '1'}
+33	33		202							{1: '1'}
+34	34		401							{1: '2', 2: '5327'}
+35	35		301							{3: 'Before the staff member can finish, Luna has already taken the folding umbrella and opened it with a soft pop.'}
+36	36		306							{1: '1'}
+37	37		301							"{3: ""The umbrella is clearly designed for the festival. Its paper-like material has a delicate texture, and it's decorated with pairs of magpies in flight.""}"
+38	38		306							
+39	39		301							{3: 'She holds it out to you.'}
+40	40		201							{1: '1', 2: '500884'}
+41	41		301				AniZhuanchangBegin			"{1: '1', 2: 'Luna', 3: ""Let's go, 【kuroname】."", 4: '1'}"
+42	42		202							{1: '1'}
+43	43		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory672.jpg'}
+44	44		301			AniZhuanchangEnd				{3: 'The umbrella is smaller than you expected. As you walk, your shoulders bump lightly together as you try to stay out of the rain.'}
+45	45		301							{3: 'The rain blurs the streets around you. The noise of the crowd fades, leaving only the quiet, steady sound of rain on the umbrella.'}
+46	46		301							"{3: ""You can understand why those mechanoids would risk rusting just to make it rain. For certain people, this kind of moment might feel romantic. Then again, you remember Luna's feelings about rain...""}"
+47	47		302							{2: 'Luna, do you not like rainy days?', 3: '48'}
+48	48		201							{1: '1', 2: '500884', 3: '4'}
+49	49		301							"{1: '1', 2: 'Luna', 3: ""Not really. I don't like the feeling of getting wet."", 4: '1'}"
+50	50		202							{1: '1'}
+51	51		301							{3: 'You notice her eyebrows draw together slightly. Maybe rain reminds her of the difficult days when she had nowhere to go. Cold, wet weather probably carries bad memories.'}
+52	52		301							"{3: ""You're still thinking about it when Luna suddenly stops. She turns to look at you. Her eyes are bright and focused.""}"
+53	53		302							{2: 'What is it?', 3: '54'}
+54	54		301							{3: 'She lets out a quiet sigh.'}
+55	55		201							{1: '1', 2: '500884', 3: '4'}
+56	56		301							"{1: '1', 2: 'Luna', 3: ""I'll walk instead."", 4: '1'}"
+57	57		302							{2: 'There are puddles on the ground. Your shoes will get soaked.'}
+58	58		301							"{2: 'Luna', 3: ""It's fine."", 4: '1'}"
+59	59		202							{1: '1'}
+60	60		401							{1: '2', 2: '4812'}
+61	61		301							{3: 'She gently lands on the wet stone path. Strangely, the puddles seem to pull away from her, forming ripples that move outward and vanish, leaving the ground around her completely dry.'}
+62	62		302							{2: 'How did you do that?', 3: '63', 4: 'Impressive.', 5: '65'}
+63	63		201							{1: '1', 2: '500884'}
+64	64	67	301							"{1: '1', 2: 'Luna', 3: ""You don't need to understand everything about the Punishing."", 4: '1'}"
+65	65		201							{1: '1', 2: '500884'}
+66	66		301							{1: '1', 2: 'Luna', 3: 'For an agent, this is nothing special.', 4: '1'}
+67	67		202							{1: '1'}
+68	68		301							{3: 'You continue walking side by side, but your eyes keep drifting toward her.'}
+69	69		301							{3: 'Usually, she hovers just a little higher than you. Now, the subtle shift in height makes the moment feel unexpectedly new.'}
+70	70		402							{1: '2597'}
+71	71		301							{3: 'The rain keeps falling. The outside world grows quieter, cut off by the curtain of rain. All that remains is the quiet space under your shared umbrella.'}
+72	72		301							{3: 'After a while, Luna stops again.'}
+73	73		201							{1: '1', 2: '500884'}
+74	74		301							{1: '1', 2: 'Luna', 3: '...', 4: '1'}
+75	75		202							{1: '1'}
+76	76		301							"{3: ""She slowly turns toward you with an odd expression. It's a mix of annoyance and something else... maybe awkwardness?""}"
+77	77		302							{2: 'What now?'}
+78	78		201							{1: '1', 2: '500884', 3: '4'}
+79	79		301							{1: '1', 2: 'Luna', 3: '【kuroname】... your shoulder. You should be careful.', 4: '1'}
+80	80		202							{1: '1'}
+81	81		301							"{3: ""You follow her gaze and suddenly realize what happened. You've been tilting the umbrella toward her side without thinking. Her shoulder is dry, but yours is already soaked.""}"
+82	82		302							{2: 'Thanks for the reminder.', 3: '83'}
+83	83		301							"{3: ""You shift the umbrella a bit closer to your side. As you do so, you remember the moment when Luna stopped walking earlier. The way she looked at you then—like she wanted to say something but didn't—it's the same look she's giving you now.""}"
+84	84		302							{2: 'Wait, is that why you insisted on walking earlier? Because of this?', 3: '85'}
+85	85		301							"{3: ""Luna doesn't answer. She just looks away. That alone confirms your guess.""}"
+86	86		301							"{3: ""She noticed the tilted umbrella back then too. She probably thought it was her floating height that caused it, and that she was the reason you couldn't stay dry.""}"
+87	87		201							{1: '1', 2: '500884', 3: '4'}
+88	88		301							"{1: '1', 2: 'Luna', 3: ""You didn't even notice your shoulder was wet? Idiot."", 4: '1'}"
+89	89		301				DialogDisable			{3: 'Her voice is soft, with a trace of resignation lingering in her final words.'}
+90	90		302							{2: 'Well, this umbrella is pretty small.', 3: '91'}
+91	91		302							"{2: ""Actually, couldn't you just use your power again to keep the rain away? If you did that, we wouldn't need, ouch—"", 3: '92'}"
+92	92		202							{1: '1'}
+93	93		301			DialogEnable				{3: 'Before you finish, you feel a sharp pain in your foot. You look down to see Luna pressing her shoe lightly but firmly against your toes.'}
+94	94		201							{1: '1', 2: '500884', 3: '4'}
+95	95		301							{1: '1', 2: 'Luna', 3: '...', 4: '1'}
+96	96		301							"{3: ""She doesn't say a word, but it's clear that using her powers as a personal rain shield is not an option.""}"
+97	97		302							{2: 'Then... what if we just moved a little closer?', 3: '98'}
+98	98		301							"{2: 'Luna', 3: ""That's probably the best idea."", 4: '1'}"
+99	99		203							{1: '1', 2: '0.35', 5: '-100'}
+100	100		301							"{3: ""She gives a barely audible reply and inches a little closer to you. The space under the umbrella is already tight. Now, you can feel each other's breath.""}"
+101	101		202							{1: '1'}
+102	102		301							{3: 'The slanted rain patters softly above you. The streets in the distance are blurry, but the small world under the umbrella feels still and peaceful.'}
+103	103		301							{3: 'After a short silence, Luna speaks again, returning to the topic from earlier.'}
+104	104		201							{1: '1', 2: '500884', 3: '4'}
+105	105		301							"{1: '1', 2: 'Luna', 3: ""Getting wet really isn't pleasant. Rain carries a lot of dust and particles too..."", 4: '1'}"
+106	106		202							{1: '1'}
+107	107		301							{3: 'She pauses. Her eyes drift to the misty street outside the umbrella, then back to the small, clear space you now share.'}
+108	108		301							{3: 'A faint smile forms at the corner of her lips.'}
+109	109		201							{1: '1', 2: '500884', 3: '1'}
+110	110		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Luna', 3: ""But once in a while, a rainy day like this isn't all bad."", 4: '1'}"

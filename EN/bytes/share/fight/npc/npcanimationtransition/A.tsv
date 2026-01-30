@@ -1,0 +1,53 @@
+Role	Layer	State	Target	TransitionDuration
+A			Stand1	
+A			Stand2	
+A			Standchange	
+A			Run	
+A			Walk	
+A			Death	
+A			Hit1	
+A			Hit2	
+A			Behitfly	
+A			Hover	
+A			Hoverhit	
+A			Falldown	
+A			Hitdown	
+A			Lieonfloor	
+A			Standup	
+A			Straight	
+A			Stun	
+A			TurnLeft	
+A			TurnRight	
+A			StraightBefore	
+A			StraightAfter	
+A			Attack01	
+A			Attack02	
+A			Attack03	
+A			Attack11	
+A			Attack12	
+A			Attack21	
+A			Attack31	
+A			Attack32	
+A			Attack33	
+A			Move1	
+A			Move2	
+A		Stand1	Stand2	
+A		Stand2	StandChange	
+A		Stand2	Run	
+A		Stand2	Walk	
+A		Standchange	Stand1	
+A		Run	Stand2	
+A		Walk	Stand2	
+A		Hit1	Stand2	
+A		Hit2	Stand2	
+A		Behitfly	Hover	
+A		Hover	HoverHit	
+A		Hover	Falldown	
+A		Hoverhit	Hover	
+A		Hoverhit	HoverHit	
+A		Falldown	Lieonfloor	
+A		Hitdown	Lieonfloor	
+A		Lieonfloor	Standup	
+A		Standup	Stand2	
+A		Straight	Stand2	
+A		Stun	Stand2	

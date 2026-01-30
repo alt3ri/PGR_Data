@@ -1,0 +1,37 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cgqz602.jpg'}
+2	2		401							{1: '1', 2: '207'}
+3	3		301			DialogEnable				"{2: 'Bruce', 3: ""...Don't stop! Watanabe!""}"
+4	4		301							{2: 'Watanabe', 3: '...!'}
+5	5		301							{2: 'Watanabe', 3: 'Ugh... this stench of blood...'}
+6	6		301							"{2: 'Watanabe', 3: ""The floor... it's all...""}"
+7	7		301							"{2: 'Bruce', 3: ""It's the recon team sent here by HQ before...""}"
+8	8		301							{2: 'Bruce', 3: 'Their trails end here...'}
+9	9		301							{2: 'Bruce', 3: 'They all... died...'}
+10	10		301							{2: 'Bruce', 3: 'Are you okay, Watanabe?'}
+11	11		301							"{2: 'Watanabe', 3: ""I still can't... in an actual battlefield—I lied.""}"
+12	12		301							"{2: 'Bruce', 3: ""Don't mourn the dead with sorrow, Watanabe.""}"
+13	13		301							{2: 'Bruce', 3: 'Let them become your power to carry on.'}
+14	14		401							{1: '2', 2: '1514'}
+15	15		301				AniZhuanchangBegin			"{2: 'Watanabe', 3: ""...Let's go back.""}"
+16	17		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory55.jpg'}
+17	18		401							{1: '2', 2: '1502'}
+18	19		301			AniZhuanchangEnd				{3: '...'}
+19	20		201							{1: '1', 2: '500062'}
+20	21		301							{1: '1', 2: 'Bruce', 3: 'Regrouping team. Stationing here. Oasis team 2, split and prepare to head out.', 4: '1'}
+21	22		203							{1: '1', 2: '0.25', 3: '450'}
+22	23		201							{1: '2', 2: '500063', 4: '-450'}
+23	24		301							{1: '1', 2: 'Watanabe', 3: 'Where are you bringing them, Bruce?', 4: '2'}
+24	25		301							{2: 'Bruce', 3: 'The map shows a church in the snowfields up ahead north, there might be people left in there...', 4: '1'}
+25	26		301							"{2: 'Watanabe', 3: ""...The recon team's only gotten as far as this place. If we go any further—"", 4: '2'}"
+26	27		301							{2: 'Watanabe', 3: 'What greets you will be a church full of mechanoid monsters, as for any citizens left... There will only be machines.', 4: '2'}
+27	28		301							{2: 'Bruce', 3: 'No matter how hopeless, as long as I can save someone...', 4: '1'}
+28	29		301							"{2: 'Watanabe', 3: ""You're just going on a suicide mission!"", 4: '2'}"
+29	30		301							{2: 'Bruce', 3: 'Watanabe, stay with the main team, and station here as well!', 4: '1'}
+30	31		301							{2: 'Watanabe', 3: 'Bruce!!', 4: '2'}
+31	32		301							{2: 'Bruce', 3: 'This is an order! I hold the right to command for team Oasis!', 4: '1'}
+32	33		301							{2: 'Watanabe', 3: '...', 4: '2'}
+33	34		301							"{2: 'Bruce', 3: ""I'll be back here in an hour..."", 4: '1'}"
+34	35		301							"{2: 'Bruce', 3: ""As a soldier, we must ensure the civilians' safety before our own and save as many lives as possible."", 4: '1'}"
+35	36		301							"{2: 'Bruce', 3: ""If there really are survivors in the church waiting for help... and we're here as well, then we cannot turn a blind eye."", 4: '1'}"
+36	37		301		1		AniZhuanchangBegin			"{2: 'Bruce', 3: ""...It'll be fine, Watanabe."", 4: '1'}"

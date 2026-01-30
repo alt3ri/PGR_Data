@@ -1,0 +1,63 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory28.jpg'}
+2	100		401							{1: '1', 2: '201'}
+3	2		201							{1: '1', 2: '1021001'}
+4	3		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'Who are you... And why do you know me?', 4: '1'}
+5	4		201							{1: '1', 2: '1101001'}
+6	5		301							{1: '1', 2: '???', 3: '...'}
+7	6		202							{1: '1', 2: '2', 6: '1'}
+8	7		201							{1: '1', 2: '1081001', 3: '1', 4: '-400'}
+9	8		201							{1: '2', 2: '1021001', 4: '400'}
+10	9		301							{1: '1', 2: 'Kamui', 3: 'Hey, Watanabe! Long time no see!', 4: '1'}
+11	10		301							{2: 'Lucia', 3: 'Wata... nabe?', 4: '2'}
+12	11		301							{2: 'Kamui', 3: 'We trained together for a while in the beginning and Watanabe was in our group.', 4: '1'}
+13	12		301							{2: 'Kamui', 3: 'Did you forget that too?', 4: '1'}
+14	13		301							{2: 'Lucia', 3: '...', 4: '2'}
+15	14		202							{1: '1', 2: '2', 6: '1'}
+16	15		201							{1: '1', 2: '1101001'}
+17	16		301							"{1: '1', 2: 'Watanabe', 3: ""It doesn't matter, I'm glad to cut all ties with you Babylonians."", 4: '1'}"
+18	17		301							"{2: 'Watanabe', 3: ""You guys should be glad that it's just me here, if it were my comrades, they'd have cut you into pieces by now."", 4: '1'}"
+19	18		201							{1: '1', 2: '1031001', 3: '7'}
+20	19		301							{1: '1', 2: 'Liv', 3: '...!', 4: '1'}
+21	20		204							{1: '1'}
+22	21		203							{1: '1', 2: '0.25', 3: '400'}
+23	22		201							{1: '2', 2: '1101001', 4: '-400'}
+24	23		301							{1: '1', 2: 'Watanabe', 3: 'No need to be so surprised, missy.', 4: '2'}
+25	24		301				AniZhuanchangBegin			{2: 'Watanabe', 3: 'If you knew what those people up in Babylonia did to us soldiers of the past...', 4: '2'}
+26	25		202							{1: '1', 2: '2', 6: '1'}
+27	26		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg408_1.jpg'}
+28	27		301			AniZhuanchangEnd				{2: 'Liv', 3: 'According to historical records, during the big evacuation, the World Government at that time did abandon some Ground Forces...'}
+29	28		301							"{2: 'Liv', 3: 'These troops cut their connections with Babylonia, and only recently surfaced again as the ""Forsaken"".'}"
+30	29		301				AniZhuanchangBegin			{2: 'Liv', 3: 'And you, Mr. Watanabe, chose to join their forces as a Construct from Babylonia... and was listed as a defected Construct...'}
+31	30		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory28.jpg'}
+32	31		201							{1: '1', 2: '1101001', 4: '-400'}
+33	32		201							{1: '2', 2: '1031001', 4: '400'}
+34	33		301			AniZhuanchangEnd				{1: '1', 2: 'Watanabe', 3: 'You know a lot, little girl... You must be their most advanced Support Construct.', 4: '1'}
+35	34		301							{2: 'Liv', 3: 'Ugh...', 4: '2'}
+36	35		301							"{2: 'Watanabe', 3: ""Looks like being able to see you with my own eyes means I didn't let you guys go in vain."", 4: '1'}"
+37	36		204							{1: '2', 2: '6'}
+38	37		301							{2: 'Liv', 3: 'Um...', 4: '2'}
+39	38		202							{1: '1', 2: '2', 6: '1'}
+40	39		201							{1: '1', 2: '1021001'}
+41	40		301							{1: '1', 2: 'Lucia', 3: 'Stay away from Liv.', 4: '1'}
+42	41		201							{1: '1', 2: '1101001'}
+43	42		301							{1: '1', 2: 'Watanabe', 3: '...', 4: '1'}
+44	43		301							{2: 'Watanabe', 3: 'Lucia, is this your new commandant?', 4: '1'}
+45	44		301							"{3: ""Watanabe tries to step forward, but Lee raises his gun and points the barrel at Watanabe's head.""}"
+46	45		301							{2: 'Watanabe', 3: 'You once helped me out, Lucia. Even though it was trivial...', 4: '1'}
+47	46		301							"{2: 'Watanabe', 3: ""However, I still want to express my gratitude. That way, I won't be in debt to either of you."", 4: '1'}"
+48	47		204							{1: '1', 2: '1'}
+49	48		301							"{2: 'Watanabe', 3: ""Here, it's a gift."", 4: '1'}"
+50	49		301							{3: 'Watanabe takes out a white box and hands it over.'}
+51	50		302							{2: '(Accept.)', 3: '53', 4: '(Decline.)', 5: '51'}
+52	51		204							{1: '1'}
+53	52		301							{3: 'Watanabe insists on handing over the box.'}
+54	53		301							{2: 'Watanabe', 3: 'This is a specialty of this desert area, an unnamed wild mint.', 4: '1'}
+55	54		301							{3: 'Watanabe starts chewing on a mint leaf.'}
+56	55		301							{2: 'Watanabe', 3: 'We have it as a snack or to make tea... Sure beats the heat walking in the desert.', 4: '1'}
+57	56		201							{1: '1', 2: '1031001', 3: '1'}
+58	57		301							{1: '1', 2: 'Liv', 3: 'Sure smells strong... The commandant looks a bit more awake just by smelling it, hehe.', 4: '1'}
+59	58		201							{1: '1', 2: '1101001', 3: '1'}
+60	59		301							{1: '1', 2: 'Watanabe', 3: 'See what I mean?', 4: '1'}
+61	60		201							{1: '1', 2: '1011001', 3: '10'}
+62	61		301		1		AniZhuanchangBegin			{1: '1', 2: 'Lee', 3: '...', 4: '1'}

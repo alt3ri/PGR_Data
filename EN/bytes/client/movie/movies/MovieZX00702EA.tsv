@@ -1,0 +1,13 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory33.jpg'}
+2	2		401							{1: '1', 2: '101'}
+3	3		201							{1: '1', 2: '1091001', 4: '400'}
+4	4		201							{1: '3', 2: '1011001', 4: '-400'}
+5	5		301			DialogEnable				{1: '1', 2: 'Bianca', 3: 'The target has a highly robust defensive structure, we cannot destroy it in a short amount of time.', 4: '1'}
+6	6		202							{1: '3', 6: '1'}
+7	7		201							{1: '2', 2: '1021001', 4: '-400'}
+8	8		301							"{1: '1', 2: 'Lucia', 3: ""We can't let it go on. The ruins aren't going to hold."", 4: '2'}"
+9	9		301							"{2: 'Lucia', 3: ""Everybody, stay back. Let's return to the safe zone near the entrance."", 4: '2'}"
+10	10		202							{1: '2', 6: '1'}
+11	11		201							{1: '3', 2: '1031001', 4: '-400'}
+12	12		301		1		AniZhuanchangBegin			{1: '1', 2: 'Liv', 3: 'Commandant, over here.', 4: '3'}

@@ -1,0 +1,419 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory744.jpg'}
+2	2		401							{1: '1', 2: '120'}
+3	3		201							{1: '1', 2: '500005'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Mercenary 1', 3: ""Well then, Dear Specialist, we'll take our leave now."", 5: '1'}"
+5	5		202							{1: '1'}
+6	6		301							"{3: ""After entering City 141, the transport vehicle stops at the entrance of a forest on the city's outskirts.""}"
+7	7		301							{3: 'Throughout the journey, you try to extract information about Leibowitz from the soldiers, but you are met only with blank stares, leaving you empty-handed.'}
+8	8		301							{3: 'The reason, most likely, has everything to do with their position.'}
+9	9		301							"{3: ""As mercenaries, they merely accepted the company's commission to help escort the specialist to City 141. They aren't official company employees, so naturally they know nothing about its internal affairs.""}"
+10	10		301							{3: 'The task of gathering intelligence will have to fall on your shoulders alone.'}
+11	11		502						500.0	{1: 'RImgBg1BlowUp'}
+12	12		301							"{3: 'After a brief farewell, the vehicle sent by the ""Academy"" slowly makes its way toward the nearby City 141.'}"
+13	13		401							{1: '2', 2: '2902'}
+14	14		301				AniZhuanchangBegin			"{3: ""Past the damaged city walls, a winding path carpeted with soft moss and fallen leaves stretches forward. Beyond the road's end stands a surprisingly intact structure—""}"
+15	15		505							{1: 'RImgBg1BlowUp'}
+16	16		104							{2: '0'}
+17	17		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1212.jpg'}
+18	18		301			AniZhuanchangEnd				{3: 'A white building of classical architecture comes into view.'}
+19	19		401							{1: '2', 2: '759'}
+20	20		301							{3: 'Sunlight grows melancholy through the thin mist, and even the chirping of birds has fallen into silence.'}
+21	21		301							"{3: ""Despite being the season of nature's renewal, everything here seems veiled in pale shadows.""}"
+22	22		301							"{3: 'Checking the image on the ID card—Gestrig, an academy under Leibowitz\'s jurisdiction.\\nThis is where ""you"" are supposed to report for duty.'}"
+23	23		301				DialogDisable			{3: 'Looking up from the ID card, you scan your surroundings.'}
+24	24		401							{1: '2', 2: '2915'}
+25	25		306						250.0	{1: '1'}
+26	26		502						500.0	{1: 'RImgBg1BlowUp'}
+27	27		201						50.0	{1: '1', 2: '501208', 4: '-600', 7: '1'}
+28	28		203						500.0	{1: '1', 2: '2', 3: '-600', 5: '-800'}
+29	29		202						250.0	{1: '1'}
+30	30		201						50.0	{1: '2', 2: '501205', 4: '600', 7: '1'}
+31	31		203						500.0	{1: '2', 2: '2', 3: '600', 5: '-800'}
+32	32		202						250.0	{1: '2'}
+33	33		201						50.0	{1: '3', 2: '501208', 4: '-300', 7: '1'}
+34	34		203						500.0	{1: '3', 2: '2', 3: '-300', 5: '-800'}
+35	35		202						250.0	{1: '3'}
+36	36		201						50.0	{1: '4', 2: '501198', 4: '300', 7: '1'}
+37	37		203						500.0	{1: '4', 2: '2', 3: '300', 5: '-800'}
+38	38		202							{1: '4'}
+39	39		402							{1: '2915'}
+40	40		301			DialogEnable				{3: 'As if confirming your suspicions, groups of girls in identical uniforms pass by on the distant path.'}
+41	41		306							
+42	42		301							{3: 'The girl you brought must have been one of them once... Perhaps someone here will recognize her.'}
+43	43		302							{2: 'Excuse me, I was wondering...', 3: '44'}
+44	44		201							{1: '1', 2: '501205'}
+45	45		301							{1: '1', 2: 'Student 1', 3: '...', 4: '1'}
+46	46		401							{1: '2', 2: '1513'}
+47	47		202							{1: '1'}
+48	48		301							{3: 'She bows to you in formal deference, then briskly walks away.\\nYou turn your attention to another girl.'}
+49	49		302							"{2: ""Hello, I'm the new specialist. Where should I report in?"", 3: '50', 4: 'The girl on my back, is she one of your classmates?', 5: '50', 6: 'The girl on my back, what should I do with her?', 7: '50'}"
+50	50		201							{1: '1', 2: '501198'}
+51	51		301							{1: '1', 2: 'Student 2', 3: '...', 4: '1'}
+52	52		202							{1: '1'}
+53	53		301							{3: 'Just like the previous girl, she bows politely but completely ignores what you say.'}
+54	54		301							{3: 'You try questioning several more students, only to receive the same response each time. What... is going on here?'}
+55	55		301							"{3: 'Normally in a ""school,"" an unfamiliar face would easily spark curiosity, but now...'}"
+56	56		301							"{3: ""They all just keep their heads down, silently rushing past you.\\nNot a single one asks any questions—neither about you, nor about the girl you've brought back.""}"
+57	57		301							"{3: ""—No one cares whether she's dead or alive.""}"
+58	58		401							{1: '2', 2: '1516'}
+59	59		301							{3: 'These girls move as if following programmed instructions, mechanically walking toward the academy buildings.'}
+60	60		301							"{3: ""Could it be... that the girl you brought back isn't a student here?""}"
+61	61		301							{3: 'No, they must be from the same place. Dark-colored uniforms stained with reddish-brown vital fluid and battlefield dust. They even have nearly identical hairstyles.'}
+62	62		301							{3: 'But... why would they be sent to battle as students, only to die in desolate wastelands where no one would ever find them?'}
+63	63		301							{3: 'Flowers bloom vibrantly before your eyes while the girl behind you silently fades away.'}
+64	64		301							{3: 'Spring in Gestrig gives one a subtle sense of being torn apart.'}
+65	65		201							{1: '1', 2: '501198'}
+66	66		301							"{1: '1', 2: '?', 3: ""You don't look well, Ewig."", 4: '1'}"
+67	67		203							{1: '1', 2: '0.25', 3: '400'}
+68	68		201							{1: '2', 2: '501194', 4: '-400'}
+69	69		301							"{1: '1', 2: 'Ewig', 3: ""Jetavie hasn't returned, White."", 4: '2'}"
+70	70		202							{1: '1', 2: '2', 6: '1'}
+71	71		104						1000.0	{1: '100|0|-200', 2: '1'}
+72	72		301							{3: 'You take a few steps forward, following the faint sound of voices. In the distance, you see two girls tending plants beside a flower bed.'}
+73	73		201							{1: '1', 2: '501198', 4: '400'}
+74	74		201							{1: '2', 2: '501194', 4: '-400'}
+75	75		301							{1: '1', 2: 'White', 3: 'Are you worried about her?', 4: '1'}
+76	76		301							{3: 'The white-haired girl turns her face toward you, scribbling and sketching in her notebook.'}
+77	77		301							{2: 'Ewig', 3: 'No. As the highest-value individual, her loss would cause enormous damage to the company. That would contradict our operational strategy.', 4: '2'}
+78	78		301							"{2: 'White', 3: 'She already ""graduated,"" didn\'t she? I don\'t understand why she remained here.', 4: '1'}"
+79	79		301							{2: 'White', 3: 'Maybe she just left and will never come back?', 4: '1'}
+80	80		301							{2: 'Ewig', 3: 'The strategy loaded into the highest-value individual prioritizes the protection of humanoid combat units above all else.', 4: '2'}
+81	81		301							"{2: 'Ewig', 3: 'As long as we haven\'t successfully passed the ""final examination,"" she won\'t leave without reason.', 4: '2'}"
+82	82		301							"{2: 'White', 3: 'This might not be her ""strategy,"" but because she... she wants to do this...', 4: '1'}"
+83	83		301							{3: 'The girl known as White speaks with a slight stutter in her voice.'}
+84	84		301							"{2: 'Ewig', 3: 'That doesn\'t explain her behavior. No weapon would ""want"" to do anything—that contradicts our fundamental programming.', 4: '2'}"
+85	85		202							{1: '1', 2: '2'}
+86	86		301							{3: 'Ewig shakes her head.'}
+87	87		301							{3: 'White falls silent. She simply leans down, staring blankly at the white flowers before her.'}
+88	88		201							{1: '1', 2: '501198'}
+89	89		301							"{1: '1', 2: 'White', 3: ""Ewig, it seems we've waited long enough to see the fluorescent chrysanthemums bloom. They glow even in daylight..."", 4: '1'}"
+90	90		202							{1: '1'}
+91	91		401							{1: '2', 2: '911'}
+92	92		301							{3: 'White pulls out a notebook from behind her and begins to write and sketch in it.'}
+93	93		201							{1: '1', 2: '501194'}
+94	94		301							{1: '1', 2: 'Ewig', 3: 'Yes.', 4: '1'}
+95	95		301							{3: 'White, astonished by the brief, unexpected answer, looks up at Ewig.'}
+96	96		301							{3: 'Ewig gazes at the white flowers in a trance-like state. Beneath the petals, a butterfly emerges from its chrysalis.'}
+97	97		204							{1: '1', 2: '8'}
+98	98		203			PanelActor1Shake				{1: '1', 2: '0.25', 4: '-200'}
+99	99		301							"{3: ""She trembles as she crouches down—her newly attached left leg doesn't fit properly—reaching out to touch the empty chrysalis...""}"
+100	100		401							{1: '2', 2: '4802'}
+101	101		203							{1: '1', 2: '0.25', 4: '-300'}
+102	102		104						200.0	{1: '0|100|-100', 2: '0.25'}
+103	103		104						100.0	{2: '0.25'}
+104	104		104						100.0	{1: '0|-50|0', 2: '0.25'}
+105	105		104						100.0	{2: '0.25'}
+106	106		202						250.0	{1: '1'}
+107	107		301							{3: 'Thud—she collapses.'}
+108	108		401							{1: '2', 2: '4432'}
+109	109		301							{3: 'White struggles to help her back up.'}
+110	110		201							{1: '1', 2: '501198'}
+111	111		301							"{1: '1', 2: 'White', 3: 'The last ""test"" left everyone damaged. No. 17, No. 11... they were all lost on the battlefield, weren\'t they?', 4: '1'}"
+112	112		202							{1: '1'}
+113	113		401							{1: '2', 2: '4681'}
+114	114		301							"{3: ""She silently reattaches Ewig's left leg, the connection points making metallic clicking sounds as they lock into place.""}"
+115	115		201							{1: '1', 2: '501198', 4: '400'}
+116	116		201							{1: '2', 2: '501194', 4: '-400'}
+117	117		301							"{1: '1', 2: 'White', 3: ""It's the same for you, Ewig. If Jetavie hadn't disobeyed orders and suddenly pulled back to rescue you from that swarm of Corrupted after your leg was broken, you wouldn't have returned—just like No. 17, right?"", 4: '1'}"
+118	118		301							"{2: 'Ewig', 3: ""I came back. What's the point?"", 4: '2'}"
+119	119		301							"{2: 'White', 3: ""I don't know..."", 4: '1'}"
+120	120		301							{2: 'White', 3: 'You came back, so you can water the flowers with us, right?', 4: '1'}
+121	121		301							{2: 'Ewig', 3: 'One individual is enough to maintain them.', 4: '2'}
+122	122		301							"{2: 'White', 3: ""But looking at these flowers makes you happy, doesn't it?"", 4: '1'}"
+123	123		301							{2: 'Ewig', 3: '...\\nMy visual module does transmit positive emotional signals to my processing center.', 4: '2'}
+124	124		301							{3: 'White watches Ewig silently, observing the vibrant colors reflected in her eyes—Ewig has always been deeply fascinated by all kinds of luminous objects.'}
+125	125		301							"{2: 'Ewig', 3: 'But my ""happiness"" has no meaning in the context of the company\'s interests.', 4: '2'}"
+126	126		301							"{2: 'White', 3: ""That's not the issue. Just... isn't it okay for us to live?"", 4: '1'}"
+127	127		204							{1: '2', 2: '8'}
+128	128		301							{3: 'Ewig shifts her gaze away from the flowers and lets out an almost imperceptible sigh.'}
+129	129		301							"{2: 'Ewig', 3: ""Our existence is meant to maximize the protection of company interests. This has nothing to do with an individual's life or death."", 4: '2'}"
+130	130		204							{1: '2'}
+131	131		301							{2: 'Ewig', 3: 'Having expectations for impractical things only creates unnecessary burden on the emotional module.', 4: '2'}
+132	132		302							{2: 'Excuse me, I was wondering...', 3: '133'}
+133	133		301							{3: 'Finally approaching them, you attempt to assess the situation.'}
+134	134		301							{2: 'White', 3: 'Hello, are you the new... teacher?', 4: '1'}
+135	135		301							{3: 'White quickly identifies you by your attire and the recent notice. After respectfully bowing, she steps back as is customary—'}
+136	136		302							{2: 'Excuse me, but do you know this girl?', 3: '137'}
+137	137		301							{2: 'White', 3: 'Is this... No. 17?', 4: '1'}
+138	138		301							"{3: ""White's processing center pauses momentarily as she turns to look at Ewig, but Ewig clearly has no experience with this kind of situation either...""}"
+139	139		301							"{2: 'White', 3: 'This is... our ""classmate.""', 4: '1'}"
+140	140		301							"{3: 'Having responded with her preset ""script"" to the human before her, White moves to take charge of No. 17.'}"
+141	141		301							"{2: 'White', 3: ""Please let me take her... I'll be responsible for bringing her ba—"", 4: '1'}"
+142	142		401						1000.0	{1: '2', 2: '2886'}
+143	143		301							{3: 'Dong—dong—dong. The tower bells suddenly interrupt her.'}
+144	144		402							{1: '2886'}
+145	145		401							{1: '2', 2: '4331'}
+146	146		202							{1: '1', 2: '2'}
+147	147		301							{3: 'White and Ewig, as if suddenly receiving a command, abruptly turn and walk back toward the academy.'}
+148	148		302							{2: 'Hey!', 3: '149', 4: 'Wait—', 5: '149'}
+149	149		301							{3: 'They proceed without any acknowledgment, walking straight back as if you had vanished.'}
+150	150		401							{1: '2', 2: '4923'}
+151	151		301							{3: 'A broadcast announcement follows.'}
+152	152		301							{3: 'All faculty and students, please gather in the first-floor auditorium.'}
+153	153		301							"{3: ""Even now, no one has told me what to do with No. 17's... remains.""}"
+154	154		201							{1: '1', 2: '501134'}
+155	155		301							{1: '1', 2: 'Company Soldier', 3: 'Hey, you over there, the new specialist! What are you doing?', 4: '1'}
+156	156		301							"{3: ""While searching for someone who can answer your questions, you're suddenly halted by a soldier's sharp command.""}"
+157	157		301							"{2: 'Company Soldier', 3: ""Didn't you hear the broadcast? Go to the first-floor auditorium right now."", 4: '1'}"
+158	158		301							"{2: 'Company Soldier', 3: 'What\'re you carrying? Why are you still lugging around a depleted ""weapon""?', 4: '1'}"
+159	159		302							{2: 'Depleted... weapon?', 3: '160'}
+160	160		301							{2: 'Company Soldier', 3: 'Just leave it here. Someone will take it to the waste recycling station.', 4: '1'}
+161	161		301							"{2: 'Company Soldier', 3: ""Tsk, bringing back a broken weapon... you've caused us quite some trouble."", 4: '1'}"
+162	162		302							{2: 'But, she still...', 3: '163', 4: 'Is this how you treat a warrior who sacrificed herself in battle against the Corrupted?', 5: '163'}
+163	163		301							"{2: 'Company Soldier', 3: ""That's an order."", 4: '1'}"
+164	164		301							{2: 'Company Soldier', 3: 'You only have three chances to disobey orders—whether due to negligence, carelessness, or other factors. After that, the company has the right to terminate your employment immediately.', 4: '1'}
+165	165		301							"{2: 'Company Soldier', 3: ""Don't make me say it twice. Put it down now, then report to the auditorium immediately."", 4: '1'}"
+166	166		302							{2: '...', 3: '167'}
+167	167		301							"{3: ""If you leave her here, she'll probably just be thrown into the waste recycling station, won't she? Isn't there something you can keep to remember her by? Something like a Construct's Nameplate...""}"
+168	168		301							{3: 'While lost in thought, you notice the collar around her neck, marked with the number 17.'}
+169	169		302				AniZhuanchangBegin			{2: 'Please let me keep this.', 3: '170'}
+170	170		401							{1: '1', 2: '36'}
+171	171		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1066.jpg'}
+172	172		202							{1: '1', 6: '1'}
+173	173		401							{1: '1', 2: '209'}
+174	174		301			AniZhuanchangEnd				"{3: ""Following the sound of the bell, you walk toward the academy's auditorium where cold lights flicker throughout the vast chamber.""}"
+175	175		201							{1: '1', 2: '501194'}
+176	176		301							{1: '1', 2: 'Ewig', 3: 'Stand up.', 4: '1'}
+177	177		202							{1: '1'}
+178	178		306							{1: '1'}
+179	179		401							{1: '2', 2: '10042416'}
+180	180		301							{3: 'The students rise from their seats in perfect unison, like a circular wall erected around the room.'}
+181	181		301							{3: 'A chilling display of uniformity.'}
+182	182		502							{1: 'RImgBg1BlowUp'}
+183	183		401							{1: '2', 2: '5291'}
+184	184		301							{3: 'A woman holding a pointer walks toward the podium.'}
+185	185		301							{3: 'Click, clack. Her heels strike the floor with a crisp, measured rhythm, each step distinctly audible in the silent hall.'}
+186	186		301							{3: 'Each step seems precisely measured, carrying an undeniable gravitas until she finally takes her position at the podium.'}
+187	187		505							{1: 'RImgBg1BlowUp'}
+188	188		306							
+189	189		201							{1: '1', 2: '501193'}
+190	190		301							{1: '1', 2: 'Martha', 3: 'Good afternoon, Tactical Command Instructors. I am Martha, the Director of Gestrig Academy.', 4: '1'}
+191	191		301							{3: 'She gives a slight nod of acknowledgment to those seated in the front row, then lifts her gaze to survey the standing students.'}
+192	192		301							{2: 'Martha', 3: 'All humanoid combat units, listen carefully to what I am about to say and the orders that follow.', 4: '1'}
+193	193		301							"{2: 'Martha', 3: 'Yesterday\'s battle was the 5th round of ""testing"" for Gestrig Academy.', 4: '1'}"
+194	194		301							{2: 'Martha', 3: 'After the battle in this test, nearly half of the combat zones have been breached by the Corrupted and reduced to ruins.', 4: '1'}
+195	195		301							{2: 'Martha', 3: 'Three power stations were destroyed, two communication towers were disabled, and approximately 84% of the computing nodes across all battle zones were completely shut down.', 4: '1'}
+196	196		301							{2: 'Martha', 3: 'Total economic damage amounts to 3,178 standard supply units.', 4: '1'}
+197	197		301							"{2: 'Martha', 3: ""I solemnly announce that you have failed the company's 5th round of testing."", 4: '1'}"
+198	198		301							"{3: 'Testing? Is that what this ""academy"" calls such a brutal battle?'}"
+199	199		301							{3: 'Even a casual glance shows that many of the students standing here are severely injured—missing limbs and suffering structural damage.'}
+200	200		301							{3: 'The death of No. 17 is just the tip of the iceberg. Beyond these injured students, how many more have been left forever on the battlefield fighting the Corrupted?'}
+201	201		301							{3: 'Everyone seems desensitized to their broken bodies, standing stiffly and impassively in place.'}
+202	202		301							{3: 'Dead silence.\\nNot even the faint rustle of clothing can be heard.'}
+203	203		301							{3: 'Would children of this age normally maintain such silent stillness in a situation like this?'}
+204	204		301							"{2: 'Martha', 3: ""As Leibowitz's newest weapons, you failed to achieve the company's expected combat results. Frankly, this outcome is incomprehensible."", 4: '1'}"
+205	205		301							"{2: 'Martha', 3: 'The company gave you humanoid bodies, but not so that you, its ""weapons,"" would develop pointless emotions.', 4: '1'}"
+206	206		301							{2: 'Martha', 3: 'In any case, the failure of the fifth test is undoubtedly a heavy blow to us all. The loss of the battle zone will have irreversible consequences on the situation going forward.', 4: '1'}
+207	207		301							{2: 'Martha', 3: 'However, I expect each of you to do your utmost to minimize the impact of this failure.', 4: '1'}
+208	208		301							"{2: 'Martha', 3: 'The company will not give any substantial reward or punishment based on this test\'s outcome, because as long as you pass the ""Final Test""—defending the city\'s inner ring—you will all gain freedom.', 4: '1'}"
+209	209		301							{2: 'Martha', 3: 'Conversely, if you fail, every one of you could be discarded.', 4: '1'}
+210	210		301							{2: 'Martha', 3: 'I expect all of you to remember your place and your mission.', 4: '1'}
+211	211		301							{3: 'Final Test—You had heard that term before in a conversation between White and Ewig.'}
+212	212		301							"{3: ""Pass the Final Test and gain freedom, or fail and face disposal. This was the students' motivation...""}"
+213	213		301							"{3: 'But could these lifeless, puppet-like students truly understand the concept of ""freedom""?'}"
+214	214		301							{2: 'Martha', 3: 'Due to the disastrous consequences of the fifth test round, the previous commandant has been dismissed by the company.', 4: '1'}
+215	215		301							{2: 'Martha', 3: 'Fortunately, as of today, the company has assigned a new specialist to report for duty.', 4: '1'}
+216	216		301							{2: 'Martha', 3: 'I should have been honored to introduce your new instructor to you all. However—', 4: '1'}
+217	217		301							{2: 'Martha', 3: 'However, despite being scheduled to report at 10 AM, this specialist failed to arrive. \\nNot until the 5 PM routine meeting did the specialist finally deign to show up.', 4: '1'}
+218	218		301							"{2: 'Martha', 3: ""I'm deeply curious about what reason this specialist could possibly have for defying company orders just to be late."", 4: '1'}"
+219	219		401							{1: '2', 2: '2711'}
+220	220		306							{1: '1'}
+221	221		301							{3: 'Her icy gaze sweeps across the auditorium, locking onto the only unfamiliar face.', 4: '1'}
+222	222		301							{3: 'Despite standing on the stage, her eyes judge you like a baleful god.', 4: '1'}
+223	223		301							{2: 'Martha', 3: 'Please answer my question, Specialist.', 4: '1'}
+224	224		301							{3: 'An invisible weight presses down on you.'}
+225	225		201							{1: '2', 2: '501135', 4: '-500'}
+226	226		201							{1: '3', 2: '501135', 4: '500'}
+227	227		301							{1: '1', 3: 'Your military instincts quickly identify the source of this pressure: within your visual field alone, no less than 10 fully armed soldiers cast furtive glances your way as Martha poses her question.'}
+228	228		301							"{3: ""While both groups are armed forces, the students' mission is to battle the Corrupted—these soldiers, however, likely serve a different purpose.""}"
+229	229		301							"{3: ""They're likely part of the academy's militarized management system, an intimidation force designed to ensure faculty compliance with orders.""}"
+230	230		301							{3: 'You need to choose your words carefully here.'}
+231	231		202							{1: '2', 2: '3'}
+232	232		306							
+233	233		204							{1: '1'}
+234	234		302							{2: '...I encountered some Corrupted.', 3: '235', 4: 'I was attacked by the Corrupted on my way here.', 5: '235'}
+235	235		301							{2: 'Martha', 3: 'We just completed the 5th test—most of the Corrupted surrounding City 141 have already been eliminated.', 4: '1'}
+236	236		301							"{2: 'Martha', 3: ""In other words, even if you encountered numerous Corrupted, they couldn't possibly have surrounded your route—you could have simply directed the transport vehicle to go around them."", 4: '1'}"
+237	237		301				DialogDisable			"{2: 'Martha', 3: ""So, regarding your insistence on engaging the enemy in combat, I'd like you to provide me with a suitable explanation."", 4: '1'}"
+238	238		302							{2: 'There was a Construct lying on the ground ahead.', 3: '239'}
+239	239		302							{2: 'We were ambushed while deciding to rescue them.', 3: '240'}
+240	240		301			DialogEnable				"{2: 'Martha', 3: ""Wasn't the company supposed to brief you before dispatching you to Gestrig?"", 4: '1'}"
+241	241		301							{3: 'She impatiently cuts herself off mid-sentence.'}
+242	242		204							{1: '1'}
+243	243		301							"{2: 'Martha', 3: ""They are mechanoids, not Constructs—war machines developed by the company. As weapons, they're not worth humans risking their lives to save."", 4: '1'}"
+244	244		301							"{2: 'Martha', 3: ""Weapons obey the company's orders absolutely and fight for the company's interests. All weapons need only follow orders to eliminate the company's enemies."", 4: '1'}"
+245	245		301							{2: 'Martha', 3: 'But even humans must obey the rules established by the company in Gestrig.', 4: '1'}
+246	246		301							"{2: 'Martha', 3: ""The company tolerates human weakness by allowing three instances of negligence. After three such instances, you will face dismissal. You've already been marked once for tardiness—do not make another mistake."", 4: '1'}"
+247	247		301							{3: 'She lifts her gaze, surveying all the students present.'}
+248	248		204							{1: '1'}
+249	249		301							{2: 'Martha', 3: 'Now, I formally introduce your new tactical teacher—Specialist Employee Number 035034.', 4: '1'}
+250	250		301							"{2: 'Martha', 3: ""The company traditionally doesn't concern itself with the names of employees at your rank. However, for the sake of convenience in future communications with the students, I'll permit them to address you by your name."", 4: '1'}"
+251	251		301							{2: 'Martha', 3: 'Furthermore, given the record of repeated failures in field command by previous commandants,', 4: '1'}
+252	252		301				DialogDisable			{2: 'Martha', 3: 'this commandant will only be responsible for daily tactical coordination training but will not participate in actual field command.', 4: '1'}
+253	253		302							{2: '(Express confusion)', 3: '254', 4: '(Remain silent)', 5: '267'}
+254	254		302							"{2: ""If a commandant can't participate in field command, doesn't that defeat the whole purpose of being a commandant?"", 3: '255'}"
+255	255		302							"{2: ""If that's the case, what's the point of daily tactical coordination training?"", 3: '256'}"
+256	256		301			DialogEnable				{2: 'Martha', 3: 'This foolish question is something your previous superior should have explained to you directly.', 4: '1'}
+257	257		204							{1: '1', 2: '1'}
+258	258		301							{2: 'Martha', 3: '...', 4: '1'}
+259	259		204							{1: '1'}
+260	260		301							{3: 'The stern woman slowly surveys her surroundings, and after confirming there are indeed no humans present who could explain, she speaks again.'}
+261	261		301							"{2: 'Martha', 3: ""Although the humanoid weapons here possess powerful individual combat capabilities when they're manufactured, they lack experience working in tandem with others."", 4: '1'}"
+262	262		301							{2: 'Martha', 3: 'At the software level, predicting the actions of other units involves an extremely complex set of parameters that grows exponentially with team size. They cannot rely solely on their logical processing to handle this complexity.', 4: '1'}
+263	263		301							{2: 'Martha', 3: 'For these reasons, they must learn common human tactical combinations, which will ease the learning curve for team operations.', 4: '1'}
+264	264		301							{2: 'Martha', 3: 'Therefore, daily tactical coordination guidance is necessary, but battlefield decisions will be left to their own judgment.', 4: '1'}
+265	265		301							{3: 'She says just enough and no more. Rather than offering further explanation, she begins gathering her documents from the podium.'}
+266	266		204							{1: '1'}
+267	267		301			DialogEnable	AniZhuanchangBegin			"{2: 'Martha', 3: ""That will conclude today's meeting."", 4: '1'}"
+268	268		202							{1: '1', 6: '1'}
+269	269		304			AniZhuanchangEnd				{1: '<size=42>You step out of the auditorium—progress was made on investigating the unknown unit.</size>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1'}
+270	270		304							"{1: '<size=42>This special ""unit"" belongs to Gestrig Academy.</size>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1'}"
+271	271		304							{1: '<size=42>And Gestrig Academy has an inseparable relationship with Leibowitz Company.</size>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1'}
+272	272		304							"{1: '<size=42>Are the unit\'s members mechanoids known as ""weapons of war""? They even appear in the guise of students?</size>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1'}"
+273	273		304							"{1: '<size=42>To pass their ""final examination,"" they battle against the Corrupted.</size>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1', 8: '1'}"
+274	274		304							{1: '<size=42>Some questions have been answered, but many new mysteries have already surfaced.</size>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1'}
+275	275		304							"{1: '<size=40>If they\'re supposed to be ""war weapons,"" why dress them in school uniforms?</size>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1'}"
+276	276		304							"{1: ""<size=40>Even the human teachers aren't free. The academy's management seems excessive. Did something happen?</size>"", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1'}"
+277	277		304				AniZhuanchangBegin			{1: '<size=40>Why does the city avoid contact with outside forces? What dark secret are they hiding?</size>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1', 9: '1'}
+278	278		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1212.jpg'}
+279	279		301			AniZhuanchangEnd				{3: 'One question after another rushes through your mind... It seems your investigation still has a long way to go.'}
+280	280		301							{3: 'Lost in thought about all these questions, you wander around the campus until you reach a secluded corner.'}
+281	281		301							{2: '???', 3: 'Oh?'}
+282	282		301				DialogDisable			"{3: ""A girl's bell-like voice rings out from somewhere nearby.""}"
+283	283		401							{1: '1', 2: '36'}
+284	284		104						1000.0	{1: '-100|-50|-200', 2: '1'}
+285	285		104						1000.0	{1: '100|-50|-200', 2: '1'}
+286	286		104						1000.0	{2: '1'}
+287	287		401							{1: '1', 2: '6167'}
+288	288		301			DialogEnable	DialogDisable			"{3: ""You look around in all directions, but you can't spot anyone.""}"
+289	289		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+290	290		104						500.0	{1: '0|-200|-400', 2: '1'}
+291	291		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5401_08.jpg', 3: '0', 4: '1', 5: '0.25'}
+292	292		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+293	293		301			DialogEnable				"{2: '???', 3: ""I'm here.""}"
+294	294		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5401_08.jpg'}
+295	295		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5401_08.jpg', 3: '1', 4: '0', 5: '0'}
+296	296		301							{3: 'Black and white twintails sweep into view.\\nThe girl sits high up on the academy building, casually swinging her legs.'}
+297	297		301							"{2: '???', 3: ""I've been waiting for you for a long time... teacher.""}"
+298	298		301							{2: 'Jetavie', 3: 'My name is Jetavie. Our meeting here is not by chance.'}
+299	299		401							{1: '2', 2: '4386'}
+300	300		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+301	301		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+302	302		504							{1: '0.7'}
+303	303		201							{1: '1', 2: '500748'}
+304	304		301							"{1: '1', 2: '???', 3: ""My name is ???, and I'm meeting you here for a few reasons."", 4: '1'}"
+305	305		302							{2: '...?', 3: '306'}
+306	306		401							{1: '2', 2: '4386'}
+307	307		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+308	308		202							{1: '1', 6: '1'}
+309	309		504							{1: '0'}
+310	310		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5401_08.jpg'}
+311	311		301							{3: 'An inexplicable sense of déjà vu washes over you.'}
+312	312		301							{3: 'Dazzling sunset light spills out behind the girl, the brilliant glow casting a halo on her silhouette.'}
+313	313		302							"{2: ""...Haven't we met somewhere before?"", 3: '314'}"
+314	314		301							{3: 'Her smile grows more playful and mischievous.'}
+315	315		301							"{2: 'Jetavie', 3: ""It's only been a few hours since we last met. Have I already faded from your memory so easily?""}"
+316	316		301							"{3: ""She's obviously referring to the recent incident when our transport convoy encountered the Corrupted.""}"
+317	317		301							"{3: ""That inexplicable sense of déjà vu remains faint, the scenes too blurry to recall. It's clear the only topic left to continue the conversation is this one.""}"
+318	318		302							"{2: 'Back then, why did you open fire on our transport vehicle?', 3: '319', 4: ""At that time, you fired warning shots to stop us from approaching, didn't you?"", 5: '322'}"
+319	319		301							{2: 'Jetavie', 3: 'Because it was fun, watching your transport vehicle dance around on the road like a rabbit!'}
+320	320		301							"{2: 'Jetavie', 3: ""But if I hadn't made it dance, wouldn't you have foolishly charged straight into that swarm of Corrupted?""}"
+321	321	324	301							{3: 'Thinking carefully about it, the gunshots were rapid at first, but none actually hit the transport vehicle... She must have deliberately missed.'}
+322	322		301							{2: 'Jetavie', 3: 'Heh heh, you should properly thank me, you know.'}
+323	323		301							"{3: ""A satisfied smile spreads across the girl's face.""}"
+324	324		301							{2: 'Jetavie', 3: 'But in the end, you still charged straight ahead anyway—just in a different direction.'}
+325	325		301							"{2: 'Jetavie', 3: ""And the reason you were so determined to keep going... I'm guessing it wasn't just to avoid my bullets, was it?""}"
+326	326		301							{3: 'She says with unmistakable sarcasm, her gaze fixed on the collar clutched in your hands.'}
+327	327		302							"{2: ""Do you also think she's expendable?"", 3: '328'}"
+328	328		301							"{2: 'Jetavie', 3: ""Isn't she though? At least to humans.""}"
+329	329		301							"{3: ""The setting sun's glow pierces your eyes as her smile takes on a distinct edge.""}"
+330	330		301							"{2: 'Jetavie', 3: ""So mourning someone expendable is a meaningless act, isn't it?""}"
+331	331		301				DialogDisable			"{2: 'Jetavie', 3: ""Today's No. 17 was expended, and tomorrow a new No. 17 will take her place.""}"
+332	332		302							{2: 'She protected this city and sacrificed herself for it.', 3: '333'}
+333	333		302							{2: 'She was a true warrior and deserves respect.', 3: '334'}
+334	334		301			DialogEnable				{2: 'Jetavie', 3: 'Yes?'}
+335	335		301				DialogDisable			{3: 'The girl studies you with growing interest, her small tail gently swaying behind her.'}
+336	336		302							{2: 'Of course, after all I am...', 3: '337'}
+337	337		302							"{2: 'I am a ""teacher.""', 3: '338'}"
+338	338		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+339	339		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory609.jpg'}
+340	340		401							{1: '2', 2: '4812'}
+341	341		201							{1: '1', 2: '501187'}
+342	342		301			DialogEnable				{1: '1', 3: 'The girl stretches lazily, then leaps down from the rooftop in a single bound.'}
+343	343		204							{1: '1', 2: '17'}
+344	344		301							{2: 'Jetavie', 3: '*Sigh*... You really are unbelievably naive.', 4: '1'}
+345	345		301							{3: 'She lands nimbly on the ground, keeping some distance between the two of you.'}
+346	346		204							{1: '1', 2: '18'}
+347	347		301							"{2: 'Jetavie', 3: ""It's not just the teachers at this academy who treat them as weapons. They see themselves that way too."", 4: '1'}"
+348	348		204							{1: '1', 2: '3'}
+349	349		301							{2: 'Jetavie', 3: 'When their perception of their own life is so unclear, how can they learn about death, let alone how to commemorate someone?', 4: '1'}
+350	350		204							{1: '1', 2: '4'}
+351	351		301				AniZhuanchangBegin			{3: 'The smile on her face vanishes before you notice.'}
+352	352		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignSun01.prefab', 2: '2'}
+353	353		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory609.jpg'}
+354	354		301			AniZhuanchangEnd				"{1: '1', 3: ""Her lithe figure is silhouetted against the sunset's glow, hidden in shadow, creating an ethereal impression.""}"
+355	355		301							"{2: 'Jetavie', 3: ""Don't you think that's incredibly naive?"", 4: '2'}"
+356	356		301							{3: 'The words fall softly from her mouth. It sounds somewhere between a question and a whisper to herself.'}
+357	357		302							{2: 'Why should anyone have to learn about death?', 3: '358'}
+358	358		301							"{3: 'If I had arrived earlier... No. 17 might not have ""died.""'}"
+359	359		202						250.0	{1: '2'}
+360	360		201							{1: '1', 2: '501187', 3: '4'}
+361	361		301							"{1: '1', 2: 'Jetavie', 3: ""After seeing everything that happened, you're still thinking about saving her..."", 4: '1'}"
+362	362		301							"{2: 'Jetavie', 3: ""Then who's going to save you?"", 4: '1'}"
+363	363		301							{3: 'She stares at you with a grave expression.'}
+364	364		204							{1: '1', 2: '1'}
+365	365		301							{2: 'Jetavie', 3: 'You know, I once knew a fool just like you...', 4: '1'}
+366	366		202							{1: '1'}
+367	367		301							{3: 'She rises on her tiptoes and begins pacing in circles, lost in her own thoughts.'}
+368	368		201							{1: '1', 2: '501187', 3: '11'}
+369	369		301							"{1: '1', 2: 'Jetavie', 3: 'Just like you, they were obsessed with that pointless phrase—""what if.""', 4: '1'}"
+370	370		204							{1: '1', 2: '1'}
+371	371		301							{2: 'Jetavie', 3: 'If there is even the slightest chance of saving someone—no matter how remote—they will recklessly chase that glimmer of hope.', 4: '1'}
+372	372		204							{1: '1', 2: '1'}
+373	373		301							"{2: 'Jetavie', 3: ""No matter how many chances at reincarnation you'd give, that person would always make the same choice. It's truly baffling."", 4: '1'}"
+374	374		301							{3: 'She seems to be using her pacing to hide her emotions. For a brief moment, as sunlight falls across her face, you catch a glimpse of her profile.'}
+375	375		204							{1: '1', 2: '4'}
+376	376		301							{3: 'Her expression is complex—a mixture of wistfulness and quiet desolation.'}
+377	377		302							{2: '...What now?', 3: '378'}
+378	378		202						250.0	{1: '1'}
+379	379		201							{1: '2', 2: '501190'}
+380	380		301							"{1: '1', 2: 'Jetavie', 3: ""I don't know."", 4: '2'}"
+381	381		301							{3: 'She turns away, taking two listless steps backward.'}
+382	382		202						250.0	{1: '2'}
+383	383		201							{1: '1', 2: '501187', 3: '1'}
+384	384		301							"{1: '1', 3: ""When she turns back, she's wearing that self-assured smile again, as if her moment of sincerity had never existed.""}"
+385	385		204							{1: '1', 2: '2'}
+386	386		301							"{2: 'Jetavie', 3: ""Hah... I can't believe reality has produced another fool exactly like that person."", 4: '1'}"
+387	387		301							{3: 'She spreads her hands and rolls her eyes at you.'}
+388	388		302							{2: 'Regardless, I need to thank you for your support back then.', 3: '389'}
+389	389		204							{1: '1', 2: '1'}
+390	390		301							"{2: 'Jetavie', 3: ""Even if I hadn't helped, you would have found a way out yourself, right?"", 4: '1'}"
+391	391		302							{2: 'But you still chose to help me.', 3: '392'}
+392	392		204							{1: '1', 2: '2'}
+393	393		301							{2: 'Jetavie', 3: 'I happened to be looking for No.17 anyway, so helping you was just something I did along the way.', 4: '1'}
+394	394		301							{3: 'She waves her hand at you dismissively.'}
+395	395		301							"{2: 'Jetavie', 3: ""Also, fighting alongside you was exhilarating. It's been ages since I've enjoyed a battle that much."", 4: '1'}"
+396	396		204							{1: '1'}
+397	397		301							"{2: 'Jetavie', 3: ""It's so rare to find battles like that, yet the company forbids you from commanding on the frontlines... Such sticks in the mud."", 4: '1'}"
+398	398		202							{1: '1'}
+399	399		401							{1: '2', 2: '10028807'}
+400	400		301							{3: 'Jetavie flicks her gun with her tail contemptuously as she speaks.'}
+401	401		302							{2: '...Are you also a student here?', 3: '402'}
+402	402		301							{3: 'Her outfit looks completely out of place at the academy, and her eccentric, ghost-like behavior sets her apart from the other students.'}
+403	403		201							{1: '1', 2: '501187', 3: '11'}
+404	404		301							"{1: '1', 2: 'Jetavie', 3: 'Not really... Strictly speaking, I suppose I\'d be considered a ""graduate"" already?', 4: '1'}"
+405	405		302							{2: 'Graduate?', 3: '406'}
+406	406		301							"{3: 'If someone like her is called a ""graduate,"" what kind of education is Gestrig actually providing these mechanoids?'}"
+407	407		204							{1: '1', 2: '1'}
+408	408		301							"{2: 'Jetavie', 3: ""I'm only staying here temporarily, to find someone."", 4: '1'}"
+409	409		202							{1: '1'}
+410	410		301							{3: 'She smiles mysteriously, her gaze casually drifting behind her.'}
+411	411		301							"{3: ""You can't help but follow her gaze, spotting Ewig and White slowly approaching you.""}"
+412	412		201							{1: '1', 2: '501187', 3: '1'}
+413	413		301							{1: '1', 2: 'Jetavie', 3: 'Looks like someone wants to borrow a moment of your time.', 4: '1'}
+414	414		301							{2: 'Jetavie', 3: 'Well then, please excuse me as I take my leave.', 4: '1'}
+415	415		301							{3: 'The girl curtsies as she bids farewell, displaying an elegant demeanor completely at odds with her earlier eccentric behavior.'}
+416	416		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+417	417		202							{1: '1', 6: '1'}
+418	418		301		1		AniZhuanchangBegin			{3: 'In the blink of an eye, her figure vanishes like a phantom once again.'}

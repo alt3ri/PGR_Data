@@ -1,0 +1,198 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory31.jpg'}
+2	2		401							{1: '1', 2: '210'}
+3	3		301			DialogEnable				"{3: 'The next morning, Watanabe and you disguise yourselves as refugees fleeing from the conservation area and head to the ""Resisters"" camp.'}"
+4	4		301							{3: 'Both of you are dressed carefully, using common desert cloaks to cover your faces completely.'}
+5	5		401							{1: '2', 2: '2626'}
+6	6		301							{3: 'Knock, knock—'}
+7	7		401							{1: '2', 2: '2701'}
+8	8		301							{3: 'After two knocks, the fragile wooden door is suddenly pushed open violently.'}
+9	9		201							{1: '1', 2: '500005'}
+10	10		301							{1: '1', 2: 'Resister Soldier', 3: 'Who is it?', 4: '1'}
+11	11		201							{1: '1', 2: '500236'}
+12	12		301							"{1: '1', 2: 'Refugee?', 3: ""We're refugees fleeing from the conservation area. We have no food left..."", 4: '1'}"
+13	13		201							{1: '1', 2: '500005'}
+14	14		301							{1: '1', 2: 'Resister Soldier', 3: 'What about you?', 4: '1'}
+15	15		302							"{2: ""Cough, I'm... I'm his brother..."", 3: '16', 4: ""Cough, I'm... I'm his sister..."", 5: '16'}"
+16	16		301							"{2: 'Resister Soldier', 3: 'Why are you panting so hard? You\'re not sick, are you? We ""Resisters"" don\'t take in the sick.', 4: '1'}"
+17	17		201							{1: '1', 2: '500236'}
+18	18		301							"{1: '1', 2: 'Refugee?', 3: ""Don't worry, we are not ill. We're just too hungry to keep going."", 4: '1'}"
+19	19		401							{1: '2', 2: '1543'}
+20	20		301							"{3: ""Watanabe extends a pair of thin prosthetic limbs with a new coating under his cloak, showing the soldier that he can't possibly fight anyone.""}"
+21	21		201							{1: '1', 2: '500005'}
+22	22		301							"{1: '1', 2: 'Resister Soldier', 3: ""Wait, I didn't say I'd take you in. Which conservation area did you come from?"", 4: '1'}"
+23	23		301							{3: 'The soldier impatiently raises an eyebrow and scrutinizes the two of you. It is clear from his lack of sympathy that he is used to people seeking help.'}
+24	24		302							"{2: ""We're from conservation area 148 just next over..."", 3: '25'}"
+25	25		301							"{2: 'Resister Soldier', 3: ""Why? I heard there's enough food there. Why did you run?"", 4: '1'}"
+26	26		401							{1: '2', 2: '1511'}
+27	27		301							{3: 'The soldier grips his weapon tightly, his suspicion and vigilance evident on his face.'}
+28	28		501				DialogDisable			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+29	29		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory69.jpg'}
+30	30		504							{1: '0.7'}
+31	31		201							{1: '1', 2: '500783'}
+32	32		301			DialogEnable				"{1: '1', 2: 'Watanabe', 3: 'Our mission is to disguise ourselves as refugees to learn about the mindset of the ""Resisters"". Therefore, we need to act like one of them to gain their trust.', 4: '1'}"
+33	33		301							"{2: 'Watanabe', 3: 'The ""Resisters"" are mostly impoverished people who have no other choice but to hijack supply trucks. They despise the rich but show sympathy to those worse off than themselves.', 4: '1'}"
+34	34		301				DialogDisable			"{2: 'Watanabe', 3: ""Though they've stolen many supplies, they've also shared food with those in real need. So, in a way, what they do isn't entirely bad."", 4: '1'}"
+35	35		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+36	36		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory31.jpg'}
+37	37		504							{1: '0'}
+38	38		201							{1: '1', 2: '500005'}
+39	39		302							{1: '1', 2: 'Cough. There are many gangs there, bullying common folks like us...', 3: '40'}
+40	40		302							"{2: ""We couldn't take it any longer, so we ran in desperation..."", 3: '41'}"
+41	41		201							{1: '1', 2: '500236'}
+42	42		301			DialogEnable				"{1: '1', 2: 'Refugee?', 3: ""Yes. Having enough to eat is a privilege for the few. Ordinary folks like us don't get it easy."", 4: '1'}"
+43	43		301							"{2: 'Refugee?', 3: ""We abandoned all our belongings just to get here. If you don't take us in, we'll have nowhere else to turn to..."", 4: '1'}"
+44	44		201							{1: '1', 2: '500005'}
+45	45		301							{1: '1', 3: 'Still looking indifferent a moment ago, the soldier softens upon hearing this, seemingly touched.'}
+46	46		301							"{2: 'Resister Soldier', 3: ""Alright, alright, stop whining. We'll take you in."", 4: '1'}"
+47	47		301							"{2: 'Resister Soldier', 3: ""The Forsaken killed their leader, but we don't do that. That Watanabe guy is probably lying in a comfortable bed sleeping right now!"", 4: '1'}"
+48	48		201							{1: '1', 2: '500236'}
+49	49		301							{1: '1', 2: 'Refugee?', 3: '...', 4: '1'}
+50	50		201							{1: '1', 2: '500005'}
+51	51		301							"{1: '1', 2: 'Resister Soldier', 3: ""Why are you standing there? Come on in! We'll take you to the mess hall!"", 4: '1'}"
+52	52		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory731.jpg', 3: '0', 4: '1', 5: '2'}
+53	53		205							{1: '999', 3: '1', 4: '0', 5: '2'}
+54	54		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory731.jpg'}
+55	55		401							{1: '2', 2: '2915'}
+56	56		401							{1: '2', 2: '4044'}
+57	57		301							"{3: ""The soldier at the gate grumbles all the way while giving a brief introduction to the camp's facilities before serving you two bowls of extremely thin potato soup.""}"
+58	58		301							"{2: 'Resister Soldier', 3: ""Eat up. We don't keep idlers here. Once you're done, I'll take you to work."", 4: '1'}"
+59	59		301							"{2: 'Resister Soldier', 3: ""Jobs are usually assigned by our leader, but he's not here today, so I'll take you two."", 4: '1'}"
+60	60		201							{1: '1', 2: '500236'}
+61	61		301							"{1: '1', 2: 'Refugee?', 3: ""Thank you. Who's your leader?"", 4: '1'}"
+62	62		201							{1: '1', 2: '500005'}
+63	63		301							"{1: '1', 2: 'Resister Soldier', 3: 'His name is Schneider. We all call him ""Boss"". He used to be Ballard\'s top advisor, but, alas...', 4: '1'}"
+64	64		401						400.0	{1: '2', 2: '4079'}
+65	65		401							{1: '2', 2: '2825'}
+66	66		301			RImgBg1Shake				{3: 'The soldier slams his fist on the table, causing the already shallow soup bowls to shake and spill.'}
+67	67		301							"{2: 'Resister Soldier', 3: ""If it weren't for Watanabe, we'd be living the good life now!"", 4: '1'}"
+68	68		301							"{3: ""Sensing the soldier's rising anger at the mention of Watanabe, you quickly change the subject to avoid further tension.""}"
+69	69		302							{2: 'Excuse me, what exactly do we need to do?', 3: '70'}
+70	70		301							{2: 'Resister Soldier', 3: 'Do you fight? I mean, if you fight just fine, you can join our squad of ambushes against the Forsaken.', 4: '1'}
+71	71		302							{2: 'Ambush? Are you planning to fight the Forsaken?', 3: '72'}
+72	72		301							"{2: 'Resister Soldier', 3: ""Yes. They've been growing stronger since the plan failed, but Boss has been preparing. Once we're ready, we'll show those hypocrites what we're made of."", 4: '1'}"
+73	73		302							"{2: ""Sorry, cough... I'm not physically fit."", 3: '74'}"
+74	74		301							"{2: 'Resister Soldier', 3: ""What about you, tall guy? You're thin but pretty tall. Bet you fight just fine, no?"", 4: '1'}"
+75	75		203							{1: '1', 2: '0.25', 3: '-400'}
+76	76		201							{1: '2', 2: '500236', 4: '400'}
+77	77		401							{1: '2', 2: '4044'}
+78	78		301							"{1: '1', 3: 'The soldier pats the tall ""refugee"" on the shoulder, oblivious to the fact that this refugee hasn\'t touched his potato soup at all.'}"
+79	79		401							{1: '1', 2: '36'}
+80	80		401							{1: '1', 2: '119'}
+81	81		301							"{2: 'Refugee?', 3: ""Sorry... I can't join either."", 4: '2'}"
+82	82		301							"{2: 'Refugee?', 3: ""I'm physically fit, but I don't want to partake in violence."", 4: '2'}"
+83	83		301							{3: 'Hearing the subtext in his words, the soldier stops smiling.'}
+84	84		301							"{2: 'Resister Soldier', 3: ""What do you mean, tall guy? Are you saying you're refusing to join us because we're just a bunch of thieves? And you're too honorable to get your hands dirty?"", 4: '1'}"
+85	85		301							"{3: ""Watanabe continues to quietly observe him, showing no anger at the soldier's words.""}"
+86	86		301							"{3: ""His answer isn't driven by personal feelings.""}"
+87	87		301							{2: 'Refugee?', 3: 'No, I understand your choice. We... ran from the conservation area to survive ourselves.', 4: '2'}
+88	88		301							"{2: 'Refugee?', 3: ""But that still doesn't make hurting people right."", 4: '2'}"
+89	89		301							"{2: 'Refugee?', 3: ""You can assign me any other dirty or hard work, but... there is no way I'm going to hurt anyone."", 4: '2'}"
+90	90		301							"{2: 'Refugee?', 3: 'I assume you didn\'t join the ""Resisters"" for war, right?', 4: '2'}"
+91	91		402							{1: '2915'}
+92	92		301							{3: 'With it, the narrow hall falls into a cold silence.'}
+93	93		202							{2: '1', 3: '2', 6: '1'}
+94	94		306							
+95	95		201							{1: '1', 2: '500236', 5: '-50', 6: '-100'}
+96	96		301							"{1: '1', 3: ""You look up and see the burning intensity in Watanabe's eye and his hidden regret, instantly understanding why Watanabe is so resolute.""}"
+97	97		201							{1: '1', 2: '500005'}
+98	98		301							"{3: ""He knows the soldier's stance but chooses to confront the soldier with the truth instead of a random excuse.""}"
+99	99		301							"{3: ""Because he hopes his honesty will resonate with the soldiers' long-buried conscience.""}"
+100	100		302							"{2: ""Um... I'm sorry. I guess my brother was a little over the top there."", 3: '101'}"
+101	101		302							"{2: ""We were bullied by the gangs in the conservation area, so we don't want to end up like them."", 3: '102'}"
+102	102		302							"{2: ""We just don't think violence solves anything."", 3: '103'}"
+103	103		301							{2: 'Resister Soldier', 3: 'Alright, enough. I get it.', 4: '1'}
+104	104		301							{3: 'The soldier sounds frustrated, causing both you and Watanabe to tense up.'}
+105	105		301							"{2: 'Resister Soldier', 3: ""We're not very nice people, but we don't force anyone to do what they don't want to."", 4: '1'}"
+106	106		301							"{2: 'Resister Soldier', 3: ""If you don't want to do it, then don't. I don't want dead weight. You'll be on guard duty."", 4: '1'}"
+107	107		301							"{3: ""Surprisingly, the soldier doesn't show hostility after hearing your explanation.""}"
+108	108		302							{2: '...Thank you!', 3: '109'}
+109	109		201							{1: '1', 2: '500236'}
+110	110		301							{1: '1', 2: 'Refugee?', 3: 'Thank you for understanding.', 4: '1'}
+111	111		301							"{3: ""Both of you sigh in relief, grateful the soldier isn't as cold-hearted as you feared.""}"
+112	112		201							{1: '1', 2: '500005'}
+113	113		301							"{1: '1', 2: 'Resister Soldier', 3: ""No need for formality here. We're all rebels, or else we wouldn't have escaped the conservation area in the first place."", 4: '1'}"
+114	114		301							"{2: 'Resister Soldier', 3: ""Tall guy, I might not like what you said, but at least you're honest. I prefer that over cowards who flee in the face of danger."", 4: '1'}"
+115	115		203							{1: '1', 2: '0.25', 3: '-400'}
+116	116		201							{1: '2', 2: '500236', 4: '400'}
+117	117		401							{1: '2', 2: '4044'}
+118	118		301							"{3: ""The soldier stands up and respectfully pats Watanabe's shoulder again.""}"
+119	119		301							{2: 'Resister Soldier', 3: 'Thanks for reminding me that I was a man of principle before I became like this.', 4: '1'}
+120	120		301							"{2: 'Refugee?', 3: ""...It's not too late to stop now."", 4: '2'}"
+121	121		301							"{2: 'Refugee?', 3: ""There are many ways to resolve this. War isn't the only solution to hunger."", 4: '2'}"
+122	122		301							"{2: 'Resister Soldier', 3: ""Stop? Nah. No one can stop Boss's crazy plan now. He'll kill me if I try to leave."", 4: '1'}"
+123	123		301							"{2: 'Resister Soldier', 3: ""It would take a hero from the heavens to stop this... But miracles don't exist."", 4: '1'}"
+124	124		301				AniZhuanchangBegin			{3: 'The soldier laughs self-mockingly with a hint of helplessness.'}
+125	125		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory309.png'}
+126	126		202				AniZhuanchangEnd			{1: '1', 2: '2', 6: '1'}
+127	127		301			DialogEnable				{3: 'You spend the afternoon on guard duty until dusk when the soldier lets both of you back to your tent.'}
+128	128		301							"{3: ""The new recruits' accommodations are shabby, but no one complains. In the freezing desert night, even a blanket is a blessing.""}"
+129	129		104						2000.0	{1: '-200|0|-300', 2: '2'}
+130	130		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory733.jpg', 3: '0', 4: '1', 5: '1'}
+131	131		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+132	132		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory733.jpg'}
+133	133		401							{1: '2', 2: '1543'}
+134	134		301							"{3: ""As soon as Watanabe returns to the tent, he immediately takes off the cloak that's been covering his face tightly.""}"
+135	135		201							{1: '1', 2: '500783', 5: '-50', 6: '-100'}
+136	136		301							"{1: '1', 3: ""Watanabe lights a small oil lamp, its weak light barely illuminating half the tent. You sit by the lamp to review the day's events in its precious glow."", 4: '1'}"
+137	137		301							"{2: 'Watanabe', 3: ""I thought they were just a small group of scattered soldiers. I didn't know they'd grown to this size already."", 4: '1'}"
+138	138		301							"{2: 'Watanabe', 3: ""Fortunately, it would seem that not everyone is willingly walking down this path of no return, based on this morning's conversation."", 4: '1'}"
+139	139		302							{2: 'Despite the pressure from Schneider, there are still many people with a good heart.', 3: '140'}
+140	140		302							{2: 'If we can create the right opportunity, we just might be able to persuade them to leave without bloodshed.', 3: '141'}
+141	141		301							{2: 'Watanabe', 3: 'Most people were just trying to fill their stomachs, but Schneider exploited that. He gave them hope first and then forced them to take up arms against their fellow brothers and sisters.', 4: '1'}
+142	142		301							"{2: 'Watanabe', 3: ""Despicable as these methods are, they've always been effective."", 4: '1'}"
+143	143		302							{2: 'Always? Has this happened before?', 3: '144'}
+144	144		301							{3: 'Watanabe nods.'}
+145	145		301							{2: 'Watanabe', 3: 'Even in times when food was abundant, there were many warmongers like Schneider who incited wars for power and profit.', 4: '1'}
+146	146		301							{2: 'Watanabe', 3: 'Different stances, interests, and statuses... There are countless reasons to start a war.', 4: '1'}
+147	147		301							"{2: 'Watanabe', 3: ""But no matter how noble the reasons are, nothing can hide the fact that they're driven by selfish desires."", 4: '1'}"
+148	148		301							"{2: 'Watanabe', 3: ""Once the leaders achieve their goals, they won't hesitate to get rid of their followers."", 4: '1'}"
+149	149		302							{2: 'We have to stop that from happening.', 3: '150'}
+150	150		302							"{2: ""We can't let humans kill one another anymore. Our fellow humans are not our enemies."", 3: '151'}"
+151	151		301							"{2: 'Watanabe', 3: ""Yes, and that's why I can't forgive Schneider."", 4: '1'}"
+152	152		301							{2: 'Watanabe', 3: 'He has seen and knows the efforts humanity has made to maintain peace in that past era, yet he uses these manipulative tactics for his selfish desires.', 4: '1'}
+153	153		401							{1: '2', 2: '4044'}
+154	154		301							{3: 'Watanabe clenches his fists, his voice tight with barely suppressed anger.'}
+155	155		301							"{3: ""You can sense Watanabe's rage. You don't fully understand his past, but you share the same desire to prevent humans from pointing their guns at one another.""}"
+156	156		301							{3: 'You take a light breath and speak in a much lighter tone.'}
+157	157		302							{2: 'By the way, I was wondering...', 3: '158'}
+158	158		302							{2: 'The era that you were talking about. What was it like?', 3: '159'}
+159	159		301							"{3: ""Watanabe seems slightly taken aback as if he hasn't expected the question. Moments later, he starts talking in a nostalgic tone.""}"
+160	160		401							{1: '1', 2: '36'}
+161	161		401							{1: '1', 2: '358'}
+162	162		204							{1: '1', 2: '8'}
+163	163		301							{2: 'Watanabe', 3: 'As the name suggests, it was a golden era. Everything that happened back then just seems so unreal when I recall those days.', 4: '1'}
+164	164		204							{1: '1'}
+165	165		301							{2: 'Watanabe', 3: 'Back then, all of humanity believed we could unite, that technology would always thrive, and everyone looked toward the distant stars with hopes for the future. Every day, the world brightened with only good news.', 4: '1'}
+166	166		301							{2: 'Watanabe', 3: 'No one thought such days would end in a snap. There were signs, sure, but people who voiced their concerns were ridiculed and told they were worried for nothing.', 4: '1'}
+167	167		301							{2: 'Watanabe', 3: 'Humanity created Gestalt, built the artificial Eden in the sky, and mastered zero-point energy—we were the creators and controllers of miracles.', 4: '1'}
+168	168		301							{3: '—Until the first distress signal came from Atlantis in the deep sea.'}
+169	169		301							"{3: ""Watanabe doesn't finish the story, but you know why he doesn't go further.""}"
+170	170		302							{2: 'I wish I were there to see that world.', 3: '171'}
+171	171		301							"{2: 'Watanabe', 3: ""You will. You're trying to bring that world back, no?"", 4: '1'}"
+172	172		302							{2: 'Yes, but I wonder if the world is going to be like how you remember it...', 3: '173'}
+173	173		302							{2: '...When that day comes.', 3: '174'}
+174	174		301							"{2: 'Watanabe', 3: ""I wouldn't worry. As long as there's civilization, cities will be rebuilt again and again."", 4: '1'}"
+175	175		301							"{2: 'Watanabe', 3: 'The only difference is what you call them. If you like, you could even call Babylonia ""Constellia"".', 4: '1'}"
+176	176		204							{1: '1', 2: '1'}
+177	177		301							{3: 'His example is so unexpected that both of you let out a laugh.'}
+178	178		302							"{2: ""So you're saying that it doesn't matter to you what a city is called."", 3: '179'}"
+179	179		302							{2: 'What matters is the people who build them.', 3: '180'}
+180	180		204							{1: '1'}
+181	181		301							"{2: 'Watanabe', 3: ""Once you've visited enough cities that all seem much the same, you'll see what I mean."", 4: '1'}"
+182	182		301							"{2: 'Watanabe', 3: ""You'll eventually see that their names don't matter as much as knowing how to locate them on a map quickly."", 4: '1'}"
+183	183		203							{1: '1', 2: '0.25'}
+184	184		401							{1: '2', 2: '1543'}
+185	185		301							{3: 'Watanabe picks up the oil lamp from the edge of the tent. The simple homemade lamp is not windproof, its fragile flame flickering in the wind as though it could go out at any moment.'}
+186	186		301							"{2: 'Watanabe', 3: ""Alright, it's getting late. We have guard duty tomorrow morning. Let's get some rest."", 4: '1'}"
+187	187		302							{2: 'Mind if I ask another question?', 3: '188'}
+188	188		302							"{2: 'The ""present"" and the ""past""...', 3: '189'}"
+189	189		302							{2: 'Which one is the better era?', 3: '190'}
+190	190		401							{1: '2', 2: '4045'}
+191	191		301							{3: 'Watanabe lifts the lid of the oil lamp, letting the flame dance freely in the night.'}
+192	192		301							{3: 'He looks like a fearless traveler from an old myth, holding the morning star as he moves forward.'}
+193	193		301							{3: 'Watanabe gives his answer without hesitation.'}
+194	194		204							{1: '1', 2: '1'}
+195	195		301							{2: 'Watanabe', 3: 'The present, of course.', 4: '1'}
+196	196		302							{2: 'Why?', 3: '197'}
+197	197		301		1		AniZhuanchangBegin			{2: 'Watanabe', 3: 'Because I live in the present, and the present moment is always the best time.', 4: '1'}

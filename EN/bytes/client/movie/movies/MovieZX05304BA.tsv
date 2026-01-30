@@ -1,0 +1,196 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+2	2		401							{1: '1', 2: '371'}
+3	3		107						3000.0	{1: 'Babylonia', 2: 'Star of Life', 4: '10:20', 5: 'Line Spacing: 0'}
+4	4		108							{1: '1'}
+5	5		401							{1: '2', 2: '4870'}
+6	6		201							{1: '2', 2: '500110', 3: '4'}
+7	7		301			DialogEnable				{1: '1', 3: 'Doors open with a click as you and Ayla exit from two different rooms.'}
+8	8		203						250.0	{1: '2', 2: '0.25', 3: '400'}
+9	9		201							{1: '1', 2: '500059', 4: '-400'}
+10	10		301							{1: '1', 2: 'Doctor', 3: 'Neither of the two consciousness connections produced symptom patterns similar to what you described during tests.', 4: '1'}
+11	11		301							"{2: 'Doctor', 3: ""We've sped up the process. Both patients show physical functions, M.I.N.D., and Mind Beacon stability levels above safety thresholds."", 4: '1'}"
+12	12		301							"{2: 'Doctor', 3: ""Your conversations have been sent to our psychology department for analysis, but they'll need to interview your friends, family, and colleagues before forming a conclusion."", 4: '1'}"
+13	13		301							{2: 'Doctor', 3: 'This process will take three to four business days. Our preliminary diagnosis indicates mass conversion disorder.', 4: '1'}
+14	14		301							{3: 'The doctor delivers the results in a monotone, then sets down the paper to add more information.'}
+15	15		301							"{2: 'Doctor', 3: ""For most patients, the diagnostic process would end here, but because it's 【kuroname】, we'll follow up."", 4: '1'}"
+16	16		301							"{2: 'Doctor', 3: ""Considering your previous reports, I'm inclined to believe this finding is meaningless."", 4: '1'}"
+17	17		301							"{2: 'Ayla', 3: ""You don't believe your own preliminary diagnosis?"", 4: '2'}"
+18	18		301							"{2: 'Doctor', 3: ""In my professional opinion, except in extremely rare cases... Of course, I don't mean to speak ill of any patient."", 4: '1'}"
+19	19		301							{3: 'The doctor smiles in apology and makes a gesture, as if trying to take back the inappropriate comment, but becomes serious again.'}
+20	20		301							"{2: 'Doctor', 3: ""Apart from a handful of cases, I've never seen other Commandants exhibit similar psychological symptoms in their daily lives."", 4: '1'}"
+21	21		301							"{2: 'Doctor', 3: ""A Commandant can still fall ill or have physical and mental health issues. Others may have psychological issues, but nothing nearly as severe as what you've described."", 4: '1'}"
+22	22		301							"{2: 'Doctor', 3: ""And we haven't detected any signs of infection, so..."", 4: '1'}"
+23	23		302							{2: 'Thank you for your honesty.', 3: '24'}
+24	24		301							"{2: 'Doctor', 3: 'I might not agree, but your status as an ""elite squad Commandant"" still takes priority over your status as a ""patient.""', 4: '1'}"
+25	25		301							"{2: 'Doctor', 3: ""Even if others have doubts, I won't say it. I'm a doctor and I'm supposed to reassure my patients."", 4: '1'}"
+26	26		301							"{2: 'Doctor', 3: ""But you need assistance instead of reassurance. I'm sorry I couldn't be of more help."", 4: '1'}"
+27	27		302							"{2: ""Don't worry, just leave the rest to us."", 3: '28'}"
+28	28		401							{1: '2', 2: '4870'}
+29	29		202						250.0	{1: '1'}
+30	30		201							{1: '1', 2: '500004', 4: '-400'}
+31	31		301							{1: '1', 3: 'The doctor shakes her head, gathers the examination forms, and leaves the room. As she exits, Asimov enters.'}
+32	32		204							{1: '1', 2: '8'}
+33	33		301							{2: 'Asimov', 3: 'Is the examination over?', 4: '1'}
+34	34		302							"{2: ""You didn't go?"", 3: '35', 4: ""You're actually still here?"", 5: '35'}"
+35	35		204							{1: '1'}
+36	36		301							"{2: 'Asimov', 3: ""There's no evidence linking what happened to you with the Science Council incidents, but I'm still concerned about your condition."", 4: '1'}"
+37	37		301							"{2: 'Asimov', 3: ""The Science Council is responsible for all Commandant's mental well-being, as it directly affects the stability of your Mind Beacon."", 4: '1'}"
+38	38		301				DialogDisable			{2: 'Asimov', 3: 'I know the general situation now. What would you like to do next?', 4: '1'}
+39	39		302							{2: '(Consult Ayla for advice)', 3: '40', 4: '(Express your thoughts)', 5: '43'}
+40	40		302							{2: 'Ayla, is that okay with you?', 3: '41'}
+41	41		204							{1: '2'}
+42	42	44	301			DialogEnable	DialogDisable			"{2: 'Ayla', 3: ""It's alright. This is about 【kuroname】, so don't worry too much about me."", 4: '2'}"
+43	43		301			DialogEnable	DialogDisable			"{3: ""A quick glance is all it takes for you to understand each other's intentions. She nods gently.""}"
+44	44		302							"{2: ""Let's start by physically examining the painting and the letter."", 3: '45'}"
+45	45		302							{2: 'We need help with trace evidence analysis and authentication techniques.', 3: '46'}
+46	46		301			DialogEnable				{2: 'Asimov', 3: 'Okay.', 4: '1'}
+47	47		301							"{3: ""Asimov immediately accepts. It's clear he already had this in mind but was waiting for you to confirm his guess.""}"
+48	48		301							"{2: 'Asimov', 3: ""The samples need to be private, so we'll assign technicians who are familiar with you both."", 4: '1'}"
+49	49		301							"{2: 'Asimov', 3: ""We'll ensure the safety of your objects during the examination."", 4: '1'}"
+50	50		301							"{2: 'Asimov', 3: ""I'll get someone to retrieve Ayla's canvas as soon as possible... 【kuroname】, your letter."", 4: '1'}"
+51	51		202						500.0	{1: '2'}
+52	52		203						500.0	{1: '1', 2: '0.5'}
+53	53		203						250.0	{1: '1', 2: '0.25', 5: '-50'}
+54	54		203						250.0	{1: '1', 2: '0.25', 4: '-20', 5: '-50'}
+55	55		203						250.0	{1: '1', 2: '0.25', 5: '-80'}
+56	56		301							{3: 'He extends his hand toward you as he says this.'}
+57	57		302							"{2: ""I'll leave it to you then."", 3: '58'}"
+58	58		301				AniZhuanchangBegin			{3: 'You take the letter from your pocket and hand it to Asimov. After parting, you leave the Star of Life with Ayla.'}
+59	59		202							{1: '1', 6: '1'}
+60	60		401							{1: '1', 2: '36'}
+61	61		101				DialogDisable		2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory609.jpg'}
+62	62		104							{1: '0|0|-100', 2: '0'}
+63	63		401							{1: '1', 2: '209'}
+64	64		107			AniZhuanchangEnd			3000.0	{1: 'Fast City Suburban Villa', 2: 'Suburban Villa', 4: '12:30', 5: 'Line Spacing: 2'}
+65	65		108							{1: '1'}
+66	66		306							{1: '1'}
+67	67		401							{1: '2', 2: '967'}
+68	68		401							{1: '2', 2: '4902'}
+69	69		201							{1: '1', 2: '501184', 3: '17'}
+70	70		301			DialogEnable				"{1: '1', 3: ""At the villa's entrance, a weathered mailbox creaks in the wind as Iris reaches in to pull out a letter.""}"
+71	71		204							{1: '1', 2: '9'}
+72	72		301							"{3: ""The sharp edge leaves Iris's fingertips unscathed, yet the sharp sensation reminds her of her exhaustion.""}"
+73	73		301							"{3: ""These lapses in attention are occurring more frequently. It's not a good sign.""}"
+74	74		204							{1: '1', 2: '17'}
+75	75		301				DialogDisable			{3: 'Iris shakes her head and opens the letter. Rows of delicate, elegant cursive in royal blue ink flow across the page with confidence.'}
+76	76		401							{1: '2', 2: '4095'}
+77	77		304							{1: '<i><color=#0066CC><size=38>—The Multilateral Trade Agreement has been signed at the Mirror Sea Twin Towers and officially implemented.</size></color></i>', 2: 'fffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '-2'}
+78	78		304							{1: '<i><color=#0066CC><size=38>—The peace operation conducted by the Tuka Independent Guard along the Mantaine coastline has concluded.</size></color></i>', 2: 'fffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '-1'}
+79	79		304							"{1: '<i><color=#0066CC><size=38>—The 709th Mechanized Brigade of the United Government has entered the Roro Rainforest in accordance with the joint security regulations in the ""The New Earth Codex"" - Roro and United Government Section.</size></color></i>', 2: 'fffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '-1', 9: '1'}"
+80	80		301			DialogEnable				{3: 'Each line reads like a brief report, with items arranged chronologically.'}
+81	81		301							{3: 'Anyone can find all of this information with a quick search. Even most of the details have been made public.'}
+82	82		301							"{3: ""The letter doesn't provide any additional details.""}"
+83	83		401							{1: '2', 2: '4341'}
+84	84		202							{1: '1'}
+85	85		301							{3: 'Yet Iris sighs with relief after reading it. She carefully folds the letter, tucks it into her pocket, and walks back to the villa.'}
+86	86		306							
+87	87		402							{1: '967'}
+88	88		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+89	89		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1189.jpg'}
+90	90		201							{1: '1', 2: '501162', 3: '4', 4: '-400'}
+91	91		201							{1: '2', 2: '501165', 3: '4', 4: '400'}
+92	92		301							"{1: '1', 3: ""In the villa's living room, Dandelion and Jonathan sit at opposite ends of the coffee table.""}"
+93	93		301							{3: 'The conversation is serious yet odd. Dandelion wears a grave expression, while Jonathan looks confused.'}
+94	94		301							{2: 'Jonathan', 3: 'Hmm... and then what?', 4: '1'}
+95	95		301							"{2: 'Dandelion', 3: 'There is no ""and then."" That\'s all there is to know about why you were attacked at the opera house.', 4: '2'}"
+96	96		301							{2: 'Dandelion', 3: 'Do you have any questions? I know that what I just said might sound a bit absurd.', 4: '2'}
+97	97		301							{2: 'Jonathan', 3: '...I just have one question: are you finished?', 4: '1'}
+98	98		301							{2: 'Jonathan', 3: 'Like that speedy recital of my identity in the car—are you done with your rigorous, precise, and informative explanation?', 4: '1'}
+99	99		301							{2: 'Dandelion', 3: 'Hmm... yes? Did I leave anything out?', 4: '2'}
+100	100		301							"{2: 'Jonathan', 3: ""No, no, no... I mean, what you've been saying must be some science fiction, to set the mood?"", 4: '1'}"
+101	101		301							{2: 'Jonathan', 3: 'Like how a judge always says a few transitional words before announcing the verdict...', 4: '1'}
+102	102		202							{1: '1', 2: '2'}
+103	103		301							{3: 'Jonathan rests his elbows on his knees, hands clasped over his nose and lips. His leg bounces nervously before he takes a deep breath and drops his hands to his sides.'}
+104	104		201							{1: '1', 2: '501162', 3: '4', 4: '-400'}
+105	105		201							{1: '2', 2: '501165', 3: '4', 4: '400'}
+106	106		301							"{1: '1', 2: 'Jonathan', 3: 'For instance, the truth could be that I work for the United Government, helping revise the articles of ""The New Earth Codex"".', 4: '1'}"
+107	107		301							{2: 'Jonathan', 3: 'A group of dissatisfied civilians has targeted me, most of them victims of the Peace Operation.', 4: '1'}
+108	108		301							"{2: 'Jonathan', 3: 'They oppose the United Government and don\'t want to see ""The New Earth Codex"" implemented, so they planned the attack.', 4: '1'}"
+109	109		301							"{3: ""Jonathan's analysis is logical and clear. The conclusion is the worst-case scenario in his mind when he accepted this job.""}"
+110	110		301							{3: 'But human imagination has its limits. Trouble does not.'}
+111	111		301							"{2: 'Dandelion', 3: ""Jonathan, this isn't a courtroom, and we're not a jury playing make-believe."", 4: '2'}"
+112	112		301							"{2: 'Dandelion', 3: 'Do you really think what happened is something ordinary people... or the military, or these ""special organizations"" could carry out?', 4: '2'}"
+113	113		301							{2: 'Jonathan', 3: '...', 4: '1'}
+114	114		301							{3: 'Jonathan opens his mouth but nothing comes up. He stands up and freezes before swallowing his words.'}
+115	115		301							{3: 'Anger, or losing control, is unfamiliar to Jonathan, or any lawyer.'}
+116	116		301							"{2: 'Jonathan', 3: ""So you're saying that whoever's targeting me isn't a civilian organization, nor an armed group opposing the United Government."", 4: '1'}"
+117	117		301							{2: 'Jonathan', 3: 'But rather... someone with supernatural powers who can travel through time. Someone who can easily cause mass destruction...', 4: '1'}
+118	118		301							{3: 'Jonathan pauses, desperately searching through his knowledge for anything similar.'}
+119	119		301							"{2: 'Jonathan', 3: ""...A criminal who's still committing crimes."", 4: '1'}"
+120	120		301							{3: 'Dandelion nods in silence.'}
+121	121		301							{2: 'Jonathan', 3: '...What is her goal? Why target me?', 4: '1'}
+122	122		301							{2: 'Jonathan', 3: 'Is it because I have the ability to convict this Enora Lueya someday? For crimes against humanity?', 4: '1'}
+123	123		202							{1: '1', 2: '2', 6: '1'}
+124	124		201							{1: '1', 2: '501184', 3: '4'}
+125	125		301							"{1: '1', 2: 'Iris', 3: ""It's far more than that. Your pen has the power to change the world, Mr. Jonathan."", 4: '1'}"
+126	126		301							"{3: ""Iris' voice comes from behind. She's leaning on the wall next to the stairs, tending to her hand wounds.""}"
+127	127		301							"{2: 'Iris', 3: 'You can change history. Without you, the ""The New Earth Codex"" between the United Government and the Bane local government would fail.', 4: '1'}"
+128	128		301							{2: 'Iris', 3: 'This would hinder multiple United Government initiatives, and as for Bane...', 4: '1'}
+129	129		202							{1: '1'}
+130	130		301							{3: 'Iris has a glance at Dandelion and pauses a bit.'}
+131	131		201							{1: '1', 2: '501184', 3: '4'}
+132	132		301							"{1: '1', 2: 'Iris', 3: ""Bane will also be incorporated into the United Government's Peace Operation mission."", 4: '1'}"
+133	133		203							{1: '1', 2: '0.25', 3: '400'}
+134	134		201							{1: '2', 2: '501162', 4: '-400'}
+135	135		301							{1: '1', 2: 'Jonathan', 3: '...', 4: '2'}
+136	136		204							{1: '2', 2: '2'}
+137	137		301							{3: 'Jonathan stares at the glass on the table in silence, then gives a self-mocking smile.'}
+138	138		204							{1: '2', 2: '4'}
+139	139		204							{1: '1', 2: '1'}
+140	140		301							"{2: 'Jonathan', 3: ""...You make it sound like I'm saving the world."", 4: '2'}"
+141	141		301							{2: 'Iris', 3: 'No, my duty is to ensure that history moves along its original path.', 4: '1'}
+142	142		204							{1: '1'}
+143	143		301							"{2: 'Jonathan', 3: ""What's the difference? Are you suggesting something?"", 4: '2'}"
+144	144		202							{1: '1', 2: '2'}
+145	145		301							"{3: ""Jonathan looks around, his gaze settling on Iris's bandaged hands.""}"
+146	146		201							{1: '1', 2: '501184', 3: '4', 4: '400'}
+147	147		201							{1: '2', 2: '501162', 4: '-400'}
+148	148		301							"{1: '1', 2: 'Jonathan', 3: ""Vehicle, safe house, essential documents... This isn't your first operation."", 4: '2'}"
+149	149		301							{2: 'Jonathan', 3: 'Is it the protection mission that keeps repeating, or your battles with Enora Lueya?', 4: '2'}
+150	150		204							{1: '1', 2: '9'}
+151	151		301							{2: 'Iris', 3: '...', 4: '1'}
+152	152		204							{1: '1', 2: '4'}
+153	153		301							{2: 'Iris', 3: 'Does that mean anything to you, Mr. Jonathan?', 4: '1'}
+154	154		301							{3: 'Iris wants to change the topic, but Jonathan reads something from her brief silence.'}
+155	155		301							"{3: ""This rhetorical question doesn't align with her demeanor and words. Avoidance and reluctance are two different things.""}"
+156	156		301							"{2: 'Jonathan', 3: ""...Fine. The truth is always more complex than words on paper. I get it. I mean, we're dealing with time travel."", 4: '2'}"
+157	157		301							"{2: 'Jonathan', 3: ""What about your identity? Surely you can explain that? Even if it's just a story."", 4: '2'}"
+158	158		301							{2: 'Jonathan', 3: 'A group of guardians hidden in the shadows? An organization that maintains historical stability?', 4: '2'}
+159	159		204							{1: '1', 2: '9'}
+160	160		301							"{2: 'Iris', 3: ""I'm afraid none of that exists. What you see is all there is."", 4: '1'}"
+161	161		204							{1: '1', 2: '4'}
+162	162		301							"{2: 'Jonathan', 3: '...This is not a time for jokes. The whole ""fighting alone is the rule"" thing only happens in superhero movies.', 4: '2'}"
+163	163		301							{2: 'Jonathan', 3: 'Just the three of us against the mastermind behind an attack of that scale today?', 4: '2'}
+164	164		202							{1: '1', 2: '2', 6: '1'}
+165	165		201							{1: '1', 2: '501165', 3: '4'}
+166	166		301							"{1: '1', 2: 'Dandelion', 3: ""To be precise, it's only Iris."", 4: '1'}"
+167	167		202							{1: '1'}
+168	168		301							{3: 'Jonathan looks toward Dandelion, who tucks a strand of hair behind her ear.'}
+169	169		201							{1: '1', 2: '501165', 3: '4'}
+170	170		301							"{1: '1', 2: 'Dandelion', 3: ""Like you, I'm an ordinary person. Iris saved me, and I want to do something in return."", 4: '1'}"
+171	171		201							{1: '1', 2: '501162', 4: '-400'}
+172	172		201							{1: '2', 2: '501184', 4: '400'}
+173	173		301							{1: '1', 2: 'Jonathan', 3: '...', 4: '1'}
+174	174		301							"{2: 'Jonathan', 3: ""Can't we ask for help? Like sharing Enora Lueya's file with the United Government to get the military involved?"", 4: '1'}"
+175	175		301							{2: 'Iris', 3: 'The weapons of this era can hardly pose a threat to Lueya, and sharing information would only create more complications.', 4: '2'}
+176	176		301							"{2: 'Iris', 3: ""At that point, Lueya wouldn't even need to make a move—the future would already be altered."", 4: '2'}"
+177	177		301							{2: 'Jonathan', 3: 'What would happen if it changes? The world ends?', 4: '1'}
+178	178		301							{3: 'The world ends.'}
+179	179		301							{3: 'Iris calmly looks at Jonathan in silence.'}
+180	180		301							{3: 'If the prisoner finds a way out before the prison is sealed, all efforts will be in vain, and the world will vanish into one final echo—but she has no other solution, nor can she tell this to these two.'}
+181	181		301							"{2: 'Jonathan', 3: ""...Fine, you don't need to say anything. I can tell from your expression that the outcome would be catastrophic."", 4: '1'}"
+182	182		301							{2: 'Iris', 3: 'I understand how you feel. Perhaps you need some time to process this.', 4: '2'}
+183	183		301							"{2: 'Iris', 3: ""Don't worry. We'll protect you until you reach Bane and finish your work."", 4: '2'}"
+184	184		202							{1: '2'}
+185	185		301							{3: 'With that said, Iris turns to go upstairs.'}
+186	186		301							{2: 'Jonathan', 3: '...', 4: '1'}
+187	187		201							{1: '2', 2: '501165', 4: '400'}
+188	188		301							{1: '1', 2: 'Dandelion', 3: 'Well...', 4: '2'}
+189	189		301							{3: 'Jonathan turns his head to see Dandelion hiding half of her face behind a book.'}
+190	190		301							"{2: 'Dandelion', 3: ""Why don't we... take a look at Bane's history first?"", 4: '2'}"
+191	191		301							{2: 'Jonathan', 3: '...', 4: '1'}
+192	192		202						250.0	{1: '1', 2: '2'}
+193	193		401							{1: '2', 2: '2764'}
+194	194		306							{1: '1'}
+195	195		301		1		AniZhuanchangBegin			{3: 'Jonathan reaches for the book with a sigh. Only the quiet sound of pages turning remains in the villa.'}

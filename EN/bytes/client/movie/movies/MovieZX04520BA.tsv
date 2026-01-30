@@ -1,0 +1,46 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory927.jpg'}
+2	2		401							{1: '1', 2: '371'}
+3	3		107						3000.0	{1: 'Deep in the Mine', 2: 'Monitoring Room'}
+4	4		108							{1: '1'}
+5	5		401							{1: '2', 2: '4480'}
+6	6		301			DialogEnable				{3: 'Thud—'}
+7	7		301							{3: 'Bridget charges back into the room and drops into the chair with a clang. She wastes no time booting up the monitoring system.'}
+8	8		301							{3: 'She types on the keyboard while frantically patting herself down.'}
+9	9		201							{1: '1', 2: '500906', 3: '4'}
+10	10		301							{1: '1', 2: 'Bridget', 3: 'External drive... external drive... There we go.', 4: '1'}
+11	11		301							{2: 'Bridget', 3: 'Hurry... faster... gotta finish before he comes back...', 4: '1'}
+12	12		301							{3: 'As the boot animation finishes, Bridget plugs her portable storage device into the port.'}
+13	13		301							{2: 'Bridget', 3: 'System drive... surveillance footage... select all... cut...', 4: '1'}
+14	14		301							"{3: ""As the progress bar appears, Bridget's tension begins to ease. Casually brushing her lips with one hand now, she even has the luxury of time to click through the files to examine them one by one.""}"
+15	15		301							{2: 'Bridget', 3: 'Experiment project... test subjects... number of subjects...', 4: '1'}
+16	16		301							{2: 'Bridget', 3: 'What is all this...', 4: '1'}
+17	17		301							{3: 'As frames of footage flash before her eyes, Bridget maintains a composed expression. Yet her nervous swallowing and increasingly rapid finger tapping betray her growing anxiety.'}
+18	18		301							{3: 'Then, her typing comes to an abrupt halt as Bridget sees a familiar figure on the screen...'}
+19	19		301							{2: 'Bridget', 3: 'Dad... Mom?', 4: '1'}
+20	20		301							{3: 'She leans forward, her lips trembling slightly as she speeds up her operations and pulls up all files related to the footage in rapid succession.'}
+21	21		301							{2: 'Bridget', 3: 'Zoe, Marian... rescue workers... time of mine entry...', 4: '1'}
+22	22		301							{2: 'Bridget', 3: 'Personal data... disposal instructions... Wait... disposal instructions?', 4: '1'}
+23	23		301							"{3: 'Her hovering finger trembles for a moment before firmly pressing ""Continue"". A harsh red seal flashes across the screen, searing into her vision.'}"
+24	24		301							{2: 'Bridget', 3: 'Vital signs absent, results verified, signatory...', 4: '1'}
+25	25		301							{3: 'Just as Bridget tries to make out the last few words, a window suddenly pops up on the screen.'}
+26	26		401							{1: '2', 2: '4062'}
+27	27		301							{3: 'Beep—'}
+28	28		301							{2: 'Electronic Voice', 3: 'Error... Access to classified information detected. Process terminated.'}
+29	29		301							{2: 'Electronic Voice', 3: 'Provide administrator key and perform physical authentication to restart the process.'}
+30	30		301							"{2: 'Bridget', 3: ""Uh... what's this... wait, what?!"", 4: '1'}"
+31	31		401							{1: '2', 2: '9317017'}
+32	32		301							{3: 'THUD—!'}
+33	33		204							{1: '1', 2: '5'}
+34	34		301							{2: 'Bridget', 3: 'Eek—!', 4: '1'}
+35	35		202							{1: '1', 6: '1'}
+36	36		401							{1: '1', 2: '36'}
+37	37		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4501_02.jpg', 3: '0', 4: '1', 5: '0.25'}
+38	38		401							{1: '1', 2: '160'}
+39	39		301							"{3: ""The sudden noise strikes Bridget's already taut nerves, making her jolt. In that instant, the display screen before her goes dark.""}"
+40	40		301							{3: 'A sudden realization hits Bridget. With bated breath, she slowly turns around. The display screen flickers several times before gradually illuminating to reveal a face—identical to that of the person standing before her.'}
+41	41		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4501_03.jpg', 3: '0', 4: '1', 5: '0.25'}
+42	42		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBianHong.prefab', 2: '3'}
+43	43		301							{2: 'Skych', 3: 'Found you, Bridget...'}
+44	44		301							{3: 'Skych now appears to be struggling to maintain his consciousness.'}
+45	45		301		1		AniZhuanchangBegin			"{2: 'Skych', 3: ""You shouldn't be here.""}"

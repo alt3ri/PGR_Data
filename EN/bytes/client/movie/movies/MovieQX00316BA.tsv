@@ -1,0 +1,46 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '1101001', 3: '1'}
+4	4		301			DialogEnable				"{1: '1', 3: ""The new snack shop is selling Lovers' Delights! They're a rare find, so Watanabe and you grab a bag each.""}"
+5	5		302							"{2: ""Never thought I'd find such traditional snacks here."", 3: '6'}"
+6	6		301							"{2: 'Watanabe', 3: ""They must have timed their trial opening with Valentine's Day, huh?"", 4: '1'}"
+7	7		301							"{2: 'Watanabe', 3: ""Perfect, since the children have never seen these snacks before. Let's take some back for them to try."", 4: '1'}"
+8	8		301							"{3: ""The paper bag in your arms holds golden-baked Lovers' Delights, the scent of flour and eggs mingling and wafting into your nostrils.""}"
+9	9		302							"{2: ""I'm starting to get hungry."", 3: '10'}"
+10	10		301							{2: 'Watanabe', 3: 'Want to try one first?', 4: '1'}
+11	11		301							{3: 'Watanabe picks up a piece of snack and brings it to your lips.'}
+12	12		302							{2: '(Chew)', 3: '13'}
+13	13		301							{2: 'Watanabe', 3: 'How is it?', 4: '1'}
+14	14		302							{2: 'Not bad. Want one?', 3: '15'}
+15	15		301							{3: 'You take a piece from the bag and hand it to Watanabe.'}
+16	16		301							{2: 'Watanabe', 3: 'They even stuffed it with... date paste, of all things.', 4: '1'}
+17	17		301							{3: 'After confirming the taste, you plop down on a bench by the road, and he offers you another piece.'}
+18	18		301							"{3: ""So, under Watanabe's watchful gaze, you take a big bite, just like before.""}"
+19	19		301							{3: 'The anticipated satisfaction never materializes, leaving a weird aftertaste instead.'}
+20	20		302							{2: 'Uh...', 3: '21'}
+21	21		301							{3: 'The act of chewing slowly becomes a battle against the assault on your taste buds.'}
+22	22		302							{2: '...', 3: '23'}
+23	23		204							{1: '1'}
+24	24		301							{3: 'Watanabe senses something is wrong and glances at the remaining half of the snack.'}
+25	25		301							{3: 'The filling is slick with oil, thankfully the contents are still identifiable.'}
+26	26		301							{2: 'Watanabe', 3: 'What is this... minced meat and tofu? And Sichuan pepper? What kind of bizarre combination is this?', 4: '1'}
+27	27		301							"{2: 'Watanabe', 3: ""What's this red stuff... chili? What a waste of perfectly good food."", 4: '1'}"
+28	28		301							"{2: 'Watanabe', 3: ""Hey, maybe you shouldn't eat that... wait a minute..."", 4: '1'}"
+29	29		302			RImgBg1Shake				{2: 'Ugh—!', 3: '30'}
+30	30		301							"{2: 'Watanabe', 3: ""Want to spit it out?! There's a trash bin over there..."", 4: '1'}"
+31	31		301							{3: 'The disparate flavors explode on your tongue, finally giving meaning to that notion of experiencing every flavor in one bite.'}
+32	32		301							{3: 'With the willpower honed on the Star of Life, you swallow hard.'}
+33	33		301							"{2: 'Watanabe', 3: ""If it's bad, don't force it down... Is it because I mentioned food waste?"", 4: '1'}"
+34	34		302							{2: 'Food waste is definitely a bad thing...', 3: '35', 4: '(Nod)', 5: '35'}
+35	35		301							{2: 'Watanabe', 3: 'You...', 4: '1'}
+36	36		301							{3: 'Watanabe, while patting your back with a frown, takes the paper bag from you, finally noticing the small characters printed on the back.'}
+37	37		301							"{3: '""Lovers\' Delights on sale at 30% off, explore hidden flavors to exchange for a commemorative coin!""'}"
+38	38		301							{3: 'Pinching the bottom of the paper bag, several round commemorative coins poke through.'}
+39	39		302							{2: 'How many hidden flavors did that clerk sneak in?', 3: '40'}
+40	40		301							{2: 'Watanabe', 3: 'No wonder his smile was so strange, it almost gave me the creeps, like something was about to go down on the battlefield.', 4: '1'}
+41	41		301							{3: 'Shaking the bag, you both fall silent, staring at the coins at the bottom.'}
+42	42		302							{2: 'Could the kids even handle this kind of test?', 3: '43'}
+43	43		204							{1: '1', 2: '1'}
+44	44		301							{3: 'Watching you sweat in thought, Watanabe suddenly chuckles, patting you on the shoulder.'}
+45	45		301		1		AniZhuanchangBegin			{2: 'Watanabe', 3: 'Ah well, let the kids experience a challenge beyond the surprise, too.', 4: '1'}

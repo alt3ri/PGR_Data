@@ -1,0 +1,68 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory31.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '1091001', 4: '400'}
+4	4		201							{1: '2', 2: '1021001', 4: '-400'}
+5	5		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'The entrance is completely blocked.', 4: '2'}
+6	6		202							{1: '2', 6: '1'}
+7	7		201							{1: '3', 2: '1031001', 4: '-400'}
+8	8		301							{1: '1', 2: 'Liv', 3: 'The ruins here are convoluted. Plus, a large amount of Corrupted are wandering around. We should consider other plans to advance.', 4: '3'}
+9	9		301							{2: 'Liv', 3: 'So as to avoid the situation just now. If the commandant was drawn in by that...', 4: '3'}
+10	10		302							"{2: ""I'll be careful."", 3: '11'}"
+11	11		202							{1: '3', 6: '1'}
+12	12		201							{1: '2', 2: '1111001', 4: '-400'}
+13	13		301							"{1: '1', 2: 'Karenina', 3: ""It's all your fault. If it weren't for you we'd have finished the mission already."", 4: '2'}"
+14	14		301							{2: 'Bianca', 3: 'Karenina.', 4: '1'}
+15	15		301							"{2: 'Karenina', 3: ""No, I need to get this out! If they weren't being slowpokes, we wouldn't have been sealed off!"", 4: '2'}"
+16	16		301							"{2: 'Karenina', 3: ""And it's not like the Gray Ravens would get into any trouble even if our mission failed!"", 4: '2'}"
+17	17		301							"{2: 'Karenina', 3: ""Okay, I'm done venting."", 4: '2'}"
+18	18		202							{1: '2', 6: '1'}
+19	19		201							{1: '3', 2: '1031001', 3: '6', 4: '-400'}
+20	20		301							"{1: '1', 2: 'Liv', 3: ""I'm terribly sorry. I'm already trying to find a new path forward through the complicated ruins structure. I know I'll find it soon."", 4: '3'}"
+21	21		202							{1: '3', 6: '1'}
+22	22		201							{1: '3', 2: '1011001', 4: '-400'}
+23	23		301							"{1: '1', 2: 'Lee', 3: ""Liv, you shouldn't be too harsh on yourself. The Corrupted in the ruins won't be going anywhere."", 4: '3'}"
+24	24		202							{1: '3', 6: '1'}
+25	25		201							{1: '3', 2: '1031001', 3: '6', 4: '-400'}
+26	26		301							"{1: '1', 2: 'Liv', 3: ""Ah, no, it's not that, Lee..."", 4: '3'}"
+27	27		202							{1: '3', 6: '1'}
+28	28		201							{1: '2', 2: '1021001', 4: '-400'}
+29	29		301							{1: '1', 2: 'Lucia', 3: 'Bianca, is Kamui still moving?', 4: '2'}
+30	30		301							"{2: 'Bianca', 3: ""No, he's stopped."", 4: '1'}"
+31	31		302							{2: 'He found his target?', 3: '32'}
+32	32		301							{2: 'Bianca', 3: 'From our current available information, likely.', 4: '1'}
+33	33		301							{2: 'Lucia', 3: 'Liv, how much longer do you need?', 4: '2'}
+34	34		202							{1: '2', 6: '1'}
+35	35		201							{1: '3', 2: '1031001', 4: '-400'}
+36	36		301							"{1: '1', 2: 'Liv', 3: ""I'm still analyzing the data. I just need two—no, one more minute!"", 4: '3'}"
+37	37		301							"{2: 'Liv', 3: ""I'll map the best route ahead."", 4: '3'}"
+38	38		301							{2: 'Bianca', 3: 'Thank you.', 4: '1'}
+39	39		202							{1: '3', 6: '1'}
+40	40		201							{1: '2', 2: '1111001', 4: '-400'}
+41	41		301				AniZhuanchangBegin			"{1: '1', 2: 'Karenina', 3: ""Hmph, if you'd like to try your best to make up for it, then I'll just sit here and wait. Just one minute, alright?"", 4: '2'}"
+42	42		202							{1: '1', 2: '2', 6: '1'}
+43	43		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg608_1.jpg'}
+44	44		301			AniZhuanchangEnd				{3: 'Karenina lowers herself and sits on a nearby rock. Bianca does so too and sits by her side.'}
+45	45		301							{3: 'The rippling sand swims through the air, further lowering the visibility of the ruins.'}
+46	46		301							{3: 'Broken arrows and tools with a metallic sheen lay haphazardly above the dunes, as if hurriedly abandoned by someone.'}
+47	47		301							{3: 'Even without a Corrupted in sight, it was not silence and relief that befell, but instead the blare of the digging devices.'}
+48	48		301				AniZhuanchangBegin			{3: 'Liv carefully navigates past the high-disruption machines, and continues the scanning and processing of the environment.'}
+49	49		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory31.jpg'}
+50	50		201							{1: '3', 2: '1031001', 4: '-400'}
+51	51		201							{1: '2', 2: '1021001', 4: '400'}
+52	52		301			AniZhuanchangEnd				{1: '1', 2: 'Liv', 3: 'Got it!', 4: '3'}
+53	53		202							{1: '3', 6: '1'}
+54	54		201							{1: '3', 2: '1111001', 4: '-400'}
+55	55		301							"{1: '1', 2: 'Karenina', 3: ""Guess you guys aren't all talk."", 4: '3'}"
+56	56		302							{2: 'Tell me your plan.', 3: '57'}
+57	57		202							{1: '3', 6: '1'}
+58	58		201							{1: '3', 2: '1031001', 4: '-400'}
+59	59		301							{1: '1', 2: 'Liv', 3: 'The ruins here are all structurally connected. But due to the drilling device, many areas have already collapsed and are inaccessible.', 4: '3'}
+60	60		301							{2: 'Liv', 3: 'In turn, however, we can take advantage of how the drill operates and follow the underground route it created through the hole on the surface, circling back to near where we were.', 4: '3'}
+61	61		301							{2: 'Liv', 3: 'This is going to cost us more time.', 4: '3'}
+62	62		301							{2: 'Lucia', 3: 'Will there be any risk?', 4: '2'}
+63	63		301							{2: 'Liv', 3: 'Since none of the ruins are secured... all we can do is try our best to avoid areas that have collapsed or are heavily weathered to minimize the risks.', 4: '3'}
+64	64		302							"{2: ""I'll be fine. Don't worry."", 3: '65'}"
+65	65		202							{1: '3', 6: '1'}
+66	66		201							{1: '1', 2: '1091001', 4: '-400'}
+67	67		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Bianca', 3: ""Let's go. Kamui's coordinates are moving again."", 4: '1'}"

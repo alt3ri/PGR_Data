@@ -1,0 +1,472 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1210.jpg'}
+2	2		502							{1: 'DialogEnable'}
+3	3		401							{1: '2', 2: '2647'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+5	5		502							{1: 'RImgBg1Shake'}
+6	6		301			AniZhuanchangEnd				{3: 'BOOM—'}
+7	7		301				DialogDisable			{3: 'The high-strength concrete and ceramic-armored walls are reduced to fragments amid a thunderous roar.'}
+8	8		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+9	9		401							{1: '1', 2: '6170'}
+10	10		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory504.jpg', 3: '0', 4: '1', 5: '1.5'}
+11	11		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory504.jpg'}
+12	12		205							{1: '999'}
+13	13		401							{1: '2', 2: '1543'}
+14	14		201							{1: '1', 2: '501192', 7: '1'}
+15	15		203							{1: '1', 2: '0.3', 4: '-75'}
+16	16		301			DialogEnable				"{1: '1', 3: 'The spherical Corrupted known as ""Gwynplaine"" tips his top hat low and performs a gentlemanly bow toward the people in the library, all while engulfed in thick, billowing dust.'}"
+17	17		203							{1: '1', 2: '0.3', 4: '0'}
+18	18		301							{2: 'Gwynplaine', 3: 'Hahahaha...', 4: '1'}
+19	19		202							{1: '1'}
+20	20		401							{1: '2', 2: '13015308'}
+21	21		301			RImgBg1Shake				{3: 'His massive body closes in within an instant as he swings a blood-red chainsaw at the densely packed crowd.'}
+22	22		402							{1: '13015308'}
+23	23		201							{1: '1', 2: '500260', 7: '1'}
+24	24		301			PanelActor1Shake				{1: '1', 2: 'Girl', 3: 'Ah!!', 4: '1'}
+25	25		201							{1: '2', 2: '501187', 3: '18', 4: '-800'}
+26	26		203						200.0	{1: '2', 2: '0.25', 3: '-200', 4: '-75'}
+27	27		401							{1: '2', 2: '11106008'}
+28	28		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+29	29		301			RImgBg1Shake				{1: '1', 2: 'Jetavie', 3: 'Get lost, you old bastard!', 4: '2'}
+30	30		202							{1: '1', 2: '2'}
+31	31		301							{3: 'Jetavie dashes forward to shield the girl, swinging her Greatsword at him with all her might.'}
+32	32		104							{1: '0|0|-75', 2: '0.25'}
+33	33		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+34	34		401							{1: '2', 2: '10006001'}
+35	35		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash.prefab', 2: '2'}
+36	36		104							{1: '0|0|0', 2: '0.25'}
+37	37		301							"{3: ""A dull thud echoes—there's no sensation of cutting through. His body is encased in some kind of extremely thick elastic material that deflects Jetavie's attack.""}"
+38	38		201							{1: '1', 2: '501192'}
+39	39		301							{1: '1', 2: 'Gwynplaine', 3: 'My turn now!!', 4: '1'}
+40	40		202							{1: '1', 6: '1'}
+41	41		201							{1: '1', 2: '501187', 3: '4', 7: '1'}
+42	42		401							{1: '2', 2: '846'}
+43	43		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiChopping03.prefab', 2: '2'}
+44	44		301			PanelActor1Shake	DialogDisable			{1: '1', 2: 'Jetavie', 3: 'Ugh...', 4: '1'}
+45	45		202							{1: '1', 2: '2', 6: '1'}
+46	46		401							{1: '2', 2: '1105'}
+47	47		307						100.0	{1: 'ENERGY REMAINING: 25.49%', 3: '60', 4: 'ff4e4eff'}
+48	48		301							{3: 'ENERGY REMAINING: 25.49%'}
+49	49		401							{1: '2', 2: '1105'}
+50	50		307						100.0	{1: 'FRAME DAMAGE: 54.33%', 3: '60', 4: 'ff4e4eff'}
+51	51		301							{3: 'FRAME DAMAGE: 54.33%'}
+52	52		307							{2: '1'}
+53	53		201							{1: '1', 2: '501192', 7: '1'}
+54	54		502							{1: 'PanelActor1Shake'}
+55	55		301			DialogEnable				{1: '1', 2: 'Gwynplaine', 3: 'Got you! Hahaha!!', 4: '1'}
+56	56		202							{1: '1'}
+57	57		301							{3: 'The successful attack brings him a unique pleasure, causing him to stop in place and double over in hysteria.'}
+58	58		201							{1: '1', 2: '501187', 3: '4'}
+59	59		301				DialogDisable			{1: '1', 2: 'Jetavie', 3: '...', 4: '1'}
+60	60		202							{1: '1', 6: '1'}
+61	61		401							{1: '2', 2: '4092'}
+62	62		307							{1: 'WEAPON CHARGING... 30%', 3: '60', 4: '34aff8ff'}
+63	63		301							{3: 'WEAPON CHARGING... 30%'}
+64	64		307							{2: '1'}
+65	65		201							{1: '1', 2: '501192'}
+66	66		301			DialogEnable	DialogDisable			{1: '1', 2: 'Gwynplaine', 3: 'Fun, I need more fun!', 4: '1'}
+67	67		202							{1: '1', 6: '1'}
+68	68		402							{1: '1099'}
+69	69		401							{1: '2', 2: '4092'}
+70	70		307							{1: 'WEAPON CHARGING... 70%', 3: '60', 4: '34aff8ff'}
+71	71		301							{3: 'WEAPON CHARGING... 70%'}
+72	72		307							{2: '1'}
+73	73		201							{1: '1', 2: '501187', 3: '4', 5: '-50'}
+74	74		201							{1: '2', 2: '501192', 4: '800', 5: '-50'}
+75	75		203						200.0	{1: '2', 2: '0.25', 3: '400'}
+76	76		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash.prefab', 2: '2'}
+77	77		401							{1: '2', 2: '11106008'}
+78	78		502							{1: 'RImgBg1Shake'}
+79	79		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+80	80		203							{1: '1', 2: '0.25', 3: '-500'}
+81	81		301			DialogEnable				"{1: '1', 3: ""He spins his body, the high-speed whirling saw deflecting Jetavie's Greatsword and carving a long, narrow gash into her frame.""}"
+82	82		401							{1: '2', 2: '1543'}
+83	83		203							{1: '1', 2: '0.25', 3: '-500', 4: '-20'}
+84	84		301				DialogDisable			{2: 'Jetavie', 3: 'Ugh...', 4: '1'}
+85	85		202							{1: '1', 2: '2', 6: '1'}
+86	86		401							{1: '2', 2: '1105'}
+87	87		307						100.0	{1: 'ENERGY REMAINING: 12.29%', 3: '60', 4: 'ff4e4eff'}
+88	88		301							{3: 'ENERGY REMAINING: 12.29%'}
+89	89		401							{1: '2', 2: '1105'}
+90	90		307						100.0	{1: 'FRAME DAMAGE: 71.56%', 3: '60', 4: 'ff4e4eff'}
+91	91		301							{3: 'FRAME DAMAGE: 71.56%'}
+92	92		307							{2: '1'}
+93	93		502							{1: 'PanelActor1Shake'}
+94	94		201							{1: '1', 2: '501192', 7: '1'}
+95	95		301			DialogEnable	DialogDisable			{1: '1', 2: 'Gwynplaine', 3: 'Hahaha!', 4: '1'}
+96	96		202							{1: '1', 6: '1'}
+97	97		401							{1: '2', 2: '4092'}
+98	98		307							{1: '[WEAPON CHARGING... 100%]', 3: '60', 4: '34aff8ff'}
+99	99		301							{3: '[WEAPON CHARGING... 100%]'}
+100	100		505							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2', 3: '2'}
+101	101		307							{2: '1'}
+102	102		401							{1: '2', 2: '9342045'}
+103	103		401							{1: '2', 2: '15039006'}
+104	104		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5401_07.jpg'}
+105	105		104							{1: '-200|-150|-300', 2: '0'}
+106	106		104			AniZhuanchangEnd			1500.0	{1: '-100|-150|-300', 2: '2'}
+107	107		301			DialogEnable			2000.0	{3: 'Taking advantage of his laughing fit, Jetavie pushes off his highly elastic outer shell and grabs the gun swung to her by her tail.'}
+108	108		201							{1: '18', 2: '501192', 4: '-335', 5: '-440', 6: '300'}
+109	109		301							{1: '1', 2: 'Gwynplaine', 3: '...?', 4: '18'}
+110	110		202							{1: '18'}
+111	111		301							{2: 'Jetavie', 3: 'Die!'}
+112	112		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+113	113		401							{1: '2', 2: '15039028'}
+114	114		401							{1: '2', 2: '4510'}
+115	115		301			RImgBg1Shake				{3: 'In a moment of stupor, a high-energy particle beam suddenly pierces through his defenses, blasting a hole clean through his arm.'}
+116	116		201							{1: '18', 2: '501192', 3: '7', 4: '-335', 5: '-440', 6: '300'}
+117	117		301			RImgBg1Shake				{1: '1', 2: 'Gwynplaine', 3: 'Aaaahh!! It hurts, it hurts so much!!', 4: '18'}
+118	118		202							{1: '18'}
+119	119		301							{3: 'He clutches his wound, releasing an ear-splitting howl of pain.'}
+120	120		401							{1: '2', 2: '9398055'}
+121	121		301				DialogDisable			{3: 'Seemingly overwhelmed by pain, the bulky figure hastily flees the scene.'}
+122	122		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+123	123		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+124	124		401							{1: '2', 2: '1105'}
+125	125		307						100.0	{1: 'ENERGY REMAINING: 7.31%', 3: '60', 4: 'ff4e4eff'}
+126	126		301							{3: 'ENERGY REMAINING: 7.31%'}
+127	127		401							{1: '2', 2: '1105'}
+128	128		307						100.0	{1: 'FRAME DAMAGE: 71.56%', 3: '60', 4: 'ff4e4eff'}
+129	129		301							{3: 'FRAME DAMAGE: 71.56%'}
+130	130		401							{1: '2', 2: '1105'}
+131	131		307						100.0	{1: 'LOW POWER MODE ACTIVATED', 3: '60', 4: 'ff4e4eff'}
+132	132		301				AniZhuanchangBegin			{3: 'LOW POWER MODE ACTIVATED'}
+133	133		401						1000.0	{1: '1', 2: '36'}
+134	134		307							{2: '1'}
+135	135		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory504.jpg'}
+136	136		502							{1: 'DialogEnable'}
+137	137		201							{1: '1', 2: '501187', 3: '18', 7: '1'}
+138	138		301			AniZhuanchangEnd				{1: '1', 2: 'Jetavie', 3: 'Huff... Puff...', 4: '1'}
+139	139		401							{1: '2', 2: '2959'}
+140	140		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+141	141		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+142	142		204							{1: '1', 2: '4'}
+143	143		203							{1: '1', 2: '0.3', 4: '-75'}
+144	144		401							{1: '2', 2: '1543'}
+145	145		401							{1: '2', 2: '4921'}
+146	146		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenRedEx.prefab', 2: '2'}
+147	147		301							{3: 'Alarming red data floats across her visual module as Jetavie doubles over in pain...'}
+148	148		202							{1: '1'}
+149	149		401							{1: '2', 2: '4808'}
+150	150		301							{3: 'The whistling of bullets?'}
+151	151		402							{1: '4921'}
+152	152		401							{1: '2', 2: '846'}
+153	153		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+154	154		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenRedEx.prefab'}
+155	155		401							{1: '1', 2: '359'}
+156	156		201							{1: '1', 2: '501187', 3: '18', 7: '1'}
+157	157		301			PanelActor1Shake				{1: '1', 2: 'Jetavie', 3: 'Aargh!', 4: '1'}
+158	158		306							{1: '1'}
+159	159		301							{3: 'Her shoulder is pierced through—her processing center receives the danger signal, but her frame, running in low power mode, can no longer respond properly.'}
+160	160		306							
+161	161		202							{1: '1', 6: '1'}
+162	162		201							{1: '1', 2: '500013', 4: '650', 5: '-100'}
+163	163		201							{1: '2', 2: '500013', 5: '-200', 6: '-50'}
+164	164		201							{1: '3', 2: '500013', 4: '-650', 5: '-100'}
+165	165		401							{1: '2', 2: '1508'}
+166	166		301			RImgBg1Shake				{1: '1', 2: 'Corrupted Horde', 3: '(Angry roaring)', 4: '1', 5: '2', 6: '3'}
+167	167		301							{3: 'The library wall is blown apart by the clown—through that massive hole, Corrupted pour in like a relentless tide.'}
+168	168		202							{1: '1', 2: '2', 3: '3'}
+169	169		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+170	170		301						2000.0	{3: 'Vision blurring, body trembling.'}
+171	171		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+172	172		401							{1: '2', 2: '4808'}
+173	173		301							{3: 'Another volley of bullets tears through the air, shrieking as they streak toward her.'}
+174	174		401							{1: '2', 2: '819016'}
+175	175		104						250.0	{1: '0|-25|0', 2: '0.25'}
+176	176		104							{1: '0|0|0', 2: '0.25'}
+177	177		301							{3: 'Relying on pure instinct, Jetavie hefts her Greatsword and single-handedly holds the line.'}
+178	178		201							{1: '1', 2: '501187', 3: '4', 7: '1'}
+179	179		301			PanelActor1Shake				{1: '1', 2: 'Jetavie', 3: 'Uhh...', 4: '1'}
+180	180		202							{1: '1', 6: '1'}
+181	181		301							{3: 'With sword and body, she blocks the onslaught... but only part of it.'}
+182	182		401							{1: '2', 2: '9342031'}
+183	183		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+184	184		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '3'}
+185	185		201							{1: '1', 2: '501114', 4: '400', 7: '1'}
+186	186		201							{1: '2', 2: '500677', 4: '0', 7: '1'}
+187	187		201							{1: '3', 2: '500454', 4: '-400', 7: '1'}
+188	188		301							{1: '1', 3: 'The rest grazes past her ears—thin streaks of light dart across her visual module like comets as they pierce into the vulnerable crowd behind her.'}
+189	189		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+190	190		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+191	191		401							{1: '2', 2: '2593'}
+192	192		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+193	193		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_03.jpg'}
+194	194		301							{3: 'The crimson flowers of death bloom.'}
+195	195		401							{1: '2', 2: '4280'}
+196	196		401							{1: '2', 2: '2927'}
+197	197		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+198	198		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory504.jpg'}
+199	199		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+200	200		301				DialogDisable			{3: 'The fleeing crowd bursts into heart-rending wails, and a flood of complex audiovisual information rushes into her processing center... Time seems to slow down.'}
+201	201		402							{1: '4280'}
+202	202		401							{1: '2', 2: '558'}
+203	203		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+204	204		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 4: '5'}
+205	205		104							{1: '0|0|-100', 2: '0', 4: '5'}
+206	206		201							{1: '1', 2: '500460', 4: '650'}
+207	207		109							"{1: '1', 2: ""<color=#ffffffff><size=45>She sees a youth desperately clutching their companion's limp hand,\\na stoic husband dying in his wife's embrace,\\na father pulling his bleeding child to his chest...</size></color>"", 3: '-250', 9: '3'}"
+208	208		301							"{1: '1', 3: ""She sees a youth desperately clutching their companion's limp hand, a stoic husband dying in his wife's embrace, a father pulling his bleeding child to his chest...""}"
+209	209		401							{1: '2', 2: '558'}
+210	210		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+211	211		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront25.png', 4: '5'}
+212	212		104							{1: '0|0|-100', 2: '0', 4: '5'}
+213	213		201							{1: '1', 2: '500268', 4: '-650'}
+214	214		109							{1: '1', 2: '<color=#ffffffff><size=40>She sees an infant who once slept soundly in her arms now wailing inconsolably,\\nbecause the woman who should be embracing her has collapsed to the ground,\\nhaving lost the strength to hold her child.</size></color>', 3: '350', 9: '3'}
+215	215		301							{1: '1', 3: 'She sees an infant who once slept soundly in her arms now wailing inconsolably, because the woman who should be embracing her has collapsed to the ground, having lost the strength to hold her child.'}
+216	216		110							
+217	217		101							{4: '5', 5: '1'}
+218	218		202							{1: '1', 6: '1'}
+219	219		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+220	220		401							{1: '2', 2: '558'}
+221	221		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+222	222		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory504.jpg'}
+223	223		201							{1: '1', 2: '501187', 3: '4'}
+224	224		301			DialogEnable				"{1: '1', 3: ""Teacher 【kuroname】 lies severely wounded and in shock, while all of Jetavie's classmates have entered emergency shutdown. Jetavie is the only one left who can still fight.""}"
+225	225		301							"{3: 'Why does she still persist? Is it to ""protect humanity""?'}"
+226	226		204							{1: '1', 2: '3'}
+227	227		301							"{3: ""No, it's not such a noble emotion...""}"
+228	228		202							{1: '1', 6: '1'}
+229	229		402							{1: '2927'}
+230	230		401							{1: '2', 2: '895'}
+231	231		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+232	232		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+233	233		301							"{3: 'She\'s just... ""envying"" them, isn\'t she?'}"
+234	234		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+235	235		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory504.jpg'}
+236	236		201							{1: '1', 2: '500013', 7: '1'}
+237	237		401							{1: '2', 2: '1508'}
+238	238		301			RImgBg1Shake				{1: '1', 2: 'Corrupted', 3: 'SCREECH!!', 4: '1'}
+239	239		202							{1: '1', 6: '1'}
+240	240		201							{1: '1', 2: '501187', 3: '4'}
+241	241		401							{1: '2', 2: '819016'}
+242	242		203							{1: '1', 2: '0.25', 5: '-50'}
+243	243		301				DialogDisable			{1: '1', 2: 'Jetavie', 3: 'Get out of my way.', 4: '1'}
+244	244		201							{1: '1', 2: '501187', 3: '4', 4: '-600', 7: '1'}
+245	245		201							{1: '2', 2: '500013', 4: '500', 7: '1'}
+246	246		203						250.0	{1: '1', 2: '0.25', 3: '150'}
+247	247		401							{1: '2', 2: '11106008'}
+248	248		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+249	249		203						400.0	{1: '2', 2: '0.25', 3: '600'}
+250	250		203						300.0	{1: '2', 2: '0.25', 3: '600', 4: '-1200'}
+251	251		202							{1: '2', 6: '1'}
+252	252		203							{1: '1', 2: '0.25', 3: '250', 4: '-20'}
+253	253		201							{1: '2', 2: '500013', 4: '-800'}
+254	254		401							{1: '2', 2: '844'}
+255	255		203							{1: '2', 2: '0.25', 3: '-400'}
+256	256		301			DialogEnable				{1: '1', 3: 'Jetavie spins and cuts down one Corrupted, only for the blades of another group of Corrupted to close in from behind.'}
+257	257		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiChopping03.prefab', 2: '3'}
+258	258		401							{1: '2', 2: '846'}
+259	259		203							{1: '2', 2: '0.25', 3: '-200'}
+260	260		203							{1: '1', 2: '0.25', 3: '250', 4: '-30'}
+261	261		301			PanelActor1Shake				{1: '1', 2: 'Jetavie', 3: 'Ugh...', 4: '1'}
+262	262		202							{1: '1', 2: '2', 6: '1'}
+263	263		201							{1: '1', 2: '501187', 3: '4', 7: '1'}
+264	264		201							{1: '2', 2: '500013', 4: '-600', 7: '1'}
+265	265		201							{1: '3', 2: '500013', 4: '600', 7: '1'}
+266	266		203							{1: '1', 2: '0.25', 4: '-75'}
+267	267		203							{1: '2', 2: '0.25', 3: '-500', 4: '-50'}
+268	268		203							{1: '3', 2: '0.25', 3: '500', 4: '-50'}
+269	269		401							{1: '2', 2: '4306'}
+270	270		301							{1: '1', 3: 'She hurls one away with all her might, only for another to lunge at her, then another and another, frantically gnawing at her frame components.'}
+271	271		204							{1: '1', 2: '18'}
+272	272		301							{2: 'Jetavie', 3: 'GET OFF ME!!', 4: '1'}
+273	273		204							{1: '1', 2: '4'}
+274	274		203							{1: '1', 2: '0.25'}
+275	275		202							{1: '3', 2: '2'}
+276	276		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+277	277		401							{1: '2', 2: '11106008'}
+278	278		502							{1: 'RImgBg1Shake'}
+279	279		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '3'}
+280	280		301				DialogDisable			"{3: ""Red electricity bursts from Jetavie's body. Seizing the moment when the Corrupted loosen their grip, she once again swings her Greatsword with all her might.""}"
+281	281		202							{1: '1', 6: '1'}
+282	282		401							{1: '2', 2: '1105'}
+283	283		307						100.0	{1: 'ENERGY REMAINING: 6.29%', 3: '60', 4: 'ff4e4eff'}
+284	284		301							{3: 'ENERGY REMAINING: 6.29%'}
+285	285		401							{1: '2', 2: '1105'}
+286	286		307						100.0	{1: 'FRAME DAMAGE: 77.56%', 3: '60', 4: 'ff4e4eff'}
+287	287		301							{3: 'FRAME DAMAGE: 77.56%'}
+288	288		307							{2: '1'}
+289	289		201							{1: '1', 2: '501187', 3: '18', 5: '-75'}
+290	290		301			DialogEnable				{1: '1', 2: 'Jetavie', 3: 'Huff... Puff...', 4: '1'}
+291	291		204							{1: '1', 2: '4'}
+292	292		203							{1: '1', 2: '0.25'}
+293	293		401							{1: '2', 2: '4044'}
+294	294		301							{3: 'She plants her Greatsword into the ground, propping up her shattered body.'}
+295	295		202							{1: '1'}
+296	296		301							"{3: ""Looking back at the people huddled together, she feels the intense sorrow and kinship between them.\\nThey're fortunate, she thinks—to have someone who cries out for them.""}"
+297	297		301							"{3: 'They all have their own ""chosen one""—and Jetavie envies them for it.'}"
+298	298		401							{1: '2', 2: '4784'}
+299	299		201							{1: '1', 2: '500013'}
+300	300		301			RImgBg1Shake				{1: '1', 2: 'Corrupted', 3: '(Angry roar)', 4: '1'}
+301	301		202							{1: '1'}
+302	302		301							"{3: ""The Corrupted surge forward like a crimson tide, wave after wave, seemingly without end—and yet this assault has been deliberately provoked by the company's people.""}"
+303	303		301				DialogDisable			"{3: '""Obtaining data on the chosen ones after the \'final test\'"" was nothing but a lie to keep her here...'}"
+304	304		401							{1: '2', 2: '1105'}
+305	305		307						100.0	{1: 'ENERGY REMAINING: 6.01%', 3: '60', 4: 'ff4e4eff'}
+306	306		301							{3: 'ENERGY REMAINING: 6.01%'}
+307	307		401							{1: '2', 2: '1105'}
+308	308		307						100.0	{1: 'FRAME DAMAGE: 77.56%', 3: '60', 4: 'ff4e4eff'}
+309	309		301							{3: 'FRAME DAMAGE: 77.56%'}
+310	310		307							{2: '1'}
+311	311		301			DialogEnable				"{3: ""Fighting with her current energy levels and output capacity will only lead to destruction, won't it?""}"
+312	312		301							{3: 'Blood and vital fluids stain the pristine white floor of the library crimson. Teacher 【kuroname】, Martha, and students... all of them severely wounded.'}
+313	313		301							"{3: 'There is no ""chosen one"" here, and Jetavie stands alone—but that doesn\'t mean she has nothing to cherish.'}"
+314	314		201							{1: '1', 2: '501187', 3: '4', 5: '-50'}
+315	315		301							{1: '1', 2: 'Jetavie', 3: 'Eh...', 4: '1'}
+316	316		203							{1: '1', 2: '0.25'}
+317	317		401							{1: '2', 2: '819016'}
+318	318		202							{1: '1'}
+319	319		401							{1: '2', 2: '4383'}
+320	320		104						250.0	{1: '0|50|-25', 2: '0.25'}
+321	321		104							{1: '0|0|-50', 2: '0.25'}
+322	322		301							{3: 'She pushes herself off the Greatsword, pulling it from the ground and pointing it forward.'}
+323	323		402							{1: '4383'}
+324	324		401							{1: '2', 2: '4383'}
+325	325		104						250.0	{1: '0|50|-75', 2: '0.25'}
+326	326		104							{1: '0|0|-100', 2: '0.25'}
+327	327		301							{3: 'Before she faces destruction, she will ensure those she cherishes survive.'}
+328	328		402							{1: '4383'}
+329	329		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+330	330		401							{1: '2', 2: '4086'}
+331	331		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+332	332		301							{3: '<b>Jetavie...</b>'}
+333	333		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+334	334		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory504.jpg'}
+335	335		201							{1: '1', 2: '501187'}
+336	336		301							{1: '1', 2: 'Jetavie', 3: 'Teacher?', 4: '1'}
+337	337		202							{1: '1', 6: '1'}
+338	338		401							{1: '2', 2: '2959'}
+339	339		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+340	340		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+341	341		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory65.jpg'}
+342	342		301							"{3: ""The human's combat suit is stained red with blood as they collapse helplessly to the ground, seemingly struggling to transmit words to her through the Mind Beacon.""}"
+343	343		301				DialogDisable			{3: 'Time slows down once again.'}
+344	344		302							"{2: ""Jetavie, don't do anything rash. Reinforcements will be here in 10 minutes."", 3: '345'}"
+345	345		401							{1: '2', 2: '2959'}
+346	346		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+347	347		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+348	348		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory504.jpg'}
+349	349		201							{1: '1', 2: '501187', 3: '11', 7: '1'}
+350	350		301			DialogEnable				{1: '1', 2: 'Jetavie', 3: 'Reinforcements? Teacher, you still like to joke with Jetavie even at a time like this...', 4: '1'}
+351	351		204							{1: '1', 2: '4'}
+352	352		301				DialogDisable			"{2: 'Jetavie', 3: ""Besides, even if reinforcements are real, there's not much time left for this place. Three minutes is already pushing it."", 4: '1'}"
+353	353		401							{1: '2', 2: '2959'}
+354	354		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+355	355		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+356	356		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory65.jpg'}
+357	357		202							{1: '1', 6: '1'}
+358	358		302							{2: 'Even if you must fight, you are not alone.', 3: '359'}
+359	359		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+360	360		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+361	361		401							{1: '2', 2: '937'}
+362	362		307							{1: 'M.I.N.D. CONNECTION REQUEST', 3: '60', 4: '0e70bdff'}
+363	363		301							{3: 'M.I.N.D. CONNECTION REQUEST'}
+364	364		307							{2: '1'}
+365	365		401							{1: '2', 2: '1105'}
+366	366		307							{1: 'RECEIVER HAS DECLINED', 3: '60', 4: 'ff4e4eff'}
+367	367		301							{3: 'RECEIVER HAS DECLINED'}
+368	368		307							{2: '1'}
+369	369		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+370	370		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory504.jpg'}
+371	371		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory65.jpg'}
+372	372		302							{2: '...?', 3: '373'}
+373	373		401							{1: '2', 2: '2959'}
+374	374		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+375	375		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+376	376		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory504.jpg'}
+377	377		201							{1: '1', 2: '501187', 3: '2', 7: '1'}
+378	378		301			DialogEnable				{1: '1', 2: 'Jetavie', 3: 'Oh my! Who would have thought Teacher wanted to be with Jetavie so badly?', 4: '1'}
+379	379		204							{1: '1', 2: '1'}
+380	380		301							{2: 'Jetavie', 3: 'The situation is critical now. All remaining power must be directed to keep the battle modules operational.', 4: '1'}
+381	381		204							{1: '1', 2: '11'}
+382	382		301				DialogDisable			{2: 'Jetavie', 3: 'For the safety of your consciousness, the personality module that receives the Mind Beacon has been forcibly locked...', 4: '1'}
+383	383		202							{1: '1', 6: '1'}
+384	384		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+385	385		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+386	386		401							{1: '2', 2: '4092'}
+387	387		307							{1: 'EMERGENCY POWER ALLOCATION PROTOCOL', 3: '60', 4: 'ff4e4eff'}
+388	388		301							{3: 'EMERGENCY POWER ALLOCATION PROTOCOL'}
+389	389		307							{2: '1'}
+390	390		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+391	391		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory504.jpg'}
+392	392		201							{1: '1', 2: '501187', 3: '13', 7: '1'}
+393	393		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Jetavie', 3: ""I might lose some personality data... but when that time comes, you'll just have to introduce yourself to me all over again."", 4: '1'}"
+394	394		202							{1: '1', 6: '1'}
+395	395		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+396	396		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+397	397		401							{1: '2', 2: '1105'}
+398	398		307							{1: 'ENERGY TRANSFER IN PROGRESS', 3: '60', 4: 'ff4e4eff'}
+399	399		301							{3: 'ENERGY TRANSFER IN PROGRESS'}
+400	400		401							{1: '2', 2: '1105'}
+401	401		307							{1: 'PERSONALITY MODULE LOCKED', 3: '60', 4: 'ff4e4eff'}
+402	402		301							{3: 'PERSONALITY MODULE LOCKED'}
+403	403		307							{2: '1'}
+404	404		401							{1: '2', 2: '2959'}
+405	405		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+406	406		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+407	407		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory65.jpg'}
+408	408		302							{2: '...I hope the current you survives.', 3: '409'}
+409	409		205							{1: '1005'}
+410	410		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+411	411		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+412	412		401							{1: '2', 2: '937'}
+413	413		307							{1: 'BATTLE POWER RESTORATION IN PROGRESS', 3: '60', 4: '34aff8ff'}
+414	414		301							{3: 'BATTLE POWER RESTORATION IN PROGRESS'}
+415	415		401							{1: '2', 2: '1105'}
+416	416		307							{1: 'WARNING: PERSONALITY DATA LOSS', 3: '60', 4: 'ff4e4eff'}
+417	417		301							{3: 'WARNING: PERSONALITY DATA LOSS'}
+418	418		307							{2: '1'}
+419	419		401							{1: '2', 2: '2959'}
+420	420		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+421	421		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+422	422		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory504.jpg'}
+423	423		201							{1: '1', 2: '501187', 3: '1', 7: '1'}
+424	424		301			DialogEnable				"{1: '1', 2: 'Jetavie', 3: ""You're so greedy, Teacher... I might not even come back, but you're already thinking that far ahead?"", 4: '1'}"
+425	425		204							{1: '1', 2: '3'}
+426	426		301							{2: 'Jetavie', 3: 'But... if we really do meet again...', 4: '1'}
+427	427		204							{1: '1', 2: '8'}
+428	428		301				DialogDisable			{2: 'Jetavie', 3: 'When you cross paths with the next Jetavie, try not to be so soft on her.', 4: '1'}
+429	429		202							{1: '1', 6: '1'}
+430	430		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+431	431		401							{1: '2', 2: '4386'}
+432	432		504							{1: '0.7'}
+433	433		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory523.jpg'}
+434	434		201							{1: '1', 2: '500748', 7: '1'}
+435	435		301			DialogEnable	DialogDisable			{1: '1', 2: 'Jetavie', 3: 'When you cross paths with the next Jetavie, try not to be so soft on her.', 4: '1'}
+436	436		202							{1: '1', 6: '1'}
+437	437		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+438	438		401							{1: '2', 2: '4386'}
+439	439		504							{1: '0'}
+440	440		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory504.jpg'}
+441	441		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory65.jpg'}
+442	442		302							{2: '...!!', 3: '443'}
+443	443		302							"{2: ""Promise me you won't recklessly sacrifice yourself on the battlefield."", 3: '444'}"
+444	444		401							{1: '2', 2: '2959'}
+445	445		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+446	446		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+447	447		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory504.jpg'}
+448	448		201							{1: '1', 2: '501187', 3: '3', 7: '1'}
+449	449		301			DialogEnable				"{1: '1', 2: 'Jetavie', 3: '""Battlefield""... huh? What is a battlefield, really?', 4: '1'}"
+450	450		301							"{3: ""The girl's voice becomes ethereal and distant.""}"
+451	451		204							{1: '1', 2: '4'}
+452	452		301							{2: 'Jetavie', 3: 'Is it losing countless people once... or losing the one you love the most, countless times?', 4: '1'}
+453	453		204							{1: '1', 2: '3'}
+454	454		301							{2: 'Jetavie', 3: 'I have grown weary... in this world without the Chosen One', 4: '1'}
+455	455		401							{1: '2', 2: '9342060'}
+456	456		202							{1: '1'}
+457	457		301							{3: 'Jetavie gazes at you longingly, then shoulders her gun and Greatsword, never looking back.'}
+458	458		401							{1: '2', 2: '2959'}
+459	459		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+460	460		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+461	461		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory504.jpg'}
+462	462		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory65.jpg'}
+463	463		301				DialogDisable			{3: 'Meanwhile, clad in your combat gear, you endure excruciating pain, desperately channeling neural signals with every ounce of your strength.'}
+464	464		302							{2: 'Jetavie, I need you to survive, no matter what.', 3: '465', 4: '...', 5: '465'}
+465	465		205							{1: '1005'}
+466	466		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+467	467		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+468	468		401							{1: '2', 2: '4092'}
+469	469		109						900.0	{1: '1', 2: '<color=#34aff8ff><size=60>MIND BEACON</size></color>', 4: '50', 6: '1', 8: '8'}
+470	470		109						200.0	{1: '2', 2: '<color=#34aff8ff><size=60>—MAXIMUM OUTPUT POWER</size></color>', 4: '-50', 6: '1', 8: '10'}
+471	471		301		1		AniZhuanchangBegin			{3: 'MIND BEACON—MAXIMUM OUTPUT POWER'}

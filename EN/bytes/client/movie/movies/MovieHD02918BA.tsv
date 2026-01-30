@@ -1,0 +1,52 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '293'}
+3	3		301			DialogEnable				"{2: 'Karenina', 3: ""Don't open your eyes just yet.""}"
+4	4		301				DialogDisable			"{3: ""Sitting on a small sofa in Karenina's secret base and surrounded by all sorts of industrial devices, I hear her open a shelf.""}"
+5	5		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory3.jpg'}
+6	6		301			DialogEnable				{3: 'Your thoughts drift back to the morning when Karenina appeared around your dorm.'}
+7	7		201							{1: '1', 2: '500494', 3: '1'}
+8	8		301							"{1: '1', 2: 'Karenina', 3: ""Hmm, let's see..."", 4: '1'}"
+9	9		302							{2: 'Hey.', 3: '10', 4: 'Fancy seeing you here.', 5: '10'}
+10	10		301							"{2: 'Karenina', 3: ""Hey, I totally didn't come looking for you! I came for the Engineering Force...""}"
+11	11		301							"{3: ""As soon as our eyes met, Karenina's Inver-Device instantly powers down.""}"
+12	12		301							"{2: 'Karenina', 3: ""H-hey, totally didn't see you there just now. Karenina averts your gaze and gives her thigh a light tap."", 4: '1'}"
+13	13		302							"{2: ""Guess you're not here for me?"", 3: '14'}"
+14	14		301							{2: 'Karenina', 3: 'Huh?', 4: '1'}
+15	15		301							"{2: 'Karenina', 3: ""Of course, I'm here for you! Don't you remember what day it is today?"", 4: '1'}"
+16	16		302							"{2: ""Should I pretend I don't remember?"", 3: '17'}"
+17	17		301				DialogDisable			"{2: 'Karenina', 3: ""Anyway, four o'clock this afternoon, and you know where you're supposed to go."", 4: '1'}"
+18	18		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryZhengyan.prefab', 2: '3'}
+19	19		101			AniZhuanchangEnd			400.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory780.jpg'}
+20	20		505					400.0		{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryZhengyan.prefab'}
+21	21		301			DialogEnable		400.0		{2: 'Karenina', 3: 'Here.', 4: '1'}
+22	22		301							{3: 'Slowly opening my eyes, I see Karenina turn her head away and hand over an album.'}
+23	23		301							"{3: ""She pulls her hand back right when you're about to take it.""}"
+24	24		204							{1: '1', 2: '8'}
+25	25		301							{2: 'Karenina', 3: 'J-just let me go over it again.', 4: '1'}
+26	26		301							{3: 'Says Karenina, looking all nervous.'}
+27	27		302							{2: 'Is there something wrong with it?', 3: '28'}
+28	28		301							"{2: 'Karenina', 3: ""C'mon, Karenina, why are you being so nervous?!"", 4: '1'}"
+29	29		301							{3: 'She turns around.'}
+30	30		204							{1: '1', 2: '1'}
+31	31		301							{2: 'Karenina', 3: 'S-screw it! Take it!', 4: '1'}
+32	32		301							{3: 'She shoves the album into your hand.'}
+33	33		301							"{2: 'Karenina', 3: ""This is the album we agreed on. I wasn't quite sure when to give it to you... then came your birthday."", 4: '1'}"
+34	34		301							{2: 'Karenina', 3: 'The Engineering Force had a vote and decided to go with this cover! I only gave them the options to choose from...', 4: '1'}
+35	35		302							{2: 'You look cute on the cover, Karen.', 3: '36'}
+36	36		301							"{2: 'Karenina', 3: ""You're only allowed to say that word once."", 4: '1'}"
+37	37		301							{3: 'A card that looks like a vintage ticket sub falls out when you open the album. When you pick it up and look at Karenina, you see her fingers locked together.'}
+38	38		301							"{3: 'The ticket stub read, ""Handshake Ticket"".'}"
+39	39		301							{2: 'Karenina', 3: 'Well... this is just an idea I got from WGAA. They said celebrities from the Golden Age did this a lot with their albums. I had quite a few different versions made, and I picked this one personally.', 4: '1'}
+40	40		302							{2: 'So what am I supposed to do with this... handshake ticket?', 3: '41'}
+41	41		301							{2: 'Karenina', 3: 'You shake hands, duh.', 4: '1'}
+42	42		301							{3: 'Karenina sits back on the sofa and slowly extends her hand.'}
+43	43		301							{3: 'With it, you hold your hand out, too. Handshakes are common in social settings, but this kind of handshake is rare.'}
+44	44		301							"{3: ""You decide to place your other hand on top of Karenina's—and as soon as you do that, you feel her hand trembling slightly, presumably because the flow of her vital fluid has changed.""}"
+45	45		301							{2: 'Karenina', 3: 'Hey, hey, hey! This is anything but a handshake!', 4: '1'}
+46	46		302							"{2: ""(Look into Karenina's eyes)""}"
+47	47		301							{3: 'Despite what she said, you can feel her grip on your hand tightening a bit.'}
+48	48		301							"{2: 'Karenina', 3: ""But I'll let that slide since it's your birthday today."", 4: '1'}"
+49	49		301							{3: 'Karenina places her other hand on top as well, her eyes looking for a place to look at.'}
+50	50		301							"{2: 'Karenina', 3: ""One minute. That's what I remember the ticket says..."", 4: '1'}"
+51	51		301		1		AniZhuanchangBegin			"{2: 'Karenina', 3: ""Well... I don't mind if you want to hold my hands a little longer, though..."", 4: '1'}"

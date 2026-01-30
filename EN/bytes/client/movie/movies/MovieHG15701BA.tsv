@@ -1,0 +1,704 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory530.jpg'}
+2	2		401							{1: '1', 2: '82'}
+3	3		201							{1: '1', 2: '500434', 4: '600'}
+4	4		201							{1: '2', 2: '500616'}
+5	5		201							{1: '3', 2: '500251', 4: '-600'}
+6	6		301			DialogEnable				{1: '1', 2: 'Villager A', 3: 'On that fateful day... the Demon Lord descended upon the dark castle...', 4: '1', 18: '100009206'}
+7	7		301							"{2: 'Villager B', 3: ""Even looking upon the Demon Lord was forbidden—one glance and you'd be transformed into a monster!"", 4: '2', 18: '100009207'}"
+8	8		301							{2: 'Villager C', 3: 'We had no choice but to abandon the homes our ancestors had lived in for generations!', 4: '3', 18: '100009208'}
+9	9		301							"{2: 'Villager A', 3: ""Thankfully, the one from the prophecy has arrived! This chosen one is destined to tear all darkness asunder with the power to end the Demon Lord's tyranny!"", 4: '1', 18: '100009209'}"
+10	10		202							{1: '1', 2: '2', 3: '3'}
+11	11		301							{3: 'The three villagers, singing in exaggerated tones, hoist the chosen one up into the air together.'}
+12	12		302							{2: '...', 3: '13'}
+13	13		201							{1: '1', 2: '500434'}
+14	14		301							{1: '1', 2: 'Villager A', 3: 'So, mighty and fearless warrior—', 4: '1', 18: '100009210'}
+15	15		202							{1: '1', 6: '1'}
+16	16		201							{1: '1', 2: '500434', 4: '600'}
+17	17		201							{1: '2', 2: '500616'}
+18	18		201							{1: '3', 2: '500251', 4: '-600'}
+19	19		301							"{1: '1', 2: 'Villagers A, B, and C', 3: ""Take our village's finest sword, journey to the castle, and vanquish the Demon Lord!"", 4: '1', 5: '2', 6: '3', 18: '100009211'}"
+20	20		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+21	21		401							{1: '2', 2: '4117'}
+22	22		201							{1: '1', 2: '500093'}
+23	23		301							{1: '1', 2: 'Blacksmith', 3: 'Here you go!', 4: '1', 18: '100009212'}
+24	24		301							"{3: 'The blacksmith, busy working at his forge, gives a deep grunt as he uses tongs to pull the red-hot ""Sword of the Brave"" from the furnace and plunges it into water to cool.'}"
+25	25		202							{1: '1'}
+26	26		301							{3: 'Seeing everything clearly, the hero falls into deep thought.'}
+27	27		302							"{2: '...', 3: '28', 4: ""Isn't this just my standard pistol?"", 5: '28', 6: 'System, open your eyes and tell me—does this look like a sword to you?', 7: '28'}"
+28	28		401							{1: '2', 2: '2979'}
+29	29		301							{2: 'System', 3: 'Questioning, not permitted. Modeling resources, limited. If I say it is, it is.', 18: '100009213'}
+30	30		301							{3: 'A mechanical voice echoes in your mind, accompanied by a faint sensation of pain.'}
+31	31		401							{1: '2', 2: '2979'}
+32	32		301							"{2: 'System', 3: 'Strict adherence to ""Into the Demon Castle"", required. Character and script deviations, strictly forbidden. Violations, result in punishment.', 18: '100009214'}"
+33	33		401							{1: '2', 2: '2979'}
+34	34		301							{2: 'System', 3: 'Cheat System, fully activated.', 18: '100009215'}
+35	35		401							{1: '2', 2: '2979'}
+36	36		301				AniZhuanchangBegin			{2: 'System', 3: '【kuroname】, depart immediately.', 18: '100009216'}
+37	37		306							{1: '1'}
+38	38		401						2000.0	{1: '1', 2: '36'}
+39	39		401							{1: '1', 2: '6188'}
+40	40		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory531.jpg'}
+41	41		301			AniZhuanchangEnd	DialogDisable			"{3: 'After three full days of arduous travel with the ""village\'s finest sword"" in hand, the hero finally sees the majestic castle looming before them.'}"
+42	42		104						1500.0	{1: '-80|-220|-100', 2: '1.2'}
+43	43		301			DialogEnable	DialogDisable			{3: 'The massive castle, covered in dense thorns, looks even more sinister under the night sky. This is where the legendary Demon Lord resides.'}
+44	44		104						1500.0	{1: '-80|165|-100', 2: '1.2'}
+45	45		301			DialogEnable	DialogDisable			"{3: ""The problem becomes apparent—though the castle's main entrance is clearly visible, no matter how many thorns you cut down, it seems... impossible to reach the door.""}"
+46	46		104						1500.0	{1: '0|0|0', 2: '1.2'}
+47	47		301			DialogEnable	DialogDisable			"{3: 'Wondering about the true identity of this Demon Lord who can ""turn anyone into a monster with a single glance,"" you grip your weapon tightly and prepare for a confrontation.'}"
+48	48		306							
+49	49		302							{2: 'This script is way too over-the-top...', 3: '50'}
+50	50		401							{1: '2', 2: '4982'}
+51	51		301			DialogEnable				"{3: 'From the thorny bushes nearby comes the sound of ""whispers,"" deliberately amplified by the system.'}"
+52	52		402							{1: '4982'}
+53	53		306							{1: '1'}
+54	54		201							{1: '1', 2: '501232', 4: '-450'}
+55	55		201							{1: '2', 2: '501233', 4: '450'}
+56	56		301							"{1: '1', 2: '????', 3: ""<size=30>Bro, is that the one we're looking for?</size>"", 4: '1', 18: '100009217'}"
+57	57		301				DialogDisable			"{2: '???', 3: '<size=30>No doubt about it. That person is holding the ""village\'s finest sword""—exactly what our Demon Lord is after.</size>', 4: '2', 18: '100009218'}"
+58	58		202							{1: '1', 2: '2'}
+59	59		306							
+60	60		302							{2: 'Is this another effect of the Cheat System...?', 3: '61'}
+61	61		306							{1: '1'}
+62	62		201							{1: '1', 2: '501232', 4: '-450'}
+63	63		201							{1: '2', 2: '501233', 4: '450'}
+64	64		301			DialogEnable				"{1: '1', 2: '???', 3: ""<size=30>Wait for my signal. We'll jump out when the warrior gets close...</size>"", 4: '2', 18: '100009219'}"
+65	65		502							{1: 'PanelActor1Shake'}
+66	66		502							{1: 'PanelActor2Shake'}
+67	67		301				DialogDisable		1500.0	{1: '1', 2: '???&????', 3: 'WAAAAAARGHHH!', 4: '1', 5: '2', 18: '100009220'}
+68	68		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHit01.prefab', 2: '3'}
+69	69		306							
+70	70		202							{1: '1', 2: '2', 6: '1'}
+71	71		401						3000.0	{1: '2', 2: '2905'}
+72	72		401							{1: '2', 2: '4276'}
+73	73		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab', 2: '2'}
+74	74		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab'}
+75	75		301			DialogEnable				"{3: 'Before the ""Boss"" could finish speaking, a dazzling blade of light flashed out of nowhere! The hero\'s face suddenly appeared before the two ill-intentioned thugs, the ""village\'s finest sword"" still gleaming with brilliant afterglow.'}"
+76	76		302							{2: 'Are you looking for me?', 3: '77'}
+77	77		401							{1: '2', 2: '10042001'}
+78	78		104							{1: '0|0|-50', 2: '0.25'}
+79	79		201							{1: '1', 2: '501232', 4: '-450'}
+80	80		201							{1: '2', 2: '501233', 4: '450'}
+81	81		203							{1: '1', 2: '0.25', 3: '-450', 5: '-50'}
+82	82		203							{1: '2', 2: '0.25', 3: '450', 5: '-50'}
+83	83		301							{1: '1', 3: 'The hero points their weapon at the two figures behind the thorny bushes, eyes sharp with determination.'}
+84	84		302							"{2: ""Judging by your outfits, are you the Demon Lord's guards?"", 3: '85'}"
+85	85		301			PanelActor1Shake				"{1: '1', 2: '????', 3: ""Bro! T-this isn't part of the Demon Lord's plan—"", 4: '1', 18: '100009221'}"
+86	86		301							{2: '???', 3: 'Shut up!', 4: '2', 18: '100009222'}
+87	87		306							{1: '1'}
+88	88		401							{1: '2', 2: '10042001'}
+89	89		203							{1: '1', 2: '0.25', 4: '-50', 5: '-100'}
+90	90		203							{1: '2', 2: '0.25', 3: '800', 5: '-50'}
+91	91		301				DialogDisable			{3: 'The hero briefly sizes up the two guards, then decides to train their weapon on the stuttering one while choosing the other guard—the one who seems more capable of following their reasoning—to negotiate with.'}
+92	92		306							
+93	93		202							{1: '1', 2: '2', 6: '1'}
+94	94		201							{1: '1', 2: '501233'}
+95	95		302							"{2: ""Answer my questions if you don't want to lose your buddy here."", 3: '96'}"
+96	96		302							{2: 'First, state your names!', 3: '97'}
+97	97		301			DialogEnable	DialogDisable			"{2: '???', 3: ""...I'm Technor, and he's Howitzer."", 4: '1', 18: '100009223'}"
+98	98		302							{2: '?', 3: '99'}
+99	99		401							{1: '2', 2: '2924'}
+100	100		402							{1: '6188'}
+101	101		302			RImgBg1Shake				{2: 'How did you two—Ugh!', 3: '102'}
+102	102		401							{1: '2', 2: '2924'}
+103	103		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+104	104		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+105	105		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+106	106		202							{1: '1', 6: '1'}
+107	107		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+108	108		301			DialogEnable				{3: 'ZZZZT!'}
+109	109		401						500.0	{1: '2', 2: '4280'}
+110	110		301						1000.0	"{3: ""A sharp ringing pierces through the hero's mind, forcibly cutting off their words.""}"
+111	111		401							{1: '2', 2: '2979'}
+112	112		301				AniZhuanchangBegin			"{2: 'System', 3: ""Do not ask, what should not be asked. Hero, should not do unnecessary things. Ask directly, for the Demon Lord's location."", 18: '100009224'}"
+113	113		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+114	114		402							{1: '4280'}
+115	115		502						500.0	{1: 'DialogDisable'}
+116	116		401							{1: '1', 2: '6190'}
+117	117		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory531.jpg'}
+118	118		302			AniZhuanchangEnd				{2: 'Huff... Puff...', 3: '119'}
+119	119		301			DialogEnable				"{3: ""The hero, periodically tormented by intense pain—or rather, the actor playing the hero in this virtual script—suppresses their frustration and chooses to follow the system's instructions.""}"
+120	120		302							{2: 'Is the Demon Lord... inside the castle right now?', 3: '121'}
+121	121		201							{1: '1', 2: '501232'}
+122	122		301							{1: '1', 2: 'Howitzer', 3: 'N-no...', 4: '1', 18: '100009225'}
+123	123		202							{1: '1'}
+124	124		301							"{3: ""Howitzer's gaze darts around nervously, looking behind the hero.""}"
+125	125		401						200.0	{1: '2', 2: '5517'}
+126	126		301						1000.0	"{3: ""Despite the splitting pain in their skull, the hero's senses remain sharp—they quickly notice something wrong: vines slowly creeping along the ground, and... a breeze from behind.""}"
+127	127		302							{2: '!', 3: '128'}
+128	128		301							{3: 'But it was already too late.'}
+129	129		201							{1: '1', 2: '501233'}
+130	130		301			RImgBg1Shake				"{1: '1', 2: 'Technor', 3: ""This was our mighty Demon Lord's plan all along... Luring you here was more than enough!"", 4: '1', 18: '100009227'}"
+131	131		202							{1: '1', 6: '1'}
+132	132		201							{1: '1', 2: '501225'}
+133	133		301							{1: '1', 2: '??', 3: 'Hah... Just as I expected, walking right into my trap.', 4: '1', 18: '100009228'}
+134	134		203						200.0	{1: '1', 2: '0.25', 3: '-400'}
+135	135		201							{1: '2', 2: '501232', 4: '400', 5: '-140', 7: '1'}
+136	136		301			PanelActor2Shake				{1: '1', 2: 'Howitzer', 3: 'M-my lord!', 4: '2', 18: '100009229'}
+137	137		202							{1: '1', 2: '2'}
+138	138		401						200.0	{1: '2', 2: '5517'}
+139	139		301						1000.0	{3: 'A crimson-black gale sweeps in from behind, instantly razing the thorny vines to the ground.'}
+140	140		401							{1: '2', 2: '1512'}
+141	141		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+142	142		301			RImgBg1Shake				"{3: 'The hero instinctively raises the ""village\'s finest sword"" in defense, only to receive a direct punch to the chest from the crimson-black figure.'}"
+143	143		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.8'}
+144	144		301						1000.0	{3: 'A suffocating sensation instantly spreads through the chest as vision begins to darken.'}
+145	145		205							{1: '999'}
+146	146		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '1'}
+147	147		201							{1: '1', 2: '501232', 4: '-450', 7: '1'}
+148	148		201							{1: '2', 2: '501233', 4: '450', 7: '1'}
+149	149		301			AniZhuanchangEnd				{1: '1', 3: 'Before consciousness fades completely, the last thing visible is the smug grins on the faces of those two guards.'}
+150	150		301							"{2: 'Howitzer', 3: ""Th-that's our D-Demon Lord for ya!"", 4: '1', 18: '100009230'}"
+151	151		301							{2: 'Technor', 3: 'Hey! This was my idea to begin with!', 4: '2', 18: '100009231'}
+152	152		203							{1: '1', 2: '0.25', 3: '-600'}
+153	153		203							{1: '2', 2: '0.25', 3: '600'}
+154	154		201							{1: '3', 2: '501225'}
+155	155		301				DialogDisable			{1: '1', 2: '??', 3: 'Both of you shut up and drag this insolent fool back to the castle!', 4: '3', 18: '100009232'}
+156	156		302							"{2: ""This voice... it's..."", 3: '157'}"
+157	157		202							{1: '1', 2: '2', 3: '3'}
+158	158		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+159	159		111						100.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+160	160		501						2500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab', 2: '2'}
+161	161		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+162	162		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+163	163		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+164	164		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+165	165		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+166	166		502							{1: 'DialogEnable'}
+167	167		301			AniZhuanchangEnd				"{3: 'As thought processes shut down completely, only one idea remains in your fading consciousness: ""I should\'ve used my Cheat System more aggressively.""'}"
+168	168		301				AniZhuanchangBegin			"{3: ""But... whatever, it's just a virtual scenario after all. This unexpected failure will probably kick me out.""}"
+169	169		401						3000.0	{1: '1', 2: '36'}
+170	170		401							{1: '2', 2: '4551'}
+171	171		301			AniZhuanchangEnd				{3: 'Drip. Drop.'}
+172	172		301							{3: 'Drip. Drop.'}
+173	173		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '1'}
+174	174		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory288.png'}
+175	175		301			AniZhuanchangEnd				{3: 'After an unknown amount of time, your consciousness gradually returns, catching a faint sound coming through the darkness.'}
+176	176		301							{3: 'The monotonous sound of dripping water echoes in the darkness, slowly pulling scattered thoughts back together.'}
+177	177		402							{1: '4551'}
+178	178		302							{2: '(Struggle to open eyes.)', 3: '179'}
+179	179		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+180	180		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+181	181		401							{1: '1', 2: '385'}
+182	182		301			AniZhuanchangEnd				{3: 'Struggling to focus, you finally adjust to the dim light, only to realize the scene before you is completely unfamiliar.'}
+183	183		306							{1: '1'}
+184	184		301							"{3: ""A cramped space with a sturdy iron door—this is clearly not the World Government Association of Art's virtual scenario experience chamber.""}"
+185	185		306				DialogDisable			
+186	186		302							{2: '(...Am I still in the scenario?)', 3: '187'}
+187	187		401							{1: '2', 2: '1084'}
+188	188		301			DialogEnable				{3: 'Just as you raise your hand to check if the virtual connection device on your head is working properly, you feel something strange against your wrist.'}
+189	189		301							{3: '—Your wrists are bound by sturdy shackles.'}
+190	190		302							{2: '???', 3: '191'}
+191	191		301							{3: 'You clearly failed in the scenario just now and never even saw the Demon Lord. Logically, the system should have logged you out automatically.'}
+192	192		301							"{3: 'But you\'re still trapped in the scenario, and from the looks of it, you\'ve been locked up in some kind of ""prison cell""?'}"
+193	193		302							{2: '(Press F to unlock handcuffs.)', 3: '194'}
+194	194		301							"{3: ""Despite your gesture, the shackles don't budge an inch.""}"
+195	195		302							{2: '(Press ESC to force quit.)', 3: '196'}
+196	196		301							{3: 'Everything around you remains completely unchanged...'}
+197	197		301							"{3: ""Something isn't right. There must be a problem somewhere. The words you heard at the World Government Association of Art float back into your mind.""}"
+198	198		401							{1: '2', 2: '2959'}
+199	199		504							{1: '0.7'}
+200	200		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+201	201		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory529.jpg'}
+202	202		201							{1: '1', 2: '500576', 3: '2', 7: '1'}
+203	203		301							"{1: '1', 2: 'Ayla', 3: '""Into the Demon Castle"" is the WGAA\'s newest virtual experience. The story may be simple, but the battles are really fun!', 4: '1', 18: '100009233'}"
+204	204		301							"{2: 'Ayla', 3: ""Plus, the experience is incredibly realistic and super immersive—it'll definitely exceed your expectations!"", 4: '1', 18: '100009234'}"
+205	205		204							{1: '1'}
+206	206		301							"{2: 'Ayla', 3: ""It won't take long either—all you need to do is head to the castle and defeat the Demon Lord."", 4: '1', 18: '100009235'}"
+207	207		301							"{2: 'Ayla', 3: ""If you lose a battle, the system will automatically log you out, so don't worry about it."", 4: '1', 18: '100009236'}"
+208	208		204							{1: '1', 2: '1'}
+209	209		301				DialogDisable			{2: 'Ayla', 3: 'If you encounter any problems during the experience, you can always force quit—so please help us test this simulation, 【kuroname】!', 4: '1', 18: '100009237'}
+210	210		202							{1: '1', 6: '1'}
+211	211		504							{1: '0'}
+212	212		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+213	213		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory288.png'}
+214	214		302							"{2: '...', 3: '215', 4: '(Sigh)', 5: '215', 6: 'Well, this isn\'t my first time dealing with a ""system issue.""', 7: '215'}"
+215	215		301			DialogEnable				"{3: ""It's troublesome for sure, but at least you won't suffer any real damage—after all, this is just a virtual scenario.""}"
+216	216		301							"{3: ""Looking around, everything appears in stunning detail. The simulation technology renders each element with such realism that it's impossible to distinguish between reality and illusion.""}"
+217	217		306							{1: '1'}
+218	218		301							{3: 'The iron railings, the distinctive damp and moldy smell of the dungeon, and the pressure imposed by the shackles on your wrists... everything creates a thoroughly immersive experience.'}
+219	219		301							{3: 'With no way to force quit and all in-game interactive buttons completely disabled, it seems you will need a different approach to solve this predicament.'}
+220	220		306							
+221	221		104							{1: '0|40|-50', 2: '0.25'}
+222	222		301							{3: 'The hero looks down at the incredibly realistic abrasion marks on their wrists, noting how even the subtle sensation of pain has been simulated.'}
+223	223		302							{2: '...', 3: '224'}
+224	224		401							{1: '2', 2: '2979'}
+225	225		301				DialogDisable			{2: 'System', 3: 'Looking at, the abrasion marks, the clever and resourceful hero, comes up with, a brand new idea.', 18: '100009238'}
+226	226		104							{1: '0|0|0', 2: '0.25'}
+227	227		302							"{2: '...', 3: '228', 4: ""...Wow, there's even a narrator?"", 5: '228', 6: 'You\'re still here! I thought you were ""dead""!', 7: '228'}"
+228	228		401							{1: '2', 2: '2979'}
+229	229		301			DialogEnable				{2: 'System', 3: 'Ayla says, you will find a way, to complete the story. Time is, limited, good luck.', 18: '100009239'}
+230	230		301							{3: 'The system casually drops a puzzling statement.'}
+231	231		302							{2: 'Did Ayla say that?', 3: '232'}
+232	232		104							{1: '0|40|-50', 2: '0.25'}
+233	233		301							{3: 'The hero lowers their head, looking once more at the abrasion marks on their wrists.'}
+234	234		301							"{3: 'According to Ayla\'s comment about the ""super realistic experience,"" if I treat this as a ""real"" predicament to solve...'}"
+235	235		302				AniZhuanchangBegin			{2: '(Search the ground.)', 3: '236'}
+236	236		301			AniZhuanchangEnd		500.0		{3: 'Soon, the hero finds a piece of wire among the scattered debris on the ground and starts to review the lockpicking course from their F.O.S. training in their mind.'}
+237	237		401							{1: '2', 2: '4893'}
+238	238		301							{3: 'Carefully working the wire inside the keyhole of the shackles, you soon hear the satisfying click of the bolt releasing.'}
+239	239		302							{2: '...', 3: '240', 4: 'Ultra-high level of map details for us to explore, huh...', 5: '240', 6: 'Huh? It actually worked?', 7: '240'}
+240	240		301				DialogDisable			"{3: ""As the shackles hit the floor, a new system message appears on the hero's retinal display—the act of breaking free seems to have successfully triggered a new sequence, updating the mission progress.""}"
+241	241		401							{1: '2', 2: '4051'}
+242	242		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '0', 4: '0.2', 5: '0.2'}
+243	243		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageOpen.prefab', 2: '3'}
+244	244		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab', 2: '3'}
+245	245		109							{1: '10', 2: '<color=#f2c40dff><size=35>Into the Demon Castle</size></color>', 4: '250', 9: '3'}
+246	246		109							{1: '11', 2: '<size=28><color=#ffffffff>Current Main Objective: Escape from Prison Cell - </color><color=#34aff8ff>(1/2)</color></size>', 3: '600', 4: '175', 9: '3', 10: '1'}
+247	247		109							{1: '12', 2: '<size=28><color=#ffffffff>Demon Lord Affection: </color><color=#34aff8ff>0</color></size>', 3: '600', 4: '125', 9: '3', 10: '1'}
+248	248		109							{1: '13', 2: '<size=28><color=#ffffffff>Final Objective: Demon Lord Affection </color><color=#34aff8ff>100</color></size>', 3: '600', 4: '75', 9: '3', 10: '1'}
+249	249		109							{1: '14', 2: '<size=28><color=#ffffffff>Countdown: </color><color=#34aff8ff>52</color><color=#ffffffff> Hours</color></size>', 3: '600', 4: '25', 9: '3', 10: '1'}
+250	250		301							{3: 'Current Main Objective: Escape from Prison Cell - (1/2)Demon Lord Affection: 0Final Objective: Demon Lord Affection 100Countdown: 52 Hours'}
+251	251		401							{1: '2', 2: '4052'}
+252	252		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '0.2', 4: '0', 5: '0.3'}
+253	253		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab'}
+254	254		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageEnd.prefab', 2: '3'}
+255	255		110						800.0	
+256	256		302							{2: 'Has the system recovered?', 3: '257', 4: 'Is the system malfunctioning?', 5: '257'}
+257	257		301			DialogEnable	DialogDisable			{3: 'Glancing at the mission description, a strange feeling wells up inside you. Something is definitely not right.'}
+258	258		302							"{2: '...', 3: '259', 4: '""Affection,"" huh...', 5: '259', 6: 'What the heck is ""Affection"" anyway?', 7: '259'}"
+259	259		302							"{2: 'What kind of script is this supposed to be?', 3: '260', 4: ""...I'm supposed to raise the Demon Lord's affection?"", 5: '260', 6: 'What\'s this ""Demon Lord Affection"" setting supposed to be now?', 7: '260'}"
+260	260		301			DialogEnable				{3: 'According to Ayla, this was supposed to be a script about a hero defeating the Demon Lord and exploring the world. How did it turn into a romance game about raising affection?'}
+261	261		301				DialogDisable			"{3: ""And on top of that—the one whose affection I'm supposed to raise is the Demon Lord??""}"
+262	262		302							{2: 'The system must be malfunctioning.', 3: '263'}
+263	263		302							{2: '(Press ESC to force quit.)', 3: '264'}
+264	264		301			DialogEnable	DialogDisable			{3: 'Nothing happens.'}
+265	265		302							"{2: ""Something isn't right."", 3: '266', 4: ""This isn't right. Something isn't right..."", 5: '266'}"
+266	266		401							{1: '2', 2: '4821'}
+267	267		502							{1: 'RImgBg1Shake'}
+268	268		302				AniZhuanchangBegin			{2: '(Violently ram against the bars.)', 3: '269', 4: 'Hey! Guards!', 5: '269'}
+269	269		502						400.0	{1: 'DialogEnable'}
+270	270		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront59.png', 4: '5'}
+271	271		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory712.jpg'}
+272	272		201							{1: '1', 2: '501233', 4: '450', 7: '1'}
+273	273		201							{1: '2', 2: '501232', 4: '-450', 7: '1'}
+274	274		301			AniZhuanchangEnd				{1: '1', 2: 'Technor', 3: 'What do you want? Stop making a ruckus!', 4: '1', 18: '100009240'}
+275	275		301				DialogDisable			{3: 'Drawn by the noise, the figures of Technor and Howitzer appear, staring at you suspiciously.'}
+276	276		302							{2: 'I need to interact with you!', 3: '277'}
+277	277		302							{2: '(Press F to interact.)', 3: '278', 4: '(Press G to send gift.)', 5: '278', 6: 'Cheat code!', 7: '278'}
+278	278		301			DialogEnable				{2: 'Howitzer', 3: 'B-bro, why is this person tapping the air?', 4: '2', 18: '100009241'}
+279	279		302							{2: 'Emergency exit?', 3: '280', 4: 'Unstuck me?', 5: '280', 6: 'Shut down!', 7: '280'}
+280	280		301							"{2: 'Technor', 3: ""Has the mighty hero finally lost it? The Demon Lord didn't aim for the head earlier, right?"", 4: '1', 18: '100009242'}"
+281	281		203							{1: '2', 2: '0.4', 3: '-450', 5: '-50'}
+282	282		301						500.0	{3: 'Howitzer reaches out his hand, as if to check whether the legendary hero might be running a fever.'}
+283	283		301							"{2: 'Technor', 3: ""Take your hand back! No touching! Be careful, it might be a trap—can't you see the handcuffs have been removed?"", 4: '1', 18: '100009243'}"
+284	284		203							{1: '2', 2: '0.25', 3: '-450'}
+285	285		301							"{2: 'Technor', 3: ""I've seen plenty of humans with tricks up their sleeves. Whatever illness this one has caught, we just need to be more vigilant."", 4: '1', 18: '100009244'}"
+286	286		202							{1: '1', 2: '2'}
+287	287		401							{1: '2', 2: '4558'}
+288	288		301				DialogDisable		1000.0	{3: 'The guards bring another set of chains, fastening them securely around the cell door.'}
+289	289		401							{1: '2', 2: '4051'}
+290	290		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.5', 5: '0.2'}
+291	291		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '0', 4: '0.2', 5: '0.2'}
+292	292		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageOpen.prefab', 2: '3'}
+293	293		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab', 2: '3'}
+294	294		109							{1: '10', 2: '<color=#f2c40dff><size=35>Into the Demon Castle</size></color>', 4: '250', 9: '3'}
+295	295		109							{1: '11', 2: '<size=28><color=#ffffffff>Current Mission Objective: Escape from Prison Cell - </color><color=#ff4e4eff>(0/2)</color></size>', 3: '600', 4: '175', 9: '3', 10: '1'}
+296	296		109							{1: '12', 2: '<size=28><color=#ffffffff>Demon Lord Affection: </color><color=#34aff8ff>0</color></size>', 3: '600', 4: '125', 9: '3', 10: '1'}
+297	297		109							{1: '13', 2: '<size=28><color=#ffffffff>Final Objective: Demon Lord Affection </color><color=#34aff8ff>100</color></size>', 3: '600', 4: '75', 9: '3', 10: '1'}
+298	298		109							{1: '14', 2: '<size=28><color=#ffffffff>Countdown: </color><color=#34aff8ff>52</color><color=#ffffffff> Hours</color></size>', 3: '600', 4: '25', 9: '3', 10: '1'}
+299	299		301							{3: 'Current Mission Objective: Escape from Prison Cell - (0/2)\\nDemon Lord Affection: 0\\nFinal Objective: Demon Lord Affection 100\\nCountdown: 52 Hours'}
+300	300		401							{1: '2', 2: '4052'}
+301	301		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '0.2', 4: '0', 5: '0.3'}
+302	302		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.5', 4: '0', 5: '0.2'}
+303	303		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab'}
+304	304		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageEnd.prefab', 2: '3'}
+305	305		110						800.0	
+306	306		205							{1: '999'}
+307	307		205							{1: '1007', 3: '0', 4: '1', 5: '0'}
+308	308		301			DialogEnable				{3: 'After all that struggle, the mission progress has actually gone backward.'}
+309	309		302							{2: '...', 3: '310'}
+310	310		301							"{3: 'The plan to interact as if following a ""virtual script"" has completely failed. Time to face reality.'}"
+311	311		306							{1: '1'}
+312	312		301							"{3: 'Recent experiences confirm the facts: neither objects nor people can be interacted with through convenient virtual interactions. They must be treated as ""real.""'}"
+313	313		301							"{3: 'At this point, you can only rely on your actual abilities to advance toward the ""Final Objective""—raising the Demon Lord\'s affection to 100.'}"
+314	314		301				DialogDisable			{3: 'No matter who this Demon Lord really is, you must first make contact with the mission target to continue advancing the process.'}
+315	315		306							
+316	316		302							{2: 'Ahem, excuse me... Mr. Technor,', 3: '317'}
+317	317		302							{2: 'Would it be possible for me to meet your Demon Lord?', 3: '318'}
+318	318		201							{1: '1', 2: '501233'}
+319	319		301			DialogEnable				"{1: '1', 2: 'Technor', 3: ""How dare you! I know what evil schemes you're plotting. Shut your mouth and stay put, or you'll regret it!"", 4: '1', 18: '100009245'}"
+320	320		302							{2: 'I heard that... one glance at the Demon Lord turns you into a monster?', 3: '321'}
+321	321		301							"{2: 'Technor', 3: '...What? Who spread such nonsense? We\'ve always said, ""The Demon Lord is as radiant as the sun—too dazzling to look at directly!""', 4: '1', 18: '100009246'}"
+322	322		203						200.0	{1: '1', 2: '0.25', 3: '450'}
+323	323		201							{1: '2', 2: '501232', 4: '-450', 7: '1'}
+324	324		301			PanelActor2Shake				{1: '1', 2: 'Howitzer', 3: 'Those d-despicable humans are jealous of our g-great Demon Lord, so they made up such ridiculous lies!', 4: '2', 18: '100009247'}
+325	325		301							"{2: 'Technor', 3: ""If it weren't for the Demon Lord's mercy, do you think you'd even be waking up here?"", 4: '1', 18: '100009248'}"
+326	326		301							{2: 'Howitzer', 3: 'The D-Demon Lord is the most m-merciful and majestic...', 4: '2', 18: '100009249'}
+327	327		301							{2: 'Technor', 3: 'As radiant as the sun, too dazzling to look at directly...', 4: '1', 18: '100009250'}
+328	328		301							{3: 'The two guards lose themselves in their own world, endlessly singing praises of their master.'}
+329	329		202							{1: '1', 2: '2'}
+330	330		401							{1: '2', 2: '5291'}
+331	331		401							{1: '2', 2: '4868'}
+332	332		301							{3: 'Right at that moment, the crisp sound of footsteps echoes from afar, interrupting their self-absorbed monologue.'}
+333	333		101							{4: '5', 5: '1'}
+334	334		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0'}
+335	335		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory712.jpg'}
+336	336		104							{1: '270|0|-300', 2: '0'}
+337	337		301			AniZhuanchangEnd	DialogDisable			{3: 'The guards immediately fall silent, their faces frozen in terror as they stare into the darkness behind them.'}
+338	338		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '0.4'}
+339	339		104						450.0	{1: '0|0|0', 2: '0.4'}
+340	340		201							{1: '1', 2: '501232', 7: '1'}
+341	341		502							{1: 'DialogEnable'}
+342	342		301			PanelActor1Shake				{1: '1', 2: 'Howitzer', 3: 'M-My L-Lord...!', 4: '1', 18: '100009251'}
+343	343		203							{1: '1', 2: '0.25', 4: '-200'}
+344	344		401							{1: '2', 2: '4696'}
+345	345		301							{2: 'Howitzer', 3: 'Q-quick! Bow to her!', 4: '1', 18: '100009252'}
+346	346		202							{1: '1'}
+347	347		301				AniZhuanchangBegin			{3: 'Before the source of those footsteps even emerges from the darkness, the guards are already bowing deeply, cold sweat covering their foreheads.'}
+348	348		502							{1: 'DialogDisable'}
+349	349		402							{1: '4868'}
+350	350		401						2000.0	{1: '1', 2: '36'}
+351	351		401							{1: '2', 2: '213'}
+352	352		401							{1: '1', 2: '66'}
+353	353		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_01_01.png'}
+354	354		104							{1: '300|0|0', 2: '0'}
+355	355		104			AniZhuanchangEnd			500.0	{1: '0|0|0', 2: '6'}
+356	356		301			DialogEnable			2000.0	"{3: ""The newcomer's steps stir up a breeze, making the dungeon's flames dance in response. The footsteps draw closer, echoing through the confined space.""}"
+357	357		301						2000.0	{2: '??', 3: 'How...', 18: '100009253'}
+358	358		301						2000.0	"{2: '??', 3: 'How dare an ill-intentioned ""guest"" like you have the nerve to complain here?', 18: '100009254'}"
+359	359		301						2000.0	{2: '??', 3: 'Are you begging me to personally entertain you... or to bestow death upon you with my own hands?', 18: '100009255'}
+360	360		302							{2: 'This voice...', 3: '361'}
+361	361		502						500.0	{1: 'DialogDisable'}
+362	362		104						700.0	{1: '-100|100|250', 2: '1.2'}
+363	363		402							{1: '213'}
+364	364		401							{1: '2', 2: '4383'}
+365	365		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_01_02.jpg', 3: '0', 4: '1', 5: '1.5'}
+366	366		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_01_02.jpg'}
+367	367		104							{1: '0|0|0', 2: '0'}
+368	368		205							{1: '999'}
+369	369		301			DialogEnable				{3: 'Cloaked in darkness, the figure draws ever closer.'}
+370	370		301							{3: 'Seemingly intimidated by her invisible aura of authority, the guards maintain their bowing posture, not daring to even lift their heads.'}
+371	371		502						500.0	{1: 'DialogDisable'}
+372	372		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_01_03.png', 3: '0', 4: '1', 5: '0.3'}
+373	373		104							{1: '0|0|100', 2: '0', 4: '3'}
+374	374		104						1200.0	{1: '0|0|0', 2: '0.8', 4: '3'}
+375	375		301			DialogEnable				"{3: ""The dungeon's dim light conceals her face, but her red hair blooms like a rose in the darkness of night.""}"
+376	376		301							{3: 'She tilts her face slightly, casting what seems to be a meaningful glance toward the imprisoned hero.'}
+377	377		301							{2: '??', 3: 'Release the hero.', 18: '100009256'}
+378	378		201							{1: '18', 2: '501233', 4: '-950', 5: '-615', 6: '1000'}
+379	379		301							{1: '1', 2: 'Technor', 3: 'Yes, My Lord!', 4: '18', 18: '100009257'}
+380	380		202							{1: '18'}
+381	381		502						500.0	{1: 'DialogDisable'}
+382	382		401							{1: '2', 2: '838'}
+383	383		205							{1: '999'}
+384	384		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_01_04.png'}
+385	385		104				AniZhuanchangEnd			{1: '-250|0|0', 2: '0'}
+386	386		401							{1: '2', 2: '968'}
+387	387		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_01_05.png', 3: '0', 4: '1', 5: '1'}
+388	388		104						1200.0	{1: '-250|0|0', 2: '0', 4: '3'}
+389	389		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_01_05.png'}
+390	390		104							{1: '-250|0|0', 2: '0'}
+391	391		205							{1: '999'}
+392	392		104						1000.0	{1: '0|0|0', 2: '0', 4: '3'}
+393	393		401						200.0	{1: '2', 2: '4432'}
+394	394		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_01_06.png', 3: '0', 4: '1', 5: '1.2'}
+395	395		104						1500.0	{1: '250|0|0', 2: '0', 4: '3'}
+396	396		301			DialogEnable				{3: 'The guard opens the cell door. The rusty hinges creak as the hero steps out, finally tasting freedom.'}
+397	397		402							{1: '968'}
+398	398		502						500.0	{1: 'DialogDisable'}
+399	399		104							{1: '0|0|0', 2: '0.5'}
+400	400		104						300.0	{1: '0|0|0', 2: '0.5', 4: '3'}
+401	401		401							{1: '2', 2: '2689'}
+402	402		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_01_07.png', 4: '4'}
+403	403		104							{1: '0|1000|0', 2: '0', 4: '4'}
+404	404		104						1000.0	{1: '0|0|0', 2: '0.7', 4: '4'}
+405	405		301			DialogEnable				{2: '??', 3: 'You little mouse who dared to invade my castle...', 18: '100009258'}
+406	406		301				DialogDisable			{2: '??', 3: 'State your name.', 18: '100009259'}
+407	407		302							{2: '【kuroname】.', 3: '408'}
+408	408		205							{1: '999'}
+409	409		401							{1: '2', 2: '4383'}
+410	410		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_02_02.jpg'}
+411	411		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_02_01.png', 4: '4'}
+412	412		104							{1: '0|-50|0', 2: '0', 4: '4'}
+413	413		104						1500.0	{1: '0|1100|0', 2: '1.2', 4: '4'}
+414	414		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_02_04.jpg'}
+415	415		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_02_03.png', 4: '4'}
+416	416		104						500.0	{1: '0|-50|0', 2: '0', 4: '4'}
+417	417		401							{1: '2', 2: '5286'}
+418	418		104						1500.0	{1: '0|1100|0', 2: '1.2', 4: '4'}
+419	419		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_02_05.jpg'}
+420	420		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_02_03.png', 4: '4'}
+421	421		104							{1: '0|-50|0', 2: '0', 4: '4'}
+422	422		401							{1: '2', 2: '4348'}
+423	423		104					800.0	1000.0	{1: '0|1100|0', 2: '1.8', 4: '4'}
+424	424		301			DialogEnable				{3: 'After receiving the answer, she steps menacingly toward the hero. The dim light finally illuminates her face.'}
+425	425		101							{4: '4', 5: '1'}
+426	426		301							{3: 'She surveys everything before her with a casual smile, while the guards beside her bow their heads respectfully.'}
+427	427		301				DialogDisable			"{3: ""Unlike the others, the hero doesn't bow before her, but instead stares at her face in stunned silence.""}"
+428	428		302							{2: '...', 3: '429'}
+429	429		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_02_06.jpg', 3: '0', 4: '1', 5: '1'}
+430	430		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_02_06.jpg'}
+431	431		205							{1: '999'}
+432	432		301			DialogEnable				{3: 'A slight smile appears at the corner of her lips.'}
+433	433		301				DialogDisable			{3: 'The hero had wondered many times what this Demon Lord—who supposedly turns anyone who looks at her into a monster—would actually look like—'}
+434	434		302							{2: '...Vera, it really is you.', 3: '435', 4: 'V-Vera?!', 5: '435'}
+435	435		401							{1: '2', 2: '2924'}
+436	436		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+437	437		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+438	438		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+439	439		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+440	440		301			DialogEnable				{3: 'BZZZZZZT!!'}
+441	441		302							{2: '...Argh!', 3: '442'}
+442	442		401							{1: '2', 2: '4280'}
+443	443		301						1000.0	{3: 'A searing pain surges through your skull once more, infinitely more intense than before.'}
+444	444		402							{1: '4280'}
+445	445		401							{1: '2', 2: '1105'}
+446	446		301							{2: 'System', 3: 'Warning. Warning. Severe character deviation. The hero does not, know the Demon Lord.', 18: '100009260'}
+447	447		401							{1: '2', 2: '1105'}
+448	448		301				DialogDisable			{2: 'System', 3: 'Final, warning. Strictly follow, script and character guidelines.', 18: '100009261'}
+449	449		302							"{2: ""This isn't right..."", 3: '450', 4: 'I get it...', 5: '450'}"
+450	450		302				AniZhuanchangBegin			"{2: 'The one going insane... is this system!', 3: '451', 4: ""It's this system that's causing all this madness!"", 5: '451'}"
+451	451		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+452	452		502						400.0	{1: 'DialogEnable'}
+453	453		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_03_10.png', 4: '4'}
+454	454		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_03_01.jpg'}
+455	455		104							{1: '0|80|-200', 2: '0'}
+456	456		301			AniZhuanchangEnd				{3: 'As the hero writhes in agony, the Demon Lord instead savors their painful expression, an excited gleam lighting up her eyes.'}
+457	457		301							{2: 'Vera', 3: 'Just saying my name brought such severe backlash? How bold of you...', 18: '100009262'}
+458	458		301				DialogDisable			{2: 'Vera', 3: 'Daring to call me by my true name... Do you realize what this means?', 18: '100009263'}
+459	459		302							{2: 'Vera, what is this really...', 3: '460'}
+460	460		104						1000.0	{1: '0|-10|-200', 2: '0.8'}
+461	461		301			DialogEnable				{3: 'The hero struggles to lift their head, and surprisingly reaches out toward the Demon Lord—their supposed enemy.'}
+462	462		302							"{2: 'Are you... awake...?', 3: '463', 4: 'What am I supposed to do...', 5: '463', 6: ""I'll get you out of here..."", 7: '463'}"
+463	463		401							{1: '2', 2: '4182'}
+464	464		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+465	465		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_03_09.jpg'}
+466	466		301							{3: 'Slap!'}
+467	467		301							"{3: ""The Demon Lord swats away the hero's trembling hand.""}"
+468	468		301				DialogDisable			{2: 'Vera', 3: '...Shut up.', 18: '100009264'}
+469	469		302							{2: '...?', 3: '470', 4: 'Vera...?', 5: '470'}
+470	470		101							{4: '4', 5: '1'}
+471	471		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_03_02.jpg', 3: '0', 4: '1', 5: '1.2'}
+472	472		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_03_02.jpg'}
+473	473		205							{1: '999'}
+474	474		301			DialogEnable				{3: 'That moment of recognition seems like an illusion as the Demon Lord quickly returns to her usual self—arrogant without leaving the slightest crack in her facade.'}
+475	475		301							"{2: 'Vera', 3: ""Hah... Don't want to answer, do you? It seems you're more than just a sassy little mouse after all."", 18: '100009265'}"
+476	476		401							{1: '2', 2: '4779'}
+477	477		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_03_04.jpg'}
+478	478		104							{1: '528|0|0', 2: '0'}
+479	479		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_03_03.png', 4: '4'}
+480	480		502						200.0	{1: 'AniZhuanchangEnd'}
+481	481		402							{1: '4779'}
+482	482		301							"{2: 'Vera', 3: ""Since that's how you want to play it, let's try something a bit more... interesting..."", 18: '100009266'}"
+483	483		502						500.0	{1: 'DialogDisable'}
+484	484		104							{1: '0|0|0', 2: '1.5'}
+485	485		104						2500.0	{1: '150|0|-800', 2: '1.2', 4: '4'}
+486	486		101							{4: '4', 5: '1'}
+487	487		401							{1: '2', 2: '4276'}
+488	488		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_03_05.jpg', 3: '0', 4: '1', 5: '0.5'}
+489	489		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_03_05.jpg'}
+490	490		205							{1: '999'}
+491	491		301			DialogEnable				"{3: 'A gun appears in her hand—the very same ""village\'s finest sword."" The weapon, originally meant to slay the Demon Lord, has been confiscated by her instead.'}"
+492	492		502						500.0	{1: 'DialogDisable'}
+493	493		401							{1: '2', 2: '10028804'}
+494	494		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_03_06.png', 4: '4'}
+495	495		104							{1: '0|-650|0', 2: '0', 4: '4'}
+496	496		104						1200.0	{1: '0|0|0', 2: '0.8', 4: '4'}
+497	497		301			DialogEnable				{3: 'The wielder of the gun slides the barrel across her cheek, fixing the human before her with a playfully menacing gaze.'}
+498	498		101							{4: '4', 5: '1'}
+499	499		401							{1: '2', 2: '10028805'}
+500	500		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+501	501		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_03_07.png', 3: '0', 4: '1', 5: '0'}
+502	502		301			AniZhuanchangEnd				{3: 'Then, she points the gun at the human.'}
+503	503		502						500.0	{1: 'DialogDisable'}
+504	504		104						1000.0	{1: '0|-200|50', 2: '1.5', 4: '3'}
+505	505		401							{1: '2', 2: '1543'}
+506	506		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_03_07.png', 3: '1', 4: '0', 5: '1.5'}
+507	507		205						2000.0	{1: '1001', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_03_08.jpg', 3: '0', 4: '1', 5: '1.5'}
+508	508		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_03_08.jpg'}
+509	509		205							{1: '999'}
+510	510		104							{1: '0|0|0', 2: '0', 4: '3'}
+511	511		301			DialogEnable				{2: 'Vera', 3: 'Bow to me.', 18: '100009267'}
+512	512		302							{2: '...', 3: '513', 4: '(Contemplate quietly.)', 5: '513'}
+513	513		301							"{2: 'Vera', 3: ""Hah, I didn't see that coming. You really don't care about staying on my good side, do you?"", 18: '100009268'}"
+514	514		301							"{2: 'Vera', 3: ""Those who aren't completely obedient in my domain are nothing but worthless trash. It's time you pay the price for your defiance—"", 18: '100009269'}"
+515	515		301							{2: 'Vera', 3: 'Farewell, 【kuroname】. Go reflect on your mistakes in hell.', 18: '100009270'}
+516	516		302							{2: '(Dodge instinctively.)', 3: '517', 4: '(Remain unflinching before the gun.)', 5: '518'}
+517	517	520	301							{3: 'Unable to predict whether this version of Vera possesses her own consciousness or what actions she might take, the hero can only rely on instinct to dodge the gun pointed at them.'}
+518	518		301							"{3: ""Even though they cannot predict whether this version of Vera possesses her own consciousness or what she might do next, a subtle feeling flashes through the hero's mind.""}"
+519	519		301							{3: 'The hero makes no movement, simply gazing calmly at the barrel of her gun.'}
+520	520		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+521	521		402							{1: '66'}
+522	522		401							{1: '1', 2: '36'}
+523	523		401							{1: '2', 2: '4081'}
+524	524		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_04_01.png', 4: '5'}
+525	525		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_04_03.png'}
+526	526		301			AniZhuanchangEnd	DialogDisable			{3: 'Crash!'}
+527	527		401							{1: '1', 2: '6190'}
+528	528		401							{1: '2', 2: '2936'}
+529	529		104						2000.0	{1: '0|-100|-200', 2: '1.8'}
+530	530		301			DialogEnable				{3: 'With a loud bang, a shower of colorful streamers erupts from the gun barrel, spinning as they flutter down around the human.'}
+531	531		502						500.0	{1: 'DialogDisable'}
+532	532		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_04_04.png', 3: '0', 4: '1', 5: '0.8'}
+533	533		104						200.0	{1: '0|-100|-200', 2: '0', 4: '4'}
+534	534		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_04_05.jpg', 3: '0', 4: '1', 5: '1'}
+535	535		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_04_04.png', 3: '1', 4: '0', 5: '0.8'}
+536	536		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_04_05.jpg'}
+537	537		205							{1: '999'}
+538	538		301			DialogEnable				"{3: ""Amidst the falling streamers, the Demon Lord's face returns to a satisfied smile.""}"
+539	539		104							{1: '0|0|0', 2: '0', 4: '4'}
+540	540		502							{1: 'DialogDisable'}
+541	541		101							{4: '5', 5: '1'}
+542	542		101			AniZhuanchangEnd			500.0	{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_04_06.jpg'}
+543	543		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.76', 5: '0.8'}
+544	544		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_04_07.png', 3: '0', 4: '1', 5: '1'}
+545	545		104							{1: '-150|0|0', 2: '0', 4: '4'}
+546	546		104						1000.0	{1: '0|0|0', 2: '0.8', 4: '4'}
+547	547		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_04_08.png', 4: '5'}
+548	548		104							{1: '0|1000|0', 2: '0', 4: '5'}
+549	549		104						1500.0	{1: '0|0|0', 2: '1', 4: '5'}
+550	550		101							{4: '4', 5: '1'}
+551	551		101							{4: '5', 5: '1'}
+552	552		101							{1: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_04_09.jpg'}
+553	553		205							{1: '999'}
+554	554		301			DialogEnable	DialogDisable			{3: 'She moves in close to the human, her fingertip lightly tracing their face, as if announcing the rules of her game.'}
+555	555		302							{2: '...Is that all?', 3: '556', 4: 'Just as I expected.', 5: '561'}
+556	556		104						100.0	{1: '400|0|0', 2: '0.8'}
+557	557		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_04_10.png', 3: '0', 4: '1', 5: '1'}
+558	558		301			DialogEnable				"{2: 'Vera', 3: ""I thought you were truly fearless, but it seems you're nothing special after all."", 18: '100009271'}"
+559	559		301							{2: 'Vera', 3: 'What do you think... my trophy?', 18: '100009272'}
+560	560	566	301				AniZhuanchangBegin			{2: 'Vera', 3: 'Hahaha... Prepare yourself to live as my prisoner from now on.', 18: '100009273'}
+561	561		104						100.0	{1: '400|0|0', 2: '0.8'}
+562	562		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V340Vera/V340_04_10.png', 3: '0', 4: '1', 5: '1'}
+563	563		301			DialogEnable				{2: 'Vera', 3: 'Interesting... Your courage exceeds my expectations.', 18: '100009274'}
+564	564		301							"{2: 'Vera', 3: ""You're becoming more and more intriguing to me, my trophy."", 18: '100009275'}"
+565	565		301				AniZhuanchangBegin			{2: 'Vera', 3: 'Hahaha... Prepare yourself to live as my prisoner from now on.', 18: '100009276'}
+566	566		205							{1: '999'}
+567	567		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory712.jpg'}
+568	568		301			AniZhuanchangEnd	DialogDisable			{3: 'With her words, the system text appears once more before your eyes.'}
+569	569		401							{1: '2', 2: '4051'}
+570	570		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.5', 5: '0.2'}
+571	571		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '0', 4: '0.2', 5: '0.2'}
+572	572		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageOpen.prefab', 2: '2'}
+573	573		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab', 2: '2'}
+574	574		109							{1: '10', 2: '<color=#f2c40dff><size=35>Into the Demon Castle</size></color>', 4: '250', 9: '3'}
+575	575		109							{1: '11', 2: '<size=28><color=#ffffffff>Mission Objective Updated: Escape from Prison Cell - </color><color=#14BE2A>[Completed]</color></size>', 3: '600', 4: '175', 9: '3', 10: '1'}
+576	576		109							{1: '12', 2: '<size=28><color=#ffffffff>Demon Lord Affection: </color><color=#34aff8ff>-10</color></size>', 3: '600', 4: '125', 9: '3', 10: '1'}
+577	577		109							{1: '13', 2: '<size=28><color=#ffffffff>Final Objective: Demon Lord Affection </color><color=#34aff8ff>100</color></size>', 3: '600', 4: '75', 9: '3', 10: '1'}
+578	578		109							{1: '14', 2: '<size=28><color=#ffffffff>Countdown: </color><color=#34aff8ff>51</color><color=#ffffffff> Hours</color></size>', 3: '600', 4: '25', 9: '3', 10: '1'}
+579	579		301							{3: 'Current Mission Objective: Escape from Prison Cell - [Completed]\\nDemon Lord Affection: -10\\nFinal Objective: Demon Lord Affection 100\\nCountdown: 51 Hours'}
+580	580		401							{1: '2', 2: '4052'}
+581	581		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.5', 4: '0', 5: '0.3'}
+582	582		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '0.2', 4: '0', 5: '0.3'}
+583	583		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab'}
+584	584		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageEnd.prefab', 2: '2'}
+585	585		110						800.0	
+586	586		205							{1: '999'}
+587	587		205							{1: '1007', 3: '0', 4: '1', 5: '0'}
+588	588		301			DialogEnable				"{3: 'Gray Raven\'s Commandant—also known as the ""hero""—stares at Vera wearing a coating they have never seen before, and lets out a heavy sigh.'}"
+589	589		301							"{3: 'Completing the ""Demon Lord Affection 100"" objective might be far more difficult than imagined.'}"
+590	590		301							"{3: ""Fearing the hero's inappropriate behavior might cause trouble, the bowing guard nearby frantically signals with his eyes.""}"
+591	591		201							{1: '1', 2: '501216'}
+592	592		301				DialogDisable			{1: '1', 2: 'Vera', 3: 'Hmm? You seem to have something to say?', 4: '1', 18: '100009277'}
+593	593		202							{1: '1', 6: '1'}
+594	594		401							{1: '2', 2: '4051'}
+595	595		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.5', 5: '0.2'}
+596	596		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '0', 4: '0.2', 5: '0.2'}
+597	597		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageOpen.prefab', 2: '2'}
+598	598		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab', 2: '2'}
+599	599		109							{1: '10', 2: '<color=#f2c40dff><size=35>Into the Demon Castle</size></color>', 4: '250', 9: '3'}
+600	600		109							{1: '11', 2: '<size=28><color=#ffffffff>Main Mission Objective Updated: Contact Affection Target [Demon Lord Vera]</color></size>', 3: '600', 4: '175', 9: '3', 10: '1'}
+601	601		109							{1: '12', 2: '<size=28><color=#ffffffff>Main Mission Progress: </color><color=#14BE2A>[Mission Accepted]</color></size>', 3: '600', 4: '125', 9: '3', 10: '1'}
+602	602		109							{1: '13', 2: '<size=28><color=#ffffffff>Demon Lord Affection: </color><color=#34aff8ff>-10</color></size>', 3: '600', 4: '75', 9: '3', 10: '1'}
+603	603		109							{1: '14', 2: '<size=28><color=#ffffffff>Final Objective: Demon Lord Affection </color><color=#34aff8ff>100</color></size>', 3: '600', 4: '25', 9: '3', 10: '1'}
+604	604		109							{1: '15', 2: '<size=28><color=#ffffffff>Countdown: </color><color=#34aff8ff>51</color><color=#ffffffff> Hours</color></size>', 3: '600', 4: '-25', 9: '3', 10: '1'}
+605	605		301							{3: 'Main Mission Objective Updated: Contact Affection Target [Demon Lord Vera]Main Mission Progress: [Mission Accepted]Demon Lord Affection: -10Final Objective: Demon Lord Affection 100Countdown: 51 Hours'}
+606	606		401							{1: '2', 2: '4052'}
+607	607		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.5', 4: '0', 5: '0.3'}
+608	608		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '0.2', 4: '0', 5: '0.3'}
+609	609		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab'}
+610	610		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageEnd.prefab', 2: '2'}
+611	611		110						800.0	
+612	612		301			DialogEnable				"{3: 'The true mission of ""Into the Demon Castle"" is no longer as simple as ""defeating the Demon Lord"" as Ayla claimed, but rather—'}"
+613	613		301							"{3: 'To establish a higher affection level with ""Demon Lord"" Vera within the system\'s allotted time.'}"
+614	614		301							{3: 'In this virtual world, she is the true sovereign of everything.'}
+615	615		401							{1: '2', 2: '4387'}
+616	616		504							{1: '0.7'}
+617	617		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+618	618		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory529.jpg'}
+619	619		201							{1: '1', 2: '500576', 3: '2', 7: '1'}
+620	620		301							"{1: '1', 2: 'Ayla', 3: ""Plus, the experience is incredibly realistic and super immersive—it'll definitely exceed your expectations!"", 4: '1', 18: '100009278'}"
+621	621		202							{1: '1', 6: '1'}
+622	622		504							{1: '0'}
+623	623		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+624	624		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory712.jpg'}
+625	625		301							"{3: '""Exceed expectations""... This truly has exceeded expectations in every possible way, in the most literal sense.'}"
+626	626		302							{2: 'Did no one notice the main system malfunctioning...', 3: '627'}
+627	627		301							"{3: ""WGAA's typical whimsical style again...""}"
+628	628		201							{1: '1', 2: '501216'}
+629	629		301							{1: '1', 2: 'Vera', 3: 'Answer me, 【kuroname】.', 4: '1', 18: '100009279'}
+630	630		301							{3: 'Seeing the hero still has not answered, Vera reaches out and firmly turns their face toward her own.'}
+631	631		301				DialogDisable			{2: 'Vera', 3: 'Speak. I have no interest in a mime.', 4: '1', 18: '100009280'}
+632	632		302							{2: 'I was just thinking.', 3: '633'}
+633	633		302							{2: 'Thinking about the most appropriate words to praise... the Demon Lord, which is why I forgot to bow.', 3: '634'}
+634	634		302							{2: 'Just as the guards said, your majesty... and mercy, are too overwhelming to look upon directly...', 3: '635'}
+635	635		202							{1: '1'}
+636	636		301			DialogEnable				"{3: 'Repeating these hastily ""borrowed"" phrases from the guards, even you feel somewhat guilty about the insincerity.'}"
+637	637		201							{1: '1', 2: '501216', 3: '4'}
+638	638		301							{1: '1', 2: 'Vera', 3: 'Is that so...?', 4: '1', 18: '100009281'}
+639	639		301							{3: 'Vera narrows her eyes.'}
+640	640		301							{2: 'Vera', 3: 'Such stiff flattery... how truly boring to hear.', 4: '1', 18: '100009282'}
+641	641		301							"{2: 'Vera', 3: ""I won't be pleased if all you're going to do is run your mouth."", 4: '1', 18: '100009283'}"
+642	642		204							{1: '1', 2: '13'}
+643	643		301				DialogDisable			"{2: 'Vera', 3: 'Hmph, let\'s see if you can prove to me... your will to survive under my authority as my ""trophy.""', 4: '1', 18: '100009284'}"
+644	644		202							{1: '1', 6: '1'}
+645	645		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory711.jpg', 3: '0', 4: '1', 5: '1.5'}
+646	646		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory711.jpg'}
+647	647		205							{1: '999'}
+648	648		301			DialogEnable				{3: 'Vera turns and walks away, her voice utterly devoid of warmth as she issues orders to her subordinates.'}
+649	649		201							{1: '1', 2: '501216'}
+650	650		301							{1: '1', 2: 'Vera', 3: 'Take the prisoner to the room in the highest tower.', 4: '1', 18: '100009285'}
+651	651		301							{2: 'Vera', 3: 'The prisoner is not to take a single step outside that room without my orders.', 4: '1', 18: '100009286'}
+652	652		301							{2: 'Vera', 3: 'I want to see our hero first thing when I wake up tomorrow.', 4: '1', 18: '100009287'}
+653	653		301							"{2: 'Vera', 3: ""If there's even the slightest mistake, you are dead. Understood?"", 4: '1', 18: '100009288'}"
+654	654		202							{1: '1', 6: '1'}
+655	655		201							{1: '1', 2: '501233', 4: '450'}
+656	656		201							{1: '2', 2: '501232', 4: '-450'}
+657	657		301				AniZhuanchangBegin			{1: '1', 2: 'Howitzer & Technor', 3: 'Yes, My Lord!', 4: '1', 5: '2', 18: '100009226'}
+658	658		202							{1: '1', 2: '2', 6: '1'}
+659	659		401						2000.0	{1: '1', 2: '36'}
+660	660		401							{1: '1', 2: '120'}
+661	661		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1197.jpg'}
+662	662		301			AniZhuanchangEnd				{3: 'Without a word, the two guards escort the hero out of the dungeon. After climbing seemingly endless stairs, they finally arrive at a bedroom within one of the castle towers.'}
+663	663		301							"{3: ""The modest room contains only basic furnishings. The windows have no bars, but the tower's height makes escape through them impossible... not to mention the dense thorns covering the castle's outer walls.""}"
+664	664		201							{1: '1', 2: '501233', 4: '450'}
+665	665		201							{1: '2', 2: '501232', 4: '-450'}
+666	666		301							"{1: '1', 2: 'Technor', 3: ""Hey, human... uh, 【kuroname】? Whatever. Don't even think about trying anything funny. We'll be guarding the door the whole time."", 4: '1', 18: '100009289'}"
+667	667		301							"{2: 'Technor', 3: ""If you dare pull any trick, I'll punch you right in the face!"", 4: '1', 18: '100009290'}"
+668	668		301				DialogDisable			"{2: 'Howitzer', 3: ""B-bro, you're so c-cool!"", 4: '2', 18: '100009291'}"
+669	669		202							{1: '1', 2: '2', 6: '1'}
+670	670		401							{1: '2', 2: '4933'}
+671	671		104						100.0	{1: '0|0|-50', 2: '0.1'}
+672	672		104							{1: '0|0|0', 2: '0.1'}
+673	673		301			DialogEnable	DialogDisable			{3: 'The door slams shut, and a system notification appears with an update.'}
+674	674		401							{1: '2', 2: '4051'}
+675	675		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.5', 5: '0.2'}
+676	676		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '0', 4: '0.2', 5: '0.2'}
+677	677		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageOpen.prefab', 2: '2'}
+678	678		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab', 2: '2'}
+679	679		109							{1: '10', 2: '<color=#f2c40dff><size=35>Into the Demon Castle</size></color>', 4: '250', 9: '3'}
+680	680		109							{1: '11', 2: '<size=28><color=#ffffffff>Main Mission Objective Updated: Contact Affection Target [Demon Lord Vera]</color></size>', 3: '600', 4: '175', 9: '3', 10: '1'}
+681	681		109							{1: '12', 2: '<size=28><color=#ffffffff>Main Mission Progress: </color><color=#14BE2A>[Completed]</color></size>', 3: '600', 4: '125', 9: '3', 10: '1'}
+682	682		109							{1: '13', 2: '<size=28><color=#ffffffff>New Mission Objective: Go to Bed - </color><color=#14BE2A>[Accepted]</color></size>', 3: '600', 4: '75', 9: '3', 10: '1'}
+683	683		109							{1: '14', 2: '<size=28><color=#ffffffff>Demon Lord Affection: </color><color=#34aff8ff>-10</color></size>', 3: '600', 4: '25', 9: '3', 10: '1'}
+684	684		109							{1: '15', 2: '<size=28><color=#ffffffff>Final Objective: Demon Lord Affection </color><color=#34aff8ff>100</color></size>', 3: '600', 4: '-25', 9: '3', 10: '1'}
+685	685		109							{1: '16', 2: '<size=28><color=#ffffffff>Countdown: </color><color=#34aff8ff>50</color><color=#ffffffff> Hours</color></size>', 3: '600', 4: '-75', 9: '3', 10: '1'}
+686	686		301							{3: 'Main Mission Objective Updated: Contact Affection Target [Demon Lord Vera]\\nMain Mission Progress: [Completed]\\nNew Mission Objective: Go to Bed Progress [Accepted]\\nDemon Lord Affection: -10\\nFinal Objective: Demon Lord Affection 100\\nCountdown: 50 Hours'}
+687	687		401							{1: '2', 2: '4052'}
+688	688		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.5', 4: '0', 5: '0.2'}
+689	689		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '0.2', 4: '0', 5: '0.3'}
+690	690		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab'}
+691	691		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageEnd.prefab', 2: '2'}
+692	692		110						800.0	
+693	693		205							{1: '1007', 3: '0', 4: '1', 5: '0'}
+694	694		301			DialogEnable				"{3: 'The hero becomes a ""prisoner"" once again. According to the system settings, no actions are permitted except resting.'}"
+695	695		301							"{3: ""Now, drowsiness washes over the hero after such intense concentration. Yielding to the rules of the virtual scenario, the hero decides to conclude the day's proceedings.""}"
+696	696		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '1'}
+697	697		301			AniZhuanchangEnd				{3: 'The moment you settle onto the soft feather bed and close your eyes, your consciousness begins to blur.'}
+698	698		301				AniZhuanchangBegin			"{3: ""Before falling into deep slumber, the last thing to surface in your mind is Vera's words.""}"
+699	699		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+700	700		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+701	701		301			AniZhuanchangEnd				{2: 'Vera', 3: 'I want to see our hero first thing when I wake up tomorrow.', 18: '100009292'}
+702	702		301							"{2: 'Vera', 3: ""I won't be pleased if all you're going to do is run your mouth."", 18: '100009293'}"
+703	703		301		1		AniZhuanchangBegin			"{2: 'Vera', 3: 'Hmph, let\'s see if you can prove to me... your will to survive under my authority as my ""trophy.""', 18: '100009294'}"

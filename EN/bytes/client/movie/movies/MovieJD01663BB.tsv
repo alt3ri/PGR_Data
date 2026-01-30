@@ -1,0 +1,51 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				"{3: ""Lucia's M.I.N.D. is now shaking violently, killing the lights in her surroundings. The Mind Beacon in the distance seems to have grown dimmer, too.""}"
+4	4		201							{1: '1', 2: '500166'}
+5	5		301				DialogDisable			"{1: '1', 2: 'Lucia', 3: ""Something might have happened to Commandant out there. I need to go now. There's still time to stop my M.I.N.D. from being devoured!"", 4: '1'}"
+6	6		305							{1: '7', 2: '50'}
+7	7		202							{1: '1', 6: '1'}
+8	8		401							{1: '1', 2: '209'}
+9	9		301			DialogEnable				{3: 'The pitch darkness does not stop Lucia.'}
+10	10		301							{3: 'Shards of memory hover in the air, seemingly luring her to reach out for them.'}
+11	11		201							{1: '1', 2: '500166'}
+12	12		301							{1: '1', 2: 'Lucia', 3: 'These... are what happened before the divergence point.', 4: '1'}
+13	13		301							{3: 'She reaches out for the shard in front of her, but she stops as she hesitates and looks up at the Mind Beacon.'}
+14	14		301							{2: 'Lucia', 3: 'It could be a clue, or it could be a trap to stall me...', 4: '1'}
+15	15		202							{1: '1', 6: '1'}
+16	16		302							{2: '(Touches it)', 3: '17', 4: '(Leaves now)', 5: '44'}
+17	17		401							{1: '1', 2: '210'}
+18	18		301							"{3: ""Lucia feels much safer seeing the Mind Beacon's soothing light. She reaches out for the shard.""}"
+19	19		301							{3: 'Then, she hears a youthful voice coming from the depths of the abyss...'}
+20	20		301							{3: '～Dear black sheep, the child of the sun and winter...～'}
+21	21		301							{3: '～Born into a herd of white sheep, trotting across the pure snow.～', 4: '1'}
+22	22		201							{1: '1', 2: '500166'}
+23	23		301							{1: '1', 2: 'Lucia', 3: 'Is this... the nursery rhyme from my childhood?', 4: '1'}
+24	24		202							{1: '1', 6: '1'}
+25	25		301							{3: '～Dear black sheep, whose black wool the sun loves...～'}
+26	26		301							{3: '～Would you share some of your warmth with me?～'}
+27	27		301							{2: '???', 3: 'Of course. Come and stay here with me.'}
+28	28		201							{1: '1', 2: '500166'}
+29	29		301							{1: '1', 2: 'Lucia', 3: 'Luna...', 4: '1'}
+30	30		202							{1: '1', 6: '1'}
+31	31		301							{3: '～Dear black sheep, the sheep they all hate...～'}
+32	32		301							{3: '～Why must you be different from the rest?～'}
+33	33		201							{1: '1', 2: '500265'}
+34	34		301							{1: '1', 2: '???', 3: 'Lucia, why are they afraid of me?', 4: '1'}
+35	35		202							{1: '1', 6: '1'}
+36	36		301							{3: '～Dear black sheep, the sheep without wool...～'}
+37	37		301							"{3: ""Lucia's M.I.N.D. is now shaking violently again, sending the shards of memories flying in the air.""}"
+38	38		301							{3: '～Bzz... You are special... Zzz... Needs to be caught... Bzz... for more people... Zzz...～'}
+39	39		201							{1: '1', 2: '500265', 4: '500'}
+40	40		201							{1: '2', 2: '500066', 4: '-400'}
+41	41		301							"{1: '1', 2: 'α', 3: ""Whether it's Luna or me, being chosen by the Ascension-Network was just the beginning."", 4: '2'}"
+42	42		202							{1: '1', 2: '2', 6: '1'}
+43	43		401							{1: '1', 2: '201'}
+44	44		301							{3: 'The Mind Beacon is now flashing rapidly, as if calling for Lucia.'}
+45	45		201							{1: '1', 2: '500166', 3: '5'}
+46	46		301							"{1: '1', 2: 'Lucia', 3: ""These memories won't change a thing no matter how much time I spend looking at them. I should go now. They're waiting for me."", 4: '1'}"
+47	47		301							{3: 'The pitch darkness clears up. Right above the abyss, a star shines brighter than ever.'}
+48	48		301							"{2: 'Lucia', 3: ""Target found. I'm moving on."", 4: '1'}"
+49	49		202		1		AniZhuanchangBegin			{1: '1'}
+50	50		202		1		AniZhuanchangBegin			{1: '1', 6: '1'}

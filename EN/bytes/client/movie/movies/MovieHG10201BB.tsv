@@ -1,0 +1,49 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory10.jpg'}
+2	2		401							{1: '1', 2: '111'}
+3	3		201							{1: '1', 2: '500013'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 3: '1'}
+5	5		401							{1: '2', 2: '1508'}
+6	6		301			DialogEnable				{1: '1', 2: 'Corrupted', 3: '—!!', 4: '1'}
+7	7		202							{1: '1', 6: '1'}
+8	8		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 4: '1'}
+9	9		201							{1: '1', 2: '1021001'}
+10	10		301							{1: '1', 2: 'Lucia', 3: 'Corrupted detected, Commandant.', 4: '1'}
+11	11		302							{2: 'Destroy them.', 3: '12', 4: 'Ensure the mission is accomplished safely.', 5: '13'}
+12	12	14	301							{2: 'Lucia', 3: 'Understood.', 4: '1'}
+13	13		301							{2: 'Lucia', 3: 'I will, Commandant.', 4: '1'}
+14	14		201							{1: '1', 2: '500013'}
+15	15		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+16	16		401							{1: '2', 2: '1508'}
+17	17		301							{1: '1', 2: 'Corrupted', 3: '!!!!', 4: '1'}
+18	18		201							{1: '1', 2: '1021001'}
+19	19		301							{1: '1', 2: 'Lucia', 3: 'Too slow.', 4: '1'}
+20	20		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+21	21		201							{1: '1', 2: '500013'}
+22	22		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 3: '1'}
+23	23		401							{1: '2', 2: '10002001'}
+24	24		301							{1: '1', 2: 'Corrupted', 3: '!!!', 4: '1'}
+25	25		201							{1: '1', 2: '1021001'}
+26	26		401							{1: '1', 2: '201'}
+27	27		301							{1: '1', 2: 'Lucia', 3: 'Target Corrupted functions disabled, battle over.', 4: '1'}
+28	28		302							"{1: '100', 2: ""Lucia's getting stronger and stronger."", 3: '31', 4: ""I feel like you don't really need me anymore..."", 5: '32'}"
+29	29		204							{1: '1', 2: '3'}
+30	30		303							{1: '100'}
+31	31	33	301							"{2: 'Lucia', 3: ""It's all thanks to your precise instructions."", 4: '1'}"
+32	32		301							"{2: 'Lucia', 3: ""Commandant is irreplaceable in battle, and without you, I wouldn't be standing here today."", 4: '1'}"
+33	33		204							{1: '1'}
+34	34		301							{2: 'Lucia', 3: 'Mission complete. Commandant, please wait while I make a report, and then we can return to base.', 4: '1'}
+35	35		202							{1: '1', 6: '1'}
+36	36		301							{2: '???', 3: 'Woof...'}
+37	37		302							{1: '101', 2: 'What was that?', 3: '40', 4: 'A dog?!', 5: '41'}
+38	38		201							{1: '1', 2: '1021001'}
+39	39		303							{1: '101'}
+40	40	42	301							"{1: '1', 2: 'Lucia', 3: ""It's a dog, probably still a pup."", 4: '1'}"
+41	41		301							{1: '1', 2: 'Lucia', 3: 'Yes, it does sound like a dog.', 4: '1'}
+42	42		202							{1: '1', 6: '1'}
+43	43		301							{2: 'Puppy', 3: 'Woof...'}
+44	44		302							{2: 'Did it faint?', 3: '45', 4: 'It suddenly fell down, is it hurt?', 5: '45'}
+45	45		201							{1: '1', 2: '1021001'}
+46	46		301							"{1: '1', 2: 'Lucia', 3: ""I don't know, but its vitals are weak. Commandant, can we bring it back with us?"", 4: '1'}"
+47	47		302							"{2: 'Agreed.', 3: '48', 4: ""Yeah, we can't just leave it here."", 5: '48'}"
+48	48		301		1		AniZhuanchangBegin			{2: 'Lucia', 3: 'Roger. Commencing mission to rescue the target canine.', 4: '1'}

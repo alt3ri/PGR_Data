@@ -1,0 +1,280 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory546.jpg'}
+2	2		401							{1: '1', 2: '169'}
+3	3		201							{1: '1', 2: '500026', 4: '400'}
+4	4		201							{1: '2', 2: '500146', 4: '-400'}
+5	5		301			DialogEnable				{1: '1', 3: 'Leaving the Science Council, Lee and Murray walk side by side down the hall leading out of the building.'}
+6	6		301							"{3: ""This is when Lee would usually ask Murray about his work and health—except Lee doesn't say a thing after saying what he did just now, giving Murray no choice but to tag along.""}"
+7	7		301							{2: 'Murray', 3: 'Uhm... well?', 4: '2'}
+8	8		301				AniZhuanchangBegin			{3: 'Murray tries to make Lee stop, but to no avail. Keeping his eyes trained straight ahead, Lee carries on walking.'}
+9	9		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory376.png'}
+10	10		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+11	11		201							{1: '1', 2: '500569', 4: '300'}
+12	12		201							{1: '2', 2: '500572', 3: '19', 4: '-300'}
+13	13		504							{1: '0.7'}
+14	14		301			AniZhuanchangEnd				"{1: '1', 3: 'Seeing Lee so quiet reminds Murray of what happened when he was still a kid—when he went out of town trying to buy medicine from some ""doctor."" Milked dry and unable to go home, Murray was left crying alone in the rain until Lee found him.', 4: '1', 5: '2'}"
+15	15		301							"{3: ""Muddy all over and soaked in rainwater, Lee, with an umbrella in hand, was out of breath when he found Murray. Lee, however, didn't blame him at all. Lee held Murray's hand tightly the entire time on their way home."", 4: '1', 5: '2'}"
+16	16		301				AniZhuanchangBegin			{3: 'Lee walked on quietly, all the while keeping his eyes trained straight ahead. Seeing Lee all tense from below the chin, Murray knew he was angry.', 4: '1', 5: '2'}
+17	17		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+18	18		504							{1: '0'}
+19	19		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory546.jpg'}
+20	20		201							{1: '1', 2: '500026', 4: '400'}
+21	21		201							{1: '2', 2: '500146', 4: '-400'}
+22	22		301			AniZhuanchangEnd				"{1: '1', 3: ""Walking next to Lee, however, it hits Murray that he's slightly taller now.""}"
+23	23		301							{2: 'Murray', 3: '...', 4: '2'}
+24	24		502							{1: 'RImgBg1DisableSlow'}
+25	25		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+26	26		301							{3: 'Lee finally stops when they reach a quiet corner.'}
+27	27		301							{2: 'Lee', 3: 'Been a while since we last talked.', 4: '1'}
+28	28		301							{3: 'Murray looks around—and is surprised when he notices that this place is one of the few in the bridge area without monitors.'}
+29	29		301							"{3: ""Murray quickly goes through in his head everything he's done recently to see if there is any loose end he forgot to tie up that gave him away.""}"
+30	30		301							{3: 'As he does so and keeps his eyes on Lee, Murray casts Lee an excited yet confused look.'}
+31	31		204							{1: '2', 2: '1'}
+32	32		301							{2: 'Murray', 3: '...I know, right?', 4: '2'}
+33	33		301							"{2: 'Murray', 3: ""It sure has... been a while since we last talked. I mean, you've been busy with all the adaptation tests."", 4: '2'}"
+34	34		301							{2: 'Lee', 3: 'Right, but I do have something I want to ask you about.', 4: '1'}
+35	35		301							{3: 'Lee opens his hand to reveal a tiny chip.'}
+36	36		204							{1: '2'}
+37	37		301							{2: 'Murray', 3: 'Wait, what is...', 4: '2'}
+38	38		301							"{2: 'Lee', 3: ""You aren't going to tell me you don't know what this is, are you?"", 4: '1'}"
+39	39		301							"{3: ""That's exactly what Murray was about to do—except when he meets Lee in the eye, he knows there is no getting away with it.""}"
+40	40		301							"{2: 'Murray', 3: ""Well... it's just something I used to help me survey mission bases."", 4: '2'}"
+41	41		301							"{2: 'Murray', 3: ""I mean, because I can't exactly fight on the surface like you and the other commandants."", 4: '2'}"
+42	42		301							{2: 'Murray', 3: '...Where did you come across it, though?', 4: '2'}
+43	43		301							"{3: ""All messenger robots self-destruct post-mission and there is no exception. As long as Lee doesn't see what's inside the chip...""}"
+44	44		301							"{2: 'Lee', 3: ""...Doesn't really matter where I found it. I recovered it and had a look at what's inside."", 4: '1'}"
+45	45		301							{2: 'Lee', 3: 'Gotta say the encryption was a real piece of artwork that could have deceived anyone... but me.', 4: '1'}
+46	46		301							"{2: 'Lee', 3: ""Because... you know, I'm your brother."", 4: '1'}"
+47	47		301							{2: 'Murray', 3: '...', 4: '2'}
+48	48		301							"{3: ""In the deafening silence that ensues, Lee's heart sinks.""}"
+49	49		301							"{3: ""As someone who knows Murray through and through, Lee knows that Murray is trying to hide something from him. Murray's silent admission, however, is proof that he can't possibly have been the one that sent him the weird set of coordinates.""}"
+50	50		301							"{3: ""Lee doesn't know who sent it to him and for what purpose—except these aren't what he's trying to find out at the moment.""}"
+51	51		301							{2: 'Lee', 3: 'So... when did you start getting yourself involved in all this?', 4: '1'}
+52	52		301							"{3: ""Looking at Murray, Lee feels as though he doesn't know him anymore.""}"
+53	53		301							{3: 'With the same gentle smile on his face, Murray looks flustered as he looks down to avoid eye contact with Lee. Moments later, he raises his head again.'}
+54	54		301							{3: 'Lee recognizes the look in those eyes.'}
+55	55		301							"{3: '...Because he, too, once told Murray the same ""white lies,"" and it was himself that he saw in those same eyes back then.'}"
+56	56		202							{1: '1', 2: '2', 6: '1'}
+57	57		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+58	58		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory649.jpg'}
+59	59		504							{1: '0.7'}
+60	60		201							{1: '1', 2: '500060', 7: '1'}
+61	61		301							"{1: '1', 2: 'Morian', 3: ""I got these from working with the machines... Don't sweat it, though. Engineers get these all the time."", 4: '1'}"
+62	62		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+63	63		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz403.png'}
+64	64		202							{1: '1', 6: '1'}
+65	65		301							"{2: 'Morian', 3: ""Listen to me. I might have to leave you for a short while, but don't worry. Everything's gonna be okay."", 4: '1'}"
+66	66		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+67	67		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory67.jpg'}
+68	68		201							{1: '1', 2: '1011001', 7: '1'}
+69	69		301							"{1: '1', 2: 'Lee', 3: ""Yup, I'm fine. You know me inside out, right?"", 4: '1'}"
+70	70		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+71	71		504							{1: '0'}
+72	72		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+73	73		201							{1: '1', 2: '500026', 4: '400', 7: '1'}
+74	74		201							{1: '2', 2: '500146', 3: '1', 4: '-400', 7: '1'}
+75	75		301							"{1: '1', 2: 'Murray', 3: ""That's just part of the mission, and we gave Commander Nikola all the data we'd gotten from the mission afterward."", 4: '2'}"
+76	76		301							{2: 'Murray', 3: 'We did everything with his authorization, and you know what he is like.', 4: '2'}
+77	77		301							{2: 'Lee', 3: 'Does that include coming in contact with an Ascendant?', 4: '1'}
+78	78		301							{2: 'Murray', 3: '...', 4: '2'}
+79	79		301							"{2: 'Murray', 3: ""I don't know what you're talking about, Lee."", 4: '2'}"
+80	80		301							{3: 'Says Murray ever so softly, his smile no longer gentle.'}
+81	81		301							{2: 'Lee', 3: 'Back at City 075... Lamia might have been able to copy the way you look, but there was no way she could have gotten her hands on your communication identification number when there was no connection.', 4: '1'}
+82	82		301							{2: 'Lee', 3: 'She could have chosen to be anyone, but I guess she decided to use your code to earn our trust there.', 4: '1'}
+83	83		301							"{2: 'Lee', 3: ""And that can only mean one thing—you'd been in contact with her up until that point."", 4: '1'}"
+84	84		301							{3: 'As expected… I still can’t surpass you after all these years, Lee.'}
+85	85		301							"{3: ""Murray's heart sinks as he thinks to himself.""}"
+86	86		301							{2: 'Murray', 3: 'Only you can manage to deduce the course this way, Lee.', 4: '2'}
+87	87		204							{1: '2', 2: '19'}
+88	88		301							"{2: 'Murray', 3: ""But... I really don't know what you're talking about."", 4: '2'}"
+89	89		301							{3: 'Murray knows there is no point in lying anymore, but he refuses to give in.'}
+90	90		301				AniZhuanchangBegin			"{3: ""It's been a long time since Lee saw Murray so sad—and so full of secrets.""}"
+91	91		104							{1: '0|-200|0', 2: '0'}
+92	92		306							{1: '1'}
+93	93		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz401.png'}
+94	94		202							{1: '1', 2: '2', 6: '1'}
+95	95		301			AniZhuanchangEnd				"{3: ""Murray would always look at Lee with expectation, comfort, and admiration, Lee recalls last seeing Murray in tears when Lee himself was inside one of the glass pods down in Kurono's lab—when both Lee and Murray believed they'd never see each other again.""}"
+96	96		205						3000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cgqz403.png', 3: '0', 4: '1', 5: '3'}
+97	97		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+98	98		101						2000.0	{1: 'Assets/Product/Texture/Image/BgCg/Cgqz403.png'}
+99	99		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory263.png', 3: '0', 4: '1', 5: '2'}
+100	100		301							{3: 'Ever since coming to Babylonia, Murray stopped being the adorable young brother he was, stopped asking Lee all the far-fetched questions he used to ask him, and stopped inviting him to art exhibitions.'}
+101	101		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+102	102		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory263.png'}
+103	103		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '2'}
+104	104		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+105	105		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+106	106		301				AniZhuanchangBegin			"{3: '""I\'m fine,"" ""don\'t worry""—these are the kind of messages that Lee, whose plate has been full with endless battles, would send Murray in response to his messages.'}"
+107	107		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+108	108		201							{1: '1', 2: '500026', 4: '400'}
+109	109		201							{1: '2', 2: '500146', 3: '19', 4: '-400'}
+110	110		301			AniZhuanchangEnd				{1: '1', 3: 'The concealed facts and emotions weave together, separating them and hiding them from the true meanings and thoughts lying under their words.'}
+111	111		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+112	112		306							
+113	113		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg', 3: '0', 4: '1', 5: '2'}
+114	114		301							"{2: 'Lee', 3: ""I trust you, Murray, and I'll take your side no matter what."", 4: '1'}"
+115	115		301							{2: 'Lee', 3: 'I just want you to be honest with me.', 4: '1'}
+116	116		202							{1: '1', 2: '2', 6: '1'}
+117	117		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+118	118		105							{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLi/UiMovieLi01/UiMovieLi01.prefab'}
+119	119		301							"{3: '""We\'ll never know what you need if you never say a thing.""'}"
+120	120		301							"{3: '""And there are things that can go unnoticed if you always choose to be quiet about them.""'}"
+121	121		105							
+122	122		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+123	123		201							{1: '1', 2: '500026', 4: '400', 7: '1'}
+124	124		201							{1: '2', 2: '500146', 3: '19', 4: '-400', 7: '1'}
+125	125		301							"{1: '1', 2: 'Murray', 3: ""...Why are you keeping me and your commandant in the dark about your frame's compatibility, then?"", 4: '2'}"
+126	126		301							{3: 'This question catches Lee off guard.'}
+127	127		301							"{2: 'Lee', 3: ""Well, that's because..."", 4: '1'}"
+128	128		301							"{2: 'Murray', 3: ""Because you never thought we'd be of any help to you, right?"", 4: '2'}"
+129	129		301							{2: 'Lee', 3: 'You know full well I never saw you that way.', 4: '1'}
+130	130		204							{1: '2', 2: '19'}
+131	131		301							{2: 'Murray', 3: 'Why do you always choose to go it alone, then? And I thought we are family...', 4: '2'}
+132	132		301							"{2: 'Murray', 3: ""If you'd told me a little more about yourself, I would never have..."", 4: '2'}"
+133	133		204							{1: '2', 2: '9'}
+134	134		203							{1: '2', 2: '0.25', 3: '-350', 4: '-80'}
+135	135		401							{1: '2', 2: '3079'}
+136	136		301							{2: 'Murray', 3: 'Mmmph...!', 4: '2'}
+137	137		301							{3: 'Murray stops in his tracks halfway through the sentence with a gasp.'}
+138	138		204							{1: '1', 2: '7'}
+139	139		301							{2: 'Lee', 3: 'Murray!', 4: '1'}
+140	140		301							"{3: ""Rushing up to hold Murray so he doesn't fall, Lee sees how pale his face has become.""}"
+141	141		301							"{2: 'Lee', 3: ""What's going on?! Why is this happening again all of a sudden?!"", 4: '1'}"
+142	142		301							{3: 'Without saying anything, Murray shakes his head with a frown as he presses a hand against his temple, apparently going through an excruciating headache.'}
+143	143		301							{2: 'Lee', 3: 'Wait... is your Mind Beacon contaminated?!', 4: '1'}
+144	144		301							"{2: 'Murray', 3: ""Lee... I'm okay."", 4: '2'}"
+145	145		204							{1: '1'}
+146	146		301							"{2: 'Lee', 3: ""C'mon, Murray. You're anything but okay!"", 4: '1'}"
+147	147		204							{1: '2'}
+148	148		203							{1: '2', 2: '0.25', 3: '-400'}
+149	149		301							{3: 'Murray smiles comfortingly at Lee. Having recovered from the episode, he takes a few deep breaths before standing up against the wall.'}
+150	150		301							"{2: 'Murray', 3: ""Phew, that came and went fast. I'm feeling okay now. C'mon, I'm a full-fledged commandant that passed the remote connection test."", 4: '2'}"
+151	151		301							{2: 'Murray', 3: 'Oh... but I suppose your commandant is probably more full-fledged than I am.', 4: '2'}
+152	152		301							{3: 'Murray has the same gentle smile on his face again, as though nothing had happened just now.'}
+153	153		301							{3: 'Lee was about to say something—then realizes that nothing he has to say is going to change anything.'}
+154	154		401							{1: '1', 2: '36'}
+155	155		202							{1: '1', 2: '2', 6: '1'}
+156	156		401							{1: '2', 2: '1501'}
+157	157		301							{2: 'Broadcast', 3: 'We need all Constructs on standby to assemble in the Prep Zone.'}
+158	158		401							{1: '1', 2: '203'}
+159	159		301							{2: 'Broadcast', 3: 'We need all Constructs on standby to assemble in the Prep Zone.'}
+160	160		301							"{2: 'Broadcast', 3: ""We've detected an unknown interference of electromagnetic radiation. We're asking all citizens to follow evacuation instructions.""}"
+161	161		301							{2: 'Broadcast', 3: 'This is not a drill. Repeat, this is not a drill.'}
+162	162		301							{3: 'As though trying to shatter the silence in between Lee and Murray, their terminals start beeping away as though the apocalypse were coming.'}
+163	163		201							{1: '1', 2: '500026', 4: '400'}
+164	164		201							{1: '2', 2: '500146', 3: '4', 4: '-400'}
+165	165		301							"{1: '1', 2: 'Lee', 3: '""Highly concentrated Punishing detected on the surface...""', 4: '1'}"
+166	166		301							"{2: 'Murray', 3: '""Prepare to engage at once...""', 4: '2'}"
+167	167		301							"{2: 'Murray', 3: ""Unknown electromagnetic radiation that's suspected to be a new method of attack... Wait, does it have to do with the Mind Beacon contamination just now?"", 4: '2'}"
+168	168		301							"{2: 'Lee', 3: ""And they want all Constructs to head to the landing pad to get ready for engagement on the ground... That's a weird instruction."", 4: '1'}"
+169	169		301							{2: 'Murray', 3: 'Cerberus got an engagement notice, too. I need to go and get ready for remote connection', 4: '2'}
+170	170		301							{2: 'Lee', 3: 'Just... be careful.', 4: '1'}
+171	171		301							{3: 'Hard-pressed to part ways with Murray now, Lee squeezes out these words.'}
+172	172		204							{1: '2'}
+173	173		301							"{2: 'Murray', 3: ""I know. I won't be going to the surface because I'll be using remote connection. I'll be okay."", 4: '2'}"
+174	174		301							{3: 'Each with their own orders to obey, Lee and Murray have no choice but to stomach their feelings of the moment as they part ways.'}
+175	175		301							"{2: 'Lee', 3: ""I'll come and find you when this is over."", 4: '1'}"
+176	176		301							{2: 'Murray', 3: '...Sure.', 4: '2'}
+177	177		301				AniZhuanchangBegin			"{2: 'Murray', 3: ""I'll be waiting."", 4: '2'}"
+178	178		401							{1: '1', 2: '36'}
+179	179		202							{1: '1', 2: '2', 6: '1'}
+180	180		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+181	181		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory427.jpg'}
+182	182		401							{1: '1', 2: '201'}
+183	183		301			AniZhuanchangEnd				{3: 'Babylonia Parliament Hall, twenty minutes ago.'}
+184	184		301							{3: 'With the executive meeting coming to a close, the air in the hall is somber with flustered councilmen.'}
+185	185		301							{2: 'Councilman A', 3: 'Going back to what we were talking about just now...'}
+186	186		301							{2: 'Councilman A', 3: '...Babylonia is on the verge of reaching full capacity with all the refugees it has taken in since the Battle of Pulia Forest Park.'}
+187	187		301							"{2: 'Councilman A', 3: ""And just so we're clear—they are not mere numbers on the reports. They're human beings, and they need to consume resources to stay alive.""}"
+188	188		301							"{2: 'Councilman A', 3: ""We're burning through our resources faster than ever, and we don't know how much longer it's going to take for our production lines to be built. For God's sake, we haven't even replenished the resources we spent on the previous battles!""}"
+189	189		301							"{2: 'Councilman A', 3: ""If this goes on, we'll have no choice but to cut back on the amount of resources we assign to the residential area.""}"
+190	190		301							"{2: 'Councilman B', 3: ""But this standard of production you're asking us to meet... is mission impossible...""}"
+191	191		201							{1: '1', 2: '500496'}
+192	192		301							"{1: '1', 2: 'Liszt', 3: ""Another thing to keep in mind is that the resources on the colony ship won't last forever, although the possibility of additional personnel was indeed taken into account when the resources were prepared."", 4: '1'}"
+193	193		202							{1: '1', 6: '1'}
+194	194		301							"{2: 'Councilman B', 3: ""And that's what we're looking at on top of all the conversation areas on Earth that can't fend for themselves and need our resources.""}"
+195	195		301							{2: 'Councilman B', 3: 'We need to pick up the pace with rebuilding the conservation areas on Earth and slowly help them get their production level back to what it was.'}
+196	196		301							"{2: 'Councilman C', 3: ""Speaking of conservation areas, the reports showed that there have been quite a few earthquakes these days. Why was there no warning? And we haven't seen a single report so far detailing the damage from the earthquakes...""}"
+197	197		201							{1: '1', 2: '500012'}
+198	198		301							{1: '1', 2: 'Nikola', 3: 'Babylonia has lost contact with the majority of the surveying stations on the surface since the Great Evacuation. No one is manning those places now, and most of the areas that got hit by the earthquakes have yet to be reclaimed.', 4: '1'}
+199	199		301							"{2: 'Nikola', 3: ""The only data we've managed to get our hands on are the spatial electromagnetic anomaly that a few satellites picked up, and we just can't tell the exact location and depth of every epicenter with that."", 4: '1'}"
+200	200		201							{1: '1', 2: '500011'}
+201	201		301							"{1: '1', 2: 'Hassen', 3: ""Most of the conservation areas that got hit wouldn't have been able to react in time anyway even if we had been able to send out warnings, because most of the earthquakes happened at night there."", 4: '1'}"
+202	202		301							"{2: 'Hassen', 3: ""We've managed to get in touch with most conservation areas now, and recovery efforts are already underway with Engineering Force in charge."", 4: '1'}"
+203	203		201							{1: '1', 2: '500012'}
+204	204		301							{1: '1', 2: 'Nikola', 3: 'Command Central has sent the majority of Task Force and Support Force down there for recon, and we should be receiving a report in no time.', 4: '1'}
+205	205		201							{1: '1', 2: '500011'}
+206	206		301							{1: '1', 2: 'Hassen', 3: 'Now, the next subject on the list is the new Construct Restriction Bill submitted in conjunction by a number of councilmen. The bill seeks to implement stricter monitoring on Constructs—through such means as making M.I.N.D. accessible for scrutiny and monitoring their conversations, for instance.', 4: '1'}
+207	207		301							{3: 'With it, the light blue projector screen in the center of the hall shows a new document that lists out the restrictions to be imposed on Constructs.'}
+208	208		301							{2: 'Hassen', 3: '...Any thought we would like to share regarding this bill?', 4: '1'}
+209	209		202							{1: '1', 6: '1'}
+210	210		301							"{2: 'Councilman B', 3: ""Are we trying to limit their contact with the enemies when they're the ones out there fighting the war? I find that contradicting.""}"
+211	211		301							"{2: 'Councilman K', 3: ""We need to bear in mind that we've seen a large number of defecting Constructs over the last two months alone, most of whom are still missing.""}"
+212	212		301							"{2: 'Councilman K', 3: 'The whole business with ""Ascendant Recruitment"" is an open secret now among our Construct soldiers.'}"
+213	213		301							{2: 'Councilman S', 3: 'We came forth with the bill based on sufficient evidence that points at the possibility of there being secret agents among our soldiers sent by Ascendants.'}
+214	214		301							"{2: 'Councilman S', 3: ""We very well might have been able to minimize the damage we suffered had we started looking into the situation earlier, and I'm sure you know what I'm talking about, Commander.""}"
+215	215		201							{1: '1', 2: '500012'}
+216	216		301							{1: '1', 2: 'Nikola', 3: '...', 4: '1'}
+217	217		201							{1: '1', 2: '500011', 3: '5'}
+218	218		301							"{1: '1', 2: 'Hassen', 3: ""People have grown weary from years of war, and we've been through only too many disheartening battles recently. It's only natural that our soldiers are going through a period of low morale now, and that's something that can happen whenever there is war."", 4: '1'}"
+219	219		301							{2: 'Hassen', 3: 'Still, most of our soldiers are fighting the war with hope and determination. Are we really going to hit them with a bill that shows our lack of trust in them when what we should be doing is supporting them?', 4: '1'}
+220	220		202							{1: '1', 6: '1'}
+221	221		301							"{2: 'Councilman K', 3: 'President Hassen, I know you\'ve always been an advocate of ""human rights"" for Constructs.'}"
+222	222		301							"{2: 'Councilman K', 3: ""But I'm not sure if it'd be a good idea to stand by the defecting Constructs.""}"
+223	223		301							{2: 'Councilman K', 3: 'Are you going to wait for them to attack Babylonia and take all the classified information we have here back to Ascendants?!'}
+224	224		401							{1: '1', 2: '36'}
+225	225		401							{1: '2', 2: '2511'}
+226	226		401							{1: '2', 2: '2668'}
+227	227		301			RImgBg1Shake				{3: 'In the heat of the moment, this particular councilman stands up from his seat as he slaps the table. Distorted by the slap, his microphone sends out an amplified buzzing noise that threatens to split the ear in the spacious hall.'}
+228	228		401							{1: '1', 2: '203'}
+229	229		402							{1: '2668'}
+230	230		301							"{2: 'Councilman S', 3: ""What are you doing?! This is the World Government's Parliament! Sit back down already!""}"
+231	231		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+232	232		401						300.0	{1: '2', 2: '1512'}
+233	233		401							{1: '2', 2: '3077'}
+234	234		301			RImgBg1Shake				{3: 'The councilman who tries to stop him, however, falls to the ground with a punch.'}
+235	235		301							{2: 'Councilman S', 3: 'Are you out of your mind?!'}
+236	236		301							{2: '???', 3: 'Tr... aitor...'}
+237	237		301							{3: 'Amidst the chaos that unfolds in the hall, the quiet mumble goes unnoticed.'}
+238	238		201							{1: '1', 2: '500012', 3: '5'}
+239	239		301							{1: '1', 2: 'Nikola', 3: 'Silence!', 4: '1'}
+240	240		202							{1: '1', 6: '1'}
+241	241		401							{1: '2', 2: '1099'}
+242	242		301							{3: 'Right when Nikola was about to call the security in, a disconcerting emergency call forces its way through the channel into the Parliament.'}
+243	243		401							{1: '2', 2: '718'}
+244	244		301							{2: 'Celica', 3: 'Apologies! [BUZZ—] This is an emergency announcement! Please kindly [BUZZ—] terminate the meeting at once and find a place to hid [BUZZ—]!'}
+245	245		402							{1: '718'}
+246	246		201							{1: '1', 2: '500012'}
+247	247		301							"{1: '1', 2: 'Nikola', 3: ""What's going on? Just tell us what's going on already!"", 4: '1'}"
+248	248		202							{1: '1', 6: '1'}
+249	249		401							{1: '2', 2: '718'}
+250	250		401							{1: '2', 2: '1513'}
+251	251		301							"{2: 'Celica', 3: ""Commander! Thank God you're all still [BUZZ—]...""}"
+252	252		401							{1: '2', 2: '1506'}
+253	253		301							{3: 'Celica seems to be running as she tries to speak. She tries to remain calm, yet her trembling tone betrays her. From her side, screams and the sounds of buildings crumbling down can be heard.'}
+254	254		402							{1: '718'}
+255	255		201							{1: '1', 2: '500011', 3: '5'}
+256	256		301							"{1: '1', 2: 'Hassen', 3: ""Celica? What's going on?!"", 4: '1'}"
+257	257		202							{1: '1', 6: '1'}
+258	258		401							{1: '2', 2: '718'}
+259	259		301							"{2: 'Celica', 3: ""About [BUZZ—] ago, we detected a strong reaction of the Punishing Virus on the ground. Babylonia has been hit with a strong wave of electromagnetic radiation, and it's caused a lot of [BUZZ—] to go mad!""}"
+260	260		301							"{2: 'Celica', 3: ""Now, [BUZZ—] we don't know what's causing all of this... [BUZZ—] It's extremely chaotic now. Please stay away from the mass!""}"
+261	261		301							{2: 'Celica', 3: 'People [BUZZ—] that have lost their minds here are highly aggressive! Please stay away from [BUZZ—] carrying weapons.'}
+262	262		402							{1: '718'}
+263	263		401							{1: '1', 2: '36'}
+264	264		301							"{3: ""Celica's warning call grinds to a halt with the overwhelming buzzing noises.""}"
+265	265		401							{1: '1', 2: '172'}
+266	266		201							{1: '1', 2: '500011', 3: '5'}
+267	267		301							{1: '1', 2: 'Hassen', 3: 'Wait, are these people...', 4: '1'}
+268	268		202							{1: '1', 6: '1'}
+269	269		301							{2: '???', 3: 'Traitor...'}
+270	270		201							{1: '1', 2: '500012', 3: '5'}
+271	271		301							"{1: '1', 2: 'Nikola', 3: ""They've gone mad... Wait, where is the security guard?!"", 4: '1'}"
+272	272		201							{1: '1', 2: '500005'}
+273	273		301							{1: '1', 2: 'Guard', 3: 'You bunch of traitors!', 4: '1'}
+274	274		401							{1: '2', 2: '1511'}
+275	275		301							{3: 'From the corner in which he was just mumbling, the security guard roars as he aims his gun at the assembly of officers.'}
+276	276		202							{1: '1', 6: '1'}
+277	277		401							{1: '2', 2: '2513'}
+278	278		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+279	279		301		1	RImgBg1Shake	AniZhuanchangBegin			"{3: ""Trained squarely at Hassen's chest, the jet-black gun spits out a bullet before anyone can react—leaving the entire hall in shock.""}"

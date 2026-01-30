@@ -1,0 +1,356 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+2	2		401							{1: '1', 2: '294'}
+3	3		301			DialogEnable				{3: 'The streets of Constellia are bustling with people on the first day of the Paradise Festival.'}
+4	4		301							{3: 'Trinket-selling vendors and temporary amusement rides fill the streets, offering a feast for the eyes.'}
+5	5		301							{3: 'Furthermore, vacant buildings in the city have been transformed into exhibition halls, accessible even without a ticket.'}
+6	6		301							{3: 'Babylonia Constructs and staff, migrants from all over the surface, visitors from Kowloong and Akdilek, and the awakened machines remaining in the city...'}
+7	7		301							{3: 'The diverse crowd forms a somewhat surprising yet harmonious scene as they all come here to enjoy this hard-earned festival.'}
+8	8		301							{3: 'Occasionally, you can glimpse a few familiar faces.'}
+9	9		201							{1: '1', 2: '500166', 3: '1', 4: '400'}
+10	10		201							{1: '2', 2: '1031001', 3: '1', 4: '-400'}
+11	11		301							"{1: '1', 2: 'Lucia', 3: 'Liv, why don\'t we head to this ""Cooking Lab"" first? There seems to be a cooking challenge we can enter using the ingredients they provide.', 4: '1', 18: '100002149'}"
+12	12		301							"{2: 'Lucia', 3: ""I think my cooking skills have improved a bit recently. I'll let you have a taste of my cooking first—"", 4: '1', 18: '100002150'}"
+13	13		204							{1: '2', 2: '7'}
+14	14		301							"{2: 'Liv', 3: ""L-Lucia! I think... that's a great idea. Why don't I give you a hand?"", 4: '2', 18: '100002151'}"
+15	2000		204							{1: '2', 2: '1'}
+16	15		301							"{2: 'Liv', 3: ""Or maybe we can visit it on the last day when we meet up with Lee and Commandant. We'll all help you then..."", 4: '2', 18: '100002152'}"
+17	16		302							{2: '(Silently walk away)', 3: '17'}
+18	17		202							{1: '1', 2: '2', 6: '1'}
+19	18		201							{1: '1', 2: '500214'}
+20	19		301							"{1: '1', 2: 'Rosetta', 3: ""There's a card game tournament in half an hour... Well, guess I'll have to sigh up for it."", 4: '1', 18: '100002153'}"
+21	20		202							{1: '1', 6: '1'}
+22	21		201							{1: '1', 2: '1081001', 3: '2', 4: '0'}
+23	22		201							{1: '2', 2: '500309', 4: '600'}
+24	23		201							{1: '3', 2: '500175', 4: '-600'}
+25	24		301							{1: '1', 2: 'Kamui', 3: 'Cap! Look what I found! A Flash TR-1200 from Universal Toys that still works and looks great! Check it out, Cap!', 4: '1', 18: '100002154'}
+26	25		301							"{2: 'Chrome', 3: ""Kamui? Finally... I've been trying to reach you, and Wanshi has been looking for you too—"", 4: '2', 18: '100002155'}"
+27	26		301							{2: 'Chrome', 3: 'Wanshi... Wanshi? Where did he go...?', 4: '2', 18: '100002156'}
+28	27		301							"{2: 'Camu', 3: ""I haven't seen him for half an hour."", 4: '3', 18: '100002157'}"
+29	28		301							"{2: 'Chrome', 3: ""...Come on, Kamui, Camu. Let's go to the broadcast center again."", 4: '2', 18: '100002158'}"
+30	29		302							"{2: ""I didn't think it'd be this lively..."", 3: '30'}"
+31	30		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+32	31		302				AniZhuanchangBegin			{2: '(This should help Karenina relax a little...)', 3: '32'}
+33	32		101			DialogDisable	AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_30.jpg'}
+34	33		301			DialogEnable				{2: 'Karenina', 3: 'Hey, Commandant! Stop daydreaming already.', 18: '100002159'}
+35	34		301							"{2: 'Karenina', 3: ""Only three more booths to go before we're done with this area. Hurry!"", 18: '100002160'}"
+36	35		301							{3: 'Maybe a little too relaxed.'}
+37	36		301							"{3: ""Karenina is holding the cog-flavored ice cream she bought from an awakened machine's stall as she urges you to keep up.""}"
+38	37		301							{3: 'Meanwhile, you are holding two heavy bags stuffed with plushies and toys that Karenina won at a balloon shooting game.'}
+39	38		301							"{2: 'Karenina', 3: ""I'll leave you here if you don't get moving!"", 4: '1', 18: '100002161'}"
+40	39		302							"{2: ""I'm coming."", 3: '40'}"
+41	40		301							{2: 'Karenina', 3: 'You were the one who suggested we go for a walk.', 4: '1', 18: '100002162'}
+42	41		301							"{2: 'Karenina', 3: ""Hurry up or we'll miss the time to collect all the stamps of this task."", 4: '1', 18: '100002163'}"
+43	42		301							{3: 'Karenina waves the terminal in her hand, the flashing countdown and a screen full of digital stamps showcasing her fruitful afternoon.'}
+44	43		301							{2: 'Karenina', 3: 'Are you still upset about dropping your ice cream earlier?', 4: '1', 18: '100002164'}
+45	44		301							{2: 'Karenina', 3: 'I can let you have half of mine if you want it so bad.', 4: '1', 18: '100002165'}
+46	45		302							"{2: ""Cog-flavored ice cream can't be made for humans, right?"", 3: '46'}"
+47	46		301							"{2: 'Karenina', 3: ""It's not bad, actually. It smells like freshly cooled aerospace titanium... with a hint of carbon steel..."", 4: '1', 18: '100002166'}"
+48	47		302							"{2: ""It's hard to imagine what it tastes like..."", 3: '48', 4: ""I wonder what it's made of..."", 5: '48'}"
+49	48		301							"{2: 'Karenina', 3: ""Tut-tut, you're so uncultured. Fine, I'll buy you more at the ice cream stall, you poor thing."", 4: '1', 18: '100002167'}"
+50	49		302							{2: 'Karenina, your face...', 3: '50'}
+51	50		301							"{2: 'Karenina', 3: ""Hm...? What's wrong with my face? Aargh..."", 4: '1', 18: '100002168'}"
+52	51		301							{3: 'Touching the spot where you are pointing at, Karenina realizes that her face is smeared with half-melted ice cream.'}
+53	52		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_31.jpg'}
+54	53		301							"{2: 'Karenina', 3: ""W-why didn't you say something sooner?! How long has it been? Have I been walking around with ice cream on my face the whole time?!"", 4: '1', 18: '100002169'}"
+55	54		302							"{2: ""You've been running around. I didn't get to say anything."", 3: '55'}"
+56	55		301				AniZhuanchangBegin			{2: 'Karenina', 3: 'Com—man—dant!', 4: '1', 18: '100002170'}
+57	56		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+58	57		201				AniZhuanchangEnd			{1: '1', 2: '500731'}
+59	58		301			DialogEnable				{1: '1', 3: 'Karenina charges at you furiously, but you swiftly dodge out of the way just in time.'}
+60	59		301							{3: 'Missing you, Karenina watches as the force of her movement sends the ice cream flying off the cone and landing on the ground with a splat.'}
+61	60		204							{1: '1', 2: '5'}
+62	61		301							{2: 'Karenina', 3: '...', 4: '1', 18: '100002171'}
+63	62		204							{1: '1', 2: '6'}
+64	63		301							{2: 'Karenina', 3: 'You owe me one.', 4: '1', 18: '100002172'}
+65	64		302							{2: '...Understood.', 3: '65'}
+66	65		301							"{3: ""At that moment, Karenina's alarm on her terminal rings, reminding her that she is almost out of time to collect the digital stamps.""}"
+67	66		204							{1: '1', 2: '7'}
+68	67		301							{2: 'Karenina', 3: 'Dammit! The optimal route is going to extend quite a bit if we have to pass by the ice cream stall...', 4: '1', 18: '100002173'}
+69	68		302							"{2: ""Why don't we split up?"", 3: '69'}"
+70	69		302							"{2: ""I'll go get the ice cream. You go get the stamps."", 3: '70'}"
+71	70		204							{1: '1', 2: '3'}
+72	71		301							"{2: 'Karenina', 3: ""Good idea! I'll leave it to you, then. I'll share the free ice cream voucher with you when I finish collecting the stamps!"", 4: '1', 18: '100002174'}"
+73	72		204							{1: '1', 2: '1'}
+74	73		301							"{2: 'Karenina', 3: ""Let's meet up at this spot afterward. Come here once you get the ice cream, okay?"", 4: '1', 18: '100002175'}"
+75	74		202							{1: '1', 6: '1'}
+76	75		301							{3: 'Karenina sends you a set of coordinates before hurrying off toward the nearest shop.'}
+77	76		302							{2: '(Is the prize ice cream as well...?)', 3: '77'}
+78	77		301							{3: 'Even though you know Karenina does not care about the prize, you have foreseen the outcome when the festival staff handed her an empty ticket to collect digital stamps.'}
+79	78		301							{3: 'By the time you finish cleaning the ice cream stains on the street in silence, the last pair of customers are leaving with their drinks at the nearby stall.'}
+80	79		301							{3: 'The pair seems to have noticed you as well. You consider going up to say hello before deciding not to disturb them, respecting your prior agreement.'}
+81	80		301							{3: 'Having exchanged glances with them, you shift your attention to the owner of the stall.'}
+82	81		302							{2: 'Two ice cream cones, please.', 3: '82'}
+83	82		201							{1: '1', 2: '500733', 3: '1'}
+84	83		301							"{1: '1', 2: 'Sophia', 3: ""One second. Hmm... I'm running out of ice cream batter. Let me refill."", 4: '1', 18: '100002176'}"
+85	84		301							{2: 'Sophia', 3: 'A new batch is going to take ten minutes. Is that okay?', 4: '1', 18: '100002177'}
+86	85		302							"{2: ""It's okay."", 3: '20002'}"
+87	20002		204							{1: '1', 2: '12'}
+88	86		301							{2: 'Sophia', 3: 'Please pay first.', 4: '1', 18: '100002178'}
+89	87		302							"{2: 'Never change, Sophia.', 3: '88', 4: ""I'm not going to run away."", 5: '88'}"
+90	88		301							"{2: 'Sophia', 3: ""My apologies. I've seen too many dine-and-dash customers lately, so I'm just being cautious."", 4: '1', 18: '100002179'}"
+91	89		301							{2: 'Sophia', 3: 'We lost 40 tons of fine tantalum ores in the last unpleasant exchange, while they lost 40 heads.', 4: '1', 18: '100002180'}
+92	90		302							{2: 'Ahem... Surely not over two ice cream cones.', 3: '91'}
+93	91		204							{1: '1', 2: '1'}
+94	92		301							{2: 'Sophia', 3: 'But people in this town are trustworthy. I like it a lot.', 4: '1', 18: '100002181'}
+95	93		301							"{2: 'Sophia', 3: ""The Paradise Festival is such a great opportunity to make easy money. I haven't had a chance like this for a long time."", 4: '1', 18: '100002182'}"
+96	94		302							{2: 'Have you found any business opportunities here?', 3: '95'}
+97	95		204							{1: '1', 2: '1'}
+98	96		301							{2: 'Sophia', 3: 'I spoke with the event organizer earlier. They were happy to let Akdilek invest in them.', 4: '1', 18: '100002183'}
+99	97		301							"{2: 'Sophia', 3: ""We'll provide the ingredients and building materials needed for the stalls in exchange for 30% of the profit. It's a good deal for Akdilek."", 4: '1', 18: '100002184'}"
+100	98		301							{2: 'Sophia', 3: 'By the way, we got our soda machines second-hand at a low price from the Babylonia Engineering Force. Renting them out alone has covered the cost.', 4: '1', 18: '100002185'}
+101	99		302							"{2: ""(Karenina isn't here, thankfully...)"", 3: '100'}"
+102	100		301							{3: 'If Karenina knew Akdilek was profiting at the expense of the Engineering Force, she would probably grab her hammer and teach them what a good deal really means.'}
+103	101		302							{2: 'Oh, right. Can I ask you something, Sophia?', 3: '102'}
+104	102		301							"{2: 'Sophia', 3: ""I wanted to ask if you were looking for a free consultation or a paid one, but I'll make it a free gift hat comes with the ice cream just for you, Commandant. What's your question?"", 4: '1', 18: '100002186'}"
+105	103		302							"{2: ""Is there any Akdilek visitor who's a good dancer or singer?"", 3: '104'}"
+106	20003		204							{1: '1', 2: '1'}
+107	104		301							"{2: 'Sophia', 3: ""Are you trying to hire singers and dancers? What's your maximum budget?"", 4: '1', 18: '100002187'}"
+108	105		302							{2: '(Gesture the balance on your salary card with your hands)', 3: '106', 4: 'Everything is negotiable.', 5: '106'}
+109	106		301							"{2: 'Sophia', 3: ""That's very generous! Money isn't an issue, then."", 4: '1', 18: '100002188'}"
+110	107		204							{1: '1', 2: '8'}
+111	108		301							"{2: 'Sophia', 3: ""Unfortunately, we don't have anyone that meets your needs right now."", 4: '1', 18: '100002189'}"
+112	109		302							{2: 'Why were we discussing price, then...', 3: '20004', 4: 'Seriously?!', 5: '20004'}
+113	20004		204							{1: '1'}
+114	110		301							"{2: 'Sophia', 3: ""Price always comes first, even for deals you can't make."", 4: '1', 18: '100002190'}"
+115	111		301							"{2: 'Sophia', 3: ""Although there's no one suitable in Akdilek, we can help you look for one for a small service fee, and we'll guarantee to deliver them to you within a week."", 4: '1', 18: '100002191'}"
+116	112		302							{2: 'That sounds super shady...', 3: '113'}
+117	113		301							{3: 'You know Sophia is not really going to kidnap some random post-apocalyptic dancer for you, and you know Akdilek is capable of finding the person you need...'}
+118	114		301							{3: 'But a week is too long. The Paradise Festival will be over then.'}
+119	115		302							"{2: ""(It seems that this plan isn't going to work...)"", 3: '116'}"
+120	116		301							{3: 'As you consider asking Ayla for someone from WGAA, a new customer approaches the stall.'}
+121	117		203							{1: '1', 2: '0.15', 3: '-400'}
+122	118		201							{1: '2', 2: '500629', 4: '400'}
+123	119		301							{1: '1', 2: 'Hanying', 3: 'Excuse me. Do you sell milk tea here?', 4: '2', 18: '100002192'}
+124	120		301							{3: 'A young woman dressed in Kowloong attire walks up. She is Hanying, one of the Kowloong visitors from a few days ago.'}
+125	121		301							"{2: 'Sophia', 3: ""Yes, but you'll have to wait for a bit."", 4: '1', 18: '100002193'}"
+126	122		301							{2: 'Hanying', 3: 'Hello, 【kuroname】. You are a commandant from Babylonia, right?', 4: '2', 18: '100002194'}
+127	123		302							{2: 'Good afternoon, Hanying.', 3: '124'}
+128	124		302							"{2: ""Kowloong is quite far away from here, isn't it?"", 3: '125'}"
+129	125		301							{2: 'Hanying', 3: 'Indeed, but the journey here was relatively smooth. Pulao wanted me to see more of the world while...', 4: '2', 18: '100002195'}
+130	126		301							{3: 'Hanying glances around her at all the humans and awakened machines walking around here in the newly renovated district.'}
+131	127		301							"{2: 'Hanying', 3: ""This place... is called Constellia, right? It's quite different from Kowloong or the Nighter, but it's beautiful in its own way as well."", 4: '2', 18: '100002196'}"
+132	128		301							{2: 'Hanying', 3: 'To see humans and mechanoids walking together... What a rare but wonderful sight.', 4: '2', 18: '100002197'}
+133	129		302							{2: 'Have you been to anywhere fun?', 3: '130'}
+134	130		301							"{2: 'Hanying', 3: 'I found a dance studio run by mechanoids that has something called... a ""dance machine""? I tried it out, and it was pretty fun.', 4: '2', 18: '100002198'}"
+135	131		301							"{2: 'Hanying', 3: ""Mechanoid dances were quite an eye-opener since all the dances I'm familiar with are based on human movements. I wish my colleague were here. She seems to be an expert on this..."", 4: '2', 18: '100002199'}"
+136	132		302							{2: 'Right...', 3: '133'}
+137	133		301							{3: 'Your right fist hits your open left palm as you come to an epiphany. Seeing your expression, Sophia quickly reacts as well.'}
+138	134		301							{2: 'Sophia', 3: 'Are you a skilled dancer, Hanying?', 4: '1', 18: '100002200'}
+139	135		301							"{2: 'Hanying', 3: ""I've dabbled during my time on the Nighter. I still perform on stage occasionally."", 4: '2', 18: '100002201'}"
+140	136		302							{2: 'Pulao mentioned that her sister is the best dancer in Kowloong.', 3: '137'}
+141	137		204							{1: '2', 2: '10'}
+142	138		301							"{2: 'Hanying', 3: ""That's simply not true. I'm a mere amateur in the vast and profound field of dance."", 4: '2', 18: '100002202'}"
+143	20005		204							{1: '1', 2: '1'}
+144	139		301							{2: 'Sophia', 3: 'Is that true? Give me a moment to get a pen and paper. Do you mind writing down your contact information? Akdilek would love to contact you in the future should any business opportunity arise—', 4: '1', 18: '100002203'}
+145	140		204							{1: '2', 2: '7'}
+146	141		301							"{2: 'Hanying', 3: ""Huh? Wait... I wasn't expecting this. Um... Where should I write it?"", 4: '2', 18: '100002204'}"
+147	142		302							{2: 'Are you busy after this, Hanying?', 3: '143'}
+148	143		204							{1: '2'}
+149	144		301							"{2: 'Hanying', 3: ""Oh, I don't have anything important to do."", 4: '2', 18: '100002205'}"
+150	145		301							{3: 'Hanying looks at you while writing on a blank postcard Sophia handed her.'}
+151	146		302				AniZhuanchangBegin		500.0	{2: 'Can I ask you for a favor?', 3: '147'}
+152	147		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+153	148		201						500.0	{1: '1', 2: '500731'}
+154	149		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory310.png'}
+155	150		301			DialogEnable				{1: '1', 2: 'Karenina', 3: 'Whew, that was close... but I did it!', 4: '1', 18: '100002206'}
+156	151		401							{1: '2', 2: '510'}
+157	152		301							"{3: ""With a pleasing ping, the final stamp appears on Karenina's terminal. She scrolls through her collection, admiring the fruits of her effort.""}"
+158	153		301							"{3: 'But Karenina\'s excitement only lasts for a few seconds before it fades away. Without more activities, the ""Complete"" mark on her screen seems somewhat hollow.'}"
+159	154		301							{2: 'Karenina', 3: 'Uh...', 4: '1', 18: '100002207'}
+160	155		204							{1: '1', 2: '10'}
+161	156		301							{2: 'Karenina', 3: 'What was I working so hard for again? The prize... is an ice-cream voucher? Who cares about that?', 4: '1', 18: '100002208'}
+162	157		204							{1: '1'}
+163	158		301							"{2: 'Karenina', 3: ""I haven't really checked out the stores on the way. Well, I guess I can visit them again after I meet up with the commandant later."", 4: '1', 18: '100002209'}"
+164	159		301							{3: 'Karenina begins to look up at her surroundings after she calms down.'}
+165	160		301							{3: 'She is standing inside an antique shop opened by mechanoids during the Paradise Festival. Many of the wares on the shelves are relics from the Golden Age.'}
+166	161		301							{3: 'They are obviously not literal relics. Most of them are simply old household appliances, toys, magazines, cassette tapes, and quirky goods.'}
+167	162		301							{3: 'They are rarely anything of value. Even the well-preserved appliances are practically useless due to incompatible power delivery protocols, making them no different from trash.'}
+168	163		301							{2: 'Karenina', 3: 'Whoa... Is that a Hyakudai plastic model kit? It has to be a hundred years old, right? And is that... a foldable terminal?', 4: '1', 18: '100002210'}
+169	164		301							"{3: 'But for someone who grew up in a unique ""junkyard"" like Karenina, everything here is deeply nostalgic.'}"
+170	165		204							{1: '1', 2: '7'}
+171	166		301							{2: 'Karenina', 3: 'How did the mechanoids here get these rare items? Wait, they even have Golden Age vinyls? A whole pile of them?!', 4: '1', 18: '100002211'}
+172	167		301							"{3: 'Karenina finds an aisle of old records underneath a plastic sign scribbled with ""Music"".'}"
+173	168		301							"{2: 'Karenina', 3: 'This is Hallows Eve\'s ""The Walls of Jericho""... and this is Metalic\'s ""Ride the Thunder""...', 4: '1', 18: '100002212'}"
+174	169		301							"{2: 'Karenina', 3: 'And Her Majesty\'s ""Crazy Cold Rocks""! Grandpa used to love this band.', 4: '1', 18: '100002213'}"
+175	170		204							{1: '1', 2: '10'}
+176	171		301							{2: 'Karenina', 3: 'I wish I could listen to them... What a shame.', 4: '1', 18: '100002214'}
+177	172		301							{3: 'All these records, either worn or broken into halves, are no longer playable, recognizable only by their nearly paint-stripped covers.'}
+178	173		301							{3: 'As Karenina debates whether or not to buy all the broken records, she reaches the end of the aisle.'}
+179	174		204							{1: '1', 2: '7'}
+180	175		301							{2: 'Karenina', 3: 'What in the world...', 4: '1', 18: '100002215'}
+181	176		301							{3: 'An old record player sits at the very back of the shelf, its turntable cracked and its tonearm broken, no longer operable.'}
+182	177		301							{3: 'Like the other relics in this place, its existence is just a memento of a past long gone.'}
+183	178		301							{3: 'Yet, it is somehow different from everything else here.'}
+184	179		301							{2: 'Karenina', 3: '...', 4: '1', 18: '100002216'}
+185	180		301				AniZhuanchangBegin			{3: 'Karenina slowly reaches out for the broken record player, gently wiping away the dust on its surface.'}
+186	181		202							{1: '1', 6: '1'}
+187	182		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory13.jpg'}
+188	183		401							{1: '1', 2: '36'}
+189	184		401							{1: '1', 2: '207'}
+190	185		504							{1: '0.7'}
+191	186		201							{1: '1', 2: '500030', 4: '400'}
+192	187		201				AniZhuanchangEnd			{1: '2', 2: '500033', 4: '-400'}
+193	188		301			DialogEnable				"{1: '1', 2: 'Karenina', 3: ""What's this song you're listening to, Grandpa?"", 5: '1', 18: '100002217'}"
+194	189		301							"{2: 'Kalon', 3: ""This song? Hah! It's called Canon. Catchy name, no? My name is said to be derived from it."", 5: '2', 18: '100002218'}"
+195	190		301							"{2: 'Kalon', 3: ""This tune was very popular in school when I was young... I didn't understand what was so great about it then, not until I was much older..."", 5: '2', 18: '100002219'}"
+196	191		301							{3: 'Kalon gently patted the old record player on the table. It was one of his few cherished treasures from the past.'}
+197	192		301							{3: 'His life had been nothing but hardships and madness, but he had managed to keep a few things by his side. Only when he listened to music did he display a calmness he seldom found.'}
+198	193		301							{2: 'Karenina', 3: 'Grandpa, how can this small needle make music just by scratching the disc? Is it some kind of advanced technology?', 5: '1', 18: '100002220'}
+199	194		301							"{2: 'Kalon', 3: ""Haha! Far from it. This is an antique from the 19th century! The mechanism behind it is quite simple, Karen. We'll do a small experiment tomorrow if you're curious about it."", 5: '2', 18: '100002221'}"
+200	195		301							{2: 'Karenina', 3: 'Did you build the record player yourself too? Like the radio you made me last time?', 5: '1', 18: '100002222'}
+201	196		301							"{2: 'Kalon', 3: ""Well... Hahah, I didn't build this one, Karen. This... was a gift someone gave me."", 5: '2', 18: '100002223'}"
+202	197		301							{2: 'Kalon', 3: 'It was a long time ago. You might not guess it looking at me now, but back then... Ah, forget it.', 5: '2', 18: '100002224'}
+203	198		204							{1: '1', 2: '1'}
+204	199		301							{2: 'Karenina', 3: 'Why? Tell me! I want to know!', 5: '1', 18: '100002225'}
+205	200		301							"{2: 'Kalon', 3: ""Please, Karen... be kind to your grandpa. There are so many things I can't recall anymore..."", 5: '2', 18: '100002226'}"
+206	201		202							{1: '1', 6: '1'}
+207	202		203							{1: '2', 2: '0.15', 3: '0'}
+208	203		301							"{3: ""Kalon's cloudy eyes reflected the seemingly perpetually spinning turntable. At that time, Karenina was still too young to understand the emotions hidden in his gaze.""}"
+209	204		301							"{3: ""Only when she accidentally stumbled upon Kalon's diary from his youth did she understand what the record player meant to him.""}"
+210	205		301							{3: 'It was a birthday gift from a young woman, who also gifted him the record that inspired his name to express her feelings.'}
+211	206		301							{3: 'But Kalon was already on a path he set for himself. After completing his studies, he joined the Science Council to work on a secret project, cutting off contact with the outside world.'}
+212	207		301							{3: 'That was his lifelong dream—he would dedicate his life to science to benefit humanity.'}
+213	208		301							"{3: 'And he had to give up many ""unnecessary"" things for it, always remaining by himself.'}"
+214	209		301							"{3: ""Perhaps Kalon really did forget the woman's face and her name, but Karenina now finally understands what was hidden behind his gaze.""}"
+215	210		301				AniZhuanchangBegin			"{3: 'It was a ""regret"" buried deep inside his heart, minor yet unforgettable.'}"
+216	211		202			DialogDisable				{1: '2', 6: '1'}
+217	212		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory12.jpg'}
+218	213		201							{1: '1', 2: '500030', 4: '400'}
+219	214		201				AniZhuanchangEnd			{1: '2', 2: '500033', 4: '-400'}
+220	215		301			DialogEnable				"{2: 'Karenina', 3: ""Why?! Isn't the record player important to you, Grandpa?"", 5: '1', 18: '100002227'}"
+221	216		301							"{2: 'Kalon', 3: ""It's okay. Nothing is more important than a full meal for you, Karen."", 5: '2', 18: '100002228'}"
+222	217		301							"{2: 'Kalon', 3: ""My hearing isn't what it used to be anyway. We'll use less electricity now that we've sold the player."", 5: '2', 18: '100002229'}"
+223	218		301							{2: 'Kalon', 3: 'See? I removed the motor in advance. Maybe I can build you something in the future.', 5: '2', 18: '100002230'}
+224	219		301							{3: 'Kalon rubbed the small motor in his hand. It was the only thing left from the record player he sold.'}
+225	220		204							{1: '1', 2: '16'}
+226	221		301							{2: 'Karenina', 3: 'But...! That was something you kept with you for your whole life! How could you trade it for a few slices of bread...?!', 5: '1', 18: '100002231'}
+227	222		301							{2: 'Kalon', 3: 'Yes, I kept it for my whole life, but the food here can get us through this month. Grandpa will think of something else later...', 5: '2', 18: '100002232'}
+228	223		301							"{2: 'Karenina', 3: ""But it was the only thing you enjoyed! Why... why can't we even keep that...?"", 5: '1', 18: '100002233'}"
+229	224		301							"{2: 'Kalon', 3: ""Don't cry, Karen. Grandpa... doesn't need it anymore."", 5: '2', 18: '100002234'}"
+230	225		301							"{2: 'Kalon', 3: ""My only regret is I couldn't save it as a wedding gift to you as I planned."", 5: '2', 18: '100002235'}"
+231	226		301							"{2: 'Kalon', 3: ""A record player in times like these... Hah! The guy from the pawnshop didn't even know what it was. He thought he could dismantle it to build an alarm clock..."", 5: '2', 18: '100002236'}"
+232	227		301				AniZhuanchangBegin			"{2: 'Kalon', 3: ""I still remember the birthday card that came with it. It said that it was Universal Toys' third generation..."", 5: '2', 18: '100002237'}"
+233	228		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+234	229		504							{1: '0'}
+235	230		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory310.png'}
+236	231		401							{1: '1', 2: '36'}
+237	232		401							{1: '1', 2: '294'}
+238	233		201				AniZhuanchangEnd			{1: '1', 2: '500731'}
+239	234		301			DialogEnable				"{1: '1', 2: 'Karenina', 3: ""Universal Toys' third generation..."", 4: '1', 18: '100002238'}"
+240	235		301							"{2: '???', 3: 'Universal Toys\' third generation ""vintage"" record player, model RTL730. It was a home entertainment product that Universal Toys marketed to the youth.', 18: '100002239'}"
+241	236		301							{2: '???', 3: 'It was said that 13.46% of the units sold in the launch year were gifts between couples. Despite being a huge success, only fewer than 30000 units were on the market due to the production line shutdown.', 18: '100002240'}
+242	237		301							"{3: ""A strange voice suddenly interrupts Karenina's thoughts. Turning around and looking down, she finds a small mechanoid standing near her, unnoticed until now.""}"
+243	238		204							{1: '1', 2: '7'}
+244	239		301							{2: 'Karenina', 3: 'Kiske? What are you doing here?', 4: '1', 18: '100002241'}
+245	240		201							{1: '1', 2: '500488'}
+246	241		301							"{1: '1', 2: 'Kiske', 3: ""We finished band rehearsal earlier, so we're now free to do what we want."", 4: '1', 18: '100002242'}"
+247	242		301							"{2: 'Kiske', 3: ""Karenina, you've been staring at the record player for a while. Are you interested in it?"", 4: '1', 18: '100002243'}"
+248	243		201							{1: '1', 2: '500731'}
+249	244		301							"{1: '1', 2: 'Karenina', 3: ""A little bit. I won't see another one after I'm back on Babylonia."", 4: '1', 18: '100002244'}"
+250	245		301							"{2: 'Karenina', 3: ""I've been searching and failing to find one since I could be deployed on the surface. I didn't expect to find the exact model here."", 4: '1', 18: '100002245'}"
+251	246		204							{1: '1', 2: '1'}
+252	247		301							{2: 'Karenina', 3: 'Speaking of which, that was also when I started collecting all those music-related items.', 4: '1', 18: '100002246'}
+253	248		201							{1: '1', 2: '500488'}
+254	249		301							{1: '1', 2: 'Kiske', 3: 'We found these records and this player in an abandoned shopping mall when we were traveling with Cervantes.', 4: '1', 18: '100002247'}
+255	250		301							{2: 'Kiske', 3: 'We were planning to process the broken records into usable parts, given how hard it was to repair them.', 4: '1', 18: '100002248'}
+256	251		201							{1: '1', 2: '500731'}
+257	252		301							"{1: '1', 2: 'Karenina', 3: ""It's an outdated way to store data, after all. Digital music is way more convenient than a pile of vinyl discs."", 4: '1', 18: '100002249'}"
+258	253		201							{1: '1', 2: '500488'}
+259	254		301							{1: '1', 2: 'Kiske', 3: 'But Cervantes said they were worth preserving. He said that someone would find them useful one day.', 4: '1', 18: '100002250'}
+260	255		201							{1: '1', 2: '500731'}
+261	256		301							{1: '1', 2: 'Karenina', 3: 'Is that so...? Anyway, have you ever tried fixing the record player?', 4: '1', 18: '100002251'}
+262	257		201							{1: '1', 2: '500488'}
+263	258		301							{2: 'Kiske', 3: 'The RTL730 used a proprietary design from Universal Toys. Its turntable and tonearm could be replaced with other models from the same company.', 4: '1', 18: '100002252'}
+264	259		301							"{2: 'Kiske', 3: ""But the motor inside was a commemorative version produced that year specifically for the player. There's no perfect replacement."", 4: '1', 18: '100002253'}"
+265	260		201							{1: '1', 2: '500731', 3: '1'}
+266	261		301							"{1: '1', 2: 'Karenina', 3: ""Of course you know it so well. You're in a band, after all."", 4: '1', 18: '100002254'}"
+267	262		204							{1: '1', 2: '7'}
+268	263		301							"{2: 'Karenina', 3: ""Wait... You're in a band?!"", 4: '1', 18: '100002255'}"
+269	264		201							{1: '1', 2: '500488'}
+270	265		301							"{1: '1', 2: 'Kiske', 3: ""I'm Kiske, the lead singer and guitarist of Thunder Sparks. I thought you knew that already."", 4: '1', 18: '100002256'}"
+271	266		301							{2: 'Kiske', 3: 'You learned about it 837 Earth hours ago when you rescued me from the sewers...', 4: '1', 18: '100002257'}
+272	267		201							{1: '1', 2: '500731', 3: '10'}
+273	268		301							{1: '1', 2: 'Karenina', 3: 'Stop the irrelevant flashback! Dammit! How did I forget that there are professionals everywhere?', 4: '1', 18: '100002258'}
+274	269		301							{3: 'She has almost forgotten the unforgettable first impressions these mechanoids gave her after having lived among them for a while.'}
+275	270		301							{3: 'There is no shortage of mechanoid artists in Constellia.'}
+276	271		204							{1: '1', 2: '1'}
+277	272		301							"{2: 'Karenina', 3: ""...You haven't forgotten how I painstakingly fished you out of the abandoned sewers and replaced your broken sensors with Engineering Force's stock even when I wasn't allowed, have you, Kiske?"", 4: '1', 18: '100002259'}"
+278	273		204							{1: '1', 2: '4'}
+279	274		301							"{2: 'Karenina', 3: ""I'll never forget the part where you dragged me down into the sewers with you, and I had to spend three whole days inside a cleaning pod afterward!"", 4: '1', 18: '100002260'}"
+280	275		201							{1: '1', 2: '500488'}
+281	276		301							"{1: '1', 2: 'Kiske', 3: ""Uh... Didn't you say the flashback was irrelevant—"", 4: '1', 18: '100002261'}"
+282	277		201							{1: '1', 2: '500731', 3: '8'}
+283	278		301							{1: '1', 2: 'Karenina', 3: 'Ahem!', 4: '1', 18: '100002262'}
+284	279		201							{1: '1', 2: '500488'}
+285	280		301							"{1: '1', 2: 'Kiske', 3: ""Karenina, you're my third most respected person in the world! I shall fulfill any request from you unconditionally as required by Operation Protocol Article 337!"", 4: '1', 18: '100002263'}"
+286	281		201							{1: '1', 2: '500731', 3: '1'}
+287	282		301							"{1: '1', 2: 'Karenina', 3: ""Good, that's the spirit. Don't worry, you'll be aptly paid. Uhm... do you want a free ice-cream voucher?"", 4: '1', 18: '100002264'}"
+288	283		301							"{2: 'Karenina', 3: ""Anyway, I'm preparing for something very important. I don't know if I'll ever get a second shot at this, so it has to be perfect."", 4: '1', 18: '100002265'}"
+289	284		201							{1: '1', 2: '500488'}
+290	285		301							{1: '1', 2: 'Kiske', 3: 'Is it something that can only be done during the Paradise Festival?', 4: '1', 18: '100002266'}
+291	286		201							{1: '1', 2: '500731'}
+292	287		301							"{1: '1', 2: 'Karenina', 3: ""Yeah. The Paradise Festival is a celebration only possible because of many people's efforts. It is as wonderful as it is rare in an age ravaged by the Punishing Virus."", 4: '1', 18: '100002267'}"
+293	288		204							{1: '1', 2: '2'}
+294	289		301							"{2: 'Karenina', 3: 'Opportunities are fleeting. This time, I want to do my best to not have any ""regrets.""', 4: '1', 18: '100002268'}"
+295	290		301							"{2: 'Karenina', 3: ""At least, not when I'm with—"", 4: '1', 18: '100002269'}"
+296	291		301							{3: 'Prompted by an uncanny instinct, Karenina turns around and spots the familiar figure.'}
+297	292		204							{1: '1', 2: '1'}
+298	293		301							{2: 'Karenina', 3: 'What took you so long? Did you find anything, Commandant?', 4: '1', 18: '100002270'}
+299	294		301							{3: 'Seeing your expression, Karenina seems to share a knowing smile.'}
+300	295		302							"{2: ""So, you've made some progress too?"", 3: '296'}"
+301	296		204							{1: '1', 2: '3'}
+302	297		301				AniZhuanchangBegin			{2: 'Karenina', 3: 'Obviously!', 4: '1', 18: '100002271'}
+303	298		202			DialogDisable				{1: '1', 6: '1'}
+304	299		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory529.jpg'}
+305	300		107				AniZhuanchangEnd		1000.0	{1: 'Constellia', 2: 'WGAA Temporary Branch'}
+306	351		108						1000.0	
+307	301		301			DialogEnable				{3: 'Babylonia has intended to establish branches of its different forces her ever since it took over Constellia, the largest city inside the Clean Zone.'}
+308	302		301							{3: 'The goal is to turn Constellia into the second major stronghold for humanity outside Babylonia.'}
+309	303		301							{3: 'To achieve maximum efficiency, the first branches established in Constellia belong to WGAA and the Engineering Force, who lead the rebuilding efforts in the city.'}
+310	304		301							{3: 'While most of the WGAA members on the surface are busy organizing the Paradise Festival, a rare group of individuals gather together in this place.'}
+311	305		201							{1: '1', 2: '500731', 3: '7'}
+312	306		301							"{1: '1', 2: 'Karenina', 3: ""I didn't know there's such a large recording studio here with all the latest equipment... Does WGAA always have this much funding...?"", 4: '1', 18: '100002272'}"
+313	307		301							{3: 'Staring at all the expensive equipment here, Karenina realizes her secret base pales in comparison.'}
+314	308		201							{1: '1', 2: '500576'}
+315	309		301							{1: '1', 2: 'Ayla', 3: 'This place started quite shabby as well, but I spent my own money to renovate it later. After all, artifact appraisal and preservation require a very controlled environment, so the investment was necessary.', 4: '1', 18: '100002273'}
+316	310		301							{2: 'Ayla', 3: 'As for the equipment... I acquired them during the renovation. This studio is meant to be available to the public in the future, so I figured I should just get the best equipment possible.', 4: '1', 18: '100002274'}
+317	311		301							{2: 'Ayla', 3: 'The awakened machines also helped a lot. Most of the materials were prepared by them.', 4: '1', 18: '100002275'}
+318	312		201							{1: '1', 2: '500629'}
+319	313		301							"{1: '1', 2: 'Hanying', 3: ""This is the best environment to help Karenina achieve her wish, isn't it?"", 4: '1', 18: '100002276'}"
+320	314		201							{1: '1', 2: '500731', 3: '1'}
+321	315		301							"{1: '1', 2: 'Karenina', 3: ""It is. There's no better hardware than what we have here."", 4: '1', 18: '100002277'}"
+322	316		204							{1: '1', 2: '6'}
+323	317		301							"{2: 'Karenina', 3: ""I said I didn't want to bother WGAA anymore—"", 4: '1', 18: '100002278'}"
+324	318		301							{2: 'Karenina', 3: 'But here we are.', 4: '1', 18: '100002279'}
+325	319		201							{1: '1', 2: '500576', 3: '2'}
+326	320		301							"{1: '1', 2: 'Ayla', 3: ""Don't worry about it. WGAA is just here to provide the venue, while I can observe the visual effects of your new coating."", 4: '1', 18: '100002280'}"
+327	321		301							{3: 'Ayla, an artist from WGAA; Kiske, the lead singer and guitarist from Thunder Sparks; and Hanying, a dancer from Kowloong.'}
+328	322		302							{2: 'Now we are a professional team, with experts and the best equipment.', 3: '323'}
+329	323		201							{1: '1', 2: '500629'}
+330	324		301							"{1: '1', 2: 'Hanying', 3: ""So, I'll be coaching Karenina on her dance moves while Kiske and Ayla will work on improving the music arrangement and stage effects. Meanwhile, the commandant will oversee the whole operation. Does that sound right?"", 4: '1', 18: '100002281'}"
+331	325		302							"{2: 'I\'m like a ""producer."" This is quite exciting.', 3: '326'}"
+332	326		202							{1: '1', 6: '1'}
+333	327		302							{2: 'Is your performance going to be okay, Kiske?', 3: '328', 4: 'Will this interfere with your schedule, Hanying?', 5: '330'}
+334	328		201							{1: '1', 2: '500488'}
+335	329	332	301							"{1: '1', 2: 'Kiske', 3: ""Don't worry about it. We're almost done rehearsing our new song. All that's left to do is to keep Kelly away from the gas-booze."", 4: '1', 18: '100002282'}"
+336	330		201							{1: '1', 2: '500629'}
+337	331		301							"{1: '1', 2: 'Hanying', 3: ""I'm more than happy to help. That said, this is my first time choreographing a dance for this style of music, so please be patient with me."", 4: '1', 18: '100002283'}"
+338	332		201							{1: '1', 2: '500576', 3: '10'}
+339	333		301							{1: '1', 2: 'Ayla', 3: 'I still have some work to do for WGAA...', 4: '1', 18: '100002284'}
+340	334		204							{1: '1', 2: '2'}
+341	335		301							{2: 'Ayla', 3: 'But forget it! Helping Karenina sounds more fun.', 4: '1', 18: '100002285'}
+342	336		301							"{2: 'Ayla', 3: ""Sica and Leonie can take over. I'm sure they won't mind."", 4: '1', 18: '100002286'}"
+343	337		301							"{2: 'Ayla', 3: ""Now, let's review the recording of Karenina's rehearsal together and see what we can come up with."", 4: '1', 18: '100002287'}"
+344	338		201							{1: '1', 2: '500731', 3: '6'}
+345	339		301							{1: '1', 2: 'Karenina', 3: 'Oh, okay... Eh, w-wait a minute—', 4: '1', 18: '100002288'}
+346	340		301							{3: 'Seeing Ayla inserting the disc with the recording of her performance into the video player, Karenina suddenly becomes flustered.'}
+347	341		301							"{2: 'Karenina', 3: ""Hold on! I'm not ready—Can you watch it without me? I really don't want to see it again!"", 18: '100002289'}"
+348	342		201							{1: '1', 2: '500576'}
+349	343		301							"{1: '1', 2: 'Ayla', 3: ""That won't do. We have to watch the whole thing together, every single frame of it! It's important to recognize what your weaknesses are and which areas you can improve."", 4: '1', 18: '100002290'}"
+350	344		301							"{2: 'Ayla', 3: ""It's also important to overcome your shame. We'll keep this video on a loop until you no longer feel embarrassed watching it."", 4: '1', 18: '100002291'}"
+351	345		301							"{3: ""Ayla turns Karenina's head toward the terminal's monitor.""}"
+352	346		201							{1: '1', 2: '500731', 3: '10'}
+353	347		301							{1: '1', 2: 'Karenina', 3: 'Spare me...', 4: '1', 18: '100002292'}
+354	348		301							{3: 'Thus, your makeshift team of artists begins this journey with a somewhat inexplicable dynamic—'}
+355	349		301		1		AniZhuanchangBegin			{3: 'And you sprint toward the final day of the Paradise Festival, aiming to present the perfect conclusion.'}

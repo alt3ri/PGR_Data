@@ -1,0 +1,251 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory295.png'}
+2	2		401							{1: '1', 2: '202'}
+3	3		401							{1: '2', 2: '4008'}
+4	4		401							{1: '2', 2: '2789'}
+5	5		401							{1: '2', 2: '2790'}
+6	6		401							{1: '2', 2: '2647'}
+7	7		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+8	8		502							{1: 'RImgBg1Shake'}
+9	9		301			DialogEnable				{3: 'BOOM!'}
+10	10		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+11	11		301							{3: 'The scorching sensation still lingers on your back. The dizziness is taking a while to fade away.'}
+12	12		301							{2: 'Zong', 3: 'Cough... cough... Watanabe, Commandant, Jada... Are you guys okay?'}
+13	13		301							{2: 'Zong', 3: 'Aargh! Your cloak is on fire, Watanabe!'}
+14	14		301							"{2: 'Jada', 3: ""Why don't you start dragging people away instead of yelling?""}"
+15	15		301				DialogDisable			{3: 'You feel yourself dragged away as the heat around you gradually dissipates.'}
+16	16		402							{1: '4008'}
+17	17		205							{1: '999'}
+18	18		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory757.jpg'}
+19	19		104							{1: '0|0|0', 2: '0'}
+20	20		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+21	21		302			AniZhuanchangEnd				{2: 'Cough...', 3: '22'}
+22	22		201							{1: '1', 2: '500783', 5: '-100'}
+23	23		301			DialogEnable				{1: '1', 2: 'Watanabe', 3: 'Are you alright?', 4: '1'}
+24	24		401							{1: '2', 2: '1543'}
+25	25		203							{1: '1', 2: '0.5'}
+26	26		104							{1: '0|0|-150', 2: '0.5'}
+27	27		301							{3: 'You take the hand he offers and stand up.'}
+28	28		302							"{2: ""I'm good."", 3: '29'}"
+29	29		301							{3: 'Both Zong and Watanabe have varying degrees of burns on their backs, unlike Jada and you, who are basically unharmed.'}
+30	30		301							{3: 'If they did not react in time, they would not have been able to stand back up after just a few coughs.'}
+31	31		202							{1: '1', 6: '1'}
+32	32		201							{1: '1', 2: '500689'}
+33	33		301							"{1: '1', 2: 'Strange Thug A', 3: ""Aaargh! We're doomed!"", 4: '1'}"
+34	34		301							{3: 'A thug who has arrived late kneels on the ground, crying.'}
+35	35		301							{2: 'Strange Thug A', 3: 'Who the hell started the fire?!', 4: '1'}
+36	36		301							"{2: 'Strange Thug A', 3: ""Was it you guys... Wait! Isn't that the uniform of the Forsaken?"", 4: '1'}"
+37	37		202							{1: '1', 6: '1'}
+38	38		201							{1: '1', 2: '500689', 4: '400'}
+39	39		201							{1: '2', 2: '500696', 4: '-400'}
+40	40		301							{1: '1', 3: 'His gaze fixes on Zong, who is wearing a combat uniform.'}
+41	41		301							{2: 'Strange Thug A', 3: 'You must have started the fire!', 4: '1'}
+42	42		204							{1: '2', 2: '7'}
+43	43		301							{2: 'Zong', 3: 'Huh? Me?', 4: '2'}
+44	44		301							{3: 'The thug keeps on cursing Zong, ignoring the three of you.'}
+45	45		301							"{2: 'Strange Thug A', 3: ""The mayor didn't let you in, so you sneaked in to cause trouble, didn't you?"", 4: '1'}"
+46	46		204							{1: '2'}
+47	47		301							"{2: 'Zong', 3: ""No... I've been here for a long time..."", 4: '2'}"
+48	48		301							{2: 'Strange Thug A', 3: 'Oh? So it was premeditated!', 4: '1'}
+49	49		301							"{2: 'Strange Thug A', 3: ""I knew the previous Forsaken attack didn't come out of nowhere!"", 4: '1'}"
+50	50		202							{1: '2', 6: '1'}
+51	51		201							{1: '2', 2: '500783', 4: '-400'}
+52	52		301							{1: '1', 2: 'Watanabe', 3: 'The attack...', 4: '2'}
+53	53		301							{2: 'Watanabe', 3: 'Can you tell me more about it?', 4: '2'}
+54	54		301							{2: 'Strange Thug A', 3: 'Who are you? You look like a Construct... Do they all look like this nowadays?', 4: '1'}
+55	55		301							"{2: 'Strange Thug A', 3: ""Don't you mess around! I've already called for backup!"", 4: '1'}"
+56	56		301							"{2: 'Watanabe', 3: ""I'll explain everything, but please first tell me what's been happening with the Forsaken recently."", 4: '2'}"
+57	57		202							{1: '1', 2: '2', 6: '1'}
+58	58		201							{1: '1', 2: '500688'}
+59	59		301							"{1: '1', 2: 'Fann', 3: ""Let's discuss it somewhere else."", 4: '1'}"
+60	60		301							{3: 'A young man wearing a cowboy hat walks over quickly.'}
+61	61		301				AniZhuanchangBegin			"{2: 'Fann', 3: ""The rest of you stay here to put out the fire. I'll take them to see the old man."", 4: '1'}"
+62	62		401							{1: '1', 2: '36'}
+63	63		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg'}
+64	64		401							{1: '1', 2: '201'}
+65	65		201							{1: '1', 2: '500692'}
+66	66		301			AniZhuanchangEnd				{1: '1', 3: 'The wooden room is still covered in slash marks. Max sits at the desk, listening to the few of you recounting what just happened.'}
+67	67		301							"{2: 'Max', 3: ""So, they're finally looking here..."", 4: '1'}"
+68	68		301							"{2: 'Max', 3: ""I'm sorry, 【kuroname】, but I'm afraid New Oakley can no longer shelter you."", 4: '1'}"
+69	69		301				DialogDisable			"{2: 'Max', 3: ""The Forsaken used to maintain a facade of politeness with us, but they're going all out without any pretense this time."", 4: '1'}"
+70	70		302							"{2: ""It's okay. At least we've achieved our goal."", 3: '71'}"
+71	71		302							{2: 'Thank you for the gear and the personnel you provided.', 3: '72'}
+72	72		301			DialogEnable				"{2: 'Max', 3: ""I can't take credit for that."", 4: '1'}"
+73	73		202							{1: '1', 6: '1'}
+74	74		201							{1: '1', 2: '500692', 4: '-400'}
+75	75		201							{1: '2', 2: '500783', 4: '400'}
+76	76		301							{1: '1', 3: 'Max shakes his head and looks at Watanabe.'}
+77	77		301							{2: 'Max', 3: 'Folks like Jada and all the equipment were rescued and salvaged by the Forsaken during that disaster.', 4: '1'}
+78	78		301							{2: 'Max', 3: 'They chose to stay here afterward because they realized those of us on the surface valued them more, unlike those living in Eden.', 4: '1'}
+79	79		301							"{2: 'Max', 3: ""Although I haven't met you in person before, I've heard many stories about you."", 4: '1'}"
+80	80		301							"{2: 'Watanabe', 3: ""...I couldn't have saved those people alone."", 4: '2'}"
+81	81		301							"{2: 'Max', 3: ""There's no need for modesty here. You've earned the right to hold your head high."", 4: '1'}"
+82	82		301							"{2: 'Max', 3: ""I've been observing from the sidelines. No matter what you think of the attack, I can assure you that many made the same choice as yours because of your influence."", 4: '1'}"
+83	83		301							{2: 'Max', 3: 'And you and your followers have saved more people because of it.', 4: '1'}
+84	84		301							"{2: 'Max', 3: ""I believe that's why Ballard used your death to incite them."", 4: '1'}"
+85	85		301							{2: 'Max', 3: 'Mutual benefits are a great way to bring people together, but mutual hatred forges a stronger bond.', 4: '1'}
+86	86		301							{2: 'Max', 3: 'For the Forsaken, your death provided the perfect spark to ignite their hatred.', 4: '1'}
+87	87		301							{2: 'Watanabe', 3: '...', 4: '2'}
+88	88		301							{2: 'Watanabe', 3: 'Can you update me on the current situation?', 4: '2'}
+89	89		301							"{2: 'Max', 3: ""It's not a long story. Ballard gradually took over disputed areas under the guise of searching for you and self-preservation during the six months you disappeared."", 4: '1'}"
+90	90		301							{2: 'Max', 3: 'There were frictions between Babylonia and the Forsaken during this time, but they were more or less resolved under orders from the higher-ups of both sides.', 4: '1'}
+91	91		301							{2: 'Max', 3: 'After all...', 4: '1'}
+92	92		301							"{3: ""He glances at Watanabe's repaired Epitaph frame.""}"
+93	93		301							"{2: 'Max', 3: ""I assume the Forsaken doesn't normally reveal their true strength, right?"", 4: '1'}"
+94	94		301							{2: 'Max', 3: 'Perhaps Ballard gradually revealed his cards during this process, forcing Babylonia to reassess him.', 4: '1'}
+95	95		301							"{2: 'Watanabe', 3: ""It's not that simple..."", 4: '2'}"
+96	96		301							"{2: 'Max', 3: ""I don't mean to pry."", 4: '1'}"
+97	97		301							{3: 'Max shakes his head and continues.'}
+98	98		301							{2: 'Max', 3: 'The situation changed last week. After securing another area, Ballard suddenly announced your death and called on all Forsaken to liberate the conservation area.', 4: '1'}
+99	99		301							{2: 'Max', 3: 'Many were incited, though some opposed.', 4: '1'}
+100	100		301							"{2: 'Max', 3: ""Those who opposed were summoned to Ballard's new headquarters, and they haven't been heard from since."", 4: '1'}"
+101	101		301							{2: 'Max', 3: 'Both the Forsaken and Babylonia are now amassing troops at the border. No one knows who will fire the first shot.', 4: '1'}
+102	102		301							"{2: 'Max', 3: ""I'm just an outsider. That's all I know."", 4: '1'}"
+103	103		301							"{2: 'Max', 3: ""I assume you'll be discussing what your next steps should be, right?"", 4: '1'}"
+104	104		202							{1: '1', 2: '2', 6: '1'}
+105	105		201							{1: '1', 2: '500692'}
+106	106		301							{1: '1', 3: 'Max stands up and walks toward the door.'}
+107	107		301							{2: 'Max', 3: 'You can have the room for now.', 4: '1'}
+108	108		202							{1: '1'}
+109	109		401							{1: '2', 2: '2661'}
+110	110		301							{3: 'He closes the door, leaving the three of you inside.'}
+111	111		201							{1: '1', 2: '500696', 3: '3'}
+112	112		301							{1: '1', 2: 'Zong', 3: 'Um... Should I leave too?', 4: '1'}
+113	113		202							{1: '1', 6: '1'}
+114	114		201							{1: '1', 2: '500783'}
+115	115		301							{1: '1', 2: 'Watanabe', 3: 'Shall we head to the border together?', 4: '1'}
+116	116		302							{2: 'Should we split up?', 3: '117'}
+117	117		301							{3: 'You both give opposite answers almost simultaneously.'}
+118	118		301							"{2: 'Watanabe', 3: ""It's too dangerous for you."", 4: '1'}"
+119	119		302							{2: 'What kind of person is Ballard?', 3: '120'}
+120	120		301							"{3: ""Instead of refuting Watanabe's concern, you ask about the name you have only heard a few times.""}"
+121	121		301				DialogDisable			"{2: 'Watanabe', 3: ""He can't turn a blind eye to what he opposes, but he never acts recklessly. If he has revealed his true intention, he must be prepared for success."", 4: '1'}"
+122	122		302							{2: 'Then he must know about the Longinus Arsenal.', 3: '123'}
+123	123		302							"{2: ""And he wouldn't have gambled on Babylonia not using it."", 3: '124'}"
+124	124		301			DialogEnable	DialogDisable			"{2: 'Watanabe', 3: ""If he has a way to counter Babylonia, he hasn't told me about it."", 4: '1'}"
+125	125		302							{2: 'Whatever it is...', 3: '126'}
+126	126		302							{2: 'It must be as dangerous as the Longinus Arsenal.', 3: '127'}
+127	127		301			DialogEnable	DialogDisable			"{2: 'Watanabe', 3: ""That's the only way he can pose an equal threat to Babylonia."", 4: '1'}"
+128	128		302							"{2: ""That's why you must find out what it is and stop him."", 3: '129'}"
+129	129		302							{2: 'I will explain everything at the border.', 3: '130'}
+130	130		202							{1: '1', 6: '1'}
+131	131		201							{1: '1', 2: '500696', 3: '7'}
+132	132		301			DialogEnable				"{1: '1', 2: 'Zong', 3: ""Hey, haven't you been avoiding the Babylonians, Commandant?"", 4: '1'}"
+133	133		302							"{2: ""That was because I couldn't be sure who I could trust."", 3: '134'}"
+134	134		204							{1: '1'}
+135	135		301							"{3: ""But it's different if a large troop is at the border.""}"
+136	136		302							{2: 'The masterminds may control one conservation area...', 3: '137'}
+137	137		301							"{3: ""But they can't control all the frontline soldiers.""}"
+138	138		302							"{2: ""I'm safer when there are more witnesses."", 3: '139'}"
+139	139		202							{1: '1', 6: '1'}
+140	140		201							{1: '1', 2: '500783'}
+141	141		301							{1: '1', 2: 'Watanabe', 3: '...Then let Zong go with you.', 4: '1'}
+142	142		202							{1: '1', 6: '1'}
+143	143		201							{1: '1', 2: '500696', 3: '4'}
+144	144		301							{1: '1', 2: 'Zong', 3: 'Roger!', 4: '1'}
+145	145		302							{2: '...', 3: '146'}
+146	146		201							{1: '1', 2: '500783'}
+147	147		301							"{1: '1', 2: 'Watanabe', 3: ""I know you think it's more dangerous where I'm going, but hear me out first."", 4: '1'}"
+148	148		301							"{2: 'Watanabe', 3: ""First, having Zong represent the Forsaken is more convincing. We still don't know what Ballard's and Babylonia's orders are, and we need to keep both sides calm."", 4: '1'}"
+149	149		301				DialogDisable			"{2: 'Watanabe', 3: ""Second, Zong can keep you safe on the road. None of this matters if you can't reach your destination."", 4: '1'}"
+150	150		302							{2: 'Aright...', 3: '151'}
+151	151		302							{2: 'You have me convinced.', 3: '152'}
+152	152		204							{1: '1', 2: '1'}
+153	153		301			DialogEnable	AniZhuanchangBegin			"{2: 'Watanabe', 3: ""You didn't make it easy."", 4: '1'}"
+154	154		201						2000.0	{1: '1', 2: '500692'}
+155	155		301			AniZhuanchangEnd				"{1: '1', 2: 'Max', 3: ""Looks like you've made your decision."", 4: '1'}"
+156	156		401							{1: '2', 2: '2824'}
+157	157		301							{3: 'Max tosses a shiny object over.'}
+158	158		202							{1: '1', 6: '1'}
+159	159		201							{1: '1', 2: '500783'}
+160	160		301							{1: '1', 2: 'Watanabe', 3: 'Car keys?', 4: '1'}
+161	161		201							{1: '1', 2: '500692'}
+162	162		301							"{1: '1', 2: 'Max', 3: ""It's old, but it still runs well. You're going to need transportation, aren't you?"", 4: '1'}"
+163	163		301							"{2: 'Max', 3: ""Unfortunately, it's the only one I have..."", 4: '1'}"
+164	164		302							"{2: ""It's more than enough. Thank you."", 3: '165'}"
+165	165		301							"{2: 'Max', 3: ""You've all saved this town in different ways. This is nothing."", 4: '1'}"
+166	166		204							{1: '1'}
+167	167		301				AniZhuanchangBegin			{2: 'Max', 3: 'Looks like I have to ask you to stop a war again.', 4: '1'}
+168	168		202							{1: '1', 6: '1'}
+169	169		401							{1: '1', 2: '36'}
+170	170		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory318.png'}
+171	171		401							{1: '2', 2: '885'}
+172	172		401							{1: '1', 2: '169'}
+173	173		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 3: '1', 4: '1', 5: '0'}
+174	174		301			AniZhuanchangEnd				"{3: ""The jeep drives steadily on the rugged path. According to the map, you have to pass through a forest to reach the border, while the route to Ballard's location is along old highways.""}"
+175	175		301							{3: 'So Watanabe insists on dropping you and Zong near the forest before heading directly to Ballard to confront him.'}
+176	176		302				AniZhuanchangBegin			{2: 'Something on your mind?', 3: '177'}
+177	177		205							{1: '999'}
+178	178		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4101_02.jpg'}
+179	179		301			AniZhuanchangEnd				{3: 'You turn and see Watanabe resting one hand on the car window and looking somewhat distracted.'}
+180	180		301							{2: 'Watanabe', 3: '...How much of my memory have you seen during the connection?', 18: '100002872'}
+181	181		302							{2: 'Almost all of it?', 3: '182', 4: 'Just a little bit...', 5: '184'}
+182	182		301							"{2: 'Watanabe', 3: ""Can't you be a bit more tactful about it? There goes my privacy."", 18: '100002873'}"
+183	183	186	301							"{3: 'He ""complains.""'}"
+184	184		301							"{2: 'Watanabe', 3: ""I'll take your word for it."", 18: '100002874'}"
+185	185		301							{3: 'He smiles ambiguously.'}
+186	186		301							{2: 'Watanabe', 3: 'In that case, you should understand why Forsaken was created and what Babylonia had done.', 18: '100002875'}
+187	187		302							{2: '...', 3: '188'}
+188	188		301							{2: 'Watanabe', 3: 'How do you feel about Babylonia now?', 18: '100002876'}
+189	189		302							"{2: 'Nothing in particular.', 3: '190', 4: ""It's a place I need to protect."", 5: '191', 6: ""I can't stand it! I wish I could blow it up!"", 7: '192'}"
+190	190	193	301							"{2: 'Watanabe', 3: ""You wouldn't have suggested splitting up if that's true."", 18: '100002877'}"
+191	191	193	301							"{2: 'Watanabe', 3: ""Even if it isn't the paradise it's claimed to be?"", 18: '100002878'}"
+192	192		301							"{2: 'Watanabe', 3: ""I'd be convinced if you looked more angry."", 18: '100002879'}"
+193	193		302							"{2: ""I don't think I'll give it up no matter what."", 3: '194'}"
+194	194		301							{2: 'Watanabe', 3: 'Not giving it up, huh...', 18: '100002880'}
+195	195		301							{2: 'Watanabe', 3: 'Zong told me a little bit about your situation earlier.', 18: '100002881'}
+196	196		301							"{2: 'Watanabe', 3: ""A place that doesn't really need you and could betray you any second... Why would you want to save it?"", 18: '100002882'}"
+197	197		301							{2: 'Watanabe', 3: 'Is it for the people you care about, those who are still alive?', 18: '100002883'}
+198	198		301				DialogDisable			{3: 'He seems to be asking you as well as himself.'}
+199	199		302							{2: 'Even without meeting Lucia and the others...', 3: '200'}
+200	200		302							{2: 'I would still go back.', 3: '201'}
+201	201		301			DialogEnable				{2: 'Watanabe', 3: '...'}
+202	202		301							{3: 'Your unexpected answer makes him pause and wait for you to continue.'}
+203	203		302							"{2: ""Because we're born there."", 3: '204'}"
+204	204		301				DialogDisable			"{3: ""Even if it isn't perfect and needs to change...""}"
+205	205		302							{2: 'If we all choose to run away...', 3: '206'}
+206	206		302							{2: 'Who will be there to change it?', 3: '207'}
+207	207		302							"{2: ""Didn't you make the same choice?"", 3: '208'}"
+208	208		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+209	209		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory100.png'}
+210	210		504							{1: '0.7'}
+211	211		201							{1: '1', 2: '500106', 7: '1'}
+212	212		301			DialogEnable				"{1: '1', 2: 'Cyril', 3: ""Perhaps humanity's future really is up there, but we still don't want to give up the soil we walk on..."", 4: '1', 18: '100002891'}"
+213	213		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+214	214		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory427.jpg'}
+215	215		201							{1: '1', 2: '500788'}
+216	216		301							{1: '1', 2: 'Hans', 3: 'Humanity will take back our home, no matter how long it takes and what it costs.', 4: '1', 18: '100002890'}
+217	217		202							{1: '1', 6: '1'}
+218	218		504							{1: '0'}
+219	219		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+220	220		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4101_01.jpg'}
+221	221		301							{2: 'Watanabe', 3: 'Hah...', 18: '100002884'}
+222	222		301							{2: 'Watanabe', 3: 'Right. I almost forgot why I chose to stay.', 18: '100002885'}
+223	223		301							"{2: 'Watanabe', 3: ""They made the same choice because of the same simple reason, didn't they?"", 18: '100002886'}"
+224	224		301							"{2: 'Watanabe', 3: ""It's simple, which is why it's unyielding and dazzling."", 18: '100002887'}"
+225	225		301							{3: 'The confusion and doubt he has from the betrayal vanishes in an instant, and he chuckles softly.'}
+226	226		301							{2: 'Watanabe', 3: 'How unfortunate. I was going to invite you to join the Forsaken.', 18: '100002888'}
+227	227		302							"{2: ""I'll take it as a joke?"", 3: '228'}"
+228	228		301				AniZhuanchangBegin			{2: 'Watanabe', 3: 'No… I mean it.', 18: '100002889'}
+229	229		401							{1: '1', 2: '36'}
+230	230		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory539.jpg'}
+231	231		401							{1: '1', 2: '358'}
+232	232		401							{1: '2', 2: '4115005'}
+233	233		301			AniZhuanchangEnd				{3: 'The vehicle gradually stops at the entrance to the forest, and your short journey together comes to an end.'}
+234	234		201							{1: '1', 2: '500696'}
+235	235		301							"{1: '1', 2: 'Zong', 3: ""We'll get off here, then, Watanabe."", 4: '1'}"
+236	236		202							{1: '1'}
+237	237		401						500.0	{1: '2', 2: '4230'}
+238	238		402							{1: '4230'}
+239	239		301							{3: 'You step off the jeep, your feet standing on the muddy ground once more.'}
+240	240		201							{1: '1', 2: '500783'}
+241	241		301							{1: '1', 2: 'Watanabe', 3: 'Be careful out there.', 4: '1'}
+242	242		302							{2: 'Watanabe...', 3: '243'}
+243	243		301							{3: 'You call out to him just as he is about to leave.'}
+244	244		302							"{2: ""We'll succeed, right?"", 3: '245'}"
+245	245		204							{1: '1', 2: '8'}
+246	246		301							{2: 'Watanabe', 3: '...', 4: '1'}
+247	247		401							{1: '2', 2: '10042416'}
+248	248		202							{1: '1'}
+249	249		201							{1: '2', 2: '500785'}
+250	250		301		1		AniZhuanchangBegin			{1: '1', 2: 'Watanabe', 3: 'Yeah. You have my word.', 4: '2'}

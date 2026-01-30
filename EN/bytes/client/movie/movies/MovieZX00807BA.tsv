@@ -1,0 +1,16 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory38.jpg'}
+2	1000		401							{1: '1', 2: '202'}
+3	2		201							{1: '1', 2: '1031001', 4: '400'}
+4	3		201							{1: '2', 2: '500029', 4: '-400'}
+5	4		301			DialogEnable				"{1: '1', 2: 'Liv', 3: ""Lucia, Lee's over there!"", 4: '1'}"
+6	5		301							{2: 'Lucia', 3: 'Be careful. The Iron Maiden is near him.', 4: '2'}
+7	100		204							{1: '1', 2: '7'}
+8	6		301							{2: 'Liv', 3: 'Wait. Lee is aiming at us!', 4: '1'}
+9	7		302							"{2: ""Lee's not responding to my connection. Something's wrong."", 3: '8'}"
+10	8		204							{1: '1'}
+11	9		301							{2: 'Lucia', 3: 'On the right.', 4: '2'}
+12	10		301							{2: 'Lucia', 3: 'Lee, attacking us...?', 4: '2'}
+13	11		301							"{2: 'Lucia', 3: ""Liv, find out the reason. I'll restrict his movements."", 4: '2'}"
+14	12		301							{2: 'Liv', 3: 'Other Corrupted are surrounding us.', 4: '1'}
+15	13		301		1		AniZhuanchangBegin			{2: 'Lucia', 3: 'Keep the commandant safe.', 4: '2'}

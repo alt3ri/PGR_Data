@@ -1,0 +1,109 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory699.jpg'}
+2	2		401							{1: '1', 2: '36'}
+3	3		401							{1: '2', 2: '968'}
+4	4		104							{1: '0|-200|-300', 2: '0'}
+5	5		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+6	6		502							{1: 'DialogEnable'}
+7	7		301			AniZhuanchangEnd				{3: 'Sensing a faint tremble beneath your feet, you see the snowstorm before you. You are walking on clouds.'}
+8	8		301							{3: 'Where am I? That is the first question in your mind.'}
+9	9		301							{3: 'Unlike the ice field of ARU, there is brown soil and green sprouts here. This is not the North Pole.'}
+10	10		301							{3: 'White mountain range casts a shadow in the valley. It looks like a wall built at the end of the world or the entrance to the dreamland.'}
+11	11		301							{3: 'Why are you here? You are bewildered by the unknown landscape.'}
+12	12		301							{3: 'Searching aimlessly, you see nothing but infinite white.'}
+13	13		301							{3: 'Perhaps you should head further down?'}
+14	14		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '2'}
+15	15		104							{1: '0|200|-300', 2: '1'}
+16	16		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory698.jpg', 3: '0', 4: '1', 5: '1'}
+17	17		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+18	18		301							{3: 'Right then, you step onto nothing. The sense of weightlessness overwhelms you, and your field of view drops.'}
+19	19		301							{3: 'You finally understand what you are seeing.'}
+20	20		301							{3: 'In the back, where the sun does not shine, are black cliffs standing above a field of snow.'}
+21	21		301							{3: 'They look like intersecting castles, watchtowers, or monsters hidden in the shadows.'}
+22	22		301							{3: 'Looking further ahead, there is a dark fort in the distance where the mountains are exposed.'}
+23	23		301							{3: 'That is where you need to go. You are certain of it.'}
+24	24		301							{3: 'You start heading toward it, but right before you take your first step, you raise a third question.'}
+25	25		301							{3: 'Who am I<//YOU>?'}
+26	26		402							{1: '968'}
+27	27		401							{1: '2', 2: '2827'}
+28	28		104							{1: '0|0|0', 2: '1'}
+29	29		501						1500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+30	30		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+31	31		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+32	32		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+33	33		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+34	34		301				AniZhuanchangBegin			{3: 'The question is like a slap in the face, pulling you out of the chaos.'}
+35	35		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+36	36		401							{1: '1', 2: '36'}
+37	37		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory604.jpg'}
+38	38		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+39	39		401							{1: '1', 2: '209'}
+40	40		301			AniZhuanchangEnd				{3: 'You sit up abruptly, and the wet object on your forehead slides down.'}
+41	41		301							{2: '???', 3: 'Ah...'}
+42	42		301							{3: 'The person beside you is seemingly startled and lets out a muted scream.'}
+43	43		302							{2: 'A towel?', 3: '44'}
+44	44		301							{3: 'Looking at the wet towel on you and recalling the voice you heard, you start to find your bearings.'}
+45	45		302							{2: 'Liv?', 3: '46'}
+46	46		201							{1: '1', 2: '1031001', 3: '3'}
+47	47		301							{1: '1', 2: 'Liv', 3: 'How are you feeling, Commandant?', 4: '1'}
+48	48		204							{1: '1'}
+49	49		301							{3: 'Sitting beside you, she hands you a glass of water. Only then do you realize you are feeling quite thirsty.'}
+50	50		302							{2: '(Take the water)', 3: '51'}
+51	51		301							{3: 'As the water goes down your throat, you begin to remember what happened last night.'}
+52	52		301							{3: 'After you took care of Lucia and sent your report to the General Staff through the encrypted channel, you took a painkiller and fell asleep.'}
+53	53		301				DialogDisable			{3: 'Your roughly wrapped wound has now been professionally dressed. Seeing the open medical kit nearby, you are quite certain what has occurred.'}
+54	54		302							"{2: ""I'm okay..."", 3: '55'}"
+55	55		302							{2: 'Just a stomach ache.', 3: '56'}
+56	56		301			DialogEnable				{2: 'Liv', 3: 'That would be the side effects of the painkiller. You should take less in the future, Commandant.', 4: '1'}
+57	57		302							{2: 'It was a special occasion.', 3: '58'}
+58	58		301							{3: 'Liv refills your empty glass with warm water. As the warmth enters your body, the pain also diminishes.'}
+59	59		302							{2: 'Did the commander send you?', 3: '60'}
+60	60		301							"{2: 'Liv', 3: ""Lee is also here. He's guiding the medical transport craft to our location."", 4: '1'}"
+61	61		302							{2: 'Medical transport craft?', 3: '62'}
+62	62		301							"{2: 'Liv', 3: ""Yeah. I heard they're planning to perform a remote operation on it."", 4: '1'}"
+63	63		204							{1: '1', 2: '19'}
+64	64		301							{2: 'Liv', 3: 'What happened, Commandant?', 4: '1'}
+65	65		301							{3: 'Liv closes and clutches her hands, resting them uneasily upon her knees and looking worried.'}
+66	66		301							{2: 'Liv', 3: 'What happened to Lucia? When I cleaned your wounds, I found out that...', 4: '1'}
+67	67		301							{3: 'Liv bites her lips, seemingly unable to believe what she has verified over and over again.'}
+68	68		302							{2: 'What did Commander Nikola tell you?', 3: '69'}
+69	69		301							{2: 'Liv', 3: 'Our mission just said Lucia was unable to operate at the moment, so Lee and I were sent to support you after our inspections.', 4: '1'}
+70	70		301							{2: 'Liv', 3: 'Strangely, Celica implored us to trust your judgment once we arrived on the surface.', 4: '1'}
+71	71		301							{3: 'That is an oddly unnecessary reminder. Gray Raven is not a squad of rookies that lacks teamwork, and Lee and Liv are not troublemakers.'}
+72	72		301				DialogDisable			{3: 'Those words seem to be meant for you instead of them.'}
+73	73		302							{2: 'My judgment, is it...?', 3: '74'}
+74	74		302							"{2: ""When Lee is done, I'll..."", 3: '75'}"
+75	75		204							{1: '1', 2: '3'}
+76	76		401							{1: '1', 2: '36'}
+77	77		401							{1: '2', 2: '2601'}
+78	78		301			DialogEnable				{3: 'Before you can finish, an alarm goes off in the temporary camp.'}
+79	79		401							{1: '1', 2: '203'}
+80	80		204							{1: '1', 2: '5'}
+81	81		301							{2: 'Liv', 3: 'Incoming Corrupted... How can there be this many of them?!', 4: '1'}
+82	82		402							{1: '2601'}
+83	83		302							"{2: ""We can't let them impact the transport craft."", 3: '84'}"
+84	84		301				DialogDisable			{3: 'Your terminal also marks out where most of the Corrupted are attacking from.'}
+85	85		302							{2: 'Liv, head to this fighting position...', 3: '86'}
+86	86		302							"{2: ""I'll handle this end..."", 3: '87'}"
+87	87		302							{2: 'Lee...', 3: '88'}
+88	88		202							{1: '1', 6: '1'}
+89	89		201							{1: '1', 2: '500568'}
+90	90		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+91	91		301			DialogEnable				{1: '1', 3: 'Lee pinpoints the location you were going to send him right as your comms connects.'}
+92	92		301							"{2: 'Lee', 3: ""I'm heading there, right?"", 4: '1'}"
+93	93		302							{2: 'I can always count on you, Lee...', 3: '94'}
+94	94		204							{1: '1', 2: '1'}
+95	95		301							{3: 'Lee smiles noncommittally before donning his usual serious expression.'}
+96	96		204							{1: '1'}
+97	97		301							"{2: 'Lee', 3: ""My composite armaments can hit enemies from an extremely long distance, so don't hesitate to ask for my help."", 4: '1'}"
+98	98		302							"{2: ""Don't complain about me exploiting you afterward."", 3: '99'}"
+99	99		301							"{2: 'Lee', 3: ""I'll go to my position."", 4: '1'}"
+100	100		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+101	101		202							{1: '1', 6: '1'}
+102	102		201							{1: '1', 2: '1031001', 3: '3'}
+103	103		301							{1: '1', 2: 'Liv', 3: 'Commandant...', 4: '1'}
+104	104		301							{3: 'Liv wants to dissuade you at first, but she decides to leave you a reminder in the end.'}
+105	105		204							{1: '1', 2: '5'}
+106	106		301				DialogDisable			"{2: 'Liv', 3: ""Stay safe. Don't overexert yourself."", 4: '1'}"
+107	107		302							{2: 'I will. My comms will be open.', 3: '108'}
+108	108		302		1		AniZhuanchangBegin			"{2: ""Let's go.""}"

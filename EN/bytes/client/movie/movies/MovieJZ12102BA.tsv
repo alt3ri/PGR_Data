@@ -1,0 +1,93 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500307'}
+4	4		301			DialogEnable				{1: '1', 2: 'Kurono Researcher', 3: 'Yarha, the leader is looking for you...', 4: '1'}
+5	5		301							{2: 'Kurono Researcher', 3: 'How can you still be working at a time like this? Pulling another all-nighter?', 4: '1'}
+6	6		301							{3: 'The man sitting at his desk waves his left hand in dismissal, not even bothering to lift his head up from the screen.'}
+7	7		203							{1: '1', 2: '0.25', 3: '400'}
+8	8		201							{1: '2', 2: '500058', 4: '-400'}
+9	9		301							{1: '1', 2: 'Yarha', 3: 'Incredible, absolutely incredible. Only a genius like me would come up with something like this...', 4: '2'}
+10	10		301							{3: 'The researcher who entered the laboratory looks around at the research books scattered all over the room and sighs.'}
+11	11		301							"{2: 'Kurono Researcher', 3: ""...You mean that half-finished mechanoid prototype from the Daedalus' research division?"", 4: '1'}"
+12	12		301							"{2: 'Yarha', 3: ""No, no... It's far more than just a prototype now."", 4: '2'}"
+13	13		301							{3: 'The man named Yarha steps aside, revealing the fruits of his labor.'}
+14	14		301							{3: 'The hologram of a Construct is floating above the large desk.'}
+15	15		301							{2: 'Yarha', 3: 'Because of her physique, I installed a M.I.N.D. interface onto a weapon link and weaponized the Medic Bot into a brand new external mobile device for her to use in combat.', 4: '2'}
+16	16		301							"{2: 'Yarha', 3: 'I call it a ""Co-Bot"".', 4: '2'}"
+17	17		301							{2: 'Yarha', 3: 'This modification helps stabilize her M.I.N.D. while also functioning as an unprecedented combat system.', 4: '2'}
+18	18		301							"{2: 'Yarha', 3: ""However, this combat system is only suitable for her at this point. After all, we'd be hard-pressed to find someone with a similar framework."", 4: '2'}"
+19	19		301							{2: 'Yarha', 3: 'Take a look at this.', 4: '2'}
+20	22		301							"{3: 'Yarha taps the battle simulation interface and plays a recording of No. 21 fighting Corrupted. On the screen, No. 21 and the ""Co-Bot"" can be seen fighting hand in glove as a highly synergized team.'}"
+21	23		301							{2: 'Yarha', 3: 'Unimaginable burst damage. Environmental adaptability. This is my magnum opus...'}
+22	27		301							"{2: 'Kurono Researcher', 3: ""No wonder I haven't seen you around recently. You've already made this much progress?"", 4: '1'}"
+23	28		301							"{2: 'Yarha', 3: ""It's not complete yet. I still haven't thought of a way to reduce the severity of her M.I.N.D. fluctuations. She's going to need a lot of recalibrating before she's combat-ready."", 4: '2'}"
+24	29		301							"{2: 'Kurono Researcher', 3: ""In that case, I'll leave you to your work then. Don't forget to go to the training ground. The leader is looking for you."", 4: '1'}"
+25	30		301				AniZhuanchangBegin			"{2: 'Yarha', 3: ""Alright. I'll go after I wash up and eat some breakfast."", 4: '2'}"
+26	31		202							{1: '1', 6: '1'}
+27	32		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+28	33		201							{1: '1', 2: '500058', 4: '-400'}
+29	34		201							{1: '2', 2: '500202', 4: '400'}
+30	35		401							{1: '1', 2: '102'}
+31	36		301			AniZhuanchangEnd				"{1: '1', 2: 'Yarha', 3: ""You're deploying her into battle?!"", 4: '1'}"
+32	37		301							"{2: 'Kurono Leader', 3: ""Correct. You've already spent enough time on development. We need to see results."", 4: '2'}"
+33	38		301							{3: 'In the office next to the training ground, a Kurono official dressed in all black sits behind the desk. As he speaks, he taps his index finger on the desk for emphasis.'}
+34	39		301							"{2: 'Yarha', 3: ""And for good reason! She'll be one-of-a-kind!"", 4: '1'}"
+35	40		301							"{2: 'Kurono Leader', 3: ""Kurono isn't a place for you to live out your wildest research fantasies. You haven't forgotten why you chose to stay here. Have you, Yarha?"", 4: '2'}"
+36	41		301							{2: 'Yarha', 3: '...', 4: '1'}
+37	42		301							{2: 'Kurono Leader', 3: 'You are an important member of Kurono. You wasted your time on your latest creation when you could have been helping Kurono ascend to greater heights in other aspects.', 4: '2'}
+38	43		301							"{2: 'Kurono Leader', 3: 'You know this. We know this. Yet I humored you because I believe this ""small sacrifice"" was worth it to Kurono.', 4: '2'}"
+39	44		301							"{2: 'Kurono Leader', 3: ""Now tell me, will you betray Kurono's trust in you?"", 4: '2'}"
+40	45		301							{2: 'Yarha', 3: '...Understood. But the field test must be conducted under my supervision.', 4: '1'}
+41	46		301							"{2: 'Kurono Leader', 3: ""Of course. No. 21's frame has already been brought here. Let's begin."", 4: '2'}"
+42	47		301							{2: 'Yarha', 3: 'When did you bring... Forget it. Very well, as you wish.', 4: '1'}
+43	48		202							{1: '1', 2: '2', 6: '1'}
+44	49		301							{3: 'Yarha walks to the console stationed behind ballistic glass facing the training ground. From here, the entire field can be seen at a glance like the best seat in a theater.'}
+45	50		301							{2: 'Kurono Leader', 3: 'Good, Yarha. Let the show begin.'}
+46	51		301				AniZhuanchangBegin			"{2: 'Kurono Leader', 3: 'Show us that ""one-of-a-kind frame"" you\'re so proud of.'}"
+47	52		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory29.jpg'}
+48	53		401							{1: '2', 2: '1503'}
+49	54		301			AniZhuanchangEnd				{3: 'Following a loud rumbling sound, a transparent cylindrical container slowly descends from the ceiling of the training center.'}
+50	55		301							{3: 'A pure white Construct is submerged within the liquid-filled container, her long hair floating and swaying. A spherical machine can be seen next to her.'}
+51	56		301							"{3: ""When the container arrives at the center of the training ground, the liquid is pumped out and the Construct's feet land on solid ground. A gust of air fills the container, causing her hair to float up and obscure her pale face.""}"
+52	57		401							{1: '2', 2: '1515'}
+53	58		301							{2: 'System', 3: 'Activating frame... 20%... 50%...'}
+54	59		301							{2: 'System', 3: 'Scanning M.I.N.D...'}
+55	60		301							{2: 'System', 3: 'Initiating cognition—'}
+56	61		301							{2: 'System', 3: 'Initiating combat system—'}
+57	62		301							{3: 'Yarha wipes the sweat off his forehead. His breathing stabilizes as the frame begins to activate. Behind him, he feels an intense glare giving him no choice but to continue with the procedure.'}
+58	63		201							{1: '1', 2: '500344', 7: '1'}
+59	64		301							{1: '1', 3: 'The strong gust of air in the container gradually subsides now that the Construct is completely dry. The girl standing in the container remains calm as if she has just woken up.'}
+60	65		301							{2: 'System', 3: 'Activation complete.'}
+61	66		301							{3: 'But Yarha knows that this is only the calm before the storm.'}
+62	67		301							{3: 'The glass walls of the container begin to lower. The Construct slowly opens her eyes. A red light flashes by.'}
+63	68		202							{1: '1', 6: '1'}
+64	69		301							{2: 'Yarha', 3: '...Let the Construct field test begin. Level One...'}
+65	70		301							{2: 'Kurono Leader', 3: 'Level one? Lacking confidence in your work?'}
+66	71		301							{2: 'Yarha', 3: 'But...'}
+67	72		301							{3: 'Yarha closes his eyes, then opens his eyes with a resolute expression.'}
+68	73		301							{2: 'Yarha', 3: '...Initiate level three.'}
+69	74		301							{2: 'System', 3: 'Understood.'}
+70	75		401							{1: '2', 2: '1515'}
+71	76		301							{2: 'System', 3: 'Activating Construct field test. Danger level: Three. Releasing test content.'}
+72	77		401							{1: '2', 2: '1507'}
+73	78		401							{1: '2', 2: '1503'}
+74	79		401							{1: '2', 2: '1509'}
+75	80		301							"{3: ""Following the notification, the area surrounding the training ground begins to shake. The rumbles draw closer, and the floor opens as countless Corrupted swarm out from within. The silent training ground is instantly filled with the mechanoids' hissing.""}"
+76	81		301							{2: 'Yarha', 3: '...Good luck.'}
+77	82		301				AniZhuanchangBegin			"{3: ""Yarha's whisper is obscured by the hissing, making it inaudible.""}"
+78	83		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+79	84		401							{1: '1', 2: '12'}
+80	85		301			AniZhuanchangEnd				{3: 'Where... where am I...'}
+81	86		301							{3: 'Who... am I?'}
+82	87		301							{3: 'She is bewildered for a moment over these existential questions.'}
+83	88		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+84	89		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2502.jpg'}
+85	90		401							{1: '1', 2: '53'}
+86	91		301							{3: 'A moment later, a gust of wind brings her back to reality.'}
+87	92		301							{3: 'Danger. Unknown. Darkness. Death. Battle.'}
+88	93		301							"{3: 'That is all she sees, hears, and smells. Faced with all of this, ""confusion"" falls by the wayside.'}"
+89	94		301							{3: 'Countless mechanoids with menacing red eyes charge her like a flood, about to engulf and scatter her existence.'}
+90	95		301							{2: 'No. 21', 3: 'Danger... Kill...'}
+91	96		301							"{3: 'She clenches her fists. The desire to attack surges up from the depths of her frame, overwhelming her. She retreats a step, arches her back, and growls like a wild animal, exposing her fangs in preparation to fight this ""unknown danger.""'}"
+92	97		301		1		AniZhuanchangBegin			{2: 'No. 21', 3: 'Eliminate... danger.'}

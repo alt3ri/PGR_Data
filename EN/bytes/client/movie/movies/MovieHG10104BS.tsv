@@ -1,0 +1,27 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory3.jpg'}
+2	2		401							{1: '1', 2: '210'}
+3	3		401							{1: '2', 2: '1516'}
+4	4		201							{1: '1', 2: '500026'}
+5	5		301			DialogEnable				"{1: '1', 2: 'Lee', 3: ""You've been staring at me long enough. If you have something to say, just spit it out."", 4: '1'}"
+6	6		302							"{2: 'Look at you, Mr. Popular!', 3: '7', 4: 'Is this the ""unnecessary trouble"" you were referring to?', 5: '7'}"
+7	7		301							{2: 'Lee', 3: '...', 4: '1'}
+8	8		301							{2: 'Lee', 3: 'I ran into the same thing on a previous mission.', 4: '1'}
+9	9		301							"{2: 'Lee', 3: 'This Inver-Device isn\'t the usual ""horn"" shape, so people mistake me for a human.', 4: '1'}"
+10	10		302							"{2: ""Why not say that you're a Construct?"", 3: '11', 4: ""Do you think people care if you're a Construct?"", 5: '12'}"
+11	11	14	301							"{2: 'Lee', 3: ""As I said, Constructs can only leave when we're on a mission. That's why you need an application. I don't want to cause a scene or give us any trouble."", 4: '1'}"
+12	12		301							"{2: 'Lee', 3: 'Constructs are combat androids created by humans. Humans have set reasonable ""rules,"" therefore we abide by them. Much like how mathematics adheres to causality.', 4: '1'}"
+13	13		301							"{2: 'Lee', 3: ""If I had time to concern myself with such trivial matters, I'd be better off using this time to upgrade my weapons."", 4: '1'}"
+14	14		302							"{2: ""I'm sure she just made a simple mistake."", 3: '15', 4: 'Are you okay with me being the only human you talk to?', 5: '16'}"
+15	15	17	301							{2: 'Lee', 3: 'Do you want to go explain it to her or something?', 4: '1'}
+16	16		301							"{2: 'Lee', 3: ""Compared to stopping the Punishing Virus, this shouldn't cause any problems."", 4: '1'}"
+17	17		301							{2: '【kuroname】', 3: 'But this feels different from our usual work. Walking around Babylonia in street clothes, fells like...'}
+18	18		302							{2: 'A date...', 3: '19', 4: 'A special occasion!', 5: '19'}
+19	19		204							{1: '1', 2: '6'}
+20	20		301							{2: 'Lee', 3: '...', 4: '1'}
+21	21		301							"{2: '【kuroname】', 3: ""I don't know if you've noticed, but your M.I.N.D. becomes unstable whenever you go quiet... And your ears are turning red.""}"
+22	22		301							"{2: 'Lee', 3: ""You've stayed connected this whole time?!"", 4: '1'}"
+23	23		302							{2: 'No! It was just a joke!', 3: '24', 4: 'Are you shy, Lee?', 5: '25'}
+24	24	26	301							{2: '【kuroname】', 3: 'Honestly, though. Your ears really are turning red.'}
+25	25		301							{2: 'Lee', 3: 'Quit joking around!', 4: '1'}
+26	26		301		1		AniZhuanchangBegin			"{2: 'Lee', 3: ""I think there's just a glitch in my heat regulator. I'll troubleshoot it and fix it later."", 4: '1'}"

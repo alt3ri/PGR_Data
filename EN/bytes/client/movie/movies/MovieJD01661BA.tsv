@@ -1,0 +1,17 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory257.png'}
+2	2		401							{1: '1', 2: '203'}
+3	3		301			DialogEnable				{3: 'Lucia begins to dive from the divergence point of the Deep M.I.N.D. she shares with Alpha.'}
+4	4		301							{3: 'Because of the constraints of the connecting bridge, everything she does here will affect Alpha.'}
+5	5		201							{1: '1', 2: '500166'}
+6	6		301							"{1: '1', 2: 'Lucia', 3: ""I don't remember ever seeing this area. It seems like this is where my memory data has been sealed."", 4: '1'}"
+7	7		301							{3: 'When Lucia reaches out her hand, she suddenly feels an invisible force trying to keep her away.'}
+8	8		204							{1: '1', 2: '5'}
+9	9		301				DialogDisable			"{2: 'Lucia', 3: ""This is my memory. I can't back off now!"", 4: '1'}"
+10	10		305							{1: '11', 2: '16'}
+11	11		202							{1: '1', 6: '1'}
+12	12		301			DialogEnable				{3: 'With the invisible force gone, the Deep M.I.N.D. starts vibrating.'}
+13	13		201							{1: '1', 2: '500166'}
+14	14		301							{1: '1', 2: 'Lucia', 3: 'Did it work...?', 4: '1'}
+15	15		301		1		AniZhuanchangBegin			{3: 'Her surroundings begin to clarify, and images of her memories start showing.'}
+16	16		202		1		AniZhuanchangBegin			{1: '1', 6: '1'}

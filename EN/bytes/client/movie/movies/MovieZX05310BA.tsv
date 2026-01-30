@@ -1,0 +1,492 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1200.jpg'}
+2	2		401							{1: '1', 2: '6121'}
+3	3		107						2500.0	{1: 'City Center Department Store', 2: 'Fast City', 4: '9:30', 5: 'Line Spacing: 2'}
+4	4		108							{1: '1'}
+5	5		301			DialogEnable	DialogDisable			{3: 'A screen on a window of a department store by the street rolls through recent news.'}
+6	6		306							{1: '1'}
+7	7		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '0.5', 4: '4'}
+8	8		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+9	9		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory418.jpg', 3: '0', 4: '1', 5: '0.3'}
+10	10		104						300.0	{1: '-100|-45|-300', 2: '0', 4: '3'}
+11	11		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory418.jpg'}
+12	12		104							{1: '-100|-45|-300', 2: '0'}
+13	13		205							{1: '999'}
+14	14		104							{1: '0|0|0', 2: '0', 4: '3'}
+15	15		401							{1: '2', 2: '4824'}
+16	16		301			DialogEnable				{2: 'Electronic Female Voice', 3: 'National News Agency: According to the Fast International News report on the 12th, Fast City police stopped an earlier attack at the Montali International Airport.'}
+17	17		301							"{2: 'Electronic Female Voice', 3: ""The criminals were caught after the first wave of attacks on the airport's network system. They were apprehended at the scene, and airport operations were back to normal in just 2 hours.""}"
+18	18		301							{2: 'Electronic Female Voice', 3: 'For more details, we turn to our special guest today, Mr. Antu, Commissioner from the United Government.'}
+19	19		301				DialogDisable			"{2: 'Electronic Male Voice', 3: 'This was an act of opposition against ""The New Earth Codex"", without a doubt, but it crossed the line! Just like the earlier attack at the Dionysus Theater...'}"
+20	20		306							
+21	21		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1200.jpg', 3: '0', 4: '1', 5: '0.3'}
+22	22		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+23	23		101							{3: '1', 4: '4', 5: '1'}
+24	24		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1200.jpg', 3: '1'}
+25	25		205							{1: '999'}
+26	26		201							{1: '1', 2: '501165', 4: '-230', 7: '1'}
+27	27		201							{1: '2', 2: '501162', 4: '320', 7: '1', 8: '1'}
+28	28		203							{1: '2', 2: '0.2', 3: '275'}
+29	29		204							{1: '1', 2: '6'}
+30	30		401							{1: '2', 2: '4044'}
+31	31		502							{1: 'PanelActor1Shake'}
+32	32		301			DialogEnable				{1: '1', 3: 'Dandelion leaves the store carrying boxes of supplies. She rolls her eyes when she hears the news and almost stumbles when Jonathan bumps into her from behind.'}
+33	33		202							{1: '1', 2: '2', 6: '1'}
+34	34		201							{1: '1', 2: '501162', 4: '-400'}
+35	35		201							{1: '2', 2: '501165', 3: '4', 4: '400'}
+36	36		301							{1: '1', 2: 'Jonathan', 3: 'Hey, be careful!', 4: '1'}
+37	37		301							"{2: 'Dandelion', 3: ""You're too close!"", 4: '2'}"
+38	38		202							{1: '1', 2: '2'}
+39	39		301							{3: 'Dandelion puts down the boxes and crosses her arms in frustration as the news continues to loop in the background.'}
+40	40		201							{1: '1', 2: '501165', 3: '4', 4: '400'}
+41	41		201							{1: '2', 2: '501162', 4: '-400'}
+42	42		301							"{1: '1', 2: 'Dandelion', 3: '""Apprehended at the scene""... They didn\'t follow up at all. F.O.S. said the virus only ran for 10 minutes before self-destructing.', 4: '1'}"
+43	43		203							{1: '2', 2: '0.25', 3: '-350', 4: '-20'}
+44	44		204							{1: '2', 2: '7'}
+45	45		301							"{2: 'Jonathan', 3: ""Keep your voice down, we're in public..."", 4: '2'}"
+46	46		301							"{2: 'Jonathan', 3: 'The news can give all the details to the public anyway. ""We don\'t even know what happened, but whatever it was, it\'s over.""', 4: '2'}"
+47	47		301							{3: 'Jonathan looks around cautiously, making sure no one is paying attention to them before whispering.'}
+48	48		204							{1: '2', 2: '4'}
+49	49		301							"{2: 'Jonathan', 3: ""Whatever, it's fine as long as F.O.S.'s plan worked. This morning, the United Government already started assessing security requirements for employees like us."", 4: '2'}"
+50	50		301							{2: 'Jonathan', 3: 'After I sent in all your names, they gave us permission to change routes and request escort personnel.', 4: '2'}
+51	51		301							{2: 'Dandelion', 3: 'Ha.', 4: '1'}
+52	52		204							{1: '1'}
+53	53		301							{2: 'Dandelion', 3: 'Oh right... What happened to that guy who helped F.O.S. by creating a distraction at the airport?', 4: '1'}
+54	54		203							{1: '2', 2: '0.25', 3: '-380'}
+55	55		204							{1: '2'}
+56	56		301							"{2: 'Jonathan', 3: ""He has proof for an acute stress disorder episode. The airport even had to compensate him. It won't affect his life."", 4: '2'}"
+57	57		301							"{2: 'Dandelion', 3: ""I can't believe it actually worked... I'm impressed."", 4: '1'}"
+58	58		301							"{2: 'Jonathan', 3: ""It's nothing. The one who really made it work... is someone else."", 4: '2'}"
+59	59		202							{1: '1', 2: '2'}
+60	60		306							{1: '1'}
+61	61		301							{3: 'Jonathan stares straight ahead. Across the street, F.O.S. and Iris lean against an SUV, taking inventory of their supplies.'}
+62	62		306							
+63	63		201							{1: '1', 2: '501165', 4: '400'}
+64	64		201							{1: '2', 2: '501162', 4: '-400'}
+65	65		301							{1: '1', 2: 'Dandelion', 3: 'F.O.S. is indeed incredible... Are you feeling jealous?', 4: '1'}
+66	66		204							{1: '2', 2: '2'}
+67	67		301							"{2: 'Jonathan', 3: ""Who doesn't want to be a hero?"", 4: '2'}"
+68	68		204							{1: '1', 2: '1'}
+69	69		301							"{2: 'Dandelion', 3: ""That's true. F.O.S. was absolutely phenomenal during the airport operation. I didn't see it in person, but I bet it was just like something from a spy movie!"", 4: '1'}"
+70	70		204							{1: '2'}
+71	71		301							"{2: 'Jonathan', 3: ""...That wasn't the only time..."", 4: '2'}"
+72	72		301				AniZhuanchangBegin			{3: 'He instinctively touches the collar at the back of his neck. He will never forget... the moment when F.O.S. removed the listening device from there.'}
+73	73		202							{1: '1', 2: '2', 6: '1'}
+74	74		502							{1: 'DialogDisable'}
+75	75		401						2000.0	{1: '1', 2: '36'}
+76	76		401							{1: '1', 2: '169'}
+77	77		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1197.jpg'}
+78	78		307			AniZhuanchangEnd				{1: 'Before the airport operation...', 3: '58', 4: 'ffffffff'}
+79	79		301							{3: 'Before the airport operation...'}
+80	80		307							{2: '1'}
+81	81		107							{1: 'Suburb', 2: 'Fast City', 4: '5:00', 5: 'Line Spacing: 2'}
+82	82		301							{3: 'Fast City\\nSuburbs\\n5:00\\nLine Spacing: 2'}
+83	83		108							{1: '1'}
+84	84		306							{1: '1'}
+85	85		201							{1: '1', 2: '501162'}
+86	86		301			DialogEnable				{1: '1', 3: 'With the operation approaching, Jonathan finds himself wide awake at night, thoughts racing rapidly in his mind. He keeps going through all the events, wondering if he really... must get involved.'}
+87	87		301							{3: 'From the eyes of someone involved, how can he protect his own interests? According to law... never mind, no legal code was written for this situation.'}
+88	88		306							
+89	89		202							{1: '1'}
+90	90		401							{1: '2', 2: '4895'}
+91	91		301							"{3: ""Knowing that he won't get any more sleep before dawn, he gets up to use the cold morning air to calm himself.""}"
+92	92		401							{1: '2', 2: '4386'}
+93	93		401							{1: '1', 2: '36'}
+94	94		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+95	95		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory379.png'}
+96	96		401							{1: '1', 2: '166'}
+97	97		301							{3: 'He sorts through his jumbled thoughts as he walks against the morning breeze and accidentally wanders beyond the safety perimeter set by Iris...'}
+98	98		301							{3: 'When a group of monsters just like the ones in the theater appears, Jonathan realizes that Lueya will never let him off so easily.'}
+99	99		201							{1: '1', 2: '501162', 3: '7', 4: '-400', 7: '1'}
+100	100		201							{1: '2', 2: '501170', 4: '400', 7: '1'}
+101	101		401							{1: '2', 2: '4149'}
+102	102		203							{1: '1', 2: '0.4', 3: '-450', 4: '-50'}
+103	103		203							{1: '2', 2: '0.4', 3: '350'}
+104	104		301			PanelActor1Shake				{1: '1', 2: 'Jonathan', 3: 'Help! Somebody help me!', 4: '1'}
+105	105		306							{1: '1'}
+106	106		202							{1: '1', 2: '2'}
+107	107		104							{1: '0|-50|-100', 2: '0.5'}
+108	108		301							"{3: ""He's strayed too far from the villa. At this distance, no one can hear his cries for help.""}"
+109	109		201							{1: '3', 2: '501162', 3: '7', 5: '-115'}
+110	110		301							{1: '1', 3: 'Am I going to... die here...'}
+111	111		306						300.0	
+112	112		203							{1: '3', 2: '0.4', 4: '-120', 5: '180'}
+113	113		201							{1: '1', 2: '501170', 4: '-800'}
+114	114		201							{1: '2', 2: '501170', 4: '800'}
+115	115		203							{1: '1', 2: '0.4', 3: '-600', 4: '-60', 5: '50'}
+116	116		203							{1: '2', 2: '0.4', 3: '600', 4: '-60', 5: '50'}
+117	117		301							"{1: '1', 3: ""As the monsters close in on him slowly, Jonathan's face shows nothing but despair...""}"
+118	118		302							{2: 'Move!', 3: '119', 4: 'Be careful.', 5: '119'}
+119	119		401							{1: '2', 2: '822'}
+120	120		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+121	121		203							{1: '1', 2: '0.4', 3: '-700'}
+122	122		203							{1: '2', 2: '0.4', 3: '700'}
+123	123		301			RImgBg1Shake				"{3: ""Sharp gunshots ring out from the far end, drawing the monsters' attention.""}"
+124	124		301			PanelActor3Shake	DialogDisable			{1: '1', 2: 'Jonathan', 3: 'F-F.O.S.!', 4: '3'}
+125	125		302							{2: '(Continuous gunshots)', 3: '126'}
+126	126		401							{1: '2', 2: '822'}
+127	127		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+128	128		401							{1: '2', 2: '822'}
+129	129		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+130	130		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 2: '2', 3: '1'}
+131	131		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 2: '2', 3: '2'}
+132	132		502							{1: 'PanelActor1Shake'}
+133	133		502							{1: 'PanelActor2Shake'}
+134	134		301			DialogEnable				"{1: '1', 3: ""The weapons provided by Iris are more useful than expected. Although you can't kill the monsters, the shots are enough to keep them at bay.""}"
+135	135		302							"{2: ""Let's go."", 3: '136', 4: 'This way.'}"
+136	136		401							{1: '2', 2: '4895'}
+137	137		104							{1: '0|0|-100', 2: '0.25'}
+138	138		203						300.0	{1: '3', 2: '0.25'}
+139	139		203							{1: '1', 2: '0.3', 3: '-1200'}
+140	140		203							{1: '2', 2: '0.3', 3: '1200'}
+141	141		203							{1: '3', 2: '0.25', 4: '-70', 5: '-100'}
+142	142		104							{1: '0|0|0', 2: '0.25'}
+143	143		401							{1: '2', 2: '1504'}
+144	144		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+145	145		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '2'}
+146	146		202							{1: '1', 2: '2'}
+147	147		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '1'}
+148	148		301							{3: 'You grab Jonathan by the shoulders and sprint frantically in the opposite direction.'}
+149	149		301							{2: 'Jonathan', 3: 'Y-you, what are you doing here...', 4: '3'}
+150	150		302							{2: 'Later.', 3: '151'}
+151	151		301				AniZhuanchangBegin			{3: 'The guns can only scare the monsters, not kill them. You must stay alive until Iris notices that you and Jonathan are missing...'}
+152	152		202							{1: '3', 6: '1'}
+153	153		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+154	154		401						2000.0	{1: '1', 2: '36'}
+155	155		401							{1: '1', 2: '169'}
+156	156		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory373.png'}
+157	157		301			AniZhuanchangEnd				"{3: ""You go around the outskirts into the forest, finally shaking off the monsters and making it back into the safety of the villa's shielded magnetic field just before Jonathan collapses.""}"
+158	158		201							{1: '1', 2: '501162', 3: '7'}
+159	159		301							"{1: '1', 3: ""Jonathan's heart is pounding so violently that he feels it's going to burst from his chest.""}"
+160	160		301							{2: 'Jonathan', 3: 'Huff... huff... you... huff...', 4: '1'}
+161	161		301							{2: 'Jonathan', 3: 'Why were you... huff... there... so early...', 4: '1'}
+162	162		202							{1: '1', 6: '1'}
+163	163		401							{1: '2', 2: '4386'}
+164	164		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+165	165		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1190.jpg'}
+166	166		504							{1: '0.7'}
+167	167		201							{1: '1', 2: '501162', 3: '1', 4: '-600', 7: '1'}
+168	168		201							{1: '2', 2: '501184', 3: '1', 7: '1'}
+169	169		201							{1: '3', 2: '501165', 3: '1', 4: '600', 7: '1'}
+170	170		301							"{1: '1', 3: 'Was everything F.O.S. said during the meeting just empty promises? Was F.O.S., after knowing the full picture, also planning to ""escape""?'}"
+171	171		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+172	172		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+173	173		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory373.png'}
+174	174		504							{1: '0'}
+175	175		201							{1: '1', 2: '501162', 3: '4', 7: '1'}
+176	176		301				DialogDisable			{1: '1', 3: 'Strange emotions brew in him as he guesses the intentions of this self-proclaimed mercenary with malice.'}
+177	177		302							{2: '...', 4: '(Remove a listening device from his collar)'}
+178	178		104							{1: '0|0|-100', 2: '0.4'}
+179	179		203						450.0	{1: '1', 2: '0.4', 4: '-20', 5: '-100'}
+180	180		401						300.0	{1: '2', 2: '2936'}
+181	181		402							{1: '2936'}
+182	182		104							{1: '0|0|0', 2: '0.4'}
+183	183		203						500.0	{1: '1', 2: '0.4'}
+184	184		204							{1: '1', 2: '7'}
+185	185		301			DialogEnable				{2: 'Jonathan', 3: 'W-when did you put that there?!', 4: '1'}
+186	186		302							{2: 'Yesterday.', 3: '187'}
+187	187		204							{1: '1', 2: '4'}
+188	188		301							{2: 'Jonathan', 3: 'Impossible! We only met once yesterday...', 4: '1'}
+189	189		302							"{2: '(Shrug)', 3: '190', 4: ""You're right."", 5: '190'}"
+190	190		204							{1: '1', 2: '7'}
+191	191		301							{2: 'Jonathan', 3: '...Why would you do that?', 4: '1'}
+192	192		302							"{2: ""Because I don't actually trust any of you."", 3: '193'}"
+193	193		306							{1: '1'}
+194	194		202							{1: '1'}
+195	195		301							"{3: ""In an unfamiliar situation, it's best to do whatever it takes to maintain control. This is one of F.O.S.'s core teachings.""}"
+196	196		306							
+197	197		201							{1: '1', 2: '501162', 3: '7'}
+198	198		301							{1: '1', 2: 'Jonathan', 3: 'Then... then why did you...', 4: '1'}
+199	199		302							{2: 'One afternoon was enough for me to learn everything I needed.', 3: '200', 4: 'I have my own judgment.', 5: '200'}
+200	200		202							{1: '1'}
+201	201		301							{3: 'The only information you needed was whether your partners had ill intentions.'}
+202	202		401							{1: '2', 2: '4893'}
+203	203		301							{3: 'You casually crush the listening device and tuck it into your pouch.'}
+204	204		201							{1: '1', 2: '501162'}
+205	205		301							{1: '1', 2: 'Jonathan', 3: '...', 4: '1'}
+206	206		301							"{2: 'Jonathan', 3: ""You're not a mercenary."", 4: '1'}"
+207	207		302							"{2: ""It won't make any difference to this operation."", 3: '208'}"
+208	208		301							{2: 'Jonathan', 3: 'Then why...', 4: '1'}
+209	209		301							"{2: 'Jonathan', 3: ""Why get involved in this at all? Why risk your life to save me? There's nothing in it for you..."", 4: '1'}"
+210	210		302							{2: 'I already gave you my reasons yesterday.', 3: '211'}
+211	211		204							{1: '1', 2: '4'}
+212	212		301				DialogDisable			"{2: 'Jonathan', 3: ""...That wasn't just empty talk? Why would anyone get themselves into such a terrible mess over such vague, abstract reasons?"", 4: '1'}"
+213	213		302							"{2: ""They're not that abstract."", 3: '217', 4: 'And I do have some connection to this incident.', 5: '217', 6: 'To save the world, of course!', 7: '214'}"
+214	214		204							{1: '1'}
+215	215		301			DialogEnable	DialogDisable			{2: 'Jonathan', 3: 'S-save the world?', 4: '1'}
+216	216		302							{2: 'Haha.', 3: '217'}
+217	217		302							{2: 'You can hide from trouble for a while, but not forever.', 3: '218'}
+218	218		302							{2: 'Once you know about something, and you happen to have the power to help, you ought to do something.', 3: '219'}
+219	219		202							{1: '1', 6: '1'}
+220	220		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+221	221		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory547.jpg'}
+222	222		301			DialogEnable				"{3: ""The currents of history rush everything along. If we let Lueya do as she pleases, today it's Bane, tomorrow it'll be another city. Eventually, it'll affect us all.""}"
+223	223		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+224	224		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory373.png'}
+225	225		201							{1: '1', 2: '501162', 7: '1'}
+226	226		301							{1: '1', 2: 'Jonathan', 3: '...', 4: '1'}
+227	227		302				AniZhuanchangBegin			"{2: ""Enough talking. Rest some more. The sun's about to come up."", 3: '228'}"
+228	228		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1200.jpg'}
+229	229		301			AniZhuanchangEnd				{3: 'As Jonathan watches F.O.S. walk away, he touches the phone in his pocket.'}
+230	230		301							{3: 'The screen was left on a chat window.'}
+231	231		202							{1: '1', 6: '1'}
+232	232		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+233	233		304							"{1: ""Jo, I heard about what happened at Montali Airport. They're getting more reckless."", 2: '47f57fff', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory213.png', 6: '1', 7: '1'}"
+234	234		304							"{1: ""It's unfair for you to stay on this mission. I'm working on it. Stay in Fast City for a few more days."", 2: '47f57fff', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory213.png', 6: '1', 7: '1'}"
+235	235		304							"{1: ""I'm doing my best to get you out of this assignment."", 2: '47f57fff', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory213.png', 6: '1', 7: '3'}"
+236	236		304							{1: '                             —Professor', 2: '47f57fff', 3: '1.2', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory213.png', 6: '1', 8: '1', 9: '1', 10: '1'}
+237	237		304							{1: 'Thank you for that, but... I want to go to Bane.', 2: 'ffee82ff', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory213.png', 6: '1', 7: '3'}
+238	238		304				AniZhuanchangBegin			{1: '—Jonathan', 2: 'ffee82ff', 3: '1.2', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory213.png', 6: '1', 9: '1', 10: '1'}
+239	239		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1200.jpg'}
+240	240		201							{1: '1', 2: '501162', 7: '1'}
+241	241		301			AniZhuanchangEnd				{1: '1', 2: 'Jonathan', 3: 'The people of Bane need help...', 4: '1'}
+242	242		203							{1: '1', 2: '0.25', 3: '-400'}
+243	243		201							{1: '2', 2: '501165', 4: '400'}
+244	244		301							{1: '1', 2: 'Dandelion', 3: 'What?', 4: '2'}
+245	245		301							"{2: 'Jonathan', 3: ""Nothing. It's green. Let's go."", 4: '1'}"
+246	246		203						400.0	{1: '1', 2: '0.4', 3: '-255'}
+247	247		401							{1: '2', 2: '4044'}
+248	248		203							{1: '1', 2: '0.4', 3: '-255', 5: '-30'}
+249	249		203							{1: '2', 2: '0.4', 3: '400', 5: '-20'}
+250	250		204							{1: '2', 2: '6'}
+251	251		301				AniZhuanchangBegin			"{2: 'Dandelion', 3: ""Hey, hey! Stop pushing! I'm carrying a ton of stuff here! I'm going!"", 4: '2'}"
+252	252		202							{1: '1', 2: '2', 6: '1'}
+253	253		401						2000.0	{1: '1', 2: '36'}
+254	254		401							{1: '1', 2: '6154'}
+255	255		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1181.jpg'}
+256	256		301			AniZhuanchangEnd				{3: 'After Jonathan and Dandelion cross the street and finish loading supplies into the off-road vehicle, they overhear the other two discussing the operation.'}
+257	257		201							{1: '1', 2: '501184'}
+258	258		301				DialogDisable			"{1: '1', 2: 'Iris', 3: ""It's a four-day journey from Fast to Jotunn, the border city of Bane, and a four-and-a-half-day journey to the capital if you take this route."", 4: '1'}"
+259	259		302							"{2: ""What's our shift?"", 3: '260'}"
+260	260		302							{2: 'Can Jonathan and Dandelion drive?', 3: '261'}
+261	261		301			DialogEnable	DialogDisable			{2: 'Iris', 3: 'I can handle it.', 4: '1'}
+262	262		302							"{2: ""...You're going to drive for four and a half days by yourself?"", 3: '263'}"
+263	263		204							{1: '1', 2: '2'}
+264	264		301			DialogEnable				"{2: 'Iris', 3: 'After ""she doesn\'t seem like someone who\'d choose the fastest and most effective way,"" we have now added, ""she probably doesn\'t know how to drive""?', 4: '1'}"
+265	265		301				DialogDisable			"{3: ""Iris winks playfully. Ever since you had a meal together, she's been increasingly casual with you.""}"
+266	266		302							"{2: ""Well, that's..."", 3: '267'}"
+267	267		302							"{2: ""It's kind of true..."", 3: '268'}"
+268	268		204							{1: '1', 2: '7'}
+269	269		301			DialogEnable				"{2: 'Iris', 3: ""I'm a Construct. Operating continuously for days isn't a problem when it's just driving. Plus, we'll be taking breaks."", 4: '1'}"
+270	270		204							{1: '1'}
+271	271		301				DialogDisable			"{2: 'Iris', 3: ""If we're just driving... why don't you stay on guard instead?"", 4: '1'}"
+272	272		202							{1: '1'}
+273	273		302							{2: 'Sure.', 3: '274'}
+274	274		302							"{2: ""Let me check if we've got all our personal items. If not..."", 3: '275'}"
+275	275		401							{1: '2', 2: '5370'}
+276	276		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront46.png', 3: '0', 4: '1', 5: '0.35'}
+277	277		301			DialogEnable				{3: 'You slide into the passenger seat, cast one last glance at the city, and buckle your seatbelt.'}
+278	278		302				AniZhuanchangBegin			"{2: ""Let's go."", 3: '279'}"
+279	279		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+280	280		205							{1: '999'}
+281	281		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1198.jpg'}
+282	282		306							{1: '1'}
+283	283		301			AniZhuanchangEnd				"{3: ""The main stretch of the route to Bane cuts through highlands with lush vegetation. It's the rainy season and a gentle drizzle persists.""}"
+284	284		301							{3: 'On the way, you meet a traveler going in the opposite direction, stranded with a flat tire.'}
+285	285		301				DialogDisable			{3: 'You offer to help and the traveler tells you about the road ahead. He even marks a few notable points on your map and gives you a pack of energy candies.'}
+286	286		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+287	287		306							
+288	288		401							{1: '2', 2: '4341'}
+289	289		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5301_12.jpg', 3: '0', 4: '1', 5: '0.4'}
+290	290		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_12.jpg'}
+291	291		205							{1: '999'}
+292	292		301			DialogEnable	DialogDisable			{3: 'Back in the car, you glance at the two sleeping in the back before turning to Iris and whispering.'}
+293	293		302							{2: 'Route 02 has mudslides and landslides.', 3: '294'}
+294	294		302							"{2: ""We'll have to take the other route."", 3: '295'}"
+295	295		301			DialogEnable	DialogDisable			{2: 'Iris', 3: 'Okay.'}
+296	296		302							"{2: ""Route 04 doesn't have any supply points, but there is an abandoned service area."", 3: '297'}"
+297	297		302							{2: 'The guy earlier marked it on our map.', 3: '298'}
+298	298		301			DialogEnable				{2: 'Iris', 3: 'Okay.'}
+299	299		302							{2: 'Want some candy?', 3: '300'}
+300	300		301							{2: 'Iris', 3: 'Alright...'}
+301	301		301							{2: 'Iris', 3: 'But I need to keep my hands on the wheel.'}
+302	302		302							{2: 'Hm?', 3: '303'}
+303	303		301							{2: 'Iris', 3: '...'}
+304	304		301				DialogDisable			{3: 'Iris keeps her eyes fixed on the road ahead without moving, as if nothing had happened.'}
+305	305		302							{2: '...', 3: '306'}
+306	306		302							{2: '(Pretend not to understand)', 3: '307', 4: '(Unwrap a candy)', 5: '310'}
+307	307		301			DialogEnable				"{3: ""Just as you're about to move to the next topic, Iris speaks again.""}"
+308	308		301				DialogDisable			"{2: 'Iris', 3: ""I'd like some candy, but I'm driving.""}"
+309	309		302							{2: '...(Unwrap a candy)', 3: '310'}
+310	310		401							{1: '2', 2: '4112'}
+311	311		301			DialogEnable				"{3: ""You hold the candy to Iris's lips.""}"
+312	312		301				DialogDisable			{2: 'Iris', 3: 'Thank you.'}
+313	313		306							{1: '1'}
+314	314		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5301_12.jpg', 3: '0', 4: '1', 5: '0.8'}
+315	315		104						1000.0	{1: '-380|95|-300', 2: '0', 4: '3'}
+316	316		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_12.jpg'}
+317	317		104							{1: '-380|95|-300', 2: '0'}
+318	318		205							{1: '999'}
+319	319		104							{1: '0|0|0', 2: '0', 4: '3'}
+320	320		301			DialogEnable				{3: 'Her lowered voice, muffled by the candy, sounds lazy like the rain outside.'}
+321	321		306							
+322	322		401							{1: '2', 2: '4895'}
+323	323		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront46.png', 4: '4'}
+324	324		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1198.jpg', 3: '0', 4: '1', 5: '0.3'}
+325	325		101						350.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1198.jpg'}
+326	326		205							{1: '999'}
+327	327		201							{1: '1', 2: '501184', 4: '-30'}
+328	328		203							{1: '1', 2: '0.25', 3: '17'}
+329	329		301							{1: '1', 3: 'Dandelion mumbles something from the back seat and shifts her body. Both you and Iris reach for the speaker volume control at the same time.'}
+330	330		204							{1: '1', 2: '1'}
+331	331		301							{3: 'Your fingertips touch, eyes meet, and you laugh. The upbeat music stops, leaving only the sound of heavy rain.'}
+332	332		302							{2: 'I thought your hands were full.', 3: '333'}
+333	333		301							{2: 'Iris', 3: '...Hmm, they were full earlier.', 4: '1'}
+334	334		301							"{3: ""Her serious tone carries hints of a chuckle she can't quite hide.""}"
+335	335		204							{1: '1', 2: '13'}
+336	336		301							{2: 'Iris', 3: 'Do you want to take a nap?', 4: '1'}
+337	337		302							"{2: 'I promised to help keep watch.', 3: '338', 4: ""I can't sleep."", 5: '338'}"
+338	338		204							{1: '1'}
+339	339		301							"{2: 'Iris', 3: ""Then let's chat for a while."", 4: '1'}"
+340	340		302							{2: 'Sure, like what?', 3: '341'}
+341	341		204							{1: '1', 2: '1'}
+342	342		301							{2: 'Iris', 3: 'Like, your interests, the kind of music you like, or what you enjoy doing.', 4: '1'}
+343	343		302							"{2: ""I'd like to ask you those questions, too."", 3: '344'}"
+344	344		204							{1: '1', 2: '13'}
+345	345		301							"{2: 'Iris', 3: ""You don't have the answers? Do you not know yourself well?"", 4: '1'}"
+346	346		302							{2: 'No, I want you to answer these questions.', 3: '347'}
+347	347		204							{1: '1', 2: '1'}
+348	348		301							"{2: 'Iris', 3: ""Sure, I'll tell you."", 4: '1'}"
+349	349		306							{1: '1'}
+350	350		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0.4'}
+351	351		204							{1: '1', 2: '10'}
+352	352		301							{2: 'Iris', 3: '<size=30>However many times you want.</size>', 4: '1'}
+353	353		302							{2: 'Hmm? What did you just say?', 3: '354'}
+354	354		306							
+355	355		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '0', 5: '0.4'}
+356	356		204							{1: '1', 2: '11'}
+357	357		301							{2: 'Iris', 3: 'Nothing. I got candy stuck in my teeth.', 4: '1'}
+358	358		205							{1: '999'}
+359	359		202							{1: '1'}
+360	360		301				AniZhuanchangBegin			{3: 'Your casual conversation flows into the curtain of rain, falling among the highland trees as the vehicle rolls forward.'}
+361	361		101							{4: '4', 5: '1'}
+362	362		401						1500.0	{1: '1', 2: '36'}
+363	363		401							{1: '1', 2: '100'}
+364	364		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory999.jpg'}
+365	365		301			AniZhuanchangEnd	DialogDisable			{3: 'As night falls, the four of you arrive safely at the abandoned service area on Highland Route 04.'}
+366	366		306							{1: '1'}
+367	367		401							{1: '2', 2: '558'}
+368	368		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+369	369		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+370	370		504							{1: '0.7'}
+371	371		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory314.png'}
+372	372		301			DialogEnable				{3: 'It was originally just a supply point, but after this route was built, it was expanded into a service area.'}
+373	373		401							{1: '2', 2: '558'}
+374	374		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+375	375		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg'}
+376	376		301							"{3: ""The service area had the potential to develop into a small settlement, but the United Government's Peace Operation changed everything.""}"
+377	377		401							{1: '2', 2: '558'}
+378	378		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+379	379		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory940.png'}
+380	380		301				DialogDisable			{3: 'When the Highland Route fell into disuse, many points along the way declined as well.'}
+381	381		306							
+382	382		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+383	383		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+384	384		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory999.jpg'}
+385	385		504							{1: '0'}
+386	386		301			DialogEnable				{3: 'Iris parks the vehicle in a spot with clear visibility, where you can act quickly if anything happens. You help the others set up their tents.'}
+387	387		201							{1: '1', 2: '501165', 3: '1'}
+388	388		301							"{1: '1', 2: 'Dandelion', 3: ""I had no idea there's so much to pitching a tent."", 4: '1'}"
+389	389		301							{2: 'Dandelion', 3: 'I thought you could just hammer in a couple of stakes anywhere and call it a day.', 4: '1'}
+390	390		302							"{2: ""That would've given you all sorts of troubles at night."", 3: '391'}"
+391	391		301							"{2: 'Dandelion', 3: ""Thanks for all the hard work. Jonathan and I will take care of dinner. We can't let you do everything."", 4: '1'}"
+392	392		301							"{2: 'Dandelion', 3: ""By the way, where's Iris?"", 4: '1'}"
+393	393		302							"{2: ""...She's probably... just walking around."", 3: '394'}"
+394	394		204							{1: '1'}
+395	395		301							{2: 'Dandelion', 3: 'You sound a bit strange...', 4: '1'}
+396	396		301							{2: 'Dandelion', 3: 'Jonathan! Time to make dinner!', 4: '1'}
+397	397		201							{1: '18', 2: '501162'}
+398	398		301							{1: '1', 2: 'Jonathan', 3: '...I should have bought two boxes of instant meals.', 4: '18'}
+399	399		202							{1: '18', 6: '1'}
+400	400		204							{1: '1', 2: '1'}
+401	401		301							"{2: 'Dandelion', 3: ""We're not in a rush now. Why don't we reward ourselves with some good food?"", 4: '1'}"
+402	402		201							{1: '18', 2: '501162'}
+403	403		301							{1: '1', 2: 'Jonathan', 3: '...', 4: '18'}
+404	404		202							{1: '18', 6: '1'}
+405	405		301							"{2: 'Dandelion', 3: ""We'll treat this as a vacation."", 4: '1'}"
+406	406		203							{1: '1', 2: '0.3', 3: '400'}
+407	407		201							{1: '2', 2: '501162', 4: '-400'}
+408	408		301							{1: '1', 3: 'Jonathan sighs, setting aside the contract he was drafting. He shrugs to himself before reluctantly trudging over to start the fire.'}
+409	409		301							"{2: 'Jonathan', 3: ""If this were a real vacation, I'd have brought a guide who doubles as a translator and a driver who can cook."", 4: '2'}"
+410	410		301							{2: 'Dandelion', 3: 'Then you must have learned quite a few skills, right?', 4: '1'}
+411	411		301							{2: 'Jonathan', 3: '...Do you think that was the point?', 4: '2'}
+412	412		202							{1: '1', 2: '2'}
+413	413		301							{3: 'Their casual conversation fades as you walk to the edge of the camp, setting up makeshift security devices assembled from components you bought earlier.'}
+414	414		401							{1: '2', 2: '4112'}
+415	415		301				AniZhuanchangBegin			"{3: ""After you're done, you take out a map and head toward the spot you pointed out to Iris earlier when you were parking.""}"
+416	416		401						2000.0	{1: '1', 2: '36'}
+417	417		401							{1: '1', 2: '6153'}
+418	418		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1206.jpg'}
+419	419		301			AniZhuanchangEnd	DialogDisable			{3: 'You go around some abandoned buildings and past a few rows of trees before your view suddenly opens.'}
+420	420		306							{1: '1'}
+421	421		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1206.jpg', 3: '0', 4: '1', 5: '1'}
+422	422		104						1200.0	{1: '30|-100|-400', 2: '0', 4: '3'}
+423	423		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1206.jpg'}
+424	424		104							{1: '30|-100|-400', 2: '0'}
+425	425		205							{1: '999'}
+426	426		104							{1: '0|0|0', 2: '0', 4: '3'}
+427	427		301			DialogEnable				{3: 'Before you is a massive, rusty platform surrounded by moss-covered items. An old, weathered piano stands silently to one side.'}
+428	428		201							{1: '1', 2: '501161'}
+429	429		301							{1: '1', 3: 'Iris stands by the piano, her fingertips gently tracing the keys. She gazes at the tilted steel frames behind the platform that were probably supports for stage backdrops.'}
+430	430		306							
+431	431		301				DialogDisable			{3: 'You pause in front of the platform and speak from a distance.'}
+432	432		302							{2: 'The person on the road today said...', 3: '433'}
+433	433		302							{2: 'When Route 04 was first established years ago,', 3: '434'}
+434	434		302							{2: 'They held celebrations in the service area.', 3: '435'}
+435	435		301			DialogEnable				"{2: 'Iris', 3: ""That's why you chose this route..."", 4: '1'}"
+436	436		302							{2: 'The main reason was the landslide on Route 02.', 3: '437'}
+437	437		202							{1: '1', 6: '1'}
+438	438		401							{1: '2', 2: '1543'}
+439	439		201							{1: '1', 2: '501184', 3: '17'}
+440	440		301							{1: '1', 3: 'Iris turns around and looks at you with pressed lips.'}
+441	441		301				DialogDisable			{2: 'Iris', 3: 'Can you give me a different reason?', 4: '1'}
+442	442		302							{2: '...', 3: '443'}
+443	443		302							"{2: 'Because you probably haven\'t ""taken a break"" for a long time.', 3: '444'}"
+444	444		204							{1: '1', 2: '9'}
+445	445		301			DialogEnable				{2: 'Iris', 3: '...', 4: '1'}
+446	446		302							"{2: ""If you'd rather not, we can also..."", 3: '447'}"
+447	447		204							{1: '1', 2: '16'}
+448	448		301							{2: 'Iris', 3: 'F.O.S.', 4: '1'}
+449	449		301							{3: 'Iris interrupts you.'}
+450	450		302							{2: '...Yeah.', 3: '451'}
+451	451		301							{2: 'Iris', 3: 'Would you be my audience?', 4: '1'}
+452	452		302				DialogDisable			{2: 'Sure.', 3: '453'}
+453	453		202							{1: '1'}
+454	454		401							{1: '2', 2: '2936'}
+455	455		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5301_10.jpg', 3: '0', 4: '1', 5: '1.5'}
+456	456		104						2000.0	{1: '500|140|-400', 2: '0', 4: '3'}
+457	457		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_10.jpg'}
+458	458		104							{1: '500|140|-400', 2: '0'}
+459	459		205							{1: '999'}
+460	460		104							{1: '0|0|0', 2: '0', 4: '3'}
+461	461		301			DialogEnable	AniZhuanchangBegin			{3: 'You find an abandoned chair among the objects nearby. She carefully wipes it and sits down with proper posture.'}
+462	462		502							{1: 'DialogDisable'}
+463	463		401							{1: '2', 2: '4276'}
+464	464		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png', 4: '4'}
+465	465		104							{1: '-40|-248|-400', 2: '0'}
+466	466		502							{1: 'AniZhuanchangEnd'}
+467	467		109							{1: '1', 2: '<color=#ffffffff><size=37>The first performer is light itself. It appears from behind Iris and shines on the lush foliage, making it look like night has only just descended.</size></color>', 4: '-380'}
+468	468		104						6500.0	{1: '60|-248|-400', 2: '6'}
+469	469		301				AniZhuanchangBegin			{3: 'The first performer is light itself. It appears from behind Iris and shines on the lush foliage, making it look like night has only just descended.'}
+470	470		104							{1: '266|-70|-400', 2: '0'}
+471	471		502							{1: 'AniZhuanchangEnd'}
+472	472		109							{1: '1', 2: '<color=#ffffffff><size=37>Next to take the stage is music. It rises from the aged yet powerful keys and the crisp notes echoing from the corners of the stage, elegant and graceful.</size></color>', 4: '-380'}
+473	473		104						6500.0	{1: '266|30|-400', 2: '6'}
+474	474		301				AniZhuanchangBegin			{3: 'Next to take the stage is music. It rises from the aged yet powerful keys and the crisp notes echoing from the corners of the stage, elegant and graceful.'}
+475	475		104							{1: '-365|-80|-300', 2: '0'}
+476	476		502							{1: 'AniZhuanchangEnd'}
+477	477		401							{1: '2', 2: '4341'}
+478	478		109							{1: '1', 2: '<color=#ffffffff><size=40>Then, with flowing garments and dancing fingers, she moves like an iris flower swaying in the evening breeze, exquisite and soft.</size></color>', 4: '-380'}
+479	479		104						6500.0	{1: '-265|-80|-300', 2: '6'}
+480	480		301				AniZhuanchangBegin			{3: 'Then, with flowing garments and dancing fingers, she moves like an iris flower swaying in the evening breeze, exquisite and soft.'}
+481	481		101							{4: '4', 5: '1'}
+482	482		110							
+483	483		104							{1: '0|0|0', 2: '0'}
+484	484		502						300.0	{1: 'DialogEnable'}
+485	485		301			AniZhuanchangEnd				{3: 'As her dress rises and falls, the tenderness you have yearned for fills your heart, and the thin barrier between you disappears.'}
+486	486		301							"{3: ""Your troubled thoughts vanish, and Iris's silhouette seems to be moving in slow motion.""}"
+487	487		301				DialogDisable			{3: 'This might be more than just a mission. It may be a pleasant journey to be savored.'}
+488	488		401							{1: '2', 2: '4297'}
+489	489		109							{1: '11', 2: '<color=#ffffffff><size=60><i>All the beautiful things have just come into blossom.\\n\\nAll the romantic stories still have time to unfold gradually.</i></size></color>', 3: '0', 4: '50', 9: '3'}
+490	490		109							{1: '1', 2: '<color=#4d4d4dff><size=60><b><i>All the beautiful things have just come into blossom.\\n\\nAll the romantic stories still have time to unfold gradually.</i></b></size></color>', 3: '3.7', 4: '47'}
+491	491		301		1		AniZhuanchangBegin			{3: 'All the beautiful things have just come into blossom. All the romantic stories still have time to unfold gradually.'}

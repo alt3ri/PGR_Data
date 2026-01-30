@@ -1,0 +1,175 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory744.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				{3: 'The carriage wheels emit a rhythmic creak as they traverse the uneven road, steadily making their way forward.'}
+4	4		301							{3: 'The occasional jolt caused by small rocks prompts a few complaints from those inside, but these grumbles quickly give way to lively banter.'}
+5	5		201							{1: '1', 2: '1081001'}
+6	6		301							{1: '1', 2: 'Kamui', 3: 'Capt., can you scoot over a bit more?', 4: '1'}
+7	7		201							{1: '1', 2: '500309'}
+8	8		301							{1: '1', 2: 'Chrome', 3: 'Then I would push Wanshi off the carriage. Moreover, we have to leave some space for the commandant.', 4: '1'}
+9	9		202							{1: '1', 6: '1'}
+10	10		301							{3: 'Due to the limited space within the carriage, it has become crowded with the presence of two squads in addition to Sophia and Changyu.'}
+11	11		301							{3: 'Consequently, Little Gray Raven has to utilize the supply chests as makeshift steps and adjust their postures to accommodate the confined space.'}
+12	12		301							{3: 'Kamui and Chrome are seated at the back of the carriage, while Wanshi, as per his own request, is staying on the edge and securely bound with ropes.'}
+13	13		301							"{3: ""Seemingly using the support of the ropes for a relatively comfortable position, Wanshi's gaze remains fixed upon the meadow, diligently keeping a watchful eye over the hero.""}"
+14	14		301							{3: 'Thanks to his efforts, Camu, who is positioned atop the carriage, can fully concentrate on his watch duty.'}
+15	15		301							{3: 'Sophia is clutching the last chest of gold coins, nestled in a corner of the carriage and ensuring the other supplies remain secure. Meanwhile, Changyu takes his place at the front, steering the carriage along the road.'}
+16	16		301							{3: 'And as for you... In order to maximize space, you find yourself situated in the middle, surrounded by everyone.'}
+17	18		401							{1: '2', 2: '2607'}
+18	19		301							{3: 'Bam!'}
+19	20		301							{3: 'Suddenly, a crisp sound fills the air, causing the entire carriage to tilt perilously to one side.'}
+20	21		301							{2: 'All', 3: 'Whoa!'}
+21	22		301							{3: 'Amidst a flurry of flustered movements to restore balance, the vehicle manages to regain its steady position. True to form, Changyu steps outside to inspect the carriage.'}
+22	23		201							{1: '1', 2: '500225'}
+23	24		301							{1: '1', 2: 'Changyu', 3: 'Oh, another broken wheel... I guess it was bound to happen sooner or later. Let me see if I can reinforce these wheels.', 4: '1'}
+24	25		301							{2: 'Changyu', 3: 'Everyone, could you get out of the carriage first?', 4: '1'}
+25	26		202							{1: '1', 6: '1'}
+26	27		301							"{3: ""Upon hearing Changyu's request, everyone exits the carriage and begins stretching their bodies.""}"
+27	28		302							"{2: ""Didn't expect a carriage to have a durability limit too..."", 3: '29'}"
+28	29		201							{1: '1', 2: '500569'}
+29	30		301							{1: '1', 2: 'Lee', 3: 'Yeah, we should consider getting one more carriage, but it comes with the risk of drawing more attention to ourselves.', 4: '1'}
+30	31		201							{1: '1', 2: '500049'}
+31	32		301							{1: '1', 2: 'Liv', 3: 'Speaking of that, our group has been expanding, but the wizard is still traveling all by himself.', 4: '1'}
+32	33		201							{1: '1', 2: '500032'}
+33	34		301							{1: '1', 2: 'Lucia', 3: 'I guess moving alone suits someone experienced like him better.', 4: '1'}
+34	35		202							{1: '1', 6: '1'}
+35	36		301							{3: 'The long tailing operation has confirmed the notion that the traveling wizard remains quite unreliable. However, it has also revealed a side of him as a former hero that you were previously unaware of.'}
+36	37		301							"{3: ""Apart from specific missions assigned to you by Ayla, such as the revelation, you haven't found it necessary to provide assistance to the traveling wizard regarding the various challenges he has encountered so far.""}"
+37	38		301							"{3: ""However, he will soon reach Rivervale, where a perilous ruin sits awaiting the hero's arrival. Is he truly intending to venture into it alone, with no companions by his side?""}"
+38	500		301							{3: 'You recall all the people you encountered in your previous adventure—the knight, the sharpshooter lady, the old blacksmith...'}
+39	501		301							"{3: ""You can't help but ponder where they are and what they are doing now.""}"
+40	39		301							{3: 'Are they aware that the traveling wizard has embarked on a journey toward the Realm of Dragons...'}
+41	40		301				AniZhuanchangBegin			{3: '...'}
+42	41		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory248.png'}
+43	42		201				AniZhuanchangEnd			{1: '1', 2: '500495'}
+44	502		402							{1: '208'}
+45	503		401							{1: '1', 2: '209'}
+46	43		301			DialogEnable				"{1: '1', 2: 'Teddy', 3: ""What? He's going to explore that ruin all by himself?"", 4: '1'}"
+47	44		301							"{2: 'Teddy', 3: ""Is this some kind of joke? If he's so eager to kill himself, he might as well find a nice rooftop spot and take a jump."", 4: '1'}"
+48	45		301							{3: 'Upon arriving in Rivervale, your group reunites with Teddy and Karenina, who have been stationed in this location.'}
+49	46		201							{1: '1', 2: '500569'}
+50	47		301							"{1: '1', 2: 'Lee', 3: ""That's the conclusion we've come to based on our observations so far. It seems that he really doesn't intend to seek any companions."", 4: '1'}"
+51	48		201							{1: '1', 2: '500495'}
+52	49		301							"{1: '1', 2: 'Teddy', 3: ""Ha? But he can just hire some people, can't he?"", 4: '1'}"
+53	50		201							{1: '1', 2: '500032'}
+54	51		301							{1: '1', 2: 'Lucia', 3: 'A hero-level ruin adventure... Only desperate outlaws would probably be willing to take payment for that kind of job.', 4: '1'}
+55	52		201							{1: '1', 2: '500495'}
+56	53		301							{1: '1', 2: 'Teddy', 3: 'Tsk... What a pain in the ass.', 4: '1'}
+57	54		301							"{2: 'Teddy', 3: ""Captain and I have gathered some information about that place. Despite its vertical structure, it's not any less perilous than those confusing mazes. On the very first underground floor, you'll encounter skeleton dragons composed of remnants."", 4: '1'}"
+58	55		301							{2: 'Teddy', 3: 'That creature can easily beat a veteran adventurer, and there are tons of them lurking in the depths of that ruin.', 4: '1'}
+59	56		202							{1: '1', 6: '1'}
+60	57		301							{3: 'After an exchange of intel with Teddy, a collective frown settles upon the faces of everyone present.'}
+61	58		301							{3: 'How can you help the hero overcome this challenge without revealing your identities?'}
+62	59		201							{1: '1', 2: '500569'}
+63	60		301							"{1: '1', 2: 'Lee', 3: ""Seems like we're left with no other option but to move first and deal with the threats inside the ruin."", 4: '1'}"
+64	61		201							{1: '1', 2: '1081001'}
+65	62		301							{1: '1', 2: 'Kamui', 3: 'But Lee, I would expect a good amount of foes there. Based on my gaming experience, this is probably one of those instances packed with monsters.', 4: '1'}
+66	63		301							"{2: 'Kamui', 3: ""Given Gray Raven's limited power, it's gonna be a real challenge for us to clear out all those monsters in a short period."", 4: '1'}"
+67	64		201							{1: '1', 2: '500309'}
+68	65		301							"{1: '1', 2: 'Chrome', 3: ""After all, Gray Raven was the only squad involved in the final battle last time and acquired the ultimate rewards. Other people don't have character stats as powerful as yours."", 4: '1'}"
+69	66		302							"{2: ""And we are in this child form due to an item's side effect..."", 3: '67'}"
+70	67		201							{1: '1', 2: '500495'}
+71	68		301							{1: '1', 2: 'Teddy', 3: '...', 4: '1'}
+72	69		301							"{2: 'Teddy', 3: ""Don't be so desperate yet. Captain and I came up with a plan, but it's only theoretically feasible for now."", 4: '1'}"
+73	70		302							{2: 'Speaking of your captain...', 3: '71'}
+74	71		302							"{2: ""Where's Karenina?"", 3: '72'}"
+75	72		301				AniZhuanchangBegin			{3: 'Rather than answering your question directly, Teddy proceeds to push open a wooden door and leads you down into a basement.'}
+76	73		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory532.jpg'}
+77	74		202				AniZhuanchangEnd			{1: '1', 6: '1'}
+78	75		301			DialogEnable				{3: 'Before you is a spacious area filled with piles of small cylindrical objects that permeate the air with the distinct scent of explosives.'}
+79	76		201							{1: '1', 2: '500500'}
+80	77		301							{1: '1', 3: 'Karenina is standing beside a workbench, her hands moving with remarkable speed, deftly crafting multiple copies of the same item.', 4: '1'}
+81	78		302							{2: 'Karenina, why are you hiding here?', 3: '79'}
+82	79		301							{2: 'Karenina', 3: '...', 4: '1'}
+83	80		302							{2: 'Karenina?', 3: '81'}
+84	81		301							{2: 'Karenina', 3: '...', 4: '1'}
+85	82		301							{3: 'As if having not heard you, Karenina seems engrossed in her task.'}
+86	83		203							{1: '1', 2: '0.15s', 3: '400'}
+87	84		201							{1: '2', 2: '500495', 4: '-400'}
+88	85		301							"{1: '1', 2: 'Teddy', 3: ""Don't bother. Karenina is not here—the real Karenina is not here, so to speak."", 4: '2'}"
+89	86		301							"{3: ""Teddy approaches Karenina and pokes her face with a finger. In response, Karenina's body tilts slightly to the side but swiftly bounces back to her original position like a tumbler toy, all the while maintaining her focus on the item crafting.""}"
+90	87		301							{2: 'Teddy', 3: 'Captain got tired of constantly crafting items, so I wrote her a mod that lets her in-game character craft items automatically.', 4: '2'}
+91	88		301							"{2: 'Teddy', 3: ""She's probably occupied with something else right now, not actively controlling her character."", 4: '2'}"
+92	89		301							{3: 'Asserting her point further, Teddy pokes Karenina a few more times.'}
+93	504		402							{1: '209'}
+94	90		301							"{3: ""However, Karenina's high-speed production does not last long.""}"
+95	91		202							{1: '1'}
+96	92		301							{3: 'Her in-game character begins to exhibit transparency, fading away into the air after completing one final item.'}
+97	505		401							{1: '1', 2: '205'}
+98	93		301							"{3: ""[Player Karenina's character has been banned due to the use of third-party software.]""}"
+99	94		203							{1: '2', 2: '0.15s', 3: '0'}
+100	95		204							{1: '2', 2: '4'}
+101	96		301							{2: 'Teddy', 3: '...', 4: '2'}
+102	97		301							{2: 'Teddy', 3: 'I forgot that Ayla has been watching over you...', 4: '2'}
+103	98		201							{1: '2', 2: '500576'}
+104	99		301							"{1: '1', 2: 'Ayla', 3: ""Yes, Teddy. Although there's no competition among players this time, the use of third-party software is still prohibited."", 4: '2'}"
+105	100		201							{1: '2', 2: '500495'}
+106	101		301							{1: '1', 2: 'Teddy', 3: 'Even not for auto-crafting...?', 4: '2'}
+107	102		201							{1: '2', 2: '500576'}
+108	103		301							{1: '1', 2: 'Ayla', 3: 'No. We are making this into a movie, after all. How should I explain Karenina looking like a tumbler toy?', 4: '2'}
+109	104		201							{1: '2', 2: '500495'}
+110	105		301							{1: '1', 2: 'Teddy', 3: 'Tch...', 4: '2'}
+111	170		202							{1: '2', 6: '1'}
+112	106		301							{2: '???', 3: 'Teddy!'}
+113	107		201							{1: '1', 2: '500500'}
+114	108		301							{1: '1', 3: 'The familiar voice finally sounds as Karenina pushes open the basement door and appears before everyone.', 4: '1'}
+115	109		201							{1: '1', 2: '500495', 3: '13'}
+116	110		301							{1: '1', 2: 'Teddy', 3: 'Pfft...', 4: '1'}
+117	111		201							{1: '1', 2: '500500'}
+118	112		301							"{1: '1', 2: '???', 3: ""What's so fun?!"", 4: '1'}"
+119	113		201							{1: '1', 2: '500495', 3: '1'}
+120	114		301							{1: '1', 2: 'Teddy', 3: 'What is that character name of yours?', 4: '1'}
+121	115		201							{1: '1', 2: '500494', 3: '5'}
+122	116		301							"{1: '1', 2: 'Kareninaasd', 3: ""What do you think the reason is? I couldn't use the same name again, so I just mashed some random letters on the keyboard!"", 4: '1'}"
+123	117		201							{1: '1', 2: '500495', 3: '1'}
+124	118		301							{1: '1', 2: 'Teddy', 3: 'Alright, alright, Captain Kareninaasd.', 4: '1'}
+125	119		201							{1: '1', 2: '500494', 3: '4'}
+126	120		301							"{1: '1', 2: 'Kareninaasd', 3: ""Enough with the distraction. Why is my character banned? Didn't you say that using the mod would be fine?"", 4: '1'}"
+127	121		201							{1: '1', 2: '500495'}
+128	122		301							"{1: '1', 2: 'Teddy', 3: ""A little accident happened. Commandant's group brought Ayla along."", 4: '1'}"
+129	123		301							"{2: 'Teddy', 3: ""But hey, nice new character you've got there."", 4: '1'}"
+130	124		201							{1: '1', 2: '500494', 3: '5'}
+131	125		301							"{1: '1', 2: 'Kareninaasd', 3: ""Nice your ass! Now I gotta level it up all over again. What about our plan... Huh? Commandant, and everyone else, you're here too?"", 4: '1'}"
+132	126		302							{2: 'Yep, Kareninaasd.', 3: '127'}
+133	127		301							{2: 'Kareninaasd', 3: 'Ugh—TEDDY!', 4: '1'}
+134	128		201							{1: '1', 2: '500495', 3: '1'}
+135	129		301							"{1: '1', 2: 'Teddy', 3: ""Easy, it's just leveling up a new character. I can protect you for the rest of the game until your character is all set."", 4: '1'}"
+136	130		301							{2: 'Teddy', 3: 'Captain Kareninaasd.', 4: '1'}
+137	131		201							{1: '1', 2: '500494', 3: '4'}
+138	132		301							"{1: '1', 2: 'Kareninaasd', 3: ""It's not fair! Ayla, Teddy is the one encouraging me to use the mod. She should be banned too!"", 4: '1'}"
+139	133		201							{1: '1', 2: '500495', 3: '1'}
+140	134		301							"{1: '1', 2: 'Teddy', 3: ""I didn't use any mod on my character. The system has no reason to ban me."", 4: '1'}"
+141	135		301							"{2: 'Teddy', 3: ""But I guess I better come up with a plan to boost your character level. Let's..."", 4: '1'}"
+142	136		301							{3: 'As Teddy outlines her plan, she meticulously counts all the crafted items, oblivious to the fact that her in-game character is gradually becoming transparent.'}
+143	137		301							{2: 'Teddy', 3: 'A total of 999. This should be enough. We can stop crafting it for now.', 4: '1'}
+144	138		301							{2: 'Teddy', 3: 'Hm? Guys, say something...', 4: '1'}
+145	139		202							{1: '1'}
+146	140		301							{3: 'Before Teddy can finish her words, her in-game character reaches its limit and vanishes into thin air.'}
+147	141		301							"{3: ""[Player Teddy's character has been banned due to a violation of game rules.]""}"
+148	142		301							{2: 'All', 3: '...'}
+149	143		201							{1: '1', 2: '500494', 3: '13'}
+150	144		301							{1: '1', 2: 'Kareninaasd', 3: 'Well, if my guess is correct...', 4: '1'}
+151	145		301							{3: 'Karenina shifts her gaze toward the basement door, and as she anticipated, another Teddy emerges there.'}
+152	146		201							{1: '1', 2: '500495'}
+153	147		301							{1: '1', 2: 'Teddy123', 3: '...', 4: '1'}
+154	148		201							{1: '1', 2: '500494', 3: '1'}
+155	149		301							{1: '1', 2: 'Kareninaasd', 3: 'Well, hello, Teddy123. You sure came fast.', 4: '1'}
+156	150		201							{1: '1', 2: '500495'}
+157	151		301							"{1: '1', 2: 'Teddy123', 3: ""There's another thing I forgot—why in-game supervision even exists."", 4: '1'}"
+158	152		201							{1: '1', 2: '500576'}
+159	153		301							"{1: '1', 2: 'Ayla', 3: ""Haha, I'm glad you get it. Remember to ask first if you want to use a mod, alright?"", 4: '1'}"
+160	154		302							"{2: ""Now we have two more characters who can't fight..."", 3: '155'}"
+161	155		201							{1: '1', 2: '500495'}
+162	156		301							"{1: '1', 2: 'Teddy123', 3: ""Don't worry, Commandant. Our plan doesn't involve any fighting."", 4: '1'}"
+163	157		301							"{3: ""Teddy picks up one of the scattered items and showcases it under the light. It's only at that moment you realize it's an explosive with a visible fuse.""}"
+164	158		301							{2: 'Teddy123', 3: 'By the way, this basement is filled with this kind of stuff.', 4: '1'}
+165	159		301				AniZhuanchangBegin			{3: '...'}
+166	160		202			DialogDisable				{1: '1', 6: '1'}
+167	161		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory295.png'}
+168	162		401							{1: '2', 2: '2647'}
+169	163		301			DialogEnable				{3: 'BOOM!!'}
+170	164		301							{3: 'Later that night, thunderous explosions reverberate throughout the entire city.'}
+171	165		301							{3: 'As reported by the scouts who ventured for investigation, that treacherous abyss-like ruin has been reduced to a scorched land, bearing the aftermath of the relentless explosions.'}
+172	166		301							{3: 'Afterward, Ayla deeply regrets her choice to design the ruin as a simple vertical structure.'}
+173	167		301							{3: 'Her intention was to create an adventure experience in an abyss, but she completely overlooked the modern knowledge the Engineering Force has.'}
+174	168		301		1		AniZhuanchangBegin			{3: 'And for them, the ruin is simply a straightforward graveyard for monsters, making it a prime target for explosions.'}

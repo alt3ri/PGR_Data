@@ -1,0 +1,420 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	10000		102							{1: 'Fake Ascension', 2: 'Eden Fallen', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+2	10001		502							{1: 'ThemeEnable'}
+3	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory264.png'}
+4	6524		401							{1: '1', 2: '209'}
+5	2		201							{1: '1', 2: '500004'}
+6	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+7	4		301			DialogEnable				{1: '1', 2: 'Asimov', 3: 'The situation remains urgent. After confirming that there is no abnormality with the last section here, immediately proceed to the next area.', 4: '1'}
+8	5		301				DialogDisable			{3: 'Your surroundings begin to distort immediately after departing the redundant block.'}
+9	5000		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+10	5001		202							{1: '1', 6: '1'}
+11	6		501						1500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+12	7		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+13	8		504							{1: '1'}
+14	9		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+15	10		301			DialogEnable				"{3: ""Asimov's voice from the comms echoes inside your head.""}"
+16	11		301							"{2: 'Asimov', 3: ""【kuroname】, do you copy? I know matrix immersions would create sensual distortions, but there's no time to waste!""}"
+17	12		301							"{2: 'Lucia', 3: ""C-C-Commandant... W-w-what's wrong...?""}"
+18	13		301							{2: 'Lee', 3: 'Sensual... d-distort... S-stabilize the...c-connection...'}
+19	14		301				AniZhuanchangBegin			{3: '...'}
+20	15		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory264.png'}
+21	16		301			AniZhuanchangEnd				{3: 'The surroundings become gray and fuzzy as you lose control of your body...'}
+22	17		301				AniZhuanchangBegin			{3: 'In this strange and frightening experience, even the voices from your team members around you become distant...'}
+23	18		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+24	6000		504							{1: '0'}
+25	19		401							{1: '1', 2: '208'}
+26	20		301			AniZhuanchangEnd				{3: 'A few hours ago...'}
+27	21		301							"{3: 'Aboard Babylonia\'s deep space colonial ship, ""the last Eden of humankind.""'}"
+28	22		301							{3: 'After finishing their work, the crews walk around the crowded cafes and bars located in the leisure module.'}
+29	23		301							{3: 'A transport craft carrying Task Force members and support mechanoids leaves the port for the surface, while another with minerals and roughly processed industrial goods returns from the conservation area on the ground.'}
+30	24		301							{3: 'In the distance, members of the logistics team stand at attention to make way for the passing teacher and children.'}
+31	25		301							{3: 'The teacher salutes the logistics team after all the children have gone through.'}
+32	26		301							{2: 'Teacher', 3: 'Thank you for your service.'}
+33	27		301							{3: 'The logistics leader salutes in return.'}
+34	28		201							{1: '1', 2: '500005'}
+35	29		301							{1: '1', 2: 'Logistics Officer', 3: 'Thank you everyone for your support!', 4: '1'}
+36	30		202							{1: '1', 6: '1'}
+37	31		301				AniZhuanchangBegin			{3: 'The logistics officers and children go their separate ways and proceed to their destinations.'}
+38	32		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory260.png'}
+39	33		301			AniZhuanchangEnd				{3: 'Eden 32-MO Module, Dominik Memorial Park.'}
+40	34		201							{1: '1', 2: '500114'}
+41	35		301							"{1: '1', 2: 'Tour Guide', 3: ""Alright, children. We've arrived at Dominik Memorial Park on the top level of the core axis."", 4: '1'}"
+42	36		301							"{2: 'Tour Guide', 3: ""For information on Dominik's achievements, please turn to Part B of Chapter Two in your digital guides..."", 4: '1'}"
+43	37		301							{2: 'Children', 3: 'Ok—'}
+44	38		301							"{2: 'Tour Guide', 3: 'As we all know, the ""New Earth Almanac"" was issued in the year 2130 of the New Earth Calendar...', 4: '1'}"
+45	39		301				AniZhuanchangBegin			"{3: ""The children listen carefully to the tour guide's explanation, occasionally gasping in awe.""}"
+46	40		202							{1: '1', 6: '1'}
+47	41		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory266.png'}
+48	42		301			AniZhuanchangEnd				{2: 'Worker A', 3: 'Did you hear the news? Is the leadership—om nom—haffing an—nom nom—emergeshy meeching today?'}
+49	43		301							"{2: 'Worker B', 3: ""It's just another regular meeting. The President's not even there. And quit talking with your mouth full and finish your breakfast, will ya?""}"
+50	44		301							"{2: 'Worker A', 3: ""Gulp... I heard the engineering force had an urgent assembly this morning. Think everything's alright?""}"
+51	45		301							"{2: 'Worker B', 3: ""We got the Parliament and Gestalt in the sky, and the Task Force on the ground. What's there to worry about? Let's just mind our own business.""}"
+52	46		301							"{2: 'Worker A', 3: ""Guess you're right... ****, only six minutes left. Hope we can make it!""}"
+53	47		301							"{2: 'Worker B', 3: ""Don't come cryin' to me lookin' for meds if you get heartburns from eating on the road.""}"
+54	48		301				AniZhuanchangBegin			{3: 'Slightly flustered, the workers exit the stairwell and hurry toward Parliament.'}
+55	49		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg'}
+56	50		301			AniZhuanchangEnd				"{2: 'Task Force Member', 3: ""What's the schedule for today?""}"
+57	51		301							{2: 'Controller', 3: 'The briefing will begin soon. Please proceed to briefing room 302-B...'}
+58	52		301							"{2: 'Intelligence Force Member', 3: ""Today's routine HUMIT intel summary, priority: intermediate.""}"
+59	53		301							{2: 'Controller', 3: 'Understood. Go over there and fill out the report...'}
+60	54		401							{1: '1', 2: '203'}
+61	55		401							{1: '2', 2: '1501'}
+62	56		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+63	57		301				AniZhuanchangBegin			{3: '—Suddenly, an untimely alarm disrupts the peaceful moment.'}
+64	58		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+65	59		401							{1: '2', 2: '1501'}
+66	60		301			AniZhuanchangEnd				"{2: 'Researcher', 3: ""...What's happening?""}"
+67	61		301							{2: 'Broadcast', 3: 'All passengers in the Eden 16-B module, please evacuate this module within ten minutes.'}
+68	62		301							{2: 'Broadcast', 3: 'Emergency thermal ventilation through the 16-B-C1 and C2 dispersal systems will be initiated.'}
+69	63		301							{2: 'Broadcast', 3: 'This is not a drill. Repeat, this is not a drill.'}
+70	64		301							{2: 'Soldier', 3: 'Please leave the premises immediately. Follow orders from the Military Constructs and take refuge.'}
+71	65		301							{2: 'Researcher', 3: 'Refuge? W-wait...'}
+72	66		301							{3: 'Seeing the researcher not reacting immediately, the two soldiers grab the researcher and move without so much as an explanation.'}
+73	67		301							{2: 'Soldier', 3: 'Sorry, please cooperate. We have no time to waste.'}
+74	68		301							"{2: 'Researcher', 3: ""No, I... I'm waiting for someone here...""}"
+75	69		301							"{2: 'Soldier', 3: ""You can rest assured that no one's coming here now.""}"
+76	70		301				AniZhuanchangBegin			{2: 'Researcher', 3: 'Hey! You—'}
+77	71		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory260.png'}
+78	72		401							{1: '2', 2: '1501'}
+79	73		201							{1: '1', 2: '500114'}
+80	74		301			AniZhuanchangEnd				"{1: '1', 2: 'Tour Guide', 3: ""What's going on?"", 4: '1'}"
+81	75		301							"{2: 'Child A', 3: ""Look! The signs and banners! They're all red!""}"
+82	76		301							"{2: 'Child B', 3: ""I've never seen this before... My dad told me that if you see them turn red, something bad is about to happen!""}"
+83	77		301							{2: 'Soldier', 3: 'Please leave the premises immediately. Follow orders from the Military Constructs and take refuge.'}
+84	78		301							{2: 'Tour Guide', 3: 'What? You... I...', 4: '1'}
+85	79		301							"{2: 'Soldier', 3: ""There's no time. We must proceed to the shelter!""}"
+86	80		301							{2: 'Tour Guide', 3: 'Eh... O-of course.', 4: '1'}
+87	81		301				AniZhuanchangBegin			{3: 'Soldiers line up to escort the children and the tour guide to the nearby shelter.'}
+88	82		202							{1: '1', 6: '1'}
+89	83		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg'}
+90	84		401							{1: '2', 2: '1501'}
+91	85		301			AniZhuanchangEnd				{3: 'The bridge area is already in chaos five minutes after the alarm.'}
+92	86		301							{3: 'Almost all terminals are flashing warnings in red. Up above, the altitude indicator continues to plummet.'}
+93	87		401							{1: '2', 2: '1501'}
+94	88		301							{2: 'System Notice', 3: 'W A R N I N G. Power reducing in Fusion Units 1 to 16.'}
+95	89		401							{1: '2', 2: '1501'}
+96	90		301							{2: 'System Notice', 3: 'W A R N I N G. Orbital height fluctuation: minus 479 meters.'}
+97	91		301							{2: 'System Notice', 3: 'W A R N I N G. Orbital height fluctuation: minus 523 meters.'}
+98	92		301							{2: 'System Notice', 3: 'W A R N I N G. Orbital height fluctuation: minus 599 meters.'}
+99	93		401							{1: '2', 2: '1501'}
+100	94		301							{2: 'Chief of Bridge Officers', 3: 'Hey! Controller! Our altitude is dropping! What the hell is going on?!'}
+101	95		301							"{2: 'Controller', 3: ""Hold on, I'm checking... Dammit, all the query requests sent to Gestalt have timed out!""}"
+102	96		301							"{2: 'Technician', 3: ""I'm on it! Transfer virtual jumper... ****! Connection rejected? That's never happened before...""}"
+103	97		301							{2: 'Technician', 3: 'Right... I-is Chief Technician Asimov here?'}
+104	98		301							{2: 'Chief of Bridge Officers', 3: '...Asimov was just called into a meeting.'}
+105	99		301							"{2: 'Technician', 3: ""In that case, I'll inform the Engineering Force, the Support Force, and the personnel on duty in the engine room first.""}"
+106	100		301							"{2: 'Controller', 3: ""Then I'll find someone to go to the conference room. Now is not the time to worry about interrupting a meeting.""}"
+107	101		301							{3: 'But then, the controller notices a warning flashing on the nearby terminal, requesting immediate attention. The operator that should have been attending to it, however, is missing.'}
+108	102		301							{2: 'Controller', 3: 'Dammit... All hell has broken loose. Was he called to handle some other issue?'}
+109	103		301							{2: 'Controller', 3: 'The controller tries to operate the other terminal himself, but a more urgent situation suddenly appears on his own.'}
+110	104		301							{3: 'All he can do is operate the one in front of him and shout—'}
+111	105		301							{2: 'Controller', 3: 'I need a hand here—'}
+112	106		201							{1: '1', 2: '500026'}
+113	107		301							{1: '1', 2: 'Lee', 3: 'Here. Give me access.', 4: '1'}
+114	108		301							{3: 'Lee quickly walks to the terminal and presses a button to activate it, expanding the interface.'}
+115	109		301							{2: 'Lee', 3: 'Gravity engines operating at 22.7%. Babylonia is falling.', 4: '1'}
+116	110		301							"{2: 'Lee', 3: ""You have to deploy the Engineering and Support Forces to all energy sectors immediately. Where's Celica?"", 4: '1'}"
+117	111		202							{1: '1', 6: '1'}
+118	112		301							{2: 'Controller', 3: 'Ms. Celica and President Hassen are in the conference room.'}
+119	113		301							{2: 'Controller', 3: '...Why are you here?'}
+120	114		201							{1: '2', 2: '500166', 4: '600'}
+121	115		201							{1: '3', 2: '1031001', 4: '-600'}
+122	116		201							{1: '1', 2: '500026'}
+123	117		301							{1: '1', 3: 'The controller looks at Lee, and behind him stands Lucia, Liv, and...'}
+124	118		301							{2: 'Controller', 3: 'Commandant 【kuroname】, you and the Gray Ravens should be...'}
+125	119		301							"{2: 'Lee', 3: ""We've just finished our mission and returned."", 4: '1'}"
+126	120		301							{2: 'Lucia', 3: 'We wanted to report to Ms. Celica and President Hassen on the bridge first, but...', 4: '2'}
+127	121		301							{2: 'Military Construct', 3: 'Are you 【kuroname】 and the Gray Ravens?'}
+128	122		302							{2: 'Yes.', 3: '123'}
+129	123		301							{2: 'Military Construct', 3: 'Come with me. President Hassen wants to see you.'}
+130	124		302							{2: 'But...', 3: '125'}
+131	125		301							{2: 'Military Construct', 3: 'Save it for later.'}
+132	126		302							{2: '...You got it.', 3: '127'}
+133	127		301							"{2: 'Lee', 3: ""Then let's go. Remember to contact the Engineering Force and the Support Force like I told you."", 4: '1'}"
+134	128		301				AniZhuanchangBegin			{2: 'Controller', 3: 'O-of course.'}
+135	129		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+136	130		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+137	131		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory82.jpg'}
+138	132		201							{1: '1', 2: '1111001', 3: '5', 4: '-400'}
+139	133		201							{1: '2', 2: '500167', 3: '5', 4: '400'}
+140	134		301			AniZhuanchangEnd				"{1: '1', 2: 'Bridget', 3: ""...****! What's wrong with the engines? Why have they all stalled?!"", 4: '2'}"
+141	135		301							"{2: 'Bridget', 3: ""And... Gravity engines operating at 19.6%! We're still falling!"", 4: '2'}"
+142	136		301							"{2: 'Karenina', 3: ""I was going to ask you! We've fallen almost 1,000 meters while we talk!"", 4: '1'}"
+143	137		301							"{2: 'Bridget', 3: ""Forget it! We'd be fine as long as the power is restored, but the exhaust valve terminal keeps returning error messages!"", 4: '2'}"
+144	138		301							"{2: 'Karenina', 3: ""Bridget! Tell your people to turn off the automatic controls of all the exhaust valves! If more than 5% of them are still blocked by the ****ing safety regulations, we're dead meat!"", 4: '1'}"
+145	139		301							"{2: 'Bridget', 3: ""What do you think I'm doing! Team 4 and Team 8, are you in position?!"", 4: '2'}"
+146	140		301			RImgBg1Shake				{2: 'Engineer Construct', 3: 'Boss! The secondary unit said that the R3 pipeline is also busted!'}
+147	141		301							"{2: 'Bridget', 3: ""Dammit... If this keeps up, there's only one outcome."", 4: '2'}"
+148	142		204							{1: '1'}
+149	143		301							{2: 'Karenina', 3: 'What do you mean?', 4: '1'}
+150	144		301							"{2: 'Bridget', 3: ""If we can't restore the engines, we 'll crash into the ground."", 4: '2'}"
+151	145		204							{1: '1', 2: '5'}
+152	146		301							"{2: 'Karenina', 3: ""...****! Babylonia will be blown to pieces long before we hit the ground! If the enemy has some goddamn railguns or anti-aircraft guns pointing at us once we're close enough—"", 4: '1'}"
+153	147		301							{2: 'Karenina', 3: 'Hurry up with the exhaust system restoration, or the core and the ejector will be gone!', 4: '1'}
+154	148		301							{2: 'Engineer Construct', 3: 'The staff from C1 and C2 dispersal systems have evacuated. Initiating exhaust ventilation! But...'}
+155	149		301							{2: 'Karenina', 3: 'But what?!', 4: '1'}
+156	150		301							"{2: 'Engineer Construct', 3: ""The module's air conditioning system hasn't been switched to circulation mode, so the exhaust...""}"
+157	151		301							"{2: 'Karenina', 3: ""The exhaust isn't ventilating! Got it! I'll take care of it myself!"", 4: '1'}"
+158	152		301							{2: 'Bridget', 3: 'Really? But the exhaust outside is too hot!', 4: '2'}
+159	153		301				AniZhuanchangBegin			"{2: 'Karenina', 3: ""I'm a Construct! I'll be fine! Just disassemble me, hang me up, and clean my parts if things go south!"", 4: '1'}"
+160	154		202							{1: '1', 2: '2', 6: '1'}
+161	155		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+162	156		401							{1: '2', 2: '1501'}
+163	157		401							{1: '1', 2: '202'}
+164	158		301			AniZhuanchangEnd				{3: 'Preparation Room.'}
+165	159		302							{2: 'Why are we brought here?', 3: '160'}
+166	160		302							"{2: ""What's going on?"", 3: '161'}"
+167	161		201							{1: '1', 2: '500166', 4: '-400'}
+168	162		201							{1: '2', 2: '500026', 4: '400'}
+169	163		301							{1: '1', 2: 'Lucia', 3: 'Did something go wrong with the mission?', 4: '1'}
+170	164		301							{2: 'Lee', 3: 'Even so, it would have been discussed during the mission review.', 4: '2'}
+171	165		301							"{2: 'Lee', 3: ""Not to mention, we've received notification that Babylonia is falling. It doesn't appear to be a drill."", 4: '2'}"
+172	166		301							"{2: 'Lucia', 3: ""Babylonia is falling, and we're told to sit here and wait?"", 4: '1'}"
+173	167		301							"{2: 'Lee', 3: ""It's an order from President Hassen. I'm sure he has his reasons."", 4: '2'}"
+174	168		302				AniZhuanchangBegin			"{2: ""Alright, let's wait then."", 3: '169'}"
+175	169		202							{1: '1', 2: '2', 6: '1'}
+176	170		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory40.jpg'}
+177	171		401							{1: '1', 2: '22'}
+178	172		301			AniZhuanchangEnd				{3: 'Earlier...'}
+179	173		301							{3: 'With no chair in his cabin, Hassen sat upright on his bed.'}
+180	174		301							{3: 'Having lived a modest life for so many years, Hassen remained remarkably stalwart even as the President.'}
+181	175		301							{3: 'He would wake up, shower, and go back and forth between his chamber and the bridge. With his minimalist lifestyle, no one cared if he were to leave his door open. Not even rats would visit such a plain chamber.'}
+182	176		301							{3: 'But this time, having just woken up, he had no intention to head to the bridge immediately.'}
+183	177		201							{1: '1', 2: '500011'}
+184	178		301							{1: '1', 2: 'Hassen', 3: 'That nightmare again...', 4: '1'}
+185	179		301							{2: 'Hassen', 3: 'How many times has it been?', 4: '1'}
+186	180		301							"{2: 'Hassen', 3: 'First, it was the ""Downtown Tyrant"", then the City 104, then...', 4: '1'}"
+187	181		301							"{2: 'Hassen', 3: ""Hmph... I'm gettin' old. My memory isn't quite like what it used to be. I can't remember much of anything anymore."", 4: '1'}"
+188	182		301							{2: 'Hassen', 3: 'Paz... Jaskier... Ledger... Grey... David... Wu... Aoki...', 4: '1'}
+189	183		301							"{2: 'Hassen', 3: ""All of the people that I've met along the way... Are they all just faceless names now...?"", 4: '1'}"
+190	184		301							{3: 'Hassen quietly reached for his left eye and touched the eye patch made of cloth and metal. The doctors warned him not to open it except during routine check-ups at the infirmary.'}
+191	185		301							{3: 'Yet he still reached for it, knowing that only a hole remained.'}
+192	186		301							{3: 'And when his finger touched the cloth, he felt a sharp twinge of pain—something he wanted to feel right now.'}
+193	187		301							{3: 'Phantom pain surrounded the empty eye socket, gradually spreading down his neck to the other wounds on his body.'}
+194	188		301				AniZhuanchangBegin			{3: 'Every wound the pain flowed through seemed to awaken something in his memories. Something that would otherwise fade away with age.'}
+195	189		401							{1: '2', 2: '1516'}
+196	190		401							{1: '1', 2: '202'}
+197	191		301			AniZhuanchangEnd				{2: '???', 3: 'President.'}
+198	192		301							{2: 'Hassen', 3: '...', 4: '1'}
+199	193		203							{1: '1', 2: '0.25', 3: '-400'}
+200	194		201							{1: '2', 2: '500001', 4: '400'}
+201	195		301							{1: '1', 2: 'Celica', 3: 'President?', 4: '2'}
+202	196		301							{2: 'Hassen', 3: '...Is it time?', 4: '1'}
+203	197		301							{2: 'Celica', 3: 'Everyone is waiting for you.', 4: '2'}
+204	198		301							"{2: 'Hassen', 3: ""I'll be there momentarily."", 4: '1'}"
+205	199		301				AniZhuanchangBegin			{2: 'Hassen', 3: 'If the Gray Ravens return... Have them wait in the preparation room.', 4: '1'}
+206	200		202							{1: '1', 2: '2', 6: '1'}
+207	201		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+208	202		301			AniZhuanchangEnd				{3: 'The Babylonian conference room was bustling with a crowd of people.'}
+209	203		401							{1: '1', 2: '1509'}
+210	204		301							{3: 'As the automatic doors opened, Hassen and Celica entered the conference room one after another, and the commotion of the crowd subsided in an instant.'}
+211	205		301							{3: 'Everyone had their eyes on Hassen, including Asimov and Nikola sitting off to the side. Hassen took his seat under their gazes.'}
+212	206		201							{1: '1', 2: '500011', 4: '-400'}
+213	207		201							{1: '2', 2: '500001', 4: '400'}
+214	208		301							"{1: '1', 2: 'Hassen', 3: ""Celica, let's begin."", 4: '1'}"
+215	209		301							{2: 'Celica', 3: 'Yes, President. Everyone, this is the situation we are facing now...', 4: '2'}
+216	210		301							{3: 'Celica said as she opened a series of high-definition remote sensing imagery on the holo-screen.'}
+217	211		202							{1: '1', 2: '2', 6: '1'}
+218	212		301							{3: 'The first area to bear the brunt of the attack was the northern seaside, which has just begun to thaw. On the coastline, the destroyed ports and beyond show signs of damage, but the settlements are largely intact.'}
+219	213		201							{1: '1', 2: '500001', 3: '4'}
+220	214		301							{1: '1', 2: 'Celica', 3: 'Prior to that, we experienced a wide range of data interference and jamming around New Murmansk.', 4: '1'}
+221	215		301							{2: 'Celica', 3: 'The jamming method was very similar to what we experienced at Venus Splash Park. We speculated that it was the work of an Ascendant, which was later confirmed by Team Ouroboros.', 4: '1'}
+222	216		301							{2: 'Celica', 3: 'Soon after that, the Forest Guard in New Sophiasburgh and the Forsaken stationed nearby began to mobilize towards New Murmansk.', 4: '1'}
+223	217		201							{1: '1', 2: '500012'}
+224	218		301							{1: '1', 2: 'Nikola', 3: 'But subsequent surveillance records from Team Scarab and Team Caribou showed that both the Forest Guard and the Forsaken were impeded about 30 kilometers outside of New Murmansk.', 4: '1'}
+225	219		201							{1: '1', 2: '500001', 3: '4'}
+226	220		301							{1: '1', 2: 'Celica', 3: '...Correct. They were stopped for three hours until the Ascendants retreated, letting the Forest Guard and Forsaken pass.', 4: '1'}
+227	221		301							{2: 'Celica', 3: 'We are still investigating the motive behind the Ascendants.', 4: '1'}
+228	222		301							{2: 'Celica', 3: 'As for reports on casualties... I know the data might seem ludicrous, but please believe the first-hand reports from our Support Force.', 4: '1'}
+229	223		301							{2: 'Celica', 3: 'The old Nefheim Institute sustained heavy damage, so almost all reports overestimated the casualty counts. But after over two weeks of search and rescue, we have found that the casualty is far below previous estimates.', 4: '1'}
+230	224		201							{1: '1', 2: '500011', 4: '-400'}
+231	225		201							{1: '2', 2: '500012', 4: '400'}
+232	226		301							{1: '1', 2: 'Nikola', 3: '…Hmph, what was that? Were they pitying us?', 4: '2'}
+233	227		301							"{2: 'Hassen', 3: ""What do you mean? Maybe it's just... Some people are just unreasonable. Whatever the reason... I'll take it as a sign of luck."", 4: '1'}"
+234	228		202							{1: '1', 2: '2', 6: '1'}
+235	229		201							{1: '1', 2: '500004'}
+236	230		301							{1: '1', 2: 'Asimov', 3: 'President.', 4: '1'}
+237	231		202							{1: '1', 6: '1'}
+238	232		201							{1: '1', 2: '500011', 4: '-400', 7: '1'}
+239	233		201							{1: '2', 2: '500012', 4: '400', 7: '1'}
+240	234		301							{1: '1', 2: 'Nikola', 3: 'I believe you are here just to observe and offer consultation.', 4: '2'}
+241	235		301							"{2: 'Hassen', 3: ""That's fine, Asimov. Say what it is you have to say."", 4: '1'}"
+242	236		202							{1: '1', 2: '2', 6: '1'}
+243	237		201							{1: '1', 2: '500004'}
+244	238		301							{1: '1', 2: 'Asimov', 3: 'This is more of a threat than it is luck. Based on the series of occurrences at New Murmansk—', 4: '1'}
+245	239		301							{2: 'Asimov', 3: 'I believe the Ascendants have shown significant strength, and the restrain to match it.', 4: '1'}
+246	240		301							{2: 'Asimov', 3: 'Unlike conventional artillery, they were capable of precision attacks. Otherwise, at least half of the people in New Murmansk would have died.', 4: '1'}
+247	241		301							"{2: 'Asimov', 3: ""Whether it was a demonstration of strength or simply because there were hints of humanity within them—I couldn't care less."", 4: '1'}"
+248	242		301							{2: 'Asimov', 3: 'What I care about the most is how will we view this threat?', 4: '1'}
+249	243		301							{2: 'Asimov', 3: 'Tifa, Metropolis, New Murmansk... After what happened in Metropolis, it is highly likely that they have control over Huaxu.', 4: '1'}
+250	244		301							"{2: 'Asimov', 3: ""President, they aren't just a few dozen disorganized soldiers using rusty rifles and lies to catch us off guard."", 4: '1'}"
+251	245		301							"{2: 'Asimov', 3: ""They've already become a highly organized threat with targeted hostility towards Babylonia."", 4: '1'}"
+252	246		301							{2: 'Asimov', 3: 'Therefore, my suggestion as a consultant is to fully disclose information on the Ascendants, and mobilize all of Babylonia—not just the Task Force—to deal with them.', 4: '1'}
+253	247		202							{1: '1', 6: '1'}
+254	248		201							{1: '1', 2: '500011', 4: '-400', 7: '1'}
+255	249		201							{1: '2', 2: '500012', 4: '400', 7: '1'}
+256	250		301							{1: '1', 2: 'Nikola', 3: 'I agree.', 4: '2'}
+257	251		301							"{2: 'Nikola', 3: ""I've always advocated taking the initiative with a full-scale attack."", 4: '2'}"
+258	252		301							{2: 'Nikola', 3: 'Enlist everyone into combat roles, and push the Ascendants into our firing range through saturation attacks...', 4: '2'}
+259	253		301							"{2: 'Hassen', 3: ""You're calling for the complete military mobilization of Babylonia."", 4: '1'}"
+260	254		301							{2: 'Hassen', 3: 'I cannot agree to this.', 4: '1'}
+261	255		301							"{2: 'Nikola', 3: ""Hmph, and that's one of the reasons why we haven't made any progress, isn't it?"", 4: '2'}"
+262	256		301							{2: 'Hassen', 3: '...', 4: '1'}
+263	257		301							{2: 'Nikola', 3: 'Hassen, I mean it this time. Now is the time to decide.', 4: '2'}
+264	258		301							{2: 'Nikola', 3: 'If there were nothing worth saving on the surface when we finally decide to launch a full-scale attack, it would be too late.', 4: '2'}
+265	259		301							{3: '...'}
+266	260		301							{3: 'An awkward and perilous silence hung over the conference room.'}
+267	261		301							{3: 'Celica looked at Asimov, who shrugged helplessly.'}
+268	262		301							{3: 'Everyone present could do nothing but look at Hassen and Nikola expectantly.'}
+269	263		301							{2: 'Hassen', 3: '...', 4: '1'}
+270	264		301				AniZhuanchangBegin			{2: 'Nikola', 3: '...', 4: '2'}
+271	265		202							{1: '1', 2: '2', 6: '1'}
+272	266		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory48.jpg'}
+273	267		401							{1: '1', 2: '203'}
+274	268		401							{1: '2', 2: '1501'}
+275	269		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+276	270		502							{1: 'RImgBg1Shake'}
+277	271		301			AniZhuanchangEnd				{3: 'Right at that moment, the unceasing buzzing of the alarm disrupted their confrontation.'}
+278	272		201							{1: '1', 2: '500004'}
+279	273		301							"{1: '1', 2: 'Asimov', 3: ""What's going on?!"", 4: '1'}"
+280	274		201							{1: '1', 2: '500019'}
+281	275		301							"{1: '1', 2: 'Logistics Construct', 3: ""It's an emergency! Mr. Asimov, come with me. Everyone else, please proceed to the shelter on 37C immediately!"", 4: '1'}"
+282	276		201							{1: '1', 2: '500011'}
+283	277		301							"{1: '1', 2: 'Hassen', 3: ""Hold it. What's going on?"", 4: '1'}"
+284	278		201							{1: '1', 2: '500019'}
+285	279		301							{1: '1', 2: 'Logistics Construct', 3: 'The engine group has issued an alert throughout the entire ship. Power is decreasing, and Babylonia is entering a free fall!', 4: '1'}
+286	280		201							{1: '1', 2: '500004'}
+287	281		301							{1: '1', 2: 'Asimov', 3: '...What?! How about the Engineering and Support Forces?', 4: '1'}
+288	282		201							{1: '1', 2: '500019'}
+289	283		301							"{1: '1', 2: 'Logistics Construct', 3: ""They're already at the scene, but they can't be certain that they can fix it!"", 4: '1'}"
+290	284		201							{1: '1', 2: '500004'}
+291	285		301							"{1: '1', 2: 'Asimov', 3: ""I'll be right there! Take everyone else to the shelter!"", 4: '1'}"
+292	286		203							{1: '1', 2: '0.25', 3: '400'}
+293	287		201							{1: '2', 2: '500011', 4: '-400'}
+294	288		301							"{1: '1', 2: 'Hassen', 3: ""No, I'm coming with you."", 4: '2'}"
+295	289		301							"{2: 'Asimov', 3: ""...I can't guarantee your safety."", 4: '1'}"
+296	290		301							"{2: 'Hassen', 3: 'You\'ll be in trouble if there is a button that says ""highest clearance only,"" but no one with the clearance there to press it.', 4: '2'}"
+297	291		301				AniZhuanchangBegin			{2: 'Asimov', 3: 'Alright... If you insist.', 4: '1'}
+298	292		202							{1: '1', 2: '2', 6: '1'}
+299	293		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+300	294		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory82.jpg'}
+301	295		201							{1: '1', 2: '500028'}
+302	296		301			AniZhuanchangEnd				{1: '1', 2: 'Support Force', 3: 'The President and Chief Technician are here!', 4: '1'}
+303	297		201							{1: '1', 2: '500167', 3: '5', 4: '400'}
+304	298		201							{1: '2', 2: '1111001', 4: '-400'}
+305	299		301							{1: '1', 2: 'Bridget', 3: 'President!', 4: '1'}
+306	300		204							{1: '2', 2: '5'}
+307	301		301							{2: 'Karenina', 3: 'President Hassen! What are you doing here?!', 4: '2'}
+308	302		201							{1: '1', 2: '500011', 4: '-400'}
+309	303		201							{1: '2', 2: '500004', 4: '400'}
+310	304		301							"{1: '1', 2: 'Hassen', 3: ""We don't have time for that. What's the situation?"", 4: '2'}"
+311	305		201							{1: '1', 2: '500167', 3: '4', 4: '400'}
+312	306		201							{1: '2', 2: '1111001', 4: '-400'}
+313	307		301							{1: '1', 2: 'Bridget', 3: 'Our power has dropped to critical.', 4: '1'}
+314	308		301							"{2: 'Bridget', 3: ""Now it's impossible to maintain orbital altitude."", 4: '1'}"
+315	309		301							"{2: 'Karenina', 3: ""Yeah, but the problem is... It's not an issue with the hardware."", 4: '2'}"
+316	310		203							{1: '1', 2: '0.25'}
+317	311		203							{1: '2', 2: '0.25', 3: '-600'}
+318	312		201							{1: '3', 2: '500004', 4: '600', 6: '1'}
+319	313		301							{1: '1', 2: 'Asimov', 3: '...What do you mean?', 4: '3'}
+320	314		301							{2: 'Karenina', 3: 'All of the gravity engines are stalling.', 4: '2'}
+321	315		301							{2: 'Karenina', 3: 'It seems that something is sending them a constant stream of forced shutdown commands.', 4: '2'}
+322	316		301							{2: 'Bridget', 3: 'What?', 4: '1'}
+323	317		301							{2: 'Asimov', 3: 'Even if you ignore this command, it initiates a countdown sequence, which overwrites the normal ignition command.', 4: '3'}
+324	318		301							{2: 'Karenina', 3: '...Hence the stalling.', 4: '2'}
+325	319		301							{2: 'Asimov', 3: 'As for the source...', 4: '3'}
+326	320		301							{2: 'Asimov', 3: '...They have to be direct commands from the head of the program, set with the highest priority to circumvent any interference from the fault-tolerant system.', 4: '3'}
+327	321		301							"{2: 'Karenina', 3: ""...Call me crazy, but I think there's something wrong with Gestalt."", 4: '2'}"
+328	322		301							{2: 'Asimov', 3: 'How is that possible...', 4: '3'}
+329	323		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+330	324		201							{1: '1', 2: '500011'}
+331	325		301							{1: '1', 2: 'Hassen', 3: 'We can figure that out later. Karenina, how sure are you?', 4: '1'}
+332	326		201							{1: '1', 2: '1111001'}
+333	327		301							"{1: '1', 2: 'Karenina', 3: ""About sixty percent. Regardless, there isn't an issue with the hardware."", 4: '1'}"
+334	328		301							"{3: ""At this time, Hassen's portal terminal suddenly rang. He opened the terminal before looking up at Asimov.""}"
+335	329		201							{1: '1', 2: '500011'}
+336	330		301							{1: '1', 2: 'Hassen', 3: 'Karenina and Asimov, come with me. And ask someone to bring the Gray Ravens to the conference room.', 4: '1'}
+337	331		301							"{2: 'Hassen', 3: ""Looks like we'll have to put the discussion we planned with them on hold and solve the issue at hand."", 4: '1'}"
+338	332		301				AniZhuanchangBegin			{2: 'Hassen', 3: 'Bridget, take some men to try and restore the thrust. Buy us as much time as you can.', 4: '1'}
+339	333		202							{1: '1', 6: '1'}
+340	334		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+341	335		401							{1: '1', 2: '101'}
+342	336		301			AniZhuanchangEnd				{3: 'After anxiously waiting, you are called to the conference room.'}
+343	337		302							"{2: ""What's going on?"", 3: '338'}"
+344	338		201							{1: '1', 2: '500011', 4: '-400'}
+345	339		201							{1: '2', 2: '500004', 4: '400'}
+346	340		301							"{1: '1', 2: 'Hassen', 3: ""...I'm sorry. Unfortunately, we don't have time to have our discussion as originally planned. We have to concentrate on dealing with the current crisis."", 4: '1'}"
+347	341		301							{2: 'Hassen', 3: 'Asimov.', 4: '1'}
+348	342		301							{2: 'Asimov', 3: 'Um let me see... Well, this is not what I was expecting, so pardon me while I try to figure out how to phrase it...', 4: '2'}
+349	343		301							{2: 'Asimov', 3: 'Alright, well...', 4: '2'}
+350	344		202							{1: '1', 6: '1'}
+351	345		203							{1: '2', 2: '0.25'}
+352	346		301							{2: 'Asimov', 3: 'As you can see, the ship is at 10% power, and reports show four groups of gravity engines being taken over and locked in to propel in the opposite direction at maximum capacity, causing our rapid descent.', 4: '2'}
+353	347		301							{2: 'Asimov', 3: 'While we speak, Babylonia is plummeting towards the ground at an increasing speed.', 4: '2'}
+354	348		301							"{2: 'Asimov', 3: ""The cause of this crisis is unknown. I speculated that it was from an update made to Gestalt... but I have just discovered a vulnerability in the program. I'm sure you understand the seriousness of such ramifications."", 4: '2'}"
+355	349		301							"{2: 'Asimov', 3: ""I know you have many questions, but there's no time for details. So consider the following an order—"", 4: '2'}"
+356	350		301							{2: 'Asimov', 3: 'To identify and solve this problem, I need you to carry out an emergency operation.', 4: '2'}
+357	351		301							{2: 'Asimov', 3: 'We will use the tactical environment simulation interface, Spear of F.O.S., from the Military Academy as assistance.', 4: '2'}
+358	352		301							{2: 'Asimov', 3: 'As a tactical environment simulation system, it will translate the data in front of you into comprehensible intel and provide tactical evaluations and suggestions.', 4: '2'}
+359	353		301							{2: 'Asimov', 3: 'If the situation allows you to connect directly with Babylonia, it can also provide additional functions... But that depends on what happens on the scene.', 4: '2'}
+360	354		301							"{2: 'Asimov', 3: ""However, you will only need to use the graphical interface inside Gestalt for now. We'll talk about the rest later."", 4: '2'}"
+361	355		301							"{2: 'Asimov', 3: 'The way this works, Gray Raven, is that you will ""infiltrate"" Gestalt.', 4: '2'}"
+362	356		301							"{2: 'Asimov', 3: ""In short, I will export your M.I.N.D.s and your commandant's consciousness as virtual programs and upload them into the Gestalt, where you will uncover the issue and resolve it."", 4: '2'}"
+363	357		302							{2: 'Care to explain?', 3: '359', 4: 'This order seems like an act of desperation!', 5: '359', 6: 'Alright, understood.', 7: '358'}
+364	358	372	301							{2: 'Asimov', 3: 'Of course, a veteran of your caliber can easily understand the situation at hand when I have yet to grasp what is happening.', 4: '2'}
+365	359		301							{2: 'Asimov', 3: 'Huh? Do I really need to explain further... Good grief.', 4: '2'}
+366	360		301							{2: 'Asimov', 3: 'Long story short, Babylonia lacks power and is currently falling out of orbit, as you know.', 4: '2'}
+367	361		301							{2: 'Asimov', 3: 'The fundamental cause is Gestalt blocking ignition commands to the engines.', 4: '2'}
+368	362		301							{2: 'Asimov', 3: 'Now, for some reason, Gestalt has activated strict anti-interference protocols, which are blocking access from all programs.', 4: '2'}
+369	363		301							{2: 'Asimov', 3: 'So I came up with an idea, using your M.I.N.D.s as access channels while using the military exercise version of Spear of F.O.S., a command assistant program, as your graphical interface.', 4: '2'}
+370	364		301							"{2: 'Asimov', 3: 'Clear so far? I\'ll load the Constructs\' M.I.N.D.s into the virtual space in the form of a ""virtual program,"" then I\'ll install authorization on your commandant\'s terminal.', 4: '2'}"
+371	365		301							"{2: 'Asimov', 3: ""If you can't wrap your head around it, think of yourselves as characters in a video game, and the commandant is the one on the controller."", 4: '2'}"
+372	366		301							"{2: 'Asimov', 3: ""Then you infiltrate Gestalt, find out why it triggered the lockdown, and resolve the issue. That's it."", 4: '2'}"
+373	367		301							{2: 'Asimov', 3: 'This is the only solution I can think of for our current debacle. We have no other choice.', 4: '2'}
+374	369		301							"{2: 'Asimov', 3: ""I will continue to monitor your status and help you locate the vulnerability in Gestalt in real-time. But, enough talking... You'll learn more once you are in the immersion process."", 4: '2'}"
+375	370		301							"{2: 'Asimov', 3: ""I'll ask one more time. Do you remember everything I just said?"", 4: '2'}"
+376	371		302							{2: '...Yes.', 3: '372'}
+377	372		301				AniZhuanchangBegin			{3: 'With that, Asimov pushes you into the immersion frame behind you.'}
+378	373		202							{1: '2', 6: '1'}
+379	374		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+380	375		401							{1: '1', 2: '36'}
+381	376		401						1000.0	{1: '2', 2: '1512'}
+382	377		301			AniZhuanchangEnd				{3: 'As the door closes, the ear-piercing alarm, the cries from the residents... All noise comes to an abrupt halt as you descend into darkness.'}
+383	378		401							{1: '2', 2: '1509'}
+384	379		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineBaozhaNew.prefab', 2: '2'}
+385	380		301				AniZhuanchangBegin			{3: 'Immediately, a ray of light lights up below your feet and scans your entire body.'}
+386	381		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+387	382		301			AniZhuanchangEnd				{3: 'Comman—dant...'}
+388	383		301							{3: 'Commandant...!'}
+389	384		301				AniZhuanchangBegin			{3: 'Commandant!'}
+390	385		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory264.png'}
+391	386		401							{1: '1', 2: '203'}
+392	387		301			AniZhuanchangEnd				{3: 'The darkness in front of you gradually disperses, and the voices around you return.'}
+393	388		201							{1: '1', 2: '1031001', 4: '-600'}
+394	389		201							{1: '2', 2: '500026'}
+395	390		201							{1: '3', 2: '500166', 4: '600'}
+396	391		301							{1: '1', 2: 'Lucia', 3: 'Are you ok, Commandant?!', 4: '3'}
+397	392		301							{2: 'Liv', 3: 'Lucia, quit shaking the commandant... Asimov has stabilized the link again...', 4: '1'}
+398	393		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+399	394		201							{1: '1', 2: '500004'}
+400	395		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+401	396		301							{1: '1', 2: 'Asimov', 3: '...Phew. I never knew how hard it is to stabilize a link to human consciousness.', 4: '1'}
+402	397		302							{2: 'How long was I out?', 3: '398'}
+403	398		301							{2: 'Asimov', 3: 'Not long. Not even long enough for you to complete the immersion process.', 4: '1'}
+404	399		302							{2: '?', 3: '400'}
+405	400		301							"{2: 'Asimov', 3: ""We're just using an unnoticeably small amount of bandwidth to test the adaptability of the Spear of F.O.S. with Gestalt."", 4: '1'}"
+406	401		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+407	402		201							{1: '1', 2: '500026'}
+408	403		301							{1: '1', 2: 'Lee', 3: 'Wait... In other words, we may encounter danger even during the immersion process?', 4: '1'}
+409	404		201							{1: '1', 2: '500004'}
+410	405		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+411	406		301							{1: '1', 2: 'Asimov', 3: 'Of course, the anti-interference protocols are everywhere.', 4: '1'}
+412	407		302							"{2: ""I'm fine."", 3: '408'}"
+413	408		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+414	409		201							{1: '1', 2: '500166'}
+415	410		301							{1: '1', 2: 'Lucia', 3: 'Commandant!', 4: '1'}
+416	411		201							{1: '1', 2: '500004'}
+417	412		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+418	413		301							"{1: '1', 2: 'Asimov', 3: ""Really? You're back on your feet in no time. Looks like I really can depend on you with such an important mission."", 4: '1'}"
+419	414		302		1		AniZhuanchangBegin			{2: 'Of course.'}

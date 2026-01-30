@@ -1,0 +1,166 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory731.jpg'}
+2	2		401							{1: '1', 2: '36'}
+3	3		301			DialogEnable				{3: '4:00 PM, Refugee Camp'}
+4	4		401							{1: '1', 2: '205'}
+5	5		201							{1: '1', 2: '500294'}
+6	6		301							"{1: '1', 2: 'Kind Old Man', 3: ""What's your name again, little one?"", 4: '1'}"
+7	7		301							{2: 'Elene', 3: 'My name is Elene, Sir.'}
+8	8		301							{2: 'Kind Old Man', 3: 'Oh, right, I knew it started with an E.', 4: '1'}
+9	9		301							"{2: 'Elene', 3: ""Yeah, it's Elene.""}"
+10	10		301							{2: 'Kind Old Man', 3: 'Oh, Merlin!', 4: '1'}
+11	11		301							"{2: 'Elene', 3: ""It's Elene, Sir. The Merlin you're talking about isn't in this camp.""}"
+12	12		301							{2: 'Kind Old Man', 3: 'Hmm, not Merlin, huh...', 4: '1'}
+13	13		301							"{2: 'Kind Old Man', 3: ""So what's your name again?"", 4: '1'}"
+14	14		301							{2: 'Elene', 3: '...'}
+15	15		203							{1: '1', 2: '0.25', 3: '400'}
+16	16		201							{1: '2', 2: '500351', 4: '-400'}
+17	17		301							"{1: '1', 2: 'Elene', 3: ""Sir, it's time to take your medicine."", 4: '2'}"
+18	18		301							{3: 'Lamia forcefully feeds the liquid medicine to the old man by holding the bowl up to his mouth.'}
+19	19		201							{1: '18', 2: '500739', 3: '19'}
+20	20		301							{1: '1', 2: 'Lamia', 3: '(Why must I be the one to do this...?)', 4: '18'}
+21	21		202							{1: '18', 6: '1'}
+22	22		401							{1: '1', 2: '36'}
+23	23		301							{1: '1', 3: 'As she slowly feeds the somewhat senile old man the suspiciously flavored medicine, Lamia begins to reflect on her actions for a rare moment.'}
+24	24		401							{1: '1', 2: '210'}
+25	25		301							"{3: 'Ever since accepting Luna\'s ""gift,"" she had shed her usual lethargy and begun to earnestly investigate the suspicious locations.'}"
+26	26		301							{3: 'She had visited laboratories long abandoned, Hetero Zones that spread to new realms, the seabed that gathered tens of thousands of Corrupted, and even witnessed low-flying white drones soaring by, narrowly avoiding colliding with one.'}
+27	27		301							"{3: ""However, she didn't find what Luna needed in these places, and after the excitement of regaining her legs wore off, she became quite worried.""}"
+28	28		201							{1: '3', 2: '500739', 4: '-700', 7: '1'}
+29	29		205							{1: '3', 3: '0', 4: '0.6', 5: '0'}
+30	30		301							"{1: '1', 2: 'Lamia', 3: ""(If this continues... I'll be killed...)""}"
+31	31		301							"{3: ""Recalling the white-haired Ascendant she came across in some ruins and the warning gaze she had sent her way before speeding away on her red motorbike, Lamia can't help but tremble.""}"
+32	32		301			PanelActor3Shake				"{2: 'Lamia', 3: ""(If I can't produce results as soon as I can, none of my feeble explanations will ever convince Alpha.)""}"
+33	33		202							{1: '3', 6: '1'}
+34	34		301							{2: 'Kind Old Man', 3: 'Why are you trembling, young Elene? Are you cold?', 4: '1'}
+35	35		301							"{2: 'Elene', 3: ""I've told you a thousand times my name is E—huh? Wait, you remember my name now?"", 4: '2'}"
+36	36		301							{2: 'Kind Old Man', 3: 'Ah... yes, yes. Elene, right? I remember it, of course.', 4: '1'}
+37	37		301							{2: 'Kind Old Man', 3: 'The last one was Merlin, the one before was Ruolin. I remember, I remember... hmm, what do I remember again?', 4: '1'}
+38	38		202							{1: '1', 6: '1'}
+39	39		203							{1: '2', 2: '0.25'}
+40	40		301							{3: 'Seeing that the old man has started to ramble like always, Lamia, used to it by now, leaves him to his devices and focuses on cleaning up the now-empty medicine bowl.'}
+41	41		301							{3: 'Lamia learned of this place from the memory shell of a Corrupted. She knows that outsiders of this camp are sent to some secret location periodically.'}
+42	42		301							{3: 'And this place just might have the clues she needs—it could be an experimental site or even a secret base of the Ascendants.'}
+43	43		301							"{3: ""Mankind's madness has surpassed her imagination, and Kurono might be among the most fanatical of them all.""}"
+44	44		201							{1: '18', 2: '500739'}
+45	45		301							{1: '1', 2: 'Lamia', 3: '(The transport vehicle seems to be running a bit late this time, no?)', 4: '18'}
+46	46		202							{1: '18', 2: '2', 6: '1'}
+47	47		201							{1: '1', 2: '500351', 7: '1'}
+48	48		301							{1: '1', 3: 'Having made up her mind to uncover the secret location, Lamia disguises herself as a child and blends into the refugee camp.'}
+49	49		301							{3: 'To come across as even less intimidating, Lamia turns herself into a little girl who, having lost her legs, is trying to survive this apocalyptic land with her prosthetics.'}
+50	50		201							{1: '18', 2: '500739'}
+51	51		301							"{1: '1', 2: 'Lamia', 3: ""(This is one hell of a childhood drama. I've got to make this count.)"", 4: '18'}"
+52	52		202			DialogDisable				{1: '18', 2: '1', 6: '1'}
+53	53		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg', 3: '0', 4: '1', 5: '1'}
+54	54		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+55	55		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+56	56		201							{1: '1', 2: '500351'}
+57	57		301			DialogEnable				"{3: ""Lamia curses the tardy transport driver under her breath as she carries empty bowls toward the tent's exit.""}"
+58	58		301							"{3: ""Just as Lamia uses her harmless appearance to deceive the camp's residents, this senile old man, unbeknownst to himself, is used by the camp's behind-the-scenes manipulators to lower newcomers' guards.""}"
+59	59		301							{3: 'This facade of kindness is the best disguise for malice—a lesson Lamia has learned and exploited many times over.'}
+60	60		301							{3: 'After returning the medicine bowls to their place, Lamia intends to maintain her current persona and heads to her usual rock to daydream.'}
+61	61		203							{1: '1', 2: '0.25', 3: '400'}
+62	62		201							{1: '2', 2: '500197', 4: '-400'}
+63	63		301							{1: '1', 2: 'Guard', 3: 'Hey, fancy seeing you here, Elene.', 4: '2'}
+64	64		301							{3: 'A seemingly friendly guard stops her. These guards are the only people in the camp openly armed.'}
+65	65		301							{3: 'Although Lamia knows only too well that almost every native living at the camp has a weapon hidden under their pillow.'}
+66	66		301							{3: 'This guard is usually seen hanging out with his drunk friends—today, however, he has someone with bandages wrapped around their face in tow.'}
+67	67		301							"{3: ""A worn windbreaker paired with clothes patched beyond recognition and boots filled with sand and cracked open, this stranger's attire is common among refugees here.""}"
+68	68		301							"{3: ""The stranger's face is completely covered in bandages, with only a pair of lifeless eyes still taking in the world around.""}"
+69	69		301							{3: 'In between the bandages, Lamia can vaguely make out traces of severe burns. An unpleasant smell seems to waft through the slits.'}
+70	70		301							"{2: 'Guard', 3: ""This one has just fled from another camp. And their face... well, it's a long story."", 4: '2'}"
+71	71		301							{3: 'The guard shakes his head, looking somewhat sorry.'}
+72	72		301							"{2: 'Guard', 3: ""Ain't something you'd want to know. It's a real source of nightmares, I can tell ya."", 4: '2'}"
+73	73		301							"{2: 'Guard', 3: ""Show this new friend around, Elene, and take them to the resting area when you're done."", 4: '2'}"
+74	74		201							{1: '18', 2: '500739'}
+75	75		301							{1: '1', 2: 'Lamia', 3: '(A new victim? Oh well, none of my business.)', 4: '18'}
+76	76		202							{1: '18', 6: '1'}
+77	77		301							{2: 'Elene', 3: 'O-okay...', 4: '1'}
+78	78		301							{3: 'Lamia is completely uninterested but has no choice but to say yes.'}
+79	79		301							"{2: 'Guard', 3: ""Look, it's nothing personal that we had to take your weapon away from you. We can't make exceptions when everyone else has to hand over their weapons here."", 4: '2'}"
+80	80		301							{3: 'The person wrapped in bandages nods as the guard speaks to them.'}
+81	81		201							{1: '18', 2: '500739', 4: '-80'}
+82	82		301							{1: '1', 2: 'Lamia', 3: '(Just giving away the weapon like that, huh... Talk about being dumb.)', 4: '18'}
+83	83		202							{1: '18', 6: '1'}
+84	84		301							{3: 'Then, the person in bandages opens their mouth to speak.'}
+85	85		401							{1: '1', 2: '36'}
+86	86		302							"{2: ""Don't worry. I understand that you were just doing your job."", 3: '87'}"
+87	87		204							{1: '1', 2: '19'}
+88	88		401							{1: '1', 2: '205'}
+89	89		301			PanelActor1Shake				{3: 'In disguise, the person sounds raspy and weak—betraying not one bit of their naturally resonant voice.'}
+90	90		301							{3: 'But it takes Lamia, a master of disguise herself, only a split second to know who this person is.'}
+91	91		301							{3: 'Awash in unpleasant memories, Lamia starts looking around reflexively out of a survival instinct.'}
+92	92		301							"{2: 'Guard', 3: ""Elene, lookin' for somethin'?"", 4: '2'}"
+93	93		301							{2: 'Elene', 3: 'Not really...', 4: '1'}
+94	94		301							"{3: ""Fortunately, she doesn't see a certain red figure with a katana, nor a pink-haired Construct, or a young man carrying a sniper rifle over on the distant hill.""}"
+95	95		301							"{3: ""But most importantly, she doesn't see a red-haired madwoman with a Banner Spear and a crazed smile hiding anywhere—and with it, she lets out a sigh of relief.""}"
+96	96		301							"{2: 'Guard', 3: ""The person's all yours. I'm still on patrol."", 4: '2'}"
+97	97		301							{2: 'Elene', 3: 'Right... of course...', 4: '1'}
+98	98		202							{1: '2', 6: '1'}
+99	99		203							{1: '1', 2: '0.25'}
+100	100		301							"{3: ""Lamia doesn't want to have anything to do with this person, but refusing the guard's request outright is only going to raise suspicion.""}"
+101	101		301							{2: 'Elene', 3: 'Please, this way.', 4: '1'}
+102	102		301							"{3: ""Despite her confidence in her disguise, Lamia finds it increasingly difficult to meet this person's eyes when she knows who they are.""}"
+103	103		301							{3: 'Behind those feigned weary eyes seems to be a soul scrutinizing everything from the shadows, making Lamia feel absolutely naked.'}
+104	104		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+105	105		202							{1: '1', 6: '1'}
+106	106		504							{1: '0.7'}
+107	107		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory280.png'}
+108	108		301							"{3: ""The monster she once feared so much and believed to be invincible has fallen at Luna's hands—and it's this very commandant who had awakened Luna.""}"
+109	109		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory399.jpg'}
+110	110		301							{3: 'She once mustered the courage to confront people head-on—only to be utterly defeated, and this commandant was there, too.'}
+111	111		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+112	112		504							
+113	113		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+114	114		201							{1: '1', 2: '500351'}
+115	115		301							{1: '1', 3: 'To begin with, Lamia has never been brave. To her, this commandant has become something of a symbol—or, to put it simply...'}
+116	116		201							{1: '18', 2: '500739', 3: '19'}
+117	117		301							{1: '1', 2: 'Lamia', 3: '(Not again...)', 4: '18'}
+118	118		301							{2: 'Lamia', 3: '(Something bad happens every time we cross paths...)', 4: '18'}
+119	119		202							{1: '18', 6: '1'}
+120	120		301							{3: 'Although Lamia knows that this is just some sort of superstition—or, rather, an excuse she comes up with to cover her failures.'}
+121	121		302							{2: 'Uh-hum, excuse me...', 3: '122'}
+122	122		204							{1: '1', 2: '19'}
+123	123		301			RImgBg1Shake				{2: 'Elene', 3: 'Eek!', 4: '1'}
+124	124		301							{3: 'Engrossed in her little internal drama, Lamia jolts at the sudden cough, letting out her usual shriek.'}
+125	125		302							"{2: ""Sorry, didn't mean to scare you..."", 3: '126'}"
+126	126		301							{3: 'Before her, the human maintains their raspy voice as they try to calm Lamia with a gentle tone.'}
+127	127		306							{1: '1'}
+128	128		202							{1: '1', 6: '1'}
+129	129		201							{1: '1', 2: '500739', 3: '19'}
+130	130		301							"{1: '1', 2: 'Lamia', 3: ""(Didn't lose any cool there? That's some tough acting right there...)"", 4: '1'}"
+131	131		204							{1: '1'}
+132	132		301							{2: 'Lamia', 3: '(Wait, why am I so scared anyway?)', 4: '1'}
+133	133		204							{1: '1', 2: '8'}
+134	134		301							"{2: 'Lamia', 3: ""(The Gray Ravens aren't here, and that red-haired crazy woman isn't here. All I've got to deal with here is a weak human being without any weapon.)"", 4: '1'}"
+135	135		204							{1: '1', 2: '2'}
+136	136		301							{2: 'Lamia', 3: '(Which means I can just do whatever I want, right?!)', 4: '1'}
+137	137		301							{3: 'Lamia sneaks a glance at the human before her.'}
+138	138		301							"{2: 'Lamia', 3: ""(Given this one's reputation, I bet Luna is going to be on cloud nine if I take this human to her.)"", 4: '1'}"
+139	139		204							{1: '1', 2: '19'}
+140	140		301							"{2: 'Lamia', 3: ""(Hmm... but she doesn't seem to care much about humans. Maybe this person isn't as important as I thought?)"", 4: '1'}"
+141	141		204							{1: '1'}
+142	142		301							"{2: 'Lamia', 3: ""(...Guess it'd be nothing but trouble trying to capture this human. I should probably do as told first.)"", 4: '1'}"
+143	143		301							{3: 'Lamia gives up on the idea of kidnapping the human after picturing herself being chased and cornered.'}
+144	144		301							"{2: 'Lamia', 3: ""(But what is this human doing here? Are they here trying to do what I'm trying to do? Guess this is my chance to learn a few things about Babylonia.)"", 4: '1'}"
+145	145		204							{1: '1', 2: '2'}
+146	146		301							"{2: 'Lamia', 3: ""(Except it's probably not going to be that easy... so I guess I should just try to be safe rather than sorry.)"", 4: '1'}"
+147	147		204							{1: '1', 2: '8'}
+148	148		301							"{3: ""As much as Lamia hates the idea of having to do with the human, she can't help but want to do better so she can leave Luna with a better impression. She finds herself torn between these conflicting thoughts.""}"
+149	149		204							{1: '1'}
+150	150		301							"{2: 'Lamia', 3: ""(But they don't know who I am yet, which means it won't hurt to have a conversation to dig out a few things.)"", 4: '1'}"
+151	151		306							
+152	152		202							{1: '1', 6: '1'}
+153	153		201							{1: '1', 2: '500351'}
+154	154		301							"{1: '1', 3: ""In the end, the thought of wanting to impress wins over. Compared to Alpha's katana, striking up a conversation with this human hardly seems daunting.""}"
+155	155		301							{2: 'Elene', 3: 'Uhm... I was wondering if...', 4: '1'}
+156	156		302							{2: 'Yes?', 3: '157'}
+157	157		301							"{3: ""The human gazes into Lamia's eyes.""}"
+158	158		204							{1: '1', 2: '19'}
+159	159		301							{2: 'Elene', 3: '...Uhm, never mind... Here, please come this way...', 4: '1'}
+160	160		301							{3: 'With those eyes staring back at her, Lamia lowers her head despite herself as she leads the human toward the resting area.'}
+161	161		201							{1: '18', 2: '500739', 3: '2'}
+162	162		301							{1: '1', 2: 'Lamia', 3: '(Why do they need to look people in the eye when they talk?!)', 4: '18'}
+163	163		301							"{2: 'Lamia', 3: ""(I swear I'm so going to be ready to get some info out of this person tomorrow.)"", 4: '18'}"
+164	164		202							{1: '18', 6: '1'}
+165	165		301		1		AniZhuanchangBegin			{3: 'Lamia quietly cheers herself on.'}

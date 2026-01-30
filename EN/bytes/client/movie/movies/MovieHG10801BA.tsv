@@ -1,0 +1,23 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory41.jpg'}
+2	2		401							{1: '1', 2: '203'}
+3	3		201							{1: '1', 2: '1101001', 4: '-450'}
+4	4		201							{1: '2', 2: '500019', 4: '450'}
+5	5		301			DialogEnable				{1: '1', 2: 'Watanabe', 3: 'Right, go check the western front. Corrupted have been showing up on that side lately.', 4: '1'}
+6	6		301							"{2: 'Watanabe', 3: ""I'm worried that our defense there isn't enough."", 4: '1'}"
+7	7		301							{2: 'Forsaken Construct', 3: 'Roger.', 4: '2'}
+8	8		203						1500.0	{1: '2', 2: '0.75', 3: '1500'}
+9	100		202							{1: '2', 6: '1'}
+10	9		201							{1: '2', 2: '500005', 4: '450'}
+11	10		301							"{1: '1', 2: 'Forsaken Human', 3: ""Sir, I'll go with him."", 4: '2'}"
+12	11		301							{2: 'Watanabe', 3: 'Good. Keep your eyes open, and let me know if anything happens.', 4: '1'}
+13	12		202							{1: '2', 6: '1'}
+14	13		203							{1: '1', 2: '0.25'}
+15	14		301							{2: 'Watanabe', 3: '...', 4: '1'}
+16	15		301							{2: 'Watanabe', 3: 'What are you doing here?!', 4: '1'}
+17	16		302							{2: 'I was worried about you guys.', 3: '17', 4: 'Feel like visiting, so here I am.', 5: '18'}
+18	17	19	301							"{2: 'Watanabe', 3: ""There's nothing that concerns you here. I wouldn't have troubled you at this stage."", 4: '1'}"
+19	18		301							"{2: 'Watanabe', 3: ""Do you, now? It's not safe here."", 4: '1'}"
+20	19		301							{2: 'Watanabe', 3: 'Unless your mission here is to monitor us?', 4: '1'}
+21	20		302							"{2: ""I'm just here to check up on you guys, I swear."", 3: '21'}"
+22	21		301		1		AniZhuanchangBegin			"{2: 'Watanabe', 3: ""Check all you want, then. Don't blame me if you check out in the process."", 4: '1'}"

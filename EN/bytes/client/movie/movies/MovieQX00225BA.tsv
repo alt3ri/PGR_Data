@@ -1,0 +1,18 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500026'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Lee', 3: ""How do you have the time to make something like this when you've barely rested recently..."", 4: '1'}"
+5	5		204							{1: '1', 2: '10'}
+6	6		301							{3: 'Lee puts down the terminal in his hand and takes the mystery box resignedly.'}
+7	7		204							{1: '1'}
+8	8		301							{2: 'Lee', 3: 'I wonder if I should admire your endless energy or scold you for your poor time management.', 4: '1'}
+9	9		302							"{2: ""It's a rare festival occasion, after all. You want to open it?"", 3: '10'}"
+10	10		301							{3: 'Lee swiftly opens the box and finds a small planetarium globe inside.'}
+11	11		301							{2: 'Lee', 3: '...Feels like something for children.', 4: '1'}
+12	12		302							{2: 'There are planetariums for different ages?', 3: '13'}
+13	13		301							{2: 'Lee', 3: 'The level of detail on these constellations can easily be calculated without this globe.', 4: '1'}
+14	14		301							{3: 'With that, Lee makes use of the planetarium to explain to you a series of common constellations and their coordinates.'}
+15	15		302							{2: '...My computing power is limited to a regular human brain.', 3: '16'}
+16	16		301							"{2: 'Lee', 3: ""Even humans can work this out... Forget it. Since you realize you're a human, why don't you stick to the resting schedule of one?"", 4: '1'}"
+17	17		301		1		AniZhuanchangBegin			"{2: 'Lee', 3: ""Go to sleep. I'll show you any constellation you want to see once you're well-rested, no matter how far away they are."", 4: '1'}"

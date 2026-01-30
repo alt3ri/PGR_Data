@@ -1,0 +1,178 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4001_09.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				"{2: 'King', 3: 'I\'m sacrificing one of the ""Bishop\'s"" dice for decisions.'}"
+4	4		301							{2: 'King', 3: 'The roll is a 5, confirming events from c2 to c6.'}
+5	5		301							"{2: 'King', 3: 'Move the ""Knight"" to c4, which triggers an event. The ""Knight"" earns two additional dice.'}"
+6	6		301							"{2: 'King', 3: ""Now, it's your turn.""}"
+7	7		301							{3: 'The King gestures for you to proceed, and the round count on the scoreboard jumps from 11 to 12.'}
+8	8		301							"{3: ""It's the twelfth round of the game, the sixth move for both sides.""}"
+9	9		301							{3: 'The 3D chessboard lights up, clearly showing the status of either side.'}
+10	10		301							"{3: 'The ""Bishops"" haven\'t moved a step from square one. With the white ""Queen"" in the lead, the black ""Queen"" falls a few squares behind.'}"
+11	11		301							"{3: 'Following closely are the white ""Knight"", then the black ""Knight"" and a white ""Pawn"", with a black ""Pawn"" trailing at the end.'}"
+12	12		301							"{3: 'The white ""Queen"", ""Knight"", and the ""Pawn"" form a tricky blockade, maintaining a lead while preventing the black pieces from advancing to steal dice from the white side.'}"
+13	13		301							"{3: ""The white side has more dice, too, and it's probably safe to say that you're only a few rounds away from defeat if you don't do something now.""}"
+14	14		301							"{2: 'King', 3: ""Heh, what's taking you so long?""}"
+15	15		302							"{2: ""What's the rush? We've got time."", 3: '16', 4: ""You just can't wait, huh?"", 5: '16'}"
+16	16		301							"{3: 'You snap back as your fingers hover aimlessly over the chessboard—something you\'re doing on purpose to wear down the ""King\'s"" patience.'}"
+17	17		301							{2: 'King', 3: 'This is a waste of time and you know it. Wanna just give up now?'}
+18	18		302							{2: 'Are you saying that because you think I can turn the tables in the next few rounds?', 3: '19', 4: 'Impatience never gets you far, mind you.', 5: '19'}
+19	19		301							{2: 'King', 3: 'Just trying to show you an easy way out. Humans love saving face, no?'}
+20	20		302							{2: 'Well, thanks but no thanks.', 3: '21'}
+21	21		301							"{3: 'After replying impassively, you pick the ""Queen"". With the dice, however, you aren\'t so lucky this time—with a roll of ""4"", you know that the ""King"" would still be leading even after this round.'}"
+22	22		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+23	23		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+24	24		306							{1: '1'}
+25	25		401							{1: '2', 2: '2924'}
+26	26		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0'}
+27	27		201							{1: '1', 2: '500610'}
+28	28		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+29	29		301							{1: '1', 2: 'α', 3: '...', 4: '1'}
+30	30		301							"{2: 'α', 3: ""You're going to lose."", 4: '1'}"
+31	31		302							{2: '...What are you talking about?', 3: '32'}
+32	32		301							{2: 'α', 3: 'Your poker face is quite something.', 4: '1'}
+33	33		301							"{2: 'α', 3: ""Your left hand has been shaking. Didn't you notice?"", 4: '1'}"
+34	34		302				AniZhuanchangBegin			{2: '...', 3: '35'}
+35	35		202							{1: '1', 6: '1'}
+36	36		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+37	37		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4001_09.jpg'}
+38	38		104							{1: '0|200|-200', 2: '0'}
+39	39		104							{1: '0|400|-200', 2: '1'}
+40	40		301			AniZhuanchangEnd				{3: 'Holding down your left hand hidden under the table, you feel your palm covered in a fine sweat.'}
+41	41		104					1000.0		{1: '0|-100|-200', 2: '1'}
+42	42		301							"{3: 'Looking up, you see that the ""King\'s"" expression remains unchanged, those crimson eyes of hers reflecting your face.'}"
+43	43		301				AniZhuanchangBegin			"{3: ""She smiles, seemingly indifferent to the game's outcome and satisfied just to see you suffer and embarrassed.""}"
+44	44		104							{1: '0|300|-300', 2: '0'}
+45	45		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory807.jpg'}
+46	46		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0'}
+47	47		201							{1: '1', 2: '500610'}
+48	48		301			AniZhuanchangEnd				{1: '1', 2: 'α', 3: 'Calm down.', 4: '1'}
+49	49		302							{2: '...I am calm.', 3: '50'}
+50	50		202							{1: '1', 6: '1'}
+51	51		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '0.8'}
+52	52		301							"{3: ""You're not poking fun or trying to play tough. You do feel calm.""}"
+53	53		301							{3: 'Your body is tormented by tension, but your mind races on.'}
+54	54		301				AniZhuanchangBegin			"{3: ""How difficult can this be when it's a game that two kids came up with?""}"
+55	55		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory819.jpg'}
+56	56		104							{1: '0|300|-200', 2: '0'}
+57	57		301			AniZhuanchangEnd				{3: 'The chessboard follows the size of international chess, totaling 64 squares.'}
+58	58		301							"{3: 'Not counting the ""King"" and the specially-functioning ""Bishop"", each player has four pieces, each with seven dice that, at most, can result in a maximum of 42 moves. The ""Queen"", on the other hand, has double the mobility, putting its maximum number of moves at 84.'}"
+59	59		301							"{3: ""Executing events on the squares grants rewards, and it's also possible to battle and steal the opponent's dice.""}"
+60	60		301							{3: 'Since the number of event squares is fixed, a bit of calculation can reveal the best moves, minimizing the impact of luck.'}
+61	61		301							{3: 'Unfortunately, with the game already five rounds in, it hits just now that the game works similarly to tic-tac-toe in that the first move can dictate winning or losing.'}
+62	62		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.5'}
+63	63		201							{1: '1', 2: '500610'}
+64	64		301							{1: '1', 2: 'α', 3: 'You know what really matters.', 4: '1'}
+65	65		302							{2: 'I know.', 3: '66'}
+66	66		202							{1: '1', 6: '1'}
+67	67		301							"{3: 'Think about ""why"" instead of ""how.""'}"
+68	68		301							"{3: 'The ""game"" itself isn\'t important. What matters is why it takes this form.'}"
+69	69		301							"{3: 'A real ""chess player"" focuses on things beyond the game itself.'}"
+70	70		301							{3: 'Beyond the game is probably where the key to victory lies.'}
+71	71		301							"{3: ""This slowly made sense to you through the countless games you've made against a certain fellow player.""}"
+72	72		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4001_09.jpg'}
+73	73		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '0.8'}
+74	74		104							{1: '0|-100|-300', 2: '0'}
+75	75		301							"{3: 'Ridding your mind of all the noises and quickly calming yourself down, you look at the ""King"" once again in the eye.'}"
+76	76		302							"{2: ""Funny how you never speak when it's your turn."", 3: '77'}"
+77	77		301				AniZhuanchangBegin			"{3: 'With it, the ""King"" slowly lowers her hand that has been hovering over a piece.'}"
+78	78		306							
+79	79		104							{1: '0|0|0', 2: '0'}
+80	80		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory807.jpg'}
+81	81		201							{1: '1', 2: '500763'}
+82	82		301			AniZhuanchangEnd				{1: '1', 2: 'King', 3: 'Well, would you fancy a pleasant, friendly chat?', 4: '1'}
+83	83		302							"{2: ""There's no rule against that, is there?"", 3: '84', 4: 'Not really asking for ""pleasant and friendly.""', 5: '84'}"
+84	84		204							{1: '1', 2: '13'}
+85	85		301							{2: 'King', 3: 'Interesting. Is this how you sweet-talked that agent?', 4: '1'}
+86	86		201							{1: '1', 2: '500610'}
+87	87		301							{1: '1', 2: 'α', 3: '...', 4: '1'}
+88	88		302							{2: 'Communication can indeed solve many problems.', 3: '89'}
+89	89		201							{1: '1', 2: '500763'}
+90	90		301							{2: 'King', 3: 'Provided it stems from good intentions, right?', 4: '1'}
+91	91		201							{1: '1', 2: '500610'}
+92	92		301							"{1: '1', 2: 'α', 3: ""Is that what you're seeking?"", 4: '1'}"
+93	93		201							{1: '1', 2: '500763'}
+94	94		301							{2: 'King', 3: 'What if it actually exists?', 4: '1'}
+95	95		301							{2: 'King', 3: 'If the world had even one bit of goodwill toward her, none of you would be here right now.', 4: '1'}
+96	96		201							{1: '1', 2: '500610'}
+97	97		301							"{1: '1', 2: 'α', 3: ""You don't understand Luna at all."", 4: '1'}"
+98	98		201							{1: '1', 2: '500763', 3: '4'}
+99	99		301							{1: '1', 2: 'King', 3: 'Is that so? And do you truly understand your sister, Alpha?', 4: '1'}
+100	100		301							{2: 'King', 3: 'When she was struggling desperately in a lightless void, did you know what she was really thinking?', 4: '1'}
+101	101		301				DialogDisable			{2: 'King', 3: 'Do you really know what her wish is?', 4: '1'}
+102	102		302							{2: 'So, what do you want?', 3: '103'}
+103	103		302							"{2: ""If you think you're fulfilling your own will, why do you keep mentioning her?"", 3: '104'}"
+104	104		302							"{2: ""And you're even using her face. Oh, I see how it is now. You're the puppet acting on her behalf, right?"", 3: '105'}"
+105	105		204							{1: '1', 2: '5'}
+106	106		301			DialogEnable				{2: 'King', 3: 'You... What did you say?!', 4: '1'}
+107	107		204							{1: '1', 2: '8'}
+108	108		301							{2: 'King', 3: '...', 4: '1'}
+109	109		204							{1: '1', 2: '13'}
+110	110		301							{2: 'King', 3: 'This is some sort of plan, right? You said all of that just to upset me.', 4: '1'}
+111	111		302							{2: 'I wish it could be that easy.', 3: '112', 4: 'I can be meaner. Want me to give it a go?', 5: '112'}
+112	112		201							{1: '1', 2: '500610'}
+113	113		301							"{1: '1', 2: 'α', 3: ""The real Ascension-Network wouldn't be as emotionally rich as this."", 4: '1'}"
+114	114		201							{1: '1', 2: '500763', 3: '4'}
+115	115		301							"{1: '1', 2: 'King', 3: ""Do you really think I'm a fake at this point?"", 4: '1'}"
+116	116		201							{1: '1', 2: '500610'}
+117	117		301							"{1: '1', 2: 'α', 3: ""No, but I don't find you particularly special either."", 4: '1'}"
+118	118		301							"{2: 'α', 3: ""You're just a coward, hiding in a toy house you built and wanting only to play house with people."", 4: '1'}"
+119	119		301							"{2: 'α', 3: 'You\'re no ""King"". You\'re no different from anyone else here.', 4: '1'}"
+120	120		201							{1: '1', 2: '500763', 3: '13'}
+121	121		301							{1: '1', 2: 'King', 3: '...Heh.', 4: '1'}
+122	122		301							{2: 'King', 3: 'So, does that mean I should just go ahead and physically eliminate everything here? Would that make you happy?', 4: '1'}
+123	123		301							"{2: 'King', 3: 'Who\'s twisting kindness? Who lacks any compassion for the weak? Is it you who crave ""conflict"" or me who seeks ""peace""?', 4: '1'}"
+124	124		302							"{2: '...I\'m not going to discuss peace with an ""enemy.""', 3: '125', 4: 'Do you truly believe you\'re pursuing ""peace""?', 5: '125'}"
+125	125		301							{2: 'King', 3: 'When did I ever say I was your enemy?', 4: '1'}
+126	126		301							{2: 'King', 3: 'You perceive me as the enemy, but am I really?', 4: '1'}
+127	127		301							"{2: 'King', 3: ""Why can't we be allies? Why can't this game just be a friendly frolic among friends?"", 4: '1'}"
+128	128		302							{2: 'Jokes have their limits.', 3: '129', 4: 'I beg to differ.', 5: '129'}
+129	129		301							"{2: 'King', 3: ""Then how do you coexist peacefully with Alpha here? Aren't you enemies?"", 4: '1'}"
+130	130		301							"{2: 'King', 3: ""If you stand firmly by what you believe, why didn't you just cut each other down the moment you met?"", 4: '1'}"
+131	131		201							{1: '1', 2: '500610'}
+132	132		301							{1: '1', 2: 'α', 3: 'Your attempts at sowing discord are pretty childish.', 4: '1'}
+133	133		201							{1: '1', 2: '500763', 3: '13'}
+134	134		301							{1: '1', 2: 'King', 3: '...No, on the contrary, I hope you can get along even better.', 4: '1'}
+135	135		302							{2: 'What exactly are you trying to achieve with all this?', 3: '136'}
+136	136		204							{1: '1'}
+137	137		301							"{2: 'King', 3: ""Isn't it obvious?"", 4: '1'}"
+138	138		301							"{2: 'King', 3: 'I\'m filtering the ""malice"" of this world. I\'m trying to rid the world of it completely.', 4: '1'}"
+139	139		301							"{2: 'King', 3: ""I'm trying to get rid of these meaningless conflicts, which would allow those who understand compromise to coexist peacefully. Wouldn't that be a higher form of civilization?"", 4: '1'}"
+140	140		302							"{2: ""So, that's why you created those white Mental Images..."", 3: '141'}"
+141	141		201							{1: '1', 2: '500610'}
+142	142		301							"{1: '1', 2: 'α', 3: ""You're just depriving us of the right to choose."", 4: '1'}"
+143	143		201							{1: '1', 2: '500763', 3: '13'}
+144	144		301							{1: '1', 2: 'King', 3: 'Choice leads to conflict, conflict leads to chaos, and chaos leads to harm. To end all this, coercive measures are necessary.', 4: '1'}
+145	145		301							{2: 'King', 3: 'This game is a second chance for the transgressors, and I hope they realize how meaningless all these conflicts are.', 4: '1'}
+146	146		301							"{2: 'King', 3: ""If there is a better way to go about this, I'm all ears."", 4: '1'}"
+147	147		201							{1: '1', 2: '500610'}
+148	148		301							{1: '1', 2: 'α', 3: 'Of course, there is.', 4: '1'}
+149	149		401							{1: '2', 2: '2924'}
+150	150		401							{1: '2', 2: '627'}
+151	151		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+152	152		301							"{3: ""Tiny arcs of lightning stir Alpha's hair as pale blue energy slowly courses within her left eye.""}"
+153	153		201							{1: '1', 2: '500611'}
+154	154		301							"{1: '1', 2: 'α', 3: ""I don't mind tackling problems head-on."", 4: '1'}"
+155	155		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+156	156		201							{1: '1', 2: '500763'}
+157	157		301							{1: '1', 2: 'King', 3: 'Are you sure you really want to point that sword at me, Alpha?', 4: '1'}
+158	158		301							"{2: 'King', 3: ""You refused to become an agent because you didn't want to be trapped in a dog-eat-dog cage."", 4: '1'}"
+159	159		301							"{2: 'King', 3: ""Now, I'm showing you new possibilities for filtering, and yet you still stand against this path?"", 4: '1'}"
+160	160		301							"{2: 'King', 3: ""Or is it that you simply don't care about finding answers because you're just too proud to walk with anyone?"", 4: '1'}"
+161	161		301							{2: 'King', 3: 'Even when that person is your...', 4: '1'}
+162	162		204							{1: '1', 2: '13'}
+163	163		301							{3: 'The King pauses, before breaking into a smile and falling silent.'}
+164	164		301							"{2: 'King', 3: ""It's your turn, 【kuroname】."", 4: '1'}"
+165	165		301							"{3: 'The round count goes from 13 to 14 as the ""King"" makes her move.'}"
+166	166		202							{1: '1', 6: '1'}
+167	167		306							{1: '1'}
+168	168		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.5'}
+169	169		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+170	170		201							{1: '1', 2: '500610'}
+171	171		301							{1: '1', 2: 'α', 3: '...', 4: '1'}
+172	172		302							{2: 'Did you figure something out?', 3: '173'}
+173	173		301							"{2: 'α', 3: ""Didn't figure much out, but one thing is clear."", 4: '1'}"
+174	174		301				DialogDisable			"{2: 'α', 3: ""She's not Luna, nor the Ascension-Network."", 4: '1'}"
+175	175		302							"{2: ""For now, let's keep playing this game."", 3: '176'}"
+176	176		302							"{2: ""Quitting halfway through something isn't how I roll."", 3: '177'}"
+177	177		301		1	DialogEnable	AniZhuanchangBegin			{2: 'α', 3: 'Me neither.', 4: '1'}

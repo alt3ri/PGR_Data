@@ -1,0 +1,129 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory312.png'}
+2	2		401							{1: '1', 2: '202'}
+3	3		301			DialogEnable				"{3: '""Gear"" grabs Wanshi by his head and lifts him off the ground.'}"
+4	4		201							{1: '1', 2: '500288'}
+5	5		301							{1: '1', 2: 'Gear?', 3: 'As I was saying... What are you fighting for?', 4: '1'}
+6	6		201							{1: '1', 2: '500273', 3: '4'}
+7	7		301							{1: '1', 2: 'Wanshi', 3: '...', 4: '1'}
+8	8		202							{1: '1', 6: '1'}
+9	9		301							"{3: 'Wanshi\'s lips move faintly, spitting out vital fluid on the ""Gear"". He cannot see the figure\'s expression, but he can see that the light source on its body gradually changes from fluorescent to dark red.'}"
+10	10		201							{1: '1', 2: '500288'}
+11	11		301			PanelActor1Shake				{1: '1', 2: 'Gear?', 3: 'Ah... How blasphemous and banal.', 4: '1'}
+12	12		202							{1: '1', 6: '1'}
+13	13		401							{1: '2', 2: '1503'}
+14	14		301			RImgBg1Shake				"{3: '""Gear"" slowly lifts up Wanshi, then throws him onto the ground, cracking the ground from the force of the impact.'}"
+15	15		301							"{3: 'Wanshi\'s body slightly bounces into the air from the impact. Just as he is about to land, ""Gear"" catches him by the left leg.'}"
+16	16		201							{1: '1', 2: '500288'}
+17	17		301							{1: '1', 2: 'Gear?', 3: 'Endeavors deprived of faith are merely mundane shells—vulnerable and meaningless.', 4: '1'}
+18	18		301							{2: 'Gear?', 3: 'How disappointing.', 4: '1'}
+19	19		202							{1: '1', 6: '1'}
+20	20		401							{1: '2', 2: '1503'}
+21	21		301			RImgBg1Shake				"{3: '""Gear"" speaks, slamming Wanshi to the ground on both sides like a doll in the hands of a child. ""Gear"" lifts Wanshi above its head, then slams him down again.'}"
+22	22		201							{1: '1', 2: '500288'}
+23	23		301							{1: '1', 2: 'Gear?', 3: 'You may be weak, but you still manage to withstand a beating, foolish one.', 4: '1'}
+24	24		301							"{3: 'This continues for some time, but the thrashing from ""Gear"" appears to be slowing.'}"
+25	25		301							{2: 'Gear?', 3: '...Hmm?', 4: '1'}
+26	26		401							{1: '2', 2: '1545'}
+27	27		301							"{3: '""Gear"" looks down at Wanshi clenched within its right hand to discover that it is covered in a layer of frost.'}"
+28	28		301							{3: 'Due to the numbing cold of the frost, it had no idea that a layer of ice had formed. Although it is not thick, the ice affects its ability to control its limbs.'}
+29	29		203							{1: '1', 2: '0.25', 3: '-600'}
+30	30		201							{1: '2', 2: '500273', 3: '4', 4: '200'}
+31	31		301				DialogDisable			"{1: '1', 3: 'Wanshi lifts his right leg and delivers a powerful kick to ""Gear\'s"" forearm. Coupled with the numbing frost on the joint of its right hand, Wanshi is finally able to free himself from its clamp.', 4: '1', 5: '2'}"
+32	32		401							{1: '2', 2: '1543'}
+33	33		203							{1: '1', 2: '0.4', 3: '-200'}
+34	34		203							{1: '2', 2: '0.25', 3: '600'}
+35	35		301			DialogEnable				"{3: 'After seeing Wanshi break away, ""Gear"" immediately swings his left hand to catch its prey again.', 4: '1', 5: '2'}"
+36	36		401							{1: '2', 2: '1510'}
+37	37		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+38	38		202							{1: '1', 2: '2', 6: '1'}
+39	39		301							"{3: 'Falling to the ground, Wanshi shoots a silver orb of light at ""Gear\'s"" head.'}"
+40	40		301							"{3: 'Right as the orb of light is about to land a direct hit, ""Gear"" turns its head at an awkward angle and deflects the shot. Barely grazing the armor on its cheek with a trail of glistening sparks, the beam shoots off into the sky.'}"
+41	41		201							{1: '1', 2: '500288'}
+42	42		301							{1: '1', 2: 'Gear?', 3: 'Is that all? Trivial scum!', 4: '1'}
+43	43		301							"{3: 'Grievously wounded, Wanshi smirks as if to indicate that the attack was not as trivial as ""Gear"" was lead on to believe. It quickly turns to look in the direction of the orb of light.'}"
+44	44		301							"{3: 'It turns to discover Troy, which it had previously sent flying, floating in the air. Only once Troy firmly wraps the orb of light around its hand does ""Gear"" see the attack\'s true form.'}"
+45	45		301							"{3: 'It is a silver conical claw attached to a transparent composite rope. This thin rope, which is now attached to ""Gear\'s"" frozen right hand, is connected to a snare gun wielded by Wanshi.'}"
+46	46		201							{1: '1', 2: '500273', 3: '4'}
+47	47		301							{1: '1', 2: 'Wanshi', 3: 'Sleep tight.', 4: '1'}
+48	48		202							{1: '1', 6: '1'}
+49	49		301							"{3: 'Wanshi tosses the snare gun behind ""Gear"""" and quickly rolls to the side. Flying behind the enemy, the snare quickly wraps around """"Gear"" and tightly ensnares its limbs.'}"
+50	50		301							"{3: 'Once the snare gun completely secures ""Gear"""", it transforms into a square sheet and adheres tightly to the back of """"Gear"", preventing it from freeing itself.'}"
+51	51		201							{1: '1', 2: '500288'}
+52	52		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+53	53		301							{1: '1', 2: 'Gear?', 3: 'Hmph...', 4: '1'}
+54	54		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+55	55		301							{1: '1', 3: 'At the same time, Troy grabs the silver claw and flies over a raised section of the ruins, then quickly descends to the other side.'}
+56	56		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+57	57		301			PanelActor1Shake				"{3: 'Troy\'s injuries cause him to collapse onto the ground, kicking up a cloud of dust and smoke around him. The thin rope hoists ""Gear"" up, leaving it hanging in the air.'}"
+58	58		301							{1: '1', 3: 'Dragging his left leg, Wanshi limps over to Troy and helps him up. Troy plants the claw into the floor, then Wanshi drops a frost grenade next to the claw.'}
+59	59		401							{1: '2', 2: '1545'}
+60	60		301				AniZhuanchangBegin			{3: 'Right as Wanshi and Troy leave, the grenade activates and freezes the claw to the floor of the ruins.'}
+61	61		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+62	62		202							{1: '1', 2: '2', 6: '1'}
+63	63		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory10.jpg'}
+64	64		201							{1: '1', 2: '500298', 4: '300'}
+65	65		201							{1: '2', 2: '500273', 4: '-300'}
+66	66		301			AniZhuanchangEnd				"{1: '1', 2: 'Wanshi', 3: ""Looks like our equipment won't hold out much longer. Have you relayed all of the enemy intel?"", 4: '2'}"
+67	67		301							"{2: 'Troy', 3: ""No, I can't seem to send it. Seems like something in the air is jamming our signal with Babylonia."", 4: '1'}"
+68	68		301							{3: 'Troy points up, but as Wanshi looks in the direction of his finger, all that can be seen is the thick cover of night that has imprisoned the entire area in darkness. Moonlight tries to pierce the dense layer of clouds, but only a dim glimmer of light reaches the ground.'}
+69	69		301							"{2: 'Wanshi', 3: ""Nothing on the scanner... Maybe it's the same composition as that thing back there."", 4: '2'}"
+70	70		301							"{2: 'Troy', 3: ""Initiate emergency evac plan. See that fork up ahead? Let's split up there, then meet back at the evac point."", 4: '1'}"
+71	71		301							{2: 'Wanshi', 3: 'Alright... Got it.', 4: '2'}
+72	72		301							{2: 'Troy', 3: 'Sync up the time. 0043.', 4: '1'}
+73	73		301							{2: 'Wanshi', 3: '43', 4: '2'}
+74	74		301							{2: 'Troy', 3: 'No problem. ETA for the evac point is three hours. Give each other a five minute window.', 4: '1'}
+75	75		301							{2: 'Troy', 3: 'Switch comms to stealth mode in five minutes to prevent us from being followed.', 4: '1'}
+76	76		301							{3: 'After Wanshi gives the two of them basic first aid, they lean up against the corner of the building separating their paths. The air is so quiet that they can hear their breathing.'}
+77	77		301							{2: 'Troy', 3: 'Signal off. Entering stealth mode.', 4: '1'}
+78	78		301							{2: 'Wanshi', 3: 'Ditto.', 4: '2'}
+79	79		301							"{3: ""After the final confirmation, Troy and Wanshi get up and break off in different directions. Right then, Wanshi hears Troy's voice coming from behind him.""}"
+80	80		202							{1: '1', 2: '2', 6: '1'}
+81	81		201							{1: '1', 2: '500298'}
+82	82		301							"{1: '1', 2: 'Troy', 3: ""Wanshi, don't get yourself killed."", 4: '1'}"
+83	83		202							{1: '1', 6: '1'}
+84	84		201							{1: '1', 2: '500273', 3: '4'}
+85	85		301							{1: '1', 2: 'Wanshi', 3: '...Right back atcha.', 4: '1'}
+86	86		202							{1: '1', 6: '1'}
+87	87		401							{1: '2', 2: '1513'}
+88	88		301				AniZhuanchangBegin			{3: 'After saying goodbye, they part ways in the moonlight and walk toward the dark ruins before them.'}
+89	89		202							{2: '1', 3: '2', 6: '1'}
+90	501		401							{1: '1', 2: '102'}
+91	90		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory312.png'}
+92	91		401							{1: '2', 2: '1506'}
+93	92		301			AniZhuanchangEnd				"{3: 'The ice crystals begin to gradually melt under the high temperature generated by ""Gear"""". Clenching its right fist, """"Gear"" breaks the composite rope ensnaring its body and smashes into the ground with a heavy thud.'}"
+94	93		201							{1: '1', 2: '500288'}
+95	94		301							{1: '1', 2: 'Gear?', 3: 'Dannazione. Run if you so dare, wretched fools.', 4: '1'}
+96	95		301							"{2: 'Gear?', 3: 'Preparations must still be made for the path that will lead us to ""Sage"".', 4: '1'}"
+97	96		301							"{3: 'After losing its counterweight, the rope snaps and falls limply to the ground. ""Gear"" throws the composite rope still clinging to its body aside and looks in the direction in which Troy and Wanshi had left.'}"
+98	97		301				AniZhuanchangBegin			{2: 'Gear?', 3: 'This may take longer than anticipated, but all potential threats must be eliminated.', 4: '1'}
+99	98		202							{1: '1', 6: '1'}
+100	99		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory13.jpg'}
+101	500		401							{1: '1', 2: '33'}
+102	100		301			AniZhuanchangEnd				{3: 'Wanshi arduously makes his way through the abandoned city and crater-filled streets.'}
+103	101		301							{3: 'Moonlight cascades on the broken buildings, casting overlapping shadows like the tenebrous depths of a lake. The night breeze passes through an open building and blasts Wanshi with hot wind and gravel.'}
+104	102		301							{3: 'Ravaged by war, buildings throughout the city have toppled to their foundation. Some are no longer covered by roofs; others are now only empty shells. The disjointed buildings that still remain standing appear ready to collapse at the slightest gust of wind and sand.'}
+105	103		301							{3: 'The monotonous scenery continues to extend in front of Wanshi. No matter where he goes, he sees similar ruins.'}
+106	104		201							{1: '1', 2: '500273', 3: '4'}
+107	105		301							{1: '1', 2: 'Wanshi', 3: 'Ngh... Looks like the painkillers have stopped working.', 4: '1'}
+108	106		202							{1: '1', 6: '1'}
+109	107		401							{1: '2', 2: '1512'}
+110	108		301							{3: 'The dormant pain begins to resurface, disrupting each of his data circuits. The severe pain causes Wanshi to stumble to the ground.'}
+111	109		201							{1: '1', 2: '500273'}
+112	110		301							"{1: '1', 2: 'Wanshi', 3: ""Nrgh, Wanshi... Now's not the time for a nap."", 4: '1'}"
+113	111		301							"{2: 'Wanshi', 3: ""Keep... Keep going... or else Chrome's... gonna yell at you again."", 4: '1'}"
+114	112		401							{1: '1', 2: '36'}
+115	113		301							{2: 'Wanshi', 3: 'But...', 4: '1'}
+116	114		301							"{2: 'Wanshi', 3: ""I'm spent..."", 4: '1'}"
+117	115		202							{1: '1', 6: '1'}
+118	116		301							"{3: ""Wanshi's eyesight begins to tremble slightly. The sound of the wind in his ears becomes distant. He feels himself drift away from the world like the sensation just before falling asleep.""}"
+119	117		201							{1: '1', 2: '500273', 3: '8'}
+120	118		301				AniZhuanchangBegin			"{1: '1', 2: 'Wanshi', 3: ""Now's... not the time... to sleep... I can't..."", 4: '1'}"
+121	119		202							{1: '1', 6: '1'}
+122	120		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1801_6.jpg'}
+123	121		301			AniZhuanchangEnd				"{3: ""Right as Wanshi's body is about to forcibly shut down his vision module due to his injuries, a figure appears before him.""}"
+124	122		301							{2: '???', 3: '...?'}
+125	123		301							{2: 'Wanshi', 3: '...Who...'}
+126	124		301							{2: '???', 3: 'A human...? No...'}
+127	125		301							{2: '???', 3: 'I must... first...'}
+128	126		301		1		AniZhuanchangBegin			{3: 'The stranger walks closer, but his voice becomes more distant. All Wanshi can feel is endless darkness.'}

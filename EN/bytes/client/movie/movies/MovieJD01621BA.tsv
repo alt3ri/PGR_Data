@@ -1,0 +1,32 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory283.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: 'You are now entering an abandoned residential area...'}
+4	4		301							{3: 'Projections and the Corrupted coexist and roam the area.'}
+5	6		302							"{2: ""Let's look into these projections first."", 3: '7'}"
+6	7		201							{1: '1', 2: '1031001', 4: '-600'}
+7	8		201							{1: '2', 2: '500026', 4: '600'}
+8	9		201							{1: '3', 2: '500166'}
+9	10		301							"{1: '1', 2: 'Lee', 3: ""It'd be great to be able to collect more data, but a record this huge and complicated is going to take us quite some time to look into."", 4: '2'}"
+10	11		301							"{2: 'Liv', 3: ""I ran a search with information of the Ascendants and Huaxu but I wasn't able to find anything. We can really use information that's more detailed."", 4: '1'}"
+11	12		301							{2: 'Lucia', 3: 'All these projections and the Corrupted here, though. Could this be a sign of something?', 4: '3'}
+12	13		301							{2: 'Liv', 3: 'It could be, but of what?', 4: '1'}
+13	14		302							"{2: ""Lee, what's your thought?"", 3: '15', 4: ""Lucia, let's get rid of them all!"", 5: '18', 6: 'Liv, do you recall anything?', 7: '24'}"
+14	15		301							{2: 'Lee', 3: 'As I said, a record this huge and complicated would take quite some time to calculate.', 4: '2'}
+15	16		301							"{2: 'Lee', 3: ""The Spear of F.O.S. isn't turning up anything with the information we have. It's only giving us this sea of data."", 4: '2'}"
+16	17	24	301							"{2: 'Lee', 3: ""Let's see what Liv has to say."", 4: '2'}"
+17	18		204							{1: '3', 2: '5'}
+18	19		301							"{2: 'Lucia', 3: ""Sure. Let's keep fighting, Commandant!"", 4: '3'}"
+19	20		204							{1: '3'}
+20	21		301							{2: 'Lee', 3: 'Hold on! But we came here for leads!', 4: '2'}
+21	22		301							{2: 'Lee', 3: 'The record is only going to get bigger and more complicated if we destroy all the Corrupted here!', 4: '2'}
+22	23	24	301							"{2: 'Lee', 3: ""Let's see what Liv has to say."", 4: '2'}"
+23	24		301				DialogDisable			{2: 'Liv', 3: '...Um. Let me think about it.', 4: '1'}
+24	25		305							{1: '26', 2: '32'}
+25	26		301			DialogEnable				{2: 'Liv', 3: 'Most of these Corrupted bodies are new. The only ones with dust on them are placed high up.', 4: '1'}
+26	27		301							{2: 'Liv', 3: 'I think these Corrupted only got here recently.', 4: '1'}
+27	28		301							{2: 'Lee', 3: 'So, something drew them here, or maybe the Ascendants summoned them.', 4: '2'}
+28	29		301							{2: 'Liv', 3: 'Correct, and the remains on the ground have been recycled.', 4: '1'}
+29	30		301							{2: 'Liv', 3: 'Uhm... Why did they only recycle the ones on the ground, though?', 4: '1'}
+30	31		301		1		AniZhuanchangBegin			{3: 'The four of you think for a bit to no avail. You will just need to keep looking for clues.'}
+31	32		202		1		AniZhuanchangBegin			{1: '1', 2: '2', 3: '3', 6: '1'}

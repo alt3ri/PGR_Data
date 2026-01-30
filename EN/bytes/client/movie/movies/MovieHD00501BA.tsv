@@ -1,0 +1,107 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory126.png'}
+2	2		401							{1: '1', 2: '210'}
+3	3		301			DialogEnable				{3: 'The wheels turn and hit the rails like a rhythmic heartbeat. The wind howls as it presses against the sealed windows.'}
+4	4		301							{3: 'The sky darkens, and the warm, yellow glow of the moon melts into the night sky, peeking through the gentle clouds, sprinkling bits of its glow throughout the carriages.'}
+5	5		301							{3: 'Lee tilts his head as he leans on a table, maintaining his pistols. Liv gazes outside the windows, while Lucia sits beside her, lost in thought.'}
+6	6		301							{3: 'After the earlier rain comes a rare period of quiet. Bianca stands up and pulls her blonde hair back, then she breaks the silence.'}
+7	7		201							{1: '1', 2: '500128'}
+8	8		301							"{1: '1', 2: 'Bianca', 3: ""I'll be departing this train now that my mission is completed."", 4: '1'}"
+9	9		302							"{2: 'I see. Thank you for your hard work.', 3: '10', 4: ""Aren't you going to stay with us?"", 5: '11'}"
+10	10	13	301							"{2: 'Bianca', 3: ""Don't mention it."", 4: '1'}"
+11	11		301							{2: 'Bianca', 3: 'Returning with the rest of the force?', 4: '1'}
+12	12		301							"{2: 'Bianca', 3: ""...No, I don't think I will."", 4: '1'}"
+13	13		201							{1: '1', 2: '500026'}
+14	14		301							{1: '1', 2: 'Lee', 3: 'Anyway, we just have to wait for Babylonia to pick us up.', 4: '1'}
+15	15		301							{2: 'Lee', 3: 'From the progress report I just received, the other teams should be wrapping up the battlefield cleanup.', 4: '1'}
+16	16		302							"{2: ""Right. I hope it's smooth sailing from here on out."", 3: '17', 4: ""I really have to get some rest after we're done here..."", 5: '17'}"
+17	17		202							{1: '1', 6: '1'}
+18	18		401							{1: '2', 2: '1503'}
+19	19		401							{1: '1', 2: '201'}
+20	20		301			RImgBg1Shake				{3: 'Suddenly, the train shakes violently, and the force catches all of you off guard, sweeping you off your feet.'}
+21	21		201							{1: '1', 2: '1021001'}
+22	22		301							{1: '1', 2: 'Lucia', 3: 'Watch out, Commandant! Everyone, prepare for hostiles! Liv, are there remaining Corrupted in the area?', 4: '1'}
+23	23		201							{1: '1', 2: '1031001'}
+24	24		301							{1: '1', 2: 'Liv', 3: 'Nothing in our line of sight!', 4: '1'}
+25	25		201							{1: '1', 2: '500026'}
+26	26		301							"{1: '1', 2: 'Lee', 3: ""...Commandant, perhaps don't jinx it next time."", 4: '1'}"
+27	27		202							{1: '1', 6: '1'}
+28	28		301							{3: 'The train quiets down again after the commotion. Before you can settle down, the untimely ringtone of your comms echos inside the carriage.'}
+29	29		302							{2: '(Connect)', 3: '30'}
+30	30		201							{1: '1', 2: '500001'}
+31	31		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+32	32		301							"{1: '1', 2: 'Celica', 3: ""Hello, Gray Raven Commandant! This is Celica speaking. Thanks for your remarkable work this time. The folks upstairs are quite pleased with your team's efforts."", 4: '1'}"
+33	33		301							"{2: 'Celica', 3: ""This wasn't an easy mission. The Heterozygote spread faster than we expected, so you've done a great job containing the damage—"", 4: '1'}"
+34	34		302							"{2: 'Thanks.', 3: '35', 4: ""I've got a bad feeling about this..."", 5: '35'}"
+35	35		301							{2: 'Celica', 3: 'Up until 3 minutes 28 seconds ago, the Eternal Engine has had 11 of its carriages damaged, 4 of which are in critical conditions. We are expecting it to stop running in 4 days, 14 hours, and 3 minutes.', 4: '1'}
+36	36		302							"{2: ""Guess we didn't catch them all."", 3: '37', 4: '...', 5: '37'}"
+37	37		301							{2: 'Celica', 3: 'Gray Raven Commandant.', 4: '1'}
+38	38		301							{2: 'Celica', 3: 'After our discussion, Akdilek has decided to carry out an emergency repair. As their forces have significantly diminished from the battle, the Gray Ravens will be providing them combat and technical assistance.', 4: '1'}
+39	39		301							{2: 'Celica', 3: 'For more details, you can talk to the person in charge.', 4: '1'}
+40	40		302							"{2: ""Who's that?"", 3: '41', 4: ""It can't be..."", 5: '41'}"
+41	41		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+42	42		201							{1: '1', 2: '500127'}
+43	43		301							{1: '1', 2: 'Sophia', 3: 'Commandant.', 4: '1'}
+44	44		302							"{2: ""You've just been through hell. Are you good to do this?"", 3: '45', 4: 'How long have you been here?!', 5: '47'}"
+45	45		301							"{2: 'Sophia', 3: ""I'm good."", 4: '1'}"
+46	46		301							"{2: 'Sophia', 3: ""I'm rested and recalibrated. Doing great. Repairing is what I'm good at."", 4: '1'}"
+47	47		301							{2: 'Sophia', 3: '...The whole time.', 4: '1'}
+48	48		302							"{2: ""If the order's coming from above..."", 3: '49', 4: ""I'm good with the arrangement."", 5: '49'}"
+49	49		201							{1: '1', 2: '500001'}
+50	50		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+51	51		301							"{2: 'Celica', 3: ""Then we're counting on you, Commandant 【kuroname】."", 4: '1'}"
+52	52		302							{2: 'Alright.', 3: '53', 4: 'So...', 5: '53'}
+53	53		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+54	54		201							{1: '1', 2: '1021001'}
+55	55		301							{1: '1', 2: 'Lucia', 3: 'Standing by.', 4: '1'}
+56	56		201							{1: '1', 2: '1031001'}
+57	57		301							{1: '1', 2: 'Liv', 3: 'At your orders, Commandant.', 4: '1'}
+58	58		201							{1: '1', 2: '500026'}
+59	59		301							"{1: '1', 2: 'Lee', 3: ""I knew things were going too well... Let's get started."", 4: '1'}"
+60	60		201							{1: '1', 2: '500128'}
+61	61		301							"{1: '1', 2: 'Bianca', 3: ""...I don't have a new mission right now."", 4: '1'}"
+62	62		301							{2: 'Bianca', 3: 'I can offer my help if you need it.', 4: '1'}
+63	63		302							{2: '(Look at Sophia)', 3: '64'}
+64	64		201							{1: '1', 2: '500127'}
+65	65		301							"{1: '1', 2: 'Sophia', 3: ""The Eternal Engine runs on the fusion engine. If the fuel rod doesn't have sufficient contact with the stabilizing plates, the fusion reactor will fail."", 4: '1'}"
+66	66		203							{1: '1', 2: '0.25', 3: '-400'}
+67	67		201							{1: '2', 2: '500026', 4: '400'}
+68	68		301							{1: '1', 2: 'Lee', 3: 'Which was why you had so many restrictions on the inspection process.', 4: '2'}
+69	69		301							"{2: 'Sophia', 3: ""The main issue is that the train's parallel stabilizers are not working properly. All lifting operations cannot proceed when it's running."", 4: '1'}"
+70	70		301							"{2: 'Lee', 3: ""So, we'll have to stop the train and fix the stabilizers first."", 4: '2'}"
+71	71		301							{3: 'Sophia looks at Lee and nods.'}
+72	72		202							{1: '1', 2: '2', 6: '1'}
+73	73		201							{1: '1', 2: '1031001', 3: '7'}
+74	74		401							{1: '4', 2: '103003'}
+75	75		301							{1: '1', 2: 'Liv', 3: 'Ah! Is that...?', 4: '1'}
+76	76		202							{1: '1', 6: '1'}
+77	77		301							"{3: ""Liv's shout interrupts your train of thoughts, and you all follow her gaze and look outside.""}"
+78	78		401							{1: '1', 2: '210'}
+79	79		301							{3: 'You find a vast desert outside the windows of the speeding train. With no moon and clouds, the stars glisten before the backdrop of the inky night sky, showering the golden dunes with diamond-like reflections.'}
+80	80		302							"{1: '565', 2: ""It's the desert."", 3: '83', 4: ""The first time I've seen a view like this."", 5: '84'}"
+81	81		201							{1: '1', 2: '1021001'}
+82	82		303							{1: '565'}
+83	83	85	301							{1: '1', 2: 'Lucia', 3: 'This... is the desert?', 4: '1'}
+84	84		301							{1: '1', 2: 'Lucia', 3: 'Me too...', 4: '1'}
+85	85		202							{1: '1', 6: '1'}
+86	86		301							{3: 'Even the usually poised Bianca cannot help but lean toward the window, holding her breath and taking in the magnificent view.'}
+87	87		401							{1: '2', 2: '1509'}
+88	88		301							{3: 'Moments later, the train begins to slightly tremble. You catch the barely noticeable sound of the engine, it huffing and puffing like an exhausted person, the mounting pressure on the verge of explosion.'}
+89	89		201							{1: '1', 2: '500127', 3: '10'}
+90	90		301							{1: '1', 2: 'Sophia', 3: 'Everyone. Time to work.', 4: '1'}
+91	91		302							{2: 'Lee, you should assist Sophia.', 3: '92'}
+92	92		203							{1: '1', 2: '0.25', 3: '-400'}
+93	93		204							{1: '1'}
+94	94		201							{1: '2', 2: '500026', 4: '400'}
+95	95		301							{1: '1', 2: 'Lee', 3: '...', 4: '2'}
+96	96		301							{2: 'Sophia', 3: '...I accept.', 4: '1'}
+97	97		301							"{2: 'Lee', 3: ""If she says so, then I'm good."", 4: '2'}"
+98	98		301							"{2: 'Sophia', 3: ""I'll send you the repair plans later."", 4: '1'}"
+99	99		302							"{2: ""Liv, you're on combat preparations."", 3: '100'}"
+100	100		202							{1: '1', 2: '2', 6: '1'}
+101	101		201							{1: '1', 2: '1031001'}
+102	102		401							{1: '4', 2: '103002'}
+103	103		301							{1: '1', 2: 'Liv', 3: 'Roger!', 4: '1'}
+104	104		302							{2: 'Everyone else, with me.', 3: '105'}
+105	105		202							{1: '1', 6: '1'}
+106	106		301		1		AniZhuanchangBegin			{3: 'Lucia draws her weapon while Bianca folds her arms, and she nods.'}

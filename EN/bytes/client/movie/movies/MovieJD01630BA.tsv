@@ -1,0 +1,14 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory285.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '1031001'}
+4	4		301			DialogEnable				{1: '1', 3: 'A ruin stops you in your tracks. You will need to climb over this hill of debris to move forth. Then, the projection of someone familiar flashes past you.'}
+5	5		301							"{2: 'Liv', 3: ""I think I've just seen Angel's projection. Can we look for it, Commandant?"", 4: '1'}"
+6	6		302							"{2: ""But we're on a mission."", 3: '7', 4: ""We'll get back to it later."", 5: '7'}"
+7	7		301							{2: 'Liv', 3: 'Uhm... I just want to know where she went.', 4: '1'}
+8	8		301				DialogDisable			"{2: 'Liv', 3: ""We'll go look for her when we've finished the mission. Is that okay?"", 4: '1'}"
+9	9		305							{1: '10', 2: '13'}
+10	10		301			DialogEnable				"{2: 'Liv', 3: ""This picture's gotten pretty blurry, but judging from the look of the person in it, it's most likely the boy."", 4: '1'}"
+11	11		301							"{2: 'Liv', 3: ""The boy's been looking for his mother... Could that be her?"", 4: '1'}"
+12	12		301		1		AniZhuanchangBegin			{2: 'Liv', 3: 'I wonder if she found him at the end...', 4: '1'}
+13	13		202		1		AniZhuanchangBegin			

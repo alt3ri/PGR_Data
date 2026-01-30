@@ -1,0 +1,30 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory247.png'}
+2	1000		401							{1: '1', 2: '201'}
+3	2		201							{1: '1', 2: '500219', 3: '16'}
+4	3		301			DialogEnable				{1: '1', 2: 'Little Girl', 3: 'Nngh...', 4: '1'}
+5	4		201							{1: '1', 2: '500231'}
+6	5		301							{1: '1', 2: 'HNB1', 3: 'Can you keep going?', 4: '1'}
+7	6		201							{1: '1', 2: '500219', 3: '16'}
+8	7		301							"{1: '1', 2: 'Little Girl', 3: ""I'm... I'm okay..."", 4: '1'}"
+9	8		201							{1: '1', 2: '500233'}
+10	9		301							"{1: '1', 2: 'HBG3', 3: ""All this is too much for a human child to handle. Let's find a place to rest."", 4: '1'}"
+11	10		201							{1: '1', 2: '500219', 3: '16'}
+12	11		301							"{1: '1', 2: 'Little Girl', 3: ""No, I'm... I'm okay...!"", 4: '1'}"
+13	12		201							{1: '1', 2: '500231'}
+14	13		301							"{1: '1', 2: 'HNB1', 3: ""You've already done great."", 4: '1'}"
+15	14		202							{6: '1'}
+16	15		301							"{3: ""Seeing the sad look on the girl's face, HNB1 pats her consolingly on the head.""}"
+17	16		201							{1: '1', 2: '500231', 3: '1', 7: '1'}
+18	17		301							"{1: '1', 2: 'HNB1', 3: ""A few hours of rest won't hurt. Are you hungry? I heard your stomach growl."", 4: '1'}"
+19	18		201							{1: '1', 2: '500219', 3: '4'}
+20	19		301							"{1: '1', 2: 'Little Girl', 3: ""Am not! My tummy didn't growl!"", 4: '1'}"
+21	1001		204							{1: '1'}
+22	20		301							{3: '(Stomach growls)'}
+23	21		301							{2: 'Little Girl', 3: 'O-okay, fine... Maybe a little...', 4: '1'}
+24	22		201							{1: '1', 2: '500231', 3: '1'}
+25	23		301							"{1: '1', 2: 'HNB1', 3: ""It's okay. I won't laugh at you."", 4: '1'}"
+26	1002		204							{1: '1'}
+27	24		301							"{2: 'HNB1', 3: ""I'll go look for something to eat. Find somewhere nearby for her to rest, G3."", 4: '1'}"
+28	25		201							{1: '1', 2: '500233'}
+29	26		301		1		AniZhuanchangBegin			{1: '1', 2: 'HBG3', 3: 'Understood.', 4: '1'}

@@ -1,0 +1,325 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory895.jpg'}
+2	2		401							{1: '1', 2: '381'}
+3	3		107			DialogEnable			3000.0	{1: 'Planning Headquarters - Hydrangea Island Commercial', 2: 'Misono Corporation', 4: 'Morning, November - Pleasant and Dry'}
+4	4		108							{1: '1'}
+5	5		201							{1: '1', 2: '500202', 4: '-400'}
+6	6		201							{1: '2', 2: '501050', 4: '400'}
+7	7		301							"{1: '1', 2: 'Reika Saotome', 3: ""Here's my entry application for the island. I've brought all the required documents. Is everything in order?"", 4: '2'}"
+8	8		301							{2: 'Documentation Officer', 3: 'Dr. Saotome, your documentation is indeed complete, however...', 4: '1'}
+9	9		301							"{2: 'Reika Saotome', 3: ""What's wrong?"", 4: '2'}"
+10	10		301							"{2: 'Documentation Officer', 3: ""If you'll pardon my frankness, your research history is marred by several incidents—drug abuse, unauthorized experiments, and more..."", 4: '1'}"
+11	11		204							{1: '2', 2: '4'}
+12	12		301							"{2: 'Reika Saotome', 3: ""Aren't you all well aware of these matters already?"", 4: '2'}"
+13	13		301							"{2: 'Reika Saotome', 3: ""Are you people seriously hung up on these things now when I'm already here on your invitation?"", 4: '2'}"
+14	14		301							"{2: 'Documentation Officer', 3: ""We absolutely support your research principles. In fact, it's precisely your adventurous approach that caught our interest."", 4: '1'}"
+15	15		301							{2: 'Documentation Officer', 3: 'However, the list of personnel for the island landing will need to be submitted to the Science Council for review...', 4: '1'}
+16	16		301							"{2: 'Documentation Officer', 3: ""And as I'm sure you're aware, those people aren't as... accommodating as we are."", 4: '1'}"
+17	17		301							{2: 'Documentation Officer', 3: 'How do you think they would react if they saw your name listed among the teaching staff?', 4: '1'}
+18	18		301							"{2: 'Documentation Officer', 3: ""They would immediately connect your radical methods with the island's research direction..."", 4: '1'}"
+19	19		301							{2: 'Documentation Officer', 3: 'Not only would they deny your entry to the island, but the entire Hydrangea Island business initiative would fall through as well.', 4: '1'}
+20	20		301							{2: 'Reika Saotome', 3: '...', 4: '2'}
+21	21		204							{1: '2', 2: '5'}
+22	22		301							{2: 'Reika Saotome', 3: 'Letting cowards dictate the direction of scientific research is a disgrace to all of humanity.', 4: '2'}
+23	23		301							{2: 'Documentation Officer', 3: 'With that said, though, there might be a way to work around this...', 4: '1'}
+24	24		301							"{2: 'Documentation Officer', 3: 'We can disguise our research under the pretext of ""education"" by establishing a school.', 4: '1'}"
+25	25		301							{2: 'Documentation Officer', 3: 'College research projects tend to attract attention, but a high school would be relatively safer.', 4: '1'}
+26	26		301							{2: 'Documentation Officer', 3: 'Common sense dictates that no one would expect a high school to be capable of conducting cutting-edge research.', 4: '1'}
+27	27		301							"{2: 'Documentation Officer', 3: 'If you could come to the island posing as a ""guardian"" of a high school student...', 4: '1'}"
+28	28		301							"{2: 'Documentation Officer', 3: 'We can then keep your name concealed under the ""family members of the students"" going to the island.', 4: '1'}"
+29	29		204							{1: '2', 2: '4'}
+30	30		301							{2: 'Reika Saotome', 3: 'You want me to play the role of an accompanying parent?', 4: '2'}
+31	31		301							{2: 'Documentation Officer', 3: 'Indeed, we have successful precedents for this approach.', 4: '1'}
+32	32		301							"{2: 'Reika Saotome', 3: ""There's a fundamental and obvious flaw in your assumption."", 4: '2'}"
+33	33		301							"{2: 'Reika Saotome', 3: ""I don't have any children. In fact, I'm not even married."", 4: '2'}"
+34	34		301							{2: 'Documentation Officer', 3: 'I completely understand your situation. It must be difficult to balance both career and family life successfully.', 4: '1'}
+35	35		301							{2: 'Reika Saotome', 3: 'Do you have anything else to add?', 4: '2'}
+36	36		301							{2: 'Documentation Officer', 3: 'Hm, have you considered adoption...?', 4: '1'}
+37	37		301							{2: 'Reika Saotome', 3: 'Adoption?', 4: '2'}
+38	38		202							{1: '1', 2: '2'}
+39	39		301							"{3: ""An unsettling smile creeps across the Documentation Officer's face as he pulls a business card from his drawer.""}"
+40	40		201							{1: '1', 2: '500202', 4: '-400'}
+41	41		201							{1: '2', 2: '501050', 3: '4', 4: '400'}
+42	42		301							"{1: '1', 2: 'Documentation Officer', 3: ""Perhaps you'd like to learn more about this?"", 4: '1'}"
+43	43		301							{3: 'Reika takes the card. It bears the address of an orphanage.'}
+44	44		301							"{2: 'Documentation Officer', 3: ""This is a welfare institution we've worked with before."", 4: '1'}"
+45	45		301							"{2: 'Documentation Officer', 3: ""I'll give them a call later. Someone will be there to greet you when you arrive."", 4: '1'}"
+46	46		301				AniZhuanchangBegin			{2: 'Documentation Officer', 3: 'Leave all the adoption paperwork to us.', 4: '1'}
+47	47		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+48	48		401							{1: '1', 2: '36'}
+49	49		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory22.jpg'}
+50	50		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '1'}
+51	51		401							{1: '1', 2: '120'}
+52	52		107			AniZhuanchangEnd			3000.0	{1: 'Welfare Facility - Misono Corporation'}
+53	53		108							{1: '1'}
+54	54		301			DialogEnable				{3: 'The address on the card leads to a secluded welfare institution. Reika pushes the door open with hesitation.'}
+55	55		401							{1: '2', 2: '4878'}
+56	56		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory15.jpg', 3: '0', 4: '1', 5: '0.8'}
+57	57		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory15.jpg'}
+58	58		205							{1: '999'}
+59	59		301							"{3: ""In the courtyard of an aged western-style mansion, a middle-aged man awaits Reika's arrival.""}"
+60	60		201							{1: '1', 2: '500137', 4: '-400'}
+61	61		201							{1: '2', 2: '501050', 4: '400'}
+62	62		301							{1: '1', 2: 'Director', 3: 'You must be Ms. Saotome?', 4: '1'}
+63	63		301							"{2: 'Reika Saotome', 3: ""Yes, that's right."", 4: '2'}"
+64	64		301							{2: 'Director', 3: 'Please follow me.', 4: '1'}
+65	65		301							{2: 'Director', 3: 'We understand this is just a formality... but please select a child that matches your disposition.', 4: '1'}
+66	66		301				DialogDisable			{2: 'Director', 3: 'You see, even photographs can be questioned, so we exercise caution in every detail.', 4: '1'}
+67	67		202							{1: '1', 2: '2'}
+68	68		401							{1: '2', 2: '2666'}
+69	69		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+70	70		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory639.jpg', 3: '0', 4: '1', 5: '1.5'}
+71	71		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory639.jpg'}
+72	72		205							{1: '999'}
+73	73		301			DialogEnable				{3: 'The director pushes open the heavy doors behind him. Under the incandescent lights, floating dust particles force Reika to cover her nose and mouth.'}
+74	74		301							{3: 'Several boys and girls in elegant Western dresses gather around Reika as soon as they spot her.'}
+75	75		201							{1: '1', 2: '500722', 4: '-400', 5: '-50', 6: '-120'}
+76	76		201							{1: '2', 2: '500966', 4: '400'}
+77	77		301							"{1: '1', 2: 'Boy 1', 3: ""Good evening, ma'am."", 4: '1'}"
+78	78		301							"{2: 'Boy 2', 3: ""How has your day been, ma'am?"", 4: '2'}"
+79	79		202							{1: '1', 2: '2', 6: '1'}
+80	80		201							{1: '1', 2: '501050'}
+81	81		301							{1: '1', 2: 'Reika Saotome', 3: 'Not too bad.', 4: '1'}
+82	82		202							{1: '1', 6: '1'}
+83	83		201							{1: '1', 2: '500527', 4: '-400', 5: '-50'}
+84	84		201							{1: '2', 2: '500466', 4: '400', 5: '-20', 6: '-100'}
+85	85		301							"{1: '1', 2: 'Girl 1', 3: ""Ma'am, I simply adore your outfit and hairstyle!"", 4: '1'}"
+86	86		301							"{2: 'Girl 2', 3: ""Ma'am, would you honor me with a moment of conversation?"", 4: '2'}"
+87	87		202							{1: '1', 2: '2', 6: '1'}
+88	88		201							{1: '1', 2: '501050'}
+89	89		301							{1: '1', 2: 'Reika Saotome', 3: '...', 4: '1'}
+90	90		202							{1: '1'}
+91	91		301							"{3: ""Confronted with the children's unexpectedly enthusiastic reception, Reika finds herself at a loss for a response.""}"
+92	92		301							"{3: ""She carefully maneuvers away from the children's encirclement, taking a quick glance at their unnaturally pristine faces.""}"
+93	93		301							"{3: ""It doesn't take long for her to detect the concealed apathy beneath their overwhelming enthusiasm.""}"
+94	94		301							{3: 'Their contempt for the world seeps through the carefully trained pleasantries their handlers instilled in them...'}
+95	95		301							{3: 'These emotions subtly dance across their young, innocent faces.'}
+96	96		301							{3: 'Their ingratiating smiles fail to win Reika over, instead creating an invisible barrier between them.'}
+97	97		201							{1: '1', 2: '500137', 4: '-400'}
+98	98		201							{1: '2', 2: '501050', 3: '4', 4: '400'}
+99	99		301							{1: '1', 2: 'Director', 3: 'As you can see, we have bright children of all ages.', 4: '1'}
+100	100		301							{2: 'Director', 3: 'Jack to your left excels in mathematics, while Dora beside him shows remarkable talent in physics...', 4: '1'}
+101	101		301							"{2: 'Director', 3: ""They're all exceptional children. Does anyone catch your eye?"", 4: '1'}"
+102	102		301							{2: 'Reika Saotome', 3: 'Why do I have to search for my own reflection? Do you enjoy staring into mirrors?', 4: '2'}
+103	103		301							"{2: 'Director', 3: ""Haha, that's not what I meant. Let's move along. I'm sure we'll find a child to your satisfaction."", 4: '1'}"
+104	104		202							{1: '1', 2: '2'}
+105	105		301							{3: 'Reika trudges forward with resignation as the children greet her one after another.'}
+106	106		301							{3: 'As she approaches the stairs, a cough echoes from the corner.'}
+107	107		301							{3: 'The abrupt cough cuts through the cheerful atmosphere like a cold wind through warmth...'}
+108	108		201							{1: '1', 2: '501057', 5: '-100'}
+109	109		301							"{1: '1', 3: ""Curiosity draws Reika's gaze to a girl curled up alone in the corner.""}"
+110	110		306							{1: '1'}
+111	111		301							{3: 'The girl, noticeably older than the other children, is absorbed in a book.'}
+112	112		301							"{3: ""Something about the girl stirs memories of Reika's own childhood...""}"
+113	113		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+114	114		504							{1: '0.7'}
+115	115		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory58.jpg'}
+116	116		201							{1: '1', 2: '501054', 5: '-100', 7: '1'}
+117	117		301							{1: '1', 3: 'Back then, Reika, too, would sit alone in corners, clutching her books.'}
+118	118		301							{3: 'Lonely, focused, lost in her own world.'}
+119	119		306							
+120	120		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+121	121		504							{1: '0'}
+122	122		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory639.jpg'}
+123	123		201							{1: '1', 2: '500137', 7: '1'}
+124	124		301							{1: '1', 2: 'Director', 3: 'Ah, that child...', 4: '1'}
+125	125		301							"{3: ""The director notices Reika's lingering gaze and shifts uncomfortably.""}"
+126	126		301							{2: 'Director', 3: 'Some of our clients have taken her home before, but she always ends up being returned shortly after.', 4: '1'}
+127	127		301							"{2: 'Director', 3: ""She has a weak constitution due to a congenital heart condition. The doctors don't think she'll make it past adolescence."", 4: '1'}"
+128	128		202							{1: '1'}
+129	129		201							{1: '1', 2: '501050', 3: '5', 7: '1'}
+130	130		301							"{1: '1', 2: 'Reika Saotome', 3: '""Clients"", you say?', 4: '1'}"
+131	131		301							{3: 'Reika turns to the man beside her with a fierce glare.'}
+132	132		301							{2: 'Reika Saotome', 3: 'You must be making a fortune treating these children like merchandise for sale.', 4: '1'}
+133	133		202							{1: '1'}
+134	134		201							{1: '1', 2: '500137'}
+135	135		301							{1: '1', 2: 'Director', 3: 'Pardon my rudeness, Ms. Saotome, but...', 4: '1'}
+136	136		301							"{2: 'Director', 3: ""You came here despite knowing all this, so I assume you're not particularly troubled by it?"", 4: '1'}"
+137	137		202							{1: '1'}
+138	138		201							{1: '1', 2: '501050', 3: '4'}
+139	139		301							{1: '1', 2: 'Reika Saotome', 3: '...', 4: '1'}
+140	140		202							{1: '1'}
+141	141		301							{3: 'Reika Saotome lets out a soft sigh, deciding not to pursue the matter further.'}
+142	142		201							{1: '1', 2: '500137', 4: '-400'}
+143	143		201							{1: '2', 2: '501050', 3: '4', 4: '400'}
+144	144		301							"{1: '1', 2: 'Reika Saotome', 3: ""What's her name?"", 4: '2'}"
+145	145		301							{2: 'Director', 3: 'Yuka.', 4: '1'}
+146	146		202							{1: '1', 2: '2'}
+147	147		301							{3: 'Reika walks over to Yuka who is sitting on the ground and seems to have noticed her presence.'}
+148	148		301							{3: 'As the footsteps come to a stop, Yuka carefully closes her book and sets it aside.'}
+149	149		201							{1: '1', 2: '501051', 4: '-400', 5: '-50'}
+150	150		201							{1: '2', 2: '501050', 4: '400'}
+151	151		301							"{1: '1', 2: 'Reika Saotome', 3: '""The Flower\'s Way of Acting""... Thinking about becoming an actress?', 4: '2'}"
+152	152		301							"{2: 'Yuka', 3: ""No, I'm just reading it for fun."", 4: '1'}"
+153	153		301							{2: 'Yuka', 3: 'Do you enjoy it?', 4: '1'}
+154	154		301							"{2: 'Reika Saotome', 3: ""I don't really understand art. At best, I only know how to make things look pretty on the surface."", 4: '2'}"
+155	155		301							{2: 'Yuka', 3: 'But I noticed your shoes, they have such delicately embroidered hydrangeas on them.', 4: '1'}
+156	156		301							"{2: 'Yuka', 3: ""You're quite detail-oriented, aren't you?"", 4: '1'}"
+157	157		203						350.0	{1: '1', 2: '0.3', 3: '-400', 4: '-40'}
+158	158		203							{1: '1', 2: '0.3', 3: '-400', 4: '-50'}
+159	159		301							{3: 'The girl adjusts her posture to sit formally on her knees, looking up to observe the adult before her.'}
+160	160		306							{1: '1'}
+161	161		203							{1: '1', 2: '0.4', 4: '-80', 5: '-30'}
+162	162		203						450.0	{1: '2', 2: '0.4', 3: '800', 4: '-30', 5: '-30'}
+163	163		301							{3: 'Reika holds her breath instinctively at those melancholic eyes.'}
+164	164		306							
+165	165		203							{1: '1', 2: '0.4', 3: '-400', 4: '-50'}
+166	166		203						450.0	{1: '2', 2: '0.4', 3: '400'}
+167	167		301							{2: 'Reika Saotome', 3: 'Just like a porcelain doll...', 4: '2'}
+168	168		202							{1: '1', 2: '2', 6: '1'}
+169	169		201							{1: '1', 2: '500137'}
+170	170		301							"{1: '1', 2: 'Director', 3: ""Beautiful child, isn't she? Like a delicate piece of art."", 4: '1'}"
+171	171		202							{1: '1'}
+172	172		401						200.0	{1: '2', 2: '4833'}
+173	173		402							{1: '4833'}
+174	174		301							{3: 'Without warning, Reika kneels down to sit at eye level with the girl, examining her carefully.'}
+175	175		201							{1: '1', 2: '500137', 7: '1'}
+176	176		301							{1: '1', 2: 'Director', 3: 'Oh my! What are you doing?', 4: '1'}
+177	177		202							{1: '1', 6: '1'}
+178	178		201							{1: '1', 2: '501051', 4: '-400', 5: '-50'}
+179	179		201							{1: '2', 2: '501050', 4: '400', 5: '-50'}
+180	180		301							{1: '1', 2: 'Reika Saotome', 3: 'Would you like to come home with me?', 4: '2'}
+181	181		301							{2: 'Yuka', 3: 'Can I?', 4: '1'}
+182	182		204							{1: '2', 2: '4'}
+183	183		301							{2: 'Reika Saotome', 3: 'Taking my surname... you might face a lot of hatred from people in the future.', 4: '2'}
+184	184		301							{2: 'Reika Saotome', 3: 'Even knowing this, would you still want to?', 4: '2'}
+185	185		301							"{2: 'Yuka', 3: ""Not many visitors here would bother to initiate a conversation with me. I can tell you're a good person."", 4: '1'}"
+186	186		204							{1: '2'}
+187	187		301							"{2: 'Reika Saotome', 3: ""Perhaps I'm just being hypocritical."", 4: '2'}"
+188	188		301							{2: 'Reika Saotome', 3: 'The Saotome family has always been good at producing two-faced philanthropists.', 4: '2'}
+189	189		301							{2: 'Yuka', 3: 'No, I find you interesting.', 4: '1'}
+190	190		301							{2: 'Reika Saotome', 3: 'Do you really think so?', 4: '2'}
+191	191		301							{2: 'Yuka', 3: 'Yes.', 4: '1'}
+192	192		301							"{2: 'Reika Saotome', 3: ""You silly child. I'm just trying to use you."", 4: '2'}"
+193	193		301							{2: 'Yuka', 3: 'Well then, please do use me as you wish.', 4: '1'}
+194	194		204							{1: '2', 2: '4'}
+195	195		301							{2: 'Reika Saotome', 3: 'You...', 4: '2'}
+196	196		204							{1: '2'}
+197	197		301				DialogDisable			"{2: 'Reika Saotome', 3: ""No, never mind... Yuka. That's a beautiful name."", 4: '2'}"
+198	198		202							{1: '1', 2: '2', 6: '1'}
+199	199		401							{1: '2', 2: '2599'}
+200	200		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory699.jpg', 3: '0', 4: '1', 5: '0.8'}
+201	201		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory699.jpg'}
+202	202		205							{1: '999'}
+203	203		301			DialogEnable				{3: 'When Reika steps out of the welfare institution, she sees the world outside blanketed in heavy snow.'}
+204	204		301							{3: 'Against the vast white expanse, the black executive car from the Neuroscience Symposium stands out starkly.'}
+205	205		402							{1: '2599'}
+206	206		201							{1: '1', 2: '501050', 3: '4'}
+207	207		301							{1: '1', 2: 'Reika Saotome', 3: 'The adoption procedure... sure is disgustingly efficient.', 4: '1'}
+208	208		204							{1: '1', 2: '1'}
+209	209		301							{2: 'Reika Saotome', 3: 'Well then, Yuka, please wait here for now.', 4: '1'}
+210	210		301							"{2: 'Reika Saotome', 3: ""I'll come back for you once the symposium is over."", 4: '1'}"
+211	211		202							{1: '1', 6: '1'}
+212	212		201							{1: '1', 2: '501051', 3: '14', 7: '1'}
+213	213		301							"{1: '1', 3: ""A flash of disappointment crosses the girl's calm face before quickly fading away.""}"
+214	214		204							{1: '1'}
+215	215		301							{3: 'As if deliberately hiding something, she clasps her hands behind her back and gazes at Reika with feigned innocence.'}
+216	216		301				AniZhuanchangBegin			{2: 'Yuka Saotome', 3: 'Have a safe journey.', 4: '1'}
+217	217		202							{1: '1', 6: '1'}
+218	218		401							{1: '1', 2: '36'}
+219	219		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1074.jpg'}
+220	220		201							{1: '1', 2: '501050', 3: '4', 7: '1'}
+221	221		301			AniZhuanchangEnd				{1: '1', 2: 'Reika Saotome', 3: 'Guess this is it.', 4: '1'}
+222	222		301							{2: 'Reika Saotome', 3: 'After that, instead of returning to the orphanage, Yuka followed my car for hours... until she collapsed in the snow.', 4: '1'}
+223	223		301							{2: 'Reika Saotome', 3: 'When I went back for her, I was told she had already been taken to the hospital.', 4: '1'}
+224	224		202							{1: '1'}
+225	225		301							{3: 'The sound of the tide draws ever closer.'}
+226	226		301				AniZhuanchangBegin			{3: 'Reika closes her eyes once more.'}
+227	227		401							{1: '1', 2: '278'}
+228	228		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory699.jpg'}
+229	229		201							{1: '1', 2: '501051', 7: '1'}
+230	230		301			AniZhuanchangEnd				{1: '1', 2: 'Yuka Saotome', 3: 'Have a safe journey.', 4: '1'}
+231	231		202							{1: '1'}
+232	232		301							{3: 'Reika stops in her tracks and turns to face the girl.'}
+233	233		201							{1: '1', 2: '500838'}
+234	234		301							{1: '1', 2: 'Chauffeur', 3: 'Dr. Saotome, the meeting will begin in 30 minutes. Please be mindful of the time.', 4: '1'}
+235	235		202							{1: '1'}
+236	236		201							{1: '1', 2: '501050', 3: '4'}
+237	237		301							"{1: '1', 2: 'Reika Saotome', 3: ""No, I won't be going."", 4: '1'}"
+238	238		202							{1: '1'}
+239	239		301							"{3: ""Under Yuka's stunned gaze, Reika walks back, step by step.""}"
+240	240		201							{1: '1', 2: '501050'}
+241	241		301							{1: '1', 2: 'Reika Saotome', 3: 'Yuka, I need your assistance with an experiment.', 4: '1'}
+242	242		202							{1: '1'}
+243	243		201							{1: '1', 2: '501051'}
+244	244		301							{1: '1', 2: 'Yuka Saotome', 3: 'I would be glad to help.', 4: '1'}
+245	245		202							{1: '1'}
+246	246		201							{1: '1', 2: '501050'}
+247	247		301							"{1: '1', 2: 'Reika Saotome', 3: ""I haven't even told you what the experiment is yet."", 4: '1'}"
+248	248		202							{1: '1'}
+249	249		201							{1: '1', 2: '501051'}
+250	250		301							"{1: '1', 2: 'Yuka Saotome', 3: ""Whatever you need, I'll do it."", 4: '1'}"
+251	251		202							{1: '1', 6: '1'}
+252	252		201							{1: '1', 2: '501051', 4: '-400'}
+253	253		201							{1: '2', 2: '501050', 3: '4', 4: '400'}
+254	254		301							{1: '1', 3: 'Reika stops in front of Yuka, shielding her from the snow and wind.'}
+255	255		301							"{2: 'Reika Saotome', 3: 'To observe the developmental patterns of human consciousness, I need you to become a ""normal girl"".', 4: '2'}"
+256	256		301							"{2: 'Yuka Saotome', 3: ""I don't quite understand, but I'll do my best."", 4: '1'}"
+257	257		301							{3: 'Yuka hesitates for a moment before speaking again.'}
+258	258		301							"{2: 'Yuka Saotome', 3: 'If I am to be a ""normal girl"", does that make you my ""mother""?', 4: '1'}"
+259	259		301							{2: 'Reika Saotome', 3: '...', 4: '2'}
+260	260		301							"{2: 'Reika Saotome', 3: 'Researchers often refer to their research subjects as their ""children"" and see themselves as ""mothers"".', 4: '2'}"
+261	261		301							{2: 'Yuka Saotome', 3: 'I see.', 4: '1'}
+262	262		202							{1: '1', 2: '2'}
+263	263		301							"{3: ""A flicker of confusion crosses Yuka's eyes as she slightly pulls back the hands hidden behind her back.""}"
+264	264		201							{1: '1', 2: '501051', 4: '-400'}
+265	265		201							{1: '2', 2: '501050', 3: '4', 4: '400'}
+266	266		301							{1: '1', 2: 'Reika Saotome', 3: 'The mother-daughter relationship in human society is too emotionally charged. It would interfere with the proper execution of our experiments.', 4: '2'}
+267	267		301							"{3: ""Meeting Yuka's melancholic gaze, Reika suddenly realizes she's been trying to justify herself.""}"
+268	268		301							{2: 'Yuka Saotome', 3: 'Then how should I address you?', 4: '1'}
+269	269		301							"{2: 'Reika Saotome', 3: 'Please call me ""Dr. Saotome"".', 4: '2'}"
+270	270		301							{2: 'Yuka Saotome', 3: 'Yes, Dr. Saotome.', 4: '1'}
+271	271		301							{3: 'Despite standing close together, Reika still feels an insurmountable distance between herself and Yuka.'}
+272	272		203						200.0	{1: '2', 2: '0.4', 3: '300'}
+273	273		401							{1: '2', 2: '4895'}
+274	274		301							"{3: ""Without thinking, she takes two steps forward, removes her coat, and drapes it over Yuka's shoulders.""}"
+275	275		204							{1: '1', 2: '7'}
+276	276		301							{2: 'Yuka Saotome', 3: 'Huh?', 4: '1'}
+277	277		203							{1: '1', 2: '0.25', 3: '-380'}
+278	278		301							{3: 'The sudden gesture catches Yuka off guard, forcing her to move her hands from behind her back.'}
+279	279		301							{2: 'Reika Saotome', 3: 'Is this... a hydrangea?', 4: '2'}
+280	280		301							"{3: ""Reika points at the white paper flower in Yuka's palm.""}"
+281	281		204							{1: '1', 2: '15'}
+282	282		301							"{2: 'Yuka Saotome', 3: ""Yes... it's a flower I made for you, but... I haven't colored it yet."", 4: '1'}"
+283	283		204							{1: '2', 2: '1'}
+284	284		301							"{2: 'Reika Saotome', 3: ""Thank you. I see you're very good at making things."", 4: '2'}"
+285	285		301							"{2: 'Reika Saotome', 3: ""If you don't mind, let's color it together when we get back to my place."", 4: '2'}"
+286	286		204							{1: '1', 2: '1'}
+287	287		301							{2: 'Yuka Saotome', 3: 'Thank you very much, Dr. Saotome.', 4: '1'}
+288	288		301							{3: 'A smile naturally breaks across her face.'}
+289	289		204							{1: '2', 2: '4'}
+290	290		301							"{2: 'Reika Saotome', 3: 'Yuka, I need you to be a ""normal girl"".', 4: '2'}"
+291	291		204							{1: '1'}
+292	292		301							{3: 'Yuka nods with a hint of confusion, seemingly surprised that Reika is now repeating this request.'}
+293	293		301							"{2: 'Reika Saotome', 3: ""This is the only experiment I need you to participate in. There won't be any others."", 4: '2'}"
+294	294		301							{2: 'Reika Saotome', 3: 'Since this is an experiment, I need to constantly record data on your development.', 4: '2'}
+295	295		301							{2: 'Reika Saotome', 3: 'Even as a researcher, daily interaction with you is essential.', 4: '2'}
+296	296		301							"{2: 'Reika Saotome', 3: 'We even need to live together in the same residential space, as what human society calls ""mother and daughter"".', 4: '2'}"
+297	297		301							{2: 'Reika Saotome', 3: 'Every year, I compile my research findings into papers and publish them in neuroscience journals.', 4: '2'}
+298	298		301							{2: 'Reika Saotome', 3: 'This project will be my sole focus of work when I arrive on the island.', 4: '2'}
+299	299		301							{2: 'Reika Saotome', 3: 'Therefore, I need you to focus solely on your growth. Can you do that?', 4: '2'}
+300	300		204							{1: '1', 2: '1'}
+301	301		301							"{2: 'Yuka Saotome', 3: ""Yes, Dr. Saotome... I'd be happy to do so."", 4: '1'}"
+302	302		202							{1: '1', 2: '2'}
+303	303		301							{3: 'Reika nods.'}
+304	304		301							{3: 'Looking around, the snow and wind have gradually subsided. Rays of sunlight now pour onto the earth, bringing with them a gentle warmth.'}
+305	305		401							{1: '2', 2: '1514'}
+306	306		301							{3: 'Reika and Yuka walk together through the snow, leaving two trails of footprints—one large, one small.'}
+307	307		301							{3: 'Reika looks up at the sky with contentment before speaking slowly.'}
+308	308		201							{1: '1', 2: '501051', 4: '-400'}
+309	309		201							{1: '2', 2: '501050', 3: '1', 4: '400'}
+310	310		301							{1: '1', 2: 'Reika Saotome', 3: 'Well then, Yuka, I look forward to our time together.', 4: '2'}
+311	311		204							{1: '1', 2: '1'}
+312	312		301				AniZhuanchangBegin			"{2: 'Yuka Saotome', 3: ""Yes, Dr. Saotome, I'll do my very best!"", 4: '1'}"
+313	313		202							{1: '1', 2: '2', 6: '1'}
+314	314		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1074.jpg'}
+315	315		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+316	316		201							{1: '1', 2: '501050', 3: '4', 7: '1'}
+317	317		301			AniZhuanchangEnd				{1: '1', 3: 'Reika opens her eyes.'}
+318	318		202							{1: '1'}
+319	319		301							{3: 'With a gentle smile gracing her lips as she lies there, Yuka appears to be in a peaceful slumber.'}
+320	320		301							{3: 'The Red Tide roars through the corridor, swallowing everything in its path.'}
+321	321		401						150.0	{1: '2', 2: '4833'}
+322	322		402							{1: '4833'}
+323	323		301							{3: 'Reika falls to her knees, holding Yuka tightly in her arms as she curls around her protectively.'}
+324	324		301		1		AniZhuanchangBegin			{3: 'For the last time, she closes her eyes.'}

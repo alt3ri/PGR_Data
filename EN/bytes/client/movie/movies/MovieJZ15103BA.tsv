@@ -1,0 +1,84 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory30.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		401							{1: '2', 2: '1508'}
+4	4		201							{1: '1', 2: '500013'}
+5	5		301			DialogEnable	PanelActor1Shake			{1: '1', 2: 'Corrupted', 3: '—!', 4: '1'}
+6	6		202							{1: '1'}
+7	7		201							{1: '1', 2: '500197'}
+8	8		301							"{1: '1', 2: 'Soldier A', 3: ""Whew... It's over, eh?"", 4: '1'}"
+9	9		301							{3: 'After taking out all the attackers, the group blanks out for a moment, collectively forgetting what they had been doing before the battle began.'}
+10	10		203							{1: '1', 2: '0.25', 3: '-400'}
+11	11		201							{1: '2', 2: '500189', 4: '400'}
+12	12		301							{1: '1', 2: 'Camu', 3: 'What are you people doing? Start collecting our things!', 4: '2'}
+13	13		301							"{3: ""Camu's squad is sent on a new mission to transport some packages for Kurono.""}"
+14	14		301							{3: 'Like their supplies, the items are sent to them via airdrop. The packages are heavily bundled up and come with small filters, perhaps for secrecy or other reasons.'}
+15	15		301							"{3: ""While receiving their shipment, Camu's squad is attacked by a Corrupted horde.""}"
+16	16		301							{2: 'Soldier A', 3: 'Oh, yeah... Come help, everyone...', 4: '1'}
+17	17		301				DialogDisable			{3: 'As the other members come back to their senses and are about to help with the supplies, a scream rings out right next to Camu.'}
+18	18		202							{2: '1', 3: '2'}
+19	19		502							{1: 'RImgBg1DisableSlow'}
+20	20		401							{1: '1', 2: '202'}
+21	21		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgCg/Cgqz1601.jpg'}
+22	22		301			DialogEnable	RImgBg1Shake			{2: 'Soldier', 3: 'Ahhhhhhhh!'}
+23	23		301							"{2: 'Camu', 3: ""Hey! What's wrong?""}"
+24	24		301							{3: 'The screams increase in volume. The soldier is lying face-down on the ground, scratching at his own arms and neck.'}
+25	25		301							{3: 'His face turns purple. As if suffocating, he starts struggling to pull off his protective gear in attempt to breathe better.'}
+26	26		301							{2: 'Camu', 3: 'Stop! Taking off your gear here? Are you off your rocker?'}
+27	27		301							{2: 'Soldier', 3: 'Ahhhhh! It hurts... And so itchy...'}
+28	28		301				RImgBg1Shake			{2: 'Soldier', 3: 'Aaaaaaaahhhh!'}
+29	29		301							{3: 'The squad members surround the screamer, trying to figure out what is going on, while Camu keeps shaking him in hopes of keeping him calm.'}
+30	30		301							{2: 'Camu', 3: 'Where are you hurting? Were you injured in the battle? Or are you sick?'}
+31	31		301							"{2: 'Soldier', 3: ""Aaaahhhh! I don't know... don't know, Camu!""}"
+32	32		301							{3: 'His whole body is in pain and drastically weakened. It is as if lava is churning in his brain.'}
+33	33		301							{3: 'The man manages to spit out a few words as he writhes on the ground. Camu touches his body and senses a strong heat radiating from his skin.'}
+34	34		301							{2: 'Camu', 3: 'Oh, right... the serum! Someone fetch the serum!'}
+35	35		301							{2: 'Soldier A', 3: 'Got it! Give him a shot now!'}
+36	36		301							"{3: ""Some other members had already gone off to fetch the serum before Camu's shout, as this is not the first time something like this has happened.""}"
+37	37		301							{3: 'Though they have no idea what the reason is, squad members would sometimes suddenly fall down in excruciating pain and lose all control over their limbs.'}
+38	38		301							"{3: 'Kurono\'s response to situations like this is always: ""More serum.""'}"
+39	39		301							{3: 'But the official solution did not seem to work this time. They give the soldier the shot, but things do not take a turn for the better.'}
+40	40		301							{2: 'Soldier', 3: 'Camu... Camu...'}
+41	41		301							{2: 'Camu', 3: 'What?'}
+42	42		301				AniZhuanchangBegin			"{2: 'Soldier', 3: ""Ugh... we... we're real unlucky, huh...""}"
+43	43		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+44	44		301			AniZhuanchangEnd				{2: 'Camu', 3: 'Hey, what do you mean? His vitals are—Hey! Hey! Wake up!'}
+45	45		301				AniZhuanchangBegin			{2: 'Camu', 3: 'Dammit!'}
+46	46		401							{1: '1', 2: '12'}
+47	47		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory40.jpg'}
+48	48		301			AniZhuanchangEnd				{3: '—'}
+49	49		201							{1: '1', 2: '500189', 4: '-400'}
+50	50		201							{1: '2', 2: '500005', 4: '400'}
+51	51		301							{1: '1', 3: 'According to the contract they signed, all bodies of squad members must be returned to Kurono. Along with the delivery, Camu brings his dead squadmate there.'}
+52	52		301							"{2: 'Camu', 3: ""I'm here to make a delivery... yet you won't even let me into the city?"", 4: '1'}"
+53	53		301							"{2: 'Guard', 3: ""It's part of the contract. Don't try to force your way in, or we'll shoot."", 4: '2'}"
+54	54		301							"{3: 'Camu is held up at the gate while his ""packages"" are brought into the city right away.'}"
+55	55		301							"{2: 'Camu', 3: ""Yeah, I know you'll shoot. Anyway, what's happened to this dude? If you guys want the body, it means you'll give him an autopsy, right?"", 4: '1'}"
+56	56		301							"{2: 'Guard', 3: ""I said don't move!"", 4: '2'}"
+57	57		401							{1: '2', 2: '1511'}
+58	58		301							"{2: 'Camu', 3: ""What's happening?"", 4: '1'}"
+59	59		301							{3: 'Camu notices that the guards are on high alert—not because of the contractual obligations, but a sort of instinctive reaction.'}
+60	60		301							{3: 'With every step Camu takes towards the guard, he takes one step back and clutches his weapon tighter.'}
+61	61		301							{3: 'It was the same when they took in the body. Those people seemed disproportionately nervous, as if Camu was handing over an explosive.'}
+62	62		301							{2: 'Camu', 3: 'Tell me what you know.', 4: '1'}
+63	63		401							{1: '2', 2: '1510'}
+64	64		301							{3: 'Clenching his fist, Camu marches towards the guards, who immediately open fire without bothering to issue a warning according to the rules.'}
+65	65		301							{2: 'Guard', 3: 'Dammit! Told you to stay back!', 4: '2'}
+66	66		301							{2: 'Camu', 3: 'Tch...', 4: '1'}
+67	67		401							{1: '2', 2: '10001004'}
+68	68		202							{2: '1', 3: '2'}
+69	69		301							{3: 'Camu knows better than to cause a scene here, so he gives up his questioning attempt and backs up, finally fleeing the city amidst gunfire.'}
+70	70		401							{1: '2', 2: '1504'}
+71	71		301							{3: 'What happened to his squadmate? And what do the Kurono guards know?'}
+72	72		301							{3: 'What will happen to him and the other squad members?'}
+73	73		301				AniZhuanchangBegin			"{3: ""The questions still plague Camu's mind.""}"
+74	74		201							{1: '1', 2: '500187'}
+75	75		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory38.jpg'}
+76	76		301			AniZhuanchangEnd				"{1: '1', 3: ""Meanwhile, a man stands on the city's lookout platform. He watches the retreating figure and presses a button on his communications device.""}"
+77	77		301							"{2: 'Mao Zhen', 3: 'Mao Zhen speaking. The ""monsters"" have left the city.', 4: '1'}"
+78	78		301							{3: '...'}
+79	79		301							"{2: 'Mao Zhen', 3: 'It\'s only been a short time since these models have been employed in operations before the ""accidental"" deaths began. I\'m truly regretful.', 4: '1'}"
+80	80		301							"{2: 'Mao Zhen', 3: 'And the deaths have become increasingly frequent. Our ""monsters"" might not have much time left.', 4: '1'}"
+81	81		301							"{2: 'Mao Zhen', 3: 'So we should just go ahead without any ado, huh? Got it. How about we send them to ""that place"", then?', 4: '1'}"
+82	82		301							{3: '...'}
+83	83		301		1		AniZhuanchangBegin			"{2: 'Mao Zhen', 3: ""Yes. As a member of the Special Security Department, I'll handle this."", 4: '1'}"

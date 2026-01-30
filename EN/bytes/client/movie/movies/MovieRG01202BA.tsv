@@ -1,0 +1,315 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory923.jpg'}
+2	2		401							{1: '1', 2: '6154'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+4	4		401							{1: '2', 2: '5712'}
+5	5		301			DialogEnable				{3: 'Clack-clack, clack-clack—'}
+6	6		104						550.0	{1: '0|0|-100', 2: '0.5'}
+7	7		301							{3: 'The sun beats down mercilessly as an old carriage rattles along the dusty road toward Whitehorse.'}
+8	8		301							"{3: ""Two figures sit on the driver's bench—one grips the reins while the other holds up a Moon Umbrella, shielding them both from the brutal afternoon sun.""}"
+9	9		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+10	10		402							{1: '5712'}
+11	11		201							{1: '18', 2: '501297', 3: '2', 4: '-300', 5: '-200', 6: '-50'}
+12	12		301							{1: '1', 2: 'Lilith', 3: 'Bloodsworn, I truly appreciate you offering to help me investigate my hometown...', 4: '18'}
+13	13		301							"{2: 'Lilith', 3: 'But now word\'s spread across the entire Scorched Borderland that the legendary ""Gray Raven"" and the gambler Lilith pulled off that train heist together. With Angel Pilgrims watching everything, I doubt any townspeople would risk giving us useful information.', 4: '18'}"
+14	14		202							{1: '18'}
+15	15		306							{1: '1'}
+16	16		201							{1: '1', 2: '501377'}
+17	17		301							"{1: '1', 3: ""Her face remains half-concealed beneath the umbrella's shadow, yet even without a glance, that trademark smile of hers is easy enough to picture.""}"
+18	18		301				DialogDisable			"{3: ""Whether she's receiving advice or enduring mockery, that same impenetrable smile never falters, as though she has planned every word spoken.""}"
+19	19		202							{1: '1'}
+20	20		306							
+21	21		302							{2: 'Still worth investigating.', 3: '22'}
+22	22		302							{2: 'You said your parents were tax officials in Whitehorse. Surely they left something behind.', 3: '23'}
+23	23		201							{1: '1', 2: '501297', 3: '2', 4: '-300'}
+24	24		301			DialogEnable				"{1: '1', 2: 'Lilith', 3: ""Oh... so you're interested in my past, are you?"", 4: '1'}"
+25	25		301							{3: 'Her words trail off with a hint of sultry suggestion.'}
+26	26		204							{1: '1'}
+27	27		301							"{2: 'Lilith', 3: ""Then feel free to just ask me. I'll never hold back when it comes to satisfying your... curiosity."", 4: '1'}"
+28	28		302				DialogDisable			"{2: '...', 3: '29', 4: ""I'll take you up on that when we have time."", 5: '29'}"
+29	29		202							{1: '1'}
+30	30		401						100.0	{1: '2', 2: '4104031'}
+31	31		401						200.0	{1: '2', 2: '5712'}
+32	32		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+33	33		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+34	34		402							{1: '5712'}
+35	35		104						350.0	{1: '0|0|-200', 2: '0.3'}
+36	36		301			DialogEnable				{3: 'Without another word, they crack the whip. The horse whinnies and rushes ahead at a faster pace.'}
+37	37		306							{1: '1'}
+38	38		301				AniZhuanchangBegin			"{3: 'It\'s not that you want to distrust this ""knight"" bound to you by Covenant, but ever since your first meeting, the mysteries surrounding her have been far too thick to ignore.'}"
+39	39		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+40	40		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+41	41		502							{1: 'DialogDisable'}
+42	42		306							
+43	43		401							{1: '1', 2: '36'}
+44	44		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory985.jpg'}
+45	45		401							{1: '1', 2: '33'}
+46	46		107			AniZhuanchangEnd				"{1: 'On an unnamed road', 2: 'Outside the ""Sanctuary Game""', 4: 'Some time ago'}"
+47	47		301							"{3: 'Outside the ""Sanctuary Game,"" on an unnamed road, some time ago'}"
+48	48		108						500.0	{1: '1'}
+49	49		201							{1: '1', 2: '500928'}
+50	50		401							{1: '2', 2: '2905'}
+51	51		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+52	52		401							{1: '2', 2: '2905'}
+53	53		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '2'}
+54	54		502						300.0	{1: 'PanelActor1Shake'}
+55	55		203						400.0	{1: '1', 2: '0.35', 4: '-100'}
+56	56		202							{1: '1'}
+57	57		301			DialogEnable				"{1: '1', 3: ""The gaping wound in her chest has barely healed, yet she's already drunk on her newfound power. Like a child with a shiny new toy, she gleefully cuts down the Angels chasing her.""}"
+58	58		201							{1: '1', 2: '501297', 3: '3', 4: '-300'}
+59	59		301			DialogShake	DialogDisable			"{1: '1', 2: '""Famine""', 3: 'Ahahaha! So this is what demonic power feels like? No wonder you have to shed your human flesh to reach heights like this!', 4: '1'}"
+60	60		401							{1: '2', 2: '819016'}
+61	61		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+62	62		201							{1: '1', 2: '500928'}
+63	63		104							{1: '0|50|-100', 2: '0.25'}
+64	64		203						300.0	{1: '1', 2: '0.25', 4: '-50', 5: '-100'}
+65	65		401							{1: '2', 2: '5304'}
+66	66		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+67	67		502						300.0	{1: 'PanelActor1Shake'}
+68	68		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+69	69		401							{1: '2', 2: '2593'}
+70	70		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+71	71		202							{1: '1', 6: '1'}
+72	72		101						250.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory844.jpg'}
+73	73		402							{1: '5304'}
+74	74		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory985.jpg'}
+75	75		301			DialogEnable				"{3: ""The slightest touch from her umbrella tip pops Angel heads like balloons. The excitement of controlling life and death with such ease flows through her veins like a drug, and she can't wait to show off her work to the Bloodsworn.""}"
+76	76		201							{1: '1', 2: '501297', 3: '2', 4: '-300'}
+77	77		301							"{1: '1', 2: '""Famine""', 3: 'Who could have imagined that something as fragile as a ""human"" could overpower Angels like this... all it takes is casting off that worthless flesh...', 4: '1'}"
+78	78		204							{1: '1', 2: '8'}
+79	79		301				DialogDisable			"{2: '""Famine""', 3: ""I owe you everything, Lord Bloodsworn. This miracle... It's all thanks to you."", 4: '1'}"
+80	80		302							"{2: ""...Don't get carried away. We need to get out of here, now."", 3: '81'}"
+81	81		202							{1: '1', 6: '1'}
+82	82		401							{1: '2', 2: '1516'}
+83	83		104						300.0	{1: '0|50|-100', 2: '0.25'}
+84	84		104						300.0	{1: '0|-50|-150', 2: '0.25'}
+85	85		301			DialogEnable				{3: 'You show no interest in admiring her handiwork and keep pressing forward. Explosions that loud are bound to bring trouble.'}
+86	86		301							{3: 'Stirring up trouble in Angel territory is never wise.'}
+87	87		201							{1: '1', 2: '501297', 3: '9', 4: '-300'}
+88	88		301							"{1: '1', 2: '""Famine""', 3: 'Oh, my lord... Forgive me for being so reckless.', 4: '1'}"
+89	89		204							{1: '1'}
+90	90		301							"{2: '""Famine""', 3: ""Please forgive me. My parents were killed in an Angel purge, and I... I couldn't let this chance for revenge slip away."", 4: '1'}"
+91	91		302							{2: '...Your parents?', 3: '92'}
+92	92		301							"{2: '""Famine""', 3: ""Yes, and I'm sorry. I didn't mean to bring up the past like that, but I felt I owed you honesty."", 4: '1'}"
+93	93		204							{1: '1', 2: '9'}
+94	94		401							{1: '2', 2: '5327'}
+95	95		203						450.0	{1: '1', 2: '0.4', 3: '-300', 4: '-60'}
+96	96		203						450.0	{1: '1', 2: '0.4', 3: '-300'}
+97	97		204							{1: '1'}
+98	98		301							{3: 'Famine closes her Moon Umbrella and reins in her bloodlust with it, holding the weapon casually like a cane as she walks behind the Bloodsworn.'}
+99	99		301							"{2: '""Famine""', 3: 'My father was a tax collector in a small town. He worked himself to the bone, but the Angels in their lofty realm were never satisfied with what our poor little town could scrape together each month.', 4: '1'}"
+100	100		204							{1: '1', 2: '5'}
+101	101		301							"{2: '""Famine""', 3: 'Naturally, the Angels were quick to pin the blame on their ""incompetent tax collector."" Before long, my parents were executed on completely fabricated charges.', 4: '1'}"
+102	102		204							{1: '1'}
+103	103		301							"{2: '""Famine""', 3: 'The day they came for my parents, my mother fought to slip a gold coin into my palm, begging me to take it and disappear and find some place where no one could ever find me.', 4: '1'}"
+104	104		302							"{2: 'So that\'s the ""Key of Mammon""?', 3: '105'}"
+105	105		204							{1: '1', 2: '17'}
+106	106		301							"{2: '""Famine""', 3: ""Exactly. They wanted me to let go of my hatred, take everything from Mammon's vault someday, and then find a place to live a simple, peaceful life."", 4: '1'}"
+107	107		301							{3: 'Sorrow washes over her face as she gently touches her chest, lost in the grief of that terrible day.'}
+108	108		204							{1: '1', 2: '5'}
+109	109		301							"{2: '""Famine""', 3: 'But the Angels never gave up hunting for that key, and eventually those bastards caught up with me...', 4: '1'}"
+110	110		302							{2: '...', 3: '111', 4: '(Wait for her to continue)', 5: '111'}
+111	111		301							{3: 'You remain silent, patiently waiting for her to reach the end of her story.'}
+112	112		204							{1: '1'}
+113	113		301							"{2: '""Famine""', 3: 'With my back against the wall, I made Madam Raphael a bet. If I could beat her at cards, the Sanctuary would have to swear off stealing my coin for good.', 4: '1'}"
+114	114		204							{1: '1', 2: '5'}
+115	115		301							"{2: '""Famine""', 3: 'But she broke our covenant. She cheated at the table, then tried to have me killed when I called her out on it.', 4: '1'}"
+116	116		301							"{2: '""Famine""', 3: ""That's the worst insult you can throw at a gambler. Nobody, and I don't care who they think they are, has the right to violate the sacred bond of fair play."", 4: '1'}"
+117	117		301							{3: 'Her anger is perfectly measured, neither flat nor overwrought, but just intense enough to ring true.'}
+118	118		204							{1: '1', 2: '9'}
+119	119		301							"{2: '""Famine""', 3: ""And then you saw the rest. I collapsed under that card table like a corpse. Without your intervention, I would've died forgotten, just like my parents."", 4: '1'}"
+120	120		204							{1: '1'}
+121	121		301							"{2: '""Famine""', 3: 'So allow me to thank you once more, Gray Raven.', 4: '1'}"
+122	122		301							"{2: '""Famine""', 3: ""Thank you for pulling me out of there, for keeping me from becoming just another casualty in the Angels' wake."", 4: '1'}"
+123	123		204							{1: '1', 2: '2'}
+124	124		301							{3: 'With her tale complete, she turns to you with a gentle, graceful smile, patiently waiting for your reply.'}
+125	125		302							"{2: ""(... Something about her story feels incomplete. Like she's holding back important details.)"", 3: '126', 4: '(Remain silent)', 5: '126'}"
+126	126		301				DialogDisable			"{3: ""You don't push for more details, instead choosing to respond from your own angle.""}"
+127	127		302							"{2: ""Our goals are the same. I want to bring down Madam Raphael and end the Sanctuary's stranglehold on this world."", 3: '128'}"
+128	128		302							{2: 'We can work together.', 3: '129'}
+129	129		204							{1: '1'}
+130	130		301			DialogEnable				"{2: '""Famine""', 3: ""Oh? And here I thought... we were already bound together by fate's red thread."", 4: '1'}"
+131	131		301							"{3: ""The girl's crimson lips part slightly in her transformed demonic form, her expression shifting to one of theatrical surprise.""}"
+132	132		204							{1: '1', 2: '2'}
+133	133		301				DialogDisable			"{2: '""Famine""', 3: ""Since you've taken such risks and gone to such trouble to rescue me, I'll repay you with everything I have."", 4: '1'}"
+134	134		204							{1: '1'}
+135	135		401							{1: '2', 2: '1543'}
+136	136		203						700.0	{1: '1', 2: '0.5', 3: '-300', 4: '-50', 5: '-100'}
+137	137		301			DialogEnable				"{2: '""Famine""', 3: ""Surely you wouldn't want us to go our separate ways at this point... right, Bloodsworn?"", 4: '1'}"
+138	138		204							{1: '1', 2: '2'}
+139	139		401							{1: '2', 2: '4276'}
+140	140		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiChatServeMain/FxUiChatServe01.prefab', 2: '2'}
+141	141		301							"{3: ""Her bright gray-red eyes burn with an eager intensity, like a predator that has finally found prey worth pursuing. You can't help but question whether your earlier judgment was too reckless.""}"
+142	142		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiChatServeMain/FxUiChatServe01.prefab'}
+143	143		301							"{3: ""But when it comes to harboring deep hatred for Madam Raphael and the Sanctuary, she's as reliable an ally as anyone could ask for.""}"
+144	144		302				AniZhuanchangBegin			"{2: ""Then let's tear down this false paradise together."", 3: '145'}"
+145	145		401							{1: '1', 2: '36'}
+146	146		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory757.jpg'}
+147	147		401							{1: '1', 2: '257'}
+148	148		201							{1: '1', 2: '501297', 3: '2', 4: '-300'}
+149	149		301			AniZhuanchangEnd	DialogDisable			{1: '1', 2: 'Lilith', 3: 'Oh? Here we are at last.', 4: '1'}
+150	150		204							{1: '1', 2: '9'}
+151	151		401							{1: '2', 2: '5327'}
+152	152		203						300.0	{1: '1', 2: '0.25', 3: '-300', 4: '-70'}
+153	153		203						300.0	{1: '1', 2: '0.25', 3: '-300'}
+154	154		202							{1: '1'}
+155	155		301			DialogEnable				{3: 'After jolting along rough roads, the carriage finally comes to a stop before an inn. The girl closes her umbrella and gracefully steps down.'}
+156	156		301				DialogDisable			"{3: ""Meanwhile, you head straight for the inn's reception desk to speak with the tired attendant.""}"
+157	157		302							{2: 'Hello, any rooms available?', 3: '158'}
+158	158		201							{1: '1', 2: '500688'}
+159	159		301			DialogEnable				"{1: '1', 2: 'Doorman', 3: ""Don't bother asking. Whitehorse isn't open for business anymore."", 4: '1'}"
+160	160		401							{1: '2', 2: '5672'}
+161	161		202							{1: '1'}
+162	162		201							{1: '18', 2: '501283'}
+163	163		301							"{1: '1', 2: 'Morigan', 3: ""What? Why not? You're not just making this up to get rid of us, are you?"", 4: '18'}"
+164	164		202							{1: '18'}
+165	165		301							{3: 'Before you can even respond, your magical pet pokes its head out of your satchel after having been cooped up for the entire bumpy ride, and voices its complaint.'}
+166	166		201							{1: '1', 2: '500688'}
+167	167		301							"{1: '1', 2: 'Doorman', 3: ""Wait, you don't know? A few days ago, one of the Sanctuary's treasure trains went down. A whole car crashed right near our town, and it was like gold coins were raining from heaven."", 4: '1'}"
+168	168		301							"{2: 'Doorman', 3: ""The whole town's out there right now, grabbing as much gold as they can before the Angels show up to take it all back. Nobody's got time to be the innkeeper!"", 4: '1'}"
+169	169		301							"{3: ""The young man clearly has some experience with the world. Morigan's sudden appearance doesn't even make him blink, and he's more than happy to trade barbs without giving an inch.""}"
+170	170		302							"{2: '(Push Morigan back into the bag)', 3: '171', 4: ""So how come you're the only one stuck here?"", 5: '171'}"
+171	171		301							"{2: 'Doorman', 3: ""It's all my old man's fault! He goes on about needing someone to guard the place, but if he'd just let me go, I would've struck it richer than anyone out there..."", 4: '1'}"
+172	172		201							{1: '1', 2: '501297', 4: '-300'}
+173	173		301							"{1: '1', 2: 'Lilith', 3: ""But you all know perfectly well that's Sanctuary property. Even if you get your hands on some, the Angels aren't going to just let you spend it in peace."", 4: '1'}"
+174	174		204							{1: '1', 2: '2'}
+175	175		301							{2: 'Lilith', 3: 'Or maybe... you just enjoy playing with fire?', 4: '1'}
+176	176		301							{3: 'Lilith props herself against the doorframe with her Moon Umbrella, watching the conversation unfold with casual interest.'}
+177	177		201							{1: '1', 2: '500688', 3: '5'}
+178	178		301							"{1: '1', 2: 'Doorman', 3: ""Shut... shut up. We can take care of ourselves just fine! The town's already got a militia. If the Angels show up, they're in for a real fight."", 4: '1'}"
+179	179		301				DialogDisable			"{2: 'Doorman', 3: ""Besides, that... what's-his-face tax collector already cleaned us out of everything we'd worked our asses off to earn. This time, no matter what, we're not gonna let them—"", 4: '1'}"
+180	180		401							{1: '1', 2: '36'}
+181	181		202							{1: '1', 6: '1'}
+182	182		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+183	183		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+184	184		201							{1: '1', 2: '500690', 4: '-800'}
+185	185		201							{1: '2', 2: '500689', 4: '800'}
+186	186		203							{1: '1', 2: '0.25', 3: '-400'}
+187	187		203						450.0	{1: '2', 2: '0.25', 3: '400'}
+188	188		401							{1: '1', 2: '263'}
+189	189		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+190	190		502							{1: 'DialogEnable'}
+191	191		301			DialogShake				{1: '1', 2: 'Whitehorse Thug A', 3: 'Lily! Lily, Lily, Lily—!', 4: '2'}
+192	192		301				DialogDisable			{3: 'Before the attendant can finish, two rough-looking young men with mohawks burst from the inn and charge straight toward Lilith.'}
+193	193		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+194	194		203							{1: '1', 2: '0.25', 3: '-300', 5: '-100'}
+195	195		203						300.0	{1: '2', 2: '0.25', 3: '300', 5: '-100'}
+196	196		202							{1: '1', 2: '2', 6: '1'}
+197	197		201							{1: '1', 2: '500690', 4: '-900'}
+198	198		201							{1: '2', 2: '500689', 4: '900'}
+199	199		201							{1: '3', 2: '501297', 4: '-300'}
+200	200		203							{1: '1', 2: '0.4', 3: '-600'}
+201	201		203						600.0	{1: '2', 2: '0.4', 3: '600'}
+202	202		301			DialogEnable				"{1: '1', 2: 'Whitehorse Thug A', 3: 'I thought my ears were going crazy, but you really are back! It\'s ""Gambler Lilith""!', 4: '2'}"
+203	203		301							"{2: 'Whitehorse Thug B', 3: ""Three years! Three damn years! Do you have any idea what we've been through while you were gone?!"", 4: '1'}"
+204	204		301							"{2: 'Whitehorse Thug A', 3: ""Well, now that you're back. Pay up! Thanks to you, I've been so broke I can't even afford a lousy can of beans!"", 4: '2'}"
+205	205		301							"{2: 'Whitehorse Thug B', 3: ""You said it! We've been combing that valley every single day looking for that busted train, and we're sick to death of it, but haven't found anything!"", 4: '1'}"
+206	206		301							"{2: 'Whitehorse Thug B', 3: ""Ugh... don't even get me started. I swear I can still smell that nasty muddy stench from up in those mountains just thinking about it..."", 4: '1'}"
+207	207		204							{1: '3', 2: '8'}
+208	208		301							{3: 'Surrounded by the two thugs, Lilith simply looks down and casually checks her fingernails.'}
+209	209		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+210	210		201							{1: '1', 2: '501297', 3: '2', 4: '-300'}
+211	211		301							"{1: '1', 2: 'Lilith', 3: ""That's a strange way to put it. You chose to sit at that card table, and you were happy counting those coins when you were winning..."", 4: '1'}"
+212	212		301							"{2: 'Lilith', 3: 'But the second your luck goes south, you come crawling back with ""Oh hello, Lily, we need to have a little chat""...', 4: '1'}"
+213	213		204							{1: '1'}
+214	214		301							"{2: 'Lilith', 3: ""If you want to make confessions, wouldn't the priest be a better choice?"", 4: '1'}"
+215	215		301							"{3: ""The cash cow they've finally cornered acts completely indifferent to their plight. Even knowing she's absolutely right, these desperate thugs refuse to back down.""}"
+216	216		202							{1: '1', 6: '1'}
+217	217		201							{1: '1', 2: '500690', 4: '-400'}
+218	218		201							{1: '2', 2: '500689', 4: '400'}
+219	219		301							"{1: '1', 2: 'Whitehorse Thug A', 3: ""Sh-shut up! So what if I'm just gonna rob you blind? You can't take us both anyway!"", 4: '2'}"
+220	220		301							"{2: 'Whitehorse Thug B', 3: ""That's right! Don't force our hand here! You're the one who'll get hurt if this gets ugly."", 4: '1'}"
+221	221		301							{2: 'Whitehorse Thug A', 3: 'Plus, I heard you got cocky and challenged Madam Raphael at the Sanctuary tables, only to get completely demolished—', 4: '2'}
+222	222		401							{1: '1', 2: '36'}
+223	223		401							{1: '2', 2: '819016'}
+224	224		202							{1: '1', 2: '2', 6: '1'}
+225	225		201							{1: '1', 2: '501297', 3: '5', 4: '-300'}
+226	226		301			RImgBg1Shake	DialogDisable			"{1: '1', 2: 'Lilith', 3: ""Say another word and I'll show you what it's like to have your head roll away from your shoulders."", 4: '1'}"
+227	227		401							{1: '1', 2: '186'}
+228	228		202							{1: '1', 6: '1'}
+229	229		201							{1: '1', 2: '500690', 4: '-400'}
+230	230		201							{1: '2', 2: '500689', 4: '400'}
+231	231		401							{1: '2', 2: '5304'}
+232	232		501						600.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab', 2: '2'}
+233	233		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab'}
+234	234		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+235	235		402							{1: '5304'}
+236	236		301			DialogEnable				"{3: ""The razor-sharp tip of her umbrella flashes to her opponent's throat in an instant. Her veneer of civility crumbles away, unleashing a wave of bloodlust that crashes over them like ice water.""}"
+237	237		502							{1: 'PanelActor1Shake'}
+238	238		502						350.0	{1: 'PanelActor2Shake'}
+239	239		301							{3: 'Both thugs jolt backward in terror, ragged whimpers escaping their throats.'}
+240	240		204							{1: '2', 2: '1'}
+241	241		301				DialogDisable			{2: 'Whitehorse Thug A', 3: 'Whoa, hey! Why so serious? I was just messing around...', 4: '2'}
+242	242		202							{1: '1', 2: '2'}
+243	243		302							{2: 'Lilith.', 3: '244'}
+244	244		104						300.0	{1: '0|0|-100', 2: '0.25'}
+245	245		301			DialogEnable				{3: 'The Bloodsworn, silent until now, steps forward and catches her Moon Umbrella mid-thrust.'}
+246	246		302							"{2: ""Don't abuse your power."", 3: '247'}"
+247	247		401							{1: '1', 2: '36'}
+248	248		201							{1: '1', 2: '501297', 3: '5', 4: '-300'}
+249	249		301							{1: '1', 2: 'Lilith', 3: '...', 4: '1'}
+250	250		401							{1: '1', 2: '209'}
+251	251		204							{1: '1'}
+252	252		301							{3: 'The murderous gleam in her eyes slowly dims until every trace of it vanishes beneath her practiced composure.'}
+253	253		204							{1: '1', 2: '2'}
+254	254		301							{2: 'Lilith', 3: 'Of course, my lord. Just a harmless bit of fun.', 4: '1'}
+255	255		301							{2: 'Lilith', 3: 'After all, nobody wants things to get ugly, do we?', 4: '1'}
+256	256		204							{1: '1', 2: '9'}
+257	257		401							{1: '2', 2: '5327'}
+258	258		203						300.0	{1: '1', 2: '0.25', 3: '-300', 4: '-70'}
+259	259		203						300.0	{1: '1', 2: '0.25', 3: '-300'}
+260	260		204							{1: '1', 2: '2'}
+261	261		301							{3: 'Her familiar smile is back as she lowers the now-harmless umbrella. The two thugs, still pressed against the wall, bob their heads like puppets.'}
+262	262		201							{1: '18', 2: '500688', 5: '-75'}
+263	263		301			DialogShake				{1: '1', 2: 'Doorman', 3: 'Shut up, all of you! The Angels that collect coins are here!', 4: '18'}
+264	264		202							{1: '18', 2: '1', 6: '1'}
+265	265		201							{1: '1', 2: '500688', 4: '-400'}
+266	266		203						450.0	{1: '1', 2: '0.4'}
+267	267		401							{1: '2', 2: '4834'}
+268	268		301							{1: '1', 3: 'A furious shout rings out from the distance as the doorman, who had vanished without anyone noticing, comes back on horseback, flinging several rust-pitted shotguns at the group with a sharp clatter.'}
+269	269		301							{2: 'Doorman', 3: 'If you want to live, grab a weapon and prepare to fight!', 4: '1'}
+270	270		202							{1: '1'}
+271	271		401							{1: '2', 2: '2926'}
+272	272		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab', 2: '2'}
+273	273		301			RImgBg1Shake				{3: 'BOOM—'}
+274	274		401							{1: '2', 2: '2926'}
+275	275		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+276	276		301			RImgBg1Shake	DialogDisable			{3: 'Everyone turns toward the direction the doorman came from, where billowing dust clouds and earth-shaking thunder roll forward like a storm crawling across the ground toward Whitehorse.'}
+277	277		201						300.0	{1: '1', 2: '500928'}
+278	278		201						300.0	{1: '2', 2: '500928', 4: '-400'}
+279	279		201						300.0	{1: '3', 2: '500928', 4: '400'}
+280	280		401							{1: '2', 2: '844090'}
+281	281		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+282	282		203							{1: '1', 2: '0.25', 4: '-50', 5: '-100'}
+283	283		203							{1: '2', 2: '0.25', 3: '-400', 4: '-50', 5: '-100'}
+284	284		203						300.0	{1: '3', 2: '0.25', 3: '400', 4: '-50', 5: '-100'}
+285	285		301			DialogEnable				"{3: ""Through the choking dust, dozens of pale-skinned creatures can be seen scuttling forward on all fours, racing toward the inn with inhuman speed. It's a sight so grotesque it chills the blood.""}"
+286	286		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+287	287		302				AniZhuanchangBegin			{2: '...Faster than expected.'}
+288	288		401							{1: '1', 2: '36'}
+289	289		202							{1: '1', 2: '2', 3: '3'}
+290	290		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab'}
+291	291		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+292	292		101						1500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5901_15.jpg'}
+293	293		401							{1: '1', 2: '6217'}
+294	294		301			AniZhuanchangEnd				{2: 'Lilith', 3: '...My lord, allow me.'}
+295	295		401							{1: '2', 2: '4115009'}
+296	296		301							{3: 'Lilith jumps onto her bike, laughing with wicked glee now that she no longer needs to mask her vicious nature.'}
+297	297		402							{1: '4115009'}
+298	298		401							{1: '2', 2: '4111006'}
+299	299		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+300	300		301			RImgBg1Shake	DialogDisable			{3: 'She unleashes torrents of magical power, completely ignoring the townspeople around her who now look upon her with terror equal to what they felt when seeing the Angels.'}
+301	301		307							{1: 'But none of that matters now. She enjoys displaying her power, savoring the awe and respect that is rightfully hers.', 3: '50'}
+302	302		301							{3: 'But none of that matters now. She enjoys displaying her power, savoring the awe and respect that is rightfully hers.'}
+303	303		307							{2: '1'}
+304	304		301			DialogEnable	DialogDisable			"{2: '""Famine""', 3: 'Put away that useless scrap metal! I have no need for such things.'}"
+305	305		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+306	306		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+307	307		502							{1: 'RImgBg1Shake'}
+308	308		401							{1: '2', 2: '4111006'}
+309	309		307							{1: 'Crimson magic coalesces in her hands, weaving itself into a latticed blade of pure energy.', 3: '50'}
+310	310		301							{3: 'Crimson magic coalesces in her hands, weaving itself into a latticed blade of pure energy.'}
+311	311		307							{2: '1'}
+312	312		301			DialogEnable				{3: 'Unable to contain herself, she runs her tongue along the edge of this intoxicating power in her hands.'}
+313	313		301							"{2: '""Famine""', 3: 'This round...'}"
+314	314		301		1		AniZhuanchangBegin			"{2: '""Famine""', 3: ""I'll go first, as always.""}"

@@ -1,0 +1,69 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				{3: 'Walking on the spacious streets of Constellia, a giant display board catches your eye.'}
+4	4		201							{1: '1', 2: '1081001', 3: '1'}
+5	5		301							"{1: '1', 2: 'Kamui', 3: '""Valentine\'s Day Limited: Golden Age Classic Movie Theater""?', 4: '1'}"
+6	6		302							{2: 'Want to give it a shot?', 3: '7', 4: 'Maybe skip the games this time?', 5: '7'}
+7	7		204							{1: '1', 2: '2'}
+8	8		301							"{2: 'Kamui', 3: ""Sure! Commandant, let's go check it out too!"", 4: '1'}"
+9	9		204							{1: '1', 2: '1'}
+10	10		301							"{2: 'Kamui', 3: 'Uh... ""A Must-Watch Recommendation, \'To You in Winter,\' a classic tear-jerking love story that made the whole world cry"" seems to be the cinema\'s top pick!', 4: '1'}"
+11	11		302							"{2: 'I have a bad feeling about this just from the title.', 3: '12', 4: ""Is it really okay to watch a tragic love story on Valentine's Day?"", 5: '12'}"
+12	12		301							{2: 'Kamui', 3: 'Let me see... looks like this is the only one with seats left.', 4: '1'}
+13	13		302							{2: 'This just got even more complicated.', 3: '14'}
+14	14		301							{2: 'Kamui', 3: 'How about we still try to find an arcade?', 4: '1'}
+15	15		302							"{2: ""Let's stick to this."", 3: '16'}"
+16	16		301							"{2: 'Kamui', 3: ""Sure, the intro said it's a classic movie from the Golden Age, gotta be fun!"", 4: '1'}"
+17	17		301				AniZhuanchangBegin			"{2: 'Kamui', 3: ""The movie's about to start, Commandant. Let's hurry inside."", 4: '1'}"
+18	18		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory549.jpg'}
+19	19		401							{1: '2', 2: '2666'}
+20	20		301			AniZhuanchangEnd	DialogDisable			{1: '1', 3: 'Kamui has bought two large buckets of popcorn, excitedly pulling you into a seat in the dimly lit cinema—the movie begins.'}
+21	21		302							{2: '...', 3: '22'}
+22	22		307							"{1: '""How could this be? I finally found you, and now you\'re just going to leave with him?""', 3: '60'}"
+23	23		202							{1: '1', 6: '1'}
+24	24		301							"{3: '""How could this be? I finally found you, and now you\'re just going to leave with him?""'}"
+25	25		307						100.0	{2: '1'}
+26	26		307							"{1: '""I won\'t let go of you again, even if leaving Wang Corporation means facing a harsh winter. We can weather it together!""', 3: '55'}"
+27	27		301							"{3: '""I won\'t let go of you again, even if leaving Wang Corporation means facing a harsh winter. We can weather it together!""'}"
+28	28		302							{2: 'Uh...', 3: '29', 4: '...', 5: '29'}
+29	29		307							{2: '1'}
+30	30		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory529.jpg', 3: '0', 4: '0.5', 5: '1'}
+31	31		301			DialogEnable				{3: 'The two protagonists, accompanied by lines that scream classic, step into the snowfield, and in that moment, the dim cinema is illuminated by the snowy landscape.'}
+32	32		201							{1: '1', 2: '1081001', 3: '1'}
+33	33		301							{1: '1', 3: 'You happen to see Kamui, holding popcorn, looking over at me.'}
+34	34		301							"{3: '""Even so... I love you!""'}"
+35	35		204							{1: '1', 2: '2'}
+36	36		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory529.jpg', 3: '0.5', 4: '0', 5: '1'}
+37	37		301				DialogDisable			{3: 'He smiles in the dimming light.'}
+38	38		302				AniZhuanchangBegin			{2: '...', 3: '39', 4: '(Smile back at Kamui)', 5: '39'}
+39	39		202							{1: '1', 6: '1'}
+40	40		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+41	41		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory529.jpg'}
+42	42		502							{1: 'DialogEnable'}
+43	43		301			AniZhuanchangEnd				{3: 'The movie tries its best to make you cry, but the audience just walks out with blank faces.'}
+44	44		301							"{3: ""Total bomb, that's what it is.""}"
+45	45		302							{2: 'Never thought...', 3: '46', 4: 'This movie...', 5: '46'}
+46	46		201							{1: '1', 2: '1081001', 3: '1'}
+47	47		301							"{1: '1', 2: 'Kamui', 3: ""Commandant, I didn't know movies could be so interesting!"", 4: '1'}"
+48	48		302							{2: 'Huh?', 3: '49'}
+49	49		301							"{2: 'Kamui', 3: ""I figured once the main characters sort things out, they'd ride off into the sunset. Didn't expect a whole new challenge to pop up."", 4: '1'}"
+50	50		301							{2: 'Kamui', 3: 'What happens now?', 4: '1'}
+51	51		302							{2: 'Guess that means no sequel.', 3: '52'}
+52	52		301							{2: 'Kamui', 3: 'So we never get to see how it ends?', 4: '1'}
+53	53		302							{2: 'Did you enjoy the movie?', 3: '54'}
+54	54		301							"{2: 'Kamui', 3: ""Enjoy? Not really, if we're talking about the actual story."", 4: '1'}"
+55	55		302							"{2: ""That's what I'm talking about..."", 3: '56'}"
+56	56		204							{1: '1', 2: '2'}
+57	57		301							"{2: 'Kamui', 3: ""But hey, I think it's kind of cool this way too."", 4: '1'}"
+58	58		301							{3: 'Kamui laughs, waving the two ticket stubs in the air.'}
+59	59		302							{2: '(Nod)', 3: '60'}
+60	60		204							{1: '1', 2: '1'}
+61	61		301							"{2: 'Kamui', 3: ""Next time we have a chance, let's catch another movie!"", 4: '1'}"
+62	62		301							"{2: 'Kamui', 3: ""Heard Golden Age audiences used to collect ticket stubs, so I'm going to keep these safe."", 4: '1'}"
+63	63		301							"{2: 'Kamui', 3: ""Once we watch a bunch of movies, we'll have our own special collection."", 4: '1'}"
+64	64		302							{2: 'Sounds good to me.', 3: '65', 4: 'Not a bad idea.', 5: '65'}
+65	65		301							"{2: 'Kamui', 3: ""But hey, we don't have to just watch movies."", 4: '1'}"
+66	66		204							{1: '1', 2: '2'}
+67	67		301							"{3: ""Kamui's smile is like sunshine.""}"
+68	68		301		1		AniZhuanchangBegin			"{2: 'Kamui', 3: ""As long as I'm with you, Commandant, I'm happy no matter what we do."", 4: '1'}"

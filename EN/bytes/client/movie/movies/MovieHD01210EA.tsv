@@ -1,0 +1,28 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '204'}
+3	3		301			DialogEnable				"{3: ""You manage to follow the voices and find everyone, but it is still dark. It is near impossible to find the way out with Polar Soldier's weak light.""}"
+4	4		301							{3: 'Besides—'}
+5	5		302							{2: 'Have you seen Tiger around?', 3: '6'}
+6	6		201							{1: '1', 2: '1031001', 3: '3', 4: '-600'}
+7	7		201							{1: '2', 2: '500166'}
+8	8		201							{1: '3', 2: '500026', 4: '600'}
+9	9		301							{1: '1', 2: 'Lucia', 3: 'No.', 4: '2'}
+10	10		301							"{2: 'Liv', 3: ""Huh? Wasn't it following you?"", 4: '1'}"
+11	11		301							{2: 'Lee', 3: 'Shall we look for it?', 4: '3'}
+12	12		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+13	13		301							"{3: 'You try to listen carefully but cannot hear the familiar ""meow"" in the utter silence. All your calling has also gone nowhere.'}"
+14	14		301							{3: 'The light on Polar Soldier begins to flicker as the energy runs low. The air nearby gets even colder, chilling you to the bone through the thick armor.'}
+15	15		301							{3: 'You try to control the trembling voice and continue to call Tiger, but it is not responding.'}
+16	16		201							{1: '1', 2: '500166'}
+17	17		301							{1: '1', 2: 'Lucia', 3: 'Look at the sky, Commandant!', 4: '1'}
+18	18		202							{1: '1', 6: '1'}
+19	19		301							{3: 'When you look up, you realize the crescent moon has changed its shape.'}
+20	20		301							{3: 'It has turned into a small tiger head, flying away.'}
+21	21		301							{3: 'The flames from its tailpipe form a line of text—'}
+22	22		301							"{3: '""Congratulations, you have cleared all the stages""'}"
+23	23		302							{2: 'Tiger?', 3: '24'}
+24	24		301							{3: 'Tiger has already become light. It turns around as if it has heard your calling.'}
+25	25		301							{3: 'It turns its ears a bit, as if it is saying goodbye.'}
+26	26		201							{1: '1', 2: '500479'}
+27	27		301		1		AniZhuanchangBegin			{1: '1', 3: 'You lose gravity once again.'}

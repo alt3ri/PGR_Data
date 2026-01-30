@@ -1,0 +1,13 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg'}
+2	2		401							{1: '1', 2: '5'}
+3	3		201							{1: '1', 2: '500175'}
+4	4		301			DialogEnable				{1: '1', 2: 'Camu', 3: '...What? A maze?', 4: '1'}
+5	5		301							"{2: 'Camu', 3: ""I'm not doing something this stupid and boring."", 4: '1'}"
+6	6		302							{2: 'Camu?'}
+7	7		301							{2: 'Camu', 3: '...Why are you here? And why are you dressed up like this?', 4: '1'}
+8	8		302							"{2: ""It's a special costume for the maze."", 3: '9'}"
+9	9		301							"{2: 'Camu', 3: ""Don't tell me this mission comes from you..."", 4: '1'}"
+10	10		302							"{2: ""That's right."", 3: '11'}"
+11	11		301							"{2: 'Camu', 3: ""...I'm only doing it because of you. Let's go."", 4: '1'}"
+12	12		301		1		AniZhuanchangBegin			{2: 'Camu', 3: 'Show me what treasure is hidden in this maze.', 4: '1'}

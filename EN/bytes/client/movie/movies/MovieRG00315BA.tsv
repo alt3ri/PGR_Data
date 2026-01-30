@@ -1,0 +1,66 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory192.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500166'}
+4	4		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'Ha!', 4: '1'}
+5	5		202							{1: '1'}
+6	6		201							{1: '1', 2: '500005'}
+7	7		401							{1: '2', 2: '10006001'}
+8	8		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '2', 3: '1'}
+9	9		301			PanelActor1Shake				{1: '1', 2: 'Guard', 3: '————!', 4: '1'}
+10	5001		202							{1: '1'}
+11	10		301							"{1: '2', 3: ""Lucia's team defeated Hassen's personal guards. He then stopped the fight just when the remaining guards were about to attack."", 4: '400'}"
+12	11		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 4: '1'}
+13	12		201							{1: '1', 2: '1081001'}
+14	13		301							{1: '1', 2: 'Kamui', 3: 'Given up already?', 4: '1'}
+15	14		201							{1: '1', 2: '500011'}
+16	15		301							{1: '1', 2: 'King', 3: 'No, but I have more important things to do.', 4: '1'}
+17	16		301							"{2: 'King', 3: ""Anyway, I'd like to welcome you all, heroes from afar."", 4: '1'}"
+18	17		203							{1: '1', 2: '0.25', 3: '400'}
+19	18		201							{1: '2', 2: '500173', 4: '-400'}
+20	19		301							{1: '1', 2: 'Lee', 3: 'Welcome?', 4: '2'}
+21	20		301							{3: 'Hassen greeted three of them inside the ruins. He was polite and confident, totally ignoring that he was hiding just moments ago.'}
+22	21		201							{1: '2', 2: '500166', 4: '-400'}
+23	22		301							{1: '1', 2: 'Lucia', 3: 'Hassen... No, you must be the King.', 4: '2'}
+24	23		301							{2: 'King', 3: 'Correct. You have finally come after so long, heroes from afar.', 4: '1'}
+25	24		301							"{2: 'King', 3: ""The war with the Demons has come to the most crucial moment. Our Princess Liv was taken by the Demon King. To rescue her, you must defeat the four Demon Generals to open the gate of the Demon King's Castle."", 4: '1'}"
+26	25		301							"{2: 'Lucia', 3: ""I'm not asking for a task. What exactly are you planning?"", 4: '2'}"
+27	26		201							{1: '1', 2: '500173', 4: '400'}
+28	27		301							{1: '1', 2: 'Lee', 3: 'Wait, Lucia!', 4: '1'}
+29	28		301							{3: 'Some gears were missing from the conversation, but Lucia and Hassen somehow continued talking. Lee was the first to notice the abnormality.'}
+30	29		301							"{2: 'Lucia', 3: ""What's wrong?"", 4: '2'}"
+31	30		301							{2: 'Lee', 3: 'Open your menu. Look at our main quest...', 4: '1'}
+32	31		301							{2: 'Lucia', 3: 'What? Could it be...', 4: '2'}
+33	32		301							"{3: ""Kamui also noticed what Hassen was after. When Lucia also had her system menu open, everybody realized the team's main quest had been altered.""}"
+34	33		301							"{3: ""Main quest: Open the gate of the Demon King's Castle.""}"
+35	34		301							"{2: 'Lucia', 3: ""What's going on...!?"", 4: '2'}"
+36	35		301							{2: 'Lee', 3: 'Kamui, you should know what happened better. Is this some hidden rule?', 4: '1'}
+37	36		202							{1: '1', 2: '2'}
+38	37		201							{1: '1', 2: '1081001'}
+39	38		301							"{1: '1', 2: 'Kamui', 3: ""Yeah, it's probably a compulsory event. We can't turn down a main quest in the game."", 4: '1'}"
+40	39		301							{2: 'Kamui', 3: 'As long as we talk to the main NPC at certain location, we are guaranteed to get the quest... And this Hassen could well be that NPC...', 4: '1'}
+41	40		201							{1: '1', 2: '500011'}
+42	41		301							{1: '1', 2: 'King', 3: 'Correct. I waited a long time for you in my palace, but you never showed up. So I came here to trigger the quest for you.', 4: '1'}
+43	42		203							{1: '1', 2: '0.25', 3: '400'}
+44	43		201							{1: '2', 2: '500173', 4: '-400'}
+45	44		301							{1: '1', 2: 'Lee', 3: 'Are you...different from the regular NPCs?', 4: '2'}
+46	45		301							"{2: 'King', 3: 'I am an ""NPC"", of course.', 4: '1'}"
+47	46		301							{3: 'Hassen emphasized his identity as an NPC. However, his behaviors felt nothing like a game-controlled character. He sounded more like another player.'}
+48	47		301							"{2: 'King', 3: ""I know why you entered the game, and I know you want to win over the other team. Rest assured that I don't plan to stop what you are doing. I only want you to do what the heroes are supposed to do."", 4: '1'}"
+49	48		301							"{2: 'King', 3: ""That is, to follow the King's main quest."", 4: '1'}"
+50	49		201							{1: '2', 2: '1081001', 4: '-400'}
+51	50		301							{2: 'Kamui', 3: 'I have no idea what you are thinking, but at least I know you are one strange NPC.', 4: '2'}
+52	51		301							"{2: 'Kamui', 3: ""But do you really think we will listen to you and do what we don't want to? Don't forget you are also targeting Liv."", 4: '2'}"
+53	52		301							{2: 'King', 3: 'Because she is special. She is the only Holy Maiden chosen by the system.', 4: '1'}
+54	53		201							{1: '2', 2: '500166', 4: '-400'}
+55	54		301							{2: 'Lucia', 3: 'Are you saying Liv, as a player, was granted some special power?', 4: '2'}
+56	55		301							{2: 'King', 3: 'Correct. And I just happen to need that power.', 4: '1'}
+57	56		301							"{2: 'Lucia', 3: 'That only gives us more reason to stop ""Your Majesty"".', 4: '2'}"
+58	57		301							"{2: 'King', 3: ""Don't get me wrong, I have no intention to hurt you. I just want to get the thing I want, and control this world."", 4: '1'}"
+59	58		301							{2: 'King', 3: 'Once I am successful, you can also complete your quest, win the race, and return to your world happily.', 4: '1'}
+60	59		301							"{2: 'King', 3: ""But if you continue to waste your time and do nothing, the other team will probably win. Don't you think?"", 4: '1'}"
+61	60		301							{2: 'Lucia', 3: '...I have one more question. What are you going to do after taking control of this game world?', 4: '2'}
+62	61		301							{2: 'King', 3: 'Well, I am worried that you may turn me down once I answer that question.', 4: '1'}
+63	62		301							"{2: 'Lucia', 3: ""Fine. Here's my answer to you. Lee! Kamui!"", 4: '2'}"
+64	63		301							{2: 'King', 3: 'Looks like we have to fight no matter what.', 4: '1'}
+65	64		301		1		AniZhuanchangBegin			{3: 'Lucia and team grabbed their weapons and charged toward the enemy with no HP bar.'}

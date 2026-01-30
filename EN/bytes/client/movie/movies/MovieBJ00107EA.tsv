@@ -1,0 +1,28 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory68.jpg'}
+2	990		401							{1: '1', 2: '201'}
+3	2		201							{1: '1', 2: '1031001', 3: '14'}
+4	3		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'There are small androids along our path... There they go again... they seem to be holding picture frames.', 4: '1'}
+5	4		301							{1: '1', 2: 'Liv', 3: 'From a distance, they look... just like real children...', 4: '1'}
+6	5		203							{1: '1', 2: '0.25', 3: '400'}
+7	6		201							{1: '2', 2: '1091001', 4: '-400'}
+8	7		301							"{1: '1', 2: 'Bianca', 3: ""The Corrupted have us surrounded. I'll provide cover."", 4: '2'}"
+9	8		203							{1: '1', 2: '0.25', 3: '600'}
+10	9		203							{1: '2', 2: '0.25', 3: '-600'}
+11	10		201							{1: '3', 2: '1011001'}
+12	11		301							{1: '1', 2: 'Lee', 3: 'Exit up ahead.', 4: '3'}
+13	12		202							{1: '1', 2: '2', 3: '3'}
+14	13		201							{1: '1', 2: '1081001', 3: '4'}
+15	14		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+16	15		301							"{1: '1', 2: 'Kamui', 3: ""I'll open it for y'all!"", 4: '1'}"
+17	16		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 4: '1'}
+18	17		302							{2: 'Wait... Kamui!', 3: '18'}
+19	18		301							"{1: '1', 2: 'Kamui', 3: ""Psh, these rocks crack if I blow on 'em. No fun! And what's with all these coils? They give me the heebie jeebies..."", 4: '1'}"
+20	19		502							{1: 'RImgBg1Shake'}
+21	20		202							{1: '1'}
+22	21		201							{1: '1', 2: '500127', 3: '10'}
+23	22		301							{1: '1', 2: 'Sophia', 3: 'Tunnel structural integrity compromised. 10 seconds until collapse.', 4: '1'}
+24	23		302							{2: '...', 3: '24'}
+25	24		302							{2: 'Return to the surface now!', 3: '25'}
+26	25		202							{1: '1'}
+27	26		301		1		AniZhuanchangBegin			{1: '1', 2: '???', 3: 'Wait!'}

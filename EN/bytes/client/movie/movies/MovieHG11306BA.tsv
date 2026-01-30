@@ -1,0 +1,220 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory4.jpg'}
+2	2		401							{1: '1', 2: '102'}
+3	3		301							{2: 'Noctis', 3: '...'}
+4	4		301							{2: 'No. 21', 3: '...'}
+5	5		301							{2: 'Noctis', 3: 'Yo, is it just me or anyone find it a bit awkward in here?'}
+6	6		301							{2: 'No. 21', 3: 'Zip yo lips and get a grip.'}
+7	7		301							"{2: 'Noctis', 3: ""Oi! Where'd you learn to be so anti-noctistic——""}"
+8	8		301				DialogDisable			{2: 'Vera', 3: 'Alright alright. Just stuff it.'}
+9	9		201						1500.0	{1: '1', 2: '500168', 7: '1'}
+10	10		301			DialogEnable				{1: '1', 2: 'Vera', 3: 'If you have the time to trash talk, focus on getting the mission done.', 4: '1'}
+11	11		301							{2: 'Vera', 3: 'And you too.', 4: '1'}
+12	12		302							{2: '...', 3: '13', 4: '?', 5: '13'}
+13	13		301							{2: 'Vera', 3: 'Stop standing in the way like an idiot!', 4: '1'}
+14	14		301							{2: 'Vera', 3: 'Sending YOU over for a mission with us, ugh. Them mama-birds must be real busy, huh?', 4: '1'}
+15	15		302							{2: '...', 3: '16'}
+16	16		204							{1: '1', 2: '13'}
+17	17		301							"{2: 'Vera', 3: ""You are a human. And humans that can't even pop off a single Corrupted—they go into the trash."", 4: '1'}"
+18	18		301							{2: 'Vera', 3: 'Wanna stop being a hot piece of trash, maggot? Go give the Corrupted some attention.', 4: '1'}
+19	19		302							{2: 'Are you blunt or blunt?', 3: '20'}
+20	20		202							{1: '1'}
+21	21		301							{3: 'Vera ignores you and engages in battle.'}
+22	22		301							{3: 'A short while ago, you received an emergency rescue mission in the frontlines. The Gray Raven members were all under maintenance, so you were sent here along with several other commandants.'}
+23	23		301							{3: 'And the details match your suspicions... This is about the missing squads that Liv mentioned. HQ decided to give one last shot at rescuing the MIA members.'}
+24	24		301							{3: 'You see Vera scanning around like a hyena. You were surprised when you learned that you were going with Cerberus—Kurono must not have given up. But whatever the case, Vera is indeed an exemplary soldier on the field.'}
+25	25		302				AniZhuanchangBegin			"{2: ""Let's get the show started."", 3: '26'}"
+26	26		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory11.jpg'}
+27	27		201							{1: '1', 2: '500168', 7: '1'}
+28	28		301			AniZhuanchangEnd				{1: '1', 2: 'Vera', 3: '21, sitrep.', 4: '1'}
+29	29		301							{2: 'Vera', 3: '...Enemies behind!', 4: '1'}
+30	30		302							{2: '(Fire)', 3: '31'}
+31	31		401							{1: '2', 2: '1510'}
+32	32		204							{1: '1', 2: '13'}
+33	33		301							"{2: 'Vera', 3: ""Guess you aren't limp to the core, Commandant."", 4: '1'}"
+34	34		201							{1: '1', 2: '500013'}
+35	35		401							{1: '2', 2: '1508'}
+36	36		301							{1: '1', 2: 'Corrupted', 3: '—! —!!', 4: '1'}
+37	37		201							{1: '2', 2: '500168', 4: '-2000'}
+38	38		302							{2: '...', 3: '40', 4: '(Reload)', 5: '39'}
+39	39		401							{1: '2', 2: '1511'}
+40	40		301							{3: 'Like packs of blood-starved beasts, the Corrupted pour in. Firearms alone are powerless against them. As if to confirm that fact, one slips through the defenses and mauls your arm, causing you to drop your gun.'}
+41	41		203							{1: '2', 2: '0.25', 3: '-300'}
+42	42		301			PanelActor1Shake				{1: '1', 2: 'Vera', 3: 'Ngh...', 4: '2'}
+43	43		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '3'}
+44	44		301							{3: 'Vera plants herself between you and the Corrupted. Sparks fly from her blade in combat.'}
+45	45		202							{1: '1'}
+46	46		203							{1: '2', 2: '0.25'}
+47	47		301							{2: 'Vera', 3: 'Pick that gun up! Pull yourself up and fight!', 4: '2'}
+48	48		302							{2: 'I know!', 3: '49', 4: '(Pick the gun up)', 5: '49'}
+49	49		202							{1: '2'}
+50	50		301							{3: 'After what felt like ages, you have finally cleansed the area of the stray Corrupted.'}
+51	52		301							{3: 'Vera has performed some perfunctory maintenance for herself, and you have injected a new stream of serum into yourself. The two of you are now moving forward, when raindrops suddenly pitter-patter onto your shoulders.'}
+52	53		302							"{2: ""...It's raining."", 3: '54'}"
+53	54		201							{1: '1', 2: '500168'}
+54	55		301							{1: '1', 2: 'Vera', 3: 'Tch... This weather! How bloody annoying!', 4: '1'}
+55	56		202							{1: '1', 6: '1'}
+56	57		301							{3: 'Vera parts her soaked bangs and her forehead meets the air. She almost looks younger than her usual self.'}
+57	58		201							{1: '1', 2: '500168'}
+58	59		301							"{1: '1', 2: 'Vera', 3: '...Hey. If you keep ogling like a perv, you have no one to blame when ""accidents"" happen.', 4: '1'}"
+59	60		302							{2: '...', 3: '61', 4: '(Look away)', 5: '61'}
+60	61		204							{1: '1'}
+61	62		301							{2: 'Vera', 3: '...Shh. I think I found something.', 4: '1'}
+62	63		302							"{2: ""I wasn't even saying anything though?"", 3: '64'}"
+63	64		301							{2: 'Vera', 3: 'See? Shh.', 4: '1'}
+64	65		401							{1: '2', 2: '1515'}
+65	66		301				DialogDisable			{2: 'Vera', 3: 'That way. Follow me!', 4: '1'}
+66	67		502							{1: 'RImgBg1DisableSlow'}
+67	9515		202							{1: '1'}
+68	68		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory10.jpg'}
+69	69		201							{1: '1', 2: '500168'}
+70	70		301			DialogEnable				{1: '1', 2: 'Vera', 3: 'Over there...', 4: '1'}
+71	71		202							{1: '1'}
+72	72		301							{2: 'Alive Construct?', 3: '......'}
+73	73		302							{2: 'There!', 3: '74'}
+74	74		301							{3: 'You see a Construct, barely alive and disfigured beyond the point of recognition, nearly becoming one with the corpse-filled ruins. Like a lonely flag, the Construct stands feebly on a pile of Corrupted.'}
+75	75		401							{1: '2', 2: '1513'}
+76	76		301							{3: 'Vera rushes over. The shambling Corrupted nearby notices fresh prey and they squirm toward her.'}
+77	885558		201							{1: '1', 2: '500168', 7: '1'}
+78	77		301							{2: 'Vera', 3: '【kuroname】, cover my back!', 4: '1'}
+79	78		302							{2: 'Got it.', 3: '79'}
+80	79		201							{1: '1', 2: '500067', 4: '-400'}
+81	80		201							{1: '2', 2: '500068', 4: '400'}
+82	81		401							{1: '2', 2: '1508'}
+83	82		301							{1: '1', 2: 'Corrupted', 3: '—! —!!', 4: '1', 5: '2'}
+84	83		302							{2: '(Fire)', 3: '84'}
+85	84		401							{1: '2', 2: '1511'}
+86	85		401							{1: '2', 2: '1510'}
+87	86		202							{1: '1', 2: '2'}
+88	87		301							{2: 'Alive Construct?', 3: '......'}
+89	88		201							{1: '1', 2: '500168'}
+90	89		301							"{1: '1', 2: 'Vera', 3: ""Tch! Guy's not responding to connection requests! Probably about to be lost."", 4: '1'}"
+91	90		301							"{2: 'Vera', 3: ""Let's reach him first. Follow tight! Can't babysit you in this situation!"", 4: '1'}"
+92	91		201							{1: '1', 2: '500067', 4: '-400'}
+93	92		201							{1: '2', 2: '500068', 4: '400'}
+94	93		401							{1: '2', 2: '1508'}
+95	94		301							{1: '1', 2: 'Corrupted', 3: '—! —!!', 4: '1', 5: '2'}
+96	95		302							{2: '(Fire)', 3: '96'}
+97	96		401							{1: '2', 2: '1511'}
+98	97		401							{1: '2', 2: '1510'}
+99	98		202							{1: '1', 2: '2'}
+100	99		301							{2: 'Alive Construct', 3: '...Ah. Ahh-ah...'}
+101	100		301							{3: 'Sensing Vera and your presence, he tries to speak through his malfunctioning voice modules.'}
+102	101		301							{2: 'Alive Construct', 3: 'H-he... Help...'}
+103	102		201							{1: '1', 2: '500168'}
+104	103		301							"{1: '1', 2: 'Vera', 3: ""Don't you lie down! Get up!"", 4: '1'}"
+105	104		301							{2: 'Alive Construct', 3: 'C-command...'}
+106	105		302							"{2: ""It's too late."", 3: '106'}"
+107	106		301							{2: 'Vera', 3: 'Damn it! YOU LISTEN UP! Did you turn yourself into this hunk of steel so you could squander your life?!', 4: '1'}
+108	107		301							{2: 'Alive Construct', 3: '...T-tired. S-so... tired...'}
+109	108		202							{1: '1', 6: '1'}
+110	109		301							{3: 'The light on the Inver-Device of the Construct falters, now blinking weakly.'}
+111	110		302							{2: 'Vera, recall...', 3: '111'}
+112	111		201							{1: '1', 2: '500168'}
+113	112		301							{1: '1', 2: 'Vera', 3: 'Damn it! Dammit! Damn it all to hell!', 4: '1'}
+114	113		202							{1: '1', 6: '1'}
+115	114		301							"{3: ""Vera tries to close in on the Construct. Her breath turns erratic and coarse as the rain drenches her. Vital fluids travel down the ruins—is it hers, or the Construct's?""}"
+116	115		201							{1: '1', 2: '500168'}
+117	116		301							"{1: '1', 2: 'Vera', 3: ""You piece of trash!!! You held up 'til now, and now you're just giving up?!"", 4: '1'}"
+118	117		301							"{2: 'Vera', 3: ""HAH! You think you're hot stuff, huh? I'm bringing you back even if it's just your rotten head!"", 4: '1'}"
+119	118		302							"{2: ""Why aren't you making him recall?!"", 3: '119'}"
+120	119		302							{2: 'I need an explan—', 3: '120'}
+121	120		301							"{2: 'Vera', 3: '...You want an acting award? You can\'t possibly NOT know what happens when someone recalls, aye, ""top of the class?""', 4: '1'}"
+122	121		301							{3: 'Vera impatiently cuts you off midway.'}
+123	122		301							{2: 'Vera', 3: 'If you really know nothing, go ask your higher-ups.', 4: '1'}
+124	123		301							{2: 'Vera', 3: 'But, you might be better off just keeping your mouth shut. After all, weapons of war should just listen to orders.', 4: '1'}
+125	124		302							{2: '...', 3: '125'}
+126	125		202							{1: '1', 6: '1'}
+127	126		301							{3: 'Vera hauls the Construct up and places his hand on her shoulder.'}
+128	127		302							{2: 'Vera', 3: '128'}
+129	128		201							{1: '1', 2: '500168'}
+130	129		301							{1: '1', 2: 'Vera', 3: 'What is it this time?!', 4: '1'}
+131	130		302							{2: 'This.', 3: '131'}
+132	131		301							{3: 'You present the medication vial you stole from the smugglers to Vera.'}
+133	132		302							{2: 'Have it.', 3: '133'}
+134	133		302							{2: 'You can decide what to do with it.', 3: '134'}
+135	134		202							{1: '1'}
+136	135		301							{3: 'Vera pauses and stares at you astonished, but only for a split second. She quickly snaps back to herself and takes the vial, then skillfully applies it to the Construct.'}
+137	136		301							{3: 'After a few seconds that felt like minutes, the Construct seems to have come to himself. The enhanced pain reception causes him to writhe around and struggle.'}
+138	137		301							{2: 'Alive Construct', 3: '...Aaaargh! It hurts! It hurts...! Please! The pain! Please... turn off my pain receptors...'}
+139	138		201							{1: '1', 2: '500168'}
+140	139		301							"{1: '1', 2: 'Vera', 3: ""...What a disgrace. War isn't a field trip."", 4: '1'}"
+141	140		202							{1: '1', 6: '1'}
+142	141		301							{3: 'Vera slouches onto the floor, letting out hushed displeasure.'}
+143	142		302							"{2: ""...He's in pain."", 3: '143'}"
+144	143		201							{1: '1', 2: '500168'}
+145	144		301							{1: '1', 2: 'Vera', 3: 'Better than dead.', 4: '1'}
+146	145		202							{1: '1', 6: '1'}
+147	146		301							{3: 'Vera takes a deep breath and carries the Construct, now slowly becoming conscious.'}
+148	147		201							{1: '1', 2: '500168', 3: '13'}
+149	148		301							"{1: '1', 2: 'Vera', 3: ""Anyhow, people like you wouldn't understand. Which is why I give no damns about what others think. It's my life, I live it MY way."", 4: '1'}"
+150	149		302							"{2: ""Dunno if I see where you're coming from, but..."", 3: '150'}"
+151	150		302							{2: 'I respect your way of living.', 3: '151'}
+152	151		204							{1: '1'}
+153	152		301							{2: 'Vera', 3: '...', 4: '1'}
+154	153		301							{2: 'Vera', 3: 'Pah. Bootlicker.', 4: '1'}
+155	154		302							"{2: ""But don't use these drugs anymore."", 3: '155'}"
+156	155		301							{2: 'Vera', 3: 'Yeah, yeah. Try again.', 4: '1'}
+157	156		302							{2: '...', 3: '157'}
+158	157		202							{1: '1'}
+159	158		301				AniZhuanchangBegin			{3: 'Silence befalls. Walking in the rain, the two of you wordlessly move forward.'}
+160	159		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory45.jpg'}
+161	66363		401							{1: '1', 2: '201'}
+162	161		201							{1: '1', 2: '500011'}
+163	162		301				AniZhuanchangEnd			{1: '1', 2: 'Hassen', 3: 'The Council knows everything about this incident.', 4: '1'}
+164	163		301							"{2: 'Hassen', 3: ""You know that stuff is illegal. If it weren't you, commandant of Gray Raven, I wouldn't have muscled in."", 4: '1'}"
+165	164		301							"{2: 'Hassen', 3: ""Anyways, don't do this ever again. And..."", 4: '1'}"
+166	165		301							"{2: 'Hassen', 3: ""Don't let how Kurono does things affect you. You know what to do as a commandant."", 4: '1'}"
+167	166		302							{2: 'I know.', 3: '170', 4: '...About that.', 5: '167'}
+168	167		301							{2: 'Hassen', 3: 'Yeah?', 4: '1'}
+169	169		302							{2: '...Nothing.', 3: '170'}
+170	170		301							"{2: 'Hassen', 3: ""...You're my most trusted commandant. Don't make the same mistake."", 4: '1'}"
+171	171		302							{2: 'Sorry.', 3: '172', 4: 'Understood.', 5: '172'}
+172	172		301				AniZhuanchangBegin			"{2: 'Hassen', 3: ""Well, that's it. I guess."", 4: '1'}"
+173	173		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory84.jpg'}
+174	175		201						1500.0	{1: '1', 2: '500168', 7: '1'}
+175	176		301				AniZhuanchangEnd			"{1: '1', 2: 'Vera', 3: ""That's what he said?"", 4: '1'}"
+176	174		401							{1: '1', 2: '208'}
+177	177		302							{2: 'Yep.', 3: '178'}
+178	178		301							{2: 'Vera', 3: '...No court-martial, no disciplinary actions, no nothing?', 4: '1'}
+179	179		302							{2: '...', 3: '182', 4: 'Were you looking forward to punishment?', 5: '180'}
+180	180		204							{1: '1', 2: '1'}
+181	181		301							{2: 'Vera', 3: '...No. Not really.', 4: '1'}
+182	182		204							{1: '1', 2: '1'}
+183	183		301							"{2: 'Vera', 3: ""Little bird, you broke the rules. You're trying to get on my good side with your privileged position."", 4: '1'}"
+184	184		301							"{2: 'Vera', 3: ""But. Lucky thing is, Judge Vera doesn't follow the rules either. And so hereby, the jury finds that... you rubbed me the right way."", 4: '1'}"
+185	185		301							"{2: 'Vera', 3: ""Alright. Now that it's settled, you'll be the one buying drugs for me."", 4: '1'}"
+186	186		302							{2: 'What!', 3: '95959', 4: 'No more drugs!', 5: '95959'}
+187	95959		204							{1: '1'}
+188	187		301							"{2: 'Vera', 3: ""If you like me, then it's only natural, hmm?"", 4: '1'}"
+189	188		302							{2: 'How do I even answer...?!', 3: '189'}
+190	189		301							"{2: 'Vera', 3: ""So you don't like me?"", 4: '1'}"
+191	190		302							"{2: 'I mean...', 3: '85866', 4: ""I don't."", 5: '197'}"
+192	85866		204							{1: '1', 2: '1'}
+193	191		301							"{2: 'Vera', 3: 'My, my. You are ONE insatiable beast, ""Commandant."" Even your three little birdlings can\'t fill you up?', 4: '1'}"
+194	192		302							"{2: ""I don't mean it like that!"", 3: '193'}"
+195	193		204							{1: '1', 2: '13'}
+196	999999		202							{1: '1', 6: '1'}
+197	194		301							{3: 'Vera cackles.'}
+198	6666		201							{1: '1', 2: '500168', 3: '1'}
+199	195		301							"{2: 'Vera', 3: ""Well. Since you're such a hard worker, I'll allow you to meet me here once a week."", 4: '1'}"
+200	196		302							"{2: ""Don't use this drug anymore!"", 3: '202'}"
+201	197		301							{2: 'Vera', 3: 'Hah, you think I care? My orders. You go get it done.', 4: '1'}
+202	198		302							"{2: ""You're unreasonable!"", 3: '199'}"
+203	199		301							{2: 'Vera', 3: 'Yeah? Being reasonable got you anywhere?', 4: '1'}
+204	200		301							{2: 'Vera', 3: 'And... I can already tell in your eyes...', 4: '1'}
+205	201		302							"{2: ""Anyways, don't use this drug anymore!"", 3: '202'}"
+206	202		204							{1: '1', 2: '1'}
+207	203		301							"{2: 'Vera', 3: ""That's YOUR promise with that old man. I have nothing to do with it. I see another piece of near-death trash, I'm juicing 'em up."", 4: '1'}"
+208	204		302							{2: 'I know the same cases might pop up, but...', 3: '205'}
+209	205		302							"{2: ""I promise they'll eventually dwindle."", 3: '206'}"
+210	206		204							{1: '1'}
+211	207		301							{2: 'Vera', 3: 'Yeah? On what basis?', 4: '1'}
+212	208		302							"{2: ""Because I'm a commandant."", 3: '209', 4: 'Because everyone is working to make it a reality.', 5: '209'}"
+213	209		301							{2: 'Vera', 3: 'Hah. How laughable—your completely baseless confidence.', 4: '1'}
+214	210		204							{1: '1', 2: '1'}
+215	211		301							{2: 'Vera', 3: 'But... Not bad, I guess.', 4: '1'}
+216	212		301							{2: 'Vera', 3: 'Kinda makes me glad I saved you when you dropped your gun. Just a little.', 4: '1'}
+217	213		301							"{2: 'Vera', 3: ""Whether it's your life, or your promise about changing the world for me, Commandant. Get ready."", 4: '1'}"
+218	214		204							{1: '1', 2: '13'}
+219	215		301		1		AniZhuanchangBegin			"{2: 'Vera', 3: ""I don't let go, when something falls into my hands."", 4: '1'}"

@@ -1,0 +1,32 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '1031001', 4: '-400', 7: '1'}
+4	4		201							{1: '2', 2: '500136', 4: '400', 7: '1'}
+5	5		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'The injured refugees need immediate medical attention.', 4: '1'}
+6	6		301							"{1: '1', 2: 'Liv', 3: ""Hang in there, people. I'm going to patch you up."", 4: '1'}"
+7	7		301							{1: '1', 2: 'Refugee', 3: 'Ow... Easy...', 4: '2'}
+8	8		202							{1: '1', 2: '2', 6: '1'}
+9	9		301							{3: 'The glazed shards lying around where the Corrupted have been defeated draw the attention of Lucia and Lee.'}
+10	10		201							{1: '1', 2: '500166', 4: '-400', 7: '1'}
+11	11		201							{1: '2', 2: '1011001', 4: '400', 7: '1'}
+12	12		301							{1: '1', 2: 'Lucia', 3: 'These shards... (Pieces them together)', 4: '1'}
+13	13		301							"{1: '1', 2: 'Lee', 3: ""A replica of the Kowloong Crew's mask, almost indistinguishable from the real thing."", 4: '2'}"
+14	14		302							{2: 'Scan it.', 3: '15'}
+15	15		301							{1: '1', 2: 'Lee', 3: 'I opened a crack in it, tested its internal material, and found that the brittleness and composition is very close to that of human skin.', 4: '2'}
+16	16		301							{1: '1', 2: 'Lucia', 3: 'Has anyone seen a man with a mask like this before?', 4: '1'}
+17	17		202							{1: '1', 2: '2', 6: '1'}
+18	18		201							{1: '1', 2: '500136', 7: '1'}
+19	19		301							{2: 'Refugee A', 3: 'Every vendor in these parts sells these masks.', 4: '1'}
+20	20		201							{1: '1', 2: '500166', 7: '1'}
+21	21		301							{1: '1', 2: 'Lucia', 3: 'Meaning they share the same supplier?', 4: '1'}
+22	22		202							{1: '1', 6: '1'}
+23	23		201							{1: '1', 2: '500139', 4: '-400', 7: '1'}
+24	24		201							{1: '2', 2: '500140', 4: '400', 7: '1'}
+25	25		301							{1: '1', 2: 'Refugee B', 3: 'Yes, and that man wears a mask every time he trades with us.', 4: '1'}
+26	26		301							"{1: '1', 2: 'Refugee C', 3: ""That's why we believe in the mask's quality... But because of the recent unrest, he only comes to the warehouse after dark."", 4: '2'}"
+27	27		202							{1: '1', 2: '2', 6: '1'}
+28	28		201							{1: '1', 2: '1011001', 7: '1'}
+29	29		301							{1: '1', 2: 'Lee', 3: '(Signals with his eyes)', 4: '1'}
+30	30		302				AniZhuanchangBegin			{2: 'Stake out the warehouse.', 3: '31'}
+31	31		202		1					{1: '1'}

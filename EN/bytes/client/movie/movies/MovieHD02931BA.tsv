@@ -1,0 +1,127 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '205'}
+3	3		401							{1: '2', 2: '1515'}
+4	4		301			DialogEnable				{3: 'Just now, a mysterious message arrived on your terminal.'}
+5	5		401							{1: '2', 2: '895'}
+6	6		301							{3: 'When you open the mail, its attachment automatically launches. With it, garbled code suddenly fills the entire screen.'}
+7	7		301							{3: 'Characters gradually emerge from the center of the flickering data stream, forming two phrases—'}
+8	8		401							{1: '2', 2: '897'}
+9	9		304							{1: '>>>>>Gray Raven Commandant<<<<<', 2: '47f57fff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory876.jpg', 7: '-4', 10: '1'}
+10	10		304							{1: '>>>>>Please help me :(<<<<<', 2: '47f57fff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory876.jpg', 9: '1', 10: '1'}
+11	11		301							{3: 'Following the text, a set of coordinates appears, pointing to the lower levels of Babylonia.'}
+12	12		301							{3: 'The security protocol activates automatically, firmly logging the coordinate parameters before the attachment deletes itself.'}
+13	13		301							{3: 'When you start reading the email itself, there is only one brief message—'}
+14	14		401							{1: '2', 2: '2566'}
+15	15		304				AniZhuanchangBegin			"{1: '""Come alone""', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory952.png', 7: '-4', 9: '1', 10: '1'}"
+16	16		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory175.png'}
+17	17		301			AniZhuanchangEnd				"{3: ""The coordinates take you through the winding paths of the lower-level warehouses. In the dim lights, the building's structure appears as complex as a maze.""}"
+18	18		301							{3: 'At the end of the path, a burst of electronic static suddenly emanates from the room nearby.'}
+19	19		302				AniZhuanchangBegin			{2: '(Enter the room cautiously)', 3: '20'}
+20	20		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory453.jpg'}
+21	21		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.5', 4: '0.5', 5: '0'}
+22	22		401							{1: '2', 2: '2670'}
+23	23		401							{1: '2', 2: '2701'}
+24	24		301			AniZhuanchangEnd				{3: 'As soon as you enter the room, the iron door behind you suddenly slams shut, its thunderous sound echoing through the pitch-black space.'}
+25	25		401							{1: '2', 2: '2982'}
+26	26		201							{1: '1', 2: '500875'}
+27	27		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2'}
+28	28		301							"{1: '1', 2: '???', 3: ""Ahem—well hello there. I've heard a lot about you, Gray Raven Commandant."", 4: '1'}"
+29	29		301							{3: 'A nearby TV suddenly flickers to life, revealing a figure shrouded in static on the screen as a digitally distorted voice emerges from the speaker.'}
+30	30		302							{2: 'Hello...?'}
+31	31		301							"{2: 'The Wandering Hacker?', 3: ""I am the Wandering Hacker, wandering through the galaxy. I'm in a good mood today, so let's play a little game!"", 4: '1'}"
+32	32		301							"{2: 'The Wandering Hacker?', 3: 'In this room lies a ""lucky"" hostage from Babylonia, bound and restrained.', 4: '1'}"
+33	33		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab'}
+34	34		202							{1: '1'}
+35	35		301							"{3: ""Peering into the darkness, a dim silhouette becomes visible. The urge to step closer and get a better look at the hostage's face proves irresistible.""}"
+36	36		201							{1: '1', 2: '500875'}
+37	37		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2'}
+38	38		301							"{1: '1', 2: 'The Wandering Hacker?', 3: ""Freeze! Stay right where you are. I've rigged this entire floor with explosives. Take one more step forward, and I'll blow a massive hole right through Babylonia."", 4: '1'}"
+39	39		301							"{2: 'The Wandering Hacker?', 3: ""As for you and the hostage? I'm afraid you'll both end up as space debris, trailing behind my exhaust fumes on an endless journey through the stars."", 4: '1'}"
+40	40		302							{2: 'What do you want from me?', 3: '41'}
+41	41		301							"{2: 'The Wandering Hacker?', 3: ""You need to answer one question. I'll let you and the hostage leave safely if I'm happy with your answer."", 4: '1'}"
+42	42		302							"{2: ""What's the question?"", 3: '43'}"
+43	43		301							{2: 'The Wandering Hacker?', 3: '—What significant event happened on this day in history?', 4: '1'}
+44	44		301							{2: 'The Wandering Hacker?', 3: 'You only get one chance to answer that question.', 4: '1'}
+45	45		302							{2: '...?', 3: '46'}
+46	46		301							{3: 'Countless events have happened on any given day in history... This question is way too vague.'}
+47	47		301							{2: 'The Wandering Hacker?', 3: 'Quick! No hesitation—tell me the first answer that comes to your mind.', 4: '1'}
+48	48		302							{2: 'Ancient Norman 6 was announced.', 3: '49', 4: 'The dormitory area had a 10-hour blackout.', 5: '52', 6: 'Yes.', 7: '55'}
+49	49		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab'}
+50	50		202							{1: '1', 6: '1'}
+51	51	58	301							"{2: '???', 3: ""Pfft... So a promotional video is all they came up with, huh? They probably haven't even created a project folder yet.""}"
+52	52		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab'}
+53	53		202							{1: '1', 6: '1'}
+54	54	58	301							"{2: '???', 3: ""...Ugh, it still makes me mad thinking about it. All the cherry cheese bubble tea I'd stocked in the fridge went bad that day.""}"
+55	55		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab'}
+56	56		202							{1: '1', 6: '1'}
+57	57		301							{2: '???', 3: '...Did it crash? Lol.'}
+58	58		301							{3: 'Did you just hear... something behind you?'}
+59	59		301							{3: 'Just then, another sharp electronic sound emanates from the TV—'}
+60	60		401							{1: '2', 2: '4422'}
+61	61		201							{1: '1', 2: '500875'}
+62	62		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2'}
+63	63		301							"{1: '1', 2: 'The Wandering Hacker?', 3: ""Ahem, I'm afraid that's WRONG!"", 4: '1'}"
+64	64		301							"{2: 'The Wandering Hacker?', 3: ""Uh-oh, Gray Raven Commandant, guess I'll have to blow up a few things now."", 4: '1'}"
+65	65		302							{2: 'Wait—!', 3: '66'}
+66	66		301							{2: 'The Wandering Hacker?', 3: 'BOOM—!', 4: '1'}
+67	67		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+68	68		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory368.png'}
+69	69		401							{1: '2', 2: '4081'}
+70	70		202							{1: '1', 6: '1'}
+71	71		205							{1: '999'}
+72	72		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab'}
+73	73		301							{3: 'A bright light suddenly floods the room... revealing a space adorned with colorful banners, balloons, and plush toys. Decorations of every kind fill the entire space.'}
+74	74		301							"{3: 'A massive ""HAPPY BIRTHDAY"" banner catches your eye in the center of your view, and beneath it stands the ""hostage""—'}"
+75	75		301							{3: 'A projection of... Teddy, covering her mouth while grinning mischievously...?'}
+76	76		201							{1: '1', 2: '500864', 3: '1'}
+77	77		301							{1: '1', 2: 'Teddy', 3: 'One of the most important things that happened on this day in history...', 4: '1'}
+78	78		301							{3: 'A playful whisper reaches your ears. As you turn around, you see the pink-haired Construct right behind you.'}
+79	79		301							{2: 'Teddy', 3: '...Is your birthday, Commandant!', 4: '1'}
+80	80		301							{3: 'She holds a cake adorned with snow-white frosting in her left hand that is decorated with an adorable little bear drawn in pink jam.'}
+81	81		301							"{2: 'Teddy', 3: ""I added my security clearance to your terminal last time I was in your office. That's what made it so easy for me to hack it this time."", 4: '1'}"
+82	82		301							{2: 'Teddy', 3: 'Did I get you back there with that little drama?', 4: '1'}
+83	83		302							{2: 'Not at all. I knew it was you from the start.', 3: '84', 4: 'I was scared soulless.', 5: '89'}
+84	84		204							{1: '1', 2: '15'}
+85	85		301							"{2: 'Teddy', 3: ""Oh, is that so? So I didn't just see you jump out of your skin just now, Commandant?"", 4: '1'}"
+86	86		302							{2: 'It was just because of the flash...', 3: '87'}
+87	87		204							{1: '1', 2: '2'}
+88	88	91	301							"{2: 'Teddy', 3: ""Oh? But that's not what the recording shows..."", 4: '1'}"
+89	89		204							{1: '1', 2: '2'}
+90	90		301							{2: 'Teddy', 3: 'That camera right there caught the look on your face perfectly!', 4: '1'}
+91	91		301							{3: 'Teddy smirks mischievously as she glances at a camera in the corner.'}
+92	92		301							{2: 'Teddy', 3: 'But hey, I just so happened to have heard about this Wandering Hacker who offers data deletion services.', 4: '1'}
+93	93		301							{2: 'Teddy', 3: 'And you just have to pay them in...', 4: '1'}
+94	94		302							{2: 'Cherry-flavored electrolyte?', 3: '95'}
+95	95		301							{2: 'Teddy', 3: 'Bingo!', 4: '1'}
+96	96		301							{2: 'Teddy', 3: 'So, what do you say? Want to ask the Wandering Hacker for her help?', 4: '1'}
+97	97		302							"{2: ""Help me, Wandering Hacker, you're my only hope..."", 3: '98', 4: 'The Wandering Hacker can keep the recording as a memento.', 5: '99'}"
+98	98	100	301							{2: 'Teddy', 3: 'Alright, alright. The Wandering Hacker has heard it, and she has a little surprise prepared for you.', 4: '1'}
+99	99		301							{2: 'Teddy', 3: 'Oh? Well, how would you like another little something from the Wandering Hacker?', 4: '1'}
+100	100		203							{1: '1', 2: '0.25', 5: '-80'}
+101	101		301							{3: 'Teddy meets your gaze, takes a small step forward, raises her right arm, and then—'}
+102	102		401							{1: '2', 2: '2750'}
+103	103		401							{1: '1', 2: '36'}
+104	104		301							{3: 'Snap—she snaps her fingers in the air.'}
+105	105		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.7', 5: '1'}
+106	106		401							{1: '1', 2: '295'}
+107	107		301							"{3: ""The room's lights dim, and soft, soothing music begins to play.""}"
+108	108		301							{3: 'Colorful ornaments spin in the air, their light diffused and dreamy, transforming the space into something reminiscent of a dance floor at night.'}
+109	109		301							"{3: ""—This intimate candlelit ball is the Wandering Hacker's gift to you.""}"
+110	110		301							"{2: 'Teddy', 3: ""I've heard that you're always very busy around this time every year, and you always forget your birthday."", 4: '1'}"
+111	111		301							{2: 'Teddy', 3: 'Well, what do you know? I happen to have a very good memory.', 4: '1'}
+112	112		301							{2: 'Teddy', 3: 'So... shall we make a promise?', 4: '1'}
+113	113		301							"{2: 'Teddy', 3: ""From now on, there'll always be a certain hacker who remembers your birthday, just as reliably as a program that reminds you of all your appointments."", 4: '1'}"
+114	114		301							"{2: 'Teddy', 3: ""Every year on this day, no matter what happens, she'll come to you and tell you—"", 4: '1'}"
+115	115		204							{1: '1', 2: '1'}
+116	116		301							{2: 'Teddy', 3: 'Happy Birthday.', 4: '1'}
+117	117		302							{2: 'Thank you, Teddy.', 3: '118'}
+118	118		301							{2: 'Teddy', 3: 'And in exchange—', 4: '1'}
+119	119		301							{3: 'The cake is slowly lifted up, its white candles bright and gleaming, its flames dancing in the air.'}
+120	120		301							{2: 'Teddy', 3: 'Going forward, share some of your wishes and luck with me each year on this day.', 4: '1'}
+121	121		302							"{2: ""It's a deal."", 3: '122'}"
+122	122		301							"{2: 'Teddy', 3: ""Shh, don't blow them out just yet."", 4: '1'}"
+123	123		301							{3: 'She puts a finger to her lips to make a hushing gesture.'}
+124	124		301							"{3: ""The candlelight glimmers brightly, illuminating the mischievous look on the Wandering Hacker's face. Your reflection sparkles in her pink eyes.""}"
+125	125		301							{2: 'Teddy', 3: 'Now—', 4: '1'}
+126	126		301		1		AniZhuanchangBegin			{2: 'Teddy', 3: 'Time to blow out the candles together!', 4: '1'}

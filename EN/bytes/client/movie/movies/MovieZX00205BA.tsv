@@ -1,0 +1,49 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory62.jpg'}
+2	1000		401							{1: '1', 2: '201'}
+3	2		201							{1: '1', 2: '1031001', 3: '7'}
+4	3		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'This Inver-Device... Tifa took it off herself.', 4: '1'}
+5	4		204							{1: '1'}
+6	5		301							"{2: 'Liv', 3: ""It was broadcasting connection requests for Mind Beacons before it was taken off, so it's been like this the whole time."", 4: '1'}"
+7	6		204							{1: '1', 2: '14'}
+8	7		301							{2: 'Liv', 3: 'But, what could possibly make a Construct take off their Inver-Device in a place full of the virus?', 4: '1'}
+9	8		301							{2: 'Liv', 3: 'Commandant, I have a bad feeling about this.', 4: '1'}
+10	9		201							{1: '1', 2: '1011001'}
+11	10		301							"{1: '1', 2: 'Lee', 3: ""Wait, there's a situation ahead."", 4: '1'}"
+12	11		201							{1: '1', 2: '500006'}
+13	12		301							{1: '1', 2: 'Corrupted Construct', 3: '...', 4: '1'}
+14	13		301							{2: 'Corrupted Construct', 3: 'Urgh...', 4: '1'}
+15	14		201							{1: '1', 2: '1021001'}
+16	15		301							{1: '1', 2: 'Lucia', 3: 'Two Constructs... Corrupted...', 4: '1'}
+17	16		201							{1: '1', 2: '1031001', 3: '7'}
+18	17		301							{1: '1', 2: 'Liv', 3: 'According to the scans, these two Constructs were members of the Suzaku squad!', 4: '1'}
+19	18		202							{1: '1', 6: '1'}
+20	19		301							{2: 'System', 3: 'Connecting—'}
+21	20		201							{1: '1', 2: '1011001', 4: '-400'}
+22	21		201							{1: '2', 2: '500002', 4: '400'}
+23	22		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+24	23		301							{1: '1', 2: 'Vera', 3: 'Hey there, congratulations.', 4: '2'}
+25	24		301							"{2: 'Lee', 3: 'I think you owe us an explanation. Weren\'t you trying to take down the ""Iron Maiden""?', 4: '1'}"
+26	25		301							{2: 'Vera', 3: 'Little Tifa is right by our side here, dear.', 4: '2'}
+27	26		301							{2: 'Lee', 3: 'What?', 4: '1'}
+28	27		301							{2: 'Vera', 3: 'I never said a thing about her being around that signal.', 4: '2'}
+29	28		301							{2: 'Lee', 3: 'So you said all that to misdirect us?', 4: '1'}
+30	29		301							{2: 'Vera', 3: 'Agreed.', 4: '2'}
+31	30		301							"{2: 'Vera', 3: ""We had to secure our little treat, you know? You all have yourselves to blame—we wouldn't have had to play this little trick if you weren't so efficient on your mission."", 4: '2'}"
+32	31		301							{2: 'Lee', 3: 'Impeding the mission like this, how are you going to explain to President Hassen?', 4: '1'}
+33	32		301							"{2: 'Vera', 3: ""Compared to the competition within Kurono, that's nothing. You know full well, don't you, Lee?"", 4: '2'}"
+34	33		301							{2: 'Lee', 3: '...', 4: '1'}
+35	34		301							"{2: 'Vera', 3: ""Alright, you can all continue dawdling around. We're digging in."", 4: '2'}"
+36	35		301							{2: 'Lee', 3: 'Wait! Are you really tryin—Hey!', 4: '1'}
+37	36		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+38	37		202							{1: '2', 6: '1'}
+39	38		203							{1: '1', 2: '0.25'}
+40	39		301							{2: 'System', 3: 'Disconnected—'}
+41	40		301							"{2: 'Lee', 3: ""If her squad could've handled it on their own, there wouldn't be so many squads sent on this mission."", 4: '1'}"
+42	41		301							{2: 'Lee', 3: 'Those rabid hyenas...', 4: '1'}
+43	42		201							{1: '1', 2: '1031001'}
+44	43		301							{1: '1', 2: 'Liv', 3: 'Lee...', 4: '1'}
+45	44		201							{1: '1', 2: '1011001'}
+46	45		301							"{1: '1', 2: 'Lee', 3: ""Let's start by investigating these two Corrupted Constructs. We'll catch up with them later."", 4: '1'}"
+47	46		201							{1: '1', 2: '1021001'}
+48	47		301		1		AniZhuanchangBegin			{1: '1', 2: 'Lucia', 3: 'Agreed.', 4: '1'}

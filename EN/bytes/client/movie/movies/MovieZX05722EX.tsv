@@ -1,0 +1,288 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+2	2		401							{1: '1', 2: '209'}
+3	3		301			DialogEnable				{3: 'By the sea, among ruins.'}
+4	4		301							"{3: ""Grace and her followers aren't far from the Copperfield Aquarium. By the time they reach this seaside location, there's hardly a trace of other Scarlet Revelation groups.""}"
+5	5		201							{1: '1', 2: '500093'}
+6	6		301							{1: '1', 2: 'Smoker', 3: 'Lady Revelationist, this must be the place!', 4: '1'}
+7	7		301							"{2: 'Smoker', 3: ""We've made it here, so does that mean... does that mean we've passed the test?"", 4: '1'}"
+8	8		202							{1: '1', 6: '1'}
+9	9		201							{1: '1', 2: '500541', 3: '8'}
+10	10		301							{1: '1', 2: 'Grace', 3: 'No, this is only the beginning.', 4: '1'}
+11	11		204							{1: '1'}
+12	12		301							{2: 'Grace', 3: 'God taught us to be patient, to wait.', 4: '1'}
+13	13		203							{1: '1', 2: '0.25', 3: '400'}
+14	14		201							{1: '2', 2: '500260', 4: '-400'}
+15	15		301							"{1: '1', 2: 'Child', 3: 'Lady Revelationist, is there truly ""rebirth"" in the Red Tide?', 4: '2'}"
+16	16		204							{1: '1', 2: '2'}
+17	17		301							"{2: 'Grace', 3: 'Of course, the ""rebirth"" within the Red Tide is beautiful.', 4: '1'}"
+18	18		301							"{2: 'Grace', 3: 'Anyone who passes the trials earns the right to ""rebirth""... and then, we\'ll all step into a beautiful new world, together.', 4: '1'}"
+19	19		301							"{2: 'Child', 3: 'What do you mean by... ""a beautiful new world""?', 4: '2'}"
+20	20		301							"{2: 'Grace', 3: 'That is a ""reborn"" world, where there\'s no endless fleeing, no Corrupted or monsters, and certainly no death.', 4: '1'}"
+21	21		203							{1: '1', 2: '0.25', 3: '400', 4: '-50'}
+22	22		301							{2: 'Grace', 3: 'If we believe in the God of the Red Tide, He will guide us to happiness beyond...', 4: '1'}
+23	23		301							"{3: ""She crouches down and gently pats the child's head.""}"
+24	24		204							{1: '1'}
+25	25		203							{1: '1', 2: '0.25', 3: '400', 4: '0'}
+26	26		301							"{2: 'Grace', 3: ""Let's set up camp first. I will divine an appropriate time for us to enter this trial ground together."", 4: '1'}"
+27	27		202							{1: '1', 2: '2', 6: '1'}
+28	28		201							{1: '1', 2: '500093'}
+29	29		301							{1: '1', 2: 'Smoker', 3: '...', 4: '1'}
+30	30		401							{1: '2', 2: '4982'}
+31	31		202							{1: '1'}
+32	32		301				AniZhuanchangBegin			"{3: ""Some followers grumble, but with Grace being the Revelationist, they wouldn't dare voice their complaints.""}"
+33	33		401							{1: '1', 2: '201'}
+34	34		402							{1: '4982'}
+35	35		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory731.jpg'}
+36	36		301			AniZhuanchangEnd				"{3: ""Lulu clears out a dilapidated refugee camp nearby, and that's where they set up their temporary base.""}"
+37	37		201							{1: '1', 2: '500093'}
+38	38		301							"{1: '1', 2: 'Smoker', 3: ""We've got... four cans left, one bag of compressed rations, and some of the rice the deity gave us can be used as seeds. As for the rest of the rice—the stuff we can't plant—let's eat that this time around."", 4: '1'}"
+39	39		301							"{2: 'Smoker', 3: ""Otherwise, there's nothing else to eat."", 4: '1'}"
+40	40		202							{1: '1'}
+41	41		401							{1: '2', 2: '4681'}
+42	42		301							{3: 'Smoker drops the supply crate with a hard thud and storms out of the tent.'}
+43	43		401							{1: '2', 2: '5485'}
+44	44		201							{1: '1', 2: '501308'}
+45	45		301							"{1: '1', 2: 'Lulu', 3: ""Well, well, looks like someone's losing their touch around here."", 4: '1'}"
+46	46		301							{3: 'Lulu whistles casually as she strolls past.'}
+47	47		203							{1: '1', 2: '0.25', 3: '-400'}
+48	48		201							{1: '2', 2: '500541', 4: '400'}
+49	49		301							{1: '1', 2: 'Grace', 3: 'They are just desperate for salvation... but something about it feels off to me.', 4: '2'}
+50	50		204							{1: '2', 2: '8'}
+51	51		301							"{3: ""Grace then starts pulling rune pebbles out of her linen pouch, drawing them repeatedly for divination. But no matter how many times she tries, she just can't seem to get a single rune with a positive meaning.""}"
+52	52		204							{1: '2'}
+53	53		301							{2: 'Grace', 3: 'If this invitation is truly for all followers of the Scarlet Revelation, then other Revelationists will certainly answer the call.', 4: '2'}
+54	54		204							{1: '1', 2: '4'}
+55	55		301							"{2: 'Lulu', 3: ""I couldn't care less about all the twisted nonsense from your Red Tide cult, but I'm warning you—you can't stay around here for too long."", 4: '1'}"
+56	56		301							"{2: 'Lulu', 3: ""I checked the surrounding area this afternoon. The Punishing Virus concentration around here is very high. I haven't located the source yet, but there are definitely Corrupted nearby."", 4: '1'}"
+57	57		204							{1: '2'}
+58	58		301							{2: 'Grace', 3: 'It could be a widespread Red Tide.', 4: '2'}
+59	59		204							{1: '1', 2: '8'}
+60	60		301							"{2: 'Lulu', 3: ""I can't rule that out... Ha, I almost forgot—that's what you all came here for in the first place."", 4: '1'}"
+61	61		204							{1: '1', 2: '4'}
+62	62		301							"{2: 'Lulu', 3: ""But if you're all planning to hold hands and dive straight into the Red Tide together, count me out. I've got my own business to attend to."", 4: '1'}"
+63	63		301							{2: 'Grace', 3: '...I understand.', 4: '2'}
+64	64		301							"{2: 'Lulu', 3: ""Anyway, the ball's in your court."", 4: '1'}"
+65	65		202							{1: '1', 2: '2'}
+66	66		301				AniZhuanchangBegin			{3: 'Lulu slips away from the camp.'}
+67	67		306							{1: '1'}
+68	68		401						1000.0	{1: '1', 2: '36'}
+69	69		401							{1: '1', 2: '120'}
+70	70		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg'}
+71	71		301			AniZhuanchangEnd				{3: 'The first day at camp.'}
+72	72		201							{1: '1', 2: '501308', 4: '-400'}
+73	73		204							{1: '1', 2: '4'}
+74	74		201							{1: '2', 2: '500006', 4: '400'}
+75	75		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '3'}
+76	76		401							{1: '2', 2: '1510'}
+77	77		502							{1: 'PanelActor2Shake'}
+78	78		301				AniZhuanchangBegin			"{1: '1', 3: ""It's dead quiet, except for a lone Corrupted that creeps up to the camp. Luckily, Lulu takes care of it with a single shot.""}"
+79	79		202							{1: '2'}
+80	80		402							{1: '1510'}
+81	81		203							{1: '1', 2: '0.25', 4: '-400'}
+82	82		202							{1: '1'}
+83	83		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+84	84		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_10.jpg'}
+85	85		301			AniZhuanchangEnd				{3: 'The rundown refugee camp has been abandoned for ages, but they still find some usable tent materials and food supplies that have been stored for who knows how long—not exactly a gourmet meal, but edible enough.'}
+86	86		201							{1: '1', 2: '500616', 4: '550'}
+87	87		201							{1: '2', 2: '500895', 4: '-550'}
+88	88		201							{1: '3', 2: '500294'}
+89	89		301				AniZhuanchangBegin			"{1: '1', 3: ""These supplies solve the followers' food situation for the day. After filling their stomachs, everyone's spirits seem to lift as they gather around the campfire in prayer.""}"
+90	90		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+91	91		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+92	92		301			AniZhuanchangEnd				{1: '1', 3: 'The second day at camp.'}
+93	93		201							{1: '1', 2: '501308'}
+94	94		301				AniZhuanchangBegin			{1: '1', 3: 'Lulu scouts ahead alone, heading toward the aquarium. When she gets back, she tells Grace the Punishing Virus concentration is dangerously high there—'}
+95	95		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory731.jpg'}
+96	96		306						400.0	
+97	97		301			AniZhuanchangEnd				{1: '1', 2: 'Lulu', 3: 'Not immediately fatal, but certainly a mild infection.', 4: '1'}
+98	98		204							{1: '1', 2: '2'}
+99	99		301							{2: 'Lulu', 3: 'Oh, speaking of that, I just saw a bunch of people head into the aquarium. They were toting some mystical items, just like yours.', 4: '1'}
+100	100		203							{1: '1', 2: '0.25', 3: '-400'}
+101	101		201							{1: '2', 2: '500541', 4: '400'}
+102	102		301							{1: '1', 2: 'Grace', 3: 'What kind of items?', 4: '2'}
+103	103		204							{1: '1', 2: '4'}
+104	104		301							"{2: 'Lulu', 3: ""It looked like a flag that's seen better days, patched up countless times, with all sorts of stones dangling from the bottom..."", 4: '1'}"
+105	105		301							"{2: 'Grace', 3: ""...That's Nether, the Glory Banner. He's a Revelationist too."", 4: '2'}"
+106	106		202							{1: '1', 2: '2'}
+107	107		301							{3: 'He taught himself surgical knowledge, and after saving several refugees, he became a Revelationist, urging them to keep living.'}
+108	108		201							{1: '1', 2: '501308', 4: '-400'}
+109	109		201							{1: '2', 2: '500541', 4: '400'}
+110	110		301							{1: '1', 2: 'Grace', 3: 'And then?', 4: '2'}
+111	111		301							"{2: 'Lulu', 3: ""And then? That's it. I watched them walk in, and I came back."", 4: '1'}"
+112	112		204							{1: '1', 2: '8'}
+113	113		301							"{2: 'Lulu', 3: ""You don't seriously expect me to follow them in there and scout ahead for you, do you?"", 4: '1'}"
+114	114		301							{2: 'Grace', 3: 'Did they come back out?', 4: '2'}
+115	115		204							{1: '1', 2: '4'}
+116	116		301							{2: 'Lulu', 3: 'At least when I went back to check tonight, there were no footprints coming out.', 4: '1'}
+117	117		301							{2: 'Grace', 3: 'Thanks for your hard work, Lulu. I appreciate the intel.', 4: '2'}
+118	118		301							{2: 'Lulu', 3: 'You should know what a single piece of my intel used to fetch back in the day.', 4: '1'}
+119	119		202							{1: '1', 2: '8'}
+120	120		301				AniZhuanchangBegin			{3: 'Lulu rolls her eyes and leaves the tent.'}
+121	121		306							{1: '1'}
+122	122		401						1000.0	{1: '1', 2: '36'}
+123	123		401							{1: '1', 2: '160'}
+124	124		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+125	125		104							{1: '0|0|-80', 2: '0'}
+126	126		301			AniZhuanchangEnd				{3: 'The third day at camp.'}
+127	127		301							{3: 'The Punishing Virus concentration here is just too high.'}
+128	128		301							"{3: ""It's only been three days, but some people are already showing early signs of infection—their skin is deteriorating, and they're having hallucinations.""}"
+129	129		104						800.0	{1: '0|0|0', 2: '1'}
+130	130		301							{3: 'With no other choice, Grace moves their camp further back, but this decision meets with opposition from most of her followers.'}
+131	131		401							{1: '2', 2: '2915'}
+132	132		306						400.0	
+133	133		201							{1: '1', 2: '500294'}
+134	134		301							"{1: '1', 2: 'Follower A', 3: ""No, Lady Revelationist! We've already made it to the trial ground..."", 4: '1'}"
+135	135		301							{2: 'Follower A', 3: 'If others get there first...', 4: '1'}
+136	136		203							{1: '1', 2: '0.25', 3: '400'}
+137	137		201							{1: '2', 2: '501308', 4: '-400'}
+138	138		204							{1: '2', 2: '4'}
+139	139		301							"{1: '1', 2: 'Lulu', 3: ""I've never seen people so keen to rush to their own deaths."", 4: '2'}"
+140	140		301							"{2: 'Follower A', 3: ""What if... what if the divine realm of salvation has limited spaces? What if other people snap up those spots first and we're left out in the cold?"", 4: '1'}"
+141	141		201							{1: '2', 2: '500616', 4: '-400'}
+142	142		301							"{1: '1', 2: 'Follower B', 3: ""That's right! Just yesterday... yesterday I overheard that woman say Revelationist Nether has already ushered his followers into the trial ground!"", 4: '2'}"
+143	143		301							"{2: 'Follower A', 3: ""What?! They've already beaten us to it..."", 4: '1'}"
+144	144		301							{2: 'Follower A', 3: 'Lady Revelationist! Please... take us to the trial ground!', 4: '1'}
+145	145		203							{1: '1', 2: '0.25', 3: '600'}
+146	146		203							{1: '2', 2: '0.25', 3: '-600'}
+147	147		201							{1: '3', 2: '500895'}
+148	148		301							{1: '1', 2: 'Follower C', 3: 'Take us to the trial ground!', 4: '3'}
+149	149		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+150	150		201							{1: '1', 2: '500541', 3: '5'}
+151	151		204							{1: '1'}
+152	152		301							{1: '1', 2: 'Grace', 3: '...Silence, please!', 4: '1'}
+153	153		204							{1: '1', 2: '8'}
+154	154		301							{2: 'Grace', 3: 'I feel your longing, everyone... but tell me, do you truly wish to cross into salvation burdened by sickness and suffering?', 4: '1'}
+155	155		402							{1: '2915'}
+156	156		301							{3: 'The boisterous camp goes dead quiet for a beat.'}
+157	157		204							{1: '1'}
+158	158		301							"{2: 'Grace', 3: ""We'll withdraw the camp for now. But the moment the divine whispers reveal the path... I will lead you all there. Without delay."", 4: '1'}"
+159	159		202							{1: '1'}
+160	160		301				AniZhuanchangBegin			"{3: ""Her followers grumble, but they go along with it. The camp picks up and moves to a spot where the Punishing Virus isn't so thick in the air.""}"
+161	161		306							{1: '1'}
+162	162		401						1000.0	{1: '1', 2: '36'}
+163	163		401							{1: '1', 2: '33'}
+164	164		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory731.jpg'}
+165	165		301			AniZhuanchangEnd				{3: 'The fifth day at camp.'}
+166	166		306							
+167	167		201							{1: '1', 2: '500294'}
+168	168		301							"{1: '1', 2: 'Follower A', 3: 'You can\'t tell anyone about this... but last night... I heard the ""divine revelation.""', 4: '1'}"
+169	169		203							{1: '1', 2: '0.25', 3: '-400'}
+170	170		201							{1: '2', 2: '500616', 4: '400'}
+171	171		301							{1: '1', 2: 'Follower B', 3: 'You... you heard it too?', 4: '2'}
+172	172		301							{2: 'Follower A', 3: 'You bet I did. My devotion must have really hit home with the divine, because I heard the sound of the tide...', 4: '1'}
+173	173		301							{2: 'Follower A', 3: 'I left the camp, followed that sound, and then I saw... Lord Nether, the Glory Banner.', 4: '1'}
+174	174		301							{2: 'Follower B', 3: 'What?! You know what Lord Nether looks like?', 4: '2'}
+175	175		301							"{2: 'Follower A', 3: ""Of course I do! The last time Lady Grace brought us to meet up with Lord Nether's group, he spoke to me for a moment. There's no way I'd ever forget what he looks like!"", 4: '1'}"
+176	176		301							"{2: 'Follower B', 3: ""What's the word this time? What did Lord Nether tell you?!"", 4: '2'}"
+177	177		301							"{2: 'Follower A', 3: ""Lord Nether says they've passed the trial and been granted rebirth..."", 4: '1'}"
+178	178		301							{2: 'Follower A', 3: 'He told me if we step into the aquarium, God will take us under His wing, mercifully embracing us all.', 4: '1'}
+179	179		301							"{2: 'Follower A', 3: 'There, the line between ""humans"" and ""Constructs"" will vanish, and no more stupid affinity reports...', 4: '1'}"
+180	180		301							{2: 'Follower A', 3: 'Everyone will gain immortality, no exceptions...', 4: '1'}
+181	181		301							{2: 'Follower B', 3: 'Whoa...', 4: '2'}
+182	182		301							"{2: 'Follower B', 3: ""But didn't Lady Grace say... it wasn't the right time yet?"", 4: '2'}"
+183	183		301							"{2: 'Follower A', 3: ""Hmph! Who knows if she's just trying to keep all the good stuff to herself! I've already ironed things out with Smoker..."", 4: '1'}"
+184	184		301				AniZhuanchangBegin			{2: 'Follower A', 3: 'Tomorrow night...', 4: '1'}
+185	185		202							{1: '1', 2: '2', 6: '1'}
+186	186		306						1000.0	{1: '1'}
+187	187		301			AniZhuanchangEnd				{3: 'The seventh day at camp.'}
+188	188		301							{3: 'Smoker has vanished into thin air, taking the last four cans of food—three meat and one fruit.'}
+189	189		306							
+190	190		201							{1: '1', 2: '500541'}
+191	191		301							{1: '1', 2: 'Grace', 3: 'When did you last see Smoker?', 4: '1'}
+192	192		203							{1: '1', 2: '0.25', 3: '-500'}
+193	193		201							{1: '2', 2: '500895', 4: '500'}
+194	194		301							{1: '1', 2: 'Follower C', 3: 'I-it was last night...', 4: '2'}
+195	195		301							{2: 'Follower C', 3: 'I saw Smoker leading Marvin and the others, saying they were going to the aquarium.', 4: '2'}
+196	196		301							{3: 'The follower mutters, yet his face betrays a profound yearning.'}
+197	197		301							"{2: 'Follower C', 3: 'Smoker and Marvin, they both heard the ""divine revelation."" They claimed that by following the sound of the tide, they saw Lord Nether the Glory Banner and a handful of other Revelationists right there in the Red Tide, by the sea...', 4: '2'}"
+198	198		301							{2: 'Grace', 3: '...What else?', 4: '1'}
+199	199		301							"{2: 'Follower C', 3: 'He... he asked me to go with him. Said the ""divine revelation"" promised that if we entered the aquarium, passed its trial, and made it all the way to the bottom, we\'d be granted eternal life.', 4: '2'}"
+200	200		301							"{2: 'Follower C', 3: ""They said that in there, there's no difference between Constructs and humans, no need to work or struggle. Everyone can be reborn as equals..."", 4: '2'}"
+201	201		301							"{2: 'Follower C', 3: ""Lady Grace, I... I'm thinking..."", 4: '2'}"
+202	202		301							{2: 'Follower C', 3: 'When can we enter the aquarium and start the trial?', 4: '2'}
+203	203		204							{1: '1', 2: '8'}
+204	204		301							{2: 'Grace', 3: '...', 4: '1'}
+205	205		202							{1: '2', 6: '1'}
+206	206		203							{1: '1', 2: '0.25'}
+207	207		401							{1: '2', 2: '2824'}
+208	208		301							{3: 'Grace absentmindedly shakes her linen pouch, and inside, rune pebbles of various materials clink against one another.'}
+209	209		306							{1: '1'}
+210	210		301							"{3: 'Perhaps... the invitation is genuine. Perhaps Nether truly has found his ""rebirth""...'}"
+211	211		301							"{3: 'But deep down, she knows exactly where those past ""revelations"" truly came from.'}"
+212	212		202							{1: '1', 6: '1'}
+213	213		401							{1: '2', 2: '895'}
+214	214		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+215	215		101							{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading30.jpg'}
+216	216		301							"{3: ""Perhaps there truly is freedom within the Red Tide? Grace's resolve falters.""}"
+217	217		401							{1: '2', 2: '895'}
+218	218		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+219	219		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory731.jpg'}
+220	220		201							{1: '1', 2: '500541', 3: '8', 7: '1'}
+221	221		301							"{1: '1', 3: ""Her next step is clear: she needs to tell Lulu they've made their decision to enter the trial ground and achieve rebirth. Lulu would then leave this place, and after that...""}"
+222	222		306							
+223	223		204							{1: '1'}
+224	224		301							{1: '1', 3: 'Instinctively, Grace flattens her pouch, reaches inside, and pulls out the first rune pebble her fingers touch.'}
+225	225		401							{1: '1', 2: '160'}
+226	226		301							{3: 'The stone is completely blank.'}
+227	227		204							{1: '1', 2: '5'}
+228	228		301							{2: 'Grace', 3: 'How...', 4: '1'}
+229	229		202							{1: '1'}
+230	230		301							"{3: ""Every single rune pebble in the pouch was placed there by Grace herself, and she's absolutely certain there was never a blank one among them.""}"
+231	231		301							{3: 'When did... this one get mixed in? Was it when she spilled them in the tent and accidentally picked it up in the darkness? Or...'}
+232	232		301							{3: 'The blank rune—a symbol of fate, portending death but also the unknown, constant change and evolution, the courage to move forward...'}
+233	233		201							{1: '1', 2: '500541', 3: '8'}
+234	234		301							{1: '1', 2: 'Grace', 3: 'God, what should I do...', 4: '1'}
+235	235		301							{2: 'Grace', 3: 'Will we fail the trial? Is it all false? Will we lose... everything we have?', 4: '1'}
+236	236		204							{1: '1'}
+237	237		301							{2: 'Grace', 3: 'Is this... truly the path we must take?', 4: '1'}
+238	238		301				AniZhuanchangBegin			{3: 'She clutches the stone tightly, muttering to herself.'}
+239	239		202							{1: '1', 6: '1'}
+240	240		306							{1: '1'}
+241	241		401						1000.0	{1: '1', 2: '36'}
+242	242		401							{1: '1', 2: '33'}
+243	243		301			AniZhuanchangEnd				{3: 'The eighth day at camp.'}
+244	244		306							
+245	245		201							{1: '1', 2: '501308'}
+246	246		301							"{1: '1', 2: 'Lulu', 3: ""Oh? So this is the grand decision you've been agonizing over all night?"", 4: '1'}"
+247	247		203							{1: '1', 2: '0.25', 3: '-400'}
+248	248		201							{1: '2', 2: '500541', 4: '400'}
+249	249		301							"{1: '1', 2: 'Grace', 3: ""...That's right. I know this isn't fair to you, but..."", 4: '2'}"
+250	250		301							{2: 'Grace', 3: 'I need your help.', 4: '2'}
+251	251		301							"{2: 'Grace', 3: ""I'll divide the supplies and leave you the larger portion. I'm taking a group of followers into the aquarium. Please help by staying here a while longer to look after the wounded and children..."", 4: '2'}"
+252	252		204							{1: '1', 2: '4'}
+253	253		301							"{2: 'Lulu', 3: ""I just can't wrap my head around what you're thinking."", 4: '1'}"
+254	254		301							"{2: 'Grace', 3: ""I'm sorry. Just consider this... my last request, after I saved your life."", 4: '2'}"
+255	255		301							{2: 'Lulu', 3: '...', 4: '1'}
+256	256		301							"{2: 'Grace', 3: ""I'm not sure we'll make it back. If we don't..."", 4: '2'}"
+257	257		301							"{2: 'Grace', 3: ""Please take the children and the injured to the nearest conservation area. After that, you're free as a bird."", 4: '2'}"
+258	258		204							{1: '1'}
+259	259		301							{2: 'Lulu', 3: 'Fine... you win.', 4: '1'}
+260	260		204							{1: '1', 2: '8'}
+261	261		301							"{2: 'Lulu', 3: ""You'd better come back in one piece. If those injured followers of yours are dead set on throwing themselves into the Red Tide, I won't be able to stop them."", 4: '1'}"
+262	262		301							"{2: 'Grace', 3: ""I'm counting on you."", 4: '2'}"
+263	263		204							{1: '1'}
+264	264		301							{2: 'Lulu', 3: 'When are you off?', 4: '1'}
+265	265		301							{2: 'Grace', 3: 'Right now.', 4: '2'}
+266	266		204							{1: '1', 2: '4'}
+267	267		301							"{2: 'Lulu', 3: ""Hey! Isn't this way too fast?!"", 4: '1'}"
+268	268		204							{1: '2', 2: '8'}
+269	269		301							"{2: 'Grace', 3: ""I hope our trial... it'll all work out for the best."", 4: '2'}"
+270	270		202							{1: '1', 6: '1'}
+271	271		203							{1: '2', 2: '0.25', 3: '0'}
+272	272		401							{1: '2', 2: '844'}
+273	273		401							{1: '1', 2: '70'}
+274	274		204							{1: '2'}
+275	275		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+276	276		301							{3: 'Grace waves the crowbar in her hand, gathering her followers around her.'}
+277	277		301							"{2: 'Grace', 3: ""We're about to step onto the trial ground, where our trial begins."", 4: '2'}"
+278	278		204							{1: '2', 2: '9'}
+279	279		301							"{2: 'Grace', 3: '""I have nothing left to rely on, nothing left to ask for, as long as I can find salvation...""', 4: '2'}"
+280	280		202							{1: '2', 6: '1'}
+281	281		201							{1: '1', 2: '500294', 4: '400'}
+282	282		201							{1: '2', 2: '500616', 4: '-400'}
+283	283		301							"{1: '1', 2: 'Followers A & B', 3: '""O God, I praise Your holy name, prostrate at Your feet...""', 4: '1', 5: '2'}"
+284	284		301				AniZhuanchangBegin			"{2: 'Followers A & B', 3: '""God shall create paradise, God shall grant eternal life through the Red Tide...""', 4: '1', 5: '2'}"
+285	285		202							{1: '1', 2: '2', 6: '1'}
+286	286		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory620.jpg'}
+287	287		301		1	AniZhuanchangEnd	AniZhuanchangBegin			{3: 'They form into a group, becoming the last team of Scarlet Revelation members to enter the aquarium—their trial ground.'}

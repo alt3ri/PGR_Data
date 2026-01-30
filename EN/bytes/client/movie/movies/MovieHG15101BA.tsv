@@ -1,0 +1,347 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory4.jpg'}
+2	2		401							{1: '1', 2: '102'}
+3	3		201							{1: '1', 2: '500166'}
+4	4		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'All clear, Commandant.', 4: '1'}
+5	5		302							{2: 'Sure.', 3: '6', 4: 'What about you, Lee?', 5: '6'}
+6	6		201							{1: '1', 2: '500026'}
+7	7		301							"{1: '1', 2: 'Lee', 3: ""Spotted the sixth batch of EX-monitor drones at 3 and 6 o'clock. The design sure is old-fashioned."", 4: '1'}"
+8	8		302							{2: '...', 3: '9', 4: 'Asimov is watching, you know.', 5: '9'}
+9	9		202							{1: '1'}
+10	10		401							{1: '2', 2: '10001004'}
+11	11		301							{3: 'Following a series of gunshots is a deafening blast. Roaring flames, like fireworks, dance in the distance.'}
+12	12		201							{1: '1', 2: '500026'}
+13	13		401							{1: '2', 2: '1511'}
+14	14		301							{1: '1', 2: 'Lee', 3: 'Piece of cake.', 4: '1'}
+15	15		302							{2: 'Keep moving.', 3: '16'}
+16	16		201							{1: '1', 2: '1031001'}
+17	17		301							{1: '1', 2: 'Liv', 3: '...Wait.', 4: '1'}
+18	18		302							{2: 'What?', 3: '19'}
+19	19		301							"{2: 'Liv', 3: ""Well... I detected an unnatural fluctuation in the energy field three minutes ago. I can't pinpoint the exact location, though."", 4: '1'}"
+20	20		301							"{2: 'Liv', 3: ""It's the first time something like this has happened..."", 4: '1'}"
+21	9854		203							{1: '1', 2: '0.25', 3: '-400'}
+22	21		201							{1: '2', 2: '500166', 3: '5', 4: '400'}
+23	22		301							"{1: '1', 2: 'Lucia', 3: ""Our enemies are becoming skilled. Mission's getting tougher."", 4: '2'}"
+24	23		201							{1: '2', 2: '500026', 4: '400'}
+25	24		301							{2: 'Lee', 3: '...?!', 4: '2'}
+26	25		301							"{2: 'Lee', 3: ""More monitors have been activated. And they're... moving?"", 4: '2'}"
+27	26		204							{1: '1', 2: '7'}
+28	27		301							"{1: '1', 2: 'Liv', 3: ""I think I know what's going on."", 4: '1'}"
+29	28		302							{2: 'Explain.', 3: '30'}
+30	30		301							"{2: 'Liv', 3: ""This whole area we're in is a vast energy field in the first place. That's why we can't perform any orientation functions with our devices—The energy level is the same everywhere."", 4: '1'}"
+31	32		301							{1: '1', 2: 'Lee', 3: '...Which means...', 4: '2'}
+32	33		204							{1: '1'}
+33	34		301							"{2: 'Liv', 3: ""All device-based detection methods in the energy field are now obsolete. We cannot pinpoint the locations and density of the Punishing Virus, and therefore can't figure out the specific size of the dead zone..."", 4: '1'}"
+34	35		302							"{2: ""We don't have database info too."", 3: '36', 4: ""So we can't scan the area?"", 5: '38'}"
+35	36		301							{2: 'Liv', 3: 'Yeah. They called us the control group. Said the results would be more accurate this way.', 4: '1'}
+36	37	39	301							{2: 'Liv', 3: 'We must find the source of the Punishing Virus before the simulated mission ends.', 4: '1'}
+37	38		301							{2: 'Liv', 3: 'Yeah. We must find the source of the Punishing Virus before the simulated mission ends.', 4: '1'}
+38	39		202							{1: '1', 2: '2'}
+39	40		301				DialogDisable			{3: 'All eyes are immediately on a lone figure a few meters away.'}
+40	42		201							{1: '1', 2: '500175'}
+41	43		301			DialogEnable				{1: '1', 2: 'Camu', 3: '...', 4: '1'}
+42	44		301							"{2: 'Camu', 3: ""What are y'all looking at?"", 4: '1'}"
+43	45		204							{1: '1', 2: '5'}
+44	46		301							{2: 'Camu', 3: '...Fine, fine...', 4: '1'}
+45	47		302							"{2: ""We'll leave it to you."", 3: '48'}"
+46	48		202							{1: '1'}
+47	49		301							{3: 'The dark youth who had been leaning against his greatsword scowls and straightens up. He loosens his limbs with an irritated expression and picks up his weapon.'}
+48	50		201							{1: '1', 2: '500026'}
+49	51		301							"{1: '1', 2: 'Lee', 3: ""In case you haven't realized yet, this kind of situation was made especially for you."", 4: '1'}"
+50	52		302							{2: 'A very bold comment...', 3: '53'}
+51	53		201							{1: '1', 2: '500175', 3: '5'}
+52	54		301							{1: '1', 2: 'Camu', 3: 'Tch...', 4: '1'}
+53	55		201							{1: '1', 2: '500166', 3: '5'}
+54	56		301							{1: '1', 2: 'Lucia', 3: 'Be careful, Commandant.', 4: '1'}
+55	57		302							"{2: ""Don't worry."", 3: '58', 4: ""I'll do my best."", 5: '58'}"
+56	58		201							{1: '1', 2: '1031001'}
+57	59		301							"{1: '1', 2: 'Liv', 3: ""Over here, Camu. I'll inject the buffering liquid for you."", 4: '1'}"
+58	60		202							{1: '1'}
+59	61		301							{3: 'Camu ambles over, letting Liv reveal the port on his back.'}
+60	62		201							{1: '1', 2: '1031001'}
+61	63		301							"{1: '1', 2: 'Liv', 3: ""...Done. Next, I'll be connecting you to my M.I.N.D. Just a moment..."", 4: '1'}"
+62	64		202							{1: '1'}
+63	65		301							"{3: ""Liv's gentle fingers work efficiently, but Camu does not seem too happy about being treated like a child getting a flu shot. You cannot help but feel amused at his scrunched-up face—when he sends you a sudden glare.""}"
+64	66		302							{2: 'Ahem.', 3: '67'}
+65	67		201							{1: '1', 2: '1031001'}
+66	68		301							{1: '1', 2: 'Liv', 3: 'Ready, Commandant?', 4: '1'}
+67	69		302							"{2: 'Yep.', 3: '70', 4: ""You're in charge now, Lucia."", 5: '71'}"
+68	70	73	301							"{2: 'Liv', 3: ""We'll leave it to you, Camu."", 4: '1'}"
+69	71		201							{1: '1', 2: '500166', 3: '5'}
+70	72		301							"{1: '1', 2: 'Lucia', 3: ""I'll handle the rest."", 4: '1'}"
+71	73		202							{1: '1'}
+72	74		302				AniZhuanchangBegin			{2: '(Connect M.I.N.D.)', 3: '77'}
+73	77		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory37.jpg'}
+74	78		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '3'}
+75	566		401							{1: '2', 2: '1513'}
+76	79		301			AniZhuanchangEnd				"{3: ""After a short loading screen, your visual module gradually syncs up with Camu's. He is running, the dilapidated buildings on either side flashing by like tapestries scrolling past.""}"
+77	80		401							{1: '2', 2: '1515'}
+78	81		301							{2: 'Liv', 3: 'Camu, the energy field will collapse in 9 minutes and 42 seconds. Let us know if anything comes up.'}
+79	82		301							"{3: ""Liv's voice is heard from the terminal.""}"
+80	83		401							{1: '2', 2: '1513'}
+81	84		301				AniZhuanchangBegin			{3: '...'}
+82	85		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+83	86		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory42.jpg'}
+84	87		201							{1: '1', 2: '500175'}
+85	88		301			AniZhuanchangEnd				{1: '1', 2: 'Camu', 3: '...I smell it. The Punishing Virus.', 4: '1'}
+86	89		301							{2: 'Camu', 3: 'Right inside here.', 4: '1'}
+87	90		302							{2: '(Contact Gray Raven)', 3: '91', 4: '(Observe the place)', 5: '94'}
+88	91		301							"{2: 'Camu', 3: ""There's no need. I can handle this."", 4: '1'}"
+89	92		302							{2: 'You need to report your findings.', 3: '93'}
+90	93	95	301							"{2: 'Camu', 3: ""That's why I despise working in a group..."", 4: '1'}"
+91	94		301							"{2: 'Camu', 3: ""What's the point of observing? The entrance is right in front of me."", 4: '1'}"
+92	95		202							{1: '1', 6: '1'}
+93	96		301							{3: 'Picking up his greatsword, Camu steps into the passage.'}
+94	97		302							{2: 'Wait...', 3: '98', 4: 'These are special circumstances.', 5: '101'}
+95	98		201							{1: '1', 2: '500175', 3: '5'}
+96	99		301							"{1: '1', 2: 'Camu', 3: ""Shut up... if you don't want me to throw you out!"", 4: '1'}"
+97	100		302							{2: '...', 3: '105'}
+98	101		201							{1: '1', 2: '500175', 3: '5', 7: '1'}
+99	102		301							{1: '1', 2: 'Camu', 3: 'You only realized now?', 4: '1'}
+100	103		301							"{2: 'Camu', 3: ""Every circumstance is special when you're with me. It's not too late to leave if you're afraid."", 4: '1'}"
+101	104		302							"{2: 'Not gonna leave.', 3: '105', 4: ""You're really something else."", 5: '105'}"
+102	105		202							{1: '1', 6: '1'}
+103	106		301							{3: 'Camu snorts and continues striding into the darkness up ahead, barely heeding your warning. His footsteps echo off the empty passage.'}
+104	107		401							{1: '2', 2: '1516'}
+105	108		301							"{3: ""You are not physically present and therefore unaffected by the Punishing Virus, but you can still sense Camu's nervousness from the connection between you two from his heavy breaths.""}"
+106	109		201							{1: '1', 2: '500175'}
+107	110		301							"{1: '1', 2: 'Camu', 3: 'There\'s ""something"" up ahead.', 4: '1'}"
+108	111		302							{2: 'The Corrupted?', 3: '112', 4: 'The Punishing Virus?', 5: '112'}
+109	112		301							{2: 'Camu', 3: 'Probably.', 4: '1'}
+110	113		401							{1: '2', 2: '1515'}
+111	114		301							{2: 'Liv', 3: 'Camu, your signal is weakening... please... situation...'}
+112	115		202							{1: '1'}
+113	116		201							{1: '1', 2: '500013', 4: '400'}
+114	117		201							{1: '2', 2: '500067', 4: '-400'}
+115	118		401							{1: '2', 2: '1508'}
+116	119		301							{1: '1', 2: 'Corrupted', 3: '—! —!!', 4: '1', 5: '2'}
+117	120		302							{2: 'Watch out!', 3: '121'}
+118	121		301							{3: 'The sudden voice from the comms breaks the silence, and the crimson eyes of the Corrupted light up. Camu finds himself in the spotlight right away.'}
+119	123		202							{1: '1', 2: '2'}
+120	124		201							{1: '1', 2: '500175', 3: '5'}
+121	125		301							{1: '1', 2: 'Camu', 3: 'Tch...', 4: '1'}
+122	126		202							{1: '1', 6: '1'}
+123	127		301							{3: 'Camu braces himself for the fight, like a bow string pulled tight.'}
+124	128		201							{1: '1', 2: '500175', 3: '5'}
+125	129		301							{1: '1', 2: 'Camu', 3: 'Hey, get ready!', 4: '1'}
+126	130		302							{2: 'Always have been.', 3: '131'}
+127	131		201							{1: '1', 2: '500013'}
+128	132		401							{1: '2', 2: '10006001'}
+129	133		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 3: '1'}
+130	134		401							{1: '2', 2: '1508'}
+131	135		502							{1: 'PanelActor1Shake'}
+132	888		201							{1: '1', 2: '500175', 3: '5'}
+133	138		301							{1: '1', 2: 'Camu', 3: 'Die!', 4: '1'}
+134	889		201							{1: '1', 2: '500013'}
+135	140		401							{1: '2', 2: '10006001'}
+136	141		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 3: '1'}
+137	142		401							{1: '2', 2: '1508'}
+138	144		202							{1: '1'}
+139	890		201							{1: '1', 2: '500175', 3: '5'}
+140	146		301							{1: '1', 2: 'Camu', 3: 'Hah... hah... ugh, stop it...', 4: '1'}
+141	147		302							{2: 'Can you handle them?', 3: '148', 4: 'You seem ill.', 5: '148'}
+142	148		202							{1: '1'}
+143	149		301							{3: 'The Corrupted crumble noisily in two and threes, sending electricity sparks flying.'}
+144	150		401							{1: '2', 2: '10006001'}
+145	555		401							{1: '2', 2: '1507'}
+146	151		301							{3: 'And yet Camu does not pause once in his attacks.'}
+147	152		401							{1: '2', 2: '10006001'}
+148	666		401							{1: '2', 2: '1507'}
+149	153		301							{3: 'Sword swinging, he strikes the fallen Corrupted again, again, even as the steel structures with their twisted limbs groan in pain, until his enemies are no more than shapeless blobs of metal.'}
+150	154		401							{1: '2', 2: '10006001'}
+151	777		401							{1: '2', 2: '1507'}
+152	155		302							"{2: ""...That's enough, Camu."", 3: '891', 4: ""We're on a time crunch."", 5: '891'}"
+153	891		201							{1: '1', 2: '500175', 3: '5'}
+154	156		301				AniZhuanchangBegin			"{1: '1', 2: 'Camu', 3: ""Fine... Let's go."", 4: '1'}"
+155	157		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory43.jpg'}
+156	158		202							{1: '1', 6: '1'}
+157	925		401							{1: '1', 2: '201'}
+158	159		401							{1: '2', 2: '1516'}
+159	160		301			AniZhuanchangEnd				{3: 'Camu sets off deeper into the depths of the passage, where a lavish throne sits under the sunlight. A familiar man is seated upon it, chin resting on his hand, staring straight ahead.'}
+160	161		502							{1: 'DialogDisable'}
+161	163		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 3: '1'}
+162	162		201							{1: '1', 2: '500008'}
+163	164		301			DialogEnable				{1: '1', 2: 'Roland?', 3: '...', 4: '1'}
+164	165		302							{2: 'Is this... Roland?', 3: '166', 4: 'Is this... the source of the virus?', 5: '400'}
+165	166		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 4: '1'}
+166	167		201							{1: '1', 2: '500175'}
+167	168		301							{1: '1', 2: 'Camu', 3: 'So that nerd is the one who did this?', 4: '1'}
+168	169		301							{2: 'Camu', 3: 'What kind of creep leaves this kind of thing here?', 4: '1'}
+169	170	174	301							"{2: 'Camu', 3: ""Anyway, I'll smash it too, no matter what it is!"", 4: '1'}"
+170	400		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 4: '1'}
+171	410		201							{1: '1', 2: '500175'}
+172	171		301							{1: '1', 2: 'Camu', 3: 'Is this Ro—Did that nerd leave it here?', 4: '1'}
+173	172		301							{2: 'Camu', 3: 'It reeks of the Punishing Virus.', 4: '1'}
+174	173		301							"{2: 'Camu', 3: ""I'll teach you a lesson this time, real or not!"", 4: '1'}"
+175	174		302							{2: 'Wait...', 3: '175'}
+176	175		301							{2: 'Camu', 3: 'Just watch!', 4: '1'}
+177	176		302							{2: 'Camu!', 3: '177'}
+178	177		201							{1: '1', 2: '500008'}
+179	179		401							{1: '2', 2: '10006001'}
+180	182		203							{1: '1', 2: '0.25', 3: '2000'}
+181	184		301				RImgBg1Shake			"{3: '""Roland"" gracefully leaps out of the way, smirking, easily dodging Camu\'s every strike. Then it counterattacks, like a silent, powerful killing machine.'}"
+182	189		201							{1: '1', 2: '500175', 3: '5'}
+183	190		301							{1: '1', 2: 'Camu', 3: 'Ugh... hah! Yah! Hah!', 4: '1'}
+184	999966		401							{1: '2', 2: '1510'}
+185	999967		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '3'}
+186	191		302							"{2: ""Retreat! You can't handle him!"", 3: '192'}"
+187	192		301							{2: 'Camu', 3: 'Shut up!', 4: '1'}
+188	193		301							{2: 'Camu', 3: 'I know my own limits...hah... better than you!', 4: '1'}
+189	194		301							{2: 'Camu', 3: 'Hold your tongue and do something useful, Commandant!', 4: '1'}
+190	195		502							{1: 'PanelActor1Shake'}
+191	197		301							"{3: ""Camu blocks Roland's attack and forces his weapon out of the way. He shouts."", 4: '1'}"
+192	198		204							{1: '1', 2: '5'}
+193	199		301							{2: 'Camu', 3: 'Hey! A little help here?!', 4: '1'}
+194	200		302							{2: '(Sync M.I.N.D.)', 3: '201'}
+195	201		202							{1: '1'}
+196	202		301							{3: 'Camu sticks his greatsword into a crevice in the rocks and leans against it, his head hanging, breaths turning long and deep, bangs covering his eyes.'}
+197	203		301							{2: 'Camu', 3: 'Ugh...'}
+198	204		301				AniZhuanchangBegin			"{2: 'Camu', 3: ""I won't show you any mercy!""}"
+199	206		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+200	209		301			AniZhuanchangEnd				{2: 'System Voice', 3: 'Warning: M.I.N.D. Overload?.'}
+201	210		301							{2: 'System Voice', 3: 'Loading failed, reestablishing connection. System update countdown: 25%>>65%>>…'}
+202	211		301							{2: 'System Voice', 3: '…>>86%'}
+203	212		301				AniZhuanchangBegin			{2: 'System Voice', 3: '...Connection failed... Preparing for reset. Loading...'}
+204	213		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+205	214		301			AniZhuanchangEnd				{3: '...'}
+206	215		301							{3: '...'}
+207	216		301							{2: '???', 3: '...Commandant!'}
+208	217		301							{2: '??', 3: '...What...'}
+209	218		301							{2: '???', 3: 'Performing full-body scan...'}
+210	219		302							{2: '...', 3: '220'}
+211	220		301							{2: '???', 3: 'Commandant!'}
+212	221		302				AniZhuanchangBegin			{2: 'Ugh...', 3: '222'}
+213	222		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory122.png'}
+214	223		401							{1: '1', 2: '208'}
+215	224		201							{1: '1', 2: '1031001', 3: '6'}
+216	225		501				AniZhuanchangEnd			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+217	226		301							"{1: '1', 2: 'Liv', 3: ""Commandant! How are you feeling? Are you hurt anywhere? How's your head? Can you see?"", 4: '1'}"
+218	227		302							"{2: ""I'm fine."", 3: '228', 4: 'What happened?', 5: '237'}"
+219	228		203							{1: '1', 2: '0.25', 3: '-400'}
+220	229		201							{1: '2', 2: '500026', 4: '400'}
+221	230		301							"{1: '1', 2: 'Lee', 3: 'I wouldn\'t call crumpling into a bloody heap in combat ""fine""!', 4: '2'}"
+222	231		301							"{2: 'Lee', 3: ""Luckily it's just a simulated mission, or you could've died."", 4: '2'}"
+223	232		302							{2: 'Calm down, I really am fine.', 3: '233', 4: 'A bloody heap?', 5: '237'}
+224	233		204							{1: '2', 2: '14'}
+225	234	247	301							{2: 'Liv', 3: 'Mr. Lee was really worried...', 4: '1'}
+226	235		204							{1: '2', 2: '14'}
+227	236	247	301							{2: 'Liv', 3: 'Turned out the blood was just from a bloody nose, but we were still horrified...', 4: '1'}
+228	237		202							{1: '1', 2: '2'}
+229	238		201							{1: '1', 2: '500166'}
+230	239		301							{1: '1', 2: 'Lucia', 3: 'Your connection to Camu was suddenly severed and you fainted into a bloody heap.', 4: '1'}
+231	240		302							{2: 'A bloody heap?', 3: '241'}
+232	241		203							{1: '1', 2: '0.25', 3: '-400'}
+233	242		201							{1: '2', 2: '1031001', 4: '400'}
+234	243		204							{1: '2', 2: '14'}
+235	244		301							{1: '1', 2: 'Liv', 3: 'Turned out the blood was just from a bloody nose, but we were still horrified...', 4: '2'}
+236	245		204							{1: '1', 2: '5'}
+237	246		301							"{2: 'Lucia', 3: ""...We've all been very worried about you, Commandant. This must never happen again."", 4: '1'}"
+238	247		202							{1: '1', 2: '2'}
+239	248		301							{3: 'Asimov, who has been manning a large device at the side, speaks up right on cue.'}
+240	249		201							{1: '1', 2: '500004'}
+241	250		301							{1: '1', 2: 'Asimov', 3: 'To put it simply, the level of power Camu used in the previous battle exceeded your max capabilities.', 4: '1'}
+242	251		301							{2: 'Asimov', 3: 'Like a balloon filled with too much water. You popped.', 4: '1'}
+243	252		301							"{2: 'Asimov', 3: ""You're lucky it was just a simulated mission. If it weren't for me, you'd be in great trouble if it were actual combat."", 4: '1'}"
+244	253		302							{2: 'You pretty much set us up.', 3: '254', 4: 'Thanks, then.', 5: '255'}
+245	254	256	301							{2: 'Asimov', 3: 'I was just trying to cover all possibilities that could arise in combat.', 4: '1'}
+246	255		301							{2: 'Asimov', 3: 'No need to thank me.', 4: '1'}
+247	256		301							"{2: 'Asimov', 3: ""Back to the topic. Clearly you weren't coordinating well. I'm sure, as a Commandant, you know this better than me."", 4: '1'}"
+248	257		301							"{2: 'Asimov', 3: 'Camu still isn\'t used to ""sharing powers"" with someone else. If he continues charging on without taking you into consideration, your role as a Commandant might as well be moot.', 4: '1'}"
+249	258		302							"{2: ""That's why you designed the simulation this way."", 3: '259', 4: ""Where's Camu?"", 5: '260'}"
+250	259	262	301							"{2: 'Asimov', 3: ""Yes, if that's how you want to interpret it."", 4: '1'}"
+251	260		201							{1: '1', 2: '500026'}
+252	261		301							{1: '1', 2: 'Lee', 3: 'Outside.', 4: '1'}
+253	262		201							{1: '1', 2: '500026', 7: '1'}
+254	263		301							"{1: '1', 2: 'Lee', 3: ""I know I can't expect you to follow my advice, but I still wish you'd reconsider your decision to remote-connect to Camu in combat situations."", 4: '1'}"
+255	264		302							"{2: ""I'll think about it."", 3: '265', 4: 'He just needs time.', 5: '269'}"
+256	265		201							{1: '1', 2: '500004'}
+257	266		301							"{1: '1', 2: 'Asimov', 3: ""You're the only one who's ever allowed your consciousness to be connected to Camu's. That's why we had to send the two of you together."", 4: '1'}"
+258	267		201							{1: '1', 2: '500166', 3: '5'}
+259	268	274	301							{1: '1', 2: 'Lucia', 3: 'But Gray Raven has only one Commandant—', 4: '1'}
+260	269		201							{1: '1', 2: '500004'}
+261	270		301							"{1: '1', 2: 'Asimov', 3: ""The Council would be happy to hear that. You're the only one who's ever allowed your consciousness to be connected to Camu's. That's why we had to send the two of you together."", 4: '1'}"
+262	271		302							"{2: ""So you're not giving me a choice?"", 3: '272', 4: 'Yeah.', 5: '272'}"
+263	272		201							{1: '1', 2: '500026'}
+264	273		301							"{1: '1', 2: 'Lee', 3: ""If you're sure that 【kuroname】 is the only Commandant who can connect to Camu remotely, you should work even harder to keep 【kuroname】 safe."", 4: '1'}"
+265	274		201							{1: '1', 2: '500004'}
+266	275		301							"{1: '1', 2: 'Asimov', 3: ""Rest easy. I've checked your Commandant from head to toe. Brain's still intact, nerves perfectly functioning. Just a bloody nose and nothing more."", 4: '1'}"
+267	276		301							"{2: 'Asimov', 3: ""I'll give a full report to the Council on what went down in the simulated mission. Meanwhile, it'd be wise for you to postpone any combat training activities of this type."", 4: '1'}"
+268	277		302							"{2: ""I'm still worried..."", 3: '278', 4: 'Okay, then.', 5: '278'}"
+269	278		201							{1: '1', 2: '500026', 4: '-600'}
+270	279		201							{1: '2', 2: '1031001', 3: '14'}
+271	280		201							{1: '3', 2: '500166', 4: '600'}
+272	281		301							{1: '1', 2: 'Lee', 3: '...', 4: '1'}
+273	282		301							{1: '1', 2: 'Liv', 3: '...', 4: '2'}
+274	283		301							{1: '1', 2: 'Lucia', 3: 'Commandant...', 4: '3'}
+275	284		301							"{2: 'Lee', 3: ""I have one more thing to say, Commandant... I don't want to bring up you-know-what, but... well, I don't want you to become the second Strike Hawk captain."", 4: '1'}"
+276	285		302							"{2: '...', 3: '286', 4: ""I'll be careful."", 5: '286'}"
+277	286		204							{1: '2', 2: '6'}
+278	287		301							{2: 'Liv', 3: 'Commandant... I trust you.', 4: '2'}
+279	288		204							{1: '2', 2: '1'}
+280	289		301							"{2: 'Liv', 3: ""You'll work something out, yeah?"", 4: '2'}"
+281	290		302							"{2: 'Leave it to me.', 3: '291', 4: ""Don't worry about it."", 5: '291'}"
+282	291		202							{1: '1', 2: '2', 3: '3'}
+283	292		301							{3: 'The three Gray Raven members gaze at you, each with a slightly different expression. All you can do is to push your still aching body up and look as relaxed as possible.'}
+284	293		302							{2: '(Guess something needs to be done...)', 3: '294'}
+285	294		301							{3: 'They all seem to have something stuck in their throats, so you tactfully break the silence.'}
+286	295		302							"{2: ""That's it for today, then."", 3: '296', 4: 'Anything else?', 5: '300'}"
+287	296		201							{1: '1', 2: '1031001'}
+288	297		301							{1: '1', 2: 'Liv', 3: 'Yeah...', 4: '1'}
+289	298		301							{2: 'Liv', 3: 'Your examination results are fine, but you still need to rest lots and eat healthily...', 4: '1'}
+290	299		302							{2: 'Understood.', 3: '303', 4: 'You worked hard too.', 5: '303'}
+291	300		201							{1: '1', 2: '500026'}
+292	301		301							{1: '1', 2: 'Lee', 3: 'Well, get some rest, then.', 4: '1'}
+293	303		201							{1: '1', 2: '500004'}
+294	304		301							"{1: '1', 2: 'Asimov', 3: ""I'll get going now."", 4: '1'}"
+295	305		202							{1: '1'}
+296	306		401							{1: '2', 2: '1516'}
+297	307		301							{3: 'Asimov picks up the scattered files on the control panel and exits the room.'}
+298	308		201							{1: '1', 2: '500166', 3: '1'}
+299	309		301							"{1: '1', 2: 'Lucia', 3: ""I'll walk you back to your place, Commandant."", 4: '1'}"
+300	310		302				AniZhuanchangBegin			{2: 'Okay.', 3: '311', 4: 'I can walk myself.', 5: '311'}
+301	311		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+302	312		202							{1: '1', 6: '1'}
+303	313		401							{1: '2', 2: '1516'}
+304	314		301			AniZhuanchangEnd				{3: 'You open the door to see Camu sitting on the bench in the corridor.'}
+305	315		301							{3: 'Noticing your arrival, he turns around, expression one of indescribable dark fury. He briefly scans the faces of the group and looks away.'}
+306	316		301							{3: 'You gesture for everyone to relax before they can speak.'}
+307	317		302							{2: 'I have business to attend to.', 3: '318', 4: 'You guys can leave now.', 5: '318'}
+308	318		301							{3: 'Though worried, the others hold their tongues, nod and leave one by one.'}
+309	319		301							"{3: ""Camu remains on his bench, staring resolutely at his own interlocked fingers, resting primly on his knees. He looks like a student outside the principal's office waiting for his punishment.""}"
+310	320		201							{1: '1', 2: '500175'}
+311	321		301							{1: '1', 2: 'Camu', 3: 'What do you want?', 4: '1'}
+312	322		302							{2: 'What?', 3: '323'}
+313	323		301							"{2: 'Camu', 3: ""You're smiling again. Gives me the creeps. What do you want?"", 4: '1'}"
+314	324		302							"{2: 'The creeps?', 3: '325', 4: ""That's mean!"", 5: '325'}"
+315	325		301							{2: 'Camu', 3: 'That spooky nerd barely answered any of my questions. So annoying.', 4: '1'}
+316	326		301							{2: 'Camu', 3: 'Just tell us what you guys have decided.', 4: '1'}
+317	327		302							"{2: '""We"" didn\'t decide anything.', 3: '328', 4: 'I want to discuss something with you.', 5: '329'}"
+318	328	330	301							{2: 'Camu', 3: 'You mean you were the only one who made the decision?', 4: '1'}
+319	329		301							{2: 'Camu', 3: 'Just get to the point.', 4: '1'}
+320	330		301							{2: 'Camu', 3: 'If you have something to say, say it.', 4: '1'}
+321	331		302							"{2: ""Let's train together."", 3: '332', 4: 'Date me.', 5: '333'}"
+322	332	335	301							{2: 'Camu', 3: '...What?', 4: '1'}
+323	333		301							{2: 'Camu', 3: 'W-what? Are you nuts?', 4: '1'}
+324	334		302							{2: 'Just kidding!', 3: '335', 4: 'You have no sense of humor.', 5: '335'}
+325	335		301							"{2: 'Camu', 3: ""I'll give you another chance to reword that. What did you mean?"", 4: '1'}"
+326	336		302							"{2: ""It'd help us work better together."", 3: '337', 4: ""It'd help us hone certain skills."", 5: '337'}"
+327	337		301							{2: 'Camu', 3: 'But we only failed the mission because you were useless!', 4: '1'}
+328	338		302							"{2: ""That's why we gotta train."", 3: '339'}"
+329	339		301							{2: 'Camu', 3: 'So you want me to sacrifice my private hours to train with you? I have no interest in socializing with my colleagues after work.', 4: '1'}
+330	340		302							"{2: 'I just want to talk.', 3: '341', 4: ""It'll be fun, promise."", 5: '341'}"
+331	341		301							"{2: 'Camu', 3: ""If I have to work with a human like you, you'll drag me down no matter how much we train."", 4: '1'}"
+332	342		302							"{2: ""Why don't we give it a try?"", 3: '343'}"
+333	343		301							{2: 'Camu', 3: 'I refuse.', 4: '1'}
+334	344		302							"{2: ""I'll wait for you to come around."", 3: '345'}"
+335	345		301							{2: 'Camu', 3: 'Huh? Where did you inherit that stupid persistence now?', 4: '1'}
+336	346		302							"{2: ""It's a Commandant's sense of responsibility."", 3: '347'}"
+337	347		301							{2: 'Camu', 3: 'Then wait as much as you want, dumb ***.', 4: '1'}
+338	348		202							{1: '1'}
+339	349		301							{3: 'Impatient, Camu stands up and stalks out.'}
+340	350		301							"{1: '1', 2: 'Camu', 3: ""...How many times do I have to tell you? I'm not a good teammate to work with in the long-term.""}"
+341	351		301							"{2: 'Camu', 3: ""If you really have the best interests of your team in mind, you gotta make sure your idiot supervisors realize that getting to know me better wouldn't benefit you any. You need to understand this.""}"
+342	352		301							{2: 'Camu', 3: 'If I can solve something with a fight, I will.'}
+343	353		302							{2: 'Make me understand, then.', 3: '354', 4: '...', 5: '355'}
+344	354		301		1		AniZhuanchangBegin			{2: 'Camu', 3: '...Tch, stubborn fool.'}
+345	355		301							{2: 'Camu', 3: 'Well? Nothing else to say?'}
+346	356		301		1		AniZhuanchangBegin			{2: 'Camu', 3: 'In that case, leave me alone.'}

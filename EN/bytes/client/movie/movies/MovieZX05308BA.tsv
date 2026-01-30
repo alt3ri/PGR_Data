@@ -1,0 +1,432 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1035.jpg'}
+2	2		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront46.png', 4: '4'}
+3	3		104							{1: '145|240|-200', 2: '0'}
+4	4		401			AniZhuanchangEnd				{1: '1', 2: '209'}
+5	5		107						2500.0	{1: 'Montali International Airport', 2: 'Fast City', 4: '9:30', 5: 'Line Spacing: 2'}
+6	6		108							{1: '1'}
+7	7		301			DialogEnable				"{3: ""In the parking lot, on a command vehicle that is disguised as a common large car, you are reviewing all the materials you have while you and Iris are doing each other's makeup.""}"
+8	8		301							"{3: ""There's something awkward about making eye contact during makeup. To avoid that, you try to keep up a conversation.""}"
+9	9		302							"{2: ""How does Jonathan's studio get their hands on a command vehicle like this?"", 3: '10'}"
+10	10		201							{1: '18', 2: '501162'}
+11	11		301							"{1: '1', 2: 'Jonathan', 3: ""I wasn't the one who got this. It was Iris."", 4: '18'}"
+12	12		202							{1: '18'}
+13	13		301							"{3: ""Jonathan, who's been repeatedly checking his investment on a laptop, speaks without looking up.""}"
+14	14		201							{1: '18', 2: '501162'}
+15	15		301							{1: '1', 2: 'Jonathan', 3: 'She got the decoder for the airport network, too.', 4: '18'}
+16	16		302							{2: 'Hm?', 3: '17'}
+17	17		202							{1: '18', 6: '1'}
+18	18		201							{1: '1', 2: '501184', 3: '1'}
+19	19		301							{1: '1', 3: 'Surprised, you look at Iris, who responds with a casual smile.'}
+20	20		202							{1: '1', 6: '1'}
+21	21		201							{1: '1', 2: '501165'}
+22	22		401							{1: '2', 2: '911'}
+23	23		301							{1: '1', 3: 'Meanwhile, Dandelion has finished drawing. On the whiteboard, she has marked a dozen key spots on a structural diagram of the airport.'}
+24	24		301							"{2: 'Dandelion', 3: ""Montali International Airport was built 15 years ago and has undergone six major expansions. I'm sure you're all already familiar with its overall structural layout."", 4: '1'}"
+25	25		301							"{2: 'Dandelion', 3: ""I need to stress that the airport's network system is divided into two layers—internal and external. If we want to paralyze the airport by implanting a virus and causing chaos, we should target the internal network."", 4: '1'}"
+26	26		301							{2: 'Dandelion', 3: 'Of course, ideally, our decoder would disable both systems through a single external interface.', 4: '1'}
+27	27		201							{1: '18', 2: '501162'}
+28	28		301							{1: '1', 2: 'Jonathan', 3: '...I thought you said you were just an ordinary civilian.', 4: '18'}
+29	29		202							{1: '18', 6: '1'}
+30	30		401							{1: '2', 2: '911'}
+31	31		301						1000.0	"{2: 'Dandelion', 3: ""I've written a novel using Montali Airport as the setting."", 4: '1'}"
+32	32		402							{1: '911'}
+33	33		401							{1: '2', 2: '1543'}
+34	34		301							{3: 'Dandelion finishes with an elegant signature on the whiteboard, then turns to face Jonathan.'}
+35	35		204							{1: '1', 2: '1'}
+36	36		301							{2: 'Dandelion', 3: 'Novelists are ordinary people, of course.', 4: '1'}
+37	37		201							{1: '18', 2: '501162', 3: '7'}
+38	38		301							{1: '1', 2: 'Jonathan', 3: '...Please continue.', 4: '18'}
+39	39		202							{1: '18', 6: '1'}
+40	40		204							{1: '1'}
+41	41		301				AniZhuanchangBegin			"{2: 'Dandelion', 3: ""The operation is divided into several phases according to Iris and F.O.S.'s plan."", 4: '1'}"
+42	42		202							{1: '1', 2: '2', 6: '1'}
+43	43		306							{1: '1'}
+44	44		401						2000.0	{1: '1', 2: '36'}
+45	45		401							{1: '1', 2: '161'}
+46	46		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory420.png'}
+47	47		101							{4: '4', 5: '1'}
+48	48		401							{1: '2', 2: '4553'}
+49	49		201							{1: '18', 2: '501165'}
+50	50		301			AniZhuanchangEnd				"{1: '1', 2: 'Dandelion', 3: ""First, Iris and F.O.S. will need to use employee passage to access the secure areas beyond the checkpoints because they don't have identification documents."", 4: '18'}"
+51	51		301							{2: 'Dandelion', 3: 'Right here is the employee passage that leads directly to the airport waiting area. This path is usually...', 4: '18'}
+52	52		202							{1: '18'}
+53	53		306							
+54	54		201							{1: '1', 2: '500108'}
+55	55		301				DialogDisable			{1: '1', 3: 'She nods to Iris and connects a decryption device to the door lock in front.'}
+56	56		401						600.0	{1: '2', 2: '4560'}
+57	57		202							{1: '1'}
+58	58		401							{1: '2', 2: '5370'}
+59	59		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory685.jpg', 3: '0', 4: '1', 5: '1.2'}
+60	60		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory685.jpg'}
+61	61		205							{1: '999'}
+62	62		201							{1: '1', 2: '501178'}
+63	63		301			DialogEnable				{1: '1', 3: 'As the door unlocks, someone in the clear corridor turns around.'}
+64	64		401							{1: '2', 2: '4553'}
+65	65		201							{1: '18', 2: '501165'}
+66	66		301							{1: '1', 2: 'Dandelion', 3: 'There are no guards...', 4: '18'}
+67	67		202							{1: '1', 2: '18', 6: '1'}
+68	68		201							{1: '1', 2: '501171'}
+69	69		301							{1: '1', 2: 'Guard', 3: '...', 4: '1'}
+70	70		201							{1: '18', 2: '501165'}
+71	71		301							{1: '1', 2: 'Dandelion', 3: '...', 4: '18'}
+72	72		202							{1: '18'}
+73	73		401							{1: '2', 2: '1543'}
+74	74		301							"{3: ""Ignoring Dandelion's silence, you calmly pull out a pre-made employee badge, quickly flash it, point toward Iris, and greet the guard.""}"
+75	75		302							{2: 'VIP.', 3: '76'}
+76	76		301							{2: 'Guard', 3: '...', 4: '1'}
+77	77		203							{1: '1', 2: '0.4', 3: '400'}
+78	78		301							{3: 'The guard nods silently and steps aside to clear the way.'}
+79	79		202							{1: '1', 6: '1'}
+80	80		201							{1: '1', 2: '500108', 3: '4', 4: '200'}
+81	81		301				DialogDisable			{1: '1', 3: 'You walk forward slowly with Iris until you go around a corner.'}
+82	82		401							{1: '2', 2: '1516'}
+83	83		104						2000.0	{1: '0|0|-100', 2: '1.5'}
+84	84		205						600.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory419.jpg', 3: '0', 4: '1', 5: '0.5'}
+85	85		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory419.jpg'}
+86	86		205							{1: '999'}
+87	87		104						2000.0	{1: '50|0|-150', 2: '1.5'}
+88	88		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory418.jpg', 3: '0', 4: '1', 5: '0.5'}
+89	89		104						550.0	{1: '0|0|-300', 2: '0', 4: '3'}
+90	90		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory418.jpg'}
+91	91		104							{1: '0|0|-300', 2: '0'}
+92	92		205							{1: '999'}
+93	93		104							{1: '0|0|0', 2: '0', 4: '3'}
+94	94		402							{1: '1516'}
+95	95		203						200.0	{1: '1', 2: '0.4'}
+96	96		301			DialogEnable				{2: 'Iris', 3: 'Huff...', 4: '1'}
+97	97		302							{2: 'You seem a bit nervous.', 3: '98'}
+98	98		301							{2: 'Iris', 3: 'Because we only had enough time to get one badge. There are too many types of uniforms for different sections. Trying to replicate them might get us exposed.', 4: '1'}
+99	99		204							{1: '1'}
+100	100		301							"{2: 'Iris', 3: ""I'm having trouble keeping up with you. It was such a bold idea—I can't believe it actually worked."", 4: '1'}"
+101	101		301				DialogDisable			{3: 'Iris places a hand over her chest, her words filled with excitement due to the thrill.'}
+102	102		302							{2: 'Yellow-red work vest, clipboard, and signboard.', 3: '103'}
+103	103		302							{2: 'These can get you access to almost anywhere in the world.', 3: '104'}
+104	104		202							{1: '1'}
+105	105		401							{1: '2', 2: '1543'}
+106	106		301			DialogEnable				{3: 'As you speak, you slide the clipboard into the signboard and fold them together, turning them into a briefcase.'}
+107	107		401							{1: '2', 2: '4895'}
+108	108		301							{3: 'Then you flip your clothing inside out, revealing a suit.'}
+109	109		302							{2: 'I thought infiltration was a required course for United Government employees.', 3: '110'}
+110	110		201							{1: '1', 2: '500108'}
+111	111		301							{1: '1', 2: 'Iris', 3: 'I did get infiltration training, but it was... different.', 4: '1'}
+112	112		301				DialogDisable			"{3: ""You glance at Iris's hands. Weapon comes into mind and you realize she's joking.""}"
+113	113		302							{2: 'That explanation makes sense. Being invincible definitely counts as infiltration.', 3: '114'}
+114	114		302							{2: 'Dandelion, where to now?', 3: '115'}
+115	115		401							{1: '2', 2: '4553'}
+116	116		201							{1: '18', 2: '501165'}
+117	117		301			DialogEnable				"{1: '1', 2: 'Dandelion', 3: ""The service desk when you turn left in 50 meters. That's the most accessible network port. Just connect it to the port on the desktop."", 4: '18'}"
+118	118		202				DialogDisable			{1: '18'}
+119	119		302							{2: 'Iris.', 3: '120'}
+120	120		301			DialogEnable				{3: 'Iris nods, then walks ahead toward the desk.'}
+121	121		401							{1: '2', 2: '4386'}
+122	122		401							{1: '1', 2: '36'}
+123	123		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+124	124		401							{1: '1', 2: '210'}
+125	125		103							{1: '1.8', 2: '-220|115|-200'}
+126	126		202							{1: '1', 6: '1'}
+127	127		201							{1: '1', 2: '500108', 4: '400', 5: '-40', 6: '50', 7: '1'}
+128	128		201							{1: '2', 2: '501163', 4: '-400', 5: '-40', 6: '50', 7: '1'}
+129	129		301							{1: '1', 2: 'Iris', 3: 'Sorry to bother you, I was wondering...', 4: '1'}
+130	130		301				DialogDisable			{2: 'Flight Attendant', 3: 'How may I help you?', 4: '2'}
+131	131		203							{1: '1', 2: '0.3', 3: '400', 5: '-50'}
+132	132		203							{1: '2', 2: '0.3', 3: '-400', 5: '-50'}
+133	133		104						350.0	{1: '-220|115|-280', 2: '0.3'}
+134	134		302							{2: 'Excuse me, could you tell me where I need to go for this flight—', 3: '135'}
+135	135		301			DialogEnable	DialogDisable			"{2: 'Flight Attendant', 3: ""Oh... of course. Um, let me just finish helping this lady first, then I'll assist you."", 4: '2'}"
+136	136		202							{1: '1', 2: '2'}
+137	137		104						500.0	{1: '-320|115|-280', 2: '0.4'}
+138	138		401							{1: '2', 2: '4824'}
+139	139		301			DialogEnable	AniZhuanchangBegin			{3: 'The flight attendant panics as two people ask for help at the same time. Noticing her divided attention, you connect the decoder to the external port under the counter.'}
+140	140		104							{1: '-220|115|-280', 2: '0'}
+141	141		301			AniZhuanchangEnd				{3: 'Two minutes later...'}
+142	142		201							{1: '1', 2: '500108', 4: '400'}
+143	143		201							{1: '2', 2: '501163', 4: '-400'}
+144	144		301							{1: '1', 2: 'Iris', 3: 'I see. Thank you very much for your help.', 4: '1'}
+145	145		301							{2: 'Flight Attendant', 3: 'My pleasure. Please feel free if you have any more questions. And for you...', 4: '2'}
+146	146		302							"{2: ""Oh, I've already found the check-in counter for my flight. Thanks."", 3: '147'}"
+147	147		401							{1: '2', 2: '4095'}
+148	148		301							{3: 'You wave the Q&A pamphlet at the staff while quietly disconnecting the decoder.'}
+149	149		301							{2: 'Flight Attendant', 3: 'Huh? Oh... alright. Have a pleasant journey, and please feel free to ask if you need anything else.', 4: '2'}
+150	150		202							{1: '1', 2: '2'}
+151	151		301				AniZhuanchangBegin			{3: 'With a grateful smile, you turn and leave with Iris.'}
+152	152		401						2000.0	{1: '1', 2: '36'}
+153	153		401							{1: '1', 2: '209'}
+154	154		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory417.jpg'}
+155	155		103							{1: '1.1'}
+156	156		104							{1: '30|140|-200', 2: '0'}
+157	157		301			AniZhuanchangEnd				{3: 'You take out the hacking device and start working. Iris leans over.'}
+158	158		201							{1: '1', 2: '500108', 3: '4'}
+159	159		301							"{1: '1', 2: 'Iris', 3: ""And how's that coming along?"", 4: '1'}"
+160	160		302							{2: 'We need to plan our next move.', 3: '161'}
+161	161		401							{1: '2', 2: '4553'}
+162	162		201							{1: '18', 2: '501165'}
+163	163		301							"{1: '1', 2: 'Dandelion', 3: ""See, I told you it wouldn't be that easy..."", 4: '18'}"
+164	164		202				DialogDisable			{1: '18'}
+165	165		302							"{2: ""We've successfully infiltrated the system, but there's no intranet access in the interface."", 3: '166'}"
+166	166		302							"{2: ""We didn't fail... It's..."", 3: '167'}"
+167	167		301			DialogEnable				{2: 'Iris', 3: 'Physical isolation. Looks like Montali Airport has been attacked before.', 4: '1'}
+168	168		302							{2: 'Dandelion?', 3: '169'}
+169	169		401							{1: '2', 2: '4553'}
+170	170		201							{1: '18', 2: '501165'}
+171	171		301							"{1: '1', 2: 'Dandelion', 3: ""If it's physically isolated, we'll need to get to the staff area to find an access point to the inner network."", 4: '18'}"
+172	172		301							"{2: 'Dandelion', 3: ""I should warn you. Security in the staff area isn't very strict, but there are multiple checkpoints. I looked this up when writing my article."", 4: '18'}"
+173	173		202							{1: '18', 6: '1'}
+174	174		301							"{2: 'Iris', 3: ""That means our plan to use the employee passage won't work anymore. It's not as simple as getting by one guard. The risk is too high."", 4: '1'}"
+175	175		204							{1: '1'}
+176	176		301							{3: 'Iris nods, then gives you an expectant look.'}
+177	177		302							"{2: ""...You don't seem worried at all."", 3: '178'}"
+178	178		204							{1: '1', 2: '2'}
+179	179		301							{2: 'Iris', 3: 'Because I believe in you...', 4: '1'}
+180	180		204							{1: '1'}
+181	181		301							"{2: 'Iris', 3: ""I'm sure F.O.S. can solve this problem."", 4: '1'}"
+182	182		302							{2: '...?', 3: '183'}
+183	183		202							{1: '1', 6: '1'}
+184	184		201							{1: '1', 2: '500303'}
+185	185		301				DialogDisable			"{1: '1', 3: ""There's no time to dwell on what she means. You spot an employee approaching and gently tap your earpiece.""}"
+186	186		306							{1: '1'}
+187	187		202							{1: '1'}
+188	188		302							{2: 'Is the checked baggage storage area connected to the staff area?', 3: '189'}
+189	189		302							{2: 'I mean the one after security screening.', 3: '190'}
+190	190		401							{1: '2', 2: '4553'}
+191	191		201							{1: '18', 2: '501165'}
+192	192		301			DialogEnable				"{1: '1', 2: 'Dandelion', 3: ""Let me see... Yes, they're connected. Are you..."", 4: '18'}"
+193	193		202				DialogDisable			{1: '18'}
+194	194		306							
+195	195		401							{1: '2', 2: '4341'}
+196	196		104							{1: '40|140|-250', 2: '0.25'}
+197	197		201							{1: '1', 2: '500303', 7: '1'}
+198	198		203						300.0	{1: '1', 2: '0.25', 5: '-50'}
+199	199		402						500.0	{1: '4341'}
+200	200		302							{2: 'Excuse me, sorry to bother you.', 3: '201'}
+201	201		301			DialogEnable	DialogDisable			{3: 'Without responding to Dandelion, you stop the employee passing by.'}
+202	202		302							"{2: ""My friend isn't feeling well."", 3: '203'}"
+203	203		302							{2: 'But her medication ran out.', 3: '204'}
+204	204		302							{2: 'The rest is in our checked luggage.', 3: '205'}
+205	205		401						300.0	{1: '2', 2: '4833'}
+206	206		402							{1: '4833'}
+207	207		301			DialogEnable				"{3: 'You take out a pill bottle from your ""briefcase"" and deliberately show it to the staff.'}"
+208	208		302							"{2: ""We've already gone through security, and she needs prescription medication..."", 3: '209'}"
+209	209		203							{1: '1', 2: '0.25', 3: '-400'}
+210	210		201							{1: '2', 2: '500108', 4: '400'}
+211	211		301							"{1: '1', 2: 'Iris', 3: ""I'm sorry, but could you please help us?"", 4: '2'}"
+212	212		301							{3: 'Iris chimes in at just the right moment.'}
+213	213		301				AniZhuanchangBegin			{2: 'Airport Staff', 3: 'Oh... Okay, please follow me.', 4: '1'}
+214	214		202							{1: '1', 2: '2', 6: '1'}
+215	215		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory416.jpg'}
+216	216		103						1000.0	{1: '3.5', 2: '1657|-13|0'}
+217	217		301			AniZhuanchangEnd				{3: 'Iris feigns discomfort while I act agitated. Your expensive attire adds to the story.'}
+218	218		301							{3: 'With the staff leading the way, you bypass several guards who would have otherwise stopped you.'}
+219	219		301							{3: 'After going around several corners, you arrive at the entrance to a restricted area.'}
+220	220		201							{1: '2', 2: '500303'}
+221	221		301							"{1: '1', 2: 'Airport Staff', 3: ""Just ahead is the checked baggage storage area. I'm afraid all passengers must stop here. Could you please show me your ticket?"", 4: '2'}"
+222	222		402							{1: '209'}
+223	223		401							{1: '2', 2: '4341'}
+224	224		104							{1: '1657|-13|-100', 2: '0.25'}
+225	225		203						250.0	{1: '2', 2: '0.25', 4: '-80', 5: '-150'}
+226	226		201							{1: '2', 2: '500965', 5: '-80', 6: '-150', 7: '1'}
+227	227		301			PanelActor2Shake				{1: '1', 2: 'Airport Staff', 3: 'I will go in and look for your—mmphh—', 4: '2'}
+228	228		401							{1: '1', 2: '222'}
+229	229		401							{1: '2', 2: '4833'}
+230	230		203						300.0	{1: '2', 2: '0.4', 4: '-1000', 5: '-150'}
+231	231		202							{1: '2', 6: '1'}
+232	232		201							{1: '1', 2: '500108', 3: '4', 4: '120', 5: '-140'}
+233	233		301							{1: '1', 3: 'You release the ether-soaked cloth as Iris catches the unconscious employee and props him up to search for his badge.'}
+234	234		302							{2: 'Name—Shuji, Job title—', 3: '235'}
+235	235		301							"{3: ""While you memorize the person's information, Iris quickly surveys the inside.""}"
+236	236		301							"{2: 'Iris', 3: ""Everyone inside is wearing work or guard uniforms. I don't think I can go in with you."", 4: '1'}"
+237	237		302							"{2: ""I'll go alone. Can you take care of him?"", 3: '238'}"
+238	238		301							{2: 'Iris', 3: 'Of course, but... F.O.S.', 4: '1'}
+239	239		302							{2: 'Hm?', 3: '240'}
+240	240		203							{1: '1', 2: '0.4', 3: '50', 4: '-30', 5: '-50'}
+241	241		301							{3: 'You look up from the ID to find her holding tightly onto your hand.'}
+242	242		301							{2: 'Iris', 3: 'Stay safe.', 4: '1'}
+243	243		302							"{2: 'Okay.', 3: '244', 4: ""I'll be careful."", 5: '244'}"
+244	244		306							{1: '1'}
+245	245		301							"{3: ""Her serious expression seems odd. It isn't really a problem even if we're exposed before stirring up a commotion.""}"
+246	246		306							
+247	247		202							{1: '1'}
+248	248		401							{1: '2', 2: '5286'}
+249	249		301				DialogDisable			"{3: 'You strip off the employee\'s jacket, put it on, then change your ""briefcase"" back into its true form—a clipboard and a sign—and walk straight in.'}"
+250	250		401							{1: '2', 2: '5370'}
+251	251		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory685.jpg', 3: '0', 4: '1', 5: '1.2'}
+252	252		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory685.jpg'}
+253	253		205							{1: '999'}
+254	254		301			DialogEnable				"{3: ""The rest of the mission goes without a hitch. With the right uniform and confidence, accessing a terminal connected to the airport's internal network is easy.""}"
+255	255		301							{3: 'With so many devices requiring network connectivity, airport security really depends more on data firewalls rather than physical barriers.'}
+256	256		301				AniZhuanchangBegin			{3: 'You connect the decryption device and successfully implant the virus. Now, paralyzing their entire system is just one button away.'}
+257	257		401						2000.0	{1: '1', 2: '36'}
+258	258		401							{1: '1', 2: '102'}
+259	259		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory418.jpg'}
+260	260		103							{1: '1.5', 2: '38|20|-200'}
+261	261		301			AniZhuanchangEnd				{3: 'You leave the employee area after changing into a suit to blend in with the crowd. Just as you are about to exit, an announcement blares over the PA.'}
+262	262		401							{1: '2', 2: '4923'}
+263	263		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo.prefab', 2: '2'}
+264	264		301							{2: 'Electronic Voice', 3: 'Attention valued passengers, the airport is conducting an emergency security check. Please remain calm and stay where you are until further instructions.'}
+265	265		301				DialogDisable			{2: 'Electronic Voice', 3: 'Attention valued passengers...'}
+266	266		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo.prefab'}
+267	267		302							{2: 'Dandelion?', 3: '268'}
+268	268		301			DialogEnable				{2: 'Earpiece', 3: '...'}
+269	269		301							{3: 'The encrypted channel is jammed. You immediately remove your earpiece and chuck it into a garbage can.'}
+270	270		301							"{3: ""The airport's reaction speed is shocking, but you're not a professional hacker like Teddy.""}"
+271	271		301							"{3: ""You recall seeing guards in areas that should've been empty. Perhaps it has to do with the theater attack, which likely increased security levels across all important parts of the city.""}"
+272	272		401							{1: '2', 2: '4884'}
+273	273		301				DialogDisable			{3: 'Any delay could mean trouble. You tap the button on your decryption device and, in an instant, the humming of countless machines throughout the airport falls silent.'}
+274	274		306							{1: '1'}
+275	275		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory401.jpg', 3: '0', 4: '1', 5: '0.5'}
+276	276		104							{1: '15|365|-400', 2: '0', 4: '3'}
+277	277		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+278	278		301			DialogEnable	DialogDisable			{3: 'Outside the massive airport windows, the exterior lights of several aircraft and their connecting jetways switch to red in the blink of an eye.'}
+279	279		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory38.jpg', 3: '1', 4: '0', 5: '0.5'}
+280	280		104							{1: '15|365|-400', 2: '0', 4: '3'}
+281	281		306							
+282	282		505						550.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+283	283		401							{1: '2', 2: '4923'}
+284	284		401							{1: '2', 2: '4916'}
+285	285		301			DialogEnable				{3: 'The hall erupts into chaos—human voices mix with blaring announcements as panic spreads like wildfire.'}
+286	286		205							{1: '999'}
+287	287		104							{1: '0|0|0', 2: '0', 4: '3'}
+288	288		301							{3: 'Mission accomplished. Time to get out of here.'}
+289	289		401							{1: '2', 2: '1543'}
+290	290		104							{1: '38|100|-200', 2: '0.25'}
+291	291		301							{3: 'You lower your head and follow the crowd toward the security checkpoint.'}
+292	292		104							{1: '38|100|-250', 2: '1'}
+293	293		301						1200.0	{3: 'If I can just get past here...'}
+294	294		402							{1: '4916'}
+295	295		201							{1: '1', 2: '501171'}
+296	296		301							{1: '1', 2: 'Guard', 3: '...', 4: '1'}
+297	297		306							{1: '1'}
+298	298		104							{1: '38|120|-300', 2: '0.4'}
+299	299		203							{1: '1', 2: '0.4', 4: '-109', 5: '-100'}
+300	300		301							"{3: ""You look up and lock eyes with a guard in the distance. Unfortunately, it's the person you met in the employee area.""}"
+301	301		301				DialogDisable			"{3: ""The guard's face scrunches in suspicion. Shock flashes across his eyes as he reaches for his radio.""}"
+302	302		306							
+303	303		202							{1: '1'}
+304	304		104						450.0	{1: '38|100|-200', 2: '0.4'}
+305	305		302							"{2: ""(Well... here's trouble.)"", 3: '306'}"
+306	306		301			DialogEnable				{3: 'A maintenance worker in a suit and an airport in chaos—anyone would find that suspicious.'}
+307	307		302							{2: '(Wait and observe)', 3: '308', 4: '(Force your way out)', 5: '308'}
+308	308		401							{1: '2', 2: '4556'}
+309	309		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+310	310		301			RImgBg1Shake				{3: 'Bang!'}
+311	311		301							{3: 'As you make up your mind, a loud noise erupts behind you.'}
+312	312		401							{1: '2', 2: '9342045'}
+313	313		201							{1: '1', 2: '500138', 4: '500'}
+314	314		203							{1: '1', 2: '0.5', 3: '-1450'}
+315	315		301						550.0	"{3: ""A man whose face you can't see knocks over everything and runs further into the building, instantly drawing everyone's attention.""}"
+316	316		202							{1: '1', 6: '1'}
+317	317		401							{1: '2', 2: '1504'}
+318	318		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+319	319		401							{1: '2', 2: '4895'}
+320	320		201							{1: '1', 2: '501178'}
+321	321		201							{1: '2', 2: '501178', 4: '-800'}
+322	322		201							{1: '3', 2: '501178', 4: '800'}
+323	323		203							{1: '1', 2: '0.4', 5: '-50'}
+324	324		203							{1: '2', 2: '0.4', 3: '-550'}
+325	325		203							{1: '3', 2: '0.4', 3: '550'}
+326	326		301							{1: '1', 3: 'Almost all security personnel start rushing after the man.'}
+327	327		402							{1: '1504'}
+328	328		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+329	329		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+330	330		201							{1: '1', 2: '501171'}
+331	331		301							{1: '1', 3: 'The guard is distracted for a moment and his hand moves away from the radio, but he turns around again to move toward you.'}
+332	332		302							{2: '(Continue with your plan)', 3: '333', 4: '(Try a different approach)', 5: '333'}
+333	333		202							{1: '1'}
+334	334		301							{3: 'Unexpected events are happening faster than you can think. As your body remains tense, a familiar voice reaches you.'}
+335	335		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+336	336		201							{1: '1', 2: '501184', 3: '2'}
+337	337		301							"{1: '1', 2: 'Iris', 3: ""Darling, I've found you."", 4: '1'}"
+338	338		301							{3: 'Iris, now without her disguise, appears beside you out of nowhere. She is carrying a tall instrument case and speaks in a higher pitch than usual.'}
+339	339		204							{1: '1', 2: '1'}
+340	340		301							"{2: 'Iris', 3: ""My performance is about to begin. If we waste any more time, I'll be late."", 4: '1'}"
+341	341		301							{2: 'Iris', 3: 'I was hoping we could have dinner together...', 4: '1'}
+342	342		302							{2: 'Oh, of course.', 3: '343', 4: 'Okay, honey.', 5: '343'}
+343	343		201							{1: '18', 2: '501171', 4: '-230', 5: '-244', 6: '200'}
+344	344		301							{1: '1', 2: 'Guard', 3: '...', 4: '18'}
+345	345		202							{1: '18'}
+346	346		401						300.0	{1: '2', 2: '4341'}
+347	347		402							{1: '4341'}
+348	348		301							{3: 'You glance at the security guard from the corner of your eye. Seeing your interaction, he pauses before walking away.'}
+349	349		302							{2: 'Thank you...', 3: '350'}
+350	350		203						200.0	{1: '1', 2: '0.3', 5: '-50'}
+351	351		401							{1: '2', 2: '2936'}
+352	352		301				AniZhuanchangBegin			{3: 'Iris links her arm with yours with a smile, and you walk side by side through the security checkpoint.'}
+353	353		202							{1: '1', 6: '1'}
+354	354		401						2000.0	{1: '1', 2: '36'}
+355	355		401							{1: '1', 2: '6154'}
+356	356		401							{1: '2', 2: '4231'}
+357	357		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1200.jpg'}
+358	358		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront47.png', 4: '4'}
+359	359		301			AniZhuanchangEnd				"{3: ""You can't go back to the vehicle where Dandelion is —they've already left. It would be easily spotted by airport police.""}"
+360	360		301							"{3: ""Iris and I get into another car belonging to Jonathan's Studio and leave from the airport.""}"
+361	361		301							{3: 'You keep your hands on the steering wheel and glance at a smiling Iris.'}
+362	362		302							{2: 'You are in a good mood?', 3: '363'}
+363	363		201							{1: '1', 2: '501184'}
+364	364		301							"{1: '1', 2: 'Iris', 3: ""...Aren't you? We finished the mission!"", 4: '1'}"
+365	365		302							{2: 'Who caused the commotion back there?', 3: '366'}
+366	366		301				DialogDisable			"{2: 'Iris', 3: ""A person Jonathan hired to create a scene. He didn't cause much damage, so the lawyers will get him out quickly."", 4: '1'}"
+367	367		302							{2: 'He was a huge help.', 3: '368'}
+368	368		302							"{2: 'Also... your ""performance"" earlier was also...', 3: '369'}"
+369	369		204							{1: '1', 2: '17'}
+370	370		301			DialogEnable				{2: 'Iris', 3: '...', 4: '1'}
+371	371		301							{3: 'Iris suddenly falls silent. She presses her lips together and turns her head away. She becomes unusually serious.'}
+372	372		204							{1: '1', 2: '4'}
+373	373		301							"{2: 'Iris', 3: ""I've never acted like that with anyone else. You're the first and will be the only one."", 4: '1'}"
+374	374		302							{2: '...'}
+375	375		301							"{3: ""Iris's sudden change in tone catches you off guard.""}"
+376	376		202							{1: '1', 6: '1'}
+377	377		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+378	378		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory539.jpg'}
+379	379		104							{1: '-60|-292|0', 2: '0'}
+380	380		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront53.png', 4: '4'}
+381	381		103							{1: '1', 3: '4'}
+382	382		504							{1: '0.7'}
+383	383		201							{1: '1', 2: '501184', 3: '1', 5: '-120', 7: '1'}
+384	384		301							{1: '1', 2: 'Iris', 3: 'If my past self were writing this, I probably would have made the resolution process more complex, like you said.', 4: '1'}
+385	385		204							{1: '1', 2: '7'}
+386	386		301							{2: 'Iris', 3: 'Until someone taught me a valuable lesson through their actions.', 4: '1'}
+387	387		301							{3: 'Something enigmatic flashes in her eyes. Whoever Iris is referring to is clearly important to her.'}
+388	388		204							{1: '1', 2: '10'}
+389	389		301							{2: 'Iris', 3: 'Before immersing in imagination and beauty, one should focus more on reality.', 4: '1'}
+390	390		202							{1: '1', 6: '1'}
+391	391		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+392	392		504							{1: '0'}
+393	393		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1200.jpg'}
+394	394		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront47.png', 4: '4'}
+395	395		301				DialogDisable			"{3: ""I almost forgot. There's someone extremely important in Iris's life. Your comments were a bit insensitive.""}"
+396	396		302							"{2: ""...I'm sorry."", 3: '397', 4: ""I didn't mean to offend...""}"
+397	397		302							"{2: ""It's just..."", 3: '398'}"
+398	398		202							{1: '1'}
+399	399		301			DialogEnable				"{3: ""Words hover at the tip of your tongue, but you can't get them out. You don't know how to explain yourself.""}"
+400	400		301							{3: 'Iris, who has always been understanding since you first met, falls silent.'}
+401	401		301							{3: 'Silence fills the car.'}
+402	402		302							{2: '(Remain silent)', 3: '403', 4: '(Apologize again)', 5: '403'}
+403	403		301							{3: 'Before you can collect your scattered thoughts, the car passes an intersection, and Iris suddenly speaks.'}
+404	404		201							{1: '1', 2: '501184', 3: '17'}
+405	405		301				DialogDisable			{1: '1', 2: 'Iris', 3: 'Go left.', 4: '1'}
+406	406		202							{1: '1'}
+407	407		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory377.png', 3: '0', 4: '1', 5: '1.5'}
+408	408		104						2000.0	{1: '-339|-110|-300', 2: '0', 4: '3'}
+409	409		103							{1: '1.1'}
+410	410		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory377.png'}
+411	411		104							{1: '-339|-110|-300', 2: '0'}
+412	412		205							{1: '999'}
+413	413		104							{1: '0|0|0', 2: '0', 4: '3'}
+414	414		301			DialogEnable				{3: 'You turn the steering wheel, comparing her instruction with the route in your memory.'}
+415	415		302							"{2: ""Aren't we going back?"", 3: '416'}"
+416	416		201							{1: '1', 2: '501184'}
+417	417		301							{1: '1', 2: 'Iris', 3: 'We have something else to do.', 4: '1'}
+418	418		301							"{3: ""Iris speaks in her usual gentle tone. You feel relieved and turn to look at her at a red light, only to see she's been staring at you this whole time.""}"
+419	419		302							"{2: ""What's wrong?"", 3: '420'}"
+420	420		204							{1: '1', 2: '1'}
+421	421		301							"{2: 'Iris', 3: ""You promised me something at the airport, didn't you?"", 4: '1'}"
+422	422		204							{1: '1', 2: '2'}
+423	423		301							"{2: 'Iris', 3: ""Let's have dinner together..."", 4: '1'}"
+424	424		202							{1: '1'}
+425	425		301							{3: 'Iris looks away, a flush of red creeping up her neck.'}
+426	426		306							{1: '1'}
+427	427		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0.5'}
+428	428		201							{1: '1', 2: '501184', 3: '10'}
+429	429		301							{1: '1', 3: 'One final word floats quietly on her lips, heard only by herself.'}
+430	430		204							{1: '1', 2: '11'}
+431	431		301		1		AniZhuanchangBegin			{2: 'Iris', 3: 'Darling.', 4: '1'}

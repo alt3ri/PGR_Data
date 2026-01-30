@@ -1,0 +1,466 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1322.jpg'}
+2	2		401							{1: '1', 2: '79'}
+3	3		301			DialogEnable				"{3: ""Maybe it's because humans hadn't been around for eons, but the lions aren't too wary of the newcomers. Once they figure out you aren't a threat, and with the lioness queen's silent approval, the two of you and the lion cub settle in and get along just fine with the pride.""}"
+4	4		301							"{3: ""Cubs are the most high-energy troublemakers on the savanna, and before long, Veronica's one-on-one sessions turn into a wild free-for-all for all the young lions.""}"
+5	5		401							{1: '2', 2: '5886'}
+6	6		301							{3: 'These fluffy future rulers of the savanna really start to show their true colors. The tacticians pull off sneaky attacks from behind, the aggressive ones come at you from every angle, the social butterflies get everyone in on a group assault, and the hopeless one—your own cub—whimpers and makes a beeline for you.'}
+7	7		302							"{2: ""Hey, get off me! You'll get me in hot water, too!"", 3: '8', 4: 'Hang on a minute—', 5: '8'}"
+8	8		301							{3: 'Of course, you have to get the dud.'}
+9	9		201							{1: '1', 2: '501366', 5: '-20', 6: '-200'}
+10	10		301							{1: '1', 2: 'Veronica', 3: 'Beat it!', 4: '1', 18: '100011851'}
+11	11		302							{2: 'Huh?', 3: '12', 4: '...', 5: '12'}
+12	12		204							{1: '1', 2: '10'}
+13	13		301							"{2: 'Veronica', 3: ""It'll never take its training seriously with you around."", 4: '1', 18: '100011852'}"
+14	14		204							{1: '1'}
+15	15		301							"{2: 'Veronica', 3: ""Oh, so who was it that said if we raise it away from the pride, it'll lose all its survival skills in the wild?"", 4: '1', 18: '100011853'}"
+16	16		301							"{2: 'Veronica', 3: ""What exactly do you think you're doing? Are you trying to make sure it's a social pariah, a complete pushover that can't fight, hunt, or fend for itself? Are you trying to get it rejected by every pride it encounters?"", 4: '1', 18: '100011854'}"
+17	17		202							{1: '1'}
+18	18		301							"{3: ""Suddenly, you feel a pang of guilt. You sheepishly scratch your nose and take a few steps back under Veronica's steely gaze.""}"
+19	19		302							"{2: ""(Why do I feel like... I've fast-forwarded to the joys of helping a kid with their homework?)"", 3: '20'}"
+20	20		301							{3: 'The moment you move, however, you become fair game. The cubs swarm you like a plague of locusts, a tumbling mass of fur, pushing and shoving as they crowd around your feet.'}
+21	21		302							{2: 'Whoa, easy now—watch out!', 3: '22'}
+22	22		201							{1: '1', 2: '501366', 4: '-500', 5: '-20', 6: '-200'}
+23	23		203							{1: '1', 2: '0.5', 3: '-250', 4: '-20', 5: '-200'}
+24	24		301							"{1: '1', 3: ""Veronica's brow furrows as she steps forward, determined to knock some sense into this rowdy pack of cubs.""}"
+25	25		104							{1: '0|0|-100', 2: '0.5'}
+26	26		301							"{3: ""Meanwhile, you frantically try to dodge the cubs' reckless charges, but find yourself trapped in a living quicksand of fur and paws. With each attempt to step free, you stumble and lose your footing, surrounded on all sides.""}"
+27	27		203							{1: '1', 2: '0.5', 4: '-20', 5: '-200'}
+28	28		301							{3: 'And so, the chaos pushes the two figures closer and closer together.'}
+29	29		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+30	30		202							{1: '1', 6: '1'}
+31	31		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1322.jpg'}
+32	32		401							{1: '2', 2: '4044'}
+33	33		401							{1: '2', 2: '5914'}
+34	34		301			RImgBg1Shake				{3: 'Bam!'}
+35	35		401							{1: '2', 2: '4306'}
+36	36		301							"{3: ""Flesh meets metal as they collide—and worse than the unexpected pain is the undeniable realization that you've just made physical contact with Veronica again.""}"
+37	37		302							{2: '(Oh boy...)', 3: '38', 4: '(I just bumped into her...)', 5: '38'}
+38	38		301							"{3: ""You haven't forgotten Veronica's visceral aversion to human contact. Rubbing your sore spot, you cautiously look up to gauge her reaction.""}"
+39	39		201							{1: '1', 2: '501366', 3: '10', 5: '-20', 6: '-200'}
+40	40		301				DialogDisable			"{1: '1', 3: ""Her chin is up, all high and mighty, with that same old smug look. Her stare is ice-cold, like she is ready to go off the deep end at a moment's notice.""}"
+41	41		302							"{2: '(I should probably just apologize.)', 3: '42', 4: ""(She's not going to hit me, is she?)"", 5: '42'}"
+42	42		302							{2: 'Uh—'}
+43	43		204							{1: '1', 2: '10'}
+44	44		301			DialogEnable				{2: 'Veronica', 3: 'Tch... some fragile carbon-based lifeforms you are.', 4: '1', 18: '100011855'}
+45	45		202							{1: '1'}
+46	46		301							"{3: ""But instead of blowing her top, Veronica just gives you that irritated look you're too used to by now.""}"
+47	47		302							{2: '(Oh, excuse me for not being as great as a mechanoid...)', 3: '48', 4: '...', 5: '48'}
+48	48		201							{1: '1', 2: '501366', 3: '5', 5: '-20', 6: '-200'}
+49	49		301			DialogShake				"{1: '1', 2: 'Veronica', 3: ""We don't have all day. Get over here!"", 4: '1', 18: '100011856'}"
+50	50		301							{2: 'Veronica', 3: 'Alright, everyone, listen up. Time for practice. No excuses, no goofing off.', 4: '1', 18: '100011857'}
+51	51		202							{1: '1'}
+52	52		301							{3: 'After chewing out the trainees, Veronica turns on her heel and stomps off. The argument that seemed like it was about to go up in flames just fizzled out into thin air.'}
+53	53		302							{2: 'Must be my lucky day...', 3: '54', 4: 'I dodged a bullet there...', 5: '54'}
+54	54		401							{1: '2', 2: '2936'}
+55	55		301							"{3: ""Lounging comfortably in the shade, the distant sound of Veronica's stern words fades into the background.""}"
+56	56		302				AniZhuanchangBegin			{2: 'How does this feel like a vacation again?', 3: '57', 4: 'Perfect for a nap.', 5: '57'}
+57	57		401						2000.0	{1: '1', 2: '36'}
+58	58		401							{1: '1', 2: '6151'}
+59	59		201							{1: '1', 2: '501359'}
+60	60		401							{1: '2', 2: '5888'}
+61	61		301			AniZhuanchangEnd				{1: '1', 2: 'Lion Cub', 3: 'Grrr...', 4: '1'}
+62	62		202							{1: '1'}
+63	63		301							{3: 'At some point, one of the little troublemakers has done a runner and snuck back in. The tiny cub keeps nudging its fluffy head against your hand, dropping a not-so-subtle hint for attention.'}
+64	64		302							{2: 'Alright, alright, get a pat.', 3: '65', 4: 'Look at you, sneaking back here.', 5: '65', 6: '...', 7: '65'}
+65	65		401							{1: '2', 2: '5888'}
+66	66		301							{3: 'Glancing nervously toward Veronica, the stern instructor shoots daggers at you—a silent order to get the cub back to training.'}
+67	67		301							{3: 'You lift the fuzzy cub, give a little wave to Veronica, then shamelessly plop it right back in your lap and start scratching its fluffy belly fur.'}
+68	68		201							{1: '1', 2: '501366', 3: '10', 5: '-20', 6: '-200'}
+69	69		301							{1: '1', 2: 'Veronica', 3: '...', 4: '1', 18: '100011858'}
+70	70		302							"{2: ""It's fine. We'll have a little play—it won't mess with training."", 3: '71', 4: ""You gotta go back soon. Your master instructor's waiting."", 5: '71', 6: ""Take a break now, and I'll personally catch you up later."", 7: '71'}"
+71	71		202							{1: '1', 6: '1'}
+72	72		201							{1: '1', 2: '501359'}
+73	73		401							{1: '2', 2: '5887'}
+74	74		301							{1: '1', 2: 'Lion Cub', 3: 'Rawr, raawwwr.', 4: '1'}
+75	75		202							{1: '1'}
+76	76		301				AniZhuanchangBegin			"{3: ""Pretty soon, one runaway after another show up until you're surrounded by fuzzy lion cubs, all melting into puddles of fluff from the expert petting technique.""}"
+77	77		101						5000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1322.jpg'}
+78	78		301			AniZhuanchangEnd				{3: 'As the cubs get bigger and heavier by the day, this vacation-like existence just drifts on. The days and nights all blur together, and before long, several heavy downpours have come and gone.'}
+79	79		301							"{3: ""On a peaceful afternoon, the cubs who've played hooky from their lessons are up to their usual antics, treating you like a jungle gym and getting into all sorts of mischief. The boldest little troublemaker in the house has staked its claim to the top of the heap, perched on your head like it owns the place.""}"
+80	80		301							"{3: ""Veronica comes back to the pride after finishing her lesson, carrying the one cub who's actually put her nose to the grindstone. The little one is the pride queen's only surviving daughter from this year's litters.""}"
+81	81		301							"{3: ""Unlike your other rescues, who are a bit on the fragile side, this one is in robust health, and even though she's just a little thing, she already has her mother's calm demeanor and sharp wits.""}"
+82	82		302							{2: 'Hey there, can I give you a pet?', 3: '83'}
+83	83		301				DialogDisable			{3: 'As you reach for the precocious cub, the little lioness lets out a loud hiss, puffing up like a fluff ball of pure indignation before bolting away with a quickness that is something to behold.'}
+84	84		302							{2: 'Not a fan of being petted, I see.', 3: '85'}
+85	85		302							{2: 'Veronica, how about you give them a little playtime?', 3: '86'}
+86	86		301			DialogEnable				{3: 'Cubs at this age are basically little whirlwinds of energy. Even a drill sergeant would have a tough time keeping up with them.'}
+87	87		201							{1: '1', 2: '501366', 3: '10', 5: '-20', 6: '-200'}
+88	88		301							{1: '1', 2: 'Veronica', 3: 'I already have my hands full with their training. Babysitting them is your job.', 4: '1', 18: '100011859'}
+89	89		301							{3: 'Veronica backs away, her tail retreating as if in disgust, while she taps the ground with a bored look on her face.'}
+90	90		302							{2: '(Why am I the one stuck with cub duty...)', 3: '91', 4: '(You could at least lend a hand...)', 5: '91'}
+91	91		202							{1: '1'}
+92	92		301							"{3: ""With a gentle nudge to the cub's plump little behind, you steer the cub toward Veronica's tail. The swishing appendage is like a moth to a flame for the little one. Sturdy little paws come out as the cub pounces forward—""}"
+93	93		201							{1: '1', 2: '501366', 3: '5', 5: '-20', 6: '-200'}
+94	94		301							"{1: '1', 3: ""Veronica shoots a piercing glare that could curdle milk, fixing you with an irritated look. She's caught the culprit behind this whole mess red-handed.""}"
+95	95		204							{1: '1', 2: '4'}
+96	96		301							{2: 'Veronica', 3: 'Hmph.', 4: '1', 18: '100011860'}
+97	97		202							{1: '1'}
+98	98		401							{1: '2', 2: '5887'}
+99	99		301							"{3: ""Veronica's flicking tail is an instant hit with the cubs. Like a cat playing with a ball of yarn, she keeps her eyes closed, still as a statue, while her tail sends the little ones scrambling across the field with excited yowls.""}"
+100	100		401							{1: '2', 2: '5888'}
+101	101		301							{3: 'Then, with a casual flick of her wrist, she scoops up the very female cub that had turned up her nose at your touch. Right under your nose, Veronica takes her sweet time, methodically grooming the little one from head to tail.'}
+102	102		302				AniZhuanchangBegin			"{2: ""(She's really rubbing it in!)"", 3: '103'}"
+103	103		401						2000.0	{1: '1', 2: '36'}
+104	104		401							{1: '1', 2: '5059'}
+105	105		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1016.jpg'}
+106	106		301			AniZhuanchangEnd				"{3: 'After another light shower, the acacia trees have new, soft branches. You wave a few into a green ""laurel"" and look over. The cubs, taking a breather from their special training, are chugging their daily nutritional supplement with loud gulps.'}"
+107	107		401							{1: '2', 2: '5888'}
+108	108		301							"{3: 'The vain male lion from the pride comes strutting over too. For the sake of that sweet baby formula, he has learned to butter you up all on his own, becoming a ""fierce warrior"" on command.'}"
+109	109		302							{2: 'Here.', 3: '110'}
+110	110		301							"{3: 'Under Veronica\'s questioning gaze, you offer her the freshly woven ""laurel.""'}"
+111	111		302							"{2: ""We give laurels to winners. It's for the little one who keeps losing."", 3: '112'}"
+112	112		201							{1: '1', 2: '501366', 3: '4', 5: '-20', 6: '-200'}
+113	113		301							"{1: '1', 2: 'Veronica', 3: ""Since it's a victor's crown, it should belong to the winner."", 4: '1', 18: '100011861'}"
+114	114		204							{1: '1', 2: '11'}
+115	115		301							{2: 'Veronica', 3: 'Everyone up! Time for a fight!', 4: '1', 18: '100011862'}
+116	116		202							{1: '1'}
+117	117		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+118	118		301				AniZhuanchangBegin			"{3: 'Under Veronica\'s watchful eye, the cubs—now thick as thieves from their shared training—reluctantly tear themselves away from their snacks and throw themselves into the ""Cub Wrestling Championship.""'}"
+119	119		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1016.jpg'}
+120	120		301			AniZhuanchangEnd				"{3: ""With great ceremony, Veronica crowns the winner with a human-woven laurel. Sadly, the little one is at the bottom of the pile; the champion is the lioness queen's daughter.""}"
+121	121		401						500.0	{1: '2', 2: '5887'}
+122	122		301							{2: 'Lion Cubs', 3: 'Rawr—Raaaawwwr—'}
+123	123		301							"{3: ""All their roughhousing seems to have created a real bond between the cubs. They're as close as can be. Even the little one can now sneak in for feeding time without getting chased away.""}"
+124	124		301							"{3: 'The vain male lion struts over, gives the ""laurel"" on the little lioness\'s head a once-over, and then turns a longing gaze toward Veronica.'}"
+125	125		201							{1: '1', 2: '501366', 5: '-20', 6: '-200'}
+126	126		301							{1: '1', 2: 'Veronica', 3: '...', 4: '1', 18: '100011863'}
+127	127		202							{1: '1'}
+128	128		301							"{3: ""The cold, mechanical look Veronica gave him is a clear no-go. The lion, crestfallen, slumps nearby and begins scarfing down the cubs' food—specially prepared meat, ground to a pulp.""}"
+129	129		302							{2: 'Emotional eating, are we?', 3: '130', 4: 'Are you really that bummed out?', 5: '130'}
+130	130		301							"{3: ""Reaching out, you start stroking the male lion's messy mane, casually weaving a rough little braid. The lion, vain as ever, shakes his massive head with delight, his new braid swinging back and forth with surprising charm.""}"
+131	131		401							{1: '2', 2: '5889'}
+132	132		301							{3: 'Rargh—!'}
+133	133		301							{3: 'With a new lease on life, the lion trots to his favorite puddle to admire his reflection. The lioness queen, who is by the water, lazily flicks her tail, saunters over to Veronica, and rolls her eyes at the whole silly display.'}
+134	134		301							"{3: ""When Veronica sees the lioness roll her eyes, she is a bit taken aback. She leans in to check if there is something wrong with the lioness's eyes, like maybe the socket is out of whack.""}"
+135	135		302							"{2: ""Don't worry. There's nothing wrong with her eyes."", 3: '136'}"
+136	136		201							{1: '1', 2: '501366', 5: '-20', 6: '-200'}
+137	137		301							"{1: '1', 2: 'Veronica', 3: ""I wasn't worried."", 4: '1', 18: '100011864'}"
+138	138		302							"{2: ""Fine, fine, you weren't worried and you don't care either."", 3: '139'}"
+139	139		301							"{3: ""Veronica's temper flares, and she shoots you an irritated look. It's nothing compared to the murderous glare she'd given you before—this is just a bit of a tiff.""}"
+140	140		302							"{2: ""Come on, admit it. You've already got a soft spot for them."", 3: '141', 4: ""I do like them, and so do you, don't you?"", 5: '141'}"
+141	141		202							{1: '1'}
+142	142		301				AniZhuanchangBegin			"{3: ""Veronica doesn't answer, instead looking off into the distance at the frolicking lion cubs. The mechanical girl and the human are right at home among the pride, as if they've been there all along. The lions have taken the oddball cub and its peculiar guardians under their wing.""}"
+143	143		402							{1: '5059'}
+144	144		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1322.jpg'}
+145	145		502							{1: 'RImgBg1Shake'}
+146	146		401						400.0	{1: '2', 2: '2513'}
+147	147		401						200.0	{1: '2', 2: '2513'}
+148	148		401							{1: '2', 2: '2513'}
+149	149		301			AniZhuanchangEnd				{3: 'BAM—BAM BAM—'}
+150	150		401						400.0	{1: '2', 2: '2513'}
+151	151		401							{1: '1', 2: '166'}
+152	152		401							{1: '2', 2: '759'}
+153	153		301							{3: 'Several gunshots break the peaceful quiet of the savanna.'}
+154	154		401						500.0	{1: '2', 2: '4833'}
+155	155		401							{1: '2', 2: '4779'}
+156	156		301							"{3: ""The days of calm haven't lulled them into a false sense of security. The second the gunshots ring out, they dive behind a rocky outcrop, their hand already on their weapon.""}"
+157	157		302							"{2: 'Veronica, watch out!', 3: '158', 4: ""What's going on?"", 5: '158'}"
+158	158		401							{1: '2', 2: '4373'}
+159	159		201							{1: '1', 2: '501366', 3: '5', 6: '-200'}
+160	160		401							{1: '2', 2: '4895'}
+161	161		203							{1: '1', 2: '0.3', 4: '-20', 5: '-200'}
+162	162		301							{1: '1', 3: 'Veronica swoops down from above, hovering over an acacia tree, her gaze fixed on the direction of the gunfire. Her expression is dead serious.'}
+163	163		301							{2: 'Veronica', 3: 'Gunshots. Human ones.', 4: '1', 18: '100011865'}
+164	164		202							{1: '1'}
+165	165		306							{1: '1'}
+166	166		301							"{3: ""Veronica's memory data is suDDenly flooded with the memory of that skinned lioness from the day they found the cub.""}"
+167	167		306							
+168	168		301							"{3: ""It's hunting time for the pride and the cubs are along for the ride, getting their first taste of the hunt. Luckily, they aren't too far off. Veronica and you exchange a look that says it all and take off like a shot toward the sound of the guns.""}"
+169	169		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '3'}
+170	170		201							{1: '1', 2: '501358', 3: '7'}
+171	171		401							{1: '2', 2: '5887'}
+172	172		301							{1: '1', 2: 'Lion Cub', 3: 'Grrr—Mewl—', 4: '1'}
+173	173		202							{1: '1'}
+174	174		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+175	175		301							"{3: ""Halfway there, you run smack into the little one and the lioness cub, wailing their little hearts out. You kneel down just in time for the cubs to barrel straight into your arms. The little one's fur is on end, and it's shaking like a leaf, instinctively seeking comfort and a safe harbor.""}"
+176	176		302							{2: 'Looks like something bad really did happen...', 3: '177'}
+177	177		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+178	178		401							{1: '2', 2: '4895'}
+179	179		104							{1: '0|0|-100', 2: '0.5'}
+180	180		301				DialogDisable			"{3: ""With her jaw set, Veronica bolts toward the pride's hunting grounds.""}"
+181	181		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+182	182		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+183	183		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1017.jpg'}
+184	184		502							{1: 'RImgBg1Shake'}
+185	185		401						400.0	{1: '2', 2: '2513'}
+186	186		401						200.0	{1: '2', 2: '2513'}
+187	187		401							{1: '2', 2: '5890'}
+188	188		301			DialogEnable				{3: 'The pride has a whole convoy of wanderers surrounding it. The air is thick with the roar of lions and the crackle of gunfire as the wanderers work together like a well-oiled machine, laying down covering fire for each other.'}
+189	189		301							"{3: ""The moment Veronica and you show up, the lioness queen, who had been holding her own, suddenly goes off the deep end. She lets out an angry roar at you two through the gunfire, trying to warn you off and get you out of harm's way.""}"
+190	190		401							{1: '2', 2: '10021507'}
+191	191		302			RImgBg1Shake				{2: 'Ugh—', 3: '192'}
+192	192		301							{3: 'In the blink of an eye, a bullet grazes your cheek.'}
+193	193		401							{1: '2', 2: '5889'}
+194	194		401						400.0	{1: '2', 2: '2513'}
+195	195		401						200.0	{1: '2', 2: '2513'}
+196	196		502							{1: 'RImgBg1Shake'}
+197	197		301							"{3: ""RAAWWWR———The lioness queen loses it, letting out a furious roar and charging with all her might at the vehicle that fires the shot. The wanderers' defenses go belly up in an instant, and a hail of bullets flies straight for the lioness.""}"
+198	198		302							{2: 'Hold your horses!', 3: '199'}
+199	199		401							{1: '2', 2: '5845'}
+200	200		201							{1: '1', 2: '500259'}
+201	201		301			DialogShake				{1: '1', 2: 'Wanderer A', 3: 'Woah, stop... I think there are people out there.', 4: '1', 18: '100011866'}
+202	202		203							{1: '1', 2: '0.25', 3: '400'}
+203	203		201							{1: '2', 2: '500392', 4: '-400'}
+204	204		301							"{1: '1', 2: 'Wanderer B', 3: ""Cease fire! Cease fire! Don't shoot! There are other people out there."", 4: '2', 18: '100011867'}"
+205	205		202							{1: '1', 2: '2', 6: '1'}
+206	206		301							{3: 'The wanderers all hold their fire. Taking this chance, you give them a once-over and see that their firepower is nothing to write home about.'}
+207	207		306							{1: '1'}
+208	208		301							"{3: ""This isn't some fly-by-night crew of young bucks. This squad has a mix of elderly people, women, and kids. They even have wounded folks they're taking care of in their vehicles. They seem like a tight-knit bunch, holding each other up in this apocalypse and watching each other's backs.""}"
+209	209		306							
+210	210		201							{1: '1', 2: '500398'}
+211	211		301							{1: '1', 2: 'Wanderer Leader', 3: 'Our bad. Are you okay?', 4: '1', 18: '100011868'}
+212	212		301							"{2: 'Wanderer Leader', 3: ""The name's Sewani. I'm the one in charge here. What are you doing out in these parts?"", 4: '1', 18: '100011869'}"
+213	213		202							{1: '1', 6: '1'}
+214	214		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '3'}
+215	215		401							{1: '2', 2: '970804'}
+216	216		301							{3: 'As she takes a step forward, a lance comes out of nowhere, flies right by the tip of her foot, and sticks deep into the ground.'}
+217	217		201							{1: '1', 2: '501366', 3: '5', 5: '-20', 6: '-200'}
+218	218		301							"{1: '1', 2: 'Veronica', 3: ""When death is breathing down your neck, there's no need for a proper introduction."", 4: '1', 18: '100011870'}"
+219	219		204							{1: '1', 2: '5'}
+220	220		301							{2: 'Veronica', 3: 'Hanging around this weirdo human for too long almost made me forget what disgusting creatures your kind really is.', 4: '1', 18: '100011871'}
+221	221		202							{1: '1'}
+222	222		201							{1: '1', 2: '500398'}
+223	223		301			PanelActor1Shake				{1: '1', 2: 'Sewani', 3: 'What? Hey, what are you doing?!', 4: '1', 18: '100011872'}
+224	224		203							{1: '1', 2: '0.25', 3: '500'}
+225	225		401							{1: '2', 2: '5905'}
+226	226		201							{1: '2', 2: '501366', 3: '5', 4: '-1000', 5: '-20', 6: '-200'}
+227	227		401							{1: '2', 2: '4895'}
+228	228		203							{1: '2', 2: '0.3', 3: '-300', 4: '-20', 5: '-200'}
+229	229		301							{1: '1', 3: 'Veronica lunges forward, rips the lance out of the ground, and grabs Sewani by the throat with her free hand.'}
+230	230		302							{2: 'Veronica, stop!', 3: '231', 4: 'Hold on, Veronica!', 5: '231'}
+231	231		301							"{3: ""The mechanical girl's steely gaze meets yours, cold as ice.""}"
+232	232		301							"{2: 'Veronica', 3: ""What? You're sticking up for them?"", 4: '2', 18: '100011873'}"
+233	233		202							{1: '1', 2: '2', 6: '1'}
+234	234		401						200.0	{1: '2', 2: '5889'}
+235	235		401							{1: '2', 2: '5705'}
+236	236		301							{3: 'The pride of lions lets out low rumbles while the wary wanderers grip their weapons tighter.'}
+237	237		201							{1: '1', 2: '501366', 3: '5', 5: '-20', 6: '-200'}
+238	238		301							"{1: '1', 2: 'Veronica', 3: ""Just as I thought—you still see those humans as your own kind, don't you? You can be all sweet and cuddly with these lions, but the moment humans draw steel on them, you'll jump on the human bandwagon in a heartbeat."", 4: '1', 18: '100011874'}"
+239	239		302							{2: '...', 3: '240'}
+240	240		202							{1: '1'}
+241	241		301							{3: 'You let out a weary sigh.'}
+242	242		302							"{2: ""We're all trying to survive. There's no pecking order here."", 3: '243'}"
+243	243		201							{1: '1', 2: '501366', 3: '11', 5: '-20', 6: '-200'}
+244	244		301							"{1: '1', 2: 'Veronica', 3: ""No pecking order? If you didn't think human lives were more important than lions', then why do you only ever stick up for the humans when both sides are hurt? Is this world built on the gospel truth that only humans can hunt animals?"", 4: '1', 18: '100011875'}"
+245	245		204							{1: '1', 2: '5'}
+246	246		301							"{2: 'Veronica', 3: ""You humans lean on your bigger guns to have the last word, don't you?"", 4: '1', 18: '100011876'}"
+247	247		202							{1: '1'}
+248	248		301							"{3: ""Veronica tightens her grip, and a breathless Sewani claws desperately at the mechanical girl's fingers, gasping for air.""}"
+249	249		201							{1: '1', 2: '501366', 3: '5', 5: '-20', 6: '-200'}
+250	250		301							{1: '1', 2: 'Veronica', 3: 'Lucky for me, violence is my bread and butter.', 4: '1', 18: '100011877'}
+251	251		302							{2: 'Let her go!', 3: '252'}
+252	252		301							"{3: ""Your blood runs cold. Under your steely glare, Veronica lets out a cynical laugh and loosens her grip, as you'd asked—only to slam Sewani to the ground with a sickening thud.""}"
+253	253		204							{1: '1', 2: '13'}
+254	254		301				DialogDisable			"{2: 'Veronica', 3: ""So you've thrown in your lot with the humans after all. Fine. If you're not going to protect these creatures, I will."", 4: '1', 18: '100011878'}"
+255	255		302							{2: 'Veronica!', 3: '256'}
+256	256		302							"{2: ""It's natural to be angry when what you love is killed. I get it."", 3: '257'}"
+257	257		301			DialogEnable	DialogDisable			"{3: ""Veronica snorts. Her eyes harden and the tip of her lance trembles in her hand, ready to strike at a moment's notice.""}"
+258	258		302							"{2: ""But they're hunting for food, like how we hunted porcupines."", 3: '259'}"
+259	259		302							"{2: ""Back then, you weren't spouting off about fairness and the gospel truth, were you?"", 3: '260'}"
+260	260		204							{1: '1', 2: '5'}
+261	261		301			DialogEnable				{2: 'Veronica', 3: 'Back then, we had no choice.', 4: '1', 18: '100011879'}
+262	262		302							{2: 'And you think they have a choice now?', 3: '263'}
+263	263		202							{1: '1'}
+264	264		201							{1: '1', 2: '500398'}
+265	265		301			PanelActor1Shake				"{1: '1', 2: 'Sewani', 3: ""Cough... Hold on a second, what are you two even talking about? We'd never go after a lion pride on purpose!"", 4: '1', 18: '100011880'}"
+266	266		301							"{2: 'Sewani', 3: ""We need food, yeah, but... we'd hunt weaker animals, like wildebeests or antelopes. Even going after a lone leopard would be easier!"", 4: '1', 18: '100011881'}"
+267	267		301							"{2: 'Sewani', 3: ""Who in their right mind would pick a fight with lions? We're not out here looking for a death wish."", 4: '1', 18: '100011882'}"
+268	268		302							{2: 'What happened then?', 3: '269'}
+269	269		301							"{2: 'Sewani', 3: ""We only cut through the lions' turf because we were backed into a corner. We must've thrown a wrench in their hunt, and that's why the whole pride came at us..."", 4: '1', 18: '100011883'}"
+270	270		301							"{2: 'Sewani', 3: ""We'd never pull the trigger unless our backs were against the wall. Every bullet we use is one less we'll have later, and who knows what other nasty surprises are waiting for us out there..."", 4: '1', 18: '100011884'}"
+271	271		202							{1: '1', 6: '1'}
+272	272		201							{1: '1', 2: '501366', 3: '5', 5: '-20', 6: '-200'}
+273	273		301							"{1: '1', 2: 'Veronica', 3: ""Hmph... If you don't mess with lions, then what's the deal with that cloak you're wearing?"", 4: '1', 18: '100011885'}"
+274	274		202							{1: '1'}
+275	275		301							{3: 'Sewani is wearing a newly tanned, noticeably rough-looking leather cloak.'}
+276	276		201							{1: '1', 2: '501366', 3: '5', 5: '-20', 6: '-200'}
+277	277		301							"{1: '1', 2: 'Veronica', 3: ""That's made of lion skin, isn't it?"", 4: '1', 18: '100011886'}"
+278	278		202							{1: '1'}
+279	279		301							"{3: ""Facing Veronica's accusation, Sewani's brow furrows, clearly troubled but keeping her cool.""}"
+280	280		201							{1: '1', 2: '500398'}
+281	281		301							"{1: '1', 2: 'Sewani', 3: ""Yeah, you're not wrong, but—"", 4: '1', 18: '100011887'}"
+282	282		202							{1: '1', 6: '1'}
+283	283		201							{1: '1', 2: '501366', 3: '13', 5: '-20', 6: '-200'}
+284	284		301							{1: '1', 2: 'Veronica', 3: 'Never messed with lions? What a load of baloney.', 4: '1', 18: '100011888'}
+285	285		202							{1: '1', 6: '1'}
+286	286		201							{1: '1', 2: '500259'}
+287	287		301							{1: '1', 2: 'Wanderer A', 3: 'No! By the time we stepped in, that lioness was already on her last legs!', 4: '1', 18: '100011889'}
+288	288		202							{1: '1', 6: '1'}
+289	289		201							{1: '1', 2: '501366', 3: '5', 5: '-20', 6: '-200'}
+290	290		301							{1: '1', 2: 'Veronica', 3: 'So you did kill her.', 4: '1', 18: '100011890'}
+291	291		202							{1: '1', 6: '1'}
+292	292		201							{1: '1', 2: '500398'}
+293	293		301							"{1: '1', 2: 'Sewani', 3: ""Would you just let me finish? It wasn't that long ago that we stumbled into a real dust-up between some lions and a herd of buffalo. One of the lionesses got the short end of the stick and was left for dead by her pride."", 4: '1', 18: '100011891'}"
+294	294		301							{2: 'Sewani', 3: 'Her guts were hanging out; she was a goner. We were just putting her out of her misery.', 4: '1', 18: '100011892'}
+295	295		301							"{2: 'Sewani', 3: ""At this point, a quick death would be a blessing. It'd put her out of her misery."", 4: '1', 18: '100011893'}"
+296	296		203							{1: '1', 2: '0.25', 3: '-400', 6: '1'}
+297	297		201							{1: '2', 2: '500259', 4: '400'}
+298	298		301							"{1: '1', 2: 'Wanderer A', 3: ""The hyenas were already circling. Even if we hadn't stepped in, she was just going to go through a slower, more agonizing death."", 4: '2', 18: '100011894'}"
+299	299		202							{1: '1', 2: '2', 6: '1'}
+300	300		201							{1: '1', 2: '501366', 3: '4', 5: '-20', 6: '-200'}
+301	301		301							"{1: '1', 2: 'Veronica', 3: ""So? You're telling me that's your excuse for skinning her and taking her meat?"", 4: '1', 18: '100011895'}"
+302	302		202							{1: '1', 6: '1'}
+303	303		201							{1: '1', 2: '500398'}
+304	304		301							"{1: '1', 2: 'Sewani', 3: ""Look, lady, we get hungry, the nights get cold, and we have kids and sick old people to look after in our cars. Everybody's just trying to make it. The meat was right there for the taking—only a fool would have just walked away, wouldn't they?"", 4: '1', 18: '100011896'}"
+305	305		202							{1: '1', 6: '1'}
+306	306		201							{1: '1', 2: '501366', 3: '5', 5: '-20', 6: '-200'}
+307	307		301				DialogDisable			{1: '1', 2: 'Veronica', 3: 'The meat? That was a living thing. Who gave you the right to just help yourself to whatever you want from anything and everything, all to satisfy your own selfish needs?', 4: '1', 18: '100011897'}
+308	308		202							{1: '1', 6: '1'}
+309	309		302							"{2: ""That's enough, Veronica."", 3: '310'}"
+310	310		302							"{2: ""Nobody here is just taking whatever they want on a whim. There's no shame in trying to survive."", 3: '311'}"
+311	311		201							{1: '1', 2: '501366', 3: '5', 5: '-20', 6: '-200'}
+312	312		401							{1: '2', 2: '4895'}
+313	313		301			DialogEnable				"{1: '1', 3: ""Veronica whips around, shooting you a look that's both furious and disappointing.""}"
+314	314		302							"{2: ""Even if you've seen the worst of humanity, judging people you don't even know is just plain wrong. I—"", 3: '315'}"
+315	315		204							{1: '1', 2: '11'}
+316	316		301			RImgBg1Shake				{2: 'Veronica', 3: 'Shut up!', 4: '1', 18: '100011898'}
+317	317		204							{1: '1', 2: '5'}
+318	318		301							{2: 'Veronica', 3: 'You think a couple of days together gives you the right to get all high and mighty and tell me what to think?', 4: '1', 18: '100011899'}
+319	319		302							"{2: ""I can't tell you what you think, and I wouldn't even try."", 3: '320'}"
+320	320		301				DialogDisable			{2: 'Veronica', 3: 'Then butt out!', 4: '1', 18: '100011900'}
+321	321		302							"{2: ""I just don't think the Veronica I know would throw all logic out the window just to blow off some steam."", 3: '322'}"
+322	322		302							"{2: 'And I think you\'re ""Justice"" because you know what\'s right.', 3: '323'}"
+323	323		301			DialogEnable	DialogDisable			"{3: ""Justice, fairness, truth—they're all just ideas, things you can't touch or see. But for Veronica, living by them has always been her north star.""}"
+324	324		302							"{2: ""Veronica, you're the one who calls the shots, but if fighting to stay alive is a sin, then..."", 3: '325'}"
+325	325		302							"{2: ""You and I, the lions, every life here—we're all guilty."", 3: '326'}"
+326	326		203							{1: '1', 2: '0.2', 4: '-20', 5: '-300'}
+327	327		401							{1: '2', 2: '819016'}
+328	328		301			DialogEnable				{3: 'The cold lancehead presses against your neck again.'}
+329	329		204							{1: '1', 2: '11'}
+330	330		301			DialogShake	DialogDisable			{2: 'Veronica', 3: 'Shut up!', 4: '1', 18: '100011901'}
+331	331		302							{2: '(Lets out a tired sigh.)', 3: '332'}
+332	332		302							{2: 'I believe in you, Veronica.', 3: '333'}
+333	333		302							"{2: ""We're in this together because we see eye to eye. I know I haven't put my faith in the wrong person."", 3: '334'}"
+334	334		204							{1: '1', 2: '13'}
+335	335		301			DialogEnable				"{1: '1', 2: 'Veronica', 3: ""We're in this together?"", 4: '1', 18: '100011902'}"
+336	336		202							{1: '1'}
+337	337		301							"{3: ""Veronica snorts, glaring at you, who've been her traveling companion for days. Now you've turned your back on her, siding with the ghosts of her past.""}"
+338	338		201							{1: '1', 2: '501366', 3: '5', 5: '-20', 6: '-200'}
+339	339		301							"{1: '1', 2: 'Veronica', 3: ""I'm not in this together with a human. I'll never forgive humanity for the suffering and cruelty they've put me through."", 4: '1', 18: '100011903'}"
+340	340		202							{1: '1'}
+341	341		301							"{3: 'Before her stands a group of humans, ""united"" against her, their eyes full of suspicion and disgust. Behind her is nothing but a vast, empty expanse—a place free from human laws, where restless lions roam, their unease unspoken. It\'s history repeating itself.'}"
+342	342		401							{1: '2', 2: '4895'}
+343	343		301				AniZhuanchangBegin			"{3: ""The world never changes, but the savanna stretches on forever, and this isn't the only place to lay her head. The lone dragon rider spreads her wings and takes to the sky, leaving the herd behind.""}"
+344	344		401						2000.0	{1: '1', 2: '36'}
+345	345		401							{1: '1', 2: '169'}
+346	346		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1322.jpg'}
+347	347		301			AniZhuanchangEnd				"{3: ""It's only after Veronica's silhouette disappears over the horizon that Sewani walks up, rubbing the back of her neck.""}"
+348	348		201							{1: '1', 2: '500398'}
+349	349		301							"{1: '1', 2: 'Sewani', 3: ""You've got some serious guts. She was ready to tear your head off—what would you have done if she'd run that lance through your neck?"", 4: '1', 18: '100011904'}"
+350	350		302							"{2: ""She wouldn't have..."", 3: '351'}"
+351	351		301							{2: 'Sewani', 3: 'You really trust her that much?', 4: '1', 18: '100011905'}
+352	352		302							{2: 'I just knew my armor would activate in time to shield me.', 3: '353'}
+353	353		301							"{2: 'Sewani', 3: ""Right. So you're a total badass. My mistake."", 4: '1', 18: '100011906'}"
+354	354		202							{1: '1'}
+355	355		301				DialogDisable			{3: 'You let out a wry smile.'}
+356	356		302							"{2: ""Just kidding. There's no way I could get my armor on that fast. I really do trust her."", 3: '357'}"
+357	357		302							"{2: ""I'm 【kuroname】, Commandant of the Gray Raven squad from Babylonia. What brings you out here?"", 3: '358'}"
+358	358		201							{1: '1', 2: '500398'}
+359	359		301			DialogEnable				{1: '1', 2: 'Sewani', 3: 'Babylonia? Well, that explains it.', 4: '1', 18: '100011907'}
+360	360		301							"{2: 'Sewani', 3: ""Our conservation area went belly-up ages ago. We survivors grabbed what we could and we've been on the road ever since. We tried to find a home in other conservation areas, but... I guess we're just jinxed."", 4: '1', 18: '100011908'}"
+361	361		301							"{2: 'Sewani', 3: ""Each new home we found went down in flames, so our group just kept growing. We started with one vehicle, then three or four, and now we've got a whole convoy—a big family with the whole world as our home."", 4: '1', 18: '100011909'}"
+362	362		301							{2: 'Sewani', 3: 'We only just got here recently... But what about you? Why are you here? Is Babylonia planning to set up a conservation area? Are you recovering this territory?', 4: '1', 18: '100011910'}
+363	363		302							"{2: ""No, I'm just here on a mission."", 3: '364'}"
+364	364		301							{2: 'Sewani', 3: 'Oh...', 4: '1', 18: '100011911'}
+365	365		302							"{2: ""Don't you worry. Even if we're not setting up a conservation area here, I can still point you in the right direction."", 3: '366'}"
+366	366		202							{1: '1'}
+367	367		401							{1: '2', 2: '4884'}
+368	368		301							{3: 'You pull up a map and show Sewani the route to the nearest conservation area.'}
+369	369		302							{2: 'You should head there. The kids and elderly in your group need a stable place to call home.', 3: '370'}
+370	370		201							{1: '1', 2: '500398'}
+371	371		301							"{1: '1', 2: 'Sewani', 3: ""Thank you... That's a load off my mind. At least we'll have a new place to settle, but..."", 4: '1', 18: '100011912'}"
+372	372		202							{1: '1'}
+373	373		301							{3: 'Sewani breathes a sigh of relief, her smile a little bittersweet.'}
+374	374		302							"{2: ""What's wrong? Is there a problem?"", 3: '375'}"
+375	375		201							{1: '1', 2: '500398'}
+376	376		301							"{1: '1', 2: 'Sewani', 3: 'No... I\'m just a little sad to leave. This place is actually where my grandparents once lived. They were researchers at this reserve. My name means ""savanna"" in my grandparents\' language.', 4: '1', 18: '100011913'}"
+377	377		302							{2: 'I see.', 3: '378'}
+378	378		301							"{2: 'Sewani', 3: ""I grew up on stories of this savanna, and I just soaked up every last bit of them like a sponge. That's why I bit the bullet and brought our whole group here, hoping we could get a fresh start."", 4: '1', 18: '100011914'}"
+379	379		301							"{2: 'Sewani', 3: ""It's even more beautiful than I ever imagined. Just being here... it feels like I've got my grandparents and my parents right here with me again."", 4: '1', 18: '100011915'}"
+380	380		302							"{2: ""You'll get a chance to come back someday."", 3: '381'}"
+381	381		301							{3: 'Sewani shakes her head, a solemn look on her face.'}
+382	382		301							"{2: 'Sewani', 3: ""No, something's... not right here. The animals are migrating at a weird time. The rainy season hasn't even wrapped up yet, but nearly every single animal here is leaving."", 4: '1', 18: '100011916'}"
+383	383		301							"{2: 'Sewani', 3: ""Just look at your own lion pride. There's only one young male and a lioness running the whole group, and yet no nomadic adults have come to try and take over."", 4: '1', 18: '100012105'}"
+384	384		301							"{2: 'Sewani', 3: ""My guess is, once the pride started losing members, they hightailed it out of here. They're only safe for the time being because every other pride is too busy getting out of dodge to worry about who owns what territory."", 4: '1', 18: '100012106'}"
+385	385		202							{1: '1', 6: '1'}
+386	386		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+387	387		504							{1: '0.7'}
+388	388		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory826.jpg'}
+389	389		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+390	390		401							{1: '2', 2: '4292'}
+391	391		401							{1: '2', 2: '2597'}
+392	392		301						700.0	{3: 'The storm from that rainy night thunders in your ears all over again.'}
+393	393		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+394	394		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+395	395		504							
+396	396		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1322.jpg'}
+397	397		402							{1: '2597'}
+398	398		301							{3: 'You did feel like something was off before. Finding three or four lion prides in such a small area to evaluate for the cub went against the grain of natural behavior, even during migration season.'}
+399	399		302							{2: 'No wonder I had a gut feeling something was strange earlier...', 3: '400'}
+400	400		301							"{3: ""But with an Earth already beaten to a pulp by the Punishing Virus, it's a whole other ball game. How can you even tell if the laws of nature still have a leg to stand on in these godforsaken lands?""}"
+401	401		301							{3: 'Looking at the lion cub you snatched from the jaws of death on that rainy night, you take out a tracking device and slip it around its neck.'}
+402	402		201							{1: '1', 2: '500398'}
+403	403		301							"{1: '1', 2: 'Sewani', 3: ""Nature's children have a sixth sense for danger. The writing's on the wall for this place."", 4: '1', 18: '100011918'}"
+404	404		301							{2: 'Sewani', 3: 'You should get out of here as soon as you can, Commandant.', 4: '1', 18: '100011919'}
+405	405		302							{2: '(Get out of here? As if I have a place to go...)', 3: '406'}
+406	406		202							{1: '1'}
+407	407		301							{3: 'The acacia trees rustle in the wind as a solitary horn blows, a clear sign to get a move on. Once more, the caravan of wanderers hits the road.'}
+408	408		301				AniZhuanchangBegin			{3: 'The lions, for their part, scatter into small groups and go back to their own business.'}
+409	409		401						2000.0	{1: '1', 2: '36'}
+410	410		401							{1: '1', 2: '6236'}
+411	411		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2804.jpg'}
+412	412		301			AniZhuanchangEnd				"{3: ""You trail the lioness queen to one of her pride's usual wildebeest hunting spots, and the second she lets out a soft roar, you feel the hair on the back of your neck prickle up. Someone's watching.""}"
+413	413		306							{1: '1'}
+414	414		201							{1: '1', 2: '501362', 5: '-20', 6: '-200'}
+415	415		301							{1: '1', 3: 'High up on the cliff, Veronica stands by herself, keeping a close eye on the human who has barged into this neck of the woods.'}
+416	416		301							"{3: ""When she hears your footsteps, Veronica doesn't so much as bat an eye.""}"
+417	417		306							
+418	418		302							{2: 'Thank you.', 3: '419'}
+419	419		301							{2: 'Veronica', 3: 'What is it?', 4: '1', 18: '100011920'}
+420	420		302							{2: 'Thank you for giving me a moment of your time earlier.', 3: '421', 4: 'Thank you for cutting us a break.', 5: '421'}
+421	421		301							"{2: 'Veronica', 3: ""I just couldn't bring myself to throw the book at them. They may be clean as a whistle now, but it's only a matter of time. Humans are a lost cause. You can't trust them as far as you can throw them."", 4: '1', 18: '100011921'}"
+422	422		302							"{2: ""I'm also human. The cub could've met a hunter or a healer."", 3: '423'}"
+423	423		202							{1: '1'}
+424	424		301							{3: 'You stand behind Veronica, all your eyes fixed on the savanna where the wild and the serene live side by side.'}
+425	425		306							{1: '1'}
+426	426		301				DialogDisable			"{3: ""Below you, a pride of lions hunts like a well-oiled machine. The same lioness who once let you share the shade of an acacia tree now has her teeth buried in a wildebeest's neck, its blood staining the emerald grass.""}"
+427	427		306							
+428	428		302							{2: 'Humans are a mixed bag, with a few rotten apples and a whole lot of good ones.', 3: '429'}
+429	429		302							"{2: ""You've had a brush with the worst of us, but you must have crossed paths with some decent folks, haven't you?"", 3: '430'}"
+430	430		201							{1: '1', 2: '501366', 3: '8', 5: '-20', 6: '-200'}
+431	431		301			DialogEnable				{1: '1', 2: 'Veronica', 3: '...', 4: '1', 18: '100011922'}
+432	432		302							"{2: ""You can't paint all of humanity with the same brush, Veronica."", 3: '433'}"
+433	433		204							{1: '1', 2: '4'}
+434	434		301							"{2: 'Veronica', 3: ""Humans are bottomless pits. You eat the world up whole. Your greed is a bottomless well, far beyond what you need to survive. Even if those people are harmless, even if you're one of the good guys..."", 4: '1', 18: '100011923'}"
+435	435		301							"{2: 'Veronica', 3: ""It doesn't change what humanity is at its core. You're a species that has to be top dog, taking no prisoners and tolerating no rivals."", 4: '1', 18: '100011924'}"
+436	436		204							{1: '1', 2: '8'}
+437	437		301							"{2: 'Veronica', 3: ""I come from a place where mechanoids were treated like animals—where even humans were treated like dirt. They called it an arena, but to me, it was a bloody fighting pit. That's why... I can see the world through the eyes of an animal."", 4: '1', 18: '100011925'}"
+438	438		204							{1: '1'}
+439	439		301							{2: 'Veronica', 3: 'To a lion cub, humans are a roll of the dice. Will they meet a god who offers a helping hand, or a devil who stamps out life without a second thought? All they can do is cross their fingers and hope for the best.', 4: '1', 18: '100011926'}
+440	440		302							{2: '...', 3: '441'}
+441	441		301							"{2: 'Veronica', 3: ""We're all in this together, animals and humans both struggling to survive this apocalypse. But in these life-or-death times, humans still get to decide what happens."", 4: '1', 18: '100011927'}"
+442	442		301							{2: 'Veronica', 3: 'In nature, hunting is just survival of the fittest—a raw fight for life. No creature is ever judged for fighting back. But humans always take the moral high ground. In your world, humanity always comes out on top.', 4: '1', 18: '100011928'}
+443	443		301							"{2: 'Veronica', 3: ""Why can't animals be seen as gods, as our equals? Why can't humans ever learn from the animal world and follow their standards?"", 4: '1', 18: '100011929'}"
+444	444		302							"{2: ""You're not just talking about animals, are you?"", 3: '445', 4: '...', 5: '445'}"
+445	445		204							{1: '1', 2: '4'}
+446	446		301							"{2: 'Veronica', 3: ""All I want is to stand with you as an equal, to have a say in ruling this world and setting the rules. I don't want to be treated like an animal—a friend or a pet when things are good, but a meal or an enemy when disaster strikes."", 4: '1', 18: '100011930'}"
+447	447		204							{1: '1', 2: '13'}
+448	448		301							"{2: 'Veronica', 3: ""Would humans ever willingly share that power with mechanoids? I seriously doubt it. And since I'd never give you that chance, we're bound to be enemies."", 4: '1', 18: '100011931'}"
+449	449		301							"{3: ""Veronica isn't the only mechanoid you've met. You can't imagine you being enemies.""}"
+450	450		302							"{2: ""That's a little extreme, Veronica. We don't have to be enemies."", 3: '451'}"
+451	451		301							"{2: 'Veronica', 3: ""Oh really? When it's a choice between us and you, I won't hesitate to sacrifice humans to protect my kind. No, wait... I'd sacrifice everything, even myself."", 4: '1', 18: '100011932'}"
+452	452		204							{1: '1', 2: '4'}
+453	453		301							{2: 'Veronica', 3: 'What about you? When push comes to shove, what would you be willing to sacrifice?', 4: '1', 18: '100011933'}
+454	454		302							"{2: ""I'll do whatever it takes to protect my own kind."", 3: '455', 4: ""I'll do whatever it takes to do what's right."", 5: '455'}"
+455	455		204							{1: '1', 2: '13'}
+456	456		301							"{2: 'Veronica', 3: ""Whatever it takes, huh... Good. At least you didn't feed me empty promises I couldn't possibly believe."", 4: '1', 18: '100011934'}"
+457	457		204							{1: '1'}
+458	458		301							"{2: 'Veronica', 3: ""So I've made up my mind. When it all hits the fan, we'll inevitably be on opposite sides."", 4: '1', 18: '100011935'}"
+459	459		202							{1: '1'}
+460	460		301							"{3: ""Veronica's voice is a punch to the gut.""}"
+461	461		302							"{2: ""If I could, I wouldn't want you to see the world like that."", 3: '462'}"
+462	462		201							{1: '1', 2: '501366', 5: '-20', 6: '-200'}
+463	463		301							"{1: '1', 2: 'Veronica', 3: ""Is that so? You're welcome to try... but that's just the way the world is."", 4: '1', 18: '100011936'}"
+464	464		202							{1: '1'}
+465	465		301		1		AniZhuanchangBegin			"{3: ""Compared to the sharp edge she had when they first met, Veronica's voice isn't cold anymore. Yet her quiet certainty is another kind of wall—she has no hope left for this world.""}"

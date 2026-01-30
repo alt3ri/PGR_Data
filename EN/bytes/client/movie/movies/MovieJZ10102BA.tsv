@@ -1,0 +1,16 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		201							{1: '1', 2: '500041', 4: '400'}
+4	4		201							{1: '2', 2: '500043', 4: '-400'}
+5	5		301			DialogEnable				"{1: '1', 2: 'Doctor', 3: ""Your younger brother requires immediate care. His condition will grow dire if he doesn't get a heart transplant as soon as possible."", 4: '2'}"
+6	6		301							"{2: 'Doctor', 3: ""Of course, I know about your situation... Finding a donor, the cost, and the queue... They're all—What I'm trying to say is, you might want to be prepared."", 4: '2'}"
+7	7		301							"{2: 'Morian', 3: ""Murray... Now's not the time for me to drown myself in research, at least... at least until I have the money for him."", 4: '1'}"
+8	8		301				AniZhuanchangBegin			"{2: 'Morian', 3: ""In this world of tech monopoly, there are walls everywhere. Even with my CV sent through the system, it's not going to pass through the initial filtering..."", 4: '1'}"
+9	9		202							{1: '1', 2: '2', 6: '1'}
+10	13		201							{1: '1', 2: '500060'}
+11	14		301			AniZhuanchangEnd				"{1: '1', 2: 'Teenager', 3: ""I know you've been... wearing this the whole time, but what's with the getup?""}"
+12	15		301							"{2: 'Morian', 3: 'Personal taste. Now cut the crap. Where\'s ""Hyena""?', 4: '1'}"
+13	16		301							{2: 'Teenager', 3: 'About thirty seconds southeast. Are you ready... Lee?'}
+14	17		301							{2: 'Morian', 3: 'Thirty seconds is enough for a simple gun modification.', 4: '1'}
+15	18		301		1		AniZhuanchangBegin			"{2: 'Morian', 3: ""This is a necessary performance upgrade. We need to get rid of Hyena before they get close. I don't want to get my coat dirty..."", 4: '1'}"

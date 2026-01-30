@@ -1,0 +1,130 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg'}
+2	2		401							{1: '1', 2: '2'}
+3	3		201							{1: '1', 2: '500160'}
+4	4		301			DialogEnable				{1: '1', 2: 'Huaxu', 3: 'Request connection to root server... Request connection to root server...', 4: '1'}
+5	5		201							{1: '1', 2: '500026'}
+6	6		301							"{1: '1', 2: 'Lee', 3: ""It won't work. We've cut off all contact between your sub-terminals and the root server."", 4: '1'}"
+7	7		201							{1: '1', 2: '500160'}
+8	8		301							{1: '1', 2: 'Huaxu', 3: '...Disconnection confirmed. Withdrawing connection request to the root server.', 4: '1'}
+9	9		301							{2: 'Huaxu', 3: 'Disintegration process... irreversible...', 4: '1'}
+10	10		201							{1: '1', 2: '500166'}
+11	11		301							{1: '1', 2: 'Lucia', 3: 'Stop your infiltration on Babylonia immediately!', 4: '1'}
+12	12		201							{1: '1', 2: '500160'}
+13	13		301							{1: '1', 2: 'Huaxu', 3: 'You have... no authority... to issue that order.', 4: '1'}
+14	14		301							{2: 'Huaxu', 3: 'But... I... cannot continue... executing order...', 4: '1'}
+15	15		301							{2: 'Huaxu', 3: 'Cannot maintain... form stability...', 4: '1'}
+16	16		202							{1: '1', 4: '1', 6: '1'}
+17	17		301							"{3: 'Much like ""Bianca"" before, Huaxu disintegrates before your eyes.'}"
+18	18		201							{1: '1', 2: '1031001', 4: '-600'}
+19	19		201							{1: '2', 2: '500026', 4: '600'}
+20	20		201							{1: '3', 2: '500166'}
+21	21		301							{1: '1', 2: 'Lucia', 3: 'Is it over...?', 4: '3'}
+22	22		301							"{2: 'Lee', 3: ""Asimov, what's the situation like outside?"", 4: '2'}"
+23	23		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+24	24		301							{2: 'Asimov', 3: '...'}
+25	25		301							{3: 'Asimov has turned on his comms, but he does not respond to your question.'}
+26	26		301							{3: 'From the terminal screen, you can see he is moving something with Karenina.'}
+27	27		201							{1: '1', 2: '1031001', 4: '-600'}
+28	28		201							{1: '2', 2: '500026', 4: '600'}
+29	29		201							{1: '3', 2: '500166'}
+30	30		301							"{1: '1', 2: 'Lee', 3: ""...Looks like they're too busy to answer us."", 4: '2'}"
+31	31		301							"{2: 'Lucia', 3: ""Let's find out what the status of the virtual space is."", 4: '3'}"
+32	32		302				AniZhuanchangBegin			{2: '(Nod)', 3: '33'}
+33	33		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg'}
+34	34		301			AniZhuanchangEnd				{2: 'Liv', 3: 'Hm?', 4: '1'}
+35	35		301							"{2: 'Liv', 3: ""That's..."", 4: '1'}"
+36	36		301							{3: 'Liv leans over and picks something off the ground.'}
+37	37		301							{2: 'Lucia', 3: 'Liv?', 4: '3'}
+38	38		301							{2: 'Liv', 3: 'This is on the ground after Huaxu disappeared...', 4: '1'}
+39	39		301							{3: 'Liv holds a peculiar fragment in her hand.'}
+40	40		301							{2: 'Lee', 3: 'Is that... a data fragment?', 4: '2'}
+41	41		301							{2: 'Lee', 3: 'Why did it drop this... when the other one...', 4: '2'}
+42	42		302							"{2: ""You're right. That one didn't drop anything."", 3: '43'}"
+43	43		301							{2: 'Lucia', 3: 'Can you analyze it?', 4: '3'}
+44	44		301							{2: 'Liv', 3: 'Let me see...', 4: '1'}
+45	45		301							{3: '...'}
+46	46		301							"{2: 'Liv', 3: ""It's a set of coordinates, but I can't decipher the last two data points."", 4: '1'}"
+47	47		301							{2: 'Liv', 3: 'Maybe the fragment was solidified with the core of the sub-terminal, and it was damaged when the core disintegrated.', 4: '1'}
+48	48		301							{2: 'Lee', 3: 'How accurate are the coordinates you can retrieve?', 4: '2'}
+49	49		301							{2: 'Liv', 3: 'I can narrow it down to an area of about five to ten square kilometers.', 4: '1'}
+50	50		301							{2: 'Lee', 3: 'That should suffice.', 4: '2'}
+51	51		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+52	52		201							{1: '1', 2: '500004'}
+53	53		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+54	54		301							"{1: '1', 2: 'Asimov', 3: ""...How's everything going?"", 4: '1'}"
+55	55		302							{2: 'About time we hear back from you.', 3: '56'}
+56	56		301							{2: 'Asimov', 3: 'We just finished preparations for you to leave the virtual space.', 4: '1'}
+57	57		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+58	58		201							{1: '1', 2: '500026'}
+59	59		301							"{1: '1', 2: 'Lee', 3: ""What's the situation with Babylonia?"", 4: '1'}"
+60	60		201							{1: '1', 2: '500004'}
+61	61		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+62	62		301							"{1: '1', 2: 'Asimov', 3: ""We've managed to start ascending, but we won't be able to return to low Earth orbit any time soon. At least we've stopped losing altitude."", 4: '1'}"
+63	63		302							"{2: ""Well, that's good news.""}"
+64	64		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+65	65		201							{1: '1', 2: '500166'}
+66	66		301							{1: '1', 2: 'Lucia', 3: 'Huaxu was the one who infiltrated Gestalt, and the sub-terminal dropped this, Asimov.', 4: '1'}
+67	67		201							{1: '1', 2: '500004'}
+68	68		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+69	69		301							{1: '1', 2: 'Asimov', 3: '...Coordinates?', 4: '1'}
+70	70		301							{2: 'Asimov', 3: 'Wait.', 4: '1'}
+71	71		301							{3: '...'}
+72	72		301							{2: 'Asimov', 3: 'Prepare to disengage from the virtual space.', 4: '1'}
+73	73		302							{2: 'Right now?', 3: '74'}
+74	74		301							{2: 'Asimov', 3: 'Yes, right now.', 4: '1'}
+75	75		301				AniZhuanchangBegin			{2: 'Asimov', 3: 'President Hassen wants to see you.', 4: '1'}
+76	76		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+77	77		202							{1: '1', 6: '1'}
+78	78		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg'}
+79	79		301			AniZhuanchangEnd				{3: '...'}
+80	80		201							{1: '1', 2: '500166'}
+81	81		301							"{1: '1', 2: 'Lucia', 3: ""If that's the case, then let's get out of here."", 4: '1'}"
+82	82		203							{1: '1', 2: '0.25', 3: '-400'}
+83	83		201							{1: '2', 2: '500004', 4: '400'}
+84	84		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+85	85		301							"{1: '1', 2: 'Asimov', 3: ""...What's going on? I can't get you to disengage. Why can't I connect with you?"", 4: '2'}"
+86	86		301							{2: 'Lucia', 3: 'What?', 4: '1'}
+87	87		301							{2: 'Asimov', 3: 'Looks like a part of the full band lockdown procedure is still in effect.', 4: '2'}
+88	88		302							"{2: ""I guess we're stuck here."", 3: '89'}"
+89	89		201							{1: '1', 2: '500026', 4: '-400'}
+90	90		301							{1: '1', 2: 'Lee', 3: '...?', 4: '1'}
+91	91		301							"{2: 'Asimov', 3: ""Don't worry about the lockdown for now. Lee, go to the terminal in the virtual space to synchronize your data with me."", 4: '2'}"
+92	92		301							"{2: 'Asimov', 3: ""Gestalt is operating normally now. So if the usual method doesn't work... I still have another way."", 4: '2'}"
+93	93		301							{3: 'Lee quickly approaches the terminal and begins operating it.'}
+94	94		301							"{2: 'Lee', 3: ""I'm ready on this end, Asimov. Are you ready to start the handshake protocol?"", 4: '1'}"
+95	95		301							{2: 'Asimov', 3: 'Begin.', 4: '2'}
+96	96		301							{3: '*Establishing handshake protocol. Integrating signal via side link.*'}
+97	97		301							{3: '*Signal requirement: 0.47%*'}
+98	98		301							{3: '*Signal requirement: 14.6%*'}
+99	99		301				AniZhuanchangBegin			"{2: 'Asimov', 3: ""Tch... Since we can't use the main channel, it's going to take a bit longer."", 4: '2'}"
+100	100		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+101	101		202							{1: '1', 2: '2', 6: '1'}
+102	102		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1601_3.jpg'}
+103	103		401							{1: '1', 2: '103'}
+104	104		301			AniZhuanchangEnd				{3: '*Warning: Unauthorized data flow detected. Emergency safeguard activated.*'}
+105	105		401							{1: '2', 2: '1501'}
+106	106		301							"{2: 'Asimov', 3: ""...Dammit. Now that Gestalt is fully operational, it's treating us like junk data.""}"
+107	107		301							{2: 'Lee', 3: 'Asimov, think of something!'}
+108	108		301							{3: '*Signal requirement: 41.03%*'}
+109	109		301							{3: '*Signal requirement: 44.27%*'}
+110	110		301							{3: 'You begin to feel the virtual space around you peeling off layer by layer, revealing the underlying data.'}
+111	111		301							"{2: 'Lee', 3: ""We're running out of time, Asimov! Hurry up! I'm struggling to keep in sync!""}"
+112	112		301							"{2: 'Asimov', 3: ""Tell me something I don't know!""}"
+113	113		301							{3: '*Signal requirement: 61.3%*'}
+114	114		301							{3: '*Signal requirement: 66.09%*'}
+115	115		301							"{2: 'Asimov', 3: '...Looks like we have no other choice but to ""offend"" Gestalt a little.'}"
+116	116		301							{3: 'You notice that the crumbling areas around you begin to halt, and some places even revert to looking like Babylonia.'}
+117	117		302							{2: 'What did you do?', 3: '118'}
+118	118		301							"{2: 'Asimov', 3: ""I pitted part of Gestalt's firewalls against itself, which should buy us some time.""}"
+119	119		301							{3: '*Signal requirement: 74.12%*'}
+120	120		301							{3: '*Signal requirement: 86.37%*'}
+121	121		301							"{2: 'Lee', 3: ""Asimov, we've reached the minimum requirement for the disengagement procedure!""}"
+122	122		301				AniZhuanchangBegin			"{2: 'Asimov', 3: 'Then begin the disengagement sequence! But I should warn you, your M.I.N.D. might experience a ""slight"" deviation!'}"
+123	123		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+124	124		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'Just like that, everything around you fall into darkness, just like when you first began the immersion process.'}
+125	125		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+126	126		301			AniZhuanchangEnd				{3: 'Importing memory >>> Administering tranquilizer...'}
+127	127		301							{3: 'Brainstem bridging link complete >>> Initiating consciousness update...'}
+128	128		301							{3: 'Allocating memory >>> Loading virtual presence >>> Loading complete.'}
+129	129		301		1		AniZhuanchangBegin			{3: 'Initiating virtual spatial retrieval with Spear of F.O.S. >>> Complete.'}

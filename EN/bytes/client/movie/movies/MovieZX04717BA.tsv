@@ -1,0 +1,503 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory717.jpg'}
+2	2		401							{1: '1', 2: '169'}
+3	3		301			DialogEnable				{3: 'That evening, Wanshi, now a seasoned member of the Construct Maintenance Department, meticulously inspects his tools alongside Professor Chiron as they both check their protective suits and prepare for the next operation.'}
+4	4		201							{1: '1', 2: '500270', 4: '-400', 5: '-50'}
+5	5		201							{1: '2', 2: '500289', 4: '400'}
+6	6		301							{1: '1', 2: 'Chiron', 3: 'How are you finding the work here, Wanshi?', 4: '1'}
+7	7		301							"{2: 'Chiron', 3: ""The head of pediatrics visited yesterday. He said you're working harder than ever, and warned me not to overwork you. He threatened to take you back to his department if I don't look after you better."", 4: '1'}"
+8	8		301							"{2: 'Wanshi', 3: ""I'm doing fine. I want to contribute more, and you've all been incredibly helpful, guiding me through every step of the maintenance process. Besides... everyone here works incredibly hard."", 4: '2'}"
+9	9		301							"{2: 'Chiron', 3: ""Don't overwork yourself. Your health is paramount. Pushing yourself to the limit will only hinder your progress in the long run."", 4: '1'}"
+10	10		202							{1: '1', 2: '2'}
+11	11		301							{3: 'Chiron leans against the closet door, bracing himself.'}
+12	12		201							{1: '1', 2: '500270', 4: '-400', 5: '-50'}
+13	13		201							{1: '2', 2: '500289', 4: '400'}
+14	14		301							"{1: '1', 2: 'Chiron', 3: ""Let's go. We're lucky today. Only two minor procedures left, and the patients aren't seriously injured."", 4: '1'}"
+15	15		301							{2: 'Wanshi', 3: 'Oh, right, Professor.', 4: '2'}
+16	16		301							{3: 'Wanshi hands him a document.'}
+17	17		301							{2: 'Wanshi', 3: 'While organizing the files, I found some strange documents that seem related to Construct Recall. Could you help me understand them after the surgery...', 4: '2'}
+18	18		301							{3: 'Chiron furrows his brow as he takes the documents.'}
+19	19		301							{2: 'Chiron', 3: 'Were you alone when you were organizing the documents?', 4: '1'}
+20	20		301							{2: 'Wanshi', 3: 'No, why?', 4: '2'}
+21	21		202							{1: '1', 2: '2'}
+22	22		301							{3: 'Chiron secures the documents in the cabinet.'}
+23	23		201							{1: '1', 2: '500270', 4: '-400', 5: '-50'}
+24	24		201							{1: '2', 2: '500289', 4: '400'}
+25	25		301							"{1: '1', 2: 'Chiron', 3: ""Forget this ever happened. Don't tell a soul."", 4: '1'}"
+26	26		301							"{2: 'Chiron', 3: ""Don't look at me like that. This isn't some kind of shady deal. Though... I have to admit, your ability to uncover these things is quite remarkable."", 4: '1'}"
+27	27		301							{2: 'Chiron', 3: 'Maintenance Station Four is yours. Now go!', 4: '1'}
+28	28		203							{1: '1', 2: '0.25', 3: '-600', 4: '-50'}
+29	29		203							{1: '2', 2: '0.25'}
+30	30		201							{1: '3', 2: '500023', 4: '600'}
+31	31		301							{1: '1', 2: 'Assistant', 3: 'Professor!', 4: '3'}
+32	32		301							{3: 'The assistant bursts through the door with urgent news.'}
+33	33		301							"{2: 'Assistant', 3: ""There's a Construct outside... She..."", 4: '3'}"
+34	34		301							"{2: 'Chiron', 3: ""What's happening?"", 4: '1'}"
+35	35		301							"{2: 'Assistant', 3: ""Her limbs are severely damaged, and she's showing signs of severe M.I.N.D. deviation... You need to see this."", 4: '3'}"
+36	36		301							{3: 'The assistant looks visibly shaken, struggling to continue.'}
+37	37		301				AniZhuanchangBegin			"{3: ""Wanshi's usually cheerful assistant looks utterly distraught. There's no time to question it. He rushes to the maintenance room with the rest of the staff.""}"
+38	38		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+39	39		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+40	40		201							{1: '1', 2: '500270', 4: '-400', 5: '-50', 7: '1'}
+41	41		201							{1: '2', 2: '500289', 4: '400', 7: '1'}
+42	42		301			AniZhuanchangEnd				"{1: '1', 2: 'Chiron', 3: 'Another ""Special Construct"", huh?', 4: '1'}"
+43	43		301							{2: 'Wanshi', 3: 'Again...?', 4: '2'}
+44	44		202							{1: '1', 2: '2'}
+45	45		301							{3: 'Wanshi, who has been trailing behind Chiron, finally sees the Construct lying on the maintenance table as Chiron sighs.'}
+46	46		201							{1: '1', 2: '500289', 3: '7'}
+47	47		301							{1: '1', 2: 'Wanshi', 3: '!', 4: '1'}
+48	48		202							{1: '1'}
+49	49		301							"{3: 'A young ""girl"" Construct lies on the table, her limbs shattered, a metal pipe protruding from her chest.'}"
+50	50		301							"{3: ""She forces her eyes open, a trickle of vital fluid escaping her lips, her gaze fixed stubbornly on Wanshi, as if he's her only hope.""}"
+51	51		301							{2: 'Construct', 3: 'Ugh... H-help me... Cough...', 4: '1'}
+52	52		201							{1: '1', 2: '500289'}
+53	53		301							"{1: '1', 2: 'Wanshi', 3: ""Don't worry, we'll save you. I'm setting up the connection maintenance equipment now."", 4: '1'}"
+54	54		202							{1: '1'}
+55	55		301							"{3: 'The doctors are already at work in the maintenance room, connecting data cables to the ""girl"" Construct\'s frame.'}"
+56	56		301							"{3: 'Melvie had warned him about these ""special"" Constructs.'}"
+57	57		301							"{3: '""Their suffering is unimaginable. But those who created them were indifferent to their pain.""'}"
+58	58		301							"{3: '""They are a product of tragedy.""'}"
+59	59		201							{1: '1', 2: '500289'}
+60	60		301							{1: '1', 2: 'Wanshi', 3: '...', 4: '1'}
+61	61		301							{2: 'Wanshi', 3: 'Pass me the aspirator.', 4: '1'}
+62	62		301							"{3: ""Wanshi examines the Construct again, only to find she's unconscious on the table. Perhaps reaching this point pushed her beyond her limits.""}"
+63	63		301							{2: 'Wanshi', 3: 'This is happening too fast...', 4: '1'}
+64	64		202							{1: '1'}
+65	65		401							{1: '2', 2: '4644'}
+66	66		301							"{3: ""The M.I.N.D. monitor alarms are blaring, the readings fluctuating wildly. Everyone's breaking into a cold sweat.""}"
+67	67		201							{1: '1', 2: '500270', 4: '-400', 5: '-50'}
+68	68		201							{1: '2', 2: '500289', 4: '400'}
+69	69		301							{1: '1', 2: 'Chiron', 3: 'Standard protocols are useless now. With this level of M.I.N.D. deviation, we need to brace ourselves for the worst.', 4: '1'}
+70	70		301							{2: 'Wanshi', 3: 'What if... what if we try a Recall? There might still be a chance to save her.', 4: '2'}
+71	71		301							"{3: ""Wanshi's hand instinctively reaches for the Recall activation device.""}"
+72	72		203						250.0	{1: '1', 2: '0.25', 3: '-300', 4: '-50'}
+73	73		401							{1: '2', 2: '2766'}
+74	74		203						150.0	{1: '2', 2: '0.1', 3: '410', 4: '-10'}
+75	75		203							{1: '2', 2: '0.1', 3: '400'}
+76	76		301							{3: 'Slap!'}
+77	77		203						450.0	{1: '1', 2: '0.4', 3: '-400', 4: '-50'}
+78	78		301							"{2: 'Chiron', 3: ""Don't activate the Recall."", 4: '1'}"
+79	79		301							"{3: ""Chiron slaps Wanshi's hand away, his face hardening.""}"
+80	80		301							"{2: 'Wanshi', 3: ""Professor! We don't have the resources to save her."", 4: '2'}"
+81	81		301							{2: 'Chiron', 3: 'Forget the resource drain. Her M.I.N.D. is too unstable for a Recall. It would shatter once activated.', 4: '1'}
+82	82		301							{2: 'Wanshi', 3: '...', 4: '2'}
+83	83		301							"{2: 'Chiron', 3: ""We should probably mark her down as deceased... But let's give it one last try."", 4: '1'}"
+84	84		301							{2: 'Wanshi', 3: 'No... I need to find another way.', 4: '2'}
+85	85		202							{1: '1', 2: '2'}
+86	86		301							"{3: 'Wanshi utters a familiar ""no"". Last time he said that, Pelo was already beyond saving.'}"
+87	87		301							{3: 'He constantly replays that day in his mind, wondering what he could have done differently to save Pelo.'}
+88	88		301							{3: 'Every sleepless night, he replays the events, searching for a different outcome, a way to save him.'}
+89	89		201							{1: '1', 2: '500289', 4: '400'}
+90	90		201							{1: '2', 2: '500023', 4: '-400'}
+91	91		301							{1: '1', 2: 'Wanshi', 3: 'Get that metal pipe out of her first! Then, extract her artificial heart!', 4: '1'}
+92	92		301							{2: 'Assistant', 3: 'Why?', 4: '2'}
+93	93		301							{2: 'Wanshi', 3: 'I need to perform an external heart repair.', 4: '1'}
+94	94		202							{1: '1', 2: '2'}
+95	95		301							{3: 'Wanshi fiddles with his gloves, his eyes drawn to the damaged artificial heart.'}
+96	96		201							{1: '1', 2: '500289', 4: '400'}
+97	97		201							{1: '2', 2: '500023', 4: '-400'}
+98	98		301							{1: '1', 2: 'Wanshi', 3: 'I have a background in clinical medicine. While this is vastly different from treating humans... I have to try something...', 4: '1'}
+99	99		301							{2: 'Assistant', 3: 'Professor, we...', 4: '2'}
+100	100		202							{1: '1'}
+101	101		201							{1: '1', 2: '500270', 4: '400', 5: '-50'}
+102	102		301							{1: '1', 2: 'Chiron', 3: 'Leave it to Wanshi. Everyone, follow his instructions.', 4: '1'}
+103	103		202							{1: '1'}
+104	104		201							{1: '1', 2: '500289', 4: '400'}
+105	105		301							{1: '1', 2: 'Wanshi', 3: 'Thank you, everybody.', 4: '1'}
+106	106		301							"{2: 'Wanshi', 3: ""Remove the tube. Now, widen the incision at the sternum and extract the vital fluid from the chest cavity... Yes, that's it."", 4: '1'}"
+107	107		202							{1: '1', 2: '2'}
+108	108		301							"{3: 'Guided by Wanshi, the night shift attempts a ""maintenance"" procedure unlike anything they\'ve ever performed.'}"
+109	109		301							"{3: ""Despite their rigorous medical training, they strive to understand and follow Wanshi's instructions.""}"
+110	110		301							"{3: ""Their efforts seem to be paying off. The Construct's M.I.N.D. deviation has stabilized, though it remains dangerously high.""}"
+111	111		201							{1: '1', 2: '500289', 4: '-400'}
+112	112		201							{1: '2', 2: '500023', 4: '400'}
+113	113		301							{1: '1', 2: 'Wanshi', 3: 'Isolate the main circuit. Prepare for external circulation.', 4: '1'}
+114	114		401							{1: '2', 2: '2690'}
+115	115		301							"{3: ""The assistant recoils as he opens the Construct's chest cavity. Her human-like appearance still unsettles him.""}"
+116	116		301							{2: 'Assistant', 3: 'She looks... like a child... She should be in a Cultivation Center, right?', 4: '2'}
+117	117		202							{1: '1', 2: '2', 6: '1'}
+118	118		201							{1: '1', 2: '500270', 5: '-50'}
+119	119		301							{1: '1', 2: 'Chiron', 3: '...', 4: '1'}
+120	120		202							{1: '1'}
+121	121		301							{3: 'Professor Chiron finds himself gradually pushed aside by the flurry of activity, finally setting down his maintenance tools.'}
+122	122		201							{1: '1', 2: '500270', 4: '-400', 5: '-50'}
+123	123		201							{1: '2', 2: '500023', 4: '400'}
+124	124		301							"{1: '1', 2: 'Chiron', 3: ""I'm leaving it in your hands."", 4: '1'}"
+125	125		301							{2: 'Assistant', 3: 'Professor? Where are you going?', 4: '2'}
+126	126		301							"{2: 'Chiron', 3: ""I'll check the other two maintenance rooms. Follow Wanshi's instructions."", 4: '1'}"
+127	127		301							{2: 'Assistant', 3: 'Professor...', 4: '2'}
+128	128		202							{1: '1'}
+129	129		201							{1: '1', 2: '500289', 4: '-400'}
+130	130		301							{1: '1', 2: 'Wanshi', 3: 'Open the main circulation line. Begin the vital fluid transfusion! You, monitor the M.I.N.D. fluctuations in real-time!', 4: '1'}
+131	131		301				AniZhuanchangBegin			"{2: 'Assistant', 3: ""Understood. I'm on my way, Wanshi."", 4: '2'}"
+132	132		202							{1: '1', 2: '2', 6: '1'}
+133	133		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+134	134		301			AniZhuanchangEnd				{3: 'Chiron steps into the hallway. The motion-sensor lights dim behind him as he walks, conserving energy.'}
+135	135		301							"{3: ""Chiron suddenly remembers a scene from the emergency center years ago. A child, with startling directness, exposed an intern's lies. Later, he saw that same child in medical school, excelling academically.""}"
+136	136		301							{3: 'And there he was, defying orders, stubbornly trying to save the critically injured Constructs in the Maintenance Department.'}
+137	137		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+138	138		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg'}
+139	139		504							{1: '0.7'}
+140	140		201							{1: '1', 2: '500289'}
+141	141		301							"{1: '1', 2: 'Wanshi', 3: 'Please... save those with ""over seventy percent"" too...', 4: '1'}"
+142	142		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+143	143		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+144	144		504							{1: '0'}
+145	145		202							{1: '1', 6: '1'}
+146	146		301							{3: 'And then, just now...'}
+147	147		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+148	148		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+149	149		504							{1: '0.7'}
+150	150		201							{1: '1', 2: '500289'}
+151	151		301							{1: '1', 2: 'Wanshi', 3: 'In a situation like this... I have to try.'}
+152	152		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+153	153		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+154	154		504							{1: '0'}
+155	155		202							{1: '1', 6: '1'}
+156	156		201							{1: '1', 2: '500270', 5: '-50', 7: '1'}
+157	157		301							{1: '1', 2: 'Chiron', 3: '...', 4: '1'}
+158	158		301							"{2: 'Chiron', 3: 'When was the last time... I said something like ""I have to try""?', 4: '1'}"
+159	159		301				AniZhuanchangBegin			{3: 'When did he lose that unwavering determination that Wanshi embodies?'}
+160	160		401						2000.0	{1: '1', 2: '36'}
+161	161		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+162	162		401							{1: '2', 2: '213'}
+163	163		202			DialogDisable				{1: '1', 6: '1'}
+164	164		307			AniZhuanchangEnd			100.0	{1: 'Was it that afternoon when the fire raged?', 3: '75', 4: 'ffffffff'}
+165	165		301				AniZhuanchangBegin			{3: 'Was it that afternoon when the fire raged?'}
+166	166		307							{2: '1'}
+167	167		402							{1: '213'}
+168	168		401						2000.0	{1: '1', 2: '36'}
+169	169		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory691.jpg'}
+170	170		401							{1: '1', 2: '210'}
+171	171		201							{1: '1', 2: '500361', 4: '400', 7: '1'}
+172	172		201				DialogEnable			{1: '2', 2: '500270', 4: '-400', 5: '-50', 7: '1'}
+173	173		301			AniZhuanchangEnd				"{1: '1', 2: 'Researcher', 3: ""Finally... Finally! We've got the data we need!"", 4: '1'}"
+174	174		301							"{2: 'Researcher', 3: ""Chiron! Our team won't be disbanded, and we get to keep the lab..."", 4: '1'}"
+175	175		301							"{3: ""The colleague in front of him is crying tears of joy, clutching the latest experimental data and examining it repeatedly. Chiron recalls that this colleague wasn't even this excited when his daughter was born.""}"
+176	176		301							"{2: 'Researcher', 3: ""Aren't you pleased?"", 4: '1'}"
+177	177		301							{3: 'The colleague excitedly pats him on the back.'}
+178	178		301							"{2: 'Chiron', 3: ""I'm happy for sure. After all, I've been your assistant for all these years..."", 4: '2'}"
+179	179		202							{1: '1', 2: '2'}
+180	180		301							{3: 'As the heavy pats continue, he forces an awkward smile.'}
+181	181		301							{3: 'He never sought fame or fortune. He used a minor research breakthrough to find refuge at the Zelenograd Laboratory, surviving the initial chaos of the Punishing.'}
+182	182		301							{3: 'Having reached middle age, all he wants is a stable place to make a living.'}
+183	183		201							{1: '1', 2: '500361', 4: '400'}
+184	184		201							{1: '2', 2: '500270', 4: '-400', 5: '-50'}
+185	185		301							"{1: '1', 2: 'Chiron', 3: ""A few years ago, I wouldn't have understood this feeling at all."", 4: '2'}"
+186	186		301							{2: 'Researcher', 3: 'What feeling?', 4: '1'}
+187	187		301							{2: 'Chiron', 3: 'Now I understand this feeling of wanting to do something for humanity.', 4: '2'}
+188	188		301							"{2: 'Researcher', 3: ""Yes... Every step we take now has a purpose. Perhaps one day we'll overcome the limitations of these clumsy remote connection pods. Perhaps we'll even achieve Recall..."", 4: '1'}"
+189	189		301							"{2: 'Researcher', 3: ""It's a tragedy that those who perished in the connection pods, and the Constructs lost in battle, won't see this day."", 4: '1'}"
+190	190		301							"{2: 'Chiron', 3: ""It's worth it. Everything is worth it."", 4: '2'}"
+191	191		301				AniZhuanchangBegin			"{2: 'Researcher', 3: ""Their sacrifices won't be in vain... Chiron, transmit the data to Babylonia now."", 4: '1'}"
+192	192		202							{1: '1', 2: '2', 6: '1'}
+193	193		401						2000.0	{1: '1', 2: '36'}
+194	194		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+195	195		401							{1: '1', 2: '5029'}
+196	196		301			AniZhuanchangEnd				{3: 'The information exchange with Babylonia continued for over a month, until that fateful afternoon.'}
+197	197		301							{3: 'As usual, Chiron hurries to the testing grounds, recorder in hand, only to spot a small figure lurking in the shadows.'}
+198	198		201							{1: '1', 2: '500270', 4: '-400', 5: '-50'}
+199	199		201							{1: '2', 2: '500974', 4: '400'}
+200	200		301							{1: '1', 2: '??', 3: 'Tsk, typical.', 4: '2'}
+201	201		301							{2: 'Chiron', 3: 'Whose family are you with?', 4: '1'}
+202	202		301							{2: '??', 3: 'F-family?', 4: '2'}
+203	203		301							"{2: 'Chiron', 3: ""What are your parents' names? Did you get lost?"", 4: '1'}"
+204	204		301							"{2: '??', 3: ""I don't have parents."", 4: '2'}"
+205	205		202							{1: '1', 2: '2'}
+206	206		301							"{3: ""Chiron steps forward and leads the child out from the shadows. Only then does he see the source of the boy's terror: he's a Construct, his legs bound by restraints.""}"
+207	207		201							{1: '1', 2: '500270', 4: '-400', 5: '-50'}
+208	208		201							{1: '2', 2: '500974', 4: '400'}
+209	209		301							"{1: '1', 2: 'Chiron', 3: ""What's this?!"", 4: '1'}"
+210	210		301							{3: 'The children avoid Chiron, often being quite rude to him.'}
+211	211		301							"{2: '??', 3: ""What's there to be surprised about? Isn't this all your doing? You people in white coats are all rotten to the core."", 4: '2'}"
+212	212		301							"{2: 'Chiron', 3: ""That's impossible... Who brought you in here?"", 4: '1'}"
+213	213		301							{2: '??', 3: 'No idea. Someone bought us and brought us here.', 4: '2'}
+214	214		301							{2: '??', 3: 'Four vials of Immune Serum for a test subject like me.', 4: '2'}
+215	215		301							{2: 'Chiron', 3: 'Where are they keeping you confined?', 4: '1'}
+216	216		202							{1: '1', 2: '2'}
+217	217		301							{3: 'The boy points casually toward the other end of the corridor, indifferent to whether the people in white coats would catch him again.'}
+218	218		301							{3: 'As an assistant, Chiron has never set foot in this dimly lit corner before.'}
+219	219		301							{3: 'Trembling with disbelief... and even a glimmer of hope, he steps into this place for the first time.'}
+220	220		201							{1: '1', 2: '500270', 4: '-600', 5: '-50'}
+221	221		201							{1: '2', 2: '500977', 4: '350'}
+222	222		201							{1: '3', 2: '500975', 4: '600'}
+223	223		201							{1: '4', 2: '500974', 4: '150'}
+224	224		301							{1: '1', 2: 'Kids', 3: '...', 4: '2', 5: '3', 6: '4'}
+225	225		301							"{2: 'Chiron', 3: ""This can't be happening..."", 4: '1'}"
+226	226		301							{3: 'The kids huddle together, looking like lab rats from the Golden Age.'}
+227	227		301							"{2: '??', 3: ""The white coats are back. Hide! Or you'll be next."", 4: '4'}"
+228	228		301							"{2: '??', 3: ""They're testing everyone's M.I.N.D. stability today. No one ever comes back from those tests, right?"", 4: '4'}"
+229	229		301							{3: 'Chiron stares at the child who spoke in shock. The other children fall silent as someone enters the room.'}
+230	230		202							{1: '1', 2: '2', 3: '3', 4: '4', 6: '1'}
+231	231		201							{1: '1', 2: '500270', 4: '-400', 5: '-50'}
+232	232		201							{1: '2', 2: '500361', 4: '400'}
+233	233		301							{1: '1', 2: 'Researcher', 3: 'Chiron?', 4: '2'}
+234	234		301							{2: 'Chiron', 3: 'You? You knew about these test subjects?!', 4: '1'}
+235	235		301							"{2: 'Researcher', 3: ""...Everyone knows. You just don't have the clearance."", 4: '2'}"
+236	236		301							"{2: 'Chiron', 3: ""They're human beings! They're just children!! Since when did you have the right to treat them as test subjects?"", 4: '1'}"
+237	237		301							{2: 'Researcher', 3: 'In these harsh times, their right to be considered human is something that must be granted by others.', 4: '2'}
+238	238		301							"{2: 'Chiron', 3: ""Human rights, huh? I've been your loyal assistant for years... Are you telling me the data I've been sending to Babylonia came from experiments on children?"", 4: '1'}"
+239	239		301							"{2: 'Chiron', 3: 'So this is the truth behind your ""perfect"" results? Your ""successes""?', 4: '1'}"
+240	240		301							{2: 'Chiron', 3: 'This is outrageous... Everyone knows that protecting the next generation is paramount for the survival of humanity!', 4: '1'}
+241	241		301							{2: 'Researcher', 3: 'This is a matter of the greater good.', 4: '2'}
+242	242		202							{1: '1', 2: '2', 3: '3'}
+243	243		301							"{3: ""Chiron gently reaches for the boy's hand, but the child recoils, his eyes filled with disgust far beyond his years.""}"
+244	244		201							{1: '1', 2: '500270', 4: '-400', 5: '-50'}
+245	245		201							{1: '2', 2: '500974', 4: '400'}
+246	246		301							"{1: '1', 2: '??', 3: ""Don't pretend to be nice... You're just like them, wearing those white coats."", 4: '2'}"
+247	247		301							{2: 'Chiron', 3: '...', 4: '1'}
+248	248		202							{1: '1', 2: '2'}
+249	249		301							{3: 'The experiments continued as usual that day.'}
+250	250		301							"{3: ""Chiron still can't figure out if Babylonia's researchers truly failed to notice those suspiciously perfect data points, or if they knowingly turned a blind eye.""}"
+251	251		301				AniZhuanchangBegin			{3: 'He no longer cares to figure it out, for he had already made the most resolute decision of his life back then.'}
+252	252		401							{1: '2', 2: '4348'}
+253	253		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory767.png'}
+254	254		301			AniZhuanchangEnd				{3: 'Aided by accelerants, the flames violently engulf the entire research lab.'}
+255	255		301							"{3: 'The fire engulfed the entire facility, destroying all the equipment and the containment rooms where the infected ""test subjects"" were being held.'}"
+256	256		401							{1: '2', 2: '1508'}
+257	257		301							{3: 'The Corrupted escape their containment, attacking the defenseless researchers.'}
+258	258		301							{3: 'Chiron waits for the Babylonia rescue team to arrive, then discreetly slips the salvaged Access terminal into his pocket.'}
+259	259		301				DialogDisable			{3: 'He always considered himself weak, but exposing the scandal was the most resolute act of his life.'}
+260	260		402							{1: '4348'}
+261	261		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg', 3: '0', 4: '1', 5: '1.5'}
+262	262		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+263	263		205							{1: '999'}
+264	264		301			DialogEnable				{3: 'Since then, whether captured by the military or working in the Construct Maintenance Department at Star of Life, the all-consuming rage that once consumed him has never returned.'}
+265	265		301							"{3: ""He's seen firsthand how this scandal has ruined lives, including Melvie's.""}"
+266	266		301							"{3: ""Melvie seeks him out when she hears he's been transferred to Construct Maintenance Department.""}"
+267	267		401							{1: '2', 2: '4423'}
+268	268		301							{3: 'As Melvie enters, Chiron shuts down the equipment.'}
+269	269		201							{1: '1', 2: '500941', 4: '-400'}
+270	270		201							{1: '2', 2: '500270', 4: '400', 5: '-50'}
+271	271		301							"{1: '1', 2: 'Melvie', 3: ""I saw it. I didn't make any major breakthroughs, just like you, but some of the interfaces... I'll never forget them."", 4: '1'}"
+272	272		301							{2: 'Melvie', 3: 'Are you still researching M.I.N.D. technology?', 4: '1'}
+273	273		301							"{2: 'Chiron', 3: ""No, I'm just trying to confirm a few things."", 4: '2'}"
+274	274		301							"{2: 'Melvie', 3: ""You mean Recall? Do you really think we'll ever see that happen?"", 4: '1'}"
+275	275		301							"{2: 'Chiron', 3: ""I heard Wanxu went to the ground... Are you helping her care for the child? Don't tell me you're using this as some kind of atonement."", 4: '2'}"
+276	276		301							"{2: 'Melvie', 3: ""I'm not here for parenting advice. I need to ask you a favor."", 4: '1'}"
+277	277		301							"{2: 'Melvie', 3: ""I hope he pursues medicine one day. When that time comes, I'd appreciate it if you could keep an eye on him."", 4: '1'}"
+278	278		301							{2: 'Chiron', 3: 'I find it hard to believe you have no ulterior motives.', 4: '2'}
+279	279		301							{2: 'Melvie', 3: 'This is my ulterior motive. A stable life as a doctor in Babylonia would suit him well, and he has a natural aptitude for medicine.', 4: '1'}
+280	280		301							{2: 'Chiron', 3: 'What do you need me to do for him?', 4: '2'}
+281	281		301							"{2: 'Melvie', 3: ""If he chooses a different path, I'd appreciate a letter of recommendation from you. As his temporary guardian, I should maintain some distance."", 4: '1'}"
+282	282		301							"{2: 'Chiron', 3: ""Certainly. If he's qualified for an internship, should I recommend him to the Construct Maintenance Department?"", 4: '2'}"
+283	283		301							"{2: 'Melvie', 3: ""No, he should avoid this field entirely. He shouldn't have anything to do with Constructs, M.I.N.D., or anything related."", 4: '1'}"
+284	284		301							{2: 'Chiron', 3: 'I thought you craved the thrill of self-sacrifice, always yearning to save people on the ground. I never expected you to be so invested in something like this.', 4: '2'}
+285	285		301							"{2: 'Melvie', 3: ""You're right, I was planning to volunteer for ground missions before Wanxu entrusted the child to me."", 4: '1'}"
+286	286		204							{1: '1', 2: '1'}
+287	287		301							"{2: 'Melvie', 3: ""But seeing children... having them around... It's completely different."", 4: '1'}"
+288	288		301							{2: 'Melvie', 3: 'You want to protect them until they can stand on their own. Chiron, only then do you truly understand the preciousness of watching a child grow up—knowing how many never get the chance.', 4: '1'}
+289	289		301							"{3: ""Melvie's tenderness is unexpected. Chiron wonders if her time in pediatrics has changed her.""}"
+290	290		301							"{2: 'Melvie', 3: ""You'd do anything to protect them, even if it means facing the worst. Their futures are bright, and anyone who threatens them... they're all jerks."", 4: '1'}"
+291	291		301							"{2: 'Chiron', 3: 'I don\'t understand. When we started using children in experiments, we lost our future. Our civilization is doomed. Even the children raised in the ""Greenhouse"" and the ""Garden"" offer no hope.', 4: '2'}"
+292	292		301							"{2: 'Melvie', 3: ""That's not an option."", 4: '1'}"
+293	293		301							"{2: 'Melvie', 3: ""Don't think this is virtue signaling, even if you don't understand it now..."", 4: '1'}"
+294	294		301				AniZhuanchangBegin			"{2: 'Melvie', 3: ""One day, you'll see Wanshi grow up, and you'll see the next generation of children. Then you'll understand."", 4: '1'}"
+295	295		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+296	296		401						2000.0	{1: '1', 2: '36'}
+297	297		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+298	298		401							{1: '2', 2: '2596'}
+299	299		307			AniZhuanchangEnd			100.0	{1: 'It was a beautiful morning.', 3: '75', 4: 'ffffffff'}
+300	300		301				AniZhuanchangBegin			{3: 'It was a beautiful morning.'}
+301	301		307							{2: '1'}
+302	302		402							{1: '2596'}
+303	303		401						2000.0	{1: '1', 2: '36'}
+304	304		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory146.png'}
+305	305		401							{1: '1', 2: '204'}
+306	306		201				DialogEnable			{1: '1', 2: '500138'}
+307	307		301			AniZhuanchangEnd				{1: '1', 2: 'Professor', 3: 'The Star of Life welcomes new talent... All of you are elites of the medical school...', 4: '1'}
+308	308		202							{1: '1', 6: '1'}
+309	309		201							{1: '1', 2: '500289', 4: '-400'}
+310	310		201							{1: '2', 2: '500755', 4: '400'}
+311	311		301							{1: '1', 2: 'Wanshi', 3: 'Uhh...', 4: '1'}
+312	312		301							{2: 'Natalie', 3: 'Wan—shi—! How dare you sleep on a day like this?', 4: '2'}
+313	313		301							"{2: 'Natalie', 3: ""Wake up and listen to the department introductions properly! Don't go picking some weird department without thinking it through."", 4: '2'}"
+314	314		202							{1: '1', 2: '2'}
+315	315		301							"{3: ""Natalie vigorously shakes Wanshi's shoulders, drawing the attention of students in the seats around them.""}"
+316	316		201							{1: '1', 2: '500289', 4: '-400'}
+317	317		201							{1: '2', 2: '500755', 4: '400'}
+318	318		301							{1: '1', 2: 'Wanshi', 3: 'Yawn... I was doing some practice questions last night... Which department did you apply for?', 4: '1'}
+319	319		301							"{2: 'Natalie', 3: ""I want to go into pediatrics, but my preliminary exam results were just average. Not sure if they'll take me... I might have to rotate through other departments instead."", 4: '2'}"
+320	320		202							{1: '1', 2: '2'}
+321	321		301							{3: 'One by one, professors from each department take the stage to outline their internship programs.'}
+322	322		201							{1: '1', 2: '500289', 4: '-400'}
+323	323		201							{1: '2', 2: '500755', 4: '400'}
+324	324		301							"{1: '1', 2: 'Natalie', 3: ""Wow, look at all those credentials... I wonder if I'll ever become someone like that..."", 4: '2'}"
+325	325		301							"{3: ""Natalie's eyes sparkle with enthusiasm. The hairpin she received from the Cultivation Center still adorns her hair, showing signs of age.""}"
+326	326		401							{1: '2', 2: '1515'}
+327	327		301							{3: 'Wanshi types on the terminal, occasionally glancing at Natalie. When Natalie notices, he quietly puts the terminal away.'}
+328	328		301							{2: 'Natalie', 3: 'Why do you keep staring at me? Just spit it out!', 4: '2'}
+329	329		301							"{2: 'Wanshi', 3: ""It's nothing much... I just wanted to ask which department you're thinking of joining..."", 4: '1'}"
+330	330		203							{1: '2', 2: '0.3', 3: '400', 4: '20', 5: '-50'}
+331	331		301							"{2: 'Natalie', 3: ""That's definitely not what you wanted to ask! You've already dedicated your heart and soul to the noble pursuit of medicine!"", 4: '2'}"
+332	332		301							{3: 'Natalie makes an exaggerated gesture of offering oneself to the heavens, arms raised dramatically.'}
+333	333		203							{1: '2', 2: '0.3', 3: '400'}
+334	334		301							"{2: 'Natalie', 3: ""Who asked exactly? You're a terrible liar. Everyone can see it on your face."", 4: '2'}"
+335	335		301							{2: 'Wanshi', 3: 'Fine, it was Pelo. But keep my name out of it.', 4: '1'}
+336	336		301							{2: 'Natalie', 3: 'When did Pelo ask you to speak to me?', 4: '2'}
+337	337		301							{2: 'Wanshi', 3: 'Six months ago', 4: '1'}
+338	338		301							"{2: 'Natalie', 3: ""Six months ago... he asked you to check on my preferred assignments, but he hasn't even sent me a personal message. All I get are those group messages."", 4: '2'}"
+339	339		301							"{2: 'Wanshi', 3: ""He's been busy lately. I heard the elite squad is recruiting, and he's interested in joining."", 4: '1'}"
+340	340		301							"{2: 'Natalie', 3: ""Oh, please. You're only interested in Star of Life because of Aunt Melvie. But what about him? He's off fighting a war, risking his life?"", 4: '2'}"
+341	341		301							{2: 'Wanshi', 3: 'He...', 4: '1'}
+342	342		301							"{2: 'Natalie', 3: ""I know. You don't need to tell me."", 4: '2'}"
+343	343		301							"{2: 'Natalie', 3: ""Let's keep listening to the professor."", 4: '2'}"
+344	344		202							{1: '1', 2: '2'}
+345	345		301							{3: 'The professor of the final department slowly makes his way to the stage, looking down at the sea of fresh faces before him.'}
+346	346		201							{1: '1', 2: '500270', 5: '-50'}
+347	347		301							{1: '1', 2: 'Chiron', 3: 'I am Professor Chiron, Head of the Construct Maintenance Department.', 4: '1'}
+348	348		301							{3: 'All eyes in the room fix upon the gaunt professor.'}
+349	349		301							"{2: 'Chiron', 3: ""Those of you interested in interning at the Construct Maintenance Department should be mentally prepared for what's ahead."", 4: '1'}"
+350	350		301							{2: 'Chiron', 3: 'You must steel yourself to witness death regularly. Your mental fortitude may need to surpass even that of the Constructs themselves.', 4: '1'}
+351	351		202							{1: '1', 6: '1'}
+352	352		201							{1: '1', 2: '500289'}
+353	353		201							{1: '2', 2: '500755', 4: '-600'}
+354	354		201							{1: '3', 2: '500138', 4: '600'}
+355	355		301							{1: '1', 2: 'Students', 3: '...', 4: '1', 5: '2', 6: '3'}
+356	356		202							{1: '1', 2: '2', 3: '3'}
+357	357		301							{3: 'Chiron studies the faces before him—young and curious, most of them knowing little about Constructs.'}
+358	358		301							{3: 'Chiron holds no expectations.'}
+359	359		301							"{3: ""Working in Construct Maintenance has never been a desirable position. Like every year, this department will likely attract no volunteers—he'll just wait for the list of students reassigned here.""}"
+360	360		201							{1: '1', 2: '500289'}
+361	361		301							{1: '1', 2: 'Wanshi', 3: 'Professor, I have a question.', 4: '1'}
+362	362		306							{1: '1'}
+363	363		301							{3: 'But this year is different. His attention is drawn to a young man in the crowd, whose friends keep nudging him while whispering amongst themselves.'}
+364	364		301							"{3: 'This young man, with heavy dark circles under his eyes, is the same boy who, during career track selection, had indignantly shoved Chiron\'s ""recommendation"" back across the table.'}"
+365	365		301							"{3: ""His features have softened from their youthful tension, his shoulders broader than before—all traces of childhood gone. Chiron can't help but study these obvious changes, realizing this is no longer the same boy who had once stubbornly insisted on searching for Wanxu on the ground.""}"
+366	366		301							{3: 'The young man makes that most timeless of human gestures—raising his hand high into the air.'}
+367	367		306							
+368	368		203							{1: '1', 2: '0.25', 3: '400'}
+369	369		201							{1: '2', 2: '500270', 4: '-400', 5: '-50'}
+370	370		301							"{1: '1', 2: 'Wanshi', 3: ""Professor Chiron, you're one of the authors of the medical school textbooks. I would like to ask why you haven't updated the treatment plans for the latest Construct models this year, when you usually do so promptly?"", 4: '1'}"
+371	371		301							"{2: 'Chiron', 3: ""You're the one who scored highest on this year's basic certification exam?"", 4: '2'}"
+372	372		301							{2: 'Wanshi', 3: 'I am.', 4: '1'}
+373	373		301							"{2: 'Chiron', 3: ""We've made some changes to how we revise textbooks this year. Feel free to stop by my office if you have any questions."", 4: '2'}"
+374	374		202							{1: '1', 2: '2'}
+375	375		301							{3: 'Chiron delivers these final words and steps down from the podium.'}
+376	376		301							{3: 'For the first time, someone watches Chiron go, their gaze lingering long after he leaves the room.'}
+377	377		301				AniZhuanchangBegin			{3: 'For the first time, someone actually seeks him out for advice on Construct maintenance.'}
+378	378		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+379	379		201							{1: '1', 2: '500270', 4: '-400', 5: '-50', 7: '1'}
+380	380		201							{1: '2', 2: '500289', 4: '400', 7: '1'}
+381	381		301			AniZhuanchangEnd				{1: '1', 2: 'Chiron', 3: 'Wanshi, you should consider an internship at Star of Life.', 4: '1'}
+382	382		301							{2: 'Chiron', 3: 'Which department interests you? Just not Construct Maintenance.', 4: '1'}
+383	383		301							{2: 'Wanshi', 3: 'Just not Construct Maintenance?', 4: '2'}
+384	384		301							{2: 'Chiron', 3: 'So I was your first choice?', 4: '1'}
+385	385		301							{3: 'The young man falls silent for a moment, lost in thought. Then, he gives his reply.'}
+386	386		301							"{2: 'Wanshi', 3: ""Yes, I wanted to work in Construct Maintenance first, and Pediatrics second. I even interned in the Neonatal Unit. Well... I'm happy to work anywhere I can help people."", 4: '2'}"
+387	387		301							{2: 'Wanshi', 3: 'Professor, I want to go to the Star of Life—I want to save lives.', 4: '2'}
+388	388		301							"{3: ""When Wanshi's golden eyes meet his, Chiron finally grasps the meaning of Melvie's words.""}"
+389	389		202							{1: '1', 2: '2'}
+390	390		301							{3: 'Despite the uncertainties that lie ahead, these young people remain dedicated to their current responsibilities.'}
+391	391		301							{3: 'They work tirelessly, their future brimming with promise as they pave their own way.'}
+392	392		301				AniZhuanchangBegin			"{3: 'They deserve to be ""raised up"".'}"
+393	393		401						2000.0	{1: '1', 2: '36'}
+394	394		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+395	395		401							{1: '2', 2: '4279'}
+396	396		307			AniZhuanchangEnd			100.0	{1: 'The lights cast a dim glow in the night.', 3: '75', 4: 'ffffffff'}
+397	397		301				AniZhuanchangBegin			{3: 'The lights cast a dim glow in the night.'}
+398	398		307							{2: '1'}
+399	399		402							{1: '4279'}
+400	400		401						2000.0	{1: '1', 2: '36'}
+401	401		101				DialogEnable			{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+402	402		401							{1: '1', 2: '359'}
+403	403		301			AniZhuanchangEnd				"{3: 'Chiron paces the hallway for hours, restless. He finally decides to head back to the maintenance room, hoping against hope that Wanshi\'s plan might somehow save that ""girl"".'}"
+404	404		301							"{3: 'Rounding the corner, he\'s met with a surprising sight: a group of doctors are lounging on the floor, chatting amongst themselves, instead of tending to the restrained ""test subjects"".'}"
+405	405		201							{1: '1', 2: '500289', 4: '-400', 5: '-80'}
+406	406		201							{1: '2', 2: '500023', 4: '400', 5: '-80'}
+407	407		301							"{1: '1', 2: 'Assistant', 3: ""Hmm... Wanshi, you wouldn't believe the types you find here in the maintenance room of Constructs. Some are just in it for the military perks, and others see it as a stepping stone to a job at Cosmos Industries... Plenty of people talk about saving Constructs, but few are willing to put in the work."", 4: '2'}"
+408	408		301							{2: 'Wanshi', 3: 'Yeah, I got it.', 4: '1'}
+409	409		301							{2: 'Assistant', 3: 'I once saw a child in tears, pleading for their Construct mother to wake up... The emotional impact was devastating. I almost transferred out that very day.', 4: '2'}
+410	410		202							{1: '1', 2: '2'}
+411	411		301							"{3: ""The assistant avoids Wanshi's gaze, the memory still vivid. Those fragmented pleas... He lived in constant fear that that child, with hair the color of bruised plums, would appear at his door one day, asking for a mother.""}"
+412	412		301							{3: 'Tragically, the child met the same fate as the Construct mother—death.'}
+413	413		201							{1: '1', 2: '500289', 4: '-400', 5: '-80'}
+414	414		201							{1: '2', 2: '500023', 4: '400', 5: '-80'}
+415	415		301							"{1: '1', 2: 'Assistant', 3: ""Constructs are frontline soldiers, Wanshi. The damage we see here is far beyond anything a human doctor would ever encounter. No wonder most people can't handle it for long."", 4: '2'}"
+416	416		301							"{2: 'Assistant', 3: ""We've never had a case like this before."", 4: '2'}"
+417	417		301							"{2: 'Assistant', 3: ""Not only did you give up a promising career in pediatrics, but you genuinely treat maintaining Constructs as if you're healing patients."", 4: '2'}"
+418	418		301							{2: 'Assistant', 3: 'Take tonight, for example. Everyone was ready to abandon hope... even Professor Chiron.', 4: '2'}
+419	419		301							"{2: 'Assistant', 3: ""If Constructs ever stand as equals with humans one day, you'll certainly be remembered as one of the most earnest pioneers who made it possible."", 4: '2'}"
+420	420		301							"{3: ""Wanshi listens quietly to the assistant's words.""}"
+421	421		301							"{2: 'Wanshi', 3: ""Um... it's not quite like what you're saying. I just... want to save everyone, that's all."", 4: '1'}"
+422	422		203							{1: '1', 2: '0.25', 4: '-80'}
+423	423		203							{1: '2', 2: '0.25', 3: '600', 4: '-80'}
+424	424		201							{1: '3', 2: '500270', 4: '-600', 5: '-50'}
+425	425		301							{1: '1', 2: 'Chiron', 3: 'Wanshi?', 4: '3'}
+426	426		301							"{2: 'Wanshi', 3: ""Oh, Professor... you're still here."", 4: '1'}"
+427	427		301							{3: 'The doctors fall silent as the professor approaches.'}
+428	428		301							"{2: 'Chiron', 3: ""How's the patient?"", 4: '3'}"
+429	429		202							{1: '1', 2: '2', 3: '3'}
+430	430		301							{3: 'They point towards the maintenance room, their eyes lighting up.'}
+431	431		301							{3: 'The maintenance room door remains closed, and the only sound is the steady beeping of equipment.'}
+432	432		201							{1: '1', 2: '500289', 5: '-80'}
+433	433		201							{1: '2', 2: '500023', 4: '600', 5: '-80'}
+434	434		201							{1: '3', 2: '500270', 4: '-600', 5: '-50'}
+435	435		301							"{1: '1', 2: 'Wanshi', 3: ""We've done our part. The module repairs can be left to the next shift."", 4: '1'}"
+436	436		301							"{2: 'Assistant', 3: ""Let's take a break. This is our first time handling a case like this... Say, Wanshi, if you're planning to publish a paper on this, mind adding me as a co-author?"", 4: '2'}"
+437	437		301							{2: 'Chiron', 3: '...', 4: '3'}
+438	438		202							{1: '1', 2: '2', 3: '3'}
+439	439		301							"{3: ""In the light, Chiron observes them. Everyone else is roughly Wanshi's age—a generation raised in the gilded cage of Babylonia's artificial prosperity, except for the assistant.""}"
+440	440		301							{3: 'Chiron struggles to find the words, his lips trembling slightly.'}
+441	441		301							{3: 'What is there to say?'}
+442	442		301							{3: 'Should he confess that his long-lost faith, courage, and hope for humanity has been rekindled by what he once considered a lost cause?'}
+443	443		301							{3: 'Or that he finally understands—there are countless Melvies, dismissed as fools, who dedicate their lives to nurturing... to raising up the next generation of humanity?'}
+444	444		301							{3: 'A thought consumes him, growing larger with every passing second.'}
+445	445		301							"{3: ""He has kept Babylonia's secret about Recall for years. Every attempt to confirm it has led him to the same chilling truth: it's a lie.""}"
+446	446		301							{3: 'He never tried to expose the truth, believing it would be futile. He thought nothing would ever change.'}
+447	447		301							{3: 'But Wanshi... this child is opening his eyes to new possibilities.'}
+448	448		301							{3: 'What if... he allows Wanshi to forge his own path?'}
+449	449		301							{3: 'Will Wanshi repeat their mistakes? Will he follow in their footsteps?'}
+450	450		301							{3: 'Will he make the same choices?'}
+451	451		301							{3: 'Will he ultimately meet the same end?'}
+452	452		201							{1: '1', 2: '500270', 5: '-50'}
+453	453		301							{1: '1', 2: 'Chiron', 3: '...', 4: '1'}
+454	454		202							{1: '1'}
+455	455		201							{1: '1', 2: '500023'}
+456	456		301							"{1: '1', 2: 'Assistant', 3: ""Professor, you should get some rest. We'll head back to the dormitory soon."", 4: '1'}"
+457	457		202							{1: '1'}
+458	458		301							{3: 'The assistant and others rush to help Wanshi to his feet.'}
+459	459		201							{1: '1', 2: '500270', 5: '-50'}
+460	460		301							{1: '1', 2: 'Chiron', 3: 'Wait, Wanshi. Can you stay for a moment?', 4: '1'}
+461	461		202							{1: '1'}
+462	462		201							{1: '1', 2: '500289'}
+463	463		301							{1: '1', 2: 'Wanshi', 3: 'Huh?', 4: '1'}
+464	464		202							{1: '1'}
+465	465		201							{1: '1', 2: '500270', 5: '-50'}
+466	466		301							{1: '1', 2: 'Chiron', 3: 'I need to talk to you. Come to my office.', 4: '1'}
+467	467		202							{1: '1'}
+468	468		301				AniZhuanchangBegin			{3: 'Chiron turns and leads Wanshi into the silent night.'}
+469	469		401						2000.0	{1: '1', 2: '36'}
+470	470		101				DialogDisable			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+471	471		307			AniZhuanchangEnd			100.0	{1: 'It was the moment that shattered the silent night.', 3: '75', 4: 'ffffffff', 6: '1'}
+472	472		401						800.0	{1: '2', 2: '2513'}
+473	473		401							{1: '2', 2: '2593'}
+474	474		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '5'}
+475	475		301				AniZhuanchangBegin			{3: 'It was the moment that shattered the silent night.'}
+476	476		307							{2: '1'}
+477	477		401							{1: '1', 2: '211'}
+478	478		101				DialogEnable			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory275.png'}
+479	479		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '5', 5: '1'}
+480	480		301			AniZhuanchangEnd				"{2: 'Purifying Force A', 3: ""The whistleblowers have been arrested. We're now examining the captured human for injuries.""}"
+481	481		301							"{2: 'Purifying Force B', 3: ""I can't believe a professor would do something like this.""}"
+482	482		301							{3: 'From the prison transport, Chiron watches Wanshi walk away from the airdrop platform, a free man.'}
+483	483		301							{3: 'He raises a finger to his lips, signaling silence.'}
+484	484		301							{3: 'He must take the fall. Wanshi must remain free.'}
+485	485		301							"{3: ""He told the truth about the Recall to Wanshi that day in the office. Wanshi was clearly in denial—he probably didn't even register the last few words.""}"
+486	486		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab'}
+487	487		504							{1: '0.7'}
+488	488		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+489	489		201							{1: '1', 2: '500270', 5: '-50', 7: '1'}
+490	490		301							{1: '1', 2: 'Chiron', 3: 'The Recall Project was officially disbanded years ago. Every single team was shut down. The rumors of its success? A collective lie, carefully crafted to maintain social order.', 4: '1'}
+491	491		301							{2: 'Chiron', 3: 'Wanshi.', 4: '1'}
+492	492		301							"{2: 'Chiron', 3: ""You're like a newborn, untouched by the world, pure in your essence."", 4: '1'}"
+493	493		301				AniZhuanchangBegin			"{2: 'Chiron', 3: 'Melvie once called you ""redemption for many"". I never meant to hurt you, Wanshi. I simply wanted to see what you were capable of.', 4: '1'}"
+494	494		202							{1: '1', 6: '1'}
+495	495		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+496	496		301			AniZhuanchangEnd				{3: 'Blinding light fills the room as Chiron enters, momentarily disorienting him.'}
+497	497		301							{2: 'Chiron', 3: 'Ugh...'}
+498	498		301							{3: 'The intense light and the surge of excitement transport him back to the fire at the Zelenograd Laboratory.'}
+499	499		301							"{2: 'Chiron', 3: '""What a glorious day""...'}"
+500	500		301							"{3: 'Several ""staff members"" enter the room, their eyes fixed on the traitor who tried to expose the truth about Recall.'}"
+501	501		301							{2: 'Chiron', 3: 'How will I die?'}
+502	502		301		1		AniZhuanchangBegin			"{2: 'Chiron', 3: ""If I had a choice, I'd rather die from overwork.""}"

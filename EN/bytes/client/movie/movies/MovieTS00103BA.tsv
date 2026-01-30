@@ -1,0 +1,18 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory26.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: 'Goldfinch entered the Golden Vortex through the sandstorm according to the planned timeline.'}
+4	4		201							{1: '1', 2: '500028', 4: '-400'}
+5	5		201							{1: '2', 2: '500019', 4: '400'}
+6	6		301							{1: '1', 2: 'Browning', 3: 'What a... shitty place. This joint operation has—G-Goldfinch at the forefront...', 4: '1'}
+7	7		301							{2: 'Browning', 3: 'Our mission is to scout the area... But—I-I think—w-we can contribute more...', 4: '1'}
+8	8		301							"{2: 'Browning', 3: ""During the briefing—l-last time—Commander Nikola's expression was very clear... a-about how disappointed—he was at us..."", 4: '1'}"
+9	9		301							{2: 'Browning', 3: 'He equipped us with—t-the best scouting gears... and we only delivered a route through the man-made sand storm...', 4: '1'}
+10	10		301							"{2: 'Goldfinch Member', 3: ""Browning's right. Not to mention that this is a joint operation! I heard that the famed Gray Raven is among the squads assigned. We must take this opportunity to showcase our abilities!"", 4: '2'}"
+11	11		301							"{2: 'Browning', 3: ""If we can't deliver—v-valuable intel... then the Goldfinches will only—b-be assigned missions... in the Arctic."", 4: '1'}"
+12	12		301							"{2: 'Browning', 3: ""I've decided—t-to adjust the perimeter of our scouting area... It now includes the center of the Golden Vortex!"", 4: '1'}"
+13	13		301							"{2: 'Browning', 3: ""I-if we need to clear all these sand—t-then so be it. Goldfinch will figure out what's the deal with this place..."", 4: '1'}"
+14	14		301							"{2: 'Browning', 3: ""C-check your gears—we're leaving in—f-five minutes..."", 4: '1'}"
+15	15		301							"{2: 'Goldfinch Member', 3: ""That's the Browning I know!"", 4: '2'}"
+16	16		301			PanelActor2Shake				"{2: 'Goldfinch Member', 3: ""Oorah! I'm psyched!"", 4: '2'}"
+17	17		301		1	PanelActor2Shake	AniZhuanchangBegin			{2: 'Goldfinch Member', 3: 'For Goldfinch! For Babylonia!', 4: '2'}

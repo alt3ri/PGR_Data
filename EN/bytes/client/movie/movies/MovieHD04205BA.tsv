@@ -1,0 +1,218 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory711.jpg'}
+2	2		401							{1: '1', 2: '209'}
+3	3		302							{2: '...', 3: '4'}
+4	4		302							"{2: ""(Not yet. Can't whistle yet.)"", 3: '5'}"
+5	5		301			DialogEnable				"{3: 'Standing in the lightless ""prison"", you stare at the man seated in a chair beyond the bars.'}"
+6	6		301							{3: 'Though you cannot make out his face clearly, you can tell from the occasional sounds he makes that he is probably quite young.'}
+7	7		302							"{2: ""(I don't think I know him...)"", 3: '8'}"
+8	8		301							"{3: 'You executed Vera\'s ""cast away"" scenario half a day ago and was taken away by the Aurora Squadron.'}"
+9	9		301							{3: 'Everything has been proceeding according to plan, but ever since the Aurora Squadron brought you to this prison from the beach, this young man has not stopped staring at you. It is impossible not to feel uneasy.'}
+10	10		201							{1: '1', 2: '500141'}
+11	11		301							{1: '1', 2: '???', 3: 'Wondering who I am?', 4: '1'}
+12	12		302							{2: '...', 3: '13'}
+13	13		301							"{2: '???', 3: ""Let me introduce myself. I'm Haniff, a squad captain."", 4: '1'}"
+14	14		301							"{2: 'Haniff', 3: 'If I\'m not mistaken about who you are, you\'re something of a ""distinguished guest"". We can\'t afford to treat you poorly.', 4: '1'}"
+15	15		302							{2: 'But you still locked me up?', 3: '16', 4: 'But you still searched me?', 5: '16'}
+16	16		401						500.0	{1: '2', 2: '4383'}
+17	17		402							{1: '4383'}
+18	18		104						1000.0	{1: '0|0|-100', 2: '1'}
+19	19		301							{3: 'You take two small steps forward and grip the railing in front of you.'}
+20	20		401							{1: '2', 2: '10021517'}
+21	21		301							{3: 'Everyone in the room tenses up immediately. From the corners come the sounds of bullets being chambered.'}
+22	22		301							"{2: 'Haniff', 3: 'Anyone who just happens to be ""rescued"" from the sea ought to be observed for a while... especially with all the recent incidents occurring topside.', 4: '1'}"
+23	23		302							{2: 'Was it just an accident or intentional?', 3: '24', 4: 'I heard several Kurono executives died recently?', 5: '26'}
+24	24		301							{2: 'Haniff', 3: '...', 4: '1'}
+25	25	29	301							"{2: 'Haniff', 3: ""We should be asking you. I don't believe in coincidences. We were carrying out our regular mission, so how is it that we just happened to find a Babylonia Commandant near a deserted island?"", 4: '1'}"
+26	26		301							"{2: 'Haniff', 3: ""It's true. Who in Babylonia doesn't know that Kurono has been having some issues lately?"", 4: '1'}"
+27	27		301							"{2: 'Haniff', 3: 'Why don\'t you be more honest with us first? Tell us how you really ""ended up"" here. Otherwise, we can\'t have a proper conversation.', 4: '1'}"
+28	28		301							"{2: 'Haniff', 3: ""After all, I don't believe in coincidences. We were carrying out our regular mission, so how is it that we just happened to find a Babylonia Commandant near a deserted island?"", 4: '1'}"
+29	29		302							{2: '...', 3: '30'}
+30	30		301				DialogDisable			{3: 'You carefully consider your words and decide to probe a little bit.'}
+31	31		302							{2: 'I was on a mission. Babylonia is looking for something.', 3: '32'}
+32	32		302							{2: 'But I ran into a small accident at sea.', 3: '33'}
+33	33		301			DialogEnable				{2: 'Haniff', 3: 'Could it be that we are looking for the same thing?', 4: '1'}
+34	34		302							{2: '...', 3: '35', 4: '(Why is he suddenly putting on an act all by himself?)', 5: '35'}
+35	35		301							"{2: 'Haniff', 3: ""That's not a good idea. We don't need to share anything with Babylonia. This is Kurono's business."", 4: '1'}"
+36	36		301							{3: 'An eerie silence spreads between you. He has clearly rejected any attempt at friendly communication.'}
+37	37		401							{1: '2', 2: '1543'}
+38	38		202							{1: '1'}
+39	39		301							{3: 'Haniff rises to his feet and beckons with his hand. A squad member approaches from the shadows and asks something in a hushed voice.'}
+40	40		201							{1: '1', 2: '500712'}
+41	41		301							{1: '1', 2: 'Aurora Squadron Member', 3: 'Should we take the commandant away or directly...', 4: '1'}
+42	42		201							{1: '1', 2: '500141'}
+43	43		301							"{1: '1', 2: 'Haniff', 3: ""We'll relocate the commandant first. Ensure Commandant's safety at all costs. I'll talk to the higher-ups."", 4: '1'}"
+44	44		301							{3: 'As you listen to their discussion, a sudden feeling washes over you that something is not quite right.'}
+45	45		302							"{2: ""(This wasn't the plan.)"", 3: '46', 4: ""(Can't let them relocate me.)"", 5: '46'}"
+46	46		301							{2: 'Haniff', 3: 'Hmm? Are you nervous?', 4: '1'}
+47	47		104						2000.0	{1: '0|0|-300', 2: '2'}
+48	48		301							{3: 'Seemingly noticing the subtle change in your expression, Haniff smiles and approaches, his eyes gleaming faintly in the darkness.'}
+49	49		301							"{3: ""He moves in until he is right at the bars, the two of you now face-to-face with only the cage between you. Haniff's voice drops to a taunting whisper—""}"
+50	50		301							"{2: 'Haniff', 3: ""Don't be nervous. I was just teasing you. You're playing your part well, so have some faith in yourself... Chief."", 4: '1'}"
+51	51		302							{2: '...', 3: '52'}
+52	52		301							"{3: 'His piercing gaze makes your skin crawl, and you have lost your patience to continue this ""performance"" with him. Without hesitation, you bring the back of your hand to your lips.'}"
+53	53		401						500.0	{1: '1', 2: '36'}
+54	54		401							{1: '1', 2: '202'}
+55	55		306							{1: '1'}
+56	56		201							{1: '1', 2: '500712'}
+57	57		301							{1: '1', 2: 'Aurora Squadron Member', 3: 'Stop it!', 4: '1'}
+58	58		202							{1: '1'}
+59	59		401						500.0	{1: '2', 2: '4779'}
+60	60		401							{1: '2', 2: '4601'}
+61	61		301							{3: 'The soldiers outside quickly raise their weapons, but a sharp, prolonged whistle has already sounded.'}
+62	62		201							{1: '1', 2: '500141'}
+63	63		301							"{1: '1', 2: 'Haniff', 3: ""Lower your weapons! This room is soundproof—the signal wouldn't reach the outside."", 4: '1'}"
+64	64		306							
+65	65		201							{1: '1', 2: '500712'}
+66	66		301							{1: '1', 2: 'Aurora Squadron Member', 3: '...', 4: '1'}
+67	67		202							{1: '1'}
+68	68		301							{3: 'The squad members uniformly lower their weapons, yet remain intently focused on the situation unfolding in front of the cage.'}
+69	69		301							{3: 'No one notices the discordant streak of color appearing overhead.'}
+70	70		302							"{2: ""...I think we've put on enough of a show."", 3: '71', 4: ""That's enough. Don't get too close."", 5: '71'}"
+71	71		301							{3: 'Haniff keeps his right hand hidden underneath his coat, fiddling something while maintaining an air of nonchalance as he continues to ramble on.'}
+72	72		201							{1: '1', 2: '500141'}
+73	73		301				DialogDisable			"{1: '1', 2: 'Haniff', 3: ""I should've tied up your arms and legs as well..."", 4: '1'}"
+74	74		302							{2: '...', 3: '75', 4: '...I told you not to get too close.', 5: '75'}
+75	75		302							{2: '(Lunge forward with outstretched hands)', 3: '76'}
+76	76		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+77	77		401						300.0	{1: '2', 2: '13015111'}
+78	78		402							{1: '13015111'}
+79	79		203				RImgBg1Shake			{1: '1', 2: '0.25', 4: '-100', 5: '-100'}
+80	80		301			DialogEnable				{2: 'Haniff', 3: '?!', 4: '1'}
+81	81		202							{1: '1'}
+82	82		301							"{3: ""No one expects the caged prisoner to thrust an arm out with lightning speed, precisely clamping down on Haniff's throat.""}"
+83	83		306							{1: '1'}
+84	84		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+85	85		201							{1: '1', 2: '500712'}
+86	86		301							{1: '1', 2: 'Aurora Squadron Member', 3: 'Leader!', 4: '1'}
+87	87		302							{2: 'Vera! Now!', 3: '88'}
+88	88		202							{1: '1'}
+89	89		401							{1: '2', 2: '4306'}
+90	90		301							{3: 'As that name escapes your lips, the sounds of bodies hitting the ground echo one after another, traveling forward from behind.'}
+91	91		401						500.0	{1: '1', 2: '36'}
+92	92		401							{1: '1', 2: '61'}
+93	93		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+94	94		401							{1: '2', 2: '9342045'}
+95	95		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+96	96		104						500.0	{1: '300|100|-300', 2: '0'}
+97	97		401							{1: '2', 2: '9342045'}
+98	98		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+99	99		104						500.0	{1: '-300|-100|-300', 2: '0'}
+100	100		401							{1: '2', 2: '9342045'}
+101	101		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+102	102		104							{2: '0'}
+103	103		301							{3: 'A red shadow dashes among the soldiers, taking down everyone in her path.'}
+104	104		301							{3: 'Not a single bullet has time to leave its barrel before the red figure arrives at the front of the cage.'}
+105	105		301							{3: 'Vera watches the standoff between prisoner and jailer with leisurely interest, a dazzling smile spreading across her face.'}
+106	106		306							
+107	107		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+108	108		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+109	109		201							{1: '1', 2: '500345', 3: '13'}
+110	110		301							"{1: '1', 2: 'Vera', 3: ""Heh, you two are really getting into your roles, aren't you? Everything's already taken care of."", 4: '1'}"
+111	111		301							"{2: 'Vera', 3: ""Thanks to the tracker we planted in your mouth earlier. We'd have completely lost our dear Commandant otherwise."", 4: '1'}"
+112	112		201							{1: '1', 2: '500141', 5: '-100', 6: '-100'}
+113	113		301							{1: '1', 2: 'Haniff', 3: 'Cough—can you—let go—already?!', 4: '1'}
+114	114		302							{2: '(Show restraint)', 3: '115', 4: '(I want to teach this punk a lesson!)', 5: '117'}
+115	115		202							{1: '1'}
+116	116	125	301				DialogDisable			{3: 'Seeing Vera raise her weapon, you decide to exercise some restraint.'}
+117	117		201							{1: '1', 2: '500345'}
+118	118		301							"{1: '1', 2: 'Vera', 3: ""You're not letting go? Don't tell me you're changing the plan... Are we just going to kill him instead?"", 4: '1'}"
+119	119		204							{1: '1', 2: '13'}
+120	120		301							{2: 'Vera', 3: 'Alright. I trust your judgment.', 4: '1'}
+121	121		201							{1: '1', 2: '500141', 5: '-100', 6: '-100'}
+122	122		301							{1: '1', 2: 'Haniff', 3: 'Cough... Ngh...!', 4: '1'}
+123	123		202							{1: '1'}
+124	124		301				DialogDisable			{3: 'Seeing Vera with her weapon raised, you feel like you have taught Haniff a lesson, and you are happy to stop here.'}
+125	125		302							{2: 'Vera, stop.', 3: '126'}
+126	126		302							{2: '(Release your grip)', 3: '127'}
+127	127		201							{1: '1', 2: '500141'}
+128	128		301			DialogEnable				{1: '1', 2: 'Haniff', 3: 'Cough!', 4: '1'}
+129	129		302							{2: 'Open the door now.', 3: '130'}
+130	130		202							{1: '1'}
+131	131		401							{1: '2', 2: '2670'}
+132	132		301							{3: 'Haniff rubs the reddened swelling on his neck, coughing as he unlocks the cage for you.'}
+133	133		401							{1: '2', 2: '4306'}
+134	134		301							{3: 'Thinking it is over, he is surprised when Vera suddenly delivers a swift kick to the back of his knee, sending him crashing to the ground.'}
+135	135		301							"{3: ""He looks up and meets Vera's dangerous gaze.""}"
+136	136		201							{1: '1', 2: '500345', 3: '4'}
+137	137		301							"{1: '1', 2: 'Vera', 3: ""Consider this a warning. I heard everything clearly from above. You've said quite a few unnecessary things to my commandant."", 4: '1'}"
+138	138		301							"{2: 'Vera', 3: ""Next time, you won't be so lucky if you try to act clever or run your mouth."", 4: '1'}"
+139	139		301							"{2: 'Vera', 3: ""I don't know what game you're playing, forcing us to eliminate all your squad, but understand this—now that we've dealt with them all, you're truly alone. After this, you'll have no choice but to follow our instructions."", 4: '1'}"
+140	140		301							"{2: 'Vera', 3: 'And don\'t think you can ""defect"" to Babylonia this way. We won\'t accept it.', 4: '1'}"
+141	141		201							{1: '1', 2: '500141'}
+142	142		301							"{1: '1', 2: 'Haniff', 3: ""Cough... As expected of people who'd go along with such an absurd plan... I already heard those exact words from this one."", 4: '1'}"
+143	143		301				DialogDisable			{3: 'Haniff looks at you as you flex your wrist.'}
+144	144		302							{2: '(Get to business)', 3: '145', 4: '(I still want to teach this punk a lesson!)', 5: '149'}
+145	145		302							"{2: 'You said you\'d lead us to the ""treasure chest"" if we helped you ditch the Aurora Squadron.', 3: '146'}"
+146	146		302							"{2: 'Do you still remember that promise?', 3: '147', 4: 'You weren\'t joking about the ""treasure chest"", right?', 5: '147'}"
+147	147		301			DialogEnable				"{2: 'Haniff', 3: ""...I haven't forgotten my promise. I can take you there anytime. It's just behind this island."", 4: '1'}"
+148	148		302				AniZhuanchangBegin			"{2: ""Let's go then. Time for your end of the bargain."", 3: '158'}"
+149	149		301			DialogEnable	DialogDisable			"{3: 'You flex your wrist while catching the pistol Vera tosses over. After ""toying with"" it for a moment, you point it directly at Haniff\'s head.'}"
+150	150		302							"{2: 'You said you\'d lead us to the ""treasure chest"" if we helped you ditch the Aurora Squadron.', 3: '151'}"
+151	151		302							"{2: 'Do you still remember that promise?', 3: '152', 4: 'You weren\'t joking about the ""treasure chest"", right?', 5: '152'}"
+152	152		301			DialogEnable				{2: 'Haniff', 3: 'When did you F.O.S... cough, you Babylonia forces start acting like a bunch of bandits?', 4: '1'}
+153	153		302							{2: 'Cut the crap.', 3: '154', 4: 'We adapt.', 5: '154'}
+154	154		301							"{2: 'Haniff', 3: ""...I haven't forgotten my promise. I can take you there anytime. It's just behind this island."", 4: '1'}"
+155	155		302							{2: '(Holster your weapon.)', 3: '156'}
+156	156		301							{3: 'Seeing that Haniff has no intention of resisting, you nonchalantly holster your pistol.'}
+157	157		302				AniZhuanchangBegin			"{2: ""Let's go then. Time for your end of the bargain."", 3: '158'}"
+158	158		401							{1: '1', 2: '36'}
+159	159		504							{1: '0.7'}
+160	160		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory601.jpg'}
+161	161		401							{1: '1', 2: '209'}
+162	162		202							{1: '1'}
+163	163		301			AniZhuanchangEnd				"{3: 'A few days ago, you arrived at the beach to rendezvous with Vera for your ""appointment"". You found your mission objective—the true ""Key""—amid Hummingbird\'s remains, and Vera revealed the story of Kurono\'s Group 013.'}"
+164	164		301							{3: 'Meanwhile, this young man from Kurono also showed up as if he had been waiting there the whole time.'}
+165	165		301							{3: 'He proposed a deal with an inexplicable excitement in his voice.'}
+166	166		201							{1: '1', 2: '500141'}
+167	167		301							"{1: '1', 2: 'Haniff', 3: 'Finding the ""Key"" isn\'t enough. I know where the ""treasure chest"" is.', 5: '1'}"
+168	168		301							{2: 'Haniff', 3: 'Getting the treasure chest through me is definitely faster than negotiating with Kurono through Babylonia.', 5: '1'}
+169	169		301							"{2: 'Haniff', 3: ""However... we'll need a convincing reason for me to slip away from the Aurora Squadron."", 5: '1'}"
+170	170		201							{1: '1', 2: '500345'}
+171	171		301				DialogDisable			{1: '1', 2: 'Vera', 3: 'That works out perfectly, then. Here.', 4: '1'}
+172	172		202							{1: '1'}
+173	173		104						800.0	{1: '0|0|-100', 2: '0.8'}
+174	174		301			DialogEnable				{3: 'Vera gently pushed you forward.'}
+175	175		201							{1: '1', 2: '500345'}
+176	176		301							"{1: '1', 2: 'Vera', 3: 'Is this ""bait"" good enough for you? If the Aurora Squadron dares to make a move against the commandant, I\'ll have a legitimate reason to act.', 4: '1'}"
+177	177		302							{2: '?', 3: '178'}
+178	178		204							{1: '1', 2: '13'}
+179	179		301							"{2: 'Vera', 3: 'Don\'t be so surprised. Since you\'re here, we might as well ""make good use"" of you.', 4: '1'}"
+180	180		301							"{2: 'Vera', 3: ""We don't have any better bait on hand."", 4: '1'}"
+181	181		202							{1: '1'}
+182	182		301							"{3: ""Haniff's eyes linger on you for a long while before he finally nods.""}"
+183	183		201							{1: '1', 2: '500141'}
+184	184		301				AniZhuanchangBegin			"{1: '1', 2: 'Haniff', 3: 'That\'s enough... more than enough. I look forward to the moment when you ""abduct"" me instead, Chief.', 4: '1'}"
+185	185		202							{1: '1'}
+186	186		504							{1: '0'}
+187	187		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory744.jpg'}
+188	188		104							{1: '-300|0|-500', 2: '0'}
+189	189		301			AniZhuanchangEnd				{3: 'With a gun pointed at Haniff, you make your way to the shore until bushes and a wire fence block your path.'}
+190	190		301							{3: 'The tall wire fence, draped with black fabric, prevents anyone from glimpsing the shoreline beyond. It looms over the three of you.'}
+191	191		201							{1: '1', 2: '500345'}
+192	192		301							"{1: '1', 2: 'Vera', 3: 'So this is Kurono\'s ""treasure trove"" up ahead?', 4: '1'}"
+193	193		202							{1: '1'}
+194	194		301							{3: 'You synchronize your location data with Babylonia, then signal for Vera to pull back the curtain.'}
+195	195		201							{1: '1', 2: '500141'}
+196	196		301							{1: '1', 2: 'Haniff', 3: 'Not exactly. This is just a waypoint, or rather...', 4: '1'}
+197	197		202							{1: '1'}
+198	198		301				AniZhuanchangBegin			{3: 'As the curtain slowly falls—'}
+199	199		401							{1: '2', 2: '968'}
+200	200		401							{1: '1', 2: '36'}
+201	201		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1157.jpg'}
+202	202		401							{1: '1', 2: '206'}
+203	203		301			AniZhuanchangEnd				{3: 'The wind rises.'}
+204	204		401							{1: '2', 2: '9327108'}
+205	205		301							{3: 'The sea surges violently against the shore as a warship suddenly appears before everyone.'}
+206	206		201							{1: '1', 2: '500141'}
+207	207		301							{1: '1', 2: 'Haniff', 3: '—This is the ark that sails toward the treasures.', 4: '1'}
+208	208		202							{1: '1'}
+209	209		301							{3: 'Vera stares intently at the ship through the wire fence.'}
+210	210		301							"{3: 'She slowly breaks into an excited smile, not expecting the next opportunity to ""set sail"" would arrive so soon.'}"
+211	211		201							{1: '1', 2: '500345'}
+212	212		301							"{1: '1', 2: 'Vera', 3: ""Wasn't expecting another chapter on this treasure hunt."", 4: '1'}"
+213	213		301							"{3: ""You gaze at the scene before them, your eyes lingering on Vera's frame—your memories drift back to a time when the sea breeze carried the damp, slightly bitter scent of Atlantis.""}"
+214	214		301							"{2: 'Vera', 3: 'Haha... This is truly the perfect moment to ""set sail"" once again.', 4: '1'}"
+215	215		301							{3: 'Vera tilts her head and looks over, her crimson hair dancing in the wind.'}
+216	216		204							{1: '1', 2: '13'}
+217	217		301		1		AniZhuanchangBegin			"{2: 'Vera', 3: ""Commandant... my commandant, since I extended an invitation to you, you should see it through to the end, shouldn't you?"", 4: '1'}"

@@ -1,0 +1,340 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+2	2		304							{1: '<i>There is only one true heroism in the world: to see the world as it is, and to love it.</i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 7: '-3', 10: '1'}
+3	3		304				AniZhuanchangBegin			{1: '<i>                                                 —Romain Rolland</i>', 2: '000000ff', 3: '0.5', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 7: '-1', 9: '1', 10: '1'}
+4	4		401							{1: '1', 2: '6236'}
+5	5		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1373.jpg'}
+6	6		104							{1: '200|-180|-300', 2: '0'}
+7	7		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+8	8		401				AniZhuanchangEnd			{1: '2', 2: '6359'}
+9	9		104							{1: '-200|-180|-300', 2: '20'}
+10	10		301			DialogEnable				{3: 'Elysium, a cold steel jungle. A city of near-perpetual night.'}
+11	11		301							{3: 'High above the bustling streets, a virtual model beams from a massive holographic billboard, her tireless smile hovering as her high heels seemingly stride through the dense crowds below.'}
+12	12		301				DialogDisable			{3: 'Neon lights from countless billboards twist through a haze of smoke and steam, painting the skyscraper facades in electric color.'}
+13	13		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1373.jpg', 3: '0', 4: '1', 5: '0.5'}
+14	14		104						550.0	{1: '0|0|0', 2: '0', 4: '3'}
+15	15		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1373.jpg'}
+16	16		104							{1: '0|0|0', 2: '0'}
+17	17		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+18	18		306							{1: '1'}
+19	19		301			DialogEnable				{3: 'Then, the night rain arrives right on schedule, like an old friend tasked with blurring the smog into a streaky watercolor.'}
+20	20		502							{1: 'RImgBg1DisableSlow'}
+21	21		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1372.jpg'}
+22	22		301							{3: 'From her usual high vantage point, the purple-haired woman gazes down at the metropolis. A line from an old novel surfaces in her mind—'}
+23	23		301							"{3: '""The sky above the port was the color of television, tuned to a dead channel.""'}"
+24	24		301							{3: 'She glances toward the distant harbor, where pinpoints of light struggle to pierce the oppressive gloom.'}
+25	25		306							
+26	26		201							{1: '1', 2: '501420'}
+27	27		301				DialogDisable			{1: '1', 2: '???', 3: 'Not even close.', 4: '1'}
+28	28		202							{1: '1'}
+29	29		401						400.0	{1: '2', 2: '2982'}
+30	30		301			DialogEnable				{3: 'In her earpiece, the police channel buzzes with relentless dispatch codes.'}
+31	31		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 4: '4'}
+32	32		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab', 2: '2'}
+33	33		401							{1: '2', 2: '2983'}
+34	34		301							{2: 'Dispatcher', 3: 'Incident 2077. We have a call about anomalous sounds in Apartment 703 at 442 Arclight Avenue. Sector 94, respond and investigate.'}
+35	35		401							{1: '2', 2: '2983'}
+36	36		401							{1: '2', 2: '4331'}
+37	37		301							{2: '12A94', 3: '12A94 copies. En route to 2077.'}
+38	38		401							{1: '2', 2: '2983'}
+39	39		301				DialogDisable			{2: 'Dispatcher', 3: 'All units, stand by. 12A94 is responding to Incident 2077.'}
+40	40		401						1000.0	{1: '2', 2: '4697'}
+41	41		402							{1: '4697'}
+42	42		401							{1: '2', 2: '2983'}
+43	43		301			DialogEnable				{2: '12A94', 3: '12A94 on scene at apartment 703. Knocked. No answer.'}
+44	44		401							{1: '2', 2: '2983'}
+45	45		301							"{2: '12A94', 3: ""I've got visual on blood under the door! Requesting emergency entry.""}"
+46	46		401							{1: '2', 2: '2983'}
+47	47		301							{2: 'Dispatcher', 3: 'Copy that. Please upload photos and video footage of the scene.'}
+48	48		401							{1: '2', 2: '1099'}
+49	49		301							{3: '...'}
+50	50		401							{1: '2', 2: '2983'}
+51	51		301				DialogDisable			{2: '12A94', 3: 'This is 12A94, cleared for entry. Breaching now.'}
+52	52		401					200.0	100.0	{1: '2', 2: '5912'}
+53	53		401						300.0	{1: '2', 2: '5703'}
+54	54		401							{1: '2', 2: '5703'}
+55	55		301			DialogEnable				{3: '...'}
+56	56		401							{1: '2', 2: '2983'}
+57	57		301							"{2: 'Dispatcher', 3: ""12A94, acknowledge. What's the status on Incident 2077?""}"
+58	58		301							{3: '...'}
+59	59		401							{1: '2', 2: '2983'}
+60	60		301				DialogDisable			{2: 'Dispatcher', 3: '12A94, Code 1. Do you copy?'}
+61	61		401					800.0		{1: '2', 2: '2983'}
+62	62		301			DialogEnable				{2: '12A94', 3: '12A94 copies, Code 2-H. Confirming one civilian casualty. I repeat, one civilian casualty.'}
+63	63		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab'}
+64	64		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 4: '4', 5: '1'}
+65	65		401							{1: '2', 2: '2983'}
+66	66		201							{1: '1', 2: '501420'}
+67	67		301							"{1: '1', 2: '???', 3: 'This is ED03, ""The Unwinged"". Intel received. I am inbound. 12A94, lock down the perimeter. Do not contaminate the scene.', 4: '1'}"
+68	68		202							{1: '1'}
+69	69		301				AniZhuanchangBegin			{3: 'A moment of silence falls over the radio channel.'}
+70	70		401						500.0	{1: '1', 2: '36'}
+71	71		402						500.0	{1: '6359'}
+72	72		401							{1: '2', 2: '6367'}
+73	73		401							{1: '1', 2: '398'}
+74	74		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1365.jpg'}
+75	75		401							{1: '2', 2: '4773'}
+76	76		301			AniZhuanchangEnd	DialogDisable			"{3: ""Patrol officer Johnny huddles under the scant shelter of a dripping eave, waiting for the visitor's arrival.""}"
+77	77		401						600.0	{1: '2', 2: '4543'}
+78	78		401						600.0	{1: '2', 2: '5327'}
+79	79		401						600.0	{1: '2', 2: '5703', 3: '0.5'}
+80	80		201							{1: '1', 2: '501420', 4: '-600'}
+81	81		402							{1: '4773'}
+82	82		401							{1: '2', 2: '5703', 3: '1'}
+83	83		203							{1: '1', 2: '0.5', 3: '-450'}
+84	84		301			DialogEnable				"{1: '1', 3: 'Moments later, an anti-grav car that belongs to the Department of Public Safety descends before 442 Arclight Avenue. The door slides open, and a black umbrella unfurls against the curtain of rain as ""The Unwinged"" steps up.'}"
+85	85		201							{1: '2', 2: '501171', 4: '600'}
+86	86		203							{1: '2', 2: '0.5', 3: '450'}
+87	87		301							{1: '1', 3: 'Johnny meets the lavender-haired woman on the pavement, the rain immediately plastering his hair to his forehead.'}
+88	88		301							"{2: 'Patrol Officer Johnny', 3: ""Hello, I'm patrol officer Johnny from the 12th Patrol Division..."", 4: '2'}"
+89	89		301							{3: 'The patter of rain and the relentless drone of the nearby billboards swallow his words, blurring his form into the neon-smeared backdrop.'}
+90	90		301							"{2: 'Patrol Officer Johnny', 3: ""Ahem... unit designation 12A94. My partner's upstairs securing the scene."", 4: '2'}"
+91	91		301							{3: 'He raises his voice.'}
+92	92		301							"{2: 'Patrol Officer Johnny', 3: ""Honestly, it's a real relief you're here, Inspector..."", 4: '2'}"
+93	93		204							{1: '1', 2: '4'}
+94	94		301							{2: 'Moineau', 3: 'Moineau.', 4: '1'}
+95	95		301							{3: 'Her tone is a flat, polished stone, leaving no room for the pleasantries he was attempting.'}
+96	96		301				DialogDisable			{2: 'Patrol Officer Johnny', 3: 'Right... This way, Inspector Moineau.', 4: '2'}
+97	97		203						200.0	{1: '2', 2: '0.5', 3: '600'}
+98	98		202							{1: '2'}
+99	99		203						200.0	{1: '1', 2: '0.5', 3: '-200'}
+100	100		202							{1: '1'}
+101	101		301			DialogEnable	AniZhuanchangBegin			{3: 'Any urge for small talk he might have had is now gone.'}
+102	102		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+103	103		402							{1: '6367'}
+104	104		401						2000.0	{1: '2', 2: '5277'}
+105	105		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1369.jpg'}
+106	106		401							{1: '2', 2: '6349'}
+107	107		402							{1: '5277'}
+108	108		301			AniZhuanchangEnd				"{3: '""Ding, ding, ding... Ding!""'}"
+109	109		301				DialogDisable			{3: 'The elevator shudders to a halt on the seventh floor. Likely to keep residents in good spirits, the management had installed these relentlessly cheerful cartoon jingles—a stark, almost cruel contrast to the scene awaiting them.'}
+110	110		401							{1: '2', 2: '6379'}
+111	111		104							{1: '0|0|-300', 2: '0.8'}
+112	112		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory420.png', 3: '0', 4: '1', 5: '1'}
+113	113		205							{1: '999'}
+114	114		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory420.png'}
+115	115		301			DialogEnable				{3: 'Moineau steps out, her eyes immediately tracking the door numbers down the hall.'}
+116	116		104							{1: '0|0|-100', 2: '0.6'}
+117	117		301							{3: '730, 729...'}
+118	118		201							{1: '18', 2: '501420', 3: '5', 5: '-100'}
+119	119		301							{1: '1', 2: 'Moineau', 3: 'Tsk.', 4: '18'}
+120	120		202			DialogDisable				{1: '18', 6: '1'}
+121	121		104						300.0	{1: '0|0|0', 2: '0.3'}
+122	122		301			DialogEnable				{3: 'The numbers are running backward.'}
+123	123		401							{1: '2', 2: '5291'}
+124	124		301							{3: 'She pivots, heading toward 703.'}
+125	125		201							{1: '1', 2: '501420', 4: '-450'}
+126	126		201							{1: '2', 2: '501171', 4: '450'}
+127	127		301							{1: '1', 2: 'Moineau', 3: 'Give me the sitrep.', 4: '1'}
+128	128		301							{2: 'Patrol Officer Johnny', 3: 'The caller is Allen Blake, male, 42, lives alone in 704. Said he called us after hearing some unusual noises from next door.', 4: '2'}
+129	129		301				DialogDisable			{2: 'Moineau', 3: 'What time did he hear them?', 4: '1'}
+130	130		402							{1: '5291'}
+131	131		401							{1: '2', 2: '5291'}
+132	132		202							{1: '1', 2: '2'}
+133	133		104						500.0	{1: '0|0|-100', 2: '0.5'}
+134	134		301			DialogEnable				{3: '715, 714...'}
+135	135		201							{1: '1', 2: '501420', 4: '-450'}
+136	136		201							{1: '2', 2: '501171', 4: '450'}
+137	137		301							{1: '1', 2: 'Patrol Officer Johnny', 3: 'Uh...', 4: '2'}
+138	138		204							{1: '1', 2: '5'}
+139	139		301				DialogDisable			{2: 'Moineau', 3: 'Sigh. When was the call logged?', 4: '1'}
+140	140		401						500.0	{1: '2', 2: '1543'}
+141	141		401							{1: '2', 2: '4421'}
+142	142		301			DialogEnable				{2: 'Patrol Officer Johnny', 3: 'Let me check... It was 8:12 PM.', 4: '2'}
+143	143		301				DialogDisable			{2: 'Moineau', 3: 'Your ATA?', 4: '1'}
+144	144		401						300.0	{1: '2', 2: '5286'}
+145	145		301			DialogEnable				{2: 'Patrol Officer Johnny', 3: 'Um... we were on scene by 8:18.', 4: '2'}
+146	146		301							{2: 'Moineau', 3: 'Time of death?', 4: '1'}
+147	147		401							{1: '2', 2: '1543'}
+148	148		301							{3: 'He fumbles, wringing his hands.'}
+149	149		301							"{2: 'Patrol Officer Johnny', 3: ""With all due respect, ma'am, we're patrol. We don't have the training for that..."", 4: '2'}"
+150	150		301				DialogDisable			{2: 'Patrol Officer Johnny', 3: 'Best guess is, it was very recent.', 4: '2'}
+151	151		401							{1: '2', 2: '5291'}
+152	152		202							{1: '1', 2: '2'}
+153	153		104							{1: '0|0|-300', 2: '0.8'}
+154	154		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1370.jpg', 3: '0', 4: '1', 5: '1'}
+155	155		205							{1: '999'}
+156	156		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1370.jpg'}
+157	157		104							{1: '0|0|-100', 2: '0.8'}
+158	158		301			DialogEnable				{3: '706, 705...'}
+159	159		201							{1: '1', 2: '501420', 4: '-450'}
+160	160		201							{1: '2', 2: '501171', 4: '450'}
+161	161		301							"{1: '1', 2: 'Moineau', 3: ""Victim's ID?"", 4: '1'}"
+162	162		301							{3: 'His face contorts, a mask of fresh discomfort.'}
+163	163		204							{1: '1', 2: '5'}
+164	164		301							{2: 'Moineau', 3: 'What is it?', 4: '1'}
+165	165		301				DialogDisable			"{2: 'Patrol Officer Johnny', 3: ""The victim's name is... Christina. She's a Construct."", 4: '2'}"
+166	166		202							{1: '1', 2: '2', 6: '1'}
+167	167		306							{1: '1'}
+168	168		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory650.jpg', 3: '0', 4: '1', 5: '1'}
+169	169		104						1000.0	{1: '0|200|-400', 2: '0', 4: '3'}
+170	170		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory650.jpg'}
+171	171		104						200.0	{1: '0|200|-400', 2: '0'}
+172	172		104							{1: '0|100|-400', 2: '2'}
+173	173		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+174	174		104							{1: '0|0|0', 2: '0', 4: '3'}
+175	175		301			DialogEnable				"{3: ""Moineau's scanning gaze halts at 703. It passes over the flickering yellow holographic tape and locks onto the floor inside the open doorway.""}"
+176	176		201							{1: '1', 2: '501431', 4: '-30', 5: '18', 6: '-100'}
+177	177		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0.5'}
+178	178		401							{1: '1', 2: '36'}
+179	179		301							{1: '1', 3: 'A pool of deep, glistening vital fluid soaks through pink synthetic hair. The young girl, Christina, lies broken and motionless.'}
+180	180		306							
+181	181		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+182	182		401							{1: '2', 2: '2595'}
+183	183		201							{1: '1', 2: '501420', 3: '4'}
+184	184		301				AniZhuanchangBegin			"{1: '1', 2: 'Moineau', 3: ""You've got to be kidding me..."", 4: '1'}"
+185	185		202							{1: '1', 6: '1'}
+186	186		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1373.jpg'}
+187	187		401							{1: '1', 2: '280'}
+188	188		301			AniZhuanchangEnd	DialogDisable			{3: 'The night rain bleeds neon through the haze, swallowing the city whole.'}
+189	189		502							{1: 'RImgBg1DisableSlow'}
+190	190		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory650.jpg'}
+191	191		301			DialogEnable				{3: 'Inside Apartment 703 at 442 Arclight Avenue, the forensic investigator snaps off her gloves.'}
+192	192		201							{1: '1', 2: '500116'}
+193	193		301							{1: '1', 2: 'Forensic Investigator', 3: 'Time of examination, 9:03 PM. Estimated time of death is between 7:20 PM and 7:50 PM.', 4: '1'}
+194	194		301							{2: 'Forensic Investigator', 3: 'The victim...', 4: '1'}
+195	195		306							{1: '1'}
+196	196		201							{1: '1', 2: '501420', 3: '4'}
+197	197		301							"{1: '1', 3: ""The forensic investigator looks up. Moineau, the department's star agent, stands with her arms crossed, her attention clearly elsewhere as she checks the time on her terminal.""}"
+198	198		301							"{3: ""She hasn't heard a word.""}"
+199	199		202							{1: '1'}
+200	200		306							
+201	201		201							{1: '1', 2: '500116'}
+202	202		301							{1: '1', 2: 'Forensic Investigator', 3: 'Sigh...', 4: '1'}
+203	203		202							{1: '1'}
+204	204		301							"{3: ""She understands the distraction. In fact, every officer at the scene is watching Moineau, their attention taut. They all know who Moineau's partner is.""}"
+205	205		401							{1: '2', 2: '5159'}
+206	206		301							{3: 'A soft commotion echoes from the hallway—murmurs of surprise, the sound of officers greeting someone.'}
+207	207		201							{1: '18', 2: '501171', 4: '-400', 5: '-200', 6: '370'}
+208	208		301							{1: '1', 2: 'Patrol Officer Johnny', 3: '...Inspector... right this way.', 4: '18'}
+209	209		202							{1: '18', 6: '1'}
+210	210		301							"{3: ""Every officer holds their breath, their attention fixed on the doorway where Moineau's partner—and the victim's spectral double in hair color—is about to appear.""}"
+211	211		402							{1: '5159'}
+212	212		401							{1: '2', 2: '5291'}
+213	213		201							{1: '2', 2: '500875', 4: '600'}
+214	214		203							{1: '2', 2: '0.5', 3: '400'}
+215	215		301							{1: '1', 3: 'At the sound of approaching footsteps, Moineau steps forward.'}
+216	216		402							{1: '5291'}
+217	217		401							{1: '2', 2: '1543'}
+218	218		201							{1: '1', 2: '501420', 4: '-600'}
+219	219		203							{1: '1', 2: '0.5', 3: '-400'}
+220	220		301							"{1: '1', 2: 'Moineau', 3: 'I wasn\'t aware you had another ""sister.""', 4: '1'}"
+221	221		402							{1: '1543'}
+222	222		201							{1: '15', 2: '500864', 4: '400'}
+223	223		301				AniZhuanchangBegin			{1: '1', 2: 'Moineau', 3: 'Teddy.', 4: '1'}
+224	224		202			DialogDisable				{1: '1', 2: '15', 3: '2', 6: '1'}
+225	225		401							{1: '1', 2: '36'}
+226	226		102							{1: 'Sightline Breach', 2: 'Chapter 38', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+227	227		502						5000.0	{1: 'ThemeEnable'}
+228	228		502						5000.0	{1: 'DialogDisable'}
+229	229		401							{1: '1', 2: '6390'}
+230	230		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory833.jpg'}
+231	231		107							{1: 'Inside the Sewer', 2: 'Elysium', 4: 'Dock'}
+232	232		309	1						"{2: ""Sewers beneath Elysium's docks.""}"
+233	233		108							
+234	234		301			DialogEnable				"{3: ""This is the city's lower intestine, a world away from the gleaming lights and glass facades above. Here, the only spectacle is the murky effluent of urban waste.""}"
+235	235		301							"{3: ""Rust, decay, and things better left unnamed stew together in a witch's cauldron, brewing a stench that doesn't just assault the nostrils, but seeps into the soul.""}"
+236	236		401							{1: '2', 2: '4302'}
+237	237		301			RImgBg1Shake				{3: 'Squelch.'}
+238	238		401							{1: '2', 2: '1543'}
+239	239		201							{1: '1', 2: '501419', 3: '4'}
+240	240		301							{1: '1', 2: 'Moore', 3: 'Ugh... what is that...', 4: '1'}
+241	241		204							{1: '1', 2: '14'}
+242	242		301							"{2: 'Moore', 3: ""Oh no... Elean's going to kill me..."", 4: '1'}"
+243	243		204							{1: '1', 2: '1'}
+244	244		301							"{2: 'Moore', 3: ""Okay, don't panic. A bouquet and a home-cooked meal. That's the price for ruining her floor. She'll forgive me."", 4: '1'}"
+245	245		204							{1: '1', 2: '4'}
+246	246		301			PanelActor1Shake				{2: 'Moore', 3: 'Right. Mission first. Focus, Moore.', 4: '1'}
+247	247		202							{1: '1'}
+248	248		301							{3: 'Inspector Moore of the Crime Investigation Bureau dismisses the unidentified filth beneath his shoe, his attention already returning to the scene.'}
+249	249		401							{1: '2', 2: '4298'}
+250	250		201							{1: '1', 2: '501419', 3: '4'}
+251	251		301							{1: '1', 2: 'Moore', 3: 'The sewer system under the docks is such a maze. So this is where our tax money is really going.', 4: '1'}
+252	252		301							"{2: 'Moore', 3: ""It's easy to get turned around down here, even for me. A regular person wouldn't stand a chance."", 4: '1'}"
+253	253		301							{2: 'Moore', 3: 'Jack, oh Jack... what were you thinking, coming to a place like this?', 4: '1'}
+254	254		202							{1: '1'}
+255	255		301				DialogDisable			"{3: ""The missing person case flashes back into Moore's mind. He tightens his jaw and hardens his gaze.""}"
+256	256		402							{1: '4298'}
+257	257		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+258	258		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory182.png'}
+259	259		504							{1: '0.7'}
+260	260		401							{1: '2', 2: '4387'}
+261	261		301			DialogEnable				"{3: ""Moore has been working on the case of a man named Jack, missing for over 48 hours. A painstaking review of surveillance footage traced Jack's last known movements to the docks, where the trail went cold again.""}"
+262	262		201							{1: '18', 2: '501419', 4: '-250', 5: '-300', 6: '250'}
+263	263		504							{1: '0.7', 2: '18'}
+264	264		301							{1: '1', 2: 'Moore', 3: 'Hey, have any of you seen this man? 34, brown hair, about 5 feet 8, and around 155 pounds.', 4: '18'}
+265	265		202							{1: '18', 6: '1'}
+266	266		201							{1: '1', 2: '500093'}
+267	267		504							{1: '0.7', 2: '1'}
+268	268		301				DialogDisable			"{1: '1', 2: 'Dock Worker A', 3: ""Nope. Don't know him."", 4: '1'}"
+269	269		203						200.0	{1: '1', 2: '0.3', 3: '-500'}
+270	270		201							{1: '2', 2: '500895', 4: '100'}
+271	271		504							{1: '0.7', 2: '2'}
+272	272		301			DialogEnable	DialogDisable			{1: '1', 2: 'Dock Worker B', 3: 'Probably jumped into the drink. Folks are fragile these days. One bad day, and they give up.', 4: '2'}
+273	273		203							{1: '1', 2: '0.3', 3: '-600'}
+274	274		203						200.0	{1: '2', 2: '0.3', 3: '0'}
+275	275		201							{1: '3', 2: '500086', 4: '450'}
+276	276		504							{1: '0.7', 2: '3'}
+277	277		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Dock Worker C', 3: ""Hold on... I might've seen 'im."", 4: '3'}"
+278	278		202							{1: '1', 2: '2', 6: '1'}
+279	279		203							{1: '3', 2: '0.3', 3: '-400'}
+280	280		401							{1: '2', 2: '5286'}
+281	281		201							{1: '1', 2: '501419', 3: '4', 4: '900'}
+282	282		203							{1: '1', 2: '0.3', 3: '400'}
+283	283		301			DialogEnable				{1: '1', 2: 'Moore', 3: 'Really? Tell me what you saw.', 4: '1'}
+284	284		301							"{2: 'Dock Worker C', 3: ""Yesterday, during dinner, I saw a guy in the distance. Looked like he was huntin' for somethin'. Pretty sure he ducked into the sewer access over there."", 4: '3'}"
+285	285		301							"{2: 'Dock Worker C', 3: ""Can't swear it was your guy, though. Only saw his back."", 4: '3'}"
+286	286		301							{2: 'Dock Worker C', 3: 'But...', 4: '3'}
+287	287		204							{1: '1', 2: '5'}
+288	288		301							{2: 'Moore', 3: 'But what? If you know something, tell me.', 4: '1'}
+289	289		301							"{2: 'Dock Worker C', 3: ""Well, it's not really a lead, but there's been some weird noises comin' from down there lately."", 4: '3'}"
+290	290		204							{1: '1', 2: '4'}
+291	291		301							{2: 'Moore', 3: 'What kind of noises?', 4: '1'}
+292	292		301							"{2: 'Dock Worker C', 3: ""Like machinery. A few of the guys say they've seen weird-lookin' mechanoids skulkin' around, ones with a red glow."", 4: '3'}"
+293	293		301							"{2: 'Dock Worker C', 3: ""My guess? It's just some company testin' new gear. Seein' how it holds up in the muck."", 4: '3'}"
+294	294		202							{1: '1', 2: '3'}
+295	295		301				DialogDisable			{3: 'After interviewing the dock workers, Moore entered the sewers to begin his search.'}
+296	296		401							{1: '2', 2: '4387'}
+297	297		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+298	298		504							{1: '0'}
+299	299		101						400.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory833.jpg'}
+300	300		401						200.0	{1: '2', 2: '4302'}
+301	301		201							{1: '1', 2: '501419', 3: '1'}
+302	302		301			DialogEnable				{1: '1', 2: 'Moore', 3: 'There you are.', 4: '1'}
+303	303		202							{1: '1', 6: '1'}
+304	304		306							{1: '1'}
+305	305		104							{1: '0|50|-100', 2: '0.5'}
+306	306		301							{3: 'Moore crouches, his eyes cutting through the filth until they lock onto a single, clear footprint.'}
+307	307		401							{1: '2', 2: '4298'}
+308	308		306							
+309	309		104							{1: '0|100|-200', 2: '0.5'}
+310	310		301							{3: 'He follows the trail of scattered impressions, his own form swallowed by the oppressive gloom of the sewers.'}
+311	311		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+312	312		401							{1: '2', 2: '1507'}
+313	313		104							{1: '0|0|-200', 2: '0'}
+314	314		402							{1: '4298'}
+315	315		301							{3: 'Click. Clack.'}
+316	316		201							{1: '1', 2: '501419', 3: '5'}
+317	317		402							{1: '1507'}
+318	318		301				DialogDisable			"{1: '1', 2: 'Moore', 3: ""(Someone's here.)"", 4: '1'}"
+319	319		401							{1: '2', 2: '1543'}
+320	320		203						100.0	{1: '1', 2: '0.15', 4: '-100'}
+321	321		202							{1: '1'}
+322	322		401							{1: '1', 2: '36'}
+323	323		301			DialogEnable				{3: 'He quickly drops into a low crouch, his footsteps going silent. He presses against the damp wall, carefully leaning to peer around a corner.'}
+324	324		306							{1: '1'}
+325	325		401							{1: '2', 2: '9351040'}
+326	326		201							{1: '1', 2: '500013', 4: '-400', 5: '-50', 6: '-150'}
+327	327		201							{1: '2', 2: '500013', 4: '400', 5: '-50', 6: '-150'}
+328	328		301							"{1: '1', 3: 'There, he sees them. The ""mechanoids"" the dock worker mentioned.'}"
+329	329		201							{1: '15', 2: '501336'}
+330	330		301				DialogDisable			{1: '1', 3: 'And beside them, Jack, sprawled motionless on the ground, long past his last breath.'}
+331	331		306							
+332	332		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+333	333		502							{1: 'RImgBg1Shake'}
+334	334		202							{1: '15', 6: '1'}
+335	335		401							{1: '2', 2: '4376'}
+336	336		401							{1: '1', 2: '192'}
+337	337		203							{1: '1', 2: '0.13', 3: '-300', 4: '-100', 5: '-300'}
+338	338		203						400.0	{1: '2', 2: '0.13', 3: '300', 4: '-100', 5: '-300'}
+339	339		301		1	DialogEnable	AniZhuanchangBegin			{3: 'Then, in the darkness, a dozen visual sensors bloom with malevolent red light, all turning toward him in unison.'}

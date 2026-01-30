@@ -1,0 +1,27 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		401							{1: '1', 2: '201'}
+2	2		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory45.jpg'}
+3	3		201							{1: '1', 2: '500214', 4: '400'}
+4	4		201							{1: '2', 2: '500012', 4: '-400'}
+5	5		301			DialogEnable				{1: '1', 2: 'Rosetta', 3: '...So the frame is completed?', 4: '1'}
+6	6		301							"{2: 'Nikola', 3: ""The tech department told me this. Do you feel like something's wrong?"", 4: '2'}"
+7	7		204							{1: '1', 2: '14'}
+8	8		301							{2: 'Rosetta', 3: 'Centaur kit...', 4: '1'}
+9	9		301							"{2: 'Nikola', 3: ""But to make it up to you, didn't the tech department refit you with weapons and let you come to the training grounds because of it?"", 4: '2'}"
+10	10		301							"{2: 'Nikola', 3: ""Besides, you're setting off to support the alliance ship route. Take the chance to get more familiar with your new frame."", 4: '2'}"
+11	11		204							{1: '1', 2: '8'}
+12	12		301							"{2: 'Rosetta', 3: ""I didn't expect Babylonia would agree to help the ship captain."", 4: '1'}"
+13	13		301							"{2: 'Nikola', 3: ""Is it because they owe the Forest Guard a favor due to the previous battle? Even if I don't accept, you'll probably find a way to return, right?"", 4: '2'}"
+14	14		204							{1: '1'}
+15	15		301							"{2: 'Rosetta', 3: ""I don't deny it."", 4: '1'}"
+16	16		301							{2: 'Nikola', 3: 'So this is the best solution. But remember, I will only provide limited support.', 4: '2'}
+17	17		301							"{2: 'Rosetta', 3: ""Yep, I didn't even consider that the problem can be solved by relying on others."", 4: '1'}"
+18	18		204							{1: '1', 2: '8'}
+19	19		301							"{2: 'Nikola', 3: ""Let's start the training then."", 4: '2'}"
+20	20		202							{1: '1', 2: '2'}
+21	21		201							{1: '1', 2: '500059'}
+22	22		301							{1: '1', 2: 'Researcher', 3: 'Starting simulation venue. Placing training machines.', 4: '1'}
+23	23		202							{1: '1'}
+24	24		301							"{3: ""After the researcher's start things up, the clearing where Rosetta stands changes its appearance thanks to the projection, and the Recycled machine emerges from the projection.""}"
+25	25		201							{1: '1', 2: '500214', 3: '4'}
+26	26		301		1		AniZhuanchangBegin			{1: '1', 2: 'Rosetta', 3: 'Rosetta... Start battle.', 4: '1'}

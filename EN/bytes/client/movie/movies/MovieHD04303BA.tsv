@@ -1,0 +1,149 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory671.jpg'}
+2	2		401							{1: '1', 2: '5059'}
+3	3		301			DialogEnable				{3: 'On the streets of Constellia, you and Lucia receive Amour Concerto Photo Vouchers from the staff, printed with special photography themes.'}
+4	4		201							{1: '1', 2: '500863'}
+5	5		301							{1: '1', 2: 'Staff Member', 3: 'The rules are very simple.', 4: '1'}
+6	6		301							{2: 'Staff Member', 3: 'All you need to do is record the most memorable moment from your day and send your recording to the email address printed on your voucher.', 4: '1'}
+7	7		301							"{2: 'Staff Member', 3: ""We'll select some of the submissions and edit them into a grand montage. Every selected participant will receive a complete set of Golden Age plush toys."", 4: '1'}"
+8	8		401							{1: '2', 2: '5298'}
+9	9		301							"{3: ""The staff member shows a photo of the plush toy set. A Valentine's-themed pink Froggie sits obediently on a heart-shaped lily pad.""}"
+10	10		203							{1: '1', 2: '0.25', 3: '400'}
+11	11		201							{1: '2', 2: '500994', 3: '4', 4: '-400'}
+12	12		301							{1: '1', 2: 'Lucia', 3: 'Can we just buy them?', 4: '2'}
+13	13		301							"{2: 'Staff Member', 3: ""These are commemorative editions designed just for the event, so they're not for sale, unfortunately."", 4: '1'}"
+14	14		204							{1: '2', 2: '2'}
+15	15		301							{2: 'Lucia', 3: 'Commandant?', 4: '2'}
+16	16		301							{3: 'Lucia looks like she really wants to give it a try.'}
+17	17		302							"{2: ""Sure, let's do this together."", 3: '18'}"
+18	18		301				AniZhuanchangBegin			"{2: 'Staff Member', 3: 'Thank you both for your participation. Your final video will be used to promote Constellia, so we\'d kindly like to suggest that you focus on the ""scenery"" in your recording, rather than on the ""people.""', 4: '1'}"
+19	19		502						400.0	{1: 'DialogDisable'}
+20	20		202							{1: '1', 2: '2', 6: '1'}
+21	21		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory669.jpg'}
+22	22		301			DialogEnable				{3: 'After saying goodbye to the staff member, you stroll through the streets with Lucia as you think about how to go about making the recording.'}
+23	23		201							{1: '1', 2: '500994'}
+24	24		301							{1: '1', 2: 'Lucia', 3: 'The most memorable moment of today, with emphasis on scenery rather than people...', 4: '1'}
+25	25		204							{1: '1', 2: '2'}
+26	26		301							{2: 'Lucia', 3: 'Any ideas, Commandant?', 4: '1'}
+27	27		302							"{2: ""Let's stroll about first and if we come across any inspiration."", 3: '28'}"
+28	28		301				DialogDisable			{2: 'Lucia', 3: 'Okay.', 4: '1'}
+29	29		401							{1: '2', 2: '4044'}
+30	30		203							{1: '1', 2: '0.25', 4: '-50', 5: '-25'}
+31	31		202							{1: '1'}
+32	32		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+33	33		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+34	34		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+35	35		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg'}
+36	36		301			DialogEnable				"{3: ""The two of you hold each other's hands as you explore the streets and alleys of Constellia. Romance and affection permeate this capital of art that's awash in Valentine's pink, with each corner seemingly hiding delights waiting to be discovered.""}"
+37	37		301				AniZhuanchangBegin			{3: 'Take this particular coffee shop, for instance...'}
+38	38		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+39	39		201							{1: '1', 2: '500138'}
+40	40		301			AniZhuanchangEnd				{1: '1', 2: 'Staff', 3: 'You can try arranging the cake plates and coffee cups in a triangle, then pan the camera from here...', 4: '1'}
+41	41		202							{1: '1', 6: '1'}
+42	42		201							{1: '1', 2: '500994', 3: '2'}
+43	43		301							"{1: '1', 2: 'Lucia', 3: ""That's beautiful indeed."", 4: '1'}"
+44	44		202							{1: '1'}
+45	45		301							"{3: ""And a bird's eye view of the streets...""}"
+46	46		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg'}
+47	47		201							{1: '18', 2: '500994', 3: '2'}
+48	48		301							"{1: '1', 2: 'Lucia', 3: ""I'd have to carry you up in my arms to fly there. Are you sure about this, Commandant?"", 4: '18'}"
+49	49		302							"{2: ""Don't worry. I'll be okay."", 3: '50', 4: ""Let's see how it turns out first?"", 5: '50'}"
+50	50		204							{1: '1', 2: '1'}
+51	51		301				AniZhuanchangBegin			"{2: 'Lucia', 3: ""Understood. I'll hold you tight when we're up there."", 4: '18'}"
+52	52		202							{1: '18', 6: '1'}
+53	53		502						400.0	{1: 'DialogDisable'}
+54	54		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+55	55		301			DialogEnable				{3: 'And there are still many, many things that...'}
+56	56		401							{1: '2', 2: '4799'}
+57	57		301							{3: 'Joyful moments always pass by so quickly. In the blink of an eye, afternoon has quietly arrived. You sit with Lucia in wicker chairs at a street corner, sorting through your recorded footage while taking a break.'}
+58	58		201							{1: '1', 2: '500994'}
+59	59		301							"{1: '1', 2: 'Lucia', 3: ""These are all pretty interesting. I'm having trouble picking one to submit."", 4: '1'}"
+60	60		204							{1: '1', 2: '3'}
+61	61		301							"{2: 'Lucia', 3: 'But... doesn\'t that mean we haven\'t found the ""most memorable"" shot from today?', 4: '1'}"
+62	62		202							{1: '1'}
+63	63		301							{3: 'She breaks into a defeated smile.'}
+64	64		301							"{3: ""None of the videos we've captured so far really stands out at first glance.""}"
+65	65		302							{2: 'Oh, I heard this somewhere, but apparently...', 3: '66'}
+66	66		302							"{2: ""There's going to be a holographic light show tonight. We might be able to capture something great to submit there."", 3: '67'}"
+67	67		301							{3: 'A lot of people were talking about this major performance earlier while you and Lucia were filming earlier.'}
+68	68		201							{1: '1', 2: '500994', 3: '1'}
+69	69		301							{1: '1', 2: 'Lucia', 3: 'You mean that show that portrays love with light effects? It does sound quite interesting.', 4: '1'}
+70	70		301							"{2: 'Lucia', 3: ""Although I don't know if we can really get what we want, since I'm sure a lot of people are going to be there."", 4: '1'}"
+71	71		302							"{2: ""Let's go early and grab a good spot up front."", 3: '72'}"
+72	72		301							{2: 'Lucia', 3: 'Today is a special day. It seems a bit of a shame to spend our time just waiting.', 4: '1'}
+73	73		204							{1: '1', 2: '2'}
+74	74		301							"{2: 'Lucia', 3: ""I don't mind what we do as long as I'm with you, Commandant, but..."", 4: '1'}"
+75	75		302							{2: 'What a coincidence, I was thinking the same thing.', 3: '76'}
+76	76		301							{3: 'Your eyes meet and your hearts connect. No more needs to be said.'}
+77	77		204							{1: '1', 2: '1'}
+78	78		301				AniZhuanchangBegin			"{2: 'Lucia', 3: ""Let's go and grab ourselves a good spot in a bit, then."", 4: '1'}"
+79	79		202							{1: '1'}
+80	80		502						400.0	{1: 'DialogDisable'}
+81	81		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+82	82		301			DialogEnable				{3: 'After a short rest, the two of you follow the promotional flyers along the street to the performance venue.'}
+83	83		201							{1: '1', 2: '500863'}
+84	84		301							"{1: '1', 2: 'Staff Member', 3: ""You guys came too early. The performance doesn't start until evening."", 4: '1'}"
+85	85		302							{2: '(Explain the situation)', 3: '86'}
+86	86		301							"{2: 'Staff Member', 3: ""Gotcha. I know a great spot with an excellent view that's perfect for filming, and you'll get the full experience of the performance's interactive elements."", 4: '1'}"
+87	87		202							{1: '1', 6: '1'}
+88	88		201						250.0	{1: '1', 2: '500994'}
+89	89		203							{1: '1', 2: '0.25', 4: '-50'}
+90	90		401							{1: '2', 2: '4341'}
+91	91		301				AniZhuanchangBegin			{3: 'After thanking the staff member, you sit down next to Lucia and start talking about your experiences today.'}
+92	92		202							{1: '1', 6: '1'}
+93	93		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory802.jpg'}
+94	94		301			AniZhuanchangEnd				{3: 'Night falls deep as the audience files in. The venue grows increasingly vibrant with boiling anticipation and excitement. As people wait with bated breath, the performance...'}
+95	95		201							{1: '1', 2: '500994', 3: '1', 4: '-50'}
+96	96		301							{1: '1', 2: 'Lucia', 3: 'Begins.', 4: '1'}
+97	97		202							{1: '1'}
+98	98		306							{1: '1'}
+99	99		401							{1: '2', 2: '5318'}
+100	100		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryYanChangHui.prefab', 2: '1'}
+101	101		301							{3: 'Quietly, the holographic projectors at the stage start working, and brilliant light and shadow spread throughout the venue just as quietly. Vibrant warm hues interweave into a blanket of radiance, like early spring sunshine pouring in all directions.'}
+102	102		401							{1: '2', 2: '2581'}
+103	103		301							"{3: ""The music intensifies as the projections transform, while the colors go from soft pink to deep red, from warm to intense. As the show nears its climax, light streams from the audience toward the center, as if trying to gather the love from each visitor's heart as they merge into a brilliant rose.""}"
+104	104		301							"{3: ""Where you're sitting happens to be on the way where the light and shades converge, with flowing colors rushing past.""}"
+105	105		302							{2: '(So this is the interactive elements the staff was talking about)', 3: '106'}
+106	106		301							"{3: ""Witnessing the light effects gathering into a rose on the verge of blooming, you quietly repeat to Lucia what the staff member from earlier said—that this spot offers an excellent view. You're sure the photos will turn out amazing.""}"
+107	107		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '2'}
+108	108		306							
+109	109		201							{1: '1', 2: '500994', 3: '2'}
+110	110		301							{1: '1', 2: 'Lucia', 3: 'All set.', 4: '1'}
+111	111		202							{1: '1'}
+112	112		401							{1: '2', 2: '2667'}
+113	113		104						250.0	{1: '0|0|-250', 2: '0.25'}
+114	114		104							{1: '0|0|0', 2: '0.25'}
+115	115		301							{3: 'Lucia switches her terminal to camera mode, ready to capture the moment when the rose blooms.'}
+116	116		301							{3: 'As she aims her terminal, with light effects flowing past her like water, she captures a silhouette out of the corner of her eye.'}
+117	117		301							{3: 'Light and shades interweave and cast over your profile, the warm-colored radiance adding to it a hint of gentleness.'}
+118	118		201							{1: '1', 2: '500994'}
+119	119		301							{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+120	120		204							{1: '1', 2: '1'}
+121	121		301							{2: 'Lucia', 3: '...', 4: '1'}
+122	122		301							{2: 'Lucia', 3: 'Commandant.', 4: '1'}
+123	123		302							{2: 'Hmm?', 3: '124', 4: '(Look at Lucia)', 5: '124'}
+124	124		202							{1: '1'}
+125	125		301							"{3: ""Your eyes meet Lucia's when you turn to face where the sound came from. At that very moment, the rose blooms, its radiant glow illuminating your profile.""}"
+126	126		301				AniZhuanchangBegin			"{3: ""Lucia's auto-focusing terminal captures this fleeting moment with perfect clarity, turning this moment into something that's going to last eternally.""}"
+127	127		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab'}
+128	128		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryYanChangHui.prefab'}
+129	129		301			AniZhuanchangEnd				{3: 'After the show, you check the images with Lucia from the latest ones forward. The latest one is you in colorful lights during the performance.'}
+130	130		201							{1: '1', 2: '500994', 3: '4'}
+131	131		301							{1: '1', 2: 'Lucia', 3: 'Oh no, I totally screwed up...', 4: '1'}
+132	132		302							"{2: ""I don't mind at all."", 3: '133'}"
+133	133		302							"{2: ""It's just that the photo doesn't quite meet the submission requirements. Is that okay?"", 3: '134'}"
+134	134		204							{1: '1', 2: '1'}
+135	135		301							"{2: 'Lucia', 3: ""It's okay."", 4: '1'}"
+136	136		301							{3: 'Lucia smiles as she gazes at the image on her terminal. After a long moment, she raises her head, her crimson eyes filled with warmth.'}
+137	137		301							{2: 'Lucia', 3: 'This event is probably trying to let us know that we should treasure the people around us while appreciating our surroundings and that those around us are the most beautiful things we can hope to see on this very special day.', 4: '1'}
+138	138		301							"{2: 'Lucia', 3: ""I've enjoyed the event and gained something far more valuable than any prize it could offer, so it doesn't matter if we can't participate in the follow-up activities."", 4: '1'}"
+139	139		302							"{2: ""That's good to hear."", 3: '140', 4: 'We still have time. What would you like to do next?', 5: '140'}"
+140	140		301							"{2: 'Lucia', 3: ""Well, since we've been taking pictures the entire day..."", 4: '1'}"
+141	141		401							{1: '2', 2: '4044'}
+142	142		203							{1: '1', 2: '0.25', 4: '-75', 5: '-50'}
+143	143		301							{3: 'Lucia links her arm with yours and tilts her head toward you, her hair falling softly onto your shoulder. She raises her terminal and positions it to capture the moment.'}
+144	144		204							{1: '1', 2: '2'}
+145	145		301							"{2: 'Lucia', 3: ""I'd like to capture something different now—moments that belong only to us."", 4: '1'}"
+146	146		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '2'}
+147	147		401							{1: '2', 2: '4930'}
+148	148		501		1		AniZhuanchangBegin			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}

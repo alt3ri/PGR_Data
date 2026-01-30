@@ -1,0 +1,147 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory579.jpg'}
+2	2		401							{1: '1', 2: '5061'}
+3	3		201							{1: '1', 2: '501070', 3: '11', 4: '-400'}
+4	4		201							{1: '2', 2: '500486', 3: '1', 4: '400'}
+5	5		301			DialogEnable				{1: '1', 2: 'Nanami', 3: 'Phew!', 4: '1'}
+6	6		204							{1: '1'}
+7	7		301							{2: 'Nanami', 3: 'Thank goodness Haicma made it back in time! No way I could have saved all these people otherwise...', 4: '1'}
+8	8		204							{1: '1', 2: '5'}
+9	9		301							"{2: 'Nanami', 3: ""It's just a shame we lost some supplies while we were at it..."", 4: '1'}"
+10	10		301							"{2: 'Haicma', 3: ""If Sage hadn't made the quick decision to switch frames, the Red Tide would have flooded this area by the time Trailblazer and I made it back."", 4: '2'}"
+11	11		204							{1: '2', 2: '3'}
+12	12		301							{2: 'Haicma', 3: 'And... those humans over there.', 4: '2'}
+13	13		202							{1: '1', 2: '2'}
+14	14		301							{3: 'She turns to look at the humans huddled in the corner who are trembling in fear.'}
+15	15		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+16	16		504							{1: '0.7'}
+17	17		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1101.jpg'}
+18	18		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+19	19		201							{1: '1', 2: '500527', 4: '-550', 5: '-50', 6: '20', 7: '1'}
+20	20		201							{1: '2', 2: '500564', 5: '-50', 6: '20', 7: '1'}
+21	21		201							{1: '3', 2: '500460', 4: '550', 5: '-50', 6: '20', 7: '1'}
+22	22		301							{3: 'They were residents of the nearby conservation area before the Red Tide flooded it. Chased by the red sludge, they fled to the nearby ruins.'}
+23	23		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+24	24		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+25	25		504							{1: '0'}
+26	26		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+27	27		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory579.jpg'}
+28	28		201							{1: '1', 2: '500485', 7: '1'}
+29	29		401							{1: '2', 2: '4376'}
+30	30		301			RImgBg1Shake				"{1: '1', 2: 'Trailblazer', 3: ""—Humans shouldn't be here! These people should have died instead!"", 4: '1'}"
+31	31		203							{1: '1', 2: '0.2', 4: '-10', 5: '-50'}
+32	32		401							{1: '2', 2: '8220025'}
+33	33		301			RImgBg1Shake				{2: 'Trailblazer', 3: 'We should have thrown them into that red sludge when we could!', 4: '1'}
+34	34		301			RImgBg1Shake				"{2: 'Trailblazer', 3: ""If it weren't for these humans, we could have saved more of our own kind! If we had just ignored these people and gone straight to save ours..."", 4: '1'}"
+35	35		201							{1: '1', 2: '500260', 4: '100', 7: '1'}
+36	36		301			PanelActor1Shake				{1: '1', 2: 'Girl', 3: 'M-mommy—', 4: '1'}
+37	37		301							{3: 'Among the quietly huddled crowd, a little girl bursts into tears, terrified by the imposing mechanoid before her.'}
+38	38		201							{1: '2', 2: '500771', 4: '-350'}
+39	39		203							{1: '2', 2: '0.25', 3: '-300'}
+40	40		301							"{1: '1', 2: 'Hooded Girl', 3: ""There, there... It's okay..."", 4: '2'}"
+41	41		203							{1: '2', 2: '0.25', 3: '-300', 4: '-80'}
+42	42		301							"{3: ""The hooded girl, clearly too young to be the child's mother, holds the little girl tightly in her arms.""}"
+43	43		202							{1: '1', 2: '2', 6: '1'}
+44	44		201							{1: '1', 2: '500486', 3: '5'}
+45	45		301							{1: '1', 2: 'Haicma', 3: '—Trailblazer, stop it.', 4: '1'}
+46	46		301							{3: 'Haicma stares at Trailblazer who just lashed out at the humans with a serious look.'}
+47	47		201							{1: '1', 2: '501070'}
+48	48		203							{1: '1', 2: '0.4', 4: '-50'}
+49	49		301							"{1: '1', 2: 'Nanami', 3: ""It's okay, little one..."", 4: '1'}"
+50	50		104						200.0	{1: '0|-10|0', 2: '0.15'}
+51	51		104						300.0	{1: '0|0|0', 2: '0.15'}
+52	52		104						200.0	{1: '0|-10|0', 2: '0.15'}
+53	53		104							{1: '0|0|0', 2: '0.15'}
+54	54		301							"{3: ""Nanami kneels down and gently pats the little girl's head.""}"
+55	55		204							{1: '1', 2: '7'}
+56	56		301							{2: 'Nanami', 3: 'Hey... Check this out!', 4: '1'}
+57	57		202							{1: '1'}
+58	58		301							{3: 'She opens her palm to reveal a tiny speck of light hidden within.'}
+59	59		201							{1: '3', 2: '500102', 4: '-100', 5: '50', 7: '1'}
+60	60		201							{1: '4', 2: '500102', 4: '150', 5: '-100', 6: '-100', 7: '1'}
+61	61		205							{1: '3', 3: '1', 4: '0', 5: '0'}
+62	62		205							{1: '4', 3: '1', 4: '0', 5: '0'}
+63	63		401							{1: '2', 2: '2633'}
+64	64		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiFuenSnowGame/FxUiFuenSnowGameXingxingBaodian.prefab', 2: '2', 3: '3', 4: '3'}
+65	65		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiFuenSnowGame/FxUiFuenSnowGameXingxingBaodian.prefab', 2: '2', 3: '4', 4: '4'}
+66	66		301							{3: 'The speck of light expands, forming two tiny stars that dance through the air.'}
+67	67		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiFuenSnowGame/FxUiFuenSnowGameXingxingBaodian.prefab', 4: '3'}
+68	68		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiFuenSnowGame/FxUiFuenSnowGameXingxingBaodian.prefab', 4: '4'}
+69	69		202							{1: '3', 2: '4', 6: '1'}
+70	70		201							{1: '1', 2: '500260', 4: '-400'}
+71	71		201							{1: '2', 2: '501070', 3: '7', 4: '400'}
+72	72		301							{1: '1', 2: 'Girl', 3: '...Huh?', 4: '1'}
+73	73		301							"{3: ""Distracted, the little girl sniffles and carefully watches the stars in Nanami's hand.""}"
+74	74		204							{1: '2', 2: '1'}
+75	75		203							{1: '2', 2: '0.3', 3: '300'}
+76	76		301							"{2: 'Nanami', 3: ""Alright, this one's for you—"", 4: '2'}"
+77	77		202							{1: '1', 2: '2'}
+78	78		301							"{3: ""The tiny star transforms into a hair clip and finds its place in the little girl's hair.""}"
+79	79		201							{1: '1', 2: '500485', 4: '-450'}
+80	80		201							{1: '2', 2: '501070', 3: '2', 4: '500'}
+81	81		301							{1: '1', 2: 'Nanami', 3: 'And this one! Is! For! You! Lazer!', 4: '2'}
+82	82		201							{1: '3', 2: '500102', 4: '100', 6: '-200', 7: '1'}
+83	83		201							{1: '4', 2: '500102', 4: '-350', 5: '150', 7: '1'}
+84	84		205							{1: '3', 3: '1', 4: '0', 5: '0'}
+85	85		205							{1: '4', 3: '1', 4: '0', 5: '0'}
+86	86		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiFuenSnowGame/FxUiFuenSnowGameXingxingBaodian.prefab', 2: '2', 3: '3'}
+87	87		401							{1: '2', 2: '2633'}
+88	88		203						200.0	{1: '3', 2: '0.25', 3: '-100', 4: '100', 5: '-500'}
+89	89		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiChopping03.prefab', 2: '2', 3: '4'}
+90	90		301			PanelActor1Shake				"{3: 'The now obviously-enlarged ""tiny star"" bonks heavily against Lazer\'s head as Nanami makes her declaration.'}"
+91	91		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiFuenSnowGame/FxUiFuenSnowGameXingxingBaodian.prefab', 4: '3'}
+92	92		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiFuenSnowGame/FxUiFuenSnowGameXingxingBaodian.prefab', 4: '4'}
+93	93		202							{1: '3', 2: '4', 6: '1'}
+94	94		204							{1: '2'}
+95	95		301							"{2: 'Nanami', 3: ""There we go! Lazer! Mechanoids and humans should get along! Don't you bully humans!"", 4: '2'}"
+96	96		301							{2: 'Trailblazer', 3: '...Hmph!', 4: '1'}
+97	97		202							{1: '1', 2: '2'}
+98	98		301							{3: 'Trailblazer flares up again, having spun a few rounds.'}
+99	99		401							{1: '2', 2: '2915'}
+100	100		201							{1: '1', 2: '500485'}
+101	101		401							{1: '2', 2: '4376'}
+102	102		301							"{1: '1', 2: 'Trailblazer', 3: ""It's all because of that weirdo in the red sludge! I could have brought our people back! But there was nothing I could do when the red sludge got the two of them!"", 4: '1'}"
+103	103		203							{1: '1', 2: '0.25', 4: '10', 5: '-30'}
+104	104		401							{1: '2', 2: '4376'}
+105	105		301			RImgBg1Shake				{2: 'Trailblazer', 3: 'Come out! Fight me to the death! You freak!', 4: '1'}
+106	106		201							{1: '1', 2: '501081', 3: '16', 4: '-300'}
+107	107		201							{1: '2', 2: '500471', 4: '400', 5: '-400', 6: '400'}
+108	108		203							{1: '1', 2: '0.3', 3: '-250'}
+109	109		301							"{1: '1', 2: 'The Star', 3: ""D-did you just say you saw some weirdo in the Red Tide? That's scary..."", 4: '1'}"
+110	110		203						200.0	{1: '1', 2: '0.3', 3: '-200'}
+111	111		401							{1: '2', 2: '9351041'}
+112	112		301			RImgBg1Shake				{2: 'Aya', 3: 'Urrrghh! Uuuurrrrggghhh!', 4: '2'}
+113	113		202							{1: '1', 2: '2'}
+114	114		301							{3: 'The Church of Machina erupts into chaos and is now awash in wailing and cursing.'}
+115	115		402							{1: '2915'}
+116	116		201							{1: '1', 2: '501070', 4: '-400'}
+117	117		201							{1: '2', 2: '500486', 3: '3', 4: '400'}
+118	118		301							{1: '1', 2: 'Haicma', 3: '...', 4: '2'}
+119	119		301							{2: 'Haicma', 3: 'Sage, are you... really sure about this?', 4: '2'}
+120	120		301							{3: 'She does not know if humans and mechanoids can truly coexist in peace.'}
+121	121		301							"{2: 'Nanami', 3: ""It's gonna be okay..."", 4: '1'}"
+122	122		203							{1: '1', 2: '0.25', 3: '-350', 5: '-50'}
+123	123		204							{1: '1', 2: '5'}
+124	124		301							{2: 'Nanami', 3: 'Hey! Let go of that human!', 4: '1'}
+125	125		202							{1: '1', 2: '2'}
+126	126		301							{3: 'In an instant, some conflict breaks out, and another mechanoid lifts up a screaming human high into the air—'}
+127	127		306							{1: '1'}
+128	128		301							{3: 'The coexistence between humans and mechanoids is not as simple as she previously imagined.'}
+129	129		301							{3: 'In this short period alone, friction between mechanoids and humans has resulted in 15.5 incidents, with that extra 0.5 being...'}
+130	130		306							
+131	131		201							{1: '1', 2: '501070', 3: '11'}
+132	132		301							{1: '1', 2: 'Nanami', 3: '...Phew, good thing I made it here before they started fighting...', 4: '1'}
+133	133		203							{1: '1', 2: '0.25', 3: '-400'}
+134	134		201							{1: '2', 2: '500484', 4: '400'}
+135	135		204							{1: '1'}
+136	136		301							{1: '1', 2: 'Arcana', 3: '...Sage.', 4: '2'}
+137	137		204							{1: '2', 2: '14'}
+138	138		301							{2: 'Arcana', 3: 'If this goes on... are things really going to be okay? The Church of Machina has never taken in humans before.', 4: '2'}
+139	139		204							{1: '1', 2: '12'}
+140	140		301							{2: 'Nanami', 3: 'Um... Things should work out eventually, right?', 4: '1'}
+141	141		204							{1: '1', 2: '1'}
+142	142		301							"{2: 'Nanami', 3: ""Nanami gets along great with the commandant! Commandant never gets angry at Nanami! Everything's gonna be fine!"", 4: '1'}"
+143	143		204							{1: '1', 2: '2'}
+144	144		301							"{2: 'Nanami', 3: ""Anyway, let's leave them be for the time being!"", 4: '1'}"
+145	145		202							{1: '1', 2: '2'}
+146	146		301		1		AniZhuanchangBegin			"{3: ""Nanami hums an unfamiliar tune as she walks toward Zavier's magic workshop.""}"

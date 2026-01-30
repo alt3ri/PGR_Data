@@ -1,0 +1,63 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '206'}
+3	3		301			DialogEnable	AniZhuanchangBegin			"{2: 'Bianca', 3: ""It's over.""}"
+4	4		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1001_3.jpg'}
+5	5		301			AniZhuanchangEnd				{3: 'As the arrow hits its mark, a crack spreads on its body like a spiderweb at lightning speed until the Rail Heterozygote disintegrates into nothing but sand, seeping through the gaps onto the railway.'}
+6	6		301							{2: 'Sophia', 3: 'Wonderful... wonderful.'}
+7	7		301							"{2: 'Sophia', 3: ""That's... wonderful.""}"
+8	8		302							"{2: ""It's all thanks to everyone."", 3: '9', 4: ""It's all thanks to Bianca."", 5: '11'}"
+9	9		301							{2: 'Lucia', 3: 'I never thought we could really win against that enemy.'}
+10	10	14	301				AniZhuanchangBegin			"{2: 'Liv', 3: ""Everyone's safe... Thank goodness...""}"
+11	11		301							"{2: 'Lee', 3: ""That arrow, it's not just a one-time thing, is it?""}"
+12	12		301							{2: 'Bianca', 3: 'I think it is, in truth, I am already quite tired...'}
+13	13		301				AniZhuanchangBegin			"{2: 'Liv', 3: ""M-miss Bianca! Are you all right?! Please refrain from moving, I'll carry out a full examination immediately!""}"
+14	14		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory134.png'}
+15	15		201							{1: '1', 2: '500125', 3: '2'}
+16	16		301			AniZhuanchangEnd				"{1: '1', 2: 'Jamilah', 3: ""Looks like it's finally over. What a fantastic display... both the battle and Bianca's final strike."", 4: '1'}"
+17	17		204							{1: '1', 2: '1'}
+18	18		301							{2: 'Jamilah', 3: 'How about a deal, then? We will provide intel and products that Babylonia will find satisfactory, and in return, you and your team will join us, Gray Raven Commandant.', 4: '1'}
+19	19		302							"{1: '1000', 2: ""I don't intend to jump ship."", 3: '22', 4: ""It's not up to me."", 5: '23'}"
+20	20		204							{1: '1', 2: '13'}
+21	21		303							{1: '1000'}
+22	22	24	301							"{2: 'Jamilah', 3: ""Is our price not acceptable? I'd recommend against underestimating what Akdilek can do... Should we talk about it some more?"", 4: '1'}"
+23	23		301							{2: 'Jamilah', 3: 'Trying to shrug off my offer? Fine...', 4: '1'}
+24	24		201							{1: '1', 2: '500128'}
+25	25		301							{1: '1', 2: 'Bianca', 3: 'Babylonia actually can afford new residents after its expansion. The President is happy to welcome you all there.', 4: '1'}
+26	26		201							{1: '1', 2: '500125', 3: '1'}
+27	27		301							"{1: '1', 2: 'Jamilah', 3: ""I don't think so. We should stay here, right?"", 4: '1'}"
+28	28		202							{1: '1', 6: '1'}
+29	29		301							"{2: 'Commoner A', 3: ""Right, we'll all stay here.""}"
+30	30		301							"{2: 'Commoner B', 3: ""That's what we decided, isn't it?""}"
+31	31		301							"{2: 'Aristocrat A', 3: ""Where's Ashlar, by the way?""}"
+32	32		301							"{2: 'Aristocrat B', 3: ""Whatever. He's been manipulating us since the beginning... I wonder if the Ascendants have promised him something in return?""}"
+33	33		201							{1: '1', 2: '500127'}
+34	34		301							{1: '1', 2: 'Sophia', 3: 'Everyone on Akdilek will stay on the Eternal Engine and go forward together.', 4: '1'}
+35	35		301							"{2: 'Sophia', 3: 'No matter how long and how much work it will take, I will never, NEVER stop until I fulfill my promise to myself... to take the train to the end of the line, to the ""final station.""', 4: '1'}"
+36	36		302							{2: 'I... can do that as well!', 3: '37'}
+37	37		301							"{2: 'Sophia', 3: ""I can't help but feel like it will come true now that you have said so..."", 4: '1'}"
+38	38		301							{2: 'Sophia', 3: 'Commandant. Can I call you Commandant?', 4: '1'}
+39	39		302							"{2: ""Haven't you been doing that already?"", 3: '40', 4: ""If you'd like to."", 5: '40'}"
+40	40		301							{2: 'Sophia', 3: 'Thanks, Commandant!', 4: '1'}
+41	41		201							{1: '1', 2: '1021001'}
+42	42		301							"{1: '1', 2: 'Lucia', 3: ""In that case, let's upload our report here, Commandant. The signal's better at this spot."", 4: '1'}"
+43	43		202							{1: '1', 6: '1'}
+44	44		301							{3: '(Your comms suddenly rings.)'}
+45	45		201							{1: '1', 2: '500011'}
+46	46		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+47	47		301							{1: '1', 2: 'Hassen', 3: 'Thanks for your hard work, Gray Raven Commandant.', 4: '1'}
+48	48		301							"{2: 'Hassen', 3: ""I've received your mission report. I didn't think you'd finish it in such a short time! Guess I made the right call assigning it to you."", 4: '1'}"
+49	49		301							"{2: 'Hassen', 3: ""Unfortunately, there's something I have to tell you..."", 4: '1'}"
+50	50		302							{2: 'Another mission? Already?', 3: '51'}
+51	51		301							"{2: 'Hassen', 3: ""Haha! Of course not. I'm not that cruel."", 4: '1'}"
+52	52		301							"{2: 'Hassen', 3: ""I'm just here to tell you that we're almost done clearing the surface. Other team are on their way to you."", 4: '1'}"
+53	53		301							"{2: 'Hassen', 3: ""So you'll have to stay on the train for now until the they are there to pick you up."", 4: '1'}"
+54	54		301							"{2: 'Hassen', 3: ""I'll notify you when that happens."", 4: '1'}"
+55	55		301							"{2: 'Hassen', 3: 'Take the chance to enjoy your ""exotic"" journey! (Laughs) This is your break, after all.', 4: '1'}"
+56	56		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+57	57		201							{1: '1', 2: '500125', 3: '1'}
+58	58		301							{1: '1', 2: 'Jamilah', 3: 'It appears that, Commandant, you are also quite a busy person...', 4: '1'}
+59	59		301							"{2: 'Jamilah', 3: 'Take the chance to enjoy the ""exotic locale""! (Laughs) This is your break, after all.', 4: '1'}"
+60	60		301							{2: 'Jamilah', 3: 'The food and views on the Eternal Engine are also remarkable wonders.', 4: '1'}
+61	61		204							{1: '1', 2: '13'}
+62	62		301		1		AniZhuanchangBegin			{2: 'Jamilah', 3: 'Perhaps you will change your mind about my offer after you have experienced them.', 4: '1'}

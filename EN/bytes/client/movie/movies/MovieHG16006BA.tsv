@@ -1,0 +1,369 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory393.jpg'}
+2	2		401							{1: '1', 2: '175'}
+3	3		301			DialogEnable				"{3: ""Epirus, the lion cub, huddles nervously against the kneeling human's legs, gnawing on the hem of their clothes.""}"
+4	4		402							{1: '4323'}
+5	5		301				DialogDisable			{3: 'The human quickly determines that Hermione has suffered an acute heart failure, a byproduct of the intense stress from the Red Tide.'}
+6	6		302							{2: 'We have to defibrillate her.', 3: '7'}
+7	7		302							"{2: ""There's an HV cell inside you, and a discharge resistor in the car... It's our only shot."", 3: '8'}"
+8	8		401							{1: '2', 2: '1513'}
+9	9		301			DialogEnable				{3: 'You scramble towards the vehicle, a race against time.'}
+10	10		302							{2: 'I need to plug into your maintenance port for an emergency power discharge, Veronica.', 3: '11'}
+11	11		401							{1: '2', 2: '685'}
+12	12		301							"{3: ""You frantically start scavenging for useful components, all while calling out to Veronica. But Veronica's response never comes.""}"
+13	13		302							{2: 'Veronica?', 3: '14'}
+14	14		306							{1: '1'}
+15	15		201							{1: '1', 2: '501366', 3: '4', 5: '-20', 6: '-200'}
+16	16		301							{1: '1', 3: 'Veronica remains silent, her chin held high as her hands continue their rhythm, a mechanical dance of chest compressions.'}
+17	17		306							
+18	18		301				DialogDisable			{3: 'Sensing the storm brewing beneath her calm exterior, you offer words of comfort.'}
+19	19		302							"{2: ""You've done well. You are why she has a fighting chance."", 3: '20'}"
+20	20		401							{1: '2', 2: '1543'}
+21	21		201						400.0	{1: '2', 2: '501375', 3: '1', 4: '150'}
+22	22		401							{1: '2', 2: '5888'}
+23	23		203							{1: '2', 2: '0.4', 3: '120'}
+24	24		301			DialogEnable				{3: 'Epirus nestles in close, rubbing his fuzzy head against the cold, unyielding frame of the mechanical girl.'}
+25	25		202							{1: '2'}
+26	26		402							{1: '5888'}
+27	27		301							{2: 'Veronica', 3: '...', 4: '1', 18: '100012065'}
+28	28		202							{1: '1'}
+29	29		301				DialogDisable			"{3: ""The Star of Life lectures haven't gone to waste. You quickly rig up a makeshift device, wrap Veronica's hands in saltwater-soaked cloths, and take over the CPR.""}"
+30	30		302							"{2: ""She needs about 300 joules, but I don't know how strong your current will be..."", 3: '31'}"
+31	31		302							"{2: ""This discharge resistor has its limits, Veronica. You'll have to get a handle on your power output."", 3: '32'}"
+32	32		201							{1: '1', 2: '501366', 3: '10', 5: '-20', 6: '-200'}
+33	33		301			DialogEnable				{1: '1', 2: 'Veronica', 3: 'I just broke her rib.', 4: '1', 18: '100012066'}
+34	34		301							"{3: ""Veronica's voice trembles, almost imperceptibly.""}"
+35	35		301							{2: 'Veronica', 3: 'My body has no temperature regulation and no medical capabilities. My frame was built for destruction, nothing else.', 4: '1', 18: '100012067'}
+36	36		301				DialogDisable			"{2: 'Veronica', 3: ""I can't control it."", 4: '1', 18: '100012068'}"
+37	37		302							"{2: ""It's normal to break ribs during CPR! It proves nothing! She's still alive because of you!"", 3: '38'}"
+38	38		302							{2: 'We saved Epirus, and we can save Hermione too. Trust the centuries of human research behind this.', 3: '39'}
+39	39		202							{1: '1'}
+40	40		301			DialogEnable				"{3: ""It's a scene so much like the rainy night you first met. In this world, there is no magic wand for resurrection, but there will always be those who refuse to throw in the towel.""}"
+41	41		302							{2: 'Do you remember? These fragile mammals have fought tooth and nail just to survive this long.', 3: '42'}
+42	42		201							{1: '1', 2: '501366', 5: '-20', 6: '-200'}
+43	43		301							{1: '1', 2: 'Veronica', 3: '...', 4: '1', 18: '100012069'}
+44	44		301				DialogDisable			{3: 'She meets your steely gaze.'}
+45	45		302							"{2: ""We're running out of time, Veronica. The buck stops with us. We decide if she makes it or not."", 3: '46'}"
+46	46		302							"{2: ""Let's bring her back, together."", 3: '47', 4: 'You have to trust me, and you have to trust Hermione, too.', 5: '47'}"
+47	47		202							{1: '1'}
+48	48		301			DialogEnable	DialogDisable			"{3: ""The mechanical hand, swathed in a saltwater-soaked cloth, presses down on the lioness's chest.""}"
+49	49		302							{2: 'First shock!', 3: '50'}
+50	50		401							{1: '2', 2: '4471'}
+51	51		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory393.jpg', 3: '0', 4: '0.8', 5: '0.14'}
+52	52		104						190.0	{1: '0|0|-100', 2: '0.14'}
+53	53		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory393.jpg', 3: '0.8', 4: '0', 5: '0.14'}
+54	54		104						190.0	{1: '0|0|0', 2: '0.14'}
+55	55		301			DialogEnable				{3: 'Veronica makes contact and pulls back in a flash.'}
+56	56		301				DialogDisable			{3: 'The human immediately starts chest compressions. After five rounds—'}
+57	57		302							{2: 'Veronica, again!', 3: '58'}
+58	58		302							{2: 'Second shock!', 3: '59'}
+59	59		401							{1: '2', 2: '4471'}
+60	60		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory393.jpg', 3: '0', 4: '0.8', 5: '0.14'}
+61	61		104						190.0	{1: '0|0|-100', 2: '0.14'}
+62	62		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory393.jpg', 3: '0.8', 4: '0', 5: '0.14'}
+63	63		104						190.0	{1: '0|0|0', 2: '0.14'}
+64	64		301			DialogEnable				"{3: ""The setting sun casts a golden glow on Veronica's determined face. In the distance, the migrating herds are still rumbling on, and the Red Tide is still hanging over them like a dark cloud. But right now, there's a glimmer of hope.""}"
+65	65		301							"{3: ""The mechanical hand, touching and then instantly pulling away, catches a faint beat. Veronica's head snaps up to look at you.""}"
+66	66		201							{1: '1', 2: '501366', 3: '7', 5: '-20', 6: '-200'}
+67	67		301							{1: '1', 2: 'Veronica', 3: 'We have a pulse!', 4: '1', 18: '100012070'}
+68	68		302							{2: 'Yes, we have a pulse.', 3: '69', 4: 'We did it.', 5: '69'}
+69	69		204							{1: '1'}
+70	70		301							{2: 'Veronica', 3: 'You saved her, 【kuroname】.', 4: '1', 18: '100012071'}
+71	71		302							{2: 'It was us, Veronica. We saved her together.', 3: '72'}
+72	72		202							{1: '1'}
+73	73		301				AniZhuanchangBegin			"{3: ""The thunder rumbles into silence, and the heavy season's rain never comes.""}"
+74	74		401							{1: '1', 2: '36'}
+75	75		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory322.png'}
+76	76		401							{1: '2', 2: '5888'}
+77	77		301			AniZhuanchangEnd				{3: 'After the shot of emergency medicine, Hermione stirs, nudging the mechanical hand like a cub, then giving Epirus a fond lick on the head.'}
+78	78		402							{1: '5888'}
+79	79		401							{1: '1', 2: '206'}
+80	80		301							"{3: ""The lioness is out of the woods, but you aren't yet.""}"
+81	81		301							"{3: ""The stampeding herds keep coming, with the Red Tide and howling Hetero-Creatures hot on your heels. You have to carve out an escape route for the grassland's wildlife, and fast.""}"
+82	82		302							{2: 'Shall we fight side by side, partner?', 3: '83', 4: 'Shall we fight side by side, Veronica?'}
+83	83		401							{1: '2', 2: '4895'}
+84	84		104							{1: '0|-50|-200', 2: '0.3'}
+85	85		301							{3: 'Ignoring the outstretched hand, Veronica quickly readies her weapon and spreads her wings, soaring toward the howling Hetero-Creatures in the Red Tide.'}
+86	86		201							{1: '1', 2: '501366', 3: '3', 5: '-20', 6: '-200'}
+87	87		301							"{1: '1', 2: 'Veronica', 3: ""Save it. I have no interest in being on humanity's leash."", 4: '1', 18: '100012072'}"
+88	88		302				AniZhuanchangBegin			"{2: 'Well, so much for that moment of goodwill...', 3: '89', 4: ""That's a M.I.N.D. connection..."", 5: '89'}"
+89	89		202							{1: '1', 6: '1'}
+90	90		104							{1: '0|0|0', 2: '0'}
+91	91		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory438.jpg'}
+92	92		301			AniZhuanchangEnd	DialogDisable			{3: 'Even working together, the endless waves of Hetero-Creatures make it impossible to get the animals out of the deadly situation.'}
+93	93		401						400.0	{1: '2', 2: '885'}
+94	94		401							{1: '2', 2: '4415'}
+95	95		401							{1: '2', 2: '4231'}
+96	96		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+97	97		301			DialogEnable				{3: 'As more innocent creatures are swallowed by the Red Tide, a familiar horn sounds—Sewani from the wanderer caravan has arrived with her companions.'}
+98	98		302							{2: 'Why are you here?', 3: '99'}
+99	99		201							{1: '18', 2: '500398'}
+100	100		301							"{1: '1', 2: 'Sewani', 3: ""Come on, my vehicle has GPS tracking. This is my home turf, I've got more skin in the game than anyone to protect it."", 4: '18', 18: '100012073'}"
+101	101		202							{1: '18'}
+102	102		401							{1: '2', 2: '5706'}
+103	103		402							{1: '4231'}
+104	104		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+105	105		301			RImgBg1Shake				{3: 'After a perfect drift stop, Sewani leans out to save two meerkats from a teetering acacia tree. Moments later, several cheetahs leap gracefully over jagged rocks, landing dead center in the back of her vehicle.'}
+106	106		201							{1: '1', 2: '500398'}
+107	107		301							{1: '1', 2: 'Sewani', 3: 'Even though this is my first time stepping foot on this savanna... I grew up on stories of Epirus. I spent my whole childhood soaking them in.', 4: '1', 18: '100012074'}
+108	108		301							"{2: 'Sewani', 3: ""Coming face to face with this vast wilderness, with the animals who call it home... that's when it finally hit me. My connection to my ancestors is real. And the past, the one that seemed too beautiful to be true, is real, too."", 4: '1', 18: '100012075'}"
+109	109		202							{1: '1'}
+110	110		301							"{3: ""The Red Tide, the animal herds, the savanna you don't even recognize—this isn't the Epirus from her stories at all. But when you look into the girl's bright eyes, you can see the eternal, boundless savanna she believes in as plain as day.""}"
+111	111		301							"{3: ""Isn't this what everyone's been fighting for? This precious hope?""}"
+112	112		201							{1: '1', 2: '500398'}
+113	113		301							"{1: '1', 2: 'Sewani', 3: ""All those stories I heard as a kid, the stuff I wasn't even sure was real—it all makes sense now, 【kuroname】. This place is a part of me."", 4: '1', 18: '100012076'}"
+114	114		301							"{2: 'Sewani', 3: ""No, that's not right... this is where I finally become myself."", 4: '1', 18: '100012077'}"
+115	115		202							{1: '1'}
+116	116		306							{1: '1'}
+117	117		301							{3: 'The three vehicles, bursting at the seams, have become the only lifeboats in this storm. Their cramped decks are packed with every kind of creature—lions, cheetahs, wildebeests, gazelles... and unbelievably, even humans with the guts to cradle porcupines.'}
+118	118		301				DialogDisable			{3: 'In the face of such a disaster, every living thing is in the same boat. They have to weather the storm together.'}
+119	119		306							
+120	120		401						450.0	{1: '2', 2: '2589'}
+121	121		402							{1: '206'}
+122	122		401							{1: '1', 2: '6239'}
+123	123		501						550.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+124	124		401						1400.0	{1: '2', 2: '844090'}
+125	125		201							{1: '1', 2: '500398'}
+126	126		502							{1: 'DialogEnable'}
+127	127		301			PanelActor1Shake				{1: '1', 2: 'Sewani', 3: 'Dammit, 【kuroname】!', 4: '1', 18: '100012078'}
+128	128		202							{1: '1'}
+129	129		301				DialogDisable			{3: 'Surrounded by Hetero-Creatures, the convoy is completely hemmed in. With nowhere left to turn, Sewani calls on the Gray Raven Commandant to come to their rescue.'}
+130	130		401							{1: '2', 2: '4895'}
+131	131		201							{1: '1', 2: '501366', 3: '4', 6: '-100'}
+132	132		203							{1: '1', 2: '0.2', 4: '-20', 5: '-200'}
+133	133		301			DialogEnable				"{1: '1', 3: ""Veronica gets there before the human does. Faced with the cold, unyielding gaze of this mechanical girl, the convoy's leader, Sewani, has to swallow her fear and find her voice.""}"
+134	134		202							{1: '1', 6: '1'}
+135	135		201							{1: '1', 2: '500398'}
+136	136		301							"{1: '1', 2: 'Sewani', 3: ""Your lions... we didn't lay a finger on them, you know that, right?"", 4: '1', 18: '100012079'}"
+137	137		202							{1: '1'}
+138	138		306							{1: '1'}
+139	139		201							{1: '1', 2: '501366', 3: '10', 5: '-20', 6: '-200'}
+140	140		301							{1: '1', 3: 'Veronica lets out a long sigh and turns away in a huff. Her memory banks pull up an image of Hermione rolling her eyes at a male lion, and for the first time, Veronica understands what the expression really means, without anyone having to spell it out for her.'}
+141	141		202							{1: '1', 6: '1'}
+142	142		306							
+143	143		201							{1: '1', 2: '500398'}
+144	144		301							"{1: '1', 2: 'Sewani', 3: ""Can we just bury the hatchet for now? I'm not exactly convinced you're a trustworthy ally either, but when the chips are down, we've got to stick together, don't we?"", 4: '1', 18: '100012080'}"
+145	145		202							{1: '1', 6: '1'}
+146	146		201							{1: '1', 2: '501366', 3: '5', 5: '-20', 6: '-200'}
+147	147		301			DialogShake	DialogDisable			{1: '1', 2: 'Veronica', 3: 'Quiet.', 4: '1', 18: '100012081'}
+148	148		202						200.0	{1: '1', 6: '1'}
+149	149		104							{1: '0|0|-100', 2: '0.2'}
+150	150		401							{1: '2', 2: '819016'}
+151	151		501						400.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '3'}
+152	152		104							{1: '0|0|0', 2: '0.2'}
+153	153		301			DialogEnable				{3: 'Everywhere her lance goes, threats are swept away without a trace.'}
+154	154		201							{1: '1', 2: '501366', 3: '4', 5: '-20', 6: '-200'}
+155	155		301			DialogShake	DialogDisable			{1: '1', 2: 'Veronica', 3: 'Get lost.', 4: '1', 18: '100012082'}
+156	156		202							{1: '1'}
+157	157		401						1000.0	{1: '2', 2: '885'}
+158	158		502							{1: 'RImgBg1Shake'}
+159	159		401							{1: '2', 2: '4538'}
+160	160		502							{1: 'DialogEnable'}
+161	161		301							"{3: ""Sewani presses her lips together and starts the vehicle's engine again. Just then, a Red Tide-Corrupted mountain formation suddenly gives way. The cliff face crumbles and comes crashing down from above, threatening to turn the convoy into a pancake.""}"
+162	162		401							{1: '2', 2: '5793'}
+163	163		201							{1: '1', 2: '501366', 3: '4', 5: '-60', 6: '-200'}
+164	164		104							{1: '0|-50|-100', 2: '0.24'}
+165	165		203							{1: '1', 2: '0.2', 4: '-20', 5: '-200'}
+166	166		301							"{1: '1', 3: ""Amid the terrified screams, Veronica holds up the collapsing boulders with a herculean effort. She dips her head slightly, and her emotionless eyes happen to meet those of a baby giraffe cradled in a human's arms inside the vehicle. For a moment, both of them blink at each other, utterly bewildered.""}"
+167	167		504							{1: '0.7', 2: '999'}
+168	168		306							{1: '1'}
+169	169		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '5'}
+170	170		204							{1: '1', 2: '3'}
+171	171		301				DialogDisable			{2: 'Veronica', 3: '(What a long neck...)', 4: '1', 18: '100012083'}
+172	172		504							{1: '0', 2: '999'}
+173	173		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '5', 5: '1'}
+174	174		306							
+175	175		202							{1: '1', 6: '1'}
+176	176		104						290.0	{1: '0|0|0', 2: '0.24'}
+177	177		201							{1: '1', 2: '500398'}
+178	178		301			DialogEnable	AniZhuanchangBegin			"{1: '1', 2: 'Sewani', 3: ""We're out of here! Time to hightail it out of this mess. Thanks a million!"", 4: '1', 18: '100012084'}"
+179	179		202							{1: '1', 6: '1'}
+180	180		401							{1: '1', 2: '36'}
+181	181		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory322.png'}
+182	182		401							{1: '1', 2: '6168'}
+183	183		402							{1: '4231'}
+184	184		301			AniZhuanchangEnd				{3: 'The convoy, packed with survivors of the catastrophe, peels out and disappears into the distance.'}
+185	185		301							"{3: ""In the middle of the fight, Veronica suddenly senses something and turns to look—it's Sewani again, leaning out of the vehicle's window, waving from far away and giving a thumbs-up.""}"
+186	186		301							"{3: ""At that distance, a human's eyes and ears wouldn't pick up a thing, but Veronica, being a machine, captures the scene with perfect clarity.""}"
+187	187		201							{1: '1', 2: '500398'}
+188	188		301			DialogShake				"{1: '1', 2: 'Sewani', 3: ""I've wanted to tell you this since we met—you are seriously a total badass!"", 4: '1', 18: '100012085'}"
+189	189		202							{1: '1'}
+190	190		201							{1: '1', 2: '501366', 3: '5', 5: '-20', 6: '-200'}
+191	191		301							{1: '1', 2: 'Veronica', 3: '...Humph.', 4: '1', 18: '100012086'}
+192	192		202							{1: '1', 6: '1'}
+193	193		401							{1: '2', 2: '4796'}
+194	194		301			RImgBg1Shake				{3: 'Veronica effortlessly fires a shot, hitting a Hetero-Creature dumb enough to challenge her.'}
+195	195		201							{1: '1', 2: '501366', 5: '-20', 6: '-200'}
+196	196		301				DialogDisable			{1: '1', 2: 'Veronica', 3: 'Hey, human. Why does that animal have such a long neck?', 4: '1', 18: '100012087'}
+197	197		302							{2: 'Huh? What animal—the giraffe? Why are you suddenly so interested in that?', 3: '198'}
+198	198		302							"{2: ""Wait, no—Veronica, we're in the middle of a fight. Snap out of it!"", 3: '199'}"
+199	199		202							{1: '1'}
+200	200		401							{1: '2', 2: '5889'}
+201	201		301			DialogEnable	DialogDisable			"{3: ""From her perch on the high cliff, Hermione lets out an irritated lion's roar—whether she's warning the two below to stop bickering or if Epirus is just up to his usual antics is anyone's guess.""}"
+202	202		304							"{1: ""This worldwide disaster is far from over, yet for the first time, Veronica finds herself looking forward to tomorrow—eager to discover a different side of the world that's just beginning to open up to her."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-2'}"
+203	203		304							"{1: ""Justice isn't just about anger and violence—it's also a guiding call that points everything in the right direction."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png'}"
+204	204		304							{1: 'But what is the right direction?', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png'}
+205	205		304							"{1: ""Veronica isn't sure, but her instincts tell her to look toward the human."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 9: '1'}"
+206	206		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 4: '4'}
+207	207		109					350.0		{1: '3', 2: '<color=#ffffffff><size=70>The dust settles.</size></color>', 4: '40', 6: '1', 9: '1'}
+208	208		301				AniZhuanchangBegin			{3: 'The dust settles.'}
+209	209		110							{1: '3'}
+210	210		401							{1: '1', 2: '36'}
+211	211		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 4: '4', 5: '1'}
+212	212		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1017.jpg'}
+213	213		201							{1: '1', 2: '500394'}
+214	214		401							{1: '1', 2: '5070'}
+215	215		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+216	216		502							{1: 'DialogEnable'}
+217	217		301			AniZhuanchangEnd	DialogDisable			{1: '1', 2: 'Construct Captain', 3: 'Commandant, my squad and I are almost at your coordinates. Were you caught in the Red Tide? Did you get hurt? We can patch you up if you need it.', 4: '1', 18: '100012088'}
+218	218		302							"{2: ""I'm fine."", 3: '219'}"
+219	219		302							"{2: ""A group of wanderers just made it out. Please keep an eye on them and let us know if they're safe."", 3: '220'}"
+220	220		302							{2: 'And if you can... lend them a hand, will you?', 3: '221'}
+221	221		301			DialogEnable	DialogDisable			"{2: 'Construct Captain', 3: ""No problem, it's what we do."", 4: '1', 18: '100012089'}"
+222	222		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiGuanbixiaoshi.prefab', 2: '2', 3: '1', 4: '1'}
+223	223		401							{1: '2', 2: '4688'}
+224	224		202							{1: '1'}
+225	225		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+226	226		301			DialogEnable				{3: 'The comms go dead. The scattered pride slowly comes together again, gathering around the lioness Hermione as her cubs snuggle close.'}
+227	227		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiGuanbixiaoshi.prefab', 4: '1'}
+228	228		301							{3: 'The sunset, the pride of lions, the burning clouds, and the sky embracing the savanna—Veronica gazes at it all, reminiscent of a classical oil painting.'}
+229	229		201							{1: '1', 2: '501362', 5: '-20', 6: '-200'}
+230	230		301							{1: '1', 2: 'Veronica', 3: '...', 4: '1', 18: '100012090'}
+231	231		306							{1: '1'}
+232	232		301				DialogDisable			"{3: ""From this vantage point, she, the mechanical being standing alone amidst nature's embrace, is no longer a cold, killing machine. Yet, the deep sadness of being on the outside looking in still hangs over her.""}"
+233	233		202					300.0		{1: '1', 6: '1'}
+234	234		401							{1: '2', 2: '1543'}
+235	235		201							{1: '1', 2: '501366', 5: '-20', 6: '-200'}
+236	236		301			DialogEnable				{1: '1', 3: 'Perhaps feeling your gaze, Veronica turns her head. Her stern face is now softened by a pair of calm eyes.'}
+237	237		301				DialogDisable			"{3: ""In that brief moment, there is no anger, no malice, no intent to kill. It's one of the few times since her creation that Veronica has felt the quiet peace of being forgiven.""}"
+238	238		306							
+239	239		302							{2: 'Veronica...', 3: '240'}
+240	240		301			DialogEnable				"{2: 'Veronica', 3: ""Honestly, if every last human disappeared, I wouldn't lose a wink of sleep over it."", 4: '1', 18: '100012091'}"
+241	241		204							{1: '1', 2: '8'}
+242	242		301							"{2: 'Veronica', 3: ""But the universe doesn't see it that way. It seems to... have a real soft spot for your kind."", 4: '1', 18: '100012092'}"
+243	243		202							{1: '1'}
+244	244		401							{1: '2', 2: '2930'}
+245	245		301							{3: 'Her gaze drifts away. She walks into the distance without a backward glance.'}
+246	246		301				DialogDisable			{3: 'And in that moment, you know without a single word that this is goodbye.'}
+247	247		306							{1: '1'}
+248	248		402							{1: '2930'}
+249	249		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1106.jpg', 3: '0', 4: '1', 5: '1'}
+250	250		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+251	251		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1106.jpg'}
+252	252		301			DialogEnable				"{3: ""The Second Law of Thermodynamics says the universe is headed for chaos, but life is a miracle—a highly ordered masterpiece, born from a trillion long shots. It's a grand poem of matter somehow turning into consciousness.""}"
+253	253		301				DialogDisable			{3: 'And it seems both humans and mechanical life have found a sledgehammer called possibility, smashing through the cage their creators built.'}
+254	254		306							
+255	255		302							"{2: ""(They're just... us, walking a different path.)"", 3: '256'}"
+256	256		307							"{1: ""It's the meeting of two miracles."", 3: '60'}"
+257	257		301							"{3: ""It's the meeting of two miracles.""}"
+258	258		307							{2: '1'}
+259	259		401							{1: '2', 2: '4387'}
+260	260		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+261	261		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1017.jpg'}
+262	262		401							{1: '2', 2: '2930'}
+263	263		302							{2: 'Veronica!', 3: '264'}
+264	264		302							"{2: ""There are a ton of questions I don't have answers for. Maybe I'll spend my whole life searching for them."", 3: '265'}"
+265	265		302							"{2: ""But maybe that's the only way to understand life—by living, feeling, journeying, and choosing."", 3: '266'}"
+266	266		306							{1: '1'}
+267	267		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory334.png', 3: '0', 4: '1', 5: '1'}
+268	268		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+269	269		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory334.png'}
+270	270		402							{1: '2930'}
+271	271		301			DialogEnable				{3: 'Because humans have always wanted to live, not just survive. And in every age, no matter how difficult, humanity always created cultures that are unique to their time.'}
+272	272		301				DialogDisable			"{3: ""And the culture of this era isn't just humanity's anymore.""}"
+273	273		306							
+274	274		401							{1: '2', 2: '4387'}
+275	275		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+276	276		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1017.jpg'}
+277	277		401							{1: '2', 2: '2930'}
+278	278		302							"{2: ""There's never been anything like mechanical life in our history, so a lot of people don't know what to make of you."", 3: '279'}"
+279	279		302							"{2: ""But your existence is already a beautiful miracle. We're at a truly wonderful beginning."", 3: '280'}"
+280	280		302							"{2: ""With this beautiful beginning and our ideals as our guide, all that's left is... to keep walking steadily in that direction."", 3: '281'}"
+281	281		402							{1: '2930'}
+282	282		201							{1: '1', 2: '501362', 5: '-20', 6: '-200'}
+283	283		301			DialogEnable	DialogDisable			{1: '1', 3: 'Veronica stops.'}
+284	284		302							{2: 'So...', 3: '285'}
+285	285		302							{2: 'Welcome to share this world with me, Veronica.', 3: '286', 4: 'Welcome to this world, Veronica.', 5: '286'}
+286	286		401					100.0	140.0	{1: '2', 2: '5367', 3: '0.2'}
+287	287		401							{1: '2', 2: '4895', 3: '1'}
+288	288		301			DialogEnable				"{3: ""Veronica doesn't even turn around, just waves her hand dismissively.""}"
+289	289		301							"{2: 'Veronica', 3: ""That stupid world of peaceful coexistence between humans and machines you keep spouting off about? I'm not buying it for a second."", 4: '1', 18: '100012093'}"
+290	290		301							"{3: ""She tilts her head slightly. Backlit by the sun, her expression is completely hidden, so there's no telling what's going on in her head.""}"
+291	291		301							"{2: 'Veronica', 3: ""So step up your game, human. Prove to me it's not just a pipe dream."", 4: '1', 18: '100012094'}"
+292	292		301							{3: 'You can practically feel her smiling in the shadows.'}
+293	293		202							{1: '1', 6: '1'}
+294	294		306							{1: '1'}
+295	295		301							{3: 'Compared to the vast history of this planet, human civilization is still wet behind the ears, and mechanical life is just a babe in the woods. Both have a long, long road ahead of them.'}
+296	296		301							"{3: ""It's a miracle they've even met, and the only way to do this strange twist of fate justice is to find a hopeful ending.""}"
+297	297		401							{1: '2', 2: '5887'}
+298	298		301				DialogDisable			"{3: 'Epirus, the lion cub, chases after Veronica as usual, trying to keep pace with her. But this time, ""Justice"" no longer slows her roll for him. She\'s got a mission to get back to.'}"
+299	299		306							
+300	300		302							"{2: ""(Stroke the cub's head)"", 3: '301', 4: '...', 5: '301'}"
+301	301		302				AniZhuanchangBegin			{2: 'Be a good little one, and live to see another day.', 3: '302'}
+302	302		401						2000.0	{1: '1', 2: '36'}
+303	303		502							{1: 'AniZhuanchangEnd'}
+304	304		401							{1: '1', 2: '298'}
+305	305		301			DialogEnable				{3: 'By the time the support squad arrives, the whole pride of lions has already resumed their long journey.'}
+306	306		201							{1: '1', 2: '500394'}
+307	307		301							"{1: '1', 2: 'Construct Captain', 3: ""Gray Raven Commandant... Huh? A lion cub? What's a little guy like this doing here?"", 4: '1', 18: '100012095'}"
+308	308		301							{2: 'Construct Captain', 3: 'This is my first time seeing a real lion up close... Hold on, is it hurt?', 4: '1', 18: '100012096'}
+309	309		202							{1: '1'}
+310	310		301							"{3: ""Poor little Matilde. She's been left for dead by her pride with a broken spine. Out here on the grasslands, it's survival of the fittest, and she doesn't stand a chance with injuries this bad.""}"
+311	311		302							"{2: ""I'm taking her back to Babylonia."", 3: '312', 4: 'I want to take her back to Babylonia.', 5: '312'}"
+312	312		201							{1: '1', 2: '500394'}
+313	313		301							"{1: '1', 2: 'Construct Captain', 3: ""With injuries like these, she's a goner out here. But once we get her to Babylonia, even our most basic prosthetic tech could fix her right up. The only snag is she's still growing, so we'd have to swap out her components every so often."", 4: '1', 18: '100012097'}"
+314	314		301				DialogDisable			"{2: 'Construct Captain', 3: ""She'll probably have to stay up there for good."", 4: '1', 18: '100012098'}"
+315	315		202							{1: '1', 6: '1'}
+316	316		302							"{2: ""That's okay. Just being alive is a blessing in itself."", 3: '317', 4: ""That's okay. Just being alive is a hope in itself."", 5: '317'}"
+317	317		302							{2: 'She might even be able to return to the savanna one day.', 3: '318'}
+318	318		301			DialogEnable	DialogDisable			{3: 'Fate had dealt Matilde a terrible hand, but it also threw her a lifeline.'}
+319	319		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignChenai.prefab', 2: '1'}
+320	320		205						2050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1322.jpg', 3: '0', 4: '1', 5: '2'}
+321	321		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+322	322		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1322.jpg'}
+323	323		301			DialogEnable				{3: 'The shuttle glides over the sprawling savanna, a green blur trailing behind. Outside the window, endless emerald waves flow into rivers, fading softly into the distance.'}
+324	324		201							{1: '1', 2: '500394'}
+325	325		301							"{1: '1', 2: 'Construct Captain', 3: ""Hmm? My radar's picking up an anomaly. It looks like we've got a shadow."", 4: '1', 18: '100012099'}"
+326	326		202							{1: '1'}
+327	327		301				DialogDisable			"{3: ""You can't help but look back, gazing at the endless green sea behind. But the horizon stretches empty and vast—your small connection is long gone.""}"
+328	328		302							{2: 'Is that you...?', 3: '329'}
+329	329		401					400.0	800.0	{1: '2', 2: '4421'}
+330	330		401							{1: '2', 2: '4422'}
+331	331		301			DialogEnable				"{3: ""As if on a hunch, you check the tracking device. Epirus's tracker is blinking excitedly on the screen, waving hello just like he would, all playful paws and high spirits.""}"
+332	332		301				DialogDisable			"{3: ""The map projects your real-time route, a winding path you've taken. Epirus's red dot moves right along, following you in your tracks.""}"
+333	333		205						2050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1016.jpg', 3: '0', 4: '1', 5: '2'}
+334	334		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+335	335		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1016.jpg'}
+336	336		301			DialogEnable				"{3: ""He races over the rocky terrain you've crossed and splashes through the rivers you've forded, running without a moment's rest. Following the faint tire tracks, sniffing for your fading scent, he sprints in a direction that's growing more distant by the minute.""}"
+337	337		201							{1: '1', 2: '500394'}
+338	338		301							"{1: '1', 2: 'Construct Captain', 3: ""Is this another lion you've rescued?"", 4: '1', 18: '100012100'}"
+339	339		302							{2: 'Yes.', 3: '340'}
+340	340		301							"{2: 'Construct Captain', 3: ""Looks like he doesn't want to let you go."", 4: '1', 18: '100012101'}"
+341	341		202							{1: '1'}
+342	342		301				DialogDisable			"{3: ""Epirus finally loses your trail at an isolated hill rising from the plains. Still just a cub, he can't keep up with you.""}"
+343	343		205						2050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cgqz2804.jpg', 3: '0', 4: '1', 5: '2'}
+344	344		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+345	345		401							{1: '2', 2: '5887'}
+346	346		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2804.jpg'}
+347	347		301			DialogEnable				{3: 'From atop the high cliff, the young cub, understanding separation for the first time, lets out a mournful roar across the endless savanna—a goodbye to the humans who have disappeared from his sight.'}
+348	348		302							{2: 'Goodbye, little one.', 3: '349', 4: 'Goodbye, Epirus.', 5: '349'}
+349	349		201							{1: '1', 2: '500394'}
+350	350		301							"{1: '1', 2: 'Construct Captain', 3: ""It'll always remember you, won't it?"", 4: '1', 18: '100012102'}"
+351	351		302							"{2: 'No doubt about it.', 3: '352', 4: 'I... think so.', 5: '352', 6: ""I hope so, but it's free as a bird to fly its own way."", 7: '352'}"
+352	352		301							{2: 'Construct Captain', 3: 'Our home... our beautiful Earth.', 4: '1', 18: '100012103'}
+353	353		301							"{2: 'Construct Captain', 3: ""We'll be back one day, won't we?"", 4: '1', 18: '100012104'}"
+354	354		302				DialogDisable			{2: 'No doubt about it.', 3: '355', 4: 'I... think so.', 5: '355', 6: 'I sure hope so.', 7: '355'}
+355	355		202							{1: '1', 6: '1'}
+356	356		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignChenai.prefab'}
+357	357		205						2050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1320.jpg', 3: '0', 4: '1', 5: '2'}
+358	358		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+359	359		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1320.jpg'}
+360	360		301			DialogEnable				{3: 'This is the one and only home for humans, the place where all their old dreams are just waiting for them to come back and claim them, whatever it takes.'}
+361	361		301				DialogDisable			"{3: ""The sun's going down on the savanna now, but a new day's always just around the corner.""}"
+362	362		109							{1: '1', 2: '<i><b><color=#ffffffff><size=80>Goodnight, Earth.</size></color></b></i>', 3: '0', 4: '40', 9: '3', 11: '1'}
+363	363		109							{1: '2', 2: '<i><b><color=#616161><size=80>Goodnight, Earth.</size></color></b></i>', 3: '5', 4: '35', 9: '1', 11: '1'}
+364	364		301							{3: 'Goodnight, Earth.'}
+365	365		205						1750.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '2.5'}
+366	366		109						800.0	{1: '2', 2: '<i><b><color=#000000><size=80>Goodnight, Earth.</size></color></b></i>', 3: '5', 4: '35', 9: '1', 11: '1'}
+367	367		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+368	368		101		1		AniZhuanchangBegin			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}

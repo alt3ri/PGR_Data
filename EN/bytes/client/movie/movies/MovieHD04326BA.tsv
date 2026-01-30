@@ -1,0 +1,148 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory310.png'}
+2	2		401							{1: '1', 2: '282'}
+3	3		301			DialogEnable				"{3: ""Both you and Noan stare quietly at the question mark on the voucher you're holding, utterly confused.""}"
+4	4		201							{1: '1', 2: '500506', 3: '9'}
+5	5		301							{1: '1', 2: 'Noan', 3: 'What... exactly does this mean?', 4: '1'}
+6	6		302							{2: '(Shake head)', 3: '7'}
+7	7		201							{1: '1', 2: '500956', 7: '1'}
+8	8		301							{1: '1', 2: 'Staff', 3: 'Congratulations on drawing our special hidden event!', 4: '1'}
+9	9		301							"{2: 'Staff', 3: ""The question mark means that you're gonna get a random prize, which is the most exciting part of this event."", 4: '1'}"
+10	10		201							{1: '1', 2: '500506', 3: '9', 7: '1'}
+11	11		301							{1: '1', 2: 'Noan', 3: 'Could you elaborate on the rules?', 4: '1'}
+12	12		201							{1: '18', 2: '500956', 7: '1'}
+13	13		301							"{1: '1', 2: 'Staff', 3: 'This event is called the ""Happy Scratch-Off"". Participants have to use the prizes they get from their scratch cards as items for their dates today. If you bring back proof of a happy moment from your date, you\'ll receive a special gift from the organizers themselves.', 4: '18'}"
+14	14		202			DialogDisable				{1: '18', 6: '1'}
+15	15		302							{2: 'A special gift, huh...', 3: '16', 4: 'Makes me curious.', 5: '16'}
+16	16		204							{1: '1', 2: '1'}
+17	17		301			DialogEnable				{2: 'Noan', 3: 'Wanna give it a try, then?', 4: '1'}
+18	18		201							{1: '18', 2: '500956', 7: '1'}
+19	19		301							"{1: '1', 2: 'Staff', 3: ""Feel free to draw yourselves each a date item whenever you're ready."", 4: '18'}"
+20	20		202							{1: '1', 2: '18', 6: '1'}
+21	21		301							{3: 'The two of you draw two scratch cards from the smiling attendant.'}
+22	22		401							{1: '2', 2: '4044'}
+23	23		302							{2: 'VIP tickets to a fireworks show?', 3: '24'}
+24	24		201							{1: '18', 2: '500956', 7: '1'}
+25	25		301							{1: '1', 2: 'Staff', 3: 'Lucky, lucky! This is the best prize we have to offer.', 4: '18'}
+26	26		202							{1: '18', 6: '1'}
+27	27		201							{1: '1', 2: '500506', 3: '10', 7: '1'}
+28	28		301							{1: '1', 2: 'Noan', 3: 'And mine is...', 4: '1'}
+29	29		204							{1: '1', 2: '2'}
+30	30		301							{3: 'There are no words on the scratch cards Noan is holding but a sad face.'}
+31	31		204							{1: '1', 2: '11'}
+32	32		201							{1: '18', 2: '500956', 7: '1'}
+33	33		301							"{1: '1', 2: 'Staff', 3: ""Oh no... looks like your friend here isn't so lucky."", 4: '18'}"
+34	34		301							{2: 'Staff', 3: 'This is a downgrade ticket, which reduces the grade of the prize just drawn.', 4: '18'}
+35	35		202							{1: '18', 6: '1'}
+36	36		201							{1: '1', 2: '500506', 3: '8', 7: '1'}
+37	37		301				AniZhuanchangBegin		800.0	{1: '1', 2: 'Noan', 3: 'Meaning...?', 4: '1'}
+38	38		401							{1: '1', 2: '36'}
+39	39		502							{1: 'DialogDisable'}
+40	40		202							{1: '1', 6: '1'}
+41	41		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory672.jpg'}
+42	42		401							{1: '2', 2: '2915'}
+43	43		401							{1: '1', 2: '208'}
+44	44		301			DialogEnable				{3: 'The two of you end up walking out of the shop holding a sparkler each.'}
+45	45		201							{1: '1', 2: '500506', 3: '11'}
+46	46		301							"{1: '1', 2: 'Noan', 3: ""I'm sorry, Commandant... for screwing up big time."", 4: '1'}"
+47	47		302							{2: 'Not at all. This is perfectly fine.', 3: '48'}
+48	48		302							"{2: ""And we got ourselves a bonus, didn't we?"", 3: '49'}"
+49	49		202							{1: '1'}
+50	50		301							{3: 'Feeling sorry for their dramatic plunge from incredible luck to absolute misfortune, the shop attendant gave them two cartoon balloons to help them feel better.'}
+51	51		201							{1: '1', 2: '500506'}
+52	52		301							"{1: '1', 2: 'Noan', 3: 'So, about this ""proof of a happy moment from our date,"" any ideas what we might want to do, Commandant?', 4: '1'}"
+53	53		302							"{2: ""I can't think of anything at the moment."", 3: '54'}"
+54	54		302							"{2: ""Let's take a walk around first and see if anything comes up?"", 3: '55'}"
+55	55		204							{1: '1', 2: '1'}
+56	56		301				DialogDisable			{1: '1', 2: 'Noan', 3: 'Okay.', 4: '1'}
+57	57		202						500.0	{1: '1'}
+58	58		401							{1: '2', 2: '4387'}
+59	59		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+60	60		401							{1: '2', 2: '4388'}
+61	61		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+62	62		301			DialogEnable				"{3: ""The two of you weave through the bustling crowd, where everyone seems to be rushing toward the fireworks show that's about to begin.""}"
+63	63		201							{1: '1', 2: '500506', 3: '16'}
+64	64		301							{1: '1', 3: 'Absorbed in thought, Noan watches the crowd as it moves in the opposite direction.'}
+65	65		302							"{2: ""What's up?"", 3: '66'}"
+66	66		204							{1: '1', 2: '8'}
+67	67		301							"{2: 'Noan', 3: ""It's nothing, I just..."", 4: '1'}"
+68	68		204							{1: '1', 2: '11'}
+69	69		301							"{2: 'Noan', 3: ""I mean, it's a real shame that we can't go to the fireworks show with them, isn't it?"", 4: '1'}"
+70	70		204							{1: '1', 2: '9'}
+71	71		301							"{3: ""As the smiling crowd makes its way past the two of you, something suddenly catches Noan's eye.""}"
+72	72		204							{1: '1', 2: '0'}
+73	73		301				DialogDisable			{2: 'Noan', 3: 'Commandant, I need to go grab something. Could you wait for me by the pool up ahead?', 4: '1'}
+74	74		302				AniZhuanchangBegin			{2: 'Okay.', 3: '75'}
+75	75		202							{1: '1', 6: '1'}
+76	76		402							{1: '2915'}
+77	77		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory166.png'}
+78	78		401						1200.0	{1: '2', 2: '2930'}
+79	79		402							{1: '2930'}
+80	80		301			DialogEnable				"{3: ""Shortly after, Noan meets you by the pool. Instead of the ballon he was holding before, Noan now holds two things he wasn't carrying before.""}"
+81	81		302							{2: 'Is that... a small camera?', 3: '82'}
+82	82		201							{1: '1', 2: '500506'}
+83	83		301							{1: '1', 2: 'Noan', 3: 'Yes, I traded my balloon with a child who agreed to lend us his camera. This other thing here is his bubble machine, which I got as a bonus.', 4: '1'}
+84	84		301							{2: 'Noan', 3: 'He asked why I wanted to borrow his camera, and he offered me this bubble machine when I told him what we wanted to do.', 4: '1'}
+85	85		302							{2: 'What exactly did you tell him, though?', 3: '86'}
+86	86		204							{1: '1', 2: '1'}
+87	87		301							{2: 'Noan', 3: 'I told him... that I saw him taking photos of his friend earlier, and that I wanted to capture my own happy moments with this personal I hold dear myself, too.', 4: '1'}
+88	88		301							{2: 'Noan', 3: 'He told me that he always makes his friends smile with this bubble machine and that he wanted me to keep it for when we take our pictures.', 4: '1'}
+89	89		301							{2: 'Noan', 3: 'Commandant, you can hold the balloon while I operate the camera and this bubble machine so I can take a happy picture of you for submission.', 4: '1'}
+90	90		302							"{2: ""Aren't you gonna be in the picture yourself?"", 3: '91'}"
+91	91		204							{1: '1', 2: '11'}
+92	92		301							"{2: 'Noan', 3: ""I don't have the balloon anymore, and it doesn't matter if I'm in it now since I got us into this situation."", 4: '1'}"
+93	93		204							{1: '1', 2: '1'}
+94	94		301				DialogDisable			"{2: 'Noan', 3: ""It makes me happy, too, when you're happy."", 4: '1'}"
+95	95		302							"{2: ""That's not how this thing works, though."", 3: '96'}"
+96	96		204							{1: '1', 2: '9'}
+97	97		302							"{2: ""We're in it together no matter what happens."", 3: '98'}"
+98	98		302							"{2: ""So I can't go without you, Noan."", 3: '99'}"
+99	99		302							{2: 'As for the balloon...', 3: '100'}
+100	100		401							{1: '2', 2: '4044'}
+101	101		203							{1: '1', 2: '0.25', 4: '-20', 5: '-50'}
+102	102		301			DialogEnable				{3: 'You drag Noan over by the hand and hold the string of your cartoon balloon together.'}
+103	103		204							{1: '1', 2: '1'}
+104	104		301							"{2: 'Noan', 3: ""...That solves it, doesn't it?"", 4: '1'}"
+105	105		301							{3: 'Noan glances at you with a chuckle, offering no response.'}
+106	106		301				DialogDisable			"{2: 'Noan', 3: ""Well then, as you wish. Let's capture a happy moment of ourselves."", 4: '1'}"
+107	107		202							{1: '1'}
+108	108		401							{1: '2', 2: '5286'}
+109	109		401						300.0	{1: '2', 2: '664'}
+110	110		402							{1: '664'}
+111	111		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRpgMakerGame/FxUiFubenRpgMakerGameBubble01.prefab', 2: '1'}
+112	112		301			DialogEnable				{3: 'Noan sets up the camera tripod and switches it to timer mode. Colorful bubbles float around the pool, glimmering in the evening lights, while the lit sparklers you and Noan are holding are reminiscent of mini fireworks up above.'}
+113	113		201							{1: '1', 2: '500506', 3: '1'}
+114	114		301				DialogDisable			{1: '1', 2: 'Noan', 3: '3, 2, 1—', 4: '1'}
+115	115		202							{1: '1', 6: '1'}
+116	116		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+117	117		401							{1: '2', 2: '4930'}
+118	118		301			DialogEnable				{3: 'Click—after a flash of light, the camera slowly prints out the image it just captured.'}
+119	119		201							{1: '1', 2: '500506'}
+120	120		301							{1: '1', 2: 'Noan', 3: 'How do you like it, Commandant?', 4: '1'}
+121	121		302							"{2: ""I'm really enjoying it."", 3: '122', 4: 'I like every single picture we take together.', 5: '122'}"
+122	122		204							{1: '1', 2: '1'}
+123	123		301				AniZhuanchangBegin			"{2: 'Noan', 3: ""Alright. Let's head back and claim our prize, then."", 4: '1'}"
+124	124		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRpgMakerGame/FxUiFubenRpgMakerGameBubble01.prefab'}
+125	125		502							{1: 'DialogDisable'}
+126	126		202							{1: '1', 6: '1'}
+127	127		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory310.png'}
+128	128		201							{1: '1', 2: '500956'}
+129	129		301			DialogEnable				{1: '1', 2: 'Staff', 3: 'Congratulations to you both on completing the challenge! Now, here is your prize.', 4: '1'}
+130	130		301							"{2: 'Staff', 3: ""Ta-da, here's the fireworks show voucher you got before the downgrade!"", 4: '1'}"
+131	131		202							{1: '1', 6: '1'}
+132	132		301							{3: 'Looking at the voucher, the two of you exchange funny glances and shake your heads.'}
+133	133		201							{1: '1', 2: '500506'}
+134	134		301							"{1: '1', 2: 'Noan', 3: ""They really know how to do business here, don't they?"", 4: '1'}"
+135	135		302							"{2: ""It's not completely out of the question, I think."", 3: '136'}"
+136	136		302							"{2: ""But everything turned out just fine, wouldn't you say?"", 3: '137'}"
+137	137		204							{1: '1', 2: '1'}
+138	138		301				AniZhuanchangBegin			{1: '1', 2: 'Noan', 3: 'True.', 4: '1'}
+139	139		401							{1: '1', 2: '181'}
+140	140		502							{1: 'DialogDisable'}
+141	141		202							{1: '1', 6: '1'}
+142	142		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory802.jpg'}
+143	143		401							{1: '2', 2: '2915'}
+144	144		301			DialogEnable				{3: 'The streets grow crowded with the show just around the corner. People are getting excited.'}
+145	145		201							{1: '1', 2: '500506', 3: '1'}
+146	146		301							{1: '1', 2: 'Noan', 3: 'May I have your hand, Commandant?', 4: '1'}
+147	147		301		1		AniZhuanchangBegin			{2: 'Noan', 3: 'I want you to be there to bear witness to another moment of happiness with me.', 4: '1'}

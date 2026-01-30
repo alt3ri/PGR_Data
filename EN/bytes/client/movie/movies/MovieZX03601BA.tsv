@@ -1,0 +1,281 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '12'}
+3	3		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '0', 4: '1', 5: '5'}
+4	4		301			DialogEnable				{3: 'The white snakes through the place.'}
+5	5		301							"{3: ""Contrary to what she remembers of the place, however, this place doesn't have that same wall clock that tells her exactly what she needs to do.""}"
+6	6		301							"{3: ""The clock here doesn't play all the lyrics she remembers by heart until it strikes six.""}"
+7	7		301							"{3: ""And it isn't until the clock strikes seven...""}"
+8	8		301							{3: 'That her mobile Medic Bot circles around her, and that the lights on her Medic Bot—the only flickering colors here besides the white—can be seen.'}
+9	9		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '1'}
+10	10		105							{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovie21/UiMovie21hao01.prefab'}
+11	11		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+12	12		505					10.0		{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+13	13		301							{3: 'Inside the lightless room, the white, having made its way across the floor, snakes up her strands of hair and sideburns, stopping cold right when it reaches her artificial throat.'}
+14	14		301							{3: 'Beyond where the white stops is a boundary formed by a black restraint, past which the white cannot traverse.'}
+15	15		301							"{3: ""Wrapped in black is a white girl, sleeping quietly and reminiscent of a half-finished machine that's yet to be activated, as the machine making adjustments to her restraint works away around her.""}"
+16	16		301				AniZhuanchangBegin			"{3: ""Right on the other side of the observation room is a pair of eyes that's intently reading every single line of her data through the one-way glass.""}"
+17	17		102							{1: 'Chaos Unsnarled', 2: 'Chapter 24', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+18	18		502				AniZhuanchangBegin		5000.0	{1: 'ThemeEnable'}
+19	19		105							
+20	20		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+21	21		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+22	22		401							{1: '1', 2: '201'}
+23	23		201							{1: '1', 2: '500542'}
+24	24		301			AniZhuanchangEnd				{1: '1', 2: 'Vesalius', 3: 'Doing worse than yesterday, it seems?', 4: '1'}
+25	25		301							"{2: 'Vesalius', 3: ""I thought BPH-22's M.I.N.D. had been stable all week and was given a pass?"", 4: '1'}"
+26	26		202							{1: '1', 6: '1'}
+27	27		201							{1: '1', 2: '500542', 4: '400'}
+28	28		201							{1: '2', 2: '500499', 3: '2', 4: '-400'}
+29	29		301							{1: '1', 2: 'Yarha', 3: 'Uh... Yeah.', 4: '2'}
+30	30		204							{1: '2'}
+31	31		301							"{2: 'Yarha', 3: ""Her M.I.N.D. isn't at its best today, and it's probably because her assistant bot is away today for a regular checkup."", 4: '2'}"
+32	32		301							"{2: 'Vesalius', 3: ""The consciousness-sharing module in the Co-Bot has been switched to a simulated AI, no? What's still affecting her frame, then?"", 4: '1'}"
+33	33		301							"{2: 'Yarha', 3: 'She has trouble adjusting to the simulated AI\'s feedback... Keeps shouting, ""Give Buddy back!"" and whatnot, and that\'s caused instability in her M.I.N.D. on several occasions.', 4: '2'}"
+34	34		301							{2: 'Yarha', 3: 'Which is why I put the original consciousness-sharing module back in the Co-Bot as soon as she started showing signs of compatibility with the frame.', 4: '2'}
+35	35		301							{2: 'Yarha', 3: '...Because I wanted to make it easier for her to get used to the new frame.', 4: '2'}
+36	36		204							{1: '1', 2: '5'}
+37	37		301							{2: 'Vesalius', 3: 'So... this is how you treat her, huh? Like a kid.', 4: '1'}
+38	38		301							{2: 'Vesalius', 3: 'Aside from making this frame more powerful, they wanted her M.I.N.D. stabilized more than anything else, if my memory serves me correctly.', 4: '1'}
+39	39		301							"{2: 'Vesalius', 3: ""And the fact that the Co-Bot shares her memory to a certain extent is what's causing the instability that we're seeing in her M.I.N.D."", 4: '1'}"
+40	40		301							"{2: 'Vesalius', 3: ""Just because I'm not the project lead here doesn't mean I'm going to sit around while you squander our resources on experiments that are going nowhere."", 4: '1'}"
+41	41		204							{1: '2', 2: '19'}
+42	42		301							"{2: 'Yarha', 3: ""No, that's not what it is. See, I did put the original consciousness-sharing module back in the Co-Bot, but there isn't a port of M.I.N.D. for the new frame and the Co-Bot to connect to each other."", 4: '2'}"
+43	43		301							"{2: 'Yarha', 3: ""Which means that she can vaguely sense the Co-Bot but won't be able to connect to it, which means her computing power won't be shared like it did before..."", 4: '2'}"
+44	44		301							{3: 'Nervous, Yarha now speaks twice as fast as he usually speaks.'}
+45	45		204							{1: '1'}
+46	46		301							"{2: 'Vesalius', 3: 'You aren\'t going to tell me this is what she needs to ""feel better,"" are you?', 4: '1'}"
+47	47		204							{1: '2', 2: '2'}
+48	48		301							{2: 'Yarha', 3: 'W-well... See, desperate times call for desperate measures, yeah? Hahaha...', 4: '2'}
+49	49		204							{1: '2'}
+50	50		204							{1: '1', 2: '13'}
+51	51		301							{2: 'Vesalius', 3: 'How old are you now, Yarha?', 4: '1'}
+52	52		204							{1: '2', 2: '19'}
+53	53		301							{2: 'Yarha', 3: 'I-I beg your pardon?', 4: '2'}
+54	54		301							{2: 'Vesalius', 3: 'The way you carry yourself reminds me of some innocent teenager, and what you say and do only reinforce that impression.', 4: '1'}
+55	55		301							{2: 'Vesalius', 3: 'Ever thought about a career change?', 4: '1'}
+56	56		204							{1: '2', 2: '7'}
+57	57		301							{2: 'Yarha', 3: 'Uhm... I think I like it here the way things are!', 4: '2'}
+58	58		204							{1: '2'}
+59	59		204							{1: '1'}
+60	60		301							"{2: 'Vesalius', 3: ""If the data isn't looking favorable, then just optimize anything and everything that's an issue."", 4: '1'}"
+61	61		301							{2: 'Vesalius', 3: 'I understand that BPH-22 is your brainchild from research, which is why you were assigned as the project lead in the first place—but I still need you to know your place and refrain from being carried away.', 4: '1'}
+62	62		301							"{2: 'Vesalius', 3: ""Sharing M.I.N.D. with a weapon is a nice try indeed, but science is all about perfecting what isn't perfect based on what we know from the past."", 4: '1'}"
+63	63		301							"{2: 'Vesalius', 3: ""It's high time we did away with all the experimental decisions from the past that are causing the shortcomings we're seeing now."", 4: '1'}"
+64	64		301							"{2: 'Vesalius', 3: ""The way I see it, you're treating BPH-22 like an artificial baby with her umbilical cord still uncut, which explains your lenience toward her failures thus far."", 4: '1'}"
+65	65		301							"{2: 'Vesalius', 3: 'You stated in your project proposal that you wanted to help her achieve ""combative independence,"" and I really hope you follow through on that—or else, it\'s best that you request this project be terminated sooner rather than later.', 4: '1'}"
+66	66		204							{1: '2', 2: '19'}
+67	67		301							{2: 'Yarha', 3: 'Right...', 4: '2'}
+68	68		204							{1: '2'}
+69	69		301							{2: 'Vesalius', 3: 'Is this what her combat data has been like?', 4: '1'}
+70	70		301							"{2: 'Yarha', 3: ""We're seeing significant improvement in the new frame as opposed to what we saw with the old frame. Her M.I.N.D. only lost control three times, and we were able to stabilize her with her restraint every time she lost control."", 4: '2'}"
+71	71		301							{2: 'Vesalius', 3: 'Seems like this frame is still a far cry from being put to combat, then.', 4: '1'}
+72	72		301							"{2: 'Vesalius', 3: 'A small improvement is as good as nothing. You were going to wow us with an improvement that we have ""never seen before,"" no?', 4: '1'}"
+73	73		204							{1: '1', 2: '13'}
+74	74		301							"{2: 'Vesalius', 3: '""The restraint won\'t just keep her from losing it. It\'s also going to partially cap her combat ability and slowly give it back to her as her M.I.N.D. stabilizes."" Yes, I\'m quoting what you said.', 4: '1'}"
+75	75		301							"{2: 'Vesalius', 3: ""There is no point in capping her combat ability, given that she hasn't even reached the critical point."", 4: '1'}"
+76	76		301							{2: 'Yarha', 3: '...', 4: '2'}
+77	77		204							{1: '1'}
+78	78		301							{2: 'Vesalius', 3: 'Well, I never thought this would be a godsend, anyways.', 4: '1'}
+79	79		301							"{2: 'Vesalius', 3: ""She's all yours. Just keep in mind that the deadline is fast approaching."", 4: '1'}"
+80	80		202							{1: '1', 2: '2', 6: '1'}
+81	81		201							{1: '1', 2: '500542'}
+82	82		301							"{1: '1', 3: ""Dumping the cold black coffee from the mug in her hand into a recycler, Vesalius leaves the terminal on the table unceremoniously and makes a beeline for the observation room's door.""}"
+83	83		301							"{2: 'Vesalius', 3: 'First things first, if I were you, I\'d get her used to fighting on her own—and I\'d start by getting rid of that ""placenta.""', 4: '1'}"
+84	84		202							{1: '1', 6: '1'}
+85	85		201							{1: '1', 2: '500499'}
+86	86		301							{1: '1', 3: 'Vesalius points at the terminal sitting next to Yarha before vanishing around the metallic door. Yarha wakes his monitor up from sleep, which now displays options for activating the AI module in the Co-Bot.'}
+87	87		301							{3: 'Yarha stops in his tracks with the cursor on one of the options.'}
+88	88		301				AniZhuanchangBegin			{3: 'As he looks at the girl beyond the one-way glass, memories from her first-ever combat experiment hit him.'}
+89	89		401							{1: '1', 2: '12'}
+90	90		202							{1: '1', 6: '1'}
+91	91		504							{1: '0.7'}
+92	92		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+93	93		301			AniZhuanchangEnd				{2: 'Kurono Leader', 3: 'Good, Yarha. Let the show begin.'}
+94	94		301				AniZhuanchangBegin			"{2: 'Kurono Leader', 3: 'Show us that ""one-of-a-kind frame"" you\'re so proud of.'}"
+95	95		504							{1: '0'}
+96	96		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2502.jpg'}
+97	97		301			AniZhuanchangEnd				{3: 'The pure white Construct girl tore apart every last one of her enemies in the experiment zone, which Yarha never saw coming.'}
+98	98		301							{3: 'Driven by her instinct to attack, she was not unlike a beast born to fight.'}
+99	99		301							{3: 'The bestiality known as No. 21 was wreaking havoc in her humanlike frame.'}
+100	100		301							{3: 'It was bestiality that could be no purer.'}
+101	101		301							{3: 'Newborns tend to be strongly impressed by what they first encounter in life, and such impressions usually leave them with unfathomable influence in ways not immediately obvious.'}
+102	102		301							"{3: 'Her days spent doing nothing in Daedalus did not help her grow as a human ""newborn.""'}"
+103	103		301				AniZhuanchangBegin			{3: 'Reborn as a Construct and having gained her senses, No. 21 was immediately accustomed to fighting endless battles out of instinct.'}
+104	104		105							{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovie21/UiMovie21hao01.prefab'}
+105	105		301			AniZhuanchangEnd				"{3: 'Where the ""regular"" Construct has to adapt to being a Construct and all the ""perks"" that come with being a Construct after modification...'}"
+106	106		301							{3: 'No. 21 had to dig through her bestiality to find her humanity.'}
+107	107		301							{3: 'While the modification technology for Constructs has been put to many a battle on a large scale, the influence of the M.I.N.D. on Constructs far surpasses public knowledge.'}
+108	108		301				AniZhuanchangBegin			"{3: ""While it is true from a structural perspective that No. 21's old frame might harbor factors that cause the instability observed in her M.I.N.D., her self-consciousness is perhaps one of the root causes to blame.""}"
+109	109		105							
+110	110		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+111	111		201							{1: '1', 2: '500499'}
+112	112		301			AniZhuanchangEnd				{1: '1', 2: 'Yarha', 3: 'Self-consciousness, huh...', 4: '1'}
+113	113		301							{3: 'Yarha knows full well how business is conducted in Kurono.'}
+114	114		301							"{3: 'Working under Vesalius—who is a firm believer of ""Advancement inevitably comes with sacrifices""—Kurono would not hesitate to prioritize ""research"" over many things that are still the subjects of debate.'}"
+115	115		301							"{3: ""Yarha doesn't consider himself a man of justice—because as far as scientific advancement is concerned, justice and injustice are but the green leaves that flank the fruit of success.""}"
+116	116		301							{3: 'Yarha, however, turns off the monitor without selecting the option on the screen.'}
+117	117		301							"{2: 'Yarha', 3: ""The Co-Bot doesn't need to be there for the compatibility test... but I guess it's going to help you feel better when the test is over."", 4: '1'}"
+118	118		401							{1: '1', 2: '36'}
+119	119		401							{1: '2', 2: '1515'}
+120	120		301							"{3: '""Tick-tick—""'}"
+121	121		401							{1: '1', 2: '201'}
+122	122		301				AniZhuanchangBegin			"{3: ""The terminal's screen comes to life again, signaling completion of the adjustment of No. 21's restraint. Having ensured the accuracy of the numbers, Yarha awakens the girl.""}"
+123	123		202							{1: '1', 6: '1'}
+124	124		105							{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovie21/UiMovie21hao01.prefab'}
+125	125		301			AniZhuanchangEnd				"{2: 'Yarha', 3: ""We're done for today.""}"
+126	126		106							{1: 'idle-zy', 2: '1'}
+127	127		301							{3: 'With it, No. 21 opens her eyes.'}
+128	128		301							"{3: ""Previously sealed for visual synchronicity, No.21's left eye no longer needs to be shared between her Co-Bot and herself and has, therefore, been replaced with a prosthetic eye that adds to her combativity.""}"
+129	129		301							{2: 'Yarha', 3: 'I upped the numbers in your restraint. Feel free to set yourself loose at the test.'}
+130	130		301							{2: 'Yarha', 3: 'Are you feeling anything out of the ordinary?'}
+131	131		301							{2: 'No. 21', 3: 'No.'}
+132	132		301							"{2: 'No. 21', 3: ""This is different from the restraining collar they put on me at the Research Institute, but it's not that different.""}"
+133	133		301							"{2: 'No. 21', 3: ""I didn't pass the experiment, did I?""}"
+134	134		301							"{3: ""It hits Yarha that the new frame seems a lot more perceptive than the old frame. It might not be completely free of restraint now, but it's likely that No. 21 has overheard his conversation with Vesalius just now.""}"
+135	135		301							"{2: 'Yarha', 3: ""Uhm... I wouldn't say you didn't.""}"
+136	136		301							"{2: 'No. 21', 3: ""It's not Buddy's fault.""}"
+137	137		301							{2: 'Yarha', 3: 'Buddy? Oh... you mean the Co-Bot.'}
+138	138		301							"{2: 'No. 21', 3: ""This new body, it isn't like a human body. It's different from what I thought.""}"
+139	139		301							"{3: ""No. 21 shakes her head, the ear-looking device over her head jigging a little as though it's picked up something.""}"
+140	140		301							"{2: 'Yarha', 3: ""This frame came out with the best experiment data of all the frames you've been matched with.""}"
+141	141		301							"{2: 'No. 21', 3: ""Neither a human nor an animal. And it's just like me.""}"
+142	142		301							{3: 'Says No. 21 as she lowers her head. A few moments later, she raises her head again.'}
+143	143		301							{2: 'No. 21', 3: 'I still want to smell like humans, though.'}
+144	144		301							"{2: 'No. 21', 3: ""Because people want to throw me into the garbage yard if I don't. They're afraid of me and I know that.""}"
+145	145		301							{2: 'No. 21', 3: 'The more I try to be like them, the more confused I get... It only makes me less like them.'}
+146	146		301							"{2: 'No. 21', 3: ""I've never had a human smell, and I always knew that.""}"
+147	147		301							"{2: 'No. 21', 3: ""Which is why I don't dislike the restraint. It stops my brain from working when my brain gets confused, so people don't need to be scared of me.""}"
+148	148		301				AniZhuanchangBegin			{2: 'No. 21', 3: 'You can do whatever you want with it. I need to pass the test so I can go back to Captain and Noctis.'}
+149	149		105							
+150	150		201							{1: '1', 2: '500499'}
+151	151		301			AniZhuanchangEnd				"{1: '1', 2: 'Yarha', 3: ""We have a month left, and I'll do everything I can to make that happen."", 4: '1'}"
+152	152		301							"{2: 'Yarha', 3: ""Let's call it a day here. Remember to ask Vera to export a data snapshot of your frame data every four hours."", 4: '1'}"
+153	153		201							{1: '1', 2: '500650'}
+154	154		301				AniZhuanchangBegin			{1: '1', 2: 'No. 21', 3: 'Yes.', 4: '1'}
+155	155		202							{1: '1', 6: '1'}
+156	156		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory732.jpg'}
+157	157		301			AniZhuanchangEnd				{3: 'Three months later, at the ad hoc military base on Earth.'}
+158	158		201							{1: '1', 2: '500168', 4: '-400'}
+159	159		201							{1: '2', 2: '500307', 4: '400'}
+160	160		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+161	161		301							"{1: '1', 2: 'Vera', 3: ""...We did pick up signs of activity of Hetero-Creatures in the area, and we'll need some time to look into the details."", 4: '1'}"
+162	162		301							"{2: 'Liaison Officer', 3: ""Roger that. And we also need you to confirm whether you're in receipt of the supplies you applied for a few days ago. The system says the transport craft carrying them has landed there."", 4: '2'}"
+163	163		301							{2: 'Vera', 3: 'We gave it a quick count just now and noticed that the construction materials are half of what we put down on the application form.', 4: '1'}
+164	164		301							"{2: 'Liaison Officer', 3: ""Resources are assigned based on levels of priority, and the Clean Zone is about to hit a crucial period with its construction effort. It's all so they can relocate to a safer location sooner rather than later."", 4: '2'}"
+165	165		301							{2: 'Liaison Officer', 3: 'Anything else you need other than construction materials?', 4: '2'}
+166	166		301							"{2: 'Vera', 3: ""We could really use a few hands here, even three to four will do. They don't need to be fighters, but they do need to know how to operate the machines we have here. Our fighters here are all tied down to miscellaneous work, which is why we need a few extra hands here as replacements."", 4: '1'}"
+167	167		301							{2: 'Vera', 3: 'And we could use some anti-inflammatory drugs and serum here, too.', 4: '1'}
+168	168		301							"{2: 'Vera', 3: ""There are quite a few people in the conservation area who came down with symptoms. They're severely short on medicine, and what I have in stock here won't last them for much longer."", 4: '1'}"
+169	169		301							"{2: 'Vera', 3: ""And we keep getting reports on people that went missing from the conservation area. It probably has to do with Hetero-Creatures, but I'm too short on time and manpower to follow up now."", 4: '1'}"
+170	170		301							"{2: 'Vera', 3: ""So, on top of the few hands I just asked for, we'll need more people and resources for me to get around to helping the missing people."", 4: '1'}"
+171	171		301							"{2: 'Liaison Officer', 3: ""Well, let's see... Well, a squad from the Purifying Force is out on a mission around you and will be passing by where you are within a few hours. They'll bring you the resources you need."", 4: '2'}"
+172	172		301							"{2: 'Liaison Officer', 3: ""I'll send you the captain's identification code to your terminal in a bit."", 4: '2'}"
+173	173		301							"{2: 'Liaison Officer', 3: ""As for the extra hands you need, we are actually short on manpower here ourselves. Our reserves aren't exactly qualified to be part of missions of this rank either..."", 4: '2'}"
+174	174		301							{2: 'Liaison Officer', 3: 'That said, I just put your request in the queue. CC will review it and reach out to you.', 4: '2'}
+175	175		301							{2: 'Vera', 3: '...Sure.', 4: '1'}
+176	176		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+177	177		202							{1: '2', 6: '1'}
+178	178		401							{1: '2', 2: '2566'}
+179	179		301							"{3: ""As soon as Vera gets off the line, a towering figure lifts the curtain and squeezes himself through the tent entrance that's overly small to him.""}"
+180	180		201							{1: '2', 2: '500336', 4: '400'}
+181	181		301							"{1: '1', 2: 'Noctis', 3: ""Done with the call? Yikes, the look on your face. Here, I've got you the recon report for Zone A."", 4: '2'}"
+182	182		301							"{2: 'Vera', 3: ""Those damn geezers at CC wouldn't even send a few hands down here to help things out. This is just ridiculous."", 4: '1'}"
+183	183		301							"{2: 'Noctis', 3: ""And that has to go on the list of all the things you can't handle, Vera. Hahaha!"", 4: '2'}"
+184	184		204							{1: '1', 2: '13'}
+185	185		301							{2: 'Vera', 3: 'Yup, and that leaves me no choice...', 4: '1'}
+186	186		301							{2: 'Vera', 3: 'But to work you into a pulp for the next 48 hours.', 4: '1'}
+187	187		204							{1: '2', 2: '4'}
+188	188		301							"{2: 'Noctis', 3: ""Wait, what? That's not what it says in the contract, though!"", 4: '2'}"
+189	189		204							{1: '1', 2: '1'}
+190	190		301							"{2: 'Vera', 3: ""Yeah, and you're going to dig that out from under all the garbage you keep in the lounge, right?"", 4: '1'}"
+191	191		301							{2: 'Noctis', 3: 'Nope, probably not gonna do that.', 4: '2'}
+192	192		204							{1: '1'}
+193	193		301							{2: 'Vera', 3: 'Then just keep your mouth shut.', 4: '1'}
+194	194		301							"{2: 'Noctis', 3: ""Yeah, I'll let that go. We all know who is the bigger person here."", 4: '2'}"
+195	195		204							{1: '2'}
+196	196		301							"{2: 'Noctis', 3: ""And where is 21? Not back from Zone B? It's a win for me, then!"", 4: '2'}"
+197	197		204							{1: '1', 2: '10'}
+198	198		301							{3: 'Vera casts the time display on her terminal.'}
+199	199		301							{3: 'She previously put No. 21 and Noctis on respective recon missions to observe activities of the Hetero-Creatures around the conservation area, with two Constructs each.'}
+200	200		301							"{3: ""While Constructs usually have no trouble carrying out recon missions on their own, given the potential risk and the shrewd perceptiveness of their enemies, Vera decided it'd be in everyone's best interest for No. 21 and Noctis to join them.""}"
+201	201		301							"{3: 'Recalling what Kurono has said in their report about No. 21—that No. 21\'s match to her new frame was not, technically speaking, ""perfect""—Vera picks up her terminal, ready to check in with her.'}"
+202	202		301							"{3: ""Fortunately, No. 21's new frame has proved to be an addition to the squad's overall combativity—and it is on account of this fact that the higher-ups at Babylonia have granted her freedom in her new frame, having agreed to later fine-tune it in accordance to her activity data.""}"
+203	203		202							{1: '1', 2: '2', 6: '1'}
+204	204		401							{1: '2', 2: '1099'}
+205	205		201							{1: '1', 2: '500650'}
+206	206		301							{1: '1', 3: 'Right after Vera hits the dial button on her terminal, she hears the ringing of another terminal from outside the tent—and with it, No. 21 comes into the tent.'}
+207	207		301							"{2: 'No. 21', 3: ""Captain. And hi to you, too, Noctis. I finished Zone B's recon... with the other two people."", 4: '1'}"
+208	208		202							{1: '1', 6: '1'}
+209	209		201							{1: '1', 2: '500650', 4: '400'}
+210	210		201							{1: '2', 2: '500336', 4: '-400'}
+211	211		301							"{1: '1', 2: 'Noctis', 3: ""And I've been back for God only knows how long. You gotta up your game there, kiddo."", 4: '2'}"
+212	212		204							{1: '1', 2: '4'}
+213	213		301							{2: 'No. 21', 3: 'Shush.', 4: '1'}
+214	214		301							"{2: 'Noctis', 3: ""Well, we can totally go out now and try something different. Just don't cry if you lose again."", 4: '2'}"
+215	215		301							"{2: 'No. 21', 3: ""Not going to do that. I'm not competing with a cheater."", 4: '1'}"
+216	216		204							{1: '2', 2: '4'}
+217	217		301							{2: 'Noctis', 3: 'Excuse me? Exactly when have I cheated?', 4: '2'}
+218	218		301							"{2: 'Noctis', 3: ""Fine with me, though. I just thought I'd entertain you because you and Vera have been looking shitty these days."", 4: '2'}"
+219	219		202							{1: '1', 2: '2', 6: '1'}
+220	220		201							{1: '1', 2: '500168'}
+221	221		301							"{1: '1', 2: 'Vera', 3: ""Let's get back to business here."", 4: '1'}"
+222	222		204							{1: '1'}
+223	223		301							{2: 'Vera', 3: 'This corner from Zone B seems to be missing data, 21.', 4: '1'}
+224	224		202							{1: '1', 6: '1'}
+225	225		201							{1: '1', 2: '500168', 4: '-400'}
+226	226		201							{1: '2', 2: '500650', 4: '400'}
+227	227		301							{1: '1', 3: 'Walking up to Vera, No. 21 sees Vera pointing at a particular corner on the map.'}
+228	228		301							{2: 'No. 21', 3: '...Because they said they were done.', 4: '2'}
+229	229		301							"{2: 'Vera', 3: 'Who are ""they""? The Constructs that were working with you?', 4: '1'}"
+230	230		301							{2: 'No. 21', 3: 'Yes.', 4: '2'}
+231	231		301							"{2: 'Vera', 3: ""...Safety in numbers was indeed one of the reasons I sent you there with those Constructs, but I was hoping you'd take advantage of the manpower to get things done."", 4: '1'}"
+232	232		301							"{2: 'Vera', 3: ""C'mon, you really need to pull yourself together."", 4: '1'}"
+233	233		301							{2: 'Vera', 3: 'Section 6 from Zone B. I want you to fill in the missing recon data for it now, 21.', 4: '1'}
+234	234		301							"{2: 'Vera', 3: ""Send it to my terminal as soon as you're done. I'll take care of things from there."", 4: '1'}"
+235	235		204							{1: '2', 2: '14'}
+236	236		301							{2: 'No. 21', 3: '...', 4: '2'}
+237	237		301							"{2: 'No. 21', 3: ""...But they don't want to work with me."", 4: '2'}"
+238	238		301							{2: 'Vera', 3: 'What?', 4: '1'}
+239	239		202							{1: '2'}
+240	240		301							"{3: ""Biting her lower lip, No. 21 seems as though she's about to say something. A few moments later, however, she walks out of the tent in a hurry.""}"
+241	241		201							{1: '2', 2: '500336', 3: '4', 4: '400'}
+242	242		301							"{1: '1', 2: 'Noctis', 3: ""Is she okay? She's been acting a little funny since she got that new frame."", 4: '2'}"
+243	243		301							{2: 'Vera', 3: 'Probably going to take her some time to get used to the frame.', 4: '1'}
+244	244		301							"{2: 'Vera', 3: ""And I guess you're done with what you had to do, no? Go and get yourself a set of equipment, then. You can leave as soon as I'm done sending you your mission to your terminal."", 4: '1'}"
+245	245		301							"{3: ""Vera catches herself feeling a surge of anxiety she can't quite word herself—Noctis might have been the first one to have noticed something wrong with No. 21, and Vera finds herself sharing that same observation now.""}"
+246	246		301							"{3: ""Vera's application to get No. 21 a new frame was no easy feat at all, having only succeeded after much planning and bargaining behind the scenes.""}"
+247	247		301							"{3: ""Vera was hoping that the new frame would help keep No. 21's sanity in check, knowing full well how wrong things can go when M.I.N.D. doesn't function properly.""}"
+248	248		301							"{3: ""All that the new frame seems to have done to No. 21, however, is to set her one screw loose—and made her overly cautious where she didn't use to be, even.""}"
+249	249		301							"{3: ""And given No. 21's current state, Vera isn't surprised that her combativity has fallen short of prediction.""}"
+250	250		204							{1: '2'}
+251	251		301							"{2: 'Noctis', 3: ""Hey, what's this gizmo here?"", 4: '2'}"
+252	252		204							{1: '2', 2: '4'}
+253	253		301							{2: 'Vera', 3: 'Hands off my weapon case.', 4: '1'}
+254	254		301							"{2: 'Vera', 3: ""It's the magnetic key to 21's restraint. Put it back now before you lose it."", 4: '1'}"
+255	255		204							{1: '1', 2: '1'}
+256	256		301							"{2: 'Vera', 3: ""Bet those guys from the admin department are dying to see you since you've got a bunch of vehicles and supplies to settle."", 4: '1'}"
+257	257		204							{1: '1'}
+258	258		301							"{2: 'Noctis', 3: ""Wait, you're talking about the restraint around 21's neck, right? Why don't you just go ahead and set her free of that? It really bothers me whenever I see it."", 4: '2'}"
+259	259		204							{1: '1', 2: '10'}
+260	260		301							"{2: 'Vera', 3: ""...You know what? I think I'm going to buy one and put it around your neck and see how you like it."", 4: '1'}"
+261	261		301							"{3: ""Says Vera, avoiding Noctis' question. Deciding not to press further, Noctis shrugs as he puts the black magnetic key back into Vera's weapon case.""}"
+262	262		204							{1: '1'}
+263	263		301							"{2: 'Vera', 3: ""...You have the coordinates on your terminal now. You'll see the Gray Raven Commandant waiting for you when you get there."", 4: '1'}"
+264	264		301							{2: 'Noctis', 3: 'This is far with a capital F! Any vehicle I can use?', 4: '2'}
+265	265		301							{2: 'Vera', 3: 'Your legs, of course.', 4: '1'}
+266	266		301							"{2: 'Noctis', 3: ""I'd much rather save my legs for when I need to fight."", 4: '2'}"
+267	267		301							{2: 'Vera', 3: 'Just shut up and get to work already. The Gray Raven Commandant is coming this way with two of their members.', 4: '1'}
+268	268		301							"{2: 'Vera', 3: ""The Hetero-Creatures there seem unusually active, and I'm guessing there is a bunch of them there, too—which is why I'm sending you there. Remember to pack up enough supplies before you go."", 4: '1'}"
+269	269		204							{1: '2'}
+270	270		301							"{2: 'Noctis', 3: ""Makes sense. Think I'm bringing two more sets of explosives. No, make that five instead."", 4: '2'}"
+271	271		204							{1: '2', 2: '4'}
+272	272		301							"{2: 'Vera', 3: ""Done? Get lost already, then. Just sent you Gray Raven's identification code."", 4: '1'}"
+273	273		301							"{2: 'Noctis', 3: ""On it, ma'am. On it."", 4: '2'}"
+274	274		202							{1: '1', 2: '2', 6: '1'}
+275	275		201							{1: '1', 2: '500168'}
+276	276		301							"{1: '1', 3: ""Vera wonders if that's where all the Hetero-Creatures originate, considering Gray Raven's proximity as the crow flies.""}"
+277	277		301							"{3: ""Given how little they know about the origin, area of distribution, and status of the Hetero-Creatures, Vera knows for a fact that if anything should happen now, they wouldn't be able to keep everyone in the conservation area safe with the handful of Constructs they currently have.""}"
+278	278		301							"{3: ""Now that the Gray Ravens are coming, Vera wants to pick their brains on what they've learned.""}"
+279	279		204							{1: '1', 2: '10'}
+280	280		301		1		AniZhuanchangBegin			{2: 'Vera', 3: '...What a bunch of sods.', 4: '1'}

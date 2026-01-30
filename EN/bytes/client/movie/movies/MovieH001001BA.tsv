@@ -1,0 +1,285 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory314.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: 'It should have been an ordinary summer afternoon.'}
+4	4		301							{3: 'Gray Raven completed their mission ahead of schedule, but there are still three hours to go until they have to rendezvous with the other teams.'}
+5	5		301							{3: 'Everyone sits in the shade of the temporary base, looking up at the solemn sky with a slight sense of relief.'}
+6	6		201							{1: '1', 2: '500026'}
+7	7		301							{1: '1', 2: 'Lee', 3: 'Do we really have to wait here for the next three hours?', 4: '1'}
+8	8		202							{1: '1', 6: '1'}
+9	9		201							{1: '1', 2: '1031001', 4: '-400'}
+10	10		201							{1: '2', 2: '500166', 4: '400'}
+11	11		301							{1: '1', 2: 'Liv', 3: 'Appears so.', 4: '1'}
+12	12		301							"{2: 'Lucia', 3: ""We're not just sitting here burning daylight. We need to respond to any emergency signals from the other teams."", 4: '2'}"
+13	13		202							{1: '1', 2: '2', 6: '11'}
+14	14		301							{3: 'During this recon mission, Gray Raven was assigned to the most dangerous area. The enemies there were tough but small in numbers, and Gray Raven made quick work of them.'}
+15	15		301							{3: 'Other Task Force personnel, on the other hand, are still fighting large amounts of weaker Corrupted in the surrounding areas.'}
+16	16		201							{1: '1', 2: '1031001', 4: '-400'}
+17	17		201							{1: '2', 2: '500166', 4: '400'}
+18	18		301							{1: '1', 2: 'Lucia', 3: 'There are still a lot of unexplored areas over there that need to be investigated. But if we rush in without giving it thought, we might end up getting in the way of their mission.', 4: '2'}
+19	19		301							{2: 'Liv', 3: 'I hope everyone makes it back here in one piece.', 4: '1'}
+20	20		202							{1: '1', 2: '2', 6: '1'}
+21	21		201							{1: '1', 2: '500026'}
+22	22		301							{1: '1', 2: 'Lee', 3: 'Relax...', 4: '1'}
+23	23		301							"{2: 'Lee', 3: ""They'd only be in any sort of danger if something unexpected happened. Otherwise, they'd send elite squads to complete their mission."", 4: '1'}"
+24	24		202							{1: '1', 6: '1'}
+25	25		301							{3: 'Liv nods, and everyone returns to silence again, feeling the peculiar heat of summer on Earth.'}
+26	26		302							{2: '...', 3: '27', 4: 'Sure is hot...', 5: '31'}
+27	27		201							{1: '1', 2: '1031001', 3: '1', 4: '-400'}
+28	28		201							{1: '2', 2: '500166', 4: '400'}
+29	29		301							"{1: '1', 2: 'Liv', 3: ""Commandant, you're burning up. Any longer, and you run the risk of getting heatstroke. Take off your jacket and have some water."", 4: '1'}"
+30	30	34	301							{3: 'Without having to say anything, Liv senses your discomfort.'}
+31	31		201							{1: '1', 2: '1031001', 3: '1', 4: '-400'}
+32	32		201							{1: '2', 2: '500166', 3: '2', 4: '400'}
+33	33		301							{1: '1', 2: 'Liv', 3: 'Take off your jacket and drink some water, Commandant. Your body temp is over 40°C. Any longer, and you run the risk of getting heatstroke.', 4: '1'}
+34	34		301							{2: 'Lucia', 3: 'Need my help?', 4: '2'}
+35	35		301							{3: 'Lucia reaches behind her back and grabs her thruster.'}
+36	36		204							{1: '1', 2: '7'}
+37	37		301							{2: 'Liv', 3: 'Oh? Want Lucia to cool you off with her attack?', 4: '1'}
+38	38		302							"{2: 'Sure, why not?', 3: '39', 4: ""That's dangerous."", 5: '39'}"
+39	39		301							"{2: 'Lucia', 3: ""I'll just cover the area with a thin layer of ice. It won't last long, but it'll be enough to cool this place down."", 4: '2'}"
+40	40		302							"{2: ""I'll leave it to you then."", 3: '41', 4: 'That will work.', 5: '41'}"
+41	41		301				AniZhuanchangBegin			{2: 'Lucia', 3: 'Alright.', 4: '2'}
+42	42		202							{1: '1', 2: '2', 6: '1'}
+43	43		201							{1: '1', 2: '500026', 3: '10'}
+44	44		301			AniZhuanchangEnd				{1: '1', 2: 'Lee', 3: '...', 4: '1'}
+45	45		201							{1: '1', 2: '1031001', 3: '1'}
+46	46		301							{1: '1', 2: 'Liv', 3: '...', 4: '1'}
+47	47		302							"{2: ""Now I'm f-f-freezing!"", 3: '48', 4: 'Achoo—!', 5: '50'}"
+48	48		202							{1: '1', 6: '1'}
+49	49	52	301							{3: 'Out of the frying pan and into the freezer... One second you were on the verge of heatstroke, now you cannot stop shivering.'}
+50	50		202							{1: '1', 6: '1'}
+51	51		301							{3: 'Out of the frying pan and into the freezer... One second you were on the verge of heatstroke, now you cannot stop sneezing.'}
+52	52		201							{1: '1', 2: '1031001', 3: '1', 4: '-400'}
+53	53		201							{1: '2', 2: '500166', 4: '400'}
+54	54		301							"{1: '1', 2: 'Liv', 3: ""Good thing you didn't take off your jacket, Commandant..."", 4: '1'}"
+55	55		301							{2: 'Lucia', 3: 'Sorry, is it too cold now?', 4: '2'}
+56	56		302							"{2: ""It's... fine."", 3: '57'}"
+57	57		301							"{2: 'Liv', 3: ""It's slowly getting warm anyway."", 4: '1'}"
+58	58		301							{2: 'Liv', 3: 'We should be fine, Lucia. Well done. That was a refreshing blast of cold air.', 4: '1'}
+59	59		202							{1: '1', 2: '2', 6: '1'}
+60	60		301							{3: 'Lucia nods. Everyone starts to relax again as you all wait.'}
+61	61		301							{3: 'Waves crash against the distant shoreline. Darkness looms on the horizon, showing signs of a storm brewing.'}
+62	62		301							{3: 'Is this... summer?'}
+63	63		201							{1: '1', 2: '1031001', 3: '1', 4: '-400'}
+64	64		201							{1: '2', 2: '500026', 4: '400'}
+65	65		301							"{1: '1', 2: 'Liv', 3: ""One day, if peace is restored to Earth, think we'll be able to live a life of leisure like this every day?"", 4: '1'}"
+66	66		302							{2: 'Definitely.', 3: '67', 4: 'More fighting awaits.', 5: '68'}
+67	67	69	301							"{2: 'Lee', 3: ""I'm sure we'll still be needed."", 4: '2'}"
+68	68		301							{2: 'Liv', 3: 'More fighting?', 4: '1'}
+69	69		301							{2: 'Lee', 3: 'Think about all the people living in Babylonia.', 4: '2'}
+70	70		301							"{2: 'Lee', 3: ""Even if there's no need to fight, there's still endless work to be done with the reconstruction effort."", 4: '2'}"
+71	71		302							"{2: 'Fighting for a better future.', 3: '72', 4: ""At least we won't have to worry about losing each other."", 5: '72'}"
+72	72		202							{1: '1', 2: '2', 6: '1'}
+73	73		201							{1: '2', 2: '500166', 3: '2'}
+74	74		301							"{1: '1', 2: 'Lucia', 3: ""You're right."", 4: '2'}"
+75	75		302							"{2: ""And we'll have more time off."", 3: '76'}"
+76	76		203							{1: '2', 2: '0.25', 3: '400'}
+77	77		201							{1: '1', 2: '1031001', 3: '1', 4: '-400'}
+78	78		301							"{1: '1', 2: 'Liv', 3: ""Then we'll finally be able to go on a real vacation."", 4: '1'}"
+79	79		301							{2: 'Lucia', 3: 'What do you mean?', 4: '2'}
+80	80		301							{2: 'Liv', 3: 'You know, doing things that make us happy?', 4: '1'}
+81	81		301							{2: 'Liv', 3: 'At a place we like... In the company of friends... Wearing our favorite coatings... Free from worrying about missions or fighting.', 4: '1'}
+82	82		301							"{2: 'Lucia', 3: ""I see... Who wouldn't be happy in a place like this?"", 4: '2'}"
+83	83		204							{1: '2', 2: '5'}
+84	84		301							{2: 'Lucia', 3: 'If we want to make this happen sooner, everything we do now is of the utmost importance.', 4: '2'}
+85	85		301							{3: 'Remembering the mission, her expression becomes serious again.'}
+86	86		301							"{2: 'Liv', 3: ""But that's also why we need to take a break every once in a while. Only then can we fight at peak performance."", 4: '1'}"
+87	87		204							{1: '2'}
+88	88		301							{2: 'Lucia', 3: 'Every once in a while...?', 4: '2'}
+89	89		301							"{2: 'Liv', 3: ""Yep! That reminds me... You haven't changed coatings in ages, have you, Lucia?"", 4: '1'}"
+90	90		301							"{2: 'Lucia', 3: ""Coatings don't seem to affect my performance in battle, so I haven't noticed."", 4: '2'}"
+91	91		301							"{2: 'Liv', 3: ""Hm... I figured you'd say that."", 4: '1'}"
+92	92		203							{1: '1', 2: '0.5', 3: '-200'}
+93	93		301							{3: 'She chuckles and steps closer to Lucia.', 4: '1'}
+94	94		301							{2: 'Liv', 3: 'Not even just for fun?', 4: '1'}
+95	95		301							"{2: 'Lucia', 3: ""I heard that coatings weren't just handed out."", 4: '2'}"
+96	96		302							{2: 'Ahem...', 3: '97', 4: 'Oh, about that...', 5: '97'}
+97	97		301							{2: 'Liv', 3: 'The commandant actually spoke with me about that already...', 4: '1'}
+98	98		301							{2: 'Lucia', 3: 'About coatings?', 4: '2'}
+99	99		301							{2: 'Liv', 3: 'Yep! The commandant wants to give you a new coating!', 4: '1'}
+100	100		301							{2: 'Lucia', 3: '...Me?', 4: '2'}
+101	101		301							{2: 'Liv', 3: 'Yep! But we decided that...', 4: '1'}
+102	102		302							{2: 'You should pick one out yourself!', 3: '103'}
+103	103		301							"{2: 'Liv', 3: ""After all, you're always so tight-lipped about what kind of coating you like."", 4: '1'}"
+104	104		301							{2: 'Liv', 3: 'So, you should pick one out yourself.', 4: '1'}
+105	105		301							{3: 'Liv takes out her terminal. She opens up a window and shows it to Lucia—revealing dozens of coatings waiting to be tried on.'}
+106	106		301							{2: 'Liv', 3: 'These are all the test coatings we applied for. Pick whichever one you like the best!', 4: '1'}
+107	107		301							"{3: ""At a loss, Lucia approaches Liv's terminal and flips through the selection under the behest of her excitement.""}"
+108	108		301							{2: 'Liv', 3: 'Look! This coating comes in a dress!', 4: '1'}
+109	109		301							{3: 'She points to a lavish but ungainly coating inspired by Rococo fashion.'}
+110	110		301							"{2: 'Lucia', 3: ""I don't think this would be very suitable for combat..."", 4: '2'}"
+111	111		301							{3: 'Liv nods seriously as they both turn the page.'}
+112	112		301							"{2: 'Liv', 3: ""What about this one? It's a simple red uniform and a matching skirt."", 4: '1'}"
+113	113		301							"{2: 'Liv', 3: ""Um, but... There's not much of a difference. Is there?"", 4: '1'}"
+114	114		301							"{2: 'Lucia', 3: ""You're right."", 4: '2'}"
+115	115		301							{3: 'The two of them quickly skip over several coatings of that style.'}
+116	116		301							{2: 'Liv', 3: 'What about a sailor outfit? That goes well with summer.', 4: '1'}
+117	117		204							{1: '2', 2: '6'}
+118	118		301							"{2: 'Lucia', 3: ""...A sailor outfit? But it's pink..."", 4: '2'}"
+119	119		301							{3: 'She gives the same begrudging look as she did when she first changed into her Dawn frame.'}
+120	120		204							{1: '2', 2: '2'}
+121	121		301							{2: 'Lucia', 3: 'But I admit, summer feels rather nice.', 4: '2'}
+122	122		301							{2: 'Liv', 3: 'How about this one? What do you think?', 4: '1'}
+123	123		301							"{3: ""Liv points to a breathable swimsuit and grins. Lucia's face instantly turns a bright cherry red.""}"
+124	124		204							{1: '2', 2: '6'}
+125	125		301							{2: 'Lucia', 3: 'No, no, no... Absolutely not.', 4: '2'}
+126	126		204							{1: '2'}
+127	127		301							{3: 'She quickly turns to the next page and continues browsing.'}
+128	128		301							{2: 'Lucia', 3: '...How about this one?', 4: '2'}
+129	129		301							{3: 'Lucia points to an icy blue summer coating with soft scales resembling a fish tail. One of the legs looks like a trail of seafoam left by a wave on the beach.'}
+130	130		301							"{2: 'Liv', 3: ""Wow, that's gorgeous. Want to try it out?"", 4: '1'}"
+131	131		301							{2: 'Lucia', 3: '...Right now?', 4: '2'}
+132	132		302							{2: 'Go for it!', 3: '133'}
+133	133		301				AniZhuanchangBegin			{2: 'Lucia', 3: 'Alright.', 4: '2'}
+134	134		201							{1: '1', 2: '1031001', 3: '1', 4: '-400'}
+135	135		201							{1: '2', 2: '500347', 4: '400'}
+136	136		301			AniZhuanchangEnd				{1: '1', 2: 'Lucia', 3: '...', 4: '2'}
+137	137		301							{2: 'Lucia', 3: '...', 4: '2'}
+138	138		301							{3: 'Lucia does not know what to say. She looks at you with hesitant curiosity.'}
+139	139		302							{2: 'You look great.', 3: '140', 4: 'You look ug—', 5: '144', 6: 'I really like your choice.', 7: '161'}
+140	140		204							{1: '2', 2: '1'}
+141	141		301							{2: 'Lucia', 3: 'R-really...?', 4: '2'}
+142	142	169	301							{3: 'Lucia lets out a sigh of relief.'}
+143	143		301							{2: 'Liv', 3: 'I think so too, Lucia!', 4: '1'}
+144	144		204							{1: '1', 2: '7'}
+145	145		301							"{3: 'Right as you\'re about to say ""ugly,"" Liv quickly stuffs a square of nutri-jelly into your mouth.'}"
+146	146		301							"{2: 'Liv', 3: ""(Psst... Commandant! Didn't we agree to let Lucia choose for herself?)"", 4: '1'}"
+147	147		204							{1: '1', 2: '14'}
+148	148		301							{3: 'Liv leans over and whispers into your ear.'}
+149	149		301							{2: 'Liv', 3: '(And you know she looks great...)', 4: '1'}
+150	150		301							{3: 'She worriedly glances back at the uncertain Lucia.'}
+151	151		301							"{2: 'Liv', 3: ""(Lucia might not seem like she cares about this kind of thing, but she cares about your opinion... Now's not the time for games.)"", 4: '1'}"
+152	152		302							{2: 'Sorry.', 3: '153', 4: '...', 5: '153'}
+153	153		301							{2: 'Lucia', 3: 'For what?', 4: '2'}
+154	154		202							{1: '1', 2: '2', 6: '1'}
+155	155		201							{1: '1', 2: '500026', 3: '10'}
+156	156		301							"{1: '1', 2: 'Lee', 3: ""Don't worry about it. A certain someone was just teasing..."", 4: '1'}"
+157	157		202							{1: '1', 6: '1'}
+158	158		201							{1: '1', 2: '1031001', 3: '1', 4: '-400'}
+159	159		201							{1: '2', 2: '500347', 4: '400'}
+160	160	169	301							{1: '1', 2: 'Liv', 3: 'You look great, Lucia!', 4: '1'}
+161	161		301							{2: 'Lucia', 3: 'My own choice...', 4: '2'}
+162	162		301							{3: 'Gently raising her hands, she looks down at her soft, delicate skirt and her shimmering hair resting on her shoulders.'}
+163	163		301							{2: 'Liv', 3: 'Your hair sure brings back memories.', 4: '1'}
+164	164		302							{2: 'Yeah.', 3: '165', 4: '...', 5: '165'}
+165	165		301							"{2: 'Liv', 3: ""Think it'll be more convenient to have your hair tied up?"", 4: '1'}"
+166	166		204							{1: '2', 2: '1'}
+167	167		301							"{2: 'Lucia', 3: ""I'm used to fighting like this. My first frame had the same hairstyle."", 4: '2'}"
+168	168		301							"{2: 'Liv', 3: ""That's good to know."", 4: '1'}"
+169	169		301							"{2: 'Liv', 3: ""Well then, let's submit a request for this coating."", 4: '1'}"
+170	170		301							"{2: 'Liv', 3: 'From the description, it\'s based on the ""Legend of the Mermaid"".', 4: '1'}"
+171	171		302							"{2: ""That's right."", 3: '172'}"
+172	172		204							{1: '2'}
+173	173		301							"{2: 'Lucia', 3: '""Legend of the Mermaid""?', 4: '2'}"
+174	174		301							"{2: 'Liv', 3: ""Yeah. It's a really romantic but heart-wrenching story."", 4: '1'}"
+175	175		301							{2: 'Liv', 3: 'A long, long time ago...', 4: '1'}
+176	176		202							{1: '1', 2: '2', 6: '1'}
+177	177		301							{3: 'Right as Liv is about to tell the story, something suddenly draws her attention.'}
+178	178		201							{1: '1', 2: '1031001', 3: '7', 4: '-400'}
+179	179		201							{1: '2', 2: '500347', 4: '400'}
+180	180		301							"{1: '1', 2: 'Liv', 3: ""Commandant! There's a distress signal coming from an indistinct source over 18 kilometers south of our position."", 4: '1'}"
+181	181		301							{2: 'Lucia', 3: 'Maybe they ran into trouble on their way back to rendezvous?', 4: '2'}
+182	182		202							{1: '1', 2: '2', 6: '1'}
+183	183		201							{1: '1', 2: '500026'}
+184	184		301							"{1: '1', 2: 'Lee', 3: ""Maybe it's just an error."", 4: '1'}"
+185	185		302							"{2: ""Let's go check it out."", 3: '186', 4: 'What if our comrades are in trouble?', 5: '186'}"
+186	186		201							{1: '1', 2: '500347'}
+187	187		301							"{1: '1', 2: 'Lucia', 3: ""You're right. Seems like the target site is located at sea. We'll need to use the speedboat to get there."", 4: '1'}"
+188	188		301				AniZhuanchangBegin			{2: 'Lucia', 3: 'Gray Ravens, move out.', 4: '1'}
+189	189		202							{1: '1', 6: '1'}
+190	190		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory390.jpg'}
+191	191		301			AniZhuanchangEnd				{3: 'Thunder rumbles faintly in the dense cloud top, indicating the impending storm.'}
+192	192		201							{1: '1', 2: '500347'}
+193	193		301							{1: '1', 2: 'Lucia', 3: 'We need to hurry.', 4: '1'}
+194	194		301							{3: 'The distress signal leads the team to a rickety old yacht. They quickly board the yacht in a desperate race against the approaching storm.'}
+195	195		301							{2: 'Lucia', 3: 'Where are they?', 4: '1'}
+196	196		201							{1: '1', 2: '1031001'}
+197	197		301							"{1: '1', 2: 'Liv', 3: ""I'm searching..."", 4: '1'}"
+198	198		301							"{2: 'Liv', 3: ""The only vital signs I'm picking up are from Corrupted."", 4: '1'}"
+199	199		201							{1: '1', 2: '500026'}
+200	200		301							"{1: '1', 2: 'Lee', 3: ""There's something wrong with this ship."", 4: '1'}"
+201	201		202							{1: '1', 6: '1'}
+202	202		301							{3: 'Lucia looks to where Lee is pointing. All she sees is a trail of watery footprints in the wheelhouse.'}
+203	203		201							{1: '1', 2: '500347'}
+204	204		301							{1: '1', 2: 'Lucia', 3: 'Someone was just here.', 4: '1'}
+205	205		202							{1: '1', 6: '1'}
+206	206		301							{3: 'She quickly walks over to the wheelhouse and carefully examines the surroundings.'}
+207	207		201							{1: '1', 2: '500347'}
+208	208		301							"{1: '1', 2: 'Lucia', 3: ""Looks like the ship's been abandoned for some time. Someone must've come here and triggered the alarm."", 4: '1'}"
+209	209		301							{3: 'Hearing a disturbance in the wheelhouse, a horde of Corrupted suddenly converge on the group.'}
+210	210		301				DialogDisable			{2: 'Lucia', 3: 'Prepare to engage!', 4: '1'}
+211	211		202							{1: '1', 6: '1'}
+212	212		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '2'}
+213	213		401						200.0	{1: '2', 2: '10002001'}
+214	214		401						200.0	{1: '2', 2: '10003001'}
+215	215		401				AniZhuanchangBegin		500.0	{1: '2', 2: '10101101'}
+216	216		502							{1: 'DialogEnable'}
+217	217		301			AniZhuanchangEnd				{3: 'The Corrupted are outdated models and their movements are sluggish. The battle is over before it even starts.'}
+218	218		201							{1: '1', 2: '1031001', 4: '-400'}
+219	219		201							{1: '2', 2: '500347', 4: '400'}
+220	220		301							{1: '1', 2: 'Lucia', 3: 'Hostiles eliminated.', 4: '2'}
+221	221		301							"{2: 'Liv', 3: ""We defeated all of the Corrupted, but there's no one left on the boat. Who could've triggered the alarm?"", 4: '1'}"
+222	222		301							{2: 'Liv', 3: 'Were we too late?', 4: '1'}
+223	223		301							{2: 'Lucia', 3: 'No. Maybe they just ran for cover.', 4: '2'}
+224	224		301							{2: 'Lucia', 3: 'Liv, keep searching the area for vital signs.', 4: '2'}
+225	225		301							{2: 'Liv', 3: 'Alright.', 4: '1'}
+226	226		202							{1: '1', 2: '2', 6: '1'}
+227	227		301							{3: 'Liv closes her eyes and amplifies her search module.'}
+228	228		401							{1: '1', 2: '203'}
+229	229		201							{1: '1', 2: '1031001', 3: '7'}
+230	230		301							{1: '1', 2: 'Liv', 3: 'Danger!!', 4: '1'}
+231	231		301							"{2: 'Liv', 3: ""There's a massive horde of Corrupted coming right for us! They're coming up from the sea!"", 4: '1'}"
+232	232		301							"{2: 'Liv', 3: ""There're... so many... We're no match for them!"", 4: '1'}"
+233	233		302							{2: 'Evacuate—NOW!', 3: '234'}
+234	234		202							{1: '1', 6: '1'}
+235	235		301							{3: 'But right at that moment—'}
+236	236		401							{1: '2', 2: '778'}
+237	237		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+238	238		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+239	239		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory389.jpg'}
+240	240		301							{3: 'A rogue wave crashes against the weak deck, bringing with it an equally massive wave of Corrupted.'}
+241	241		401						200.0	{1: '2', 2: '1510'}
+242	242		401						500.0	{1: '2', 2: '1510'}
+243	243		401							{1: '2', 2: '1510'}
+244	244		301							{3: 'Without hesitation, you draw your pistol and fire a barrage at the swarm of Corrupted, providing covering fire for your three comrades on either side.'}
+245	245		301							{3: 'Making matters worse, the approaching storm has now arrived. The rickety yacht begins tilting precariously to one side under the torrential downpour, crashing waves, and the horde of Corrupted.'}
+246	246		401							{1: '2', 2: '721'}
+247	247		301							{3: 'Unable to react in time, you slide along the slippery deck and into the sea.'}
+248	248		301							"{3: ""All you can do is grab two Corrupted by their legs and pull them overboard with you. At least then you could lighten the others' load.""}"
+249	249		201							{1: '1', 2: '500347'}
+250	250		301							{1: '1', 2: 'Lucia', 3: 'Commandant!!', 4: '1'}
+251	251		202							{1: '1', 6: '1'}
+252	252		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '2'}
+253	253		401						200.0	{1: '2', 2: '10002001'}
+254	254		401						200.0	{1: '2', 2: '10002001'}
+255	255		401							{1: '2', 2: '10002001'}
+256	256		301							{3: 'Lucia carves a path through the Corrupted in an arch with her katana, but you are nowhere to be seen.'}
+257	257		201							{1: '1', 2: '500347'}
+258	258		301							{1: '1', 2: 'Lucia', 3: 'Board the speedboat! We need to protect our only ride back!', 4: '1'}
+259	259		202							{1: '1'}
+260	260		401							{1: '2', 2: '721'}
+261	261		301							{3: 'And with that, Lucia dives into the sea.'}
+262	262		201							{1: '1', 2: '500026'}
+263	263		301							{1: '1', 2: 'Lee', 3: 'Go.', 4: '1'}
+264	264		202							{1: '1'}
+265	265		401						1000.0	{1: '2', 2: '1513'}
+266	266		401							{1: '2', 2: '778'}
+267	267		301			RImgBg1Shake				"{3: ""Right as Liv and Lee are about to jump off the yacht's deck, the boat is rocked wave after wave.""}"
+268	268		201							{1: '1', 2: '500026'}
+269	269		301							{1: '1', 2: 'Lee', 3: 'Tch!', 4: '1'}
+270	270		301							{2: 'Lee', 3: 'Any sign of the commandant?', 4: '1'}
+271	271		201							{1: '1', 2: '1031001', 3: '7'}
+272	272		301							{1: '1', 2: 'Liv', 3: 'All vital signs are scrambled! We need to...', 4: '1'}
+273	273		201							{1: '1', 2: '500026'}
+274	274		301							"{1: '1', 2: 'Lee', 3: ""Get off the ship! We need to protect the speedboat! We'll just get surrounded if we jump in the water without a target!"", 4: '1'}"
+275	275		201							{1: '1', 2: '1031001', 3: '14'}
+276	276		301							{1: '1', 2: 'Liv', 3: '...But!', 4: '1'}
+277	277		201							{1: '1', 2: '500026'}
+278	278		301							{1: '1', 2: 'Lee', 3: 'Trust Lucia! We need to distract the Corrupted!', 4: '1'}
+279	279		201							{1: '1', 2: '1031001', 3: '14'}
+280	280		301							{1: '1', 2: 'Liv', 3: '...!', 4: '1'}
+281	281		202							{1: '1', 6: '1'}
+282	282		301							{3: 'Hearing this, Liv follows Lee along the deck as they cut a path through the waves and Corrupted, then they both jump onto the speedboat.'}
+283	283		401							{1: '2', 2: '604'}
+284	284		301		1		AniZhuanchangBegin			{3: 'In the chaos of the storm, a blue figure pokes her head out of the waves and places the human on a piece of wood from the wreckage...'}

@@ -1,0 +1,46 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory148.png'}
+2	2		401							{1: '1', 2: '209'}
+3	3		301			DialogEnable				{3: 'Ghost towns in deserts, underground facilities, sea-crossing bridges...'}
+4	4		301							{3: 'The distance you have walked has far exceeded the boundaries of this facility.'}
+5	5		302							"{2: ""We haven't just been walking in circles this whole time in the real world, have we?"", 3: '6', 4: 'What a peculiar experience.', 5: '9'}"
+6	6		201							{1: '1', 2: '1011001'}
+7	7		301							{1: '1', 2: 'Lee', 3: 'Probably.', 4: '1'}
+8	8		202							{1: '1'}
+9	9		401							{1: '2', 2: '4421'}
+10	10		301							"{3: ""Having gathered enough data, Lee has completed his modifications to your terminal. As the restart command executes, the terminal's screen goes dark before lighting up again and immediately displaying a notification.""}"
+11	11		302							{2: '(Answer)', 3: '12'}
+12	12		401							{1: '2', 2: '4422'}
+13	13		509						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory34.jpg', 2: '1'}
+14	14		201							{1: '1', 2: '1031001', 3: '3', 4: '-550'}
+15	15		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+16	16		301							{1: '1', 2: 'Liv', 3: 'Commandant?', 4: '1'}
+17	17		302							"{2: ""It's me."", 3: '18'}"
+18	18		204							{1: '1', 2: '2'}
+19	19		301							{2: 'Liv', 3: 'Finally... Are you alright?', 4: '1'}
+20	20		302							"{2: ""Don't worry, I'm fine. Lee is with me. How are things looking on your end?"", 3: '21'}"
+21	21		301							"{2: 'Liv', 3: ""I'm fine too, Commandant. No need to worry."", 4: '1'}"
+22	22		204							{1: '1', 2: '19'}
+23	23		301							"{2: 'Liv', 3: ""It's just that I can't get the sealed gate to open no matter what I do..."", 4: '1'}"
+24	24		302							"{2: ""The gate... You're still outside the facility?"", 3: '25'}"
+25	25		301							"{2: 'Liv', 3: ""Yes, I'm still outside..."", 4: '1'}"
+26	26		204							{1: '1'}
+27	27		301							"{2: 'Liv', 3: ""I was adjusting my Levi-Gun's trailing mode to get through the narrow opening when the gate suddenly regained power and closed. I couldn't stop it in time."", 4: '1'}"
+28	28		301							"{2: 'Liv', 3: ""After the gate shut, there was immediately a powerful signal interference inside the facility. I couldn't determine your exact location or contact you."", 4: '1'}"
+29	29		301							"{2: 'Liv', 3: ""What happened on your side? Where's Lucia?"", 4: '1'}"
+30	30		302				AniZhuanchangBegin			{2: '(Explain the situation)', 3: '31'}
+31	31		204						1000.0	{1: '1', 2: '3'}
+32	32		301			AniZhuanchangEnd				"{2: 'Liv', 3: ""I can't believe it..."", 4: '1'}"
+33	33		201							{1: '2', 2: '1011001', 4: '500'}
+34	34		301							"{1: '1', 2: 'Lee', 3: ""Based on Liv's account, we were likely affected by the interference right as we entered the facility at the entrance itself."", 4: '2'}"
+35	35		302							{2: 'I agree.', 3: '36', 4: 'A trap behind the door...', 5: '36'}
+36	36		202							{1: '2'}
+37	37		204							{1: '1'}
+38	38		301							{2: 'Liv', 3: 'Is there anything I can do?', 4: '1'}
+39	39		302							{2: 'Can you determine our location, Liv?', 3: '40'}
+40	40		301				DialogDisable			{2: 'Liv', 3: 'I can only determine a general area due to the signal interference.', 4: '1'}
+41	41		302							"{2: ""That's good enough."", 3: '42'}"
+42	42		302							"{2: ""We can't determine directions or distances accurately under this interference."", 3: '43'}"
+43	43		302							"{2: ""Liv, we need you to stay outside and make sure we're heading in the right direction."", 3: '44'}"
+44	44		301			DialogEnable				{2: 'Liv', 3: 'Understood. Leave it to me.', 4: '1'}
+45	45		302		1		AniZhuanchangBegin			"{2: ""Now, let's find Lucia."", 3: '46'}"

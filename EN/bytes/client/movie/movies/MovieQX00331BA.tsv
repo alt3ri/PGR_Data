@@ -1,0 +1,52 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500506'}
+4	4		301			DialogEnable				{1: '1', 2: 'Noan', 3: 'Good afternoon, Commandant.', 4: '1'}
+5	5		204							{1: '1', 2: '1'}
+6	6		203							{1: '1', 2: '0.25', 5: '-50'}
+7	7		301							{3: 'Noan strolls up to the meeting point, flashing a smile and reaching out his hand.'}
+8	8		302							{2: '(Return the handshake)', 3: '9'}
+9	9		301							{3: 'And off you go, wandering the commercial streets, shooting the breeze like always.'}
+10	10		302							"{2: ""Noticed you scoping out the shops back there. Interested in what this street's got to offer?"", 3: '11'}"
+11	11		301							{2: 'Noan', 3: 'You bet. Looks like the ACA is in the mix, right?', 4: '1'}
+12	12		302							"{2: ""How'd you figure?"", 3: '13'}"
+13	13		301							{2: 'Noan', 3: 'Some of these joints scream traveling merchants or Cargo Crew.', 4: '1'}
+14	14		301							"{3: 'He points to a ""mixed"" flower shop ahead. They\'ve got everything—fresh blooms, potted plants, and those fancy preserved flower crafts.'}"
+15	15		301							{2: 'Noan', 3: 'They collect their raw materials from specific spots, then hit up artisans to work their magic. Their stores always look like this, a mishmash of goodies but all made from the same materials.', 4: '1'}
+16	16		302							{2: 'Were you like this?', 3: '17'}
+17	17		301				DialogDisable			"{2: 'Noan', 3: ""Yeah, but flowers weren't exactly essentials, so they only traded for the bare minimum. When I was a kid, I used to sneak off to the ruins hunting for wild roses. Back then, I was just a budding merchant at heart."", 4: '1'}"
+18	18		302							{2: 'Oh, speaking of which, I bumped into some Cargo Crew folks on the way here.', 3: '19'}
+19	19		302							{2: 'Jamilah asked them to bring me some treats from Akdilek.', 3: '20'}
+20	20		204							{1: '1', 2: '9'}
+21	21		301			DialogEnable				{2: 'Noan', 3: 'Treats from Akdilek?', 4: '1'}
+22	22		301							{3: 'The young man who hails from Akdilek looks baffled, as if someone is wolfing down salt right in front of him.'}
+23	23		302							{2: 'Nothing weird. See?', 3: '24'}
+24	24		204							{1: '1', 2: '10'}
+25	25		301							{3: 'Noan eyes the cloth bag in his hand and lets out a sigh of relief.'}
+26	26		204							{1: '1', 2: '1'}
+27	27		301							{2: 'Noan', 3: 'Tea?', 4: '1'}
+28	28		302							"{2: ""You haven't even opened it yet! How did you know?"", 3: '29'}"
+29	29		301							{2: 'Noan', 3: 'I heard the rustle when you whipped it out... and caught a whiff of that tea aroma.', 4: '1'}
+30	30		302							"{2: 'You smell that from here? Are you part dog or what?', 3: '31', 4: ""So, is this a merchant's instinct?"", 5: '31'}"
+31	31		301							"{2: 'Noan', 3: ""Most traveling merchants aren't as honest and friendly, and if you're not careful, you could end up with your goods swapped out... It's a survival skill."", 4: '1'}"
+32	32		301							{3: 'As he speaks, Noan pauses in front of a jewelry shop.'}
+33	33		301							"{2: 'Noan', 3: ""This place isn't half bad."", 4: '1'}"
+34	34		301							{3: 'He bends down, examining the jewelry on the counter and pondering hard on what to buy as a gift.'}
+35	35		302							{2: 'You can swap that commemorative coin for a freebie. Let me hook you up.', 3: '36'}
+36	36		301							"{2: 'Noan', 3: ""Alright, if that's how it is..."", 4: '1'}"
+37	37		301				DialogDisable			{3: 'He casually grabs a metal bookmark crafted from an old gear.'}
+38	38		302							{2: 'Feel like you might already have something similar, though.', 3: '39'}
+39	39		302							"{2: ""It's a rare shot. Why not go for something more unique?"", 3: '40', 4: ""You're not a merchant here, you're a guest. Pick something special."", 5: '40'}"
+40	40		301			DialogEnable				{2: 'Noan', 3: 'Hmm...', 4: '1'}
+41	41		301							{3: 'He scans the shop again and, after a beat, snatches up a pair of earrings.'}
+42	42		301							{2: 'Noan', 3: 'How about these?', 4: '1'}
+43	43		302							"{2: ""I didn't know you're an earring person..."", 3: '44', 4: 'Seems quite special, no?', 5: '44', 6: 'These are seriously something else.', 7: '45'}"
+44	44		301							"{2: 'Noan', 3: ""Since it's a rare chance, I figured I'd try something new... If you're not feeling it, we can switch back to the bookmark?"", 4: '1'}"
+45	45		302							"{2: ""But you don't have your ears pierced, do you?"", 3: '46'}"
+46	46		204							{1: '1', 2: '2'}
+47	47		301							{2: 'Noan', 3: 'Do Constructs even need to stress about that stuff?', 4: '1'}
+48	48		204							{1: '1'}
+49	49		302							"{2: ""It's like a minor upgrade, right?"", 3: '50', 4: 'Piercings require extra attention.', 5: '50'}"
+50	50		204							{1: '1', 2: '1'}
+51	51		301		1		AniZhuanchangBegin			{2: 'Noan', 3: 'Fair point... Mind giving me a hand?', 4: '1'}

@@ -1,0 +1,454 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6101_10.jpg'}
+2	2		104							{1: '-550|0|0', 2: '0'}
+3	3		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront25.png', 4: '4'}
+4	4		502							{1: 'DialogDisable'}
+5	5		401			AniZhuanchangEnd			1000.0	{1: '1', 2: '357'}
+6	6		109							{1: '1', 2: '<i>Venite qui: qui son presso i gradini,</i>', 3: '350', 4: '350', 9: '3', 11: '1'}
+7	7		109							{1: '2', 2: '<i>The Angel stood before the stairway of humility, calling out:</i>', 3: '350', 4: '300', 9: '3', 11: '1'}
+8	8		309	1					1000.0	{2: 'Venite qui: qui son presso i gradini,\\nThe Angel stood before the stairway of humility, calling out:'}
+9	9		109							{1: '3', 2: '<i>e agevolemente omai si sale,</i>', 3: '350', 4: '200', 9: '3', 11: '1'}
+10	10		109							"{1: '4', 2: '<i>""Come, the stairs are here.</i>', 3: '350', 4: '150', 9: '3', 11: '1'}"
+11	11		309	1					1000.0	{2: 'e agevolemente omai si sale,\\nCome, the stairs are here.'}
+12	12		109							{1: '5', 2: '<i>e a questo invito pochi rispondono!\\nO generazion degli uomini, nati</i>', 3: '350', 4: '0', 9: '3', 11: '1'}
+13	13		109							{1: '6', 2: '<i>The climb is now made easy,\\nYet how few respond to this call!</i>', 3: '350', 4: '-100', 9: '3', 11: '1'}
+14	14		309	1					1000.0	{2: 'e a questo invito pochi rispondono!\\nO generazion degli uomini, nati\\nThe climb is now made easy,\\nYet how few respond to this call!'}
+15	15		109							"{1: '7', 2: '<i>a volar sù, perché a poco vento\\ncosì cadete in basso?""</i>', 3: '350', 4: '-250', 9: '3', 11: '1'}"
+16	16		109							"{1: '8', 2: '<i>O humankind, born to soar heavenward,\\nWhy fall to earth at the slightest breeze?""</i>', 3: '350', 4: '-350', 9: '3', 11: '1'}"
+17	17		309	1			AniZhuanchangBegin		1000.0	"{2: 'a volar sù, perché a poco vento\\ncosì cadete in basso?\\nO humankind, born to soar heavenward,\\nWhy fall to earth at the slightest breeze?""'}"
+18	18		110							
+19	19		401						2000.0	{1: '1', 2: '36'}
+20	20		401							{1: '1', 2: '5068'}
+21	21		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront25.png', 4: '4', 5: '1'}
+22	22		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1322.jpg'}
+23	23		201							{1: '1', 2: '501281', 3: '8'}
+24	24		502							{1: 'AniZhuanchangEnd'}
+25	25		301			DialogEnable				{1: '1', 2: 'Nirvatia', 3: 'Why fall to earth...?', 4: '1'}
+26	26		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCerberusGameChapter/FxUiCerberusGameChapterLizi01.prefab', 2: '2'}
+27	27		401							{1: '2', 2: '967'}
+28	28		204							{1: '1', 2: '7'}
+29	29		301							{3: 'As she softly speaks the last line, a sudden gust tears through the air, tossing the unfinished pages into chaos.'}
+30	30		202							{1: '1'}
+31	31		301							{3: 'She presses the pages down, and through the fluttering blur, sees a few children waving from afar.'}
+32	32		201							{1: '1', 2: '501005'}
+33	33		301							"{1: '1', 2: 'Beatrice', 3: ""Miss, the wind's picking up. It looks like it's going to rain soon—"", 4: '1'}"
+34	34		202							
+35	35		201							{1: '1', 2: '501281', 3: '1'}
+36	36		301							{1: '1', 3: 'Nirvatia closes her book, nods slowly, and gives them a gentle, almost motherly smile.'}
+37	37		301				AniZhuanchangBegin			"{2: 'Nirvatia', 3: ""Then let's go home."", 4: '1'}"
+38	38		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCerberusGameChapter/FxUiCerberusGameChapterLizi01.prefab'}
+39	39		402							{1: '967'}
+40	40		202							{1: '1'}
+41	41		201							{1: '1', 2: '501281', 3: '1'}
+42	42		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory736.jpg'}
+43	43		306						400.0	{1: '1'}
+44	44		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+45	45		504							{1: '0.7'}
+46	46		301			AniZhuanchangEnd				{1: '1', 3: 'A few months ago, a teacher named Nirvatia came to the village.'}
+47	47		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory757.jpg', 3: '0', 4: '1', 5: '1.4'}
+48	48		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory757.jpg'}
+49	49		205							{1: '999'}
+50	50		301							{3: 'Unlike greedy tax officials who demand goods in the name of progress, this elegant young woman quietly sets up a school on the mountain, asking nothing in return.'}
+51	51		301							"{1: '1', 3: '""Anyone who seeks knowledge is welcome. I\'ll share everything I know.""'}"
+52	52		201							{1: '2', 2: '500164', 4: '1000', 7: '1'}
+53	53		203						900.0	{1: '2', 2: '0.8', 3: '600'}
+54	54		201							{1: '3', 2: '500527', 4: '-800', 7: '1'}
+55	55		203						600.0	{1: '3', 2: '0.5', 3: '-600'}
+56	56		201							{1: '4', 2: '500259', 4: '800', 5: '-30', 7: '1'}
+57	57		203						700.0	{1: '4', 2: '0.6', 3: '400', 4: '-30'}
+58	58		201							{1: '5', 2: '500260', 4: '-900', 5: '-30', 7: '1'}
+59	59		203						900.0	{1: '5', 2: '0.8', 3: '-400', 4: '-30'}
+60	60		204							{1: '1', 2: '9'}
+61	61		301				AniZhuanchangBegin			"{1: '1', 3: ""That selfless promise, and how she follows through, quickly earns her the village's respect.""}"
+62	62		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '1'}
+63	63		306					400.0		
+64	64		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+65	65		504							{1: '0'}
+66	66		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory736.jpg'}
+67	67		201							{1: '1', 2: '501005', 4: '-400'}
+68	68		201							{1: '2', 2: '500434', 4: '400'}
+69	69		401						2000.0	{1: '1', 2: '36'}
+70	70		401							{1: '1', 2: '6214'}
+71	71		301			AniZhuanchangEnd				{1: '1', 2: 'Villager', 3: 'Miss Nirvatia, little Beatrice, finished class early today?', 4: '2'}
+72	72		301							"{2: 'Beatrice', 3: ""Yeah, we saw rain clouds from the hill, figured we'd head back early."", 4: '1'}"
+73	73		301							"{2: 'Villager', 3: ""How's it going up there with Miss Nirvatia? Missing anything?"", 4: '2'}"
+74	74		301							"{2: 'Beatrice', 3: ""Nope, we're doing great. Thanks for asking, sir."", 4: '1'}"
+75	75		202							{1: '1', 2: '2', 6: '1'}
+76	76		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+77	77		504							{1: '0.7'}
+78	78		201							{1: '1', 2: '501005', 4: '-700', 7: '1'}
+79	79		201							{1: '2', 2: '500779', 4: '100', 7: '1'}
+80	80		201							{1: '3', 2: '500454', 4: '400', 7: '1'}
+81	81		201							{1: '4', 2: '501306', 4: '800', 7: '1'}
+82	82		301							"{1: '1', 3: 'A few years ago, Beatrice\'s parents were taken as ""blood tax."" She\'s relied on the villagers to get by ever since.'}"
+83	83		202							{1: '1', 2: '2', 3: '3', 4: '4', 6: '1'}
+84	84		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+85	85		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory757.jpg'}
+86	86		201							{1: '1', 2: '501005', 4: '-200', 7: '1'}
+87	87		201							{1: '2', 2: '501281', 3: '1', 4: '200', 7: '1'}
+88	88		301							"{1: '1', 3: ""Then Nirvatia arrived and took her in, and they've been inseparable since.""}"
+89	89		202							{1: '1', 2: '2', 6: '1'}
+90	90		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+91	91		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory757.jpg'}
+92	92		201							{1: '1', 2: '501281', 3: '9', 7: '1'}
+93	93		201							{1: '2', 2: '501252', 4: '-200', 7: '1'}
+94	94		201							{1: '3', 2: '500251', 4: '-600', 7: '1'}
+95	95		201							{1: '4', 2: '500896', 4: '500', 7: '1'}
+96	96		201							{1: '5', 2: '500294', 4: '700', 7: '1'}
+97	97		301							{1: '1', 3: 'This rundown village rarely gets visitors, let alone teachers, so everyone deeply respects Nirvatia.'}
+98	98		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '1'}
+99	99		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+100	100		504							{1: '0'}
+101	101		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory736.jpg'}
+102	102		201							{1: '1', 2: '501005', 4: '-400', 7: '1'}
+103	103		201							{1: '2', 2: '500434', 4: '400', 7: '1'}
+104	104		301							{1: '1', 2: 'Villager', 3: 'Oh right, we picked too many pumpkins from the field. Take some with you.', 4: '2'}
+105	105		301							{2: 'Beatrice', 3: 'Thank you, sir.', 4: '1'}
+106	106		202							{1: '2', 6: '1'}
+107	107		201							{1: '2', 2: '501281', 3: '1', 4: '400'}
+108	108		301							{1: '1', 2: 'Beatrice', 3: 'Miss Nirvatia, we can have pumpkin pie tonight!', 4: '1'}
+109	109		204							{1: '2', 2: '9'}
+110	110		301							{2: 'Nirvatia', 3: 'So Beatrice wants pumpkin pie?', 4: '2'}
+111	111		301							"{2: 'Beatrice', 3: ""Yep! Pumpkin pie's my favorite. Pumpkin cake would be good too!"", 4: '1'}"
+112	112		204							{1: '2', 2: '8'}
+113	113		301							{3: 'Hearing that, Nirvatia lowers her eyes in thought, like it stirs an old memory.'}
+114	114		204							{1: '2', 2: '1'}
+115	115		301							{3: 'She then opens her eyes and smiles faintly.'}
+116	116		301							{2: 'Nirvatia', 3: 'Alright then, pumpkin pie it is.', 4: '2'}
+117	117		301							{2: 'Beatrice', 3: 'Yay!', 4: '1'}
+118	118		202							{1: '1', 2: '2'}
+119	119		301							{3: 'Beatrice takes the big pumpkin and awkwardly tries to fit it in the basket, when shouting erupts from the far side of the village.'}
+120	120		401							{1: '1', 2: '36'}
+121	121		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+122	122		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+123	123		401							{1: '2', 2: '212'}
+124	124		201							{1: '1', 2: '500294', 7: '1'}
+125	125		301			DialogShake				{1: '1', 2: 'Other Villagers', 3: 'Hey, everyone! Get to the central plaza—', 4: '1'}
+126	126		201						400.0	{1: '2', 2: '501252', 4: '-300'}
+127	127		201						400.0	{1: '3', 2: '500251', 4: '-600'}
+128	128		201						400.0	{1: '4', 2: '500896', 4: '500'}
+129	129		201						600.0	{1: '5', 2: '500392', 4: '700'}
+130	130		401							{1: '1', 2: '5030'}
+131	131		301			DialogShake				{1: '1', 2: 'Other Villagers', 3: 'The Demon Hunters are here! Anyone hiding indoors will be treated as a demon!', 4: '1'}
+132	132		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+133	133		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '1'}
+134	134		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory736.jpg'}
+135	135		201							{1: '1', 2: '501005', 4: '-400', 7: '1'}
+136	136		201							{1: '2', 2: '501281', 4: '400', 7: '1'}
+137	137		402							{1: '212'}
+138	138		502							{1: 'PanelActor1Shake'}
+139	139		203							{1: '1', 2: '0.5', 3: '-300'}
+140	140		301							"{1: '1', 3: 'Beatrice freezes, her hands still. She instinctively looks to her adoptive teacher, just like last time, years ago, when another group came claiming to collect ""taxes"" and took her parents away.'}"
+141	141		204							{1: '2', 2: '9'}
+142	142		301							"{2: 'Nirvatia', 3: ""...It's alright. We just have to wait a little. Once they're gone, we'll go home and finish the pumpkin pie."", 4: '2'}"
+143	143		204							{1: '2', 2: '1'}
+144	144		301							{3: 'And as always, the teacher she trusts so deeply comforts her.'}
+145	145		301							{2: 'Beatrice', 3: '...Mm.', 4: '1'}
+146	146		202							{1: '1', 2: '2'}
+147	147		301							"{3: ""She forces herself to swallow the fear rising in her throat and grips Nirvatia's hand tightly as they head toward the shouting.""}"
+148	148		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+149	149		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+150	150		201							{1: '1', 2: '501281', 4: '-150', 7: '1'}
+151	151		201							{1: '2', 2: '500259', 4: '-400', 7: '1'}
+152	152		201							{1: '3', 2: '500565', 4: '700', 7: '1'}
+153	153		201							{1: '4', 2: '500164', 4: '-500', 7: '1'}
+154	154		201							{1: '5', 2: '501005', 4: '-700', 7: '1'}
+155	155		301							{1: '1', 3: 'Herded by the Demon Hunters, the schoolchildren arrive at the village square with Beatrice. Nirvatia stands at the front, leading them as their teacher.'}
+156	156		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '1'}
+157	157		201							{1: '1', 2: '501281', 4: '-400'}
+158	158		201							{1: '2', 2: '500565', 4: '400'}
+159	159		301							"{1: '1', 2: 'Demon Hunter A', 3: ""Where are you from? Why didn't we see you during the last few inspections?"", 4: '2'}"
+160	160		301							"{2: 'Nirvatia', 3: ""...I'm the new teacher in the village."", 4: '1'}"
+161	161		301							"{2: 'Demon Hunter A', 3: ""You came all the way to this backwater to teach? Don't you think that sounds a bit too goody-goody to be real?"", 4: '2'}"
+162	162		301							{2: 'Demon Hunter A', 3: 'Since when does the world have so many good Samaritans?', 4: '2'}
+163	163		301							"{2: 'Nirvatia', 3: ""Knowledge doesn't discriminate. I believe everyone deserves an education."", 4: '1'}"
+164	164		301							"{2: 'Nirvatia', 3: ""It's exactly because this is a remote village that someone like me needs to be here for the children. Don't you agree?"", 4: '1'}"
+165	165		301							"{3: ""Nirvatia doesn't rise to the obvious bait. She answers calmly and firmly.""}"
+166	166		301							{3: 'The Demon Hunter is about to press further, but the villagers cut in with shouts of protest.'}
+167	167		202							{1: '1', 2: '2', 6: '1'}
+168	168		201							{1: '1', 2: '500294'}
+169	169		201							{1: '2', 2: '501252', 4: '-300'}
+170	170		201							{1: '3', 2: '500251', 4: '-600'}
+171	171		201							{1: '4', 2: '500896', 4: '500'}
+172	172		201							{1: '5', 2: '500392', 4: '700'}
+173	173		301							{1: '1', 2: 'Villagers', 3: 'Stop this, please! This lady has helped us so much. She built a school and taught us how to treat illnesses...', 4: '1'}
+174	174		301			PanelActor5Shake				{2: 'Villagers', 3: 'Please, sirs, have mercy. Our children finally have a chance to learn...', 4: '5'}
+175	175		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '1'}
+176	176		201							{1: '1', 2: '500565', 7: '1'}
+177	177		301			DialogShake	DialogDisable			"{1: '1', 2: 'Demon Hunter A', 3: ""Silence! Demons have the most bloodthirsty, devious souls. They'll stop at nothing to blend in, just to feast on human flesh!"", 4: '1'}"
+178	178		401							{1: '1', 2: '36'}
+179	179		306							{1: '1'}
+180	180		203							{1: '1', 2: '0.5', 4: '-200', 5: '-150'}
+181	181		104						600.0	{1: '0|-200|-100', 2: '0.5'}
+182	182		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2', 5: '1'}
+183	183		511							{1: '1', 2: '0', 3: '300|300|0'}
+184	184		401						300.0	{1: '2', 2: '2513'}
+185	185		301			DialogEnable				"{3: ""Angered by the villagers' resistance, the Demon Hunter fires a shot into the sky as a warning.""}"
+186	186		301			DialogShake	DialogDisable			{2: 'Demon Hunter A', 3: 'Quit trusting every stranger who smiles at you! The more naive you are, the easier it is for demons to exploit you!', 4: '1'}
+187	187		501						1400.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+188	188		306						400.0	
+189	189		202							{1: '1', 6: '1'}
+190	190		401							{1: '1', 2: '396'}
+191	191		104							{1: '0|0|0', 2: '0'}
+192	192		201							{1: '1', 2: '500294'}
+193	193		201							{1: '2', 2: '501252', 4: '-300'}
+194	194		201							{1: '3', 2: '500251', 4: '-600'}
+195	195		201							{1: '4', 2: '500896', 4: '500'}
+196	196		201						300.0	{1: '5', 2: '500392', 4: '700'}
+197	197		502							{1: 'PanelActor1Shake'}
+198	198		502							{1: 'PanelActor2Shake'}
+199	199		502							{1: 'PanelActor3Shake'}
+200	200		502							{1: 'PanelActor4Shake'}
+201	201		502						800.0	{1: 'PanelActor5Shake'}
+202	202		203							{1: '1', 2: '0.3', 3: '-300'}
+203	203		203							{1: '2', 2: '0.3', 3: '-500'}
+204	204		202						200.0	{1: '1', 2: '2'}
+205	205		203							{1: '3', 2: '0.3', 3: '-700'}
+206	206		202						200.0	{1: '3'}
+207	207		203							{1: '4', 2: '0.3', 3: '800'}
+208	208		203							{1: '5', 2: '0.3', 3: '1000'}
+209	209		202						300.0	{1: '4', 2: '5'}
+210	210		301			DialogEnable				{3: 'The crowd scatters in panic at the gunshot, but Nirvatia stands her ground, shielding the children behind her.'}
+211	211		201							{1: '1', 2: '500565', 7: '1'}
+212	212		301							"{1: '1', 2: 'Demon Hunter A', 3: ""Listen up. If she turns out to be a demon, then by Sanctuary law, you're all guilty of harboring her..."", 4: '1'}"
+213	213		301							{2: 'Demon Hunter A', 3: 'So think carefully. Whose side are you really on?', 4: '1'}
+214	214		201							{1: '2', 2: '500792', 4: '800'}
+215	215		203							{1: '1', 2: '0.5', 3: '-400'}
+216	216		203							{1: '2', 2: '0.5', 3: '400'}
+217	217		301							{1: '1', 3: 'Through the haze of smoke, another man steps forward, raising a dreamcatcher.'}
+218	218		301							"{2: 'Demon Hunter B', 3: ""The dreamcatcher is shaking like mad. There's a demon in this village, no doubt about it!"", 4: '2'}"
+219	219		301							"{2: 'Demon Hunter B', 3: ""The Cardinal Deity says, those who shield demons are no better than demons themselves! If you won't listen, we'll do what must be done!"", 4: '2'}"
+220	220		301				DialogDisable			{2: 'Demon Hunter A', 3: 'You! Grab the kids! And someone light the torches!', 4: '1'}
+221	221		202							{1: '1', 2: '2', 6: '1'}
+222	222		201							{1: '15', 2: '501281'}
+223	223		201							{1: '2', 2: '501005', 4: '-400'}
+224	224		201							{1: '3', 2: '500260', 4: '400'}
+225	225		201							{1: '4', 2: '500164', 4: '600'}
+226	226		201						600.0	{1: '5', 2: '500527', 4: '-600'}
+227	227		502							{1: 'PanelActor2Shake'}
+228	228		502							{1: 'PanelActor3Shake'}
+229	229		502							{1: 'PanelActor4Shake'}
+230	230		502						800.0	{1: 'PanelActor5Shake'}
+231	231		203							{1: '2', 2: '0.4', 3: '-200'}
+232	232		203							{1: '3', 2: '0.4', 3: '200'}
+233	233		203							{1: '4', 2: '0.4', 3: '400'}
+234	234		203							{1: '5', 2: '0.4', 3: '-400'}
+235	235		301			DialogEnable				{1: '1', 2: 'Beatrice', 3: '...Miss Nirvatia!', 4: '2'}
+236	236		301							"{3: ""Beatrice tightens her grip on Nirvatia's hand and looks up. Her usually composed teacher no longer wears a calm expression, but one edged with a fierceness she has never seen before.""}"
+237	237		202							{1: '15', 2: '2', 3: '3', 4: '4', 5: '5', 6: '1'}
+238	238		306							{1: '1'}
+239	239		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg', 3: '0', 4: '1', 5: '0.4'}
+240	240		104						450.0	{1: '0|-200|-250', 2: '0', 4: '3'}
+241	241		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+242	242		104							{1: '0|-200|-250', 2: '0', 4: '1'}
+243	243		205							{1: '999'}
+244	244		104							{1: '0|0|0', 2: '0', 4: '3'}
+245	245		201							{1: '1', 2: '501281', 3: '2', 5: '-200', 6: '-250'}
+246	246		301				DialogDisable			"{1: '1', 2: 'Nirvatia', 3: ""...It's alright. I won't let anything happen to you."", 4: '1'}"
+247	247		202							{1: '1', 6: '1'}
+248	248		306							
+249	249		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg', 3: '0', 4: '1', 5: '0.7'}
+250	250		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+251	251		205							{1: '999'}
+252	252		201							{1: '15', 2: '501281', 3: '4'}
+253	253		201							{1: '2', 2: '501005', 4: '-200'}
+254	254		201							{1: '3', 2: '500260', 4: '200'}
+255	255		201							{1: '4', 2: '500164', 4: '400'}
+256	256		201							{1: '5', 2: '500527', 4: '-400'}
+257	257		301			DialogEnable				{1: '1', 3: 'As the man draws closer and the dreamcatcher shakes harder, Nirvatia leans down and whispers to the girl.'}
+258	258		203						500.0	{1: '15', 2: '0.5', 4: '-200'}
+259	259		301							"{2: 'Nirvatia', 3: ""Whatever happens, don't look back. Take everyone and run to the school."", 4: '15'}"
+260	260		301							{2: 'Beatrice', 3: 'But, Miss Nirvatia...', 4: '2'}
+261	261		204							{1: '15', 2: '8'}
+262	262		301							{3: 'Before Beatrice can finish, a warm, firm hand gently covers her mouth.'}
+263	263		204							{1: '15', 2: '4'}
+264	264		301							{2: 'Nirvatia', 3: 'Shhh... no more talking now.', 4: '15'}
+265	265		301							"{2: 'Nirvatia', 3: ""You don't need to worry. Just focus on getting away. Leave the rest to me."", 4: '15'}"
+266	266		203						500.0	{1: '15', 2: '0.5', 4: '0'}
+267	267		301							{3: 'With newfound resolution, Nirvatia slowly rises to her feet. She clenches her hands as if gripping unseen threads and strides toward the two shouting men.'}
+268	268		202							{1: '15', 2: '2', 3: '3', 4: '4', 5: '5', 6: '1'}
+269	269		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '8'}
+270	270		201							{1: '1', 2: '500565'}
+271	271		201							{1: '19', 2: '501281', 3: '2', 5: '-200', 6: '-300'}
+272	272		301				DialogDisable			{1: '1', 3: 'Just as the man moves to pull the trigger, she raises a finger and draws a rune through the air so fast no one sees it—'}
+273	273		202							{1: '1', 2: '19', 6: '1'}
+274	274		401							{1: '2', 2: '4895'}
+275	275		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 4: '8', 5: '1'}
+276	276		401							{1: '1', 2: '36'}
+277	277		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+278	278		302			RImgBg1Shake				"{2: ""That's enough! Everyone, stand down!"", 3: '279'}"
+279	279		301			DialogEnable				{3: 'The unfinished rune freezes in midair as another, unfamiliar shout cuts through the commotion.'}
+280	280		401							{1: '1', 2: '184'}
+281	281		201							{1: '1', 2: '501281', 3: '7'}
+282	282		301							{1: '1', 3: 'Her hand stops. Eyes wide, she stares as a figure bursts into view.'}
+283	283		301			PanelActor1Shake				"{2: 'Nirvatia', 3: ""(...It's you?)"", 4: '1'}"
+284	284		202							{1: '1'}
+285	285		306							{1: '1'}
+286	286		201							{1: '1', 2: '500678'}
+287	287		301							"{1: '1', 3: 'The cloaked ""hero"" descends on the nameless village, snatching the man\'s gun with one hand, seizing Nirvatia\'s wrist with the other, and raising her arm high for all to see.'}"
+288	288		202							{1: '1'}
+289	289		306							
+290	290		201							{1: '1', 2: '501281', 3: '14'}
+291	291		301			PanelActor1Shake				"{3: 'Her strength vanishing all at once, Nirvatia can\'t resist the ""judgment.""'}"
+292	292		202				DialogDisable			{1: '1'}
+293	293		302							{2: 'This demon is under my control, bound by the demon shackles!', 3: '294'}
+294	294		306						400.0	{1: '1'}
+295	295		301			DialogEnable	DialogDisable			{3: 'Like laying out proof beneath the burning sun, the venerable Gray Raven raises an arm, revealing a glowing golden chain binding them together.'}
+296	296		306							
+297	297		302							"{2: ""As Commander of the Iron Army, I'm putting an end to this pointless massacre."", 3: '298'}"
+298	298		302							"{2: ""I'll personally take her to the tribunal. The Sanctuary will decide her fate."", 3: '299'}"
+299	299		302							"{2: ""Demon Hunters, your job's done. Leave this village now!"", 3: '300'}"
+300	300		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+301	301		201							{1: '1', 2: '500294'}
+302	302		201							{1: '2', 2: '501252', 4: '-300'}
+303	303		201							{1: '3', 2: '500251', 4: '-600'}
+304	304		201							{1: '4', 2: '500896', 4: '500'}
+305	305		201							{1: '5', 2: '500392', 4: '700'}
+306	306		401							{1: '2', 2: '212'}
+307	307		301			DialogEnable				{1: '1', 3: 'The whole village is in shock. The gentle and kind Nirvatia turns out to be a demon. For a moment, they even forget to cheer for the commander of the Iron Army, who appears in person.'}
+308	308		301							"{3: ""At first, whispers ripple through the crowd. But when they realize Gray Raven's not joking, panic breaks loose.""}"
+309	309		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '1'}
+310	310		201							{1: '15', 2: '500565', 4: '-400'}
+311	311		201							{1: '16', 2: '500792', 4: '400'}
+312	312		201							{1: '1', 2: '500862'}
+313	313		201							{1: '2', 2: '500862', 4: '-600'}
+314	314		201							{1: '3', 2: '500862', 4: '600'}
+315	315		301							{1: '1', 3: 'The Demon Hunters click their tongues in frustration, clearly displeased to have their blood sport cut short.'}
+316	316		301							"{2: 'Demon Hunter B', 3: ""Iron Army... this isn't the first time you've crossed the line."", 4: '16'}"
+317	317		301				DialogDisable			"{2: 'Demon Hunter B', 3: ""Let me warn you, demons never come alone. She's bound to have followers hiding here."", 4: '16'}"
+318	318		302							"{2: ""I'll be back to investigate."", 3: '319'}"
+319	319		302							{2: 'One last time, Demon Hunters, your job is done. Leave this village now!', 3: '320'}
+320	320		202							{1: '15', 2: '16', 3: '1', 4: '2', 5: '3', 6: '1'}
+321	321		301			DialogEnable				"{3: ""Faced with Gray Raven's stern command, the hunters can no longer find a reason to stay. Grudgingly, they gather their weapons and retreat in frustration.""}"
+322	322		402							{1: '212'}
+323	323		301				DialogDisable			{3: 'Only after the Demon Hunters and villagers have dispersed does the cloaked figure finally turn to the demon with a stern, scrutinizing gaze.'}
+324	324		201							{1: '1', 2: '501281', 3: '14'}
+325	325		302							"{2: ""I've been watching. I know you've done no harm. In fact, you've shown nothing but kindness to this village."", 3: '326'}"
+326	326		302							"{2: ""I don't believe anyone's born good or evil. But a fair investigation still needs to happen."", 3: '327'}"
+327	327		204							{1: '1'}
+328	328		301			DialogEnable				"{2: 'Nirvatia', 3: ""...You're taking me to the tribunal, then?"", 4: '1'}"
+329	329		301							{3: 'The figure nods silently.'}
+330	330		202							{1: '1', 6: '1'}
+331	331		201							{1: '1', 2: '501005'}
+332	332		301			PanelActor1Shake				{1: '1', 2: 'Beatrice', 3: 'Miss Nirvatia!!', 4: '1'}
+333	333		301				DialogDisable			{3: 'The purple-haired girl ignores the adults trying to stop her and stumbles forward.'}
+334	334		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '1'}
+335	335		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+336	336		201							{1: '2', 2: '501281', 3: '4', 4: '200', 7: '1'}
+337	337		201							{1: '1', 2: '501005', 4: '-800', 7: '1'}
+338	338		203						700.0	{1: '1', 2: '0.6', 3: '-200'}
+339	339		301			DialogEnable				"{1: '1', 2: 'Beatrice', 3: ""Gray Raven, this has to be a mistake! There's no way Miss Nirvatia is a demon!"", 4: '1'}"
+340	340		301							"{2: 'Beatrice', 3: ""Please, let me come to the tribunal too! I can testify that she's never hurt anyone! She's always been helping us!"", 4: '1'}"
+341	341		204							{1: '2', 2: '14'}
+342	342		301							{2: 'Nirvatia', 3: 'Beatrice...', 4: '2'}
+343	343		306							{1: '1'}
+344	344		301							"{3: ""The child throws her arms around Nirvatia, clinging to her like she'll never let go. Nirvatia looks down at her with a storm of emotions: pity, guilt... and an overwhelming reluctance to part.""}"
+345	345		301				DialogDisable			{3: 'No words are needed. Anyone watching can see the deep bond they share.'}
+346	346		306							
+347	347		302							{2: 'Nirvatia, the girl may come with us.', 3: '348'}
+348	348		301			DialogEnable	DialogDisable			"{3: ""In the end, even the Iron Army's famed commander chooses compassion over protocol.""}"
+349	349		302							{2: 'But you know as well as I do, no one can sway the verdict.', 3: '350'}
+350	350		302							{2: 'If the worst comes to pass, the girl will have to be separated from you.', 3: '351'}
+351	351		204							{1: '2', 2: '1'}
+352	352		301			DialogEnable				"{2: 'Nirvatia', 3: ""That's enough. Thank you, Gray Raven."", 4: '2'}"
+353	353		301							{3: 'Bound by demon shackles and too weak to resist, Nirvatia lowers her head slightly and gathers the child gently into her arms.'}
+354	354		204							{1: '2', 2: '1'}
+355	355		301							{2: 'Nirvatia', 3: 'At least... I still have time to make her a pumpkin pie.', 4: '2'}
+356	356		204							{1: '2', 2: '4'}
+357	357		301				AniZhuanchangBegin			"{2: 'Nirvatia', 3: ""Gray Raven... if you don't mind, would you care to join us?"", 4: '2'}"
+358	358		401						2000.0	{1: '1', 2: '36'}
+359	359		202							{1: '1', 2: '2', 6: '1'}
+360	360		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory752.jpg'}
+361	361		201							{1: '1', 2: '501005', 4: '-200'}
+362	362		201							{1: '2', 2: '501281', 3: '1', 4: '200'}
+363	363		401							{1: '1', 2: '5070'}
+364	364		301			AniZhuanchangEnd	DialogDisable			{1: '1', 3: 'The simple meal can hardly be called a feast. The table once crowded with students now sits empty. After forcing down the flavorless pumpkin pie, Beatrice is tucked into bed by Nirvatia.'}
+365	365		202							{1: '1', 2: '2', 6: '1'}
+366	366		401							{1: '2', 2: '753'}
+367	367		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory385.png', 3: '0', 4: '1', 5: '1'}
+368	368		104						1200.0	{1: '327|90|-300', 2: '0', 4: '3'}
+369	369		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory385.png'}
+370	370		104							{1: '327|90|-300', 2: '0', 4: '1'}
+371	371		205							{1: '999'}
+372	372		104							{1: '0|0|0', 2: '0', 4: '3'}
+373	373		301			DialogEnable				{3: 'Gray Raven remains nearby, bound to the demon with demon shackles, watching as the two say goodnight. Nirvatia picks up a candelabra and steps out of the room.'}
+374	374		201							{1: '1', 2: '501281'}
+375	375		301							"{1: '1', 2: 'Nirvatia', 3: ""I can read your face. You've got a lot of questions, don't you?"", 4: '1'}"
+376	376		204							{1: '1', 2: '8'}
+377	377		301				DialogDisable			"{2: 'Nirvatia', 3: ""Come on. I'll tell you what you want to know."", 4: '1'}"
+378	378		202							{1: '1', 6: '1'}
+379	379		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory939.png', 3: '0', 4: '1', 5: '1'}
+380	380		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory939.png'}
+381	381		205							{1: '999'}
+382	382		301			DialogEnable	DialogDisable			{3: 'A pale moon hangs in a gray-black sky. Tonight is anything but bright.'}
+383	383		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1195.jpg', 3: '0', 4: '1', 5: '1'}
+384	384		205						1500.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.7', 5: '1'}
+385	385		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1195.jpg'}
+386	386		205							{1: '999'}
+387	387		201							{1: '1', 2: '501294'}
+388	388		301			DialogEnable				{1: '1', 3: 'Nirvatia steps into the courtyard but keeps her distance, just close enough that Gray Raven needs only look up to see her.'}
+389	389		302							{2: 'Why did you pretend to be human and open a school here?', 3: '390'}
+390	390		301							{3: 'You ask that question bluntly.'}
+391	391		202							{1: '1', 6: '1'}
+392	392		201							{1: '1', 2: '501281', 3: '8'}
+393	393		301							{1: '1', 2: 'Nirvatia', 3: 'Before I answer that... Gray Raven, I want to ask you something first.', 4: '1'}
+394	394		204							{1: '1'}
+395	395		301							{2: 'Nirvatia', 3: 'What do you think... How does someone change the nature of their soul?', 4: '1'}
+396	396		202							{1: '1', 6: '1'}
+397	397		306							{1: '1'}
+398	398		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDust.prefab', 2: '2', 3: '1', 4: '1'}
+399	399		201							{1: '1', 2: '501427'}
+400	400		301							{1: '1', 3: 'She makes no attempt to conceal her identity as a demon. Under the moonlight, she raises her hand and calls forth a raven pet from the void.'}
+401	401		301							{3: 'The raven does nothing. It simply perches on a branch without a hint of aggression.'}
+402	402		202							{1: '1', 6: '1'}
+403	403		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDust.prefab', 4: '1'}
+404	404		306							
+405	405		201							{1: '1', 2: '501281', 3: '8'}
+406	406		301							{2: 'Nirvatia', 3: 'I used to think that if I just kept doing good, the world would one day see me as a good person.', 4: '1'}
+407	407		204							{1: '1', 2: '4'}
+408	408		301							"{2: 'Nirvatia', 3: ""But my soul was still caught by your dreamcatcher. It didn't see my intentions as pure."", 4: '1'}"
+409	409		202							{1: '1'}
+410	410		401							{1: '2', 2: '2750'}
+411	411		301							{3: 'Nirvatia snaps her fingers. The hollow-eyed raven dissolves into scattered feathers.'}
+412	412		201							{1: '1', 2: '501281', 3: '4'}
+413	413		301							{1: '1', 2: 'Nirvatia', 3: 'So Gray Raven, does that mean that once a soul is judged to be demonic...', 4: '1'}
+414	414		204							{1: '1', 2: '8'}
+415	415		301							"{2: 'Nirvatia', 3: ""Or like they said earlier today, what if all the good I've done is just a cover for something evil I plan to do tomorrow?"", 4: '1'}"
+416	416		204							{1: '1', 2: '14'}
+417	417		301							"{2: 'Nirvatia', 3: ""Then no matter what I do, I'll still have to live the rest of my life as a demon?"", 4: '1'}"
+418	418		302							{2: '...'}
+419	419		202							{1: '1', 6: '1'}
+420	420		301				DialogDisable			"{3: ""You take a moment, carefully weighing the meaning behind her words. You've met many demons who pleaded for mercy, but this is the first time you've heard one ask such a question.""}"
+421	421		302							"{2: 'The judgment has been passed. No one can escape their own shadow.', 3: '422', 4: 'But regret, deep regret, can help someone rise above it.', 5: '422', 6: 'I don\'t have all the answers. But I still believe you\'re the only demon I\'ve met who feels ""human.""', 7: '422'}"
+422	422		302							"{2: ""I don't know what drives you. But I choose to judge based on what I see, not what I guess."", 3: '423'}"
+423	423		301			DialogEnable	DialogDisable			{3: 'As the Commander of the Iron Army, you draw from a lifetime of dealing with humans to offer your answer.'}
+424	424		302							{2: 'When the Demon Hunters arrived, you chose to reveal who you are to protect your students.', 3: '425'}
+425	425		302							{2: 'So in my eyes, at least, you are a good demon.', 3: '426'}
+426	426		201							{1: '1', 2: '501281', 3: '8'}
+427	427		301			DialogEnable				{1: '1', 2: 'Nirvatia', 3: '...', 4: '1'}
+428	428		204							{1: '1', 2: '1'}
+429	429		301							"{2: 'Nirvatia', 3: ""If I'm a good demon, then why can't you just let me go?"", 4: '1'}"
+430	430		301				DialogDisable			{3: 'Her voice is quiet. The faint laughter that follows carries a bitter edge.'}
+431	431		302							"{2: ""But you know that in this war we each have people to protect. I'm responsible for those who follow me."", 3: '432'}"
+432	432		302							{2: 'You made your choice. And I have duties I must fulfill.', 3: '433'}
+433	433		301			DialogEnable				{3: 'Your voice remains calm, free of emotion.'}
+434	434		301							{3: 'But Nirvatia hears the truth behind your words. She stops resisting. Slowly, she lowers her hands and once again submits to the heavy weight of the demon shackles.'}
+435	435		204							{1: '1', 2: '4'}
+436	436		301							{2: 'Nirvatia', 3: 'I understand.', 4: '1'}
+437	437		204							{1: '1', 2: '8'}
+438	438		301				DialogDisable			{2: 'Nirvatia', 3: 'As for your question, why I pretended to be human, the answer lies in the question I asked you.', 4: '1'}
+439	439		202							{1: '1', 6: '1'}
+440	440		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg', 3: '0', 4: '1', 5: '1'}
+441	441		205						1200.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.7', 4: '0', 5: '1'}
+442	442		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg'}
+443	443		205							{1: '999'}
+444	444		201							{1: '1', 2: '501281', 3: '1'}
+445	445		301			DialogEnable				{1: '1', 3: 'She turns with a smile. The moonlight outlines her long hair in silver.'}
+446	446		301							"{2: 'Nirvatia', 3: ""As for the answer, Gray Raven, that's for you to figure out."", 4: '1'}"
+447	447		301							"{2: 'Nirvatia', 3: ""What could make a demon want to change? Want to be good? I'm leaving that answer in your hands."", 4: '1'}"
+448	448		301							{2: 'Nirvatia', 3: 'When we reach the tribunal, you and Beatrice will decide what happens to me.', 4: '1'}
+449	449		204							{1: '1', 2: '9'}
+450	450		301							"{2: 'Nirvatia', 3: ""The two of you will tell Lord Michael whether I'm guilty, and whether I deserve to be erased, body and soul."", 4: '1'}"
+451	451		301							"{3: ""Under the cold moonlight, her smile looks like she's quietly saying goodbye.""}"
+452	452		204							{1: '1', 2: '1'}
+453	453		301		1		AniZhuanchangBegin			"{2: 'Nirvatia', 3: ""If it's a decision made by the two of you, I'll accept whatever it is, gladly."", 4: '1'}"

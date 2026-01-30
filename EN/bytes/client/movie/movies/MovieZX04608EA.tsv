@@ -1,0 +1,109 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory946.jpg'}
+2	2		401							{1: '1', 2: '250'}
+3	3		107						2500.0	{1: 'Aerospace City Conference Room'}
+4	4		108						500.0	{1: '1'}
+5	5		301			DialogEnable				{3: 'The air grows thick with tension as the negotiation reaches an undeniable deadlock.'}
+6	6		301							{3: 'Using your Babylonia background, Liv and you succeed in reaching out to the governor via the autonomous mechanoid stationed at the entrance of the Administrative Hall. However, his attitude proves to be quite bizarre.'}
+7	7		301							"{3: 'As a visitor from Babylonia, your starting point lies too far from the gravity well. The notion of ""kinship"" is nothing but empty rhetoric.'}"
+8	8		201							{1: '1', 2: '500922', 3: '1'}
+9	9		301							"{1: '1', 3: ""Nevertheless, the young man's intentional manipulation of his bargaining chips is utterly perplexing.""}"
+10	10		301							{3: 'At your request for a meeting, he demands a secretive conversation and selects this unguarded location. Despite clearly holding all the aces, he still exhibits a clear sense of hesitation.'}
+11	11		301							{3: 'Throughout the negotiation process, he has been outwardly enthusiastic about collaboration. However, as soon as specific details are broached, he swiftly resorts to dodging the conversation with a barrage of endless excuses.'}
+12	12		301							{3: 'Consensus typically thrives on mutual benefit, yet he casually brushes aside every generous offer you present. What is it precisely that holds his true concern...?'}
+13	13		302							"{2: ""I don't think you'll be content being just a puppet, Aleksei."", 3: '14'}"
+14	14		301							{2: 'Aleksei', 3: 'This has nothing to do with Veronica.', 4: '1'}
+15	15		301							{3: 'He tosses out this curt response, then tilts his chin up, fixing a scrutinizing gaze upon you.'}
+16	16		301							{2: 'Aleksei', 3: 'Resources and assistance—is that really all Babylonia has to offer as leverage?', 4: '1'}
+17	17		301							{3: 'The conversation circles back to where it started—far from the typical way a consultation or negotiation should unfold.'}
+18	18		302							{2: 'So, what are your demands?', 3: '19'}
+19	19		301							{2: 'Aleksei', 3: 'I have no demands. Leave the Kowloong mechanoid here, and you and your companion depart immediately.', 4: '1'}
+20	20		301				DialogDisable			{2: 'Aleksei', 3: 'This city was designed to be independent from the start. I have the option to ensure that I do not pose a threat to Babylonia.', 4: '1'}
+21	21		302							{2: 'Hanying has her own will. I have no right to make decisions for her.', 3: '22'}
+22	22		302							{2: 'As for the promise not to activate Bifrost, I need a way to verify it.', 3: '23'}
+23	23		301			DialogEnable				{2: 'Aleksei', 3: 'Once the magnetic accelerator begins warming up, it unleashes high-energy reactions. Your sensor arrays should be able to confirm this without any difficulty.', 4: '1'}
+24	24		301							{2: 'Aleksei', 3: 'In the hours leading up to reaching the launch threshold, Aerospace City will be a sitting duck for Longinus strikes.', 4: '1'}
+25	25		301							{2: 'Aleksei', 3: 'Once our little city no longer poses a threat, Babylonia will immediately lose interest.', 4: '1'}
+26	26		301							{2: 'Aleksei', 3: 'Permanently orbiting high above, bestowing rebirth, and meting out punishment as you deem appropriate.', 4: '1'}
+27	27		301							{2: 'Aleksei', 3: 'Instead of reclaiming the world... how satisfying it is to reign over it from the skies.', 4: '1'}
+28	28		306							{1: '1'}
+29	29		301							"{3: ""He's twisting the truth.""}"
+30	30		301							"{3: ""This isn't what you intended... What is he really trying to do?""}"
+31	31		301							"{3: ""This isn't an accusation but more like... inflammatory propaganda.""}"
+32	32		301							"{3: ""No, things shouldn't be like this.""}"
+33	33		301							"{3: ""Aleksei raises his arm like a showman commanding the audience's attention.""}"
+34	34		301							"{3: ""It's already too late.""}"
+35	35		306							
+36	36		401							{1: '1', 2: '36'}
+37	37		202							{1: '1', 6: '1'}
+38	38		401							{1: '2', 2: '4260'}
+39	39		401							{1: '2', 2: '4304'}
+40	40		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+41	41		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory295.png'}
+42	42		301			RImgBg1Shake				{3: 'BOOM—'}
+43	43		401							{1: '1', 2: '5017'}
+44	44		301							{3: 'The moment this thought flashes through your mind, the explosion ensues.'}
+45	45		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+46	46		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory946.jpg'}
+47	47		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+48	48		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+49	49		401							{1: '2', 2: '4558'}
+50	50		401							{1: '2', 2: '4536'}
+51	51		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+52	52		502							{1: 'RImgBg1Shake'}
+53	53		301							{3: 'The precisely calculated impact unleashes shockwaves and deafening rumbles. The shutters of the workshop contort, splinter, and dissolve under external pressure. Shards of metal cascade like molten droplets, scalding the atmosphere as they disperse along erratic, intersecting trajectories toward the ground.'}
+54	54		401							{1: '2', 2: '4557'}
+55	55		201							{1: '1', 2: '500005', 4: '-750'}
+56	56		201							{1: '2', 2: '500005'}
+57	57		201							{1: '3', 2: '500005', 4: '750'}
+58	58		301							{1: '1', 3: 'Through the smoke and dust, heavily armed soldiers emerge. At the front stands the resistance leader—the same one who had previously approached Yulia.'}
+59	59		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+60	60		301							{2: 'Resistance Leader', 3: 'Go get them!', 4: '2'}
+61	61		301							{3: 'His order turns out unnecessary—the armed soldiers at the forefront already trained their sights on you the moment they breached the workshop.'}
+62	62		301							{3: 'Instinctively, you reach for your holster, yet regardless of how swift your reflexes are, it proves futile against such insurmountable odds.'}
+63	63		301							{2: 'Resistance Soldier A', 3: 'Check out the elite, always scheming away.', 4: '1'}
+64	64		301							"{2: 'Resistance Soldier B', 3: ""In the end, we shouldn't have expected those high-and-mighty folks to care whether we live or die."", 4: '3'}"
+65	65		401							{1: '2', 2: '1502'}
+66	66		203							{1: '1', 2: '0.25', 3: '-800', 5: '-50'}
+67	67		203							{1: '2', 2: '0.25', 5: '-50'}
+68	68		203							{1: '3', 2: '0.25', 3: '800', 5: '-50'}
+69	69		301				DialogDisable			{3: 'The angry intruders close in on you rapidly.'}
+70	70		402							{1: '1502'}
+71	71		202						100.0	{1: '1', 2: '2', 3: '3', 6: '1'}
+72	72		302							{2: 'Aleksei!', 3: '76', 4: 'Liv!', 5: '73'}
+73	73		201							{1: '1', 2: '1031001', 3: '5'}
+74	74		301			DialogEnable	DialogDisable			{1: '1', 3: 'With a signal to stay put, Liv lowers her weapon and quietly retreats, positioning herself behind you.'}
+75	75		202						300.0	{1: '1', 6: '1'}
+76	76		201							{1: '1', 2: '500922', 3: '1'}
+77	77		302							{2: 'So this was part of your plan too, Aleksei.'}
+78	78		301			DialogEnable				{1: '1', 3: 'The resistance force lying in ambush has undoubtedly overheard your entire conversation with Aleksei. This was exactly what Aleksei wanted—he had been stalling for this very moment.'}
+79	79		301							"{2: 'Aleksei', 3: ""We all pay the price for our choices, whether it's you or me."", 4: '1'}"
+80	80		301							{3: 'Though Aleksei has succeeded in his provocation, he shows no inclination to escape.'}
+81	81		202							{1: '1', 6: '1'}
+82	82		201							{1: '1', 2: '500005'}
+83	83		401							{1: '2', 2: '1511'}
+84	84		301							{1: '1', 3: 'The resistance leader turns his gun toward the governor.'}
+85	85		301							"{2: 'Resistance Leader', 3: ""I should've finished you off in the woods, you cunning traitor."", 4: '1'}"
+86	86		301							"{3: ""He spits on the ground at the young man's feet in contempt.""}"
+87	87		301							"{3: ""The soldiers, emboldened by their leader's actions, begin to stir. They inch forward in Aleksei's direction, but their boots seem to drag as if wary of stepping into invisible traps.""}"
+88	88		202							{1: '1', 6: '1'}
+89	89		201							{1: '1', 2: '500922', 3: '2'}
+90	90		301							{1: '1', 3: 'Aleksei spreads his arms wide like the crucified Messiah, an eerie smile spreading across his face.'}
+91	91		301							{3: 'Having shown that he is unarmed, the governor plants his feet firmly and begins his persuasive speech once again.'}
+92	92		301							{2: 'Aleksei', 3: 'Before you stands the puppet of the mechanoids, the pawn who brought disaster to this city.', 4: '1'}
+93	93		301							{2: 'Aleksei', 3: 'He never bothers hiding his disdain for his own kin, relishing even the slightest praise from the mechanoids.', 4: '1'}
+94	94		301							{3: 'His speech resembles a poorly crafted character introduction in an amateur play, yet the furious audience delivers precisely the reaction he seeks.'}
+95	95		401							{1: '2', 2: '3079'}
+96	96		401							{1: '2', 2: '4337'}
+97	97		202							{1: '1'}
+98	98		203							{1: '2', 2: '0.15', 4: '-200'}
+99	99		301			RImgBg1Shake	DialogDisable			{1: '1', 3: 'Rifle butts mercilessly strike his frail body, with even the two soldiers assigned to prevent your escape eager to partake in the beating.'}
+100	100		104							{1: '0|200|-200', 2: '1'}
+101	101		306						1000.0	{1: '1'}
+102	102		201							{1: '1', 2: '500922', 3: '1', 4: '-200', 5: '-170', 6: '-200'}
+103	103		301			DialogEnable				{1: '1', 3: 'Curled up on the ground, Aleksei lifts his gaze to meet yours once more.', 4: '1'}
+104	104		301							{3: 'Despite the abuse from the crowd, his pale face retains that eerie smile.', 4: '1'}
+105	105		301							{3: 'Confusion gives way to dread as the lingering sense of wrongness solidifies into a vague revelation.', 4: '1'}
+106	106		302							"{2: 'This is weird.', 3: '107', 4: ""Something's off."", 5: '107'}"
+107	107		301							"{3: ""Under the puppet master's control, his every movement grows more twisted, more unhinged."", 4: '1'}"
+108	108		301		1		AniZhuanchangBegin			{3: 'Hanying and her target could have been misled down the same path.', 4: '1'}

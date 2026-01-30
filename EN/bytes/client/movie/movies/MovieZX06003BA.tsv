@@ -1,0 +1,379 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1312.jpg'}
+2	2		401							{1: '1', 2: '209'}
+3	3		502						250.0	{1: 'DialogDisable'}
+4	4		107							{1: 'Lower Level, Gladiator Maintenance Area', 2: 'Everett Arena'}
+5	5		301							{3: 'Everett Arena\\nLower Level, Gladiator Maintenance Area'}
+6	6		108							{1: '1'}
+7	7		301			DialogEnable				{3: 'Serra stands at the security entrance to the mechanical gladiator maintenance area, toolbox in hand, with Hammer quietly following her.'}
+8	8		201							{1: '1', 2: '501360', 3: '4'}
+9	9		301							{1: '1', 2: 'Serra', 3: '120 minutes to complete repairs and module upgrades on 7 mechanoids.', 4: '1'}
+10	10		204							{1: '1', 2: '8'}
+11	11		301							"{2: 'Serra', 3: ""Sigh... Hammer, we've got quite the challenge ahead of us today."", 4: '1'}"
+12	12		203							{1: '1', 2: '0.25', 3: '400'}
+13	13		201							{1: '2', 2: '500488', 4: '-400', 5: '-500', 6: '700'}
+14	14		401							{1: '2', 2: '901'}
+15	15		301							{1: '1', 2: 'Hammer', 3: '(The indicator light flashes rapidly.)', 4: '2'}
+16	16		202							{1: '1', 2: '2', 6: '1'}
+17	17		401							{1: '2', 2: '1515'}
+18	18		301							{3: 'She pulls out her terminal, brings up the information sheet, and quickly scrolls through the details.'}
+19	19		201							{1: '1', 2: '501360'}
+20	20		301							"{1: '1', 2: 'Serra', 3: 'Lemme see... Standard models, routine maintenance, three units: ""Arc"", ""Winch"", and ""Chain"". Modified models, upgrade installations, two units: ...', 4: '1'}"
+21	21		301							"{2: 'Serra', 3: ""No repair job's too tough for Serra the All-Capable! Let's go, Hammer—another day of getting things done right and fast!"", 4: '1'}"
+22	22		301							"{2: 'Serra', 3: ""Hey, Uncle Roko! You hearing this? I'm about to get started over here—better keep up!"", 4: '1'}"
+23	23		401							{1: '2', 2: '4553'}
+24	24		201							{1: '18', 2: '500086', 3: '1', 4: '40', 5: '-180', 6: '-100'}
+25	25		301							"{1: '1', 2: 'Roko', 3: ""Oh? Is that so? I'm already working on my first one. Maybe you should've sprinted to your station instead of chatting."", 4: '18'}"
+26	26		202							{1: '18', 6: '1'}
+27	27		204							{1: '1', 2: '4'}
+28	28		301							{2: 'Serra', 3: '...Shut up!', 4: '1'}
+29	29		202							{1: '1'}
+30	30		301							{3: 'Serra ends the terminal call with a huff, double-checks her schedule, takes a deep breath, and pulls out her ID card to place it against the security scanner.'}
+31	31		301							{2: 'Access Control', 3: 'Identity verified. Employee 30476: Serra, Junior Mechanic. Access granted to Lower Mechanical Section A.'}
+32	32		401							{1: '2', 2: '4649'}
+33	33		301				AniZhuanchangBegin			{3: 'The security system lets out a mechanical beep confirming its verification, and the heavy metal doors slide apart with a dull, rusty groan.'}
+34	34		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1313.jpg'}
+35	35		301			AniZhuanchangEnd				"{3: ""The moment Serra sees the mechanical gladiators, her face lights up with a radiant smile—as if she's reuniting with old friends.""}"
+36	36		201							{1: '1', 2: '501360', 3: '2'}
+37	37		301							"{1: '1', 2: 'Serra', 3: ""Gooood morning, my brave mechanical gladiator heroes! Today's another day for Serra the Mechanic to give your frames some much-needed TLC!"", 4: '1'}"
+38	38		202							{1: '1', 6: '1'}
+39	39		301							{2: 'Mechanoids', 3: 'Command received. Awaiting maintenance.'}
+40	40		301							{3: 'The mechanoids awaiting maintenance respond only with identical, emotionless tones, making Serra scratch her head in disappointment.'}
+41	41		201							{1: '1', 2: '501360', 3: '10'}
+42	42		301							{1: '1', 2: 'Serra', 3: '(Nothing more than basic interaction, huh. Bet this is an outdated batch...)', 4: '1'}
+43	43		202							{1: '1'}
+44	44		301							"{3: ""After a brief moment of disappointment, Serra breaks into a smile again as she follows the instructions on her terminal and enters the first mechanical gladiator's chamber.""}"
+45	45		201							{1: '1', 2: '500471', 5: '-300', 6: '400'}
+46	46		301							{1: '1', 2: 'Mechanoid A', 3: 'Mechanic authority... confirmed. Switching this frame to... maintenance mode.', 4: '1'}
+47	47		202							{1: '1', 6: '1'}
+48	48		201							{1: '1', 2: '501360'}
+49	49		301							"{1: '1', 2: 'Serra', 3: ""Lemme see... Transmission system shows some wear, and the power core's energy conversion rate is down to just 40%..."", 4: '1'}"
+50	50		204							{1: '1', 2: '4'}
+51	51		301							{2: 'Serra', 3: 'Hmm, but the biggest issue here seems to be your visual recognition module. Seems like the entire component needs a complete upgrade.', 4: '1'}
+52	52		204							{1: '1', 2: '10'}
+53	53		301							"{2: 'Serra', 3: 'But my work authorization only covers ""routine maintenance,"" and I don\'t exactly have that much time to spend. Well, this is difficult.', 4: '1'}"
+54	54		204							{1: '1'}
+55	55		301							"{2: 'Serra', 3: ""Let's see... how about I give your mobility recognition components an upgrade? That should boost your chances in the arena!"", 4: '1'}"
+56	56		203							{1: '1', 2: '0.25', 3: '400'}
+57	57		201							{1: '2', 2: '500471', 4: '-400', 5: '-300', 6: '400'}
+58	58		301							{1: '1', 2: 'Mechanoid A', 3: 'Copy that. Modification plan confirmed.', 4: '2'}
+59	59		204							{1: '1', 2: '10'}
+60	60		301							"{2: 'Serra', 3: ""Although... there's not much I can really do for you all..."", 4: '1'}"
+61	61		204							{1: '1'}
+62	62		301							{2: 'Serra', 3: 'Either way, give it your all in the arena and fight for that championship!', 4: '1'}
+63	63		301							{2: 'Mechanoid A', 3: 'Unable to process command. Emotional content in communication not recognized.', 4: '2'}
+64	64		301							"{2: 'Serra', 3: ""...That's alright. Okay then, I'm going to disconnect your energy core now!"", 4: '1'}"
+65	65		301							{2: 'Serra', 3: 'That should do it. Hammer, hand me wrench number seven from the toolbox.', 4: '1'}
+66	66		202							{1: '1', 2: '2', 6: '1'}
+67	67		401							{1: '2', 2: '9351041'}
+68	68		301							{3: 'Serra hunches over her intense repair work, fully immersed in the maze of complex mechanical components and circuitry and completely oblivious to her surroundings.'}
+69	69		201							{1: '1', 2: '501360', 4: '300'}
+70	70		201							{1: '2', 2: '500488', 4: '1000', 5: '-500', 6: '700', 8: '1'}
+71	71		203							{1: '1', 2: '0.5', 3: '-400'}
+72	72		203							{1: '2', 2: '0.5', 3: '400', 4: '-500', 5: '700'}
+73	73		401							{1: '2', 2: '9351042'}
+74	74		301							{1: '1', 3: 'She quickly completes the maintenance on the unit and jogs over to the next waiting one, ready to repeat the entire process again.'}
+75	75		202							{1: '1', 2: '2', 6: '1'}
+76	76		201							{1: '1', 2: '500488', 4: '-1000', 5: '-500', 6: '700'}
+77	77		201							{1: '2', 2: '501360', 4: '-500', 8: '1'}
+78	78		203							{1: '1', 2: '0.5', 3: '-400', 4: '-500', 5: '700'}
+79	79		203							{1: '2', 2: '0.5', 3: '400'}
+80	80		301							"{1: '1', 3: ""All the while, Hammer, being her most reliable assistant, responds quickly to Serra's every command.""}"
+81	81		202							{1: '1', 2: '2', 6: '1'}
+82	82		301							{3: 'Their coordination is flawless. Whether Serra verbally asks Hammer to do something or with gestures, Hammer, always ready to help, never fails to respond with perfect accuracy.'}
+83	83		301							{3: 'A sharp contrast to the bubbly young woman she usually is, Serra now takes on the laser-focused demeanor of a professional mechanical engineer.'}
+84	84		301							{3: 'Time passes unnoticed as fine beads of sweat form on her forehead from concentration, her mind completely unaware of the hours slipping silently by.'}
+85	85		201							{1: '1', 2: '501360', 3: '8'}
+86	86		301							"{1: '1', 2: 'Serra', 3: ""Phew... this sure ain't easy..."", 4: '1'}"
+87	87		204							{1: '1', 2: '4'}
+88	88		401							{1: '1', 2: '5023'}
+89	89		301			DialogShake				"{2: 'Serra', 3: ""Let me see where I am... I think there's still one left to do... Wait, I've got less than 10 minutes left?!"", 4: '1'}"
+90	90		202							{1: '1'}
+91	91		301							{3: 'Serra screams after a glance at her terminal. At the same moment, the surveillance system overhead issues a warning alert.'}
+92	92		401							{1: '2', 2: '1105'}
+93	93		301							"{2: 'Surveillance', 3: 'Serra, Junior Mechanic. Repair work status: At risk. Time remaining: Ten minutes. Work remaining: CTX-V Enhanced Function Model, codename ""Veronica"". Quantity: One.'}"
+94	94		301							{2: 'Surveillance', 3: 'Please complete your assignment within the allocated timeframe. Failure to do so will result in the forfeiture of all work hours logged today.'}
+95	95		201							{1: '1', 2: '500488', 5: '-500', 6: '700'}
+96	96		401							{1: '2', 2: '901'}
+97	97		301							{1: '1', 2: 'Hammer', 3: '(The indicator light flashes at high frequency.)', 4: '1'}
+98	98		202							{1: '1', 6: '1'}
+99	99		201							{1: '1', 2: '501360', 3: '4'}
+100	100		301							"{1: '1', 2: 'Serra', 3: ""Let's go, Hammer! We gotta get that last one fixed. We've only got nine minutes and 52 seconds left!"", 4: '1'}"
+101	101		203						200.0	{1: '1', 2: '0.4', 3: '-800'}
+102	102		202						200.0	{1: '1', 6: '1'}
+103	103		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+104	104		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1312.jpg'}
+105	105		401							{1: '2', 2: '4331'}
+106	106		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '3'}
+107	107		301							{3: 'Serra sprints down the dimly lit corridor, causing the items in her toolbag to clatter chaotically with each desperate stride.'}
+108	108		301							{3: 'Hammer struggles to keep pace with her footsteps, nearly toppling over several times while navigating the sharp corners.'}
+109	109		401							{1: '1', 2: '63'}
+110	110		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+111	111		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+112	112		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '8'}
+113	113		201							{1: '19', 2: '501364', 5: '-200', 6: '-500'}
+114	114		301							{1: '1', 3: 'The girl stumbles to a halt when she arrives at the room she meant to come to, her breath still coming in gasps when she finds herself staring into a pair of crimson mechanoid eyes.', 4: '19'}
+115	115		301							"{3: ""The tall figure's face is utterly devoid of expression, its cold eyes fixed on Serra. Unfazed by Veronica's demeanor, however, Serra breaks into a smile."", 4: '19'}"
+116	116		202							{1: '19', 6: '1'}
+117	117		101							{4: '8', 5: '1'}
+118	118		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1312.jpg'}
+119	119		201							{1: '1', 2: '501360', 3: '2'}
+120	120		301							"{1: '1', 2: 'Serra', 3: ""Wow—So you're Veronica—"", 4: '1'}"
+121	121		301							{2: 'Serra', 3: 'You look so human-like! Like one of those heroines who knows how to fight!', 4: '1'}
+122	122		204							{1: '1', 2: '3'}
+123	123		301							"{2: 'Serra', 3: ""You can call me Serra. I'm a mechanic here! Can we be friends?"", 4: '1'}"
+124	124		204							{1: '1'}
+125	125		301							"{2: 'Serra', 3: ""Oops, sorry, didn't mean to be rude or anything! We can totally take it slow here. I got a little overexcited just now because I've never seen a mechanoid like you."", 4: '1'}"
+126	126		202							{1: '1'}
+127	127		301							"{3: ""The girl's eyes sparkle with excitement as she extends her hand to Veronica, ready to greet her as though she were a human.""}"
+128	128		301							"{3: ""A split second after, the silent mechanoid extends its hand in response—but instead of returning the human's friendly gesture, it violently seizes her by the throat.""}"
+129	129		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+130	130		401							{1: '1', 2: '55'}
+131	131		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5901_2.jpg'}
+132	132		401							{1: '2', 2: '4429'}
+133	133		301			RImgBg1Shake				{2: 'Serra', 3: '...Aaargh!'}
+134	134		301							"{3: ""Veronica's cold mechanical hand tightens around Serra's neck, constricting her windpipe. Serra struggles to breathe, unable to get a single word out.""}"
+135	135		301							"{3: 'She has no idea what triggered the mechanoid\'s ""rage,"" but her current situation makes one thing clear: the slightest resistance would be enough for that hand to snap her neck.'}"
+136	136		301							"{2: 'Veronica', 3: 'You said you\'re a ""mechanic""?'}"
+137	137		301							{3: 'Serra manages only the faintest nod, hoping that even this tiny movement will be recognized as confirmation.'}
+138	138		401							{1: '2', 2: '9317017'}
+139	139		301							"{3: ""Veronica hurls a collar—twisted beyond recognition—to the ground in fury. It's the same device that terminated that broken, nameless mechanoid the day before.""}"
+140	140		301							{2: 'Veronica', 3: 'Remove this damn thing from my neck.'}
+141	141		301							"{3: ""The mechanical hand around Serra's throat loosens slightly. Finally able to draw breath, Serra breaks into a fit of desperate coughing.""}"
+142	142		301							{3: 'She realizes this is her chance to explain.'}
+143	143		301			DialogShake				{2: 'Serra', 3: 'Cough, cough, cough...'}
+144	144		301							"{2: 'Serra', 3: ""It... it can't be taken off...""}"
+145	145		301							"{2: 'Serra', 3: ""This device... It's connected to the terminal system. Any attempt to remove it would instantly trigger an alarm...""}"
+146	146		301							"{2: 'Serra', 3: 'If I do that, Overseer would take you to that... that place where mechanoids are ""executed""...'}"
+147	147		301							{3: 'But the mechanoid merely fixes her with an icy stare, clearly unsatisfied with her answer.'}
+148	148		301							"{3: ""The hand around Serra's throat tightens again—a silent warning.""}"
+149	149		301							{3: 'She desperately tries to pry the mechanical hand from her throat, but her efforts are futile.'}
+150	150		301							{2: 'Serra', 3: '……'}
+151	151		401							{1: '2', 2: '4883'}
+152	152		301							"{3: ""In the midst of their standoff, Serra's personal terminal begins to ring in her pocket. Its monotonous tone echoes throughout the room, except she can't answer it.""}"
+153	153		401							{1: '2', 2: '5502'}
+154	154		301							{3: 'It clatters to the floor and connects with an accidental tap. From the other end comes an impatient human voice.'}
+155	155		401							{1: '2', 2: '4553'}
+156	156		201							{1: '18', 2: '500086', 4: '40', 5: '-180', 6: '-100'}
+157	157		301							"{1: '1', 2: 'Roko', 3: 'Hey, Serra, you there? Have you finished fixing your ""metal brutes"" yet?', 4: '18'}"
+158	158		301							{2: 'Roko', 3: 'I got stuck with nothing but heaps of junk on my end. Such a pain in the ass. I see no point in fixing them at all, given how beat up they are. Might as well just scrap the whole lot.', 4: '18'}
+159	159		301							"{2: 'Roko', 3: ""...Why aren't you answering? Need a hand over there?"", 4: '18'}"
+160	160		301							"{2: 'Roko', 3: ""...Well, bet you're just too busy there. I've got two more sections to go, so I can't come over anytime soon. Catch you later."", 4: '18'}"
+161	161		202							{1: '18', 6: '1'}
+162	162		401							{1: '2', 2: '4553'}
+163	163		301							{3: 'The call ends with a sharp click.'}
+164	164		301							{2: 'Serra', 3: '……'}
+165	165		301							"{2: 'Veronica', 3: ""Heaps of junk, huh? That's how you people always see us.""}"
+166	166		301							{2: 'Veronica', 3: 'Failed mechanoids, crushed like worthless trash without a second thought.'}
+167	167		301							{2: 'Serra', 3: '………………'}
+168	168		301							"{3: ""Serra struggles desperately, fighting for even a gasp of air as suffocation starts setting in, but it's completely futile.""}"
+169	169		301							"{2: 'Veronica', 3: ""There's no need to explain.""}"
+170	170		301							{2: 'Veronica', 3: 'You can only blame yourself for failing to earn yourself a chance to survive.'}
+171	171		104							{1: '-150|70|-100', 2: '0.3'}
+172	172		301							"{3: ""The mechanical hand clamped around Serra's throat tightens its grip mercilessly, squeezing the air from her lungs with methodical precision.""}"
+173	173		301							"{3: ""The other mechanoid gladiators remain motionless in standby mode. Responding to human distress calls isn't part of the programming in their processing modules.""}"
+174	174		301							"{3: ""The surveillance system remains unresponsive as well. Evidently, it's designed to monitor employee productivity, not their safety.""}"
+175	175		306							{1: '1'}
+176	176		301							"{3: ""Oxygen deprivation blurs Serra's consciousness. Just as darkness begins to claim her, a mechanical whirring sounds from behind—Hammer has come to her rescue.""}"
+177	177		306							
+178	178		401							{1: '2', 2: '5899'}
+179	179		301			RImgBg1Shake				{2: 'Hammer', 3: '(Emits a piercing alarm and rams into Veronica at full speed.)'}
+180	180		301			RImgBg1Shake	AniZhuanchangBegin			"{3: ""The tiny robot is no match for Veronica, but it still rams into her with everything it's got, desperately trying to make her let go of its master.""}"
+181	181		402							{1: '5899'}
+182	182		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1313.jpg'}
+183	183		301			AniZhuanchangEnd				{3: 'With cold indifference, Veronica stares down at Hammer. Its body, nothing more than a patchwork of all sorts of components, is now damaged from ramming.'}
+184	184		301							"{3: ""Hammer's effort, however, seems to prove effective—Veronica's grip loosens slightly.""}"
+185	185		301							"{3: ""As Serra catches her breath, she doesn't cry for help. Instead, she calls out desperately—""}"
+186	186		201							{1: '1', 2: '501360', 3: '5'}
+187	187		301			DialogShake				{1: '1', 2: 'Serra', 3: 'H-Hammer! Stop, stop that already!', 4: '1'}
+188	188		202							{1: '1', 6: '1'}
+189	189		201							{1: '1', 2: '501364', 3: '5', 5: '-20', 6: '-200'}
+190	190		301							"{1: '1', 2: 'Veronica', 3: 'Pathetic. You really think this ""weapon"" of yours can put a dent in me?', 4: '1'}"
+191	191		202						200.0	{1: '1', 6: '1'}
+192	192		401							{1: '2', 2: '819016'}
+193	193		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '3'}
+194	194		301							"{3: ""Veronica's powerful tail lashes out, ready to crush the little robot in one swift strike.""}"
+195	195		201							{1: '1', 2: '501360', 3: '5'}
+196	196		301			RImgBg1Shake				{1: '1', 2: 'Serra', 3: 'No!!!', 4: '1'}
+197	197		202							{1: '1'}
+198	198		301							"{3: ""In desperation, Serra twists her still-trapped body and swings her arm to intercept Veronica's tail.""}"
+199	199		401							{1: '2', 2: '1512'}
+200	200		301			RImgBg1Shake				{3: 'Smack—\\nUgh—'}
+201	201		301							"{3: ""The impact and grunt are heard almost at the same time. Serra's eyes glaze over as her arm falls limp, blood streaming from the wound.""}"
+202	202		201							{1: '1', 2: '501360', 3: '14'}
+203	203		301			PanelActor1Shake				"{1: '1', 2: 'Serra', 3: ""Don't... you dare... hurt... my friend..."", 4: '1'}"
+204	204		202							{1: '1'}
+205	205		301							"{3: ""Forcing out these defiant words, Serra appears oblivious to what's happening to herself and the greater danger that might ensue from these words.""}"
+206	206		201							{1: '1', 2: '501364', 3: '13', 5: '-20', 6: '-200'}
+207	207		301							{1: '1', 2: 'Veronica', 3: '...Friend?', 4: '1'}
+208	208		202							{1: '1'}
+209	209		301							"{3: ""Veronica's gaze turns cold as she looks at the small robot still futilely charging at her, then back to Serra.""}"
+210	210		201							{1: '1', 2: '501360', 3: '5'}
+211	211		301							{1: '1', 3: 'Serra, still frozen in terror moments ago, now stares back at Veronica without a trace of fear.'}
+212	212		202							{1: '1'}
+213	213		301							"{3: ""The spark of courage in the girl's emerald eyes burns like an inextinguishable flame.""}"
+214	214		201							{1: '1', 2: '501364', 3: '4', 5: '-20', 6: '-200'}
+215	215		301				AniZhuanchangBegin			{1: '1', 2: 'Veronica', 3: '...How pathetically foolish.', 4: '1'}
+216	216		202							{1: '1'}
+217	217		401						2000.0	{1: '1', 2: '36'}
+218	218		401							{1: '1', 2: '169'}
+219	219		201							{1: '1', 2: '501364', 5: '-20', 6: '-200'}
+220	220		301			AniZhuanchangEnd				{1: '1', 3: 'Veronica lets out a cold snort and relaxes her combat stance. She folds her arms across her chest and sizes Serra up with icy indifference.'}
+221	221		202							{1: '1', 6: '1'}
+222	222		201							{1: '1', 2: '501360', 3: '5'}
+223	223		301			PanelActor1Shake				{1: '1', 2: 'Serra', 3: 'Cough, cough, cough...', 4: '1'}
+224	224		202							{1: '1'}
+225	225		301							{3: 'With purple bruises around her slender neck and blood streaming from her injured arm, Serra gasps for air in relief.'}
+226	226		301							"{3: ""Ignoring her own injuries, she rushes immediately to Hammer's side to check if the little robot has sustained any damage from repeatedly ramming itself into Veronica.""}"
+227	227		201							{1: '1', 2: '501360', 3: '5', 4: '500'}
+228	228		201							{1: '2', 2: '500488', 4: '-500', 5: '-500', 6: '700'}
+229	229		301							"{1: '1', 2: 'Serra', 3: ""Are you okay, Hammer? Don't worry, these are just minor scratches... I'll patch you right up when we get home!"", 4: '1'}"
+230	230		301							{2: 'Hammer', 3: '(The indicator light blinks slowly and rhythmically.)', 4: '2'}
+231	231		202							{1: '1', 2: '2', 6: '1'}
+232	232		201							{1: '1', 2: '501364', 3: '5', 5: '-20', 6: '-200'}
+233	233		301							"{1: '1', 2: 'Veronica', 3: ""Think this little show you're putting on is going to change how I see you people?"", 4: '1'}"
+234	234		301							"{2: 'Veronica', 3: ""You're no different from those humans in the stands. Machines are nothing but tools to you people."", 4: '1'}"
+235	235		301							{2: 'Veronica', 3: 'We mechanoids fight desperately in the arena, struggling to be the last one standing, only to advance to the next round and face the same brutal cycle all over again.', 4: '1'}
+236	236		204							{1: '1', 2: '13'}
+237	237		301							{2: 'Veronica', 3: 'And you mechanics... You only repair us mechanoids after each match so we can keep those humans entertained.', 4: '1'}
+238	238		301							"{2: 'Veronica', 3: ""You all crave the thrill of watching us being torn apart in the arena... That's the only spectacle that satisfies your bloodlust..."", 4: '1'}"
+239	239		201							{1: '2', 2: '500488', 4: '-1700', 5: '-500', 6: '700'}
+240	240		401							{1: '2', 2: '5899'}
+241	241		203							{1: '2', 2: '0.3', 3: '-600', 4: '-500', 5: '700'}
+242	242		301			RImgBg1Shake				{1: '1', 2: 'Hammer', 3: '(Revs up and attempts to ram into Veronica again with increased force.)', 4: '2'}
+243	243		202							{1: '1', 2: '2', 6: '1'}
+244	244		402							{1: '5899'}
+245	245		201							{1: '1', 2: '501360', 3: '10'}
+246	246		301							"{1: '1', 2: 'Serra', 3: ""That's enough! Stop it, Hammer!"", 4: '1'}"
+247	247		202							{1: '1'}
+248	248		301							{3: 'The little robot still maintains a hostile attitude toward Veronica, its indicator light flashing frantically while Serra tries desperately to calm it down.'}
+249	249		301							{3: 'Serra and Veronica face each other in tense silence, the air between them awkwardly still—until a notification from the monitoring system shatters the brief quiet.'}
+250	250		401							{1: '2', 2: '2982'}
+251	251		301							"{2: 'Surveillance', 3: 'Serra, Junior Mechanic. Repair work status: Incomplete. Work remaining: CTX-V Enhanced Function Model, codename ""Veronica"". Quantity: One.'}"
+252	252		301							"{2: 'Surveillance', 3: ""This violation contravenes Article 10 of the Everett Consortium Employee Code of Conduct: Late work completion or substandard work quality within the designated timeframe is prohibited. Your day's work hours have been forfeited as penalty.""}"
+253	253		301							{2: 'Surveillance', 3: 'This infraction has been reported to management.'}
+254	254		301							{3: 'Instead of lashing out at the system like she usually does, Serra responds only with a pout.'}
+255	255		201							{1: '1', 2: '501360', 3: '8'}
+256	256		301							{1: '1', 2: 'Serra', 3: 'Yeah, whatever floats your boat.', 4: '1'}
+257	257		301							"{2: 'Serra', 3: ""Go ahead, dock more of my hours! If things get any worse, I'll just stop trying altogether! Hmph!"", 4: '1'}"
+258	258		201							{1: '2', 2: '500488', 4: '-600', 5: '-500', 6: '700'}
+259	259		203							{1: '2', 2: '0.4', 3: '-570', 4: '-500', 5: '700'}
+260	260		401							{1: '2', 2: '901'}
+261	261		301							"{1: '1', 2: 'Hammer', 3: ""(Nuzzles repeatedly against Serra's pant leg.)"", 4: '2'}"
+262	262		204							{1: '1', 2: '10'}
+263	263		301							"{2: 'Serra', 3: ""Oh, there there! I was only kidding! I still need to keep earning points to get you a voice module someday, don't I?"", 4: '1'}"
+264	264		202							{1: '1', 2: '2', 6: '1'}
+265	265		301							{3: 'With her work jacket, she casually wipes a component she just removed from Hammer and meticulously puts the component back in.'}
+266	266		301							"{3: ""Veronica notices the girl's filthy jacket that's completely covered in machine oil and grime, its original color barely discernible under the stains.""}"
+267	267		301							"{3: ""It's worlds apart from the immaculate, fashionable attire worn by the human spectators in the arena stands.""}"
+268	268		301							{3: 'Serra is completely absorbed in repairing her little robot, utterly oblivious to everything else around her.'}
+269	269		201							{1: '1', 2: '501364', 3: '3', 5: '-20', 6: '-200'}
+270	270		301							{1: '1', 2: 'Veronica', 3: '...', 4: '1'}
+271	271		202							{1: '1'}
+272	272		401							{1: '1', 2: '4883'}
+273	273		301							{3: 'The terminal on the floor suddenly starts ringing again.'}
+274	274		201							{1: '1', 2: '501360', 3: '4'}
+275	275		301							"{1: '1', 2: 'Serra', 3: ""Huh? Where's my terminal...?"", 4: '1'}"
+276	276		202							{1: '1'}
+277	277		301							{3: 'She turns around to find her terminal, now only inches from her face, nearly smacking into her.'}
+278	278		301							"{3: ""—Because Veronica has shoved her terminal, still ringing, into Serra's face.""}"
+279	279		301							"{3: ""Serra freezes in confusion but soon realizes that Veronica isn't about to smash her terminal into her skull—that she's simply waiting for Serra to take it.""}"
+280	280		201							{1: '1', 2: '501360', 3: '10'}
+281	281		301							{1: '1', 2: 'Serra', 3: '……', 4: '1'}
+282	282		301							{2: 'Serra', 3: '...T-Thank you.', 4: '1'}
+283	283		301							"{3: ""Serra reaches out to take her terminal from Veronica, the blood around her wound hasn't yet completely dried.""}"
+284	284		204							{1: '1', 2: '8'}
+285	285		301							{2: 'Serra', 3: 'Hissss...', 4: '1'}
+286	286		202							{1: '1'}
+287	287		301							{3: 'Blood starts trickling from her wound again when her terminal comes into contact with it. Serra hisses in pain and quickly clutches her hand.'}
+288	288		201							{1: '1', 2: '501364', 3: '3', 5: '-20', 6: '-200'}
+289	289		301							{1: '1', 2: 'Veronica', 3: '……', 4: '1'}
+290	290		202							{1: '1'}
+291	291		301							{3: 'Serra and Veronica face each other in silence, the air between them growing strangely still and uncomfortable.'}
+292	292		301							"{3: ""The terminal, now in Serra's hand, continues to vibrate. She quickly hits the answer button, and Uncle Roko's panicked voice erupts from the speaker.""}"
+293	293		401							{1: '1', 2: '63'}
+294	294		201							{1: '18', 2: '500086', 4: '40', 5: '-180', 6: '-100'}
+295	295		301			DialogShake				"{1: '1', 2: 'Roko', 3: ""...Hello? Hello! Serra, what the hell are you doing? What took you so long to answer? What's going on with you?"", 4: '18'}"
+296	296		301							{2: 'Roko', 3: 'Why is Overseer heading your way? Actually, the big guy is already on its way!', 4: '18'}
+297	297		202							{1: '18', 6: '1'}
+298	298		201							{1: '1', 2: '501360', 3: '5'}
+299	299		301							"{1: '1', 2: 'Serra', 3: ""What?! You can't be serious!"", 4: '1'}"
+300	300		401							{1: '2', 2: '1507'}
+301	301		301							"{3: ""Serra already hears Overseer's heavy footsteps coming from the far end of the corridor before she can even disconnect the call.""}"
+302	302		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+303	303		202							{1: '1', 6: '1'}
+304	304		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1312.jpg'}
+305	305		301							"{3: ""Serra quickly slips out of Veronica's room and dashes to the corridor, where she stands at rigid attention—this ritual of standing straight to receive a scolding from Overseer is something she's mastered through plenty of practice.""}"
+306	306		401						200.0	{1: '2', 2: '1507'}
+307	307		201							{1: '1', 2: '501357', 4: '450', 5: '50', 6: '-100'}
+308	308		301							"{1: '1', 3: ""With Overseer now standing right in front of Serra, its frame towering over her, she has difficulty making out its face even if she cranes her neck. Its very presence radiates an overwhelming sense of authority that's impossible to ignore.""}"
+309	309		401							{1: '2', 2: '4676'}
+310	310		301							{3: 'Too afraid to look up, Serra quietly waits for Overseer to scan her face and analyze her every microexpression. She struggles to keep her face neutral and harmless-looking, knowing the machine is searching for any sign of defiance.'}
+311	311		301							{3: 'With the facial scan complete, Overseer, in a cold, emotionless tone, starts speaking.'}
+312	312		301							{2: 'Overseer', 3: 'Mechanic Serra. Explain the reason for your tardiness.', 4: '1'}
+313	313		202							{1: '1', 6: '1'}
+314	314		201							{1: '1', 2: '501360', 3: '4'}
+315	315		301							"{1: '1', 2: 'Serra', 3: ""I'm sorry, I... I was too slow. I-I promise it won't happen again."", 4: '1'}"
+316	316		202							{1: '1', 6: '1'}
+317	317		201							{1: '1', 2: '501357', 4: '450', 5: '50', 6: '-100'}
+318	318		301							{1: '1', 2: 'Overseer', 3: 'Your current response does not align with your behavior thus far.', 4: '1'}
+319	319		301							{2: 'Overseer', 3: 'According to your records, of your 54 previous tardiness infractions, you denied responsibility 28 times and displayed inappropriate behavior toward the surveillance system 17 times...', 4: '1'}
+320	320		301							{2: 'Overseer', 3: 'Final verification: Are there any other unreported incidents? Be advised that withholding information will result in the forfeiture of all your work hours for this month.', 4: '1'}
+321	321		202							{1: '1', 6: '1'}
+322	322		201							{1: '1', 2: '501360', 3: '4'}
+323	323		301							{1: '1', 2: 'Serra', 3: '...Nothing at all, I swear! I promise!', 4: '1'}
+324	324		202							{1: '1'}
+325	325		301							{3: 'Serra strains to make her voice sound utterly sincere, her expression a perfect blend of innocence and conviction.'}
+326	326		301							{3: 'She stands perfectly straight while keeping her injured hand behind her back.'}
+327	327		201							{1: '1', 2: '501357', 4: '450', 5: '50', 6: '-100'}
+328	328		301							"{1: '1', 3: ""Overseer's microexpression and voice pattern analysis detects no anomalies in Serra's behavior—nothing that matches the physiological indicators of deception.""}"
+329	329		203							{1: '1', 2: '0.5', 4: '50', 5: '-100'}
+330	330		401						200.0	{1: '2', 2: '1507'}
+331	331		202							{1: '1'}
+332	332		301							"{3: 'Having finally completed its protocol-mandated ""verification"" process, Overseer departs from the area.'}"
+333	333		202							{6: '1'}
+334	334		301				AniZhuanchangBegin			{3: 'With Overseer completely gone now, Serra exhales with profound relief, then quickly slips back into the room where Veronica is waiting.'}
+335	335		401							{1: '1', 2: '36'}
+336	336		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1313.jpg'}
+337	337		401							{1: '1', 2: '169'}
+338	338		201						200.0	{1: '1', 2: '501364', 3: '7', 5: '-20', 6: '-200'}
+339	339		301			AniZhuanchangEnd				{1: '1', 2: 'Veronica', 3: '?', 4: '1'}
+340	340		202							{1: '1', 6: '1'}
+341	341		201							{1: '1', 2: '501360'}
+342	342		301							"{1: '1', 2: 'Serra', 3: ""I'm here to work, duh."", 4: '1'}"
+343	343		204							{1: '1', 2: '2'}
+344	344		301							"{2: 'Serra', 3: ""Oh, stop giving me that look. They've already docked my pay for today anyway, so what does it matter now?"", 4: '1'}"
+345	345		204							{1: '1'}
+346	346		301							"{2: 'Serra', 3: ""Your frame's taken some serious damage and needs some fixing if you want to win your next match."", 4: '1'}"
+347	347		202							{1: '1'}
+348	348		301							{3: 'Serra twirls the small wrench in her hand with a hint of swagger, seemingly trying to show off her expertise.'}
+349	349		201							{1: '1', 2: '501364', 3: '3', 5: '-20', 6: '-200'}
+350	350		301							{1: '1', 2: 'Veronica', 3: '……', 4: '1'}
+351	351		204							{1: '1', 2: '8'}
+352	352		301							{2: 'Veronica', 3: 'Keep your filthy hands off my frame.', 4: '1'}
+353	353		202							{1: '1'}
+354	354		301							{3: 'Veronica coldly tosses a somewhat dirty piece of cloth toward Serra, then turns away without another glance.'}
+355	355		301							{3: 'Silence occupies the room once more.'}
+356	356		201							{1: '1', 2: '501360', 3: '4'}
+357	357		301							{1: '1', 2: 'Serra', 3: '……', 4: '1'}
+358	358		202							{1: '1'}
+359	359		301							"{3: ""But it doesn't last long before Veronica speaks again.""}"
+360	360		201							{1: '1', 2: '501361', 5: '-20', 6: '-200'}
+361	361		301							{1: '1', 2: 'Veronica', 3: 'Maybe next time.', 4: '1'}
+362	362		202							{1: '1'}
+363	363		201							{1: '1', 2: '501360'}
+364	364		301							{1: '1', 2: 'Serra', 3: 'Ah... Okay!', 4: '1'}
+365	365		202							{1: '1'}
+366	366		301				AniZhuanchangBegin			{3: 'This, Serra figures, is a sign that Veronica has softened.'}
+367	367		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1316.jpg'}
+368	368		301			AniZhuanchangEnd				{3: 'Having completed all her tasks for the day, Serra hums a tune as she walks briskly back to the staff quarters.'}
+369	369		201							{1: '1', 2: '500488', 4: '-700', 5: '-500', 6: '700'}
+370	370		301							{1: '1', 2: 'Hammer', 3: '(Lags behind Serra, the indicator light pulsing slowly.)', 4: '1'}
+371	371		201							{1: '2', 2: '501360', 4: '500'}
+372	372		301							"{1: '1', 2: 'Serra', 3: ""Hey, I'm okay. Why are you still upset?"", 4: '2'}"
+373	373		203							{1: '1', 2: '0.4', 3: '-500', 4: '-500', 5: '700'}
+374	374		301							{1: '1', 2: 'Hammer', 3: '(Stops abruptly, refusing to follow Serra any further.)', 4: '1'}
+375	375		301							"{2: 'Serra', 3: ""Why are you sulking again? Told you I'm okay. Things aren't what you think they are."", 4: '2'}"
+376	376		301							"{2: 'Serra', 3: ""See, Veronica didn't actually mean to hurt me."", 4: '2'}"
+377	377		204							{1: '2', 2: '2'}
+378	378		301		1		AniZhuanchangBegin			{2: 'Serra', 3: 'So... be nice to her when you see her again, alright?', 4: '2'}

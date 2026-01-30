@@ -1,0 +1,78 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory685.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				"{3: ""After a night's rest, Ayla and her squad resume their exploration.""}"
+4	4		502							{1: 'RImgBg1DisableSlow'}
+5	5		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory529.jpg'}
+6	6		301							{3: 'As they continue down the corridor, a magnificent building looms ahead.'}
+7	7		201							{1: '1', 2: '500576', 3: '7', 4: '-400'}
+8	8		201							{1: '2', 2: '500560', 3: '4', 4: '400'}
+9	9		301							"{1: '1', 2: 'Ayla', 3: ""Looks like it's... a theater?"", 4: '1'}"
+10	10		204							{1: '1', 2: '12'}
+11	11		301							"{2: 'Sica', 3: 'The electronic sign over here reads, ""This is the Constellia Theater. The next play is...""', 4: '2'}"
+12	12		204							{1: '2', 2: '7'}
+13	13		301							{2: 'Sica', 3: '...Garbled text?', 4: '2'}
+14	14		202							{1: '2', 6: '1'}
+15	15		201							{1: '2', 2: '500586', 4: '400'}
+16	16		301							"{1: '1', 2: 'Trojan', 3: ""Seems that its owner doesn't want to give us a preview of what will happen next."", 4: '2'}"
+17	17		204							{1: '1'}
+18	18		301				DialogDisable			"{2: 'Ayla', 3: ""Sometimes a little surprise can be quite pleasant, don't you agree?"", 4: '1'}"
+19	19		202							{1: '1', 2: '2'}
+20	20		502							{1: 'RImgBg1DisableSlow'}
+21	21		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory528.jpg'}
+22	22		201							{1: '1', 2: '500436', 3: '1'}
+23	23		301			DialogEnable				{1: '1', 3: 'After strolling through the ornate corridor adorned with depictions of storms, sailors, angels, and demons carved on the walls, they are greeted by the magnificent sight of a circular theater. In the center of the stage, a peculiar mechanoid stands in silence.'}
+24	24		201							{1: '1', 2: '500576', 3: '7'}
+25	25		301							{1: '1', 2: 'Ayla', 3: '...Hamlet?!', 4: '1'}
+26	26		301							{2: 'Ayla', 3: 'How...', 4: '1'}
+27	27		202							{1: '1'}
+28	28		301							{3: 'Ayla rushes onto the stage and starts to carefully inspect the mechanoid.'}
+29	29		201							{1: '1', 2: '500586'}
+30	30		301							{1: '1', 2: 'Trojan', 3: 'Hamlet? What is that?', 4: '1'}
+31	31		201							{1: '1', 2: '500576', 3: '4'}
+32	32		301							"{1: '1', 2: 'Ayla', 3: ""Hamlet is the name of the WGAA's holographic AI theater play machine."", 4: '1'}"
+33	33		301							"{2: 'Ayla', 3: ""It's equipped with the latest theater performance technology, capable of delivering a fully immersive experience. However, it hasn't seen widespread commercial use due to its high cost and the technology's relative immaturity."", 4: '1'}"
+34	34		301							{2: 'Ayla', 3: 'The only existing one should be kept in the Science Council...', 4: '1'}
+35	35		201							{1: '1', 2: '500586'}
+36	36		301							{1: '1', 2: 'Trojan', 3: 'Then this one...', 4: '1'}
+37	37		201							{1: '1', 2: '500576', 3: '12'}
+38	38		301							"{1: '1', 2: 'Ayla', 3: ""No, this isn't Hamlet; it's another virtual stage device that looks very similar."", 4: '1'}"
+39	39		301							"{3: ""After inspecting the mechanoid, Ayla waves to the others, indicating that there's no danger present.""}"
+40	40		201							{1: '1', 2: '500581', 4: '-400'}
+41	41		201							{1: '2', 2: '500586', 4: '400'}
+42	42		301							"{1: '1', 2: 'Lena', 3: ""...What in the world do they want from us? I couldn't care less about watching a play here."", 4: '1'}"
+43	43		204							{1: '2', 2: '4'}
+44	44		301							"{3: ""A frown creeps onto Trojan's face as she checks the area behind the curtain.""}"
+45	45		301							"{2: 'Trojan', 3: ""Both the back door and side door are locked, as well as the corridor outside. There's no way out..."", 4: '2'}"
+46	46		202							{1: '1', 2: '2', 6: '1'}
+47	47		401							{1: '2', 2: '2511'}
+48	48		301							{3: 'Bam!'}
+49	49		301							{3: 'With a heavy, dull sound, the front door through which they had entered is also slammed shut.'}
+50	50		201							{1: '1', 2: '500581', 4: '-400'}
+51	51		201							{1: '2', 2: '500586', 3: '1', 4: '400'}
+52	52		301							{1: '1', 2: 'Trojan', 3: 'Now it leaves you no choice.', 4: '2'}
+53	53		301							{2: 'Lena', 3: '...', 4: '1'}
+54	54		202							{1: '1', 2: '2', 6: '1'}
+55	55		201							{1: '1', 2: '500576'}
+56	56		301							{1: '1', 3: 'From the box behind the mechanoid, Ayla retrieves a pre-prepared connection device set clearly meant for their arrival.'}
+57	57		301							"{2: 'Ayla', 3: ""There's probably a play that we need to watch."", 4: '1'}"
+58	58		201							{1: '1', 2: '500586'}
+59	59		301							{1: '1', 2: 'Trojan', 3: 'It looks like only one of us can connect with it.', 4: '1'}
+60	60		201							{1: '1', 2: '500559', 3: '4', 4: '-400'}
+61	61		201							{1: '2', 2: '500581', 4: '400'}
+62	62		301							{1: '1', 2: 'Sica', 3: 'I can give it a try.', 4: '1'}
+63	63		201							{1: '1', 2: '500560', 3: '7', 4: '-400'}
+64	64		301							{1: '1', 3: 'Sica volunteers, but Lena pulls her raised hand down.'}
+65	65		204							{1: '2', 2: '5'}
+66	66		301							{2: 'Lena', 3: 'I told you, a commandant should not recklessly—', 4: '2'}
+67	67		202							{1: '1', 2: '2', 6: '1'}
+68	68		201							{1: '1', 2: '500576', 7: '1'}
+69	69		301							"{1: '1', 2: 'Ayla', 3: ""I'll do it."", 4: '1'}"
+70	70		301							"{3: ""Ayla's calm voice chimes in.""}"
+71	71		204							{1: '1', 2: '20'}
+72	72		301							"{2: 'Ayla', 3: ""I've taken part in the calibration and operation of Hamlet many times, and I have plenty of special memories about this type of virtual stage. Moreover..."", 4: '1'}"
+73	73		204							{1: '1'}
+74	74		301							{3: 'She shows everyone a setup instruction manual for the virtual stage that she just found.'}
+75	75		301							"{2: 'Ayla', 3: ""I'm very familiar with this upcoming play."", 4: '1'}"
+76	76		301							"{3: ""A wistful look appears on Ayla's face, her eyes sparkling with nostalgia.""}"
+77	77		301		1		AniZhuanchangBegin			"{2: 'Ayla', 3: 'It\'s... a story about a ""knight.""', 4: '1'}"

@@ -1,0 +1,142 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg'}
+2	2		401							{1: '1', 2: '6225'}
+3	3		301			DialogEnable				{3: 'The afternoon air in Constellia carries a lazy breeze.'}
+4	4		301							{3: 'Most visitors take a post-lunch break, leaving the marketplace sparsely populated. The mechanoids use the lull to swap jokes about screws and bolts that only they understand.'}
+5	5		306							{1: '1'}
+6	6		301							{3: 'In this relaxed atmosphere, you head to the meeting spot and see a figure standing in the sunlight.'}
+7	7		301							{3: 'She leans against the street railing, gazing into the distance, lost in thought. The sunlight turns her golden hair into a halo of warmth. At the sound of familiar footsteps, she turns and meets your eyes.'}
+8	8		306							
+9	9		201							{1: '1', 2: '501298', 3: '1'}
+10	10		301							"{1: '1', 2: 'Bianca', 3: ""You're here, Commandant."", 4: '1'}"
+11	11		302							"{2: ""Sorry I'm late."", 3: '12', 4: 'Have you been waiting long?', 5: '13'}"
+12	12	14	301				AniZhuanchangBegin			{2: 'Bianca', 3: 'No need to apologize. We still have three minutes before our meeting time, and I only just got here myself.', 4: '1'}
+13	13		301				AniZhuanchangBegin			{2: 'Bianca', 3: 'No, I just got here myself.', 4: '1'}
+14	14		202							{1: '1', 6: '1'}
+15	15		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1275.jpg'}
+16	16		301			AniZhuanchangEnd				"{3: ""As the credits roll upward, the film's theme song comes to an end, the frame freezes, and the screen fades to black.""}"
+17	17		301							{3: 'Bianca keeps her eyes on the screen until the lights come on. Then she turns and sees you watching her, just as you always do.'}
+18	18		201							{1: '1', 2: '501298', 3: '1'}
+19	19		301							"{1: '1', 2: 'Bianca', 3: ""Thank you for waiting. Let's go."", 4: '1'}"
+20	20		401							{2: '4095'}
+21	21		401							{2: '36'}
+22	22		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+23	23		401							{2: '208'}
+24	24		202							{1: '1', 6: '1'}
+25	25		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+26	26		301							"{3: ""The two of you stand and head out. The theater is already empty. Bianca always watches the credits to the very end, and today is no different. Out on the street, the marketplace's bustle fills your ears again.""}"
+27	27		201							{1: '1', 2: '501298', 3: '1'}
+28	28		301							{1: '1', 2: 'Bianca', 3: 'What did you think of the film, Commandant?', 4: '1'}
+29	29		302							{2: 'I enjoyed it a lot.', 3: '30', 4: 'It was pretty average.', 5: '31'}
+30	30	33	301							{2: 'Bianca', 3: 'Indeed. I really enjoyed it too.', 4: '1'}
+31	31		204							{1: '1'}
+32	32		301							"{2: 'Bianca', 3: ""Average? True, the storytelling had a few flaws, but they don't overshadow the good. I still liked it."", 4: '1'}"
+33	33		204							{1: '1', 2: '1'}
+34	34		301							{2: 'Bianca', 3: 'The play of light and shadow was fascinating. The cinematographer must have used a well-known technique from the past.', 4: '1'}
+35	35		301							{2: 'Bianca', 3: 'Multiple light sources with programmed control, creating soft and intricate shifts in the lighting on the actors...', 4: '1'}
+36	36		202							{1: '1'}
+37	37		301							{3: 'She notices your smile and stops mid-sentence.'}
+38	38		201							{1: '1', 2: '501298', 3: '7'}
+39	39		301				DialogDisable			{1: '1', 2: 'Bianca', 3: 'Sorry, I got a little carried away...', 4: '1'}
+40	40		302							{2: 'Not at all.', 3: '41'}
+41	41		302							"{2: ""It's rare to see you like this."", 3: '42', 4: ""It's been a while since I saw your movie-lover side."", 5: '42'}"
+42	42		302							"{2: ""I think it's charming."", 3: '43'}"
+43	43		204							{1: '1', 2: '1'}
+44	44		301			DialogEnable				{2: 'Bianca', 3: 'I just happen to know a thing or two about filmmaking.', 4: '1'}
+45	45		202							{1: '1'}
+46	46		301							{3: 'You stroll through the market, casually browsing the strange and curious items displayed at the mechanoid stalls.'}
+47	47		201							{1: '1', 2: '501298'}
+48	48		301							{1: '1', 2: 'Bianca', 3: 'A blanket welded from metal scraps... a wheelchair that can hit one hundred and twenty kilometers an hour...', 4: '1'}
+49	49		301							"{2: 'Bianca', 3: ""What's that?"", 4: '1'}"
+50	50		301							{3: 'Something at one of the stalls catches her eye.'}
+51	51		301							"{2: 'Bianca', 3: ""The collector's edition box set of Lovers of Time."", 4: '1'}"
+52	52		202							{1: '1'}
+53	53		306							{1: '1'}
+54	54		301							{3: 'On the shelf sits a square black metal box. Through the wrapping, you can see a movie poster of a couple laughing together in the rain.'}
+55	55		301							{3: 'The mechanoid vendor hears your exchange and turns toward you.'}
+56	56		306							
+57	57		201							{1: '1', 2: '500929'}
+58	58		301							{1: '1', 2: 'Mechanoid Vendor', 3: 'Finally... ahem... someone with good taste.', 4: '1'}
+59	59		201							{1: '1', 2: '501298'}
+60	60		301							{1: '1', 2: 'Bianca', 3: 'How can I purchase that box set?', 4: '1'}
+61	61		202							{1: '1'}
+62	62		301							"{3: ""At this festival hosted by mechanoids, every stall has its own strange rules. Some vendors even demand you run a hundred-meter sprint within their time limit before they sell to you. Everything is at the vendor's whim.""}"
+63	63		201							{1: '1', 2: '500929'}
+64	64		301							{1: '1', 2: 'Mechanoid Vendor', 3: 'Only true film lovers can buy from me.', 4: '1'}
+65	65		301							"{2: 'Mechanoid Vendor', 3: ""I'll give you a few movie questions. Answer them correctly, and I'll recognize you as worthy film lovers!"", 4: '1'}"
+66	66		202							{1: '1'}
+67	67		301							{3: 'Bianca turns to look at you.'}
+68	68		201							{1: '1', 2: '501298', 3: '1'}
+69	69		301							"{1: '1', 2: 'Bianca', 3: ""Let's do this together, Commandant."", 4: '1'}"
+70	70		302							"{2: 'Alright.', 3: '71', 4: ""Don't underestimate all those movie nights we've shared!"", 5: '71'}"
+71	71		201							{1: '1', 2: '500929'}
+72	72		301							"{1: '1', 2: 'Mechanoid Vendor', 3: ""Alright, what's the first rule?"", 4: '1'}"
+73	73		302							"{2: ""We're starting already?"", 3: '74', 4: 'I know this one!', 5: '76'}"
+74	74		201							{1: '1', 2: '501298', 3: '1'}
+75	75		301							"{1: '1', 2: 'Bianca', 3: 'It should be, ""Don\'t talk about Fighting Club.""', 4: '1'}"
+76	76	79	202							{1: '1'}
+77	77		301							{3: 'A smile plays in her eyes. She clearly knows the answer too, but gives a small nod, signaling for you to say it.'}
+78	78		302							"{2: '""Don\'t talk about Fighting Club.""', 3: '79'}"
+79	79		201							{1: '1', 2: '500929'}
+80	80		301							{1: '1', 2: 'Mechanoid Vendor', 3: 'Not bad. Looks like this kind of question is no problem for you two.', 4: '1'}
+81	81		301							{2: 'Mechanoid Vendor', 3: 'Then, in Love Before Sunrise, what is the first line of the song the two leads listen to in the record store?', 4: '1'}
+82	82		202							{1: '1'}
+83	83		301							{3: 'Bianca tilts her head down, thinking back.'}
+84	84		401							{2: '4386'}
+85	85		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+86	86		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1275.jpg'}
+87	87		504							{1: '0.7'}
+88	88		301							"{3: ""Not long ago, the two of you watched it together at WGAA's screening room.""}"
+89	89		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+90	90		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+91	91		504							{1: '0'}
+92	92		301							{3: 'Images from that movie float through her mind as Bianca softly speaks.'}
+93	93		201							{1: '1', 2: '501298', 3: '1'}
+94	94		301							"{1: '1', 2: 'Bianca', 3: '""The wind comes from the north.""', 4: '1'}"
+95	95		301							{3: 'Suddenly, she remembers the way you look at her during the end credits. The words slip from her lips in a near whisper.'}
+96	96		204							{1: '1', 2: '9'}
+97	97		301							"{2: 'Bianca', 3: '""I love feeling your eyes on me when I\'m looking elsewhere...""', 4: '1'}"
+98	98		302							{2: 'What?', 3: '99'}
+99	99		204							{1: '1'}
+100	100		301							{2: 'Bianca', 3: 'No, nothing. Just remembered another line from the film.', 4: '1'}
+101	101		201							{1: '1', 2: '500929'}
+102	102		301							"{1: '1', 2: 'Mechanoid Vendor', 3: ""I can't believe you got that right..."", 4: '1'}"
+103	103		301							{3: 'The vendor scratches its metal head, its competitive spirit ignited.'}
+104	104		301							{2: 'Mechanoid Vendor', 3: 'Next question. Quote three lines of confession from different movies.', 4: '1'}
+105	105		301							{2: 'Mechanoid Vendor', 3: 'No repeats.', 4: '1'}
+106	106		302							{2: 'Wait, this one...', 3: '107', 4: '(Look at Bianca)', 5: '107'}
+107	107		201							{1: '1', 2: '501298', 3: '1'}
+108	108		301							{1: '1', 3: 'She takes a slow breath, steadying her quickening heartbeat.'}
+109	109		204							{1: '1'}
+110	110		301							"{2: 'Bianca', 3: ""I'll go first?"", 4: '1'}"
+111	111		204							{1: '1', 2: '6'}
+112	112		301							"{2: 'Bianca', 3: '""Even if this wretched world and we ourselves shatter into pieces, I\'d still love you.""', 4: '1'}"
+113	113		204							{1: '1', 2: '6'}
+114	114		301							{2: 'Bianca', 3: '—From the film Gone with Wind.', 4: '1'}
+115	115		301							{3: 'She sends you a look filled with subtle emotion.'}
+116	116		204							{1: '1', 2: '1'}
+117	117		301				DialogDisable			{2: 'Bianca', 3: 'Your turn, Commandant.', 4: '1'}
+118	118		302							"{2: '""Falling in love with you was the easiest thing I\'ve ever done.""', 3: '119'}"
+119	119		302							{2: '—From the film Blue Book.', 3: '120'}
+120	120		204							{1: '1', 2: '9'}
+121	121		301			DialogEnable				"{2: 'Bianca', 3: '""I want you to know that you\'ve taken possession of my body and soul. I love... I love...""', 4: '1'}"
+122	122		301							{3: 'Before she can finish, you recognize the quote and complete it.'}
+123	123		302							"{2: '""I love you. From this day forward, I never want to be apart from you.""', 3: '124'}"
+124	124		301				AniZhuanchangBegin			{2: 'Bianca & 【kuroname】', 3: '—From Prejudice and Pride.', 4: '1'}
+125	125		202							{1: '1', 6: '1'}
+126	126		401							{1: '1', 2: '36'}
+127	127		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory783.jpg'}
+128	128		401							{1: '1', 2: '181'}
+129	129		301			AniZhuanchangEnd				{3: 'On the way back, Bianca looks down at the box set in her hands.'}
+130	130		201							{1: '1', 2: '501298'}
+131	131		301							"{1: '1', 2: 'Bianca', 3: ""Commandant, you planned all this ahead of time, didn't you?"", 4: '1'}"
+132	132		302							"{2: 'Busted...', 3: '133', 4: 'Yes.', 5: '133', 6: ""I'm not telling."", 7: '133'}"
+133	133		204							{1: '1', 2: '1'}
+134	134		301							"{2: 'Bianca', 3: ""We only watched Love Before Sunrise together recently. The vendor's question was a bit too obvious."", 4: '1'}"
+135	135		302							"{2: ""I just didn't expect him to throw in a new challenge on the spot."", 3: '136'}"
+136	136		301							"{2: 'Bianca', 3: ""But we still answered them all, didn't we?"", 4: '1'}"
+137	137		302							{2: 'Yeah.', 3: '138', 4: 'Perfect teamwork.', 5: '138'}
+138	138		301							{2: 'Bianca', 3: '...Shall we watch this one together tonight?', 4: '1'}
+139	139		301							{3: 'In the glow of the setting sun, she gives the disc a small wave, her smile warm and bright.'}
+140	140		302							{2: 'Of course.', 3: '141'}
+141	141		502		1					{1: 'AniZhuanchangBegin'}

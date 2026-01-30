@@ -1,0 +1,55 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6001_17.jpg'}
+2	2		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+3	3		401			AniZhuanchangEnd				{1: '1', 2: '55'}
+4	4		301			DialogEnable				{3: 'A murky haze clings to the mine tunnels, as if mourning some tragedy.'}
+5	5		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+6	6		201							{1: '1', 2: '501385', 3: '7'}
+7	7		301							"{1: '1', 2: 'Liv', 3: 'So... after the original child, the one she named Aisling, passed away, Melinoe started raising this ""Aisling"" instead?', 4: '1'}"
+8	8		202							{1: '1'}
+9	9		301							{3: 'On the tombstone, the strokes of the meticulously carved name are stained with aged machine oil.'}
+10	10		302							{2: '...', 3: '11', 4: 'That seems to be the case.', 5: '11'}
+11	11		301							"{3: 'Spiders hunt to feed their young. The ""child"" you have seen in those illusions... they must all be the same.'}"
+12	12		301							"{3: 'They are all the second ""Aisling"".'}"
+13	13		201							{1: '1', 2: '501385', 3: '14'}
+14	14		301							"{1: '1', 2: 'Liv', 3: '""Aisling""...', 4: '1'}"
+15	15		301							{3: 'Liv lets out a quiet sigh.'}
+16	16		204							{1: '1', 2: '15'}
+17	17		301							{2: 'Liv', 3: 'Who is she really? What... exactly is she?', 4: '1'}
+18	18		202							{1: '1'}
+19	19		301							"{3: ""There is no trace of the Punishing Virus on her... unless she's been controlling its dissipation herself.""}"
+20	20		301							"{3: ""Her disguise was flawless. Under Melinoe's protection, she never revealed a single trace of her true nature.""}"
+21	21		302							{2: 'Maybe... something like the Hetero-Sapien twins?', 3: '22'}
+22	22		201							{1: '1', 2: '501385', 3: '4'}
+23	23		301							"{1: '1', 2: 'Liv', 3: ""A Hetero-Creature...? That's certainly possible."", 4: '1'}"
+24	24		202							{1: '1'}
+25	25		301							"{3: ""If you have already encountered <b><ud><color=#34aff8ff><link=39>Cradle</link></color></ud></b>, it's not a stretch to think the Red Tide could breed something even stranger.""}"
+26	26		201							{1: '1', 2: '501385', 3: '4'}
+27	27		301							{1: '1', 2: 'Liv', 3: 'But... why would she want to probe my M.I.N.D.? She even sacrificed this entire nest for it...', 4: '1'}
+28	28		302							"{2: ""Maybe there's something special within your M.I.N.D..."", 3: '29'}"
+29	29		204							{1: '1', 2: '7'}
+30	30		301							{2: 'Liv', 3: 'Could it be... that dataset?', 4: '1'}
+31	31		202							{1: '1'}
+32	32		306							{1: '1'}
+33	33		301							"{3: ""All Constructs have nearly identical M.I.N.D. structures. Except for... that one dataset loaded into Liv's.""}"
+34	34		306							
+35	35		201							{1: '1', 2: '501385', 3: '15'}
+36	36		301							{1: '1', 2: 'Liv', 3: 'But why would a Hetero-Creature... want that dataset?', 4: '1'}
+37	37		302							"{2: ""I'm not sure either."", 3: '38'}"
+38	38		202							{1: '1'}
+39	39		301							"{3: 'No matter how you look at it, the motives don\'t align. Why would a Hetero-Creature ""need"" that dataset?'}"
+40	40		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+41	41		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg'}
+42	42		201							{1: '1', 2: '501385', 3: '4'}
+43	43		301							{1: '1', 2: 'Liv', 3: '...For now, our priority is to stop Melinoe.', 4: '1'}
+44	44		301							"{2: 'Liv', 3: 'We have to find that child... the second ""Aisling"", before she can cause any more harm.', 4: '1'}"
+45	45		302							{2: 'Where could Melinoe be...?', 3: '46'}
+46	46		204							{1: '1', 2: '16'}
+47	47		301							{2: 'Liv', 3: 'A mother... will always do everything she can to buy her child more time to escape.', 4: '1'}
+48	48		204							{1: '1', 2: '4'}
+49	49		301				AniZhuanchangBegin			{2: 'Liv', 3: 'She should be waiting for us, just ahead.', 4: '1'}
+50	50		401							{1: '1', 2: '36'}
+51	51		202							{1: '1', 6: '1'}
+52	52		502						300.0	{1: 'DialogDisable'}
+53	53		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+54	54		503		1	AniZhuanchangEnd	AniZhuanchangBegin			{1: '10194'}

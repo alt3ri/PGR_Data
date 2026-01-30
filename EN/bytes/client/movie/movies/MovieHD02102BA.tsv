@@ -1,0 +1,25 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory672.jpg'}
+2	2		501				AniZhuanchangEnd			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '3'}
+3	3		401							{1: '1', 2: '201'}
+4	4		201							{1: '1', 2: '500581', 4: '400'}
+5	5		201							{1: '2', 2: '500576', 4: '-400'}
+6	6		301			DialogEnable	AniZhuanchangBegin			{1: '1', 3: 'The simulation begins, and they see the girl with purple hair walking alone on the screen. Not far ahead of Echo stands a familiar Construct with pink hair waving the paintbrush in her hand.'}
+7	7		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+8	8		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+9	9		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory673.jpg'}
+10	10		509						600.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory579.jpg', 2: '2'}
+11	11		201							{1: '1', 2: '500598', 4: '-500'}
+12	12		201				AniZhuanchangEnd			{1: '2', 2: '500585', 3: '1', 4: '500'}
+13	13		301			DialogEnable				"{1: '1', 2: 'Cervantes', 3: ""Oh? You're choosing Ayla as the data sample for the first simulation?"", 4: '2'}"
+14	14		301							{2: 'Dulcinea', 3: 'Indeed. Ayla and Echo had encountered each other in Constellia before. She is the best choice to kickstart this simulation.', 4: '1'}
+15	15		301							{2: 'Cervantes', 3: 'Ayla and Echo...', 4: '2'}
+16	16		301							{2: 'Cervantes', 3: 'I wonder what kind of story will happen to them.', 4: '2'}
+17	17		301							"{2: 'Dulcinea', 3: ""According to the program, Ayla will block Echo's path forward until she passes Ayla's test."", 4: '1'}"
+18	18		301							{2: 'Dulcinea', 3: 'Ayla is a very positive person. I placed this variable here to see if this kind of personality will affect Echo in any way.', 4: '1'}
+19	19		204							{1: '2'}
+20	20		301							{2: 'Cervantes', 3: 'Are there any prospects we can decide? Perhaps we can choose the state in which Echo approaches Ayla.', 4: '2'}
+21	21		301							"{2: 'Dulcinea', 3: ""I haven't designed such a program. All I did was enter their data samples into the simulation machine. Everything they do afterward is based on the codes in their samples."", 4: '1'}"
+22	22		301							"{2: 'Dulcinea', 3: ""I want to mimic Echo's potential encounters on the surface as closely as possible..."", 4: '1'}"
+23	23		301							"{2: 'Dulcinea', 3: ""...They've met."", 4: '1'}"
+24	24		301		1		AniZhuanchangBegin			{3: 'Echo has already come face to face with Ayla on the screen of the simulation machine.'}

@@ -1,0 +1,25 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory43.jpg'}
+2	2		401							{1: '1', 2: '2'}
+3	3		201							{1: '2', 2: '1021001', 4: '-400'}
+4	4		201							{1: '1', 2: '500008', 4: '400'}
+5	5		301			DialogEnable				"{1: '1', 2: 'Lucia', 3: ""It's over!"", 4: '2'}"
+6	6		301							{2: 'Roland', 3: 'How, careless of me...', 4: '1'}
+7	7		301							{2: 'Roland', 3: 'Even so, I will...', 4: '1'}
+8	8		202							{1: '1', 2: '2', 6: '1'}
+9	9		301							{3: 'A gale of sand suddenly envelopes the air, blinding most of the vision range.'}
+10	10		201							{1: '1', 2: '1031001', 3: '7', 4: '-400'}
+11	11		201							{1: '2', 2: '1021001', 4: '400'}
+12	12		301							{1: '1', 2: 'Liv', 3: 'This is?!', 4: '1'}
+13	13		204							{1: '1'}
+14	14		301							{2: 'Lucia', 3: 'A wave of Punishing Virus?', 4: '2'}
+15	15		301							"{2: 'Liv', 3: ""No, it's just sand. But the density is too high, and visibility is still lowering. Commandant, please stay behind me."", 4: '1'}"
+16	16		301							"{2: 'Lucia', 3: ""Roland's tricks?"", 4: '2'}"
+17	17		202							{1: '1', 2: '2', 6: '1'}
+18	18		301							{3: 'The sandstorm does not last long and it soon settles. Visibility returns to its original clarity.'}
+19	19		201							{1: '1', 2: '1031001', 4: '400'}
+20	20		201							{1: '2', 2: '1021001', 4: '-400'}
+21	21		301							"{1: '1', 2: 'Lucia', 3: ""He's gone..."", 4: '2'}"
+22	22		301							{2: 'Liv', 3: 'Commandant, signals of the Ascendant Roland are completely gone from this area.', 4: '1'}
+23	23		302							"{2: ""Let's go find Kamui, maybe he went that way too!"", 3: '24'}"
+24	24		301		1		AniZhuanchangBegin			{2: 'Lucia', 3: 'Roger!', 4: '2'}

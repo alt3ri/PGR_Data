@@ -1,0 +1,131 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '209'}
+3	3		401							{1: '2', 2: '317'}
+4	4		301			DialogEnable				{3: 'Clank. Clank...'}
+5	5		401							{1: '2', 2: '2637'}
+6	6		301							{3: 'The train is starting. Passengers, please hold on tight.'}
+7	7		301							{3: '...'}
+8	8		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg', 3: '0', 4: '1', 5: '2'}
+9	9		301							{3: 'Following the light shakes you feel coming from your forehead, you grow conscious of your shoulders and then your body, slowly emerging from the dark and regaining control of your body.'}
+10	10		201							{1: '1', 2: '1031001', 3: '3'}
+11	11		301							{1: '1', 2: 'Liv', 3: 'Hey, Commandant.', 4: '1'}
+12	12		204							{1: '1'}
+13	13		301							{3: 'Clanking away, the car is still shaking...'}
+14	14		301							{3: 'Is this a dream?'}
+15	15		301							{3: 'Trying to wrap your head around that weird dream you just woke up from, you figure you must have fallen asleep because you were thoroughly tired.'}
+16	16		202							{1: '1', 6: '1'}
+17	17		201							{1: '1', 2: '1031001', 4: '-400'}
+18	18		201							{1: '2', 2: '500166', 4: '400'}
+19	19		301							"{1: '1', 2: 'Lucia', 3: ""You really could have slept some more, Commandant. We didn't want to wake you up until we reached our stop."", 4: '2'}"
+20	20		301							"{2: 'Liv', 3: ""You and Liv didn't sleep for all that long yourselves, though, Lucia."", 4: '1'}"
+21	21		302							"{2: ""I'm still feeling pretty tired, though."", 3: '22'}"
+22	22		301							{2: 'Lucia', 3: 'Which is pretty normal, and that is why it makes sense to rest for a bit on our way to hand down the mission.', 4: '2'}
+23	23		301							{3: 'Which, you figure, is probably why you chose to go to the Headquarters by train.'}
+24	24		202							{1: '1', 2: '2', 6: '1'}
+25	25		201							{1: '1', 2: '500568'}
+26	26		301							"{1: '1', 2: 'Lee', 3: ""But this train doesn't go to Headquarters, right? No. 39 goes to the Recreational Zone, no?"", 4: '1'}"
+27	27		301							{3: 'Lee emerges from silence with the billion-dollar question, the only thing now audible throughout the train the quiet screeches coming from the tracks underneath.'}
+28	28		301							"{3: '""Eden-39""—says a flickering screen Lee is pointing at, under which there is a train map.'}"
+29	29		302							{2: 'Where are we going exactly?', 3: '30'}
+30	30		201							{1: '1', 2: '1031001'}
+31	31		301							{1: '1', 2: 'Liv', 3: 'I thought we were going to Headquarters to hand down a mission?', 4: '1'}
+32	32		201							{1: '1', 2: '500568'}
+33	33		301							{1: '1', 2: 'Lee', 3: 'What mission is that, though?', 4: '1'}
+34	34		202							{1: '1', 6: '1'}
+35	35		301							{3: 'Clank. Clank...'}
+36	36		301							"{3: ""Something is missing. No, something doesn't feel right. The spacious car suddenly grows eerie...""}"
+37	37		401							{1: '1', 2: '36'}
+38	38		301							{2: '???', 3: 'Hello—'}
+39	39		401							{1: '1', 2: '203'}
+40	40		301							{3: 'You hear a strange robotic voice coming from the front end of the car.'}
+41	41		401							{1: '2', 2: '1511'}
+42	42		301							{3: 'And with it, everyone jolts into fight mode. On edge, you place your hand instinctively over your gun around your waist...'}
+43	43		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+44	44		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+45	45		401							{1: '2', 2: '10021516'}
+46	46		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+47	47		301			RImgBg1Shake				{3: 'Before you flick away the magnetic button on your holster, however, you hear a gunshot.'}
+48	48		201							{1: '1', 2: '500568', 3: '5'}
+49	49		301				AniZhuanchangBegin			{1: '1', 2: 'Lee', 3: 'Commandant!', 4: '1'}
+50	50		201							{1: '1', 2: '500488'}
+51	51		301			AniZhuanchangEnd				"{1: '1', 2: '???', 3: ""Boy, that's one hell of a greeting."", 4: '1'}"
+52	52		301							"{3: ""Following a robotic voice, a figure you've never seen before appears in the car...""}"
+53	53		301							"{3: ""It's a service mechanoid—one that can be seen everywhere in Babylonia. What's interesting about this particular mechanoid, however, is that it's caught the bullet Lee just fired.""}"
+54	54		301							"{2: '???', 3: 'I\'m the conductor for Eden-39 Local Fast Train. You can call me ""Conductor""... Well, add ""Mr."" to that if you would.', 4: '1'}"
+55	55		202							{1: '1', 6: '1'}
+56	56		201							{1: '1', 2: '500568', 3: '5', 4: '400'}
+57	57		201							{1: '2', 2: '1031001', 3: '7', 4: '-400'}
+58	58		301							{1: '1', 2: 'Lee', 3: 'A conductor on an unmanned train, huh? Who are you exactly?!', 4: '1'}
+59	59		301							{2: 'Liv', 3: 'Did that robot... just catch the bullet, Lee?', 4: '2'}
+60	60		204							{1: '2', 2: '3'}
+61	61		301							{2: 'Lee', 3: 'No way a service mechanoid can do that.', 4: '1'}
+62	62		401							{1: '1', 2: '36'}
+63	63		302							{2: 'Are you an awakened machine?!', 3: '64'}
+64	64		202							{1: '1', 2: '2', 6: '1'}
+65	65		401							{1: '1', 2: '209'}
+66	66		201							{1: '1', 2: '500488'}
+67	67		301							"{1: '1', 2: 'Conductor?', 3: ""And that would be correct, Lee. I'm not your regular service mechanoid."", 4: '1'}"
+68	68		301							{2: 'Conductor?', 3: 'And that would be incorrect, Commandant. I only look the way I do because I chose to be instantiated as a mechanoid.', 4: '1'}
+69	69		301							"{2: 'Conductor?', 3: ""I'm an instantiated program from a model that's branched out of Gestalt. I'm not going to hurt anyone here. Now, allow me to bring us all up to speed."", 4: '1'}"
+70	70		202							{1: '1', 6: '1'}
+71	71		401							{1: '2', 2: '2566'}
+72	72		509							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory529.jpg', 2: '1'}
+73	73		301							"{3: 'Putting the bullet on the floor, ""Conductor"" opens his robotic claw and conjures up a screen out of thin air with a swing.'}"
+74	74		301							{3: 'On the screen, you can see that every single one of you is sleeping—in the audience zone at WGAA.'}
+75	75		201							{1: '1', 2: '500166', 4: '500'}
+76	76		301							{1: '1', 2: 'Lucia', 3: 'Is that... WGAA?', 4: '1'}
+77	77		201							{1: '1', 2: '1031001', 3: '3', 4: '500'}
+78	78		301							"{1: '1', 2: 'Liv', 3: ""Right... we went to WGAA to see Ayla's new play, didn't we?"", 4: '1'}"
+79	79		202							{1: '1', 6: '1'}
+80	80		301							{3: 'Seeing yourself asleep on the screen, you start piecing everything together in your head.'}
+81	81		301							{3: 'If your memory serves you correctly, your team received an invitation three hours ago from Ayla to a Lantern Festival play at WGAA.'}
+82	82		510						500.0	{1: '1'}
+83	83		201							{1: '1', 2: '500488'}
+84	84		301							"{1: '1', 2: 'Conductor?', 3: ""In real life, you're all asleep in your audience seats."", 4: '1'}"
+85	85		301							"{2: 'Conductor?', 3: ""I would like to ask all of you to lend me a hand here with cleaning up all the historical data saved in Gestalt—and I promise I'll send you all back once we're done here."", 4: '1'}"
+86	86		301							"{3: 'With it, ""Conductor"" takes a rather humanlike bow.'}"
+87	87		202							{1: '1', 6: '1'}
+88	88		201							{1: '1', 2: '500488', 4: '-500'}
+89	89		201							{1: '2', 2: '500568', 4: '450'}
+90	90		301							"{1: '1', 2: 'Lee', 3: ""So you're saying this is just a virtual space that Gestalt came up with?"", 4: '2'}"
+91	91		301							{2: 'Conductor?', 3: 'That would be correct.', 4: '1'}
+92	92		302							{2: 'What was the fight just now all about?', 3: '93'}
+93	93		301							{2: 'Conductor?', 3: 'That was just a necessary step for me to load your data into my program.', 4: '1'}
+94	94		202							{1: '2', 6: '1'}
+95	95		201							{1: '2', 2: '500166', 4: '450'}
+96	96		301							{1: '1', 2: 'Lucia', 3: 'But I thought you need the Spear of F.O.S. to infiltrate Gestalt?', 4: '2'}
+97	97		301							"{2: 'Conductor?', 3: ""Untrue. That's just a graphical interface simulation program, a digital frame to connect to Gestalt."", 4: '1'}"
+98	98		301							{2: 'Conductor?', 3: 'Gestalt, in fact, comes with a frame that can output itself as a virtual space. And according to the records, you were able to connect yourselves to Gestalt only because Gestalt was hacked into and imprisoned.', 4: '1'}
+99	99		202							{1: '1', 2: '2', 6: '1'}
+100	100		201							{1: '1', 2: '1031001', 4: '-600'}
+101	101		201							{1: '2', 2: '500166'}
+102	102		201							{1: '3', 2: '500568', 4: '600'}
+103	103		301							"{1: '1', 2: 'Liv', 3: 'This mechanoid... or ""program,"" I mean, seems very fishy to me.', 4: '1'}"
+104	104		301							"{2: 'Lee', 3: ""The program can theoretically choose to be instantiated into anything If we're really in a virtual space that Gestalt came up with."", 4: '3'}"
+105	105		302							"{2: ""What's that assumption based on, though?"", 3: '106', 4: 'The same thing happened before when we infiltrated Gestalt, right...?', 5: '107'}"
+106	106	108	301							"{2: 'Lee', 3: ""Don't ring a bell? This is what happened before when we were infiltrating Gestalt with the Spear of F.O.S."", 4: '3'}"
+107	107		301							{2: 'Lee', 3: 'Exactly.', 4: '3'}
+108	108		301							{2: 'Lucia', 3: 'So do we want to trust it?', 4: '2'}
+109	109		302							"{2: ""This is not the first time we ran into things we can't quite explain..."", 3: '110'}"
+110	110		302							"{2: ""And I honestly don't know what else we could do now but to trust this mechanoid..."", 3: '111'}"
+111	111		301							"{2: 'Lee', 3: ""Babylonia is going to discover we're here if what this mechanoid is saying is true."", 4: '3'}"
+112	112		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+113	113		201							{1: '1', 2: '500488'}
+114	114		301							{1: '1', 2: 'Conductor?', 3: 'Wonderful. Wonderful indeed.', 4: '1'}
+115	115		301							{2: 'Conductor?', 3: 'I thank you for choosing to trust me, Commandant.', 4: '1'}
+116	116		202							{1: '1', 6: '1'}
+117	117		201							{1: '1', 2: '500488', 4: '-500'}
+118	118		201							{1: '2', 2: '500166', 4: '450'}
+119	119		301							"{1: '1', 2: 'Lucia', 3: ""And you were saying you needed help with cleaning up Gestalt's historical data?"", 4: '2'}"
+120	120		301							"{2: 'Conductor?', 3: ""Exactly. It's my mission and my job."", 4: '1'}"
+121	121		301							"{2: 'Lucia', 3: ""So how do we go about that? And we'll be able to leave once it's done, right?"", 4: '2'}"
+122	122		202							{1: '2', 2: '1', 6: '1'}
+123	123		201							{1: '1', 2: '500488'}
+124	124		301							"{1: '1', 2: 'Conductor?', 3: ""I'm going to replay the data, and you'll be reaching the anchoring point of the data at the next station."", 4: '1'}"
+125	125		301							{2: 'Conductor?', 3: 'All of you will be the standard by which I judge the value of the data.', 4: '1'}
+126	126		301							{3: 'Clank. Clank...'}
+127	127		401							{1: '2', 2: '2637'}
+128	128		301							{3: 'We will soon be making a stop at F.O.S. Academy.'}
+129	129		301							{2: 'Conductor?', 3: 'Now, you may alight...', 4: '1'}
+130	130		301		1		AniZhuanchangBegin			{2: 'Conductor?', 3: 'And show me what history means to all of you.', 4: '1'}

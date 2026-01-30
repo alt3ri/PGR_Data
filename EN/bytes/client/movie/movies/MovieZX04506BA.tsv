@@ -1,0 +1,212 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+2	2		401							{1: '1', 2: '169'}
+3	3		302							{2: '...', 3: '4'}
+4	4		301			DialogEnable				"{3: 'You\'ve been in more dangerous situations, but Bridget\'s vivid recounts of how ""Trojan fell off the cliff"" and how she ""barely managed to hang onto the edge"" still make your heart race.'}"
+5	5		302							{2: 'Is that why you took on this mission to Konstantin again?', 3: '6'}
+6	6		201							{1: '1', 2: '500906', 3: '4'}
+7	7		301							{1: '1', 2: 'Bridget', 3: 'Yes, of course.', 4: '1'}
+8	8		301							{2: 'Bridget', 3: 'When I regained consciousness, I was already back with Support Force.', 4: '1'}
+9	9		301							{2: 'Bridget', 3: 'Support Force was also ambushed by these unknown assailants. When the squad detected life signals and approached for rescue, the tunnel collapsed. The Punishing concentration spiked, and a pack of Corrupted appeared.', 4: '1'}
+10	10		302							"{2: 'The Punishing spiked?', 3: '11', 4: ""Something's off."", 5: '11'}"
+11	11		301							{2: 'Bridget', 3: 'Yes, it spiked.', 4: '1'}
+12	12		301							{3: 'She enunciates each word with emphasis.'}
+13	13		301							{2: 'Bridget', 3: 'The Punishing Virus suddenly appeared at the bottom of a shaft that had never seen an outbreak before. Now that I think about it, that mission was full of baffling information gaps.', 4: '1'}
+14	14		301							"{2: 'Bridget', 3: 'Why was Support Force suddenly deployed? Was it really just for ""rescue and scouting""?', 4: '1'}"
+15	15		301							{2: 'Bridget', 3: 'Or could there be something else... something they were trying to cover up?', 4: '1'}
+16	16		302							{2: 'What did the mission report say exactly?', 3: '17'}
+17	17		301				AniZhuanchangBegin			{2: 'Bridget', 3: 'The mission report said...', 4: '1'}
+18	18		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+19	19		201							{1: '1', 2: '500167', 3: '5', 4: '-400'}
+20	20		201							{1: '2', 2: '500394', 4: '400'}
+21	21		504							{1: '0.7'}
+22	22		301			AniZhuanchangEnd				{1: '1', 2: 'Bridget', 3: '...A tantalum mining laboratory contracted by Norman Mining Corp conducted illegal experiments using tantalum ore, leading to the infection of some Constructs and staff and an explosion, causing the mine to collapse...', 4: '1'}
+23	23		301							"{2: 'Bridget', 3: ""And that's the conclusion?!"", 4: '1'}"
+24	24		301							{3: 'The young Construct storms into Support Force office, clutching a stack of reports in her hands.'}
+25	25		301							{2: 'Support Force Captain', 3: '...', 4: '2'}
+26	26		301							"{2: 'Bridget', 3: 'What really happened to Trojan? What does ""memory loss due to M.I.N.D. damage"" mean? And what about that researcher?', 4: '1'}"
+27	27		301							"{2: 'Support Force Captain', 3: ""Trojan... It's complicated. She's been transferred to another department. We no longer have the authority to inquire about her case."", 4: '2'}"
+28	28		301							"{2: 'Support Force Captain', 3: ""That researcher fell down the shaft. We didn't have the resources for a rescue operation, and from that height..."", 4: '2'}"
+29	29		301							{3: 'They did a basic depth survey of the mining shaft. The conclusion was that not even a Construct could survive a fall like that.'}
+30	30		301							"{3: ""If Bridget hadn't thrown Trojan onto the safety platform at that moment, Trojan wouldn't have survived either.""}"
+31	31		301							{2: 'Bridget', 3: 'And what about Ruolin! Why was she transferred to Task Force before I even got to see her?', 4: '1'}
+32	32		301							"{2: 'Support Force Captain', 3: ""Oh, Ruolin... She actually requested the transfer herself. It's what she wanted, you know."", 4: '2'}"
+33	33		301							"{2: 'Support Force Captain', 3: ""She's been trying to join Jeffrey's team for a long time. Jeffrey is the commandant of Silkworm..."", 4: '2'}"
+34	34		301							"{2: 'Bridget', 3: ""I! Checked! The rules! Don't try to fool me!"", 4: '1'}"
+35	35		301							{2: 'Bridget', 3: 'To transfer from Support Force to a Task Force squad, you need at least three—three months of screening, or more! Plus a joint investigation!', 4: '1'}
+36	36		301							"{2: 'Bridget', 3: ""I was the captain of Ruolin's squad during her training—why wasn't I sent any investigation reports on this?"", 4: '1'}"
+37	37		301							"{2: 'Support Force Captain', 3: ""...Hey, don't overthink it, Bridget."", 4: '2'}"
+38	38		203							{1: '2', 2: '0.3', 3: '300'}
+39	39		301							"{3: ""With a helpless sigh, the captain walks out from behind the desk and pats Bridget's shoulder.""}"
+40	40		301							"{2: 'Support Force Captain', 3: 'Not every story needs to end with ""THE END"".', 4: '2'}"
+41	41		301							"{2: 'Bridget', 3: ""But this isn't some story!"", 4: '1'}"
+42	42		301							{3: 'She watched helplessly as they plummeted into the bottomless mine shaft.'}
+43	43		301							"{2: 'Support Force Captain', 3: ""...In any case, don't bring this matter up again, Bridget."", 4: '2'}"
+44	44		301				AniZhuanchangBegin			{2: 'Support Force Captain', 3: 'Some things are beyond what I... what we can do.', 4: '2'}
+45	45		202				DialogDisable			{1: '1', 2: '2', 7: '1'}
+46	46		504							{1: '0'}
+47	47		201							{1: '1', 2: '500906', 3: '4', 7: '1'}
+48	48		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+49	49		302			AniZhuanchangEnd				"{2: '...', 3: '52', 4: ""...That's all?"", 5: '50'}"
+50	50		301			DialogEnable				"{2: 'Bridget', 3: ""That's all."", 4: '1'}"
+51	51	53	301							{2: 'Bridget', 3: 'Later...', 4: '1'}
+52	52		301			DialogEnable				{2: 'Bridget', 3: 'Later...', 4: '1'}
+53	53		202							{1: '1'}
+54	54		301							"{3: ""Though Support Force's casualty rate is slightly lower than Task Force's, the numbers are still horrifyingly high.""}"
+55	55		301							{3: 'During a rescue mission, the captain never returned from the ruins after saving two children.'}
+56	56		301							{3: 'Bridget gradually rose through the ranks with her outstanding performance and became the captain of Support Force.'}
+57	57		201							{1: '1', 2: '500906', 3: '4'}
+58	58		301							{1: '1', 2: 'Bridget', 3: 'After taking over the team, I tried to reopen the investigation into that incident.', 4: '1'}
+59	59		301							"{2: 'Bridget', 3: 'But most of the documents about the Konstantin Mine were confidential, and even the detailed mission records and investigation reports were lost in an ""accident"".', 4: '1'}"
+60	60		302							{2: '...', 3: '62', 4: 'What a convenient coincidence.', 5: '61'}
+61	61		301							"{2: 'Bridget', 3: 'Yeah, it\'s just that ""convenient"".', 4: '1'}"
+62	62		301							{2: 'Bridget', 3: 'And you probably know what happened after that.', 4: '1'}
+63	63		301							"{2: 'Bridget', 3: ""After Trojan's M.I.N.D. was damaged, she was in recovery for a long time before being reassigned to a new squad—only to vanish without a trace."", 4: '1'}"
+64	64		301							{2: 'Bridget', 3: 'Ruolin... you know her, too.', 4: '1'}
+65	65		302							{2: '...', 3: '66', 4: 'Yeah.', 5: '66'}
+66	66		401							{1: '2', 2: '2959'}
+67	67		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+68	68		202							{1: '1', 6: '1'}
+69	69		504							{1: '0.7'}
+70	70		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1601_7.jpg'}
+71	71		301							"{3: ""She follows Jeffrey's silhouette and vanishes into the dark expanse of the Red Tide.""}"
+72	72		401							{1: '2', 2: '2959'}
+73	73		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+74	74		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+75	75		504							{1: '0'}
+76	76		201							{1: '1', 2: '500906', 3: '3', 7: '1'}
+77	77		301							{1: '1', 2: 'Bridget', 3: 'Maybe this is a kind of liberation for her.', 4: '1'}
+78	78		204							{1: '1', 2: '4'}
+79	79		301							"{2: 'Bridget', 3: 'Everything just seems a little... too... ""convenient"".', 4: '1'}"
+80	80		301							{2: 'Bridget', 3: 'Every Support Force member involved in the Konstantin Mine mission has either been reassigned or lost their lives in action—everyone except me.', 4: '1'}
+81	81		301							{2: 'Bridget', 3: 'There has to be more to this than what I know.', 4: '1'}
+82	82		301							{3: 'The brown-haired Construct gazes out the window, where brilliant sunlight paints a pristine, cloudless sky.'}
+83	83		301							"{2: 'Bridget', 3: ""I've always believed..."", 4: '1'}"
+84	84		301							{2: 'Bridget', 3: 'As long as the truth is still out there, one day, darkness will be dispelled by the light.', 4: '1'}
+85	85		204							{1: '1'}
+86	86		301							{2: 'Bridget', 3: 'Haha, they all say I sound like a fool when I say this, but I know this is true.', 4: '1'}
+87	87		302							"{2: ""And that day will come, I'm sure of it."", 3: '88'}"
+88	88		204							{1: '1', 2: '2'}
+89	89		301							{2: 'Bridget', 3: '...Yeah, I knew this day would come eventually.', 4: '1'}
+90	90		401							{1: '2', 2: '4421'}
+91	91		301							{3: 'Her terminal emits a short beep.'}
+92	92		204							{1: '1'}
+93	93		301							{2: 'Bridget', 3: 'Must be the mission details... I also got mine.', 4: '1'}
+94	94		301							"{2: 'Bridget', 3: ""Perfect timing, I've pretty much gotten used to this new frame..."", 4: '1'}"
+95	95		301							{3: 'Bridget does a long, lazy stretch.'}
+96	96		301							"{2: 'Bridget', 3: ""This feels great. The power system's been enhanced, and the overall controls are much better..."", 4: '1'}"
+97	97		202							{1: '1'}
+98	98		401							{1: '2', 2: '4547'}
+99	99		301			RImgBg1Shake				{3: 'The door creaks loudly as someone intentionally pushes it really hard instead of ringing the doorbell.'}
+100	100		201							{1: '1', 2: '500586', 3: '1'}
+101	101		301							{1: '1', 2: 'Trojan', 3: 'Gray Raven Commandant? I was told to look for you here...', 4: '1'}
+102	102		202							{1: '1'}
+103	103		201							{1: '1', 2: '500906', 3: '5'}
+104	104		301							{1: '1', 2: 'Bridget', 3: '!', 4: '1'}
+105	105		202							{1: '1'}
+106	106		306							{1: '1'}
+107	107		201							{1: '1', 2: '500586'}
+108	108		301							{1: '1', 3: 'The blue-haired Construct appears before Bridget with an air of casual nonchalance after so many years.'}
+109	109		301							{3: 'She seems so different now, yet still the same in many ways.'}
+110	110		306							
+111	111		301							{2: 'Trojan', 3: 'Oh, and you must be...', 4: '1'}
+112	112		302							{2: '...', 3: '113', 4: 'Bridget, Support Force Captain.', 5: '115'}
+113	113		301							"{2: 'Trojan', 3: ""...You're not going to introduce yourself? I really don't know you very well..."", 4: '1'}"
+114	114		302							{2: 'Bridget, Support Force Captain.', 3: '115'}
+115	115		204							{1: '1', 2: '1'}
+116	116		301							"{2: 'Trojan', 3: ""Ah... um, hello, Bridget. I'm Trojan."", 4: '1'}"
+117	117		301							{3: 'The blue-haired Construct puts on a practiced, fake smile that Bridget knows all too well.'}
+118	118		203							{1: '1', 2: '0.25', 3: '-400'}
+119	119		201							{1: '2', 2: '500906', 4: '400'}
+120	120		301							{1: '1', 2: 'Bridget', 3: '...Hi.', 4: '2'}
+121	121		204							{1: '2', 2: '3'}
+122	122		301							{2: 'Bridget', 3: 'By the way... do you have absolutely no memory of me?', 4: '2'}
+123	123		204							{1: '1', 2: '4'}
+124	124		301							{2: 'Trojan', 3: 'Uh... Do I know you?', 4: '1'}
+125	125		301							{3: 'Trojan turns around and gives Bridget a rather impolite once-over.'}
+126	126		204							{1: '1'}
+127	127		301							"{2: 'Trojan', 3: ""Hmm... I don't believe I've ever met you."", 4: '1'}"
+128	128		301							{3: 'The blue-haired Construct does a little shrug.'}
+129	129		301							{2: 'Trojan', 3: 'Sorry, I had some issues with my M.I.N.D. and lost a lot of my memories.', 4: '1'}
+130	130		301							"{2: 'Trojan', 3: ""Anyway, since I'm representing Norman Mining Corp for this... mission..."", 4: '1'}"
+131	131		301							{2: 'Trojan', 3: 'Whatever happened in the past, I am not your enemy.', 4: '1'}
+132	132		204							{1: '2'}
+133	133		301							{2: 'Bridget', 3: '...', 4: '2'}
+134	134		301							{3: 'Bridget lets out a quiet sigh.'}
+135	135		301							"{2: 'Trojan', 3: ""Anyway, I'm here to let you know it's time for assembly. We should get going."", 4: '1'}"
+136	136		301							"{2: 'Trojan', 3: ""Everyone's already standing by at the departure point. Apparently, we'll have another briefing..."", 4: '1'}"
+137	137		204							{1: '1', 2: '3'}
+138	138		301							{2: 'Trojan', 3: '...Ugh, why do we need so many meetings?', 4: '1'}
+139	139		301				AniZhuanchangBegin			"{3: ""Despite Trojan's reluctance, the pre-mission briefing must go ahead as planned.""}"
+140	140		502							{1: 'DialogDisable'}
+141	141		202							{1: '1', 2: '2'}
+142	142		401							{1: '1', 2: '201'}
+143	143		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory922.jpg'}
+144	144		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+145	145		104						1000.0	{1: '0|-200|-200', 2: '0'}
+146	146		104			AniZhuanchangEnd			2000.0	{1: '0|200|-200', 2: '1.5'}
+147	147		104						1000.0	{1: '0|0|0', 2: '1'}
+148	148		301			DialogEnable	DialogDisable			{3: 'A 3D hologram of the mine shaft hovers in the middle of the conference room. It looks more like an inverted tower than a typical building.'}
+149	149		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+150	150		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg', 3: '0', 4: '1', 5: '1.5'}
+151	151		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+152	152		205							{1: '999'}
+153	153		301			DialogEnable				"{3: ""The operation's participants gather around one side of the hologram as Celica briefs everyone on the mission.""}"
+154	154		201							{1: '1', 2: '500001', 3: '4'}
+155	155		301							{1: '1', 2: 'Celica', 3: '—During the brief window when the data wall was breached, the Science Council managed to intercept a portion of the information.', 4: '1'}
+156	156		301							"{2: 'Celica', 3: 'While most of the data is still being processed, this particular section specifically mentions ""tantalum copolymers"".', 4: '1'}"
+157	157		301							{2: 'Celica', 3: 'The basic concept involves using an alternative material chain as a medium for connection, with tantalum serving as the skeletal structure. By linking it to another branch to form a copolymer, they aim to expand the compatibility range of tantalum-193.', 4: '1'}
+158	158		301							{2: 'Celica', 3: 'The primary objective of this mission is to enter the Konstantin Mine and retrieve as much of the experimental data as possible.', 4: '1'}
+159	159		302							{2: 'Why the Konstantin Mine?', 3: '160'}
+160	160		301							"{2: 'Celica', 3: ""Babylonia has dug out records of resource flow from that time. While there's no definitive evidence, we can reasonably deduce that a laboratory might have been conducting tantalum research in this area."", 4: '1'}"
+161	161		301							{2: 'Celica', 3: 'And the most likely location is the Konstantin Mining Site.', 4: '1'}
+162	162		301							{2: 'Celica', 3: 'Combined with the information voluntarily provided by Norman Mining Corp, we are now confident in our deduction.', 4: '1'}
+163	163		203							{1: '1', 2: '0.25', 3: '-400'}
+164	164		201							{1: '2', 2: '500586', 4: '400'}
+165	165		301							{1: '1', 2: 'Trojan', 3: '...So, is their technology mature enough?', 4: '2'}
+166	166		202							{1: '1', 2: '2', 6: '1'}
+167	167		201							{1: '1', 2: '500004'}
+168	168		301							"{1: '1', 2: 'Asimov', 3: ""That's impossible to determine at this point."", 4: '1'}"
+169	169		301							{2: 'Asimov', 3: 'Only a handful of encrypted documents mention that they achieved some experimental results, but none of them clearly specify the nature of these achievements.', 4: '1'}
+170	170		301							{2: 'Asimov', 3: 'Therefore, your other objective is to investigate and clear out any abnormalities in the mining site.', 4: '1'}
+171	171		301							{2: 'Asimov', 3: 'Until the Science Council figures out how to conjure tantalum ore out of thin air, we need raw tantalum for copolymer synthesis.', 4: '1'}
+172	172		302							{2: '...', 3: '174', 4: 'Raw tantalum?', 5: '173'}
+173	173		301							{2: 'Asimov', 3: 'Yes.', 4: '1'}
+174	174		301							"{2: 'Asimov', 3: ""Babylonia's tantalum reserves are limited, and no large deposits have been discovered in any of our current conservation areas."", 4: '1'}"
+175	175		301							{2: 'Asimov', 3: 'Instead of risking exploration elsewhere, we should focus on reclaiming the Konstantin mining site.', 4: '1'}
+176	176		202							{1: '1'}
+177	177		201							{1: '1', 2: '500873'}
+178	178		301							"{1: '1', 2: 'Victoria', 3: ""Norman Mining Corp will provide the structural data for the Konstantin Mining Site, and we'll also send some of our researchers to assist you."", 4: '1'}"
+179	179		202							{1: '1'}
+180	180		201							{1: '1', 2: '500906', 3: '4'}
+181	181		301							{1: '1', 2: 'Bridget', 3: 'What about the data from the underground laboratory?', 4: '1'}
+182	182		202							{1: '1'}
+183	183		201							{1: '1', 2: '500873'}
+184	184		301							{1: '1', 2: 'Victoria', 3: '...That data was lost during the transfer process.', 4: '1'}
+185	185		202							{1: '1'}
+186	186		201							{1: '1', 2: '500906', 3: '4'}
+187	187		301							{1: '1', 2: 'Bridget', 3: 'Humph, oh, really?', 4: '1'}
+188	188		202							{1: '1'}
+189	189		201							{1: '1', 2: '500873'}
+190	190		301							{1: '1', 2: 'Victoria', 3: 'I have no reason to deceive you. Norman Mining Corp also wishes to reclaim this site.', 4: '1'}
+191	191		301							"{2: 'Victoria', 3: ""I will offer all the files, including investigation records of all the mine collapses, as well as Butler Skych's final video recording before his death in the mine shaft."", 4: '1'}"
+192	192		302							{2: 'Butler?', 3: '193'}
+193	193		301							"{2: 'Victoria', 3: ""Norman Mining Corp had decided to withdraw their investment since the research facility hadn't submitted any new findings for a long time. Given the gravity of the situation, my grandfather sent his most trusted butler to handle the negotiation."", 4: '1'}"
+194	194		301							{2: 'Victoria', 3: 'Everything was going smoothly until Skych sent an unexpected message, claiming they had achieved new research breakthroughs and requesting additional funds.', 4: '1'}
+195	195		301							{2: 'Victoria', 3: 'Before the corporation could dispatch a new investigation team, the mine collapsed. Skych perished and left no remains behind.', 4: '1'}
+196	196		301							{2: 'Victoria', 3: 'As for the rest... including your parents, Miss Bridget, we initiated a follow-up rescue and investigation.', 4: '1'}
+197	197		301							{2: 'Victoria', 3: 'However, more sites collapsed, and Norman Mining Corp lacked the capability at the time to deal with the vast numbers of Corrupted and to properly address the situation.', 4: '1'}
+198	198		301							{2: 'Victoria', 3: 'I offer you my deepest apologies.', 4: '1'}
+199	199		203						300.0	{1: '1', 2: '0.25', 5: '-30'}
+200	200		203						700.0	{1: '1', 2: '0.6', 4: '-50', 5: '-30'}
+201	201		203						500.0	{1: '1', 2: '0.4', 5: '-30'}
+202	202		301							{3: 'Victoria steps out from behind her desk and bows deeply to Bridget.'}
+203	203		202							{1: '1'}
+204	204		201							{1: '1', 2: '500906', 3: '4'}
+205	205		301							{1: '1', 2: 'Bridget', 3: '...', 4: '1'}
+206	206		301							"{3: ""This sudden, frank apology from Norman Mining Corp's head leaves Bridget dumbfounded.""}"
+207	207		202							{1: '1'}
+208	208		201							{1: '1', 2: '500873'}
+209	209		301							{1: '1', 2: 'Victoria', 3: 'Skych... raised me, and he was loyal to Norman Mining Corp even in his death. If you find... his remains... during your mission, please bring him back.', 4: '1'}
+210	210		301							{2: 'Victoria', 3: 'Norman Mining Corp will offer a handsome reward for your work.', 4: '1'}
+211	211		301		1		AniZhuanchangBegin			"{2: 'Victoria', 3: ""That's... all the information I have access to regarding the Konstantin Mine at my current clearance level."", 4: '1'}"

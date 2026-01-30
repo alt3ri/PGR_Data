@@ -1,0 +1,306 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory537.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		401							{1: '2', 2: '2634'}
+4	4		107						2000.0	{1: 'Shallow area of the beach', 2: 'Constellia'}
+5	5		108						500.0	
+6	6		201							{1: '1', 2: '500742', 3: '13'}
+7	7		301			DialogEnable				{1: '1', 2: 'Lee', 3: 'Now...', 4: '1', 18: '100002684'}
+8	8		301							{3: 'Lee, wearing his diving suit, stands knee-deep in the water and speaks with a serious tone.'}
+9	9		301							"{2: 'Lee', 3: ""Let's start with the basics of snorkeling before we start diving. Once you've got the hang of it, we can consider more challenging dives."", 4: '1', 18: '100002685'}"
+10	10		302							{2: 'Understood, Professor Lee.', 3: '11'}
+11	11		301							{2: 'Lee', 3: '...', 4: '1'}
+12	12		302							"{2: ""I never thought I could attend Lee's diving class."", 3: '13'}"
+13	13		204							{1: '1', 2: '13'}
+14	14		301							"{2: 'Lee', 3: ""Don't dive in unprepared, thinking snorkeling is easy. Without proper training, you might not have a chance to react in an emergency."", 4: '1', 18: '100002687'}"
+15	15		301							"{2: 'Lee', 3: ""Let's make sure you are fully prepared before we actually start. Safety comes first, no matter what."", 4: '1', 18: '100002688'}"
+16	16		301							{3: 'Seeing how serious Lee is, you are reminded of how he treated the shooting sessions with you on Babylonia with the same gravitas.'}
+17	17		301							{3: 'Unlike your sparring sessions in the training room, this feels like something that comes straight out of a classroom, with Lee as the instructor and you as the student.'}
+18	18		301				DialogDisable			{3: 'But he could be a little bit more lenient... This is a vacation, after all. Right now, Lee is acting like an overprotective parent...'}
+19	19		302							{2: 'When did you become a diving expert?', 3: '20'}
+20	20		302							"{2: ""I don't recall you being a veteran swimmer in the past."", 3: '21'}"
+21	21		301			DialogEnable				{2: 'Lee', 3: '...I mentioned that I would install the underwater module if a mission calls for it.', 4: '1', 18: '100002689'}
+22	22		301							"{2: 'Lee', 3: ""Plus, I'm a Construct. It doesn't take me long to master a skill."", 4: '1', 18: '100002690'}"
+23	23		302							"{2: 'Human bodies are so useless...', 3: '24', 4: ""That's the Lee I know! Always so dependable!"", 5: '25'}"
+24	24	27	301							"{2: 'Lee', 3: ""With me teaching you, you'll master it in no time."", 4: '1', 18: '100002691'}"
+25	25		204							{1: '1', 2: '4'}
+26	26		301							"{2: 'Lee', 3: ""You don't need to flatter me."", 4: '1', 18: '100002692'}"
+27	27		302							"{2: ""But... I don't think Gray Raven has any diving missions coming up, right?"", 3: '28'}"
+28	28		204							{1: '1', 2: '13'}
+29	29		301							{2: 'Lee', 3: '...', 4: '1'}
+30	30		301							"{2: 'Lee', 3: ""That's not the point."", 4: '1', 18: '100002694'}"
+31	31		204							{1: '1', 2: '11'}
+32	32		301							{2: 'Lee', 3: 'The point is that, despite the time we have, if you want to go on a real dive before the end of the vacation...', 4: '1', 18: '100002695'}
+33	33		302							{2: 'Teach me, Professor Lee!', 3: '34'}
+34	34		204							{1: '1', 2: '13'}
+35	35		301				AniZhuanchangBegin			"{2: 'Lee', 3: ""Call me that again and I'll throw you into the water myself."", 4: '1', 18: '100002696'}"
+36	36		301			AniZhuanchangEnd				{2: 'Lee', 3: 'First, you have to wear your mask and snorkel properly...', 4: '1', 18: '100002697'}
+37	37		203							{1: '1', 2: '0.25', 4: '-30', 5: '-80'}
+38	38		301							{3: 'Lee steps closer to adjust your diving mask, but he frowns and takes it off after a while.'}
+39	39		302							"{2: ""What's wrong?"", 3: '40'}"
+40	40		301							{2: 'Lee', 3: 'This part... The rubber here at the joint is a bit degraded, probably from prolonged exposure to sunlight.', 4: '1', 18: '100002698'}
+41	41		301				DialogDisable			{2: 'Lee', 3: 'Using equipment like this underwater could be risky. Better switch it out.', 4: '1', 18: '100002699'}
+42	42		302							"{2: ""I don't think we've brought spare diving masks, though..."", 3: '43'}"
+43	43		302							{2: 'Should we go back to the shop?', 3: '44'}
+44	44		301			DialogEnable				"{2: 'Lee', 3: ""That won't be necessary."", 4: '1', 18: '100002700'}"
+45	45		202							{1: '1'}
+46	46		301							{3: 'Lee takes off his own diving mask and puts it on you.'}
+47	47		201							{1: '1', 2: '500742', 5: '-30', 6: '-80'}
+48	48		301							"{1: '1', 2: 'Lee', 3: ""...Don't move."", 4: '1', 18: '100002701'}"
+49	49		301							{3: 'You instinctively lean back, but Lee gently holds your head steady before putting his mask and snorkel on you.'}
+50	50		301							{2: 'Lee', 3: 'You can use this for now.', 4: '1', 18: '100002702'}
+51	51		203							{1: '1', 2: '0.25', 4: '-60', 5: '-150'}
+52	52		301							"{3: ""As he speaks, Lee moves in closer to adjust the mask's strap for you.""}"
+53	53		301							{2: 'Lee', 3: 'Is that too tight?', 4: '1', 18: '100002703'}
+54	54		302							"{2: ""No, it's just right."", 3: '55'}"
+55	55		301							"{2: 'Lee', 3: ""Good. Your head size hasn't changed."", 4: '1', 18: '100002704'}"
+56	56		302							"{2: 'Why do you remember such specific information...', 3: '57', 4: ""It'd be concerning if it had changed, right?"", 5: '58'}"
+57	57	59	301							{2: 'Lee', 3: 'The measurement was used to calibrate your armor.', 4: '1', 18: '100002705'}
+58	58		301							{2: 'Lee', 3: 'Indeed, so try to avoid that.', 4: '1', 18: '100002706'}
+59	59		301							{3: 'After you put on all the diving gear, Lee inspects it one more time to ensure there are no other issues.'}
+60	60		301							{2: 'Lee', 3: 'It fits you.', 4: '1', 18: '100002707'}
+61	61		301							"{3: 'Seeing Lee\'s gaze stopping at a specific point above your head, you realize what ""fits"" you.'}"
+62	62		301							{3: 'You never thought you would end up wearing the mask with the yellow duck...'}
+63	63		302							{2: 'What about you?', 3: '64'}
+64	64		301							"{2: 'Lee', 3: ""Don't worry. I can dive without a diving mask, but you can't."", 4: '1', 18: '100002708'}"
+65	65		301				AniZhuanchangBegin			"{2: 'Lee', 3: ""Let's practice snorkeling first."", 4: '1', 18: '100002709'}"
+66	66		203							{1: '1', 2: '0'}
+67	67		401							{1: '2', 2: '9339045'}
+68	68		301			AniZhuanchangEnd				"{1: '1', 3: ""With Lee's steady hands supporting you, you start floating in the shallower waters before moving on your own by sensing the undulation of the waves.""}"
+69	69		301							{2: 'Lee', 3: 'Breathe slowly and steadily... Pace your breaths.', 4: '1', 18: '100002710'}
+70	70		301							"{2: 'Lee', 3: ""Pay attention to which part of your legs you are using. You'll waste a lot of energy if you're exerting force with your knees."", 4: '1', 18: '100002711'}"
+71	71		301							"{3: ""With concise explanations and precise guidance, Lee's instruction makes him a surprisingly patient and earnest teacher.""}"
+72	72		301							"{3: ""After several rounds of practice under Lee's guidance, you have become much more proficient in buoyancy control and clearing water from your snorkel.""}"
+73	73		301							{2: 'Lee', 3: 'Getting there.', 4: '1', 18: '100002712'}
+74	74		302							{2: 'Am I ready to graduate?', 3: '75'}
+75	75		301							"{2: 'Lee', 3: ""You're not bad... for a beginner. Your fundamentals are solid."", 4: '1', 18: '100002713'}"
+76	76		301							"{3: 'Everyone knows Lee\'s ""not bad"" is actually ""very good.""'}"
+77	77		302							"{2: ""I'm the best."", 3: '78', 4: ""You're a good teacher."", 5: '78'}"
+78	78		301							"{2: 'Lee', 3: ""Don't get too excited. The real challenge has only just begun."", 4: '1', 18: '100002714'}"
+79	79		301							{3: 'Lee points toward the distant sea, where your true destination lies.'}
+80	80		302							"{2: ""Let's go!"", 3: '81', 4: ""I'm ready!"", 5: '81'}"
+81	81		301							{3: 'Adjusting your breaths, you move forward, but the further away from the shore you are, the more you feel the ocean pushing you back.'}
+82	82		301							{2: 'Lee', 3: 'Give me your hand.', 4: '1', 18: '100002715'}
+83	83		301				AniZhuanchangBegin			{3: 'Lee grabs your hand firmly, leading you further out into the sea. Having adjusted your snorkel, you dive in with him on his signal.'}
+84	84		202							{1: '1', 6: '1'}
+85	85		401							{1: '1', 2: '36'}
+86	86		402							{1: '2634'}
+87	87		306							{1: '1'}
+88	88		401						800.0	{1: '2', 2: '2644'}
+89	89		401							{1: '2', 2: '902'}
+90	90		401							{1: '1', 2: '180'}
+91	91		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory773.jpg'}
+92	92		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'The moment the water engulfs you, you find yourself surrounded by a gentle, luminous blue.'}
+93	93		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_49.jpg'}
+94	94		104							{1: '400|-250|-300', 2: '0'}
+95	95		104							{1: '300|-125|-300', 2: '2'}
+96	96		301			AniZhuanchangEnd				"{3: ""Sunlight and clear skies shatter into brilliant sparkles, landing on the seabed and sprinkling a dazzling light in Lee's hair of gold and eyes of blue.""}"
+97	97		104							{1: '100|0|-200', 2: '5'}
+98	98		301							{3: 'You signal to Lee after you have gotten used to moving underwater. He nods and motions you to follow.'}
+99	99		301							"{2: 'Lee', 3: ""Don't stray too far from me."", 18: '100002716'}"
+100	100		301							{3: 'Tiny bubbles escape his lips. His voice comes through the water and your earpiece, slightly muffled.'}
+101	101		301							{3: 'You follow Lee, slowly swimming in the direction he has indicated.'}
+102	102		306							
+103	103		104							{1: '0|0|0', 2: '5'}
+104	104		301							{3: 'Brightly colored fish swirl around you like stars, nimbly swimming past you as sunlight illuminates the ocean in all its glory.'}
+105	105		301							{2: 'Lee', 3: '...Slow down.', 18: '100002717'}
+106	106		301							"{3: ""Lee has been staying by your side and guiding you within arm's reach, close enough to get to you but not so close that he hinders you.""}"
+107	107		301							{3: 'You swim with Lee, observing all the splendor you could only see virtually on Babylonia in the past. Lee periodically signals you to ascend, and you surface to breathe before diving back into the ocean-blue dream.'}
+108	108		401							{1: '1', 2: '36'}
+109	109		306							{1: '1'}
+110	110		401							{1: '2', 2: '2650'}
+111	111		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '1'}
+112	112		104							{1: '210|500|-500', 2: '0'}
+113	113		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+114	114		505					10.0		{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+115	115		301							{3: 'As you swim past a massive coral reef, a large school of fish swirls around you before merging back into a silver whirlwind.'}
+116	116		302							{2: '...!', 3: '117'}
+117	117		104							{1: '-300|350|-250', 2: '4'}
+118	118		301							{3: 'The school of fish briefly obscures your view, and you instinctively move back to avoid them.'}
+119	119		301							{3: 'The simple movement causes you to drift back with the current, widening the distance between Lee and you.'}
+120	120		301							{3: 'You instinctively reach out to Lee, but your hand barely grazes his fingers. You are too far away from him now, and the fish has blocked your view.'}
+121	121		306							
+122	122		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory773.jpg', 3: '0', 4: '1', 5: '1.5'}
+123	123		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+124	124		301							{3: 'So you stabilize your breathing and adjust your posture before steadily swimming back toward Lee.'}
+125	125		402							{1: '2650'}
+126	126		201							{1: '1', 2: '500742', 3: '7'}
+127	127		203							{1: '1', 2: '0.15', 4: '-50', 5: '-100'}
+128	128		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+129	129		301							{1: '1', 3: 'You do not get far before Lee rushes back toward you, and you are startled to see his usually calm expression has been replaced with an intense fear under the flickering light.'}
+130	130		301							{3: 'You rarely see him this frightened.'}
+131	131		204							{1: '1'}
+132	132		203							{1: '1', 2: '0.2', 4: '-60', 5: '-150'}
+133	133		301							{2: 'Lee', 3: 'Commandant!', 4: '1', 18: '100002718'}
+134	134		301							{3: 'He grabs your arm tightly.'}
+135	135		302							{2: '(Gesture to him that you are fine)', 3: '136'}
+136	136		204							{1: '1'}
+137	137		301							{3: 'He stares at you intensely for a second before letting out a sigh of relief as if awakening from a dream.'}
+138	138		301							{2: 'Lee', 3: 'Do you want to continue?', 4: '1', 18: '100002719'}
+139	139		301							"{3: ""You have been diving for a while now, and you are quite concerned with Lee's condition, so you signal to surface after a brief thought.""}"
+140	140		302							"{2: ""(That's enough. Let's head back to shore.)"", 3: '141'}"
+141	141		301							{2: 'Lee', 3: 'Understood.', 4: '1', 18: '100002720'}
+142	142		301				AniZhuanchangBegin			{3: 'Lee seems to have returned to his usual self, but he is uncharacteristically silent, merely guiding you to slowly ascend and swim back to the shore.'}
+143	143		202							{1: '1', 6: '1'}
+144	144		402							{1: '902'}
+145	145		401							{1: '1', 2: '36'}
+146	146		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+147	147		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory533.jpg'}
+148	148		401							{1: '1', 2: '207'}
+149	149		301			AniZhuanchangEnd				{3: 'The sun is not as blinding now. Gentle sunlight envelopes both of your drenched figures, warming you in the cool ocean breeze.'}
+150	150		201							{1: '1', 2: '500743'}
+151	151		301							{1: '1', 2: 'Lee', 3: '...How does your first dive feel?', 4: '1', 18: '100002721'}
+152	152		302							"{2: 'Effortless!', 3: '153', 4: ""It's okay."", 5: '154', 6: 'It was quite challenging.', 7: '155'}"
+153	153	156	301				DialogDisable			{2: 'Lee', 3: '...Really?', 4: '1', 18: '100002722'}
+154	154	156	301				DialogDisable			{2: 'Lee', 3: 'Is that so? I knew you got it.', 4: '1', 18: '100002723'}
+155	155		301				DialogDisable			{2: 'Lee', 3: 'I suppose you are quite self-aware.', 4: '1', 18: '100002724'}
+156	156		401							{1: '1', 2: '36'}
+157	157		302							"{2: ""I'm more concerned about what happened earlier..."", 3: '158'}"
+158	158		302							{2: 'You seemed overly worried.', 3: '159'}
+159	159		401							{1: '1', 2: '169'}
+160	160		301			DialogEnable				"{2: 'Lee', 3: ""...I was just worried that you were in danger. Even experienced divers can't always emerge unscathed from accidents."", 4: '1', 18: '100002725'}"
+161	161		302							"{2: ""But that wasn't the only time."", 3: '162', 4: 'Is that all there is to it?', 5: '162'}"
+162	162		301							{3: 'The three Gray Raven members have been overly concerned with your well-being due to past events.'}
+163	163		301							"{3: ""Although Lee's demeanor seems unchanged, he has been insisting on accompanying you whenever you appear in public.""}"
+164	164		301							{3: 'He has been inspecting your equipment and transport crafts more thoroughly, covertly investigating people in contact with Gray Raven, and planning overly detailed contingencies...'}
+165	165		301							{3: 'And that frightened look on his face you glimpsed earlier underwater, fleeting yet impossible to ignore.'}
+166	166		301				DialogDisable			{3: '—He seems like he is always on edge, ready to combat some vast and empty unknown. Or maybe he looks like he is lost in the fog, never able to find a way out.'}
+167	167		302							{2: 'You seem very tense lately...', 3: '168'}
+168	168		302							{2: 'Are you still worried about what happened before?', 3: '169'}
+169	169		301			DialogEnable				{3: 'Your question to Lee is one of the reasons you invited him here. You have not had a proper chance to talk with him about everything that happened.'}
+170	170		301							"{2: 'Lee', 3: ""...Yes. I'm very worried about you."", 4: '1', 18: '100002726'}"
+171	171		301							{3: 'Surprisingly, Lee does not deny it outright as he would have before.'}
+172	172		301							"{2: 'Lee', 3: ""But... it's also more than that."", 4: '1', 18: '100002727'}"
+173	173		301							{3: 'He lowers his head with that silent expression again as if hesitating, uncertain where to begin.'}
+174	174		301							{2: 'Lee', 3: '...What if I tell you I feel deja vu about a lot of things? Would you believe me?', 4: '1', 18: '100002728'}
+175	175		301				DialogDisable			{2: 'Lee', 3: 'Even though it sounds absurd, and there is no logical explanation...', 4: '1', 18: '100002729'}
+176	176		302							{2: 'Everything happens for a reason.', 3: '177'}
+177	177		302							"{2: ""I'll help you look for one."", 3: '178'}"
+178	178		302							{2: 'But... you need to tell me what happened first.', 3: '179'}
+179	179		301			DialogEnable				{2: 'Lee', 3: '...Right.', 4: '1', 18: '100002730'}
+180	180		301							{3: 'He looks at you and nods solemnly.'}
+181	181		204							{1: '1', 2: '8'}
+182	182		301							"{2: 'Lee', 3: ""Since my adaptation to this frame, I've felt a familiarity with things that have not happened."", 4: '1', 18: '100002731'}"
+183	183		204							{1: '1'}
+184	184		301							"{2: 'Lee', 3: 'Sudden ""premonitory"" memories would come and go before I could thoroughly recall them.', 4: '1', 18: '100002732'}"
+185	185		301							{3: 'Unclear and ambiguous as reflections in the water, these moments are like projections from other worlds, leaving unbearable marks etched into his memories.'}
+186	186		301							"{2: 'Lee', 3: 'I\'ve tried my best to record how these ""premonitions"" feel, Commandant. They didn\'t feel like simulations... but actual experiences I\'ve had.', 4: '1', 18: '100002733'}"
+187	187		301							"{2: 'Lee', 3: ""...I've failed to determine where this anomaly in my M.I.N.D. comes from for a very long time."", 4: '1', 18: '100002734'}"
+188	188		302							{2: 'The coordinates you mentioned in Copperfield Aquarium...', 3: '189', 4: 'I remember your report on the Hetero Tower.', 5: '190'}
+189	189	191	301							"{2: 'Lee', 3: ""That's when it started...?Wait. No. Perhaps earlier than that."", 4: '1', 18: '100002735'}"
+190	190		301							"{2: 'Lee', 3: ""...I still can't confirm whether what happened in the Hetero Tower has had any underlying impact on my M.I.N.D."", 4: '1', 18: '100002736'}"
+191	191		301							"{2: 'Lee', 3: ""Even though all diagnostic reports have shown no discontinuity in my memory data, I know for sure that I've forgotten something important."", 4: '1', 18: '100002737'}"
+192	192		301							"{2: 'Lee', 3: ""The gaps in my M.I.N.D. are not results of data errors. I've been trying to prove it, but I haven't found a way yet."", 4: '1', 18: '100002738'}"
+193	193		301							"{3: ""He looks out at the sea. A seagull flies by, snatching a fish from the sea, but the fish drops eventually, struggling in the bird's beak.""}"
+194	194		301							{2: 'Lee', 3: '...Spending time on a problem is pointless if there is no answer. Not to mention that no credible conclusions can come from groundless speculations.', 4: '1', 18: '100002739'}
+195	195		301							{2: 'Lee', 3: 'So, for a while, I chose to ignore those nonsensical premonitions, until...', 4: '1', 18: '100002740'}
+196	196		301							{3: 'Lee pauses for a moment, struggling to say what he has to say next.'}
+197	197		301							{2: 'Lee', 3: 'Until I learned that your transport craft fell into the Red Tide river and went missing.', 4: '1', 18: '100002741'}
+198	198		302							{2: '...', 3: '199'}
+199	199		301							{2: 'Lee', 3: '...We spent so long looking for you.', 4: '1', 18: '100002742'}
+200	200		301							{3: 'He tries to skip over many moments of desperation and pain, real or imaginary, with a gentle tone.'}
+201	201		301							{2: 'Lee', 3: 'When I saw the... scenes...', 4: '1', 18: '100002743'}
+202	202		301							{2: 'Lee', 3: '...I was surprised by how familiar it felt, however impossible that might be.', 4: '1', 18: '100002744'}
+203	203		301							{2: 'Lee', 3: 'Even though the feeling of deja vu faded quickly... I finally understood then.', 4: '1', 18: '100002745'}
+204	204		301							{3: 'Lee looks up at you.'}
+205	205		301							{3: 'His gaze seems to go through you again as if he is seeing something else.'}
+206	206		202							{1: '1', 6: '1'}
+207	207		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+208	208		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3201_06.jpg'}
+209	209		504							{1: '0.7'}
+210	210		301							{3: 'You remember the same bewildered look on his face on the night you two talked during his adaption to the specialized frame.'}
+211	211		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+212	212		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory533.jpg'}
+213	213		504							{1: '0'}
+214	214		201							{1: '1', 2: '500743', 7: '1'}
+215	215		301							{1: '1', 3: 'You finally understand what it means.'}
+216	216		301							"{2: 'Lee', 3: ""...I've been scared."", 4: '1', 18: '100002746'}"
+217	217		301							"{2: 'Lee', 3: ""I was afraid I couldn't find you, or you would look like that when I did."", 4: '1', 18: '100002747'}"
+218	218		301							"{2: 'Lee', 3: ""I can't ignore these illogical premonitions... and I will do anything to avoid those outcomes."", 4: '1', 18: '100002748'}"
+219	219		204							{1: '1', 2: '8'}
+220	220		301							{3: 'He takes a deep breath, trying to calm down the flood of emotions in him.'}
+221	221		204							{1: '1'}
+222	222		301							"{2: 'Lee', 3: 'So... that\'s why I\'ve been ""overreacting"" when I think you might be in danger.', 4: '1', 18: '100002749'}"
+223	223		302							"{2: 'You... could have told me sooner.', 3: '224', 4: ""Would you have kept it secret if I hadn't asked?"", 5: '224'}"
+224	224		301							"{2: 'Lee', 3: ""I'm sorry. I promised not to hide anything from you... but I just didn't know how to bring it up."", 4: '1', 18: '100002750'}"
+225	225		301							"{2: 'Lee', 3: ""I can't help but worry that..."", 4: '1', 18: '100002751'}"
+226	226		301							"{2: 'Lee', 3: ""...We'd be sitting together like this in peace before I would find out that it was just a dream."", 4: '1', 18: '100002752'}"
+227	227		301							{2: 'Lee', 3: 'Surprising, right? That I would have such... ridiculous thoughts.', 4: '1', 18: '100002753'}
+228	228		301							"{3: ""Lee's tone becomes self-deprecatory.""}"
+229	229		302							"{2: 'Not at all.', 3: '230', 4: ""Don't be afraid."", 5: '230'}"
+230	230		301							"{3: ""You grab Lee's hands, gently opening his clenched fists.""}"
+231	231		302							"{2: ""Look. I'm right here."", 3: '232'}"
+232	232		301				DialogDisable			"{3: ""Lee's cold fingers touch your palm, and he does not immediately withdraw his hands.""}"
+233	233		302							"{2: ""I'm okay. I'm here in one piece."", 3: '234'}"
+234	234		302							{2: 'This is the reality we live in.', 3: '235'}
+235	235		301			DialogEnable	DialogDisable			{2: 'Lee', 3: 'Reality, huh...', 4: '1', 18: '100002754'}
+236	236		302							{2: 'There may still be many uncertainties...', 3: '237'}
+237	237		302							{2: 'But as long as you need it...', 3: '238'}
+238	238		302							{2: 'I will always be there to anchor you to our reality.', 3: '239'}
+239	239		301			DialogEnable	DialogDisable			{3: 'Gray Raven will stand by you the way you have protected us.'}
+240	240		302							"{2: ""So don't worry."", 3: '241'}"
+241	241		302							"{2: ""We've already been through so much together."", 3: '242'}"
+242	242		204							{1: '1', 2: '1'}
+243	243		401							{1: '1', 2: '100'}
+244	244		301			DialogEnable				{2: 'Lee', 3: '...I see.', 4: '1', 18: '100002755'}
+245	245		301							{3: 'Whispering softly, Lee slowly grabs your hands and draws you in, as if trying to bring you closer to his heart.'}
+246	246		401							{1: '2', 2: '1543'}
+247	247		203							{1: '1', 2: '0.3', 4: '-50', 5: '-150'}
+248	248		204							{1: '1', 2: '8'}
+249	249		301							{3: 'Your shoulder sinks slightly—Lee has rested his head on your shoulder.'}
+250	250		302							{2: '...Lee?', 4: '...'}
+251	251		301							{3: 'You cannot see his expression, but his muffled voice reaches you all the same.'}
+252	252		301							{2: 'Lee', 3: '...Just a little longer.', 4: '1', 18: '100002756'}
+253	253		302							{2: 'However long you need.', 3: '254', 4: 'No problem.', 5: '254'}
+254	254		301							{2: 'Lee', 3: '...Thank you.', 4: '1', 18: '100002757'}
+255	255		302							{2: '(Reach out and hug him)', 3: '256', 4: 'Thank you for sharing this with me.', 5: '259'}
+256	256		301							{2: 'Lee', 3: '...!', 4: '1', 18: '100002759'}
+257	257		301							{3: 'You hold him even tighter, silently waiting for his stiff body to relax.'}
+258	258		302							{2: 'Thank you, Lee.', 3: '259'}
+259	259		301				AniZhuanchangBegin			{3: 'This seems to be the first time Lee has been able to share his feelings with you without holding back.'}
+260	260		401							{1: '1', 2: '36'}
+261	261		202							{1: '1', 6: '1'}
+262	262		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory783.jpg'}
+263	263		401							{1: '1', 2: '204'}
+264	264		301			AniZhuanchangEnd				{3: 'By the time you get up from the beach, dusk has already tinted the evening sky.'}
+265	265		201							{1: '1', 2: '500742'}
+266	266		301							{1: '1', 3: 'Lee looks visibly more comfortable now that he has shared what has been on his mind.'}
+267	267		302							{2: 'The vacation is almost over...'}
+268	268		301							{2: 'Lee', 3: 'We have one more night before we head back. You still have time to do anything you want to do.', 4: '1', 18: '100002760'}
+269	269		302							"{2: ""I guess I'll start making a list..."", 3: '270'}"
+270	270		301				DialogDisable			{2: 'Lee', 3: '...How many things are there?', 4: '1', 18: '100002761'}
+271	271		302							"{2: ""Isn't there a shop that sells fishing gear on the way here?"", 3: '272', 4: 'I saw a video about beachcombing. It looked fun.', 5: '273'}"
+272	272	274	302							"{2: ""Why don't we try nearshore fishing?"", 3: '274'}"
+273	273		302							{2: 'Maybe we could give it a shot?', 3: '275'}
+274	274	276	301			DialogEnable				{2: 'Lee', 3: 'The sea is dangerous at night.', 4: '1', 18: '100002762'}
+275	275		301			DialogEnable				{2: 'Lee', 3: 'Visibility on the beach is very low at night.', 4: '1', 18: '100002763'}
+276	276		302							{2: 'You just said I have time to do anything I want...', 3: '277'}
+277	277		301							"{2: 'Lee', 3: ""...Let's go."", 4: '1', 18: '100002764'}"
+278	278		302							{2: 'Where are we going?', 3: '279', 4: 'Are we heading back?', 5: '279'}
+279	279		204							{1: '1', 2: '10'}
+280	280		301							{3: 'Lee turns around, surrendering to your whim.'}
+281	281		301				DialogDisable			"{2: 'Lee', 3: ""We'll look around to see if we can find any tools you might need."", 4: '1', 18: '100002765'}"
+282	282		302							{2: 'Awesome!', 3: '283'}
+283	283		302							{2: 'Maybe we should look for some fireworks too?', 3: '284'}
+284	284		204							{1: '1'}
+285	285		301			DialogEnable				"{2: 'Lee', 3: ""Don't push it."", 4: '1', 18: '100002766'}"
+286	286		202							{1: '1'}
+287	287		301							{3: 'Striding ahead of you with a stern expression, Lee fails to hide his curled lips from you.'}
+288	288		301				AniZhuanchangBegin			{3: 'Unexpectedly, the figure walking before you on the beach overlaps with a figure in your memory.'}
+289	289		504							{1: '0.7'}
+290	290		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory184.png'}
+291	291		301			AniZhuanchangEnd				{3: 'It was a distant summer afternoon in a simulation with a similar azure sky and an unending beach.'}
+292	292		301				AniZhuanchangBegin			{3: '—Where Lee was among his bantering friends and smiling, not realizing it himself.'}
+293	293		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg'}
+294	294		201							{1: '1', 2: '500026'}
+295	295		301			AniZhuanchangEnd	DialogDisable			"{1: '1', 2: 'Lee', 3: ""...You know there's no chance for us to use things like that."", 4: '1', 18: '100002767'}"
+296	296		302				AniZhuanchangBegin			"{2: ""You don't know for sure."", 3: '297', 4: 'Just accept it on my behalf.', 5: '297'}"
+297	297		202							{1: '1', 6: '1'}
+298	298		502							{1: 'DialogEnable'}
+299	299		504							{1: '0'}
+300	300		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory783.jpg'}
+301	301		301			AniZhuanchangEnd				{3: 'The impossible wish back then is now within your reach, just like this peaceful city and your footsteps on the fine sand.'}
+302	302		301							{3: 'The sky darkens, and you can begin to make out stars on the distant horizons. The night is coming.'}
+303	303		301							{3: 'Lee slows down and turns around, waiting for you. You hurry and catch up to him.'}
+304	304		301							{3: 'You will face more dangers and battles in the future, but for now, you have a chance to appreciate this hard-won serenity.'}
+305	305		301		1		AniZhuanchangBegin			{3: 'If you can walk into the night with each other, together you will welcome the dawn.'}

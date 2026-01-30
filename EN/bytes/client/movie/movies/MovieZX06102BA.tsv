@@ -1,0 +1,280 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory69.jpg'}
+2	2		401							{1: '1', 2: '204'}
+3	3		301			DialogEnable				"{3: ""Unlike the artificial light of Babylonia's simulated weather, true sunlight on the surface always carries a warmth you can feel on your skin.""}"
+4	4		301							{3: 'A gentle, autumn morning glow spills into the room. You stand at the sink, your mind still soft with sleep...'}
+5	5		302							{2: '(Turn on the faucet and wash face)', 3: '6', 4: '(Wipe your face with a towel)', 5: '8'}
+6	6		401							{1: '2', 2: '5967'}
+7	7	11	301							{3: 'The shock of water, chilled deep in the night, jolts the last haze from your veins.'}
+8	8		401							{1: '2', 2: '5966'}
+9	9		401						100.0	{1: '2', 2: '5286'}
+10	10		301							{3: 'The rough cloth, soaked in fresh water, delivers a bracing chill that jolts the last haze from your veins.'}
+11	11		302							{2: '...', 3: '12'}
+12	12		301							"{3: ""Freshened up, you glance at the antique clock, a relic strikingly different from Babylonia's modern aesthetic, hanging above the bathroom mirror. It reads 8:00 AM.""}"
+13	13		401							{1: '2', 2: '1515'}
+14	14		301							"{3: ""Just as you move to open your terminal and review last night's files, a notification chimes from your communication app.""}"
+15	15		201							{1: '1', 2: '501385'}
+16	16		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+17	17		301							"{1: '1', 2: 'Liv', 3: ""Commandant, let me guess... you were working on Babylonia reports late again last night, weren't you?"", 4: '1'}"
+18	18		302							{2: 'Well...', 3: '19', 4: 'No way, definitely not me.', 5: '19', 6: 'You saw it wrong.', 7: '19'}
+19	19		204							{1: '1', 2: '2'}
+20	20		301							"{2: 'Liv', 3: ""No excuses! I saw the emails you sent... that's why I made sure to let you sleep in a little this morning."", 4: '1'}"
+21	21		204							{1: '1'}
+22	22		301							"{2: 'Liv', 3: ""I left some breakfast for you on the table. I'm just heading out to do some preliminary research for our mission. I'll be back before you know it, and I promise I won't leave the conservation area."", 4: '1'}"
+23	23		204							{1: '1', 2: '3'}
+24	24		301				DialogDisable			"{2: 'Liv', 3: ""So, take your time. You can review your work from last night... there's no need to rush out on my account."", 4: '1'}"
+25	25		501							{1: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiGuanbixiaoshi.prefab', 2: '2', 4: '1'}
+26	26		401							{1: '2', 2: '4688'}
+27	27		202						1200.0	{1: '1', 6: '1'}
+28	28		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+29	29		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiGuanbixiaoshi.prefab', 4: '1'}
+30	30		301			DialogEnable				{3: 'The message ends here.'}
+31	31		302							{2: '(Go eat breakfast)', 3: '32', 4: '(Review work on the terminal first)', 5: '32'}
+32	32		301							"{3: ""After a quick review of last night's work on your terminal, you send the files back to Babylonia and turn to leave the room.""}"
+33	33		401				AniZhuanchangBegin			{1: '2', 2: '5702'}
+34	34		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory731.jpg'}
+35	35		104							{1: '0|130|-350', 2: '0'}
+36	36		402						500.0	{1: '5702'}
+37	37		301			AniZhuanchangEnd	DialogDisable			"{3: ""As promised in Liv's message, breakfast awaits on the table: the usual compressed rations and nutritional supplements. It's far from a gourmet meal, but it will fill the void.""}"
+38	38		306							{1: '1'}
+39	39		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg', 3: '0', 4: '1', 5: '1'}
+40	40		104						1050.0	{1: '200|-100|-350', 2: '0', 4: '4'}
+41	41		301			DialogEnable	DialogDisable			{3: 'Beyond the window, the sun crests the dark mountain peaks, washing the land in a gold light. Below, soldiers patrol in orderly formations, while residents of the conservation area move in and out in neat lines, tools in hand—another day of gathering and production begins.'}
+42	42		306							
+43	43		302							{2: 'Hmm...', 3: '44'}
+44	44		205						1050.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg', 3: '1', 4: '0', 5: '1'}
+45	45		205							{1: '1004', 3: '1', 4: '1', 5: '0'}
+46	46		301			DialogEnable	DialogDisable			{3: 'You turn from the view, down the nutritional drink in one go, and clamp a ration biscuit between your teeth. With both hands now free, your attention returns to the terminal interface.'}
+47	47		401							{1: '2', 2: '4051'}
+48	48		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+49	49		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1145.jpg'}
+50	50		109						700.0	{1: '1', 2: '<size=40>Conservation Area 368, 07:23</size>', 3: '570', 4: '200', 6: '1', 7: '1', 10: '1'}
+51	51		301							{3: 'Conservation Area 368, 07:23'}
+52	52		109						700.0	{1: '2', 2: '<size=40>Mission: New Construct Frame Trial</size>', 3: '570', 4: '100', 6: '1', 7: '1', 10: '1'}
+53	53		301							{3: 'Mission: New Construct Frame Trial'}
+54	54		109						500.0	{1: '3', 2: '<size=40>Personnel: 【kuroname】, Liv</size>', 3: '570', 4: '0', 6: '1', 7: '1', 10: '1'}
+55	55		301				AniZhuanchangBegin			{3: 'Personnel: 【kuroname】, Liv'}
+56	56		110							
+57	57		401							{1: '2', 2: '5916'}
+58	58		401						1000.0	{1: '1', 2: '36'}
+59	59		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+60	60		104							{1: '0|0|0', 2: '0'}
+61	61		307							{1: '—  Some Time Earlier  —', 3: '70', 4: 'ffffffff', 6: '1'}
+62	62		301							{3: '—Some Time Earlier—'}
+63	63		307							{2: '1'}
+64	64		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory263.png'}
+65	65		401							{1: '1', 2: '208'}
+66	66		107			AniZhuanchangEnd				{1: 'Babylonia'}
+67	67		301							{3: 'Babylonia'}
+68	68		108							{1: '1'}
+69	69		301			DialogEnable				{3: 'Some time has passed since your conversation with Ishmael.'}
+70	70		301							"{3: ""She confessed that her own entanglement in events might have clouded her vision; she could no longer clearly observe the world's progression. Everything was now hurtling toward an unpredictable future.""}"
+71	71		401							{1: '2', 2: '4387'}
+72	72		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+73	73		504							{1: '0.7'}
+74	74		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1116.jpg'}
+75	75		201							{1: '1', 2: '500380', 3: '12', 7: '1'}
+76	76		301							{1: '1', 2: 'Ishmael', 3: 'I cannot offer you any more help. I am but a recorder, a soul anchored to the echoes of what has been.', 4: '1'}
+77	77		302							"{2: ""I'm here to talk about what's happening now."", 3: '78'}"
+78	78		301							"{2: 'Ishmael', 3: ""I understand the question in your heart, Gray Raven. But a river's current cannot be judged before it reaches the sea. Its nature is only revealed in its entirety."", 4: '1'}"
+79	79		302							{2: 'Is there anything else you can share?', 3: '80'}
+80	80		301							"{2: 'Ishmael', 3: 'I have walked many potential paths of this ""future"" in my thoughts... but I cannot share them with you.', 4: '1'}"
+81	81		301							{2: 'Ishmael', 3: 'I cannot be certain my perceptions are true, or that we are even navigating the same stream of causality.', 4: '1'}
+82	82		204							{1: '1'}
+83	83		301							{2: 'Ishmael', 3: 'If... and I mean if, our paths truly converge again, in a time yet to be, you may find the footprints I have left in the dust.', 4: '1'}
+84	84		301							{3: 'Her gentle smile was a quiet punctuation mark, drawing the conversation to a close.'}
+85	85		202							{1: '1', 6: '1'}
+86	86		401							{1: '2', 2: '4387'}
+87	87		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+88	88		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+89	89		504							{1: '0'}
+90	90		301							{3: 'Still adrift in the echoes of your talk with Ishmael, you were almost surprised to find yourself already at the entrance of the Science Council.'}
+91	91		401							{1: '2', 2: '4052'}
+92	92		301				DialogDisable			"{3: 'You cast another glance at your terminal. The mail from Hassen was marked urgent, but its contents were starkly simple: ""Head to the Science Council immediately."" You wonder what could warrant such a summons.'}"
+93	93		302							{2: '(Knock on the door)', 3: '94'}
+94	94		401						1000.0	{1: '2', 2: '2626'}
+95	95		201							{1: '18', 2: '500004', 4: '-60', 5: '-150'}
+96	96		301			DialogEnable	AniZhuanchangBegin			{1: '1', 2: 'Asimov', 3: 'Come on in.', 4: '18'}
+97	97		401							{1: '1', 2: '36'}
+98	98		202							{1: '18', 6: '1'}
+99	99		401					400.0		{1: '2', 2: '2661'}
+100	100		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+101	101		401							{1: '2', 2: '908'}
+102	102		401						1000.0	{1: '1', 2: '201'}
+103	103		301			AniZhuanchangEnd				{3: 'The Council was as it always was, a stark, white space filled with the hum of instrumentation and the dry, sterile air.'}
+104	104		301				DialogDisable			{3: 'Sitting at the table, Asimov gave you a nod and turned back to the projection displayed on its surface.'}
+105	105		104						500.0	{1: '0|0|-200', 2: '0.5'}
+106	106		302							"{2: ""...Liv's new frame?"", 3: '107'}"
+107	107		306							{1: '1'}
+108	108		201							{1: '1', 2: '501385', 3: '8', 7: '1'}
+109	109		301			DialogEnable				"{1: '1', 3: ""The projection displayed Liv's new frame. Along one edge, a cascade of data points and analytical text scrolled past, continuously materializing only to fade away.""}"
+110	110		301				DialogDisable			{3: 'Amid this torrent of shifting information, a single value held constant, its digits steadily climbing: 733.22.'}
+111	111		202							{1: '1', 6: '1'}
+112	112		306							
+113	113		104							{1: '0|0|0', 2: '0.5'}
+114	114		202							{1: '1'}
+115	115		401						200.0	{1: '2', 2: '2661'}
+116	116		401							{1: '2', 2: '5702'}
+117	117		301			DialogEnable				{3: 'Before Asimov could utter a word, the door hissed open. Hassen strode inside, his entrance stirring the sterile air.'}
+118	118		104							{1: '0|0|0', 2: '0.5'}
+119	119		301							{3: 'His eyes swept the room in a quick, analytical glance before he moved with purpose to the long table.'}
+120	120		402							{1: '5702'}
+121	121		201							{1: '1', 2: '500011', 3: '5'}
+122	122		301							"{1: '1', 2: 'Hassen', 3: ""Sorry for the delay. Today's routine meeting overran its schedule. I hope I haven't missed the critical part."", 4: '1'}"
+123	123		302							"{2: ""Is this about Liv's new frame?"", 3: '124'}"
+124	124		204							{1: '1', 2: '5'}
+125	125		301				DialogDisable			{2: 'Hassen', 3: '...', 4: '1'}
+126	126		201							{1: '1', 2: '500004', 4: '500'}
+127	127		201							{1: '2', 2: '500011', 3: '5', 4: '-800'}
+128	128		203						600.0	{1: '2', 2: '0.5', 3: '-500'}
+129	129		401							{1: '2', 2: '4799'}
+130	130		203						1000.0	{1: '2', 2: '0.5', 3: '-500', 4: '-100', 5: '10'}
+131	131		401							{1: '2', 2: '2531'}
+132	132		301			DialogEnable	DialogDisable			{3: 'Hassen settled into a chair at the long table, exchanging a silent nod with Asimov. In response, Asimov tapped a command into his terminal and turned away.'}
+133	133		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0', 4: '1', 5: '0.5'}
+134	134		401							{1: '1', 2: '175'}
+135	135		202							{1: '1', 2: '2'}
+136	136		401						400.0	{1: '2', 2: '5896'}
+137	137		401							{1: '2', 2: '9343086'}
+138	138		301			DialogEnable				{3: 'Beep. Click.'}
+139	139		301							"{3: ""The door behind you sealed with a definitive thud. At the same moment, the small red lights on the room's surveillance cameras winked out.""}"
+140	140		302							{2: '...', 3: '141'}
+141	141		301							{3: 'Your instincts sparked, the unusual security measures sending a jolt of alarm through you.'}
+142	142		201							{1: '1', 2: '500004'}
+143	143		401							{2: '5509'}
+144	144		301							{1: '1', 2: 'Asimov', 3: 'I will be direct. The Science Council has recently recovered a cache of Golden Age data and materials. It pertains to a...', 4: '1'}
+145	145		301							{3: 'As Asimov spoke, his fingers glided across the terminal. In response, the raw data and explanatory text were turned into structural diagrams and framework outlines, overlaying the frame projection.'}
+146	146		301							"{2: 'Asimov', 3: 'It is a ""new technology"" capable of establishing a direct interface with the M.I.N.D.', 4: '1'}"
+147	147		302							{2: '...With the M.I.N.D.?', 3: '148', 4: 'Hmm... Can you elaborate?', 5: '148'}
+148	148		301							{2: 'Asimov', 3: 'The dataset enables numerous complex functions: structural optimization, amplitude stabilization, and a reduction in connection risks, among others.', 4: '1'}
+149	149		301							"{2: 'Asimov', 3: ""In simple terms, it can enhance the M.I.N.D.'s capabilities and unlock previously unattainable potentials."", 4: '1'}"
+150	150		301							"{3: ""Rows of data, highlighted in bright green, materialized beside the frame, corroborating Asimov's every word.""}"
+151	151		302							{2: 'That... sounds like a good thing?', 3: '152'}
+152	152		301							{3: 'Your fingers drummed a silent, restless rhythm on the table as you waited for the real truth.'}
+153	153		301							{3: 'A mere technological breakthrough would have been announced at a formal briefing, not whispered to you in a secluded room with the surveillance deliberately disabled.'}
+154	154		301							"{2: 'Asimov', 3: ""However, these optimizations are transient. The subject's M.I.N.D. will revert to its baseline state in as little as two or three hours, or at most, twenty-four."", 4: '1'}"
+155	155		302							"{2: ""So it's an emergency measure?"", 3: '156'}"
+156	156		203							{1: '1', 2: '0.3', 3: '450'}
+157	157		201							{1: '2', 2: '500011', 3: '5', 4: '-500', 5: '-100', 6: '10'}
+158	158		301							{1: '1', 2: 'Hassen', 3: 'So...', 4: '2'}
+159	159		301							"{2: 'Asimov', 3: ""It's Golden Age technology."", 4: '1'}"
+160	160		301							{3: 'Asimov stepped aside to make more room as the 2D display sequentially showcased various frame images.'}
+161	161		301							{2: 'Asimov', 3: 'President Hassen... do you comprehend the implications?', 4: '1'}
+162	162		301							{2: 'Hassen', 3: 'I do.', 4: '2'}
+163	163		301							"{2: 'Asimov', 3: ""The Science Council's standard explanation for M.I.N.D. technology is just a generalist overview. It describes the basic function of a M.I.N.D. within a Construct, and little else."", 4: '1'}"
+164	164		301							{2: 'Asimov', 3: 'Regarding its deeper architecture... I am not authorized by the Science Council to discuss that. Or, to be more precise, the World Government has not authorized me.', 4: '1'}
+165	165		301							{2: 'Hassen', 3: '...', 4: '2'}
+166	166		301							"{2: 'Asimov', 3: ""In the current frame development, even with specialized models, we have rarely introduced additions to the M.I.N.D.'s core data structure. The IO-based interface system merely installs a security protocol on the periphery; it does not modify the M.I.N.D.'s fundamental composition."", 4: '1'}"
+167	167		301							"{2: 'Asimov', 3: 'But this technology is different. It can optimize the M.I.N.D. structure itself, and that is merely a side effect. Its true purpose... is ""to filter.""', 4: '1'}"
+168	168		301							"{2: 'Hassen', 3: ""I can't grant you that authority either, Asimov."", 4: '2'}"
+169	169		302							{2: '...', 3: '170', 4: 'So, Liv...', 5: '170'}
+170	170		301							"{2: 'Asimov', 3: ""We compared all the Construct data from Babylonia, and even accessed the Kurono database. Only Liv's M.I.N.D. demonstrates near-perfect compatibility with this dataset."", 4: '1'}"
+171	171		301							{2: 'Hassen', 3: 'What are you trying to do?', 4: '2'}
+172	172		301							"{2: 'Asimov', 3: ""Professor Hippocrates of the Star of Life and I have collaborated on this. If we implement this dataset, there is a calculable probability that the migraine in Liv's M.I.N.D. could be permanently cured."", 4: '1'}"
+173	173		301							{2: 'Asimov', 3: 'In our calculations and simulations, we have not detected any adverse side effects. However, as we have not conducted physical tests, it remains an unknown variable.', 4: '1'}
+174	174		302							"{2: 'Where did the data come from?', 3: '175', 4: ""What happens if we don't use it?"", 5: '175'}"
+175	175		301							{2: 'Hassen', 3: '...I think we should stop here.', 4: '2'}
+176	176		301							{2: 'Asimov', 3: 'I can assure you this does not originate from any inhumane experimental procedures.', 4: '1'}
+177	177		301							{2: 'Asimov', 3: 'This has nothing to do with Kurono, Project Winter, or any other projects with questionable origins, methods, or objectives. However, I cannot share more specific information with you right now.', 4: '1'}
+178	178		301				DialogDisable			"{2: 'Asimov', 3: ""I must remind you that simply replacing Liv's frame would provide a minor therapeutic effect for her M.I.N.D. migraine, but it would not result in a complete recovery. The condition would persist, like a chronic migraine."", 4: '1'}"
+179	179		402							{1: '908'}
+180	180		302							{2: '...', 3: '181'}
+181	181		202							{1: '1', 2: '2'}
+182	182		301			DialogEnable				{3: 'For a moment, the laboratory fell into a delicate silence.'}
+183	183		301							{3: 'After a moment, Hassen spoke in a low voice.'}
+184	184		201							{1: '1', 2: '500011', 3: '5', 5: '-100', 6: '10'}
+185	185		301							"{1: '1', 2: 'Hassen', 3: ""Gray Raven Commandant, I suspect you... have other questions you haven't voiced directly."", 4: '1'}"
+186	186		301							"{2: 'Hassen', 3: ""Like why I'm here."", 4: '1'}"
+187	187		302							"{2: ""A simple frame replacement surely wouldn't warrant a personal visit from the President."", 3: '188'}"
+188	188		301							"{2: 'Hassen', 3: ""So... Asimov, does this technology carry implications far beyond what you've disclosed?"", 4: '1'}"
+189	189		202							{1: '1'}
+190	190		301							{3: 'Hassen narrowed his eyes slightly, his question cutting through the air.'}
+191	191		201							{1: '1', 2: '500004'}
+192	192		301							{1: '1', 2: 'Asimov', 3: 'No. I am simply curious why you have remained silent on this particular issue for so many years.', 4: '1'}
+193	193		202							{1: '1'}
+194	194		201							{1: '1', 2: '500011', 3: '5', 5: '-100', 6: '10'}
+195	195		301							{1: '1', 2: 'Hassen', 3: 'If one day you were faced with only two choices—an honest extinction, or a hypocritical survival—what would you choose?', 4: '1'}
+196	196		301							{2: 'Hassen', 3: 'Trillard already made that choice for us once.', 4: '1'}
+197	197		301							"{2: 'Hassen', 3: ""I don't fear my own destruction. I only need to believe that everything we have fought for until now has meaning."", 4: '1'}"
+198	198		301							{2: 'Hassen', 3: 'But if the choice were yours to make...', 4: '1'}
+199	199		302							{2: '...', 3: '200', 4: 'I would refuse to choose.', 5: '200'}
+200	200		202							{1: '1'}
+201	201		201							{1: '1', 2: '500004'}
+202	202		301							{1: '1', 2: 'Asimov', 3: 'What if... Liv were the one forced to make that choice?', 4: '1'}
+203	203		202							{1: '1'}
+204	204		301				DialogDisable			{3: 'You voiced the answer almost instinctively.'}
+205	205		302							{2: 'But I cannot accept a choice like that.', 3: '206'}
+206	206		302							"{2: ""I won't allow Liv to be placed in such a position."", 3: '207'}"
+207	207		201							{1: '1', 2: '500011', 5: '-100', 6: '10'}
+208	208		301			DialogEnable				{1: '1', 2: 'Hassen', 3: 'Relax, Commandant 【kuroname】. No one is going to force you or Liv to make such a choice.', 4: '1'}
+209	209		301							{2: 'Hassen', 3: 'This meeting was simply to inform you of this data. As her commandant, you have the right to know, and you must be aware.', 4: '1'}
+210	210		302							{2: 'So what is this new technology, really?', 3: '211'}
+211	211		204							{1: '1', 2: '5'}
+212	212		301							{2: 'Hassen', 3: '...', 4: '1'}
+213	213		301							{3: 'Hassen offered no answer.'}
+214	214		301				DialogDisable			"{2: 'Hassen', 3: ""Let us consider this nothing more than a casual conversation. I have other matters to attend to, so I'll take my leave."", 4: '1'}"
+215	215		203							{1: '1', 2: '0.5'}
+216	216		401							{1: '2', 2: '13081710'}
+217	217		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '1', 4: '0', 5: '0.5'}
+218	218		301			DialogEnable	DialogDisable			"{3: ""Hassen avoided a direct reply, rising to his feet as the room's illumination returned to normal.""}"
+219	219		401							{1: '2', 2: '4383'}
+220	220		203						400.0	{1: '1', 2: '0.5', 3: '300'}
+221	221		202							{1: '1'}
+222	222		301			DialogEnable				{3: 'He was already working on his terminal as he walked toward the exit, pausing for a beat with his hand on the door before he opened it.'}
+223	223		402							{1: '4383'}
+224	224		201							{1: '18', 2: '500011', 4: '60', 5: '-150', 6: '-200'}
+225	225		301				DialogDisable			{1: '1', 2: 'Hassen', 3: '【kuroname】... The choice has always been yours to make. We simply cannot provide any further information. I trust you will consider the matter carefully.', 4: '18'}
+226	226		202							{1: '18', 6: '1'}
+227	227		401						500.0	{1: '2', 2: '5702'}
+228	228		401						200.0	{1: '2', 2: '2661'}
+229	229		402							{1: '5702'}
+230	230		301			DialogEnable	DialogDisable			{3: 'He put on his customary smile, nodded to both you and Asimov, then strode out of the laboratory with purposeful steps.'}
+231	231		302							"{2: '...What does he know?', 3: '232', 4: 'This ""choice""... is it connected to that dataset?', 5: '234'}"
+232	232		201							{1: '1', 2: '500004', 3: '8'}
+233	233	236	301			DialogEnable				{1: '1', 2: 'Asimov', 3: 'I have no clue.', 4: '1'}
+234	234		201							{1: '1', 2: '500004', 3: '8'}
+235	235		301			DialogEnable				"{1: '1', 2: 'Asimov', 3: ""I don't know."", 4: '1'}"
+236	236		204							{1: '1'}
+237	237		301							{2: 'Asimov', 3: 'He probably has his own agenda, but that is not my domain. My concern is strictly the observable effects this dataset produces when interfacing with M.I.N.D.', 4: '1'}
+238	238		302							{2: 'Effects?', 3: '239'}
+239	239		301							{2: 'Asimov', 3: 'The dataset is far more complex than it appears. Look here, and here... these wavelength patterns are anomalous.', 4: '1'}
+240	240		301							{2: 'Asimov', 3: 'In a standard Construct, it would likely function as a new stabilizing framework. But if installed in a host with specific parameters... my hypothesis is that it would produce a different outcome.', 4: '1'}
+241	241		301							{2: 'Asimov', 3: 'Similar to the specialized frames we previously enhanced using experimental data.', 4: '1'}
+242	242		301							{2: 'Asimov', 3: 'For a compatible Construct... this could represent a new form of evolution.', 4: '1'}
+243	243		302							{2: 'So, are you recommending we proceed with the implementation?', 3: '244'}
+244	244		301							{2: 'Asimov', 3: 'From a purely scientific standpoint, I would recommend Liv attempt the procedure. However, as the President stated, the choice is not ours to force upon you or her.', 4: '1'}
+245	245		401							{1: '2', 2: '5802', 3: '0.5'}
+246	246		301							"{2: 'Asimov', 3: ""If there are no further questions, I must return to verifying the dataset's integrity."", 4: '1'}"
+247	247		202							{1: '1'}
+248	248		401							{1: '2', 2: '908', 3: '1'}
+249	249		301				AniZhuanchangBegin			"{3: ""Asimov's voice faded, its place seamlessly taken by the soft hum of laboratory equipment powering up.""}"
+250	250		402							{1: '908'}
+251	251		401							{1: '2', 2: '754'}
+252	252		401							{1: '1', 2: '36'}
+253	253		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory731.jpg'}
+254	254		104							{1: '0|130|-350', 2: '0'}
+255	255		301			AniZhuanchangEnd				{3: 'Squeak—'}
+256	256		401							{1: '1', 2: '204'}
+257	257		301							{3: 'The door slides open with a whisper, its sound pulling you back to reality.'}
+258	258		201							{1: '1', 2: '501385', 3: '7'}
+259	259		301							{1: '1', 2: 'Liv', 3: 'Commandant? Why are you working in the middle of breakfast...', 4: '1'}
+260	260		302							{2: 'Just finishing up something urgent.', 3: '261', 4: 'Just looking around.', 5: '261'}
+261	261		204							{1: '1', 2: '12'}
+262	262		301							{2: 'Liv', 3: 'You really should take a proper break to eat. I know how it is during field operations, but skipping meals will only upset your stomach later.', 4: '1'}
+263	263		301							{3: 'Liv gives you a mildly disapproving look, her brow furrowed with gentle concern.'}
+264	264		302							{2: 'Ahem... So, what did your investigation turn up?', 3: '265'}
+265	265		202							{1: '1'}
+266	266		301							{3: 'You shovel the last of the rations into your mouth and chase it with a gulp of nutrition fluid, your words garbled around the hurried meal.'}
+267	267		201							{1: '1', 2: '501385'}
+268	268		301							{1: '1', 2: 'Liv', 3: 'Well, I used a personnel survey as a pretext to access the resident list. That man, Kolm, is indeed registered here.', 4: '1'}
+269	269		301							"{2: 'Liv', 3: ""Then, I cross-referenced the location names he mentioned during his questioning back in Babylonia... I think I've managed to narrow down our search to this area."", 4: '1'}"
+270	270		202							{1: '1', 6: '1'}
+271	271		401							{1: '2', 2: '4051'}
+272	272		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+273	273		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png', 4: '4'}
+274	274		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory422.png'}
+275	275		301							{3: 'Liv opens her terminal, her fingers circling a modest area on the map. The highlighted zone contains three tents, two buildings, and a crossroads.'}
+276	276		201							{1: '18', 2: '501385', 3: '8', 4: '200', 5: '-110', 6: '-190'}
+277	277		301							{1: '1', 2: 'Liv', 3: 'So, if Kolm was telling the truth...', 4: '18'}
+278	278		204							{1: '18', 2: '12'}
+279	279		301		1		AniZhuanchangBegin			"{2: 'Liv', 3: 'The people who mentioned ""evolution"" and ""M.I.N.D.""... should be operating somewhere right here.', 4: '18'}"

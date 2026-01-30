@@ -1,0 +1,35 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '1111001'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Karenina', 3: ""I'll get this done as soon as possible. Then I'll be outta your hair!"", 4: '1'}"
+5	5		301							"{2: 'Karenina', 3: ""I've been coming here way too often recently."", 4: '1'}"
+6	6		201							{1: '1', 2: '1041001'}
+7	7		301			PanelActor1Shake				"{1: '1', 2: 'Nanami', 3: ""Ahhhhh! It's about to blow!"", 4: '1'}"
+8	8		201							{1: '1', 2: '1111001', 3: '5'}
+9	9		301			RImgBg1Shake				{1: '1', 2: 'Karenina', 3: 'Hit the deck!', 4: '1'}
+10	10		302							"{2: ""What's going on?"", 3: '11', 4: 'Go take a look!', 5: '12'}"
+11	11		301							"{2: 'Karenina', 3: ""They aren't botching the turret again, are they?!"", 4: '1'}"
+12	12		301				AniZhuanchangBegin			{2: 'Karenina', 3: 'Thanks, Captain Obvious!', 4: '1'}
+13	13		202							{1: '1', 6: '1'}
+14	14		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory30.jpg'}
+15	15		401							{1: '1', 2: '208'}
+16	16		301			AniZhuanchangEnd				{3: '(Whirling noise) — Turret has resumed normal operation.'}
+17	17		201							{1: '1', 2: '1021001', 4: '-400'}
+18	18		201							{1: '2', 2: '1081001', 4: '400'}
+19	19		301							"{1: '1', 2: 'Kamui', 3: ""Gotta hand it to the commandant and Karenina for saving me. If the turret blasted a hole in the base's wall, we would've been goners."", 4: '2'}"
+20	20		301							{2: 'Lucia', 3: 'Yeah, good thing the commandant and Karenina arrived in the nick of time.', 4: '1'}
+21	21		302							{2: 'Karenina did most of the work.', 3: '22'}
+22	22		301							{2: 'Lucia', 3: 'Thanks for your support, Karenina.', 4: '1'}
+23	23		202							{1: '1', 2: '2', 6: '1'}
+24	24		201							{1: '1', 2: '1111001'}
+25	25		301							{1: '1', 2: 'Karenina', 3: '...No need... No need... to thank me...', 4: '1'}
+26	26		301							{2: 'Karenina', 3: 'It was nothing!', 4: '1'}
+27	27		301							"{2: 'Karenina', 3: ""Anyway! I'll handle the rest from here..."", 4: '1'}"
+28	28		201							{1: '1', 2: '1031001'}
+29	29		301							{1: '1', 2: 'Liv', 3: 'Karenina is just as bold and brazen on the battlefield.', 4: '1'}
+30	30		302							{2: '(Nod)', 3: '31', 4: 'Is this how the engineering force gets the job done?', 5: '33'}
+31	31		201							{1: '1', 2: '1111001'}
+32	32	34	301							{1: '1', 2: 'Karenina', 3: 'Alright... Enough chit-chat!', 4: '1'}
+33	33		301							"{2: 'Karenina', 3: ""You could say that. After all, we're around them all the time."", 4: '1'}"
+34	34		301		1		AniZhuanchangBegin			"{2: 'Karenina', 3: ""Flattery won't make me step on the gas! Quit distracting me from my work!"", 4: '1'}"

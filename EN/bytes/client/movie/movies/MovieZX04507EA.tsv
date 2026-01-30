@@ -1,0 +1,74 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory925.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		401							{1: '2', 2: '2983'}
+4	4		301			DialogEnable				{2: 'Bridget', 3: '【kuroname】, Lucia.'}
+5	5		301							{3: 'The deeper they venture into the mine, the weaker the signal becomes. The thick layers of earth block most radio waves, and the terminal shortwave communication channel established in a hurry produces nothing but garbled, static-filled voices.'}
+6	6		401							{1: '2', 2: '2983'}
+7	7		301							{2: 'Bridget', 3: 'Has there been... any unusual activity?'}
+8	8		302							"{2: 'Yes.', 3: '9', 4: ""It's weird."", 5: '9'}"
+9	9		301							{3: 'According to the mission details, this mine was sealed off after Support Force evacuated. The shaft has collapsed again due to a prolonged lack of maintenance—meaning no one should have been able to get in here.'}
+10	10		302							{2: 'We found bodies.', 3: '11'}
+11	11		301							"{3: ""Support Force would never leave bodies behind like this. Even in emergencies where they couldn't transport all casualties, they would at least attempt burial on site—they'd never let corpses pile up this way.""}"
+12	12		201							{1: '1', 2: '500166', 3: '5'}
+13	13		301							{1: '1', 2: 'Lucia', 3: 'No large blood stains detected in the vicinity.', 4: '1'}
+14	14		301				DialogDisable			{3: 'After completing the inspection, Lucia and you exchange knowing glances.'}
+15	15		202							{1: '1', 6: '1'}
+16	16		302							"{2: ""The bodies appear to be those of researchers, but we don't know who exactly they are just yet."", 3: '17'}"
+17	17		302							{2: 'They were moved here after death.', 3: '18'}
+18	18		401							{1: '2', 2: '2983'}
+19	19		301			DialogEnable				{2: 'Bridget', 3: 'Same here.'}
+20	20		301							{2: 'Bridget', 3: '—There have been... incidents in these mines—Please proceed with caution.'}
+21	21		301				DialogDisable			"{2: 'Bridget', 3: ""We'll stick to the original rendezvous point—over.""}"
+22	22		302							{2: 'Copy that.', 3: '23'}
+23	23		302							"{2: ""Lucia, let's keep moving."", 3: '24'}"
+24	24		201							{1: '1', 2: '500166', 3: '5'}
+25	25		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'Commandant, something seems a little off with that researcher.', 4: '1'}
+26	26		301							{3: 'Lucia intentionally slows down and whispers into your ear.'}
+27	27		302							{2: 'An Jie?', 3: '29', 4: 'Who?', 5: '28'}
+28	28		301							{2: 'Lucia', 3: 'An Jie.', 4: '1'}
+29	29		302							"{2: ""No, it's not just her—her deputy is suspicious, too."", 3: '30'}"
+30	30		301							{3: 'Their faces show panic, but their posture remains composed. While people seem genuinely scared, their reactions, if anything, seem feigned.'}
+31	31		301				AniZhuanchangBegin			"{3: ""It's as if they already knew what we'd find in the mine.""}"
+32	32		202							{1: '1', 6: '1'}
+33	33		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory926.jpg'}
+34	34		301			AniZhuanchangEnd				{3: 'Due to unknown risks, the planned separate reconnaissance missions are cut short. About 40 minutes later, both teams rendezvous in the hall.'}
+35	35		301							{3: 'This junction connects multiple mining tunnels, with unexploited rock formations behind us, making this place highly defensible against attack and, if need be, a great escape route.'}
+36	36		201							{1: '1', 2: '500906', 3: '3'}
+37	37		301							"{1: '1', 2: 'Bridget', 3: ""Phew... it's great to be talking face-to-face. Sure was a lot of work trying to talk over the static in the shortwave channel."", 4: '1'}"
+38	38		204							{1: '1'}
+39	39		301							"{2: 'Bridget', 3: ""The Konstantin Mine should have its own internal communication system. We'll be able to use the internal shortwave for communication if we can get the transmitter and receiver fixed... Cheryl, see if we can do that."", 4: '1'}"
+40	40		201							{1: '1', 2: '500405'}
+41	41		301							{1: '1', 2: 'Cheryl', 3: 'Right, on it.', 4: '1'}
+42	42		202							{1: '1'}
+43	43		401							{1: '2', 2: '4331'}
+44	44		301							{3: 'Cheryl, a member of Support Force, dashes out in a hurry.'}
+45	45		402							{1: '4331'}
+46	46		201							{1: '1', 2: '500910', 3: '3'}
+47	47		301							{1: '1', 2: 'An Jie', 3: 'Are we really wasting our time and energy on that at a time like this?', 4: '1'}
+48	48		201							{1: '1', 2: '500906', 3: '5'}
+49	49		301							"{1: '1', 2: 'Bridget', 3: ""You think it's a waste of time? Well, why don't you tell me how we're supposed to get hold of one another in a mine is big if anything goes south?"", 4: '1'}"
+50	50		301							{2: 'Bridget', 3: 'We need to stay in touch for Support Force to efficiently manage on-field demands, An Jie.', 4: '1'}
+51	51		301							{2: 'Bridget', 3: 'When in Rome, do as the Romans do, yeah?', 4: '1'}
+52	52		202							{1: '1', 6: '1'}
+53	53		201							{1: '1', 2: '500910', 3: '3', 4: '250'}
+54	54		201							{1: '2', 2: '500586', 4: '-250'}
+55	55		301							{1: '1', 2: 'An Jie', 3: 'Humph.', 4: '1'}
+56	56		301				DialogDisable			{3: 'With a gentle tug from Trojan, An Jie drops her argument with Bridget.'}
+57	57		202							{1: '1', 2: '2', 6: '1'}
+58	58		201						500.0	{1: '1', 2: '500906'}
+59	59		302							"{2: ""So, what's our plan?"", 3: '60'}"
+60	60		301			DialogEnable				"{2: 'Bridget', 3: ""We'll store the supplies here for now. I'll send a squad to reinforce the mining tunnel to prevent any secondary collapses in our access route."", 4: '1'}"
+61	61		301							{2: 'Bridget', 3: 'The rest of us will pick an area to investigate.', 4: '1'}
+62	62		301							"{2: 'Bridget', 3: ""If you come across anything about the laboratory or the Corrupted, don't engage—fall back immediately and report your findings."", 4: '1'}"
+63	63		202							{1: '1'}
+64	64		301							{3: 'As Bridget assigns tasks and directs everyone to their positions, Lucia quietly slows down to match her pace to yours.'}
+65	65		201							{1: '1', 2: '500166'}
+66	66		301							{1: '1', 2: 'Lucia', 3: 'Commandant?', 4: '1'}
+67	67		302							"{2: ""I'll let Bridget know to keep an eye on An Jie and her deputy. Keep an eye on the rest of them, Lucia."", 3: '68'}"
+68	68		204							{1: '1', 2: '5'}
+69	69		301							{2: 'Lucia', 3: 'Anyone else you find suspicious, Commandant?', 4: '1'}
+70	70		302							"{2: ""It's quite simple, really."", 3: '71'}"
+71	71		301				DialogDisable			{3: 'You make a gesture outlining An Jie and her deputy.'}
+72	72		302							"{2: ""These two can't possibly put up a fight against Support Force."", 3: '73'}"
+73	73		302		1		AniZhuanchangBegin			"{2: ""I'm pretty sure we're not out of the woods yet.""}"

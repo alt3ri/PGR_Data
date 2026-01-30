@@ -1,0 +1,118 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory669.jpg'}
+2	2		401							{1: '1', 2: '204'}
+3	3		306							{1: '1'}
+4	4		301			DialogEnable				"{3: ""During the festival, Constellia is even more dazzling and colorful than usual. Perhaps it's best described as tipping an entire paint box straight into water.""}"
+5	5		301							"{3: ""That's exactly what they would say with a perfectly straight face.""}"
+6	6		306							
+7	7		301							{3: 'Lost in thought as you weave through the crowd, you suddenly spot a familiar flash of silvery white at a nearby stall.'}
+8	8		201							{1: '18', 2: '500486'}
+9	9		301							{1: '1', 2: 'Haicma', 3: 'Drying flowers before they wilt is a fascinating process. Question: how long will their original colors last?', 4: '18'}
+10	10		201							{1: '18', 2: '500471', 4: '-400', 5: '-300', 6: '450'}
+11	11		301							{2: 'Gardener Mechanoid', 3: 'Tests show that within the stated ranges of temperature, humidity, and artificial light intensity, the colors last about one year on average.', 4: '18'}
+12	12		302							{2: '(Quietly approach)', 3: '13'}
+13	13		202							{1: '18', 6: '1'}
+14	14		201							{1: '1', 2: '500486', 3: '7'}
+15	15		301							{1: '1', 2: 'Haicma', 3: 'Good day, Commandant.', 4: '1'}
+16	16		202							{1: '1'}
+17	17		301							{3: 'The white mechanoid woman looks mildly surprised, and a subtle warmth softens her voice.'}
+18	18		201							{1: '1', 2: '500486', 3: '1'}
+19	19		301				DialogDisable			"{1: '1', 2: 'Haicma', 3: ""It's been a while. A pleasure to meet you at the exhibition."", 4: '1'}"
+20	20		302							"{2: ""I've been looking forward to seeing you as well."", 3: '21'}"
+21	21		302							{2: 'Have you found something that interests you?', 3: '22'}
+22	22		301			DialogEnable				"{2: 'Haicma', 3: ""Pressed-flower collages. You arrange specimens into any pattern on paper, glue them down, and preserve them. It's a vintage craft popular among plant enthusiasts."", 4: '1'}"
+23	23		301							{2: 'Haicma', 3: 'This is my first time seeing the craft in person. The diversity of artistic forms truly is amazing.', 4: '1'}
+24	24		202							{1: '1', 6: '1'}
+25	25		201							{1: '1', 2: '500471', 5: '-300', 6: '400'}
+26	26		301							{1: '1', 2: 'Gardener Mechanoid', 3: 'For the Double Seventh Festival craft, our stall provides materials for on-site creation, and the second participant is free. Would you like to join?', 4: '1'}
+27	27		302							"{2: ""What does the first participant pay? I'll cover it."", 3: '28'}"
+28	28		202							{1: '1', 6: '1'}
+29	29		201							{1: '1', 2: '500486', 3: '1'}
+30	30		301							"{1: '1', 2: 'Haicma', 3: ""I've already paid. Thank you, Commandant."", 4: '1'}"
+31	31		202							{1: '1'}
+32	32		306							{1: '1'}
+33	33		301							"{3: ""Following Haicma's gaze, you notice an elegant bouquet of lilies in full bloom beside the table.""}"
+34	34		306							
+35	35		201							{1: '1', 2: '500486', 3: '1'}
+36	36		301							"{1: '1', 2: 'Haicma', 3: ""I cultivated these myself. I've treasured the memory of rescuing flowers with you and had hoped to use this bouquet to express my feelings."", 4: '1'}"
+37	37		301							{2: 'Haicma', 3: 'But I have found a way to preserve those feelings even longer.', 4: '1'}
+38	38		301				DialogDisable			{2: 'Haicma', 3: 'Besides, making this with you now makes the experience priceless.', 4: '1'}
+39	39		302							{2: 'Haicma...', 3: '40', 4: 'Your feelings are priceless as well.', 5: '40'}
+40	40		202							{1: '1'}
+41	41		401						600.0	{1: '2', 2: '5291'}
+42	42		301			DialogEnable				{3: 'The stall owner ushers you and Haicma behind a simple wind-break curtain and sets out the materials and tools one by one.'}
+43	43		402							{1: '5291'}
+44	44		201							{1: '1', 2: '500471', 5: '-300', 6: '400'}
+45	45		301							{1: '1', 2: 'Gardener Mechanoid', 3: 'Steps: design the composition, choose the flowers, arrange and glue them, then frame the artwork. Wishing you both a pleasant Double Seventh Festival.', 4: '1'}
+46	46		202							{1: '1'}
+47	47		401							{1: '2', 2: '764'}
+48	48		301							{3: 'The mechanoid bows with clumsy sincerity, hums away like a lawn mower, and leaves the two of you alone.'}
+49	49		306							{1: '1'}
+50	50		301							{3: 'A wooden crate before you holds many sealed jars. Vivid petals and leaves are frozen at their liveliest, waiting for a creative hand to grant them new life.'}
+51	51		306							
+52	52		201							{1: '1', 2: '500486'}
+53	53		301							"{1: '1', 2: 'Haicma', 3: 'Humans call spontaneous creative thought ""inspiration."" After running a self-check, I can confirm that whenever I\'m with you, inspiration always bursts within me.', 4: '1'}"
+54	54		302							{2: 'So you already have an idea.', 3: '55'}
+55	55		301							"{2: 'Haicma', 3: '""Galaxy"" is such a beautiful word.', 4: '1'}"
+56	56		301				DialogDisable			{2: 'Haicma', 3: 'Even though luminous celestial bodies are nothing like liquid and come in far more than one color, once I understood how it feels to gaze at the stars from the ground, it became one of my favorite metaphors.', 4: '1'}
+57	57		302							{2: 'Using the colors of the earth to depict a galaxy?', 3: '58'}
+58	58		302							"{2: ""That's very romantic."", 3: '59', 4: 'Your study of rhetoric is paying off.', 5: '59'}"
+59	59		204							{1: '1', 2: '1'}
+60	60		301			DialogEnable				{2: 'Haicma', 3: 'Since this is a joint mission, you should choose the materials. I trust your taste.', 4: '1'}
+61	61		306							{1: '1'}
+62	62		301							"{3: 'If you pursued the literal meaning of ""galaxy,"" you would choose white, but remembering the sparkle in Haicma\'s eyes when she mentioned ""inspiration,"" your hand shifts course.'}"
+63	63		301							{3: 'White light is the sum of every color, just like the mechanoid woman before you, filled with endless possibilities.'}
+64	64		301				DialogDisable			{3: 'Instead, you pick up a jar of tiny petals that match her eye color and gently place one against her temple.'}
+65	65		306							
+66	66		302							{2: 'Light gold really suits your eyes.', 3: '67'}
+67	67		201							{1: '1', 2: '500486', 3: '7'}
+68	68		301			DialogEnable				{2: 'Haicma', 3: 'A colorful galaxy? I see.', 4: '1'}
+69	69		202							{1: '1'}
+70	70		301							{3: 'Haicma fixes her gaze on the empty black cardstock, running unknown calculations.'}
+71	71		301							{3: 'Moments later, she picks up angled tweezers, takes a little from each jar you selected, and quickly arranges the dried flowers into a pattern on the card.'}
+72	72		302							"{2: ""You feel you've seen this design somewhere before..."", 3: '73'}"
+73	73		201							{1: '1', 2: '500486'}
+74	74		301							"{1: '1', 2: 'Haicma', 3: ""It's an H-R diagram. It marks stellar temperature and luminosity with color, which perfectly suits the colors you chose."", 4: '1'}"
+75	75		302							{2: 'Ah, from the spectroscopy class—what an interesting design.', 3: '76', 4: 'Knowledge has its own beauty.'}
+76	76		301							{2: 'Haicma', 3: 'Your praise is so direct that I can hardly stop myself from wanting to talk with you more and spend more time together.', 4: '1'}
+77	77		301							"{3: ""The white mechanoid's expression remains calm, yet her words overflow with sincerity.""}"
+78	78		301							"{2: 'Haicma', 3: 'Quoted from ""Human-Machine Interaction Guide: Intimate Relationships"".', 4: '1'}"
+79	79		301				DialogDisable			"{2: 'Haicma', 3: '""When you wish to grow closer to a human, you can express your feelings like this,"" the book says. Did I use it correctly?', 4: '1'}"
+80	80		302							"{2: 'You used it perfectly.', 3: '81', 4: ""(You didn't need to cite your source, but...)"", 5: '81'}"
+81	81		302							"{2: ""Let's begin, together."", 3: '82'}"
+82	82		202							{1: '1'}
+83	83		401					300.0		{1: '2', 2: '5281'}
+84	84		301			DialogEnable	DialogDisable			{3: 'You pick up the tweezers, and both you and Haicma immerse yourselves in creating.'}
+85	85		306							{1: '1'}
+86	86		307							"{1: ""The white laceflower and baby's breath suggest the reserved curiosity of a first meeting;"", 3: '50', 4: 'FFFFFF'}"
+87	87		301							"{3: ""The white laceflower and baby's breath suggest the reserved curiosity of a first meeting;""}"
+88	88		307						400.0	{2: '1'}
+89	89		307							{1: 'Marigold and yellow violet recall the lingering longing of separation;', 3: '50', 4: 'FFDE59'}
+90	90		301							{3: 'Marigold and yellow violet recall the lingering longing of separation;'}
+91	91		307						400.0	{2: '1'}
+92	92		307							{1: 'Portulaca and red dianthus evoke hearts leaning gently on each other.', 3: '50', 4: 'FCA8CA'}
+93	93		301							{3: 'Portulaca and red dianthus evoke hearts leaning gently on each other.'}
+94	94		307							{2: '1'}
+95	95		301			DialogEnable				{3: 'The universe is lonely and cold, with vast space and endless time keeping people apart, yet humans build bridges of radiant imagination and pray for reunion.'}
+96	96		306							
+97	97		201							{1: '1', 2: '500486'}
+98	98		301							{1: '1', 2: 'Haicma', 3: 'The composition is perfect. We can proceed. Please hand me the specimen adhesive.', 4: '1'}
+99	99		202							{1: '1'}
+100	100		301							{3: 'With the two finished collages weighed down to dry, the white mechanoid sits perfectly still at your side, waiting for the glue to set.'}
+101	101		301							{3: 'Humans cannot sense the magnetic fields, wavelengths, or other signals mechanoids use to communicate, yet she still tries so hard to sense you.'}
+102	102		301							{3: 'Perhaps the understanding between human and mechanoid is itself a miracle as vast as the universe.'}
+103	103		302							"{2: '""For we are the local embodiment of a Cosmos grown to self-awareness.""', 3: '104'}"
+104	104		201							{1: '1', 2: '500486'}
+105	105		301							{1: '1', 2: 'Haicma', 3: 'A line from astronomer Carl Sagan. The common view is that his opinions about his field—especially the unknown—were overly sentimental.', 4: '1'}
+106	106		302							"{2: 'The common view is not the only view.', 3: '107', 4: ""I'd like to hear your view.""}"
+107	107		301							{2: 'Haicma', 3: 'Speaking from the heart, I admire another similar line of his and have tried adapting it.', 4: '1'}
+108	108		204							{1: '1', 2: '1'}
+109	109		301				DialogDisable			{2: 'Haicma', 3: '【kuroname】, when I look at you, I too glimpse the outline of the universe.', 4: '1'}
+110	110		202							{1: '1'}
+111	111		401						600.0	{1: '2', 2: '5526'}
+112	112		301			DialogEnable				{3: 'Haicma hands you the framed flower-and-leaf galaxy with both hands, then gently takes your wrist.'}
+113	113		201							{1: '1', 2: '500486', 3: '1'}
+114	114		301							"{1: '1', 2: 'Haicma', 3: ""Although I traded that bouquet of lilies for the gift, I've planted another pot that should bloom next week."", 4: '1'}"
+115	115		301							"{2: 'Haicma', 3: ""Even if it isn't a festival, may I still give them to you?"", 4: '1'}"
+116	116		302							{2: 'If you wish.', 3: '117', 4: 'Anytime, anywhere.', 5: '117'}
+117	117		301		1		AniZhuanchangBegin			{3: 'Her smile, bright as the galaxy, is answer enough.'}

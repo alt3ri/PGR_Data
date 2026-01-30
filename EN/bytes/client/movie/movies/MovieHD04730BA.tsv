@@ -1,0 +1,152 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		306			AniZhuanchangEnd				{1: '1'}
+2	2		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory802.jpg'}
+3	3		401							{1: '1', 2: '5061'}
+4	4		401							{1: '2', 2: '2915'}
+5	5		301			DialogEnable				{3: 'Night draws in, yet Constellia stays lively. Lamps of every color blink on, wrapping the streets in a warm, bustling glow.'}
+6	6		201							{1: '1', 2: '500739', 3: '3'}
+7	7		301							{1: '1', 3: 'Across the street, a mermaid focuses on a small stall, her profile frozen in the light like a still painting.'}
+8	8		301				DialogDisable			"{3: 'Paper lanterns pile high, crowding around a sign that reads ""Wishing Lanterns"".'}"
+9	9		306							
+10	10		302							"{2: '""Wishing Lanterns""? Are you interested in these?', 3: '11', 4: 'Got a wish you hope will come true?', 5: '11'}"
+11	11		502							{1: 'DialogEnable'}
+12	12		301			PanelActor1Shake				{2: 'Lamia', 3: 'Ah,【kuroname】?!', 4: '1'}
+13	13		204							{1: '1', 2: '2'}
+14	14		301							{2: 'Lamia', 3: 'When did you get here... Oh no, you saw me spacing out. How embarrassing...', 4: '1'}
+15	15		203							{1: '1', 2: '0.25', 3: '400'}
+16	16		201							{1: '2', 2: '500488', 4: '-400', 5: '-250', 6: '400'}
+17	17		301							{1: '1', 2: 'Mechanoid Vendor', 3: 'Wishing lanterns. Meaning: items that carry heartfelt wishes. Use: write or draw your wish on the lantern; candle heat lifts it into the sky.', 4: '2'}
+18	18		301							{2: 'Mechanoid Vendor', 3: 'Double Seventh limited-time event. Couples only. Free stationery set included. May the two of you see your wish fulfilled.', 4: '2'}
+19	19		203						500.0	{1: '2', 2: '0.5', 3: '-400', 4: '-300', 5: '400'}
+20	20		203							{1: '2', 2: '0.25', 3: '-400', 4: '-250', 5: '400'}
+21	21		401							{1: '2', 2: '9351040'}
+22	22		301				DialogDisable			{3: 'The mechanoid fluently finishes its pitch and hands over a large lantern gift box.'}
+23	23		202							{1: '1', 2: '2'}
+24	24		302							{2: '(Take the wishing lantern)', 3: '25'}
+25	25		104						250.0	{1: '0|-20|-50', 2: '0.5'}
+26	26		104							{1: '0|20|-50', 2: '0.5'}
+27	27		301			DialogEnable				{3: 'Lamia studies your encouraging smile, trying to be sure of what you mean.'}
+28	28		201							{1: '1', 2: '500739'}
+29	29		301							{1: '1', 2: 'Lamia', 3: 'So, 【kuroname】... you will make a wish with me?', 4: '1'}
+30	30		302							{2: 'Of course.', 3: '31'}
+31	31		204							{1: '1', 2: '2'}
+32	32		301							{2: 'Lamia', 3: 'There are so many people here. Could we find somewhere quieter to make our wish?', 4: '1'}
+33	33		302							"{2: ""Sure, let's take a walk."", 3: '34'}"
+34	34		203							{1: '1', 2: '0.5', 4: '-50', 5: '-100'}
+35	35		301							{3: 'She stays close beside you as you weave through the crowded street.'}
+36	36		402							{1: '2915'}
+37	37		401							{1: '1', 2: '36'}
+38	38		202							{1: '1', 6: '1'}
+39	39		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg', 3: '0', 4: '1', 5: '1'}
+40	40		205							{1: '999'}
+41	41		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+42	42		401							{1: '1', 2: '399'}
+43	43		401							{1: '2', 2: '913'}
+44	44		301							{3: 'Soon a quiet river comes into view. The bustle fades behind you, and a moist night breeze brushes your face.'}
+45	45		201							{1: '1', 2: '500739', 3: '1'}
+46	46		301							{1: '1', 2: 'Lamia', 3: 'This spot is perfect. The river breeze feels so nice.', 4: '1'}
+47	47		204							{1: '1'}
+48	48		301							"{2: 'Lamia', 3: ""Then let's write our wishes on the lantern together."", 4: '1'}"
+49	49		204							{1: '1', 2: '14'}
+50	50		301							"{3: ""Even in a quiet, distraction-free setting, Lamia stares intently at the lantern in front of her. But she still hasn't picked up her pen, and there's a hint of frustration on her face.""}"
+51	51		204							{1: '1', 2: '2'}
+52	52		301							{2: 'Lamia', 3: 'I have so many wishes... Which one should I write first?', 4: '1'}
+53	53		301							{2: 'Lamia', 3: 'Maybe next maintenance I could change my hair color? No, wasting a wish on something so small... feels kinda silly.', 4: '1'}
+54	54		301							"{2: 'Lamia', 3: ""I want to be smarter, prettier, stronger... No, I can't even picture that version of me..."", 4: '1'}"
+55	55		204							{1: '1'}
+56	56		301							"{2: 'Lamia', 3: ""I also want to do fun things with 【kuroname】: walk in a park, watch movies, eat ice cream... But which comes first? I can't decide."", 4: '1'}"
+57	57		204							{1: '1', 2: '14'}
+58	58		301			PanelActor1Shake				"{2: 'Lamia', 3: ""Oh no... There are too many wishes! Whether I write or draw, they won't fit on one lantern."", 4: '1'}"
+59	59		301							{2: 'Lamia', 3: 'This is hard... What should I do...', 4: '1'}
+60	60		301				DialogDisable			{3: 'Lamia lowers her head, unsure what to do.'}
+61	61		302							{2: 'Maybe start by thinking about nothing at all.', 3: '62'}
+62	62		302							{2: 'Close your eyes and clear your mind.', 3: '63'}
+63	63		301			DialogEnable				{2: 'Lamia', 3: 'Eh, like this?', 4: '1'}
+64	64		204							{1: '1', 2: '10'}
+65	65		301							"{3: ""She isn't sure what to do next, but after only a brief pause, Lamia closes her eyes just as you asked.""}"
+66	66		302							{2: '(Grab her hand)', 3: '67'}
+67	67		204							{1: '1', 2: '8'}
+68	68		301							{2: 'Lamia', 3: 'What now? Hey, no tricks!', 4: '1'}
+69	69		203							{1: '1', 2: '0.25', 5: '-100'}
+70	70		104							{1: '0|0|-100', 2: '0.25'}
+71	71		401							{1: '2', 2: '1543'}
+72	72		301							{3: 'Her hand rests in your palm, bringing you closer than before.'}
+73	73		301				DialogDisable			{3: 'Her eyes are shut tight, and her trembling lashes cast flickering shadows on her cheeks. She seems genuinely worried you might actually pull some kind of prank.'}
+74	74		302							{2: 'Just relax, and then focus on the first image that comes to mind.', 3: '75'}
+75	75		302							{2: 'Maybe that image is the wish you want most.', 3: '76'}
+76	76		301			DialogEnable				{2: 'Lamia', 3: 'Hmm, in that case... the first image I see...', 4: '1'}
+77	77		204							{1: '1', 2: '10'}
+78	78		301							"{2: 'Lamia', 3: ""Ah... if that's how it works, this will do nicely!"", 4: '1'}"
+79	79		204							{1: '1', 2: '1'}
+80	80		301							{3: 'She opens her eyes and breaks into a smile, as if a decision has been made.'}
+81	81		204							{1: '1'}
+82	82		301							{3: 'Meeting your gaze, she blushes, hastily lifts the lantern, and blocks your view.'}
+83	83		301							{2: 'Lamia', 3: '【kuroname】... n-no peeking yet! Y-you have to think about your own wish too!', 4: '1'}
+84	84		301							"{2: 'Lamia', 3: ""W-we'll trade once we're both done, okay?"", 4: '1'}"
+85	85		302							{2: 'Of course.', 3: '86'}
+86	86		204							{1: '1', 2: '1'}
+87	87		301							"{3: ""Through the lantern's thin paper you can just make out Lamia's focused face. She's bent over, completely absorbed in her drawing.""}"
+88	88		202							{1: '1'}
+89	89		401							{1: '2', 2: '4638'}
+90	90		401							{1: '2', 2: '4380'}
+91	91		306							{1: '1'}
+92	92		301							{3: 'A gentle night breeze brushes your ears, and far-off festival sounds murmur in the distance.'}
+93	93		402							{1: '4380'}
+94	94		402							{1: '4638'}
+95	95		401							{1: '2', 2: '911'}
+96	96		301							{3: 'You turn to your half of the lantern and write a single line straight from the heart.'}
+97	97		306							
+98	98		201							{1: '1', 2: '500739', 3: '2'}
+99	99		301				DialogDisable			{1: '1', 2: 'Lamia', 3: 'There... that should do it. Can we swap now, 【kuroname】?', 4: '1'}
+100	100		302							"{2: ""I'm finished too."", 3: '101'}"
+101	101		202							{1: '1'}
+102	102		402							{1: '913'}
+103	103		401						500.0	{1: '1', 2: '36'}
+104	104		401							{1: '1', 2: '6225'}
+105	105		304							"{1: ""The mermaid takes a deep breath, then carefully turns the lantern so her side faces you—it's a drawing."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1'}"
+106	106		304							{1: 'A small room housing cute plush toys and delicate desserts; a girl with a fish tail stands at its center.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1'}
+107	107		304							{1: 'Beside her, hand in hand, is a figure that looks unmistakably like you.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1'}
+108	108		304							{1: 'There are no words, but the slightly clumsy strokes already make her wish perfectly clear.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1', 9: '1'}
+109	109		201							{1: '1', 2: '500739'}
+110	110		301			DialogEnable				{1: '1', 2: 'Lamia', 3: 'And 【kuroname】 wrote...', 4: '1'}
+111	111		301			PanelActor1Shake				"{2: 'Lamia', 3: ""E-eek, you... you really... feel that way? I thought you'd write something else..."", 4: '1'}"
+112	112		204							{1: '1', 2: '3'}
+113	113		301							{3: 'Reading your words, she looks both thrilled and shy.'}
+114	114		301							{3: 'Her cheeks flare red. She turns away awkwardly but keeps stealing glances, checking if you truly meant those words.'}
+115	115		302							{2: 'These are my true feelings.', 3: '116'}
+116	116		204							{1: '1', 2: '1'}
+117	117		301							{3: 'After getting a reassuring answer, Lamia finally smiles. The shyness from before turns into a lively energy, and in the night, her eyes shine with a rare, radiant light.'}
+118	118		204							{1: '1'}
+119	119		301							{2: 'Lamia', 3: 'I almost forgot! The vendor said our wish only comes true if we let the lantern fly.', 4: '1'}
+120	120		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCommon/FxUi2DLihuiFireGlow1000.prefab', 2: '2', 3: '1', 4: '1'}
+121	121		401						500.0	{1: '2', 2: '4348'}
+122	122		402							{1: '4348'}
+123	123		301							{3: 'She fumbles to fit the candle and lights it. The flickering glow reflects in her eyes like tiny stars.'}
+124	124		301							{3: 'She gently lifts the lantern. In the dancing light, her drawing almost seems alive.'}
+125	125		301							"{2: 'Lamia', 3: ""Then... let's release it together, 【kuroname】."", 4: '1'}"
+126	126		302							{2: '(Release it together with her)', 3: '127'}
+127	127		502							{1: 'AniZhuanchangBegin'}
+128	128		306							{1: '1'}
+129	129		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCommon/FxUi2DLihuiFireGlow1000.prefab', 4: '1'}
+130	130		202							{1: '1', 6: '1'}
+131	131		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg'}
+132	132		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiColorTableStageMain/FxUiColorTableStageRollStarLoop.prefab', 2: '2'}
+133	133		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'The lantern rises, carrying your wishes, drifting into the night until it blends with the stars. Lamia watches it go, smiling with silent hope.'}
+134	134		502							{1: 'DialogDisable'}
+135	135		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiColorTableStageMain/FxUiColorTableStageRollStarLoop.prefab'}
+136	136		101						250.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+137	137		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlinkNew.prefab', 2: '2'}
+138	138		502							{1: 'AniZhuanchangEnd'}
+139	139		201							{1: '1', 2: '500739', 3: '1'}
+140	140		203							{1: '1', 2: '0.5', 4: '-50', 5: '-100'}
+141	141		301			DialogEnable				{1: '1', 3: 'You sit with her by the river, savoring the warm silence. Neither speaks, yet you feel her frame inch closer.'}
+142	142		204							{1: '1', 2: '10'}
+143	143		203							{1: '1', 2: '0.5', 4: '-80', 5: '-100'}
+144	144		301							{3: 'It grows late. She seems tired and lies down, resting her head on your lap like a gentle kitten.'}
+145	145		401							{1: '2', 2: '2617'}
+146	146		301							"{3: ""For a long while, the only sound is her soft, steady breathing. It gradually slows, as if she's already drifted into sleep.""}"
+147	147		402							{1: '2617'}
+148	148		301							"{3: ""You carefully adjust your position so she rests more comfortably. She doesn't wake, only murmurs faintly.""}"
+149	149		306							
+150	150		301							{2: 'Lamia', 3: '【kuroname】... the curtains in our room... what color do you like...', 4: '1'}
+151	151		301		1		AniZhuanchangBegin			{2: 'Lamia', 3: 'If possible... I... still want to...', 4: '1'}

@@ -1,0 +1,474 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory256.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		107						3000.0	{1: 'Babylonia', 2: 'Science Council Section 2', 4: 'November 9, 13:17, two hours before the Inquiry Meeting'}
+4	4		108							{1: '1'}
+5	5		401							{1: '2', 2: '4095'}
+6	6		201							{1: '1', 2: '500004'}
+7	7		301			DialogEnable				{1: '1', 3: 'Asimov is still going through the report with a long face when you finish reading the last page of it and close the file.'}
+8	8		302							{2: 'Uhh...', 3: '9'}
+9	9		202							{1: '1', 6: '1'}
+10	10		201							{1: '1', 2: '500630', 4: '400'}
+11	11		201							{1: '2', 2: '500004', 4: '-400'}
+12	12		301							{1: '1', 2: 'Duheng', 3: 'Let him finish reading it.', 4: '1'}
+13	13		301							"{3: 'Having introduced herself as ""Duheng"", this councilor of Kowloong shakes her head, signaling that she doesn\'t mind Asimov taking his time with reading the report.'}"
+14	14		301							"{3: ""The over 200-page report didn't take you all that long to skim through because you barely understand anything, but from the look on Asimov's face now, you can tell just how much the details in the report matter to him.""}"
+15	15		301							"{2: 'Asimov', 3: ""Holy... I can't believe this..."", 4: '2'}"
+16	16		301							{3: 'Asimov picks up the coffee cup by the table like he always does, failing to maintain his usual composure.'}
+17	17		301							{2: 'Asimov', 3: 'Where did you get this report?', 4: '2'}
+18	18		301							"{2: 'Duheng', 3: ""An old friend? Well, I guess I wouldn't call them that... Anyhow I promised them to keep the source of this report confidential."", 4: '1'}"
+19	19		301							{2: 'Asimov', 3: 'Has anyone else seen this report?', 4: '2'}
+20	20		301							{2: 'Duheng', 3: '...Only a few people know.', 4: '1'}
+21	21		202							{1: '1', 2: '2', 6: '1'}
+22	22		401							{1: '2', 2: '2711'}
+23	23		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+24	24		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory52.jpg'}
+25	25		504							{1: '0.7'}
+26	26		201							{1: '1', 2: '500630', 3: '4', 6: '1'}
+27	27		301							{1: '1', 2: 'Duheng', 3: '...Totally goes to show the taste of that bunch of lunatics, I suppose.', 4: '1'}
+28	28		204							{1: '1'}
+29	29		301							{2: 'Duheng', 3: 'Hey, are you seeing this?', 4: '1'}
+30	30		301							{2: '???', 3: 'Yes... and the data is crystal clear.'}
+31	31		301							"{2: 'Duheng', 3: ""Huaxu, the mechanoids, and the North Asian Research Institute of Life Science and Evolution... They've got themselves a rowdy party, I see."", 4: '1'}"
+32	32		202							{1: '1', 6: '1'}
+33	33		301							"{2: '???', 3: ""Huaxu came up with Tabula Akasha, and it's obvious that these hackers are trying to copy that. They even went as far as stealing the technology that NARI had come up with on brain science.""}"
+34	34		301							"{2: '???', 3: ""But they only ended up replicating a tiny little part of Villier's technology, which is why they weren't able to build a second Huaxu and Tabula Akasha.""}"
+35	35		301							{2: '???', 3: 'Nothing borrowed is ever ground-breaking.'}
+36	36		201							{1: '1', 2: '500630'}
+37	37		301							{1: '1', 2: 'Duheng', 3: 'Never hurts to give things a try... no?', 4: '1'}
+38	38		301							"{2: '???', 3: ""I don't exactly have faith in something that a bunch of lunatics come up with. Do you believe in Tabula Akasha?""}"
+39	39		301							"{2: 'Duheng', 3: ""It doesn't really matter if I do."", 4: '1'}"
+40	40		301							{2: 'Duheng', 3: 'Well... live on as a bargaining chip for us, then.', 4: '1'}
+41	41		202							{1: '1', 6: '1'}
+42	42		301							"{2: '???', 3: ""I don't really understand why you keep that data, but this better not screw up our deal.""}"
+43	43		301							{2: '???', 3: 'I need these things as a trump card, and I have the intel you want... We both have what the other person wants.'}
+44	44		201							{1: '1', 2: '500630'}
+45	45		301							"{1: '1', 2: 'Duheng', 3: ""For someone who tells the world how much he hates politicians, this move is a rather political one, wouldn't you say, Mr. Ballard?"", 4: '1'}"
+46	46		202							{1: '1', 6: '1'}
+47	47		201							{1: '1', 2: '500630', 4: '400'}
+48	48		201							{1: '2', 2: '500686', 4: '-400'}
+49	49		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+50	50		301							{1: '1', 2: 'Ballard', 3: 'I only care if things get done.', 4: '2'}
+51	51		301							{2: 'Duheng', 3: 'Exactly what I thought a soldier like yourself would say.', 4: '1'}
+52	52		301							{2: 'Ballard', 3: 'Fort Winter... Hmph, I see it.', 4: '2'}
+53	53		301							"{2: 'Duheng', 3: ""I'm still curious why you're interested in these things."", 4: '1'}"
+54	54		301							"{2: 'Duheng', 3: ""I've seen the old files you'd left at the World Government. The classified ones, that is... And based on your actions and resume, you don't seem like someone interested in these inhumane things."", 4: '1'}"
+55	55		301							"{2: 'Ballard', 3: ""My principles remain unchanged. I'm disgusted by the fact that I have to do things in ways less than glorious, but intel and info are power."", 4: '2'}"
+56	56		301							"{2: 'Ballard', 3: ""I wouldn't worry about things I don't need to worry about if I were you."", 4: '2'}"
+57	57		301							{2: 'Duheng', 3: 'Very well, then please give me what I need.', 4: '1'}
+58	58		301							{2: 'Ballard', 3: '...', 4: '2'}
+59	59		301							"{2: 'Duheng', 3: ""Hesitance didn't show up as part of your personality in your profile."", 4: '1'}"
+60	60		301							"{2: 'Ballard', 3: ""I'm just weighing my risk here."", 4: '2'}"
+61	61		301							"{2: 'Duheng', 3: ""Do you really think I'm stupid enough to betray you over a secret that can shake all of Babylonia?"", 4: '1'}"
+62	62		301							"{2: 'Ballard', 3: ""This report has been in the making since my time at the Security Intelligence Bureau, but what I'm trying to do is more important than this report."", 4: '2'}"
+63	63		301							"{2: 'Duheng', 3: ""I've heard a lot about what the World Government's Security Intelligence Bureau did to get their hands on what they wanted."", 4: '1'}"
+64	64		301							"{2: 'Duheng', 3: ""But as you can see, I am ostracized in Babylonia because I'm from Kowloong. And in Kowloong, I am ostracized because I'm a government official. I have no family, no children..."", 4: '1'}"
+65	65		301							"{2: 'Duheng', 3: ""Well, I assume you've done your research about me already, no?"", 4: '1'}"
+66	66		301							{2: 'Ballard', 3: '...I hope this report can be put to good use in your hands.', 4: '2'}
+67	67		301							{2: 'Ballard', 3: 'Stirring up public opinion and sentiment within Babylonia will make it easier for me to do what I want to do, too.', 4: '2'}
+68	68		301							{2: 'Duheng', 3: 'Of course.', 4: '1'}
+69	69		301							"{2: 'Duheng', 3: ""We're in this together."", 4: '1'}"
+70	70		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+71	71		202							{1: '2', 6: '1'}
+72	72		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory256.png'}
+73	73		504							{1: '0'}
+74	74		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+75	75		201							{1: '1', 2: '500630'}
+76	76		301							"{1: '1', 2: 'Duheng', 3: ""Besides the source of intelligence and me, it's just you two."", 4: '1'}"
+77	77		302							{2: 'Qu?!', 3: '78'}
+78	78		301							{2: 'Duheng', 3: 'We can talk about this later.', 4: '1'}
+79	79		202							{1: '1', 2: '2', 6: '1'}
+80	80		201							{1: '1', 2: '500004'}
+81	81		301							{1: '1', 2: 'Asimov', 3: '...Everything aside, do you know what this report means?', 4: '1'}
+82	82		204							{1: '1', 2: '7'}
+83	83		301							"{2: 'Asimov', 3: ""It's lies... lies that span decades."", 4: '1'}"
+84	84		301							"{2: 'Asimov', 3: ""Everything we know today and the technologies we benefit from as a civilization, they're all riddled with lies..."", 4: '1'}"
+85	85		401						300.0	{1: '2', 2: '4045'}
+86	86		402							{1: '4045'}
+87	87		301							{3: 'Asimov puts his coffee cup back on the table, unable to stop his hand from shaking.'}
+88	88		301							"{3: ""Asimov didn't seem to notice the Transcendant that just came up in the conversation. Not only that, he even showed a slight lapse in his otherwise always-logical speech. This, as far as you can recall, is a first.""}"
+89	89		302							{2: 'Asimov.', 3: '90'}
+90	90		204							{1: '1'}
+91	91		301							{2: 'Asimov', 3: 'Oh... thanks.', 4: '1'}
+92	92		301							"{3: ""It isn't until you grab Asimov's arm that he snaps out of his fear and shock.""}"
+93	93		301							{3: 'He casts a glance at you and Duheng sitting at the table. At last, his gaze finally lands on the book-thick report on the table.'}
+94	94		301							"{2: 'Asimov', 3: ""From the start of the Gestalt Project by the Science Council to the last Great Evacuation, this report covers every last detail of the project overviews and branches. Safe to say this report is like an index... No, it's more like a phylogenetic tree."", 4: '1'}"
+95	95		301							{2: 'Asimov', 3: 'Just like how all life on Earth as we know it is part of a phylogenetic tree.', 4: '1'}
+96	96		301							{2: 'Asimov', 3: 'Fort Winter, Project Winter, Project Cthylla, M.I.N.D., the Inver-Device, and Tantalum copolymer, including Huaxu, Tabula Akasha, and the Humanoid Hybrid Construct Plan that no one really ever talks about... No, there is more to it than everything I just said.', 4: '1'}
+97	97		301							"{2: 'Asimov', 3: 'There\'s also the Interstellar Navigation Plan that includes Babylonia itself, the ""Mechanical Consciousness Experiment"" that no one has ever been able to find any data for, and countless other technical details that I\'ve never heard of myself.', 4: '1'}"
+98	98		301							"{2: 'Asimov', 3: 'These determine everything we know today, as ""branches"" and ""leaves"" of this evolutionary tree.', 4: '1'}"
+99	99		301							"{2: 'Asimov', 3: 'At certain marked nodes of special technologies and years, some technologies and events split off from the previous branch to become ""leaves.""', 4: '1'}"
+100	100		401							{1: '2', 2: '2768'}
+101	101		301							{3: 'As he speaks, Asimov flips open the report on the table.'}
+102	102		301				AniZhuanchangBegin			"{2: 'Asimov', 3: 'For example, here, ""Internal Notice from the Science Council\'s Research Ethics Committee on Inhumane Human Experiments""—', 4: '1'}"
+103	103		304			AniZhuanchangEnd				"{1: ""...According to the agreement between the Science Council's Ethics Committee and the Science Council, the following statement was made:"", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 10: '1'}"
+104	104		304							{1: 'The Science Council has always opposed inhumane human experiments. This decision is based on the evolution of human civilization and scientific morality over thousands of years, in line with humanity.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 10: '1'}
+105	105		304							{1: 'No group, organization, institution, or individual shall use coercive or non-coercive means…', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 10: '1'}
+106	106		304							{1: 'To require any natural person to participate in live or non-live human experiments unauthorized by the Science Council.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 10: '1'}
+107	107		304							{1: 'Researchers involved in such experiments will not be accredited by the Science Council and will be expelled. The Science Council is committed to eradicating such experiments.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 7: '1', 10: '1'}
+108	108		304							{1: '...Based on the above consensus, the decision to expel Dr. Bernard Godwin has been made in light of his unauthorized inhumane experiments seriously violating the moral bottom line of humanity…', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 10: '1'}
+109	109		304				AniZhuanchangBegin			"{1: ""Consistent with this decision, we hold reservations regarding the World Government's authorization for death row inmates to participate in related experiments…"", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 9: '1', 10: '1'}"
+110	110		301			AniZhuanchangEnd				"{2: 'Asimov', 3: ""This is an internal notice that's never been made public."", 4: '1'}"
+111	111		301							"{2: 'Asimov', 3: ""It seems like this internal document actually indicates the Science Council's opposition to the World Government's notorious human experimentation bill."", 4: '1'}"
+112	112		301							{2: 'Asimov', 3: 'I only know that there was once an inhumane human consciousness experiment in Kowloong. The Council publicly condemned it, but that incident happened long after the date on this notice...', 4: '1'}
+113	113		202							{1: '1', 6: '1'}
+114	114		201							{1: '1', 2: '500630', 3: '4', 4: '400'}
+115	115		201							{1: '2', 2: '500004', 4: '-400'}
+116	116		301							{1: '1', 2: 'Duheng', 3: 'The human consciousness experiment in Kowloong... Are you talking about the Fuxi Research Institute case where they misappropriated M.I.N.D. and AI technologies?', 4: '1'}
+117	117		301							"{2: 'Asimov', 3: ""Yup, that's exactly the one I'm talking about."", 4: '2'}"
+118	118		301							{2: 'Duheng', 3: 'The case was closed before I started my political career. I remember Qu personally took over the handling of it with the Science Council.', 4: '1'}
+119	119		301							"{2: 'Asimov', 3: ""That's right. According to records from the Science Council, that joint judgment brought about a lot of negative public opinion. I always thought that the Science Council had allowed these experiments to happen until then."", 4: '2'}"
+120	120		301				DialogDisable			{2: 'Asimov', 3: 'But this notice is marked at the forefront of Project Winter and Project Cthylla, and the time is much earlier than when the judgment took place.', 4: '2'}
+121	121		302							"{2: ""Logically, the Science Council wouldn't issue a notice for something that hadn't happened yet."", 3: '122'}"
+122	122		302							{2: 'Which means...', 3: '123'}
+123	123		302							{2: 'Seems like the Council saw Project Winter coming even back then.', 3: '124'}
+124	124		301			DialogEnable				{2: 'Asimov', 3: 'Exactly.', 4: '2'}
+125	125		302							"{2: ""The Science Council isn't a political entity, but there was no way for it to stay out of this political mud-water."", 3: '126'}"
+126	126		301							"{2: 'Asimov', 3: ""None of these made sense to me at first. I mean, I'm sure the Science Council was well aware of Project Winter's existence, and given how they tended to conduct themselves, there is no way they would have allowed these parasites to grow within its ranks."", 4: '2'}"
+127	127		301				DialogDisable			{2: 'Asimov', 3: 'But judging from what it says in this report here...', 4: '2'}
+128	128		302							{2: 'The Council knew all along that this would happen.', 3: '129'}
+129	129		302							{2: 'They might have put up a hard fight back then. We never know.', 3: '130'}
+130	130		301			DialogEnable				{2: 'Asimov', 3: '...This notice is where these inhumane experiments under Project Winter started.', 4: '2'}
+131	131		301							"{2: 'Asimov', 3: ""In the Science Council, expulsion is the most severe punishment. Without the Council's certification, no researcher can obtain any funding or support through official channels. Not only that, they'd end up being a laughing stock and having their dignity destroyed as a scientist."", 4: '2'}"
+132	132		301							{2: 'Duheng', 3: 'Sounds like some sort of ancient medieval religious punishment...', 4: '1'}
+133	133		301							{2: 'Asimov', 3: 'I see the resemblance, too, and I guess it works quite well.', 4: '2'}
+134	134		301							{2: 'Asimov', 3: 'At least the Science Council was already aware of these filthy parasites back then and tried to get rid of them, except those lousy maggots that had been expelled found new rotten flesh to live on.', 4: '2'}
+135	135		301							{3: 'Asimov looks at you and, after a knowing nod, says no more.'}
+136	136		301							{2: 'Duheng', 3: 'You mean Kurono?', 4: '1'}
+137	137		301							{2: 'Asimov', 3: 'Yes.', 4: '2'}
+138	138		202							{1: '1', 2: '2', 6: '1'}
+139	139		201							{1: '1', 2: '500004', 3: '8'}
+140	140		301							{1: '1', 3: 'Asimov presses his temples hard, looking as though he is facing a bunch of towering executioners of human morality rather than a two-hundred-page report.'}
+141	141		204							{1: '1'}
+142	142		301							"{2: 'Asimov', 3: ""If we cross-check the names of those people working for Kurono with the names of those who got expelled by the Science Council, we'll probably see that half of those working for Kurono are those who got kicked out back then. Or at least that's what I remember."", 4: '1'}"
+143	143		301							"{2: 'Asimov', 3: 'Just like a tree, they branched out from this node as a thick ""branch.""', 4: '1'}"
+144	144		301				AniZhuanchangBegin			"{2: 'Asimov', 3: 'For example, next to this thick branch is the ""Mechanical Consciousness Experiment"", and this isn\'t something you can find in the Council\'s database in Babylonia...', 4: '1'}"
+145	145		502							{1: 'DialogDisable'}
+146	146		401							{1: '2', 2: '2768'}
+147	147		304			AniZhuanchangEnd				{1: 'Experiment log, number 08221…', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 10: '1'}
+148	148		304							"{1: 'MPA-01 asked me today if machines have ""souls.""', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 10: '1'}"
+149	149		304							"{1: ""To be honest, I don't know how to answer that question."", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 10: '1'}"
+150	150		304							"{1: 'The so-called ""soul"" is, of course, a non-existent supernatural phenomenon, but this has not been objectively proven.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 10: '1'}"
+151	151		304							"{1: 'Or rather, machines are something we don\'t yet fully understand to this day, and because of that I can\'t make a judgment on whether they have ""souls.""', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 10: '1'}"
+152	152		304							"{1: ""I can't draw conclusions on things I don't fully understand."", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 10: '1'}"
+153	153		304							"{1: 'But if ""mechanical consciousness"" really does exist, or if machines can readily make it...', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 10: '1'}"
+154	154		304							"{1: 'Would machines think that this thing that they have in them is a ""soul,"" like what the Greeks believed thousands of years ago?', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 10: '1'}"
+155	155		304							{1: 'Regardless, I believe that both MPA-01 and MPL-00 are the right keys to the future.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 10: '1'}
+156	156		304							{1: 'This is what we old folks from Section 3 believe.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 10: '1'}
+157	157		304							{1: 'It took 48 years to prove the Higgs boson, 54 years for black holes, and a century for gravitational waves.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 10: '1'}
+158	158		304				AniZhuanchangBegin			"{1: 'If we can\'t solve this problem, our successors will. If they can\'t, then their successors will...""""', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 9: '1', 10: '1'}"
+159	159		302			AniZhuanchangEnd				{2: 'The machines we ran into in Constellia...', 3: '160'}
+160	160		302							"{2: 'Have ""souls"" and ""self-awareness,"" too.', 3: '161'}"
+161	161		301			DialogEnable				{2: 'Asimov', 3: 'Yes, it seems like these machines with self-awareness came from the Science Council, too. The models mentioned in these reports might be crucial clues.', 4: '1'}
+162	162		301							{2: 'Asimov', 3: 'And we just might gain a whole new perspective of civilization and the machines themselves if we learn about where these machines come from. I mean, they might have already formed a sizable group already.', 4: '1'}
+163	163		202							{1: '1', 6: '1'}
+164	164		201							{1: '1', 2: '500630', 3: '4', 4: '-400'}
+165	165		201							{1: '2', 2: '500004', 4: '400'}
+166	166		301							"{1: '1', 2: 'Duheng', 3: ""That's beside the point now, though."", 4: '1'}"
+167	167		301							"{3: ""Duheng cuts off Asimov's train of thought somewhat rudely.""}"
+168	168		301							{2: 'Duheng', 3: 'We need to get to the bottom of this. There must be something in this report that only makes sense to you and not us.', 4: '1'}
+169	169		204							{1: '2', 2: '8'}
+170	170		401							{1: '2', 2: '4095'}
+171	171		301							{3: 'Seemingly a little disgusted, Asimov closes the report and lets out a long sigh.'}
+172	172		204							{1: '2'}
+173	173		301							{2: 'Asimov', 3: 'Well, look...', 4: '2'}
+174	174		302							{2: 'Wait a sec.', 3: '175'}
+175	175		301				DialogDisable			{3: 'You had to cut him short, as much as you hated it.'}
+176	176		302							"{2: ""What exactly is it that you're trying to do..."", 3: '177'}"
+177	177		302							{2: 'Coming to Asimov at this time with this report...', 3: '178'}
+178	178		302							{2: 'And asking him to help you spot clues in it?', 3: '179'}
+179	179		301			DialogEnable				{2: 'Asimov', 3: '【kuroname】...', 4: '2'}
+180	180		202							{1: '1', 2: '2', 6: '1'}
+181	181		201							{1: '1', 2: '500630'}
+182	182		301							"{1: '1', 2: 'Duheng', 3: ""I was going to use it as a bargaining chip to win Babylonia Parliament's absolute support for the Kowloong aid plan."", 4: '1'}"
+183	183		301							"{2: 'Duheng', 3: ""Except I have another bargaining chip now. See... I'm sure there are people in Babylonia who are more interested in this report than the politicians."", 4: '1'}"
+184	184		301							"{2: 'Duheng', 3: ""Aren't you both interested in what's behind that golden age that got human civilization to where it is today?"", 4: '1'}"
+185	185		302							"{2: ""I've been caught in the mire of politics on more occasions than one."", 3: '186', 4: ""I'd rather keep my distance from the likes of you."", 5: '186'}"
+186	186		301							"{2: 'Duheng', 3: ""You're right, politics has never been clean. I've never considered myself righteous, or maybe I've just been in this circle far too long to remember what it's like to be righteous."", 4: '1'}"
+187	187		301							"{2: 'Duheng', 3: ""But that's also precisely why politics can achieve things that people can never hope to achieve with just science or war. The world has never been black or white."", 4: '1'}"
+188	188		301							"{3: 'With a smile, she pushes her ""bargaining chip"" on the table toward you and Asimov.'}"
+189	189		301							{2: 'Duheng', 3: 'You can have this report and handle it however you see fit—on two conditions, that is.', 4: '1'}
+190	190		301							{2: 'Duheng', 3: 'First, I need you to help me get to the truth. This will involve a special inquiry investigation initiated by the Control Court in Kowloong, and I need the Nighter to pass this inquiry.', 4: '1'}
+191	191		301							{2: 'Duheng', 3: 'This report might not be the only thing that motivated the Control Court to take action, but my hunch is that this report has to be part of what motivated them to do what they set out to do.', 4: '1'}
+192	192		301							{2: 'Duheng', 3: 'Secondly, if you plan to disclose this report to the public—and I believe you will—I need you to be fully prepared and only reveal it once everything is settled. The public has the right to know this.', 4: '1'}
+193	193		302							"{2: ""That's it?"", 3: '194'}"
+194	194		301							"{2: 'Duheng', 3: ""That's it."", 4: '1'}"
+195	195		302							{2: 'Why should we trust you, though?', 3: '196'}
+196	196		301							"{2: 'Duheng', 3: ""You don't have to. I mean, there aren't many in this world who do anymore, but I believe you will trust the facts."", 4: '1'}"
+197	197		301							"{2: 'Duheng', 3: ""Besides, aren't you two in this together like twins?"", 4: '1'}"
+198	198		302							{2: '...', 3: '199'}
+199	199		201							{1: '1', 2: '500004'}
+200	200		301							"{1: '1', 2: 'Asimov', 3: ""(What's going on?)"", 4: '1'}"
+201	201		301							{3: 'Asimov casts a puzzled glance at you but quickly guesses what Duheng is getting at.'}
+202	202		301				DialogDisable			{2: 'Asimov', 3: 'Let me guess. Project Winter?', 4: '1'}
+203	203		202							{1: '1', 6: '1'}
+204	204		201						500.0	{1: '1', 2: '500630'}
+205	205		302							{2: 'Is this a threat?', 3: '206'}
+206	206		204							{1: '1', 2: '10'}
+207	207		301			DialogEnable				{2: 'Duheng', 3: 'Oh my goodness.', 4: '1'}
+208	208		301							{3: 'She bursts out laughing.'}
+209	209		301							"{2: 'Duheng', 3: ""Metaphor, do you get it? It's a metaphor."", 4: '1'}"
+210	210		302							"{2: ""I guess people never tell you that you're good at joking, do they?"", 3: '211'}"
+211	211		201							{1: '1', 2: '500004'}
+212	212		301							{1: '1', 2: 'Asimov', 3: '...', 4: '1'}
+213	213		302							{2: 'Asimov, what do you think?', 3: '214'}
+214	214		301							{2: 'Asimov', 3: 'This report is going to cause quite a scene if we ever make it public.', 4: '1'}
+215	215		301							"{2: 'Asimov', 3: ""The Parliament is going to lose people's trust, and that probably goes for the Science Council and the military, too. We don't know how people are going to see Constructs, mechanoids, and even Ascendants."", 4: '1'}"
+216	216		301							{2: 'Asimov', 3: 'This report can definitely stir up a bombshell of controversy, and I can totally imagine the Parliament getting backlashed over it when that happens.', 4: '1'}
+217	217		301							{3: 'Asimov places his hand on the heavy report, looking like a clergyman swearing to God. The look in his eyes, however, is all but hopeful.'}
+218	218		301							"{2: 'Asimov', 3: ""But if we don't admit past mistakes and completely remove the rotten flesh under the scar, neither humanity nor we can move forward."", 4: '1'}"
+219	219		302							{2: 'People have the right to know the truth.', 3: '220'}
+220	220		301							{2: 'Asimov', 3: 'People have the right to know the truth.', 4: '1'}
+221	221		202							{1: '1', 6: '1'}
+222	222		201							{1: '1', 2: '500630', 4: '400'}
+223	223		201							{1: '2', 2: '500004', 4: '-400'}
+224	224		301							{1: '1', 2: 'Duheng', 3: 'So I guess we have a deal here?', 4: '1'}
+225	225		301							{3: 'Asimov looks at me, and the two of you nod at each other.'}
+226	226		301							{2: 'Asimov', 3: 'I accept your conditions.', 4: '2'}
+227	227		301							{2: 'Duheng', 3: 'Well then, please go on.', 4: '1'}
+228	228		301				AniZhuanchangBegin			"{3: 'Duheng casts a glance at Asimov\'s hand on the report. With it, he continues going with the heavy ""book of history.""'}"
+229	229		202							{1: '1', 2: '2', 6: '1'}
+230	230		401							{1: '2', 2: '2764'}
+231	231		306							{1: '1'}
+232	232		401							{1: '1', 2: '36'}
+233	233		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory205.png'}
+234	234		401							{1: '1', 2: '142'}
+235	235		301			AniZhuanchangEnd				{2: 'Asimov', 3: 'Long before the Golden Age, the Science Council was merely a loose, borderless organization of scientists from around the world. As time went by, though, only bits and pieces of what happened back then survived, which makes it impossible to find out what actually happened.'}
+236	236		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory547.jpg', 3: '0', 4: '1', 5: '1.5'}
+237	237		205							{1: '999'}
+238	238		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory547.jpg'}
+239	239		301							"{2: 'Asimov', 3: 'Back then, mankind was going through a ""Great Depression"" like we had so many times before, and that caused natural sciences to stop progressing. The world was lacking guidance from social sciences, and there was this global war that had evolved from proxy wars...'}"
+240	240		301							"{2: 'Asimov', 3: 'It was a true ""Dark Age"", and humanity was stumbling as we ventured into a limited future.'}"
+241	241		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory538.png', 3: '0', 4: '1', 5: '1.5'}
+242	242		205							{1: '999'}
+243	243		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+244	244		201							{1: '1', 2: '500855'}
+245	245		301							{1: '1', 2: 'Asimov', 3: 'The way the Council was organized back then resembled the way religious groups were organized back in the Middle Ages, except the faith that gathered people under its banner was not religion, but science and progress.', 4: '1'}
+246	246		301							"{2: 'Asimov', 3: 'And the Science Council as we know it today only came about when Dominik had unified all those scientists around when the promotion of civilian cold fusion technology and the ""Materials Science Explosion"" was taking place, based on the earliest inferable records.', 4: '1'}"
+247	247		301							{2: 'Asimov', 3: 'In the end, it was the torch of science that illuminated that era akin to a quagmire. The new furnace is now ablaze, forging a future of boundless possibilities and hopes for gold-like humanity.', 4: '1'}
+248	248		202							{1: '1'}
+249	249		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory857.jpg', 3: '0', 4: '1', 5: '1.5'}
+250	250		205							{1: '999'}
+251	251		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory857.jpg'}
+252	252		301							"{2: 'Asimov', 3: ""And the rest is history. Everything took off flying and progressed at record speeds like what Babylonia's textbooks say.""}"
+253	253		301							{2: 'Asimov', 3: 'I always thought that human civilization would have died a long time ago without Construct Tech.'}
+254	254		301							"{2: 'Asimov', 3: ""But there are things hidden in that era that we haven't yet seen, and those things are what really matter.""}"
+255	255		301							"{2: 'Asimov', 3: 'This report reminds me that it\'s the ""root"" of this massive system tree that constructs everything we know today. This report, though, seems to intentionally ""leave out"" all information about this ""root.""'}"
+256	256		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory827.jpg', 3: '0', 4: '1', 5: '1.5'}
+257	257		205							{1: '999'}
+258	258		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory827.jpg'}
+259	259		301							"{2: 'Asimov', 3: 'And this core and ""root"" that\'s been constantly leaving out of the picture is Gestalt.'}"
+260	260		502							{1: 'RImgBg1BlowUp'}
+261	261		301							"{2: 'Asimov', 3: '""Project Gestalt"" is a super project that gathered the world\'s elite talents from natural sciences to social sciences and was the most ambitious human endeavor. The annual budget alone was enough to complete a small space fleet.'}"
+262	262		301							{2: 'Asimov', 3: 'I mean, we could destroy Babylonia now and still...'}
+263	263		301							{2: 'Asimov', 3: 'Wait, no.'}
+264	264		301							"{2: 'Asimov', 3: ""We could destroy ten Babylonias now and it wouldn't matter. It'd be a breeze for us to make a new one any day of the week so long as we meet the conditions.""}"
+265	265		301							"{2: 'Asimov', 3: ""But Gestalt we can't afford to lose.""}"
+266	266		301							{2: 'Asimov', 3: 'We use it to judge the operation of Constructs, output paradigms for the Inver-Device, regulate the life support system and flight posture of Babylonia, and control 36 cold fusion reactors and the Longinus Arsenal. Theoretically, we could even reverse engineer the Punishing with it.'}
+267	267		301							"{2: 'Asimov', 3: ""It's almost like an inexhaustible, omnipotent black box.""}"
+268	268		301							"{2: 'Asimov', 3: ""With our current technology, we can only glimpse half of what's in Gestalt and its functions, but just this half is enough to get us to where we are today.""}"
+269	269		301				DialogDisable			"{2: 'Asimov', 3: 'Another way to look at it is that Gestalt contains a lot that we still cannot fully decipher, which is why it\'s called a ""black box.""'}"
+270	270		505							{1: 'RImgBg1BlowUp'}
+271	271		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory205.png', 3: '0', 4: '1', 5: '1.5'}
+272	272		205							{1: '999'}
+273	273		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory205.png'}
+274	274		302							{2: 'So...', 3: '275'}
+275	275		302							{2: 'This report is more than a catalog of Golden Age technologies.', 3: '276'}
+276	276		302							"{2: ""It's more about the entire technological wave stirred up by Project Gestalt itself."", 3: '277'}"
+277	277		201							{1: '18', 2: '500004', 4: '-200', 5: '-100', 6: '200'}
+278	278		301			DialogEnable				{1: '1', 2: 'Asimov', 3: 'Exactly.', 4: '18'}
+279	279		301							"{2: 'Asimov', 3: 'Project Winter, Project Cthylla, Constructs, and M.I.N.D. technology, including Huaxu, are merely branches and leaves that grew from ""Project Gestalt"".', 4: '18'}"
+280	280		301							"{2: 'Asimov', 3: ""Except mankind's morals weren't where they are today when they put it to work..."", 4: '18'}"
+281	281		201							{1: '18', 2: '500630'}
+282	282		301							"{1: '1', 2: 'Duheng', 3: ""It sounds like you're certain everything back then was done right."", 4: '18'}"
+283	283		201							{1: '18', 2: '500004', 4: '-200', 5: '-100', 6: '200'}
+284	284		301							{1: '1', 2: 'Asimov', 3: '...', 4: '18'}
+285	285		301				DialogDisable			"{3: 'Asimov falls silent. He rubs the cover of the report, where a name is signed under the ""Science Council"" emblem in Chinese, English, French, Russian, and Spanish.'}"
+286	286		307							{1: 'Dominik', 3: '100'}
+287	287		301							{3: 'Dominik.'}
+288	288		307							{2: '1'}
+289	289		301			DialogEnable	AniZhuanchangBegin			"{2: 'Asimov', 3: ""What people truly miss from that era isn't the order, wealth, or peace, but the spirit of progress..."", 4: '18'}"
+290	290		202							{1: '18', 6: '1'}
+291	291		306							
+292	292		401							{1: '1', 2: '36'}
+293	293		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory256.png'}
+294	294		401							{1: '1', 2: '201'}
+295	295		201							{1: '1', 2: '500630', 4: '400'}
+296	296		201							{1: '2', 2: '500004', 4: '-400'}
+297	297		301			AniZhuanchangEnd				{1: '1', 2: 'Asimov', 3: 'Anyhow, as far as this report goes, the core issue likely lies with Gestalt.', 4: '2'}
+298	298		301							"{2: 'Duheng', 3: ""But you just said there are things that we don't fully know about Gestalt, no?"", 4: '1'}"
+299	299		301							{2: 'Asimov', 3: 'Yes, and the Parliament is aware of this, too.', 4: '2'}
+300	300		301							"{2: 'Asimov', 3: ""A lot of important Gestalt documents were lost during the Great Evacuation, and if you couple that with Gestalt's inherent limitations, we're now only relying on half of what Gestalt was able to do during the Golden Age, like I said earlier."", 4: '2'}"
+301	301		302							{2: 'What about the other half?', 3: '302'}
+302	302		301							{3: 'Asimov shakes his head.'}
+303	303		301							"{2: 'Asimov', 3: ""It's inaccessible, or maybe we just haven't figured out the right way to access it."", 4: '2'}"
+304	304		301							"{2: 'Asimov', 3: 'But I managed to dig up an older document record from Gestalt after the ""Utopia"" incident.', 4: '2'}"
+305	305		401							{1: '2', 2: '897'}
+306	306		301							{3: 'Says Asimov as he turns on his terminal and pulls up a photo.'}
+307	307		301				AniZhuanchangBegin			"{3: ""It's an old, slightly yellowed paper document with the Science Council emblem printed in the middle, and below it, written in deep blue ink, is a line that reads:""}"
+308	308		202							{1: '2', 6: '1'}
+309	309		502							{1: 'DialogDisable'}
+310	310		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+311	311		307							"{1: '""Effective today, Dr. ███ has been recalled from Kowloong to supervise Section 3 of the Science Council.""', 3: '50', 4: '0000ed', 6: '1'}"
+312	312		201							{1: '1', 2: '500855', 5: '150'}
+313	313		301			AniZhuanchangEnd				"{1: '1', 3: '""Effective today, Dr. ███ has been recalled from Kowloong to supervise Section 3 of the Science Council.""', 4: '1'}"
+314	314		301			DialogEnable	AniZhuanchangBegin			"{3: ""What's peculiar, though, is that this document, which seems to be a transfer order, lacks an issuer and has the most crucial name blacked out."", 4: '1'}"
+315	315		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory256.png'}
+316	316		307							{2: '1'}
+317	317		201							{1: '1', 2: '500630', 3: '4'}
+318	318		301			AniZhuanchangEnd				{1: '1', 2: 'Duheng', 3: 'Kowloong?', 4: '1'}
+319	319		201							{1: '1', 2: '500004'}
+320	320		301							{1: '1', 2: 'Asimov', 3: 'And check this out here.', 4: '1'}
+321	321		301				AniZhuanchangBegin			"{3: ""Asimov opens the report on the table again and points at an experiment log he's just read:""}"
+322	322		202							{1: '1', 6: '1'}
+323	323		502							{1: 'DialogDisable'}
+324	324		401							{1: '2', 2: '2768'}
+325	325		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+326	326		307			AniZhuanchangEnd				"{1: ""...Regardless, I believe that whether it's MPA-01 or MPL-00, they are the right keys to the future."", 3: '60', 6: '1'}"
+327	327		301							"{3: ""...Regardless, I believe that whether it's MPA-01 or MPL-00, they are the right keys to the future.""}"
+328	328		307						100.0	{2: '1'}
+329	329		307							"{1: 'This is what we old folks from Section 3 believe...""""', 3: '60', 6: '1'}"
+330	330		301				AniZhuanchangBegin			"{3: 'This is what we old folks from Section 3 believe...""""'}"
+331	331		307							{2: '1'}
+332	332		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory256.png'}
+333	333		302			AniZhuanchangEnd				{2: 'Section 3?', 3: '334'}
+334	334		201							{1: '1', 2: '500630', 3: '4'}
+335	335		301			DialogEnable				{1: '1', 2: 'Duheng', 3: 'It used to be a section under the Science Council, like the current R&D Sections 1 and 2.', 4: '1'}
+336	336		301							"{2: 'Duheng', 3: ""During Gestalt's early development, there was a third section dedicated to it. When Gestalt was completed, Section 3 was dissolved. There's nothing left of it now."", 4: '1'}"
+337	337		202							{1: '1', 6: '1'}
+338	338		201							{1: '1', 2: '500630', 3: '4', 4: '400'}
+339	339		201							{1: '2', 2: '500004', 3: '7', 4: '-400'}
+340	340		301							{1: '1', 3: 'Asimov looks stunned, almost unable to speak.'}
+341	341		301							{2: 'Asimov', 3: 'Where did you hear about all this?', 4: '2'}
+342	342		301							"{2: 'Duheng', 3: ""Doesn't matter where I heard about all this."", 4: '1'}"
+343	343		204							{1: '2'}
+344	344		301							{3: 'Duheng takes the report from Asimov and points to the date on the experiment log, continuing:'}
+345	345		301							{2: 'Duheng', 3: 'If this experiment log was written by researchers who moved on from Section 3, this means Section 3 might had already been dissolved by then.', 4: '1'}
+346	346		301							{2: 'Duheng', 3: 'This date on it is pretty late, and this is after they were done developing Gestalt.', 4: '1'}
+347	347		301							{2: 'Asimov', 3: 'The Science Council does have a habit of establishing special development divisions for specific tasks and dissolving them when the task is done.', 4: '2'}
+348	348		301							{2: 'Asimov', 3: 'And this Section 3... was likely a special division established by the Science Council specifically for the development of Gestalt.', 4: '2'}
+349	349		302							{2: 'How so?', 3: '350'}
+350	350		301							"{2: 'Asimov', 3: ""Because their tasks didn't overlap."", 4: '2'}"
+351	351		301							{2: 'Asimov', 3: 'The permanent Sections 1 and 2 have clear distinctions. Since the Golden Age, Section 1 has focused on theoretical and basic sciences, while Section 2 has handled astrophysics and interstellar engineering projects.', 4: '2'}
+352	352		301							"{2: 'Asimov', 3: ""Neither Sections 1 or 2 could build Gestalt on their own, since it's an immense task that encompasses all of mankind's knowledge."", 4: '2'}"
+353	353		301				DialogDisable			"{2: 'Asimov', 3: ""I can't say with certainty just yet, but... it seems likely that Section 3 was the one handling Project Gestalt."", 4: '2'}"
+354	354		302							{2: 'Say...', 3: '355'}
+355	355		302							{2: 'If we could prove that Section 3 existed around the same time Gestalt was being built...', 3: '356'}
+356	356		301			DialogEnable				"{2: 'Asimov', 3: ""That still wouldn't be a game-changer, but it'd still be pretty solid."", 4: '2'}"
+357	357		302							{2: 'Is there a way to find out when that Kowloong scholar was transferred to the Science Council?', 3: '358'}
+358	358		301							"{2: 'Asimov', 3: ""We don't know yet."", 4: '2'}"
+359	359		301							"{2: 'Asimov', 3: ""And we don't even know what this person's name is."", 4: '2'}"
+360	360		301							{2: 'Duheng', 3: '...', 4: '1'}
+361	361		301							"{3: ""All you and Asimov see in Duheng's sunk eyes is even deeper doubt when the two of you look at her.""}"
+362	362		301				DialogDisable			"{2: 'Duheng', 3: ""I know what you're thinking."", 4: '1'}"
+363	363		302							{2: 'As far as I know...', 3: '364'}
+364	364		302							{2: 'There is only one scientist from Kowloong who could ever hope to aspire to such heights.', 3: '365'}
+365	365		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+366	366		504							{1: '0.7'}
+367	367		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory167.jpg'}
+368	368		202							{1: '1', 2: '2', 6: '1'}
+369	369		201							{1: '1', 2: '500215', 7: '1'}
+370	370		302							"{2: ""Mind you, though, this individual isn't exactly someone you want to hang out with..."", 3: '371'}"
+371	371		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+372	372		504							{1: '0'}
+373	373		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory256.png'}
+374	374		201							{1: '1', 2: '500630', 3: '4'}
+375	375		301			DialogEnable	DialogDisable			{1: '1', 2: 'Duheng', 3: 'Are you talking about Villier?', 4: '1'}
+376	376		302							{2: 'Right on the money.', 3: '377'}
+377	377		302							{2: 'Well...', 3: '378'}
+378	378		302							"{2: ""Actually, I don't think I'm gonna comment on his mental state."", 3: '379'}"
+379	379		302							{2: 'But if he really is the one who came up with Huaxu...', 3: '380'}
+380	380		302							{2: 'Then he might have been the one appointed to lead Section 3.', 3: '381'}
+381	381		301			DialogEnable				"{2: 'Duheng', 3: ""He's smart enough to handle a super project like that, and he did earn a doctorate at Kowloong Central University."", 4: '1'}"
+382	382		301							"{2: 'Duheng', 3: ""But I don't think he's the guy we're looking for here."", 4: '1'}"
+383	383		202							{1: '1', 6: '1'}
+384	384		201							{1: '1', 2: '500630', 3: '4', 4: '400'}
+385	385		201							{1: '2', 2: '500004', 4: '-400'}
+386	386		301							"{1: '1', 2: 'Asimov', 3: ""I've only heard 【kuroname】 mention this name in a mission report."", 4: '2'}"
+387	387		301							"{2: 'Asimov', 3: ""In terms of capability, though, I'm sure the designer of Huaxu could definitely handle Gestalt."", 4: '2'}"
+388	388		301							"{2: 'Duheng', 3: ""Is that so? Well, that almost made him one of those responsible for Babylonia's fall, then."", 4: '1'}"
+389	389		301							{2: 'Duheng', 3: 'And Gestalt has been under external attacks from unknown sources like what happened a few years back, which is something the Control Court might be taking advantage of.', 4: '1'}
+390	390		301							"{2: 'Asimov', 3: ""...Can't think of a worse time for this discussion to happen."", 4: '2'}"
+391	391		301							"{2: 'Asimov', 3: ""Huaxu left a signature when he invaded Gestalt last time, and I've already gone ahead and reported the recent reverse engineering of external attacks to the Parliament. We can't conclude it's Huaxu yet."", 4: '2'}"
+392	392		301							{3: 'Duheng lets out a deep sigh and shakes her head.'}
+393	393		301							"{2: 'Duheng', 3: ""Anyhow, I don't know where Huaxu is."", 4: '1'}"
+394	394		301							{2: 'Duheng', 3: 'But regarding my first condition... I just wanted to let you both know that you need to exercise caution if the Control Court is looking into Gestalt.', 4: '1'}
+395	395		301							{2: 'Duheng', 3: 'The Control Court could run us over any day of the week if they so wish.', 4: '1'}
+396	396		302							"{2: ""At least we're not dealing with Kurono here."", 3: '397'}"
+397	397		301							"{2: 'Asimov', 3: ""And I'm not gonna let 'em politicians stick their noses into this before I get to the bottom of it."", 4: '2'}"
+398	398		302							"{2: ""And I'm gonna help t..."", 3: '399'}"
+399	399		301							{2: 'Duheng', 3: 'No.', 4: '1'}
+400	400		302							{2: '?', 3: '401'}
+401	401		301							{2: 'Duheng', 3: 'The Parliament is definitely going to pass this proposal concerning Kowloong at the inquiry today.', 4: '1'}
+402	402		301							"{2: 'Duheng', 3: ""And once that's done, the Diplomatic Court will coordinate with the military to designate Gray Raven and Strike Hawk as the representatives for military aid to the Nighter and Kowloong."", 4: '1'}"
+403	403		302							{2: 'Is that already decided?', 3: '404'}
+404	404		301							{3: 'Duheng nods without saying anything.'}
+405	405		301							{2: 'Asimov', 3: 'Hush-hush and dirty as always.', 4: '2'}
+406	406		301							{2: 'Duheng', 3: 'Now, remember what my second condition is?', 4: '1'}
+407	407		301							"{2: 'Duheng', 3: ""You're the only one able to do all these in Babylonia, Asimov."", 4: '1'}"
+408	408		301							{3: 'Asimov, too, nods without saying anything.'}
+409	409		301							"{2: 'Duheng', 3: ""I'll try to look into Villier and this Kowloong researcher we were talking about."", 4: '1'}"
+410	410		301							"{2: 'Duheng', 3: ""If all else fails, we'll have to count on Tabula Akasha and see..."", 4: '1'}"
+411	411		302							{2: 'Qu?', 3: '412'}
+412	412		204							{1: '2', 2: '7'}
+413	413		301							{2: 'Asimov', 3: 'Is Qu still alive?!', 4: '2'}
+414	414		204							{1: '2'}
+415	415		301							"{2: 'Duheng', 3: ""...That'd be correct, yes."", 4: '1'}"
+416	416		301							"{3: 'It\'s been so long since you last saw the Transcendant that it takes you a good few seconds to recall this ""Monarch of Kowloong"".'}"
+417	417		202							{1: '2', 6: '1'}
+418	418		401							{1: '2', 2: '2711'}
+419	419		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+420	420		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory152.png'}
+421	421		504							{1: '0.7'}
+422	422		201							{1: '1', 2: '500150'}
+423	423		301							{1: '1', 2: 'Qu', 3: 'Life will fade, machines will break, and the world will perish. This is why things that have value must be preserved. Kowloong will be the final epithet of Earth.', 4: '1'}
+424	424		301							{2: 'Qu', 3: 'When all lights go out, when all goes dark, this place will still burn. Like fire, we will stay a beacon for visitors in the eons to come.', 4: '1'}
+425	425		301							"{2: 'Qu', 3: 'They will know that we, ""humanity,"" lived. Like fossils, we will leave behind a legacy. This is Kowloong. This, is Tabula Akasha.', 4: '1'}"
+426	426		301							"{2: 'Qu', 3: ""Resistance is futile. Accept death with grace. That's the way we, the once ruler of Earth, should bow out."", 4: '1'}"
+427	427		301							{2: 'Qu', 3: 'And through this war, I finally realized that to complete Tabula Akasha, the world must first be ended.', 4: '1'}
+428	428		301							{2: 'Qu', 3: 'I came here expecting a certain Ascendant first, but no matter.', 4: '1'}
+429	429		301							"{2: 'Qu', 3: ""Earth's demise is set in stone. The question of who goes first and who goes later is inconsequential."", 4: '1'}"
+430	430		301							{2: 'Qu', 3: 'Fall, and become history, Babylonia.', 4: '1'}
+431	431		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+432	432		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory256.png'}
+433	433		504							{1: '0'}
+434	434		202							{1: '1', 6: '1'}
+435	435		301							{3: 'War, rebirth, and farewell...'}
+436	436		201							{1: '1', 2: '500630', 3: '4', 4: '400'}
+437	437		201							{1: '2', 2: '500004', 4: '-400'}
+438	438		301							"{1: '1', 2: 'Asimov', 3: ""That's when Lucia used the Plume frame for the first time..."", 4: '2'}"
+439	439		302							{2: 'But Gabriel did Qu in, no?', 3: '440'}
+440	440		301							"{2: 'Duheng', 3: ""Nope, that didn't happen."", 4: '1'}"
+441	441		301							{2: 'Duheng', 3: 'Which is why Tabula Akasha continues even as we speak.', 4: '1'}
+442	442		301							"{2: 'Asimov', 3: 'I came across ""Project Tabula Akasha"" when I was going through this report just now, too, and this is what it says: ""A comprehensive transcription of biological, consciousness data, and global information to construct a complete and coherent civilization-level data environment""...', 4: '2'}"
+443	443		301							"{2: 'Duheng', 3: ""It's not entirely accurate but not too far off. Project Tabula Akasha is essentially a plan to digitize Earth's civilization. In theory, Tabula Akasha could replicate another Earth."", 4: '1'}"
+444	444		301							"{2: 'Asimov', 3: ""Except... there wouldn't be any life in that world."", 4: '2'}"
+445	445		301							{2: 'Duheng', 3: 'There are no living beings in Tabula Akasha.', 4: '1'}
+446	446		301				DialogDisable			"{2: 'Asimov', 3: ""It's a tomb!"", 4: '2'}"
+447	447		302							{2: 'She would end all of human civilization for Tabula Akasha.', 3: '448'}
+448	448		302							{2: 'And Lucia—', 3: '449'}
+449	449		301			DialogEnable				"{3: ""It's only now that you notice that you're clenching your fist so hard that the leather glove you're wearing is tightening on your hand.""}"
+450	450		301							"{2: 'Duheng', 3: ""Which is why I said at the very beginning that we shouldn't bring up Qu until the end."", 4: '1'}"
+451	451		301							"{2: 'Duheng', 3: ""I can't apologize to you and Lucia on behalf of Qu, but I can assure you that Kowloong harbors no ill will toward you now."", 4: '1'}"
+452	452		301							{2: 'Duheng', 3: 'Both Kowloong and Qu, as well as Tabula Akasha, have a very complex history.', 4: '1'}
+453	453		301							"{2: 'Duheng', 3: ""I don't fully understand the reasons here, but I think you'll probably hear directly from Qu in no time."", 4: '1'}"
+454	454		202							{1: '1', 2: '2', 6: '1'}
+455	455		201							{1: '1', 2: '500630', 3: '4'}
+456	456		301							{1: '1', 3: 'Says Duheng as she stands up.'}
+457	457		301							"{2: 'Duheng', 3: ""I've been in politics all my life, and lies and deceit have become part of my everyday life, so much so that we need to keep truths alive with all sorts of lies because truths are often too fragile."", 4: '1'}"
+458	458		302							"{2: ""That's why I can't stand politicians."", 3: '459'}"
+459	459		301							"{2: 'Duheng', 3: ""I don't expect you to accept me."", 4: '1'}"
+460	460		301							{2: 'Duheng', 3: 'But regardless, please promise me that this truth must be revealed at the right time, and it must be revealed.', 4: '1'}
+461	461		201							{1: '1', 2: '500004'}
+462	462		301							"{1: '1', 2: 'Asimov', 3: ""Yup, that's exactly what I'm gonna do even if you don't tell me to."", 4: '1'}"
+463	463		201							{1: '1', 2: '500630', 3: '4'}
+464	464		301							{1: '1', 2: 'Duheng', 3: 'The Parliament is going to be a real mess if they know that Qu is still alive now... so please keep it confidential for the time being.', 4: '1'}
+465	465		301							{3: 'She reaches out a withered hand toward the table.'}
+466	466		301				DialogDisable			{3: 'After a moment of hesitation, you stand up and grasp her hand.'}
+467	467		302							"{2: ""I'm sick of being kept in the dark."", 3: '468'}"
+468	468		302							"{2: ""Let's end this."", 3: '469'}"
+469	469		201							{1: '1', 2: '500004'}
+470	470		301			DialogEnable				"{1: '1', 2: 'Asimov', 3: ""Now... we're really in the same boat, aren't we?"", 4: '1'}"
+471	471		201							{1: '1', 2: '500630'}
+472	472		301							{1: '1', 2: 'Duheng', 3: 'No.', 4: '1'}
+473	473		301		1		AniZhuanchangBegin			"{2: 'Duheng', 3: ""As far as I'm concerned, my life depends on this, and that's just the way it is for me."", 4: '1'}"

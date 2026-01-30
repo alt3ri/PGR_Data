@@ -1,0 +1,183 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory240.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				"{3: ""The setting sun in the west signals the end of a bustling day. It's time to return home and spend time with family. After a full day's work, you are finally home. Standing outside the yard, you take a deep breath and push the door open.""}"
+4	4		401							{1: '2', 2: '2673'}
+5	5		502							{1: 'RImgBg1DisableSlow'}
+6	6		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory176.png'}
+7	7		301							{3: 'The yard turns out to be empty and quiet, devoid of any human presence. The only sounds you can hear are the gentle rustle of leaves falling to the ground and your own steady breaths.'}
+8	8		401							{1: '2', 2: '1513'}
+9	9		301							{3: 'The woman inside the house instantly turns around with joy at the sound of the door opening. She places down the half-finished needlework in her hand and walks briskly toward you.'}
+10	10		201							{1: '1', 2: '500629'}
+11	11		301							{1: '1', 2: 'Hanying', 3: '...?', 4: '1'}
+12	12		301							{3: 'Hanying gazes at you with an expectant smile, making no move to initiate conversation. It seems that you have no other option but...'}
+13	13		302							{2: 'H-Hanying...?', 3: '14'}
+14	14		204							{1: '1', 2: '2'}
+15	15		301							{3: 'Hanying gives you a nod of approval. However, just as she is about to respond, something seems to cross her mind. She then places her hands on her waist, feigning annoyance.'}
+16	16		204							{1: '1', 2: '4'}
+17	17		301				DialogDisable			"{2: 'Hanying', 3: ""Commandant, incorrect character settings! Sturddy's master was adopted by his teacher, and my role is the daughter of that teacher. They are supposed to be a close family, so Sturddy's master should view her as his real sister."", 4: '1'}"
+18	18		302				AniZhuanchangBegin			{2: 'I-I see what you mean...', 3: '19'}
+19	19		202							{1: '1', 6: '1'}
+20	20		504							{1: '0.7'}
+21	21		502							{1: 'DialogEnable'}
+22	22		301			AniZhuanchangEnd				"{3: ""To aid Sturddy in completing his simulation, Hanying suggests a role-play scenario where you both act as if you're family.""}"
+23	23		301							"{3: 'If Sturddy is unable to generate a believable family scenario with the ""family data"" he has collected, resorting to people performing the roles could be a viable alternative.'}"
+24	24		301							"{3: ""From the fixed memory data and the information provided by Sturddy, both you and Hanying have gained valuable insight into his master's past.""}"
+25	25		301							"{3: ""Sturddy's master showed a talent for craftsmanship from a young age. He was adopted by a renowned craftsman in the town, and together they opened a small store. Their life was filled with industrious work and peaceful moments.""}"
+26	26		301							{3: 'Sturddy was the last gift the craftsman left for his family before his passing.'}
+27	27		201							{1: '1', 2: '500278'}
+28	28		301							{1: '1', 2: 'Sturddy', 3: '...Following that, Master took over the store. The initial period was tough, with even the regulars stopping their visits. Just when things were beginning to look up, the outbreak of the Punishing Virus happened.', 4: '1'}
+29	29		301							"{2: 'Sturddy', 3: ""People panicked, destroying every machine in sight. To protect me, Master preemptively transferred my data elsewhere. If he hadn't done so, I would've long since been reduced to a pile of junk and scrap."", 4: '1'}"
+30	30		301				AniZhuanchangBegin			{2: 'Sturddy', 3: '...So, when Master reactivated me on the Nighter, I had no idea what had happened to him. All I knew was that he yearned to leave the ship and find his family, and for that reason, he had been tirelessly amassing miles. It was during this period that the majority of his works were created.', 4: '1'}
+31	31		504							{1: '0'}
+32	32		201							{1: '1', 2: '500629'}
+33	33		301			AniZhuanchangEnd				"{1: '1', 3: 'The ""family"" that Sturddy\'s master was searching for is his foster sister—the only remaining family member. After some discussion, Hanying has agreed to take on the role of the foster sister in the simulation.'}"
+34	34		302							{2: 'Do we have to go to such lengths...?', 3: '35'}
+35	35		301							{2: 'Hanying', 3: 'Of course, when I played games of make-believe with Pulao, she always said that one can truly embody a character only when one fully understands it!', 4: '1'}
+36	36		302							"{2: 'Surprisingly hard-core...', 3: '37', 4: ""Somehow I got the feeling that's not what she meant..."", 5: '37'}"
+37	37		301							"{2: 'Hanying', 3: ""And for the sake of the simulation, it's better to mirror the real-life scenario as accurately as possible."", 4: '1'}"
+38	38		301							"{3: 'Hanying casts a sideways glance at Sturddy, and to your surprise, the latter responds with a serious nod and even gives a thumbs-up gesture with his ""handless"" arm.'}"
+39	39		302							"{2: 'Alright, I see.', 3: '40', 4: ""I'll try my best."", 5: '40'}"
+40	40		301							{2: 'Hanying', 3: 'Then, as your foster sister, I should call you...', 4: '1'}
+41	41		302							{2: 'Brother?', 3: '42', 4: 'Sister?', 5: '101'}
+42	42		204							{1: '1', 2: '10'}
+43	43		301							"{2: 'Hanying', 3: ""That's correct, Brother."", 4: '1'}"
+44	44		301							{3: 'Hanying covers her face, chuckling in evident enjoyment. Since then, it would truly be a shame to spoil her fun.'}
+45	45		204							{1: '1'}
+46	46		301							"{3: ""Taking a deep breath, you suppress the final shred of embarrassment—which wasn't much to start with—and recommit to your roleplay with a more hard-core mindset.""}"
+47	47		302							"{2: ""I'm back... Sister!"", 3: '48'}"
+48	48		301							{2: 'Hanying', 3: 'Welcome home. How was business today at the market?', 4: '1'}
+49	49		301							{3: 'Hanying takes a seat on a weathered stone stool in the yard, beginning to prepare tea with a tea set that seems to have appeared from nowhere. You find your attention drawn to the grace encapsulated in her every move.'}
+50	50		301				DialogDisable			{2: 'Hanying', 3: 'Anything wrong?', 4: '1'}
+51	51		302							"{2: ""Oh, it's nothing... Emm..."", 3: '52'}"
+52	52		302							{2: 'The business went well today. Managed to sell my works to two customers.', 3: '53'}
+53	53		301			DialogEnable				"{2: 'Hanying', 3: ""Really? That's awesome! I knew you had it in you. I'm sure it won't be long before you're opening your own store, just like Father did."", 4: '1'}"
+54	54		302							{2: 'By the way, this is the money I got today.'}
+55	55		301							"{3: ""You pull out some Grubs from your pocket as today's earnings and extend your hand toward Hanying.""}"
+56	56		301							{3: 'However, Hanying shakes her head, showing no intention of accepting them.'}
+57	57		301							"{2: 'Hanying', 3: ""Keep them for yourself. I've been making custom clothes for wealthy families recently. They recognize my skills and have been giving me more business. There's no need for you to worry about me."", 4: '1'}"
+58	58		401							{1: '1', 2: '36'}
+59	59		302							{2: 'Huh...?', 3: '60'}
+60	60		301							"{3: ""You don't remember any character settings about this girl being a good tailor, but since Hanying says so... you decide it's best to follow her lead.""}"
+61	61		401							{1: '1', 2: '243'}
+62	62		301							"{2: 'Hanying', 3: ""Ahem... Anyways, you don't need to give me money from now on..."", 4: '1'}"
+63	63		302							"{2: ""But Sister, you are still running Teacher's store..."", 3: '64'}"
+64	64		204							{1: '1', 2: '17'}
+65	65		301							"{3: ""A smile graces Hanying's face, but it's immediately evident that the smile is strained, not entirely genuine. Despite knowing she is just acting, your heart can't help but ache for her in this mere moment.""}"
+66	66		301				DialogDisable			"{2: 'Hanying', 3: ""That's okay. I'm planning to sell the store next month, so you don't need to worry about the expenses anymore."", 4: '1'}"
+67	67		302							{2: 'Why?!', 3: '68'}
+68	68		302							{2: 'But the Teacher made painstaking efforts to open that store...', 3: '69'}
+69	69		301			DialogEnable				"{2: 'Hanying', 3: 'He may no longer be with us in this world, but I still have you... ""Don\'t dwell on the ghosts of the past; instead, focus on the present that\'s right in front of you."" That\'s what he used to say a lot.', 4: '1'}"
+70	70		301							"{2: 'Hanying', 3: ""...We can no longer afford the steep rent, but I know how much you've always desired to be in the bustling heart of Kowloong."", 4: '1'}"
+71	71		302							{2: 'But...!', 3: '72'}
+72	72		301							"{2: 'Hanying', 3: ""That's enough. If you truly see me as your older sister, listen to me this time... I've heard about a Kua-Er class ship preparing for a long-term voyage, with tourists and merchants from all over the world set to be aboard."", 4: '1'}"
+73	73		301							"{2: 'Hanying', 3: ""I got you a ticket... I'm sure you will find a lot of opportunities there, and by then, your talent will lead you to your own stage where you shine brighter than ever."", 4: '1'}"
+74	74		302							"{2: ""I'm not going there... I'm not leaving this place!"", 3: '75'}"
+75	75		301							"{2: 'Hanying', 3: ""There will come a day when you'll leave this place, this home, and find your own harbor where you'll plant your roots and grow..."", 4: '1'}"
+76	76		302							{2: 'No, Sister, you are my family... and this is my home.', 3: '77'}
+77	77		204							{1: '1', 2: '14'}
+78	78		301							"{3: ""A somber bitterness washes over Hanying's face as her voice softens. It appears as though her thoughts have wandered, dwelling on something beyond merely this narrative.""}"
+79	79		302							{2: '(Hold her hand)', 3: '80'}
+80	80		301							{3: 'Even without understanding what prompted her change in demeanor, your body reacts faster than your mind—you instinctively yearn to erase the sorrow etched in her eyes.'}
+81	81		204							{1: '1', 2: '7'}
+82	82		401							{1: '1', 2: '36'}
+83	83		301							{2: 'Hanying', 3: 'Commandant...?', 4: '1'}
+84	84		401							{1: '1', 2: '208'}
+85	85		301							"{3: ""Your sudden action catches her off guard. A flash of surprise, one that doesn't align with her established character, briefly dances across her features.""}"
+86	86		302							"{2: ""Oh... I'm sorry."", 3: '87'}"
+87	87		204							{1: '1'}
+88	88		203							{1: '1', 2: '0.25', 5: '-100'}
+89	89		301							{3: 'You feel the urge to retract your hand, but Hanying softly holds it in response, her body suddenly leaning into you.'}
+90	90		301							{3: '—Before you can react, you find yourself enveloped in her gentle embrace.'}
+91	91		301							"{2: 'Hanying', 3: ""Don't be... Thank you."", 4: '1'}"
+92	92		301							"{3: ""Her soft voice resonates near your ear. There isn't much force in her embrace, yet you can distinctly feel the warmth and the emotions she tries to convey.""}"
+93	93		301							{3: 'As she regains her composure, she promptly releases you and takes a step back, her face once again adorned with that tender smile.'}
+94	94		301							"{2: 'Hanying', 3: ""I used to hug Pulao in the same way quite often... but now, she's outgrown the age where I can do so whenever I wish. That's why I... I apologize for my actions."", 4: '1'}"
+95	95		302							"{2: 'Don\'t be such a stranger. I\'m your ""brother,"" after all.', 3: '96'}"
+96	96		201							{1: '1', 2: '500278'}
+97	97		301							"{1: '1', 2: 'Sturddy', 3: 'I see, so this is what humans refer to as ""the forbidden...""', 4: '1'}"
+98	98		302							"{2: ""You're totally going in the wrong direction!"", 3: '99', 4: 'There seems to be something wrong with your neural circuit.', 5: '99'}"
+99	99		201							{1: '1', 2: '500629'}
+100	100	160	301							"{1: '1', 2: 'Hanying', 3: ""...But we're still in the dark about what happened to that brother and sister later, and how Sturddy's master ended up boarding the Nighter all by himself."", 4: '1'}"
+101	101		204							{1: '1', 2: '10'}
+102	102		301							"{2: 'Hanying', 3: ""That's correct, Sister."", 4: '1'}"
+103	103		301							{3: 'Hanying covers her face, chuckling in evident enjoyment. Since then, it would truly be a shame to spoil her fun.'}
+104	104		204							{1: '1'}
+105	105		301							"{3: ""Taking a deep breath, you suppress the final shred of embarrassment—which wasn't much to start with—and recommit to your roleplay with a more hard-core mindset.""}"
+106	106		302							"{2: ""I'm back... Sister!""}"
+107	107		301							{2: 'Hanying', 3: 'Welcome home. How was business today at the market?', 4: '1'}
+108	108		301							{3: 'Hanying takes a seat on a weathered stone stool in the yard, beginning to prepare tea with a tea set that seems to have appeared from nowhere. You find your attention drawn to the grace encapsulated in her every move.'}
+109	109		301				DialogDisable			{2: 'Hanying', 3: 'Anything wrong?', 4: '1'}
+110	110		302							"{2: ""Oh, it's nothing... Emm..."", 3: '111'}"
+111	111		302							{2: 'The business went well today. Managed to sell my works to two customers.', 3: '112'}
+112	112		301			DialogEnable				"{2: 'Hanying', 3: ""Really? That's awesome! I knew you had it in you. I'm sure it won't be long before you're opening your own store, just like Father did."", 4: '1'}"
+113	113		302							{2: 'By the way, this is the money I got today.', 3: '114'}
+114	114		301							"{3: ""You pull out some Grubs from your pocket as today's earnings and extend your hand toward Hanying.""}"
+115	115		301							{3: 'However, Hanying shakes her head, showing no intention of accepting them.'}
+116	116		301							"{2: 'Hanying', 3: ""Keep them for yourself. I've been making custom clothes for wealthy families recently. They recognize my skills and have been giving me more business. There's no need for you to worry about me."", 4: '1'}"
+117	117		401							{1: '1', 2: '36'}
+118	118		302							{2: 'Huh...?', 3: '119'}
+119	119		301							"{3: ""You don't remember any character settings about this girl being a good tailor, but since Hanying says so... you decide it's best to follow her lead.""}"
+120	120		401							{1: '1', 2: '243'}
+121	121		301							"{2: 'Hanying', 3: ""Ahem... Anyways, you don't need to give me money from now on..."", 4: '1'}"
+122	122		302							"{2: ""But Sister, you are still running Teacher's store..."", 3: '123'}"
+123	123		204							{1: '1', 2: '17'}
+124	124		301							"{3: ""A smile graces Hanying's face, but it's immediately evident that the smile is strained, not entirely genuine. Despite knowing she is just acting, your heart can't help but ache for her in this mere moment.""}"
+125	125		301				DialogDisable			"{2: 'Hanying', 3: ""That's okay. I'm planning to sell the store next month, so you don't need to worry about the expenses anymore."", 4: '1'}"
+126	126		302							{2: 'Why?!', 3: '127'}
+127	127		302							{2: 'But the Teacher made painstaking efforts to open that store...', 3: '128'}
+128	128		301			DialogEnable				"{2: 'Hanying', 3: 'He may no longer be with us in this world, but I still have you... ""Don\'t dwell on the ghosts of the past; instead, focus on the present that\'s right in front of you."" That\'s what he used to say a lot.', 4: '1'}"
+129	129		301							"{2: 'Hanying', 3: ""...We can no longer afford the steep rent, but I know how much you've always desired to be in the bustling heart of Kowloong."", 4: '1'}"
+130	130		302							{2: 'But...!', 3: '131'}
+131	131		301							"{2: 'Hanying', 3: ""That's enough. If you truly see me as your older sister, listen to me this time... I've heard about a Kua-Er grade ship preparing for a long-term voyage, with tourists and merchants from all over the world set to be aboard."", 4: '1'}"
+132	132		301							"{2: 'Hanying', 3: ""I got you a ticket... I'm sure you will find a lot of opportunities there, and by then, your talent will lead you to your own stage where you shine brighter than ever."", 4: '1'}"
+133	133		302							"{2: ""I'm not going there... I'm not leaving this place!"", 3: '134'}"
+134	134		301							"{2: 'Hanying', 3: ""There will come a day when you'll leave this place, this home, and find your own harbor where you'll plant your roots and grow..."", 4: '1'}"
+135	135		302							{2: 'No, Sister, you are my family... and this is my home.', 3: '136'}
+136	136		204							{1: '1', 2: '14'}
+137	137		301							"{3: ""A somber bitterness washes over Hanying's face as her voice softens. It appears as though her thoughts have wandered, dwelling on something beyond merely this narrative.""}"
+138	138		301							{3: 'Even without understanding what prompted her change in demeanor, your body reacts faster than your mind—you instinctively yearn to erase the sorrow etched in her eyes.'}
+139	139		302							{2: '(Hold her hand)', 3: '140'}
+140	140		204							{1: '1', 2: '7'}
+141	141		401							{1: '1', 2: '36'}
+142	142		301							{2: 'Hanying', 3: 'Commandant...?', 4: '1'}
+143	143		401							{1: '1', 2: '208'}
+144	144		301							"{3: ""Your sudden action catches her off guard. A flash of surprise, one that doesn't align with her established character, briefly dances across her features.""}"
+145	145		302							"{2: ""Oh... I'm sorry."", 3: '146'}"
+146	146		204							{1: '1'}
+147	147		203							{1: '1', 2: '0.25', 5: '-100'}
+148	148		301							{3: 'You feel the urge to retract your hand, but Hanying softly holds it in response, her body suddenly leaning into you.'}
+149	149		301							{3: '—Before you can react, you find yourself enveloped in her gentle embrace.'}
+150	150		301							"{2: 'Hanying', 3: ""Don't be... Thank you."", 4: '1'}"
+151	151		301							"{3: ""Her soft voice resonates near your ear. There isn't much force in her embrace, yet you can distinctly feel the warmth and the emotions she tries to convey.""}"
+152	152		301							{3: 'As she regains her composure, she promptly releases you and takes a step back, her face once again adorned with that tender smile.'}
+153	153		301							"{2: 'Hanying', 3: ""I used to hug Pulao in the same way quite often... but now, she's outgrown the age where I can do so whenever I wish. That's why I... I apologize for my actions."", 4: '1'}"
+154	154		302							"{2: 'Don\'t be such a stranger. I\'m your ""sister,"" after all.', 3: '155'}"
+155	155		201							{1: '1', 2: '500278'}
+156	156		301							"{1: '1', 2: 'Sturddy', 3: 'I see, so this is what humans refer to as ""the forbidden...""', 4: '1'}"
+157	157		302							"{2: ""You're totally going in the wrong direction!"", 3: '158', 4: 'There seems to be something wrong with your neural circuit.', 5: '158'}"
+158	158		201							{1: '1', 2: '500629'}
+159	159		301							"{1: '1', 2: 'Hanying', 3: ""...But we're still in the dark about what happened to the sisters later, and how Sturddy's master ended up boarding the Nighter all by himself."", 4: '1'}"
+160	160		302							{2: '...Yeah.', 3: '161'}
+161	161		202							{1: '1', 6: '1'}
+162	162		301							"{3: ""Sturddy's memory doesn't hold any pertinent data. His old circuits only recall the time spent with his reticent master on the Nighter, along with a few scattered fragments from the distant past.""}"
+163	163		301							{3: 'All he knows is how his master painstakingly reawakened him by acquiring mechanical knowledge, and then assembled his body piece by piece with components bought from the black market.'}
+164	164		301							{3: 'Even though he has been losing memory data as his body ages, he still has managed to persist far longer than anyone could have expected.'}
+165	165		301							{3: 'The escalating frequency of maintenance requests has made him realize that his body is nearing its limit. As a result, he decided to transfer the most crucial data into the bionic swallows.'}
+166	166		301				DialogDisable			"{3: 'Your simulation with Hanying has already contained everything Sturddy remembers about ""Sister.""'}"
+167	167		302							{2: 'So...', 3: '168'}
+168	168		302							"{2: ""How's the simulation outcome?"", 3: '169'}"
+169	169		201							{1: '1', 2: '500629'}
+170	170		301			DialogEnable				"{1: '1', 2: 'Hanying', 3: 'Your master and his ""sister"" come back home together like this, and you will never be apart again.', 4: '1'}"
+171	171		202							{1: '1', 6: '1'}
+172	172		201							{1: '1', 2: '500629', 4: '400'}
+173	173		201							{1: '2', 2: '500278', 4: '-450'}
+174	174		301							{1: '1', 3: 'Hanying naturally takes your hand, and together, you approach Sturddy, who has been observing the simulation from the side.'}
+175	175		301							{3: 'His visual module, pre-adjusted by Hanying, captures a sight he has longed for: the long-absent family finally returning to him.'}
+176	176		301							{2: 'Sturddy', 3: '...', 4: '2'}
+177	177		301							{2: 'Sturddy', 3: 'The command of the highest priority remained unfulfilled.', 4: '2'}
+178	178		302							"{2: ""It still doesn't work, huh..."", 3: '179'}"
+179	179		204							{1: '1', 2: '12'}
+180	180		301							{2: 'Hanying', 3: '...', 4: '1'}
+181	181		301							{2: 'Sturddy', 3: 'But I still want to thank you, for your effort in helping me.', 4: '2'}
+182	182		301		1		AniZhuanchangBegin			{2: 'Sturddy', 3: 'I have a place to show you.', 4: '2'}

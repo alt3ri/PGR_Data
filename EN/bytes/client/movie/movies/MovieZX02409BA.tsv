@@ -1,0 +1,17 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '82'}
+3	3		401						1750.0	{1: '2', 2: '905'}
+4	4		402							{1: '905'}
+5	5		301			DialogEnable				{3: 'The ocean only takes a second to change to something completely different. Is the first sound lightning or a dragon roar?'}
+6	6		301							"{3: ""We don't have time to think.""}"
+7	7		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+8	8		401						1750.0	{1: '2', 2: '905'}
+9	9		402							{1: '905'}
+10	10		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+11	11		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory535.jpg'}
+12	12		301							{3: 'At first, it is a tornado above the ocean that comes from the south.'}
+13	13		301							{3: 'The tides are like a beast that has just awakened from its hibernation and is now full of energy. It straightens its back and unleashes all its might.'}
+14	14		301							"{3: ""The raging storm is so powerful that all the people who once lived on the land panic. The howling wind drowns people's shouting and screaming.""}"
+15	15		301							{3: 'The gray currents are like a giant serpent that is hostile, unrelenting, and deadly. It strikes the boat.'}
+16	16		301		1		AniZhuanchangBegin			{3: 'As for us, we are caught in the middle of the vortex. No one is safe.'}

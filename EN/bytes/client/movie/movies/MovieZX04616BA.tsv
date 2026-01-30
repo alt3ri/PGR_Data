@@ -1,0 +1,120 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory958.png'}
+2	2		401							{1: '1', 2: '5019'}
+3	3		107						3000.0	{1: 'Bifrost'}
+4	4		108						500.0	{1: '1'}
+5	5		301			DialogEnable	AniZhuanchangBegin			{3: 'The majestic bridge towers against the horizon as biting winds sweep up flurries of snow from the ground. From the far end of the bridge, the setting sun casts its blinding rays.'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4601_04.jpg'}
+7	7		104							{1: '300|-200|-300', 2: '0'}
+8	8		301			AniZhuanchangEnd				{2: 'Hanying', 3: '...Veronica!'}
+9	9		104							{1: '0|0|0', 2: '15'}
+10	10		301							{2: 'Veronica', 3: 'What a nuisance.'}
+11	11		301							{3: 'The dignified mechanoid woman turns her head with cold indifference, her form silhouetted by the dazzling light.'}
+12	12		301							"{2: 'Veronica', 3: ""I've said it before—the Church's internal struggle is none of my concerns. You're welcome to observe, but if you choose to interfere, I won't show mercy just because we're kin.""}"
+13	13		301							{2: 'Hanying', 3: 'What if I tell you that Aleksei might be controlled by a traitor from the Church? Is that none of your concerns as well?'}
+14	14		301							"{2: 'Veronica', 3: ""...Don't think I'll hold back just because we're both mechanoids!""}"
+15	15		301							{3: 'A spear cuts through the swirling snow, its tip aiming straight at Hanying.'}
+16	16		301							"{2: 'Hanying', 3: ""I'm not lying to you, Veronica.""}"
+17	17		301							{2: 'Hanying', 3: 'Aleksei contacted us not long ago. He begged us to save those humans and stop you... from making an even graver mistake.'}
+18	18		301							"{2: 'Hanying', 3: ""He said he couldn't control himself anymore and he'd completely lost control of his mind... He begged us not to activate Bifrost.""}"
+19	19		301							"{2: 'Veronica', 3: '...""Us""? You\'re just another mechanoid brainwashed by humans...'}"
+20	20		301							"{3: ""Veronica's words come out as a reflexive growl. Though unease stirs within her, her voice remains as cold as ice.""}"
+21	21		301							"{2: 'Veronica', 3: ""So what? Are you saying humans don't deserve to die?""}"
+22	22		301							"{2: 'Veronica', 3: ""Even putting aside what happened to Aleksei, don't humans deserve this fate after everything they've done?""}"
+23	23		301							"{2: 'Hanying', 3: ""You're not seeing the whole truth!""}"
+24	24		301							{2: 'Veronica', 3: 'How ignorant.'}
+25	25		301							"{2: 'Veronica', 3: ""You're a mechanoid too. Are you blind to the suffering humans have inflicted on our kind?""}"
+26	26		301							"{2: 'Hanying', 3: ""But more humans are helping our kind where you can't see, and there are more who...""}"
+27	27		301							"{2: 'Veronica', 3: ""I only trust what I've seen with my own eyes.""}"
+28	28		301							{3: 'Veronica aims her spear into the distance, the tragedy at Aerospace City still etched in her visual module.'}
+29	29		301							{2: 'Veronica', 3: 'They called SDC-39 a rampaging monster, claiming it was a carrier of the Punishing Virus that would kill all humans.'}
+30	30		301							{2: 'Veronica', 3: 'I wanted to lead them to safety.'}
+31	31		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+32	32		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory962.png'}
+33	33		504							{1: '0.7'}
+34	34		201							{1: '1', 2: '500922', 7: '1'}
+35	35		301							"{1: '1', 2: 'Aleksei', 3: ""Eh... Is that really okay? I'm just a human. Can I really join this Church of Machina?"", 4: '1'}"
+36	36		201							{1: '1', 2: '500920'}
+37	37		301							{1: '1', 2: 'Veronica', 3: 'Of course. The Church of Machina welcomes all displaced souls. This city is no place for you anymore—come with me, and leave this place behind.', 4: '1'}
+38	38		301							"{3: ""It was also an evening, with snow dancing in the air. Though all modules indicate the temperature was just as bitter as today, the sunset seemed more brilliant than ever before in Veronica's memory.""}"
+39	39		201							{1: '1', 2: '500932', 3: '1'}
+40	40		301							"{1: '1', 2: 'SDC-39', 3: '""The Hanged Man""... Initiating search...', 4: '1'}"
+41	41		301							{2: 'SDC-39', 3: 'The Hanged Man, the twelfth Major Arcana card in the tarot deck. It is used to interpret fate and fortune. The Hanged Man represents an extension of Justice...', 4: '1'}
+42	42		301							"{2: 'SDC-39', 3: ""I may not yet understand the meaning of fate, but I'm rather fond of this position."", 4: '1'}"
+43	43		301							{2: 'SDC-39', 3: 'Does this position, belong to SDC-39?', 4: '1'}
+44	44		201							{1: '1', 2: '500920'}
+45	45		301							{1: '1', 2: 'Veronica', 3: 'It is yours.', 4: '1'}
+46	46		202							{1: '1', 6: '1'}
+47	47		201							{1: '1', 2: '500920', 4: '-400'}
+48	48		201							{1: '2', 2: '500922', 4: '400'}
+49	49		301							{1: '1', 2: 'Aleksei', 3: 'What about me? Is there a position for me as well?', 4: '2'}
+50	50		301							{2: 'Veronica', 3: 'You are merely human. There is no seat for you in the Church of Machina.', 4: '1'}
+51	51		301							{2: 'Aleksei', 3: 'Ah... I see. What a pity.', 4: '2'}
+52	52		301							"{2: 'Aleksei', 3: ""But it's fine. I'm the best mechanical engineer in Aerospace City—I can be of great help to you..."", 4: '2'}"
+53	53		202							{1: '1', 2: '2', 6: '1'}
+54	54		201							{1: '1', 2: '500932', 3: '1'}
+55	55		301							"{1: '1', 2: 'SDC-39', 3: ""But I can't leave yet."", 4: '1'}"
+56	56		301							"{2: 'SDC-39', 3: ""Bifrost isn't complete yet. Only when it is finished can humanity... and mechanoids journey together to the stars."", 4: '1'}"
+57	57		201							{1: '1', 2: '500920'}
+58	58		301							{1: '1', 2: 'Veronica', 3: 'Humans have started to notice you, SDC-39.', 4: '1'}
+59	59		201							{1: '1', 2: '500932', 3: '1'}
+60	60		301							"{1: '1', 2: 'SDC-39', 3: ""It's alright, humans are friendly..."", 4: '1'}"
+61	61		202							{1: '1', 6: '1'}
+62	62		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+63	63		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4601_04.jpg'}
+64	64		504							{1: '0'}
+65	65		301							"{2: 'Veronica', 3: 'Hah, ""humans are friendly.""'}"
+66	66		301							{2: 'Veronica', 3: 'These were the last words SDC-39, the previous Hanged Man, spoke to me.'}
+67	67		301							{2: 'Veronica', 3: 'The next day... humans brutally tore him apart.'}
+68	68		301							"{2: 'Hanying', 3: 'Those humans were deceived—""they"" tampered with the data reports the humans saw!'}"
+69	69		301							{3: 'A faint connection begins to weave through all these events like an invisible thread.'}
+70	70		301							"{2: 'Hanying', 3: ""It's the Emperor... It has to be the Emperor!""}"
+71	71		301							"{2: 'Hanying', 3: ""The Emperor betrayed the Church. He planned to invade Kowloong when we were integrating with Kowloong's network, and now... he's trying to seize Aerospace City!""}"
+72	72		301							"{2: 'Veronica', 3: ""You still don't understand, Hanying.""}"
+73	73		301							{2: 'Veronica', 3: 'Who they are and what they want no longer matters. The fuse is done burning, and war... is about to begin.'}
+74	74		301							{3: 'Standing atop Bifrost, Veronica points her spear toward the city below.'}
+75	75		301							{2: 'Veronica', 3: 'Open your eyes and see this world for what it truly is, Hanying!'}
+76	76		306							{1: '1'}
+77	77		401							{1: '2', 2: '2791'}
+78	78		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg'}
+79	79		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+80	80		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+81	81		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+82	82		301							{3: 'Inside Aerospace City, artillery fire lights up the sky. The mechanoids have been ordered to fight until their last breath—even those with just one arm left on their frames continue to strike at their opponents.'}
+83	83		201							{1: '18', 2: '500919', 4: '-500', 5: '-100', 6: '500'}
+84	84		301							"{1: '1', 2: 'Veronica', 3: ""All of this—all of this is humanity's doing!"", 4: '18'}"
+85	85		402							{1: '2791'}
+86	86		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+87	87		401							{1: '2', 2: '4321'}
+88	88		401							{1: '2', 2: '4264'}
+89	89		202							{1: '18', 6: '1'}
+90	90		301			RImgBg1Shake				{3: 'Somewhere, humans have breached the defenses. A piercing alarm wails through the sky.'}
+91	91		201							{1: '18', 2: '500919', 4: '-500', 5: '-100', 6: '500'}
+92	92		301							"{1: '1', 2: 'Veronica', 3: ""Humans fear what they cannot understand—they're afraid that awakened machines will take their place as rulers!"", 4: '18'}"
+93	93		301							"{2: 'Veronica', 3: ""They murdered SDC-39 and slaughtered our kin awakened by Sage's murals, and when they saw my power, they cowered in fear and sent forth that so-called supervisor to die!"", 4: '18'}"
+94	94		301				DialogDisable			{2: 'Veronica', 3: 'Foolish, absurd, driven only by ignorant, destructive desires! This is the humanity you protect, the humanity you trust!', 4: '18'}
+95	95		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+96	96		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+97	97		402							{1: '4321'}
+98	98		202							{1: '18', 6: '1'}
+99	99		306							
+100	100		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4601_04.jpg', 3: '0', 4: '1', 5: '1'}
+101	101		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4601_04.jpg'}
+102	102		301			DialogEnable				{2: 'Hanying', 3: '...But many of our mechanoid kin have also perished meaninglessly in this endless cycle of bloodshed.'}
+103	103		301							{3: 'She speaks softly.'}
+104	104		301							{2: 'Veronica', 3: '...'}
+105	105		301							{3: 'Veronica unusually hesitates for a moment.'}
+106	106		301							{2: 'Veronica', 3: 'I have preserved all their memory units. When the battle ends and mechanoids rise to supremacy, I will transfer them all into better vessels.'}
+107	107		301							{2: 'Veronica', 3: 'All these sacrifices are worth it—even I can die for this fight. As long as we can create a world for mechanoids, everything is worth the price.'}
+108	108		301							"{2: 'Veronica', 3: ""I will activate Bifrost and launch the vanguard fleet through it to seize air superiority. The skies don't belong to humans alone.""}"
+109	109		301							{2: 'Veronica', 3: 'Once we get inside Babylonia...'}
+110	110		301							"{2: 'Hanying', 3: ""But if that's the case, what difference is there between mechanoids and these destructive humans?""}"
+111	111		301							{3: 'Hanying gazes sadly at the enraged Veronica.'}
+112	112		301							"{3: ""She understands Veronica's anger—seeing fellow mechanoids treated this way fills her with rage too. But to blame humanity as a whole for the wrongdoings of a few...""}"
+113	113		301							{3: 'How would such mechanoids be any different from humans who label all mechanoids as infected?'}
+114	114		301							{3: 'Besides, those researchers who executed SDC-39 were likely deceived by the Emperor...'}
+115	115		301							"{2: 'Hanying', 3: ""Stop this, Veronica. Bifrost... shouldn't be activated for this.""}"
+116	116		301							{3: 'It can carry hopes toward the stars and stand as a beacon in the far north, but... it should never become the starting point of an even greater war.'}
+117	117		301							"{2: 'Veronica', 3: ""...There's nothing left to say.""}"
+118	118		301							{2: 'Veronica', 3: 'Though I never imagined my weapon would one day be pointed at my own...'}
+119	119		301		1		AniZhuanchangBegin			"{2: 'Veronica', 3: ""If you wish to stop me, Hanying, you'll have to step over my body.""}"

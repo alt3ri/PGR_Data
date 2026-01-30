@@ -1,0 +1,80 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory115.png'}
+2	1000		401							{1: '1', 2: '201'}
+3	2		201							{1: '1', 2: '1031001'}
+4	3		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Did we... succeed?', 4: '1'}
+5	4		203							{1: '1', 2: '0.25', 3: '-400'}
+6	5		201							{1: '2', 2: '1011001', 4: '400'}
+7	6		301							"{1: '1', 2: 'Lee', 3: ""It only adjusted its form temporarily... There's no substantial change..."", 4: '2'}"
+8	7		202							{1: '1', 2: '2', 6: '1'}
+9	8		201							{1: '1', 2: '1021001'}
+10	9		301							"{1: '1', 2: 'Lucia', 3: ""In that case... Let's keep suppressing it!"", 4: '1'}"
+11	10		301							"{2: 'Lucia', 3: ""Sooner or later, we'll find its weak point!"", 4: '1'}"
+12	11		201							{1: '1', 2: '500080'}
+13	12		301							"{1: '1', 2: 'Watanabe', 3: ""Time to take out your secret weapon, don't you think?"", 4: '1'}"
+14	13		302							"{2: ""...I don't know what you're talking about, Watanabe."", 3: '14', 4: 'You noticed...', 5: '14'}"
+15	14		203							{1: '1', 2: '0.25', 3: '400'}
+16	15		201							{1: '2', 2: '1021001', 3: '3', 4: '-400'}
+17	16		301							{1: '1', 2: 'Lucia', 3: 'Watanabe... How did you know...', 4: '2'}
+18	17		202							{1: '2', 6: '1'}
+19	18		203							{1: '1', 2: '0.25'}
+20	19		204							{1: '1', 2: '8'}
+21	20		301							"{2: 'Watanabe', 3: ""...You've done so much preparation. I would be a fool if I couldn't guess it already."", 4: '1'}"
+22	21		202							{1: '1', 6: '1'}
+23	22		301							{3: 'Watanabe looks at the satellite outside.'}
+24	23		201							{1: '1', 2: '500080'}
+25	24		301							"{1: '1', 2: 'Watanabe', 3: ""That's more than just a communication relay station, isn't it?"", 4: '1'}"
+26	25		201							{1: '1', 2: '1021001'}
+27	26		301							{1: '1', 2: 'Lucia', 3: 'Yes...', 4: '1'}
+28	27		201							{1: '1', 2: '500080'}
+29	28		301							{1: '1', 2: 'Watanabe', 3: 'Tell me how to use it.', 4: '1'}
+30	29		302							"{2: 'Lucia, tell him.', 3: '31', 4: ""We weren't hiding it on purpose."", 5: '30'}"
+31	30		301							{1: '1', 2: 'Watanabe', 3: 'Of course, I understand you have your concerns.', 4: '1'}
+32	31		201							{1: '1', 2: '1021001'}
+33	32		301							{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+34	33		301							{1: '1', 2: 'Lucia', 3: '...I understand.', 4: '1'}
+35	34		202							{1: '1', 6: '1'}
+36	35		301							{3: '...'}
+37	36		301							{3: 'Connecting—'}
+38	37		201							{1: '1', 2: '1111001', 3: '5'}
+39	38		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+40	39		301							{1: '1', 2: 'Karenina', 3: 'Hello? Can you hear me?', 4: '1'}
+41	40		301							{2: 'Karenina', 3: 'The railgun was fully charged long ago!', 4: '1'}
+42	41		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+43	42		201							{1: '1', 2: '500080'}
+44	43		301							"{1: '1', 2: 'Watanabe', 3: ""It's still a work in progress here. Wait for my signal."", 4: '1'}"
+45	44		201							{1: '1', 2: '1111001'}
+46	45		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+47	46		301							{1: '1', 2: 'Karenina', 3: 'Who are you? You look familiar though.', 4: '1'}
+48	47		301							"{2: 'Karenina', 3: ""Where's Gray Raven?"", 4: '1'}"
+49	48		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+50	49		201							{1: '1', 2: '500080'}
+51	50		301							{1: '1', 2: 'Watanabe', 3: 'We had a discussion and decided that I would be the best candidate to fire the Prism.', 4: '1'}
+52	51		201							{1: '1', 2: '1021001'}
+53	52		301							"{1: '1', 2: 'Lucia', 3: ""He's right..."", 4: '1'}"
+54	53		203							{1: '1', 2: '0.25', 3: '400'}
+55	54		201							{1: '2', 2: '1111001', 4: '-400'}
+56	55		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+57	56		301							{1: '1', 2: 'Karenina', 3: 'I see. So the people in the office have already granted the permission... Alright.', 4: '2'}
+58	9664		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+59	57		202							{1: '1', 6: '1'}
+60	58		203							{1: '2', 2: '0.25'}
+61	59		301							"{2: 'Karenina', 3: ""Hmph, Lucia... I've never seen you like this."", 4: '2'}"
+62	60		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+63	61		201							{1: '2', 2: '1021001'}
+64	62		301							{1: '1', 2: 'Lucia', 3: '...?', 4: '2'}
+65	63		201							{1: '2', 2: '1031001'}
+66	64		301							{1: '1', 2: 'Liv', 3: 'The energy level of the core is rising again after the transformation!', 4: '2'}
+67	65		203							{1: '2', 2: '0.25', 3: '400'}
+68	66		201							{1: '1', 2: '1011001', 4: '-400'}
+69	67		301							"{1: '1', 2: 'Lee', 3: ""Now I'm curious how many forms it can have."", 4: '1'}"
+70	68		202							{1: '1', 2: '2', 6: '1'}
+71	69		201							{1: '1', 2: '1021001'}
+72	70		301							{1: '1', 2: 'Lucia', 3: 'The Prism needs more time to stabilize and aim for best accuracy.', 4: '1'}
+73	71		201							{1: '1', 2: '500080'}
+74	72		301							{1: '1', 2: 'Watanabe', 3: 'Understood.', 4: '1'}
+75	73		302							"{2: 'Be careful, Watanabe!', 3: '74', 4: ""We've got your back."", 5: '74'}"
+76	74		204							{1: '1', 2: '8'}
+77	75		301							{2: 'Watanabe', 3: 'Keep attacking...', 4: '1'}
+78	76		204							{1: '1'}
+79	77		301		1		AniZhuanchangBegin			"{2: 'Watanabe', 3: ""From now on, I'll try to expose its weakness."", 4: '1'}"

@@ -1,0 +1,37 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory273.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500916', 3: '4'}
+4	4		302							{2: 'The interference source is the facility itself?', 3: '5'}
+5	5		301			DialogEnable				"{2: 'Hanying', 3: ""That's right. To be more precise..."", 4: '1'}"
+6	6		301							{2: 'Hanying', 3: 'Numerous micro-devices have been distributed throughout the facility, working in tandem to turn every corner of the base into part of the interference source.', 4: '1'}
+7	7		301							"{2: 'Hanying', 3: 'They work together to affect our vision, hearing, and even our perception of space, trapping us in a meticulously woven ""illusion"".', 4: '1'}"
+8	8		203							{1: '1', 2: '0.25', 3: '400'}
+9	9		201							{1: '2', 2: '500994', 4: '-400'}
+10	10		301							{1: '1', 2: 'Lucia', 3: 'Then the way to escape...', 4: '2'}
+11	11		301							{2: 'Hanying', 3: 'There are actually several ways to escape this illusion. If someone from the outside can assist us, we can try moving to the edge of the facility and forcibly break through the walls to escape.', 4: '1'}
+12	12		301							"{2: 'Hanying', 3: ""Once we're far enough, we'll escape the interference and break free from the illusion."", 4: '1'}"
+13	13		301							"{2: 'Hanying', 3: 'There are also often evacuation routes built into these illusions to prevent accidental activation that might trap someone forever. As long as we can find the ""path"" through a special identifier, we can safely exit.', 4: '1'}"
+14	14		302							"{2: 'Now, we just need to see if we can find this ""path"".', 3: '15', 4: 'I suggest we just smash through the walls.', 5: '18'}"
+15	15		202							{1: '1', 2: '2', 6: '1'}
+16	16		201							{1: '1', 2: '1011001'}
+17	17	22	301							"{1: '1', 2: 'Lee', 3: 'I already have clues about this ""path"".', 4: '1'}"
+18	18		202							{1: '1', 2: '2', 6: '1'}
+19	19		201							{1: '1', 2: '1011001'}
+20	20		301							{1: '1', 2: 'Lee', 3: 'Such a sophisticated array of devices should be preserved intact. They have tremendous research value.', 4: '1'}
+21	21		301							"{2: 'Lee', 3: 'Besides, I already have clues about this ""path"".', 4: '1'}"
+22	22		301							{2: 'Lee', 3: 'Do you remember when we followed that constantly moving cube-shaped mechanoid, Commandant?', 4: '1'}
+23	23		302							"{2: 'Yeah, kinda.', 3: '24', 4: ""You think that's the special identifier?"", 5: '24'}"
+24	24		301							{2: 'Lee', 3: 'Very likely.', 4: '1'}
+25	25		301							{2: 'Lee', 3: 'My data collection was most efficient while we followed that mechanoid, which indicates that our movement in reality was also most effective then, having avoided meaningless wandering.', 4: '1'}
+26	26		301							{2: 'Lee', 3: 'However, it might have failed to guide us to the actual exit point due to a long-term lack of maintenance.', 4: '1'}
+27	27		301							"{2: 'Lee', 3: ""If we can find a similar mechanoid again, we can repair it and use it to guide us out of this illusion with the data we now possess, even if it's damaged."", 4: '1'}"
+28	28		203							{1: '1', 2: '0.25', 3: '-400'}
+29	29		201							{1: '2', 2: '500916', 3: '4', 4: '400'}
+30	30		301							"{1: '1', 2: 'Hanying', 3: ""I'll share with you all the data I've gathered. Perhaps we can find that special identifier more quickly."", 4: '2'}"
+31	31		202							{1: '1', 2: '2', 6: '1'}
+32	32		201							{1: '1', 2: '1031001'}
+33	33		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+34	34		301							{1: '1', 2: 'Liv', 3: 'Data received...', 4: '1'}
+35	35		301							"{2: 'Liv', 3: ""Target located. It's not far from where you are."", 4: '1'}"
+36	36		302		1		AniZhuanchangBegin			"{2: ""The final stretch. Let's move out."", 3: '37'}"

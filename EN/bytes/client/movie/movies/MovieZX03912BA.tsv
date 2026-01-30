@@ -1,0 +1,464 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory774.jpg'}
+2	2		401							{1: '1', 2: '229'}
+3	3		301			DialogEnable				"{3: ""You're neither Cthylla—who tends to slowly lose her mind if she loses the egg—nor Lamia—who thrives with the egg.""}"
+4	4		301							{3: 'The collapse sends you straight into the pool at the bottom, tumbling into a deep well along with the current.'}
+5	5		301							"{3: ""The rumble of the earthquake continues in the distance, and it sounds as though some gigantic monsters are fighting where you can't see them.""}"
+6	6		301							"{3: ""With your eyes locked on the well's opening, you try to make your way up—only to slide back down, completely exhausted.""}"
+7	7		301							{3: 'The fight just now was the last straw for you.'}
+8	8		502							{1: 'DialogDisable'}
+9	9		302							{2: '...Shorthalt...', 3: '10'}
+10	10		302							{2: '...', 3: '11'}
+11	11		301			DialogEnable				"{3: ""You've been relying on him since you came to.""}"
+12	12		301							"{3: ""You find yourself not knowing what to do, having never thought that you'd have to say goodbye this soon.""}"
+13	13		302							{2: '...Valeria.', 3: '14'}
+14	14		301							"{3: ""You don't know much about Scarab, save for the few times you've seen Commandant Valeria walking alongside the rest of her squad.""}"
+15	15		301							{3: 'Death is commonplace on the battlefield, but many have still yet to grow used to it.'}
+16	16		301							{3: 'You reach into one of the pockets. In there sits a candy he left behind.'}
+17	17		502							{1: 'DialogDisable'}
+18	18		302							{2: '...', 3: '19'}
+19	19		302							{2: '(Eat the candy)', 3: '20'}
+20	20		301			DialogEnable				{3: 'The cool peppermint with a hint of alcohol restores some of your cool.'}
+21	21		401							{1: '2', 2: '4095'}
+22	22		301							{3: 'You clutch onto the candy wrapper and put it back into your pocket.'}
+23	23		302							"{2: ""...I've got to find your name tag at least."", 3: '24'}"
+24	24		301							"{3: ""Your body, however, seems to be failing you. You feel as if you're being skinned alive as your clothes rub against your wounds, and the cold and trembling slowly stop you from moving.""}"
+25	25		302							{2: 'Cough... Cough cough!', 3: '26', 4: '...A fever?', 5: '26'}
+26	26		301							{3: 'When you put your hand onto your forehead, however, you feel a slimy lump of red.'}
+27	27		302							{2: '...', 3: '28', 4: '...Ha...', 5: '28'}
+28	28		301							"{3: ""It doesn't help that your Mind Beacon hasn't gotten any better—and many negative and violent thoughts are now adding to the chaos.""}"
+29	29		302							{2: '(Try to cut off the connection)', 3: '30'}
+30	30		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+31	31		401							{1: '2', 2: '4042'}
+32	32		301							"{3: ""Except Lillian doesn't seem to want to let the connection go.""}"
+33	33		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+34	34		402							{1: '4042'}
+35	35		502							{1: 'DialogDisable'}
+36	36		302							{2: 'Cough cough...', 3: '37', 4: 'Never knew Ascendants could do this.', 5: '37'}
+37	37		302							"{2: ""No, I can't give up. I can't give up just yet..."", 3: '38'}"
+38	38		302							"{2: ""I haven't even gotten my pension yet..."", 3: '39', 4: 'There are people waiting for me...', 5: '39', 6: 'The world would be doomed if Cthylla is let out now...', 7: '39'}"
+39	39		301			DialogEnable				{3: 'This is what you keep telling yourself, but try as you may, you keep falling back into the well.'}
+40	40		401							{1: '2', 2: '788'}
+41	41		104						250.0	{1: '0|50|-25', 2: '0.25'}
+42	42		104							{1: '0|0|-50', 2: '0.25'}
+43	43		401							{1: '2', 2: '2938'}
+44	44		301							"{3: ""You're trapped here, at your wits' end—and yet you don't know what you have to gain from the world out there either.""}"
+45	45		401							{1: '2', 2: '3077'}
+46	46		104							{1: '0|0|0', 2: '0.3'}
+47	47		301							"{3: ""Out there are countless Hetero-Creatures, an invincible Cthylla, and... an Ascendant who's shown her true colors.""}"
+48	48		301							{3: 'Despair fills your heart—and yet you never stop looking for tools to use in your surroundings.'}
+49	49		104						500.0	{1: '0|20|-100', 2: '0.5'}
+50	50		301							"{3: ""Suddenly, a smear flashes past—and you seem to know what it's trying to do.""}"
+51	51		302							{2: '...?', 3: '52'}
+52	52		301							{3: 'In the corner, it moves back and forth, as though trying to show you something.'}
+53	53		302							{2: '(Go for a look)', 3: '54'}
+54	54		104							{1: '0|0|0', 2: '1'}
+55	55		301							"{3: ""It's a dirty backpack.""}"
+56	56		301							{3: 'Inside is half a pack of compressed biscuits, a serum, a dagger, dozens of bullets, and two fever pills.'}
+57	57		301							"{3: ""The backpack looks like something that a Scavenger has left here for some reason—and given the timing, you can't help but wonder if this is a...""}"
+58	58		302							{2: '...Trap.', 3: '59', 4: '...Feed.', 5: '59', 9: '2'}
+59	59		301							"{3: ""But be that as it may, you know that you don't have the luxury to just walk away from the backpack now.""}"
+60	60		302							{2: '(Eat the biscuits)', 3: '61'}
+61	61		301							"{3: ""They taste normal—like any compressed cookies you've had, except your throat is much too dry now for them to go down smoothly.""}"
+62	62		302							{2: '(Inject the serum)', 3: '63'}
+63	63		401							{1: '2', 2: '1505'}
+64	64		301							{3: 'Just like the biscuits, there is nothing out of the ordinary about the serum.'}
+65	65		302							{2: '(Take the pills)', 3: '66'}
+66	66		301							{3: 'With the biscuits, the pills begin to tear at your throat.'}
+67	67		502							{1: 'DialogDisable'}
+68	68		302							{2: '...Gag.', 3: '69', 4: 'Cough cough cough...', 5: '69'}
+69	69		302							"{2: ""I can't even take pills now, huh..."", 3: '70', 4: ""I can't waste these. I've got to swallow them..."", 5: '70', 8: '2'}"
+70	70		301			DialogEnable				"{3: ""Hoping to make it easier for the pills to go down your throat, you turn your eyes to the stream that's brought you down here in the first place, knowing that it's probably not the safest choice of liquid.""}"
+71	71		401							{1: '2', 2: '1503'}
+72	72		301			RImgBg1Shake				{3: 'Right then, the well starts shaking more violently, and the ground sips away what little water there was left.'}
+73	73		302							{2: '...', 3: '74', 4: '(Swallow the pills anyway)', 5: '74'}
+74	74		301							"{3: ""As if you haven't suffered enough, the bitter taste of the pills fills your mouth.""}"
+75	75		401							{1: '2', 2: '738'}
+76	76		301			RImgBg1Shake				{3: 'It takes you a good 10 minutes to swallow both the biscuits and the pills—until the upper wall of the well starts shaking again. With it, the well itself slants to the right.'}
+77	77		302							{2: '(Look up)', 3: '78'}
+78	78		401							{1: '2', 2: '2533'}
+79	79		301							"{3: ""Some seawater streams down this way through an opening on the well's wall—bringing with it a half-filled bottle of water and a pack of bandages that nearly hits you.""}"
+80	80		302							{2: '?!', 3: '81'}
+81	81		301							{3: 'The bottle is all crumpled. You pick it up, take an incredulous sniff, and take a gulp of it.'}
+82	82		301							"{3: ""Like everything you've found in the backpack just now, there is nothing out of the ordinary about this liquid. What strikes you as weird is the well itself.""}"
+83	83		502							{1: 'DialogDisable'}
+84	84		302							"{2: ""God only knows what's coming down next."", 3: '85'}"
+85	85		302							{2: 'Gotta get out of here.', 3: '86'}
+86	86		401							{1: '2', 2: '2987'}
+87	87		301			DialogEnable				{3: 'You quickly bandage yourself with the bandage from the backpack and, with the dagger you just found, try to make your way up again. The dagger proves itself very useful.'}
+88	88		302							{2: '(Almost there...)', 3: '89'}
+89	89		401							{1: '2', 2: '788'}
+90	90		104						250.0	{1: '0|50|-25', 2: '0.25'}
+91	91		104							{1: '0|0|-50', 2: '0.25'}
+92	92		401							{1: '2', 2: '2938'}
+93	93		401							{1: '2', 2: '788'}
+94	94		104						250.0	{1: '0|50|-125', 2: '0.25'}
+95	95		104							{1: '0|0|-150', 2: '0.25'}
+96	96		401							{1: '2', 2: '2938'}
+97	97		301							{3: 'Halfway up, however, the shaking begins again—and you have a bad feeling about it...'}
+98	98		401							{1: '2', 2: '1503'}
+99	99		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory775.jpg', 3: '0', 4: '1', 5: '1'}
+100	100		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+101	101		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory775.jpg'}
+102	102		302			RImgBg1Shake				{2: '...!', 3: '103'}
+103	103		301							"{3: ""Countless metal bars pierce through the wall, blocking the well's opening.""}"
+104	104		401							{1: '2', 2: '3077'}
+105	105		301							{3: 'In a panic, your hands let go, sending you falling straight back down to the bottom of the well.'}
+106	106		302							{2: '...Was that Lithos?', 3: '107'}
+107	107		301							{3: 'He said there was one last injection to go, which is why you need to stay alive.'}
+108	108		302							{2: 'This place is the last place you want to be stuck in if that was Lithos.', 3: '109'}
+109	109		301							{3: 'You pick up the dagger again ready to give the climb another try—but the unevenness of the ground stops you cold.'}
+110	110		302							{2: '(Inspect the ground)', 3: '111'}
+111	111		301							"{3: ""In the light coming down through the well's opening, you feel the ground—and notice that the protruding parts seem to form a line of words.""}"
+112	112		502						400.0	{1: 'DialogDisable'}
+113	113		401							{1: '1', 2: '36'}
+114	114		307							"{1: ""Please stay in ▁▂, it's dangerous outside ▂▄▁."", 3: '50', 4: '9a99ff'}"
+115	115		301							"{3: ""Please stay in ▁▂, it's dangerous outside ▂▄▁.""}"
+116	116		307							{2: '1'}
+117	117		401							{1: '1', 2: '63'}
+118	118		302							"{2: ""...I'm not going to sit around and wait for you to come and give me that last shot, Lithos."", 3: '147', 4: ""Hahaha! I've had enough!"", 5: '119', 9: '2'}"
+119	119		301			DialogEnable				"{3: ""The corruption of your Mind Beacon awakens the compulsive rage that's been lying dormant within you. Your rage drowns out reason and comes pouring out of your mouth.""}"
+120	120		302							{2: 'When are you going to leave me the hell alone?!', 3: '121', 8: '2'}
+121	121		301							{3: 'With no one around to contain it, your rage seems poised to escalate into an erupting volcano.'}
+122	122		302							"{2: 'Long live the Ascension-Network!', 3: '123', 4: ""I'll shoot Babylonia down for you! How does that sound?!"", 5: '123', 8: '2', 9: '2'}"
+123	123		301							{3: 'Your rage has reduced you down to a pathetic, venom-spewing loser.'}
+124	124		301							{3: 'And you know that if this goes on... you might very well end up like Ravenge with the corruption of your Mind Beacon.'}
+125	125		502							{1: 'DialogDisable'}
+126	126		302							"{2: ""There is nothing but a bunch of defectors here and I'm goddamned sick and tired of it!"", 3: '127', 8: '2'}"
+127	127		302							"{2: ""I don't care what your problems are. Just friggin' go to hell already!"", 3: '128', 8: '2'}"
+128	128		401						600.0	{1: '2', 2: '819016'}
+129	129		401							{1: '2', 2: '819016'}
+130	130		301			DialogEnable				{3: 'All but about to break down, you stab at the words on the wall, hurting yourself again and again in the process.'}
+131	131		302							{2: 'Let me out! Let me out! Let me out!', 3: '132', 8: '2'}
+132	132		401							{1: '2', 2: '591'}
+133	133		301			RImgBg1Shake				"{3: ""As the well's shaking grows more violent still, squirmy writings begin to surface all around you—as though the walls were alive and were part of a Hetero-Creature.""}"
+134	134		402							{1: '591'}
+135	135		502						400.0	{1: 'DialogDisable'}
+136	136		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+137	137		401							{1: '2', 2: '2576'}
+138	138		307						900.0	"{1: ""I'm sorry please ▁▆▁▂ it's very dangerous here ▄▁▂ please ▂▁▄ stay here ▃▆ it's very dangerous ▃▁▂▆ here ▅▂▄▂ dangerous please stay ▂▄▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁ dangerous please ▁▂ here ▁▂▄ very dangerous please ▂▄▂ here ▃▁▆ very dangerous ▃▁▆▂ here ▅▂▄ dangerous please stay ▄▅▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁▆▁ dangerous please ▁▄▂ here ▁▂ very dangerous please ▂▄ here ▃▂▆ very dangerous ▃▁▆ here ▅▂ dangerous please stay ▂"", 3: '50', 4: '9a99ff'}"
+139	139		401							{1: '2', 2: '2576'}
+140	140		307						600.0	"{1: ""I'm sorry please ▁▆▁▂ it's very dangerous here ▄▁▂ please ▂▁▄ stay here ▃▆ it's very dangerous ▃▁▂▆ here ▅▂▄▂ dangerous please stay ▂▄▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁ dangerous please ▁▂ this place ▁▂▄ is very dangerous please ▂▄▂ here ▃▁▆ very dangerous ▃▁▆▂ here ▅▂▄ dangerous please stay ▄▅▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁▆▁ dangerous please ▁▄▂ this place ▁▂ very dangerous please ▂▄ here ▃▂▆ very dangerous ▃▁▆ here ▅▂ dangerous please stay ▂▄▁▅▁ dangerous please ▁▅ in ▁▂ outside ▂▄▁ dangerous please stay ▄▅▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁▆▁ dangerous please very dangerous please ▂▁▄ stay here ▃▆ very dangerous ▃▁▂▆ here ▅▂▄▂ dangerous please stay ▂▄▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁ dangerous please ▁▂ this place ▁▂▄ is very dangerous I'm sorry please ▁▆▁▂ this place ▄▁▂ is very dangerous please ▂▁▄ stay here ▃▆ very dangerous ▃▁▂▆ here ▅▂▄▂ dangerous please stay ▂▄▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁ dangerously dangerous ▃▁▂▆ here ▅▂▄▂ dangerous please stay ▂▄▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁ dangerous"", 3: '50', 4: '9a99ff'}"
+141	141		401							{1: '2', 2: '2576'}
+142	142		307							"{1: ""I'm sorry please ▁▆▁▂ it's very dangerous here ▄▁▂ please ▂▁▄ stay here ▃▆ it's very dangerous ▃▁▂▆ here ▅▂▄▂ dangerous please stay ▂▄▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁ dangerous please ▁▂ this place ▁▂▄ is very dangerous please ▂▄▂ here ▃▁▆ very dangerous ▃▁▆▂ here ▅▂▄ dangerous please stay ▄▅▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁▆▁ dangerous please ▁▄▂ this place ▁▂ very dangerous please ▂▄ here ▃▂▆ very dangerous ▃▁▆ here ▅▂ dangerous please stay ▂▄▁▅▁ dangerous please ▁▅ in ▁▂ outside ▂▄▁ dangerous please stay ▄▅▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁▆▁ dangerous please very dangerous please ▂▁▄ stay here ▃▆ very dangerous ▃▁▂▆ here ▅▂▄▂ dangerous please stay ▂▄▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁ dangerous please ▁▂ this place ▁▂▄ is very dangerous I'm sorry please ▁▆▁▂ this place ▄▁▂ is very dangerous please ▂▁▄ stay here ▃▆ very dangerous ▃▁▂▆ here ▅▂▄▂ dangerous please stay ▂▄▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁ dangerous"", 3: '55', 4: '9a99ff'}"
+143	144		301							"{3: ""I'm sorry please ▁▆▁▂ it's very dangerous here ▄▁▂ please ▂▁▄ stay here ▃▆ it's very dangerous ▃▁▂▆ here ▅▂▄▂ dangerous please stay ▂▄▂ dangerous please""}"
+144	145		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+145	146	161	307							{2: '1'}
+146	147		502							{1: 'DialogEnable'}
+147	148		401							{1: '2', 2: '591'}
+148	149		301			RImgBg1Shake				"{3: ""As the well's shaking grows more violent still, squirmy writings begin to surface all around you—as though the walls were alive and were part of a Hetero-Creature.""}"
+149	150		402							{1: '591'}
+150	151		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+151	152		502						400.0	{1: 'DialogDisable'}
+152	153		401							{1: '2', 2: '2576'}
+153	154		307						900.0	"{1: ""I'm sorry please ▁▆▁▂ it's very dangerous here ▄▁▂ please ▂▁▄ stay here ▃▆ it's very dangerous ▃▁▂▆ here ▅▂▄▂ dangerous please stay ▂▄▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁ dangerous please ▁▂ here ▁▂▄ very dangerous please ▂▄▂ here ▃▁▆ very dangerous ▃▁▆▂ here ▅▂▄ dangerous please stay ▄▅▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁▆▁ dangerous please ▁▄▂ here ▁▂ very dangerous please ▂▄ here ▃▂▆ very dangerous ▃▁▆ here ▅▂ dangerous please stay ▂"", 3: '50', 4: '9a99ff'}"
+154	155		401							{1: '2', 2: '2576'}
+155	156		307						600.0	"{1: ""I'm sorry please ▁▆▁▂ it's very dangerous here ▄▁▂ please ▂▁▄ stay here ▃▆ it's very dangerous ▃▁▂▆ here ▅▂▄▂ dangerous please stay ▂▄▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁ dangerous please ▁▂ this place ▁▂▄ is very dangerous please ▂▄▂ here ▃▁▆ very dangerous ▃▁▆▂ here ▅▂▄ dangerous please stay ▄▅▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁▆▁ dangerous please ▁▄▂ this place ▁▂ very dangerous please ▂▄ here ▃▂▆ very dangerous ▃▁▆ here ▅▂ dangerous please stay ▂▄▁▅▁ dangerous please ▁▅ in ▁▂ outside ▂▄▁ dangerous please stay ▄▅▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁▆▁ dangerous please very dangerous please ▂▁▄ stay here ▃▆ very dangerous ▃▁▂▆ here ▅▂▄▂ dangerous please stay ▂▄▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁ dangerous please ▁▂ this place ▁▂▄ is very dangerous I'm sorry please ▁▆▁▂ this place ▄▁▂ is very dangerous please ▂▁▄ stay here ▃▆ very dangerous ▃▁▂▆ here ▅▂▄▂ dangerous please stay ▂▄▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁ dangerously dangerous ▃▁▂▆ here ▅▂▄▂ dangerous please stay ▂▄▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁ dangerous"", 3: '50', 4: '9a99ff'}"
+156	157		401							{1: '2', 2: '2576'}
+157	158		307							"{1: ""I'm sorry please ▁▆▁▂ it's very dangerous here ▄▁▂ please ▂▁▄ stay here ▃▆ it's very dangerous ▃▁▂▆ here ▅▂▄▂ dangerous please stay ▂▄▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁ dangerous please ▁▂ this place ▁▂▄ is very dangerous please ▂▄▂ here ▃▁▆ very dangerous ▃▁▆▂ here ▅▂▄ dangerous please stay ▄▅▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁▆▁ dangerous please ▁▄▂ this place ▁▂ very dangerous please ▂▄ here ▃▂▆ very dangerous ▃▁▆ here ▅▂ dangerous please stay ▂▄▁▅▁ dangerous please ▁▅ in ▁▂ outside ▂▄▁ dangerous please stay ▄▅▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁▆▁ dangerous please very dangerous please ▂▁▄ stay here ▃▆ very dangerous ▃▁▂▆ here ▅▂▄▂ dangerous please stay ▂▄▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁ dangerous please ▁▂ this place ▁▂▄ is very dangerous I'm sorry please ▁▆▁▂ this place ▄▁▂ is very dangerous please ▂▁▄ stay here ▃▆ very dangerous ▃▁▂▆ here ▅▂▄▂ dangerous please stay ▂▄▂ dangerous please ▁▅ in ▁▂ outside ▂▄▁ dangerous"", 3: '55', 4: '9a99ff'}"
+158	159		301							"{3: ""I'm sorry please ▁▆▁▂ it's very dangerous here ▄▁▂ please ▂▁▄ stay here ▃▆ it's very dangerous ▃▁▂▆ here ▅▂▄▂ dangerous please stay ▂▄▂ dangerous please""}"
+159	160		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+160	161		302							{2: '...?!', 3: '162'}
+161	162		307							"{1: ""▁▄▂I won't last much longer, and Cthylla is..."", 3: '50', 4: '9a99ff'}"
+162	163		301							"{3: ""▁▄▂I won't last much longer, and Cthylla is...""}"
+163	164		307							{2: '1'}
+164	165		401							{1: '2', 2: '1503'}
+165	166		502							{1: 'RImgBg1Shake'}
+166	167		301			DialogEnable				{3: 'The mouth of the well Is closing in.'}
+167	168		502						400.0	{1: 'DialogDisable'}
+168	169		307							"{1: ""Before I ▁▂▄▁, please stay here. It's too dangerous outside."", 3: '50', 4: '9a99ff'}"
+169	170		301							"{3: ""Before I ▁▂▄▁, please stay here. It's too dangerous outside.""}"
+170	171		307							{2: '1'}
+171	172		301			DialogEnable				{3: 'The words sound like the plea of a dying man.'}
+172	173		502						400.0	{1: 'DialogDisable'}
+173	174		307							"{1: ""I'm sorry please▁▆▁▂it's very▄▁▂dangerous here▁▂▅▂▄dangerous▁▄▂dangerous"", 3: '50', 4: '9a99ff'}"
+174	175		301							"{3: ""I'm sorry please▁▆▁▂it's very▄▁▂dangerous here▁▂▅▂▄dangerous▁▄▂dangerous""}"
+175	176		307							{2: '1'}
+176	177		301			DialogEnable				{3: 'The words on the uneven walls scream out, pleading for the humans here to stay.'}
+177	178		302							"{2: ""Fine, I'll do as you say... I'll stay."", 3: '179', 4: 'Ha... things just keep getting crazier by the second.', 5: '184', 9: '2'}"
+178	179		401							{1: '2', 2: '1503'}
+179	180		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory774.jpg', 3: '0', 4: '1', 5: '1'}
+180	181		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+181	182		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory774.jpg'}
+182	183	187	301							"{3: ""The tremors all around gradually subside as the mouth of the well returns to its original state, as if understanding what you've said.""}"
+183	184		401							{1: '2', 2: '1503'}
+184	185		205						200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0'}
+185	186		301			RImgBg1Shake				"{3: ""You're plunged into darkness with the well's mouth all but completely sealed.""}"
+186	187		302							{2: '...', 3: '188'}
+187	188		301							{3: 'As the painkillers start to take effect, you are awash in a wave of fatigue.'}
+188	189		301							"{3: ""At your wits' end, you lean against the well's wall, before sitting down and slowly closing your eyes.""}"
+189	190		302				AniZhuanchangBegin			"{2: ""I wonder... how they're all holding up..."", 3: '191'}"
+190	191		401							{1: '1', 2: '36'}
+191	192		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '0', 5: '0'}
+192	193		502						400.0	{1: 'DialogDisable'}
+193	194		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory776.jpg'}
+194	195		401							{1: '1', 2: '250'}
+195	196		107							{1: 'April 16th', 2: '4:00 AM'}
+196	197		301							{3: 'April 16th, 4:00 AM.'}
+197	198		108							{1: '1'}
+198	199		301			DialogEnable				{3: 'Gray Raven commences a blanket search in the designated area, locking onto a long-abandoned hospital as their target.'}
+199	200		301							{3: 'Sneaking into the underground morgue, Liv discovers a hidden door behind the freezer of the thirteenth body.'}
+200	201		201							{1: '1', 2: '500568', 3: '5'}
+201	202		301							{1: '1', 2: 'Lee', 3: '......', 4: '1'}
+202	203		202							{1: '1', 6: '1'}
+203	204		301							{3: 'What lies before the three of them now is a scene of utter despair.'}
+204	205		201							{1: '1', 2: '1031001', 3: '16'}
+205	206		301							{1: '1', 2: 'Liv', 3: 'Comman... dant...', 4: '1'}
+206	207		202							{1: '1', 6: '1'}
+207	208		301							{3: 'An unbearable stench assaults the senses.'}
+208	209		301							{3: 'Behind the hidden door is a room with six bodies, all bearing the same face.'}
+209	210		301							{3: 'Some of them are stiff, while some have started to decompose. Others are still bleeding from their wounds.'}
+210	211		301							{3: 'Regardless of their states, these bodies all bear tragic expressions, as if trying to show what they had been through before meeting their fates.'}
+211	212		201							{1: '1', 2: '500166', 3: '5'}
+212	213		301							{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+213	214		301							"{3: ""Fighting the boiling pain in her M.I.N.D., Lucia grasps Liv's trembling hand.""}"
+214	215		301							{2: 'Lucia', 3: 'Liv, Lee.', 4: '1'}
+215	216		301							"{2: 'Lucia', 3: ""The blood... on some of these bodies is still fresh. There might still be hope. Let's check on them first."", 4: '1'}"
+216	217		301							{2: 'Lucia', 3: 'These might just be clones, or it might be the Ascendants trying to fool us, but whatever... whatever it might be...', 4: '1'}
+217	218		201							{1: '1', 2: '1031001', 3: '5'}
+218	219		301							{1: '1', 2: 'Liv', 3: '...I know.', 4: '1'}
+219	220		301							{3: 'Seeing Lucia struggle to find her words, Liv gently shakes her head.'}
+220	221		202							{1: '1'}
+221	222		301							{3: 'Regaining her composure, she quickly walks up to the blood-stained bodies to check for any signs of life.'}
+222	223		201							{1: '1', 2: '500568', 3: '7'}
+223	224		301							{1: '1', 3: 'Lee, however, remains in place, looking somewhat out of it.'}
+224	225		203							{1: '1', 2: '0.25', 3: '-400'}
+225	226		201							{1: '2', 2: '500166', 3: '5', 4: '400'}
+226	227		301							{1: '1', 2: 'Lucia', 3: 'Lee?', 4: '2'}
+227	228		301							"{3: ""Lee says nothing, as though he hasn't heard a thing.""}"
+228	229		301							{2: 'Lucia', 3: 'Lee!', 4: '2'}
+229	230		204							{1: '1'}
+230	231		301							"{3: ""It's only when Lucia jolts him by the shoulder that Lee finally seems to snap back to the present from a distant past.""}"
+231	232		301							"{2: 'Lucia', 3: ""Let's check the other rooms. We're not giving up any hope!"", 4: '2'}"
+232	233		202							{1: '2', 6: '1'}
+233	234		203							{1: '1', 2: '0.25'}
+234	235		301							{3: 'With a nod, Lee quietly leaves the pool of blood behind.'}
+235	236		301							"{3: 'He didn\'t ""give up,"" nor was he crushed by what he\'d seen—he was just feeling overwhelmed by a familiar heartache.'}"
+236	237		204							{1: '1', 2: '14'}
+237	238		301				AniZhuanchangBegin			"{3: ""...What he doesn't understand, though, is why he's finding it familiar.""}"
+238	239		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+239	240		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory151.png'}
+240	241		301			DialogEnable				{3: 'Breaking through the partition wall covered in dust, the trio finds a clean space beyond the stench and bloodstains.'}
+241	242		301							{3: 'In the space are rows of empty cryogenic chambers, with only the one at the far end containing a person who looks exactly like their commandant.'}
+242	243		201							{1: '1', 2: '1031001', 3: '5', 4: '-400'}
+243	244		201							{1: '2', 2: '500166', 3: '5', 4: '400'}
+244	245		301							{1: '1', 2: 'Liv', 3: 'This commandant... is still alive! Lucia, call for backup!', 4: '1'}
+245	246		301							"{2: 'Lucia', 3: ""I called them the moment we entered. They're on their way now."", 4: '2'}"
+246	247		202							{1: '1', 2: '2', 6: '1'}
+247	248		502						400.0	{1: 'DialogDisable'}
+248	249		307							{1: '...But is this really okay?', 2: '50'}
+249	250		301							{3: '...But is this really okay?'}
+250	251		307							{2: '1'}
+251	252		301			DialogEnable				{3: 'The three look at the body before them—still with a heartbeat—and exchange silent glances.'}
+252	253		301							"{3: ""Can they really turn a blind eye to that certain question they haven't been able to answer if their commandant never turns up again?""}"
+253	254		301							{3: 'And just exactly what would they have to do with this lookalike on the off chance that they found their commandant soon?'}
+254	255		301							{3: 'After a long silence, the three decide to leave these questions unanswered.'}
+255	256		201							{1: '1', 2: '500568'}
+256	257		301							{1: '1', 2: 'Lee', 3: 'Commandant has only been missing for 16 days. Is that really enough time for someone, even with growth drugs, to go from birth... to the state this clone is in now?', 4: '1'}
+257	258		201							{1: '1', 2: '500166', 3: '5'}
+258	259		301							{1: '1', 2: 'Lucia', 3: 'These clones were here before Commandant went missing. That much I can say for sure.', 4: '1'}
+259	260		201							{1: '1', 2: '500568', 3: '5'}
+260	261		301							{1: '1', 2: 'Lee', 3: 'But when exactly did...', 4: '1'}
+261	262		204							{1: '1'}
+262	263		301							{2: 'Lee', 3: 'Wait, we can hack into this terminal here.', 4: '1'}
+263	264		202							{1: '1', 6: '1'}
+264	265		301							{3: 'Lee brings up a projection keyboard and inserts his storage device into the terminal.'}
+265	266		301							{3: 'After quite some time, surveillance footage from a while back is recovered.'}
+266	267		301							{3: 'The footage shows Lithos overseeing a couple of Constructs as they move a large machine in here.'}
+267	268		201							{1: '1', 2: '1031001', 3: '5', 4: '-600'}
+268	269		201							{1: '2', 2: '500166', 3: '5'}
+269	270		201							{1: '3', 2: '500568', 4: '600'}
+270	271		301							"{1: '1', 2: 'Lucia', 3: ""What's this?"", 4: '2'}"
+271	272		301							"{2: 'Liv', 3: ""I know what that is. It's a memory synchronizer, and Professor Hippocrates has data on it."", 4: '1'}"
+272	273		301							{2: 'Lee', 3: 'A memory synchronizer?', 4: '3'}
+273	274		301							{2: 'Liv', 3: 'Yes, it synchronizes memories between two brains. It was used during the Golden Age to treat amnesia... and in some illegal research. It damaged the brain easily, though, so they stopped using it.', 4: '1'}
+274	275		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+275	276		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+276	277		504							{1: '0.7'}
+277	278		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+278	279		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+279	280		201							{1: '1', 2: '500513'}
+280	281		301							{1: '1', 3: 'In the footage, Lithos gently caresses the machine, muttering to himself.'}
+281	282		301							"{2: 'Lithos', 3: ""Now... I'll have to bring you all here from Fort Winter."", 4: '1'}"
+282	283		301							"{2: 'Lithos', 3: ""And this is where I'll be giving your memories back to you. Let's hope this machine still works..."", 4: '1'}"
+283	284		301							"{2: 'Lithos', 3: ""I'm sorry... it took me that long to finally notice who you are..."", 4: '1'}"
+284	285		401							{1: '2', 2: '558'}
+285	286		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+286	287		202							{1: '1', 6: '1'}
+287	288		504						300.0	
+288	289		505						300.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+289	290		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+290	291		301							{3: 'The footage ends here.'}
+291	292		201							{1: '1', 2: '500568', 4: '400'}
+292	293		201							{1: '2', 2: '500166', 3: '5', 4: '-400'}
+293	294		301							{1: '1', 2: 'Lucia', 3: '...', 4: '2'}
+294	295		301							"{2: 'Lee', 3: 'Fort Winter, huh... If what he said is true, that means these people were ""created"" before Commandant went missing.', 4: '1'}"
+295	296		301							{2: 'Lucia', 3: 'Wait...', 4: '2'}
+296	297		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+297	298		401							{1: '2', 2: '558'}
+298	299		202							{1: '1', 2: '2', 6: '1'}
+299	300		504							{1: '0.7'}
+300	301		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory692.jpg'}
+301	302		201							{1: '1', 2: '500610'}
+302	303		301							{1: '1', 2: 'Alpha', 3: 'A human skeleton... They had lost all patience...', 4: '1'}
+303	304		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+304	305		202							{1: '1', 6: '1'}
+305	306		504							
+306	307		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory151.png'}
+307	308		201							{1: '1', 2: '500568', 4: '400'}
+308	309		201							{1: '2', 2: '500166', 3: '5', 4: '-400'}
+309	310		301							{1: '1', 2: 'Lucia', 3: 'I saw a human skeleton near the access device when Alpha and I were at Fort Winter. Is that when...?', 4: '2'}
+310	311		301							{2: 'Lee', 3: 'A human skeleton? As in all bones and no flesh?', 4: '1'}
+311	312		301							"{2: 'Lucia', 3: ""No, I couldn't date it because it didn't seem like it had decayed naturally."", 4: '2'}"
+312	313		301							"{2: 'Lucia', 3: 'But here is my guess—if there was a ""window of opportunity"" for anyone to do anything before Commandant went missing...', 4: '2'}"
+313	314		301							{2: 'Lucia', 3: '...It would have been after the mission with Wanshi to set up the domain nodes and Longinus Arsenal vaporized the Red Tide.', 4: '2'}
+314	315		204							{1: '1', 2: '7'}
+315	316		301							{2: 'Lee', 3: '...!', 4: '1'}
+316	317		301							{2: 'Lucia', 3: 'Remember how we were told to stand by in the prep room when they clearly could have used help?', 4: '2'}
+317	318		204							{1: '1'}
+318	319		301							{2: 'Lee', 3: 'I do. Commandant was trying to find out what was happening but was immediately taken away.', 4: '1'}
+319	320		301							"{2: 'Lee', 3: 'They said they ""need to monitor memory replays caused by the corrupted Mind Beacon.""', 4: '1'}"
+320	321		301							{2: 'Lucia', 3: 'Nobody knew what those medical checks were for or what they took.', 4: '2'}
+321	322		301							{3: 'Says Lucia, the hilt of the knife in her hand on the verge of being crushed by her grip.'}
+322	323		301							"{2: 'Lucia', 3: ""Is this all for Project Winter? But Fort Winter has been turned upside down! Why can't they just let it go already?!"", 4: '2'}"
+323	324		203							{1: '1', 2: '0.25', 3: '600'}
+324	325		203							{1: '2', 2: '0.25', 3: '-600'}
+325	326		201							{1: '3', 2: '1031001', 3: '5'}
+326	327		301							"{1: '1', 2: 'Liv', 3: ""They must've run out of choice. People probably shun them at all costs even if they manage to survive the punishment from the Purifying Force."", 4: '3'}"
+327	328		301							"{2: 'Liv', 3: ""Which is why they've chosen the thorny path."", 4: '3'}"
+328	329		301							{3: 'Says Liv as she tries to suppress her own anger.'}
+329	330		301							"{2: 'Liv', 3: ""Lithos needed memory sync because M.I.N.D. and self-consciousness go hand in hand, and that couldn't have happened without memory."", 4: '3'}"
+330	331		301							"{2: 'Lee', 3: ""And that's why they took Commandant? So they could memory sync Commandant?"", 4: '1'}"
+331	332		301				AniZhuanchangBegin			{2: 'Lucia & Lee & Liv', 3: '...', 4: '1', 5: '2', 6: '3'}
+332	333		401							{1: '1', 2: '36'}
+333	334		202			DialogDisable			1000.0	{1: '1', 2: '2', 3: '3', 6: '1'}
+334	335		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory792.jpg'}
+335	336		401							{1: '1', 2: '161'}
+336	337		509						700.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory107.png', 2: '2'}
+337	338		201							{1: '1', 2: '500514', 4: '-600'}
+338	339		201							{1: '2', 2: '500305', 4: '550'}
+339	340		301			DialogEnable				"{1: '1', 2: 'Lithos', 3: ""I'm sorry, Mister... I've lost track of【kuroname】, and Cthylla has gone berserk from being awakened prematurely."", 4: '1'}"
+340	341		301							{3: 'While you, severely injured, are fast asleep at the bottom of the well, Lithos is reporting the situation here to his agent amidst the chaos.'}
+341	342		301							{2: 'Vonnegut', 3: '...', 4: '2'}
+342	343		301							{3: 'Vonnegut says nothing, waiting for Lithos to finish delivering all the bad news at once.'}
+343	344		301							"{3: ""He knows well that Lithos wouldn't have come to bother him if there were a workaround.""}"
+344	345		204							{1: '1', 2: '2'}
+345	346		301							{2: 'Lithos', 3: 'The three of them orchestrated an explosion, destroying all of the M.I.N.D. backups stored nearby Cthylla.', 4: '1'}
+346	347		301							"{2: 'Lithos', 3: ""I can't keep her stabilized anymore with my replicated M.I.N.D."", 4: '1'}"
+347	348		301							"{2: 'Vonnegut', 3: ""Your replicated M.I.N.D. was never stable, to begin with, and it was only meant to serve as a sedative while Cthylla was asleep. It's supposed to crash and burn as soon as she awakes."", 4: '2'}"
+348	349		301							{2: 'Vonnegut', 3: 'Which is why I told you to seek reliable backup plans, even if it means taking more time.', 4: '2'}
+349	350		204							{1: '1'}
+350	351		301							{2: 'Lithos', 3: 'But I just hoping to speed things up with your plan...', 4: '1'}
+351	352		301							{3: 'He clenches his arms in self-reproach, nearly crushing them.'}
+352	353		301							"{2: 'Lithos', 3: ""It's my fault... I left Loki in my room, and she broke through the partition, and that's how they found out about that room."", 4: '1'}"
+353	354		301							"{2: 'Lithos', 3: ""...Shrek's replicated M.I.N.D. has been destroyed, too. If we don't do something about Cthylla, the consciousness he's implanted into the cradle will be contaminated and collapse, too."", 4: '1'}"
+354	355		204							{1: '1', 2: '2'}
+355	356		301							"{2: 'Lithos', 3: ""And we'll lose control of this place... and of her cradle, too, if that happens."", 4: '1'}"
+356	357		301							"{2: 'Vonnegut', 3: ""That's exactly why you failed to notice it when they approached your room."", 4: '2'}"
+357	358		301							"{2: 'Vonnegut', 3: ""I've told you to exercise your caution if you want to control the cradle with him."", 4: '2'}"
+358	359		204							{1: '1'}
+359	360		301							{2: 'Lithos', 3: '...', 4: '1'}
+360	361		301							"{2: 'Vonnegut', 3: ""I've also advised against keeping Loki around. Your experiment is finished, and what you need to do now is to free her from her suffering."", 4: '2'}"
+361	362		204							{1: '1', 2: '2'}
+362	363		301							"{2: 'Lithos', 3: ""She's one of us. She deserves to live, and if she dies..."", 4: '1'}"
+363	364		301							{2: 'Vonnegut', 3: 'You allow those humans to seek death, yet you deny Loki the same.', 4: '2'}
+364	365		301							{2: 'Vonnegut', 3: 'Is it Loki who needs to live? Or is it you who needs her to live?', 4: '2'}
+365	366		204							{1: '1'}
+366	367		301							{2: 'Lithos', 3: '...', 4: '1'}
+367	368		301							"{2: 'Lithos', 3: ""I'm sorry."", 4: '1'}"
+368	369		301							{2: 'Vonnegut', 3: 'What do you make of this commandant?', 4: '2'}
+369	370		301							"{2: 'Lithos', 3: ""I... I don't know..."", 4: '1'}"
+370	371		301							{2: 'Lithos', 3: 'We had no idea who the connector was behind that wall when we were running M.I.N.D. connection experiments back at Fort Winter...', 4: '1'}
+371	372		301							{2: 'Lithos', 3: 'I am not who I was then, and 【kuroname】 is no longer the same 【kuroname】 I connected with.', 4: '1'}
+372	373		301							{2: 'Vonnegut', 3: 'So what do you think now?', 4: '2'}
+373	374		204							{1: '1', 2: '2'}
+374	375		301							{2: 'Lithos', 3: '...Mister.', 4: '1'}
+375	376		301							{2: 'Lithos', 3: 'I promise you that no matter what happens, I will see this plan through.', 4: '1'}
+376	377		301							"{3: ""He answers Vonnegut's doubts with a promise.""}"
+377	378		301							{2: 'Lithos', 3: 'And I ask that you believe me.', 4: '1'}
+378	379		301							"{2: 'Vonnegut', 3: ""Your mission isn't finished, so don't dissolve yourself into Cthylla just yet."", 4: '2'}"
+379	380		301							{2: 'Lithos', 3: 'Yeah, I know...', 4: '1'}
+380	381		301							"{3: ""It's because Lithos can only die after this that he asks his agent for help.""}"
+381	382		301							{3: 'It still pains Lithos to know that his death is being treated as an insignificant matter.'}
+382	383		301							{2: 'Lithos', 3: 'Lamia infiltrated this place and took Cinderelik.', 4: '1'}
+383	384		301							"{2: 'Vonnegut', 3: ""Luna's pawn didn't get here too late at all."", 4: '2'}"
+384	385		301							{3: 'The figure cloaked in darkness ponders for a moment.'}
+385	386		301							"{2: 'Vonnegut', 3: ""I needn't bother, then, since it isn't Alpha. As long as Cthylla lives on, the cradle can be rebuilt."", 4: '2'}"
+386	387		301							{2: 'Vonnegut', 3: 'This commandant is just one injection and a little time away from the full effect of the medication. We need to find them at once.', 4: '2'}
+387	388		301							{2: 'Vonnegut', 3: 'The egg has accumulated quite a few stable shards and is only one step away from hatching. I just need to see it hatch and make sure Cthylla survives now.', 4: '2'}
+388	389		301							"{2: 'Lithos', 3: ""...That's all you need? What are we going to do with Cinderelik... if she doesn't hatch?"", 4: '1'}"
+389	390		301							"{2: 'Vonnegut', 3: ""She's well prepared for that. She went back to Cthylla knowing this might happen."", 4: '2'}"
+390	391		204							{1: '1'}
+391	392		301							{2: 'Lithos', 3: '...', 4: '1'}
+392	393		301							"{2: 'Vonnegut', 3: ""I'm not going to stop you if you can salvage her, too."", 4: '2'}"
+393	394		301							"{3: ""Lithos knows that isn't something he is capable of, not to mention that Vonnegut starts entertaining the thought of forsaking the cradle the second he learns of Lamia's invasion.""}"
+394	395		301							"{3: 'Using Lamia would maximize what he can get out of Cthylla and the commandant—because he needs the cradle and the egg to connect with each other to ""bewitch"" the holder.'}"
+395	396		301							"{3: 'Now, with the ""joystick"" gone, he\'s lost control of both Cthylla and the cradle.'}"
+396	397		301							"{2: 'Vonnegut', 3: ""Use the key I left to unlock the device in the control room. You'll find your last M.I.N.D. replica there."", 4: '2'}"
+397	398		204							{1: '1', 2: '2'}
+398	399		301							{2: 'Lithos', 3: 'You mean...', 4: '1'}
+399	400		301							"{2: 'Vonnegut', 3: ""Right, that's the replicated frame you left behind before becoming an Ascendant. Stabilize Cthylla with it."", 4: '2'}"
+400	401		301							"{2: 'Lithos', 3: ""Both Cthylla and the cradle are out of control. The frame alone won't last long."", 4: '1'}"
+401	402		301							"{2: 'Vonnegut', 3: ""That's why you need to inject the commandant with the final dose as soon as possible."", 4: '2'}"
+402	403		301							{2: 'Vonnegut', 3: 'Leave the retrieval of the egg and Cthylla to Lilith.', 4: '2'}
+403	404		204							{1: '1'}
+404	405		301							{2: 'Lithos', 3: '...', 4: '1'}
+405	406		301							"{3: ""Lithos wants to say more, then realizes his own mistakes don't give him the right to object.""}"
+406	407		301							"{3: ""He once hoped to use his past self to escape back to a time when things were untarnished—looking back now, however, he knows he can't be further from achieving it.""}"
+407	408		301							{3: 'Thinking that he had this coming to him, Lithos almost wants to laugh at himself.'}
+408	409		204							{1: '1', 2: '2'}
+409	410		301							"{2: 'Vonnegut', 3: ""And while we're still at this, Lithos..."", 4: '2'}"
+410	411		301							{3: 'But this person, now a completely different man from when they first met, quietly stops him—and utters the very same words he did the day they first met.'}
+411	412		301				AniZhuanchangBegin			"{2: 'Vonnegut', 3: ""Don't rely too much on pain."", 4: '2'}"
+412	413		401							{1: '1', 2: '36'}
+413	414		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+414	415		510						2000.0	{1: '2', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory107.png'}
+415	416		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory345.jpg'}
+416	417		401							{1: '1', 2: '280'}
+417	418		201							{1: '1', 2: '500514'}
+418	419		301			DialogEnable				"{1: '1', 3: ""Gently touching the spikes in his chest that won't spare him the pain, Lithos passes through the corridor filled with Hetero-Creatures to retrieve the key Vonnegut mentioned and heads toward the control room.""}"
+419	420		202						1500.0	{1: '1'}
+420	421		201							{1: '1', 2: '500736'}
+421	422		301							{1: '1', 3: 'As he walks, he removes the hair accessory from his head, shedding the long hair and dress that belonged to Rose, and, with a sigh, changes into the clothes he used to wear at the orphanage.'}
+422	423		301							"{2: 'Lithos', 3: ""I'm sorry, Rose. I might look like you, but I still have a hard time bringing myself to like myself, and pain is still the only way I know to seek forgiveness."", 4: '1'}"
+423	424		301							{2: 'Lithos', 3: 'Let me be the person I was and face the person I was, then.', 4: '1'}
+424	425		301							{3: 'Until now, Lithos has been relying on pain and self-punishment to stay lucid.'}
+425	426		301							"{3: 'This is the ""Mind Beacon"" Lithos has always been attentive to, and he has come thus far walking down this path.'}"
+426	427		301							{3: 'And while Lithos has been replicated more times than he can ever recount, this individual known as Lithos will always remember...'}
+427	428		301							"{3: '...That very moment when ""Paper Crane""—a medical chair a kind-hearted donor had given him—was turned into a punishment chair...'}"
+428	429		301							"{3: ""...All those painful times he has had to live through after becoming an Ascendant, one of which is that time he fell for Ravenge's trick and accepted his help...""}"
+429	430		301							{3: '...All the fathers from the orphanage, and everything Ravenge had done...'}
+430	431		301							{3: '...And how all the unbloomed flowers were nailed to Paper Crane—before they had their buds forced open and pistils plucked again and again until they became specimens or toys.'}
+431	432		301							{3: 'They said they were doing it for his good, claiming that they loved those little buds too much to ever want to hurt them.'}
+432	433		301							"{3: 'Now a grown-up himself, Lithos equates intense, painful tug at heart with love, having never truly experienced ""love"" in that distorted, sequestered paradise.'}"
+433	434		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+434	435		401							{1: '2', 2: '2711'}
+435	436		202							{1: '1', 6: '1'}
+436	437		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_16.jpg'}
+437	438		504							{1: '0.7'}
+438	439		301							{3: 'The more intense the pain carved into his soul, the more genuine his twisted confession...'}
+439	440		301							{3: '... all of these have turned Lithos into the person he is today—one who would feed a rabbit a piece of flesh he cut off himself.'}
+440	441		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+441	442		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory345.jpg'}
+442	443		504							
+443	444		201							{1: '1', 2: '500736'}
+444	445		301							"{1: '1', 2: 'Lithos', 3: ""...I did it for the rabbit. I can't just sit around and watch it starve, can I..."", 4: '1'}"
+445	446		301							"{3: ""But what becomes of the rabbit that's tasted flesh and blood?""}"
+446	447		301							"{3: ""Lithos' love has led him nowhere—much like this path that's taken him this far as an Ascendant.""}"
+447	448		301							{3: 'He sets out hoping to see a brand new future, only to find himself wandering further into the thorns and fog.'}
+448	449		301							"{3: ""He knows only too well that a villain won't stop being a villain simply because he's been victimized, which tears his soul in half.""}"
+449	450		301							"{3: 'He is ""Lithos,"" and he is also ""Fathers""—he has become an offender since he was made a victim.'}"
+450	451		301							"{3: ""He wishes they could all live peacefully looking forward to tomorrow, instead of having to trek the long, twisted river that's the Ascension-Network and hurting so many people along the way.""}"
+451	452		301							"{3: 'Having been raised by his ""fathers,"" Lithos doesn\'t know how to go about life in ways his ""fathers"" have never shown him.'}"
+452	453		301							"{3: ""Which is why he sees what he's doing now as the best way out—if the disaster<//TRAIN> leaves no time for anyone, then he needs to act now.""}"
+453	454		301							"{3: 'And to that end, he doesn\'t care how many people he is going to hurt, so long as he can keep a handful of them safe—and this is the kind of ""filtering"" that Lithos stands by.'}"
+454	455		301							"{3: ""He's been tormented by what he has done, and he resorts to lying to help himself feel better.""}"
+455	456		301							"{3: ""He's been telling people that he's doing these things for their good, that they have to do as he says to survive—to the point he falls prey to his own lies.""}"
+456	457		301							"{3: ""Dying on a periodic basis helps get these heavy emotions off Lithos' chest, as much as he knows that this is but a temporary getaway.""}"
+457	458		301							{3: 'His idea of an ideal death would be to get torn and crushed completely alongside Paper Crane, all the while consciously enduring torment a thousandfold worse than what he had to in the past.'}
+458	459		301							"{3: ""It's only through pain so excruciating that he thinks he can find temporary forgiveness in himself for himself.""}"
+459	460		202							{1: '1'}
+460	461		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+461	462		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+462	463		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+463	464		301		1		AniZhuanchangBegin			"{3: ""It's only then that he can bid a graceful farewell.""}"

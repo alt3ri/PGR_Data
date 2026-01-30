@@ -1,0 +1,19 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory26.jpg'}
+2	100		401							{1: '1', 2: '203'}
+3	2		201							{1: '1', 2: '1031001'}
+4	3		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'I briefly checked the info on this area.', 4: '1'}
+5	4		301							"{2: 'Liv', 3: ""There's an old military base around 10km from here."", 4: '1'}"
+6	5		301							"{2: 'Liv', 3: 'There\'s a foreign organization named ""Forsaken"" holding camp there.', 4: '1'}"
+7	6		201							{1: '1', 2: '1011001'}
+8	7		301							"{1: '1', 2: 'Lee', 3: ""Forsaken... Think I've heard a little about them when I was in Kurono."", 4: '1'}"
+9	8		202				DialogDisable			{1: '1', 6: '1'}
+10	9		201			RImgBg1Shake				{1: '1', 2: '1011001'}
+11	10		301			DialogEnable				"{1: '1', 2: 'Lee', 3: ""Wait, this tremor... it's different from the ones before."", 4: '1'}"
+12	11		202				DialogDisable			{1: '1'}
+13	12		201			RImgBg1Shake				{1: '1', 2: '1031001', 3: '7'}
+14	13		301			DialogEnable				"{1: '1', 2: 'Liv', 3: ""1 o'clock direction!"", 4: '1'}"
+15	14		202				DialogDisable			{1: '1'}
+16	15		201			RImgBg1Shake				{1: '1', 2: '1021001'}
+17	16		301			DialogEnable				"{1: '1', 2: 'Lucia', 3: ""In the sand, it's coming!"", 4: '1'}"
+18	17		301		1		AniZhuanchangBegin			{2: 'Lucia', 3: 'Prepare for engagement!', 4: '1'}

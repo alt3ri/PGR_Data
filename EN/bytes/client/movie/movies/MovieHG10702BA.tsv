@@ -1,0 +1,37 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '205'}
+3	3		201							{1: '2', 2: '1041001', 3: '1', 4: '400'}
+4	4		201							{1: '1', 2: '1031001', 4: '-400'}
+5	5		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Hey, Nanami! Give me back the fusion device!', 4: '1'}
+6	6		301							"{2: 'Nanami', 3: ""I have a new phrase I learned for you! You snooze, you lose! It's mine now!"", 4: '2'}"
+7	7		203						500.0	{1: '2', 2: '0.5', 3: '1000'}
+8	8		202						300.0	{1: '2', 6: '1'}
+9	9		203							{1: '1', 2: '0.25'}
+10	10		301							{2: 'Liv', 3: 'Ugh... What should we do now?', 4: '1'}
+11	11		201							{1: '1', 2: '1111001'}
+12	12		301							{1: '1', 2: 'Karenina', 3: '...', 4: '1'}
+13	13		302							"{2: ""What's on your mind?"", 3: '14'}"
+14	14		301							"{2: 'Karenina', 3: ""No, we've got ourselves a party here."", 4: '1'}"
+15	15		302							{2: 'Like it?', 3: '16'}
+16	16		301							"{2: 'Karenina', 3: ""Yeah, I... Enough with the questions! No time to chit-chat! I'm gonna teach them a lesson!"", 4: '1'}"
+17	17		301							{2: 'Karenina', 3: '...', 4: '1'}
+18	18		301							{2: 'Karenina', 3: 'Enough about all the bizarre parts we collected, even the devices in the core were used directly without any treatment.', 4: '1'}
+19	19		201							{1: '1', 2: '1081001'}
+20	20		301							"{1: '1', 2: 'Kamui', 3: ""Well... That's because treating it is a pain in the... Anyway, Nanami, give me a hand!"", 4: '1'}"
+21	21		201							{1: '1', 2: '1041001', 3: '1'}
+22	22		301							{1: '1', 2: 'Nanami', 3: 'Okie! Leave it to a super-duper Construct like me!', 4: '1'}
+23	23		204							{1: '1'}
+24	24		301			PanelActor1Shake				{2: 'Nanami', 3: 'Uh-oh... I broke it.', 4: '1'}
+25	25		201							{1: '1', 2: '1111001'}
+26	26		301							{1: '1', 2: 'Karenina', 3: 'You form it by... Obviously, not like that!', 4: '1'}
+27	27		201							{1: '1', 2: '1041001'}
+28	28		301			PanelActor1Shake				"{1: '1', 2: 'Nanami', 3: ""Oh-no! I'm gonna get torn a new one!"", 4: '1'}"
+29	29		301							"{2: 'Nanami', 3: ""It's... It's not my fault! Kamui's just too strong!"", 4: '1'}"
+30	30		201							{1: '1', 2: '1081001'}
+31	31		301							{1: '1', 2: 'Kamui', 3: 'Hey!! Where are you running off to?!', 4: '1'}
+32	32		201							{1: '1', 2: '1111001'}
+33	33		301							{1: '1', 2: 'Karenina', 3: 'Hey! You guys... Forget it...', 4: '1'}
+34	34		302							"{2: ""You're not mad?""}"
+35	35		301							"{2: 'Karenina', 3: ""No point crying over spilled milk! It's always hard in the beginning. What's there to be mad about?"", 4: '1'}"
+36	36		301		1		AniZhuanchangBegin			"{2: 'Karenina', 3: ""Let's put our heads together."", 4: '1'}"

@@ -1,0 +1,224 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '120'}
+3	3		301			DialogEnable				"{3: ""It's so c-cold... H-help me...""}"
+4	4		301							{3: 'Anyone... Please... Grab my hand...'}
+5	5		201							{1: '2', 2: '500226'}
+6	6		301							{1: '1', 2: 'Refugee Leader', 3: 'Alright, alright, you can let go now.', 4: '2'}
+7	7		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory330.png', 3: '0', 4: '1', 5: '1'}
+8	8		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+9	9		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory330.png'}
+10	10		203							{1: '2', 2: '0.25', 3: '400'}
+11	11		201							{1: '1', 2: '500677', 4: '-400'}
+12	12		301							{1: '1', 2: 'Lilin', 3: '...Sob... Dad... Mom..', 4: '1'}
+13	13		301							"{2: 'Refugee Leader', 3: ""Don't cry out loud. Monsters are lurking nearby. Any noise will draw them over."", 4: '2'}"
+14	14		301							{2: 'Lilin', 3: '...Sob... B-but... Mom and Dad... They can never come back...', 4: '1'}
+15	15		301							{2: 'Refugee Leader', 3: '...This is the end of the world for you.', 4: '2'}
+16	16		203							{1: '1', 2: '0.25', 6: '1'}
+17	17		203							{1: '2', 2: '0.25', 3: '600'}
+18	18		201							{1: '3', 2: '500463', 4: '-600'}
+19	19		301							"{1: '1', 2: 'Hunchbacked Woman', 3: ""They lured the monsters away for you and even left you food. You have to pull yourself together and make sure their sacrifice wasn't in vain."", 4: '3'}"
+20	20		301							"{2: 'Lilin', 3: ""I don't want food! I want them back!"", 4: '1'}"
+21	21		203							{1: '3', 2: '0.17', 3: '-400'}
+22	22		301							{2: 'Hunchbacked Woman', 3: 'Shhhh—', 4: '3'}
+23	23		301							"{3: ""The woman swiftly clasps her hand over Lilin's mouth while simultaneously stomping on the expired food can that slipped from his grasp. Only after carefully listening to the surrounding sounds for a period, the man and woman show a palpable sense of relief.""}"
+24	24		301							"{2: 'Refugee Leader', 3: ""Look, kid, I couldn't care less if you eat or not. All I need you to do is stay quiet. If you make a noise like that again, don't come crying to me when things go south."", 4: '2'}"
+25	25		203							{1: '3', 2: '0.25', 3: '-600'}
+26	26		301							"{2: 'Hunchbacked Woman', 3: ""Take it easy. He's just a poor kid who lost his parents not long ago..."", 4: '3'}"
+27	27		202							{1: '2', 6: '1'}
+28	28		203							{1: '1', 2: '0.25', 3: '400'}
+29	29		203							{1: '3', 2: '0.25', 3: '-400'}
+30	30		301							"{2: 'Hunchbacked Woman', 3: ""He's just joking with you. Here, take this."", 4: '3'}"
+31	31		301							"{3: ""The woman pries open the lid of the slightly misshapen can and places it into Lilin's mud-covered hands. The touch of the cold metal sends a chill that surpasses even the frigidness of late winter roads, seeping into Lilin's fingertips.""}"
+32	32		301							{2: 'Hunchbacked Woman', 3: 'Eat it, or your parents died for nothing.', 4: '3'}
+33	33		301							{3: 'The woman holds no intention of causing the boy sorrow, nor does she press him to embrace the harshness of reality.'}
+34	34		301							{3: 'Her voice devoid of any inflection, the woman states the fact, treating it as yet another incident in their endless struggle for survival, just like the countless others that already happened.'}
+35	35		301							"{3: ""Tears continue to stream uncontrollably from the child's eyes, flowing like an unending spring of sorrow and swiftly dropping onto the battered can.""}"
+36	36		301				AniZhuanchangBegin			"{3: ""He gazes at the woman before him, her hunched back evoking memories of his mother's frail expression.""}"
+37	37		202							{1: '1', 2: '3', 6: '1'}
+38	38		504			DialogDisable				{1: '0.7'}
+39	39		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory328.png'}
+40	40		201							{1: '1', 2: '500624', 4: '300'}
+41	41		201							{1: '2', 2: '500677', 4: '-300'}
+42	42		301			DialogEnable				"{1: '1', 2: ""Lilin's Mother"", 3: 'Lilin, listen to me...', 4: '1'}"
+43	43		301							{2: 'Lilin', 3: 'Mom, Dad... He...', 4: '2'}
+44	44		301							"{2: ""Lilin's Mother"", 3: ""Dad's too tired to run. He just needs a little break..."", 4: '1'}"
+45	45		301							{2: 'Lilin', 3: 'Is he...', 4: '2'}
+46	46		301							"{2: ""Lilin's Mother"", 3: ""Lilin, you must hold that uncle's hand when you run, as tightly as you can. Don't let it go, alright?"", 4: '1'}"
+47	47		301							"{2: ""Lilin's Mother"", 3: ""I gave him everything your dad and I have. He'll take you to somewhere safe first."", 4: '1'}"
+48	48		301							{2: 'Lilin', 3: 'But I want you to hold my hand. Mom, are you leaving me?', 4: '2'}
+49	49		301							"{2: ""Lilin's Mother"", 3: ""Silly boy... You're the only reason I live for... That's why I'm doing this..."", 4: '1'}"
+50	50		301							{3: 'Having said that, the woman choked on her words and instinctively chose to withhold them, unwilling to subject her child to the cruel realities of the world.'}
+51	51		301							"{2: ""Lilin's Mother"", 3: ""It's a deal, then. Remember, you must hold his hand. Don't let it go, alright?"", 4: '1'}"
+52	52		203							{1: '1', 2: '0.18', 3: '200'}
+53	53		203						160.0	{1: '2', 2: '0.16', 3: '-500'}
+54	54		203							{1: '2', 2: '0.2', 3: '-600'}
+55	55		301							{3: 'Before hearing the answer from Lilin, the woman pushed him toward the leader of the survivor group with all the strength she had.'}
+56	56		301							"{3: ""Upon ensuring her child's safety beside the man, the woman mustered a smile upon her pallid face. With her hand pressed against the wound on her stomach, she resolutely dashed toward another path.""}"
+57	57		301							"{2: ""Lilin's Mother"", 3: 'Lilin, you must... cough... you must run fast! Like this, but faster...', 4: '1'}"
+58	58		301			RImgBg1Shake				"{2: ""Lilin's Mother"", 3: 'Run!', 4: '1'}"
+59	59		301							"{3: ""From deep within her chest, she unleashed a final scream of despair, a piercing cry that cuts through Lilin's mind like a sharp bullet.""}"
+60	60		301				AniZhuanchangBegin			"{3: ""He held that man's hand as tightly as he could. Though that hand felt not as warm as his mother's, not as big as his father's, he still held it with all his strength, just as his mother told him.""}"
+61	61		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+62	62		504							
+63	63		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory330.png'}
+64	64		201							{1: '1', 2: '500677', 4: '400'}
+65	65		201							{1: '2', 2: '500463', 4: '-400'}
+66	66		301			DialogEnable				"{1: '1', 2: 'Hunchbacked Woman', 3: ""Hey! You're going to eat or not? Why are you staring into space?"", 4: '2'}"
+67	67		301							"{3: ""Lilin can't help but clench his hand, his gaze fixed upon the woman's face.""}"
+68	68		301							{3: 'Suddenly, he bursts into action, scooping food from the can with his bare hand and shoving it into his mouth, as if he had been on the brink of starvation.'}
+69	69		301							"{2: 'Lilin', 3: ""Sob... Too much salt. It's so salty..."", 4: '1'}"
+70	70		301							{3: 'But the soup Dad made with canned food before was really good...'}
+71	71		301							"{2: 'Hunchbacked Woman', 3: ""Ah... You can have some of my water, but don't drink it all. Leave me some."", 4: '2'}"
+72	72		301							{3: 'After rummaging through her pocket for a while, the woman retrieves a half-empty bottle of contaminated water and places it next to Lilin.'}
+73	73		202							{1: '1', 2: '2'}
+74	74		301							{3: 'Returning from his patrol, the man exchanges a meaningful glance with the woman. They step away from the rest of the group, their voices hushed as they start talking.'}
+75	75		201							{1: '1', 2: '500226', 4: '400'}
+76	76		201							{1: '2', 2: '500463', 4: '-400'}
+77	77		301							{1: '1', 2: 'Refugee Leader', 3: 'He must be injured.', 4: '1'}
+78	78		301							"{3: ""The man's gaze shifts toward one of their companions, who is currently taking a moment to rest.""}"
+79	79		301							{2: 'Hunchbacked Woman', 3: 'You sure? What are you gonna do?', 4: '2'}
+80	80		301							"{2: 'Refugee Leader', 3: ""I saw him pour water onto his left calf. We don't even have enough to drink. No chance in hell he'd waste it on cleaning himself unless there's some kind of injury going on."", 4: '1'}"
+81	81		301							{2: 'Refugee Leader', 3: 'So what else can I do? We already agreed that we are just traveling together and nothing more. Everyone should be on the same page... except maybe that kid.', 4: '1'}
+82	82		301							{3: 'With that being said, the man catches a glimpse of the boy stuffing himself with the canned food, impatience evident on his face.'}
+83	83		301							"{2: 'Refugee Leader', 3: ""If the boy's father hadn't given me that half bottle of alcohol last week, I wouldn't have even considered bringing him along. I couldn't care less about the food they left us. Supplies are just waiting to be snatched from all those corpses scattered around."", 4: '1'}"
+84	84		301							"{2: 'Hunchbacked Woman', 3: ""Heh... And here I thought you still had some sympathy left in you. C'mon, it's just a kid. How about you adopt him as your son?"", 4: '2'}"
+85	85		301							"{2: 'Refugee Leader', 3: ""For what? So he can bury my body once I die? I won't even have a body left to bury if those monsters have their way with me."", 4: '1'}"
+86	86		301							"{2: 'Refugee Leader', 3: ""But that woman, she was something else. Didn't even bat an eye before getting herself killed, while the kid just clung onto me the whole damn way here. What the hell am I supposed to do? If he can prove himself useful, I guess he can tag along."", 4: '1'}"
+87	87		301							"{2: 'Hunchbacked Woman', 3: ""See, that's what I've been trying to tell you. You just don't get it. But you might, if you actually take him in as your own son."", 4: '2'}"
+88	88		301							{2: 'Refugee Leader', 3: 'Cut the crap.', 4: '1'}
+89	89		202							{1: '2'}
+90	90		301							{3: 'The woman giggles quietly, the eccentric laugh making her sound like a twitching bat.'}
+91	91		201							{1: '2', 2: '500677', 4: '-400'}
+92	92		301							"{1: '1', 2: 'Refugee Leader', 3: ""Hey, kid, from now on, you're gonna start taking shifts with us for lookout duty."", 4: '1'}"
+93	93		301							"{2: 'Refugee Leader', 3: ""I'll teach you this once in the morning, just once, and you better learn it. I can't have dead weight dragging us down here, got it?"", 4: '1'}"
+94	94		301							"{2: 'Refugee Leader', 3: ""And, call me by my name. I'm not your uncle."", 4: '1'}"
+95	95		202							{1: '1', 6: '1'}
+96	96		203							{1: '2', 2: '0.25'}
+97	97		301							{3: 'Without waiting for Lilin to respond, the man proceeds toward his resting spot, while the woman falls silent as well. She retrieves the water she just offered to Lilin and walks away.'}
+98	98		301							{3: 'Lilin puts the empty can aside, his stomach so stuffed that he feels the urge to throw up.'}
+99	99		301							{3: 'For the first time, he has finished an entire can of food by himself.'}
+100	100		301							{3: 'For the first time, he has fallen asleep alone without snuggling up to someone.'}
+101	101		301				AniZhuanchangBegin			{3: 'With his eyes firmly closed, the boy prays that the food he recently ingested will quickly provide warmth to his body, guarding him from the freezing embrace of the lengthy night.'}
+102	102		202			DialogDisable				{1: '2', 6: '1'}
+103	103		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '3'}
+104	104		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory605.jpg'}
+105	105		301			DialogEnable				{3: 'Several days later.'}
+106	106		301							{2: 'Injured Man', 3: 'Ahh! Get away from me!! Arrrggghhh—'}
+107	107		301							{3: 'A Hetero-Creature hooks the clothes of the crippled man, and he never rises to his feet again.'}
+108	108		301							{3: 'More and more Hetero-Creatures are drawn to that direction, which buys valuable time for the other people who have already been drained by their frantic escape.'}
+109	109		201							{1: '1', 2: '500226'}
+110	110		301							"{1: '1', 2: 'Refugee Leader', 3: ""Let's split up!"", 4: '1'}"
+111	111		301							{3: 'The hunchbacked woman nods at him and makes an immediate turn, rushing toward a narrow path with a younger woman.'}
+112	112		301							{2: 'Refugee Leader', 3: '****, I wanted to go that way!', 4: '1'}
+113	113		202							{1: '1', 6: '1'}
+114	114		201							{1: '2', 2: '500677'}
+115	115		301							{1: '1', 3: 'Drained from the relentless running, Lilin lacks the energy to calculate the chances of survival for each path. He tastes the metallic tang of blood in his throat, struggling to breathe like a dying horse, his overworked lungs protesting with every gasp.'}
+116	116		301							"{3: ""There's only one thing left in his mind: hold that uncle's hand tightly and live.""}"
+117	117		301							{3: 'But Lilin has been forbidden from clinging onto the man for support since day one, so he can only resort to staying as close as possible to him.'}
+118	118		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+119	119		401							{1: '2', 2: '3077'}
+120	120		301			RImgBg1Shake				{2: 'Lilin', 3: 'Ah!', 4: '2'}
+121	121		301							"{3: ""Having pushed his stamina well beyond its limits, Lilin's leg muscles reach a state of uncontrollable fatigue. Caught off guard by a sudden cramp, his body gives way, causing him to collapse onto the ground with an audible thud.""}"
+122	122		301							"{3: ""The man running ahead quickly reacts to the noise of Lilin's sudden fall. He slows down and eventually comes to a complete stop, turning around to check on the boy.""}"
+123	123		301							{2: 'Lilin', 3: 'Uncle... Wait for me...', 4: '2'}
+124	124		301							{3: 'Filled with fear and desperation, Lilin raised his hand high toward the man, begging to be lifted up from the ground.'}
+125	125		301							{3: 'If he manages to survive here, he will do anything for that man—'}
+126	126		301							{2: 'Lilin', 3: 'I beg you...', 4: '2'}
+127	127		202							{1: '2', 6: '1'}
+128	128		201							{1: '1', 2: '500226'}
+129	129		301							"{1: '1', 3: ""The man's gaze flickers toward the approaching Hetero-Creatures, still at a distance. In that brief moment, hesitation flashes across his eyes.""}"
+130	130		301							{3: 'Then he swiftly retrieves a can of food from his waist pack and forcefully kicks it toward the child. The metal can rolls across the ground, creating a piercing screech as it moves.'}
+131	131		301							"{3: ""Lilin struggles to rise, but the pain in his right leg hampers his efforts whenever he tries to put weight on it. It's likely that he sprained his joint when he fell.""}"
+132	132		301							"{2: 'Refugee Leader', 3: ""Don't blame me. You're too useless. I've already done you a favor by keeping you around for this long, and that should be enough to repay whatever your old man did. I didn't even ask him for help in the first place."", 4: '1'}"
+133	133		301							"{3: ""Women's screams ring from that narrow path before, drawing the Hetero-Creatures at the crossroad turning toward that direction. However, a couple are still approaching over suspiciously, as if having sensed their prey.""}"
+134	134		202							{1: '1'}
+135	135		301							"{3: ""Having seen that, the man quickly disappears from Lilin's view without any hesitation.""}"
+136	136		202							{1: '1', 6: '1'}
+137	137		201							{1: '1', 2: '500677'}
+138	138		301							{1: '1', 2: 'Lilin', 3: 'Wait... wait for me...', 4: '1'}
+139	139		301							"{3: ""Lilin can't even feel his own tears as he cries out. He raises his hand high, his fingers trembling in despair, trying to grab anything, if there is any, that could save his life.""}"
+140	140		301							{3: 'Garwh—'}
+141	141		301							{3: 'Hearing the unique, uncanny noise made by Hetero-Creatures from behind, Lilin freezes in his position, holding his breath in fright and waiting for the scythe of the death god to descend.'}
+142	142		301							"{3: ""That's probably how they got mom and dad... It must hurt a lot...""}"
+143	143		301							{3: 'Anticipating the pain from being gnawed to death sends a chill down his spine.'}
+144	144		301							"{3: ""I'm sorry... mom... There's no one who comes to save me... There's no hand I can grab...""}"
+145	145		301				AniZhuanchangBegin			{3: 'In fear and coldness, he gradually loses senses of his own body.'}
+146	146		202			DialogDisable				{1: '1', 6: '1'}
+147	147		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '3'}
+148	148		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+149	149		301			DialogEnable				{3: '...'}
+150	150		301							"{2: 'Lilin', 3: ""It's so hot, Dad... Don't make the fire burn so much...""}"
+151	151		301							"{3: 'As Lilin mumbles unconsciously, he reaches out to the rag covering his neck, trying to pull it off to feel less ""hot.""'}"
+152	152		301							"{2: '???', 3: ""Geez! Salans! Th-there's a kid here! He's still alive!""}"
+153	153		301							"{2: '???', 3: ""His body is cold. He's dying!""}"
+154	154		301							"{2: '???', 3: ""Easy, let me take a look... Darn it, it's hypothermia.""}"
+155	155		301							{2: '???', 3: 'Bring some blankets over!!'}
+156	156		301							"{2: 'Lilin', 3: ""Ugh... Dad... It's so hot here...""}"
+157	157		301							"{2: '???', 3: ""Hang in there, kiddo. You're gonna be alright soon!""}"
+158	158		301							{2: '???', 3: 'Here, put him in my arms. My coat should be warm enough!'}
+159	159		301							{2: '???', 3: 'There you go. Be careful.'}
+160	160		301							"{2: '???', 3: ""Let's take a break here. The kid probably needs some time to recover. Ask Musar to take people for lookouts.""}"
+161	161		301							{2: '???', 3: 'No problem.'}
+162	162		301							{2: '???', 3: 'The swell on his leg looks insane. Did he sprain it?'}
+163	163		301							"{2: '???', 3: ""My goodness, then we gotta be gentle. Let's not move that leg. You can rub his other foot to keep him warm.""}"
+164	164		301							"{2: '???', 3: ""Huh? But I'm not really a fan of foot-touching...""}"
+165	165		301							"{2: '???', 3: ""Fine... Let's switch up. You rub his hands, alright?""}"
+166	166		301							"{3: ""It's noisy and hot. As his nerves are awakened once again, pain starts to rampage in his body.""}"
+167	167		301							"{3: ""Someone is holding his hand. It feels soft, warm, just like Mom's hand.""}"
+168	168		301							{3: 'What did Mom say again? Right... Hold that hand... and live.'}
+169	169		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory605.jpg', 3: '0', 4: '1', 5: '2'}
+170	170		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+171	171		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory605.jpg'}
+172	172		201							{1: '1', 2: '500616'}
+173	173		301							"{1: '1', 2: '???', 3: ""He's warming up... Eek! He's clenching my hand!!!"", 4: '1'}"
+174	174		301							{2: '???', 3: 'Saran, keep your voice down!'}
+175	175		301							{2: 'Lilin', 3: '...Mom...'}
+176	176		301							"{2: 'Saran', 3: ""Haha, I'm not old enough to be a mom yet... I should be more like a big sister to you!"", 4: '1'}"
+177	177		203							{1: '1', 2: '0.25', 3: '400'}
+178	178		201							{1: '2', 2: '500660', 4: '-400'}
+179	179		301							{1: '1', 2: 'Salans', 3: 'Saran, will you ever act like a real adult? Ahem... Can you hear me, kiddo?', 4: '2'}
+180	180		202							{1: '1', 2: '2', 6: '1'}
+181	181		201							{1: '1', 2: '500677'}
+182	182		301							{1: '1', 2: 'Lilin', 3: '...Help me...', 4: '1'}
+183	183		301							"{3: ""Saran lets go of Lilin's hands, making space for Salans to talk to the boy.""}"
+184	184		301							{3: 'Sensing the disappearance of those warm hands, Lilin hysterically raises his hands toward the two in front of him, as if drowning in the water of despair once again.'}
+185	185		203							{1: '1', 2: '0.25', 3: '400'}
+186	186		201							{1: '2', 2: '500660', 3: '4', 4: '-400'}
+187	187		301							"{1: '1', 2: 'Salans', 3: ""It's okay... You're safe now."", 4: '2'}"
+188	188		301							{3: 'Salans immediately holds his chapped little hand, indulging those frail nails that scratch some lines on the back of his hand.'}
+189	189		301							"{2: 'Lilin', 3: ""Don't go... Don't go... Don't leave me alone!"", 4: '1'}"
+190	190		301							"{2: 'Lilin', 3: ""Uncle... Sob... I'll do it. I'll do whatever you say!"", 4: '1'}"
+191	191		301							"{2: 'Lilin', 3: ""I can handle the lookout work... I can practice. I'll practice it every day!!"", 4: '1'}"
+192	192		301							"{2: 'Lilin', 3: ""I beg you... I still... I still have cans of food... Cans! Here! I only eat a little. I... I won't be hungry..."", 4: '1'}"
+193	193		301							{3: 'Lilin struggles to extend one arm from the embrace of a robust man, pointing at a can of food lying on the ground nearby with his trembling hand.'}
+194	194		301							{3: 'The woman next to Salans goes to pick it up and hands it to Lilin after dusting the snow off.'}
+195	195		301							"{3: ""But there's no strength left in Lilin's hand to bear its weight. With a clank, the can drops down in front of Salans.""}"
+196	196		301							{2: 'Lilin', 3: 'Please... Take it and help me...', 4: '1'}
+197	197		301							"{2: 'Salans', 3: ""It's okay. I don't need..."", 4: '2'}"
+198	198		301							{2: 'Lilin', 3: 'Please... I beg you... Take it...', 4: '1'}
+199	199		301							"{3: 'Lilin\'s gaze is fixed upon Salans\' eyes, yet his eyes show no focus. He mumbles the same words again and again, fearing that he may hear something like ""forgive me"" from the adult.'}"
+200	200		301							"{2: 'Salans', 3: ""Alright, I'll take it. As an exchange, you gotta stop worrying and have some good rest. You'll come along with us."", 4: '2'}"
+201	201		301							"{3: ""Salans gently strokes Lilin's head and wants to tuck the little hand back under the coat, but that hand is still clenching his as tightly as possible, showing no sign of yielding.""}"
+202	202		301							"{2: 'Salans', 3: ""Don't worry. Everything's alright now. I'll come to help you whenever you call me, I promise. Everyone will come to help you. All you need to do now is take it easy and have some rest."", 4: '2'}"
+203	203		202							{1: '1', 2: '2'}
+204	204		301							{3: 'Have some rest... Ah...'}
+205	205		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+206	206		205						3000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '3'}
+207	207		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+208	208		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+209	209		301							{3: 'Is it...? Yeah... I remember... Everyone was good to me...'}
+210	210		301							{3: 'So I must prove my value...'}
+211	211		301							"{3: ""I'll stay with you forever...""}"
+212	212		301							"{3: ""I don't want to be alone anymore...""}"
+213	213		301							{3: '...Boss... Saran... Granny Windger... Dad, mom... Cough... I feel awful...'}
+214	214		301							{3: 'Where are you...'}
+215	215		301							{3: 'Exerting every ounce of energy, the boy struggles in the Red Tide, trying not to keep falling, yet his effort proves futile.'}
+216	216		301							"{3: ""He opens his mouth in an attempt to call everyone's name, but the tide moves faster than his voice, gushing into his mouth and corroding his voice inside out.""}"
+217	217		301							{3: 'Anyone... Please... You promised...'}
+218	218		301							{3: 'He is now completely engulfed by the purple-red tide. Some changes are occurring to his body, yet he may forever lose the ability of feeling it.'}
+219	219		301							{3: '...'}
+220	220		201							{1: '1', 2: '500659'}
+221	221		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 2: '2', 3: '1'}
+222	222		301							"{1: '1', 3: ""...Huh? It's Saran... I knew you're here... I was right... And the others... You're all here...""}"
+223	223		301		1		AniZhuanchangBegin			"{3: ""You didn't lie to me! That's great... Thank you for your hands... Everyone...""}"

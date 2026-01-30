@@ -1,0 +1,225 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '176'}
+3	3		301			DialogEnable	AniZhuanchangBegin			"{3: 'Before facing this ""Noan"", you\'ve asked ""the other"" Noan a question.'}"
+4	4		201							{1: '1', 2: '500506'}
+5	5		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory262.png'}
+6	6		504							{1: '0.7'}
+7	7		301			AniZhuanchangEnd				{1: '1', 2: 'Noan', 3: 'Would I have left with Lithos had I never been stopped?', 4: '1'}
+8	8		301							"{2: 'Noan', 3: ""...Well, quite likely, because he'd always try to stop me from recalling all the good memories."", 4: '1'}"
+9	9		301							"{2: 'Noan', 3: ""People have no choice but to choose a different path if they can't remember all the good things that happened and are made to believe that nothing they do ever matters..."", 4: '1'}"
+10	10		302							"{2: ""...And that's how they become Ascendants..."", 3: '11'}"
+11	11		301							"{2: 'Noan', 3: ""But there is no way Lithos would have let me become one even if I'd believed that becoming an Ascendant was my only choice."", 4: '1'}"
+12	12		301				AniZhuanchangBegin			"{2: 'Noan', 3: ""He can't stand not being in control of things, so he probably would have turned me into a Transcendant, at most."", 4: '1'}"
+13	13		202							{1: '1', 6: '1'}
+14	14		504							{1: '0'}
+15	15		401							{1: '1', 2: '36'}
+16	16		502							{1: 'DialogDisable'}
+17	17		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory345.jpg'}
+18	18		401							{1: '1', 2: '201'}
+19	19		302			AniZhuanchangEnd				{2: 'Noan!', 3: '20'}
+20	20		201							{1: '2', 2: '500509'}
+21	21		301			DialogEnable				{1: '1', 2: 'Noan?', 3: '...', 4: '2'}
+22	22		301							{3: 'The familiar figure turns around to face this way in the narrow tunnel.'}
+23	23		202							{1: '2'}
+24	24		201							{1: '1', 2: '500734'}
+25	25		301							{1: '1', 2: 'Noan?', 3: 'This voice...', 4: '1'}
+26	26		302							"{2: 'Voice? Your eyes...', 3: '27', 4: ""You can't see me?"", 5: '27'}"
+27	27		301							{2: 'Noan?', 3: '...?', 4: '1'}
+28	28		301							"{2: 'Noan?', 3: 'You remember the name ""Noan"", but not this incident?', 4: '1'}"
+29	29		302							{2: 'What do you mean?', 3: '30'}
+30	30		301				DialogDisable			{3: 'Bearing a shocking resemblance to Noan, this young man tilts his head in confusion.'}
+31	31		302							{2: 'Wait, Noan, just hear me out...', 3: '32'}
+32	32		302							{2: 'I know you might not remember me, but...', 3: '33'}
+33	33		301			DialogEnable				{2: 'Noan?', 3: 'No, my memories are quite complete now.', 4: '1'}
+34	34		301				DialogDisable			"{2: 'Noan?', 3: 'And I understand what\'s bothering you. There\'s another ""real me"" in Babylonia, right? Gray Raven Commandant?', 4: '1'}"
+35	35		302							{2: 'You remember all that?', 3: '36'}
+36	36		302							{2: 'Then why... are you still helping Lithos?', 3: '37'}
+37	37		301			DialogEnable				{2: 'Noan?', 3: '...I only started remembering all these after becoming a Transcendant and after that incident.', 4: '1'}
+38	38		301							"{2: 'Noan?', 3: ""And that's also when I remember you, Watanabe, Lee, Commandant Simon, Captain Palma, and Lillian."", 4: '1'}"
+39	39		204							{1: '1', 2: '8'}
+40	40		301							{2: 'Noan?', 3: '...I remembered the right path I chose for myself.', 4: '1'}
+41	41		302							{2: '...', 3: '42'}
+42	42		204							{1: '1'}
+43	43		301				DialogDisable			"{2: 'Noan?', 3: 'Let\'s talk about you instead. How do you still remember the name ""Noan""?', 4: '1'}"
+44	44		302							"{2: ""Lithos took me here and... Wait, that's a weird question."", 3: '45'}"
+45	45		302							"{2: ""What's wrong with that? Am I not supposed to remember it?"", 3: '46'}"
+46	46		301			DialogEnable				"{2: 'Noan?', 3: ""You've been in a state of memory loss—or rather, there are a bunch of your clones here with no memories."", 4: '1'}"
+47	47		301							"{2: 'Noan?', 3: ""So, you're the real deal?"", 4: '1'}"
+48	48		302							{2: 'Of course, I am the real deal. I remember everything.', 3: '49'}
+49	49		301							"{2: 'Noan?', 3: ""But you don't remember having met me."", 4: '1'}"
+50	50		302							{2: 'What?', 3: '51'}
+51	51		301							"{2: 'Noan?', 3: ""It's possible that your memories have been tampered with, which is something Lithos does a lot. It's either that, or..."", 4: '1'}"
+52	52		302							{2: 'My personal belongings can prove my identity., too.', 3: '53'}
+53	53		301							"{2: 'Noan?', 3: ""There's no need to prove anything to me. That's only an issue once you're out of here."", 4: '1'}"
+54	54		302							"{2: ""Those clones don't have this jacket and what's inside it, do they?"", 3: '55'}"
+55	55		301							"{2: 'Noan?', 3: 'I couldn\'t see the other ""yous"" clearly. I\'ve touched one of them once, and your clones are all in lab outfits.', 4: '1'}"
+56	56		302							{2: 'Why are there clones of me here?', 3: '57'}
+57	57		301							"{2: 'Noan?', 3: ""I don't know. There are things Lithos would never tell me. He left me out of Project Cthylla after I lost this eye."", 4: '1'}"
+58	58		301							"{2: 'Noan?', 3: ""Lithos can be gullible at times, but it's going to take a whole lot of convincing to make him trust me on every single thing. I don't have any useful information with me."", 4: '1'}"
+59	59		301				DialogDisable			"{2: 'Noan?', 3: ""All I know is that he wants you to stay here and join Cthylla's big family, so you'll eventually become one of her eggs."", 4: '1'}"
+60	60		302							"{2: ""That's what he said to me, too."", 3: '61', 4: '...Eggs...', 5: '61'}"
+61	61		302							{2: 'Have you seen my clones anywhere else?', 3: '62'}
+62	62		301			DialogEnable				"{2: 'Noan?', 3: ""No, but I've heard these clones were transported from a secret lab near Fort Winter."", 4: '1'}"
+63	63		401							{1: '2', 2: '2711'}
+64	64		202							{1: '1', 6: '1'}
+65	65		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+66	66		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_20.jpg'}
+67	67		301							"{2: 'Lithos', 3: ""Are you the very commandant that Gray Raven is leaving no stone unturned trying to find? Or are you one of the five they don't care about at all?""}"
+68	68		301				DialogDisable			{2: 'Lithos', 3: 'Or maybe... you are the true one, but Gray Raven has located one of the five and halted their pursuit of you?'}
+69	69		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory345.jpg'}
+70	70		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+71	71		201							{1: '1', 2: '500734', 7: '1'}
+72	72		302							{2: '...Will they find one of my clones or me...?', 3: '73', 4: 'Fort Winter...', 5: '75'}
+73	73		301			DialogEnable				{3: 'The young man sneers self-mockingly.'}
+74	74	76	301							{3: 'There is no point in thinking about any of that. They need to get out of here first.'}
+75	75		301			DialogEnable				{3: 'There is no point in thinking about any of that. They need to get out of here first.'}
+76	76		302							"{2: ""What's wrong with your eyes?"", 3: '77', 4: 'What exactly were those Hetero-Creatures you just defeated?', 5: '80'}"
+77	77		301							"{2: 'Noan?', 3: ""Why bother asking when you don't even remember me? And the person you remember isn't even me anyway."", 4: '1'}"
+78	78		301							{2: 'Noan?', 3: 'Try me again with a different question.', 4: '1'}
+79	79		302							{2: 'What exactly were those Hetero-Creature you defeated?', 3: '80'}
+80	80		301							{2: 'Noan?', 3: 'It was an autonomous community of interest of humanoids.', 4: '1'}
+81	81		302							{2: 'Huh?', 3: '82', 4: 'What did you just say?', 5: '82'}
+82	82		301							{2: 'Noan?', 3: 'Red Tide holds the information of the deceased.', 4: '1'}
+83	83		302							{2: 'Correct.', 3: '84', 4: 'That much I know.', 5: '84'}
+84	84		301							{2: 'Noan?', 3: 'Cthylla has gathered compatible large shards from the information and infused them into humanoid Hetero-Creatures using her Tree of Life.', 4: '1'}
+85	85		301							"{2: 'Noan?', 3: 'She then assigns a role to each of these shards to maintain complementarity and coordinated unity, like a community of interest comprising humanoids—or a ""harmonious"" community, if you will.', 4: '1'}"
+86	86		301							"{2: 'Noan?', 3: ""Lithos said he'd obtained the technology of fusing the consciousnesses from mankind."", 4: '1'}"
+87	87		302							{2: 'So these consciousnesses...', 3: '88'}
+88	88		301							{2: 'Noan?', 3: 'Came from those who fled here.', 4: '1'}
+89	89		302							"{2: ""...That's suicidal."", 3: '90', 4: 'There is no way people can live here.', 5: '91', 6: ""They shouldn't give up hope for all these lies."", 7: '92'}"
+90	90	96	301							{2: 'Noan?', 3: 'Exactly. Most people came here thinking this place would be a paradise.', 4: '1'}
+91	91	96	301							{2: 'Noan?', 3: 'Do you think they can survive the world out there?', 4: '1'}
+92	92		301							{2: 'Noan?', 3: 'Hope? But where is hope?', 4: '1'}
+93	93		301							"{2: 'Noan?', 3: ""Do you really think pep talks are enough to make things go well? That they don't need to think about anything else and that they're supposed to work themselves into pulps and be happy with the water and food they get?"", 4: '1'}"
+94	94		301							{2: 'Noan?', 3: 'There are animals out there capable of feeling sad over things other than food, let alone humans.', 4: '1'}
+95	95		301							"{2: 'Noan?', 3: 'The ""nobles"" live worry-free and never hesitate to mock the ""lower class"" for being stupid enough to fall for fairy tales like these. It never crosses their minds to think about what these people must have been through to find themselves where they are today.', 4: '1'}"
+96	96		301							"{2: 'Noan?', 3: 'The comfort of ""Mother"", and the rumors of rebirth hold an irresistible charm for those who are desperate.', 4: '1'}"
+97	97		301							"{2: 'Noan?', 3: ""Moreover, it's no mere fairy tale—all you need to do is stay in this paradise for a few days and get a few injections..."", 4: '1'}"
+98	98		301							"{2: 'Noan?', 3: ""...And when you wake up, you'll have bidden farewell to your constantly deteriorating body and been reborn as an immortal magical sea girl in Cthylla's womb."", 4: '1'}"
+99	99		301							"{2: 'Noan?', 3: ""Your body won't be yours alone, but your consciousness will transcend humanity and understand everything, and you'll be able to get rid of anyone who rubs you the wrong way. What's so bad about that?"", 4: '1'}"
+100	100		301							"{2: 'Noan?', 3: 'All this is to say that you don\'t need to show ""them"" pity, nor should you try to make peace with ""them,"" even if ""they"" were driven to suicide out of desperation.', 4: '1'}"
+101	101		301							{3: 'The young man calmly states the necessity of killing.'}
+102	102		302							"{2: 'Is there no way out of this? There is supposed to be still some humanity left in ""them.""', 3: '103'}"
+103	103		301							"{2: 'Noan?', 3: ""That's exactly why I'm asking you to be careful."", 4: '1'}"
+104	104		301							"{2: 'Noan?', 3: ""Back in the Golden Age, there was a notebook that people believed you'd die if you had your name written in it, and there were a bunch of people who wrote the names of game producers in there."", 4: '1'}"
+105	105		301							"{2: 'Noan?', 3: 'We\'re living through a time where all our conflicts and differences are more intensified than ever, not to mention that ""they"" have been driven to desperation.', 4: '1'}"
+106	106		301							"{2: 'Noan?', 3: 'People who have never experienced the terror of power but find themselves going from ""powerless"" to ""having everything"" overnight are sure to become demon lords feared the world over.', 4: '1'}"
+107	107		302							{2: '...', 3: '108'}
+108	108		301							"{2: 'Noan?', 3: ""You've known all along, haven't you? That there's no negotiating with that kind of creature. But you had your hopes up anyway seeing as you're able to communicate with them in language."", 4: '1'}"
+109	109		302							{2: '(Nod)', 3: '110', 4: 'Yes...', 5: '110'}
+110	110		301							"{2: 'Noan?', 3: ""Have you taken the last injection? I can't see you clearly, but I can smell the blood on you."", 4: '1'}"
+111	111		302							{2: 'Hmm...', 3: '112', 4: 'Yes.', 5: '112'}
+112	112		301							{2: 'Noan?', 3: 'Do you want to stay here and be reborn as a magical sea girl?', 4: '1'}
+113	113		302							{2: 'Like hell I do. Do you know how to get out of here?', 3: '114'}
+114	114		301							"{2: 'Noan?', 3: ""It's tricky. You can head to the control room to call for help because that's the only place with signals. I can point you in the general direction."", 4: '1'}"
+115	115		301				DialogDisable			"{2: 'Noan?', 3: ""But that doesn't mean you'll have the clearance to establish a connection, and even if you do, you might end up with an Ascendant on the other side of the line."", 4: '1'}"
+116	116		302							{2: '(Lamia has the ability to disguise herself as others.)', 3: '117'}
+117	117		302							{2: '(But she might not cooperate.)', 3: '118'}
+118	118		301			DialogEnable				"{2: 'Noan?', 3: ""And it's highly likely Lithos is going to find out about this."", 4: '1'}"
+119	119		302							"{2: ""So we'll have to kill him to start with."", 3: '120'}"
+120	120		301							{2: 'Noan?', 3: 'Correct.', 4: '1'}
+121	121		302							"{2: ""What if we just can't get hold of anyone?"", 3: '122'}"
+122	122		301							{3: 'The young man falls silent upon hearing this question.'}
+123	123		302							{2: '...Is there nothing else we can do?', 3: '124'}
+124	124		301							{2: 'Noan?', 3: 'Actually, you can just go back in Cthylla.', 4: '1'}
+125	125		302							{2: 'Did you just say what I think you just said?', 3: '126', 4: 'This is too much.', 5: '127'}
+126	126	128	301							"{2: 'Noan?', 3: ""We are right inside Cthylla's womb."", 4: '1'}"
+127	127		301							"{2: 'Noan?', 3: ""Too much? We're right inside Cthylla's womb now, aren't we?"", 4: '1'}"
+128	128		301							{3: 'He points around with no emotion on his face.'}
+129	129		301							"{2: 'Noan?', 3: ""This space itself is a huge Hetero-Creature. It's closely connected to Cthylla like the Hetero-Sapiens in Pulia Forest Park, and it interferes with Cthylla."", 4: '1'}"
+130	130		301							"{2: 'Noan?', 3: ""People who die here will become part of the floor and get absorbed by Cthylla's womb. She will then give birth to them again."", 4: '1'}"
+131	131		302							"{2: 'Are you saying this is ""Cthylla\'s cradle""?', 3: '132'}"
+132	132		301							"{2: 'Noan?', 3: 'Lithos likes to refer to it as that. They\'ve come up with names like ""Giant Whale"" and ""Deep Star"", but it is what it is, no matter what they call it.', 4: '1'}"
+133	133		301							"{2: 'Noan?', 3: ""This giant womb is fixed at the bottom of the deep sea while carrying us, and I've been waiting for a chance to unlock it so it can float to the surface."", 4: '1'}"
+134	134		301							"{2: 'Noan?', 3: ""...That's the only way for people to discover and eliminate it before it turns into a disaster."", 4: '1'}"
+135	135		302							{2: 'How do we make that happen?', 3: '136', 4: 'Do you know how to do that?', 5: '136'}
+136	136		301							"{2: 'Noan?', 3: ""We might stand a chance if the storage room holding all the copies of M.I.N.D. is still there, except we'll have to deal with Lithos then."", 4: '1'}"
+137	137		301							"{2: 'Noan?', 3: 'We have to find the ""joystick"" that controls the womb, and then we\'ll have to find someone who can withstand the water pressure to dive into the deep sea to unlock the womb.', 4: '1'}"
+138	138		302							"{2: 'What is this ""joystick"" you\'re talking about?', 3: '139'}"
+139	139		301							"{2: 'Noan?', 3: ""That's another consciousness that controls Cthylla."", 4: '1'}"
+140	140		301							{2: 'Noan?', 3: 'Do you know Voodoo and Loki? Cthylla is like a madwoman, which is why we need another consciousness to keep her sanity in check.', 4: '1'}
+141	141		302							"{2: ""I've read about them."", 3: '142', 4: ""I've met some who have had their consciousnesses integrated."", 5: '142'}"
+142	142		301							{2: 'Noan?', 3: 'There is a total of three consciousnesses keeping Cthylla and her womb under control—Cthylla herself, and two other stable M.I.N.D.s.', 4: '1'}
+143	143		301							"{2: 'Noan?', 3: ""Take one of them out of the equation and you end up with a continuous collapse like the one that's happening now, and we all die in the deep sea."", 4: '1'}"
+144	144		302							"{2: 'Is it possible for the ""cradle"" to die?', 3: '145', 4: 'Is it possible for this ""womb"" to die?', 5: '146'}"
+145	145	147	301							"{2: 'Noan?', 3: 'Maybe, but as long as Cthylla is alive, they can rebuild the ""cradle.""', 4: '1'}"
+146	146		301							"{2: 'Noan?', 3: 'Maybe, but as long as Cthylla is alive, they can rebuild her ""womb.""', 4: '1'}"
+147	147		302							"{2: ""What does one need to do to become Cthylla's second consciousness?"", 3: '148'}"
+148	148		301							{2: 'Noan?', 3: 'You need to meet two conditions—your own M.I.N.D. has to be stable, and you have to be accepted by Cthylla herself.', 4: '1'}
+149	149		301							"{2: 'Noan?', 3: ""You'll get expelled prematurely and become one of her children if she doesn't like you and rejects you."", 4: '1'}"
+150	150		301							"{2: 'Noan?', 3: 'All you need to do is die in her womb if you meet these conditions. The ""roots"" of the ""Tree of Life"" are buried everywhere here, ready to accept consciousnesses with the Red Tide.', 4: '1'}"
+151	151		302							"{2: ""And I'd coexist with her if she doesn't dislike me."", 3: '152'}"
+152	152		301							"{2: 'Noan?', 3: ""No, no one can coexist with her for an extended period of time. She will shape a consciousness into one of her children before it's crushed."", 4: '1'}"
+153	153		301							{2: 'Noan?', 3: 'You might become one of those anemones that crawl all over the place or a magical sea girl, or merge into an egg.', 4: '1'}
+154	154		302							{2: '...Which means...', 3: '155'}
+155	155		301							"{3: ""Another way to do it is to sacrifice someone with a stable enough consciousness to turn that person into Cthylla's second consciousness. In this case, there is no avoiding the sacrifice.""}"
+156	156		301							"{3: 'Only three people meet this condition: ""Noan"", Lamia, and yourself.'}"
+157	157		301							"{3: ""So, in case communication fails and you're forced to use this method, who's most likely to be sacrificed?""}"
+158	158		302							"{2: '(...Noan)', 3: '159', 4: '(Shrek)', 5: '159', 6: '(""Noan"")', 7: '159'}"
+159	159		301							{3: '...Running into him here feels like a bad joke.'}
+160	160		301				DialogDisable			"{3: 'You don\'t even know how he went blind and which part of his memory is missing. You don\'t know if you can justify sacrificing him ""a second time"" under these circumstances.'}"
+161	161		302							"{2: ""(...I've failed to save Shorthalt.)"", 3: '162', 4: ""(I'm sure I'm going to hate myself down the road for sacrificing him to have my own life spared.)"", 5: '162', 6: ""(Why can't it be me?)"", 7: '162'}"
+162	162		302							"{2: ""No... that's exactly why we have to avoid this!"", 3: '163'}"
+163	163		301			DialogEnable				"{2: 'Noan?', 3: ""What's that?"", 4: '1'}"
+164	164		302							{2: '...Nothing. Let me think.', 3: '165'}
+165	165		301							"{3: ""He's right—your best bet would be to head down to the control room to call for help.""}"
+166	166		301							{3: 'And if that fails, then the two of you are as good as dead.'}
+167	167		301							"{3: ""You're pressed for time—and the scale of destruction that this space carrying countless Hetero-Creatures is going to wreak on Earth is beyond anyone's imagination.""}"
+168	168		302							"{2: '(Cthylla and this space are the breeding grounds for ""demon lords."")', 3: '169', 4: '(They have to be nipped in the bud.)', 5: '169'}"
+169	169		301							"{3: ""Seeing as Task Force cannot operate in the deep sea, you figure that you have to take Cthylla and break free from the seabed. Task Force can only eliminate both Cthylla and this space when they're both out on the surface of the sea.""}"
+170	170		301							{3: 'A sacrifice is in order, however, in order for that to happen.'}
+171	171		302							{2: '(We should try to focus on establishing communication first before exploring other options.)', 3: '172'}
+172	172		301							"{3: ""Right, there's still hope. You can get Noan to join you to look for ways to establish communication and see if there is a way to work around the situation.""}"
+173	173		302							{2: 'Noan.'}
+174	174		301							{3: 'He tilts his head this way.'}
+175	175		302							{2: '(Tell him about Lamia.)', 3: '176'}
+176	176		301				DialogDisable			{2: 'Noan?', 3: '...', 4: '1'}
+177	177		302							"{2: ""I'm going to head to the control room first. Getting out of here is our best bet."", 3: '178'}"
+178	178		302							"{2: ""I'm going to get help from the Task Force."", 3: '179'}"
+179	179		302							"{2: ""And I'll figure out a way to bring Cthylla to the sea surface."", 3: '180'}"
+180	180		301			DialogEnable				"{2: 'Noan?', 3: ""What are you going to do if you don't get hold of anyone in the control room?"", 4: '1'}"
+181	181		302							"{2: ""We'll cross that bridge when we come to it. We'll drag Lithos and Lamia here to help if need be."", 3: '182'}"
+182	182		301							{2: 'Noan?', 3: '...', 4: '1'}
+183	183		202							{1: '1', 6: '1'}
+184	184		301							{3: 'The young man shows a faint smile at your overly idealistic plan.'}
+185	185		201							{1: '1', 2: '500734'}
+186	186		301							"{1: '1', 2: 'Noan?', 3: ""Hmm, let's give your plan a shot. It's better than doing nothing."", 4: '1'}"
+187	187		301							{3: 'With it, he points in a general direction and turns to leave.'}
+188	188		302							{2: 'Wait, where are you going?', 3: '189'}
+189	189		301							"{2: 'Noan?', 3: ""I've got a few things to deal with."", 4: '1'}"
+190	190		302							{2: 'Huh.', 3: '191'}
+191	191		301							"{3: ""It hits you just now that you were probably being a little too optimistic thinking he'd lend you a hand.""}"
+192	192		301							{3: 'This person is no longer Noan, so it only makes sense for him to refuse to help.'}
+193	193		302							{2: 'Noan, what do you want to do now?', 3: '194', 4: 'Can you tell me what your plan is?', 5: '194'}
+194	194		301				DialogDisable			"{2: 'Noan?', 3: ""To throw a wrench in Lithos' grand plans."", 4: '1'}"
+195	195		302							"{2: ""Seems like we're up to the same thing, then..."", 3: '196', 4: 'You can still do that by giving me a hand here.', 5: '196'}"
+196	196		302							{2: 'How about we join forces?', 3: '197'}
+197	197		301			DialogEnable				{2: 'Noan?', 3: '...', 4: '1'}
+198	198		301							{3: 'Standing in place with his hand clutched to the only weapon he has left, the young man weighs his options.'}
+199	199		301							"{2: 'Noan?', 3: ""Fine, let's do this."", 4: '1'}"
+200	200		301							"{2: 'Noan?', 3: ""This place is about to collapse. I was going to take one last look at Cthylla, but I guess there's no time for that."", 4: '1'}"
+201	201		204							{1: '1', 2: '8'}
+202	202		301							"{3: '""Noan"" closes his eyes as he explains half the reason for this hesitation.'}"
+203	203		302							{2: 'Take one last look at Cthylla?', 3: '204'}
+204	204		204							{1: '1'}
+205	205		301							"{2: 'Noan?', 3: ""Like you said, Cthylla has to go, and I've been hearing her cry. She never wanted to give birth to all these dead people. This is what happens when people's wishes go awry."", 4: '1'}"
+206	206		301							{3: 'He lets out a soft sigh.'}
+207	207		301				DialogDisable			{2: 'Noan?', 3: 'Everyone longs to be saved by a mother, but who is there to save the mother herself?', 4: '1'}
+208	208		302							{2: '...', 3: '209'}
+209	209		302							"{2: ""Come with me. I'm sure we can work this out."", 3: '210', 4: ""There are some things that just can't be solved the further down the road you go..."", 5: '215'}"
+210	210		301			DialogEnable	DialogDisable			"{2: 'Noan?', 3: ""Says someone who's covered in wounds from head to toe?"", 4: '1'}"
+211	211		302							{2: 'Fine.', 3: '212', 4: 'I can still take on ten more of them.', 5: '212'}
+212	212		302							"{2: ""But given how far we've come..."", 3: '213'}"
+213	213		302							"{2: ""...We've got no choice but to have her rest in peace, right?"", 3: '214', 4: 'The world is as good as dead if we let her go.', 5: '214'}"
+214	214	218	301			DialogEnable				"{2: 'Noan?', 3: ""But Cthylla cannot choose her own death. A Hetero-Creature's body can heal as many times as it needs to in the Punishing."", 4: '1'}"
+215	215		301			DialogEnable				{2: 'Noan?', 3: 'Exactly, which is why I said fine.', 4: '1'}
+216	216		302							"{2: ""...We've got no choice but to have her rest in peace, right?"", 3: '217', 4: 'The world is as good as dead if we let her go.', 5: '217'}"
+217	217		301							"{2: 'Noan?', 3: ""But Cthylla cannot choose her own death. A Hetero-Creature's body can heal as many times as it needs to in the Punishing."", 4: '1'}"
+218	218		301							"{2: 'Noan?', 3: ""We've got to count on organizations like Babylonia if we want a solution."", 4: '1'}"
+219	219		302							{2: 'Well...', 3: '220'}
+220	220		301							"{2: 'Noan?', 3: ""Let's go."", 4: '1'}"
+221	221		301							"{3: '""Noan"" makes a ""please"" gesture but shows no intention of coming closer.'}"
+222	222		302							{2: 'You...', 3: '223'}
+223	223		301							{2: 'Noan?', 3: 'I am a Transcendant now.', 4: '1'}
+224	224		302		1		AniZhuanchangBegin			{2: '...', 4: 'Got it.'}

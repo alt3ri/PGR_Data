@@ -1,0 +1,493 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory315.png'}
+2	2		401							{1: '1', 2: '209'}
+3	3		301			DialogEnable				{3: 'Pale daylight pierces through the clouds and morning mist.'}
+4	4		301				DialogDisable			{3: 'No birdsong greets the morning in the mining area. The autumn wind wanders through the valley of towering, layered cliffs.'}
+5	5		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory69.jpg', 3: '0', 4: '1', 5: '0.8'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory69.jpg'}
+7	7		205							{1: '999'}
+8	8		401							{1: '2', 2: '2626'}
+9	9		301			DialogEnable				{3: 'Knock, knock—'}
+10	10		301							{3: 'The door is shaken by an urgent rapping.'}
+11	11		201							{1: '1', 2: '501385', 3: '7'}
+12	12		301							{1: '1', 2: 'Liv', 3: 'Hello. Who are you looking for...?', 4: '1'}
+13	13		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+14	14		202							{1: '1', 6: '1'}
+15	15		401							{1: '2', 2: '754'}
+16	16		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+17	17		301				DialogDisable			"{3: ""There's no one at the door—just a few half-ripened wild fruits scattered on the ground.""}"
+18	18		201							{1: '1', 2: '501385', 3: '3'}
+19	19		203						400.0	{1: '1', 2: '0.3', 4: '-50'}
+20	20		203						250.0	{1: '1', 2: '0.2', 4: '0'}
+21	21		301			DialogEnable	DialogDisable			{1: '1', 2: 'Liv', 3: 'Who is it...?', 4: '1'}
+22	22		202							{1: '1', 6: '1'}
+23	23		104						500.0	{1: '-100|0|-200', 2: '0.5'}
+24	24		104						500.0	{1: '100|0|-200', 2: '0.5'}
+25	25		104						1000.0	{1: '-200|0|-250', 2: '1'}
+26	26		306						400.0	{1: '1'}
+27	27		201							{1: '1', 2: '501408', 4: '1000'}
+28	28		301			DialogEnable	DialogDisable			{1: '1', 3: 'As Liv gathers them, she glances around and catches a glimpse of blue hair peeking out from around the corner.'}
+29	29		501						1600.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+30	30		202						200.0	{1: '1', 6: '1'}
+31	31		306							
+32	32		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+33	33		201							{1: '1', 2: '501385', 3: '2', 4: '-400', 7: '1'}
+34	34		201							{1: '2', 2: '501408', 4: '400', 5: '-50', 7: '1'}
+35	35		301			DialogEnable	DialogDisable			{1: '1', 2: 'Liv', 3: '...Hello?', 4: '1'}
+36	36		203						500.0	{1: '1', 2: '0.5', 3: '-300'}
+37	37		204							{1: '2', 2: '7'}
+38	38		203						200.0	{1: '2', 2: '0.2', 3: '400', 4: '-20'}
+39	39		203						200.0	{1: '2', 2: '0.2', 3: '400', 4: '-50'}
+40	40		204							{1: '2', 2: '2'}
+41	41		203						500.0	{1: '2', 2: '0.5', 3: '1500'}
+42	42		204							{1: '1', 2: '7'}
+43	43		301			DialogEnable				{3: 'She tries to approach, but the moment she draws near, the child startles like a frightened animal, leaps up, and dashes away.'}
+44	44		203							{1: '1', 2: '0.3', 3: '-250'}
+45	45		301							"{2: 'Liv', 3: ""Wait! What's your name..."", 4: '1'}"
+46	46		202							{1: '1', 2: '2'}
+47	47		301							{3: 'Before she can even finish her words, the child has already vanished into the deep shadows between the buildings.'}
+48	48		201							{1: '1', 2: '501385', 3: '14'}
+49	49		301				DialogDisable			{1: '1', 2: 'Liv', 3: 'Am I... really that scary?', 4: '1'}
+50	50		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+51	51		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory69.jpg'}
+52	52		401							{1: '2', 2: '753'}
+53	53		301			DialogEnable				{3: 'Unable to make sense of the encounter, Liv returns to her room with the wild fruits and finds you awake.'}
+54	54		302							{2: 'Who was it just now?', 3: '55', 4: 'Did someone knock at the door?', 5: '55'}
+55	55		204							{1: '1'}
+56	56		301							{2: 'Liv', 3: 'Oh, it was that little girl from last night, the one you gave your food to.', 4: '1'}
+57	57		302							"{2: ""That kid? Where's she now?"", 3: '58', 4: 'Did she need something?', 5: '58'}"
+58	58		204							{1: '1', 2: '14'}
+59	59		301							"{2: 'Liv', 3: ""She's already gone. Just left these fruits for us."", 4: '1'}"
+60	60		301							"{2: 'Liv', 3: ""I think they're from that small grove near the mining area... the one we passed yesterday."", 4: '1'}"
+61	61		202							{1: '1'}
+62	62		306							{1: '1'}
+63	63		301				DialogDisable			"{3: ""The wild fruits display unripe greens and muted reds. They don't look appetizing, but in this resource-starved conservation area, they must be a rare delicacy.""}"
+64	64		306							
+65	65		302							{2: 'Why would she give these to us...?', 3: '66', 4: 'Why would she leave these fruits for us...?', 5: '66'}
+66	66		301			DialogEnable				{3: 'This conservation area is too small to be self-sufficient, with barely any credits in circulation. The only things people have to trade are their meager food rations and their own labor.'}
+67	67		301							{3: 'Those few fruits could have been traded for extra gruel.'}
+68	68		201							{1: '1', 2: '501385', 3: '2'}
+69	69		301							{1: '1', 2: 'Liv', 3: 'Might be her way of saying thank you for last night.', 4: '1'}
+70	70		204							{1: '1', 2: '14'}
+71	71		301							"{2: 'Liv', 3: ""I've been keeping an eye on her for a while now. She always seems to get picked on... Perhaps because she's the smallest?"", 4: '1'}"
+72	72		202							{1: '1', 6: '1'}
+73	73		306							{1: '1'}
+74	74		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+75	75		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+76	76		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+77	77		504							{1: '0.7'}
+78	78		201							{1: '1', 2: '501408', 7: '1'}
+79	79		301				DialogDisable			{1: '1', 3: 'You try to recall what the little girl looked like...'}
+80	80		202							{1: '1', 6: '1'}
+81	81		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+82	82		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory69.jpg'}
+83	83		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+84	84		504							{1: '0'}
+85	85		306							
+86	86		302							{2: 'She looked about seven or eight years old...', 3: '87', 4: 'She looked about ten years old.', 5: '89'}
+87	87		201							{1: '1', 2: '501385', 3: '8'}
+88	88	93	301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Yeah, she does look about that age.', 4: '1'}
+89	89		201							{1: '1', 2: '501385', 3: '8'}
+90	90		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Oh, do you think so? To me, she seems much younger...', 4: '1'}
+91	91		204							{1: '1', 2: '12'}
+92	92		301							{2: 'Liv', 3: 'Maybe only seven or eight.', 4: '1'}
+93	93		204							{1: '1', 2: '12'}
+94	94		301							"{2: 'Liv', 3: ""Back on Babylonia, she'd be safe in the Youth Center."", 4: '1'}"
+95	95		204							{1: '1', 2: '14'}
+96	96		301				AniZhuanchangBegin			{2: 'Liv', 3: 'Yesterday morning, when I was out investigating, I saw her surrounded by a few of the older children...', 4: '1'}
+97	97		202							{1: '1', 6: '1'}
+98	98		401						2000.0	{1: '1', 2: '36'}
+99	99		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+100	100		401							{1: '1', 2: '169'}
+101	101		301			AniZhuanchangEnd				{3: 'One day ago, as the hazy morning light filtered through the clouds, Liv left her temporary quarters early.'}
+102	102		401							{1: '2', 2: '754'}
+103	103		301							"{3: ""You had been up late again handling Babylonia's affairs, so she decided not to wake you and began the preliminary investigation on her own.""}"
+104	104		301				DialogDisable			"{3: 'The investigation was taking shape. A conservation area resident named Kolm had heard relevant information in the ""medical station,"" so she would start her search there...'}"
+105	105		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory736.jpg', 3: '0', 4: '1', 5: '1'}
+106	106		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory736.jpg'}
+107	107		205							{1: '999'}
+108	108		201							{1: '1', 2: '501385', 3: '12'}
+109	109		301			DialogEnable	DialogDisable			{1: '1', 3: 'Lost in thought about how to proceed, Liv hurried past the tent. Just ahead lay the central plaza—'}
+110	110		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+111	111		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory317.png'}
+112	112		202							{1: '1', 6: '1'}
+113	113		201							{1: '1', 2: '501408', 7: '1'}
+114	114		201							{1: '2', 2: '500527', 4: '-400', 7: '1'}
+115	115		201							{1: '3', 2: '500969', 4: '400', 5: '-50', 7: '1'}
+116	116		201							{1: '16', 2: '500259', 4: '600', 5: '-30', 7: '1'}
+117	117		201						600.0	{1: '15', 2: '500260', 4: '-600', 5: '-30', 7: '1'}
+118	118		203						100.0	{1: '15', 2: '0.1', 3: '-600'}
+119	119		203						100.0	{1: '15', 2: '0.1', 3: '-600', 4: '-30'}
+120	120		203						100.0	{1: '15', 2: '0.1', 3: '-600', 4: '0'}
+121	121		203						350.0	{1: '15', 2: '0.1', 3: '-600', 4: '-30'}
+122	122		301			DialogEnable				{1: '1', 2: 'Child A', 3: 'Weirdo! Weirdo! The freak with no mommy!', 4: '15'}
+123	123		204							{1: '1', 2: '14'}
+124	124		301							"{2: 'Child', 3: ""I... I'm not..."", 4: '1'}"
+125	125		203						100.0	{1: '16', 2: '0.1', 3: '600', 4: '0'}
+126	126		203						100.0	{1: '16', 2: '0.1', 3: '600', 4: '-30'}
+127	127		203						100.0	{1: '16', 2: '0.1', 3: '600', 4: '0'}
+128	128		203						100.0	{1: '16', 2: '0.1', 3: '600', 4: '-30'}
+129	129		301							"{2: 'Child B', 3: ""You are! Everyone else has a mom! Only you don't!"", 4: '16'}"
+130	130		301							{3: 'In the open space, several early-rising children clapped their hands as they circled a disheveled little girl, singing a discordant chant.'}
+131	131		203						100.0	{1: '15', 2: '0.1', 3: '-600', 4: '0'}
+132	132		203						100.0	{1: '15', 2: '0.1', 3: '-600', 4: '-30'}
+133	133		203						100.0	{1: '15', 2: '0.1', 3: '-600', 4: '0'}
+134	134		203						100.0	{1: '15', 2: '0.1', 3: '-600', 4: '-30'}
+135	135		301							"{2: 'Child A', 3: ""You freak! Yesterday, your mom said it herself! She's not your real mom! That means you don't have a mom at all!"", 4: '15'}"
+136	136		204							{1: '1', 2: '14'}
+137	137		301							"{3: ""The children's innocent malice was like a potato sprouting in darkness, growing unchecked in the damp shadows of their imaginary world.""}"
+138	138		204							{1: '1', 2: '5'}
+139	139		301							{2: 'Child', 3: 'I-I do have one...', 4: '1'}
+140	140		301							"{2: 'Child B', 3: ""Then tell us who your mom is. Say it and we'll let you play with us."", 4: '16'}"
+141	141		203				PanelActor1Shake		300.0	{1: '16', 2: '0.25', 3: '280', 4: '-30'}
+142	142		204							{1: '1', 2: '14'}
+143	143		203						250.0	{1: '1', 2: '0.25', 3: '-100'}
+144	144		401							{1: '2', 2: '1543'}
+145	145		301							"{3: ""An older child moved closer, then gave the girl's tangled hair a sudden, cruel tug.""}"
+146	146		301			PanelActor1Shake				{2: 'Child', 3: 'I... I...', 4: '1'}
+147	147		301							{3: 'The girl in the center clenched her tiny fists, her face a mixture of helplessness and confusion.'}
+148	148		301							{2: 'Child A', 3: 'Oh!! So you ARE the freak with no mom—', 4: '16'}
+149	149		202							{1: '1', 2: '2', 3: '3', 4: '15', 5: '16', 6: '1'}
+150	150		201							{1: '1', 2: '501385', 3: '4'}
+151	151		301							{1: '1', 2: 'Liv', 3: '...What are you doing?', 4: '1'}
+152	152		202							{1: '1', 6: '1'}
+153	153		201							{1: '1', 2: '501408', 4: '-100'}
+154	154		201							{1: '2', 2: '500527', 4: '-400'}
+155	155		201							{1: '16', 2: '500259', 4: '280', 5: '-30'}
+156	156		201							{1: '15', 2: '500260', 4: '-600', 5: '-30'}
+157	157		201							{1: '3', 2: '500969', 4: '400', 5: '-50'}
+158	158		301							"{1: '1', 3: ""The bullying came to an abrupt halt with an outsider's intervention.""}"
+159	159		203							{1: '2', 2: '0.4', 3: '-1000'}
+160	160		203							{1: '16', 2: '0.4', 3: '880', 4: '-30'}
+161	161		203							{1: '3', 2: '0.4', 3: '-1200', 4: '-50'}
+162	162		203						300.0	{1: '15', 2: '0.4', 3: '1000', 4: '-30'}
+163	163		202							{1: '2', 2: '3', 3: '15', 4: '16'}
+164	164		301							{3: 'The older children scattered in all directions the moment they saw Liv approaching, darting away with practiced speed down separate escape routes.'}
+165	165		203							{1: '1', 2: '0.25', 3: '-200'}
+166	166		201							{1: '2', 2: '501385', 3: '4', 4: '300'}
+167	167		301							{1: '1', 2: 'Liv', 3: '...', 4: '2'}
+168	168		204							{1: '2', 2: '3'}
+169	169		203						500.0	{1: '2', 2: '0.4', 3: '300', 4: '-100'}
+170	170		301							{3: 'Instead of giving chase, Liv approached the blue-haired girl. She knelt down and gently wiped the dirt from her face with a handkerchief.'}
+171	171		301							"{2: 'Liv', 3: ""Were they being mean to you? You know, if someone's being unkind, you should always tell your family about it..."", 4: '2'}"
+172	172		204							{1: '1', 2: '14'}
+173	173		301							{2: 'Child', 3: 'What... is family?', 4: '1'}
+174	174		301							"{3: ""Confusion filled the girl's brown eyes.""}"
+175	175		204							{1: '2', 2: '14'}
+176	176		301							"{2: 'Liv', 3: ""Family... well, it's the people who care for you. Like your mom or dad... or brothers or sisters..."", 4: '2'}"
+177	177		204							{1: '2', 2: '8'}
+178	178		301							{3: 'Liv looked equally bewildered.'}
+179	179		301							"{3: 'Concepts as basic as ""mom"" and ""dad"" should be among the first words a child learns to speak. And yet...'}"
+180	180		204							{1: '1', 2: '14'}
+181	181		301							"{2: 'Child', 3: ""I... I don't know... what any of those are supposed to be..."", 4: '1'}"
+182	182		301							"{3: ""The girl's hair was tangled and unkempt, her clothes stained with a grime that spoke of long-term neglect.""}"
+183	183		204							{1: '2', 2: '15'}
+184	184		301			PanelActor1Shake				{2: 'Child', 3: 'Mom... I do have... mom... Where...', 4: '1'}
+185	185		301							{3: 'The unfamiliar words tumbled awkwardly from her lips as she repeated them, her small brow furrowing with growing distress.'}
+186	186		301							{3: '...She was simply too young to articulate her thoughts into coherent sentences.'}
+187	187		204							{1: '2', 2: '16'}
+188	188		203						450.0	{1: '2', 2: '0.4', 3: '250', 4: '-100'}
+189	189		301							"{3: ""As if seeing a reflection of her younger self, Liv's expression softened, and she gently drew the child into her arms.""}"
+190	190		204							{1: '2', 2: '10'}
+191	191		301							"{2: 'Liv', 3: ""...It's okay. You don't need to worry about it now."", 4: '2'}"
+192	192		204							{1: '2'}
+193	193		204							{1: '1'}
+194	194		301							"{3: ""She ran her fingers through the girl's long hair, patiently smoothing out the tangles.""}"
+195	195		301							"{2: 'Liv', 3: ""You know, sometimes people get separated for a little while. And when you grow up, I'm sure you'll be able to find your mom."", 4: '2'}"
+196	196		204							{1: '2', 2: '2'}
+197	197		204							{1: '1', 2: '7'}
+198	198		301							{2: 'Child', 3: 'Separated...', 4: '1'}
+199	199		301							{2: 'Child', 3: 'Is... is that really true?', 4: '1'}
+200	200		204							{1: '2', 2: '9'}
+201	201		301				AniZhuanchangBegin			"{2: 'Liv', 3: ""Of course it is. That's why you have to make sure you grow up healthy and strong."", 4: '2'}"
+202	202		202							{1: '1', 2: '2', 6: '1'}
+203	203		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory736.jpg'}
+204	204		401							{1: '2', 2: '2626'}
+205	205		301			AniZhuanchangEnd				"{3: ""After carefully arranging the hair into a tidy style, Liv led her to the conservation area supervisor's place and knocked on the door.""}"
+206	206		401							{1: '2', 2: '754'}
+207	207		201							{1: '15', 2: '501385', 4: '400'}
+208	208		201							{1: '2', 2: '501408', 4: '400', 5: '-200'}
+209	209		201							{1: '3', 2: '501392', 4: '-400'}
+210	210		301							"{1: '1', 2: 'Conservation Area Supervisor', 3: ""...Oh my, you're up early, Officer. Is there something I can help you with?"", 4: '3'}"
+211	211		301							"{2: 'Liv', 3: ""I'm sorry to disturb you, but I found this little one all alone. Would you happen to know where she belongs?"", 4: '15'}"
+212	212		301							{2: 'Conservation Area Supervisor', 3: 'A child...?', 4: '3'}
+213	213		204							{1: '2', 2: '14'}
+214	214		203						500.0	{1: '2', 2: '0.5', 3: '550', 4: '-200'}
+215	215		301							{3: 'The long-haired girl peeked out timidly from behind Liv, only half her face showing.', 4: '2'}
+216	216		301				PanelActor2Shake			"{2: 'Conservation Area Supervisor', 3: ""Ah, her. Yes, I know her. Has she wandered off again? Don't you worry, Officer, just leave her with me. I know exactly where she lives."", 4: '3'}"
+217	217		204							{1: '15', 2: '14'}
+218	218		301							{2: 'Liv', 3: '...', 4: '15'}
+219	219		301							"{3: ""Seeing the faint resistance in the child's eyes, Liv paused a moment before voicing her question.""}"
+220	220		204							{1: '15', 2: '15'}
+221	221		301							"{2: 'Liv', 3: ""If you don't mind me asking... could you tell me a bit about her family? I couldn't help but notice some of the other children were being rather unkind to her..."", 4: '15'}"
+222	222		203						300.0	{1: '2', 2: '0.25', 3: '400', 4: '-200'}
+223	223		301							"{2: 'Conservation Area Supervisor', 3: ""Oh... that. Not a special story around here, I'm afraid."", 4: '3'}"
+224	224		301							{2: 'Conservation Area Supervisor', 3: 'She was abandoned as a baby. Someone found her and sent her here.', 4: '3'}
+225	225		301							"{2: 'Conservation Area Supervisor', 3: ""A couple took her in. Their own child had gone missing, you see. I think they were hoping to fill that void. But she's not theirs by blood, and... well, some hearts don't have room for a second chance."", 4: '3'}"
+226	226		301							{3: 'The conservation area supervisor gave a knowing look.'}
+227	227		301							"{2: 'Conservation Area Supervisor', 3: ""Alright now, come along. Let's get you back."", 4: '3'}"
+228	228		202							{1: '15', 2: '2', 3: '3'}
+229	229		301				AniZhuanchangBegin			"{3: ""Then, the supervisor took the girl's hand and led her away toward the outskirts of the conservation area.""}"
+230	230		401						2000.0	{1: '1', 2: '36'}
+231	231		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory69.jpg'}
+232	232		401							{1: '1', 2: '209'}
+233	233		301			AniZhuanchangEnd				{3: 'Liv shakes her head while organizing the combat supplies.'}
+234	234		201							{1: '1', 2: '501385', 3: '14'}
+235	235		301							"{1: '1', 2: 'Liv', 3: '...Abandoned at birth, so she doesn\'t even know what ""family"" means, or who her ""mom"" really is.', 4: '1'}"
+236	236		302							{2: '...', 3: '237'}
+237	237		202							{1: '1'}
+238	238		301							{3: 'Your lips part, but you find yourself at a loss for words.'}
+239	239		301							{3: 'In the shadows cast by sunlight, countless similar tragedies unfold unseen.'}
+240	240		302							"{2: ""...Let's try our best to resolve the situation here."", 3: '241'}"
+241	241		301							{3: 'Find the person familiar with the mining area. Clear out the Hetero-Creatures there. If this conservation area grows more prosperous, then perhaps this child... could receive more food and care.'}
+242	242		201							{1: '1', 2: '501385', 3: '3'}
+243	243		301							{1: '1', 2: 'Liv', 3: '...Yeah.', 4: '1'}
+244	244		401						500.0	{1: '2', 2: '4421'}
+245	245		301							{3: 'Liv presses her lips together, then opens her terminal to organize the information gathered over the past few days.'}
+246	246		302							{2: 'The list obtained earlier contains a total of seven people, including the doctor.', 3: '247'}
+247	247		301							"{3: ""The two patrol members were merely passing through the area. By analyzing their movement against the conservation area's entrance surveillance footage, you can calculate their walking speed and exact time of passage.""}"
+248	248		302							{2: 'What about those two in the medical station...?', 3: '249'}
+249	249		204							{1: '1', 2: '14'}
+250	250		301							"{2: 'Liv', 3: ""I've already spoken with Melinoe and personally checked on them."", 4: '1'}"
+251	251		301							"{2: 'Liv', 3: ""One is an elderly patient with significant brain damage; I'm afraid he won't be waking up anytime soon. The other lost a lot of blood... Even if she regains consciousness, she'll be far too weak to even leave her bed."", 4: '1'}"
+252	252		202							{1: '1'}
+253	253		301							{3: 'Four names are now crossed off the list. The only remaining suspects are Melinoe and the two people who took a vehicle into the mining area to prospect for resources.'}
+254	254		201							{1: '1', 2: '501385', 3: '12'}
+255	255		301							{1: '1', 2: 'Liv', 3: 'Melinoe...', 4: '1'}
+256	256		302							"{2: ""Let's set her aside for now."", 3: '257', 4: ""We'll put her investigation on hold for now."", 5: '257'}"
+257	257		202							{1: '1'}
+258	258		301							"{3: ""Theoretically, Melinoe is highly suspicious. However, given her special identity and the conservation area supervisor's protective attitude, starting with her would likely tip your hand.""}"
+259	259		201							{1: '1', 2: '501385', 3: '12'}
+260	260		301							{1: '1', 2: 'Liv', 3: 'Then that leaves only the two who fled into the mining area... Ark and Niler, 23 and 25 years old, both adult males.', 4: '1'}
+261	261		301				DialogDisable			"{2: 'Liv', 3: ""According to the registry, they were both born right here in the conservation area. Their parents were mine workers who stayed behind after the Punishing outbreak. They entered the mining area some time ago and haven't returned since."", 4: '1'}"
+262	262		302							{2: 'I see...', 3: '263'}
+263	263		302							{2: 'By the way, can we still contact Rodent?', 3: '264'}
+264	264		204							{1: '1', 2: '3'}
+265	265		301			DialogEnable	DialogDisable			"{2: 'Liv', 3: ""I'll try to reach them..."", 4: '1'}"
+266	266		202							{1: '1'}
+267	267		401						500.0	{1: '2', 2: '4421'}
+268	268		401							{1: '2', 2: '4422'}
+269	269		509						350.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1346.jpg', 2: '1'}
+270	270		201							{1: '11', 2: '501075', 4: '-500'}
+271	271		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '11'}
+272	272		301			DialogEnable				{3: 'After a brief dial tone, the line connects. Though still broken by static, the signal is stronger than before.'}
+273	273		301							{2: 'Flayo', 3: '...Gray... Raven?', 4: '11'}
+274	274		301				DialogDisable			{3: 'The dark-skinned captain appears absolutely thrilled.'}
+275	275		302							{2: 'Hello, this is 【kuroname】, Commandant of Gray Raven.', 3: '276'}
+276	276		302							{2: 'May I ask what your current operation plan is?', 3: '277'}
+277	277		301			DialogEnable				{2: 'Flayo', 3: 'Operation... plan? We...', 4: '11'}
+278	278		401							{1: '2', 2: '5555'}
+279	279		401							{1: '2', 2: '5903'}
+280	280		301			PanelActor11Shake				{3: 'The terminal stutters, seemingly about to lose connection again, when the screen violently shakes. Clearly, Flayo has once more resorted to his self-taught repair method.'}
+281	281		301							{2: 'Flayo', 3: '...Ahem. That should do it.', 4: '11'}
+282	282		301							{3: 'He chuckles with self-satisfaction.'}
+283	283		301							"{2: 'Flayo', 3: ""Like I was saying, we're planning to go deeper into the mine. Try and find where these Hetero-Creatures are coming from."", 4: '11'}"
+284	284		302							{2: 'I was under the impression that Rodent was not particularly skilled in combat.', 3: '285'}
+285	285		301							"{2: 'Flayo', 3: ""We may not excel at combat, but we're experts at digging! In these tunnels, we know how to stay alive."", 4: '11'}"
+286	286		301							"{2: 'Flayo', 3: ""Normally we'd play it safer, but something's off down here this time."", 4: '11'}"
+287	287		401							{1: '2', 2: '2768'}
+288	288		301							{3: 'Flayo pulls out his notebook and carefully checks the recorded information.'}
+289	289		301							{2: 'Flayo', 3: 'See, according to my logs, this mine usually spawns Hetero-Creatures like clockwork. A new batch pops up every two weeks or so.', 4: '11'}
+290	290		301							"{2: 'Flayo', 3: ""Our usual routine was to swing by and clear 'em out before they could multiply and threaten the conservation area."", 4: '11'}"
+291	291		302							{2: 'That regularly?', 3: '292', 4: 'Could something be controlling them?', 5: '293'}
+292	292	294	301							"{2: 'Flayo', 3: ""Yeah. We've already blocked..."", 4: '11'}"
+293	293		301							"{2: 'Flayo', 3: ""I'm not entirely sure. We've already blocked..."", 4: '11'}"
+294	294		401							{1: '2', 2: '2768'}
+295	295		301							{3: 'He flips a page in his notebook.'}
+296	296		301							{2: 'Flayo', 3: '...blocked about five exit points and collapsed a dozen old tunnels. But they just keep coming.', 4: '11'}
+297	297		301							"{2: 'Flayo', 3: ""So, Ymir's theory is the problem's the mine itself. Our sensors show..."", 4: '11'}"
+298	298		401							{1: '2', 2: '2768'}
+299	299		301							{3: 'He flips another page in his notebook.'}
+300	300		301							"{2: 'Flayo', 3: '...that the Punishing concentration levels are going crazy in there, fluctuating erratically. She thinks something might be ""hatching"" them, like the Red Tide.', 4: '11'}"
+301	301		301							"{3: ""That's a serious problem either way.""}"
+302	302		302							"{2: ""What's different this time?"", 3: '303'}"
+303	303		301							{2: 'Flayo', 3: 'The numbers. There are far fewer of them than before.', 4: '11'}
+304	304		301							{3: 'He finally stops flipping his notebook and closes it.'}
+305	305		301							{2: 'Flayo', 3: 'This was supposed to be a routine cleanup, but the Hetero-Creature numbers are way down... almost two-thirds fewer than usual.', 4: '11'}
+306	306		301				DialogDisable			"{2: 'Flayo', 3: ""We're using this lull to push deeper, see if we can finally find their breeding ground."", 4: '11'}"
+307	307		302							{2: 'Understood.', 3: '308'}
+308	308		302							{2: 'We will enter the mine in approximately one day.', 3: '309'}
+309	309		301			DialogEnable				"{2: 'Flayo', 3: ""A day from now... Wait... You mean you're coming to meet up with us? The legendary Gray Raven?!"", 4: '11'}"
+310	310		203							{1: '11', 2: '0.25', 3: '-510', 4: '-15'}
+311	311		301			DialogShake				{2: 'Ymir', 3: 'Awesome! I need to see if the Gray Raven Commandant is really as—'}
+312	312		203							{1: '11', 2: '0.25', 3: '-495', 4: '-20'}
+313	313		301			DialogShake				{2: 'Vail', 3: 'Just forget about it! You already lost your credits to me... mmph—!'}
+314	314		203							{1: '11', 2: '0.25', 3: '-500'}
+315	315		301							{3: 'Flayo firmly pushes down the two heads desperately trying to wriggle into the frame, laughing heartily all the while.'}
+316	316		301							"{2: 'Flayo', 3: ""Then we'll be waiting for you."", 4: '11'}"
+317	317		301							"{2: 'Flayo', 3: ""Oh, right, the mine's a maze. If you don't want to get lost, you should regularly..."", 4: '11'}"
+318	318		401							{1: '2', 2: '5555'}
+319	319		401							{1: '2', 2: '5903'}
+320	320		301			PanelActor11Shake	DialogDisable			{2: 'Flayo', 3: '...you should regularly contact us to keep your bearings.', 4: '11'}
+321	321		302							"{2: ""It's okay. Don't worry about it."", 3: '322'}"
+322	322		302							{2: 'By the way, have you run into any residents from the conservation area?', 3: '323'}
+323	323		401							{1: '2', 2: '5903'}
+324	324		502							{1: 'DialogEnable'}
+325	325		301			PanelActor11Shake				{2: 'Flayo', 3: 'Residents... from the conservation area?', 4: '11'}
+326	326		302							"{2: ""Ark and Niler. We found their vehicle near the conservation area's outskirts."", 3: '327'}"
+327	327		301							{2: 'Flayo', 3: 'Oh, those two.', 4: '11'}
+328	328		301							{3: 'The commotion around him suddenly seems to drain away.'}
+329	329		301							{2: 'Flayo', 3: 'We ran into them. We totally warned them the mine was swarming with Hetero-Creatures lately, but they charged in anyway.', 4: '11'}
+330	330		301							"{2: 'Flayo', 3: ""What's the point of trading ore if you're not around to spend the credits? Reckless."", 4: '11'}"
+331	331		301							{3: 'He shakes his head.'}
+332	332		301							"{2: 'Flayo', 3: ""Don't worry, we've got them settled at our makeshift camp. They're safe for now."", 4: '11'}"
+333	333		302							"{2: ""Good to know. We'll contact you again once we're inside."", 3: '334'}"
+334	334		401							{1: '2', 2: '5903'}
+335	335		301			PanelActor11Shake				{2: 'Flayo', 3: 'O—kay.', 4: '11'}
+336	336		510						350.0	{1: '1'}
+337	337		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '11'}
+338	338		202							{1: '11', 6: '1'}
+339	339		301							{3: 'The image glitches and warps, finally freezing on a bizarre frame.'}
+340	340		201							{1: '1', 2: '501385', 3: '14'}
+341	341		301							{1: '1', 2: 'Liv', 3: 'Is the signal in the mine really this bad? Good thing I brought a signal booster transceiver...', 4: '1'}
+342	342		401							{1: '2', 2: '952'}
+343	343		301							{3: 'Liv retrieves two button-sized signal amplifiers from her supply pack and attaches them to both of your terminals.'}
+344	344		204							{1: '1'}
+345	345		301							"{2: 'Liv', 3: ""I've brought spare power units too... Commandant, we're ready to go."", 4: '1'}"
+346	346		302				AniZhuanchangBegin			"{2: ""Let's go.""}"
+347	347		202							{1: '1'}
+348	348		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2', 5: '1'}
+349	349		401						2000.0	{1: '1', 2: '36'}
+350	350		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+351	351		401							{1: '1', 2: '120'}
+352	352		401							{1: '2', 2: '2930'}
+353	353		301			AniZhuanchangEnd				{3: 'Leaving the conservation area behind, the two of you return to the narrow path.'}
+354	354		301							{3: 'Massive, primordial rocks stand like sentinels on either side, while a grayish-white mist curls through the dark, looming mountains, saturating the air with a thick, cloying presence.'}
+355	355		301							{3: 'Why does this path feel so unfamiliar when you have walked it before?'}
+356	356		301							{3: 'A heavy fog slithers along the narrow passage.'}
+357	357		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+358	358		201							{1: '1', 2: '501385', 3: '3'}
+359	359		301							{1: '1', 2: 'Liv', 3: '...', 4: '1'}
+360	360		302							"{2: 'Liv?', 3: '361', 4: ""What's wrong?"", 5: '361'}"
+361	361		204							{1: '1', 2: '14'}
+362	362		301							{2: 'Liv', 3: '...', 4: '1'}
+363	363		302							{2: 'Liv??', 3: '364'}
+364	364		203							{1: '1', 2: '0.25', 3: '5'}
+365	365		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+366	366		111						250.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong03.prefab'}
+367	367		203						250.0	{1: '1', 2: '0.25'}
+368	368		204							{1: '1', 2: '7'}
+369	369		301							{3: 'You raise your voice slightly, causing Liv to flinch. Her pupils contract as the jolt finally snaps her back to reality.'}
+370	370		204							{1: '1'}
+371	371		301							"{2: 'Liv', 3: ""Ah... I'm sorry, Commandant. I was just a little lost in thought."", 4: '1'}"
+372	372		204							{1: '1', 2: '12'}
+373	373		301							{3: 'Liv presses her lips together, her voice tinged with hesitation.'}
+374	374		204							{1: '1', 2: '14'}
+375	375		301							{2: 'Liv', 3: 'Commandant... is this the same path we took that day?', 4: '1'}
+376	376		302							{2: '(Open the terminal to verify)', 3: '377'}
+377	377		202							{1: '1'}
+378	378		306							{1: '1'}
+379	379		301				DialogDisable			"{3: ""The terminal's map reveals that, besides your entry path, only one other trail crosses the conservation area—a route leading directly to the mining area.""}"
+380	380		306						400.0	
+381	381		302							{2: 'It is the same path.', 3: '382'}
+382	382		302							{2: 'Did something happen?', 3: '383', 4: 'Did you notice something?', 5: '383'}
+383	383		201							{1: '1', 2: '501385', 3: '15'}
+384	384		301			DialogEnable				"{1: '1', 2: 'Liv', 3: ""I'm not quite sure... but something about this place feels off... Let's keep going a little further."", 4: '1'}"
+385	385		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+386	386		202							{1: '1', 6: '1'}
+387	387		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1333.jpg'}
+388	388		301							"{3: ""Mountain fog gradually swallows the path, blurring everything into a formless haze. For a moment, it's impossible to discern any way forward.""}"
+389	389		302							{2: 'This fog is so thick...', 3: '390'}
+390	390		201							{1: '1', 2: '501385', 3: '7'}
+391	391		301				DialogDisable			"{1: '1', 2: 'Liv', 3: ""Wait, I see it! This is definitely right; that's our vehicle from last time."", 4: '1'}"
+392	392		202							{1: '1'}
+393	393		306							{1: '1'}
+394	394		104						550.0	{1: '150|0|-100', 2: '0.5'}
+395	395		301			DialogEnable	DialogDisable			{3: 'Through the hazy mist, the vehicle stands like a silent signpost, marking the spot the two of you had reached on your previous visit.'}
+396	396		306							
+397	397		402							{1: '2930'}
+398	398		104						500.0	{1: '0|0|0', 2: '0.5'}
+399	399		401							{1: '2', 2: '885'}
+400	400		301			DialogEnable	DialogDisable			{3: 'The backup power supplies make the repairs simple. With barely any effort, the engine roars to life.'}
+401	401		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+402	402		401							{1: '2', 2: '5962'}
+403	403		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+404	404		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 3: '0', 4: '1', 5: '0'}
+405	405		502							{1: 'RImgBg1Shake2Loop'}
+406	406		301			DialogEnable				"{3: ""The vehicle's compact cabin provides a sense of security as you speed along, gradually dispelling the oppressive weight of the thick fog and looming rock formations outside.""}"
+407	407		201							{1: '1', 2: '501385', 3: '2', 5: '-30'}
+408	408		502							{1: 'PanelActor1Shake2Loop'}
+409	409		301				DialogDisable			{1: '1', 2: 'Liv', 3: 'The road is much clearer from here... At this speed, we should reach the mining area in about 30 minutes...', 4: '1'}
+410	410		402							{1: '5962'}
+411	411		402							{1: '4321'}
+412	412		401							{1: '2', 2: '5706'}
+413	413		401							{1: '2', 2: '4321'}
+414	414		204							{1: '1', 2: '4'}
+415	415		401							{1: '1', 2: '36'}
+416	416		505							{1: 'RImgBg1Shake2Loop'}
+417	417		505							{1: 'PanelActor1Shake2Loop'}
+418	418		502							{1: 'PanelActor1Shake2Disable'}
+419	419		502							{1: 'RImgBg1Shake2Disable'}
+420	420		301			DialogEnable				{3: 'Screech—'}
+421	421		401							{1: '2', 2: '5845'}
+422	422		301							{3: 'Liv abruptly cuts herself off and slowly brings the vehicle to a halt.'}
+423	423		302							"{2: ""What's wrong?"", 3: '424'}"
+424	424		301				DialogDisable			{3: 'The fog wraps the landscape in a thick veil, hiding any unusual details. Puzzled, you step out of the vehicle beside Liv.'}
+425	425		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+426	426		401							{1: '2', 2: '2930'}
+427	427		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+428	428		202							{1: '1', 6: '1'}
+429	429		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+430	430		201							{1: '1', 2: '501385', 3: '7', 7: '1'}
+431	431		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'What... is this?', 4: '1'}
+432	432		202							{1: '1'}
+433	433		402							{1: '2930'}
+434	434		401							{1: '1', 2: '396'}
+435	435		306							{1: '1'}
+436	436		301				DialogDisable			{3: 'The two of you stop before a patch of underbrush several meters away from the road.'}
+437	437		104						1000.0	{1: '-150|0|-150', 2: '1'}
+438	438		104						1000.0	{1: '150|0|-150', 2: '1'}
+439	439		301			DialogEnable	DialogDisable			{3: 'A wide swath of vegetation lies flattened and bent, creating a trail that stretches far into the distance.'}
+440	440		306							
+441	441		104						1000.0	{1: '0|0|0', 2: '1'}
+442	442		201							{1: '1', 2: '501385', 3: '7'}
+443	443		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Why are there drag marks here...?', 4: '1'}
+444	444		204							{1: '1', 2: '4'}
+445	445		301				DialogDisable			{2: 'Liv', 3: 'Would they transport supplies or minerals through here?', 4: '1'}
+446	446		302							{2: 'Even in times of peace, transportation routes rarely deviate from the established paths.', 3: '447'}
+447	447		302							{2: 'Let alone in the current situation.', 3: '448'}
+448	448		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+449	449		202							{1: '1', 6: '1'}
+450	450		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+451	451		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 3: '0', 4: '1', 5: '0'}
+452	452		401							{1: '2', 2: '885'}
+453	453		301			DialogEnable				{3: 'After a silent, shared understanding with Liv, you both return to the vehicle and adjust your course.'}
+454	454		401							{1: '2', 2: '5962'}
+455	455		502							{1: 'RImgBg1Shake2Loop'}
+456	456		502							{1: 'RImgBg3Shake2Loop'}
+457	457		301				DialogDisable			{3: 'The vehicle races forward. Time becomes distorted, devoured by the thick fog until the duration of your travel is almost impossible to gauge...'}
+458	458		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1333.jpg', 3: '0', 4: '1', 5: '0.8'}
+459	459		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1333.jpg'}
+460	460		205							{1: '999'}
+461	461		505							{1: 'RImgBg3Shake2Loop'}
+462	462		502							{1: 'RImgBg3Shake2Disable'}
+463	463		301			DialogEnable				{3: 'Damp mist swirls between towering rock formations. Then, through the haze, a massive crater of jagged, uneven edges gradually materializes ahead.'}
+464	464		201							{1: '1', 2: '501385', 3: '4', 5: '-30'}
+465	465		502							{1: 'PanelActor1Shake2Loop'}
+466	466		301				DialogDisable			{1: '1', 2: 'Liv', 3: 'Is this also... part of the mining area?', 4: '1'}
+467	467		302							{2: '368 is certainly hiding a lot of secrets.', 3: '468'}
+468	468		202							{1: '1', 6: '1'}
+469	469		502							{1: 'RImgBg3Shake2Loop'}
+470	470		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory938.jpg', 3: '0', 4: '1', 5: '0.8'}
+471	471		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory938.jpg'}
+472	472		205							{1: '999'}
+473	473		306							{1: '1'}
+474	474		301			DialogEnable				{3: 'As you continue forward, a large artificial platform materializes ahead of your vehicle. Rust-covered mechanical parts lie scattered across its surface like forgotten bones.'}
+475	475		301							{3: 'Moss and vines have aggressively reclaimed this place, weaving into a thick carpet that emits a strange, sweet fragrance.'}
+476	476		301							"{3: 'On the ground, several jarring furrows have torn through the dense moss, as if... the ""cargo"" being dragged had struggled violently.'}"
+477	477		301				DialogDisable			{3: 'The trail ends here. Looking up, you see the mine entrance—a yawning mouth of profound darkness that seems to beckon you inside.'}
+478	478		306							
+479	479		505							{1: 'RImgBg1Shake2Loop'}
+480	480		505							{1: 'RImgBg3Shake2Loop'}
+481	481		505							{1: 'PanelActor1Shake2Loop'}
+482	482		502							{1: 'RImgBg1Shake2Disable'}
+483	483		502							{1: 'RImgBg3Shake2Disable'}
+484	484		502							{1: 'PanelActor1Shake2Disable'}
+485	485		402							{1: '5962'}
+486	486		402							{1: '4321'}
+487	487		401						500.0	{1: '2', 2: '5706'}
+488	488		401						1500.0	{1: '2', 2: '5845'}
+489	489		401							{1: '2', 2: '4636'}
+490	490		205						500.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 3: '1', 4: '0', 5: '0.3'}
+491	491		201							{1: '1', 2: '501385', 3: '4'}
+492	492		301		1	DialogEnable	AniZhuanchangBegin			{1: '1', 3: 'You exchange a knowing glance, shut off the engine, and exit the vehicle. With deliberately lightened footsteps, you cautiously cross the threshold into the mine.'}

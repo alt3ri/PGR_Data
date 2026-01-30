@@ -1,0 +1,31 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory60.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500031'}
+4	4		301			DialogEnable				{1: '1', 2: 'Luna', 3: 'Lucia, what did you find today?', 4: '1'}
+5	5		201							{1: '1', 2: '500032'}
+6	6		301							"{1: '1', 2: 'Lucia', 3: ""...It's not a bad haul. I found this."", 4: '1'}"
+7	7		201							{1: '1', 2: '500031'}
+8	8		301							{1: '1', 2: 'Luna', 3: 'Is that... canned meat? Yay!', 4: '1'}
+9	9		201							{1: '1', 2: '500032'}
+10	10		301							{1: '1', 3: 'Lucia opens the can with her trusty pocket knife and passes the can to Luna.'}
+11	11		301							{2: 'Lucia', 3: 'Be careful of the sharp edges.', 4: '1'}
+12	12		203							{1: '1', 2: '0.25', 3: '400'}
+13	13		201							{1: '2', 2: '500031', 4: '-400'}
+14	14		301							{1: '1', 2: 'Luna', 3: 'Lucia, you should eat first...', 4: '2'}
+15	15		301							{2: 'Lucia', 3: 'I ate already on my way back.', 4: '1'}
+16	16		301							{3: 'Luna nods, trusting the words of her older sister. Then she sips some of the broth packed with the synthesized meat inside the can.'}
+17	17		204							{1: '2', 2: '14'}
+18	18		301							"{2: 'Luna', 3: ""It's so sour..."", 4: '2'}"
+19	19		301							{2: 'Lucia', 3: '...', 4: '1'}
+20	20		301							{2: 'Luna', 3: 'Lucia, when can I go out with you?', 4: '2'}
+21	21		301							"{2: 'Lucia', 3: ""...You can't. It's too dangerous outside."", 4: '1'}"
+22	22		301							"{2: 'Luna', 3: ""But, you're always the one protecting me... It's my turn to protect you... Or at least, help..."", 4: '2'}"
+23	23		301							"{2: 'Lucia', 3: ""You're being good help for looking after our food stash."", 4: '1'}"
+24	24		301							"{2: 'Lucia', 3: ""I promised our parents that I would never let anyone hurt you. So, I'll handle the riskier tasks..."", 4: '1'}"
+25	25		301							{2: 'Luna', 3: 'Fine...', 4: '2'}
+26	26		204							{1: '2'}
+27	27		401							{1: '2', 2: '1516'}
+28	28		301							{3: '...'}
+29	29		301							"{2: 'Luna', 3: ""What's that sound?"", 4: '2'}"
+30	30		301		1		AniZhuanchangBegin			{2: 'Lucia', 3: 'Quick, hide!', 4: '1'}

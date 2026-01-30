@@ -1,0 +1,155 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory608.jpg'}
+2	2		401							{1: '1', 2: '207'}
+3	3		301			DialogEnable				{3: 'The transport craft slated to come has arrived, carrying resources to be delivered to other conservation areas.'}
+4	4		301							{3: 'While they did offer to take you back to Babylonia, you kindly refused them and asked them to first finish what they came to do.'}
+5	5		301				AniZhuanchangBegin			{3: 'Resources are life and hope—and a couple more days at Conservation Area 104 is nothing if it means the resources can be delivered to those in need as soon as possible.'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_10.jpg'}
+7	7		401							{1: '2', 2: '213'}
+8	8		301			AniZhuanchangEnd				{3: 'Crackle—'}
+9	9		301							{3: 'A speck of fire pops out of the burning chunks and is gone with the wind before it even lands on the ground.'}
+10	10		201							{1: '1', 2: '500702'}
+11	11		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCommon/FxUi2DLihuiFireGlow1000.prefab', 3: '1', 4: '1'}
+12	12		301							{1: '1', 3: 'The firelight that dances on you and Echo strikes you as familiar.'}
+13	13		301							"{3: ""It wasn't all that long ago when she told you about her past as she tried to break free of the shackles that had once held her in place.""}"
+14	14		301							"{2: 'Echo', 3: ""Are you sure you're fine staying out here?"", 4: '1'}"
+15	15		301							"{2: 'Echo', 3: ""It's probably a lot cozier and warmer in the transport craft."", 4: '1'}"
+16	16		302							{2: 'I get to sit in there every day.', 3: '17'}
+17	17		302							"{2: ""But it isn't every day that I get to camp out here."", 3: '18'}"
+18	18		301			DialogEnable				"{2: 'Echo', 3: ""I wouldn't call this camping when all we have is this campfire here."", 4: '1'}"
+19	19		302							"{2: ""And I've also got you to keep me company."", 3: '20'}"
+20	20		204							{1: '1', 2: '6'}
+21	21		301							{2: 'Echo', 3: '...S-suit yourself, then...', 4: '1'}
+22	22		204							{1: '1'}
+23	23		301							"{3: ""The night wind is far from being bone-chilling cold, but you're still glad that there is a nice campfire here to keep you warm.""}"
+24	24		301							{3: 'Staying in the transport craft surely would be cozier—except you would feel bad about leaving Echo out here alone.'}
+25	25		301							"{3: ""And Echo probably doesn't particularly fancy the idea of getting herself stuck in that tiny space with Pickman's minions...""}"
+26	26		301							"{3: ""When you cast a look over Echo, you see that she's writing something down in a notebook, the firelight shining upon her.""}"
+27	27		204							{1: '1', 2: '13'}
+28	28		301							"{3: ""When gripped by writer's block, she bites the pen's cap absentmindedly, bringing to your mind the image of a diligent student grappling with some class assignment.""}"
+29	29		302							{2: 'Pfft.', 3: '30'}
+30	30		204							{1: '1', 2: '6'}
+31	31		301							"{3: ""She looks at you dumbfounded, her cheeks a light pink. You can't be sure if it's the firelight or a blush.""}"
+32	32		204							{1: '1'}
+33	33		301							"{3: ""But she quickly puts on her poker face again as she buries the notebook in her chest, seemingly not wanting you to see what she's written.""}"
+34	34		301							"{2: 'Echo', 3: ""Well, writing poems just never crossed your mind as something I'd do... did it?"", 4: '1'}"
+35	35		302							"{2: ""It's just kind of funny to see you biting a pen's cap."", 3: '36', 4: ""It's just kind of cute to see you biting a pen's cap."", 5: '44'}"
+36	36		204							{1: '1', 2: '10'}
+37	37		301							"{2: 'Echo', 3: ""What... I bit the pen's cap?! Oh, you did NOT just see that!"", 4: '1'}"
+38	38		204							{1: '1', 2: '14'}
+39	39		301							"{3: ""Looking at the pen's cap, Echo appears genuinely embarrassed—a far cry from the person she is when she fights.""}"
+40	40		301							"{2: 'Echo', 3: ""Can you please just forget what you saw, Commandant? I promise that won't happen again."", 4: '1'}"
+41	41		302							"{2: ""It's totally normal for you to do that when you think hard!"", 3: '42', 4: ""I'll try as hard as I can."", 5: '42'}"
+42	42		301							{3: 'Seeing Echo upset, you try to cheer her up, not knowing where you even read about it.'}
+43	43	51	301							{2: 'Echo', 3: 'But you thought it was funny!', 4: '1'}
+44	44		204							{1: '1', 2: '10'}
+45	45		301							"{2: 'Echo', 3: ""What... I bit the pen's cap?! Oh, you did NOT just see that!"", 4: '1'}"
+46	46		204							{1: '1', 2: '14'}
+47	47		301							"{3: ""Looking at the pen's cap, Echo appears genuinely embarrassed—a far cry from the person she is when she fights.""}"
+48	48		301							"{2: 'Echo', 3: ""Can you please just forget what you saw, Commandant? I promise that won't happen again."", 4: '1'}"
+49	49		302							"{2: ""It's totally normal for you to do that when you think hard!"", 3: '50', 4: ""I'll try as hard as I can."", 5: '50'}"
+50	50		301							"{2: 'Echo', 3: ""Are you sure you weren't laughing at me just now..."", 4: '1'}"
+51	51		302							{2: 'Well... see, I do that myself, too...', 3: '52'}
+52	52		204							{1: '1', 2: '10'}
+53	53		301							{2: 'Echo', 3: 'Oh, is that so...', 4: '1'}
+54	54		204							{1: '1'}
+55	55		301							{3: 'Echo casts a dubious stare at you.'}
+56	56		302							{2: 'Yes, of course.', 3: '57'}
+57	57		301							{3: 'In an attempt to seem credible, you give her a few hard nods.'}
+58	58		302							{2: 'Uh-hum, so I see you were... writing a poem?', 3: '59'}
+59	59		301							{2: 'Echo', 3: 'Well... sort of.', 4: '1'}
+60	60		301							"{2: 'Echo', 3: ""It's just a way to get all these feelings off my chest."", 4: '1'}"
+61	61		301							{2: 'Echo', 3: 'A real poet probably would laugh their head off reading it, though.', 4: '1'}
+62	62		301							{3: 'Says Echo, lacking her usual confidence.'}
+63	63		302							{2: 'Knowing good students... I think that might not be the case.', 3: '64'}
+64	64		301				DialogDisable			{2: 'Echo', 3: 'What do you mean by good students...', 4: '1'}
+65	65		302							{2: 'Well, you seem super hardworking...', 3: '66'}
+66	66		302							{2: 'And at school, when someone like you says that...', 3: '67'}
+67	67		302							{2: 'They either hold high standards or are just being humble.', 3: '68'}
+68	68		301			DialogEnable				"{2: 'Echo', 3: ""But I'm not trying to be humble here. I've been writing poems however I want to, and I don't even really stick to all the rules and whatnot that you usually see in modern poetry."", 4: '1'}"
+69	69		301							"{2: 'Echo', 3: ""And I don't even write about the great and the good when I know I should..."", 4: '1'}"
+70	70		302							"{2: 'The ""shoulds"" don\'t matter when it comes to your feelings.', 3: '71'}"
+71	71		301							{2: 'Echo', 3: 'Ohh...', 4: '1'}
+72	72		301							{3: 'Echo trails off. Then, a thought seemingly pops up in her mind. She picks up her pen and starts writing away in the notebook.'}
+73	73		301				DialogDisable			"{3: ""Moments later, she holds up the notebook to see what's written on it—before tearing the page off and feeding it to the campfire by her side.""}"
+74	74		302							{2: 'Wait, what are you...', 3: '75'}
+75	75		302							"{2: ""You don't like it? But you didn't really need to do that..."", 3: '76'}"
+76	76		301			DialogEnable				"{2: 'Echo', 3: ""Well... that one just now was for the refugees from today, especially those whom I couldn't save."", 4: '1'}"
+77	77		301							"{2: 'Echo', 3: ""And I thought it'd be better burned than kept in this notebook, for me personally."", 4: '1'}"
+78	78		301							"{3: ""That's when you notice that a few previous pages seem to have been torn off the notebook as well.""}"
+79	79		301							{3: 'This is probably what she has been doing in memory of those who lost their lives in Utopia.'}
+80	80		301							"{2: 'Echo', 3: 'I was struggling with the end of that poem and couldn\'t seem to work around it—until you gave me that piece of advice about ignoring the ""shoulds"" just now.', 4: '1'}"
+81	81		301							{3: 'Echo watches the piece of paper as the flame devours it, her eyes glistening with the firelight.'}
+82	82		301				AniZhuanchangBegin			{3: 'Engrossed, she starts reciting the poem she wrote.'}
+83	83		401							{1: '1', 2: '36'}
+84	84		402							{1: '213'}
+85	85		306						500.0	{1: '1'}
+86	86		401							{1: '1', 2: '229'}
+87	87		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCommon/FxUi2DLihuiFireGlow1000.prefab', 4: '1'}
+88	88		202							{1: '1', 6: '1'}
+89	89		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory763.jpg'}
+90	90		301			AniZhuanchangEnd				{3: 'In the land through which the white aurora flows we trust.'}
+91	91		301							{3: 'From the land through which the white aurora flows we try to break free.'}
+92	92		502							{1: 'RImgBg1DisableSlow'}
+93	93		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+94	94		301							{3: 'The dusk swarms around us with the gray smoke,'}
+95	95		301							{3: 'Swallowing the tears we have shed in confusion,'}
+96	96		502							{1: 'RImgBg1DisableSlow'}
+97	97		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_08.jpg'}
+98	98		301							{3: 'Turning them into a riverbank too far for us to ever reach.'}
+99	99		301							"{3: ""As it hears the children's calls from behind,""}"
+100	100		502							{1: 'RImgBg1DisableSlow'}
+101	101		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory627.jpg'}
+102	102		301							{3: 'The world halts not.'}
+103	103		301							{3: 'When the night and river stop the children hand in hand,'}
+104	104		502							{1: 'RImgBg1DisableSlow'}
+105	105		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_15.jpg'}
+106	106		301							{3: 'The children can be heard saying,'}
+107	107		301							"{3: '""This place should be bright as day.""'}"
+108	108		301							"{3: '""We shouldn\'t be looking for dawn.""'}"
+109	109		301				AniZhuanchangBegin			"{3: '""It\'s dawn that should be looking at us.""'}"
+110	110		502							{1: 'DialogDisable'}
+111	111		401							{1: '2', 2: '213'}
+112	112		401							{1: '1', 2: '36'}
+113	113		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_10.jpg'}
+114	114		201							{1: '1', 2: '500702'}
+115	115		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCommon/FxUi2DLihuiFireGlow1000.prefab', 3: '1', 4: '1'}
+116	116		306						500.0	
+117	117		302			AniZhuanchangEnd				{2: '...'}
+118	118		301			DialogEnable				"{1: '1', 3: ""You find yourself engrossed in the emotions carried by Echo's clear and composed voice.""}"
+119	119		301				DialogDisable			{3: 'All that can be heard now are the crackling and popping of the burning chunks.'}
+120	120		401							{1: '1', 2: '204'}
+121	121		302							{2: 'Not an expert myself, but I like it a lot.', 3: '122'}
+122	122		302							"{2: ""You can post it on Babylonia's forum through your terminal."", 3: '123'}"
+123	123		204							{1: '1', 2: '6'}
+124	124		301			DialogEnable				{2: 'Echo', 3: 'What...?!', 4: '1'}
+125	125		301							"{2: 'Echo', 3: ""That's never my intention... See, this is the first time I've got someone's company while wrapping up work..."", 4: '1'}"
+126	126		302							"{2: '""It\'s dawn that should be looking at us""...', 3: '127'}"
+127	127		204							{1: '1', 2: '10'}
+128	128		301							"{2: 'Echo', 3: ""Hmm? Well, instead of seeking light... shouldn't the world simply exist in light?"", 4: '1'}"
+129	129		204							{1: '1'}
+130	130		301							"{2: 'Echo', 3: ""I know we aren't quite there yet, given the way things are now, and I'm not going to let anything stop me from making that happen."", 4: '1'}"
+131	131		301							"{2: 'Echo', 3: ""And I'm sure people who have lost their lives in our quest for justice will truly be able to rest in peace if there ever comes a day when we no longer have to seek it."", 4: '1'}"
+132	132		301							"{2: 'Echo', 3: ""Hmm... It does feel a little weird how we're having such a serious discussion about it, though..."", 4: '1'}"
+133	133		301							{2: 'Echo', 3: 'You need to come up with a poem and share it with me, Commandant, in the interest of being fair here!', 4: '1'}
+134	134		302							"{2: ""Wait, what? But I don't know how..."", 3: '135', 4: 'Sure.', 5: '139'}"
+135	135		301							"{2: 'Echo', 3: ""That's fine. You don't really need to care about rhyming and prosody and all that. I mean..."", 4: '1'}"
+136	136		301							"{2: 'Echo', 3: ""Rules don't matter when it comes to your feelings!"", 4: '1'}"
+137	137		301							"{2: 'Echo', 3: ""If there is a memory you're particularly fond of or a feeling you want to get off your chest, that's something you can write about!"", 4: '1'}"
+138	138	145	302							"{2: ""Got it. I'll give that a try, then."", 3: '145'}"
+139	139		204							{1: '1', 2: '10'}
+140	140		301				DialogDisable			{2: 'Echo', 3: 'Wow, took you only a second to rise to the bait. Pretty confident there, I see.', 4: '1'}
+141	141		302							"{2: ""Thought it wouldn't hurt to give it a try."", 3: '142'}"
+142	142		302							"{2: ""I'm sure you won't laugh, even if I write something lousy."", 3: '143'}"
+143	143		204							{1: '1'}
+144	144		301			DialogEnable				{2: 'Echo', 3: 'Of course.', 4: '1'}
+145	145		301							{2: 'Echo', 3: 'A promise is a promise, then, Commandant.', 4: '1'}
+146	146		302							{2: 'Of course.', 3: '147'}
+147	147		204							{1: '1', 2: '1'}
+148	148		301							{3: 'With it, Echo lets out a long sigh, seemingly relieved.'}
+149	149		302							{2: 'Is everything okay?', 3: '150'}
+150	150		301							"{1: ' ', 2: 'Echo', 3: ""I never expected this, but sharing these thoughts and feelings with you isn't as bad as I would imagine."", 4: '1'}"
+151	151		301							"{2: 'Echo', 3: ""It still feels a bit embarrassing for me, of course, but I can't really complain as the one who screwed up in the first place."", 4: '1'}"
+152	152		301							{2: 'Echo', 3: 'Say, if poetry ends up being your cup of tea, maybe...', 4: '1'}
+153	153		204							{1: '1'}
+154	154		301		1		AniZhuanchangBegin			"{2: 'Echo', 3: ""...Uhm, never mind. I'll be waiting to give your poem a read, then."", 4: '1'}"

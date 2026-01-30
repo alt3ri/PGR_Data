@@ -1,0 +1,139 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory58.jpg'}
+2	2		401							{1: '1', 2: '5061'}
+3	3		301			DialogEnable				"{3: ""At Bianca's invitation, you enter her room. The moment your weary body sinks into the soft chair after days of exhausting missions, a long-awaited relief washes over you.""}"
+4	4		301							{3: 'A faint fragrance drifts toward you. Turning your head, you find the source: a row of delicate glass bottles on the table, each filled with liquid of a different hue.'}
+5	5		302							{2: 'Is that... perfume?', 3: '6'}
+6	6		201							{1: '1', 2: '501298', 3: '1'}
+7	7		301							"{1: '1', 2: 'Bianca', 3: ""You have a good nose, Commandant. Though at this stage, they're more like promises than a finished perfume."", 4: '1'}"
+8	8		301							"{2: 'Bianca', 3: 'I found a ""Make-Your-Own-Fragrance"" set in the commercial district. The store staff said blending these scents can create something truly unique to the wearer.', 4: '1'}"
+9	9		301							{2: 'Bianca', 3: 'Commandant, I know I should have had your gift prepared in advance, but for this... I was hoping for your assistance.', 4: '1'}
+10	10		302							"{2: 'What do you need me to do?', 3: '11', 4: ""You really didn't have to get me anything."", 5: '11'}"
+11	11		204							{1: '1', 2: '9'}
+12	12		301							{3: 'Bianca pauses, collecting her thoughts, then turns to you with a look of newfound determination and inquiry.'}
+13	13		204							{1: '1', 2: '6'}
+14	14		301							"{2: 'Bianca', 3: ""This is because I want this scent to be more than just a fragrance. I want it to be a memory... of the time we've shared."", 4: '1'}"
+15	15		301							{2: 'Bianca', 3: 'It says here that a perfume has three layers: top notes, middle notes, and base notes. They unfold over time, releasing distinctive scents at each stage.', 4: '1'}
+16	16		204							{1: '1', 2: '1'}
+17	17		301				DialogDisable			{2: 'Bianca', 3: 'So, would you help me choose three scents that speak to you? We can create it together.', 4: '1'}
+18	18		302							{2: '(Nod)', 3: '19'}
+19	19		401							{1: '2', 2: '1543'}
+20	20		202							{2: '1', 6: '1'}
+21	21		205						600.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.5'}
+22	22		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+23	23		205							{1: '999'}
+24	24		301			DialogEnable				{3: 'After you consent, Bianca moves behind you. Before you can question her, a soft, opaque silk settles over your eyes, plunging your world into darkness.'}
+25	25		301							{3: 'Her fingers are deft as she ties the blindfold, adjusting the ribbon until it is snug but comfortable, ensuring not a sliver of light can breach your newfound sightlessness.'}
+26	26		302							"{2: ""It's for..."", 3: '27', 4: 'A blindfold? For picking a scent?', 5: '27'}"
+27	27		201							{1: '18', 2: '501298', 3: '1', 4: '-100'}
+28	28		301							{1: '1', 2: 'Bianca', 3: 'Sometimes, resting one sense allows another to blossom. Please, just let your sight rest for a moment.', 4: '18'}
+29	29		301							"{2: 'Bianca', 3: ""Now, Commandant, don't try to name it. Just experience it. Then... simply tell me if you enjoy the scent."", 4: '18'}"
+30	30		202							{1: '18'}
+31	31		401						400.0	{1: '2', 2: '2902'}
+32	32		401							{1: '2', 2: '2825'}
+33	33		301							{3: 'As promised, with your vision surrendered, the delicate sounds of her movements sharpen into focus. Your mind, unmoored from sight, begins to paint its own picture: Bianca, meticulously dabbing a slender test strip into a bottle.'}
+34	34		401							{1: '2', 2: '2902'}
+35	35		301				DialogDisable			{1: '1', 3: 'Meanwhile, you can make out the subtle rustle of fabric as she moves, turning and approaching you with graceful steps.'}
+36	36		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '2'}
+37	37		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1089.jpg', 3: '0', 4: '1', 5: '1.5'}
+38	38		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1089.jpg'}
+39	39		205							{1: '999'}
+40	40		301			DialogEnable				{3: 'Then, a new sensation cuts through the air: a scent that is sharp and cold, yet pristine. It calls to mind the crisp silence of a snow-blanketed field and the delicate dance of snowflakes on the wind.'}
+41	41		201							{1: '18', 2: '501298', 3: '1', 4: '-100'}
+42	42		301							{1: '1', 2: 'Bianca', 3: 'Now, Commandant, what does it bring to mind? Anything at all... Your first impression is all that matters.', 4: '18'}
+43	43		302							"{2: 'This one... it makes me think of snow.', 3: '44', 4: ""It's cold, but very pure."", 5: '44'}"
+44	44		301							"{2: 'Bianca', 3: 'Yes. The label calls this one ""Snow"". Your perception is as sharp as ever. I\'m quite fond of this scent myself.', 4: '18'}"
+45	45		301							"{2: 'Bianca', 3: ""The top notes are the first greeting of a fragrance. Now that they're chosen, next for the middle notes... the soul of the fragrance."", 4: '18'}"
+46	46		202				DialogDisable			{1: '18'}
+47	47		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+48	48		505						250.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab'}
+49	49		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+50	50		205							{1: '999'}
+51	51		201							{1: '18', 2: '501298', 3: '1', 4: '-100'}
+52	52		301			DialogEnable				{1: '1', 2: 'Bianca', 3: 'After the introduction fades, it is the middle notes that will stay with you for hours.', 4: '18'}
+53	53		202							{1: '18'}
+54	54		301							{3: 'As she speaks, a new fragrance drifts toward you.'}
+55	55		301				DialogDisable			"{3: 'It\'s a fresh, elegant scent that, unlike the previous ""Snow"", pulses with a vibrant, living heart.'}"
+56	56		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '2'}
+57	57		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg6001_08.jpg', 3: '0', 4: '1', 5: '1.5'}
+58	58		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6001_08.jpg'}
+59	59		205							{1: '999'}
+60	60		301			DialogEnable				{3: 'Instantly, a scene blooms in your mind: a sun-drenched spring meadow where lilies sway, their leaves and petals rustling in a gentle breeze.'}
+61	61		201							{1: '18', 2: '501298', 3: '1', 4: '-100'}
+62	62		301							"{1: '1', 2: 'Bianca', 3: ""Now then, Commandant, what's your impression this time?"", 4: '18'}"
+63	63		302							"{2: ""It's spring lilies."", 3: '64', 4: 'I can almost see them, blooming in the sunlight. It feels so warm.', 5: '64'}"
+64	64		204							{1: '18', 2: '8'}
+65	65		301							{2: 'Bianca', 3: 'It seems you have a fondness for the scent of lilies, Commandant. I cherish that fragrance as well... It reminds me that after the deepest winter, the snow always gives way to spring, allowing the lilies to bloom.', 4: '18'}
+66	66		204							{1: '18', 2: '1'}
+67	67		301							{2: 'Bianca', 3: 'And now, we come to the final choice. The base notes.', 4: '18'}
+68	68		202				DialogDisable			{1: '18'}
+69	69		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+70	70		505						250.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab'}
+71	71		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+72	72		205							{1: '999'}
+73	73		201							{1: '18', 2: '501298', 3: '1', 4: '-100'}
+74	74		301			DialogEnable				{1: '1', 2: 'Bianca', 3: 'The instructions describe them as the lingering resonance of a melody. They are the final, lasting trace... the part of the fragrance that remains for days, leaving an unforgettable impression.', 4: '18'}
+75	75		202							{1: '18'}
+76	76		401						400.0	{1: '2', 2: '2902'}
+77	77		401							{1: '2', 2: '2825'}
+78	78		301							"{3: ""From the subtle hesitance in Bianca's voice, she seems uncertain about the final choice.""}"
+79	79		401						400.0	{1: '2', 2: '2902'}
+80	80		401							{1: '2', 2: '895'}
+81	81		301							{3: 'The delicate clinking of glass and cork tells its own story. She is not merely selecting a fragrance, but composing one, opening and closing various bottles in a creative symphony.'}
+82	82		401							{1: '2', 2: '2825'}
+83	83		301							{3: 'Finally, the sounds cease, and she returns to your side. The new, blended fragrance now lives in the fibers of her clothes, a moving sillage that accompanies her.'}
+84	84		401							{1: '2', 2: '2936'}
+85	85		401							{1: '2', 2: '1543'}
+86	86		301							{3: 'She is closer now. So close you feel the whisper-soft brush of her hair against your cheek, carrying her unique scent.'}
+87	87		301				DialogDisable			{3: 'In the warmth of her breath, you detect a new ribbon of fragrance emanating from her fingertips.'}
+88	88		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '2'}
+89	89		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory708.jpg', 3: '0', 4: '1', 5: '1.5'}
+90	90		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory708.jpg'}
+91	91		205							{1: '999'}
+92	92		301			DialogEnable				{3: 'Unlike the previous two, which were simple and distinct, this scent is richly harmonious, a tapestry of countless notes that instantly paints a vivid, three-dimensional picture in your mind:'}
+93	93		301							{3: 'Fragrant pine crackles in a fireplace; the honeyed wax of dancing candles releases its distinctive aroma, intermingling with the comforting scent of delicious food.'}
+94	94		301							{3: 'And amid this complex yet harmonious blend, one warm note shines through, clear and distinct: the essence of a woman in a white dress...'}
+95	95		302							"{2: ""This one... it smells like you, Bianca. When you're in the church."", 3: '96'}"
+96	96		201							{1: '18', 2: '501298', 3: '1', 4: '-100'}
+97	97		301							"{1: '1', 2: 'Bianca', 3: ""Commandant... I'm so glad you think so. This... this was my own blend. Now, please allow me to remove this ribbon for you."", 4: '18'}"
+98	98		202				DialogDisable			{1: '18'}
+99	99		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+100	100		505						250.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab'}
+101	101		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+102	102		205							{1: '999'}
+103	103		201							{1: '18', 2: '501298', 3: '6', 4: '-100'}
+104	104		301			DialogEnable				{1: '1', 2: 'Bianca', 3: 'My apologies. In my care to be gentle, I seem to have made the knot a little too stubborn. Just a moment more... There.', 4: '18'}
+105	105		202							{1: '18'}
+106	106		401							{1: '2', 2: '5286'}
+107	107		301				DialogDisable			{3: 'A gentle touch caresses your cheek as her fingers brush past your temple, seeking the ribbon secured at the back of your head.'}
+108	108		302							{2: '(Place your hand over her fingertips)', 3: '109'}
+109	109		401							{1: '2', 2: '1543'}
+110	110		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '0.5'}
+111	111		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory58.jpg'}
+112	112		201							{1: '1', 2: '501298', 3: '6', 6: '-160', 7: '1'}
+113	113		301			DialogEnable				"{1: '1', 3: ""A moment later, the ribbon falls away. As you open your eyes, the world returns, revealing Bianca's face mere inches from your own.""}"
+114	114		204							{1: '1', 2: '1'}
+115	115		301							{3: 'For a long moment, you simply gaze at one another, the silence a language of its own. Finally, it is Bianca who looks away, a soft smile gracing her flushed cheeks.'}
+116	116		301							{2: 'Bianca', 3: 'Then... with your permission, Commandant, I will blend these chosen memories into a perfume that belongs only to you.', 4: '1'}
+117	117		202							{1: '1'}
+118	118		401						400.0	{1: '2', 2: '2902'}
+119	119		401							{1: '2', 2: '2825'}
+120	120		301							{3: 'She turns to blend the fragrances you selected. As she works, an entirely new scent begins to bloom, subtle at first, then gradually claiming every corner of the room with its unique character.'}
+121	121		201							{1: '1', 2: '501298', 3: '1'}
+122	122		301							{1: '1', 3: 'When she returns, she holds a small bottle of amber liquid, as clear and luminous as her own gaze.'}
+123	123		203							{1: '1', 2: '0.5', 6: '-160'}
+124	124		301				DialogDisable			{3: 'With deliberate care, she dabs the perfume onto her fingertips and applies it to the pulse points of her wrists, behind her ears, and along her neck. The warmth of her skin carries the fragrance, allowing it to slowly unfurl and linger in the air between you.'}
+125	125		501						3000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab', 2: '2'}
+126	126		202							{1: '1', 6: '1'}
+127	127		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+128	128		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+129	129		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlinkNew.prefab', 2: '2'}
+130	130		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiRpgTowerMain3d/FxUiRpgTowerMain3d01.prefab', 2: '2'}
+131	131		502							{1: 'DialogEnable'}
+132	132		301			AniZhuanchangEnd				"{3: ""You close your eyes, surrendering completely to this soul-soothing atmosphere. It is then that Bianca's whisper reaches you, softer and more sincere than you have ever heard before.""}"
+133	133		201							{1: '18', 2: '501298', 3: '1', 4: '-100'}
+134	134		301							{1: '1', 2: 'Bianca', 3: 'Happy birthday, Commandant. I hope you like this gift.', 4: '18'}
+135	135		204							{1: '18', 2: '8'}
+136	136		301							"{2: 'Bianca', 3: ""A perfume's sillage may fade in time... but I will carry the memory of this day with me always. And of every day we are granted after this."", 4: '18'}"
+137	137		204							{1: '18', 2: '1'}
+138	138		301		1		AniZhuanchangBegin			{2: 'Bianca', 3: 'No matter what the future holds... having the honor to share it with you is my greatest treasure.', 4: '18'}

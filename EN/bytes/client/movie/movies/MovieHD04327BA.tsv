@@ -1,0 +1,90 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		502							{1: 'AniZhuanchangBegin'}
+3	3		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory802.jpg'}
+4	4		104				AniZhuanchangEnd			{1: '0|-100|-150', 2: '0'}
+5	5		502						500.0	{1: 'DialogDisable'}
+6	6		401							{1: '1', 2: '278'}
+7	7		401							{1: '2', 2: '2915'}
+8	8		304							{1: 'In the city center, on a small stage at the foot of the stairs, an adorable teddy bear dances gracefully in front of a carousel.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1', 10: '1'}
+9	9		304							{1: 'Pointe, spin, leap, curtsy. Every movement is meticulous, precise, and elegant.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1', 10: '1'}
+10	10		304							{1: 'Despite being just a small performance, it actually has a script.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1', 10: '1'}
+11	11		304							{1: 'It seems to be a simple story about a teddy bear returning to Happy Forest.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1', 10: '1'}
+12	12		304							{1: 'The romantic ballet gains a unique childlike charm when performed by the dancer in teddy bear form.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1', 10: '1'}
+13	13		401						1800.0	{1: '2', 2: '4085'}
+14	14		402							{1: '4085'}
+15	15		304							{1: 'Soon, the teddy bear finishes dancing and bows to the many children and adults in the audience, who respond with enthusiastic applause and a shower of candies.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1', 8: '1', 10: '1'}
+16	16		402							{1: '2915'}
+17	17		304							{1: 'As the crowd slowly disperses, the teddy bear relaxes from its tiptoes and gazes at you from a distance.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1', 10: '1'}
+18	18		304							{1: 'Suddenly, as if having made a very crucial decision, the teddy bear begins its approach at you one step at a time.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1', 10: '1'}
+19	19		304							{1: 'With it, gazing at each other, you and the teddy bear seem to be the only beings left in the world...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1', 10: '1'}
+20	20		304							{1: 'In the city, bathed in early spring, this fairytale-like scene brings you scattered moments of warmth as you recall those moments long forgotten from your childhood, offering you a temporary escape from your everyday life.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1', 10: '1'}
+21	21		304				AniZhuanchangBegin			{1: 'What if I could give that fluffy teddy bear a bear hug... What if we could dance together?', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1', 9: '1', 10: '1'}
+22	22		401							{1: '2', 2: '2915'}
+23	23		306							{1: '1'}
+24	24		101			AniZhuanchangEnd			1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory670.jpg'}
+25	25		401						600.0	{1: '2', 2: '4799'}
+26	26		402							{1: '4799'}
+27	27		301			DialogEnable				{3: 'The teddy bear pats all over its costume, retrieving candies given by the children as thanks for the performance, and offers them to you with outstretched paws.'}
+28	28		401							{1: '2', 2: '4802'}
+29	29		301							{3: 'Probably limited by the narrow field of vision in the costume, the teddy bear misjudges the height of the stairs, causing it to take a hard tumble. With it, the candies scatter miserably across the floor.'}
+30	30		401							{1: '2', 2: '5139'}
+31	31		301				DialogDisable			{3: 'Unsure what to do, the teddy bear sits dumbfounded on the floor for a moment, before finally attempting to gather up the candies with clumsy paws.'}
+32	32		104						400.0	{1: '0|50|-100', 2: '0.3'}
+33	33		104						800.0	{1: '0|0|-150', 2: '0.4'}
+34	34		402							{1: '5139'}
+35	35		401							{1: '2', 2: '1513'}
+36	36		301			DialogEnable	DialogDisable			{3: 'You quickly rush over to pull the teddy bear into your arms. It feels as fluffy as you imagined.'}
+37	37		104							{1: '0|100|-250', 2: '0'}
+38	38		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory670.jpg', 3: '0', 4: '1', 5: '1'}
+39	39		401						600.0	{1: '2', 2: '4799'}
+40	40		402							{1: '4799'}
+41	41		301			DialogEnable				"{3: ""When you gently remove the teddy bear's head that's covering the person instead, you see Bambinata looking back at you with rosy cheeks, having been trapped inside the costume all this time.""}"
+42	42		301							{3: 'Her synthetic hair is no longer as meticulously maintained as usual—bangs completely stuck to her forehead and braids frizzed out of place.'}
+43	43		306						800.0	
+44	44		201							{1: '1', 2: '500536', 3: '4'}
+45	45		301							{1: '1', 3: 'You smooth away the hair covering her eyes before giving her cheek a gentle pinch.'}
+46	46		204							{1: '1', 2: '7'}
+47	47		301							"{2: 'Bambinata', 3: ""The candy... You're not gonna be mad at me, right?"", 4: '1'}"
+48	48		202							{1: '1'}
+49	49		301							{3: 'You pick up one of the candies and see that, while shattered beyond its original shape, the inside of it remains perfectly intact.'}
+50	50		401						600.0	{1: '2', 2: '4799'}
+51	51		402							{1: '4799'}
+52	52		301							{3: 'You unwrap the colorful translucent wrapper and pop the candy into your mouth. The sour taste that hits you first is followed by a reassuringly satisfying sweetness.'}
+53	53		301				DialogDisable			"{3: ""She stares at you with those moist azure eyes of hers. Something about her being wrapped in that mascot costume sure damaged her in ways you can't see.""}"
+54	54		302							"{2: 'I love it.', 3: '55', 4: ""That's the last thing that's gonna happen."", 5: '55'}"
+55	55		302							{2: '(Feed her a candy)', 3: '56'}
+56	56		201							{1: '1', 2: '500536', 3: '1'}
+57	57		301			DialogEnable				"{1: '1', 2: 'Bambinata', 3: ""It's sweet... and tastes good."", 4: '1'}"
+58	58		204							{1: '1', 2: '7'}
+59	59		301							{2: 'Bambinata', 3: 'Commandant, did you know it was Bambinata all along?', 4: '1'}
+60	60		302							{2: '(Nod)', 3: '61'}
+61	61		204							{1: '1', 2: '4'}
+62	62		301							"{2: 'Bambinata', 3: ""Will you... answer Bambinata's question?"", 4: '1'}"
+63	63		202							{1: '1'}
+64	64		306							{1: '1'}
+65	65		401						600.0	{1: '2', 2: '4799'}
+66	66		402							{1: '4799'}
+67	67		301							{3: 'She holds out a voucher, now slightly crumpled from being tightly clutched in her fluffy paw.'}
+68	68		301				DialogDisable			{3: 'The voucher reads...'}
+69	69		307							{1: '<color=#ffffffff><size=48>Truth: Are you happy right now?</size></color>'}
+70	70		301							"{3: 'The voucher reads, ""Truth: Are you happy right now?""'}"
+71	71		307							{2: '1'}
+72	72		306						500.0	
+73	73		302							{2: 'Very happy', 3: '74', 4: 'Not happy', 5: '76'}
+74	74		302							"{2: ""But it's not because of the candy itself"", 3: '75'}"
+75	75		302							{2: 'But because it came from you, Bambinata.', 3: '81'}
+76	76		201							{1: '1', 2: '500536', 3: '4'}
+77	77		301			DialogEnable				{1: '1', 2: 'Bambinata', 3: '...', 4: '1'}
+78	78		302							{2: 'But if someone could smile at me right now', 3: '79'}
+79	79		204							{1: '1', 2: '1'}
+80	80	82	302							{2: 'I might be very happy then!', 3: '81'}
+81	81		201							{1: '1', 2: '500536', 3: '1'}
+82	82		301			DialogEnable				{1: '1', 3: 'With it, Bambinata blinks a few times and gives you her brightest smile of the day.'}
+83	83		301							{2: 'Bambinata', 3: 'Your smile is very gentle, Commandant. Bambinata really wants to be liked by you...', 4: '1'}
+84	84		204							{1: '1', 2: '4'}
+85	85		301							"{2: 'Bambinata', 3: ""But it's more important that Bambinata likes you."", 4: '1'}"
+86	86		204							{1: '1', 2: '1'}
+87	87		301							"{2: 'Bambinata', 3: ""Which is why I've made up my mind. I'm going to stay by your side..."", 4: '1'}"
+88	88		301							{2: 'Bambinata', 3: 'Bambinata will do a better job next time.', 4: '1'}
+89	89		301		1		AniZhuanchangBegin			{2: 'Bambinata', 3: 'So stay tuned and watch Bambinata as Bambinata becomes better.', 4: '1'}

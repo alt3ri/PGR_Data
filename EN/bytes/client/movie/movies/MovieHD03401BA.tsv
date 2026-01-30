@@ -1,0 +1,221 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory699.jpg'}
+2	2		401							{1: '1', 2: '50'}
+3	3		401							{1: '2', 2: '2599'}
+4	4		301			DialogEnable				{3: 'A boundless sea of snow churns with crashing waves. The cold mountain air slices like a blade, revealing a once-familiar view all over again.'}
+5	5		301							{3: 'Even after mentally bracing for it, the biting cold is overwhelming, making anyone stop to take a few deep breaths.'}
+6	6		301							{3: 'The transport craft only reaches the foot of the mountain. Beyond that, brutal terrain, dense fog, and extreme cold knock out most equipment, so going on foot is the only option left.'}
+7	7		302							{2: 'Monastery of Purity up in the mountain, huh...', 3: '8'}
+8	8		301							{3: 'According to multiple intel reports, ever since a massive outbreak of the Punishing Virus erupted near the monastery, no life signs have shown up there at all.'}
+9	9		301							{3: 'The Punishing concentration at lower altitudes remains steady for now. To establish a new conservation area beyond Wuming City, another thorough survey is needed.'}
+10	10		301							"{3: ""Because the terrain is so harsh, you're only able to bring a small survey squad as an advance team on your way to the destination.""}"
+11	11		301							{3: 'A vast white expanse blankets the world in hushed stillness. You trudge on, step by step, each of you silent to conserve your strength in the biting cold—until, at last, a soft complaint breaks the quiet.'}
+12	12		211							{1: '1', 2: '1021030', 3: '1', 7: '1'}
+13	13		301				DialogDisable			{1: '1', 2: 'Construct', 3: 'God! Who on earth decides to build a new district in a desolate backwater like this?', 4: '101', 18: '100005154'}
+14	14		212							{1: '1', 6: '1'}
+15	15		401							{1: '2', 2: '2791'}
+16	16		301			DialogEnable				{3: 'Suddenly, faint bursts of gunfire drift through the air.'}
+17	17		402							{1: '2791'}
+18	18		402							{1: '2599'}
+19	19		401							{1: '2', 2: '968'}
+20	20		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.5', 5: '0.8'}
+21	21		301							{3: 'All at once, a fierce wind picks up, and the sky grows menacingly dark.'}
+22	22		302							"{2: ""Gunshots? What's going on? Isn't the area around the monastery supposed to be completely abandoned?"", 3: '23'}"
+23	23		402							{1: '968'}
+24	24		211							{1: '1', 2: '1021030', 3: '1', 7: '1'}
+25	25		301							"{1: '1', 2: 'Construct', 3: ""Y-yes... but this place is vast and almost empty. With the weather shifting so wildly, some spots might've been missed."", 4: '101', 18: '100005155'}"
+26	26		302							"{2: ""Something's ahead. The weather may change at any time. Ask everyone to stop; let's investigate first."", 3: '27'}"
+27	27		301				AniZhuanchangBegin			{2: 'Construct', 3: 'Copy that.', 4: '101', 18: '100005156'}
+28	28		212							{1: '1', 6: '1'}
+29	29		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory54.jpg'}
+30	30		205							{1: '999'}
+31	31		301			AniZhuanchangEnd				{3: 'You move quietly through a stand of pines toward the gunfire. Ahead, in a clearing, a few small houses dot the landscape.'}
+32	32		104						550.0	{1: '0|-120|-200', 2: '0.5'}
+33	33		301							"{3: ""As you look farther up, the monastery stands silently in the distance, as if it's dozing beneath the drifting snow. Dark clouds are closing in, easy to spot as they move ever nearer.""}"
+34	34		104						450.0	{1: '0|0|0', 2: '0.4'}
+35	35		301							{3: 'Although the building is in ruins, it still offers decent cover. Gunshots echo from somewhere near its walls, and swift shadows flicker in the darkness—there must be quite a few people huddled there.'}
+36	36		401							{1: '2', 2: '2513'}
+37	37		401							{1: '1', 2: '260'}
+38	38		211							{1: '1', 2: '1021025', 3: '2', 7: '1'}
+39	39		301							{1: '1', 2: 'Black-Clad Thug', 3: '****! They snatched our weapons and even brought in new hired guns? A bunch of scrap-picking refugees. So ******* shameless!', 4: '101', 18: '100005157', 19: '1', 21: 'v215alpha'}
+40	40		301							{2: 'Black-Clad Thug', 3: 'You trying to muscle in on our turf? Got a death wish?', 4: '101', 18: '100005158', 19: '1', 21: 'v215alpha'}
+41	41		301				DialogDisable			{2: 'Black-Clad Thug', 3: 'Fill them full of holes!', 4: '101', 18: '100005159', 19: '1', 21: 'v215alpha'}
+42	42		212							{1: '1', 6: '1'}
+43	43		401						200.0	{1: '2', 2: '2513'}
+44	44		401			RImgBg1Shake				{1: '2', 2: '2513'}
+45	45		301			DialogEnable				{3: 'As soon as the leader yells, the guns hidden under those bulky monk robes come up, spitting fire.'}
+46	46		201							{1: '1', 2: '500139', 4: '-600', 7: '1'}
+47	47		201							{1: '2', 2: '500460', 4: '600', 7: '1'}
+48	48		211							{1: '3', 2: '1021026', 3: '1', 4: '-350', 7: '1'}
+49	49		211							{1: '4', 2: '1021027', 3: '1', 4: '350', 7: '1'}
+50	50		301							"{1: '1', 2: 'Refugee', 3: ""****! We're going in too! No way we're letting the boss look down on us!"", 4: '103', 18: '100005160', 19: '3', 21: 'v215alpha'}"
+51	51		202							{1: '1', 2: '2', 6: '1'}
+52	52		212							{1: '3', 2: '4', 6: '1'}
+53	53		401							{1: '2', 2: '4642'}
+54	54		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+55	55		301			RImgBg1Shake				{3: 'Bullets are streaming in from every direction like a torrential downpour, scattering shell casings everywhere.'}
+56	56		211							{1: '1', 2: '1021030', 3: '1', 7: '1'}
+57	57		301							"{1: '1', 2: 'Construct', 3: ""Hey! Stop! We're not your enemies!"", 4: '101', 18: '100005161'}"
+58	58		212							{1: '1', 6: '1'}
+59	59		301							"{3: ""One of your squad members steps forward, arms raised high, trying to get them to hold their fire. But the gunfire doesn't let up—if anything, it just intensifies and rains down harder on you.""}"
+60	60		402							{1: '4642'}
+61	61		302							"{2: ""Watch out, they're targeting us too!"", 3: '62'}"
+62	62		301							"{3: ""They're so hostile that they're even firing on people who are not showing aggression. It's almost too late to find cover now.""}"
+63	63		211							{1: '1', 2: '1021030', 3: '1', 7: '1'}
+64	64		301							{1: '1', 2: 'Construct', 3: 'Damn it—did I not make myself clear...!', 4: '101', 18: '100005162'}
+65	65		104							{1: '0|-20|-80', 2: '0.25'}
+66	66		401							{1: '2', 2: '3077'}
+67	67		213						300.0	{1: '1', 2: '0.25', 4: '-1980'}
+68	68		212							{1: '1'}
+69	69		301							{3: 'You rush over and yank your hotheaded teammate back. He stumbles forward and crashes into the snow, narrowly evading a volley of gunfire. Your hand twitches toward your sidearm, but you hold yourself in check.'}
+70	70		302							{2: 'Hold your fire! Fall back to a safe spot first!', 3: '71'}
+71	71		301							"{3: ""Even if it's just self-defense, the moment you look like you're fighting back, any chance of negotiation goes out the window.""}"
+72	72		401							{1: '2', 2: '2930'}
+73	73		401							{1: '2', 2: '4331'}
+74	74		104						300.0	{1: '0|0|0', 2: '0.25'}
+75	75		301							{3: 'You crouch low, watching your flank and covering your retreating teammates. To your surprise, the enemy closes in, their footsteps echoing behind the barricade.'}
+76	76		402							{1: '2930'}
+77	77		402							{1: '4331'}
+78	78		302							{2: 'Wait, we...', 3: '79'}
+79	79		401							{1: '2', 2: '906607'}
+80	80		301							{3: 'Before you can finish speaking, a burst of light flickers in a blind spot. A cunningly angled bullet slices through the air, whistling straight at you.'}
+81	81		302							{2: '(...!!!)', 3: '82'}
+82	82		401						1000.0	{1: '2', 2: '1514'}
+83	83		402							{1: '1514'}
+84	84		301							{3: 'Your reflexes take over. You fling a handful of snow to blind the enemy, then raise your other arm to shield your chest, hoping to weaken the impact as much as possible.'}
+85	85		301							"{3: ""The gunpowder smells more like fireworks. It looks like they're using homemade guns, which send bullets flying in unpredictable patterns and make it harder to track their trajectories.""}"
+86	86		301							{3: 'A heavy feeling settles over you as you think about how to deal with any injuries on the spot.'}
+87	87		401							{1: '2', 2: '4115009'}
+88	88		301							{3: 'Just when everything is about to come crashing down, you hear an engine roar in your ears. In a split second—faster than lightning—a figure rushes right into the thick of the fight.'}
+89	89		401							{1: '2', 2: '4115010'}
+90	90		402						1000.0	{1: '4115009'}
+91	91		211							{1: '1', 2: '1021028', 3: '1', 7: '1'}
+92	92		301				DialogDisable			{1: '1', 2: '???', 3: 'Who dares lay a finger on my prey?', 4: '101', 18: '100005163', 19: '1', 21: 'v215alpha'}
+93	93		401							{1: '1', 2: '36'}
+94	94		401							{1: '2', 2: '819016'}
+95	95		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHit01.prefab', 2: '2'}
+96	96		212							{1: '1', 6: '1'}
+97	97		401					500.0		{1: '2', 2: '10042008'}
+98	98		301			DialogEnable				{3: 'A blade, polished like a mirror, flashes sharper and colder than winter frost, slicing that vicious bullet clean in half in the blink of an eye.'}
+99	99		401							{1: '1', 2: '112'}
+100	100		301							{3: 'Everything shifts into slow motion. The halved bullet lands in the snow, its scorching heat creating a faint ring of steam. Only then does the sound finally return, echoing through the cold air.'}
+101	101		301							{3: 'Both sides lock up in shock, their attacks frozen mid-action. But the refugees rally almost immediately, bursting from their cover and launching a renewed assault on the other side.'}
+102	102		211							{1: '1', 2: '1021025', 3: '3', 7: '1'}
+103	103		301							{1: '1', 2: 'Black-Clad Thug', 3: 'Splitting the bullet in half? No way!', 4: '101', 18: '100005164', 19: '1', 21: 'v215alpha'}
+104	104		301							"{2: 'Black-Clad Thug', 3: ""Guys, hold your fire! Don't waste any more bullets!"", 4: '101', 18: '100005165', 19: '1', 21: 'v215alpha'}"
+105	105		212							{1: '1', 6: '1'}
+106	106		201							{1: '1', 2: '500139', 4: '-600', 7: '1'}
+107	107		201							{1: '2', 2: '500460', 4: '600', 7: '1'}
+108	108		211							{1: '3', 2: '1021026', 3: '1', 4: '-350', 7: '1'}
+109	109		211							{1: '4', 2: '1021027', 3: '1', 4: '350', 7: '1'}
+110	110		301							"{1: '1', 2: 'Refugee', 3: ""It's Boss! She's so cool!"", 4: '103', 18: '100005166', 19: '3', 21: 'v215alpha'}"
+111	111		401							{1: '2', 2: '703'}
+112	112		301						1000.0	{2: 'Refugee', 3: '(Whistles)', 4: '103'}
+113	113		301							"{2: 'Refugee', 3: ""Show them who they're messing with!"", 4: '104', 18: '100005167', 19: '4', 21: 'v215alpha'}"
+114	114		301							"{2: 'Refugee', 3: ""We're out of ammo! Run!"", 4: '103', 18: '100005168', 19: '3', 21: 'v215alpha'}"
+115	115		202							{1: '1', 2: '2'}
+116	116		212							{1: '3', 2: '4', 6: '1'}
+117	117		401							{1: '2', 2: '4642'}
+118	118		401							{1: '2', 2: '738'}
+119	119		401							{1: '2', 2: '2927'}
+120	120		301				AniZhuanchangBegin			{3: 'Stones and splintered wood become makeshift projectiles, plunging the battlefield into deeper chaos. The refugees lack the firepower to hold their ground and are forced back, one step at a time.'}
+121	121		402							{1: '4642'}
+122	122		402							{1: '2927'}
+123	123		401						800.0	{1: '2', 2: '4115006'}
+124	124		306							{1: '1'}
+125	125		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_43.jpg'}
+126	126		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+127	127		104							{1: '250|350|-350', 2: '0'}
+128	128		401							{1: '2', 2: '4115009'}
+129	129		301			AniZhuanchangEnd				{3: 'In one fluid motion, the driver lowers the vehicle, spins in a graceful arc, then whips it around and races back, kicking up a flurry of snowy dust behind the wheels.'}
+130	130		402							{1: '4115009'}
+131	131		306							
+132	132		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+133	133		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_43.jpg'}
+134	134		104						500.0	{1: '50|-100|-250', 2: '0'}
+135	135		104							{1: '0|0|0', 2: '0.25'}
+136	136		401							{1: '2', 2: '4115010'}
+137	137		301							{2: 'Alpha', 3: 'Hop on!', 18: '100005169'}
+138	138		301							"{3: ""You don't have time to think. In the blink of an eye, you barely dodge the roaring behemoth, and your instincts kick in as you grab the outstretched hand.""}"
+139	139		401							{1: '2', 2: '2924'}
+140	140		301							{3: 'A faint jolt of electricity runs through your body, and the world around you suddenly freezes, like a single frame caught in your sight.'}
+141	141		302							"{2: 'Alpha?', 3: '142', 4: ""It's you?"", 5: '142'}"
+142	142		301							"{2: 'Alpha', 3: ""Let's talk later."", 18: '100005170'}"
+143	143		401						250.0	{1: '2', 2: '4637'}
+144	144		401							{1: '2', 2: '4115009'}
+145	145		301							"{3: ""You hold on tight, and a strong pull hoists you upward. Your head reels for a moment, and you start worrying if you've brought enough serum.""}"
+146	146		401							{1: '2', 2: '2791'}
+147	147		301							"{3: ""Gunfire and crashing noises echo behind you. Remembering that halved bullet from moments ago, you're caught between relief at still being alive and fear of what lies ahead.""}"
+148	148		402							{1: '2791'}
+149	149		401							{1: '2', 2: '4115003'}
+150	150		301				AniZhuanchangBegin			{3: 'Your hand lands on Alpha by reflex. She clicks her tongue, twists the throttle, and propels the metal beast forward, speeding away from the gunfire.'}
+151	151		401							{1: '1', 2: '36'}
+152	152		402							{1: '4115009'}
+153	153		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory55.jpg'}
+154	154		401							{1: '1', 2: '79'}
+155	155		401							{1: '2', 2: '4648'}
+156	156		301			AniZhuanchangEnd				"{3: ""The scenery blurs into straight lines under the motorcycle's top speed. The wind whips up tiny snowflakes, and you instinctively press your face against the back of the person in front of you.""}"
+157	157		301							"{3: ""Her hood's fuzzy trim flutters in the breeze—it feels incredibly soft.""}"
+158	158		211							{1: '1', 2: '1021028', 3: '1', 7: '1'}
+159	159		301							"{1: '1', 2: 'Alpha', 3: ""You're pretty bold."", 4: '101', 18: '100005171', 19: '1', 21: 'v215alpha'}"
+160	160		212							{1: '1', 6: '1'}
+161	161		301							"{3: ""Alpha seems completely at home here. She doesn't slow down for a moment, charging full speed along the rugged mountain path. You can only grip tighter and hope for the best.""}"
+162	162		301				AniZhuanchangBegin			"{3: ""It's your second time on this thing, and that sense of familiarity oddly reassures you.""}"
+163	163		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+164	164		401							{1: '2', 2: '4115005'}
+165	165		402						1000.0	{1: '4648'}
+166	166		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory719.jpg'}
+167	167		104							{1: '0|10|-400', 2: '0'}
+168	168		301			AniZhuanchangEnd				"{3: ""But that peaceful illusion doesn't last long—the vehicle lurches to a sudden halt.""}"
+169	169		211							{1: '1', 2: '1021028', 3: '1', 7: '1'}
+170	170		301							{1: '1', 2: 'Alpha', 3: 'Here we are.', 4: '101', 18: '100005172', 19: '1', 21: 'v215alpha'}
+171	171		212							{1: '1', 6: '1'}
+172	172		301							{3: 'The ride is surely fast. The monastery that felt so far away just moments ago is suddenly right in front of you.'}
+173	173		301							{3: 'For the sake of efficiency, you should probably request an off-road military bike next time.'}
+174	174		211							{1: '1', 2: '1021028', 3: '1', 7: '1'}
+175	175		301							{1: '1', 2: 'Alpha', 3: 'How long are you planning to sit there?', 4: '101', 18: '100005173', 19: '1', 21: 'v215alpha'}
+176	176		212							{1: '1', 6: '1'}
+177	177		401							{1: '2', 2: '4421'}
+178	178		301							"{3: ""Alpha picks you up like you're a kitten. The moment you plant your feet on the ground, your comms channel—previously all static—finally sparks to life.""}"
+179	179		401							{1: '2', 2: '4422'}
+180	180		509						700.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory54.jpg', 2: '1'}
+181	181		201							{1: '1', 2: '500019', 4: '-550'}
+182	182		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1', 4: '1'}
+183	183		401							{1: '2', 2: '2982'}
+184	184		301							{1: '1', 2: 'Construct', 3: 'Hello? Hello? 【kuroname】, can you hear me?', 4: '1', 18: '100005174'}
+185	185		301							{2: 'Construct', 3: 'Th-that red figure slices right through the bullets, then suddenly whisks you away from the battlefield before we can even get a good look. After that, both sides retreat in a flash.', 4: '1', 18: '100005175'}
+186	186		301				DialogDisable			"{2: 'Construct', 3: ""Are you okay? I see a few stray Corrupted in the woods, and they're all heading your way!"", 4: '1', 18: '100005176'}"
+187	187		302							"{2: ""I'm all right for now. I've already reached the monastery."", 3: '188'}"
+188	188		302							"{2: ""There's a bit of unrest among the civilians here. I'll try to settle things before you arrive."", 3: '189'}"
+189	189		201							{1: '2', 2: '501018', 4: '650', 5: '-50', 6: '30', 7: '1'}
+190	190		205						1000.0	{1: '2', 3: '0.5', 4: '1', 5: '1'}
+191	191		203							{1: '2', 2: '1', 3: '600', 4: '-30', 5: '10'}
+192	192		301			DialogEnable				"{3: ""A blizzard's coming, and no one knows what's happening deeper inside the monastery. You keep the reserve troops on standby, and make sure everyone stays on high alert.""}"
+193	193		203							{1: '2', 2: '1', 3: '550'}
+194	194		401							{1: '2', 2: '2975'}
+195	195		401							{1: '1', 2: '36'}
+196	196		301							{3: 'That figure is moving in closer, and at last, a delayed sense of wariness creeps over your skin.'}
+197	197		401							{1: '2', 2: '2982'}
+198	198		301							"{2: 'Construct', 3: ""【kuroname】? Your voice keeps cutting out—what's happening?"", 4: '1', 18: '100005177'}"
+199	199		302							"{2: ""Don't worry about it. The weather around the monastery is pretty bad, so the signal is..."", 3: '200'}"
+200	200		401							{1: '2', 2: '4423'}
+201	201		202						100.0	{1: '1'}
+202	202		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+203	203		510						100.0	{1: '1'}
+204	204		401							{1: '2', 2: '2975'}
+205	205		203						400.0	{1: '2', 2: '0.35'}
+206	206		202							{1: '2', 6: '1'}
+207	207		211							{1: '1', 2: '1021028', 3: '1', 7: '1'}
+208	208		301				AniZhuanchangBegin			{1: '1', 3: 'Alpha cuts the connection the instant her patience wears thin, then turns toward you with a subtle, enigmatic smile.'}
+209	209		214							{1: '1', 2: '1'}
+210	210		401							{1: '1', 2: '226'}
+211	211		301			AniZhuanchangEnd				{2: 'Alpha', 3: 'Are you done talking with Babylonia?', 4: '101', 18: '100005178', 19: '1', 21: 'v215alpha'}
+212	212		301							"{3: ""You know that she already knows the answer, but you don't see any point in talking back. Things have reached this point without much planning, so you have to take it one step at a time.""}"
+213	213		301							"{3: ""She inspects her right hand at a leisurely pace, as if she's still getting used to its new look. Bold, perilous markings coil up her arm, vanishing beneath the fabric at her shoulder.""}"
+214	214		213							{1: '1', 2: '0.4', 4: '-20', 5: '-40'}
+215	215		301							"{2: 'Alpha', 3: ""So, it's just the two of us again."", 4: '101', 18: '100005179', 19: '1', 21: 'v215alpha'}"
+216	216		301							"{3: ""Alpha acts like she doesn't care, but her fingers drum against the scabbard in a measured beat, stopping as soon as she finishes talking.""}"
+217	217		302							"{2: 'We can work together.', 3: '218', 4: ""Let's talk this through."", 5: '218'}"
+218	218		301							"{2: 'Alpha', 3: ""Now that we're both stuck in this barren, isolated spot, what's your goal this time? What kind of partnership are you after...?"", 4: '101', 18: '100005180', 19: '1', 21: 'v215alpha'}"
+219	219		214							{1: '1', 2: '3'}
+220	220		301		1		AniZhuanchangBegin			"{2: 'Alpha', 3: ""Go ahead, tell me. I'm really interested right now, and I've got plenty of time."", 4: '101', 18: '100005181', 19: '1', 21: 'v215alpha'}"

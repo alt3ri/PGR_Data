@@ -1,0 +1,97 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg'}
+2	2		401							{1: '1', 2: '5059'}
+3	3		502						250.0	{1: 'DialogDisable'}
+4	4		107							{1: 'Lounge', 2: 'Constellia'}
+5	5		301							{3: 'Constellia\\nLounge'}
+6	6		108							{1: '1'}
+7	7		301			DialogEnable				{3: 'Tea leaves settle at the bottom of the cups as hot water is poured in. Within moments, a delicate aroma rises from the porcelain.'}
+8	8		401							{1: '2', 2: '5328'}
+9	9		301							{3: 'Balancing the saucers, you walk toward a dark mahogany desk.'}
+10	10		201							{1: '1', 2: '500817'}
+11	11		301							{1: '1', 2: 'Qu', 3: '...', 4: '1'}
+12	12		202							{1: '1'}
+13	13		301							{3: 'Across from the desk, the ruler of Kowloong reclines on a velvet chaise lounge, reviewing papers. Three crystal-blue screens hover in the air, filled with text and images.'}
+14	14		301							{3: 'She taps, and the holographic pages scroll and change. Her unwavering focus holds your gaze until she finally looks up.'}
+15	15		301							{3: 'Noticing your stare, she lifts her head and looks over. When your eyes meet, the focused, slightly cold look on her face softens just a little.'}
+16	16		201							{1: '1', 2: '500817', 3: '1'}
+17	17		301				DialogDisable			{1: '1', 2: 'Qu', 3: 'Thank you.', 4: '1'}
+18	18		401							{1: '2', 2: '5328'}
+19	19		302							{2: '(Pass her one of the cups of tea)', 3: '20'}
+20	20		302							{2: 'Still not finished?', 3: '21'}
+21	21		202							{1: '1', 6: '1'}
+22	22		306							{1: '1'}
+23	23		301			DialogEnable				{3: 'She told you earlier, through a terminal call, that she had cleared some work in advance so the two of you could meet.'}
+24	24		301							"{3: ""Neither of you foresaw the holiday rush adding so many tasks. Now, with Constellia's celebration moments away, she's still buried in work.""}"
+25	25		306							
+26	26		201							{1: '1', 2: '500817'}
+27	27		301							"{1: '1', 2: 'Qu', 3: ""Just one last part. Don't worry, I'll make it in time for the opening."", 4: '1'}"
+28	28		204							{1: '1', 2: '8'}
+29	29		301				DialogDisable			{3: 'She lets out a quiet breath and massages her temples, a faint trace of fatigue lingering between her brows.'}
+30	30		302							{2: 'You should take a break. Otherwise, you might not even enjoy the festival later.', 3: '31'}
+31	31		302							{2: 'Want me to take over from here?', 3: '32'}
+32	32		204							{1: '1'}
+33	33		301			DialogEnable				"{2: 'Qu', 3: ""This work isn't something just anyone can handle. Even the top commandants from F.O.S. College would struggle..."", 4: '1'}"
+34	34		204							{1: '1', 2: '1'}
+35	35		301							{2: 'Qu', 3: 'But you, 【kuroname】... you might just manage. Think of it as a good test of your governance skills.', 4: '1'}
+36	36		301							"{2: 'Qu', 3: ""I'll review everything afterward, so don't worry about making mistakes. Just show me what you can do."", 4: '1'}"
+37	37		202							{1: '1'}
+38	38		301							{3: 'She pats the empty spot beside her.'}
+39	39		302							{2: '(Move over and sit beside Qu)', 3: '40'}
+40	40		201							{1: '1', 2: '500817'}
+41	41		301							"{1: '1', 2: 'Qu', 3: ""Alright, here's what you need to watch out for..."", 4: '1'}"
+42	42		401							{1: '2', 2: '1515'}
+43	43		301							{3: 'Qu briefly explains the important details, then transfers partial access from her terminal.'}
+44	44		204							{1: '1', 2: '1'}
+45	45		301							"{2: 'Qu', 3: ""I'll leave the rest to you. I need a quick rest. If anything's unclear, just ask me."", 4: '1'}"
+46	46		204							{1: '1', 2: '8'}
+47	47		301							{3: 'As she hands over control, she finally seems to relax. She leans gently against your shoulder and closes her eyes.'}
+48	48		302							{2: 'Qu?', 3: '49', 4: '...', 5: '49'}
+49	49		202							{1: '1'}
+50	50		301							"{3: ""She doesn't respond. Her warm breath brushes your neck, tickling lightly.""}"
+51	51		301							{3: 'You steady yourself and turn to the screen in front of you.'}
+52	52		302							"{2: 'First is the ""Hexabridge Port Southern District Resource Allocation Proposal""...'}"
+53	53		301							{3: 'You quietly read out the key points of each file, then write your responses, adding your own judgment and suggestions.'}
+54	54		301							{3: 'Sometimes Qu stays silent, as if silently approving. Other times, she offers soft guidance. You quickly get a feel for the logic and priorities, and the work begins to flow more smoothly.'}
+55	55		201							{1: '1', 2: '500817', 3: '8'}
+56	56		301							{1: '1', 2: 'Qu', 3: 'Huff...', 4: '1'}
+57	57		202							{1: '1'}
+58	58		301							{3: 'She seems more at ease now, breathing slowly and evenly beside you.'}
+59	59		302							"{2: ""This is the last file. Let's see... oh..."", 3: '60'}"
+60	60		301							"{3: ""It's a proposal to set aside a plot of land in Kowloong to build you a private residence. And not just any home—something closer to a small estate.""}"
+61	61		301							{3: 'She seems to notice your reaction and opens her eyes. Her gaze sweeps across the screen, and a faint, knowing smile appears on her lips.'}
+62	62		201							{1: '1', 2: '500817', 3: '1'}
+63	63		301							{1: '1', 2: 'Qu', 3: 'Plenty of people on my side have had their eye on you for a long time, Commandant. They keep suggesting I find a reason to bring you back to Kowloong, as my partner.', 4: '1'}
+64	64		301							{2: 'Qu', 3: 'The meaning behind this proposal is pretty obvious. So, 【kuroname】, what are you going to do with it?', 4: '1'}
+65	65		302							"{2: ""I'll accept it with gratitude."", 3: '66', 4: 'Maybe I should turn it down. It feels a little too much.', 5: '71'}"
+66	66		301							"{2: 'Qu', 3: ""So honest. If those people heard you'd accepted the offer, they'd probably break into song on the spot."", 4: '1'}"
+67	67		202							{1: '1'}
+68	68		401							{1: '2', 2: '1515'}
+69	69		301							"{3: 'You laugh together, but in the end, you mark the mansion proposal as ""Rejected.""'}"
+70	70	73	301							{3: 'Whatever motives might be behind it, that kind of gift was never something you asked for.'}
+71	71		202							{1: '1'}
+72	72		301							{3: 'Whatever motives might be behind it, that kind of gift was never something you asked for.'}
+73	73		201							{1: '1', 2: '500817', 3: '1'}
+74	74		301							{1: '1', 2: 'Qu', 3: 'Still, that reminds me, I should prepare a permanent room for you.', 4: '1'}
+75	75		301							"{2: 'Qu', 3: ""Let's put it in the inner courtyard of Kowloong. A room for my partner, in my own residence. It only makes sense."", 4: '1'}"
+76	76		302							{2: 'Well...'}
+77	77		301							"{2: 'Qu', 3: ""Don't turn me down. When the time comes, I'll pick out decorations you like myself."", 4: '1'}"
+78	78		202							{1: '1'}
+79	79		301							{3: 'Her tone is gentle, but leaves no room to argue.'}
+80	80		301							{3: 'She sits up straight, stretches her neck, and some of the weariness fades from her face.'}
+81	81		301							"{3: ""She takes the terminal and reviews every approved file. By the end, she's smiling with clear satisfaction.""}"
+82	82		201							{1: '1', 2: '500817', 3: '1'}
+83	83		301							{1: '1', 2: 'Qu', 3: 'As expected from you, 【kuroname】. Well done.', 4: '1'}
+84	84		202							{1: '1'}
+85	85		301							"{3: 'With all documents marked as ""Processed,"" the long work session finally comes to a close.'}"
+86	86		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+87	87		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1076.jpg'}
+88	88		401							{1: '2', 2: '2838'}
+89	89		401							{1: '2', 2: '848'}
+90	90		301				DialogDisable			{3: 'Just then, you hear music and cheers drifting in through the window. Fireworks begin to light up the sky.'}
+91	91		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg', 3: '0', 4: '1', 5: '0.4'}
+92	92		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+93	93		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg'}
+94	94		201							{1: '1', 2: '500817', 3: '1'}
+95	95		301			DialogEnable				{1: '1', 2: 'Qu', 3: 'Looks like the festival has begun.', 4: '1'}
+96	96		301		1		AniZhuanchangBegin			"{2: 'Qu', 3: ""Come on, 【kuroname】. Let's go take a look."", 4: '1'}"

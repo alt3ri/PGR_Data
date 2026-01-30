@@ -1,0 +1,109 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory871.jpg'}
+2	2		401							{1: '1', 2: '36'}
+3	3		107			DialogEnable			3000.0	"{1: 'Kowloong', 2: 'November 10, 01:11', 4: ""35 minutes till Huaxu's firewall collapses"", 5: '1410m under Kowloong, Tabula Akasha Central Control Room'}"
+4	4		108							{1: '1'}
+5	5		401							{1: '1', 2: '376'}
+6	6		301							{3: 'After Qu acquiesced to people seeking refuge in the deeper parts of Tabula Akasha, an increasing number has been settled within this central control room.'}
+7	7		301							{3: 'This hall, with its robust constructivist style, stands in stark contrast to the architectural aesthetics of Tabula Akasha and even the entirety of Kowloong. It appears out of place here, perhaps more fitting for the Arctic Route Union instead.'}
+8	8		201							{1: '1', 2: '500144'}
+9	9		301							{1: '1', 2: 'Chaofeng', 3: 'But regardless... according to Qu, this central area is the safest place in Tabula Akasha.', 4: '1'}
+10	10		301							"{3: ""Despite the Kowloong Crew of the Nighter dispersing residents to other locations at Bai Gui and Heng Ji's request, this place remains overcrowded.""}"
+11	11		301							{3: 'The final group of people destined for this control room have arrived safely. Chaofeng, drained and weary, leans against the wall, staring blankly at the golden spiral at the center of the hall.'}
+12	12		301							"{3: ""Chaofeng and Pulao returned to Kowloong from Babylonia yesterday afternoon, and since then, Chaofeng hasn't had a moment's rest.""}"
+13	13		301							"{3: ""After assisting the Nighter in entering the Clean Zone, he immediately organized defenses when Hetero-Creatures emerged in the auxiliary city, leading several counterattacks. Before Babylonia's reinforcements arrived, he directed the people of Kowloong to resist with all their strength.""}"
+14	14		301							"{3: ""Not just him, but every member of the Kowloong Crew—man, woman, young, old, human, or Construct—hasn't taken a break since yesterday afternoon.""}"
+15	15		302							{2: 'Are you alright?', 3: '16'}
+16	16		301							{3: 'After handing Chaofeng a bottle of electrolyte, you, also sleep-deprived from the night before, lean against the concrete wall not far from him.'}
+17	17		301							"{2: 'Chaofeng', 3: ""Yeah, I'm fine... Thanks."", 4: '1'}"
+18	18		302							{2: 'Your first time fighting Hetero-Creatures, right?', 3: '19'}
+19	19		301							"{2: 'Chaofeng', 3: ""Yeah, I've only read about them in reports before."", 4: '1'}"
+20	20		502							{1: 'DialogDisable'}
+21	21		302							{2: 'Before we arrived yesterday...', 3: '22'}
+22	22		302							"{2: ""You managed to slow down the Hetero-Creatures' attack with just tactics and shells..."", 3: '23'}"
+23	23		301			DialogEnable				{2: 'Chaofeng', 3: 'Not just with shells.', 4: '1'}
+24	24		301							{2: 'Chaofeng', 3: 'There was also a cold fusion reactor.', 4: '1'}
+25	25		502							{1: 'DialogDisable'}
+26	26		302							{2: 'When I was in a defensive battle at another seaside location...', 3: '27'}
+27	27		302							{2: 'It was almost an unstoppable force, even for Omega Weapons and Constructs.', 3: '28'}
+28	28		302							{2: '...You all worked hard.', 3: '29'}
+29	29		301			DialogEnable				{2: 'Chaofeng', 3: 'Omega Weapons? Can you send those weapons to fight in a sea of corpses and blood by themselves?', 4: '1'}
+30	30		301							{3: 'Chaofeng lets out a bitter laugh.'}
+31	31		301							"{2: 'Chaofeng', 3: ""Even with just the Nighter... our factories were churning out weapons and gear at full capacity. While it couldn't match the siege battle from decades back, we managed to revive a quarter of our military production lines."", 4: '1'}"
+32	32		301							{2: 'Chaofeng', 3: 'In just one night, we burned through over 13000 tons of shells and still ended up losing dozens of crucial fortifications and warehouses. Without the Nighter making its way into the inner harbor, it would likely be nothing but scrap metal at this point.', 4: '1'}
+33	33		301							"{2: 'Chaofeng', 3: ""And now... we've even lost the Kowloong Metropolis."", 4: '1'}"
+34	34		301							"{2: 'Chaofeng', 3: ""In Kowloong's history, both people and weapons are important."", 4: '1'}"
+35	35		202							{1: '1'}
+36	36		301							{3: 'Suddenly, a ripple of disturbance surges through the once-silent crowd in the hall.'}
+37	37		301							{3: 'Chaofeng immediately rallies his body, standing alert.'}
+38	38		201							{1: '1', 2: '500144'}
+39	39		301							"{1: '1', 2: 'Chaofeng', 3: ""It seems there's some dispute over there."", 4: '1'}"
+40	40		202							{1: '1'}
+41	41		302							"{2: ""...What's going on?"", 3: '42'}"
+42	42		401							{1: '2', 2: '1510'}
+43	43		401							{1: '1', 2: '36'}
+44	44		301			RImgBg1Shake				{3: 'Bang—'}
+45	45		401							{1: '1', 2: '202'}
+46	46		301				AniZhuanchangBegin			{3: 'A crisp gunshot rings out, echoing like a chess piece striking the board.'}
+47	47		502			DialogDisable			500.0	{1: 'DialogDisable'}
+48	48		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory870.jpg'}
+49	49		301			DialogEnable				{3: 'In the center of a small clearing, Qu stands encircled by the crowd, as expected.'}
+50	50		301							{3: 'Opposite her stands an individual, reminiscent of the encounter on the surface of Tabula Akasha.'}
+51	51		301							"{3: ""This time, however, the person is holding a gun, pointed directly at Qu's forehead.""}"
+52	52		201							{1: '1', 2: '500150', 4: '-400'}
+53	53		201							{1: '2', 2: '500217', 4: '400'}
+54	54		301							"{1: '1', 2: 'Qu', 3: ""It's been a long time, Yin."", 4: '1'}"
+55	55		301							"{2: 'Yin', 3: ""I didn't see this coming, Qu."", 4: '2'}"
+56	56		301							{3: 'Yin disengages the safety of the gun.'}
+57	57		301							{2: 'Yin', 3: 'We meet again.', 4: '2'}
+58	58		301							{2: 'Qu', 3: 'I told you, after that, you could do what you truly wanted to do.', 4: '1'}
+59	59		204							{1: '2', 2: '5'}
+60	60		301							{2: 'Yin', 3: 'Easy for you to say.', 4: '2'}
+61	61		301							"{2: 'Yin', 3: ""I couldn't take the position of the Monarch of Kowloong from you and Dai back then; it was poor planning on my part."", 4: '2'}"
+62	62		301							{2: 'Yin', 3: 'After that, you stripped me of my status, banished me from Kowloong, and I accepted it as the outcome I deserved as the loser.', 4: '2'}
+63	63		301							"{2: 'Yin', 3: '""Do what you truly wanted to do""... Easy for you to say, huh?', 4: '2'}"
+64	64		301							{2: 'Yin', 3: 'But without Kowloong, what can I do? What meaning does my desired path hold?', 4: '2'}
+65	65		301							{2: 'Yin', 3: 'Now that Kowloong is lost, what can WE do?!', 4: '2'}
+66	66		301							{2: 'Qu', 3: 'Kowloong is not lost.', 4: '1'}
+67	67		301							"{2: 'Qu', 3: ""It's still here—"", 4: '1'}"
+68	68		301							{2: 'Yin', 3: 'Take a look around you!', 4: '2'}
+69	69		301							"{2: 'Yin', 3: ""Now... there's nothing left, Qu."", 4: '2'}"
+70	70		301							{2: 'Yin', 3: 'Our ancestors entrusted you with this land, and look at it now!', 4: '2'}
+71	71		301							{2: 'Qu', 3: '...', 4: '1'}
+72	72		301							{2: 'Yin', 3: 'So many have died... What else do you have to say for yourself?!', 4: '2'}
+73	73		301							{2: 'Yin', 3: '...Hand over control of Huaxu. I know it only obeys the person with core authority.', 4: '2'}
+74	74		301							"{2: 'Yin', 3: ""I'll take the reins in Kowloong, use Huaxu to expel these wretched monsters, and revive the Chamber's prosperity—"", 4: '2'}"
+75	75		204							{1: '1'}
+76	76		301							{2: 'Qu', 3: 'No, you cannot.', 4: '1'}
+77	77		301							"{3: ""Qu's voice remains cold, but her gaze isn't on Yin. Instead, she scans the surroundings, as if urgently searching for something.""}"
+78	78		301							{2: 'Qu', 3: 'You cannot bear these responsibilities.', 4: '1'}
+79	79		301							"{2: 'Yin', 3: ""Don't you get it? Even if you don't hand over Huaxu now, the people you abandoned, the ones you rejected, will make you do so!"", 4: '2'}"
+80	80		301							"{2: 'Qu', 3: ""If I hadn't rejected you back then, you wouldn't be standing here today."", 4: '1'}"
+81	81		301							{2: 'Yin', 3: '...', 4: '2'}
+82	82		301							{2: 'Qu', 3: 'Father was not wrong about you, Yin.', 4: '1'}
+83	83		301							"{2: 'Qu', 3: ""Your restlessness and shortsightedness are flaws that you can't shake off."", 4: '1'}"
+84	84		301							{2: 'Yin', 3: 'You have no right to lecture me here!', 4: '2'}
+85	85		301							{3: 'Qu appears entirely unfazed by the possibility of Yin opening fire. After all, she knows her brother, who has grown up alongside her, better than anyone.'}
+86	86		301							{2: 'Qu', 3: 'We received the same education, Yin.', 4: '1'}
+87	87		301							"{2: 'Qu', 3: 'Just like... each of us has our own ""mission to fulfill"" and ""things we must do.""', 4: '1'}"
+88	88		301							"{3: ""It seems those words aren't for her brother.""}"
+89	89		301							"{2: 'Qu', 3: ""I won't justify my actions."", 4: '1'}"
+90	90		301							{2: 'Qu', 3: '...Nor will I seek forgiveness for them.', 4: '1'}
+91	91		301							{2: 'Qu', 3: 'Do what you must—', 4: '1'}
+92	92		401							{1: '2', 2: '1510'}
+93	93		301			RImgBg1Shake				{3: 'Bang—'}
+94	94		202							{1: '1'}
+95	95		301							{3: 'She falls backward onto the ground without even a groan, still clutching her glaive tightly in her hand.'}
+96	96		301							{3: 'The head of the Kowloong Chamber of Commerce, the leader of the Corporation, and Monarch of Kowloong—Qu...'}
+97	97		301							{3: '...Is killed by a bullet from thirty-two years ago, piercing straight into her chest.'}
+98	98		203							{1: '2', 2: '0.25'}
+99	99		301							"{2: 'Yin', 3: ""No... It wasn't me..."", 4: '2'}"
+100	100		301							{2: 'Yin', 3: 'Who did it?!', 4: '2'}
+101	101		202							{1: '2', 6: '1'}
+102	102		301							{3: 'A short, frail woman emerges from the crowd.'}
+103	103		301							{3: 'Covered in dust and dried blood, her eyes are brimming with exhaustion and pain.'}
+104	104		301							{3: 'She resembles many Kowloong people who have endured this hellish night, but right now, all eyes are fixed on the still-smoking, dark barrel of the gun in her hand.'}
+105	105		301							"{3: ""It's a military-grade anti-Construct pistol from the World Government, fitted with special 9.33mm bullets designed to incapacitate them. You can't get your hands on one without a special order from either Parliament or the Purifying Force.""}"
+106	106		301							{3: 'Some people just happen to have access to one of those special orders.'}
+107	107		201							{1: '1', 2: '500630', 3: '4'}
+108	108		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Duheng', 3: ""It's all over."", 4: '1'}"

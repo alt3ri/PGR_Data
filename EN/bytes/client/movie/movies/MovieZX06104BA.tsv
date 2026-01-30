@@ -1,0 +1,191 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory315.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		502						250.0	{1: 'DialogDisable'}
+4	4		107							{1: 'Conservation Area 368'}
+5	5		301							{3: 'Conservation Area 368'}
+6	6		108						400.0	{1: '1'}
+7	7		301			DialogEnable				{3: 'Tucked within a mountain-ringed basin, Conservation Area 368 is a small settlement scarcely more than a village, its permanent population never exceeding three hundred.'}
+8	8		301							{3: 'It lies cupped by sheer cliffs that plunge a thousand meters, a stark, mineral-rich bowl.'}
+9	9		301							{3: 'Once, prospectors and traders were drawn here in a feverish rush for fortune. Now, the bustle is gone.'}
+10	10		301							"{3: ""Only a few dozen structures remain, huddled around the conservation area's heart: a modest Central Purification Filter.""}"
+11	11		201							{1: '1', 2: '501385', 3: '4'}
+12	12		301				AniZhuanchangBegin			"{1: '1', 2: 'Liv', 3: ""Commandant, according to Kolm, the conservation area's medical station should be right here."", 4: '1'}"
+13	13		202							{1: '1', 6: '1'}
+14	14		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory318.png'}
+15	15		301			AniZhuanchangEnd				{3: 'As you round the corner, Liv gestures discreetly toward a junction, where a small, unassuming building stands with quiet sturdiness.'}
+16	16		302							{2: 'The medical station... is the doctor in?', 3: '17'}
+17	17		201							{1: '1', 2: '501385', 3: '4'}
+18	18		301							"{1: '1', 2: 'Liv', 3: ""No. I heard the doctor went out with the patrol team. She won't be back until later this evening."", 4: '1'}"
+19	19		202							{1: '1'}
+20	20		301							{3: 'Liv opens her terminal and sends over a file.'}
+21	21		201							{1: '1', 2: '501385', 3: '4'}
+22	22		301							{1: '1', 2: 'Liv', 3: 'I sneaked into the station before dawn and checked the treatment records. Kolm was admitted about six days ago. He was bandaged up, given painkillers, and discharged as soon as he was conscious...', 4: '1'}
+23	23		301							{2: 'Liv', 3: 'That transport took off four days ago, passed through several conservation areas, and then returned to Babylonia exactly three days ago, when we received our mission.', 4: '1'}
+24	24		302							{2: 'The timeline checks out.', 3: '25'}
+25	25		301							"{2: 'Liv', 3: ""It's completely consistent. I made copies of the admission records from that period. Using our investigation as a reason, I also managed to get the entrance surveillance footage from the person in charge."", 4: '1'}"
+26	26		104							{1: '200|0|-100', 2: '0.7'}
+27	27		204							{1: '1', 2: '3'}
+28	28		301							{3: 'She gestures toward another direction.'}
+29	29		301							{2: 'Liv', 3: 'The entrance is just over there. So I used the footage to cross-reference anyone who lingered nearby during the time Kolm mentioned.', 4: '1'}
+30	30		204							{1: '1', 2: '4'}
+31	31		301							"{2: 'Liv', 3: ""This is the list of people I thought seemed suspicious. I've already shared it with Babylonia."", 4: '1'}"
+32	32		202							{1: '1'}
+33	33		301							{3: 'The list is short, with only seven names on it.'}
+34	34		302							{2: 'Only seven people?', 3: '35'}
+35	35		201							{1: '1', 2: '501385', 3: '4'}
+36	36		301							"{1: '1', 2: 'Liv', 3: ""This area is quite remote, and the mining sector has been abandoned for a long time. There aren't many people left here, mostly just those who couldn't evacuate during the Punishing Virus outbreak. So the foot traffic is very light."", 4: '1'}"
+37	37		301							"{2: 'Liv', 3: ""From this list, I've already looked into two of them. We can probably rule them out... they were both severely injured and in a deep coma the night of the incident. They're still being treated at the medical station."", 4: '1'}"
+38	38		301							{2: 'Liv', 3: 'And, two others left yesterday for the mining area. They mentioned they were going to collect minerals and supplies for trading.', 4: '1'}
+39	39		302							{2: 'The mining area?', 3: '40'}
+40	40		301							"{2: 'Liv', 3: ""Yes, the mining area. I asked the person in charge about it, to be sure. She told me people do go there to collect minerals for trading, but she also warned me it hasn't been safe lately. It seems fewer people have been willing to take the risk."", 4: '1'}"
+41	41		302							{2: 'Risking a trip to the mine at a time like this...', 3: '42'}
+42	42		204							{1: '1', 2: '4'}
+43	43		301							{2: 'Liv', 3: 'That was my thought exactly. It does make them seem suspicious.', 4: '1'}
+44	44		302							{2: 'What about the other two?', 3: '45'}
+45	45		301							"{2: 'Liv', 3: ""They're with the patrol team that's still out. They left with the doctor and should be back this evening."", 4: '1'}"
+46	46		302				AniZhuanchangBegin			"{2: ""Let's check out the mining area first."", 3: '47'}"
+47	47		202							{1: '1', 6: '1'}
+48	48		401							{1: '1', 2: '209'}
+49	49		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+50	50		301			AniZhuanchangEnd				{3: 'Liv has already had a vehicle waiting at the edge of the conservation area.'}
+51	51		301				AniZhuanchangBegin			"{3: ""It doesn't take long to reach the derelict mining road—less than half an hour. The moment you turn onto it, the smooth ride ends. The chassis shudders as the wheels plunge into potholes, tossing you in your seats with a violent, rhythmic violence.""}"
+52	52		502							{1: 'DialogDisable'}
+53	53		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+54	54		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 4: '4'}
+55	55		502							{1: 'RImgBg1Shake2Loop'}
+56	56		401							{1: '2', 2: '5962'}
+57	57		302			AniZhuanchangEnd				{2: '...', 3: '58'}
+58	58		201							{1: '1', 2: '501385', 3: '8', 5: '-50'}
+59	59		502							{1: 'PanelActor1Shake2Loop'}
+60	60		301			DialogEnable				{1: '1', 2: 'Liv', 3: '...', 4: '1'}
+61	61		301							{3: 'After nearly being launched from your seat yet again...'}
+62	62		204							{1: '1', 2: '10'}
+63	63		301							"{2: 'Liv', 3: ""It really has been a long time since we've driven on roads like this... Commandant, are you okay?"", 4: '1'}"
+64	64		302							"{2: ""I'm fine."", 3: '65', 4: 'No problem.', 5: '65', 6: ""I'm... doing... fine..."", 7: '66'}"
+65	65	69	502							{1: 'DialogDisable'}
+66	66		301							{2: 'Liv', 3: 'Do you need to take a break?', 4: '1'}
+67	67		302							"{2: ""Don't... wo... rry..."", 3: '68'}"
+68	68		301			DialogEnable				{3: 'Only after confirming multiple times does Liv reluctantly set off again, still concerned.'}
+69	69		302							{2: 'All around, the signs of neglect are undeniable.', 3: '70'}
+70	70		204							{1: '1', 2: '12'}
+71	71		301			DialogEnable				"{2: 'Liv', 3: 'I\'ve reviewed the records for this conservation area. The supervisor filed several requests for maintenance funds, but due to the low Punishing Virus concentration and minimal Hetero-Creature activity, they were all classified as ""low priority.""', 4: '1'}"
+72	72		301							"{2: 'Liv', 3: 'More recently, they also reported ""unusual activity in the mining sector."" But Babylonia\'s resources were stretched thin with the safe zone construction and Kowloong Corp\'s new maritime defense line, so they could only dispatch a single Task Force squad...', 4: '1'}"
+73	73		301							{3: 'Liv frees one hand to bring up a file from her terminal.'}
+74	74		302							{2: 'The Rodent squad...', 3: '75'}
+75	75		301							"{2: 'Liv', 3: ""They're one of our special operations squads, particularly skilled in desert and cave combat environments."", 4: '1'}"
+76	76		301							{2: 'Liv', 3: 'I have their regular reports... right here.', 4: '1'}
+77	77		505							{1: 'PanelActor1Shake2Loop'}
+78	78		502							{1: 'PanelActor1Shake2Disable'}
+79	79		202							{1: '1'}
+80	80		301							{3: 'She taps open a video file.'}
+81	81		401							{1: '2', 2: '4553'}
+82	82		402							{1: '5962'}
+83	83		505							{1: 'RImgBg1Shake2Loop'}
+84	84		502							{1: 'RImgBg1Shake2Disable'}
+85	85		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+86	86		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 4: '4', 5: '1'}
+87	87		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1348.jpg'}
+88	88		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '2'}
+89	89		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+90	90		201							{1: '1', 2: '501075', 7: '1'}
+91	91		301							{1: '1', 2: '???', 3: 'This is Captain Flayo of the Rodent squad.', 4: '1'}
+92	92		301							"{2: 'Flayo', 3: ""Following the orders, we've arrived at Conservation Area 368 and successfully reached the incident location."", 4: '1'}"
+93	93		301							{2: 'Flayo', 3: 'This is it.', 4: '1'}
+94	94		202							{1: '1', 6: '1'}
+95	95		401							{1: '2', 2: '4884'}
+96	96		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+97	97		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront103.png', 4: '3'}
+98	98		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1339.jpg'}
+99	99		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1339.jpg', 3: '0', 4: '0.5', 5: '0'}
+100	100		301							"{2: 'Flayo', 3: ""We've discovered clear traces of an explosion in the main shaft. By tracking the debris pattern, we located some Hetero-Creatures hiding deeper in the mining area."", 4: '1'}"
+101	101		301							{2: 'Flayo', 3: 'The Punishing concentration here is negligible. Multiple sensor sweeps show no viral accumulation. Our current theory is that the mine has other, unmapped entrances. The creatures likely used one to get in and then triggered old excavation charges—', 4: '1'}
+102	102		301							"{2: 'Flayo', 3: ""Hey! Ymir! Don't touch that! Vail! Stop her!!"", 4: '1'}"
+103	103		401							{1: '2', 2: '737'}
+104	104		301			RImgBg1Shake				{3: 'The camera jolts as a faint blast rips through the air from somewhere out of frame.'}
+105	105		301							{2: 'Ymir', 3: 'How was I supposed to know it was still live?!'}
+106	106		201							{1: '1', 2: '501075'}
+107	107		301			DialogShake				"{1: '1', 2: 'Flayo', 3: ""Ahem... Anyway, the immediate area is secure, but we'll need more time to find the Hetero-Creatures' point of entry..."", 4: '1'}"
+108	108		301				DialogDisable			{2: 'Flayo', 3: 'End of report.', 4: '1'}
+109	109		202							{1: '1', 6: '1'}
+110	110		401							{1: '2', 2: '4553'}
+111	111		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+112	112		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront103.png', 4: '3', 5: '1'}
+113	113		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab'}
+114	114		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+115	115		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1339.jpg', 3: '0.5', 4: '0', 5: '0'}
+116	116		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+117	117		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 4: '4'}
+118	118		502							{1: 'RImgBg1Shake2Loop'}
+119	119		302							{2: '...Do we have a direct line to Rodent?', 3: '120'}
+120	120		201							{1: '1', 2: '501385', 5: '-50'}
+121	121		502							{1: 'PanelActor1Shake2Loop'}
+122	122		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Right here.', 4: '1'}
+123	123		401							{1: '2', 2: '1515'}
+124	124		301							{3: 'She taps her terminal a few times, and the call connects.'}
+125	125		203						250.0	{1: '1', 2: '0.25', 3: '550', 4: '-50'}
+126	126		509							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1339.jpg', 2: '1'}
+127	127		301							"{2: 'Liv', 3: ""Hello, this is the Gray Raven squad from Babylonia. We're currently assisting with the elimination of Hetero-Creatures in the mining area of Conservation Area 368."", 4: '1'}"
+128	128		401							{1: '2', 2: '2982'}
+129	129		301							{2: 'Voice on Comms', 3: 'H... Hello...'}
+130	130		301							{3: 'The signal from the other end is terrible, cutting in and out with heavy static interference.'}
+131	131		401							{1: '2', 2: '2982'}
+132	132		301			DialogShake				"{2: 'Voice on Comms', 3: ""Cough... Hello! This—is—Rodent—! I'm—Captain—Flayo—!""}"
+133	133		204							{1: '1', 2: '7'}
+134	134		401						400.0	{1: '2', 2: '752'}
+135	135		401							{1: '2', 2: '752'}
+136	136		301							{3: 'Two dull, percussive thuds punch through the transmission, making the projection shudder and distort. Then, as abruptly as it began, the signal stabilizes.'}
+137	137		202							{1: '1'}
+138	138		201						200.0	{1: '11', 2: '501075', 4: '-500'}
+139	139		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '11'}
+140	140		301							"{1: '1', 2: 'Flayo', 3: ""Haha, sorry about that. Signal's terrible down here. Sometimes you just have to..."", 4: '11'}"
+141	141		301			PanelActor1Shake				"{2: 'Flayo', 3: ""Whoa! That's Gray Raven's contact icon! I can't believe Gray Raven is coming to help us! Ymir! Vail! Get over here! It's Gray Raven!"", 4: '11'}"
+142	142		202							{1: '11', 6: '1'}
+143	143		301							{2: 'Ymir', 3: 'Woah... So this is the Gray Raven Commandant? This is crazy!'}
+144	144		302							"{2: '...', 3: '145', 4: ""What's so crazy about it...?"", 5: '145'}"
+145	145		301							"{1: '1', 2: 'Vail', 3: ""Wow... The commandant's not even seven feet tall and doesn't have wings! Ymir! You lose! Pay up! Hahaha!""}"
+146	146		301							{1: '1', 2: 'Ymir', 3: 'Dammit!'}
+147	147		302							"{2: '...', 3: '148', 4: ""What's there to be disappointed about?!"", 5: '148', 6: ""I'll take a cut of that bet, thanks."", 7: '148'}"
+148	148		201							{1: '1', 2: '501385', 3: '4', 4: '550', 5: '-50'}
+149	149		301							{1: '1', 2: 'Liv', 3: '...Ahem.', 4: '1'}
+150	150		201							{1: '11', 2: '501075', 4: '-500'}
+151	151		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '11'}
+152	152		301							"{1: '1', 2: 'Flayo', 3: ""Ah, right, sorry about that. They're just... a little over-enthusiastic. It's not every day you get a visit from the legendary Gray Raven Commandant."", 4: '11'}"
+153	153		301							"{3: ""With two firm hands, the captain shoves his two teammates' heads down, cutting short their curious gaze.""}"
+154	154		301							{2: 'Liv', 3: 'Nice to meet you. We are the Gray Raven squad. I am Liv, and this is my commandant, 【kuroname】.', 4: '1'}
+155	155		302							"{2: ""How's the mine investigation coming along?"", 3: '156'}"
+156	156		301							"{2: 'Flayo', 3: ""Uh... hate to say it, but it's kinda frustrating. We've gone in multiple times, cleared out plenty of those creatures, but every time we go back, it's like we never made a dent. We keep running into new ones."", 4: '11'}"
+157	157		301							"{2: 'Flayo', 3: ""The place is a maze. Checking all the tunnels and potential entrances is taking forever. The weird part is how they keep showing up. It's like they're... respawning."", 4: '11'}"
+158	158		301							"{2: 'Flayo', 3: ""And they change. A few of them just wander around, no threat. But once their numbers hit a certain point, it's like a switch flips. They stop wandering and start hunting. Coordinated."", 4: '11'}"
+159	159		302							"{2: ""It's like something is controlling them..."", 3: '160'}"
+160	160		401							{1: '2', 2: '4331'}
+161	161		301							"{2: 'Flayo', 3: ""We've been thinking the same thing, but we haven't found a single— Ymir! Behind you!"", 4: '2'}"
+162	162		202							{1: '1', 6: '1'}
+163	163		202							{1: '2', 6: '1'}
+164	164		401							{1: '1', 2: '55'}
+165	165		510							{1: '1'}
+166	166		401							{1: '2', 2: '4553'}
+167	167		402							{1: '4331'}
+168	168		301							"{3: ""There's no time for formalities; the line erupts in a blast of chaotic noise and goes dead.""}"
+169	169		302							"{2: ""Something doesn't feel right..."", 3: '170', 4: ""Something's off..."", 5: '170'}"
+170	170		201							{1: '1', 2: '501385', 3: '4', 5: '-50'}
+171	171		502							{1: 'PanelActor1Shake2Loop'}
+172	172		301							{1: '1', 2: 'Liv', 3: 'A shift in behavior triggered by population density... Could there be a Hetero-Creature controlling them? Like... the twins from before?', 4: '1'}
+173	173		302							"{2: ""We can't jump to conclusions yet."", 3: '174'}"
+174	174		202							{1: '1'}
+175	175		306							{1: '1'}
+176	176		301							"{3: 'The presence of a controller implies a defined purpose. However, the current method of ""deployment"" clearly wouldn\'t achieve any meaningful ""results.""'}"
+177	177		306							
+178	178		201							{1: '1', 2: '501385', 3: '8'}
+179	179		301							"{1: '1', 2: 'Liv', 3: ""And the Punishing concentration... it's holding steady. It's not spiking with the creature activity, but it's not dissipating either..."", 4: '1'}"
+180	180		505							{1: 'RImgBg1Shake2Loop'}
+181	181		502							{1: 'RImgBg1Shake2Disable'}
+182	182		505							{1: 'PanelActor1Shake2Loop'}
+183	183		502							{1: 'PanelActor1Shake2Disable'}
+184	184		401							{1: '2', 2: '5706'}
+185	185		204							{1: '1', 2: '7'}
+186	186		301							{3: 'Before she can finish speaking, Liv suddenly looks up and brings the vehicle to an abrupt halt.'}
+187	187		302							{2: '(Draw your weapon)', 3: '188'}
+188	188		401							{1: '2', 2: '5705'}
+189	189		204							{1: '1', 2: '4'}
+190	190		301		1		AniZhuanchangBegin			{3: 'A shared glance with Liv is all it takes. You both slip out of the vehicle and move toward the source of the disturbance.'}

@@ -1,0 +1,287 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1077.jpg'}
+2	2		104							{1: '0|0|-50', 2: '0'}
+3	3		401			AniZhuanchangEnd				{1: '1', 2: '384'}
+4	4		502						250.0	{1: 'DialogDisable'}
+5	5		107							{1: 'Village at the Foot of the Mountain', 2: 'Night'}
+6	6		301							{3: 'Night, Village at the Foot of the Mountain'}
+7	7		108							{1: '1'}
+8	8		301			DialogEnable				"{3: ""The two of you stand with the fox right in the middle of the market street. Passing villagers occasionally do a double-take because of your unusual clothes, but not a single one even glances at Yun Ye, as if the fox isn't even there.""}"
+9	9		301							{3: 'The fox looks dead serious, sitting up straight and covering her tiny paws with her tail, looking incredibly solemn and earnest.'}
+10	10		211							{1: '1', 2: '1021051', 7: '1'}
+11	11		301							"{1: '1', 2: 'Yun Ye', 3: ""Led you astray? Don't lie to me!"", 4: '101', 18: '100011196', 19: '1', 21: 'v360Selena'}"
+12	12		301							"{2: 'Yun Ye', 3: ""How could I possibly have led you astray? There's only one human settlement down the Shrine of Union."", 4: '101', 18: '100011197', 19: '1', 21: 'v360Selena'}"
+13	13		213						250.0	{1: '1', 2: '0.25', 3: '400'}
+14	14		211							{1: '2', 2: '1021057', 4: '-400', 7: '1'}
+15	15		301							"{1: '1', 2: 'Selena', 3: ""But this place indeed isn't where we live. Yun Ye, could you trace the path we took and guide us back?"", 4: '102', 18: '100011198', 19: '2', 21: 'v360Selena'}"
+16	16		301							{2: 'Yun Ye', 3: 'Well...', 4: '101', 18: '100011199', 19: '1', 21: 'v360Selena'}
+17	17		212							{1: '1', 2: '2', 6: '1'}
+18	18		301							"{3: ""Yun Ye's gaze sharpens, and it leans forward, scampering in tight circles around you. Its nose twitches as it sniffs the air, and then its expression shifts to one of utter astonishment.""}"
+19	19		211							{1: '1', 2: '1021051', 7: '1'}
+20	20		301							"{1: '1', 2: 'Yun Ye', 3: ""So pure! You don't have a whiff of the mortal world about you."", 4: '101', 18: '100011200', 19: '1', 21: 'v360Selena'}"
+21	21		301				DialogDisable			"{2: 'Yun Ye', 3: ""Odd... you certainly don't seem like folks who live around here..."", 4: '101', 18: '100011201', 19: '1', 21: 'v360Selena'}"
+22	22		501						5000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageStart.prefab', 2: '3'}
+23	23		401						150.0	{1: '2', 2: '5696'}
+24	24		104							{1: '0|0|0', 2: '0.25'}
+25	25		301			DialogEnable				{3: 'The fox cocks her head thoughtfully, then slowly extends a paw. A soft gleam of light shines from her and drifts towards you, making you instinctively step back.'}
+26	26		301							"{2: 'Yun Ye', 3: ""Don't be afraid. This is spiritual energy—a gift from those who believe in the Goddess of Union."", 4: '101', 18: '100011202', 19: '1', 21: 'v360Selena'}"
+27	27		301							"{2: 'Yun Ye', 3: ""Even though I don't receive offerings anymore, I can still work some spells with these gifts of faith."", 4: '101', 18: '100011203', 19: '1', 21: 'v360Selena'}"
+28	28		301							"{2: 'Yun Ye', 3: ""Let me see... You're from...!"", 4: '101', 18: '100011204', 19: '1', 21: 'v360Selena'}"
+29	29		301							{3: 'Yun Ye freezes mid-sentence, its eyes widening as a flurry of complex emotions flashes across its tiny face.'}
+30	30		301							"{2: 'Yun Ye', 3: ""Oh my! You're actually from the Other Shore!"", 4: '101', 18: '100011205', 19: '1', 21: 'v360Selena'}"
+31	31		301							{2: 'Yun Ye', 3: 'Oh no, oh no... This is really bad...', 4: '101', 18: '100011206', 19: '1', 21: 'v360Selena'}
+32	32		301							"{3: ""The fox's expression turns solemn as she anxiously paces in circles.""}"
+33	33		213						250.0	{1: '1', 2: '0.25', 3: '400'}
+34	34		211							{1: '2', 2: '1021057', 4: '-400', 7: '1'}
+35	35		301							{1: '1', 3: 'Seeing this, you exchange a glance with Selena before crouching down, softening your voice as much as possible.'}
+36	36		302							{2: 'Are those from the Other Shore not supposed to be here?', 3: '37'}
+37	37		301							"{2: 'Yun Ye', 3: ""Normally, that'd be just fine, but..."", 4: '101', 18: '100011207', 19: '1', 21: 'v360Selena'}"
+38	38		301							{2: 'Selena', 3: 'But the shrine priest took away the offerings from you, which caused something bad?', 4: '102', 18: '100011208', 19: '2', 21: 'v360Selena'}
+39	39		301							"{2: 'Yun Ye', 3: ""Exactly! If the shrine priest actually ties the knot with the Heavenly Path, you're in deep trouble."", 4: '101', 18: '100011209', 19: '1', 21: 'v360Selena'}"
+40	40		301							{3: 'The fox stands upright, earnestly stretching her paws outward in an elaborate gesture.'}
+41	41		301							"{2: 'Yun Ye', 3: ""When that happens, this WHOLE region will turn into his divine realm. The villagers here are already devotees of the Shrine of Union, so they'll be in the clear."", 4: '101', 18: '100011210', 19: '1', 21: 'v360Selena'}"
+42	42		301							"{2: 'Yun Ye', 3: ""But you? You'll never be able to go home again... Come on, let me get you out of here, now!"", 4: '101', 18: '100011211', 19: '1', 21: 'v360Selena'}"
+43	43		212							{1: '1', 2: '2', 6: '1'}
+44	44		301							{3: 'With that, the fox nervously peeks around before bolting away from the shrine.'}
+45	45		301							{3: 'But it barely takes a few steps before a booming chant stops her dead in her tracks.'}
+46	46		301							{2: 'Crowd', 3: 'The auspicious hour is upon us, threads binding mountain and stream, fate connecting heaven and earth...', 18: '100011212'}
+47	47		211							{1: '1', 2: '1021051', 7: '1'}
+48	48		301							{1: '1', 2: 'Yun Ye', 3: 'Oh no... Please no!', 4: '101', 18: '100011213', 19: '1', 21: 'v360Selena'}
+49	49		212							{1: '1', 6: '1'}
+50	50		301							{2: 'Crowd', 3: 'And now begins the Divine Wedd...', 18: '100011214'}
+51	51		211							{1: '1', 2: '1021051', 7: '1'}
+52	52		213							{1: '1', 2: '0.3', 4: '-80'}
+53	53		301						500.0	"{1: '1', 2: 'Yun Ye', 3: ""We're toast!"", 4: '101', 18: '100011215', 19: '1', 21: 'v360Selena'}"
+54	54		212							{1: '1', 6: '1'}
+55	55		401							{1: '2', 2: '2915'}
+56	56		301							{3: 'As the chant wraps up, the crowd suddenly erupts into a commotion.'}
+57	57		301							"{3: ""The fox's legs buckle, and she tumbles backward, hitting the ground in a surprisingly human-like manner.""}"
+58	58		402							{1: '2915'}
+59	59		211							{1: '1', 2: '1021051', 4: '400', 5: '-50', 7: '1'}
+60	60		211							{1: '2', 2: '1021057', 3: '5', 4: '-400', 7: '1'}
+61	61		301							{1: '1', 2: 'Selena', 3: 'Uh... you okay?', 4: '102', 18: '100011216', 19: '2', 21: 'v360Selena'}
+62	62		301							"{2: 'Yun Ye', 3: ""This is bad, so bad... There's no way out for you now."", 4: '101', 18: '100011217', 19: '1', 21: 'v360Selena'}"
+63	63		301							{2: 'Yun Ye', 3: 'The Divine Wedding is really happening...', 4: '101', 18: '100011218', 19: '1', 21: 'v360Selena'}
+64	64		301							"{3: ""The fox mutters to herself, then, as if she's made up her mind, scrambles back to her feet.""}"
+65	65		213							{1: '1', 2: '0.4', 3: '400'}
+66	66		301							"{2: 'Yun Ye', 3: ""No matter what, I can't let innocent people get tangled up in this."", 4: '101', 18: '100011219', 19: '1', 21: 'v360Selena'}"
+67	67		301							"{2: 'Yun Ye', 3: ""At this point, I'll have to put a stop to the Divine Wedding and help you make a break for it."", 4: '101', 18: '100011220', 19: '1', 21: 'v360Selena'}"
+68	68		301							"{3: ""Despite the fox's good intentions, Selena can't help but notice something doesn't quite add up.""}"
+69	69		301							{2: 'Selena', 3: 'Wait, Yun Ye, you never planned to keep the shrine priest from going through with the wedding before?', 4: '102', 18: '100011221', 19: '2', 21: 'v360Selena'}
+70	70		301							{2: 'Yun Ye', 3: 'I had no such intention.', 4: '101', 18: '100011222', 19: '1', 21: 'v360Selena'}
+71	71		302							"{2: 'Why?', 3: '72', 4: ""Why? Didn't he steal your spot?"", 5: '72'}"
+72	72		301							{2: 'Yun Ye', 3: 'Because...', 4: '101', 18: '100011223', 19: '1', 21: 'v360Selena'}
+73	73		212							{1: '1', 2: '2', 6: '1'}
+74	74		301							{3: 'The fox hesitates, her eyes darting away. Then, as if on cue, a smile creeps onto her face.'}
+75	75		301							{3: 'But the smile quickly fades, replaced by a calm expression as it begins to speak in a soft voice.'}
+76	76		211							{1: '1', 2: '1021051', 7: '1'}
+77	77		301							{1: '1', 2: 'Yun Ye', 3: 'The shrine priest has been very kind to me, always.', 4: '101', 18: '100011224', 19: '1', 21: 'v360Selena'}
+78	78		301							{2: 'Yun Ye', 3: 'Before I became the Goddess of Union, I was just a nobody in a tiny mountain shrine. Offerings? Forget about it. Hunting was a nightmare, and every winter, I starved.', 4: '101', 18: '100011225', 19: '1', 21: 'v360Selena'}
+79	79		301							{2: 'Yun Ye', 3: 'It was the shrine priest who fed me, asked what I wanted, and helped me out in countless ways. Thanks to him, I got a proper shrine and became the Goddess of Union I am today.', 4: '101', 18: '100011226', 19: '1', 21: 'v360Selena'}
+80	80		301							{3: 'The fox explains earnestly, her eyes not sad, just showing a faint hint of resignation.'}
+81	81		301							{2: 'Yun Ye', 3: 'Now that he wants that position, I should just give it to him...', 4: '101', 18: '100011227', 19: '1', 21: 'v360Selena'}
+82	82		301							"{2: 'Yun Ye', 3: ""But you'll be stuck here because of it, and that simply won't do."", 4: '101', 18: '100011228', 19: '1', 21: 'v360Selena'}"
+83	83		212							{1: '1', 2: '2', 6: '1'}
+84	84		301							{3: 'Selena leans toward you, lowering her voice.'}
+85	85		211							{1: '1', 2: '1021057', 7: '1'}
+86	86		301				DialogDisable			"{1: '1', 2: 'Selena', 3: ""<size=32>Conductor, how much of what it's saying do you buy?</size>"", 4: '101', 18: '100011229', 19: '1', 21: 'v360Selena'}"
+87	87		302							"{2: 'It could all be true.', 3: '88', 4: ""Or maybe, it's a pack of lies."", 5: '89'}"
+88	88		302							"{2: ""What are we feeling right now? That's the only thing that truly matters."", 3: '92'}"
+89	89		302							"{2: ""Sure, gods and offerings aren't real, and talking foxes? Forget about it."", 3: '90'}"
+90	90		302							{2: 'But if this ties into the Punishing Virus and those old legends...', 3: '91'}
+91	91		302							"{2: ""It's tough to say for sure."", 3: '92'}"
+92	92		302							{2: 'Can you reach anyone outside?', 3: '93'}
+93	93		301			DialogEnable				"{2: 'Selena', 3: ""<size=32>Just like when we got here, the communication module is jammed. I can't figure out why right now.</size>"", 4: '101', 18: '100011230', 19: '1', 21: 'v360Selena'}"
+94	94		302							"{2: ""Got it. Let's just roll with it then."", 3: '95'}"
+95	95		213						250.0	{1: '1', 2: '0.25', 3: '-300'}
+96	96		211							{1: '2', 2: '1021051', 4: '400', 7: '1'}
+97	97		301							{1: '1', 3: 'Selena nods, her gaze shifting to Yun Ye.'}
+98	98		301							{2: 'Selena', 3: 'Is there anything we can lend a hand with?', 4: '101', 18: '100011231', 19: '1', 21: 'v360Selena'}
+99	99		301							"{2: 'Yun Ye', 3: ""Huh? That's really not necessary. Umm... you two seem pretty capable, but—"", 4: '102', 18: '100011232', 19: '2', 21: 'v360Selena'}"
+100	100		301							"{2: 'Yun Ye', 3: ""It's a deity's job to solve mortal problems, not the other way around. How could I possibly ask humans for help?"", 4: '102', 18: '100011233', 19: '2', 21: 'v360Selena'}"
+101	101		301							{2: 'Yun Ye', 3: 'Just leave it to me! You two can just kick back in the village and wait for my good news!', 4: '102', 18: '100011234', 19: '2', 21: 'v360Selena'}
+102	102		301							"{3: ""The fox acts all confident, but judging by how she's been talking and acting this whole trip...""}"
+103	103		213							{1: '1', 2: '0.4', 3: '-200', 4: '-50'}
+104	104		301							"{3: ""You catch Selena's eye, and she immediately gets it. She leans down and gives the fox a gentle pat on the head.""}"
+105	105		214							{1: '1', 2: '6'}
+106	106		301							"{2: 'Selena', 3: ""Thanks for always looking out for us, Yun Ye. But you already went out on a limb for us back on the mountain, and now you're looking to take risks for us again. How can Conductor and I just sit here twiddling our thumbs?"", 4: '101', 18: '100011235', 19: '1', 21: 'v360Selena'}"
+107	107		301				DialogDisable			{2: 'Yun Ye', 3: 'But...', 4: '102', 18: '100011236', 19: '2', 21: 'v360Selena'}
+108	108		302							{2: 'Besides, we want to lend you a hand too.', 3: '109'}
+109	109		302							"{2: ""Maybe you don't bat an eye at certain sacrifices."", 3: '110'}"
+110	110		302							"{2: ""But you still want to get to the bottom of their true intentions, don't you?"", 3: '111'}"
+111	111		301			DialogEnable				{2: 'Selena', 3: 'With some help from us, maybe you can get him to spill the beans about the reasons?', 4: '101', 18: '100011237', 19: '1', 21: 'v360Selena'}
+112	112		301							{2: 'Yun Ye', 3: 'Hm...', 4: '102', 18: '100011238', 19: '2', 21: 'v360Selena'}
+113	113		212							{1: '1', 2: '2', 6: '1'}
+114	114		301							{3: 'The fox grapples with herself for a bit before finally caving, nodding her head hesitantly.'}
+115	115		211							{1: '1', 2: '1021051', 7: '1'}
+116	116		301							"{1: '1', 2: 'Yun Ye', 3: ""Alright then, but you've got to promise me—if things go south, you'll run immediately!"", 4: '101', 18: '100011239', 19: '1', 21: 'v360Selena'}"
+117	117		213						250.0	{1: '1', 2: '0.25', 3: '350'}
+118	118		211							{1: '2', 2: '1021057', 3: '6', 4: '-350', 7: '1'}
+119	119		301							"{1: '1', 3: ""Seeing Yun Ye's serious face, Selena and you can't help but share an amused glance.""}"
+120	120		302							{2: 'Sure.', 3: '121'}
+121	121		301				AniZhuanchangBegin			{2: 'Selena', 3: 'We promise.', 4: '102', 18: '100011240', 19: '2', 21: 'v360Selena'}
+122	122		212							{1: '1', 2: '2', 6: '1'}
+123	123		502							{1: 'DialogDisable'}
+124	124		401						2000.0	{1: '1', 2: '36'}
+125	125		401							{1: '1', 2: '100'}
+126	126		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory551.jpg'}
+127	127		107			AniZhuanchangEnd				{1: 'Village at the Foot of the Mountain', 2: 'Night'}
+128	128		301							{3: 'Night, Village at the Foot of the Mountain'}
+129	129		108							{1: '1'}
+130	130		301			DialogEnable				"{3: ""The pair treads along, hot on the fox's heels as they thread their way through the market streets.""}"
+131	131		301							{3: 'Selena pulls out the small notebook she uses for work sketches and notes, her gaze flicking between taking in her surroundings and leaning in to murmur to the human beside her.'}
+132	132		211							{1: '1', 2: '1021057', 7: '1'}
+133	133		301							{1: '1', 2: 'Selena', 3: 'This village definitely seems like the predecessor to Conservation Area 357. Their clothing and culture hail from Kowloong, with striking similarities, though not quite identical.', 4: '101', 18: '100011241', 19: '1', 21: 'v360Selena'}
+134	134		301				DialogDisable			{2: 'Selena', 3: 'The shrines, which stand apart from temples and Taoist halls, offer even more proof of this.', 4: '101', 18: '100011242', 19: '1', 21: 'v360Selena'}
+135	135		302							"{2: ""So, we've stepped back in time?"", 3: '136'}"
+136	136		302							{2: 'Just like what happened before?', 3: '137'}
+137	137		214							{1: '1', 2: '5'}
+138	138		301			DialogEnable				"{2: 'Selena', 3: ""Conductor, are you talking about my past experience? When I tuned into the Red Tide's sounds and walked into scenes from the past?"", 4: '101', 18: '100011243', 19: '1', 21: 'v360Selena'}"
+139	139		214							{1: '1', 2: '1'}
+140	140		301							"{2: 'Selena', 3: ""While there are some similarities on the face of it, the core difference is clear. I've already confirmed this—there are no signs of the Red Tide having passed through here."", 4: '101', 18: '100011244', 19: '1', 21: 'v360Selena'}"
+141	141		214							{1: '1', 2: '3'}
+142	142		301							"{2: 'Selena', 3: ""Given where we are right now, I reckon we could... No, wait, that's not right. The environment here isn't compatible with those modules..."", 4: '101', 18: '100011245', 19: '1', 21: 'v360Selena'}"
+143	143		401							{1: '2', 2: '1543'}
+144	144		212							{1: '1', 6: '1'}
+145	145		201							{1: '1', 2: '501161', 4: '110', 5: '-35', 6: '50'}
+146	146		301							{1: '1', 2: 'Selena', 3: 'But if we try other approaches and something goes wrong, I would be fine as a Construct, but Conductor, you might...', 4: '1', 18: '100011246'}
+147	147		301				DialogDisable			{3: 'Selena continues to talk to herself after her explanation, her expression growing increasingly serious as she goes deeper into her analysis. Soon, traces of anxiety appear in her eyes and knit her brows.'}
+148	148		302							{2: '...', 3: '149'}
+149	149		302							{2: '(Snap fingers to get her attention)', 3: '150', 4: '(Sigh softly to get her attention)', 5: '160'}
+150	150		104							{1: '0|0|-50', 2: '0.4'}
+151	151		203						450.0	{1: '1', 2: '0.4', 3: '110', 4: '-35'}
+152	152		401							{1: '2', 2: '5707'}
+153	153		301			DialogEnable				{3: 'You gently snap your fingers in front of her face.'}
+154	154		401							{1: '2', 2: '4895'}
+155	155		202							{1: '1', 6: '1'}
+156	156		211							{1: '1', 2: '1021057', 3: '5', 7: '1'}
+157	157		301							{1: '1', 2: 'Selena', 3: 'Ah...?', 4: '101', 18: '100011247', 19: '1', 21: 'v360Selena'}
+158	158		301							{3: 'She jumps slightly, turning her head with a bewildered look.'}
+159	159	170	301				DialogDisable			{2: 'Selena', 3: 'Conductor?', 4: '101', 18: '100011248', 19: '1', 21: 'v360Selena'}
+160	160		104							{1: '0|0|-50', 2: '0.4'}
+161	161		203						450.0	{1: '1', 2: '0.4', 3: '110', 4: '-50', 5: '-50'}
+162	162		301			DialogEnable				{3: 'You lean in close and softly whisper her name right next to her ear.'}
+163	163		302							{2: 'Selena?', 3: '164'}
+164	164		301			PanelActor1Shake				{2: 'Selena', 3: 'Eek! Huh...?', 4: '1', 18: '100011249'}
+165	165		401							{1: '2', 2: '4895'}
+166	166		202							{1: '1', 6: '1'}
+167	167		211							{1: '1', 2: '1021057', 3: '5', 7: '1'}
+168	168		301							{1: '1', 3: 'Selena claps her hands over her ears, spinning around with a startled, bewildered expression.'}
+169	169		301				DialogDisable			{2: 'Selena', 3: 'C-Conductor...?', 4: '101', 18: '100011250', 19: '1', 21: 'v360Selena'}
+170	170		302							"{2: ""You're taking this too seriously. Lighten up a little."", 3: '171'}"
+171	171		302							"{2: ""From what we've seen, this place is weird, but it's not dangerous."", 3: '172'}"
+172	172		302							{2: 'Even if this is some kind of illusion created by the Punishing,', 3: '173'}
+173	173		302							"{2: ""the probe data we collected before coming in doesn't show anything we can't handle."", 3: '174'}"
+174	174		301			DialogEnable				{2: 'Selena', 3: 'Ah... ah...', 4: '101', 18: '100011251', 19: '1', 21: 'v360Selena'}
+175	175		301							"{3: ""Selena's speechless for a moment, and it takes her a second to get her head around what you are saying before a smile breaks across her face.""}"
+176	176		214							{1: '1', 2: '4'}
+177	177		301							{2: 'Selena', 3: 'Heh...', 4: '101', 18: '100011252', 19: '1', 21: 'v360Selena'}
+178	178		214							{1: '1', 2: '6'}
+179	179		301							"{2: 'Selena', 3: ""Are you worried I'm too much of a worrywart, Conductor?"", 4: '101', 18: '100011253', 19: '1', 21: 'v360Selena'}"
+180	180		302							{2: 'Yeah, because you look so serious.'}
+181	181		401							{1: '2', 2: '1543'}
+182	182		212							{1: '1', 6: '1'}
+183	183		301							{1: '1', 3: 'Selena clasps her hands behind her back, tilts her head just a bit, and looks away.'}
+184	184		211							{1: '2', 2: '1021057', 3: '6', 4: '-1300', 5: '-650', 6: '600', 7: '1'}
+185	185		301							"{1: '1', 2: 'Selena', 3: ""Shouldn't I be serious? I mean, I'm on a mission with you, Conductor."", 4: '102', 18: '100011254', 19: '2', 21: 'v360Selena'}"
+186	186		302							{2: 'So, you were worried about me?', 3: '187', 4: 'So, you were actually concerned about me, then.', 5: '187'}
+187	187		214							{1: '2', 2: '2'}
+188	188		301							{2: 'Selena', 3: '...Okay.', 4: '102', 5: '1', 18: '100011255', 19: '2', 21: 'v360Selena'}
+189	189		401							{1: '2', 2: '1543'}
+190	190		212							{1: '2', 6: '1'}
+191	191		211							{1: '1', 2: '1021057', 3: '6'}
+192	192		301							{3: 'What you meant as a lighthearted quip, simply to match the mood, takes an unexpected turn toward sincerity when Selena faces you. Your eyes meet as she responds with a gentle smile and a surprising earnestness.'}
+193	193		302							{2: '...', 3: '194'}
+194	194		214							{1: '1', 2: '4'}
+195	195		301							{2: 'Selena', 3: '{226|153|170}～', 4: '101', 18: '100011256', 19: '1', 21: 'v360Selena'}
+196	196		214							{1: '1', 2: '6'}
+197	197		301							"{2: 'Selena', 3: ""What's wrong? Am I not allowed to worry about you, Conductor?"", 4: '101', 18: '100011257', 19: '1', 21: 'v360Selena'}"
+198	198		301							"{2: 'Selena', 3: ""Oh, aren't these lanterns a bit too bright? I feel like you look kind of... Heh..."", 4: '101', 18: '100011258', 19: '1', 21: 'v360Selena'}"
+199	199		302							{2: 'Cough...', 3: '200'}
+200	200		214							{1: '1', 2: '4'}
+201	201		301							"{3: ""With an exaggerated cough, they lock eyes again, but can't hold it for more than a few seconds before both crack up, lightening the mood.""}"
+202	202		212							{1: '1', 6: '1'}
+203	203		301							{3: 'They both shift their gaze, no longer on guard or scrutinizing everything, but instead soaking up the celebratory vibe of the village ceremony, just like real travelers would.'}
+204	204		301							{3: 'Their swaying hands brush by chance amidst the flickering lights, then quietly entwine.'}
+205	205		402							{1: '100'}
+206	206		401							{1: '2', 2: '4387'}
+207	207		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+208	208		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1289.jpg'}
+209	209		401							{1: '1', 2: '243'}
+210	210		301							{3: 'After meandering through several more narrow streets, where signs of life grow increasingly thin, the two companions and their fox hit the edge of the village.'}
+211	211		301							{3: 'At the end of the street sits a wooden cabin decked out with various flower arrangements hanging from its exterior.'}
+212	212		211							{1: '1', 2: '1021043', 7: '1'}
+213	213		301							{1: '1', 2: 'Female Shop Owner', 3: 'Welcome to my shop. I had no idea such distinguished guests were coming... please forgive me for not rolling out the red carpet...', 4: '101', 18: '100011259', 19: '1', 21: 'v360Selena'}
+214	214		301							"{3: ""They've barely stepped up when the wooden door swings open, and the shop owner pops out to greet them, as if she knew they were coming. Unlike others in the village, the moment she steps out, her eyes land directly on Yun Ye.""}"
+215	215		213						250.0	{1: '1', 2: '0.25', 3: '-400'}
+216	216		211							{1: '2', 2: '1021051', 4: '400', 7: '1'}
+217	217		301							"{2: 'Female Shop Owner', 3: ""Oh my! I was just wondering why the summer seed flowers in my basket suddenly bloomed with such good fortune—it's because the Goddess of Union has arrived, isn't it?"", 4: '101', 18: '100011260', 19: '1', 21: 'v360Selena'}"
+218	218		301							{2: 'Female Shop Owner', 3: 'Is there something you need? You could have just summoned me with your magic. The Divine Wedding is approaching—a bride should stay tucked away in her chambers.', 4: '101', 18: '100011261', 19: '1', 21: 'v360Selena'}
+219	219		301							{2: 'Yun Ye', 3: 'Long time no see, Miss Viola!', 4: '102', 18: '100011262', 19: '2', 21: 'v360Selena'}
+220	220		301							{3: 'The fox gets up on her hind legs, puts her front paws together in a polite bow, then drops back down to all fours.'}
+221	221		301							"{2: 'Yun Ye', 3: ""I'm not the Goddess of Union anymore, and I'm not the bride for the Divine Wedding Ceremony either."", 4: '102', 18: '100011263', 19: '2', 21: 'v360Selena'}"
+222	222		301							{2: 'Yun Ye', 3: 'The shrine priest... he grabbed the token of Union and plans to marry the Heavenly Path instead.', 4: '102', 18: '100011264', 19: '2', 21: 'v360Selena'}
+223	223		212							{1: '1', 2: '2', 6: '1'}
+224	224		301							"{3: ""The shop owner's eyes go wide in shock as flowering wisteria vines unintentionally sprout from her exposed skin, trembling despite the still air.""}"
+225	225		211							{1: '1', 2: '1021043', 4: '-400', 7: '1'}
+226	226		211							{1: '2', 2: '1021051', 4: '400', 7: '1'}
+227	227		301							{1: '1', 2: 'Female Shop Owner', 3: 'Is—is this for real?! W-what are we going to do about this?', 4: '101', 18: '100011265', 19: '1', 21: 'v360Selena'}
+228	228		301							"{2: 'Yun Ye', 3: ""It's true. It's a long story, but in short, I'm here to ask you for a favor, Miss Viola."", 4: '102', 18: '100011266', 19: '2', 21: 'v360Selena'}"
+229	229		301							{2: 'Yun Ye', 3: 'Did you get an invite to the Divine Wedding Ceremony at the shrine?', 4: '102', 18: '100011267', 19: '2', 21: 'v360Selena'}
+230	230		301							{2: 'Viola', 3: 'Of course, I did. Are you thinking of...', 4: '101', 18: '100011268', 19: '1', 21: 'v360Selena'}
+231	231		301							{2: 'Yun Ye', 3: 'Could we borrow your invitation and your magic to get back to the shrine and stop the shrine priest from getting married?', 4: '102', 18: '100011269', 19: '2', 21: 'v360Selena'}
+232	232		301							{3: 'The shop owner, whom Yun Ye calls Miss Viola, has a conflicted look on her face, seemingly weighing the consequences. After a long moment, she lets out a gentle sigh.'}
+233	233		301							{2: 'Viola', 3: 'Sigh...', 4: '101', 18: '100011270', 19: '1', 21: 'v360Selena'}
+234	234		301							"{2: 'Viola', 3: ""Goddess of Union, you once showed me great kindness, so I really shouldn't say no, but..."", 4: '101', 18: '100011271', 19: '1', 21: 'v360Selena'}"
+235	235		301							"{2: 'Viola', 3: ""It's not that I don't want to—there are just some complications. If you don't mind me asking, Goddess of Union, can you still take on human form?"", 4: '101', 18: '100011272', 19: '1', 21: 'v360Selena'}"
+236	236		301							"{2: 'Yun Ye', 3: ""Without my divine powers, I might still pull something off within the shrine grounds, but outside? It's a lost cause no matter what."", 4: '102', 18: '100011273', 19: '2', 21: 'v360Selena'}"
+237	237		301				DialogDisable			{2: 'Viola', 3: 'This is quite a hassle then...', 4: '101', 18: '100011274', 19: '1', 21: 'v360Selena'}
+238	238		401							{1: '2', 2: '754'}
+239	239		212							{1: '1', 2: '2', 6: '1'}
+240	240		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1007.jpg', 3: '0', 4: '1', 5: '1'}
+241	241		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1007.jpg'}
+242	242		205							{1: '999'}
+243	243		301			DialogEnable				{3: 'Following Miss Viola into the wooden cabin, I finally spot a stand tucked away among elaborate flower arrangements, showing off an elegant bridal gown.'}
+244	244		211							{1: '1', 2: '1021043', 7: '1'}
+245	245		301							{1: '1', 2: 'Viola', 3: 'To be perfectly honest, when I received the invitation, I had no clue about the chaos at the shrine.', 4: '101', 18: '100011275', 19: '1', 21: 'v360Selena'}
+246	246		301							{2: 'Viola', 3: 'And having recently fallen in love with the Mountain Lord, I was hoping to use this opportunity to attend the ceremony and get a blessing for our relationship.', 4: '101', 18: '100011276', 19: '1', 21: 'v360Selena'}
+247	247		301							"{2: 'Viola', 3: ""Since it's about the Divine Wedding, I can't just decide on my own. So, after getting the invitation, I formally ask the shrine for permission and only start getting ready once they give me the go-ahead."", 4: '101', 18: '100011277', 19: '1', 21: 'v360Selena'}"
+248	248		401							{1: '2', 2: '13081710'}
+249	249		212							{1: '1', 2: '2', 6: '1'}
+250	250		301						500.0	{3: 'Miss Viola takes the wedding dress off the stand and shows it to Yun Ye.'}
+251	251		211							{1: '1', 2: '1021043', 4: '-400', 7: '1'}
+252	252		211							{1: '2', 2: '1021051', 4: '400', 7: '1'}
+253	253		301							{1: '1', 2: 'Viola', 3: 'Goddess, if you want to attend as me, without the wedding dress or a partner, the shrine priest will easily see right through it.', 4: '101', 18: '100011278', 19: '1', 21: 'v360Selena'}
+254	254		301							{2: 'Yun Ye', 3: 'Well...', 4: '102', 18: '100011279', 19: '2', 21: 'v360Selena'}
+255	255		212							{1: '1', 2: '2', 6: '1'}
+256	256		301							"{3: ""The room goes quiet for a bit until Selena, after a moment's thought, offers a suggestion.""}"
+257	257		211							{1: '1', 2: '1021057', 7: '1'}
+258	258		301				DialogDisable			{1: '1', 2: 'Selena', 3: 'What if the Conductor and I pretend to be Miss Viola and the Mountain Lord, and we escort Yun Ye up the mountain? Could that work?', 4: '101', 18: '100011280', 19: '1', 21: 'v360Selena'}
+259	259		302							{2: 'That might just work.', 3: '260'}
+260	260		302							"{2: ""What's Miss Viola's lover look like, roughly speaking?"", 3: '261', 4: 'Do you have a portrait of the Mountain Lord?', 5: '261'}"
+261	261		213						250.0	{1: '1', 2: '0.25', 3: '400'}
+262	262		211							{1: '2', 2: '1021043', 4: '-400', 7: '1'}
+263	263		301			DialogEnable				"{1: '1', 2: 'Viola', 3: ""The Mountain Lord has a pretty different build than yours. Even though you, honored guest, have a sharper look about you, it shouldn't be a problem."", 4: '102', 18: '100011281', 19: '2', 21: 'v360Selena'}"
+264	264		301							"{2: 'Viola', 3: ""My romance with the Mountain Lord hasn't really gotten around, and I never actually named him in the letters I sent to the shrine."", 4: '102', 18: '100011282', 19: '2', 21: 'v360Selena'}"
+265	265		301							{2: 'Viola', 3: 'Not even the shrine priest, let alone the other spirits in the village, knows anything more than what he looks like.', 4: '102', 18: '100011283', 19: '2', 21: 'v360Selena'}
+266	266		301							{2: 'Selena', 3: 'Well, then...', 4: '101', 18: '100011284', 19: '1', 21: 'v360Selena'}
+267	267		212							{1: '1', 2: '2', 6: '1'}
+268	268		211							{1: '3', 2: '1021051', 7: '1'}
+269	269		301			RImgBg1Shake				{1: '1', 2: 'Yun Ye', 3: 'No way!', 4: '103', 18: '100011285', 19: '3', 21: 'v360Selena'}
+270	270		301							{3: 'No one expects the usually cheerful Yun Ye to suddenly shoot down the idea so fiercely.'}
+271	271		213						250.0	{1: '3', 2: '0.25', 3: '400'}
+272	272		211							{1: '1', 2: '1021057', 4: '-400', 7: '1'}
+273	273		301							"{1: '1', 2: 'Selena', 3: ""If you're worried about us getting caught, my frame... I can totally change how I look and smell to blend in."", 4: '101', 18: '100011286', 19: '1', 21: 'v360Selena'}"
+274	274		301							"{2: 'Yun Ye', 3: ""Oh, no, that's not it at all."", 4: '103', 18: '100011287', 19: '3', 21: 'v360Selena'}"
+275	275		301							"{2: 'Yun Ye', 3: ""Spirits rarely snoop into each other's business. Even if they spot something a little off, they usually don't dig deeper. I mean, the path of cultivation is long, and changes are perfectly normal."", 4: '103', 18: '100011288', 19: '3', 21: 'v360Selena'}"
+276	276		301							{2: 'Yun Ye', 3: 'The thing is...', 4: '103', 18: '100011289', 19: '3', 21: 'v360Selena'}
+277	277		301							"{3: ""Yun Ye's face takes on a seriousness no one's ever seen before.""}"
+278	278		301							"{2: 'Yun Ye', 3: ""Being a married couple isn't something you can just fake! Marriage is an important matter. VERY IMPORTANT."", 4: '103', 18: '100011290', 19: '3', 21: 'v360Selena'}"
+279	279		301							"{2: 'Yun Ye', 3: ""It's totally understandable for Miss Viola and the Mountain Lord to want marriage blessings since they're in love, but Selena and 【kuroname】..."", 4: '103', 18: '100011291', 19: '3', 21: 'v360Selena'}"
+280	280		301							"{2: 'Yun Ye', 3: ""Even though you seem quite close, you're still miles away from being an actual married couple."", 4: '103', 18: '100011292', 19: '3', 21: 'v360Selena'}"
+281	281		212							{1: '1', 2: '3', 6: '1'}
+282	282		401							{1: '2', 2: '5709'}
+283	283		301							{3: 'With that, the fox jumps onto the counter, putting her at eye level with Selena and you.'}
+284	284		301							{3: 'In this pose, she truly embodies the commanding presence of a matchmaking deity from ancient tales.'}
+285	285		211							{1: '1', 2: '1021051', 7: '1'}
+286	286		301		1		AniZhuanchangBegin			{1: '1', 2: 'Yun Ye', 3: 'What are you to each other, anyway?', 4: '101', 18: '100011293', 19: '1', 21: 'v360Selena'}

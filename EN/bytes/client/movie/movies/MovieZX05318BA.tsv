@@ -1,0 +1,229 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory529.jpg'}
+2	2		401							{1: '1', 2: '6153'}
+3	3		107						2000.0	{1: 'World Government Association of Art', 2: 'Babylonia'}
+4	4		108							{1: '1'}
+5	5		201							{1: '1', 2: '500946', 4: '400'}
+6	6		201							{1: '2', 2: '500962', 4: '-400'}
+7	7		301			DialogEnable				"{1: '1', 2: 'Child A', 3: ""Wow! And then? What happens next? What's the ending?"", 4: '1'}"
+8	8		301							"{2: 'Child B', 3: 'In the end... did the Knight and the Monarch defeat the ""warrior from the future""?', 4: '2'}"
+9	9		202							{1: '1', 2: '2'}
+10	10		201							{1: '1', 2: '501184', 3: '1'}
+11	11		301							{1: '1', 2: 'Selena', 3: 'In the end...', 4: '1'}
+12	12		401							{1: '2', 2: '9332014'}
+13	13		301				AniZhuanchangBegin			"{3: 'Amid the clamor, a gentle female voice is controlling a mechanical puppet. It begins to narrate that fantastical ""tale"" once more.'}"
+14	14		402							{1: '9332014'}
+15	15		202							{1: '1'}
+16	16		502						400.0	{1: 'DialogDisable'}
+17	17		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cgqz1003.jpg'}
+18	18		201							{1: '18', 2: '501184'}
+19	19		301			DialogEnable				"{1: '1', 2: 'Selena', 3: 'The Knight erased the Monarch\'s memories and pushed the Monarch away from the castle, so she could face the ""warrior from the future"" alone.', 4: '18'}"
+20	20		301							{2: 'Selena', 3: 'But the Monarch would never abandon the Knight. Having endured countless hardships and trod through thorns to regain the lost memories, the Monarch struggled relentlessly to return to the castle.', 4: '18'}
+21	21		201							{1: '18', 2: '500946'}
+22	22		301							"{1: '1', 2: 'Child A', 3: ""Wow... that's the Monarch for you!"", 4: '18'}"
+23	23		201							{1: '18', 2: '501184', 3: '1'}
+24	24		301							{1: '1', 2: 'Selena', 3: 'The Monarch and the Knight joined forces and defeated the warrior from the future. They imprisoned her in the castle where they overcame her.', 4: '18'}
+25	25		201							{1: '18', 2: '500946'}
+26	26		301							{1: '1', 2: 'Child A', 3: 'But... without their castle... where are the Monarch and the Knight supposed to go?', 4: '18'}
+27	27		201							{1: '18', 2: '501184', 3: '7'}
+28	28		301							{1: '1', 2: 'Selena', 3: 'They did what the story said at the very beginning.', 4: '18'}
+29	29		301							{2: 'Selena', 3: 'The Monarch and the Knight returned to where their journey began and lived happily ever after with their friends.', 4: '18'}
+30	30		204							{1: '18', 2: '1'}
+31	31		301							{2: 'Selena', 3: 'They have a long, long future ahead.', 4: '18'}
+32	32		204							{1: '18', 2: '2'}
+33	33		301				AniZhuanchangBegin			"{2: 'Selena', 3: 'Alright, the ""play"" is over. It\'s time for the assembly... Go to your teachers, quickly now.', 4: '18'}"
+34	34		202							{1: '18', 6: '1'}
+35	35		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory529.jpg'}
+36	36		401							{1: '2', 2: '4693'}
+37	37		301			AniZhuanchangEnd				{3: 'The children from the Center of Basic Public Education scurry off in excited chatter.'}
+38	38		402							{1: '4693'}
+39	39		401							{1: '2', 2: '4892'}
+40	40		301							{3: 'Selena puts away the mechanical puppets used in her performance, stands up, and notices someone familiar standing nearby.'}
+41	41		201							{1: '1', 2: '501184', 3: '13'}
+42	42		301							{1: '1', 2: 'Selena', 3: 'Conductor...?', 4: '1'}
+43	43		302							{2: 'Selena.', 3: '44', 4: 'Iris.', 5: '44'}
+44	44		202							{1: '1'}
+45	45		306							{1: '1'}
+46	46		301				AniZhuanchangBegin			"{3: 'Since coming back from the ""Time Prison"", this timeline has slowly recovered its memories of Selena.'}"
+47	47		504							{1: '0.7'}
+48	48		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory427.jpg'}
+49	49		301			AniZhuanchangEnd				{3: 'Stacks of reports and amendments... revealed just how close Babylonia had come to disaster, shocking everyone.'}
+50	50		301							{3: 'Vanished writing slowly reappears, erased memories slowly recover, and the girl exiled from time itself returns once more to the world that always belonged to her.'}
+51	51		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+52	52		301			AniZhuanchangEnd				{3: 'The White Noise was sealed away by the Science Council and classified as a high-level hazardous item, never to see the light again.'}
+53	53		301							"{3: 'Although some ""information"" was lost, the cleared Abess Research Group continues their ""<b>Tenebrion</b>"" energy research, still attempting to identify the singularity of that material.'}"
+54	54		301							{3: 'Everything returns to normal.'}
+55	55		302							"{2: ""It's time for a follow-up examination at the Science Council."", 3: '56'}"
+56	56		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory718.jpg'}
+57	57		201							{1: '1', 2: '500004'}
+58	58		301				AniZhuanchangBegin			"{1: '1', 3: 'After the ""Time Prison"" incident, Asimov is worried that the White Noise might still be affecting your M.I.N.D. and Mind Beacon, so he arranged regular examinations for you and Selena.'}"
+59	59		202							{1: '1'}
+60	60		306							
+61	61		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory529.jpg'}
+62	62		504							{1: '0'}
+63	63		201							{1: '1', 2: '501184', 3: '13'}
+64	64		301			AniZhuanchangEnd				{1: '1', 2: 'Selena', 3: 'Oh, I almost forgot...', 4: '1'}
+65	65		301							{3: 'Selena tilts her head in frustration, then quickly puts away the box.'}
+66	66		204							{1: '1', 2: '1'}
+67	67		301							"{2: 'Selena', 3: ""Let's go, Conductor."", 4: '1'}"
+68	68		401						400.0	{1: '2', 2: '4009'}
+69	69		203							{1: '1', 2: '0.25', 4: '-25', 5: '10'}
+70	70		402							{1: '4009'}
+71	71		401							{1: '2', 2: '4202'}
+72	72		301							{3: 'She takes a few quick steps forward, pushes open the half-closed door, and turns around. She smiles at you in the bright sunlight.'}
+73	73		302							"{2: ""Let's go."", 3: '74'}"
+74	74		202							{1: '1'}
+75	75		301							{3: 'The wayward whale has returned to her home.'}
+76	76		301							"{3: ""Countless stars shine brilliantly across the sky, yet none can match the sun's radiance. She dreams of becoming a white bird...""}"
+77	77		301				AniZhuanchangBegin			{3: 'Soaring through the waves beneath the golden sunlight with her conductor.'}
+78	78		401							{1: '1', 2: '36'}
+79	79		502						400.0	{1: 'DialogDisable'}
+80	80		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1183.jpg'}
+81	81		401							{1: '1', 2: '6154'}
+82	82		107							"{1: 'The Endless ""Theater""', 2: 'Time Prison'}"
+83	83		301							"{3: 'Time Prison, The Endless ""Theater""'}"
+84	84		108							{1: '1'}
+85	85		301			DialogEnable				"{3: 'Enora Lueya sits quietly in the audience, watching a stiff, red mechanoid ""perform"" on stage.'}"
+86	86		401							{1: '2', 2: '4799'}
+87	87		301							{3: 'A pink-haired Construct arrives silently and takes a seat beside her.'}
+88	88		402							{1: '4799'}
+89	89		201							{1: '1', 2: '501164', 3: '2'}
+90	90		301							"{1: '1', 2: 'Enora Lueya', 3: ""You've come."", 4: '1'}"
+91	91		201							{1: '1', 2: '500380', 3: '12'}
+92	92		301							{1: '1', 2: 'Ishmael', 3: 'Yes, I looked for the doorway that leads here.', 4: '1'}
+93	93		201							{1: '1', 2: '501164', 3: '2'}
+94	94		301							"{1: '1', 2: 'Enora Lueya', 3: ""It's a shame you can't see the joke of this place. Breaking this crude prison will only be a matter of time."", 4: '1'}"
+95	95		201							{1: '1', 2: '500380', 3: '12'}
+96	96		301							"{1: '1', 2: 'Ishmael', 3: 'That\'s true. For you, it\'s merely ""a matter of time.""', 4: '1'}"
+97	97		201							{1: '1', 2: '501164', 3: '4'}
+98	98		301							{1: '1', 2: 'Enora Lueya', 3: 'You have no right to interfere with the play that must be premiered.', 4: '1'}
+99	99		301							{3: 'The stern-faced, red-haired Construct finally turns her head to stare at the woman beside her.'}
+100	100		201							{1: '1', 2: '500380'}
+101	101		301							"{1: '1', 2: 'Ishmael', 3: ""Don't worry. Due to cause and effect, I won't interfere with the story between you and them on purpose."", 4: '1'}"
+102	102		203							{1: '1', 2: '0.25', 3: '-400'}
+103	103		201							{1: '2', 2: '501164', 3: '4', 4: '400'}
+104	104		301							{1: '1', 2: 'Enora Lueya', 3: 'Then why did you come here? To tell me some riddles?', 4: '2'}
+105	105		301							{2: 'Ishmael', 3: 'Hah...', 4: '1'}
+106	106		301							{2: 'Ishmael', 3: 'I just want to ask you, when you touched that human... what did you see?', 4: '1'}
+107	107		301							{2: 'Enora Lueya', 3: '...', 4: '2'}
+108	108		202							{1: '1', 2: '2'}
+109	109		306							{1: '1'}
+110	110		301							{3: 'What did she see?'}
+111	111		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory616.jpg'}
+112	112		301			AniZhuanchangEnd				{3: 'She saw... a vast river, flowing majestically.'}
+113	113		301							{3: 'That was the River of Time.'}
+114	114		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1157.jpg'}
+115	115		301			AniZhuanchangEnd	AniZhuanchangBegin			"{3: ""There were no dense, dim branches, no muddy paths dried up on the way. There was only a vast, surging river, rushing toward a future she couldn't hear.""}"
+116	116		306							
+117	117		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1183.jpg'}
+118	118		201							{1: '1', 2: '501164', 3: '2'}
+119	119		301			AniZhuanchangEnd				"{1: '1', 2: 'Enora Lueya', 3: ""That doesn't mean..."", 4: '1'}"
+120	120		203							{1: '1', 2: '0.25', 3: '400'}
+121	121		201							{1: '2', 2: '500380', 3: '12', 4: '-400'}
+122	122		301							{1: '1', 2: 'Ishmael', 3: '【kuroname】 is the anchor point of everything.', 4: '2'}
+123	123		204							{1: '2', 2: '1'}
+124	124		301							{2: 'Ishmael', 3: 'In the world you come from... does 【kuroname】 exist?', 4: '2'}
+125	125		204							{1: '1', 2: '2'}
+126	126		301							{2: 'Enora Lueya', 3: '【kuroname】...', 4: '1'}
+127	127		202							{1: '1', 2: '2'}
+128	128		306							{1: '1'}
+129	129		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory909.jpg'}
+130	130		301			AniZhuanchangEnd				{3: 'In her world, this name was only something fleeting that existed after the fall of Babylonia.'}
+131	131		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory318.png'}
+132	132		301			AniZhuanchangEnd				"{3: 'In the ""branch"" where she exists, Babylonia was accidentally struck and largely destroyed, forcing survivors to evacuate back to the surface.'}"
+133	133		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1033.jpg'}
+134	134		301			AniZhuanchangEnd				"{3: ""But the surface wasn't safe either. The Red Tide surged violently while the Punishing Virus continued to evolve in its nest, shrinking humanity's living space further.""}"
+135	135		301							{3: 'The victors took all the resources while the defeated were cast into the Red Tide. War, riots, and endless gunfire made up the colorless play constantly being performed across the land.'}
+136	136		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+137	137		201							{1: '1', 2: '501182'}
+138	138		301			AniZhuanchangEnd				"{1: '1', 3: 'People developed ""Echo"" technology based on White Noise, trying to return to the ""past"" to modify the ""future,"" but each attempt failed. Until they heard echoes coming from within the Hetero Tower...', 4: '1'}"
+139	139		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+140	140		202							{1: '1', 6: '1'}
+141	141		401							{1: '2', 2: '4898'}
+142	142		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+143	143		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1156.jpg'}
+144	144		301							"{3: 'The Hetero Tower had disappeared in the ""past.""'}"
+145	145		301							"{3: ""All of this... must be caused by the Hetero Tower's disappearance!""}"
+146	146		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+147	147		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg001_3.jpg'}
+148	148		301							{3: 'Angered by the imminent destruction of the world, the victors who had amassed vast resources frantically worked on Construct Tech, trying to use White Noise to return to the past to bring back the Hetero Tower...'}
+149	149		201							{1: '1', 2: '501186'}
+150	150		301				AniZhuanchangBegin			"{1: '1', 3: ""That's why Lueya was born into this world."", 4: '1'}"
+151	151		202							{1: '1', 6: '1'}
+152	152		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+153	153		402							{1: '4898'}
+154	154		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1183.jpg'}
+155	155		306							
+156	156		201							{1: '1', 2: '501164', 3: '4'}
+157	157		301			AniZhuanchangEnd				{1: '1', 2: 'Enora Lueya', 3: '...You mean all of this is wrong?', 4: '1'}
+158	158		203							{1: '1', 2: '0.25', 3: '400'}
+159	159		201							{1: '2', 2: '500380', 3: '12', 4: '-400'}
+160	160		301							"{1: '1', 2: 'Ishmael', 3: ""It's not wrong, it's just..."", 4: '2'}"
+161	161		301							{2: 'Ishmael', 3: 'You all deserve to be in a better world.', 4: '2'}
+162	162		301							{2: 'Enora Lueya', 3: '...', 4: '1'}
+163	163		202							{1: '1', 2: '2'}
+164	164		301				AniZhuanchangBegin			"{3: ""The two people in the audience fall silent at the same time, quietly watching the mechanoids' performance on stage—absurd yet real.""}"
+165	165		401							{1: '1', 2: '36'}
+166	166		502						400.0	{1: 'DialogDisable'}
+167	167		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+168	168		401							{1: '1', 2: '6160'}
+169	169		107							{1: 'Science Council', 2: 'Babylonia'}
+170	170		301							{3: 'Science Council, Babylonia'}
+171	171		108							{1: '1'}
+172	172		301			DialogEnable				{3: 'The review of the M.I.N.D Beacon is complete, and Rosa checks the results on the terminal.'}
+173	173		201							{1: '1', 2: '500539'}
+174	174		301							"{1: '1', 2: 'Rosa', 3: ""Everything is normal... The M.I.N.D Beacon is also functioning properly. We won't need another check, Commandant."", 4: '1'}"
+175	175		302							"{2: 'Thank you so much!', 3: '182', 4: ""Are you sure you're fine?"", 5: '176'}"
+176	176		204							{1: '1', 2: '11'}
+177	177		301							{2: 'Rosa', 3: 'O-of course. Our examination is very thorough...', 4: '1'}
+178	178		203							{1: '1', 2: '0.25', 4: '10', 5: '-10'}
+179	179		401							{1: '2', 2: '4044'}
+180	180		301							{3: 'She quickly holds up the terminal to show you the data.'}
+181	181		302							{2: 'Thank you, then.', 3: '182'}
+182	182		202							{1: '1'}
+183	183		401							{1: '2', 2: '1516'}
+184	184		301							"{3: ""Just as you're about to leave after putting away the results, Asimov hurriedly appears from the lab on the other side.""}"
+185	185		402							{1: '1516'}
+186	186		201							{1: '1', 2: '500004'}
+187	187		301							{1: '1', 2: 'Asimov', 3: '【kuroname】, good timing.', 4: '1'}
+188	188		302							{2: 'Everything okay?', 3: '191', 4: 'Is there a problem with the M.I.N.D Beacon?', 5: '189'}
+189	189		204							{1: '1', 2: '8'}
+190	190		301	191						{2: 'Asimov', 3: 'It has nothing to do with the M.I.N.D Beacon...', 4: '1'}
+191	191		204							{1: '1'}
+192	192		301							"{2: 'Asimov', 3: ""It's about the Copperfield Aquarium."", 4: '1'}"
+193	193		302							{2: 'Is this about the incident... that Hassen mentioned before?', 3: '194'}
+194	194		202							{1: '1'}
+195	195		301							"{3: 'You vaguely recall that the last time your ""war trauma"" was triggered was when you went back to City 006 to deliver your combat report.'}"
+196	196		301							{3: 'Hassen once said that he might need Gray Raven to help him with operations at the Copperfield Aquarium...'}
+197	197		201							{1: '1', 2: '500004'}
+198	198		301							{1: '1', 2: 'Asimov', 3: 'Yes.', 4: '1'}
+199	199		301							{2: 'Asimov', 3: 'We received word yesterday that all three rescue teams sent to the Copperfield Aquarium have vanished without a trace. The mission order should be issued soon.', 4: '1'}
+200	200		301							"{2: 'Asimov', 3: ""They'll most likely deploy Gray Raven to the Copperfield Aquarium. Best to get ready."", 4: '1'}"
+201	201		302							{2: 'Okay.', 3: '202', 4: 'I understand.', 5: '202'}
+202	202		202							{1: '1'}
+203	203		301							{3: 'As you respond, something rises rapidly in your mind.'}
+204	204		301				AniZhuanchangBegin			{3: 'It feels like your memories are being slashed into shards, and bizarre images are flashing across a mirror.'}
+205	205		502						400.0	{1: 'DialogDisable'}
+206	206		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+207	207		101			AniZhuanchangEnd			300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3001_08.jpg'}
+208	208		401							{1: '2', 2: '952'}
+209	209		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+210	210		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3001_10.jpg'}
+211	211		401							{1: '2', 2: '952'}
+212	212		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+213	213		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory625.jpg'}
+214	214		401							{1: '2', 2: '952'}
+215	215		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+216	216		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory626.jpg'}
+217	217		401							{1: '2', 2: '952'}
+218	218		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+219	219		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+220	220		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+221	221		301			DialogEnable				"{3: ""Bianca in a stranger's frame, a surging crimson Red Tide...""}"
+222	222		301				AniZhuanchangBegin			{3: 'What are... these? Are they memories from the past, or...'}
+223	223		502						400.0	{1: 'DialogDisable'}
+224	224		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg'}
+225	225		401							{1: '2', 2: '2768'}
+226	226		304							{1: '<i>Time flows ever forward, endless, and swift.</i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg', 6: '1', 7: '2', 10: '1'}
+227	227		304							{1: '<i>Blurred words mired in absurd colors.</i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg', 6: '1', 7: '2', 10: '1'}
+228	228		304		1		AniZhuanchangBegin			{1: '<i>Past, present, and future will eventually reunite and find their way back together.</i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg', 6: '1', 7: '2', 9: '1', 10: '1'}

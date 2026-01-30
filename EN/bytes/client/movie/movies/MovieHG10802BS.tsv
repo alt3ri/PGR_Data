@@ -1,0 +1,53 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory28.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '1031001'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+5	5		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Commandant... we...', 4: '1'}
+6	6		301							"{2: 'Liv', 3: ""Not that we don't trust Watanabe, Commandant, but you should at the very least notify us before you travel to Forsaken territory by yourself..."", 4: '1'}"
+7	7		201							{1: '1', 2: '1021001'}
+8	8		301							{1: '1', 2: 'Lucia', 3: 'Pardon me, Commandant, but that was really unwise.', 4: '1'}
+9	9		201							{1: '1', 2: '1011001', 3: '10'}
+10	10		301							{1: '1', 2: 'Lee', 3: 'Hmph. Going there all by yourself without bringing anyone of us...', 4: '1'}
+11	11		204							{1: '1'}
+12	12		301							{2: 'Lee', 3: 'This call would have been your obituary just a few months ago!', 4: '1'}
+13	13		302							"{2: 'I trust Watanabe.', 3: '14', 4: ""Hey, hey, who's the commandant here?"", 5: '14'}"
+14	14		301							{2: 'Lee', 3: 'So? What are the coordinates?!', 4: '1'}
+15	15		201							{1: '1', 2: '1031001'}
+16	16		301							"{1: '1', 2: 'Liv', 3: ""We'll head over immediately. Commandant, please stay safe in the meanwhile."", 4: '1'}"
+17	17		201							{1: '1', 2: '1021001'}
+18	18		301							{1: '1', 2: 'Lucia', 3: 'We have to get to Commandant before Oasis retracts its dome.', 4: '1'}
+19	19		302							"{2: ""Watanabe will keep Oasis safe, I'm sure."", 3: '20', 4: 'I know I can count on my squad!', 5: '21'}"
+20	20	23	301							"{2: 'Lucia', 3: ""Doesn't matter how Oasis react—your safety is still our responsibility, Commandant."", 4: '1'}"
+21	21		201							{1: '1', 2: '1011001'}
+22	22		301							"{1: '1', 2: 'Lee', 3: ""Now we're your squad, huh?!"", 4: '1'}"
+23	23		201							{1: '1', 2: '1031001'}
+24	24		301							"{1: '1', 2: 'Liv', 3: ""I've located Commandant's location... Massive Corrupted activity sighted in the area!"", 4: '1'}"
+25	25		201							{1: '1', 2: '1021001'}
+26	26		301							"{1: '1', 2: 'Lucia', 3: ""Let's go help the Forsaken for Commandant's sake."", 4: '1'}"
+27	27		201							{1: '1', 2: '1031001', 4: '-450'}
+28	28		201							{1: '2', 2: '1011001', 4: '450'}
+29	29		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+30	30		301							{1: '1', 2: 'Liv & Lee', 3: 'Copy!', 4: '1', 5: '2'}
+31	31		202							{1: '1', 6: '1'}
+32	32		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+33	33		203							{1: '2', 2: '0.25'}
+34	34		301							{2: 'Lee', 3: 'But... what should we say if the people up top ask about it?', 4: '2'}
+35	35		302							"{2: 'Leave that to me.', 3: '36', 4: ""Relax. I'm the best at doing review reports."", 5: '36'}"
+36	36		202							{1: '2', 6: '1'}
+37	37		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+38	38		201							{1: '1', 2: '500080'}
+39	39		301							{1: '1', 2: 'Watanabe', 3: 'Monitor Corrupted signals at all times. Send reinforcement to A-1. Stay in position, C-3.', 4: '1'}
+40	40		302							{2: 'Is that a new frame?', 3: '100', 4: 'Is the situation that bad that it requires this frame?', 5: '41'}
+41	100	42	301							{2: 'Watanabe', 3: '...', 4: '1'}
+42	41		301							{2: 'Watanabe', 3: '??!', 4: '1'}
+43	42		301							{2: 'Watanabe', 3: 'Why the hell are you here? Get back!', 4: '1'}
+44	43		302							"{2: 'Let me help you.', 3: '44', 4: ""I'm here for the fireworks—I'm here to help you, duh!"", 5: '44'}"
+45	44		301							{2: 'Watanabe', 3: 'How is an unarmed human going to help?!', 4: '1'}
+46	45		301							{2: 'Watanabe', 3: 'So just get...', 4: '1'}
+47	46		203							{1: '1', 2: '0.25', 3: '-450'}
+48	47		201							{1: '2', 2: '1021001', 4: '450'}
+49	48		301							{1: '1', 2: 'Lucia', 3: 'Corrupted on the west side are clear. No sign of them converging again.', 4: '2'}
+50	49		202							{1: '2', 6: '1'}
+51	50		203							{1: '1', 2: '0.25'}
+52	51		301		1		AniZhuanchangBegin			{2: 'Watanabe', 3: '...', 4: '1'}

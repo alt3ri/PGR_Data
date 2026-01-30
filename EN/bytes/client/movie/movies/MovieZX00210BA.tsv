@@ -1,0 +1,32 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory10.jpg'}
+2	1000		401			DialogEnable				{1: '1', 2: '202'}
+3	1001		401							{1: '2', 2: '10007502'}
+4	2		301			RImgBg1Shake				{3: 'Boom—'}
+5	3		301				RImgBg1Shake			{3: 'Continuous explosions echoes from behind the Gray Raven squad.'}
+6	1002		401							{1: '2', 2: '10007502'}
+7	4		201							{1: '1', 2: '1021001'}
+8	5		301							{1: '1', 2: 'Lucia', 3: 'Satellite imagery is useless now, Liv, we need a new route!', 4: '1'}
+9	6		201							{1: '1', 2: '1031001'}
+10	7		301							{1: '1', 2: 'Liv', 3: 'Okay! Scanning the geographical distribution and recalculating new routes!', 4: '1'}
+11	8		204							{1: '1', 2: '7'}
+12	9		301				AniZhuanchangBegin			"{2: 'Liv', 3: ""Found one, let's go!"", 4: '1'}"
+13	100		202							{1: '1', 6: '1'}
+14	10		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory19.jpg'}
+15	12		301			AniZhuanchangEnd	RImgBg1Shake			{3: '……'}
+16	1003		401	1						{1: '2', 2: '10007502'}
+17	13		201							{1: '1', 2: '1021001', 4: '-400'}
+18	14		201							{1: '2', 2: '1031001', 4: '400'}
+19	15		301							{1: '1', 2: 'Lucia', 3: 'This is a... subway station?', 4: '1'}
+20	16		301							"{2: 'Liv', 3: ""Yes, it's the only path around here."", 4: '2'}"
+21	17		202							{1: '1', 2: '2', 6: '1'}
+22	18		201							{1: '1', 2: '1011001'}
+23	19		301							{1: '1', 2: 'Lee', 3: 'Subway... normally a low viral density area... but the readings here are abnormally high.', 4: '1'}
+24	20		301							{2: 'Lee', 3: 'That must be why the Iron Maiden was so difficult to trace. She must have hidden herself underground.', 4: '1'}
+25	21		201							{1: '1', 2: '1021001'}
+26	22		301							"{1: '1', 2: 'Lucia', 3: ""It's not safe around here. If we don't find an exit before it collapses..."", 4: '1'}"
+27	23		201							{1: '1', 2: '1011001'}
+28	24		301							"{1: '1', 2: 'Lee', 3: ""Lucia, there's a unique Corrupted signal moving toward us at high speed!"", 4: '1'}"
+29	25		201							{1: '1', 2: '1021001'}
+30	26		301							{1: '1', 2: 'Lucia', 3: 'Got it...', 4: '1'}
+31	27		301		1		AniZhuanchangBegin			{2: 'Lucia', 3: 'Clean this area up and prepare for engagement!', 4: '1'}

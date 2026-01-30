@@ -1,0 +1,196 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: '—About three months ago, or a week after the twins appeared in the Pulia Forest Park Ruins.'}
+4	4		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory460.jpg', 3: '0', 4: '1', 5: '1'}
+5	5		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory460.jpg'}
+7	7		301							{3: 'Looking down from Babylonia, the threat from the flying Hetero-Creatures is ever-present.'}
+8	8		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory461.jpg', 3: '0', 4: '1', 5: '1'}
+9	9		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+10	10		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory461.jpg'}
+11	11		301							{3: 'Babylonia has paid a heavy price trying to reestablish the nightmare route between itself and the surface... but no ace pilot has expected to get past enemies that would not hesitate to throw their lives away.'}
+12	12		301							{3: 'Even the arrival of a screw or a can of food will help the surface greatly against this living hell—but the dreams of the many rescue pilots ultimately fall amidst the blue sky they once soared.'}
+13	13		301				AniZhuanchangBegin			{3: 'This is no longer an issue of piloting skills. The engineers of Babylonia must provide a new solution as soon as possible.'}
+14	14		101			DialogDisable	AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory175.png'}
+15	15		201							{1: '1', 2: '500196', 3: '14'}
+16	16		301			DialogEnable				{1: '1', 2: 'Karenina', 3: '****... The engine should be putting out 150% power according to the spec. Why is the speed increase almost negligible right now?!', 4: '1'}
+17	17		301							{3: 'As the Science Council is in charge of creating the Omega Weapon, the task of creating a new aircraft engine that can counter the flying Hetero-Creatures has been given to the Engineering Force.'}
+18	18		301							{3: 'With her background as a member of the Cosmos Technician Union, Karenina is experienced in research and development in the energy and power sector, making her the best person for the job.'}
+19	19		204							{1: '1'}
+20	20		301							{2: 'Karenina', 3: 'Hey, new guy! Show me the records of the previous setup...', 4: '1'}
+21	21		203							{1: '1', 2: '0.25', 3: '400'}
+22	22		201							{1: '2', 2: '500361', 4: '-400'}
+23	23		301							{1: '1', 2: 'Engineer', 3: 'Actually... I joined the Engineering Force two years ago...', 4: '2'}
+24	24		301							"{2: 'Karenina', 3: ""Oh? Is that so... Why do I feel like I've never seen you before... Forget it. It doesn't matter! Just get me the setup records right now!"", 4: '1'}"
+25	25		301							{2: 'Engineer', 3: 'Actually... it was the vice-captain who...', 4: '2'}
+26	26		202						10.0	{1: '1', 2: '2', 6: '1'}
+27	27		201							{1: '1', 2: '500502'}
+28	28		301							"{1: '1', 2: '???', 3: 'Don\'t bother looking. I told them to swap that ""outrageous"" part in your design with a standard one. Of course the output has dropped.', 4: '1'}"
+29	29		301							{3: 'A quiet voice speaks among the rows of computers that sit in the corner of the development workshop.'}
+30	30		202						10.0	{1: '1', 6: '1'}
+31	31		201							{1: '1', 2: '500196', 3: '14'}
+32	32		301							{1: '1', 2: 'Karenina', 3: 'T-E-D-D-Y! What the hell?!', 4: '1'}
+33	33		301							"{3: 'Karenina screams at where the voice came from, startling everyone in the workshop. But they quickly shrug and return to work with an expression of ""here we go again...""'}"
+34	34		301							{2: 'Karenina', 3: 'Can you comprehend how many lives we lose on the surface for every minute we delay?!', 4: '1'}
+35	35		301							{3: 'Karenina pushes away a wall of monitors before yanking the headphones off the girl hidden behind them, the one she called Teddy.'}
+36	36		203							{1: '1', 2: '0.25', 3: '400'}
+37	37		201							{1: '2', 2: '500495', 4: '-400'}
+38	38		301							"{1: '1', 2: 'Teddy', 3: '""Don\'t forget the value of life,"" isn\'t it...?', 4: '2'}"
+39	39		301							{2: 'Teddy', 3: 'We might not say it as much as you do, but every one of us knows why we are working around the clock. We know the stakes.', 4: '2'}
+40	40		204							{1: '1', 2: '14'}
+41	41		301							{2: 'Karenina', 3: 'Then explain why you replaced those parts...', 4: '1'}
+42	42		301							"{2: 'Teddy', 3: ""The reason is simple—I didn't want to die."", 4: '2'}"
+43	43		301							{3: 'Unruffled, Teddy enters a series of codes before pointing at a monitor in front of Karenina.'}
+44	44		301							{2: 'Teddy', 3: 'If we build it according to your design and have the engine run at maximum capacity at all times, the smallest error during assembly will result in a hole on Babylonia, one as big as your head.', 4: '2'}
+45	45		301							{3: 'Karenina turns the monitor back toward Teddy and points at the numbers vehemently.'}
+46	46		301							"{2: 'Karenina', 3: ""Is that it? Then don't screw up during assembly!"", 4: '1'}"
+47	47		301							"{2: 'Teddy', 3: ""Maybe you can modify and assemble the parts with that level of accuracy, but I'm afraid you won't find another daredevil as reckless as you here, and we don't have time to design an automatic assembly plant."", 4: '2'}"
+48	48		204							{1: '2', 2: '5'}
+49	49		301							{2: 'Teddy', 3: 'The HQ tasked us to build a transport craft... not a high-speed coffin that goes up in flames and becomes an expensive firework display.', 4: '2'}
+50	50		204							{1: '1', 2: '14'}
+51	51		301							{2: 'Karenina', 3: 'Ugh...', 4: '1'}
+52	52		301							"{3: ""Karenina cannot refute Teddy's words right this moment.""}"
+53	53		204							{1: '2', 2: '4'}
+54	54		301							{2: 'Teddy', 3: 'And...', 4: '2'}
+55	55		301							{2: 'Karenina', 3: 'And...?!', 4: '1'}
+56	56		301							{2: 'Teddy', 3: 'This engine is too costly...', 4: '2'}
+57	57		301							{2: 'Karenina', 3: 'Excuse me?! Costly? Who gives a damn at a time like this?', 4: '1'}
+58	58		301							"{2: 'Teddy', 3: ""It's one thing that it costs a lot of money... What's worse is that it costs three times more power than the engines on our current transport crafts to run."", 4: '2'}"
+59	59		301							"{2: 'Teddy', 3: ""Don't these transport crafts need to return after they land on the surface? Not to mention that Babylonia can't supply us with additional energy for the extra trips back and forth to Earth outside what they usually do."", 4: '2'}"
+60	61		301							{2: 'Karenina', 3: 'Tch... If only we had time to optimize the power consumption…', 4: '1'}
+61	62		301							{2: 'Teddy', 3: 'Not that I have a better alternative. Unless we can somehow get a source with unlimited power...', 4: '2'}
+62	60		204							{1: '1'}
+63	63		301							"{2: 'Karenina', 3: ""Zero-point energy, is it... It'd be great if humans actually had it in their hands."", 4: '1'}"
+64	64		301							{3: 'If they could obtain this almost-endless power source, they would dramatically change the state of the war—ironically, zero-point reactors were the cause of the Punishing Virus outbreak.'}
+65	65		301							"{3: ""Karenina turns around and stares at the strategic interface on Earth's status. The people down there do not even have the leisure to worry.""}"
+66	66		204							{1: '1', 2: '14'}
+67	67		301							{2: 'Karenina', 3: 'Aaargh! How annoying. Stop dreaming about your fantasy fuel and start figuring out how to lower power consumption.', 4: '1'}
+68	68		202						10.0	{1: '1', 2: '2', 6: '1'}
+69	69		201							{1: '1', 2: '500319'}
+70	70		301							"{1: '1', 2: '???', 3: ""Don't jump to conclusions, lassie. Your fantasy might not be as out of reach as you imagined."", 4: '1'}"
+71	71		301							{3: 'Karenina turns around to find a grinning, vulgar man barging in and interjecting.'}
+72	72		203							{1: '1', 2: '0.25', 3: '400'}
+73	73		201							{1: '2', 2: '500196', 4: '-400'}
+74	74		301							"{1: '1', 2: 'Karenina', 3: ""Hey, who the **** are you, creep? This is the Engineering Force's workshop! We don't allow visitors, and we're not responsible if you hurt yourself."", 4: '2'}"
+75	75		301							{2: '???', 3: 'Ha, how exquisite... Not that your workshop has worked out anything, has it?', 4: '1'}
+76	76		204							{1: '2', 2: '14'}
+77	77		301							{2: 'Karenina', 3: 'W-what did you say?!', 4: '2'}
+78	78		202						10.0	{1: '1', 6: '1'}
+79	79		201							{1: '1', 2: '500495', 4: '400'}
+80	80		301							{1: '1', 2: 'Teddy', 3: 'Karenina, behind him...', 4: '1'}
+81	81		204							{1: '2'}
+82	82		301							{3: 'Teddy points at the man, and only then does Karenina notice that behind him are Hassen and Nikola.'}
+83	83		301							"{2: 'Karenina', 3: ""President Hassen, Commander Nikola... All I can say is that we haven't made any significant progress on the new engine yet if you want an update."", 4: '2'}"
+84	84		202						10.0	{1: '1', 6: '1'}
+85	85		201							{1: '1', 2: '500319', 4: '400'}
+86	86		301							"{1: '1', 2: '???', 3: 'Nah-ah-ah. No one cares about some obsolete transport craft engines. What we need right now is a revolutionary ""weapon.""', 4: '1'}"
+87	87		204							{1: '2', 2: '14'}
+88	88		301							{3: 'Karenina restrains herself and ignores the babbling man, questioning Hassen and Nikola with her gaze.'}
+89	89		202						10.0	{1: '1', 2: '2', 6: '1'}
+90	90		201							{1: '1', 2: '500011'}
+91	91		301							"{1: '1', 2: 'Hassen', 3: ""My apologies, but this is... Collins. He is currently the military's... erm..."", 4: '1'}"
+92	92		301							"{3: ""The seemingly reluctant Hassen meets Nikola's eyes before clearing his throat and continuing.""}"
+93	93		301							"{2: 'Hassen', 3: ""Kind of a... consultant, let's put it like that. We have a very important project we need to discuss with you."", 4: '1'}"
+94	94		202						10.0	{1: '1', 6: '1'}
+95	95		201							{1: '1', 2: '500012'}
+96	96		301							{1: '1', 2: 'Nikola', 3: 'Take a break, the rest of you.', 4: '1'}
+97	97		301							{3: 'Teddy glances at Karenina and sighs, probably thinking that Karenina has gotten into trouble again. She then leads the rest of the team out of the workshop.'}
+98	98		202						10.0	{1: '1', 6: '1'}
+99	99		201							{1: '1', 2: '500319'}
+100	100		301							"{1: '1', 2: 'Collins', 3: ""Alrighty then. Let's not dally around what I need—lassie, you..."", 4: '1'}"
+101	101		203							{1: '1', 2: '0.25', 3: '400'}
+102	102		201							{1: '2', 2: '500196', 3: '14', 4: '-400'}
+103	103		301							{1: '1', 2: 'Karenina', 3: 'MY NAME IS K-A-R-E-N-I-N-A!', 4: '2'}
+104	104		301							{2: 'Collins', 3: 'Oh, how rude of me... Well, Karen, you must have heard of what that Gray Raven Commandant brought back from the Atlantis research center, right? The Omega File?', 4: '1'}
+105	105		204							{1: '2'}
+106	106		301							"{3: ""Hearing that term, Karenina's eyes narrow. She has no idea why the unremarkable man before her is one of the few people with access to this highly-classified information.""}"
+107	107		301							{3: 'Hassen and Nikola were very clear about how confidential the Omega File must remain when they first informed her about it, tasking her to assist the Science Council in testing their theories.'}
+108	108		301							{2: 'Collins', 3: 'So you do know about it. Hahaha! Not a very good lier, are you?', 4: '1'}
+109	109		204							{1: '2', 2: '14'}
+110	110		301			RImgBg1Shake				{2: 'Karenina', 3: '************!', 4: '2'}
+111	111		301							{3: 'Nikola barely manages to hold the furious Karenina back—even though he does wish to see her giving Collins a beating.'}
+112	112		202						10.0	{1: '1', 2: '2', 6: '1'}
+113	113		201							{1: '1', 2: '500011', 3: '5'}
+114	114		301							"{1: '1', 2: 'Hassen', 3: ""I'll explain. The Science Council has successfully developed a prototype for the Omega Weapon, but that is the most they can do. To produce it, we need to employ a zero-point reactor."", 4: '1'}"
+115	115		301							{2: 'Hassen', 3: 'And the only functional zero-point reactor we possess...', 4: '1'}
+116	116		301							{3: 'There is no way to reach Earth right now, not to mention finding a running zero-point reactor on the surface to make the Omega Weapon—but Earth is not the only place with a zero-point reactor.'}
+117	117		203							{1: '1', 2: '0.25', 3: '-400'}
+118	118		202						10.0	{1: '2', 6: '1'}
+119	119		201							{1: '2', 2: '500196', 4: '400'}
+120	120		301							{1: '1', 2: 'Karenina', 3: 'The reactor in the lunar base... It could work.', 4: '2'}
+121	121		202						10.0	{1: '1', 6: '1'}
+122	122		201							{1: '1', 2: '500319', 4: '-400'}
+123	123		301							"{1: '1', 2: 'Collins', 3: ""But it's been closed forever since the outbreak, and no one has the slightest clue what's going on in there. It's why we desperately need someone with technical expertise in zero-point reactors to restart it."", 4: '1'}"
+124	124		301							"{2: 'Karenina', 3: ""So now you're knocking on our door. What a plan."", 4: '2'}"
+125	125		301							{3: 'Collins grins and sits on a random machine tool, unconcerned with the dust and oil stains.'}
+126	126		301							{2: 'Collins', 3: 'This is a once-in-a-lifetime opportunity for any researcher in the energy field. You might even have your name forever remembered in human history...', 4: '1'}
+127	127		301							{3: 'Karenina knows that just because you are remembered does not mean you are remembered fondly. She learned it from her grandfather.'}
+128	128		301							"{2: 'Karenina', 3: ""Hmph, I'm not interested... Find another dumb*** to listen to your bull****."", 4: '2'}"
+129	129		301							"{2: 'Collins', 3: ""How about this bull****... I mean, let me put it another way: do you think it's a good idea to ask some random team instead of the Engineering Force to restart a zero-point reactor?"", 4: '1'}"
+130	130		301							{3: 'Karenina is certain that there is no one in Babylonia, not even someone from the Science Council, who is more experienced than her in the field for this job. She is confident and proud of that fact.'}
+131	131		301							"{2: 'Karenina', 3: ""That's not persuasion, creep. That's a threat..."", 4: '2'}"
+132	132		301							{3: 'Karenina stays silent for once before turning toward Hassen.'}
+133	133		301							{2: 'Karenina', 3: 'President Hassen... Can the Omega Weapon really beat the **** out of that ******* Punishing Virus?', 4: '2'}
+134	134		202						10.0	{1: '1', 6: '1'}
+135	135		201							{1: '1', 2: '500011', 3: '5', 4: '-400'}
+136	136		301							"{1: '1', 2: 'Hassen', 3: ""For what it's worth, it is our only hope."", 4: '1'}"
+137	137		202							{1: '1', 6: '1'}
+138	138		203							{1: '2', 2: '0.25'}
+139	139		204							{1: '2', 2: '14'}
+140	140		301							"{3: ""When the surface was ravaged by the Punishing Virus, Babylonia was humanity's hope for shelter; when the Corrupted destroyed the defenses on Earth, Constructs were humanity's hope for a fighting chance.""}"
+141	141		301							"{3: ""And now, the development of the Omega Weapon is humanity's hope for fighting back against this living hell. Can Karenina really afford to sit this out?""}"
+142	142		204							{1: '2'}
+143	143		301							{2: 'Karenina', 3: 'I see. The Engineering Force will take this job... with two conditions.', 4: '2'}
+144	144		301							"{2: 'Karenina', 3: ""First of all, the people that stay behind will keep working on the new transport craft engine... The things they make will come in handy, I'm sure."", 4: '2'}"
+145	145		301							{2: 'Karenina', 3: 'Second—', 4: '2'}
+146	146		301				AniZhuanchangBegin			{3: 'Karenina pauses, then names her request.'}
+147	147		202							{1: '2', 6: '1'}
+148	148		401						500.0	{1: '1', 2: '36'}
+149	149		401							{1: '1', 2: '208'}
+150	150		101			DialogDisable	AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+151	151		201							{1: '1', 2: '500495'}
+152	152		301			DialogEnable				{1: '1', 3: 'Teddy steps outside of the workshop—she has no idea how long since she last left the place. Hoping to take a break, she instead runs into someone unexpected.'}
+153	153		203							{1: '1', 2: '0.25', 3: '-400'}
+154	154		201							{1: '2', 2: '500497', 3: '2', 4: '400'}
+155	155		301							"{1: '1', 2: 'Norman', 3: ""Hello there. It's been a while!"", 4: '2'}"
+156	156		301							{3: 'Confronted by the enthusiastic Norman, Teddy pretends not to see him. She just sits on the floor before opening her portable terminal and continuing to work on her codes.'}
+157	157		301							{3: 'Norman, in turn, just smiles and walks to her side, looking at her work curiously.'}
+158	158		301							{2: 'Norman', 3: 'Is this where you work now? How is it, Christina? Happy with your job?', 4: '2'}
+159	159		204							{1: '1', 2: '5'}
+160	160		301							{3: 'Hearing that name, Teddy frowns and stops typing.'}
+161	161		301							"{2: 'Teddy', 3: ""There's no Christina here. If you still have a brain, you'd remember that my name is Teddy—Mr. Norman."", 4: '1'}"
+162	162		301							"{2: 'Norman', 3: ""Can't fault your brother for calling you how he's always called you. Old habits die hard."", 4: '2'}"
+163	163		301							{3: 'Teddy is still staring at her screen, but her mind is elsewhere.'}
+164	164		204							{1: '1', 2: '14'}
+165	165		301							{2: 'Teddy', 3: 'You... Why would you go back to the Norman family...', 4: '1'}
+166	166		204							{1: '2', 2: '13'}
+167	167		301							{2: 'Norman', 3: '(Laughs) Probably for that incomprehensible inheritance, I suppose.', 4: '2'}
+168	168		204							{1: '1', 2: '13'}
+169	169		301							"{2: 'Teddy', 3: ""Ha... Is that so? Congratulations, then. I guess you're only here with us dirty and grimy folks for some family business, aren't you..."", 4: '1'}"
+170	170		301							"{2: 'Norman', 3: ""Bingo! What do you know? I've always said my sister is way smarter than me."", 4: '2'}"
+171	171		301							{3: 'Teddy sneers, her face quickly reverting to expressionless once again and her fingers darting across the keyboard on her terminal.'}
+172	172		204							{1: '1'}
+173	173		301							{2: 'Teddy', 3: 'Victoria... Is she well?', 4: '1'}
+174	174		204							{1: '2', 2: '2'}
+175	175		301							{2: 'Norman', 3: 'Of course... At least better than you and I with our dirty work.', 4: '2'}
+176	176		204							{1: '1', 2: '1'}
+177	177		301							"{3: ""Looking at the stains on her sleeves, Teddy glimpses at Norman's stylish outfit and smiles.""}"
+178	178		301							"{2: 'Norman', 3: ""But she throws a fit every time she sees me, asking for her sister to play with her. All I can do is tell her her sister is working right now, and she'll be back once she is free."", 4: '2'}"
+179	179		204							{1: '1', 2: '13'}
+180	180		301							"{2: 'Teddy', 3: ""Whoa... You really are a piece of ****, aren't you... How dare you lie to a child."", 4: '1'}"
+181	181		204							{1: '2', 2: '13'}
+182	182		301							{3: 'Norman laughs dramatically, seemingly unbothered by her insults.'}
+183	183		204							{1: '2', 2: '2'}
+184	184		301							"{2: 'Norman', 3: ""You haven't answered me yet, Teddy... Are you happy? With your job?"", 4: '2'}"
+185	185		204							{1: '1'}
+186	186		301							{3: 'Teddy seems a little surprised, but she answers after a while.'}
+187	187		204							{1: '1', 2: '1'}
+188	188		301							"{2: 'Teddy', 3: ""It's fine... Not screwing around like you are in yours."", 4: '1'}"
+189	189		204							{1: '2', 2: '2'}
+190	190		301							{2: 'Norman', 3: 'Good...', 4: '2'}
+191	191		202							{1: '1', 6: '1'}
+192	192		203							{1: '2', 2: '0.25'}
+193	193		301							{3: 'Norman smiles gently, unlike before. Once his smile fades, Norman mumbles quietly.'}
+194	194		204							{1: '2'}
+195	195		301		1		AniZhuanchangBegin			"{2: 'Norman', 3: ""That's good..."", 4: '2'}"

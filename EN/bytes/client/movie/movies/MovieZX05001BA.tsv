@@ -1,0 +1,641 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory454.jpg'}
+2	2		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront21.png', 4: '4'}
+3	3		401							{1: '1', 2: '229'}
+4	4		109	1						{1: '1', 2: '<size=45>Outside the window lies a gray sky.</size>', 3: '100', 4: '50', 6: '1', 7: '1', 8: '0.5', 9: '3'}
+5	5		109	1						{1: '2', 2: '<size=45>Snow falls in absolute silence, shrouding the world outside in a haze-like veil.</size>', 3: '100', 4: '-50', 6: '1', 7: '1', 8: '0.5', 9: '3'}
+6	6		110							{1: '1', 2: '2'}
+7	7		109	1						{1: '1', 2: '<size=45>You turn away from the window, the dim daylight casting faint shadows on the wall.</size>', 3: '300', 4: '50', 6: '1', 7: '1', 8: '0.5', 9: '3'}
+8	8		109	1						{1: '2', 2: '<size=45>This place seems forgotten by the world. Even the light itself is veiled in thick layers of dust.</size>', 3: '300', 4: '-50', 6: '1', 7: '1', 8: '0.5', 9: '3'}
+9	9		110							{1: '1', 2: '2'}
+10	10		101							{4: '4', 5: '1'}
+11	11		401							{1: '2', 2: '2626'}
+12	12		301			DialogEnable				{3: 'A knock at the door shatters the deathly stillness of the room.'}
+13	13		301							{1: '1', 2: '???', 3: 'Commandant.', 4: '1'}
+14	14		202							{1: '1'}
+15	15		301							"{3: ""The commanding tone that brooks no argument reveals the visitor's identity—it is Vanessa.""}"
+16	16		302							{2: '...', 3: '17'}
+17	17		201							{1: '1', 2: '501038'}
+18	18		301							"{1: '1', 2: 'Vanessa', 3: ""I'm going to let myself in now. I assume you're awake already."", 4: '1'}"
+19	19		302							{2: '...', 3: '20'}
+20	20		202							{1: '1', 6: '1'}
+21	21		401							{1: '2', 2: '743'}
+22	22		301							{3: 'The wooden door creaks open, and a familiar yet unfamiliar Construct appears before you against the light.'}
+23	23		302							{2: '...', 3: '26', 4: '(Try to make a sound)', 5: '24'}
+24	24		301							{3: 'Long deprived of moisture, your vocal cord feels parched. You open your mouth trying to speak but are unable to make any sound.'}
+25	25		301							{3: 'Heavy bandages wrap around your body, their rigid embrace making movement impossible. Even maintaining a sitting position has drained away what little energy you still have left.'}
+26	26		201							{1: '1', 2: '501036', 3: '3'}
+27	27		301							{1: '1', 2: 'Vanessa', 3: '...', 4: '1'}
+28	28		301							{3: 'Vanessa surveys the bare room, finding it practically empty save for a glass of water on the bedside table—likely left by whoever escorted you back.'}
+29	29		301							{3: 'The water has gone lukewarm, but it is better than nothing at this point.'}
+30	30		301							{3: 'As she holds the glass to your mouth, Vanessa feels an inexplicable sense of irritation.'}
+31	31		204							{1: '1', 2: '1'}
+32	32		301							{2: 'Vanessa', 3: 'Have some water.', 4: '1'}
+33	33		302							{2: '...', 3: '34', 4: '(Thank you.)', 5: '34'}
+34	34		204							{1: '1', 2: '3'}
+35	35		301							"{2: 'Vanessa', 3: ""I'm here to inform you about the arrangements for Lucia's frame."", 4: '1'}"
+36	36		302							{2: '...', 3: '37'}
+37	37		301							{3: 'You feel your heart gripped by an invisible force as suppressed memories tear their way forcefully through your mind.'}
+38	38		301							{3: 'Gunsmoke, ammunition, crimson mist spreading across your field of vision. Someone that you cannot be more familiar with draws near only to drift away again.'}
+39	39		202							{1: '1'}
+40	40		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+41	41		504							{1: '0.8'}
+42	42		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_78.jpg'}
+43	43		301				DialogDisable			{2: 'Lucia', 3: '...Commandant...【kuroname】.'}
+44	44		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_89.jpg', 3: '0', 4: '1', 5: '2'}
+45	45		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_89.jpg'}
+46	46		301			DialogEnable	AniZhuanchangBegin			"{2: 'Lucia', 3: ""I don't... want it all to end here...""}"
+47	47		205							{1: '999'}
+48	48		504							{1: '0'}
+49	49		502						400.0	{1: 'DialogDisable'}
+50	50		302							{2: '(Lucia...)', 3: '51', 4: 'Lu... ci... a...', 5: '53', 6: 'Lucia...', 7: '53'}
+51	51		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory454.jpg'}
+52	52	55	301			DialogEnable				{3: 'Your throat threatens to tear apart as you try with every ounce of your being to say her name to no avail.'}
+53	53		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory454.jpg'}
+54	54	55	301			DialogEnable				{3: 'Mustering every last bit of strength, you finally manage to get her name off your tongue once more.'}
+55	55		201							{1: '18', 2: '501036', 3: '8'}
+56	56		301							"{1: '1', 2: 'Vanessa', 3: ""Don't waste your energy. Your body is exhausted and severely dehydrated. You need time to recover."", 4: '18'}"
+57	57		204							{1: '18', 2: '4'}
+58	58		301							"{2: 'Vanessa', 3: ""We've placed Lucia's frame in a sleeping pod at the settlement."", 4: '18'}"
+59	59		301							"{2: 'Vanessa', 3: ""Emma and Rosa have made multiple attempts to fix the Omega Core in her frame but haven't had any luck so far."", 4: '18'}"
+60	60		302							{2: '...', 3: '61'}
+61	61		301							"{2: 'Vanessa', 3: ""I believe we're both used to this by now and I didn't think I needed to say this, but..."", 4: '18'}"
+62	62		202							{1: '18'}
+63	63		301							{3: 'She turns her head.'}
+64	64		201							{1: '1', 2: '501036', 3: '3'}
+65	65		301							{1: '1', 2: 'Vanessa', 3: 'My condolences.', 4: '1'}
+66	66		204							{1: '1', 2: '4'}
+67	67		301							{2: 'Vanessa', 3: 'And...', 4: '1'}
+68	68		401							{1: '2', 2: '2626'}
+69	69		301							{3: 'Just as she is about to continue, the rotting wooden door creaks again.'}
+70	70		301							{2: 'Vanessa', 3: '...Come in.', 4: '1'}
+71	71		401							{1: '2', 2: '743'}
+72	72		202							{1: '1', 6: '1'}
+73	73		201							{1: '1', 2: '501036', 3: '4', 4: '400'}
+74	74		201							{1: '2', 2: '500984', 4: '-400'}
+75	75		301							"{1: '1', 2: 'Emma', 3: ""Vanessa, the mutated Red Tide has appeared at the settlement's perimeter. It has a squad trapped, and we don't have enough personnel to spare..."", 4: '2'}"
+76	76		301							"{2: 'Vanessa', 3: ""Let's go."", 4: '1'}"
+77	77		401							{1: '2', 2: '4383'}
+78	78		203						250.0	{1: '2', 2: '0.5', 3: '-800'}
+79	79		203							{1: '1', 2: '0.5', 3: '-400'}
+80	80		202							{1: '2'}
+81	81		301							{3: 'Few words are exchanged—they seem quite used to such emergencies by now. After their brief conversation, Vanessa departs in a rush.'}
+82	82		301							"{2: 'Vanessa', 3: ""Stay here. I'll be back."", 4: '1'}"
+83	83		203							{1: '1', 2: '0.5', 3: '-800'}
+84	84		202							{1: '1'}
+85	85		401							{1: '2', 2: '753'}
+86	86		301							{3: 'The door slams shut and their footsteps fade away. Silence once again descends upon the room.'}
+87	87		302							{2: 'Lucia...', 3: '88'}
+88	88		301							{3: 'Slowly, you come back to your senses with what little sense you still have, but your body remains immersed in overwhelming sorrow. Try as you may, you can barely move a finger.'}
+89	89		301				AniZhuanchangBegin			{3: 'You look out the window.'}
+90	90		502						400.0	{1: 'DialogDisable'}
+91	91		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+92	92		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory105.png'}
+93	93		301			DialogEnable	AniZhuanchangBegin			{3: 'Beyond the window lies a gray sky, as heavy snow blankets the entire world.'}
+94	94		502						400.0	{1: 'DialogDisable'}
+95	95		401							{1: '1', 2: '36'}
+96	96		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+97	97		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory54.jpg'}
+98	98		401							{1: '1', 2: '211'}
+99	99		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+100	100		401							{1: '2', 2: '915'}
+101	101		502							{1: 'RImgBg1Shake'}
+102	102		301			DialogEnable				{3: 'Vanessa and Emma rush to the location of the distress signal. The battle rages on until, with their support, the mutated Red Tide finally retreats. The surviving squad members have to keep one another standing as they deal with the aftermath.'}
+103	103		301							{3: 'Vanessa has become a Construct for quite some time now, but she still has no love for combat.'}
+104	104		201							{1: '1', 2: '501036', 3: '5'}
+105	105		301							{1: '1', 2: 'Vanessa', 3: 'How revolting.', 4: '1'}
+106	106		401							{1: '2', 2: '1543'}
+107	107		301							{3: 'She brushes the snow off her collar while letting Emma tend to the injuries she sustained from the battle.'}
+108	108		202							{1: '1', 6: '1'}
+109	109		201							{1: '1', 2: '501036', 3: '4', 4: '400'}
+110	110		201							{1: '2', 2: '500984', 4: '-400'}
+111	111		301							"{1: '1', 2: 'Emma', 3: ""The mutated Red Tide is difficult to handle, true, but I never thought you'd slip up like that."", 4: '2'}"
+112	112		301							{2: 'Emma', 3: 'You seem preoccupied... Is it because of the Gray Raven Commandant?', 4: '2'}
+113	113		204							{1: '1'}
+114	114		301							{2: 'Vanessa', 3: 'Hah... The Gray Raven Commandant? I already have more than I can handle on my plate now.', 4: '1'}
+115	115		204							{1: '1', 2: '4'}
+116	116		301							{2: 'Vanessa', 3: 'Have the scouts reported back yet? Did the border patrol make it back alive? Are the nearby supply depots still operational? Do we have enough medical supplies for the wounded?', 4: '1'}
+117	117		301							{2: 'Emma', 3: 'Vanessa...', 4: '2'}
+118	118		204							{1: '1', 2: '2'}
+119	119		301							{3: 'Vanessa props herself up and lets out a sneer.'}
+120	120		301							{2: 'Vanessa', 3: 'The Hetero Tower, the Punishing Virus, the continuously mutating Red Tide... And now here we are, all of us crammed into this damn pinprick of space near the ARU...', 4: '1'}
+121	121		301							"{2: 'Vanessa', 3: 'Instead of feeling sorry for our bedridden ""great"" Chief, I say let\'s save some sympathy for ourselves.', 4: '1'}"
+122	122		301							{2: 'Emma', 3: 'How is the commandant doing, though?', 4: '2'}
+123	123		204							{1: '1', 2: '8'}
+124	124		301							{2: 'Vanessa', 3: '...', 4: '1'}
+125	125		204							{1: '1', 2: '4'}
+126	126		301							"{2: 'Vanessa', 3: ""Let's not send anyone to disturb our patient for the time being."", 4: '1'}"
+127	127		204							{1: '1', 2: '3'}
+128	128		301							{2: 'Vanessa', 3: 'I mean... with Lucia gone and all.', 4: '1'}
+129	129		301							{3: 'She falls silent for a moment.'}
+130	130		204							{1: '1', 2: '4'}
+131	131		301							"{2: 'Vanessa', 3: ""Even if we want to know what the Gray Ravens went through, let's at least wait until their commandant has recovered enough to speak."", 4: '1'}"
+132	132		301							"{2: 'Emma', 3: ""Right, I'll pass the word along..."", 4: '2'}"
+133	133		204							{1: '1', 2: '3'}
+134	134		301							{2: 'Vanessa', 3: '【kuroname】... You never change, do you...', 4: '1'}
+135	135		202							{1: '1', 2: '2'}
+136	136		201							{1: '1', 2: '500896'}
+137	137		401							{1: '2', 2: '1513'}
+138	138		301							{1: '1', 2: 'Barniga', 3: 'Vanessa... Vanessa!', 4: '1'}
+139	139		301							{3: 'A refugee comes running from nearby.'}
+140	140		202							{1: '1'}
+141	141		201							{1: '1', 2: '501036', 3: '5', 4: '400'}
+142	142		201							{1: '2', 2: '500896', 4: '-400'}
+143	143		301							{1: '1', 2: 'Vanessa', 3: 'Speak.', 4: '1'}
+144	144		301							{2: 'Barniga', 3: 'The supply warehouse behind the settlement... There are Hetero-Creatures there!', 4: '2'}
+145	145		204							{1: '1', 2: '4'}
+146	146		301							"{2: 'Vanessa', 3: ""...What good is a patrol if they can't even do their job?"", 4: '1'}"
+147	147		202							{1: '1', 2: '2', 6: '1'}
+148	148		201							{1: '2', 2: '500984'}
+149	149		301							{1: '1', 2: 'Emma', 3: 'Oh no, that warehouse has our last batch of medical supplies...', 4: '2'}
+150	150		202							{1: '2'}
+151	151		401							{1: '2', 2: '1504'}
+152	152		301							{3: 'Without missing a beat, they rush back toward the settlement.'}
+153	153		301				AniZhuanchangBegin			{3: 'The snowfall grows heavier by the minute.'}
+154	154		502						400.0	{1: 'DialogDisable'}
+155	155		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+156	156		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory55.jpg'}
+157	157		301			DialogEnable				{3: 'They barely reach the outskirts when they see the settlement in chaos, with casualties being rushed to the medical tents.'}
+158	158		201							{1: '1', 2: '500294'}
+159	159		301							{1: '1', 2: 'Refugee B', 3: 'Vanessa...!', 4: '1'}
+160	160		301							{3: 'Just then, a refugee spots them and comes running over, calling out Vanessa from a distance.'}
+161	161		202							{1: '1'}
+162	162		201							{1: '1', 2: '501036', 3: '4', 4: '400'}
+163	163		201							{1: '2', 2: '500294', 4: '-400'}
+164	164		301							"{1: '1', 2: 'Vanessa', 3: ""Cut to the chase. I'm tired of hearing my name called today."", 4: '1'}"
+165	165		301							{2: 'Vanessa', 3: 'Did the Hetero-Creatures completely destroy the warehouse? Dammit, I knew we should have left someone behind at the settlement...', 4: '1'}
+166	166		204							{1: '1', 2: '15'}
+167	167		301							"{2: 'Vanessa', 3: ""Emma, implement emergency protocols and list the damaged supplies. When you're done..."", 4: '1'}"
+168	168		301							{2: 'Refugee B', 3: 'The w-warehouse is undamaged!', 4: '2'}
+169	169		204							{1: '1', 2: '5'}
+170	170		301							{2: 'Vanessa', 3: '?', 4: '1'}
+171	171		301							"{2: 'Vanessa', 3: ""Then what's all the fuss about? Has Discord returned early?"", 4: '1'}"
+172	172		301							"{2: 'Refugee B', 3: ""I-it's the commandant from that small room in the corner who came out and led the off-duty patrol team to lure away the Hetero-Creatures!"", 4: '2'}"
+173	173		301							"{2: 'Refugee B', 3: ""I can't believe what an elite commandant from the old Babylonia is capable of. I can't imagine how powerful Babylonia must have been at its peak..."", 4: '2'}"
+174	174		202							{1: '1', 2: '2'}
+175	175		104						500.0	{1: '0|-100|-85', 2: '0.75'}
+176	176		301							{3: 'The Earth-born human gazes up at the sky, his eyes beaming with admiration.'}
+177	177		201							{1: '1', 2: '501036', 4: '400'}
+178	178		201							{1: '2', 2: '500294', 4: '-400'}
+179	179		301							"{1: '1', 2: 'Vanessa', 3: ""The commandant came out...? Hah. Can't say I'm surprised."", 4: '1'}"
+180	180		301							{3: 'Looking behind the refugee, she does not see the Gray Raven Commandant.'}
+181	181		204							{1: '1', 2: '4'}
+182	182		301							{2: 'Vanessa', 3: '...Where is that commandant?', 4: '1'}
+183	183		301							{2: 'Refugee B', 3: 'I thought the commandant was just over there... Might have passed out again... Vanessa?', 4: '2'}
+184	184		301							{3: 'Without responding to the refugee, Vanessa walks in big strides toward the settlement.'}
+185	185		202							{1: '1', 2: '2'}
+186	186		401							{1: '2', 2: '1514'}
+187	187		104				AniZhuanchangBegin		250.0	{1: '0|50|-175', 2: '0.5'}
+188	188		401							{1: '1', 2: '36'}
+189	189		502						400.0	{1: 'DialogDisable'}
+190	190		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+191	191		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory454.jpg'}
+192	192		401							{1: '1', 2: '176'}
+193	193		401							{1: '2', 2: '4892'}
+194	194		201							{1: '1', 2: '501036', 3: '5'}
+195	195		301			DialogEnable				"{1: '1', 2: 'Vanessa', 3: ""Didn't I tell you to stay here?!"", 4: '1'}"
+196	196		301							{3: 'The wooden door slams against the wall, having been pushed a little harder than originally intended. The daylight remains dim, but the room is already empty.'}
+197	197		204							{1: '1', 2: '3'}
+198	198		301							{1: '1', 2: 'Vanessa', 3: '...Where did the commandant go?', 4: '1'}
+199	199		202							{1: '1', 6: '1'}
+200	200		201							{1: '1', 2: '501036', 3: '4', 4: '400'}
+201	201		201							{1: '2', 2: '500311', 4: '-400'}
+202	202		301							{1: '1', 2: 'Settlement Worker A', 3: 'You mean the one you brought back? Oh my, that person was absolutely incredible...', 4: '2'}
+203	203		204							{1: '1'}
+204	204		301							{2: 'Vanessa', 3: 'I asked you a question.', 4: '1'}
+205	205		301				AniZhuanchangBegin			{2: 'Settlement Worker A', 3: 'Ahem. I think the commandant headed toward the center of the settlement... by the Great Tombstone.', 4: '2'}
+206	206		202							{1: '1', 2: '2'}
+207	207		502						400.0	{1: 'DialogDisable'}
+208	208		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '3'}
+209	209		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1079.jpg'}
+210	210		301			DialogEnable				{3: 'At the heart of the settlement stands a towering stone monument.'}
+211	211		301							{3: 'At first, the stone monument was merely a relic from a Golden Age city, weathered by time yet standing tall at the center of this land.'}
+212	212		104							{1: '50|-150|-300', 2: '2'}
+213	213		301							{3: 'When the settlement was established as a permanent refuge, someone unknown became the first to carve the names of the fallen into the stone.'}
+214	214		104							{1: '50|150|-300', 2: '5'}
+215	215		301							{3: 'Anthony, Constance, Selke, Sica, Daniel...'}
+216	216		301							{3: 'Ross, Eli, Bambinata, Yang Ji, An Jie...'}
+217	217		301							{3: '...'}
+218	218		301							{3: 'Humans used to tread carefully around the subject of death as if avoiding it could somehow ward off the farewells brought by disasters.'}
+219	219		301							{3: 'But now that farewells have become commonplace, such taboos mean nothing. The monument is simply known as the Great Tombstone, a landmark at the center of the settlement.'}
+220	220		201							{1: '1', 2: '501036', 3: '4'}
+221	221		301				AniZhuanchangBegin			{1: '1', 2: 'Vanessa', 3: '...', 4: '1'}
+222	222		202							{1: '1'}
+223	223		401							{1: '1', 2: '36'}
+224	224		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5001_01.jpg'}
+225	225		401							{1: '1', 2: '5016'}
+226	226		301			AniZhuanchangEnd				"{3: ""Vanessa's breath creates wisps of vapor in the air. After a quick calibration of her visual module, she spots the unmistakable figure before the Great Tombstone, both draped in the same blanket of snow.""}"
+227	227		201							{1: '18', 2: '501036', 3: '4'}
+228	228		301							{1: '1', 2: 'Vanessa', 3: '...Trying to play tough, huh?', 4: '18'}
+229	229		301							"{1: '1', 2: 'Vanessa', 3: ""You're putting yourself in danger when you aren't fully recovered. Is that what they taught you in F.O.S.?"", 4: '18'}"
+230	230		204							{1: '18', 2: '5'}
+231	231		301							{1: '1', 2: 'Vanessa', 3: '...【kuroname】?', 4: '18'}
+232	232		301							{3: 'Despite her words, the figure remains completely still before the tombstone.'}
+233	233		204							{1: '18', 2: '15'}
+234	234		301							{1: '1', 2: 'Vanessa', 3: 'Hey!', 4: '18'}
+235	235		202							{1: '18'}
+236	236		401							{1: '2', 2: '1514'}
+237	237		104						250.0	{1: '0|50|-50', 2: '0.25'}
+238	238		104							{1: '0|0|-75', 2: '0.25'}
+239	239		301							{3: 'Sensing something amiss, Vanessa scurries up and grabs you by your shoulders, forcefully turning you around. Her words of reproach die in her throat as she meets your vacant, lifeless eyes.'}
+240	240		201							{1: '1', 2: '501036', 3: '5', 4: '400'}
+241	241		301							{1: '1', 2: 'Vanessa', 3: 'You—', 4: '1'}
+242	242		202							{1: '1'}
+243	243		301				AniZhuanchangBegin			{3: 'The heavy snow continues to fall.'}
+244	244		502						400.0	{1: 'DialogDisable'}
+245	245		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1079.jpg'}
+246	246		301			DialogEnable				{3: 'With the Hetero-Creature lured away by the patrol, you gaze upon the tombstone amid the swirling snow as you are trapped in an uncertain future.'}
+247	247		302							{2: '...', 3: '248', 4: '(Walk up slowly)', 5: '250'}
+248	248		401							{1: '2', 2: '1514'}
+249	249		301							{3: 'You find yourself walking toward the tombstone despite yourself, your thoughts still a mess.'}
+250	250		306							{1: '1'}
+251	251		502							{1: 'RImgBg1BlowUp'}
+252	252		301							{3: 'Your fingers trace over the names, some of which you know, while others you do not. Each line of the dark engraving is a scar time has left behind, forever branded into the gray stone.'}
+253	253		301							{3: 'From top to bottom, countless memories are densely etched onto the memorial stone that towers beyond sight.'}
+254	254		301							{3: 'They are all gone.'}
+255	255		301							{3: 'Your breathing becomes rapid and uncontrollable as exhaustion, like a strand of fragile yet sharp spider silk, slowly pierces your heart, draining what little life you have left.'}
+256	256		306							
+257	257		201							{1: '18', 2: '501036', 3: '3'}
+258	258		301							{1: '1', 2: 'Vanessa', 3: 'Gray Raven Commandant...', 4: '18'}
+259	259		202							{1: '18'}
+260	260		301							{3: 'Her ethereal voice sounds like it has traveled through time and space to reach you here.'}
+261	261		201							{1: '18', 2: '501036', 3: '4'}
+262	262		301				AniZhuanchangBegin			{1: '1', 2: 'Vanessa', 3: '...Play tough... taught you... F.O.S...', 4: '18'}
+263	263		502						400.0	{1: 'DialogDisable'}
+264	264		202							{1: '18'}
+265	265		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1079.jpg'}
+266	266		401							{1: '2', 2: '4044'}
+267	267		201							{1: '1', 2: '501036', 3: '5'}
+268	268		301			DialogEnable				"{1: '1', 3: ""Feeling a firm grip on your shoulder, you slowly turn around. In Vanessa's eyes, you see an exhausted, numbed human face—pale as a ghost that has escaped its grave.""}"
+269	269		301							{2: 'Vanessa', 3: '...You...', 4: '1'}
+270	270		202							{1: '1'}
+271	271		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+272	272		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+273	273		504							{1: '0.8'}
+274	274		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+275	275		201							{1: '1', 2: '500166', 3: '5', 4: '400'}
+276	276		201							{1: '2', 2: '1031001', 3: '3', 4: '-400'}
+277	277		301							{1: '1', 2: 'Lucia', 3: '...Commandant? Commandant! How in the world...', 4: '1'}
+278	278		301							{2: 'Liv', 3: 'Commandant... What happened? Are you alright?', 4: '2'}
+279	279		202							{1: '1', 2: '2', 6: '1'}
+280	280		201							{1: '1', 2: '500568'}
+281	281		301							"{1: '1', 2: 'Lee', 3: ""What's going on... I'll contact the Star of Life right away."", 4: '1'}"
+282	282		202							{1: '1', 6: '1'}
+283	283		201							{1: '1', 2: '500166', 3: '5'}
+284	284		301							{1: '1', 2: 'Lucia', 3: 'Commandant... 【kuroname】...', 4: '1'}
+285	285		202							{1: '1', 6: '1'}
+286	286		111				AniZhuanchangBegin			{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+287	287		502							{1: 'DialogDisable'}
+288	288		504							{1: '0'}
+289	289		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+290	290		301			DialogEnable				{1: '1', 2: 'Vanessa', 3: '—Pull yourself together!', 4: '1'}
+291	291		302							{2: 'Cough—cough—', 3: '292', 4: '...', 5: '292'}
+292	292		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+293	293		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+294	294		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1079.jpg'}
+295	295		201							{1: '1', 2: '501036', 3: '5'}
+296	296		301							{1: '1', 3: 'With that, you snap back to your senses.'}
+297	297		204							{1: '1', 2: '15'}
+298	298		301							{2: 'Vanessa', 3: '【kuroname】! Wake up!', 4: '1'}
+299	299		301							"{2: 'Vanessa', 3: ""Get back to your room right now—Emma will be back any moment, and you're in critical condition..."", 4: '1'}"
+300	300		301							"{3: ""Vanessa furrows her brow as she checks the infection readings on the protective suit you're reading.""}"
+301	301		204							{1: '1', 2: '5'}
+302	302		301							{2: 'Vanessa', 3: 'I should have locked that door... Hello? 【kuroname】?', 4: '1'}
+303	303		301							{3: 'She is surprised to find you unresponsive no matter how she calls your name. Your pupils are dilated and unfocused, and you are seemingly deaf to her voice.'}
+304	304		301							{2: 'Vanessa', 3: 'Dammit...', 4: '1'}
+305	305		301							{3: 'Her knuckles white with tension, Vanessa grinds her teeth as she fights back the urge to explode.'}
+306	306		204							{1: '1', 2: '15'}
+307	307		301							{2: 'Vanessa', 3: 'What are you trying to do?! Freeze yourself to death out here?!', 4: '1'}
+308	308		301							{2: 'Vanessa', 3: 'Is this why Lucia brought you back?! To bury yourself beneath this gravestone?!', 4: '1'}
+309	309		301							{3: 'Seemingly triggered by some keyword, you break into a coughing fit, showing signs of regaining consciousness.'}
+310	310		302							{2: 'I...', 3: '311', 4: 'Lucia...', 5: '312'}
+311	311		302							{2: 'Lucia...', 3: '312'}
+312	312		301							{2: 'Vanessa', 3: 'Lucia is gone! Do you want to join her in a sleeping pod, too?!', 4: '1'}
+313	313		302							{2: '...', 3: '314'}
+314	314		202							{1: '1'}
+315	315		301							{3: 'Lucia is dead.'}
+316	316		301							{3: 'Who... killed Lucia?'}
+317	317		401							{1: '2', 2: '2624'}
+318	318		111							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+319	319		301							{3: 'Jumbled memories assault your mind, and your heart pounds so hard that it threatens to crush your ribs and chest.'}
+320	320		502							{1: 'DialogDisable'}
+321	321		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+322	322		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+323	323		401							{1: '2', 2: '558'}
+324	324		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+325	325		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cgqz1503.jpg'}
+326	326		401							{1: '2', 2: '558'}
+327	327		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+328	328		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_38.jpg'}
+329	329		401							{1: '2', 2: '558'}
+330	330		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+331	331		104							{1: '150|0|-150', 2: '0'}
+332	332		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg616_1.jpg'}
+333	333		401							{1: '2', 2: '558'}
+334	334		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+335	335		104							{1: '200|0|-150', 2: '0'}
+336	336		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4201_17.jpg'}
+337	337		401							{1: '2', 2: '558'}
+338	338		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+339	339		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+340	340		402							{1: '2624'}
+341	341		301			DialogEnable				{3: 'Fragments of vivid colors crash across your retina as Lucia moves her lips in your memory, seemingly trying to tell you something...'}
+342	342		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+343	343		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+344	344		504							{1: '0.8'}
+345	345		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory744.jpg'}
+346	346		201							{1: '1', 2: '500994', 3: '2'}
+347	347		301				DialogDisable			{1: '1', 2: 'Lucia', 3: 'Ahem... Captain 【kuroname】.', 4: '1'}
+348	348		202							{1: '1', 6: '1'}
+349	349		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+350	350		201							{1: '1', 2: '500994', 3: '1'}
+351	351		301			DialogEnable	DialogDisable			{1: '1', 2: 'Lucia', 3: 'Even so, that also brings the promise of fresh hope.', 4: '1'}
+352	352		202							{1: '1', 6: '1'}
+353	353		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+354	354		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1025.jpg'}
+355	355		201							{1: '1', 2: '500994', 3: '2'}
+356	356		301			DialogEnable				"{1: '1', 2: 'Lucia', 3: ""I'm so glad I got the chance to meet you, 【kuroname】."", 4: '1'}"
+357	357		202							{1: '1'}
+358	358		301				AniZhuanchangBegin			{3: '...'}
+359	359		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1079.jpg'}
+360	360		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+361	361		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+362	362		504							{1: '0'}
+363	363		301			AniZhuanchangEnd				{3: 'The wind now bites as cold as it did that day, except Lucia now lies in a sleeping pod.'}
+364	364		301							{3: 'Seeing your eyes lose focus once again, Vanessa clenches her fist tightly.'}
+365	365		401							{1: '2', 2: '1512'}
+366	366		301			RImgBg1Shake				"{3: '""Slam""—'}"
+367	367		301							{3: 'She slams her fist into the gravestone behind you, the metallic scent of vital fluid piercing the frigid air.'}
+368	368		302							{2: '...', 3: '369', 4: '(Breathe heavily)', 5: '369'}
+369	369		401							{1: '2', 2: '4044'}
+370	370		104						300.0	{1: '0|100|-50', 2: '0.5'}
+371	371		301							{3: 'Your legs give out, and you slide down against the gravestone to the ground, slamming your head on the monument.'}
+372	372		301							"{3: ""The pain dispels all hallucinations, and all you see through your vacant eyes is Vanessa's face—one going from burning anger to calm.""}"
+373	373		201							{1: '1', 2: '501036', 3: '4'}
+374	374		301							"{1: '1', 2: 'Vanessa', 3: ""I'm not gonna hurt you, but I'm not gonna waste any more time on you. The entire settlement depends on me to keep it running."", 4: '1'}"
+375	375		301							{2: 'Vanessa', 3: 'If you have no desire to get out of your current state... Emma.', 4: '1'}
+376	376		203							{1: '1', 2: '0.25', 3: '400'}
+377	377		201							{1: '2', 2: '500984', 4: '-400'}
+378	378		301							"{1: '1', 2: 'Emma', 3: ""...Uh, what's... what's going on here?!"", 4: '2'}"
+379	379		301							{3: 'Emma, having rushed to the scene, stares in shock at Vanessa and you.'}
+380	380		204							{1: '1', 2: '4'}
+381	381		301							"{2: 'Vanessa', 3: ""The commandant just successfully commanded the patrol and saved our supply depot. I'm here to evaluate the commandant's performance and distribute the appropriate rewards."", 4: '1'}"
+382	382		301							{2: 'Emma', 3: '...Okay, b-but...', 4: '2'}
+383	383		301							"{2: 'Vanessa', 3: ""Do as I say. Once everything's done, escort the commandant to Logistics and let them handle things from there."", 4: '1'}"
+384	384		301							{2: 'Emma', 3: '...Understood.', 4: '2'}
+385	385		301							"{3: ""Despite her doubts, Emma continues to follow Vanessa's orders.""}"
+386	386		204							{1: '1', 2: '1'}
+387	387		301							{2: 'Vanessa', 3: 'As for you...', 4: '1'}
+388	388		301							"{2: 'Vanessa', 3: ""I understand how you feel, but I've been living on Earth for 30 years now."", 4: '1'}"
+389	389		301							"{3: ""Crimson vital fluid slowly creeps over Bambinata's name on the gravestone.""}"
+390	390		204							{1: '1', 2: '4'}
+391	391		301							"{2: 'Vanessa', 3: ""...That's it."", 4: '1'}"
+392	392		301							"{2: 'Vanessa', 3: ""If you can't get back on your feet, just remain seated."", 4: '1'}"
+393	393		301							"{2: 'Vanessa', 3: ""Live on, and live as a normal person. Perhaps that's what Lucia..."", 4: '1'}"
+394	394		202							{1: '1', 2: '2'}
+395	395		301							{3: 'She presses her lips together and speaks no more, turning to leave.'}
+396	396		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+397	397		301				AniZhuanchangBegin			{3: 'Her footsteps fade into the distance. The snow dust on the ground nearly buries you whole as a numbing cold grips your every sense.'}
+398	398		104							{1: '0|0|0', 2: '0'}
+399	399		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+400	400		502							{1: 'DialogDisable'}
+401	401		205							{1: '999'}
+402	402		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+403	403		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+404	404		307							{1: 'Lucia is dead.', 3: '60', 4: 'ff4e4eff'}
+405	405		301			AniZhuanchangEnd				{3: 'Lucia is dead.'}
+406	406		307							{2: '1'}
+407	407		301			DialogEnable				{3: 'Excruciating pain cuts through your mind. That most familiar signal will never reach your Mind Beacon again.'}
+408	408		302							{2: 'I...', 3: '409', 9: '2'}
+409	409		301							{3: 'Like a drowning person grasping at straws, you force out words through your destroyed throat, even if they come out bloodied and broken.'}
+410	410		302				AniZhuanchangBegin			{2: 'Lucia...', 3: '411', 9: '2'}
+411	411		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+412	412		502							{1: 'DialogDisable'}
+413	413		104							{1: '-250|0|-160', 2: '0'}
+414	414		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_98.jpg'}
+415	415		307						100.0	{1: 'Is this... the ending she wanted to see?', 3: '65', 4: 'ffffffff', 5: '0'}
+416	416		301							{3: 'Is this... the ending she wanted to see?'}
+417	417		307							{2: '1'}
+418	418		301			DialogEnable	AniZhuanchangBegin			{3: 'No... Not like this...'}
+419	419		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+420	420		504							{1: '0.8'}
+421	421		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory998.jpg'}
+422	422		211							{1: '1', 2: '1021036', 3: '4', 7: '1'}
+423	423		301			AniZhuanchangEnd	AniZhuanchangBegin			"{1: '1', 2: 'Lucia', 3: ""Your suffering at the Hetero Tower is over... I believe better days will come, and from now on, you'll be safe and sound."", 4: '101'}"
+424	424		212							{1: '1', 6: '1'}
+425	425		502						400.0	{1: 'DialogDisable'}
+426	426		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_78.jpg'}
+427	427		301			DialogEnable				"{2: 'Lucia', 3: ""I just can't... bring myself to part ways with you like this...""}"
+428	428		301				AniZhuanchangBegin			{2: 'Lucia', 3: 'How could I forgive myself for... leaving you here all alone...'}
+429	429		502						400.0	{1: 'DialogDisable'}
+430	430		504							{1: '0'}
+431	431		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '3'}
+432	432		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1079.jpg'}
+433	433		302							{2: '(Turn to look at the tombstone)', 3: '434'}
+434	434		301			DialogEnable				{3: 'An inch of empty space remains at the bottom of the tombstone.'}
+435	435		302							{2: '(Pick up a pebble from nearby)', 3: '436'}
+436	436		301				AniZhuanchangBegin			{3: 'Memories tangle around your mind like scattered threads. You feel an urge... an urge to carve something into the gravestone.'}
+437	437		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+438	438		502						400.0	{1: 'DialogDisable'}
+439	439		304			AniZhuanchangEnd				{1: 'This is... the epitaph of Lucia and the Gray Raven.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory538.png', 6: '1', 7: '-3', 10: '1'}
+440	440		304							{1: 'We... once existed in this world.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory538.png', 6: '1', 10: '1'}
+441	441		304							{1: 'We... once fought to reclaim Earth.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory538.png', 6: '1', 10: '1'}
+442	442		304							{1: 'We...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory538.png', 6: '1', 10: '1'}
+443	443		304				AniZhuanchangBegin			{1: 'We... are Gray Raven.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory538.png', 6: '1', 9: '1', 10: '1'}
+444	444		502							{1: 'DialogEnable'}
+445	445		401							{1: '2', 2: '2593'}
+446	446		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '3'}
+447	447		301			AniZhuanchangEnd	DialogDisable			"{3: ""Blood seeps through your tattered tactical gloves as you clench your fist. Your mind is empty—vacant of all but one obsession: to finish carving what you haven't.""}"
+448	448		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+449	449		302				AniZhuanchangBegin			"{2: ""(Carve Gray Raven's emblem)"", 3: '450', 4: ""(Carve Lucia's name)"", 5: '457'}"
+450	450		502							{1: 'DialogDisable'}
+451	451		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+452	452		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_03.jpg'}
+453	453		301			DialogEnable				{3: 'There are no survivors in this catastrophe.'}
+454	454		301							{3: '...This will end.'}
+455	455		301				AniZhuanchangBegin			{3: 'Gray Raven...'}
+456	456	463	502							{1: 'DialogDisable'}
+457	457		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+458	458		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_83.jpg'}
+459	459		301			DialogEnable				{3: 'There are no survivors in this catastrophe.'}
+460	460		301							{3: '...This will end.'}
+461	461		301				AniZhuanchangBegin			{3: 'Lucia...'}
+462	462	463	502							{1: 'DialogDisable'}
+463	463		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+464	464		302				AniZhuanchangBegin			{2: '(Feeling tired)', 3: '465', 4: '(I just... want to sleep)', 5: '465'}
+465	465		401							{1: '2', 2: '10042416'}
+466	466		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+467	467		502							{1: 'DialogEnable'}
+468	468		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'Far too exhausted to move anymore, you slowly slide down against the Great Tombstone.'}
+469	469		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1080.jpg'}
+470	470		301			AniZhuanchangEnd				{3: 'At some point, the heavy snow has stopped.'}
+471	471		301				DialogDisable			{3: 'The setting sun pierces through the deep, hazy clouds, scattering its dying rays as night falls like a curtain and slowly drapes over half the sky.'}
+472	472		401							{1: '2', 2: '558'}
+473	473		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+474	474		504							{1: '0.8'}
+475	475		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_79.jpg'}
+476	476		401							{1: '2', 2: '558'}
+477	477		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+478	478		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_34.jpg'}
+479	479		401							{1: '2', 2: '558'}
+480	480		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+481	481		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_27.jpg'}
+482	482		401							{1: '2', 2: '558'}
+483	483		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+484	484		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_84.jpg'}
+485	485		401							{1: '2', 2: '558'}
+486	486		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+487	487		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_89.jpg'}
+488	488		301			DialogEnable	AniZhuanchangBegin			"{3: ""The battle in the Hetero Tower flashes in your mind like a kaleidoscope of memories, with Lucia's smile being the last thing you remember.""}"
+489	489		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory998.jpg'}
+490	490		211							{1: '1', 2: '1021036', 3: '7', 7: '1'}
+491	491		301			AniZhuanchangEnd				"{1: '1', 2: 'Lucia', 3: ""I will never regret paying this price. A future without you is meaningless, and a future that doesn't align with our vision of peace is even more futile."", 4: '101'}"
+492	492		301							"{2: 'Lucia', 3: ""So please... don't blame yourself once I'm gone. It's not because we made the wrong choice."", 4: '101'}"
+493	493		214							{1: '1', 2: '3'}
+494	494		301				AniZhuanchangBegin			"{2: 'Lucia', 3: ""Commandant, every failure has its meaning. We've obtained the seeds of a miracle, and from here on, we'll surely find a miracle that belongs to this world... and to us."", 4: '101'}"
+495	495		212							{1: '1', 6: '1'}
+496	496		502							{1: 'DialogDisable'}
+497	497		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1080.jpg'}
+498	498		504							{1: '0'}
+499	499		302							{2: 'All of this... will come to an end.', 3: '500'}
+500	500		301			DialogEnable				{3: 'Your fingers, having grown numb, slip weakly from the base of the gravestone as blood thinly coats the new marks. Your meandering thoughts come to a stop when you carve the final stroke.'}
+501	501		301							{3: 'The trail of blood stretches into the shape of a smile, just like the ones drawn on the back of your hands so many years ago.'}
+502	502		302							{2: '(Struggle desperately)', 3: '503', 4: '(Close eyes)', 5: '504'}
+503	503		301							"{3: ""Someone calls out in the distance, the muffled voice drifting away from you. The twilight's glow fills the sky as far as you can see.""}"
+504	504		301							{3: 'This time when you wake up... you will truly be alone.'}
+505	505		301				AniZhuanchangBegin			{3: 'Lucia...'}
+506	506		502							{1: 'DialogDisable'}
+507	507		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg1201_5.jpg'}
+508	508		111				AniZhuanchangBegin			{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+509	509		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+510	510		109	1						{1: '1', 2: '<size=50>I made you a promise.</size>', 4: '50', 6: '1', 7: '1', 8: '1', 9: '3'}
+511	511		109	1						"{1: '2', 2: ""<size=50>I won't blame myself, and I won't give up.</size>"", 4: '-50', 6: '1', 7: '1', 8: '1', 9: '3'}"
+512	512		110							{1: '1', 2: '2'}
+513	513		301							{3: 'I made you a promise.'}
+514	514		301				AniZhuanchangBegin			"{3: ""I won't blame myself, and I won't give up.""}"
+515	515		401							{1: '1', 2: '36'}
+516	516		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory966.png'}
+517	517		401							{1: '1', 2: '381'}
+518	518		201							{1: '1', 2: '501036', 3: '4', 4: '400'}
+519	519		201							{1: '2', 2: '500896', 4: '-400'}
+520	520		301			DialogEnable				"{1: '1', 2: 'Vanessa', 3: ""...So we're just handing over our buffer zones to the Hetero-Creatures now?"", 4: '1'}"
+521	521		301							{2: 'Barniga', 3: 'Y-yes... It happened so suddenly, and our outposts...', 4: '2'}
+522	522		204							{1: '1', 2: '5'}
+523	523		301							{2: 'Vanessa', 3: 'Alright. None of this would have happened had our human soldiers been able to handle those Hetero-Creatures in combat. The buffer zones were always meant to buy us time.', 4: '1'}
+524	524		204							{1: '1', 2: '4'}
+525	525		301							{2: 'Vanessa', 3: 'Speaking of which, do we have all our supplies back now?', 4: '1'}
+526	526		301							{2: 'Barniga', 3: '...', 4: '2'}
+527	527		301							"{3: ""Barniga's chest tightens as Vanessa's voice grows icier by the second.""}"
+528	528		204							{1: '1', 2: '5'}
+529	529		301							{2: 'Vanessa', 3: 'Forget the medium and heavy equipment. What happened to the serum and all the portable supplies...?', 4: '1'}
+530	530		301							"{2: 'Barniga', 3: ""I'm... very sorry!"", 4: '2'}"
+531	531		301							{3: 'Facing a helpless Barniga who is sweating profusely, Vanessa takes a deep breath.'}
+532	532		204							{1: '1', 2: '4'}
+533	533		301							{2: 'Vanessa', 3: 'Adjust the flags on the tactical map. I need to assess our current situation.', 4: '1'}
+534	534		301							{3: 'As Barniga adjusts the pieces, the crude tactical map clearly shows the borders between areas controlled by humans and Hetero-Creatures, and the situation looks grim.'}
+535	535		201							{1: '2', 2: '500984', 4: '-400'}
+536	536		204							{1: '1', 2: '4'}
+537	537		301							"{1: '1', 2: 'Emma', 3: ""...If we want to reclaim the buffer zones, we'll have to suspend the flanking operation from last week. While our standby forces are sufficient for one recovery operation, this would leave us with no reserve forces to handle emergencies."", 4: '2'}"
+538	538		301							{2: 'Emma', 3: 'But if we completely abandon the buffer zones, both staging areas on our flanks will be compromised.', 4: '2'}
+539	539		301							{2: 'Vanessa', 3: 'Call back the recon and patrol units. Logistics needs to be in full force except for the teams in the agricultural zones.', 4: '1'}
+540	540		301							{2: 'Emma', 3: 'But we can barely...', 4: '2'}
+541	541		301							{2: 'Vanessa', 3: 'Or you could just abandon the buffer zones entirely, give up the staging areas tomorrow, and join me in planning our grand escape the day after that.', 4: '1'}
+542	542		301							{2: 'Emma', 3: '...', 4: '2'}
+543	543		301							"{2: 'Vanessa', 3: ""That's all I've got to say. Now..."", 4: '1'}"
+544	544		202							{1: '1', 2: '2'}
+545	545		401							{1: '2', 2: '754'}
+546	546		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+547	547		301							{3: 'A cold draft pushes through the gap of the unlocked door.'}
+548	548		201							{1: '1', 2: '501036', 3: '4'}
+549	549		301							"{1: '1', 2: 'Vanessa', 3: ""Well, guess all the bad things just have to happen at the same time, huh? Add it to the list—we're getting the lock fixed tomorrow."", 4: '1'}"
+550	550		301							{3: 'As she furrows her brow and grabs the handle, a cold hand in a tactical glove grips the doorframe from the outside.'}
+551	551		302							{2: '...', 3: '552'}
+552	552		204							{1: '1', 2: '4'}
+553	553		301							{2: 'Vanessa', 3: '...Civilians are forbidden from this area, let alone privy to military intel. Do you want to die?', 4: '1'}
+554	554		302							{2: 'Put the recon and patrol units under my command.', 3: '555'}
+555	555		302							"{2: ""I'll break through those Hetero-Creatures with them."", 3: '556'}"
+556	556		302							"{2: ""If they just took our buffer zones, they're compromised."", 3: '557'}"
+557	557		301							{2: 'Vanessa', 3: '...You?', 4: '1'}
+558	558		302							{2: 'You know what I can do, Vanessa.', 3: '559'}
+559	559		302				DialogDisable			{2: 'Also, I just remembered a few things.', 3: '560'}
+560	560		202							{1: '1'}
+561	561		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+562	562		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '3'}
+563	563		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+564	564		401							{1: '2', 2: '4278'}
+565	565		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory663.jpg'}
+566	566		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+567	567		401							{1: '2', 2: '4278'}
+568	568		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory652.jpg'}
+569	569		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+570	570		401							{1: '2', 2: '4278'}
+571	571		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory651.jpg'}
+572	572		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+573	573		401							{1: '2', 2: '4278'}
+574	574		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+575	575		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+576	576		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab'}
+577	577		301			DialogEnable	AniZhuanchangBegin			{3: 'As you slowly come back to your senses, memories about the Hetero Tower and its core flood your mind.'}
+578	578		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory966.png'}
+579	579		201							{1: '1', 2: '501036', 3: '1'}
+580	580		301			AniZhuanchangEnd				{1: '1', 2: 'Vanessa', 3: '...', 4: '1'}
+581	581		301							{2: 'Vanessa', 3: 'Come on in.', 4: '1'}
+582	582		401							{1: '2', 2: '753'}
+583	583		401							{1: '2', 2: '9343085'}
+584	584		301							{3: 'Vanessa takes half a step back and opens the door to the command center.'}
+585	585		301				AniZhuanchangBegin			{3: 'Once everyone is seated, you organize your thoughts and bring Vanessa up to speed, keeping your points as concise as possible.'}
+586	586		202							{1: '1'}
+587	587		201							{1: '1', 2: '501036', 3: '3'}
+588	588		301			AniZhuanchangEnd				{1: '1', 2: 'Vanessa', 3: 'The Hetero Tower... a time machine...', 4: '1'}
+589	589		301							"{2: 'Vanessa', 3: ""If I didn't know you better, I'd think you were some sci-fi writer trying to mess with me."", 4: '1'}"
+590	590		302							"{2: ""I'm not making any of these up."", 3: '593', 4: 'This is what we learned in the Hetero Tower.', 5: '591'}"
+591	591		301							{3: 'Including the core.'}
+592	592		301							{3: 'Can the Core really bring humanity new hope? Can it really help humanity win this hopeless war?'}
+593	593		204							{1: '1', 2: '4'}
+594	594		301							"{2: 'Vanessa', 3: ""...Rosa isn't at the settlement. It's too dangerous here. She might be a Construct, but she isn't exactly good in combat, so we set up her lab somewhere further away."", 4: '1'}"
+595	595		301							{2: 'Vanessa', 3: 'These questions will remain unanswered until Rosa returns.', 4: '1'}
+596	596		301							"{2: 'Vanessa', 3: ""I do want to get to the bottom of what's happening at the Hetero Tower, but for now, we'll have to put it on hold."", 4: '1'}"
+597	597		301							{3: 'She taps on the crude terrain map.'}
+598	598		301							"{2: 'Vanessa', 3: ""Even if you could lead a team to break through the Hetero-Creatures in the buffer zones and throw them into disarray, it still wouldn't be enough."", 4: '1'}"
+599	599		301							"{2: 'Vanessa', 3: ""Small wins won't last us long."", 4: '1'}"
+600	600		302							"{2: ""Then let's lure them away."", 3: '601'}"
+601	601		302							"{2: ""We'll split them up, lead them to other fortified camps, and pick them off one by one."", 3: '602'}"
+602	602		302							{2: 'I need a map with all troop deployments.', 3: '607'}
+603	603		301							{3: 'Vanessa gives a noncommittal nod and gestures at the tactical map.'}
+604	604		301							{3: 'While you ponder the operation plan, an obviously unusual area catches your eye.'}
+605	605		302							{2: 'Why is there no defense in this area?', 3: '606'}
+606	606		302							{2: 'The terrain does not look like a natural barrier either.', 3: '607'}
+607	607		204							{1: '1'}
+608	608		301							"{2: 'Vanessa', 3: ""I thought you wouldn't notice. Guess you really are coming back to your senses."", 4: '1'}"
+609	609		301							"{2: 'Vanessa', 3: ""This is indeed a crucial checkpoint, but it doesn't need defenses—can't have them either. Someone's already guarding it."", 4: '1'}"
+610	610		302							{2: 'Someone?', 3: '611', 4: 'You mean a squad? Or some other faction?', 5: '611'}
+611	611		201							{1: '2', 2: '500984', 4: '-400'}
+612	612		203							{1: '1', 2: '0.25', 3: '400'}
+613	613		301							{1: '1', 2: 'Emma', 3: 'Luna is there.', 4: '2'}
+614	614		302							{2: 'Luna?!', 3: '615'}
+615	615		204							{1: '1', 2: '3'}
+616	616		301							{2: 'Vanessa', 3: 'She barely communicates with the camp, refuses to cooperate with our strategies, and rejects our supplies.', 4: '1'}
+617	617		302							{2: 'What about other Ascendants...?', 3: '618'}
+618	618		301							"{2: 'Emma', 3: ""We haven't detected any Ascendants. We've been monitoring the area for a while now, and Luna's the only one there."", 4: '2'}"
+619	619		301							"{2: 'Emma', 3: ""She hasn't shown any signs of hostility and doesn't seem interested in driving humans away from this place. Seems like..."", 4: '2'}"
+620	620		301							{2: 'Emma', 3: 'She just wants to keep watch there...', 4: '2'}
+621	621		302							{2: 'Luna was an agent who can connect to the Ascen...', 3: '622'}
+622	622		301							{3: 'Maybe... you should talk to her.'}
+623	623		202							{1: '1', 2: '2', 6: '1'}
+624	624		401							{1: '2', 2: '4697'}
+625	625		201							{1: '1', 2: '501036', 3: '4'}
+626	626		201							{1: '2', 2: '500984', 4: '-600'}
+627	627		201							{1: '3', 2: '500896', 4: '600'}
+628	628		301							"{1: '1', 2: 'Barniga', 3: ""Emma... Emma! Something's up with the patrol team!"", 4: '3'}"
+629	629		204							{1: '1', 2: '5'}
+630	630		301							{2: 'Vanessa', 3: '...What is it now?!', 4: '1'}
+631	631		301							"{2: 'Emma', 3: ""Take your time. Don't rush."", 4: '2'}"
+632	632		301							"{2: 'Barniga', 3: ""Cough... The patrol team was returning from the northwest when the mutated Red Tide suddenly surged! We didn't detect it coming and it's got them trapped!"", 4: '3'}"
+633	633		204							{1: '1', 2: '4'}
+634	634		301							{2: 'Vanessa', 3: '...Looks like we need to pay them a visit now.', 4: '1'}
+635	635		204							{1: '1', 2: '8'}
+636	636		301							{2: 'Vanessa', 3: 'But 【kuroname】 is...', 4: '1'}
+637	637		301							{2: 'Emma', 3: 'Doing just fine. The commandant can proceed with the mission.', 4: '2'}
+638	638		204							{1: '1'}
+639	639		301							"{2: 'Vanessa', 3: ""Let's move out then. Time to see which poor souls got themselves trapped in the Red Tide this time."", 4: '1'}"
+640	640		301		1		AniZhuanchangBegin			"{3: ""Vanessa's signature sneer crosses her face.""}"

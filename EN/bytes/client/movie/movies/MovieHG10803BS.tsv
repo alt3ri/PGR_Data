@@ -1,0 +1,30 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory28.jpg'}
+2	2		401							{1: '1', 2: '203'}
+3	3		201							{1: '1', 2: '500080'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Watanabe', 3: 'So your ""help"" was to call in the Gray Ravens?', 4: '1'}"
+5	5		203							{1: '1', 2: '0.25', 3: '-450'}
+6	6		201							{1: '2', 2: '1011001', 4: '450'}
+7	7		301							{1: '1', 2: 'Lee', 3: 'What else? Are you expecting the commandant to fight with bare hands?', 4: '2'}
+8	8		202							{1: '2', 6: '1'}
+9	9		203							{1: '1', 2: '0.25'}
+10	10		301							{2: 'Watanabe', 3: 'Of course not!', 4: '1'}
+11	11		302							"{2: ""I'm actually a pretty competent fighter..."", 3: '12', 4: ""Don't underestimate me..."", 5: '13'}"
+12	12	15	301							"{2: 'Watanabe', 3: ""There's no way I'll put you on the frontline! So stay back, and no more funny business! I'll take the front!"", 4: '1'}"
+13	13		301							{2: 'Watanabe', 3: 'Underestimated or not, you get behind me right now!', 4: '1'}
+14	14		301							"{2: 'Watanabe', 3: ""As long as you're in Oasis, I'll make sure of your safety—"", 4: '1'}"
+15	15		301							{2: 'Watanabe', 3: 'So will the soldiers here!', 4: '1'}
+16	16		201							{1: '1', 2: '1021001'}
+17	17		301							{1: '1', 2: 'Lucia', 3: 'Enough chatting.', 4: '1'}
+18	18		203							{1: '1', 2: '0.25', 3: '-450'}
+19	19		201							{1: '2', 2: '1011001', 4: '450'}
+20	20		301							"{1: '1', 2: 'Lee', 3: ""It's obvious that you don't have enough manpower for this fight, Watanabe."", 4: '2'}"
+21	21		202							{1: '1', 2: '2', 6: '1'}
+22	22		201							{1: '1', 2: '500080'}
+23	23		301							"{1: '1', 2: 'Watanabe', 3: ""This attack is different from the ones before... This is clearly planned, and they strike when we're still recouping our forces."", 4: '1'}"
+24	24		302							"{2: 'That suddenly gets scarier.', 3: '25', 4: ""Luckily you've got us."", 5: '26'}"
+25	25	27	301							{2: 'Watanabe', 3: 'Did you think I was bluffing in the beginning?', 4: '1'}
+26	26		301							"{2: 'Watanabe', 3: ""Enough small talk. Now that you're here, help me take out the trash."", 4: '1'}"
+27	27		302							"{2: ""Alright, let's go!"", 3: '28', 4: 'Gray Raven, on your mark!', 5: '28'}"
+28	28		201							{1: '1', 2: '1011001', 3: '10'}
+29	29		301		1		AniZhuanchangBegin			{1: '1', 2: 'Lee', 3: 'Hmph, are you hyping us up now?', 4: '1'}

@@ -1,0 +1,30 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory206.png'}
+2	2		401							{1: '1', 2: '210'}
+3	3		201							{1: '1', 2: '500186'}
+4	4		301			DialogEnable				{1: '1', 2: 'α', 3: 'Sorry. Must have woke you up.', 4: '1'}
+5	5		202							{1: '1'}
+6	6		301							"{3: ""Finished with the skirmish, Alpha returns to the bench to find Luna long awake. Luna merely shakes her head at Alpha's apology.""}"
+7	7		201							{1: '1', 2: '500105', 3: '13', 4: '-400'}
+8	8		201							{1: '2', 2: '500186', 3: '6', 4: '400'}
+9	9		301							"{1: '1', 2: 'Luna', 3: ""It's okay."", 4: '1'}"
+10	10		301							"{2: 'α', 3: ""What's the matter? You're staring at me."", 4: '2'}"
+11	11		301							{2: 'Luna', 3: 'Ahaha... Nothing. It really fits you.', 4: '1'}
+12	600		204							{1: '2'}
+13	12		301							"{2: 'α', 3: ""Yeah. The texture is nice. I think it's some famous brand from the Golden Age. The design makes swinging my sword easy."", 4: '2'}"
+14	13		301							"{2: 'Luna', 3: ""That's not what I meant by fitting you."", 4: '1'}"
+15	14		301							"{3: ""Luna's words send Alpha into deep thought. Then suddenly, as if in realization, she opens her mouth and continues.""}"
+16	15		301							"{2: 'α', 3: ""Well... Next time, if you want pictures of me, just say so. You don't have to take them secretly."", 4: '2'}"
+17	16		301							"{2: 'Luna', 3: ""That won't be the same."", 4: '1'}"
+18	17		301							{2: 'α', 3: '...I guess.', 4: '2'}
+19	18		301							"{2: 'Luna', 3: ""Well, it's late. Let's go back."", 4: '1'}"
+20	19		301							{3: 'Luna rises from the bench and puts a jacket on Alpha, then turns and saunters through the road they came from.'}
+21	20		301							{2: 'α', 3: 'Sure.', 4: '2'}
+22	21		301				AniZhuanchangBegin			{3: 'Alpha nods, and falls in step with Luna after accepting her jacket.'}
+23	22		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory206.png'}
+24	23		202							{1: '1', 2: '2', 6: '1'}
+25	24		401							{1: '1', 2: '201'}
+26	25		301			AniZhuanchangEnd				{3: 'After Luna and Alpha left, a figure emerges from the shadows of the walkway.'}
+27	26		301							{3: 'He gazes in the direction of the two and falls into deep thought.'}
+28	27		201							{1: '1', 2: '500008', 3: '4'}
+29	28		301		1		AniZhuanchangBegin			{1: '1', 2: 'Roland', 3: '...', 4: '1'}

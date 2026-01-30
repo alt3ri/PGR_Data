@@ -1,0 +1,111 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory258.png'}
+2	2		401							{1: '1', 2: '37'}
+3	3		301			DialogEnable				{3: 'Lucia moves forward while thinking about Luna.'}
+4	4		301							{3: 'Perhaps influenced by this longing, the M.I.N.D. growls and blocks all the pathways around her.'}
+5	5		301							{2: '???', 3: 'These are the humans you believe in... Sister...'}
+6	6		201							{1: '1', 2: '500166', 3: '5'}
+7	7		301							{1: '1', 2: 'Lucia', 3: 'Luna...?', 4: '1'}
+8	8		301							{3: 'The image of Luna appears before her. Although Lucia knows that it is just a projection of her consciousness, she still cannot resist getting closer.'}
+9	9		201							{1: '1', 2: '500265'}
+10	10		301							"{1: '1', 2: 'Luna', 3: ""Lucia... Why can't you stay here... with me?"", 4: '1'}"
+11	11		301							"{2: 'Luna', 3: ""As long as you stay here, you won't need to remember those sad, bad things... You can stay with me forever..."", 4: '1'}"
+12	12		301							{2: 'Luna', 3: 'Come on... Lucia... Hold my hand like you used to...', 4: '1'}
+13	13		201							{1: '1', 2: '500166'}
+14	14		301							{1: '1', 2: 'Lucia', 3: 'There was a time when I regretted letting Luna face the danger of becoming a Construct alone. If I could, this time...', 4: '1'}
+15	15		301							{3: 'But Lucia knows that if she grabs her hand, she will become a second Alpha.'}
+16	16		204							{1: '1', 2: '5'}
+17	17		301							{2: 'Lucia', 3: 'No, Luna...', 4: '1'}
+18	18		301							"{2: 'Lucia', 3: ""Although I understand how Alpha feels—if this memory wasn't withheld from me, I would have chosen the same path she did for sure."", 4: '1'}"
+19	19		301							{2: 'Lucia', 3: 'But... you cannot change the path you have taken.', 4: '1'}
+20	20		201							{1: '1', 2: '500265'}
+21	21		301				AniZhuanchangBegin			"{1: '1', 2: 'Luna', 3: ""And you... can't change anything..."", 4: '1'}"
+22	22		202							{1: '1', 6: '1'}
+23	23		401							{1: '1', 2: '203'}
+24	24		301			AniZhuanchangEnd				{3: 'The frail girl before her sighs, and the surroundings twist and shift. Lucia is now somehow back to the initial divergence point and finds Alpha standing on the other end, staring at her.'}
+25	25		201							{1: '1', 2: '500100'}
+26	26		301							{1: '1', 2: 'α', 3: 'Have you met Luna?', 4: '1'}
+27	27		202							{1: '1', 6: '1'}
+28	28		301							"{3: ""Scorning Lucia's silence, Alpha sprints toward her with her weapon in hand.""}"
+29	29		401							{1: '2', 2: '10002001'}
+30	30		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+31	31		301			RImgBg1Shake				{3: 'Their blades clash into two massive blasts of red and blue energy, triggering a massive quake in the M.I.N.D., causing their thoughts and memories to entwine and tangle together.'}
+32	32		201							{1: '1', 2: '500166', 3: '5'}
+33	33		301							{1: '1', 2: 'Lucia', 3: 'Is that a M.I.N.D. quake?!', 4: '1'}
+34	34		201							{1: '1', 2: '500100', 3: '17'}
+35	35		301							{1: '1', 2: 'α', 3: 'Tch...', 4: '1'}
+36	36		202							{1: '1', 6: '1'}
+37	37		301							{3: 'The shards of their memories cross the boundary between them, like fragments of glass pouring down after it breaks, scattering in front of their eyes.'}
+38	38		301							"{3: ""All at once, countless familiar yet foreign memories enter Lucia's mind...""}"
+39	39		201							{1: '1', 2: '500166', 3: '5'}
+40	40		301							{1: '1', 2: 'Lucia', 3: '...Alpha!', 4: '1'}
+41	43		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineBaozhaNew.prefab', 2: '3'}
+42	41		301				AniZhuanchangBegin			{3: '...The hopes that once belonged to her.'}
+43	42		202							{1: '1', 6: '1'}
+44	44		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+45	45		401							{1: '1', 2: '211'}
+46	46		301			AniZhuanchangEnd				"{2: 'α', 3: ""I should still report the incident to Babylonia. The authorities must know the truth... That is the only way they won't die guilty of a crime they didn't commit.""}"
+47	1146		301				AniZhuanchangBegin			{2: 'α', 3: 'And... if I can stop this from happening again...'}
+48	47		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory4.jpg'}
+49	48		504							{1: '1'}
+50	49		201							{1: '1', 2: '500100'}
+51	50		301			AniZhuanchangEnd				"{1: '1', 2: 'α', 3: ""Are you Constructs from Babylonia? Have you seen Murol and Xun? I heard they're recalled!"", 4: '1'}"
+52	51		201							{1: '1', 2: '500028'}
+53	52		301							"{1: '1', 2: 'Construct Soldier', 3: ""I haven't seen them—hold on, are you a Corrupted?!"", 4: '1'}"
+54	53		202							{1: '1', 6: '1'}
+55	54		301							{3: 'The Construct Soldiers raised their weapons in alert, only to have them immediately discarded by Alpha with a swing of her hilt.'}
+56	55		201							{1: '1', 2: '500100', 3: '9'}
+57	56		301				AniZhuanchangBegin			{1: '1', 2: 'α', 3: 'Go, before I change my mind.', 4: '1'}
+58	57		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+59	500		202							{1: '1', 6: '1'}
+60	58		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: '...Unrequited hopes.'}
+61	59		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory268.png'}
+62	60		201							{1: '1', 2: '500100'}
+63	61		301			AniZhuanchangEnd				{1: '1', 2: 'α', 3: '...How?!', 4: '1'}
+64	62		201							{1: '1', 2: '500008', 3: '4', 4: '-400'}
+65	63		201							{1: '2', 2: '500105', 3: '14', 4: '400'}
+66	64		301							"{1: '1', 2: 'Roland', 3: ""Why would I lie to Miss Luna's dearest sister? You're welcome to dig around in that guy's M.I.N.D. if you don't believe me."", 4: '1'}"
+67	65		301							{2: 'Luna', 3: 'It seems like Babylonia has completely suppressed this incident.', 4: '2'}
+68	66		301							"{2: 'Roland', 3: ""And... rumor has it that there's an identical Lucia stationed in the new Gray Raven."", 4: '1'}"
+69	67		202							{1: '1', 2: '2', 6: '1'}
+70	68		201							{1: '1', 2: '500100'}
+71	69		301				AniZhuanchangBegin			"{1: '1', 2: 'α', 3: ""Even when I've left, they're still going to take advantage of me. Humans..."", 4: '1'}"
+72	70		202							{1: '1', 6: '1'}
+73	71		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory4.jpg'}
+74	72		201							{1: '1', 2: '500100', 4: '-400'}
+75	73		201							{1: '2', 2: '500006', 4: '400'}
+76	74		301			AniZhuanchangEnd				"{1: '1', 2: 'α', 3: ""Isn't this Corrupted... the Construct Soldier from before?"", 4: '1'}"
+77	75		204							{1: '1', 2: '17'}
+78	76		301							{2: 'α', 3: 'Why are you...', 4: '1'}
+79	77		204							{1: '1', 2: '8'}
+80	78		301				AniZhuanchangBegin			{2: 'α', 3: 'Is that so... They betrayed you as well.', 4: '1'}
+81	79		202							{1: '1', 2: '2', 6: '1'}
+82	80		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+83	81		504							{1: '0'}
+84	82		301			AniZhuanchangEnd				{3: 'These similar disappointments pebble the path before Alpha.'}
+85	83		301							{3: 'A hope kindled, then diminished.'}
+86	84		301							{3: 'Her desperation is like fungi dropped on a petri dish, multiplying and consuming.'}
+87	85		201							{1: '1', 2: '500100'}
+88	86		301							"{1: '1', 2: 'α', 3: 'This is why ""Punishing"" is needed. As long as they are this sickening, humans will never accomplish a better future.', 4: '1'}"
+89	87		301							{2: 'α', 3: 'At least... I will no longer be abused.', 4: '1'}
+90	88		204							{1: '1', 2: '17'}
+91	89		301				AniZhuanchangBegin			"{2: 'α', 3: ""And the other me can't be allowed to go down the same path!"", 4: '1'}"
+92	90		202							{1: '1', 6: '1'}
+93	91		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+94	92		301			AniZhuanchangEnd				{2: 'α', 3: 'But... she is so loyal to those despicable humans.'}
+95	93		301							{2: 'α', 3: '...I will correct her mistakes myself.'}
+96	94		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory258.png'}
+97	95		201							{1: '1', 2: '500100', 4: '400'}
+98	96		201							{1: '2', 2: '500166', 3: '5', 4: '-400'}
+99	97		301							{1: '1', 2: 'α', 3: '...', 4: '1'}
+100	98		301							{2: 'α', 3: 'Have you seen it?', 4: '1'}
+101	99		301							{2: 'Lucia', 3: '...Yes.', 4: '2'}
+102	100		301							"{3: ""The memory torrent caused by the tremor allows Lucia to witness Alpha's memories after the divergence point, and Alpha to look at Lucia's time in the new Gray Raven.""}"
+103	101		301							"{2: 'α', 3: ""Whether it's Luna or me, being chosen by the Ascension-Network was just the beginning."", 4: '1'}"
+104	600		204							{1: '1', 2: '8'}
+105	102		301							"{3: ""Perhaps because of her own tragic memories, or maybe it is Lucia's completely different experience, Alpha closes her eyes in agony.""}"
+106	103		301							{2: 'α', 3: 'We were once like you, believing in those flimsy lies of theirs. But the truth will always come to light.', 4: '1'}
+107	104		204							{1: '1'}
+108	105		301							"{2: 'α', 3: 'Rather than letting those cursed humans use you as a weapon after their eventual betrayal, I might just as well correct ""my"" mistake myself...', 4: '1'}"
+109	106		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+110	107		301		1		AniZhuanchangBegin			{3: 'Alpha steps forward, leaving behind a trail of flame. The environment starts to shift... and change...'}

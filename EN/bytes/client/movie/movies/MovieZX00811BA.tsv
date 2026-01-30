@@ -1,0 +1,28 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory40.jpg'}
+2	1000		401							{1: '1', 2: '111'}
+3	2		201							{1: '1', 2: '1031001', 4: '400'}
+4	3		201							{1: '2', 2: '500029', 4: '-400'}
+5	4		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'Liv, can you analyze the material constituents inside the energy chamber?', 4: '2'}
+6	5		301							"{2: 'Liv', 3: ""I can't identify its properties, but I've been recording all the observational data. I'll hand it over to HQ after this."", 4: '1'}"
+7	6		204							{1: '1', 2: '7'}
+8	7		301							{2: 'Liv', 3: 'The energy chamber is changing in color!', 4: '1'}
+9	100		204							{1: '1'}
+10	8		301							{2: 'Lucia', 3: 'It turned from red to purple.', 4: '2'}
+11	9		302							{2: 'Looks creepy.', 3: '10'}
+12	10		301							{2: 'Liv', 3: 'What should we do?', 4: '1'}
+13	11		301							{2: 'Lucia', 3: 'We can do nothing but wait now.', 4: '2'}
+14	12		301				AniZhuanchangBegin			{2: 'Lucia', 3: 'Let us trust in Kamui.', 4: '2'}
+15	13		202							{1: '1', 2: '2'}
+16	14		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory51.jpg'}
+17	15		201							{1: '1', 2: '1081001', 4: '-400'}
+18	16		201							{1: '2', 2: '500014', 4: '400'}
+19	17		301			AniZhuanchangEnd				{1: '1', 2: 'Camu', 3: 'Your companions are awaiting your return.', 4: '2'}
+20	18		301							{2: 'Camu', 3: 'But they do not know, what you have been going through.', 4: '2'}
+21	19		301							"{2: 'Kamui', 3: ""...Enough with the hogwash, at least my plan's complete."", 4: '1'}"
+22	20		301							"{2: 'Camu', 3: ""You're still so naive. Indeed, you have fended against the viral corruption with the power of Tenebrion, but can you really take all the credit?"", 4: '2'}"
+23	21		301							{2: 'Kamui', 3: 'I admit, I needed your help there...', 4: '1'}
+24	22		301							"{2: 'Camu', 3: ""No, it's not about that."", 4: '2'}"
+25	23		301							{2: 'Camu', 3: 'We were always one, but your existence has proven the fragility of this body.', 4: '2'}
+26	24		301							{2: 'Camu', 3: 'But I, I am different. What I long for is absolute power.', 4: '2'}
+27	25		301		1		AniZhuanchangBegin			{2: 'Camu', 3: 'And for this, I am stronger than you.', 4: '2'}

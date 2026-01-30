@@ -1,0 +1,95 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory641.jpg'}
+2	2		104						250.0	{1: '0|-50|0', 2: '0.25'}
+3	3		104						250.0	{1: '0|-25|0', 2: '0.25'}
+4	4		401							{1: '2', 2: '4044'}
+5	5		502							{1: 'DialogEnable'}
+6	6		301							{3: 'After a hectic afternoon, you finally get a few minutes to relax, leaning back on the break room couch.'}
+7	7		401							{1: '1', 2: '295'}
+8	8		301							"{3: ""You pop open the cherry soda on the tea table, and the fizz washes away the morning's tiredness.""}"
+9	9		301							"{3: ""The artificial cherry flavor is spot-on, sweet with a tiny bit of tart, you can't help but chug it.""}"
+10	10		301				AniZhuanchangBegin			{3: 'You sink into the soft cushions, letting yourself drift off into a midday nap...'}
+11	11		502							{1: 'DialogDisable'}
+12	12		302							{2: 'So comfy... aww...', 3: '13'}
+13	13		502							{1: 'DialogEnable'}
+14	14		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+15	15		301			AniZhuanchangEnd				{3: '...'}
+16	16		301				AniZhuanchangBegin			"{2: '??', 3: 'The backend team\'s going nuts, and you, the ""culprit"", are just chilling here?'}"
+17	17		502							{1: 'DialogDisable'}
+18	18		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+19	19		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+20	20		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory641.jpg'}
+21	21		201							{1: '1', 2: '500864', 3: '12', 5: '-80', 6: '-200'}
+22	22		301			DialogEnable				"{1: '1', 3: ""A cool, soft touch wakes you up. You open your eyes and see Teddy's finger on your forehead.""}"
+23	23		301							{3: 'Her face is as calm as always, not showing a thing, but she smells strongly of freshly baked food.'}
+24	24		301							"{3: 'Plus, she really leans into the word ""culprit"", and, oddly, explains everything in detail, which she never does. Putting it all together, you know she is faking it.'}"
+25	25		302							{2: 'The... culprit?', 3: '26', 4: 'What are you talking about?', 5: '26'}
+26	26		204							{1: '1', 2: '4'}
+27	27		301							"{2: 'Teddy', 3: ""Didn't you hear? You fell asleep for five minutes, forgot to send the mission data, and now Babylonia's firewall is down."", 4: '1'}"
+28	28		301							{2: 'Teddy', 3: 'Those guys are freaking out, looking everywhere for you.', 4: '1'}
+29	29		302							"{2: ""That's impossible..."", 3: '30'}"
+30	30		301							{2: 'Teddy', 3: 'Look, no point in making excuses. The damage is done.', 4: '1'}
+31	31		204							{1: '1', 2: '5'}
+32	32		301							{2: 'Teddy', 3: 'Your only shot at avoiding those angry programmers is to hide out with me here in the break room.', 4: '1'}
+33	33		301							"{2: 'Teddy', 3: ""You're stuck here for the rest of the afternoon."", 4: '1'}"
+34	34		203							{1: '1', 2: '0.25', 4: '-80', 5: '-175'}
+35	35		202							{1: '1'}
+36	36		401							{1: '2', 2: '4628'}
+37	37		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2'}
+38	38		301							"{3: 'Teddy holds out her wrist, and the word ""ALERT"" scrolls big on the screen from her watch terminal.'}"
+39	39		301				DialogDisable			"{3: 'She tilts her head, giving you a serious look, like, ""See? I\'m not kidding.""'}"
+40	40		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab'}
+41	41		302							"{2: ""Something's still not right..."", 3: '42'}"
+42	42		201							{1: '1', 2: '500864', 3: '4', 5: '-80', 6: '-200'}
+43	43		301			DialogEnable				"{1: '1', 2: 'Teddy', 3: ""What's bothering you?"", 4: '1'}"
+44	44		302							"{2: ""I'm not in your line of work, and I definitely don't know the tech stuff like you do..."", 3: '45'}"
+45	45		302							{2: 'But the Teddy I know is way too good to let something like this slip.', 3: '46'}
+46	46		204							{1: '1', 2: '2'}
+47	47		301							{2: 'Teddy', 3: '...Humph.', 4: '1'}
+48	48		301							{3: 'As soon as she finishes, a sly smile spreads across her face.'}
+49	49		301							"{2: 'Teddy', 3: ""Been a few days, and you've turned into a real charmer, huh?"", 4: '1'}"
+50	50		204							{1: '1', 2: '1'}
+51	51		301							"{2: 'Teddy', 3: ""Never mind. I knew you wouldn't buy my story anyway."", 4: '1'}"
+52	52		204							{1: '1', 2: '2'}
+53	53		203						120.0	{1: '1', 2: '0.1', 4: '-130', 5: '-210'}
+54	54		203							{1: '1', 2: '0.1', 4: '-80', 5: '-200'}
+55	55		401							{1: '2', 2: '4799'}
+56	56		301							"{3: ""She relaxes a bit, then tosses her tablet-sized mini-terminal, which she's been hiding, to the Commandant across from her.""}"
+57	57		204							{1: '1', 2: '1'}
+58	58		301				DialogDisable			"{2: 'Teddy', 3: ""If you're so keen on the truth, then take a look."", 4: '1'}"
+59	59		202							{1: '1'}
+60	60		302							{2: '(Take the terminal)'}
+61	61		401							{1: '2', 2: '4628'}
+62	62		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+63	63		301			DialogEnable				"{3: 'You enter the terminal password, go to the mission notifications, and scroll down to your ""Latest Notification"".'}"
+64	64		301							"{3: 'Then you spot a bright red line: ""EMERGENCY MISSION"".'}"
+65	65		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+66	66		201							{1: '1', 2: '500864', 3: '3'}
+67	67		301							{1: '1', 2: 'Teddy', 3: 'Man, you have some terrible luck, huh?', 4: '1'}
+68	68		204							{1: '1', 2: '1'}
+69	69		301							{2: 'Teddy', 3: 'Last time it was the team lottery, and this time, on your birthday, everyone has to do an emergency mission report.', 4: '1'}
+70	70		204							{1: '1', 2: '5'}
+71	71		301							{2: 'Teddy', 3: 'I went to the store early for baking powder and frosting, and even asked my annoying brother for help, just to get fresh cherries from the conservation area...', 4: '1'}
+72	72		204							{1: '1', 2: '4'}
+73	73		301							{2: 'Teddy', 3: 'But because of you, all my plans are ruined. So, how are you going to make it up to me?', 4: '1'}
+74	74		301							"{3: ""That's why she smelled like baked food, not her usual scent.""}"
+75	75		302							"{2: ""I'm sorry. Next time, I'll definitely..."", 3: '76'}"
+76	76		204							{1: '1', 2: '5'}
+77	77		301							"{2: 'Teddy', 3: '""Next time"" is the last thing I want to hear.', 4: '1'}"
+78	78		301							"{3: ""You don't get to finish your sentence, because Teddy moves suddenly.""}"
+79	79		204							{1: '1', 2: '1'}
+80	80		301							{2: 'Teddy', 3: 'If I want something, I get it, plain and simple.', 4: '1'}
+81	81		204							{1: '1', 2: '2'}
+82	82		301							"{2: 'Teddy', 3: ""【kuroname】, haven't you heard? Expired canned cherries never taste the same."", 4: '1'}"
+83	83		401							{1: '2', 2: '4044'}
+84	84		203							{1: '1', 2: '0.25', 4: '-80', 5: '-200'}
+85	85		301							{3: 'Teddy moves closer with a sneaky grin and snatches the flashing terminal from your hand.'}
+86	86		204							{1: '1', 2: '1'}
+87	87		301							{2: 'Teddy', 3: 'Sorry, that last part was a fib.', 4: '1'}
+88	88		301							{2: 'Teddy', 3: 'Actually, I went ahead and submitted that mission for you while you were sleeping.', 4: '1'}
+89	89		204							{1: '1', 2: '2'}
+90	90		301							"{2: 'Teddy', 3: ""But watching you drink all my cherry drinks without asking, then sleep like a log, not even noticing my surprise... it's hard not to be mad..."", 4: '1'}"
+91	91		301							"{2: 'Teddy', 3: ""So, a little teasing isn't too bad, is it?"", 4: '1'}"
+92	92		301							"{3: ""Her smile, like her sweet scent, feels dangerous, but you can't look away.""}"
+93	93		204							{1: '1', 2: '6'}
+94	94		301		1		AniZhuanchangBegin			{2: 'Teddy', 3: 'So, what are you going to do to make it up to me today?', 4: '1'}

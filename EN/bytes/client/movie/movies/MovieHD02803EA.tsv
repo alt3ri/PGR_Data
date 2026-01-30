@@ -1,0 +1,19 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory556.jpg'}
+2	2		401							{1: '1', 2: '215'}
+3	3		301			DialogEnable				{3: 'Mountain bandits from a hillside town stand no chance against these three.'}
+4	4		301							{3: 'Most of the bandits do not even have a chance to escape, and the masked woman who ambushed you is no exception.'}
+5	5		301							"{3: ""When she wakes up, the tip of Vera's spear is already at her throat.""}"
+6	6		301							{3: '【kuroname】 steps forward and removes her mask.'}
+7	7		301							{3: 'The woman has a beautiful face, with willow-leaf eyebrows and almond-shaped eyes. Her face—'}
+8	8		301							{3: 'It looks like—'}
+9	9		301							{3: 'You immediately think of the person you were tasked to find—'}
+10	10		301				AniZhuanchangBegin			{3: 'To find—'}
+11	11		401			DialogDisable				{1: '1', 2: '36'}
+12	12		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+13	13		301			DialogEnable				"{2: '???', 3: ""Why isn't it moving?"", 18: '100003039'}"
+14	14		401							{1: '2', 2: '561'}
+15	15		301							{3: 'Bonk!'}
+16	16		301							"{2: '???', 3: ""Stop hitting it so hard! You'll break it!"", 18: '100003040'}"
+17	17		301							{3: 'Mecha!@#—'}
+18	18		301		1		AniZhuanchangBegin			"{2: '???', 3: ""Oh, you're awake?"", 18: '100003041'}"

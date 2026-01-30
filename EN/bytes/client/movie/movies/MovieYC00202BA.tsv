@@ -1,0 +1,16 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory19.jpg'}
+2	1000		401							{1: '1', 2: '206'}
+3	2		201							{1: '1', 2: '500015'}
+4	3		301			DialogEnable				{1: '1', 2: 'Tifa', 3: 'What... is this place...?', 4: '1'}
+5	4		301							{2: 'Tifa', 3: 'I... my body...', 4: '1'}
+6	5		203							{1: '1', 2: '0.25', 3: '-400'}
+7	6		201							{1: '2', 2: '500008', 4: '400'}
+8	7		301							{1: '1', 2: 'Roland', 3: 'You have been successfully modified, Miss Tifa.', 4: '2'}
+9	8		301							"{2: 'Roland', 3: ""How does it feel? Still a much more humane process than turning a human into a Construct, don't you agree? The pain... that will pass soon."", 4: '2'}"
+10	9		301							{2: 'Tifa', 3: 'Roland... You lied to me...', 4: '1'}
+11	10		301							{2: 'Roland', 3: 'Oh?', 4: '2'}
+12	11		301							{2: 'Tifa', 3: 'I did not grow stronger... and now you turned me into this...', 4: '1'}
+13	12		301							"{2: 'Roland', 3: ""Indeed, you're still very weak, but... the Punishing Virus is strong."", 4: '2'}"
+14	13		301							{2: 'Roland', 3: 'You need only familiarize yourself with the power of the virus. Trust me, you will very quickly grow to like your new body...', 4: '2'}
+15	14		301		1		AniZhuanchangBegin			{2: 'Roland', 3: 'But I have to tell you, in this place... you are not the only special one...', 4: '2'}

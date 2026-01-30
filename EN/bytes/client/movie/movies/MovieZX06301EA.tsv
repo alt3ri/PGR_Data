@@ -1,0 +1,162 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory85.png'}
+2	2		401							{1: '1', 2: '7101'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+4	4		501							{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieBgBlizzard.prefab', 2: '2'}
+5	5		401							{1: '2', 2: '4222'}
+6	6		502							{1: 'AniZhuanchangEnd'}
+7	7		501						2800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHit01.prefab', 2: '2'}
+8	8		401							{1: '2', 2: '771'}
+9	9		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFreezeScreen.prefab', 2: '2'}
+10	10		502							{1: 'RImgBg1Shake'}
+11	11		301			DialogEnable				"{3: ""A thunderous crash erupts as the ice shatters under Rosetta's blow. In its wake, a cold flash sweeps outward and a massive crevasse splits the ground, carving a deadly divide between the two sides.""}"
+12	12		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+13	13		401							{1: '2', 2: '1508'}
+14	14		201							{1: '1', 2: '500013', 4: '-250'}
+15	15		201							{1: '2', 2: '500013', 4: '400'}
+16	16		201							{1: '3', 2: '500013', 4: '-600', 8: '1'}
+17	17		201							{1: '4', 2: '500013', 4: '100'}
+18	18		201							{1: '5', 2: '500013', 4: '750', 8: '1'}
+19	19		301			RImgBg1Shake	DialogDisable			{1: '1', 2: 'Corrupted', 3: '!', 4: '1', 5: '2', 6: '3', 7: '4', 8: '5'}
+20	20		502							{1: 'PanelActor1Shake'}
+21	21		502							{1: 'PanelActor2Shake'}
+22	22		502							{1: 'PanelActor3Shake'}
+23	23		502							{1: 'PanelActor4Shake'}
+24	24		502						1000.0	{1: 'PanelActor5Shake'}
+25	25		203							{1: '1', 2: '0.5', 3: '-250', 4: '-800'}
+26	26		203							{1: '2', 2: '0.5', 3: '400', 4: '-800'}
+27	27		203							{1: '3', 2: '0.5', 3: '-600', 4: '-800'}
+28	28		203							{1: '4', 2: '0.5', 3: '100', 4: '-800'}
+29	29		203						250.0	{1: '5', 2: '0.5', 3: '750', 4: '-800'}
+30	30		401							{1: '2', 2: '778'}
+31	31		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieHongchao.prefab', 2: '2'}
+32	32		202						500.0	{1: '1', 2: '2', 3: '3', 4: '4', 5: '5'}
+33	33		301			DialogEnable				"{3: ""Dozens of Corrupted, unable to retreat in time, plunge through the cracked ice into the black water below. Their thrashing limbs churn the freezing depths, hurling geysers of spray into the howling blizzard and escalating the battlefield's chaos.""}"
+34	34		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFreezeScreen.prefab'}
+35	35		505							{2: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieBgBlizzard.prefab'}
+36	36		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+37	37		201							{1: '1', 2: '501449', 3: '4'}
+38	38		301							{1: '1', 2: 'Rosetta', 3: 'Everyone, fall back to the base immediately! Scout units only will remain here to stand guard. Move, now!', 4: '1'}
+39	39		202							{1: '1', 6: '1'}
+40	40		201							{1: '1', 2: '500005', 4: '-400'}
+41	41		201							{1: '2', 2: '501455', 4: '400'}
+42	42		301							{1: '1', 2: 'Arctic Route Union Member', 3: 'Y-yes! Get the wounded to safety while we can!', 4: '1'}
+43	43		301							{2: 'Arctic Mechanoid', 3: 'Moving!', 4: '2'}
+44	44		202							{1: '1', 2: '2', 6: '1'}
+45	45		201							{1: '1', 2: '500568'}
+46	46		301							{1: '1', 2: 'Lee', 3: 'Commandant, time for us to pull back, too.', 4: '1'}
+47	47		302							"{2: ""Yeah, let's go."", 3: '48', 4: ""I'm worried about the people we're leaving behind."", 5: '50'}"
+48	48		201							{1: '1', 2: '501449'}
+49	49	52	301							{1: '1', 2: 'Rosetta', 3: 'There might be more Corrupted along the way. Lee and I can clear the path...', 4: '1'}
+50	50		201							{1: '1', 2: '500568'}
+51	51		301							"{1: '1', 2: 'Lee', 3: ""This fissure will slow the enemy down, and Babylonia's Constructs will hold the line here. You can trust them to handle it."", 4: '1'}"
+52	52		202							{1: '1', 6: '1'}
+53	53		401							{1: '1', 2: '36'}
+54	54		201							{1: '18', 2: '501463', 4: '140', 5: '-100', 6: '-200'}
+55	55		301							"{1: '1', 2: '???', 3: ""Well done. Just what I'd expect from the subjects of my Arctic Route Union."", 4: '18'}"
+56	56		202							{1: '18', 6: '1'}
+57	57		401							{1: '1', 2: '7102'}
+58	58		301							{3: 'The words are still hanging in the air when a familiar voice sounds from behind you.'}
+59	59		302							"{2: ""Who's there?"", 3: '60'}"
+60	60		201							{1: '18', 2: '501463', 4: '140', 5: '-100', 6: '-200'}
+61	61		301							"{1: '1', 2: '???', 3: ""It's been a while, 【kuroname】."", 4: '18'}"
+62	62		202							{1: '18', 6: '1'}
+63	63		502							{1: 'DialogDisable'}
+64	64		306							{1: '1'}
+65	65		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg6201_1.jpg', 3: '0', 4: '1', 5: '0.7'}
+66	66		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6201_1.jpg'}
+67	67		205							{1: '999'}
+68	68		301			DialogEnable				"{3: 'Across the river of ice, four figures stand silhouetted against the snow of the distant peak. Leading them is the individual who once confronted you in Babylonia, masquerading as ""Mina"".'}"
+69	69		306							
+70	70		201							{1: '18', 2: '501449', 3: '4', 4: '50', 5: '-130', 6: '-100'}
+71	71		301							{1: '1', 2: 'Rosetta', 3: 'Zack the Frostheart Emperor...', 4: '18'}
+72	72		201							{1: '18', 2: '500568', 4: '140', 5: '-130', 6: '-200'}
+73	73		301							"{1: '1', 2: 'Lee', 3: ""So he's the one who infiltrated Babylonia..."", 4: '18'}"
+74	74		202							{1: '18', 6: '1'}
+75	75		201							{1: '18', 2: '500005', 4: '75', 5: '-240', 6: '-150', 7: '1'}
+76	76		301							{1: '1', 2: 'Arctic Route Union Member', 3: '...What are they doing here?', 4: '18'}
+77	77		202							{1: '18', 6: '1'}
+78	78		301				DialogDisable			{3: 'The Arctic Route Union soldiers freeze in their tracks, hands tightening nervously on their weapons. Their brief moment of respite shatters with the sudden appearance of unknown enemies.'}
+79	79		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory85.png', 3: '0', 4: '1', 5: '0.7'}
+80	80		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory85.png'}
+81	81		205							{1: '999'}
+82	82		201							{1: '1', 2: '501448', 3: '8'}
+83	83		301			DialogEnable				{1: '1', 2: '???', 3: 'Be at ease. There is no need for fear.', 4: '1'}
+84	84		204							{1: '1', 2: '4'}
+85	85		301							{2: 'Zack', 3: 'People of the Arctic, I am Zack, the sixth Frostheart Emperor, heir to the royal bloodline of Sophiasburgh. If you still hold reverence for the crown and recognize Sophiasburgh as your capital, then kneel and pledge your loyalty to me once more.', 4: '1'}
+86	86		202							{1: '1', 6: '1'}
+87	87		401							{1: '2', 2: '212'}
+88	88		201							{1: '1', 2: '500005', 4: '-400'}
+89	89		201							{1: '2', 2: '500005', 4: '400'}
+90	90		301							{1: '1', 2: 'Arctic Route Union Member A', 3: 'Wait, did he just say...', 4: '1'}
+91	91		301							{2: 'Arctic Route Union Member B', 3: 'Hey, did he say Frostheart Emperor?', 4: '2'}
+92	92		202							{1: '1', 2: '2', 6: '1'}
+93	93		301							"{3: '""The Frostheart Emperor"". The moment the words are spoken, a ripple of unrest passes through the ARU ranks. Reactions vary—hesitation, a sudden tight grip on a weapon, a frozen stance—but all betray the heavy, unspoken significance the title holds for them.'}"
+94	94		402							{1: '212'}
+95	95		201							{1: '1', 2: '500568'}
+96	96		301							"{1: '1', 2: 'Lee', 3: ""So let me translate this. You're asking us to surrender?"", 4: '1'}"
+97	97		202							{1: '1', 6: '1'}
+98	98		201							{1: '1', 2: '501448'}
+99	99		301							{1: '1', 2: 'Zack', 3: 'Precisely so, Construct of Babylonia. The Corrupted you are currently fighting are all former subjects of the old Sophiasburgh, and they attack you now on my command.', 4: '1'}
+100	100		204							{1: '1', 2: '4'}
+101	101		301							{2: 'Zack', 3: 'Should you lay down your arms, this conflict will end immediately, and the Arctic will usher in a new era of peace.', 4: '1'}
+102	102		302							"{2: ""And what's the price?"", 3: '103', 4: 'Are you expecting them to side with the Corrupted?', 5: '105'}"
+103	103		204							{1: '1', 2: '2'}
+104	104	107	301							{2: 'Zack', 3: 'There is no price. I am an emperor, not a demon.', 4: '1'}
+105	105		204							{1: '1', 2: '2'}
+106	106		301							{2: 'Zack', 3: 'The Punishing Virus is merely my tool. Do not misunderstand.', 4: '1'}
+107	107		204							{1: '1'}
+108	108		301							{2: 'Zack', 3: 'I believe this proposal offers you nothing but advantages. You will not die here today, and you will live to witness the Union dominate the world, with Sophiasburgh standing as its capital.', 4: '1'}
+109	109		201							{1: '1', 2: '501449', 3: '4'}
+110	110		301							"{1: '1', 2: 'Rosetta', 3: ""So what you're really saying is... you want us to help you conquer the world?"", 4: '1'}"
+111	111		201							{1: '1', 2: '501448'}
+112	112		301							{1: '1', 2: 'Zack', 3: 'Not conquest—amalgamation. This world needs a true nation. A unified order.', 4: '1'}
+113	113		301							{2: 'Zack', 3: 'Rosetta, these battles have shown me your exceptional talent and potential. Pledge your loyalty to me, along with your subordinates, and those still hesitating will understand which path is truly right for them.', 4: '1'}
+114	114		201							{1: '1', 2: '501449', 3: '8'}
+115	115		301							{1: '1', 2: 'Rosetta', 3: '...', 4: '1'}
+116	116		204							{1: '1', 2: '4'}
+117	117		301							{2: 'Rosetta', 3: 'Commandant, what are your orders?', 4: '1'}
+118	118		302							{2: 'Refuse him.', 3: '119', 4: 'What do you think?', 5: '121'}
+119	119		204							{1: '1'}
+120	120	123	301							"{2: 'Rosetta', 3: ""Understood. I'll follow your lead, Commandant."", 4: '1'}"
+121	121		204							{1: '1'}
+122	122		301							{2: 'Rosetta', 3: 'Our thoughts should be aligned on this.', 4: '1'}
+123	123		204							{1: '1', 2: '4'}
+124	124		401							{1: '2', 2: '9380001'}
+125	125		301							{3: 'Rosetta nods, her expression hardening into a mask of battle-ready ruthlessness. In one swift motion, she raises her light sword. Its glowing tip cuts through the blizzard as she levels it at Zack.'}
+126	126		301							"{2: 'Rosetta', 3: 'I cannot speak for others, but I refuse your invitation. I do not recognize any ""Frostheart Emperor"". And furthermore...', 4: '1'}"
+127	127		204							{1: '1', 2: '5'}
+128	128		301				DialogDisable			{2: 'Rosetta', 3: '...conquering the world sounds really stupid.', 4: '1'}
+129	129		402							{1: '9380001'}
+130	130		202							{1: '1', 6: '1'}
+131	131		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg6201_1.jpg', 3: '0', 4: '1', 5: '0.7'}
+132	132		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6201_1.jpg'}
+133	133		205							{1: '999'}
+134	134		401							{1: '1', 2: '36'}
+135	135		301			DialogEnable				{3: 'The words instantly provoke anger from the three behind Zack, their hands snapping toward their weapons. Zack, however, merely responds with a thin, unperturbed smile.'}
+136	136		301				DialogDisable			{2: 'Zack', 3: 'Not an unexpected answer.'}
+137	137		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg6201_2.jpg', 3: '0', 4: '1', 5: '0.7'}
+138	138		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6201_2.jpg'}
+139	139		205							{1: '999'}
+140	140		401						300.0	{1: '2', 2: '1508'}
+141	141		401						200.0	{1: '2', 2: '1508'}
+142	142		401							{1: '2', 2: '1508'}
+143	143		401							{1: '1', 2: '299'}
+144	144		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+145	145		301			DialogEnable				{3: 'He raises his hand slowly, and the blizzard dies. In the sudden silence, a chorus of mechanical whirring stirs. It comes first from the shadows of the ice mountains, then from behind every snow-covered rock. The Corrupted emerge, one after another, their metal hulls caked in snow, their crimson eyes cutting through the thin, still air.'}
+146	146		301				DialogDisable			{2: 'Zack', 3: 'Unifying our wills has always proven challenging. That is precisely why... we have forged a new power: Amalgamation. Now, all forces, attack!'}
+147	147		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+148	148		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory85.png'}
+149	149		201							{1: '1', 2: '500013', 7: '1'}
+150	150		201							{1: '2', 2: '500013', 4: '675', 7: '1'}
+151	151		201							{1: '3', 2: '500013', 4: '400', 7: '1', 8: '1'}
+152	152		201							{1: '4', 2: '500013', 4: '-300', 7: '1'}
+153	153		201							{1: '5', 2: '500013', 4: '-600', 7: '1', 8: '1'}
+154	154		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+155	155		401							{1: '2', 2: '1508'}
+156	156		203							{1: '1', 2: '0.3', 5: '-150'}
+157	157		203							{1: '2', 2: '0.3', 3: '675', 5: '-150'}
+158	158		203							{1: '3', 2: '0.3', 3: '400', 5: '-150'}
+159	159		203							{1: '4', 2: '0.3', 3: '-300', 5: '-150'}
+160	160		203							{1: '5', 2: '0.3', 3: '-600', 5: '-150'}
+161	161		301		1	DialogEnable	AniZhuanchangBegin			{1: '1', 3: 'The silence shatters with shrill howls as the Corrupted pour from their hiding places. Their silhouettes—a countless, converging mass—engulf the landscape. The true battle has begun.'}

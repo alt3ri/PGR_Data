@@ -1,0 +1,83 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory756.jpg'}
+2	2		401							{1: '1', 2: '210'}
+3	3		301			DialogEnable				{3: 'At long last, the townspeople drove all of the Hetero-Creatures away, and the Forsaken that had tried to breach the town have all been eliminated.'}
+4	4		301							{3: 'Most of the buildings in town survived the attack, with only a few having been damaged.'}
+5	5		201							{1: '1', 2: '500689', 4: '400'}
+6	6		201							{1: '2', 2: '500690', 4: '-400'}
+7	7		301							"{1: '1', 2: 'Strange Resident A', 3: ""I just need the tavern to still be around by the end of it... it's all I need to live on!"", 4: '1'}"
+8	8		301							"{2: 'Strange Resident B', 3: ""****! Do you even know what's coming out of your mouth?! My wheat... they're all gone with the fire!"", 4: '2'}"
+9	9		202							{1: '1', 2: '2', 6: '1'}
+10	10		301							{3: 'The wheat fields outside out of town are now a sea of fire, having been set aflame by the Hetero-Creatures.'}
+11	11		201							{1: '1', 2: '500693'}
+12	12		301							"{1: '1', 2: 'Max', 3: ""Lucky that we were done gathering most of the wheat... and as for what's gone..."", 4: '1'}"
+13	13		301							"{3: ""Says Max as he walks up to the burned field and picks up a handful of ashes that's still warm.""}"
+14	14		301							{2: 'Max', 3: 'These ashes will turn into richer soil and bring us an even greater harvest next year...', 4: '1'}
+15	15		301							"{2: 'Max', 3: ""And that's just like this town—you lose some but you gain some, and everything will eventually spring back to life."", 4: '1'}"
+16	16		301							{3: 'Max tidies up his blood-stained jacket and walks up to Vera and the Purifying Force.'}
+17	17		301							{2: 'Max', 3: 'We really owe all of you a big one...', 4: '1'}
+18	18		202							{1: '1', 6: '1'}
+19	19		201							{1: '1', 2: '500345', 4: '-400'}
+20	20		201							{1: '2', 2: '500588', 4: '400'}
+21	21		301							{1: '1', 2: 'Vera', 3: 'Likewise. There is no way we would have been able to stop them without all your help.', 4: '1'}
+22	22		301							{2: 'Issarius', 3: 'Right... Agree.', 4: '2'}
+23	23		202							{1: '2', 6: '1'}
+24	24		201							{1: '2', 2: '500693', 4: '400'}
+25	25		204							{1: '1', 2: '2'}
+26	26		301							{1: '1', 3: 'With a knowing smile, Vera looks at Max.'}
+27	27		301							"{2: 'Vera', 3: ""But if you really want to thank us, we'll gladly take this bartender back to Babylonia with us."", 4: '1'}"
+28	28		301							{2: 'Max', 3: 'What a choice. This is the best bartender we have in town.', 4: '2'}
+29	29		202							{1: '1', 2: '2', 6: '1'}
+30	30		201							{1: '1', 2: '500689', 3: '1'}
+31	31		301							{1: '1', 2: 'Strange Resident A', 3: 'And the only one, too. Hahaha!', 4: '1'}
+32	32		201							{1: '1', 2: '500693'}
+33	33		301							{1: '1', 2: 'Max', 3: 'But... guess this bartender of ours does deserve to go further than beyond this town.', 4: '1'}
+34	34		201							{1: '1', 2: '500345'}
+35	35		301							{1: '1', 2: 'Vera', 3: 'We have a deal, then. Question is... where is this bartender in question here?', 4: '1'}
+36	36		301							"{3: 'Vera looks around, remembering still seeing the ""bartender"" giving out commands toward the end of the fight.'}"
+37	37		401							{1: '1', 2: '36'}
+38	38		301							"{3: ""Right then, out of a corner comes No. 21's shout.""}"
+39	39		401							{1: '1', 2: '202'}
+40	40		201							{1: '1', 2: '500650', 3: '5'}
+41	41		301				AniZhuanchangBegin			"{1: '1', 2: 'No. 21', 3: ""Captain! I... I can barely hear the commandant's heartbeat now!"", 4: '1'}"
+42	42		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory748.jpg'}
+43	43		201							{1: '1', 2: '500345', 3: '5'}
+44	44		301			AniZhuanchangEnd				{1: '1', 2: 'Vera', 3: 'Out of my way now...!', 4: '1'}
+45	45		301							{3: 'Vera makes her way through the crowd in a panic. She has no choice but to go ahead with an examination in the tavern, for want of a proper medical environment.'}
+46	46		202							{1: '1', 6: '1'}
+47	47		201							{1: '1', 2: '500268'}
+48	48		301							"{1: '1', 2: 'Old Lady', 3: ""You've got to save this good soul, Missy..."", 4: '1'}"
+49	49		202							{1: '1', 6: '1'}
+50	50		201							{1: '1', 2: '500689', 4: '400'}
+51	51		201							{1: '2', 2: '500690', 4: '-400'}
+52	52		301							"{1: '1', 2: 'Strange Resident A', 3: ""Yes, you gotta save this good soul! I mean, it's not like I know how it's done or anything..."", 4: '1'}"
+53	53		301							{2: 'Strange Resident B', 3: '****!', 4: '2'}
+54	54		202							{1: '1', 2: '2', 6: '1'}
+55	55		201							{1: '1', 2: '500345', 3: '5'}
+56	56		301							{1: '1', 2: 'Vera', 3: 'Jesus, get these people out for me already, Issarius!', 4: '1'}
+57	57		201							{1: '1', 2: '500588'}
+58	58		301							"{1: '1', 3: ""Issarius doesn't like the idea of taking an order from Vera but does the bidding anyway after a moment's hesitation and kicks all the lookie-loos out of the tavern with the other Purifying Force members.""}"
+59	59		201							{1: '1', 2: '500650', 3: '14'}
+60	60		301							"{1: '1', 2: 'No. 21', 3: ""Captain... what's going to happen to Commandant?"", 4: '1'}"
+61	61		201							{1: '1', 2: '500345', 3: '4'}
+62	62		301							{1: '1', 2: 'Vera', 3: 'That Nigel is one hell of a man... This is worse than I thought.', 4: '1'}
+63	63		301							{2: 'Vera', 3: 'Gray Raven Commandant... can you still hear me?', 4: '1'}
+64	64		302							{2: '(Nod)', 3: '65'}
+65	65		301							"{3: ""You manage to keep yourself awake but can't say a word.""}"
+66	66		301							"{3: ""The world as you see it starts growing blurry, to the point you can barely make out Vera's words anymore.""}"
+67	67		301							"{2: 'Vera', 3: ""He's connected with Noctis... and when Noctis feels despair, it rubs off on the Gray Raven Commandant here, which speeds up the spread of the poison."", 4: '1'}"
+68	68		301							"{2: 'Vera', 3: ""Just what's up with that idiot?!"", 4: '1'}"
+69	69		302							{2: '...', 3: '70'}
+70	70		301							{2: 'Vera', 3: 'What did you say...', 4: '1'}
+71	71		201							{1: '1', 2: '500650', 3: '4'}
+72	72		301							{1: '1', 3: 'Trying to pick up your words, No. 21 straightens her Inver-Device.'}
+73	73		301							{2: 'No. 21', 3: 'Commandant... wants to perform a Deep M.I.N.D. connection with Noctis.', 4: '1'}
+74	74		201							{1: '1', 2: '500345', 3: '5'}
+75	75		301							"{1: '1', 2: 'Vera', 3: ""Are you trying to kill yourself...?! Your consciousness will be bound to his if you do that... and you're dead meat if he weakens."", 4: '1'}"
+76	76		302							{2: 'He... needs... me...', 3: '77'}
+77	77		204							{1: '1', 2: '2'}
+78	78		301							"{2: 'Vera', 3: ""Hmph... so you're choosing to trust him here, huh? The guy might not be the smartest of apples, but he's got a will as strong as iron. That much I'll give him."", 4: '1'}"
+79	79		204							{1: '1', 2: '8'}
+80	80		301							{3: 'Sighing with a wry smile, Vera has made up her mind.'}
+81	81		204							{1: '1', 2: '4'}
+82	82		301		1		AniZhuanchangBegin			"{2: 'Vera', 3: ""Well, let's give it a try, then... and see what sort of miracle you two can bring about."", 4: '1'}"

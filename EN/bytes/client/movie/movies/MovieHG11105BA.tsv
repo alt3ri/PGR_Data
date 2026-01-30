@@ -1,0 +1,70 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+2	2		401							{1: '1', 2: '207'}
+3	3		201							{1: '1', 2: '500127'}
+4	4		301			DialogEnable				{1: '1', 2: 'Sophia', 3: '(Inhales) ...', 4: '1'}
+5	5		301							{2: 'Sophia', 3: '(Exhales) ...', 4: '1'}
+6	6		301							{2: 'Sophia', 3: 'Ja... mi... lah:', 4: '1'}
+7	7		301							{2: 'Sophia', 3: 'Everything is going well in Babylonia.', 4: '1'}
+8	8		202							{1: '1', 6: '1'}
+9	9		301							{2: 'Letter', 3: 'I remember hearing good things about the Gray Ravens, but they are far kinder than I imagined.'}
+10	10		301							{2: 'Letter', 3: 'There are quite a lot of differences between their behavior and those on the Engine, but I will adapt.'}
+11	11		201							{1: '1', 2: '500127'}
+12	12		301							{1: '1', 2: 'Sophia', 3: 'Your Grace... No, I should cross that out.', 4: '1'}
+13	13		301							"{2: 'Sophia', 3: ""Jamilah, I still don't quite understand why you dispatched me to Babylonia..."", 4: '1'}"
+14	14		301							"{2: 'Sophia', 3: ""I know I'm an envoy, but I'm not skilled in diplomacy. I didn't even learn to read and write until I became a bodyguard."", 4: '1'}"
+15	15		301							{2: 'Sophia', 3: 'Not to mention... I... feel like I have more and more classes to make up...', 4: '1'}
+16	16		301							{2: 'Sophia', 3: 'Sometimes, I even feel like it was a mistake to send me to Babylonia.', 4: '1'}
+17	17		301							"{2: 'Sophia', 3: ""...No, I can't say that. I'll cross it out."", 4: '1'}"
+18	18		301							{2: 'Sophia', 3: '...But royal bodyguards never ask questions. We just carry out orders.', 4: '1'}
+19	19		301							{2: 'Sophia', 3: 'So, everything is going well here.', 4: '1'}
+20	20		301							{2: 'Sophia', 3: 'How are things on the Engine? Is everything okay?', 4: '1'}
+21	21		202							{1: '1', 6: '1'}
+22	22		301							{2: 'Letter', 3: 'Your Gr... Your last letter said that the anti-royalists were captured. So, the unrest on the Engine must have been solved.'}
+23	23		301							"{2: 'Letter', 3: ""Now, it's time to start the long process of reform according to your vision.""}"
+24	24		301							{2: 'Letter', 3: 'Once reformed, the Engine will finally be what you envisioned.'}
+25	25		301							"{2: 'Letter', 3: ""I'll return and see it for myself when the first helium-3 transport craft leaves.""}"
+26	26		201							{1: '1', 2: '500127'}
+27	27		301							"{1: '1', 2: 'Sophia', 3: ""As for the question you mentioned in the last letter, I... I don't know how to answer you."", 4: '1'}"
+28	28		301							"{2: 'Sophia', 3: 'But the Gray Raven Commandant said that ""I don\'t know"" was also an answer.', 4: '1'}"
+29	29		301							"{2: 'Sophia', 3: 'So, my answer is: ""Current me doesn\'t know how to answer.""', 4: '1'}"
+30	30		301							"{2: 'Sophia', 3: 'Strange... Past me wouldn\'t have hesitated to say ""execute""...', 4: '1'}"
+31	31		301							"{2: 'Sophia', 3: ""After all, they're my lead... Jamilah's enemy. Enemies must be destroyed."", 4: '1'}"
+32	32		202							{1: '1', 6: '1'}
+33	33		301							{2: 'Letter', 3: 'But I thought about what you said to me before I left...'}
+34	34		301							"{2: 'Letter', 3: '""I hope what comes back is no longer my sword or my doll, but a girl who sees the world for what it truly is.""'}"
+35	35		301							"{2: 'Letter', 3: ""I... still don't know what you mean. You have given me life and hope. I only wish to be your sword.""}"
+36	36		301							{2: 'Letter', 3: 'If you have time, please write back and tell me the exact reason for sending me here.'}
+37	37		201							{1: '1', 2: '500127'}
+38	38		301							{1: '1', 2: 'Sophia', 3: 'From S…oph…ia', 4: '1'}
+39	39		301							{2: 'Sophia', 3: '...Phew.', 4: '1'}
+40	40		301							{2: 'Sophia', 3: '...It still looks a little strange.', 4: '1'}
+41	41		301							"{2: 'Sophia', 3: ""But if I scratch out any more... I'll rip the paper."", 4: '1'}"
+42	42		301				AniZhuanchangBegin			{2: 'Sophia', 3: 'Huh? Who knocks at a time like this...', 4: '1'}
+43	43		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+44	44		201							{1: '1', 2: '500011'}
+45	45		301			AniZhuanchangEnd				{1: '1', 2: 'Hassen', 3: 'Good evening.', 4: '1'}
+46	46		203							{1: '1', 2: '0.25', 3: '-450'}
+47	47		201							{1: '2', 2: '500127', 4: '450'}
+48	48		301							{2: 'Sophia', 3: '...President!', 4: '2'}
+49	49		301							{2: 'Hassen', 3: 'Outside of working hours, just call me Mr. Hassen.', 4: '1'}
+50	50		301							{2: 'Hassen', 3: '—Even though I came to speak with you about work.', 4: '1'}
+51	51		301							{2: 'Sophia', 3: 'You mean... My transfer request?', 4: '2'}
+52	52		301							"{2: 'Hassen', 3: ""Correct. You've applied to be transferred out of the Gray Ravens to a new squad. I came to hear why."", 4: '1'}"
+53	53		301							"{2: 'Sophia', 3: ""I... can't keep up with them in battle."", 4: '2'}"
+54	54		301							{2: 'Hassen', 3: 'Is that so? I asked Liv for the log of your last mission.', 4: '1'}
+55	55		301							"{2: 'Hassen', 3: ""Based on the battle log, it's hard to say who couldn't keep up."", 4: '1'}"
+56	56		301							"{2: 'Hassen', 3: ""Regardless, that's not important now. Where do you want to be transferred?"", 4: '1'}"
+57	57		301							"{2: 'Sophia', 3: ""...I'd like to be transferred to Cerberus if possible."", 4: '2'}"
+58	58		301							{2: 'Hassen', 3: 'I see. A knife belongs with other knives. Is that it?', 4: '1'}
+59	59		301							"{2: 'Sophia', 3: ""...Correct. I don't think I'm suitable for the Gray Ravens."", 4: '2'}"
+60	60		301							{2: 'Hassen', 3: 'But since Jamilah sent you here... Do you think she really wants you to be like a dagger?', 4: '1'}
+61	61		301							{2: 'Sophia', 3: '...!', 4: '2'}
+62	62		202							{1: '2', 6: '1'}
+63	63		203							{1: '1', 2: '0.25'}
+64	64		301							{2: 'Hassen', 3: '...So be it.', 4: '1'}
+65	65		301							"{2: 'Hassen', 3: ""I've got bad news, though. I don't know which filing cabinet Celica stuffed your transfer request in."", 4: '1'}"
+66	66		301							{2: 'Hassen', 3: 'Celica may need a few days before she can process it.', 4: '1'}
+67	67		301							"{2: 'Hassen', 3: ""I'm going to get going."", 4: '1'}"
+68	68		201							{1: '1', 2: '500127'}
+69	69		301		1		AniZhuanchangBegin			{1: '1', 2: 'Sophia', 3: '...', 4: '1'}

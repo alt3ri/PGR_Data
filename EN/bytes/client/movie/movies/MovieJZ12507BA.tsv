@@ -1,0 +1,51 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory547.jpg'}
+2	2		401							{1: '1', 2: '50'}
+3	3		301			DialogEnable				{3: 'She walks forward.'}
+4	4		301							{3: 'She has been walking for a very long time, uncertain where to go.'}
+5	5		301							{3: 'But when she reaches this place, she feels like she should stay here for a while.'}
+6	6		301							"{3: 'She walks past ruin after ruin, tallying the patterns and marks she can barely recognize. She even sees a hideous plate that says ""Evacuation Site 184—Acadia Evacuation"".'}"
+7	7		301				AniZhuanchangBegin			"{3: ""Walking along the ruins, she finds an underground theater. Its spacious hall and the dilapidated interior tell the story of the theater's past grandeur.""}"
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory528.jpg'}
+9	9		201							{1: '1', 2: '500428', 3: '8', 4: '-400'}
+10	10		201							{1: '2', 2: '500260', 4: '400'}
+11	11		301			AniZhuanchangEnd				{1: '1', 3: 'There is no music in this place, only two dying figures. One of them is quite young, the other fairly senior.'}
+12	12		301							{3: 'The girl is clearly sick, her hasty breathing seemingly blowing away what little life she has left.'}
+13	13		301							{3: 'The old soldier leans on the crumbling backdrop, his injuries suggesting that he was in an intense battle. The red lights from his wounds are particularly blinding.'}
+14	14		301							{3: 'They seem to be infected with some virus. She should remember the name, but she cannot.'}
+15	15		301							"{2: 'Soldier', 3: ""Aargh... C-calling conservation area 184... I've found the missing kid..."", 4: '1'}"
+16	16		301							"{2: 'Soldier', 3: ""I was attacked by Corrupted during the mission... I'm damaged beyond the threshold... Please send reinforcement..."", 4: '1'}"
+17	17		202							{1: '1', 2: '2', 6: '1'}
+18	18		201							{1: '1', 2: '500291'}
+19	19		301							{1: '1', 3: 'She knows those words. She has heard them before.', 4: '1'}
+20	20		301							{3: 'Not here. Somewhere far away, where a young girl cried in the same way.'}
+21	21		301							{3: 'She does not want to hear that cry anymore.'}
+22	22		301							{3: 'She steps forward, hoping to assist the two figures.'}
+23	23		301							"{3: ""But as she approaches them, the girl's breathing gets faster, and the limping body of the soldier tenses up.""}"
+24	24		301							{3: 'Did... she do that? Hesitant, she stops. She dares not to get closer, seeing how their conditions worsen.'}
+25	25		301							{3: 'Suddenly, the soldier raises a hand, seemingly trying to get up. His damaged frame gives in soon, however, falling forward after moving a few inches. But she finds his trembling finger pointing toward her.'}
+26	26		301							{3: 'She looks down and sees a device.'}
+27	27		204							{1: '1', 2: '3'}
+28	28		301							{3: 'The gap in her mind seems to be filled up perfectly by the shape of this device.'}
+29	29		301							{3: 'It is a transmitter, she realizes.'}
+30	30		301				AniZhuanchangBegin			"{3: ""She turns on the device that the soldier cannot reach. After a brief pause, she decides to input the soldier's cry from earlier as well. Then she leaves before her memory returns to her like a deadly tempest.""}"
+31	31		202							{1: '1', 2: '2', 6: '1'}
+32	32		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+33	33		301			AniZhuanchangEnd				{3: '...'}
+34	34		301							{3: 'She keeps walking forward.'}
+35	35		301							{3: 'She has been walking for a very long time, uncertain where to go.'}
+36	36		301							{3: 'She seems to be traveling in a universe. Not that she remembers what a universe is exactly, but she can feel the boundless space when she thinks of that word.'}
+37	37		301							{3: 'Then, she stops.'}
+38	38		301							{3: 'Light purple petals enter her view, spreading all over the field.'}
+39	39		301							{3: 'As if the boundless universe suddenly opens a purple eye, she is drawn by a tender but unwavering gravity.'}
+40	40		301							{3: 'She reaches the eye. She can hear the rustling of the flowers by her feet. For a moment, she is surrounded by the gravity of love, and the empty void of space leaves her in an instant.'}
+41	41		301							{3: 'Then she hears a call. She turns around.'}
+42	42		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+43	43		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2903.jpg'}
+44	44		301							{3: 'The stars that have watched this planet for millennia turn to watch her.'}
+45	45		301							{3: 'She feels dizzy and dazed in their gazes.'}
+46	46		301							{3: 'But she does not stop looking.'}
+47	47		301							{3: 'She watches them one by one, going over one eye after another. At last, she stops on one of them.'}
+48	48		301							{3: 'She can see it blinking. It seems to be singing to her.'}
+49	49		301							{3: 'She feels compelled to respond.'}
+50	50		301		1		AniZhuanchangBegin			{3: 'So she sings, quietly, to the star.'}

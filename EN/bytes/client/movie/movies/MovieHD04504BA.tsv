@@ -1,0 +1,334 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory912.jpg'}
+2	2		401							{1: '1', 2: '5059'}
+3	3		401							{1: '2', 2: '903'}
+4	4		301			DialogEnable				{3: 'The waves shimmer a blue glow at night.'}
+5	5		301							{3: 'A mysterious, ancient aura reveals itself to both of you in the darkness.'}
+6	6		402							{1: '903'}
+7	7		201							{1: '1', 2: '501275', 3: '9'}
+8	8		301							{1: '1', 2: 'Lucia', 3: 'The blue sea...', 4: '1', 18: '100010443'}
+9	9		301							{3: 'Both you and Lucia think of the legend of the Ocean Moon Goddess.'}
+10	10		204							{1: '1'}
+11	11		301							"{2: 'Lucia', 3: ""The Ocean Moon Goddess' tears dyed the water blue."", 4: '1', 18: '100010444'}"
+12	12		202							{1: '1'}
+13	13		306							{1: '1'}
+14	14		301							"{3: 'But actually, it\'s a wonder called the ""blue tears"" phenomenon caused by massive tiny organisms that emit blue light in the water.'}"
+15	15		306							
+16	16		201							{1: '1', 2: '501275', 3: '1'}
+17	17		301							"{1: '1', 2: 'Lucia', 3: 'So the blue sea is actually caused by the ""blue tears"" phenomenon.', 4: '1', 18: '100010445'}"
+18	18		302							{2: 'What about the water clover?', 3: '19'}
+19	19		202							{1: '1'}
+20	20		301							{3: 'Lucia walks to the sea and observes it by the blue light.'}
+21	21		201							{1: '1', 2: '501275'}
+22	22		301							"{1: '1', 2: 'Lucia', 3: ""It's... the moon jellyfish."", 4: '1', 18: '100010446'}"
+23	23		202							{1: '1'}
+24	24		301							{3: 'Many moon jellyfish gather together in the water, their transparent bodies reflecting the blue glow of their surroundings, while their four luminescent organs resemble four-leaf clovers.'}
+25	25		301							"{3: ""Lucia gently turns around in the water as if she's dancing with the jellyfish.""}"
+26	26		201							{1: '1', 2: '501275', 3: '1'}
+27	27		301				DialogDisable			{1: '1', 2: 'Lucia', 3: 'Shall we... make a wish to the Ocean Moon Goddess together, Commandant?', 4: '1', 18: '100010447'}
+28	28		302							{2: 'Yeah.', 3: '29'}
+29	29		501						3000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab', 2: '2'}
+30	30		202							{1: '1', 6: '1'}
+31	31		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+32	32		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+33	33		301			DialogEnable				{3: 'You face the ocean and close your eyes.'}
+34	34		302							{2: '(I wish Lucia and I would never be apart.)', 3: '35', 4: '(I wish Lucia and I will spend a happy summer together!)', 5: '53'}
+35	35		301							{3: 'Gentle rain falls on you the minute you make the wish.'}
+36	36		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+37	37		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_18.jpg'}
+38	38		301							{3: 'You open your eyes and see Lucia standing in the sea.'}
+39	39		301							{3: 'Raindrops fall on the surface of the water, causing shimmers that make the sea look like a starry sky.'}
+40	40		301							{3: 'She stands in the blue color, like a child of the stars. Her clothes and hair spread in the water and gradually fade away.'}
+41	41		301							{3: 'With the crystal blue on her cheeks, she opens her eyes as her eyelashes quiver slightly, giving you an innocent gaze.'}
+42	42		301							{2: 'Lucia', 3: 'Commandant, do you want to know what wish I made?', 18: '100010448'}
+43	43		301							"{3: ""Lucia's smile blossoms in the misty blue.""}"
+44	44		301							{3: 'It feels as if your heart had stopped beating for a moment.'}
+45	45		301							{3: 'Without a word, you seem to have figured out the wish she made.'}
+46	46		301							{2: 'Lucia', 3: 'I wish we would never be apart.', 18: '100010449'}
+47	47		401							{1: '2', 2: '846106'}
+48	48		301							{3: 'The thunder rolls.'}
+49	49		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+50	50		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+51	51		401						1000.0	{1: '2', 2: '214'}
+52	52	73	301				AniZhuanchangBegin			{3: 'And then, the rain pours.'}
+53	53		301							{3: 'Gentle rain falls on you the minute you make the wish.'}
+54	54		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+55	55		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_18.jpg'}
+56	56		301							{3: 'You open your eyes and see Lucia standing in the sea.'}
+57	57		301							{3: 'Raindrops fall on the surface of the water, causing shimmers that make the sea look like a starry sky.'}
+58	58		301							{3: 'She stands in the blue color, like a child of the stars. Her clothes and hair spread in the water and gradually fade away.'}
+59	59		301							{3: 'With the crystal blue on her cheeks, she opens her eyes as her eyelashes quiver slightly, giving you an innocent gaze.'}
+60	60		301							{2: 'Lucia', 3: 'Commandant, do you want to know what wish I made?', 18: '100010450'}
+61	61		301							"{3: ""Lucia's smile blossoms in the misty blue.""}"
+62	62		301							{3: 'Looking at her smile, you seem to have figured out the wish she made.'}
+63	63		302							{2: 'Say it together?', 3: '64'}
+64	64		301							{2: 'Lucia', 3: 'Sure.', 18: '100010451'}
+65	65		301							"{3: ""You gaze into each others' eyes and speak your wishes simultaneously.""}"
+66	66		301							{2: 'Lucia & 【kuroname】', 3: 'I wish Commandant and I will spend a happy summer together!\\nI wish Lucia and I will spend a happy summer together!', 18: '100010452'}
+67	67		401							{1: '2', 2: '846106'}
+68	68		301							{3: 'The thunder rolls in the distance.'}
+69	69		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+70	70		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+71	71		401						1000.0	{1: '2', 2: '214'}
+72	72		301				AniZhuanchangBegin			{3: 'The rain falls quietly at night.'}
+73	73		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory374.png'}
+74	74		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+75	75		402							{1: '214'}
+76	76		401						2000.0	{1: '1', 2: '36'}
+77	77		401							{1: '1', 2: '278'}
+78	78		401							{1: '2', 2: '2597'}
+79	79		301			AniZhuanchangEnd				{3: 'The night grows dark, and the rain falls in thick sheets.'}
+80	80		301							{3: 'You have to stop your stroll to find a shelter from the rain.'}
+81	81		301							"{3: ""The pouring rain has drowned out the human and the Construct's footsteps and blurred their figures.""}"
+82	82		201							{1: '1', 2: '501275', 3: '7'}
+83	83		301							{1: '1', 2: 'Lucia', 3: 'Over here, Commandant!', 4: '1', 18: '100010453'}
+84	84		302				DialogDisable			{2: 'Here we are.', 3: '85'}
+85	85		202							{1: '1', 6: '1'}
+86	86		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory.png', 3: '0', 4: '1', 5: '1.5'}
+87	87		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory.png'}
+88	88		205							{1: '999'}
+89	89		301			DialogEnable				{3: 'Before your eyes is a long abandoned building.'}
+90	90		301							"{3: ""It's a relatively big single-story building surrounded by moderately high walls. An old tree overhangs the wall from inside, quietly gazing at the coastline in the distance.""}"
+91	91		301							{3: 'You push open the door. Under your feet is a winding rock path. It extends ahead and soon forks, with one branch leading to the main building and the other to the yard.'}
+92	92		201							{1: '1', 2: '501275'}
+93	93		301							{1: '1', 2: 'Lucia', 3: 'I have only seen this place in the files. The real place is more beautiful than expected.', 4: '1', 18: '100010454'}
+94	94		204							{1: '1', 2: '4'}
+95	95		301							{2: 'Lucia', 3: 'I heard that in the Golden Age, some people preferred traditional architecture to mainstream modern style.', 4: '1', 18: '100010455'}
+96	96		301							"{2: 'Lucia', 3: 'They rejected many technological conveniences to maintain a more ""natural"" lifestyle.', 4: '1', 18: '100010456'}"
+97	97		302							{2: 'Perhaps, the owner of this house was a conservative like that.', 3: '98'}
+98	98		204							{1: '1', 2: '1'}
+99	99		301				AniZhuanchangBegin			"{2: 'Lucia', 3: ""Let's get inside for shelter, Commandant."", 4: '1', 18: '100010457'}"
+100	100		402							{1: '2597'}
+101	101		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+102	102		202							{1: '1', 6: '1'}
+103	103		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.7', 5: '0'}
+104	104		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1007.jpg'}
+105	105		301			AniZhuanchangEnd				"{3: ""The two of you walk inside along the rock path and stop under the roof. At the entrance of the building is a modern supply crate that doesn't fit in with the style of the building.""}"
+106	106		201							{1: '1', 2: '501275'}
+107	107		301							{1: '1', 2: 'Lucia', 3: 'The supply crate is here.', 4: '1', 18: '100010458'}
+108	108		202							{1: '1'}
+109	109		306							{1: '1'}
+110	110		301							"{3: 'The inscription on the box reads, ""Public items. Only for passersby\'s emergency use. Please follow the terms of use.""'}"
+111	111		301							{3: 'This place is on the patrol route of the conservation area guards. The conservation area decided to make it a simple supply station after discussion days ago so that they could extend the patrol range later.'}
+112	112		306							
+113	113		201							{1: '1', 2: '501275', 3: '1'}
+114	114		301							{1: '1', 2: 'Lucia', 3: 'Come to think of it, adding supply crates here was your idea, Commandant.', 4: '1', 18: '100010459'}
+115	115		204							{1: '1', 2: '8'}
+116	116		301				DialogDisable			"{2: 'Lucia', 3: ""Didn't expect to use it this quickly."", 4: '1', 18: '100010460'}"
+117	117		202						250.0	{1: '1'}
+118	118		302							{2: '(Enter Names: 【kuroname】, Lucia.)'}
+119	119		401							{1: '2', 2: '4385'}
+120	120		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+121	121		301			DialogEnable				{3: 'After a simple registration, the supply crate with daily necessities opens. You take two towels out from it and hand one of them to Lucia.'}
+122	122		301							"{3: ""The supply crate is still in lack of some items. It doesn't have clothes to change into at the moment.""}"
+123	123		301				AniZhuanchangBegin			{3: 'Lucia takes out a lamp and lights it up.'}
+124	124		502						500.0	{1: 'DialogDisable'}
+125	125		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+126	126		101				AniZhuanchangEnd		300.0	{1: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_01_01.jpg'}
+127	127		301			DialogEnable				{3: 'You and Lucia dry your hair while walking toward the corridor nearby.'}
+128	128		301							{2: 'Lucia', 3: 'Nothing here can be used as fuel...', 18: '100010461'}
+129	129		302							"{2: ""After all, this place hasn't been renovated yet."", 3: '130'}"
+130	130		301							"{2: 'Lucia', 3: ""Besides, this doesn't seem like a good place to start a fire."", 18: '100010462'}"
+131	131		301				DialogDisable			"{3: ""Although this is an abandoned building, it's still not appropriate to start a bonfire in a wood house on a rainy night like this.""}"
+132	132		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_01_02.png', 3: '0', 4: '1', 5: '1'}
+133	133		104							{1: '0|100|0', 2: '0', 4: '3'}
+134	134		104						1500.0	{1: '0|0|0', 2: '1', 4: '3'}
+135	135		301			DialogEnable				"{2: 'Lucia', 3: ""In that case... I'll raise my frame's temperature and keep it at a level that won't produce flames."", 18: '100010463'}"
+136	136		302							{2: 'Sure.', 3: '137'}
+137	137		301							{2: 'Lucia', 3: 'Come closer to me, Commandant.', 18: '100010464'}
+138	138		301							{3: 'Lucia turns up her body temperature. The space instantly warms up.'}
+139	139		302							{2: '(Sit down next to Lucia.)', 3: '140'}
+140	140		301							{2: 'Lucia', 3: '...', 18: '100010465'}
+141	141		301				AniZhuanchangBegin			{3: 'Lucia glances at the distance between you and moves closer to you silently.'}
+142	142		101							{4: '3', 5: '1'}
+143	143		502						500.0	{1: 'DialogDisable'}
+144	144		401							{1: '2', 2: '214'}
+145	145		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+146	146		205				AniZhuanchangEnd		500.0	{1: '1003', 2: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_01_04.png', 3: '0', 4: '1', 5: '0'}
+147	147		301			DialogEnable	DialogDisable			{3: 'Dark clouds have come along with the cool night rain and stolen the moonlight and time. The hair on your foreheads is almost dry.'}
+148	148		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_01_04.png', 3: '1', 4: '0', 5: '0.7'}
+149	149		205						1500.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_01_05.png', 3: '0', 4: '1', 5: '1'}
+150	150		205							{1: '1003', 3: '0', 4: '1', 5: '0'}
+151	151		301			DialogEnable				{3: 'The pool is overwhelmed by the rain. Lotus leaves emerge from the water and then get pressed down by the rain.'}
+152	152		301							{3: 'A few tadpoles can be vaguely seen among the stems underwater, appearing briefly and vanishing again.'}
+153	153		301				DialogDisable			"{2: 'Lucia', 3: ""I haven't felt this relaxed for a long time."", 18: '100010466'}"
+154	154		302							{2: 'Yeah. We are always busy.', 3: '155'}
+155	155		402					200.0		{1: '214'}
+156	156		401							{1: '2', 2: '4907'}
+157	157		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_01_05.png', 3: '1', 4: '0', 5: '0.7'}
+158	158		205						1500.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_01_06.png', 3: '0', 4: '1', 5: '1'}
+159	159		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+160	160		301			DialogEnable				{3: 'The heavy rain gradually slow down but still resists to stop. Water comes down from the roof, making crisp yet sticky noises.'}
+161	161		301				AniZhuanchangBegin			{3: 'In the rainy dark night, it feels the world had been squeezed, and everything had been paused. The waves were gone and so were the stars, leaving only the two of you snuggling up together in a small corner.'}
+162	162		205							{1: '1005', 3: '0', 4: '1', 5: '0'}
+163	163		402							{1: '4907'}
+164	164		502						500.0	{1: 'DialogDisable'}
+165	165		401							{1: '2', 2: '214', 3: '0.7'}
+166	166		101							{4: '3', 5: '1'}
+167	167		101				AniZhuanchangEnd		500.0	{1: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_01_09.jpg'}
+168	168		301			DialogEnable	DialogDisable			{3: 'The human and the Construct sit in the corridor, listening quietly to the rain.'}
+169	169		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_01_10.png', 3: '0', 4: '1', 5: '1'}
+170	170		104							{1: '0|200|0', 2: '0', 4: '3'}
+171	171		104						1500.0	{1: '0|0|0', 2: '1', 4: '3'}
+172	172		301			DialogEnable				{3: 'A faint voice comes from beside you.'}
+173	173		301							{2: 'Lucia', 3: 'The world feels so small...', 18: '100010467'}
+174	174		302							{2: '...Hmm?', 3: '175'}
+175	175		301				AniZhuanchangBegin			"{3: ""The human didn't hear the girl in a trance and asks softly.""}"
+176	176		502						500.0	{1: 'DialogDisable'}
+177	177		101							{4: '3', 5: '1'}
+178	178		101				AniZhuanchangEnd		300.0	{1: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_02_01.jpg'}
+179	179		301			DialogEnable				"{3: ""The girl doesn't look back. She gazes at the yard and speaks again.""}"
+180	180		301							"{2: 'Lucia', 3: ""It's just that... usually, the world feels so big, and you are always busy with so many different tasks, Commandant."", 18: '100010468'}"
+181	181		301							"{2: 'Lucia', 3: 'Many see you as a ""hero,"" hoping you can lead us forward.', 18: '100010469'}"
+182	182		301							{2: 'Lucia', 3: 'I understand that... And you are also working hard to meet their expectations.', 18: '100010470'}
+183	183		301							"{2: 'Lucia', 3: 'So you\'re always pushing yourself with thoughts like ""just try a little harder, just hold on a little longer.""', 18: '100010471'}"
+184	184		301							{2: 'Lucia', 3: '...', 18: '100010472'}
+185	185		301							{3: 'Lucia pauses for a moment without saying anything.'}
+186	186		301							{3: 'She looks a bit sad with the wet hair on her cheeks, holding a kind of broken beauty.'}
+187	187		301				DialogDisable			{2: 'Lucia', 3: 'But at this moment, the world is small, and Commandant... belongs to me alone.', 18: '100010473'}
+188	188		302							"{2: ""...I'll always be your Commandant."", 3: '189'}"
+189	189		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+190	190		402							{1: '214'}
+191	191		401							{1: '2', 2: '841', 3: '1'}
+192	192		501						1500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLianyi.prefab', 2: '3'}
+193	193		205						2200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_02_02.jpg', 3: '0', 4: '1', 5: '2'}
+194	194		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_02_02.jpg'}
+195	195		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+196	196		301			DialogEnable				{3: 'A distant frog croak comes from outside the yard. The rain stops.'}
+197	197		502						500.0	{1: 'DialogDisable'}
+198	198		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_02_03.png', 3: '0', 4: '1', 5: '0.5'}
+199	199		104							{1: '0|-100|0', 2: '0', 4: '3'}
+200	200		104						1500.0	{1: '0|0|0', 2: '1', 4: '3'}
+201	201		301			DialogEnable				{3: 'Lucia stands up and speaks with a barely perceptible hint of amusement in her tone.'}
+202	202		301							"{2: 'Lucia', 3: ""The rain has stopped, Commandant. Let's go back."", 18: '100010474'}"
+203	203		302							{2: '...Yeah.', 3: '204'}
+204	204		301				AniZhuanchangBegin			{3: 'Back at the supply crate, you put the towels in the recycle slots, turn around, and walk outside.'}
+205	205		502						500.0	{1: 'DialogDisable'}
+206	206		101							{4: '3', 5: '1'}
+207	207		101				AniZhuanchangEnd		300.0	{1: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_02_04.jpg'}
+208	208		401							{1: '2', 2: '1543'}
+209	209		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_02_05.jpg', 3: '0', 4: '1', 5: '0.5'}
+210	210		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_02_05.jpg'}
+211	211		205						200.0	{1: '999'}
+212	212		401							{1: '2', 2: '4895'}
+213	213		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_02_06.jpg', 3: '0', 4: '1', 5: '0.5'}
+214	214		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_02_06.jpg'}
+215	215		205						500.0	{1: '999'}
+216	216		301			DialogEnable				{3: 'The long untrodden path is now covered in moss. You accidentally step on the moss and slip.'}
+217	217		301				DialogDisable			{2: 'Lucia', 3: 'Commandant!', 18: '100010475'}
+218	218		401							{1: '2', 2: '4044'}
+219	219		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+220	220		101						800.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+221	221		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+222	222		101						1000.0	{1: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_02_07.jpg'}
+223	223		301			DialogEnable				{3: 'Lucia immediately pulls you into her embrace and prevents you from falling down.'}
+224	224		301							{3: 'A pain shoots through your ankle.'}
+225	225		301				DialogDisable			"{3: ""Lucia notices the slight frown between the human's eyebrows and leans down to check.""}"
+226	226		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_03_01.jpg', 3: '0', 4: '1', 5: '1'}
+227	227		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_03_01.jpg'}
+228	228		205							{1: '999'}
+229	229		301			DialogEnable				"{2: 'Lucia', 3: ""Your ankle is sprained. I'll go get some medicine."", 18: '100010476'}"
+230	230		502							{1: 'DialogDisable'}
+231	231		101				AniZhuanchangEnd		500.0	{1: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_03_02.jpg'}
+232	232		301			DialogEnable				{3: 'Lucia takes out the ointment from the supply crate, lets you sit on the step, and starts to apply it to your ankle.'}
+233	233		301				DialogDisable			{3: 'She does it so swiftly that cool ointment has been evenly applied to your ankle in no time.'}
+234	234		302							{2: 'Thank you, Lucia.', 3: '235'}
+235	235		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_03_03.png', 3: '0', 4: '1', 5: '0.8'}
+236	236		104							{1: '70|10|200', 2: '0', 4: '3'}
+237	237		104						1200.0	{1: '0|0|0', 2: '0.8', 4: '3'}
+238	238		301			DialogEnable				{3: 'Lucia smiles without saying anything.'}
+239	239		301							"{3: ""She turns to look at the path outside the door and turns around to check the human's wound.""}"
+240	240		301							"{2: 'Lucia', 3: ""It's a long way back..."", 18: '100010477'}"
+241	241		101							{4: '3', 5: '1'}
+242	242		502							{1: 'DialogDisable'}
+243	243		401							{1: '2', 2: '1543'}
+244	244		101				AniZhuanchangEnd		500.0	{1: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_03_04.jpg'}
+245	245		301			DialogEnable				{3: 'She squats down with her back to the human.'}
+246	246		301							{2: 'Lucia', 3: 'Let me carry you back, Commandant.', 18: '100010478'}
+247	247		502						500.0	{1: 'DialogDisable'}
+248	248		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_03_05.jpg', 3: '0', 4: '1', 5: '1'}
+249	249		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_03_05.jpg'}
+250	250		205							{1: '999'}
+251	251		301			DialogEnable				{3: 'Without any shyness or hesitation, you readily accept her offer. Having been together for so long and gone through so many things, you have witnessed each other at your best and worst. Between you, there is only calm honesty.'}
+252	252		302				AniZhuanchangBegin			{2: 'Alright.', 3: '253'}
+253	253		502							{1: 'DialogDisable'}
+254	254		401						2000.0	{1: '1', 2: '36'}
+255	255		401							{1: '1', 2: '6160'}
+256	256		401							{1: '2', 2: '904'}
+257	257		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+258	258		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_04_01.png', 4: '4'}
+259	259		104				AniZhuanchangEnd		500.0	{1: '390|220|-200', 2: '0', 4: '4'}
+260	260		301			DialogEnable	DialogDisable			"{3: 'At night, the girl walks to the beach, where the ""blue tears"" are still visible. In the blue glow of the waves stand two figures on the beach.'}"
+261	261		104						2050.0	{1: '0|0|0', 2: '2', 4: '4'}
+262	262		205						1200.0	{1: '1003', 2: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_04_02.png', 3: '0', 4: '1', 5: '1'}
+263	263		402							{1: '904'}
+264	264		401							{1: '2', 2: '2635'}
+265	265		301			DialogEnable				"{3: ""It's surprisingly cool after the summer rain. The human's clothes are still wet. And when the breeze blows, it takes away the heat, making the human seek warmth instinctively.""}"
+266	266		301							{3: 'Sensing the slight movement behind her, Lucia turns up the temperature of her frame, passing the warmth between you.'}
+267	267		301							{3: 'With each breath in the silence, everything feels damp and sticky.'}
+268	268		502							{1: 'DialogDisable'}
+269	269		101							{4: '3', 5: '1'}
+270	270		101							{4: '4', 5: '1'}
+271	271		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_04_02.png'}
+272	272		104				AniZhuanchangEnd		300.0	{1: '-300|-150|-50', 2: '0'}
+273	273		302							{2: 'This is so warm...', 3: '274'}
+274	274		302							{2: 'If only... time could stop in this moment.', 3: '275'}
+275	275		301			DialogEnable				"{3: ""The girl's body quivers. She slows down quietly.""}"
+276	276		301							{2: 'Lucia', 3: '...Yeah.', 18: '100010479'}
+277	277		301							{3: 'An unspoken understanding has spread across your hearts.'}
+278	278		301							"{2: 'Lucia', 3: ""It feels like we were living in the Ocean Moon Goddess' story."", 18: '100010480'}"
+279	279		301				DialogDisable			{2: 'Lucia', 3: 'Do you think they used to walk on the same beach that we are standing on?', 18: '100010481'}
+280	280		302							{2: 'Maybe...', 3: '281'}
+281	281		302							{2: 'Perhaps that beach is exactly the beach the goddess usually stayed.', 3: '282'}
+282	282		301			DialogEnable				{2: 'Lucia', 3: 'Where do you think they went at the end of the story, Commandant?', 18: '100010482'}
+283	283		302							{2: 'I guess they lived in seclusion happily with each other by the sea.', 3: '284'}
+284	284		301				DialogDisable			{2: 'Lucia', 3: 'Do you think we could be like them someday?', 18: '100010483'}
+285	285		302							"{2: ""Didn't I tell you before?"", 3: '286'}"
+286	286		302							{2: 'We will build our own little house by the sea.', 3: '287'}
+287	287		301			DialogEnable				{2: 'Lucia', 3: 'That day will surely come.', 18: '100010484'}
+288	288		301							{3: 'In the sea wind, Lucia speaks after a brief silence.'}
+289	289		301				DialogDisable			{2: 'Lucia', 3: 'Is this a happy summer for you?', 18: '100010485'}
+290	290		302							{2: 'Yeah. Very happy.', 3: '291'}
+291	291		302							{2: 'Because you are by my side.', 3: '292'}
+292	292		302							"{2: ""Right. Let's name the dog clover."", 3: '293'}"
+293	293		301			DialogEnable				"{3: ""You and Lucia agreed in Catania that you'd get a dog together in the future.""}"
+294	294		301							"{3: ""Lucia's mouth curls into a smile.""}"
+295	295		301							{2: 'Lucia', 3: 'Yes, Clover it is.', 18: '100010486'}
+296	296		502							{1: 'DialogDisable'}
+297	297		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_04_03.png', 4: '6'}
+298	298		101				AniZhuanchangEnd		300.0	{1: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_04_04.png'}
+299	299		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_04_05.png', 3: '0', 4: '1', 5: '0.8'}
+300	300		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_04_06.png', 3: '0', 4: '1', 5: '0.3'}
+301	301		104							{1: '200|50|0', 2: '0', 4: '4'}
+302	302		104						500.0	{1: '60|-20|0', 2: '0.6', 4: '4'}
+303	303		401							{1: '2', 2: '2635'}
+304	304		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_04_07.png', 3: '0', 4: '1', 5: '0.5'}
+305	305		101							{4: '3', 5: '1'}
+306	306		101							{4: '4', 5: '1'}
+307	307		101						1500.0	{4: '6', 5: '1'}
+308	308		205						2000.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_04_08.jpg', 3: '0', 4: '1', 5: '1.5'}
+309	309		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_04_08.jpg'}
+310	310		205							{1: '1007', 3: '0', 4: '1', 5: '1'}
+311	311		101							{4: '5', 5: '1'}
+312	312		301			DialogEnable	DialogDisable			{3: 'In the night without stars, footsteps on the beach extend into the distance.'}
+313	313		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_04_09.png', 3: '0', 4: '1', 5: '0.8'}
+314	314		104							{1: '0|200|0', 2: '0', 4: '3'}
+315	315		104						1500.0	{1: '0|0|0', 2: '1', 4: '3'}
+316	316		301			DialogEnable	DialogDisable			{3: 'The girl suddenly chuckles.'}
+317	317		302							"{2: ""What's wrong?"", 3: '318'}"
+318	318		205						1000.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_04_10.png', 3: '0', 4: '1', 5: '0.6'}
+319	319		301			DialogEnable				"{2: 'Lucia', 3: ""Hmm... It's a secret."", 18: '100010487'}"
+320	320		301							"{3: ""It's rare to hear playful remarks like this from Lucia.""}"
+321	321		302							{2: 'Huh? Not even me?', 3: '322'}
+322	322		301				DialogDisable			{2: 'Lucia', 3: 'Nope!', 18: '100010488'}
+323	323		101							{4: '3', 5: '1'}
+324	324		101							{4: '4', 5: '1'}
+325	325		101							{1: 'Assets/Product/Texture/Image/BgComic/V300cibeizhe/V300_00.png', 4: '5'}
+326	326		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_01_07.png', 4: '4'}
+327	327		101							{1: 'Assets/Product/Texture/Image/BgComic/V360Lucia/V360_04_11.png'}
+328	328		104				AniZhuanchangEnd		500.0	{1: '0|40|-150', 2: '0'}
+329	329		301			DialogEnable				{3: 'Laughters come from the beach and fade away on the sea.'}
+330	330		502						400.0	{1: 'DialogDisable'}
+331	331		104							{1: '0|-345|-350', 2: '8'}
+332	332		104						4500.0	{1: '0|45|100', 2: '8', 4: '4'}
+333	333		301		1	DialogEnable	AniZhuanchangBegin		2500.0	{3: 'Their silhouettes gradually fade into the dark of night.'}

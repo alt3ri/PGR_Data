@@ -1,0 +1,344 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory724.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		502						250.0	{1: 'DialogDisable'}
+4	4		107							{1: 'Outside Survey Point 23 Camp', 2: 'Endless Mountain Forests', 4: 'Afternoon'}
+5	5		301							{3: 'Afternoon, Stretching Mountain Forests, Outside Survey Point 23 Camp'}
+6	6		108							{1: '1'}
+7	7		301			DialogEnable				{3: 'You are inserting the last probe from your backpack into the towering tree, set to record Punishing density and a bunch of other data.'}
+8	8		301							"{3: ""You grab Selena's outstretched arm, using her to steady yourself as you pull out of the thick foliage and back onto the secluded path.""}"
+9	9		211							{1: '1', 2: '1021057', 7: '1'}
+10	10		301							{1: '1', 2: 'Selena', 3: 'Thanks for going to all this trouble. I really should be the one doing this.', 4: '101', 18: '100011128', 19: '1', 21: 'v360Selena'}
+11	11		302							"{2: ""Since we're already here, we might as well get something done."", 3: '12'}"
+12	12		301							"{3: ""With a slight smile, Selena's fingertips glide across the tactical tablet, waking up and tweaking the operational parameters of the probes they've placed along their route.""}"
+13	13		301							"{2: 'Selena', 3: ""I didn't expect you to be the one sent here. After all, we haven't exactly run into any major threats—the archaeological team just followed protocol and put in a formal request for support after hitting some anomalies."", 4: '101', 18: '100011129', 19: '1', 21: 'v360Selena'}"
+14	14		301				DialogDisable			"{2: 'Selena', 3: ""Plus, since I'm already on the team, the request's priority level should be pretty low."", 4: '101', 18: '100011130', 19: '1', 21: 'v360Selena'}"
+15	15		302							"{2: ""It's actually super low priority. Babylonia's system had already filtered it out."", 3: '16'}"
+16	16		104							{1: '0|0|-20', 2: '0.3'}
+17	17		213						350.0	{1: '1', 2: '0.3', 5: '-20'}
+18	18		301			DialogEnable				{3: 'As you talk, you move closer to Selena and reach over, taking the lead to help her finish up the operations on the bottom of the screen.'}
+19	19		301							{2: 'Selena', 3: 'Ah, thanks... So, why did you take on this mission anyway?', 4: '101', 18: '100011131', 19: '1', 21: 'v360Selena'}
+20	20		104						250.0	{1: '0|10|-20', 2: '0.2'}
+21	21		104							{1: '0|0|-20', 2: '0.3'}
+22	22		301							{3: 'As you try to pull your finger away, Selena presses it down, firmly gripping it like a stylus and awkwardly keeps operating the tablet with it.'}
+23	23		302							"{2: ""Because you're here."", 3: '24', 4: 'Want to guess why?', 5: '30'}"
+24	24		214						250.0	{1: '1', 2: '4'}
+25	25		214							{1: '1', 2: '1'}
+26	26		301							{3: 'You feel a momentary pause in the sensation against your finger. Selena turns her head, blinking as if nothing happened.'}
+27	27		214							{1: '1', 2: '5'}
+28	28		301				DialogDisable			{2: 'Selena', 3: 'Hmm? Because of me?', 4: '101', 18: '100011132', 19: '1', 21: 'v360Selena'}
+29	29		302							{2: 'Yeah, think about it—even a powerful Construct like you is asking for help.', 3: '39'}
+30	30		301							{2: 'Selena', 3: 'Hm...', 4: '101', 18: '100011133', 19: '1', 21: 'v360Selena'}
+31	31		214						250.0	{1: '1', 2: '4'}
+32	32		214							{1: '1', 2: '1'}
+33	33		301							{3: 'You feel a momentary lull in the sensation against your finger. Selena turns her head, blinking with an enigmatic half-smile.'}
+34	34		301							"{2: 'Selena', 3: ""Surely it isn't because of me?"", 4: '101', 18: '100011134', 19: '1', 21: 'v360Selena'}"
+35	35		302							"{2: ""It's definitely not because of you."", 3: '36'}"
+36	36		214							{1: '1', 2: '5'}
+37	37		301				DialogDisable			{2: 'Selena', 3: '...Huh?', 4: '101', 18: '100011135', 19: '1', 21: 'v360Selena'}
+38	38		302							"{2: ""It's because even a powerful Construct like you is asking for help."", 3: '39'}"
+39	39		302							{2: 'There must be something unusual going on.', 3: '40'}
+40	40		214							{1: '1', 2: '6'}
+41	41		104						250.0	{1: '0|-5|-30', 2: '0.2'}
+42	42		104							{1: '0|0|-20', 2: '0.25'}
+43	43		301			DialogEnable				{3: 'The second you finish speaking, your finger gets a playful tug, almost like a comeback.'}
+44	44		302							{2: 'Ah...', 3: '45'}
+45	45		212							{1: '1', 6: '1'}
+46	46		301							{3: 'After a brief moment of playful chaos, Selena smooths down her slightly messy hair and hands you the tablet.'}
+47	47		211							{1: '1', 2: '1021057', 3: '4', 7: '1'}
+48	48		301							"{1: '1', 2: 'Selena', 3: ""Everything's all set up. Could you look it over for me—keep a sharp eye out and don't miss any suspicious details."", 4: '101', 18: '100011136', 19: '1', 21: 'v360Selena'}"
+49	49		302							{2: 'Coming—', 3: '50'}
+50	50		212							{1: '1', 6: '1'}
+51	51		301				DialogDisable			"{3: ""You exchange a smile as you take the tablet, then you put your casual demeanor aside to focus on the task at hand. Seeing this, Selena's face also turns serious.""}"
+52	52		306							{1: '1'}
+53	53		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgUi/BgFightLoading4.jpg', 3: '0', 4: '1', 5: '0.3'}
+54	54		101							{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading4.jpg'}
+55	55		205							{1: '999'}
+56	56		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3CommenScreenDate.prefab', 2: '1'}
+57	57		401							{1: '2', 2: '4625'}
+58	58		301			DialogEnable				{3: 'You are swiping through the screens on the tablet, one by one, finally landing on a page crammed with data.'}
+59	59		301				DialogDisable			{3: 'The spreadsheet tracks the fluctuations in Punishing density. However, the data points are recorded with one decimal place fewer than the standard values, which makes the entries look more condensed.'}
+60	60		306							
+61	61		402							{1: '4625'}
+62	62		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3CommenScreenDate.prefab'}
+63	63		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory724.jpg', 3: '0', 4: '1', 5: '0.3'}
+64	64		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory724.jpg'}
+65	65		205							{1: '999'}
+66	66		302							{2: 'Could the decimal points have been entered incorrectly?', 3: '67'}
+67	67		302							{2: 'There are too many data points being recorded.', 3: '68'}
+68	68		211							{1: '1', 2: '1021057', 7: '1'}
+69	69		301			DialogEnable				{1: '1', 2: 'Selena', 3: 'This is precisely the problem the archaeological team has been grappling with lately, and the main reason we asked Babylonia for help.', 4: '101', 18: '100011137', 19: '1', 21: 'v360Selena'}
+70	70		301							{2: 'Selena', 3: 'While working in this mountain range, our archaeological team has run into high-intensity Punishing fluctuations on more than one occasion.', 4: '101', 18: '100011138', 19: '1', 21: 'v360Selena'}
+71	71		301							{2: 'Selena', 3: 'At first, we were on high alert since such fluctuations typically coincide with large numbers of Corrupted or Hetero-Creature sightings...', 4: '101', 18: '100011139', 19: '1', 21: 'v360Selena'}
+72	72		301							{3: 'As she speaks, Selena taps a few times on her tablet, bringing up a collection of images on the screen.'}
+73	73		301							"{2: 'Selena', 3: ""But we haven't actually found any Hetero-Creatures or Corrupted whatsoever."", 4: '101', 18: '100011140', 19: '1', 21: 'v360Selena'}"
+74	74		301							"{2: 'Selena', 3: ""The few combat encounters we've recorded so far have only been against enemies that wandered in from other areas."", 4: '101', 18: '100011141', 19: '1', 21: 'v360Selena'}"
+75	75		301				DialogDisable			{2: 'Selena', 3: 'Have you ever come across anything like this before, Conductor?', 4: '101', 18: '100011142', 19: '1', 21: 'v360Selena'}
+76	76		212							{1: '1', 6: '1'}
+77	77		401							{1: '2', 2: '558'}
+78	78		504							{1: '0.7'}
+79	79		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+80	80		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory557.jpg'}
+81	81		401							{1: '2', 2: '558'}
+82	82		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+83	83		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory558.jpg'}
+84	84		401							{1: '2', 2: '558'}
+85	85		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+86	86		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory555.jpg'}
+87	87		401							{1: '2', 2: '558'}
+88	88		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+89	89		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory724.jpg'}
+90	90		504							{1: '0'}
+91	91		301			DialogEnable	DialogDisable			{3: 'As the images cycle through, you scan them, trying to remember a similar situation from your past, but nothing comes to mind.'}
+92	92		302							"{2: 'No...', 3: '93', 4: ""I've never heard of anything like it."", 5: '93'}"
+93	93		302							"{2: ""But if what you're describing is spot on, I think we should stay on high alert."", 3: '94'}"
+94	94		302							{2: 'The archaeological dig should be put on hold.', 3: '95'}
+95	95		301			DialogEnable				{3: 'Selena shakes her head, a look of resignation on her face.'}
+96	96		211							{1: '1', 2: '1021057', 7: '1'}
+97	97		301							"{1: '1', 2: 'Selena', 3: ""I was thinking the exact same thing, but the archaeological team's work always goes hand in hand with risk, and we're also right on the doorstep of the conservation area."", 4: '101', 18: '100011143', 19: '1', 21: 'v360Selena'}"
+98	98		301							"{2: 'Selena', 3: ""Without clear cause or danger, the person in charge isn't willing to pull the plug on the site."", 4: '101', 18: '100011144', 19: '1', 21: 'v360Selena'}"
+99	99		301							{2: 'Selena', 3: 'But just to be safe, they did take my suggestions to set up probes, widen the monitoring area, and ask Babylonia for help.', 4: '101', 18: '100011145', 19: '1', 21: 'v360Selena'}
+100	100		212							{1: '1', 6: '1'}
+101	101		401							{1: '2', 2: '4051'}
+102	102		301				DialogDisable			{3: 'You close the image gallery, switch the screen back to the spreadsheet, and weigh the situation carefully.'}
+103	103		302							{2: 'Before I got here,', 3: '104'}
+104	104		302							{2: 'how many documented anomalies have cropped up in total?', 3: '105'}
+105	105		211							{1: '1', 2: '1021057', 7: '1'}
+106	106		301			DialogEnable				{1: '1', 2: 'Selena', 3: 'Eleven times...', 4: '101', 18: '100011146', 19: '1', 21: 'v360Selena'}
+107	107		401							{1: '2', 2: '4051'}
+108	108		301							{3: 'As she speaks, Selena switches the spreadsheet to filtering mode and sorts by time. Just like that, the information straightens itself out and a pattern emerges.'}
+109	109		301							{2: 'Selena', 3: 'All anomalies happen between 5:00 PM and 7:00 PM standard time, fitting neatly into that two-hour slot.', 4: '101', 18: '100011147', 19: '1', 21: 'v360Selena'}
+110	110		302							{2: '5:00 PM...', 3: '111'}
+111	111		212							{1: '1', 6: '1'}
+112	112		301				DialogDisable			{3: 'After muttering the time, you both look up at the same instant.'}
+113	113		104						250.0	{1: '0|-100|-150', 2: '0.8'}
+114	114		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory727.jpg', 3: '0', 4: '1', 5: '0.6'}
+115	115		104						400.0	{1: '210|-155|-400', 2: '0', 4: '3'}
+116	116		401							{1: '2', 2: '759'}
+117	117		301			DialogEnable				{3: 'Startled birds take flight, sending rustling echoes through the mountains before vanishing into the amber horizon.'}
+118	118		302				AniZhuanchangBegin			"{2: ""It's dusk..."", 3: '119'}"
+119	119		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory724.jpg'}
+120	120		205							{1: '999'}
+121	121		104							{1: '0|0|0', 2: '0', 4: '3'}
+122	122		301			AniZhuanchangEnd				{3: 'You just stare at the horizon for a long time until a blast of mountain wind whips past, shaking Selena back to reality.'}
+123	123		211							{1: '1', 2: '1021057', 7: '1'}
+124	124		301							{1: '1', 2: 'Selena', 3: 'No need to worry, though. After all...', 4: '101', 18: '100011148', 19: '1', 21: 'v360Selena'}
+125	125		212							{1: '1', 6: '1'}
+126	126		402							{1: '208'}
+127	127		401							{1: '2', 2: '5701'}
+128	128		301							{3: 'Clang—'}
+129	129		401							{1: '1', 2: '27'}
+130	130		301							"{3: ""Before the echo even fades, an impossibly delicate bell tone chimes in your ears. It's otherworldly and fleeting, shimmering between close by and far away.""}"
+131	131		401							{1: '2', 2: '5148'}
+132	132		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab', 2: '2'}
+133	133		111						1200.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+134	134		301							"{3: ""Suddenly, ripples, like on water, unfold right before your eyes. The scenery hasn't changed, but something's definitely off.""}"
+135	135		211							{1: '1', 2: '1021057', 3: '3', 7: '1'}
+136	136		301							{1: '1', 2: 'Selena', 3: '!?', 4: '101', 18: '100011149', 19: '1', 21: 'v360Selena'}
+137	137		301							{2: 'Selena', 3: 'Conductor, did you feel that?', 4: '101', 18: '100011150', 19: '1', 21: 'v360Selena'}
+138	138		401							{1: '2', 2: '4895'}
+139	139		213						250.0	{1: '1', 2: '0.25', 3: '50'}
+140	140		212							{1: '1', 6: '1'}
+141	141		201							{1: '1', 2: '501161', 4: '230', 5: '-25', 6: '40'}
+142	142		301							{1: '1', 3: 'Selena instinctively steps forward, positioning herself protectively in front of you.'}
+143	143		302							"{2: 'I heard it.', 3: '144', 4: ""Something's different now."", 5: '144'}"
+144	144		301							{2: 'Selena', 3: 'Same here...', 4: '1', 18: '100011151'}
+145	145		202							{1: '1', 6: '1'}
+146	146		401							{1: '2', 2: '5701'}
+147	147		301							{3: 'Clang—'}
+148	148		301							{3: 'The bell clangs again.'}
+149	149		301							{2: '??', 3: 'Eee——ahh——eee——', 18: '100011152'}
+150	150		301							{3: 'A rhythmic, melodic chant accompanies the sound.'}
+151	151		306							{1: '1'}
+152	152		301							{3: 'Your gaze follows it to a small procession emerging from behind the lush mountain forest, stepping onto the bluestone path.'}
+153	153		301							"{3: ""It's a wooden palanquin, seemingly floating in mid-air, with a masked shrine maiden walking both in front of and behind it.""}"
+154	154		301							{3: 'Suddenly, the chanting stops dead. The procession halts, and the shrine maiden at the front raises a ritual bell, swaying it rhythmically.'}
+155	155		306							
+156	156		401							{1: '2', 2: '5701'}
+157	157		211							{1: '1', 2: '1021053', 4: '-400', 7: '1'}
+158	158		211							{1: '2', 2: '1021055', 4: '400', 7: '1'}
+159	159		301							{1: '1', 2: 'Shrine Maiden', 3: 'Shrine candles burning bright, the palanquin brings a visitor to these mountains—', 4: '101', 18: '100011153'}
+160	160		401							{1: '2', 2: '5701'}
+161	161		301							{2: 'Shrine Maiden', 3: 'Sacred music blessing a union, as demons and spirits hold their breath—', 4: '102', 18: '100011154'}
+162	162		212							{1: '1', 2: '2', 6: '1'}
+163	163		301							"{3: 'The melody is bizarre—it\'s somewhat musical but feels more like an order, demanding that any ""person"" who hears it abide by the rules within its verses.'}"
+164	164		306							{1: '1'}
+165	165		211							{1: '2', 2: '1021053', 4: '-400', 5: '-150', 6: '-100'}
+166	166		211							{1: '3', 2: '1021055', 4: '400', 5: '-150', 6: '-100'}
+167	167		301							{3: 'As the chant ends, the shrine maiden at the front seems to get an unseen command. She suddenly spins around, her masked gaze cutting right through to the two of you.'}
+168	168		306							
+169	169		212							{1: '2', 2: '3', 6: '1'}
+170	170		211							{1: '1', 2: '1021057', 3: '3', 7: '1'}
+171	171		301							"{1: '1', 2: 'Selena', 3: ""Something's off, Conductor, we should..."", 4: '101', 18: '100011155', 19: '1', 21: 'v360Selena'}"
+172	172		401							{1: '2', 2: '2902'}
+173	173		212							{1: '1', 6: '1'}
+174	174		301							{3: 'Before Selena can get her warning out, something shows up behind them. Two leaves drift down from midair and land gently on their foreheads.'}
+175	175		301							"{3: ""The whole thing happens without a hint of malice, leaving her speechless for a moment. The next second, you take Selena's hand.""}"
+176	176		302							{2: '(Shh—)', 3: '177', 4: '(Hold on a second...)', 5: '177'}
+177	177		211							{1: '1', 2: '1021057', 3: '3', 7: '1'}
+178	178		301							{1: '1', 2: 'Selena', 3: '...', 4: '101'}
+179	179		301							{3: 'Selena freezes, receiving the signal, and watches the scene before her without moving.'}
+180	180		211							{1: '1', 2: '1021053', 7: '1'}
+181	181		301							"{1: '1', 3: ""On the other side, the masked maiden's form wavers, her movements showing confusion. The anomaly she'd just sensed suddenly vanishes from her sight, leaving only the rustling of leaves in its wake.""}"
+182	182		301							{2: 'Shrine Maiden', 3: '?', 4: '101', 18: '100011156'}
+183	183		301							{2: 'Shrine Maiden', 3: '...', 4: '101', 18: '100011157'}
+184	184		212							{1: '1', 6: '1'}
+185	185		301							{3: 'After a long moment, the maiden gets back into position, and the procession starts up again.'}
+186	186		301							{3: 'Only after the entire procession vanishes back into the mountain mist do the two finally spin around, dying to see who exactly lent them a hand.'}
+187	187		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab'}
+188	188		211							{1: '1', 2: '1021051'}
+189	189		301							{1: '1', 2: '???', 3: '...', 4: '101'}
+190	190		306							{1: '1'}
+191	191		301							"{3: ""What greets them is a fox about half a person's height. She sits up straight, her amber eyes gently flitting about as she takes in the human and Construct before it.""}"
+192	192		301							"{3: ""Then, the fox gingerly opens her mouth. What comes out isn't the cry of a wild animal, but instead—""}"
+193	193		306							
+194	194		301							"{2: '???', 3: ""You're devotees from down the mountain, aren't you?"", 4: '101', 18: '100011158', 19: '1', 21: 'v360Selena'}"
+195	195		301							"{3: ""The fox's voice is clear and delicate, the end of its question naturally rising like the chirping of mountain birds.""}"
+196	196		302							{2: '?!', 3: '197'}
+197	197		211							{1: '1', 2: '1021057', 3: '3', 7: '1'}
+198	198		301							{1: '1', 2: 'Selena', 3: '?!', 4: '101', 18: '100011159', 19: '1', 21: 'v360Selena'}
+199	199		212							{1: '1', 6: '1'}
+200	200		301							{3: 'Both Selena and you instinctively tense up, the mechanisms and weapons beneath your clothing rustling as you brace yourselves. Even in this world of strange wonders, a beast speaking human language still crosses a line.'}
+201	201		301							{3: 'The fox barely reacts to their alarm. She merely tilts her head, her delicate face displaying a surprisingly human-like expression of concern.'}
+202	202		211							{1: '1', 2: '1021051', 7: '1'}
+203	203		301							"{1: '1', 2: '???', 3: ""You should get off this mountain quickly. If you're here to pray for good fortune in love, it'd be better to come back later."", 4: '101', 18: '100011160', 19: '1', 21: 'v360Selena'}"
+204	204		211							{1: '1', 2: '1021057', 7: '1'}
+205	205		301							"{1: '1', 2: 'Selena', 3: ""What's going on here?"", 4: '101', 18: '100011161', 19: '1', 21: 'v360Selena'}"
+206	206		211							{1: '1', 2: '1021051', 7: '1'}
+207	207		301							"{1: '1', 2: '???', 3: ""So many things are going on! Hmm... I can't quite explain it all right now..."", 4: '101', 18: '100011162', 19: '1', 21: 'v360Selena'}"
+208	208		212							{1: '1', 6: '1'}
+209	209		301							"{3: ""As she speaks, the fox's ears twitch slightly as if detecting something. Her gaze drifts past Selena toward the bluestone path behind.""}"
+210	210		401							{1: '2', 2: '5701'}
+211	211		301							{3: 'Clang—'}
+212	212		301							{3: 'In the distance, bells ring out again.'}
+213	213		211							{1: '1', 2: '1021051', 7: '1'}
+214	214		301							{1: '1', 2: '???', 3: 'Oh no—', 4: '101', 18: '100011163', 19: '1', 21: 'v360Selena'}
+215	215		301							"{2: '???', 3: ""More people are coming! Let's talk on the go!"", 4: '101', 18: '100011164', 19: '1', 21: 'v360Selena'}"
+216	216		212							{1: '1', 6: '1'}
+217	217		401							{1: '2', 2: '2704'}
+218	218		301							{3: 'With that, the fox leaps into the underbrush, glancing back to urge them along.'}
+219	219		211							{1: '1', 2: '1021051', 7: '1'}
+220	220		301				AniZhuanchangBegin			{1: '1', 2: '???', 3: 'Hurry, this way!', 4: '101', 18: '100011165', 19: '1', 21: 'v360Selena'}
+221	221		212							{1: '1', 6: '1'}
+222	222		401						2000.0	{1: '1', 2: '36'}
+223	223		401							{1: '1', 2: '120'}
+224	224		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory727.jpg'}
+225	225		502						250.0	{1: 'DialogDisable'}
+226	226		107			AniZhuanchangEnd				{1: 'Endless Mountain Forests', 2: 'Dusk'}
+227	227		301							{3: 'Dusk settles over the endless mountain forests.'}
+228	228		108							{1: '1'}
+229	229		301			DialogEnable				{3: 'The fox leads Selena and you off the beaten bluestone path, taking you down a secluded trail where tracks are barely visible.'}
+230	230		211							{1: '1', 2: '1021051', 7: '1'}
+231	231		301							"{1: '1', 2: '???', 3: ""Selena, 【kuroname】... I've remembered your names!"", 4: '101', 18: '100011166', 19: '1', 21: 'v360Selena'}"
+232	232		301							"{2: 'Yun Ye', 3: ""I'm Yun Ye, the Goddess of Union."", 4: '101', 18: '100011167', 19: '1', 21: 'v360Selena'}"
+233	233		301							"{2: 'Yun Ye', 3: ""I'm the deity you've been looking for! Heh, matchmaking, forming unions, blessing contracts—you name it, I can do it!"", 4: '101', 18: '100011168', 19: '1', 21: 'v360Selena'}"
+234	234		301							"{3: ""As she's talking, the fox suddenly freezes, as if something just hit her. Her animated little face falls, and her steps lose their spring.""}"
+235	235		301							"{2: 'Yun Ye', 3: ""No, that's wrong... I can't do that anymore..."", 4: '101', 18: '100011169', 19: '1', 21: 'v360Selena'}"
+236	236		211							{1: '1', 2: '1021057', 3: '5', 7: '1'}
+237	237		301							{1: '1', 2: 'Selena', 3: 'Does this have something to do with what happened on the mountain?', 4: '101', 18: '100011170', 19: '1', 21: 'v360Selena'}
+238	238		211							{1: '1', 2: '1021051', 7: '1'}
+239	239		301							"{1: '1', 2: 'Yun Ye', 3: ""Ugh, yes... I was driven out of the shrine by the priest, and now I'm just your average fox spirit..."", 4: '101', 18: '100011171', 19: '1', 21: 'v360Selena'}"
+240	240		301							"{3: ""The fox looks utterly dejected, and it's hard to tell if someone took her spot or if it's something else entirely.""}"
+241	241		302							"{2: ""What's the priest up to?"", 3: '242'}"
+242	242		301							"{2: 'Yun Ye', 3: ""I don't know..."", 4: '101', 18: '100011172', 19: '1', 21: 'v360Selena'}"
+243	243		301							{3: 'Yun Ye shakes her head vigorously, her mood picking up a bit, but her mouth is still downturned, a confused look plastered on her little face.'}
+244	244		301							{2: 'Yun Ye', 3: 'We used to have fun together all the time... but then all of a sudden, he just snatched away my divine token without a word.', 4: '101', 18: '100011173', 19: '1', 21: 'v360Selena'}
+245	245		301							{2: 'Yun Ye', 3: 'Before I got the boot, I did overhear the maidens gossiping... they were saying the priest wants to tie the knot with the Heavenly Path...', 4: '101', 18: '100011174', 19: '1', 21: 'v360Selena'}
+246	246		301							"{2: 'Yun Ye', 3: ""But why... I just can't wrap my head around it..."", 4: '101', 18: '100011175', 19: '1', 21: 'v360Selena'}"
+247	247		211							{1: '1', 2: '1021057', 3: '5', 7: '1'}
+248	248		301							{1: '1', 3: 'Watching the fox mutter in confusion, Selena instinctively glances at you. Your eyes meet, both equally bewildered.'}
+249	249		212							{1: '1', 6: '1'}
+250	250		301							"{3: ""The Goddess of Union, shrine priest, divine position of worship, Heavenly Path... these aren't everyday terms, and they have little to do with Punishing. They sound more like something out of myths and legends.""}"
+251	251		211							{1: '1', 2: '1021057', 3: '5', 7: '1'}
+252	252		301							{1: '1', 2: 'Selena', 3: 'Goddess of Union... shrine...', 4: '101', 18: '100011176', 19: '1', 21: 'v360Selena'}
+253	253		301							"{3: ""With that thought, Selena's eyes light up.""}"
+254	254		302							{2: 'Did you figure something out?', 3: '255'}
+255	255		214							{1: '1', 2: '1'}
+256	256		301							"{2: 'Selena', 3: ""You know this is the archaeological team's second time in Conservation Area 357, right?"", 4: '101', 18: '100011177', 19: '1', 21: 'v360Selena'}"
+257	257		302				DialogDisable			{2: 'Yep, we even helped them design some mementos last time we were here.', 3: '258'}
+258	258		212							{1: '1', 6: '1'}
+259	259		401							{1: '2', 2: '4387'}
+260	260		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+261	261		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory700.jpg'}
+262	262		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 4: '4'}
+263	263		504							{1: '0.7'}
+264	264		302							"{2: ""What's this?"", 3: '265'}"
+265	265		211							{1: '1', 2: '1021010', 7: '1'}
+266	266		301			DialogEnable				"{1: '1', 2: 'Liaison Officer', 3: ""It's a little memento. They hand these out to anyone who spends a few bucks or joins in on activities in the conservation area."", 4: '101', 18: '100011178'}"
+267	267		301							{2: 'Liaison Officer', 3: 'Construction is really humming along here. After getting some small businesses off the ground, they even managed to dig into some of the local cultural traditions.', 4: '101', 18: '100011179'}
+268	268		301							"{2: 'Liaison Officer', 3: ""There's a special local festival happening in two days. What do you think? Pretty neat, right?"", 4: '101', 18: '100011180'}"
+269	269		212							{1: '1', 6: '1'}
+270	270		301							{3: 'The liaison officer pulls their hands back with a touch of pride, giving you a full view of the memento.'}
+271	271		306							{1: '1'}
+272	272		301							"{3: ""It's an exquisite, little, spring-loaded ornament—a black fox and a white fox standing guard over a large bell.""}"
+273	273		301				DialogDisable			{3: 'At their prompting, you reach out and press it. Two fox figures sway back and forth around the bell, looking utterly comical.'}
+274	274		306							
+275	275		101							{4: '4', 5: '1'}
+276	276		401							{1: '2', 2: '2959'}
+277	277		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+278	278		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory727.jpg'}
+279	279		504							{1: '0'}
+280	280		302							{2: 'You mean...', 3: '281'}
+281	281		301			DialogEnable				{3: 'You narrow your eyes, mentally stacking the image of Yun Ye in front of you against your memory of the car ornament.'}
+282	282		211							{1: '1', 2: '1021057', 7: '1'}
+283	283		301							"{1: '1', 2: 'Selena', 3: ""Oh, and there's that photo you took today, Conductor..."", 4: '101', 18: '100011181', 19: '1', 21: 'v360Selena'}"
+284	284		301							{3: 'As Selena adds this, she falters for a split second before quickly pulling herself together.'}
+285	285		301							{2: 'Selena', 3: 'I just pulled up the photo for comparison. That stone statue looks really like her.', 4: '101', 18: '100011182', 19: '1', 21: 'v360Selena'}
+286	286		301							"{2: 'Selena', 3: ""I'm afraid..."", 4: '101', 18: '100011183', 19: '1', 21: 'v360Selena'}"
+287	287		211							{1: '1', 2: '1021051', 7: '1'}
+288	288		301				AniZhuanchangBegin			"{1: '1', 2: 'Yun Ye', 3: ""We're here! Phew... Nailed it!"", 4: '101', 18: '100011184', 19: '1', 21: 'v360Selena'}"
+289	289		212							{1: '1', 6: '1'}
+290	290		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory559.jpg'}
+291	291		301			AniZhuanchangEnd				"{3: ""The fox's chipper voice breaks through their conversation. Just ahead, they see they've reached the base of the mountain, a torii gate standing right in front of them.""}"
+292	292		211							{1: '1', 2: '1021051', 7: '1'}
+293	293		301							{1: '1', 3: 'The fox turns, holds its head high, and licks a paw. It blinks, looking at Selena before its gaze shifts to you.'}
+294	294		301							"{2: 'Yun Ye', 3: ""Once you head out from here, you're home free."", 4: '101', 18: '100011185', 19: '1', 21: 'v360Selena'}"
+295	295		211							{1: '1', 2: '1021057', 7: '1'}
+296	296		301							{1: '1', 2: 'Selena', 3: 'Should we head back now, Conductor?', 4: '101', 18: '100011186', 19: '1', 21: 'v360Selena'}
+297	297		302							{2: '(Return)', 3: '298', 4: '(Stay)', 5: '300'}
+298	298		212							{1: '1', 6: '1'}
+299	299	303	301							"{3: ""A hint of the anomaly in the mountains has surfaced. Doubling back for a closer look might be a smart move, but perhaps it's best to make sure the camp is secure first.""}"
+300	300		212							{1: '1', 6: '1'}
+301	301		301							"{3: ""They've just caught a glimpse of the anomaly in the mountains, and now's their chance to uncover the truth.""}"
+302	302		301							"{3: ""Then again, the camp is practically at the mountain's doorstep, so there's no guarantee it won't be impacted. If trouble's brewing...""}"
+303	303		301							"{3: ""After a beat, you meet Selena's eyes. She instantly picks up on what you are thinking.""}"
+304	304		211							{1: '1', 2: '1021051', 4: '-400', 7: '1'}
+305	305		211							{1: '2', 2: '1021057', 4: '400', 7: '1'}
+306	306		301							{1: '1', 2: 'Selena', 3: 'Thanks for leading the way. Please, let us show our appreciation.', 4: '102', 18: '100011187', 19: '2', 21: 'v360Selena'}
+307	307		301							"{2: 'Selena', 3: ""If you don't mind, would you come back with us?"", 4: '102', 18: '100011188', 19: '2', 21: 'v360Selena'}"
+308	308		301							"{2: 'Yun Ye', 3: ""You bet! I wouldn't feel right if I didn't tag along."", 4: '101', 18: '100011189', 19: '1', 21: 'v360Selena'}"
+309	309		301							"{2: 'Yun Ye', 3: ""It's quite perilous for mortals to traverse torii gates between realms during the witching hour. Take one wrong step, and you could lose your way forever."", 4: '101', 18: '100011190', 19: '1', 21: 'v360Selena'}"
+310	310		214							{1: '2', 2: '5'}
+311	311		301							{2: 'Selena', 3: '...Lose our way?', 4: '102', 18: '100011191', 19: '2', 21: 'v360Selena'}
+312	312		212							{1: '1', 2: '2', 6: '1'}
+313	313		301							"{3: ""The two follow the fox through the torii gate, completely in the dark about what's going on.""}"
+314	314		402							{1: '120'}
+315	315		401							{1: '2', 2: '4134'}
+316	316		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+317	317		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+318	318		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+319	319		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+320	320		301				DialogDisable			{3: 'Suddenly, the world is flooded with brilliant light.'}
+321	321		302							{2: 'Huh?!', 3: '322'}
+322	322		501						2500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab', 2: '3'}
+323	323		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+324	324		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+325	325		301			DialogEnable				"{3: ""You instinctively close your eyes, gripping Selena's hand tightly as she does the same.""}"
+326	326		301							"{3: ""Both fear losing each other in this moment of uncertainty, but thankfully, that doesn't happen.""}"
+327	327		301							"{2: 'Yun Ye', 3: ""It's okay now. We've arrived."", 18: '100011192'}"
+328	328		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '3'}
+329	329		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+330	330		301							"{3: ""When they open their eyes again, they don't see the stone path that should have continued beyond the torii gate, nor the camp they expected.""}"
+331	331		301				DialogDisable			{3: 'Instead...'}
+332	332		401							{1: '1', 2: '384'}
+333	333		401							{1: '2', 2: '2915'}
+334	334		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+335	335		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+336	336		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1077.jpg', 3: '0', 4: '1', 5: '1.5'}
+337	337		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1077.jpg'}
+338	338		205						500.0	{1: '999'}
+339	339		301			DialogEnable				{2: 'Male Villager', 3: 'Hot steamed buns—only three coins for a full meal!', 18: '100011193'}
+340	340		301							{2: 'Female Villager', 3: 'Matchmaking ornaments, blessed by the shrine priest—only ten coins!', 18: '100011194'}
+341	341		301							{2: 'Elderly Villager', 3: 'Sturdy paper umbrellas, bamboo baskets, come have a look, check them out—', 18: '100011195'}
+342	342		301							{3: 'In the twilight, paper lanterns hanging from the eaves of shops light up one by one, adorned in festive reds and greens.'}
+343	343		301		1		AniZhuanchangBegin			{3: 'Villagers in traditional clothes and ornaments mill about, their overlapping calls creating a lively, bustling atmosphere.'}

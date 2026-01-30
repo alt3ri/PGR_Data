@@ -1,0 +1,251 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1314.jpg'}
+2	2		401							{1: '1', 2: '378'}
+3	3		502						250.0	{1: 'DialogDisable'}
+4	4		107							{1: 'Upper Level, Competition Zone', 2: 'Everett Arena'}
+5	5		301							{3: 'Everett Arena\\nUpper Level, Competition Zone'}
+6	6		108						300.0	{1: '1'}
+7	7		301			DialogEnable				{3: 'Night has fallen, yet the arena remains packed to the brim, with blinding lights and deafening music assaulting the senses of every spectator.'}
+8	8		301							"{3: ""Humans throughout the crowd buzz with excitement, eagerly awaiting the day's first mechanoid death match.""}"
+9	9		301							{3: 'Countless eyes fixed on the arena center betray barely contained excitement, all desperate for the mechanoid combat to begin.'}
+10	10		301							"{3: 'They crave the sight of mechanoid parts shattering and vital fluid pooling across the ground—this ultimate form of ""entertainment"" is what they desire.'}"
+11	11		301							"{3: ""Pulsing electronic sounds blare from speakers throughout the arena, heralding the fierce combat that's about to begin.""}"
+12	12		401							{1: '2', 2: '1515'}
+13	13		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo.prefab', 2: '3'}
+14	14		301							{2: 'Virtual Host', 3: 'Ladies and gentlemen, welcome to the Everett Arena! A new round of mechanoid combat for this season is about to begin!'}
+15	15		301							{2: 'Virtual Host', 3: 'As with previous seasons, winners advance to the next round, while the losers will, unfortunately, be eliminated.'}
+16	16		301							"{2: 'Virtual Host', 3: ""And this season's champion will receive our grand prize—and that, lo and behold, is FREEDOM!!""}"
+17	17		301							{2: 'Virtual Host', 3: 'The victorious mechanoid gladiator will be able to leave this place and start their life anew!'}
+18	18		301							{2: 'Virtual Host', 3: 'And those who bet on this lucky gladiator will also receive massive payouts from our prize pool!'}
+19	19		301							{2: 'Virtual Host', 3: 'So sit back and enjoy this ultimate entertainment, and have a wonderful evening, everyone!'}
+20	20		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo.prefab'}
+21	21		401							{1: '2', 2: '5810'}
+22	22		401							{1: '2', 2: '2692'}
+23	23		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '0', 4: '0.1', 5: '0.2'}
+24	24		301			RImgBg1Shake				"{3: ""As the virtual host's introduction concludes, intense spotlights jump to life simultaneously, their beams converging on the arena's center to illuminate a mechanism activating in the floor. A massive octagonal iron cage slowly rises from below.""}"
+25	25		402							{1: '5810'}
+26	26		401							{1: '2', 2: '5893'}
+27	27		301							"{3: ""As people see clearly what's inside the cage, they erupt into wild cheers.""}"
+28	28		306							{1: '1'}
+29	29		401						200.0	{1: '2', 2: '1507'}
+30	30		401							{1: '2', 2: '1507'}
+31	31		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '0.1', 4: '0', 5: '0.2'}
+32	32		201							{1: '1', 2: '500096'}
+33	33		301							{1: '1', 3: 'Inside is a bizarre mechanical monstrosity reminiscent of a long-tailed mechanical spider that flexes its limbs within the cage, its joints grinding together with an ear-piercing screech.'}
+34	34		401							{1: '2', 2: '930318'}
+35	35		301			RImgBg1Shake	AniZhuanchangBegin			"{3: 'Seemingly sensing the human audience\'s cheers, the mechanical spider lets out a deafening roar from its vocal module, as though impatiently urging its ""prey"" to enter the battlefield.'}"
+36	36		202							{1: '1', 6: '1'}
+37	37		306							
+38	38		401						800.0	{1: '2', 2: '4113'}
+39	39		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5901_13.jpg'}
+40	40		401							{1: '2', 2: '11106013'}
+41	41		301			AniZhuanchangEnd	DialogDisable			{3: 'With the echoing screech, an iron gate on one side of the arena thunderously slides open. Measured footsteps can be heard from the dim corridor, accompanied by the scrape of a weapon being dragged across the metal floor.'}
+42	42		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+43	43		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1314.jpg'}
+44	44		201							{1: '1', 2: '500460', 7: '1'}
+45	45		301			DialogEnable				"{1: '1', 2: 'Spectator B', 3: ""Heard today's fight is gonna be a real thriller. Wonder who's stepping into the ring this time?"", 4: '1'}"
+46	46		203							{1: '1', 2: '0.25', 3: '500'}
+47	47		201							{1: '2', 2: '500136', 4: '-500'}
+48	48		301							"{1: '1', 2: 'Spectator A', 3: ""Last week's match wrecked like ten fighters. They definitely need fresh meat today!"", 4: '2'}"
+49	49		301							"{2: 'Spectator B', 3: ""Pfft! This new season's been going for almost three months, and not a single fighter has lived long enough for a second round."", 4: '1'}"
+50	50		301							{2: 'Spectator B', 3: 'They won a match, then immediately got their heads blown off by another gladiator in the next. So damn boring!', 4: '1'}
+51	51		301			DialogShake				{2: 'Spectator B', 3: 'I bet on a bunch of bruisers last season. Looked tough as hell, but not a single one of those bastards won!', 4: '1'}
+52	52		301							{2: 'Spectator A', 3: 'Are you still betting on this one today, then?', 4: '2'}
+53	53		301							"{2: 'Spectator B', 3: ""What's the rush? Let's see what happens first! Ain't no way I'm gonna throw my money down the drain again. By the way, how much did you lose last time...?"", 4: '1'}"
+54	54		301							"{2: 'Spectator A', 3: ""Let's not even go there... Hey, look! The gladiator's coming out!"", 4: '2'}"
+55	55		202							{1: '1', 2: '2', 6: '1'}
+56	56		306							{1: '1'}
+57	57		201							{1: '1', 2: '501364', 3: '2', 5: '-20', 6: '-200'}
+58	58		301							{1: '1', 3: 'A masked female mechanoid, lance in hand, emerges from the shadowy corridor and steps into the harsh spotlight.'}
+59	59		301							{3: 'Unlike the mechanical gladiators from the seasons before with their basic coatings and barely humanoid shapes, her form is almost indistinguishable from that of a human.'}
+60	60		301							"{3: 'With bizarre-looking ""horns"" protruding from her hair and a long ""tail"" trailing behind her, she draws all eyes.'}"
+61	61		301				DialogDisable			"{3: ""The display screen above the gate flashes with a name the audience doesn't recognize...""}"
+62	62		306							
+63	63		307							"{1: '""Veronica""', 3: '55', 4: 'DC2E65'}"
+64	64		301							"{3: '""Veronica""'}"
+65	65		202							{1: '1'}
+66	66		307							{2: '1'}
+67	67		201							{1: '1', 2: '500096'}
+68	68		401							{1: '2', 2: '11106008'}
+69	69		306							{1: '1'}
+70	70		502							{1: 'DialogEnable'}
+71	71		301				DialogDisable			"{1: '1', 3: 'The moment the giant spider sees its opponent enter the battlefield, its programmed ""hatred"" sends it into a frenzy. Its razor-sharp limbs scratch the metal floor, making a sound that sets everyone\'s teeth on edge.'}"
+72	72		203							{1: '1', 2: '0.2', 3: '-100'}
+73	73		401						300.0	{1: '2', 2: '11106008'}
+74	74		203						150.0	{1: '1', 2: '0.2'}
+75	75		203							{1: '1', 2: '0.2', 3: '-100'}
+76	76		401						300.0	{1: '2', 2: '11106008'}
+77	77		203						150.0	{1: '1', 2: '0.2'}
+78	78		203							{1: '1', 2: '0.2', 3: '-100'}
+79	79		401							{1: '2', 2: '11106008'}
+80	80		203						200.0	{1: '1', 2: '0.2'}
+81	81		401							{1: '2', 2: '930318'}
+82	82		502							{1: 'RImgBg1Shake'}
+83	83		301			DialogEnable				{3: 'The mechanical spider rams frantically against its cage, its piercing shrieks echoing throughout every corner of the arena as it tries to shred the mechanoid gladiator outside.'}
+84	84		202							{1: '1'}
+85	85		306							
+86	86		301							{3: 'The moment Veronica enters the battlefield, however, waves of disapproving boos ripple through the stands.'}
+87	87		201							{1: '1', 2: '500136'}
+88	88		301							"{1: '1', 2: 'Spectator A', 3: ""Tch, that's it?"", 4: '1'}"
+89	89		301							"{2: 'Spectator A', 3: ""I thought we were promised a brutal combat with fierce mechanoid gladiators! What's so exciting about this scrawny lady?! She ain't got nothing on that bruiser from the other day that crushed ten dudes in a row!"", 4: '1'}"
+90	90		203							{1: '1', 2: '0.25', 3: '-500'}
+91	91		201							{1: '2', 2: '500460', 4: '500'}
+92	92		301			DialogShake				"{1: '1', 2: 'Spectator B', 3: ""Word! They talked the talk but ain't walking the walk. Dammit, I want my money back!"", 4: '2'}"
+93	93		202							{1: '1', 2: '2', 6: '1'}
+94	94		201							{1: '1', 2: '500454'}
+95	95		301							"{1: '1', 2: 'Spectator C', 3: ""What are you two whining about? This is where the real show begins! What's so exciting about watching those weird-looking mechanoids blow off one another's heads day after day?"", 4: '1'}"
+96	96		301							"{2: 'Spectator C', 3: ""Look at her—she's so human-like, and with that tail, too. It's fascinating! Never seen a mechanoid like this before."", 4: '1'}"
+97	97		301							{2: 'Spectator C', 3: 'Just imagine when that giant spider tears her apart and devours her bit by bit... Now, that is entertainment!', 4: '1'}
+98	98		301							"{2: 'Spectator C', 3: ""You won't see scenes like that in any movie—that's what makes mechanoid combat so damn thrilling!"", 4: '1'}"
+99	99		202							{1: '1', 6: '1'}
+100	100		201							{1: '1', 2: '500460'}
+101	101		301							{1: '1', 2: 'Spectator B', 3: 'Damn... When you put it that way, it does sound pretty exciting...', 4: '1'}
+102	102		203							{1: '1', 2: '0.25', 3: '500'}
+103	103		201							{1: '2', 2: '500136', 4: '-500'}
+104	104		301							"{1: '1', 2: 'Spectator A', 3: ""When you explain it like that, it does sound pretty intense! You really know what you're talking about, kid!"", 4: '2'}"
+105	105		202							{1: '1', 2: '2'}
+106	106		301							{3: 'Worked up by these violent fantasies, the spectators leap to their feet and shout toward the center of the arena.'}
+107	107		201							{1: '1', 2: '500136'}
+108	108		301							"{1: '1', 2: 'Spectator A', 3: ""Hey—what's-your-name—Vero... whatever! You, the metal freak with the tail! You better put up a good fight before you die, got it? Don't waste my ticket money!"", 4: '1'}"
+109	109		301			PanelActor1Shake				{2: 'Spectator A', 3: 'I want to see some real action! You hear me?!', 4: '1'}
+110	110		202							{1: '1'}
+111	111		306							{1: '1'}
+112	112		201							{1: '1', 2: '501364', 3: '2', 5: '-20', 6: '-200'}
+113	113		301							{1: '1', 3: 'Hearing this, Veronica slowly turns toward the spectator in the stands.'}
+114	114		401							{1: '2', 2: '9343085'}
+115	115		202							{1: '1', 6: '1'}
+116	116		201							{1: '1', 2: '501364', 5: '-20', 6: '-200'}
+117	117		301							"{1: '1', 3: ""She removes her mask, revealing a face almost indistinguishable from a human's.""}"
+118	118		401							{1: '2', 2: '4480'}
+119	119		204							{1: '1', 2: '5'}
+120	120		301							{3: 'Her mask crashes to the ground with a thunderous clang. Her crimson eyes focus with icy rage, their gaze threatening to pierce right through the disrespectful spectator.'}
+121	121		401							{1: '2', 2: '970804'}
+122	122		203							{1: '1', 2: '0.25', 4: '-20', 5: '-250'}
+123	123		301							{3: 'She raises her massive lance, its tip gleaming with lethal brilliance as she points it directly at the human in the stands.'}
+124	124		306							
+125	125		301							{2: 'Veronica', 3: 'Shut. Your. Mouth.', 4: '1'}
+126	126		202							{1: '1'}
+127	127		301							{3: 'Perhaps sensing the hostility in her eyes, the spectator falls silent, though the contemptuous glares aimed at her remain.'}
+128	128		201							{1: '1', 2: '500136'}
+129	129		301			PanelActor1Shake				{1: '1', 2: 'Spectator A', 3: 'GoDDamn it! Did I just get cowed by a worthless toaster?!', 4: '1'}
+130	130		203							{1: '1', 2: '0.25', 3: '-500'}
+131	131		201							{1: '2', 2: '500460', 4: '500'}
+132	132		301							"{1: '1', 2: 'Spectator B', 3: ""Oho, that's exactly your type, ain't it? Aren't you usually into the feisty ones?"", 4: '2'}"
+133	133		301			PanelActor1Shake				"{2: 'Spectator A', 3: ""What the hell are you talking about?! It's just a piece of junk metal! I don't care what it looks like—you think I'd be into a machine?!"", 4: '1'}"
+134	134		301							"{2: 'Spectator A', 3: ""Cocky little brat. I can't wait to see what she looks like when that massive beast crushes her to pieces..."", 4: '1'}"
+135	135		301							"{2: 'Spectator B', 3: ""For crying out loud, cut us all some slack, will ya? Sit down—I'm trying to record this fight and you're blocking my shot!"", 4: '2'}"
+136	136		301							{2: 'Spectator A', 3: '...Tch. This better be worth the damn ticket.', 4: '1'}
+137	137		202							{1: '1', 2: '2'}
+138	138		301							{3: 'Malice and contempt from the human crowd wash over the arena like a tide, mingled with their insatiable hunger for violence and bloodshed.'}
+139	139		301							{3: 'They crave to see mechanoids slaughtered, mutilated, and mercilessly shattered into fragments in the arena.'}
+140	140		401							{1: '2', 2: '558'}
+141	141		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+142	142		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1204.jpg'}
+143	143		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+144	144		301							"{3: 'In the twilight of the Golden Age, this spectacle unfolds under the spotlights night after night—and such is humanity\'s idea of ""entertainment.""'}"
+145	145		301							{3: 'Only immersed in such brutality do these human spectators—their senses already dulled by ordinary diversions—find their eyes lighting up with that peculiar gleam.'}
+146	146		301							"{3: 'Little do these spectators, immersed in their violent entertainment, realize that their own twisted cheers of excitement are simultaneously being ""appreciated"" as a spectacle themselves.'}"
+147	147		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+148	148		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '4'}
+149	149		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1314.jpg'}
+150	150		104							{1: '0|-150|-200', 2: '1.5', 4: '1'}
+151	151		301			AniZhuanchangEnd	AniZhuanchangBegin		2000.0	"{3: '—Unbeknownst to them, a ""distinguished guest"" silently observes it all from a room above them behind an enormous one-way mirror.'}"
+152	152		401							{1: '1', 2: '36'}
+153	153		101							{4: '4', 5: '1'}
+154	154		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1310.jpg'}
+155	155		401							{1: '1', 2: '55'}
+156	156		301			AniZhuanchangEnd				"{3: 'Numerous display screens spread out at perfect angles before this ""distinguished guest,"" streaming real-time footage from every corner of the arena in exquisite detail.'}"
+157	157		301							"{3: 'Behind the human ""distinguished guest"" stands a massive mechanoid, motionless and silent, its metallic shell reflecting the dim glow from the monitors.'}"
+158	158		301							{3: 'Its sensitive optical recognition system detects the slightest gesture from the human and responds immediately.'}
+159	159		201							{1: '1', 2: '501357', 4: '450', 5: '50', 6: '-100'}
+160	160		301							{1: '1', 2: 'Overseer', 3: 'Master, the room temperature is currently 25°C with 55% relative humidity. I notice your attire today is rather light. Would you like me to adjust the temperature to a more comfortable setting?', 4: '1'}
+161	161		301							{3: 'The human does not respond.'}
+162	162		301							{2: 'Overseer', 3: 'Due to the intense combat in previous seasons, some gladiators would move out of camera range during matches.', 4: '1'}
+163	163		301							"{2: 'Overseer', 3: ""To enhance your viewing experience, I've installed additional cameras throughout the arena to ensure you can monitor every aspect of the match in real time."", 4: '1'}"
+164	164		202							{1: '1', 6: '1'}
+165	165		201							{1: '1', 2: '501355'}
+166	166		301							"{1: '1', 2: '???', 3: ""You've always handled these trivial matters well. You're a good butler, indeed. But you should understand what I truly desire."", 4: '1'}"
+167	167		301							"{2: '???', 3: ""I'm tired of watching these mechanical gladiators fighting mechanical beasts. I want something I've never seen."", 4: '1'}"
+168	168		202							{1: '1', 6: '1'}
+169	169		201							{1: '1', 2: '501357', 4: '450', 5: '50', 6: '-100'}
+170	170		301							"{1: '1', 2: 'Overseer', 3: 'Master, this ""Veronica"" will show you something completely different.', 4: '1'}"
+171	171		301							"{2: 'Overseer', 3: 'Based on my predictive analysis of her frame parameters, there\'s a high probability she could be the perfect candidate for your ""plan.""', 4: '1'}"
+172	172		202							{1: '1', 6: '1'}
+173	173		201							{1: '1', 2: '501355'}
+174	174		301							"{1: '1', 2: '???', 3: ""Excellent. Let the match begin, then. I can't wait."", 4: '1'}"
+175	175		202							{1: '1', 6: '1'}
+176	176		201							{1: '1', 2: '501357', 4: '450', 5: '50', 6: '-100'}
+177	177		301							"{1: '1', 2: 'Overseer', 3: ""Yes, Master. Please enjoy the show. I'll compile the data from this match and provide you with a detailed analysis afterward."", 4: '1'}"
+178	178		202							{1: '1'}
+179	179		301							"{3: 'The massive mechanoid withdraws at its ""Master\'s"" command, and silence returns to the room.'}"
+180	180		301							"{3: 'The ""Master"" turns back to the display screens that capture every detail of the arena.'}"
+181	181		301							"{3: 'At this moment, every screen focuses on ""Veronica"", who is about to face her very first arena battle.'}"
+182	182		201							{1: '1', 2: '501355'}
+183	183		301							{1: '1', 2: '???', 3: 'Interesting.', 4: '1'}
+184	184		301				AniZhuanchangBegin			"{2: '???', 3: 'Surprise me... ""Veronica"".', 4: '1'}"
+185	185		202							{1: '1', 6: '1'}
+186	186		401						500.0	{1: '1', 2: '36'}
+187	187		102							{1: '—PERFECT CAGE—', 2: 'ER14', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+188	188		502						5000.0	{1: 'ThemeEnable'}
+189	189		105						5000.0	{1: 'Assets/Product/Ui/Spine/3-8Spine/UiMovieWeiluonikaV38/UiMovieWeiluonikaV38.prefab'}
+190	190		401							{1: '1', 2: '6237'}
+191	191		401							{1: '2', 2: '4821'}
+192	192		301			AniZhuanchangEnd				{3: 'With the buzzer signaling the start of the match, the cage holding the mechanical giant spider unlocks, its heavy iron bars slamming to the ground.'}
+193	193		401							{1: '2', 2: '930318'}
+194	194		301							{3: 'The freed mechanical spider lets out a piercing shriek as it leaps forward and launches itself toward the mechanical gladiator.'}
+195	195		401							{1: '2', 2: '5283'}
+196	196		301							{3: 'Meanwhile, massive screens above the arena flicker to life, capturing every angle of the battleground for countless spectators to see.'}
+197	197		401							{1: '2', 2: '5893'}
+198	198		301							{3: 'Thunderous cheers erupt from the stands and sweep through every corner of the arena with stifling heat.'}
+199	199		301							{3: 'The mechanical spider looms over the gladiator, dwarfing her tall frame beneath its massive bulk.'}
+200	200		301							{3: 'Veronica grips her lance tightly as she readies herself, poised to thrust at her opponent at any moment.'}
+201	201		401							{1: '2', 2: '9317013'}
+202	202		401							{1: '2', 2: '807'}
+203	203		301							"{3: 'In the giant spider\'s programming, such defiance triggers its ""rage"" protocol. It lashes its barbed tail like a whip at Veronica.'}"
+204	204		401							{1: '2', 2: '9317003'}
+205	205		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+206	206		301			RImgBg1Shake				"{3: ""But Veronica quickly sidesteps the attack, causing the spider's massive tail to crash into the ground and kick up a cloud of dust.""}"
+207	207		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+208	208		105							
+209	209		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1314.jpg'}
+210	210		401							{1: '2', 2: '9317013'}
+211	211		401							{1: '2', 2: '11106008'}
+212	212		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+213	213		201							{1: '2', 2: '501364', 3: '5', 5: '-20', 6: '-200', 7: '1'}
+214	214		301							{1: '1', 3: 'Enraged by the failed attack, the mechanical spider whirls around and slashes its razor-sharp limbs as it lunges at Veronica once more.'}
+215	215		401							{1: '2', 2: '5892'}
+216	216		301							{3: 'This unexpected turn drives the crowd into a frenzy, their screams growing even more frantic.'}
+217	217		402							{1: '5892'}
+218	218		301							{2: 'Veronica', 3: 'This pointless game of slaughter...', 4: '2'}
+219	219		301				DialogDisable			{2: 'Veronica', 3: 'What a waste of my time.', 4: '2'}
+220	220		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+221	221		306							{1: '1'}
+222	222		203						550.0	{1: '2', 2: '0.5', 4: '-180', 5: '-500'}
+223	223		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '5'}
+224	224		306							
+225	225		202							{1: '2', 6: '1'}
+226	226		201							{1: '1', 2: '500096', 4: '-200', 5: '-50', 6: '0', 7: '1'}
+227	227		502							{1: 'DialogEnable'}
+228	228		301			AniZhuanchangEnd				"{1: '1', 3: ""Veronica's crimson eyes blaze with rage as she fearlessly stares down the mechanical spider towering over her.""}"
+229	229		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+230	230		101							{4: '5', 5: '1'}
+231	231		401							{1: '2', 2: '4833'}
+232	232		401							{1: '2', 2: '9342045'}
+233	233		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2', 5: '1'}
+234	234		104							{1: '0|0|-100', 2: '0.4'}
+235	235		203							{1: '1', 2: '0.4', 3: '-200', 4: '-50', 5: '-50'}
+236	236		301							"{3: ""In that moment, she unleashes the energy stored within her frame and launches herself skyward with her lance pointed at the mechanical spider's core.""}"
+237	237		104							{1: '0|-100|-200', 2: '0.25'}
+238	238		203							{1: '1', 2: '0.25', 3: '-200', 4: '-300', 5: '-100'}
+239	239		301							{3: 'As she soars above the giant spider, time seems to stand still in the arena. All eyes are on her now.'}
+240	240		203							{1: '1', 2: '0.4', 3: '850', 4: '-320', 5: '200'}
+241	241		511							{1: '1', 2: '0.4', 3: '500|-175|-200'}
+242	242		509						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1314.jpg', 2: '1'}
+243	243		201							{1: '11', 2: '501364', 3: '11', 4: '-450', 5: '-20', 6: '-200'}
+244	244		301			DialogShake				{1: '1', 2: 'Veronica', 3: 'Die!', 4: '11'}
+245	245		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHit01.prefab', 2: '3'}
+246	246		401							{1: '2', 2: '970804'}
+247	247		510							{1: '1'}
+248	248		202							{1: '11', 2: '1', 6: '1'}
+249	249		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 5: '1'}
+250	250		301		1		AniZhuanchangBegin			{3: 'She twirls her lance and drives it down with deadly precision.'}

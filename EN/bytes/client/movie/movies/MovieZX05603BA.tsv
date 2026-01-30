@@ -1,0 +1,54 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+2	2		401			AniZhuanchangEnd				{1: '1', 2: '36'}
+3	3		304							"{1: '""Culture without strength marches to extinction with the dawn.""', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 7: '-3', 10: '1'}"
+4	4		304				AniZhuanchangBegin			{1: '                                                         —Thus spoke a politician.', 2: '000000ff', 3: '1.5', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 7: '-1', 9: '1', 10: '1'}
+5	5		401							{1: '1', 2: '6184'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory298.png'}
+7	7		306							{1: '1'}
+8	8		502						500.0	{1: 'DialogEnable'}
+9	9		301			AniZhuanchangEnd				"{3: 'Humans once crossed towering mountains and ventured into the deepest seas, forging a miracle upon this land known as the ""Golden Age"".'}"
+10	10		301							{3: 'But now, only ruins remain.'}
+11	11		301				DialogDisable			{3: 'Herds of Hetero-Creatures roam through the broken walls.'}
+12	12		306							
+13	13		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_2.jpg', 3: '0', 4: '1', 5: '1'}
+14	14		104						1200.0	{1: '325|-190|-300', 2: '0', 4: '3'}
+15	15		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_2.jpg'}
+16	16		104							{1: '325|-190|-300', 2: '0'}
+17	17		205							{1: '999'}
+18	18		104							{1: '0|0|0', 2: '0', 4: '3'}
+19	19		301			DialogEnable				{2: 'Vergil', 3: '...'}
+20	20		301							{3: 'Vergil watches from above, his gaze fixed on the movements of those bat-like creatures.'}
+21	21		401							{1: '2', 2: '4231'}
+22	22		301				DialogDisable			{3: 'The rhythmic growl of an engine echoes in the distance—a motorcycle, unmistakable in its cadence.'}
+23	23		104						1000.0	{1: '-150|-75|-150', 2: '1.5'}
+24	24		301			DialogEnable	DialogDisable			{3: 'Vergil tilts his head, his attention sharpening as the sound draws nearer.'}
+25	25		306							{1: '1'}
+26	26		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory306.png', 3: '0', 4: '1', 5: '0.5'}
+27	27		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory306.png'}
+28	28		205							{1: '999'}
+29	29		402							{1: '4231'}
+30	30		401							{1: '2', 2: '994201'}
+31	31		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+32	32		301			DialogEnable				{3: 'Then, around the bend, a flash of red cuts through the wreckage.'}
+33	33		104						850.0	{1: '0|-135|-80', 2: '0.8'}
+34	34		301				DialogDisable			"{3: ""The rider's gaze snaps toward him as if pulled by instinct, their eyes meeting across the road.""}"
+35	35		306							
+36	36		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+37	37		402							{1: '994201'}
+38	38		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_2.jpg', 3: '0', 4: '1', 5: '0.5'}
+39	39		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_2.jpg'}
+40	40		205							{1: '999'}
+41	41		301			DialogEnable				{2: 'Vergil', 3: 'Very tough.'}
+42	42		301							{3: 'For the first time in a long while, Vergil feels something stir within him.'}
+43	43		301							{3: 'The motorcycle roars up the collapsed, slanting ruins, its engine snarling as it charges toward the rooftop.'}
+44	44		301							{3: 'At the edge, the front wheel lifts before the bike soars across the gap and slams down onto the next rooftop.'}
+45	45		301				DialogDisable			"{3: ""Vergil watches, his usual disdain for human machinery momentarily eclipsed by reluctant admiration for the rider's exceptional driving skill.""}"
+46	46		401							{1: '2', 2: '4387'}
+47	47		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+48	48		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory298.png'}
+49	49		401						700.0	{1: '2', 2: '4115010'}
+50	50		301			DialogEnable				{3: 'Soon, the bike skids to a halt on the rooftop where he stands, and the white-haired woman dismounts.'}
+51	51		201							{1: '1', 2: '500610'}
+52	52		301							{1: '1', 2: 'Alpha', 3: 'According to survivors who escaped the attacked conservation area...', 4: '1'}
+53	53		301		1		AniZhuanchangBegin			{2: 'Alpha', 3: 'White hair, katana, dark blue coat...', 4: '1'}

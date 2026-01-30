@@ -1,0 +1,523 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory345.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		301			DialogEnable				{3: 'Climbing the ladder, the ground underfoot begins to rumble slightly.'}
+4	4		301							{3: 'The source of the rumbling not only comes from Camu fighting against the enemy down below...'}
+5	5		301							{3: '...But also from the Hetero Tide rushing toward Chrome from above.'}
+6	6		301							{3: 'Facing the surging wave of Hetero-Creatures, Chrome is forced to defend his position in front of the ladder.'}
+7	7		301							{3: 'Even if the corruption of his frame reaches critical mass, he will still continue to fight.'}
+8	8		301							{3: 'However, this is no foolhardy self-sacrifice. Rather, sensing that the level of corruption is no longer rising, he detects something about this strange anomaly.'}
+9	9		201							{1: '1', 2: '500155', 3: '9'}
+10	10		301							"{1: '1', 2: 'Chrome', 3: ""...I'll take a page out of your playbook."", 4: '1'}"
+11	11		301							{3: 'As long as he can hold on a little longer and intercept the enemies rushing toward him...'}
+12	12		301							{3: 'His determination might just be able to pull off such a Hail Mary. Even then, he can barely keep such an unspeakable plan suppressed in the bottom of his heart.'}
+13	13		202							{1: '1', 6: '1'}
+14	14		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+15	15		401							{1: '2', 2: '10006001'}
+16	16		301							{3: 'Chrome takes a step forward. His scythe enveloped in lightning slashes the Hetero-Creatures, smashing wave after wave into pieces.'}
+17	17		401							{1: '2', 2: '1516'}
+18	18		301							{3: 'But right as he catches a glimpse of victory, he hears the sound of ominous footsteps slowly approaching.'}
+19	19		201							{1: '1', 2: '500305', 3: '1'}
+20	20		301							"{1: '1', 2: 'Vonnegut', 3: ""I'm sure you'd think it's a miracle if you made it out of here alive. Are you still choosing to sacrifice yourself to save your comrades?"", 4: '1'}"
+21	21		301							{3: 'Chrome remains silent. He stands firmly and continues to block the oncoming wave of Hetero-Creatures.'}
+22	22		301							{2: 'Vonnegut', 3: 'Interesting.', 4: '1'}
+23	23		301							{3: 'The Hetero-Creatures in front of him suddenly halt their attack as if they had received a signal.'}
+24	24		301							{2: 'Vonnegut', 3: 'Most leaders shoulder immense weight. They rise fast and fall even harder.', 4: '1'}
+25	25		301							{2: 'Vonnegut', 3: 'Seems you are no different.', 4: '1'}
+26	26		201							{1: '1', 2: '500155', 3: '9'}
+27	27		301							"{1: '1', 2: 'Chrome', 3: ""But I won't let that day come."", 4: '1'}"
+28	28		202							{1: '1', 6: '1'}
+29	29		201							{1: '1', 2: '500305', 3: '1'}
+30	30		401							{1: '2', 2: '1516'}
+31	31		301							"{1: '1', 3: ""Faced with Chrome's conviction, Vonnegut quietly walks forward.""}"
+32	32		401							{1: '2', 2: '1508'}
+33	33		301							{3: 'Electric currents of Punishing Virus hiss beneath his feet like raging waves as if to tear the narrow space apart.'}
+34	34		301							"{2: 'Vonnegut', 3: ""Show me everything you've got."", 4: '1'}"
+35	35		202							{1: '1', 6: '1'}
+36	36		301							"{3: ""Countless crimson tendrils leap out from the ground and strike, all targeting Chrome's Inver-Device.""}"
+37	37		201							{1: '1', 2: '500155', 3: '9'}
+38	38		301							{1: '1', 3: 'Chrome remains undaunted. He dodges the attack and rushes toward Vonnegut.'}
+39	39		301							{3: 'Just as he is about to reach his opponent, he picks up the motionless remains of a nearby Hetero-Creature with his scythe as a shield. Blocking the attack, the golden lightning from his scythe unleashes a thunderclap.'}
+40	40		202							{1: '1', 6: '1'}
+41	41		301							{3: '—CLANG!'}
+42	1132		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+43	5001		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryKejiBg.prefab', 2: '2'}
+44	42		201							{1: '1', 2: '500305', 4: '-800'}
+45	43		201							{1: '2', 2: '500155', 3: '9', 4: '800'}
+46	44		203							{1: '1', 2: '0.15', 3: '-300'}
+47	45		203							{1: '2', 2: '0.15', 3: '300'}
+48	46		301			RImgBg1Shake				"{1: '1', 3: ""Chrome strikes Vonnegut's defense barrier with all of his might."", 4: '1', 5: '2'}"
+49	47		202							{1: '1', 2: '2', 6: '1'}
+50	48		201							{1: '1', 2: '500305', 3: '1'}
+51	49		301							"{1: '1', 2: 'Vonnegut', 3: ""You've already tried using brute force."", 4: '1'}"
+52	50		203							{1: '1', 2: '0.25', 3: '-400'}
+53	51		201							{1: '2', 2: '500155', 3: '9', 4: '400'}
+54	52		301							{1: '1', 2: 'Chrome', 3: '...Think again.', 4: '2'}
+55	53		203							{1: '2', 2: '0.25', 3: '200'}
+56	54		301							"{3: ""Chrome grips his scythe tightly, condensing all of the lightning into the tip of his blade. With the scorching heat of a meteor strike, he smashes Vonnegut's barrier once more.""}"
+57	55		401							{1: '2', 2: '1506'}
+58	5002		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryKejiBg.prefab'}
+59	1232		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+60	5003		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustBrokenLightWall.prefab', 2: '1'}
+61	56		301							{3: 'Following a slight cracking sound, the tip of the scythe finally manages to penetrate the seemingly indestructible defense barrier.'}
+62	57		203							{1: '2', 2: '0.25', 3: '600'}
+63	58		202							{1: '2', 6: '1'}
+64	59		203							{1: '1', 2: '0.25'}
+65	60		301							{2: 'Vonnegut', 3: 'You can still maintain consciousness at this level of corruption. You are indeed a splendid seed.', 4: '1'}
+66	61		301							{3: 'He looks at the weapon puncturing his defense barrier, and nods in faint appreciation.'}
+67	62		301							{2: 'Vonnegut', 3: 'What you lack is not courage, ingenuity or skill, but pure and raw—power.', 4: '1'}
+68	63		301							"{2: 'Vonnegut', 3: ""As I've said before, the speed of humanity's technological progress can't ensure victory."", 4: '1'}"
+69	64		301							"{2: 'Vonnegut', 3: ""But the potential and progress you have shown me, I'll give you some more time to blossom."", 4: '1'}"
+70	65		202							{1: '1', 6: '1'}
+71	66		201							{1: '1', 2: '500155', 3: '9'}
+72	67		301							{1: '1', 2: 'Chrome', 3: '...', 4: '1'}
+73	68		202							{1: '1', 6: '1'}
+74	69		201							{1: '1', 2: '500305', 3: '1'}
+75	5004		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustBrokenLightWall.prefab'}
+76	70		301							{1: '1', 3: 'He places his hands behind his back and deactivates the punctured defense barrier. He takes a step back, noticing Chrome at his limit.'}
+77	71		301							"{2: 'Vonnegut', 3: 'As a sign of respect for your ""bravery,"" I\'ll call them off your comrades.', 4: '1'}"
+78	72		301							{3: 'Right as Vonnegut finishes speaking, the Hetero-Creatures within the waterway quickly recede like the tide.'}
+79	73		301							{2: 'Vonnegut', 3: 'One more thing.', 4: '1'}
+80	74		301							"{2: 'Vonnegut', 3: 'The transport craft you flew in on has been constantly sending ""eyes"" in search of you.', 4: '1'}"
+81	75		301							"{2: 'Vonnegut', 3: ""They're no match for corruption, but that doesn't mean they will stop recording. If the investigators recover them, that could spell trouble in the future."", 4: '1'}"
+82	76		301							"{2: 'Vonnegut', 3: ""So I've had Cinderelik take care of the transport craft for you."", 4: '1'}"
+83	77		301							"{2: 'Vonnegut', 3: ""She said that there were some other issues, but that doesn't concern us, so Cinderelik didn't get involved."", 4: '1'}"
+84	78		201							{1: '1', 2: '500155', 3: '9'}
+85	79		301							{1: '1', 2: 'Chrome', 3: '...!', 4: '1'}
+86	80		201							{1: '1', 2: '500305', 3: '1'}
+87	81		301							{1: '1', 2: 'Vonnegut', 3: 'Is your loyalty really worth it?', 4: '1'}
+88	82		201							{1: '1', 2: '500155', 3: '9'}
+89	83		301							"{1: '1', 2: 'Chrome', 3: ""Light and darkness coexist... Don't you share a similar view?"", 4: '1'}"
+90	84		202							{1: '1', 6: '1'}
+91	85		301							"{3: ""Faced with Chrome's answer, Vonnegut simply smiles and says nothing more.""}"
+92	86		401							{1: '2', 2: '1516'}
+93	87		301				AniZhuanchangBegin			{3: 'He turns and walks into the dark tunnel.'}
+94	88		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory347.jpg'}
+95	89		301			AniZhuanchangEnd				{3: 'Climbing up along the corroded floor, Camu squeezes through a half-collapsed hole.'}
+96	90		201							{1: '1', 2: '500155', 3: '9'}
+97	91		301							"{1: '1', 2: 'Chrome', 3: ""You're back. Everything okay?"", 4: '1'}"
+98	92		301							{3: 'Seeing Camu return, Chrome wants to stand up, but the split legs of his frame make him unable to maintain balance.'}
+99	93		202							{1: '1', 6: '1'}
+100	94		301							{3: 'Even a cursory glance shows that his frame is seriously corrupted and damaged.'}
+101	95		201							{1: '1', 2: '500175'}
+102	96		301							{1: '1', 2: 'Camu', 3: 'I was going to ask you that. Take a good look at yourself.', 4: '1'}
+103	97		203							{1: '1', 2: '0.25', 3: '400'}
+104	98		201							{1: '2', 2: '500155', 3: '9', 4: '-400'}
+105	99		301							"{1: '1', 2: 'Chrome', 3: ""I'm fine."", 4: '2'}"
+106	100		301							"{2: 'Camu', 3: ""I don't care what you say. We need to get you to a doctor."", 4: '1'}"
+107	101		203							{1: '1', 2: '0.25', 3: '600'}
+108	102		203							{1: '2', 2: '0.25', 3: '-600'}
+109	103		201							{1: '3', 2: '500273'}
+110	104		301							"{1: '1', 2: 'Wanshi', 3: ""I've already tended to the captain's wounds. At least his injuries won't get any worse for the time being."", 4: '3'}"
+111	105		301							"{2: 'Camu', 3: ""Hmph, let's hurry back. There's nothing more we can do here."", 4: '1'}"
+112	106		301							"{2: 'Chrome', 3: ""Alright, we're all here. Let's get going."", 4: '2'}"
+113	107		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+114	108		201							{1: '1', 2: '1081001', 3: '2'}
+115	109		301							{1: '1', 2: 'Kamui', 3: 'Captain, let me carry you!', 4: '1'}
+116	110		201							{1: '1', 2: '500155', 3: '9'}
+117	111		301							{1: '1', 2: 'Chrome', 3: 'No need. I can walk.', 4: '1'}
+118	112		202							{1: '1', 6: '1'}
+119	113		301							{3: 'Chrome responds coherently, but the others can tell he is struggling to hide his fatigue and that he is barely holding on.'}
+120	114		201							{1: '1', 2: '500273', 3: '4'}
+121	115		301							"{1: '1', 2: 'Wanshi', 3: ""...I know I said to stay awake, but I didn't say you had to stay moving."", 4: '1'}"
+122	116		201							{1: '1', 2: '1081001', 3: '4'}
+123	117		301							{1: '1', 2: 'Kamui', 3: 'Exactly! Wanshi said your wounds will get worse if you keep at it! We need to get you back ASAP!', 4: '1'}
+124	118		201							{1: '1', 2: '500175'}
+125	119		301							{1: '1', 2: 'Camu', 3: 'Are you still here because of me?', 4: '1'}
+126	120		201							{1: '1', 2: '500273', 3: '4'}
+127	121		301							"{1: '1', 2: 'Wanshi', 3: ""There's only one transport craft back. The one that brought you here is gone. If we left you here, you might be attacked by that agent again."", 4: '1'}"
+128	122		201							{1: '1', 2: '500175'}
+129	123		301							"{1: '1', 2: 'Camu', 3: ""Hmph... Kamui! Grab the captain and let's go!"", 4: '1'}"
+130	124		203							{1: '1', 2: '0.25', 3: '400'}
+131	125		201							{1: '2', 2: '1081001', 3: '2', 4: '-400'}
+132	126		301							{1: '1', 2: 'Kamui', 3: 'You got it!', 4: '2'}
+133	127		202							{1: '1', 2: '2', 6: '1'}
+134	128		301							{3: 'Chrome tries to refuse, but Kamui throws him over his shoulder without much resistance.'}
+135	129		301							{3: 'Unable to move due to his serious injuries, Chrome has no choice but to give up the struggle.'}
+136	130		201							{1: '1', 2: '1081001', 3: '2'}
+137	131		301				AniZhuanchangBegin			{1: '1', 2: 'Kamui', 3: 'Full speed ahead!', 4: '1'}
+138	132		202							{1: '1', 6: '1'}
+139	133		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory347.jpg'}
+140	134		301			AniZhuanchangEnd				{3: 'After Strike Hawk evacuates, two shadowy figures emerge from the scorched ruins.'}
+141	135		201							{1: '1', 2: '500313', 4: '-400'}
+142	136		201							{1: '2', 2: '500314', 4: '400'}
+143	140		301							{1: '1', 2: '??', 3: 'Can he really make it back with those injuries?', 4: '2'}
+144	141		301							"{2: '???', 3: ""I've done what I can to stop his Punishing concentration from rising past the point of no return. He should be able to make it safely back to Babylonia."", 4: '1'}"
+145	142		202							{1: '1', 2: '2', 6: '1'}
+146	143		301							{3: 'The figure in the shadows lets out a soft, cheerful laugh.'}
+147	144		201							{1: '1', 2: '500313', 4: '-400'}
+148	145		201							{1: '2', 2: '500314', 4: '400'}
+149	146		301							"{1: '1', 2: '???', 3: ""Even if he manages to hold out, it'll take him over a month for his frame to recover."", 4: '1'}"
+150	147		301							{2: '??', 3: '...Why the special treatment?', 4: '2'}
+151	148		202							{1: '1', 2: '2', 6: '1'}
+152	149		301							"{3: ""The man laughs, then point's at her forehead.""}"
+153	150		201							{1: '1', 2: '500313', 4: '-400'}
+154	151		201							{1: '2', 2: '500314', 4: '400'}
+155	152		301							{1: '1', 2: '???', 3: 'This is a declaration of war... I need to keep him alive so he can deliver my message to those bastards playing M.I.N.D. games right at my doorstep.', 4: '1'}
+156	153		202							{1: '1', 2: '2', 6: '1'}
+157	154		301							{3: 'Unsure of what this means, the girl tilts her head to the side in confusion.'}
+158	155		201							{1: '1', 2: '500313', 4: '-400'}
+159	156		201							{1: '2', 2: '500314', 4: '400'}
+160	157		301							"{1: '1', 2: '???', 3: ""Forget it. I'm just trying to lure those snakes out of hiding again. After all, to them, only the dead stay quiet."", 4: '1'}"
+161	158		301							"{2: '??', 3: ""But in the past, you did whatever you could to cover our tracks so the humans couldn't find us."", 4: '2'}"
+162	159		301							"{2: '??', 3: ""But now... You're bringing them right to us?"", 4: '2'}"
+163	160		301							"{2: '???', 3: ""This isn't the first time we've made our presence known. We just stopped for a brief period of time."", 4: '1'}"
+164	161		301							{2: '???', 3: 'Ever since I first laid my eyes on the Red Tide, I knew that the future foretold by Ascnet was within our grasp.', 4: '1'}
+165	162		301							"{2: '???', 3: ""Lions can't expect to capture an elephant merely waiting in the shade. Now is our time to go on the offensive."", 4: '1'}"
+166	163		301							"{2: '???', 3: ""Not to mention, Alpha is going to stop at nothing to redirect humanity's spears away from Luna and onto me anyway."", 4: '1'}"
+167	164		301							"{2: '???', 3: ""Even if you kill them, the same thing will happen in the future. You could get rid of Alpha, but then Luna will just become the next ticking time bomb, and we don't know where she is."", 4: '1'}"
+168	165		301							"{2: '???', 3: 'I\'ve been collecting ""food"" to feed the Red Tide. If they\'re willing to send us delivery, all the better.', 4: '1'}"
+169	166		301							"{2: '???', 3: ""I'm sure she will express her sincere gratitude for such a mutually beneficial victory."", 4: '1'}"
+170	167		301							{2: '??', 3: '...', 4: '2'}
+171	168		301							"{2: '???', 3: 'Are you worried about ""him""?', 4: '1'}"
+172	169		301							{2: '??', 3: '...Yes.', 4: '2'}
+173	170		301							"{2: '???', 3: ""Relax, dear child. I've never known a human to return to Earth after arriving in Babylonia. You'll never see him again."", 4: '1'}"
+174	171		301							{2: '??', 3: 'Okay.', 4: '2'}
+175	172		301							"{2: '???', 3: 'Our priority now is your ""mother.""', 4: '1'}"
+176	173		301							"{2: '???', 3: ""I'm sure that won't be the last of them. I'll leave you to protect her. I'm needed elsewhere."", 4: '1'}"
+177	174		202							{1: '1', 2: '2', 6: '1'}
+178	175		301							{3: 'The girl nods, then takes the crystal pyramid from him.'}
+179	176		201							{1: '1', 2: '500313', 4: '-400'}
+180	177		201							{1: '2', 2: '500314', 4: '400'}
+181	178		301							{1: '1', 2: '???', 3: 'Do you know what this does?', 4: '1'}
+182	179		301				AniZhuanchangBegin			{2: '??', 3: '...Yes.', 4: '2'}
+183	180		202							{1: '1', 2: '2', 6: '1'}
+184	181		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+185	182		301			AniZhuanchangEnd				{3: 'The transport craft steadily enters low Earth orbit.'}
+186	183		301							{3: 'Camu enters the isolation chamber, while Kamui and Wanshi show signs of trepidation.'}
+187	184		301							"{3: ""Wanshi inspects Chrome's Inver-Device again. Even though his frame was heavily damaged from battle and corruption, his Inver-Device is relatively intact.""}"
+188	185		201							{1: '1', 2: '500273'}
+189	186		301							"{1: '1', 2: 'Wanshi', 3: ""With all this damage, even if everything goes according to plan, you're going to be out of commission for over a month."", 4: '1'}"
+190	187		201							{1: '1', 2: '500155', 3: '17'}
+191	188		301							{1: '1', 3: 'Chrome forces a nod. Feeling weak, he can only lean against the cabin wall. The dark sky outside the window makes him drowsy.', 4: '1'}
+192	189		202							{1: '1', 6: '1'}
+193	190		301							{3: 'Prior to their departure, Chrome canceled the countdown for the distress call and sent an emergency evacuation request to the nearby Task Force, hoping that they stop their search and rescue mission and evacuate ASAP.'}
+194	191		301							{3: 'If the squad encounters the agent, there will only be one outcome—'}
+195	192		301							{3: 'Death.'}
+196	193		301							"{3: 'For Chrome, he had long since grown acquainted with the word ""death.""'}"
+197	194		301							"{3: '""This is war.""'}"
+198	195		301							{3: 'He recalls what his father had said to him.'}
+199	196		301							"{3: '""Death is inevitable.""'}"
+200	197		301							{3: 'That is also what his father had said.'}
+201	198		301				AniZhuanchangBegin			{3: 'As long as you are a soldier on the battlefield, your day will come.'}
+202	199		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+203	200		301			AniZhuanchangEnd	AniZhuanchangBegin			"{3: '""I\'ve already applied for your transfer. Thank you for your outstanding performance during the mission.""'}"
+204	201		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+205	202		201							{1: '1', 2: '500155', 3: '17'}
+206	203		301			AniZhuanchangEnd				{1: '1', 2: 'Chrome', 3: '...', 4: '1'}
+207	204		202							{1: '1', 6: '1'}
+208	205		301							"{3: ""A few old memories fill Chrome's M.I.N.D.""}"
+209	206		301							"{3: 'Before that, he had experienced a catastrophic ""failure,"""" but that gave Chrome a """"new life.""'}"
+210	207		301							{3: 'What about this time?'}
+211	208		201							{1: '1', 2: '500155', 3: '17'}
+212	209		301							{1: '1', 2: 'Chrome', 3: '(Even if it was the worst-case scenario, at least I protected everyone.)', 4: '1'}
+213	210		301							{3: 'With this feeling, Chrome recalls the thought that had flashed through his M.I.N.D. right before his final encounter with Vonnegut.'}
+214	211		301							"{2: 'Chrome', 3: ""(If it wasn't the worst-case scenario...)"", 4: '1'}"
+215	212		202							{1: '1', 6: '1'}
+216	213		301							{3: 'If only he can hold onto an ounce of hope...'}
+217	214		301							{3: 'If he is able to transfer into his new frame early due to the damages sustained in battle...'}
+218	215		301							{3: 'Since 【kuroname】 has been the only one resistant to corruption... He will be able to temporarily free the commandant to stabilize the corruption and other issues caused by M.I.N.D. deviation.'}
+219	216		301				AniZhuanchangBegin			{3: 'Working alongside 【kuroname】, Chrome will have a better chance of destroying that secret base. Then...'}
+220	217		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory56.jpg'}
+221	218		504							{1: '0.7'}
+222	219		201							{1: '1', 2: '500153', 4: '-400'}
+223	220		201							{1: '2', 2: '500149', 4: '400'}
+224	221		301			AniZhuanchangEnd				"{1: '1', 2: 'John', 3: ""Langston, you know what to do as my son, don't you?"", 4: '2'}"
+225	222		301				AniZhuanchangBegin			"{2: 'Langston', 3: 'Gather everything that is of use, put them together, then create a perfect ""me.""', 4: '1'}"
+226	223		202							{1: '1', 2: '2', 6: '1'}
+227	224		504							{1: '0'}
+228	225		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+229	226		201							{1: '1', 2: '500155', 3: '17'}
+230	227		301			AniZhuanchangEnd				"{1: '1', 2: 'Chrome', 3: ""(I'm going to achieve this goal my own way, Dad.)"", 4: '1'}"
+231	228		301							{3: 'But... This goal, no matter how sought after it is, it cannot be his final destination.'}
+232	229		301							"{2: 'Chrome', 3: ""(Looks like I'm going to spend a month in the Star of Life while they repair my frame.)"", 4: '1'}"
+233	230		301							"{3: ""Considering all of the surveillance lately, perhaps spending a month in the Star of Life recovering will be more suitable for the opposition's plans.""}"
+234	231		301							{2: 'Chrome', 3: '...', 4: '1'}
+235	232		202							{1: '1', 6: '1'}
+236	233		301							{3: 'During his meeting with 【kuroname】, even though he did not reveal anything to the opposition, he did give them a new target.'}
+237	234		301							{3: 'Even still, Chrome has no regrets.'}
+238	235		301							"{3: ""He has to make sure of the commandant's willingness before he saves the next life.""}"
+239	236		301							"{3: ""After his meeting with 【kuroname】, the commandant's willingness was without a doubt.""}"
+240	237		301							"{3: 'Whether he has to ""become the rat"" to free 【kuroname】 or acquire the commandant\'s assistance, he must stay alive. He has to achieve his goal his own way.'}"
+241	238		201							{1: '1', 2: '500155', 3: '17'}
+242	239		301							"{1: '1', 2: 'Chrome', 3: ""(I can't let them stop me.)"", 4: '1'}"
+243	240		301							{3: 'He has to take action, even under these circumstances.'}
+244	241		201							{1: '1', 2: '500273'}
+245	242		301							"{1: '1', 2: 'Wanshi', 3: ""...I can't get a hold of the Star of Life. I wanted to see if they're still taking patients."", 4: '1'}"
+246	243		202							{1: '1', 6: '1'}
+247	244		301							"{3: '""Is their comm link down? Is there a signal jammer nearby?""'}"
+248	245		201							{1: '1', 2: '500155', 3: '17'}
+249	246		301							{1: '1', 3: 'Chrome wants to ask Wanshi, but his corruption and wounds make him unable to speak.'}
+250	247		201							{1: '1', 2: '500175'}
+251	248		301							{1: '1', 2: 'Camu', 3: 'Hmph... I think someone planted something next to the engine.', 4: '1'}
+252	249		301							"{2: 'Camu', 3: ""I didn't really look at it too closely before takeoff because we were in such a hurry. It's not safe to check during flight either."", 4: '1'}"
+253	250		301							{2: 'Camu', 3: 'Call them when we get back to base.', 4: '1'}
+254	251		202							{1: '1', 6: '1'}
+255	252		301							{3: 'They all nod. Silence falls over them among the rumbling of the transport craft.'}
+256	253		201							{1: '1', 2: '500155', 3: '17'}
+257	254		301							{1: '1', 3: 'Chrome wants to share his suspicions with everyone, but even his vision begins to fade.'}
+258	255		301							{3: 'He does not know what might happen if he passes out here. Wanshi has not specified.'}
+259	256		301							{3: 'But by the look on his face, it definitely would not be good.'}
+260	257		301							{3: 'I must stay awake and leave a clue... Chrome struggles to gain control over his broken finger.'}
+261	258		301							{3: '...A29.'}
+262	259		301							{3: 'He writes this simple message on the palm of his hand with the vital fluid exuding from his fingertip.'}
+263	260		301							"{3: ""Column A, number 29. This is the address for Asimov in his terminal's directory.""}"
+264	261		301							{3: 'Most of the time, Asimov is in his workshop where he cannot be reached. Only this address is able to reach him regarding top-secret research.'}
+265	262		301							{3: 'In addition, only those involved in these top-secret projects know this address.'}
+266	263		301							{3: 'If they are willing to use heavy-handed means to interfere with his plans, such as signal jammers, he has no other choice but to write this glimmer of hope on his hand.'}
+267	264		301							{3: 'If his assumption is correct, Wanshi and Kamui will understand this clue as they check each invalid comm link.'}
+268	265		301							{3: 'After all, they are sure to connect the dots while looking at the directory itself.'}
+269	266		301							{3: 'In order to make the number more apparent, Chrome once again struggles to gain control over his fingertip.'}
+270	267		301							{3: 'Pain. Deep, agonizing pain.'}
+271	268		301							{3: 'Prior to this mission, Chrome has not used pain to stay conscious for quite some time.'}
+272	269		301				AniZhuanchangBegin			{3: 'Somehow, this gives Chrome a season of bitter nostalgia.'}
+273	270		202							{1: '1', 6: '1'}
+274	271		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory348.jpg'}
+275	272		301			AniZhuanchangEnd				{3: 'Steadily arriving at the predetermined landing zone, Babylonia is already shrouded in artificial night.'}
+276	274		301							{3: 'For Chrome, the imaginary moon hanging outside the window has accompanied him for countless nights at F.O.S. College.'}
+277	275		301							{3: 'Countless days... Work, repeat. Train, repeat. Struggle, repeat.'}
+278	276		301							{3: 'All to keep Langston Smith on top.'}
+279	277		301							"{3: 'But now... There was no need for such a cold, relentless pursuit of ""perfection.""'}"
+280	278		301							"{3: 'Becoming a ""Smith"" was no longer his sole pursuit...'}"
+281	279		301							{3: 'Perhaps, it is the sense of familiarity that gives him a little peace of mind or, perhaps, that he has already reached the limit.'}
+282	281		301							"{3: ""Chrome's memory once again begins to sink into itself...""}"
+283	282		201							{1: '1', 2: '1081001'}
+284	283		301							{1: '1', 2: 'Kamui', 3: 'We made it!', 4: '1'}
+285	284		203							{1: '1', 2: '0.25', 3: '400'}
+286	285		201							{1: '2', 2: '500175', 4: '-400'}
+287	286		301							{1: '1', 2: 'Camu', 3: 'Leave the transport ship so we can finally contact the Star of Life.', 4: '2'}
+288	287		301							"{2: 'Kamui', 3: ""Roger! I'll get the captain off the ship."", 4: '1'}"
+289	288		202							{1: '1', 2: '2', 6: '1'}
+290	289		201							{1: '1', 2: '500273', 4: '1'}
+291	290		301							{1: '1', 2: 'Wanshi', 3: 'His condition is getting worse. Carry him and keep him steady.', 4: '1'}
+292	291		202							{1: '1', 6: '1'}
+293	292		301							"{3: '""Thanks. Sorry for the trouble.""'}"
+294	293		301							{3: 'Chrome wants to say that, but he cannot spit out a single word.'}
+295	294		201							{1: '1', 2: '500273', 3: '7'}
+296	295		301							"{1: '1', 2: 'Wanshi', 3: ""Wait! Kamui! There's something written on the captain's hand."", 4: '1'}"
+297	296		203							{1: '1', 2: '0.25', 3: '400'}
+298	297		204							{1: '1'}
+299	298		201							{1: '2', 2: '1081001', 3: '4', 4: '-400'}
+300	299		301							{1: '1', 2: 'Kamui', 3: 'A29?', 4: '2'}
+301	300		301							"{2: 'Kamui', 3: ""That wasn't there before boarding the plane. Did he want to tell us this but couldn't?"", 4: '2'}"
+302	2000		204							{1: '1', 2: '4'}
+303	301		301							{2: 'Wanshi', 3: 'It seems that his vocalizer has been destroyed. Go to the Star of Life before looking into this!', 4: '1'}
+304	302		301							"{3: ""Wanshi grabs Chrome's hand and wipes it clean.""}"
+305	303		301							"{2: 'Wanshi', 3: ""Let's go."", 4: '1'}"
+306	304		202							{1: '1', 2: '2', 6: '1'}
+307	305		301				DialogDisable			{3: 'Reliable comrades, reliable friends, a real sense of security... He thinks of how fortunate he is for being the captain of Strike Hawk.'}
+308	306		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+309	2001		201							{1: '1', 2: '1081001', 3: '4'}
+310	307		301			DialogEnable				{1: '1', 2: 'Kamui', 3: 'Hey...', 4: '1'}
+311	308		301				AniZhuanchangBegin			{3: 'Before Chrome falls into a coma, Kamui sees a smile on the corner of his mouth.'}
+312	309		202							{1: '1', 6: '1'}
+313	310		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg'}
+314	311		301			AniZhuanchangEnd				"{3: 'Although it is now ""early morning"" according to human convention, there are still several personnel on the landing platform performing maintenance on transport crafts.'}"
+315	312		301							{3: 'They are somewhat surprised to see the safety hatch open halfway as a blonde figure rushes out from within.'}
+316	313		301							{3: 'The young man, who personnel could always tell he was laughing even by looking at the back of his head, is now in a state of panic.'}
+317	314		201							{1: '1', 2: '1081001', 3: '17'}
+318	315		301							{1: '1', 2: 'Kamui', 3: 'HEY!! IS THERE A MEDIC?!', 4: '1'}
+319	316		201							{1: '1', 2: '500303'}
+320	317		301							{1: '1', 2: 'Staff Member', 3: 'Military personnel returning from Earth, turn left and proceed through the sterilization tunnel. Then you can take a regional shuttle to the ER at the Star of Life.', 4: '1'}
+321	318		202							{1: '1', 6: '1'}
+322	319		301							{3: 'The staff member standing behind the right partition simply recites the regulations apathetically.'}
+323	320		301							{3: 'Hearing this formulaic response, Kamui remains quiet. Instead, he rushes in the direction of the sterilization tunnel with Chrome lying unconscious in his arms.'}
+324	321		301							{3: 'After seeing them disappear, the workers behind the partition get together and begin to gossip.'}
+325	322		201							{1: '1', 2: '500303', 3: '7', 4: '-600'}
+326	323		201							{1: '2', 2: '500303', 4: '600'}
+327	324		201							{1: '3', 2: '500303'}
+328	325		301							"{1: '1', 2: 'Staff Member A', 3: ""...That guy he was carrying, that wasn't one of the Smiths, was it?"", 4: '1'}"
+329	326		204							{1: '1'}
+330	327		301							"{2: 'Staff Member B', 3: ""What the hell was their mission? I wouldn't be this surprised even if the Gray Raven's commandant came back in this condition one day."", 4: '2'}"
+331	328		301							"{2: 'Staff Member C', 3: ""And their commandant is a human... But him... Sigh, I wanna see the look on Smith's face."", 4: '3'}"
+332	329		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+333	330		301							{3: 'Passing the evacuation corridor, Kamui runs into the sterilization tunnel with Chrome in his arms. Camu and Wanshi follow in close pursuit.'}
+334	331		201							{1: '1', 2: '500175'}
+335	332		301							"{1: '1', 2: 'Camu', 3: ""Let's go our separate ways here."", 4: '1'}"
+336	333		301							"{2: 'Camu', 3: ""...I won't be of any use to him."", 4: '1'}"
+337	334		202							{1: '1', 6: '1'}
+338	335		301							{3: 'Hearing this, Wanshi wants to say something to Camu, but he keeps quiet.'}
+339	336		201							{1: '1', 2: '1081001'}
+340	337		301							"{1: '1', 2: 'Kamui', 3: ""I'll let you know when everything is under control. Don't worry."", 4: '1'}"
+341	338		202							{1: '1', 6: '1'}
+342	339		301							{3: 'The small central purification filter rumbles in the background. Camu looks at Kamui and Chrome in his arms. Standing among the sterilization spray, silence hangs over the group. No one knows what to say at a time like this.'}
+343	340		301				AniZhuanchangBegin			{3: 'A prompt signals that the sterilization is complete. Camu nods and waves goodbye. After watching Camu leave, Wanshi and Kamui carry Chrome to the regional shuttle.'}
+344	341		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory109.png'}
+345	342		301			AniZhuanchangEnd				{3: 'Upon returning to this familiar yet disturbing place, the Star of Life seems to be more chaotic than what Wanshi remembers.'}
+346	343		301							{3: 'Due to the large-scale battle in City 075, the Star of Life, which had a reputation for being busy, is now a hellscape of blood and vital fluid.'}
+347	344		301							{3: 'Before the battle even began, the staff anticipated a large number of casualties, but even as they try their best, they still cannot cope with the spreading disaster.'}
+348	345		301							{3: 'After the Longinus Arsenal destroyed most of the Red Tide, there were still mass casualties in the ruins of City 075.'}
+349	346		301							{3: 'They cleaned up a large number of Hetero-Creatures, transported supplies, recovered samples, and collected data. It may have appeared insignificant compared to the achievements of the core personnel, but it was still equally important.'}
+350	347		301							"{3: ""Wanshi takes Kamui through the ER's lobby via a familiar shortcut and places Chrome on a temporary maintenance table.""}"
+351	348		201							{1: '1', 2: '500273'}
+352	349		301							{1: '1', 2: 'Wanshi', 3: 'We need—', 4: '1'}
+353	350		201							{1: '1', 2: '500303'}
+354	351		301							{1: '1', 2: 'Staff Member', 3: 'Apologies, the maintenance room is already at max capacity.', 4: '1'}
+355	352		202							{1: '1', 6: '1'}
+356	353		301							{3: 'Before he can even finish speaking, the staff hastily refuses him and runs over to a room where he is being called for assistance.'}
+357	354		201							{1: '1', 2: '1081001'}
+358	355		301							"{1: '1', 2: 'Kamui', 3: ""How can there be this many wounded? Wanshi, let's contact President Hassen!"", 4: '1'}"
+359	356		202							{1: '1', 6: '1'}
+360	357		301							{3: 'Wanshi nods. They both open their terminals, then dial Hassen and Celica.'}
+361	358		201							{1: '1', 2: '1081001'}
+362	359		301							{1: '1', 2: 'Kamui', 3: 'No response.', 4: '1'}
+363	360		203							{1: '1', 2: '0.25', 3: '-400'}
+364	361		201							{1: '2', 2: '500273', 4: '400'}
+365	362		301							{1: '1', 2: 'Wanshi', 3: '...No response from Celica either.', 4: '2'}
+366	363		301							{2: 'Kamui', 3: 'Is it too late in the evening?', 4: '1'}
+367	364		301							{2: 'Wanshi', 3: '...', 4: '2'}
+368	365		301							{2: 'Kamui', 3: 'What about Asimov or the others?', 4: '1'}
+369	366		301							{2: 'Wanshi', 3: 'Most of the others are out on missions, but we can try Asimov.', 4: '2'}
+370	367		301							{3: 'Both of them repeatedly call Asimov for help, but he does not pick up. After a long time, a strange face appears in front of the comm link.'}
+371	368		301							{2: 'Kamui', 3: 'Celica!', 4: '1'}
+372	369		202							{1: '1', 2: '2', 6: '1'}
+373	370		201							{1: '1', 2: '500303'}
+374	371		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+375	372		301							{1: '1', 2: 'Staff Member', 3: '...Hello. Celica is currently in a meeting. I can relay a message to her though if you wish.', 4: '1'}
+376	373		301							{3: 'Both of them quickly explain the situation.'}
+377	374		301							{2: 'Staff Member', 3: 'If someone is injured, please proceed to the Star of Life and follow the procedure.', 4: '1'}
+378	375		203							{1: '1', 2: '0.25', 3: '400'}
+379	376		201							{1: '2', 2: '500273', 3: '4', 4: '-400'}
+380	377		301							"{1: '1', 2: 'Wanshi', 3: ""But they're already at max capacity."", 4: '2'}"
+381	378		301							{2: 'Staff Member', 3: 'In that case, wounded personnel have no choice but to wait for a vacancy.', 4: '1'}
+382	379		301							"{2: 'Staff Member', 3: ""I'll relay the message to Celica, but neither her nor the President can help with medical issues. I recommend you wait patiently."", 4: '1'}"
+383	380		202							{1: '2', 6: '1'}
+384	381		201							{1: '2', 2: '1081001', 3: '5', 4: '-400'}
+385	382		301							{1: '1', 2: 'Kamui', 3: 'Are you kidding me?!', 4: '2'}
+386	383		301							"{2: 'Staff Member', 3: ""My response is according to protocol. I can repeat it if you'd like."", 4: '1'}"
+387	384		301							{2: 'Kamui', 3: 'You piece of...!', 4: '2'}
+388	385		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+389	386		202							{1: '1', 2: '2', 6: '1'}
+390	387		201							{1: '1', 2: '500273'}
+391	388		301							{1: '1', 2: 'Wanshi', 3: 'Enough. I guess we have no other choice.', 4: '1'}
+392	389		301							{3: 'Wanshi abruptly terminates the call.'}
+393	390		301							{2: 'Wanshi', 3: 'Seems like Hassen and Celica are tied up as well. Their comms are being re-routed.', 4: '1'}
+394	391		301							"{2: 'Wanshi', 3: ""There's no point in wasting your breath. We have to think of another way."", 4: '1'}"
+395	392		202							{1: '1', 6: '1'}
+396	393		201							{1: '1', 2: '500116'}
+397	394		301							"{1: '1', 2: 'Doctor A', 3: ""Well, if it isn't Dr. Wanshi? I sure haven't seen you in a while."", 4: '1'}"
+398	395		301							{3: 'A somewhat familiar face appears in the corner.'}
+399	396		203							{1: '1', 2: '0.25', 3: '400'}
+400	397		201							{1: '2', 2: '500273', 4: '-400'}
+401	398		301							"{1: '1', 2: 'Wanshi', 3: ""You're still here...!"", 4: '2'}"
+402	399		301							"{2: 'Doctor A', 3: ""Haha! Well, there's no other place for me to go now, is there?"", 4: '1'}"
+403	400		301							{2: 'Wanshi', 3: 'Anyway, I have a frame that needs maintenance. Is there space?', 4: '2'}
+404	401		301							"{2: 'Doctor A', 3: ""Can't you tell?"", 4: '1'}"
+405	402		301							{3: 'The doctor laughs awkwardly.'}
+406	403		301							"{2: 'Wanshi', 3: ""It doesn't have to be in a maintenance room. He just needs a matching action module and vital fluid dialysis."", 4: '2'}"
+407	404		301							{2: 'Doctor A', 3: 'Are you going to operate?', 4: '1'}
+408	405		301							"{3: ""She hurries to the temporary maintenance table and checks the stock for Chrome's model.""}"
+409	406		301							"{2: 'Doctor A', 3: ""All that's left is a hand module, but you can't replace it without a maintenance room."", 4: '1'}"
+410	407		301							"{2: 'Doctor A', 3: ""After all, it's not as simple as just replacing the hand."", 4: '1'}"
+411	408		301							{2: 'Wanshi', 3: 'Did you check the reserves? The Star of Life used to also keep emergency supplies on hand. Those—', 4: '2'}
+412	409		301							{2: 'Doctor A', 3: 'This is all we have.', 4: '1'}
+413	410		301							"{2: 'Doctor A', 3: ""We're already running on fumes here, but I can pull some strings and get you a vital fluid filter seeing as it's an emergency."", 4: '1'}"
+414	411		301							{3: 'She turns to Wanshi and says with a heavy heart—'}
+415	412		301							{2: 'Doctor A', 3: 'Or you can think of another way, Dr. Wanshi.', 4: '1'}
+416	413		301							"{2: 'Wanshi', 3: ""...I'll take the filter for now."", 4: '2'}"
+417	414		301							{3: 'She nods. Squeezing her way through the crowded corridor, she quickly returns with a vital fluid filter. Together, she and Wanshi hook up Chrome to the machine.'}
+418	415		301							{2: 'Doctor A', 3: 'I recommend you get him out of here as soon as possible.', 4: '1'}
+419	416		301							{3: 'She quietly whispers to Wanshi as they hook up the machine.'}
+420	417		301							{2: 'Wanshi', 3: 'Why?', 4: '2'}
+421	418		301							"{2: 'Doctor A', 3: ""He won't get help, if you know what I mean."", 4: '1'}"
+422	419		301							{2: 'Doctor A', 3: 'If you ask why, all I can say is that the hospital is running out of supplies.', 4: '1'}
+423	420		301							"{2: 'Doctor A', 3: ""I'll be in trouble if I say any more."", 4: '1'}"
+424	421		301							{3: 'She clears her throat after hooking up the machine.'}
+425	422		301							"{2: 'Doctor A', 3: ""I've got work to do. If you think of another way, just leave the filter here. I'll come get it later."", 4: '1'}"
+426	423		301							{2: 'Wanshi', 3: 'Thank you.', 4: '2'}
+427	424		202							{1: '1', 2: '2', 6: '1'}
+428	425		301							{3: 'She nods, then disappears behind a corner marked Star of Life.'}
+429	426		201							{1: '1', 2: '500273', 4: '-400'}
+430	427		201							{1: '2', 2: '1081001', 3: '5', 4: '400'}
+431	428		301							{1: '1', 2: 'Kamui', 3: 'Is this the only way?', 4: '2'}
+432	429		301							{2: 'Wanshi', 3: 'We need to replace his dying parts now so that he has a chance to survive and recover.', 4: '1'}
+433	430		301							"{2: 'Wanshi', 3: ""But there aren't any available maintenance rooms or suitable parts."", 4: '1'}"
+434	431		204							{1: '2', 2: '4'}
+435	432		301							{2: 'Kamui', 3: 'What about somewhere else? Like A29?', 4: '2'}
+436	433		301							{2: 'Wanshi', 3: '...I thought about that too, but what the hell does it mean?', 4: '1'}
+437	434		301							{2: 'Kamui', 3: 'In puzzle games, this sort of code normally represents a password, location, or a particular spot in a large set of data.', 4: '2'}
+438	435		301							"{2: 'Wanshi', 3: ""The captain couldn't have left us a clue about something none of us know about, like a lock. The closest building related to A29 is a shop."", 4: '1'}"
+439	436		301							{2: 'Kamui', 3: 'Then that only leaves one possibility.', 4: '2'}
+440	437		301							{2: 'Wanshi', 3: 'The directory?', 4: '1'}
+441	438		301							{3: 'Before they had arrived at this conclusion, they had been pouring over the directory looking for people to call for help. It seems so obvious now.'}
+442	439		301							"{3: ""After the two reach a consensus, they quickly take out Chrome's terminal.""}"
+443	440		301							{2: 'Kamui', 3: 'Column A, number 29... Hey, 28 and 29 are both Asimov.', 4: '2'}
+444	441		301							"{2: 'Wanshi', 3: ""...Let's give it a try."", 4: '1'}"
+445	442		401							{1: '2', 2: '1515'}
+446	443		301							{3: 'Wanshi presses the number in the directory.'}
+447	444		301							{2: 'Wanshi', 3: '...', 4: '1'}
+448	445		301							{3: 'However, no one answers their last glimmer of hope.'}
+449	446		301							{2: 'Kamui', 3: '...', 4: '2'}
+450	447		301							"{3: ""As the dial tone continues to ring, a rare bead of sweat appears on Wanshi's forehead.""}"
+451	448		301							{2: 'Wanshi', 3: '...If I can get the replacement parts for his frame, I can try to replace them here.', 4: '1'}
+452	449		301							"{2: 'Kamui', 3: ""Want to contact the captain's father? He rarely talks about his family, but I've heard others mention him."", 4: '2'}"
+453	450		204							{1: '1', 2: '7'}
+454	451		301							"{3: ""It's rare to see Kamui this serious. Wanshi looks up for a moment.""}"
+455	452		301							"{2: 'Wanshi', 3: ""...I've heard some rumors, but did you see the situation just now? They've obviously taken the captain's father into account."", 4: '1'}"
+456	453		301							{2: 'Wanshi', 3: '...I think we should keep trying to reach Asimov.', 4: '1'}
+457	454		204							{1: '1', 2: '4'}
+458	455		301							{3: 'Wanshi presses the name in the directory once, twice, three times, four times, five times...'}
+459	456		401							{1: '2', 2: '1515'}
+460	457		401						500.0	{1: '2', 2: '1515'}
+461	458		401						400.0	{1: '2', 2: '1515'}
+462	459		401						300.0	{1: '2', 2: '1515'}
+463	460		401						200.0	{1: '2', 2: '1515'}
+464	461		401						100.0	{1: '2', 2: '1515'}
+465	462		301							{3: 'Suddenly, there is a prompt to connect with them from the other end.'}
+466	463		301			RImgBg1Shake				{2: 'Kamui & Wanshi', 3: 'Asimov!!!', 4: '1', 5: '2'}
+467	464		202							{1: '1', 2: '2', 6: '1'}
+468	465		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+469	466		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2'}
+470	467		301							{2: '???', 3: 'Ahh!!!'}
+471	468		301							{3: 'There is nothing in front of the communication monitor except a young scream.'}
+472	469		301							"{2: '???', 3: ""S-s-sorry. I shouldn't have connected Mr. Asimov's comm link without his permission, but it kept ringing.""}"
+473	470		301							"{2: 'Kamui', 3: ""Who's there? Forget it. Doesn't matter. Do you know where he is?""}"
+474	471		301							"{2: '???', 3: ""W-what? It DOES matter! My name's Rosa. I came to ask Mr. Asimov a few things...""}"
+475	472		301							{3: 'Judging from her childish voice and being unable to reach the camera, the girl had to be six or seven years old at most.'}
+476	473		301							"{2: 'Rosa', 3: ""He's not here. I think he's hiding so he can continue his research.""}"
+477	474		301							"{2: 'Wanshi', 3: ""We've got an emergency. Where is he exactly?""}"
+478	475		301							"{2: 'Rosa', 3: ""A-an emergency...? Go to Zone B3 of the Science Council. That's where he goes so no one bothers him.""}"
+479	476		301							{3: 'B3 is the new research building of the Science Council, which is fairly close to the Star of Life.'}
+480	477		301							"{2: 'Kamui', 3: ""Let's go.""}"
+481	478		202							{1: '1', 2: '2', 6: '1'}
+482	479		301				AniZhuanchangBegin			{3: 'A ray of hope shines on their beleaguered faces. Kamui picks up Chrome again and rushes to the shuttle outside.'}
+483	480		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab'}
+484	481		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory264.png'}
+485	482		301			AniZhuanchangEnd				{3: 'The shuttle quickly turns into Zone B3. There is a young girl standing in front of the stairs of the building.'}
+486	483		301							"{2: 'Rosa', 3: ""Hi... I'm Rosa. You said it was an emergency, so I followed you here to see if I can help... Mr. Asimov should be in the sealed lab.""}"
+487	484		201							{1: '1', 2: '1081001'}
+488	485		301							{1: '1', 2: 'Kamui', 3: 'Sealed lab?', 4: '1'}
+489	486		202							{1: '1', 6: '1'}
+490	487		301							"{1: '1', 2: 'Rosa', 3: ""Yeah, Mr. Asimov doesn't like being bothered, so..."", 4: '1'}"
+491	488		301							"{3: ""She explains obediently but begins to get nervous after seeing Kamui's anxious face.""}"
+492	489		301							{2: 'Rosa', 3: 'S-s-sorry! Follow me!!', 4: '1'}
+493	490		301				RImgBg1Shake			{3: 'Rosa races into the building and up the emergency stairwell at nearly Mach 1, banging on a wall around the corner.'}
+494	491		301							{2: 'Rosa', 3: 'Mr. Asimovvvv...!', 4: '1'}
+495	492		301				AniZhuanchangBegin			"{3: ""Rosa's voice trembles with a slight whimper. The crashing of various research equipment comes from the depths of the sealed lab.""}"
+496	493		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory256.png'}
+497	494		201							{1: '1', 2: '500004', 3: '9'}
+498	495		301			AniZhuanchangEnd				{1: '1', 3: 'Arriving upstairs, Asimov stares at Wanshi with kindred dark circles of brilliance under his eyes as he is packing up the things he had just knocked over.'}
+499	496		301							"{3: 'Wanshi wants to ask, ""So, someone CAN scare Asimov, huh?"" but he has more pressing issues.'}"
+500	497		201							{1: '1', 2: '1081001'}
+501	498		301							{2: 'Kamui', 3: 'Save our captain, Asimov!', 4: '1'}
+502	499		201							{1: '1', 2: '500004', 3: '9'}
+503	500		301							{1: '1', 2: 'Asimov', 3: '...', 4: '1'}
+504	501		301							"{3: ""He looks at Chrome, who is gravely injured in Kamui's arms, and his face turns pale.""}"
+505	502		301							{2: 'Asimov', 3: 'Come with me.', 4: '1'}
+506	503		301							{3: 'Asimov hurries into the sealed lab. Rosa stands there timidly and waves as if choosing not to follow them.'}
+507	504		301							"{2: 'Asimov', 3: ""This might not be the ER, but your timing couldn't be better."", 4: '1'}"
+508	505		301							"{2: 'Asimov', 3: ""I've been working to fix the remaining problems with Chrome's frame since this morning. Sorry, I left my terminal in the workshop. People kept disrupting me."", 4: '1'}"
+509	506		301							"{2: 'Asimov', 3: ""I just so happened to fix the issue that's been giving me trouble all this time."", 4: '1'}"
+510	507		301							{3: 'Asimov pushes open the door, takes Chrome from Kamui and places him on the maintenance table.'}
+511	508		301							{2: 'Asimov', 3: 'Wanshi, give me hand.', 4: '1'}
+512	509		201							{1: '1', 2: '500273'}
+513	510		301							{1: '1', 3: 'Wanshi nods, then immediately begins attaching various instruments near the table to Chrome.'}
+514	511		203							{1: '1', 2: '0.25', 3: '400'}
+515	512		201							{1: '2', 2: '1081001', 3: '4', 4: '-400'}
+516	513		301							{1: '1', 2: 'Kamui', 3: 'What about me?', 4: '2'}
+517	514		202							{1: '1', 6: '1'}
+518	515		201							{1: '1', 2: '500004', 3: '9', 4: '400'}
+519	516		301							{1: '1', 2: 'Asimov', 3: 'I still need to confirm some things. Grab my terminal. Rosa may have taken it with her.', 4: '1'}
+520	517		301							{2: 'Kamui', 3: 'Terminal?', 4: '2'}
+521	518		301							{2: 'Asimov', 3: 'Go.', 4: '1'}
+522	519		301		1		AniZhuanchangBegin			{2: 'Kamui', 3: 'Roger!', 4: '2'}

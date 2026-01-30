@@ -1,0 +1,357 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '5042'}
+3	3		301			DialogEnable				"{3: ""Here, time becomes a blank void of insignificance. Alongside the dissolution of time's grasp, your mind has also shed its sense of self.""}"
+4	4		301							{3: 'Bones dissolved, flesh corroded and torn apart, your body shatters then reconstructs. When the searing agony reaches its peak, it turns into a void within your mind.'}
+5	5		301							{3: 'Your thin silhouette drifts through the muddy Red Tide, like water dissolving into water.'}
+6	6		301							{3: 'Your senses chaotically converge and scatter. At that moment, you hear a voice calling out from somewhere nearby...'}
+7	7		201							{1: '1', 2: '501106'}
+8	8		301							{1: '1', 2: '???', 3: 'No... not yet...', 4: '1'}
+9	9		302							{2: 'Uh...', 3: '10', 4: '...', 5: '10'}
+10	10		202							{1: '1'}
+11	11		401							{1: '2', 2: '2644'}
+12	12		301							{3: 'The only response to the hoarse cries from your throat is the endless sound of the tide.'}
+13	13		301				DialogDisable			{3: 'Cold wind.'}
+14	14		401							{1: '2', 2: '4638'}
+15	15		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '2'}
+16	16		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+17	17		301			DialogEnable				{3: 'Unnoticed, your senses begin to trickle back. A biting wind howls past you, grazing your bare skin, inflicting a dull, persistent ache.'}
+18	18		402							{1: '4638'}
+19	19		301							{3: '...Skin?'}
+20	20		301							{3: 'Why can you still perceive this concept? No... why does this concept still exist...?'}
+21	21		301							{3: 'The confusion acts like a signal, and quickly, sensations both familiar and foreign wash over you all at once.'}
+22	22		301							{3: 'A sharp pain radiates from within your consciousness, burning fiercely through that void in your mind.'}
+23	23		302							{2: '...', 3: '24', 4: 'I...', 5: '24'}
+24	24		201							{1: '1', 2: '500333'}
+25	25		301							{1: '1', 2: '????', 3: '...', 4: '1'}
+26	26		301							{3: 'A soft sigh, accompanied by a peculiar fragrance, floods your senses.'}
+27	27		302							{2: '(Struggle to open your eyes)', 3: '28'}
+28	28		301							{2: '????', 3: '...Take it easy.', 4: '1'}
+29	29		301							"{3: ""Someone's hand gently yet firmly covers your eyes.""}"
+30	30		301							"{3: ""The snow's glare pierces through the gaps between those fingers and into your eyes. Despite the gentleness of the hands, the sharp pain remains unavoidable.""}"
+31	31		301							{2: '????', 3: 'Humans... such a fragile life form. Even gazing directly at natural light can cause wounds that never fully heal.', 4: '1'}
+32	32		301							"{2: '????', 3: ""Your body hasn't recovered yet. Snow blindness will hurt your eyes again."", 4: '1'}"
+33	33		202							{1: '1'}
+34	34		301				AniZhuanchangBegin			{3: 'Taking heed of the advice, you ease your movements. Waiting for the sting to fade, your vision slowly returns to your battered body.'}
+35	35		502						400.0	{1: 'DialogDisable'}
+36	36		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory966.png'}
+37	37		111			AniZhuanchangEnd				{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+38	38		401							{1: '1', 2: '36'}
+39	39		302							{2: '(Examine your surroundings)', 3: '40', 4: 'Who are you?', 5: '43'}
+40	40		301			DialogEnable				{3: 'This appears to be a mountain peak somewhere near Aerospace City, with a few canvas sheets forming a makeshift tent.'}
+41	41		301				DialogDisable			{3: 'Outside the tent, wisps of warm steam swirl in with the chilly breeze. A pink-haired woman sits there, cradling a crude clay pot molded from earth.'}
+42	42		302							{2: 'Who are you?', 3: '43'}
+43	43		401							{1: '1', 2: '5068'}
+44	44		201							{1: '1', 2: '500380', 3: '12'}
+45	45		301			DialogEnable				{1: '1', 2: '????', 3: 'Are you fully awake now?', 4: '1'}
+46	46		301							{3: 'The blur caused by mild snow blindness fades away from your retinas. The features of the pink-haired woman before you slowly sharpen into focus.'}
+47	47		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+48	48		302							{2: '...Ishmael?', 3: '49'}
+49	49		301							{3: 'Sitting before you is none other than Ishmael, formerly of the Babylonia Control Court...'}
+50	50		301							{3: 'But... how did this person manage to bring you out of the Red Tide?'}
+51	51		204							{1: '1'}
+52	52		301							"{2: 'Ishmael', 3: ""Ah... Even after all this time, you still remember me. I must say it's an honor, Gray Raven... Commandant?"", 4: '1'}"
+53	53		302							{2: '...', 3: '54'}
+54	54		301							{3: 'Countless suspicions churn in your mind, causing your muscles to instinctively tense into a guarded stance.'}
+55	55		301							"{2: 'Ishmael', 3: ""...You're too tense."", 4: '1'}"
+56	56		301							{3: 'She raises her head, her strange pupils glimmering with star-like radiance.'}
+57	57		301							{3: 'Power materializes from nowhere and, almost forcibly, compels your body to relax.'}
+58	58		302							"{2: ""This power... You're a higher-dimensional..."", 3: '59'}"
+59	59		204							{1: '1', 2: '12'}
+60	60		301							{2: 'Ishmael', 3: 'Shh...', 4: '1'}
+61	61		301							{2: 'Ishmael', 3: 'Language is also a form of information. Do not use it carelessly.', 4: '1'}
+62	62		301							"{2: 'Ishmael', 3: 'I know what you\'re thinking, but regrettably, I am merely the ""Gatekeeper"", not one who ""establishes the rules"".', 4: '1'}"
+63	63		302							{2: 'Gatekeeper...', 3: '64'}
+64	64		301							{3: 'When she utters this term supposedly foreign to you, an unexpected sensation of familiarity washes over you, evoking countless memories.'}
+65	65		202							{1: '1'}
+66	66		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+67	67		504							{1: '0.9'}
+68	68		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_39.jpg'}
+69	69		301							{2: 'Vonnegut', 3: 'The Gateway in the Hetero Tower serves as a shortcut to another Gate.'}
+70	70		301							"{2: 'Vonnegut', 3: 'That lady once told me about another ""Gate"", behind which exists a civilization without life.'}"
+71	71		301							"{2: 'Vonnegut', 3: 'It\'s collecting civilizations that have mastered Zero-point Energy and testing them. Those whose development is deemed unbalanced or incorrect have their data harvested and brought back through the ""Gate"" to grow.'}"
+72	72		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+73	73		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1091.jpg'}
+74	74		201							{1: '1', 2: '501069'}
+75	75		301							"{1: '1', 2: 'Nanami', 3: 'In terms you would understand, this place... is what lies beyond the ""Gate"".', 5: '1'}"
+76	76		301							"{2: 'Nanami', 3: 'This is the space that remains after the ""Gateway"" connected to the Hetero Tower was recycled.', 5: '1'}"
+77	77		301							{2: 'Nanami', 3: 'This place is both a graveyard and birthplace of civilizations, where birth and annihilation coexist at every moment.', 5: '1'}
+78	78		202							{1: '1', 6: '1'}
+79	79		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+80	80		504							{1: '0'}
+81	81		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory966.png'}
+82	82		301							{3: 'As memories flood your mind, you instinctively clutch your forehead and step back.'}
+83	83		302							{2: 'Back in the Hetero Tower?', 3: '84'}
+84	84		201							{1: '1', 2: '500380', 3: '12'}
+85	85		301							{1: '1', 2: 'Ishmael', 3: 'It was me.', 4: '1'}
+86	86		401							{1: '2', 2: '4044'}
+87	87		201							{1: '1', 2: '500333'}
+88	88		301							{3: 'Ishmael nods slightly, then pulls her hood back over her head.'}
+89	89		301							"{1: '1', 2: 'Ishmael', 3: ""Or perhaps... you're more familiar with this appearance of mine."", 4: '1'}"
+90	90		202							{1: '1', 6: '1'}
+91	91		201							{1: '1', 2: '501095'}
+92	92		401							{1: '2', 2: '1543'}
+93	93		301							{1: '1', 3: 'With her hood lowered and cloak opened again, the pink-haired Construct has taken a new form, wearing an ambiguous smile.'}
+94	94		301							"{3: 'The dull sound of ocean waves floods your mind as a realization dawns upon you—the mysterious pink-haired figure who had ""killed you"" multiple times... is also Ishmael.'}"
+95	95		302							{2: 'That person under the sea... was also you.', 3: '96'}
+96	96		302							{2: 'Who exactly are you?', 3: '98'}
+97	97		201							{1: '1', 2: '501096', 3: '1'}
+98	98		301							"{1: '1', 2: 'Ishmael', 3: ""Don't you already know my name? I'm Ishmael."", 4: '1'}"
+99	99		301							"{3: ""Her hood sways gently, as if she's quietly laughing.""}"
+100	100		301							"{2: 'Ishmael', 3: 'Though occasionally, some call me ""the Merciful One"".', 4: '1'}"
+101	101		302							{2: 'The Merciful One...', 3: '102', 4: 'That most mysterious agent...', 5: '102'}
+102	102		301							{2: 'Ishmael', 3: 'Information always becomes distorted in the process of transmission.', 4: '1'}
+103	103		204							{1: '1', 2: '2'}
+104	104		301							"{2: 'Ishmael', 3: '""Gives one extra chance to whoever she deems suitable, regardless of whether they are good or evil, friend or foe""...', 4: '1'}"
+105	105		301							"{2: 'Ishmael', 3: ""That's just a rumor that got out of hand. What I do is simply give people with unfinished business a chance when I happen to be in a good mood."", 4: '1'}"
+106	106		302							"{2: ""So you've been watching all along..."", 3: '107'}"
+107	107		204							{1: '1', 2: '4'}
+108	108		301							"{2: 'Ishmael', 3: ""That assertion is inaccurate. There seems to be a misunderstanding. The Punishing Virus isn't a trial I introduced to human civilization."", 4: '1'}"
+109	109		301							"{2: 'Ishmael', 3: 'I am merely the ""Gatekeeper"", an observer from somewhere far more distant, a...', 4: '1'}"
+110	110		301							"{3: ""Ishmael's fingertips wave gently as light and shadows formed from pure energy gather and disperse.""}"
+111	111		301							{2: 'Ishmael', 3: '...projection.', 4: '1'}
+112	112		202							{1: '1'}
+113	113		301							{3: 'She ascends upon unfamiliar stars with light at her back, accompanied by fragmented whispers echoing between the crevices of dreams.'}
+114	114		401							{1: '2', 2: '2959'}
+115	115		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+116	116		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+117	117		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+118	118		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_34.jpg'}
+119	119		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3201_09.jpg', 3: '0.7', 4: '0.7', 5: '0'}
+120	120		307							{1: 'Gray Raven Commandant... Who are you, exactly?', 3: '60'}
+121	121		301							{3: 'Gray Raven Commandant... Who are you, exactly?'}
+122	122		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1021.jpg', 3: '0.7', 4: '0.7', 5: '0'}
+123	123		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+124	124		307						10.0	{2: '1'}
+125	125		307							{1: 'Can you see beyond the ordinary world, like me?', 3: '60'}
+126	126		301							{3: 'Can you see beyond the ordinary world, like me?'}
+127	127		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1023.jpg', 3: '0.7', 4: '0.7', 5: '0'}
+128	128		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+129	129		307						10.0	{2: '1'}
+130	130		307				AniZhuanchangBegin			"{1: ""Is all that's left here just a projection, like me?"", 3: '60'}"
+131	131		301							"{3: ""Is all that's left here just a projection, like me?""}"
+132	132		205							{1: '999'}
+133	133		307							{2: '1'}
+134	134		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5001_07.jpg'}
+135	135		301			AniZhuanchangEnd				{3: 'Somewhere near the city corrupted by the Mutated Red Tide, she appeared unnoticed.'}
+136	136		301							"{2: 'Ishmael', 3: 'Perhaps the ""variable"" you\'re hoping for is already taking notice of your wish.', 4: '1'}"
+137	137		301							{2: 'Ishmael', 3: 'Right?', 4: '1'}
+138	138		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+139	139		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory966.png'}
+140	140		301							"{3: 'She caught a glimpse of ""you"" sealed beyond time and space.'}"
+141	141		301							{3: 'With this thought, she suddenly raises her head.'}
+142	142		302							{2: 'So the one who was with Nanami...', 3: '143'}
+143	143		301							{3: 'Ishmael smiles, offering no denial.'}
+144	144		301							{3: 'And her smile stirs up more scenes deeply buried within your memories.'}
+145	145		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+146	146		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+147	147		301							"{2: '???', 3: ""Huh... So you're the one who's been crying out...""}"
+148	148		301							{2: '???', 3: 'Do you want my help?'}
+149	149		301							{2: '???', 3: 'To wake you up when your decisions still matter, so that you can forge your own path and make your own choices.'}
+150	150		301							{2: '???', 3: 'In that case... 【kuroname】, I wish you... a journey with no regrets.'}
+151	151		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+152	152		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory966.png'}
+153	153		301							{3: 'The echoes of the past reverberate in your ear, as long-forgotten details slowly come into focus, sending a shiver down your spine.'}
+154	154		301							{3: 'Understanding everything brings not enlightenment and joy, but vigilance and unease.'}
+155	155		302							{2: '...What do you want?', 3: '156'}
+156	156		301							{3: 'Ishmael offers a gentle smile as she pushes forward a clay cup brimming with steaming water and vibrant green herbs, a peculiar fragrance wafting through the air.'}
+157	157		201							{1: '1', 2: '501096', 3: '1'}
+158	158		301							"{1: '1', 2: 'Ishmael', 3: ""Have some tea. There's no need to be so tense. I have helped you before, if you still remember."", 4: '1'}"
+159	159		302							"{2: ""...I just don't understand your intention."", 3: '160'}"
+160	160		302							{2: 'When a novel reveals the foreshadowed truth, it leads either to the climax or the ending.', 3: '161'}
+161	161		301							{2: 'Ishmael', 3: 'Not necessarily. The current world is still quite a journey away... from either of the two points.', 4: '1'}
+162	162		301							"{2: 'Ishmael', 3: ""It's just that the conditions have been met, so there's no more need to keep things from you. However, I still can't delve into all the details at this moment, because..."", 4: '1'}"
+163	163		302							{2: 'Language... is information...', 3: '164'}
+164	164		301							{3: 'Cradling the cup, Ishmael gives a faint smile.'}
+165	165		301							"{2: 'Ishmael', 3: ""You're a quick learner. That's a good thing."", 4: '1'}"
+166	166		301							"{3: 'Each cryptic statement is a boundary line paid for with blood and tears. She, too, must abide by some kind of ""rules"", limited to speaking only this much and no further.'}"
+167	167		301							{3: 'Somehow, this realization brings you a modicum of solace. Following a momentary silence, Ishmael resumes speaking.'}
+168	168		301							"{2: 'Ishmael', 3: 'What were you thinking when you chose this ""ending"" of yours?', 4: '1'}"
+169	169		302							{2: '...', 3: '170', 4: 'Ending?', 5: '170'}
+170	170		204							{1: '1', 2: '4'}
+171	171		301							"{2: 'Ishmael', 3: 'Leaving the pain aside, you must\'ve been aware before entering the Red Tide that there was no assurance that the ""fruit"" of Chaos remained effective, and your ability to contend with the newborn Agent Zero for authority was also uncertain.', 4: '1'}"
+172	172		301							{2: 'Ishmael', 3: 'Using your consciousness to obstruct the Red Tide is too naive a notion. Even if successful, the results would hardly be satisfactory.', 4: '1'}
+173	173		301							{2: 'Ishmael', 3: 'Not to mention that the price of that attempt was your own life, yet you still made that choice.', 4: '1'}
+174	174		301							{3: 'Ishmael adjusts her posture slightly, scrutinizing you.'}
+175	175		204							{1: '1', 2: '1'}
+176	176		301							"{2: 'Ishmael', 3: 'Was it an attempt made with certainty, or were you simply doing what you could in the face of an inevitable ""ending"", despite knowing it would prove futile?', 4: '1'}"
+177	177		302							{2: 'Ending?', 3: '178'}
+178	178		301							"{3: ""Instead of directly answering Ishmael's questions, you shift the conversation toward this word that has been mentioned multiple times.""}"
+179	179		301							"{2: 'Ishmael', 3: 'Being able to glimpse different perspectives, you must have seen those ""endings"" already.', 4: '1'}"
+180	180		301							"{2: 'Ishmael', 3: ""In the past, during the simulations with Nanami... Didn't you already experience some of them?"", 4: '1'}"
+181	181		301							{2: 'Ishmael', 3: 'I am not an omniscient god, merely someone who exists in a different dimension, so my perspective differs from yours.', 4: '1'}
+182	182		302							{2: 'So in your view, what state is human civilization in now?', 3: '183'}
+183	183		301							{2: 'Ishmael', 3: 'Now...', 4: '1'}
+184	184		202							{1: '1'}
+185	185		401							{1: '2', 2: '4044'}
+186	186		301							{3: 'She extends her hand slightly, and a heavy tome silently materializes upon her gesture.'}
+187	187		401							{1: '2', 2: '2768'}
+188	188		301							{3: 'The pages turn by themselves without any breeze, as crimson-gold text slowly traces itself across the paper.'}
+189	189		201							{1: '1', 2: '501096', 3: '1'}
+190	190		301							{1: '1', 2: 'Ishmael', 3: 'Human civilization has reached its end.', 4: '1'}
+191	191		301							"{2: 'Ishmael', 3: 'I have seen many, many ""endings"", but in none of them do humans emerge unscathed from the Punishing Virus\' ""test"".', 4: '1'}"
+192	192		301							"{2: 'Ishmael', 3: 'Although... the ""test"" that has befallen humanity this time is not particularly fair.', 4: '1'}"
+193	193		301							{3: 'She furrows her brow, looking somewhat troubled.'}
+194	194		302							"{2: 'A ""test"" that\'s not fair?', 3: '195'}"
+195	195		301							{2: 'Ishmael', 3: 'To put it simply...', 4: '1'}
+196	196		301							"{2: 'Ishmael', 3: 'Do you remember the dream of ""Nemo"" that you once witnessed?', 4: '1'}"
+197	197		204							{1: '1', 2: '8'}
+198	198		301							"{2: 'Ishmael', 3: '""Nemo"" and ""Dominik"" were from the same world... By the way, you can think of this ""world"" as another ""universe"", or ""dimension"", or... whatever other concept works for you.', 4: '1'}"
+199	199		301							"{2: 'Ishmael', 3: 'In that ""world"", they invented the time travel capsule, and from within it, a substance called ""Heteromer Crystal"" was discovered.', 4: '1'}"
+200	200		301							{2: 'Ishmael', 3: 'Afterward, the mysterious crystal of unknown origin enveloped the entire time travel capsule...', 4: '1'}
+201	201		302							{2: 'Punishing Virus...', 3: '202'}
+202	202		301							{2: 'Ishmael', 3: 'Yes, you can think of it that way.', 4: '1'}
+203	203		301							"{2: 'Ishmael', 3: 'That was the ""test"" for their world, which they named ""Chaos Contamination"".', 4: '1'}"
+204	204		204							{1: '1', 2: '9'}
+205	205		301							"{2: 'Ishmael', 3: 'But unfortunately, their world did not pass the ""test"". The Heteromer Crystal completely enveloped the time travel capsule, transforming into a tower that reached the heavens, and then... the ""vanguard team"" set off.', 4: '1'}"
+206	206		301							"{3: 'She narrates these earth-shattering ""feats"" with complete nonchalance.'}"
+207	207		204							{1: '1', 2: '1'}
+208	208		301							"{2: 'Ishmael', 3: 'I won\'t elaborate further on the subsequent ""story"". You\'ve already glimpsed it through those dreams.', 4: '1'}"
+209	209		302							{2: 'The vanguard team...', 3: '210', 4: 'Chaos Contamination...', 5: '210'}
+210	210		301							{3: 'Memories buried deep in your mind resurface one by one, and you recall your conversation with Vonnegut in that tattered room.'}
+211	211		301							"{2: 'Ishmael', 3: '...Due to their carelessness in leaving a leak, the contaminating memetic followed their trail and entered this ""world"".', 4: '1'}"
+212	212		301							"{2: 'Ishmael', 3: ""Otherwise... even though Zero-point Energy brought the Punishing Virus, the Hetero Tower shouldn't have emerged so early."", 4: '1'}"
+213	213		301							{3: 'As if having confirmed a doubt, Ishmael closes her book.'}
+214	214		301							{2: 'Ishmael', 3: 'As for what happened afterward, you already know all that.', 4: '1'}
+215	215		301							"{2: 'Ishmael', 3: 'Nemo... or rather, Vonnegut, and Dominik, they both tried in their own ways to save this civilization they had ""contaminated"".', 4: '1'}"
+216	216		301							{2: 'Ishmael', 3: 'Regrettably, neither of them succeeded.', 4: '1'}
+217	217		301							"{2: 'Ishmael', 3: 'Whether by trying to find a ""successor"" to seal it through their own sacrifice, or attempting to coexist with the Punishing Virus... neither approach could lead to the ""ending"" you all had hoped for.', 4: '1'}"
+218	218		301							{3: 'She lets out a quiet sigh.'}
+219	219		204							{1: '1', 2: '4'}
+220	220		301							{2: 'Ishmael', 3: 'The Red Tide—the Punishing Virus—will never be satisfied.', 4: '1'}
+221	221		301							"{2: 'Ishmael', 3: 'Its only mission is ""recycling"". Even if Agent Zero\'s authority remains forever in the hands of a controllable consciousness, that ""consciousness"" is bound to be gradually replaced by a newborn one bred from the Red Tide.', 4: '1'}"
+222	222		302							{2: 'Like the current Agent Zero?', 3: '223'}
+223	223		301							{2: 'Ishmael', 3: 'Right.', 4: '1'}
+224	224		301							{3: 'Ishmael takes a small sip of tea from her cup and looks down the mountain.'}
+225	225		301							{3: 'The sinister Red Tide still winds its way just outside the perimeter of Aerospace City.'}
+226	226		204							{1: '1', 2: '1'}
+227	227		301							"{2: 'Ishmael', 3: 'The newborn Agent Zero will gradually seize Chaos\' consciousness and authority. When it\'s fully ""hatched"", Chaos will completely cease to exist.', 4: '1'}"
+228	228		301							{2: 'Ishmael', 3: 'This is a virtually unsolvable situation, so, can you answer my very first question now?', 4: '1'}
+229	229		301							"{2: 'Ishmael', 3: 'What were you thinking when you chose this ""ending""?', 4: '1'}"
+230	230		302							{2: '...', 3: '231'}
+231	231		302							"{2: 'Ishmael, among all the endings you\'ve seen, has there ever been a ""savior""?', 3: '232'}"
+232	232		204							{1: '1', 2: '4'}
+233	233		301							{3: 'Hearing your response, Ishmael slightly furrows her brow, her tone becoming somewhat distant.'}
+234	234		301							{2: 'Ishmael', 3: '...So you chose this course of action because of everything that happened along your journey?', 4: '1'}
+235	235		301							{2: 'Ishmael', 3: 'You have caused all the variables so far, so you chose to enter the Red Tide with such blind faith, and my appearance has solidified this perception of yours?', 4: '1'}
+236	236		302							{2: 'No...', 3: '237'}
+237	237		301							{3: 'As you savor the thoughts in your mind, figures flashing through your memories, you smile involuntarily.'}
+238	238		302							"{2: ""I've never considered myself particularly special."", 3: '239'}"
+239	239		301							"{3: ""It's just that... if you still have the power, why not act on it?""}"
+240	240		301							"{3: ""This isn't a choice, but a responsibility.""}"
+241	241		302							"{2: ""If there's no way out in this ending..."", 3: '242'}"
+242	242		301							"{3: 'Then I\'ll fight for more possibilities for others to exist... whether by becoming a ""cancer"" within the Red Tide, or using myself as bait to lure out another entity.'}"
+243	243		302							"{2: ""After all, you did show up, didn't you?"", 3: '244'}"
+244	244		301							{3: 'Ishmael freezes momentarily, then softly sighs and shakes her head.'}
+245	245		302							{2: 'I made the right bet.', 3: '246'}
+246	246		301							"{3: ""Ishmael's expression has already given the answer you want to hear.""}"
+247	247		204							{1: '1', 2: '1'}
+248	248		301							{2: 'Ishmael', 3: 'A risky choice.', 4: '1'}
+249	249		301							{3: 'After pondering for a moment, Ishmael speaks softly.'}
+250	250		301							{2: 'Ishmael', 3: 'In a sense, you have indeed made the right bet.', 4: '1'}
+251	251		301							{2: 'Ishmael', 3: 'I can offer you another option besides merging with the Red Tide—', 4: '1'}
+252	252		301							"{2: 'Ishmael', 3: 'You can choose to ""enter"" the Hetero Tower.', 4: '1'}"
+253	253		302							"{2: '...', 3: '254', 4: ""That's not funny."", 5: '254'}"
+254	254		301							{3: 'The Hetero Tower has long been surrounded by the Mutated Red Tide. No one can get near it.'}
+255	255		301							{2: 'Ishmael', 3: 'For ordinary people, yes, but as the Gatekeeper, I can naturally allow you to re-enter the Hetero Tower.', 4: '1'}
+256	256		302							{2: 'But the collapse inside the Hetero Tower is beyond saving. Even if I enter it...', 3: '257'}
+257	257		302							"{2: ""There's no way to activate the Hetero Tower to rewind time."", 3: '258'}"
+258	258		302							{2: 'And anyway...', 3: '259'}
+259	259		301							"{3: 'You no longer have the ""key"".'}"
+260	260		301							"{3: 'The ""exit"" can\'t be controlled, and the ""key"" is gone—in such circumstances, what could you possibly accomplish even if you were to return?'}"
+261	261		301							"{2: 'Ishmael', 3: ""No, you're capable of far more than you imagine."", 4: '1'}"
+262	262		301							"{3: ""Ishmael's gentle voice seeps into your ears.""}"
+263	263		301							"{2: 'Ishmael', 3: 'The concepts of ""passing through the Gateway"" and ""entering the Hetero Tower"" are not the same.', 4: '1'}"
+264	264		301							"{2: 'Ishmael', 3: '""Entering the Hetero Tower"" only allows you to see chaotic space-time and uncontrollable fragments.', 4: '1'}"
+265	265		301							"{2: 'Ishmael', 3: 'But ""passing through the Gateway"" means new power.', 4: '1'}"
+266	266		302							{2: 'New... power?', 3: '267'}
+267	267		301							"{2: 'Ishmael', 3: 'Not long ago, when the Hetero Tower first appeared, a Construct entered it specifically ""as a Construct"".', 4: '1'}"
+268	268		301							"{2: 'Ishmael', 3: 'He successfully reached the summit, and... having overcome all the ""trials"", eventually arrived at the <phonetic=Gateway>""end""</phonetic>.', 4: '1'}"
+269	269		302							"{2: ""It's Lee..."", 3: '270'}"
+270	270		301							{2: 'Ishmael', 3: 'I extended an invitation to him, offering a ticket to cross the Gateway, but he refused me without hesitation.', 4: '1'}
+271	271		301							{3: 'Cradling the clay cup, Ishmael shakes her head in bewilderment.'}
+272	272		301							"{2: 'Ishmael', 3: 'He said... ""There are still people waiting for me to go back"".', 4: '1'}"
+273	273		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+274	274		504							{1: '0.9'}
+275	275		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory646.jpg'}
+276	276		201							{1: '1', 2: '500568'}
+277	277		301							{1: '1', 2: 'Lee', 3: 'There are still people waiting for me to go back.', 4: '1'}
+278	278		301							"{2: 'Lee', 3: ""Whatever the future holds, I'll find it together with them."", 4: '1'}"
+279	279		302							{2: '...', 3: '280'}
+280	280		202							{1: '1', 6: '1'}
+281	281		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+282	282		504							{1: '0'}
+283	283		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory966.png'}
+284	284		301							{3: 'Of course, you will never forget that accidental disaster, that brutal battle.'}
+285	285		201							{1: '1', 2: '501096', 3: '8'}
+286	286		301							{1: '1', 2: 'Ishmael', 3: 'After leaving the tower, he forgot everything he had seen and lost all the power he had gained.', 4: '1'}
+287	287		301							"{2: 'Ishmael', 3: 'I\'ve never quite understood ""human"" thinking... Perhaps I\'ve been drifting for too long, forgetting the emotions I once had.', 4: '1'}"
+288	288		301							"{3: ""Lowering her gaze, Ishmael doesn't appear troubled by this fact.""}"
+289	289		204							{1: '1'}
+290	290		301							{2: 'Ishmael', 3: 'So, what will your choice be?', 4: '1'}
+291	291		301							{2: 'Ishmael', 3: 'Will you choose to begin the trial of crossing the Gateway, or return to Aerospace City...', 4: '1'}
+292	292		302							{2: '...What do you gain by giving me these options?', 3: '293'}
+293	293		301							{2: 'Ishmael', 3: 'How cautious, Gray Raven...', 4: '1'}
+294	294		301							{3: 'She smiles faintly, not at all angered by your questioning.'}
+295	295		301							{2: 'Ishmael', 3: 'If I were to gain anything, I suppose it would be... a new possibility?', 4: '1'}
+296	296		301							{3: 'The gentle steam from the herbal tea drifts before her eyes. Through the swirling mist, Ishmael seems to catch a glimpse of the cities of the past.'}
+297	297		301							{2: 'Ishmael', 3: 'There are some things I cannot tell you until you truly pass through the Gateway.', 4: '1'}
+298	298		301							"{2: 'Ishmael', 3: 'But even I cannot confirm whether other ""stories"" truly exist...', 4: '1'}"
+299	299		202							{1: '1'}
+300	300		301							"{3: 'Could there truly exist... another ""<phonetic=ending>possibility</phonetic>""?'}"
+301	301		301							"{3: 'A possibility where everyone... could ""survive""?'}"
+302	302		302							{2: '...', 3: '303', 4: '...I get it now.', 5: '303'}
+303	303		301							{3: 'Whether this higher-dimensional being, who identifies herself as Ishmael, desires to witness a new puppet show unfold or is attempting to verify something through you...'}
+304	304		301							"{3: ""Having one more possibility can't possibly make things worse.""}"
+305	305		301							"{3: ""She possesses absolute power—there's no reason for her to waste time deceiving you.""}"
+306	306		302							{2: 'Vonnegut said that unless I return with results...', 3: '307'}
+307	307		302							{2: 'He would never let me back in the tower.', 3: '308'}
+308	308		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+309	309		504							{1: '0.4'}
+310	310		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_97.jpg'}
+311	311		301							"{2: 'Vonnegut', 3: ""But remember, the Hetero Tower's collapse... has become... far too severe...""}"
+312	312		301							{2: 'Vonnegut', 3: 'Chaos and I... will seal off... the entire tower... no matter what...'}
+313	313		301							{2: 'Vonnegut', 3: 'Unless you return with results... I will never... let you enter again...'}
+314	314		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+315	315		504							{1: '0'}
+316	316		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory966.png'}
+317	317		201							{1: '1', 2: '501096'}
+318	318		301							"{1: '1', 2: 'Ishmael', 3: 'Even if he\'s still inside the Hetero Tower, he has no authority to prevent a ""trial"" from beginning.', 4: '1'}"
+319	319		301							"{2: 'Ishmael', 3: ""He has already merged with Chaos, and I haven't tracked their movements since."", 4: '1'}"
+320	320		302							{2: '...', 3: '321'}
+321	321		302							{2: 'Just one last question.', 3: '322'}
+322	322		301							{2: 'Ishmael', 3: 'Please.', 4: '1'}
+323	323		301							{3: 'She gestures kindly for you to continue speaking.'}
+324	324		302							{2: 'After ascending the tower...', 3: '325'}
+325	325		302							{2: 'Or rather, after passing this trial, what exactly will I gain?', 3: '326'}
+326	326		301							{3: 'Lee once refused the invitation to pass through the Gateway without hesitation, suggesting that this action might not be the optimal choice.'}
+327	327		301							"{2: 'Ishmael', 3: '""Passing through the Gateway"" means new ""power.""', 4: '1'}"
+328	328		301							"{2: 'Ishmael', 3: 'To put it another way, it means a new ""power level"", similar to the ""Nanami"" you once saw aboard that starship.', 4: '1'}"
+329	329		302							{2: 'Nanami...', 3: '330'}
+330	330		301							"{3: ""Recalling the power that the Nanami on that starship had—though it wasn't explicitly stated, she seemed able to send different messages to Earth across various timelines...""}"
+331	331		301							{3: 'If you could wield that kind of power yourself...'}
+332	332		301							{2: 'Ishmael', 3: 'Moreover, you have no other choice left, except for...', 4: '1'}
+333	333		301							{2: 'Ishmael', 3: '...What you did just now—merging with the Red Tide, gambling on that fraction of a percent chance to compete with Agent Zero for authorization.', 4: '1'}
+334	334		301							"{2: 'Ishmael', 3: 'On the surface now, no one remains who can stand against Agent Zero. If Chaos were still ""complete"", perhaps there would still be some capacity for resistance, but now...', 4: '1'}"
+335	335		301							"{3: ""Even Chaos' remaining power has been devoured by the new Agent Zero.""}"
+336	336		301							"{2: 'Ishmael', 3: 'The current Hetero Tower was brought to this ""world"" by <phonetic=Agent Zero>Cradle</phonetic> of the past. Since Cradle\'s disappearance, the Hetero Tower has overlaid information flows from different ""civilizations"", breeding a new Agent Zero.', 4: '1'}"
+337	337		301							{2: 'Ishmael', 3: 'If no one stops it, once it completely masters the Hetero Tower, human civilization will be utterly harvested.', 4: '1'}
+338	338		301							{2: 'Ishmael', 3: 'If... you can successfully pass the trial, perhaps you could truly seize control of the Hetero Tower.', 4: '1'}
+339	339		302							{2: 'After I have control over the Hetero Tower, will I be able to rewind time?', 3: '340'}
+340	340		301							"{2: 'Ishmael', 3: ""To be honest... I'm not sure."", 4: '1'}"
+341	341		301							{2: 'Ishmael', 3: 'Only Agent Zero can fully control the Hetero Tower. According to previous patterns, only when Agent Zero completely perishes will all authority be transferred.', 4: '1'}
+342	342		301							"{2: 'Ishmael', 3: '""Passing through the Gateway"" is merely an ""opportunity"" I can offer you.', 4: '1'}"
+343	343		301							{2: 'Ishmael', 3: 'The reason you can have this opportunity is because your mind has become strong enough. You have earned the right to initiate the trial.', 4: '1'}
+344	344		302							"{2: '...', 3: '348', 4: ""Because I'm God of M.I.N.D.?"", 5: '345'}"
+345	345		204							{1: '1', 2: '9'}
+346	346		301							{2: 'Ishmael', 3: 'Whatever you say.', 4: '1'}
+347	347		204							{1: '1'}
+348	348		301							{2: 'Ishmael', 3: 'In any case, my appearance here is also because you have indeed reached the threshold to initiate the trial.', 4: '1'}
+349	349		302							{2: 'Is it because I can still maintain my consciousness within the Red Tide?', 3: '350'}
+350	350		301							{2: 'Ishmael', 3: 'Perhaps?', 4: '1'}
+351	351		301							"{3: ""She doesn't offer a direct confirmation.""}"
+352	352		301							{2: 'Ishmael', 3: 'As the Gatekeeper, the only backdoor I can open for you is letting you enter the tower directly without having to find a way past Agent Zero.', 4: '1'}
+353	353		301							{2: 'Ishmael', 3: 'For everything else, you must forge ahead on your own.', 4: '1'}
+354	354		301							"{2: 'Ishmael', 3: 'Whether you take this ""opportunity"" or not...', 4: '1'}"
+355	355		301							{3: 'She offers a slight smile and takes another sip from her cup.'}
+356	356		301		1					"{2: 'Ishmael', 3: ""That's your own choice to make."", 4: '1'}"

@@ -1,0 +1,88 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory672.jpg'}
+2	2		401							{1: '1', 2: '205'}
+3	3		301			DialogEnable				"{3: ""You've been looking over your shoulder the entire way without seeing anything, so you decide to take a turn at the corner of the street.""}"
+4	4		301							"{3: ""With it, you sense No.21's presence around!""}"
+5	5		306							{1: '1'}
+6	6		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+7	7		401							{1: '2', 2: '4432'}
+8	8		104						200.0	{1: '0|-100|-100', 2: '0.25'}
+9	9		104						100.0	{2: '0.25'}
+10	10		104						100.0	{1: '0|50|0', 2: '0.25'}
+11	11		104						100.0	{2: '0.25'}
+12	12		402							{1: '4432'}
+13	13		201							{1: '1', 2: '500650', 3: '2'}
+14	14		301							{1: '1', 2: 'No. 21', 3: 'Gotcha.', 4: '1'}
+15	15		202						250.0	{1: '1'}
+16	16		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+17	17		306							
+18	18		301							{3: 'Sure enough, No. 21 suddenly pounces from behind and gives you a bear hug. In turn, you give her a bear hug, too.'}
+19	19		201							{1: '1', 2: '500650', 3: '4'}
+20	20		301							{1: '1', 2: 'No. 21', 3: 'Oh no, am I caught?', 4: '1'}
+21	21		202							{1: '1'}
+22	22		301							"{3: ""You smile and ruffle No. 21's hair as she struggles free and pulls out a slightly squashed gift box from her sleeve.""}"
+23	23		201							{1: '1', 2: '500650', 3: '8'}
+24	24		301							{1: '1', 2: 'No. 21', 3: 'Got this for you while I was out hunting.', 4: '1'}
+25	25		301							{3: 'The Construct awkwardly offers the gift box with both hands, with a look on her face that clearly shows that she wants to hear a compliment from you.'}
+26	26		202							{1: '1'}
+27	27		302							"{2: 'Thanks?', 3: '28', 4: ""That's amazing."", 5: '29', 6: 'Is this chocolate?', 7: '30'}"
+28	28	31	301							{3: 'No. 21 twitches her ears with satisfaction.'}
+29	29	31	301							{3: 'No. 21 swishes her tail all happy.'}
+30	30		301							{3: 'No. 21 looks utterly surprised.'}
+31	31		201							{1: '1', 2: '500650'}
+32	32		301							{1: '1', 2: 'No. 21', 3: 'How would you know?', 4: '1'}
+33	33		301							{2: 'No. 21', 3: 'You said we were supposed to give people chocolate for holidays. I remember that.', 4: '1'}
+34	34		204							{1: '1', 2: '8'}
+35	35		301							"{2: 'No. 21', 3: ""No. 21 tried very hard, didn't steal a single bite. This one smells the best."", 4: '1'}"
+36	36		302							{2: 'How did you hunt for it?', 3: '37', 4: 'This sure is a big box.', 5: '37'}
+37	37		204							{1: '1', 2: '8'}
+38	38		301						500.0	{2: 'No. 21', 3: 'There were a lot of people. No. 21 jumped higher than anyone else, so No. 21 grabbed the biggest one.', 4: '1'}
+39	39		306							{1: '1'}
+40	40		203						250.0	{1: '1', 2: '0.25', 5: '-30'}
+41	41		203						250.0	{1: '1', 2: '0.25', 4: '-20', 5: '-30'}
+42	42		203						250.0	{1: '1', 2: '0.25', 5: '-60'}
+43	43		301							{3: 'She gesticulates wildly with her hands and feet to show you how it was done, then proudly puffs out her chest.'}
+44	44		301							"{3: 'Carefully weighing this massive chocolate box that feels like a solid bowling ball, you believe it\'d take you an entire month to go through it... The way No.21 sees it, though, ""big"" is probably synonymous with ""good.""'}"
+45	45		301							"{3: ""Could this be some special Valentine's Day edition chocolate from WGAA?""}"
+46	46		301							{3: 'As you untie the satin ribbon on the gift box, a voucher comes falling out that confirms your suspicion.'}
+47	47		301							"{3: 'The voucher read, ""Truth Game: Answer Me Now Edition. Please answer the following questions within five seconds.""'}"
+48	48		306							
+49	49		204							{1: '1', 2: '8'}
+50	50		301							"{2: 'No. 21', 3: ""Don't think we can eat that, can we?"", 4: '1'}"
+51	51		301							{3: 'You explain how the game works to a confused No.21.'}
+52	52		302							{2: 'It helps us get to know each other better.', 3: '53', 4: 'Tell me more about yourself.', 5: '53'}
+53	53		204							{1: '1'}
+54	54		301							"{2: 'No. 21', 3: ""I want to know what you're thinking. Do you want to know what I'm thinking, too?"", 4: '1'}"
+55	55		204							{1: '1', 2: '4'}
+56	56		301							{2: 'No. 21', 3: 'Okay, I want to play this game.', 4: '1'}
+57	57		301							"{3: ""You begin reading the questions from the ticket one by one off the voucher to No.21, who's sitting properly in front of you now.""}"
+58	58		302							"{2: '""Forest or ocean?""', 3: '59'}"
+59	59		204							{1: '1', 2: '8'}
+60	60		301							"{2: 'No. 21', 3: ""Forest. It feels nice to run there, and I don't like getting wet."", 4: '1'}"
+61	61		302							"{2: '""Sweet or salty food?""', 3: '62'}"
+62	62		301							"{2: 'No. 21', 3: ""Sweet? Salty? No. 21 likes anything that's edible."", 4: '1'}"
+63	63		302							"{2: '""Cats or dogs?""', 3: '64'}"
+64	64		204							{1: '1', 2: '8'}
+65	65		301							{2: 'No. 21', 3: '?', 4: '1'}
+66	66		301							{2: 'No. 21', 3: 'I want the little ones.', 4: '1'}
+67	67		302							"{2: '""Red or blue?""', 3: '68'}"
+68	68		204							{1: '1'}
+69	69		301							{2: 'No. 21', 3: 'Blue. No. 21 has lots of blue clothes.', 4: '1'}
+70	70		302							"{2: '""Past or future?""', 3: '71'}"
+71	71		204							{1: '1', 2: '2'}
+72	72		301							"{2: 'No. 21', 3: ""Future. I'm going to grow taller and dance on one foot while spinning circles on top of those big tall people."", 4: '1'}"
+73	73		302							"{2: '""Like or dislike?""', 3: '74'}"
+74	74		301							{3: 'At the last question without a subject, No.21 falls quiet. A split second later, however, you find her tail right next to you.'}
+75	75		204							{1: '1', 2: '8'}
+76	76		301							{2: 'No. 21', 3: 'No. 21 is doing very well now because of you.', 4: '1'}
+77	77		204							{1: '1'}
+78	78		301							{2: 'No. 21', 3: 'So like. Definitely a big like.', 4: '1'}
+79	79		202						250.0	{1: '1'}
+80	80		401							{1: '2', 2: '4432'}
+81	81		104						200.0	{1: '0|-100|-100', 2: '0.25'}
+82	82		104						100.0	{2: '0.25'}
+83	83		104						100.0	{1: '0|50|0', 2: '0.25'}
+84	84		104						100.0	{2: '0.25'}
+85	85		201							{1: '1', 2: '500650', 3: '1', 6: '-200'}
+86	86		301							"{1: '1', 3: ""No.21 stands up for a stretch circles around you like she's on patrol, then pounces forward again with a suspicious smile that reveals her small, sharp fangs.""}"
+87	87		301		1		AniZhuanchangBegin			"{2: 'No. 21', 3: ""So, No. 21 will mark you properly. Won't let anyone else have you."", 4: '1'}"

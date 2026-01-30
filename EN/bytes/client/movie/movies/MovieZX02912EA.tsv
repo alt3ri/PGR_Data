@@ -1,0 +1,162 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory286.png'}
+2	2		401							{1: '1', 2: '119'}
+3	3		301			DialogEnable				{3: 'The dark sky, crimson phantoms, and the blood river form a picture of the inferno.'}
+4	4		301							{3: 'Their whispers are filled with hatred, protesting about the young man who is rushing by.'}
+5	5		205			DialogDisable			2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory289.png', 3: '0', 4: '1', 5: '2'}
+6	6		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+7	7		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory289.png'}
+8	8		301			DialogEnable				{2: 'Red Tide Projection', 3: 'You could have saved us.'}
+9	9		301							"{2: 'Red Tide Projection', 3: ""You were chosen, but you ran away from your responsibilities. Why wouldn't you save us?""}"
+10	10		301							{2: 'Red Tide Projection', 3: 'Why? Why? Why did you leave?'}
+11	11		301							{2: 'Red Tide Projection', 3: 'Save me... Save me, Shrek...'}
+12	12		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory286.png', 3: '0', 4: '1', 5: '2'}
+13	13		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+14	14		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory286.png'}
+15	15		201						100.0	{1: '1', 2: '500506', 3: '9'}
+16	16		301							{1: '1', 2: 'Noan', 3: 'That name...', 4: '1'}
+17	17		301							{3: 'The young man stops running and turns toward the Red Tide projection.'}
+18	18		203							{1: '1', 2: '4'}
+19	19		301							{2: 'Noan', 3: '...Who are you?', 4: '1'}
+20	20		401							{1: '1', 2: '36'}
+21	21		501			DialogDisable			200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+22	22		202							{1: '1', 6: '1'}
+23	23		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory276.png'}
+24	24		504							{1: '0.7'}
+25	25		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+26	26		401							{1: '1', 2: '207'}
+27	27		201							{1: '1', 2: '500267'}
+28	28		301			DialogEnable				"{1: '1', 2: '???', 3: 'I\'m a Task Force ""defector."" If we\'re meeting at an Ascendant base... I assume we\'re all the same.', 4: '1'}"
+29	29		203							{1: '1', 2: '0.25', 3: '-400'}
+30	30		201							{1: '2', 2: '500506', 4: '400'}
+31	31		301							{1: '1', 2: 'Noan', 3: 'Why did you defect?', 4: '2'}
+32	32		301							{2: '???', 3: 'Ha... Are you surprised that I chose an unlikely way to live instead of a likely way to die?', 4: '1'}
+33	33		301							{2: 'Noan', 3: 'I heard that failing the filtering will turn you into a Corrupted.', 4: '2'}
+34	34		301							"{2: '???', 3: ""I have to try, right? What's your name, by the way?"", 4: '1'}"
+35	35		301							{2: 'Noan', 3: '...Everyone calls me Shrek.', 4: '2'}
+36	36		301							{2: '???', 3: 'Shrek? Haha! My apologies—I think that name has to be associated with some ogreish monster!', 4: '1'}
+37	37		301							"{2: '???', 3: 'But I suppose there\'s nothing wrong with calling you a ""monster"" when you\'re the Construct the Ascendants are ""feeding"" in a jail cell.', 4: '1'}"
+38	38		204							{1: '2', 2: '1'}
+39	39		301							{2: 'Noan', 3: '...I suppose.', 4: '2'}
+40	40		301							"{2: '???', 3: 'Well, then. Let\'s hope we both pass the filtering, Mr. ""Monster""!', 4: '1'}"
+41	41		204							{1: '2'}
+42	42		301				AniZhuanchangBegin			{2: 'Noan', 3: '...', 4: '2'}
+43	43		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+44	44		504							{1: '0'}
+45	45		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory453.jpg'}
+46	46		401						200.0	{1: '1', 2: '36'}
+47	47		401							{1: '1', 2: '119'}
+48	48		301			DialogEnable				{2: '???', 3: 'You want to know what the filtering actually is?'}
+49	49		201							{1: '1', 2: '500526', 8: '1'}
+50	50		301							"{1: '1', 2: '???', 3: ""It's a test to select our comrades. From what your memories have shown me... it's akin to how the human conservation areas choose their skilled workers."", 4: '1'}"
+51	51		203							{1: '1', 2: '0.25', 3: '-400'}
+52	52		201							{1: '2', 2: '500507', 3: '4', 4: '400'}
+53	53		301							"{1: '1', 2: 'Noan', 3: ""People don't turn into Corrupted if the conservation areas don't choose them."", 4: '2'}"
+54	54		301							{1: '1', 2: '???', 3: 'Are you sure? Abandoned, they become Scavengers who linger on, searching, looting, and stealing resources and livelihoods in a broken world.', 4: '1'}
+55	55		204							{1: '2'}
+56	56		301							"{1: '1', 2: '???', 3: ""They take, and one day they'll die when someone else takes from them."", 4: '1'}"
+57	57		301							"{1: '1', 2: '???', 3: ""Don't worry. I don't want to blame anyone... and I won't despise any."", 4: '1'}"
+58	58		301							"{1: '1', 2: '???', 3: ""The world is taken over by the Punishing Virus. They don't have a choice. They are forced to become who they are."", 4: '1'}"
+59	59		301							{1: '1', 2: '???', 3: 'I simply want to put an end to their suffering sooner.', 4: '1'}
+60	60		301							"{1: '1', 2: '???', 3: ""Best if they pass the filtering and become one of us, but I have somewhere they can go if they don't."", 4: '1'}"
+61	61		301							{1: '1', 3: 'The Ascendant smiles and points at the reservoir of the underground waterways. A crimson liquid is swirling with corpses and remains inside as if a monster that will not stop gnawing.'}
+62	62		301							{1: '1', 3: 'The female Construct who was smiling at him earlier is within it too. She has long become one of its phantoms, repeating her plea before dying with faint, broken words.'}
+63	63		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+64	64		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+65	65		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory289.png'}
+66	66		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+67	67		301			DialogEnable				{2: 'Red Tide Projection', 3: 'Save me... Save me, Shrek...'}
+68	68		501				DialogDisable		200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+69	69		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory453.jpg'}
+70	70		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+71	71		201							{1: '1', 2: '500507', 3: '4'}
+72	72		301			DialogEnable				{1: '1', 2: 'Noan', 3: '...', 4: '1'}
+73	73		202							{1: '1', 6: '1'}
+74	74		201							{1: '1', 2: '500526'}
+75	75		301							{1: '1', 2: '???', 3: 'See? Those who become one with this crimson sea are not dead. Their lives have begun anew.', 4: '1'}
+76	76		301							"{2: '???', 3: ""But I'm sure it's hard for you to comprehend this way."", 4: '1'}"
+77	77		301							{3: 'The Ascendant scoops up some of the Red Tide and delivers it before Noan.'}
+78	78		301							"{2: '???', 3: ""Their minds and data are not gone. They're all stored here."", 4: '1'}"
+79	79		301							"{2: '???', 3: ""They're searching for each other, becoming whole from the pain of their loss..."", 4: '1'}"
+80	80		301							{2: '???', 3: 'Red Tide feeds the hungry and unites the departed... It takes away all the doom and gloom, and stitches together all their joy.', 4: '1'}
+81	81		301							"{2: '???', 3: 'She lets them gather and decompose, turning them into the creature of ""order"" Mister wants when we arrange them or a host of ""chaos"" when they come together freely...', 4: '1'}"
+82	82		202							{1: '1', 6: '1'}
+83	83		201							{1: '1', 2: '500507', 3: '4'}
+84	84		301							{1: '1', 2: 'Noan', 3: 'Those lives and minds are hardly what they were.', 4: '1'}
+85	85		202							{1: '1', 6: '1'}
+86	86		201							{1: '1', 2: '500526'}
+87	87		301							"{1: '1', 2: '???', 3: ""Better than the completely rotten shells they would've been."", 4: '1'}"
+88	88		301							"{2: '???', 3: 'Noan... No—I think I prefer ""Shrek"". The monster\'s name sounds more like one of us.', 4: '1'}"
+89	89		301							{2: '???', 3: 'You should hate this world as much as I do, this world that keeps churning out dead bodies one after another. You should want to change it as well.', 4: '1'}
+90	90		202							{1: '1', 6: '1'}
+91	91		201							{1: '1', 2: '500507'}
+92	92		301							{1: '1', 2: 'Noan', 3: '...', 4: '1'}
+93	93		202							{1: '1', 6: '1'}
+94	94		201							{1: '1', 2: '500526'}
+95	95		301							"{1: '1', 2: '???', 3: ""I don't want to force you to choose. I can give you more time if you're still undecided."", 4: '1'}"
+96	96		301							"{2: '???', 3: ""Mister said... you'd only become a threat if we made you one of us against your will."", 4: '1'}"
+97	97		301							"{2: '???', 3: 'So, I\'m only going to ""guide"" you. I\'ll never force you to do anything.', 4: '1'}"
+98	98		301							"{2: '???', 3: ""Oh... by the way, if you're thinking about saving those who are still alive... why don't you try out your new powers?"", 4: '1'}"
+99	99		202							{1: '1', 6: '1'}
+100	100		201							{1: '1', 2: '500507', 3: '4'}
+101	101		301							{1: '1', 2: 'Noan', 3: 'My new powers?', 4: '1'}
+102	102		202							{1: '1', 6: '1'}
+103	103		201							{1: '1', 2: '500526', 8: '1'}
+104	104		301							"{1: '1', 2: '???', 3: ""Exactly... You're wondering when that happened, aren't you? Hehe..."", 5: '1'}"
+105	105		301							"{1: '1', 2: '???', 3: ""I made you. You've retained your mind, and nothing's broken for once."", 5: '1'}"
+106	106		301							"{1: '1', 2: '???', 3: 'So I borrowed Mister\'s access and planted some ""magic"" in you.', 5: '1'}"
+107	107		301							"{1: '1', 2: '???', 3: ""As long as you stay near me, you don't have to fear the Punishing Virus. Instead, it can become your strength."", 5: '1'}"
+108	108		301							{1: '1', 2: '???', 3: 'You can read the information stored within the Red Tide. You can see the dead, save the living, and kill whoever you want to kill.', 5: '1'}
+109	109		203							{1: '1', 2: '0.25', 3: '-400'}
+110	110		201							{1: '2', 2: '500507', 3: '4', 4: '400'}
+111	111		301							"{1: '1', 2: 'Noan', 3: ""That won't be necessary. I'm good."", 4: '2'}"
+112	112		301							"{1: '1', 2: '???', 3: ""You don't want to save those people?"", 4: '1'}"
+113	113		301							{1: '1', 2: 'Noan', 3: 'Of course I do!', 4: '2'}
+114	114		301							"{1: '1', 2: '???', 3: ""Then why won't you agree?"", 4: '1'}"
+115	115		301							"{1: '1', 2: 'Noan', 3: ""I'll never be your accomplice."", 4: '2'}"
+116	116		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+117	117		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+118	118		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory286.png'}
+119	119		104						200.0	{1: '60|-150|-150', 2: '0'}
+120	120		104						200.0	{1: '-80|150|-100', 2: '0'}
+121	121		104						200.0	{1: '0|0|0', 2: '0'}
+122	122		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+123	123		301			DialogEnable				{3: 'Fragments of his broken memories begin to connect, slightly dispelling the fog in his mind.'}
+124	124		201							{1: '1', 2: '500506'}
+125	125		301							{1: '1', 2: 'Noan', 3: 'I rejected the offer, but what happened afterward?', 4: '1'}
+126	126		202			DialogDisable				{1: '1'}
+127	127		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+128	128		201							{1: '1', 2: '500526'}
+129	129		205							{1: '1', 3: '0.5', 4: '0.5', 5: '0'}
+130	130		301			DialogEnable				"{1: '1', 2: '???', 3: ""If you leave me, you'll slowly lose control of yourself until you become a monster that hurts other people."", 4: '1'}"
+131	131		202				DialogDisable			{1: '1'}
+132	132		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+133	133		201							{1: '1', 2: '500506', 3: '4'}
+134	134		301			DialogEnable				{1: '1', 2: 'Noan', 3: 'Wait. Why did I reject it?', 4: '1'}
+135	135		301							"{2: 'Noan', 3: ""If I don't use those powers to hurt people, I won't become an accomplice to the Ascendants."", 4: '1'}"
+136	136		301							"{2: 'Noan', 3: ""But there's the danger of losing control..."", 4: '1'}"
+137	137		301							{3: 'The young man turns to the Red Tide projection once more.'}
+138	138		301							{2: 'Noan', 3: 'What am I missing...?', 4: '1'}
+139	139		202			DialogDisable				{1: '1', 6: '1'}
+140	140		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory289.png', 3: '0', 4: '1', 5: '1'}
+141	141		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+142	142		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory289.png'}
+143	143		301			DialogEnable				"{2: 'Red Tide Projection', 3: ""It's too late, Shrek.""}"
+144	144		205				DialogDisable		1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory286.png', 3: '0', 4: '1', 5: '1'}
+145	145		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+146	146		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory286.png'}
+147	147		201							{1: '1', 2: '500506', 3: '9'}
+148	148		301			DialogEnable				{1: '1', 2: 'Noan', 3: '...?', 4: '1'}
+149	149		301							{3: 'The distorting projection struggles to hold together, repeating the words a woman said to the approaching man.'}
+150	150		301							"{2: 'Red Tide Projection', 3: ""That's what it always says... in my book.""}"
+151	151		301							{2: 'Red Tide Projection', 3: 'A bird that was born in a cage will fear the sky; a goose that soars to the air will fear the cage. Humans can only make choices based on what they know...'}
+152	152		301							{2: 'Red Tide Projection', 3: 'And someone without a past—someone who runs from it—is destined to be lost on the way to the future.'}
+153	153		301							{2: 'Noan', 3: '...Who are you?', 4: '1'}
+154	154		301							"{2: 'Red Tide Projection', 3: ""Don't you remember? This is the second time we've met.""}"
+155	155		204							{1: '1', 2: '7'}
+156	156		301							{2: 'Noan', 3: '...Bella?', 4: '1'}
+157	157		202			DialogDisable				{1: '1', 6: '1'}
+158	158		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory289.png', 3: '0', 4: '1', 5: '1'}
+159	159		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+160	160		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory289.png'}
+161	161		301		1	DialogEnable	AniZhuanchangBegin			"{2: 'Red Tide Projection', 3: ""...It's been too long.""}"

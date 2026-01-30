@@ -1,0 +1,80 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory161.png'}
+2	2		401							{1: '1', 2: '210'}
+3	3		201							{1: '1', 2: '500166'}
+4	4		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'There really is an exit...', 4: '1'}
+5	5		203							{1: '1', 2: '0.25', 3: '400'}
+6	6		201							{1: '2', 2: '500180', 3: '5', 4: '-400'}
+7	7		301							{1: '1', 2: 'Karenina', 3: 'Wait, so those conclusions were just your guesses all along?', 4: '2'}
+8	8		301							"{2: 'Lucia', 3: ""Yeah, I was planning to take another direction if there was no exit. Just don't stay still."", 4: '1'}"
+9	9		301							"{3: ""We followed Lucia through the underground facility back to the surface. But it wasn't as peaceful as the villages we visited previously.""}"
+10	3001		202							{1: '1', 2: '2', 6: '1'}
+11	3022		201							{1: '1', 2: '500019', 4: '400'}
+12	3002		201							{1: '2', 2: '500019', 4: '-400'}
+13	10		301							{1: '1', 2: 'Villager A', 3: '*Coughs*...', 4: '1'}
+14	11		301							{2: 'Villager B', 3: 'Ouch... That damned King...', 4: '2'}
+15	12		301							{3: 'Many people were injured. There was heavy smoke from burning buildings, and bomb craters that smelled like chemicals.'}
+16	13		301							{3: 'Seemed like something just happened not long ago.'}
+17	3003		202							{1: '1', 2: '2', 6: '1'}
+18	3004		201							{1: '1', 2: '500173'}
+19	14		301							"{1: '1', 2: 'Lee', 3: ""It's the King. Something must have happened here."", 4: '1'}"
+20	3005		202							{1: '1', 6: '1'}
+21	3006		201							{1: '1', 2: '1081001', 3: '1', 4: '400'}
+22	3007		201							{1: '2', 2: '500019', 4: '-400'}
+23	15		301							{1: '1', 2: 'Kamui', 3: 'Excuse me! What happened here?', 4: '1'}
+24	16		301							{3: 'Lee was still thinking, but Kamui had already joined the rescue team and started asking around.'}
+25	17		301							{2: 'Villager', 3: 'Who are you... Did you also come from other villages?', 4: '2'}
+26	3009		201							{1: '1', 2: '500166', 4: '400'}
+27	18		301							{2: 'Lucia', 3: 'No, we are travelers.', 4: '1'}
+28	19		301							"{2: 'Villager', 3: ""Traveler? Are you looking for somewhere to stay? But our village was already destroyed by the King's heroes."", 4: '2'}"
+29	3010		302							{2: 'What heroes...?', 3: '20', 4: 'Why would the King burn your village?', 5: '21'}
+30	20	3011	301							{2: 'Villager', 3: 'It was those two minions of the King. They took all our family, as well as the Demons who lived with us in harmony...', 4: '2'}
+31	21	1001	301							"{2: 'Villager', 3: ""Because we didn't follow the King's order to kill all Demons, but lived with them instead."", 4: '2'}"
+32	1001	22	201							{1: '1', 2: '500173', 4: '400'}
+33	22	23	301							{2: 'Lee', 3: 'I thought you had been living like this for a long time?', 4: '1'}
+34	23	3011	301							{2: 'Villager', 3: 'Yes, and we thought we could get by again... But the heroes immediately found out where we were hiding the Demons, and...', 4: '2'}
+35	3011		202							{1: '1', 2: '2'}
+36	24		301							"{3: 'The villager started to weep. The Demons seized by the ""heroes"" must be very close to him.'}"
+37	3012		201							{1: '1', 2: '500166'}
+38	25		301							"{1: '1', 2: 'Lucia', 3: ""Commandant, I'm afraid he meant Camu and Vera."", 4: '1'}"
+39	3013		203							{1: '1', 2: '0.25', 3: '400'}
+40	3014		201							{1: '2', 2: '500180', 3: '5', 4: '-400'}
+41	26		301							"{1: '1', 2: 'Karenina', 3: ""They must have gone to the King's side after throwing me and 【kuroname】 down."", 4: '2'}"
+42	3015		202							{1: '1', 2: '2', 6: '1'}
+43	3016		201							{1: '1', 2: '1081001'}
+44	27		301							{1: '1', 2: 'Kamui', 3: 'Was this a quest from the King?', 4: '1'}
+45	3017		203							{1: '1', 2: '0.25', 3: '400'}
+46	3018		201							{1: '2', 2: '500173', 4: '-400'}
+47	28		301							"{1: '1', 2: 'Lee', 3: ""Probably. But I don't think they would purposely run errands for that King. There must be a reason behind."", 4: '2'}"
+48	3020		302							"{2: 'Liv?', 3: '4001', 4: ""The Goddess' artifact."", 5: '2001'}"
+49	4001	4002	202							{1: '1', 2: '2', 6: '1'}
+50	4002	4003	201							{1: '1', 2: '500166'}
+51	4003	4004	301							"{1: '1', 2: 'Lucia', 3: ""If it's for Liv... Could they already know where she is?"", 4: '1'}"
+52	4004	4005	203							{1: '1', 2: '0.25', 3: '400'}
+53	4005	4006	201							{1: '2', 2: '500180', 3: '5', 4: '-400'}
+54	4006	4007	301							{1: '1', 2: 'Karenina', 3: 'Not necessarily. Maybe they were just setting it up. Bianca once taught me a strange tactic specifically designed for pursuit.', 4: '2'}
+55	4007	4008	301							"{2: 'Karenina', 3: ""The goal is to apply continuous pressure and reduce the space. If the target isn't here, it doesn't matter—just blow everything up and set up traps."", 4: '2'}"
+56	4008	4009	301							{2: 'Karenina', 3: 'It gives the target pressure and keeps them away from this place.', 4: '2'}
+57	4009	4010	202							{1: '1', 2: '2', 6: '1'}
+58	4010	4011	201							{1: '1', 2: '500173'}
+59	4011	4012	301							"{1: '1', 2: 'Lee', 3: ""Creating danger to limit the target's movement, and force them to go to the only safe place left. Is that what they doing?"", 4: '1'}"
+60	4012	4013	201							{1: '1', 2: '500180'}
+61	4013	4014	301							"{1: '1', 2: 'Karenina', 3: ""Yeah... I'm not sure about that Camu guy, but Vera will definitely do it."", 4: '1'}"
+62	4014	4015	201							{1: '1', 2: '500166'}
+63	4015		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Lucia', 3: ""Let's follow this tactic and look for Liv. We may bump into the King's forces, but this is the fastest way to find her."", 4: '1'}"
+64	2001	2002	202							{1: '1', 2: '2', 6: '1'}
+65	2002	36	201							{1: '1', 2: '500166'}
+66	36	2003	301							"{1: '1', 2: 'Lucia', 3: ""It's possible. This village may be on the way to some Demon General's Castle."", 4: '1'}"
+67	2003	2004	203							{1: '1', 2: '0.25', 3: '400'}
+68	2004	37	201							{1: '2', 2: '500180', 3: '5', 4: '-400'}
+69	37	2005	301							{1: '1', 2: 'Karenina', 3: 'Vera was asking us to collect recovery potions in every village we passed by. Maybe she just did it a bit over this time.', 4: '2'}
+70	2005	38	201							{1: '1', 2: '1081001', 3: '1', 4: '400'}
+71	38	39	301							{1: '1', 2: 'Kamui', 3: 'Hmm... But Camu would never do unnecessary things like that.', 4: '1'}
+72	39	40	301							{2: 'Karenina', 3: 'I thought he was as evil as Vera.', 4: '2'}
+73	40	41	301							"{2: 'Kamui', 3: ""He's just antisocial. But he would never burn a village down just because he joined the King's side."", 4: '1'}"
+74	41	2006	301							"{2: 'Kamui', 3: ""I mean, it wasn't part of your quest, right?"", 4: '1'}"
+75	2006	42	201							{1: '1', 2: '500166', 4: '400'}
+76	42	43	301							{2: 'Lucia', 3: 'Unnecessary... Kamui knows Camu the best. If he says so...', 4: '1'}
+77	43	44	301							{2: 'Lucia', 3: 'Perhaps burning the village down was for another objective.', 4: '1'}
+78	44	45	301							{2: 'Karenina', 3: 'Do you mean Liv!?', 4: '2'}
+79	45		301		1		AniZhuanchangBegin			"{2: 'Lucia', 3: ""Yeah. We don't know what they are planning, but we need to move fast."", 4: '1'}"

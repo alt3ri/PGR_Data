@@ -1,0 +1,153 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory187.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500311'}
+4	4		401							{1: '2', 2: '212'}
+5	5		301			DialogEnable				{1: '1', 2: 'Student Vendor', 3: 'Cotton candy, fluffy crepes, silky creme brulee—', 4: '1'}
+6	6		301							"{2: 'Student Vendor', 3: ""All your favorite snacks, we've got them! Come and take a look!"", 4: '1'}"
+7	7		202							{1: '1'}
+8	8		301							{3: 'You enter the festival and notice that the entire Education District looks different. The streets are decorated like school festivals of the Golden Age, vibrant and bustling.'}
+9	9		301							"{3: ""The sidewalks are packed with students and their stalls, along with parents who've taken time off work to attend their child's graduation ceremony.""}"
+10	10		301							{3: 'You look carefully and see many familiar faces from various departments in the crowd. This festival is indeed quite popular.'}
+11	11		402							{1: '212'}
+12	12		201							{1: '1', 2: '500311'}
+13	13		301							{1: '1', 2: 'Student Vendor', 3: 'Cotton candy! Fluffy and yummy cotton candy! Come get your cotton candy!', 4: '1'}
+14	14		301							"{3: ""Barely two steps in and you're drowning in vendors' calls.""}"
+15	15		201							{1: '1', 2: '500907'}
+16	16		301							"{1: '1', 2: 'Bridget', 3: ""Oh, it's cotton candy!"", 4: '1'}"
+17	17		301							"{2: 'Bridget', 3: ""It brings back memories... I haven't had this in years."", 4: '1'}"
+18	18		301							"{3: ""There's a hint of nostalgia in her voice. Bridget suddenly turns to look at you.""}"
+19	19		301							{2: 'Bridget', 3: '【kuroname】, have you ever had cotton candy?', 4: '1'}
+20	20		302							"{2: 'Yes.', 3: '21', 4: ""No, I haven't."", 5: '22'}"
+21	21	23	301							"{2: 'Bridget', 3: ""Since we're here, let's get some! Sweets will lift your spirits, and we're gonna have a good day!"", 4: '1'}"
+22	22		301							{2: 'Bridget', 3: 'Then you definitely have to try it!', 4: '1'}
+23	23		301							"{2: 'Bridget', 3: ""I'll take one."", 4: '1'}"
+24	24		201							{1: '1', 2: '500311'}
+25	25		301				DialogDisable			{1: '1', 2: 'Student Vendor', 3: 'Thank you for your purchase!', 4: '1'}
+26	26		202							{1: '1', 6: '1'}
+27	27		201							{1: '1', 2: '500907'}
+28	28		302							{2: 'Just one?'}
+29	29		301			DialogEnable				"{2: 'Bridget', 3: ""I'm a Construct... I don't really need to eat."", 4: '1'}"
+30	30		301				DialogDisable			"{3: ""That is such a lame excuse, and Bridget's unnatural tone is giving her away.""}"
+31	31		302							"{2: ""That won't do."", 3: '32'}"
+32	32		302							{2: 'Please give us another one.', 3: '33'}
+33	33		202							{1: '1', 6: '1'}
+34	34		201							{1: '1', 2: '500311'}
+35	35		301			DialogEnable				{1: '1', 2: 'Student Vendor', 3: 'Coming right up!', 4: '1'}
+36	36		201							{1: '1', 2: '500907', 3: '6'}
+37	37		301				DialogDisable			{1: '1', 2: 'Bridget', 3: '【kuroname】...', 4: '1'}
+38	38		302							{2: 'Are you shy?', 3: '39'}
+39	39		302							"{2: ""This isn't the Bridget I know at all."", 3: '40'}"
+40	40		204							{1: '1', 2: '2'}
+41	41		301			DialogEnable				{2: 'Bridget', 3: 'Well, thank you!', 4: '1'}
+42	42		202							{1: '1'}
+43	43		301							{3: 'The student skillfully packs up two balls of cotton candy.'}
+44	44		301							"{3: ""This fluffy candy looks like a toy, smells sweet, and is only found at festivals. The moment you grab it, you're in a festive mood.""}"
+45	45		201							{1: '1', 2: '500907'}
+46	46		301							{1: '1', 3: 'Bridget carefully takes a tiny bite of her cotton candy.'}
+47	47		301							{2: 'Bridget', 3: 'Mm... It tastes just like I remember.', 4: '1'}
+48	48		301							"{2: 'Bridget', 3: ""When I was little, I got one of this, and I didn't want to finish it too quickly, so I nibbled on it as I walked around town all afternoon, and..."", 4: '1'}"
+49	49		301							"{2: 'Bridget', 3: ""I didn't even notice when all the fluff had melted away."", 4: '1'}"
+50	50		301							"{2: 'Bridget', 3: ""That's when I regretted not eating it faster."", 4: '1'}"
+51	51		301							{3: 'Bridget tells embarrassing stories from her childhood as you take small bites out of the white, sugary fluff.'}
+52	52		301							{3: 'The fine sugary strands melt in her mouth, filling it with blissful delight.'}
+53	53		301							{3: 'This is the pure taste of 100% sugar—a caloric explosion without any embellishments.'}
+54	54		302							"{2: ""It's..."", 3: '55'}"
+55	55		301							"{2: 'Bridget', 3: ""It's...?"", 4: '1'}"
+56	56		302							{2: 'So sweet!', 3: '57', 4: 'Delicious!', 5: '59'}
+57	57		204							{1: '1', 2: '2'}
+58	58	61	301							"{2: 'Bridget', 3: ""Haha, I knew you weren't used to something this sweet!"", 4: '1'}"
+59	59		204							{1: '1', 2: '2'}
+60	60		301							"{2: 'Bridget', 3: ""Haha, who would've thought the Gray Raven Commandant had such childlike tastes!"", 4: '1'}"
+61	61		204							{1: '1'}
+62	62		301							{2: 'Bridget', 3: 'But eating too much cotton candy will make you thirsty.', 4: '1'}
+63	63		301							"{2: 'Bridget', 3: ""Wait here for a bit, I'll go get you some water..."", 4: '1'}"
+64	64		204							{1: '1', 2: '5'}
+65	65		401							{1: '1', 2: '36'}
+66	66		301							{2: 'Bridget', 3: '—Ah!', 4: '1'}
+67	67		401							{1: '1', 2: '205'}
+68	68		301							{3: 'Her smile suddenly freezes after turning around.'}
+69	69		302							"{2: ""What's wrong?"", 3: '70', 4: '(Take a bite of your cotton candy)', 5: '70'}"
+70	70		204							{1: '1', 2: '4'}
+71	71		203							{1: '1', 2: '0.3', 3: '200'}
+72	72		301							{3: 'She inches back toward you in stiff movements and whispers something to you.'}
+73	73		301							{2: 'Bridget', 3: 'Right there, three of my squad members.', 4: '1'}
+74	74		302							{2: 'Who?', 3: '75', 4: 'Where?', 5: '75'}
+75	75		301							"{2: 'Bridget', 3: 'By the ice cream stand—it\'s ""High Wall"", """"Sand Fox"""", and ""Lizard"".', 4: '1'}"
+76	76		302							{2: 'What should we do?', 3: '77', 4: '(Take another bite)', 5: '77'}
+77	77		301							"{2: 'Bridget', 3: ""Hold this position, pretend you're eating, cover your face, and fall back towards your 8 o'clock."", 4: '1'}"
+78	78		302							"{2: 'Got it.', 3: '79', 4: 'What about my drink?', 5: '80', 6: ""I don't have to pretend, I AM eating."", 7: '81'}"
+79	79	82	301							{2: 'Bridget', 3: 'Move!', 4: '1'}
+80	80	82	301							"{2: 'Bridget', 3: ""Hold on a bit longer! I'll buy you as many drinks as you want once we're safe!"", 4: '1'}"
+81	81		301							{2: 'Bridget', 3: '...', 4: '1'}
+82	82		301				DialogDisable			{2: 'Bridget', 3: 'Now follow my order: start with your right foot and proceed toward the fountain.', 4: '1'}
+83	83		203							{1: '1', 2: '0.2', 3: '800'}
+84	84		202							{1: '1'}
+85	85		302							{2: '...I know how to walk.', 3: '86', 4: '(Walk while eating)', 5: '86'}
+86	86		301			DialogEnable				{3: 'But as fate would have it, you are quickly noticed by the very people you are trying to avoid.'}
+87	87		201							{1: '1', 2: '500567'}
+88	88		301							"{1: '1', 2: '""High Wall""', 3: ""Ah! Gray Raven Commandant! You're here for the festival, too?"", 4: '1'}"
+89	89		301							"{3: '""High Wall"" lives up to his name, towering in height with a booming voice to match.'}"
+90	90		301							"{3: ""There's no pretending you didn't notice them at this point.""}"
+91	91		401							{1: '2', 2: '1513'}
+92	92		301							"{3: '""High Wall"" comes charging over with an ice cream in one hand and a small flag in the other. The flag says ""sweet"" on it.'}"
+93	93		302							{2: '...Hi.', 3: '94'}
+94	94		301							{3: 'From the corner of your eye, you see Bridget quickly zipping behind you with her back toward them.'}
+95	95		301							"{2: '""High Wall""', 3: 'Is that... cotton candy?!', 4: '1'}"
+96	96		301							"{2: '""High Wall""', 3: 'Could you tell me where you got that from?', 4: '1'}"
+97	97		302							{2: 'Over there.', 3: '98'}
+98	98		301							"{2: '""High Wall""', 3: ""Thanks! Who would've thought the Gray Raven Commandant likes sweets..."", 4: '1'}"
+99	99		202							{1: '1', 6: '1'}
+100	100		201							{1: '1', 2: '500567', 4: '-400'}
+101	101		201							{1: '2', 2: '500019', 4: '400'}
+102	102		301							"{1: '1', 3: 'Before ""High Wall"" can finish speaking, ""Sand Fox"" cuts them off.'}"
+103	103		301							"{2: '""Sand Fox""', 3: ""Hey, that's so rude! Don't go labeling people like that. Besides, maybe 【kuroname】 is on Team Salty!"", 4: '2'}"
+104	104		301							"{3: 'Next to ""High Wall"" is ""Sand Fox"", who is holding some fries with salt in one hand and waving a small flag in the other. The flag says ""salt"".'}"
+105	105		202							{1: '1', 2: '2', 6: '1'}
+106	106		201							{1: '1', 2: '500028'}
+107	107		301							"{1: '1', 2: 'Lizard', 3: ""Look who's talking. Most people eat both sweet and salty stuff. You two are both extremists."", 4: '1'}"
+108	108		301							"{3: '""Lizard"" proceeds to take a bite of the hot dog they\'re holding—after dipping it in the ice cream in their other hand.'}"
+109	109		202							{1: '1', 6: '1'}
+110	110		201							{1: '1', 2: '500567', 4: '-400', 6: '-100', 7: '1'}
+111	111		201							{1: '2', 2: '500019', 4: '400', 6: '-100', 7: '1'}
+112	112		203							{1: '1', 2: '0.3', 3: '-400'}
+113	113		203							{1: '2', 2: '0.3', 3: '400'}
+114	114		301							"{1: '1', 3: '""High Wall"" and ""Sand Fox"" take a clear step back, their faces twisting in disgust.'}"
+115	115		301							"{2: '""High Wall"" & ""Sand Fox""', 3: ""Most people don't eat hot dogs like that, either!"", 4: '1', 5: '2'}"
+116	116		302							{2: 'Glad to see you all get along so well.', 3: '117', 4: '(Take another bite of cotton candy)', 5: '121'}
+117	117		301							"{2: '""High Wall"" & ""Sand Fox""', 3: ""No, we don't!"", 4: '1', 5: '2'}"
+118	118		202							{1: '1', 2: '2', 6: '1'}
+119	119		201							{1: '1', 2: '500028'}
+120	120		301							{1: '1', 2: 'Lizard', 3: 'You two definitely get along great.', 4: '1'}
+121	121		202							{1: '1', 2: '2', 6: '1'}
+122	122		201							{1: '1', 2: '500567'}
+123	123		301							"{1: '1', 2: '""High Wall""', 3: 'Huh?', 4: '1'}"
+124	124		301							"{3: ""You can tell that Bridget's body tensed up for a moment without looking back.""}"
+125	125		301							"{2: '""High Wall""', 3: ""【kuroname】, that person behind you, isn't that..."", 4: '1'}"
+126	126		201							{1: '2', 2: '500019', 4: '550'}
+127	127		301							"{1: '1', 2: '""Sand Fox""', 3: '!!!', 4: '2'}"
+128	128		302							{2: 'No...', 3: '129'}
+129	129		301							"{3: '""Sand Fox"" is faster and immediately covers ""High Wall\'s"" mouth.'}"
+130	130		301							"{3: 'You notice beads of cold sweat on ""Sand Fox\'s"" face.'}"
+131	131		301							"{2: '""Sand Fox""', 3: ""There's nothing behind 【kuroname】! Nothing at all!"", 4: '2'}"
+132	132		201							{1: '3', 2: '500028', 4: '-550'}
+133	133		301							"{1: '1', 2: 'Lizard', 3: 'Hey ""High Wall"", didn\'t you want some marshmallows? Let\'s hurry and get some.', 4: '3'}"
+134	134		202							{1: '1', 2: '2', 3: '3'}
+135	135		401							{1: '2', 2: '1504'}
+136	136		301							"{3: 'The two of them quickly usher ""High Wall"" away.'}"
+137	137		402							{1: '1504'}
+138	138		301							{3: 'Bridget turns around only after the three have completely disappeared into the crowd.'}
+139	139		201							{1: '1', 2: '500907', 3: '4', 5: '-100'}
+140	140		203							{1: '1', 2: '0.25'}
+141	141		301				DialogDisable			{1: '1', 2: 'Bridget', 3: 'Oh, great. They definitely recognized me.', 4: '1'}
+142	142		302							"{2: ""I've been wanting to ask you something."", 3: '143'}"
+143	143		302							{2: 'Why are you trying to hide from your team members?', 3: '144'}
+144	144		301			DialogEnable				"{2: 'Bridget', 3: ""It's because of you, duh."", 4: '1'}"
+145	145		302							{2: 'Me?', 3: '146'}
+146	146		301							{2: 'Bridget', 3: 'Some rumors are going around...', 4: '1'}
+147	147		302							{2: '!!!', 3: '148', 4: 'Hmm?', 5: '148', 6: 'They are all lies!', 7: '148'}
+148	148		301							{2: 'Bridget', 3: 'If someone sees us together again, and starts another rumor...', 4: '1'}
+149	149		301							"{2: 'Bridget', 3: ""I don't want people to hear more rumors about you. I'd feel awful if your reputation as a commandant was damaged because of me."", 4: '1'}"
+150	150		204							{1: '1', 2: '2'}
+151	151		301							"{2: 'Bridget', 3: ""It's decided! Tomorrow I'll personally put them through some extra training!"", 4: '1'}"
+152	152		302		1		AniZhuanchangBegin			"{2: 'Extra training—no question about it!', 4: ""Maybe we shouldn't be so harsh...""}"

@@ -1,0 +1,26 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory68.jpg'}
+2	2		401							{1: '1', 2: '102'}
+3	3		201							{1: '1', 2: '500005'}
+4	4		301			DialogEnable				{1: '1', 2: 'Yamamoto', 3: '...Now that was something.', 4: '1'}
+5	5		302							{2: 'You mean us?', 3: '6'}
+6	6		201							{1: '1', 2: '1031001', 3: '7'}
+7	7		301							{1: '1', 2: 'Liv', 3: 'Commandant... the rapid-reaction channel is up ahead.', 4: '1'}
+8	8		301				AniZhuanchangBegin			{2: 'Liv', 3: '...Oh!', 4: '1'}
+9	9		202							{1: '1', 6: '1'}
+10	10		301			AniZhuanchangEnd				"{3: ""Everyone turns to stare in the direction of the mountain after Liv's sudden cry.""}"
+11	11		301							{3: 'At the foot of the mountain, the snowmobile, so conspicuous in the endless whiteness, is speeding off, sending a huge blast of snow flying.'}
+12	12		201							{1: '1', 2: '500140'}
+13	13		301				AniZhuanchangBegin			{1: '1', 2: 'Gravekeeper', 3: 'Hey, ya got off yerself.', 4: '1'}
+14	14		201							{1: '1', 2: '500166', 4: '-400'}
+15	15		201							{1: '2', 2: '500026', 4: '400'}
+16	16		301			AniZhuanchangEnd				"{1: '1', 2: 'Lucia', 3: ""Why did he leave? We haven't paid yet."", 4: '1'}"
+17	17		301							{2: 'Lee', 3: '...All our supplies are still on the snowmobile.', 4: '2'}
+18	18		301							{2: 'Lucia', 3: '...', 4: '1'}
+19	19		202							{1: '1', 2: '2', 6: '1'}
+20	20		201							{1: '1', 2: '500005'}
+21	21		301							"{1: '1', 2: 'Yamamoto', 3: ""I told you we can't trust him! And yet you walked right into his trap!"", 4: '1'}"
+22	22		202							{1: '1'}
+23	23		301							{3: 'Clark shakes his hand, trying to make the youth stop.'}
+24	24		201							{1: '1', 2: '500154'}
+25	25		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Clark', 3: ""What's the point!"", 4: '1'}"

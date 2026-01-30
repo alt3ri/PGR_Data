@@ -1,0 +1,377 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory795.jpg'}
+2	2		401							{1: '1', 2: '280'}
+3	3		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory289.png', 3: '0', 4: '0.5', 5: '0.5'}
+4	4		301			DialogEnable				{3: 'Lamia glances around, observing the Red Tide Projections murmuring like souls in the River Styx.'}
+5	5		301							"{2: '???', 3: ""People with a stable M.I.N.D... they're scarce now, most of them already assigned...""}"
+6	6		502							{1: 'RImgBg1BlowUp'}
+7	7		301							{3: 'Upon their broken voices, Lamia, out of curiosity, moves closer, only to barely make out the words uttered.'}
+8	8		301							"{2: '???', 3: ""He and the agent behind him are clutching onto Fort Winter's data. If we don't find what he's searching for, we're toast.""}"
+9	9		301							"{2: '???', 3: ""Testing the stability of the M.I.N.D. is too risky. It could drive someone insane. Even the Science Council hasn't dared a major filtering for M.I.N.D. stability.""}"
+10	10		301							"{2: '???', 3: ""And now, they want us to conduct covert tests for M.I.N.D. stability? We don't have that capability.""}"
+11	11		301							"{2: '???', 3: ""We can only target those with existing records, like Gray Raven's Lucia.""}"
+12	12		301							"{2: '???', 3: ""No chance. You can only copy the original M.I.N.D.; she's already a clone. Doing it again would wipe out her self-consciousness.""}"
+13	13		301							{2: '???', 3: 'Or are you suggesting taking her original self? Are you willing to risk that many lives?'}
+14	14		301							"{2: '???', 3: ""What about Liv? Didn't we say to make a copy of her M.I.N.D. when they made the Empyrea frame?""}"
+15	15		301							"{2: '???', 3: ""We were blocked. They said it violated regulations. Now her M.I.N.D. is damaged, so copying it wouldn't meet the standard. We'll consider it if there's no other option.""}"
+16	16		301							{2: '???', 3: 'That leaves Lee as the best option.'}
+17	17		301							"{2: '???', 3: ""But it's all talk. Anyone fitting the criteria is with their own squad. We can't make a move.""}"
+18	18		301							{2: '???', 3: 'What about the Gray Raven Commandant? No matter how powerful, the commandant is still human... The Ascendants have mentioned it several times.'}
+19	19		301							"{2: '???', 3: ""Think carefully; once you do this, there's no turning back! Why are we cooperating with Lithos? To survive!""}"
+20	20		301							{2: '???', 3: 'But continuing these unauthorized tests will eventually expose us.'}
+21	21		301							{2: '???', 3: 'So... Noan?'}
+22	22		301							"{2: '???', 3: ""No one cares about him. His background's a mystery. It doesn't matter if he dies; it's one less problem for the higher-ups.""}"
+23	23		301							"{2: '???', 3: ""He's a member of a reserve elite squad, but you talk about him like he's desperate, like us.""}"
+24	24		301							"{2: '???', 3: ""He's undergone the M.I.N.D. stability test and served as a guinea pig for the experiment's improvements.""}"
+25	25		301							"{2: '???', 3: 'If this were anyone else, they\'d be labeled ""high risk."" His cooperation shows he\'s been ignored and has no choice.'}"
+26	26		301							"{2: '???', 3: ""He wasn't driven mad by that test? Can he really be used?""}"
+27	27		301							"{2: '???', 3: ""It was done by the Science Council, so it's safer than ours.""}"
+28	28		301							"{2: '???', 3: ""But if he could be used... why didn't Lithos keep him?""}"
+29	29		301							"{2: '???', 3: ""When you clone a M.I.N.D., the clone's memories are stamped right there at the moment of duplication.""}"
+30	30		301							"{2: '???', 3: ""Lithos must've been tinkering with his memories, biding his time, you know. It's a real hassle, having to tweak them repeatedly, but...""}"
+31	31		301							{2: '???', 3: 'Ugh, such a pain...'}
+32	32		505							{1: 'RImgBg1BlowUp'}
+33	33		301							{3: 'These Red Tide Projections are a whole new breed. They are more fleshed out, even engaging in basic conversations.'}
+34	34		301							{3: 'Is this the next step of their evolution, or did Lithos just stick his nose in this one aspect?'}
+35	35		201							{1: '18', 2: '500335'}
+36	36		301							{1: '1', 2: 'Lillian', 3: 'Protecting Fort Winter... desperate people...', 4: '18'}
+37	37		301							{2: 'Lillian', 3: 'Did these conversations take place before the appearance of that mysterious tower? The content seems similar to what Lillian had mentioned.', 4: '18'}
+38	38		301							{2: 'Lillian', 3: 'How does it tie into the whole re-filtering of the Ascension-Network?', 4: '18'}
+39	39		202							{1: '18', 6: '1'}
+40	40		401							{1: '2', 2: '2670'}
+41	41		301				AniZhuanchangBegin			"{3: 'Lamia extends her hands, aiming to suss out more from the projections, when a loud ""click"" comes from above.'}"
+42	42		205			DialogDisable				{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory289.png', 3: '0', 4: '0', 5: '0'}
+43	43		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDoorClose.prefab', 2: '2'}
+44	44		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory797.jpg'}
+45	45		201				AniZhuanchangEnd			{1: '1', 2: '500335', 3: '11', 7: '1'}
+46	46		301			DialogEnable				{1: '1', 3: 'A massive cage descends from the sky, trapping her before she can escape.'}
+47	47		301							{2: 'Lillian', 3: '...Ah!', 4: '1'}
+48	48		301							{3: 'Is that Lithos? Has he found her?'}
+49	49		301							{2: 'Lillian', 3: 'H-hello... Lithos?', 4: '1'}
+50	50		301			RImgBg1Shake				{3: 'Lamia timidly pleads, rattling the cage bars.'}
+51	51		301							"{2: 'Lillian', 3: ""L-Lithos... it's me, Lillian... I didn't mean to barge in, I... I just want out."", 4: '1'}"
+52	52		401							{1: '2', 2: '1516'}
+53	53		301				AniZhuanchangBegin			{3: 'She rambles on to thin air until she catches distant footsteps drawing near.'}
+54	54		505			DialogDisable				{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDoorClose.prefab'}
+55	55		202							{1: '1', 6: '1'}
+56	56		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory797.jpg'}
+57	57		201							{1: '2', 2: '500513', 3: '2'}
+58	58		301			DialogEnable				{1: '1', 2: 'Lithos', 3: 'Lillian, what brings you here? Was that racket your doing?', 4: '2'}
+59	59		301							{3: 'Lithos observes from a distance, icy demeanor intact.'}
+60	60		201							{1: '18', 2: '500335'}
+61	61		301							"{1: '1', 2: 'Lillian', 3: 'I... had a mission that required getting close to your base, handed down by ""them,"" but I ran into Loki who looked not like usual self and knocked me out.', 4: '18'}"
+62	62		301							"{2: 'Lillian', 3: ""I found myself here when I came to my senses. I didn't mean to barge in. Can you help me out?"", 4: '18'}"
+63	63		202							{1: '18', 6: '1'}
+64	64		301							"{2: 'Lithos', 3: ""Sorry, I can't do that anymore."", 4: '2'}"
+65	65		301							"{2: 'Lithos', 3: ""Looks like it's time to bid adieu, Lillian. Despite knowing you for ages, we've never really had a proper chat..."", 4: '2'}"
+66	66		201							{1: '18', 2: '500335', 3: '19'}
+67	67		301							{1: '1', 2: 'Lillian', 3: 'I...', 4: '18'}
+68	68		202							{1: '18', 2: '2', 6: '1'}
+69	69		201							{1: '1', 2: '500730', 3: '12'}
+70	70		301							{1: '1', 2: 'Shorthalt', 3: 'Hey!', 4: '1'}
+71	71		201							{1: '1', 2: '500513', 3: '2'}
+72	72		301							{1: '1', 2: 'Lithos', 3: '...', 4: '1'}
+73	73		204							{1: '1', 2: '1'}
+74	74		301							"{2: 'Lithos', 3: ""You've successfully reunited, again..."", 4: '1'}"
+75	75		302							{2: '...Again?', 3: '76'}
+76	76		301							{3: 'He eyes you next to Shorthalt and inches closer.'}
+77	77		302							{2: '...', 3: '85', 4: '...Lillian?', 5: '81'}
+78	81		201							{1: '18', 2: '500335', 3: '19'}
+79	82		301							{1: '1', 2: 'Lillian', 3: '...', 4: '18'}
+80	83		202							{1: '18', 6: '1'}
+81	85		201							{1: '1', 2: '500730', 3: '12'}
+82	86		301							"{1: '1', 2: 'Shorthalt', 3: ""What's the call, Gray Raven Commandant?"", 4: '1'}"
+83	87		302							"{2: 'Smash him! Shorthalt!', 3: '88', 4: ""Easy there! Starting a brawl here won't do us any favors."", 5: '105'}"
+84	88		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2', 3: '1'}
+85	89		301							{3: 'Shorthalt heeds the call, seizing his weapon and lunging forth.'}
+86	90		401							{1: '2', 2: '1513'}
+87	91		401							{1: '2', 2: '9342045'}
+88	92		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopRed.prefab', 2: '2'}
+89	93		301							{3: 'But just as he takes a step, the ground erupts beneath him, spewing forth a giant pool of Red Tide, morphing into an impassable toxic spring.'}
+90	94		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 4: '1'}
+91	95		401							{1: '2', 2: '844090'}
+92	96		301			RImgBg1Shake				"{3: 'Shorthalt is about to strike again when ""Paper Crane"" morphs into a colossal mecha, emitting a deafening roar, swiftly ensnaring Shorthalt and pinning him down.'}"
+93	97		201							{1: '1', 2: '500514', 3: '2'}
+94	98		301							"{1: '1', 2: 'Lithos', 3: ""If you don't want the Red Tide showing beneath you, don't move."", 4: '1'}"
+95	99		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopRed.prefab'}
+96	100		201							{1: '1', 2: '500730', 3: '12'}
+97	101		301							{1: '1', 2: 'Shorthalt', 3: 'Ah, I told you! I never got a fair go at Lithos, but you had me charge in.', 4: '1'}
+98	102		302							"{2: ""You didn't exactly object!"", 3: '103'}"
+99	103		301							"{2: 'Shorthalt', 3: ""How could I defy a superior's orders! Especially coming from the legendary commandant! Shape up!"", 4: '1'}"
+100	104	108	301							{2: 'Shorthalt', 3: 'Opportunities with folks like this are fleeting!', 4: '1'}
+101	105		201							{1: '1', 2: '500514', 3: '2'}
+102	106		301							"{1: '1', 2: 'Lithos', 3: ""Precisely. If you don't want to find a Red Tide beneath you right now, stay still."", 4: '1'}"
+103	107		301							{3: 'Lithos gently taps Paper Crane, letting it coil around Shorthalt.'}
+104	108		302							"{2: ""Why's the floor gone all Red Tide?"", 3: '109'}"
+105	109		201							{1: '1', 2: '500514', 3: '2'}
+106	110		301							"{1: '1', 2: 'Lithos', 3: ""It's not the floor that's gone, Red Tide; it's the protective barrier keeping you safe from it that's vanished. So... the Red Tide springs forth."", 4: '1'}"
+107	111		302							{2: 'A protective barrier? You mean this floor?', 3: '112'}
+108	112		301							"{2: 'Lithos', 3: 'More than that. I\'ve spent ages aiding Cthylla in crafting her ""cradle.""', 4: '1'}"
+109	113		301							"{2: 'Lithos', 3: ""Had you woken up a bit earlier, I'd happily explain where each item comes from, how it's assembled, and what it's for."", 4: '1'}"
+110	114		204							{1: '1'}
+111	115		301							{2: 'Lithos', 3: 'But now...', 4: '1'}
+112	116		203							{1: '1', 2: '0.15', 5: '-100'}
+113	117		301							{3: 'Lithos hurries over, handing a vintage revolver to you.'}
+114	118		302							"{2: '(Open fire on Lithos immediately)', 3: '119', 4: ""(See what he's up to first)"", 5: '122'}"
+115	119		401							{1: '2', 2: '1510'}
+116	120		203							{1: '1', 2: '0.15'}
+117	121	123	301							"{3: ""Just as your hand with the gun goes up, Lithos ducks behind you as if he's seen this coming.""}"
+118	122		301							{3: 'He clasps your hand as if to soothe, gently caressing the back of your hand without touching the wound.'}
+119	123		301							{3: 'The smell of lilies mixed with a hint of blood wafts over you as Lithos draws closer.'}
+120	124		301							"{2: 'Lithos', 3: ""These wounds aren't going to heal right in this brutal setting."", 4: '1'}"
+121	125		301							"{3: ""He speaks like he can't care less.""}"
+122	126		301							"{2: 'Lithos', 3: ""But... I can't just go easy on you because you're hurt. It's time for some payback."", 4: '1'}"
+123	127		302							{2: 'You?!', 3: '128', 4: '...!', 5: '128'}
+124	128		204							{1: '1', 2: '1'}
+125	129		301							"{2: 'Lithos', 3: ""Don't fret, I'm not going to lay a finger on you. Never would."", 4: '1'}"
+126	130		301							{3: 'He steadies your hand, aiming the gun at Lillian stuck in that cage up ahead.'}
+127	131		301							"{2: 'Lithos', 3: ""A game must have some challenge to it to be fun, you know. Too many companions just make it boring. So, take aim at the one who's least likely to help you break free."", 4: '1'}"
+128	132		201							{1: '18', 2: '500335', 3: '19'}
+129	133		301							{1: '1', 2: 'Lillian', 3: 'H-hold up! Why is it gotta be like this?!', 4: '18'}
+130	134		202							{1: '18', 6: '1'}
+131	135		301							"{2: 'Lithos', 3: ""Wondering why she's here, huh? Because she's a defector."", 4: '1'}"
+132	136		301							{2: 'Lithos', 3: 'We go way back, childhood buddies, back when Lillian lived over at the orphanage nearby.', 4: '1'}
+133	137		201							{1: '18', 2: '500335', 3: '16'}
+134	138		301							"{1: '1', 2: 'Lillian', 3: ""No, it's just... I got caught up in all this!"", 4: '18'}"
+135	139		202							{1: '18', 6: '1'}
+136	140		301							{2: 'Lithos', 3: 'Then, did you finish the job I gave you?', 4: '1'}
+137	141		201							{1: '18', 2: '500335', 3: '19'}
+138	142		301							{1: '1', 2: 'Lillian', 3: 'What?', 4: '18'}
+139	143		202							{1: '18', 6: '1'}
+140	144		204							{1: '1', 2: '2'}
+141	145		301							{2: 'Lithos', 3: '...?', 4: '1'}
+142	146		201							{1: '18', 2: '500335', 3: '11'}
+143	147		301							"{1: '1', 2: 'Lillian', 3: ""Ah, um, sorry, I've been under surveillance and couldn't slip away."", 4: '18'}"
+144	148		202							{1: '18', 6: '1'}
+145	149		301							"{2: 'Lithos', 3: ""You see, she's just a defector, a liability to your cause. She won't be of any help in your getaway."", 4: '1'}"
+146	150		202							{1: '1', 2: '2', 6: '1'}
+147	151		104						500.0	{1: '-100|0|-100', 2: '0.5'}
+148	152		301							"{3: 'Amidst the clash between Lithos and Lillian, Shorthalt discreetly works his longsword into the joints of ""Paper Crane"", struggling to break free from its grip.'}"
+149	153		201							{1: '1', 2: '500730', 3: '12'}
+150	154		301							{1: '1', 3: 'Catching your eye, he shakes his head, silently signaling he needs more time.'}
+151	155		302							{2: '...', 3: '156'}
+152	156		202							{1: '1', 6: '1'}
+153	157		104						1000.0	{1: '0|0|0', 2: '1'}
+154	158		201							{1: '1', 2: '500514', 3: '2'}
+155	159		301							"{1: '1', 2: 'Lithos', 3: ""Come on, pull the trigger. Once she's out of the way, the gun's yours to keep. You'll need a weapon, won't you?"", 4: '1'}"
+156	160		302							"{2: ""You've got it all wrong, Lithos."", 3: '161'}"
+157	161		302							"{2: ""The one standing in the way of escape now isn't Lillian."", 3: '162'}"
+158	162		302							"{2: '(Aim the gun at yourself)', 3: '163', 4: ""It's me."", 5: '163'}"
+159	163		203							{1: '1', 2: '0.25', 5: '-70'}
+160	164		301							{2: 'Lithos', 3: '...!', 4: '1'}
+161	165		302							"{2: ""Don't move."", 3: '166'}"
+162	166		301							{2: 'Lithos', 3: 'You, being hailed as a hero by everyone, ought to value your own life more.', 4: '1'}
+163	167		302							"{2: ""You said you didn't want me to die."", 3: '168'}"
+164	168		301							"{2: 'Lithos', 3: ""So, you're willing to risk yourself as the wager?"", 4: '1'}"
+165	169		302							{2: '...', 3: '170'}
+166	170		204							{1: '1', 2: '1'}
+167	171		301							{2: 'Lithos', 3: 'So, my words actually resonated with you.', 4: '1'}
+168	172		301							{3: 'He watches as your finger hovers over the trigger, a smirk tugging at his lips as he relaxes his grip on your wrist.'}
+169	173		204							{1: '1', 2: '2'}
+170	174		302							{2: '(Grab Lithos and fire at him)', 3: '175'}
+171	175		401							{1: '2', 2: '1510'}
+172	176		203							{1: '1', 2: '0.25'}
+173	177		301							{3: 'The close-quarters hold makes escape seem impossible, but his naturally nimble and slender body still manages to evade your fatal shot.'}
+174	178		401						200.0	{1: '2', 2: '1510'}
+175	179		401						200.0	{1: '2', 2: '1510'}
+176	180		401						200.0	{1: '2', 2: '1510'}
+177	181		203							{1: '1', 2: '0.15s'}
+178	182		301							{3: 'Bullets whiz toward Lithos in quick succession as he nurses the wound on his arm and swiftly retreats.'}
+179	183		301							{3: 'Countless Punishing Virus particles coalesce into sharp needles, tearing through your sleeve and grazing the skin underneath in a fleeting warning.'}
+180	184		401							{1: '1', 2: '296'}
+181	185		401							{1: '2', 2: '1512'}
+182	186		301				RImgBg1Shake			{3: 'Just as he focuses all his attention on you, a solid kick from behind hits Lithos.'}
+183	187		204							{1: '1', 2: '2'}
+184	188		301							{2: 'Lithos', 3: 'Paper Crane?!', 4: '1'}
+185	189		201							{1: '1', 2: '500730', 3: '12'}
+186	190		301							"{1: '1', 3: ""Shorthalt leaves his longsword embedded in the joint of Paper Crane—it won't hold much longer.""}"
+187	191		301				AniZhuanchangBegin			{2: 'Shorthalt', 3: 'You know what to do!', 4: '1'}
+188	192		202			DialogDisable				{1: '1', 6: '1'}
+189	193		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '3'}
+190	194		201							{1: '1', 2: '500335', 3: '19', 6: '1'}
+191	195		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDoorClose.prefab', 2: '2'}
+192	196		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory797.jpg'}
+193	197		301			DialogEnable				"{1: '1', 3: ""With mere seconds to spare, you seize upon Shorthalt's diversion to make a dash toward the cage ensnaring Lillian.""}"
+194	198		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+195	199		302							{2: 'Stay back, Lillian!', 3: '200'}
+196	200		203							{1: '1', 2: '0.17', 4: '-70', 5: '90'}
+197	201		301							{2: 'Lillian', 3: 'Ah, got it!', 4: '1'}
+198	202		401						500.0	{1: '2', 2: '1510'}
+199	203		401							{1: '2', 2: '1510'}
+200	204		301			RImgBg1Shake				{3: 'You aim at the lock of the cage, firing off the last two bullets.'}
+201	205		302							{2: '(Kick open the iron door)', 3: '206'}
+202	206		401							{1: '2', 2: '2701'}
+203	207		505						600.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDoorClose.prefab'}
+204	208		401							{1: '2', 2: '685'}
+205	209		201							{1: '1', 2: '500514', 3: '2'}
+206	210		301							{1: '1', 2: 'Lithos', 3: 'Paper Crane, stop Lillian!', 4: '1'}
+207	211		203							{1: '1', 2: '0.25', 3: '400'}
+208	212		201							{1: '2', 2: '500730', 3: '12', 4: '-400'}
+209	213		301							{1: '1', 2: 'Shorthalt', 3: 'Enough already! A fine lady should know where to draw the line!', 4: '2'}
+210	214		301							{2: 'Lithos', 3: '...?', 4: '1'}
+211	215		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+212	216		401							{1: '2', 2: '844006'}
+213	217		203							{1: '1', 2: '0.15', 3: '600'}
+214	218		203							{1: '2', 2: '0.15', 3: '-600'}
+215	219		301							"{3: ""Shorthalt's hefty sword once more collides with the metallic grin of Paper Crane, both sides stumbling back from the impact.""}"
+216	220		202							{1: '1', 2: '2', 6: '1'}
+217	221		302							"{2: ""Let's make a break for it!"", 3: '222'}"
+218	222		201							{1: '1', 2: '500335', 3: '19'}
+219	223		301							"{1: '1', 2: 'Lillian', 3: ""There's an exit over here!"", 4: '1'}"
+220	224		201							{1: '1', 2: '500730', 3: '12'}
+221	225		301							{1: '1', 2: 'Shorthalt', 3: 'Got it!', 4: '1'}
+222	226		202							{1: '1', 6: '1'}
+223	227		301							{3: 'The three of you waste no time lingering for battle, darting through the door that mysteriously appeared at top speed.'}
+224	228		201							{1: '1', 2: '500513', 3: '1'}
+225	229		301				AniZhuanchangBegin			{1: '1', 2: 'Lithos', 3: '...', 4: '1'}
+226	230		202							{1: '1', 6: '1'}
+227	231		101			DialogDisable			600.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory288.png'}
+228	232		202				AniZhuanchangEnd			{6: '1'}
+229	233		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '3'}
+230	234		301			DialogEnable				{3: 'After traversing the tunnel behind the door, taking a steep descent, and navigating through three areas, you squeeze into a narrow passageway.'}
+231	235		201							{1: '1', 2: '500730', 3: '12'}
+232	236		301							"{1: '1', 2: 'Shorthalt', 3: ""Keep moving, don't stop for the rubble. I'll lead the way!"", 4: '1'}"
+233	237		201							{1: '1', 2: '500335'}
+234	238		301							{1: '1', 2: 'Lillian', 3: 'But I just came from there!', 4: '1'}
+235	239		302				AniZhuanchangBegin			{2: 'Sorry, we need to scavenge for supplies!', 3: '240'}
+236	240		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory435.jpg'}
+237	241		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+238	242		401						300.0	{1: '2', 2: '844006'}
+239	243		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+240	244		401						600.0	{1: '2', 2: '844006'}
+241	245		401						400.0	{1: '1', 2: '36'}
+242	246		401							{1: '1', 2: '201'}
+243	247		202				AniZhuanchangEnd			{1: '1', 6: '1'}
+244	248		301			DialogEnable				{3: 'After numerous grueling skirmishes, the three of you finally slip into a corridor strewn with debris and discarded items.'}
+245	249		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+246	250		201							{1: '1', 2: '500730', 3: '12'}
+247	251		301							"{1: '1', 2: 'Shorthalt', 3: ""I'm completely spent..."", 4: '1'}"
+248	252		301							{3: 'You three are utterly exhausted, collapsing to the ground.'}
+249	253		301							{2: 'Shorthalt', 3: 'I thought the fight would be easier with two more people on the team...', 4: '1'}
+250	254		301							"{2: 'Shorthalt', 3: ""A commandant without bullets is one thing, but the human's injured. Why couldn't you handle a fight?"", 4: '1'}"
+251	255		201							{1: '1', 2: '500335', 3: '19'}
+252	256		301							"{1: '1', 2: 'Lillian', 3: ""I... I'm just not cut out for combat. I'm a support-type Construct..."", 4: '1'}"
+253	257		301							"{3: ""Due to the significant difference in physique between Lillian and Lamia, Lamia, taking on her appearance, can only manage basic movements, unable to match Lillian's agility.""}"
+254	258		302							{2: '...', 3: '259'}
+255	259		301							{3: 'After triple-checking your surroundings for safety, the group finally relaxes and brings up the temporarily shelved issues.'}
+256	260		302							{2: 'Lillian.', 3: '262'}
+257	261		204							{1: '1', 2: '11'}
+258	262		301							{2: 'Lillian', 3: 'Eek—!', 4: '1'}
+259	263		302							{2: 'Eek?', 3: '264'}
+260	264		301							{2: 'Lillian', 3: 'Ah, well, I-I just got startled, you know, since I was just being chased a moment ago.', 4: '1'}
+261	265		302							{2: 'What exactly did you collaborate with Lithos on?', 3: '267'}
+262	266		204							{1: '1', 2: '16'}
+263	267		301							"{2: 'Lillian', 3: ""No, I... I'm innocent."", 4: '1'}"
+264	268		302							"{2: ""Confess and it'll be easier for you."", 3: '269', 4: 'Tell me the truth.', 5: '269'}"
+265	269		301							{2: 'Lillian', 3: 'Uh... well... that is...', 4: '1'}
+266	270		301							"{2: 'Lillian', 3: ""It's all Kurono's fault!"", 4: '1'}"
+267	271		204							{1: '1', 2: '11'}
+268	272		301							{2: 'Lillian', 3: 'They used Dark Aries as a threat, kidnapped Simon, and even wanted to kill him, demanding that I lure out Noan for a M.I.N.D. replica.', 4: '1'}
+269	273		302							{2: 'What, Simon too?', 3: '274'}
+270	274		301							"{2: 'Lillian', 3: ""But I didn't... I didn't agree to their demand!"", 4: '1'}"
+271	275		302							{2: 'Continue.', 3: '276'}
+272	276		301							"{2: 'Lillian', 3: ""And I thought I'd sneak in to rescue Simon... uh, I mean, Commandant Simon... but I accidentally fell into their trap."", 4: '1'}"
+273	277		302							"{2: ""Acting alone under these circumstances isn't rational."", 3: '278'}"
+274	278		302							{2: 'Why not seek help from the Purifying Force?', 3: '279'}
+275	279		301							{2: 'Lillian', 3: 'They threatened me... and, I do know Lithos, I was afraid it would come out.', 4: '1'}
+276	280		301							"{2: 'Lillian', 3: ""But I've chosen a different path from him, it's just because of our past that he can still find me..."", 4: '1'}"
+277	281		301							"{3: ""In tears, Lamia drew from her memories of Lillian's words, with half of her emotion stemming from genuine fear and the other half from acting.""}"
+278	282		204							{1: '1', 2: '16'}
+279	283		301							"{2: 'Lillian', 3: ""These years, I've been trying to escape this relationship, but it's always been used against me as blackmail... I never intended to harm Commandant Simon... not even a bit..."", 4: '1'}"
+280	284		201							{1: '1', 2: '500730', 3: '12'}
+281	285		301							"{1: '1', 2: 'Shorthalt', 3: ""That's why I find those who wouldn't draw the line so annoying."", 4: '1'}"
+282	286		302							{2: '(Continue questioning Lillian)', 3: '287', 4: '(Clarify how Lithos identifies with Shorthalt)', 5: '291'}
+283	287		201							{1: '1', 2: '500335', 3: '16'}
+284	288		301							{1: '1', 2: 'Lillian', 3: 'Commandant Simon has been rescued, right...? I received a message from Palma before I passed out.', 4: '1'}
+285	289		301							{3: 'She wipes away her tears, clutching the hem of her garment, her replies muffled and unclear.'}
+286	290	294	301							"{2: 'Lillian', 3: ""I'll explain the rest when we get back... who knows when Lithos might show up."", 4: '1'}"
+287	291		301							{3: 'Hearing your words, Shorthalt ponders with a complex expression for a moment.'}
+288	292		301							{2: 'Shorthalt', 3: 'Well... I thought that was how Lithos preferred to be identified, given the way he presents himself, though he only dresses as a woman in memory of someone dear.', 4: '1'}
+289	293	294	301							"{2: 'Shorthalt', 3: ""Even if he's an enemy, that's not where our conflict lies. It's not because he's a man that he's locked us up here."", 4: '1'}"
+290	294		201							{1: '1', 2: '500730', 3: '12'}
+291	295		301							{1: '1', 2: 'Shorthalt', 3: 'But why did he ask you to draw out Noan from Dark Aries?', 4: '1'}
+292	296		201							{1: '1', 2: '500335'}
+293	297		301							"{1: '1', 2: 'Lillian', 3: ""I heard it's to gather sufficiently stable M.I.N.D.s, which must be related to his plan."", 4: '1'}"
+294	298		302							{2: 'Indeed, he mentioned this to me as well.', 3: '299'}
+295	299		302							"{2: ""(Repeat Lithos' words to everyone)"", 3: '300'}"
+296	300		203							{1: '1', 2: '0.25', 3: '-400'}
+297	301		201							{1: '2', 2: '500730', 3: '12', 4: '400'}
+298	302		301							{1: '1', 2: 'Shorthalt', 3: 'Project Cthylla... This antique from the Golden Age is actually related to his pipe dream.', 4: '2'}
+299	303		301							{2: 'Lillian', 3: 'Project Cthylla?', 4: '1'}
+300	304		301							"{2: 'Shorthalt', 3: ""You don't know?"", 4: '2'}"
+301	305		301							"{2: 'Lillian', 3: ""Hmm... I've only heard a little about it from others."", 4: '1'}"
+302	306		301							{2: 'Shorthalt', 3: 'The project began with the digitization of minds at a time when people were obsessed with uploading mind data, with technology advancing rapidly in this area.', 4: '2'}
+303	307		301							"{2: 'Shorthalt', 3: ""Scientists weren't content with a digital world of nothingness. They wanted to provide a vessel for the mind data, achieving immortality for both body and mind."", 4: '2'}"
+304	308		301							{2: 'Lillian', 3: 'I know. This was the prototype of the current M.I.N.D. and Construct Tech...', 4: '1'}
+305	309		301							"{2: 'Shorthalt', 3: 'Correct. Project Cthylla predates Construct Tech, originating from ""mind digitization"" technology.', 4: '2'}"
+306	310		301							{2: 'Shorthalt', 3: 'Back then, Construct Tech was still in its infancy, and most subjects placed in frames struggled to maintain stable consciousness, resulting in gruesome outcomes.', 4: '2'}
+307	311		301							{2: 'Shorthalt', 3: 'A small group of scientists involved in the mind digitalization experiment branched out to embark on new explorations.', 4: '2'}
+308	312		301							{2: 'Shorthalt', 3: 'Can a person turned into mind data ever revert to a flesh-and-blood human?', 4: '2'}
+309	313		301							{2: 'Shorthalt', 3: 'Can mind data technology overcome fatal injuries and incurable diseases?', 4: '2'}
+310	314		301							{2: 'Shorthalt', 3: 'Or—can it grant humans immortality through rebirth?', 4: '2'}
+311	315		301							"{2: 'Shorthalt', 3: ""That's the goal of Project Cthylla, where scientists hoped to resurrect the dead in a Mother's womb through cloning and mind backups."", 4: '2'}"
+312	316		301							{2: 'Shorthalt', 3: 'In the end, it remained a theoretically feasible but practically impossible fairy tale, until now...', 4: '2'}
+313	317		302							{2: '...If it involves Ascendants.', 3: '318'}
+314	318		302							"{2: ""If it's about combining the M.I.N.D. with Hetero-Creatures..."", 3: '319'}"
+315	319		302							"{2: ""We've already seen many cases that nearly succeeded."", 3: '320'}"
+316	320		301							"{3: ""The disaster-bringing twins, the Hetero-Humanoid Chiko, Hetero-Sapiens, hosts... and the Red Tide Projections bearing the dead's memories.""}"
+317	321		301							{2: 'Shorthalt', 3: 'These Ascendants...', 4: '2'}
+318	322		401							{1: '2', 2: '1512'}
+319	323		301			RImgBg1Shake				"{3: 'Shorthalt slams the wall in anger, startling ""Lillian"" into a shiver.'}"
+320	324		204							{1: '1', 2: '19'}
+321	325		301							{2: 'Lillian', 3: '...', 4: '1'}
+322	326		301							{2: 'Shorthalt', 3: 'So, Lithos wants all those stable M.I.N.D.s to reshape those poor souls into monsters like the twins through Cthylla, huh?', 4: '2'}
+323	327		301							"{2: 'Shorthalt', 3: ""The arrival of that thing could trigger severe disasters. We can't afford to lose the hope that tower has finally brought us."", 4: '2'}"
+324	328		301							"{2: 'Lillian', 3: ""(...Is Lithos' plan really just that? Would creating beings like the twins be enough to pass through the Ascension-Network's filtering?)"", 4: '1'}"
+325	329		301							{3: 'You three sit in a dimly lit room, exchanging silent glances.'}
+326	330		301							{2: 'Shorthalt', 3: 'What should we do now?', 4: '2'}
+327	331		302							{2: 'We must stop Lithos at all costs.', 3: '332'}
+328	332		301							{2: 'Lillian', 3: 'I think... maybe... we should... try to escape first.', 4: '1'}
+329	333		302							"{2: ""You've seen the condition of this place."", 3: '334'}"
+330	334		302							{2: 'To escape, we must first stop Lithos.', 3: '335'}
+331	335		301							"{2: 'Shorthalt', 3: ""Exactly. Although Lithos himself isn't much of a fighter, this is his turf, and everything here serves him."", 4: '2'}"
+332	336		301							"{2: 'Lillian', 3: ""Doesn't that make him even harder to beat? I... We're all injured."", 4: '1'}"
+333	337		301							"{2: 'Shorthalt', 3: ""Don't worry, there are three of us. With a well-planned strategy and coordination, we can win."", 4: '2'}"
+334	338		301							"{2: 'Shorthalt', 3: ""But this battle will be tough. We'll pay a heavy price, and we won't be able to handle more fights after."", 4: '2'}"
+335	339		301							"{2: 'Shorthalt', 3: ""There's only one chance. Fail and we die."", 4: '2'}"
+336	340		302							"{2: 'Another thing, Lithos is also a ""beneficiary"" of mind duplication.', 3: '341'}"
+337	341		302							"{2: ""It's very likely that there are mind backups here."", 3: '342'}"
+338	342		301							{2: 'Shorthalt', 3: 'Right, almost forgot about that. That complicates things.', 4: '2'}
+339	343		301							{2: 'Shorthalt', 3: 'We only have one shot, but he can respawn.', 4: '2'}
+340	344		302							"{2: ""We need to destroy Lithos' mind backups first."", 3: '345'}"
+341	345		302							{2: 'Then we can kill Lithos for good.', 3: '346'}
+342	346		301							"{2: 'Lillian', 3: ""But where exactly are Lithos' mind backups?"", 4: '1'}"
+343	347		301							{3: 'You three fall into silence once again.'}
+344	348		301							"{2: 'Shorthalt', 3: ""I'm remembering something."", 4: '2'}"
+345	349		301							{3: 'Shorthalt extends his hand, outlining a rough map on the floor.'}
+346	350		301							"{2: 'Shorthalt', 3: ""There are some mechanisms hidden in the plaza with the carousel. I've seen Lithos sneak in there."", 4: '2'}"
+347	351		302							{2: 'Sneak in?', 3: '352'}
+348	352		301							"{2: 'Shorthalt', 3: ""Yes, he was constantly on alert while entering. I think it's worth investigating. That place is very important, at least to him."", 4: '2'}"
+349	353		302							{2: 'Have you been inside?', 3: '354'}
+350	354		301							"{2: 'Shorthalt', 3: ""Yes. I saw many Red Tide Projections and buildings there. It's hard to tell if they're real or not. It was like a corridor crafted from memories."", 4: '2'}"
+351	355		301							{2: 'Shorthalt', 3: 'As soon as I got there, my M.I.N.D. deviated, my head throbbed with pain, and hallucinations appeared.', 4: '2'}
+352	356		302							"{2: ""That indeed seems to be Lithos' most heavily defended spot."", 3: '357'}"
+353	357		302							"{2: ""Let's investigate there, now that we've established a M.I.N.D. connection."", 3: '358'}"
+354	358		301							"{2: 'Shorthalt', 3: ""Okay, but there's another problem."", 4: '2'}"
+355	359		301							"{2: 'Shorthalt', 3: ""The layout here is too complex. Every door leads to the unknown, like a virtual reality gaming center. If we're going, we must be prepared to get lost."", 4: '2'}"
+356	360		301							{2: 'Shorthalt', 3: 'Make sure to pack enough supplies. It will take us at least 20 hours to find that place.', 4: '2'}
+357	361		302							{2: '...Understood.', 3: '362'}
+358	362		302							{2: 'Lillian, you should also establish a M.I.N.D. connection with me.', 3: '363'}
+359	363		204							{1: '1', 2: '11'}
+360	364		301							"{2: 'Lillian', 3: ""...Wha... T-there's no need. I'm not quite comfortable with it."", 4: '1'}"
+361	365		301							{3: 'Lamia retreats in fear, worried that once the connection is established, the person in front of her will detect her real identity.'}
+362	366		302							{2: 'Not quite comfortable?', 3: '367'}
+363	367		301							"{2: 'Lillian', 3: ""Y-yeah. I'm just not used to connecting with an unfamiliar commandant."", 4: '1'}"
+364	368		301							"{2: 'Lillian', 3: ""If I really can't hold on, I'll call out for help. Let's not do this for now."", 4: '1'}"
+365	369		302							"{2: 'Alright.', 3: '370', 4: ""Be sure to let me know if you can't hold on."", 5: '370'}"
+366	370		204							{1: '1', 2: '19'}
+367	371		301							{2: 'Lillian', 3: 'Mm... Ok...', 4: '1'}
+368	372		301							"{2: 'Shorthalt', 3: ""Alright. Have we rested enough? Let's start looking for stuff. You'll need weapons, and your injuries need wound gel. It'd be good to search for serums and food as well."", 4: '2'}"
+369	373		302							{2: '...And my jacket.', 3: '374'}
+370	374		204							{1: '1'}
+371	375		301							{2: 'Lillian', 3: 'Your jacket?', 4: '1'}
+372	376		302							{2: 'Yeah, my jacket may have a terminal Lee left in it.', 3: '377'}
+373	377		301							{2: 'Shorthalt', 3: 'Is there any way to identify it?', 4: '2'}
+374	378		302							{2: 'It has the Gray Raven emblem.', 3: '379'}
+375	379		301							{2: 'Shorthalt', 3: 'Tch. Even the jacket of the commandant of an elite squad is customized and has the team emblem on it.', 4: '2'}
+376	380		301		1		AniZhuanchangBegin			"{2: 'Shorthalt', 3: ""Alright, let's get to work!"", 4: '2'}"

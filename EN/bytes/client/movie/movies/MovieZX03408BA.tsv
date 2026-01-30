@@ -1,0 +1,143 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: 'General Staff Conference Room, Babylonia.'}
+4	4		401							{1: '2', 2: '971'}
+5	5		201							{1: '1', 2: '500012'}
+6	6		301							{1: '1', 3: 'Nikola pushes open the door and asks his question directly.'}
+7	7		301							"{2: 'Nikola', 3: ""How's the situation?"", 4: '1'}"
+8	8		202							{1: '1', 6: '1'}
+9	9		201							{1: '1', 2: '500012', 4: '-400'}
+10	10		201							{1: '2', 2: '500575', 4: '400'}
+11	11		301							{1: '1', 2: 'Wells', 3: 'Damage was minimal. Lucia stopped operating after she cut off her energy core herself.', 4: '2'}
+12	12		301							{2: 'Nikola', 3: 'Who knows about this?', 4: '1'}
+13	13		301							{2: 'Wells', 3: '【kuroname】 was cautious, taking care of the injury alone and staying put instead of requesting help from other camps.', 4: '2'}
+14	14		301							"{2: 'Wells', 3: ""The report was uploaded to the General Staff's encrypted channel, which 【kuroname】 has never used before this."", 4: '2'}"
+15	15		301							{2: 'Wells', 3: 'I intercepted the report with my clearance because it seemed too conspicuous. Currently, this information is contained, at least on Babylonia.', 4: '2'}
+16	16		301							{2: 'Nikola', 3: 'It sounds like a secret signal 【kuroname】 purposefully sent to you.', 4: '1'}
+17	17		301							{2: 'Wells', 3: 'Perhaps. The Gray Raven Commandant is smart and knows full well what the effect of this action is.', 4: '2'}
+18	18		301							"{2: 'Nikola', 3: ""I'm not surprised by what 【kuroname】 did. You, however, surprised me, Wells."", 4: '1'}"
+19	19		301							{2: 'Nikola', 3: 'What made you break the rule to protect them?', 4: '1'}
+20	20		301							"{2: 'Wells', 3: ""I didn't break any rules. I always have prioritized access to crucial intel as the general."", 4: '2'}"
+21	21		301							{2: 'Wells', 3: '【kuroname】 is like a magnet for trouble. I just chose to handle it in a way that caused the least chaos.', 4: '2'}
+22	22		301							"{2: 'Wells', 3: ""We've been confronted by something new every second since the Hetero Tower. It is the General Staff's job to analyze the situation and come up with a conclusion."", 4: '2'}"
+23	23		301							{2: 'Wells', 3: 'Unprocessed information will only cause panic among the people.', 4: '2'}
+24	24		301							{2: 'Wells', 3: 'President Hassen or even you would have done the same if you were in my seat.', 4: '2'}
+25	25		301							"{2: 'Nikola', 3: ""Hmph. I'm just trying to remind you not to show favoritism just because you approve of a certain person or squad."", 4: '1'}"
+26	26		301							"{2: 'Nikola', 3: ""Both the General Staff and the military are responsible for Babylonia's front in this war. We must remain rational at all times."", 4: '1'}"
+27	27		301							{3: 'Hearing that, Wells reflexively reaches for the pocket in his jacket where a badge of silver hawk lies quietly.'}
+28	28		301							{2: 'Nikola', 3: 'What?', 4: '1'}
+29	29		301							"{2: 'Wells', 3: ""Nothing. You don't have to worry about what you said earlier. The General Staff's duty is to come up with a proper plan, and my personal feelings will not influence that."", 4: '2'}"
+30	30		301							{2: 'Wells', 3: 'That said, never treat our fighters as leverages we can trade away. They are not expendable.', 4: '2'}
+31	31		301							"{2: 'Wells', 3: ""That isn't rational, either. That is trading your humanity for ease."", 4: '2'}"
+32	32		301							{2: 'Wells', 3: 'A beast absent of humanity will become prey one day.', 4: '2'}
+33	33		301							{2: 'Nikola', 3: 'Are you still... Forget it.', 4: '1'}
+34	34		301							{3: 'Nikola turns silent before changing the subject.'}
+35	35		301							{2: 'Nikola', 3: 'How long before Hassen arrives?', 4: '1'}
+36	36		301							"{2: 'Wells', 3: ""I informed him already. The Parliament is further away from the General Staff, so he should be... No. He's arrived."", 4: '2'}"
+37	37		202							{1: '1', 2: '2', 6: '1'}
+38	38		401							{1: '2', 2: '971'}
+39	39		201							{1: '1', 2: '500011', 3: '9'}
+40	40		301							{1: '1', 3: 'The door opens once more, and Hassen enters the room, looking tired. His furrowed brows do nothing to hide the worries and stress he is feeling.'}
+41	41		301							{3: 'He nods at Nikola before turning toward Wells.'}
+42	42		301							"{2: 'Hassen', 3: ""I've learned about the general situation already. Any more detailed records?"", 4: '1'}"
+43	43		201							{1: '1', 2: '500575'}
+44	44		301							"{1: '1', 2: 'Wells', 3: ""The tactical terminal of 【kuroname】 recorded the whole process. It's all documented in the uploaded report."", 4: '1'}"
+45	45		401							{1: '2', 2: '897'}
+46	46		301							{3: 'Wells presses the play button, and shaky footage appears before the three of them.'}
+47	47		301				DialogDisable			{2: 'Wells', 3: 'Take a look first. This is why I called you both here.', 4: '1'}
+48	48		502							{1: 'AniZhuanchangBegin'}
+49	49		202							{1: '1', 6: '1'}
+50	50		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory318.png'}
+51	51		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+52	52		302			AniZhuanchangEnd				"{2: ""We didn't encounter any concentrated source before this."", 3: '53'}"
+53	53		302							"{2: ""We didn't come into contact with any Ascendant, either."", 3: '54'}"
+54	54		302							"{2: ""I'm requesting the Science Council's assistance."", 3: '55'}"
+55	55		302							"{2: ""That's all."", 3: '56'}"
+56	56		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+57	57		501						1500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+58	58		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+59	59		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+60	60		502							{1: 'DialogEnable'}
+61	61		301			AniZhuanchangEnd				{3: 'The brief footage ends after the summary.'}
+62	62		301							{3: 'The Gray Raven Captain Lucia was seemingly infected and wounded her commandant.'}
+63	63		301							{3: 'Either of these would have landed her on the high-priority list of the Purifying Force.'}
+64	64		301							{3: 'But given how sudden and strange this turn of events is, the decision-makers must not handle this hastily and ignore the real problem.'}
+65	65		201							{1: '1', 2: '500011', 3: '9', 4: '-400'}
+66	66		201							{1: '2', 2: '500575', 4: '400'}
+67	67		301							{1: '1', 2: 'Hassen', 3: 'Has anything similar happened to other Constructs before, Wells?', 4: '1'}
+68	68		301							"{2: 'Wells', 3: ""Sure, but only to Constructs carrying out special missions who couldn't retreat from a heavily infected area in time."", 4: '2'}"
+69	69		301							{2: 'Wells', 3: 'According to the location data of 【kuroname】, Gray Raven was near the edge of the Clean Zone, where the concentration level of Punishing Virus is extremely low, making this highly improbable.', 4: '2'}
+70	70		301							"{2: 'Wells', 3: ""The other possibility is a case like Noan, who has found a way to control it. The report of 【kuroname】 doesn't show any trace of Ascendants near Lucia."", 4: '2'}"
+71	71		301							{2: 'Wells', 3: 'Now, whether or not the Mind Beacon of 【kuroname】 is corrupted...', 4: '2'}
+72	72		301							{3: 'Remembering the people who are still under treatment, Hassen shakes his head.'}
+73	73		301							{2: 'Hassen', 3: '【kuroname】 was one of the earliest people who left the hospital. Given the history of 【kuroname】, they did twice the checkups on this commandant.', 4: '1'}
+74	74		301							"{2: 'Hassen', 3: ""And Lucia was the one who showed signs of infection first. It's highly unlikely that the Mind Beacon of 【kuroname】 was infected in the first place."", 4: '1'}"
+75	75		301							{2: 'Wells', 3: 'I agree.', 4: '2'}
+76	76		202							{1: '2', 6: '1'}
+77	77		201							{1: '2', 2: '500012', 4: '400'}
+78	78		301							"{1: '1', 2: 'Nikola', 3: ""None of us are surgeons of Constructs from Star of Life or experts of the M.I.N.D. from the Science Council. We won't find the truth just by talking among ourselves."", 4: '2'}"
+79	79		301							{2: 'Hassen', 3: 'Still, we need a hypothesis based on facts before we decide how to proceed.', 4: '1'}
+80	80		301							"{2: 'Nikola', 3: ""I'll cut to the chase, then. Let's assume Lucia's M.I.N.D. was the source of the problem."", 4: '2'}"
+81	81		301							{2: 'Hassen', 3: 'What makes you so certain? Your instinct?', 4: '1'}
+82	82		301							"{2: 'Nikola', 3: ""【kuroname】 might be an excellent commandant, but there's nothing special or strange about 【kuroname】."", 4: '2'}"
+83	83		301							"{2: 'Nikola', 3: ""Meanwhile, Lucia... Hmph. Don't forget that her M.I.N.D. has always been an uncertainty."", 4: '2'}"
+84	84		301							{2: 'Hassen', 3: 'The M.I.N.D. backup...', 4: '1'}
+85	85		301							{2: 'Nikola', 3: 'She might be our most successful attempt, but she is also our only successful attempt.', 4: '2'}
+86	86		301							"{2: 'Nikola', 3: ""Of course, it's possible that Ascendants or Hetero-Creatures suddenly obtain the ability to corrupt Constructs from an incredible distance."", 4: '2'}"
+87	87		301							"{2: 'Nikola', 3: ""But if that's true, we won't have to bother with the reclamation of Earth."", 4: '2'}"
+88	88		301							{2: 'Nikola', 3: 'Donning the first specialized frame, being the only success of the M.I.N.D. backup procedure, diving into the Deep M.I.N.D. of an Ascendant...', 4: '2'}
+89	89		301							{2: 'Nikola', 3: 'Gray Raven is special, and Lucia most of all.', 4: '2'}
+90	90		202							{1: '1', 2: '2', 6: '1'}
+91	91		201							{1: '1', 2: '500575'}
+92	92		301							"{1: '1', 2: 'Wells', 3: ""You're not mentioning all these just to form a basis for discussion, are you, Nikola?"", 4: '1'}"
+93	93		202							{1: '1', 6: '1'}
+94	94		201							{1: '1', 2: '500011', 3: '9', 4: '-400'}
+95	95		201							{1: '2', 2: '500012', 4: '400'}
+96	96		301							"{1: '1', 2: 'Nikola', 3: ""I'm not. I suggest recalling Gray Raven and sending 【kuroname】 to the military for supervision and questioning."", 4: '2'}"
+97	97		301							"{2: 'Hassen', 3: 'You want to put 【kuroname】 in the military\'s care so that Kurono can\'t imprison the commandant in the name of ""observation"" again?', 4: '1'}"
+98	98		301							{2: 'Hassen', 3: 'You must have eliminated many uncontrollable factors if you can make a guarantee like that.', 4: '1'}
+99	99		301							"{2: 'Nikola', 3: ""What I did is no different from what you've been doing lately. I just started earlier."", 4: '2'}"
+100	100		301							"{2: 'Nikola', 3: ""They have seen through this facade of our opposition already, so there's no reason to keep it up. Kurono might have a powerful presence in the military, but I was sitting idly by and doing nothing."", 4: '2'}"
+101	101		301							{2: 'Nikola', 3: 'Their tentacles can no longer reach as far as they once did.', 4: '2'}
+102	102		301							{3: 'Nikola says nonchalantly.'}
+103	103		301							{2: 'Hassen', 3: 'What are you planning to do to Lucia?', 4: '1'}
+104	104		301							"{2: 'Nikola', 3: ""I can make as many excuses as needed if the Science Council can fix what's happening to her."", 4: '2'}"
+105	105		301							{2: 'Nikola', 3: 'The people who participated in that M.I.N.D. operation are in the same boat as us.', 4: '2'}
+106	106		301							"{2: 'Nikola', 3: ""However, if the Science Council can't do anything about her condition..."", 4: '2'}"
+107	107		301							{3: 'Nikola falls silent briefly as blood-soaked memories flash in his mind. In the end, the steel-like coldness triumphs.'}
+108	108		301							"{2: 'Nikola', 3: ""Extermination. Let her fade from view as a hero. Under no circumstances can she fall into Kurono's hands."", 4: '2'}"
+109	109		301							{3: 'Nikola utters those cruel words without hesitation.'}
+110	110		301							{2: 'Hassen', 3: 'The impact on the morale of the military and the people is too great, whether we claim that she has retired or died on the battlefield.', 4: '1'}
+111	111		301							"{2: 'Hassen', 3: 'Everything involving her affects how much the people trust us since we crowned her our ""hero.""', 4: '1'}"
+112	112		301							"{2: 'Nikola', 3: ""That's the worst-case scenario, obviously. But we are the people who have to prepare for worst-case scenarios."", 4: '2'}"
+113	113		301							{2: 'Nikola', 3: 'If it happens, we have to find a way to survive the storm with the least damage taken.', 4: '2'}
+114	114		301							"{2: 'Hassen', 3: ""It will only drive our fighters into despair. If even Gray Raven can't live to see victory, what can we promise them?"", 4: '1'}"
+115	115		301							{2: 'Nikola', 3: 'Even at the risk of her becoming an Ascendant and defecting?', 4: '2'}
+116	116		301							"{2: 'Nikola', 3: ""We can plant a new flag if it's fallen, but if our enemies get ahold of it, the nature of the situation will be completely changed."", 4: '2'}"
+117	117		301							"{2: 'Hassen', 3: ""We still need this flag to maintain the Parliament's credibility. Otherwise, none of us can hold onto our posts before an anxious crowd."", 4: '1'}"
+118	118		301							{2: 'Hassen', 3: 'There are some things we can only accomplish in our current positions. We have to preserve this flag no matter what.', 4: '1'}
+119	119		301							"{2: 'Nikola', 3: ""The military also has a line we can't cross. I must do everything I can to minimize the risk above that line."", 4: '2'}"
+120	120		301							"{2: 'Nikola', 3: ""This dam hasn't already cracked from the mutiny. I can't risk total disorder for one elite squad."", 4: '2'}"
+121	121		301							"{2: 'Nikola', 3: ""Not to mention that Kurono won't let go of this window of opportunity regardless of whatever personal feelings we have."", 4: '2'}"
+122	122		301							{2: 'Nikola', 3: 'They are bloodthirsty sharks, and a single drop of blood will catch their attention.', 4: '2'}
+123	123		301							"{2: 'Nikola', 3: ""If Lucia's infection cannot be reverted, keeping her is just giving Kurono more ammo."", 4: '2'}"
+124	124		301							"{2: 'Nikola', 3: ""We're both trying to find each other's weaknesses, and you're willing to offer them a knife?"", 4: '2'}"
+125	125		202							{1: '1', 2: '2', 6: '1'}
+126	126		201							{1: '1', 2: '500575'}
+127	127		301							{1: '1', 3: 'Seeing how tense the situation is, Wells interferes.'}
+128	128		301							"{2: 'Wells', 3: ""You can argue all you want, but we have to make our decision based on the Science Council's analysis of Lucia."", 4: '1'}"
+129	129		301							{2: 'Wells', 3: 'How do you plan to do that? Do you want to bring Lucia and 【kuroname】 back to Babylonia?', 4: '1'}
+130	130		202							{1: '1', 6: '1'}
+131	131		201							{1: '1', 2: '500011', 3: '9', 4: '-400'}
+132	132		201							{1: '2', 2: '500012', 4: '400'}
+133	133		301							{1: '1', 2: 'Hassen', 3: 'No. That will tip off Kurono immediately.', 4: '1'}
+134	134		301							"{2: 'Nikola', 3: ""We'll let the Science Council perform a remote examination on the transport craft."", 4: '2'}"
+135	135		301							"{2: 'Hassen', 3: ""You're willing to do something this convoluted? Will the Science Council even agree to it?"", 4: '1'}"
+136	136		301							{2: 'Nikola', 3: 'This has always concerned more than just the military. The Science Council has the responsibility to deal with the aftermath. We are all in the same boat.', 4: '2'}
+137	137		202							{1: '2', 6: '1'}
+138	138		201							{1: '2', 2: '500575', 4: '400'}
+139	139		301							"{1: '1', 2: 'Wells', 3: ""Don't count me in. I didn't know back then."", 4: '2'}"
+140	140		204							{1: '1'}
+141	141		301							"{2: 'Hassen', 3: ""You can't be excusing yourself at this point, right, General?"", 4: '1'}"
+142	142		301		1		AniZhuanchangBegin			{2: 'Wells', 3: 'Of course not. General Staff will do our best to minimize the impact.', 4: '2'}

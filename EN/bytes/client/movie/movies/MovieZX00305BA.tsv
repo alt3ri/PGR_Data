@@ -1,0 +1,11 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory.png'}
+2	100		401							{1: '1', 2: '201'}
+3	2		201							{1: '1', 2: '1011001', 4: '-400'}
+4	3		201							{1: '2', 2: '1081001', 4: '400'}
+5	4		301			DialogEnable				{1: '1', 2: 'Lee', 3: 'You still plan on following us?', 4: '1'}
+6	5		301							{2: 'Kamui', 3: 'Of course! Gotta clean up my own mess!', 4: '2'}
+7	6		204							{1: '1', 2: '10'}
+8	7		301							"{2: 'Lee', 3: ""Just, don't cause any unnecessary troubles."", 4: '1'}"
+9	8		301							"{2: 'Kamui', 3: ""Man, are you blunt or blunt? I think I'm beginning to dislike you."", 4: '2'}"
+10	9		301		1		AniZhuanchangBegin			{2: 'Lee', 3: 'Go ahead.', 4: '1'}

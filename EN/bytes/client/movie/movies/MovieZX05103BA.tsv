@@ -1,0 +1,327 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1079.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: 'People are gathered around the camp, relaxing after work.'}
+4	4		201							{1: '1', 2: '500895'}
+5	5		301							{1: '1', 3: 'A middle-aged man stands by the vehicle, counting supplies and writing them down.'}
+6	6		301							{2: 'Refugee 1', 3: 'Have you finished counting everything... yet?', 4: '1'}
+7	7		301							{2: 'Refugee 1', 3: 'What are you doing? If you want to eat, just eat.', 4: '1'}
+8	8		202							{1: '1', 6: '1'}
+9	9		201							{1: '1', 2: '500895', 4: '400'}
+10	10		201							{1: '2', 2: '500434', 4: '-400', 5: '-100'}
+11	11		301							{1: '1', 3: 'A young man squats on the ground, holding a few fruits and turning them over. He licks his lips, then puts them back.'}
+12	12		301							"{2: 'Refugee 2', 3: ""No thanks, I'll wait for the rations."", 4: '2'}"
+13	13		301							"{2: 'Refugee 1', 3: ""We found these food, so we deserve a little something. Take one, and I won't count it in."", 4: '1'}"
+14	14		203							{1: '1', 2: '0.3', 3: '400', 4: '-100'}
+15	15		301							"{3: ""He crouches down, grabs the young man's arm, and puts the fruit back in his hands.""}"
+16	16		301							"{2: 'Refugee 1', 3: ""Things are way better now. At least we have a camp and don't have to wander anymore."", 4: '1'}"
+17	17		301							"{2: 'Refugee 1', 3: ""Go ahead and eat. Don't be shy—winter's almost over."", 4: '1'}"
+18	18		301							{2: 'Refugee 2', 3: 'But I still feel like...', 4: '2'}
+19	19		202							{1: '1', 2: '2', 6: '1'}
+20	20		201							{1: '1', 2: '501036', 3: '5'}
+21	21		301							"{1: '1', 2: 'Vanessa', 3: ""Stop worrying. He's right—don't be shy."", 4: '1'}"
+22	22		401							{1: '2', 2: '9342045'}
+23	23		201							{1: '1', 2: '500895', 4: '400', 5: '-100'}
+24	24		201							{1: '2', 2: '500434', 4: '-400', 5: '-100'}
+25	25		203							{1: '1', 2: '0.15', 3: '400'}
+26	26		203							{1: '2', 2: '0.15', 3: '-400'}
+27	27		301							{1: '1', 3: 'A cold voice comes from behind, startling the two. They turn around only to find three people appear out of nowhere.'}
+28	28		301							{2: 'Refugee 1', 3: 'Lady Vanessa!', 4: '1'}
+29	29		301							{2: 'Refugee 2', 3: 'L... Lady Vanessa.', 4: '2'}
+30	30		202							{1: '1', 2: '2', 6: '1'}
+31	31		201							{1: '1', 2: '501036', 3: '5'}
+32	32		301							"{1: '1', 2: 'Vanessa', 3: ""I'm borrowing the vehicle. Tell the logistics guy later."", 4: '1'}"
+33	33		202							{1: '1'}
+34	34		401							{1: '2', 2: '4230'}
+35	35		301							{3: 'With that, they get in the vehicle.'}
+36	36		301							{3: 'The engine roars, and the vehicle shakes. Before they know it, something dark flies from the window at the young man.'}
+37	37		201							{1: '18', 2: '501036', 3: '5', 4: '175', 5: '-100', 6: '-200'}
+38	38		301							"{1: '1', 2: 'Vanessa', 3: ""Eat well, sleep well, and do your job. Don't be pretentious, and don't act like someone who worries about unnecessary things."", 4: '18'}"
+39	39		301							"{2: 'Vanessa', 3: ""No need to worry about something you shouldn't."", 4: '18'}"
+40	40		202							{1: '18', 6: '1'}
+41	41		201							{1: '1', 2: '500434'}
+42	42		301							{1: '1', 2: 'Refugee 2', 3: 'O-okay... thank you, Lady Vanessa!', 4: '1'}
+43	43		202							{1: '1'}
+44	44		401							{1: '2', 2: '4662'}
+45	45		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+46	46		301				AniZhuanchangBegin			"{3: ""The young man catches what Vanessa throws. By the time he looks up to thank her, the vehicle's gone, leaving only dust.""}"
+47	47		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+48	48		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1105.jpg'}
+49	49		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+50	50		301			AniZhuanchangEnd				"{3: ""Outside the camp, at the buffer zone's edge, the Red Tide—which should be far away—is surging, encircling the undulating mountain ridges.""}"
+51	51		401							{1: '2', 2: '1503'}
+52	52		401							{1: '2', 2: '4535'}
+53	53		401							{1: '2', 2: '759'}
+54	54		301			RImgBg1Shake				{3: 'The ground shakes, and the trees sway. A little bird loses its footing and falls into the Red Tide.'}
+55	55		201							{1: '1', 2: '500333'}
+56	56		301							{1: '1', 2: 'Ishmael', 3: 'Poor thing...', 4: '1'}
+57	57		301							"{3: ""Something lifts the bird and puts it in the pink-haired woman's hands.""}"
+58	58		301							"{2: 'Ishmael', 3: ""Things changed too fast. You weren't ready either, were you?"", 4: '1'}"
+59	59		301							"{3: ""Ishmael gently tends to the bird's wings, but her eyes drift to something nearby.""}"
+60	60		202							{1: '1', 6: '1'}
+61	61		201							{1: '1', 2: '501034', 7: '1'}
+62	62		205							{1: '1', 3: '0', 4: '0.7', 5: '0.5'}
+63	63		301							{1: '1', 3: 'A white-haired girl, eyes closed, flickers in and out of view in the Red Tide...', 4: '1'}
+64	64		301							{2: 'Chaos', 3: '...', 4: '1'}
+65	65		301							"{3: ""Swirling snowflakes pass through the girl's body as if it were nothing but a shell. Chaos's legs, submerged in the Red Tide, are gradually disappearing."", 4: '1'}"
+66	66		301							"{3: ""Looks like this nice doll's about to vanish into the gray and red world."", 4: '1'}"
+67	67		202							{1: '1', 6: '1'}
+68	68		201							{1: '1', 2: '500333'}
+69	69		301							{1: '1', 2: 'Ishmael', 3: 'How pathetic...', 4: '1'}
+70	70		301							"{2: 'Ishmael', 3: ""Finally getting a chance to come back, but something's getting in the way... Huh?"", 4: '1'}"
+71	71		401							{1: '2', 2: '759'}
+72	72		301							{3: 'As if hearing something, Ishmael turns around, and the bird in her hand takes the chance to free itself and fly into the snow.'}
+73	73		301							"{2: 'Ishmael', 3: ""So it's started."", 4: '1'}"
+74	74		401							{1: '2', 2: '4112'}
+75	75		301							{3: 'She extends her slender fingertips into the void, and a book quietly materializes, its pages slowly turning.'}
+76	76		301							"{3: ""In the book's projection, an off-road vehicle's parked by an outpost.""}"
+77	77		301				AniZhuanchangBegin			"{2: 'Ishmael', 3: ""I hope... you'll bring more possibilities to the story."", 4: '1'}"
+78	78		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+79	79		202							{1: '1', 6: '1'}
+80	80		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory584.jpg'}
+81	81		301			AniZhuanchangEnd				"{3: ""When they arrive, Discord takes them to the watchtower's duty room, turning on the equipment and explaining her report.""}"
+82	82		201							{1: '1', 2: '501036', 3: '4', 4: '400'}
+83	83		201							{1: '2', 2: '500627', 4: '-400'}
+84	84		301							"{1: '1', 2: 'Vanessa', 3: ""How's the Red Tide looking?"", 4: '1'}"
+85	85		301							{2: 'Discord', 3: 'When I left, Marker Six was gone, and the tide was about a kilometer from Marker Five...', 4: '2'}
+86	86		301							"{3: ""The duty room's only screen—a patchwork of parts of various models—slowly lights up, showing that most of the grid-divided surveillance feeds are down.""}"
+87	87		301							{3: 'The working feeds show a creepy scene—snowflakes melting into the tide, turning into a horrifying red expanse.'}
+88	88		301							{3: 'Seeing your stunned faces, Discord quickly corrects herself.'}
+89	89		301							"{2: 'Discord', 3: ""Now, it's about a kilometer from Marker Four now."", 4: '2'}"
+90	90		301							"{2: 'Vanessa', 3: ""It's moving that fast?"", 4: '1'}"
+91	91		301							"{2: 'Discord', 3: ""Can't say. We're stretched thin—this many markers are all we can handle."", 4: '2'}"
+92	92		301							"{2: 'Discord', 3: ""Also, for some reason, the filters aren't protecting us from the Hetero-Creatures anymore. They're even attacking the filters that they used to avoid at all costs."", 4: '2'}"
+93	93		301							{2: 'Vanessa', 3: '...', 4: '1'}
+94	94		301							{2: 'Discord', 3: 'The only good news is we got the Central Purification Filter core for Marker Three back.', 4: '2'}
+95	95		301							{2: 'Vanessa', 3: 'Tsk...', 4: '1'}
+96	96		301							{3: 'The small room feels tense. Vanessa makes a quick decision.'}
+97	97		301							"{2: 'Vanessa', 3: ""Discord, take 【kuroname】 back to camp. Tell Rosa what's happening and get them ready to move."", 4: '1'}"
+98	98		301							{2: 'Discord', 3: 'Yes, Madam!', 4: '2'}
+99	99		301							{2: 'Discord', 3: 'What about you?', 4: '2'}
+100	100		301							"{2: 'Vanessa', 3: ""Something's causing the Red Tide to surge. I need samples."", 4: '1'}"
+101	101		301							"{2: 'Vanessa', 3: ""We won't be safe anywhere if we don't know what's going on."", 4: '1'}"
+102	102		301							{3: 'Vanessa explains while shutting down and taking apart the equipment.'}
+103	103		301							"{2: 'Vanessa', 3: ""Take this too. We're running low on supplies."", 4: '1'}"
+104	104		301							{2: 'Discord', 3: '...Okay.', 4: '2'}
+105	105		203							{1: '2', 2: '0.25', 3: '-800'}
+106	106		202							{1: '2'}
+107	107		301							{3: 'Discord leaves, carrying a monitor and tangled cables in her arms.'}
+108	108		203							{1: '1', 2: '0.25'}
+109	109		301							{2: 'Vanessa', 3: 'Was I unclear?', 4: '1'}
+110	110		302							"{2: ""It just doesn't make sense to me."", 3: '111'}"
+111	111		301							"{2: 'Vanessa', 3: ""Everyone needs to do their job. I'm stronger than Discord here, so I'll take the risk."", 4: '1'}"
+112	112		301				DialogDisable			"{2: 'Vanessa', 3: ""Have you already forgotten what I said? Stop worrying. This isn't your business."", 4: '1'}"
+113	113		302							"{2: ""The Red Tide's surging. It's definitely stronger."", 3: '114'}"
+114	114		302							{2: 'Can your M.I.N.D. shield keep us completely safe?', 3: '115'}
+115	115		301			DialogEnable	DialogDisable			{2: 'Vanessa', 3: '...', 4: '1'}
+116	116		302							"{2: ""Yeah, the rest isn't my problem."", 3: '117'}"
+117	117		302							"{2: ""But keeping your M.I.N.D. stable isn't your problem either."", 3: '118'}"
+118	118		401							{1: '2', 2: '1515'}
+119	119		301			DialogEnable				{3: 'With that, you start a M.I.N.D. link with the Construct in front of you.'}
+120	120		302							"{2: ""In this operation, I'm the commandant."", 3: '121'}"
+121	121		301							{3: 'Vanesa wants to say something but halts. Eventually, she taps her earpiece.'}
+122	122		401							{1: '2', 2: '4226'}
+123	123		301							{3: 'Soon, engine sounds come from under the watchtower.'}
+124	124		301							{2: 'Vanessa', 3: 'Happy now? Commandant.', 4: '1'}
+125	125		302				AniZhuanchangBegin			"{2: ""Let's move out."", 3: '126'}"
+126	126		202							{1: '1', 6: '1'}
+127	127		401							{1: '1', 2: '36'}
+128	128		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory743.jpg'}
+129	129		401							{1: '1', 2: '5071'}
+130	130		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+131	131		301			AniZhuanchangEnd				{3: 'Twenty minutes later, near Marker #4.'}
+132	132		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+133	133		201							{1: '1', 2: '501037'}
+134	134		401							{1: '2', 2: '844006'}
+135	135		203							{1: '1', 2: '0.15', 3: '300'}
+136	136		301							{1: '1', 2: 'Vanessa', 3: 'Tsk.', 4: '1'}
+137	137		301							{3: 'Barely dodging the attack of a Herero-Creature, Vanessa keeps backing away as vital fluid trickles down her wounds all over her body.'}
+138	138		301							{2: 'Vanessa', 3: 'Just a few Hetero-Creatures...', 4: '1'}
+139	139		301							"{2: 'Vanessa', 3: ""The Red Tide's getting stronger, and these vermin are getting bolder..."", 4: '1'}"
+140	140		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+141	141		401							{1: '2', 2: '819004'}
+142	142		201							{1: '2', 2: '500928', 4: '-800'}
+143	143		203							{1: '2', 2: '0.15', 3: '-300'}
+144	144		301							{1: '1', 3: 'Vanessa winces in pain as she raises her knife to block a Hetero-Creature attacking from the side.'}
+145	145		203						100.0	{1: '1', 2: '0.15'}
+146	146		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 3: '2'}
+147	147		203							{1: '2', 2: '0.15', 3: '-800'}
+148	148		202							{1: '2'}
+149	149		401							{1: '2', 2: '4806'}
+150	150		301				DialogDisable			"{2: 'Vanessa', 3: ""The air's so thick with the Punishing Virus it's practically dripping. If this keeps up..."", 4: '1'}"
+151	151		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 4: '2'}
+152	152		401							{1: '2', 2: '1105'}
+153	153		307							{1: 'M.I.N.D. Deviation: 31.7%, 43.9%...', 3: '60', 4: 'ff4e4eff'}
+154	154		301							{3: 'M.I.N.D. Deviation: 31.7%, 43.9%...'}
+155	155		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+156	156		401							{1: '2', 2: '9389034'}
+157	157		307							{2: '1'}
+158	158		302							{2: 'Vanessa!', 3: '159'}
+159	159		301			DialogEnable				{2: 'Vanessa', 3: 'Shut it!', 4: '1'}
+160	160		202							{1: '1', 6: '1'}
+161	161		201							{1: '2', 2: '500928', 4: '-1000'}
+162	162		201							{1: '3', 2: '500928', 4: '1000'}
+163	163		203							{1: '2', 2: '0.15', 3: '-600'}
+164	164		203							{1: '3', 2: '0.15', 3: '600'}
+165	165		401						500.0	{1: '2', 2: '9342045'}
+166	166		201							{1: '1', 2: '500928'}
+167	167		203							{1: '1', 2: '0.15', 5: '-80'}
+168	168		401							{1: '2', 2: '844090'}
+169	169		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+170	170		301				DialogDisable			"{1: '1', 3: ""The Hetero-Creature's form multiplies into overlapping afterimages in her visual module, with one image after another relentlessly rushing toward her.""}"
+171	171		302							{2: 'Vanessa, get back!', 3: '172'}
+172	172		302							{2: '(Open fire)', 3: '173'}
+173	173		401							{1: '2', 2: '1510'}
+174	174		401							{1: '2', 2: '4808'}
+175	175		301			DialogEnable				{3: 'The feeble bullets barely scratch the creatures, just feeding them in an instant.'}
+176	176		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+177	177		201							{1: '1', 2: '500902'}
+178	178		401							{1: '2', 2: '2974'}
+179	179		301			RImgBg1Shake				{1: '1', 2: 'Hetero-Creature', 3: 'Squeak!', 4: '1'}
+180	180		301							{3: 'A piercing scream suddenly heads your way.'}
+181	181		201							{1: '2', 2: '501037', 4: '800'}
+182	182		203						100.0	{1: '2', 2: '0.15', 3: '300'}
+183	183		203							{1: '1', 2: '0.15', 3: '-400'}
+184	184		401							{1: '2', 2: '819004'}
+185	185		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+186	186		301							{1: '1', 2: 'Vanessa', 3: 'Get back—', 4: '2'}
+187	187		301				DialogDisable			"{3: ""Vanessa wipes the blood from her visual module, firing as she blocks the creature's claws behind her.""}"
+188	188		401							{1: '2', 2: '1105'}
+189	189		307							{1: 'Infection Critical Warning', 3: '60', 4: 'ff4e4eff'}
+190	190		301							{3: 'Infection Critical Warning'}
+191	191		307							{2: '1'}
+192	192		401							{1: '2', 2: '4807'}
+193	193		502							{1: 'RImgBg1Shake'}
+194	194		301			DialogEnable	DialogDisable			{3: 'The monster opens its bloody jaws.'}
+195	195		401							{1: '2', 2: '4772'}
+196	196		307							{1: 'Deep M.I.N.D. connection established, maximizing Mind Beacon output power', 3: '60'}
+197	197		301							{3: 'Deep M.I.N.D. connection established, maximizing Mind Beacon output power'}
+198	198		307							{2: '1'}
+199	199		301			DialogEnable				{2: 'Vanessa', 3: 'Get away from me!', 4: '2'}
+200	200		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 3: '1'}
+201	201		401							{1: '2', 2: '13071102'}
+202	202		502						800.0	{1: 'PanelActor1Shake'}
+203	203		401							{1: '2', 2: '4306'}
+204	204		505							{1: 'PanelActor1Shake'}
+205	205		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 4: '1'}
+206	206		203							{1: '1', 2: '0.15', 3: '-400', 4: '-500'}
+207	207		202							{1: '1'}
+208	208		301							{3: 'The blood mist in her M.I.N.D. clears, and she quickly slashes the creature.'}
+209	209		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+210	210		203							{1: '2', 2: '0.15'}
+211	211		301							{3: 'After killing several, the rest retreat into the Red Tide.'}
+212	212		301							{2: 'Vanessa', 3: 'Phew... finally got them.', 4: '2'}
+213	213		301							"{2: 'Vanessa', 3: ""Hey, if I knew the Deep M.I.N.D. connection helped this much, why didn't we do it sooner?"", 4: '2'}"
+214	214		301							{3: 'She turns to complain, then her eyes widen—'}
+215	215		301				AniZhuanchangBegin			{3: 'You have passed out behind her, slumping down behind the rocks.'}
+216	216		202							{1: '2', 6: '1'}
+217	217		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+218	218		301			AniZhuanchangEnd				{3: 'Your mind goes fuzzy as something cold injects into your body...'}
+219	219		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory739.jpg'}
+220	220		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+221	221		201							{1: '1', 2: '501037'}
+222	222		302			AniZhuanchangEnd				{2: 'Ugh...', 3: '223'}
+223	223		301							"{2: 'Vanessa', 3: ""You're awake?"", 4: '1'}"
+224	224		301							{3: 'Vanessa puts away the syringe.'}
+225	225		302							{2: 'Yeah...', 3: '226', 4: 'Cough.', 5: '226'}
+226	226		301							{2: 'Vanessa', 3: 'You better not die, or this undiluted rare serum will be wasted.', 4: '1'}
+227	227		301							{3: 'She grabs water out of her bag and holds it to your lips.'}
+228	228		302							{2: '(Drink water)', 3: '229', 4: '(Take the cup)', 5: '229'}
+229	229		301							{3: 'The water helps clear your head.'}
+230	230		302							"{2: ""The Punishing Virus concentration's up..."", 3: '231'}"
+231	231		301							{2: 'Vanessa', 3: 'And more than that.', 4: '1'}
+232	232		301							{3: 'She looks at your shabby combat suit.'}
+233	233		301							"{2: 'Vanessa', 3: ""This crap can't protect you from the Punishing Virus anymore... At the very least, it's useless against the Mutated Red Tide now."", 4: '1'}"
+234	234		301							"{2: 'Vanessa', 3: ""The Punishing Virus concentration's up, and your suit can't handle this Mutated Red Tide. Even the diluted serums I gave you didn't help much."", 4: '1'}"
+235	235		301							{2: 'Vanessa', 3: 'Luckily, we kept some undiluted doses for patrols, or else...', 4: '1'}
+236	236		301							{3: 'Vanessa just grunts and says nothing.'}
+237	237		302							"{2: ""How's everything looking?"", 3: '238', 4: '(Look around)', 5: '240'}"
+238	238		301							{2: 'Vanessa', 3: 'Stable decline in progress.', 4: '1'}
+239	239	241	301							"{2: 'Vanessa', 3: ""I got the Red Tide samples from the center, but we're still stuck in this contaminated forest with no way to move."", 4: '1'}"
+240	240		301							{3: 'The two of you are stuck in the Red Tide-contaminated forest, in dead silence.'}
+241	241		301							"{2: 'Vanessa', 3: ""Feeling better? We need to go. Your suit can't endure another attack."", 4: '1'}"
+242	242		302							{2: 'Yeah.', 3: '243', 4: 'Of course.', 5: '243'}
+243	243		202							{1: '1'}
+244	244		301							{3: 'Slowly, you get up and check if you can walk normally before heading back the way you came while avoiding the Mutated Red Tide.'}
+245	245		201							{1: '1', 2: '501037'}
+246	246		301							{1: '1', 3: 'As Rosa requested, Vanessa takes Red Tide samples from two more places. Strangely, she falls into silence, holding the translucent container.'}
+247	247		302							"{2: ""What's wrong?"", 3: '248'}"
+248	248		301							"{2: 'Vanessa', 3: ""We're pretty far from the center... but the Punishing Virus concentration's still the same."", 4: '1'}"
+249	249		301							{3: 'A few words are enough to tell the dire situation.'}
+250	250		202							{1: '1'}
+251	251		301							{3: 'She turns around silently, the translucent sampler in her hand revealing a terrifying sight.'}
+252	252		301							{3: 'The crimson liquid is eating the white buffer, turning it into food.'}
+253	253		302							{2: '...', 3: '254'}
+254	254		401							{1: '2', 2: '5158'}
+255	255		301			RImgBg1Shake	DialogDisable			"{3: ""The red water shivers, as if it's reacting to something...""}"
+256	256		402							{1: '5158'}
+257	257		302							{2: 'Ugh...'}
+258	258		401							{1: '2', 2: '4919'}
+259	259		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '0', 4: '0.7', 5: '1'}
+260	260		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '0.7', 4: '0', 5: '1'}
+261	261		301			DialogEnable				{3: 'The red water suddenly shoots up, then disappears abruptly before Vanessa can react.'}
+262	262		401							{1: '2', 2: '4411'}
+263	263		201							{1: '1', 2: '501033', 4: '-50', 7: '1'}
+264	264		201							{1: '2', 2: '501092', 4: '50', 5: '-200', 6: '80', 7: '1'}
+265	265		205							{1: '1', 3: '0', 4: '1', 5: '0.5'}
+266	266		205							{1: '2', 3: '0', 4: '0', 5: '0'}
+267	267		301							{1: '1', 2: 'Chaos', 3: '...', 4: '1', 5: '2'}
+268	268		301							{3: 'The waters slowly part, revealing a pale doll-like figure standing within the tide.', 4: '1', 5: '2'}
+269	269		302							{2: 'Chaos?', 3: '270'}
+270	270		205							{1: '1', 3: '1', 4: '0.8', 5: '0.5'}
+271	271		205							{1: '2', 3: '0', 4: '0.2', 5: '0.5'}
+272	272		301							{2: 'Chaos', 3: 'Leave...', 4: '1', 5: '2'}
+273	273		302							{2: 'What exactly happened with the Red Tide?', 3: '274', 4: 'What happened to you?', 5: '274'}
+274	274		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopRed.prefab', 2: '2'}
+275	275		301							"{3: ""As you utter your question, you try to make out Chaos's features—her body is gradually melting into the Red Tide, starting from her legs and creeping upward."", 4: '1', 5: '2'}"
+276	276		205							{1: '1', 3: '0.8', 4: '0.5', 5: '0.5'}
+277	277		205							{1: '2', 3: '0.2', 4: '0.5', 5: '0.5'}
+278	278		301							{3: '<color=#ff4e4eff><b>Leave...</b></color>', 4: '1', 5: '2'}
+279	279		302							{2: 'Answer me!', 3: '280', 4: '...', 5: '280'}
+280	280		301							{3: 'A consuming agony instantly crawls up your spine, as if you yourself were the one trapped within the Red Tide.', 4: '1', 5: '2'}
+281	281		205							{1: '1', 3: '0.6', 4: '0.3', 5: '0.5'}
+282	282		205							{1: '2', 3: '0.5', 4: '0.8', 5: '0.5'}
+283	283		301							{3: '<color=#ff4e4eff><b>Leave...</b></color>', 4: '1', 5: '2'}
+284	284		301							"{3: 'The doll mechanically repeats the same answer, as if another entirely different <phonetic=Agent Zero>""face""</phonetic> is gradually emerging within her.', 4: '1', 5: '2'}"
+285	285		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 2: '2'}
+286	286		301							"{3: ""Her shape starts to change, as if she can't hold back the Red Tide's power—"", 4: '1', 5: '2'}"
+287	287		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab'}
+288	288		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopRed.prefab'}
+289	289		202							{1: '1', 2: '2', 6: '1'}
+290	290		401							{1: '2', 2: '9327108'}
+291	291		401							{1: '2', 2: '4685'}
+292	292		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg1601_7.jpg', 3: '0', 4: '1', 5: '1'}
+293	293		301							"{3: ""The Mutated Red Tide suddenly surges, its waves like a monster's open jaws, ready to swallow them both.""}"
+294	294		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+295	295		301							{2: 'Vanessa', 3: '【kuroname】!!!'}
+296	296		401							{1: '2', 2: '4833'}
+297	297		401							{1: '2', 2: '9342045'}
+298	298		301							{3: 'Vanessa tackles you with a leap, sending you both rolling toward the shore.'}
+299	299		301							"{2: 'Vanessa', 3: ""DON'T LOOK BACK—!""}"
+300	300		301							{3: 'She practically yells in that direction.'}
+301	301		302							{2: 'Vanessa!', 3: '302'}
+302	302		301							{3: 'You jump up, grabbing the sampling gear to shield yourselves, but it ends up in vain.'}
+303	303		301				DialogDisable			{3: 'Even as Vanessa charges into the Red Tide, she looks no larger than a hummingbird before the towering waves.'}
+304	304		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+305	305		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab', 2: '2'}
+306	306		401							{1: '2', 2: '927'}
+307	307		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryYaoHe.prefab', 2: '2'}
+308	308		401						2000.0	{1: '2', 2: '2964'}
+309	309		301			DialogEnable				{3: 'The red blade falls, and death closes in—'}
+310	310		205							{1: '999'}
+311	311		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+312	312		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryYaoHe.prefab'}
+313	313		301				AniZhuanchangBegin			{3: 'But death does not come.'}
+314	314		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1601_7.jpg'}
+315	315		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+316	316		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab'}
+317	317		201							{1: '1', 2: '500887', 4: '400', 5: '140', 6: '-200', 7: '1'}
+318	318		306						500.0	{1: '1'}
+319	319		401							{1: '2', 2: '10110023'}
+320	320		203							{1: '1', 2: '7', 4: '150', 5: '-200'}
+321	321		301			AniZhuanchangEnd				{1: '1', 3: 'With your mind overwhelmed by the Punishing Virus, you see a small red wing appear between you and the surging Red Tide just before you pass out.', 4: '1'}
+322	322		202							{1: '1'}
+323	323		201							{1: '2', 2: '500887', 4: '-200'}
+324	324		401							{1: '2', 2: '10042416'}
+325	325		306							
+326	326		301		1		AniZhuanchangBegin			{1: '1', 3: 'Luna.', 4: '2'}

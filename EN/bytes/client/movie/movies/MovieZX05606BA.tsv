@@ -1,0 +1,163 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory757.jpg'}
+2	2		502						250.0	{1: 'DialogDisable'}
+3	3		401							{1: '1', 2: '6182'}
+4	4		107							{1: 'New Oakley', 2: '6:36PM '}
+5	5		301							{3: '6:36 p.m., New Oakley'}
+6	6		108							{1: '1'}
+7	7		502						200.0	{1: 'RImgBg1Shake'}
+8	8		401							{1: '2', 2: '4774'}
+9	9		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+10	10		201							{1: '1', 2: '500675'}
+11	11		301			DialogEnable				{1: '1', 2: 'Armed Resident A', 3: 'Logistics! We need ammo here!', 4: '1'}
+12	12		202							{1: '1'}
+13	13		301							{2: 'Logistics Staff', 3: 'Right away!'}
+14	14		306							{1: '1'}
+15	15		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokeRed.prefab', 2: '1'}
+16	16		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '1'}
+17	17		201							{1: '1', 2: '501265', 4: '-1500', 5: '0'}
+18	18		201							{1: '2', 2: '501265', 4: '1500', 5: '0'}
+19	19		201							{1: '3', 2: '501265', 4: '0', 5: '-1080'}
+20	20		203							{1: '1', 2: '0.25', 3: '650', 4: '0'}
+21	21		203							{1: '2', 2: '0.25', 3: '0', 4: '-100'}
+22	22		203							{1: '3', 2: '0.25', 3: '-650', 4: '0'}
+23	23		301			RImgBg1Shake	DialogDisable			"{1: '1', 3: ""The battle has raged for nearly an hour, bullets streaking like deadly rain from New Oakley's defensive line.""}"
+24	24		401							{1: '2', 2: '4933'}
+25	25		203							{1: '1', 2: '0.2', 3: '650', 4: '-180', 5: '-150'}
+26	26		203							{1: '2', 2: '0.2', 3: '0', 4: '-180', 5: '-150'}
+27	27		203						200.0	{1: '3', 2: '0.2', 3: '-650', 4: '-180', 5: '-150'}
+28	28		203							{1: '1', 2: '0.2', 3: '650', 4: '0', 5: '0'}
+29	29		203							{1: '2', 2: '0.2', 3: '0', 4: '-100', 5: '0'}
+30	30		203							{1: '3', 2: '0.2', 3: '-650', 4: '0', 5: '0'}
+31	31		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+32	32		502							{1: 'RImgBg1Shake'}
+33	33		301			DialogEnable	DialogDisable			"{3: ""Though the newly constructed watchtowers and walls have slowed the Hetero-Creatures' advance, their relentless, death-defying charges leave the defenses teetering on the edge of collapse.""}"
+34	34		306						200.0	
+35	35		203							{1: '1', 2: '0.25', 3: '-650', 4: '0', 5: '0'}
+36	36		203							{1: '2', 2: '0.25', 3: '0', 4: '-100', 5: '0'}
+37	37		203							{1: '3', 2: '0.25', 3: '650', 4: '0', 5: '0'}
+38	38		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '1'}
+39	39		201							{1: '18', 2: '500139', 4: '-300', 5: '-50', 6: '350'}
+40	40		301			DialogEnable	DialogDisable			{1: '1', 2: 'Armed Resident B', 3: 'One has breached our defenses!', 4: '18'}
+41	41		202							{1: '18', 6: '1'}
+42	42		104							{1: '0|0|-100', 2: '0.2'}
+43	43		203							{1: '1', 2: '0.2', 3: '650', 4: '-50', 5: '-150'}
+44	44		203							{1: '2', 2: '0.2', 3: '0', 4: '-150', 5: '-150'}
+45	45		203							{1: '3', 2: '0.2', 3: '-650', 4: '-50', 5: '-150'}
+46	46		301			DialogEnable	DialogDisable			{3: 'Before the resident could finish speaking, a shadow blurs into motion, charging toward the Hetero-Creature.'}
+47	47		401							{1: '1', 2: '36'}
+48	48		401							{1: '2', 2: '636'}
+49	49		402							{1: '4774'}
+50	50		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+51	51		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '2'}
+52	52		203							{1: '3', 2: '0.1', 3: '-650', 4: '-1080', 5: '-150'}
+53	53		203							{1: '1', 2: '0.1', 3: '650', 4: '-1500', 5: '-150'}
+54	54		202							{1: '1', 2: '3'}
+55	55		203			PanelActor2Shake				{1: '2', 2: '0.2', 3: '0', 4: '-1500', 5: '-150'}
+56	56		202							{1: '2'}
+57	57		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+58	58		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokeRed.prefab'}
+59	59		201							{1: '4', 2: '500990', 4: '-1080', 7: '1'}
+60	60		203							{1: '4', 2: '0.25', 3: '0', 4: '50', 5: '-100'}
+61	61		401							{1: '1', 2: '6184'}
+62	62		301			DialogEnable	DialogDisable			{1: '1', 3: 'Wielding her Pyro Katana, Lucia closes the distance in a flash. Adjusting her stance mid-air, she brings the blade down in a searing arc, cleaving through the creature with a single strike.'}
+63	63		203							{1: '4', 2: '0.1', 3: '-550', 4: '-150', 5: '0'}
+64	64		104						200.0	{1: '0|-100|-200', 2: '0.2'}
+65	65		201						800.0	{1: '1', 2: '501265', 4: '650', 5: '200', 6: '200'}
+66	66		401							{1: '2', 2: '6024'}
+67	67		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+68	68		401						100.0	{1: '2', 2: '6024'}
+69	69		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+70	70		203							{1: '1', 2: '0.1', 3: '-550', 4: '0', 5: '150'}
+71	71		203							{1: '4', 2: '0.1', 3: '450', 4: '50', 5: '-100'}
+72	72		502						200.0	{1: 'PanelActor2Shake'}
+73	73		401							{1: '2', 2: '4802'}
+74	74		203							{1: '1', 2: '0.25', 3: '-500', 4: '-1080', 5: '0'}
+75	75		202							{1: '1'}
+76	76		104						100.0	{1: '0|0|0', 2: '0.1'}
+77	77		203							{1: '4', 2: '0.2', 3: '0', 4: '50', 5: '-100'}
+78	78		301			DialogEnable	DialogDisable			"{1: '1', 3: ""These Hetero-Creatures rely on their high-speed flight to breach the defensive line from time to time, penetrating into the town's perimeter.""}"
+79	79		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+80	80		401							{1: '2', 2: '4341'}
+81	81		201							{1: '4', 2: '500993', 4: '0', 5: '0', 6: '0', 7: '1'}
+82	82		301			DialogEnable				{1: '1', 3: 'Lucia stands ready here, tasked with eliminating any Hetero-Creatures that make their way into the town.'}
+83	83		202							{1: '4', 6: '1'}
+84	84		201							{1: '2', 2: '500420', 4: '-450'}
+85	85		201							{1: '3', 2: '500139', 4: '450'}
+86	86		301							"{1: '1', 2: 'Armed Resident B', 3: ""Holy crap, did you see that? That Construct's moves are unreal!"", 4: '3'}"
+87	87		301							{2: 'Armed Resident C', 3: 'Stop gawking and focus! Deal with these damn bats already!', 4: '2'}
+88	88		401							{1: '1', 2: '36'}
+89	89		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+90	90		202							{1: '2', 2: '3', 6: '1'}
+91	91		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+92	92		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory756.jpg'}
+93	93		401							{1: '1', 2: '6182'}
+94	94		201							{1: '1', 2: '500692'}
+95	95		301							{1: '1', 3: 'Max, the mayor of New Oakley, gazes toward the frontlines, his brow furrowed with worry.'}
+96	96		301							{2: 'Max', 3: 'How much ammunition do we have left?', 4: '1'}
+97	97		203							{1: '1', 2: '0.25', 3: '-400'}
+98	98		201							{1: '2', 2: '500688', 4: '400'}
+99	99		301							{1: '1', 2: 'Fann', 3: 'Enough to last through this battle.', 4: '2'}
+100	100		301							{2: 'Max', 3: 'What about the next battle?', 4: '1'}
+101	101		301							{2: 'Fann', 3: '...Just barely.', 4: '2'}
+102	102		301							"{2: 'Max', 3: ""It's been an hour already..."", 4: '1'}"
+103	103		301							"{2: 'Max', 3: ""The Hetero-Creatures' attacks are getting worse. Normally, they would've stopped by now."", 4: '1'}"
+104	104		301							"{2: 'Fann', 3: ""With Dante here, we'll be just fine!"", 4: '2'}"
+105	105		301							{3: 'Max shakes his head and looks at his son.'}
+106	106		301							"{2: 'Max', 3: ""What's the word from the Forsaken?"", 4: '1'}"
+107	107		301							"{2: 'Fann', 3: ""They said they'll send some people over, but not a lot. Other conservation areas are getting hit by Hetero-Creatures too, so they're short on manpower."", 4: '2'}"
+108	108		301							{2: 'Max', 3: '...', 4: '1'}
+109	109		202							{1: '2', 6: '1'}
+110	110		203							{1: '1', 2: '0.25', 3: '0'}
+111	111		301							"{2: 'Max', 3: ""【kuroname】, when will Babylonia's reinforcements arrive?"", 4: '1'}"
+112	112		302							{2: 'Not until night, at the earliest.', 3: '113'}
+113	113		301							{2: 'Max', 3: 'If we need to evacuate later, we have to save enough ammunition to deal with potential threats during the retreat.', 4: '1'}
+114	114		301							{2: 'Max', 3: 'Looks like we need to...', 4: '1'}
+115	115		401							{1: '1', 2: '6185'}
+116	116		201							{1: '1', 2: '500675', 7: '1'}
+117	117		301			PanelActor1Shake	DialogDisable			"{1: '1', 2: 'Armed Resident A', 3: ""Someone's coming!"", 4: '1'}"
+118	118		202							{1: '1'}
+119	119		306							{1: '1'}
+120	120		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory923.jpg', 3: '0', 4: '1', 5: '0.3'}
+121	121		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory923.jpg'}
+122	122		205							{1: '999'}
+123	123		301			DialogEnable				{3: 'Before Max can finish, an alert from the defense line snags his attention. His gaze snaps toward the horizon.'}
+124	124		401							{1: '2', 2: '4115009'}
+125	125		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteGlow.prefab', 2: '2'}
+126	126		301							{3: 'Beyond the seething mass of Hetero-Creatures, a wildly modified pickup truck barrels toward New Oakley.'}
+127	127		402							{1: '4115009'}
+128	128		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteGlow.prefab'}
+129	129		401							{1: '2', 2: '4115005'}
+130	130		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+131	131		201							{1: '1', 2: '501265', 4: '650', 5: '-1080'}
+132	132		201							{1: '2', 2: '501265', 4: '-650', 5: '-1080'}
+133	133		201							{1: '3', 2: '501265', 4: '0', 5: '-1080'}
+134	134		301							{1: '1', 3: 'The vehicle carves a wide arc across the desert, tires spitting sand as it skids to a halt.'}
+135	135		302							"{2: ""It's Alpha."", 3: '136'}"
+136	136		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '1'}
+137	137		401							{1: '2', 2: '4784'}
+138	138		203							{1: '1', 2: '0.1', 3: '650', 4: '0'}
+139	139		203							{1: '2', 2: '0.25', 3: '0', 4: '-100'}
+140	140		203							{1: '3', 2: '0.1', 3: '-650', 4: '0'}
+141	141		301							"{1: '1', 3: ""The engine's roar pulls some creatures' focus. Screeching, they pivot mid-air and swarm toward the truck.""}"
+142	142		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+143	143		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+144	144		306						200.0	
+145	145		401							{1: '2', 2: '1088'}
+146	146		201							{1: '4', 2: '500610', 4: '450'}
+147	147		401							{1: '2', 2: '1088'}
+148	148		201							{1: '5', 2: '501234', 4: '-450'}
+149	149		301							{1: '1', 3: 'Alpha and Vergil step out of the vehicle.'}
+150	150		204							{1: '4', 2: '13'}
+151	151		301							{2: 'Alpha', 3: 'Looks like we arrived just in time.', 4: '4'}
+152	152		204							{1: '5', 2: '13'}
+153	153		301				DialogDisable			{2: 'Vergil', 3: 'Let this be our warm-up.', 4: '5'}
+154	154		202							{1: '4', 2: '5', 6: '1'}
+155	155		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+156	156		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory756.jpg', 3: '0', 4: '1', 5: '0.3'}
+157	157		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory756.jpg'}
+158	158		205							{1: '999'}
+159	159		201							{1: '1', 2: '500692'}
+160	160		301			DialogEnable				{1: '1', 3: 'Max turns to you beside him, finishing his interrupted thought.'}
+161	161		301							{2: 'Max', 3: '【kuroname】, looks like we need to prepare for close-quarters combat.', 4: '1'}
+162	162		302		1		AniZhuanchangBegin			"{2: ""Alright, I'll connect with the Constructs on site."", 3: '163'}"

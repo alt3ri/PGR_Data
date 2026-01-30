@@ -1,0 +1,324 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1131.jpg'}
+2	2		401							{1: '2', 2: '4545'}
+3	3		401							{1: '1', 2: '390'}
+4	4		301			DialogEnable				{3: 'A deafening alarm echoes throughout the research institute.'}
+5	5		301							{3: 'The number on the distant screen flashes, counting down rapidly.'}
+6	6		301							{3: 'Before the injured time traveler can speak again, he is buried by the falling ceiling.'}
+7	7		301							{3: 'Right after, red particles and monsters flood out of the ceiling cracks.'}
+8	8		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+9	9		302							{2: '...Hetero-Creatures?', 3: '10', 4: '...The Punishing Virus?', 5: '11'}
+10	10	12	301							{3: 'When you see the red particles, this word just pops into your head.'}
+11	11		301							{3: 'As soon as you see the enemy, this word pops into your head.'}
+12	12		201							{1: '1', 2: '501088', 3: '7'}
+13	13		203							{1: '1', 2: '0.25', 4: '-100', 5: '-180'}
+14	14		306							{1: '1'}
+15	15		301							"{1: '1', 2: 'Ishmael', 3: ""It's the Punishers and the Corrupted!"", 4: '1', 18: '100006474'}"
+16	16		302							{2: 'Go!', 3: '17'}
+17	17		202							{1: '1'}
+18	18		306							
+19	19		301							{3: 'No time to think—you are no match for them in your current state.'}
+20	20		302							{2: 'Got any weapons?'}
+21	21		201							{1: '1', 2: '501088'}
+22	22		301							"{1: '1', 2: 'Ishmael', 3: ""There's a secret compartment in that wall."", 4: '1', 18: '100006475'}"
+23	23		202							{1: '1'}
+24	24		301							{3: 'As you run with Ishmael to the weapon storage, you hear a familiar voice.'}
+25	25		201							{1: '1', 2: '500042'}
+26	26		301							{1: '1', 2: 'Ta·3T-class', 3: 'Catch!', 4: '1', 18: '100006476'}
+27	27		301							{3: 'Ta·3T-class, who left earlier, has come back with what looks like weapons.'}
+28	28		301							{2: 'Ta·3T-class', 3: 'The Punishers are here! Teleport out now!', 4: '1', 18: '100006477'}
+29	29		202							{1: '1'}
+30	30		301							{3: 'You catch the gauntlet and hilt Ta·3T-class threw. You put on the gauntlet and press the trigger, aiming at the monster behind you.'}
+31	31		401							{1: '2', 2: '4698'}
+32	32		301							{3: 'An orange-red beam fires from the gauntlet, hitting the monster.'}
+33	33		301							{3: 'The monster is thrown back several meters, a huge wound opening up on its body.'}
+34	34		301							{3: 'But then, red particles swirl around it, and its wound starts to heal.'}
+35	35		302							"{2: '****!', 3: '36', 4: ""We won't take them down fast enough."", 5: '36'}"
+36	36		201							{1: '1', 2: '501088', 3: '7'}
+37	37		301							"{1: '1', 2: 'Ishmael', 3: 'Ta, ""Gray Raven"" doesn\'t have a terminal yet—we\'re stuck here!', 4: '1', 18: '100006478'}"
+38	38		203							{1: '1', 2: '0.25', 3: '-400'}
+39	39		201							{1: '2', 2: '500042', 4: '400'}
+40	40		301							{1: '1', 2: 'Ta·3T-class', 3: 'What about the portal?', 4: '2', 18: '100006479'}
+41	41		301							"{2: 'Ishmael', 3: ""The portal won't activate either!"", 4: '1', 18: '100006480'}"
+42	42		301							"{2: 'Ta·3T-class', 3: 'Take ""Gray Raven"" to the prep area, get a new terminal, and then get out of here together.', 4: '2', 18: '100006481'}"
+43	43		301							"{2: 'Ta·3T-class', 3: ""Hurry! There's no time!"", 4: '2', 18: '100006482'}"
+44	44		301							{2: 'Ishmael', 3: 'What about you?', 4: '1', 18: '100006483'}
+45	45		301							{2: 'Ta·3T-class', 3: 'I have to get to the time mainframe.', 4: '2', 18: '100006484'}
+46	46		202						300.0	{1: '1'}
+47	47		203							{1: '2', 2: '0.25'}
+48	48		301							{3: 'Then, Ta·3T-class looks at you.'}
+49	49		301							{3: 'Her eyes show a complicated look with a hint of anticipation.'}
+50	50		302							{2: '(Anticipation?)', 3: '51'}
+51	51		301							{2: 'Ta·3T-class', 3: 'I hope you make it.', 4: '2', 18: '100006486'}
+52	52		202							{1: '2'}
+53	53		301							{3: 'Afterward, she leaves again without looking back.'}
+54	54		401							{1: '2', 2: '4176'}
+55	55		301			RImgBg1Shake				{3: 'BOOM—'}
+56	56		301							{3: 'Another explosion echoes, shaking the ground. Warning lights flash through red particles, turning everything blood-red.'}
+57	57		201							{1: '1', 2: '500463'}
+58	58		301			PanelActor1Shake				{2: 'Female Researcher', 3: 'Retreat, now!', 4: '1', 18: '100006487'}
+59	59		201							{1: '1', 2: '500138'}
+60	60		301							{1: '1', 2: 'Young Time Traveler', 3: 'Why?! Why has the Corrupted broken in?!', 4: '1', 18: '100006488'}
+61	61		301							"{2: 'Young Time Traveler', 3: ""I've got to get out of here!"", 4: '1', 18: '100006489'}"
+62	62		201							{1: '2', 2: '500427', 4: '500'}
+63	63		301							"{1: '1', 2: 'Middle-aged Time Traveler', 3: ""**** it! I'll fight you all till I drop!"", 4: '2', 18: '100006490'}"
+64	64		201							{1: '3', 2: '501025', 4: '-500'}
+65	65		301			PanelActor3Shake				{2: 'Researcher', 3: 'Ah... Help...', 4: '3', 18: '100006485'}
+66	66		301							{1: '1', 3: 'Screams, roars, and howls mix together, composing a chaotic symphony from the abyss.'}
+67	67		301							{3: 'This place turns into hell on earth instantly.'}
+68	68		202							{1: '1', 2: '2', 3: '3'}
+69	69		302							"{2: ""Let's go.""}"
+70	70		201							{1: '1', 2: '501088', 3: '4'}
+71	71		301							{1: '1', 3: 'Ishmael grits her teeth. First, her professor, now her colleagues...'}
+72	72		301							"{3: ""She can't take any more of this.""}"
+73	73		204							{1: '1', 2: '4'}
+74	74		301							{2: 'Ishmael', 3: '...Follow me.', 4: '1', 18: '100006491'}
+75	75		202							{1: '1'}
+76	76		301				AniZhuanchangBegin			{3: '...'}
+77	77		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1125.jpg'}
+78	78		301			AniZhuanchangEnd				{3: 'Screams echo everywhere, making the corridor feel endless.'}
+79	79		201							{1: '1', 2: '501088', 3: '21'}
+80	80		301							{1: '1', 2: 'Ishmael', 3: 'The prep area is just ahead...', 4: '1', 18: '100006492'}
+81	81		302							"{2: ""(Something doesn't feel right)"", 3: '82'}"
+82	82		301							{3: 'You hear the sounds of fighting coming from the next room.'}
+83	83		306							{1: '1'}
+84	84		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+85	85		302							{2: 'Get down, now!', 3: '86'}
+86	86		202							{1: '1'}
+87	87		306							
+88	88		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+89	89		401							{1: '2', 2: '4306'}
+90	90		301							{3: 'Without explaining much, you pull Ishmael down to the side.'}
+91	91		401							{1: '2', 2: '4154'}
+92	92		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionL.prefab', 2: '2'}
+93	93		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+94	94		301			RImgBg1Shake				{3: 'Crash!'}
+95	95		301							{3: 'The wall next to you is ripped apart, filling the corridor with dust.'}
+96	96		301							{3: 'A feline Corrupted, almost three meters tall, stands in your way.'}
+97	97		301							{3: 'The Corrupted is covered in wounds, with red mist coming out of the cuts.'}
+98	98		302							"{2: ""I'll make an opening—jump on it when you see it.""}"
+99	99		401							{1: '2', 2: '4311'}
+100	100		301							{3: 'You pull out the hilt and activate it, and a beam of light bursts out.'}
+101	101		201							{1: '1', 2: '501088', 3: '4'}
+102	102		301							{1: '1', 2: 'Ishmael', 3: 'Alright.', 4: '1', 18: '100006493'}
+103	103		302							"{2: 'It really is a lightsaber!', 3: '104', 4: ""Let's go!"", 5: '104'}"
+104	104		202							{1: '1'}
+105	105		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+106	106		104						300.0	{1: '0|-100|-200', 2: '0.5'}
+107	107		401							{1: '2', 2: '9317013'}
+108	108		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+109	109		301							"{3: ""You duck under the Corrupted's swing and slash upward, cutting off its arm. In one move, you get under its body.""}"
+110	110		302							{2: 'NOW!', 3: '111'}
+111	111		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+112	112		104							{2: '0.25'}
+113	113		401							{1: '2', 2: '4698'}
+114	114		301							{3: 'A blast from your gauntlet sends the Corrupted flying.'}
+115	115		301							{3: 'Ishmael takes the chance and fires at the Corrupted. A light sphere comes out of the weapon, expanding and trapping the Corrupted.'}
+116	116		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndWhite.prefab', 2: '2'}
+117	117		401							{1: '2', 2: '4160'}
+118	118		301							{3: 'Bzzz—'}
+119	119		301							{3: 'The Corrupted and parts of the ceiling and walls are completely destroyed.'}
+120	120		302							{2: 'Teamwork!', 3: '121'}
+121	121		301							{3: 'You hold up your hand, signaling Ishmael for a high-five.'}
+122	122		201							{1: '1', 2: '501088', 3: '7'}
+123	123		301							{1: '1', 2: 'Ishmael', 3: '...Teamwork?', 4: '1', 18: '100006494'}
+124	124		202							{1: '1'}
+125	125		301							"{3: ""Even though she doesn't seem to get it, she follows you and raises her hand.""}"
+126	126		104						250.0	{1: '0|0|-50', 2: '0.25'}
+127	127		401							{1: '2', 2: '2766'}
+128	128		104							{2: '0.25'}
+129	129		301							{3: 'Clap!'}
+130	130		301							{3: 'Your high-five echoes sharply.'}
+131	131		301				AniZhuanchangBegin			{3: '...'}
+132	132		402							{1: '4545'}
+133	133		401							{1: '1', 2: '36'}
+134	134		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+135	135		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+136	136		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab'}
+137	137		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1129.jpg'}
+138	138		401							{1: '1', 2: '381'}
+139	139		301			AniZhuanchangEnd				"{3: ""You run into different types of Corrupted along the way, but you get past them with Ishmael's help despite some close calls.""}"
+140	140		301							{3: 'At the prep area, Ishmael grabs a time travel terminal and gives it to you.'}
+141	141		201							{1: '1', 2: '501088'}
+142	142		301							"{1: '1', 2: 'Ishmael', 3: ""The terminal's ready. Just activate it and you'll teleport away."", 4: '1', 18: '100006495'}"
+143	143		301							"{2: 'Ishmael', 3: ""You'll arrive on a remote planet, one the Punishers haven't hit yet."", 4: '1', 18: '100006496'}"
+144	144		204							{1: '1', 2: '4'}
+145	145		301				DialogDisable			"{2: 'Ishmael', 3: ""You'll be safe there..."", 4: '1', 18: '100006497'}"
+146	146		302							{2: 'Wait!', 3: '147'}
+147	147		302							{2: 'What about you?', 3: '148'}
+148	148		204							{1: '1', 2: '8'}
+149	149		301			DialogEnable				"{2: 'Ishmael', 3: ""I can't go. They need help with the mainframe."", 4: '1', 18: '100006498'}"
+150	150		204							{1: '1', 2: '4'}
+151	151		301							"{2: 'Ishmael', 3: ""The time mainframe can't be destroyed. It holds everything we've done."", 4: '1', 18: '100006499'}"
+152	152		302							"{2: ""Ta doesn't want you to go there."", 3: '153'}"
+153	153		204							{1: '1'}
+154	154		301							{2: 'Ishmael', 3: 'This is my choice.', 4: '1', 18: '100006500'}
+155	155		302							"{2: ""Then we'll go together."", 3: '156'}"
+156	156		204							{1: '1', 2: '4'}
+157	157		301							"{2: 'Ishmael', 3: 'You got dragged into this. I can\'t let you risk your life for ""Shrike"".', 4: '1', 18: '100006501'}"
+158	158		302							"{2: ""I love sticking my nose in other people's business."", 3: '159', 4: ""You helped me before. Now I'm returning the favor."", 5: '159'}"
+159	159		204							{1: '1'}
+160	160		301							"{3: ""Ishmael quickly realizes she can't change your mind.""}"
+161	161		204							{1: '1', 2: '4'}
+162	162		301							{2: 'Ishmael', 3: 'I see...', 4: '1', 18: '100006502'}
+163	163		204							{1: '1'}
+164	164		301							"{2: 'Ishmael', 3: ""We don't have much time. Let's go."", 4: '1', 18: '100006503'}"
+165	165		301							{2: 'Ishmael', 3: 'If things go bad, use the terminal and get out.', 4: '1', 18: '100006504'}
+166	166		302				AniZhuanchangBegin			{2: 'Gotcha.', 3: '167', 4: 'Of course.', 5: '167'}
+167	167		202							{1: '1', 6: '1'}
+168	168		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+169	169		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1128.jpg'}
+170	170		301			AniZhuanchangEnd				{3: 'Eventually, you arrive at the mainframe with Ishmael.'}
+171	171		301							{3: 'The floor of the whole area is covered in a red mist.'}
+172	172		301							{3: 'A strange humanoid floats in the air, attacking the mainframe while red particles drift around it.'}
+173	173		301							{3: 'Most of the staff are already down, with just a few people desperately trying to protect the mainframe.'}
+174	174		201							{1: '1', 2: '501088', 3: '7'}
+175	175		301							"{1: '1', 2: 'Ishmael', 3: ""That's a Punisher!"", 4: '1', 18: '100006540'}"
+176	176		202							{1: '1'}
+177	177		401							{1: '2', 2: '18511011'}
+178	178		301			RImgBg1Shake				{3: 'The Punisher strikes a heavy blow, and the people defending the mainframe fall one by one—'}
+179	179		401							{1: '2', 2: '4466'}
+180	180		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '3'}
+181	181		104						500.0	{1: '0|-100|-500', 2: '1'}
+182	182		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+183	183		201							{1: '1', 2: '501088', 3: '7'}
+184	184		301							{1: '1', 2: 'Ishmael', 3: 'Ta—!', 4: '1', 18: '100006505'}
+185	185		202							{1: '1'}
+186	186		301							{3: 'Ishmael runs forward to help the fallen Ta when the red figure slowly turns, seemingly having spotted her...'}
+187	187		302							{2: 'No!', 3: '188', 4: 'Ishmael!', 5: '188'}
+188	188		501						3000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '3'}
+189	189		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab'}
+190	190		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+191	191		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+192	192		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+193	193		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+194	194		301							{3: 'You only have time to activate the terminal and grab Ishmael.'}
+195	195		301							{3: 'Blue teleportation light and the flames of the explosion fill your vision.'}
+196	196		301				AniZhuanchangBegin			{3: '...'}
+197	197		401							{1: '1', 2: '36'}
+198	198		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+199	199		101						3000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1017.jpg'}
+200	200		401							{1: '1', 2: '181'}
+201	201		111							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+202	202		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+203	203		301			AniZhuanchangEnd				{3: 'Before you even open your eyes, you can feel and smell again.'}
+204	204		301							{3: 'You feel grass under you and smell soil.'}
+205	205		301							{3: 'Memories from before the teleportation start coming back.'}
+206	206		302							{2: 'Ishmael!', 3: '207'}
+207	207		301							"{3: ""You sit up quickly, realizing you aren't in the research institute anymore.""}"
+208	208		201							{1: '1', 2: '501088', 3: '4'}
+209	209		301							{1: '1', 2: 'Ishmael', 3: 'Argh...', 4: '1', 18: '100006506'}
+210	210		401							{1: '2', 2: '1543'}
+211	211		202							{1: '1'}
+212	212		301							{3: 'You look toward where the sound comes from and see Ishmael lying on the grass.'}
+213	213		301							{3: 'She is groaning in pain, with wounds from the explosion on her back.'}
+214	214		302							"{2: ""You're hurt."", 3: '215'}"
+215	215		301							{3: 'Ishmael points weakly at her emergency kit, then pulls out some medicine.'}
+216	216		301							{3: 'After you give Ishmael the painkillers, her face relaxes.'}
+217	217		302							{2: 'Let me patch you up.', 3: '218'}
+218	218		201							{1: '1', 2: '501088'}
+219	219		301							{1: '1', 2: 'Ishmael', 3: 'Hm...', 4: '1', 18: '100006507'}
+220	220		202							{1: '1'}
+221	221		301							{3: 'Like someone who has done it a million times, you clean, disinfect, treat, and bandage her wound.'}
+222	222		301							{3: 'Even after all that, Ishmael is still shaking a little.'}
+223	223		301							{3: 'You move a little more gently.'}
+224	224		302							{2: 'Is this your first time being this badly hurt?', 3: '225'}
+225	225		301							{3: 'She looks up upon hearing your question and answers without thinking.'}
+226	226		201							{1: '1', 2: '501088', 3: '4'}
+227	227		301							{1: '1', 2: 'Ishmael', 3: 'Yes.', 4: '1', 18: '100006508'}
+228	228		301							{3: 'After a moment, she snaps out of it, looking both amused and confused.'}
+229	229		204							{1: '1'}
+230	230		301							{2: 'Ishmael', 3: 'That was a weird question...', 4: '1', 18: '100006509'}
+231	231		301							{2: 'Ishmael', 3: 'Does anyone get hurt that often?', 4: '1', 18: '100006510'}
+232	232		302							"{2: ""They'd have to be really unlucky."", 3: '233'}"
+233	233		204							{1: '1', 2: '21'}
+234	234		301							{2: 'Ishmael', 3: 'What about you?', 4: '1', 18: '100006511'}
+235	235		302							{2: 'What?', 3: '236'}
+236	236		204							{1: '1', 2: '4'}
+237	237		301							"{2: 'Ishmael', 3: ""You're very skilled at wound binding. Did you get hurt a lot before?"", 4: '1', 18: '100006512'}"
+238	238		302							"{2: 'Probably.', 3: '239', 4: ""I don't know."", 5: '239'}"
+239	239		204							{1: '1'}
+240	240		301							{2: 'Ishmael', 3: 'Right, I forgot you lost your memory.', 4: '1', 18: '100006513'}
+241	241		301							{3: 'After tying the bandage, you complete the dressing.'}
+242	242		301							{2: 'Ishmael', 3: 'Thank you.', 4: '1', 18: '100006514'}
+243	243		302							{2: 'What are you going to do now?', 3: '244'}
+244	244		204							{1: '1', 2: '4'}
+245	245		301							{3: 'Ishmael stares at the grassland, speaking after a brief pause.'}
+246	246		301							"{2: 'Ishmael', 3: ""I don't know..."", 4: '1', 18: '100006515'}"
+247	247		301							"{2: 'Ishmael', 3: ""The time mainframe's never been destroyed before."", 4: '1', 18: '100006516'}"
+248	248		301							{2: 'Ishmael', 3: 'If the mainframe is destroyed, no one can time travel anymore.', 4: '1', 18: '100006517'}
+249	249		301							"{3: 'Remembering what happened at ""Shrike"" and how the institute and her friends were lost to her, Ishmael becomes sad again.'}"
+250	250		301							"{3: ""Even though she wasn't there long, the research institute has changed her life.""}"
+251	251		301							{3: 'Those past events shaped her, and now, part of her feels empty.'}
+252	252		302							{2: 'Are there other ways to time travel?', 3: '253'}
+253	253		204							{1: '1'}
+254	254		301							"{2: 'Ishmael', 3: 'The truth is that ""Shrike"" was completed just three months ago.', 4: '1', 18: '100006518'}"
+255	255		301							"{2: 'Ishmael', 3: ""Ta's really talented. She improved the way we time travel."", 4: '1', 18: '100006519'}"
+256	256		301							{2: 'Ishmael', 3: 'Before the research institute, no one could return from time travel.', 4: '1', 18: '100006520'}
+257	257		301							{2: 'Ishmael', 3: 'We sent travelers out, all for an elusive hope.', 4: '1', 18: '100006521'}
+258	258		204							{1: '1', 2: '8'}
+259	259		301							"{2: 'Ishmael', 3: ""It's all over now..."", 4: '1', 18: '100006522'}"
+260	260		302							"{2: ""Guess it's time to roll the die."", 3: '261'}"
+261	261		204							{1: '1', 2: '7'}
+262	262		301							{2: 'Ishmael', 3: '...What does that mean?', 4: '1', 18: '100006523'}
+263	263		301				DialogDisable			"{3: ""Ishmael's confused look makes you, who's suffering memory loss, unsure.""}"
+264	264		302							"{2: ""It's... something used in games."", 3: '265'}"
+265	265		302							{2: 'You roll it, and it gives you a random outcome.', 3: '266'}
+266	266		302							"{2: 'It helps when you can\'t decide, sort of like ""fortune-telling"".', 3: '267'}"
+267	267		204							{1: '1'}
+268	268		301			DialogEnable				{2: 'Ishmael', 3: 'Never heard of it.', 4: '1', 18: '100006524'}
+269	269		301							{2: 'Ishmael', 3: 'But, does such an item really exist?', 4: '1', 18: '100006525'}
+270	270		301				DialogDisable			{2: 'Ishmael', 3: 'You just roll it, follow what it says, and keep going... without worrying too much...', 4: '1', 18: '100006526'}
+271	271		302							{2: 'No.', 3: '272'}
+272	272		302							"{2: ""It's not the result that matters, but the act of rolling the die."", 3: '273'}"
+273	273		302							"{2: 'The die is a ""hope"", and the path forward is in your heart.', 3: '274'}"
+274	274		204							{1: '1', 2: '4'}
+275	275		301			DialogEnable				{2: 'Ishmael', 3: 'The path forward... is in your heart...', 4: '1', 18: '100006527'}
+276	276		301							"{3: ""Suddenly, the wind picks up. This wind, once rampaged against sails in raging storms and worn down vast mountain ranges, now gently caresses Ishmael's hair.""}"
+277	277		301				DialogDisable			{3: 'Her eyes reflect the twilight, like a setting sun.'}
+278	278		302							"{2: 'We can build another ""Shrike"", or we can...', 3: '279'}"
+279	279		302							"{2: ""Regardless, keep moving forward—that's what counts."", 3: '280'}"
+280	280		301			DialogEnable				{3: 'She sees you pointing into the distance.'}
+281	281		302							{2: 'At least we can still see the sunset.', 3: '282'}
+282	282		301				AniZhuanchangBegin			{3: 'Ishmael looks in that direction.'}
+283	283		202						250.0	{1: '1'}
+284	284		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5101_12.jpg', 3: '0', 4: '1', 5: '0'}
+285	285		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1123.jpg'}
+286	286		301			AniZhuanchangEnd				{3: 'She sees a giant arc across the sky, bending light before it dips below the horizon.'}
+287	287		301							{3: 'A sun slowly sets, filling the sky with warm shades.'}
+288	288		301							{3: 'As one sun sets, another appears in the sky.'}
+289	289		301							{3: 'The whole world turns amber, enveloping you both in that moment.'}
+290	290		301							{2: 'Ishmael', 3: 'This is...', 18: '100006528'}
+291	291		301							"{3: ""Ishmael's eyes slowly regain their light.""}"
+292	292		301							"{2: 'Ishmael', 3: ""This is Andymion, where Ta's from..."", 18: '100006529'}"
+293	293		301							{2: 'Ishmael', 3: 'Ta told me her home has the best sunsets in the galaxy.', 18: '100006530'}
+294	294		301							"{2: 'Ishmael', 3: '""...Distant starlight eternally suspended overhead... A prolonged twilight that seems to last forever...""', 18: '100006531'}"
+295	295		301							{3: 'After Ta·3T-class mentioned her home, Ishmael looked up Andymion.'}
+296	296		301							"{3: ""This planet's in a stable binary system. Andymion orbits one sun, and the other's too far to matter.""}"
+297	297		301							"{3: ""Andymion's rings have minerals that reflect light, making them look like stars you can touch.""}"
+298	298		301							"{3: ""But that's not the point.""}"
+299	299		301							"{2: 'Ishmael', 3: ""A view like this doesn't exist in our time."", 18: '100006532'}"
+300	300		301							"{2: 'Ishmael', 3: ""We're... back in time!"", 18: '100006533'}"
+301	301		301							"{3: ""Ishmael's voice is full of excitement.""}"
+302	302		301							{2: 'Ishmael', 3: 'Did you change where the terminal was going?', 18: '100006534'}
+303	303		302							{2: 'No, I just hit the activation button.'}
+304	304		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5101_12.jpg', 3: '1', 4: '0', 5: '0.25'}
+305	305		201							{1: '1', 2: '501088'}
+306	306		301							{1: '1', 2: 'Ishmael', 3: 'It has to be Ta. She changed our destination from the mainframe.', 4: '1', 18: '100006535'}
+307	307		301							"{3: ""Determined, Ishmael goes to get her terminal but finds it's broken.""}"
+308	308		302							{2: 'Here.', 3: '309'}
+309	309		202							{1: '1'}
+310	310		301							{3: 'You give Ishmael your time travel terminal, and she smiles as she takes it.'}
+311	311		301							"{3: 'When ""Shrike"" was falling apart, she couldn\'t activate her terminal in time, so you got her out. Her terminal was destroyed.'}"
+312	312		301							{3: 'After what seems like forever, Ishmael finishes her inspection.'}
+313	313		201							{1: '1', 2: '501088'}
+314	314		301							"{1: '1', 2: 'Ishmael', 3: ""I've confirmed it. We're 40 years in the past."", 4: '1', 18: '100006536'}"
+315	315		302							"{2: ""Being back in time means we can rewrite history, doesn't it?"", 3: '316'}"
+316	316		301							"{2: 'Ishmael', 3: ""There's a chance."", 4: '1', 18: '100006537'}"
+317	317		301							"{2: 'Ishmael', 3: 'If we help ""Shrike"" start sooner or change its location, we might stop its destruction.', 4: '1', 18: '100006538'}"
+318	318		302							"{2: ""Let's go, then. Time for a new start."", 3: '319'}"
+319	319		204							{1: '1', 2: '1'}
+320	320		301							{3: 'Ishmael smiles at you in the twilight.'}
+321	321		301							"{2: 'Ishmael', 3: ""Then let's save the world together."", 4: '1', 18: '100006539'}"
+322	322		301							{3: 'And so—'}
+323	323		301		1		AniZhuanchangBegin			"{3: 'The heroic team of the amnesiac ""Gray Raven"" and Wish-Mael is born.'}"

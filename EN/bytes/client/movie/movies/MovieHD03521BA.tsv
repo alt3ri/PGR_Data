@@ -1,0 +1,89 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+2	2		401							{1: '2', 2: '2637'}
+3	3		301			DialogEnable				{3: 'You receive an email invitation from Bambinata, but instead of a straightforward address, she only provides a set of coordinates.'}
+4	4		301				AniZhuanchangBegin			{3: 'You follow the coordinates and end up in a secluded clearing.'}
+5	5		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1017.jpg'}
+6	6		401							{1: '2', 2: '4669'}
+7	7		301			AniZhuanchangEnd				{3: 'Before you actually see Bambinata, you hear the lively strains of Kowloong-style music floating in the breeze.'}
+8	8		401							{1: '2', 2: '2930'}
+9	9		301							{3: 'In the middle of the grass, you spot a petite figure dancing in sync with the melody.'}
+10	10		301							{3: 'As you get closer, you finally recognize Bambinata.'}
+11	11		402							{1: '2930'}
+12	12		302							{2: 'Bambinata?', 3: '13'}
+13	13		201							{1: '1', 2: '500536'}
+14	14		301							{1: '1', 2: 'Bambinata', 3: 'Commandant.', 4: '1'}
+15	15		301							{3: 'Bambinata stops her dance and heads to the mini player, turning off the music.'}
+16	16		401							{1: '2', 2: '895'}
+17	17		402							{1: '4669'}
+18	18		302							"{2: ""Is that Kowloong music I'm hearing?"", 3: 'Sound Effect', 4: 'Are you practicing a Kowloong dance?', 5: 'Sound Effect'}"
+19	19		401							{1: '1', 2: '208'}
+20	20		204							{1: '1', 2: '1'}
+21	21		301							{2: 'Bambinata', 3: 'Yes. Bambinata wants to show it to you, Commandant.', 4: '1'}
+22	22		301							{2: 'Bambinata', 3: 'Because Bambinata is aware of the Double Seventh Festival.', 4: '1'}
+23	23		301							{2: 'Bambinata', 3: 'And it is a festival celebrated in Kowloong.', 4: '1'}
+24	24		301							{2: 'Bambinata', 3: 'So Bambinata wants to learn the Kowloong dance.', 4: '1'}
+25	25		401							{1: '2', 2: '1543'}
+26	26		203						500.0	{1: '1', 2: '0.25', 3: '0', 4: '-80'}
+27	27		203							{1: '1', 2: '0.25', 3: '0'}
+28	28		301							{3: 'She looks your way and attempts a somewhat clumsy Kowloong bow.'}
+29	29		302							"{2: ""That's quite different from the Bambinata I remember."", 3: '30'}"
+30	30		204							{1: '1'}
+31	31		301							{2: 'Bambinata', 3: 'Hmm?', 4: '1'}
+32	32		301							{3: 'Bambinata cocks her head and lets out a questioning hum.'}
+33	33		301							"{2: 'Bambinata', 3: ""If you don't approve, Bambinata can just delete what has been learned..."", 4: '1'}"
+34	34		302							"{2: 'No, no, no.', 3: '35', 4: ""That's not what I mean at all."", 5: '35'}"
+35	35		302							{2: 'I want to see you perform that dance.', 3: '36'}
+36	36		204							{1: '1', 2: '7'}
+37	37		301							"{2: 'Bambinata', 3: 'So... does that mean you ""approve""?', 4: '1'}"
+38	38		302							{2: 'Yes.', 3: '39'}
+39	39		204							{1: '1', 2: '1'}
+40	40		203						500.0	{1: '1', 2: '0.25', 4: '-80'}
+41	41		401							{1: '2', 2: '1543'}
+42	42		202							{1: '1'}
+43	43		306							{1: '1'}
+44	44		401							{1: '2', 2: '895'}
+45	45		301							{3: 'Bambinata bows to show her gratitude, then starts the music again.'}
+46	46		301							{3: 'Sitting on the floor, Bambinata slowly rises with the melody, her fluid movements elegant and captivating.'}
+47	47		201							{1: '1', 2: '500536', 3: '1'}
+48	48		203							{1: '1', 2: '0.25', 4: '-80'}
+49	49		401							{1: '2', 2: '4429'}
+50	50		301							{1: '1', 3: 'After a small leap that carries her toward you, Bambinata stumbles half a step.'}
+51	51		204							{1: '1'}
+52	52		203							{1: '1', 2: '0.25'}
+53	53		202							{1: '1'}
+54	54		301							{3: 'But she immediately regains her balance, turning that misstep into a graceful pivot and instinctively landing on her toes.'}
+55	55		301							{3: 'And with that final flourish, the dance ends.'}
+56	56		306							
+57	57		202							{1: '1'}
+58	58		302							"{2: ""That's wonderful."", 3: '59', 4: ""Exactly what I'd expect from you, Bambinata."", 5: '59'}"
+59	59		201							{1: '1', 2: '500536'}
+60	60		301							{1: '1', 2: 'Bambinata', 3: 'Bambinata... made a mistake.', 4: '1'}
+61	61		301							"{3: ""Bambinata's face stays calm, but her restless hands reveal her uncertainty.""}"
+62	62		302							{2: 'Your dance was clearly beautiful.', 3: '63'}
+63	63		301							{2: 'Bambinata', 3: 'Thank you for reassuring Bambinata, Commandant.', 4: '1'}
+64	64		204							{1: '1', 2: '4'}
+65	65		301							"{2: 'Bambinata', 3: ""Still, it looks like Bambinata hasn't absorbed enough dance knowledge."", 4: '1'}"
+66	66		302							{2: 'You need to follow your heart when you dance.', 3: '67', 4: 'I saw your raw emotions in that dance.', 5: '70'}
+67	67	68	204							{1: '1'}
+68	68	69	301							{2: 'Bambinata', 3: 'Heart...', 4: '1'}
+69	69		302							{2: 'Otherwise, there would be no way for your feelings to come through.', 3: '72'}
+70	70		301							{2: 'Bambinata', 3: 'Raw emotions...', 4: '1'}
+71	71		204							{1: '1', 2: '4'}
+72	72		301							{2: 'Bambinata', 3: 'Bambinata understood.', 4: '1'}
+73	73		204							{1: '1', 2: '1'}
+74	74		301							{2: 'Bambinata', 3: 'In fact, the emotion Bambinata has right now is wanting to dance with you, Commandant...', 4: '1'}
+75	75		301							{2: 'Bambinata', 3: 'This is the only way to fully express how Bambinata feels about you, Commandant.', 4: '1'}
+76	76		302							{2: 'I see.', 3: '77', 4: 'Though I might be a bit rusty...', 5: '77'}
+77	77		302							{2: '(Bow to Bambinata, inviting her to join)', 3: '78'}
+78	78		202							{1: '1'}
+79	79		401							{1: '2', 2: '895'}
+80	80		401							{1: '1', 2: '36'}
+81	81		401							{1: '2', 2: '4669'}
+82	82		306							{1: '1'}
+83	83		301							"{3: ""You change the mini player's music to a tune you know by heart.""}"
+84	84		301							{3: 'A waltz plays, and you move in sync with its melody.'}
+85	85		201							{1: '1', 2: '500536', 3: '1', 5: '-15', 6: '-100'}
+86	86		301							{1: '1', 3: 'You offer your hand to Bambinata, who glides gracefully toward you.', 4: '1'}
+87	87		301							{3: 'This quiet clearing is her entire world now.', 4: '1'}
+88	88		301		1		AniZhuanchangBegin			{3: 'Right now, the spotlight is on the two of you alone.', 4: '1'}

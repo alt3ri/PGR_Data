@@ -1,0 +1,35 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory401.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		301			DialogEnable				{3: 'After defeating the last Corrupted on the landing pad, Vera relaxes for a second.'}
+4	4		301							{3: 'But the city does not stop sinking when the last Corrupted is defeated.'}
+5	5		301							{3: 'There is only one possibility—the city sinking is not related to the Corrupted attack.'}
+6	6		301							{3: 'Vera takes a look at the design of the landing pad and the structure of the city around you.'}
+7	7		201							{1: '1', 2: '500345', 3: '13'}
+8	8		301							{1: '1', 2: 'Vera', 3: 'I see. I was wondering how such a large structure on the ocean could hide so well.', 4: '1'}
+9	9		301							{2: 'Vera', 3: 'Optical camouflage, radiation shielding, radiation-absorbent material... and a submerging mechanism? What a bunch of mad scientists.', 4: '1'}
+10	10		302							{2: 'Submerging mechanism... like a submarine?', 3: '11'}
+11	11		301							{2: 'Vera', 3: 'Exactly like a submarine.', 4: '1'}
+12	12		204							{1: '1', 2: '4'}
+13	13		301							{2: 'Vera', 3: 'But what has triggered it? Is there... someone else here apart from us?', 4: '1'}
+14	14		302							{2: 'Survivors?', 3: '15', 4: 'Enemies.', 5: '17'}
+15	15		301							{2: 'Vera', 3: 'Has your brain turned into mush after they locked you up?', 4: '1'}
+16	16	19	301							"{2: 'Vera', 3: ""The President said the city has lost all contact with the outside world after the outbreak, which means no one has had any communication with anyone outside. There wouldn't be enough supplies to survive this long anyway."", 4: '1'}"
+17	17		301							{2: 'Vera', 3: 'Those crab-like Corrupted... should be industrial underwater mechanoids.', 4: '1'}
+18	18		301							"{2: 'Vera', 3: ""But I don't think they're smart enough to trigger the mechanism."", 4: '1'}"
+19	19		301							{2: 'Vera', 3: 'That means someone else has visited this place apart from us.', 4: '1'}
+20	20		301							{3: 'The sensation of being observed in secret sends a shiver up your spine.'}
+21	21		202							{1: '1', 6: '1'}
+22	22		301							{3: 'Vera glances at you before stepping on the passage ahead, her red ponytail swinging across the air in a graceful curve.'}
+23	23		201							{1: '1', 2: '500345', 3: '5'}
+24	24		301							"{1: '1', 2: 'Vera', 3: ""Stay close. Whoever they are, we're going to drown and die here if we don't find the entrance into the city before it fully submerges."", 4: '1'}"
+25	25		204							{1: '1', 2: '13'}
+26	26		301							"{2: 'Vera', 3: ""Oh, I forgot. I'm not going to die, duh. Can't promise the same for a frail human like you, 【kuroname】."", 4: '1'}"
+27	27		302							"{2: '...', 3: '28', 4: ""I'll find our objective before that happens."", 5: '30'}"
+28	28		204							{1: '1', 2: '4'}
+29	29	32	301							"{2: 'Vera', 3: ""Don't count on me saving your life like one of your birdies when that happens."", 4: '1'}"
+30	30		204							{1: '1', 2: '4'}
+31	31		301							"{2: 'Vera', 3: ""I hope you're not all talk."", 4: '1'}"
+32	32		202							{1: '1', 6: '1'}
+33	33		301							"{3: ""No longer reacting to Vera's provocation, you turn to the seaborne city in the distance.""}"
+34	34		301		1		AniZhuanchangBegin			{3: 'Deep inside, you suspect that this will not be a simple and quiet investigation.'}

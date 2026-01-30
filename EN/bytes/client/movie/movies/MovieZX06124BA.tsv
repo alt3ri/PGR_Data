@@ -1,0 +1,601 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1352.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable	DialogDisable			{3: 'Having left the deep pit behind, the two of you return to the laboratory above.'}
+4	4		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1338.jpg', 3: '0', 4: '1', 5: '1.5'}
+5	5		205							{1: '999'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1338.jpg'}
+7	7		301			DialogEnable				{3: 'Standing at the edge and looking down, you can clearly see the marks of the explosion.'}
+8	8		302							{2: 'This pit...', 3: '9'}
+9	9		201							{1: '18', 2: '501385', 3: '3', 4: '50', 5: '-170'}
+10	10		301							{1: '1', 2: 'Liv', 3: 'It looks like... the aftermath of something massive exploding underground.', 4: '18'}
+11	11		202			DialogDisable				{1: '18'}
+12	12		302							{2: 'Could it be those minerals?', 3: '13'}
+13	13		401							{1: '2', 2: '558'}
+14	14		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+15	15		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1343.jpg'}
+16	16		504							{1: '0.7'}
+17	17		306							{1: '1'}
+18	18		301			DialogEnable	DialogDisable			{3: 'During your battle with Melinoe earlier, you noticed peculiarly shaped minerals all around.'}
+19	19		504							{1: '0'}
+20	20		306							
+21	21		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+22	22		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1352.jpg'}
+23	23		302							"{2: ""Doesn't it look like... a massive eggshell?"", 3: '24'}"
+24	24		301			DialogEnable				{3: 'A massive egg, incubating life, slowly growing beneath the earth, and then... an explosion.'}
+25	25		201							{1: '1', 2: '501385', 3: '7'}
+26	26		301							{1: '1', 2: 'Liv', 3: 'Eggshell...', 4: '1'}
+27	27		204							{1: '1', 2: '3'}
+28	28		301							{2: 'Liv', 3: 'Commandant, do you mean... that something was... born here?', 4: '1'}
+29	29		302							{2: 'Just a theory.', 3: '30', 4: 'Maybe.', 5: '30'}
+30	30		301							"{3: 'Could it be that mysterious ""Aisling""?'}"
+31	31		204							{1: '1', 2: '12'}
+32	32		301				AniZhuanchangBegin			"{2: 'Liv', 3: ""...I suppose it's possible. I've already collected samples of those minerals. I'll send them to the Science Council once we're back at Babylonia."", 4: '1'}"
+33	33		202							{1: '1'}
+34	34		306							{1: '1'}
+35	35		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory205.png'}
+36	36		104						1500.0	{1: '0|100|-300', 2: '0'}
+37	37		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'In the laboratory, some experimental records remain undamaged. From these fragmented documents, the two of you manage to piece together the purpose of this facility.'}
+38	38		306							
+39	39		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1352.jpg'}
+40	40		201							{1: '1', 2: '501385', 3: '8'}
+41	41		301			AniZhuanchangEnd				{1: '1', 2: 'Liv', 3: 'Research on... the substitution of materials within M.I.N.D. structures...?', 4: '1'}
+42	42		204							{1: '1', 2: '4'}
+43	43		301							{3: 'Liv furrows her brow as she examines the records.'}
+44	44		301				AniZhuanchangBegin			{2: 'Liv', 3: 'These... should be Golden Age records. This laboratory... it must have been abandoned for decades.', 4: '1'}
+45	45		202							{1: '1', 6: '1'}
+46	46		401							{1: '1', 2: '36'}
+47	47		401							{1: '2', 2: '4631'}
+48	48		504							{1: '0.7'}
+49	49		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+50	50		401							{1: '1', 2: '6250'}
+51	51		201							{1: '1', 2: '500058'}
+52	52		301			AniZhuanchangEnd				{1: '1', 2: 'Monnan', 3: '...First official day with Team Three. Researcher Monnan, ID 0641.', 4: '1'}
+53	53		301							"{2: 'Monnan', 3: ""This is my first contact with <b><ud><color=#34aff8ff><link=38>Mineral-E</link></color></ud></b>. I believe nothing is truly irreplaceable. Even Dominik's work must have room for improvement."", 4: '1'}"
+54	54		301				AniZhuanchangBegin			{2: 'Monnan', 3: 'I will stand on the shoulders of giants...', 4: '1'}
+55	55		401						2000.0	{1: '2', 2: '2924'}
+56	56		301			AniZhuanchangEnd				"{2: 'Monnan', 3: ""Experiment log #25. Another failure, but the data is converging. I'm identifying consistent fluctuation patterns."", 4: '1'}"
+57	57		301				AniZhuanchangBegin			"{2: 'Monnan', 3: ""Mineral-E is truly remarkable. I know I'm close. I definitely can..."", 4: '1'}"
+58	58		401						2000.0	{1: '2', 2: '2924'}
+59	59		301			AniZhuanchangEnd				{2: 'Monnan', 3: '...Can I really do this?', 4: '1'}
+60	60		202							{1: '1'}
+61	61		306							{1: '1'}
+62	62		301							"{3: ""Streaks of gray now thread through the researcher's hair.""}"
+63	63		306							
+64	64		201							{1: '1', 2: '500058'}
+65	65		301							"{1: '1', 2: 'Monnan', 3: ""This is... experiment log #258. It's been four years since I last saw the sun."", 4: '1'}"
+66	66		301			PanelActor1Shake	AniZhuanchangBegin			"{2: 'Monnan', 3: ""I... I've given everything... All this data... Is any of it really worth it?"", 4: '1'}"
+67	67		401						2000.0	{1: '2', 2: '2924'}
+68	68		301			AniZhuanchangEnd				{2: 'Monnan', 3: 'Hah... what was I thinking before? Why was I so down?', 4: '1'}
+69	69		301				AniZhuanchangBegin			"{2: 'Monnan', 3: ""Anyway, I feel incredible now! Tonight's experiment, #305... this will be the one. I can feel it!"", 4: '1'}"
+70	70		401						2000.0	{1: '2', 2: '2924'}
+71	71		301			AniZhuanchangEnd				{2: 'Monnan', 3: 'This is Researcher 0641... Monnan.', 4: '1'}
+72	72		301							"{2: 'Monnan', 3: ""There's... there's been an incident outside. An unknown virus. All the mining mechanoids... they're infected. They've all gone crazy. They're... killing everyone. I don't think I'm getting out."", 4: '1'}"
+73	73		301							"{2: 'Monnan', 3: ""I'll hide these experiment logs somewhere safe. If anyone ever finds this..."", 4: '1'}"
+74	74		301							"{2: 'Monnan', 3: ""My name is Monnan. My home is in a transatlantic city... I'm leaving this necklace here too."", 4: '1'}"
+75	75		301							"{2: 'Monnan', 3: ""If you find this... please, my little sister still lives there, in my hometown. She's just a kid. Please... take this necklace to her."", 4: '1'}"
+76	76		301				DialogDisable			{2: 'Monnan', 3: 'Tell her... I love her...', 4: '1'}
+77	77		202							{1: '1', 6: '1'}
+78	78		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+79	79		401							{1: '1', 2: '36'}
+80	80		401							{1: '2', 2: '4896'}
+81	81		501						4000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+82	82		402							{1: '4896'}
+83	83		504							{1: '0'}
+84	84		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1352.jpg'}
+85	85		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+86	86		401							{1: '1', 2: '280'}
+87	87		201							{1: '1', 2: '501385', 3: '8'}
+88	88		502							{1: 'DialogEnable'}
+89	89		301			AniZhuanchangEnd				{1: '1', 2: 'Liv', 3: 'After that... this laboratory was abandoned.', 4: '1'}
+90	90		204							{1: '1', 2: '12'}
+91	91		301							"{2: 'Liv', 3: ""The blast scarring is fresh. This must have happened recently. Judging by the timeline... it likely coincided with Conservation Area 368's first transmission to Babylonia."", 4: '1'}"
+92	92		202							{1: '1', 6: '1'}
+93	93		401							{1: '2', 2: '558'}
+94	94		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+95	95		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory317.png'}
+96	96		504							{1: '0.7'}
+97	97		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+98	98		201							{1: '1', 2: '501392'}
+99	99		301							"{1: '1', 2: 'Conservation Area Supervisor', 3: 'We\'re not near any official Babylonia ""Dead Zone"". The local Punishing concentration is low, so large groups of those things rarely gather.', 4: '2'}"
+100	100		301							{2: 'Conservation Area Supervisor', 3: 'That all changed a few years back. There was a minor explosion in the mining tunnels. After that... they just started showing up. Out of nowhere.', 4: '2'}
+101	101		301							{2: 'Conservation Area Supervisor', 3: 'I sent a report up the chain, and Babylonia eventually dispatched a Task Force squad to investigate.', 4: '2'}
+102	102		301							{2: 'Conservation Area Supervisor', 3: 'The squad went down the mine a few times. Their theory was that the explosion must have opened a new passage connecting the tunnels to some other place, letting the Hetero-Creatures wander in.', 4: '2'}
+103	103		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+104	104		504							{1: '0'}
+105	105		202							{1: '1'}
+106	106		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+107	107		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1352.jpg'}
+108	108		306							{1: '1'}
+109	109		301				DialogDisable			{3: 'The scattered clues seem to weave into a single thread, yet a thick fog still clings to the larger truth.'}
+110	110		401							{1: '2', 2: '558'}
+111	111		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+112	112		504							{1: '0.7'}
+113	113		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+114	114		201						500.0	{1: '1', 2: '501389', 7: '1'}
+115	115		202							{1: '1', 6: '1'}
+116	116		401							{1: '2', 2: '558'}
+117	117		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+118	118		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory317.png'}
+119	119		201						500.0	{1: '1', 2: '501382', 3: '2', 7: '1'}
+120	120		301			DialogEnable				"{1: '1', 3: 'The laboratory, Melinoe, the conservation area, ""Aisling""...'}"
+121	121		301				DialogDisable			"{3: ""What does she want with Liv's M.I.N.D.? Why exactly... was she created?""}"
+122	122		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+123	123		504							{1: '0'}
+124	124		306							
+125	125		202							{1: '1', 6: '1'}
+126	126		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+127	127		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1352.jpg'}
+128	128		302							{2: '...', 3: '129'}
+129	129		301			DialogEnable				{3: 'You seal the mystery and the physical evidence together in a bag. Perhaps Babylonia, with all its resources, will hold the answers that elude you here.'}
+130	130		401							{1: '1', 2: '36'}
+131	131		401							{1: '2', 2: '2704'}
+132	132		301							{3: 'In the midst of your conversation, a sudden rustling from around the corner ahead cuts the silence short.'}
+133	133		401							{1: '1', 2: '7'}
+134	134		201							{1: '1', 2: '501385', 3: '7'}
+135	135		301							{1: '1', 2: 'Liv', 3: '...!!', 4: '1'}
+136	136		204							{1: '1', 2: '4'}
+137	137		401							{1: '2', 2: '13081710'}
+138	138		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+139	139		201						350.0	{1: '1', 2: '501386'}
+140	140		401							{1: '2', 2: '5705'}
+141	141		301							{3: 'Liv moves instantly, placing herself protectively in front of you as you draw your gun...'}
+142	142		202							{1: '1'}
+143	143		401							{1: '2', 2: '4172'}
+144	144		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab', 2: '2'}
+145	145		301			RImgBg1Shake				{3: 'Bang—!'}
+146	146		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab'}
+147	147		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+148	148		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1350.jpg'}
+149	149		401							{1: '2', 2: '4172'}
+150	150		502							{1: 'RImgBg1Shake'}
+151	151		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionL.prefab', 2: '2'}
+152	152		401							{1: '2', 2: '4172'}
+153	153		502							{1: 'RImgBg1Shake'}
+154	154		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionR.prefab', 2: '2'}
+155	155		301							{3: 'A small explosion rips through the area. From the shattered rock face, three dust-covered Constructs claw their way out, one after another.'}
+156	156		301							{2: 'Ymir', 3: 'This IS the mining tunnel! Vail! I win! Fork over those credits!'}
+157	157		301							{2: 'Vail', 3: 'We never shook on that!'}
+158	158		201							{1: '1', 2: '501075'}
+159	159		301							{1: '1', 2: 'Flayo', 3: 'Alright, you two, cool it—', 4: '1'}
+160	160		401							{1: '2', 2: '13081710'}
+161	161		201							{1: '1', 2: '501075', 8: '1'}
+162	162		301							{1: '1', 3: 'The tall Construct, trying to mediate the argument, whirls around sharply, the words dying on his lips as he realizes someone is standing behind them.'}
+163	163		301							"{2: 'Flayo', 3: ""Who's there?!"", 4: '1'}"
+164	164		202							{1: '1', 6: '1'}
+165	165		401							{1: '1', 2: '36'}
+166	166		201							{1: '1', 2: '501385', 3: '7'}
+167	167		301							{1: '1', 2: 'Liv', 3: '...Are you... the Rodent squad?', 4: '1'}
+168	168		202							{1: '1'}
+169	169		401							{1: '1', 2: '208'}
+170	170		306							{1: '1'}
+171	171		301							{3: 'Though the three figures before you are covered in dust and debris, their distinctive silhouettes make them just barely recognizable.'}
+172	172		306							
+173	173		201							{1: '1', 2: '501075'}
+174	174		301			DialogShake				{1: '1', 2: 'Flayo', 3: 'Wha—!', 4: '1'}
+175	175		202							{1: '1'}
+176	176		301							"{2: 'Vail', 3: ""It's Gray Raven!""}"
+177	177		301							{2: 'Ymir', 3: '!!!'}
+178	178		201							{1: '1', 2: '501075'}
+179	179		301				DialogDisable			{1: '1', 2: 'Flayo', 3: '...Hey, show some manners!', 4: '1'}
+180	180		203						350.0	{1: '1', 2: '0.3', 3: '-10'}
+181	181		401							{1: '2', 2: '2936'}
+182	182		203						350.0	{1: '1', 2: '0.3', 3: '-10', 4: '-50'}
+183	183		203						350.0	{1: '1', 2: '0.3', 3: '-10'}
+184	184		203						550.0	{1: '1', 2: '0.5', 3: '10'}
+185	185		401							{1: '2', 2: '2936'}
+186	186		203						350.0	{1: '1', 2: '0.3', 3: '10', 4: '-50'}
+187	187		203						350.0	{1: '1', 2: '0.3', 3: '10'}
+188	188		203						350.0	{1: '1', 2: '0.3'}
+189	189		301			DialogEnable				{3: 'Flayo firmly pushes down the two heads that are poking around curiously, then scratches his own head in embarrassment.'}
+190	190		301							{2: 'Flayo', 3: 'Haha, sorry about them. They have all the grace of a couple of rockslides. So, uh... how long have you all been here?', 4: '1'}
+191	191		302							{2: 'How did you all end up... underground?', 3: '192'}
+192	192		301							{3: 'Once identities are confirmed, the conversation shifts to a more casual vibe.'}
+193	193		301							"{2: 'Flayo', 3: ""Well, it's a bit of a story. Last thing I remember clearly was contacting you. You mentioned entering the mine, asked if we'd seen a kid, and then..."", 4: '1'}"
+194	194		301							{2: 'Flayo', 3: '...Nothing. Woke up at the very bottom of the mine, our terminals were gone. Our M.I.N.D.s took a hit, but nothing critical.', 4: '1'}
+195	195		301							{2: 'Flayo', 3: 'After that... we started digging our way out. Got turned around a few times, but luck was on our side.', 4: '1'}
+196	196		203						300.0	{1: '1', 2: '0.25', 3: '-400'}
+197	197		201							{1: '2', 2: '501385', 3: '4', 4: '400'}
+198	198		301							{1: '1', 2: 'Liv', 3: '...It was Melinoe.', 4: '2'}
+199	199		301							{2: 'Flayo', 3: '...Melinoe? That mechanoid doctor from the conservation area?', 4: '1'}
+200	200		302							{2: 'You know her?', 3: '201'}
+201	201		301							"{2: 'Flayo', 3: ""We noticed her when we first arrived at the conservation area. She seemed harmless, so we didn't think much of it..."", 4: '1'}"
+202	202		301							{3: 'Flayo scratches his head, looking confused.'}
+203	203		204							{1: '2', 2: '10'}
+204	204		301							"{2: 'Liv', 3: ""Well... I'm just relieved you're all safe."", 4: '2'}"
+205	205		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+206	206		202							{1: '1', 2: '2', 6: '1'}
+207	207		201							{1: '1', 2: '501075'}
+208	208		306							{1: '1'}
+209	209		301							{1: '1', 3: 'After you briefly explain the situation with Melinoe, Flayo shakes his head in stunned comprehension.'}
+210	210		306							
+211	211		301							"{2: 'Flayo', 3: ""Ah... sounds like you've had a rougher time of it than we did."", 4: '1'}"
+212	212		203							{1: '1', 2: '0.25', 3: '-400'}
+213	213		201							{1: '2', 2: '501385', 4: '400'}
+214	214		301							{1: '1', 2: 'Liv', 3: 'What are your plans now?', 4: '2'}
+215	215		301							"{2: 'Flayo', 3: ""Hmm, we'll probably head straight back to Babylonia."", 4: '1'}"
+216	216		301							{2: 'Flayo', 3: 'Even with Melinoe gone, like you said, this place is still way above our pay grade. Best we make ourselves scarce. What about you folks?', 4: '1'}
+217	217		204							{1: '2', 2: '3'}
+218	218		301							"{2: 'Liv', 3: ""We're returning to Conservation Area 368. There are still a few things we need to confirm..."", 4: '2'}"
+219	219		204							{1: '2', 2: '10'}
+220	220		301							{3: 'She presses her lips together, exchanging a meaningful glance with you.'}
+221	221		301				AniZhuanchangBegin			{3: 'If Melinoe was the one controlling everything behind, then what about Conservation Area 368? Is it truly a conservation area, or just another spiderweb waiting to be stumbled into?'}
+222	222		202							{1: '1', 2: '2', 6: '1'}
+223	223		401							{1: '1', 2: '36'}
+224	224		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory315.png'}
+225	225		401							{1: '1', 2: '120'}
+226	226		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 3: '0', 4: '1', 5: '0'}
+227	227		502						250.0	{1: 'DialogDisable'}
+228	228		107			AniZhuanchangEnd				{1: 'Conservation Area 368'}
+229	229		301							{3: 'Conservation Area 368.'}
+230	230		108							{1: '1'}
+231	231		401							{1: '2', 2: '5517'}
+232	232		501						800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCerberusGameChapter/FxUiCerberusGameChapterLizi01.prefab', 2: '2'}
+233	233		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCerberusGameChapter/FxUiCerberusGameChapterLizi01.prefab'}
+234	234		401							{1: '2', 2: '4276'}
+235	235		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab', 2: '2'}
+236	236		301			DialogEnable	AniZhuanchangBegin			{3: 'Mountains stack against the horizon, brushed by a gentle breeze. Sunlight bleeds through the clouds, casting golden threads over the land.'}
+237	237		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab'}
+238	238		401							{1: '2', 2: '2596'}
+239	239		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory32.jpg'}
+240	240		301			AniZhuanchangEnd				{3: 'As evening bleeds into the sky, the faint chirping of birds echoes from the low bushes, and the warm lights of the conservation area begin to wink on in the twilight.'}
+241	241		402							{1: '2596'}
+242	242		201							{1: '1', 2: '501385', 3: '3'}
+243	243		301				DialogDisable			{1: '1', 2: 'Liv', 3: '...Everything seems pretty normal.', 4: '1'}
+244	244		302							"{2: ""Let's go have a look."", 3: '245'}"
+245	245		202							{1: '1'}
+246	246		401							{1: '2', 2: '5706'}
+247	247		502						500.0	{1: 'RImgBg1Shake'}
+248	248		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 3: '1', 4: '0', 5: '1.5'}
+249	249		401							{1: '2', 2: '758'}
+250	250		301			DialogEnable				{3: 'You step out of the vehicle quietly. Outside the conservation area, a patrol unit sweeps past without a second glance. A handful of residents trudge along the path, baskets filled with foraged food.'}
+251	251		201							{1: '1', 2: '501392'}
+252	252		301							{1: '1', 2: 'Conservation Area Supervisor', 3: 'Huh... Wait, you two...', 4: '1'}
+253	253		301							"{3: ""The supervisor freezes the moment her eyes land on you. Her brow furrows deeply for a long moment as if she's having a hard time recalling you two.""}"
+254	254		301							"{2: 'Conservation Area Supervisor', 3: ""Aren't you... officers from Babylonia?"", 4: '1'}"
+255	255		301							"{2: 'Conservation Area Supervisor', 3: ""Didn't you... head out to the mining area...?"", 4: '1'}"
+256	256		301							"{2: 'Conservation Area Supervisor', 3: ""That's strange... It feels like you've been gone for ages, but also just left."", 4: '1'}"
+257	257		301							{3: 'She shakes her head in confusion.'}
+258	258		301							"{2: 'Conservation Area Supervisor', 3: ""Well, I'm just glad to see you're back in one piece."", 4: '1'}"
+259	259		202							{1: '1'}
+260	260		401							{1: '2', 2: '2669'}
+261	261		301			RImgBg1Shake				{3: 'Dong—'}
+262	262		301							"{3: ""The deep, resonant chime of the conservation area's clock cuts through the air.""}"
+263	263		201							{1: '1', 2: '501392'}
+264	264		301							"{1: '1', 2: 'Conservation Area Supervisor', 3: ""...Oh, it's gotten this late already! Please, let me at least get you both something to eat."", 4: '1'}"
+265	265		201							{1: '1', 2: '501385'}
+266	266		301							{1: '1', 2: 'Liv', 3: 'Thank you, but we have our own rations...', 4: '1'}
+267	267		202							{1: '1'}
+268	268		301							{3: 'Everything feels trapped in some bizarre loop, with only one difference...'}
+269	269		201							{1: '1', 2: '501392'}
+270	270		301							"{1: '1', 2: 'Conservation Area Supervisor', 3: ""...The medical station? That place hasn't been used in years."", 4: '1'}"
+271	271		301							"{2: 'Conservation Area Supervisor', 3: ""In times like these, what doctor is going to stick around to treat people? For small stuff, you use the painkillers Babylonia sends. For the big stuff... well. You just don't get help anymore."", 4: '1'}"
+272	272		302							{2: '...Do you know someone named Melinoe?', 3: '273'}
+273	273		301							{2: 'Conservation Area Supervisor', 3: 'Meli... who?', 4: '1'}
+274	274		301							{3: 'The conservation area supervisor appears to be racking her brain for some clue.'}
+275	275		301							"{2: 'Conservation Area Supervisor', 3: ""Never heard of her... There's no woman by that name here."", 4: '1'}"
+276	276		302							{2: 'But how do you know Melinoe is a woman?', 3: '277'}
+277	277		301							"{2: 'Conservation Area Supervisor', 3: ""Well, it sounds like a woman's name, doesn't it? What man would be called that?"", 4: '1'}"
+278	278		301							{3: 'The supervisor shakes her head.'}
+279	279		301				DialogDisable			{2: 'Conservation Area Supervisor', 3: 'Is she someone Babylonia is looking for? I can keep an eye out if you want.', 4: '1'}
+280	280		202							{1: '1'}
+281	281		306							{1: '1'}
+282	282		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1353.jpg', 3: '0', 4: '1', 5: '1.5'}
+283	283		504						1550.0	{1: '0.5'}
+284	284		205							{1: '999'}
+285	285		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1353.jpg'}
+286	286		301			DialogEnable	AniZhuanchangBegin			"{3: ""The three of you move on, your path taking you past Melinoe's tent. It now stands silent and hollow, already gathering a heavy shroud of dust.""}"
+287	287		504							{1: '0'}
+288	288		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory309.png'}
+289	289		301			AniZhuanchangEnd				{3: 'In the central plaza, cooking pots are being set up for the evening meal.'}
+290	290		306							
+291	291		201							{1: '1', 2: '501385', 3: '12'}
+292	292		301							{1: '1', 2: 'Liv', 3: '...Commandant, Babylonia has responded. The transport will arrive at the nearest landing point in 30 minutes.', 4: '1'}
+293	293		204							{1: '1', 2: '4'}
+294	294		301							{2: 'Liv', 3: 'It seems our earlier communication issues were also due to interference... from their side.', 4: '1'}
+295	295		302							"{2: ""Alright, let's head to the transport now."", 3: '296'}"
+296	296		202							{1: '1'}
+297	297		306							{1: '1'}
+298	298		301							"{3: 'The conservation area seems normal now. Melinoe must have used ""Aisling\'s"" power to forcibly manipulate everyone\'s minds here.'}"
+299	299		301							"{3: 'Now that Melinoe is gone, ""Aisling\'s"" power has gradually faded, allowing the conservation area residents to naturally return to their normal lives.'}"
+300	300		401							{1: '2', 2: '558'}
+301	301		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+302	302		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg'}
+303	303		504							{1: '0.7'}
+304	304		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+305	305		201							{1: '1', 2: '500895', 7: '1'}
+306	306		301							"{1: '1', 3: ""By this same logic, Kolm Lebrant's infiltration of Babylonia must have been due to Melinoe's influence as well. You must return to Babylonia immediately and deliver this news.""}"
+307	307		504							{1: '0'}
+308	308		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+309	309		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+310	310		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory309.png'}
+311	311		306							
+312	312		201							{1: '1', 2: '501392', 4: '-400'}
+313	313		201							{1: '2', 2: '501385', 4: '400'}
+314	314		301							"{2: 'Conservation Area Supervisor', 3: ""...Leaving so soon? You're sure you won't stay for dinner?"", 4: '1'}"
+315	315		204							{1: '2', 2: '10'}
+316	316		301							"{2: 'Liv', 3: ""Thank you, but we really can't. The transport is on a tight schedule."", 4: '2'}"
+317	317		301							"{2: 'Conservation Area Supervisor', 3: ""Well, if you must. It's a shame; we so rarely get our hands on meat around here."", 4: '1'}"
+318	318		202							{1: '1', 2: '2', 6: '1'}
+319	319		201							{1: '1', 2: '501392'}
+320	320		301				DialogDisable			{1: '1', 3: 'The supervisor stands at a short distance, watching as the two of you board the transport.'}
+321	321		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+322	322		202							{1: '1', 6: '1'}
+323	323		101						800.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+324	324		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory309.png', 3: '0', 4: '1', 5: '1.5'}
+325	325		205							{1: '999'}
+326	326		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory309.png'}
+327	327		104						800.0	{1: '0|80|-100', 2: '0.75'}
+328	328		301			DialogEnable	DialogDisable			{3: 'As the transport pulls up, Liv feels a compulsion to glance down...'}
+329	329		401							{1: '1', 2: '36'}
+330	330		306							{1: '1'}
+331	331		401							{1: '2', 2: '4278'}
+332	332		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+333	333		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+334	334		401							{1: '2', 2: '2646'}
+335	335		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab'}
+336	336		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+337	337		201							{1: '1', 2: '500460', 4: '600'}
+338	338		201							{1: '2', 2: '500454'}
+339	339		201						500.0	{1: '3', 2: '500624', 4: '-600'}
+340	340		203							{1: '1', 2: '0.4', 3: '600', 4: '-60', 5: '-100'}
+341	341		203							{1: '2', 2: '0.4', 4: '-60', 5: '-100'}
+342	342		203						450.0	{1: '3', 2: '0.4', 3: '-600', 4: '-60', 5: '-100'}
+343	343		401							{1: '1', 2: '51'}
+344	344		301			DialogEnable				{3: 'In that moment, the entire conservation area falls still. Every resident has halted their work, their faces turned upward in silent unison toward the departing craft.'}
+345	345		306							
+346	346		201							{1: '18', 2: '501385', 3: '7', 4: '50', 5: '-170'}
+347	347		301							{1: '1', 2: 'Liv', 3: '!!!', 4: '18'}
+348	348		202			DialogDisable				{1: '18', 2: '1', 3: '2', 4: '3'}
+349	349		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+350	350		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong03.prefab'}
+351	351		401							{1: '1', 2: '36'}
+352	352		401							{1: '2', 2: '2915'}
+353	353		401							{1: '2', 2: '9357061'}
+354	354		201							{1: '1', 2: '500280', 4: '-400'}
+355	355		201							{1: '2', 2: '500279', 4: '400'}
+356	356		401							{1: '2', 2: '1543'}
+357	357		203							{1: '1', 2: '0.5', 3: '-200'}
+358	358		203						550.0	{1: '2', 2: '0.5', 3: '600'}
+359	359		401							{1: '2', 2: '1543'}
+360	360		203							{1: '1', 2: '1', 3: '-600'}
+361	361		203						1050.0	{1: '2', 2: '1', 3: '200'}
+362	362		401							{1: '2', 2: '1543'}
+363	363		203							{1: '1', 2: '0.5', 3: '-400'}
+364	364		203						550.0	{1: '2', 2: '0.5', 3: '400'}
+365	365		301			DialogEnable	AniZhuanchangBegin			{3: 'She blinks, and the moment shatters. Now, she sees the cheerful, bustling scene again, campfires crackling as two children squabble over who gets an extra bite of meat.'}
+366	366		401							{1: '1', 2: '66'}
+367	367		202							{1: '1', 2: '2', 6: '1'}
+368	368		402							{1: '2915'}
+369	369		402							{1: '9357061'}
+370	370		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+371	371		201							{1: '1', 2: '501385', 3: '16'}
+372	372		301			AniZhuanchangEnd				{1: '1', 2: 'Liv', 3: '...', 4: '1'}
+373	373		302							"{2: ""Liv, what's wrong?"", 3: '374'}"
+374	374		204							{1: '1', 2: '10'}
+375	375		301							"{2: 'Liv', 3: ""...It's nothing, Commandant."", 4: '1'}"
+376	376		301							{3: 'Doubting her own optics, she pulls up her internal logs. But her memory storage has no record of the haunting, collective gaze.'}
+377	377		204							{1: '1', 2: '3'}
+378	378		301							"{2: 'Liv', 3: ""Perhaps it's just... the issue with my visual module."", 4: '1'}"
+379	379		302							"{2: ""I've already contacted the Science Council. We'll get your frame rechecked as soon as we return."", 3: '380'}"
+380	380		204							{1: '1', 2: '10'}
+381	381		301				DialogDisable			{2: 'Liv', 3: 'Alright.', 4: '1'}
+382	382		202							{1: '1', 6: '1'}
+383	383		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory309.png', 3: '0', 4: '1', 5: '1.5'}
+384	384		205							{1: '999'}
+385	385		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory309.png'}
+386	386		301			DialogEnable	DialogDisable			{3: 'She smiles with a nod, then gazes once more at Conservation Area 368.'}
+387	387		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory308.png', 3: '0', 4: '1', 5: '1.5'}
+388	388		205							{1: '999'}
+389	389		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory308.png'}
+390	390		301			DialogEnable	AniZhuanchangBegin			{3: 'The first lights of evening glow within the conservation area.'}
+391	391		401							{1: '1', 2: '36'}
+392	392		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+393	393		401							{1: '1', 2: '6250'}
+394	394		401							{1: '2', 2: '4331'}
+395	395		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+396	396		502							{1: 'RImgBg1Shake2Loop'}
+397	397		301			AniZhuanchangEnd				"{3: 'Outside its bounds, ""Aisling"" runs on.'}"
+398	398		306							{1: '1'}
+399	399		401							{1: '2', 2: '4331'}
+400	400		104						350.0	{1: '0|0|-100', 2: '0.3'}
+401	401		301							{3: 'She has left the mine far behind, her form dissolving until she is nearly a gust of wind, a drop of rain, a flash of lightning.'}
+402	402		301				AniZhuanchangBegin			{3: 'She races forward without a backward glance, her destination certain.'}
+403	403		505							{1: 'RImgBg1Shake2Loop'}
+404	404		502							{1: 'RImgBg1Shake2Disable'}
+405	405		306							
+406	406		502						400.0	{1: 'DialogDisable'}
+407	407		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+408	408		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+409	409		307			AniZhuanchangEnd				{1: 'Her memory is flawless, an unbroken reel from the moment of her birth until now.', 3: '60', 4: 'ffffffff', 6: '1', 10: '1'}
+410	410		301							{3: 'Her memory is flawless, an unbroken reel from the moment of her birth until now.'}
+411	411		307							{2: '1', 10: '1'}
+412	412		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable02.prefab', 2: '2'}
+413	413		401						500.0	{1: '2', 2: '772'}
+414	414		111						1500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab'}
+415	415		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable02.prefab'}
+416	416		307							"{1: 'She remembers the faint, distant call—the moment a boundary shattered, and ""her"" consciousness plunged into the mine\'s depths.', 3: '60', 4: 'ffffffff', 10: '1'}"
+417	417		301							"{3: 'She remembers the faint, distant call—the moment a boundary shattered, and ""her"" consciousness plunged into the mine\'s depths.'}"
+418	418		307							{2: '1', 10: '1'}
+419	419		401							{1: '2', 2: '2559'}
+420	420		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1340.jpg', 3: '0', 4: '1', 5: '1.5'}
+421	421		205							{1: '999'}
+422	422		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1340.jpg'}
+423	423		307							{1: 'There, it was cradled by minerals and slowly took form.', 3: '55', 4: 'ffffffff', 6: '1', 10: '1'}
+424	424		301							{3: 'There, it was cradled by minerals and slowly took form.'}
+425	425		307							{2: '1', 10: '1'}
+426	426		304							{1: 'She must have a mother.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-2', 10: '1'}
+427	427		304							{1: 'The voice that called her into this world... must belong to her mother.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+428	428		304							"{1: 'But who is her ""mother""?', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 8: '1', 10: '1'}"
+429	429		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1343.jpg', 3: '0', 4: '1', 5: '1.5'}
+430	430		205							{1: '999'}
+431	431		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1343.jpg'}
+432	432		304							{1: 'It was in the egg that she first heard the mechanoid...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-2', 10: '1'}
+433	433		304				AniZhuanchangBegin			"{1: ""The nurturer's voice."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 9: '1', 10: '1'}"
+434	434		101						2000.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg6001_16.jpg', 10: '1'}
+435	435		504							{1: '0.7'}
+436	436		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+437	437		502							{1: 'DialogEnable'}
+438	438		301			AniZhuanchangEnd				{2: 'Melinoe', 3: 'Aisling, if you can come back...'}
+439	439		301							{2: 'Melinoe', 3: 'I will give you everything. Anything you want. Anything I can get for you.'}
+440	440		301							{2: 'Melinoe', 3: '...Please, be my child again...'}
+441	441		301				DialogDisable			{2: 'Melinoe', 3: 'I will give you... all my love...'}
+442	442		307							"{1: 'She heard it... She was ""born.""', 3: '40'}"
+443	443		301							"{3: 'She heard it... She was ""born.""'}"
+444	444		307							{2: '1'}
+445	445		307							"{1: 'But the mechanoid was not her mother, not the ""mother"" who had called her into being.', 3: '40'}"
+446	446		301							"{3: 'But the mechanoid was not her mother, not the ""mother"" who had called her into being.'}"
+447	447		307				AniZhuanchangBegin			{2: '1'}
+448	448		306							{1: '1'}
+449	449		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory317.png'}
+450	450		502							{1: 'DialogEnable'}
+451	451		201							{1: '1', 2: '501387'}
+452	452		301			AniZhuanchangEnd	DialogDisable			"{1: '1', 3: 'Melinoe named her ""Aisling"" and kept her close.'}"
+453	453		401							{1: '2', 2: '2987'}
+454	454		204							{1: '1', 2: '2'}
+455	455		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront99.png', 3: '0', 4: '1', 5: '0.5'}
+456	456		301			DialogEnable	AniZhuanchangBegin			"{3: 'Melinoe said children need ""family,"" and so wove a massive web around the conservation area, forcing its human inhabitants to play the part.'}"
+457	457		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront99.png', 3: '1', 4: '0', 5: '0'}
+458	458		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1332.jpg'}
+459	459		301			AniZhuanchangEnd				"{3: 'Melinoe said children need ""parents,"" and so selected that couple to stand in as hers.'}"
+460	460		202							{1: '1'}
+461	461		301							"{3: '""Aisling"" watched it all. Melinoe was kind. She was capable. But... she was not her ""mother.""'}"
+462	462		301							"{3: '""Aisling"" had come into this world to find her true ""mother,"" and... to fulfill her ""mission.""'}"
+463	463		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+464	464		306							
+465	465		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory317.png'}
+466	466		201							{1: '1', 2: '501387', 3: '3', 4: '400'}
+467	467		201							{1: '2', 2: '501381', 4: '-400'}
+468	468		301							{1: '1', 2: 'Melinoe', 3: 'So, what is your mission? How can I help you?', 4: '1'}
+469	469		204							{1: '2', 2: '8'}
+470	470		301							"{2: '""Aisling""', 3: ""I don't know."", 4: '2'}"
+471	471		204							{1: '2', 2: '3'}
+472	472		301				DialogDisable			"{2: '""Aisling""', 3: ""When they appear, I'll be able to sense them..."", 4: '2'}"
+473	473		202							{1: '1', 2: '2'}
+474	474		401							{1: '2', 2: '2936'}
+475	475		205						850.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.8'}
+476	476		301			DialogEnable				{3: 'And then she sensed it, the sound of tender sprouts breaking through the soil.'}
+477	477		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '0'}
+478	478		201							{1: '1', 2: '501387', 4: '400'}
+479	479		201							{1: '2', 2: '501381', 3: '7', 4: '-400'}
+480	480		301							"{1: '1', 2: '""Aisling""', 3: 'How is this... possible...', 4: '2'}"
+481	481		301							"{3: ""She hasn't done anything yet. They shouldn't be appearing now...""}"
+482	482		204							{1: '1', 2: '4'}
+483	483		301							{2: 'Melinoe', 3: '...Have they appeared? Where?', 4: '1'}
+484	484		204							{1: '2', 2: '3'}
+485	485		301							"{2: '""Aisling""', 3: 'There...', 4: '2'}"
+486	486		301							{3: 'She lifted her head, gazing up at the boundless sky.'}
+487	487		301							{2: 'Melinoe', 3: '...On Babylonia?', 4: '1'}
+488	488		204							{1: '2', 2: '7'}
+489	489		301							"{2: '""Aisling""', 3: 'What... is that place?', 4: '2'}"
+490	490		204							{1: '1', 2: '2'}
+491	491		301							"{2: 'Melinoe', 3: ""It's alright... Don't worry about it. Anything you want. Anything I can get for you."", 4: '1'}"
+492	492		204							{1: '1'}
+493	493		301				DialogDisable			{2: 'Melinoe', 3: 'I will find a way for you to see Babylonia... my child.', 4: '1'}
+494	494		203						450.0	{1: '1', 2: '0.4', 3: '200'}
+495	495		203						300.0	{1: '1', 2: '0.25', 3: '200', 4: '-50'}
+496	496		301			DialogEnable	AniZhuanchangBegin			"{3: 'She pressed a gentle kiss to ""Aisling\'s"" head.'}"
+497	497		502							{1: 'DialogDisable'}
+498	498		202							{1: '1', 2: '2', 6: '1'}
+499	499		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+500	500		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+501	501		304			AniZhuanchangEnd				"{1: 'Melinoe established contact with a mechanoid called ""Wheel of Fortune"", striking a deal.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-2', 10: '1'}"
+502	502		304				AniZhuanchangBegin			"{1: 'But before their pact was sealed... a new ""movement"" stirred.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 9: '1', 10: '1'}"
+503	503		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg'}
+504	504		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+505	505		201							{1: '1', 2: '501387', 3: '4', 4: '400'}
+506	506		201							{1: '2', 2: '501381', 4: '-400'}
+507	507		502							{1: 'DialogEnable'}
+508	508		301			AniZhuanchangEnd				"{1: '1', 2: 'Melinoe', 3: 'A Construct from Babylonia...? That one named ""Liv"", who just entered the conservation area?', 4: '1'}"
+509	509		204							{1: '2', 2: '3'}
+510	510		301							"{2: '""Aisling""', 3: '...Yes. I want her.', 4: '2'}"
+511	511		301							"{2: '""Aisling""', 3: 'She will be mine... She will obey me. She will belong to me.', 4: '2'}"
+512	512		301							"{2: '""Aisling""', 3: 'She is the ""mother"" I have chosen. I will make her... and her M.I.N.D. truly mine.', 4: '2'}"
+513	513		301				DialogDisable			{2: 'Melinoe', 3: '...I see.', 4: '1'}
+514	514		401							{1: '2', 2: '13081710'}
+515	515		204							{1: '1', 2: '8'}
+516	516		203						450.0	{1: '1', 2: '0.4', 3: '400', 4: '-50'}
+517	517		204							{1: '1'}
+518	518		301			DialogEnable				"{3: ""A smile graced Melinoe's lips as she gathered the folds of her dress.""}"
+519	519		301							{2: 'Melinoe', 3: 'Anything you want, anything I can give you...', 4: '1'}
+520	520		204							{1: '1', 2: '2'}
+521	521		301				AniZhuanchangBegin			{2: 'Melinoe', 3: 'My child, my... Aisling.', 4: '1'}
+522	522		202							{1: '1', 2: '2', 6: '1'}
+523	523		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+524	524		504							{1: '0'}
+525	525		401							{1: '1', 2: '36'}
+526	526		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory699.jpg'}
+527	527		401							{1: '1', 2: '210'}
+528	528		401							{1: '2', 2: '1514'}
+529	529		301			AniZhuanchangEnd				"{3: '""Aisling"" trudges through the snowfields, a bizarre mechanoid shadowing her every step.'}"
+530	530		402							{1: '1514'}
+531	531		301							{2: 'Wheel of Fortune', 3: 'So, have you made your decision?'}
+532	532		201							{1: '1', 2: '501381', 3: '14'}
+533	533		301				DialogDisable			"{1: '1', 2: '""Aisling""', 3: 'I...', 4: '1'}"
+534	534		202							{1: '1'}
+535	535		306							{1: '1'}
+536	536		401							{1: '2', 2: '4280'}
+537	537		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab'}
+538	538		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+539	539		301			DialogEnable				"{3: 'She can feel the changes in ""them.""'}"
+540	540		301							"{3: 'Perhaps catalyzed by the mine\'s minerals, or some other reason, ""it"" has already begun taking root within Liv\'s M.I.N.D.'}"
+541	541		301							"{3: ""This isn't a good sign. Those things should belong to her.""}"
+542	542		301				DialogDisable			"{3: ""But she also glimpsed something else in Liv's M.I.N.D...""}"
+543	543		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+544	544		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong03.prefab'}
+545	545		306							
+546	546		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1.5'}
+547	547		205							{1: '999'}
+548	548		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+549	549		307							{1: '<b>Where exactly is consciousness stored?</b>', 3: '80', 6: '1'}
+550	550		301							{3: '<b>Where exactly is consciousness stored?</b>'}
+551	551		307							{2: '1'}
+552	552		401							{1: '2', 2: '1014'}
+553	553		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+554	554		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory205.png'}
+555	555		304							"{1: '""Fundamental Theory of Construct Research states that the \'M.I.N.D.\' is able to house human consciousness.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '-3', 10: '1'}"
+556	556		304							"{1: 'Scholars at F.O.S. have since conducted numerous experiments and calculations in an attempt to determine its precise operational principles...""', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '-1', 10: '1'}"
+557	557		304							{1: '                                                            —F.O.S. Military College, Institute of Military Medicine, M.I.N.D. Experimental Data, File #████', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '-3', 9: '1', 10: '1'}
+558	558		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1.5'}
+559	559		205							{1: '999'}
+560	560		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+561	561		307							{1: '<b>What substance houses the M.I.N.D.?</b>', 3: '80', 6: '1'}
+562	562		301							{3: '<b>What substance houses the M.I.N.D.?</b>'}
+563	563		307							{2: '1'}
+564	564		401							{1: '2', 2: '1014'}
+565	565		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+566	566		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory205.png'}
+567	567		304							"{1: '""Scholars at F.O.S. delved into this subject extensively, and they discovered that...""', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '-3', 10: '1'}"
+568	568		304				AniZhuanchangBegin			{1: '                                                            —F.O.S. Military College, Institute of Military Medicine, M.I.N.D. Experimental Data, File #████', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '-3', 9: '1', 10: '1'}
+569	569		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory699.jpg'}
+570	570		502							{1: 'DialogEnable'}
+571	571		201							{1: '1', 2: '501381'}
+572	572		301			AniZhuanchangEnd				"{1: '1', 2: '""Aisling""', 3: 'F.O.S... What is that place?', 4: '1'}"
+573	573		202							{1: '1'}
+574	574		301							"{2: 'Wheel of Fortune', 3: ""Oh, it's Babylonia. A wonderful place that is.""}"
+575	575		301							"{2: 'Wheel of Fortune', 3: ""Any ideas? I'd love to stir up some trouble for those arrogant sky-dwellers.""}"
+576	576		201							{1: '1', 2: '501381', 3: '8'}
+577	577		301				DialogDisable			"{1: '1', 2: '""Aisling""', 3: '...', 4: '1'}"
+578	578		202							{1: '1', 6: '1'}
+579	579		306							{1: '1'}
+580	580		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1089.jpg', 3: '0', 4: '1', 5: '1.5'}
+581	581		205							{1: '999'}
+582	582		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1089.jpg'}
+583	583		301			DialogEnable				{3: 'Her gaze lifts, fixed on the boundless sky.'}
+584	584		401							{1: '1', 2: '36'}
+585	585		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory699.jpg', 3: '0', 4: '1', 5: '1.5'}
+586	586		205							{1: '999'}
+587	587		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory699.jpg'}
+588	588		306							
+589	589		401							{1: '1', 2: '51'}
+590	590		201							{1: '1', 2: '501381', 3: '3'}
+591	591		301							"{1: '1', 2: '""Aisling""', 3: 'Can we make F.O.S. fall?', 4: '1'}"
+592	592		202							{1: '1'}
+593	593		301			DialogShake				{2: 'Wheel of Fortune', 3: 'Oh! Now that is a brilliant idea!'}
+594	594		301							{2: 'Wheel of Fortune', 3: 'The timing is perfect. Melinoe already asked me to do this. A while back, I smuggled out a batch of supplies from Aerospace City. And our gear army...'}
+595	595		301							"{2: 'Wheel of Fortune', 3: ""And now, with your power in the mix? It's absolutely perfect...""}"
+596	596		201							{1: '1', 2: '501381', 3: '4'}
+597	597		301				DialogDisable			"{1: '1', 2: '""Aisling""', 3: ""...Then let's bring F.O.S. down."", 4: '1'}"
+598	598		307							"{1: 'Says ""Aisling"".', 3: '50'}"
+599	599		301							"{3: 'Says ""Aisling"".'}"
+600	600		307		1		AniZhuanchangBegin			{2: '1'}

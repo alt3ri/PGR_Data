@@ -1,0 +1,143 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory306.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				{3: 'Compared with the fading ruins, the residential areas hiding within them still more or less retain their past facade.'}
+4	4		301							{3: 'Situated between highrises, they have avoided the Punishing Virus in their small pockets.'}
+5	5		301							{3: 'Without fire and blades, the only thing that has passed through here is time.'}
+6	6		201							{1: '1', 2: '500166'}
+7	7		301							"{1: '1', 2: 'Lucia', 3: ""I'm getting results from the scans... There seem to be five anomalies around here."", 4: '1'}"
+8	8		203							{1: '1', 2: '0.25', 3: '-400'}
+9	9		201							{1: '2', 2: '500026', 3: '10', 4: '400'}
+10	10		301							{2: 'Lee', 3: 'We are the anomalies... I checked the scanner again. The module that separates friends from foes is apparently broken.', 4: '2'}
+11	11		201							{1: '1', 2: '1031001', 3: '3', 4: '-400'}
+12	12		204							{1: '2'}
+13	13		301							"{2: 'Liv', 3: ""There's no sign of Corrupted passing through here, so why..."", 4: '1'}"
+14	14		201							{1: '2', 2: '500019', 4: '400'}
+15	15		301							{2: 'Construct', 3: 'Sigh. Who knows how the conservation area got marked by that wave of Corrupted? All the surrounding areas have been torn apart like here, except for the last defense underground.', 4: '2'}
+16	16		201							{1: '1', 2: '500026', 4: '-400'}
+17	17		301							{2: 'Lee', 3: 'That is why we were sent here as reinforcement... Commandant, we have to set up the scouting devices on the rooftops next.', 4: '1'}
+18	18		201							{1: '2', 2: '500166', 4: '400'}
+19	19		301							"{2: 'Lucia', 3: ""Please don't stay too far away, even if there are no signs of enemies nearby."", 4: '2'}"
+20	20		301							{3: 'The Engineering Force member assigned to help you and the Gray Ravens proceed with their duties.'}
+21	21		202							{1: '1', 2: '2', 6: '1'}
+22	22		301							{3: 'There is nothing you can do right now, so you decide to find a vantage point where you can observe the surroundings.'}
+23	23		401							{1: '2', 2: '1516'}
+24	24		301				AniZhuanchangBegin			{3: 'So you walk along the road between the remaining buildings until one of them catches your attention.'}
+25	26		101			DialogDisable	AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory305.png'}
+26	27		301			DialogEnable				{3: 'It appears to be the least tattered building from the outside, sitting in a secluded corner.'}
+27	28		301				AniZhuanchangBegin			{3: 'Entering the main hall, you find it looking exactly as you expected—'}
+28	30		101			DialogDisable	AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory304.png'}
+29	31		301			DialogEnable				{3: 'Not a chaotic wreckage but a quiet decay.'}
+30	32		301							{3: 'As if silently stepping into the end, you feel forgotten by the world like the dust that has gathered within.'}
+31	33		301							{3: 'The rich colors of the past still linger on the flaking walls...'}
+32	34		302							{2: 'Hm?', 3: '35'}
+33	35		401							{1: '1', 2: '36'}
+34	36		301							{3: 'The dust gathered on the handle of the door to the room beside you has been wiped away.'}
+35	37		301							{3: 'The handle has been turned, so it is not a Corrupted.'}
+36	38		301							{3: 'Your index finger lies on the grip of your pistol as your other hand reaches for the door handle.'}
+37	39		302				AniZhuanchangBegin			{2: '(Open the door)', 3: '40'}
+38	40		401			DialogDisable				{1: '2', 2: '754'}
+39	41		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+40	42		401							{1: '2', 2: '215'}
+41	43		301			DialogEnable	RImgBg1DisableSlow			{3: 'Swoosh—swoosh—swoosh—'}
+42	44		502							{1: 'DialogDisable'}
+43	45		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgCg/Cg2701_11.jpg'}
+44	46		301			DialogEnable				{3: '...'}
+45	47		301							{3: 'You smell the scent of greenery. Following where the wind comes from, you see the sky.'}
+46	48		301				RImgBg1DisableSlow			{3: 'Looking from here, you see trees swaying in the light.'}
+47	49		502							{1: 'DialogDisable'}
+48	50		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgCg/Cg2701_12.jpg'}
+49	51		301			DialogEnable				{3: 'Cracked walls, climbing vines, scattered paper, and old notebooks.'}
+50	52		301							{3: 'The bright sunlight floods the room, soaking into the glistening white hair.'}
+51	53		301				RImgBg1DisableSlow			{3: 'A small breeze moves the ends, bringing the hair to the drifting petals.'}
+52	61		402				DialogDisable			{1: '215'}
+53	54		401							{1: '1', 2: '120'}
+54	55		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgCg/Cg2701_09.jpg'}
+55	56		301			DialogEnable				{3: 'The silver-white figure leans on a chair, her eyes closed.'}
+56	57		301							{3: 'It all seems to be a small corner of a larger world, perfectly preserved in stillness.'}
+57	58		301							{3: 'This preposterous absurdity ought to feel distasteful, but it feels serene instead with her presence.'}
+58	59		301							{3: 'And yet, she does not react to your approach in the open. It seems that she has entered eternal sleep.'}
+59	60		301							{3: 'Wanting to be sure, you arrive by her side. In the silence, even your breath seems capable of stirring up a canvas, creating a ripple...'}
+60	62		302							{2: '(Reach out)', 3: '63'}
+61	63		301							{3: 'Your fingertips touch her icy shoulder. Her calm face twists.'}
+62	64		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2701_10.jpg'}
+63	65		301							{3: 'A pair of pale golden eyes meet yours.'}
+64	66		301				AniZhuanchangBegin			{3: 'The moment you are impressed by how clear they are—'}
+65	67		401							{1: '1', 2: '201'}
+66	68		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory303.png'}
+67	69		201			AniZhuanchangEnd				{1: '1', 2: '500486', 6: '-60'}
+68	70		502							{1: 'RImgBg1Shake'}
+69	71		301			DialogEnable				{1: '1', 3: 'She tightly grasps your arm before you can react.'}
+70	72		301							{3: 'And her other hand presses against your neck.'}
+71	73		302							{2: '!!!', 3: '74'}
+72	74		301							{3: 'Her function still works perfectly. She avoided the anomaly scanner only because she was sleeping.'}
+73	75		301							{3: 'But you have never seen Constructs who would let their guard down this much while resting. She had no awareness of her surroundings as if she had shut her system down.'}
+74	76		302							{2: '(Try to reach for your pistol)', 3: '77'}
+75	77		301							{3: 'Her grip tightens. You cannot be certain that you can take her down in one shot even if you are Bob Munden incarnated.'}
+76	78		301							{2: 'Haicma', 3: '...', 4: '1'}
+77	79		301							{3: 'Her delicate face remains unblemished like an exhibit carefully prepared.'}
+78	80		301							{3: 'At this distance, even the smallest flinch cannot fool the visual module of a Construct who is engaged in battle.'}
+79	81		301							{3: 'But she has not killed you outright, which means...'}
+80	82		301							{3: 'With great difficulty, you gesture toward the patch on your arm, indicating that you come from Babylonia and not a Scavenger looting for parts.'}
+81	83		302							{2: 'Sorry for interrupting your sleep.', 3: '84'}
+82	84		401							{1: '1', 2: '36'}
+83	85		301							{2: 'Haicma', 3: '...', 4: '1'}
+84	86		203							{1: '1', 2: '0.25'}
+85	87		301							{3: 'The young lady releases her hands, leaning back in her seat.'}
+86	88		401							{1: '1', 2: '5'}
+87	89		301							{3: 'Your brief quarrel and her hostility seem to have melted from the sunlight. What remains now is only a lady conversing with a stranger.'}
+88	90		301							{3: 'Judging from her clothing, you believe she is a Construct from the conservation area nearby.'}
+89	91		301							"{2: 'Haicma', 3: 'Did I look like I was ""sleeping"" like a human to you?', 4: '1'}"
+90	92		302							"{2: ""The kind that you don't wake up from, perhaps."", 3: '93', 4: 'Not really...', 5: '93'}"
+91	93		301							{3: 'The lady stops asking and picks up a piece of paper.'}
+92	94		301							{2: 'Haicma', 3: 'Improvement required...', 4: '1'}
+93	95		301							{2: 'Haicma', 3: 'Lacking detailed explanation on the different stages...', 4: '1'}
+94	96		301							{3: 'She murmurs as if reflecting on the results of an experiment.'}
+95	97		302							{2: 'Excuse me... What are you doing?', 3: '98'}
+96	98		204							{1: '1'}
+97	99		301							"{2: 'Haicma', 3: 'Studying how to ""sleep"" like a human.', 4: '1'}"
+98	100		301							{3: 'She gathers all the paper, stacking them nicely on the table.'}
+99	101		301							{3: 'You have learned of something like this from the staff in Star of Life. After becoming Constructs for a while, some people may feel some kind of unease.'}
+100	102		301							{3: 'It is not caused physically—not a hardware issue, per se. It comes from the cognitive dissonance one feels after losing their flesh and blood, their way of life completely upended.'}
+101	103		301							{3: 'Unable to adjust mentally, some of them find it difficult to accept their new identities. Mimicking past behaviors is a sign of that.'}
+102	104		301							{3: 'Apparently, the lady before you is planning exactly that.'}
+103	105		302							{2: 'Can I ask you what these are?', 3: '106'}
+104	106		301							"{2: 'Haicma', 3: 'Activity logs that are called ""diaries.""', 4: '1'}"
+105	107		301							{2: 'Haicma', 3: 'But their information seems to have been filtered. The records are not complete, and their details are lacking. More of a summary, I think.', 4: '1'}
+106	108		301							"{2: 'Haicma', 3: ""Therefore, it's been difficult to recreate them. There are too many unpredictable variables."", 4: '1'}"
+107	109		301							{3: 'Diaries are not bookkeeping. It is hard to demand too many details from them...'}
+108	110		301							{3: 'But if she wants to experience the life before becoming a Construct, is there not a more direct way laid out before her than imitating these records?'}
+109	111		302							{2: 'What about writing a diary?', 3: '112'}
+110	112		204							{1: '1', 2: '3'}
+111	113		301							{2: 'Haicma', 3: 'Writing... a diary?', 4: '1'}
+112	114		301							{3: 'Unlike the data stored in her electronic components, human memories always fade away.'}
+113	115		301							{3: 'Which is why humans need to select and record the important parts. It is an act to counter their innate flaw.'}
+114	116		302							{2: 'You want to experience what it feels like to be human again, right?', 3: '117'}
+115	117		204							{1: '1', 2: '7'}
+116	118		301							{2: 'Haicma', 3: 'Again? Right.', 4: '1'}
+117	119		204							{1: '1'}
+118	120		301							{2: 'Haicma', 3: 'My calculation suggests that this proposal has a higher chance of success.', 4: '1'}
+119	121		301							{3: 'Instead of forcing herself to repeat what cannot be recreated from those diaries, she should perhaps try to choose the memories worth preserving and record them herself.'}
+120	122		301							{3: 'She can reflect on and analyze them during this process. After all, recording facts is not the only purpose to write a diary.'}
+121	123		301							{3: 'Opening her notebook again, she seems to be about to put the idea into action.'}
+122	124		301							{3: 'But before that, you should probably do something about a Construct acting alone outside the conservation area...'}
+123	125		401							{1: '2', 2: '1515'}
+124	126		301							{2: 'Lucia', 3: 'Commandant, where are you?'}
+125	127		301							"{3: ""Lucia's voice appears from the comms, interrupting your train of thought.""}"
+126	128		202			RImgBg1DisableSlow				{1: '1', 6: '1'}
+127	129		502							{1: 'DialogDisable'}
+128	130		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory304.png'}
+129	131		301			DialogEnable				{3: 'You quickly leave the room...'}
+130	132		201						100.0	{1: '1', 2: '500166', 4: '1500'}
+131	133		509							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg', 2: '2'}
+132	134		203							{1: '1', 2: '0.5', 3: '400'}
+133	135		302							"{2: ""What's wrong?"", 3: '136'}"
+134	136		301							{2: 'Lucia', 3: 'The devices are deployed. The new scouting team is reporting an unusual presence of uninfected mechanoids.', 4: '1'}
+135	137		301							{2: 'Lucia', 3: 'The temporary command center on the surface has ordered us to investigate.', 4: '1'}
+136	138		202							{1: '1', 6: '1'}
+137	139		510							{1: '2', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory304.png'}
+138	140		401				RImgBg1DisableSlow			{1: '2', 2: '1516'}
+139	141		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory303.png'}
+140	142		301							{3: 'After confirming where you will meet, you return to the room, only to find the silver figure gone, along with her paper and notebooks.'}
+141	143		301							{3: 'With her gone, time moves again in the room as if your encounter was just a fantasy, a memory displayed by the abandoned house.'}
+142	144		301		1		AniZhuanchangBegin			{3: 'But she is a Construct from the nearby conservation area. Chances are you will meet again.'}

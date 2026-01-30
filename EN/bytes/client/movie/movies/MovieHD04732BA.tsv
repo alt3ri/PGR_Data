@@ -1,0 +1,162 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1175.jpg'}
+2	2		401							{1: '1', 2: '6225'}
+3	3		301			DialogEnable				{3: 'You gently push open the door to the private theater suite. Warm amber light spills out, revealing a cozy space lined with sound-dampening carpet and elegant decor.'}
+4	4		401							{1: '2', 2: '4434'}
+5	5		104							{1: '0|0|-100', 2: '0.25'}
+6	6		301							{3: 'Bridget takes a few steps forward, then happily flops onto the soft cushions of the sofa.'}
+7	7		201							{1: '1', 2: '500906', 3: '2'}
+8	8		301			DialogShake				{1: '1', 2: 'Bridget', 3: 'Mmm... so comfy!', 4: '1'}
+9	9		204							{1: '1'}
+10	10		301							"{2: 'Bridget', 3: ""It's rare to get a proper day off. Gotta find the perfect spot to relax."", 4: '1'}"
+11	11		301							{3: 'She stretches out on the sofa, letting out a long, contented sigh.'}
+12	12		302							{2: 'What movie are we watching today?', 3: '13'}
+13	13		301							{3: 'You walk over to the projector, flipping through a stack of vintage videotapes as you ask.'}
+14	14		301				DialogDisable			"{2: 'Bridget', 3: ""Oh, right! I heard this theater has a bunch of rare Golden Age tapes that even WGAA doesn't have. Let's pick one they've never shown at the Babylonia theater."", 4: '1'}"
+15	15		202							{1: '1'}
+16	16		302							"{2: ""(Something they've never shown...)"", 3: '17'}"
+17	17		401							{1: '2', 2: '4182'}
+18	18		306							{1: '1'}
+19	19		301			DialogEnable				{3: 'After rummaging through the box for about half a minute, you pull out an old, battered B-movie tape.'}
+20	20		301							{3: 'The title reads The Room. The cover shows a phantom hand made with terrible special effects, next to a ridiculous tagline: Low Budget, Big Impact!'}
+21	21		301							{3: 'You get the feeling this movie is going to be spectacularly bad.'}
+22	22		306							
+23	23		201							{1: '1', 2: '500906'}
+24	24		301							"{1: '1', 2: 'Bridget', 3: ""Sometimes it's fun to watch something so obscure no one's even reviewed it. Want to go with this one?"", 4: '1'}"
+25	25		301							{3: 'She fiddles with her terminal for a while, searching, but seems to find no results. She shuts off the screen.'}
+26	26		204							{1: '1', 2: '2'}
+27	27		301				DialogDisable			"{2: 'Bridget', 3: ""Alright, let's play it!"", 4: '1'}"
+28	28		202							{1: '1'}
+29	29		302							{2: '(Turn off the lights and press play)', 3: '30'}
+30	30		306							{1: '1'}
+31	31		401						2000.0	{1: '1', 2: '36'}
+32	32		401							{1: '1', 2: '63'}
+33	33		401							{1: '2', 2: '908'}
+34	34		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory378.png', 3: '0', 4: '1', 5: '1'}
+35	35		205							{1: '999'}
+36	36		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory378.png'}
+37	37		501							{1: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiDianying.prefab', 2: '2'}
+38	38		301			DialogEnable				{3: 'And just like that, you and Bridget settle into the loveseat to enjoy this mysterious old horror flick.'}
+39	39		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory379.png', 3: '0', 4: '1', 5: '1'}
+40	40		205							{1: '999'}
+41	41		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory379.png'}
+42	42		111						400.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+43	43		301							{3: 'The worn film stock makes the already low-budget visuals even harder to make out, and the plot is so cliche and dull it starts putting you to sleep fast.'}
+44	44		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '2'}
+45	45		301							{3: 'But with Bridget sitting next to you, you push through and try to keep your eyes on the screen.'}
+46	46		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+47	47		401						1000.0	{1: '1', 2: '36'}
+48	48		401							{1: '2', 2: '777'}
+49	49		201							{1: '1', 2: '500013'}
+50	50		301			RImgBg1Shake				{1: '1', 2: 'Zombie in the Movie', 3: 'ROAAAAARRRR————!', 4: '1'}
+51	51		202							{1: '1', 6: '1'}
+52	52		402							{1: '908'}
+53	53		401							{1: '1', 2: '205'}
+54	54		505							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiDianying.prefab'}
+55	55		306							
+56	56		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+57	57		205							{1: '1006', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.5', 5: '0'}
+58	58		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1175.jpg'}
+59	59		401							{1: '2', 2: '5735'}
+60	60		201							{1: '1', 2: '500906', 3: '5'}
+61	61		301			PanelActor1Shake				{1: '1', 2: 'Bridget', 3: 'Eek?!', 4: '1'}
+62	62		202							{1: '1'}
+63	63		301							{3: 'Right as the zombie shrieks on screen, you hear a surprised yelp beside you, followed by the unmistakable sound of fabric ripping.'}
+64	64		301							{3: 'You turn to look—Bridget has torn the throw pillow in her arms in half.'}
+65	65		201							{1: '1', 2: '500906', 3: '6'}
+66	66		301							"{1: '1', 2: 'Bridget', 3: ""N-no, I wasn't scared, really! That close-up just caught me off guard..."", 4: '1'}"
+67	67		301				DialogDisable			{3: 'She quickly hides the shredded pillow behind her back, clearly flustered.'}
+68	68		302							"{2: ""(So she's afraid of zombies...)"", 3: '69'}"
+69	69		302							"{2: ""Since the pillow's done for, want to lean against me instead?"", 3: '70', 4: '(Continue sitting where you are and observe her reaction)', 5: '72'}"
+70	70		301			DialogEnable				{2: 'Bridget', 3: 'Okay, if you say so.', 4: '1'}
+71	71	74	301							{3: 'Blushing slightly, she hides her face behind your shoulder.'}
+72	72		301			DialogEnable				{2: 'Bridget', 3: 'Sorry... 【kuroname】, mind if I lean on your arm?', 4: '1'}
+73	73		301							{3: 'Blushing, she hides her face behind your shoulder.'}
+74	74		204							{1: '1', 2: '14'}
+75	75		301							"{2: 'Bridget', 3: ""This is so embarrassing... I'll have to pay for that pillow when we leave..."", 4: '1'}"
+76	76		202							{1: '1'}
+77	77		301							"{3: ""She seems to think the movie's sound is loud enough to cover her muttering.""}"
+78	78		302							{2: '(Silently sit up straight)', 3: '79', 4: '(Offer her a drink)', 5: '81'}
+79	79		201							{1: '1', 2: '500906', 3: '6'}
+80	80	83	301							{1: '1', 2: 'Bridget', 3: 'Wow, those effects look so real...', 4: '1'}
+81	81		201							{1: '1', 2: '500906'}
+82	82		301							{1: '1', 2: 'Bridget', 3: 'Oh, thanks, 【kuroname】!', 4: '1'}
+83	83		204							{1: '1', 2: '4'}
+84	84		202							{1: '1'}
+85	85		301				DialogDisable			"{3: ""Even though she's still a bit scared, her eyes stay fixed on the screen.""}"
+86	86		205							{1: '1006', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.5', 4: '0', 5: '0'}
+87	87		306							{1: '1'}
+88	88		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory382.png', 3: '0', 4: '1', 5: '1'}
+89	89		205							{1: '999'}
+90	90		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory382.png'}
+91	91		501							{1: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiDianying.prefab', 2: '2'}
+92	92		301			DialogEnable				"{3: ""Before you know it, the arm she's been clinging to starts to go numb. Thankfully, the movie is almost over.""}"
+93	93		505							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiDianying.prefab'}
+94	94		306							
+95	95		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+96	96		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+97	97		401							{1: '2', 2: '907504'}
+98	98		401							{1: '1', 2: '36'}
+99	99		401							{1: '2', 2: '718'}
+100	100		301							"{3: ""Just as the atmosphere starts to settle down, there's a loud snap, and the room goes completely dark.""}"
+101	101		301			DialogShake				{2: 'Bridget', 3: '—?!!'}
+102	102		401							{1: '2', 2: '4434'}
+103	103		401							{1: '2', 2: '4044'}
+104	104		301			RImgBg1Shake				{3: 'In the sudden blackness, you feel yourself pushed down onto the sofa cushions. Bridget grabs your arm and shields you with her body.'}
+105	105		401							{1: '2', 2: '4434'}
+106	106		301							"{3: ""Thanks to the reflexes she's developed from her time in the Support Force, there's no pain at all. Instead, you feel a warm pressure around your shoulders, almost like being gently held.""}"
+107	107		301			DialogShake				{2: 'Bridget', 3: 'Commandant! Are you okay?'}
+108	108		301							"{3: ""Still shaken by the horror movie, her voice sounds tense, like she's ready to fight off a real threat.""}"
+109	109		302							"{2: ""I-I'm fine..."", 3: '110', 4: ""It's just a power outage...!"", 5: '110'}"
+110	110		402							{1: '718'}
+111	111		401							{1: '1', 2: '122'}
+112	112		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+113	113		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1175.jpg'}
+114	114		301							{3: 'Just as you finish speaking, you hear the hum of the electric box overhead, and the room lights up again in an instant.'}
+115	115		201							{1: '1', 2: '500906', 3: '4'}
+116	116		301							{1: '1', 2: 'Bridget', 3: '...', 4: '1'}
+117	117		202							{1: '1'}
+118	118		301							{3: 'Now that the lights are back on, Bridget finally sees everything in the room clearly.'}
+119	119		301							"{3: ""It's like she's snapping out of a dream. Her hands unclench slowly.""}"
+120	120		201							{1: '1', 2: '500906', 3: '5'}
+121	121		301							{1: '1', 2: 'Bridget', 3: '【kuroname】...? Are you okay?', 4: '1'}
+122	122		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+123	123		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory748.jpg'}
+124	124		201							{1: '1', 2: '500906', 3: '6', 7: '1'}
+125	125		301							{1: '1', 2: 'Bridget', 3: '...Please, 【kuroname】, just finish this drink and pretend none of this ever happened.', 4: '1'}
+126	126		301							{3: 'After paying for the pillow, Bridget practically drags you to a nearby bar.'}
+127	127		301							{3: 'A tall glass of fragrant, golden brew slides across the counter toward you.'}
+128	128		302							"{2: ""Don't think you can get away with just one glass."", 3: '129'}"
+129	129		204							{1: '1', 2: '2'}
+130	130		301							"{2: 'Bridget', 3: ""Order as many as you want. It's on me today!"", 4: '1'}"
+131	131		302							{2: 'Let me see...', 3: '132', 4: 'Alright, sure.', 5: '132'}
+132	132		204							{1: '1', 2: '14'}
+133	133		301							{2: 'Bridget', 3: 'Sigh... I am never watching some no-review cult movie ever again.', 4: '1'}
+134	134		301							{3: 'She slumps into her seat and rubs her temples.'}
+135	135		204							{1: '1'}
+136	136		301				DialogDisable			"{2: 'Bridget', 3: ""Good thing I came with you, 【kuroname】. If I'd come with anyone else..."", 4: '1'}"
+137	137		302							"{2: ""I don't think it was that bad."", 3: '138'}"
+138	138		302							"{2: ""Don't worry, your secret's safe with me, including the part where you're afraid of zombies."", 3: '139'}"
+139	139		204							{1: '1', 2: '6'}
+140	140		301			DialogEnable				"{2: 'Bridget', 3: ""I'm not—"", 4: '1'}"
+141	141		301							"{3: ""She stops herself mid-sentence, then lowers her head, clearly knowing there's no point in finding excuses.""}"
+142	142		204							{1: '1'}
+143	143		301							{2: 'Bridget', 3: 'Fine... but still, watching a movie with you today... was a lot of fun.', 4: '1'}
+144	144		301							{3: 'Her fair fingertip traces the rim of her glass, then stops and gently taps the tip of your nose.'}
+145	145		204							{1: '1', 2: '2'}
+146	146		301							"{2: 'Bridget', 3: ""Alright, what's done is done. Time to shake it off!"", 4: '1'}"
+147	147		204							{1: '1'}
+148	148		301							"{2: 'Bridget', 3: ""Next time, we're going to see another movie together!"", 4: '1'}"
+149	149		301							"{3: ""She's fully bounced back now, resting her chin on one hand and pointing to your nose with the other, smiling.""}"
+150	150		301							"{2: 'Bridget', 3: ""And in return, you have to tell me one of your secrets too. That's only fair, right?"", 4: '1'}"
+151	151		302							{2: 'Sure, no problem.', 3: '152', 4: 'You know this is basically blackmail.', 5: '154'}
+152	152		204							{1: '1', 2: '2'}
+153	153	156	301							"{2: 'Bridget', 3: ""So tonight, let's drink until we drop and wash away all that fear."", 4: '1'}"
+154	154		204							{1: '1', 2: '2'}
+155	155		301							{2: 'Bridget', 3: 'Not at all. I call it a fair exchange!', 4: '1'}
+156	156		401							{1: '2', 2: '5288'}
+157	157		301							{3: 'The brown-haired Construct lifts her glass and downs the rest of her electrolyte drink in one go.'}
+158	158		204							{1: '1'}
+159	159		401							{1: '2', 2: '4079'}
+160	160		301							{3: 'Then she sets the empty glass down with a loud clink and lets out a satisfied smile.'}
+161	161		301		1		AniZhuanchangBegin			"{2: 'Bridget', 3: ""Well then, now that you've agreed, I'm not letting you off that easily."", 4: '1'}"

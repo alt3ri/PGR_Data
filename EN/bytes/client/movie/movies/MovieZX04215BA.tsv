@@ -1,0 +1,570 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		107			DialogEnable			3000.0	{1: 'Edge of the Andromeda Galaxy', 2: 'Earth Calendar Year 3177, March 19, 15:07', 4: 'Outside the NGC185 Galaxy, Pioneer Leibowitz, Bridge'}
+4	4		108							{1: '1'}
+5	5		401							{1: '1', 2: '12'}
+6	6		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg', 3: '0', 4: '1', 5: '1'}
+7	7		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+9	9		301							"{3: ""Clenching a pocket watch, Schulz sits by the farthest porthole on the bridge. He gazes at the light spot twelve light-years away, waiting for the verdict of the ship's tribunal.""}"
+10	10		301							{3: 'He bought this pocket watch 230 Earth years ago from a roaming group of merchants who gathered artifacts from before human civilization departed the Milky Way.'}
+11	11		301							{3: 'No one knew where they got these items. Rumor had it that they also possessed a unique device used for controlling sequences from ancient eras...'}
+12	12		301							"{3: ""Schulz sifts through his memories. The ship's psychologist, Schwartz, has always believed Schulz harbors a certain compulsive thinking pattern, yet he sees no way around it and opts to yield.""}"
+13	13		301							"{3: 'Like this, Schulz locates the special device he had previously seen in his memory, a collectible piece known as an ""abacus.""'}"
+14	14		201							{1: '1', 2: '500567'}
+15	15		301							{1: '1', 2: 'Schulz', 3: 'Hmm...', 4: '1'}
+16	16		301							{3: 'He also holds a penchant for collecting aged items. When Pioneer Leibowitz was ejected from the W40 homeport at the edge of the Gould Belt, he was meant to bring along the pocket watch his grandfather had left him.'}
+17	17		301							"{3: ""But for some reason, he didn't get to see his grandfather in that ringworld.""}"
+18	18		401							{1: '2', 2: '2979'}
+19	19		301							{2: 'Kant', 3: 'Sir, the Scientific Joint Council has completed the inquiry, and the recording has been sent to you.'}
+20	20		301							{3: 'As the gentle male voice—the central AI of Pioneer Leibowitz—speaks, a small light spot emerges next to Schulz.'}
+21	21		301							"{3: ""All information inside Pioneer Leibowitz converges into the colossal supercomputer at the ship's forefront, which measures 3 kilometers on each side. This luminous, cold machine emits a cascade of lights as data flows in and streams out from it.""}"
+22	22		301							{2: 'Schulz', 3: 'All right.', 4: '1'}
+23	23		301				AniZhuanchangBegin			{3: 'Schulz gently touches the hovering light spot beside him, prompting an instant projection of recorded surveillance footage to unfold before him—'}
+24	24		202			DialogDisable				{1: '1', 6: '1'}
+25	25		401						1000.0	{1: '1', 2: '36'}
+26	26		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '2'}
+27	27		504							{1: '0.5'}
+28	28		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+29	29		401							{1: '1', 2: '201'}
+30	30		301			DialogEnable				"{2: 'Mozi', 3: ""Greetings... Mr. Luwei. I'm Mozi, and I will be asking some necessary questions on behalf of the Joint Council.""}"
+31	31		301							{3: 'A deep and somewhat raspy voice resonates through the desolate room, and inside there is only a table, a chair, and a man sitting on the chair who seems disheveled and on edge.'}
+32	32		201							{1: '1', 2: '500138'}
+33	33		301							{1: '1', 2: 'Luwei', 3: 'Go ahead.', 4: '1'}
+34	34		301							{2: 'Mozi', 3: 'My predecessor seemed to have an unpleasant conversation with you, but despite being a soldier myself, I believe science deserves respect.'}
+35	35		301							{2: 'Luwei', 3: 'Hmph, well said, but respecting science... what good does that do?', 4: '1'}
+36	36		301							{2: 'Mozi', 3: 'I am sorry for the passing of Mr. Cournot. However, based on protocol, I must ask some necessary questions... What was your relationship with Gustav Cournot?'}
+37	37		301							{2: 'Luwei', 3: 'I... used to work under Mr. Cournot and then took over as the director of the Advanced Dimension Observatory after he passed away.', 4: '1'}
+38	38		301							"{2: 'Mozi', 3: ""Yes, based on the records, you assumed his role promptly following Mr. Cournot's suicide last week.""}"
+39	39		301							{2: 'Luwei', 3: 'The observatory needs someone to take charge, and the Scientific Joint Council is aware of that.', 4: '1'}
+40	40		301							{2: 'Mozi', 3: 'Of course.'}
+41	41		301							{2: 'Mozi', 3: 'Why did you resign from the director position at the Advanced Dimension Observatory two days ago?'}
+42	42		301							{2: 'Luwei', 3: 'I have the freedom to do so.', 4: '1'}
+43	43		301							{2: 'Mozi', 3: 'And on that day, you immediately requested authorization to use firearms from Captain Zaal.'}
+44	44		301							{3: 'A holographic projection of the firearms authorization record appeared on the table before Luwei. His previously composed voice now carried a trace of trembling.'}
+45	45		301							{2: 'Luwei', 3: '...Is there any problem?', 4: '1'}
+46	46		301							{2: 'Mozi', 3: 'May I inquire as to why you applied for the use of firearms?'}
+47	47		301							"{2: 'Luwei', 3: ""Doesn't... everyone on Pioneer Leibowitz have that right?"", 4: '1'}"
+48	48		301							{2: 'Mozi', 3: 'That statement is inaccurate. Pioneer Leibowitz is an immigration research vessel. Typically, as you are aware, scientists are not permitted to apply for firearm use.'}
+49	49		301							{2: 'Mozi', 3: 'Furthermore... Mr. Cournot—may he rest in peace—used such a tool to take his own life.'}
+50	50		301							{2: 'Luwei', 3: '...', 4: '1'}
+51	51		301							"{2: 'Mozi', 3: ""I'm sorry—""}"
+52	52		301							{2: 'Luwei', 3: 'I...', 4: '1'}
+53	53		301							{2: 'Mozi', 3: 'I beg your pardon?'}
+54	54		301							{2: 'Luwei', 3: 'I have the right to choose to end my own life.', 4: '1'}
+55	55		301							{2: 'Mozi', 3: 'But we cannot afford to lose another brilliant scientist. It is crucial that you understand this.'}
+56	56		301							"{2: 'Mozi', 3: ""If you are experiencing any psychological challenges, you can seek assistance from the ship's psychologist, or if needed, opt for stasis hibernation to alleviate your condition.""}"
+57	57		301							"{2: 'Mozi', 3: ""You should be aware that even if you choose to shoot yourself, it is not the end of your life... The Scientific Joint Council's respect for Mr. Cournot will soon be shown.""}"
+58	58		301							{2: 'Luwei', 3: 'No... no.', 4: '1'}
+59	59		301							"{2: 'Luwei', 3: ""It's pointless."", 4: '1'}"
+60	60		301							"{2: 'Luwei', 3: ""It's pointless... We can't just... sit back and watch everything head toward destruction."", 4: '1'}"
+61	61		301							"{2: 'Luwei', 3: ""I... can't accept it."", 4: '1'}"
+62	62		301							{2: 'Mozi', 3: 'Destruction? Could you tell me what you mean by that?'}
+63	63		301				AniZhuanchangBegin			{2: 'Luwei', 3: 'Have you never read the reports we submitted?', 4: '1'}
+64	64		202			DialogDisable				{1: '1', 6: '1'}
+65	65		504							
+66	66		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab'}
+67	67		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+68	68		201							{1: '1', 2: '500567'}
+69	69		301			DialogEnable				{1: '1', 3: 'Schulz raises his hand to signal Kant to pause the video and asks.'}
+70	70		301							{2: 'Schulz', 3: 'What reports?', 4: '1'}
+71	71		301							{2: 'Kant', 3: 'The Advanced Dimension Observatory has recently submitted forty-two reports.'}
+72	72		301							"{2: 'Kant', 3: 'The first one is... ""ADO Observation Report_2753-11-20"" submitted by Sir Gustav Cournot.'}"
+73	73		301							{3: 'The light dot hovering next to Schulz flickers as if contemplating, before projecting a report beside him.'}
+74	74		301				AniZhuanchangBegin			{2: 'Schulz', 3: '...Keep playing first.', 4: '1'}
+75	75		202			DialogDisable				{1: '1', 6: '1'}
+76	76		401						1000.0	{1: '1', 2: '36'}
+77	77		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '2'}
+78	78		504							{1: '0.5'}
+79	79		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+80	80		401							{1: '1', 2: '250'}
+81	81		201							{1: '1', 2: '500138'}
+82	82		301			DialogEnable				{1: '1', 2: 'Luwei', 3: 'Have you never read the reports we submitted?', 4: '1'}
+83	83		301							{2: 'Mozi', 3: 'What reports?'}
+84	84		301							"{2: 'Luwei', 3: ""See, you really don't care about this..."", 4: '1'}"
+85	85		301							{2: 'Mozi', 3: '...Oh... Are you referring to the recent observation reports submitted by Mr. Cournot and yourself?'}
+86	86		301							{2: 'Luwei', 3: 'Yes.', 4: '1'}
+87	87		301							{2: 'Mozi', 3: 'However, the Scientific Joint Council has validated these observation reports as nonsensical.'}
+88	88		301							"{2: 'Luwei', 3: ""No... That's impossible."", 4: '1'}"
+89	89		301							{3: 'Luwei swallows hard, appearing even more nervous.'}
+90	90		301							"{2: 'Luwei', 3: ""On November 18, Mr. Cournot instructed us to check the sky surveyors located at the ship's bow four times."", 4: '1'}"
+91	91		301							"{2: 'Luwei', 3: ""Because the data we got from the observatory at the ship's stern... there was obviously something wrong with it."", 4: '1'}"
+92	92		301							{2: 'Luwei', 3: 'But when I and four other scientists checked in person, the configurations of those sky surveyors were perfectly fine.', 4: '1'}
+93	93		301							{2: 'Mozi', 3: 'So what exactly is the problem?'}
+94	94		301							{2: 'Luwei', 3: 'Twelve light-years away, the pulsar... at our target location...', 4: '1'}
+95	95		301							"{2: 'Luwei', 3: ""There's some problem with its electromagnetic radiation beam on the macroscale."", 4: '1'}"
+96	96		301							{2: 'Mozi', 3: 'You mean issues with its electromagnetic radiation?'}
+97	97		301							{2: 'Luwei', 3: 'This... Look at this.', 4: '1'}
+98	98		301							{3: 'Luwei raises his hand and projects a data report.'}
+99	99		301							{2: 'Luwei', 3: 'This is the pulse signal of PSR-Z1975+2253 obtained on November 17th.', 4: '1'}
+100	100		301							{3: 'On the chart delineated by numerous small squares with green lines, a slender red line continuously jumped, at times resembling a raging storm, at times as quiet as death, and occasionally shifting like a graceful dancer alternating between a minuet and a quick tango.'}
+101	101		301							{2: 'Mozi', 3: '...Are you referring to this report?'}
+102	102		301							"{2: 'Luwei', 3: ""The synchrotron radiation coming from a neutron star shouldn't be this erratic. Despite being some of the most extreme celestial bodies in the universe, they should still follow... the most fundamental laws of physics."", 4: '1'}"
+103	103		301							{3: 'With that said, the nervous man shows a bitter smile.'}
+104	104		301							{2: 'Luwei', 3: 'The Dance of Death...', 4: '1'}
+105	105		301							{2: 'Mozi', 3: 'I beg your pardon?'}
+106	106		301							{2: 'Luwei', 3: 'After that, Mr. Cournot immediately turned the sky surveyors to check other pulsars in another direction we had observed when we left the homeport.', 4: '1'}
+107	107		301							{2: 'Luwei', 3: 'There were typical white dwarfs and neutron stars, all without issues. Their frequency spectrum cycles remained normal.', 4: '1'}
+108	108		301							{2: 'Luwei', 3: 'Which meant that our devices were perfectly fine.', 4: '1'}
+109	109		301							{2: 'Luwei', 3: 'The only problem could be that star, that... crazy star.', 4: '1'}
+110	110		301							"{2: 'Mozi', 3: ""But this could not be the cause of Mr. Cournot's suicide, nor can it be the reason for your attempt.""}"
+111	111		301							"{2: 'Luwei', 3: ""Don't you get it?"", 4: '1'}"
+112	112		301							"{2: 'Luwei', 3: ""In our knowledge system, a star can't have such completely irregular pulse signals."", 4: '1'}"
+113	113		301							"{2: 'Luwei', 3: ""It's like... this star is like a system of true chaos, constantly collapsing and then undergoing supernovas, and the frequency of visible light..."", 4: '1'}"
+114	114		301							"{2: 'Luwei', 3: ""It's like a meatball; one moment, it's a complete meatball, and the next, it shrinks into a black hole."", 4: '1'}"
+115	115		301							{2: 'Luwei', 3: 'This is equivalent to changing all four fundamental forces within a Planck time and rewriting everything. Even the speed of light is constantly stretched and contracted like a rubber band.', 4: '1'}
+116	116		301							"{2: 'Mozi', 3: ""That's impossible.""}"
+117	117		301							{2: 'Luwei', 3: 'Also, as far as we know, when a star collapses into a compact object, angular momentum remains constant.', 4: '1'}
+118	118		301							"{2: 'Luwei', 3: ""In other words, the star should be spinning rapidly, and we shouldn't see a scenario where the conical radiation zone rotates through one region slowly and then abruptly shifts magnetic poles to another area."", 4: '1'}"
+119	119		301							"{2: 'Luwei', 3: ""Thus, I'm only leaning toward one possible explanation."", 4: '1'}"
+120	120		301							{2: 'Mozi', 3: 'What is it?'}
+121	121		301				AniZhuanchangBegin			{2: 'Luwei', 3: '...PSR-Z1975+2253, twelve light-years away, might not be a pulsar.', 4: '1'}
+122	122		401						1000.0	{1: '1', 2: '36'}
+123	123		202			DialogDisable				{1: '1', 6: '1'}
+124	124		504							
+125	125		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab'}
+126	126		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+127	127		401							{1: '1', 2: '201'}
+128	128		201							{1: '1', 2: '500567'}
+129	129		301			DialogEnable				{1: '1', 3: 'Schulz raises his hand, signaling Kant to pause the video again.'}
+130	130		301							{2: 'Schulz', 3: 'What exactly is going on with that star?', 4: '1'}
+131	131		301							{2: 'Kant', 3: 'As per the route designated upon departure, PSR-Z1975+2253 is a neutron star that requires our observation.'}
+132	132		301							{2: 'Schulz', 3: 'I know this.', 4: '1'}
+133	133		301							{2: 'Schulz', 3: 'Is there anything wrong with this neutron star?', 4: '1'}
+134	134		301							{2: 'Kant', 3: 'I can only extract the data obtained by the sky surveyors.'}
+135	135		301							"{2: 'Schulz', 3: ""Show me yesterday's observation data."", 4: '1'}"
+136	136		301							{2: 'Kant', 3: 'Understood...'}
+137	137		301							{3: 'The light spot beside Schulz flickers once more, this time taking slightly longer than when retrieving the file report earlier.'}
+138	138		301							{2: 'Kant', 3: 'According to the observation report from yesterday... all constant indicators of PSR-Z1975+2253 remain normal, aligning with the initial observation targets of the mission.'}
+139	139		301							{2: 'Kant', 3: 'Here is the detailed data.'}
+140	140		301							{3: 'A tall wall filled with a multitude of observation indicators and radio observation images unfurls beside Schulz. The blue-white star on the wall gazes silently at him.'}
+141	141		301							"{2: 'Schulz', 3: ""Nothing's wrong with the data?"", 4: '1'}"
+142	142		301							{2: 'Kant', 3: 'Yes, it all meets our observation targets.'}
+143	143		301							"{2: 'Schulz', 3: ""Tsk... That's odd."", 4: '1'}"
+144	144		301							"{2: 'Kant', 3: ""There's one thing I must remind you.""}"
+145	145		301							{2: 'Kant', 3: 'PSR-Z1975+2253 is merely a prospective target in this flyby observation mission. It might not warrant the majority of our attention.'}
+146	146		301							"{2: 'Schulz', 3: ""You're right."", 4: '1'}"
+147	147		301							{3: 'Schulz waves his arm, causing the star, along with the stacks of data and line charts, to vanish. The bridge is once again left with only himself.'}
+148	148		301							"{2: 'Schulz', 3: ""Let's just leave it at that."", 4: '1'}"
+149	149		301							{2: 'Kant', 3: 'Do you still need to proceed with reviewing the inquiry with Mr. Luwei?'}
+150	150		301							{2: 'Schulz', 3: '...Not for now.', 4: '1'}
+151	151		301							{2: 'Schulz', 3: 'The Joint Council decided to put Mr. Luwei into hibernation, right?', 4: '1'}
+152	152		301							{2: 'Kant', 3: 'Yes. Three days later, Mr. Cournot will assume the responsibilities of the Advanced Dimension Observatory director temporarily until it is deemed suitable to awaken Luwei.'}
+153	153		301							{2: 'Schulz', 3: 'Probably the right thing to do.', 4: '1'}
+154	154		301							{2: 'Kant', 3: 'Considering Mr. Luwei will enter hibernation, the Joint Council has consulted his Caporian compatriots, and Mrs. Burnell will also end her Caporian relationship with Mr. Luwei within this Earth year.'}
+155	155		301							{2: 'Schulz', 3: 'Will Katherine remarry?', 4: '1'}
+156	156		301							{3: 'Schulz unintentionally uses a term he encountered in ancient records. However, for their time, marriage, family, childbirth, and offspring merely indicate straightforward and commonplace Caporian relationships.'}
+157	157		301							"{2: 'Kant', 3: ""That depends on Mrs. Burnell's own wishes.""}"
+158	158		301							{2: 'Schulz', 3: 'Very well. Also, contact the Federation. Since Mr. Cournot took his life while in service, ask the Federation to provide some compensation to his family.', 4: '1'}
+159	159		301							"{2: 'Schulz', 3: 'The folks at the observatory... probably won\'t appreciate being bossed around every day by the ""brain"" of someone they know well and admire.', 4: '1'}"
+160	160		301							"{2: 'Schulz', 3: ""Unfortunately, there's no way around it."", 4: '1'}"
+161	161		301							{2: 'Kant', 3: 'Understood.'}
+162	162		301							{2: 'Schulz', 3: 'Is there anything else?', 4: '1'}
+163	163		301							{2: 'Kant', 3: 'At present, there are no miscellaneous tasks that necessitate your attention.'}
+164	164		301							"{2: 'Schulz', 3: ""Then I'll plan the following course."", 4: '1'}"
+165	165		301							{3: 'Schulz taps Kant, and a vast star map materializes instantly in front of him.'}
+166	166		301							{3: 'They are currently on a glide path from NGC185 to M33, having just warped from the direction of the Fornax Dwarf Spheroidal. Their task is to finalize the scientific exploration of this region within the designated Earth years.'}
+167	167		301							{3: 'Leading a group of rigid scientists in exploration is no easy task, which is why the Federation has designated military personnel as decision-makers on each scientific exploration vessel.'}
+168	168		301							{2: 'Schulz', 3: 'How soon can we be ready for the next warp?', 4: '1'}
+169	169		301							"{2: 'Kant', 3: ""Given the deviation disturbance upon Pioneer Leibowitz's ejection, we are experiencing a deviation index of 2.87% from the intended course.""}"
+170	170		301							{2: 'Kant', 3: 'Therefore, to uphold the space-time continuity of the entire vessel, the warp engine requires a minimum of 5.7 Earth days for cooling down.'}
+171	171		301							"{2: 'Schulz', 3: ""Their trajectory accuracy still isn't there..."", 4: '1'}"
+172	172		301							{2: 'Kant', 3: 'This deviation is within acceptable limits.'}
+173	173		301							"{2: 'Schulz', 3: ""The next warp destination will be close to PSR-Z1975+2253. I'll set the coordinates myself."", 4: '1'}"
+174	174		301							{2: 'Kant', 3: 'May I interpret this as you proceeding with the research mission on PSR-Z1975+2253?'}
+175	175		301							{2: 'Schulz', 3: 'Yes.', 4: '1'}
+176	176		301							{2: 'Kant', 3: 'There is no imperative need to allocate excessive time to this pulsar.'}
+177	177		301							"{2: 'Schulz', 3: ""It's one of the predetermined targets anyway. Proceed."", 4: '1'}"
+178	178		301							{2: 'Kant', 3: 'Understood.'}
+179	179		301							{2: 'Schulz', 3: 'By the way, bring Luwei out of hibernation in five days.', 4: '1'}
+180	180		301							"{2: 'Schulz', 3: ""I'd love to see his expression then..."", 4: '1'}"
+181	181		301							{2: 'Kant', 3: 'Copy that.'}
+182	182		301							{2: 'Kant', 3: 'Besides that, do you wish to enter hibernation during these five days?'}
+183	183		301							{2: 'Schulz', 3: 'Hmm...', 4: '1'}
+184	184		301							{3: 'Schulz hesitates.'}
+185	185		301							{3: 'All the necessary tasks are done. During the cooldown period of the warp engine, there truly is nothing left for him to attend to as the captain.'}
+186	186		301							"{2: 'Schulz', 3: ""I'll go take a nap."", 4: '1'}"
+187	187		301							"{2: 'Kant', 3: ""Understood, I'll prepare it for you.""}"
+188	188		301							{3: 'Schulz waves his hand, making the star map flicker out of sight. He then taps on Kant, and the floating light spot next to him gradually fades away.'}
+189	189		301							{3: 'He continues to caress the pocket watch in his hand, gazing at the star twelve light-years away that he is about to behold.'}
+190	190		301				AniZhuanchangBegin			"{3: ""Now, it's time for him to sleep. Throughout this journey, he has slept intermittently for hundreds of years, yet each slumber feels like a mere moment to him. This time is no different.""}"
+191	191		202			DialogDisable				{1: '1', 6: '1'}
+192	192		401						3000.0	{1: '1', 2: '36'}
+193	193		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+194	194		107							{1: '?????', 2: 'Earth Calendar Year ■■■, ■■ 22, 19:36', 4: '?????, Pioneer Leibowitz, Life Support Center'}
+195	195		301							{3: '?????, Earth Calendar Year ■■■, ■■ 22, 19:36, ?????, Pioneer Leibowitz, Life Support Center.'}
+196	196		108							{1: '1'}
+197	197		401							{1: '1', 2: '102'}
+198	198		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+199	199		401							{1: '2', 2: '2782'}
+200	200		301			DialogEnable				{2: '???', 3: 'Warning! Warning! Abnormal ship speed! Symmetry error! Power system error!'}
+201	201		301							{2: '???', 3: 'Gravitational wave anomaly detected! Photon reading anomaly detected!'}
+202	202		301							{2: '???', 3: 'Warning! Warning...'}
+203	203		201							{1: '1', 2: '500567', 5: '-100'}
+204	204		301							{1: '1', 3: 'Awakened by the blaring alarms from his slumber, Schulz gropes for the valve in the airtight pod. The air, carrying a faintly metallic scent, rushes into his lungs, prompting him to cough out the hibernation fluid that should have been expelled gradually.'}
+205	205		203							{1: '1', 2: '0.35'}
+206	206		301							{2: 'Schulz', 3: 'Cough cough... Cough...', 4: '1'}
+207	207		301							"{2: 'Schulz', 3: ""What's happening..."", 4: '1'}"
+208	208		301							{3: 'The Life Support Center should have been brightly lit, but now it is shrouded in darkness, with only the flashing alarm lights illuminating his figure.'}
+209	209		301							{2: 'Schulz', 3: 'Kant.', 4: '1'}
+210	210		301							{3: 'He taps the control panel of the hibernation pod, but the familiar light spot does not show up beside him.'}
+211	211		301							{3: 'Emerging from hibernation usually entails a minimum of ten minutes to restore muscle tissue receptors. However, drawing on his military experience, Schulz summons his strength and vaults out of the hibernation pod, landing firmly on the ground.'}
+212	212		301							{3: 'Expecting to step on glass shards, he instead senses a slick liquid beneath his feet.'}
+213	213		301							{3: 'Schulz tries to examine the ground, but his attempt proves futile. Under the flashing light, the entire Life Support Center, including Schulz in his shirt, is enveloped in a blood-red hue.'}
+214	214		301							{2: 'Alarm', 3: 'Warning! Warning! Abnormal ship speed! Symmetry error! Power system error!'}
+215	215		301							{2: 'Alarm', 3: 'Gravitational wave anomaly detected! Photon reading anomaly detected!'}
+216	216		301							{3: 'The alarms continue to blare incessantly.'}
+217	217		301							{2: 'Schulz', 3: '(I gotta head to the bridge to figure things out.)', 4: '1'}
+218	218		301							{2: 'Schulz', 3: '(The power system seems to be malfunctioning too...)', 4: '1'}
+219	219		202							{1: '1'}
+220	220		301							{3: 'Schulz fumbles his way toward the airtight valve of the Life Support Center. Recalling his training, he manages to locate the manual valve for the door.'}
+221	221		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory108.png', 3: '0', 4: '1', 5: '1'}
+222	222		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+223	223		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory108.png'}
+224	224		402							{1: '2782'}
+225	225		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+226	226		301							{3: 'All his experience as a soldier proves invaluable in this moment. An average person, just emerging from hibernation, would never have the strength to turn this nearly one-meter-diameter iron valve.'}
+227	227		301							{2: '???', 3: 'Help! Help!!!'}
+228	228		301							{2: '???', 3: 'Anyone? Is anyone still there?!'}
+229	229		301							{3: 'The corridor outside the Life Support Center is equally dark, with only the red alarms flashing.'}
+230	230		301							{3: 'However, a faint silhouette can be seen there.'}
+231	231		301							{3: 'For safety, Schulz retrieves a wrench from beside the emergency valve and calls out cautiously.'}
+232	232		201							{1: '1', 2: '500567'}
+233	233		301							"{1: '1', 2: 'Schulz', 3: ""Who's there?"", 4: '1'}"
+234	234		301							"{2: 'Luwei', 3: ""It's me! Luwei! It's me!""}"
+235	235		203							{1: '1', 2: '0.25', 3: '-400'}
+236	236		201							{1: '2', 2: '500138', 4: '400'}
+237	237		301							"{1: '1', 2: 'Luwei', 3: ""Captain Schulz! You're still alive!"", 4: '2'}"
+238	238		301							"{3: ""Luwei stumbles to Schulz's feet, tripping multiple times along the way.""}"
+239	239		301							{2: 'Schulz', 3: 'Luwei!', 4: '1'}
+240	240		301							{2: 'Schulz', 3: 'What in the world is going on?', 4: '1'}
+241	241		301							{2: 'Luwei', 3: 'Mad... This is madness...', 4: '2'}
+242	242		301							"{2: 'Luwei', 3: ""Everything's gone mad!"", 4: '2'}"
+243	243		301							{3: 'The hysterical man mumbles incoherently, his teeth chattering as his voice rises and falls erratically.'}
+244	244		301							{2: 'Schulz', 3: 'What do you mean?!', 4: '1'}
+245	245		301							{2: 'Luwei', 3: 'People... Those people...', 4: '2'}
+246	246		301							"{2: 'Luwei', 3: ""And this ship! Everything's gone mad! Everything—"", 4: '2'}"
+247	247		203							{1: '1', 2: '0.1', 3: '-250'}
+248	248		401							{1: '2', 2: '2766'}
+249	249		301			RImgBg1Shake				{3: 'Slap!'}
+250	250		301							{3: 'To bring Luwei back to his senses, Schulz has no choice but to slap his face.'}
+251	251		203							{1: '1', 2: '0.25', 3: '-400'}
+252	252		301							{2: 'Schulz', 3: 'Calm down, Luwei!', 4: '1'}
+253	253		301							"{2: 'Schulz', 3: ""Where's everyone? How did they go mad?!"", 4: '1'}"
+254	254		301							{3: 'But Luwei seems to be choking on something, uttering no more words and only shaking his head frantically.'}
+255	255		301							{2: 'Schulz', 3: 'Damn it...', 4: '1'}
+256	256		301							"{3: ""In this situation, if Pioneer Leibowitz has indeed lost power and can't activate Kant, Schulz must make his way to the bridge. That is where he, as the captain, needs to be.""}"
+257	257		301							"{3: ""Directly beneath the bridge lie Kant's computer core and the engine room. To gain entry, he must retrieve the keycard from the bridge.""}"
+258	258		301							{2: 'Schulz', 3: 'Luwei, can you still move?', 4: '1'}
+259	259		301							{3: 'Luwei nods at him.'}
+260	260		301							"{2: 'Schulz', 3: ""Good, then get to your feet. We're heading to the bridge now."", 4: '1'}"
+261	261		301							{2: 'Schulz', 3: 'No matter what has happened to this ship, I need to be there.', 4: '1'}
+262	262		301							"{2: 'Schulz', 3: ""And since Kant can't be activated now, we have to go below the bridge to check on his status."", 4: '1'}"
+263	263		301							"{3: ""Trembling, Luwei rises from Schulz's feet, while Schulz tucks the wrench into his belt.""}"
+264	264		301							"{2: 'Schulz', 3: ""Stick with me. Visibility's too low here."", 4: '1'}"
+265	265		301							{3: 'In the pitch-black corridor, the two stagger into the darkness.'}
+266	266		202							{1: '1', 2: '2', 6: '1'}
+267	268		301							{2: 'Alarm', 3: 'Warning! Warning! Abnormal ship speed! Symmetry error! Power system error!'}
+268	269		301							{2: 'Alarm', 3: 'Gravitational wave anomaly detected! Photon reading anomaly detected!'}
+269	270		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory107.png', 3: '0', 4: '1', 5: '1'}
+270	271		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+271	272		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory107.png'}
+272	273		301							{3: 'Schulz struggles to navigate from the Life Support Center to the bridge, almost pulling Luwei along by his collar while clutching the wrench tightly in his other hand.'}
+273	274		301							{3: 'He remembers leaving the Life Support Center around 7 PM, yet by the time they arrive at the bridge, it is already 10 PM.'}
+274	275		301							"{3: ""However, by this point, they can't really gauge time according to Earth's 24-hour cycle.""}"
+275	276		301							{3: 'Upon their arrival, the bridge proves pitch-black as well, and the darkness even extends outside the window. Only a faint light emanates from the control panel situated at the center.'}
+276	277		301							{3: 'The entire Pioneer Leibowitz seems to be deprived of all light, as if put inside a pocket.'}
+277	278		201							{1: '1', 2: '500567', 4: '-400'}
+278	279		201							{1: '2', 2: '500138', 4: '400'}
+279	280		301							{1: '1', 2: 'Schulz', 3: 'Damn it...', 4: '1'}
+280	281		301							{2: 'Schulz', 3: 'Where is everyone on the bridge? Where are the operators? Where did they go?!', 4: '1'}
+281	282		301							"{2: 'Luwei', 3: ""Don't ask me... I have no idea either..."", 4: '2'}"
+282	283		301							"{3: ""Still gripping Luwei's collar, Schulz lunges toward the control panel to check the status of Pioneer Leibowitz and retrieve the keycard.""}"
+283	284		301							{2: 'Schulz', 3: 'Conventional Power Room... Warp Engine...', 4: '1'}
+284	285		301							{2: 'Schulz', 3: 'These readings only show errors, but what exactly is happening here?', 4: '1'}
+285	286		301							{2: 'Luwei', 3: 'Power is still being output... from the power room now?', 4: '2'}
+286	287		301							"{2: 'Luwei', 3: ""But it doesn't make any sense... Isn't the power system down?"", 4: '2'}"
+287	288		301							"{2: 'Schulz', 3: ""Where is it sending power? It's totally dark everywhere."", 4: '1'}"
+288	289		301							{2: 'Luwei', 3: 'But this data—Arrrggghhh!', 4: '2'}
+289	290		301							{3: 'Luwei suddenly lets out a shriek, pointing somewhere across the control panel.'}
+290	291		202							{1: '1', 2: '2', 6: '1'}
+291	292		201							{1: '1', 2: '500829'}
+292	293		301							{1: '1', 3: 'Across the control panel, a red, indescribable shadow looms.'}
+293	294		301							{2: '▄▆▁▃▆', 3: 'Thump, thump, thump.', 4: '1'}
+294	295		201							{1: '1', 2: '500138'}
+295	296		301			RImgBg1Shake				{1: '1', 2: 'Luwei', 3: 'Help, help!!!!', 4: '1'}
+296	297		202							{1: '1', 6: '1'}
+297	298		201							{1: '1', 2: '500829'}
+298	299		301							{1: '1', 2: '▄▆▁▃▆', 3: 'Thump, thump, thump.', 4: '1'}
+299	300		301							{3: 'The red shadow remains motionless, seemingly bound by something.'}
+300	301		301							{3: 'The pumping sound comes from within the shadow.'}
+301	302		202							{1: '1'}
+302	303		201							{1: '1', 2: '500567'}
+303	304		301							{1: '1', 2: 'Schulz', 3: 'What is that thing?!', 4: '1'}
+304	305		401							{1: '2', 2: '9332011'}
+305	306		201						200.0	{1: '2', 2: '500829', 4: '-600', 7: '1'}
+306	307		202							{1: '2', 6: '1'}
+307	308		301							{1: '1', 3: 'Before Schulz can grasp the wrench at his waist, the shadow shows up beside Schulz. Attempting to pass through him, it appears to be blocked by something and instantly flickers back to its initial position.'}
+308	309		202							{1: '1'}
+309	310		301							{3: 'However, this time, its lower body appears about five meters away from where it should have been.'}
+310	311		201							{1: '1', 2: '500829'}
+311	312		301							{1: '1', 2: '▄▆▁▃▆', 3: 'Thump, thump, thump.', 4: '1'}
+312	313		301							"{3: 'In a blink, another ""lower body"" flickers from the other side and ""merges"" with it.'}"
+313	314		201							{1: '1', 2: '500138'}
+314	315		301			RImgBg1Shake				"{1: '1', 2: 'Luwei', 3: ""Don't... don't kill me... No... Ahhhhh!!!!"", 4: '1'}"
+315	316		301							"{3: ""If Schulz hadn't been tightly clutching Luwei, he would have lost his composure and dashed out of the bridge.""}"
+316	317		202							{1: '1'}
+317	318		301							"{3: 'As if ""startled"" by Luwei\'s words, the shadow dims slightly before assuming an even more eerie form—'}"
+318	319		306							{1: '1'}
+319	320		301							"{3: 'It seems to be a ""person.""'}"
+320	321		301							{3: 'To be precise, it is a person with their skin pulled inward, with all internal organs and bones exposed, hanging on the outside.'}
+321	322		301							{3: 'The pale pink stomach, dark liver and lungs, milky white brain, and continuously twitching heart—all connected by membranes and ligaments to the unseen skin within.'}
+322	323		301							"{3: ""It's as if someone has grasped the bottom of a pocket and flipped it inside out, interchanging the inner side with the outer one.""}"
+323	324		301							{3: 'All the organs that a healthy human should possess are revealed in this manner, yet still functioning.'}
+324	325		306							
+325	326		201							{1: '1', 2: '500829'}
+326	327		301							{1: '1', 2: '▄▆▁▃▆', 3: 'Thump, thump, thump.', 4: '1'}
+327	328		301							"{3: ""It's only now that Schulz realizes the sound comes from the exposed heart that is rhythmically pumping blood.""}"
+328	329		201							{1: '1', 2: '500138'}
+329	330		301			RImgBg1Shake				{1: '1', 2: 'Luwei', 3: 'Ugh...', 4: '1'}
+330	331		201							{1: '1', 2: '500829'}
+331	332		301							{1: '1', 2: '▄▆▁▃▆', 3: 'Thump, thump, thump.', 4: '1'}
+332	333		301							"{3: 'A ""hand"" woven from blood vessels and muscle fibers extends to grab the warm, soft ""brain,"" while the other ""hand"" covers what should be the mouth, now just a dark hole.'}"
+333	334		301							"{3: ""Luwei is nearly petrified by the horrifying sight, but prevented from collapsing by Schulz's tight grip, he can only retch in helpless fear.""}"
+334	335		301							{2: '▄▆▁▃▆', 3: '...When mountains stand before us, we shall ascend...', 4: '1'}
+335	336		201							{1: '1', 2: '500567'}
+336	337		301							{1: '1', 2: 'Schulz', 3: '?', 4: '1'}
+337	338		202							{1: '1'}
+338	339		301							{3: 'The dark hole starts emitting a wet, sticky voice, causing the pink trachea to wriggle up and down.'}
+339	340		201							{1: '1', 2: '500829'}
+340	341		301							{1: '1', 2: '▄▆▁▃▆', 3: 'When vast seas unfold before us, we shall conquer...', 4: '1'}
+341	342		301							{2: '▄▆▁▃▆', 3: 'Not for the sake of gain... we take action because the mountains and seas are there...', 4: '1'}
+342	343		301							{3: 'Schulz compels himself to maintain composure, discreetly extracting the keycard from the control panel and stowing it in his pocket. Meanwhile, he delves into his memories, trying to recall instances of this speech and voice.'}
+343	344		301							{3: 'But he finds nothing.'}
+344	345		301							{2: '▄▆▁▃▆', 3: 'Now, only the universe stretches before us...', 4: '1'}
+345	346		301							"{2: '▄▆▁▃▆', 3: ""It's time to carve our path among the stars with swords and plows..."", 4: '1'}"
+346	347		301							{2: '▄▆▁▃▆', 3: 'We shall... pledge all... to protect the Earth Federation, to safeguard human rights...', 4: '1'}
+347	348		301							{2: '▄▆▁▃▆', 3: 'Let our galaxy... become a beacon of light in the universe...', 4: '1'}
+348	349		301							{2: '▄▆▁▃▆', 3: 'Let humanity... reach that... point at infinity...', 4: '1'}
+349	350		301							{2: '▄▆▁▃▆', 3: 'Even if... there is... only one...', 4: '1'}
+350	351		301							"{3: 'The crimson, quivering ""person"" gradually ceases its ""speech,"" with the trachea and exposed organs halting their wriggling. Like settled dust, it reverts back to its initial shadow form, no longer emitting ""human"" sounds.'}"
+351	352		301							{3: 'It just stands there like a ghost, motionless.'}
+352	353		202							{1: '1'}
+353	354		301							{3: 'Schulz grasps Luwei, who has collapsed on the ground, with one hand while clenching the wrench behind his back with the other hand. Slowly, he makes his way from the control panel toward the bridge door.'}
+354	355		201							{1: '1', 2: '500567', 4: '-400'}
+355	356		201							{1: '2', 2: '500138', 4: '400'}
+356	357		301							{1: '1', 2: 'Luwei', 3: 'Ugh...', 4: '2'}
+357	358		301							{3: 'Luwei has already expelled the contents of his stomach entirely through vomiting along the way. Now, only stomach acid comes out, blending with the viscous, malodorous liquid on the ground.'}
+358	359		301							{2: 'Schulz', 3: 'Get up.', 4: '1'}
+359	360		301				AniZhuanchangBegin			"{2: 'Schulz', 3: ""There's no one on the bridge. We need to head to the engine room below."", 4: '1'}"
+360	361		401			DialogDisable			1000.0	{1: '1', 2: '36'}
+361	362		202							{1: '1', 2: '2', 6: '1'}
+362	363		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory397.jpg'}
+363	364		401							{1: '1', 2: '279'}
+364	365		301			DialogEnable				{3: 'The engine room and the computer core room of the Pioneer Leibowitz are positioned directly beneath the bridge, nearly next to each other.'}
+365	366		301							"{3: ""The ship's autonomous supercomputer, known as Kant, takes the form of a cubic structure measuring 3 kilometers on each side, resembling a colossal mechanical brain. Suspended at the center of this supercomputer is the engine room, serving as its brainstem.""}"
+366	367		301							{3: 'The journey from the bridge to the engine room unfolds surprisingly smoothly for Schulz and Luwei as they encounter no obstacles along the way.'}
+367	368		301							{3: 'Each door opens flawlessly despite the power loss, yet as they descend further, the sticky liquid grows denser. While on the bridge, it was merely a slight splatter underfoot; in the engine room, it rises up to their knees.'}
+368	369		301							{3: 'The quantum warp engine, emitting a faint blue glow, spins slowly, appearing to function without any problems.'}
+369	370		301							{3: 'Multiple rings hover above the engine, rotating asynchronously around a central point. These rings only synchronize when the ship is prepared for warp.'}
+370	371		201							{1: '1', 2: '500567', 4: '-400'}
+371	372		201							{1: '2', 2: '500138', 4: '400'}
+372	373		301							{1: '1', 2: 'Schulz', 3: 'The engine looks fine, then why is there a power supply error?', 4: '1'}
+373	374		301							{2: 'Luwei', 3: 'Captain Schulz, I beg you...', 4: '2'}
+374	375		301							"{3: ""Luwei clings to Schulz's sleeve, almost pleading.""}"
+375	376		301							{2: 'Luwei', 3: 'Not... not here...', 4: '2'}
+376	377		301							"{2: 'Luwei', 3: ""There are many things... I'm serious... Many things are talking."", 4: '2'}"
+377	378		301							{2: 'Schulz', 3: 'What?', 4: '1'}
+378	379		301							{2: 'Luwei', 3: 'So many things in my head... still getting in... Get out! Get out!', 4: '2'}
+379	380		301							"{2: 'Luwei', 3: ""No... don't tell me!"", 4: '2'}"
+380	381		301			RImgBg1Shake				"{2: 'Luwei', 3: ""I don't want to know! I don't want to know!!"", 4: '2'}"
+381	382		202							{1: '1', 2: '2', 6: '1'}
+382	383		301							"{3: ""Luwei suddenly erupts with strength that belies his frail frame. He seizes a crowbar and lunges at Schulz, who deftly dodges Luwei's frenzied attack.""}"
+383	384		201							{1: '1', 2: '500567'}
+384	385		301							{1: '1', 2: 'Schulz', 3: 'What are you doing?!', 4: '1'}
+385	386		202							{1: '1', 6: '1'}
+386	387		201							{1: '2', 2: '500138'}
+387	388		301							"{1: '1', 2: 'Luwei', 3: ""No, no! I don't want to know!"", 4: '2'}"
+388	389		301							{3: 'He swings the crowbar in a frenzy, striking at the indiscernible colored liquid in the engine room.'}
+389	390		301			RImgBg1Shake				"{2: 'Luwei', 3: ""Isolated system... No! That's wrong!! Energy is conserved... It's impossible!!"", 4: '2'}"
+390	391		301							{2: 'Luwei', 3: 'Light speed... This light speed is impossible! How can light speed be negative?!!', 4: '2'}
+391	392		301							"{2: 'Luwei', 3: ""No... no... don't tell me!! I don't want to know anymore!!!"", 4: '2'}"
+392	393		401							{1: '1', 2: '36'}
+393	394		301							{3: 'Luwei suddenly falls silent, his head drooping.'}
+394	395		401							{1: '1', 2: '250'}
+395	396		203							{1: '2', 2: '0.25', 3: '400'}
+396	397		201							{1: '1', 2: '500567', 4: '-400'}
+397	398		301							{1: '1', 2: 'Schulz', 3: 'Luwei?', 4: '1'}
+398	399		301							"{2: 'Luwei', 3: ""It's all too late."", 4: '2'}"
+399	400		301							{2: 'Schulz', 3: 'What?', 4: '1'}
+400	401		301							"{2: 'Luwei', 3: ""We've reached the end of this universe, the furthest humanity can go."", 4: '2'}"
+401	402		301							{2: 'Luwei', 3: 'We cannot go any further.', 4: '2'}
+402	403		301							{2: 'Luwei', 3: 'Light and energy are also a type of information, but the universe is a blackboard.', 4: '2'}
+403	404		301							{2: 'Luwei', 3: 'For THEM, changing, establishing, or erasing rules is nothing different from manipulating chalk marks on a blackboard.', 4: '2'}
+404	405		301							{2: 'Luwei', 3: 'THEY do not exist in this mundane world but on a higher plane.', 4: '2'}
+405	406		301							"{2: 'Luwei', 3: ""It's too late."", 4: '2'}"
+406	407		202							{1: '1', 2: '2', 6: '1'}
+407	408		401							{1: '2', 2: '4261'}
+408	409		301							{1: '1', 3: 'The warp engine abruptly accelerates, flashing a frenzied blue light.'}
+409	410		301							{3: 'Right at this moment, Luwei, standing before Schulz, melts.'}
+410	411		201							{1: '1', 2: '500567'}
+411	412		301			RImgBg1Shake				{1: '1', 2: 'Schulz', 3: 'Luwei!', 4: '1'}
+412	413		306							{1: '1'}
+413	414		301							"{3: ""His body, akin to ice in a desert, begins to bleed, then dissolves from his head down to his limbs, organs, and bones, blending seamlessly with the viscous liquid pooling at Schulz's feet.""}"
+414	415		301							{3: 'Just like this, Luwei vanishes before Schulz in less than five seconds.'}
+415	416		306							
+416	417		301							{2: 'Schulz', 3: 'Damn it.', 4: '1'}
+417	418		301							"{3: ""Schulz reaches for the wrench at his waist but soon realizes there's nothing remaining around that would make him draw his last defensive weapon.""}"
+418	419		202							{1: '1', 6: '1'}
+419	420		401							{1: '2', 2: '2567'}
+420	421		301							{3: 'In an instant, the rings realign on the same plane, standing upright on the engine platform like a dartboard awaiting its mark.'}
+421	422		201							{1: '1', 2: '500829'}
+422	423		301							{1: '1', 2: '▄▆▁▃▆', 3: 'Thump, thump, thump.', 4: '1'}
+423	424		401							{1: '2', 2: '9332011'}
+424	425		202							{1: '1', 6: '1'}
+425	426		301							{3: 'Where Luwei had just melted, a shadow similar to the one on the bridge flickers into existence, only to vanish in a blink.'}
+426	427		201							{1: '1', 2: '500567'}
+427	428		301							{1: '1', 2: 'Schulz', 3: '****ing hell.', 4: '1'}
+428	429		104							{1: '0|0|-300', 2: '10'}
+429	430		203							{1: '1', 2: '10', 4: '-100', 5: '100'}
+430	431		301							{3: 'Schulz spits and gazes back at the motionless quantum rings of the warp engine.'}
+431	432		301							{3: 'The rings of various sizes remain on the same plane, and the central circular hole resembles a pupil-less, eerie blue eye.'}
+432	433		301							{3: 'Schulz knows that at the core of those rings lies a center of mass, which allows the warp engine to maintain space-time continuity. In theory, it is through this tiny point that Pioneer Leibowitz can warp to various destinations.'}
+433	434		301							{3: 'The center of mass, transmitting infinite information, at the heart of the eye, seems to gaze directly at him.'}
+434	435		502						400.0	{1: 'DialogDisable'}
+435	436		401							{1: '2', 2: '2975'}
+436	437		104							{1: '0|0|0', 2: '0'}
+437	438		203							{1: '1', 2: '0'}
+438	439		307							{1: 'Come...', 3: '60'}
+439	440		301							{3: 'Come...'}
+440	441		307							{2: '1'}
+441	442		301			DialogEnable				"{3: ""A voice echoes in Schulz's mind.""}"
+442	443		301							{3: 'The voice, akin to an oracle, emanates from within the warp engine, right from that tiny point.'}
+443	444		502						400.0	{1: 'DialogDisable'}
+444	445		401							{1: '2', 2: '2975'}
+445	446		307							{1: 'Come...', 3: '60'}
+446	447		301							{3: 'Come...'}
+447	448		307							{2: '1'}
+448	449		301			DialogEnable				{3: 'At this moment, something beckons him, urging him to walk up to the altar-like engine platform.'}
+449	450		301							"{3: ""He knows he shouldn't do this. It will violate the ship's protocols and regulations.""}"
+450	451		301							{3: 'But he cannot resist the call.'}
+451	452		502						400.0	{1: 'DialogDisable'}
+452	453		401							{1: '2', 2: '2975'}
+453	454		307							{1: 'Come...', 3: '60'}
+454	455		301							{3: 'Come...'}
+455	456		307							{2: '1'}
+456	457		301			DialogEnable				{3: 'Now, he finds himself standing directly before the plane formed by the quantum rings. Right before him rests the minuscule center of mass, invisible to the naked eye.'}
+457	458		301							{3: 'His mind is captivated by the oracle, his hand extending toward the hand of God—'}
+458	459		104							{1: '0|0|-300', 2: '0.2'}
+459	460		401							{1: '2', 2: '2975'}
+460	461		104							{1: '0|0|0', 2: '0.1'}
+461	462		301							{2: 'Schulz', 3: '****, no!', 4: '1'}
+462	463		301							{3: 'However, the realization dawns on him too late. He is on the brink of passing through the rings, a warmth spreading through his body.'}
+463	464		502						400.0	{1: 'DialogDisable'}
+464	465		401							{1: '2', 2: '2646'}
+465	466		307							{1: 'Come!', 3: '70', 4: 'ff4e4eff'}
+466	467		301			RImgBg1Shake				{3: 'Come!'}
+467	468		307							{2: '1'}
+468	469		301			DialogEnable				{2: 'Schulz', 3: 'Kant?', 4: '1'}
+469	470		401							{1: '2', 2: '4306'}
+470	471		202							{1: '1', 6: '1'}
+471	472		301							{3: 'He plunges into the rings—'}
+472	473		502							{1: 'DialogDisable'}
+473	474		401							{1: '1', 2: '36'}
+474	475		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '0', 4: '1', 5: '1'}
+475	476		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+476	477		101				AniZhuanchangBegin		500.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+477	478		502						400.0	{1: 'DialogDisable'}
+478	479		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+479	480		401							{1: '2', 2: '4326'}
+480	481		301			DialogEnable				{3: 'The last human in this universe floats in a bottomless abyss of void.'}
+481	482		301							{3: 'He opens his eyes, but everything around him remains dark.'}
+482	483		301							{3: 'Then he flips on the switch beside him—'}
+483	484		401							{1: '2', 2: '952'}
+484	485		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4201_03.jpg'}
+485	486		301							{3: 'Before him lies a massive black hole, with stars swirling around him.'}
+486	487		301							{3: 'He notices that the stars no longer shine brightly, and the accretion disk of the incomprehensibly large black hole has expanded, now encompassing several additional disks.'}
+487	488		301							{3: 'He surveys every galaxy in the sea of stars; the once fiery red giants have dimmed, leaving behind almost only white dwarfs and neutron stars.'}
+488	489		301							{2: 'Schulz', 3: 'PSR-Z1975+2253...'}
+489	490		301							{3: 'He searches for that particular star.'}
+490	491		301							"{3: ""Not because he has to, but because he can, even though he doesn't know why he believes that he can locate it among the billions of stars.""}"
+491	492		301							{3: 'But he only finds one conclusion—'}
+492	493		301							{2: 'Schulz', 3: 'Is this black hole... that pulsar?'}
+493	494		301							{2: '???', 3: 'Yes.'}
+494	495		301							{3: 'A gentle, gender-neutral voice converses with him above the bottomless abyss.'}
+495	496		301							{2: 'Schulz', 3: 'Who are you?'}
+496	497		301							"{2: '???', 3: ""I'm one of THEM. I'm responsible for observing this universe bubble.""}"
+497	498		301							{2: '???', 3: 'This universe is nearing its cooling phase.'}
+498	499		301							"{2: 'Schulz', 3: ""But I've only been here for a minute.""}"
+499	500		301							{2: '???', 3: 'Do you measure time in minutes?'}
+500	501		301							{2: '???', 3: 'Since that ship arrived here, 137 time crystals have passed.'}
+501	502		301							{3: 'An unseen gentle hand lays out meticulously arranged lines before Schulz, each line sufficient to narrate the birth and demise of dozens of galaxies.'}
+502	503		301							{2: '???', 3: 'The speed of light here was too slow, so I sped it up slightly.'}
+503	504		301							"{2: 'Schulz', 3: ""Where's my ship?""}"
+504	505		301							{2: '???', 3: 'Inside that dying star.'}
+505	506		301							{3: 'The voice guides his gaze toward the massive black hole.'}
+506	507		301							"{2: 'Schulz', 3: ""So, it fell into the black hole. It's gone.""}"
+507	508		301							"{2: '???', 3: ""I can still see the information membrane of that little paper boat; it still exists. What makes you think it's gone?""}"
+508	509		301							{2: '???', 3: 'And so does the brain of that machine... It still exists, just having become slower and dumber.'}
+509	510		301							{3: 'Right before Schulz, the accretion disk of PSR-Z1975+2253 suddenly flickers.'}
+510	511		301							{2: 'Schulz', 3: 'PSR-Z1975+2253 was supposed to be a pulsar.'}
+511	512		301							{2: '???', 3: 'I just painted something on it spontaneously when I was bored earlier.'}
+512	513		301							{2: 'Schulz', 3: 'But it matters to other people.'}
+513	514		301							"{2: '???', 3: ""I don't see other people.""}"
+514	515		301							"{2: 'Schulz', 3: ""Where's my crew?""}"
+515	516		301							"{2: '???', 3: ""They couldn't handle the consequences of me speeding up time.""}"
+516	517		301							{2: '???', 3: 'By the time I noticed, they had turned into irreversible basic particle structures.'}
+517	518		301							{2: '???', 3: 'But their information membranes remain, just like your ship.'}
+518	519		301							{3: 'The voice carries no trace of pity or sympathy.'}
+519	520		301							{2: 'Schulz', 3: 'So, this universe... is coming to its end soon?'}
+520	521		301							{2: '???', 3: 'Yes, but I found you quite interesting, so I kept you.'}
+521	522		301							"{2: 'Schulz', 3: ""Kind-hearted, aren't you?""}"
+522	523		301							{2: '???', 3: 'It does not matter to us.'}
+523	524		301							{2: 'Schulz', 3: 'Is this the end of the universe?'}
+524	525		301							{2: '???', 3: 'This star is the condensate center of this universe bubble. You are now standing at the endpoint, and the starting point will gradually come to you.'}
+525	526		301							{3: 'The accretion disk of the black hole flickers again.'}
+526	527		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4201_04.jpg', 3: '0', 4: '1', 5: '1'}
+527	528		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+528	529		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4201_04.jpg'}
+529	530		301							{3: 'A vague human figure floats before him.'}
+530	531		301							"{2: 'Schulz', 3: ""A person! There's a person!""}"
+531	532		301							"{2: 'Schulz', 3: ""Someone's there!""}"
+532	533		301							{2: '???', 3: 'Do you mean her? She is the end of Entropy. She is special.'}
+533	534		301							{2: 'Schulz', 3: 'Hey! You there!'}
+534	535		301							{3: 'Schulz shouts loudly toward the figure in the distance, waving his hands.'}
+535	536		301							{3: 'Yet the universe holds no obligation to let his voice travel; it ultimately succumbs to the black hole aglow with the blue light of death.'}
+536	537		301							"{2: '???', 3: ""It's pointless.""}"
+537	538		301							"{2: '???', 3: ""She is the last answer in this universe bubble, yet I don't know what her question is.""}"
+538	539		301							{2: 'Schulz', 3: 'The end of Entropy... Can she reverse all of this?'}
+539	540		301							{2: '???', 3: 'No. The destruction of this universe bubble is imminent, right within this time crystal.'}
+540	541		301							{2: '???', 3: 'Perhaps... in the next universe bubble, she will still be there.'}
+541	542		301							{2: 'Schulz', 3: 'Am I the last surviving human?'}
+542	543		301							{2: '???', 3: 'Yes. As I said, I just find you quite interesting.'}
+543	544		301							{2: '???', 3: 'But if you keep asking questions, I might become annoyed.'}
+544	545		301							{2: '???', 3: 'You can ask one last question or make one last request before this time crystal ends.'}
+545	546		301							{2: '???', 3: 'When we dispose of universe bubbles, life forms capable of interstellar travel often request a final glimpse of their home planet.'}
+546	547		301							{2: '???', 3: 'But 130 time crystals ago, your home planet had already turned into basic particles.'}
+547	548		301							{2: '???', 3: 'I can reconstruct it using its remaining information membrane and show it to you.'}
+548	549		301							"{2: 'Schulz', 3: ""There's no need.""}"
+549	550		301							"{3: 'Schulz\'s gaze fixates on the ""person"" floating in the universe before him.'}"
+550	551		301							{3: 'This is the end of the universe.'}
+551	552		301							{3: 'Everything is over, and it is meaningless to seek answers.'}
+552	553		301							{3: 'Every piece of information in this universe resonates within the voracious beast that engulfs all until it devours itself.'}
+553	554		301							{3: 'Its consumption persists until spirit and memory, matter and energy are all obliterated, bringing an end to time and space.'}
+554	555		301							{2: '???', 3: 'This universe bubble is about to end. You can ask one last question.'}
+555	556		301							{3: 'No more information, no more questions, and no more answers.'}
+556	557		301							{2: 'Schulz', 3: 'Who... am I?'}
+557	558		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '0', 4: '1', 5: '2'}
+558	559		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+559	560		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+560	561		301				AniZhuanchangBegin			{3: 'In the dazzling white light, Schulz feels that same warmth washing over him.'}
+561	562		502						3000.0	{1: 'DialogDisable'}
+562	563		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+563	564		301			DialogEnable				{3: 'He lies at the bottom of the abyss where there is no time, no space, and no meaning.'}
+564	565		301							{3: 'There is nothing—no sound, no light, and perhaps not even his own existence.'}
+565	566		502						400.0	{1: 'DialogDisable'}
+566	567		307							"{1: ""I'm sorry, child."", 3: '60', 6: '1'}"
+567	568		301							"{3: ""I'm sorry, child.""}"
+568	569		307							{2: '1'}
+569	570		301		1	DialogEnable	AniZhuanchangBegin			{3: 'Those are the last words he hears.'}

@@ -1,0 +1,382 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_13.jpg'}
+2	2		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieShizhong01.prefab', 2: '2'}
+3	3		401							{1: '1', 2: '5061'}
+4	4		401							{1: '2', 2: '2907'}
+5	5		301			DialogEnable				{1: '1', 3: 'The tower bells chime in the distance.'}
+6	6		302							"{1: '1', 2: ""We're out of time.""}"
+7	7		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+8	8		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieShizhong01.prefab'}
+9	9		504							{1: '0.7'}
+10	10		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory577.jpg'}
+11	11		201							{1: '1', 2: '501069', 3: '1', 7: '1'}
+12	12		301							{1: '1', 2: 'Deity', 3: 'Even in your imagination, your mind keeps reshaping how you see this world...', 4: '1'}
+13	13		202							{1: '1', 6: '1'}
+14	14		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+15	15		504							{1: '0'}
+16	16		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_13.jpg'}
+17	17		301							"{3: 'You\'re running out of the time you\'ve received from the deity, and you\'ve still got to find the ""treasure""... You know you\'ll have to find Nanami as soon as you can, even if you\'re the only person in this world who knows her.'}"
+18	18		301							{3: 'Through the sea of people at the celebration, you manage to find a motorcycle, a means of transportation that can actually take you to places.'}
+19	19		201							{1: '1', 2: '500197'}
+20	20		301							{1: '1', 2: 'Armed Motorcyclist', 3: '【kuroname】?', 4: '1'}
+21	21		301							{3: 'Just as the motorcyclist is about to start the engine, he catches sight of you from the corner of his eye and spins around with unbridled excitement.'}
+22	22		302							"{2: ""Yes, that's right."", 3: '23', 4: 'And you are?', 5: '23'}"
+23	23		301							"{2: 'Armed Motorcyclist', 3: ""I'm the courier around here, but that's not important! I saw you drive back that dragon with my own eyes, I can't believe it! Such size, such ferocity, such terror—that legendary dragon!"", 4: '1'}"
+24	24		301							"{3: ""As he speaks, his arms sweep through the air to trace the dragon's massive shape, his voice trembling with excitement.""}"
+25	25		301							"{2: 'Armed Courier', 3: ""I heard you're looking for someone called Nanami? I'm about to make my deliveries, and I'll be going to many places. Why don't you come along?"", 4: '1'}"
+26	26		301							{3: 'Wherever mail is delivered, there must be recipients—often in sizeable settlements... Knowing that she loves being around people, you speculate you just might be able to find her where there are people.'}
+27	27		301							{2: 'Armed Courier', 3: 'What do you say? Shall we head out together?', 4: '1'}
+28	28		302				AniZhuanchangBegin			"{2: ""Let's go.""}"
+29	29		202							{1: '1', 6: '1'}
+30	30		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory998.jpg'}
+31	31		401							{1: '2', 2: '4226'}
+32	32		301			AniZhuanchangEnd				{3: 'As the motorcycle races along the bumpy road, the enthusiastic courier strikes up another conversation.'}
+33	33		201							{1: '18', 2: '500197', 4: '-300', 5: '-200', 6: '300'}
+34	34		301							"{1: '1', 2: 'Armed Courier', 3: ""I've been delivering mail on my motorcycle for years, but this is the first time it feels awesome—I can't believe I've got a real hero riding with me!"", 4: '18'}"
+35	35		302							{2: 'Are motorcycles the only way to deliver mail nowadays?', 3: '36'}
+36	36		301							"{2: 'Armed Courier', 3: ""Yes. You see, we used to have communication networks years ago, but all of humanity's technology was destroyed in an instant when the dragon attacked... Now, everyone relies on motorcycle couriers like us to deliver their mail."", 4: '18'}"
+37	37		401							{1: '2', 2: '4115003'}
+38	38		301							{3: 'As he speaks, he proudly slams down on the accelerator.'}
+39	39		302							{2: 'Where are we headed?', 3: '40'}
+40	40		301							"{2: 'Armed Courier', 3: ""To the harbor. We'll be taking a ship, and that's gonna speed up the rest of our journey."", 4: '18'}"
+41	41		202							{1: '18'}
+42	42		301				AniZhuanchangBegin			{3: 'You recall Nanami was sailing out toward the sea when you last saw her...'}
+43	43		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory390.jpg'}
+44	44		201							{1: '1', 2: '500199'}
+45	45		301			AniZhuanchangEnd				"{1: '1', 2: 'Captain', 3: 'So you\'re saying this girl, Nanami, went searching for something—uh... an ""answer""—and disappeared into the sea with some ""knight""?', 4: '1'}"
+46	46		301							"{3: 'The captain\'s eyes widen in disbelief, seemingly unable to comprehend how such bizarre questions could come from the mouth of a ""hero.""'}"
+47	47		301							"{2: 'Captain', 3: ""Now that's strange. I don't know anything about answers... but there's only one continent in this world, and since the dragon came, mine's the only ship still sailing these seas."", 4: '1'}"
+48	48		301				DialogDisable			{3: 'The captain throws his hands up helplessly, but still agrees to help search for Nanami. The ship sails through nearly every possible route.'}
+49	49		202							{1: '1'}
+50	50		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory537.jpg', 3: '0', 4: '1', 5: '2'}
+51	51		301			DialogEnable	AniZhuanchangBegin			{3: 'Yet the sea stretches out like a blue desert, offering nothing but rolling waves and not a trace of what you came seeking...'}
+52	52		205							{1: '999'}
+53	53		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory530.jpg'}
+54	54		301			AniZhuanchangEnd				{3: 'When the ship docks, the motorcycle carries the two of you over mountains and valleys, eventually reaching the ruins of a city the dragon has destroyed.'}
+55	55		201							{1: '1', 2: '500197'}
+56	56		301							{1: '1', 2: 'Armed Courier', 3: 'Some of these people have come back here since you drove the dragon away.', 4: '1'}
+57	57		202							{1: '1'}
+58	58		301							{3: 'These people first greet you with joy, then they look confused—before they hold your hands firmly as they promise, in tears, that they will help you find this girl called Nanami...'}
+59	59		301							{3: 'Knocking on doors, asking about Nanami, saying goodbye—you go through this cycle countless times as you go door to door with the courier to deliver letters.'}
+60	60		301							"{3: ""But there's no news of Nanami—not even the slightest trace.""}"
+61	61		201							{1: '1', 2: '500197'}
+62	62		301				AniZhuanchangBegin			"{1: '1', 2: 'Armed Courier', 3: ""Don't worry! Let's head to the next place!"", 4: '1'}"
+63	63		202							{1: '1', 6: '1'}
+64	64		401							{1: '2', 2: '4226'}
+65	65		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+66	66		301			AniZhuanchangEnd	DialogDisable			{3: 'The motorcycle sets off again. The two of you go from one settlement to another yet have absolutely no luck.'}
+67	67		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1030.jpg', 3: '0', 4: '1', 5: '2'}
+68	68		401							{1: '2', 2: '4115005'}
+69	69		301			DialogEnable				{3: 'Following a yellowed map, the two of you arrive at a magnificent, gleaming metropolis.'}
+70	70		201							{1: '1', 2: '500197'}
+71	71		301							"{1: '1', 2: 'Armed Courier', 3: ""This is a city built by mechanoids. They fought alongside humans against the dragon, which earned them the title of humanity's knights."", 4: '1'}"
+72	72		302							{2: 'Have the mechs never had any conflicts with humans?', 3: '73', 4: 'Have they never had any conflicts with humans?', 5: '74'}
+73	73	75	301							"{2: 'Armed Courier', 3: ""They are human creations, after all... although I'd say they're being kind rather than loyal to humanity."", 4: '1'}"
+74	74		301							{2: 'Armed Courier', 3: 'Not that I recall. Mechanoids and humans get along really well with each other. I even have a mechanoid friend who looks just like a sniper rifle...', 4: '1'}
+75	75		202							{1: '1', 6: '1'}
+76	76		201							{1: '1', 2: '500354'}
+77	77		301							{1: '1', 2: 'Mechanoid', 3: 'Guests! Guests!', 4: '1'}
+78	78		301							{3: 'As you talk with the courier, an adorable robot comes up this way.'}
+79	79		301							{2: 'Mechanoid', 3: 'Hello! My name is Snowball. Welcome to Loving Community! This is a charming neighborhood designed for humans. Are you here to visit?', 4: '1'}
+80	80		302							"{2: 'Have you seen a girl called ""Nanami""?', 3: '81'}"
+81	81		301							{3: 'The mechanoid tilts its head, looking confused.'}
+82	82		301				AniZhuanchangBegin			"{2: 'Mechanoid', 3: 'That\'s such a lovely name... I\'ve searched our database, and while we have many wonderful human residents here, I find no visitor records of anyone called ""Nanami""...', 4: '1'}"
+83	83		202							{1: '1', 6: '1'}
+84	84		205							{1: '999'}
+85	85		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory809.jpg'}
+86	86		401							{1: '2', 2: '4115005'}
+87	87		301			AniZhuanchangEnd				{3: 'With a roar of engines, the motorcycle comes to a stop in a city of ruins.'}
+88	88		201							{1: '1', 2: '500197'}
+89	89		301							{1: '1', 2: 'Armed Courier', 3: 'Before the dragon attacked, this was my home.', 4: '1'}
+90	90		301							"{3: ""In silence, the courier wanders through the empty houses, occasionally pausing to nostalgically leaf through damaged notebooks and photographs, before stuffing them all into the mailbox attached to the motorcycle's rear.""}"
+91	91		301				DialogDisable			"{2: 'Armed Courier', 3: ""Let's go... This place is long-abandoned."", 4: '1'}"
+92	92		202						500.0	{1: '1'}
+93	93		401							{1: '2', 2: '4226'}
+94	94		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1017.jpg', 3: '0', 4: '1', 5: '2'}
+95	95		205							{1: '999'}
+96	96		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1017.jpg'}
+97	97		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory539.jpg', 3: '0', 4: '1', 5: '1'}
+98	98		205							{1: '999'}
+99	99		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory539.jpg'}
+100	100		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory305.png', 3: '0', 4: '1', 5: '1'}
+101	101		205							{1: '999'}
+102	102		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory305.png'}
+103	103		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory106.png', 3: '0', 4: '1', 5: '1'}
+104	104		205							{1: '999'}
+105	105		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory106.png'}
+106	106		301			DialogEnable				{3: 'Mountains, forests, city-states, snowy plains... The sun sets again and again as the courier searches almost every corner of the world...'}
+107	107		401							{1: '1', 2: '36'}
+108	108		301				AniZhuanchangBegin			"{3: ""But there's nothing—nothing at all. She's nowhere to be found.""}"
+109	109		502							{1: 'DialogDisable'}
+110	110		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory999.jpg'}
+111	111		302			AniZhuanchangEnd				{2: 'Nanami, where are you...', 3: '112'}
+112	112		301			DialogEnable				{3: 'Night falls over the post-apocalyptic wasteland bereft of any light... Only the crystalline starry sky shines upon the endless darkness.'}
+113	113		301							"{3: ""The stars twinkle like they're winking and smiling at you. Suddenly, Nanami's words echo in your mind...""}"
+114	114		301							"{3: '""No matter where you go, the stars will always be in the sky, lighting your path forward.""'}"
+115	115		302							{2: '(Gaze at the sky)', 3: '116'}
+116	116		306							{1: '1'}
+117	117		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg', 3: '0', 4: '1', 5: '1'}
+118	118		301							"{3: ""You don't know if you're just exhausted, but the stars seem to form two patterns—one resembling a handgun, the other an egg...""}"
+119	119		302							"{2: 'Am I seeing things now...', 3: '120', 4: ""It's 70!"", 5: '122'}"
+120	120		301							{3: 'The stars disperse, then converge into a new pattern—'}
+121	121	124	301							{3: 'A cute silly face! With a short ponytail, and cross-shaped stars in the center of each eye...'}
+122	122		301							{3: 'The stars disperse, then converge into a new pattern—'}
+123	123		301							{3: 'A smiling face making a peace sign! With a short ponytail, and cross-shaped stars in the center of each eye...'}
+124	124		302							{2: 'Nanami!!', 3: '125'}
+125	125		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg', 3: '1', 4: '0', 5: '1'}
+126	126		306							
+127	127		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+128	128		401							{1: '1', 2: '5060'}
+129	129		301							{3: 'You blink in disbelief. The stars look normal again, leaving you utterly confused.'}
+130	130		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+131	131		401							{1: '2', 2: '4226'}
+132	132		201							{1: '18', 2: '500197', 4: '-300', 5: '-200', 6: '300'}
+133	133		301							"{1: '1', 2: 'Armed Courier', 3: ""What's that? Speak up! I can't hear you over the wind!"", 4: '18'}"
+134	134		302							{2: 'Nanami is in the sky!!!', 3: '135', 4: '(Thinking quietly)', 5: '137'}
+135	135		301							{2: 'Armed Courier', 3: 'Who?? Where are they??', 4: '18'}
+136	136		301							"{3: ""These words seem to barely make any sense, and the courier's mind fails to conjure up any suitable associations.""}"
+137	137		301							"{3: ""Nanami is up in the sky—she went to space searching for answers. If there's no trace of her on land or out at sea, then she's gotta be up there somewhere.""}"
+138	138		301							{2: 'Armed Courier', 3: 'The starry sky is so beautiful tonight!', 4: '18'}
+139	139		301							{3: 'The courier shouts joyfully while riding through the clear night.'}
+140	140		301							"{3: ""But what good is knowing Nanami is in the sky? During this age and time when basic communication is barely even a thing, there's no way you'll ever make it up there...""}"
+141	141		301							"{2: 'Armed Courier', 3: ""Phew... Today's work was a breeze—I even managed to deliver the next few days' worth of mail."", 4: '18'}"
+142	142		301							"{2: 'Armed Courier', 3: ""My motorcycle seems to be running incredibly fast, and I bet it's because we have a hero riding with us today!"", 4: '18'}"
+143	143		301							{3: 'The motorcycle... what?'}
+144	144		301							{3: 'Since departing at noon, the two of you have covered the entire ocean, crossed mountains and valleys, dashed between countless human settlements, and even combed through every uninhabited wilderness...'}
+145	145		301							{3: 'But how in the world did this motorcycle manage to cover the entire world in less than a day?'}
+146	146		302							{2: '(Look at the dashboard)', 3: '147'}
+147	147		301							{2: 'Armed Courier', 3: 'Why are you interested in the dashboard all of a sudden?', 4: '18'}
+148	148		301							{3: 'The courier remains utterly confused. On the speedometer marked with various speed readings—there is no needle.'}
+149	149		202							{1: '18', 6: '1'}
+150	150		301							{3: 'The motorcycle races at a speed beyond what the speedometer could possibly display. The scenery blurs into indistinct shapes, yet the very fabric of this world makes such an impossible sight seem natural.'}
+151	151		301							"{3: ""You figure that if this is indeed a fairy tale world the deity has created for you and Nanami, then it doesn't have to follow the conventional laws of physics.""}"
+152	152		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+153	153		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+154	154		504							{1: '0.7'}
+155	155		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory637.jpg'}
+156	156		201							{1: '1', 2: '501070', 3: '4', 7: '1'}
+157	157		301							{1: '1', 2: 'Nanami', 3: 'I want to keep these memories together with you, Commandant.', 4: '1'}
+158	158		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+159	159		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1036.jpg'}
+160	160		204							{1: '1', 2: '14'}
+161	161		301							"{2: 'Nanami', 3: ""I'm sure we're getting more rewards than just this for winning first place... right?"", 4: '1'}"
+162	162		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+163	163		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory530.jpg'}
+164	164		202							{1: '1', 6: '1'}
+165	165		301							{2: 'Nanami', 3: 'Commandant!! No!!!'}
+166	166		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+167	167		504							{1: '0'}
+168	168		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory999.jpg'}
+169	169		301							"{3: ""It changes according to Nanami's wishes... and since that's what it does, you're sure that it will change according to your wishes, too.""}"
+170	170		301							{3: 'The motorcycle has been traveling at an impossible speed because you wanted so much to find Nanami.'}
+171	171		301							{3: 'You know exactly what you need to do now...'}
+172	172		302							{2: '(Visualize the starry sky with every ounce of your being)', 3: '173', 4: '(Visualize Nanami with every ounce of your being)', 5: '176'}
+173	173		306							{1: '1'}
+174	174		104							{1: '200|-300|-300', 2: '2'}
+175	175	183	301							{3: 'You try as hard as you can to picture the starry sky and imagine yourself soaring through the cosmos...'}
+176	176		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1106.jpg', 3: '0', 4: '1', 5: '1'}
+177	177		306							{1: '1'}
+178	178		201						1000.0	{1: '1', 2: '501072'}
+179	179		205							{1: '999'}
+180	180		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1106.jpg'}
+181	181		301							{1: '1', 3: 'You try as hard as you can to picture Nanami and imagine yourself looking for her in the cosmos...'}
+182	182		202							{1: '1', 6: '1'}
+183	183		306							
+184	184		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory999.jpg', 3: '0', 4: '1', 5: '1'}
+185	185		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+186	186		301			AniZhuanchangEnd				"{3: ""When you open your eyes, however, you find yourself still seated on the courier's motorcycle.""}"
+187	187		302							{2: '(Did I screw up somewhere?)', 3: '188'}
+188	188		301							"{3: 'No... I\'m missing a ""medium."" If I need a motorcycle to search the world, what do I need to reach the stars?'}"
+189	189		205							{1: '999'}
+190	190		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory998.jpg'}
+191	191		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+192	192		504							{1: '0.7'}
+193	193		201							{1: '1', 2: '501070', 3: '1', 7: '1'}
+194	194		301				DialogDisable			{1: '1', 2: 'Nanami', 3: 'I feel like a Cosmic Rider riding like this.', 4: '1'}
+195	195		202							{1: '1', 6: '1'}
+196	196		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory999.jpg'}
+197	197		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+198	198		504							{1: '0'}
+199	199		302							"{2: ""That's it, the Cosmic Riders!"", 3: '200', 4: 'The Cosmic Riders...', 5: '200'}"
+200	200		201							{1: '1', 2: '500197'}
+201	201		301			DialogEnable				{1: '1', 2: 'Armed Courier', 3: 'Ah—I see you know them, eh! They soar through the universe in search of the ultimate truth!', 4: '1'}
+202	202		301							"{2: 'Armed Courier', 3: ""A treasure one-of-a-kind in this world—your Cosmic Rider's Belt is still in my mailbox!"", 4: '1'}"
+203	203		301							"{3: ""When you take the Cosmic Rider's Belt from the mailbox, a faint luminescence pulses across its surface...""}"
+204	204		302							{2: 'Say, where do I have to go in this world to be closest to the stars?', 3: '205'}
+205	205		301				AniZhuanchangBegin			{2: 'Armed Courier', 3: 'Well, Aerospace City would be your best bet.', 4: '1'}
+206	206		202							{1: '1', 6: '1'}
+207	207		401							{1: '1', 2: '36'}
+208	208		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory943.jpg'}
+209	209		401							{1: '1', 2: '187'}
+210	210		401							{1: '2', 2: '4115010'}
+211	211		301			AniZhuanchangEnd	DialogDisable			{3: 'With a piercing screech of tires, the motorcycle comes to a halt at a place known as Aerospace City.'}
+212	212		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory944.jpg', 3: '0', 4: '1', 5: '2'}
+213	213		301			DialogEnable	AniZhuanchangBegin			"{3: ""Following the courier's lead, you head toward a tower-like structure. With the elevator to the top floor long out of service, the two of you have no choice but to climb up yourselves.""}"
+214	214		205							{1: '999'}
+215	215		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory950.jpg'}
+216	216		201							{1: '1', 2: '500197'}
+217	217		301			AniZhuanchangEnd				{1: '1', 2: 'Armed Courier', 3: 'Huff... Puff...', 4: '1'}
+218	218		301							{3: 'Upon reaching the top floor, the courier is completely out of breath. Before the two of you stretches a magnificent track extending endlessly into the sky.'}
+219	219		301							{3: 'When you look down, you see that most buildings in the city are weathered and rusted, with a few lights flickering like dying candles scattered across the streets.'}
+220	220		301							{2: 'Armed Courier', 3: 'This is Aerospace City, the place closest to the stars in the world. And here...', 4: '1'}
+221	221		301							{3: 'He points down at the platform where he stands.'}
+222	222		301							"{2: 'Armed Courier', 3: ""This is The Bifrost, the closest point to the stars in Aerospace City. It's a starship acceleration track built by mechanoids, designed to reach the heavenly expanse of space."", 4: '1'}"
+223	223		301							"{2: 'Armed Courier', 3: ""But there aren't many things around here that can fly anymore since the disaster the dragon brought about... Apologies, but I meant to say that there isn't anything around that flies anymore."", 4: '1'}"
+224	224		301							{2: 'Armed Courier', 3: 'Without any starships, this place is nothing but an ordinary viewing platform.', 4: '1'}
+225	225		301							{2: 'Armed Courier', 3: 'What are you trying to do here, though?', 4: '1'}
+226	226		302							"{2: ""I'm going to space."", 3: '229', 4: ""I'm going to see Nanami."", 5: '227'}"
+227	227		301							{2: 'Armed Courier', 3: 'Nanami... Is she somewhere in Aerospace City?', 4: '1'}
+228	228		302							"{2: ""She's in space."", 3: '229'}"
+229	229		301							"{2: 'Armed Courier', 3: ""You're going to space??"", 4: '1'}"
+230	230		203							{1: '1', 2: '0.25', 4: '-80', 5: '100'}
+231	231		301							"{3: ""He takes several steps backward in disbelief. While his face is hidden behind his mask, you're sure it's got to be quite a sight to behold.""}"
+232	232		301							{3: 'He takes a deep breath.'}
+233	233		301							"{3: ""How do you know Nanami doesn't have a spacecraft up there how are you even going to get to space how will you breathe once you're there do you know her coordinates which planet is she on how will you find her and then how will you get back—""}"
+234	234		301							"{2: 'Armed Courier', 3: ""...I've got a billion things I want to ask you."", 4: '1'}"
+235	235		301							"{3: ""But that didn't come out quite right.""}"
+236	236		302							"{2: ""Honestly, I'm not so sure myself..."", 3: '237', 4: 'Yes, I am indeed going to space.', 5: '240'}"
+237	237		301							"{2: 'Armed Courier', 3: ""...To be honest, sometimes I wonder if you've lost your mind."", 4: '1'}"
+238	238		301							"{2: 'Armed Courier', 3: ""But here I am, following you on these wild ventures, perhaps hoping you'll create some kind of miracle."", 4: '1'}"
+239	239	244	301							"{2: 'Armed Courier', 3: ""And I'm sure this Nanami girl is waiting for this miracle, too."", 4: '1'}"
+240	240		302							"{2: ""It's hard to explain, but I will find Nanami there."", 3: '241'}"
+241	241		301							"{2: 'Armed Courier', 3: ""I see... I've got nothing but respect for you. Nanami must be someone very important to you, I assume?"", 4: '1'}"
+242	242		301							"{2: 'Armed Courier', 3: ""So much so that even if the whole world doubts Nanami's existence, even if no one else can find her, you'll press on without hesitation."", 4: '1'}"
+243	243		301							{2: 'Armed Courier', 3: 'She must be waiting for this miracle, too.', 4: '1'}
+244	244		302							{2: 'Of course.', 3: '245'}
+245	245		401							{1: '2', 2: '4922'}
+246	246		202							{1: '1', 6: '1'}
+247	247		301							"{3: 'The metal briefcase containing the Cosmic Rider\'s Belt opens with a solemn click. Under the starlight, the silver miniature ""launch pad"" gleams brilliantly while the frosted starship model beside it silently awaits ignition.'}"
+248	248		302							{2: '(Put on the miniature launch pod)', 3: '249'}
+249	249		401							{1: '2', 2: '788'}
+250	250		301				DialogDisable			{3: 'When you place it around your waist, elastic straps shoot out from both sides of the launch pod with a swift motion and secure themselves firmly to your body.'}
+251	251		307							{1: '<b>IGNITION SEQUENCE START</b>', 3: '70', 4: '00B0F0'}
+252	252		401							{1: '2', 2: '2822'}
+253	253		301							{3: 'IGNITION SEQUENCE START'}
+254	254		307							{2: '1'}
+255	255		301			DialogEnable	DialogDisable			{3: 'A deep metallic hum resonates from the belt as brilliant light emanates from its center. The armed courier stands tall and straight, raising a hand in salute.'}
+256	256		307							{1: '<b>10</b>', 3: '70', 4: '00B0F0'}
+257	257		401						300.0	{1: '2', 2: '9389035'}
+258	258		402							{1: '9389035'}
+259	259		301							{3: '10'}
+260	260		307							{2: '1'}
+261	261		201							{1: '1', 2: '500197'}
+262	262		301			DialogEnable	DialogDisable			{1: '1', 2: 'Armed Courier', 3: 'Now... best of luck.', 4: '1'}
+263	263		307							{1: '<b>9</b>', 3: '70', 4: '00B0F0'}
+264	264		202							{1: '1', 6: '1'}
+265	265		401						300.0	{1: '2', 2: '9389035'}
+266	266		402							{1: '9389035'}
+267	267		301							{3: '9'}
+268	268		307							{2: '1'}
+269	269		401							{1: '2', 2: '4261'}
+270	270		301			DialogEnable	DialogDisable			{3: 'Electric motors whir on both sides of the belt as it pulses with light—the magnetic levitation acceleration track is charging the belt automatically.'}
+271	271		307							{1: '<b>8</b>', 3: '60', 4: '00B0F0'}
+272	272		401						300.0	{1: '2', 2: '9389035'}
+273	273		402							{1: '9389035'}
+274	274		301							{3: '8'}
+275	275		307							{2: '1'}
+276	276		301			DialogEnable	DialogDisable			"{3: ""One by one, the scattered lights throughout the city fade out as Aerospace City's energy flows inward to The Bifrost, then into the miniature launch pod at your waist.""}"
+277	277		307							{1: '<b>7</b>', 3: '70', 4: '00B0F0'}
+278	278		401						300.0	{1: '2', 2: '9389035'}
+279	279		402							{1: '9389035'}
+280	280		301							{3: '7'}
+281	281		307							{2: '1'}
+282	282		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+283	283		301			DialogEnable	DialogDisable			"{3: ""All light sources vanish as the world beneath the night sky returns to endless darkness... You haven't exactly figured out how you're going to find Nanami.""}"
+284	284		307							{1: '<b>6</b>', 3: '70', 4: '00B0F0'}
+285	285		401						300.0	{1: '2', 2: '9389035'}
+286	286		402							{1: '9389035'}
+287	287		301							{3: '6'}
+288	288		307							{2: '1'}
+289	289		201							{1: '1', 2: '501070', 7: '1'}
+290	290		205							{1: '1', 3: '0', 4: '0.5', 5: '1'}
+291	291		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2'}
+292	292		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDust.prefab', 3: '1'}
+293	293		301			DialogEnable	DialogDisable			{1: '1', 2: 'Nanami', 3: 'No matter where you are, Commandant, Nanami will come rushing to find you!', 4: '1'}
+294	294		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab'}
+295	295		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDust.prefab', 4: '1'}
+296	296		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+297	297		202							{1: '1', 6: '1'}
+298	298		307							{1: '<b>5</b>', 3: '70', 4: 'ff4e4eff'}
+299	299		401						300.0	{1: '2', 2: '9389035'}
+300	300		402							{1: '9389035'}
+301	301		301							{3: '5'}
+302	302		307							{2: '1'}
+303	303		302							"{2: ""If I were the one who disappeared, I'm sure she would do the same for me."", 3: '304', 4: 'Nanami...', 5: '304', 6: '...', 7: '304'}"
+304	304		307							{1: '<b>4</b>', 3: '70', 4: 'ff4e4eff'}
+305	305		401						300.0	{1: '2', 2: '9389035'}
+306	306		402							{1: '9389035'}
+307	307		301							{3: '4'}
+308	308		307							{2: '1'}
+309	309		401							{1: '2', 2: '4772'}
+310	310		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '1'}
+311	311		301			DialogEnable	DialogDisable			{3: 'Charging complete. With the countdown, the light strip around your waist lights up one section at a time like a loading bar—your body becomes the only light between heaven and Earth.'}
+312	312		307							{1: '<b>3</b>', 3: '60', 4: 'ff4e4eff'}
+313	313		401						300.0	{1: '2', 2: '9389035'}
+314	314		402							{1: '9389035'}
+315	315		301							{3: '3'}
+316	316		307							{2: '1'}
+317	317		302							{2: '(Take a deep breath)', 3: '318'}
+318	318		307							{1: '<b>2</b>', 3: '70', 4: 'ff4e4eff'}
+319	319		401						300.0	{1: '2', 2: '9389035'}
+320	320		402							{1: '9389035'}
+321	321		301							{3: '2'}
+322	322		307							{2: '1'}
+323	323		401							{1: '2', 2: '4652'}
+324	324		301			DialogEnable	DialogDisable			{3: 'The Bifrost gradually tilts upward, pointing straight into the clouds.'}
+325	325		307							{1: '<b>1</b>', 3: '70', 4: 'ff4e4eff'}
+326	326		401						300.0	{1: '2', 2: '9389035'}
+327	327		402							{1: '9389035'}
+328	328		301							{3: '1'}
+329	329		307							{2: '1'}
+330	330		302							"{2: ""(Crouch down into a sprinter's stance, hands on the ground, legs coiled with power.)"", 3: '331'}"
+331	331		307							{1: '<b>0</b>', 3: '70', 4: 'ff4e4eff'}
+332	332		401						300.0	{1: '2', 2: '9389035'}
+333	333		402							{1: '9389035'}
+334	334		301							{3: '0'}
+335	335		307							{2: '1'}
+336	336		401							{1: '2', 2: '8510114'}
+337	337		301			DialogEnable	DialogDisable			{3: 'Your feet explode with tremendous force, launching you forward like a starship ready for takeoff as you sprint with all might toward the far end of The Bifrost—'}
+338	338		401							{1: '2', 2: '937'}
+339	339		307							{1: '<b>ALL ENGINES RUNNING</b>', 3: '70', 4: '3370FF'}
+340	340		301							{3: 'ALL ENGINES RUNNING'}
+341	341		307							{2: '1'}
+342	342		302							"{2: 'Transform!!!', 3: '343', 4: ""Let's go all out!!!"", 5: '347', 6: '(Insert the starship model into the belt launcher)', 7: '351'}"
+343	343		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineBaozhaNew.prefab', 2: '2'}
+344	344		401							{1: '2', 2: '2822'}
+345	345		401							{1: '2', 2: '4831'}
+346	346	355	301			DialogEnable	DialogDisable			{3: 'As the starship model slides into the belt launcher, metal triggers interlock, and pure white light courses through the photon circuits covering your body as it bursts forth from your chest—'}
+347	347		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineBaozhaNew.prefab', 2: '2'}
+348	348		401							{1: '2', 2: '2822'}
+349	349		401							{1: '2', 2: '4831'}
+350	350	355	301			DialogEnable	DialogDisable			{3: 'As the starship model slides into the belt launcher, metal triggers interlock, and pure white light courses through the photon circuits covering your body as it bursts forth from your chest—'}
+351	351		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineBaozhaNew.prefab', 2: '2'}
+352	352		401							{1: '2', 2: '4831'}
+353	353		401							{1: '2', 2: '2822'}
+354	354		301			DialogEnable	DialogDisable			{3: 'Metal triggers interlock, and pure white light courses through the photon circuits covering your body as it bursts forth from your chest—'}
+355	355		401							{1: '2', 2: '781'}
+356	356		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineBaozhaNew.prefab'}
+357	357		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '1'}
+358	358		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab'}
+359	359		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+360	360		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+361	361		505					10.0		{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+362	362		307							{1: '<b>LIFT OFF</b>', 3: '70', 4: '3370FF'}
+363	363		401							{1: '2', 2: '937'}
+364	364		301							{3: 'LIFT OFF'}
+365	365		307							{2: '1'}
+366	366		401							{1: '2', 2: '4336'}
+367	367		205						2.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory100.png', 3: '0', 4: '1', 5: '2'}
+368	368		301			DialogEnable				"{3: ""You're clad in pristine white armor from head to toe, and your visor has transformed into a starship's forward viewport, with flight speed constantly updating in the lower right corner.""}"
+369	369		401							{1: '2', 2: '8510113'}
+370	370		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '1'}
+371	371		301							"{3: ""Before the courier's awestruck eyes, you launch from the acceleration track and soar skyward in a prismatic arc that gleams like a rainbow.""}"
+372	372		401							{1: '2', 2: '13015204'}
+373	373		301							{3: 'You radiate as brilliantly as the sun as you blast your way through the clouds, illuminating the vast darkness of the earth below.'}
+374	374		401							{1: '2', 2: '4336'}
+375	375		301							{3: '7.9km/s, 11.2km/s, 16.7km/s—the speed readings on the viewport climb higher and higher.'}
+376	376		301				AniZhuanchangBegin			"{3: ""Breaking free from Earth's grasp and escaping the Sun's binding force, you soar into the endless galaxy in search of the girl everyone has forgotten.""}"
+377	377		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+378	378		205							{1: '999'}
+379	379		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+380	380		102							{1: 'Like Prince Charming', 2: 'Chapter 262537412640768743', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+381	381		502		1		AniZhuanchangBegin		5000.0	{1: 'ThemeEnable'}

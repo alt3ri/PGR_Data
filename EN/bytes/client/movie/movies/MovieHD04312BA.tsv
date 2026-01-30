@@ -1,0 +1,128 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory671.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				"{3: ""Following Sophia's message, you now find yourself in a secluded street.""}"
+4	4		301				DialogDisable			"{3: ""Unlike the other places with bustling crowds, there aren't many people here.""}"
+5	5		104						800.0	{1: '50|0|0', 2: '0.7'}
+6	6		104						1000.0	{1: '-50|0|0', 2: '0.8'}
+7	7		104						800.0	{1: '0|0|0', 2: '0.7'}
+8	8		301			DialogEnable				"{3: ""Looking around, you don't see Sophia anywhere.""}"
+9	9		104						400.0	{1: '150|100|-150', 2: '0.5'}
+10	10		301							{3: 'Right when you start wondering when she might be, you catch strands of white hair from the corner of your eye.'}
+11	11		201							{1: '1', 2: '500127', 4: '-300'}
+12	12		301							{1: '1', 2: 'Sophia', 3: '...', 4: '1'}
+13	13		302							{2: '...', 3: '14'}
+14	14		401							{1: '1', 2: '205'}
+15	15		301				DialogDisable			{2: 'Sophia', 3: 'There it is.', 4: '1'}
+16	16		202							{1: '1'}
+17	17		401							{1: '2', 2: '4044'}
+18	18		104						400.0	{1: '150|150|-150', 2: '0.3'}
+19	19		104						800.0	{1: '150|100|-250', 2: '0.4'}
+20	20		301			DialogEnable				{3: 'When your eyes meet hers, Sophia furtively gestures for you to head over.'}
+21	21		302							{2: 'You said you needed help in the message you sent me, right?', 3: '22'}
+22	22		401						600.0	{1: '2', 2: '4799'}
+23	23		402							{1: '4799'}
+24	24		301							{3: 'When Sophia sees you, she produces a voucher from her pocket.'}
+25	25		201							{1: '1', 2: '500127'}
+26	26		301							{1: '1', 2: 'Sophia', 3: 'This is what I meant.', 4: '1'}
+27	27		202							{1: '1'}
+28	28		306							{1: '1'}
+29	29		301				DialogDisable			"{3: ""You read what it says on the voucher and see it's for a limited Valentine's Day event at Constellia.""}"
+30	30		307							"{1: '<color=#ffffffff><size=43>""Phantom Thief Adventure for Two: Target the Ultra-Rare Diamond in the Exhibition Hall! (Note: Made from Cut Glass)""</size></color>'}"
+31	31		301							"{3: '""Phantom Thief Adventure for Two: Target the Ultra-Rare Diamond in the Exhibition Hall! (Note: Made from Cut Glass)""'}"
+32	32		307							"{1: '<color=#ffffffff><size=48>""Build a stronger bond through this thrilling adventure and see your heartbeat shoot through the roof!""</size></color>'}"
+33	33		301							"{3: '""Build a stronger bond through this thrilling adventure and see your heartbeat shoot through the roof!""'}"
+34	34		307							{2: '1'}
+35	35		306							
+36	36		302							"{2: 'This seems kind of sketchy...', 3: '37', 4: ""It's... the Phantom Thief Adventure for Two!!"", 5: '42'}"
+37	37		201							{1: '1', 2: '500127', 3: '10'}
+38	38		301			DialogEnable				{1: '1', 3: 'Sophia seems unsatisfied with your reaction.'}
+39	39		204							{1: '1', 2: '0'}
+40	40		301							{2: 'Sophia', 3: 'Phantom thieves. Super cool.', 4: '1'}
+41	41		302							{2: 'Yeah, they are.', 3: '45'}
+42	42		201							{1: '1', 2: '500127'}
+43	43		301			DialogEnable				{1: '1', 3: 'She seems happy with your reaction, a hint of pride glimmering in her smile.'}
+44	44		301							{2: 'Sophia', 3: 'Right.', 4: '1'}
+45	45		401						600.0	{1: '2', 2: '4799'}
+46	46		402							{1: '4799'}
+47	47		301				DialogDisable			{3: 'Sophia pulls out two masks from behind her back and offers one to you.'}
+48	48		202							{2: '1'}
+49	49		302							{2: '(Accept the mask)', 3: '50'}
+50	50		301			DialogEnable				{3: 'Despite feeling somewhat puzzled, you accept the mask.'}
+51	51		201							{1: '1', 2: '500127'}
+52	52		301							{1: '1', 2: 'Sophia', 3: 'I read about phantom thieves in a book.', 4: '1'}
+53	53		301							{2: 'Sophia', 3: 'When you put on the mask, you turn into a phantom thief and can summon your persona.', 4: '1'}
+54	54		301							"{2: 'Sophia', 3: ""But for that to happen, we'll have to shout..."", 4: '1'}"
+55	55		301				DialogDisable			"{2: 'Sophia', 3: '""Psyche Mask""!', 4: '1'}"
+56	56		202							{2: '1'}
+57	57		401						600.0	{1: '2', 2: '4799'}
+58	58		402							{1: '4799'}
+59	59		301			DialogEnable	DialogDisable			{3: 'With that, Sophia puts on her mask and strikes a cool pose.'}
+60	60		302							"{2: 'Uh... like this...?', 3: '61', 4: ""That's so cool..."", 5: '63'}"
+61	61		201							{1: '1', 2: '500127'}
+62	62	65	301			DialogEnable				"{1: '1', 2: 'Sophia', 3: ""That's right! Just like that."", 4: '1'}"
+63	63		201							{1: '1', 2: '500127'}
+64	64		301			DialogEnable				{1: '1', 2: 'Sophia', 3: 'Yeah, that looks cool.', 4: '1'}
+65	65		301				DialogDisable			{3: 'Sophia looks excitedly at you and the mask in your hand.'}
+66	66		202							{1: '1'}
+67	67		302							{2: 'Okay...', 3: '68', 4: 'Watch me shine!', 5: '69'}
+68	68		301			DialogEnable	DialogDisable			{3: 'Seeing how interested Sophia seems, you think it would be a shame to dampen her enthusiasm.'}
+69	69		401							{1: '2', 2: '4044'}
+70	70		302							"{2: '""Psyche Mask""!', 3: '71'}"
+71	71		401						600.0	{1: '2', 2: '4799'}
+72	72		402							{1: '4799'}
+73	73		104						1000.0	{1: '-50|50|-150', 2: '1'}
+74	74		301			DialogEnable				{3: 'So you decide to strike the same pose she just did.'}
+75	75		301							"{3: ""In a secluded alley, masked strangers striking poses that are either cool or just plain weird shout out the Phantom Thieves' declaration.""}"
+76	76		201							{1: '1', 2: '500127'}
+77	77		301				DialogDisable			"{1: '1', 2: 'Sophia', 3: ""We're here for the ultra-rare diamond in the exhibition hall!"", 4: '1'}"
+78	78		401							{1: '2', 2: '4387'}
+79	79		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+80	80		202							{1: '1', 6: '1'}
+81	81		401							{1: '2', 2: '4388'}
+82	82		401							{1: '1', 2: '36'}
+83	83		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory307.png'}
+84	84		401							{1: '1', 2: '31'}
+85	85		401							{1: '2', 2: '4176'}
+86	86		502							{1: 'RImgBg1Shake'}
+87	87		301			DialogEnable				{3: 'Bang!'}
+88	88		201							{1: '1', 2: '500488', 5: '-300', 6: '400'}
+89	89		301							{1: '1', 2: 'Mechanoid Guard A', 3: 'The Phantom Thieves are here!!', 4: '1'}
+90	90		202							{1: '1'}
+91	91		301							{3: 'Tis a peaceful afternoon in Constellia, its tranquility now shattered.'}
+92	92		401			RImgBg1Shake				{1: '2', 2: '4176'}
+93	93		301							{3: 'Dong dong...'}
+94	94		509						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory672.jpg', 2: '1'}
+95	95		201							{1: '11', 2: '500471', 4: '-600', 5: '-200', 6: '300'}
+96	96		301							{1: '1', 2: 'Mechanoid Guard B', 3: 'Over here!', 4: '11'}
+97	97		401							{1: '2', 2: '4176'}
+98	98		301							{3: '(A loud explosion blares from the speakers)—'}
+99	99		401							{1: '1', 2: '205'}
+100	100		201							{1: '11', 2: '500488', 4: '-600', 5: '-300', 6: '400', 7: '1'}
+101	101		301			PanelActor1Shake				{1: '11', 2: 'Mechanoid Guard C', 3: 'Ah, the Phantom Thieves got me.', 4: '11'}
+102	102		203							{1: '11', 2: '0.5', 3: '-600', 4: '-1080'}
+103	103		401							{1: '2', 2: '4306'}
+104	104		301							{3: 'One of the mechanoid guards delivers its line in a flat, emotionless customer service voice, then dramatically falls to the ground with an exaggerated motion. A few seconds later, it gets back up, still muttering under their breath.'}
+105	105		203							{1: '11', 2: '0.25', 3: '-600', 4: '-300', 5: '400'}
+106	106		301							"{2: 'Mechanoid Guard C', 3: ""Shift's over. Let's call it a day."", 4: '11'}"
+107	107		202							{1: '11'}
+108	108		510						1000.0	{1: '1'}
+109	109		201							{1: '1', 2: '500127'}
+110	110		301				DialogDisable			{1: '1', 2: 'Sophia', 3: 'The diamond is right up ahead.', 4: '1'}
+111	111		302				AniZhuanchangBegin			"{2: ""Let's make this quick.""}"
+112	112		202							{1: '1', 6: '1'}
+113	113		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory69.jpg'}
+114	114		401							{1: '1', 2: '208'}
+115	115		104				AniZhuanchangEnd			{1: '100|100|-150', 2: '0'}
+116	116		301			DialogEnable				"{3: ""Inside Sophia's little shelter, Constellia.""}"
+117	117		302							{2: 'My back hurts...', 3: '118'}
+118	118		301							"{3: ""Having overcome all sorts of bizarre obstacles, you're now finally holding the diamond in your hand.""}"
+119	119		301							{3: 'You were left awestruck by how agile Sophia was during the heist.'}
+120	120		301							{3: 'Encouraged, you attempted a few difficult maneuvers yourself, only to throw out your back after an ambitious 720° aerial spin followed by a rolling slide tackle.'}
+121	121		302							{2: 'Argh, guess the human body does have its limits after all...', 3: '122'}
+122	122		201							{1: '1', 2: '500127'}
+123	123		301							{1: '1', 3: 'Sophia walks to the bed with some sweets in hand, looking somewhat shy.'}
+124	124		301							{2: 'Sophia', 3: 'I had a great time today.', 4: '1'}
+125	125		301							{2: 'Sophia', 3: 'Let me give you a back massage.', 4: '1'}
+126	126		302							"{2: ""Yes, please! I'd appreciate that!"", 3: '127'}"
+127	127		301		1		AniZhuanchangBegin			{2: 'Sophia', 3: 'Alright, then... Here goes.', 4: '1'}

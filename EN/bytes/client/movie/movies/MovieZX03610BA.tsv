@@ -1,0 +1,187 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '250'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab', 2: '3'}
+4	4		301			DialogEnable				{2: 'Canon', 3: 'I was seven when I first saw them...'}
+5	5		301							{2: 'Canon', 3: 'It was a lone little wolf seeking refuge in a tree hole. Exhaustion and hunger weighed heavily upon its weakened body, leaving it no strength to flee.'}
+6	6		301							{2: 'Fading Voice', 3: 'As I walked closer, it showed its fangs to me threateningly, but I could see its paws trembling.'}
+7	7		301							{2: 'Fading Voice', 3: 'The elders warned us not to touch them...'}
+8	8		401							{1: '2', 2: '2919'}
+9	9		301							{2: 'Twisted Voice', 3: '...Because its... their scents would be changed because of that...'}
+10	10		301							{2: 'Twisted Voice', 3: 'If... if it returns to its pack... it will be rejected... by its family... Hiss...'}
+11	11		301							{3: '...Hiss... Whine...'}
+12	12		402							{1: '2919'}
+13	13		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab'}
+14	14		301							{3: '————'}
+15	15		301							{3: 'The sense of hearing is freed from the ringing noise first.'}
+16	16		301							{3: 'The ears above start to turn left and right by themselves, trying to chase the drifting sounds lingering around.'}
+17	17		301							"{3: ""Then, it's the sense of smell that comes back alive. A rich, herbal aura carried by the gentle breeze flows into the body through the air.""}"
+18	18		301							{3: 'The night dews, yet to be dried by the morning sunlight, cling to the leaves and grass and impart a gentle coolness to the palms and feet.'}
+19	19		301							{3: 'With an instinctual surge of power coursing through the muscles, the hands tighten, their sharp claws effortlessly puncturing through the tender grass, delving deep into the moist soil.'}
+20	20		301							{3: 'Something feels off... but...'}
+21	21		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0', 4: '1', 5: '1'}
+22	22		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+23	23		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+24	24		301							{3: 'As the eyes open, the gray pupils are immediately struck by the blinding light, which causes them to constrict uncontrollably.'}
+25	25		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory741.jpg', 3: '0', 4: '1', 5: '0.5'}
+26	26		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+27	27		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory741.jpg'}
+28	28		301							{3: 'Once the pupils become accustomed to the brightness, the light gray figure finally gains a clear view of the world around.'}
+29	29		201							{1: '1', 2: '500667'}
+30	30		301							{1: '1', 3: 'The little wolf rises to her feet, shaking off the clinging soil and leaves from her fur.'}
+31	31		301							{3: 'She takes a moment to observe the shelter where she had slumbered, then lifts her gaze toward the forest. Those entangling branches and stems appear even more majestic than before.'}
+32	32		301							{3: 'As she sniffs the moist air, her nose detecting the array of familiar and serene smells, one scent in particular draws her attention. It comes from somewhere nearby.'}
+33	33		301							{3: 'Go track it down—a voice in her mind prompts her.'}
+34	34		301							{3: 'Her pace quickens upon the thought.'}
+35	35		401							{1: '2', 2: '2936'}
+36	36		301							{3: 'As she jumps over twining tree roots and darts through lush bushes, the scent grows thicker.'}
+37	37		301				AniZhuanchangBegin			{3: 'Peeking her head out from a bush taller than her, a captivating sight comes into view—a wolf pack peacefully resting in an open space ahead, their bodies nestled closely together.'}
+38	38		202			DialogDisable				{1: '1', 6: '1'}
+39	39		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgCg/Cg3601_10.jpg'}
+40	40		301			DialogEnable				{1: '1', 3: 'Startled by the noise, the wolves swiftly stand up, their gaze fixed in her direction.'}
+41	41		301							{3: 'Should she directly walk over and join them?'}
+42	42		301							{3: 'However, all the wolves appear on high alert, their muscles tensed. Clearly, her arrival is not met with a warm welcome.'}
+43	43		301							{3: 'The tense standoff persists for nearly a minute. Then, out of nowhere, a shrill scream pierces through the air, shattering the silence. In a flurry of urgency, the wolves swiftly come together, forming a cohesive unit, and dash toward the depths of the forest.'}
+44	44		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3601_11.jpg', 3: '0', 4: '1', 5: '1'}
+45	45		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+46	46		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3601_11.jpg'}
+47	47		301							{3: 'Predators—a voice in her mind prompts her.'}
+48	48		301							"{3: ""Run! But the little wolf is left perplexed by the pack's vigilant reaction to her presence. Doubt lingers as she ponders whether blindly following them would be the wisest choice.""}"
+49	49		301				AniZhuanchangBegin			{3: 'Time is running out. Driven by fear, her body instinctively takes charge, acting before her mind. Her legs carry her swiftly in the direction where the pack disappeared, her tail tightly clenched.'}
+50	50		502						400.0	{1: 'DialogDisable'}
+51	51		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '3'}
+52	52		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory741.jpg'}
+53	53		401							{1: '2', 2: '2933'}
+54	54		301			DialogEnable				{3: 'The pack must escape from the pursuit of their airborne enemies, but the predators are just as familiar with the forest as the wolves themselves.'}
+55	55		301							{3: 'As the chase intensifies, the little wolf, falling behind the rest of the pack, unwittingly becomes the primary target of the relentless pursuers.'}
+56	56		301							{3: 'She loses count of the ponds her paws splash through and the flowers trampled under her hurried strides.'}
+57	57		301							"{3: ""The little wolf's heart pounds relentlessly in fear, its rhythmic thumping echoing in her ears. If she were to spare a moment to listen carefully, she would discern the sound of her own blood rushing through her body.""}"
+58	58		401							{1: '2', 2: '2902'}
+59	59		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+60	60		402							{1: '2933'}
+61	61		301							{3: 'After what feels like an eternity of weaving through the dense woods, the little wolf finally realizes with relief that the once-persistent sound of the predators chasing closely behind her has faded.'}
+62	62		201							{1: '1', 2: '500667'}
+63	63		301							{1: '1', 3: 'Taking refuge within a hollow tree root, the little wolf musters her courage and cautiously pokes her head outside. She peers around to ensure there are no piercing gazes fixed upon her.'}
+64	64		301							{3: 'The scent of the pack lingers in the air, intermingled with the natural fragrance of the surrounding plants. The wolves are still somewhere nearby.'}
+65	65		301							"{3: ""Must join them, can't survive alone—a voice in her mind prompts her.""}"
+66	66		301							{3: 'Stopping before the pack once again, the little wolf stands poised and prepared, ready to face whatever challenge lies ahead.'}
+67	67		301							{3: 'As the two pack leaders feast upon the fresh meat of their recently hunted prey, the unexpected arrival of the little wolf propels them into a defensive posture. They step up to protect the food, and a threatening roar reverberates from deep within their throats.'}
+68	68		301							{3: 'The little wolf remains still in the distance, her tail obediently hanging low, not showing any intention of snatching the food.'}
+69	69		301							{3: 'With the acquiescence of the leaders, the remaining wolves who were waiting to feed cautiously gather around, their eyes fixed upon the lone traveler who dared to venture into their turf.'}
+70	70		301							{3: 'Their gaze of examination does not carry much more warmth than that of the predators.'}
+71	71		301							{3: 'The wolves sniff the little wolf one by one, examining her scent and assessing her presence. Some are teetering on the edge of losing their temper, their jaws ready to deliver a bone-crushing bite any second.'}
+72	72		301							{3: 'Soon, the pack leaders redirect their attention from the trembling little wolf back to their prey. Whether it is her obedience or the possibility of her serving as a decoy to distract their enemies, they seem to perceive her presence as a non-immediate threat.'}
+73	73		301							{3: 'Sensing the change in dynamics, the lower-ranking wolves cease their aggression and retreat to their original positions of waiting.'}
+74	74		301							{3: 'As the acceptance of the pack washes over her, the little wolf finally realizes the strain and soreness in her muscles.'}
+75	75		301							{3: 'The wolves revive their playfulness as they wait. They rub their backs against one another, emitting sounds of contentment and affection in sheer delight.'}
+76	76		301							{3: 'Perhaps she will soon join their ranks. As the little wolf envisions the exuberant play, she cannot resist the urge to excitedly roll on the ground.'}
+77	77		301							{3: 'However, the playful wolves abruptly spring to their feet, lowering their bodies in a cautious stance toward her, as if perceiving her behavior as unusual.'}
+78	78		301							{3: 'Fortunately, the leaders conclude their feast at that very moment. After confirming that she poses no threat, the wolves eagerly pounce upon the remnants of their prey, relishing their meal.'}
+79	79		301							"{3: ""The little wolf swallows a mouthful of saliva, but she knows that it's not wise to join them now, or they would think she intends to challenge their pack hierarchy.""}"
+80	80		301				AniZhuanchangBegin			{3: 'Amidst the sounds of flesh being torn apart, she curls up, seeking to keep her body warm and minimize energy consumption.'}
+81	81		202							{1: '1', 6: '1'}
+82	82		502						400.0	{1: 'DialogDisable'}
+83	83		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory739.jpg'}
+84	84		301			DialogEnable				{3: 'For days, the wolves have weaved through the boundless forest, deftly evading formidable predators while relentlessly pursuing their prey.'}
+85	85		201							{1: '1', 2: '500667'}
+86	86		301							"{1: '1', 3: ""The pack had grown accustomed to the little wolf's presence, no longer startled by her movements. However, the carefree playfulness she yearned for remains elusive in her imagination.""}"
+87	87		301							{3: 'She is only allowed to stay in the far behind, whether when the pack is moving or feeding.'}
+88	88		301							{3: 'Even during the breaks for drinking water, she can only approach the water source once everyone else has had their turn.'}
+89	89		301							{3: 'Is she a member of the pack?'}
+90	90		301							{3: 'The answer is positive.'}
+91	91		301							{3: 'But why—?'}
+92	92		301							"{3: ""In a display of frustration, the little wolf lowers her snout into the pond, observing as bubbles surge upward, bursting upon the water's surface.""}"
+93	93		301							{3: 'As the last bubble vanishes into the air, the water regains its pristine tranquility.'}
+94	94		201							{1: '1', 2: '500668', 6: '1'}
+95	95		301							{1: '1', 3: 'She fixes her gaze upon her own reflection in the water—'}
+96	96		301							{3: 'She realizes how different she is compared with others. In their eyes, she is like a hairy monster.'}
+97	97		301							"{3: ""The wolves' carefree play, where they rub their backs against each other in affection, will remain forever beyond her reach.""}"
+98	98		301							{3: 'Because all she has on her back is a row of ugly fur, standing upright in perpetual fear.'}
+99	99		301							{3: 'If... she can get rid of this fur... will she become closer with her fellow wolves?'}
+100	100		301							{3: 'Want to try it?—a voice in her mind tempts her.'}
+101	101		202							{1: '1'}
+102	102		301							{3: 'She carefully inspects her claws, their sharp nails radiating a cold gleam, akin to the menacing beaks of the predators.'}
+103	103		301							{3: 'As the tips of her claws make contact with her soft and warm chest, a searing pain radiates from a specific point on her skin.'}
+104	104		401							{1: '2', 2: '2935'}
+105	105		301							{3: 'Summoning every ounce of her resolve, she forcefully drags her front claw down across her chest. As her fur is torn apart and her blood gushes out, an agonizing pain surges through her entire body.'}
+106	106		301							{3: 'Instantly, the once white fur becomes saturated with a deep shade of crimson.'}
+107	107		301							{3: '—Does she look more like her purple-red companions now?'}
+108	108		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+109	109		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+110	110		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+111	111		301							{3: 'The little wolf shuts her eyes, retreating into the embrace of darkness, hoping to reduce her pain through this escape.'}
+112	112		301							{3: 'There, she raises her claw once again...'}
+113	113		301							{3: '...It hurts... It hurts so bad...'}
+114	114		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+115	115		301							{3: 'The mechanical pain receptors pulsate with desperation, their intense stimulation fiercely awakening the M.I.N.D.'}
+116	116		201							{1: '1', 2: '500650', 3: '17'}
+117	117		301				AniZhuanchangBegin			{1: '1', 2: 'No. 21', 3: 'Ugh...', 4: '1'}
+118	118		401							{1: '1', 2: '36'}
+119	119		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+120	120		202			DialogDisable				{1: '1', 6: '1'}
+121	121		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory740.jpg'}
+122	122		401							{1: '1', 2: '245'}
+123	123		201							{1: '1', 2: '500168', 3: '5'}
+124	124		301			DialogEnable				{1: '1', 2: 'Vera', 3: 'No. 21? Wake up!', 4: '1'}
+125	125		301							{2: 'Vera', 3: 'Tsk, out of my way!!', 4: '1'}
+126	126		301							"{3: ""She hears exhausted wrath in Vera's voice. What happened?""}"
+127	127		204							{1: '1'}
+128	128		301							"{2: 'Vera', 3: ""Get up and work if you're awake!"", 4: '1'}"
+129	129		203							{1: '1', 2: '0.17', 3: '-300'}
+130	130		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+131	131		401							{1: '2', 2: '819016'}
+132	132		301			RImgBg1Shake				{3: 'With a swift kick, Vera sends a Hetero-Creature hurtling away from her, and without hesitation, she follows up with a rapid slash through its repulsive body while it remains in mid-air.'}
+133	133		401							{1: '2', 2: '2593'}
+134	134		301							"{3: ""As the creature's purple-red body fluid is propelled by inertia, it sprays outward, creating a straight line on the ground.""}"
+135	135		203							{1: '1', 2: '0.25', 3: '-400'}
+136	136		201							{1: '2', 2: '500650', 3: '5', 4: '400'}
+137	137		301							{1: '1', 2: 'No. 21', 3: 'Right... Enemies! No... He...! That Lilin, he fell into the water!', 4: '2'}
+138	138		301							"{2: 'Vera', 3: ""Pull yourself together. The boy's beyond saving... We have to find a way out as soon as possible. If you were still knocked out like that, I would've ditched you here already."", 4: '1'}"
+139	139		204							{1: '2', 2: '4'}
+140	140		301							{2: 'No. 21', 3: 'I can still fight!', 4: '2'}
+141	141		301							"{2: 'Vera', 3: 'Your arm made contact with that ""water"" when you tried to grab him. I only did a basic treatment, so be careful, alright?', 4: '1'}"
+142	142		301							"{2: 'Vera', 3: 'It looks like we stumbled upon the Hetero-Creatures\' lair by accident while following him. That ""water"" is basically another Red Tide, maybe even worse.', 4: '1'}"
+143	143		301							"{2: 'Vera', 3: ""If it weren't for the new material your frame is made of, that arm of yours should've been cut off already."", 4: '1'}"
+144	144		301							{3: 'Casting a glance at the emergency gel applied to her arm, No. 21 tries to make her attack moves.'}
+145	145		301							{2: 'No. 21', 3: 'It works fine.', 4: '2'}
+146	146		301							{2: 'No. 21', 3: 'But this place seems different.', 4: '2'}
+147	147		301							"{2: 'Vera', 3: 'These ""trees"" are constantly growing. There were a few tremors coming from the ground while you were lying there, probably caused by their overly wild growth.', 4: '1'}"
+148	148		204							{1: '2', 2: '8'}
+149	149		301							{2: 'No. 21', 3: 'The smell of the campsite comes from above there.', 4: '2'}
+150	150		204							{1: '2'}
+151	151		301							{3: 'No. 21 carefully analyzes the scents in the air, and then points in the direction behind Vera.'}
+152	152		301							"{2: 'Vera', 3: ""Those plants are almost covering the entire sky. If we waste more time here, we'll be trapped forever."", 4: '1'}"
+153	153		301							{3: 'No. 21 also directs her gaze upward, only to be greeted by a sky fragmented into multiple pieces by the interlacing branches, akin to a colossal net descending from the heavens.'}
+154	154		301							"{3: ""At the very top of her sight, she spots faint, indistinct dark dots, the nature of which she can't discern.""}"
+155	155		301							"{2: 'Vera', 3: ""Dammit, if a guy like Noctis who's completely made of bionic muscles were here with us, things would've been much easier."", 4: '1'}"
+156	156		204							{1: '2', 2: '4'}
+157	157		301							{2: 'No. 21', 3: 'Understood. Contacting Noctis.', 4: '2'}
+158	158		401							{1: '2', 2: '2775'}
+159	159		301							{2: 'No. 21', 3: '...', 4: '2'}
+160	160		402							{1: '2775'}
+161	161		301							"{2: 'No. 21', 3: ""Can't get through."", 4: '2'}"
+162	162		204							{1: '2'}
+163	163		301							"{2: 'Vera', 3: ""I've tried it already. None of the communication channels works. Not sure if it's because of this goddamn mutated forest."", 4: '1'}"
+164	164		301							"{2: 'Vera', 3: ""Let's retreat toward the direction you said first."", 4: '1'}"
+165	165		301							{3: 'To ascend further, maneuvering through the towering vegetation becomes inevitable. However, it is incredibly easy to become disoriented amidst their entangled growth.'}
+166	166		202							{1: '2', 6: '1'}
+167	167		203							{1: '1', 2: '0.25'}
+168	168		401							{1: '2', 2: '2936'}
+169	169		301							{3: 'Vera carefully selects a handful of distinctly shaped tree knots, using them as reference points for steering, ensuring she can adjust their direction in a timely manner to stay on the course.'}
+170	170		301							"{2: 'Vera', 3: ""Let me know whenever you feel we're off the track. It's easy to get lost with these trees rapidly growing."", 4: '1'}"
+171	171		202							{1: '2', 6: '1'}
+172	172		201							{1: '1', 2: '500650'}
+173	173		301							{1: '1', 2: 'No. 21', 3: 'Okay.', 4: '1'}
+174	174		301							{2: 'No. 21', 3: 'Captain...', 4: '1'}
+175	175		202							{1: '1', 6: '1'}
+176	176		201							{1: '1', 2: '500168'}
+177	177		301							{1: '1', 3: 'Having just taken a step, Vera turns back and sees No. 21 looking upward.'}
+178	178		202							{1: '1', 6: '1'}
+179	179		301							{3: 'The cluster of enormous vines, which has absorbed the spring of Red Tide, has unexpectedly given birth to an additional massive pod.'}
+180	180		301							{3: 'The outer layer of the pod is stretched to its limits, nearly translucent, allowing a glimpse of a blurred black shadow within.'}
+181	181		201							{1: '1', 2: '500650'}
+182	182		301							"{1: '1', 2: 'No. 21', 3: ""...It's moving."", 4: '1'}"
+183	183		202							{1: '1', 6: '1'}
+184	184		301							{3: 'The dark shadow, like a newborn disturbed from its slumber, begins a relentless struggle within its cozy cradle. The massive pod quivers and quakes in response to its restless movements.'}
+185	185		201							{1: '1', 2: '500168', 3: '5'}
+186	186		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Vera', 3: ""It's falling off! No. 21, out of the way!!"", 4: '1'}"

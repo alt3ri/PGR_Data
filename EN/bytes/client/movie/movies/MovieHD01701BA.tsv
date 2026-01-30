@@ -1,0 +1,197 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '5'}
+3	3		301			DialogEnable				"{3: ""One day, in Gray Raven's lounge.""}"
+4	4		301							{3: 'Having just come back from a mission, Gray Raven is now in the lounge and only needs to leave when they need to collect the ingredients needed to make mooncakes.'}
+5	5		301							{3: 'Naturally, people huddle up and start writing cards for the Mid-Autumn Festival.'}
+6	6		201							{1: '1', 2: '500166', 3: '1'}
+7	7		301							{1: '1', 2: 'Lucia', 3: 'Commandant, I just finished the card for Commander Nikola.', 4: '1'}
+8	8		301							{3: 'The card is written on behalf of Gray Raven, with all your best wishes for Commander Nikola.'}
+9	9		201							{1: '1', 2: '500026'}
+10	10		301							{1: '1', 2: 'Lee', 3: 'I wrote a card for Asimov, too. I kept it short and sweet to save him the pain of reading.', 4: '1'}
+11	11		301							"{3: ""Looking at Lee's card, you see exactly what he means—the words on it have been halved and shortened into single words, whose meanings can only be obtained through guesswork...""}"
+12	12		301							"{3: ""While the card isn't the easiest to read, it isn't entirely impossible if you give it a try.""}"
+13	13		201							{1: '1', 2: '1031001', 3: '1'}
+14	14		301							{1: '1', 2: 'Liv', 3: 'And this one is for President Hassen, Commandant...', 4: '1'}
+15	15		202							{1: '1', 6: '1'}
+16	16		301							{3: 'After going through all the cards, you look thoughtfully at the letter that lies open in front of you.'}
+17	17		301							{3: 'Lucia notices you deep in thought. With your permission, she moves up for a closer look at the letter.'}
+18	18		201							{1: '1', 2: '500166'}
+19	19		301							"{1: '1', 2: 'Lucia', 3: ""...We know everything you did, and we shall see to it that your twisted desire is rectified and that your confessions are personally made. Brace yourselves for what's coming..."", 4: '1'}"
+20	20		301							{3: 'There is nothing out of the ordinary about the letter sheet itself. The words on it, however, are all cut and pasted from somewhere else.'}
+21	21		201							{1: '1', 2: '500026'}
+22	22		301							{1: '1', 2: 'Lee', 3: 'They put the name of the recipient at the beginning instead of at the end...', 4: '1'}
+23	23		301							{3: 'The person who sent this has got to be...'}
+24	24		302							"{2: 'Nanami.', 3: '32', 4: 'Kamui.', 5: '25', 6: ""It's me."", 7: '27'}"
+25	25		204							{1: '1', 2: '10'}
+26	26	30	301							"{2: 'Lee', 3: ""I don't think Kamui is behind this. Not like this, at least... I mean, maybe, perhaps, most likely..."", 4: '1'}"
+27	27		201							{1: '1', 2: '500166'}
+28	28		301							"{1: '1', 2: 'Lucia', 3: ""But you never had the time to do something like this, right? I mean, you've been slaving away on the mission report all this time..."", 4: '1'}"
+29	29		301							"{3: ""Which is why you've decided to take a break away from the letter completely during the holiday...""}"
+30	30		201							{1: '1', 2: '1031001'}
+31	31		301							{1: '1', 2: 'Liv', 3: 'Nanami did ask me something about cutting and pasting a while back, though... Could it be her?', 4: '1'}
+32	32		201							{1: '1', 2: '500473'}
+33	33		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+34	34		301							"{1: '1', 2: 'Nanami', 3: ""Bingo with a capital B, Commandant! How did you like Nanami's work?"", 4: '1'}"
+35	35		301							"{3: ""You're now in a conversation on your terminal with Nanami...""}"
+36	36		302							{2: 'So, do you want this letter sent out with the cards?', 3: '37'}
+37	37		201							{1: '1', 2: '500472', 3: '1'}
+38	38		301							"{1: '1', 2: 'Nanami', 3: ""Well, I actually meant to use it for April Fools' Day, and I have no idea how it ended up with Commandant."", 4: '1'}"
+39	39		201							{1: '1', 2: '500473'}
+40	40		301							"{1: '1', 2: 'Nanami', 3: ""Keep it safe for me for now, Commandant. I'll swing by to pick it up when I'm back from shopping. Hey, do you happen to have daggers here? I'm looking for the kind that I can throw on the wall to pin a letter with..."", 4: '1'}"
+41	41		401							{1: '2', 2: '2566'}
+42	42		202							{1: '1', 6: '1'}
+43	43		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+44	44		301							{3: 'The conversation ends in a hubbub.'}
+45	45		301							"{3: ""A warning letter for April Fools' Day. It should be okay to deal with it later when the time comes...""}"
+46	46		301							"{3: ""Because after everything you've been through, you now want nothing more than to spend some quality time with the team while the holiday lasts.""}"
+47	47		301							{3: 'You do, however, feel slightly bothered by the schedule that is lurking in the back of your mind.'}
+48	48		401							{1: '2', 2: '1099'}
+49	49		301							{3: 'Ding-dong—the sound of the doorbell drags you right back to your senses.'}
+50	50		201							{1: '1', 2: '500019'}
+51	51		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+52	52		301				DialogDisable			{1: '1', 2: 'Task Force Member', 3: 'The transportation craft is on standby, Commandant.', 4: '1'}
+53	53		202							{1: '1', 6: '1'}
+54	54		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+55	55		302				AniZhuanchangBegin			{2: '...', 3: '56'}
+56	56		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+57	57		401							{1: '2', 2: '743'}
+58	58		502							{1: 'DialogEnable'}
+59	59		301			AniZhuanchangEnd				{3: '...'}
+60	60		301				AniZhuanchangBegin			{3: 'The door closes.'}
+61	61		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+62	62		201							{1: '1', 2: '1031001', 4: '-600', 7: '1'}
+63	63		201							{1: '2', 2: '500026', 4: '600', 7: '1'}
+64	64		201							{1: '3', 2: '500166', 7: '1'}
+65	65		301			AniZhuanchangEnd				{1: '1', 2: 'Liv', 3: 'Does Commandant have a meeting to attend today?', 4: '1'}
+66	66		301							"{2: 'Lee', 3: ""Not as far as I know—or at least there wasn't one to begin with."", 4: '2'}"
+67	67		301							"{2: 'Lucia', 3: ""I wonder what's happened..."", 4: '3'}"
+68	68		301							"{2: 'Lee', 3: ""I don't think it's anything serious, considering how Commandant asked us to stay here. It's probably just something that has to do with the festival."", 4: '2'}"
+69	69		301							"{2: 'Liv', 3: 'But the Task Force member just said, ""The transportation craft is on standby,"" right?', 4: '1'}"
+70	70		301							"{2: 'Lee', 3: ""That probably just means the meeting itself isn't taking place at Babylonia."", 4: '2'}"
+71	71		301							"{2: 'Lee', 3: ""Anyhow, let's finish up what we have here. I've got this pile of cards sorted out already and I'm just going to get in touch with WGAA now."", 4: '2'}"
+72	72		301							{3: 'Right when Lee taps on his terminal...'}
+73	73		401						700.0	{1: '2', 2: '897'}
+74	74		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+75	75		201							{1: '1', 2: '500110', 3: '1'}
+76	76		401							{1: '2', 2: '971'}
+77	77		301							"{1: '1', 2: 'Ayla', 3: ""Ayla comin' through!"", 4: '1'}"
+78	78		301							"{3: ""With the door swooshing open, Ayla pops out like a machine that's been pre-programmed to do so.""}"
+79	79		301							{2: 'Ayla', 3: 'Did someone just say WGAA?', 4: '1'}
+80	80		201							{1: '1', 2: '1031001', 3: '7'}
+81	81		301							{1: '1', 2: 'Liv', 3: 'That was quick.', 4: '1'}
+82	82		201							{1: '1', 2: '500110'}
+83	83		301							"{1: '1', 2: 'Ayla', 3: ""Well, we did promise to collect all the letters and cards in person, and I thought I'd just drop by since I was nearby... Where is Commandant, by the way?"", 4: '1'}"
+84	84		201							{1: '1', 2: '500166'}
+85	85		301							{1: '1', 2: 'Lucia', 3: 'I think Commandant left Babylonia already.', 4: '1'}
+86	86		201							{1: '1', 2: '500110', 3: '6'}
+87	87		301							{1: '1', 2: 'Ayla', 3: 'Huh? But I thought the meeting was at... Uhm... Seems like Commandant intends to do it alone, huh... Gotcha.', 4: '1'}
+88	88		204							{1: '1'}
+89	89		301							{3: 'Coming back to her senses, Ayla sees Liv and Lucia sticking their noses right in her face. Lee, too, has trained the recorders in his ears at her.'}
+90	90		301							"{3: ""Noticing what's going on, Ayla quickly covers her mouth.""}"
+91	91		204							{1: '1', 2: '1'}
+92	92		301							{2: 'Ayla', 3: 'Hehehe. Guess I should be on my way now with your cards. Adios!', 4: '1'}
+93	93		202							{1: '1'}
+94	94		301							"{3: ""Before anyone knows what's happened, Ayla already takes all the cards from the table and left.""}"
+95	95		201							{1: '1', 2: '1031001', 4: '-600'}
+96	96		201							{1: '2', 2: '500026', 4: '600'}
+97	97		201							{1: '3', 2: '500166'}
+98	98		301							{1: '1', 2: 'Lucia, Liv', 3: '...', 4: '1', 5: '3'}
+99	99		301							"{2: 'Lee', 3: ""Commandant probably has a plan. Let's just carry on with what we're supposed to do here."", 4: '2'}"
+100	100		301							{3: 'Says Lee—as he whips out his terminal and scrolls away, apparently trying to dig up something.'}
+101	101		204							{1: '1', 2: '3'}
+102	102		301							{2: 'Liv', 3: 'Have you guys seen the file Commandant left around here?', 4: '1'}
+103	103		204							{1: '1'}
+104	104		301							{3: 'Liv looks all around her as she organizes the table.'}
+105	105		301							{2: 'Lucia', 3: 'Are you talking about the personal file Commandant mentioned? I thought the commandant took it on the way out...', 4: '3'}
+106	106		204							{1: '2', 2: '7'}
+107	107		301							{2: 'Lee', 3: 'Oh boy, did Ayla take it with all the cards?', 4: '2'}
+108	108		204							{1: '2'}
+109	109		301							{2: 'Liv', 3: 'Commandant did stress how personal the file was...', 4: '1'}
+110	110		301				AniZhuanchangBegin			"{2: 'Lucia', 3: ""I don't think Ayla has gone too far yet. Let me go and grab her."", 4: '3'}"
+111	111		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+112	112		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+113	113		201							{1: '1', 2: '500476'}
+114	114		301			AniZhuanchangEnd				{1: '1', 2: 'Nanami', 3: 'Ta-da, ta-da-da-da, ta-da-da-da-da.', 4: '1'}
+115	115		301							{3: 'Sitting on Power as it makes its way back to the lounge, Nanami is humming the song she heard before at the square.'}
+116	116		301							"{3: ""And, out of the blue, she sees someone she can't be more familiar with.""}"
+117	117		201							{1: '1', 2: '500475'}
+118	118		301			PanelActor1Shake				{1: '1', 2: 'Nanami', 3: 'GYAAA!', 4: '1'}
+119	119		301							{3: 'Power holds Nanami in the seat with one arm as it brings itself to a stop by holding onto the ground with the other arm.'}
+120	120		301							"{2: 'Nanami', 3: ""What's going on?"", 4: '1'}"
+121	121		202							{1: '1', 6: '1'}
+122	122		201							{1: '1', 2: '500166', 7: '1'}
+123	123		301							{1: '1', 3: 'Forced to stop in her tracks and regain her composure, Lucia sizes up the road ahead.'}
+124	124		301							{2: 'Lucia', 3: 'Sorry, Nanami, but there really is no time to go into the details now.', 4: '1'}
+125	125		301							"{2: 'Lucia', 3: ""Commandant asked us to take care of a personal file, except it's nowhere to be seen now. It's probably at WGAA and that's where I'm going now."", 4: '1'}"
+126	126		201							{1: '1', 2: '500475'}
+127	127		301							{1: '1', 2: 'Nanami', 3: 'A personal file? Is it something important?', 4: '1'}
+128	128		201							{1: '1', 2: '500166'}
+129	129		301							"{1: '1', 2: 'Lucia', 3: ""It should be... I mean, it's probably not something you should read unless authorized to."", 4: '1'}"
+130	130		201							{1: '1', 2: '500475'}
+131	131		301							{1: '1', 2: 'Nanami', 3: 'Should I ask around?', 4: '1'}
+132	132		201							{1: '1', 2: '500166'}
+133	133		301							"{1: '1', 2: 'Lucia', 3: ""Lee is already on that, but there haven't been any replies yet. They're probably busy dealing with something else."", 4: '1'}"
+134	134		301							{3: 'After a quick exchange, Lucia waves Nanami goodbye and speeds away for WGAA.'}
+135	135		301							{2: 'Lucia', 3: 'Anyhow, I need to go there to get it back.', 4: '1'}
+136	136		401							{1: '1', 2: '36'}
+137	137		201							{1: '1', 2: '500475'}
+138	138		301							{1: '1', 2: 'Nanami', 3: '...', 4: '1'}
+139	139		204							{1: '1', 2: '5'}
+140	140		401							{1: '1', 2: '205'}
+141	141		301							{2: 'Nanami', 3: '!!!', 4: '1'}
+142	142		301							{3: 'Then, as though struck by an epiphany, Nanami suddenly grows serious.', 4: '1'}
+143	143		301							{2: 'Nanami', 3: 'The Commandant has a classified file and someone took it.', 4: '1'}
+144	144		301				AniZhuanchangBegin			"{2: 'Nanami', 3: ""We have a situation here, Power. Let's get to work!"", 4: '1'}"
+145	145		201							{1: '1', 2: '1081001', 3: '2'}
+146	146		301			AniZhuanchangEnd				{1: '1', 2: 'Kamui', 3: 'Hooray! Got my hundredth expansion pack from this game.', 4: '1'}
+147	147		401							{1: '2', 2: '2608'}
+148	148		301							"{3: ""A gust of wind almost blows away the bag from Kamui's hand.""}"
+149	149		402							{1: '2608'}
+150	150		204							{1: '1'}
+151	151		301							"{2: 'Kamui', 3: ""What's going on? Was that a drone?... Wait, Nanami?"", 4: '1'}"
+152	152		202							{1: '1', 6: '1'}
+153	153		201							{1: '1', 2: '500476', 4: '600'}
+154	154		201							{1: '2', 2: '1081001', 4: '-600'}
+155	155		301							{1: '1', 2: 'Nanami', 3: 'Hey, Kamui. Glad to see you here.', 4: '1'}
+156	156		202							{1: '1', 6: '1'}
+157	157		201							{1: '1', 2: '500475', 3: '4', 4: '600', 7: '1'}
+158	158		301							{1: '1', 2: 'Nanami', 3: 'We have an emergency.', 4: '1'}
+159	159		301							{2: 'Kamui', 3: 'An emergency? What happened?', 4: '2'}
+160	160		204							{1: '1'}
+161	161		301							{2: 'Nanami', 3: 'Hmm...', 4: '1'}
+162	162		301							{3: 'Nanami struggles with putting the information together in a logical manner—all while Kamui looks on in bewilderment...'}
+163	163		204							{1: '2', 2: '4'}
+164	164		301							"{2: 'Kamui', 3: ""Wow, that sure doesn't sound very good at all..."", 4: '2'}"
+165	165		301							"{3: ""Nanami manages to put together a story with her own understanding of the situation and what she's heard from Lucia.""}"
+166	166		301							{2: 'Nanami', 3: 'Apparently someone took some letter from the Gray Raven Commandant.', 4: '1'}
+167	167		301							{2: 'Kamui', 3: 'As in someone snuck in and took the letter? Anything else?', 4: '2'}
+168	168		301							"{2: 'Nanami', 3: ""Well, I don't think the person snuck in... I mean, they probably didn't. Lucia only said the letter went missing and WGAA has it now."", 4: '1'}"
+169	169		301							{2: 'Kamui', 3: 'Is the letter super important?', 4: '2'}
+170	170		204							{1: '1', 2: '4'}
+171	171		301							"{2: 'Nanami', 3: ""Yes, it's not meant to be seen by anyone."", 4: '1'}"
+172	172		301							{2: 'Kamui', 3: 'You guys probably have tried this already, but have you managed to get in touch with WGAA?', 4: '2'}
+173	173		301							"{2: 'Nanami', 3: ""We have but got no response. They're probably just too busy for us."", 4: '1'}"
+174	174		301							{2: 'Kamui', 3: 'Oh boy, it sounds like a premeditated act.', 4: '2'}
+175	175		301							"{2: 'Kamui', 3: ""But this whole thing just doesn't feel right to me... Are you sure this isn't just some sort of prank?"", 4: '2'}"
+176	176		301							{2: 'Nanami', 3: 'Gray Raven is going all over the place trying to find the letter as we speak here.', 4: '1'}
+177	177		202							{1: '1', 2: '2', 6: '1'}
+178	178		401							{1: '2', 2: '1515'}
+179	179		301							"{3: ""Power starts making a sound—a sound that it makes only when it's on a search mission.""}"
+180	180		201							{1: '1', 2: '500476'}
+181	181		301							"{1: '1', 2: 'Nanami', 3: ""That's pretty much it. Try to involve more people and help us with it if you don't mind. Power and I are going to see what we can find over there."", 4: '1'}"
+182	182		401							{1: '2', 2: '13015204'}
+183	183		203							{1: '1', 2: '0.1', 3: '-1200'}
+184	184		202							{1: '1'}
+185	185		301							{3: 'And with that, Nanami kick-starts Power and speeds off into the distance in a gust of wind.'}
+186	186		201							{1: '1', 2: '1081001'}
+187	187		301							{1: '1', 3: 'Kamui is left standing in bewilderment. Then, piecing the pieces of information together, he initiates a communication...'}
+188	188		202							{1: '1', 6: '1'}
+189	189		401							{1: '2', 2: '1099'}
+190	190		509						500.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory122.png', 2: '2'}
+191	191		201							{1: '1', 2: '1081001', 3: '4', 4: '-600'}
+192	192		201							{1: '2', 2: '500309', 4: '600'}
+193	193		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+194	194		301							"{1: '1', 2: 'Chrome', 3: ""Kamui? What's the matter?"", 4: '2'}"
+195	195		301							{2: 'Kamui', 3: 'We have a situation here, Capt. WGAA took some letter from the Gray Raven Commandant, and it apparently contains classified information.', 4: '1'}
+196	196		301		1		AniZhuanchangBegin			"{2: 'Kamui', 3: ""Gray Raven has tried getting in touch with WGAA but they refused to speak to them. God only knows where they're hiding out now..."", 4: '1'}"

@@ -1,0 +1,571 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401						1000.0	{1: '1', 2: '36'}
+3	3		109	1		AniZhuanchangEnd	AniZhuanchangBegin			"{1: '1', 2: '<color=#ffffffff><size=50><i>""I offer you the loyalty of someone who has never known faith.""</i></size></color>'}"
+4	4		301			DialogDisable				"{3: '<i>""I offer you the loyalty of someone who has never known faith.""</i>'}"
+5	5		110							{1: '1'}
+6	6		401							{1: '2', 2: '2625'}
+7	7		401							{1: '1', 2: '5068'}
+8	8		101				DialogEnable			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory299.png'}
+9	9		301			AniZhuanchangEnd				"{3: ""Tick-tock—the clock's ticking stands out in the dead silence of the night.""}"
+10	10		402							{1: '2625'}
+11	11		401							{1: '2', 2: '9335029'}
+12	12		301							"{3: ""The clock chimes ring through the hall, telling the time, but outside it's still pitch black—it should be noon, with the sun at its peak.""}"
+13	13		401							{1: '2', 2: '1543'}
+14	14		301							{3: 'Luna folds her wings, landing from the air and walking into the hall.'}
+15	15		201							{1: '1', 2: '501108'}
+16	16		301				DialogDisable			"{1: '1', 2: 'Luna', 3: ""It's still just as dark, no sign of the sun."", 4: '1', 18: '100007020'}"
+17	17		302							{2: 'Looks like the Revelation was right.', 3: '18'}
+18	18		302							"{2: 'This world\'s stuck in ""Eternal Night"".', 3: '19'}"
+19	19		202							{1: '1'}
+20	20		301			DialogEnable	DialogDisable			"{3: ""With the Heart of Divinity's second transformation, you enter the Third Nexus World—the Republic—thanks to the Revelation.""}"
+21	21		401							{1: '2', 2: '4112'}
+22	22		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 3: '0', 4: '1', 5: '0.8'}
+23	23		109							"{1: '1', 2: ""<color=#8B864E><size=45>The deity has fallen, and the sun has followed the divine away.\\nThe world sleeps, plunged into the darkness of Eternal Night.\\nAll growth has ceased, souls of men forsaken.\\nO wandering traveler.\\nTo make the frozen fruit grow once more—\\nSeek the deity's remains and restore the divine to the holy temple.</size></color>"", 4: '100'}"
+24	24		109							"{1: '2', 2: ""<color=#8B864E><size=45>O wandering traveler.\\nTo make the frozen fruit grow once more—\\nSeek the deity's remains and restore the divine to the holy temple.</size></color>"", 4: '-100'}"
+25	25		301							"{3: ""The deity has fallen, and the sun has followed the divine away.\\nThe world sleeps, plunged into the darkness of Eternal Night.\\nAll growth has ceased, souls of men forsaken.\\nO wandering traveler.\\nTo make the frozen fruit grow once more—\\nSeek the deity's remains and restore the divine to the holy temple.""}"
+26	26		110							
+27	27		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 3: '1', 4: '0', 5: '0.8'}
+28	28		301			DialogEnable				{3: 'This is the guidance from the Revelation.'}
+29	29		201							{1: '1', 2: '501108'}
+30	30		301							"{1: '1', 2: 'Luna', 3: ""Now that we know it's true, let's follow these instructions."", 4: '1', 18: '100007021'}"
+31	31		301				DialogDisable			{2: 'Luna', 3: 'How are you feeling physically?', 4: '1', 18: '100007022'}
+32	32		302							"{2: ""I need some more time to get better, but don't worry."", 3: '33'}"
+33	33		302							{2: 'And Luna? How are your wounds?', 3: '34'}
+34	34		202							{1: '1', 6: '1'}
+35	35		401							{1: '2', 2: '4348'}
+36	36		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+37	37		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory928.png'}
+38	38		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab', 2: '2'}
+39	39		301			DialogEnable				"{3: 'At the end of the ""mortal world"", you were both burned by the karmic flames—you have been in the Republic for a while, but you are still the slowest to recover.'}"
+40	40		402							{1: '4348'}
+41	41		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab'}
+42	42		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+43	43		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory299.png'}
+44	44		201							{1: '1', 2: '501108', 7: '1'}
+45	45		301							"{1: '1', 2: 'Luna', 3: ""I'm completely healed."", 4: '1', 18: '100007023'}"
+46	46		301							"{2: 'Luna', 3: ""Maybe it's because demons get their power from darkness."", 4: '1', 18: '100007024'}"
+47	47		301				DialogDisable			"{2: 'Luna', 3: ""Don't push yourself before you're ready. I'll take the lead this time."", 4: '1', 18: '100007025'}"
+48	48		306							{1: '1'}
+49	49		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.5', 5: '0.3'}
+50	50		204							{1: '1', 2: '8'}
+51	51		307							"{1: ""This time, it's my turn to protect you."", 3: '50', 4: 'ffffffff'}"
+52	52		301							"{3: ""This time, it's my turn to protect you."", 4: '1'}"
+53	53		306							
+54	54		307							{2: '1'}
+55	55		202							{1: '1'}
+56	56		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.5', 4: '0', 5: '0.3'}
+57	57		205							{1: '999'}
+58	58		301			DialogEnable				"{3: ""That's what Luna was thinking but never spoke out.""}"
+59	59		302							"{2: ""I'll do my best too—uh!?"", 3: '60'}"
+60	60		401							{1: '1', 2: '36'}
+61	61		401							{1: '2', 2: '2593'}
+62	62		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '4'}
+63	63		301			RImgBg1Shake				"{3: ""Before you could finish, a sharp pain shot through your arm. The scar from the flames ripped open, and it's a bloody mess.""}"
+64	64		401							{1: '2', 2: '2690'}
+65	65		301							{3: 'The black plants, which were just little sprouts, are now growing out of the wound, breaking through your skin.'}
+66	66		205						200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0', 5: '0.2'}
+67	67		101							{4: '4', 5: '1'}
+68	68		401							{1: '1', 2: '391'}
+69	69		201							{1: '1', 2: '501108', 3: '18'}
+70	70		301							"{1: '1', 2: 'Luna', 3: ""What's happening?"", 4: '1', 18: '100007026'}"
+71	71		202							{1: '1'}
+72	72		301							"{3: ""Luna clearly hadn't seen this weird wound before. She asks, frowning with worry.""}"
+73	73		201							{1: '2', 2: '501108', 3: '5'}
+74	74		301							"{1: '1', 2: 'Chessia', 3: ""Tsk, tsk. That's a nasty wound."", 4: '2', 18: '100007027'}"
+75	75		201							{1: '1', 2: '501108', 3: '16', 4: '-1000', 7: '1'}
+76	76		203						250.0	{1: '1', 2: '0.25', 3: '-500'}
+77	77		401							{1: '2', 2: '11106008'}
+78	78		502							{1: 'RImgBg1Shake'}
+79	79		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+80	80		203							{1: '2', 2: '0.25', 3: '500'}
+81	81		301							{3: 'Chessia has been watching you for who knows how long, waiting for the right moment. But before she can get close, Luna attacks and pushes her away.'}
+82	82		301							{2: 'Luna', 3: 'Damn it—did you do this?!', 4: '1', 18: '100007028'}
+83	83		301							"{3: ""Luna's filled with rage, letting out all the anger Chessia had been trying to stir up.""}"
+84	84		203							{1: '2', 2: '0.4', 4: '30', 5: '-50'}
+85	85		203						400.0	{1: '1', 2: '0.4', 4: '-50', 5: '100'}
+86	86		203							{1: '2', 2: '0.4', 3: '-300'}
+87	87		203						450.0	{1: '1', 2: '0.4', 3: '500'}
+88	88		204							{1: '2', 2: '3'}
+89	89		301							"{2: 'Chessia', 3: ""The karmic flames burned 【kuroname】's wound. Blaming me won't help."", 4: '2', 18: '100007029'}"
+90	90		204							{1: '2', 2: '5'}
+91	91		301							"{2: 'Chessia', 3: ""I'm helping you guys. If the wound doesn't open, those thorns will grow along the bones to the heart, and you'll suffocate."", 4: '2', 18: '100007030'}"
+92	92		203							{1: '2', 2: '0.5', 3: '-200'}
+93	93		204							{1: '2', 2: '5'}
+94	94		301						550.0	{2: 'Chessia', 3: 'But—', 4: '2', 18: '100007031'}
+95	95		301							{3: 'Chessia circles behind Luna, whispering in her ear to get under her skin. The more Luna reacts, the more Chessia loves it.'}
+96	96		301							"{2: 'Chessia', 3: ""Things aren't much better now either."", 4: '2', 18: '100007032'}"
+97	97		203							{1: '2', 2: '0.5', 3: '-500'}
+98	98		204							{1: '2', 2: '4'}
+99	99		301						550.0	"{2: 'Chessia', 3: ""Without sunlight, the thorns will grow like crazy, getting more tangled; eventually, they'll wrap around and eat【kuroname】alive."", 4: '2', 18: '100007033'}"
+100	100		204							{1: '1', 2: '18'}
+101	101		203							{1: '1', 2: '0.25', 3: '100'}
+102	102		203						250.0	{1: '2', 2: '0.25', 3: '-450'}
+103	103		401							{1: '2', 2: '11106007'}
+104	104		502							{1: 'RImgBg1Shake'}
+105	105		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+106	106		203						250.0	{1: '1', 2: '0.25', 3: '500'}
+107	107		203							{1: '2', 2: '0.25', 3: '-500'}
+108	108		301							"{3: ""As she finishes her sentence, Luna attacks with even more force. She's going all out, determined to take down the demon girl.""}"
+109	109		301							{2: 'Luna', 3: 'Screw you—', 4: '1', 18: '100007034'}
+110	110		204							{1: '1', 2: '16'}
+111	111		301							"{2: 'Luna', 3: ""If that's how it is, I'll stop it by killing you."", 4: '1', 18: '100007035'}"
+112	112		301							"{3: ""Chessia's still calm, and since she's part of Luna's desires, she knows exactly how to dodge her attacks.""}"
+113	113		204							{1: '2', 2: '5'}
+114	114		301							"{2: 'Chessia', 3: 'Killing me won\'t fix it. The thorns are because the ""Heart of Divinity"" keeps rotting.', 4: '2', 18: '100007036'}"
+115	115		204							{1: '2', 2: '3'}
+116	116		301							"{2: 'Chessia', 3: ""If you don't fix this, you'll have to watch 【kuroname】 die slowly."", 4: '2', 18: '100007037'}"
+117	117		202							{1: '1', 2: '2'}
+118	118		401							{1: '2', 2: '9342045'}
+119	119		301							{3: 'Hearing this, Luna stops attacking, giving up on the fight and flies back to check the new wound.'}
+120	120		201							{1: '1', 2: '501108', 3: '18'}
+121	121		301							"{1: '1', 2: 'Luna', 3: 'It does have the same energy as the ""Heart of Divinity"" on it...', 4: '1', 18: '100007038'}"
+122	122		302							{2: 'That means—', 3: '123'}
+123	123		202							{1: '1'}
+124	124		306							{1: '1'}
+125	125		301							"{3: ""Chessia's not lying.""}"
+126	126		301							"{3: ""The Heart of Divinity's connection affects both of you—that's always been true.""}"
+127	127		301							"{3: 'The ""Heart of Divinity"" was burned in the last flames, like everything else. Damaged, it ended up in the sunless Republic and started decaying.'}"
+128	128		306							
+129	129		201							{1: '1', 2: '501108', 3: '18'}
+130	130		301							{1: '1', 2: 'Luna', 3: 'But nothing weird happened to me.', 4: '1', 18: '100007039'}
+131	131		202							{1: '1', 6: '1'}
+132	132		201							{1: '1', 2: '501108', 3: '3'}
+133	133		301							"{1: '1', 2: 'Chessia', 3: ""Night's where demons belong. Plus, your wound's healed, so why would you have any problems?"", 4: '1', 18: '100007040'}"
+134	134		301							"{2: 'Chessia', 3: ""I've told you all I know. Touched, aren't you?"", 4: '1', 18: '100007041'}"
+135	135		202							{1: '1', 6: '1'}
+136	136		201							{1: '1', 2: '501108', 3: '18'}
+137	137		301							{1: '1', 2: 'Luna', 3: 'What are you really after this time?', 4: '1', 18: '100007042'}
+138	138		202							{1: '1', 6: '1'}
+139	139		201							{1: '1', 2: '501108', 3: '5'}
+140	140		301							"{1: '1', 2: 'Chessia', 3: ""Haven't I told you a million times—accept me, Luna, and I'll give you the power to fix everything."", 4: '1', 18: '100007043'}"
+141	141		301				DialogDisable			"{2: 'Chessia', 3: ""You know how bad 【kuroname】's condition is. Can you really just float idly by and do nothing?"", 4: '1', 18: '100007044'}"
+142	142		302							"{2: ""We won't submit to you."", 3: '143'}"
+143	143		302							{2: 'Finding the divine and the sun, using sunlight to fix the fruit—that could solve the problem too.', 3: '144'}
+144	144		202							{1: '1', 6: '1'}
+145	145		201							{1: '1', 2: '501108'}
+146	146		301			DialogEnable				{1: '1', 2: 'Luna', 3: 'This was part of our plan all along.', 4: '1', 18: '100007045'}
+147	147		202							{1: '1'}
+148	148		301							{3: 'Luna agrees.'}
+149	149		201							{1: '1', 2: '501108', 3: '3'}
+150	150		301							"{1: '1', 2: 'Chessia', 3: ""You're so stubborn."", 4: '1', 18: '100007046'}"
+151	151		204							{1: '1', 2: '5'}
+152	152		301							{2: 'Chessia', 3: 'Then go ahead and try... if you can actually do it.', 4: '1', 18: '100007047'}
+153	153		202							{1: '1'}
+154	154		301				AniZhuanchangBegin			"{3: ""Chessia doesn't seem to want to force anything, leaving with a mysterious smile.""}"
+155	155		401							{1: '1', 2: '36'}
+156	156		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+157	157		401							{1: '1', 2: '169'}
+158	158		301			AniZhuanchangEnd				{3: 'You continue with your plans, searching for ruins as you originally intended.'}
+159	159		301							"{3: ""But what's surprising... is that the thorns are growing way faster than you thought, leaving you with much less time.""}"
+160	160		201							{1: '1', 2: '501108'}
+161	161		301							"{1: '1', 2: 'Luna', 3: ""The dust's been wiped off, and these patterns must be related to the ruins."", 4: '1', 18: '100007048'}"
+162	162		202							{1: '1'}
+163	163		301							"{3: ""Luna runs her fingers over the stone tablet. She recognizes the patterns from old books she's collected—it's a marker for the temple's boundary.""}"
+164	164		301							{3: 'After a long and tough search, you have finally found a clue. With no leads at first, you could only do a thorough, step-by-step search. Even during breaks, Luna went out on her own to keep investigating.'}
+165	165		301							{3: 'Luckily, you recently found some holy items and writings about the deity. With those to help, your search is much more focused now.'}
+166	166		201							{1: '1', 2: '501108', 3: '11'}
+167	167		301							"{1: '1', 2: 'Luna', 3: ""The writings say the marker isn't far from the temple. If we find another stone tablet, we can find the temple's exact spot..."", 4: '1', 18: '100007049'}"
+168	168		204							{1: '1'}
+169	169		301							{2: 'Luna', 3: '【kuroname】?', 4: '1', 18: '100007050'}
+170	170		202							{1: '1'}
+171	171		301							"{3: ""Lost in her thoughts, Luna realizes her companion's not keeping up. When she calls out and turns, she sees the person half-crouched against a tree.""}"
+172	172		201							{1: '1', 2: '501108', 3: '14'}
+173	173		301							"{1: '1', 2: 'Luna', 3: ""The wound's gotten worse."", 4: '1', 18: '100007051'}"
+174	174		203							{1: '1', 2: '0.4', 4: '-20', 5: '-50'}
+175	175		301							{3: 'Luna rushes to check the wound—the black thorns are growing even faster now.'}
+176	176		202							{1: '1'}
+177	177		301							"{3: ""They've completely wrapped around your arm and look like they're spreading to other parts of the body.""}"
+178	178		302							"{2: ""I'm okay. I'm used to it now."", 3: '179'}"
+179	179		201							{1: '1', 2: '501108', 3: '18'}
+180	180		301							"{1: '1', 2: 'Luna', 3: ""Why didn't you say something when it started growing again?"", 4: '1', 18: '100007052'}"
+181	181		202							{1: '1'}
+182	182		301							"{3: ""Luna remembers the thorns weren't this bad the last time she checked. Knowing how quiet you were on the way, she realizes that it must have happened during your walk, but you just kept it hidden.""}"
+183	183		201							{1: '1', 2: '501108', 3: '8'}
+184	184		301							{1: '1', 2: 'Luna', 3: 'We have even less time than we thought...', 4: '1', 18: '100007053'}
+185	185		204							{1: '1', 2: '18'}
+186	186		301				DialogDisable			"{2: 'Luna', 3: ""Stay here and rest, I'll go find the other tablet."", 4: '1', 18: '100007054'}"
+187	187		302							{2: 'Wait, Luna.', 3: '188'}
+188	188		302							"{2: ""You've already pushed yourself too far today. You need to take a break."", 3: '189'}"
+189	189		204							{1: '1', 2: '16'}
+190	190		301			DialogEnable				"{2: 'Luna', 3: ""Why don't you ask your wound and that thing if they'll take a break?"", 4: '1', 18: '100007055'}"
+191	191		306							{1: '1'}
+192	192		301							"{3: ""Luna can't really say nice things. All her worry and anxiety come out as sharp words, spoken without thinking.""}"
+193	193		301				DialogDisable			"{3: ""She's really worried, even a bit angry. Why didn't this person say something sooner? Why push with injuries? Why... go through so much for her?""}"
+194	194		306							
+195	195		302							"{2: ""I get hurt a lot, I'm used to it."", 3: '196'}"
+196	196		302							"{2: ""Don't worry about me."", 3: '197'}"
+197	197		104							{1: '0|0|-50', 2: '0.4'}
+198	198		203							{1: '1', 2: '0.4', 5: '-50'}
+199	199		301			DialogEnable				"{3: ""You open Luna's clenched hand and see the thorns she cut earlier when she checked her wound. They've already stabbed her hand and drawn blood.""}"
+200	200		401							{1: '2', 2: '2690'}
+201	201		204				PanelActor1Shake		1000.0	{1: '1', 2: '15'}
+202	202		203							{1: '1', 2: '0.25', 3: '20', 4: '-10', 5: '-50'}
+203	203		204							{1: '1', 2: '18'}
+204	204		301							"{3: ""Even though she knows it's pointless, that the thorns will grow back, she keeps trying, hoping to ease the pain.""}"
+205	205		302							{2: 'Let go, Luna.', 3: '206'}
+206	206		204							{1: '1', 2: '8'}
+207	207		301							"{2: 'Luna', 3: ""I'd rather they hurt me."", 4: '1', 18: '100007056'}"
+208	208		301							"{2: 'Luna', 3: ""This pain is mine—you shouldn't take it."", 4: '1', 18: '100007057'}"
+209	209		301				DialogDisable			{2: 'Luna', 3: 'Passing problems onto others is what weak people do.', 4: '1', 18: '100007058'}
+210	210		302							"{2: 'Not ""passing"", but ""trusting"".', 3: '211'}"
+211	211		302							{2: 'I chose to share this burden with you.', 3: '212'}
+212	212		302							{2: 'Can you try to trust me more, okay?', 3: '213'}
+213	213		204							{1: '1', 2: '11'}
+214	214		301			DialogEnable				{2: 'Luna', 3: 'Trust, huh...', 4: '1', 18: '100007059'}
+215	215		301							"{3: ""Luna believes that someone like her, a creature of darkness, shouldn't possess such a thing as trust, but the time they've spent together has begun to shake her conviction.""}"
+216	216		301							{3: 'Only this person has ever made her feel this way.'}
+217	217		202							{1: '1'}
+218	218		301							"{3: ""After thinking about it, Luna gives in. She knows even if she argues, this person won't rest like she said, but will just push harder.""}"
+219	219		301							"{3: ""If things get really bad, she doesn't want to be stuck taking care of an invalid.""}"
+220	220		201							{1: '1', 2: '501108', 3: '11'}
+221	221		301							"{1: '1', 2: 'Luna', 3: ""Fine, let's head back for now."", 4: '1', 18: '100007060'}"
+222	222		204							{1: '1'}
+223	223		301							"{2: 'Luna', 3: ""You're not doing great. Come on, I'll help you."", 4: '1', 18: '100007061'}"
+224	224		302							"{2: 'Ehh, Luna makes her move for once—', 3: '225', 4: ""Isn't this a little—"", 5: '227'}"
+225	225		204							{1: '1', 2: '18'}
+226	226	229	301							{2: 'Luna', 3: 'Silence.', 4: '1', 18: '100007062'}
+227	227		204							{1: '1', 2: '18'}
+228	228		301							"{2: 'Luna', 3: ""Keep talking and I'll leave you here."", 4: '1', 18: '100007063'}"
+229	229		202							{1: '1'}
+230	230		301				AniZhuanchangBegin			"{3: ""Luna's patience runs out as she strides forward and takes the initiative to grasp that person's hand.""}"
+231	231		401					1000.0		{1: '2', 2: '2704'}
+232	232		301			AniZhuanchangEnd				"{3: ""As you pass through a towering thicket, Luna's clothes catch on thorns and tear. She bends down, ready to rip away the snagged fabric, when something in the undergrowth catches her attention.""}"
+233	233		201							{1: '1', 2: '501108'}
+234	234		301							{1: '1', 2: 'Luna', 3: '【kuroname】, check this out.', 4: '1', 18: '100007064'}
+235	235		202							{1: '1'}
+236	236		401							{1: '2', 2: '2936'}
+237	237		301							{3: 'Luna pulls a piece of cloth out of the bushes, its white background with gold embroidery looking distinctly familiar.'}
+238	238		302							"{2: ""Are these... Lucifer's clothes?"", 3: '239'}"
+239	239		201							{1: '1', 2: '501108'}
+240	240		301							"{1: '1', 2: 'Luna', 3: ""His power's still on it."", 4: '1', 18: '100007065'}"
+241	241		301							"{3: ""This is bad news. This area is really isolated, no one normally comes here, so Lucifer leaving signs means he's also searching for the divine ruins.""}"
+242	242		302							{2: 'Looks like we need to get ready sooner than we thought.', 3: '243'}
+243	243		301							"{2: 'Luna', 3: 'Yeah. He\'s always done things related to the ""Heart of Divinity"".', 4: '1', 18: '100007066'}"
+244	244		301							"{2: 'Luna', 3: ""He's probably planning something like that again."", 4: '1', 18: '100007067'}"
+245	245		202							{1: '1'}
+246	246		301							"{3: ""But the Heart of Divinity is now under your control, and its decay has rendered it useless for other purposes. What will Lucifer's next move be?""}"
+247	247		402							{1: '169'}
+248	248		401							{1: '1', 2: '160'}
+249	249		201							{1: '1', 2: '501108', 3: '3'}
+250	250		301							{1: '1', 2: 'Chessia', 3: 'Hey, you two lovebirds. Need a hand?', 4: '1', 18: '100007068'}
+251	251		202							{1: '1'}
+252	252		301							{3: 'Chessia pops out of the shadows again, clearly having been lying in wait for some time.'}
+253	253		201							{1: '1', 2: '501108', 3: '18'}
+254	254		301							{1: '1', 2: 'Luna', 3: '【kuroname】, get ready to fight.', 4: '1', 18: '100007069'}
+255	255		401						200.0	{1: '2', 2: '4779'}
+256	256		402							{1: '4779'}
+257	257		302							{2: 'Understood.', 3: '258'}
+258	258		203							{1: '1', 2: '0.25', 3: '500'}
+259	259		201							{1: '2', 2: '501108', 3: '3', 4: '-500'}
+260	260		301							"{1: '1', 2: 'Chessia', 3: ""Don't be so hostile now, I'm not here for a fight."", 4: '2', 18: '100007070'}"
+261	261		204							{1: '2', 2: '5'}
+262	262		301							"{2: 'Chessia', 3: ""That question you're thinking about—I know the answer, you know."", 4: '2', 18: '100007071'}"
+263	263		401							{1: '2', 2: '4479'}
+264	264		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryRedSmokeNew.prefab', 2: '2', 3: '2'}
+265	265		401							{1: '2', 2: '4478'}
+266	266		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiAssign/FxUiAssignDeployShanRed.prefab', 2: '2', 3: '2'}
+267	267		202							{1: '2', 6: '1'}
+268	268		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryRedSmokeNew.prefab', 4: '2'}
+269	269		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiAssign/FxUiAssignDeployShanRed.prefab', 4: '2'}
+270	270		301							"{3: 'As she finishes, a red shadow shoots from her fingers and hits the ""Heart of Divinity"".'}"
+271	271		203							{1: '1', 2: '0.25'}
+272	272		204							{1: '1', 2: '16'}
+273	273		301							"{1: '1', 2: 'Luna', 3: 'What did you do to the ""Heart of Divinity""?!', 4: '1', 18: '100007072'}"
+274	274		201							{1: '18', 2: '501108', 3: '3', 4: '-300', 5: '-250', 6: '200'}
+275	275		301							"{1: '1', 2: 'Chessia', 3: ""Whoa, hold on, I wasn't going to hurt it this time."", 4: '18', 18: '100007073'}"
+276	276		301							"{2: 'Chessia', 3: ""Just giving you a clue, opening the way. The rest... you'll figure it out."", 4: '18', 18: '100007074'}"
+277	277		301							"{2: 'Chessia', 3: ""Soon—the grand finale I've been waiting for is starting."", 4: '18', 18: '100007075'}"
+278	278		204							{1: '18', 2: '5'}
+279	279		301				AniZhuanchangBegin			"{2: 'Chessia', 3: ""It'll be a real show."", 4: '18', 18: '100007076'}"
+280	280		202							{1: '1', 2: '18', 6: '1'}
+281	281		401						2000.0	{1: '1', 2: '36'}
+282	282		401							{1: '1', 2: '161'}
+283	283		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory374.png'}
+284	284		104							{1: '50|50|-50', 2: '0'}
+285	285		301			AniZhuanchangEnd				"{3: ""The first stone tablet was a big step. Since then, Luna and you have found more clues. You've seen Lucifer's trace in a lot of places, but it's not all bad news.""}"
+286	286		301							"{3: ""At least sometimes, it helps you know if you're going the right way.""}"
+287	287		301							"{3: 'The thorns are getting more aggressive, and the ""Heart of Divinity"" is rotting faster. Time\'s slipping away.'}"
+288	288		201							{1: '1', 2: '501108'}
+289	289		301				DialogDisable			{1: '1', 2: 'Luna', 3: 'This is it.', 4: '1', 18: '100007077'}
+290	290		202							{1: '1', 6: '1'}
+291	291		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory510.jpg', 3: '0', 4: '1', 5: '1'}
+292	292		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory510.jpg'}
+293	293		205							{1: '999'}
+294	294		301			DialogEnable				"{3: ""Luna's restless heart finally eases as she gazes upon the long-sought structure. You have found it—the entrance to the temple ruins. Passing through here will lead you straight to the lost deity.""}"
+295	295		301				DialogDisable			{3: 'Luna glances at you, your body clearly worn from the torment of thorns. At last, this will all be over soon.'}
+296	296		401							{1: '2', 2: '4201'}
+297	297		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory509.jpg', 3: '0', 4: '1', 5: '1.5'}
+298	298		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory509.jpg'}
+299	299		205							{1: '999'}
+300	300		301			DialogEnable				"{3: ""The path's clear at the entrance. After walking a short stone path, you go into the temple. Old, broken stone walls are all around, with ruins everywhere. Any traces the deity might have left behind are now impossible to discern.""}"
+301	301		201							{1: '1', 2: '501108'}
+302	302		301							{1: '1', 2: 'Luna', 3: 'We heard the temple houses a portrait of the deity. It may be our only lead in finding Him.', 4: '1', 18: '100007078'}
+303	303		302							"{2: ""I checked ahead. It's right up here."", 3: '304'}"
+304	304		301							"{2: 'Luna', 3: ""Let's go."", 4: '1', 18: '100007079'}"
+305	305		301							{3: 'Together, you venture deeper into the temple.'}
+306	306		401							{1: '1', 2: '36'}
+307	307		401							{1: '2', 2: '2975'}
+308	308		401							{1: '2', 2: '4868'}
+309	309		204							{1: '1', 2: '13'}
+310	310		502						1000.0	{1: 'PanelActor1Shake'}
+311	311		201							{1: '1', 2: '501115', 7: '1'}
+312	312		401							{1: '2', 2: '4006'}
+313	313		203							{1: '1', 2: '0.25', 4: '-50'}
+314	314		301							{3: 'But, just as you are about to go into the last room, Luna feels a stabbing pain in her chest. She drops to her knees at the door, breathing hard.'}
+315	315		302							"{2: ""Luna?! What's happening?"", 3: '316'}"
+316	316		301							"{3: ""Luna tries to look through the door, but she can't see anything from here.""}"
+317	317		301			PanelActor1Shake				"{1: '1', 2: 'Luna', 3: ""Don't worry about me... Ugh, just open the door."", 4: '1', 18: '100007080'}"
+318	318		301				DialogDisable			{2: 'Luna', 3: 'My instinct—says so.', 4: '1', 18: '100007081'}
+319	319		202							{1: '1'}
+320	320		402							{1: '4868'}
+321	321		401							{1: '2', 2: '4872'}
+322	322		401							{1: '1', 2: '158'}
+323	323		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory710.jpg', 3: '0', 4: '1', 5: '0.8'}
+324	324		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory710.jpg'}
+325	325		205							{1: '999'}
+326	326		301			DialogEnable				"{3: ""You open the door fast like Luna said, and right away she feels better. The weird feeling's gone. She gets up and goes into the room with her companion.""}"
+327	327		301							{3: 'The stained glass windows are all broken, and pieces of glass are on the window sill and the floor. Torches burning inside and outside the room reflect chaotically off the fragments, creating an unsettling mosaic of otherworldly light.'}
+328	328		301							{3: 'The portrait of the deity, once hanging on the wall, now lies fallen on the ground. Shards have torn through the canvas, distorting the figure depicted within.'}
+329	329		201							{1: '1', 2: '501108', 3: '14'}
+330	330		301							{1: '1', 2: 'Luna', 3: 'What?!', 4: '1', 18: '100007082'}
+331	331		202							{1: '1'}
+332	332		306							{1: '1'}
+333	333		301							{3: 'The girl in the painting, wearing all white, shines brighter and holier than the sun.'}
+334	334		301							"{3: ""But that same face is now surrounded by night's black and purple, with demon wings; the once bright red eyes are now blood red, filled with shock and confusion as they meet the eyes in the painting.""}"
+335	335		306							
+336	336		302							{2: 'The deity in the painting is—Luna?!', 3: '337'}
+337	337		201							{1: '1', 2: '501110', 3: '1'}
+338	338		301							{1: '1', 2: 'Lucifer', 3: 'Ah... Wretched one, dare you look upon your once radiant eyes?', 4: '1', 18: '100007083'}
+339	339		301							{3: 'Lucifer comes out of the shadows, clearly having been here, waiting.'}
+340	340		301			PanelActor1Shake				{1: '1', 2: 'Lucifer', 3: 'Does it torment you? That is the heart you cast aside—now screaming your damnation.', 4: '1', 18: '100007084'}
+341	341		301							{2: 'Lucifer', 3: 'It whispers to you, wretched. Had you not fallen, you would still be enthroned in gilt and candle-smoke, your face gazing down from stained glass while the witless masses grovel at your feet.', 4: '1', 18: '100007085'}
+342	342		301							{2: 'Lucifer', 3: 'Instead of what you are now—forgotten... broken... discarded in the dust, swallowed by the dark.', 4: '1', 18: '100007086'}
+343	343		302							{2: 'You knew all this the whole time?', 3: '344'}
+344	344		204							{1: '1'}
+345	345		301							"{2: 'Lucifer', 3: ""Naturally... I'm the divine's most devoted. I know the divine inside and out."", 4: '1', 18: '100007087'}"
+346	346		204							{1: '1', 2: '1'}
+347	347		301							{2: 'Lucifer', 3: 'Yet—despite my sacrifice, I, am, forsaken.', 4: '1', 18: '100007088'}
+348	348		301							"{3: ""Lucifer points at Luna, releasing all the emotions he's been holding in.""}"
+349	349		301							{2: 'Lucifer', 3: 'I sought everywhere... only to find the divine had cast off all divinity. The divine embraced damnation, took the form of a fiend, and now wallows in eternal corruption—never to return.', 4: '1', 18: '100007089'}
+350	350		301							{2: 'Lucifer', 3: 'It is no longer worthy of divinity.', 4: '1', 18: '100007090'}
+351	351		302							"{2: ""So that's why you've been taking Luna's power, trying to steal it for yourself."", 3: '352'}"
+352	352		301							"{2: 'Lucifer', 3: ""Since it has lost its right, why shouldn't I take its place?"", 4: '1', 18: '100007091'}"
+353	353		301							"{2: 'Lucifer', 3: ""My faith is unmatched, and I'm the only one worthy."", 4: '1', 18: '100007092'}"
+354	354		301			PanelActor1Shake				{1: '1', 2: 'Lucifer', 3: 'The world gasps like a fish on the altar without the divine... They need me! The world will grow to need me!', 4: '1', 18: '100007093'}
+355	355		202							{1: '1'}
+356	356		301							"{3: ""Lucifer's greed and madness are plain to see.""}"
+357	357		201							{1: '1', 2: '501108', 3: '11'}
+358	358		301							"{1: '1', 2: 'Luna', 3: ""I'm not responsible for your delusions."", 4: '1', 18: '100007094'}"
+359	359		204							{1: '1', 2: '8'}
+360	360		301							"{2: 'Luna', 3: ""If it's power you want—"", 4: '1', 18: '100007095'}"
+361	361		204							{1: '1', 2: '18'}
+362	362		301				DialogDisable			{2: 'Luna', 3: 'Then fight me, and let victory prove your worthiness.', 4: '1', 18: '100007096'}
+363	363		302							"{2: ""I'll handle him."", 3: '364'}"
+364	364		302							{2: 'Luna, concentrate on stopping the fruit from rotting.', 3: '365'}
+365	365		202							{1: '1'}
+366	366		301			DialogEnable				"{3: 'Now that we know who the ""divine"" is, we need to fix the Eternal Night and the dying ""Heart of Divinity"". Lucifer\'s out of control, but he\'s not our main problem.'}"
+367	367		201							{1: '1', 2: '501110', 3: '1'}
+368	368		301							"{1: '1', 2: 'Lucifer', 3: ""Heh, you think you can run? There's no escape."", 4: '1', 18: '100007097'}"
+369	369		301							{2: 'Lucifer', 3: 'To restore divinity, three must be present: the altar, the relic, and the spring. And they—', 4: '1', 18: '100007098'}
+370	370		301							{2: 'Lucifer', 3: '...They are all sabotaged beyond repair, long before you arrived.', 4: '1', 18: '100007099'}
+371	371		302							{2: 'What?!', 3: '372'}
+372	372		202							{1: '1'}
+373	373		301							"{3: ""Lucifer showing up wasn't just about insulting Luna, he's up to something.""}"
+374	374		201							{1: '1', 2: '501110', 3: '1'}
+375	375		301							{1: '1', 2: 'Lucifer', 3: 'And—I can tell that wound of yours must be festering beyond bearable, is it not?', 4: '1', 18: '100007100'}
+376	376		301							{2: 'Lucifer', 3: 'You see, these black thorns are about to pierce through your heart. Hesitate but a moment longer, and your damnation shall be complete.', 4: '1', 18: '100007101'}
+377	377		301							{3: 'He turns his gaze back to Luna.'}
+378	378		301							{2: 'Lucifer', 3: 'I also know you care a great deal of this person, and you have been groveling for a cure this whole time.', 4: '1', 18: '100007102'}
+379	379		301							"{2: 'Lucifer', 3: ""Your divinehood has come to an end... but mine is just beginning. Yield your divinity to me—let me ascend as the new divine, and I shall attend to this pathetic human's wound."", 4: '1', 18: '100007103'}"
+380	380		202							{1: '1', 6: '1'}
+381	381		201							{1: '1', 2: '501108', 3: '18'}
+382	382		301							{1: '1', 2: 'Luna', 3: 'At this point...', 4: '1', 18: '100007104'}
+383	383		301							"{2: 'Luna', 3: ""You really think I'd believe you?"", 4: '1', 18: '100007105'}"
+384	384		202							{1: '1', 6: '1'}
+385	385		201							{1: '1', 2: '501110', 3: '1'}
+386	386		301							"{1: '1', 2: 'Lucifer', 3: ""You're out of options, and you can't just walk away, right?"", 4: '1', 18: '100007106'}"
+387	387		301							"{3: ""Lucifer lets out a creepy laugh, like he knows he's going to win.""}"
+388	388		202							{1: '1'}
+389	389		301							"{3: ""After a moment's pause, Luna speaks.""}"
+390	390		201							{1: '1', 2: '501108', 3: '18'}
+391	391		301							{1: '1', 2: 'Luna', 3: 'Then swear an oath right now, to guarantee it.', 4: '1', 18: '100007107'}
+392	392		202							{1: '1', 6: '1'}
+393	393		201							{1: '1', 2: '501110', 3: '1'}
+394	394		301							{1: '1', 2: 'Lucifer', 3: 'I swear, in the name of the new divine, this vow shall be kept.', 4: '1', 18: '100007108'}
+395	395		203							{1: '1', 2: '0.25', 4: '-20', 5: '-50'}
+396	396		301							{1: '1', 2: 'Lucifer', 3: 'Is that good enough? Hurry up and give me the power!', 4: '1', 18: '100007109'}
+397	397		301							"{3: ""Lucifer's urging her on, barely containing himself.""}"
+398	398		202							{1: '1', 6: '1'}
+399	399		201							{1: '1', 2: '501108'}
+400	400		301							"{1: '1', 2: 'Luna', 3: 'My power\'s locked in the ""Heart of Divinity"". If you want it, take it.', 4: '1', 18: '100007110'}"
+401	401		202							{1: '1'}
+402	402		301							{3: 'Luna throws the fruit, and Lucifer lunges for it, not even caring when he hits the ground.'}
+403	403		201							{1: '1', 2: '501110', 3: '1'}
+404	404		301							"{1: '1', 2: 'Lucifer', 3: '""Heart of Divinity""... Power...', 4: '1', 18: '100007111'}"
+405	405		301							{2: 'Lucifer', 3: 'I am the divine now! HAHA—', 4: '1', 18: '100007112'}
+406	406		301							"{3: ""He holds up the completely rotten fruit like it's a treasure, even kissing it.""}"
+407	407		301							"{3: ""But, to Lucifer's surprise, the fruit he thought would bring him dreams starts eating away at him instead.""}"
+408	408		204							{1: '1', 2: '2'}
+409	409		301			PanelActor1Shake				{1: '1', 2: 'Lucifer', 3: 'Aargh—', 4: '1', 18: '100007113'}
+410	410		401							{1: '2', 2: '4386'}
+411	411		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 2: '2', 3: '1'}
+412	412		301							"{3: ""Black smoke pours from his rotting wounds, then gets sucked back into the fruit. Lucifer feels his body and soul being eaten alive, like he's being eaten by ants.""}"
+413	413		301							"{3: ""Even so, he won't let go of the rotten fruit. It's like he'd rather die with it than let it go.""}"
+414	414		301			PanelActor1Shake				{1: '1', 2: 'Lucifer', 3: 'You—this is a scheme! You planned to steal my divine power with dark magic!', 4: '1', 18: '100007114'}
+415	415		203							{1: '1', 2: '0.25', 3: '500', 6: '1'}
+416	416		201							{1: '2', 2: '501108', 4: '-500'}
+417	417		301				DialogDisable			"{1: '1', 2: 'Luna', 3: 'The ""Heart of Divinity"" eats the life of anyone with evil in their hearts. The more evil they are, the quicker they\'re gone.', 4: '2', 18: '100007115'}"
+418	418		302							"{2: ""If you hadn't been so greedy, trying to steal power that wasn't yours..."", 3: '419'}"
+419	419		302							"{2: ""It wouldn't have been able to hurt you."", 3: '420'}"
+420	420		204							{1: '2', 2: '18'}
+421	421		301			DialogEnable				{2: 'Luna', 3: 'You walked right into your own trap.', 4: '2', 18: '100007116'}
+422	422		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+423	423		401							{1: '2', 2: '14014615'}
+424	424		202							{1: '1'}
+425	425		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 4: '1'}
+426	426		301							"{3: 'The ""Heart of Divinity"" consumes him fast—before he can say anything else, he turns into black smoke and gets sucked into the fruit.'}"
+427	427		202							{1: '2'}
+428	428		401							{1: '2', 2: '4387'}
+429	429		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndRed.prefab', 2: '2'}
+430	430		201							{1: '1', 2: '501108', 3: '3'}
+431	431		301							{1: '1', 2: 'Chessia', 3: 'Hmm... Not bad, quite impressive.', 4: '1', 18: '100007117'}
+432	432		301							{3: 'Chessia shows up, clapping and cheering, enjoying the sight.'}
+433	433		204							{1: '1', 2: '4'}
+434	434		301							{2: 'Chessia', 3: 'Well? Did you like my little present?', 4: '1', 18: '100007118'}
+435	435		203							{1: '1', 2: '0.25', 3: '-500'}
+436	436		201							{1: '2', 2: '501108', 3: '18', 4: '500'}
+437	437		301							{1: '1', 2: 'Luna', 3: 'You knew what Lucifer was up to the whole time.', 4: '2', 18: '100007119'}
+438	438		204							{1: '1', 2: '3'}
+439	439		301							{2: 'Chessia', 3: 'Of course. Why else would I have told you how to fix things?', 4: '1', 18: '100007120'}
+440	440		203						200.0	{1: '1', 2: '0.2', 3: '-500', 4: '10'}
+441	441		203							{1: '1', 2: '0.4', 3: '-500', 4: '-40'}
+442	442		301							{3: 'The girl floats in the air, smiling and lounging.'}
+443	443		204							{1: '1', 2: '4'}
+444	444		301							"{2: 'Chessia', 3: 'I really don\'t get why he was so obsessed with being the ""divine"". Look, isn\'t the darkness just as good without the sun?', 4: '1', 18: '100007121'}"
+445	445		204							{1: '1', 2: '5'}
+446	446		301							{2: 'Chessia', 3: 'Oh, right, I forgot—for 【kuroname】, this might not be so great.', 4: '1', 18: '100007122'}
+447	447		301							{3: 'Chessia looks at the black thorns growing wild from the wounds.'}
+448	448		301							{2: 'Luna', 3: 'You did this on purpose. Destroying those things, then making me remember who I was.', 4: '2', 18: '100007123'}
+449	449		301							{2: 'Luna', 3: 'Just to leave me with no way to go.', 4: '2', 18: '100007124'}
+450	450		306							{1: '1'}
+451	451		301							{3: 'The only way was to bring back the divine and make the sun come up, but now that you know who the divine is—and she cannot go back—you are stuck.'}
+452	452		306							
+453	453		301							"{2: 'Chessia', 3: ""I didn't do anything, you know?"", 4: '1', 18: '100007125'}"
+454	454		204							{1: '1', 2: '3'}
+455	455		301							"{2: 'Chessia', 3: ""If I got my hands dirty, you wouldn't want to hold me, would you?"", 4: '1', 18: '100007126'}"
+456	456		301							"{2: 'Chessia', 3: ""Don't get mad. There's still one way out—right here."", 4: '1', 18: '100007127'}"
+457	457		204							{1: '1', 2: '5'}
+458	458		301							"{2: 'Chessia', 3: ""Accept me, Luna, and you'll get the power you want. For the Heart of Divinity, and for 【kuroname】."", 4: '1', 18: '100007128'}"
+459	459		301							"{2: 'Luna', 3: 'I need ""light"", not ""darkness"".', 4: '2', 18: '100007129'}"
+460	460		204							{1: '1', 2: '3'}
+461	461		301							"{2: 'Chessia', 3: 'Since you\'ve lost all your ways to ""light"", why not go with ""darkness""?', 4: '1', 18: '100007130'}"
+462	462		204							{1: '1', 2: '4'}
+463	463		301				DialogDisable			{2: 'Chessia', 3: 'With the right company, even darkness can become a revelry.', 4: '1', 18: '100007131'}
+464	464		202							{1: '1', 2: '2', 6: '1'}
+465	465		104						150.0	{1: '-10|0|0', 2: '0.1'}
+466	466		104						150.0	{1: '0|0|0', 2: '0.1'}
+467	467		104							{1: '0|30|-30', 2: '0.1'}
+468	468		401							{1: '2', 2: '2690'}
+469	469		205						200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0.2'}
+470	470		302							{2: 'Hmm?!', 3: '471'}
+471	471		301			DialogEnable				{3: 'The darkness makes the thorns grow again, and their sharp stings attack your heart, making the pain unbearable.'}
+472	472		205						200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0', 5: '0.2'}
+473	473		205							{1: '999'}
+474	474		201							{1: '1', 2: '501108', 3: '5'}
+475	475		301							"{1: '1', 2: 'Chessia', 3: ""See that? 【kuroname】 can't take much more."", 4: '1', 18: '100007132'}"
+476	476		202							{1: '1', 6: '1'}
+477	477		201							{1: '1', 2: '501108', 3: '18'}
+478	478		301							{1: '1', 2: 'Luna', 3: '......', 4: '1'}
+479	479		302				DialogDisable			{2: 'Luna.', 3: '480'}
+480	480		204							{1: '1'}
+481	481		402							{1: '158'}
+482	482		401							{1: '2', 2: '4895'}
+483	483		104							{1: '0|0|0', 2: '0.5'}
+484	484		203						550.0	{1: '1', 2: '0.5', 4: '-20', 5: '-30'}
+485	485		301			DialogEnable	DialogDisable			{3: 'You hold her hand. In this eerie, confusing darkness, only the warmth of your hand feels real.', 4: '1'}
+486	486		401							{1: '1', 2: '5069'}
+487	487		302							"{2: 'The sun\'s not the only ""light"" out there.', 3: '488'}"
+488	488		302							{2: 'Torches, lanterns, lots of things can do the same.', 3: '489'}
+489	489		302							"{2: ""I know what you're thinking."", 3: '490'}"
+490	490		302							"{2: ""Don't wait. I'll always be here with you, no matter what."", 3: '491'}"
+491	491		204							{1: '1', 2: '8'}
+492	492		301			DialogEnable	DialogDisable			{3: 'Luna closes her eyes, pausing to think.', 4: '1'}
+493	493		306							{1: '1'}
+494	494		401							{1: '2', 2: '4297'}
+495	495		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1118.jpg', 3: '0', 4: '0.5', 5: '0.3'}
+496	496		201						450.0	{1: '2', 2: '501108', 3: '10', 4: '-500', 5: '-20', 6: '20'}
+497	497		401							{1: '2', 2: '4297'}
+498	498		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory617.jpg', 3: '0', 4: '0.5', 5: '0.3'}
+499	499		201						450.0	{1: '2', 2: '501108', 4: '500', 5: '-20', 6: '20'}
+500	500		401							{1: '2', 2: '4297'}
+501	501		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg', 3: '0', 4: '0.5', 5: '0.3'}
+502	502		201						450.0	{1: '2', 2: '501108', 3: '11', 4: '-500', 5: '-20', 6: '20'}
+503	503		401							{1: '2', 2: '4297'}
+504	504		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory303.png', 3: '0', 4: '0.5', 5: '0.3'}
+505	505		201						450.0	{1: '2', 2: '501108', 3: '15', 4: '500', 5: '-20', 6: '20'}
+506	506		401							{1: '2', 2: '4297'}
+507	507		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5101_10.jpg', 3: '0', 4: '0.5', 5: '0.3'}
+508	508		202							{1: '2', 6: '1'}
+509	509		301			DialogEnable	DialogDisable			{3: 'This feeling brings back a lot of memories—like being blind, unconscious, chaos, and the Eternal Night.', 4: '1'}
+510	510		204							{1: '1', 2: '10'}
+511	511		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.3'}
+512	512		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+513	513		205							{1: '999'}
+514	514		301			DialogEnable				"{1: '1', 3: ""But now, even in the dark, she's found something to help her move forward."", 4: '1'}"
+515	515		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront31.png', 4: '5'}
+516	516		104							{1: '0|-80|0', 2: '0', 4: '5'}
+517	517		104						2200.0	{1: '0|30|0', 2: '1.8', 4: '5'}
+518	518		204							{1: '1'}
+519	519		301							"{3: ""With these lights showing her the way, she takes a step, then another. In the end, it's the hands holding hers that bring light back to her world."", 4: '1'}"
+520	520		204							{1: '1', 2: '2'}
+521	521		301				AniZhuanchangBegin			"{3: ""Now, she'll bring this light to the world."", 4: '1'}"
+522	522		306						500.0	
+523	523		202							{1: '1', 6: '1'}
+524	524		101							{4: '5', 5: '1'}
+525	525		205							{1: '999'}
+526	526		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory707.jpg'}
+527	527		201							{1: '1', 2: '501108', 3: '8', 7: '1'}
+528	528		301			AniZhuanchangEnd				"{1: '1', 2: 'Luna', 3: '""The moon.""', 4: '1', 18: '100007133'}"
+529	529		204							{1: '1'}
+530	530		301							"{2: 'Luna', 3: ""I can't be the sun anymore, so I'll just leave the sunlight behind."", 4: '1', 18: '100007134'}"
+531	531		204							{1: '1', 2: '2'}
+532	532		301							{2: 'Luna', 3: 'Moonlight can light up this darkness too.', 4: '1', 18: '100007135'}
+533	533		202							{1: '1', 6: '1'}
+534	534		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+535	535		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory939.png'}
+536	536		301							"{3: ""Even if it means being alone up there, she'll embrace the darkness her own way and make peace with the Eternal Night.""}"
+537	537		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+538	538		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1118.jpg'}
+539	539		401							{1: '2', 2: '2596'}
+540	540		301							"{3: ""Will the working people, the growing plants, and the forest animals marvel at the moon? Will they still yearn for the sun that's no more?""}"
+541	541		402							{1: '2596'}
+542	542		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+543	543		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+544	544		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '4'}
+545	545		301							{3: 'None of that matters now.'}
+546	546		301							{3: 'Eventually, the world will adapt to this pure brightness in the darkness and accept her gentle nature.'}
+547	547		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0', 4: '0.1', 5: '0.8'}
+548	548		201							{1: '1', 2: '500678'}
+549	549		301							{1: '1', 3: 'But the moon will remember, always remember—the one who saw her first, before she shone, before anyone else noticed, the one who fell for her completely.'}
+550	550		202							{1: '1'}
+551	551		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0.1', 4: '0', 5: '0.5'}
+552	552		401							{1: '2', 2: '4276'}
+553	553		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable02.prefab', 2: '2'}
+554	554		301							{3: 'That will be the only light shining in her Eternal Night.'}
+555	555		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+556	556		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront31.png', 4: '5', 5: '1'}
+557	557		205							{1: '999'}
+558	558		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+559	559		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+560	560		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+561	561		101							{4: '4', 5: '1'}
+562	562		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable02.prefab'}
+563	563		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory707.jpg'}
+564	564		301							{3: 'The pure white returns and the moon is full again. Luna feels memories flooding back as her heart starts to grow again.'}
+565	565		301							{3: 'The rotten fruit fills out again, like dead trees coming back to life in spring.'}
+566	566		301				DialogDisable			"{3: 'Finally, the ""Heart of Divinity"" rises, shining gold, and the Revelation is finished.'}"
+567	567		401							{1: '2', 2: '4112'}
+568	568		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 3: '0', 4: '1', 5: '0.8'}
+569	569		109							"{1: '1', 2: '<color=#8B864E><size=45>""Like a temple that remains an altar even in desolation; a statue that remains divine even in collapse.""</size></color>', 4: '100'}"
+570	570		301		1		AniZhuanchangBegin			"{3: '""Like a temple that remains an altar even in desolation; a statue that remains divine even in collapse.""'}"

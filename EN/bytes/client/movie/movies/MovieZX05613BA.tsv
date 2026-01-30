@@ -1,0 +1,70 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1251.jpg'}
+2	2		306							{1: '1'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab', 2: '2'}
+4	4		401			AniZhuanchangEnd				{1: '1', 2: '6183'}
+5	5		401							{1: '2', 2: '9400006'}
+6	6		201							{1: '1', 2: '501262'}
+7	7		502							{1: 'RImgBg1Shake'}
+8	8		301			DialogEnable	DialogDisable		1000.0	{1: '1', 3: 'Smoke swirls through the air, and from its depths looms the massive Mirror Demon with wings unfurling from its back.'}
+9	9		202							{1: '1', 6: '1'}
+10	10		306							
+11	11		201							{1: '1', 2: '501235', 3: '13', 4: '-400'}
+12	12		201							{1: '2', 2: '501234', 4: '400'}
+13	13		301			DialogEnable				{1: '1', 2: 'Dante', 3: 'Finally dropped the human act and decided to face us yourself?', 4: '1'}
+14	14		204							{1: '2', 2: '8'}
+15	15		301				DialogDisable			{2: 'Vergil', 3: 'Boring...', 4: '2'}
+16	16		202							{1: '1', 2: '2', 6: '1'}
+17	17		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+18	18		201							{1: '1', 2: '501262', 5: '-100', 6: '200', 7: '1'}
+19	19		401							{1: '2', 2: '6037'}
+20	20		203						400.0	{1: '1', 2: '0.3', 5: '-100'}
+21	21		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+22	22		201							{1: '2', 2: '500990', 4: '-1200', 6: '-100', 7: '1'}
+23	23		203							{1: '2', 2: '0.3', 5: '-100'}
+24	24		502							{1: 'RImgBg1Shake'}
+25	25		401							{1: '2', 2: '6023'}
+26	26		401							{1: '2', 2: '9400034'}
+27	27		203						400.0	{1: '1', 2: '0.3', 3: '500', 4: '-100', 5: '200'}
+28	28		202							{1: '1'}
+29	29		301			DialogEnable				{1: '1', 3: 'As the group turns away, the demon strikes—a blur of motion from the haze—only for Lucia to descend timely from above, intercepting the attack with a flash of steel.'}
+30	30		202							{1: '2', 6: '1'}
+31	31		401							{1: '2', 2: '4895'}
+32	32		201							{1: '1', 2: '500993'}
+33	33		301							{1: '1', 2: 'Lucia', 3: 'Commandant, I ran into Bridget outside the tower. She was bringing Lyca in, so I took over for her.', 4: '1'}
+34	34		302							{2: 'Lyca, is there a reason why you had to come here?', 3: '35'}
+35	35		202							{1: '1', 6: '1'}
+36	36		201							{1: '1', 2: '501260'}
+37	37		301							"{1: '1', 2: 'Lyca', 3: ""I have... half of the Mirror Demon's power within me."", 4: '1'}"
+38	38		203							{1: '1', 2: '0.25', 3: '-400'}
+39	39		201							{1: '2', 2: '501235', 4: '400'}
+40	40		301							{1: '1', 2: 'Dante', 3: 'Just as I thought.', 4: '2'}
+41	41		302							"{2: ""You've known it all along?"", 3: '42'}"
+42	42		204							{1: '2'}
+43	43		301							"{2: 'Dante', 3: 'We had our suspicions. She\'s no longer human. ""Demon"" would be a more fitting term for what she is now.', 4: '2'}"
+44	44		202							{1: '2', 6: '1'}
+45	45		201							{1: '2', 2: '500993', 3: '4', 4: '400'}
+46	46		301							{1: '1', 2: 'Lucia', 3: 'From what Bridget learned from Asimov, Lyca...', 4: '2'}
+47	47		204							{1: '2'}
+48	48		301							{3: 'Lucia glances at Lyca, then decides to reveal the truth anyway.'}
+49	49		301							{2: 'Lucia', 3: 'Lyca died from a hereditary disease several years ago, just like her mother...', 4: '2'}
+50	50		204							{1: '1', 2: '4'}
+51	51		301							"{2: 'Lyca', 3: ""I exist because of my dad's obsession. Without my help, you won't be able to defeat the Mirror Demon."", 4: '1'}"
+52	52		202							{1: '1', 2: '2', 6: '1'}
+53	53		201							{1: '1', 2: '501235'}
+54	54		301							{1: '1', 2: 'Dante', 3: '...', 4: '1'}
+55	55		202							{1: '1', 6: '1'}
+56	56		201							{1: '1', 2: '501260', 3: '4', 4: '-400'}
+57	57		201							{1: '2', 2: '500610', 4: '400'}
+58	58		301							{1: '1', 2: 'Alpha', 3: 'What about you?', 4: '2'}
+59	59		301							"{2: 'Alpha', 3: 'What will happen to you if we accept your ""help""?', 4: '2'}"
+60	60		204							{1: '1', 2: '14'}
+61	61		301				DialogDisable			{2: 'Lyca', 3: '...', 4: '1'}
+62	62		302							"{2: ""...We'll talk about you later."", 3: '63'}"
+63	63		202							{1: '1', 2: '2', 6: '1'}
+64	64		201							{1: '1', 2: '501235', 4: '-400'}
+65	65		201							{1: '2', 2: '501234', 4: '400'}
+66	66		302							{1: '1', 2: 'Dante, Vergil, can you separate the demon from Thomas?', 3: '67'}
+67	67		301			DialogEnable				{2: 'Vergil', 3: 'Possibly.', 4: '2'}
+68	68		301							{2: 'Vergil', 3: 'Yamato holds the power to sever man from demon. I will attempt it.', 4: '2'}
+69	69		302		1		AniZhuanchangBegin			{2: 'Then, let the battle begin.', 3: '70'}

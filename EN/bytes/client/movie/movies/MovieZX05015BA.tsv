@@ -1,0 +1,345 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg5001_03.jpg'}
+2	2		401							{1: '1', 2: '5060'}
+3	3		301			DialogEnable	AniZhuanchangBegin			"{3: ""The starship departs from humanity's last outpost.""}"
+4	4		401							{1: '2', 2: '2625'}
+5	5		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieShizhong01.prefab', 2: '2'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory579.jpg'}
+7	7		301			AniZhuanchangEnd				{3: 'When Nanami returns to the Church of Machina, everything proceeds according to plan.'}
+8	8		301							"{3: ""The Church of Machina helps Babylonia rescue a considerable number of humans and Constructs. Soon after, the nightmare returns—wave after wave of winged Hetero-Creatures begin attacking Babylonia's transports.""}"
+9	9		301				DialogDisable			{3: 'After losing several groups of pilots, Babylonia evacuates the last survivors from the Church of Machina.'}
+10	10		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory909.jpg', 3: '0', 4: '1', 5: '2'}
+11	11		205							{1: '999'}
+12	12		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory909.jpg'}
+13	13		502							{1: 'RImgBg1BlowUp'}
+14	14		301			DialogEnable				"{3: ""Babylonia leaves Earth's orbit and ventures into the invisible depths of space.""}"
+15	15		301				AniZhuanchangBegin			{3: 'But some Constructs and humans still choose to stay behind.'}
+16	16		505							{1: 'RImgBg1BlowUp'}
+17	17		402							{1: '2625'}
+18	18		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieShizhong01.prefab'}
+19	19		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory571.jpg'}
+20	20		201							{1: '1', 2: '501036', 3: '4'}
+21	21		301			AniZhuanchangEnd				"{1: '1', 2: 'Vanessa', 3: ""I'm not leaving."", 4: '1'}"
+22	22		301							{3: 'Vanessa, now a Construct, stands before the abandoned stronghold with an emotionless gaze.'}
+23	23		301							{2: 'Vanessa', 3: 'Not for some petty drama of love and hate, nor for some stupid faith.', 4: '1'}
+24	24		204							{1: '1', 2: '5'}
+25	25		301							"{2: 'Vanessa', 3: ""I'm staying here because I want to, and I don't need to give you a reason."", 4: '1'}"
+26	26		301							"{2: 'Vanessa', 3: ""At least on Earth, I'll know exactly how I'm gonna die."", 4: '1'}"
+27	27		201							{1: '1', 2: '501070', 3: '12'}
+28	28		301							"{1: '1', 2: 'Nanami', 3: ""You're not coming with us to Aerospace City either, are you?"", 4: '1'}"
+29	29		201							{1: '1', 2: '501036', 3: '4'}
+30	30		301							{1: '1', 2: 'Vanessa', 3: 'Of course.', 4: '1'}
+31	31		301							"{2: 'Vanessa', 3: ""I'm planning..."", 4: '1'}"
+32	32		301							{2: 'Vanessa', 3: '...to search for survivors beyond the last line of defense in the conservation area, together with the remaining Scarabs.', 4: '1'}
+33	33		301							{3: 'She tugs uncomfortably at the ID card bearing the Scarab insignia on her chest, her eyes downcast.'}
+34	34		204							{1: '1', 2: '5'}
+35	35		301							"{2: 'Vanessa', 3: ""There might still be survivors out there, and I'll gather them together."", 4: '1'}"
+36	36		204							{1: '1', 2: '8'}
+37	37		301							"{2: 'Vanessa', 3: ""We'll survive this... together."", 4: '1'}"
+38	38		301							{3: 'Her voice is barely above a whisper, the final syllables fading into the air.'}
+39	39		202							{1: '1'}
+40	40		301							{3: 'Without trying to change their minds, Nanami escorts Vanessa and the other Constructs to their designated locations.'}
+41	41		201							{1: '1', 2: '501070', 3: '7'}
+42	42		301				AniZhuanchangBegin			{1: '1', 2: 'Nanami', 3: 'Best of luck to all of you! Stay safe!', 4: '1'}
+43	43		202							{1: '1', 6: '1'}
+44	44		401							{1: '2', 2: '2625'}
+45	45		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieShizhong01.prefab', 2: '2'}
+46	46		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5001_03.jpg'}
+47	47		301			AniZhuanchangEnd				{3: 'The starship sets sail for Aerospace City.'}
+48	48		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory949.jpg', 3: '0', 4: '1', 5: '1'}
+49	49		301							{3: 'With the help of Hanying, who came from Kowloong to join them, the Church of Machina and Aerospace City reached an agreement.'}
+50	50		301							"{3: ""In exchange for evacuating Aerospace City's residents, the space colony will provide the Church of Machina with sufficient materials and fuel to reactivate the Bifrost and launch the starship into deep space.""}"
+51	51		301				AniZhuanchangBegin			{3: 'Some mechanoids still wish to remain on Earth, and Cervantes is among them.'}
+52	52		205							{1: '999'}
+53	53		402							{1: '2625'}
+54	54		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieShizhong01.prefab'}
+55	55		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory949.jpg'}
+56	56		201							{1: '1', 2: '501070', 3: '12', 4: '400'}
+57	57		201							{1: '2', 2: '500585', 4: '-400'}
+58	58		301			AniZhuanchangEnd				"{1: '1', 2: 'Nanami', 3: ""Are you sure you don't want to leave with us, Cervantes?"", 4: '1'}"
+59	59		301							{2: 'Cervantes', 3: 'Never surer, Sage.', 4: '2'}
+60	60		301							"{2: 'Cervantes', 3: ""Drifting through deep space in search of an unknown haven... That's not the answer I'm looking for."", 4: '2'}"
+61	61		301							"{2: 'Cervantes', 3: ""I'm staying to finish my thesis."", 4: '2'}"
+62	62		301							"{2: 'Nanami', 3: ""Hmm... Nanami doesn't like this feeling."", 4: '1'}"
+63	63		301							{3: 'As Babylonia begins its journey, everything familiar to her seems to slip away one by one, and her friends choose to stay where they are one after another.'}
+64	64		301							{3: 'Only Nanami is responsible for guiding the awakened machines, which are compelled to press forward endlessly in search of another unknown ending.'}
+65	65		301							"{2: 'Cervantes', 3: ""Sage... I'm sorry."", 4: '2'}"
+66	66		204							{1: '1', 2: '13'}
+67	67		301							"{2: 'Nanami', 3: ""Don't apologize. I'm just a little upset."", 4: '1'}"
+68	68		301							"{2: 'Nanami', 3: ""Mandhasti is staying, too... so it's actually good that you're staying here."", 4: '1'}"
+69	69		204							{1: '1'}
+70	70		301							{2: 'Nanami', 3: 'And... I do have a special mission for you!', 4: '1'}
+71	71		301							{2: 'Nanami', 3: 'I hope this can become another opportunity...', 4: '1'}
+72	72		301							{3: 'When the tower appears again, perhaps that will be when change must happen.'}
+73	73		301							{3: 'Through purification and destruction, new possibilities will arise from this barren earth.'}
+74	74		301							{2: 'Nanami', 3: 'If you meet Commandant, make sure to give Commandant what I left here, okay!', 4: '1'}
+75	75		301							{2: 'Cervantes', 3: 'Sage, why are you...', 4: '2'}
+76	76		301							{2: 'Nanami', 3: 'I have to leave this place, and so do the mechanoids.', 4: '1'}
+77	77		301							{2: 'Nanami', 3: 'Had the Church of Machina continued to stay on Earth, war with humanity would have been inevitable, followed by other catastrophes.', 4: '1'}
+78	78		202							{1: '1', 2: '2'}
+79	79		301							"{3: ""Nanami's gaze pierces through the thick clouds above the Aerospace City, and she looks toward the distant, unreachable stars.""}"
+80	80		201							{1: '1', 2: '500585'}
+81	81		301							"{1: '1', 2: 'Cervantes', 3: ""I will safeguard what you've entrusted to me. But will the Gray Raven Commandant truly appear again?"", 4: '1'}"
+82	82		201							{1: '1', 2: '501070', 3: '13'}
+83	83		301							"{1: '1', 2: 'Nanami', 3: ""To be honest... Nanami doesn't know either."", 4: '1'}"
+84	84		301							"{2: 'Nanami', 3: ""Both Mecha Babushka and Ishmael said Commandant couldn't possibly have made it out of the Hetero Tower."", 4: '1'}"
+85	85		301							"{2: 'Nanami', 3: ""And I've never seen Commandant... in any of the simulations I've run."", 4: '1'}"
+86	86		301							{2: 'Nanami', 3: 'But... what makes humans truly human is their endless potential.', 4: '1'}
+87	87		204							{1: '1', 2: '1'}
+88	88		301							"{2: 'Nanami', 3: ""What humans are capable of is beyond even Gestalt's calculation..."", 4: '1'}"
+89	89		204							{1: '1'}
+90	90		301							"{2: 'Nanami', 3: ""Which is why I'm not buying those simulations."", 4: '1'}"
+91	91		301							{2: 'Nanami', 3: 'Nanami believes in Commandant.', 4: '1'}
+92	92		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 4: '5'}
+93	93		302							{2: 'I believe in you, too, Nanami.', 3: '94', 4: 'Nanami...', 5: '94'}
+94	94		101							{4: '5', 5: '1'}
+95	95		204							{1: '1', 2: '3'}
+96	96		301							{2: 'Nanami', 3: '!', 4: '1'}
+97	97		301							{2: 'Nanami', 3: 'Cervantes? Do you... hear that?', 4: '1'}
+98	98		301							"{3: ""A familiar yet strange voice reaches the girl's ears, carried across endless time and space.""}"
+99	99		201							{1: '1', 2: '500585'}
+100	100		301							"{1: '1', 2: 'Cervantes', 3: ""Uhm? I'm not picking up anything, though..."", 4: '1'}"
+101	101		201							{1: '1', 2: '501070', 3: '12'}
+102	102		301							"{1: '1', 2: 'Nanami', 3: ""It's probably my reception module. I really need to get it fixed..."", 4: '1'}"
+103	103		301							{3: 'She mutters to herself while making a to-do list before departure.'}
+104	104		301							{2: 'Nanami', 3: 'Extra serum... equipment repair supplies... food...', 4: '1'}
+105	105		301				AniZhuanchangBegin			{2: 'Nanami', 3: 'Oh right, and the Full Sensory Simulation Device...', 4: '1'}
+106	106		202							{1: '1', 6: '1'}
+107	107		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5001_03.jpg'}
+108	108		401							{1: '2', 2: '2625'}
+109	109		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieShizhong01.prefab', 2: '2'}
+110	110		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'The starship is taking off.'}
+111	111		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1104.jpg'}
+112	112		402							{1: '2625'}
+113	113		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieShizhong01.prefab'}
+114	114		201							{1: '1', 2: '501081'}
+115	115		301			AniZhuanchangEnd				{1: '1', 2: 'The Star', 3: 'Huh...', 4: '1'}
+116	116		301							{3: 'Perched by the porthole, she quietly lifts a heat shield to peek at Earth, which is becoming more distant by the second.'}
+117	117		301							{2: 'The Star', 3: 'Will we never be able to return? I mean... to Earth?', 4: '1'}
+118	118		202							{1: '1', 6: '1'}
+119	119		201							{1: '1', 2: '501070', 3: '12'}
+120	120		301							{1: '1', 2: 'Nanami', 3: '...', 4: '1'}
+121	121		301							"{3: ""The Red Tide hasn't yet consumed Earth. The planet still brims with life, as blue and green hues interweave along its edges to paint a beautiful pattern.""}"
+122	122		204							{1: '1', 2: '13'}
+123	123		301							"{2: 'Nanami', 3: ""Maybe... someday, somewhere far down the road, we'll have a chance to return."", 4: '1'}"
+124	124		301							{3: 'The tides of time sweep everything away as seas turn into land and cliffs into abysses.'}
+125	125		301							{3: 'But love grants this world endless possibilities.'}
+126	126		301				AniZhuanchangBegin			"{3: ""She accepts fate, but that doesn't mean she won't fight back.""}"
+127	127		401							{1: '2', 2: '4818'}
+128	128		202							{1: '1', 6: '1'}
+129	129		501							{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab', 2: '2'}
+130	130		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory658.jpg'}
+131	131		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'In the Hetero Tower, a red butterfly flutters its wings.'}
+132	132		505							{2: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab'}
+133	133		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5001_03.jpg'}
+134	134		301			AniZhuanchangEnd	DialogDisable			"{3: 'The starship, its hull having been spray-painted ""Delorean-Discovery"" by Nanami, departs from Earth\'s orbit.'}"
+135	135		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5001_04.jpg', 3: '0', 4: '1', 5: '2'}
+136	136		205							{1: '999'}
+137	137		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5001_04.jpg'}
+138	138		301			DialogEnable				{2: 'Nanami', 3: 'Farewell, Earth.'}
+139	139		301				AniZhuanchangBegin			{3: 'This is Delorean-Discovery. We are sailing in space at the third cosmic speed.'}
+140	140		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory577.jpg'}
+141	141		301			AniZhuanchangEnd				"{3: ""Over an immeasurable span of time, Nanami gradually integrates herself into the starship's core and becomes one with its systems.""}"
+142	142		201							{1: '1', 2: '500484', 3: '14'}
+143	143		301							{1: '1', 2: 'Arcana', 3: 'You cannot forcibly split your consciousness for variable stack operations... The risk is far too great, Sage.', 4: '1'}
+144	144		301							{2: 'Arcana', 3: 'Such calculations cannot be halted at will. If you suffer any damage during the process, it could severely impact your cognitive algorithms!', 4: '1'}
+145	145		301							"{2: 'Arcana', 3: ""Besides, with the increasing number of variables, no one can say for sure you'll be able to find an anchor point for return every time..."", 4: '1'}"
+146	146		301							{3: 'Arcana, who is usually composed and calm, displays an uncharacteristic hint of anxiety.'}
+147	147		202							{1: '1', 6: '1'}
+148	148		201							{1: '1', 2: '501070', 4: '400'}
+149	149		201							{1: '2', 2: '500484', 4: '-400'}
+150	150		301							"{1: '1', 2: 'Nanami', 3: ""Don't worry! I've got everything prepared down to the last detail!"", 4: '1'}"
+151	151		301							"{2: 'Nanami', 3: ""And don't try getting Haicma to talk me out of this! I've already won her over to my side."", 4: '1'}"
+152	152		204							{1: '2', 2: '7'}
+153	153		301							{2: 'Arcana', 3: 'Haicma?', 4: '2'}
+154	154		204							{1: '2', 2: '4'}
+155	155		301							"{3: ""A hint of disbelief seeps through Arcana's mechanical voice.""}"
+156	156		202							{1: '1', 2: '2', 6: '1'}
+157	157		201							{1: '1', 2: '500486'}
+158	158		301							{1: '1', 2: 'Haicma', 3: 'I cannot stop Sage. Her mind is already made up.', 4: '1'}
+159	159		202							{1: '1', 6: '1'}
+160	160		201							{1: '1', 2: '501070', 4: '400'}
+161	161		201							{1: '2', 2: '500484', 3: '14', 4: '-400'}
+162	162		301							"{1: '1', 2: 'Arcana', 3: ""It's too dangerous..."", 4: '2'}"
+163	163		301							"{2: 'Nanami', 3: ""Don't worry! The starship will be fine. No matter what happens, my frame will keep it going until we find a new homeland."", 4: '1'}"
+164	164		301							"{2: 'Arcana', 3: ""That's not what I'm worried about."", 4: '2'}"
+165	165		301				DialogDisable			"{2: 'Nanami', 3: ""I've been waiting all this time, Arcana."", 4: '1'}"
+166	166		202							{1: '1', 2: '2'}
+167	167		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1102.jpg', 3: '0', 4: '1', 5: '2'}
+168	168		205							{1: '999'}
+169	169		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1102.jpg'}
+170	170		301			DialogEnable				{3: 'Sitting by the porthole, Nanami gazes into the unknown expanse of stars beyond.'}
+171	171		301							"{3: ""Scattered pinpoints of light dot the vast darkness. They're now well beyond the Milky Way.""}"
+172	172		301							{3: 'No one knows their exact position on the stellar map anymore—they chart their course as they travel to map the unknown.'}
+173	173		201							{1: '1', 2: '501070', 3: '13'}
+174	174		301							{1: '1', 2: 'Nanami', 3: 'I tried to deal with the Red Tide on Earth but failed.', 4: '1'}
+175	175		301							{2: 'Nanami', 3: 'I also tried to enter the Hetero Tower, but it had been completely sealed off.', 4: '1'}
+176	176		301							"{2: 'Nanami', 3: 'I had no other choice. I couldn\'t abandon the mechanoids, so I accepted my ""destiny"" and brought Discovery here.', 4: '1'}"
+177	177		301							{2: 'Nanami', 3: 'I never wanted to leave Earth, but I had no choice.', 4: '1'}
+178	178		201							{1: '1', 2: '500484'}
+179	179		301							{1: '1', 2: 'Arcana', 3: 'But Discovery needs you...', 4: '1'}
+180	180		201							{1: '1', 2: '501070'}
+181	181		301				DialogDisable			"{1: '1', 2: 'Nanami', 3: ""Arcana, Discovery doesn't need a Sagemachina anymore."", 4: '1'}"
+182	182		202							{1: '1'}
+183	183		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1098.jpg', 3: '0', 4: '1', 5: '2'}
+184	184		205							{1: '999'}
+185	185		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1098.jpg'}
+186	186		301			DialogEnable				"{3: ""In the starship's main hall, humans and mechanoids bustle back and forth as they work together to keep the vessel running.""}"
+187	187		301							{3: 'As time passes, the humans and mechanoids who chose to stay aboard Discovery live together in harmony, which has naturally formed a new, stable social structure within the starship. Perhaps, in time, this will bloom into a new civilization.'}
+188	188		201							{1: '1', 2: '501070', 4: '400'}
+189	189		201							{1: '2', 2: '500484', 4: '-400'}
+190	190		301							"{1: '1', 2: 'Nanami', 3: ""Besides... you know exactly what I'm worried about."", 4: '1'}"
+191	191		301							{2: 'Nanami', 3: 'The Punishing Virus harvests information—information of civilization.', 4: '1'}
+192	192		301							{2: 'Arcana', 3: 'What...?', 4: '2'}
+193	193		301							{2: 'Nanami', 3: 'It was just a theory before, but only recently have I started to piece things together.', 4: '1'}
+194	194		202							{1: '2', 6: '1'}
+195	195		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+196	196		504							{1: '0.7'}
+197	197		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory223.png'}
+198	198		201							{1: '1', 2: '501000'}
+199	199		301							{1: '1', 2: 'Chaos', 3: 'The Punishing Virus... fusion... Hetero Tower going haywire...', 4: '1'}
+200	200		301							{2: 'Chaos', 3: 'Recycle... information... civilization...', 4: '1'}
+201	201		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+202	202		504							{1: '0'}
+203	203		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1098.jpg'}
+204	204		201							{1: '1', 2: '501070', 4: '400'}
+205	205		201							{1: '2', 2: '500484', 4: '-400', 7: '1'}
+206	206		301							"{1: '1', 2: 'Nanami', 3: 'As I gradually connected with the Gray Tower, I began to ""see"" more.', 4: '1'}"
+207	207		301							"{2: 'Nanami', 3: ""Mechanoids were born from human civilization, too. We might be able to run from Earth... but we can't keep running away forever."", 4: '1'}"
+208	208		301							{2: 'Nanami', 3: 'Are we really doing the right thing... running away from Earth?', 4: '1'}
+209	209		301				AniZhuanchangBegin			{2: 'Arcana', 3: '...', 4: '2'}
+210	210		202							{1: '1', 2: '2', 6: '1'}
+211	211		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+212	212		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '4'}
+213	213		306							{1: '1'}
+214	214		301			AniZhuanchangEnd				{3: 'Mechanoids were born from human civilization, and like humans, they, too, are vulnerable to the Red Tide.'}
+215	215		301							"{3: 'As she became the starship\'s Gestalt, she ""saw"" countless memories from the past of the mechanoids.'}"
+216	216		401							{1: '2', 2: '558'}
+217	217		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+218	218		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4301_01.jpg'}
+219	219		401							{1: '2', 2: '558'}
+220	220		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+221	221		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory739.jpg'}
+222	222		201						500.0	{1: '1', 2: '500674', 7: '1'}
+223	223		202							{1: '1', 6: '1'}
+224	224		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+225	225		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+226	226		301							{3: 'She saw Cradle born from the Red Tide and humans trudge through the mire of forests.'}
+227	227		401							{1: '2', 2: '558'}
+228	228		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+229	229		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory800.jpg'}
+230	230		401							{1: '2', 2: '558'}
+231	231		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+232	232		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1004.jpg'}
+233	233		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+234	234		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+235	235		301							{3: 'She saw new eggs hatching in the depths of the ocean and a horrifying sun rising from behind the black walls.'}
+236	236		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+237	237		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+238	238		401							{1: '2', 2: '2764'}
+239	239		401							{1: '2', 2: '4527'}
+240	240		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory934.png'}
+241	241		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1011.jpg'}
+242	242		101						200.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4201_03.jpg'}
+243	243		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory523.jpg'}
+244	244		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1003.jpg'}
+245	245		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1006.jpg'}
+246	246		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory576.jpg'}
+247	247		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory772.jpg'}
+248	248		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory917.jpg'}
+249	249		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory581.jpg'}
+250	250		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory871.jpg'}
+251	251		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory943.jpg'}
+252	252		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+253	253		402							{1: '4527'}
+254	254		301							{3: 'The flood of information all but overwhelmed her memory module...'}
+255	255		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+256	256		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFrontNewCommon23.png', 4: '4'}
+257	257		301				AniZhuanchangBegin			{3: 'But she also saw what remained—traces delicate as spider silk.'}
+258	258		101							{4: '4', 5: '1'}
+259	259		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1098.jpg'}
+260	260		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+261	261		306							
+262	262		201							{1: '1', 2: '501070', 3: '11', 7: '1'}
+263	263		301			AniZhuanchangEnd				"{1: '1', 2: 'Nanami', 3: ""If Nanami doesn't do anything now..."", 4: '1'}"
+264	264		301							{3: 'Who else is going to save these fascinating humans?'}
+265	265		204							{1: '1'}
+266	266		301							{2: 'Nanami', 3: 'Even if Nanami fails, this starship will keep moving forward. Nanami is well-prepared!', 4: '1'}
+267	267		301							"{2: 'Nanami', 3: ""Let's just call this Nanami's little moment of selfishness."", 4: '1'}"
+268	268		301							"{2: 'Nanami', 3: ""This time, I'm not just going to stand by and watch Commandant fight alone."", 4: '1'}"
+269	269		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 4: '5'}
+270	270		302							{2: 'Nanami!', 3: '271', 4: 'Nanami!!', 5: '274', 6: 'Nanami!!!', 7: '277'}
+271	271		101							{4: '5', 5: '1'}
+272	272		204							{1: '1', 2: '3'}
+273	273	280	301							{2: 'Nanami', 3: 'Hmm... Did I just hear Commandant talking again?', 4: '1'}
+274	274		101							{4: '5', 5: '1'}
+275	275		204							{1: '1', 2: '3'}
+276	276	280	301							{2: 'Nanami', 3: 'Hmm... Did I just hear Commandant talking again?', 4: '1'}
+277	277		101							{4: '5', 5: '1'}
+278	278		204							{1: '1', 2: '3'}
+279	279		301							"{2: 'Nanami', 3: ""Oh! I think that's definitely Commandant talking!"", 4: '1'}"
+280	280		202							{1: '1', 6: '1'}
+281	281		201							{1: '1', 2: '501070', 3: '3', 4: '400'}
+282	282		201							{1: '2', 2: '500484', 3: '4', 4: '-400'}
+283	283		301							{1: '1', 2: 'Arcana', 3: '...Sage?', 4: '2'}
+284	284		301							{3: 'Arcana adjusts her receiver in confusion, but apart from Nanami, she detects no other living beings making any sound.'}
+285	285		204							{1: '1', 2: '12'}
+286	286		204							{1: '2'}
+287	287		301							"{2: 'Nanami', 3: ""Um... Guess I'm hearing things again."", 4: '1'}"
+288	288		301							"{2: 'Nanami', 3: ""Everything is ready, Arcana. I'm not asking for your opinion—I'm telling you how it's going to be."", 4: '1'}"
+289	289		301							{2: 'Nanami', 3: 'You and Haicma have always managed the starship well. If I lose my anchor point and get lost...', 4: '1'}
+290	290		204							{1: '1', 2: '13'}
+291	291		301							{2: 'Nanami', 3: 'Then pretend I decided to stay on Earth.', 4: '1'}
+292	292		204							{1: '2', 2: '14'}
+293	293		301							{2: 'Arcana', 3: '...', 4: '2'}
+294	294		301				AniZhuanchangBegin			{3: 'She has no reason to stop Nanami, be it for the sake of the mechanoids or anything else.'}
+295	295		202							{1: '1', 2: '2', 6: '1'}
+296	296		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+297	297		301			AniZhuanchangEnd				"{3: ""In a peaceful moment that would be considered dawn by Earth's calendar, Nanami initiates her deep space simulation.""}"
+298	298		401							{1: '2', 2: '981'}
+299	299		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLianyi.prefab', 2: '2'}
+300	300		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1090.jpg', 3: '0', 4: '1', 5: '2'}
+301	301		301							{3: 'As a droplet of water falls, she enters the stream of time.'}
+302	302		301							{1: ' ', 3: 'The sparse starlight fails to fill the vast universe as she floats at its center and reaches out to touch the shattered vortexes before her.'}
+303	303		301							{3: 'In her endless calculations, Nanami attempts to reach out once more to touch the impossible dimensional boundary.'}
+304	304		301							{3: 'If she could send a message to the commandant in the past to tell Commandant not to enter the Hetero Tower... could all of this be changed?'}
+305	305		301							{3: 'She weaves through different rifts in time, desperately trying to grasp at various shards...'}
+306	306		401							{1: '2', 2: '981'}
+307	307		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLianyi.prefab', 2: '2'}
+308	308		301							{3: 'Only to find herself lost in the end.'}
+309	309		301							{3: 'Nanami drifts along the river of time, yet she cannot find the anchor point that would guide her home.'}
+310	310		401							{1: '2', 2: '558'}
+311	311		205							{1: '999'}
+312	312		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+313	313		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3201_15.jpg'}
+314	314		301							{2: 'Nanami', 3: 'No...'}
+315	315		401							{1: '2', 2: '558'}
+316	316		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+317	317		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_27.jpg'}
+318	318		301							{2: 'Nanami', 3: 'No...'}
+319	319		401							{1: '2', 2: '558'}
+320	320		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+321	321		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4201_04.jpg'}
+322	322		301							{2: 'Nanami', 3: 'No...'}
+323	323		401							{1: '2', 2: '558'}
+324	324		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+325	325		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5001_09.jpg'}
+326	326		301							{3: 'She frantically searches for a new path among the stars.'}
+327	327		301							{3: 'Her consciousness wears thin from excessive time regression as her strength gradually crumbles away.'}
+328	328		301							{3: 'No matter how many times she tries, all she sees is an ocean of stellar shards stretching endlessly before her, with no way to find her path home.'}
+329	329		301							{2: 'Nanami', 3: 'What... should I do...'}
+330	330		301							{3: 'She lets out a soft sigh, her thoughts tinged with sadness.'}
+331	331		301							{3: 'Stellar vortexes spin as time and space interweave into intricate, elusive patterns, flowing like rivers that stretch endlessly into the beyond.'}
+332	332		301							{3: 'The girl reaches out again, trying to fish out the right thread from the rivers.'}
+333	333		301							{2: 'Nanami', 3: 'What should I do now...'}
+334	334		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+335	335		504							{1: '0.7'}
+336	336		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5001_02.jpg'}
+337	337		301							{3: 'Just like when she pondered her choices on Earth, she now finds herself with no new paths left to take.'}
+338	338		504							{1: '0'}
+339	339		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+340	340		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5001_09.jpg'}
+341	341		301							{2: 'Nanami', 3: 'Commandant...'}
+342	342		301							{2: 'Nanami', 3: 'Will I... see you again...?'}
+343	343		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 4: '5'}
+344	344		302		1		AniZhuanchangBegin			{2: 'Nanami!!!!'}

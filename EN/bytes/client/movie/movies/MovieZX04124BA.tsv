@@ -1,0 +1,310 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory735.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		401							{1: '2', 2: '9342045'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+5	5		201							{1: '1', 2: '500005'}
+6	6		301			DialogEnable				{1: '1', 2: 'Soldier', 3: 'Die!', 4: '1'}
+7	7		401							{1: '2', 2: '1510'}
+8	8		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+9	9		301			RImgBg1Shake				{3: 'Spiteful words echo alongside the gunshot.'}
+10	10		301							{2: 'Soldier', 3: 'Ugh... Aargh...', 4: '1'}
+11	11		401							{1: '2', 2: '3077'}
+12	12		203							{1: '1', 2: '0.25', 4: '-100'}
+13	13		202							{1: '1'}
+14	14		301							"{3: ""Zong freezes as the soldier falls, Zong's arm still holding up his gun mid-air for a counterattack.""}"
+15	15		302							{2: '(Reload)', 3: '16'}
+16	16		401							{1: '2', 2: '1511'}
+17	17		201							{1: '1', 2: '500696', 3: '7'}
+18	18		301							{1: '1', 3: 'Having fired the last bullet, you insert a new magazine into your pistol before walking over to the stunned Zong.'}
+19	19		302							{2: 'You doing okay?', 3: '20'}
+20	20		301							{2: 'Zong', 3: 'Ah...', 4: '1'}
+21	21		301							{3: 'He seems to have just snapped out of his daze.'}
+22	22		204							{1: '1', 2: '4'}
+23	23		301							"{2: 'Zong', 3: ""It's not about whether or not I'm okay!"", 4: '1'}"
+24	24		301							"{2: 'Zong', 3: ""Didn't we agree I'd handle the rebels while you focus on the Hetero-Creatures?"", 4: '1'}"
+25	25		301							{3: 'Zong pulls at his hair, his face contorted with guilt.'}
+26	26		302							"{2: ""It was an emergency. We can't afford to worry too much."", 3: '27'}"
+27	27		301							"{2: 'Zong', 3: ""He wasn't a Corrupted or a Hetero-Creature... H-he was..."", 4: '1'}"
+28	28		502						400.0	{1: 'DialogDisable'}
+29	29		302							{2: 'Yeah, I know...', 3: '30'}
+30	30		302							{2: 'He was human.', 3: '31'}
+31	31		301			DialogEnable				"{3: ""Bright red blood slowly seeps and spreads from the corpse's back—something that never happens to Corrupted or Hetero-Creatures.""}"
+32	32		301							{3: 'A human body is such a fragile thing. One bullet to the heart is all it needs to take away its ability to fight.'}
+33	33		301							{3: 'You experience this firsthand for the first time.'}
+34	34		301							"{2: 'Zong', 3: ""That's not supposed to happen... You're the hero who leads the fight against the Punishing Virus. You shouldn't have been the one who did it."", 4: '1'}"
+35	35		502						400.0	{1: 'DialogDisable'}
+36	36		302							{2: 'Zong...', 3: '37'}
+37	37		302							"{2: ""Right now, I'm just your teammate."", 3: '38'}"
+38	38		301			DialogEnable				{2: 'Zong', 3: '...', 4: '1'}
+39	39		302							"{2: ""Let's go."", 3: '40'}"
+40	40		202							{1: '1'}
+41	41		301							{3: 'Using all your strength to stop your right hand from trembling, you pull Zong up from the ground. Right as you are about to leave...'}
+42	42		401							{1: '1', 2: '36'}
+43	43		401							{1: '2', 2: '952'}
+44	44		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+45	45		201						200.0	{1: '2', 2: '500540', 4: '-550', 7: '1'}
+46	46		202							{1: '2', 6: '1'}
+47	47		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+48	48		401							{1: '2', 2: '2645'}
+49	49		302							{2: '!', 3: '50'}
+50	50		301							{3: 'A chilling sensation crawls up your back.'}
+51	51		401							{1: '1', 2: '102'}
+52	52		302							{2: 'Cradle!', 3: '53'}
+53	53		401							{1: '2', 2: '4225'}
+54	54		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndRed.prefab', 2: '2'}
+55	55		201							{1: '1', 2: '500540'}
+56	56		301							"{1: '1', 2: 'Cradle', 3: ""I thought I wouldn't be discovered."", 4: '1'}"
+57	57		301							{3: 'The fallen corpse slowly melts into the purple field as the figure of a young woman gradually emerges above the rotting blood.'}
+58	58		203						600.0	{1: '1', 2: '0.35', 4: '-40'}
+59	59		203							{1: '1', 2: '0.35'}
+60	60		301							"{2: 'Cradle', 3: ""This is the third time we've met each other, 【kuroname】."", 4: '1'}"
+61	61		301							{3: 'She curtsies in almost the same way as last time.'}
+62	62		201							{1: '1', 2: '500696', 3: '4'}
+63	63		301							{1: '1', 2: 'Zong', 3: 'You?!', 4: '1'}
+64	64		401							{1: '2', 2: '1511'}
+65	65		301							{3: 'Zong immediately steps in front of you and aims his rifle at her.'}
+66	66		202							{1: '1'}
+67	67		301							{3: 'She does not try to dodge away, however. Instead, she stares down the barrel aiming at her curiously.'}
+68	68		201							{1: '1', 2: '500540'}
+69	69		301							{1: '1', 2: 'Cradle', 3: 'Is this what hostility looks like in the real world? The instinct living organisms have developed to protect others... No. This is slightly different.', 4: '1'}
+70	70		301							{3: 'She mutters to herself, seemingly lost in thought.'}
+71	71		302							{2: 'What do you want?', 3: '72'}
+72	72		301							"{2: 'Cradle', 3: ""I'm here to retrieve the discarded."", 4: '1'}"
+73	73		301							{3: 'She lands on the ground. The melted corpse has been fully absorbed by the purple field.'}
+74	74		302							{2: 'Are you controlling the Hetero Zone?', 3: '75'}
+75	75		301							"{2: 'Cradle', 3: ""Controlling? I don't think that's accurate..."", 4: '1'}"
+76	76		301							"{2: 'Cradle', 3: ""But please forgive me. I don't yet have the words to accurately describe my relationship with this land."", 4: '1'}"
+77	77		301							{3: 'She says politely.'}
+78	78		302							{2: '...', 3: '79'}
+79	79		301							{2: 'Cradle', 3: 'If you wish to leave, you can head that way.', 4: '1'}
+80	80		301							{3: 'She points in a direction.'}
+81	81		302							{2: 'Why would you help us?', 3: '82'}
+82	82		301							{2: 'Cradle', 3: 'Because I want to see more stories.', 4: '1'}
+83	83		301							{3: 'She says earnestly.'}
+84	84		301							{2: 'Cradle', 3: 'I want to understand civilizations, societies... humanity.', 4: '1'}
+85	85		301							{2: 'Cradle', 3: 'The stories of humans are more important than humans themselves.', 4: '1'}
+86	86		301							{2: 'Cradle', 3: 'So I sincerely hope you will leave more stories behind.', 4: '1'}
+87	87		202							{1: '1', 6: '1'}
+88	88		201							{1: '1', 2: '500696', 3: '4'}
+89	89		301							{1: '1', 2: 'Zong', 3: '...', 4: '1'}
+90	90		201							{1: '1', 2: '500540'}
+91	91		301							{1: '1', 2: 'Cradle', 3: 'Now, please allow me to take my leave.', 4: '1'}
+92	92		401							{1: '2', 2: '4225'}
+93	93		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndRed.prefab', 2: '2'}
+94	94		202							{1: '1'}
+95	95		301							{3: 'And she vanishes as abruptly as she has arrived.'}
+96	96		201							{1: '1', 2: '500696', 3: '4'}
+97	97		301							{1: '1', 2: 'Zong', 3: 'C-Commandant... What on earth was she?', 4: '1'}
+98	98		502						400.0	{1: 'DialogDisable'}
+99	99		302							"{2: ""I'm not sure either."", 3: '100'}"
+100	100		302							{2: 'But it seems something bad will happen in the Hetero Zone.', 3: '101'}
+101	101		301			DialogEnable	AniZhuanchangBegin			{3: 'Zong looks at the spot where Cradle has vanished, his usually cheerful face now full of worry.'}
+102	102		401							{1: '1', 2: '36'}
+103	103		202			DialogDisable			4000.0	{1: '1', 6: '1'}
+104	104		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+105	105		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory734.jpg'}
+106	106		401							{1: '1', 2: '120'}
+107	107		301			DialogEnable				{3: 'Escaping the besiegement of your new pursuers...'}
+108	108		104							{1: '0|0|-300', 2: '1'}
+109	109		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory741.jpg', 3: '0', 4: '1', 5: '1'}
+110	110		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+111	111		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory741.jpg'}
+112	112		301							{3: 'Evading the attacks of Hetero-Creatures...'}
+113	113		104							{1: '0|0|-300', 2: '1'}
+114	114		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory742.jpg', 3: '0', 4: '1', 5: '1'}
+115	115		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+116	116		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory742.jpg'}
+117	117		301							{3: 'Pushing through strange vines and branches...'}
+118	118		104							{1: '0|0|-300', 2: '1'}
+119	119		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory743.jpg', 3: '0', 4: '1', 5: '1'}
+120	120		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+121	121		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory743.jpg'}
+122	122		301							{3: 'You can finally see normal daylight through the gaps in the treetops...'}
+123	123		104							{1: '0|0|-300', 2: '1'}
+124	124		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory744.jpg', 3: '0', 4: '1', 5: '1'}
+125	125		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+126	126		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory744.jpg'}
+127	127		301							{3: 'Your almost half-year-long escape seems to be nearing its end...'}
+128	128		302							{2: 'Zong, hurry!', 3: '129'}
+129	129		301							{3: 'Crossing the boundary between the strange and the normal, you can sense that the air is no longer tinged with the sickly sweet, rotten smell.'}
+130	130		401							{1: '2', 2: '3077'}
+131	131		301							{3: 'Excited by the impending end of your ordeal, you have failed to notice...'}
+132	132		301							{3: 'Someone has fallen behind...'}
+133	133		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+134	134		302				AniZhuanchangBegin			{2: 'Zong?!', 3: '135'}
+135	135		504			DialogDisable				{1: '0.9', 2: '999', 3: '1'}
+136	136		401							{1: '1', 2: '36'}
+137	137		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+138	138		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory767.png'}
+139	139		401							{1: '1', 2: '211'}
+140	140		201							{1: '1', 2: '500816'}
+141	141		301			DialogEnable				{1: '1', 2: 'Zong', 3: 'Watanabe! Watanabe! Wake up!', 4: '1'}
+142	142		301							{2: 'Zong', 3: 'W-why is it happening again?', 4: '1'}
+143	143		202							{1: '1', 6: '1'}
+144	144		401							{1: '2', 2: '952'}
+145	145		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4101_09.jpg'}
+146	146		301							"{3: ""Staring at the gaping hole in Watanabe's chest, Zong seems to have been transported back to that helpless afternoon.""}"
+147	147		401							{1: '2', 2: '952'}
+148	148		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory767.png'}
+149	149		201							{1: '1', 2: '500816'}
+150	150		301							{1: '1', 3: 'He desperately tries to keep Watanabe alive, but he is powerless to do anything.'}
+151	151		301							{3: 'With his own bomb-scarred body, Zong tries to drag Watanabe away from the battlefield.'}
+152	152		301				AniZhuanchangBegin			{3: 'Then he sees...'}
+153	153		202			DialogDisable				{1: '1', 6: '1'}
+154	154		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory743.jpg'}
+155	155		301			DialogEnable				{1: '1', 3: 'He sees a girl in a green robe walking on the purple field. Corpses sink into the soil wherever she steps.'}
+156	156		201							{1: '2', 2: '500545'}
+157	157		301							"{1: '1', 2: '????', 3: ""He's dying."", 4: '2'}"
+158	158		203							{1: '2', 2: '0.25', 3: '400'}
+159	159		201							{1: '1', 2: '500816', 4: '-400'}
+160	160		301							{1: '1', 2: 'Zong', 3: 'Stay back!', 4: '1'}
+161	161		301							{2: '????', 3: 'His... core, I suppose? It was shattered by the bomb earlier.', 4: '2'}
+162	162		301							{3: 'She pauses until she finds the right way to phrase it.'}
+163	163		301							{2: '????', 3: 'He will enter an eternal sleep very soon.', 4: '2'}
+164	164		301							{2: '????', 3: 'Please leave him to me. His story will be passed on through me.', 4: '2'}
+165	165		301							{2: 'Zong', 3: 'Go away! Watanabe will survive!', 4: '1'}
+166	166		301							"{2: '????', 3: ""He won't, not unless someone is willing to exchange their core with him."", 4: '2'}"
+167	167		301							"{2: 'Zong', 3: ""I can! We'll find a way once we get to the camp!"", 4: '1'}"
+168	168		301							{3: 'Zong suddenly realizes that only the Forsaken know their whereabouts. Returning now might mean walking into a trap.'}
+169	169		301							{3: 'The girl does not seem to notice his hesitation and asks gently.'}
+170	170		301							{2: '????', 3: 'Is this what you call a sacrifice?', 4: '2'}
+171	171		301							"{2: 'Zong', 3: ""I won't let the same thing happen again!"", 4: '1'}"
+172	172		301							{2: '????', 3: 'More than a sacrifice, then?', 4: '2'}
+173	173		301							{3: 'She ponders briefly before nodding.'}
+174	174		301							{2: '????', 3: 'Alright, I accept your deal. This will be a new story for me.', 4: '2'}
+175	175		301							"{2: 'Zong', 3: ""Wait, I didn't... Mmph..."", 4: '1'}"
+176	176		202							{1: '1', 6: '1'}
+177	177		203							{1: '2', 2: '0.25'}
+178	178		301							{3: 'The purple field envelops the two of them.'}
+179	179		301				AniZhuanchangBegin			"{2: '????', 3: ""Since I've fulfilled your request, I shall claim my rewards as part of the deal. It is only fair."", 4: '2'}"
+180	180		202							{1: '2', 6: '1'}
+181	181		505			DialogDisable				{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+182	182		504							
+183	183		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+184	184		302							{2: 'Zong! Zong!', 3: '185'}
+185	185		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4101_18.jpg', 3: '0', 4: '1', 5: '1'}
+186	186		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+187	187		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4101_18.jpg'}
+188	188		301			DialogEnable				{3: 'Hearing your call, Zong slowly opens his eyes. He has no idea how long he has leaned against a tree.'}
+189	189		301							{2: 'Zong', 3: 'Commandant...'}
+190	190		302							"{2: ""What's happening?"", 3: '191'}"
+191	191		301							"{2: 'Zong', 3: ""I remember now... I've seen... that green robe before... after we were attacked...""}"
+192	192		301							{3: 'He tries to speak in his usual cheerful tone, but his strength is fading.'}
+193	193		301							{2: 'Zong', 3: 'She... helped transfer my core into Watanabe... and then installed something else where my core used to be.'}
+194	194		301							{3: 'After entering the Clean Zone and crossing the boundary between the strange and the normal, Zong felt the thing in his chest disappear.'}
+195	195		302							{2: '...', 3: '196'}
+196	196		302							"{2: ""I'll get you out of the Clean Zone immediately!"", 3: '197'}"
+197	197		301							{2: 'Zong', 3: 'No...'}
+198	198		301							{3: 'Zong grasps your hand.'}
+199	199		301							{2: 'Zong', 3: 'Commandant... I want to know... Did I do the right thing?'}
+200	200		301							{3: 'You do not know what to answer.'}
+201	201		301							"{2: 'Zong', 3: ""It's... hard to tell, isn't it...""}"
+202	202		301							"{2: 'Zong', 3: ""I'm not very bright, Commandant... or very strong... I haven't been much help... even after I became a Construct.""}"
+203	203		302							"{2: ""No, that's not true..."", 3: '204'}"
+204	204		302							"{2: ""Don't belittle yourself!"", 3: '205'}"
+205	205		301							"{2: 'Zong', 3: ""So... That was the only way... I didn't want to feel powerless like I did back then...""}"
+206	206		301							{2: 'Zong', 3: 'Still... I had to rely on others in the end...'}
+207	207		301							{2: 'Zong', 3: 'Commandant, tell me... Will Watanabe... be infected because of what I did?'}
+208	208		302							{2: '...', 3: '209'}
+209	209		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+210	210		504							{1: '0.7'}
+211	211		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+212	212		201							{1: '1', 2: '500540'}
+213	213		301							"{1: '1', 2: 'Cradle', 3: ""That wasn't me... I'm merely a reader here."", 4: '1'}"
+214	214		301							"{2: 'Cradle', 3: ""I've finished reading the story in his heart. As a part of our deal, I shall return the book intact."", 4: '1'}"
+215	215		502						300.0	{1: 'DialogDisable'}
+216	216		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+217	217		202							{1: '1', 6: '1'}
+218	218		504							
+219	219		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4101_18.jpg'}
+220	220		302							"{2: ""He won't."", 3: '221'}"
+221	221		302							{2: 'I promise!', 3: '222'}
+222	222		301			DialogEnable				"{2: 'Zong', 3: ""That's good. I've been afraid... that I've turned Watanabe into something he hates.""}"
+223	223		301							{2: 'Zong', 3: 'But it must be okay... if someone like you... promise.'}
+224	224		301							"{2: 'Zong', 3: ""I don't want to become... a Corrupted... I've seen the face Watanabe made when he had to execute the comrades who'd turned...""}"
+225	225		301							"{2: 'Zong', 3: ""It was hard to watch... So don't make me go back... please...""}"
+226	226		302							{2: '...I promise you.', 3: '227'}
+227	227		301							"{2: 'Zong', 3: ""Don't feel sad for me, Commandant... After all, I've finally achieved what I always wanted... even though I needed some help...""}"
+228	228		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4101_10.jpg', 3: '0', 4: '1', 5: '1'}
+229	229		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+230	230		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4101_10.jpg'}
+231	231		301							{3: 'He slowly raises his right hand to salute you.'}
+232	232		301							{2: 'Zong', 3: 'Can I ask you one last favor?'}
+233	233		301							"{3: ""Sunlight slowly shines on the young man's face as if covering him with a layer of golden sand.""}"
+234	234		301							{2: 'Zong', 3: 'Please tell Watanabe that the little crybaby who used to be a burden...'}
+235	235		301							{2: 'Zong', 3: '...Can now protect others too.'}
+236	236		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4101_18.jpg', 3: '0', 4: '1', 5: '1'}
+237	237		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+238	238		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4101_18.jpg'}
+239	239		301							{3: 'His hand falls as he falls silent, never to rise again.'}
+240	240		302							{2: '...', 3: '241'}
+241	241		302				AniZhuanchangBegin			"{2: ""We'll finish this last mission together."", 3: '243'}"
+242	242		401							{1: '1', 2: '36'}
+243	243		502						1000.0	{1: 'DialogDisable'}
+244	244		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+245	245		401							{1: '1', 2: '359'}
+246	246		107						1000.0	{1: 'Forsaken Outpost', 2: '06:30 p.m.'}
+247	247		108							{1: '1'}
+248	248		201							{1: '1', 2: '500796', 4: '400'}
+249	249		201							{1: '2', 2: '500005', 4: '-400'}
+250	250		301			DialogEnable				{1: '1', 2: 'Forsaken Rookie', 3: 'Hey, someone seems to be coming.', 4: '1'}
+251	251		301							{2: 'Forsaken Veteran', 3: 'Where? Is it a Babylonian? Have they finally lost their patience?', 4: '2'}
+252	252		301							"{2: 'Forsaken Rookie', 3: ""Doesn't seem to be coming from the same direction... And that person's carrying someone?"", 4: '1'}"
+253	253		202							{1: '1', 2: '2'}
+254	254		301							{3: 'Meanwhile, at the Babylonia outpost.'}
+255	255		201							{1: '1', 2: '500019'}
+256	256		301							"{1: '1', 2: 'Construct Soldier A', 3: ""Someone's here!"", 4: '1'}"
+257	257		301				AniZhuanchangBegin			"{2: 'Construct Soldier A', 3: ""Strange. I don't think that person's armed."", 4: '1'}"
+258	258		202			DialogDisable				{1: '1', 6: '1'}
+259	259		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+260	260		301			DialogEnable				{3: 'Feeling the weight behind your back, you walk forward step by step.'}
+261	261		301							{3: 'Sweat soaks through the bandages on your body. Yet to fully heal, wounds new and old begin to ache.'}
+262	262		301							{3: 'You do not have to look up to feel countless barrels coldly aiming at you from both sides.'}
+263	263		302							{2: 'Hff...', 3: '264'}
+264	264		301							{3: 'You take a deep breath and pull out two flags from your pocket.'}
+265	265		502						400.0	{1: 'DialogDisable'}
+266	266		401							{1: '2', 2: '558'}
+267	267		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+268	268		504							{1: '0.7'}
+269	269		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory756.jpg'}
+270	270		201							{1: '1', 2: '500696', 7: '1'}
+271	271		302							{2: 'Flags?', 3: '272'}
+272	272		204							{1: '1', 2: '2'}
+273	273		301			DialogEnable				"{2: 'Zong', 3: ""Yeah. You'll use that one, Commandant, and I'll use this one."", 4: '1'}"
+274	274		301							"{2: 'Zong', 3: ""It's like giving them a heads-up."", 4: '1'}"
+275	275		302							"{2: ""I didn't know you knew how to do this."", 3: '276'}"
+276	276		301							"{2: 'Zong', 3: ""Hehe. I've been practicing for a long time."", 4: '1'}"
+277	277		202							{1: '1', 6: '1'}
+278	278		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+279	279		504							
+280	280		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+281	281		301							{3: 'You know this is a dangerous move, but without Zong, this is the only way to get both sides to the negotiating table.'}
+282	282		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+283	283		401							{1: '2', 2: '558'}
+284	284		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4101_10.jpg'}
+285	285		301							{3: 'To not betray his resolve...'}
+286	286		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+287	287		401							{1: '2', 2: '558'}
+288	288		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory753.jpg'}
+289	289		201							{1: '1', 2: '500785', 7: '1'}
+290	290		301							{1: '1', 3: 'To hold up your end of the deal with him...'}
+291	291		202							{1: '1', 6: '1'}
+292	292		401							{1: '2', 2: '558'}
+293	293		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+294	294		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory699.jpg'}
+295	295		201							{1: '1', 2: '500166', 7: '1'}
+296	296		201							{1: '2', 2: '500568', 4: '600', 7: '1'}
+297	297		201							{1: '3', 2: '1031001', 4: '-600', 7: '1'}
+298	298		301							{1: '1', 3: 'To not break the promise you made to yourself...'}
+299	299		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+300	300		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+301	301		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+302	302		301							{3: 'What is a little risk?'}
+303	303		302							{2: '(Unfurl the flags)', 3: '304'}
+304	304		401							{1: '2', 2: '10113408'}
+305	305		301							{3: 'Two flags flutter above the buffer zone, one bearing the emblem of raven feathers and a shield, the other a symbol of a gas mask, sand, and fire.'}
+306	306		502							{1: 'DialogDisable'}
+307	307		302							{2: 'I am...', 3: '308'}
+308	308		302							{2: '【kuroname】, the Gray Raven Commandant.', 3: '309'}
+309	309		302		1		AniZhuanchangBegin			{2: 'I will unveil the truth of this war!'}

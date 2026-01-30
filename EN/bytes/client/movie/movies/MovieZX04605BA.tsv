@@ -1,0 +1,419 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory105.png'}
+2	2		401							{1: '1', 2: '5014'}
+3	3		301			DialogEnable				{3: 'The astronaut-shaped mechanoid seems unaware of being followed.'}
+4	4		401							{1: '2', 2: '1514'}
+5	5		301							{3: 'It weaves nimbly between holographic beacons, treating the faint red flashes not as warnings of danger, but as if they were forming a wide path across the damp soil.'}
+6	6		301							{3: 'The trackers maintain just the right distance from the mechanoid, ensuring there is always cover within sight to hide behind if needed.'}
+7	7		301							{3: 'As they advance, the vegetation grows increasingly sparse.'}
+8	8		302							{2: 'Approaching open terrain. Stay alert.', 3: '9'}
+9	9		201							{1: '1', 2: '1031001'}
+10	10		301							{1: '1', 2: 'Liv', 3: 'Understood.', 4: '1'}
+11	11		202							{1: '1'}
+12	12		401							{1: '2', 2: '901'}
+13	13		301							{3: 'Adjusting the mode of the Levi-Gun, Liv cautiously sends it out ahead to scout.'}
+14	14		301				DialogDisable			{3: 'The moment you leave the forest, the entire city comes into clear view.'}
+15	15		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/UiFubenMainMapTab/MainLineER07A.png', 3: '0', 4: '1', 5: '1.5'}
+16	16		101							{1: 'Assets/Product/Texture/Image/UiFubenMainMapTab/MainLineER07A.png'}
+17	17		205							{1: '999'}
+18	18		306							{1: '1'}
+19	19		301			DialogEnable				{3: 'At the end of the tranquil canyon, an expansive clearing unfolds, with steel battlements proudly standing at its heart amidst the mountain foothills.'}
+20	20		301							"{3: ""Sentry turrets spiral across the surface of the massive walls. From afar, the orderly mechanical grooves resemble a bird's nest, but you know each recess is large enough to house a full-sized spacecraft.""}"
+21	21		301							{3: 'Against the colossal reinforced concrete foundation hundreds of meters tall, even the surrounding buildings appear insignificant.'}
+22	22		301				AniZhuanchangBegin			"{3: ""The structures on both sides resemble a ship's keel, firmly anchored to the ground. The towering, symmetrical supports rise upward, holding aloft tracks that point straight toward the sky.""}"
+23	23		306							
+24	24		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory96.png'}
+25	25		201							{1: '1', 2: '1031001', 3: '3', 7: '1'}
+26	26		301			AniZhuanchangEnd				{1: '1', 2: 'Liv', 3: 'Here is Aerospace City...', 4: '1'}
+27	27		302							{2: 'Phew...', 3: '28'}
+28	28		202							{1: '1'}
+29	29		301							{3: 'Deep within the vast forests of the Far North, humanity has turned the fantasy of the Fountains of Paradise into reality—a structure that reaches closer to the auroras and the Milky Way than any towering tree ever could.'}
+30	30		301							{3: 'This lost city from the Golden Age stands more magnificent, more glorious than any miracle humanity has dreamed of for thousands of years.'}
+31	31		201							{1: '1', 2: '1031001'}
+32	32		301							"{1: '1', 2: 'Liv', 3: ""We've finally found our target..."", 4: '1'}"
+33	33		302							"{2: ""This open ground isn't suitable for stealth movement. Let's hold position for now."", 3: '34'}"
+34	34		301							"{3: ""Times have changed, and although it's impossible to determine whether Aerospace City's defense systems are still operational, charging straight in is definitely not a rational choice.""}"
+35	35		301							{2: 'Liv', 3: '...What is it doing?', 4: '1'}
+36	36		202							{1: '1', 6: '1'}
+37	37		104							{1: '50|100|-200', 2: '0.5'}
+38	38		301							"{3: ""At Liv's warning, your attention snaps to the front, where the mechanoid at the edge of the forest is starting to move.""}"
+39	39		201							{1: '1', 2: '1031001', 3: '3'}
+40	40		301							{1: '1', 2: 'Liv', 3: 'Is that a signboard?', 4: '1'}
+41	41		202							{1: '1'}
+42	42		301							"{3: ""The mechanoid doesn't rush forward. Instead, it retrieves a stack of flat, metallic plates about half the height of a person from its storage pack. After unfolding the support frame, it drives the spikes into the soil.""}"
+43	43		301				DialogDisable			{3: 'Repeating this process, several metal plates are arranged into a low fence-like barrier facing the forest.'}
+44	44		302							{2: '(Raise the binoculars to observe)', 3: '45'}
+45	45		401							{1: '2', 2: '4182'}
+46	46		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront13.png', 4: '4'}
+47	47		104							{1: '-100|100|-400', 2: '0.8'}
+48	48		401						1000.0	{1: '2', 2: '4631'}
+49	49		301			DialogEnable				{3: '<color=#ff4e4eff><b>WARNING: ENTERING SENTRY TURRET RANGE AHEAD. DO NOT APPROACH.</b></color>'}
+50	50		301							{3: 'Each metal sign bears the same phrase, hand-sprayed in red paint, a far cry from the official warnings one would expect in a restricted area.'}
+51	51		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront13.png', 4: '4', 5: '1'}
+52	52		401							{1: '2', 2: '4182'}
+53	53		104							{1: '0|0|0', 2: '0'}
+54	54		201							{1: '1', 2: '1031001'}
+55	55		301							"{1: '1', 2: 'Liv', 3: ""It's probably meant as a message for the refugees. I suppose this is... an act of kindness."", 4: '1'}"
+56	56		301							"{3: ""If the city's defenses are meant to keep outsiders away, what's the point of these warnings?""}"
+57	57		302							{2: 'This is quite different from what Rosetta told us.', 3: '58', 4: 'Could it be an awakened machine?', 5: '61'}
+58	58		301							{2: 'Liv', 3: 'Could it be a trap?', 4: '1'}
+59	59		302							"{2: ""Doesn't seem like it."", 3: '60'}"
+60	60	62	301							"{3: ""This whole area is within Aerospace City's defense perimeter. Once those warning signs are removed, unsuspecting refugees would naturally walk straight into the sentry turrets' firing range.""}"
+61	61		301							"{2: 'Liv', 3: ""We can't rule out that possibility, but we're too far away to tell for certain right now."", 4: '1'}"
+62	62		301							{3: 'At the very least, you can be certain for now that this mechanoid harbors no ill intent toward the refugees.'}
+63	63		302							"{2: ""Let's stow our weapons and try to blend in as we approach."", 3: '64'}"
+64	64		204							{1: '1', 2: '3'}
+65	65		301							{2: 'Liv', 3: 'Are we sure it means no harm?', 4: '1'}
+66	66		301							{3: 'Liv still appears to have some reservations about this risky approach.'}
+67	67		302							"{2: ""Rosetta's intel sources are reliable."", 3: '68'}"
+68	68		202							{1: '1'}
+69	69		301							"{3: ""Aerospace City doesn't discriminate against refugees.""}"
+70	70		301							"{3: ""Besides, with Liv's combat prowess as backup, making a clean escape won't be too difficult if things go south.""}"
+71	71		301							{3: 'After making sure the holster is well-hidden, you take a deep breath and step out from behind the rocks.'}
+72	72		301							{3: 'You adjust your movements, trying to mimic the surface survivors encountered in previous missions. For a brief moment, you regret not taking those acting classes at the World Government Association of Art.'}
+73	73		301							{3: 'But the situation leaves no room for such distractions.'}
+74	74		201							{1: '1', 2: '1031001', 3: '1'}
+75	75		301							{1: '1', 2: 'Liv', 3: '...Hello? Um... excuse me, but is this Aerospace City?', 4: '1'}
+76	76		301							{3: 'The mechanoid stops its work, and your eyes meet with the sensor cameras beneath its space helmet.'}
+77	77		203							{1: '1', 2: '0.25', 3: '-400'}
+78	78		201							{1: '2', 2: '500923', 4: '500'}
+79	79		301							{1: '1', 2: '????', 3: 'Who, are you?', 4: '2'}
+80	80		301							"{3: ""A deep, steady male voice speaks—perfectly matching what one would expect from a mechanoid. And yet... something feels off. Shouldn't it be acting less like its kin that follows preset protocols?""}"
+81	81		302							"{2: ""We're refugees from the Arctic Route Union."", 3: '82'}"
+82	82		302							{2: 'Fighting broke out there again, and we heard there was still a city here...', 3: '83'}
+83	83		301							"{3: ""You speak cautiously while watching the mechanoid's reaction.""}"
+84	84		301							{2: '????', 3: 'Why, are you asking me?', 4: '2'}
+85	85		301							{2: 'Liv', 3: 'Because we just saw you setting up these warning signs over there...', 4: '1'}
+86	86		302							{2: 'We actually found our way here by following your warning signs.', 3: '87'}
+87	87		401							{1: '2', 2: '4051'}
+88	88		301							"{3: ""The display on the mechanoid's helmet flickers once, seemingly in approval of the answer.""}"
+89	89		301							{2: '????', 3: 'I am, Dimitri.', 4: '2'}
+90	90		302							"{2: ""I'm 【kuroname】, and this is Liv."", 3: '91'}"
+91	91		203							{1: '2', 2: '0.5', 3: '400'}
+92	92		301							{3: 'After the brief introductions, Dimitri moves toward you with measured, mechanical steps.'}
+93	93		301							"{2: 'Dimitri', 3: ""Follow me. It's not safe here."", 4: '2'}"
+94	94		301							"{2: 'Dimitri', 3: ""The sentry turret's fire control system won't recognize my signal, so make sure to stay close."", 4: '2'}"
+95	95		202							{1: '1', 2: '2'}
+96	96		301							{3: 'The mechanoid must have encountered many similar situations before. His movements through the dangerous borderlands are practiced and graceful, as if weaving an intricate spell through familiar territory.'}
+97	97		301				AniZhuanchangBegin			{3: 'Liv quickly updates Babylonia with your location and status before rushing to follow the mechanoid.'}
+98	98		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+99	99		401							{1: '1', 2: '5016'}
+100	100		301			AniZhuanchangEnd				{3: 'At the other side of the forest.'}
+101	101		301							{3: 'The twisted, winding Hetero vegetation gradually thins out, giving way to the birch and fir trees common to these northern latitudes.'}
+102	102		301							"{3: ""Left behind by the convoy, Hanying follows the road's direction through the forest.""}"
+103	103		301							{3: 'Hidden mines pose an expected challenge, but her advanced sensors make it easy to avoid them.'}
+104	104		201							{1: '1', 2: '500916'}
+105	105		301							{1: '1', 2: 'Hanying', 3: 'Aerospace City... Veronica...', 4: '1'}
+106	106		202							{1: '1'}
+107	107		301							"{3: 'Could Veronica be the ""spiky-headed"" mechanoid they mentioned? And that transport crew...'}"
+108	108		301							"{3: ""It seems wasteful for a resource-starved, isolated city to have all the soldiers' rifles loaded with armor-piercing rounds.""}"
+109	109		301							"{3: ""The tense atmosphere doesn't match what should be a routine transport mission, and...""}"
+110	110		301							{3: 'She cannot understand humans like those soldiers.'}
+111	111		301							"{3: ""Their indifference to a fallen comrade, their reluctance to even properly bury the dead... This isn't like any humans she's encountered before...""}"
+112	112		301							{3: 'Is something wrong with Aerospace City itself, or is it something else...'}
+113	113		401							{1: '2', 2: '2690'}
+114	114		301							{3: 'CRACK—'}
+115	115		301							{3: 'A sharp crack echoes from the other end of the forest, like the sound of a bamboo pole being split in two.'}
+116	116		301							{3: 'But this is far from the subtropical environment suited for bamboo forests, and the perilous minefield is clearly no place for practicing martial arts.'}
+117	117		401							{1: '2', 2: '957'}
+118	118		301							"{3: ""A series of dull thuds follow in rapid succession, barely masking desperate, hoarse shouts in the background. It's gunfire, tearing through the air.""}"
+119	119		201							{1: '1', 2: '500916', 3: '4'}
+120	120		301				AniZhuanchangBegin			"{1: '1', 2: 'Hanying', 3: ""...It's the convoy from before!"", 4: '1'}"
+121	121		202							{1: '1', 6: '1'}
+122	122		301			AniZhuanchangEnd				{3: 'The highway leading to Aerospace City remains the only lead, but the encounters along the way blur the lines between reality and illusion.'}
+123	123		301							{3: 'She rushes toward the source of the sound.'}
+124	124		401							{1: '2', 2: '2902'}
+125	125		301							{3: 'An eerie silence blankets the forest. Massive trees loom in the black smoke, their needles swaying gently—trembling, as if in fear.'}
+126	126		301							{3: 'The stench of burnt, rotting wood permeates the air as an unsettling presence closes in from all directions.'}
+127	127		201							{1: '1', 2: '500916', 3: '4'}
+128	128		301							"{1: '1', 2: 'Hanying', 3: ""It's all mechanoids here..."", 4: '1'}"
+129	129		202							{1: '1'}
+130	130		301							{3: 'Contrary to expectations, she finds no destroyed transport vehicles or human casualties at the attack site.'}
+131	131		301							{3: 'Scorched metal casings lie scattered throughout the forest, staining the moss black.'}
+132	132		401							{1: '2', 2: '4100'}
+133	133		401							{1: '2', 2: '2917'}
+134	134		301							{3: 'Fractured circuits burst from the mechanical shells, and the neatly rounded holes, marked with traces of molten damage, are unmistakably the work of armor-piercing rounds.'}
+135	135		301							{3: 'The scattered mechanoids emit monotonous buzzing sounds, as if still struggling to return to normal operation.'}
+136	136		301							{3: 'Like the unconscious moans of someone on their deathbed.'}
+137	137		402							{1: '2917'}
+138	138		201							{1: '1', 2: '500916', 3: '4'}
+139	139		301							{1: '1', 2: 'Hanying', 3: 'Kowloong General-Purpose Autonomous Machine, Tsiolkovsky Aerospace City...', 4: '1'}
+140	140		202							{1: '1'}
+141	141		301							{3: 'She examines the inscriptions on the surface of the mechanoids, confirming the origin of the victims.'}
+142	142		301							"{3: ""Clearly, everything before her is the result of those soldiers' unleashed fury.""}"
+143	143		301							{3: 'That city is likely teetering on the brink of total collapse.'}
+144	144		301							{3: 'Hanying surveys the place, searching for potential clues.'}
+145	145		201							{1: '1', 2: '500916'}
+146	146		301							{1: '1', 2: 'Hanying', 3: 'This is...', 4: '1'}
+147	147		202							{1: '1'}
+148	148		301							{3: 'Despite the physical damage, the indicator lights on the elongated mechanical structure still flicker faintly, hinting at the thoughts that once pulsed through its processor circuits.'}
+149	149		301							"{3: ""Hanying moves in for a closer look and suddenly realizes—it's a metallic arm buried beneath the wreckage.""}"
+150	150		301							{3: 'At the end of the prosthetic limb, human skin is faintly visible, pulsing with a bluish tint.'}
+151	151		201							{1: '1', 2: '500916', 3: '7'}
+152	152		301							{1: '1', 2: 'Hanying', 3: 'A human?', 4: '1'}
+153	153		202							{1: '1'}
+154	154		401							{1: '2', 2: '1506'}
+155	155		301							{3: 'After carefully moving aside the remnants of two mechanoids, Hanying finds an unconscious young man.'}
+156	156		301							{3: 'Despite her utmost caution, the man startles awake.'}
+157	157		201							{1: '1', 2: '500926', 5: '-80'}
+158	158		301							"{1: '1', 2: '????', 3: ""...Ugh, my head's spinning..."", 4: '1'}"
+159	159		202							{1: '1'}
+160	160		201							{1: '1', 2: '500916'}
+161	161		301							"{1: '1', 2: 'Hanying', 3: ""...Your external injuries aren't severe, but I lack the proper medical capabilities to treat you further. Please be careful."", 4: '1'}"
+162	162		301							{2: 'Hanying', 3: 'Your companions...', 4: '1'}
+163	163		202							{1: '1'}
+164	164		301							"{3: ""She weighs her words carefully while recalling her journey here. There weren't any soldiers dressed like this in the vehicle—could he have come from another transport?""}"
+165	165		301							{3: 'The man opens his eyes and takes in the carnage around him. Lowering the hand pressed against his forehead, he turns to face Hanying.'}
+166	166		301							{3: 'He seems to grasp the situation, though a hint of confusion still lingers in his eyes.'}
+167	167		201							{1: '1', 2: '500922', 3: '1', 4: '-400', 5: '-80'}
+168	168		201							{1: '2', 2: '500916', 4: '400'}
+169	169		301							{1: '1', 2: '????', 3: 'I suppose my companions are all dead now... But thank you anyway. May I ask who you are...?', 4: '1'}
+170	170		301							"{2: 'Hanying', 3: ""...I'm just a passing rescuer. You can call me Hanying."", 4: '2'}"
+171	171		301							"{3: ""She's unsure whether it's safe to reveal her true identity to the man.""}"
+172	172		301							"{2: '????', 3: ""Ah... I'm sorry, Hanying, for you to see something like this..."", 4: '1'}"
+173	173		202							{1: '1', 2: '2'}
+174	174		301							{3: 'He clutches his temple as the wound there begins to throb with pain again.'}
+175	175		201							{1: '1', 2: '500922', 3: '1', 4: '-400', 5: '-80'}
+176	176		201							{1: '2', 2: '500916', 4: '400'}
+177	177		301							{1: '1', 2: 'Hanying', 3: 'Can you move? You need to have that wound treated before it gets worse.', 4: '2'}
+178	178		301							"{2: '????', 3: ""It's fine... Let's head back to the city first. I can hold out until then."", 4: '1'}"
+179	179		301							{2: 'Hanying', 3: 'That battle just now...', 4: '2'}
+180	180		301							{3: 'Besides the person before her, there are no other human remains at the scene.'}
+181	181		301							"{2: '????', 3: ""It's because of me, they... I mean, these mechanoids, they were all my guards."", 4: '1'}"
+182	182		301							{3: 'The young man breaks into a fit of heavy coughing, seemingly having suffered severe internal wounds. He looks around warily, hesitates for a moment, then speaks again.'}
+183	183		301							"{2: '????', 3: ""Pardon me for not introducing myself earlier. I'm Aleksei, the... current governor of this city."", 4: '1'}"
+184	184		301							{2: 'Aleksei', 3: 'Those soldiers were humans who deserted from Aerospace City. They suspected me of being a traitor and attacked me, hoping to reclaim the city for themselves.', 4: '1'}
+185	185		301							{2: 'Aleksei', 3: 'These... are they... all gone?', 4: '1'}
+186	186		202							{1: '1', 2: '2'}
+187	187		301							"{3: ""Ignoring his own wounds, Aleksei's eyes linger on the fallen mechanoids scattered across the ground, his face etched with sorrow.""}"
+188	188		201							{1: '1', 2: '500922', 3: '1', 4: '-400', 5: '-80'}
+189	189		201							{1: '2', 2: '500916', 4: '400'}
+190	190		301							{1: '1', 2: 'Hanying', 3: 'Some can still be repaired, but the others...', 4: '2'}
+191	191		301							{3: 'Even for mechanoids, a destroyed core means death—just as final as it is for humans.'}
+192	192		301							"{2: 'Aleksei', 3: ""This is all my fault... Please, take me back to the city quickly. I'll find people to help them."", 4: '1'}"
+193	193		202							{1: '1', 2: '2'}
+194	194		301							"{3: ""The young man struggles to his feet with Hanying's support.""}"
+195	195		201							{1: '1', 2: '500922', 3: '1', 4: '-400'}
+196	196		201							{1: '2', 2: '500916', 4: '400'}
+197	197		301							"{1: '1', 2: 'Aleksei', 3: ""I'm sorry to trouble you like this when we've only just met..."", 4: '1'}"
+198	198		301							"{2: 'Hanying', 3: ""...It's all right."", 4: '2'}"
+199	199		202							{1: '1', 2: '2'}
+200	200		301							"{3: ""The conflicting information makes it difficult for Hanying to take a clear stance. She maintains a calculated silence, following Aleksei's lead as they weave through the towering trees.""}"
+201	201		301				AniZhuanchangBegin			{3: 'No matter what, she has never let her guard down.'}
+202	202		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory96.png'}
+203	203		401							{1: '1', 2: '5014'}
+204	204		301			AniZhuanchangEnd				"{3: ""As they reach the forest's edge, a vast expanse of frozen tundra suddenly unfolds before them.""}"
+205	205		301							{3: 'The road stretches toward the horizon, ending beneath the arched gateway of towering city walls.'}
+206	206		301							{3: 'The majestic silver structure soars upward, piercing through the misty clouds above.'}
+207	207		301							"{3: ""Tsiolkovsky Aerospace City—once the Earth's eye gazing at the stars.""}"
+208	208		201							{1: '1', 2: '500922', 3: '1'}
+209	209		301							"{1: '1', 2: 'Aleksei', 3: ""Any further ahead and we'll be in range of the defense system. I have an identification chip inside me, so it won't target me."", 4: '1'}"
+210	210		301							{2: 'Aleksei', 3: 'As for you, my guest...', 4: '1'}
+211	211		301							"{3: 'By the roadside, an off-road vehicle with ""Aerospace City"" marked on its door is parked next to the guardrail.'}"
+212	212		301				AniZhuanchangBegin			{2: 'Aleksei', 3: 'Please, get in.', 4: '1'}
+213	213		202							{1: '1', 6: '1'}
+214	214		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 4: '4'}
+215	215		401							{1: '2', 2: '4231'}
+216	216		301			AniZhuanchangEnd				{3: 'As they draw closer to the city gates, Hanying begins to truly grasp the sheer scale of this city.'}
+217	217		301							{3: 'The city walls, studded with sentry turrets, cast their shadow across the highway, soon engulfing everything in darkness as they blot out the sky completely.'}
+218	218		301							{3: 'The towering walls stretch endlessly as far as the eye can see, completely obscuring the buildings that are visible from a distance.'}
+219	219		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory949.jpg', 3: '0', 4: '1', 5: '1.5'}
+220	220		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory949.jpg'}
+221	221		205							{1: '999'}
+222	222		301							"{3: ""The off-road vehicle soon reaches the checkpoint, where Aleksei's influence allows his unauthorized passenger to pass through the mechanoid guards with ease. As they cross under the archway, the city's interior finally reveals itself in full view.""}"
+223	223		402							{1: '4231'}
+224	224		201							{1: '1', 2: '500922', 3: '1'}
+225	225		301							{1: '1', 2: 'Aleksei', 3: 'Here we are at Aerospace City.', 4: '1'}
+226	226		202							{1: '1'}
+227	227		301							{3: 'A peculiar expression crosses his face, pride and sorrow intertwining in his features.'}
+228	228		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+229	229		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 4: '4', 5: '1'}
+230	230		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4601_02.jpg'}
+231	231		301							{3: 'Small groups of mechanoids traverse the entrance plaza with mechanical precision, their movements perfectly coordinated yet devoid of any semblance of life.'}
+232	232		301							{3: 'Suspended atop concrete pillars and massive machinery, the ground-based deck resembles a launch rail, its immense scale making even the distant launch towers appear modest in comparison.'}
+233	233		301							{2: 'Aleksei', 3: 'Just a moment, please.'}
+234	234		301							{3: 'The vehicle briefly stops at the city gate where Aleksei exchanges a few words with the mechanoid guard. After the guard departs, two small vehicles depart from the city shortly after.'}
+235	235		301							"{2: 'Aleksei', 3: ""I've asked them to help repair the mechanoid guards outside the city. We should also keep an eye on the rebels' movements—we can't let them harm any more people.""}"
+236	236		301							{2: 'Hanying', 3: '...Of course.'}
+237	237		301							{3: 'She offers a courteous nod.'}
+238	238		301							{2: 'Aleksei', 3: 'Cough... Now then, allow me to give my guest from Kowloong a tour of the city.'}
+239	239		301							"{2: 'Hanying', 3: ""...Are you sure you're alright with those injuries?""}"
+240	240		301							"{2: 'Aleksei', 3: ""It's fine. Dealing with the rebels is more urgent, and besides...""}"
+241	241		301							{2: 'Aleksei', 3: 'I want you to know... what really happened here.'}
+242	242		301							"{3: ""A flicker of shadowy, unreadable intent passes through the young man's violet eyes.""}"
+243	243		301							{3: 'Along every street, they spot facilities resembling residential buildings. Dilapidated letter boxes hang from the walls and porches—these structures appear to be where the researchers once lived.'}
+244	244		301							{3: 'The entrance halls, which should be bustling with activity, now stand in dead silence. No footsteps or casual conversations echo through the corridors. The empty windows remain devoid of any curious human onlookers.'}
+245	245		301				AniZhuanchangBegin			{3: 'Stiff-moving mechanoids frequently pass by on both sides of the road. They move swiftly, driven by their programming to execute urgent tasks, too busy to spare even a moment for the lifeless streets of this dead city.'}
+246	246		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 4: '4'}
+247	247		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory949.jpg'}
+248	248		104							{1: '0|300|-250', 2: '0'}
+249	249		201							{1: '1', 2: '500922', 3: '1', 4: '-400', 7: '1'}
+250	250		201							{1: '2', 2: '500916', 4: '400', 7: '1'}
+251	251		301			AniZhuanchangEnd				"{1: '1', 2: 'Aleksei', 3: ""Just like busy pedestrians, aren't they?"", 4: '1'}"
+252	252		301							{2: 'Hanying', 3: 'I understand your analogy, but... where are the human residents of this city?', 4: '2'}
+253	253		301							"{3: 'According to the human soldiers outside the city—known as ""rebels""—this city is not as deserted as it seems.'}"
+254	254		301							"{2: 'Hanying', 3: 'You mentioned the ""human rebels"" earlier, so...', 4: '2'}"
+255	255		301							"{2: 'Aleksei', 3: ""Ah, no need to worry. You'll meet them soon enough."", 4: '1'}"
+256	256		202							{1: '1', 2: '2'}
+257	257		301							{3: 'The stories from the cargo crew soldiers are incompatible with the statement of the self-proclaimed governor of the city.'}
+258	258		301							{3: 'The young man shows no rush to explain himself, instead taking his time as if proudly presenting a prized creation.'}
+259	259		301							{3: 'They arrive at a street corner where a platform-like structure stands. The mechanoids docked there pull power cables from the charging stations, plug them into ports on their sides, and flip the power switches.'}
+260	260		301							{3: 'Hanying suddenly realizes that what looks like a rain shelter above the platform is actually a solar panel array.'}
+261	261		201							{1: '1', 2: '500922', 3: '1', 4: '-400'}
+262	262		201							{1: '2', 2: '500916', 4: '400'}
+263	263		301							{1: '1', 2: 'Hanying', 3: 'Have these facilities always been here in the city?', 4: '2'}
+264	264		301							"{2: 'Aleksei', 3: ""Yes. Every time I see these facilities, I'm amazed by how automated this city is."", 4: '1'}"
+265	265		301							{2: 'Aleksei', 3: 'Those who gaze at the stars despise nothing more than the gravity of mundane daily life.', 4: '1'}
+266	266		301							"{2: 'Aleksei', 3: ""That's why it's only natural to leave the menial tasks to machines. It's a shame I was born after the calamity. I never had the chance like my predecessors to devote myself entirely to scientific research."", 4: '1'}"
+267	267		301							{2: 'Aleksei', 3: 'How are things in Kowloong? Sending a Construct like you for reconnaissance... Are they planning to reclaim Aerospace City?', 4: '1'}
+268	268		301							{3: 'Aleksei throws out the question with nonchalance, adopting an air of casual conversation.'}
+269	269		301							{2: 'Hanying', 3: '...Kowloong has no such intentions. We just heard some news about Aerospace City from the outside world and came to check on its condition.', 4: '2'}
+270	270		301							"{3: ""Though his deduction isn't entirely accurate, Hanying finds herself secretly impressed by Aleksei's keen observation skills.""}"
+271	271		301							"{2: 'Aleksei', 3: ""As you can see, your secret won't cause any panic around here. So, you can relax."", 4: '1'}"
+272	272		301							{3: 'A derisive snort escapes from his nose.'}
+273	273		301							{2: 'Hanying', 3: 'So tell me, what exactly happened to Aerospace City all these years?', 4: '2'}
+274	274		301							{2: 'Aleksei', 3: 'Hold on now, let me tell you a story.', 4: '1'}
+275	275		202							{1: '1', 2: '2'}
+276	276		104							{1: '-60|300|-250', 2: '0.5'}
+277	277		301							{3: 'As they turn a corner, he fixes his gaze ahead and slowly begins to speak.'}
+278	278		201							{1: '1', 2: '500922', 3: '1', 4: '-400'}
+279	279		201							{1: '2', 2: '500916', 4: '400'}
+280	280		301							{1: '1', 2: 'Aleksei', 3: 'There was once a professor who gathered all the students in his institute to the plaza one morning.', 4: '1'}
+281	281		301							{2: 'Hanying', 3: 'Is this... a story about the past of Aerospace City?', 4: '2'}
+282	282		301							{2: 'Aleksei', 3: 'In a way, yes. But for now, miss, just treat it as a story being told.', 4: '1'}
+283	283		301							{2: 'Aleksei', 3: 'The students discovered the lawn covered with orange markers, dividing the entire field into neat, dense squares. They exchanged puzzled looks, wondering what their professor could be planning.', 4: '1'}
+284	284		301							{2: 'Aleksei', 3: 'After everyone took their position in their designated squares, he addressed the student in the center of the front row:', 4: '1'}
+285	285		301							"{2: 'Aleksei', 3: '""If I give you a number that starts with 1, relay it to the person on your right; if it starts with 0, relay it to the person on your left. For numbers starting with 11 or 00, pass them to the person behind you. Everyone else should follow the same pattern.""', 4: '1'}"
+286	286		301							{2: 'Hanying', 3: 'Sounds like a pretty straightforward math game.', 4: '2'}
+287	287		301							{2: 'Aleksei', 3: 'Indeed. The sounds of numbers being called soon filled the entire field. The students had no idea what they were doing. Two hours later, exhaustion had set in. Many students were sitting on the ground, some even lying down. They only engaged their minds briefly when it was their turn to relay a number.', 4: '1'}
+288	288		301							{2: 'Aleksei', 3: 'Finally, an exhausted student carelessly passed a number starting with 1 to the person on their left, then left the field in frustration.', 4: '1'}
+289	289		301							"{2: 'Hanying', 3: ""I'd say the game's over."", 4: '2'}"
+290	290		301							{2: 'Aleksei', 3: '...But not in the way the students thought.', 4: '1'}
+291	291		301							{3: 'He lets out a contemptuous laugh.'}
+292	292		301							{2: 'Aleksei', 3: 'The next day, the smarter students asked the professor if they had been practicing binary compilation the previous day. However, they thought those numbers were complete gibberish.', 4: '1'}
+293	293		301							"{2: 'Aleksei', 3: 'The professor did not answer but instead smiled and said a sentence in a foreign language: ""Great works are built by countless effects."" No one understood, so he translated the sentence for the students.', 4: '1'}"
+294	294		301							{2: 'Aleksei', 3: 'The professor announced to the students that the binary code they had ultimately produced the previous day was exactly that foreign sentence.', 4: '1'}
+295	295		301							"{2: 'Hanying', 3: '""Effects"" sounds a bit odd here. Maybe it should be another word instead.', 4: '2'}"
+296	296		301							"{2: 'Aleksei', 3: 'Haha, but their first reaction was one of shock—""None of us understood that language, yet we still completed the translation!""', 4: '1'}"
+297	297		301							"{2: 'Aleksei', 3: 'The professor smiled and asked, ""Do you still think your past selves from yesterday were game participants with independent thoughts?""', 4: '1'}"
+298	298		301							"{2: 'Aleksei', 3: '""I believe one of you made a small mistake,"" he added. ""That phrase was actually meant to talk about \'efforts.\'"" Then, he turned and left the classroom.', 4: '1'}"
+299	299		301							{2: 'Hanying', 3: '...', 4: '2'}
+300	300		202							{1: '1', 2: '2'}
+301	301		301							"{3: ""Aleksei doesn't say anything more, while Hanying stays quiet. It's unclear whether she truly comprehends his intentions or not.""}"
+302	302		401							{1: '2', 2: '4231'}
+303	303		301							{3: 'The governor leads his guest through lifeless streets into what appears to be a plaza.'}
+304	304		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory948.jpg', 3: '0', 4: '1', 5: '1.5'}
+305	305		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory948.jpg'}
+306	306		205							{1: '999'}
+307	307		301							{3: 'Before they know it, they find themselves directly beneath the concrete base. Even when they look up, they can barely see the edge of the launch track at the top.'}
+308	308		402							{1: '4231'}
+309	309		301				AniZhuanchangBegin			{3: 'Aleksei brings the vehicle to a stop.'}
+310	310		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 4: '4', 5: '1'}
+311	311		201							{1: '1', 2: '500922', 3: '1', 7: '1'}
+312	312		301			AniZhuanchangEnd				{1: '1', 2: 'Aleksei', 3: '...Look, these are the foreign inscriptions imposed upon Aerospace City.', 4: '1'}
+313	313		202							{1: '1'}
+314	314		301							{3: 'He stares at the magnificent structure in fascination, seemingly oblivious to his own injuries.'}
+315	315		301							"{3: ""Ever since entering the city, it's as if his wounds have been healed by this place. He eagerly shows Hanying around this magnificent fortress, his enthusiasm evident in every gesture.""}"
+316	316		201							{1: '1', 2: '500916'}
+317	317		301							"{1: '1', 2: 'Hanying', 3: ""Looks like a takeoff runway... but this one's built for spacecraft the size of heavy starships."", 4: '1'}"
+318	318		202							{1: '1'}
+319	319		301							"{3: 'Suddenly, she recalls the ""Project Ark"" files she once read in the Gray Tower\'s database.'}"
+320	320		301							{3: 'The fusion-powered Dawn III spacecraft launched from Platform A31 of Aerospace City. After completing its assembly at the International Space Station, it gradually accelerated to near-light speed, venturing into deep space beyond the solar system.'}
+321	321		301							{3: 'However, the vanguard ship built by the Church was far more massive in both size and mass. With the space station long destroyed, there were no orbital transfer stations left to use.'}
+322	322		301							{3: 'To make the vanguard ship break free from the constraints of natural laws directly from the surface, a launch method of equal magnitude was required... And back then, what they planned to use was...'}
+323	323		201							{1: '1', 2: '500922', 3: '1'}
+324	324		301							"{1: '1', 2: 'Aleksei', 3: 'A magnetic accelerator track for spacecraft. Kowloong\'s codename for it was ""Bifrost"".', 4: '1'}"
+325	325		301							"{2: 'Aleksei', 3: ""The researchers who relocated here carried out the Science Council's will, even as the world outside turned upside down, even as their dreams of reaching beyond the atmosphere faded into delirious whispers..."", 4: '1'}"
+326	326		301							{2: 'Aleksei', 3: 'They continued their counting game without understanding its meaning. You see, they... are no different from the students unconsciously playing the role of computer components.', 4: '1'}
+327	327		301							"{2: 'Aleksei', 3: ""Ending the game is an act of mercy—especially for the mechanoids who've been playing along with them. We've given Bifrost a new meaning, in a much more efficient way."", 4: '1'}"
+328	328		202							{1: '1'}
+329	329		301							{3: 'Several transport vehicles are parked by the garage beneath the base. The drivers, shoulders slumped with exhaustion, hop down from their cabs and call out to their companions in the cargo holds to begin unloading.'}
+330	330		301							{3: 'This is the first time Hanying has seen humans since entering the city.'}
+331	331		301							"{3: ""The cargo containers bear no markings, but they clearly aren't from within the city. Their shapes are too random and disorganized for a city built on standardized modular components. Yet these transport vehicles are identical to the one that carried her incubation pod.""}"
+332	332		301							"{3: 'This means the ""key"" is likely hidden among those cargo containers.'}"
+333	333		201							{1: '1', 2: '500922', 3: '1'}
+334	334		301							{1: '1', 2: 'Aleksei', 3: 'While mechanoids are confined to the city due to the Punishing Virus outside, humans remain unaffected by the virus that rages through circuits.', 4: '1'}
+335	335		301							{2: 'Aleksei', 3: 'See? A perfect division of labor.', 4: '1'}
+336	336		203							{1: '1', 2: '0.25', 3: '-400'}
+337	337		201							{1: '2', 2: '500916', 4: '400'}
+338	338		301							"{1: '1', 2: 'Hanying', 3: ""But they don't seem satisfied with that."", 4: '2'}"
+339	339		301							"{2: 'Aleksei', 3: ""Their discontent is understandable. Give the starving bread today, and they'll demand steak tomorrow."", 4: '1'}"
+340	340		301							{2: 'Aleksei', 3: 'All the mechanoids want is a charging station—you can still be friends with them afterward.', 4: '1'}
+341	341		202							{1: '1', 2: '2'}
+342	342		301							{3: 'The governor appears completely indifferent to how his fellow humans react.'}
+343	343		301							{3: 'Indeed, the workers maintain an understanding silence. Some occasionally cast surprised glances at Hanying, but quickly suppress their curiosity.'}
+344	344		201							{1: '1', 2: '500922', 3: '1', 4: '-400'}
+345	345		201							{1: '2', 2: '500916', 4: '400'}
+346	346		301							"{1: '1', 2: 'Hanying', 3: 'Is this what you meant by ""the new meaning of Bifrost""... just endless labor to wear down human will?', 4: '2'}"
+347	347		301							{2: 'Aleksei', 3: '...Of course not.', 4: '1'}
+348	348		301							"{2: 'Aleksei', 3: 'This magnetic accelerator track for spacecraft, Kowloong\'s ""Bifrost""—its purpose extends far beyond just that.', 4: '1'}"
+349	349		301							{3: 'He repeats his previous statement.'}
+350	350		301							"{2: 'Aleksei', 3: ""As for the rest... I'm sorry, but I cannot disclose any more details."", 4: '1'}"
+351	351		301							{2: 'Hanying', 3: '...', 4: '2'}
+352	352		202							{1: '1', 2: '2'}
+353	353		301							{3: 'Everything encountered thus far has been nothing short of bizarre.'}
+354	354		301							{3: 'There are no awakened machines in the city, and even Aleksei, despite his composure, seems more like a masterfully crafted decoy.'}
+355	355		301							{3: 'The machines have already established their dominance, so what is the purpose of continuing to allocate resources to Bifrost?'}
+356	356		201							{1: '1', 2: '500916', 3: '10'}
+357	357		301				AniZhuanchangBegin			{1: '1', 2: 'Hanying', 3: '(Could this all be her doing?)', 4: '1'}
+358	358		202							{1: '1', 6: '1'}
+359	359		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory949.jpg'}
+360	360		104							{1: '0|200|-250', 2: '0'}
+361	361		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 4: '4'}
+362	362		301			AniZhuanchangEnd				{3: 'As the vehicle turns another corner, she notices a massive dismantling device fixed into the wall at the center of the base pillar facing the plaza.'}
+363	363		301							{3: 'The dark brown bloodstains on the gray-white stones and iron walls are a jarring sight. She recalls the only mark time left on her old frame—the way the lone ship contained its passengers. But even the brutality of million-volt currents feels tame compared to the cruelty of the instrument before her.'}
+364	364		201							{1: '1', 2: '500922', 3: '1'}
+365	365		301							{1: '1', 2: 'Aleksei', 3: 'Any functioning system requires reasonable rules to sustain itself.', 4: '1'}
+366	366		202							{1: '1'}
+367	367		301							"{3: ""Noticing Hanying's expression, Aleksei explains with calculated indifference.""}"
+368	368		306							{1: '1'}
+369	369		301							{3: 'A mechanoid from a passing formation suddenly comes to a halt in the plaza, despite there being no charging stations nearby.'}
+370	370		301							"{3: ""Its mechanical frame is wrapped in spacesuit-like protective gear, with sensors completely enclosed within the helmet. An inscription on the helmet's crown appears to be its name: Dimitri.""}"
+371	371		301							{3: 'The mechanoid turns toward the dismantling equipment, its upper body tilting forward in a measured arc.'}
+372	372		306							
+373	373		201							{1: '1', 2: '500916'}
+374	374		301							"{1: '1', 2: 'Hanying', 3: ""That's..."", 4: '1'}"
+375	375		202							{1: '1'}
+376	376		301							"{3: ""She's about to conclude that she has discovered the singularity within this static realm.""}"
+377	377		301							"{3: ""The young man's brow furrows with irritation as he tries to dodge the question.""}"
+378	378		201							{1: '1', 2: '500922', 3: '1'}
+379	379		301				DialogDisable			{1: '1', 2: 'Aleksei', 3: 'Just a common programming error.', 4: '1'}
+380	380		202							{1: '1', 6: '1'}
+381	381		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 4: '4', 5: '1'}
+382	382		104						2000.0	{1: '-100|-100|-300', 2: '1.5'}
+383	383		301			DialogEnable				{3: 'At the summit of a towering spire overlooking the city, another witness observes this little ceremony in silence.'}
+384	384		301							{3: 'Her attitude toward that mechanoid borders on contempt.'}
+385	385		301				AniZhuanchangBegin			"{2: '????', 3: ""Tsk. Just a lowlife's pathetic act.""}"
+386	386		502							{1: 'DialogDisable'}
+387	387		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory949.jpg'}
+388	388		107			AniZhuanchangEnd			2000.0	{1: 'Foundation Plaza'}
+389	389		108							{1: '1'}
+390	390		301			DialogEnable				"{3: ""The eye-catching mechanoid slowly retrieves a withered branch and places it on the disassembly station's control panel.""}"
+391	391		301							"{3: ""Hanying recognizes the plant—it's black crowberry, an arctic perennial.""}"
+392	392		301							{3: 'In the warmer eastern regions of Kowloong, its distant cousin is known as the azalea. While these flowers often carry messages of remembrance, they were never meant for mourning. Yet here, perhaps there is no other choice.'}
+393	393		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+394	394		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+395	395		401							{1: '2', 2: '2982'}
+396	396		301							"{2: '????', 3: ""She poses no threat. No need to waste time on her—I'll handle this personally later.""}"
+397	397		301							{2: '????', 3: 'Come see me.'}
+398	398		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+399	399		402							{1: '2982'}
+400	400		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+401	401		301							{3: 'The governor cups his ear, then forces his features into an awkward smile at Hanying.'}
+402	402		201							{1: '1', 2: '500922', 3: '1'}
+403	403		301							"{1: '1', 2: 'Aleksei', 3: ""I have matters to attend to. I'll take my leave now."", 4: '1'}"
+404	404		301							{2: 'Aleksei', 3: 'Feel free to use any repair stations and equipment you find in the city.', 4: '1'}
+405	405		202							{1: '1'}
+406	406		301							{3: 'With that, he turns and leaves the plaza.'}
+407	407		301							{3: 'Hanying no longer needs this negligent guide either, as she has found a more crucial lead.'}
+408	408		201							{1: '1', 2: '500916', 3: '10'}
+409	409		301							"{1: '1', 2: 'Hanying', 3: 'The previous Hanged Man must have truly ""died,"" but... there are likely far more awakened machines in the city than anticipated.', 4: '1'}"
+410	410		202							{1: '1'}
+411	411		301							{3: 'There is no time.'}
+412	412		301							{3: 'As Hanying passes through the empty streets, she performs an infrared scan of the buildings. While these tomb-like structures appear as cold blue masses in the readout, the walls conceal countless heat signatures matching human silhouettes.'}
+413	413		301							{3: 'If guns and firearms could be detected as blurred crimson shapes too, there would hardly be any blue left to see.'}
+414	414		201							{1: '1', 2: '500916'}
+415	415		301							{1: '1', 2: 'Hanying', 3: 'How can a governor simply turn a blind eye to all this...', 4: '1'}
+416	416		202							{1: '1'}
+417	417		301							{3: 'This seemingly lifeless city stands on the brink of being devoured by hellfire.'}
+418	418		301		1		AniZhuanchangBegin			"{3: 'She must find the ""key"" Cervantes spoke of before everything comes to pass.'}"

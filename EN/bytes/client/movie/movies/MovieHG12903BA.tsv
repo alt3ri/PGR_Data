@@ -1,0 +1,141 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory19.jpg'}
+2	2		401							{1: '1', 2: '101'}
+3	3		201							{1: '1', 2: '500013', 4: '400'}
+4	4		201							{1: '2', 2: '500013', 4: '-400'}
+5	5		401							{1: '2', 2: '1508'}
+6	6		502							{1: 'RImgBg1Shake'}
+7	7		301			DialogEnable				{1: '1', 2: 'Corrupted', 3: '—!', 4: '1', 5: '2'}
+8	8		302							"{2: ""Flank them! Leave an opening at 3 o'clock..."", 3: '9'}"
+9	9		202						1.0	{1: '1', 2: '2', 6: '1'}
+10	10		201							{1: '1', 2: '500019'}
+11	11		201							{1: '2', 2: '500019', 4: '600'}
+12	12		201							{1: '3', 2: '500019', 4: '-600'}
+13	13		301							{1: '1', 3: 'Hearing your orders, the Construct soldiers nod knowingly, forming into groups of three and scattering, slowly surrounding the dispersed Corrupted.'}
+14	14		202							{1: '1', 2: '2', 3: '3'}
+15	15		401					100.0		{1: '2', 2: '662'}
+16	16		401						100.0	{1: '2', 2: '1510'}
+17	17		401					500.0		{1: '2', 2: '1510'}
+18	18		401						20.0	{1: '2', 2: '660'}
+19	19		401							{1: '2', 2: '658'}
+20	20		301							"{3: ""Even when their limited firepower cannot damage the Corrupted significantly, the soldiers' concentrated barrage still manages to push the Corrupted back closer and closer to the planned location.""}"
+21	21		401						10.0	{1: '2', 2: '1510'}
+22	22		401					500.0	100.0	{1: '2', 2: '658'}
+23	23		401							{1: '2', 2: '660'}
+24	24		302							{2: 'Alright, hold fire.', 3: '25'}
+25	25		301							{3: 'The Construct soldiers stop shooting. Their guns are still drawn, but the soldiers know that the fight is over.'}
+26	26		201							{1: '1', 2: '500013'}
+27	27		401							{1: '2', 2: '1508'}
+28	28		301							{2: 'Corrupted', 3: '—!!!', 4: '1', 5: '2'}
+29	29		301							"{3: ""Without the constant pressure from the Constructs' firearms, the Corrupted immediately revert to their frenzied stage, hoping to charge in and tear their enemies apart.""}"
+30	30		401							{1: '2', 2: '738'}
+31	31		502							{1: 'RImgBg1Shake'}
+32	32		203						100.0	{1: '1', 2: '0.2', 4: '-200'}
+33	33		202							{1: '1'}
+34	34		301							{3: 'But they quickly find themselves standing on nothing—the ground below their feet suddenly collapses, and the new giant hole devours them whole.'}
+35	35		201							{1: '1', 2: '500019'}
+36	36		301							"{1: '1', 2: 'Construct Soldier', 3: ""You were right... That floor couldn't support so many Corrupted and collapsed."", 4: '1'}"
+37	37		401						600.0	{1: '1', 2: '36'}
+38	38		401							{1: '1', 2: '208'}
+39	39		301							{3: 'That seems to be the roof of an old shopping mall. The deserted structure failed the moment it could not withstand the weight of the Corrupted, burying everything that was standing on top.'}
+40	40		302							{2: 'Karenina figured it out, after all.', 3: '41'}
+41	41		301							{3: 'It is because of her accurate assessment that the Corrupted could be so effortlessly dispatched—every bullet is a valuable resource at a time like this.'}
+42	42		301							{2: 'Construct Soldier', 3: 'In that case, the Corrupted in this region are all eliminated.', 4: '1'}
+43	43		302							{2: 'Thanks for all your work.', 3: '44'}
+44	44		301							"{2: 'Construct Soldier', 3: ""We're used to it. I reckon the Engineering Force are the hardest-working ones right now. The materials for the reconstruction are still on their way, while so many are still in need of a roof..."", 4: '1'}"
+45	45		202							{1: '1'}
+46	46		301							{3: 'You have been seeing Karenina going back and forth between different parts of the conservation area ever since she demolished that unstable building, and you have rarely seen her rest.'}
+47	47		301							"{3: ""You happen to have a construction materials list that requires Karenina's approval before submitting it to Babylonia, so you decide to find her after this mission.""}"
+48	48		302							{2: 'All clear. Dismiss.', 3: '49'}
+49	49		301				AniZhuanchangBegin			"{3: ""Confirming Karenina's whereabouts on your terminal, you are surprised to find out where she is.""}"
+50	50		101			DialogDisable	AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory291.png'}
+51	51		301			DialogEnable				"{3: 'If trashes can be used to measure the advancement of human civilization, then the ""hill"" that is a landfill before you tells the story of how quickly the Golden Age was developed.'}"
+52	52		201							{1: '1', 2: '500494', 3: '1', 5: '-200'}
+53	53		301							{1: '1', 3: 'Amidst this dead mountain, the lively girl who suddenly appears is all the more noticeable.'}
+54	54		301							{3: 'Carefully, Karenin retrieves a black panel from beneath a pile of trash.'}
+55	55		301							{2: 'Karenina', 3: 'Get the fork out!', 4: '1'}
+56	56		203							{1: '1', 2: '0.18'}
+57	57		401						200.0	{1: '1', 2: '13015111'}
+58	58		402							{1: '13015111'}
+59	59		301							"{3: 'In the blink of an eye, Karenina pulls the panel away with a ""Woosh!"", and the rubbish stacked above it only sways ever so slightly.'}"
+60	60		301							{2: 'Karenina', 3: 'Hmph! Perfect...', 4: '1'}
+61	61		204							{1: '1', 2: '13'}
+62	62		203			RImgBg1Shake				{1: '1', 2: '0.15', 4: '-200'}
+63	63		401							{1: '2', 2: '1506'}
+64	64		301							{3: 'Before she can finish feeling smug, the still pile of trash suddenly rushes toward her like an avalanche, almost drowning her—the panel only survives since she raises it above her head at the last minute.'}
+65	65		302							{2: 'Karenina?!', 3: '66', 4: 'Are you alright?!', 5: '66'}
+66	66		204							{1: '1', 2: '7'}
+67	67		301							"{3: ""Hearing your shout, the Inver-Devices above Karenina's head poke through the trash pile that has buried her all of a sudden.""}"
+68	68		203							{1: '1', 2: '0.15'}
+69	69		401						200.0	{1: '1', 2: '13015111'}
+70	70		402							{1: '13015111'}
+71	71		301							{3: 'Almost simultaneously, she jumps out nimbly—'}
+72	72		204							{1: '1', 2: '6'}
+73	73		301							{2: 'Karenina', 3: 'W-what are you doing here?!', 4: '1'}
+74	74		302							"{2: ""Phew. You don't look injured..."", 3: '75'}"
+75	75		204							{1: '1', 2: '4'}
+76	76		301							{2: 'Karenina', 3: 'Hmph, of course! How can this junk even hope to hurt me... I was just caught by surprise.', 4: '1'}
+77	77		301							{3: 'Karenina skips to your location. Only at this distance can you tell that her face is covered with dirt, from where you cannot say.'}
+78	78		204							{1: '1', 2: '1'}
+79	79		301							{3: 'But she does not seem to care. Her smeared face highlights her sparkling eyes in the sun.'}
+80	80		301							{3: 'Even more sparkling is the panel in her hand... blinding, even.'}
+81	81		302							"{2: ""What's that you got there?"", 3: '82'}"
+82	82		301							{2: 'Karenina', 3: 'Hm? This? This is a solar thermal collector from ages ago. It was used to collect and store solar energy.', 4: '1'}
+83	83		301							"{2: 'Karenina', 3: ""It's pretty cold at night right now... The Scavengers who moved out might have a place to stay, but they have nothing to keep them warm. I want to make a simple heating device with this and a few other things."", 4: '1'}"
+84	84		301							{3: 'Karenina fiddles with her hair by her ear, her gaze darting around.'}
+85	85		204							{1: '1', 2: '4'}
+86	86		301							"{2: 'Karenina', 3: ""After all, it's too dangerous for them to make a fire in their shelters... The Engineering Force'd have to clean up their mess if they start a fire..."", 4: '1'}"
+87	87		302							"{2: ""I'll help."", 3: '88'}"
+88	88		204							{1: '1', 2: '7'}
+89	89		301							{3: 'Karenina blinks and looks at you in disbelief.'}
+90	90		301							"{2: 'Karenina', 3: ""You? This isn't commanding a squad. It takes alertness and awareness, not wit."", 4: '1'}"
+91	91		204							{1: '1', 2: '1'}
+92	92		301							"{2: 'Karenina', 3: 'It takes experience and imagination to determine if what you found is valuable... if it\'s ""treasure"""" or """"trash.""', 4: '1'}"
+93	93		302							{2: 'All I see here is trash...', 3: '94', 4: 'Fascinating insight!', 5: '94'}
+94	94		301							{3: 'As she speaks, she bends down to grab a small, inconspicuous device from the pile and throws it your way.'}
+95	95		302							{2: 'What is that?', 3: '96'}
+96	96		301							"{2: 'Karenina', 3: ""The port for an energy converter. It's a bit damaged right now, but I should be able to fix it."", 4: '1'}"
+97	97		301							"{2: 'Karenina', 3: ""I used to go treasure-hunting in the slums with Grandpa back in the slums. We would find all kinds of parts to assemble machines that we didn't know."", 4: '1'}"
+98	98		301							{3: 'Karenina takes the port back and easily fixes it before attaching it to the panel.'}
+99	99		301							{2: 'Karenina', 3: 'Even unassuming junk... can become treasures that help people in the hands of engineers.', 4: '1'}
+100	100		302							{2: 'Amazing...', 3: '101'}
+101	101		302							"{2: 'Let me look for some ""treasures"" as well.', 3: '102'}"
+102	102		301							{3: 'You look around and see a small object glistening in the sun. Picking it up, you find a chip with an intricate circuit attached to it.'}
+103	103		302							{2: 'Karenina! Take a look!', 3: '104'}
+104	104		301							{3: 'Taking the small trinket from you, she flips it around in the sun. Light passes through its translucent shell, scattering into a rainbow of colors. But Karenina eventually shrugs.'}
+105	105		301							"{2: 'Karenina', 3: 'It\'s just a small bulb for decoration, not something useful, unfortunately. At most, it\'d give off a little bit of light... if it isn\'t broken. Definitely ""trash.""', 4: '1'}"
+106	106		302							{2: 'What a shame...', 3: '107', 4: 'I guess this is where it belongs.', 5: '107'}
+107	107		301							{3: 'Disappointed, you take the small bulb back, ready to throw it back into the trash pile.'}
+108	108		204							{1: '1', 2: '8'}
+109	109		301							"{2: 'Karenina', 3: ""Hold on... Don't throw it away!"", 4: '1'}"
+110	110		204							{1: '1', 2: '1'}
+111	111		301							{3: 'Karenina grabs it from you before observing it closely and smiling.'}
+112	112		301							"{2: 'Karenina', 3: ""I suppose it's fate that you picked it up. Leave it to me! I'll turn this small glass ball into the shiniest light there is!"", 4: '1'}"
+113	113		301							{2: 'Karenina', 3: 'We can probably place it... Alright! There!', 4: '1'}
+114	114		301							{3: 'Looking at where Karenina is pointing, you find a familiar structure hidden behind some buildings.'}
+115	115		302							{2: 'The Ferris wheel?', 3: '116'}
+116	116		301							"{2: 'Karenina', 3: ""That's it. Isn't a Ferris wheel decked out with lights? Let's put this up there to join the party."", 4: '1'}"
+117	117		302							{2: 'It looks much smaller than the one in Venus Splash Park.', 3: '118'}
+118	118		301							{2: 'Karenina', 3: 'Sure, but the structure of this Ferris wheel is sturdy. We can keep it up there and not worry about it falling down.', 4: '1'}
+119	119		204							{1: '1', 2: '4'}
+120	120		301							"{2: 'Karenina', 3: ""If the power system still works, we might even be able to turn it back on. And then... Tch. Now's not the time to think about that!"", 4: '1'}"
+121	121		301							"{3: 'Turning away from the Ferris wheel, Karenina bends down to collect the ""treasure"" she found.'}"
+122	122		302							{2: 'Do you like Ferris wheels?', 3: '123'}
+123	123		204							{1: '1', 2: '6'}
+124	124		301							"{2: 'Karenina', 3: ""Me? Nah. I just recalled that night at Venus Splash Park when I didn't..."", 4: '1'}"
+125	125		204							{1: '1', 2: '7'}
+126	126		301							{3: 'Suddenly, Karenina freezes unexpectedly and blushes.'}
+127	127		302							{2: 'Karenina?', 3: '128'}
+128	128		204							{1: '1', 2: '6'}
+129	129		301							{2: 'Karenina', 3: 'W-why is my face so dirty?!', 4: '1'}
+130	130		301							{3: 'Karenina hurriedly rubs her face with her hand—she seems to have noticed her appearance from the reflection of the solar panel.'}
+131	131		301							"{2: 'Karenina', 3: ""Why didn't you say something?!"", 4: '1'}"
+132	132		302							{2: 'I thought you knew...', 3: '133'}
+133	133		302							"{2: ""It's alright. No one is around."", 3: '134', 4: ""It's alright. I'm the only one here."", 5: '134'}"
+134	134		301							"{2: 'Karenina', 3: ""It's not alright! How stupid are you?!"", 4: '1'}"
+135	135		401						200.0	{1: '1', 2: '1515'}
+136	136		204							{1: '1', 2: '4'}
+137	137		301							{3: 'You want to say something more, but the supervisor from the conservation area suddenly calls you. Sounding urgent, he notifies you that the CPF has stopped working properly all of a sudden.'}
+138	138		301							"{2: 'Karenina', 3: ""...The wattage of the CPF dropped drastically out of nowhere? How the hell... I see. I'll be right there!"", 4: '1'}"
+139	139		302							"{2: ""I'm coming with you!"", 3: '140'}"
+140	140		301		1		AniZhuanchangBegin			{3: 'You two place the things you have found in a cart, and then you make your way to the Central Purification Filter.'}

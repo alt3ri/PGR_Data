@@ -1,0 +1,484 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory1347.jpg'}
+2	2		401							{1: '1', 2: '6245'}
+3	3		502						250.0	{1: 'DialogDisable'}
+4	4		107							{1: 'Deep in the Mine'}
+5	5		301							{3: 'Deep in the Mine'}
+6	6		108							{1: '1'}
+7	7		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+8	8		401							{1: '2', 2: '4331'}
+9	9		301			DialogEnable				{3: 'Brushing away the memory fragments, you and Aisling flee deeper into the mines.'}
+10	10		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+11	11		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+12	12		401							{1: '2', 2: '2887'}
+13	13		301			RImgBg1Shake	DialogDisable			{3: 'Shing—'}
+14	14		302							{2: 'Hmm?!'}
+15	15		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+16	16		111							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+17	17		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+18	18		301			DialogEnable	DialogDisable			{3: 'Abruptly, you freeze as a cold, foreign pressure floods your skull. The consciousness attack is back. This time, its target is no longer your Mind Beacon.'}
+19	19		111							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+20	20		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab'}
+21	21		111							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab'}
+22	22		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+23	23		301			DialogEnable	DialogDisable			{3: 'It feels like ice water down your spine, a subtle burn spreading from your nerve endings, creeping up to cloud your vision.'}
+24	24		111							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+25	25		401							{1: '2', 2: '5950'}
+26	26		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront99.png', 3: '0', 4: '1', 5: '0.5'}
+27	27		301			DialogEnable	DialogDisable			{3: 'Something is being woven into existence around you.'}
+28	28		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront99.png', 3: '1', 4: '0', 5: '0'}
+29	29		401							{1: '2', 2: '5812'}
+30	30		401							{1: '2', 2: '4387'}
+31	31		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1338.jpg', 3: '0', 4: '1', 5: '1'}
+32	32		104						1050.0	{1: '0|0|-200', 2: '0', 4: '4'}
+33	33		205							{1: '1004', 3: '1', 4: '1', 5: '0'}
+34	34		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront99.png', 3: '1', 4: '0', 5: '0'}
+35	35		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1338.jpg'}
+36	36		104							{1: '0|0|0', 2: '0', 4: '4'}
+37	37		104							{1: '0|0|-200', 2: '0'}
+38	38		301			DialogEnable				{3: 'Boom—'}
+39	39		301				DialogDisable			{3: 'Before you can move, the path ahead transforms into a sheer cliff.'}
+40	40		302							{2: '!!!', 3: '41', 4: 'How...', 5: '41'}
+41	41		104						350.0	{1: '0|0|0', 2: '0.3'}
+42	42		301			DialogEnable				{3: 'You pull back your outstretched foot, certain that a tunnel should be there.'}
+43	43		301							{3: 'Yet the precipice is undeniably real. As you start to doubt your own memory and reach for a pebble to test the edge, the girl panics, clutching your clothes.'}
+44	44		201							{1: '1', 2: '501382', 3: '2'}
+45	45		301							"{1: '1', 2: 'Aisling', 3: ""What's going on?"", 4: '1'}"
+46	46		302							"{2: ""Don't worry..."", 3: '47'}"
+47	47		202							{1: '1', 6: '1'}
+48	48		401							{1: '2', 2: '4176'}
+49	49		301			RImgBg1Shake				{3: 'BOOM—!!'}
+50	50		301				DialogDisable			{3: 'A violent tremor cuts you off. The beam of your light device shudders, yet you fail to locate the source of the explosion.'}
+51	51		307							"{1: ""Could that be coming from Liv's position?!"", 3: '70'}"
+52	52		301							"{3: ""Could that be coming from Liv's position?!""}"
+53	53		307							{2: '1'}
+54	54		302							{2: '(Draw your gun)', 3: '55', 4: '(Look around)', 5: '55'}
+55	55		401							{1: '2', 2: '5705'}
+56	56		301			DialogEnable				{3: 'Alert, you draw your gun and scan in all directions, only to find nothing unusual.'}
+57	57		201							{1: '18', 2: '501385', 3: '4', 4: '200', 5: '-110', 6: '-190'}
+58	58		301							{1: '1', 2: 'Liv', 3: '...Commandant!', 4: '18'}
+59	59		202							{1: '18', 6: '1'}
+60	60		301				DialogDisable			"{3: ""A voice, faint but undeniably Liv's, echoes from the tunnel on the right.""}"
+61	61		302							"{2: '(Abandon the path ahead and turn right)', 3: '62', 4: ""(Ignore the voice and toss a stone to test what's ahead)"", 5: '84'}"
+62	62		401							{1: '2', 2: '4331'}
+63	63		502							{1: 'RImgBg1DisableSlow'}
+64	64		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1346.jpg'}
+65	65		301			DialogEnable				"{3: ""You decisively abandon the path ahead, take the child's hand, and turn toward the tunnel on the right.""}"
+66	66		401							{1: '2', 2: '844090'}
+67	67		201							{1: '1', 2: '500902'}
+68	68		301				DialogDisable			{1: '1', 3: 'Darkness swallows the passage ahead. You manage only two steps before a Hetero-Creature erupts from the shadows behind the rocks.'}
+69	69		302							{2: '(Open fire)', 3: '70'}
+70	70		401							{1: '2', 2: '2513'}
+71	71		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2'}
+72	72		301			DialogEnable	DialogDisable			{3: 'Bang—'}
+73	73		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndWhite.prefab', 2: '2', 3: '1'}
+74	74		202						800.0	{1: '1'}
+75	75		301			DialogEnable				{3: 'The shot echoes off the stone, the creature dissolving into nothing.'}
+76	76		505							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab'}
+77	77		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndWhite.prefab', 4: '1'}
+78	78		302							{2: '...', 3: '79'}
+79	79		301				DialogDisable			{3: 'Someone, or something, is weaving illusions to control you, to guide your steps.'}
+80	80		502							{1: 'RImgBg1DisableSlow'}
+81	81		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1338.jpg'}
+82	82		301			DialogEnable	DialogDisable			{3: 'You fall back to the previous tunnel. The illusion holds firm; the cliff still looms.'}
+83	83		302							"{2: ""(Toss a stone to test what's ahead)"", 3: '85'}"
+84	84		301			DialogEnable	DialogDisable			"{3: ""You just spoke with Liv over comms. She couldn't possibly be in the right tunnel.""}"
+85	85		306							{1: '1'}
+86	86		401							{1: '2', 2: '844', 3: '0.5'}
+87	87		104						500.0	{1: '0|0|-100', 2: '0.3'}
+88	88		104							{1: '0|0|0', 2: '0.3'}
+89	89		301			DialogEnable				{3: 'You pick up a stone from the ground and toss it forward.'}
+90	90		401							{1: '2', 2: '4006', 3: '1'}
+91	91		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustLightWall.prefab', 2: '2'}
+92	92		301							{3: 'It vanishes as if swallowed once it reaches the edge, yet you hear the unmistakable clack of it hitting solid ground.'}
+93	93		301							"{3: ""It's an illusion caused by interference with your visual nerves.""}"
+94	94		301				DialogDisable			{3: 'But woven by whom, and for what purpose?'}
+95	95		306							
+96	96		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustLightWall.prefab'}
+97	97		104						500.0	{1: '0|20|-50', 2: '0.5'}
+98	98		301			DialogEnable	DialogDisable			{3: 'Your boot steps onto the edge of the supposed cliff and, unsurprisingly, meets solid ground beneath.'}
+99	99		302							{2: '(Walk over)', 3: '100'}
+100	100		401							{1: '2', 2: '5703'}
+101	101		104							{1: '0|0|-100', 2: '0.5'}
+102	102		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '2'}
+103	103		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCommon/FxUiActivityBranch01.prefab', 2: '1'}
+104	104		301			DialogEnable				{3: 'Suddenly, the world flips inside out.'}
+105	105		301				DialogDisable			{2: 'Liv', 3: 'Commandant...'}
+106	106		401							{1: '2', 2: '4387'}
+107	107		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+108	108		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+109	109		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCommon/FxUiActivityBranch01.prefab'}
+110	110		104							{1: '0|0|0', 2: '0'}
+111	111		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1351.jpg'}
+112	112		301			DialogEnable				"{3: ""Her voice echoes from all directions, and when reality snaps back into place, you're standing on the brink of a cliff again.""}"
+113	113		302							{2: 'Using the same trick twice?', 3: '114'}
+114	114		104							{1: '0|0|-100', 2: '0.5'}
+115	115		301				DialogDisable			{3: 'After confirming your Mind Beacon is stable, you stride forward without hesitation—'}
+116	116		401							{1: '2', 2: '4387'}
+117	117		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+118	118		104							{1: '0|0|0', 2: '0'}
+119	119		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory317.png'}
+120	120		301			DialogEnable				{3: 'And in the next second, you are standing in a sun-drenched conservation area.'}
+121	121		201							{1: '1', 2: '501392'}
+122	122		301							"{1: '1', 2: 'Conservation Area Supervisor', 3: ""Huh? You're back so soon."", 4: '1'}"
+123	123		301				DialogDisable			{2: 'Conservation Area Supervisor', 3: 'Melinoe went looking for you. Did you run into her—', 4: '1'}
+124	124		302							{2: '(Open fire)', 3: '125'}
+125	125		401							{1: '2', 2: '2513'}
+126	126		401						500.0	{1: '2', 2: '772'}
+127	127		111						250.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab'}
+128	128		202							{1: '1', 6: '1'}
+129	129		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1338.jpg'}
+130	130		301			DialogEnable	DialogDisable			{3: 'The bullet smacks into the wall behind the supervisor. A spiderweb of cracks erupts, and the entire facade begins to peel away.'}
+131	131		111							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab'}
+132	132		301			DialogEnable				{3: 'The illusion shatters. You are still in the mine tunnel, as you knew you would be.'}
+133	133		302							{2: 'The attack only works on the visual nerves...', 3: '134'}
+134	134		301				DialogDisable			"{3: 'It seems the ""illusion"" can only interfere with your visual nerves, not a true mental trap.'}"
+135	135		401						400.0	{1: '2', 2: '4422'}
+136	136		401							{1: '2', 2: '4700'}
+137	137		301			DialogEnable				{3: 'Without further deliberation, you check the terminal map, scoop up the girl, and hoist her onto your back.'}
+138	138		201							{1: '1', 2: '501382', 3: '7'}
+139	139		301			PanelActor1Shake				{1: '1', 2: 'Aisling', 3: '...!!', 4: '1'}
+140	140		302							{2: 'Hold this for me.', 3: '141'}
+141	141		202							{1: '1'}
+142	142		301							"{3: ""You lock the screen to Liv's communication channel and point to the large green icon.""}"
+143	143		302							"{2: ""Press this and it'll start the call."", 3: '144'}"
+144	144		201							{1: '1', 2: '501382', 3: '7'}
+145	145		401							{1: '2', 2: '4051'}
+146	146		301							"{1: '1', 2: 'Aisling', 3: ""...Press this and it'll start the call."", 4: '1'}"
+147	147		301							{3: 'She repeats your words, barely understanding.'}
+148	148		302							{2: 'When someone answers on the other end, call for me.', 3: '149'}
+149	149		401							{1: '2', 2: '1515'}
+150	150		301							{2: 'Aisling', 3: 'When someone answers on the other end, call...', 4: '1'}
+151	151		401							{1: '2', 2: '887'}
+152	152		301							{3: 'She presses the communication button. A dozen, two dozen dial tones pulse into the silence, each one a fading hope before the call predictably fails.'}
+153	153		402							{1: '887'}
+154	154		302							"{2: ""Keep pressing it. No matter what happens, don't stop."", 3: '155'}"
+155	155		204							{1: '1', 2: '14'}
+156	156		301							{2: 'Aisling', 3: 'O... okay.', 4: '1'}
+157	157		202							{1: '1'}
+158	158		401							{1: '2', 2: '887'}
+159	159		301							"{3: ""The little girl falls silent, the only sound the relentless busy signal at your back. She's following your instructions perfectly.""}"
+160	160		201							{1: '1', 2: '501382', 3: '14'}
+161	161		301							{1: '1', 2: 'Aisling', 3: 'Will we... ever get out of here?', 4: '1'}
+162	162		302							"{2: 'We will.', 3: '163', 4: ""We will. I'm sure of it."", 5: '163'}"
+163	163		202							{1: '1'}
+164	164		301				DialogDisable			{3: 'With your supplies rechecked, you press on, one hand skimming the rough rock of the right wall.'}
+165	165		402							{1: '887'}
+166	166		306							{1: '1'}
+167	167		401							{1: '2', 2: '1516'}
+168	168		502							{1: 'RImgBg1DisableSlow'}
+169	169		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg'}
+170	170		301			DialogEnable				"{3: ""You navigate by the mental map drawn when you first entered the mine with Liv. According to it, a right turn at the second fork will lead to the Rodent squad's secondary safe zone.""}"
+171	171		401							{1: '2', 2: '2589'}
+172	172		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+173	173		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1349.jpg'}
+174	174		301				DialogDisable			{3: 'Your landmark is an abandoned crane—a distinct silhouette that serves as an ideal meeting point in these labyrinthine tunnels.'}
+175	175		401							{1: '2', 2: '2589'}
+176	176		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+177	177		401							{1: '2', 2: '1516'}
+178	178		101						600.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1346.jpg'}
+179	179		502							{1: 'RImgBg1DisableSlow'}
+180	180		101			RImgBg2Enable			600.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1345.jpg'}
+181	181		502							{1: 'RImgBg1DisableSlow'}
+182	182		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1347.jpg'}
+183	183		301			DialogEnable	DialogDisable			{3: 'Everything around you peels away like faded wallpaper, as various scenes flicker into being like rapidly changing stage sets from Golden Age films.'}
+184	184		306							
+185	185		302							{2: '(Step forward)', 3: '186'}
+186	186		401						200.0	{1: '2', 2: '5703'}
+187	187		401							{1: '2', 2: '4627'}
+188	188		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+189	189		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+190	190		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1112.jpg', 3: '0', 4: '0.8', 5: '0.5'}
+191	191		104							{1: '0|180|-500', 2: '0', 4: '3'}
+192	192		201							{1: '18', 2: '501385', 3: '4', 4: '200', 5: '-110', 6: '-190'}
+193	193		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Liv', 3: ""Commandant, there's a cliff ahead! You can't go any further."", 4: '18'}"
+194	194		202							{1: '18', 6: '1'}
+195	195		302							{2: '(Move forward)', 3: '196'}
+196	196		401						200.0	{1: '2', 2: '5703'}
+197	197		401							{1: '2', 2: '4627'}
+198	198		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+199	199		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png', 3: '0', 4: '0.8', 5: '0.5'}
+200	200		104							{1: '0|0|0', 2: '0', 4: '3'}
+201	201		201							{1: '18', 2: '501385', 3: '7', 4: '200', 5: '-110', 6: '-190'}
+202	202		301			DialogEnable	DialogDisable			{1: '1', 2: 'Liv', 3: 'Commandant, the transport craft is going to crash!', 4: '18'}
+203	203		202							{1: '18', 6: '1'}
+204	204		302							{2: '(Move forward)', 3: '205'}
+205	205		401						200.0	{1: '2', 2: '5703'}
+206	206		401							{1: '2', 2: '4627'}
+207	207		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+208	208		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg', 3: '0', 4: '0.8', 5: '0.5'}
+209	209		201							{1: '18', 2: '501385', 3: '6', 4: '200', 5: '-110', 6: '-190'}
+210	210		301			DialogEnable	DialogDisable			{1: '1', 2: 'Liv', 3: '【kuroname】... Honey, will you be home for dinner tonight?', 4: '18'}
+211	211		202							{1: '18', 6: '1'}
+212	212		302							{2: '...', 3: '213', 4: '???', 5: '213'}
+213	213		302							{2: '(Keep moving forward)', 3: '214'}
+214	214		401						200.0	{1: '2', 2: '5703'}
+215	215		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+216	216		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg', 3: '0', 4: '0', 5: '0'}
+217	217		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+218	218		401							{1: '2', 2: '5316'}
+219	219		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab', 2: '2'}
+220	220		301			DialogEnable				{3: 'The moment your foot touches down, both her voice and the world around you shatter like glass.'}
+221	221		301							{3: 'Just one more turn.'}
+222	222		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab'}
+223	223		201							{1: '1', 2: '501382', 3: '2'}
+224	224		301							"{1: '1', 2: 'Aisling', 3: ""It's... it's those monsters..."", 4: '1'}"
+225	225		301							{3: 'The little girl on your back suddenly clutches your clothes, her grip tight with fear.'}
+226	226		401							{1: '1', 2: '6247'}
+227	227		202							{1: '1'}
+228	228		201							{1: '1', 2: '500902'}
+229	229		301				DialogDisable			{3: 'The Punishing concentration spikes abruptly, and your monitor flashes a warning red.'}
+230	230		302							{2: '(Open fire)', 3: '231'}
+231	231		401							{1: '2', 2: '2513'}
+232	232		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2'}
+233	233		203						80.0	{1: '1', 2: '0.15', 4: '-150'}
+234	234		401							{1: '2', 2: '844090'}
+235	235		202							{1: '1'}
+236	236		301			DialogEnable				"{3: ""The Hetero-Creature's howl of pain is an unfortunate proof: this is no illusion.""}"
+237	237		505							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab'}
+238	238		301				DialogDisable			{3: 'Hearing the creature so close, the girl whimpers quietly.'}
+239	239		401							{1: '2', 2: '844090'}
+240	240		201							{1: '1', 2: '500902'}
+241	241		301			DialogEnable	DialogDisable			{3: 'As your gun barrel grows warm from continuous fire, several more Hetero-Creatures burst from a narrow passage on the other side.'}
+242	242		302							{2: '(Dodge the attack)', 3: '243', 4: '(Continue shooting)', 5: '255'}
+243	243		201							{1: '2', 2: '500902', 4: '900', 7: '1'}
+244	244		104							{1: '100|0|-150', 2: '0.25'}
+245	245		203							{1: '1', 2: '0.25', 3: '-200'}
+246	246		203						200.0	{1: '2', 2: '0.25', 3: '550'}
+247	247		401							{1: '2', 2: '5309'}
+248	248		202						500.0	{1: '2'}
+249	249		203						150.0	{1: '1', 2: '0.15', 5: '-200'}
+250	250		401							{1: '2', 2: '8220087'}
+251	251		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+252	252		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+253	253		202							{1: '1', 6: '1'}
+254	254	267	301			DialogEnable				{3: 'You dodge the attack from behind, but fail to evade the Hetero-Creature lunging from the side—'}
+255	255		401							{1: '2', 2: '2513'}
+256	256		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2'}
+257	257		203						80.0	{1: '1', 2: '0.15', 4: '-150'}
+258	258		401							{1: '2', 2: '4006'}
+259	259		202							{1: '1'}
+260	260		505							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab'}
+261	261		401						400.0	{1: '2', 2: '5309'}
+262	262		401							{1: '2', 2: '8220087'}
+263	263		104						140.0	{1: '0|50|-150', 2: '0.15'}
+264	264		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+265	265		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+266	266		301			DialogEnable				{3: 'You repel the monsters ahead, but fail to dodge the attack from behind—'}
+267	267		401							{1: '2', 2: '4408'}
+268	268		104							{1: '0|0|0', 2: '0'}
+269	269		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '6'}
+270	270		301				DialogDisable			"{3: ""The Hetero-Creature's claws tear through your military boot.""}"
+271	271		302							{2: 'Ugh!', 3: '272'}
+272	272		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '6', 5: '1'}
+273	273		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+274	274		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1347.jpg'}
+275	275		201							{1: '1', 2: '501382', 3: '14', 7: '1'}
+276	276		502							{1: 'DialogShake'}
+277	277		301			DialogEnable				"{1: '1', 2: 'Aisling', 3: ""You... you're hurt!"", 4: '1'}"
+278	278		302							"{2: ""I'm alright..."", 3: '279', 4: 'Just a scratch.', 5: '279'}"
+279	279		202							{1: '1'}
+280	280		301							{3: 'Ammo is scarce. Every shot must count. The recent wave of Hetero-Creatures was manageable, but your reserves are dwindling.'}
+281	281		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+282	282		401							{1: '2', 2: '4331'}
+283	283		401							{1: '2', 2: '2982'}
+284	284		301							{3: 'As you sprint for the planned route, the busy signal echoing behind you turns to white noise... Did the call finally get through?'}
+285	285		302							{2: 'Liv?', 3: '286'}
+286	286		301							{3: 'Only a static hiss answers; no voice breaks through.'}
+287	287		201							{1: '18', 2: '501382', 3: '14'}
+288	288		301				DialogDisable			"{1: '1', 2: 'Aisling', 3: ""They... they're catching up to us..."", 4: '18'}"
+289	289		402							{1: '2982'}
+290	290		202							{1: '18', 6: '1'}
+291	291		302							{2: '...', 3: '292'}
+292	292		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+293	293		401						400.0	{1: '2', 2: '2513'}
+294	294		401							{1: '2', 2: '4779'}
+295	295		301			DialogEnable	DialogDisable			{3: 'You fire again, the shot count ticking down in your mind as you slam in a fresh magazine.'}
+296	296		401							{1: '2', 2: '4331'}
+297	297		401						400.0	{1: '2', 2: '4804'}
+298	298		301			DialogEnable	DialogDisable			{3: 'The empty one hits the ground with a sharp clatter. No time for words—you rush forward, evading the creatures on your heels.'}
+299	299		302							{2: '(Take the left path)', 3: '300', 4: '(Take the right path)', 5: '305'}
+300	300		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+301	301		401							{1: '2', 2: '4331'}
+302	302		502							{1: 'RImgBg1DisableSlow'}
+303	303		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1346.jpg'}
+304	304	310	301			DialogEnable	DialogDisable			{3: 'The left path is shrouded in darkness, your light barely illuminating the ground beneath your feet.'}
+305	305		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+306	306		401							{1: '2', 2: '4331'}
+307	307		502							{1: 'RImgBg1DisableSlow'}
+308	308		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg'}
+309	309		301			DialogEnable	DialogDisable			{3: 'The right path is rugged and uneven, littered with stones and soil dislodged by recent tremors.'}
+310	310		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+311	311		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+312	312		401							{1: '2', 2: '844090'}
+313	313		201							{1: '3', 2: '500902', 4: '600', 7: '1'}
+314	314		201						400.0	{1: '2', 2: '500902', 4: '-600', 7: '1'}
+315	315		401							{1: '2', 2: '2513'}
+316	316		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2', 5: '3'}
+317	317		511						120.0	{1: '3', 2: '0', 3: '-600|0|0'}
+318	318		401							{1: '2', 2: '4006'}
+319	319		203						80.0	{1: '2', 2: '0.15', 3: '-600', 4: '-150'}
+320	320		505							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 5: '3'}
+321	321		401							{1: '2', 2: '2513'}
+322	322		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2', 5: '4'}
+323	323		511							{1: '4', 2: '0', 3: '600|0|0'}
+324	324		203						80.0	{1: '3', 2: '0.15', 3: '600', 4: '-150'}
+325	325		401							{1: '2', 2: '4006'}
+326	326		505							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 5: '4'}
+327	327		301			DialogEnable				"{3: ""Bodies of dead Hetero-Creatures lie at the entrance, and the rest seem unwilling to follow, likely deterred by your weapon and their kin's fate.""}"
+328	328		401							{1: '2', 2: '914'}
+329	329		202							{1: '2', 2: '3', 6: '1'}
+330	330		401							{1: '1', 2: '6245'}
+331	331		201							{1: '1', 2: '501382', 3: '14'}
+332	332		301							{1: '1', 2: 'Aisling', 3: 'So much blood...', 4: '1'}
+333	333		301							{3: 'A soft sniffle draws your gaze down. Aisling points at your calf, where the untreated wound weeps a slow trail of crimson.'}
+334	334		202							{1: '1'}
+335	335		301							"{3: 'As you move to tear a strip from your clothes to bandage it, your eyes lock onto the terminal. The screen still reads: ""In Call.""'}"
+336	336		302							{2: 'The call... how is it still connected?', 3: '337'}
+337	337		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab', 2: '2'}
+338	338		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 4: '6'}
+339	339		201							{1: '18', 2: '501385', 3: '7', 4: '200', 5: '-110', 6: '-190'}
+340	340		301							{1: '1', 2: 'Liv', 3: '...Commandant?', 4: '18'}
+341	341		202							{1: '18', 6: '1'}
+342	342		301							"{3: ""Liv's deliberately hushed voice comes through from the other end.""}"
+343	343		302							{2: 'Liv? I thought you...', 3: '344'}
+344	344		301							{3: 'The signal remains intermittent.'}
+345	345		201							{1: '18', 2: '501385', 3: '4', 4: '200', 5: '-110', 6: '-190'}
+346	346		301							"{1: '1', 2: 'Liv', 3: ""Commandant... you're... hurt?"", 4: '18'}"
+347	347		301							{2: 'Liv', 3: '...emergency kit... your waist...', 4: '18'}
+348	348		202							{1: '18', 6: '1'}
+349	349		301				DialogDisable			{3: 'She repeats these words, as if terrified of omitting any potentially life-saving detail.'}
+350	350		302							{2: 'I hear you...', 3: '351'}
+351	351		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 4: '6', 5: '1'}
+352	352		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab'}
+353	353		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+354	354		111							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+355	355		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+356	356		401							{1: '2', 2: '5309'}
+357	357		301			DialogEnable				"{3: ""You're just reaching for your emergency kit when the world swims before your eyes. In the distorted haze, shapes move: Hetero-Creatures, slipping from the mouth of a side tunnel.""}"
+358	358		201							{1: '18', 2: '501382', 3: '2'}
+359	359		301							"{1: '1', 2: 'Aisling', 3: ""It's the monst—"", 4: '18'}"
+360	360		302							"{2: ""(Cover the little girl's mouth)"", 3: '361'}"
+361	361		202							{1: '18', 6: '1'}
+362	362		301							{3: 'You and Aisling hold your breath, pressing into the rough stone of the tunnel wall. All lights have been killed, plunging you into protective darkness. Ammunition is scarce; for now, avoidance is your only strategy.'}
+363	363		111							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+364	364		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+365	365		301				DialogDisable			"{3: ""The Hetero-Creatures don't come any closer.""}"
+366	366		302							{2: 'Something is hunting us.', 3: '367'}
+367	367		302							"{2: ""I'm not sure if it's the person behind all this."", 3: '368'}"
+368	368		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab', 2: '2'}
+369	369		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 4: '6'}
+370	370		201							{1: '18', 2: '501385', 3: '4', 4: '200', 5: '-110', 6: '-190'}
+371	371		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Liv', 3: ""What's... hunting... you?"", 4: '18'}"
+372	372		202							{1: '18'}
+373	373		302							{2: 'Wait...', 3: '374'}
+374	374		401						500.0	{1: '2', 2: '2919'}
+375	375		402							{1: '2919'}
+376	376		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 4: '6', 5: '1'}
+377	377		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab'}
+378	378		301			DialogEnable	DialogDisable			"{3: ""The Hetero-Creature at the tunnel junction twitches, a grotesque spasm. You can't tell if it's real or a trick of your frayed nerves...""}"
+379	379		302							{2: '(Open fire)', 3: '380'}
+380	380		401						400.0	{1: '2', 2: '1510'}
+381	381		401							{1: '2', 2: '844090'}
+382	382		201							{1: '1', 2: '500902', 5: '-60'}
+383	383		203							{1: '1', 2: '0.25'}
+384	384		301			DialogEnable	DialogDisable			{1: '1', 3: 'The gunshot is a dull thunderclap. The creature shrieks, lurching upright—'}
+385	385		302							{2: 'Run!', 3: '386'}
+386	386		202							{1: '1', 6: '1'}
+387	387		502							{1: 'RImgBg1Shake'}
+388	388		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.3'}
+389	389		505							{1: 'RImgBg1Shake'}
+390	390		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+391	391		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+392	392		401							{1: '2', 2: '4331'}
+393	393		301			DialogEnable				"{3: ""You seize the stunned girl's hand and plunge deeper into the suffocating dark.""}"
+394	394		402							{1: '914'}
+395	395		301				AniZhuanchangBegin			{3: 'The call cuts out again.'}
+396	396		401							{1: '1', 2: '36'}
+397	397		306						1000.0	{1: '1'}
+398	398		401							{1: '1', 2: '280'}
+399	399		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1348.jpg'}
+400	400		201							{1: '1', 2: '500902', 4: '-600', 7: '1'}
+401	401		201							{1: '2', 2: '500902', 4: '600'}
+402	402		301			AniZhuanchangEnd	DialogDisable			{1: '1', 3: 'They are toying with you. Hetero-Creatures keep materializing from the shadows where you least expect them.'}
+403	403		401							{1: '2', 2: '2513'}
+404	404		501						800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndWhite.prefab', 2: '2', 3: '1'}
+405	405		202						300.0	{1: '1'}
+406	406		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndWhite.prefab', 4: '1'}
+407	407		401							{1: '2', 2: '2513'}
+408	408		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2', 5: '5'}
+409	409		511						200.0	{1: '5', 2: '0', 3: '600|0|0'}
+410	410		203						80.0	{1: '2', 2: '0.15', 3: '600', 4: '-150'}
+411	411		401							{1: '2', 2: '4006'}
+412	412		202							{1: '2'}
+413	413		505							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 5: '5'}
+414	414		301			DialogEnable				{3: 'Some are just illusions; others are lethally real.'}
+415	415		301				DialogDisable			{3: 'You rely on the Punishing detector to tell the difference, but the fatigue of endless combat is a tide washing through your skull, eroding your focus.'}
+416	416		401							{1: '2', 2: '1516'}
+417	417		502							{1: 'RImgBg1DisableSlow'}
+418	418		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1347.jpg'}
+419	419		301			DialogEnable	DialogDisable			{3: 'The tunnels are a labyrinth. You navigate by the crude map, all sense of time lost.'}
+420	420		306							
+421	421		201							{1: '1', 2: '500902', 5: '-20', 6: '100'}
+422	422		203						400.0	{1: '1', 2: '0.25'}
+423	423		401							{1: '2', 2: '2513'}
+424	424		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2'}
+425	425		301			DialogEnable	DialogDisable			{3: 'Bang—'}
+426	426		203						80.0	{1: '1', 2: '0.15', 4: '-150'}
+427	427		401							{1: '2', 2: '4006'}
+428	428		202						800.0	{1: '1'}
+429	429		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab'}
+430	430		401						800.0	{1: '2', 2: '4804'}
+431	431		401							{1: '2', 2: '4349', 3: '0.5'}
+432	432		301			DialogEnable				{3: 'After loading your third magazine, you do a mental count of your remaining rounds. As you approach the next junction, the sounds of combat freeze you in your tracks.'}
+433	433		302							"{2: ""Someone's... up ahead?"", 3: '434'}"
+434	434		301				DialogDisable			{3: 'Is it another cruel illusion, or a fragment of reality?'}
+435	435		502							{1: 'RImgBg1DisableSlow'}
+436	436		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1345.jpg'}
+437	437		201							{1: '1', 2: '500902', 4: '450'}
+438	438		201						400.0	{1: '2', 2: '500321', 4: '-450'}
+439	439		203						80.0	{1: '1', 2: '0.15', 3: '450', 4: '-150'}
+440	440		401							{1: '2', 2: '844090', 3: '1'}
+441	441		202							{1: '1'}
+442	442		301			DialogEnable				"{1: '1', 3: ""You round the corner. A Hetero-Creature screeches and collapses. Beyond it, a figure struggles to steady her weapon. It's Liv?!""}"
+443	443		104							{1: '0|0|-100', 2: '0.3'}
+444	444		203							{1: '2', 2: '0.5'}
+445	445		301							{3: 'She is slumped against the wall, covered in wounds. The simple act of lifting her arm seems to require tremendous effort.'}
+446	446		301							"{2: 'Liv', 3: ""...Commandant! I'm here!"", 4: '2'}"
+447	447		301							{3: 'She clearly notices the two people approaching as well.'}
+448	448		301							{2: 'Liv', 3: 'Thank goodness, I finally found you... Ugh!', 4: '2'}
+449	449		301							{3: 'As vital fluid continues to leak from her wounds, she lets out a pained groan.'}
+450	450		302							{2: '(Step forward)', 3: '451', 4: '(Step back)', 5: '453'}
+451	451		104							{1: '0|0|-150', 2: '0.5'}
+452	452	455	301							"{2: 'Liv', 3: ""Commandant... could you give me a hand? My legs... I can't quite stand up by myself."", 4: '2'}"
+453	453		104							{1: '0|0|-50', 2: '0.5'}
+454	454		301							"{2: 'Liv', 3: ""Commandant? What's wrong...? It's me, I'm Liv..."", 4: '2'}"
+455	455		302							{2: '...', 3: '456'}
+456	456		202							{1: '2'}
+457	457		301							"{3: ""This isn't Liv.""}"
+458	458		301							{3: 'Not even bothering to say her name, you turn to leave—'}
+459	459		201							{1: '1', 2: '1031001', 3: '5', 4: '-500'}
+460	460		203							{1: '1', 2: '0.3'}
+461	461		301				DialogDisable			{1: '1', 2: 'Liv', 3: 'Shh... Commandant!', 4: '1'}
+462	462		202							{1: '1', 6: '1'}
+463	463		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1348.jpg', 4: '4'}
+464	464		104							{1: '-1920|0|0', 2: '0', 4: '4'}
+465	465		104							{1: '1920|0|0', 2: '0.5'}
+466	466		401							{1: '2', 2: '4044'}
+467	467		104						550.0	{1: '0|0|0', 2: '0.5', 4: '4'}
+468	468		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1348.jpg'}
+469	469		301			DialogEnable				{3: 'Just as you round the corner, a familiar figure approaches, firmly gripping your shoulder and guiding you in a different direction.'}
+470	470		302							{2: '...?', 3: '471'}
+471	471		201							{1: '1', 2: '1031001', 3: '5'}
+472	472		301							"{1: '1', 2: 'Liv', 3: ""Commandant... that one isn't real. I'm the real Liv."", 4: '1'}"
+473	473		301							{3: 'Liv furrows her brow, her face etched with worry and tension.'}
+474	474		301							"{2: 'Liv', 3: ""Something's... not right here. It feels like an interference, something that can affect the human brain and a Construct's M.I.N.D."", 4: '1'}"
+475	475		204							{1: '1', 2: '3'}
+476	476		301							"{2: 'Liv', 3: 'I\'ve been seeing a lot of ""illusions""... of you, and of others too.', 4: '1'}"
+477	477		204							{1: '1'}
+478	478		301							"{2: 'Liv', 3: ""I'm not sure if it's the minerals in this area, or something else entirely..."", 4: '1'}"
+479	479		204							{1: '1', 2: '4'}
+480	480		301							"{2: 'Liv', 3: ""Let's avoid this area for now... Follow me."", 4: '1'}"
+481	481		401							{1: '2', 2: '1543'}
+482	482		202							{1: '1'}
+483	483		301		1		AniZhuanchangBegin			{3: 'She gestures for you to follow.'}

@@ -1,0 +1,442 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101				AniZhuanchangBegin			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		301			DialogDisable				{3: 'Chapter 1'}
+3	3		401							{1: '1', 2: '36'}
+4	4		109							{1: '1', 2: '<color=#ffffffff><size=40>Chapter 1</size></color>', 4: '50'}
+5	5		109			AniZhuanchangEnd				{1: '2', 2: '<color=#ffffffff><size=50>— Notes Lost to Paper, Land Lost to Sea —</size></color>', 4: '-50'}
+6	6		301				AniZhuanchangBegin			{3: 'Notes Lost to Paper, Land Lost to Sea'}
+7	7		110							{1: '1', 2: '2'}
+8	8		401				DialogEnable			{1: '2', 2: '4811'}
+9	9		301			AniZhuanchangEnd				{2: '??', 3: 'Commandant, Commandant—'}
+10	10		302							{2: 'Ugh...', 3: '11', 4: '(Open eyes)', 5: '11'}
+11	11		401							{1: '1', 2: '5061'}
+12	12		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory566.jpg'}
+13	13		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+14	14		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+15	15		301			AniZhuanchangEnd				{3: 'You slowly open your eyes as harsh sunlight assaults your retinas, which sends another wave of dizziness through your still-groggy mind.'}
+16	16		302							{2: '(Sit up)', 3: '17', 4: '(Keep lying down)', 5: '24'}
+17	17		401							{1: '2', 2: '4811'}
+18	18		104						350.0	{1: '0|10|-5', 2: '0.3'}
+19	19		402							{1: '4811'}
+20	20		104							{1: '0|0|0', 2: '0.3'}
+21	21		301							{3: 'Attempting to move, you feel cold rebar and hard ground against your body.'}
+22	22		201							{1: '1', 2: '501070'}
+23	23	33	301							{1: '1', 3: 'A gray-haired girl blocks out the harsh light as she looks at you with a smile.'}
+24	24		201							{1: '1', 2: '501070', 3: '4'}
+25	25		203						350.0	{1: '1', 2: '0.3', 5: '-50'}
+26	26		401							{1: '2', 2: '4811'}
+27	27		203							{1: '1', 2: '0.3'}
+28	28		104						350.0	{1: '0|10|-5', 2: '0.3'}
+29	29		402							{1: '4811'}
+30	30		104							{1: '0|0|0', 2: '0.3'}
+31	31		301							{1: '1', 3: 'Seeing no response from you, the gray-haired girl blocks out the harsh light and pulls you up with all her might.'}
+32	32		301							{1: '1', 3: 'As you regain full consciousness and examine the surroundings, you see a vast, desolate city stretching out before you.'}
+33	33		204							{1: '1', 2: '2'}
+34	34		301							"{2: 'Nanami', 3: ""Commandant, you're awake! Welcome to the apocalypse!"", 4: '1'}"
+35	35		302							"{2: ""That's not exactly something to be happy about..."", 3: '36', 4: '...', 5: '36'}"
+36	36		202							{1: '1', 6: '1'}
+37	37		401							{1: '2', 2: '4280'}
+38	38		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+39	39		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+40	40		301				DialogDisable		1000.0	{3: 'The scent of ocean breeze wafts over. As you stand up and shake off the ringing in your head, a numbing sensation creeps up your spine.'}
+41	41		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+42	42		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory566.jpg'}
+43	43		104							{1: '0|-200|-300', 2: '0'}
+44	44		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+45	45		301			DialogEnable	DialogDisable			"{3: ""The blinding sunlight makes your head spin, leaving you with a nagging feeling that you're forgetting something important.""}"
+46	46		302							{2: 'My head... feels so heavy.', 3: '47'}
+47	47		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+48	48		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+49	49		401							{1: '2', 2: '2768'}
+50	50		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1201_2.jpg', 4: '4'}
+51	51		104							{1: '200|200|0', 2: '0', 4: '4'}
+52	52		104							{1: '0|0|0', 2: '0.1', 4: '4'}
+53	53		101						150.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg1201_2.jpg'}
+54	54		401							{1: '2', 2: '2768'}
+55	55		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2801_06.jpg', 4: '4'}
+56	56		104							{1: '-200|0|0', 2: '0', 4: '4'}
+57	57		104							{1: '0|0|0', 2: '0.1', 4: '4'}
+58	58		101						150.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg2801_06.jpg'}
+59	59		401							{1: '2', 2: '2768'}
+60	60		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3201_04.jpg', 4: '4'}
+61	61		104							{1: '0|-200|0', 2: '0', 4: '4'}
+62	62		104							{1: '0|0|0', 2: '0.1', 4: '4'}
+63	63		101						150.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3201_04.jpg'}
+64	64		401							{1: '2', 2: '2768'}
+65	65		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_46.jpg', 4: '4'}
+66	66		104							{1: '200|-200|0', 2: '0', 4: '4'}
+67	67		104							{1: '0|0|0', 2: '0.1', 4: '4'}
+68	68		101						150.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_46.jpg'}
+69	69		401							{1: '2', 2: '2768'}
+70	70		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4301_03.jpg', 4: '4'}
+71	71		104							{1: '0|200|0', 2: '0', 4: '4'}
+72	72		104							{1: '0|0|0', 2: '0.1', 4: '4'}
+73	73		101						150.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4301_03.jpg'}
+74	74		401							{1: '2', 2: '2768'}
+75	75		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4301_08.jpg', 4: '4'}
+76	76		104							{1: '200|200|0', 2: '0', 4: '4'}
+77	77		104							{1: '0|0|0', 2: '0.1', 4: '4'}
+78	78		101						150.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4301_08.jpg'}
+79	79		401							{1: '2', 2: '2768'}
+80	80		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3101_13.jpg', 4: '4'}
+81	81		104							{1: '-200|0|0', 2: '0', 4: '4'}
+82	82		104							{1: '0|0|0', 2: '0.1', 4: '4'}
+83	83		101						150.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3101_13.jpg'}
+84	84		401							{1: '2', 2: '2768'}
+85	85		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4201_17.jpg', 4: '4'}
+86	86		104							{1: '200|-200|0', 2: '0', 4: '4'}
+87	87		104						150.0	{1: '0|0|0', 2: '0.1', 4: '4'}
+88	88		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+89	89		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+90	90		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4201_17.jpg', 4: '4', 5: '1'}
+91	91		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory566.jpg'}
+92	92		301			DialogEnable				{3: 'There seems to be memories of you desperately searching for something, of losing something important during those days...'}
+93	93		301							{3: 'In this so-called apocalypse, not only have those important things slipped away, but even the memories that once held them have vanished, too.'}
+94	94		201							{1: '1', 2: '501070', 3: '3'}
+95	95		301							{1: '1', 2: 'Nanami', 3: 'Commandant?', 4: '1'}
+96	96		306							{1: '1'}
+97	97		301							{3: 'Though everything else remains blank, you somehow remember that the girl before you is called Nanami.'}
+98	98		306							
+99	99		202							{1: '1'}
+100	100		301							{3: 'She walks ahead of you, her ponytail bouncing cheerfully with each step.'}
+101	101		301							"{3: ""Her joy disperses the clouds in your heart... For a moment, it's hard to tell which shines brighter—her or the sun itself.""}"
+102	102		302							{2: 'By the way, why do you call me Commandant?', 3: '103'}
+103	103		201							{1: '1', 2: '501070', 3: '11'}
+104	104		301							{1: '1', 2: 'Nanami', 3: 'Hmm... Let me think...', 4: '1'}
+105	105		204							{1: '1', 2: '7'}
+106	106		203							{1: '1', 2: '0.2', 5: '-20'}
+107	107		301							{2: 'Nanami', 3: 'Oh, I know why!', 4: '1'}
+108	108		302							{2: 'You clearly have no idea at all!', 3: '109', 4: '...', 5: '109'}
+109	109		204							{1: '1'}
+110	110		301							"{2: 'Nanami', 3: ""I'm a legendary knight—a Cardman Rider! And you're my commandant!"", 4: '1'}"
+111	111		302							{2: 'Cardman Rider?', 3: '112'}
+112	112		301							{2: 'Nanami', 3: 'You know, a mysterious superhero who saves the world!', 4: '1'}
+113	113		301							{3: 'She marches in place as she speaks, looking ready to embark on her heroic mission.'}
+114	114		204							{1: '1', 2: '1'}
+115	115		301							{2: 'Nanami', 3: 'Now, Commandant, come on a treasure hunt with Nanami!', 4: '1'}
+116	116		302							"{2: 'What treasure?', 3: '117', 4: ""...What exactly is this treasure you're talking about?"", 5: '117'}"
+117	117		204							{1: '1', 2: '2'}
+118	118		203							{1: '1', 2: '0.25', 4: '-30', 5: '-70'}
+119	119		301							"{2: 'Nanami', 3: ""The Cardman Rider's Cosmic Belt!"", 4: '1'}"
+120	120		203							{1: '1', 2: '0.25'}
+121	121		104							{1: '0|0|-50', 2: '0.25'}
+122	122		301							{3: 'Nanami lowers her voice mysteriously before standing tall with a beaming smile and reaching for your hand.'}
+123	123		204							{1: '1', 2: '7'}
+124	124		301				AniZhuanchangBegin			"{2: 'Nanami', 3: ""Let's get going first!"", 4: '1'}"
+125	125		202							{1: '1', 6: '1'}
+126	126		401						2000.0	{1: '1', 2: '36'}
+127	127		401							{1: '2', 2: '904'}
+128	128		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+129	129		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '4'}
+130	130		301			AniZhuanchangEnd				{3: 'As you walk alongside Nanami, the scent of the ocean grows stronger. Following the salty breeze, you enter a long, dark tunnel.'}
+131	131		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '0', 4: '0.4', 5: '0.4'}
+132	132		104						550.0	{1: '0|0|-100', 2: '0.4', 4: '4'}
+133	133		301				DialogDisable			{3: 'As you step out of the tunnel, your eyes struggle to adjust to the dazzling sunlight.'}
+134	134		401							{1: '2', 2: '4276'}
+135	135		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '0.4', 4: '1', 5: '0.4'}
+136	136		104						250.0	{1: '0|0|-300', 2: '0.4', 4: '4'}
+137	137		402							{1: '904'}
+138	138		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+139	139		205							{1: '999'}
+140	140		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+141	141		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '4', 5: '1'}
+142	142		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+143	143		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+144	144		401							{1: '2', 2: '4340'}
+145	145		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg'}
+146	146		401							{1: '2', 2: '558'}
+147	147		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+148	148		101						200.0	{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading56.png'}
+149	149		401							{1: '2', 2: '558'}
+150	150		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+151	151		101						200.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg2301_10.jpg'}
+152	152		401							{1: '2', 2: '558'}
+153	153		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+154	154		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory578.jpg'}
+155	155		401							{1: '2', 2: '558'}
+156	156		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+157	157		101						200.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg109_1.jpg'}
+158	158		401							{1: '2', 2: '558'}
+159	159		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+160	160		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory767.png'}
+161	161		401							{1: '2', 2: '558'}
+162	162		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+163	163		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory547.jpg'}
+164	164		301			DialogEnable	AniZhuanchangBegin			{3: 'Roaring calamities, warriors locked in battle, hideous creatures, and raging fires everywhere... These visions of the apocalypse flood your mind.'}
+165	165		402							{1: '4340'}
+166	166		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory809.jpg'}
+167	167		401							{1: '1', 2: '171'}
+168	168		201							{1: '1', 2: '501070', 3: '3', 7: '1'}
+169	169		301			AniZhuanchangEnd				"{1: '1', 2: 'Nanami', 3: ""It's so high up here!"", 4: '1'}"
+170	170		202							{1: '1'}
+171	171		306							{1: '1'}
+172	172		301							"{3: ""When you recollect yourself, only empty, towering buildings answer your call. Seen from above, the streets shimmer with water... This must be where the ocean's scent is coming from.""}"
+173	173		111						50.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+174	174		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+175	175		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_03.jpg'}
+176	176		104						700.0	{1: '0|-200|0', 2: '0'}
+177	177		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+178	178		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory809.jpg'}
+179	179		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+180	180		301							{3: 'This place should have been filled with something—people who once stood shoulder to shoulder, who fought together for a cause...'}
+181	181		306							
+182	182		201							{1: '1', 2: '501070', 3: '3'}
+183	183		203							{1: '1', 2: '0.25', 3: '-10', 5: '-20'}
+184	184		301							{1: '1', 2: 'Nanami', 3: 'Heeey! Anyooone theeeere?', 4: '1'}
+185	185		202							{1: '1'}
+186	186		301							{3: 'Without hesitation, Nanami decides to voice her curiosity by shouting it to the world.'}
+187	187		302							{2: 'Nanami...', 3: '188', 4: 'Heeey! Anyooone theeeere?', 5: '190'}
+188	188		301							{3: 'Her cheerful, exaggerated shout bounces playfully through the streets and quickly fill the empty city.'}
+189	189	192	301							{3: 'The echoes overlap and multiply, as if countless Nanamis are shouting all at once. Though no one answers, these echoes somehow bring the city to life.'}
+190	190		301							"{3: ""After a moment's hesitation, you follow Nanami's lead and shout out as well.""}"
+191	191		301							{3: 'The shouts bounce playfully through the streets. Though no one answers, they somehow bring the city to life.'}
+192	192		201							{1: '1', 2: '501070', 3: '1'}
+193	193		301							{1: '1', 2: 'Nanami', 3: 'Try again!', 4: '1'}
+194	194		203							{1: '1', 2: '0.25', 3: '-5', 4: '-10', 5: '-20'}
+195	195		204							{1: '1', 2: '3'}
+196	196		301				DialogDisable			{3: 'Nanami bends forward, takes a deep breath, puffs up her cheeks, and cups her hands around her mouth like a megaphone before shouting once more.'}
+197	197		203							{1: '1', 2: '0.25', 3: '-5', 5: '-50'}
+198	198		204							{1: '1', 2: '1'}
+199	199		307						200.0	{1: 'Heeey! Anyooone theeeeeere?', 3: '60', 4: 'ffffffff'}
+200	200		301							{3: 'Heeey! Anyooone theeeeeere?'}
+201	201		307							{2: '1'}
+202	202		204							{1: '1', 2: '5'}
+203	203		301			DialogEnable				{2: 'Nanami', 3: 'Huff... Puff...', 4: '1'}
+204	204		301							{3: 'Only echoes answer her call. Her cheeks remain flushed and puffed out from shouting with vigor.'}
+205	205		302							{2: '(Pinch)', 3: '206', 4: '(Sigh)', 5: '215'}
+206	206		204							{1: '1', 2: '3'}
+207	207		301							{3: 'As you pinch her bright, energetic cheeks, she lets out all the air she was holding in.'}
+208	208		204							{1: '1', 2: '5'}
+209	209		301							{2: 'Nanami', 3: '—Mmph!', 4: '1'}
+210	210		301							{3: 'Nanami turns around with her hands on her hips, staring at you. Her cheeks puff up again, apparently plotting something.'}
+211	211		301							{2: 'Nanami', 3: 'Hmph—Commandant—take this!', 4: '1'}
+212	212		203						200.0	{1: '1', 2: '0.25', 5: '-100'}
+213	213		202							{1: '1'}
+214	214	227	301				AniZhuanchangBegin			{3: 'She immediately launches her counterattack. The two of you leave the platform while playfully chasing and teasing each other.'}
+215	215		204							{1: '1', 2: '3'}
+216	216		203							{1: '1', 2: '0.25', 4: '-20', 5: '-80'}
+217	217		301							{3: 'Hearing the sigh, Nanami immediately comes closer, cupping her face in her hands and examining it carefully.'}
+218	218		301							{2: 'Nanami', 3: 'Commandant, why are you suddenly sighing?', 4: '1'}
+219	219		302							"{2: 'This city feels so empty...', 3: '220', 4: ""We don't really know what's going on..."", 5: '220'}"
+220	220		301							{3: 'Nanami nods gently, deep in thought.'}
+221	221		204							{1: '1', 2: '4'}
+222	222		301							{2: 'Nanami', 3: 'How about this! I, Nanami, will find that treasure! You probably will stop sighing once we find it!', 4: '1'}
+223	223		302							{2: 'Why?', 3: '224'}
+224	224		301							"{2: 'Nanami', 3: ""I'm not sure why, but oh well, let's try to find the treasure first!"", 4: '1'}"
+225	225		202							{1: '1'}
+226	226		301				AniZhuanchangBegin			{3: 'As she speaks, she raises her tiny fist and strikes a Superman-flying-into-space pose. Without waiting for a response, she grabs your hand and leads you away from the platform.'}
+227	227		401							{1: '1', 2: '36'}
+228	228		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory598.jpg'}
+229	229		401							{1: '2', 2: '904'}
+230	230		301			AniZhuanchangEnd				{3: 'Stepping into the city proper, you see streets filled with bottomless seawater, and buildings tilting every which way with only their rooftops visible above the surface.'}
+231	231		301							{3: 'Gentle waves lap against the ruins as you and Nanami search throughout this abandoned city, unable to find any trace of human life—or any life at all...'}
+232	232		201							{1: '1', 2: '501070', 3: '5'}
+233	233		301							"{1: '1', 2: 'Nanami', 3: ""I'd even settle for a sea monster at this point!"", 4: '1'}"
+234	234		202							{1: '1'}
+235	235		301				AniZhuanchangBegin			{3: 'Nanami sticks out her tongue as she complains. After searching the entire city, you finally find traces of human habitation in a mansion situated on higher ground.'}
+236	236		402							{1: '904'}
+237	237		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+238	238		401							{1: '2', 2: '2764'}
+239	239		104							{1: '80|-50|-350', 2: '0'}
+240	240		301			AniZhuanchangEnd				{3: 'Like countless peaceful afternoons of the past, a cool breeze stirs the curtains and scattered papers, making pages flutter in the empty room.'}
+241	241		402							{1: '2764'}
+242	242		104						2000.0	{1: '50|100|-400', 2: '2'}
+243	243		401							{1: '2', 2: '4095'}
+244	244		301				AniZhuanchangBegin		1000.0	{3: 'You pick up one of the yellowed diary pages, its writing having almost entirely faded with time.'}
+245	245		401						1000.0	{1: '1', 2: '100'}
+246	246		101				DialogDisable			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory390.jpg'}
+247	247		304			AniZhuanchangEnd				{1: 'After the Great Catastrophe, only a handful of humans remained, and the sea levels continued to rise.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 7: '1'}
+248	248		304							{1: 'Thirteen years after the waters began to rise, I left the city I once called home.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 7: '1'}
+249	249		304							{1: 'There was no tsunami... no violent natural disaster.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 7: '1'}
+250	250		304							{1: 'It was an era that quietly sank into oblivion.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 7: '1'}
+251	251		304							{1: 'The land submerged beneath the waves, and the ecosystem slowly died away.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 7: '1', 8: '1'}
+252	252		401							{1: '2', 2: '2768'}
+253	253		205						650.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory391.jpg', 3: '0', 4: '1', 5: '0.5'}
+254	254		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory391.jpg'}
+255	255		205							{1: '999'}
+256	256		304							{1: 'I realized then that our planet was forgetting us.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 7: '1'}
+257	257		304							{1: 'She forgot about humanity, forgot about the birds, and forgot about the earth where they once dwelled.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 7: '1'}
+258	258		304							{1: 'I, too, am slowly forgetting so many things—my loved ones, my childhood...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 7: '1'}
+259	259		304							"{1: ""Along with my Cosmic Rider's Belt, all forgotten in Aerospace City."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 7: '1'}"
+260	260		304				AniZhuanchangBegin			{1: 'If you truly do exist somewhere in this world, Cosmic Rider, then please look up at the starlit sky above Aerospace City once more for me.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 7: '1', 9: '1'}
+261	261		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+262	262		104							{1: '50|100|-400', 2: '0'}
+263	263		110				DialogEnable			{1: '1'}
+264	264		301			AniZhuanchangEnd				"{3: ""As the last survivor of that era, the diary's author eventually succumbed to illness. The pages chronicle this quiet, unremarkable truth.""}"
+265	265		301							"{3: ""When you recall having just explored the city with Nanami, it's just as the diary's author described—the buildings here have long been abandoned, most homes submerged beneath the waters...""}"
+266	266		301							{3: 'No birds in the sky, no fish in the sea, and the city stands bare—not even moss remains...'}
+267	267		302							{2: 'Are we... the only ones left in this world?', 3: '268'}
+268	268		301							{3: 'When you step out of the room, the tide reaches up to your knees. Soon, this city, too, will slowly sink beneath the waves.'}
+269	269		201							{1: '1', 2: '501070', 3: '3'}
+270	270		301							{1: '1', 2: 'Nanami', 3: 'Commandant?', 4: '1'}
+271	271		301							{3: 'Noticing the bewilderment in your eyes, Nanami stops her patrol.'}
+272	272		302							{2: '(Hug Nanami)', 3: '273', 4: '(Tell her what the diary says)', 5: '289'}
+273	273		401							{1: '2', 2: '4044'}
+274	274		203							{1: '1', 2: '0.25', 4: '-20', 5: '-100'}
+275	275		104							{1: '50|100|-450', 2: '0.25'}
+276	276		301							{1: '1', 3: 'As if she had absorbed the sunlight itself, her body radiates with the warmth of the sun, filling your embrace with a gentle, soothing heat.'}
+277	277		204							{1: '1'}
+278	278		301							"{2: 'Nanami', 3: ""Eh? Why the tight squeeze all of a sudden? It's not like Nanami's going anywhere!"", 4: '1'}"
+279	279		401							{1: '2', 2: '4811'}
+280	280		104						150.0	{1: '50|100|-460', 2: '0.1'}
+281	281		402							{1: '4811'}
+282	282		104						150.0	{1: '50|100|-450', 2: '0.1'}
+283	283		401							{1: '2', 2: '4811'}
+284	284		104						150.0	{1: '50|100|-460', 2: '0.1'}
+285	285		402							{1: '4811'}
+286	286		104							{1: '50|100|-450', 2: '0.1'}
+287	287		301							{3: 'Even as she mumbles these words, she laughs and pats you on the back.'}
+288	288		302							{2: '(Tell her what the diary says)', 3: '289'}
+289	289		204							{1: '1', 2: '3'}
+290	290		301							{2: 'Nanami', 3: '...!', 4: '1'}
+291	291		204							{1: '1', 2: '4'}
+292	292		301				DialogDisable			{2: 'Nanami', 3: 'I see... Mother Earth is crying... In this world, only Nanami and Commandant remain...', 4: '1'}
+293	293		302							"{2: ""Hey Nanami, let's go and find ourselves the Cosmic Rider's Belt!"", 3: '294'}"
+294	294		302							"{2: ""If for nothing else, we should do it to honor the memory of this house's owner."", 3: '295', 4: 'If for nothing else, we should do it for Cardman Rider.', 5: '295'}"
+295	295		204							{1: '1', 2: '1'}
+296	296		301			DialogEnable				"{2: 'Nanami', 3: ""Yeah! Let's totally do that!"", 4: '1'}"
+297	297		301							{3: 'Excited, she shows you the photo she just found—it captures a child wearing an awesome belt while striking the classic transformation pose of Cardman Rider.'}
+298	298		301							"{2: 'Nanami', 3: ""It's a super special collaboration between Cardman Rider and Aerospace City! Just insert the starship model into the belt's launch bay, and the transformation's ready to go!"", 4: '1'}"
+299	299		302							"{2: ""Hmm... This must have been one of the owner's cherished treasures."", 3: '300'}"
+300	300		202							{1: '1'}
+301	301		301							"{3: ""This modest home is filled with yellowed photographs and pages upon pages of notes. Despite all these efforts to preserve memories, the planet has long since forgotten this house's owner.""}"
+302	302		302							"{2: ""Let's go."", 3: '303'}"
+303	303		301							{3: 'You take one last, long look at the room where loose pages dance in the air.'}
+304	304		201							{1: '1', 2: '501070', 3: '3'}
+305	305		301							{1: '1', 2: 'Nanami', 3: 'Commandant? Did you forget something here?', 4: '1'}
+306	306		301							{3: 'The owner is long gone, leaving behind nothing but an endless silence.'}
+307	307		302							{2: 'Once we leave, this house will be forgotten, too...', 3: '308'}
+308	308		204							{1: '1', 2: '12'}
+309	309		301							{2: 'Nanami', 3: 'Yeah... once Nanami and Commandant leave...', 4: '1'}
+310	310		301							"{3: '""This place will melt into the sea too..."" Nanami bites her lip and falls into a timely silence.'}"
+311	311		301							"{3: ""All these photos and notes will fall into the ocean's embrace and slowly fade from Earth's memory...""}"
+312	312		302							{2: 'I will, for one, remember these.', 3: '313'}
+313	313		204							{1: '1', 2: '4'}
+314	314		301				AniZhuanchangBegin			{2: 'Nanami', 3: 'I want to keep these memories together with you, Commandant.', 4: '1'}
+315	315		401						2000.0	{1: '1', 2: '36'}
+316	316		202			DialogDisable				{1: '1', 6: '1'}
+317	317		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+318	318		109							{1: '1', 2: '<color=#ffffffff><size=40>Chapter 71</size></color>', 4: '50'}
+319	319		109			AniZhuanchangEnd				{1: '2', 2: '<color=#ffffffff><size=50>— May We Forget No More —</size></color>', 4: '-50'}
+320	320		301				AniZhuanchangBegin			{3: 'Chapter 71\\nMay We Forget No More'}
+321	321		110							{1: '1', 2: '2'}
+322	322		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+323	323		401							{1: '2', 2: '4704'}
+324	324		501						4000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieShizhong02.prefab', 2: '2'}
+325	325		505				AniZhuanchangBegin			{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieShizhong02.prefab'}
+326	326		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+327	327		104							{1: '50|-50|-400', 2: '0'}
+328	328		401							{1: '1', 2: '5061'}
+329	329		302			AniZhuanchangEnd				{2: 'Hm?', 3: '330', 4: '...?', 5: '330'}
+330	330		301			DialogEnable				{3: 'The tide has receded.'}
+331	331		301							{3: 'Looking out the window, you see that the water has stopped rising. Rather than maintaining its current level, the tide is pulling back.'}
+332	332		201							{1: '1', 2: '501070', 3: '1', 7: '1'}
+333	333		205							{1: '1', 3: '1', 4: '0.8', 5: '0.25'}
+334	334		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDust.prefab', 2: '2', 3: '1'}
+335	335		301							{1: '1', 2: 'Nanami', 3: 'Whoa!', 4: '1'}
+336	336		301							{3: 'Nanami excitedly presses against the window. Her body emanates a faint glow, appearing somewhat translucent.'}
+337	337		301							{2: 'Nanami', 3: 'Grandma Earth has stopped crying now.', 4: '1'}
+338	338		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+339	339		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDust.prefab', 4: '1'}
+340	340		205							{1: '1', 3: '0.7', 4: '1', 5: '0'}
+341	341		301						1000.0	"{3: ""In the blink of an eye, her body returns to normal. You can't help but wonder if you were just seeing things.""}"
+342	342		204							{1: '1', 2: '7'}
+343	343		301							{2: 'Nanami', 3: 'We can now go treasure hunting on a motorcycle, Commandant!', 4: '1'}
+344	344		202							{1: '1'}
+345	345		301							"{3: ""While you're still lost in thought, Nanami has already wheeled out a sleek motorcycle from the nearby garage and is trying to start it up.""}"
+346	346		201							{1: '18', 2: '501070', 3: '1'}
+347	347		301				AniZhuanchangBegin			"{1: '1', 2: 'Nanami', 3: ""Commandant, let's go! We've got treasure to find!"", 4: '18'}"
+348	348		202							{1: '18', 6: '1'}
+349	349		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory998.jpg'}
+350	350		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+351	351		401							{1: '2', 2: '4648'}
+352	352		201							{1: '1', 2: '501071', 7: '1'}
+353	353		301			AniZhuanchangEnd				{1: '1', 3: 'The motorcycle races along the coastal road as the ocean breeze sweeps away the earlier gloom. Nanami sits in front of you, completely focused on steering the bike.'}
+354	354		201							{1: '18', 2: '501070'}
+355	355		301							{1: '1', 2: 'Nanami', 3: 'I feel like a Cosmic Rider riding like this.', 4: '18'}
+356	356		302							{2: 'I thought they all piloted spaceships, no?', 3: '357'}
+357	357		204							{1: '18', 2: '2'}
+358	358		301							"{2: 'Nanami', 3: ""You just haven't seen one that rides motorcycles, hehe!"", 4: '18'}"
+359	359		202							{1: '18', 6: '1'}
+360	360		401							{1: '2', 2: '4115003'}
+361	361		104							{1: '0|0|-100', 2: '0.2'}
+362	362		301							{3: 'As Nanami speaks, she slams down on the accelerator—'}
+363	363		302							{2: 'Slow down, Nanami!', 3: '364', 4: 'Speed up, Nanami!', 5: '366'}
+364	364		201							{1: '18', 2: '501070', 3: '1'}
+365	365	368	301							"{1: '1', 2: 'Nanami', 3: ""CAN'T—HEAR—YOU!"", 4: '18'}"
+366	366		201							{1: '18', 2: '501070', 3: '2'}
+367	367		301							"{1: '1', 2: 'Nanami', 3: ""Hm-hmmm, now this is what Cardman Rider's all about!"", 4: '18'}"
+368	368		202							{1: '18'}
+369	369		401							{1: '2', 2: '4115003'}
+370	370		301							"{3: ""The engine roars with excitement, the wind whistles past your ears, and you feel like you're ready to take flight at any moment.""}"
+371	371		401							{1: '2', 2: '4637'}
+372	372		104							{1: '0|10|-100', 2: '0.1'}
+373	373		203						150.0	{1: '1', 2: '0.1', 4: '10'}
+374	374		104							{1: '0|0|-100', 2: '0.1'}
+375	375		203							{1: '1', 2: '0.1'}
+376	376		301							{3: '—The motorcycle suddenly lurches violently—'}
+377	377		302							{2: '(Hold Nanami tightly)', 3: '378', 4: '—Ugh!', 5: '381'}
+378	378		203							{1: '1', 2: '0.2', 5: '-50'}
+379	379		401							{1: '2', 2: '4044'}
+380	380		104							{1: '0|0|-150', 2: '0.2'}
+381	381		201							{1: '18', 2: '501070'}
+382	382		301							"{1: '1', 2: 'Nanami', 3: ""Commandant, you'd better hold on tight to Nanami—these are all mountain roads—"", 4: '18'}"
+383	383		302							{2: 'Mountain roads?', 3: '384'}
+384	384		301							{2: 'Nanami', 3: 'People living around here have all apparently moved up the mountains since the tides came.', 4: '18'}
+385	385		202							{1: '18'}
+386	386		301							{3: 'The guardrails along the road rise higher and higher, with some already submerged in water... As the tide rises, even the usable roads keep climbing higher into the mountains.'}
+387	387		201							{1: '18', 2: '501070'}
+388	388		301							"{1: '1', 2: 'Nanami', 3: ""Yep! At this speed, we'll make it to Aerospace City by sunset."", 4: '18'}"
+389	389		202							{1: '1', 2: '18'}
+390	390		402							{1: '4648'}
+391	391		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+392	392		306							{1: '1'}
+393	393		301							{3: 'The ecosystem withers away piece by piece, with not even seabirds remaining in sight.'}
+394	394		104							{1: '0|0|-250', 2: '5'}
+395	395		301						2500.0	{3: 'In this vast world, the two lonely souls huddle together as the setting sun stretches their shadows endlessly across the ground.'}
+396	396		301				AniZhuanchangBegin		2500.0	"{3: ""Looking down, you can barely see the houses under the shimmering waters—just as the diary's owner wrote, Earth's civilization is slowly being forgotten by Earth itself...""}"
+397	397		306							
+398	398		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory783.jpg'}
+399	399		401							{1: '2', 2: '4115005'}
+400	400		301			AniZhuanchangEnd				{3: 'The two of you arrive at a beach as the sun sets.'}
+401	401		201							{1: '1', 2: '501070', 3: '4'}
+402	402		301							{1: '1', 2: 'Nanami', 3: 'Strange... The belt should be right here, according to the coordinates...', 4: '1'}
+403	403		301							{3: 'Nanami furrows her brow as she carefully studies the yellowed map, examining an area marked with a red circle—what was once dry land.'}
+404	404		302							"{2: ""It's probably at the bottom of the sea now..."", 3: '405'}"
+405	405		204							{1: '1', 2: '2'}
+406	406		301							{2: 'Nanami', 3: 'Roger that! Nanami is entering Diving Mode!', 4: '1'}
+407	407		202							{1: '1'}
+408	408		301				DialogDisable			{3: 'Nanami takes hold of your hand once more and rushes toward the ocean.'}
+409	409		302							{2: 'Wait, do I need to do this, too?!', 3: '410', 4: 'Wait!', 5: '410'}
+410	410		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBubble.prefab', 2: '2'}
+411	411		104						500.0	{1: '0|150|-500', 2: '1'}
+412	412		401						500.0	{1: '2', 2: '4145'}
+413	413		205						3000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+414	414		401							{1: '2', 2: '4148'}
+415	415		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory391.jpg'}
+416	416		205							{1: '999'}
+417	417		301			DialogEnable				"{3: ""The protective suit's basic diving function activates as Nanami guides you by the hand, and together the two of you plunge into the vast ocean.""}"
+418	418		301							{3: 'The ruins of Aerospace City lie scattered across the ocean floor, along with the civilization it once held—silently accepting what Earth has forgotten.'}
+419	419		401							{1: '2', 2: '4635'}
+420	420		301							{3: 'Nanami finally digs out a rust-covered metal briefcase from an unremarkable pile of ruins and cheerfully blows bubbles your way in celebration.'}
+421	421		301				AniZhuanchangBegin			"{3: ""Inside the briefcase lies the Cosmic Rider's Belt. To both your relief, it has somehow remained untouched by the ocean's corruption—as if the planet itself had chosen to preserve it in its memory.""}"
+422	422		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory785.jpg'}
+423	423		201							{1: '1', 2: '501070', 7: '1'}
+424	424		301			AniZhuanchangEnd				{1: '1', 2: 'Nanami', 3: 'Commandant, Nanami really loves spending time with you like this!', 4: '1'}
+425	425		301							{3: 'Back on shore, having found what the two of you came looking for, you take a leisurely stroll along the beach together.'}
+426	426		302							{2: 'Nanami...', 3: '427', 4: 'Me too...', 5: '427'}
+427	427		202							{1: '1'}
+428	428		401							{1: '2', 2: '904'}
+429	429		301							{3: 'The sea level continues its silent rise, waves dancing with the wind against the shore, as an indescribable emptiness wells up inside of you.'}
+430	430		201							{1: '1', 2: '501070', 3: '12'}
+431	431		301							"{1: '1', 2: 'Nanami', 3: ""But... Nanami feels like something's missing..."", 4: '1'}"
+432	432		202							{1: '1'}
+433	433		301							{3: 'She looks up at the sky, where layers of clouds obscure any trace of stars. While the two of you have found the belt, you cannot show its owner the starlit sky they once knew.'}
+434	434		402							{1: '904'}
+435	435		401							{1: '2', 2: '846106'}
+436	436		301						1000.0	{3: 'Thunder rumbles in the distance. Something stirs within you. This is spring thunder... a sign that, perhaps, all of nature will awake once more in no time.'}
+437	437		201							{1: '1', 2: '501070'}
+438	438		301							"{1: '1', 2: 'Nanami', 3: ""Now that we've finally found the belt, Commandant, do you have a wish?"", 4: '1'}"
+439	439		301				DialogDisable			"{3: ""Nanami turns around with a smile and frames you between her thumbs and index fingers like she's recording a precious moment.""}"
+440	440		302							{2: '...', 3: '441'}
+441	441		302		1		AniZhuanchangBegin			{2: 'I hope...', 3: '442'}

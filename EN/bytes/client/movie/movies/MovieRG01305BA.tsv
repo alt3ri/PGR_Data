@@ -1,0 +1,654 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '2', 2: '4536'}
+3	3		301			DialogEnable	DialogDisable			{2: '??', 3: 'Can we dig out 【kuroname】?'}
+4	4		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '2'}
+5	5		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory767.png'}
+6	6		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+7	7		201							{1: '1', 2: '501295', 4: '330', 6: '-100', 7: '1'}
+8	8		205							{1: '1', 3: '0', 4: '0', 5: '0'}
+9	9		401							{1: '2', 2: '5526'}
+10	10		301			DialogEnable				{2: '??', 3: 'Found you. Here, take my hand.'}
+11	11		401							{1: '2', 2: '9389034', 3: '0.5'}
+12	12		301				DialogDisable			{3: 'A wave of dizziness washes over you. The world around you is dark, reeking of blood, and littered with severed limbs...'}
+13	13		302							{2: '(Hold tight)', 3: '14', 4: '...', 5: '18'}
+14	14		401							{1: '2', 2: '4548'}
+15	15		104						450.0	{1: '0|0|-50', 2: '0.4'}
+16	16		402							{1: '4548'}
+17	17	19	301			DialogEnable	DialogDisable			"{2: '??', 3: ""Good, I've got you.""}"
+18	18		301			DialogEnable	DialogDisable			"{2: '??', 3: ""Still a bit out of it. Give me a hand—let's do the pulling out together.""}"
+19	19		205						800.0	{1: '1', 3: '0', 4: '1', 5: '0.5'}
+20	20		104						200.0	{1: '0|0|-200', 2: '1'}
+21	21		202							{1: '1'}
+22	22		402							{1: '4280'}
+23	23		401							{1: '2', 2: '4536', 3: '1'}
+24	24		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+25	25		205						750.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0', 4: '1', 5: '0.7'}
+26	26		205							{1: '1'}
+27	27		205							{1: '999'}
+28	28		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+29	29		104							{1: '0|0|0', 2: '0'}
+30	30		301			DialogEnable	DialogDisable			{3: 'Crack—'}
+31	31		401							{1: '1', 2: '175'}
+32	32		401							{1: '2', 2: '13081710'}
+33	33		111							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+34	34		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+35	35		205						750.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1219.jpg', 3: '0', 4: '1', 5: '0.7'}
+36	36		111							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+37	37		205							{1: '999'}
+38	38		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1219.jpg'}
+39	39		301			DialogEnable				"{3: ""With Wanshi's help, you crawl out of the overturned train. Light stabs into your eyes like needles, and you squint for a long while to adjust before finally making out the Sanctuary looming close ahead.""}"
+40	40		301							{3: 'The pristine white steps look like gnawed bones, with the train wreckage wedged halfway up the staircase. Everything gleams with cold light in the harsh glare.'}
+41	41		302							{2: 'What happened?', 3: '42'}
+42	42		201							{1: '1', 2: '501297', 3: '17', 4: '-330'}
+43	43		301							"{1: '1', 2: 'Lilith', 3: ""Witch Haida's magic proved more powerful than expected. It caused the train to go haywire halfway and knocked you out cold in the crash."", 5: '1'}"
+44	44		301							"{2: 'Lilith', 3: '""Death"" called for an emergency landing, while she detached the front car before impact with the Sanctuary and went straight for the Archangel.', 5: '1'}"
+45	45		301							"{2: 'Lilith', 3: ""She dragged the Archangel down with her as they plummeted to the ground. The flood swept away all the angels, but Witch Haida is nowhere to be found. That's what happened just now."", 5: '1'}"
+46	46		202							{1: '1'}
+47	47		201							{1: '1', 2: '501295', 3: '8', 4: '330'}
+48	48		301							"{1: '1', 2: 'Wanshi', 3: 'And the last explosion that ""Death"" triggered... The Archangel is gone. That much I can sense.', 5: '1'}"
+49	49		302							{2: 'Is it dead?', 3: '50'}
+50	50		204							{1: '1'}
+51	51		301				DialogDisable			"{2: 'Wanshi', 3: '...If my senses serve me correctly, it is indeed ""dead."" But if that\'s the case, then we have another problem.', 5: '1'}"
+52	52		202							{1: '1', 6: '1'}
+53	53		104						550.0	{1: '0|-100|-200', 2: '0.5'}
+54	54		301			DialogEnable	DialogDisable			{3: 'As he speaks, Wanshi looks up at the sky wrapped in blazing light.'}
+55	55		302							"{2: ""Night hasn't yet fallen..."", 3: '56'}"
+56	56		205						650.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1219.jpg', 3: '0', 4: '1', 5: '0.6'}
+57	57		104							{1: '0|0|0', 2: '0'}
+58	58		205							{1: '999'}
+59	59		201							{1: '1', 2: '501295', 4: '330'}
+60	60		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Wanshi', 3: ""Right, the Archangel's death hasn't broken the eternal daylight."", 4: '1'}"
+61	61		203						200.0	{1: '1', 2: '0.3', 3: '800'}
+62	62		201							{1: '2', 2: '501297', 4: '-660'}
+63	63		301			DialogEnable				"{1: '1', 2: 'Lilith', 3: 'Didn\'t ""War"" mention a Plan B before? If killing the Archangel doesn\'t work, then we wipe out every last angel.', 4: '2'}"
+64	64		301				DialogDisable			"{2: 'Lilith', 3: ""Plus, we haven't checked out that big guy up there yet."", 4: '2'}"
+65	65		202							{1: '1', 2: '2', 6: '1'}
+66	66		306							{1: '1'}
+67	67		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1219.jpg', 3: '0', 4: '1', 5: '0.6'}
+68	68		104						650.0	{1: '-200|-100|-400', 2: '0', 4: '3'}
+69	69		301			DialogEnable	DialogDisable			"{3: ""She raises an eyebrow and looks toward the top of the Sanctuary. The Cardinal Deity's mangled remains float within streams of light, with nothing but empty space below the chest cavity and golden cables dangling like blood vessels.""}"
+70	70		306							
+71	71		302							{2: 'We should check it out.', 3: '72'}
+72	72		205						650.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1219.jpg', 3: '1', 4: '0', 5: '0.6'}
+73	73		104							{1: '0|0|0', 2: '0', 4: '3'}
+74	74		205							{1: '999'}
+75	75		201							{1: '1', 2: '501295', 4: '800'}
+76	76		201							{1: '2', 2: '501297', 4: '-660'}
+77	77		301			DialogEnable				"{1: '1', 2: 'Wanshi', 3: ""There might be angels lying in ambush nearby. I'll take point—stay close behind me."", 4: '1'}"
+78	78		301				DialogDisable			{2: 'Lilith', 3: 'After you.', 4: '2'}
+79	79		302							"{2: ""I'll leave it to you, then."", 3: '80', 4: '(Keep moving on)', 5: '80'}"
+80	80		202						200.0	{1: '1', 2: '2'}
+81	81		401							{1: '2', 2: '5703'}
+82	82		104						700.0	{1: '0|0|-50', 2: '0.8'}
+83	83		401						300.0	{1: '2', 2: '5703'}
+84	84		301			DialogEnable	DialogDisable			"{3: ""With each step you take, the wounds across your body throb with dull pain, except this feels more like rest compared to all the battles you've been through.""}"
+85	85		401							{1: '2', 2: '5703'}
+86	86		104						700.0	{1: '0|0|-100', 2: '0.8'}
+87	87		401						300.0	{1: '2', 2: '5703'}
+88	88		201							{1: '1', 2: '501295', 4: '330'}
+89	89		301			DialogEnable	DialogDisable			{1: '1', 2: 'Wanshi', 3: '...', 4: '1'}
+90	90		202							{1: '1'}
+91	91		401							{1: '2', 2: '5703'}
+92	92		104						700.0	{1: '0|0|-150', 2: '0.8'}
+93	93		401						800.0	{1: '2', 2: '5703'}
+94	94		401							{1: '2', 2: '5703'}
+95	95		104						700.0	{1: '0|0|-200', 2: '0.8'}
+96	96		401						300.0	{1: '2', 2: '5703'}
+97	97		201							{1: '1', 2: '501297', 3: '17', 4: '-330'}
+98	98		301			DialogEnable				{1: '1', 2: 'Lilith', 3: '...', 4: '1'}
+99	99		202						500.0	{1: '1'}
+100	100		306							{1: '1'}
+101	101		301							{3: 'The three ascend the steps, their boots striking the marble with echoes that ring through the emptiness like the ticks of a countdown clock.'}
+102	102		301				DialogDisable			{3: 'They carry on in silence, wounds throbbing with every step, yet the pain pales against the heavy uncertainty weighing on their hearts.'}
+103	103		501						1400.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+104	104		306						400.0	
+105	105		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory50.jpg'}
+106	106		201							{1: '1', 2: '501297', 3: '1', 4: '-330', 7: '1'}
+107	107		301			DialogEnable				"{1: '1', 2: 'Lilith', 3: ""We're here."", 4: '1'}"
+108	108		202							{1: '1'}
+109	109		201							{1: '1', 2: '501295', 4: '330'}
+110	110		301							{1: '1', 2: 'Wanshi', 3: 'All these gates between the stone pillars...', 4: '1'}
+111	111		202							{1: '1', 7: '1'}
+112	112		501							{1: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab', 2: '2'}
+113	113		306							{1: '1'}
+114	114		301				DialogDisable			"{3: ""From the outside, this place appears to be nothing more than a massive platform holding the Cardinal Deity's remains, but only by stepping inside can one discover that the spaces between the edge pillars are filled with magnificent, twisted orbs of light, within which bizarre and otherworldly visions flicker endlessly.""}"
+115	115		502							{1: 'RImgBg1DisableSlow'}
+116	116		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory464.jpg'}
+117	117		502							{1: 'RImgBg1DisableSlow'}
+118	118		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory523.jpg'}
+119	119		301			DialogEnable	DialogDisable			{3: 'Gigantic golden trees standing in bitter winter, alien planets ravaged by crimson catastrophe... countless unfamiliar worlds spread out before your eyes.'}
+120	120		502							{1: 'RImgBg1DisableSlow'}
+121	121		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab'}
+122	122		306							
+123	123		101			RImgBg2Enable			200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory50.jpg'}
+124	124		201							{1: '1', 2: '501297', 3: '1', 4: '-330'}
+125	125		301			DialogEnable				"{1: '1', 2: 'Lilith', 3: 'How fascinating. The legends about Angels and the Supreme Heaven being creatures from other ""planes"" are actually true.', 4: '1'}"
+126	126		302							{2: 'So those other worlds... are behind these doors?', 3: '127'}
+127	127		203							{1: '1', 2: '0.3', 3: '-330', 5: '-50'}
+128	128		301							{2: 'Lilith', 3: 'Look—like that one there.', 4: '1'}
+129	129		202							{1: '1', 6: '1'}
+130	130		401							{1: '2', 2: '4387'}
+131	131		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+132	132		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png', 4: '4'}
+133	133		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory749.jpg'}
+134	134		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen03.prefab', 2: '2'}
+135	135		301							{3: 'Seeing where Lilith is pointing, you immediately notice one of the gateways positioned slightly higher up, within which you faintly make out someone who looks very much like yourself—locked in a fight against angels.'}
+136	136		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png', 4: '4', 5: '1'}
+137	137		201							{1: '18', 2: '501297', 4: '-390', 5: '-210', 6: '50'}
+138	138		301							"{1: '1', 2: 'Lilith', 3: ""Hmm... looks like there's someone else there, too...?"", 4: '18'}"
+139	139		202			DialogDisable				{1: '18', 6: '1'}
+140	140		401							{1: '1', 2: '5074'}
+141	141		401							{1: '2', 2: '5961', 3: '0.5'}
+142	142		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+143	143		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+144	144		307							{1: 'Peeper—die!', 3: '80', 4: 'ff4e4eff', 6: '1'}
+145	145		301							{3: 'Peeper—die!'}
+146	146		307							{2: '1'}
+147	147		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+148	148		307							{1: 'Perish!', 3: '150', 4: 'ff4e4eff', 6: '1'}
+149	149		401							{1: '2', 2: '5961', 3: '1'}
+150	150		301							{3: 'Perish!'}
+151	151		307							{2: '1'}
+152	152		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+153	153		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory749.jpg'}
+154	154		401						400.0	{1: '2', 2: '4387'}
+155	155		201							{1: '1', 2: '501297', 4: '-330', 7: '1'}
+156	156		201							{1: '2', 2: '500928', 4: '900', 7: '1'}
+157	157		203							{1: '2', 2: '0.14', 3: '200'}
+158	158		401						100.0	{1: '2', 2: '9342045'}
+159	159		203							{1: '1', 2: '0.14', 3: '-730'}
+160	160		204							{1: '1', 2: '10'}
+161	161		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Lilith', 3: ""I knew things wouldn't stay this quiet."", 4: '1'}"
+162	162		401							{1: '2', 2: '844'}
+163	163		203						100.0	{1: '1', 2: '0.15', 3: '-330'}
+164	164		202							{1: '1'}
+165	165		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2', 5: '5'}
+166	166		511							{1: '5', 2: '0', 3: '100|0|0'}
+167	167		401							{1: '2', 2: '4813'}
+168	168		203							{1: '2', 2: '0.15', 3: '300'}
+169	169		401							{1: '2', 2: '844'}
+170	170		401							{1: '2', 2: '844090'}
+171	171		502							{1: 'PanelActor2Shake'}
+172	172		301			DialogEnable	DialogDisable			"{2: '""Angel""', 3: 'Gaahhh!!', 4: '2'}"
+173	173		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 5: '5'}
+174	174		505							{1: 'PanelActor2Shake'}
+175	175		203						80.0	{1: '2', 2: '0.1', 3: '300', 4: '-150'}
+176	176		401							{1: '2', 2: '4006'}
+177	177		202							{1: '2'}
+178	178		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab'}
+179	179		301			DialogEnable	DialogDisable			"{3: 'Just as Lilith draws near, the stargate suddenly ripples with hazy distortions. A split second after, an angel bursts through. ""Famine"" quickly steps away and strikes it down with her Moon Umbrella.'}"
+180	180		401							{1: '2', 2: '4536'}
+181	181		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+182	182		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory464.jpg', 2: '1'}
+183	183		201						100.0	{1: '1', 2: '500928', 5: '-50', 6: '100'}
+184	184		203							{1: '1', 2: '0.14', 4: '-20', 5: '-100'}
+185	185		401							{1: '2', 2: '844090'}
+186	186		502							{1: 'PanelActor1Shake'}
+187	187		301			DialogEnable	DialogDisable			"{1: '1', 2: '""Angel""', 3: 'Flesh! Slaughter!', 4: '1'}"
+188	188		203							{1: '1', 2: '0.5', 3: '500'}
+189	189		509						700.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory523.jpg', 2: '1'}
+190	190		401							{1: '2', 2: '4536'}
+191	191		201						100.0	{1: '11', 2: '500928', 4: '-500', 5: '-50', 6: '100'}
+192	192		203							{1: '11', 2: '0.14', 3: '-500', 4: '-20', 5: '-100'}
+193	193		401							{1: '2', 2: '844090'}
+194	194		502							{1: 'PanelActor11Shake'}
+195	195		301			DialogEnable				"{1: '1', 2: '""Angel""', 3: 'Defiler!', 4: '11'}"
+196	196		301				AniZhuanchangBegin			{3: 'Every stargate trembles and shudders as countless angels pour forth in endless streams from hundreds of dimensional planes.'}
+197	197		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen03.prefab'}
+198	198		202							{1: '11', 2: '1'}
+199	199		510						500.0	{1: '1'}
+200	200		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory50.jpg'}
+201	201		502							{1: 'RImgBg1Shake2Loop'}
+202	202		201							{1: '1', 2: '501297', 3: '6', 4: '-330'}
+203	203		301			AniZhuanchangEnd	DialogDisable			"{1: '1', 2: 'Lilith', 3: ""Tch, never thought we'd have to fight this many battles in a single day."", 4: '1'}"
+204	204		302							{2: 'Prepare to engage!', 3: '205'}
+205	205		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+206	206		201							{1: '1', 2: '501295', 3: '4', 4: '330'}
+207	207		301			DialogEnable				"{1: '1', 2: 'Wanshi', 3: '...Stay close to me, Bloodsworn, ""Famine.""', 4: '1'}"
+208	208		201							{1: '18', 2: '501297', 3: '7', 4: '-390', 5: '-210', 6: '50'}
+209	209		301				DialogDisable			{1: '1', 2: 'Lilith', 3: 'Can your barrier hold against all of them?', 4: '18'}
+210	210		202							{1: '18', 6: '1'}
+211	211		302							{2: '(Move closer to Wanshi)', 3: '212'}
+212	212		202							{1: '1', 6: '1'}
+213	213		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+214	214		104							{1: '0|0|-300', 2: '2'}
+215	215		401						500.0	{1: '2', 2: '4331'}
+216	216		401						300.0	{1: '2', 2: '2513'}
+217	217		401						200.0	{1: '2', 2: '2513'}
+218	218		401						400.0	{1: '2', 2: '846'}
+219	219		401							{1: '2', 2: '2513'}
+220	220		401						400.0	{1: '2', 2: '846'}
+221	221		301			DialogEnable	DialogDisable			"{3: ""Running now would only make you vulnerable—surviving this assault is what matters. Under Lilith's cover, you keep up suppressive fire as you charge toward Wanshi at breakneck speed.""}"
+222	222		505							{1: 'RImgBg1Shake2Loop'}
+223	223		502							{1: 'RImgBg1Shake2Disable'}
+224	224		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+225	225		401							{1: '2', 2: '844090'}
+226	226		201						100.0	{1: '1', 2: '500928', 5: '-50', 6: '100'}
+227	227		203							{1: '1', 2: '0.14', 4: '-20', 5: '-100'}
+228	228		104							{1: '0|0|-250', 2: '0.14'}
+229	229		502							{1: 'DialogEnable'}
+230	230		301			RImgBg1Shake				"{1: '1', 2: '""Angel""', 3: 'Flesh, flesh!', 4: '1'}"
+231	231		202							{1: '1', 6: '1'}
+232	232		401							{1: '2', 2: '4276'}
+233	233		401							{1: '2', 2: '4430'}
+234	234		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+235	235		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_25.jpg'}
+236	236		104							{1: '0|0|0', 2: '0'}
+237	237		301				DialogDisable			{2: 'Wanshi', 3: 'Stay the hell away!'}
+238	238		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory50.jpg'}
+239	239		401							{1: '2', 2: '4385'}
+240	240		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+241	241		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0', 4: '0.1', 5: '0.3'}
+242	242		401							{1: '2', 2: '814'}
+243	243		501						80.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTRPGMaze/FxUiTRPGMaze01.prefab', 2: '1'}
+244	244		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionInvitation/FxUiRegressionInvitationShine.prefab', 2: '1'}
+245	245		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokePurple.prefab', 2: '1'}
+246	246		201							{1: '1', 2: '500928', 4: '-900', 5: '-50'}
+247	247		401							{1: '2', 2: '844'}
+248	248		203						100.0	{1: '1', 2: '0.14', 3: '-200'}
+249	249		401						150.0	{1: '2', 2: '9342060'}
+250	250		401							{1: '2', 2: '4348'}
+251	251		502							{1: 'PanelActor1Shake'}
+252	252		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 3: '1'}
+253	253		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTRPGMaze/FxUiTRPGMaze01.prefab'}
+254	254		301			DialogEnable				{3: 'Wanshi raises his lantern high, and silvery-white streams of light instantly spread into an invisible barrier. Angels that crash into it burst into flames, their agonized screams piercing the air.'}
+255	255		401							{1: '2', 2: '844090'}
+256	256		301			PanelActor1Shake	DialogDisable			"{2: '""Angel""', 3: 'Arghhh!', 4: '1'}"
+257	257		401							{1: '2', 2: '814'}
+258	258		501						80.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTRPGMaze/FxUiTRPGMaze01.prefab', 2: '1'}
+259	259		401							{1: '2', 2: '9342060'}
+260	260		203						80.0	{1: '1', 2: '0.15', 3: '-300', 4: '-150'}
+261	261		401							{1: '2', 2: '4006'}
+262	262		202							{1: '1'}
+263	263		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 4: '1'}
+264	264		301			DialogEnable				{3: 'The energy barrier sweeps away everything in its path as surging magical power transforms into flames, consuming the flesh of countless angels.'}
+265	265		402							{1: '4348'}
+266	266		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTRPGMaze/FxUiTRPGMaze01.prefab'}
+267	267		205							{1: '1006'}
+268	268		201							{1: '1', 2: '501295', 3: '3', 4: '330'}
+269	269		301							{1: '1', 2: 'Wanshi', 3: '...Gray Raven, please bear with me for a moment.', 4: '1'}
+270	270		401							{1: '2', 2: '1516'}
+271	271		203						400.0	{1: '1', 2: '0.5', 3: '330', 4: '-20', 5: '50'}
+272	272		202							{1: '1'}
+273	273		301				DialogDisable			{3: 'Once the energy expands to its full range, Wanshi maintains his lantern-raised stance and steps forward. Then, he passes through the barrier and leaves Lilith behind as he makes his way toward the Cardinal Deity.'}
+274	274		302							{2: 'What are you doing?', 3: '275', 4: 'Wanshi?', 5: '275'}
+275	275		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokePurple.prefab'}
+276	276		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionInvitation/FxUiRegressionInvitationShine.prefab'}
+277	277		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0.1', 4: '0', 5: '0'}
+278	278		401							{1: '2', 2: '4387'}
+279	279		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+280	280		306							{1: '1'}
+281	281		201							{1: '1', 2: '501295', 4: '330', 5: '-50', 6: '-100', 7: '1'}
+282	282		204							{1: '1', 2: '8'}
+283	283		301			DialogEnable				"{1: '1', 2: 'Wanshi', 3: ""I'm sorry, Gray Raven. I lied to you."", 4: '1'}"
+284	284		204							{1: '1', 2: '3'}
+285	285		301				DialogDisable			{2: 'Wanshi', 3: 'That day... I actually saw it. I saw a way to save this world and restore the Dawn Laws.', 4: '1'}
+286	286		306							
+287	287		202							{1: '1', 6: '1'}
+288	288		205							{1: '1006', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0', 4: '0.1', 5: '0'}
+289	289		205							{1: '1005', 3: '1', 4: '1', 5: '0'}
+290	290		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokePurple.prefab', 2: '1'}
+291	291		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionInvitation/FxUiRegressionInvitationShine.prefab', 2: '1'}
+292	292		401						400.0	{1: '2', 2: '844090'}
+293	293		401							{1: '2', 2: '844090'}
+294	294		301			DialogEnable	DialogDisable			{3: 'The angels try to give chase, but the barrier not only blocks their advance—it completely seals off the inside from the outside.'}
+295	295		302							{2: '(Try to walk out of the barrier)', 3: '296'}
+296	296		104						550.0	{1: '0|0|-50', 2: '0.5'}
+297	297		401							{1: '2', 2: '2924'}
+298	298		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFrontNewCommon22.png', 4: '4'}
+299	299		502							{1: 'DialogEnable'}
+300	300		301			RImgBg1Shake	DialogDisable			{3: 'The instant you touch the light wall, violent electrical currents crackle and spark, hurling your body back several meters.'}
+301	301		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFrontNewCommon22.png', 4: '4', 5: '1'}
+302	302		201							{1: '1', 2: '501297', 3: '6', 4: '-330', 7: '1'}
+303	303		301			DialogEnable	DialogDisable			{1: '1', 2: 'Lilith', 3: 'Commandant!', 4: '1'}
+304	304		202							{1: '1'}
+305	305		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+306	306		401							{1: '2', 2: '844090'}
+307	307		201							{1: '1', 2: '501295', 3: '3', 4: '330', 7: '1'}
+308	308		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionInvitation/FxUiRegressionInvitationShine.prefab'}
+309	309		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokePurple.prefab'}
+310	310		205							{1: '1006', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0', 4: '0', 5: '0'}
+311	311		205							{1: '1006'}
+312	312		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 2: '2', 5: '1'}
+313	313		511						100.0	{1: '1', 2: '0', 3: '-400|315|0'}
+314	314		401						400.0	{1: '2', 2: '4507'}
+315	315		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 2: '2', 5: '2'}
+316	316		511						100.0	{1: '2', 2: '0', 3: '500|100|0'}
+317	317		401						400.0	{1: '2', 2: '4507'}
+318	318		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 2: '2', 5: '3'}
+319	319		511						100.0	{1: '3', 2: '0', 3: '-540|-200|0'}
+320	320		401						400.0	{1: '2', 2: '4507'}
+321	321		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 2: '2', 5: '4'}
+322	322		202							{1: '1'}
+323	323		511						100.0	{1: '4', 2: '0', 3: '350|-260|0'}
+324	324		401						1400.0	{1: '2', 2: '4507'}
+325	325		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+326	326		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 5: '1'}
+327	327		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 5: '2'}
+328	328		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 5: '3'}
+329	329		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 5: '4'}
+330	330		202							{1: '1'}
+331	331		401							{1: '2', 2: '10007502'}
+332	332		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+333	333		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5501_41.jpg', 4: '4'}
+334	334		301			DialogEnable				"{3: ""The angels notice Wanshi's advance and turn their attacks on him, except the scattered points of light intercept all their attacks, causing them to explode in all directions.""}"
+335	335		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5501_41.jpg', 4: '4', 5: '1'}
+336	336		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+337	337		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory426.jpg'}
+338	338		401							{1: '2', 2: '4817', 3: '0.5'}
+339	339		201							{1: '1', 2: '501295', 4: '330', 7: '1'}
+340	340		301							"{1: '1', 3: ""Then, Wanshi walks beneath the Cardinal Deity's remains and extends his hand to catch the streams of light flowing from that massive corpse.""}"
+341	341		301							"{2: 'Wanshi', 3: ""I'll merge with these remains and become a Cardinal Deity myself once more. If I can control that power, I can bring night back to the human world, and that's when the Scorched Borderland can finally see a true tomorrow."", 4: '1'}"
+342	342		302							"{2: ""What's going to happen to you, though, Wanshi...?"", 3: '343'}"
+343	343		301					400.0		{2: 'Wanshi', 3: '...', 4: '1'}
+344	344		301							{3: 'His brief pause says it all.'}
+345	345		201							{1: '18', 2: '501297', 3: '6', 4: '-390', 5: '-210', 6: '50'}
+346	346		301							"{1: '1', 2: 'Lilith', 3: ""Plague, don't try to accept any temptation from the Sanctuary! You're not the first person to attempt this!"", 4: '18'}"
+347	347		202							{1: '18', 6: '1'}
+348	348		301							"{2: 'Wanshi', 3: ""But to end this catastrophe, it's our only option right now."", 4: '1'}"
+349	349		301							"{3: ""The angels' shrieks pierce the heavens as the surrounding light walls gradually fade under their suicidal assault.""}"
+350	350		204							{1: '1', 2: '8'}
+351	351		301				DialogDisable			"{2: 'Wanshi', 3: ""If I don't succeed... then do what you have to do before I hurt you, Gray Raven."", 4: '1'}"
+352	352		202							{1: '1', 6: '1'}
+353	353		402							{1: '4817'}
+354	354		401							{1: '2', 2: '5316'}
+355	355		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5801_10.jpg', 3: '0', 4: '1', 5: '1'}
+356	356		104						1050.0	{1: '-200|-200|-400', 2: '0', 4: '3'}
+357	357		301			DialogEnable				{3: 'The moment the angels break through the Light Wall, Wanshi gathers the light around him as his golden eyes begin to blaze.'}
+358	358		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5801_10.jpg'}
+359	359		104							{1: '-200|-200|-400', 2: '0'}
+360	360		205							{1: '999'}
+361	361		301				DialogDisable			"{3: ""He can feel his soul beginning to transform. He's now able to seal the turbulent stargates with nothing more than a glance.""}"
+362	362		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+363	363		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '4'}
+364	364		401							{1: '2', 2: '895'}
+365	365		307							{1: 'Have you seen it?', 3: '70', 4: 'ff4e4eff', 6: '1'}
+366	366		301							{3: 'Have you seen it?'}
+367	367		307						400.0	{2: '1'}
+368	368		401							{1: '2', 2: '895'}
+369	369		307							{1: 'I have.', 3: '70', 4: 'ffffffff', 6: '1'}
+370	370		301							{3: 'I have.'}
+371	371		307						400.0	{2: '1'}
+372	372		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+373	373		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '4', 5: '1'}
+374	374		301			DialogEnable	DialogDisable			"{2: 'Wanshi', 3: ""That's enough, which is why I'm back.""}"
+375	375		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5801_11.jpg', 3: '0', 4: '1', 5: '1'}
+376	376		104						1200.0	{1: '-200|-200|-400', 2: '0', 4: '3'}
+377	377		301			DialogEnable	DialogDisable			"{3: ""The conversation with an old friend—with another version of yourself—proves unexpectedly simple. A lot of the things you didn't understand before now make sense to you. Your only concern now, though, would be...""}"
+378	378		302							{2: 'Wanshi!', 3: '379'}
+379	379		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5801_11.jpg'}
+380	380		104							{1: '-200|-200|-400', 2: '0'}
+381	381		205							{1: '999'}
+382	382		301			DialogEnable	DialogDisable			{3: '...would be the Bloodsworn with whom you have formed a Blood Covenant.'}
+383	383		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5801_09.jpg', 3: '0', 4: '1', 5: '1'}
+384	384		104						1050.0	{1: '-200|-200|-400', 2: '0', 4: '3'}
+385	385		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5801_09.jpg'}
+386	386		104							{1: '-200|-200|-400', 2: '0'}
+387	387		104							{1: '0|0|0', 2: '0', 4: '3'}
+388	388		205							{1: '999'}
+389	389		301			DialogEnable	DialogDisable			{3: 'Wanshi tries but fails to respond. Once the fusion begins, his senses gradually fade away.'}
+390	390		401							{1: '2', 2: '4134'}
+391	391		501							{1: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiYinghuochong.prefab', 2: '2'}
+392	392		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0', 4: '1', 5: '1'}
+393	393		104						1050.0	{1: '0|0|0', 2: '0', 4: '3'}
+394	394		205							{1: '999'}
+395	395		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+396	396		301			DialogEnable				{3: 'His broken body and soul draw together as invisible forces lift him skyward. With the shell that was once his body about to dissolve, the Cardinal Deity will return to this Sanctuary bearing complete laws.'}
+397	397		401							{1: '2', 2: '759'}
+398	398		301							{2: 'Nirvatia', 3: 'You should take one more look at the mortal world if you still have regrets.'}
+399	399		401							{1: '1', 2: '36'}
+400	400		401							{1: '2', 2: '4387'}
+401	401		201							{1: '1', 2: '501295', 4: '330', 6: '-200'}
+402	402		301				DialogDisable			{1: '1', 2: 'Wanshi', 3: '—!', 4: '1'}
+403	403		401							{1: '1', 2: '5073'}
+404	404		401							{1: '2', 2: '10301301', 3: '1'}
+405	405		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiYinghuochong.prefab'}
+406	406		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHit01.prefab', 2: '3'}
+407	407		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDust.prefab', 4: '1'}
+408	408		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiYinghuochong.prefab'}
+409	409		202							{1: '1', 6: '1'}
+410	410		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory50.jpg'}
+411	411		401							{1: '2', 2: '3077'}
+412	412		301			DialogEnable				"{3: 'A razor-sharp strike targets the stream of light connecting ""Plague"" to the Cardinal Deity\'s remains. A split second after, the severed light gushes forth like blood, and Wanshi—immobilized by the fusion—plummets from the sky and crashes hard into the ground.'}"
+413	413		401							{1: '2', 2: '759'}
+414	414		201							{1: '18', 2: '501283'}
+415	415		301							{1: '1', 2: 'Morigan', 3: 'Thank God I made it in time.', 4: '18'}
+416	416		202							{1: '18', 6: '1'}
+417	417		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab', 2: '1', 5: '6'}
+418	418		511							{1: '6', 2: '0', 3: '300|-250|-200', 4: '-47'}
+419	419		201							{1: '1', 2: '501281'}
+420	420		301							{1: '1', 2: 'Nirvatia', 3: 'Get me that lantern first.', 4: '1'}
+421	421		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png', 4: '7'}
+422	422		301							{3: 'Feathers drift through the air as the woman stands gracefully amid the blazing light.'}
+423	423		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+424	424		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png', 4: '7', 5: '1'}
+425	425		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab', 5: '6'}
+426	426		104							{1: '0|0|0', 2: '0'}
+427	427		201							{1: '1', 2: '501297', 3: '12', 4: '-330'}
+428	428		301							{1: '1', 2: 'Lilith', 3: 'And you are...', 4: '1'}
+429	429		202							{1: '1'}
+430	430		201							{1: '1', 2: '501281', 3: '1'}
+431	431		301				DialogDisable			"{1: '1', 2: 'Nirvatia', 3: 'Hi, ""Famine,"" and... Gray Raven.', 4: '1'}"
+432	432		201							{1: '2', 2: '501297', 3: '6', 4: '-930'}
+433	433		401						300.0	{1: '2', 2: '13015111'}
+434	434		402							{1: '13015111'}
+435	435		401							{1: '2', 2: '9342058'}
+436	436		101						20.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 4: '5'}
+437	437		203						80.0	{1: '2', 2: '0.14', 3: '-580'}
+438	438		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 4: '5', 5: '1'}
+439	439		204							{1: '1'}
+440	440		203							{1: '1', 2: '0.14', 3: '300'}
+441	441		502					100.0	400.0	{1: 'RImgBg1Shake'}
+442	442		505							{1: 'RImgBg1Shake'}
+443	443		301			DialogEnable				"{3: ""The moment Lilith sees Wanshi under attack, she launches her own assault without a moment's hesitation, swift as an arrow loosed from its bow.""}"
+444	444		301							{2: 'Lilith', 3: 'The proprietor from the Mysterious Tavern...? Just who are you really?', 4: '2'}
+445	445		301				DialogDisable			{2: 'Nirvatia', 3: 'You talk too much. Please take a little rest, just like your friend over there.', 4: '1'}
+446	446		401							{1: '2', 2: '8220087'}
+447	447		101						80.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 4: '5'}
+448	448		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 4: '5', 5: '1'}
+449	449		204							{1: '2', 2: '17'}
+450	450		502							{1: 'DialogEnable'}
+451	451		301			PanelActor2Shake	DialogDisable			{2: 'Lilith', 3: 'Hnngg...', 4: '2'}
+452	452		401							{1: '2', 2: '4006'}
+453	453		203						80.0	{1: '2', 2: '0.15', 3: '-580', 4: '-150'}
+454	454		202							{1: '2'}
+455	455		301			DialogEnable	DialogDisable			"{3: ""Like a crushing blow from a blunt weapon, Lilith staggers from the scepter's strike and, looking as though her very nerves have been severed and her magical flow has been cut short, she collapses.""}"
+456	456		203							{1: '1', 2: '0.3'}
+457	457		204						300.0	{1: '1', 2: '3'}
+458	458		301			DialogEnable				{3: 'Everything happens too quickly—both Horsemen have been struck down by the woman in the blink of an eye. Then she flashes an almost wicked smile and turns her gaze this way.'}
+459	459		301				DialogDisable			{2: 'Nirvatia', 3: 'Gray Raven.', 4: '1'}
+460	460		302							{2: 'Nirvatia... Why?', 3: '461'}
+461	461		201							{1: '18', 2: '501283'}
+462	462		301			DialogEnable				"{1: '1', 2: 'Morigan', 3: '""Plague\'s"" lantern is right here—do it now, Nirvatia!', 4: '18'}"
+463	463		302							{2: 'What are you trying to do exactly?', 3: '464'}
+464	464		202							{1: '18', 6: '1'}
+465	465		301				DialogDisable			{2: 'Nirvatia', 3: 'I want you to witness it with me—the rebirth of the Scorched Borderland.', 4: '1'}
+466	466		401							{1: '1', 2: '6248'}
+467	467		401							{1: '2', 2: '4348'}
+468	468		202						500.0	{1: '1'}
+469	469		306							{1: '1'}
+470	470		401							{1: '2', 2: '213'}
+471	471		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokePurple.prefab', 2: '1'}
+472	472		301			DialogEnable	DialogDisable			"{3: ""With that, Nirvatia raises Wanshi's lantern. The flickering flame within gradually shifts to a crimson-purple hue as the soul trapped inside begins to let out piercing screams.""}"
+473	473		205						500.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0', 4: '1', 5: '0.5'}
+474	474		109							{1: '1', 2: '<color=#ff4e4eff><size=70><i>Let wailing be your call, let resentment be your guide—gather now, desolate souls.</i></size></color>', 4: '50', 9: '3', 11: '1'}
+475	475		109							{1: '7', 2: '<color=#ffffffff><size=70><i>Let wailing be your call, let resentment be your guide—gather now, desolate souls.</i></size></color>', 3: '2', 4: '48', 9: '1', 11: '1'}
+476	476		301							{3: 'Let wailing be your call, let resentment be your guide—gather now, desolate souls.'}
+477	477		306							
+478	478		110							
+479	479		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '1', 4: '0', 5: '0.1'}
+480	480		205						2050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5701_04.jpg', 3: '0', 4: '1', 5: '2'}
+481	481		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+482	482		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_04.jpg'}
+483	483		301			DialogEnable				"{3: ""The lantern's flame suddenly blazes brighter as the points of light around it fade away. Countless phantoms drift down through the clouds—lost souls with nowhere to turn with the Laws crumbled, now drawn to this sacred Sanctuary by Nirvatia's incantation.""}"
+484	484		301				DialogDisable			{3: 'More and more phantoms gather, their endless hatred so intense that one only needs to be close enough to them to feel the malice radiating from within.'}
+485	485		205						500.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0', 4: '1', 5: '0.5'}
+486	486		109							"{1: '2', 2: ""<color=#ff4e4eff><size=60><i>With the Cardinal Deity's remains as my sacrifice, I shatter the prison of the vile angels. Descend upon this place now!</i></size></color>"", 4: '100', 9: '3', 11: '1'}"
+487	487		109							"{1: '5', 2: ""<color=#ffffffff><size=60><i>With the Cardinal Deity's remains as my sacrifice, I shatter the prison of the vile angels. Descend upon this place now!</i></size></color>"", 3: '2', 4: '98', 9: '1', 11: '1'}"
+488	488		301							"{3: ""With the Cardinal Deity's remains as my sacrifice, I shatter the prison of the vile angels. Descend upon this place now!""}"
+489	489		401							{1: '2', 2: '2907'}
+490	490		109							{1: '3', 2: '<color=#ff4e4eff><size=60><i>—Nyarlathotep, the Great Lord of Death!</i></size></color>', 4: '-50', 9: '3', 11: '1'}
+491	491		109							{1: '6', 2: '<color=#ffffffff><size=60><i>—Nyarlathotep, the Great Lord of Death!</i></size></color>', 3: '2', 4: '-52', 9: '1', 11: '1'}
+492	492		301							{3: '—Nyarlathotep, the Great Lord of Death!'}
+493	493		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '1', 4: '0', 5: '0'}
+494	494		205							{1: '1004'}
+495	495		110							
+496	496		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+497	497		401							{1: '2', 2: '4387'}
+498	498		401							{1: '2', 2: '4984'}
+499	499		301			DialogEnable				"{3: ""The moment that dreadful name springs from her lips, the phantoms surge forward like a hurricane and batter the Cardinal Deity's remains relentlessly.""}"
+500	500		301				AniZhuanchangBegin			"{3: ""Under the violent assault, cracks split through the remains, and impossible flesh begins to emerge—pulsing like beating hearts across the deity's body and obscuring its divine visage.""}"
+501	501		402							{1: '4984'}
+502	502		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokePurple.prefab'}
+503	503		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory50.jpg'}
+504	504		402							{1: '213'}
+505	505		201							{1: '1', 2: '501281', 3: '1'}
+506	506		301			AniZhuanchangEnd				{1: '1', 2: 'Nirvatia', 3: 'We did it.', 4: '1'}
+507	507		202							{1: '1', 6: '1'}
+508	508		401							{1: '2', 2: '4984'}
+509	509		306							{1: '1'}
+510	510		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+511	511		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory426.jpg'}
+512	512		301							"{3: 'In mere moments, the flesh engulfs part of the Cardinal Deity\'s body, even reconstructing within the remains something akin to—though utterly profane in nature—a ""Divine Core.""'}"
+513	513		301				DialogDisable			{3: 'From this moment forth, what emanates from the sacred remains is no longer brilliant holy light, but a bone-chilling cold.'}
+514	514		306							
+515	515		201							{1: '1', 2: '500879'}
+516	516		502							{1: 'DialogEnable'}
+517	517		301			PanelActor1Shake				{1: '1', 2: 'Lord of Death', 3: '...Hmph, hahaha!', 4: '1'}
+518	518		301							"{3: ""Mad laughter, twisted and abyssal, echoes from within the Lord of Death's flesh, reminiscent of whispers rising from the very depths of its soul.""}"
+519	519		402							{1: '4984'}
+520	520		401							{1: '2', 2: '4977'}
+521	521		201							{1: '2', 2: '500868', 3: '3'}
+522	522		301							"{1: '1', 2: 'Lord of Death', 3: ""You were oh-so righteous and so pure—only to have died by human hands and become a wretched corpse! And yet you're perfect... precisely because of that!"", 4: '2', 5: '1'}"
+523	523		301							"{3: ""The Cardinal Deity's remains now serve as a vessel for the Lord of Death's unholy flesh. Laughing wildly, the Lord of Death raises a colossal arm skyward, seemingly ready to tear into pieces the very heavens.""}"
+524	524		202							{1: '1', 6: '1'}
+525	525		301							{2: 'Lord of Death', 3: 'Now I possess the perfect altar for my resurrection... Holy light, divine faith—in the end, what were they but stepping stones for my return?', 4: '2'}
+526	526		301							"{2: 'Lord of Death', 3: ""Excellent work, <phonetic=Raven of Death>Nirvatia</phonetic>! You've completed the mission hell entrusted to you and exceeded all expectations... You have sown endless death across the three realms and forged the very altar for my escape from the Hall of a Thousand Demons."", 4: '2'}"
+527	527		301							{2: 'Lord of Death', 3: 'Now... what reward do you seek? New powers beyond mortal ken, or perhaps the glory of ruling over the human realm?', 4: '2'}
+528	528		202							{1: '2', 6: '1'}
+529	529		201							{1: '1', 2: '501281'}
+530	530		301							{1: '1', 2: 'Nirvatia', 3: 'Nyarlathotep, what I desire is already here.', 4: '1'}
+531	531		202							{1: '1'}
+532	532		201							{1: '1', 2: '500868', 3: '4'}
+533	533		301			DialogShake	DialogDisable			{1: '1', 2: 'Lord of Death', 3: '...!', 4: '1'}
+534	534		401							{1: '2', 2: '10019401'}
+535	535		401							{1: '1', 2: '36'}
+536	536		501						1500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHit01.prefab', 2: '3'}
+537	537		401							{1: '2', 2: '356'}
+538	538		201							{1: '1', 2: '500879'}
+539	539		202							{1: '1', 6: '1'}
+540	540		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_05.jpg'}
+541	541		301			DialogEnable				"{3: ""Before the Lord of Death finishes speaking, a flash cuts through the stream of light connecting Wanshi to the deity's remains. In the next instant, the luminous flow erupts like blood as the God's Core splits wide open.""}"
+542	542		301							{3: 'Fury and screams intertwine, plunging the entire space into chaos as the Lord of Death meets his end—a death more agonizing than any mortal soul has ever endured.'}
+543	543		301							{2: 'Nirvatia', 3: 'So this... is the combined power of the Cardinal Deity and the Lord of Death.'}
+544	544		301							"{3: ""Seemingly guided by something, the energy erupting from the God's Core flows and surges endlessly toward Nirvatia, leaving fresh marks across her body. These powers have already acknowledged her as their new master.""}"
+545	545		302							{2: 'What are you trying to do...?!', 3: '546', 4: '(Fire at Nirvatia)', 5: '547'}
+546	546	549	301							{2: 'Nirvatia', 3: 'Want to know, Gray Raven?'}
+547	547		401							{1: '2', 2: '4834'}
+548	548		301							{2: 'Nirvatia', 3: 'Save those bullets, Gray Raven.'}
+549	549		301				DialogDisable			{3: 'Through her assassination of the Lord of Death, Nirvatia has claimed the two greatest powers there are. Now, no one seems able to stop her.'}
+550	550		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+551	551		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory50.jpg'}
+552	552		201							{1: '1', 2: '501281', 3: '1', 7: '1'}
+553	553		301			DialogEnable	DialogDisable			{1: '1', 2: 'Nirvatia', 3: 'Gray Raven, I... want to destroy this world, then witness its rebirth.', 4: '1'}
+554	554		302							"{2: ""(I can't move...!)"", 3: '555'}"
+555	555		306							{1: '1'}
+556	556		301			DialogEnable				"{3: ""The moment you meet Nirvatia's eye, your body freezes, seemingly as though having been stonified. Behind Nirvatia, a thick veil of darkness creeps ever closer across the distant horizon.""}"
+557	557		306							
+558	558		302							{2: '...Night!', 3: '559'}
+559	559		204							{1: '1', 2: '9'}
+560	560		301				DialogDisable			{2: 'Nirvatia', 3: 'Yes, it is Night.', 4: '1'}
+561	561		202							{1: '1'}
+562	562		401							{1: '2', 2: '2674'}
+563	563		401							{1: '2', 2: '4206'}
+564	564		501						5800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieFire03.prefab', 2: '2'}
+565	565		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+566	566		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieFire03.prefab'}
+567	567		301			DialogEnable	AniZhuanchangBegin			{3: 'A sorrowful rift slowly tears open, and the night that has been absent from the Scorched Borderland for thirty long years pours forth like a dam burst as it washes over the parched and cracked earth.'}
+568	568		401				DialogDisable			{1: '1', 2: '36'}
+569	569		402						1000.0	{1: '4206'}
+570	570		401							{1: '1', 2: '6236'}
+571	571		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory452.jpg'}
+572	572		401			AniZhuanchangEnd				{1: '2', 2: '2927'}
+573	573		201							{1: '1', 2: '500324', 4: '-100'}
+574	574		502							{1: 'DialogEnable'}
+575	575		401							{1: '2', 2: '2970'}
+576	576		301			RImgBg1Shake				{1: '1', 2: 'Demon Lord', 3: 'Dance, warriors! Kill every last human—leave none alive!!', 4: '1'}
+577	577		202							{1: '1'}
+578	578		201							{1: '1', 2: '501271'}
+579	579		301			DialogShake				"{1: '1', 2: 'Watanabe', 3: ""Iron Army, battle formation! Don't let those demons break through our defenses until the civilians are clear!"", 4: '1'}"
+580	580		202							{1: '1'}
+581	581		401							{1: '2', 2: '5815'}
+582	582		201							{1: '1', 2: '501233'}
+583	583		301			PanelActor1Shake	DialogDisable			{1: '1', 2: 'Demon', 3: 'Die!!', 4: '1'}
+584	584		201							{1: '2', 2: '501271', 3: '5', 4: '800'}
+585	585		401						300.0	{1: '2', 2: '819042'}
+586	586		401							{1: '2', 2: '1512'}
+587	587		203							{1: '2', 2: '0.14'}
+588	588		203					100.0		{1: '1', 2: '0.14', 3: '-600'}
+589	589		202							{1: '1', 2: '2'}
+590	590		301			DialogEnable				{1: '1', 2: 'Watanabe', 3: 'Get away from me!', 4: '2'}
+591	591		202							{1: '2'}
+592	592		201							{1: '2', 2: '500696', 3: '4'}
+593	593		301							"{1: '1', 2: 'Taco', 3: ""Watanabe, wh-what's going on? Why are these demons showing up now with the night? Doesn't Gray Raven have a Demon Lord among their allies?"", 4: '2'}"
+594	594		202							{1: '2'}
+595	595		201							{1: '2', 2: '501271', 3: '5'}
+596	596		301							{1: '1', 2: 'Watanabe', 3: 'Not all Demon Lords are our allies! Stay focused!', 4: '2'}
+597	597		202							{1: '2'}
+598	598		306							{1: '1'}
+599	599		301							"{3: ""As night reclaims this parched land, the ground suddenly splits apart and transforms into gateways to hell as lava and demons pour forth together, before anyone can comprehend what's happening.""}"
+600	600		301							{3: 'Without warning, the demons surge forth from hell, bringing fire and fury to the mortal realm. At this critical moment, Watanabe—still recovering from his wounds—intercepts their initial assault and rallies nearby forces into battle.'}
+601	601		301				AniZhuanchangBegin			{3: 'Hundreds upon hundreds of the Rifts of Chaos tear open simultaneously across the Scorched Borderland, and the Demon Lords, thirsting for human blood and bone, seize their chance and flood into the mortal realm en masse.'}
+602	602		306			DialogDisable				
+603	603		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory347.jpg'}
+604	604		502							{1: 'DialogEnable'}
+605	605		401							{1: '2', 2: '930318'}
+606	606		201							{1: '1', 2: '500320'}
+607	607		301			RImgBg1Shake				{1: '1', 2: 'Demon Lord', 3: 'Stop struggling! Just die already!!', 4: '1'}
+608	608		202							{1: '1'}
+609	609		201							{1: '1', 2: '501216', 3: '10'}
+610	610		301							{1: '1', 2: 'Vera', 3: 'Damn... cut me some slack already, will ya?', 4: '1'}
+611	611		202							{1: '1'}
+612	612		306							{1: '1'}
+613	613		301							"{3: ""Vera's immortal power kept her alive through the explosion, but the Archangel's dying struggle left her grievously wounded—now she can barely stay upright, using her weapon as a crutch.""}"
+614	614		301							{3: 'Before her stretches a wasteland transformed into hellish terrain, as her fellow demons crawl forth from the lava and steadily close in to surround her.'}
+615	615		306							
+616	616		201							{1: '1', 2: '500320'}
+617	617		301			PanelActor1Shake				"{1: '1', 2: 'Demon Lord', 3: ""Ferryman... I see you've sided with humans..."", 4: '1'}"
+618	618		202							{1: '1'}
+619	619		301							"{3: ""Vera knows that no amount of reasoning can change a demon's mind once it's set on something.""}"
+620	620		201							{1: '1', 2: '501216', 3: '13'}
+621	621		301							{1: '1', 2: 'Vera', 3: 'How inconvenient... I made a promise with a certain human...', 4: '1'}
+622	622		204							{1: '1', 2: '5'}
+623	623		301			DialogShake	DialogDisable			{2: 'Vera', 3: '—Anyone who dares threaten the human world dies by my hand!', 4: '1'}
+624	624		203						100.0	{1: '1', 2: '0.15', 5: '-100'}
+625	625		401							{1: '2', 2: '10019401'}
+626	626		202							{1: '1', 6: '1'}
+627	627		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '5'}
+628	628		502							{1: 'DialogEnable'}
+629	629		301			RImgBg1Shake	AniZhuanchangBegin			{3: 'She charges into the horde of demons, her spear tip carving arcs of crimson death.'}
+630	630		402							{1: '2927'}
+631	631		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '5', 5: '1'}
+632	632		101			DialogDisable	AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+633	633		109							{1: '4', 2: '<color=#ff4e4eff><size=60><i>Gods and demons now walk the earth, heaven and hell made manifest in the mortal realm.</i></size></color>', 4: '50', 9: '3', 11: '1'}
+634	634		301				AniZhuanchangBegin			{3: 'Gods and demons now walk the earth, heaven and hell made manifest in the mortal realm.'}
+635	635		110							
+636	636		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory1039.png'}
+637	637		301			DialogEnable				{3: 'Night has completely devoured the sky, hellish rifts sprawl across the earth, and wails blend with roars into a maddening symphony.'}
+638	638		301							{3: 'The world tumbles from one collapse into the next.'}
+639	639		302							{2: 'Stop it, Nirvatia!', 3: '640'}
+640	640		401							{1: '2', 2: '1543'}
+641	641		201							{1: '1', 2: '501281', 3: '1'}
+642	642		203							{1: '1', 2: '1', 4: '-20', 5: '-100'}
+643	643		301							{1: '1', 3: 'The only response to that desperate cry is a sinister smile. Slowly, Nirvatia walks up to you and cups your face in her hands.'}
+644	644		301							"{2: 'Nirvatia', 3: ""Be patient now. I'll show you everything—"", 4: '1'}"
+645	645		301				DialogDisable			{2: 'Nirvatia', 3: 'About you, about me, about what happened before.', 4: '1'}
+646	646		202							{1: '1'}
+647	647		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+648	648		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+649	649		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+650	650		401							{1: '2', 2: '981'}
+651	651		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiSuperTowerShopRain/FxUiSuperTowerShopRain.prefab', 2: '2'}
+652	652		301			DialogEnable				{3: 'With her voice, sweet as honey, the world around you fades away, plunging you into darkness.'}
+653	653		301		1		AniZhuanchangBegin			{2: 'Nirvatia', 3: '...Gray Raven.'}

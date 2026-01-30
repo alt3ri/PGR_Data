@@ -1,0 +1,569 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory736.jpg'}
+2	2		401							{1: '1', 2: '5068'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab', 2: '2'}
+4	4		301			DialogEnable	AniZhuanchangBegin			{3: 'The next morning, just after dawn, the three of you set off from the village and begin your journey to the tribunal.'}
+5	5		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1322.jpg'}
+7	7		104							{1: '-220|-70|-360', 2: '0', 4: '3'}
+8	8		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront46.png', 3: '0', 4: '1', 5: '0'}
+9	9		502							{1: 'RImgBg1Shake2Loop'}
+10	10		401							{1: '2', 2: '5712'}
+11	11		301			AniZhuanchangEnd				"{3: ""Strangely enough, the journey doesn't feel so heavy, perhaps because of Beatrice, who sits in the back of the carriage, marveling at everything she sees.""}"
+12	12		201							{1: '1', 2: '501005'}
+13	13		301							"{1: '1', 2: 'Beatrice', 3: ""Miss Nirvatia, look! I didn't know there was such a big plain right over that hill!"", 4: '1'}"
+14	14		301							{2: 'Beatrice', 3: 'So the books were right. The world really is huge... we just lived in a tiny part of it.', 4: '1'}
+15	15		301							{3: 'Her excitement fades, and her voice softens.'}
+16	16		301							{2: 'Beatrice', 3: 'I really wish everyone at school could see this too.', 4: '1'}
+17	17		202							{1: '1'}
+18	18		301				DialogDisable			{3: 'At that moment, a pair of soft, pale hands rests gently on her back, guiding her to look farther ahead—'}
+19	19		402							{1: '5712'}
+20	20		505							{1: 'RImgBg1Shake2Loop'}
+21	21		502							{1: 'RImgBg1Shake2Disable'}
+22	22		104							{1: '0|0|-100', 2: '1.5', 4: '1'}
+23	23		104						1100.0	{1: '-220|-150|-360', 2: '1', 4: '3'}
+24	24		401							{1: '2', 2: '4276'}
+25	25		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+26	26		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1118.jpg'}
+27	27		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlinkNew.prefab', 2: '1'}
+28	28		301			DialogEnable				{3: 'A field of white narcissus spreads out before them, so vast it seems endless.'}
+29	29		301							"{3: '""How? How can a place so beautiful and pure, like something from a dream, really exist?""'}"
+30	30		301				DialogDisable			{3: 'Before her question can fully form, a calm and gentle voice responds.'}
+31	31		104							{1: '0|0|0', 2: '1.5', 4: '1'}
+32	32		104						1100.0	{1: '-220|-70|-360', 2: '1', 4: '3'}
+33	33		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlinkNew.prefab'}
+34	34		502							{1: 'RImgBg1Shake2Loop'}
+35	35		201							{1: '1', 2: '501281', 3: '1'}
+36	36		301			DialogEnable				{1: '1', 2: 'Nirvatia', 3: 'The narcissus plain... the white flower field. This place has been called many names.', 4: '1'}
+37	37		301							{2: 'Nirvatia', 3: 'When I was little, my mother used to tell me a legend: When kind people die, their souls return to a field of narcissus to live forever with their loved ones.', 4: '1'}
+38	38		301							{2: 'Nirvatia', 3: 'That place was like a dream. Eternal spring. No sorrow, no pain, no death.', 4: '1'}
+39	39		204							{1: '1', 2: '8'}
+40	40		301							{2: 'Nirvatia', 3: 'I believed in that legend with all my heart, until...', 4: '1'}
+41	41		301							"{3: ""But she doesn't finish her sentence. Beatrice, puzzled, softly picks up where Nirvatia left off.""}"
+42	42		203							{1: '1', 2: '0.25', 3: '400'}
+43	43		201							{1: '2', 2: '501005', 4: '-400'}
+44	44		301							{1: '1', 2: 'Beatrice', 3: 'Until when, Miss Nirvatia?', 4: '2'}
+45	45		204							{1: '1', 2: '1'}
+46	46		301							"{2: 'Nirvatia', 3: ""No... it's nothing. It doesn't matter anymore."", 4: '1'}"
+47	47		301							{3: 'Nirvatia lets out a small laugh and glances at you driving the carriage. You immediately understand what she wants.'}
+48	48		302							"{2: ""...I'll wait for you here."", 3: '49', 4: 'Go on.', 5: '49'}"
+49	49		204							{1: '1', 2: '9'}
+50	50		301				DialogDisable			{2: 'Nirvatia', 3: 'Thank you.', 4: '1'}
+51	51		202							{1: '1', 2: '2'}
+52	52		505							{1: 'RImgBg1Shake2Loop'}
+53	53		502							{1: 'RImgBg1Shake2Disable'}
+54	54		401							{1: '2', 2: '4636'}
+55	55		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront46.png', 3: '1', 4: '0', 5: '0.3'}
+56	56		104						350.0	{1: '0|0|0', 2: '0', 4: '3'}
+57	57		201							{1: '1', 2: '501281'}
+58	58		201							{1: '2', 2: '501005', 4: '-400'}
+59	59		203							{1: '1', 2: '1', 3: '200'}
+60	60		203						1050.0	{1: '2', 2: '1', 3: '-200'}
+61	61		202							{1: '1', 2: '2'}
+62	62		301			DialogEnable	DialogDisable			"{1: '1', 3: ""The carriage halts. Nirvatia takes Beatrice's hand and gently leads her into the field of flowers.""}"
+63	63		401						100.0	{1: '2', 2: '4798'}
+64	64		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront116.png', 4: '4'}
+65	65		104						100.0	{1: '1270|700|0', 2: '0', 4: '4'}
+66	66		104						600.0	{1: '-1480|-806|-1500', 2: '2.5', 4: '4'}
+67	67		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront106.png', 3: '0', 4: '1', 5: '0'}
+68	68		306							{1: '1'}
+69	69		401							{1: '2', 2: '967'}
+70	70		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlinkNew.prefab', 2: '1'}
+71	71		104						2050.0	{1: '0|-50|-100', 2: '2', 4: '3'}
+72	72		402							{1: '967'}
+73	73		101							{4: '4', 5: '1'}
+74	74		301			DialogEnable				{3: 'White petals drift through the clear air like snowflakes. The purple-haired girl reaches out and picks a single bloom.'}
+75	75		301							{3: 'She gazes at the delicate white bloom in her palm, then suddenly smiles.'}
+76	76		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlinkNew.prefab'}
+77	77		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront106.png', 3: '1', 4: '0', 5: '0'}
+78	78		306							
+79	79		201							{1: '1', 2: '501005'}
+80	80		301							{1: '1', 2: 'Beatrice', 3: 'Miss Nirvatia... I have an idea!', 4: '1'}
+81	81		301							"{2: 'Beatrice', 3: ""Let's make a flower crown with the narcissus! That way we can take them with us!"", 4: '1'}"
+82	82		301							{3: 'The girl holds up the flower, sketching the shape of a crown in the air in front of Nirvatia.'}
+83	83		301							"{3: ""She's sensed how much this place means to her teacher and tries, in her own small way, to create something that might become a memory Nirvatia can keep close.""}"
+84	84		301							"{2: 'Beatrice', 3: ""That way, once we're back in the carriage, we can look at the crown and remember the field."", 4: '1'}"
+85	85		203							{1: '1', 2: '0.25', 3: '-400'}
+86	86		201							{1: '2', 2: '501281', 3: '1', 4: '400'}
+87	87		301							{1: '1', 2: 'Nirvatia', 3: '...Okay.', 4: '2'}
+88	88		301				DialogDisable			"{2: 'Nirvatia', 3: ""Let's make one together."", 4: '2'}"
+89	89		401							{1: '2', 2: '13081710'}
+90	90		203						550.0	{1: '2', 2: '0.5', 3: '250'}
+91	91		203						550.0	{1: '2', 2: '0.5', 3: '250', 4: '-50'}
+92	92		301			DialogEnable	DialogDisable			"{3: 'Nirvatia bends down, bringing herself to the child\'s level, and begins picking the ""lucky"" flowers scattered among the sea of white.'}"
+93	93		302							{2: '...', 3: '94', 4: '(Silently watch them)', 5: '94'}
+94	94		401							{1: '2', 2: '13081710'}
+95	95		203						550.0	{1: '2', 2: '0.5', 3: '250'}
+96	96		203						550.0	{1: '2', 2: '0.5', 3: '400'}
+97	97		301			DialogEnable				{3: 'The girl notices you watching from a distance and rises to her feet.'}
+98	98		301							{2: 'Nirvatia', 3: 'Gray Raven, would you like to join us?', 4: '2'}
+99	99		204							{1: '2', 2: '10'}
+100	100		301				DialogDisable			"{2: 'Nirvatia', 3: ""It's fine. We've got plenty of time. A small delay—no one at the tribunal will even notice."", 4: '2'}"
+101	101		401							{1: '1', 2: '36'}
+102	102		202							{1: '1', 2: '2'}
+103	103		306							{1: '1'}
+104	104		401							{1: '2', 2: '4276'}
+105	105		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab', 2: '1', 5: '1'}
+106	106		511						350.0	{1: '1', 2: '0', 3: '315|75|-300'}
+107	107		201							{1: '1', 2: '501281', 3: '1'}
+108	108		401							{1: '1', 2: '6153'}
+109	109		301			DialogEnable				{1: '1', 3: 'In the endless field of white, the long-haired demon stands smiling. For some reason, you, the commander of the Iron Army, find something almost holy in the sight.'}
+110	110		301							"{3: ""You feel something strange... like you've met her before, somewhere beyond memory. And that you should answer her invitation.""}"
+111	111		301				DialogDisable			{3: 'So even though it makes no sense, something—duty, perhaps—compels you to accept, without hesitation.'}
+112	112		306							
+113	113		302							{2: '...Okay.', 3: '114', 4: '(Go up to her)', 5: '114'}
+114	114		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab', 5: '1'}
+115	115		401							{1: '2', 2: '1516'}
+116	116		203							{1: '1', 2: '0.5', 4: '-30', 5: '-100'}
+117	117		104						550.0	{1: '0|0|-100', 2: '0.5'}
+118	118		202							{1: '1'}
+119	119		401							{1: '2', 2: '2704'}
+120	120		301			DialogEnable	DialogDisable			{3: 'You take the flowers, smooth their stems, and weave them into the crown.'}
+121	121		401							{1: '2', 2: '2704'}
+122	122		104						550.0	{1: '0|-50|-100', 2: '0.5'}
+123	123		104						550.0	{1: '0|0|-100', 2: '0.5'}
+124	124		301			DialogEnable	AniZhuanchangBegin			{3: 'Then, the next flower.'}
+125	125		502						2000.0	{1: 'DialogDisable'}
+126	126		304			AniZhuanchangEnd				{1: '<i>One flower at a time, you and the demon work in wordless harmony, weaving the white flowers into a crown.</i>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-3', 10: '1'}
+127	127		304							{1: '<i>To any outsider, it would have seemed a miracle. Yet in that moment, it feels perfectly calm and ordinary.</i>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+128	128		304				AniZhuanchangBegin			"{1: ""<i>For the sake of one girl's wish, both of you set aside doubt and suspicion, working quietly toward a shared purpose.</i>"", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 9: '1', 10: '1'}"
+129	129		201							{1: '1', 2: '501005', 4: '-400'}
+130	130		201							{1: '2', 2: '501281', 4: '400'}
+131	131		502						2000.0	{1: 'DialogEnable'}
+132	132		301			AniZhuanchangEnd				"{1: '1', 2: 'Beatrice', 3: ""The last one... there! It's done!"", 4: '1'}"
+133	133		203						550.0	{1: '1', 2: '0.5', 3: '-300'}
+134	134		301				DialogDisable			"{3: ""The little girl lifts the finished crown, standing on tiptoe to place it atop Nirvatia's head.""}"
+135	135		401							{1: '2', 2: '13081710'}
+136	136		203						550.0	{1: '2', 2: '0.5', 3: '300'}
+137	137		203						550.0	{1: '2', 2: '0.5', 3: '300', 4: '-50'}
+138	138		401							{1: '2', 2: '2704'}
+139	139		301			DialogEnable				{3: 'Nirvatia bends down, feeling the soft weight and faint fragrance settle gently on her head.'}
+140	140		301							"{2: 'Beatrice', 3: ""It's so pretty!"", 4: '1'}"
+141	141		301							{2: 'Beatrice', 3: 'Gray Raven, you think so too, right?', 4: '1'}
+142	142		204							{1: '2', 2: '7'}
+143	143		301							{2: 'Nirvatia', 3: '...!', 4: '2'}
+144	144		306							{1: '1'}
+145	145		204							{1: '2', 2: '10'}
+146	146		301							{3: 'Nirvatia steadies the slightly tilting crown with her hand, staring at herself in disbelief.'}
+147	147		301							{3: 'Demons are said to be evil, soulless, and feed on human desire and souls...'}
+148	148		301							{3: 'Yet the shy and hopeful look on her face now makes it impossible to associate her with those words.'}
+149	149		301							{3: 'You feel your throat tighten, yet force yourself to form a reply.'}
+150	150		306							
+151	151		302							"{2: ""It's beautiful."", 3: '152', 4: 'Yes.', 5: '152'}"
+152	152		301							{2: 'Beatrice', 3: 'I knew it! I spent so long making it!', 4: '1'}
+153	153		301				DialogDisable			"{2: 'Beatrice', 3: ""The one for Miss Nirvatia is done, so now I'll make one for you, Gray Raven!"", 4: '1'}"
+154	154		202							{1: '1', 2: '2', 6: '1'}
+155	155		401							{1: '1', 2: '36'}
+156	156		401							{1: '2', 2: '2595'}
+157	157		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+158	158		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+159	159		307							{1: 'It all happens in an instant.', 3: '50'}
+160	160		309	1						{2: 'It all happens in an instant.'}
+161	161		307							{2: '1'}
+162	162		401							{1: '1', 2: '5041'}
+163	163		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+164	164		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1118.jpg'}
+165	165		201							{1: '1', 2: '501005'}
+166	166		401							{1: '2', 2: '2704'}
+167	167		203						550.0	{1: '1', 2: '0.5', 4: '-30'}
+168	168		401							{1: '2', 2: '10004001'}
+169	169		502						350.0	{1: 'PanelActor1Shake'}
+170	170		401							{1: '2', 2: '5321'}
+171	171		205						550.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0.5'}
+172	172		301			DialogEnable	DialogDisable			{1: '1', 3: 'Just as Beatrice bends down to pick another narcissus, an arrow shot from afar pierces through her neck.'}
+173	173		401							{1: '2', 2: '4044'}
+174	174		203						450.0	{1: '1', 2: '0.4', 4: '-100'}
+175	175		202							{1: '1'}
+176	176		401							{1: '2', 2: '2593'}
+177	177		205						550.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 3: '0', 4: '1', 5: '0.5'}
+178	178		301			DialogEnable	DialogDisable			{3: 'Her small, delicate body collapses soundlessly, splattering crimson across the white field.'}
+179	179		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0', 5: '0'}
+180	180		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 3: '1', 4: '0', 5: '0'}
+181	181		306							{1: '1'}
+182	182		401							{1: '2', 2: '1504'}
+183	183		201							{1: '1', 2: '500779', 4: '800'}
+184	184		201							{1: '2', 2: '500813', 4: '-800'}
+185	185		201							{1: '3', 2: '500342', 4: '700'}
+186	186		201							{1: '4', 2: '500624', 4: '-700'}
+187	187		203							{1: '1', 2: '0.4', 3: '600'}
+188	188		203							{1: '2', 2: '0.4', 3: '-600'}
+189	189		203							{1: '3', 2: '0.4', 3: '200'}
+190	190		203						450.0	{1: '4', 2: '0.4', 3: '-200'}
+191	191		301			DialogEnable				{1: '1', 3: 'You and Nirvatia spring to your feet as a mob armed with spears and pitchforks charges from the far end of the field, like a swarm of black hornets devouring a hive.'}
+192	192		301							{3: 'Their clothes and faces are all so familiar.'}
+193	193		306							
+194	194		202							{1: '1', 2: '2', 3: '3', 4: '4', 6: '1'}
+195	195		201							{1: '1', 2: '500779'}
+196	196		301			DialogShake				"{1: '1', 2: 'Demon Hunter', 3: ""Look! It's Lord Hanpa's enemies. They're right here!"", 4: '1'}"
+197	197		306							{1: '1'}
+198	198		301							{3: 'Yes, you had seen each other just yesterday.'}
+199	199		306							
+200	200		202							{1: '1'}
+201	201		301				DialogDisable			{3: 'In that instant, Nirvatia understands everything—why this is happening, and why she was hunted down after only months in the village.'}
+202	202		302							"{2: '""Demon Hunters""...', 3: '203'}"
+203	203		302							"{2: ""No. They're demon cultists disguised as hunters!"", 3: '204'}"
+204	204		401							{1: '1', 2: '5075'}
+205	205		401							{1: '2', 2: '1513'}
+206	206		201							{1: '1', 2: '501281', 3: '5', 4: '600'}
+207	207		201							{1: '2', 2: '500779'}
+208	208		203						350.0	{1: '1', 2: '0.3', 3: '300'}
+209	209		402							{1: '1513'}
+210	210		502							{1: 'PanelActor2Shake'}
+211	211		401							{1: '2', 2: '638'}
+212	212		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+213	213		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '2'}
+214	214		402							{1: '638'}
+215	215		202							{1: '2'}
+216	216		203						550.0	{1: '1', 2: '0.5'}
+217	217		301			DialogEnable				{1: '1', 3: 'Before you can draw your weapon, Nirvatia charges forward, tearing the archer cultist clean in half.'}
+218	218		301							{2: 'Nirvatia', 3: 'Why... would you...?', 4: '1'}
+219	219		301			RImgBg1Shake	DialogDisable			{2: 'Nirvatia', 3: 'Why would you attack a child?!', 4: '1'}
+220	220		401							{1: '2', 2: '5564'}
+221	221		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiRpgTowerMain3d/FxUiRpgTowerMain3d01.prefab', 2: '2'}
+222	222		401							{1: '2', 2: '2924'}
+223	223		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront80.png', 3: '0', 4: '1', 5: '0.4'}
+224	224		301			DialogEnable				{3: 'A terrifying wave of energy erupts from her body, purple light scattering with blood mist. For the first time, her true demonic form is revealed.'}
+225	225		204							{1: '1', 2: '2'}
+226	226		301			DialogShake				"{2: 'Nirvatia', 3: ""I'm going to kill you all!"", 4: '1'}"
+227	227		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiRpgTowerMain3d/FxUiRpgTowerMain3d01.prefab'}
+228	228		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront80.png', 3: '1', 4: '0', 5: '0.3'}
+229	229		401							{1: '2', 2: '9380062'}
+230	230		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+231	231		301							{3: 'The demon shackles that bound her moments ago crumble into metal dust, replaced by a massive scythe drawn from the void, rising high above the terrified mob.'}
+232	232		301							{3: 'All along, she could have broken free at any time.'}
+233	233		204							{1: '1', 2: '6'}
+234	234		301				DialogDisable			{2: 'Nirvatia', 3: 'I will never forgive you. Even in Hell, I will hunt your souls forever!', 4: '1'}
+235	235		202							{1: '1', 6: '1'}
+236	236		201							{1: '1', 2: '500813', 4: '600'}
+237	237		201							{1: '2', 2: '500342', 4: '0'}
+238	238		201							{1: '3', 2: '500624', 4: '-600'}
+239	239		401							{1: '2', 2: '638'}
+240	240		502							{1: 'RImgBg1Shake'}
+241	241		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+242	242		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '2'}
+243	243		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+244	244		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '2'}
+245	245		402							{1: '638'}
+246	246		502							{1: 'PanelActor1Shake'}
+247	247		502							{1: 'PanelActor2Shake'}
+248	248		502						400.0	{1: 'PanelActor3Shake'}
+249	249		301			DialogEnable	DialogDisable			{1: '1', 2: 'Cultists', 3: 'AARGHH—!!', 4: '1', 5: '2', 6: '3'}
+250	250		401							{1: '2', 2: '5321'}
+251	251		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+252	252		401							{1: '2', 2: '2593'}
+253	253		205						550.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0.5'}
+254	254		502							{1: 'PanelActor1Shake'}
+255	255		502							{1: 'PanelActor2Shake'}
+256	256		502						400.0	{1: 'PanelActor3Shake'}
+257	257		401							{1: '2', 2: '4044'}
+258	258		203							{1: '1', 2: '0.3', 3: '600', 4: '-50'}
+259	259		203							{1: '2', 2: '0.3', 3: '0', 4: '-50'}
+260	260		203						350.0	{1: '3', 2: '0.3', 3: '-600', 4: '-50'}
+261	261		202							{1: '1', 2: '2', 3: '3'}
+262	262		301			DialogEnable				{3: 'The scythe swings down with a thunderous crash, tearing through bodies. Their heads burst like ripe fruit, spraying red across the ground.'}
+263	263		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0', 5: '0'}
+264	264		201							{1: '1', 2: '501281', 3: '2'}
+265	265		301			DialogShake				{1: '1', 2: 'Nirvatia', 3: 'Across all Three Realms, there will never be a place for your souls to rest!', 4: '1'}
+266	266		401							{1: '2', 2: '970804'}
+267	267		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+268	268		301							{3: 'After cutting down several cultists, she draws back her scythe, then slowly raises it again and advances toward the next group.'}
+269	269		301							{2: 'Nirvatia', 3: '...None of you deserve to live.', 4: '1'}
+270	270		204							{1: '1', 2: '8'}
+271	271		301							{2: 'Nirvatia', 3: 'You gave your faith to demons, buried your conscience and reason, and sinned willingly for that foolish bird-headed god...', 4: '1'}
+272	272		204							{1: '1', 2: '2'}
+273	273		301							"{2: 'Nirvatia', 3: ""Since you all share the same sin, I'll send you all to Hell."", 4: '1'}"
+274	274		302							{2: 'Nirvatia, stop—!', 3: '275'}
+275	275		401							{1: '2', 2: '4331'}
+276	276		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+277	277		104							{1: '0|0|-100', 2: '0.5'}
+278	278		203						550.0	{1: '1', 2: '0.5', 5: '-100'}
+279	279		306							{1: '1'}
+280	280		301							{3: 'You realize Beatrice was never their real target. You fight through the chaos, desperate to pull Nirvatia back from her rage.'}
+281	281		301							{3: 'Yes. Those cultists were far too conspicuous, deliberately provoking her. They were pawns, sacrificial pieces set up by someone else.'}
+282	282		306							
+283	283		202							{1: '1', 6: '1'}
+284	284		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+285	285		401							{1: '2', 2: '4221'}
+286	286		502						400.0	{1: 'RImgBg1Shake'}
+287	287		401							{1: '2', 2: '13081710'}
+288	288		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+289	289		301							{3: 'A sudden clang echoes behind. Years of battle instinct take over. You spin, weapon raised, aiming into the unknown.'}
+290	290		302							{2: '(Turn around)', 3: '291'}
+291	291		401							{1: '2', 2: '13081710'}
+292	292		401							{1: '2', 2: '4895'}
+293	293		201							{1: '1', 2: '501426'}
+294	294		301			AniZhuanchangEnd				{1: '1', 2: '??', 3: 'A pleasure to meet you, Commander of the Iron Army.', 4: '1'}
+295	295		202							{1: '1'}
+296	296		401							{1: '2', 2: '4276'}
+297	297		501						350.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab', 2: '3'}
+298	298		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab'}
+299	299		201							{1: '1', 2: '500721'}
+300	300		301							{1: '1', 3: 'The white beak of his mask gleams under the sun, an ominous light amid the sea of flowers.'}
+301	301		301				DialogDisable			"{2: 'Hanpa', 3: ""There's no time to explain, so I'll cut to the chase: My apologies, but for the sake of our grand design, I'll have to ask you to die quickly."", 4: '1'}"
+302	302		202							{1: '1', 6: '1'}
+303	303		401							{1: '1', 2: '36'}
+304	304		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+305	305		401							{1: '2', 2: '5321'}
+306	306		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+307	307		401							{1: '2', 2: '2593'}
+308	308		205						1550.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgCg/Cg3002_03.jpg', 3: '0', 4: '1', 5: '1.5'}
+309	309		205							{1: '1005'}
+310	310		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_03.jpg'}
+311	311		301			DialogEnable	AniZhuanchangBegin			{3: '—!'}
+312	312		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1118.jpg'}
+313	313		401							{1: '1', 2: '12'}
+314	314		201							{1: '1', 2: '501281', 3: '7'}
+315	315		301			AniZhuanchangEnd	DialogDisable			{1: '1', 3: 'Bathed in a downpour of blood, Nirvatia snaps out of her frenzy at the sound behind her.'}
+316	316		306							{1: '1'}
+317	317		202							{1: '1'}
+318	318		104						1050.0	{1: '0|50|-150', 2: '1'}
+319	319		301			DialogEnable	DialogDisable			{3: 'She lifts her head. Her eyes cut through the field of corpses and see a sight that shatters her heart once more.'}
+320	320		201							{1: '1', 2: '500678', 4: '-200'}
+321	321		201							{1: '2', 2: '500721', 4: '200'}
+322	322		502						350.0	{1: 'PanelActor1Shake'}
+323	323		401							{1: '2', 2: '4044'}
+324	324		203						1050.0	{1: '1', 2: '1', 3: '-200', 4: '-80'}
+325	325		202							{1: '1'}
+326	326		301			DialogEnable				"{1: '1', 3: ""Gray Raven's body falls to the ground, and the man responsible for it all stands laughing before her.""}"
+327	327		306							
+328	328		203						350.0	{1: '2', 2: '0.3'}
+329	329		301				DialogDisable			"{2: 'Hanpa', 3: ""At last, I've done it, Nirvatia. I've proven my loyalty to Hell, and cleansed myself of the disgrace you branded me with."", 4: '2'}"
+330	330		401							{1: '2', 2: '5321'}
+331	331		203						350.0	{1: '2', 2: '0.3', 4: '-50'}
+332	332		203						350.0	{1: '2', 2: '0.3'}
+333	333		401							{1: '2', 2: '1505'}
+334	334		301			DialogEnable				"{3: ""Hanpa slowly pulls his blade from Gray Raven's body, flicking away the blood.""}"
+335	335		301							"{2: 'Hanpa', 3: ""How long has it been? Centuries? Since that day in the bar, the day you tricked me and cast me out. I've dreamed of seeing you like this."", 4: '2'}"
+336	336		301							{2: 'Hanpa', 3: 'And now that I finally have, every moment of waiting was worth it.', 4: '2'}
+337	337		301							{2: 'Hanpa', 3: 'Because seeing that look on your face—it feels incredible! Hahahaha!', 4: '2'}
+338	338		202							{1: '2', 6: '1'}
+339	339		201							{1: '1', 2: '501281', 3: '15'}
+340	340		301							{1: '1', 2: 'Nirvatia', 3: '...', 4: '1'}
+341	341		306							{1: '1'}
+342	342		301			PanelActor1Shake				{3: 'At his words, Nirvatia realizes her hands are trembling uncontrollably.'}
+343	343		301							{3: 'She no longer knows what expression she wears, only that her grief has numbed her completely.'}
+344	344		306							
+345	345		204							{1: '1', 2: '17'}
+346	346		301							{2: 'Nirvatia', 3: '...Is this where my path as a demon has led me? Is this the end I chose for myself?', 4: '1'}
+347	347		204							{1: '1', 2: '16'}
+348	348		301							{2: 'Nirvatia', 3: 'Beatrice... Gray Raven... did my choices doom them to this?', 4: '1'}
+349	349		202							{1: '1'}
+350	350		301							{3: 'Her dazed murmur draws another burst of maniacal laughter from Hanpa.'}
+351	351		201							{1: '1', 2: '500721'}
+352	352		301			DialogShake				{1: '1', 2: 'Hanpa', 3: 'How would I possibly know!', 4: '1'}
+353	353		301							{2: 'Hanpa', 3: 'All I know is that demons like us are destined to tear each other apart.', 4: '1'}
+354	354		301				DialogDisable			{2: 'Hanpa', 3: 'And this time, you lost, to your weakness, your stupidity. Just like I once did.', 4: '1'}
+355	355		202							{1: '1', 6: '1'}
+356	356		401							{1: '1', 2: '36'}
+357	357		104						550.0	{1: '0|-100|-200', 2: '0.5'}
+358	358		205						1850.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory460.jpg', 3: '0', 4: '1', 5: '1.8'}
+359	359		401							{1: '1', 2: '358'}
+360	360		205							{1: '1005'}
+361	361		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory460.jpg'}
+362	362		301			DialogEnable				{3: 'Suddenly, the sky darkens. A thick, suffocating darkness spreads across the heavens.'}
+363	363		401							{1: '2', 2: '559'}
+364	364		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTempleBattle/FxUiTempleBattleFly02.prefab', 2: '2'}
+365	365		301				DialogDisable			{3: 'Nirvatia looks up. A blazing beam of light shoots skyward, streaking across the sky like a falling star.'}
+366	366		205						1850.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgCg/Cg3401_06.jpg', 3: '0', 4: '1', 5: '1.8'}
+367	367		205							{1: '1005'}
+368	368		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3401_06.jpg'}
+369	369		401							{1: '2', 2: '5812'}
+370	370		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab', 2: '2'}
+371	371		502						500.0	{1: 'RImgBg1Shake'}
+372	372		301			DialogEnable	AniZhuanchangBegin			{3: 'At the far end of its arc, a grand cathedral shatters into stardust, raining across the land.'}
+373	373		502						50.0	{1: 'DialogDisable'}
+374	374		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab'}
+375	375		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+376	376		402						2000.0	{1: '4359'}
+377	377		307			AniZhuanchangEnd				"{1: ""It's the Halo Cannon."", 3: '80'}"
+378	378		309	1						"{2: ""It's the Halo Cannon.""}"
+379	379		307							{2: '1'}
+380	380		304							{1: 'In a distant part of the continent...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-3', 10: '1'}
+381	381		304							{1: '...Ashlar, Vice Commander of the Iron Army, betrays humanity...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-1', 10: '1'}
+382	382		304							{1: '...Joining the Lord of Death to unleash the ultimate weapon housed within the Halo Fortress.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-1', 10: '1'}
+383	383		304							{1: 'From that moment, the Three Great Laws collapse, and night itself ceases to exist.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-1', 8: '1', 10: '1'}
+384	384		304							"{1: ""In the chaos that follows, Hell's Ferryman falls..."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-3', 10: '1'}"
+385	385		304							{1: '...The Cardinal Deity perishes within the cocoon...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-1', 10: '1'}
+386	386		304							{1: '...And Mammon walks willingly into eternal illusion.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-1', 9: '1', 10: '1'}
+387	387		401							{1: '2', 2: '5961'}
+388	388		307							{1: 'This, right now, is the final night before endless daylight.', 3: '55'}
+389	389		309	1						{2: 'This, right now, is the final night before endless daylight.'}
+390	390		307				AniZhuanchangBegin			{2: '1'}
+391	391		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1118.jpg'}
+392	392		502							{1: 'DialogEnable'}
+393	393		401							{1: '2', 2: '5892'}
+394	394		306							{1: '1'}
+395	395		301			AniZhuanchangEnd				"{3: ""The field is silent, yet she seems to hear countless voices cheering and crying out in awe. It's as if she can see all the hope and longing carried by that blazing star as it rises into the heavens under the gaze of the world.""}"
+396	396		301				DialogDisable			{3: 'But all she can do is stand there and watch.'}
+397	397		306							
+398	398		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+399	399		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+400	400		402							{1: '5892'}
+401	401		307							"{1: '<i>""That forbidden slaughter stole death from this world, leaving only the endless sorrows of life.""</i>', 3: '50'}"
+402	402		309	1						"{2: '<i>""That forbidden slaughter stole death from this world, leaving only the endless sorrows of life.""</i>'}"
+403	403		307							{2: '1'}
+404	404		401							{1: '2', 2: '5813'}
+405	405		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+406	406		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_28.jpg'}
+407	407		301			DialogEnable	DialogDisable			{3: 'She sees countless lives wither beneath the darkened sky, drifting slowly into the embrace of the River Styx.'}
+408	408		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+409	409		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+410	410		307							"{1: '<i>""We mourn, for Dawn rules the earth with tyranny. Bloodstains form scars across the sky, declaring the death of night.""</i>', 3: '50'}"
+411	411		309	1						"{2: '<i>""We mourn, for Dawn rules the earth with tyranny. Bloodstains form scars across the sky, declaring the death of night.""</i>'}"
+412	412		307							{2: '1'}
+413	413		401							{1: '2', 2: '5813'}
+414	414		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+415	415		101						350.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1118.jpg'}
+416	416		401							{1: '2', 2: '841'}
+417	417		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLianyi.prefab', 2: '2'}
+418	418		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab', 2: '2'}
+419	419		301			DialogEnable	DialogDisable			{3: 'She tightens her grip on the scythe. Fresh blood drips down the iron shaft, falling into the flower field below.'}
+420	420		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab'}
+421	421		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+422	422		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+423	423		307							"{1: '<i>""We weep, for the Angels see us as dogs and judge the world\'s wounds by the bones of the Living Dead.""</i>', 3: '50'}"
+424	424		309	1						"{2: '<i>""We weep, for the Angels see us as dogs and judge the world\'s wounds by the bones of the Living Dead.""</i>'}"
+425	425		307							{2: '1'}
+426	426		401							{1: '1', 2: '36'}
+427	427		401							{1: '2', 2: '5813'}
+428	428		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+429	429		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1118.jpg'}
+430	430		401							{1: '2', 2: '555'}
+431	431		502						500.0	{1: 'RImgBg1Shake'}
+432	432		301			DialogEnable				"{3: ""Moments later, the shooting star that carried the Scorched Borderland's final hope crashes to earth, vanishing back into the dark like a dying spark in the night.""}"
+433	433		401							{1: '1', 2: '12'}
+434	434		201							{1: '1', 2: '501281', 3: '8'}
+435	435		301							{1: '1', 2: 'Nirvatia', 3: 'Hanpa... I understand now.', 4: '1'}
+436	436		204							{1: '1', 2: '10'}
+437	437		301							{2: 'Nirvatia', 3: 'All of this happened because the Lord of Death wanted to witness the end.', 4: '1'}
+438	438		301							{3: 'She bites her lip, forcing herself to find meaning in the chaos unfolding before her.'}
+439	439		201							{1: '1', 2: '500721'}
+440	440		301							"{1: '1', 2: 'Hanpa', 3: ""No, Nirvatia. You and I are not worthy to guess the Lord of Death's will. I simply acted before you did, clearing away anything that might stand in the lord's path."", 4: '1'}"
+441	441		301							{2: 'Hanpa', 3: 'The slaying of the Cardinal Deity is part of a grand design, one meant to forge a new world. Beings like us were never meant to understand it.', 4: '1'}
+442	442		401							{1: '2', 2: '970804'}
+443	443		203						350.0	{1: '1', 2: '0.3', 4: '-50'}
+444	444		203						350.0	{1: '1', 2: '0.3'}
+445	445		301							{3: 'The demon raises his blood-stained blade once more, pointing it toward the girl standing amid the narcissus field.'}
+446	446		301							{2: 'Hanpa', 3: 'But on the train to that new world, there is no seat reserved for you.', 4: '1'}
+447	447		301				AniZhuanchangBegin			{2: 'Hanpa', 3: 'Nirvatia, your story ends here, before the new era begins.', 4: '1'}
+448	448		202							{1: '1'}
+449	449		101						2000.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_05.jpg'}
+450	450		301			AniZhuanchangEnd				{2: 'Nirvatia', 3: '...', 4: '1'}
+451	451		301							{3: 'She keeps her head high and says nothing, her eyes fixed on the streams of light slowly descending at the edge of the sky.'}
+452	452		205						1550.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgCg/Cg5701_04.jpg', 3: '0', 4: '1', 5: '1.5'}
+453	453		205							{1: '1005'}
+454	454		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_04.jpg'}
+455	455		301							{3: 'The time has come, she thought to herself.'}
+456	456		301				AniZhuanchangBegin			{3: 'She knows she must end this chain of consequences with her own hands.'}
+457	457		502						500.0	{1: 'DialogDisable'}
+458	458		401							{1: '1', 2: '36'}
+459	459		101						2500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+460	460		401							{1: '1', 2: '357'}
+461	461		401							{1: '2', 2: '913'}
+462	462		111			AniZhuanchangEnd			500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+463	463		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+464	464		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+465	465		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiRpgTowerMain3d/FxUiRpgTowerMain3d01.prefab', 2: '2'}
+466	466		301			DialogEnable				{3: 'The murmur of running water fills your ears. A strange, sweet scent rises, washing away the heavy stench of blood in the air.'}
+467	467		401							{1: '2', 2: '2704'}
+468	468		301							{3: 'Your cold body feels slender fingers brushing your cheek. The sweetness of death seeps through your veins as your shattered figure begins to fall into the River Styx.'}
+469	469		301				DialogDisable			{3: 'Yet your soul refuses to close its eyes. You force them open, determined to see the world one last time.'}
+470	470		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+471	471		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+472	472		302							{2: '...', 3: '473', 4: '(Open eyes)', 5: '473'}
+473	473		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiRpgTowerMain3d/FxUiRpgTowerMain3d01.prefab'}
+474	474		402							{1: '913'}
+475	475		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1118.jpg'}
+476	476		104							{1: '0|50|-100', 2: '0'}
+477	477		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0'}
+478	478		201							{1: '1', 2: '501281', 3: '16', 5: '-50', 6: '-100', 7: '1'}
+479	479		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+480	480		301			DialogEnable				"{1: '1', 3: ""You open your eyes and find yourself cradled in the demon girl's arms. In Nirvatia's eyes lies an unfathomable sorrow.""}"
+481	481		301							"{2: 'Nirvatia', 3: ""You're badly hurt."", 4: '1'}"
+482	482		204							{1: '1', 2: '17'}
+483	483		301							"{2: 'Nirvatia', 3: ""Don't be afraid, don't cry. It's all over now."", 4: '1'}"
+484	484		204							{1: '1', 2: '16'}
+485	485		301				DialogDisable			"{2: 'Nirvatia', 3: ""This is the price I brought upon us. I'll bear it with you."", 4: '1'}"
+486	486		302							{2: '(Try to sit up)', 3: '487'}
+487	487		202							{1: '1', 6: '1'}
+488	488		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+489	489		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+490	490		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+491	491		104						850.0	{1: '0|80|-100', 2: '0.8'}
+492	492		104						550.0	{1: '0|50|-100', 2: '0.5'}
+493	493		401							{1: '2', 2: '4044'}
+494	494		301			DialogEnable				"{3: ""But your body is far too heavy. No matter how hard you try, it won't move.""}"
+495	495		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+496	496		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+497	497		201							{1: '1', 2: '501281', 3: '16', 5: '-50', 6: '-100'}
+498	498		301							{1: '1', 2: 'Nirvatia', 3: 'Please, stay still.', 4: '1'}
+499	499		301							"{2: 'Nirvatia', 3: ""I'm sorry... I can't change what's happened, but I can try to make it hurt less..."", 4: '1'}"
+500	500		302							{2: '(So this is it... the end has finally come.)', 3: '501'}
+501	501		301							{3: 'But even as that thought settles in, another feeling rises: a strong resolve.'}
+502	502		302							{2: '(Then I need to tell her... while I still can.)', 3: '503'}
+503	503		301							{3: 'You summon what little clarity remains in your fading mind, forcing your dying body to steal a few more moments of life.'}
+504	504		302							"{2: ""Nirvatia, listen carefully. I'm giving you my heart."", 3: '505'}"
+505	505		301				DialogDisable			{2: 'Nirvatia', 3: '...?', 4: '1'}
+506	506		302							"{2: ""I don't want you to spend the rest of your life trapped in hatred and bloodshed."", 3: '507'}"
+507	507		302							"{2: ""<size=31>Humans use dreamcatchers to find demons without hearts. \\nBut from now on, you'll be free to walk among them.</size>"", 3: '508'}"
+508	508		302							{2: 'Nirvatia... from this moment, you are human.', 3: '509'}
+509	509		302							{2: 'Go find what truly calls to you. Find a new purpose.', 3: '510'}
+510	510		301			DialogEnable				{2: 'Nirvatia', 3: '...Ah.', 4: '1'}
+511	511		301							{3: 'Her broken voice sounds like a sob.'}
+512	512		301							{2: 'Nirvatia', 3: 'Gray Raven, please... stay with me...', 4: '1'}
+513	513		301							{3: 'Crystalline tears stream down her cheeks, each drop falling onto the gaping wound across your chest.'}
+514	514		204							{1: '1', 2: '17'}
+515	515		301							"{2: 'Nirvatia', 3: ""Now I finally understand... what this world can't afford to lose are humans like you."", 4: '1'}"
+516	516		204							{1: '1', 2: '16'}
+517	517		301							{2: 'Nirvatia', 3: 'I used to despise this world. But because of you, because people like you exist, I began to believe that maybe I could become someone better by following your example.', 4: '1'}
+518	518		301							{2: 'Nirvatia', 3: 'I tried to imitate you, to be a hero, to give without expecting anything in return... but I could never truly become you.', 4: '1'}
+519	519		301							{2: 'Nirvatia', 3: 'And because of my clumsy imitation, you and Beatrice became the price of my failure...', 4: '1'}
+520	520		401							{1: '2', 2: '13081710'}
+521	521		203						550.0	{1: '1', 2: '0.5', 4: '-50', 5: '-200'}
+522	522		301							{3: 'She tightens her arms around you, holding you close.'}
+523	523		204							{1: '1', 2: '17'}
+524	524		301			PanelActor1Shake				"{2: 'Nirvatia', 3: ""Please, don't go. This world needs you. Only people like you can keep what little justice is left..."", 4: '1'}"
+525	525		302							"{2: ""Then you'll have to become one of those people, Nirvatia."", 3: '526'}"
+526	526		204							{1: '1', 2: '16'}
+527	527		301				DialogDisable			{3: 'She freezes in place.'}
+528	528		302							{2: '<size=31>I remember what you asked me... how can someone \\nchange the nature of their soul?</size>', 3: '529'}
+529	529		302							{2: 'Nirvatia, in my eyes, your soul was never touched by darkness.', 3: '530'}
+530	530		302							"{2: ""<size=31>Whether you are human or demon isn't for the Sanctuary \\nto decide. It's your choice.</size>"", 3: '531'}"
+531	531		302							{2: '<size=31>Once you have this heart, go find the answer, the one worth \\ndevoting your life to.</size>', 3: '532'}
+532	532		204							{1: '1', 2: '7'}
+533	533		502							{1: 'DialogEnable'}
+534	534		301			DialogShake				{2: 'Nirvatia', 3: '...Why me?', 4: '1'}
+535	535		301							{3: 'Nirvatia grips your hand tightly, her voice breaking as she asks.'}
+536	536		204							{1: '1', 2: '16'}
+537	537		301							{2: 'Nirvatia', 3: 'Gray Raven, there are so many who trust you, so many willing to follow you through anything...', 4: '1'}
+538	538		301							"{2: 'Nirvatia', 3: ""Why give your heart to me, a demon you've barely met?"", 4: '1'}"
+539	539		302							"{2: ""Because I think you're worthy."", 3: '540', 4: 'Because right now, the one standing before me is you.', 5: '540', 6: ""...I don't understand it either."", 7: '540'}"
+540	540		301							"{2: 'Nirvatia', 3: ""So you're leaving everything to me? All your fate, all your burden?"", 4: '1'}"
+541	541		204							{1: '1', 2: '17'}
+542	542		301				DialogDisable			"{2: 'Nirvatia', 3: ""That's such a cruel thing to say."", 4: '1'}"
+543	543		204							{1: '1', 2: '4'}
+544	544		203						550.0	{1: '1', 2: '0.5', 4: '-70', 5: '-200'}
+545	545		301			DialogEnable				{3: 'She lowers her head, lets out a sigh, and presses a soft kiss to your brow.'}
+546	546		301				DialogDisable			"{2: 'Nirvatia', 3: ""Fine, Gray Raven. I'll take your heart, and carry your fate."", 4: '1'}"
+547	547		202							{1: '1', 6: '1'}
+548	548		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '0'}
+549	549		401							{1: '2', 2: '5813'}
+550	550		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+551	551		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_04.jpg', 4: '4'}
+552	552		504							{1: '0.7'}
+553	553		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+554	554		304							"{1: ""<color=#ffffffff><size=50><i>I'll follow in your footsteps...</i></size></color>"", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-3', 10: '1'}"
+555	555		304							{1: '<color=#ffffffff><size=50><i>Tend to your wounds...</i></size></color>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+556	556		304				AniZhuanchangBegin			{1: '<color=#ffffffff><size=50><i>And bear witness to your legend...</i></size></color>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 9: '1', 10: '1'}
+557	557		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+558	558		504							{1: '0'}
+559	559		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1118.jpg', 4: '4'}
+560	560		201							{1: '1', 2: '501281', 3: '16', 5: '-70', 6: '-200'}
+561	561		502							{1: 'DialogEnable'}
+562	562		301			AniZhuanchangEnd				"{1: '1', 2: 'Nirvatia', 3: ""But don't think you can just leave me behind."", 4: '1'}"
+563	563		301							{3: 'Her soft fingers brush across your face as she gently closes your eyes.'}
+564	564		204							{1: '1', 2: '17'}
+565	565		301							{2: 'Nirvatia', 3: 'No matter how deep the River Styx runs, or how many stones lie beneath it...', 4: '1'}
+566	566		204							{1: '1', 2: '4'}
+567	567		301							{2: 'Nirvatia', 3: 'I will bring you back from the world of the dead, no matter what it costs.', 4: '1'}
+568	568		301		1		AniZhuanchangBegin			{2: 'Nirvatia', 3: 'No matter how long it takes.', 4: '1'}

@@ -1,0 +1,157 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_19.jpg'}
+2	2		401							{1: '1', 2: '379'}
+3	3		401							{1: '2', 2: '561'}
+4	4		301			DialogEnable				{3: 'CLANG—'}
+5	5		301							{3: 'The rust-covered iron bars clash together with a harsh, metallic screech.'}
+6	6		211							{1: '1', 2: '1021015', 3: '2'}
+7	7		301							{3: 'Lamia is thrown into the cell, stripped of the clothes that once marked her as a servant of the Temple.'}
+8	8		301							{3: 'Rough iron chains bind her limbs, leaving dark red marks where they cut into her flesh. The priestess crouches down to meet the eyes of Lamia, who lies crumpled on the ground with a cold and menacing look on her face.'}
+9	9		301				DialogDisable			{3: 'But Lamia remains oblivious, her mind completely consumed by what happened at the pool.'}
+10	10		212							{1: '1', 6: '1'}
+11	11		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory557.jpg', 3: 'Flashback'}
+12	12		401							{1: '2', 2: '4158'}
+13	13		301			DialogEnable				{3: 'Whoosh—'}
+14	14		301							{3: 'Amidst a rush of rustling sounds, Lamia is dragged out of the pool.'}
+15	15		211							{1: '1', 2: '1021023', 3: '1'}
+16	16		301							{1: '1', 2: 'Lamia', 3: 'Huff... huff... puff...', 4: '101', 18: '100003865', 19: '1', 21: 'v211lamiya'}
+17	17		301							"{3: ""Gasping for air, Lamia tries to speak, only to be met with the shocked and furious looks on the priestess' and the guards' faces.""}"
+18	18		301							{3: 'At that moment, a shiver creeps down her neck as the ritual dagger is pressed against her skin, ready to draw blood at any second.'}
+19	19		302							{2: 'Step back and let us leave.', 3: '20'}
+20	20		211							{1: '1', 2: '1021014', 3: '3'}
+21	21		301							"{1: '1', 2: 'Priestess', 3: ""That's impossible!"", 4: '101', 18: '100003866', 19: '1', 21: 'v211lamiya'}"
+22	22		301							"{3: ""At the priestess' angry command, the surrounding guards move to advance.""}"
+23	23		302							{2: '(Apply force)', 3: '24'}
+24	24		211							{1: '1', 2: '1021023', 3: '1'}
+25	25		301							{1: '1', 2: 'Lamia', 3: 'Uh...', 4: '101', 18: '100003867', 19: '1', 21: 'v211lamiya'}
+26	26		301							{3: 'A cold sensation emerges from her neck and slowly trickles downward.'}
+27	27		211							{1: '1', 2: '1021014', 3: '3'}
+28	28		301							{1: '1', 2: 'Priestess', 3: 'Stop!', 4: '101', 18: '100003868', 19: '1', 21: 'v211lamiya'}
+29	29		301							{3: 'The command seems directed both at the human and the guards, causing everyone to freeze in place.'}
+30	30		302							{2: 'Good, now step back.', 3: '31'}
+31	31		301							"{3: ""With it, the person leans close to Lamia's ear to whisper, their breath tickling against her skin.""}"
+32	32		302							{2: 'How much do you remember?', 3: '33'}
+33	33		211							{1: '1', 2: '1021023', 3: '1'}
+34	34		301							"{1: '1', 2: 'Lamia', 3: ""I... I don't know..."", 4: '101', 18: '100003869', 19: '1', 21: 'v211lamiya'}"
+35	35		302							"{2: ""Seems like you're going to need more time..."", 3: '36'}"
+36	36		212							{1: '1'}
+37	37		301				DialogDisable			{3: 'Keeping hold of Lamia, the person begins to back away.'}
+38	38		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_19.jpg', 3: 'End of Flashback'}
+39	39		211							{1: '1', 2: '1021014', 3: '2', 4: '400', 7: '1'}
+40	40		211							{1: '2', 2: '1021015', 4: '-400', 7: '1'}
+41	41		301			DialogEnable				{1: '1', 2: 'Priestess', 3: 'The Temple is very disappointed in you, Lamia.', 4: '101', 18: '100003870', 19: '1', 21: 'v211lamiya'}
+42	42		301							"{2: 'Priestess', 3: ""There's still some time before the ritual begins anew. You'd better pray the Temple captures the offering—or else you'll be up next."", 4: '101', 18: '100003871', 19: '1', 21: 'v211lamiya'}"
+43	43		212							{1: '1', 6: '1'}
+44	44		213							{1: '2', 2: '0.25', 3: '0', 4: '0', 5: '0'}
+45	45		301							{3: 'The priestess speaks with cold indifference and takes a step back. When she gestures behind her, a small figure emerges from the shadows.'}
+46	46		301							"{3: ""Lamia's eyes widen in disbelief at the figure before her. As her memories materialize into reality, her consciousness, already fragmented to begin with, grows even more brittle.""}"
+47	47		213							{1: '2', 2: '0.25', 3: '-400', 4: '0', 5: '0'}
+48	48		211							{1: '1', 2: '1021019', 3: '1', 4: '400', 7: '1'}
+49	49		301							"{1: '1', 2: 'Little Lamia', 3: ""I can't wrap my head around your decision... Why would you do that?"", 4: '101', 18: '100003872', 19: '1', 21: 'v211lamiya'}"
+50	50		301							{2: 'Little Lamia', 3: 'People are going to go hungry if you do this. The storm is going to continue, and a lot of people in the village are going to die.', 4: '101', 18: '100003873', 19: '1', 21: 'v211lamiya'}
+51	51		301							"{2: 'Little Lamia', 3: ""You don't want to protect anyone or your home, or..."", 4: '101', 18: '100003874', 19: '1', 21: 'v211lamiya'}"
+52	52		212							{1: '1', 2: '2', 6: '1'}
+53	53		301				DialogDisable			{3: 'With this childlike utterance, the chain of memories once interrupted by the priestess resumes.'}
+54	54		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory557.jpg', 3: 'Flashback'}
+55	55		301			DialogEnable				{3: 'With the ritual dagger pressed against her neck, Lamia backs away step by step under the watchful eyes of the priestess and her guards.'}
+56	56		211							{1: '1', 2: '1021023', 3: '1'}
+57	57		301							"{1: '1', 2: 'Lamia', 3: ""Please, 【kuroname】... let me go... I'm not... I'm not going to hurt you again."", 4: '101', 18: '100003875', 19: '1', 21: 'v211lamiya'}"
+58	58		301							{2: 'Lamia', 3: 'I just... I just want to protect my home...', 4: '101', 18: '100003876', 19: '1', 21: 'v211lamiya'}
+59	59		302							"{2: ""This isn't your home, Lamia."", 3: '60'}"
+60	60		301							{3: 'The voice coming from behind her is tinged with resignation and weariness.'}
+61	61		301							"{2: 'Lamia', 3: ""If this isn't... my home, then where is it?"", 4: '101', 18: '100003877', 19: '1', 21: 'v211lamiya'}"
+62	62		301							{3: 'Like many others who have stayed here, she can sense the truth behind the veil of her memories—but instead of pursuing it, she chooses to convince herself to forget it.'}
+63	63		301							{3: '...For there is nothing to be had even if the truth is reached.'}
+64	64		302							{2: '...', 3: '65'}
+65	65		302							{2: 'An island embraced by the sea.', 3: '66'}
+66	66		302							{2: 'A temple adorned with gold, silver, brass, and ivory.', 3: '67'}
+67	67		302							{2: 'They worship a deity whose totem is the trident.', 3: '68'}
+68	68		302							{2: 'Floodwaters that are ready to breach the shore at any moment.', 3: '69'}
+69	69		302							{2: 'Does this sound familiar, Lamia...', 3: '70'}
+70	70		301							{3: 'The question leaves Lamia speechless. Her mouth opens as if to speak, but the words stop at the tip of her tongue, refusing to come out.'}
+71	71		302							{2: 'Lamia, do you remember the name of this city?', 3: '72'}
+72	72		301							{3: 'Such a simple question, yet Lamia grows increasingly anxious, with her face growing sweatier by every second.'}
+73	73		301							"{3: ""Lamia is surprised by how her thoughts are both sluggish and racing, as much as she's amazed that she still has the presence of mind to notice such a detail.""}"
+74	74		301							{3: 'B-but... why am I sweating?'}
+75	75		301				DialogDisable			{3: 'The only liquid I should be sweating... is condensation liquid, right?'}
+76	76		212							{1: '1', 6: '1'}
+77	77		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_19.jpg', 3: 'End of Flashback'}
+78	78		301			DialogEnable				"{3: ""Everything becomes clear to Lamia as she raises her head to meet the person's gaze.""}"
+79	79		211							{1: '1', 2: '1021019', 3: '1'}
+80	80		301							"{1: '1', 2: 'Little Lamia', 3: ""You don't want to protect anyone or your home, or..."", 4: '101', 18: '100003878', 19: '1', 21: 'v211lamiya'}"
+81	81		301							{3: 'Lamia and the child before her utter the name in perfect unison.'}
+82	82		211							{1: '1', 2: '1021019', 3: '1', 4: '400'}
+83	83		211							{1: '2', 2: '1021015', 3: '1', 4: '-400'}
+84	84		301							{1: '1', 2: 'Lamia & Little Lamia', 3: 'Atlantis...', 4: '101', 5: '102', 18: '100003879', 19: '1&2', 21: 'v211lamiya'}
+85	85		301							"{3: ""Two identical names with entirely different meanings—this realization drains all strength from Lamia's body.""}"
+86	86		212							{1: '1', 2: '2', 6: '1'}
+87	87		301							"{3: ""After leaving that accusatory question hanging in the air, the child takes the priestess' hand and leaves. Lamia collapses completely in her cell as the two walk further away.""}"
+88	88		301							{3: 'God only knows how much time has passed...'}
+89	89		301							"{3: ""At last, Lamia's body gives a slight tremor as she regains her senses, and she, out of instinct, shrinks back toward the corner of her cell.""}"
+90	90		301							{3: 'But almost immediately, she feels herself touch something.'}
+91	91		211							{1: '1', 2: '1021015', 3: '1'}
+92	92		301							{1: '1', 2: 'Lamia', 3: 'Wait, this is...', 4: '101', 18: '100003880', 19: '1', 21: 'v211lamiya'}
+93	93		301							{3: 'Worn items lie piled in the prison corner: a broken conch shell, tattered scraps of cloth, and several half-eaten pieces of dried fish.'}
+94	94		301							"{3: ""These objects stir faded memories inside Lamia's mind, and she remembers their origin—she's the one who left them behind.""}"
+95	95		301							{3: 'The path to the Temple proved far from easy. Even after gaining acceptance, she had to be careful with every word she said and everything she did—one single tiny mistake, and she was thrown behind bars as punishment.'}
+96	96		301							{3: 'Forced contemplation in the prison cell was unbearably dreary, so Lamia had to find ways to keep herself occupied.'}
+97	97		301							{2: 'Lamia', 3: '(The old man... slipped me this dried fish...)', 4: '101', 18: '100003881', 19: '1', 21: 'v211lamiya'}
+98	98		301							{2: 'Lamia', 3: '(This piece of cloth... I used it to write down... the melodies of fishing songs... and this one...)', 4: '101', 18: '100003882', 19: '1', 21: 'v211lamiya'}
+99	99		301							{3: 'As Lamia traces the faint patterns on the conch shell with her fingers, memories of recent events flood her mind, bringing her thoughts to an abrupt halt.'}
+100	100		301							{2: 'Lamia', 3: '(This is... the conch shell flute Begonia made for me...)', 4: '101', 18: '100003883', 19: '1', 21: 'v211lamiya'}
+101	101		301							{3: 'Lamia brings the conch shell to her lips and starts playing it gently.'}
+102	102		301							{3: 'A few notes in, Lamia stops as it hits her what song she is playing.'}
+103	103		301							{2: 'Lamia', 3: 'Do I... even deserve playing this song right now?', 4: '101', 18: '100003884', 19: '1', 21: 'v211lamiya'}
+104	104		301							{3: 'Like a fish swimming into daylight, her recovered memories have made their way into the harsh light of day from the depths of the sea.'}
+105	105		301							"{3: ""Lamia has killed people, and it's not just one.""}"
+106	106		301							{3: 'In this false world where truth remains unknown, Lamia has taken life after life with her ritual dagger, all to maintain hollow lies.'}
+107	107		301							{3: 'Most importantly...'}
+108	108		214							{1: '1', 2: '2'}
+109	109		301							{2: 'Lamia', 3: 'How could I... raise my blade against that person...', 4: '101', 18: '100003885', 19: '1', 21: 'v211lamiya'}
+110	110		301							"{3: ""Lamia's heart sinks but quickly regains a semblance of calm—yet the emptiness in her eyes betrays that this tranquility is nothing more than surrender to whatever fate awaits.""}"
+111	111		301							{3: 'Let it be, Lamia tells herself.'}
+112	112		301							"{3: ""At least the commandant has escaped. The commandant is capable enough to save all the innocent people. Only the culprit responsible for everything will remain imprisoned—perhaps that's for the best.""}"
+113	113		301							"{3: ""In a world where only she herself is real, Lamia can't be sure if the human would even care if things are cruel or false. As for what happens next... Lamia figures that it's not like there's anything good waiting for her when she wakes up anyway.""}"
+114	114		301							{2: 'Lamia', 3: 'Sob... sob... sob...', 4: '101', 18: '100003886', 19: '1', 21: 'v211lamiya'}
+115	115		301							{3: 'Tears dampen her sleeves as Lamia bites down on her lips—which have healed not so long ago—until they split open again.'}
+116	116		301							"{3: ""She still remembers her promise—how she wanted to change and stand proudly by the human's side with her head held high.""}"
+117	117		301							{3: 'And yet here she is...'}
+118	118		301							{2: 'Lamia', 3: 'If only I could die in place of those sacrifices...', 4: '101', 18: '100003887', 19: '1', 21: 'v211lamiya'}
+119	119		301				DialogDisable			{3: 'Lamia mutters unconsciously, but then—'}
+120	120		212							{1: '1', 6: '1'}
+121	121		302							"{2: ""They're not dead yet."", 3: '122'}"
+122	122		302							"{2: ""They're in critical condition, close to death."", 3: '123'}"
+123	123		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_18.jpg'}
+124	124		301			DialogEnable				{3: 'Lamia freezes, slowly raising her head to stare at the impossible figure standing beyond the iron bars.'}
+125	125		301							{2: 'Lamia', 3: 'Why... but I thought you... why... why did you come back?', 18: '100003888'}
+126	126		301							{3: 'Lamia scrambles toward the bars, showing not one bit of excitement at seeing the human.'}
+127	127		301							"{2: 'Lamia', 3: ""Y-you need to leave. Just hurry up and go already! The priestess and guards will find you! I already know that this world isn't real..."", 18: '100003889'}"
+128	128		301							"{2: 'Lamia', 3: ""I... I only did this to satisfy... satisfy my own selfish desires... Don't... don't risk yourself for me... I'm... I'm not worth it..."", 18: '100003890'}"
+129	129		301							{3: 'You kneel down outside the iron bars and slowly pull a key from a pocket.'}
+130	130		301							{2: 'Lamia', 3: 'Huh... where did you...', 18: '100003891'}
+131	131		302				DialogDisable			{2: 'Begonia gave this to me, and she said...'}
+132	132		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory557.jpg'}
+133	133		211							{1: '1', 2: '1021018', 3: '1'}
+134	134		301			DialogEnable				"{1: '1', 2: 'Begonia', 3: ""Lamia... The key should be in Lamia's room."", 4: '101', 18: '100003892', 19: '1', 21: 'v211lamiya'}"
+135	135		301							"{2: 'Begonia', 3: ""Lamia used to get locked up. She told us it was just the Temple's way of punishment, and that she could leave once she'd served her time."", 4: '101', 18: '100003893', 19: '1', 21: 'v211lamiya'}"
+136	136		301							"{2: 'Begonia', 3: ""Lamia... she helped me more times than I can ever remember. She's like a real sister to me—I've never felt anything like this before."", 4: '101', 18: '100003894', 19: '1', 21: 'v211lamiya'}"
+137	137		301				DialogDisable			{2: 'Begonia', 3: 'So please... 【kuroname】, please save her.', 4: '101', 18: '100003895', 19: '1', 21: 'v211lamiya'}
+138	138		212							{1: '1', 6: '1'}
+139	139		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_19.jpg', 3: 'End of Flashback'}
+140	140		211							{1: '1', 2: '1021015', 3: '2'}
+141	141		301			DialogEnable				{1: '1', 2: 'Lamia', 3: 'Begonia, she... why... but I almost killed her...', 4: '101', 18: '100003896', 19: '1', 21: 'v211lamiya'}
+142	142		302							"{2: ""Because this world isn't just about your selfish desires."", 3: '143'}"
+143	143		302							"{2: ""It's just... a resonance of the lost souls. And you're merely..."", 3: '144'}"
+144	144		302							{2: 'A node that carries the function of interfacing Resonance with the Punishing.', 3: '145'}
+145	145		301							{3: 'With these words, the human opens the prison door.'}
+146	146		302							{2: 'Begonia is never happy in the real world. She became a Resonator shortly after you.', 3: '147'}
+147	147		302							{2: 'And among all Resonator, she has the worst vital signs.', 3: '148'}
+148	148		302							"{2: ""She's in the emergency room at a conservation area, and she's barely holding on."", 3: '149'}"
+149	149		302							{2: 'Lamia, Begonia asked me to save you. What about you?', 3: '150'}
+150	150		302							{2: 'Will you save her and everyone else trapped in this world?', 3: '151'}
+151	151		301							{3: 'The human—whom she always looks up to—reaches out their hand. Lamia purses her lips and, with a slight tremor, takes hold of it.'}
+152	152		214							{1: '1', 2: '1'}
+153	153		301							"{3: ""Whether it's for Begonia or the human before her... it doesn't matter anymore. As light streams through the prison bars, Lamia rises to her feet."", 4: '101'}"
+154	154		301							{3: 'A sudden sadness washes over her. Lamia grieves at the thought that, for a moment, she believed she might permanently part ways with the beacon in her heart.', 4: '101'}
+155	155		301							"{3: ""Yet she feels a hint of joy—she's waited long enough to see this day, even if it's in a false world riddled with hollow lies."", 4: '101'}"
+156	156		301		1		AniZhuanchangBegin			{3: 'Yet here they stand together naturally—the mermaid and the Gray Raven Commandant.', 4: '101'}

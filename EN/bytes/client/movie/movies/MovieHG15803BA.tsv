@@ -1,0 +1,219 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory698.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500131'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Davis', 3: ""Kids who can't escape the witch's ice magic will be turned into snowmen! Here I come, you little rascals!"", 4: '1', 18: '100010670'}"
+5	5		202							{1: '1', 6: '1'}
+6	6		201							{1: '2', 2: '500602', 4: '400'}
+7	7		201							{1: '3', 2: '500260', 4: '-400'}
+8	8		401							{1: '2', 2: '1543'}
+9	9		104							{1: '0|0|-100', 2: '0.25'}
+10	10		203							{1: '2', 2: '1', 3: '1600', 5: '-150'}
+11	11		203						200.0	{1: '3', 2: '1', 3: '-1800', 5: '-150'}
+12	12		301							{1: '1', 3: 'A young man in a military uniform is chasing after a group of small children.'}
+13	13		202							{1: '2', 2: '3'}
+14	14		104							{1: '0|0|0', 2: '0.25'}
+15	15		201							{1: '1', 2: '500602', 8: '1'}
+16	16		301							"{1: '1', 2: 'Venice', 3: ""Hahahaha! You can't catch me!"", 4: '1', 18: '100010671'}"
+17	17		202							{1: '1', 6: '1'}
+18	18		401							{1: '2', 2: '4044'}
+19	19		201							{1: '1', 2: '500131'}
+20	20		301			PanelActor1Shake				{1: '1', 3: 'Venice makes a snowball, turns around, and throws it at Davis.'}
+21	21		301							{2: 'Davis', 3: 'Eh... The witch got hit by her own ice magic! Now she has to freeze for five seconds as punishment! Cough... cough... cough...', 4: '1', 18: '100010672'}
+22	22		203							{1: '1', 2: '0.25', 3: '-400'}
+23	23		201							{1: '2', 2: '500726', 4: '400'}
+24	24		301							{1: '1', 2: 'Rosie', 3: '...Toby, are you okay?', 4: '2', 18: '100010673'}
+25	25		301			PanelActor1Shake				{2: 'Davis', 3: 'I was... cough... I was faking it! Awoo—take this!', 4: '1', 18: '100010674'}
+26	26		202							{1: '1', 2: '2', 6: '1'}
+27	27		201							{1: '1', 2: '500602'}
+28	28		301							"{1: '1', 2: 'Venice', 3: ""That doesn't sound like a witch at all!"", 4: '1', 18: '100010675'}"
+29	29		201							{1: '1', 2: '500055'}
+30	30		301				AniZhuanchangBegin			"{1: '1', 2: 'Bonnie', 3: ""Alright, alright, settle down, kids. And you, Toby Davis, a sick person like you should get some proper rest. If you're well enough to play games, go wake up your commandant."", 4: '1', 18: '100010676'}"
+31	31		202							{1: '1', 6: '1'}
+32	32		502						400.0	{1: 'DialogDisable'}
+33	33		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+34	34		306						100.0	{1: '1'}
+35	35		104						200.0	{1: '255|165|-300', 2: '0'}
+36	36		104			AniZhuanchangEnd			3000.0	{1: '255|-150|-300', 2: '4'}
+37	37		502							{1: 'DialogEnable'}
+38	38		301							{3: 'The sunlight streaming into the room feels harsh after so long without clear skies.'}
+39	39		301				DialogDisable			{3: 'Time winds its way into February, and the days of relentless blizzards fade away along with the lingering shadows of dreams...'}
+40	40		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg', 3: '0', 4: '1', 5: '1'}
+41	41		104							{1: '0|0|0', 2: '0'}
+42	42		205							{1: '999'}
+43	43		401							{1: '2', 2: '743'}
+44	44		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+45	45		201							{1: '1', 2: '500141', 7: '1'}
+46	46		301			DialogEnable				{1: '1', 3: 'Rubbing your drowsy eyes, a familiar figure appears as usual.'}
+47	47		306							
+48	48		202							{1: '1', 6: '1'}
+49	49		201							{1: '1', 2: '500131'}
+50	50		301							{1: '1', 2: 'Toby', 3: 'Good morning, Commandant!', 4: '1', 18: '100010677'}
+51	51		302							"{2: ""It's you..."", 3: '52'}"
+52	52		301							{2: 'Toby', 3: '...Damn, am I really that unpopular?', 4: '1', 18: '100010678'}
+53	53		302							"{2: ""Aren't you going hunting today?"", 3: '54'}"
+54	54		301							"{2: 'Toby', 3: ""Bonnie says we've got plenty of supplies stockpiled, so we won't have to hunt as much anymore. Besides, I need to help with the Sacred Prayer Ritual coming up..."", 4: '1', 18: '100010679'}"
+55	55		201							{1: '18', 2: '500602'}
+56	56		301							"{1: '1', 2: 'Venice', 3: ""Toby, that's too high! We can't reach it!"", 4: '18', 18: '100010680'}"
+57	57		201							{1: '18', 2: '500055'}
+58	58		301							"{1: '18', 2: 'Bonnie', 3: ""Toby, if you're free, come lend a hand and give your commandant some peace."", 4: '18', 18: '100010681'}"
+59	59		202							{1: '18', 6: '1'}
+60	60		301							{2: 'Toby', 3: 'On it, on it—', 4: '1', 18: '100010682'}
+61	61		401							{1: '2', 2: '4044'}
+62	62		203						250.0	{1: '1', 2: '0.25', 3: '0', 4: '-50'}
+63	63		203							{1: '1', 2: '0.25', 3: '0'}
+64	64		301							"{2: 'Toby', 3: ""I gotta go help them out with the Sacred Prayer Ritual. I'll leave the meds the Holy Maiden left for you here. Don't forget to take it."", 4: '1', 18: '100010683'}"
+65	65		302							"{2: ""Where's Bianca?"", 3: '66'}"
+66	66		301							{2: 'Toby', 3: 'The Holy Maiden went out before the morning prayer as usual.', 4: '1', 18: '100010684'}
+67	67		301							"{2: 'Toby', 3: ""You going again today? It's been days... Doubt she'll hear a word you say this time either..."", 4: '1', 18: '100010685'}"
+68	68		302							"{2: '""Father, you\'re back?"" Before leaving the church, you hear Bonnie\'s surprised voice in the distance.', 3: '69'}"
+69	69		202							{1: '1', 6: '1'}
+70	70		401							{1: '1', 2: '36'}
+71	71		401							{1: '2', 2: '743'}
+72	72		502						400.0	{1: 'DialogDisable'}
+73	73		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+74	74		205							{1: '999'}
+75	75		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+76	76		301			DialogEnable	AniZhuanchangBegin			"{1: '1', 3: '""Father Snow, you\'re back?"" Before leaving the church, you hear Bonnie\'s surprised voice in the distance.'}"
+77	77		202							{1: '1'}
+78	78		502						400.0	{1: 'DialogDisable'}
+79	79		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1107.jpg'}
+80	80		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+81	81		306						100.0	{1: '1'}
+82	82		104						200.0	{1: '-335|85|-300', 2: '0'}
+83	83		401							{1: '2', 2: '4651'}
+84	84		401							{1: '1', 2: '33'}
+85	85		104			AniZhuanchangEnd			3000.0	{1: '255|85|-300', 2: '4'}
+86	86		502							{1: 'DialogEnable'}
+87	87		301							{3: 'Even though the weather has cleared around the church, the winds and snow continue to howl relentlessly on the mountain. You follow a snowy path as sunlight gradually retreats to a distant corner of the horizon.'}
+88	88		301				DialogDisable			{3: 'Snowflakes strike your face, while ghostly blue phosphorescence occasionally flickers through the air, like divine fingertips brushing across the mountain ridges.'}
+89	89		401							{1: '2', 2: '5670'}
+90	90		104						250.0	{1: '255|135|-325', 2: '0.25'}
+91	91		104							{1: '255|85|-350', 2: '0.25'}
+92	92		401							{1: '2', 2: '4343'}
+93	93		301			DialogEnable	DialogDisable			"{3: ""The horse's hooves come to an abrupt halt just before the mountaintop. Pushing aside the swirling, snowy mist, you find Bianca kneeling barefoot in the wind and snow.""}"
+94	94		306							
+95	95		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1107.jpg', 3: '0', 4: '1', 5: '1'}
+96	96		104							{1: '0|0|0', 2: '0'}
+97	97		205							{1: '999'}
+98	98		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1107.jpg'}
+99	99		201							{1: '1', 2: '501280', 3: '9', 5: '-125'}
+100	100		301			DialogEnable				{1: '1', 2: 'Bianca', 3: '...With mercy as Your bridle, rein in the raging steeds of the wind...', 4: '1', 18: '100010686'}
+101	101		301							"{2: 'Bianca', 3: ""Let snowflakes cease their blade-sharp lash against the eaves, let frost's cruel scourge still itself in the cradle of Your palm."", 4: '1', 18: '100010687'}"
+102	102		302							{2: 'Bianca!', 3: '103'}
+103	103		202							{1: '1'}
+104	104		301							{3: 'In the bitter cold, she remains completely focused, unable to hear your call. Pressing her hands together in prayer, she silently recites the sacred texts.'}
+105	105		301							{3: 'This scene has been going on for a week now.'}
+106	106		201							{1: '1', 2: '501280', 3: '9', 5: '-125'}
+107	107		301							{1: '1', 2: 'Bianca', 3: '...With starlight, soothe the lightless depths. May Your gaze rest upon our sorrow...', 4: '1', 18: '100010688'}
+108	108		301							{2: 'Bianca', 3: '...Grant ill children passage to peaceful dreams, guide the lost souls to hearth fires and kisses.', 4: '1', 18: '100010689'}
+109	109		302							{2: 'Bianca!!!', 3: '110'}
+110	110		202							{1: '1'}
+111	111		306							{1: '1'}
+112	112		301				DialogDisable			{3: 'She remains still, her body radiating a lonely yet gentle light with the recitation of scriptures in the cold wind and snow.'}
+113	113		402							{1: '4651'}
+114	114		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+115	115		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+116	116		504							{1: '0.7'}
+117	117		401							{1: '2', 2: '4386'}
+118	118		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+119	119		201							{1: '1', 2: '501280', 6: '-75', 7: '1'}
+120	120		301			DialogEnable	DialogDisable			"{1: '1', 3: ""A month ago, under Bianca's attentive care, you recovered from life-threatening injuries and were able to move freely again.""}"
+121	121		202							{1: '1', 6: '1'}
+122	122		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+123	123		401							{1: '2', 2: '4386'}
+124	124		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory513.jpg'}
+125	125		301			DialogEnable	DialogDisable			{3: 'The weather around the church grew warmer, and the wind and snow stopped... but Bianca quietly vanished. After searching everywhere for her, you finally found her at the mountain peak.'}
+126	126		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+127	127		401							{1: '2', 2: '4386'}
+128	128		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory708.jpg'}
+129	129		201							{1: '1', 2: '501280', 3: '9', 4: '150', 7: '1'}
+130	130		401							{1: '2', 2: '1516'}
+131	131		301			DialogEnable	AniZhuanchangBegin			"{1: '1', 3: ""For the past month, she has never responded, no matter how hard you try. Even when you sometimes see her in the church, she would just walk past as if she didn't know you at all.""}"
+132	132		202							{1: '1', 6: '1'}
+133	133		306							
+134	134		504							{1: '0'}
+135	135		502						400.0	{1: 'DialogDisable'}
+136	136		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1107.jpg'}
+137	137		401							{1: '2', 2: '4651'}
+138	138		501			AniZhuanchangEnd				{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+139	139		201							{1: '18', 2: '500133'}
+140	140		301			DialogEnable				{1: '1', 2: '??', 3: '...I knew you would be here, Commandant.', 4: '18', 18: '100010690'}
+141	141		302							{2: 'Bonnie?', 3: '142'}
+142	142		202							{1: '18', 6: '1'}
+143	143		201							{1: '1', 2: '500055'}
+144	144		401							{1: '2', 2: '1514'}
+145	145		301							"{1: '1', 2: 'Bonnie', 3: ""Let's go back. She can't hear you."", 4: '1', 18: '100010691'}"
+146	146		402							{1: '1514'}
+147	147		302							{2: 'What happened to her?', 3: '148'}
+148	148		301							"{2: 'Bonnie', 3: ""Ha... of course you wouldn't know. She never left your side from the moment you met her, always taking care of you."", 4: '1', 18: '100010692'}"
+149	149		301							"{2: 'Bonnie', 3: ""But now that you're no longer in mortal danger, she's simply gone back to her normal life."", 4: '1', 18: '100010693'}"
+150	150		301							{2: 'Bonnie', 3: 'In other words, her duty is to pray alone on this snowy mountain. Do you understand? You were the anomaly.', 4: '1', 18: '100010694'}
+151	151		302							"{2: ""...If that's true, why can't she hear my voice?"", 3: '152'}"
+152	152		301							"{2: 'Bonnie', 3: ""She can't hear anything when she prays."", 4: '1', 18: '100010695'}"
+153	153		301							{2: 'Bonnie', 3: 'As the Holy Maiden, she must minimize contact with others as much as possible in order to send her voice to the divine and to listen for divine guidance.', 4: '1', 18: '100010696'}
+154	154		301							"{2: 'Bonnie', 3: ""Those few days she spent looking after you were the longest stretch we'd ever seen her after she became the Holy Maiden."", 4: '1', 18: '100010697'}"
+155	155		302							{2: '...Can her body handle all this time in the blizzard?', 3: '156'}
+156	156		301							"{2: 'Bonnie', 3: '""By her wounds we are healed. By her suffering in the cold we find warmth."" That\'s basically the idea. She was just unlucky to be chosen as the Holy Maiden...', 4: '1', 18: '100010698'}"
+157	157		301							"{2: 'Bonnie', 3: ""The Holy Maiden's powers will shelter her from the wind and snow."", 4: '1', 18: '100010699'}"
+158	158		301							"{2: 'Bonnie', 3: ""But it won't block all human senses. In this heavy snow, she will still feel the pain and cold..."", 4: '1', 18: '100010700'}"
+159	159		302							{2: '...Then why does she have to suffer like this?', 3: '160'}
+160	160		301							"{2: 'Bonnie', 3: ""It usually isn't like this... but you know that the Snowfields haven't been peaceful this year, right?"", 4: '1', 18: '100010701'}"
+161	161		301							"{2: 'Bonnie', 3: 'Monsters crawled out from the ""Abyss"" and attacked the towns. Then the plague broke out, and blizzards raged for over a month.', 4: '1', 18: '100010702'}"
+162	162		301							{2: 'Bonnie', 3: 'The price the Holy Maiden must pay to quell all these great calamities is immense.', 4: '1', 18: '100010703'}
+163	163		302							{2: '...', 3: '164'}
+164	164		202							{1: '1', 6: '1'}
+165	165		201							{1: '18', 2: '501280', 3: '9', 4: '-50', 5: '-100', 6: '75'}
+166	166		301							{1: '1', 2: 'Bianca', 3: '...Glory be to the Father, and to the Son, and to the Holy Ghost. As it was in the beginning, is now, and ever shall be, world without end.', 4: '18', 18: '100010704'}
+167	167		202							{1: '18', 6: '1'}
+168	168		401							{1: '2', 2: '1543'}
+169	169		201							{1: '1', 2: '501280', 5: '-75', 6: '-125'}
+170	170		301							{1: '1', 3: 'After finishing the last line of her prayer, Bianca slowly rises and turns around...'}
+171	171		302							{2: 'Bianca!', 3: '172'}
+172	172		204							{1: '1', 2: '5'}
+173	173		402							{1: '4651'}
+174	174		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+175	175		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab', 2: '2'}
+176	176		301							"{3: ""Sunlight tears through the dark clouds, illuminating the earth. Bianca's pupils suddenly regain clarity, and for a split second, your eyes meet.""}"
+177	177		301							{2: 'Bianca', 3: '...', 4: '1', 18: '100010705'}
+178	178		202							{1: '1'}
+179	179		301				DialogDisable			{3: 'Tears fall from her beautiful eyes, only to freeze in the wind, shattering and falling from her cheeks bit by bit.'}
+180	180		201							{1: '1', 2: '501280', 3: '5', 7: '1'}
+181	181		401							{1: '2', 2: '1514'}
+182	182		203						100.0	{1: '1', 2: '0.4', 3: '125'}
+183	183		202							{1: '1'}
+184	184		301			DialogEnable				"{3: ""Bianca's face softens with compassion once again. She passes by the two of you as if you don't exist, and follows the path down the mountain.""}"
+185	185		402							{1: '1514'}
+186	186		302							{2: '...Bi—', 3: '187', 4: '...', 5: '189'}
+187	187		201							{1: '1', 2: '500055'}
+188	188	191	301							"{1: '1', 2: 'Bonnie', 3: ""Stop it. She can't hear you right now. The Sacred Prayer Ritual will begin tomorrow, so come back with me to get ready. You can nag her all you want after she gets back to the church."", 4: '1', 18: '100010706'}"
+189	189		201							{1: '1', 2: '500055'}
+190	190	191	301							{1: '1', 2: 'Bonnie', 3: 'The Sacred Prayer Ritual will begin tomorrow, so come back with me to get ready.', 4: '1', 18: '100010707'}
+191	191		302							{2: 'What is the Sacred Prayer Ritual?', 3: '192'}
+192	192		301							{2: 'Bonnie', 3: 'Sounds like something fancy, right?', 4: '1', 18: '100010708'}
+193	193		301							"{2: 'Bonnie', 3: ""It's supposed to be a ritual held in the church for the Holy Maiden to pray for our welfare, but in reality, it's just to give her a break from days of constant prayer."", 4: '1', 18: '100010709'}"
+194	194		302							{2: '...?', 3: '195'}
+195	195		301							"{2: 'Bonnie', 3: ""Plainly speaking, it's to trick her into getting some proper rest."", 4: '1', 18: '100010710'}"
+196	196		301							"{2: 'Bonnie', 3: ""Also, our priest is back, and he's been waiting to see you."", 4: '1', 18: '100010711'}"
+197	197		302							{2: 'Priest? What kind of person is he?', 3: '198'}
+198	198		301							"{2: 'Bonnie', 3: ""Well, Father Snow is like a parent to all of us. He's also the one who started the Sacred Prayer Ritual."", 4: '1', 18: '100010712'}"
+199	199		301							"{2: 'Bonnie', 3: ""The Northern Diocese is already very remote, and he was the only priest here. Many people abandon their babies on the Snowfields, and we're all children he rescued and raised."", 4: '1', 18: '100010713'}"
+200	200		301				AniZhuanchangBegin			"{2: 'Bonnie', 3: ""...You'll know once you meet him yourself."", 4: '1', 18: '100010714'}"
+201	201		202							{1: '1'}
+202	202		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab'}
+203	203		401						2000.0	{1: '1', 2: '36'}
+204	204		502						400.0	{1: 'DialogDisable'}
+205	205		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory708.jpg'}
+206	206		401							{1: '1', 2: '204'}
+207	207		107							{1: 'Inside the Church', 2: 'The Next Morning'}
+208	208		301							{3: 'The Next Morning, Inside the Church'}
+209	209		108							{1: '1'}
+210	210		201							{1: '1', 2: '501280', 3: '7'}
+211	211		301			DialogEnable				"{1: '1', 2: 'Bianca', 3: ""Father Snow, you're finally back. Are you hurt?"", 4: '1', 18: '100010715'}"
+212	212		203							{1: '1', 2: '0.25', 3: '-400'}
+213	213		201							{1: '2', 2: '500022', 4: '400'}
+214	214		301							"{1: '1', 2: 'Father Snow', 3: ""I traveled through southern towns, listening to humanity's struggles... Though perhaps that's too lofty a phrase for me to use."", 4: '2', 18: '100010716'}"
+215	215		301							{2: 'Father Snow', 3: 'My child, I brought back lily seeds for you from the south.', 4: '2', 18: '100010717'}
+216	216		204							{1: '1', 2: '5'}
+217	217		301							{2: 'Bianca', 3: 'This winter has been very tough. Did you see any disasters? I still have so many questions to ask you...', 4: '1', 18: '100010718'}
+218	218		301		1		AniZhuanchangBegin			"{2: 'Father Snow', 3: ""There's no need to rush. The Sacred Prayer Ritual is about to begin. Go and get ready first. We can talk about it after."", 4: '2', 18: '100010719'}"

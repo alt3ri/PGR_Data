@@ -1,0 +1,78 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory351.jpg'}
+2	766		401							{1: '1', 2: '36'}
+3	2		401							{1: '2', 2: '1515'}
+4	3		301			DialogEnable	DialogDisable			{3: 'With No. 21 pointing the way, you do discover signs of battle in the hospital reception. The device used to detect abnormal M.I.N.D. fluctuation that she has brought along has not stopped beeping either.'}
+5	4		302							{2: 'Luna was here...', 3: '5'}
+6	5		302							{2: 'And she was in a fight.', 3: '6'}
+7	6		301			DialogEnable				{3: 'You cannot find more information even with the device afterward.'}
+8	7		302							"{2: ""Looks like she's left a long time ago."", 3: '8'}"
+9	8		201							{1: '1', 2: '500328'}
+10	9		301							{1: '1', 2: 'No. 21', 3: 'This... feels familiar.', 4: '1'}
+11	10		301							{3: 'Indeed. Ever since you entered the hospital, you have had the same feeling, just like back in the precinct.'}
+12	11		301							{2: 'No. 21', 3: 'Not before the connection.', 4: '1'}
+13	12		302							{2: 'You only felt it after connecting with me?', 3: '13'}
+14	13		301							{2: 'No. 21', 3: 'Yes...', 4: '1'}
+15	777		401							{1: '2', 2: '1516'}
+16	14		301							{3: 'As she answers, No. 21 walks forward alongside the hallway, guided only by instincts and the thumping familiarity.'}
+17	15		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+18	778		401							{1: '1', 2: '51'}
+19	800		504							{1: '0.5', 2: '6'}
+20	802		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '1'}
+21	16		301							{3: 'The creepiest thing happens. Blurry white shades appear around No. 21 like a scene straight out of a movie, and then the hallway is filled with these apparitions in white gowns, walking back and forth through her.'}
+22	17		204							{1: '1', 2: '5'}
+23	18		301							{2: 'No. 21', 3: 'Ugh!', 4: '1'}
+24	19		301							{3: 'Alerted, she raises her hackles like an agitated beast, looking around and growling at the shades approaching her.'}
+25	20		302							"{2: ""They're just illusions. They can't hurt you."", 3: '21', 4: 'Are we seeing the hospital in the past?', 5: '21'}"
+26	21		202							{1: '1', 6: '1'}
+27	22		301							{3: 'The strange girl appears again ahead of you, her hand holding a bundle of daisies. Standing opposite her... is a gentle-looking shade.'}
+28	23		301							"{2: '???', 3: ""...My dad's coworker gave me that!""}"
+29	24		301							{3: 'The image is not clear. You can only vaguely see the profile of the girl.'}
+30	25		301							"{3: ""The person opposite her bends down slightly, patting the girl's hair.""}"
+31	26		301							{3: 'You can almost feel the soft touch on your skin, the scent of rubbing alcohol on those hands, and the love in the tender movement.'}
+32	27		201							{1: '1', 2: '500328'}
+33	28		301							{1: '1', 2: 'No. 21', 3: '...', 4: '1'}
+34	29		301							"{3: ""Stunned by the peculiar warmth in her chest, No. 21's defensive, raised arms lower to her sides.""}"
+35	30		202							{1: '1', 6: '1'}
+36	31		301							{2: '???', 3: '...I just want to go back with you, Mom...'}
+37	32		201							{1: '1', 2: '500328', 3: '3'}
+38	33		301							{1: '1', 2: 'No. 21', 3: 'Mom...?', 4: '1'}
+39	780		401							{1: '1', 2: '36'}
+40	779		401							{1: '2', 2: '558'}
+41	34		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+42	801		504							{1: '0', 2: '6'}
+43	803		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+44	35		301							{3: 'No. 21 approaches the shade instinctively for a closer look. But the moment she steps forward, all images disappear, leaving behind the Medic Bots and equipment in the dilapidated corridors as if nothing has happened.'}
+45	36		302							{2: '...', 3: '781'}
+46	781		401							{1: '1', 2: '201'}
+47	37		301							{2: 'No. 21', 3: 'Were there...', 4: '1'}
+48	38		301							{3: 'She pauses for a second before deciding to ask it out loud.'}
+49	39		301							{2: 'No. 21', 3: 'Were there experiments here?', 4: '1'}
+50	40		302							{2: 'Experiments?', 3: '656'}
+51	656		204							{1: '1'}
+52	41		301				DialogDisable			{2: 'No. 21', 3: '...Machines, pill bottles, people in white gowns, Medic Bots, scientists. Is this a place where they perform experiments?', 4: '1'}
+53	42		302							"{2: ""(She's alarmed... because she's mistaken doctors as scientists?)"", 3: '43'}"
+54	43		302							"{2: ""It isn't... despite it looks similar to a laboratory."", 3: '44'}"
+55	44		302							"{2: ""This is a hospital. It's a place where they treat other people."", 3: '45'}"
+56	45		301			DialogEnable				{2: 'No. 21', 3: 'Treat?', 4: '1'}
+57	46		302							{2: 'They take away the pain and hurt people are feeling.', 3: '47'}
+58	47		204							{1: '1', 2: '3'}
+59	48		301							{3: 'She shakes her head slightly.'}
+60	49		301							{2: 'No. 21', 3: 'Experiments cause pain, not take it away.', 4: '1'}
+61	50		301				DialogDisable			"{2: 'No. 21', 3: ""This place treats people, not experiments on them. It's different from a research institute. I understand it now."", 4: '1'}"
+62	51		302							"{2: ""...Looks like we aren't going to find anything else here."", 3: '52'}"
+63	52		302							"{2: ""Let's go meet up with Vera."", 3: '53'}"
+64	53		301			DialogEnable				{3: 'No. 21 takes one last look at the end of the hallway, recalling the warm sensation she had never felt before, and a sense of disappointment lingers in her M.I.N.D.'}
+65	54		301				AniZhuanchangBegin			{2: 'No. 21', 3: '...I understand.', 4: '1'}
+66	55		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory362.png'}
+67	976		204							{1: '1'}
+68	56		301			AniZhuanchangEnd				"{3: ""After confirming Vera's current location with the Kurono agents, No. 21 begins her trek.""}"
+69	689		401							{1: '2', 2: '1516'}
+70	57		301							{3: 'She slows down when she passes the precinct again.'}
+71	58		204							{1: '1', 2: '4'}
+72	59		301							"{2: 'No. 21', 3: ""It's different..."", 4: '1'}"
+73	60		302							{2: 'Huh?', 3: '61'}
+74	61		301							{2: 'No. 21', 3: 'The car with the broken window is gone.', 4: '1'}
+75	62		301							{3: 'You take a careful look around, and the police car with the broken window has indeed disappeared.'}
+76	63		401							{1: '2', 2: '885'}
+77	64		301		1		AniZhuanchangBegin			{3: 'As you search, the sound of an engine starting appears behind you.'}

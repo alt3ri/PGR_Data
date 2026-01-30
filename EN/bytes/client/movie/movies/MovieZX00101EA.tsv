@@ -1,0 +1,89 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory11.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '2', 2: '1021001'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Lucia', 3: ""That's the last two!"", 4: '2'}"
+5	5		202							{1: '2', 6: '1'}
+6	6		201							{1: '1', 2: '500013'}
+7	7		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 3: '1'}
+8	8		401							{1: '2', 2: '10002001'}
+9	10		401							{1: '2', 2: '1508'}
+10	9		301							{1: '1', 2: 'Corrupted', 3: 'Urgh—', 4: '1'}
+11	11		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 4: '1'}
+12	12		202							{1: '1', 6: '1'}
+13	13		201							{1: '2', 2: '1021001', 3: '9'}
+14	14		301							{1: '1', 2: 'Lucia', 3: 'Ah...! What?', 4: '2'}
+15	15		202							{1: '2', 6: '1'}
+16	16		201							{1: '3', 2: '1011001'}
+17	17		301							"{1: '1', 2: 'Lee', 3: ""What's the situation, Lucia?"", 4: '3'}"
+18	18		202							{1: '3', 6: '1'}
+19	19		201							{1: '2', 2: '1021001', 3: '9'}
+20	20		301							"{1: '1', 2: 'Lucia', 3: ""My arm, it's not responding."", 4: '2'}"
+21	21		202							{1: '2', 6: '1'}
+22	22		201							{1: '1', 2: '500013'}
+23	23		401							{1: '2', 2: '1508'}
+24	24		301							{1: '1', 2: 'Corrupted', 3: 'Urgh—!', 4: '1'}
+25	25		202							{1: '1', 6: '1'}
+26	26		201							{1: '3', 2: '1011001'}
+27	27		301							{1: '1', 2: 'Lee', 3: 'Move!', 4: '3'}
+28	28		202							{1: '3', 6: '1'}
+29	29		201							{1: '1', 2: '500013'}
+30	30		401							{1: '2', 2: '1508'}
+31	31		301							{1: '1', 2: 'Corrupted', 3: 'Urgh!', 4: '1'}
+32	32		202							{1: '1', 6: '1'}
+33	33		201							{1: '3', 2: '1011001'}
+34	34		301							{1: '1', 2: 'Lee', 3: '...Let me take a look.', 4: '3'}
+35	35		203							{1: '3', 3: '-400'}
+36	36		201							{1: '2', 2: '1021001', 4: '400'}
+37	37		204							{1: '3', 2: '10'}
+38	38		301							"{1: '1', 2: 'Lee', 3: ""...Looks like it's completely broken."", 4: '3'}"
+39	39		204							{1: '3'}
+40	40		301							{2: 'Lucia', 3: '...', 4: '2'}
+41	41		301							"{2: 'Lee', 3: ""I only did some temporary repairs earlier so of course, it's going to break if you use it like that..."", 4: '3'}"
+42	42		204							{1: '3', 2: '10'}
+43	43		301							"{2: 'Lee', 3: ""Though I'm the one to talk."", 4: '3'}"
+44	44		204							{1: '3'}
+45	45		301							"{2: 'Lee', 3: ""... (Looks at his gun's smoking barrel)"", 4: '3'}"
+46	46		202							{1: '2', 2: '3', 6: '1'}
+47	47		201							{1: '1', 2: '1031001', 3: '7'}
+48	48		301							{1: '1', 2: 'Liv', 3: 'Commandant, survivor found!', 4: '1'}
+49	49		202							{1: '1', 6: '1'}
+50	50		201							{1: '2', 2: '500019'}
+51	51		301							{1: '1', 2: 'Construct Soldier', 3: 'You finally... came...', 4: '2'}
+52	52		203							{1: '2', 3: '400'}
+53	53		201							{1: '1', 2: '1031001', 4: '-400'}
+54	54		301							"{1: '1', 2: 'Liv', 3: ""You've already been corrupted by the Punishing Virus, but fortunately, it still hasn't exceeded the tolerance limit of your Inver-Device."", 4: '1'}"
+55	55		301							{2: 'Liv', 3: 'Please allow me to access your M.I.N.D., I can help lessen your burden from fighting with the virus.', 4: '1'}
+56	56		301							"{2: 'Construct Soldier', 3: ""Thank you... I never thought I'd live to see such an advanced Support-type Construct..."", 4: '2'}"
+57	57		301							{2: 'Construct Soldier', 3: 'If only they were able to hold on a bit longer...', 4: '2'}
+58	58		302							{1: '100', 2: 'Did you see a white-haired Construct?', 3: '62', 4: '(Ask about the attack.)', 5: '63'}
+59	59		202							{1: '1', 2: '2', 6: '1'}
+60	60		201							{1: '2', 2: '500019'}
+61	61		303							{1: '100'}
+62	62		301							"{1: '1', 2: 'Construct Soldier', 3: ""Sorry, but we haven't encountered the Construct you asked about..."", 4: '2'}"
+63	63		301							"{2: 'Construct Soldier', 3: ""We're a supply team that got forced to retreat onto this bridge by the Corrupted and made this temporary communication station as a last resort."", 4: '2'}"
+64	64		301							{2: 'Construct Soldier', 3: 'The amount of Corrupted and threat levels here exceeded our calculations... They broke through our guard rather quickly...', 4: '2'}
+65	65		301							"{2: 'Construct Soldier', 3: ""We've never seen anything like that before... I can say for sure that the Corrupted have formed an organization..."", 4: '2'}"
+66	66		202							{1: '2', 6: '1'}
+67	67		201							{1: '2', 2: '1021001'}
+68	68		301							{1: '1', 2: 'Lucia', 3: 'The Corrupted should only be able to follow the kill order of the Punishing Virus...', 4: '2'}
+69	69		301							{2: 'Lucia', 3: 'Please elaborate on what you mean by having formed an organization.', 4: '2'}
+70	70		202							{2: '2', 6: '1'}
+71	71		201							{1: '2', 2: '500019'}
+72	72		301							{1: '1', 2: 'Construct Soldier', 3: 'Did you notice those graffiti nearby?', 4: '2'}
+73	73		301							{2: 'Construct Soldier', 3: 'We found that these graffiti will draw in the mechanoid Corrupted, and only they can understand its true meaning.', 4: '2'}
+74	74		301							"{2: 'Construct Soldier', 3: ""We tried to decipher the messages, but mechanoids with human consciousness like us can't understand it at all..."", 4: '2'}"
+75	75		301							{2: 'Construct Soldier', 3: 'Be careful of those graffiti... They are gathering the Corrupted...', 4: '2'}
+76	76		202							{1: '2', 6: '1'}
+77	77		201							{1: '1', 2: '1031001', 4: '-400'}
+78	78		201							{1: '3', 2: '1011001', 4: '400'}
+79	79		301							{1: '1', 2: 'Liv', 3: 'Is this a new behavior of the Corrupted due to the control of the Punishing Virus?', 4: '1'}
+80	80		301							"{2: 'Lee', 3: ""I'm afraid not, the Corrupted's only goal is to destroy humans and everything that has human consciousness."", 4: '3'}"
+81	81		301							"{2: 'Lee', 3: ""But they don't need to communicate with each other, or maybe this is a result of something else other than the Punishing Virus."", 4: '3'}"
+82	82		202							{1: '1', 2: '3', 6: '1'}
+83	83		201							{1: '2', 2: '1021001'}
+84	84		301							{1: '1', 2: 'Lucia', 3: 'Thank you for your information and contribution.', 4: '2'}
+85	85		301							{2: 'Lucia', 3: 'Please recall now. We will notify the Purifying Force to retrieve your frames.', 4: '2'}
+86	86		202							{1: '2', 6: '1'}
+87	87		201							{1: '2', 2: '500019'}
+88	88		301		1		AniZhuanchangBegin			{1: '1', 2: 'Construct Soldier', 3: 'Oh, one more thing...', 4: '2'}

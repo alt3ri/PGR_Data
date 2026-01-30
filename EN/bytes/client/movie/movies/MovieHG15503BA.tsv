@@ -1,0 +1,286 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1089.jpg'}
+2	2		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 4: '4'}
+3	3		401							{1: '1', 2: '6153', 3: '0.5'}
+4	4		109	1						{1: '1', 2: '<size=50>After making that call, Selena feels restless.</size>', 3: '-310', 6: '1', 7: '1', 8: '0.5', 9: '3'}
+5	5		109	1						{1: '1', 2: '<size=50>The sky remains azure blue, the sunlight still radiant,</size>', 3: '-310', 6: '1', 7: '1', 8: '0.5', 9: '3'}
+6	6		109	1						{1: '1', 2: '<size=50>Yet her heart burns with the torment of a soul awaiting the judgment of fate.</size>', 3: '-110', 6: '1', 7: '1', 8: '0.5', 9: '3'}
+7	7		110				AniZhuanchangBegin			
+8	8		101							{4: '4', 5: '1'}
+9	9		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+10	10		401							{1: '2', 2: '753', 3: '1'}
+11	11		201							{1: '2', 2: '500405'}
+12	12		301			DialogEnable				"{1: '1', 2: 'Lia', 3: ""Hey, what are you doing here? I've been looking all over for you!"", 4: '2', 18: '100008754'}"
+13	13		301							{3: 'After forcing Selena out of hiding in the dusty room, Lia recites the message from her terminal.'}
+14	14		301							{2: 'Lia', 3: 'Right after you sent that message, they got back to me.', 4: '2', 18: '100008755'}
+15	15		301							{2: 'Lia', 3: 'They said—', 4: '2', 18: '100008756'}
+16	16		301							{2: 'Lia', 3: 'Stay where you are. The Gray Raven Commandant is coming to meet you. The message was signed by Allen, from WGAA.', 4: '2', 18: '100008757'}
+17	17		203							{1: '2', 2: '0.25', 3: '400'}
+18	18		201							{1: '1', 2: '500291', 3: '4', 4: '-400'}
+19	19		301							{1: '1', 2: 'Selena', 3: 'Gray Raven... you mean 【kuroname】?!', 4: '1', 18: '100008758'}
+20	20		202							{1: '1', 2: '2'}
+21	21		301							"{3: ""Selena's heart skips a beat and she instinctively puts her hand to her chest.""}"
+22	22		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory968.png'}
+23	23		401							{1: '2', 2: '5307'}
+24	24		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'The signatures on countless worn letters surface in her M.I.N.D. She can easily recite each letter, and would never forget the signature at the end...'}
+25	25		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+26	26		201							{1: '1', 2: '500291', 3: '1'}
+27	27		301			AniZhuanchangEnd				{1: '1', 2: 'Selena', 3: 'You...', 4: '1', 18: '100008759'}
+28	28		203							{1: '1', 2: '0.25', 3: '-400'}
+29	29		201							{1: '2', 2: '500405', 4: '400'}
+30	30		301							"{1: '1', 2: 'Lia', 3: ""Gray Raven! That's huge! You know them? You must be a pretty impressive Construct yourself!"", 4: '2', 18: '100008760'}"
+31	31		301							{3: 'Lia continues to chatter away, but Selena is too anxious to listen to her.'}
+32	32		204							{1: '1', 2: '3'}
+33	33		301							"{2: 'Selena', 3: ""I'm really not... but did the message say anything else?"", 4: '1', 18: '100008761'}"
+34	34		301							{2: 'Lia', 3: 'It mentioned a location. I marked it for you on the map... here.', 4: '2', 18: '100008762'}
+35	35		202							{1: '1', 2: '2'}
+36	36		401							{1: '2', 2: '4095'}
+37	37		301							{3: 'She quickly draws a simple map on a piece of paper. Selena takes the creased sheet and presses it tightly against her chest.'}
+38	38		301							{3: 'Finally...'}
+39	39		301				AniZhuanchangBegin			{3: 'She has never been forgotten by those in the starry sky.'}
+40	40		502						400.0	{1: 'DialogDisable'}
+41	41		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+42	42		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+43	43		401							{1: '2', 2: '5303'}
+44	44		306							{1: '1'}
+45	45		307			AniZhuanchangEnd			1000.0	{1: '-You Version-', 3: '50'}
+46	46		307							{2: '1'}
+47	47		107						2000.0	{1: 'Landing Pad Outside the Conservation Area', 2: 'Meanwhile'}
+48	48		108							{1: '1'}
+49	49		301			DialogEnable				{3: 'The roar of the transport aircraft dies down. After the boarding ramp lowers, the aluminum alloy cabin door opens.'}
+50	50		402							{1: '5303'}
+51	51		502						400.0	{1: 'DialogDisable'}
+52	52		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory736.jpg'}
+53	53		306							
+54	54		401							{1: '2', 2: '648'}
+55	55		301			DialogEnable				{3: 'A rush of air flows in, carrying the scent of vegetation and earth.'}
+56	56		301							{3: 'The surface air has a unique freshness that Babylonia cannot replicate. Even after countless ground missions, something still stirs every time the cabin door opens.'}
+57	57		401							{1: '2', 2: '2704'}
+58	58		301							{3: 'After getting off the transport, you are about to look for the person in charge of the conservation area when you receive a message from Allen.'}
+59	59		302							{2: '(Check your terminal)', 3: '60'}
+60	60		401							{1: '2', 2: '4884'}
+61	61		301							"{3: '""As a precaution, I\'ve sent Selena to meet you at the abandoned theater nearby. Coordinates...""'}"
+62	62		401							{1: '2', 2: '1226'}
+63	63		301							{3: 'You put away your terminal and tell the transport staff that you will be heading off alone for this mission. The person nods and lifts off, heading toward the other end of the conservation area.'}
+64	64		301				AniZhuanchangBegin			"{3: ""And just like that, you're alone.""}"
+65	65		502						400.0	{1: 'DialogDisable'}
+66	66		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+67	67		109	1		AniZhuanchangEnd				{1: '1', 2: '<size=50>Iris...</size>', 3: '0', 4: '0', 5: '0', 9: '3'}
+68	68		110							
+69	69		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+70	70		301			DialogEnable	DialogDisable			{3: 'As the fog gradually disperses, the abandoned theater appears as a faint image on the horizon.'}
+71	71		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg', 3: '0', 4: '1', 5: '1'}
+72	72		205							{1: '999'}
+73	73		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg'}
+74	74		306							{1: '1'}
+75	75		401							{1: '1', 2: '149', 3: '1'}
+76	76		401							{1: '2', 2: '1513'}
+77	77		307						1000.0	{1: '-Selena Version-', 3: '50', 4: '34aff8ff'}
+78	78		307							{2: '1'}
+79	79		107						2000.0	{1: 'Near the Abandoned Theater', 2: 'Several Kilometers Away'}
+80	80		108							{1: '1'}
+81	81		306							
+82	82		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+83	83		201							{1: '1', 2: '500291', 3: '4'}
+84	84		301			DialogEnable				{1: '1', 2: 'Selena', 3: 'Huff... puff...', 4: '1', 18: '100008763'}
+85	85		203						200.0	{1: '1', 2: '0.2', 5: '-100'}
+86	86		202							{1: '1'}
+87	87		401							{1: '2', 2: '4207'}
+88	88		301							"{3: ""Selena runs through the ruins that's like a maze.""}"
+89	89		301							{3: 'She knows without a doubt that person is waiting for her up ahead.'}
+90	90		301							"{3: ""So she must hurry, every second counts. All she wants is to be by that person's side right now.""}"
+91	91		201							{1: '1', 2: '500291', 3: '8'}
+92	92		301							{1: '1', 2: 'Selena', 3: 'Cough cough!', 4: '1', 18: '100008764'}
+93	93		202							{1: '1'}
+94	94		301							"{3: ""Her movements are too intense and her damaged frame clearly can't keep up, but she doesn't slow down.""}"
+95	95		301				AniZhuanchangBegin			{3: 'Pain is nothing new to her, and she cannot miss this meeting.'}
+96	96		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+97	97		502						400.0	{1: 'DialogDisable'}
+98	98		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory8.jpg'}
+99	99		401							{1: '1', 2: '6154'}
+100	100		201							{1: '1', 2: '500291', 3: '5'}
+101	101		301			DialogEnable				{1: '1', 2: 'Selena', 3: '【kuroname】...!', 4: '1', 18: '100008765'}
+102	102		202							{1: '1'}
+103	103		401							{1: '2', 2: '4809'}
+104	104		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+105	105		301							{3: 'She pushes open the auditorium doors and steps into the desolate, crumbling theater.'}
+106	106		301							{3: 'But the silent theater is empty. Only her labored breathing echoes through the circular corridor.'}
+107	107		201							{1: '1', 2: '500291', 3: '3'}
+108	108		301							{1: '1', 2: 'Selena', 3: '【kuroname】...?', 4: '1', 18: '100008766'}
+109	109		202							{1: '1'}
+110	110		401						250.0	{1: '2', 2: '4383'}
+111	111		104						250.0	{1: '0|50|-25', 2: '0.25'}
+112	112		104							{1: '0|0|-50', 2: '0.25'}
+113	113		402							{1: '4383'}
+114	114		301							{3: 'She staggers for a few steps, calling out that name as she looks through the rows of decayed, crumbling seats.'}
+115	115		301							{3: 'But still, there is no answer.'}
+116	116		301							{3: 'Selena stands motionless, watching as tiny dust particles transform into specks of light with her movements and gently fall through rays of the sun penetrating the crumbling roof.'}
+117	117		401							{1: '2', 2: '9389034'}
+118	118		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+119	119		301							{3: 'In her daze, the world begins to blur and tilt once again before her...'}
+120	120		402							{1: '9389034'}
+121	121		401							{1: '2', 2: '4282'}
+122	122		301				AniZhuanchangBegin			{3: 'Then, she finally hears it—footsteps approaching behind—'}
+123	123		502							{1: 'DialogDisable'}
+124	124		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+125	125		402							{1: '4282'}
+126	126		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg'}
+127	127		306							{1: '1'}
+128	128		307			AniZhuanchangEnd			1000.0	{1: '-You Version-', 3: '50'}
+129	129		307							{2: '1'}
+130	130		306							
+131	131		301			DialogEnable				{3: 'The doors to the theater stand slightly ajar. You raise your hand to push it open, but pull back in an instant.'}
+132	132		301							"{3: ""If it's Selena... What if it's not Selena...""}"
+133	133		401							{1: '2', 2: '4779'}
+134	134		301							{3: 'After checking your protective suit and weapons once more, you steady your breath and relax your clenched fist...'}
+135	135		401							{1: '2', 2: '4809'}
+136	136		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+137	137		104							{1: '0|0|-50', 2: '250'}
+138	138		301				AniZhuanchangBegin			{3: 'Then without hesitation, you push the door open.'}
+139	139		502						400.0	{1: 'DialogDisable'}
+140	140		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+141	141		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory8.jpg'}
+142	142		301			DialogEnable				{3: 'The fog disperses in the sunlight.'}
+143	143		301							{3: 'Dazzling morning light floods the entire theater, bathing the blue-haired girl in a golden glow.'}
+144	144		301							{3: 'She stands on the crumbling stage like an opera performer mid-act. She is gazing at the sunlight streaming through the dome above.'}
+145	145		301							{3: 'Strands of dark hair fall across her cheek, hiding half of her face and her expression.'}
+146	146		401						500.0	{1: '2', 2: '4383'}
+147	147		402							{1: '4383'}
+148	148		301							{3: 'Noticing the sound behind her, the girl freezes for a moment, then turns around with a hopeful face...'}
+149	149		301							{3: 'The human silhouette comes straight into her sight.'}
+150	150		201							{1: '1', 2: '500291', 3: '2'}
+151	151		301							{1: '1', 2: 'Selena', 3: '【kuroname】...', 4: '1', 18: '100008767'}
+152	152		202							{1: '1'}
+153	153		301							{3: 'Her M.I.N.D. almost freezes, but Selena has no doubt.'}
+154	154		301							"{3: ""She once said that even if they've never met, she could recognize her pen pal's face at a glance.""}"
+155	155		301							{3: 'And she did just that.'}
+156	156		401							{1: '2', 2: '4341'}
+157	157		201							{1: '1', 2: '500291', 3: '2'}
+158	158		301				AniZhuanchangBegin			{1: '1', 3: 'The girl turns on the stage, her hair gleaming among motes of dust floating in the sunbeams.', 4: '1'}
+159	159		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab'}
+160	160		202							{1: '1', 6: '1'}
+161	161		502						400.0	{1: 'DialogDisable'}
+162	162		306							{1: '1'}
+163	163		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory8.jpg'}
+164	164		302							{2: 'Iris...', 3: '165'}
+165	165		301			DialogEnable				"{3: ""You've seen her face before in Whale Song and watched her archived footage from the WGAA many times.""}"
+166	166		301							{3: 'And...'}
+167	167		302							{2: 'Iris.', 3: '168'}
+168	168		301							{3: 'Hesitation becomes recognition.'}
+169	169		201							{1: '1', 2: '500291', 5: '-75', 6: '50', 7: '1'}
+170	170		301							"{1: '1', 3: ""The person before you, regardless of her appearance or what she's lived through...""}"
+171	171		301							{3: 'This girl with deep purple eyes, a clear gaze, and a demeanor gentle and resolute—'}
+172	172		301							"{3: 'She is none other than ""Iris"", the one you\'ve been exchanging letters with all this time.'}"
+173	173		306							
+174	174		401							{1: '2', 2: '1543'}
+175	175		401							{1: '2', 2: '4161'}
+176	176		203						250.0	{1: '1', 2: '0.25', 5: '-100'}
+177	177		202							{1: '1'}
+178	178		301							{3: 'The girl steps slowly forward. She stays silent, but holds out her hand to you.'}
+179	179		301							"{3: ""There is no need for words. The moment she reaches out, you've already taken her hand.""}"
+180	180		301							"{3: ""Her touch is slightly cold. She seems to flinch, but noticing that the Punishing levels aren't rising, she tightens her grip.""}"
+181	181		401							{1: '1', 2: '6146'}
+182	182		201							{1: '1', 2: '500291', 3: '8'}
+183	183		301							{1: '1', 2: 'Selena', 3: '...', 4: '1', 18: '100008768'}
+184	184		202							{1: '1'}
+185	185		301							{3: 'She softly begins to hum an unknown melody.'}
+186	186		302							{2: '(Follow her steps)', 3: '187', 4: '(Clumsily follow her dance steps)', 5: '187'}
+187	187		401							{1: '2', 2: '5159'}
+188	188		301							{3: 'In the slow dance, the girl bows her head slightly, hiding the tears that fall from the corners of her eyes.'}
+189	189		301							"{3: ""She seems to want to say something, but hesitates and remains silent, as if she's afraid to break the tranquility of this moment.""}"
+190	190		402							{1: '5159'}
+191	191		302							{2: 'Iris.', 3: '192', 4: 'This is not a dream.', 5: '192'}
+192	192		201							{1: '1', 2: '500291', 3: '8'}
+193	193		301							{1: '1', 2: 'Selena', 3: 'Sorry... I just...', 4: '1', 18: '100008769'}
+194	194		204							{1: '1', 2: '3'}
+195	195		301							"{2: 'Selena', 3: ""I've seen this moment in my dreams more times than I can count."", 4: '1', 18: '100008770'}"
+196	196		301							{3: 'Her dance steps are gentle yet determined as she guides you to follow her rhythm.'}
+197	197		204							{1: '1', 2: '1'}
+198	198		301							{2: 'Selena', 3: 'I... I really wanted to see you, 【kuroname】.', 4: '1', 18: '100008771'}
+199	199		301							"{3: ""The girl's voice is soft, not wanting to shatter this moment.""}"
+200	200		302							{2: 'This is not a dream.', 3: '201', 4: 'Welcome back.', 5: '201'}
+201	201		204							{1: '1', 2: '14'}
+202	202		301							{2: 'Selena', 3: 'Am I... really here? In this place, in this moment?', 4: '1', 18: '100008772'}
+203	203		302							"{2: ""I'll bring you back to Babylonia safely."", 3: '204', 4: 'You will return safely to Babylonia.', 5: '204'}"
+204	204		202							{1: '1'}
+205	205		301							{3: 'All suffering will eventually be cured in the tenderness of time.'}
+206	206		301							{3: 'Selena falls silent, tilting her head back as tears stream down her cheeks.'}
+207	207		301							{3: 'The sonata of illusions will finally reach its end in the notes of reality, as light pours its voice upon the suffering soul—'}
+208	208		301							{3: 'The lonely whale has found her way once more.'}
+209	209		301				AniZhuanchangBegin			{3: 'You pause your dance. You still have plenty of time before the transport arrives.'}
+210	210		401							{1: '1', 2: '36'}
+211	211		502						400.0	{1: 'DialogDisable'}
+212	212		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory8.jpg'}
+213	213		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 4: '4'}
+214	214		401							{1: '1', 2: '6159'}
+215	215		109							"{1: '1', 2: ""<size=50>The warm evening sun streams through the glass dome,\\ndancing between the floor's blotches of light and your silhouettes,\\nstaining her hair gold.</size>"", 3: '-300', 6: '1', 7: '1', 8: '1', 9: '3'}"
+216	216		301							"{3: ""The warm evening sun streams through the glass dome, dancing between the floor's blotches of light and your silhouettes, staining her hair gold.""}"
+217	217		109							{1: '1', 2: '<size=50>In this moment of tranquility,\\nyou sit at the edge of the stage, quietly exchanging stories of you experienced.</size>', 3: '-50', 6: '1', 7: '1', 8: '1', 9: '3'}
+218	218		301							{3: 'In this moment of tranquility, you sit at the edge of the stage, quietly exchanging stories of your experienced.'}
+219	219		110							
+220	220		101							{4: '4', 5: '1'}
+221	221		301			DialogEnable				"{3: ""It's a stretch of time that feels long, yet strangely short upon reflection.""}"
+222	222		301							"{3: ""It's enough for you to share all the details of your journeys thus far, yet too short to hold onto those paths you've traveled apart.""}"
+223	223		301							{3: 'The setting sun and the tranquil atmosphere almost freeze this moment in its gentle warmth—'}
+224	224		401							{1: '2', 2: '4884'}
+225	225		301							{3: 'Until an urgent notification sounds chime on your terminal once more.'}
+226	226		302							{2: 'The transport craft is coming.', 3: '235', 4: '(Ignore it)', 5: '227'}
+227	227		201							{1: '1', 2: '500291'}
+228	228		301							{1: '1', 2: 'Selena', 3: 'Is something wrong?', 4: '1', 18: '100008773'}
+229	229		302							{2: 'No...', 3: '230'}
+230	230		204							{1: '1', 2: '2'}
+231	231		301							"{2: 'Selena', 3: ""Don't worry about me. If there's something you need to do..."", 4: '1', 18: '100008774'}"
+232	232		302							{2: '...The transport craft is coming.', 3: '233'}
+233	233		204							{1: '1', 2: '1'}
+234	234	237	301							{2: 'Selena', 3: 'Time really does fly, huh?', 4: '1', 18: '100008775'}
+235	235		201							{1: '1', 2: '500291', 3: '1'}
+236	236		301							{1: '1', 2: 'Selena', 3: 'Time really does fly, huh?', 4: '1', 18: '100008775'}
+237	237		301							{3: 'A smile tinged with regret crosses her face.'}
+238	238		204							{1: '1', 2: '2'}
+239	239		301							{2: 'Selena', 3: 'Thank you, 【kuroname】.', 4: '1', 18: '100008776'}
+240	240		301							{2: 'Selena', 3: 'Back then... in the memories I reclaimed, I endlessly rehearsed how I ought to appear before you.', 4: '1', 18: '100008777'}
+241	241		204							{1: '1', 2: '8'}
+242	242		301							"{2: 'Selena', 3: ""Didn't think it'd be this messy..."", 4: '1', 18: '100008778'}"
+243	243		302							{2: 'Not at all.', 3: '244', 4: 'You look beautiful.', 5: '244'}
+244	244		202							{1: '1'}
+245	245		301							"{3: ""This is Selena's courage and a medal that belongs to her alone.""}"
+246	246		301							{3: 'She followed her own path and finally weathered the storms in her life.'}
+247	247		302							"{2: ""The tempest has ceased, and Iris's rainbow has already appeared."", 3: '248', 4: 'That dream you had of becoming ""Iris""... it\'s come true now.', 5: '248'}"
+248	248		201							{1: '1', 2: '500291', 3: '14'}
+249	249		301							"{1: '1', 2: 'Selena', 3: ""Please... don't tease me about it."", 4: '1', 18: '100008779'}"
+250	250		302							"{2: ""It's a beautiful name."", 3: '251', 4: 'This name suits you well.', 5: '251'}"
+251	251		204							{1: '1', 2: '1'}
+252	252		401							{1: '2', 2: '5303'}
+253	253		301							"{3: ""The girl's iris-purple eyes reveal a gentle joy in the sunlight. She's about to speak, but the sound of a landing aircraft shatters the tranquility.""}"
+254	254		204							{1: '1'}
+255	255		301							{2: 'Selena', 3: '...', 4: '1', 18: '100008780'}
+256	256		302							{2: '...', 3: '257'}
+257	257		302							{2: 'We...', 3: '258'}
+258	258		204							{1: '1', 2: '3'}
+259	259		301							{3: 'You are about to offer words of comfort, but Selena suddenly presses her lips together, gently brushing away the dust that had settled on her shoulder.'}
+260	260		301							"{2: 'Selena', 3: ""It's okay. I'm back now. And I'm really here."", 4: '1', 18: '100008781'}"
+261	261		204							{1: '1', 2: '2'}
+262	262		301							{2: 'Selena', 3: 'We still have plenty of time... right?', 4: '1', 18: '100008782'}
+263	263		302							{2: 'Without question.', 3: '264'}
+264	264		202							{1: '1'}
+265	265		301							{3: 'There is plenty of time ahead of you.'}
+266	266		301							{3: 'The sound of the aircraft grows louder, and the girl becomes visibly anxious. You step forward, holding her trembling hands.'}
+267	267		302							{2: 'Are you nervous?', 3: '268', 4: 'Are you worried?', 5: '268'}
+268	268		201							{1: '1', 2: '500291'}
+269	269		301							"{1: '1', 2: 'Selena', 3: ""...Sorry. It's just that right now, I..."", 4: '1', 18: '100008783'}"
+270	270		301							"{2: 'Selena', 3: ""I'm not exactly the same Construct I used to be. I promise, I'm not a threat to Babylonia or anyone else..."", 4: '1', 18: '100008784'}"
+271	271		301							{3: 'In your previous conversations, Selena had already explained the origins of her frame.'}
+272	272		302							{2: 'Babylonia will have proper measures in place.', 3: '273'}
+273	273		301							"{3: 'With the cases like Camu and Noan, Babylonia\'s research on ""Transcendants"" is making progress.'}"
+274	274		301							{3: 'Allen had already contacted the Science Council. After arriving at Babylonia, Selena would enter the Science Council directly with a special status.'}
+275	275		302							"{2: ""Don't worry, we'll be with you."", 3: '276', 4: ""Don't worry, I'll always be here with you."", 5: '276'}"
+276	276		204							{1: '1', 2: '1'}
+277	277		301							{2: 'Selena', 3: '...Okay.', 4: '1', 18: '100008785'}
+278	278		202							{1: '1'}
+279	279		301							{3: 'The childlike innocence has faded from her smile, but the hint of warmth remains.'}
+280	280		301							{3: 'Neither tempests nor sudden downpours have managed to twist her spirit.'}
+281	281		301							{3: 'After countless hardships, she remains the same Selena she was at the beginning—a strong iris blooming after the rain.'}
+282	282		307							{2: '1'}
+283	283		201							{1: '1', 2: '500291', 3: '1'}
+284	284		301							"{1: '1', 2: 'Selena', 3: ""Then... let's go back together."", 4: '1', 18: '100008786'}"
+285	285		301		1		AniZhuanchangBegin			"{2: 'Selena', 3: ""Back to that place... where everyone's waiting."", 4: '1', 18: '100008787'}"

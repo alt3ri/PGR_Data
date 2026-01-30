@@ -1,0 +1,247 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory533.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		401							{1: '2', 2: '2634'}
+4	4		301			DialogEnable				{3: 'Splash—splash—'}
+5	5		301							{3: 'Warm waves wash over your feet, taking away the fine sand beneath you with every retreat.'}
+6	6		301							{3: 'The soft sand slips away with the water, tickling you ever so gently.'}
+7	7		301							{3: 'A sudden splash of water hits your legs, sending droplets and a bit of sand onto your clothes. It quickly dries under the warm sunlight, leaving behind a light trail of sand.'}
+8	8		302							{2: 'Yawn...', 3: '9'}
+9	9		301							{3: 'It is only the middle of the day, but you cannot help but yawn, surrounded by such rare comfort.'}
+10	10		201							{1: '1', 2: '500347', 3: '1'}
+11	11		301							{1: '1', 2: 'Lucia', 3: 'Are you feeling tired, Commandant?', 4: '1'}
+12	12		302							"{2: ""It's hard not to feel sleepy when you relax."", 3: '13'}"
+13	13		301							{3: 'Liv and Lucia stand beside you as the waves also wash over their ankles, leaving dark imprints on the sand.'}
+14	14		302							{2: 'Constellia truly is a place for a vacation.', 3: '15'}
+15	15		301							"{2: 'Lucia', 3: ""I'm glad WGAA invited us."", 4: '1'}"
+16	16		202							{1: '1', 6: '1'}
+17	17		201							{1: '1', 2: '500174', 3: '1'}
+18	18		301				DialogDisable			"{1: '1', 2: 'Liv', 3: ""I think Dark Aries and the Engineering Force were on board the transport craft after us, too. They must have accepted Ayla's invitation as well."", 4: '1'}"
+19	19		302							{2: 'Oh, speaking of which...', 3: '20'}
+20	20		302							"{2: ""Where's Lee?"", 3: '21'}"
+21	21		202							{1: '1', 6: '1'}
+22	22		201							{1: '1', 2: '500347'}
+23	23		301			DialogEnable	DialogDisable			{1: '1', 2: 'Lucia', 3: 'He seemed to have found a suitable spot for diving on this beach, so he went ahead to prepare.', 4: '1'}
+24	24		302				AniZhuanchangBegin			{2: 'I see...', 3: '25'}
+25	25		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory187.png'}
+26	26		402							{1: '2634'}
+27	27		504							{1: '0.7'}
+28	28		502							{1: 'DialogEnable'}
+29	29		201							{1: '1', 2: '500568'}
+30	30		301			AniZhuanchangEnd				{1: '1', 3: 'You ran into Lee during your stroll in the city earlier. He was among a pile of plushies, mechanical tools, and claw machines.'}
+31	31		302							{2: 'What are you doing, Lee?', 3: '32'}
+32	32		301							{2: 'Lee', 3: 'A mechanoid mentioned that these claw machines were malfunctioning and asked me to repair them.', 4: '1'}
+33	33		302							{2: 'Malfunctioning?', 3: '34'}
+34	34		301							"{2: 'Lee', 3: ""The claws were too loose to pick up anything for the first 20 tries. That doesn't meet the advertisement at all, and the mechanoids were confused about why that was happening."", 4: '1'}"
+35	35		302							"{2: '...Good work, Claw Machine Hero.', 3: '36', 4: ""Maybe it's designed this way..."", 5: '36'}"
+36	36		301							"{2: 'Lee', 3: ""It's more or less calibrated. I'm just testing it now."", 4: '1'}"
+37	37		302							"{2: ""Aren't you just working in a different place?"", 3: '38', 4: 'Does this really count as a vacation?', 5: '38'}"
+38	38		301							"{2: 'Lee', 3: ""It's just out of interest."", 4: '1'}"
+39	39		301							"{2: 'Lee', 3: ""...Besides, I'm not used to having so much free time."", 4: '1'}"
+40	40		302							"{2: ""Why don't we hang out together?"", 3: '41'}"
+41	41		301							{3: 'Gazing out the window at the clear sky and the vast ocean ahead, you recall Ayla mentioning another beach in Constellia, separate from the festival venue, ideal for diving.'}
+42	42		302							"{2: ""Why don't we... go diving?"", 3: '43'}"
+43	43		301							{2: 'Lee', 3: 'Go diving... with you?', 4: '1'}
+44	44		302							"{2: 'Yeah, just the two of us.', 3: '45', 4: ""You don't want to go?"", 5: '46'}"
+45	45	47	301				DialogDisable			{2: 'Lee', 3: '...', 4: '1'}
+46	46		301				DialogDisable			"{2: 'Lee', 3: ""...I didn't say that."", 4: '1'}"
+47	47		302							"{2: ""We didn't bring any diving gear, though..."", 3: '48'}"
+48	48		302							{2: 'I wonder if we can find some here.', 3: '49'}
+49	49		301			DialogEnable				{2: 'Lee', 3: 'The mechanoid who asked me to fix the claw machines mentioned a shop in Constellia that sells swimming equipment.', 4: '1'}
+50	50		301				DialogDisable			{2: 'Lee', 3: 'I can go ask around.', 4: '1'}
+51	51		302							"{2: ""I'll leave it to you, then."", 3: '52', 4: 'I get to see you in a swimsuit?!', 5: '53'}"
+52	52	57	502						1500.0	{1: 'AniZhuanchangBegin'}
+53	53		204							{1: '1', 2: '10'}
+54	54		301			DialogEnable				"{2: 'Lee', 3: ""Don't get ahead of yourself."", 4: '1'}"
+55	55		204							{1: '1', 2: '6'}
+56	56		301				AniZhuanchangBegin			{3: 'He expressionlessly picks up a giant plushie and hands it to you.'}
+57	57		202							{1: '1', 6: '1'}
+58	58		504							{1: '0'}
+59	59		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory533.jpg'}
+60	60		502							{1: 'DialogEnable'}
+61	61		301			AniZhuanchangEnd				{3: 'It turns out Lee has already started preparing for your impromptu idea...'}
+62	62		201							{1: '1', 2: '500174', 4: '-400'}
+63	63		201							{1: '2', 2: '500347', 4: '400'}
+64	64		301							"{1: '1', 2: 'Liv', 3: 'I recall Lee muttering about ""safety stops"" and ""regulators"" when he left...', 4: '1'}"
+65	65		301							{2: 'Lucia', 3: 'Ahem...', 4: '2'}
+66	66		204							{1: '1', 2: '1'}
+67	67		301							{2: 'Liv', 3: 'Oh! Forget what I said...', 4: '1'}
+68	68		302							{2: 'Hmm?'}
+69	69		204							{1: '2', 2: '1'}
+70	70		301							{2: 'Lucia', 3: 'Anyway! Do you want to go sightseeing in the city first, Commandant? Or maybe you can visit the art gallery by the beach?', 4: '2'}
+71	71		301							{2: 'Lucia', 3: 'You should take the time to relax on this vacation!', 4: '2'}
+72	72		301							{2: 'Liv', 3: 'Ayla gave me a travel guide on Constellia that she wrote herself... Here it is.', 4: '1'}
+73	73		301							"{2: 'Liv', 3: ""I've sent it to you, Commandant. There are quite a few tourist spots that you can check out!"", 4: '1'}"
+74	74		301							"{2: 'Lucia', 3: ""And Dark Aries is on vacation here as well. They haven't shown up yet, so maybe you can go look for them?"", 4: '2'}"
+75	75		301				DialogDisable			{3: 'Liv and Lucia awkwardly try to hide something from you, but they both cannot stop smiling.'}
+76	76		302							{2: 'How rare...', 3: '77'}
+77	77		302							{2: 'Alright.', 3: '78'}
+78	78		204							{1: '1'}
+79	79		204							{1: '2'}
+80	80		301			DialogEnable				{2: 'Liv', 3: 'Huh?!', 4: '1'}
+81	81		301							{2: 'Lucia', 3: 'Commandant...', 4: '2'}
+82	82		302							"{2: ""I'll go for a stroll, then."", 3: '83'}"
+83	83		204							{1: '1', 2: '1'}
+84	84		204							{1: '2', 2: '1'}
+85	85		301							{2: 'Lucia', 3: 'Sure!', 4: '2'}
+86	86		301							"{2: 'Lucia', 3: ""We'll have everything ready by the time you get back, Commandant."", 4: '2'}"
+87	87		301				AniZhuanchangBegin			"{2: 'Liv', 3: ""We'll be here for the time being, Commandant."", 4: '1'}"
+88	88		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory191.png'}
+89	89		202							{1: '1', 2: '2', 6: '1'}
+90	90		401							{1: '1', 2: '282'}
+91	91		301			AniZhuanchangEnd				{3: 'As the sand beneath your feet begins to dry, you find yourself standing quite far outside the beach where Liv and Lucia are waving goodbye.'}
+92	92		301							{3: 'You can tell it right away without much thinking—they are definitely planning for some kind of surprise. Like always, they are terrible liars.'}
+93	93		301							{3: 'But since it is a plan they have hatched, you figure your best option is to gladly accept whatever is to come.'}
+94	94		301							{3: 'After confirming the location on your terminal, you head to where Dark Aries is. Simon is nowhere to be seen, and you find the remaining three members of Dark Aries arguing by the beach.'}
+95	95		201							{1: '1', 2: '500522'}
+96	96		201							{1: '2', 2: '500727', 4: '600'}
+97	97		201							{1: '3', 2: '500335', 4: '-600'}
+98	98		301							"{1: '1', 2: 'Palma', 3: ""What does it have to do with me? If you weren't on bad terms with Simon, would he have looked at me while bringing up the Chief out of nowhere?"", 4: '1'}"
+99	99		301							"{2: 'Palma', 3: ""And I lost rock-paper-scissors! You were the one who won the coating for the beach talent show! I'm only involved because you managed to piss him off so much he passed out!"", 4: '1'}"
+100	100		301							"{2: 'Noan', 3: ""You're exaggerating. Besides, look... You also noticed how he wanted to watch our training but insisted on hiding behind the monitors and pretending to be our coach instead."", 4: '2'}"
+101	101		301							"{2: 'Palma', 3: 'That was only because of what happened last time. I\'ve had enough. Simon\'s whole spiel of ""unity and camaraderie"" is going to include me when there are fewer than two targets.', 4: '1'}"
+102	102		301							"{2: 'Palma', 3: ""And I! Don't! Want! To participate in any talent show on any beach!"", 4: '1'}"
+103	103		301							"{2: 'Noan', 3: ""But you're our captain."", 4: '2'}"
+104	104		301							{2: 'Palma', 3: 'Send me back to the Purifying Force, please.', 4: '1'}
+105	105		301							"{2: 'Lillian', 3: ""There's no going back now, Captain Palma."", 4: '3'}"
+106	106		301							"{2: 'Palma', 3: ""I don't need your reminder!"", 4: '1'}"
+107	107		301							{3: 'Palma looks particularly angry, enraged by either recent events or a long-harbored grudge.'}
+108	108		204							{1: '3', 2: '19'}
+109	109		301							{2: 'Lillian', 3: 'But...', 4: '3'}
+110	110		301							"{2: 'Palma', 3: ""Noan! You didn't do it on purpose when you came up with your spur-of-the-moment idea that time, did you?"", 4: '1'}"
+111	111		301							{2: 'Noan', 3: 'Which time?', 4: '2'}
+112	112		301							"{2: 'Lillian', 3: ""Wait, that's..."", 4: '3'}"
+113	113		301							"{2: 'Palma', 3: ""That time when you said you'd bring your homemade chicken wings to apologize to Simon!"", 4: '1'}"
+114	114		301							{2: 'Noan', 3: 'I did apologize.', 4: '2'}
+115	115		301							{2: 'Lillian', 3: 'Guys...', 4: '3'}
+116	116		301							"{2: 'Palma', 3: 'If it weren\'t for your ""spur-of-the-moment"" idea to use the chicken wings to their fullest before cooking them, Simon wouldn\'t have thought you had no intention of—', 4: '1'}"
+117	117		301							{2: 'Lillian', 3: 'The Gray Raven Commandant has been standing behind us all this time!', 4: '3'}
+118	118		301							{3: 'The air goes stale. Palma turns around, annoyed, while Noan opens his mouth as if trying to say something before ultimately staying silent.'}
+119	119		301							"{2: 'Noan', 3: ""It's been a while, Commandant."", 4: '2'}"
+120	120		204							{1: '3'}
+121	121		301				DialogDisable			{2: 'Lillian', 3: 'Greetings, Gray Raven Commandant...', 4: '3'}
+122	122		302							{2: 'Hello, guys.', 3: '123', 4: 'Long time no see.', 5: '123'}
+123	123		302							"{2: 'Am I interrupting something?', 3: '124', 4: ""My apologies. I didn't mean to interrupt."", 5: '124'}"
+124	124		301			DialogEnable				{2: 'Lillian', 3: 'Not at all. You have my gratitude.', 4: '3'}
+125	125		302							{2: 'So... how did you use the wings to their fullest?', 3: '126'}
+126	126		301							{2: 'Noan', 3: 'Uh... I just...', 4: '2'}
+127	127		301							"{2: 'Palma', 3: ""He just practiced surgery on the chicken wings and didn't clean them properly after doing a terrible job stitching them up."", 4: '1'}"
+128	128		302							{2: '...Oh.', 3: '129', 4: '...', 5: '129'}
+129	129		301							"{3: 'You seem to hear Noan let out a very muted ""tsk,"" but you look up to see his usual expression.'}"
+130	130		302							"{2: '(Poor Simon...)', 3: '131', 4: ""That was a little too creative, wasn't it?"", 5: '131'}"
+131	131		301							"{2: 'Palma', 3: ""You also think he did it on purpose, don't you?"", 4: '1'}"
+132	132		301							"{2: 'Noan', 3: ""Of course I didn't. Believe me—I just wanted to try something new."", 4: '2'}"
+133	133		301							{2: 'Lillian', 3: 'You said the same thing when you went to WGAA.', 4: '3'}
+134	134		301				DialogDisable			"{2: 'Palma', 3: ""Ugh, I can't stand it anymore. Can't you two become defectors or something so I can hunt you down?"", 4: '1'}"
+135	135		302							{2: '...Those two times you were talking about...', 3: '136'}
+136	136		302							{2: 'Has anyone else been injured apart from Simon?', 3: '137'}
+137	137		301			DialogEnable	DialogDisable			{2: 'Lillian', 3: 'No. The people from WGAA we met that time were quite happy, actually.', 4: '3'}
+138	138		302				AniZhuanchangBegin			{2: 'Oh, Simon...', 3: '139'}
+139	139		306							{1: '1'}
+140	140		401							{1: '1', 2: '36'}
+141	141		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+142	142		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+143	143		401							{1: '1', 2: '209'}
+144	144		502							{1: 'DialogEnable'}
+145	145		301			AniZhuanchangEnd				{3: 'Simon is the third commandant of Dark Aries, taking command after its second restructuring.'}
+146	146		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory805.png', 3: '0', 4: '0.4', 5: '2'}
+147	147		301							"{3: '—Some say the name ""Dark Aries"" is like a curse.'}"
+148	148		301				AniZhuanchangBegin			"{3: ""Aries, the ram, signifies sacrifice. You have heard rumors about the squad's tumultuous past.""}"
+149	149		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+150	150		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory191.png'}
+151	151		201							{1: '1', 2: '500522'}
+152	152		201							{1: '2', 2: '500727', 4: '600'}
+153	153		201							{1: '3', 2: '500335', 4: '-600'}
+154	154		301			AniZhuanchangEnd				{1: '1', 3: 'However, it is clear that they are different from the Dark Aries of the past after you have spent some time with them.'}
+155	155		302							{2: '(This squad has nothing to do with ram or sheep anymore...)', 3: '156'}
+156	156		301				DialogDisable			{3: 'That is why they should not be cooped up in a sheep pen.'}
+157	157		302				AniZhuanchangBegin			{2: '(Soon, perhaps...)', 3: '158'}
+158	158		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+159	159		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory547.jpg'}
+160	160		502							{1: 'DialogEnable'}
+161	161		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'Once this squad is deployed to the battlefield, those who fight alongside them will know this to be true.'}
+162	162		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+163	163		201							{1: '3', 2: '500506', 4: '800'}
+164	164		201							{1: '2', 2: '500335', 4: '-800'}
+165	165		201							{1: '1', 2: '500522', 4: '225'}
+166	166		201							{1: '4', 2: '500201', 4: '-275'}
+167	167		301			AniZhuanchangEnd	AniZhuanchangBegin			{1: '1', 3: 'When that happens, Commander Nikola and President Hassen will describe the new Dark Aries like this—', 4: '1', 5: '2', 6: '3', 7: '4'}
+168	168		202							{1: '1', 2: '2', 3: '3', 4: '4', 6: '1'}
+169	169		401							{1: '2', 2: '2979'}
+170	170		306							
+171	171		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory805.png'}
+172	172		104						500.0	{1: '700|50|200', 2: '0'}
+173	173		107							{1: 'Simon', 2: 'Dark Aries Commandant', 3: 'Simon'}
+174	174		201							{1: '1', 2: '500201'}
+175	175		301			AniZhuanchangEnd				{1: '1', 3: 'Commandant Simon. Diligent shepherd, ailing man.', 4: '1'}
+176	176		301							"{3: 'Various mishaps in the past have lost him many ""sheep."" Vigilant as he may be, he would still choose to believe the ""sheep"" by his side.', 4: '1'}"
+177	177		401							{1: '2', 2: '2979'}
+178	178		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+179	179		201							{1: '1', 2: '500522'}
+180	180		107							{1: 'Palma', 2: 'Dark Aries Captain', 3: 'Paloma'}
+181	181		301							{1: '1', 3: 'Captain Palma. The weary panther, silent and cold-blooded.', 4: '1'}
+182	182		301							{3: 'Self-loathing huntress of the night, she hunts other night creatures indiscriminately. Her only weakness... is how she will burn if she comes to light.', 4: '1'}
+183	183		401							{1: '2', 2: '2979'}
+184	184		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+185	185		201							{1: '1', 2: '500335'}
+186	186		107							{1: 'Lillian', 2: 'Dark Aries Member', 3: 'Lilian'}
+187	187		301							"{1: '1', 3: ""Lillian, a weasel raised by poachers in sheep's clothing. She looks just like a frightened lamb on the surface."", 4: '1'}"
+188	188		301							{3: 'Always alert, she dreams of a day when she can finally let her guard down and become a real sheep, living comfortably in the sheep pen.', 4: '1'}
+189	189		401							{1: '2', 2: '2979'}
+190	190		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+191	191		201							{1: '1', 2: '500506'}
+192	192		107							{1: 'Noan', 2: 'Dark Aries Member', 3: 'Noan'}
+193	193		301							"{1: '1', 3: ""Noan, a wolf in sheepdog's clothing."", 4: '1'}"
+194	194		301				AniZhuanchangBegin			{3: 'Gentle but crafty, he looks as diligent as a shepherd so long as he decides to remain modest.', 4: '1'}
+195	195		108							{1: '1'}
+196	196		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+197	197		201							{1: '3', 2: '500506', 4: '800', 7: '1'}
+198	198		201							{1: '2', 2: '500335', 4: '-800', 7: '2'}
+199	199		201							{1: '1', 2: '500522', 4: '225', 7: '3'}
+200	200		201							{1: '4', 2: '500201', 4: '-275', 7: '4'}
+201	201		301			AniZhuanchangEnd	AniZhuanchangBegin			{1: '1', 3: 'The Dark Aries now are less like sheep and more like the predators that hunt them. No one but Simon belongs in a sheep pen.', 4: '1', 5: '2', 6: '3', 7: '4'}
+202	202		202							{1: '1', 2: '2', 3: '3', 4: '4', 6: '1'}
+203	203		401							{1: '1', 2: '36'}
+204	204		104							{1: '0|0|0', 2: '0'}
+205	205		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory191.png'}
+206	206		401							{1: '1', 2: '282'}
+207	207		201							{1: '1', 2: '500201', 3: '1'}
+208	208		301			AniZhuanchangEnd				"{1: '1', 2: 'Simon', 3: ""Chief, it's been a while. You're looking much better than before."", 4: '1'}"
+209	209		301							{3: 'Simon has returned while you were pondering.'}
+210	210		302							{2: 'Long time no see. Everyone was just talking about you.', 3: '211'}
+211	211		301							"{2: 'Simon', 3: ""I appreciate your concern... but there's nothing to worry about."", 4: '1'}"
+212	212		202							{1: '1', 6: '1'}
+213	213		201							{1: '1', 2: '500201', 4: '400'}
+214	214		201							{1: '2', 2: '500335', 4: '-400'}
+215	215		301							{1: '1', 2: 'Lillian', 3: 'Should we continue with the... t-team training?', 4: '2'}
+216	216		301							"{2: 'Simon', 3: ""Of course. We didn't hit our target yesterday. We can't stop now even if we're on vacation."", 4: '1'}"
+217	217		202							{1: '2', 6: '1'}
+218	218		201							{1: '2', 2: '500522', 4: '-400'}
+219	219		301							"{1: '1', 2: 'Palma', 3: ""Wasn't that enough? You—"", 4: '2'}"
+220	220		301							{2: 'Simon', 3: 'Remember why Bianca kicked you out of the Purifying Force.', 4: '1'}
+221	221		301							{3: 'Palma unwillingly quiets down.'}
+222	222		301							"{2: 'Simon', 3: ""...We're doing this to avoid repeating the same mistake."", 4: '1'}"
+223	223		202							{1: '2'}
+224	224		301							{3: 'She turns away, stepping back into line.'}
+225	225		203							{1: '1', 2: '0.25'}
+226	226		204							{1: '1', 2: '1'}
+227	227		301							"{2: 'Simon', 3: ""I'm sorry, but we might need another hour before we can join everyone."", 4: '1'}"
+228	228		301							{3: 'Simon smiles wrily as if to let you know that he was embarrassed you had to witness that, and he was just acting tough.'}
+229	229		302							"{2: ""It's alright. I'll just wander around for a bit."", 3: '230'}"
+230	230		301							{3: 'He nods before heading toward the shore with the three members of Dark Aries.'}
+231	231		202							{1: '1'}
+232	232		301							{3: 'Who says shepherds can only tame docile sheep meant for slaughter? Their journey together may be fraught with hardships, but no one is going to leave this time...'}
+233	233		201							{1: '1', 2: '500335', 3: '11'}
+234	234		301							{1: '1', 2: 'Lillian', 3: 'Ah! Something urgent just came up! I have to leave for five minutes!', 4: '1'}
+235	235		203							{1: '1', 2: '0.2', 3: '-800'}
+236	236		202						500.0	{1: '1'}
+237	237		201							{1: '1', 2: '500201'}
+238	238		301							{1: '1', 2: 'Simon', 3: 'Lillian', 4: '1'}
+239	239		301				DialogDisable			{3: '...Right?'}
+240	240		202						500.0	{1: '1'}
+241	241		302							{2: '...Whew. Moving on...', 3: '242'}
+242	242		301			DialogEnable				"{3: 'You open the ""Constellia Travel Guide"" Liv sent you on your terminal, and you are surprised to find that the first sentence is not the expected ""Welcome to Constellia!"". Instead, it says...'}"
+243	243		401							{1: '2', 2: '4051'}
+244	244		307	1						"{1: '""Enjoy the summer!""', 3: '75'}"
+245	245		307							{2: '1'}
+246	246		301		1		AniZhuanchangBegin			"{3: 'What an Ayla-style ""guide"" this is...'}"

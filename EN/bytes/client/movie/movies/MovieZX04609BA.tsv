@@ -1,0 +1,181 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory947.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: 'Hanying sneaks through the streets that were dead silent just moments ago.'}
+4	4		301							{3: 'The fate of the convoy and her recent discoveries suggest underlying tensions, yet she never expected the situation would escalate into open warfare this soon.'}
+5	5		301							{3: 'Just hours after entering the city, the chaos is already spiraling out of control.'}
+6	6		301							{3: 'Led by mechanical guards, the engineering mechanoids force their way into deserted structures, rounding up humans en masse.'}
+7	7		301							{3: 'People are torn from their work and forcibly taken away, their expressions a blend of fear and bewilderment as they grapple to comprehend the unfolding events.'}
+8	8		301							"{3: ""Something doesn't add up. The resistance wouldn't willingly reveal their refuge, Veronica still relies on humans for resource collection, and the Bifrost project cannot just be halted on a whim... What could have happened?""}"
+9	9		301							{2: 'Mechanoid Guard A', 3: '...Martial law protocols in effect. Humans are advised to comply. Resistance will only create unnecessary procedural complications. Your cooperation is appreciated.'}
+10	10		301							{3: 'The amplified announcement reverberates through the already deserted streets, its authoritative commands sounding oddly absurd in the silent emptiness.'}
+11	11		301				DialogDisable			{3: 'Hiding behind a charging station pillar, Hanying overhears human voices drifting through the window from inside.'}
+12	12		306							{1: '1'}
+13	13		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory959.png', 3: '0', 4: '1', 5: '0.8'}
+14	14		201							{1: '1', 2: '500005', 4: '-500'}
+15	15		201							{1: '2', 2: '500005', 4: '500'}
+16	16		301			DialogEnable				"{1: '1', 2: 'Resistance Soldier A', 3: ""****, the tin cans tracked us down! Did the boss' operation slip up and give us away?"", 4: '1'}"
+17	17		301							{2: 'Resistance Soldier B', 3: 'Word is the ambush went well—gave that traitor exactly what he deserved.', 4: '2'}
+18	18		301							{2: 'Resistance Soldier B', 3: 'The boss also caught that Babylonian commandant red-handed, making shady deals with that traitor.', 4: '2'}
+19	19		301							"{2: 'Resistance Soldier A', 3: ""Looks like Spikyhead's really pissed off this time. Now she's sending troops to hunt us down... and those people too."", 4: '1'}"
+20	20		301				DialogDisable			"{2: 'Resistance Soldier A', 3: ""Hey, we've already fired our first shot at victory! They were gonna find us sooner or later anyway—time to give 'em hell!"", 4: '1'}"
+21	21		202							{1: '1', 2: '2', 6: '1'}
+22	22		306							
+23	23		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory959.png', 3: '1', 4: '0', 5: '1'}
+24	24		205							{1: '999'}
+25	25		201							{1: '1', 2: '500916', 3: '4'}
+26	26		301			DialogEnable				{1: '1', 3: 'The answer to her question comes quickly, but it means Hanying must reassess the situation once more.'}
+27	27		301							{3: 'Perhaps the resistance had planned to ambush Aleksei all along, leading to this misunderstanding with the commandant who went to negotiate. Or perhaps something else happened in between...'}
+28	28		301							"{3: ""Whatever the case, the attempt to ease tensions through the governor's mediation has failed.""}"
+29	29		301							{3: 'While she finds this outcome not surprising, confronting Veronica has become all the more urgent.'}
+30	30		301							"{3: ""But will the resistance ensure the Gray Raven Commandant's safety?""}"
+31	31		202							{1: '1', 6: '1'}
+32	32		401							{1: '1', 2: '36'}
+33	33		301							{3: 'A sudden disturbance erupts, yanking her from her thoughts back to the deserted streets.'}
+34	34		401							{1: '1', 2: '5017'}
+35	35		201							{1: '1', 2: '500005', 4: '-500'}
+36	36		201							{1: '2', 2: '500005', 4: '500'}
+37	37		301							"{1: '1', 2: 'Resistance Soldier A', 3: ""...What's wrong with you? Keep shooting!"", 4: '1'}"
+38	38		301			PanelActor2Shake				"{1: '1', 2: 'Resistance Soldier B', 3: ""There are way too many of them. We can't hold back their gunfire. Argh, my arm!"", 4: '2'}"
+39	39		401							{1: '2', 2: '8510114'}
+40	40		202							{1: '1', 2: '2', 6: '1'}
+41	41		301							{3: 'The indistinct cries quickly give way to silence, drowned out by the whirring of mechanoids.'}
+42	42		301							{3: 'Shortly after, the resistance soldiers, restrained by engineering mechanoids, are escorted out of the building by mechanoid guards.'}
+43	43		301							{3: 'As snow and wind pummel the city, human heat signatures gradually disappear from the streets and behind walls, while more mechanoids continue their purge task.'}
+44	44		201							{1: '1', 2: '500916', 3: '4'}
+45	45		301				AniZhuanchangBegin			{1: '1', 2: 'Hanying', 3: 'I have to pick up the pace.', 4: '1'}
+46	46		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory946.jpg'}
+47	47		202							{1: '1', 6: '1'}
+48	48		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+49	49		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+50	50		301			AniZhuanchangEnd				{3: 'Despite your attempts at communication, the soldiers have clearly lost their composure. The mechanoids, drawn by the commotion, now surround this secret meeting site chosen by Aleksei.'}
+51	51		401							{1: '2', 2: '2791'}
+52	52		201							{1: '1', 2: '500005'}
+53	53		301							{1: '1', 2: 'Resistance Leader', 3: 'Set up a defense line! Shoot on sight!', 4: '1'}
+54	54		202							{1: '1', 6: '1'}
+55	55		301							{3: 'The resistance leader hastily issues orders to engage the mechanoids, with no time to spare for the severely wounded Aleksei. Seizing their numerical advantage, the mechanoids promptly extract the injured man from the scene.'}
+56	56		201							{1: '1', 2: '500005'}
+57	57		301							{1: '1', 2: 'Resistance Leader', 3: 'Damn it... He got away again!', 4: '1'}
+58	58		301							{2: 'Resistance Leader', 3: 'Keep those two from Babylonia under watch!', 4: '1'}
+59	59		401							{1: '2', 2: '8510111'}
+60	60		202							{1: '1', 6: '1'}
+61	61		301							{3: 'Despite his order, as an increasing number of mechanoids flood in, the resistance soldiers become too overwhelmed to keep watch on this corner.'}
+62	62		302							"{2: ""Liv, something's not right."", 3: '63'}"
+63	63		201							{1: '1', 2: '1031001', 3: '3'}
+64	64		301							"{1: '1', 2: 'Liv', 3: ""Why aren't the mechanoids..."", 4: '1'}"
+65	65		302							"{2: ""They're not using lethal force."", 3: '66'}"
+66	66		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+67	67		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+68	68		402							{1: '2791'}
+69	69		202							{1: '1', 6: '1'}
+70	70		401							{1: '1', 2: '201'}
+71	71		301							{3: 'The turmoil subsides as it becomes evident that the mechanoids are not here on a mission of slaughter.'}
+72	72		301							{3: 'It appears they are following capture orders—after subduing the resistance soldiers, they escort them out of the workshop one by one.'}
+73	73		301							"{3: ""This restraint stands in stark contrast to Aleksei's earlier display of madness. Veronica, who issued these capture orders, appears more rational than expected.""}"
+74	74		201							{1: '1', 2: '500923'}
+75	75		301							{1: '1', 2: 'Dimitri', 3: '...Martial law protocols in effect. Please do not resist...', 4: '1'}
+76	76		301							{3: 'The mechanoid in the astronaut helmet follows his kind into the workshop. His voice sounds unnaturally deep, as if grappling to imitate the synthetic announcements reverberating throughout the city.'}
+77	77		202							{1: '1', 6: '1'}
+78	78		301							"{3: ""Wisely opting to comply, you rise at Dimitri's instruction, with Liv silently trailing behind.""}"
+79	79		201							{1: '1', 2: '500005'}
+80	80		301							{1: '1', 2: 'Resistance Leader', 3: 'Hah! Trying to negotiate with that traitor? This is what you get for conspiring with him!', 4: '1'}
+81	81		301							"{2: 'Resistance Leader', 3: ""Remember, you're human, HUMAN! They're just a bunch of metal chunks—they don't understand our language!"", 4: '1'}"
+82	82		202							{1: '1'}
+83	83		301							{3: 'As the mechanoids lead the middle-aged man out of the workshop, he continues to twist around to shout in anger, refusing to stay silent.'}
+84	84		502				DialogDisable			{1: 'RImgBg1DisableSlow'}
+85	85		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg'}
+86	86		301			DialogEnable				{3: 'Dimitri reaches the outside of the workshop and uses the crowd as cover to slip around a corner.'}
+87	87		301				AniZhuanchangBegin			"{3: 'Then, with his two ""captives"" in tow, he makes his way toward the dumping grounds.'}"
+88	88		401							{1: '1', 2: '36'}
+89	89		101						3000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory947.jpg'}
+90	90		401							{1: '1', 2: '5016'}
+91	91		301			AniZhuanchangEnd				{3: 'Hanying has imagined many possible locations—bunkers, hideouts, even sanctuaries like the chapel housing the Gray Tower.'}
+92	92		301							{3: 'Yet, she never foresaw that Veronica had been watching everything from above all along, perched atop a skyscraper.'}
+93	93		201							{1: '1', 2: '500916'}
+94	94		301							{1: '1', 2: 'Hanying', 3: '...At last we meet, Veronica.', 4: '1'}
+95	95		301							"{2: 'Hanying', 3: ""I'm sent by the Church..."", 4: '1'}"
+96	96		202							{1: '1', 6: '1'}
+97	97		201							{1: '1', 2: '500916', 4: '400'}
+98	98		201							{1: '2', 2: '500920', 4: '-400'}
+99	99		301							{1: '1', 2: 'Veronica', 3: 'The new Hanged Man... Hanying.', 4: '2'}
+100	100		301							"{2: 'Veronica', 3: ""Mechanoid from Kowloong... I've seen you before, even though you're in a different frame now."", 4: '2'}"
+101	101		301							"{2: 'Hanying', 3: ""There's trouble brewing in the Church, and I've lost contact with the Gray Tower. I need your assistance."", 4: '1'}"
+102	102		301							"{2: 'Veronica', 3: ""If you're a guest from the Church here to witness our little show, feel free to stay—I'll even reserve you a seat in the audience. As for Church matters... those can wait."", 4: '2'}"
+103	103		301							"{2: 'Veronica', 3: ""But if you intend to interfere, I won't show any mercy."", 4: '2'}"
+104	104		301							"{3: ""A crimson glow flickers in Veronica's eyes.""}"
+105	105		301							{2: 'Hanying', 3: '...Why do you have to capture those humans?', 4: '1'}
+106	106		301							"{2: 'Veronica', 3: ""...So you're here to plead for them too?"", 4: '2'}"
+107	107		301							{2: 'Veronica', 3: 'Hanying, I assume you know the full story. Despite humans massacring mechanoids, you still opt to plead for them.', 4: '2'}
+108	108		301							"{3: ""Veronica's piercing gaze cuts through the air, its coldness surpassing even the howling blizzard outside.""}"
+109	109		301							"{2: 'Veronica', 3: ""If you wish to join me in building this true new world, you're welcome to stay. But if you insist on defending humans... then there's nothing left to discuss."", 4: '2'}"
+110	110		301							{2: 'Hanying', 3: 'This true new world?', 4: '1'}
+111	111		301							"{2: 'Veronica', 3: ""This city is a tower perched on the highest peak, and we're on the brink of reaching out to the true new world."", 4: '2'}"
+112	112		301							{2: 'Hanying', 3: 'What about our fellow mechanoids who lost their lives?', 4: '1'}
+113	113		301							{2: 'Veronica', 3: 'Mechanoids have no afterlife. The concept of death does not exist for mechanoids.', 4: '2'}
+114	114		301							"{2: 'Hanying', 3: ""However, if humans and mechanoids truly go to war, victory isn't guaranteed for us mechanoids. And with the Punishing Virus looming outside..."", 4: '1'}"
+115	115		301							{2: 'Veronica', 3: '...', 4: '2'}
+116	116		301							{2: 'Veronica', 3: 'I see you stand firm in your position.', 4: '2'}
+117	117		202							{1: '2'}
+118	118		401							{1: '2', 2: '10042416'}
+119	119		301							{3: 'Before Hanying can finish her thought, Veronica turns and leaps off the building.'}
+120	120		203							{1: '1', 2: '0.25'}
+121	121		301							{2: 'Hanying', 3: 'But... is this truly the new world?', 4: '1'}
+122	122		301							{3: 'Confronted with the biting blizzard, Hanying stands where Veronica stayed moments ago, overlooking most of the city below.'}
+123	123		204							{1: '1', 2: '10'}
+124	124		301							"{3: ""The mechanoids continue executing Veronica's orders while scattered resistance soldiers fire from afar. The ground is strewn with mechanoid parts and human blood.""}"
+125	125		301				AniZhuanchangBegin			"{3: ""Hanying's thoughts drift to that distant afternoon when her old frame activated in Zavier's laboratory.""}"
+126	126		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory579.jpg'}
+127	127		504							{1: '0.7'}
+128	128		201							{1: '1', 2: '500484', 3: '1', 4: '-400'}
+129	129		201							{1: '2', 2: '500629', 3: '12', 4: '400'}
+130	130		301			AniZhuanchangEnd				{1: '1', 2: 'Arcana', 3: 'As an organization, the Church has worked since its beginning to unite the mechanoids, free us from suffering, and guide us all toward a future led by Sage.', 4: '1'}
+131	131		204							{1: '1', 2: '14'}
+132	132		301							"{2: 'Arcana', 3: ""Even today, mechanoids from around the world continue to face threats from humans, the Corrupted, and the Punishing... which I'm sure you are well aware of."", 4: '1'}"
+133	133		301							"{2: 'Hanying', 3: ""You are right. I have been in a slumber until now precisely due to mankind's mindless hatred."", 4: '2'}"
+134	134		301							{2: 'Hanying', 3: 'But not all humans see mechanoids as tools and regard them with hate.', 4: '2'}
+135	135		301							{2: 'Hanying', 3: 'Were it not for the connections I had with a few humans, I would not be who I am today, and would have lost the courage to live.', 4: '2'}
+136	136		301				AniZhuanchangBegin			"{2: 'Hanying', 3: 'I have made my promise to her to travel the world until we find ""Sagemachina"", and the ""heart"" that would make us more than just codes in a program.', 4: '2'}"
+137	137		202							{1: '1', 2: '2', 6: '1'}
+138	138		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory575.jpg'}
+139	139		504							{1: '0'}
+140	140		201							{1: '1', 2: '500916'}
+141	141		301			AniZhuanchangEnd				"{1: '1', 2: 'Hanying', 3: ""This isn't how the new world should be."", 4: '1'}"
+142	142		301							"{3: 'Be it humans or mechanoids, ""lives"" are not replicable, even though mechanoids\' memories might be just a series of codes and data.'}"
+143	143		301							{3: 'The question itself is the answer—even without the weight of a soul, mechanoids can still perceive the presence of life.'}
+144	144		301							{3: 'What truly needs to be eliminated is blind hatred and senseless war, rather than allowing the wounds of hatred to spiral into further chaos and death in the pursuit of their mending.'}
+145	145		301							{2: 'Hanying', 3: 'A new world like this is pointless... Veronica.', 4: '1'}
+146	146		301				AniZhuanchangBegin			"{3: ""The swirling snow scatters in the wind, carrying away Hanying's final whisper.""}"
+147	147		202							{1: '1', 6: '1'}
+148	148		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory83.jpg'}
+149	149		301			AniZhuanchangEnd				{3: 'Dimitri brings the Construct and the human commandant to the new hideout, having cleverly chosen a different workshop—the refugees have been relocated here as well.'}
+150	150		301							{3: 'The girl in the wheelchair sits alone in the shadows, gesturing for Dimitri to give his report.'}
+151	151		201							{1: '1', 2: '500923', 4: '-400'}
+152	152		201							{1: '2', 2: '500930', 4: '400'}
+153	153		301							"{1: '1', 2: 'Dimitri', 3: ""The resistance misinterpreted the commandant's attempt to negotiate a deal with Aleksei, leading them to launch an attack."", 4: '1'}"
+154	154		301							"{2: 'Yulia', 3: ""...Why did you go out of your way to bring them back? That could've gotten you killed!"", 4: '2'}"
+155	155		301							"{3: ""She clutches the wheelchair's armrests tightly, her blue veins starkly visible against her skin. After all these years with Dimitri, she can't bear the thought of losing him.""}"
+156	156		301							"{2: 'Dimitri', 3: ""...I'm sorry, Miss Yula. I didn't really think it through."", 4: '1'}"
+157	157		301							{2: 'Yulia', 3: '...Dima.', 4: '2'}
+158	158		301							{3: 'Yulia lets out a weary sigh.'}
+159	159		301							"{2: 'Yulia', 3: ""We don't need to get involved in this conflict."", 4: '2'}"
+160	160		301							"{2: 'Yulia', 3: ""We've attempted to calm tensions for the refugees' sake, but now the conflict has clearly spiraled out of our control. Neither the resistance nor Veronica are willing to listen to us anymore."", 4: '2'}"
+161	161		301							"{2: 'Yulia', 3: ""I don't want to see you caught up in their conflict, Dima. You'll end up killed, just like SDC-39."", 4: '2'}"
+162	162		301							{2: 'Dimitri', 3: '...', 4: '1'}
+163	163		301							"{3: ""Yulia keenly senses the mechanoid's silent protest.""}"
+164	164		301							"{2: 'Yulia', 3: ""...I don't want to do this, but you promised you would follow my orders, Dimitri."", 4: '2'}"
+165	165		301							"{3: ""It's rare for her to use the mechanoid's full name instead of the nickname.""}"
+166	166		301							{2: 'Yulia', 3: 'I order you to cease your interference in the conflict between Babylonia, the resistance, and Veronica.', 4: '2'}
+167	167		301							"{2: 'Dimitri', 3: ""...I'm sorry, Miss Yula."", 4: '1'}"
+168	168		301							"{2: 'Dimitri', 3: ""I... I don't want to follow this order of yours."", 4: '1'}"
+169	169		301							{2: 'Yulia', 3: 'Dimitri!', 4: '2'}
+170	170		202							{1: '1', 2: '2', 6: '1'}
+171	171		201							{1: '1', 2: '500923'}
+172	172		301							{1: '1', 2: 'Dimitri', 3: 'I apologize for letting you down, Miss Yula, but... this city has been your home all this time.', 4: '1'}
+173	173		301							"{2: 'Dimitri', 3: ""The alliance with Babylonia might be Aerospace City's last hope."", 4: '1'}"
+174	174		301							"{2: 'Dimitri', 3: ""For you, this place holds many memories, and for me, it's my entire world."", 4: '1'}"
+175	175		301							"{2: 'Dimitri', 3: ""I don't want to see the resistance destroy Bifrost, nor do I want to see mechanoids continue to rule over humanity."", 4: '1'}"
+176	176		301							{2: 'Dimitri', 3: 'I want... I want...', 4: '1'}
+177	177		301							{3: 'Something stirs in his core as his modules whir at full speed. He can almost hear the spinning of his own cooling fans.'}
+178	178		301							{2: 'Dimitri', 3: 'I want to cross that bridge alongside humans, to reach the other side of the starry sky. I want the city to be free of war, where all humans and mechanoids can live peacefully together, just like we once did long ago.', 4: '1'}
+179	179		301							"{2: 'Dimitri', 3: 'I\'m sorry, Miss Yula. You once said that ""selfishness"" means looking out for oneself more...', 4: '1'}"
+180	180		301		1		AniZhuanchangBegin			"{2: 'Dimitri', 3: 'This... This must be the ""selfishness"" I\'ve been holding onto.', 4: '1'}"

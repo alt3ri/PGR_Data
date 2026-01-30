@@ -1,0 +1,74 @@
+Role	Layer	State	Target	TransitionDuration
+Mt1WrenchMd000005		AnyState	Born	
+Mt1WrenchMd000005		AnyState	Stand2	
+Mt1WrenchMd000005		AnyState	Stand1	
+Mt1WrenchMd000005		AnyState	Stand3	
+Mt1WrenchMd000005		AnyState	Standchange	
+Mt1WrenchMd000005		AnyState	Run	0.2
+Mt1WrenchMd000005		AnyState	Walk	
+Mt1WrenchMd000005		AnyState	Death	
+Mt1WrenchMd000005		AnyState	Hit1	
+Mt1WrenchMd000005		AnyState	Hit2	
+Mt1WrenchMd000005		AnyState	Behitfly	
+Mt1WrenchMd000005		AnyState	Hoverhit	
+Mt1WrenchMd000005		AnyState	Falldown	0.1
+Mt1WrenchMd000005		AnyState	Hitdown	
+Mt1WrenchMd000005		AnyState	Lieonfloor	
+Mt1WrenchMd000005		AnyState	Standup	
+Mt1WrenchMd000005		AnyState	Straight	
+Mt1WrenchMd000005		AnyState	Stun	0.1
+Mt1WrenchMd000005		AnyState	TurnLeft	
+Mt1WrenchMd000005		AnyState	TurnRight	
+Mt1WrenchMd000005		AnyState	StraightBefore	
+Mt1WrenchMd000005		AnyState	StraightAfter	
+Mt1WrenchMd000005		AnyState	UiStand1	
+Mt1WrenchMd000005		AnyState	Win	
+Mt1WrenchMd000005		AnyState	Win2	
+Mt1WrenchMd000005		AnyState	Runb	0.2
+Mt1WrenchMd000005		AnyState	Runl	
+Mt1WrenchMd000005		AnyState	Runr	
+Mt1WrenchMd000005		AnyState	Attack01	
+Mt1WrenchMd000005		AnyState	Attack02	
+Mt1WrenchMd000005		AnyState	Attack03	
+Mt1WrenchMd000005		AnyState	Move1	
+Mt1WrenchMd000005		AnyState	Move2	
+Mt1WrenchMd000005		AnyState	Move3	
+Mt1WrenchMd000005		Stand2	Standchange	
+Mt1WrenchMd000005		Stand2	Run	0.2
+Mt1WrenchMd000005		Stand2	Walk	
+Mt1WrenchMd000005		Stand1	Run	0.2
+Mt1WrenchMd000005		Stand1	Walk	
+Mt1WrenchMd000005		Standchange	Stand1	
+Mt1WrenchMd000005		Standchange	Run	0.2
+Mt1WrenchMd000005		Standchange	Walk	
+Mt1WrenchMd000005		Run	Stand2	0.3
+Mt1WrenchMd000005		Run	Runb	0.2
+Mt1WrenchMd000005		Run	Runl	
+Mt1WrenchMd000005		Run	Runr	
+Mt1WrenchMd000005		Walk	Stand2	0.3
+Mt1WrenchMd000005		Hit1	Stand2	0.3
+Mt1WrenchMd000005		Hit1	Hit2	
+Mt1WrenchMd000005		Hit2	Stand2	0.3
+Mt1WrenchMd000005		Behitfly	Hoverhit	
+Mt1WrenchMd000005		Behitfly	Falldown	0.1
+Mt1WrenchMd000005		Hoverhit	Falldown	0.1
+Mt1WrenchMd000005		Falldown	Lieonfloor	
+Mt1WrenchMd000005		Hitdown	Lieonfloor	
+Mt1WrenchMd000005		Standup	Stand2	0.3
+Mt1WrenchMd000005		Straight	Stand2	0.3
+Mt1WrenchMd000005		Stun	Stand2	0.1
+Mt1WrenchMd000005		TurnLeft	Stand2	0.3
+Mt1WrenchMd000005		TurnRight	Stand2	0.3
+Mt1WrenchMd000005		Win	Win2	
+Mt1WrenchMd000005		Runb	Stand2	0.2
+Mt1WrenchMd000005		Runb	Run	0.2
+Mt1WrenchMd000005		Runb	Runl	
+Mt1WrenchMd000005		Runb	Runr	
+Mt1WrenchMd000005		Runl	Stand2	
+Mt1WrenchMd000005		Runl	Run	
+Mt1WrenchMd000005		Runl	Runb	
+Mt1WrenchMd000005		Runl	Runr	
+Mt1WrenchMd000005		Runr	Stand2	
+Mt1WrenchMd000005		Runr	Run	
+Mt1WrenchMd000005		Runr	Runb	
+Mt1WrenchMd000005		Runr	Runl	

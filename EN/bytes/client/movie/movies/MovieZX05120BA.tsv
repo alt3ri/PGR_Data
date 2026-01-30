@@ -1,0 +1,870 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401			AniZhuanchangEnd				{1: '1', 2: '36'}
+3	3		401							{1: '2', 2: '895'}
+4	4		109	1						{1: '1', 2: '<color=#ffffffff><size=50>Cradle enters the Hetero Tower.</size></color>'}
+5	5		401							{1: '2', 2: '895'}
+6	6		109	1			AniZhuanchangBegin			"{1: '1', 2: '<color=#ffffffff><size=50>Cradle has ""returned"" to the Hetero Tower.</size></color>'}"
+7	7		301							"{3: 'Cradle enters the Hetero Tower.\\nCradle has ""returned"" to the Hetero Tower.'}"
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1002.jpg'}
+9	9		110							
+10	10		401							{1: '1', 2: '5074'}
+11	11		401							{1: '2', 2: '4535'}
+12	12		301			AniZhuanchangEnd				{3: 'The Hetero Tower trembles slightly, welcoming the one who once was its master. Before long, Cradle locates the core within the tower.'}
+13	13		201							{1: '1', 2: '500868', 3: '1'}
+14	14		301							{1: '1', 2: 'Cradle', 3: '...', 4: '1'}
+15	15		204							{1: '1'}
+16	16		203							{1: '1', 2: '0.4', 5: '-50'}
+17	17		301							{3: 'The familiar sensation makes her consciousness tremble. She reaches out, attempting to touch the azure core. However...'}
+18	18		401							{1: '2', 2: '9342031'}
+19	19		202							{1: '1', 6: '1'}
+20	20		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+21	21		301			RImgBg1Shake				"{3: ""A force field suddenly expands, repelling her away from the Hetero Tower's core.""}"
+22	22		201							{1: '1', 2: '500305'}
+23	23		301							{1: '1', 2: 'Vonnegut', 3: 'Agent Zero.', 4: '1'}
+24	24		202							{1: '1', 6: '1'}
+25	25		201							{1: '1', 2: '500868', 3: '2'}
+26	26		301							"{1: '1', 2: 'Cradle', 3: ""I still prefer the name Cradle... I haven't had the chance to thank you yet. After gaining Agent Zero's authority, I've started to remember things—at least a part of it."", 4: '1'}"
+27	27		202							{1: '1', 6: '1'}
+28	28		201							{1: '1', 2: '500305'}
+29	29		301							{1: '1', 2: 'Vonnegut', 3: 'Very well... Perhaps we can save some time.', 4: '1'}
+30	30		401							{1: '2', 2: '9342045'}
+31	31		203						300.0	{1: '1', 2: '0.4', 4: '-50', 5: '-100'}
+32	32		202							{1: '1'}
+33	33		301							"{3: ""Radiant light flashes in the agent's hand, lunging toward Cradle.""}"
+34	34		301							"{3: 'Chaos\' consciousness is <color=#ff4e4eff>complete</color> enough to bear Agent Zero\'s authority, regardless of any issues unnoticed. There\'s no need to waste more time with this ""anomaly"" before him.'}"
+35	35		401							{1: '2', 2: '9342045'}
+36	36		201							{1: '1', 2: '500868', 3: '1', 4: '400'}
+37	37		203							{1: '1', 2: '0.25'}
+38	38		301							"{1: '1', 2: 'Cradle', 3: ""I thought you'd want to chat with me a little longer..."", 4: '1'}"
+39	39		301							"{3: ""Cradle's form flickers as she darts behind the red crystals for cover.""}"
+40	40		204							{1: '1'}
+41	41		301							"{2: 'Cradle', 3: ""You <color=#ff4e4eff>changed</color> something, didn't you?"", 4: '1'}"
+42	42		301							{3: 'Her rose-colored eyes lock onto Chaos standing aside.'}
+43	43		302							{2: '...', 3: '44', 8: '2', 11: '1'}
+44	44		104							{1: '0|0|-100', 2: '0.25'}
+45	45		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+46	46		401							{1: '2', 2: '11106008'}
+47	47		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+48	48		202							{1: '1', 6: '1'}
+49	49		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+50	50		301			RImgBg1Shake				"{3: ""The petite doll nimbly weaves around the crystals, striking at Cradle's exposed flank.""}"
+51	51		201							{1: '1', 2: '500868', 3: '4'}
+52	52		301							"{1: '1', 2: 'Cradle', 3: ""Can't we really just sit down and talk this through?"", 4: '1'}"
+53	53		202							{1: '1', 6: '1'}
+54	54		201							{1: '1', 2: '500305'}
+55	55		301							{1: '1', 2: 'Vonnegut', 3: '...', 4: '1'}
+56	56		202							{1: '1', 6: '1'}
+57	57		201							{1: '1', 2: '500868', 3: '15'}
+58	58		301							"{1: '1', 2: 'Cradle', 3: ""There's clearly no conflict between us..."", 4: '1'}"
+59	59		204							{1: '1', 2: '2'}
+60	60		301							{2: 'Cradle', 3: 'Or rather... who... exactly are you?', 4: '1'}
+61	61		203							{1: '1', 2: '0.25', 4: '-50', 5: '100'}
+62	62		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+63	63		401							{1: '2', 2: '4825'}
+64	64		401							{1: '2', 2: '4794'}
+65	65		201							{1: '2', 2: '500868', 4: '-700', 7: '1'}
+66	66		201							{1: '3', 2: '500868', 4: '700', 7: '1'}
+67	67		205							{1: '2', 3: '1', 4: '0', 5: '0'}
+68	68		205							{1: '3', 3: '1', 4: '0', 5: '0'}
+69	69		501							{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab', 2: '2', 3: '2'}
+70	70		501							{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab', 2: '2', 3: '3'}
+71	71		203							{1: '2', 2: '0.25', 3: '-550'}
+72	72		203							{1: '3', 2: '0.25', 3: '550'}
+73	73		301							{3: 'The crimson crystals screech as they grind against each other. A swarm of red butterflies emerges, surging toward the agent and the doll.'}
+74	74		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+75	75		505							{2: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab', 4: '2'}
+76	76		505							{2: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab', 4: '3'}
+77	77		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+78	78		201							{1: '1', 2: '500305'}
+79	79		301							"{1: '1', 2: 'Vonnegut', 3: ""You'll soon have no need to know."", 4: '1'}"
+80	80		202							{1: '1'}
+81	81		401						100.0	{1: '2', 2: '9342045'}
+82	82		401						100.0	{1: '2', 2: '9342045'}
+83	83		401							{1: '2', 2: '9342045'}
+84	84		301				AniZhuanchangBegin			{3: 'The three rapidly through the tower.'}
+85	85		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory657.jpg'}
+86	86		301			AniZhuanchangEnd				"{3: ""Unable to match Vonnegut and Chaos' combined assault, Cradle continuously flees away from the core area.""}"
+87	87		301				AniZhuanchangBegin			"{3: ""She thought that by leaving the core area, the agents wouldn't rashly pursue her, but for some reason, even after she has moved far from the core, Vonnegut shows no intention of stopping the chase.""}"
+88	88		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory656.jpg'}
+89	89		201							{1: '1', 2: '500868', 3: '4', 7: '1'}
+90	90		301			AniZhuanchangEnd				{1: '1', 2: 'Cradle', 3: '...', 4: '1'}
+91	91		301							{3: 'After several moments, she finally manages to temporarily evade the two pursuers, hiding behind a cluster of crystals.'}
+92	92		301							{3: 'Cradle must seek aid; despite the Hetero Tower being her home field, without regaining sufficient authority, she cannot single-handedly oppose the two who depend on the Hetero-Core.'}
+93	93		204							{1: '1'}
+94	94		301							{2: 'Cradle', 3: 'Well, then...', 4: '1'}
+95	95		204							{1: '1', 2: '1'}
+96	96		401							{1: '2', 2: '4819'}
+97	97		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopRed.prefab', 2: '2'}
+98	98		301							{3: 'Her palm releases thin trickles, letting the Red Tide spread in all directions.'}
+99	99		402							{1: '4819'}
+100	100		204							{1: '1', 2: '3'}
+101	101		301							{2: 'Cradle', 3: '...Ahah. Found you.', 4: '1'}
+102	102		202							{1: '1'}
+103	103		301							"{3: 'She has already heard the ""wind"" coming from a wall of the Hetero Tower.'}"
+104	104		201							{1: '1', 2: '500868'}
+105	105		301							{1: '1', 2: 'Cradle', 3: 'Though unclear who left it there...', 4: '1'}
+106	106		401						200.0	{1: '2', 2: '638'}
+107	107		402							{1: '638'}
+108	108		301							{3: 'She feels her way to the edge of the tower wall, aiming her gleaming scythe at the tiny wound.'}
+109	109		204							{1: '1', 2: '2'}
+110	110		301							"{2: 'Cradle', 3: ""...You won't say no, right?"", 4: '1'}"
+111	111		202							{1: '1', 6: '1'}
+112	112		401							{1: '2', 2: '4319'}
+113	113		401							{1: '2', 2: '4819'}
+114	114		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+115	115		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+116	116		301			RImgBg1Shake				"{3: ""A crimson light flashes brilliantly as the tiny fissure rapidly expands, and the Red Tide surges into the Hetero Tower like it's returning home.""}"
+117	117		402							{1: '4819'}
+118	118		201							{1: '18', 2: '500305', 4: '-600', 5: '-300', 6: '700'}
+119	119		301							{1: '1', 2: 'Vonnegut', 3: 'Over there.', 4: '18'}
+120	120		202							{1: '18'}
+121	121		301							"{3: ""The moment the Hetero Tower sustains damage, the agent immediately discovers Cradle's whereabouts.""}"
+122	122		401							{1: '2', 2: '4635'}
+123	123		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+124	124		201							{1: '1', 2: '500868', 7: '1'}
+125	125		301							{1: '1', 3: 'Using a force field as a springboard, Chaos leaps upward, sweeping aside the red butterflies obstructing her vision, and strikes directly at Cradle.'}
+126	126		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+127	127		203							{1: '1', 2: '0.25', 4: '-20', 5: '50'}
+128	128		201							{1: '2', 2: '500902', 4: '-600'}
+129	129		201							{1: '3', 2: '500902', 4: '600'}
+130	130		203							{1: '2', 2: '0.25', 3: '-450', 5: '-50'}
+131	131		203						250.0	{1: '3', 2: '0.25', 3: '450', 5: '-50'}
+132	132		401							{1: '2', 2: '2593'}
+133	133		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '5'}
+134	134		302			RImgBg1Shake				{2: '...', 3: '135', 8: '2', 11: '1'}
+135	135		101							{4: '5', 5: '1'}
+136	136		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+137	137		401							{1: '2', 2: '4826'}
+138	138		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+139	139		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+140	140		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+141	141		301			RImgBg1Shake				"{3: ""The Red Tide surges forward as Hetero-Creatures savagely bite into Chaos' flesh, but the doll shows no sign of feeling pain, precisely striking toward Cradle's head.""}"
+142	142		201							{1: '1', 2: '500305'}
+143	143		301				DialogDisable			{1: '1', 2: 'Vonnegut', 3: 'Step back!', 4: '1'}
+144	144		202							{1: '1', 6: '1'}
+145	145		401							{1: '2', 2: '2593'}
+146	146		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0.1'}
+147	147		302			RImgBg1Shake				{2: 'Mh-hm!', 3: '148', 8: '2', 11: '1'}
+148	148		205						200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0', 5: '0.2'}
+149	149		205							{1: '999'}
+150	150		301			DialogEnable				{3: 'Although her strike lands as planned, Chaos also has her forearm severed by the scythe.'}
+151	151		401							{1: '2', 2: '4411'}
+152	152		301							{3: 'The limb of the Hetero-Creature born from the Red Tide is instantly absorbed, immediately merging back with the Red Tide.'}
+153	153		301							{3: 'Cradle, appearing from another direction, momentarily freezes after devouring the part of Chaos.'}
+154	154		201							{1: '1', 2: '501016', 3: '4'}
+155	155		301							{1: '1', 2: 'Cradle', 3: 'Dominik...', 4: '1'}
+156	156		202							{1: '1', 6: '1'}
+157	157		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+158	158		101						400.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory289.png'}
+159	159		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+160	160		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory656.jpg'}
+161	161		201							{1: '1', 2: '501016', 3: '14', 7: '1'}
+162	162		301							"{1: '1', 3: ""Fragments of information flow from the Red Tide, as Cradle dodges Chaos' next attack with a terrified jolt, an unusual fear visible in her eyes.""}"
+163	163		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopRed.prefab'}
+164	164		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+165	165		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+166	166		504							{1: '0.7'}
+167	167		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory325.png'}
+168	168		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+169	169		201							{1: '1', 2: '500879', 7: '1'}
+170	170		301							{1: '1', 3: 'Agent Zero, stripped of authority, has been banished by the Inver-Hetero Tower, now wandering in the wastelands of the Red Tide.'}
+171	171		202							{1: '1', 6: '1'}
+172	172		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+173	173		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+174	174		201							{1: '1', 2: '501003', 4: '-100', 7: '1'}
+175	175		201							{1: '2', 2: '500305', 4: '400', 7: '1'}
+176	176		205							{1: '2', 3: '1', 4: '0.7', 5: '0'}
+177	177		301				DialogDisable			{1: '1', 3: 'The vanguard team... force fields...'}
+178	178		202							{1: '1', 2: '2', 6: '1'}
+179	179		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+180	180		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1002.jpg'}
+181	181		201							{1: '1', 2: '501034', 4: '-800', 7: '1'}
+182	182		201						200.0	{1: '2', 2: '501030', 4: '800', 7: '1'}
+183	183		203							{1: '1', 2: '0.25', 3: '-350'}
+184	184		203						250.0	{1: '2', 2: '0.25', 3: '350'}
+185	185		401							{1: '2', 2: '2593'}
+186	186		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '5'}
+187	187		301			DialogEnable	DialogDisable			"{3: ""Chaos pierces through Cradle's chest, but the doll's flesh is also sliced by her scythe—""}"
+188	188		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+189	189		101							{4: '5', 5: '1'}
+190	190		504							{1: '0'}
+191	191		202							{1: '1', 2: '2', 6: '1'}
+192	192		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+193	193		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+194	194		401							{1: '2', 2: '4702'}
+195	195		109							{1: '1', 2: '<color=#ffffffff><size=35>Earth Time: November 21, 2198. Node 201 Log:</size>', 4: '50'}
+196	196		109							{1: '2', 2: '<color=#ffffffff><size=35>Humans developed portable force field devices capable of preventing the Chaos Contamination from spreading...</size>', 4: '-50'}
+197	197		301							{3: 'Earth Date: November 21, 2198, Node 201 Record:\\nHumans developed portable force field devices capable of preventing the Chaos Contamination from spreading...'}
+198	198		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+199	199		110							
+200	200		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory656.jpg'}
+201	201		401							{1: '2', 2: '4825'}
+202	202		301			DialogEnable	DialogDisable			"{3: ""Vonnegut's golden crystal pierces through Cradle's skull, but both he and Chaos are wounded by Cradle to varying degrees—""}"
+203	203		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+204	204		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+205	205		401							{1: '2', 2: '4702'}
+206	206		109							{1: '1', 2: '<color=#ffffffff><size=35>Earth Time: November 22, 2198. Node 371 Log:</size>', 4: '50'}
+207	207		109							{1: '2', 2: '<color=#ffffffff><size=35>The vanguard team led by Dominik continued to explore the Hetero Tower. \\n Due to interference from the force fields, their specific plans remain difficult to ascertain.</size>', 4: '-50'}
+208	208		301							{3: 'Earth Time: November 22, 2198. Node 371 Log:\\nThe vanguard team led by Dominik continued to explore the Hetero Tower. Due to interference from the force fields, their specific plans remain difficult to ascertain.'}
+209	209		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+210	210		110							
+211	211		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory656.jpg'}
+212	212		301			DialogEnable				"{3: 'The Red Tide, having made contact with Chaos, endlessly absorbs and digests everything. From these fragments of ""information"", Cradle slowly recovers memories of the past through repeated battles and rewinds.'}"
+213	213		201							{1: '1', 2: '501030', 7: '1'}
+214	214		301			PanelActor1Shake				{1: '1', 2: 'Cradle', 3: 'Nngh...', 4: '1'}
+215	215		401							{1: '2', 2: '4386'}
+216	216		202							{1: '1'}
+217	217		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndRed.prefab', 2: '2'}
+218	218		301							"{3: ""Struck once again by Vonnegut's golden crystal, Cradle sinks back into the Red Tide.""}"
+219	219		306							{1: '1'}
+220	220		401							{1: '2', 2: '2959'}
+221	221		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+222	222		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+223	223		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+224	224		301				DialogDisable			{3: 'Under the control of its former master, the Hetero Tower gradually reverses the hands of time.'}
+225	225		401							{1: '2', 2: '4702'}
+226	226		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+227	227		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory658.jpg'}
+228	228		401							{1: '2', 2: '4702'}
+229	229		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+230	230		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory651.jpg'}
+231	231		401							{1: '2', 2: '4702'}
+232	232		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+233	233		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory654.jpg'}
+234	234		401							{1: '2', 2: '4702'}
+235	235		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+236	236		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory917.jpg'}
+237	237		401							{1: '2', 2: '4702'}
+238	238		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+239	239		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1002.jpg'}
+240	240		401							{1: '2', 2: '4702'}
+241	241		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+242	242		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory656.jpg'}
+243	243		306							
+244	244		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+245	245		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+246	246		401							{1: '2', 2: '4411'}
+247	247		201							{1: '1', 2: '501030'}
+248	248		301			DialogEnable				"{1: '1', 3: 'Slowly, Cradle regenerates within the Red Tide, but... she has already recalled almost ""everything"".'}"
+249	249		301							{3: 'The vanguard team... Project String... Dominik...'}
+250	250		301							{2: 'Cradle', 3: 'Nemo...', 4: '1'}
+251	251		202							{1: '1', 6: '1'}
+252	252		201							{1: '1', 2: '500305'}
+253	253		301							{1: '1', 2: 'Vonnegut', 3: '...', 4: '1'}
+254	254		202							{1: '1', 6: '1'}
+255	255		201							{1: '1', 2: '501016', 3: '2'}
+256	256		301							"{1: '1', 2: 'Cradle', 3: ""<color=#ff4e4eff>It's been a while</color>."", 4: '1'}"
+257	257		301							{3: 'From within the blood-soaked Red Tide, she smiles at the agent.'}
+258	258		202							{1: '1'}
+259	259		301							"{3: 'Through endless cycles of death and destruction, within the very flesh of Chaos, she has reclaimed ""<color=#ff4e4eff>everything</color>"" that belongs to her.'}"
+260	260		201							{1: '1', 2: '501016', 3: '1'}
+261	261		301							"{1: '1', 2: 'Cradle', 3: 'Truly a story that deserves to be named ""hard work""...', 4: '1'}"
+262	262		401							{1: '2', 2: '4794'}
+263	263		201							{1: '2', 2: '500868', 4: '-700', 7: '1'}
+264	264		201							{1: '3', 2: '500868', 4: '700', 7: '1'}
+265	265		205							{1: '2', 3: '1', 4: '0', 5: '0'}
+266	266		205							{1: '3', 3: '1', 4: '0', 5: '0'}
+267	267		501							{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab', 2: '2', 3: '2'}
+268	268		501							{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab', 2: '2', 3: '3'}
+269	269		203							{1: '2', 2: '0.25', 3: '-550'}
+270	270		203							{1: '3', 2: '0.25', 3: '550'}
+271	271		301							{3: 'Crimson butterflies gather, lifting their master from the tide.'}
+272	272		204							{1: '1', 2: '3'}
+273	273		301							{2: 'Cradle', 3: 'You need to fulfill your mission, so I should continue to carry on mine as well.', 4: '1'}
+274	274		505							{2: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab', 4: '2'}
+275	275		505							{2: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab', 4: '3'}
+276	276		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+277	277		401							{1: '2', 2: '4814'}
+278	278		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustLightWall.prefab', 2: '2'}
+279	279		201							{1: '1', 2: '500305'}
+280	280		301							{1: '1', 3: 'As the gleaming scythe reflects red crystals, Vonnegut activates his force field, his expression darkening as he locks eyes with Cradle.'}
+281	281		301							{2: 'Vonnegut', 3: 'You remember now.', 4: '1'}
+282	282		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustLightWall.prefab'}
+283	283		202							{1: '1', 6: '1'}
+284	284		201							{1: '1', 2: '501016'}
+285	285		301							{1: '1', 2: 'Cradle', 3: '...And I must thank you for the memories you fed to Chaos.', 4: '1'}
+286	286		401						200.0	{1: '2', 2: '638'}
+287	287		402							{1: '638'}
+288	288		203							{1: '1', 2: '0.25', 5: '-100'}
+289	289		301							{3: 'Cradle, who appeared weakened just moments ago, springs forward, her scythe slicing through the silent air.'}
+290	290		301							"{2: 'Cradle', 3: ""But... I'm also quite curious to know."", 4: '1'}"
+291	291		301							{2: 'Cradle', 3: 'With such a hasty attack, are you really prepared for everything?', 4: '1'}
+292	292		301							"{3: 'Cradle\'s ""memories"" are gradually being restored through Chaos\' flesh, and she has now obtained the authority that rightfully belongs to her.'}"
+293	293		401							{1: '2', 2: '9342058'}
+294	294		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+295	295		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+296	296		202							{1: '1', 6: '1'}
+297	297		301				AniZhuanchangBegin			{3: 'The roles of hunter and prey reverse in an instant.'}
+298	298		401						2000.0	{1: '1', 2: '36'}
+299	299		401							{1: '1', 2: '5041'}
+300	300		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+301	301		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1034.jpg'}
+302	302		201							{1: '1', 2: '500305', 7: '1'}
+303	303		301			AniZhuanchangEnd				{1: '1', 2: 'Vonnegut', 3: '...', 4: '1'}
+304	304		202							{1: '1'}
+305	305		301							{3: 'Outside the Hetero Tower, Vonnegut gasps for air, using the Punishing Virus to mend his body.'}
+306	306		301							"{3: ""Leveraging his familiarity with the Bridge Across Dreams, he uses his force field to evade Cradle's onslaught, pushing all three of them temporarily out of the Hetero Tower.""}"
+307	307		301							"{3: ""The uncertainty of Cradle's landing poses a threat, yet... Vonnegut cannot allow her proximity to the Hetero-Core.""}"
+308	308		301							{3: 'With her memories restored, Cradle regains almost all the power she commands as Agent Zero within the Hetero Tower. With Chaos temporarily unable to seize control of the Red Tide, they are left with no option but to endure their disadvantaged position.'}
+309	309		201							{1: '1', 2: '500305'}
+310	310		301							{1: '1', 2: 'Vonnegut', 3: '...', 4: '1'}
+311	311		301							{3: 'Vonnegut lets out a deep sigh, anxiety creasing his brow.'}
+312	312		301							{2: 'Vonnegut', 3: 'No, this is taking too long.', 4: '1'}
+313	313		202							{1: '1'}
+314	314		301							"{3: 'Time flows chaotically in the Hetero Tower. Amid the constantly rewound battle, Cradle eagerly absorbs the fragments of ""memories"" that belong to her from within Chaos\' shell, while Chaos gradually devours the authority of the Red Tide in return.'}"
+315	315		301							"{3: ""But it's still not enough—Chaos' rate of growth falls far short of keeping pace with Cradle's recovery.""}"
+316	316		201							{1: '1', 2: '500305'}
+317	317		301							{1: '1', 2: 'Vonnegut', 3: '...I was too impatient.', 4: '1'}
+318	318		202							{1: '1'}
+319	319		301							{3: 'Vonnegut places his hand on his forehead, trying to calm his restlessness and restructure his thoughts.'}
+320	320		301							"{3: 'Having finally found a genuine return ticket, he was too eager to pursue the ultimate answer... too impatient to witness the ""result"" of his plan.'}"
+321	321		201							{1: '1', 2: '500305'}
+322	322		301							{1: '1', 2: 'Vonnegut', 3: 'This is my fault.', 4: '1'}
+323	323		302							{2: '...', 3: '324', 8: '2', 11: '1'}
+324	324		202							{1: '1'}
+325	325		301							"{3: ""The doll silently observes the agent's figure. Perhaps because she has already acquired a portion of the Red Tide's authority, your gaze continues to watch this place even after leaving the Hetero Tower.""}"
+326	326		301							"{3: 'This is an ""ending"" that has never appeared in <phonetic=Commandant\'s>your own </phonetic> memories.'}"
+327	327		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+328	328		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_27.jpg'}
+329	329		301							"{3: ""In your previous journey inside the Hetero Tower with Lucia, Vonnegut behaved like an erratic madman, utilizing Chaos in a repeated attempt to take you away, as Cradle relentlessly pursued behind, targeting the tower's core directly.""}"
+330	330		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+331	331		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory656.jpg'}
+332	332		201							{1: '1', 2: '501016', 3: '2', 7: '1'}
+333	333		301							"{1: '1', 3: ""This time, the agent, having perceived Chaos' completeness, forsook all strategies and faced Cradle head-on, only to find himself unable to withstand her incessant growth through death.""}"
+334	334		202							{1: '1', 6: '1'}
+335	335		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+336	336		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1034.jpg'}
+337	337		301							{3: 'What must be done... to completely break this closed loop?'}
+338	338		201							{1: '1', 2: '500305'}
+339	339		301							"{1: '1', 2: 'Vonnegut', 3: ""...It's fine. I still have a contingency plan."", 4: '1'}"
+340	340		301							{3: 'He thoughtfully gazes at the gradually growing doll before him.'}
+341	341		301							"{3: ""Since there isn't enough time for Chaos to mature, then...""}"
+342	342		301							"{2: 'Vonnegut', 3: 'It\'s time to use... the ""fruit"".', 4: '1'}"
+343	343		202							{1: '1'}
+344	344		301							"{3: ""Having made the decision unilaterally, he ponders for a moment, then reaches out to touch Chaos' brow.""}"
+345	345		401							{1: '2', 2: '2959'}
+346	346		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+347	347		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+348	348		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+349	349		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1034.jpg', 3: '0.5', 4: '4'}
+350	350		104							{1: '20|10|-20', 2: '0.4', 4: '4'}
+351	351		301							{3: 'Whatever the agent is doing, it feels as if her consciousness is being carved open by a dull knife. A deep, throbbing pain radiates from within her body, nearly causing your gaze to fade...'}
+352	352		302							{2: 'Uh...', 3: '353', 8: '2', 11: '1'}
+353	353		101							{4: '4', 5: '1'}
+354	354		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+355	355		201							{1: '1', 2: '500305', 7: '1'}
+356	356		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+357	357		301							"{1: '1', 3: 'After she regains consciousness, Vonnegut opens his palm, revealing a small, delicate ""fruit"".'}"
+358	358		301							"{3: 'It turns out that the ""fruit"" you once swallowed is created just like this.'}"
+359	359		301							{2: 'Vonnegut', 3: '...Hmm?', 4: '1'}
+360	360		301							"{3: ""While the tiny Hetero crystals repair Chaos' damaged consciousness, the agent notices some barely perceptible wounds.""}"
+361	361		301							{2: 'Vonnegut', 3: 'Your consciousness has experienced similar damage...', 4: '1'}
+362	362		301							"{2: 'Vonnegut', 3: ""What else haven't you told me?"", 4: '1'}"
+363	363		301							{3: 'The agent shifts an inquisitive gaze toward Chaos.'}
+364	364		302							{2: '...', 3: '365', 8: '2', 11: '1'}
+365	365		301							{2: 'Vonnegut', 3: '...', 4: '1'}
+366	366		202							{1: '1'}
+367	367		301							{3: 'Sensing her reluctance, Vonnegut suppresses the impatience that has been building since entering the Hetero Tower and shakes his head.'}
+368	368		201							{1: '1', 2: '500305'}
+369	369		301							{1: '1', 2: 'Vonnegut', 3: 'Forget it, now is not the time to delve into this matter.', 4: '1'}
+370	370		301							"{3: ""The Hetero crystals continue to repair Chaos' festering wounds as the agent masks the emotions in his eyes.""}"
+371	371		301							{2: 'Vonnegut', 3: 'We need to find a way to send your consciousness into the Red Tide to hold Cradle back...', 4: '1'}
+372	372		401							{1: '1', 2: '36'}
+373	373		401							{1: '2', 2: '5148'}
+374	374		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+375	375		201							{1: '2', 2: '501030', 4: '500', 7: '1'}
+376	376		203							{1: '2', 2: '0.4', 3: '400'}
+377	377		301							{1: '1200', 3: 'An ominous shadow tears through the air behind him, twisting into a bizarre trail—'}
+378	378		301							{2: 'Vonnegut', 3: 'Wait—', 4: '1'}
+379	379		401							{1: '1', 2: '5043'}
+380	380		202							{1: '1', 2: '2', 6: '1'}
+381	381		401							{1: '2', 2: '9342045'}
+382	382		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+383	383		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1002.jpg'}
+384	384		301							"{3: ""Vonnegut only has time to place the fruit in the doll's palm before his expression changes. A rift of the Hetero Tower silently opens behind him, and the agent instantly appears near the Tower's core with Chaos, who now has a significantly bigger figure.""}"
+385	385		201							{1: '1', 2: '500305'}
+386	386		301							{1: '1', 2: 'Vonnegut', 3: 'Cradle—!', 4: '1'}
+387	387		202							{1: '1'}
+388	388		401							{1: '2', 2: '4826'}
+389	389		301			RImgBg1Shake				"{3: ""Golden crystals suddenly thrust toward the red-eyed girl who commands Hetero-Creatures to assault the Hetero Tower's core. Vonnegut deploys a force field and instantly strikes at the tide of Hetero-Creatures surging toward him.""}"
+390	390		201							{1: '1', 2: '501016', 3: '2'}
+391	391		301							{1: '1', 2: 'Cradle', 3: 'Oops, I thought I could sneak in without you noticing.', 4: '1'}
+392	392		301							{3: 'She nimbly leaps away, seemingly unconcerned about the sudden appearance of the agent and the doll.'}
+393	393		204							{1: '1'}
+394	394		301							{2: 'Cradle', 3: 'Did you leave something here to keep yourself updated on the situation?', 4: '1'}
+395	395		204							{1: '1', 2: '1'}
+396	396		301							{2: 'Cradle', 3: 'Let me guess... Could it be...', 4: '1'}
+397	397		204							{1: '1', 2: '2'}
+398	398		301							{2: 'Cradle', 3: '...This?', 4: '1'}
+399	399		202							{1: '1'}
+400	400		401							{1: '2', 2: '4409'}
+401	401		301			RImgBg1Shake				{3: 'She commands the Hetero-Creatures to precisely target the force field devices nearby, which swarm forward in unison.'}
+402	402		201							{1: '1', 2: '500305'}
+403	403		301							{1: '1', 2: 'Vonnegut', 3: '...', 4: '1'}
+404	404		202							{1: '1', 6: '1'}
+405	405		401							{1: '2', 2: '4826'}
+406	406		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+407	407		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustLightWall.prefab', 2: '2'}
+408	408		201							{1: '1', 2: '501016', 7: '1'}
+409	409		301							{1: '1', 3: 'The agent stops speaking as golden crystals violently erupt, trapping Cradle within.'}
+410	410		301							{2: 'Cradle', 3: 'What a shame...', 4: '1'}
+411	411		301							{3: 'But such a measure is no longer enough to counter Cradle, who has now recovered her memories.'}
+412	412		401							{1: '2', 2: '4411'}
+413	413		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+414	414		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustLightWall.prefab'}
+415	415		202							{1: '1', 6: '1'}
+416	416		301							"{3: ""The red-eyed girl's silhouette silently melts into the Red Tide.""}"
+417	417		301							"{3: ""Even though many of the Hetero-Creatures under her command have dissolved under the combined assault from the Hetero Tower's core and Vonnegut, Cradle—who was born from the Hetero Tower itself—remains a formidable opponent.""}"
+418	418		301							{3: 'The Red Tide flows everywhere. She drifts through the viscous fluid, maneuvering against the two foes while constantly seeking an opportunity to strike at the core.'}
+419	419		301							"{3: ""The pure core persistently cleanses the corruption of the Punishing Virus. Now it's just a matter of who falls first.""}"
+420	420		201							{1: '1', 2: '501016', 3: '2'}
+421	421		301							"{1: '1', 2: 'Cradle', 3: ""Better be careful. I'm about to catch your weakness—"", 4: '1'}"
+422	422		202							{1: '1'}
+423	423		401							{1: '2', 2: '4814'}
+424	424		301							{3: 'The agent forcefully upholds a force field, endeavoring to push Cradle away from the core area. Seizing the moment, the doll utilizes the extended force field as a platform to charge directly at Cradle—'}
+425	425		201							{1: '1', 2: '501016', 3: '3'}
+426	426		301							{1: '1', 2: 'Cradle', 3: 'Hehe, just kidding!', 4: '1'}
+427	427		203						250.0	{1: '1', 2: '0.25', 4: '-40', 5: '-100'}
+428	428		401							{1: '2', 2: '2593'}
+429	429		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '0.5', 5: '0'}
+430	430		301			RImgBg1Shake				{3: 'Cradle whirls around, deliberately allowing her chest to be impaled as she embraces the pale doll with her bloodstained body.'}
+431	431		301							{2: 'Cradle', 3: 'You are my target all along...', 4: '1'}
+432	432		301							{2: 'Cradle', 3: 'Chaos.', 4: '1'}
+433	433		203							{1: '1', 2: '0.25', 4: '-50', 5: '-130'}
+434	434		401							{1: '2', 2: '2690'}
+435	435		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '3'}
+436	436		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+437	437		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1002.jpg', 3: '0.5', 4: '4'}
+438	438		104							{1: '20|20|-10', 2: '0.5'}
+439	439		302			RImgBg1Shake				{2: 'Um...', 3: '440', 8: '2', 11: '1'}
+440	440		301							"{3: ""Red Tide-like fluid seeps from her wound as Cradle's lips curl into a smile. Like someone who has obtained a priceless treasure, she begins to gnaw intently on the doll's flesh.""}"
+441	441		301							"{2: 'Cradle', 3: ""You didn't seriously think I wouldn't notice your attempt to steal Agent Zero's authority, right..."", 4: '1'}"
+442	442		204							{1: '1', 2: '2'}
+443	443		301							{2: 'Cradle', 3: 'A thief?', 4: '1'}
+444	444		201							{1: '18', 2: '500305', 4: '-600', 5: '-300', 6: '700'}
+445	445		301							{1: '1', 2: 'Vonnegut', 3: 'Chaos!', 4: '18'}
+446	446		202							{1: '18'}
+447	447		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+448	448		101							{3: '1', 4: '4', 5: '1'}
+449	449		205							{1: '999'}
+450	450		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+451	451		301							"{3: ""The agent shouts sternly while upholding the force field. The doll's consciousness abruptly snaps back to alertness.""}"
+452	452		401							{1: '2', 2: '2690'}
+453	453		201							{1: '1', 2: '501030', 5: '-50', 6: '-130', 7: '1'}
+454	454		301			PanelActor1Shake				"{3: 'With fingers joined into a razor-sharp claw, the doll pierces through Cradle\'s chest, then viciously thrusts the ""fruit"" deep into her body with a backhand motion—'}"
+455	455		202							{1: '1', 6: '1'}
+456	456		201							{1: '1', 2: '501016', 3: '4', 5: '-50', 6: '-130'}
+457	457		301							{1: '1', 2: 'Cradle', 3: '...', 4: '1'}
+458	458		301							"{3: ""The girl is thrown off balance by the doll's counterattack, but only for an instant.""}"
+459	459		204							{1: '1', 2: '2'}
+460	460		301							{2: 'Cradle', 3: 'So this is... the plan you struggled so hard to come up with?', 4: '1'}
+461	461		301							"{2: 'Cradle', 3: ""Not as impressive as I'd imagined, Nemo..."", 4: '1'}"
+462	462		301							{2: 'Cradle', 3: 'I guess your minds have also been worn down by those time loops...', 4: '1'}
+463	463		202							{1: '1'}
+464	464		401							{1: '2', 2: '4006'}
+465	465		301							"{3: 'She grins as she flings the weary doll at her feet, while the Red Tide gradually saps her blood. Just as Cradle reaches out her fingers to dig out the ""fruit"" lodged in her—'}"
+466	466		201							{1: '1', 2: '501030', 5: '-50', 6: '-130', 7: '1'}
+467	467		301			PanelActor1Shake				{1: '1', 2: 'Cradle', 3: 'Ugh...', 4: '1'}
+468	468		301							"{3: 'As if drawn by some invisible force, the ""fruit"" rapidly melts and vanishes into her body.'}"
+469	469		301							{2: 'Cradle', 3: 'How... how is this possible...', 4: '1'}
+470	470		301							"{3: 'A strange sensation of being controlled spreads throughout her body. Her power gradually drains away, and the ""authority"" she thought was completely hers begins to falter—'}"
+471	471		301							"{2: 'Cradle', 3: ""Has it... already scattered and hidden in Chaos' flesh..."", 4: '1'}"
+472	472		301							{3: 'She grits her teeth in fury, trying to locate the culprit, but those tiny fragments of power are too scattered for her to immediately extract the deeply buried, shattered roots.'}
+473	473		301							{2: 'Cradle', 3: 'Dammit...', 4: '1'}
+474	474		202							{1: '1'}
+475	475		301							"{3: 'In an instant, Chaos\' ""fruit"" completely integrates into her body.'}"
+476	476		306							{1: '1'}
+477	477		301							"{3: 'If she devours Chaos now, she cannot guarantee whether she\'ll be the one to ""digest"" Chaos, or if Chaos will turn the tide and eat her instead.'}"
+478	478		301							{3: 'Should Chaos gain the upper hand, she would instantly lose her authority as Agent Zero—'}
+479	479		306							
+480	480		302							{2: 'The Red Tide...', 3: '481', 8: '2', 11: '1'}
+481	481		401							{1: '2', 2: '4319'}
+482	482		301			RImgBg1Shake				"{3: ""The feeble doll rapidly repairs her body using the Red Tide, commanding the surging waters to cut off Cradle's escape.""}"
+483	483		301							"{3: ""But Chaos' authority is equally unstable, barely holding Cradle back for a short distance.""}"
+484	484		301							"{3: ""Vonnegut has left a force field around the Hetero Tower's core for protection. Although Chaos has intercepted the Red Tide's authority, she cannot fully devour it...""}"
+485	485		301							{3: 'Weighing her options, Cradle suddenly turns around. Countless Hetero-Creatures surge toward the core behind her as she channels all her power and lunges at Vonnegut.'}
+486	486		301							"{3: ""Red crystal spikes sprout in an instant. If he wants to maintain the force field protecting the core, he'll inevitably have to take this strike—""}"
+487	487		401							{1: '2', 2: '4825'}
+488	488		201							{1: '1', 2: '500313', 7: '1'}
+489	489		301			PanelActor1Shake				{1: '1', 2: 'Vonnegut', 3: 'Um...', 4: '1'}
+490	490		202							{1: '1'}
+491	491		301							"{3: ""The crystal spikes violently pierce through his body. Though the Hetero Tower's core quickly dissolves them, a deep wound remains etched across his chest.""}"
+492	492		302							{2: 'Vonnegut—', 3: '493', 8: '2', 11: '1'}
+493	493		301							"{3: ""Although the force field has blocked numerous Hetero-Creatures, Vonnegut's power is now weakened, making him unable to fully uphold its defense.""}"
+494	494		401							{1: '2', 2: '4818'}
+495	495		301							"{3: ""The Red Tide under Cradle's control hammers at the force field's weakest points. Crimson butterflies, like fish slipping through a net, begin to fall around the core.""}"
+496	496		201							{1: '1', 2: '501016', 3: '3'}
+497	497		301							{1: '1', 2: 'Cradle', 3: 'Heh...', 4: '1'}
+498	498		202							{1: '1'}
+499	499		301							"{3: ""Cradle follows the path laid by the butterflies, turns to take a decisive leap, and lunges directly at the Hetero Tower's core—""}"
+500	500		301							"{3: ""If she can corrupt the core, she will have enough power to completely purge that doll's consciousness from the body—""}"
+501	501		201							{1: '1', 2: '500305'}
+502	502		301							{1: '1', 2: 'Vonnegut', 3: 'No way—!', 4: '1'}
+503	503		202							{1: '1'}
+504	504		401							{1: '2', 2: '4280'}
+505	505		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+506	506		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+507	507		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+508	508		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+509	509		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+510	510		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+511	511		301							{3: 'A white light suddenly stings your retinas, engulfing the entire Hetero Tower.'}
+512	512		401							{1: '2', 2: '4906'}
+513	513		301				DialogDisable			{3: 'A sharp buzzing resonates through your mind. Your gaze, attached to Chaos, grows unstable, threatening to detach from the Hetero Tower and plunge back into darkness—'}
+514	514		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+515	515		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1002.jpg', 3: '0', 4: '1', 5: '1'}
+516	516		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1002.jpg'}
+517	517		205							{1: '999'}
+518	518		301			DialogEnable				{3: 'The buzzing gradually subsides. The blinding white light slowly fades, leaving only a rift in the air leaking eerie white fog.'}
+519	519		201							{1: '1', 2: '500305', 7: '1'}
+520	520		301			PanelActor1Shake				{1: '1', 2: 'Vonnegut', 3: 'Cough...', 4: '1'}
+521	521		203						200.0	{1: '1', 2: '0.25', 4: '-100'}
+522	522		401							{1: '2', 2: '4006'}
+523	523		202							{1: '1'}
+524	524		301							"{3: ""Vonnegut uses his last strength to maintain the protection around the Hetero Tower's core before collapsing weakly to the ground.""}"
+525	525		302							{2: '...', 3: '526', 8: '2', 11: '1'}
+526	526		301							{3: 'The doll finally finishes repairing her legs and slowly moves toward him.'}
+527	527		302							{2: 'The Fog...', 3: '528', 8: '2', 11: '1'}
+528	528		301							"{3: 'As the original ""creator"" of the Hetero Tower, Cradle naturally has ways to tear apart the Fog, or escape from it.'}"
+529	529		401							{1: '2', 2: '4814'}
+530	530		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFrontNewCommon23.png', 4: '4'}
+531	531		301							{3: 'Behind Vonnegut, the rift responds as if on cue. White fog seeps out, tearing at the thin barrier.'}
+532	532		201							{1: '1', 2: '500305'}
+533	533		301							"{1: '1', 3: 'Golden light emanates from the agent\'s palm, rising upward to tightly constrict the rift, thwarting the escape of the ""thing"" within.'}"
+534	534		302							{2: 'The Fog cannot contain Cradle.', 3: '535', 8: '2', 11: '1'}
+535	535		301							{2: 'Vonnegut', 3: '...Just as I thought.', 4: '1'}
+536	536		301							{3: 'The breathless agent lifts his eyelids, looking at the doll beside him without surprise.'}
+537	537		301							"{2: 'Vonnegut', 3: ""It's you."", 4: '1'}"
+538	538		301							{2: 'Vonnegut', 3: 'You have been watching...', 4: '1'}
+539	539		301							{2: 'Vonnegut', 3: 'Gray Raven Commandant... 【kuroname】.', 4: '1'}
+540	540		302							{2: '...', 3: '541', 8: '2', 11: '1'}
+541	541		301							"{2: 'Vonnegut', 3: ""There's no point hiding it in this situation... You don't think I haven't figured it out, do you?"", 4: '1'}"
+542	542		301							{3: 'He lets out a mocking laugh.'}
+543	543		301							"{2: 'Vonnegut', 3: ""I don't know what arrangement you struck with that lady to make her willing to help you..."", 4: '1'}"
+544	544		301							"{2: 'Vonnegut', 3: ""But... considering the current situation, maybe it's not such a bad thing after all."", 4: '1'}"
+545	545		302							{2: 'What are you implying?', 3: '546', 8: '2', 11: '1'}
+546	546		301							{2: 'Vonnegut', 3: 'I want you to work with me.', 4: '1'}
+547	547		301							{2: 'Vonnegut', 3: 'Cradle must die here, or we can only return to that closed loop again...', 4: '1'}
+548	548		202							{1: '1'}
+549	549		401							{1: '2', 2: '4820'}
+550	550		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopRed.prefab', 2: '2'}
+551	551		301							{3: 'The agent releases a long sigh as the rift behind him pulsates once more, with slender streams of the Red Tide trickling out.'}
+552	552		301							{3: 'Clearly, Cradle, trapped in the Fog, adamantly refuses to acknowledge defeat and is trying every possible means to break free.'}
+553	553		401							{1: '2', 2: '4355'}
+554	554		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+555	555		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopRed.prefab'}
+556	556		101							{4: '4', 5: '1'}
+557	557		301							{3: 'The Red Tide corrodes the golden crystals, causing Vonnegut to wince in pain. He tenses his fingers, and light once again covers the crack, forcing the Red Tide to temporarily retreat as if startled.'}
+558	558		302							{2: 'You will not die.', 3: '559', 8: '2', 11: '1'}
+559	559		301							"{3: 'Those spikes can only temporarily harm Vonnegut. In the ""future"" you have already experienced, he should not die from this injury...'}"
+560	560		201							{1: '1', 2: '500305'}
+561	561		301							{1: '1', 2: 'Vonnegut', 3: 'Who can say?', 4: '1'}
+562	562		202							{1: '1'}
+563	563		301							{3: 'He opens his palm, gradually healing his wounds.'}
+564	564		306							{1: '1'}
+565	565		301							{3: 'Upon his form, the wounds pierced by the spikes are slowly festering, with tiny red butterflies constantly sprouting from his flesh.'}
+566	566		301							"{3: ""These horrifying little creatures flutter their vibrant wings, feeding on Vonnegut's power.""}"
+567	567		306							
+568	568		302							{2: '...', 3: '569', 8: '2', 11: '1'}
+569	569		201							{1: '1', 2: '500305'}
+570	570		301							{1: '1', 2: 'Vonnegut', 3: 'Butterflies flap their wings, and the variables become unpredictable.', 4: '1'}
+571	571		301							"{2: 'Vonnegut', 3: 'I think Cradle has ""seen"" something in your flesh.', 4: '1'}"
+572	572		202							{1: '1'}
+573	573		301							"{3: 'The doll hurriedly approaches, trying to cover the wounds with her palm to absorb the red butterflies using her authority, but to no avail. She still hasn\'t mastered all the ""authority"".'}"
+574	574		201							{1: '1', 2: '500305'}
+575	575		301							"{1: '1', 2: 'Vonnegut', 3: ""Let's cooperate. I'll help you kill Cradle."", 4: '1'}"
+576	576		301							"{2: 'Vonnegut', 3: ""Otherwise, having one more person enter this time loop wouldn't benefit me either."", 4: '1'}"
+577	577		302							{2: 'How do you wish to proceed?', 3: '578', 8: '2', 11: '1'}
+578	578		301							"{2: 'Vonnegut', 3: ""The Fog won't contain Cradle for long. The Hetero Tower's core absolutely cannot be corrupted by her again..."", 4: '1'}"
+579	579		301				DialogDisable			{2: 'Vonnegut', 3: '...I want you to take the core away.', 4: '1'}
+580	580		302							{2: 'Take away the core?', 3: '581', 8: '2', 11: '1'}
+581	581		302							{2: 'But beyond the Hetero Tower lies another world.', 3: '582', 8: '2', 11: '1'}
+582	582		301			DialogEnable				{3: 'A world that belongs to Chaos Contamination.'}
+583	583		301							{2: 'Vonnegut', 3: 'You even know about that...', 4: '1'}
+584	584		202							{1: '1'}
+585	585		301							{3: 'He coughs, blood frothing at the corner of his lips, which he quickly wipes away. The agent gazes intently at the figure before him.'}
+586	586		201							{1: '1', 2: '500305'}
+587	587		301							{1: '1', 2: 'Vonnegut', 3: 'What else do you know?', 4: '1'}
+588	588		302							{2: 'Nemo, Dominik, the vanguard team, and everything else.', 3: '589', 8: '2', 11: '1'}
+589	589		301							{2: 'Vonnegut', 3: '...', 4: '1'}
+590	590		301							"{2: 'Vonnegut', 3: ""It's Agent Zero's authority, isn't it..."", 4: '1'}"
+591	591		301							{2: 'Vonnegut', 3: 'What time did you come back from?', 4: '1'}
+592	592		302							"{2: ""I'm not telling you."", 4: 'I have no reason to tell you.', 8: '2', 9: '2', 11: '1'}"
+593	593		301							"{2: 'Vonnegut', 3: ""Well, I don't have any more information to exchange with you anyway."", 4: '1'}"
+594	594		202							{1: '1', 6: '1'}
+595	595		401							{1: '2', 2: '4355'}
+596	596		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+597	597		301							"{3: ""A brilliant radiance flares as the agent once again seals off the butterflies and fog surging from the rift. Simultaneously, another red crystal spike slithers out like a venomous snake, piercing through Vonnegut's left arm.""}"
+598	598		401							{1: '2', 2: '2593'}
+599	599		201							{1: '1', 2: '500313', 7: '1'}
+600	600		301			PanelActor1Shake				{1: '1', 2: 'Vonnegut', 3: 'Ugh...', 4: '1'}
+601	601		202							{1: '1'}
+602	602		301							"{3: ""The festering wounds on his body persist in their refusal to heal. The agent's frowns deeply, attempting to drive the Punishing Virus to mend the damage.""}"
+603	603		201							{1: '1', 2: '500305'}
+604	604		301							"{1: '1', 2: 'Vonnegut', 3: 'Since you already know everything, then you must also be aware that using the ""key"" to interfere with the Hetero Tower\'s core requires ""sacrifice""...', 4: '1'}"
+605	605		301							{2: 'Vonnegut', 3: 'That was why all members of the vanguard team became part of the tower.', 4: '1'}
+606	606		301							"{3: ""Tiny red butterflies corrode his wounds, preventing the Punishing Virus from repairing his body. The agent speaks again, yet in a strange tone that doesn't belong to him.""}"
+607	607		301							{2: 'Vonnegut', 3: 'I need you now... to help me.', 4: '1'}
+608	608		301							"{2: 'Vonnegut', 3: ""Help me fulfill Dominik's original plan..."", 4: '1'}"
+609	609		301				DialogDisable			{2: 'Vonnegut', 3: 'Kill Cradle and recycle the true core of the Hetero Tower.', 4: '1'}
+610	610		302							{2: 'But there is no key here.', 3: '611', 8: '2', 11: '1'}
+611	611		302							"{2: ""And the Hetero Tower's core can't be stored either."", 3: '612', 8: '2', 11: '1'}"
+612	612		202							{1: '1'}
+613	613		301			DialogEnable				"{3: 'Back in the Hetero Tower, Lucia used Dominik\'s ""key"" to absorb the core.'}"
+614	614		301							"{3: 'In this layer of time, Lucia didn\'t enter the tower, so naturally there\'s no ""key"" to contain the core.'}"
+615	615		201							{1: '1', 2: '500305'}
+616	616		301							"{1: '1', 2: 'Vonnegut', 3: ""That's right, so..."", 4: '1'}"
+617	617		401							{1: '2', 2: '2579'}
+618	618		301							{3: 'Dispersing the regenerated red butterflies, the agent produces a strange, golden square crystal from his wounds.'}
+619	619		301							{2: 'Vonnegut', 3: 'This is... the <color=#ff4e4eff>key</color> that belongs to <phonetic=Nemo>me</phonetic>.', 4: '1'}
+620	620		302							{2: 'Nemo...', 3: '621', 8: '2', 11: '1'}
+621	621		301							{2: 'Vonnegut', 3: 'This is also what I hate most.', 4: '1'}
+622	622		301							{2: 'Vonnegut', 3: 'Just like back then...', 4: '1'}
+623	623		202							{1: '1', 6: '1'}
+624	624		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+625	625		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+626	626		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory651.jpg'}
+627	627		504							{1: '0.5'}
+628	628		301							"{3: ""The vanguard team sacrificed everything, betting all hope on the Hetero Tower, paid every price possible, yet only managed to open one exit to Dominik's world.""}"
+629	629		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+630	630		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory627.jpg'}
+631	631		301							{3: 'Everything in their world fell into stagnation, firmly sealed away by the Hetero Tower beyond an unknown space.'}
+632	632		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+633	633		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory647.jpg'}
+634	634		301				DialogDisable			{3: 'In the end... does he, too, end up walking down the same path'}
+635	635		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+636	636		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+637	637		504							{1: '0'}
+638	638		307							{1: 'Will this sacrifice... really make a difference?', 3: '50', 4: 'ffffffff', 6: '1'}
+639	639		301							{3: 'Will this sacrifice... really make a difference?'}
+640	640		307							{2: '1'}
+641	641		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+642	642		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1002.jpg'}
+643	643		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+644	644		301			DialogEnable				{3: 'After a brief silence, Vonnegut forcibly uses the Punishing Virus to seal his wound and slowly rises to his feet.'}
+645	645		201							{1: '1', 2: '500305'}
+646	646		301							"{1: '1', 2: 'Vonnegut', 3: ""I can't tell which layer of the Hetero Tower you've returned from."", 4: '1'}"
+647	647		301							{2: 'Vonnegut', 3: 'But I really hope that the Hetero Tower ends at this layer. With more and more divergence points showing up, someday, this place will either be explored... or destroyed.', 4: '1'}
+648	648		301							"{2: 'Vonnegut', 3: ""You don't trust me, and I don't trust you either, but at this point... I have no choice but to place everything in your hands."", 4: '1'}"
+649	649		301							{3: 'He laughs at himself.'}
+650	650		301							{2: 'Vonnegut', 3: 'To place hope in the person who was once an enemy...', 4: '1'}
+651	651		301							{2: 'Vonnegut', 3: '...'}
+652	652		401							{1: '2', 2: '4816'}
+653	653		301			RImgBg1Shake				{3: 'The Hetero Tower trembles slightly. The rift of the Fog breathes slowly like a living creature. Vonnegut furrows his brow, his arm maintaining the golden crystals quivering subtly, clearly beginning to strain from the effort.'}
+654	654		302							{2: 'Tell me what I need to do.', 3: '655', 8: '2', 11: '1'}
+655	655		301							"{2: 'Vonnegut', 3: ""You've already merged with Chaos. I need not say more."", 4: '1'}"
+656	656		301							"{2: 'Vonnegut', 3: 'To return to the ""previous layer"" of the Hetero Tower requires Agent Zero\'s authority... and the Hetero Tower\'s core. Don\'t let the Hetero Tower collapse, or no one can survive.', 4: '1'}"
+657	657		301							"{2: 'Vonnegut', 3: ""All you need to do is retrieve the Hetero Tower's core and control the tower... but not now."", 4: '1'}"
+658	658		301							"{2: 'Vonnegut', 3: ""Remember, after taking control of the Hetero Tower, immediately seal the rift behind its core. The force field can only hold for a short time. You should be able to accomplish all this with Agent Zero's complete authority."", 4: '1'}"
+659	659		301							"{2: 'Vonnegut', 3: ""And... I'll hold her off for as long as I can. Now... everything else is up to you."", 4: '1'}"
+660	660		202							{1: '1'}
+661	661		401							{1: '2', 2: '5150'}
+662	662		301			RImgBg1Shake				"{3: ""Before he can finish speaking, the agent's arms drop as if drained of all strength. The golden crystals suddenly shatter, and the rift expands in an instant.""}"
+663	663		401							{1: '2', 2: '4826'}
+664	664		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+665	665		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+666	666		301			RImgBg1Shake				"{3: ""The Red Tide condenses into razor-sharp spikes, shooting out from the fissure and piercing the agent's body in a crisscross pattern.""}"
+667	667		302							{2: '...', 3: '668', 8: '2', 11: '1'}
+668	668		301							{3: 'The doll, still clutching the golden cubic crystal, silently sinks into a small patch of the Red Tide and vanishes without a trace.'}
+669	669		201							{1: '1', 2: '501016', 3: '15'}
+670	670		301							{1: '1', 2: 'Cradle', 3: 'Sigh... We meet again.', 4: '1'}
+671	671		204							{1: '1', 2: '2'}
+672	672		301							"{2: 'Cradle', 3: ""You didn't actually think the Fog could contain me, did you?"", 4: '1'}"
+673	673		202							{1: '1', 6: '1'}
+674	674		201							{1: '1', 2: '500305'}
+675	675		301							{1: '1', 2: 'Vonnegut', 3: '...', 4: '1'}
+676	676		202							{1: '1'}
+677	677		301							{3: 'The agent in black remains silent as golden crystals stubbornly climb up from behind the girl, refusing to admit defeat.'}
+678	678		201							{1: '1', 2: '501016'}
+679	679		301							{1: '1', 2: 'Cradle', 3: 'Still not letting go?', 4: '1'}
+680	680		202							{1: '1'}
+681	681		401						100.0	{1: '2', 2: '4818'}
+682	682		401							{1: '2', 2: '2939'}
+683	683		301							"{3: ""Amid the crimson butterflies' lethal onslaught, the crystals splinter into fragments, akin to a life marred by countless failures, eventually dissolving into the pooling Red Tide on the ground.""}"
+684	684		201							{1: '1', 2: '501016', 3: '2'}
+685	685		301							"{1: '1', 2: 'Cradle', 3: ""After changing time so many times, you are now far away from who you originally were, aren't you..."", 4: '1'}"
+686	686		301							{3: 'Fervently eyeing the agent like a butterfly specimen, Cradle suddenly seems to have lost interest in everything else.'}
+687	687		204							{1: '1', 2: '4'}
+688	688		301							{2: 'Cradle', 3: 'Just a few breaths away from death... Is that little rat in hiding the only one left?', 4: '1'}
+689	689		301							"{2: 'Cradle', 3: 'I\'ll let you play a little longer, then. The Hetero Tower... is my ""child"". What could you possibly use to take it away from me...', 4: '1'}"
+690	690		202							{1: '1'}
+691	691		401							{1: '2', 2: '4794'}
+692	692		201							{1: '2', 2: '500868', 4: '-700', 7: '1'}
+693	693		201							{1: '3', 2: '500868', 4: '700', 7: '1'}
+694	694		205							{1: '2', 3: '1', 4: '0', 5: '0'}
+695	695		205							{1: '3', 3: '1', 4: '0', 5: '0'}
+696	696		501							{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab', 2: '2', 3: '2'}
+697	697		501							{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab', 2: '2', 3: '3'}
+698	698		203							{1: '2', 2: '0.25', 3: '-550'}
+699	699		203							{1: '3', 2: '0.25', 3: '550'}
+700	700		301							"{3: 'Amid countless crimson butterflies, the Hetero-Creatures steadily approach the position of the ""core"".'}"
+701	701		505							{2: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab', 4: '2'}
+702	702		505							{2: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab', 4: '3'}
+703	703		202							{1: '2', 2: '3', 6: '1'}
+704	704		301							"{3: 'Before long, the girl\'s fingertips make contact with the ""core"".'}"
+705	705		301							"{3: ""The radiant blue light dissolves her fingertips, and this mild pain triggers an unexpected sense of agitation. It's as if she has eagerly awaited a long-anticipated feast, only to find it tasteless as wax when it's finally served.""}"
+706	706		301							{3: 'The all-too-easy victory leaves her feeling unsatisfied.'}
+707	707		201							{1: '1', 2: '501016', 3: '4'}
+708	708		301							{1: '1', 2: 'Cradle', 3: '...How boring.', 4: '1'}
+709	709		306							{1: '1'}
+710	710		301							{3: 'No... She should not have such emotions.'}
+711	711		306							
+712	712		301							"{3: 'Having restored all the memories, Cradle furrows her brow, irritably contemplating how to excise the ""noises"" from her consciousness. However, the realization that she has such an ""irritated"" thought only fuels her anger further.'}"
+713	713		301							{2: 'Cradle', 3: 'Damn you, Dominik...', 4: '1'}
+714	714		204							{1: '1'}
+715	715		301							{2: 'Cradle', 3: 'Whatever.', 4: '1'}
+716	716		202							{1: '1'}
+717	717		301							"{3: ""She interrupts her train of thought and shifts her focus back on seizing control of the Hetero Tower's core.""}"
+718	718		301							"{3: ""If she can reverse the rules of the Hetero Tower's core and restore everything to its original state...""}"
+719	719		301				DialogDisable			"{3: 'She will find a way to excise her ""personality"" in no time.'}"
+720	720		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+721	721		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+722	722		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+723	723		307							"{1: '...But is excising her ""personality"" truly what she wants?', 3: '50', 4: 'ffffffff', 6: '1'}"
+724	724		301							"{3: '...But is excising her ""personality"" truly what she wants?'}"
+725	725		307							{2: '1'}
+726	726		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+727	727		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+728	728		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1002.jpg'}
+729	729		301			DialogEnable				{3: 'Irrepressibly, a faint voice emerges from deep within her heart.'}
+730	730		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+731	731		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+732	732		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+733	733		201							{1: '1', 2: '500540', 4: '-450', 7: '1'}
+734	734		201							{1: '2', 2: '500868', 4: '450', 7: '1'}
+735	735		301							"{1: '1', 3: 'After excising her ""personality"", who would she be? ""Cradle"" or ""Agent Zero""?'}"
+736	736		301							"{3: 'Having already tasted ""emotions"", can she truly revert to being ""Agent Zero"" again...'}"
+737	737		202							{1: '1', 2: '2', 6: '1'}
+738	738		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+739	739		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+740	740		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1002.jpg'}
+741	741		201							{1: '1', 2: '501016', 3: '4', 7: '1'}
+742	742		301							{1: '1', 2: 'Cradle', 3: '...', 4: '1'}
+743	743		202							{1: '1'}
+744	744		301							"{3: ""With her attention drawn to the faint whispers in her heart, Cradle fails to notice that Vonnegut's body is quietly undergoing changes...""}"
+745	745		401							{1: '2', 2: '4816'}
+746	746		201							{1: '1', 2: '500305'}
+747	747		301			RImgBg1Shake				"{1: '1', 3: ""Golden crystals gradually spread across his body as the Hetero Tower's core trembles ever so slightly, as if welcoming its thirteenth guest...""}"
+748	748		401							{1: '2', 2: '2959'}
+749	749		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+750	750		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+751	751		504							{1: '0.7'}
+752	752		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+753	753		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory647.jpg'}
+754	754		201							{1: '1', 2: '501003', 7: '1'}
+755	755		301							"{1: '1', 2: 'Vanguard Member No. 7', 3: ""This time... it's finally my turn...""}"
+756	756		401							{1: '2', 2: '2959'}
+757	757		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+758	758		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+759	759		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+760	760		504							{1: '0'}
+761	761		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1002.jpg'}
+762	762		201							{1: '1', 2: '500305', 7: '1'}
+763	763		301							"{1: '1', 3: ""He feels as if he has returned to that lone young man's side.""}"
+764	764		401							{1: '2', 2: '2959'}
+765	765		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+766	766		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+767	767		504							{1: '0.7'}
+768	768		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory647.jpg'}
+769	769		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+770	770		201							{1: '1', 2: '501003', 7: '1'}
+771	771		301							{1: '1', 2: 'Vanguard Member No. 7', 3: 'This time... can I really complete this... impossible mission?'}
+772	772		202							{1: '1', 6: '1'}
+773	773		401							{1: '2', 2: '2959'}
+774	774		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+775	775		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+776	776		504							{1: '0'}
+777	777		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+778	778		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1002.jpg'}
+779	779		301							"{3: ""The golden crystals bypass the bewildered Cradle, gradually climbing toward the Hetero Tower's core.""}"
+780	780		201							{1: '1', 2: '500305'}
+781	781		301							{1: '1', 2: 'Vonnegut', 3: 'Or... see you on the next layer.', 4: '1'}
+782	782		401							{1: '2', 2: '4276'}
+783	783		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+784	784		202							{1: '1', 6: '1'}
+785	785		301							"{3: ""The agent's body completely vanishes as golden light erupts brilliantly. The Hetero Tower's core pulses with dazzling azure radiance, accepting the embrace of the golden crystals.""}"
+786	786		201							{1: '1', 2: '501030'}
+787	787		301							{1: '1', 2: 'Cradle', 3: '—!', 4: '1'}
+788	788		202							{1: '1'}
+789	789		301							{3: 'Cradle abruptly snaps to attention and frantically reaches for the core, disregarding the torment of her disintegrating body. However, Chaos, emerging suddenly from the Red Tide, unmistakably outpaces her—'}
+790	790		104							{1: '0|-50|-200', 2: '0.25'}
+791	791		302							{2: '(Thrust the golden cubic crystal into the core)', 3: '792', 8: '2', 11: '1'}
+792	792		401							{1: '2', 2: '943'}
+793	793		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+794	794		301			RImgBg1Shake				{3: 'A sudden burst of light engulfs the entire Hetero Tower as an earth-shattering explosion echoes through all space—'}
+795	795		201							{1: '1', 2: '501030', 7: '1'}
+796	796		301			PanelActor1Shake				{1: '1', 2: 'Cradle', 3: 'Dammit!', 4: '1'}
+797	797		306							{1: '1'}
+798	798		401							{1: '2', 2: '4814'}
+799	799		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustLightWall.prefab', 2: '2'}
+800	800		301							{3: 'The unexpected rays of azure light promptly reduce Cradle to a gory sight. She screams in agony, trying to retreat momentarily into the Red Tide, only to realize in horror that the expanded force field has already blocked her last means of escape...'}
+801	801		306							
+802	802		301							{2: 'Cradle', 3: '...Hah... of all the places...', 4: '1'}
+803	803		301							"{3: ""The doll, bearing your gaze, stands stoically to the side. Bathed in the purifying light emanating from the Inver-Hetero Tower's core, her body is equally exposed, yet she remains steadfast, firmly maintaining control of the force field.""}"
+804	804		302							{2: 'Goodbye, Cradle.', 3: '805', 8: '2', 11: '1'}
+805	805		301							{2: 'Cradle', 3: '...', 4: '1'}
+806	806		301							{2: 'Cradle', 3: 'Is it really... just a goodbye?', 4: '1'}
+807	807		301							{3: 'She suddenly flashes a twisted smile, offering no further words as her petite form rapidly disintegrates—'}
+808	808		302							"{2: ""I won't give you that chance."", 3: '809', 8: '2', 11: '1'}"
+809	809		301							"{3: ""The doll tightens her grip on the golden cubic crystal containing the Hetero Tower's core, causing even more intense azure light to shoot forth from within.""}"
+810	810		301							{3: 'Isolated outside the force field, Cradle fails to detonate her body. Cracks gradually spread across her form until, just as unexpected as her arrival...'}
+811	811		401							{1: '2', 2: '9342031'}
+812	812		202							{1: '1', 6: '1'}
+813	813		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+814	814		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustLightWall.prefab'}
+815	815		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab'}
+816	816		301							{3: 'Cradle gradually vanishes within the blue barrier, leaving behind only a butterfly with damaged wings, clinging to a narrow corner.'}
+817	817		302							{2: 'Goodbye, Cradle.', 3: '818', 8: '2', 11: '1'}
+818	818		301							"{3: ""The doll picks up the red butterfly and, without a moment's hesitation, presses it into the golden cubic crystal.""}"
+819	819		401							{1: '2', 2: '4386'}
+820	820		301							{3: 'The last red butterfly dissolves into a wisp of mist, completely vanishing within the Hetero Tower.'}
+821	821		401							{1: '2', 2: '4816'}
+822	822		301			RImgBg1Shake				{3: 'Fragmented buzzing sounds echo in the air as the tower trembles incessantly, as if lamenting the loss of its former master.'}
+823	823		401							{1: '2', 2: '2959'}
+824	824		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+825	825		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+826	826		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+827	827		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory651.jpg', 3: '0.5', 4: '4'}
+828	828		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1002.jpg', 3: '0.5'}
+829	829		104							{1: '-10|0|-5', 2: '0', 4: '4'}
+830	830		104							{1: '10|0|-5', 2: '0'}
+831	831		301							"{3: ""With the Hetero Tower's core now contained within the golden cubic crystal, space begins to slowly tear apart at its former location, strange colors flickering from beyond the rift.""}"
+832	832		301							{3: 'The last force field left behind by the agent suddenly expands, temporarily holding back the assault from beyond the rift.'}
+833	833		301							{3: 'Now...'}
+834	834		401							{1: '2', 2: '4819'}
+835	835		301				AniZhuanchangBegin			{3: 'Clutching the golden cubic crystal in her arms, the doll slowly sinks into the undulating Red Tide.'}
+836	836		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+837	837		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+838	838		402							{1: '4819'}
+839	839		101							{3: '1', 4: '4', 5: '1'}
+840	840		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory655.jpg', 3: '1'}
+841	841		401						2000.0	{1: '1', 2: '36'}
+842	842		401							{1: '1', 2: '5072'}
+843	843		201							{1: '1', 2: '501095', 7: '1'}
+844	844		301			AniZhuanchangEnd				{1: '1', 2: 'Ishmael', 3: '...', 4: '1'}
+845	845		301							{2: 'Ishmael', 3: 'Can this be considered... a success?', 4: '1'}
+846	846		301							{3: 'Unbeknownst to anyone, the pink-haired woman silently appears in a corner of the Hetero Tower.'}
+847	847		204							{1: '1', 2: '4'}
+848	848		401							{1: '2', 2: '5149'}
+849	849		301							"{2: 'Ishmael', 3: 'Hmm... Let me see... How is this chapter of the ""story"" recorded in the book?', 4: '1'}"
+850	850		401							{1: '2', 2: '5149'}
+851	851		202							{1: '1'}
+852	852		301							{3: 'She opens the book, intending to find the corresponding record, but after hastily flipping through a few pages, she tosses it aside with apparent irritation.'}
+853	853		201							{1: '1', 2: '501095', 3: '8'}
+854	854		301							{1: '1', 2: 'Ishmael', 3: 'Coming across such an entertaining spectacle is rare...', 4: '1'}
+855	855		204							{1: '1', 2: '2'}
+856	856		301				AniZhuanchangBegin			"{2: 'Ishmael', 3: ""It's worth waiting with a little more patience."", 4: '1'}"
+857	857		202							{1: '1', 6: '1'}
+858	858		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1002.jpg'}
+859	859		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+860	860		401							{1: '2', 2: '4682'}
+861	861		301			AniZhuanchangEnd				{3: 'An indeterminate amount of time passes.'}
+862	862		301							{3: 'The force field gradually thins, nearing its limit. Just as crimson spikes threaten to breach the faltering shield...'}
+863	863		301							{3: 'The Red Tide churns with gentle ripples, a mist of vibrant hues slowly ascending from its depths.'}
+864	864		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopRed.prefab', 2: '2'}
+865	865		401							{1: '2', 2: '4411'}
+866	866		201							{1: '1', 2: '501000', 5: '-100'}
+867	867		203							{1: '1', 2: '0.6'}
+868	868		301						650.0	{1: '1', 3: 'Wings carrying numerous hopes unfurl from the murky tide. The humming of the Hetero Tower fades as myriad crimson crystals solidify the rupturing space.'}
+869	869		301		1		AniZhuanchangBegin			{3: 'With the complete authority of Agent Zero, she once more returns to the tower that should rightfully be under her command.'}

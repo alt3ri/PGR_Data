@@ -1,0 +1,147 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory260.png'}
+2	2		401							{1: '1', 2: '5'}
+3	3		301			DialogEnable				{3: 'Knowing that you could not write your personal experience with Bambinata in the script, you eventually did not manage to finish the speech for the conference.'}
+4	4		301							{3: 'Those kids had light in their eyes. You could not convince yourself to tell them about the cruel, harsh encounters you had on the battlefield, so you just gave up.'}
+5	5		301							{3: 'Fortunately, you asked Simon to write you a short note just minutes before the conference, so you at least had something to say.'}
+6	6		201							{1: '1', 2: '500201', 3: '1'}
+7	7		301							{1: '1', 2: 'Simon', 3: 'Sigh... Now that this one is over, we can finally move on to the next.', 4: '1'}
+8	8		301							"{2: 'Simon', 3: ""Don't forget the enrolment ceremony speech again. We could relax and chat at the conference, but not in a formal ceremony like that."", 4: '1'}"
+9	9		301							{3: 'Simon and you are half-lying on a bench, savoring a brief moment of relaxation.'}
+10	10		301							"{3: ""Perhaps this short break is the only time that truly belongs to you. When you return to the lounge, the speech for tomorrow's ceremony will take up all your time once again.""}"
+11	11		302							"{2: ""To be honest, I haven't even started."", 3: '12'}"
+12	12		204							{1: '1'}
+13	13		301							{2: 'Simon', 3: '?', 4: '1'}
+14	14		204							{1: '1', 2: '10'}
+15	15		301							{2: 'Simon', 3: 'Seriously? How can you look so calm when the deadline is just around the corner...', 4: '1'}
+16	16		301							{3: 'You have heard of a romantic metaphor: the poem already exists, all the poet does is to retrieve it from the wilderness of words.'}
+17	17		301							{3: 'In fact, you already have a rough idea of what to write. Still, you feel like something is still missing. You cannot express your true feelings, nor do you know how to address them.'}
+18	18		302							{2: 'Help me, Simon.', 3: '19'}
+19	19		204							{1: '1', 2: '1'}
+20	20		301							"{2: 'Simon', 3: ""Can't help you on that... What can I possibly do? Are you expecting me to write such an important speech for you right here, right now?"", 4: '1'}"
+21	21		301							{2: 'Simon', 3: 'Anyway, no matter how this ends up like, it will all be over after tomorrow.', 4: '1'}
+22	22		301							{3: 'The same Sun shines upon exhausted Simon and yourself, as well as the children playing in the park.'}
+23	23		301							{3: 'Time slowly slips away. As the sun begins to set, children talk about coming back to continue playing sometime tomorrow before waving goodbye to each other. The automated vendors selling souvenirs and gadgets have also disappeared.'}
+24	24		301				AniZhuanchangBegin			{3: 'Simon and you also have to leave the park and return to the Task Force block. He is still reminding you to finish the speech at the very last moment.'}
+25	25		202			DialogDisable			500.0	{1: '1', 6: '1'}
+26	26		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+27	27		301			DialogEnable				{3: 'As if trying to confirm something, you knock on the door of Egret once again.'}
+28	28		201							{1: '1', 2: '500536'}
+29	29		301							{1: '1', 2: 'Bambinata', 3: 'Hello?', 4: '1'}
+30	30		301							{2: 'Bambinata', 3: 'Does Bambinata... know you?', 4: '1'}
+31	31		302							"{2: ""I'm 【kuroname】."", 3: '32'}"
+32	32		301							{3: 'Bambinata is still leaning on the door, gazing at you.'}
+33	33		204							{1: '1', 2: '4'}
+34	34		301							{2: 'Bambinata', 3: '【kuroname】? Are you 【kuroname】?', 4: '1'}
+35	35		301							{2: 'Bambinata', 3: 'Bambinata knows this name. Your voice... also sounds familiar.', 4: '1'}
+36	36		302							{2: 'You wrote my name in your diary.', 3: '37'}
+37	37		204							{1: '1', 2: '7'}
+38	38		301							{2: 'Bambinata', 3: 'How do you know that Bambinata has a diary?', 4: '1'}
+39	39		204							{1: '1', 2: '4'}
+40	40		301							{2: 'Bambinata', 3: 'Actually, no... Bambinata thinks she has shown you the diary before...', 4: '1'}
+41	41		203							{1: '1', 2: '0.15', 5: '-80'}
+42	42		301							{3: 'Bambinata suddenly reaches out and grabs your hand.'}
+43	43		301							{2: 'Bambinata', 3: 'This is you. Bambinata remembers this feeling.', 4: '1'}
+44	44		203							{1: '1', 2: '0.15'}
+45	45		301							{3: 'Bambinata seems to suddenly realize that she should not have grabbed you so abruptly. She quickly pulls her hand back and opens the door.'}
+46	46		204							{1: '1', 2: '1'}
+47	47		301							{2: 'Bambinata', 3: 'Sorry for that... Bambinata just wanted to double-check if you really are 【kuroname】.', 4: '1'}
+48	48		302							{2: 'Can you confirm my identity now?', 3: '49'}
+49	49		204							{1: '1', 2: '4'}
+50	50		301							{2: 'Bambinata', 3: 'Yes. Bambinata can confirm that you are 【kuroname】.', 4: '1'}
+51	51		301							"{2: 'Bambinata', 3: ""Bambinata can only remember things within the past 24 hours, so she doesn't remember other things about you."", 4: '1'}"
+52	52		301							"{2: 'Bambinata', 3: 'But Bambinata can see you in her diary. Bambinata was looking for you, and went to see the doctor with you. You taught Bambinata what ""another day"" meant, Nice—', 4: '1'}"
+53	53		302							{2: '?', 3: '54'}
+54	54		204							{1: '1', 2: '1'}
+55	55		301							{2: 'Bambinata', 3: 'Um... 【kuroname】.', 4: '1'}
+56	56		301							{3: 'Bambinata looks like a kid who has successfully pulled off a prank, smiling gently and apologetically.'}
+57	57		301							{3: 'Still, she is the only one in the Egret lounge.'}
+58	58		301							{3: 'After staying with Bambinata for her frame check on that day, you lost contact with Vanessa completely.'}
+59	59		301							"{3: ""While helping out in the College, you also asked some instructors and commandants for Vanessa's whereabouts, but had no luck.""}"
+60	60		302							{2: 'Did Vanessa contact you?', 3: '61'}
+61	61		204							{1: '1'}
+62	62		301							"{2: 'Bambinata', 3: ""Mistress didn't contact Bambinata... Bambinata could not reach her either."", 4: '1'}"
+63	63		204							{1: '1', 2: '4'}
+64	64		301							{2: 'Bambinata', 3: 'But Bambinata will wait for her to return, because Mistress said she would come back after just a few days.', 4: '1'}
+65	65		301							{2: 'Bambinata', 3: 'But... how many days are a few days?', 4: '1'}
+66	66		302							"{2: 'Definitely not ""another day.""', 3: '67', 4: ""That's hard to tell..."", 5: '67'}"
+67	67		204							{1: '1', 2: '1'}
+68	68		301							{2: 'Bambinata', 3: 'Is that so...', 4: '1'}
+69	69		301							{3: 'Slightly dazed, Bambinata walks back to the sofa in the lounge and picks up the diary on the tea table. Her slender figure looks even more fragile in the empty room.'}
+70	70		301							{2: 'Bambinata', 3: 'Bambinata just has to wait here. Bambinata just needs to write everything down.', 4: '1'}
+71	71		301							{2: 'Bambinata', 3: '【kuroname】, Mistress Vanessa. Bambinata just needs to write it all down.', 4: '1'}
+72	72		301							{2: 'Bambinata', 3: 'Are you leaving now?', 4: '1'}
+73	73		301							{3: 'The question itself is the answer.'}
+74	74		302							{2: 'Can I stay here for a while?', 3: '75'}
+75	75		204							{1: '1', 2: '7'}
+76	76		301							{2: 'Bambinata', 3: 'Huh?!', 4: '1'}
+77	77		204							{1: '1'}
+78	78		301							{3: 'She looks visibly surprised for a brief moment, but soon puts back the blank, emotionless expression that you saw in the beginning.'}
+79	79		301							"{2: 'Bambinata', 3: ""Bambinata... doesn't know how to respond to your request..."", 4: '1'}"
+80	80		301							"{2: 'Bambinata', 3: ""If 【kuroname】 is Mistress Vanessa's friend... No, not friend!"", 4: '1'}"
+81	81		204							{1: '1', 2: '4'}
+82	82		301							{2: 'Bambinata', 3: 'Bambinata needs to have permission from Mistress, but she ordered Bambinata to go to the check-up with you.', 4: '1'}
+83	83		204							{1: '1', 2: '1'}
+84	84		301							"{2: 'Bambinata', 3: ""You... But it won't hurt..."", 4: '1'}"
+85	85		301							{3: 'Bambinata continues to argue with herself, but her voice gets lower and lower. She lowers her head until you can no longer see her face.'}
+86	86		202							{1: '1'}
+87	87		301				AniZhuanchangBegin			{3: 'Bambinata never writes her own thoughts and judgments in her diary. In fact, whether she has those things at all can be a question. Those pale records finally look a little colorful later when you read what she wrote down on that day—'}
+88	88		401							{1: '1', 2: '36'}
+89	89		502						1500.0	{1: 'DialogDisable'}
+90	90		401							{1: '1', 2: '169'}
+91	91		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+92	92		301			DialogEnable				{3: '...'}
+93	93		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory14.png', 3: '0', 4: '1', 5: '2'}
+94	94		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+95	95		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+96	96		201							{1: '1', 2: '500536'}
+97	97		301							{1: '1', 3: 'Diary No. 225...'}
+98	98		301							"{3: ""Bambinata couldn't remember anything, but she read the records about Mistress Vanessa, 【kuroname】, the hospital and the inspector.""}"
+99	99		301							{3: 'Bambinata remains on standby before 17:43.'}
+100	100		301							{3: 'Someone knocks on the door at 17:43. The person claims to be 【kuroname】. Bambinata finds the voice familiar.'}
+101	101		301							{3: 'But Bambinata is not sure, because Bambinata only knows 【kuroname】 as a name. To confirm, Bambinata needs to touch and feel 【kuroname】.'}
+102	102		301							{3: 'Bambinata has confirmed it is 【kuroname】.'}
+103	103		301							{3: '【kuroname】 asks about Mistress Vanessa. 【kuroname】 seems to be concerned about Mistress. Bambinata wants to see Mistress too.'}
+104	104		301							"{3: ""But Bambinata doesn't know where Mistress is. Bambinata tried to contact her but could not reach her.""}"
+105	105		301							"{3: ""Bambinata needs to wait for Mistress to return, because she will. Because that's what Bambinata's previous records said.""}"
+106	106		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+107	107		504							{1: '0.7'}
+108	108		201							{1: '1', 2: '500555', 3: '4'}
+109	109		301							"{1: '1', 3: '""Just stay on standby. I\'ll be back in a few days.""', 4: '1'}"
+110	110		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+111	111		504							{1: '0'}
+112	112		201							{1: '1', 2: '500536'}
+113	113		301							"{1: '1', 3: ""That's what Mistress Vanessa said.""}"
+114	114		301							{3: 'Mistress never lied to Bambinata. So she will be back in a few days.'}
+115	115		301							"{3: ""Later, 【kuroname】 wants to take a break in Mistress's lounge and asks Bambinata for permission.""}"
+116	116		301							"{3: ""Bambinata can't answer, because she can't make a decision on behalf of Mistress.""}"
+117	117		301							{3: 'But Mistress ordered Bambinata to go to the hospital with 【kuroname】. In other words, Mistress trusted 【kuroname】.'}
+118	118		301							"{3: ""Bambinata trusts Mistress's decision. Mistress trusted 【kuroname】, so Bambinata should trust 【kuroname】 too.""}"
+119	119		301							"{3: ""But is Bambinata allowed to make such a decision on Mistress's behalf?""}"
+120	120		301							"{3: ""Bambinata doesn't want to be alone. Is it right to think that way?""}"
+121	121		301							{3: 'Bambinata made a decision. 【kuroname】 sits on the sofa that Mistress used to sit on. Mistress would punish Bambinata for this, but Bambinata still needs to write it down.'}
+122	122		301							"{3: ""To trust 【kuroname】, that is Bambinata's decision.""}"
+123	123		301							"{3: '""Bambinata, if we both describe what happened today in our diaries, what would you write?""'}"
+124	124		301							"{3: ""A strange question. Why would 【kuroname】 keep a diary? You won't forget things like Bambinata does.""}"
+125	125		301							{3: 'Bambinata showed her diary to 【kuroname】. This is how Bambinata keeps her diary.'}
+126	126		301							"{3: '""It\'s indeed quite simple... But it doesn\'t seem like you were recording what had happened. Am I right?""'}"
+127	127		301							{3: 'Bambinata only writes things down because they happened. When Bambinata does so, they will take place again.'}
+128	128		301							"{3: ""Bambinata doesn't think about things in the past, because they will not happen right now.""}"
+129	129		301							"{3: ""Bambinata cannot know the future, so Bambinata doesn't think about things in the future.""}"
+130	130		301							{3: '【kuroname】 remains silent, as if thinking of something. Mistress Vanessa often does that too.'}
+131	131		301							{3: '【kuroname】 mentioned keeping a diary. Will 【kuroname】 write down what happened today like Bambinata?'}
+132	132		301							"{3: '""Do you want to know, Bambinata?""'}"
+133	133		301							"{3: ""It's not about whether Bambinata wants to or not. Bambinata just asked because 【kuroname】 mentioned it.""}"
+134	134		301							{3: '【kuroname】 never talks again. Did Bambinata say something wrong?'}
+135	135		301							{3: '【kuroname】 is still not talking.'}
+136	136		301							{3: 'A long time has passed. Bambinata has been sitting next to 【kuroname】 all along.'}
+137	137		301							"{3: '""Thank you, Bambinata.""'}"
+138	138		301							{3: 'When 【kuroname】 is no longer lost in thought, 【kuroname】 says this to Bambinata.'}
+139	139		301							"{3: ""But Bambinata didn't do anything. Why thank Bambinata?""}"
+140	140		301							{3: '【kuroname】 shakes the head and writes on the paper.'}
+141	141		301							"{3: '""I\'ll come back tomorrow.""'}"
+142	142		301							{3: 'This is what 【kuroname】 wrote down. 【kuroname】 says this is a promise.'}
+143	143		301							{3: '【kuroname】 left after that, and Bambinata is the only one left in the lounge again.'}
+144	144		301							{3: 'Bambinata has written down what happened today so she can read it again tomorrow.'}
+145	145		301							{3: 'In the past, Bambinata was the only person that was ever mentioned in the diary. But today is different.'}
+146	146		301		1		AniZhuanchangBegin			{3: 'Alone.'}

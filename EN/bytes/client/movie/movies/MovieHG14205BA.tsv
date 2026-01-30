@@ -1,0 +1,165 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory311.png'}
+2	2		401							{1: '1', 2: '204'}
+3	3		301			DialogEnable				"{3: ""The equipment room at the observatory is very different from what you imagined it'd be.""}"
+4	4		301							"{3: ""Behind the pitch-black iron door, there is no clean and tidy prep room like the ones you've seen at F.O.S. Storage cabinets are piled up haphazardly, covered in cobwebs and dust, and there is no air circulation.""}"
+5	5		301							{3: 'A moldy smell hits you the moment the door is opened.'}
+6	6		201							{1: '1', 2: '500817', 3: '4'}
+7	7		301							"{1: '1', 2: 'Qu', 3: ""I hope the mold hasn't damaged any crucial equipment here."", 4: '1'}"
+8	8		202							{1: '1'}
+9	9		201							{1: '1', 2: '500415', 4: '1'}
+10	10		301							"{1: '1', 2: 'Qiqi', 3: ""Let's see. The oxygen generators are still working, but the protective suits are in poor condition."", 4: '1'}"
+11	11		301							"{2: 'Qiqi', 3: ""The magnetic boots are intact. My tutor has worn them a few times before. Guess they'll do."", 4: '1'}"
+12	12		202							{1: '1'}
+13	13		201							{1: '1', 2: '500817'}
+14	14		301							{1: '1', 2: 'Qu', 3: 'Pretty much none of the life-saving gear works, but I see these flashy useless items work just fine, huh.', 4: '1'}
+15	15		202							{1: '1'}
+16	16		201							{1: '1', 2: '500415', 4: '1'}
+17	17		301							"{1: '1', 2: 'Qiqi', 3: ""That's it. No time to waste, let's get going and get it done before the meteor shower comes."", 4: '1'}"
+18	18		202							
+19	19		301							{3: 'It takes you some time to put on the protective suit and gloves.'}
+20	20		301							"{3: ""With Qu's help, you adjust the magnetic shoes and secure the joint protectors.""}"
+21	21		201							{1: '1', 2: '500817', 3: '4'}
+22	22		301							{1: '1', 2: 'Qu', 3: 'I adjusted them based on my preferences. You might want to check them yourself.', 4: '1'}
+23	23		302							"{2: ""It's fine. I trust you."", 3: '24'}"
+24	24		204							{1: '1', 2: '1'}
+25	25		301							"{2: 'Qu', 3: ""I like that. When I said you're in good hands, I really meant it."", 4: '1'}"
+26	26		204							{1: '1'}
+27	27		301							{2: 'Qu', 3: 'The gear is semi-open, so you want to be careful because you might end up with some scrapes here and there if you fall.', 4: '1'}
+28	28		302							{2: 'Gotcha. Thanks.', 3: '29'}
+29	29		301				DialogDisable			"{2: 'Qu', 3: ""Just in case, I've placed a medical kit near the elevator for emergencies."", 4: '1'}"
+30	30		202			AniZhuanchangBegin				{1: '1', 6: '1'}
+31	31		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory583.jpg'}
+32	32		301			DialogEnable				{3: 'After a short rest, you take the elevator with Qu and arrive at the top floor. The two of you walk toward the outer domain.'}
+33	33		301							{3: 'A whole different world fills your eyes as soon as the connecting gate opens up.'}
+34	34		301							"{3: ""The scenery is beyond imagination—you're now looking at a blue planet and the massive spine of Babylonia.""}"
+35	35		301							{3: 'You take a step forward with your right foot—and as soon as you do that, magnetic force quickly pulls your right foot to the outer shell.'}
+36	36		301							{3: 'The folds in your clothes seem to turn as stiff as metal sheets, probably due to the lack of wind on this side near space.'}
+37	37		301							{3: 'You try taking a deep breath. Your lungs still work hard, exhausting you.'}
+38	38		301							{3: 'with oxygen growing thin, even the slightest of movements now consumes a considerable amount of energy.'}
+39	39		301							"{3: ""After walking less than five meters with Qu's support, you feel like you've just run two shuttle runs and have to stop.""}"
+40	40		302							{2: 'Is the oxygen generator actually working?', 3: '41'}
+41	41		301							{3: 'Sitting is easier than standing, so you crouch down to rest, letting your arms touch the alloy shell.'}
+42	42		301							"{3: ""Qu doesn't blame you for it. She bends down and taps on the communication device in your helmet.""}"
+43	43		301							"{3: ""Realizing that sound can't travel in space, I quickly turn on the device.""}"
+44	44		201							{1: '1', 2: '500817', 3: '3'}
+45	45		301							"{1: '1', 2: 'Qu', 3: ""How are you holding up? Bet you're barely breathing there."", 4: '1'}"
+46	46		301							{2: 'Qu', 3: 'You should probably let the oxygen generator run a bit longer.', 4: '1'}
+47	47		301							{2: 'Qu', 3: 'You might find it easier to breathe once your heart and lungs catch up.', 4: '1'}
+48	48		301							{3: 'A few minutes later, you finally manage to stand up again, feeling a little better this time.'}
+49	49		301							{3: 'Qu gazes at Earth in the distance, squinting slightly as if recalling something.'}
+50	50		301							"{2: 'Qu', 3: ""Don't you find humans fascinating?"", 4: '1'}"
+51	51		302							{2: 'I beg your pardon?', 3: '52'}
+52	52		301							"{2: 'Qu', 3: ""I mean, humans are born weak and always need time to adapt when they're in a new environment."", 4: '1'}"
+53	53		301							{2: 'Qu', 3: 'But Constructs are different. Our designers design us taking tough environmental factors into account.', 4: '1'}
+54	54		301							{2: 'Qu', 3: 'Every step taken to bring us about makes us that much tougher against these external uncertainties.', 4: '1'}
+55	55		301							{2: 'Qu', 3: 'I do feel lost sometimes with my soul in this nearly perfect body.', 4: '1'}
+56	56		302							{2: 'How so?', 3: '57'}
+57	57		301							"{2: 'Qu', 3: ""Well, I think about myself and mankind's future all the time."", 4: '1'}"
+58	58		302							{2: 'Can I be of help?', 3: '59'}
+59	59		301							{2: 'Qu', 3: 'I sure hope you can answer some of my questions some time.', 4: '1'}
+60	60		301							"{2: 'Qu', 3: ""Feeling better now? Let's get moving."", 4: '1'}"
+61	61		302							{2: 'Alright.', 3: '62'}
+62	62		202							{1: '1'}
+63	63		301							{3: 'The further the two of you walk, the lighter you seem to feel.'}
+64	64		301							"{3: ""The shoes you're wearing are magnetic, but the experience itself is nerve-wracking all the same.""}"
+65	65		302							{2: 'Gee, they should have made these shoes a little more magnetic.', 3: '66'}
+66	66		201							{1: '1', 2: '500817', 3: '4'}
+67	67		301							"{1: '1', 2: 'Qu', 3: ""You don't want them to be too magnetic, though, in case something comes flying at you and you need to run."", 4: '1'}"
+68	68		301							"{2: 'Qu', 3: ""If you're destined to be thrown out, it's better to fly out whole."", 4: '1'}"
+69	69		301							{2: 'Qu', 3: 'Here we are. Up ahead is the external part of the telescope.', 4: '1'}
+70	70		202							{1: '1'}
+71	71		301							{3: 'In front of you is a gray circular external machine, with internal facilities arranged in a box structure at the back.'}
+72	72		301							"{3: 'You walk up to the machine. There are two buttons on the control panel—one that reads ""manual"" and the other that reads ""automatic"".'}"
+73	73		302							"{2: ""Let's go with automatic first and see what happens."", 3: '74'}"
+74	74		301							{2: 'System', 3: 'Error, error, error.'}
+75	75		302							"{2: ""Well, guess that didn't do the trick..."", 3: '76'}"
+76	76		201							{1: '1', 2: '500817', 3: '3'}
+77	77		301							{1: '1', 2: 'Qu', 3: 'The password verification module is fried along with the electronic components, like what Qiqi warned us about.', 4: '1'}
+78	78		302							"{2: ""Let's go with manual then."", 3: '79'}"
+79	79		301							"{2: 'Qu', 3: ""It's physically impossible for the human body. Here, leave it to me."", 4: '1'}"
+80	80		202							{1: '1'}
+81	81		301							{3: 'Qu takes half a step back, suddenly grabs the handle, makes a slight adjustment, and flips open the front hood.'}
+82	82		301							{3: '10 seconds later, Qu shows a frown.'}
+83	83		201							{1: '1', 2: '500817', 3: '4'}
+84	84		301							"{1: '1', 2: 'Qu', 3: ""Weird how it feels. It feels like it's trying to close down on me. I think I'll need a mechanical to hold this thing in place."", 4: '1'}"
+85	85		301							"{2: 'Qu', 3: ""Hurry up, I don't know how much longer my arm can hold."", 4: '1'}"
+86	86		302							"{2: ""Uh oh, that doesn't sound good..."", 3: '87'}"
+87	87		202							{1: '1'}
+88	88		301							{3: 'You fumble through the manual to see which part might need fixing.'}
+89	89		301							{3: 'Before you know it, half a minute has passed. Qu, however, remains calm, her mind impossible to read.'}
+90	90		301							"{3: ""Thinking that she's only putting up a tough front, you find yourself feeling edgy.""}"
+91	91		201							{1: '1', 2: '500817', 3: '1'}
+92	92		301							"{1: '1', 2: 'Qu', 3: ""Don't sweat it. I'm feeling okay."", 4: '1'}"
+93	93		202							{1: '1'}
+94	94		301							"{3: ""Apparently noticing what you're thinking, Qu tries to calm you down.""}"
+95	95		301							"{3: ""With Qu's reassurance, you pull yourself together and focus on replacing the potentially damaged parts.""}"
+96	96		301							"{3: ""Since the damage can't be observed from the outside, you had to replace each component that might affect functionality.""}"
+97	97		301							{3: 'Just then, a violent comes came from under your feet.'}
+98	98		201							{1: '1', 2: '500817', 3: '4'}
+99	99		502							{1: 'RImgBg1Shake'}
+100	100		301							{1: '1', 2: 'Qu', 3: 'Watch out!', 4: '1'}
+101	101		302							{2: 'A meteor shower... Of course it has to happen now of all times.', 3: '102'}
+102	102		202							{1: '1'}
+103	103		301							{3: 'The violent shaking throws you off before you know what just happened.'}
+104	104		301							{3: 'With it, your magnetic shoes lose contact with the ground, sending you into a drift into space.'}
+105	105		302							{2: 'Damn it!', 3: '106'}
+106	106		301							"{3: ""Just as you are about to be flung out of Babylonia's gravitational field, someone grabs your arm.""}"
+107	107		201							{1: '1', 2: '500817', 3: '4'}
+108	108		301							{1: '1', 2: 'Qu', 3: 'That was close...', 4: '1'}
+109	109		301							{3: 'Half-squatting and her hair suspending in mid-air, Qu pulls you back with her incredibly powerful arm.'}
+110	110		301							{2: 'Qu', 3: 'That was one hell of a maneuver. Not something I can do every single time, though, mind you.', 4: '1'}
+111	111		302							{2: 'Qu, that thing is going to close in ten seconds.', 3: '112'}
+112	112		301							"{2: 'Qu', 3: ""You were this close to spending the rest of your life in space and that's all you're worried about now?"", 4: '1'}"
+113	113		301							{2: 'Qu', 3: 'Chop chop and hold on tight now! Forget about formalities for now.', 4: '1'}
+114	114		302							{2: 'Uhh?', 3: '115'}
+115	115		301							{2: 'Qu', 3: 'Hurry up.', 4: '1'}
+116	116		202							{1: '1'}
+117	117		301							"{3: ""With it, you hold onto her, not sure what's going to happen next...""}"
+118	118		301							"{3: ""Qu bends down, her legs braced against the ground—before she takes what you'd only describe as a slingshot leap.""}"
+119	119		301							{3: 'You feel your internal organs being violently tugged by inertia as Qu stops in front of the machine. She keeps the hood from closing with an arm.'}
+120	120		201							{1: '1', 2: '500817'}
+121	121		301							"{1: '1', 2: 'Qu', 3: ""This thing would have closed had we been half a split second too late. Good news is that we don't have to wait another 24 hours now."", 4: '1'}"
+122	122		204							{1: '1', 2: '1'}
+123	123		301							"{2: 'Qu', 3: ""...Well, you're safe now. How much longer are you going to hold on to me?"", 4: '1'}"
+124	124		302							{2: 'Oops, apologies.', 3: '125'}
+125	125		202							{1: '1'}
+126	126		301							{3: 'Before long, you and Qu are finished and have returned to the observatory.'}
+127	127		201							{1: '1', 2: '500415'}
+128	128		301							{1: '1', 2: 'Qiqi', 3: 'Glad to see both of you back here. Seems like it took a little longer than I thought, though.', 4: '1'}
+129	129		301							{2: 'Qiqi', 3: 'Did something happen up there?', 4: '1'}
+130	130		202							{1: '1'}
+131	131		201							{1: '1', 2: '500817'}
+132	132		301							{1: '1', 2: 'Qu', 3: 'Nothing really. We were just hanging out.', 4: '1'}
+133	133		301							{2: 'Qu', 3: 'You can give the telescope a try and see if it works now.', 4: '1'}
+134	134		202							{1: '1'}
+135	135		201							{1: '1', 2: '500415'}
+136	136		301							{1: '1', 2: 'Qiqi', 3: 'Alrighty... Robot A, over here.', 4: '1'}
+137	137		202							{1: '1'}
+138	138		201							{1: '1', 2: '500354'}
+139	139		301							{1: '1', 2: 'Robot A', 3: 'Hello, how may I help you?', 4: '1'}
+140	140		202							{1: '1'}
+141	141		201							{1: '1', 2: '500817'}
+142	142		301							{1: '1', 2: 'Qu', 3: 'Print the latest star chart.', 4: '1'}
+143	143		202							{1: '1'}
+144	144		201							{1: '1', 2: '500354'}
+145	145		301							{1: '1', 2: 'Robot A', 3: 'Of course.', 4: '1'}
+146	146		202							{1: '1'}
+147	147		301							{3: 'With a slight shake, Robot A starts working.'}
+148	148		201							{1: '1', 2: '500354'}
+149	149		301							{1: '1', 2: 'Robot A', 3: 'Printing complete! Printing complete!', 4: '1'}
+150	150		202							{1: '1'}
+151	151		301							"{3: ""Qu takes the new star chart from Robot A's belly.""}"
+152	152		301							{3: 'Unlike the last printout, this one shows a clear nebula formed by cosmic dust.'}
+153	153		201							{1: '1', 2: '500817', 3: '3'}
+154	154		301							"{1: '1', 2: 'Qu', 3: ""Uhmm... looks like it's working fine now."", 4: '1'}"
+155	155		301							{2: 'Qu', 3: 'Glad it all went all. So, Qiqi, remember your promise?', 4: '1'}
+156	156		202							{1: '1'}
+157	157		201							{1: '1', 2: '500415'}
+158	158		301							"{1: '1', 2: 'Qiqi', 3: ""Of course. We can carry on with our research now with the telescope up and running again, and we can't thank you both enough."", 4: '1'}"
+159	159		202							{1: '1'}
+160	160		201							{1: '1', 2: '500817', 3: '3'}
+161	161		301							"{1: '1', 2: 'Qu', 3: 'We were thinking about giving the holographic projection a try next. Think you could give us some ""us"" time here?', 4: '1'}"
+162	162		202							{1: '1'}
+163	163		201							{1: '1', 2: '500415'}
+164	164		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Qiqi', 3: ""Feel free. I'll just be down in the lab if you need me."", 4: '1'}"

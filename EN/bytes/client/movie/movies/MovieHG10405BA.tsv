@@ -1,0 +1,43 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory9.jpg'}
+2	2		401							{1: '1', 2: '203'}
+3	3		201							{1: '1', 2: '1091001'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Bianca', 3: ""While we're still capable to keep fighting, I'd advise retreating for now, Commandant."", 4: '1'}"
+5	5		202							{1: '1', 6: '1'}
+6	6		301							{2: '???', 3: 'H-help...'}
+7	7		302							"{2: ""What's happening there?"", 3: '8', 4: ""Let's head that way, Bianca!"", 5: '9'}"
+8	8	11	201							{1: '1', 2: '1091001'}
+9	9		201							{1: '1', 2: '1091001'}
+10	10		301							{1: '1', 2: 'Bianca', 3: 'Understood, Commandant.', 4: '1'}
+11	11		301							{1: '1', 2: 'Bianca', 3: 'It looks like a fight. It appears that the Support Force is fighting against...', 4: '1'}
+12	12		202							{1: '1', 6: '1'}
+13	13		201							{1: '1', 2: '500019', 4: '-400'}
+14	14		201							{1: '2', 2: '500005', 4: '400'}
+15	15		301							"{1: '1', 2: 'Construct', 3: ""We didn't do anything, I swear... Why are you attacking us?"", 4: '1'}"
+16	16		302							{2: 'Stop it, now!', 3: '19', 4: 'Bianca, stop them.', 5: '17'}
+17	17		201							{1: '1', 2: '1091001', 4: '-400'}
+18	18		301							"{1: '1', 2: 'Bianca', 3: ""I'll keep them away with my arrows."", 4: '1'}"
+19	19		301							"{2: 'Purifying Force Member', 3: ""Your ID... You're the one from Gray Raven, aren't you? And the Construct with you... is that Bianca?"", 4: '2'}"
+20	20		201							{1: '1', 2: '1091001', 4: '-400'}
+21	21		301							{1: '1', 2: 'Purifying Force Member', 3: 'What are you doing here?', 4: '2'}
+22	22		301							{2: 'Bianca', 3: 'I should be the one asking you. Why are you attacking the Support Force?', 4: '1'}
+23	23		301							{2: 'Purifying Force Member', 3: 'Because they looked terrified the moment they saw us and started running away.', 4: '2'}
+24	24		201							{1: '1', 2: '500019', 4: '-400'}
+25	25		301							{1: '1', 2: 'Construct', 3: 'That was because you guys all unholster your weapons... I thought you were going to...', 4: '1'}
+26	27		201							{1: '1', 2: '1091001', 4: '-400'}
+27	26		301							{2: 'Purifying Force Member', 3: 'To what?!', 4: '2'}
+28	28		301							"{1: '1', 2: 'Bianca', 3: ""Enough! Isn't this the reason why the other Constructs are so terrified of the Purifying Force?"", 4: '1'}"
+29	29		301							"{2: 'Purifying Force Member', 3: ""So what? We're now suspecting deserters in the Support Force, so get out of my face."", 4: '2'}"
+30	30		302							{2: 'Ignore them, Bianca.', 3: '31', 4: 'Is everyone from the Purifying Force as impulsive as you?', 5: '31'}
+31	31		301							"{2: 'Purifying Force Member', 3: ""This isn't your jurisdiction, Gray Raven Commandant."", 4: '2'}"
+32	32		301							"{2: 'Bianca', 3: ""But it is. These people from the Support Force are on a joint operation with Gray Raven, so they're very much affiliated with the Gray Raven Commandant."", 4: '1'}"
+33	33		301							"{2: 'Purifying Force Member', 3: ""You're not letting Gray Raven challenge the Purifying Force, are you, Bianca?"", 4: '2'}"
+34	34		301							"{2: 'Bianca', 3: ""Of course not, seeing that I'm also part of the Purifying Force. We can give it a shot right now—Purifying Force versus Purifying Force."", 4: '1'}"
+35	35		301							{2: 'Purifying Force Member', 3: '...', 4: '2'}
+36	36		301							{2: 'Purifying Force Member', 3: '...Tch. Goddamn fence sitter.', 4: '2'}
+37	37		301							"{2: 'Purifying Force Member', 3: ""That's why you're on a regular Task Force instead of fully here with us, isn't it? Fence sitter."", 4: '2'}"
+38	38		302							{2: 'Take it back.', 3: '39', 4: 'Do you feel proud attacking one of your own?', 5: '39'}
+39	39		202							{1: '2', 6: '1'}
+40	40		203							{1: '1', 2: '0.25'}
+41	41		301							"{2: 'Bianca', 3: ""That's alright, Commandant. They're not going to do anything after we clarify the Purifying Force's stance."", 4: '1'}"
+42	42		301		1		AniZhuanchangBegin			{2: 'Bianca', 3: 'So please follow my lead and be patient.', 4: '1'}

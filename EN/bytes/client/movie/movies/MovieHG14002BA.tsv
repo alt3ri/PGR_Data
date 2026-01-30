@@ -1,0 +1,159 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory731.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				{3: '3:00 PM, Refugee Camp'}
+4	4		201							{1: '1', 2: '500294'}
+5	5		301							"{1: '1', 2: 'Kind Old Man', 3: ""What's your name again?"", 4: '1'}"
+6	6		302							{2: 'My name is...', 3: '7'}
+7	7		301							"{2: 'Kind Old Man', 3: ""Wait, you're Elene, right?"", 4: '1'}"
+8	8		203							{1: '1', 2: '0.25', 3: '400'}
+9	9		201							{1: '2', 2: '500351', 4: '-400'}
+10	10		301							"{1: '1', 2: 'Elene', 3: ""I'm Elene. You got it wrong again."", 4: '2'}"
+11	11		301							{3: 'Sitting nearby, Lamia says.'}
+12	12		301							{2: 'Kind Old Man', 3: 'Elene... Merlin... Ruolin...', 4: '1'}
+13	13		301							{3: 'The old man mumbles, becoming less audible as he goes on.'}
+14	14		301							"{2: 'Kind Old Man', 3: ""Time... is gone... I can't find it..."", 4: '1'}"
+15	15		202							{1: '1', 2: '2'}
+16	16		301							{3: 'As the human feeds the last bit of medicine to the old man, he gradually falls asleep. Lamia tucks him in again.'}
+17	17		301							{3: 'The human tries to clean up the empty bowls.'}
+18	18		201							{1: '1', 2: '500351'}
+19	19		301							{1: '1', 2: 'Elene', 3: 'Here, let me do it.', 4: '1'}
+20	20		301							"{2: 'Elene', 3: ""I don't want people to think I'm dumping all the work on you and all."", 4: '1'}"
+21	21		301							"{3: ""Lamia can't see the human's face through the bandages, but she offers to help anyway, having sensed that the human was about to say something.""}"
+22	22		301							"{2: 'Elene', 3: ""See, I'm super grateful that you helped me turn him over, but I'm sure they're going to make this a one-person job going forward if I let you do everything."", 4: '1'}"
+23	23		301							"{2: 'Elene', 3: ""And if that happens, we'll end up with twice the workload, so I say we just take it easy here."", 4: '1'}"
+24	24		301							{3: 'Through the slits, Lamia can see that the human seems momentarily dazed. A second later, the Gray Raven Commandant nods.'}
+25	25		302							{2: 'Alright.', 3: '26'}
+26	26		502							{1: 'DialogDisable'}
+27	27		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg', 3: '0', 4: '1', 5: '1'}
+28	28		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+29	29		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+30	30		301			DialogEnable				{3: 'Lamia picks up on the subtle changes the moment she steps out of the temporary camp with the empty bowls.'}
+31	31		301							{3: 'The two guards patrolling near the warehouse start chatting, yet their gazes toward this way remain blatant.'}
+32	32		301							{3: 'The guard standing on the watchtower looks like he is overseeing the entire camp, and yet he seems to be paying special attention this way.'}
+33	33		301							{3: 'A refugee sorting through his trash is passing something from his left hand to his right hand—without ever putting it where it should go.'}
+34	34		301							{3: 'Meanwhile, the human standing next to Lamia quietly observes all these people as they adjust the bandages on their face.'}
+35	35		201							{1: '18', 2: '500739'}
+36	36		301							{1: '1', 2: 'Lamia', 3: '(Is the commandant plotting an escape route or something?)', 4: '18'}
+37	37		202							{1: '18', 6: '1'}
+38	38		301							{3: 'Lamia slows down to give the human some more time to observe.'}
+39	39		301							"{3: ""She still doesn't know what brought the Gray Raven Commandant here.""}"
+40	40		301							"{3: ""But always trying to minimize her presence, Lamia sure is glad to have someone here who gets showered with everyone's attention.""}"
+41	41		201							{1: '18', 2: '500739', 3: '1'}
+42	42		301							{1: '1', 2: 'Lamia', 3: '(I can kiss this place goodbye as soon as the transport vehicle gets here.)', 4: '18'}
+43	43		301							{2: 'Lamia', 3: '(Which means the Gray Raven Commandant will have all the time in the world to deal with these people.)', 4: '18'}
+44	44		202							{1: '18', 6: '1'}
+45	45		301							{3: 'After returning their items, Lamia and her companion are assigned different tasks.'}
+46	46		201							{1: '18', 2: '500739'}
+47	47		301							{1: '1', 2: 'Lamia', 3: '(Should have taken my time with it...)', 4: '18'}
+48	48		202							{1: '18', 6: '1'}
+49	49		301							{3: 'Lamia lets out an internal sigh. Had she been on her own, she would have taken all the time there was in the world in the tent.'}
+50	50		301							{3: 'But the Gray Raven Commandant seems to have a different plan, wasting no time finishing all the given tasks before rushing off to wherever the commandant is supposed to go next.'}
+51	51		301							"{3: ""It just so happens to be Lamia's turn to partner with the Gray Raven Commandant today, giving her a perfect opportunity to strike up a conversation to see exactly what the commandant is doing here.""}"
+52	52		301				AniZhuanchangBegin			{3: 'And yet she passes up the chance again, promising herself that she would definitely do it next time.'}
+53	53		401							{1: '1', 2: '36'}
+54	54		306							{1: '1'}
+55	55		202			DialogDisable			3000.0	{1: '1', 6: '1'}
+56	56		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory32.jpg'}
+57	57		401							{1: '1', 2: '204'}
+58	58		201							{1: '1', 2: '500739'}
+59	59		301			DialogEnable				"{1: '1', 2: 'Lamia', 3: ""(Don't they feel guilty at all for employing child labor?)"", 4: '1'}"
+60	60		301							"{2: 'Lamia', 3: ""(Oh, right, it probably doesn't count as employment if they don't pay us.)"", 4: '1'}"
+61	61		306							
+62	62		202							{1: '1'}
+63	63		301							{3: 'The sun is gone by the time Lamia has finished her assigned work, with a brilliant starry cloak hanging over the night sky.'}
+64	64		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg', 3: '0', 4: '1', 5: '1'}
+65	65		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+66	66		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg'}
+67	67		301							{3: 'Artificial lights are no longer able to brighten the night sky, so the lights from thousands of years ago unfold.'}
+68	68		201							{1: '18', 2: '500351'}
+69	69		301							{1: '1', 2: 'Elene', 3: 'I wonder if Babylonia is somewhere up there.', 4: '18'}
+70	70		202							{1: '18', 6: '1'}
+71	71		301							{3: 'Lamia lies on the rock she usually slacks off on, with no intention of returning to her bed just yet.'}
+72	72		302							{2: 'I guess not.', 3: '73'}
+73	73		301							{3: 'Right then, she hears a raspy voice coming from behind.'}
+74	74		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory32.jpg', 3: '0', 4: '1', 5: '0.3'}
+75	75		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+76	76		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory32.jpg'}
+77	77		201							{1: '1', 2: '500351', 3: '19'}
+78	78		301							{1: '1', 2: 'Elene', 3: 'Eek! Even a cat walks louder than you!', 4: '1'}
+79	79		301							{3: 'Almost jumping to her feet, Lamia gives the human a piece of her mind.'}
+80	80		301							"{3: 'Given her current guise of a ""brave little girl who has lost her legs"" and her plan of taking her time with everything, jumping to her feet now would spoil everything.'}"
+81	81		201							{1: '18', 2: '500739', 3: '19'}
+82	82		301							{1: '1', 2: 'Lamia', 3: '(But well, did I let my guard down back there.)', 4: '18'}
+83	83		202							{1: '18', 6: '1'}
+84	84		204							{1: '1'}
+85	85		301							{2: 'Elene', 3: 'You sounded sure just now. Have you been to Babylonia yourself?', 4: '1'}
+86	86		302							{2: 'No.', 3: '87', 4: '...', 5: '94'}
+87	87		301							"{3: ""Lamia was about to roll her eyes at the human's firm denial.""}"
+88	88		201							{1: '18', 2: '500739'}
+89	89		301							{1: '1', 2: 'Lamia', 3: '(That was one swift no. Not feeling guilty about lying to a kid, I see.)', 4: '18'}
+90	90		204							{1: '18', 2: '3'}
+91	91		301							{2: 'Lamia', 3: '(But then again, who am I to say anything when it comes to lying?)', 4: '18'}
+92	92		202							{1: '18', 6: '1'}
+93	93	100	301							"{2: 'Elene', 3: ""How would you know Babylonia is not somewhere in there if you've never been to Babylonia yourself?"", 4: '1'}"
+94	94		301							"{3: ""The human before her falls quiet at the question. Through the bandages, Lamia can't see their facial expression.""}"
+95	95		201							{1: '18', 2: '500739'}
+96	96		301							{1: '1', 2: 'Lamia', 3: '(Guess the commandant is not good at lying to kids?)', 4: '18'}
+97	97		202							{1: '18', 6: '1'}
+98	98		301							"{2: 'Elene', 3: ""So? You're not going to say you've actually been there, are you?"", 4: '1'}"
+99	99		301							{3: 'With a hint of vengeance, Lamia presses on with her question.'}
+100	100		502							{1: 'DialogDisable'}
+101	101		302							"{2: ""I've heard that Babylonia is just a spaceship."", 3: '102'}"
+102	102		302							"{2: ""One that's not big enough to leave a mark in the sky like a star."", 3: '103'}"
+103	103		301			DialogEnable				"{3: ""At the ambiguous response, Lamia does not pursue further. It isn't the Gray Raven Commandant that she's after anyway.""}"
+104	104		302							"{2: ""You're different from everyone at the camp."", 3: '105'}"
+105	105		301							"{2: 'Elene', 3: ""That's probably because I'm just an outsider like you?"", 4: '1'}"
+106	106		302							{2: 'May I sit here?', 3: '107'}
+107	107		301							{2: 'Elene', 3: 'Why are you asking me?', 4: '1'}
+108	108		302							{2: 'Because you seem to like this place.', 3: '109'}
+109	109		301							"{2: 'Elene', 3: ""I don't own this place, so suit yourself."", 4: '1'}"
+110	110		301							{3: 'Seeing the human sit a distance away from her, Lamia gives up the idea of moving to the side for the time being.'}
+111	111		301							"{2: 'Elene', 3: ""But you're pretty different yourself, wouldn't you say?"", 4: '1'}"
+112	112		301							{2: 'Elene', 3: 'Why are you sitting on the ground when you can sit on the rock?', 4: '1'}
+113	113		302							"{2: ""Because you seem like you'd rather keep a distance from people."", 3: '114'}"
+114	114		301							"{2: 'Elene', 3: ""Oh... didn't know I came off as a loner to you."", 4: '1'}"
+115	115		201							{1: '18', 2: '500739'}
+116	116		301							{1: '1', 2: 'Lamia', 3: '(Crap, did I go too far with this role-playing thing?)', 4: '18'}
+117	117		302							"{2: ""It's not uncommon, though."", 3: '118'}"
+118	118		202							{1: '18', 6: '1'}
+119	119		301							"{2: 'Elene', 3: ""You sound like you're a people person."", 4: '1'}"
+120	120		301							"{2: 'Elene', 3: ""You must've been quite popular before they did a number on your face? What's the word for that? Social..."", 4: '1'}"
+121	121		302							{2: 'Social butterfly?', 3: '122'}
+122	122		301							{2: 'Elene', 3: 'Ah, right.', 4: '1'}
+123	123		302							{2: 'There are people who hate my guts, though.', 3: '124'}
+124	124		201							{1: '18', 2: '500739', 3: '2'}
+125	125		301							{1: '1', 2: 'Lamia', 3: '(Yup, pretty sure there are, so could you please take the hint and just go away now?)', 4: '18'}
+126	126		202							{1: '18', 6: '1'}
+127	127		301							{3: 'Lamia secretly complains to herself as she continues the topic.'}
+128	128		301							"{2: 'Elene', 3: ""It's impossible for everyone to like you... Getting hated on by everyone, though, seems more likely."", 4: '1'}"
+129	129		301							{3: 'Lamia curls up her prosthetic legs, speaking with a hint of dejection.'}
+130	130		302							"{2: ""I don't think those people living in the camp dislike you, do they?"", 3: '131'}"
+131	131		301							"{2: 'Elene', 3: ""Pretty sure you're the type that says whatever is on their mind..."", 4: '1'}"
+132	132		301							"{3: ""Feeling the human's gaze, Lamia turns her head away, feeling awkward.""}"
+133	133		301							{2: 'Elene', 3: 'People never take me seriously, and I only learn about what they think of me from what they say behind my back.', 4: '1'}
+134	134		301							"{2: 'Elene', 3: ""The warehouse manager says I can't lift things to save my life, the food distributor thinks I eat too much, and the overseer finds me barely useful..."", 4: '1'}"
+135	135		301							{3: 'People never bother talking to Lamia who deliberately keeps her distance from people, and she quite enjoys being unnoticed.'}
+136	136		301							"{3: ""It's only when she faces this human—who's masked like herself—that she feels comfortable enough to pour her heart out.""}"
+137	137		301							"{3: 'She opens up like a floodgate, recounting her recent experiences and feelings as ""Elene"".'}"
+138	138		301							{3: 'With the human listening to her quietly, Lamia feels heard.'}
+139	139		301							{3: 'The human keeps their eyes on Lamia without saying a word—which, to her, is more than she could have hoped for.'}
+140	140		301							{3: 'Gradually, however, Lamia grows quiet when it hits her that...'}
+141	141		201							{1: '18', 2: '500739', 3: '19'}
+142	142		301							{1: '1', 2: 'Lamia', 3: '(Damn it, I spoke a little too much... Gotta change the subject now.)', 4: '18'}
+143	143		202							{1: '18', 6: '1'}
+144	144		301							"{2: 'Elene', 3: ""You're awfully quiet there... Want to talk about yourself?"", 4: '1'}"
+145	145		302							{2: 'Are you sure?', 3: '146'}
+146	146		301							{3: 'Lamia nods.'}
+147	147		201							{1: '18', 2: '500739', 3: '1'}
+148	148		301							"{1: '1', 2: 'Lamia', 3: ""(Yes, just like this. Go ahead and tell me everything there is to know about Babylonia already... Well, guess that's not gonna happen.)"", 4: '18'}"
+149	149		301							{2: 'Lamia', 3: '(But that totally got the commandant distracted.)', 4: '18'}
+150	150		202							{1: '18', 6: '1'}
+151	151		502							{1: 'DialogDisable'}
+152	152		302							{2: 'Let me start with a question, then.', 3: '153'}
+153	153		302							"{2: ""Care to explain why you've been watching me this past few days?"", 3: '154'}"
+154	154		401							{1: '1', 2: '36'}
+155	155		301			DialogEnable				{2: 'Elene', 3: '...', 4: '1'}
+156	156		204							{1: '1', 2: '19'}
+157	157		401							{1: '1', 2: '205'}
+158	158		301		1	RImgBg1Shake	AniZhuanchangBegin			{2: 'Elene', 3: 'Huh?', 4: '1'}

@@ -1,0 +1,87 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1007.jpg'}
+2	2		401							{1: '1', 2: '37'}
+3	3		301			DialogEnable				"{3: ""You follow Alpha into a secluded monk's chamber. It's neat and orderly inside, though a thin layer of dust shows it hasn't been lived in for quite a while.""}"
+4	4		301							"{3: ""As soon as you're out of the wind and snow, your body warms up considerably, and your mind finally starts working properly again.""}"
+5	5		301							"{3: ""To start off our partnership, you give Alpha a vague explanation that you're here on monastery business. You figure an Ascendant probably has no desire to claim such a harsh place.""}"
+6	6		302							{2: 'Why are you here?', 3: '7'}
+7	7		301							{3: 'Alpha blows the dust off and leans casually against the wall, looking quite satisfied with her new appearance.'}
+8	8		211							{1: '1', 2: '1021028', 3: '1', 7: '1'}
+9	9		301							"{1: '1', 2: 'Alpha', 3: ""I have some ties to this monastery. There's a troublesome Corrupted in the main hall that can apparently mess with M.I.N.D."", 4: '101', 18: '100005182', 19: '1', 21: 'v215alpha'}"
+10	10		301							{2: 'Alpha', 3: 'The people here sealed off all the main roads before they left.', 4: '101', 18: '100005183', 19: '1', 21: 'v215alpha'}
+11	11		212							{1: '1', 6: '1'}
+12	12		301							"{3: ""The hall's doors are tightly shut, debris is scattered everywhere, and there's nobody in sight. So that's what's causing the trouble.""}"
+13	13		301							{3: 'The monastery is so expansive. It might take some extra effort to find a path to the main hall.'}
+14	14		211							{1: '1', 2: '1021028', 3: '2', 7: '1'}
+15	15		301							{1: '1', 2: 'Alpha', 3: 'Tsk, my clothes got ruined.', 4: '101', 18: '100005184', 19: '1', 21: 'v215alpha'}
+16	16		301							{3: 'Alpha looks annoyed, gently pressing her forehead.'}
+17	17		302							"{2: ""No wonder you're so familiar with this place."", 3: '18', 4: 'No wonder about your outfit.', 5: '18'}"
+18	18		301							{2: 'Alpha', 3: '...', 4: '101'}
+19	19		301							"{3: ""She makes no denial. Her tone stays casual, like she's just chatting about the weather.""}"
+20	20		214							{1: '1', 2: '1'}
+21	21		301				DialogDisable			"{2: 'Alpha', 3: ""If I didn't run into you, I'd be barging right in and grabbing what I need."", 4: '101', 18: '100005185', 19: '1', 21: 'v215alpha'}"
+22	22		302							"{2: ""It seems we can't achieve our goals until we take out that Corrupted."", 3: '23'}"
+23	23		302							"{2: ""Let's explore around together, to get things done faster."", 3: '24'}"
+24	24		214							{1: '1', 2: '3'}
+25	25		213						1000.0	{1: '1', 2: '0.4', 4: '-25', 5: '-50'}
+26	26		213							{1: '1', 2: '0.4', 4: '-50', 5: '-100'}
+27	27		301			DialogEnable				"{2: 'Alpha', 3: ""I don't doubt... you have what it takes."", 4: '101', 18: '100005186', 19: '1', 21: 'v215alpha'}"
+28	28		301							{3: 'Alpha deliberately steps closer, as if she wants to intimidate you. She keeps her gaze on you for so long that you start feeling uneasy.'}
+29	29		302							{2: '...Likewise.', 3: '30'}
+30	30		212							{1: '1', 6: '1'}
+31	31		301							"{3: ""She runs her left hand through her hair at her right temple, then returns it to her blade. She doesn't protest, so you take it as a yes. You treasure every bit of trust you're building together.""}"
+32	32		302							"{2: 'Those refugees... I heard them calling you ""Boss""?', 3: '33'}"
+33	33		211							{1: '1', 2: '1021028', 3: '2', 7: '1'}
+34	34		301							{1: '1', 2: 'Alpha', 3: 'I just slashed through a few pesky pieces of scrap metal on my way here. Whatever they do after that is none of my business.', 4: '101', 18: '100005187', 19: '1', 21: 'v215alpha'}
+35	35		301							{3: 'Alpha bluntly ends the discussion, refusing to elaborate. Still, from her few carefully chosen words, you can piece together the core of the matter.'}
+36	36		302							{2: 'Those figures dressed in monk robes over black clothes... who are they?', 3: '37'}
+37	37		301							"{2: 'Alpha', 3: ""They might be tied to the former abbot of this monastery. I'm not certain about the details, but they're after that blade as well."", 4: '101', 18: '100005188', 19: '1', 21: 'v215alpha'}"
+38	38		301							"{2: 'Alpha', 3: ""Heh, they're overestimating themselves."", 4: '101', 18: '100005189', 19: '1', 21: 'v215alpha'}"
+39	39		302							{2: 'The abbot?', 3: '40', 4: 'As well?', 5: '41'}
+40	40	42	301							"{2: 'Alpha', 3: ""Just an odd old man—don't worry about him."", 4: '101', 18: '100005190', 19: '1', 21: 'v215alpha'}"
+41	41		301							"{2: 'Alpha', 3: ""Those people aren't exactly friendly, so keep that in mind."", 4: '101', 18: '100005191', 19: '1', 21: 'v215alpha'}"
+42	42		212							{1: '1', 6: '1'}
+43	43		301							{3: 'It seems she came here to take away that blade.'}
+44	44		401						500.0	{1: '2', 2: '10042608'}
+45	45		402							{1: '10042608'}
+46	46		301							{3: 'You still want to ask more questions, but Alpha suddenly pushes you back with the hilt of her blade.'}
+47	47		211							{1: '1', 2: '1021028', 3: '1', 7: '1'}
+48	48		301				AniZhuanchangBegin			"{1: '1', 2: 'Alpha', 3: ""All right, you deal with the human side of things. I'll handle our nonhuman guest."", 4: '101', 18: '100005192', 19: '1', 21: 'v215alpha'}"
+49	49		212							{1: '1', 6: '1'}
+50	50		401							{1: '1', 2: '36'}
+51	51		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory55.jpg'}
+52	52		401							{1: '1', 2: '210'}
+53	53		211							{1: '1', 2: '1021026', 3: '1', 4: '-400', 7: '1'}
+54	54		211							{1: '2', 2: '1021027', 3: '1', 4: '400', 7: '1'}
+55	55		301			AniZhuanchangEnd				{1: '1', 3: 'Before you know it, Alpha is gone, leaving you by yourself at the entrance to the chamber, trading uneasy glances with a handful of refugees.'}
+56	56		301							"{2: 'Refugee A', 3: ""Hmm, where's Boss? I just saw her come in here..."", 4: '101', 18: '100005193', 19: '1', 21: 'v215alpha'}"
+57	57		301							"{2: 'Refugee B', 3: ""You're... with Boss?!"", 4: '102', 18: '100005194', 19: '2', 21: 'v215alpha'}"
+58	58		301							"{2: 'Refugee A', 3: ""Hey, you're the one Boss took on her motorcycle!"", 4: '101', 18: '100005195', 19: '1', 21: 'v215alpha'}"
+59	59		301							"{2: 'Refugee A', 3: ""Man, I'm so jealous! That motorcycle looks amazing. We only tried to sneak a closer look, but Boss nearly killed us with one glare. And you actually got to sit on it!"", 4: '101', 18: '100005196', 19: '1', 21: 'v215alpha'}"
+60	60		301							"{2: 'Refugee B', 3: ""Whoa, no wonder you're with Boss!"", 4: '102', 18: '100005197', 19: '2', 21: 'v215alpha'}"
+61	61		302							{2: 'Wait...', 3: '62'}
+62	62		301							"{3: ""These two refugees haven't seen a friendly face in ages, so they chatter nonstop, overflowing with excitement as they introduce themselves.""}"
+63	63		301							"{2: 'Toure', 3: 'I\'m Toure! And this is ""Iron Skull"". Since you\'re with Boss, that makes you our buddy now!', 4: '101', 18: '100005198', 19: '1', 21: 'v215alpha'}"
+64	64		301							"{2: '""Iron Skull""', 3: ""We're looking to thank Boss!"", 4: '102', 18: '100005199', 19: '2', 21: 'v215alpha'}"
+65	65		301							"{3: ""You instinctively want to give a denial, but you decide it's better to keep quiet and gather some information first.""}"
+66	66		302							{2: 'So, are you from the monastery?', 3: '67'}
+67	67		301							{2: 'Toure', 3: 'Of course not! The monastery was hit by the Corrupted before, and they had all the monks leave. This place is deserted now.', 4: '101', 18: '100005200', 19: '1', 21: 'v215alpha'}
+68	68		302							{2: 'But what about those wearing monk robes...?', 3: '69'}
+69	69		301							{2: 'Toure', 3: 'Oh, you mean the Yama Clan?', 4: '101', 18: '100005201', 19: '1', 21: 'v215alpha'}
+70	70		301							"{2: 'Toure', 3: ""They're from Wuming, and they're definitely trouble. They must've been pushed out of Wuming, or they wouldn't come to a hole like this."", 4: '101', 18: '100005202', 19: '1', 21: 'v215alpha'}"
+71	71		301							"{2: '""Iron Skull""', 3: ""They're practically begging for a beating. They keep insisting the sword belongs to their boss, calling it theirs. Don't be fooled by the monk getup—they're putting on a show."", 4: '102', 18: '100005203', 19: '2', 21: 'v215alpha'}"
+72	72		301							"{2: 'Toure', 3: ""Didn't you see them? They've seized the side hall with blades and spears, itching for a fight. If Iron Skull doesn't stay sharp, we're finished..."", 4: '101', 18: '100005204', 19: '1', 21: 'v215alpha'}"
+73	73		302							"{2: ""Hold on. What's this sword you're talking about?"", 3: '74'}"
+74	74		301							"{2: 'Toure', 3: ""Oh well, that's quite a story to tell!"", 4: '101', 18: '100005205', 19: '1', 21: 'v215alpha'}"
+75	75		301							"{2: 'Toure', 3: ""They say this monastery's abbot was a supreme martial arts master. Before leaving, he hid an incredibly sharp blade behind the giant Buddha in the main hall—it slices through the Corrupted like vegetables!"", 4: '101', 18: '100005206', 19: '1', 21: 'v215alpha'}"
+76	76		301							"{2: 'Toure', 3: ""If you don't believe me, go take a look. The back mountain is covered with Corrupted remains!"", 4: '101', 18: '100005207', 19: '1', 21: 'v215alpha'}"
+77	77		301							"{2: '""Iron Skull""', 3: ""But if that blade is really so sharp, why didn't the old man deal with the monster in the main hall himself?"", 4: '102', 18: '100005208', 19: '2', 21: 'v215alpha'}"
+78	78		301							{2: 'Toure', 3: 'Sigh, I figure he was just too old for that.', 4: '101', 18: '100005209', 19: '1', 21: 'v215alpha'}
+79	79		301							{2: 'Toure', 3: 'We were hoping to grab that priceless treasure ourselves, maybe trade it for something valuable...', 4: '101', 18: '100005210', 19: '1', 21: 'v215alpha'}
+80	80		301							"{2: 'Toure', 3: ""Ha, but you know what? I'd rather keep my life."", 4: '101', 18: '100005211', 19: '1', 21: 'v215alpha'}"
+81	81		301							"{2: '""Iron Skull""', 3: ""I mean, come on. We're only human—how are we supposed to stand up to machines that don't feel pain and don't fear death?"", 4: '102', 18: '100005212', 19: '2', 21: 'v215alpha'}"
+82	82		302							"{2: ""Since we all want the same thing, let's sit down and work it out."", 3: '83', 4: 'We still need to handle the Corrupted in the end.', 5: '83'}"
+83	83		301							"{2: 'Toure', 3: ""Yeah, you're right. Going head-to-head with those people doesn't solve anything, and we can't really win anyway."", 4: '101', 18: '100005213', 19: '1', 21: 'v215alpha'}"
+84	84		301							"{2: '""Iron Skull""', 3: ""So Boss sent you to help us, right? She really takes good care of us! We're counting on you—we trust anyone Boss trusts!"", 4: '102', 18: '100005214', 19: '2', 21: 'v215alpha'}"
+85	85		301							{3: 'Sigh...'}
+86	86		301		1		AniZhuanchangBegin			"{3: ""You may have gone with the flow at first, but now it's turning into a real hassle...""}"

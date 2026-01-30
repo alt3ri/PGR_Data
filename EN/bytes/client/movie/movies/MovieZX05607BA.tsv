@@ -1,0 +1,356 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory923.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: 'The next morning, everyone gathers on the outskirts of the town.'}
+4	4		201							{1: '1', 2: '500906'}
+5	5		301							{1: '1', 2: 'Bridget', 3: '【kuroname】, over here!', 4: '1'}
+6	6		301							{2: 'Bridget', 3: 'Three vehicles will go with you to the Babel Tower, all fully stocked with ammunition and supplies.', 4: '1'}
+7	7		302							{2: 'Thank you.', 3: '8'}
+8	8		301							{2: 'Bridget', 3: 'The mayor is looking for me, probably to discuss evacuation plans.', 4: '1'}
+9	9		301							"{2: 'Bridget', 3: 'If you need anything, just talk to ""Sand Fox"".', 4: '1'}"
+10	10		203							{1: '1', 2: '0.25', 3: '400'}
+11	11		201							{1: '2', 2: '500019', 4: '-400'}
+12	12		301							"{1: '1', 2: '""Sand Fox""', 3: 'Hey, 【kuroname】.', 4: '2'}"
+13	13		302				AniZhuanchangBegin			"{2: ""Alright, let's move out."", 3: '14'}"
+14	14		202							{1: '1', 2: '2', 6: '1'}
+15	15		401						1000.0	{1: '1', 2: '36'}
+16	16		401							{1: '1', 2: '203'}
+17	17		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg'}
+18	18		201							{1: '1', 2: '500568', 4: '400'}
+19	19		201							{1: '2', 2: '1031001', 4: '-400'}
+20	20		301			AniZhuanchangEnd				{1: '1', 2: 'Lee', 3: 'According to the coordinates, the Babel Tower should be just ahead.', 4: '1'}
+21	21		301							{2: 'Liv', 3: 'The Babel Tower... is gone?', 4: '2'}
+22	22		202							{1: '1', 2: '2'}
+23	23		306							{1: '1'}
+24	24		301							{3: 'Before your group, as far as the eye can see, lies nothing but ruins.'}
+25	25		306							
+26	26		201							{1: '1', 2: '501235'}
+27	27		201							{1: '2', 2: '501234', 4: '600'}
+28	28		201							{1: '3', 2: '500610', 4: '-600'}
+29	29		301							"{1: '1', 2: 'Dante', 3: ""No, there's definitely something here. I can feel it. The demon's right here."", 4: '1'}"
+30	30		301							{2: 'Vergil', 3: 'Some kind of deceptive trick.', 4: '2'}
+31	31		301							{2: 'Alpha', 3: 'Can we break it through force?', 4: '3'}
+32	32		302							"{2: ""What's the Punishing Virus concentration?"", 3: '33'}"
+33	33		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+34	34		201							{1: '1', 2: '500994'}
+35	35		301							"{1: '1', 2: 'Lucia', 3: ""The concentration ahead... is indeed slightly higher than surrounding areas, but it's quite mild, still within normal levels."", 4: '1'}"
+36	36		302							{2: 'Really...?', 3: '37'}
+37	37		401							{1: '2', 2: '4387'}
+38	38		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+39	39		202							{1: '1', 6: '1'}
+40	40		401							{1: '2', 2: '4637'}
+41	41		301							{3: 'You retrieve a weapon shaped like a rocket launcher from one of the Support Force vehicles.'}
+42	42		302							{2: 'The Support Force has brought some Omega Weapons.', 3: '43'}
+43	43		301				DialogDisable			"{3: ""According to Alpha's previous conjecture, the Mirror Demon may already be an agent-level enemy, perhaps worth attempting to use an Omega Weapon against it.""}"
+44	44		401						300.0	{1: '2', 2: '10028616', 3: '1'}
+45	45		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+46	46		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1210.jpg'}
+47	47		401							{1: '2', 2: '4510', 3: '1'}
+48	48		502							{1: 'DialogEnable'}
+49	49		301			RImgBg1Shake				{3: 'BOOM—'}
+50	50		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1210.jpg', 3: '0', 4: '1', 5: '0'}
+51	51		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg'}
+52	52		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront18.png', 4: '3'}
+53	53		104							{1: '0|250|0', 2: '0', 4: '3'}
+54	54		301				DialogDisable			{3: 'The Omega Weapon-equipped warhead propels through the air before detonating with a deafening blast, as if colliding with an invisible wall in the distance.'}
+55	55		205						1500.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1210.jpg', 3: '1', 4: '0', 5: '1.5'}
+56	56		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+57	57		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionInvitation/FxUiRegressionInvitationShine.prefab', 2: '2', 5: '1'}
+58	58		511							{1: '1', 2: '0', 3: '-80|250|1000'}
+59	59		301			DialogEnable		500.0		{3: 'When the smoke dissipates, a jagged rupture hangs suspended in midair, its edges warping the light around it.'}
+60	60		201							{1: '18', 2: '501235'}
+61	61		301							"{1: '1', 2: 'Dante', 3: ""So that's its game, hiding behind mirrors. No wonder it's called the Mirror Demon."", 4: '18'}"
+62	62		202				DialogDisable			{1: '18'}
+63	63		302							"{2: ""Sand Fox, let's give it a few more hits."", 3: '64'}"
+64	64		201							{1: '18', 2: '500019', 4: '-160', 5: '0', 6: '150'}
+65	65		301			DialogEnable				"{1: '1', 2: '""Sand Fox""', 3: 'Copy.', 4: '18'}"
+66	66		202							{1: '18'}
+67	67		401							{1: '2', 2: '4834'}
+68	68		301							{3: 'The Support Force members bring out their remaining Omega Weapons, launching multiple warheads simultaneously.'}
+69	69		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionInvitation/FxUiRegressionInvitationShine.prefab', 5: '1'}
+70	70		401							{1: '2', 2: '4511', 3: '1'}
+71	71		401							{1: '2', 2: '4510', 3: '1'}
+72	72		401							{1: '2', 2: '943'}
+73	73		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+74	74		101							{4: '3', 5: '1'}
+75	75		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+76	76		301							{3: 'BOOM—'}
+77	77		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+78	78		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1242.jpg'}
+79	79		104							{1: '180|-125|-150', 2: '0'}
+80	80		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '5'}
+81	81		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionInvitation/FxUiRegressionInvitationShine.prefab', 2: '2'}
+82	82		301							{3: 'After this explosion, the opening widens enough for vehicles to pass through, revealing the full view of the Babel Tower.'}
+83	83		401							{1: '2', 2: '9401009'}
+84	84		201							{1: '1', 2: '501265', 4: '70', 5: '520', 6: '600'}
+85	85		201							{1: '2', 2: '501265', 4: '640', 5: '0', 6: '150'}
+86	86		201							{1: '3', 2: '501265', 4: '-475', 5: '-170', 6: '50'}
+87	87		301							"{1: '1', 3: ""A cylindrical tower sheathed in Red Tide aggregates looms in the distance, an ominous spire that draws everyone's gaze. Above it, swarms of Hetero-Creatures wheel through the air, their presence dripping with palpable malice.""}"
+88	88		402							{1: '9401009'}
+89	89		201							{1: '18', 2: '500994', 3: '5', 4: '-140', 5: '-35', 6: '100'}
+90	90		301							{1: '1', 2: 'Lucia', 3: 'The Punishing Virus concentration is rapidly increasing!', 4: '18'}
+91	91		302				AniZhuanchangBegin			"{2: ""Let's move."", 3: '92'}"
+92	92		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionInvitation/FxUiRegressionInvitationShine.prefab'}
+93	93		101							{4: '5', 5: '1'}
+94	94		202							{1: '1', 2: '2', 3: '3', 4: '18', 6: '1'}
+95	95		502							{1: 'DialogDisable'}
+96	96		401						2000.0	{1: '1', 2: '36'}
+97	97		401							{1: '1', 2: '6183'}
+98	98		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1246.jpg'}
+99	99		107			AniZhuanchangEnd				{1: 'Top of the Babel Tower'}
+100	100		301							{3: 'Top of the Babel Tower.'}
+101	101		108						200.0	{1: '1'}
+102	102		201							{1: '1', 2: '501267', 3: '4'}
+103	103		301			DialogEnable				{1: '1', 3: 'A gaunt, middle-aged man stands atop the tower, his gaze fixed on the approaching group in the distance.'}
+104	104		301				DialogDisable			{2: 'Thomas Hell?', 3: 'People from Babylonia...', 4: '1'}
+105	105		202							{1: '1'}
+106	106		306							{1: '1'}
+107	107		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg', 3: '0', 4: '1', 5: '0.5'}
+108	108		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg'}
+109	109		205							{1: '999'}
+110	110		201							{1: '1', 2: '501235', 4: '-400'}
+111	111		201							{1: '2', 2: '501234', 4: '400'}
+112	112		301			DialogEnable	DialogDisable			{1: '1', 3: 'Among the group of Constructs, two white-haired men in long coats stand conspicuously apart.'}
+113	113		306							
+114	114		202							{1: '1', 2: '2'}
+115	115		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1246.jpg', 3: '0', 4: '1', 5: '0.5'}
+116	116		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1246.jpg'}
+117	117		205							{1: '999'}
+118	118		201							{1: '1', 2: '501267', 3: '7'}
+119	119		301			DialogEnable				{1: '1', 2: 'Thomas Hell?', 3: 'Are they... the Sons of Sparda?', 4: '1'}
+120	120		204							{1: '1', 2: '9'}
+121	121		301							"{2: 'Thomas Hell?', 3: ""I should've known that other demons would also come to this world."", 4: '1'}"
+122	122		202							{1: '1', 6: '1'}
+123	123		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+124	124		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+125	125		401							{1: '2', 2: '6041'}
+126	126		201							{1: '1', 2: '501263', 4: '-1000', 5: '-90', 6: '50', 7: '1'}
+127	127		201							{1: '2', 2: '501264', 4: '1000', 5: '-90', 6: '50', 7: '1'}
+128	128		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash.prefab', 2: '2'}
+129	129		203							{1: '1', 2: '0.25', 3: '-450', 4: '-90', 5: '50'}
+130	130		203							{1: '2', 2: '0.25', 3: '450', 4: '-90', 5: '50'}
+131	131		301			RImgBg1Shake				{1: '1', 3: 'Its eyes narrow slightly as it recalls the sight—the two Sons of Sparda locked in battle within the Demon World.', 4: '1', 5: '2'}
+132	132		202							{1: '1', 2: '2', 6: '1'}
+133	133		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+134	134		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1246.jpg'}
+135	135		301							"{3: ""Back then, it was just a nameless demon among hell's legions, but now, it has claimed power beyond its former wretchedness.""}"
+136	136		201							{1: '1', 2: '501267', 3: '1'}
+137	137		301							"{1: '1', 2: 'Thomas Hell?', 3: ""But it's too late now. Even the Sons of Sparda cannot stop the power of demons merged with the Ascension-Network."", 4: '1'}"
+138	138		301							{2: 'Thomas Hell?', 3: 'Moreover, I still hold a trump card...', 4: '1'}
+139	139		202							{1: '1', 6: '1'}
+140	140		306							{1: '1'}
+141	141		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.7', 5: '0.4'}
+142	142		201							{1: '1', 2: '501266', 5: '-100'}
+143	143		301							"{1: '1', 3: ""The emaciated man turns, his gaze locking onto the figure looming in the shadows, wreathed in an aura of seething darkness. White hair, a dark blue coat, and... a face identical to Vergil's.""}"
+144	144		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.7', 4: '0', 5: '0.4'}
+145	145		202							{1: '1', 6: '1'}
+146	146		306							
+147	147		201							{1: '1', 2: '501267', 3: '4'}
+148	148		301							{1: '1', 2: 'Thomas Hell?', 3: 'A being forged from memories and the Red Tide...', 4: '1'}
+149	149		204							{1: '1', 2: '1'}
+150	150		301							"{2: 'Thomas Hell?', 3: ""Hahaha, mirror images are always interesting, aren't they?"", 4: '1'}"
+151	151		202							{1: '1', 6: '1'}
+152	152		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '1'}
+153	153		401							{1: '2', 2: '1543'}
+154	154		401							{1: '2', 2: '9401001'}
+155	155		401							{1: '2', 2: '9401009'}
+156	156		201							{1: '1', 2: '501265', 4: '-450', 7: '1'}
+157	157		201							{1: '2', 2: '501265', 4: '450', 7: '1'}
+158	158		203							{1: '1', 2: '0.25', 3: '-450', 5: '200'}
+159	159		203							{1: '2', 2: '0.25', 3: '450', 5: '200'}
+160	160		301							{1: '1', 3: 'Thomas, who can no longer be called human, waves its hand in a gentle motion. At its command, the swarm of Hetero-Creatures churning in the air surges forward, a writhing tide descending upon the distant group.'}
+161	161		201							{1: '18', 2: '501267', 4: '-50', 5: '-200', 6: '50'}
+162	162		301							{1: '1', 2: 'Thomas Hell?', 3: 'Kill them all. Leave no survivors.', 4: '18'}
+163	163		402							{1: '9401009'}
+164	164		202							{1: '1', 2: '2', 3: '18', 6: '1'}
+165	165		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+166	166		201							{1: '1', 2: '501267', 3: '1'}
+167	167		301							"{1: '1', 3: ""Having done all this, the man stands motionless, savoring the imminent battle, eagerly awaiting the coming symphony of agonized screams and Hetero-Creatures' shrieks.""}"
+168	168		204							{1: '1', 2: '4'}
+169	169		301			PanelActor1Shake				{3: 'Yet, deep within, a flickering consciousness still struggles, and its feeble resistance irritates him.'}
+170	170		301							{2: 'Thomas Hell?', 3: 'Silence, human!', 4: '1'}
+171	171		301				DialogDisable			{2: 'Thomas Hell?', 3: 'Your will... is utterly powerless against my power.', 4: '1'}
+172	172		204							{1: '1', 2: '7'}
+173	173		502							{1: 'PanelActor1Shake'}
+174	174		401							{1: '2', 2: '4280'}
+175	175		201							{1: '2', 2: '501267', 7: '1'}
+176	176		201							{1: '3', 2: '501267', 7: '1'}
+177	177		203							{1: '2', 2: '0.4', 3: '-20'}
+178	178		203							{1: '3', 2: '0.4', 3: '20'}
+179	179		205							{1: '2', 3: '1', 4: '0.5', 5: '0'}
+180	180		205							{1: '3', 3: '1', 4: '0.5', 5: '0'}
+181	181		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+182	182		111						600.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+183	183		402							{1: '4280'}
+184	184		401							{1: '2', 2: '4306'}
+185	185		203							{1: '1', 2: '0.25', 4: '-100'}
+186	186		203							{1: '2', 2: '0.25', 3: '-20', 4: '-100'}
+187	187		203						300.0	{1: '3', 2: '0.25', 3: '20', 4: '-100'}
+188	188		204							{1: '1', 2: '17'}
+189	189		301			DialogEnable				{3: 'The next moment, a splitting pain lances through its head. Its body crumples to the ground as its face twists in agony, tears spilling over.'}
+190	190		301							{2: 'Thomas Hell?', 3: 'Lyca... I have to save Lyca...', 4: '1', 5: '2', 6: '3'}
+191	191		204							{1: '1', 2: '4'}
+192	192		301			RImgBg1Shake	DialogDisable			{2: 'Thomas Hell?', 3: 'Shut it!', 4: '1', 5: '2', 6: '3'}
+193	193		401							{1: '2', 2: '4225'}
+194	194		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+195	195		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+196	196		203							{1: '2', 2: '0.4', 3: '0', 4: '-100'}
+197	197		203						500.0	{1: '3', 2: '0.4', 3: '0', 4: '-100'}
+198	198		205							{1: '2', 3: '0.8', 4: '1', 5: '0'}
+199	199		205							{1: '3', 3: '0.8', 4: '1', 5: '0'}
+200	200		202							{1: '2', 2: '3', 6: '1'}
+201	201		204							{1: '1', 2: '2'}
+202	202		301			DialogEnable				{3: 'Just as quickly, the anguish fades, replaced once more by that mask of malice.'}
+203	203		301							"{2: 'Thomas Hell?', 3: ""Yes, Lyca... You've reminded me."", 4: '1'}"
+204	204		301				AniZhuanchangBegin			"{2: 'Thomas Hell?', 3: ""I'll send out some Hetero-Creatures to track down Lyca. I'll bring her back so this body can end it once and for all."", 4: '1'}"
+205	205		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+206	206		202							{1: '1', 6: '1'}
+207	207		401						2000.0	{1: '1', 2: '36'}
+208	208		401							{1: '1', 2: '6182'}
+209	209		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg'}
+210	210		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 4: '4'}
+211	211		201							{1: '1', 2: '501235'}
+212	212		301			AniZhuanchangEnd				{1: '1', 3: 'You notice Dante beside you gazing into the distance.'}
+213	213		302							{2: 'Anything wrong, Dante?', 3: '214'}
+214	214		301							"{2: 'Dante', 3: ""I think someone's up there, at the top."", 4: '1'}"
+215	215		302							{2: 'Lee.', 3: '216'}
+216	216		401							{1: '2', 2: '10021515'}
+217	217		101							{4: '4', 5: '1'}
+218	218		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '0', 4: '0.4', 5: '0'}
+219	219		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '7'}
+220	220		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1246.jpg'}
+221	221		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiAreaWarHangUp/FxUiAreaWarHangUpBg01.prefab', 2: '1', 5: '2'}
+222	222		511							{1: '2', 2: '0', 3: '0|500|800'}
+223	223		201							{1: '1', 2: '501267', 7: '1'}
+224	224		301			AniZhuanchangEnd				{1: '1', 3: 'Lee quickly transforms his composite armaments into sniper mode and peers through the scope at the top of the tower.'}
+225	225		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiAreaWarHangUp/FxUiAreaWarHangUpBg01.prefab', 5: '2'}
+226	226		101							{4: '7', 5: '1'}
+227	227		205							{1: '1005', 3: '0', 4: '1', 5: '0'}
+228	228		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg'}
+229	229		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 4: '4'}
+230	230		201							{1: '1', 2: '500568'}
+231	231		301			AniZhuanchangEnd				{1: '1', 2: 'Lee', 3: 'There is indeed someone there. High resemblance to Thomas from our intel.', 4: '1'}
+232	232		202							{1: '1', 6: '1'}
+233	233		201							{1: '1', 2: '501235', 4: '-400'}
+234	234		201							{1: '2', 2: '501234', 4: '400'}
+235	235		301							"{1: '1', 3: ""Dante glances at Vergil beside him, then gestures toward the composite armaments in Lee's hand.""}"
+236	236		203							{1: '1', 2: '0.25', 3: '-350'}
+237	237		301							"{2: 'Dante', 3: ""I've got a similar Devil Arm that can transform into 666 different modes."", 4: '1'}"
+238	238		204							{1: '2', 2: '8'}
+239	239		301							{2: 'Vergil', 3: 'Shut up already...', 4: '2'}
+240	240		202							{1: '1', 2: '2', 6: '1'}
+241	241		401							{1: '2', 2: '6023'}
+242	242		201							{1: '1', 2: '500992', 3: '3'}
+243	243		301							"{1: '1', 2: 'Lucia', 3: ""The Hetero-Creatures are on the move. They're closing in."", 4: '1'}"
+244	244		302							"{2: ""The Mirror Demon knows we're here. Prepare for combat."", 3: '245'}"
+245	245		202							{1: '1', 6: '1'}
+246	246		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+247	247		401							{1: '2', 2: '9401001'}
+248	248		201							{1: '1', 2: '501265', 6: '100', 7: '1'}
+249	249		201							{1: '2', 2: '501265', 4: '800', 5: '180', 6: '250', 7: '1'}
+250	250		201							{1: '3', 2: '501265', 4: '-700', 5: '100', 6: '200', 7: '1'}
+251	251		203							{1: '1', 2: '0.25'}
+252	252		203							{1: '2', 2: '0.25', 3: '800', 4: '180', 5: '150'}
+253	253		203							{1: '3', 2: '0.25', 3: '-700', 4: '100', 5: '100'}
+254	254		101							{4: '4', 5: '1'}
+255	255		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 4: '5'}
+256	256		301			RImgBg1Shake				{1: '1', 3: 'Like a plague of locusts, countless Hetero-Creatures swarm toward the convoy.'}
+257	257		302							{2: 'Full speed ahead!', 3: '258'}
+258	258		201							{1: '18', 2: '500019', 4: '-160', 5: '0', 6: '150'}
+259	259		301							"{1: '1', 2: '""Sand Fox""', 3: 'Roger!', 4: '18'}"
+260	260		202				DialogDisable			{1: '18'}
+261	261		401							{1: '2', 2: '5508'}
+262	262		104							{1: '0|0|-250', 2: '1.5'}
+263	263		203							{1: '1', 2: '0.25', 5: '-100'}
+264	264		203							{1: '2', 2: '0.5', 3: '800', 4: '180'}
+265	265		203						200.0	{1: '3', 2: '1', 3: '-700', 4: '100', 5: '0'}
+266	266		401							{1: '2', 2: '9401001'}
+267	267		401							{1: '2', 2: '4317'}
+268	268		401							{1: '2', 2: '9401008'}
+269	269		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2', 3: '1'}
+270	270		203						250.0	{1: '1', 2: '0.4', 4: '-1000'}
+271	271		401							{1: '2', 2: '4317'}
+272	272		401							{1: '2', 2: '9401008'}
+273	273		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2', 3: '2'}
+274	274		203						250.0	{1: '2', 2: '0.4', 3: '800', 4: '-1000', 5: '150'}
+275	275		401							{1: '2', 2: '4317'}
+276	276		401							{1: '2', 2: '9401008'}
+277	277		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2', 3: '3'}
+278	278		203						250.0	{1: '3', 2: '0.4', 3: '-700', 4: '-1000', 5: '100'}
+279	279		402							{1: '5508'}
+280	280		402							{1: '9401001'}
+281	281		301			DialogEnable				{3: 'Roof-mounted machine guns roar to life, bullets ripping through the horde of Hetero-Creatures. The three transport vehicles lurch forward, tires grinding through gore and shattered limbs as they fight for every inch of ground.'}
+282	282		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+283	283		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 4: '1'}
+284	284		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 4: '2'}
+285	285		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 4: '3'}
+286	286		101							{4: '5', 5: '1'}
+287	287		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+288	288		401							{1: '2', 2: '4636'}
+289	289		301				AniZhuanchangBegin		1000.0	{3: 'As the Hetero-Creatures grow in number, Gray Raven leaps into the fray and begins to eliminate the enemies.'}
+290	290		301			AniZhuanchangEnd				{3: 'The battle rages on, and now your group has covered half the distance to the Babel Tower.'}
+291	291		201							{1: '1', 2: '500019'}
+292	292		301							"{1: '1', 2: '""Sand Fox""', 3: ""We can't keep this up. We're running low on ammo."", 4: '1'}"
+293	293		301							"{2: '""Sand Fox""', 3: 'This is as far as we can go!', 4: '1'}"
+294	294		202							{1: '1'}
+295	295		301							{3: 'The three vehicles grind to a halt, immobilized. Endless waves of Hetero-Creatures swarm toward you, cutting off any path to the Babel Tower.'}
+296	296		302							{2: 'Support Force, you can evacuate from here.', 3: '297'}
+297	297		301				DialogDisable			{3: 'You turn to look at your companions slashing through the horde and shout.'}
+298	298		302							{2: 'Everyone else, prepare to break through! We need a path!', 3: '299'}
+299	299		302				AniZhuanchangBegin			{2: 'Lee, get ready for maximum output.', 3: '300'}
+300	300		306							{1: '1'}
+301	301		401						1000.0	{1: '1', 2: '36'}
+302	302		401							{1: '1', 2: '6185'}
+303	303		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_4.jpg'}
+304	304		104							{1: '220|-345|-400', 2: '0'}
+305	305		502							{1: 'DialogEnable'}
+306	306		301			AniZhuanchangEnd				{2: 'Dante', 3: 'No need for that. Just stay behind me!'}
+307	307		301				DialogDisable			"{2: 'Dante', 3: ""Vergil, time to show them what we're made of!""}"
+308	308		104						1400.0	{1: '-157|-235|-400', 2: '1.2'}
+309	309		301			DialogEnable	DialogDisable			"{2: 'Vergil', 3: ""You don't get to order me around.""}"
+310	310		306							
+311	311		401							{1: '2', 2: '4295'}
+312	312		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_4.jpg', 3: '0', 4: '1', 5: '1'}
+313	313		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_4.jpg'}
+314	314		205							{1: '999'}
+315	315		301			DialogEnable				{3: 'Fierce winds howl, billowing their coats as Dante and Vergil stand side by side, unshaken.'}
+316	316		402							{1: '4295'}
+317	317		301							{2: 'Vergil', 3: 'I alone am enough to handle this situation.'}
+318	318		301							"{2: 'Dante', 3: ""I'm not letting you have all the fun to yourself.""}"
+319	319		301							"{2: 'Vergil', 3: ""Hmph. Try to keep up, if you can. I won't wait for you.""}"
+320	320		301							"{2: 'Dante', 3: ""Feeling confident, huh? Let's see who makes it to the tower's gates first!""}"
+321	321		301				DialogDisable			{3: 'Red and blue particles intertwine, spiraling around the two half-demons.'}
+322	322		401							{1: '2', 2: '6015'}
+323	323		401						2500.0	{1: '2', 2: '6021'}
+324	324		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+325	325		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_3.jpg'}
+326	326		301			DialogEnable				{3: 'Then, a powerful shockwave explodes outward, hurling Hetero-Creatures back like ragdolls.'}
+327	327		301							{3: 'Their human appearance vanishes without a trace, giving way to devilish forms as if straight from the depths of hell.'}
+328	328		401							{1: '2', 2: '15044001'}
+329	329		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+330	330		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg'}
+331	331		201							{1: '1', 2: '501264', 7: '1'}
+332	332		301							{1: '1', 3: 'Vergil sheathes his sword as a blue spherical domain envelops the space around him.'}
+333	333		301				DialogDisable			{2: 'Vergil', 3: 'I will cut through everything!', 4: '1'}
+334	334		202							{1: '1', 6: '1'}
+335	335		201							{1: '1', 2: '501264', 4: '1600', 7: '1'}
+336	336		201							{1: '2', 2: '501265', 4: '-650'}
+337	337		201							{1: '3', 2: '501265', 4: '650'}
+338	338		401							{1: '2', 2: '15046052'}
+339	339		203						300.0	{1: '1', 2: '0.25'}
+340	340		401							{1: '2', 2: '15045002'}
+341	341		111						600.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingCiYuanZhanV350.prefab'}
+342	342		401						350.0	{1: '2', 2: '15045003'}
+343	343		202							{1: '2', 2: '3', 6: '1'}
+344	344		301			DialogEnable				{1: '1', 3: 'As Judgment Cut End is unleashed, countless slashes carve through the air, leaving only Dante untouched. Each blade mark twists space itself, shattering it like fractured glass, tearing apart every Hetero-Creature within its domain.'}
+345	345		301							{2: 'Vergil', 3: 'Now I lead by one.', 4: '1'}
+346	346		203							{1: '1', 2: '0.25', 3: '600'}
+347	347		201							{1: '2', 2: '501263', 4: '-600'}
+348	348		301							"{1: '1', 2: 'Dante', 3: ""I haven't even said start yet!"", 4: '2'}"
+349	349		401							{1: '2', 2: '15046053'}
+350	350		203							{1: '1', 2: '0.25', 3: '600', 4: '-200', 5: '250'}
+351	351		203							{1: '2', 2: '0.25', 3: '-600', 4: '-200', 5: '250'}
+352	352		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+353	353		104							{1: '0|0|-300', 2: '0.25'}
+354	354		301							{3: 'The two half-demons charge toward the Babel Tower simultaneously, tearing through the remaining Hetero-Creatures with relentless speed.'}
+355	355		302		1		AniZhuanchangBegin			{2: 'Stay close to them!', 3: '356'}

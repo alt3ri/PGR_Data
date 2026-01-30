@@ -1,0 +1,71 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		401			AniZhuanchangEnd				{1: '1', 2: '201'}
+2	2		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory26.jpg'}
+3	3		201							{1: '1', 2: '500145'}
+4	4		301							{1: '1', 2: 'Pulao', 3: 'Whew...', 4: '1'}
+5	5		301							{3: 'Enemies eliminated, Pulao is about to set off before Bianca drags her back by the collar.'}
+6	6		203							{1: '1', 2: '0.25', 3: '400'}
+7	7		201							{1: '2', 2: '1091001', 4: '-400'}
+8	8		301							"{1: '1', 2: 'Bianca', 3: ""Mechanical structure detected. Four o'clock. Distance 15 meters."", 4: '2'}"
+9	9		301							{2: 'Bianca', 3: 'According to the digital map, there seems to be an entrance on the sand dune we just passed by.', 4: '2'}
+10	10		202							{1: '1', 2: '2'}
+11	11		201							{1: '2', 2: '500166', 4: '-400'}
+12	12		201							{1: '3', 2: '500026', 4: '400'}
+13	13		301							{1: '1', 2: 'Lucia', 3: 'Could it be a trap?', 4: '2'}
+14	14		301				AniZhuanchangBegin			"{1: '1', 2: 'Lee', 3: ""Wait, I'll send a drone in."", 4: '3'}"
+15	15		202							{1: '2', 2: '3', 6: '1'}
+16	16		201							{1: '2', 2: '500145', 4: '-400', 6: '1'}
+17	17		201							{1: '3', 2: '500026', 4: '400', 6: '1'}
+18	18		301			AniZhuanchangEnd				"{1: '1', 2: 'Lee', 3: ""The drone's signal is gone."", 4: '3'}"
+19	19		301							{1: '1', 2: 'Pulao', 3: 'Let me see...', 4: '2'}
+20	20		301							{2: 'Lee', 3: '?', 4: '3'}
+21	21		301							{2: 'Pulao', 3: 'There should be a lever if we turn left here.', 4: '2'}
+22	22		302							"{2: '?', 3: '23', 4: ""I'll trust you this once"", 5: '23'}"
+23	23		301							{2: 'Lee', 3: '...How could you tell?', 4: '3'}
+24	24		301							{2: 'Pulao', 3: '...Ye of little faith.', 4: '2'}
+25	25		202							{1: '2', 2: '3'}
+26	26		201							{1: '2', 2: '1091001', 4: '-400'}
+27	27		201							{1: '3', 2: '500166', 4: '400'}
+28	28		401							{1: '2', 2: '10004001'}
+29	29		301							{1: '1', 2: 'Bianca', 3: 'Over there.', 4: '2'}
+30	30		302							{2: '?', 3: '31'}
+31	31		301							{2: 'Bianca', 3: 'I felt wind from that direction.', 4: '2'}
+32	32		301							{1: '1', 2: 'Lucia', 3: 'Let me check...', 4: '3'}
+33	33		301							"{2: 'Lucia', 3: ""...There's indeed a lever. Looks like it can open a door."", 4: '3'}"
+34	34		302							{2: 'As expected from Bianca.', 3: '35'}
+35	35		301				AniZhuanchangBegin			{2: 'Bianca', 3: '...I just have more experience with traps.', 4: '2'}
+36	36		401							{1: '1', 2: '205'}
+37	37		202							{1: '2', 2: '3'}
+38	38		201							{1: '1', 2: '500145', 7: '1'}
+39	39		301			AniZhuanchangEnd				{1: '1', 2: 'Pulao', 3: 'Hm? This door... Why is it closed? When I left last time—', 4: '1'}
+40	40		302							"{2: '""Last time""?', 3: '41', 4: ""You've been here before?"", 5: '41'}"
+41	41		301							{2: 'Pulao', 3: '...! Nunya business!', 4: '1'}
+42	42		302							"{2: '...', 3: '43', 4: ""...You're really full of secrets."", 5: '43'}"
+43	43		301							{2: 'Pulao', 3: '...', 4: '1'}
+44	44		301							{3: 'Ignoring you, Pulao starts cranking the door handle.'}
+45	45		301							{2: 'Pulao', 3: 'Ugh... when did... this thing... get so... heavy...', 4: '1'}
+46	46		202							{1: '1'}
+47	47		201							{1: '1', 2: '500026'}
+48	48		301							"{1: '1', 2: 'Lee', 3: ""That's what you get for showing off. Let me help."", 4: '1'}"
+49	49		302							"{2: ""We'll all help."", 3: '50'}"
+50	50		301							{2: 'Lee', 3: 'Not you, Commandant. Organic muscles possess less than a twentieth the strength of our artificial strands.', 4: '1'}
+51	51		301				AniZhuanchangBegin			"{2: 'Lee', 3: ""Wouldn't want you to... pull anything."", 4: '1'}"
+52	52		202							{1: '1', 6: '1'}
+53	53		401							{1: '2', 2: '1503'}
+54	54		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory31.jpg'}
+55	55		301			AniZhuanchangEnd				{3: 'With Lee and Pulao working together, the heavy steel door creaks open, revealing a wide passage.'}
+56	56		201							{1: '1', 2: '500145'}
+57	57		301							{1: '1', 2: 'Pulao', 3: 'Whew...', 4: '1'}
+58	58		301							{2: 'Pulao', 3: 'Hmm... Seems about right to me.', 4: '1'}
+59	59		301							{3: 'The girl peers down the passage and turns around with a triumphant expression.'}
+60	60		301							{2: 'Pulao', 3: 'Told you so!', 4: '1'}
+61	61		302							"{2: '(Applauds)', 3: '62', 4: ""Wow, you're clever!"", 5: '62'}"
+62	62		201							{1: '1', 2: '500026'}
+63	63		301							"{1: '1', 2: 'Lee', 3: ""Commandant, I don't recommend playing along to her antics..."", 4: '1'}"
+64	64		302							"{2: ""What's the harm."", 3: '65', 4: ""We'll need her help in the future."", 5: '65'}"
+65	65		301							{2: 'Lee', 3: '...Now that I think about it, you may be right.', 4: '1'}
+66	66		202							{1: '1'}
+67	67		301							{3: 'Lee begins to clap for Pulao as well, and everyone joins in one by one.'}
+68	68		201							{1: '1', 2: '500145'}
+69	69		301							{1: '1', 2: 'Pulao', 3: '...?', 4: '1'}
+70	70		301		1		AniZhuanchangBegin			{2: 'Pulao', 3: 'W-what are you doing?', 4: '1'}

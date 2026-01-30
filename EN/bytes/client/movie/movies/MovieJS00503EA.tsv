@@ -1,0 +1,154 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory213.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '18', 2: '500226', 4: '-350', 5: '-200', 6: '300'}
+4	4		301			DialogEnable				"{1: '1', 2: ""Bethe's Voice"", 3: '...Tsk! Noan! Hurry over and help!!', 4: '1'}"
+5	5		301							"{2: ""Bethe's Voice"", 3: 'Your ""replica"" has stirred up some real trouble busting in here!', 4: '1'}"
+6	6		202							{1: '18', 6: '1'}
+7	7		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory711.jpg'}
+8	8		201							{1: '1', 2: '500746'}
+9	9		301							{1: '1', 2: 'Noan?', 3: '...', 4: '1'}
+10	10		301							{3: 'After cutting off the communication, the young man gazes at the human commandant seated by the bed, falling silent for a moment.'}
+11	11		302				AniZhuanchangBegin			{2: '...', 3: '12'}
+12	12		202			DialogDisable				{1: '1', 6: '1'}
+13	13		504							{1: '0.7'}
+14	14		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory712.jpg'}
+15	15		301			DialogEnable				"{3: 'It has been about five or six hours since you willingly participated in this ""peaceful abduction.""'}"
+16	16		301							{3: 'This Transcendant, who bears a striking resemblance to Noan, consistently shows their differences through his distant and cold demeanor.'}
+17	17		301							{3: 'He appears to be highly intrigued by the multitude of information you share, yet no matter how you attempt to persuade him, he remains skeptical.'}
+18	18		201							{1: '1', 2: '500746'}
+19	19		301							"{1: '1', 3: '""This Noan"" firmly believes that Babylonia is the malevolent force that has erased his ""replica\'s"" memories and ""confined"" him in the Clean Zone.'}"
+20	20		302							{2: '...How is that possible?', 3: '21'}
+21	21		301							{3: '—Upon hearing your astonished response, he proceeds to display several videos on his terminal, showcasing Dark Aries being monitored or encircled.'}
+22	22		301							{2: 'Noan?', 3: 'Is this fabricated by Lithos?', 4: '1'}
+23	23		302							{2: '...', 3: '24'}
+24	24		301							{2: 'Noan?', 3: 'No answer, huh...? I was expecting you to come up with a lie and blame it on Lithos.', 4: '1'}
+25	25		302							{2: 'Given your confidence, you must have seen more than this, right?', 3: '26'}
+26	26		301							{2: 'Noan?', 3: 'Correct.', 4: '1'}
+27	27		302							{2: 'Dark Aries is indeed in a situation that is hard to explain...', 3: '28', 4: 'The level of surveillance is indeed a bit too much...', 5: '28'}
+28	28		301							"{2: 'Noan?', 3: ""Moreover... if Babylonia were truly as united as you claim, surveillance footage like this wouldn't have found its way to me through Lithos."", 4: '1'}"
+29	29		302							{2: '...', 3: '30', 4: '(Kinda hard to argue against that...)', 5: '30'}
+30	30		301							"{3: 'Ultimately, your attempt to persuade ""this Noan"" has ended in failure.'}"
+31	31		306							{1: '1'}
+32	32		502							{1: 'DialogDisable'}
+33	33		302							"{2: ""(But it's not completely futile...)"", 3: '34'}"
+34	34		302							"{2: ""(At least I got evidence to prove the existence of Noan's replica...)"", 3: '35', 4: '(At least I gathered some information about Bethe...)', 5: '35'}"
+35	35		301			DialogEnable				"{3: 'Besides, a lot of information has been provided to ""this Noan.""'}"
+36	36		301							{3: 'He still shares the same nature with Noan. While he may not trust you, he also harbors reservations about placing complete trust in Lithos.'}
+37	37		301							{3: 'The more suspicion planted in his mind, the greater the chance he has to recover his memories.'}
+38	38		502							{1: 'DialogDisable'}
+39	39		302							"{2: ""(But there's no need to waste more time here.)"", 3: '40'}"
+40	40		302							"{2: ""(He just received a call. Looks like he's about to leave here.)"", 3: '41'}"
+41	41		302							{2: '(I should get ready to escape after he leaves.)', 3: '42'}
+42	42		302							{2: '(Everyone will be worried.)', 3: '43', 4: '(Noan will be worried.)', 5: '43'}
+43	43		306							
+44	44		301			DialogEnable				{3: 'However... before he leaves the cell, the clockwork firefly that Noan gave you suddenly falls out of your pocket.'}
+45	45		301				AniZhuanchangBegin			"{3: 'Upon seeing it, ""Noan"" immediately turns around and walks over, canceling his plan to leave.'}"
+46	46		202			DialogDisable				{1: '1', 6: '1'}
+47	47		504							{1: '0.7'}
+48	48		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory711.jpg'}
+49	49		302							{2: '...', 3: '50'}
+50	50		201							{1: '1', 2: '500746'}
+51	51		301			DialogEnable				"{1: '1', 2: 'Noan?', 3: ""I'll ask again, how exactly did you get this?"", 4: '1'}"
+52	52		302							"{2: ""I've already explained."", 3: '53', 4: 'What I told you just now is the truth.', 5: '53'}"
+53	53		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+54	54		202							{1: '1', 6: '1'}
+55	55		504							{1: '0.7'}
+56	56		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg'}
+57	57		201							{1: '1', 2: '500506'}
+58	58		301							"{1: '1', 2: 'Noan', 3: ""A little lucky charm. To me, it's as important as my name tag. You see the scratch here? It once saved my life."", 4: '1'}"
+59	59		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+60	60		202							{1: '1', 6: '1'}
+61	61		504							
+62	62		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory711.jpg'}
+63	63		502							{1: 'DialogDisable'}
+64	64		201							{1: '1', 2: '500746', 7: '1'}
+65	65		302							{2: '(Explain it one more time)', 3: '66'}
+66	66		301			DialogEnable				{2: 'Noan?', 3: '...', 4: '1'}
+67	67		301							{3: 'He caresses the bullet mark on the clockwork firefly, lost in thought.'}
+68	68		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+69	69		202							{1: '1', 6: '1'}
+70	70		504							{1: '0.7'}
+71	71		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory788.jpg'}
+72	72		201							{1: '1', 2: '500513', 3: '2'}
+73	73		301							{1: '1', 3: 'Lithos always tells him that he is the real Noan.'}
+74	74		301							{3: 'The one in Babylonia is but a puppet with his memories erased.'}
+75	75		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+76	76		202							{1: '1', 6: '1'}
+77	77		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2901_08.jpg'}
+78	78		301							{3: 'But how is it possible for such a puppet to have the last memory of that snowy day?'}
+79	79		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+80	80		504							
+81	81		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory711.jpg'}
+82	82		201							{1: '1', 2: '500746'}
+83	83		301							{1: '1', 2: 'Noan?', 3: '...', 4: '1'}
+84	84		301							"{3: 'Given his understanding of ""himself,"" he would never have given out the firefly as a lucky charm unless he had a lot of trust in the commandant standing before him.'}"
+85	85		301							"{3: ""—After all, to most people, it's just a tattered toy. If he were to give a token, it should have been something more appropriate.""}"
+86	86		502							{1: 'DialogDisable'}
+87	87		302							{2: '...', 3: '88'}
+88	88		302							"{2: ""(Now he's just not gonna leave...)"", 3: '89', 4: ""(Time's running out.)"", 5: '89'}"
+89	89		302							"{2: ""(He's deep in his thoughts.)"", 3: '90', 4: '(This is an opportunity.)', 5: '90'}"
+90	90		301			DialogEnable				"{3: 'Seizing the opportunity during ""Noan\'s"" moment of contemplation, you discreetly slide your hand into your coat, poised to transmit your current coordinates.'}"
+91	91		301							{3: 'Just as you instinctively reach for the distress interface from memory, his gaze abruptly shifts toward you.'}
+92	92		301							{2: 'Noan?', 3: 'What are you doing?', 4: '1'}
+93	93		301			RImgBg1Shake				{3: 'Before you have a chance to respond, he snatches the terminal from your grasp.'}
+94	94		302							{2: '...!', 3: '95'}
+95	95		301							{2: 'Noan?', 3: 'The secret channel is still active... Was the communication paused before?', 4: '1'}
+96	96		302							{2: '...', 3: '97'}
+97	97		401							{1: '2', 2: '4051'}
+98	98		301							"{3: 'He takes hold of the terminal and proceeds to forcibly ""borrow"" your face, using it to pass the facial verification.'}"
+99	99		302							{2: 'You...!', 3: '100'}
+100	100		301				AniZhuanchangBegin			{3: 'Accessing the operation interface of the secret channel, he activates the speaker, instantly transmitting the sound of two people running.'}
+101	101		401							{1: '1', 2: '36'}
+102	102		202			DialogDisable				{1: '1', 6: '1'}
+103	103		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory568.jpg'}
+104	104		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+105	105		401							{1: '1', 2: '296'}
+106	106		301			DialogEnable				{3: '—On the other end of the secret channel.'}
+107	107		401							{1: '2', 2: '1513'}
+108	108		201							{1: '1', 2: '500506', 3: '5'}
+109	109		301							{1: '1', 3: 'Noan, in pursuit of Bethe, leaps into the underground waterway, and then ascends the winding narrow path to reach the ladder leading to the surface.'}
+110	110		202							{1: '1', 6: '1'}
+111	111		104					500.0		{1: '0|0|-400', 2: '1'}
+112	112		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory345.jpg', 3: '0', 4: '1', 5: '1'}
+113	113		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+114	114		101					200.0		{1: 'Assets/Product/Texture/Image/BgStory/Bgstory345.jpg'}
+115	115		104					500.0		{1: '0|0|-400', 2: '1'}
+116	116		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory568.jpg', 3: '0', 4: '1', 5: '1'}
+117	117		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+118	118		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory568.jpg'}
+119	119		301							{3: 'Drawing upon his honed sense of direction from his time with the Cargo Crew, he realizes that he has circled back to the upper floor of the entrance passage.'}
+120	120		301							{3: 'The scent of blood and the stench of decaying corpses grows stronger here. Distinct from the entrance, it is further infused with the odor of vital fluid.'}
+121	121		301							{3: 'How many bodies, yearned for by someone, are sealed within these walls, and how many forgotten souls linger amidst their sorrowful cries?'}
+122	122		201							{1: '1', 2: '500506', 3: '5'}
+123	123		301							{1: '1', 2: 'Noan', 3: '...!', 4: '1'}
+124	124		301							{3: 'His body has already surpassed its limits in trying to resist those disruptive devices.'}
+125	125		301							{3: 'And the old man, well into his late years, curls up like a pill bug, rolling toward the exit with the assistance of an exoskeleton at an astonishing speed.'}
+126	126		401							{1: '2', 2: '1503'}
+127	127		301			RImgBg1Shake				{3: 'The hastily constructed low tunnel fails to withstand the relentless pursuit, emitting a perilous, rusty sound.'}
+128	128		301							{3: '—This place is on the verge of collapse. The already unstable floor is trembling beneath his sprinting steps.'}
+129	129		301							{3: 'Just a few more steps, and those who are chasing behind may plummet into the lower level as the collapse ensues.'}
+130	130		301			RImgBg1Shake				{2: 'Noan', 3: '—Bethe!!', 4: '1'}
+131	131		301							"{3: ""The young man's voice cuts through the shaking tunnel, stirring echoes that resonate with the lingering resentment of countless departed souls.""}"
+132	132		301							{3: 'The shadowy figure looks back, sneering at the young man, and extends his hand toward the identity verification panel of the last door, just a few meters away.'}
+133	133		201							{1: '18', 2: '500226', 4: '-350', 5: '-200', 6: '300'}
+134	134		301							{1: '1', 2: 'Bethe', 3: 'Bye-bye.', 4: '18'}
+135	135		202							{1: '18', 6: '1'}
+136	136		301							{2: 'Noan', 3: '—!!', 4: '1'}
+137	137		301							{3: '—At this point, he can no longer make it.'}
+138	138		301							{2: 'Noan', 3: 'I have to take a gamble here...', 4: '1'}
+139	139		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+140	140		301							"{3: ""Noan comes to a halt, raising the Rev Blade in his hand in response to the old man's mocking smile.""}"
+141	141		301							{2: 'Noan', 3: '...Those who lost your lives here...', 4: '1'}
+142	142		301							{3: 'The moment the verification is completed, lightning converges on the blade, and with the resounding roar of the engine, it strikes the fragile walls all around.'}
+143	143		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+144	144		401							{1: '2', 2: '752'}
+145	145		401							{1: '2', 2: '778'}
+146	146		202							{1: '1', 6: '1'}
+147	147		101			RImgBg1Shake				{1: 'Assets/Product/Texture/Image/BgStory/BgStory771.jpg'}
+148	148		301							{2: 'Noan', 3: 'Please lend me a hand!!'}
+149	149		205						700.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.7'}
+150	150		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+151	151		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+152	152		401							{1: '2', 2: '1503'}
+153	153		301		1		AniZhuanchangBegin			{3: '—All things and all spirits come crashing down.'}

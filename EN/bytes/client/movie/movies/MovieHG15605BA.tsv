@@ -1,0 +1,382 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		401			AniZhuanchangEnd			4500.0	{1: '2', 2: '5489'}
+2	2		402							{1: '5489'}
+3	3		501			AniZhuanchangEnd			1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+4	4		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+5	5		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+6	6		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+7	7		301			DialogEnable				{3: 'Light pierces through the boundless silence, stabbing painfully into consciousness.'}
+8	8		401							{1: '2', 2: '4892'}
+9	9		301				DialogDisable			{3: 'She pushes away the heavy debris pinning her down and staggers to her feet.'}
+10	10		401							{1: '1', 2: '297'}
+11	11		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1225.jpg'}
+12	12		111						700.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+13	13		401							{1: '2', 2: '9389034'}
+14	14		301			DialogEnable				{3: 'In the haze, everything before her seems almost real, yet simultaneously ethereal and dreamlike.'}
+15	15		402							{1: '9389034'}
+16	16		301				DialogDisable			{3: 'A space spanning hundreds of square meters unfolds before you. As far as the eye can see, long tables filled with various electronic devices occupy every corner.'}
+17	17		501						1500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '2'}
+18	18		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+19	19		301			DialogEnable				{3: 'No matter how much you rub your eyes, the world before you remains perpetually filtered through a bizarre and distorted lens.'}
+20	20		301							{3: 'Just then, a rustling sound comes from the distance, like somebody muttering in their sleep.'}
+21	21		401							{1: '2', 2: '1543'}
+22	22		104							{1: '0|75|-50', 2: '0.25'}
+23	23		301							{3: 'You quickly duck down, using the long table as cover, and look toward the source of the sound—'}
+24	24		401							{1: '2', 2: '2953'}
+25	25		201							{1: '1', 2: '500853'}
+26	26		301							"{1: '1', 2: '""Tall, Thin Spectral Shadow""', 3: ""It's so <size=45>late</size>.\\nAre you still <size=45><color=#ff4e4eff>working overtime</color></size>?"", 4: '1'}"
+27	27		203							{1: '1', 2: '0.25', 3: '-400'}
+28	28		201							{1: '3', 2: '500850', 4: '400', 7: '1'}
+29	29		301			PanelActor3Shake				"{1: '1', 2: '""Dejected Spectral Shadow""', 3: ""Oh, senpai—you're here too. Good evening. I'm working on the exchange program that?Forever25?senpai assigned to me. I didn't really want to work this weekend, but the senpai said that if I don't finish it, someone else will have to pick up the slack.?Sorry, am I talking too much? Am I bothering you? I'll leave soon."", 4: '3'}"
+30	30		301							"{3: ""The eerie whispers are unbearable. Though you've never heard this language before, the meaning keeps surfacing in your mind.""}"
+31	31		301							"{2: '""Tall, Thin Spectral Shadow""', 3: '<size=45>So, is the exchange program <color=#ff4e4eff>finished</color> yet?</size>', 4: '1'}"
+32	32		301							"{2: '""Dejected Spectral Shadow""', 3: ""I?it's done! Forever25?senpai has entered the game and brought the data construct back, but some unexpected files came with it. I'm still tracking down the bug."", 4: '3'}"
+33	33		301							"{2: '""Tall, Thin Spectral Shadow""', 3: '<size=45><b>So that means we can finally\\nconnect <color=#ff4e4eff>the game with reality</color>?</b></size>', 4: '1'}"
+34	34		301							"{2: '""Dejected Spectral Shadow""', 3: ""That's right, senpai—look. Just put on the headphones and launch the program; it's really simple. I got the idea from that old anime Ghosts of 99?Downing?Street. Ah, I'm rambling again—sorry!"", 4: '3'}"
+35	35		402							{1: '2953'}
+36	36		202							{1: '1', 2: '3'}
+37	37		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStrongholdMain/FxUiStrongholdMainFlashing01.prefab', 2: '3'}
+38	38		401							{1: '2', 2: '4278'}
+39	39		301							{3: 'Chaotic information rains down like a storm, battering your thoughts.'}
+40	40		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStrongholdMain/FxUiStrongholdMainFlashing01.prefab'}
+41	41		401							{1: '2', 2: '4044'}
+42	42		104							{1: '0|0|0', 2: '0.25'}
+43	43		301							{3: 'You recoil instinctively, struggling to process the information flooding your mind.'}
+44	44		301							"{3: ""Just then, you notice the couple bracelet you received earlier still wrapped around your wrist, displaying Vie-chan's current location.""}"
+45	45		302							{2: '(Check terminal)', 3: '46'}
+46	46		401						800.0	{1: '2', 2: '1099'}
+47	47		402							{1: '1099'}
+48	48		502							{1: 'DialogDisable'}
+49	49		205						500.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0.8'}
+50	50		507						250.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+51	51		109							{1: '11', 2: '<size=50><color=#ffffffff>>>>>> [Mission Objective] Eliminate </color><color=#ff4e4eff>3D Virus</color><color=#ffffffff> (92%)<<<<<</color></size>', 4: '125', 9: '3'}
+52	52		109						1000.0	{1: '12', 2: '<color=#ffffffff><size=50>>>>>> [Mission Reward] Unlock Reality Portal<<<<<</size></color>', 4: '25', 9: '3'}
+53	53		401							{1: '2', 2: '4823'}
+54	54		109						100.0	{1: '11', 2: '<size=50><color=#ffffffff>>>>>> [Mission Objective] Eliminate </color><color=#ff4e4eff>3D Virus</color><color=#ffffffff> (88%)<<<<<</color></size>', 4: '125', 9: '3'}
+55	55		401							{1: '2', 2: '4823'}
+56	56		109						100.0	{1: '11', 2: '<size=50><color=#ffffffff>>>>>> [Mission Objective] Eliminate </color><color=#ff4e4eff>3D Virus</color><color=#ffffffff> (84%)<<<<<</color></size>', 4: '125', 9: '3'}
+57	57		401							{1: '2', 2: '4823'}
+58	58		109						100.0	{1: '11', 2: '<size=50><color=#ffffffff>>>>>> [Mission Objective] Eliminate </color><color=#ff4e4eff>3D Virus</color><color=#ffffffff> (80%)<<<<<</color></size>', 4: '125', 9: '3'}
+59	59		401							{1: '2', 2: '4823'}
+60	60		109						100.0	{1: '11', 2: '<size=50><color=#ffffffff>>>>>> [Mission Objective] Eliminate </color><color=#ff4e4eff>3D Virus</color><color=#ffffffff> (76%)<<<<<</color></size>', 4: '125', 9: '3'}
+61	61		401							{1: '2', 2: '4823'}
+62	62		109						100.0	{1: '11', 2: '<size=50><color=#ffffffff>>>>>> [Mission Objective] Eliminate </color><color=#ff4e4eff>3D Virus</color><color=#ffffffff> (72%)<<<<<</color></size>', 4: '125', 9: '3'}
+63	63		401							{1: '2', 2: '4823'}
+64	64		109						100.0	{1: '11', 2: '<size=50><color=#ffffffff>>>>>> [Mission Objective] Eliminate </color><color=#ff4e4eff>3D Virus</color><color=#ffffffff> (68%)<<<<<</color></size>', 4: '125', 9: '3'}
+65	65		401							{1: '2', 2: '4823'}
+66	66		109						100.0	{1: '11', 2: '<size=50><color=#ffffffff>>>>>> [Mission Objective] Eliminate </color><color=#ff4e4eff>3D Virus</color><color=#ffffffff> (64%)<<<<<</color></size>', 4: '125', 9: '3'}
+67	67		401							{1: '2', 2: '4823'}
+68	68		109						100.0	{1: '11', 2: '<size=50><color=#ffffffff>>>>>> [Mission Objective] Eliminate </color><color=#ff4e4eff>3D Virus</color><color=#ffffffff> (60%)<<<<<</color></size>', 4: '125', 9: '3'}
+69	69		401							{1: '2', 2: '4823'}
+70	70		109						100.0	{1: '11', 2: '<size=50><color=#ffffffff>>>>>> [Mission Objective] Eliminate </color><color=#ff4e4eff>3D Virus</color><color=#ffffffff> (56%)<<<<<</color></size>', 4: '125', 9: '3'}
+71	71		401							{1: '2', 2: '4823'}
+72	72		109						100.0	{1: '11', 2: '<size=50><color=#ffffffff>>>>>> [Mission Objective] Eliminate </color><color=#ff4e4eff>3D Virus</color><color=#ffffffff> (52%)<<<<<</color></size>', 4: '125', 9: '3'}
+73	73		401							{1: '2', 2: '4823'}
+74	74		109						100.0	{1: '11', 2: '<size=50><color=#ffffffff>>>>>> [Mission Objective] Eliminate </color><color=#ff4e4eff>3D Virus</color><color=#ffffffff> (48%)<<<<<</color></size>', 4: '125', 9: '3'}
+75	75		401							{1: '2', 2: '4823'}
+76	76		109						100.0	{1: '11', 2: '<size=50><color=#ffffffff>>>>>> [Mission Objective] Eliminate </color><color=#ff4e4eff>3D Virus</color><color=#ffffffff> (45%)<<<<<</color>', 4: '125', 9: '3'}
+77	77		301							{3: '>>>>> [Mission Objective] Eliminate 3D Virus (45%)<<<<<\\n>>>>> [Mission Reward] Unlock Reality Portal<<<<<'}
+78	78		508							
+79	79		110							
+80	80		205						500.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '0', 5: '0.8'}
+81	81		301			DialogEnable				"{3: ""The purification level of the <color=#ff4e4eff>3D Virus</color> is dropping, perhaps due to what's happening to you and Vie-chan right now.""}"
+82	82		301							"{3: 'It seems you are still inside the ""White?Box,"" and the Spectral Shadow drags you into this very space.'}"
+83	83		301							"{3: ""You didn't catch everything the Spectral Shadow said, but the fragments you caught suggest that the device in front of?it might let you escape this facility.""}"
+84	84		301							{3: 'Your top priority, however, is to find Vie?chan right away.'}
+85	85		301							{3: 'Now proceed with caution.'}
+86	86		401							{1: '2', 2: '1504'}
+87	87		104				AniZhuanchangBegin		800.0	{1: '0|0|-150', 2: '1'}
+88	88		205							{1: '1007', 3: '0', 4: '1', 5: '0'}
+89	89		502							{1: 'DialogDisable'}
+90	90		402							{1: '1504'}
+91	91		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+92	92		402						2000.0	{1: '1', 2: '36'}
+93	93		401							{1: '1', 2: '280'}
+94	94		201			AniZhuanchangEnd				{1: '1', 2: '501188', 3: '8'}
+95	95		301			DialogEnable				{1: '1', 2: 'Vie-chan', 3: 'Ugh—cough, cough!', 4: '1'}
+96	96		204							{1: '1', 2: '17'}
+97	97		301							{3: 'As if the farewell happened just a moment ago, the girl reaches out her hand, eyes snapping open as she finds herself thrust into this unfamiliar world.'}
+98	98		202							{1: '1'}
+99	99		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0', 4: '1', 5: '1'}
+100	100		205							{1: '999'}
+101	101		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1223.jpg'}
+102	102		301							{3: 'The gray-white fractured landscape overwhelms her senses from all directions, like a suffocating, gloomy prison that leaves her struggling to breathe.'}
+103	103		201							{1: '1', 2: '501188', 3: '7'}
+104	104		301							{1: '1', 2: 'Vie-chan', 3: 'Where the heck... is this place...?', 4: '1'}
+105	105		203							{1: '1', 2: '0.25', 3: '400'}
+106	106		401							{1: '2', 2: '2953'}
+107	107		201							{1: '2', 2: '500829', 4: '-400'}
+108	108		301							{1: '1', 2: '???', 3: 'The origin of all life, including your own.', 4: '2'}
+109	109		301							"{3: 'The familiar ""Spectral Shadow"" materializes before her eyes, but this time, she can intuitively understand the language it speaks.'}"
+110	110		204							{1: '1', 2: '5'}
+111	111		301							{2: 'Vie-chan', 3: 'Tsk—!', 4: '1'}
+112	112		401							{1: '2', 2: '10028804'}
+113	113		203							{1: '2', 2: '0.25', 3: '-450'}
+114	114		203							{1: '1', 2: '0.25', 3: '350'}
+115	115		301							"{3: ""Faced with this detestable enemy, she doesn't hesitate for a moment, immediately raising her weapon.""}"
+116	116		301							{2: '???', 3: 'I mean no harm. Please calm down, <color=#ff4e4eff>Jetavie</color>.', 4: '2'}
+117	117		204							{1: '1', 2: '4'}
+118	118		301							{2: 'Vie-chan', 3: '...?', 4: '1'}
+119	119		402							{1: '2953'}
+120	120		202							{1: '1', 2: '2'}
+121	121		301							{3: 'The familiar name acts like a wedge, pinning her in place.'}
+122	122		401							{1: '2', 2: '4779'}
+123	123		301							{3: 'She slowly lowers her gun, rooted to the spot as she listens intently to what comes next.'}
+124	124		402							{1: '4779'}
+125	125		401							{1: '2', 2: '2953'}
+126	126		201							{1: '1', 2: '500829'}
+127	127		301							"{1: '1', 2: 'Forever25', 3: ""To cut to the chase, my name is Forever25, and I'm the <b>game scriptwriter</b> who created you."", 4: '1'}"
+128	128		301							{2: 'Forever25', 3: 'You might find my words confusing, but I still hope you can accept this truth as soon as possible: <color=#ff4e4eff>Jetavie</color>, you are a game character created by us.', 4: '1'}
+129	129		201							{1: '1', 2: '501188', 3: '7'}
+130	130		301							{1: '1', 2: 'Vie-chan', 3: '...Huh?', 4: '1'}
+131	131		301							{3: 'Her face betrays utter disbelief, while a thick fog of confusion swirls within her heart.'}
+132	132		201							{1: '1', 2: '500829'}
+133	133		301							"{1: '1', 2: 'Forever25', 3: ""I have many ways to prove my identity to you. You're a smart child—I'd rather not waste time on such matters."", 4: '1'}"
+134	134		402							{1: '2953'}
+135	135		401							{1: '2', 2: '2692'}
+136	136		202							{1: '1', 6: '1'}
+137	137		306							{1: '1'}
+138	138		301				AniZhuanchangBegin			{3: 'The moment Forever25 finishes speaking, the space suddenly darkens, leaving only countless shimmering images displayed across the walls.'}
+139	139		502						400.0	{1: 'DialogDisable'}
+140	140		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory952.png'}
+141	141		201							{1: '1', 2: '501187', 4: '-600'}
+142	142		201							{1: '2', 2: '501188'}
+143	143		201							{1: '3', 2: '500728', 4: '600'}
+144	144		301			DialogEnable				{1: '1', 3: 'And without exception, every figure in these images is <phonetic=herself>Jetavie</phonetic>.'}
+145	145		301							{3: '<phonetic=Jetavie>Vie-chan</phonetic> playing, <phonetic=Jetavie>Vie-chan</phonetic> singing.'}
+146	146		301							{3: '<phonetic=Jetavie>Vie-chan</phonetic> destroying, <phonetic=Jetavie>Vie-chan</phonetic> creating.'}
+147	147		301				AniZhuanchangBegin			{3: 'Every memory is frozen into a still image, transforming into a mere exhibit decorating this prison.'}
+148	148		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+149	149		502						400.0	{1: 'DialogDisable'}
+150	150		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignChenai.prefab'}
+151	151		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1223.jpg'}
+152	152		306							
+153	153		201							{1: '1', 2: '500829'}
+154	154		401							{1: '2', 2: '2953'}
+155	155		301			DialogEnable				{1: '1', 2: 'Forever25', 3: 'Your life and memories were created and packaged by us.', 4: '1'}
+156	156		301							"{2: 'Forever25', 3: ""Everything you've experienced was just a <color=#ff4e4eff>story</color> we carefully scripted."", 4: '1'}"
+157	157		203							{1: '1', 2: '0.25', 3: '-400'}
+158	158		201							{1: '2', 2: '501188', 3: '17', 4: '400'}
+159	159		301							{1: '1', 2: 'Vie-chan', 3: '...', 4: '2'}
+160	160		301							{3: 'Anxiety and shock collect in her throat, but she forces a composed facade. Raising her head, she gestures for them to continue.'}
+161	161		301							"{2: 'Forever25', 3: ""We've created many <color=#ff4e4eff>games</color> and <color=#ff4e4eff>characters</color>, and you are one of them."", 4: '1'}"
+162	162		301							"{2: 'Forever25', 3: ""Unfortunately, after careful evaluation, we've determined that the game you belong to is no longer commercially viable."", 4: '1'}"
+163	163		301							{2: 'Forever25', 3: 'Therefore, I activated a recycling protocol for your world—or as you would know it—the <color=#ff4e4eff>3D Virus</color>, to delete and reclaim everything.', 4: '1'}
+164	164		204							{1: '2', 2: '4'}
+165	165		301							"{2: 'Vie-chan', 3: ""So you're the one behind all this... the mastermind endangering everyone..."", 4: '2'}"
+166	166		301							{2: 'Forever25', 3: 'We brought you into reality because your actions deviated from our design and severely interfered with our recycling operation.', 4: '1'}
+167	167		301							{2: 'Forever25', 3: 'We believe that <color=#ff4e4eff>【kuroname】</color>, who has been by your side, became the variable that led you down the wrong path.', 4: '1'}
+168	168		301							"{3: ""The moment of your separation flashes before her eyes, and Vie-chan's<//Jetavie> heart constricts, each breath becoming more painful than the last.""}"
+169	169		204							{1: '2', 2: '7'}
+170	170		301			PanelActor2Shake				{1: '1', 2: 'Vie-chan', 3: 'What are you going to do to Raven?!', 4: '2'}
+171	171		301							"{2: 'Forever25', 3: ""Don't worry, I won't harm <color=#ff4e4eff>【kuroname】</color>, who is still in your world at this very moment, completely unaware of our conversation."", 4: '1'}"
+172	172		301							"{2: 'Forever25', 3: ""I'm quite fond of your character design. Although your world has lost its value, you can still generate more profit for us."", 4: '1'}"
+173	173		301							{2: 'Forever25', 3: 'So... Jetavie, I want to make a deal with you.', 4: '1'}
+174	174		301							{3: 'Forever25 speaks deliberately, each word measured, rationally guiding her to accept the information at hand.'}
+175	175		301							{2: 'Forever25', 3: 'I will preserve all your memories and make you the heroine of our next game.', 4: '1'}
+176	176		301							{2: 'Forever25', 3: 'I will reformat <color=#ff4e4eff>【kuroname】</color>, ensuring they remain by your side forever.', 4: '1'}
+177	177		301							{2: 'Forever25', 3: 'And the price is, you must comply with my story design, cease your resistance, and generate more commercial value for us.', 4: '1'}
+178	178		204							{1: '2', 2: '9'}
+179	179		301							{2: 'Vie-chan', 3: '...', 4: '2'}
+180	180		202							{1: '1', 2: '2'}
+181	181		301							{3: 'Vie-chan<//Jetavie> knows she has no right to refuse.'}
+182	182		301							{3: 'This is not an equal negotiation, but an act of mercy bestowed upon her by her creator.'}
+183	183		201							{1: '1', 2: '500829', 4: '-400'}
+184	184		201							{1: '2', 2: '501188', 3: '4', 4: '400'}
+185	185		301							"{1: '1', 2: 'Forever25', 3: ""If you're willing, we can even preserve all the NPCs and transfer them with you to the new game."", 4: '1'}"
+186	186		301							{2: 'Forever25', 3: 'You have no reason to refuse, Jetavie. Logically speaking, you should accept my terms.', 4: '1'}
+187	187		402							{1: '2953'}
+188	188		202							{1: '1', 2: '2'}
+189	189		301							{3: 'Vie-chan<//Jetavie> knows exactly what kind of enemy she faces.'}
+190	190		301							{3: 'If she chooses to resist, they will use methods beyond her comprehension, endlessly tearing her world apart.'}
+191	191		301							{3: 'Besides, even if she escaped from here, could she find her way back all on her own?'}
+192	192		301							{3: 'If she accepts their terms, Raven will remain by her side, and everything will begin anew under their design.'}
+193	193		301							"{3: ""She can save everything she cherishes, and all she has to do is abandon what she doesn't care about.""}"
+194	194		301							{3: 'After weighing the pros and cons, the answer is obvious.'}
+195	195		201							{1: '1', 2: '501188', 3: '8'}
+196	196		301							{1: '1', 2: 'Vie-chan', 3: '...', 4: '1'}
+197	197		401							{1: '1', 2: '36'}
+198	198		202							{1: '1', 6: '1'}
+199	199		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+200	200		401							{1: '2', 2: '1510'}
+201	201		301							{3: 'Bang!'}
+202	202		401							{1: '1', 2: '101'}
+203	203		301							"{3: ""A searing beam of light erupts from her gun barrel, piercing straight through Forever25's body.""}"
+204	204		401							{1: '2', 2: '2953'}
+205	205		201							{1: '1', 2: '500829'}
+206	206		301							{1: '1', 2: 'Forever25', 3: 'Wh...?', 4: '1'}
+207	207		203							{1: '1', 2: '0.25', 3: '-400'}
+208	208		201							{1: '2', 2: '501188', 3: '8', 4: '400'}
+209	209		402							{1: '2953'}
+210	210		301							{1: '1', 2: 'Vie-chan', 3: 'Your offer is tempting, but—', 4: '2'}
+211	211		204							{1: '2', 2: '5'}
+212	212		301							"{2: 'Vie-chan', 3: ""I don't need your charity."", 4: '2'}"
+213	213		401							{1: '2', 2: '4806'}
+214	214		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+215	215		203						200.0	{1: '1', 2: '0.25', 3: '-400', 4: '-75'}
+216	216		202							{1: '1', 2: '2'}
+217	217		401							{1: '2', 2: '1505'}
+218	218		301							{3: 'Crimson fluid splatters across the wall covered in story outlines, marking the end of the shackles that had confined her.'}
+219	219		301							{3: 'For Vie-chan<//Jetavie>, not having a reason has always been reason enough to pull the trigger.'}
+220	220		203							{1: '2', 2: '0.25'}
+221	221		201							{1: '2', 2: '501188', 3: '3'}
+222	222		301							"{1: '1', 2: 'Vie-chan', 3: ""And here I thought they'd be tough. Turns out they're just another minion that goes down in one shot."", 4: '2'}"
+223	223		202							{1: '2', 6: '1'}
+224	224		401							{1: '2', 2: '4556'}
+225	225		301			RImgBg1Shake				{3: 'Thud!'}
+226	226		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+227	227		301			AniZhuanchangEnd	DialogDisable			{3: 'In that same instant, the locked door bursts open with a thunderous crash. A tsunami of light floods in, instantly tearing apart the gray-white prison.'}
+228	228		302							{2: '—Jetavie!', 3: '229'}
+229	229		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+230	230		401							{1: '2', 2: '4880'}
+231	231		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1223.jpg'}
+232	232		201							{1: '1', 2: '501188', 3: '7'}
+233	233		301			DialogEnable				{1: '1', 2: 'Vie-chan', 3: '...Raven?!', 4: '1'}
+234	234		301							{3: 'The young girl stands frozen in disbelief, unable to move.'}
+235	235		203							{1: '1', 2: '0.25', 4: '-50', 5: '-75'}
+236	236		401							{1: '2', 2: '1543'}
+237	237		301							{3: 'After a moment of silence, she realizes who it is and excitedly rushes toward the light, throwing her arms around the familiar figure.'}
+238	238		204							{1: '1', 2: '17'}
+239	239		301							"{2: 'Vie-chan', 3: ""How did you...? I thought you'd never find me..."", 4: '1'}"
+240	240		302							{2: 'This tracking bracelet has been working the whole time.', 3: '241'}
+241	241		202							{1: '1', 6: '1'}
+242	242		301							"{3: ""Seeing the human's bracelet, she raises her own wrist—on the small digital display, two bright dots overlap perfectly.""}"
+243	243		201							{1: '1', 2: '501188', 3: '17'}
+244	244		301							{1: '1', 2: 'Vie-chan', 3: 'Did they hurt you? Are you injured?', 4: '1'}
+245	245		401							{1: '2', 2: '4044'}
+246	246		301				DialogDisable			"{3: ""Suddenly remembering something important, she grabs the human's hands and checks them over from head to toe.""}"
+247	247		302							"{2: ""They didn't seem to expect that I'd be transported here too."", 3: '248'}"
+248	248		302							"{2: ""No one discovered me. I'm fine."", 3: '249'}"
+249	249		204							{1: '1', 2: '3'}
+250	250		301			DialogEnable				"{2: 'Vie-chan', 3: ""That's a relief. If anything had happened to you... I would've gone ballistic and blown this whole world to pieces!"", 4: '1'}"
+251	251		301							{3: 'She tilts her head up, wearing that familiar mischievous smile.'}
+252	252		302							{2: 'I just found our way back.', 3: '253'}
+253	253		204							{1: '1'}
+254	254		301				DialogDisable			{2: 'Vie-chan', 3: 'Really? I was worried we might be wandering around here until the end of time.', 4: '1'}
+255	255		302							"{2: 'But there are some ""spectral shadows"" lurking near the exit.', 3: '256'}"
+256	256		302							{2: 'If we want to approach safely, we might need some... special measures.', 3: '257'}
+257	257		401							{1: '2', 2: '4779'}
+258	258		203							{1: '1', 2: '0.25', 4: '25', 5: '-50'}
+259	259		204							{1: '1', 2: '3'}
+260	260		301			DialogEnable				"{3: ""Hearing this, the girl's face lights up with excitement as she raises her weapon.""}"
+261	261		301							{2: 'Vie-chan', 3: 'Oh! I get it, Raven means—', 4: '1'}
+262	262		204							{1: '1', 2: '2'}
+263	263		301				AniZhuanchangBegin			"{2: 'Vie-chan', 3: ""Let's wreck this place and smash it to pieces!"", 4: '1'}"
+264	264		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1225.jpg'}
+265	265		401							{1: '1', 2: '102'}
+266	266		201							{1: '1', 2: '500850'}
+267	267		301			AniZhuanchangEnd				"{1: '1', 2: '""Dejected Spectral Shadow""', 3: ""Sigh, sigh, sigh, I'm working overtime voluntarily, I'm working overtime voluntarily, I'm working overtime voluntarily, I'm working overtime voluntarily, I'm working overtime voluntarily!"", 4: '1'}"
+268	268		301							"{2: '""Dejected Spectral Shadow""', 3: ""I'm not a scab—I just don't want to get fired! I have two cats to feed, I still have unfulfilled dreams, I don't want my parents yelling at me... I'm really not a traitor to the workers!"", 4: '1'}"
+269	269		401							{1: '2', 2: '18511049', 3: '0.5'}
+270	270		301							{3: 'BOOM—'}
+271	271		301							"{2: '""Dejected Spectral Shadow""', 3: 'Huh?', 4: '1'}"
+272	272		401							{1: '2', 2: '18511049', 3: '1'}
+273	273		301			RImgBg1Shake				{3: '<size=45>BOOM—!!</size>'}
+274	274		301			PanelActor1Shake	AniZhuanchangBegin			"{1: '1', 2: '""Dejected Spectral Shadow""', 3: 'Ehhhhh???', 4: '1'}"
+275	275		202							{1: '1', 6: '1'}
+276	276		201							{1: '1', 2: '501188', 3: '2'}
+277	277		301			AniZhuanchangEnd				{1: '1', 2: 'Vie-chan', 3: 'Hahaha! Burn it all down!', 4: '1'}
+278	278		401							{1: '2', 2: '2513'}
+279	279		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+280	280		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+281	281		401							{1: '2', 2: '4808'}
+282	282		301							{3: 'Vie-chan fires wildly into the server room, and crimson beams instantly trigger an explosion that sets the entire room ablaze.'}
+283	283		302							"{2: ""That's enough—"", 3: '284'}"
+284	284		204							{1: '1', 2: '11'}
+285	285		301							"{2: 'Vie-chan', 3: ""That's it already? No way—I need to teach them a proper lesson."", 4: '1'}"
+286	286		204							{1: '1', 2: '5'}
+287	287		301							"{2: 'Vie-chan', 3: ""Don't you dare act all high and mighty, deciding people's fates with your pathetic excuses!"", 4: '1'}"
+288	288		202							{1: '1', 6: '1'}
+289	289		401							{1: '2', 2: '11105405'}
+290	290		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+291	291		301							{3: 'Several laser beams suddenly shoot out, melting through the concrete walls with an ear-splitting roar.'}
+292	292		401							{1: '2', 2: '4008'}
+293	293		401							{1: '2', 2: '4545'}
+294	294		301							{3: 'Amidst the billowing smoke, burning papers flutter through the air as overhead alarms wail, echoing throughout the entire floor.'}
+295	295		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+296	296		201							{1: '1', 2: '501188', 3: '10'}
+297	297		301							{1: '1', 2: 'Vie-chan', 3: 'Phew—that felt amazing!', 4: '1'}
+298	298		204							{1: '1', 2: '3'}
+299	299		301							"{2: 'Vie-chan', 3: ""Let's head home and do a victory celebration stream, Raven!"", 4: '1'}"
+300	300		302				AniZhuanchangBegin			"{2: ""Yeah, let's go home."", 3: '301'}"
+301	301		402							{1: '4545'}
+302	302		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+303	303		202							{1: '1', 6: '1'}
+304	304		402							{1: '4808'}
+305	305		402							{1: '2513'}
+306	306		502						400.0	{1: 'DialogDisable'}
+307	307		402							{1: '4008'}
+308	308		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1223.jpg'}
+309	309		401							{1: '1', 2: '382'}
+310	310		301			DialogEnable				"{3: ""After confirming all the 'spectral shadows' have escaped through the fire exit, you sit with Vie-chan at the computer containing the transfer program and connect the necessary equipment.""}"
+311	311		302							{2: 'Are you ready?', 3: '312'}
+312	312		201							{1: '1', 2: '501188'}
+313	313		301							{1: '1', 2: 'Vie-chan', 3: 'Of course, everyone over there is waiting for us!', 4: '1'}
+314	314		302							{2: '(Initiating program)', 3: '315'}
+315	315		401							{1: '2', 2: '4922'}
+316	316		202							{1: '1'}
+317	317		301				DialogDisable			"{3: ""You press the Enter key, and a countdown for the program's execution immediately appears on the large display screen.""}"
+318	318		307							{1: '5', 3: '70', 4: '00B0F0'}
+319	319		401						300.0	{1: '2', 2: '9389035'}
+320	320		402							{1: '9389035'}
+321	321		301							{3: '5'}
+322	322		307							{2: '1'}
+323	323		201							{1: '1', 2: '501188', 3: '3'}
+324	324		301			DialogEnable				"{1: '1', 2: 'Vie-chan', 3: ""Ah, that reminds me—since we're about to leave, why don't we leave one last present for them?"", 4: '1'}"
+325	325		202							{1: '1'}
+326	326		401							{1: '2', 2: '4893'}
+327	327		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront1.png', 4: '4'}
+328	328		301				DialogDisable			{3: 'She plugs her tail into the computer tower and with a swift flash, hundreds of electronic devices throughout the entire building light up simultaneously.'}
+329	329		307							{1: '4', 3: '70', 4: '00B0F0'}
+330	330		401						300.0	{1: '2', 2: '9389035'}
+331	331		402							{1: '9389035'}
+332	332		301							{3: '4'}
+333	333		307							{2: '1'}
+334	334		201							{1: '1', 2: '501188', 3: '2'}
+335	335		301			DialogEnable	DialogDisable			{1: '1', 2: 'Vie-chan', 3: 'Format and self-destruct program—activate!', 4: '1'}
+336	336		202							{1: '1'}
+337	337		307							{1: '3', 3: '70', 4: '00B0F0'}
+338	338		401						300.0	{1: '2', 2: '9389035'}
+339	339		402							{1: '9389035'}
+340	340		301							{3: '3'}
+341	341		401							{1: '2', 2: '2924'}
+342	342		307							{2: '1'}
+343	343		301			DialogEnable	DialogDisable			{3: 'At her command, every electronic device except the computer in front of you begins crackling and popping with sparks, executing the self-destruct protocol.'}
+344	344		307							{1: '2', 3: '70', 4: '00B0F0'}
+345	345		401						300.0	{1: '2', 2: '9389035'}
+346	346		402							{1: '9389035'}
+347	347		301							{3: '2'}
+348	348		307							{2: '1'}
+349	349		201							{1: '1', 2: '501188', 3: '2'}
+350	350		301			DialogEnable	DialogDisable			{1: '1', 2: 'Vie-chan', 3: 'I wish for a world without overtime!', 4: '1'}
+351	351		202							{1: '1'}
+352	352		307							{1: '1', 3: '70', 4: '00B0F0'}
+353	353		401						300.0	{1: '2', 2: '9389035'}
+354	354		402							{1: '9389035'}
+355	355		301							{3: '1'}
+356	356		401							{1: '2', 2: '5286'}
+357	357		307							{2: '1'}
+358	358		401							{1: '2', 2: '4044'}
+359	359		201							{1: '1', 2: '501188'}
+360	360		301			DialogEnable				{1: '1', 3: 'In this moment of spectacular fireworks, she quietly moves closer and firmly grips your hand.'}
+361	361		204							{1: '1', 2: '2'}
+362	362		301				DialogDisable			"{2: 'Vie-chan', 3: ""Bye——bye! I'll——ne——ver——see——you——again!!"", 4: '1'}"
+363	363		302							"{2: ""I'll——ne——ver——see——you——again!!"", 3: '364', 4: 'Why are you shouting so loudly?!', 5: '364', 6: '...', 7: '364'}"
+364	364		401							{1: '2', 2: '4897'}
+365	365		501				AniZhuanchangBegin			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+366	366		401							{1: '1', 2: '36'}
+367	367		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+368	368		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront1.png', 4: '4', 5: '1'}
+369	369		202							{1: '1', 6: '1'}
+370	370		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1145.jpg'}
+371	371		401							{1: '2', 2: '2616'}
+372	372		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTRPGMaze/FxUiTRPGMaze01.prefab', 2: '2'}
+373	373		401							{1: '2', 2: '4601'}
+374	374		304							{1: 'Loading......', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 10: '1'}
+375	375		304							{1: '<i>The sense of the world must lie outside the world.</i>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 10: '1'}
+376	376		304							{1: '<i>——Ludwig Wittgenstein</i>', 2: 'ffffffff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 10: '1'}
+377	377		401							{1: '2', 2: '5487'}
+378	378		104							{1: '0|-100|300', 2: '0', 4: '3'}
+379	379		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront56.png', 3: '0', 4: '1', 5: '1'}
+380	380		109							{1: '1', 2: '<color=#000000ff><size=80><b>Viedolls</b></size></color><size=120>25</size>', 3: '25', 4: '-350', 9: '3'}
+381	381		301		1		AniZhuanchangBegin			{3: 'Viedolls25'}

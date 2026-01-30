@@ -1,0 +1,42 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory176.png'}
+2	2		401							{1: '1', 2: '5'}
+3	3		301			DialogEnable				{3: 'The cleaning is actually very easy. After the last ball disappears, the walls no longer deteriorate, and the pagoda tree has stopped withering.'}
+4	4		301							{3: 'In fact—'}
+5	5		201							{1: '1', 2: '1031001', 3: '6', 7: '1'}
+6	6		301							"{1: '1', 2: 'Liv', 3: ""It's so shiny now."", 4: '1'}"
+7	7		301							{3: 'The walls now shine like mirrors, giving a reflection of sunlight that is harsh on the eyes.'}
+8	8		302							{2: 'Even the texture has changed...', 3: '9', 4: 'Too much rendering!', 5: '9'}
+9	9		201							{1: '1', 2: '500166', 7: '1'}
+10	10		301							{1: '1', 2: 'Lucia', 3: 'Commandant, no danger ahead.', 4: '1'}
+11	11		203							{1: '1', 2: '0.25', 3: '-400'}
+12	12		201							{1: '2', 2: '500026', 4: '400', 7: '1'}
+13	13		301							{1: '1', 2: 'Lee', 3: 'The buildings on both the left and right are locked. Only the one in front can be opened.', 4: '2'}
+14	14		301							{2: 'Lee', 3: 'I have checked inside and found no threat.', 4: '2'}
+15	15		301							"{2: 'Lee', 3: ""But there wasn't any hint either."", 4: '2'}"
+16	16		302							{2: 'Maybe it needs all of us to be present?', 3: '17', 4: 'Shall we check somewhere else?', 5: '18'}
+17	17	19	301							{2: 'Lee', 3: 'I have also considered that possibility.', 4: '2'}
+18	18		301							"{2: 'Lee', 3: ""But Tiger just wouldn't leave the room."", 4: '2'}"
+19	19		301							{2: 'Lee', 3: 'Based on previous experience, that room should be our next stop.', 4: '2'}
+20	20		302				AniZhuanchangBegin			"{2: ""Let's go."", 3: '21'}"
+21	21		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+22	22		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg'}
+23	23		301			DialogEnable				{3: 'The building has four rooms, all fully furnished. A line of arcade machines sit in the living room. Tiger is sitting on them, taking a nap.'}
+24	24		301							{3: 'There are a few apples in the basket on the coffee table. The apples seem to be freshly washed as there are still water drops on them.'}
+25	25		301							{3: 'Based on past experience, if this is the right place, some hint would suddenly show up.'}
+26	26		301							{3: 'For example, a notice board that protrudes from the ground, a voice that appears in our mind, or even an NPC with a yellow exclamation mark on top...'}
+27	27		301							{3: 'But none of them has happened. After everyone has entered the building, Tiger has not scanned anything but remained on the arcade, unwilling to get up.'}
+28	28		301							{3: 'Severe stomach cramps hit you as you struggle to find any clue. You feel like all your internal organs have been emptied from the abdomen, or replaced with ice.'}
+29	29		301							{3: 'It is a very familiar feeling that sometimes would take place during long-term combat missions.'}
+30	30		401							{1: '1', 2: '205'}
+31	31		301							"{3: '""Grumble—""'}"
+32	32		201							{1: '1', 2: '1031001', 3: '3', 7: '1'}
+33	33		301							{1: '1', 2: 'Liv', 3: 'Hmm? Commandant, are you hungry?', 4: '1'}
+34	34		302							"{2: ""It is Nanami's interference."", 3: '35'}"
+35	35		301							"{3: 'You contributed a lot in the ""dust and clean"" operation, but the energy consumed should not have caused this situation.'}"
+36	36		301							"{3: '""Grumble—""'}"
+37	37		301							{3: 'You hear another extended grumble, but not from your body.'}
+38	38		204							{1: '1', 2: '7'}
+39	39		301							{2: 'Liv', 3: 'What? Lucia too...?', 4: '1'}
+40	40		202							{1: '1', 6: '1'}
+41	41		301		1		AniZhuanchangBegin			{3: 'Unlike your exaggerated response, Lucia just rests her hand on her abdomen. She looks confused.'}

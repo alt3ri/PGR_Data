@@ -1,0 +1,118 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory995.jpg'}
+2	2		401							{1: '1', 2: '5029'}
+3	3		201							{1: '1', 2: '500730'}
+4	4		301			DialogEnable				{1: '1', 3: 'Shorthalt feels like he has heard a shout.'}
+5	5		301							{3: 'It is an overcast day. He sits on the ground after a fierce battle, looking around to find nothing but ruins and bodies still shrouded in gunsmoke. Only Wanshi remains by his side, busy repairing his cracked arm.'}
+6	6		301							{2: 'Shorthalt', 3: 'Was I hearing things...? Did you hear anything?', 4: '1'}
+7	7		202							{1: '1', 6: '1'}
+8	8		201							{1: '1', 2: '500934', 4: '450'}
+9	9		201							{1: '2', 2: '500730', 4: '-400'}
+10	10		301							{1: '1', 3: 'Instead of answering, Wanshi changes the subject.'}
+11	11		301							{2: 'Wanshi', 3: 'The damage on your arm is pretty serious.', 4: '1'}
+12	12		301							{2: 'Shorthalt', 3: 'Got a bit careless, but no sweat.', 4: '2'}
+13	13		301							"{2: 'Wanshi', 3: ""Don't you already have Medic Bots in Scarab? Remember to use one when you get back."", 4: '1'}"
+14	14		301							"{2: 'Shorthalt', 3: ""Ahem, the Medic Bot is quite helpful, but it's in for repairs right now. Otherwise I wouldn't have had to trouble you."", 4: '2'}"
+15	15		301							{2: 'Wanshi', 3: 'Hmm... In for repairs? The Medic Bot?', 4: '1'}
+16	16		301							{3: 'Shorthalt clears his throat awkwardly again.'}
+17	17		301							{2: 'Shorthalt', 3: 'Ahem. Best not to ask about the Scarab.', 4: '2'}
+18	18		301							{3: 'Not bothering to argue with Shorthalt anymore, Wanshi shuts down the maintenance module and returns the arm to him.'}
+19	19		301							"{2: 'Wanshi', 3: ""I've done some basic treatment, but remember to visit the Construct Maintenance Department when you return to Babylonia."", 4: '1'}"
+20	20		301							{2: 'Shorthalt', 3: 'Thanks.', 4: '2'}
+21	21		301							"{2: 'Wanshi', 3: ""Is that all? I'll take a nap if you don't need me for anything else..."", 4: '1'}"
+22	22		301							"{2: 'Shorthalt', 3: ""That's all, but..."", 4: '2'}"
+23	23		301							{2: 'Wanshi', 3: '?', 4: '1'}
+24	24		301							"{2: 'Shorthalt', 3: ""I keep feeling like there's something I haven't done... Strange."", 4: '2'}"
+25	25		301							{2: 'Wanshi', 3: 'Should we check your M.I.N.D. status?', 4: '1'}
+26	26		301							"{2: 'Shorthalt', 3: ""It's not that serious. Just need some rest when I get back."", 4: '2'}"
+27	27		301							{3: 'Shorthalt reaches into his pocket for a mint to help clear his head, but finds nothing.'}
+28	28		301							{3: 'The pocket is empty.'}
+29	29		301							{2: 'Shorthalt', 3: 'What? Did I finish it already?', 4: '2'}
+30	30		301							{2: 'Wanshi', 3: 'What are you looking for?', 4: '1'}
+31	31		301							"{2: 'Shorthalt', 3: ""Valeria gave me some snacks before I left... There's no way I ate them all at once. Did I drop them somewhere?"", 4: '2'}"
+32	32		301							{2: 'Wanshi', 3: 'Snacks, huh...', 4: '1'}
+33	33		301				AniZhuanchangBegin			{2: 'Wanshi', 3: 'Will this work?', 4: '1'}
+34	34		202							{1: '1', 2: '2', 6: '1'}
+35	35		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4701_02.jpg'}
+36	36		301			AniZhuanchangEnd				"{3: ""Shorthalt looks at Wanshi's palm, where a single liquor-filled mint candy lies.""}"
+37	37		301							"{3: ""—That's it.""}"
+38	38		301							{3: 'Shorthalt takes it and unwraps the candy.'}
+39	39		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '3'}
+40	40		401							{1: '2', 2: '2959'}
+41	41		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4701_01.jpg'}
+42	42		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '1'}
+43	43		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+44	44		301							"{3: ""—That's it.""}"
+45	45		301							"{2: 'Wanshi', 3: ""It'll help clear your head.""}"
+46	46		301							"{3: 'Shorthalt pauses briefly as he stares at the green ""candy"" in the wrapper.'}"
+47	47		401							{1: '2', 2: '2959'}
+48	48		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '1'}
+49	49		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+50	50		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4701_02.jpg'}
+51	51		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+52	52		301							{3: 'Staring at the candy, he remembers many forgotten memories: the two young thieves he encountered at the Youth Center, the junior squad member who vanished in the Dead Zone, and the countless comrades who fell on the battlefield fighting Punishing.'}
+53	53		301							{3: 'He had shared candy with these people, their fates intertwined.'}
+54	54		301							{2: 'Shorthalt', 3: 'I see.'}
+55	55		301							"{3: ""Wanshi stares into Shorthalt's eyes, as if trying to confirm something.""}"
+56	56		301							{2: 'Shorthalt', 3: 'How long was I in there?'}
+57	57		301							"{2: 'Wanshi', 3: '...A long time. The military has already listed you as ""deceased"".'}"
+58	58		301							{2: 'Shorthalt', 3: 'It really has been a while...'}
+59	59		301							"{2: 'Shorthalt', 3: ""Valeria didn't show you that footage? The one where I was drunk and hugging a Medic Bot?""}"
+60	60		301							{3: 'The first thing Shorthalt asks is some bizarre video that Wanshi has never even heard of.'}
+61	61		301							{2: 'Wanshi', 3: '...'}
+62	62		301							"{2: 'Shorthalt', 3: ""Great. Glad you didn't see it.""}"
+63	63		301				AniZhuanchangBegin			{3: 'Shorthalt takes the candy from Wanshi and holds it in his palm.'}
+64	64		201							{1: '1', 2: '500934', 4: '450'}
+65	65		201							{1: '2', 2: '500730', 4: '-400'}
+66	66		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory995.jpg'}
+67	67		301			AniZhuanchangEnd				{1: '1', 2: 'Shorthalt', 3: 'Want me to tell you what happened to me? You probably know most of it already.', 4: '2'}
+68	68		301							"{2: 'Shorthalt', 3: ""The Ascendant—that purple-haired kid turned this place into their stronghold, throwing Constructs with stable M.I.N.D.s together to merge them. We were just one batch of test subjects, and they'll keep doing this."", 4: '2'}"
+69	69		204							{1: '1', 2: '10'}
+70	70		301							"{2: 'Wanshi', 3: ""It's all over now."", 4: '1'}"
+71	71		301							"{3: ""Seeing Wanshi's expression, Shorthalt seems to understand.""}"
+72	72		301							"{2: 'Shorthalt', 3: ""Oh... it's been so long."", 4: '2'}"
+73	73		301							{2: 'Shorthalt', 3: 'Who was involved?', 4: '2'}
+74	74		301							{2: 'Wanshi', 3: 'From what I heard, there were a lot of people, including the Gray Raven Commandant and... your clone.', 4: '1'}
+75	75		301							"{2: 'Wanshi', 3: ""Your Nameplate has been returned and is now in Valeria's custody."", 4: '1'}"
+76	76		301							"{2: 'Shorthalt', 3: ""What about Valeria? They didn't do anything unnecessary, did they?"", 4: '2'}"
+77	77		301							"{2: 'Wanshi', 3: ""I'm not sure."", 4: '1'}"
+78	78		301							"{2: 'Shorthalt', 3: ""What about you? Sometimes you're even more obsessive than those lunatics."", 4: '2'}"
+79	79		301							{2: 'Wanshi', 3: '...', 4: '1'}
+80	80		301							"{2: 'Shorthalt', 3: ""Forget it, let's drop this. My head's already a mess—I can't handle any more chaos right now."", 4: '2'}"
+81	81		301							{3: 'Shorthalt taps his head, gesturing to Wanshi.'}
+82	82		301							"{2: 'Shorthalt', 3: ""With so many M.I.N.D.s overlapping, I've seen countless memories of the past, including ones from this place."", 4: '2'}"
+83	83		301							"{2: 'Shorthalt', 3: 'This research facility experiments on children. The ""dump"" out back is almost full.', 4: '2'}"
+84	84		301							"{2: 'Shorthalt', 3: ""I tried to get the children out, running everywhere, but couldn't find an exit. Then they marked me as an intruder and opened fire."", 4: '2'}"
+85	85		301							{2: 'Shorthalt', 3: 'Seems like it was all just hallucinations I pieced together.', 4: '2'}
+86	86		301							"{2: 'Wanshi', 3: ""I know everything, Shorthalt. I can see all that you've done."", 4: '1'}"
+87	87		301							{2: 'Shorthalt', 3: '...You do?', 4: '2'}
+88	88		301							{3: 'Shorthalt smiles.'}
+89	89		301							"{2: 'Shorthalt', 3: 'You followed the clues I left behind to find me, didn\'t you? You even found a way to deal with ""me""—looks like you haven\'t forgotten about those old missions after all.', 4: '2'}"
+90	90		301							{2: 'Wanshi', 3: '...Those memories are too persistent—anyone would have trouble forgetting them.', 4: '1'}
+91	91		301							{3: 'Shorthalt pats Wanshi on the shoulder.'}
+92	92		301							{3: 'Wanshi keeps his head down. He knows he has lost another person who had once patted his shoulder in his youth.'}
+93	93		301							"{2: 'Shorthalt', 3: ""We're running out of time. Let's go, Wanshi."", 4: '2'}"
+94	94		301							{2: 'Shorthalt', 3: 'The Red Tide will devour the nearby conservation area.', 4: '2'}
+95	95		301							{2: 'Shorthalt', 3: 'Take what you need and the people you want to save—you should have found the Gray Raven Commandant by now—then withdraw as quickly as possible.', 4: '2'}
+96	96		204							{1: '1', 2: '4'}
+97	97		301							{2: 'Wanshi', 3: 'But you...', 4: '1'}
+98	98		301							{2: 'Shorthalt', 3: 'Whoa whoa, hold it right there.', 4: '2'}
+99	99		301							"{2: 'Shorthalt', 3: ""Don't you dare have any dangerous thoughts."", 4: '2'}"
+100	100		301							"{2: 'Shorthalt', 3: ""...Besides, I wasn't the only one in there screaming and struggling."", 4: '2'}"
+101	101		301							{2: 'Shorthalt', 3: 'Everyone needs to be set free.', 4: '2'}
+102	102		301							{3: 'Shorthalt picks up the mint candy.'}
+103	103		301				DialogDisable			{3: 'Without hesitation, he swallows it.'}
+104	104		202							{1: '1', 2: '2', 6: '1'}
+105	105		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+106	106		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+107	107		401						200.0	{1: '2', 2: '9342027'}
+108	108		401							{1: '2', 2: '2513'}
+109	109		307							{1: 'Bang!', 3: '100'}
+110	110		301							{3: 'Bang!'}
+111	111		307							{2: '1'}
+112	112		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+113	113		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4701_03.jpg'}
+114	114		301			DialogEnable				{2: 'Wanshi', 3: '...'}
+115	115		301							"{3: ""As Wanshi's finger leaves the trigger, fragments of the mask from the scorpion-like enemy's face scatter through the air, whistling sharply past his ears.""}"
+116	116		301							"{3: ""Shorthalt's parade has come to an end.""}"
+117	117		301		1		AniZhuanchangBegin			"{3: ""He will be preserved in Wanshi's amber, intact and eternal.""}"

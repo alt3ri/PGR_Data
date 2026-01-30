@@ -1,0 +1,50 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory222.png'}
+2	2		401							{1: '1', 2: '10'}
+3	3		201							{1: '1', 2: '500088', 3: '4'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Diana', 3: ""I can't believe there's such a large cave here..."", 4: '1'}"
+5	5		301							{3: 'Walking into the entrance, everyone arrives at a strange underground world.'}
+6	7		301							"{1: '1', 2: 'Diana', 3: ""There's a production line over there..."", 4: '1'}"
+7	1000		203							{1: '1', 2: '0.25', 3: '400'}
+8	1001		201							{1: '2', 2: '500214', 3: '4', 4: '-400'}
+9	8		301							"{1: '1', 2: 'Rosetta', 3: ""That must be the where our enemies came from... No wonder the numbers don't match up."", 4: '2'}"
+10	9		301							"{2: 'Diana', 3: ""That doesn't make sense, though. Why would such a large cave go undiscovered for this long...?"", 4: '1'}"
+11	10		301							{2: 'Rosetta', 3: 'Must be some sort of interference. Look up there—the strange lights. They must be some sort of signal jammer.', 4: '2'}
+12	11		301							"{2: 'Diana', 3: ""They'd put so much effort into burying their past mistakes and building this military base, instead of trying to rebuild the ARU..."", 4: '1'}"
+13	1002		302							"{2: 'Because they had war in mind.', 3: '12', 4: ""That's all in the past."", 5: '14'}"
+14	12	13	301							{2: 'Diana', 3: 'Yeah... The captain said that Amberia and the bionics were built for war from the start.', 4: '1'}
+15	13	16	301							"{2: 'Rosetta', 3: ""From the looks of this cave, you can see the true intent of the ARU's leadership. They never swayed from their belief that war was the final solution."", 4: '2'}"
+16	14	15	301							{2: 'Rosetta', 3: 'Yeah, Diana. All in the past.', 4: '2'}
+17	15	16	301							"{2: 'Rosetta', 3: ""Whatever the past mistakes, let's try our best to make amends."", 4: '2'}"
+18	16		301							{2: '???', 3: 'Oh, how very deep and all, Forest Guards. Ah, 【kuroname】, you as well.'}
+19	1003		302							"{2: 'Who are you?', 3: '17', 4: ""Who's there?!"", 5: '18'}"
+20	17	19	301							"{2: '???', 3: ""Oh, wha... Oh. Wait. I don't think we ever met.""}"
+21	18		301							{2: '???', 3: 'Well, well.'}
+22	19		301							{3: 'An unfamiliar female voice warbles through the air, nauseous and muffled like noise.'}
+23	20		301							"{2: 'Lamia', 3: ""Self-intros are annoooyiiing, but I guess I'll still go through with it... My name is Lamia, an Ascendant.""}"
+24	21		301							{2: 'Rosetta', 3: 'First Alpha, now Lamia? Do you Ascendants think you can stroll in and out of the ARU, just as you please?', 4: '2'}
+25	22		301							"{2: 'Lamia', 3: ""Well, we just needed something here... That's all.""}"
+26	1004		302							{2: 'Are you the one behind all of this?', 3: '23', 4: 'Where is Atiel?', 5: '26'}
+27	23	24	301							"{2: 'Lamia', 3: ""Oh, you are such a funny little tart... Didn't you just arrive at your answer? It's all the ARU's fault.""}"
+28	24	25	301							"{2: 'Lamia', 3: ""Whether it's the bionics that are attacking the ARU,or the Amberia buried in this place—I've got nothing to do with 'em.""}"
+29	25	28	301							"{2: 'Lamia', 3: ""I'm just a little spectator. That's all.""}"
+30	26	27	301							{2: 'Lamia', 3: 'Oh come on, little pumpkin, you know the answer.'}
+31	27	28	301							{2: 'Rosetta', 3: 'Which means... you have Atiel.', 4: '2'}
+32	28		301							"{2: 'Lamia', 3: ""I'm only here for Amberia. We've got enough juice, so after she's fully charged, we can make her go beep-boop with the code, and... voila!""}"
+33	29		301							{2: 'Lamia', 3: 'Then Amberia will be under my control. After which...'}
+34	1005		302							"{2: ""You're just telling us that?"", 3: '30', 4: ""Can't you just use the virus to control her?"", 5: '31'}"
+35	30	32	301							"{2: 'Lamia', 3: ""...I'm not tryna tell you, you're the brutes who barged in on me talking to myself! Hmph!""}"
+36	31	32	301							{2: 'Lamia', 3: '...Asks all the wrong questions—check.'}
+37	32		301							{3: 'Lamia cuts the broadcast. Bionics begin pouring out of the dark recesses of the cavern.'}
+38	1006		202							{1: '1', 2: '2'}
+39	1007		201							{1: '1', 2: '500208'}
+40	1008		401							{1: '2', 2: '1508'}
+41	33		301							{1: '1', 2: 'Bionic Machine', 3: 'Urgh—', 4: '1'}
+42	1009		201							{1: '1', 2: '500088', 3: '4', 4: '400'}
+43	1010		201							{1: '2', 2: '500214', 4: '-400'}
+44	34		301							"{1: '1', 2: 'Diana', 3: ""Wait, these bionics... They've been corrupted!"", 4: '1'}"
+45	35		301							{2: 'Diana', 3: 'Corrupted and Ascendants... Is that Lamia trying to turn the ARU into Kowloong...?', 4: '1'}
+46	36		301							"{2: 'Rosetta', 3: ""We're here to prevent that from happening. Let's break through their forces and continue downward, Commandant."", 4: '2'}"
+47	500		401							{1: '2', 2: '1506'}
+48	37		301			RImgBg1Shake				{3: 'As you are about to move, the ice cave begins to rumble.'}
+49	38		301		1		AniZhuanchangBegin			"{2: 'Diana', 3: ""It's a trap?!"", 4: '1'}"

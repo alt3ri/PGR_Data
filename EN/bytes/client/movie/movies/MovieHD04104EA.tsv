@@ -1,0 +1,102 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory271.png'}
+2	2		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+3	3		401			AniZhuanchangEnd				{1: '1', 2: '36'}
+4	4		401							{1: '2', 2: '4331'}
+5	5		104							{1: '0|0|-100', 2: '0.25'}
+6	6		301			DialogEnable				{3: 'Following the special identifier to the exit,  you overcame the final obstacles in your path, bringing this unexpected journey to its conclusion.'}
+7	7		401							{1: '2', 2: '4134'}
+8	8		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+9	9		505							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+10	10		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+11	11		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+12	12		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+13	13		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory34.jpg'}
+14	14		401							{1: '1', 2: '210'}
+15	15		301							{3: 'A blinding white light engulfs everything. As the radiance gradually fades, the world before your eyes returns to its original state.'}
+16	16		301							{3: 'You see a dimly lit passage, tilted street lamps, and a heavy metal gate behind you left open.'}
+17	17		302							"{2: ""...Who would've thought the escape route would lead right to the entrance?"", 3: '18'}"
+18	18		201							{1: '1', 2: '500994', 3: '1'}
+19	19		301							"{1: '1', 2: 'Lucia', 3: ""We were pretty lucky. If the route had ended somewhere inside the facility, we would've needed to put in extra effort just to get out."", 4: '1'}"
+20	20		301							{3: 'She looks back, her gaze lingering for a moment on the other side of the gate as she lets out a soft sigh.'}
+21	21		204							{1: '1', 2: '2'}
+22	22		301							"{2: 'Lucia', 3: ""Feels like we've come such a long way."", 4: '1'}"
+23	23		202							{1: '1', 6: '1'}
+24	24		201							{1: '1', 2: '500568', 3: '7'}
+25	25		301							{1: '1', 2: 'Lee', 3: '...', 4: '1'}
+26	26		202							{1: '1'}
+27	27		301							"{3: ""Lee remains silent with his head lowered, either recalling the recent events or inspecting his frame's condition.""}"
+28	28		201							{1: '1', 2: '500916', 3: '1'}
+29	29		301							{1: '1', 2: 'Hanying', 3: 'This experience was, in some ways, a memorable dream.', 4: '1'}
+30	30		202							{1: '1'}
+31	31		301							{3: 'Her fingertips gently move through the air as if trying to express her feelings through imaginary music.'}
+32	32		201							{1: '18', 2: '1031001', 3: '19'}
+33	33		301							{1: '1', 2: 'Liv', 3: 'Commandant! Everyone!', 4: '18'}
+34	34		202				DialogDisable			{1: '18'}
+35	35		401						800.0	{1: '2', 2: '4331'}
+36	36		201							{1: '1', 2: '1031001', 3: '19'}
+37	37		301			DialogEnable				{1: '1', 3: 'Looking toward the source of the voice, you see a pink-haired Construct jogging toward you.'}
+38	38		302							"{2: ""Don't worry. We're all fine."", 3: '39', 4: ""We're back, Liv."", 5: '39'}"
+39	39		204							{1: '1', 2: '2'}
+40	40		301							"{2: 'Liv', 3: ""I'm glad you're okay."", 4: '1'}"
+41	41		202							{1: '1'}
+42	42		301				DialogDisable			{3: 'Liv stands with her hands clasped lightly before her chest. Seeing everyone return safely, she lets out a relieved sigh.'}
+43	43		401						1000.0	{1: '2', 2: '764'}
+44	44		402			RImgBg1Shake				{1: '764'}
+45	45		301			DialogEnable				{3: 'Bzz—'}
+46	46		301							{3: 'Before you even have a chance to talk properly, the metal gate behind you trembles and begins to move again.'}
+47	47		401							{1: '2', 2: '4653'}
+48	48		301			RImgBg1Shake				{3: 'You quickly look back to see the gate slowly closing inward, accompanied by a dull clanging sound as it seals off the world inside once more.'}
+49	49		301				DialogDisable			{3: 'You wait for a moment to confirm nothing is happening, and the tension among you eases once again.'}
+50	50		302							"{2: ""I'll go submit the mission report."", 3: '51'}"
+51	51		302							{2: 'In the meantime, you guys should rest here for a bit.', 3: '52'}
+52	52		301			DialogEnable				{3: 'The group rests at a spot not far from the facility, partly to relieve the exhaustion and partly to await further instructions.'}
+53	53		201							{1: '1', 2: '500994', 4: '450'}
+54	54		201							{1: '2', 2: '1031001', 4: '-450'}
+55	55		301				AniZhuanchangBegin			{1: '1', 2: 'Lucia', 3: 'After leaving the abandoned factory, we entered an underground ruins, and then...', 4: '1'}
+56	56		204						1000.0	{1: '2', 2: '7'}
+57	57		301			AniZhuanchangEnd				{1: '1', 2: 'Liv', 3: 'I see...', 4: '2'}
+58	58		202							{1: '1', 2: '2'}
+59	59		301							"{3: 'Liv is asking Lucia and Lee about what happened inside the facility. She was unable to monitor them through her terminal, and now she is quite curious about the ""dream"" you all experienced together.'}"
+60	60		301							{3: 'You return your gaze to the half-edited mission report on your terminal.'}
+61	61		201							{1: '1', 2: '500916'}
+62	62		301							{1: '1', 2: 'Hanying', 3: 'How do you plan to report this mission, Commandant?', 4: '1'}
+63	63		301							{3: 'Hanying approaches and asks softly before immediately continuing.'}
+64	64		204							{1: '1', 2: '2'}
+65	65		301							"{2: 'Hanying', 3: ""It's okay if you can't disclose that information."", 4: '1'}"
+66	66		302							"{2: ""I don't mind answering, but why are you asking about it?"", 3: '67'}"
+67	67		204							{1: '1', 2: '10'}
+68	68		301				DialogDisable			"{2: 'Hanying', 3: ""I plan to inform Zavier about the whole situation, but I'm unsure if his views on the facility would... differ from Babylonia's."", 4: '1'}"
+69	69		302							"{2: ""This facility primarily deals with preliminary applications of M.I.N.D.-related technology. I'll report our findings exactly as they are."", 3: '70'}"
+70	70		302							"{2: ""I'll leave the specific arrangements and follow-up procedures for them to decide."", 3: '71'}"
+71	71		204							{1: '1', 2: '2'}
+72	72		301			DialogEnable				{2: 'Hanying', 3: 'That is for the best.', 4: '1'}
+73	73		202							{1: '1'}
+74	74		301							{3: 'By the time Hanying and you finish your respective reports, Liv has already learned everything she was curious about.'}
+75	75		201							{1: '1', 2: '1031001', 3: '1', 4: '-600'}
+76	76		201							{1: '2', 2: '500994', 3: '1'}
+77	77		201							{1: '3', 2: '500568', 4: '600'}
+78	78		301							"{1: '1', 2: 'Liv', 3: ""It sounds... quite interesting, honestly. All of us together in a virtual world, experiencing adventures we couldn't in reality and seeing sights that don't exist in the real world."", 4: '1'}"
+79	79		301							"{2: 'Lucia', 3: ""As long as it's not dangerous."", 4: '2'}"
+80	80		204							{1: '3', 2: '10'}
+81	81		301							"{2: 'Lee', 3: ""...And we don't encounter any strange bugs."", 4: '3'}"
+82	82		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+83	83		201							{1: '1', 2: '500916'}
+84	84		301				DialogDisable			"{1: '1', 2: 'Hanying', 3: 'If you\'re really interested, I recommend trying Sage\'s ""Full Sensory Simulation Device"", though I\'m not entirely sure how many people it can connect at once...', 4: '1'}"
+85	85		302							"{2: ""Let's ask Nanami about this when we get the chance."", 3: '86'}"
+86	86		202							{1: '1'}
+87	87		401						250.0	{1: '2', 2: '937'}
+88	88		301			DialogEnable				{3: 'Ding—'}
+89	89		301							{3: 'Your terminal rings with a notification. Your report has received a response—another Task Force will take over the follow-up operations at the facility, while Gray Raven—'}
+90	90		302							{2: 'We have a new mission, and the location is...', 3: '91'}
+91	91		301							{3: 'A prominent beacon marks your next destination on the holographic map projected from your terminal.'}
+92	92		201							{1: '1', 2: '500916', 3: '1'}
+93	93		301				DialogDisable			"{1: '1', 2: 'Hanying', 3: ""Since we're heading the same way, would you mind if I accompany you for a while longer?"", 4: '1'}"
+94	94		302							{2: 'Of course not.', 3: '95'}
+95	95		302							{2: 'We might get some time off after this mission.', 3: '96'}
+96	96		302							"{2: ""Let's go play in the virtual world together when we get the chance."", 3: '97'}"
+97	97		202							{1: '1'}
+98	98		301			DialogEnable				{3: 'As for now...'}
+99	99		401							{1: '2', 2: '4779'}
+100	100		301							{3: 'After one final check to confirm nothing is forgotten, the well-prepared group turns their attention to you.'}
+101	101		302		1		AniZhuanchangBegin			"{2: ""Let's go."", 3: '102'}"

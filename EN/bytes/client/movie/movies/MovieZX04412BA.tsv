@@ -1,0 +1,481 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		105			AniZhuanchangEnd				{1: 'Assets/Product/Ui/Spine/2-11Spine/UimovieSpine/UimovieLuna/UimovieLuna01.prefab'}
+2	2		401							{1: '1', 2: '396'}
+3	3		301			DialogEnable				{3: 'At long last, Luna slowly opens her eyes.'}
+4	4		301							{3: 'Moonlight cascades over her form, painting silver edges around the crimson stains.'}
+5	5		301							{3: 'People rush to gather around the two, bombarding them with questions about the situation.'}
+6	6		302							"{2: ""Luna, I'm still waiting for an answer."", 3: '7'}"
+7	7		302							"{2: 'Now, what kind of ""will"" are you standing by?', 3: '8'}"
+8	8		301							{3: 'Yet she continues to gaze up at the silent sky, only stirring from her deep reverie when all sounds fade to nothing.'}
+9	9		301							"{2: 'Luna', 3: ""Now... I stand beside no one's will. My convictions and emotions belong to me alone.""}"
+10	10		301							{2: 'Luna', 3: 'I simply yearn for a tangible future, using this desire to call forth those who would follow me.'}
+11	11		302							{2: 'So... what kind of future do you envision?', 3: '12'}
+12	12		301							{2: 'Luna', 3: 'My answer to this question has never changed—I envision a future where all those dear to me are safe and sound.'}
+13	13		301							"{2: 'Luna', 3: 'If shaping such a future means making adjustments to this world, if it requires me to bear more... then, as you said, I\'ll take it as the ""price of fortune"" and carry it through to the end.'}"
+14	14		301							{2: 'Luna', 3: 'The Ascension-Network is not set in stone. One day, it will advance and initiate a new round of Filtering... My wish has long since become something far beyond what I can achieve on my own.'}
+15	15		301							"{2: 'Luna', 3: ""Now that I've reclaimed my power, I shall use it to declare war against the rules themselves.""}"
+16	16		302							{2: 'Can I assume that, for now, neither humans nor Constructs are among your enemies?', 3: '17'}
+17	17		301							"{2: 'Luna', 3: ""As long as they don't come after me.""}"
+18	18		301				AniZhuanchangBegin			{3: 'With a smile, Luna lowers her gaze from the moonlit sky.'}
+19	19		105							
+20	20		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory740.jpg'}
+21	21		201							{1: '1', 2: '500334', 4: '-400'}
+22	22		201							{1: '2', 2: '500739', 4: '400'}
+23	23		301			AniZhuanchangEnd				"{1: '1', 2: 'Roland', 3: ""Well, looks like everything's wrapped up nice and peaceful."", 4: '1'}"
+24	24		301							{2: 'Lamia', 3: '...Are we heading to the Inver-Hetero Tower in the Clean Zone next?', 4: '2'}
+25	25		202							{1: '1', 2: '2'}
+26	26		201							{1: '1', 2: '500884'}
+27	27		301							{1: '1', 2: 'Luna', 3: 'Correct. I must find Selene who fell into the tower to recover all my agent privileges.', 4: '1'}
+28	28		302							{2: 'Are you certain you can enter that tower?', 3: '29'}
+29	29		301							{2: 'Luna', 3: 'Of course.', 4: '1'}
+30	30		301							"{2: 'Luna', 3: ""Vonnegut's information has confirmed my theory."", 4: '1'}"
+31	31		302							{2: 'What did it confirm?', 3: '32'}
+32	32		301							"{2: 'Luna', 3: 'The tower itself was built on the premise that ""the Punishing Virus can be controlled,"" so it won\'t stand in the way of the agents.', 4: '1'}"
+33	33		301							{2: 'Luna', 3: 'Agent Zero and Selene were able to enter the tower... I believe this is the reason why.', 4: '1'}
+34	34		302							{2: '...Alright.', 3: '35'}
+35	35		302							{2: 'There are still many innocent civilians in the Clean Zone who know nothing about this.', 3: '36'}
+36	36		302							{2: 'Once we enter the Clean Zone, will you follow my lead on everything?', 3: '37'}
+37	37		301							{2: 'Luna', 3: 'I have no objections.', 4: '1'}
+38	38		203							{1: '1', 2: '0.25', 3: '-400'}
+39	39		201							{1: '2', 2: '500735', 3: '1', 4: '400'}
+40	40		301							"{1: '1', 2: 'Lithos', 3: ""Miss Luna, it's wonderful to see you've successfully found yourself again."", 4: '2'}"
+41	41		301							"{2: 'Lithos', 3: ""I got those papers delivered for Mister. I'm heading to the Clean Zone next, so this is goodbye."", 4: '2'}"
+42	42		301							{2: 'Lithos', 3: 'Should everything proceed smoothly, I shall arrange another visit to continue our previous discussion.', 4: '2'}
+43	43		301							{2: 'Luna', 3: 'Fine.', 4: '1'}
+44	44		202							{1: '1', 2: '2'}
+45	45		201							{1: '1', 2: '500610'}
+46	46		301				AniZhuanchangBegin			"{1: '1', 2: 'α', 3: ""Let's go."", 4: '1'}"
+47	47		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory741.jpg'}
+48	48		401							{1: '1', 2: '160'}
+49	49		202							{1: '1', 6: '1'}
+50	50		301			AniZhuanchangEnd				{3: 'The group treks through the rugged, corrupted forest for about half an hour.'}
+51	51		301							"{3: ""Alpha, leading the group, comes to an abrupt stop. The team instantly falls into silence, everyone's hands tightening around their weapons as they cautiously survey the surroundings.""}"
+52	52		401							{1: '2', 2: '2902'}
+53	53		301							{3: 'A gentle breeze stirs the purple leaves... but nothing happens.'}
+54	54		302							"{2: ""What's wrong?"", 3: '55'}"
+55	55		201							{1: '1', 2: '500610'}
+56	56		201							{1: '2', 2: '500334', 4: '-600'}
+57	57		201							{1: '3', 2: '500739', 4: '600'}
+58	58		301							"{1: '1', 3: ""Alpha remains silent, hand gripping the katana at her back. Her stern gaze sweeps slowly across their surroundings—she's sensed something, but can't quite place what it is.""}"
+59	59		301							"{2: 'Lamia', 3: ""...It's too quiet."", 4: '3'}"
+60	60		202							{1: '1', 2: '2', 3: '3'}
+61	61		201							{1: '1', 2: '500166', 3: '5'}
+62	62		201							{1: '2', 2: '500568', 4: '-600'}
+63	63		201							{1: '3', 2: '1031001', 4: '600'}
+64	64		401							{1: '2', 2: '10022001'}
+65	65		301							{1: '1', 3: 'Standing at the front with Alpha, Lucia silently draws her blade.'}
+66	66		301							"{3: ""...It is too quiet. On your way here, the path had been riddled with disruptions from Hetero-Creatures. Yet now, on the way back, there hasn't been a single obstacle—not even a glimpse of a Hetero-Creature.""}"
+67	67		302							{2: '(Look at Lee)', 3: '68', 4: '(Look at Liv)', 5: '78'}
+68	68		401							{1: '2', 2: '1511'}
+69	69		104							{1: '50|0|-200', 2: '0.25'}
+70	70		203							{1: '2', 2: '0.25'}
+71	71		203							{1: '1', 2: '0.25', 3: '600'}
+72	72		203							{1: '3', 2: '0.25', 3: '1200'}
+73	73		301							{3: 'Lee readies his high-power sniper rifle, chambers a round, and signals you with a cautionary glance.'}
+74	74		104							{1: '0|0|0', 2: '0.25'}
+75	75		203							{1: '1', 2: '0.25'}
+76	76		203							{1: '2', 2: '0.25', 3: '-600'}
+77	77	87	203							{1: '3', 2: '0.25', 3: '600'}
+78	78		104							{1: '-50|0|-200', 2: '0.25'}
+79	79		203							{1: '3', 2: '0.25'}
+80	80		203							{1: '1', 2: '0.25', 3: '-600'}
+81	81		203							{1: '2', 2: '0.25', 3: '-1200'}
+82	82		301							{2: 'Liv', 3: 'No signs of Hetero-Creature activity detected...', 4: '3'}
+83	83		104							{1: '0|0|0', 2: '0.25'}
+84	84		203							{1: '1', 2: '0.25'}
+85	85		203							{1: '2', 2: '0.25', 3: '-600'}
+86	86		203							{1: '3', 2: '0.25', 3: '600'}
+87	87		301							"{3: ""It's so quiet, almost unnatural.""}"
+88	88		202							{1: '1', 2: '2', 3: '3'}
+89	89		401							{1: '2', 2: '738'}
+90	90		301							{3: 'The purple soil writhes.'}
+91	91		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+92	92		401							{1: '2', 2: '846106'}
+93	93		401						1000.0	{1: '2', 2: '10002001'}
+94	94		401						800.0	{1: '2', 2: '2921'}
+95	95		401							{1: '2', 2: '2970'}
+96	96		401							{1: '1', 2: '392'}
+97	97		301			RImgBg1Shake				{3: 'Thunder and ice crack in unison as crossing blades cleave through the ground. Viscous liquid splatters everywhere, followed by agonized howls.'}
+98	98		201							{1: '1', 2: '500610', 4: '-400'}
+99	99		201							{1: '2', 2: '500166', 3: '5', 4: '400'}
+100	100		301							"{1: '1', 2: 'Alpha & Lucia', 3: ""They're down below!"", 4: '1', 5: '2'}"
+101	101		202							{1: '1', 2: '2'}
+102	102		401							{1: '2', 2: '4319'}
+103	103		301							{3: 'The false calm is torn apart, ripping away its mask of deception. The earth trembles, dirt flies, and the once-quiet forest erupts like boiling water in an instant.'}
+104	104		201							{1: '1', 2: '500902', 4: '-600', 5: '-1080', 7: '1'}
+105	105		201							{1: '2', 2: '500902', 5: '-1080', 7: '1'}
+106	106		201							{1: '3', 2: '500902', 4: '600', 5: '-1080', 7: '1'}
+107	107		201							{1: '4', 2: '500902', 4: '-300', 5: '-1080', 7: '1'}
+108	108		201							{1: '5', 2: '500902', 4: '300', 5: '-1080', 7: '1'}
+109	109		401							{1: '2', 2: '4411'}
+110	110		203						100.0	{1: '1', 2: '0.25', 3: '-600'}
+111	111		203						100.0	{1: '3', 2: '0.25', 3: '600'}
+112	112		203						100.0	{1: '2', 2: '0.25'}
+113	113		301							{1: '1', 3: 'Mounds of earth rise up ahead as Hetero-Creatures burst forth one after another.'}
+114	114		203						100.0	{1: '4', 2: '0.25', 3: '-300'}
+115	115		203						1000.0	{1: '5', 2: '0.25', 3: '300'}
+116	116		401							{1: '2', 2: '2974'}
+117	117		301			RImgBg1Shake				{1: '1', 3: 'Monsters of all shapes and sizes are piled together in a chaotic mass, their numbers impossible to count—perhaps dozens, maybe even hundreds. They roar at the sky, their crimson eyes glinting with savage fury, and then, one after another, they charge relentlessly in your direction.'}
+118	118		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '1'}
+119	119		201							{1: '1', 2: '500884'}
+120	120		301							{1: '1', 2: 'Luna', 3: 'Tsk...', 4: '1'}
+121	121		202							{1: '1'}
+122	122		301							"{3: ""It's obvious to everyone that this is a premeditated trap. Had the group noticed it any later and taken just a few more steps forward, you would have walked straight into the ambush of Hetero-Creatures lying in wait underground.""}"
+123	123		301							{3: 'Clearly, this strategy is beyond what Hetero-Creatures could devise on their own.'}
+124	124		201							{1: '1', 2: '500166', 3: '5'}
+125	125		301							"{1: '1', 2: 'Lucia', 3: ""Controlling Hetero-Creatures... Is this Cradle's contingency plan? Or Vonnegut's doing?"", 4: '1'}"
+126	126		202							{1: '1'}
+127	127		201							{1: '1', 2: '500884'}
+128	128		301							{1: '1', 2: 'Luna', 3: 'How troublesome.', 4: '1'}
+129	129		202							{1: '1'}
+130	130		201							{1: '1', 2: '500884'}
+131	131		201							{1: '2', 2: '500610', 4: '-600'}
+132	132		201							{1: '3', 2: '500166', 3: '5', 4: '600'}
+133	133		301							{1: '1', 3: 'Luna steps to the front of the group, taking her place beside Alpha and Lucia.'}
+134	134		401						500.0	{1: '2', 2: '4469'}
+135	135		402							{1: '4469'}
+136	136		301							{3: 'She reaches behind for her chakram. The ring-shaped weapon spins as its razor-sharp edges gleam with an icy radiance.'}
+137	137		401						1000.0	{1: '2', 2: '10042608'}
+138	138		401							{1: '2', 2: '13061002'}
+139	139		401							{1: '2', 2: '10022001'}
+140	140		301							{3: 'Alpha sheathes her kodachi and grips the handle of her odachi. One by one, indicator lights flicker to life along the scabbard as electricity coils around the blade, accompanied by low rumbles of thunder as she slowly draws the sword.'}
+141	141		401							{1: '2', 2: '4356'}
+142	142		401							{1: '2', 2: '10112408'}
+143	143		301							{3: 'Lucia attaches the ice thruster to her left arm, and a burst of frost rapidly chills the air. Moisture condenses into shimmering ice crystals, glittering in the sunlight.'}
+144	144		402							{1: '10112408'}
+145	145		202							{1: '1', 2: '2', 3: '3'}
+146	146		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+147	147		401							{1: '2', 2: '10002001'}
+148	148		401							{1: '2', 2: '914'}
+149	149		401							{1: '2', 2: '4128'}
+150	150		301			RImgBg1Shake				{3: 'As the wave of creatures crashes into them, the Hetero-Creatures at the front instantly freeze, shatter, or burn to cinders—'}
+151	151		401							{1: '2', 2: '1513'}
+152	152		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+153	153		104							{1: '0|0|-100', 2: '0.25'}
+154	154		301							{3: 'While chaos reigns at the front, smaller Hetero-Creatures slip through the gaps and charge toward the rear formation.'}
+155	155		401						1000.0	{1: '2', 2: '4252'}
+156	156		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+157	157		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+158	158		401							{1: '2', 2: '2513'}
+159	159		301			RImgBg1Shake				{3: 'The lead Hetero-Wolf snarls, its jaw dripping with blood—only for a gun barrel to thrust into its maw. A flash of fire erupts, shattering its skull.'}
+160	160		201							{1: '1', 2: '500334', 3: '2'}
+161	161		301							{1: '1', 2: 'Roland', 3: 'Hm, hm...', 4: '1'}
+162	162		203							{1: '1', 2: '0.25', 5: '-80'}
+163	163		202							{1: '1'}
+164	164		401						1000.0	{1: '2', 2: '580'}
+165	165		401							{1: '2', 2: '4408'}
+166	166		301							"{3: ""Humming a playful tune, Roland pulls back his left hand and swings his chain blade upward with his right, slicing cleanly through the second Hetero-Wolf's neck in one swift motion.""}"
+167	167		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+168	168		401							{1: '2', 2: '10021506'}
+169	169		201							{1: '1', 2: '500568', 4: '1980', 5: '-100'}
+170	170		203							{1: '1', 2: '0.4', 4: '-100'}
+171	171		301							{1: '1', 3: 'Bang—Bang—'}
+172	172		402							{1: '10021506'}
+173	173		301							{3: 'On the other flank, Lee drops to one knee and raises his high-powered rifle. In rapid succession, he fires multiple rounds that merge into a single thunderous report. The smaller Hetero-Creatures fall before they can even react, each shot finding its mark with lethal precision.'}
+174	174		202							{1: '1', 6: '1'}
+175	175		401							{1: '2', 2: '4142'}
+176	176		301			RImgBg1Shake				{3: 'Boom—'}
+177	177		401							{1: '2', 2: '4409'}
+178	178		301			RImgBg1Shake				{3: 'Rargh—!'}
+179	179		201							{1: '1', 2: '500902', 4: '-600', 5: '-1080', 7: '1'}
+180	180		201							{1: '2', 2: '500902', 5: '-1080', 7: '1'}
+181	181		201							{1: '3', 2: '500902', 4: '600', 5: '-1080', 7: '1'}
+182	182		203							{1: '1', 2: '0.25', 3: '-600'}
+183	183		203							{1: '3', 2: '0.25', 3: '600'}
+184	184		203						100.0	{1: '2', 2: '0.25'}
+185	185		301							{1: '1', 3: 'The ground trembles as more Hetero-Creatures emerge from all directions.'}
+186	186		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+187	187		402							{1: '4142'}
+188	188		201							{1: '1', 2: '500568'}
+189	189		301							"{1: '1', 2: 'Lee', 3: ""We can't keep getting bogged down like this!"", 4: '1'}"
+190	190		301							{3: 'Their exposed position in the open leaves them vulnerable to attacks from all sides.'}
+191	191		301							"{3: ""Yet rushing through recklessly isn't an option—one wrong step into a trap could spell disaster.""}"
+192	192		301							{2: 'Lee', 3: 'We need to secure a defensible position first, establish contact with Babylonia for backup, and identify an escape route.', 4: '1'}
+193	193		301							{3: 'Scanning the area, Lee spots a narrow mountain pass to the front right. Its confined entrance would funnel the Hetero-Creatures, negating their numerical advantage.'}
+194	194		203							{1: '1', 2: '0.25', 3: '-400'}
+195	195		201							{1: '2', 2: '500334', 3: '1', 4: '400'}
+196	196		301							{1: '1', 2: 'Roland', 3: 'Mm-hmm.', 4: '2'}
+197	197		301							"{3: ""Lee notices Roland also eyeing the mountain pass. Roland spins around with his usual flair, giving an exaggerated nod—his theatrical gesture speaking volumes: clearly they're thinking the same thing about their escape route.""}"
+198	198		203							{1: '1', 2: '0.25'}
+199	199		203						300.0	{1: '2', 2: '0.25', 3: '1980'}
+200	200		301							"{3: ""Lee pays no attention to Roland's antics.""}"
+201	201		202							{1: '2'}
+202	202		301							{2: 'Lee', 3: 'Commandant!', 4: '1'}
+203	203		301							"{3: ""Lee's gaze and the direction he points make it clear.""}"
+204	204		302							{2: 'Liv, move!', 3: '205'}
+205	205		202							{1: '1'}
+206	206		401							{1: '2', 2: '11105405'}
+207	207		201							{1: '1', 2: '1031001', 3: '5', 4: '-1980'}
+208	208		203							{1: '1', 2: '0.4', 3: '-400'}
+209	209		301							{1: '1', 3: 'After repelling the approaching Hetero-Creatures with her Levi-Gun, Liv gives you a nod.'}
+210	210		301							{2: 'Liv', 3: 'Understood!', 4: '1'}
+211	211		201							{1: '2', 2: '500739', 3: '19', 4: '1980', 7: '1'}
+212	212		203							{1: '2', 2: '0.4', 3: '400'}
+213	213		301							{3: 'Lamia follows suit, her Halberd Blade at the ready.'}
+214	214		301							{2: 'Lamia', 3: 'W-wait for me!', 4: '2'}
+215	215		202							{1: '1', 2: '2'}
+216	216		301							{3: 'As the group rushes toward the mountain pass, you contact Lucia through your terminal.'}
+217	217		301							"{3: ""Despite Lucia, Luna, and Alpha having dealt with more than half of the Hetero-Creatures, their overall numbers show little sign of decreasing. It's clear the enemy has an endless stream of reinforcements.""}"
+218	218		201							{1: '1', 2: '500166', 3: '5'}
+219	219		301							"{1: '1', 2: 'Lucia', 3: ""Don't get bogged down."", 4: '1'}"
+220	220		202							{1: '1'}
+221	221		401							{1: '2', 2: '4153'}
+222	222		301				AniZhuanchangBegin			"{3: ""Lucia uses her thruster to create a massive wall of ice, temporarily blocking the advancing Hetero-Creatures as she and the others fall back to the group's position.""}"
+223	223		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory747.jpg'}
+224	224		401							{1: '1', 2: '385'}
+225	225		301			AniZhuanchangEnd				"{3: ""The advantageous terrain helps contain the Hetero-Creatures' assault, giving everyone a moment to catch their breath.""}"
+226	226		301							{3: 'Liv, Roland, and Lamia hold off the incoming Hetero-Creatures while Lee sets up long-range communications. Meanwhile, Alpha and Lucia take the chance to recover.'}
+227	227		104						600.0	{1: '0|-100|-150', 2: '0.5'}
+228	228		301							"{3: ""Luna soars into the sky, working to suppress the Punishing's interference with communications while keeping a close watch on the overall movements of the Hetero-Creatures.""}"
+229	229		201							{1: '1', 2: '500884', 4: '400'}
+230	230		301							{1: '1', 2: 'Luna', 3: '...', 4: '1'}
+231	231		401							{1: '2', 2: '2674'}
+232	232		201							{1: '2', 2: '500166', 4: '-400', 5: '-1080'}
+233	233		301							{3: 'The rush of wind announces an arrival beside her.'}
+234	234		203						600.0	{1: '2', 2: '0.5', 3: '-400'}
+235	235		301							"{3: ""Using her thruster, Lucia rises to Luna's altitude.""}"
+236	236		301							{2: 'Lucia', 3: 'This is...', 4: '2'}
+237	237		301							"{3: ""After seeing the full scope of the Hetero-Creatures, Lucia understands why Luna's expression has grown so grave.""}"
+238	238		202							{1: '1', 2: '2'}
+239	239		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory746.jpg', 3: '0', 4: '1', 5: '1.5'}
+240	240		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory746.jpg'}
+241	241		401							{1: '2', 2: '4318'}
+242	242		205							{1: '999'}
+243	243		306							{1: '1'}
+244	244		301							{3: 'At the edge of their visual range, a living tide surges forth.'}
+245	245		401							{1: '2', 2: '4411'}
+246	246		301							{3: 'A colossal horde of countless Hetero-Creatures surges forward. The entire Hetero Forest, disregarding the cost to its own ecosystem, relentlessly siphons its stored Punishing power to spawn grotesque, misshapen beasts. This unstoppable tide of monstrosities creeps closer, threatening to engulf everything in its wake.'}
+247	247		104						2000.0	{1: '0|0|-100', 2: '1.5'}
+248	248		301							{2: 'Luna', 3: '...'}
+249	249		401							{1: '2', 2: '4411'}
+250	250		301							{3: 'As Luna surveys the surging horde, she senses something more: every Hetero-Creature, even as they charge forward, has its head raised skyward. Countless eyes, all fixed upon a single target—her.'}
+251	251		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory747.jpg'}
+252	252		104							{1: '0|-100|-150', 2: '0'}
+253	253		306							
+254	254		201							{1: '1', 2: '500884', 3: '13', 4: '400'}
+255	255		201							{1: '2', 2: '500166', 4: '-400'}
+256	256		301							{1: '1', 2: 'Luna', 3: 'I see what it is.', 4: '1'}
+257	257		202							{1: '1', 2: '2'}
+258	258		301							{3: 'Lucia turns to Luna, their eyes meet, and Luna gives a slight nod.'}
+259	259		104						600.0	{1: '0|0|0', 2: '0.5'}
+260	260		301							{3: 'They descend to ground level to brief the others about the advancing Hetero-Creature horde.'}
+261	261		201							{1: '1', 2: '500610', 4: '-400'}
+262	262		201							{1: '2', 2: '500739', 4: '400'}
+263	263		301							"{1: '1', 2: 'α', 3: ""Hetero-Creatures aren't particularly dangerous. They lack true intelligence and have no concept of teamwork. No matter how many there are, with the right tactics, they can always be eliminated."", 4: '1'}"
+264	264		301							"{2: 'Lamia', 3: ""...Unless someone's commanding them."", 4: '2'}"
+265	265		301							{2: 'α', 3: 'Commanded or not, fighting here is pointless anyway.', 4: '1'}
+266	266		202							{1: '1', 2: '2'}
+267	267		201							{1: '1', 2: '500884'}
+268	268		301							"{1: '1', 2: 'Luna', 3: ""Exactly. Our next objective isn't here, so there's no need to waste too much time on these Hetero-Creatures."", 4: '1'}"
+269	269		301							{3: 'Luna turns to her allies, her gaze a silent question.'}
+270	270		302							{2: 'Contact with Babylonia established. Reinforcement on the way, evac route highlighted.', 3: '271'}
+271	271		301							{2: 'Luna', 3: 'Split up and regroup near the Clean Zone.', 4: '1'}
+272	272		302							"{2: ""What's the reason for splitting up?"", 3: '273', 4: 'Understood.', 5: '278'}"
+273	273		301							{2: 'Luna', 3: 'If we stay together, the Hetero-Creatures will mass as one and block our retreat path.', 4: '1'}
+274	274		204							{1: '1', 2: '2'}
+275	275		301							"{2: 'Luna', 3: ""What's wrong? Worried about what we might do once we're out of your sight?"", 4: '1'}"
+276	276		204							{1: '1'}
+277	277		302							{2: '...I understand.', 3: '278'}
+278	278		302							{2: 'The rendezvous point will be where we met last night. Any objections?', 3: '279'}
+279	279		301							{3: 'Luna shakes her head in agreement.'}
+280	280		302							{2: 'No time to waste. Gray Raven, move out.', 3: '281'}
+281	281		202							{1: '1'}
+282	282		201							{1: '1', 2: '500166'}
+283	283		201							{1: '2', 2: '500568', 4: '-600'}
+284	284		201							{1: '3', 2: '1031001', 4: '600'}
+285	285		301							{1: '1', 2: 'Lucia & Liv & Lee', 3: 'Copy that!', 4: '1', 5: '2', 6: '3'}
+286	286		202							{1: '1', 2: '2', 3: '3'}
+287	287		301							{3: 'As Gray Raven departs, Luna remains motionless, her downcast gaze betraying deep thoughts.'}
+288	288		201							{1: '1', 2: '500884', 4: '-400'}
+289	289		201							{1: '2', 2: '500739', 3: '19', 4: '400'}
+290	290		301							{1: '1', 2: 'Lamia', 3: 'Um... Miss Luna, what should we do now?', 4: '2'}
+291	291		301							"{2: 'Luna', 3: ""We'll circle around and lose them."", 4: '1'}"
+292	292		301							{2: 'Luna', 3: 'These Hetero-Creatures are after me.', 4: '1'}
+293	293		301							{2: 'Lamia', 3: '...', 4: '2'}
+294	294		301							{2: 'Lamia', 3: 'Are you sure this will be alright?', 4: '2'}
+295	295		301							"{2: 'Luna', 3: ""First of all, we don't need to confront them directly. We just need to shake them off."", 4: '1'}"
+296	296		301							{2: 'Luna', 3: 'Second...', 4: '1'}
+297	297		401							{1: '2', 2: '4432'}
+298	298		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory844.jpg', 3: '0', 4: '0.03', 5: '1'}
+299	299		301							"{3: ""The single wing on Luna's back slowly unfolds as the Punishing concentration in the surroundings rapidly rises.""}"
+300	300		301							{2: 'Luna', 3: 'With Gray Raven gone, we no longer need to hold back.', 4: '1'}
+301	301		301							{2: 'Luna', 3: 'Roland.', 4: '1'}
+302	302		202							{1: '2', 6: '1'}
+303	303		201							{1: '2', 2: '500334', 4: '400'}
+304	304		301							{2: 'Roland', 3: 'The route is all planned out. I guarantee these little pups chasing us will be running in circles.', 4: '2'}
+305	305		301							"{2: 'Roland', 3: 'Though later on, I might need Miss Luna to provide some vital fluid, or should I say, a little ""scent.""', 4: '2'}"
+306	306		301							{2: 'Luna', 3: 'Okay.', 4: '1'}
+307	307		202							{1: '2', 6: '1'}
+308	308		201							{1: '2', 2: '500610', 4: '400'}
+309	309		301							{2: 'α', 3: 'All Hetero-Creatures outside have been eliminated.', 4: '2'}
+310	310		301				AniZhuanchangBegin			"{2: 'Luna', 3: ""Let's get going."", 4: '1'}"
+311	311		202							{1: '1', 2: '2', 6: '1'}
+312	312		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory741.jpg'}
+313	313		205							{1: '999'}
+314	314		301			AniZhuanchangEnd				{3: 'Following the route displayed on the terminal, you skirt around the dangerous horde Lucia had spotted. The rest of the journey goes smoothly, with only a few small Hetero-Creatures posing minor interruptions.'}
+315	315		201							{1: '1', 2: '1031001'}
+316	316		301							{1: '1', 2: 'Liv', 3: '...', 4: '1'}
+317	317		302							"{2: ""What's wrong, Liv?"", 3: '318'}"
+318	318		301							"{2: 'Liv', 3: ""I can't detect any of the Hetero-Creatures that are lying in ambush..."", 4: '1'}"
+319	319		203							{1: '1', 2: '0.25', 3: '400'}
+320	320		201							{1: '2', 2: '500568', 4: '-400'}
+321	321		301							"{1: '1', 2: 'Lee', 3: ""There's too many of them, and the concentration here is already high."", 4: '2'}"
+322	322		203							{1: '1', 2: '0.25', 3: '600'}
+323	323		203							{1: '2', 2: '0.25', 3: '-600'}
+324	324		201							{1: '3', 2: '500166'}
+325	325		301							"{1: '1', 2: 'Lucia', 3: ""Hetero-Creatures lying in ambush... This is the first time we've encountered such tactics..."", 4: '3'}"
+326	326		302							"{2: ""I'll file a full report on this when we return."", 3: '327'}"
+327	327		302							"{2: ""Then we'll need Asimov to develop an iterative upgrade plan for the perception module."", 3: '328'}"
+328	328		301							"{2: 'Lucia', 3: ""Who could be commanding these Hetero-Creatures? Cradle's been eliminated, which only leaves..."", 4: '3'}"
+329	329		302							{2: 'Vonnegut...', 3: '330'}
+330	330		302							{2: 'Could he have another scheme in motion?', 3: '331'}
+331	331		301							"{2: 'Lucia', 3: ""No matter what happens, don't trust them."", 4: '3'}"
+332	332		301							"{2: 'Liv', 3: ""I'm receiving a signal from up ahead..."", 4: '1'}"
+333	333		301							"{2: 'Liv', 3: ""It's the Scarab squad."", 4: '1'}"
+334	334		302							"{2: ""Reinforcements have arrived. Let's meet up with them first."", 3: '335'}"
+335	335		302							"{2: ""It's not far. We should split up to prevent the Hetero-Creatures from gathering in one place."", 3: '336'}"
+336	336		401							{1: '1', 2: '36'}
+337	337		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+338	338		104							{1: '0|100|0', 2: '0.1'}
+339	339		401							{1: '2', 2: '4510'}
+340	340		301							{3: 'Stepping forward while giving instructions, the ground suddenly collapses before the words are even finished—'}
+341	341		401							{1: '2', 2: '4511'}
+342	342		301			RImgBg1Shake				{3: 'Boom—'}
+343	343		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+344	344		301							{3: 'Clouds of dust billow into the air.'}
+345	345		401							{1: '1', 2: '226'}
+346	346		201							{1: '1', 2: '500166', 3: '5'}
+347	347		301							{1: '1', 2: 'Lucia', 3: 'Commandant!', 4: '1'}
+348	348		302							"{2: ""I'm fine!"", 3: '349'}"
+349	349		202							{1: '1', 6: '1'}
+350	350		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+351	351		301							"{3: ""The moment the ground feels wrong beneath your feet, you've already fired a grappling hook toward a nearby tree, evading the Hetero-Creatures erupting from the earth as their jaws snap shut on empty air.""}"
+352	352		301							"{3: ""While in mid-air, your powered armor's monitoring system swiftly detects ten Hetero-Creatures below—two large ones and eight smaller variants.""}"
+353	353		302							{2: 'Get ready to fight!', 3: '354'}
+354	354		201							{1: '1', 2: '500166', 3: '5'}
+355	355		201							{1: '2', 2: '500568', 4: '-600'}
+356	356		201							{1: '3', 2: '1031001', 4: '600'}
+357	357		301							{1: '1', 2: 'Lucia & Liv & Lee', 3: 'Copy that!', 4: '1', 5: '2', 6: '3'}
+358	358		202							{1: '1', 2: '2', 3: '3'}
+359	359		301							"{3: ""It's not just Hetero-Creatures bursting from the ground—thick roots of the Hetero-Trees have emerged as well, causing the earth to heave and warp. The shifting terrain temporarily separates you from Gray Raven.""}"
+360	360		401							{1: '2', 2: '4252'}
+361	361		301			RImgBg1Shake				{3: 'Several wolf-like Hetero-Creatures lunge toward your position.'}
+362	362		401						1500.0	{1: '2', 2: '4374'}
+363	363		401							{1: '2', 2: '10021517'}
+364	364		301							{3: 'You hit the ground with a combat roll, swiftly creating distance before rising into a half-crouch, weapon aimed and ready—'}
+365	365		302							{2: '?!', 3: '366'}
+366	366		401						250.0	{1: '2', 2: '4477'}
+367	367		401							{1: '2', 2: '4252'}
+368	368		301							{3: 'The wolf-like Hetero-Creatures slam into an invisible wall, unable to advance even an inch further.'}
+369	369		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustLightWall.prefab', 2: '1'}
+370	370		301							{3: 'Whether real or imagined, it feels as though layers of defensive fields are unfurling behind you.'}
+371	371		301							{3: 'This feeling...'}
+372	372		401							{1: '2', 2: '10021517'}
+373	373		301							"{3: ""Your heart skips a beat. As you rise to your feet, your wrist twists, shifting the gun's muzzle from front to back.""}"
+374	374		302							{2: 'Vonnegut!', 3: '375'}
+375	375		201							{1: '1', 2: '500305'}
+376	376		301							{1: '1', 3: 'A tall, masked young man looms before you, standing motionless.'}
+377	377		302							{2: '(Open Fire)', 3: '378', 4: '(Hold Fire)', 5: '383'}
+378	378		401						1000.0	{1: '2', 2: '1510'}
+379	379		401						1000.0	{1: '2', 2: '14014615'}
+380	380		401							{1: '2', 2: '738'}
+381	381		301							"{3: ""You pull the trigger, the muzzle flashing, but just inches from Vonnegut, the bullet feels as if it's swallowed by an endless void, losing all momentum before falling harmlessly to the ground.""}"
+382	382	384	301							"{3: ""Vonnegut hasn't blinked once the entire time.""}"
+383	383		301							"{3: ""You resist the urge to pull the trigger, fully aware that an agent of this caliber won't be brought down by mere bullets.""}"
+384	384		301							{2: 'Vonnegut', 3: '...', 4: '1'}
+385	385		401							{1: '2', 2: '2920'}
+386	386		401						250.0	{1: '2', 2: '4477'}
+387	387		401							{1: '2', 2: '4477'}
+388	388		301							{3: 'The frenzied Hetero-Creatures outside slam endlessly against the invisible barrier, while the two of you stand in an artificial pocket of tranquility within the force field.'}
+389	389		302							{2: '...'}
+390	390		302							"{2: ""Lithos just told me you'd left."", 3: '391'}"
+391	391		302							"{2: ""Yet here you are. What's the matter? Forgot something?"", 3: '392'}"
+392	392		301							{2: 'Vonnegut', 3: 'Yes.', 4: '1'}
+393	393		301							{3: 'The dark figure observes you silently, neither denying nor pursuing the topic further. He seems lost in thought—an unusual sight. Could he have acted before finishing his deliberations?'}
+394	394		302							"{2: '...Why are you ""helping"" me?', 3: '395', 4: 'Why did you have Lithos give information to Cradle?', 5: '396'}"
+395	395	399	301							"{3: ""Watching the relentless onslaught of Hetero-Creatures, a conclusion becomes clear—Vonnegut isn't the one controlling them.""}"
+396	396		301							{2: 'Vonnegut', 3: 'She would have gotten that intelligence sooner or later. Handing it over now gives us leverage.', 4: '1'}
+397	397		302							{2: 'You two are collaborating?', 3: '398'}
+398	398		301							{2: 'Vonnegut', 3: 'I would never collaborate with Cradle.', 4: '1'}
+399	399		301							{2: 'Vonnegut', 3: 'Have you received anything related to Dominik lately?', 4: '1'}
+400	400		301							{3: 'He offers no explanation, simply proceeding with his own line of questioning.'}
+401	401		302							{2: '(Remain silent)', 3: '402', 4: 'Dominik?', 5: '402'}
+402	402		301							"{2: 'Vonnegut', 3: 'If the ""relevant parties"" want to leave a mark on this era, you\'d be their top pick.', 4: '1'}"
+403	403		302							{2: 'What are you planning?', 3: '404'}
+404	404		301							{2: 'Vonnegut', 3: 'Keep an eye on it. The clues are closer than you think.', 4: '1'}
+405	405		301							{3: 'Vonnegut lifts his gaze forward... toward the Clean Zone.'}
+406	406		203						800.0	{1: '1', 2: '0.25', 4: '-20', 5: '100'}
+407	407		401						500.0	{1: '2', 2: '4475'}
+408	408		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+409	409		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustLightWall.prefab'}
+410	410		202							{1: '1'}
+411	411		401							{1: '2', 2: '2756'}
+412	412		401							{1: '2', 2: '4408'}
+413	413		301							{3: 'With those final words, he steps back and activates his force field. The invisible energy ripples outward, even causing you in the powered armor to falter. Behind you, the roars of the Hetero-Creatures and the sound of shattering debris abruptly fall into silence.'}
+414	414		301							{3: 'When you look up again, Vonnegut is already gone.'}
+415	415		302							{2: '...', 3: '416'}
+416	416		201							{1: '1', 2: '500166', 3: '5'}
+417	417		301							{1: '1', 2: 'Lucia', 3: 'Commandant!', 4: '1'}
+418	418		302							"{2: ""I'm alright."", 3: '419'}"
+419	419		202							{1: '1'}
+420	420		401						1000.0	{1: '2', 2: '788'}
+421	421		104						500.0	{1: '0|-50|0', 2: '0.25'}
+422	422		104							{1: '0|0|0', 2: '0.25'}
+423	423		301							{3: 'It seems Lucia has finished dealing with the Hetero-Creatures. After gauging the distance, you fire the grappling hook at a tree trunk, swing through the air, and land back with Gray Raven.'}
+424	424		302							{2: '(Explain what just happened)', 3: '425'}
+425	425		301							"{3: ""Vonnegut's sudden and unexpected appearance leaves everyone exchanging bewildered glances, at a loss for words.""}"
+426	426		201							{1: '1', 2: '500166', 3: '5'}
+427	427		301							"{1: '1', 2: 'Lucia', 3: ""Vonnegut's information highlights two key points: Dominik's invitation and the Inver-Hetero Tower."", 4: '1'}"
+428	428		301							{2: 'Lucia', 3: 'The Inver-Hetero Tower... He shares our objective. We should prepare for another encounter.', 4: '1'}
+429	429		302							{2: 'Anyway, we should report this...', 3: '430'}
+430	430		301							"{2: '??', 3: ""Looks like you're all in quite a mess here.""}"
+431	431		301							"{3: ""A woman's voice comes from ahead—it's two Constructs you've met before.""}"
+432	432		201							{1: '1', 2: '500627', 4: '-500'}
+433	433		201							{1: '2', 2: '500374', 4: '400'}
+434	434		301							{1: '1', 2: 'Yata', 3: 'Hello.', 4: '2'}
+435	435		301							{3: 'Several hands wave in greeting at once.'}
+436	436		301							"{2: 'Discord', 3: ""Scarab Squad. I'm Discord, and this is Yata. We've met before, so we shouldn't be strangers."", 4: '1'}"
+437	437		302							"{2: ""You're with the Purifying Force, aren't you?"", 3: '438', 4: 'Just the two of you?', 5: '439'}"
+438	438		301							"{2: 'Discord', 3: ""We used to be with the Purifying Force, but now we're Scarab."", 4: '1'}"
+439	439		301							"{2: 'Discord', 3: ""It's just us here. Commandant Valeria and our other member Shiva are elsewhere. Don't worry though—we've secured the path ahead and eliminated all the lurking Hetero-Creatures."", 4: '1'}"
+440	440		302							{2: 'You are able to detect the Hetero-Creatures hiding underground?', 3: '441'}
+441	441		301							"{3: ""You notice the distinctive shape of Discord's mask.""}"
+442	442		302							{2: 'The smell, maybe?', 3: '443'}
+443	443		301							{2: 'Yata', 3: 'How rude of you—we simply overwhelmed them with sheer strength.', 4: '2'}
+444	444		301							{3: 'That explains the battle scars on both of them.'}
+445	445		302							{2: '...', 3: '446', 4: 'Thank you both for your hard work.', 5: '446'}
+446	446		302				AniZhuanchangBegin			"{2: ""Let's head back to the Clean Zone."", 3: '447'}"
+447	447		202							{1: '1', 2: '2', 6: '1'}
+448	448		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory732.jpg'}
+449	449		401							{1: '1', 2: '210'}
+450	450		301			AniZhuanchangEnd				"{3: ""Having left the Hetero Forest behind and returned to the Clean Zone, everyone feels the edge coming off their nerves—even if the incident isn't over yet.""}"
+451	451		401							{1: '2', 2: '4288'}
+452	452		301							{3: 'After removing the battle-worn armor, you glance around uncertainly, wondering who to hand it to—until your eyes settle on Discord.'}
+453	453		301							{3: 'She was the one who handled your first armor deployment, after all.'}
+454	454		201							{1: '1', 2: '500627'}
+455	455		301							{1: '1', 2: 'Discord', 3: 'Leave it to me.', 4: '1'}
+456	456		302							{2: 'Thank you very much.', 3: '457'}
+457	457		301							"{2: 'Discord', 3: ""You're welcome."", 4: '1'}"
+458	458		301							{3: 'After speaking, she gives you an appraising look.'}
+459	459		301							{2: 'Discord', 3: 'Nice outfit.', 4: '1'}
+460	460		302							{2: '...Thanks?', 3: '461'}
+461	461		301							"{2: 'Discord', 3: ""I'm a tailor... or rather, I was one. That's why I take interest in these things. Please forgive my abruptness."", 4: '1'}"
+462	462		202							{1: '1'}
+463	463		301							{3: 'After her brief explanation, Discord leaves with the armor in her arms. Yata follows behind, giving a light pat on your shoulder as a goodbye.'}
+464	464		201							{1: '1', 2: '500374'}
+465	465		301							"{1: '1', 2: 'Yata', 3: ""If that's all, we'll be on our way."", 4: '1'}"
+466	466		301							"{2: 'Yata', 3: ""Though... to be honest, it's a bit disappointing. I was hoping to meet the legendary agent, but you ended up going separate ways."", 4: '1'}"
+467	467		301							"{3: ""Something in Yata's words strikes a chord.""}"
+468	468		302							{2: 'Could it be that Scarab was the only one sent because this support mission involves Ascendants?', 3: '469'}
+469	469		301							{2: 'Yata', 3: 'Who can say?', 4: '1'}
+470	470		302							"{2: '(Remain silent)', 3: '474', 4: ""Even now, you still don't trust me?"", 5: '471'}"
+471	471		301							"{2: 'Yata', 3: ""Of course, I'm not doubting you—I'm worried that some people need you to be questioned. Whether you did it or not doesn't matter to them, just like they don't care whether the future gets better."", 4: '1'}"
+472	472		302							{2: 'Whose side are you on?', 3: '473'}
+473	473		301							{2: 'Yata', 3: 'The side that keeps you from being convicted on baseless rumors.', 4: '1'}
+474	474		202							{1: '1'}
+475	475		301							{3: 'With a shrug and a smile, Yata jogs to catch up with Discord ahead.'}
+476	476		301							{3: 'Meanwhile, Gray Raven has finished regrouping, and Lucia has already reported all the key details of the operation.'}
+477	477		201							{1: '1', 2: '500166'}
+478	478		301							"{1: '1', 2: 'Lucia', 3: ""Commandant, we've received word that Luna has arrived at the designated location."", 4: '1'}"
+479	479		302							"{2: ""I'm ready as well."", 3: '480'}"
+480	480		302		1		AniZhuanchangBegin			"{2: ""Let's go."", 3: '481'}"

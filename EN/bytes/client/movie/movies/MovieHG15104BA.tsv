@@ -1,0 +1,88 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory45.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301							{3: '3:35 p.m., Command Central Office, Council Building'}
+4	4		302							{2: '(Knock on door)', 3: '5'}
+5	5		301							{2: '??', 3: 'Come in.'}
+6	111		401							{1: '2', 2: '1516'}
+7	6		301							{3: 'You enter the office to see Hassen flipping through files at his desk.'}
+8	7		301							"{3: ""...You notice Asimov's sloppy handwriting on some of the papers. Those must be the records from your previous failed simulation.""}"
+9	8		201							{1: '1', 2: '500011'}
+10	9		301							{1: '1', 2: 'Hassen', 3: 'Ah. Good afternoon, Gray Raven Commandant. Have you had a good rest these few days?', 4: '1'}
+11	10		302							{2: 'Pretty good.', 3: '11', 4: 'Not good at all.', 5: '12'}
+12	11	14	301							{2: 'Hassen', 3: 'You young people sure are energetic.', 4: '1'}
+13	12		301							"{2: 'Hassen', 3: ""You gotta be confident in yourself, young one! I trust that you'll be able to take on other jobs soon, right?"", 4: '1'}"
+14	13		302							{2: '...Yeah.', 3: '14'}
+15	14		301							"{2: 'Hassen', 3: ""I'd like to talk to you about your experience in simulated missions with Camu via remote connection and what you think about it."", 4: '1'}"
+16	15		301							"{2: 'Hassen', 3: ""I'll get straight to the point. The Council had a meeting over the data collected in your previous simulation."", 4: '1'}"
+17	16		301							"{2: 'Hassen', 3: ""I have two things I'd like to discuss."", 4: '1'}"
+18	17		301							"{2: 'Hassen', 3: ""First, the previous few simulated missions were indeed tougher—or, if I should say, they targeted Camu's weak spots especially. I'm sure you've noticed."", 4: '1'}"
+19	18		302							{2: 'Yeah. You wanted to find out his limits.', 3: '19'}
+20	19		301							"{2: 'Hassen', 3: ""It might seem cruel of us, but if we can't pinpoint and deal with the weak points during training, things would only get worse in a real battle."", 4: '1'}"
+21	20		302							"{2: 'I understand.', 3: '21', 4: ""You're being too hard on him."", 5: '21'}"
+22	21		301							"{2: 'Hassen', 3: ""We've adjusted the battle plans accordingly."", 4: '1'}"
+23	22		301							{2: 'Hassen', 3: 'We want to make sure that Camu deserves to be on the team despite all the risks he brings.', 4: '1'}
+24	23		301							"{2: 'Hassen', 3: ""That's why we want to reconfirm this."", 4: '1'}"
+25	24		301							{2: 'Hassen', 3: 'Commandant 【kuroname】, are you still willing to continue working with Camu in combat via remote M.I.N.D. connection?', 4: '1'}
+26	25		302							"{2: ""He's an excellent fighter..."", 3: '26'}"
+27	26		302							{2: 'And trustworthy.', 3: '27'}
+28	27		301							{2: 'Hassen', 3: '...Is that your answer?', 4: '1'}
+29	28		301							{2: 'Hassen', 3: 'I see.', 4: '1'}
+30	29		301							{2: 'Hassen', 3: 'Before you leave, I have one more thing to say.', 4: '1'}
+31	30		301							{2: 'Hassen', 3: 'I made the right choice assigning him to you, 【kuroname】.', 4: '1'}
+32	31		302							{2: 'I hope so.', 3: '32'}
+33	32		301							"{2: 'Hassen', 3: ""Perhaps you'd like to hear HIS choice."", 4: '1'}"
+34	33		302							{2: 'His choice?', 3: '34'}
+35	34		202							{1: '1'}
+36	35		301				AniZhuanchangBegin			{3: 'Hassen simply smiles in his usual benevolent way and gestures at you to close the door when you leave.'}
+37	36		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+38	37		301			AniZhuanchangEnd				{3: 'The corridor is empty. If your memory serves you, Camu should be in the office on the opposite side.'}
+39	38		302							{2: '(Wait for him)', 3: '39', 4: '(Leave)', 5: '40'}
+40	39	41	301							{3: 'You have just decided to wait when the office door opens.'}
+41	40		301							{3: 'You are about to leave when the office door opens.'}
+42	41		401							{1: '2', 2: '1516'}
+43	42		301				DialogDisable			{3: 'Camu comes striding out. The mild annoyance on his face is replaced by a constrained expression.'}
+44	43		201						1500.0	{1: '1', 2: '500175'}
+45	44		301			DialogEnable				{1: '1', 2: 'Camu', 3: 'What did they say to you?', 4: '1'}
+46	45		302							{2: 'They asked where you went last night.', 3: '46', 4: 'They asked if I wanted to keep working with you.', 5: '54'}
+47	46		301							{2: 'Camu', 3: 'O-Oh?', 4: '1'}
+48	47		202							{1: '1'}
+49	48		301							{3: 'Camu stares at you in suspicion.'}
+50	49		201							{1: '1', 2: '500175'}
+51	50		301							{1: '1', 2: 'Camu', 3: 'And what did you tell them?', 4: '1'}
+52	51		302							{2: 'I said you were with me.'}
+53	52		301							{2: 'Camu', 3: '?', 4: '1'}
+54	53		302							{2: 'Heh, just kidding.', 3: '56'}
+55	54		301							"{2: 'Camu', 3: ""That's what I thought."", 4: '1'}"
+56	55		202							{1: '1'}
+57	56		301							{3: 'Camu squints. Looks like he has already guessed the topic of your meeting.'}
+58	57		201							{1: '1', 2: '500175'}
+59	58		301							{1: '1', 2: 'Camu', 3: 'Hey. What did you tell them?', 4: '1'}
+60	59		302							{2: 'I declined, of course.', 3: '60', 4: 'I agreed, of course.', 5: '70'}
+61	60		301							"{3: ""Camu freezes, as if not expecting such a direct answer. It's rare to see him so baffled.""}"
+62	61		301							{2: 'Camu', 3: '...So you gave up on me, huh.', 4: '1'}
+63	62		301							{2: 'Camu', 3: 'Revolting. And you were spouting all those pretty words yesterday...', 4: '1'}
+64	63		302							{2: 'I was kidding.', 3: '64'}
+65	64		301							{2: 'Camu', 3: 'Do you really think I—uh, what?', 4: '1'}
+66	65		302							{2: 'I agreed.', 3: '66'}
+67	66		204							{1: '1', 2: '5'}
+68	67		301							{2: 'Camu', 3: '...Hey! Are you ******* trying to die? Playing with me like that?', 4: '1'}
+69	68		301							{3: 'Camu looks genuinely enraged.'}
+70	69		302							{2: 'My bad, my bad.', 3: '70', 4: 'I was just joking.', 5: '70'}
+71	70		301							"{1: '1', 2: 'Camu', 3: ""You won't find anyone better than me anyway."", 4: '1'}"
+72	71		302							{2: 'What did you choose, then?', 3: '72'}
+73	72		301							{2: 'Camu', 3: 'Is that important?', 4: '1'}
+74	73		302							{2: 'Of course.', 3: '74', 4: 'Just interested in your answer.', 5: '74'}
+75	74		301							"{2: 'Camu', 3: ""Enough. I'm not falling for that again!"", 4: '1'}"
+76	75		301							"{2: 'Camu', 3: ""I already agreed to cooperate from the time being. I'd rather you hone your skills a bit instead of acting like my therapist."", 4: '1'}"
+77	76		302							{2: 'Can we train together again?', 3: '77', 4: 'Can we eat together again?', 5: '78'}
+78	77	80	301							{2: 'Camu', 3: 'Of course. I want to shut that creepy nerd up with an impressive performance.', 4: '1'}
+79	78		301							{2: 'Camu', 3: 'Of course. You owe me.', 4: '1'}
+80	79		302							{2: 'When did I ever owe you—forget it.', 3: '80'}
+81	80		302							"{2: ""So I'll see you tomorrow in the training room, huh?"", 3: '81'}"
+82	81		204							{1: '1', 2: '1'}
+83	82		301							"{2: 'Camu', 3: ""You'd better not be late. I hate waiting."", 4: '1'}"
+84	83		302							"{2: ""You're the one who's always late..."", 3: '84'}"
+85	84		301							"{2: 'Camu', 3: ""I'm not the one asking you to come, though."", 4: '1'}"
+86	85		302							"{2: ""I'll be on time."", 3: '86'}"
+87	86		301		1		AniZhuanchangBegin			"{2: 'Camu', 3: ""You'd better be."", 4: '1'}"

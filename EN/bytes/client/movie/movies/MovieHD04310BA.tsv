@@ -1,0 +1,132 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		401							{1: '2', 2: '2915'}
+4	4		502							{1: 'RImgBg1BlowUp'}
+5	5		301			DialogEnable				{3: 'The warm sun rises high, approaching noon, as crowds of people course through the streets.'}
+6	6		301							"{3: ""The streets and shops bustle with extraordinary energy as couples excitedly experience their Amour Concerto Vouchers. Sweet nothings fill the air everywhere, and the pink Valentine's Day mood grows increasingly vibrant throughout Constellia.""}"
+7	7		301							{3: 'And yet, amidst the couples, there is a particular someone who seems utterly out of place.'}
+8	8		301				DialogDisable			{3: 'This is how things went in the morning when you ran into Alpha...'}
+9	9		401							{1: '2', 2: '4387'}
+10	10		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+11	11		504							{1: '0.7'}
+12	12		201							{1: '1', 2: '500610'}
+13	13		301			DialogEnable				{1: '1', 2: 'Alpha', 3: 'Want to look around together?', 4: '1'}
+14	14		302							"{2: ""Hey, I've never seen you ask anyone out."", 3: '15', 4: 'Sure you can.', 5: '16'}"
+15	15		301				DialogDisable			{2: 'Alpha', 3: 'Shut up and follow me.', 4: '1'}
+16	16		401							{1: '2', 2: '4387'}
+17	17		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+18	18		402							{1: '2915'}
+19	19		202							{1: '1', 6: '1'}
+20	20		401							{1: '2', 2: '4388'}
+21	21		504							{1: '0'}
+22	22		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory310.png'}
+23	23		301			DialogEnable				"{3: ""You remember feeling a little happy that Alpha is actually enjoying what Valentine's Day has to offer...""}"
+24	24		301				DialogDisable			{3: 'Except she never took part in any of the activities, and she kept her distance the entire time from the activities accessible with the Amour Concerto Vouchers.'}
+25	25		302							{2: 'Guys...', 3: '26'}
+26	26		302							{2: 'Are you really just gonna be like this the whole day?', 3: '27', 4: 'These things are more fun when you actually get involved.', 5: '27'}
+27	27		201							{1: '1', 2: '500610'}
+28	28		301			DialogEnable				{1: '1', 3: 'In a secluded, quiet building, Alpha leans against the wall and casts you a glance.'}
+29	29		301				DialogDisable			"{2: 'Alpha', 3: ""Be my guest if you want to do those things. I'm not stopping you."", 4: '1'}"
+30	30		302							"{2: ""That's not what I meant..."", 3: '31', 4: 'The point is these activities are meant to be enjoyed by two people together.', 5: '31'}"
+31	31		202							{1: '1'}
+32	32		301			DialogEnable				"{3: ""Judging from the way Alpha has been acting, you believe that she's not entirely uninterested in the activities. It's just that she's not interested enough to get involved.""}"
+33	33		301							{3: 'To get her to truly embrace the holiday spirit, someone needs to guide her along.'}
+34	34		401						600.0	{1: '2', 2: '4799'}
+35	35		402							{1: '4799'}
+36	36		301							{3: 'You pull out an Amour Concerto Voucher from your pocket that got shoved into your hand earlier when a staff member recognized you.'}
+37	37		302							{2: 'Want to try the official Amour Concerto Voucher activity?', 3: '38'}
+38	38		201							{1: '1', 2: '500610'}
+39	39		301							{1: '1', 2: 'Alpha', 3: 'You mean truth or Dare, huh...', 4: '1'}
+40	40		204							{1: '1', 2: '13'}
+41	41		301				DialogDisable			"{2: 'Alpha', 3: ""Whatever you want to ask or whatever you want me to do, just say it. You don't need to make things up. Mind you, though, you'll have to face whatever consequences there are."", 4: '1'}"
+42	42		302							"{2: 'I certainly can.', 3: '43', 4: ""That's not how you play this game!"", 5: '43', 6: ""Then I'll assume you've agreed."", 7: '43'}"
+43	43		202							{1: '1'}
+44	44		306							{1: '1'}
+45	45		401							{1: '2', 2: '4112'}
+46	46		301			DialogEnable	DialogDisable			"{3: ""At least she didn't refuse... With it, you open the Amour Concerto Voucher. There's a line written in eye-catching colors that says...""}"
+47	47		307							"{1: '<color=#ffffffff><size=50>""DARE! Give your partner a heart-racing \'kabedon\'!""</size></color>'}"
+48	48		301							"{3: '""DARE! Give your partner a heart-racing \'kabedon\'!""'}"
+49	49		307							{2: '1'}
+50	50		302							{2: '...', 3: '51', 4: '(A kabedon?)', 5: '51'}
+51	51		301			DialogEnable				"{3: 'Apparently knowing that ""kabedon"" is no common knowledge, whoever came up with this daring challenge has added a... rather bold illustration below the text showing how it\'s done.'}"
+52	52		306							
+53	53		201							{1: '1', 2: '500610'}
+54	54		301							{1: '1', 3: 'Having noticed your silence, Alpha faces you with interest.'}
+55	55		203							{1: '1', 2: '0.25', 4: '-20', 5: '-30'}
+56	56		204							{1: '1', 2: '13'}
+57	57		301							"{2: 'Alpha', 3: 'Looks like you\'ve drawn an ""interesting"" daring challenge.', 4: '1'}"
+58	58		202							{1: '1'}
+59	59		301							"{3: ""She chuckles without saying much, except it feels like she's said plenty.""}"
+60	60		301				DialogDisable			"{3: ""...That's when it hits you that you're in this too deep to call it quits now.""}"
+61	61		302							"{2: '(Take immediate action)', 3: '62', 4: ""Work with me here, Alpha. Stay against the wall and don't move."", 5: '62'}"
+62	62		401							{1: '2', 2: '4044'}
+63	63		104						200.0	{1: '0|-50|-100', 2: '0.3'}
+64	64		104						800.0	{1: '0|0|-100', 2: '0.5'}
+65	65		201							{1: '1', 2: '500610'}
+66	66		301			DialogEnable	DialogDisable			{1: '1', 2: 'Alpha', 3: 'Wait—', 4: '1'}
+67	67		202						800.0	{1: '1'}
+68	68		401							{1: '2', 2: '4044'}
+69	69		301			DialogEnable				"{3: ""As you approach her, Alpha tries to say something, but it's too late. Two steps later, you find looking Alpha in the eye.""}"
+70	70		201							{1: '1', 2: '500610'}
+71	71		301							{1: '1', 2: 'Alpha', 3: '...', 4: '1'}
+72	72		301							{3: 'Her sharp, piercing gaze meets yours directly.'}
+73	73		301				DialogDisable			{3: 'Alpha stares at you without moving... nor evading or stopping you...'}
+74	74		302							{2: '(Raise your hand and press it against the wall)', 3: '75'}
+75	75		401							{1: '2', 2: '4044'}
+76	76		203							{1: '1', 2: '0.5', 4: '-20', 5: '20'}
+77	77		301			DialogEnable				"{3: ""Alpha's gaze follows your hand to the side, then immediately returns to you.""}"
+78	78		301							"{3: ""Locking firmly onto your eyes, Alpha's gaze seems unusually serious, apparently searching for something or trying to dig up some hidden truth.""}"
+79	79		302							{2: '...', 3: '80'}
+80	80		301							{2: 'Alpha', 3: '...', 4: '1'}
+81	81		301							{3: 'The two of you are so physically close now that you seem able to see every subtle emotion in Alpha through her eyes. Her heterochromatic eyes appear cold as usual at first glance, but upon closer look...'}
+82	82		301							"{3: ""There seems to be a subtle ripple of emotion that doesn't quite match her usual composure.""}"
+83	83		301							"{3: ""A mood beyond description starts forming between the two of you when your gazes intertwine. Seconds tick by, and just as your poker face reaches its limit, Alpha's eyes begin to show a hint of suspicion at your prolonged silence.""}"
+84	84		301							"{2: 'Alpha', 3: ""It's over?"", 4: '1'}"
+85	85		202							{1: '1'}
+86	86		301							{3: 'According to the illustration from earlier, these are the only actions required.'}
+87	87		302							"{2: ""Think that'll do."", 3: '88', 4: '(Nod)', 5: '88'}"
+88	88		201							{1: '1', 2: '500610'}
+89	89		301							{1: '1', 2: 'Alpha', 3: 'Huff...', 4: '1'}
+90	90		301							"{3: ""When you see her let out a sigh, you can't tell whether it's a sigh of disappointment or relief.""}"
+91	91		301				DialogDisable			{2: 'Alpha', 3: 'Let me see that voucher you have.', 4: '1'}
+92	92		202							{1: '1'}
+93	93		401						600.0	{1: '2', 2: '4799'}
+94	94		402							{1: '4799'}
+95	95		301			DialogEnable				"{3: ""Says Bianca as she grabs your other hand. Before you know it, she's already taken the voucher you were holding and is now reading what it says.""}"
+96	96		201							{1: '1', 2: '500610'}
+97	97		301							"{1: '1', 2: 'Alpha', 3: ""So that's what it is, huh?"", 4: '1'}"
+98	98		204							{1: '1', 2: '13'}
+99	99		301							{2: 'Alpha', 3: 'Made me curious what you were gonna do when I saw that look on your face just now...', 4: '1'}
+100	100		302							{2: 'Was I looking super serious or something?', 3: '101', 4: 'What did you think I was going to do?!', 5: '101'}
+101	101		301				DialogDisable			{2: 'Alpha', 3: 'Well, do you plan on doing this forever?', 4: '1'}
+102	102		202						800.0	{1: '1'}
+103	103		401							{1: '2', 2: '4044'}
+104	104		104						200.0	{1: '0|50|-100', 2: '0.3'}
+105	105		104						800.0	{1: '0|0|-100', 2: '0.5'}
+106	106		301			DialogEnable				{3: 'Alpha presses the back of her hand against the underside of your arm and quickly pushes it upward, breaking free from your kabedon without breaking a sweat.'}
+107	107		301							{3: 'She takes two steps away. As she faces the alleyway, her expression becomes impossible to read in the interplay of light and shadow.'}
+108	108		201							{1: '1', 2: '500610'}
+109	109		301							"{1: '1', 2: 'Alpha', 3: ""This game was every bit as lame as I thought it'd be."", 4: '1'}"
+110	110		202							{1: '1'}
+111	111		301							{3: 'You were hoping this would help Alpha enjoy the holiday...'}
+112	112		301							{3: 'But it seems like it backfired on you.'}
+113	113		201							{1: '1', 2: '500610'}
+114	114		301							{1: '1', 2: 'Alpha', 3: 'But...', 4: '1'}
+115	115		204							{1: '1', 2: '13'}
+116	116		301							{3: 'Alpha turns around. The slanting sunlight now hangs from the corner of her mouth and paints a barely noticeable smile.'}
+117	117		301				DialogDisable			{2: 'Alpha', 3: 'It was quite the test of endurance, though.', 4: '1'}
+118	118		302							"{2: 'Test of endurance?', 3: '119', 4: ""Told you that's not what this game is all about!"", 5: '119'}"
+119	119		302							{2: 'Hmm, wait a second... You mean...', 3: '120'}
+120	120		202							{1: '1', 6: '1'}
+121	121		401							{1: '2', 2: '4044'}
+122	122		104						200.0	{1: '0|50|0', 2: '0.3'}
+123	123		104				RImgBg1Shake		800.0	{1: '0|0|0', 2: '0.5'}
+124	124		301			DialogEnable				"{3: ""Right then, a rush of air hits your face. Out of instinct, you step back until you're right up against the wall. Before you know it, Alpha is right up against you, her palm slamming against the wall with a loud thud.""}"
+125	125		201							{1: '1', 2: '500610', 3: '13', 5: '10', 6: '-200'}
+126	126		301							{1: '1', 3: 'The two of you find yourselves in a kabedon once again, except your roles are now reversed, and Alpha is now closer to you than you were to her.'}
+127	127		301							{2: 'Alpha', 3: 'We can draw a few more vouchers later.', 4: '1'}
+128	128		204							{1: '1', 2: '13'}
+129	129		301							"{2: 'Alpha', 3: ""I'll be the one in charge, though, if we end up drawing something like this again."", 4: '1'}"
+130	130		301							{2: 'Alpha', 3: 'Better be ready to pay for what you did...', 4: '1'}
+131	131		301		1		AniZhuanchangBegin			{2: 'Alpha', 3: 'There is no running away.', 4: '1'}

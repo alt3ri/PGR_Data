@@ -1,0 +1,334 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+2	2		401							{1: '1', 2: '204'}
+3	3		107						3000.0	{1: 'Babylonia', 2: 'Before departing for Constellia'}
+4	4		108							{1: '1'}
+5	5		301			DialogEnable				{3: 'You make your way through the maze of intersecting corridors, slowing down at the next junction. Glancing around, you confirm no one is on your tail before taking a left into a little-used side passage.'}
+6	6		301							{3: 'The hallway is lined with tightly closed doors, each numbered and otherwise indistinguishable.'}
+7	7		301							{3: 'Continuing onward, you finally come to a stop at the last door at the end, the one with the highest number.'}
+8	8		302							{2: '(Knock on the door)', 3: '9'}
+9	9		401							{1: '2', 2: '2626'}
+10	10		301							{3: 'Knock, knock—'}
+11	11		301							{3: 'The moment you knock, the air seems to tighten.'}
+12	12		301							"{3: ""For a while, there's only silence. Then, at last, a cautious reply comes from inside.""}"
+13	13		301							{2: '???', 3: 'Who is it?', 18: '100004914'}
+14	14		302							"{2: ""It's me."", 3: '15', 4: '【kuroname】.', 5: '15'}"
+15	15		301							{3: 'Even through the door, you can still catch what sounds like a relieved sigh on the other side.'}
+16	16		401							{1: '2', 2: '2858'}
+17	17		301				AniZhuanchangBegin			"{3: ""One second, the door is shut tight; the next, it swings open. You don't even have time to see what's happening before you're pulled inside.""}"
+18	18		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory595.jpg'}
+19	19		301			AniZhuanchangEnd				{3: 'Inside the warehouse-like room, a pink-haired Construct crouches by the slightly open door, carefully watching the space outside.'}
+20	20		302							"{2: ""No need to be so tense. I keep a close watch on my way here, and I'm sure no one notices me."", 4: ""No one's following... probably.""}"
+21	21		201							{1: '1', 2: '500864'}
+22	22		301							"{1: '1', 2: 'Teddy', 3: ""It's the holiday season, so people aren't stuck at their desks like usual—plus, you're pretty famous..."", 4: '1', 18: '100004915'}"
+23	23		202							{1: '1'}
+24	24		301							{3: 'You figure out which of the two teacups on the coffee table is yours, grab some tea leaves from the side compartment, and brew a fresh cup.'}
+25	25		301							{3: 'You take a sip—the temperature and taste are perfect.'}
+26	26		302							"{2: ""If you're so worried about getting caught,"", 3: '27'}"
+27	27		302							{2: 'why set up your secret base so close to the Engineering Force in the first place?', 3: '28', 4: 'might as well move it somewhere farther away.', 5: '28'}
+28	28		201							{1: '1', 2: '500864', 3: '2'}
+29	29		301							{1: '1', 2: 'Teddy', 3: 'The most dangerous place is the safest.', 4: '1', 18: '100004916'}
+30	30		301							"{2: 'Teddy', 3: ""Karenina would never imagine I've been hiding in the Engineering Force's warehouse, right under her nose."", 4: '1', 18: '100004917'}"
+31	31		204							{1: '1'}
+32	32		301							"{2: 'Teddy', 3: ""I put a lot of effort into finding this. Besides me, you're the only one who knows, so do not let anything slip. I really don't want to move again."", 4: '1', 18: '100004918'}"
+33	33		302							{2: 'You can count on me.', 3: '34', 4: 'Yeah.', 5: '34'}
+34	34		202							{1: '1'}
+35	35		301							"{3: ""Teddy checks outside to make sure no one's around, then shuts the door tight.""}"
+36	36		201							{1: '1', 2: '500864'}
+37	37		301							"{1: '1', 2: 'Teddy', 3: ""Why are you here so early? We've still got a whole hour and a half before our meeting time."", 4: '1', 18: '100004919'}"
+38	38		301							"{2: 'Teddy', 3: ""You could've given me some advance notice. That sudden knock nearly scared me half to death."", 4: '1', 18: '100004920'}"
+39	39		202							{1: '1'}
+40	40		301							{3: 'She heads for the sofa, casually scooping up your cup of black tea on the way.'}
+41	41		201							{1: '1', 2: '500864', 3: '1'}
+42	42		301							{1: '1', 2: 'Teddy', 3: 'Think of this as compensation for that.', 4: '1', 18: '100004921'}
+43	43		302							{2: 'I just brewed it.', 3: '44', 4: '...', 5: '44'}
+44	44		204							{1: '1', 2: '2'}
+45	45		301							"{2: 'Teddy', 3: ""Don't worry, I'm not picky about your technique."", 4: '1', 18: '100004922'}"
+46	46		202							{1: '1'}
+47	47		401							{1: '2', 2: '4688'}
+48	48		301							"{3: ""Teddy settles back into the sofa, and with a snap of the fingers, a giant screen materializes in mid-air from the terminal's projection.""}"
+49	49		301							"{3: ""The screen is divided into three parts. The left and center are crammed with dense text, and the right one shows a sprawling bird's-eye view of Constellia.""}"
+50	50		302							{2: 'Are you... working right now?', 3: '51'}
+51	51		201							{1: '1', 2: '500864'}
+52	52		301							"{1: '1', 2: 'Teddy', 3: ""No chance. I'd never work on my day off—no way, no how."", 4: '1', 18: '100004923'}"
+53	53		301							{3: 'She pats the empty seat beside her, inviting you over.'}
+54	54		301							"{2: 'Teddy', 3: ""Come on, take a look at the ultimate plan I've put together for our trip to Constellia."", 4: '1', 18: '100004924'}"
+55	55		301							{3: 'You sit down next to Teddy, watching her move her finger as she matches each entry from the list on the left to the coordinates on the map on the right.'}
+56	56		301							{2: 'Teddy', 3: 'The communal apartment that Babylonia set us up with last time? The rooms were unbearably tiny, and the internet was so sluggish it took ages just to load a forum.', 4: '1', 18: '100004925'}
+57	57		204							{1: '1', 2: '1'}
+58	58		301							"{2: 'Teddy', 3: ""But check out this spot I've found: an ocean-view place with a private beach, literally just a stairway away from the water. Best of all, there's a dedicated fiber connection, so the speeds are totally solid."", 4: '1', 18: '100004926'}"
+59	59		301							"{2: 'Teddy', 3: ""And that's not all—there's Sunset Rock, an undersea boardwalk, and a fishing village nearby..."", 4: '1', 18: '100004927'}"
+60	60		301							"{2: 'Teddy', 3: ""I've selected each location after careful research and run the sequence through a program to avoid backtracking—this route will let us experience them all in a single day."", 4: '1', 18: '100004928'}"
+61	61		301							{2: 'Teddy', 3: 'Now comes the most important part—', 4: '1', 18: '100004929'}
+62	62		301							{3: 'She slides her finger across the screens, merging all three into one and revealing a grand stage right before you.'}
+63	63		301							{2: 'Teddy', 3: 'Bonfire Concert!', 4: '1', 18: '100004930'}
+64	64		301							{3: 'You heard from Teddy that Bonfire Concert is huge, with plenty of top-tier bands in the lineup.'}
+65	65		302							"{2: ""You mentioned how crowded it gets and how hard it is to get tickets, so you still haven't decided if you're going."", 3: '66'}"
+66	66		204							{1: '1', 2: '1'}
+67	67		301							"{2: 'Teddy', 3: ""Here's the first surprise—check this out!"", 4: '1', 18: '100004931'}"
+68	68		301							{3: 'Teddy pulls two gleaming golden tickets from her pocket.'}
+69	69		301							"{3: ""You take a closer look and see they're concert tickets—prime seats right up front!""}"
+70	70		204							{1: '1', 2: '2'}
+71	71		301							{2: 'Teddy', 3: 'Leonardo may not be reliable for the big stuff, but he sure comes through for these random little favors.', 4: '1', 18: '100004932'}
+72	72		301							{2: 'Teddy', 3: 'So, Commandant, getting excited about our upcoming adventure?', 4: '1', 18: '100004933'}
+73	73		302							{2: 'Um... about that...', 3: '74'}
+74	74		301							"{3: ""The words cling to your throat, sharp and unspoken. But Teddy's already moved on, bulldozing through the silence like it's yesterday's news.""}"
+75	75		301							{3: 'She gives the sleeve of your Gray Raven uniform a quick tug.'}
+76	76		301							{2: 'Teddy', 3: 'Remember to change out of that uniform. Why are you still dressed for duty on vacation...?', 4: '1', 18: '100004934'}
+77	77		301							"{2: 'Teddy', 3: ""Wait, don't tell me you don't have anything for the beach."", 4: '1', 18: '100004935'}"
+78	78		301							"{2: 'Teddy', 3: ""There's a clothing store in Constellia run by mechanoids—they're pretty fast at making new outfits. Also, I still have a few designs made for you before... want to pick one?"", 4: '1', 18: '100004936'}"
+79	79		301							"{2: 'Teddy', 3: ""By the way, here's a little tip: there's a hidden surprise in this clothing store, and you'll discover it once you arrive."", 4: '1', 18: '100004937'}"
+80	80		202							{1: '1'}
+81	81		301							"{3: ""Teddy is in high spirits—it's not often she gets this excited. You can see she's really looking forward to your holiday getaway.""}"
+82	82		301							"{3: 'That\'s exactly why breaking the news—""I have a last-minute work assignment, so I can\'t go with you anymore""—is so hard to say...'}"
+83	83		301							{3: 'But...'}
+84	84		302							"{2: ""(Don't tell her for now)"", 3: '85', 4: '(Tell her)', 5: '98'}"
+85	85		201							{1: '1', 2: '500864', 3: '1'}
+86	86		301							{1: '1', 2: 'Teddy', 3: 'Of these outfit designs, I recommend this one. The color seems pretty...', 4: '1', 18: '100004938'}
+87	87		301							"{2: 'Teddy', 3: ""Commandant, what's with that look?"", 4: '1', 18: '100004939'}"
+88	88		202							{1: '1'}
+89	89		301							"{3: ""It's like Teddy suddenly catches on. She stops mid-action, turns fully toward you, and stares intently for a good while.""}"
+90	90		201							{1: '1', 2: '500864', 3: '4'}
+91	91		301							{1: '1', 2: 'Teddy', 3: '...Are you hiding something from me?', 4: '1', 18: '100004940'}
+92	92		302							{2: 'N-no...'}
+93	93		204							{1: '1', 2: '2'}
+94	94		301							"{2: 'Teddy', 3: ""You think you can fool me? Don't forget, I still have that picture of you napping during the meeting."", 4: '1', 18: '100004941'}"
+95	95		301							"{2: 'Teddy', 3: ""So be honest—what's going on?"", 4: '1', 18: '100004942'}"
+96	96		202							{1: '1'}
+97	97		301							"{3: ""...She has caught you. There's no way you can hide it anymore.""}"
+98	98		302							{2: 'Umm, Teddy...', 3: '99'}
+99	99		201							{1: '1', 2: '500864'}
+100	100		301							{1: '1', 2: 'Teddy', 3: 'Hmm?', 4: '1', 18: '100004943'}
+101	101		302							"{2: ""Sorry, I can't go with you anymore."", 3: '102'}"
+102	102		302							"{2: ""Work's come up..."", 3: '103'}"
+103	103		204							{1: '1'}
+104	104		301							{2: 'Teddy', 3: '...', 4: '1', 18: '100004944'}
+105	105		301							"{3: ""Teddy's eyebrows slowly droop.""}"
+106	106		301							"{2: 'Teddy', 3: ""That can't be right..."", 4: '1', 18: '100004945'}"
+107	107		301							{3: 'She scrolls through her terminal, checking for something.'}
+108	108		301							"{2: 'Teddy', 3: ""I've checked your schedule and there's nothing planned..."", 4: '1', 18: '100004946'}"
+109	109		301							{3: 'The girl widens her eyes, her finger stopping halfway through a swipe on the screen.'}
+110	110		301							{2: 'Teddy', 3: 'On duty? Since when was that on there?', 4: '1', 18: '100004947'}
+111	111		302							{2: 'Updated just now...', 3: '112'}
+112	112		301							"{3: ""You meet Teddy's confused gaze, trying to figure out the best way to explain.""}"
+113	113		302							{2: 'Strange rumors have been swirling through certain areas of Constellia these days.', 3: '114'}
+114	114		302							"{2: ""To keep everyone safe, they're putting ten people on watch."", 3: '115'}"
+115	115		302							"{2: ""And to make it fair, they held a lottery among everyone who's off-duty..."", 3: '116'}"
+116	116		301							{2: 'Teddy', 3: 'Why am I just hearing about this now?', 4: '1', 18: '100004948'}
+117	117		302							{2: 'I only discovered it because my name came up in the draw...', 3: '118'}
+118	118		301							"{2: 'Teddy', 3: ""So among all the people, you're the one who gets picked?"", 4: '1', 18: '100004949'}"
+119	119		302							{2: 'Yes...', 3: '120', 4: '...', 5: '120'}
+120	120		301							{2: 'Teddy', 3: 'And this entire travel plan is ruined now?', 4: '1', 18: '100004950'}
+121	121		302							{2: 'You can still go...', 3: '122', 4: '...', 5: '122'}
+122	122		204							{1: '1', 2: '3'}
+123	123		301							{2: 'Teddy', 3: '...', 4: '1'}
+124	124		301							{3: 'Teddy goes quiet, a sharp turn from how excited she was a moment ago.'}
+125	125		301							{3: 'That sudden silence really has you on edge...'}
+126	126		301							"{3: ""Even though there's a slip-up, you know it's ultimately your fault, and all her high hopes—along with the plan she carefully devised—are now ruined...""}"
+127	127		301							"{2: 'Teddy', 3: ""Sigh... So that's what's going on..."", 4: '1', 18: '100004951'}"
+128	128		301							{3: 'As you listen to that heavy sigh, you feel that sense of guilt weighing on you even more.'}
+129	129		302							"{2: ""(Anyway, I'm going to apologize first...)"", 3: '130', 4: '(I need to figure out a way to make her feel better.)', 5: '130'}"
+130	130		204							{1: '1', 2: '5'}
+131	131		301							"{2: 'Teddy', 3: ""Turns out it's your fault my program is throwing errors!"", 4: '1', 18: '100004952'}"
+132	132		302							"{2: ""I'm really sorry about... Wait, what did you just say?"", 3: '133', 4: '...?', 5: '133'}"
+133	133		204							{1: '1', 2: '5'}
+134	134		301							"{2: 'Teddy', 3: ""I'm talking about that program I showed you last week. I've been wondering why it keeps crashing."", 4: '1', 18: '100004953'}"
+135	135		204							{1: '1', 2: '5'}
+136	136		301							"{2: 'Teddy', 3: 'Now I see the issue is on your side. I shouldn\'t have let you press ""start""—your bad luck was rubbing off on it!', 4: '1', 18: '100004954'}"
+137	137		302							{2: 'Huh?', 3: '138', 4: 'Is that really a thing?', 5: '138'}
+138	138		204							{1: '1', 2: '2'}
+139	139		301							"{2: 'Teddy', 3: ""What's with that skeptical look? Team-wide draw, only ten spots, and you still get picked. Are you seriously telling me your luck isn't terrible enough?"", 4: '1', 18: '100004955'}"
+140	140		204							{1: '1', 2: '2'}
+141	141		301							"{2: 'Teddy', 3: ""Anyway, hahaha... It's a team-wide lottery with just ten winners, and you still manage to land one. Hahaha..."", 4: '1', 18: '100004956'}"
+142	142		301							"{2: 'Teddy', 3: ""Ahem. Esteemed 【kuroname】, what's your take on getting roped into work like this during your time off? How are you feeling about it right now?"", 4: '1', 18: '100004957'}"
+143	143		202							{1: '1'}
+144	144		301							{3: 'Teddy pretends to hold a microphone and starts the interview with a barely contained laugh.'}
+145	145		301							"{3: ""There isn't any bitterness over ruined expectations or the heartbreak of a carefully plotted plan gone to waste. All that remains on that unstoppable grin is pure, unfiltered schadenfreude.""}"
+146	146		302							{2: 'Well...', 3: '147', 4: '...', 5: '147'}
+147	147		301							"{3: ""This twist is nothing like you imagined, and for a moment, you don't even know how to respond.""}"
+148	148		201							{1: '1', 2: '500864', 3: '1'}
+149	149		301							{1: '1', 2: 'Teddy', 3: 'I mean, seeing how grim you looked just a moment ago, I really thought someone blew up Constellia. I never imagined it would just be something like this...', 5: '1', 18: '100004958'}
+150	150		301							{2: 'Teddy', 3: 'Even though the odds are slim, you still walk right into this. Talk about rotten luck... Ha...', 5: '1', 18: '100004959'}
+151	151		301							"{2: 'Teddy', 3: 'Why the long face? Are you expecting me to pat your head and say, ""There, there, everything\'s fine""?', 5: '1', 18: '100004960'}"
+152	152		302							{2: 'I certainly am.', 3: '153', 4: 'No way!', 5: '154'}
+153	153		301							{2: 'Teddy', 3: 'Oh, come on. Even Victoria is more mature than you.', 5: '1', 18: '100004961'}
+154	154		301							"{3: ""The twist is nothing you imagined, but there's no sign of that gloomy mood you were dreading. Overall, it feels much lighter now.""}"
+155	155		204							{1: '1'}
+156	156		301							{2: 'Teddy', 3: 'So what do you plan to do? Gonna suck it up and clock in, or...?', 5: '1', 18: '100004962'}
+157	157		302							"{2: ""After all, it's work—I have to treat it seriously."", 3: '158', 4: ""Can't fight fate. I mean duty's duty—I'm going."", 5: '158'}"
+158	158		302							"{2: ""Anyway, here's how I see it..."", 3: '159'}"
+159	159		202							{1: '1'}
+160	160		301							"{3: ""You're stationed at an abandoned apartment building. Every night, weird noises come from inside, like something's wandering around. Babylonia has checked it out a few times, but they never find anything.""}"
+161	161		301							{3: 'Being on duty is meant to prevent any unexpected trouble inside the apartment and to keep curious people from wandering in and getting hurt.'}
+162	162		301							{3: 'But if you investigate the truth behind this abandoned apartment now, you can free up your schedule and follow your original plan to go have fun with Teddy.'}
+163	163		302							{2: '(Share your idea with Teddy)', 3: '164'}
+164	164		201							{1: '1', 2: '500864'}
+165	165		301							{1: '1', 2: 'Teddy', 3: 'Not a bad idea. So, how far along are you in your investigation?', 4: '1', 18: '100004963'}
+166	166		302							"{2: ""I haven't actually started yet..."", 3: '167', 4: 'Ugh...'}"
+167	167		301							{3: 'You received the notice only not long ago, and you rushed here the moment I heard the news.'}
+168	168		301							{2: 'Teddy', 3: 'For strange incidents like this, clues are usually scattered and incomplete. Simply gathering them takes a lot of time, especially when they might contradict each other or blur the line between fact and fiction.', 4: '1', 18: '100004964'}
+169	169		301							"{2: 'Teddy', 3: 'Even if you manage to dig up a key piece of evidence right away, all it reveals is likely just the ""past."" Unraveling the present truth from those old fragments is anything but easy.', 4: '1', 18: '100004965'}"
+170	170		204							{1: '1', 2: '2'}
+171	171		301							"{2: 'Teddy', 3: ""There's been no progress so far. Are you really going to gamble on luck to hit the jackpot? Especially with YOUR luck?"", 4: '1', 18: '100004966'}"
+172	172		302							"{2: 'Is it already too late...?', 3: '173', 4: ""Can't you put it more optimistically?"", 5: '173'}"
+173	173		301							"{2: 'Teddy', 3: ""If you're by yourself, you definitely won't make it in time."", 4: '1', 18: '100004967'}"
+174	174		204							{1: '1', 2: '1'}
+175	175		301							"{2: 'Teddy', 3: ""But if you get someone who's a whiz at all things digital—able to collect data fast, sort through clues, and keep a sharp mind—there's still hope."", 4: '1', 18: '100004968'}"
+176	176		301							"{2: 'Teddy', 3: ""It's not easy to find someone like that, but I happen to know a perfect candidate who checks all the boxes—and the fee is a real bargain: just one glass of cherry-flavored electrolyte."", 4: '1', 18: '100004969'}"
+177	177		301							{2: 'Teddy', 3: 'Commandant, do you want to hire this candidate?', 4: '1', 18: '100004970'}
+178	178		302							"{2: ""...Even if we have two people working, we probably won't finish on time."", 3: '179'}"
+179	179		204							{1: '1', 2: '3'}
+180	180		301							{2: 'Teddy', 3: 'But if we tap into our vacation...', 4: '1', 18: '100004971'}
+181	181		302							{2: 'I decide not to hire this candidate, then.', 3: '182'}
+182	182		204							{1: '1'}
+183	183		301							{2: 'Teddy', 3: 'At least give it a try. Who knows what might happen...', 4: '1', 18: '100004972'}
+184	184		301							"{3: ""You shake your head, cutting Teddy off. You know that your bad luck is yours alone, and you won't let it spoil the vacation she worked so hard to plan.""}"
+185	185		301							"{2: 'Teddy', 3: ""You're really not hiring? Right now, all it costs is one glass of cherry-flavored electrolyte. Any later, and the price goes up—then you'll be the one begging."", 4: '1', 18: '100004973'}"
+186	186		204							{1: '1', 2: '13'}
+187	187		301							"{2: 'Teddy', 3: ""Or is it that... you just don't think I'm worth it?"", 4: '1', 18: '100004974'}"
+188	188		301							{3: 'Teddy lifts her chin, puts her hands on her hips, and glares with surprising ferocity.'}
+189	189		302							{2: '(Pulls out cherry-flavored electrolyte from the cooler after a moment of consideration)', 3: '190'}
+190	190		204							{1: '1', 2: '1'}
+191	191		301							{2: 'Teddy', 3: 'Hmph, now...', 4: '1', 18: '100004975'}
+192	192		302							"{2: ""Now you're grabbing the camera and recording all the fun moments at the concert."", 3: '193'}"
+193	193		204							{1: '1'}
+194	194		301							{2: 'Teddy', 3: 'Wait a second!', 4: '1', 18: '100004976'}
+195	195		202							{1: '1'}
+196	196		301							{3: 'She stands up and sets the glass down on the coffee table with a decisive thud.'}
+197	197		302							"{2: ""You've already had it, so don't even think about backing out now."", 3: '198'}"
+198	198		301							{3: 'You point at the half-empty electrolyte glass. Teddy looks ready to protest, but no words come. Her mouth opens and closes, frustration written on her face.'}
+199	199		302							"{2: ""All right, that's decided. I've got a meeting in a bit."", 3: '200'}"
+200	200		301							"{3: ""Teddy doesn't say a word. She plops down on the sofa, sulking, and pointedly turns her face away.""}"
+201	201		302							"{2: ""Don't forget to send me the videos once you finish recording."", 3: '202'}"
+202	202		201							{1: '1', 2: '500864', 3: '5'}
+203	203		301							{1: '1', 2: 'Teddy', 3: 'Yeah, hurry up...', 4: '1', 18: '100004977'}
+204	204		202							{1: '1'}
+205	205		301							{3: 'She waves her hand outward in annoyance.'}
+206	206		301							{3: 'The human leaves, and the room falls silent. Teddy stays curled on the sofa, completely still.'}
+207	207		301							{3: 'After a moment, she straightens her tilted head, her pink eyes shifting to the open doorway, where nothing remains.'}
+208	208		301							{3: 'Open... and nothing remains...'}
+209	209		301							{3: 'Open...?'}
+210	210		201							{1: '1', 2: '500864'}
+211	211		301							{1: '1', 2: 'Teddy', 3: 'Hey!', 4: '1', 18: '100004978'}
+212	212		301							{3: 'She leaps off the sofa, crosses the room in a few quick strides, grabs the doorknob, and slams the door with a loud thud.'}
+213	213		204							{1: '1', 2: '14'}
+214	214		301							{2: 'Teddy', 3: 'Close the door on your way out!', 4: '1', 18: '100004979'}
+215	215		202							{1: '1'}
+216	216		301							{3: 'She mumbles under her breath, resting her head against the door for a moment. Then, as if utterly drained, she staggers back to the sofa and collapses onto it.'}
+217	217		301							"{3: ""Her gaze drifts from the two concert tickets on the table to the glowing travel guide on the terminal, before finally settling on the mechanoid-run clothing store highlighted on Constellia's bird's-eye map.""}"
+218	218		301							{3: 'A single tap, and a notification pops up.'}
+219	219		301							"{3: '""Dear Customer, your order KH7004215303642 is now complete. For questions about custom coatings, please contact customer service...""'}"
+220	220		201							{1: '1', 2: '500864', 3: '14'}
+221	221		301							"{1: '1', 2: 'Teddy', 3: ""I was hoping you'd be the first to check it out..."", 5: '1', 18: '100004980'}"
+222	222		202							{1: '1'}
+223	223		301							{3: 'Teddy lounges sideways on the sofa, idly tapping the terminal screen.'}
+224	224		301							"{3: 'By the time she comes to her senses, she finds herself unconsciously looking up everything she can about ""Constellia"" and the ""abandoned apartment.""'}"
+225	225		301							"{3: ""After a moment's pause, Teddy switches off the screen and tosses the terminal aside.""}"
+226	226		301							{3: 'She flips over on the sofa and buries her face in the cushion.'}
+227	227		201							{1: '1', 2: '500864', 3: '14'}
+228	228		301							"{1: '1', 2: 'Teddy', 3: ""Hmph. You're the one who said you didn't need my help..."", 4: '1', 18: '100004981'}"
+229	229		202							{1: '1'}
+230	230		301							{3: 'The scene holds for several seconds before the pink-haired Construct suddenly pushes herself up, reaching out to grab the terminal she threw aside.'}
+231	231		301							{3: 'She turns it on, and the screen displays the data she just looked up—details about the abandoned apartment in Constellia.'}
+232	232		201							{1: '1', 2: '500864', 3: '3'}
+233	233		301							{1: '1', 2: 'Teddy', 3: 'Urban legends... strange noises...', 4: '1', 18: '100004982'}
+234	234		301				AniZhuanchangBegin			{3: 'She seems lost in thought.'}
+235	235		202			DialogDisable				{1: '1', 6: '1'}
+236	236		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory7.jpg'}
+237	237		107			AniZhuanchangEnd			3000.0	{1: 'Constellia at night', 2: 'Entrance to the abandoned apartment'}
+238	238		108							{1: '1'}
+239	239		301			DialogEnable				"{3: ""Even though you try your best, you just can't uncover the truth ahead of schedule.""}"
+240	240		301							"{3: 'You send this bad news to Teddy through your terminal, and you get a cheeky ""Told you so"" Brownie sticker in return.'}"
+241	241		301							{3: 'You roam your patrol zone as requested, but seriously...'}
+242	242		302							"{2: ""There isn't a single soul around."", 3: '243'}"
+243	243		301							{3: 'It has stayed empty as far as you can see.'}
+244	244		301							{3: 'Makes sense, though. With all the vibrant nightscapes in Constellia, who would come wandering into this desolate ruin for fun?'}
+245	245		301							{3: 'Standing guard pretty much means you are just pacing around or flicking a blade of grass to shoo away the mosquitoes.'}
+246	246		301							{3: 'To imagine how much longer this routine will drag on...'}
+247	247		302							"{2: ""It's dull, but hey, a little boredom is better than trouble."", 3: '248', 4: ""I wouldn't mind a bit of excitement right now."", 5: '248'}"
+248	248		301							{3: 'You look toward the southwest and barely catch the bright lights from the Bonfire Concert.'}
+249	249		301							"{3: ""It's nothing like where you are—Teddy must be having the time of her life right now.""}"
+250	250		301							"{3: ""She's probably so caught up she forgot to send any updates. She hasn't sent another message since that Brownie sticker—not even the video you mentioned before heading out.""}"
+251	251		302							{2: 'Should I nudge her about it later?', 3: '252', 4: 'Nah, I should let her have a good time.', 5: '252'}
+252	252		301							{2: '???', 3: 'Ha—', 18: '100004983'}
+253	253		301							{3: 'A sudden chill hits your cheek, and you shudder without thinking.'}
+254	254		301							{2: '???', 3: 'Caught you slacking on your shift. Are you trying to get your pay docked?', 18: '100004984'}
+255	255		201							{1: '1', 2: '500998', 3: '1'}
+256	256		301							{1: '1', 3: 'You glance over. The pink-haired Construct wears a faint smile, and the icy can in her hand glistens with condensation.'}
+257	257		302							{2: 'Teddy?!', 3: '258'}
+258	258		301							{2: 'Teddy', 3: 'Then...', 4: '1', 18: '100004985'}
+259	259		301							{3: 'As soon as you come to your senses, a cherry-red can is right in front of you, and you scramble clumsily to catch it.'}
+260	260		301							{3: 'The chilled drink settles into your palm, its icy coolness jolting you awake from your shock.'}
+261	261		301							{3: 'A dozen questions flood your mind, but one demands immediate attention.'}
+262	262		302							"{2: ""What... is that outfit you're wearing?"", 3: '263'}"
+263	263		204							{1: '1', 2: '1'}
+264	264		301							{2: 'Teddy', 3: 'This new coating? I designed it myself. What do you think?', 4: '1', 18: '100004986'}
+265	265		202							{1: '1'}
+266	266		301							{3: 'She twirls around, showing off her new look.'}
+267	267		302							{2: 'You look great.', 3: '268', 4: 'Looks good to me.', 5: '268'}
+268	268		201							{1: '1', 2: '500998', 3: '1'}
+269	269		301							{1: '1', 2: 'Teddy', 3: 'So, do you like it?', 4: '1', 18: '100004987'}
+270	270		301							"{3: ""The second question feels similar to the first one, but there's something distinctly different about it.""}"
+271	271		301							{3: 'Noticing your short pause, Teddy gives a smug little grin, clearly pleased.'}
+272	272		204							{1: '1', 2: '2'}
+273	273		301							"{2: 'Teddy', 3: ""I'm trying to find out if this coating works for me. Not just its design, but how it looks on me overall."", 4: '1', 18: '100004988'}"
+274	274		302							"{2: 'Well then, why not just come right out and ask if it suits you...', 3: '275', 4: ""It's spot-on."", 5: '275'}"
+275	275		204							{1: '1', 2: '1'}
+276	276		301							"{2: 'Teddy', 3: ""You sound not exactly thrilled, but well, I'll take that..."", 4: '1', 18: '100004989'}"
+277	277		301							"{3: ""She's muttering something under her breath.""}"
+278	278		301							{3: 'You open the can and take a sip. The icy drink slides down your throat, and in this scorching heat, you feel refreshed from the inside out.'}
+279	279		301							{3: 'You take this moment to clear your head.'}
+280	280		302							"{2: 'Did the Bonfire Concert end early?', 3: '281', 4: ""You didn't go to the Bonfire Concert?"", 5: '281'}"
+281	281		204							{1: '1', 2: '1'}
+282	282		301							{2: 'Teddy', 3: 'No. Honestly, this place feels more fun than the Bonfire Concert.', 4: '1', 18: '100004990'}
+283	283		301							"{2: 'Teddy', 3: ""Don't worry about the tickets. I gave them all out."", 4: '1', 18: '100004991'}"
+284	284		302							{2: 'You really think this place is more fun than the Bonfire Concert?', 3: '285'}
+285	285		301							{3: 'You look around at the tangle of wild grass and creeping vines.'}
+286	286		302							{2: 'Are you sure?', 3: '287'}
+287	287		301							{2: 'Teddy', 3: 'Commandant, have you found out anything about this abandoned apartment building?', 4: '1', 18: '100004992'}
+288	288		202							{1: '1'}
+289	289		301							"{3: 'Based on some scattered clues, you have indeed made some headway—just as Teddy predicted—piecing together a story from the ""past.""'}"
+290	290		301							"{3: ""It's said that a group of children used to come here at night to play hide-and-seek. One girl, always found first, was determined to stay hidden till the end, slipping into a toppled wardrobe.""}"
+291	291		301							{3: 'Before long, everyone else was found except her. The other kids figured she became bored of being found first and must have gone home, so they stopped searching and left.'}
+292	292		301							{3: 'She remained hiding for a long time, feeling happy about not being found. But when she finally tried to leave the wardrobe, rusted metal shifted and jammed the doors, trapping her inside.'}
+293	293		301							{3: 'She screamed for help, but no one heard her.'}
+294	294		301							{3: 'This child had always been overlooked in her family, and by the time everyone realized she was missing and started searching for her, it was already too late.'}
+295	295		201							{1: '1', 2: '500998'}
+296	296		301							"{1: '1', 2: 'Teddy', 3: ""It's a heartbreaking story."", 4: '1', 18: '100004993'}"
+297	297		302							{2: 'Yes, exactly. And ever since then...', 3: '298'}
+298	298		301							"{3: ""Since then, every night in this abandoned apartment, strange noises echo through the halls—like something's still stuck inside, unable to find its way out.""}"
+299	299		301							"{2: 'Teddy', 3: ""Don't you think it feels like a classic urban legend?"", 4: '1', 18: '100004994'}"
+300	300		302							"{2: 'It sure does.', 3: '301', 4: ""Eh, it's nothing too special."", 5: '301'}"
+301	301		302							"{2: ""But here's the main point: this apartment really does make strange noises at night."", 3: '302'}"
+302	302		204							{1: '1', 2: '2'}
+303	303		301							{2: 'Teddy', 3: 'Commandant, have you actually heard those weird sounds yourself?', 4: '1', 18: '100004995'}
+304	304		302							"{2: 'No.', 3: '305', 4: ""I'm on guard duty outside."", 5: '305'}"
+305	305		302							{2: 'Hold on—are you thinking of...?', 3: '306'}
+306	306		301							{3: 'Teddy nods, a mischievous smile on her face.'}
+307	307		302							"{2: 'I refuse.', 3: '308', 4: ""Do you remember why I'm on guard duty to begin with?"", 5: '308'}"
+308	308		301							"{2: 'Teddy', 3: ""Imagine if someone sneaks in and something goes wrong. They'd be stuck—like that girl trapped in the wardrobe—waiting for someone to rescue them."", 4: '1', 18: '100004996'}"
+309	309		302							"{2: 'That\'s only an ""if."" Meanwhile, I\'ve got someone right here who\'s actually trying to get inside.', 3: '310'}"
+310	310		204							{1: '1'}
+311	311		301							"{2: 'Teddy', 3: ""So... there's really no way?"", 4: '1', 18: '100004997'}"
+312	312		302							{2: 'No. Absolutely not.', 3: '313', 4: '(Shake head)', 5: '313'}
+313	313		204							{1: '1', 2: '8'}
+314	314		301							{2: 'Teddy', 3: 'Fine.', 4: '1', 18: '100004998'}
+315	315		301							{3: 'Without any more persuasion or protest, Teddy hangs her head in disappointment.'}
+316	316		301							{3: 'Her overly docile look sets off alarm bells in your mind.'}
+317	317		301							{3: 'Sure enough, in the very next moment, she reaches out her hand.'}
+318	318		401							{1: '1', 2: '205'}
+319	319		204							{1: '1', 2: '1'}
+320	320		301							"{2: 'Teddy', 3: ""Hand over that drink. Once I get it back, I'm gone."", 4: '1', 18: '100004999'}"
+321	321		301							{3: 'You eye the empty can in your hand, then glance at Teddy.'}
+322	322		302							"{2: ""But isn't this for me?"", 3: '323'}"
+323	323		301							"{2: 'Teddy', 3: 'I\'m only asking you to ""catch it"" for me, not ""drink it.""', 4: '1', 18: '100005000'}"
+324	324		302							{2: 'Well...', 3: '325', 4: '...', 5: '325'}
+325	325		301							"{3: ""Teddy wears that sly grin again, like everything's going precisely according to plan.""}"
+326	326		204							{1: '1', 2: '2'}
+327	327		301							"{2: 'Teddy', 3: ""You've already sipped it, so you definitely owe me a little something in return."", 4: '1', 18: '100005001'}"
+328	328		301							"{3: ""It's a scene that rings a bell, though last time, the one left on the spot was Teddy instead...""}"
+329	329		302							{2: 'Well...', 3: '330', 4: 'I can pay the original price—no, scratch that. I can pay double...', 5: '330'}
+330	330		301							"{2: 'Teddy', 3: ""Okay, that's enough talk."", 4: '1', 18: '100005002'}"
+331	331		301							{3: 'Teddy grips your arm and dashes toward the main entrance of the abandoned apartment.'}
+332	332		301							"{2: 'Teddy', 3: ""Let's toss the rules aside for now. If anyone has a problem with this later, I'll help you figure something out."", 4: '1', 18: '100005003'}"
+333	333		301		1		AniZhuanchangBegin			{2: 'Teddy', 3: 'Now, follow me!', 4: '1', 18: '100005004'}

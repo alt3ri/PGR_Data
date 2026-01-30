@@ -1,0 +1,58 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory700.jpg'}
+2	2		401							{1: '1', 2: '204'}
+3	3		201							{1: '1', 2: '500906'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Bridget', 3: ""Phew. It's time."", 4: '1'}"
+5	5		301							"{3: ""Bridget claps her hands to draw everyone's attention.""}"
+6	6		301							{2: 'Bridget', 3: 'We still have a few minutes. Take this time to do one final check of your load.', 4: '1'}
+7	7		301							"{2: 'Bridget', 3: ""Protect the survival tools and medical kits—we can't afford to lose any members to non-combat injuries."", 4: '1'}"
+8	8		301							{3: 'Bridget notices a Construct in new recruit gear looking anxious.'}
+9	9		204							{1: '1', 2: '4'}
+10	10		301							{3: 'She lets out a soft sigh.'}
+11	11		301							{2: 'Bridget', 3: 'If you missed anything, you should hurry up and get it. Submitting to hesitation and shame could cost you dearly in battle.', 4: '1'}
+12	12		301							"{3: ""The new recruit notices Bridget's knowing glance, gets up, and runs to the supply station, greeting you as he passes by.""}"
+13	13		301							"{2: 'Bridget', 3: ""Alright, let's take a two-minute break here."", 4: '1'}"
+14	14		302							{2: 'Hey.', 3: '15'}
+15	15		301							{3: 'Bridget tips her sunglasses as she walks over.'}
+16	16		204							{1: '1'}
+17	17		301							{2: 'Bridget', 3: 'Nice of you to join us for a training session, 【kuroname】.', 4: '1'}
+18	18		301							{3: 'Bridget puts emphasis on the word training.'}
+19	19		302							"{2: ""It'd be nice to see you off the battlefield, you know."", 3: '20'}"
+20	20		301							{2: 'Bridget', 3: 'Supporting Gray Raven is a lot of work.', 4: '1'}
+21	21		202							{1: '1'}
+22	22		104							{1: '100|0|-100', 2: '2'}
+23	23		301							{3: 'Bridget drags you to her vehicle, where you can chat in peace.'}
+24	24		201							{1: '1', 2: '500906', 3: '5'}
+25	25		301							"{1: '1', 2: 'Bridget', 3: ""I've got to say, I was surprised the higher-ups were generous enough to put the battle simulator right here on the surface."", 4: '1'}"
+26	26		301							"{2: 'Bridget', 3: 'Last month, I broke a few processing units during simulation training and got chewed out for going over budget... ""Support Force abused the battle simulator""? I was speechless.', 4: '1'}"
+27	27		302							{2: 'In actual combat, the wear and tear will be much more evident.', 3: '28'}
+28	28		301							"{2: 'Bridget', 3: ""The simulation pod can't recreate a real battle—our job isn't just driving vehicles and hauling cargo."", 4: '1'}"
+29	29		301							"{3: ""There's self-mockery in Bridget's tone rather than anger.""}"
+30	30		204							{1: '1', 2: '4'}
+31	31		301							{2: 'Bridget', 3: 'By the way...', 4: '1'}
+32	32		204							{1: '1', 2: '3'}
+33	33		301							{2: 'Bridget', 3: '...If something goes wrong, at least try not to make me look bad.', 4: '1'}
+34	34		302							{2: '(Nod)', 3: '35', 4: 'Hmm... That will depend on the training schedule.', 5: '35'}
+35	35		204							{1: '1', 2: '2'}
+36	36		301							{3: 'She lets out a hearty laugh and pats you on the back.'}
+37	37		301							"{2: 'Bridget', 3: ""Relax, it's fine."", 4: '1'}"
+38	38		204							{1: '1'}
+39	39		301							{2: 'Bridget', 3: 'We take our jobs very seriously—support operations allow no room for mistakes.', 4: '1'}
+40	40		301							"{3: ""Bridget's smile disappears and her expression turns serious.""}"
+41	41		301							{2: 'Bridget', 3: 'Ah...', 4: '1'}
+42	42		301							{3: 'She opens the saddlebag on her motorcycle and pulls out a paper map.'}
+43	43		301							"{2: 'Bridget', 3: ""There might be signal interference on Route 452, which you'll likely pass through. This usually works better in such situations."", 4: '1'}"
+44	44		301							"{3: ""You give a nod of thanks and accept the map covered in Bridget's multicolored notes and markings.""}"
+45	45		302							{2: 'This is perfect...', 3: '46'}
+46	46		302							{2: 'Thanks.', 3: '47'}
+47	47		301							"{2: 'Bridget', 3: ""It's almost time."", 4: '1'}"
+48	48		204							{1: '1', 2: '4'}
+49	49		301							"{3: ""Bridget's relaxed posture tenses up and she pats you on the shoulder again.""}"
+50	50		301							"{2: 'Bridget', 3: ""I hope we'll work together on more missions like this, 【kuroname】."", 4: '1'}"
+51	51		204							{1: '1', 2: '3'}
+52	52		301							{2: 'Bridget', 3: 'Good luck, everyone!', 4: '1'}
+53	53		302							{2: 'Good luck!', 3: '54'}
+54	54		204							{1: '1', 2: '4'}
+55	55		301							{2: 'Bridget', 3: 'All units, gear up! Begin operation!', 4: '1'}
+56	56		301							"{3: ""At Bridget's command, Support Force swiftly falls into formation.""}"
+57	57		301		1		AniZhuanchangBegin			{3: 'You tuck the map into your pocket and start heading back.'}

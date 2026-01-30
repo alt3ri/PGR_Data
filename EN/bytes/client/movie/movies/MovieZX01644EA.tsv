@@ -1,0 +1,48 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory258.png'}
+2	2		401							{1: '1', 2: '206'}
+3	3		201							{1: '1', 2: '500254', 3: '16'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Luna', 3: ""Lucia... Don't go..."", 4: '1'}"
+5	5		203							{1: '1', 2: '0.25', 3: '400'}
+6	6		201							{1: '2', 2: '500166', 4: '-400'}
+7	7		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 3: '1'}
+8	8		301							{1: '1', 3: 'The defeated Luna slowly dissipates, but Lucia still steps forward and holds her in her arms, gently caressing her face.'}
+9	9		301							"{2: 'Lucia', 3: ""Please forgive me... I have to keep my promise and find you out there, so I cannot stay. No matter what you choose this time... I'll be with you."", 4: '2'}"
+10	10		301							"{2: 'Luna', 3: ""But the Luna there is a bad person... I won't see you anymore..."", 4: '1'}"
+11	11		301							"{2: 'Lucia', 3: ""That's okay... I swear I will find you."", 4: '2'}"
+12	12		301							"{2: 'Luna', 3: ""Promise? I've been staying in a room where I can't see... It's so dark there... I'm scared..."", 4: '1'}"
+13	996		204							{1: '2', 2: '1'}
+14	13		301							"{2: 'Lucia', 3: ""If you're scared, then hold my hand until you fall asleep. I won't let go this time."", 4: '2'}"
+15	14		301							{3: 'Luna leans onto Lucia, clutching her hand so tightly, as she disappears bit by bit.'}
+16	15		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 4: '1'}
+17	16		202							{1: '1', 2: '2', 6: '1'}
+18	17		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustLightWall.prefab', 2: '2'}
+19	18		201							{1: '1', 2: '500031'}
+20	19		301							"{1: '1', 2: 'Luna', 3: ""Then it's a promise, Lucia... You'll come back for me, no matter what... and you'll hold my head like this... and call my name..."", 4: '1'}"
+21	20		203							{1: '1', 2: '0.25', 3: '-400'}
+22	500		201							{1: '2', 2: '500032', 4: '400'}
+23	21		301				AniZhuanchangBegin			{1: '1', 3: 'Luna smiles and holds the hand of the young Lucia she remembers, and the two walk away. Little by little, their figures disperse and fade, returning to the depths they came from...'}
+24	22		202							{1: '2', 2: '1', 6: '1'}
+25	23		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustLightWall.prefab'}
+26	24		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+27	25		201							{1: '1', 2: '500057'}
+28	26		301			AniZhuanchangEnd				{1: '1', 2: 'Lucia', 3: 'The me who pretended to be strong to protect my family.', 4: '1'}
+29	27		202						1000.0	{1: '1'}
+30	28		201							{1: '1', 2: '1021001'}
+31	29		301							{1: '1', 2: 'Lucia', 3: 'The me who became a weapon for survival and purpose.', 4: '1'}
+32	30		202						1000.0	{1: '1'}
+33	31		201							{1: '1', 2: '500100'}
+34	32		301							{1: '1', 2: 'Lucia', 3: 'The me who alienated everyone because of their betrayals.', 4: '1'}
+35	33		202						1000.0	{1: '1'}
+36	34		201							{1: '1', 2: '500166', 3: '1'}
+37	35		301							{1: '1', 2: 'Lucia', 3: 'The me who is found after meeting the new Gray Raven and Commandant.', 4: '1'}
+38	36		202							{1: '1', 6: '1'}
+39	37		301							{2: 'Lucia', 3: 'The bitter past, the painful choices, the tender caresses... All these have forged me into who I am and ushered me into the future.'}
+40	38		201							{1: '1', 2: '500166', 3: '1', 4: '-400'}
+41	39		201							{1: '2', 2: '500066', 4: '400'}
+42	40		301							"{1: '1', 2: 'α', 3: ""Do you honestly think there's a future for humans?"", 4: '2'}"
+43	41		301							"{2: 'Lucia', 3: ""Even though the road ahead is paved in darkness, I'm still willing to believe in that spark of hope."", 4: '1'}"
+44	42		301							"{2: 'α', 3: ""Even after everything you've learned?"", 4: '2'}"
+45	43		301							"{2: 'Lucia', 3: ""Even after everything I've learned."", 4: '1'}"
+46	44		202							{1: '1', 2: '2', 6: '1'}
+47	45		301		1		AniZhuanchangBegin			{3: 'Lucia turns around, and resolutely she walks, heading for the exit of the M.I.N.D.—'}

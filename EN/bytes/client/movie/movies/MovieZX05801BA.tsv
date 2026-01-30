@@ -1,0 +1,48 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		503				AniZhuanchangBegin			{1: '10189'}
+2	2		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1110.jpg'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignChenai.prefab', 2: '3'}
+4	4		201							{1: '1', 2: '501096'}
+5	5		401							{1: '1', 2: '229'}
+6	6		301			DialogEnable				"{1: '1', 2: 'Ishmael', 3: 'The ""seed"" has been planted, and it will soon bear ""fruit.""', 4: '1'}"
+7	7		301							"{2: 'Ishmael', 3: ""The predetermined end can't be changed. Yet some regrets may still be redeemed."", 4: '1'}"
+8	8		204							{1: '1', 2: '4'}
+9	9		301							{2: 'Ishmael', 3: 'So this is how you open a brand?new future...', 4: '1'}
+10	10		202							{1: '1'}
+11	11		301							{3: 'A golden river spreads out under her feet.'}
+12	12		302							{2: '...', 3: '13'}
+13	13		201							{1: '1', 2: '501095'}
+14	14		301							{1: '1', 2: 'Ishmael', 3: 'Gray Raven...', 4: '1'}
+15	15		202							{1: '1'}
+16	16		301							"{3: ""The mysterious woman's ethereal gaze settles on you."", 4: '1'}"
+17	17		201							{1: '1', 2: '501095'}
+18	18		301							"{1: '1', 2: 'Ishmael', 3: 'This is the ""fruit"" you earned by risking your life...', 4: '1'}"
+19	19		302							{2: '...', 3: '20'}
+20	20		202							{1: '1'}
+21	21		301							{3: 'Your gaze drifts to the river—a broad, rolling current brimming with life.'}
+22	22		202							{1: '1'}
+23	23		302							{2: 'Yes, this is the outcome I wanted.', 3: '24', 4: 'No, I hope the past can still be mended.', 5: '28'}
+24	24		201							{1: '1', 2: '501095'}
+25	25		301							{1: '1', 2: 'Ishmael', 3: 'What a remarkable achievement, 【kuroname】.', 4: '1'}
+26	26		204							{1: '1', 2: '2'}
+27	27	35	301							"{2: 'Ishmael', 3: ""That's what makes it interesting, isn't it?"", 4: '1'}"
+28	28		201							{1: '1', 2: '501095'}
+29	29		204							{1: '1', 2: '2'}
+30	30		301							{1: '1', 2: 'Ishmael', 3: 'Such an audacious dream.', 4: '1'}
+31	31		204							{1: '1', 2: '8'}
+32	32		301							"{2: 'Ishmael', 3: ""No life can rewrite the universe's laws. Yet you just might..."", 4: '1'}"
+33	33		204							{1: '1'}
+34	34		301							"{2: 'Ishmael', 3: ""Hmm... It's still too early to talk about that."", 4: '1'}"
+35	35		204							{1: '1', 2: '2'}
+36	36		301				DialogDisable			"{2: 'Ishmael', 3: ""Now... let's take a look at everything you've been through."", 4: '1'}"
+37	37		202						500.0	{1: '1'}
+38	38		104						500.0	{1: '0|0|-80', 2: '1.5'}
+39	39		301			DialogEnable				{3: 'At her signal you look into the water. Ripples widen in slow rings...'}
+40	40		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLianyi.prefab', 2: '3'}
+41	41		401							{1: '2', 2: '2954'}
+42	42		402				AniZhuanchangBegin	400.0		{1: '2954'}
+43	43		505				DialogDisable		800.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignChenai.prefab'}
+44	44		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLianyi.prefab'}
+45	45		401							{1: '1', 2: '36'}
+46	46		102							{1: 'Dreams Rewound', 2: 'Chapter 36', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+47	47		502		1		AniZhuanchangBegin		7000.0	{1: 'ThemeEnable'}

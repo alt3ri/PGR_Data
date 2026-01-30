@@ -1,0 +1,551 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		306						1000.0	{1: '1'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+4	4		401				AniZhuanchangEnd			{1: '1', 2: '6154'}
+5	5		301			DialogEnable				"{3: 'It\'s been quite some time since that weird ""post-war syndrome"" incident.'}"
+6	6		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5101_02.jpg', 3: '0', 4: '1', 5: '1'}
+7	7		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+8	8		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5101_02.jpg'}
+9	9		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+10	10		401							{1: '2', 2: '4278'}
+11	11		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_87.jpg'}
+12	12		505				AniZhuanchangBegin			{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+13	13		505			DialogDisable			600.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+14	14		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+15	15		201							{1: '1', 2: '500201', 3: '1', 4: '400'}
+16	16		201							{1: '2', 2: '500372', 4: '-400'}
+17	17		301			DialogEnable				"{1: '1', 3: ""Everyone seems to know how you caused trouble at the Star of Life because you were too worried about your members' safety. Even colleagues occasionally tease you about it.""}"
+18	18		202							{1: '1', 2: '2'}
+19	19		306							
+20	20		301							{3: 'Everything seems to be back to normal.'}
+21	21		301							"{3: 'Many see this as a sign that ""Reclaiming the Homeland"" is going well. This should\'ve been something worth celebrating... It should\'ve...'}"
+22	22		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory718.jpg', 3: '0', 4: '1', 5: '1'}
+23	23		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+24	24		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory718.jpg'}
+25	25		301							{3: 'The only tension is the elusive, obscure sensation. It happened uninvited on an unremarkable day and has since taken up stayed in the heart.'}
+26	26		401							{1: '2', 2: '743'}
+27	27		201							{1: '1', 2: '500059'}
+28	28		301							"{1: '1', 2: 'Star of Life Doctor', 3: ""...These are very clear symptoms of overexertion. The test shows no other problems, so I won't give you any meds. Rest is the most effective. Take some time off, if you can."", 4: '1'}"
+29	29		402							{1: '743'}
+30	30		301							{3: 'The Star of Life doctor continuously scrolls through the test reports on the screen, offering reassurance.'}
+31	31		301							{3: 'Still tasting the lingering shadow lurking in my heart, I can only give the doctor a short response.'}
+32	32		302							{2: 'Thank you, I will.', 3: '33'}
+33	33		202							{1: '1'}
+34	34		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory263.png', 3: '0', 4: '1', 5: '1'}
+35	35		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+36	36		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory263.png'}
+37	37		201							{1: '1', 2: '500011'}
+38	38		301				AniZhuanchangBegin			{1: '1', 3: 'After the test results came out, friends who learned of my condition sent kind messages. Soon, many asked to meet up.'}
+39	39		202			DialogDisable			300.0	{1: '1', 6: '1'}
+40	40		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory717.jpg'}
+41	41		301			DialogEnable				{3: 'You wake up on a rare afternoon with no missions and daze for a long while.'}
+42	42		401							{1: '2', 2: '2768'}
+43	43		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1138.jpg', 3: '0', 4: '1', 5: '1'}
+44	44		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+45	45		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1138.jpg'}
+46	46		301				AniZhuanchangBegin			"{3: ""You open the calendar and memo to see Ayla's name written under a circled date.""}"
+47	47		502						400.0	{1: 'DialogDisable'}
+48	48		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory529.jpg'}
+49	49		107							{1: 'WGAA Opera House', 2: 'Babylonia', 4: '8:30', 5: 'Line Spacing: 0'}
+50	50		301							{3: 'WGAA Opera House, Babylonia, 8:30, Line Spacing: 0.'}
+51	51		108							{1: '1'}
+52	52		301			DialogEnable				{3: 'The dome stands magnificent, the reliefs solemn. Inside the elegantly decorated opera house, every seat is filled.'}
+53	53		301							"{3: 'On the side door of the main hall are posters of recent productions—classic operas from both before and after the Golden Age:\\n""Euridice"", ""Orfeo"", ""L\'incoronazione di Poppea"", etc.'}"
+54	54		401							{1: '1', 2: '36'}
+55	55		301							"{3: 'And in the center is tonight\'s main: ""The Tale of the Gray Raven"".'}"
+56	56		306							{1: '1'}
+57	57		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory528.jpg', 3: '0', 4: '1', 5: '1'}
+58	58		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+59	59		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory528.jpg'}
+60	60		401							{1: '1', 2: '6155'}
+61	61		301				DialogDisable			{3: 'Rhythmic verses and lyrics resonate in the hall.'}
+62	62		307							"{1: '""Blood-red and blinding, shadows coil and creep, and malice drips with hungry teeth.""', 3: '40'}"
+63	63		111						1000.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+64	64		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory426.jpg', 3: '0', 4: '1', 5: '0.5'}
+65	65		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+66	66		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory426.jpg'}
+67	67		301							"{3: '""Blood-red and blinding, shadows coil and creep, and malice drips with hungry teeth.""'}"
+68	68		307						800.0	{2: '1'}
+69	69		307							"{1: '""Gunsmoke burns the air and scattered shots grow rare. The Area of Defense hangs by a thread.""', 3: '40'}"
+70	70		111						1000.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+71	71		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory438.jpg', 3: '0', 4: '1', 5: '0.5'}
+72	72		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+73	73		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory438.jpg'}
+74	74		301							"{3: '""Gunsmoke burns the air and scattered shots grow rare. The Area of Defense hangs by a thread.""'}"
+75	75		307							{2: '1'}
+76	76		306							
+77	77		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory528.jpg', 3: '0', 4: '1', 5: '1'}
+78	78		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+79	79		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory528.jpg'}
+80	80		301			DialogEnable				"{3: ""As the music continues, the performers' gestures grow increasingly bold.""}"
+81	81		302							{2: '...', 3: '82'}
+82	82		401							{1: '2', 2: '4044'}
+83	83		104						250.0	{1: '-25|0|0', 2: '0.25'}
+84	84		104						250.0	{1: '25|0|0', 2: '0.25'}
+85	85		104							{1: '0|0|0', 2: '0.25'}
+86	86		301							{3: 'You are lost in the music, but sense sudden movement beside you.'}
+87	87		401							{1: '2', 2: '5286'}
+88	88		201							{1: '18', 2: '500110'}
+89	89		301							{1: '1', 3: 'Ayla sits beside you, leaning over slightly. She whispers to you without taking her eyes off the stage.'}
+90	90		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1209.jpg', 3: '0', 4: '1', 5: '0.5'}
+91	91		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+92	92		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1209.jpg'}
+93	93		204							{1: '18', 2: '1'}
+94	94		301							"{2: 'Ayla', 3: '""You"" are about to go on stage.', 4: '18'}"
+95	95		204							{1: '18'}
+96	96		301							"{2: 'Ayla', 3: 'I specifically asked the prop master and director to make ""You"" stand out more.', 4: '18'}"
+97	97		302							"{2: ""Well, that's..."", 3: '98'}"
+98	98		202							{1: '18', 6: '1'}
+99	99		401							{1: '2', 2: '2692'}
+100	100		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1208.jpg'}
+101	101		201							{1: '1', 2: '500626'}
+102	102		301							{1: '1', 3: 'Before you can finish speaking, the stage lights suddenly overlap, illuminating performers who were in the shadows.'}
+103	103		301							"{2: 'Commandant', 3: ""Fear not, and don't worry, the Gray Ravens are here."", 4: '1'}"
+104	104		301							{2: 'Commandant', 3: 'Eliminate the enemy, rescue our allies, and advance at full speed.', 4: '1'}
+105	105		202							{1: '1'}
+106	106		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory528.jpg', 3: '0', 4: '1', 5: '0.5'}
+107	107		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+108	108		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory528.jpg'}
+109	109		301							"{3: 'As the ""Commandant"" dances on stage, all characters twirl around them, pushing the story toward its climax.'}"
+110	110		302							{2: 'Psst...', 3: '111', 4: 'Um...', 5: '111'}
+111	111		301							{3: 'You let out a soft laugh, as a mixture of mild embarrassment and vague memories wash over you.'}
+112	112		301							"{3: ""You can't quite remember all the details, but the people you met along the way remain vivid in your memory.""}"
+113	113		201							{1: '1', 2: '500110', 5: '-75'}
+114	114		301							{1: '1', 2: 'Ayla', 3: 'Pretty good, right?', 4: '1'}
+115	115		302							{2: 'Yeah.', 3: '116', 4: 'Absolutely magical.', 5: '116'}
+116	116		401							{1: '2', 2: '2581'}
+117	117		202							{1: '1', 6: '1'}
+118	118		301				AniZhuanchangBegin			{3: 'You pause as the actors, who are wearing familiar makeup but not-quite-accurate costumes, exit the stage.'}
+119	119		401			DialogDisable			400.0	{1: '1', 2: '36'}
+120	120		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_18.jpg'}
+121	121		301			DialogEnable				"{3: 'The rousing scene ends, with only one person remaining next to the character known as ""Commandant"".'}"
+122	122		301							{3: 'She stands in the spotlight, pouring her emotions to the audience and seemingly also to her lover behind her.'}
+123	123		302							{2: '...', 3: '124', 4: 'Hm?', 5: '124'}
+124	124		401							{1: '1', 2: '138', 3: '1'}
+125	125		301							"{2: 'Actress', 3: '""Old Time...""'}"
+126	126		401						700.0	{1: '2', 2: '9389034'}
+127	127		401							{1: '1', 2: '138', 3: '0.5'}
+128	128		402							{1: '9389034'}
+129	129		301							{3: 'The moment she speaks, the surrounding noise gently fades. Sounds become distant and ethereal as the stage seems to move closer.'}
+130	130		301							"{3: ""The actress's beautiful, flowing lyrics warp and distort this surreal experience. It first grates on your nerves, then suddenly becomes clear and focused.""}"
+131	131		401						700.0	{1: '2', 2: '9389034'}
+132	132		401							{1: '1', 2: '138', 3: '1'}
+133	133		402							{1: '9389034'}
+134	134		301							{3: 'Then, it changes into a completely unfamiliar voice, a clear and crisp sound filled with emotion.'}
+135	135		111						700.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+136	136		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_14.jpg'}
+137	137		301							"{2: '???', 3: '""Despite your ravages...""'}"
+138	138		301							"{3: ""Your smile that just appeared fades. A subtle tremor and anxiety run through your body, like you've missed something important.""}"
+139	139		301							{3: 'In a daze, the lead actress seems to change before your eyes. Her face becomes blurred, yet somehow you can still see her elegant beauty.'}
+140	140		301							{3: 'Everything else disappears, as if only two people remain in this world.'}
+141	141		301							{3: 'She turns her gaze toward you.'}
+142	142		301				DialogDisable			"{2: '???', 3: '""My lover shall be young forever in my poetry.""'}"
+143	143		302							{2: '...', 3: '144'}
+144	144		301			DialogEnable	DialogDisable			{2: 'Ayla', 3: '<size=25>【kuroname】?</size>'}
+145	145		501						1500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '2'}
+146	146		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront34.png', 4: '4'}
+147	147		104							{1: '55|781|-500', 2: '0', 4: '4'}
+148	148		104						300.0	{1: '-55|-950|-500', 2: '0.28', 4: '4'}
+149	149		104						300.0	{1: '55|781|-500', 2: '0.28', 4: '4'}
+150	150		104						300.0	{1: '-55|-950|-500', 2: '0.28', 4: '4'}
+151	151		104						300.0	{1: '55|781|-500', 2: '0.28', 4: '4'}
+152	152		301			DialogEnable	DialogDisable			{2: 'Ayla', 3: '<size=35>【kuroname】...</size>'}
+153	153		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront34.png', 4: '4'}
+154	154		104							{1: '55|781|-500', 2: '0', 4: '4'}
+155	155		104						300.0	{1: '-55|-950|-500', 2: '0.28', 4: '4'}
+156	156		104						300.0	{1: '55|781|-500', 2: '0.28', 4: '4'}
+157	157		104						300.0	{1: '-55|-950|-500', 2: '0.28', 4: '4'}
+158	158		104						300.0	{1: '55|781|-500', 2: '0.28', 4: '4'}
+159	159		301			DialogEnable				{2: 'Ayla', 3: '<size=45>【kuroname】!</size>'}
+160	160		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+161	161		101							{4: '4', 5: '1'}
+162	162		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+163	163		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory528.jpg'}
+164	164		401							{1: '2', 2: '4386'}
+165	165		201							{1: '1', 2: '500110', 3: '4'}
+166	166		301							"{1: '1', 3: ""Your thoughts are interrupted as an external force forcibly turns your head. You see Ayla's worried expression.""}"
+167	167		301							{2: 'Ayla', 3: 'Are you okay? What happened? You look terrible.', 4: '1'}
+168	168		301							"{2: 'Ayla', 3: ""If you're not feeling well, let's leave."", 4: '1'}"
+169	169		302							{2: 'No, I...', 3: '170'}
+170	170		301							"{3: ""You gently take Ayla's hand and lower it, mumbling incoherent words as your feelings are too jumbled. Your look back at the stage.""}"
+171	171		202							{1: '1'}
+172	172		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5301_18.jpg', 3: '0', 4: '1', 5: '1'}
+173	173		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+174	174		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_18.jpg'}
+175	175		301							{2: 'Actress', 3: 'Ah, my dear Gray Raven Commandant, I shall...'}
+176	176		302							"{2: ""...It's fine."", 3: '177'}"
+177	177		301				AniZhuanchangBegin			{3: 'The performance continues. Everything on stage is going smoothly as if what just happened was an illusion.'}
+178	178		401							{1: '1', 2: '36'}
+179	179		502						400.0	{1: 'DialogDisable'}
+180	180		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+181	181		401							{1: '1', 2: '208'}
+182	182		401							{1: '2', 2: '4638'}
+183	183		301			DialogEnable				{3: 'Outside the opera house, the cold wind hits your face, clearing your mind.'}
+184	184		301							{3: 'The afterimage of your hallucination during the performance is fading, leaving behind an uncomfortable void.'}
+185	185		301							"{3: 'Your emotional dissonance remains despite the doctor\'s advice. Instead, ""it"" sits in the void, nodding in acknowledgment.'}"
+186	186		301							{3: 'You respond with a soft sigh as fatigue sets in.'}
+187	187		301							{3: 'You stop at the doorstep, pinch the bridge of your nose, slowly crouch down, and let out a long exhale.'}
+188	188		402							{1: '4638'}
+189	189		201							{1: '1', 2: '500110', 3: '1'}
+190	190		301			DialogEnable				"{1: '1', 2: 'Ayla', 3: ""Here, it's hot."", 4: '1'}"
+191	191		302							{2: 'Thank you.', 3: '192'}
+192	192		401							{1: '2', 2: '4799'}
+193	193		204							{1: '1'}
+194	194		203							{1: '1', 2: '0.5', 4: '-50'}
+195	195		301							{3: 'You take the drink and scoot over. Ayla sits down beside you.'}
+196	196		204							{1: '1', 2: '4'}
+197	197		301							{2: 'Ayla', 3: 'Sorry, was the script bad? Did the lines make you feel uncomfortable?', 4: '1'}
+198	198		204							{1: '1'}
+199	199		301							"{2: 'Ayla', 3: ""Several scriptwriters are Gray Raven fans. They've always wanted to tell your story, but there are too many confidentiality restrictions."", 4: '1'}"
+200	200		502						400.0	{1: 'DialogDisable'}
+201	201		302							{2: 'Not bad.', 3: '202', 4: 'It was a bit awkward...', 5: '203'}
+202	202		302							{2: 'Especially the last two lines.', 3: '204'}
+203	203		302							{2: 'Except for the last two lines.', 3: '204'}
+204	204		301			DialogEnable				"{2: 'Ayla', 3: ""Oh! Those two lines are actually quotes from a famous author's work!"", 4: '1'}"
+205	205		204							{1: '1'}
+206	206		203						250.0	{1: '1', 2: '0.25', 4: '25'}
+207	207		203							{1: '1', 2: '0.25'}
+208	208		401							{1: '2', 2: '5286'}
+209	209		301							{3: 'Ayla laughs as she springs to her feet, moving with light, graceful steps.'}
+210	210		204							{1: '1', 2: '6'}
+211	211		301							{3: 'She closes her eyes, her body swaying with the wind as she dances, finally extending her right hand gracefully before her.'}
+212	212		301							{2: 'Ayla', 3: 'Do your worst, old Time...', 4: '1'}
+213	213		301							{2: 'Ayla', 3: 'My lover shall be young forever in my... poetry...', 4: '1'}
+214	214		204							{1: '1', 2: '4'}
+215	215		301							{3: 'Before I can join in with her impromptu performance, Ayla abruptly stops with furrowed brows in deep thought.'}
+216	216		302							{2: '...Ayla?', 3: '217'}
+217	217		301							"{2: 'Ayla', 3: ""I'm fine, Commandant. It's just that I... just had a strange feeling just now..."", 4: '1'}"
+218	218		204							{1: '1', 2: '19'}
+219	219		301							{2: 'Ayla', 3: 'It felt... a little weird...', 4: '1'}
+220	220		502						400.0	{1: 'DialogDisable'}
+221	221		302							"{2: ""Because that doesn't sound like something you would say."", 3: '222'}"
+222	222		302							"{2: 'Something like ""you will remain forever young in my paintings"" would be more appropriate?', 3: '223'}"
+223	223		204							{1: '1'}
+224	224		301			DialogEnable				{2: 'Ayla', 3: 'Haha... that sounds like something you would say in a dangerous situation.', 4: '1'}
+225	225		301							{3: 'My response helps Ayla shake her hesitation, and she laughs softly.'}
+226	226		204							{1: '1', 2: '1'}
+227	227		401							{1: '2', 2: '5286'}
+228	228		203							{1: '1', 2: '0.25', 3: '50'}
+229	229		301							{3: 'Ayla steps back and makes a camera gesture at you with her hands with one eye closed.'}
+230	230		301							"{2: 'Ayla', 3: ""Hm, that doesn't sound too bad, you know. If you don't mind, 【kuroname】, you should quit your job and become my model!"", 4: '1'}"
+231	231		302							"{2: ""What's the pay like? Any benefits?"", 3: '232'}"
+232	232		204							{1: '1', 2: '6'}
+233	233		301							{2: 'Ayla', 3: 'Hmm... how about loads of free tickets to musicals and art exhibitions every month?', 4: '1'}
+234	234		302							"{2: ""I think I'll pass on that."", 3: '235'}"
+235	235		302							"{2: ""I don't have that much time off work anyway."", 3: '236'}"
+236	236		204							{1: '1'}
+237	237		301							"{2: 'Ayla', 3: ""Oh come on, humor me! Don't you think musicals and art exhibitions are awesome? Wasn't there anything about tonight's performance that moved you?"", 4: '1'}"
+238	238		301							"{3: ""Ayla's question brings back the discomfort that was almost undetectable in our casual exchange. That strange feeling waves at you, asserting its presence.""}"
+239	239		502						400.0	{1: 'DialogDisable'}
+240	240		302				AniZhuanchangBegin			{2: '...', 3: '241'}
+241	241		202							{1: '1', 6: '1'}
+242	242		504							{1: '0.7'}
+243	243		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+244	244		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_18.jpg'}
+245	245		302							{2: 'That last performer.', 3: '246'}
+246	246		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+247	247		401							{1: '2', 2: '952'}
+248	248		101						1000.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_14.jpg'}
+249	249		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+250	250		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_18.jpg'}
+251	251		301			DialogEnable	AniZhuanchangBegin			{3: 'You try to recall that brief image, but it has already faded, leaving only vague unease.'}
+252	252		505			DialogDisable				{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+253	253		504							
+254	254		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+255	255		201							{1: '1', 2: '500110'}
+256	256		301			DialogEnable				{1: '1', 2: 'Ayla', 3: 'Hmm? Do you like her? Or did you only enjoy her poetry recitation? I can get you an autograph if you want.', 4: '1'}
+257	257		502						400.0	{1: 'DialogDisable'}
+258	258		302							{2: '(Tell the truth)', 3: '259', 4: '(Change the subject)', 5: '260'}
+259	259		302							{2: 'Neither. I think I mistook her for someone else.', 3: '261'}
+260	260		302							{2: 'Really?', 3: '261'}
+261	261		302							{2: 'I just wanted to know more about the character she was playing.', 3: '262'}
+262	262		302							"{2: ""I don't seem to have anyone like that in my life."", 3: '263'}"
+263	263		204							{1: '1'}
+264	264		301			DialogEnable				{2: 'Ayla', 3: 'Ah, she was playing a fictional character.', 4: '1'}
+265	265		204							{1: '1', 2: '6'}
+266	266		301							{2: 'Ayla', 3: 'In the play, the heroic protagonist needs comrades to fight together, and also needs someone who understands them...', 4: '1'}
+267	267		302							{2: 'A soulmate?', 3: '268'}
+268	268		204							{1: '1', 2: '1'}
+269	269		301							{2: 'Ayla', 3: 'Hehe... They actually asked for my opinion, worried they might offend you.', 4: '1'}
+270	270		204							{1: '1'}
+271	271		301							"{2: 'Ayla', 3: ""I told them as long as they don't make specific references, 【kuroname】 wouldn't mind having a character."", 4: '1'}"
+272	272		302							{2: 'Hah...', 3: '273'}
+273	273		301							{3: 'Ayla blinks playfully, her smile clears much of the lingering melancholy in the air.'}
+274	274		301							"{2: 'Ayla', 3: ""It's a shame, really. I wanted to take you to a different performance, but that script had been indefinitely suspended for some reason."", 4: '1'}"
+275	275		204							{1: '1', 2: '19'}
+276	276		301							{2: 'Ayla', 3: 'By the time I heard it was approved, a performance group was already rehearsing it. Sadly, their schedule never seemed to match your breaks...', 4: '1'}
+277	277		302							{2: 'Suspended? Was there a stage accident?', 3: '278'}
+278	278		204							{1: '1', 2: '4'}
+279	279		301							{2: 'Ayla', 3: 'No. Musical theater is quite different from acrobatic performances, though this play does revolve around war.', 4: '1'}
+280	280		204							{1: '1'}
+281	281		301							"{2: 'Ayla', 3: ""It's called..."", 4: '1'}"
+282	282		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+283	283		401							{1: '2', 2: '4278'}
+284	284		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+285	285		301							"{2: 'Ayla', 3: '<i><b>""The Acadia Evacuation"".</b></i>', 4: '1'}"
+286	286		301							{3: 'Ayla clears her throat and changes her tone.'}
+287	287		401							{1: '2', 2: '10042416', 3: '0.5'}
+288	288		203							{1: '1', 2: '0.3', 4: '-60', 5: '100'}
+289	289		204							{1: '1', 2: '8'}
+290	290		301							{2: 'Ayla', 3: '<i>Oh, blood and blades.</i>', 4: '1'}
+291	291		301							"{2: 'Ayla', 3: ""<i>An impressive battle it was, my brave comrades! But the fight is yet over, for our land is corrupted still, I'm afraid.</i>"", 4: '1'}"
+292	292		204							{1: '1', 2: '4'}
+293	293		203							{1: '1', 2: '1', 3: '-100', 4: '-60', 5: '100'}
+294	294		301							{2: 'Ayla', 3: '<i>So stand! Stand! Behind you your homeland you shall guard and defend!</i>', 4: '1'}
+295	295		203							{1: '1', 2: '1', 3: '100', 4: '-60', 5: '100'}
+296	296		301							"{2: 'Ayla', 3: ""<i>Stand! Stand! Skybound our home intends, stop us this bitter earth shan't!</i>"", 4: '1'}"
+297	297		502						400.0	{1: 'DialogDisable'}
+298	298		302							{2: 'It sounds good, but...', 3: '299'}
+299	299		302							{2: 'This subject...', 3: '300', 4: 'This kind of content...', 5: '300'}
+300	300		203							{1: '1', 2: '0.25'}
+301	301		204							{1: '1'}
+302	302		301			DialogEnable				"{2: 'Ayla', 3: ""Don't worry, scripts with themes like this go through very strict review processes."", 4: '1'}"
+303	303		301							"{2: 'Ayla', 3: ""The WGAA understands that war and suffering are serious topics and should not be used for fame and fortune. They've always been extremely cautious."", 4: '1'}"
+304	304		301							"{2: 'Ayla', 3: 'Before it was suspended, ""The Acadia Evacuation"" actually received extremely high praise.', 4: '1'}"
+305	305		204							{1: '1', 2: '6'}
+306	306		301							"{2: 'Ayla', 3: ""The author's plot design was incredibly intricate, using many clever devices to convey their understanding of The Acadia Evacuation as a historical event."", 4: '1'}"
+307	307		204							{1: '1'}
+308	308		301							"{2: 'Ayla', 3: ""Though it might differ from history, it's certainly a good story nonetheless."", 4: '1'}"
+309	309		302							{2: 'Oh, then... so what exactly was it suspended?', 3: '310'}
+310	310		301							"{3: ""Ayla freezes at the question. She can't seem to decide if she should speak.""}"
+311	311		204							{1: '1', 2: '4'}
+312	312		301							{2: 'Ayla', 3: 'I...', 4: '1'}
+313	313		301							{2: 'Ayla', 3: 'You forgot...?', 4: '1'}
+314	314		502						400.0	{1: 'DialogDisable'}
+315	315		302							"{2: ""I forgot... But that's normal, right?"", 3: '316'}"
+316	316		302							{2: 'Why is that a question?', 3: '317'}
+317	317		204							{1: '1'}
+318	318		301			DialogEnable				"{2: 'Ayla', 3: ""Hah... I don't know either..."", 4: '1'}"
+319	319		301							{3: 'Ayla smiles with a furrowed brow, then finally shrugs to dismiss the thought entirely.'}
+320	320		204							{1: '1', 2: '4'}
+321	321		301							{2: 'Ayla', 3: 'I feel like I should remember... No, I definitely heard about it, but it was probably just a rumor.', 4: '1'}
+322	322		301							"{2: 'Ayla', 3: ""Or I wouldn't have this strong feeling that I know about it, even though I can't remember the details."", 4: '1'}"
+323	323		401							{1: '2', 2: '5286'}
+324	324		203						250.0	{1: '1', 2: '0.25', 3: '-50'}
+325	325		202							{1: '1'}
+326	326		301							{3: 'As Ayla speaks, she turns her head to look behind her.'}
+327	327		502							{1: 'RImgBg1BlowUp'}
+328	328		301							"{3: 'Following her gesture, you turn around to see several posters at the opera house entrance.\\n""The Acadia Evacuation"" grabs your attention.'}"
+329	329		301							{3: 'On the poster, a young girl stands with her back to the viewer, hands clasped in prayer amidst ruins.'}
+330	330		301							{3: 'Gazing from a distance, a fleeting thought enters your mind.'}
+331	331		505							{1: 'RImgBg1BlowUp'}
+332	332		302				AniZhuanchangBegin			{2: '(Who would create a work like this?)', 3: '333'}
+333	333		401			DialogDisable			3000.0	{1: '1', 2: '36'}
+334	334		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory10.jpg'}
+335	335		401							{1: '1', 2: '6155'}
+336	336		107							{1: 'Abess Research Institute', 2: '8:30', 4: 'Unknown Area', 5: 'Line Spacing: 1'}
+337	337		301							{3: 'Abess Research Institute, 8:30, Unknown Area, Line Spacing: 1.'}
+338	338		108							{1: '1'}
+339	339		201							{1: '18', 2: '501170', 5: '-200'}
+340	340		301			DialogEnable				{1: '1', 2: '??', 3: 'Iris.', 4: '18'}
+341	341		301							"{2: '??', 3: ""Great, you're still alive."", 4: '18'}"
+342	342		202							{1: '18', 6: '1'}
+343	343		301							{3: 'A cold voice echoes among the rubble.'}
+344	344		201							{1: '1', 2: '501184', 3: '5', 6: '-75'}
+345	345		301							{1: '1', 2: 'Iris', 3: 'Ugh... Ungh—argh...', 4: '1'}
+346	346		301							{3: 'A disheveled figure lies trapped between broken stones among the ruins.'}
+347	347		401							{1: '2', 2: '752', 3: '0.5'}
+348	348		502							{1: 'PanelActor1Shake'}
+349	349		203							{1: '1', 2: '0.25'}
+350	350		301							{3: 'The voice pierces through her foggy consciousness as Iris struggles to move her body.'}
+351	351		301							{3: 'She crawls to her feet and looks toward the voice. She finds a device between the scattered fragments of what looks like an armor.'}
+352	352		301							{2: 'Iris', 3: 'Lu... ya...', 4: '1'}
+353	353		401							{1: '2', 2: '4533', 3: '0.5'}
+354	354		301							{3: 'Iris murmurs as her stalled systems restart, struggling to maintain the functionality of her damaged frame.'}
+355	355		201							{1: '18', 2: '501164', 5: '-200'}
+356	356		301							{1: '1', 2: 'Enora Lueya', 3: 'Such affection. If I were there, I would do everything I could to respond.', 4: '18'}
+357	357		301							"{2: 'Enora Lueya', 3: ""Our long standoff is finally giving a result. You've stopped me so many times, but this time I managed to stay one step ahead."", 4: '18'}"
+358	358		301							{2: 'Enora Lueya', 3: 'The first act, titled <color=#ff4e4eff>Abess</color>, has ended.', 4: '18'}
+359	359		301							{3: 'The hostile voice from the device also sounds sincere.'}
+360	360		301							"{2: 'Enora Lueya', 3: ""Give up. I don't want to hurt you. This tug-of-war is pointless except a waste of our time."", 4: '18'}"
+361	361		301							"{2: 'Enora Lueya', 3: ""The play that's meant to be performed will eventually be staged. The past cannot be changed."", 4: '18'}"
+362	362		301				DialogDisable			{2: 'Enora Lueya', 3: 'I can make countless tries, but you only need to fail once for everything to end up like this research institute.', 4: '18'}
+363	363		202							{1: '1', 2: '18', 6: '1'}
+364	364		104						1000.0	{1: '150|0|-200', 2: '0.5'}
+365	365		104						1000.0	{1: '-150|0|-200', 2: '0.5'}
+366	366		104							{1: '0|0|0', 2: '0.5'}
+367	367		301			DialogEnable				{3: 'Iris looks around. Among the rubble, blood-stained clothing is vaguely visible. Her tired voice carries a hint of sorrow.'}
+368	368		401							{1: '2', 2: '4373', 3: '1'}
+369	369		201							{1: '1', 2: '501184', 3: '3'}
+370	370		203							{1: '1', 2: '0.25', 3: '50'}
+371	371		301							"{1: '1', 2: 'Iris', 3: ""...You're right. I can't always get here in time to stop you."", 4: '1'}"
+372	372		301							"{3: ""But she doesn't stop. She walks toward the communication device, with each step becoming more confident.""}"
+373	373		201							{1: '18', 2: '501164', 5: '-200'}
+374	374		301							{1: '1', 2: 'Enora Lueya', 3: '...Why do you insist on continuing when you already understand the situation?', 4: '18'}
+375	375		301							"{2: 'Enora Lueya', 3: ""What's the point of tiring yourself out and sacrificing yourself? Is a choice like that even worth anything?"", 4: '18'}"
+376	376		301							"{2: 'Enora Lueya', 3: ""Or... maybe you want to escalate this conflict and draw in targets that weren't originally part of my plan?"", 4: '18'}"
+377	377		301							{2: 'Iris', 3: 'No, Lueya. Abess was the first and will be the last.', 4: '1'}
+378	378		306							{1: '1'}
+379	379		203						250.0	{1: '1', 2: '0.25', 3: '350'}
+380	380		202							{1: '1', 2: '18'}
+381	381		401							{1: '2', 2: '4986'}
+382	382		301							{3: 'Iris walks to the communication device. She places her hand on the core of her chest, gently sweeping across it. A brilliant blue light emerges.'}
+383	383		401							{1: '2', 2: '4386'}
+384	384		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteMainNoise.prefab', 2: '2'}
+385	385		301							{3: 'The radiance turns into lines, creating a pattern in the void. As the light fades, a musical instrument materializes in its place.'}
+386	386		401							{1: '2', 2: '4306', 3: '0.5'}
+387	387		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteMainNoise.prefab'}
+388	388		104						250.0	{1: '0|-50|0', 2: '0.25'}
+389	389		104							{1: '0|0|0', 2: '0.25'}
+390	390		301							{3: 'Iris sits casually on the ruins as music rises from the instrument.'}
+391	391		401							{1: '1', 2: '6155'}
+392	392		201							{1: '18', 2: '501164', 5: '-200'}
+393	393		306							
+394	394		301							"{1: '1', 2: 'Enora Lueya', 3: ""It's useless. Whatever you're relying on, it will eventually..."", 4: '18'}"
+395	395		202							{1: '18'}
+396	396		401							{1: '2', 2: '819016'}
+397	397		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+398	398		301							{3: 'SHING—'}
+399	399		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+400	400		401							{1: '2', 2: '4319'}
+401	401		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokeRed.prefab', 2: '2'}
+402	402		301							{3: 'You suddenly hear discordant notes and a strange distortion spreads out from Iris.'}
+403	403		301							{3: 'It spreads so fast that it seems to cross space and time before reaching the other end.'}
+404	404		201							{1: '18', 2: '501164', 5: '-200'}
+405	405		301							{1: '1', 2: 'Enora Lueya', 3: '...?!!', 4: '18'}
+406	406		301							{2: 'Enora Lueya', 3: 'What did you do?!', 4: '18'}
+407	407		202							{1: '18'}
+408	408		301							"{3: ""Iris freezes after hearing Lueya's astonished reaction.""}"
+409	409		301							{3: 'She takes a few light breaths to calm herself, then slowly raises her head to speak.'}
+410	410		201							{1: '1', 2: '501184', 3: '3'}
+411	411		301							"{1: '1', 2: 'Iris', 3: ""No matter how hard the conductor and I try, even if we stop you, we can't revert the damage caused by the battle's aftermath."", 4: '1'}"
+412	412		204							{1: '1', 2: '4'}
+413	413		301							{2: 'Iris', 3: 'But what if we use a different stage? What if we use a... completely isolated stage? Whatever you do on there, no audience will be harmed.', 4: '1'}
+414	414		201							{1: '18', 2: '501164', 5: '-200'}
+415	415		301							"{1: '1', 2: 'Enora Lueya', 3: ""You can't do that! You can't even catch my true form, let alone...?!"", 4: '18'}"
+416	416		202							{1: '18'}
+417	417		301							{3: 'The voice falls silent after realizing the problem.'}
+418	418		204							{1: '1', 2: '9'}
+419	419		301							{2: 'Iris', 3: 'Yes, we did have trouble locating you before, but now...', 4: '1'}
+420	420		204							{1: '1', 2: '5'}
+421	421		301							{2: 'Iris', 3: 'You destroyed the Abess Research Institute, altering a critical node... The world was hurt, and it remembers you now.', 4: '1'}
+422	422		201							{1: '18', 2: '501164', 5: '-200'}
+423	423		301							"{1: '1', 2: 'Enora Lueya', 3: ""You're crazy! You're coming alone..."", 4: '18'}"
+424	424		204							{1: '1', 2: '7'}
+425	425		301							"{2: 'Iris', 3: ""Listen to my new piece. For the next performance, it'll be just you and me."", 4: '1'}"
+426	426		202							{1: '1', 2: '18'}
+427	427		301				AniZhuanchangBegin			"{3: ""Iris' voice interrupts Enora Lueya's low growl. Something changes as the musical notes resonate through the air.""}"
+428	428		401							{1: '1', 2: '36'}
+429	429		505			DialogDisable				{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokeRed.prefab'}
+430	430		104							{1: '100|-75|-175', 2: '0'}
+431	431		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory939.png'}
+432	432		401							{1: '1', 2: '6160'}
+433	433		301			DialogEnable				{3: 'She tilts her head to gaze at the moon through gaps in the ruined building.'}
+434	434		301							{3: 'The moonlight and the sky freeze for a moment as her notes reach them, as if asking a question.'}
+435	435		301							{3: 'Why are you doing this?'}
+436	436		301				AniZhuanchangBegin			"{3: ""Iris lowers her eyelids, answering the world's question in her heart.""}"
+437	437		104			DialogDisable				{1: '0|0|0', 2: '0'}
+438	438		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokeRed.prefab', 2: '2'}
+439	439		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory10.jpg'}
+440	440		201							{1: '1', 2: '501184', 3: '9'}
+441	441		301			DialogEnable				{1: '1', 2: 'Iris', 3: 'Because even a flower wants to shield the one it cherishes from wind and rain... Conductor has been through enough.', 4: '1'}
+442	442		204							{1: '1', 2: '5'}
+443	443		301				DialogDisable			"{2: 'Iris', 3: ""A story that can end behind the scenes shouldn't be brought to light. Since the ending is already fixed..."", 4: '1'}"
+444	444		202							{1: '1', 6: '1'}
+445	445		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokeRed.prefab'}
+446	446		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen03.prefab', 2: '2'}
+447	447		107						2000.0	{1: 'Abess Research Institute', 2: '8:50', 4: 'Unknown Area', 5: 'Line Spacing: 1'}
+448	448		401							{1: '2', 2: '4291'}
+449	449		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+450	450		111						1200.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+451	451		107							{1: 'Abess Research Institute', 2: '8:50', 4: 'Unknown Area', 5: 'Line Spacing: 2'}
+452	452		501						350.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+453	453		505						1200.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+454	454		111						550.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+455	455		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+456	456		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+457	457		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab'}
+458	458		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen03.prefab'}
+459	459		402							{1: '4291'}
+460	460		108						1000.0	{1: '1'}
+461	461		201							{1: '1', 2: '501184', 3: '8', 5: '-50', 6: '-75'}
+462	462		301			DialogEnable				{1: '1', 2: 'Iris', 3: 'Goodnight, world.', 4: '1'}
+463	463		204							{1: '1', 2: '6'}
+464	464		301				AniZhuanchangBegin			{2: 'Iris', 3: 'Goodbye, Conductor.', 4: '1'}
+465	465		202							{1: '1', 6: '1'}
+466	466		502						200.0	{1: 'DialogDisable'}
+467	467		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory717.jpg'}
+468	468		401							{1: '2', 2: '1099'}
+469	469		301			DialogEnable				"{3: '""See you next time.""'}"
+470	470		401							{1: '2', 2: '895'}
+471	471		301							{3: 'These words end the chat and you set the terminal aside.'}
+472	472		301							{3: 'You grab dinner with several colleagues after parting with Ayla. You talk until late into the night before going back to the dorm.'}
+473	473		301							"{3: ""The table is covered with gifts, including several brought on behalf of friends who couldn't attend.""}"
+474	474		401							{1: '2', 2: '2768'}
+475	475		301							{3: 'You feel happy reading through the letters that came with the gifts. Paper is better at transmitting sentiments than electronic data.'}
+476	476		401							{1: '2', 2: '5307'}
+477	477		301							{3: 'You carefully label each letter so you can put them in the mail cabinet, but, as soon as the cabinet door opens, a pile of letters falls out.'}
+478	478		302							{2: 'Hm...?', 3: '479'}
+479	479		401							{1: '2', 2: '5298'}
+480	480		301							{3: 'You bend down to pick them up and see your name as the recipient on all of them. All the wax seals are broken.'}
+481	481		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg'}
+482	482		401							{1: '2', 2: '5298'}
+483	483		301			AniZhuanchangEnd				{3: 'You pause for a moment before opening one letter. The creased paper inside is completely blank.'}
+484	484		301							{3: 'Only the stamp of the WGAA rests quietly in one corner of the paper.'}
+485	485		302							{2: '...WGAA?', 3: '486'}
+486	486		401							{1: '2', 2: '4902'}
+487	487		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory717.jpg'}
+488	488		301			AniZhuanchangEnd	DialogDisable			{3: 'Feeling puzzled, you open the cabinet door again to check the label. This space is definitely for incoming mail, not outgoing.'}
+489	489		302							{2: 'Why are there so many blank letters here?', 3: '490'}
+490	490		302							"{2: ""And they all look like they've been opened and read..."", 3: '491'}"
+491	491		302							{2: '(Put away)', 3: '492', 4: '(Throw away)', 5: '494'}
+492	492		301			DialogEnable	AniZhuanchangBegin			{3: 'After thinking, you decide to put the letters back in a neat pile.'}
+493	493	501	502						400.0	{1: 'DialogDisable'}
+494	494		401							{1: '2', 2: '9389034'}
+495	495		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+496	496		104						250.0	{1: '0|0|-50', 2: '0.25'}
+497	497		104							{1: '0|0|0', 2: '0.25'}
+498	498		301			DialogEnable				{3: 'But the thought brings a strong sense of discomfort, as if a voice deep down is sounding an alarm.'}
+499	499		301				AniZhuanchangBegin			{3: 'After thinking, you decide to put the letters back in a neat pile.'}
+500	500	501	502						400.0	{1: 'DialogDisable'}
+501	501		401							{1: '2', 2: '2661'}
+502	502		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg'}
+503	503		301			DialogEnable				{3: 'You take out fresh writing paper the moment you close the cabinet.'}
+504	504		301							{3: 'Your motion is fluid, as if closing the mail cabinet and writing a reply to someone is a habit, instinct, a natural consequence of countless repetitions.'}
+505	505		301				AniZhuanchangBegin			{3: 'But as pen meets paper, discomfort makes your hand freeze. Even though you already know the opening lines and just need to write them down.'}
+506	506		502						400.0	{1: 'DialogDisable'}
+507	507		304			AniZhuanchangEnd				{1: 'It should express well-wishes, because the recipient is always wandering.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg', 6: '1', 7: '1'}
+508	508		304							"{1: ""It should share amusing stories from tonight's musical performance, because the recipient enjoys discussing such things and always has insights to offer."", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg', 6: '1', 7: '1'}"
+509	509		304							{1: 'It should also include...', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg', 6: '1', 7: '1'}
+510	510		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory717.jpg'}
+511	511		304							"{1: ""There's so much to write, but..."", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg', 9: '1'}"
+512	512		302				AniZhuanchangBegin			{2: 'The recipient... who is it?', 3: '513'}
+513	513		501			AniZhuanchangEnd				{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+514	514		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+515	515		504							{1: '0.7'}
+516	516		401							{1: '2', 2: '952'}
+517	517		101						1000.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg2401_3.jpg'}
+518	518		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+519	519		504							
+520	520		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+521	521		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory717.jpg'}
+522	522		301			DialogEnable				"{3: 'The bizarre dissonance rises once more. ""It"" crouches beside your ear, gazing silently at you.'}"
+523	523		301							"{3: '""It"" is trying to remind you that this isn\'t bewilderment. This isn\'t a daze, and certainly not confusion, but—'}"
+524	524		301							"{3: 'Your gaze falls to the edge of the paper, where the WGAA\'s stamp enters your vision. Logic fades as the poster of ""The Acadia Evacuation"" abruptly jumps into mind.'}"
+525	525		301							"{3: 'Suddenly, ""it"" departs, leaving behind a barely noticeable sound in your ear—something between a soft sigh and mocking laughter.'}"
+526	526		401							{1: '2', 2: '4421'}
+527	527		301				AniZhuanchangBegin			{3: 'Shaking your head to dispel the discomfort, you open your terminal as you ponder each word.'}
+528	528		502						400.0	{1: 'DialogDisable'}
+529	529		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+530	530		401							{1: '2', 2: '2943'}
+531	531		304			AniZhuanchangEnd				{1: 'Ayla:', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '1'}
+532	532		401							{1: '2', 2: '2943'}
+533	533		304							{1: 'Hi.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1'}
+534	534		401							{1: '2', 2: '2943'}
+535	535		304							{1: 'Thank you for your invitation today...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1'}
+536	536		401							{1: '2', 2: '2943'}
+537	537		304				AniZhuanchangBegin			{1: 'The musical was fascinating, I really enjoyed it, too...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 9: '1'}
+538	538		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory717.jpg'}
+539	539		301			DialogEnable	AniZhuanchangBegin			{3: 'After writing out all your thoughts on the evening, you hesitate before adding one more line.'}
+540	540		502							{1: 'DialogDisable'}
+541	541		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+542	542		401							{1: '2', 2: '2943'}
+543	543		304			AniZhuanchangEnd				"{1: 'I wonder when ""The Acadia Evacuation"" we talked about today will be released. If it\'s convenient for you, let\'s watch it together.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '-1'}"
+544	544		401							{1: '2', 2: '2943'}
+545	545		304							"{1: ""I still have a bit of free time left. Before returning to duty, I'd like to have a meal with you."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '-1', 9: '1'}"
+546	546		102							{1: 'Dream till the Timeless End', 2: 'Chapter 34', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+547	547		502				AniZhuanchangBegin		9000.0	{1: 'ThemeEnable'}
+548	548		304			AniZhuanchangEnd				{1: 'Time does not flow in cycles for humans. It flows in a straight line.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '1', 10: '1'}
+549	549		304							{1: 'This is why humans can never find happiness.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '1', 10: '1'}
+550	550		304		1		AniZhuanchangBegin			{1: 'Because happiness is the longing for repetition.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 9: '1', 10: '1'}

@@ -1,0 +1,245 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '210'}
+3	3		301			DialogEnable				"{3: ""You sign the final mission report and add it to the mountainous pile on your desk. Leaning back in your chair, you release a sigh that feels like it's been held for a year.""}"
+4	4		301							{3: 'Your gaze drifts to the sterile glow of the ceiling lights. Had your birthday really slipped by, so utterly uneventful...?'}
+5	5		401							{1: '1', 2: '36'}
+6	6		401						3200.0	{1: '2', 2: '2912'}
+7	7		401							{1: '1', 2: '12'}
+8	8		401							{1: '2', 2: '4304'}
+9	9		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+10	10		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1005.jpg'}
+11	11		301							"{3: '""BOOM!"" Just as you\'re sinking into the gloom, the world around you suddenly transforms.'}"
+12	12		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1004.jpg', 3: '0', 4: '1', 5: '1.5'}
+13	13		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionActivity/FxUiRegressionActivityFlare.prefab', 2: '2'}
+14	14		401							{1: '2', 2: '213'}
+15	15		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1004.jpg'}
+16	16		205							{1: '999'}
+17	17		301				DialogDisable			{3: 'A colossal fireball smashes into the ground, the wave of scorching heat blistering your skin.'}
+18	18		301			DialogEnable				"{2: '??', 3: ""Chosen One, get up! We have to move! It's not safe here!""}"
+19	19		201							{1: '1', 2: '501187', 3: '7', 5: '-500'}
+20	20		203							{1: '1', 2: '0.4', 4: '0'}
+21	21		301							{1: '1', 3: 'From the newly formed ruins, a petite figure scrambles into view.'}
+22	22		302							"{2: 'Jetavie?', 3: '23', 4: ""...What's going on?"", 5: '23'}"
+23	23		301			DialogShake				"{2: 'Jetavie', 3: 'What does it look like? It\'s the end of the world! The real, ""everything-is-on-fire"" kind!', 4: '1'}"
+24	24		306							{1: '1'}
+25	25		301							"{3: ""But you should be in the Gray Raven's lounge right now.""}"
+26	26		306							
+27	27		204							{1: '1', 2: '7'}
+28	28		301							"{2: 'Jetavie', 3: ""Now come on, let's go! Let's go!"", 4: '1'}"
+29	29		202							{1: '1', 6: '1'}
+30	30		401							{1: '2', 2: '1543'}
+31	31		201							{1: '1', 2: '501190'}
+32	32		301							{1: '1', 3: 'She seizes your hand, her grip frantic, and tries to pull you into a run.'}
+33	33		306						400.0	{1: '1'}
+34	34		301							{1: '1', 3: 'As she turns, your eyes dart to the one thing betraying her: her usually restless tail, now drilled obediently into the cracked soil... It seems connected to some hidden interface.'}
+35	35		306				DialogDisable		400.0	
+36	36		302							"{2: ""(Grab Jetavie's tail)"", 3: '37', 4: ""But I'm pretty sure I'm in the Gray Raven's lounge?"", 5: '55'}"
+37	37		502							{1: 'RImgBg1Shake'}
+38	38		202							{1: '1', 6: '1'}
+39	39		201							{1: '1', 2: '501187', 3: '6'}
+40	40		401							{1: '1', 2: '36'}
+41	41		401							{1: '2', 2: '4895'}
+42	42		502							{1: 'DialogEnable'}
+43	43		301			RImgBg1Shake				{1: '1', 2: 'Jetavie', 3: 'Ahh!!!', 4: '1'}
+44	44		402							{1: '213'}
+45	45		401							{1: '2', 2: '4426'}
+46	46		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionActivity/FxUiRegressionActivityFlare.prefab'}
+47	47		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTRPGMaze/FxUiTRPGMaze01.prefab', 2: '3'}
+48	48		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory14.png', 3: '0', 4: '1', 5: '0.3'}
+49	49		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+50	50		205							{1: '999'}
+51	51		401							{1: '1', 2: '210'}
+52	52		301							{2: 'Jetavie', 3: 'What are you doing?!', 4: '1'}
+53	53		204							{1: '1', 2: '18'}
+54	54	66	301			DialogShake				{2: 'Jetavie', 3: 'You should hold my hand, not my tail!', 4: '1'}
+55	55		402							{1: '213'}
+56	56		401							{1: '2', 2: '4426'}
+57	57		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionActivity/FxUiRegressionActivityFlare.prefab'}
+58	58		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTRPGMaze/FxUiTRPGMaze01.prefab', 2: '3'}
+59	59		205						600.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory14.png', 3: '0', 4: '1', 5: '0.3'}
+60	60		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+61	61		205							{1: '999'}
+62	62		401							{1: '1', 2: '210'}
+63	63		202							{1: '1', 6: '1'}
+64	64		201							{1: '1', 2: '501187', 3: '17'}
+65	65		301			DialogEnable				"{1: '1', 2: 'Jetavie', 3: ""...You're no fun at all."", 4: '1'}"
+66	66		202							{1: '1'}
+67	67		301							"{3: ""The apocalyptic scene vanishes, and the world snaps back into focus, revealing the mundane safety of the Gray Raven's lounge. As you suspected, the illusion was just Jetavie manipulating the smart lighting system.""}"
+68	68		302							"{2: ""So, what's this really about?"", 3: '69'}"
+69	69		201							{1: '1', 2: '501187', 3: '7'}
+70	70		301							"{1: '1', 2: 'Jetavie', 3: ""It's Babylonia... Right! It's... it's going to fall!"", 4: '1'}"
+71	71		302							{2: 'Babylonia? But everything seems stable here...', 3: '72'}
+72	72		204							{1: '1', 2: '4'}
+73	73		301							"{2: 'Jetavie', 3: ""That's the whole point! We have to escape before it starts falling! Once it does, it'll be a total catastrophe!"", 4: '1'}"
+74	74		302							{2: '...?', 3: '75', 4: '...', 5: '75'}
+75	75		301							"{2: 'Jetavie', 3: ""Did you not see the giant ball crashing into the ground? That's what it looks like when Babylonia gets up close and personal with Earth."", 4: '1'}"
+76	76		204							{1: '1', 2: '15'}
+77	77		301			DialogShake				{2: 'Jetavie', 3: 'I simulated it... calculated it just for you!', 4: '1'}
+78	78		302							"{2: ""But Babylonia isn't a giant ball, I think?"", 3: '79'}"
+79	79		204							{1: '1', 2: '3'}
+80	80		301							"{2: 'Jetavie', 3: ""Well, that's because..."", 4: '1'}"
+81	81		204							{1: '1', 2: '1'}
+82	82		301							"{2: 'Jetavie', 3: ""That's because my database is missing the high-detail art assets, okay?! I can't render a whole floating ship like Babylonia! So just use your imagination!"", 4: '1'}"
+83	83		204							{1: '1', 2: '17'}
+84	84		301							{3: 'Seeing you remain unmoved, she releases a soft, resigned sigh.'}
+85	85		202							{1: '1'}
+86	86		301							"{3: 'Then, she vaults onto your desk with a light ""hah,"" legs swinging in a restless tempo.'}"
+87	87		201							{1: '1', 2: '501187'}
+88	88		301							{1: '1', 2: 'Jetavie', 3: 'Hey... Chosen One...', 4: '1'}
+89	89		301							{3: 'Propping her chin on her hand, she stares past you, her words soft and aimed at some distant, unseen point.'}
+90	90		301							"{2: 'Jetavie', 3: ""...Aren't you ever scared, staying here all the time?"", 4: '1'}"
+91	91		204							{1: '1', 2: '3'}
+92	92		301							"{2: 'Jetavie', 3: ""Day in, day out, living in this floating cage... It's all the same. So monotonous it's suffocating. And it just... goes on forever."", 4: '1'}"
+93	93		204							{1: '1'}
+94	94		301							{3: 'She shifts her gaze from the distance and turns to look at you.'}
+95	95		301							"{2: 'Jetavie', 3: 'Don\'t you think a life like this... is its own kind of ""end""?', 4: '1'}"
+96	96		302							{2: 'No wonder you said Babylonia was going to fall.', 3: '97'}
+97	97		204							{1: '1', 2: '11'}
+98	98		301							{2: 'Jetavie', 3: 'I just wanted to see you react for once. To feel something. Before you completely fossilize in this place.', 4: '1'}
+99	99		204							{1: '1', 2: '1'}
+100	100		301							"{2: 'Jetavie', 3: ""So... what if we played hooky? Just for today. Let's run away, you and me. Somewhere really far away..."", 4: '1'}"
+101	101		302							{2: 'And where would that be?', 3: '102'}
+102	102		204							{1: '1', 2: '3'}
+103	103		301							{2: 'Jetavie', 3: '...', 4: '1'}
+104	104		204							{1: '1', 2: '13'}
+105	105		301				DialogDisable			"{2: 'Jetavie', 3: 'At the ""edge of the world.""', 4: '1'}"
+106	106		202							{1: '1'}
+107	107		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+108	108		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+109	109		205							{1: '999'}
+110	110		109							"{1: '1', 2: '<size=55>And so, Jetavie ""sneaks"" you out of Babylonia.\\nTo flee the phantom apocalypse, the two of you embark on a journey to the very edge of the world.</size>', 4: '50', 9: '3', 11: '1'}"
+111	111		301				AniZhuanchangBegin			"{3: 'And so, Jetavie ""sneaks"" you out of Babylonia. To flee the end of the world, the two of you embark on a journey to the very edge of the world.'}"
+112	112		110							{1: '1'}
+113	113		401							{1: '1', 2: '36'}
+114	114		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory96.png'}
+115	115		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+116	116		401						2000.0	{1: '2', 2: '2866'}
+117	117		401				AniZhuanchangEnd			{1: '1', 2: '5070'}
+118	118		301			DialogEnable				{3: 'With a final, metallic screech from its landing gear, the transport craft shudders to a halt in the heart of a frozen polar wasteland.'}
+119	119		402							{1: '2866'}
+120	120		401							{1: '2', 2: '13081709'}
+121	121		301							{1: '1', 3: 'Before the biting cold can even register, Jetavie bundles you into a thick winter coat. With a decisive whoosh, she zips it up to your chin, swaddling you in an instant cocoon of warmth.'}
+122	122		201							{1: '1', 2: '501187', 3: '2'}
+123	123		301							"{1: '1', 2: 'Jetavie', 3: ""Hahaha! All bundled up like a big snowman. So much cuter than when you're buried in reports."", 4: '1'}"
+124	124		302							"{2: 'Cute... I\'d prefer adjectives like ""cool"" or ""stylish.""', 3: '125', 4: 'If it makes you happy, Jetavie.', 5: '127'}"
+125	125		204							{1: '1', 2: '8'}
+126	126	129	301							"{2: 'Jetavie', 3: ""Oh, hush. When you're off being a hero, I never get a chance to see you like this. Let me have this."", 4: '1'}"
+127	127		204							{1: '1', 2: '1'}
+128	128		301							{2: 'Jetavie', 3: 'Of course it makes me happy! Anything is better than watching you frown at a mountain of paperwork.', 4: '1'}
+129	129		204							{1: '1', 2: '1'}
+130	130		301							"{2: 'Jetavie', 3: ""There, all set. Come on, my big snowman. We're almost there."", 4: '1'}"
+131	131		202							{1: '1'}
+132	132		301				DialogDisable			{3: 'With a beaming smile, she takes your hand and draws you deeper into the snow-blanketed expanse.'}
+133	133		401							{1: '2', 2: '1514'}
+134	134		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1124.jpg', 3: '0', 4: '1', 5: '1'}
+135	135		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1124.jpg'}
+136	136		205							{1: '999'}
+137	137		301			DialogEnable	DialogDisable			{1: '1', 3: 'Step by step, your boots carve a trail of uneven footprints in the pristine white.'}
+138	138		201						800.0	{1: '1', 2: '501187', 3: '8', 4: '600'}
+139	139		202						300.0	{1: '1'}
+140	140		201						800.0	{1: '2', 2: '501187', 3: '1', 4: '-500'}
+141	141		202						300.0	{1: '2'}
+142	142		201						800.0	{1: '3', 2: '501187', 3: '15'}
+143	143		202						300.0	{1: '3'}
+144	144		301			DialogEnable	DialogDisable			{1: '1', 3: 'Jetavie releases your hand, her curiosity pulling her away. She darts here and there, vanishing one moment, only to reappear abruptly the next, as if the landscape itself is her playground in this spontaneous game of hide-and-seek.'}
+145	145		401							{1: '2', 2: '1514'}
+146	146		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory96.png', 3: '0', 4: '1', 5: '1'}
+147	147		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory96.png'}
+148	148		205							{1: '999'}
+149	149		201							{1: '1', 2: '501187', 3: '11'}
+150	150		301			DialogEnable	DialogDisable			{1: '1', 3: 'Then, through the parting mist, you see her again. She stands beside a signpost, calm and still, as though she had been waiting there for centuries.'}
+151	151		202							{1: '1'}
+152	152		401							{1: '2', 2: '1514'}
+153	153		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory105.png', 3: '0', 4: '1', 5: '1'}
+154	154		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory105.png'}
+155	155		205							{1: '999'}
+156	156		201							{1: '1', 2: '501187', 3: '1'}
+157	157		301			DialogEnable	DialogDisable			{1: '1', 2: 'Jetavie', 3: 'Hmm... looks like the snow is letting up.', 4: '1'}
+158	158		202							{1: '1'}
+159	159		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory629.jpg', 3: '0', 4: '1', 5: '1'}
+160	160		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory629.jpg'}
+161	161		205							{1: '999'}
+162	162		301			DialogEnable	DialogDisable			{3: 'You follow her gaze upward, and notice the swirling snow begins to still.'}
+163	163		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory628.jpg', 3: '0', 4: '1', 5: '1'}
+164	164		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory628.jpg'}
+165	165		205							{1: '999'}
+166	166		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+167	167		104						2000.0	{1: '-200|-80|-200', 2: '1.5'}
+168	168		301			DialogEnable	DialogDisable			{3: 'A glimmer of silver light bleeds through a fissure in the distant snow wall, wavering like liquid mercury.'}
+169	169		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1216.jpg', 3: '0', 4: '1', 5: '1'}
+170	170		104						1500.0	{1: '0|-80|-200', 2: '0', 4: '3'}
+171	171		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1216.jpg'}
+172	172		104							{1: '0|-80|-200', 2: '0'}
+173	173		205							{1: '999'}
+174	174		104							{1: '0|0|0', 2: '0', 4: '3'}
+175	175		301			DialogEnable				{3: 'The shimmer grows, intensifying into rivers of radiance that pulse with otherworldly color. They twist and swell, gathering brilliance until they come cascading gracefully from the edge of the heavens.'}
+176	176		301							{3: 'The aurora appears.'}
+177	177		104						1000.0	{1: '0|0|0', 2: '1.5'}
+178	178		306							{1: '1'}
+179	179		201							{1: '1', 2: '501187', 3: '1'}
+180	180		301							{1: '1', 3: 'The celestial light pours into her eyes, igniting them into mesmerizing gemstones.'}
+181	181		301							{3: 'Snowfields, aurora, and a girl... In this boundless solitude, there are only Jetavie and you.'}
+182	182		306							
+183	183		204							{1: '1', 2: '8'}
+184	184		301				DialogDisable			{2: 'Jetavie', 3: 'So? Not a bad final stop for our great escape, is it?', 4: '1'}
+185	185		302							{2: 'Yeah, I really like it.', 3: '188', 4: '...', 5: '186'}
+186	186		204							{1: '1', 2: '1'}
+187	187		301			DialogEnable	DialogDisable			"{2: 'Jetavie', 3: ""Speechless? I knew you'd love it."", 4: '1'}"
+188	188		302							{2: 'So, what gave you the idea to bring me all the way out here?', 3: '189'}
+189	189		204							{1: '1', 2: '3'}
+190	190		301			DialogEnable				"{2: 'Jetavie', 3: ""Do I need a reason? I wanted to bring you here, so I did. It's that simple."", 4: '1'}"
+191	191		204							{1: '1'}
+192	192		301							{3: 'She turns her gaze away, distractedly scuffing the snow with the toe of her boot.'}
+193	193		301							"{2: 'Jetavie', 3: ""After all... it's your birthday. And aren't birthdays always a little bit like the end of the world?"", 4: '1'}"
+194	194		204							{1: '1', 2: '8'}
+195	195		301							"{2: 'Jetavie', 3: ""That's why we have to run away from them, with everything we've got."", 4: '1'}"
+196	196		302							{2: 'A birthday... is the end of the world?', 3: '197'}
+197	197		204							{1: '1', 2: '1'}
+198	198		301							{2: 'Jetavie', 3: 'It is for me. My birthdays have always been... unlucky.', 4: '1'}
+199	199		302							{2: '...!', 3: '200', 4: '...', 5: '200'}
+200	200		202							{1: '1', 6: '1'}
+201	201		401							{1: '2', 2: '895'}
+202	202		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+203	203		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5401_02.jpg'}
+204	204		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+205	205		301							"{3: 'For Jetavie, both her birth and her birthday were marked by unimaginable hardship within the Matrix, each one a private ""end of the world""...'}"
+206	206		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+207	207		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1216.jpg'}
+208	208		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+209	209		201							{1: '1', 2: '501187', 3: '3', 7: '1'}
+210	210		301							{1: '1', 2: 'Jetavie', 3: 'But every time, you were there. You always took my hand and led me somewhere far away...', 4: '1'}
+211	211		204							{1: '1', 2: '1'}
+212	212		301							{2: 'Jetavie', 3: 'So I thought... for your birthday, I should be the one to take you away. Just like you did for me.', 4: '1'}
+213	213		302							{2: 'Jetavie...', 3: '214'}
+214	214		204							{1: '1'}
+215	215		301							{2: 'Jetavie', 3: 'You know, I was actually terrified today. I kept thinking, what if Babylonia really did fall? What if some monster attacked, or an engine failed...?', 4: '1'}
+216	216		301							{2: 'Jetavie', 3: 'Just like in the Matrix, where something always goes wrong on a birthday.', 4: '1'}
+217	217		204							{1: '1', 2: '18'}
+218	218		301							{2: 'Jetavie', 3: 'So I checked everything like an idiot. I even turned that nagging <phonetic=Gestalt>mechanical hag</phonetic> inside out.', 4: '1'}
+219	219		204							{1: '1'}
+220	220		301							{2: 'Jetavie', 3: 'I was so relieved when I found nothing wrong. And then I found you in the lounge, drowning in documents.', 4: '1'}
+221	221		204							{1: '1', 2: '3'}
+222	222		301							"{2: 'Jetavie', 3: ""And I thought... maybe the end of the world isn't always loud. That must be it."", 4: '1'}"
+223	223		302							"{2: ""So that's why you brought me to the edge of the world?"", 3: '224'}"
+224	224		204							{1: '1', 2: '11'}
+225	225		301							"{2: 'Jetavie', 3: ""Yes. Even if it's just for one day... my Chosen One should only see wonderful, happy things."", 4: '1'}"
+226	226		204							{1: '1', 2: '1'}
+227	227		203							{1: '1', 2: '1', 4: '-15', 5: '-50'}
+228	228		401						1000.0	{1: '2', 2: '1514'}
+229	229		402							{1: '1514'}
+230	230		301							"{3: ""She moves toward you across the snow, which glimmers with starlight, her approach as graceful as a fairy's.""}"
+231	231		301							{2: 'Jetavie', 3: 'A place with no battles, no missions. Just you and me. Daydreaming, laughing... having snowball fights.', 4: '1'}
+232	232		301							"{2: 'Jetavie', 3: ""Even after 364 dim nights, we'd find our own aurora here, at the edge of the world. And then..."", 4: '1'}"
+233	233		203							{1: '1', 2: '1', 4: '-30', 5: '-150'}
+234	234		401						1000.0	{1: '2', 2: '1514'}
+235	235		402							{1: '1514'}
+236	236		301							{3: 'With each deliberate step, she draws nearer, until she gently takes your hand.'}
+237	237		301							{2: 'Jetavie', 3: 'Let this radiance shine upon all the stars, shine upon me, and shine upon you.', 4: '1'}
+238	238		302							{2: '(Embrace Jetavie)', 3: '239'}
+239	239		401							{1: '2', 2: '5526'}
+240	240		203							{1: '1', 2: '0.5', 4: '-70', 5: '-200'}
+241	241		204							{1: '1', 2: '11'}
+242	242		301							{3: 'She presses herself eagerly against your chest, her cheek nestling into the plush warmth of your winter coat.'}
+243	243		204							{1: '1', 2: '1'}
+244	244		301		1		AniZhuanchangBegin			{2: 'Jetavie', 3: 'Well then, happy birthday, 【kuroname】.', 4: '1'}

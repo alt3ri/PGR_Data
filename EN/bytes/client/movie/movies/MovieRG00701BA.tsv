@@ -1,0 +1,140 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		301			DialogEnable				{3: 'In the hush of darkness, wrapped in a tranquil yet faintly forlorn reverie.'}
+4	4		301							{3: 'Limbs numb, eyes too heavy to open, heart adrift without a home.'}
+5	5		301							"{3: ""Drifting, letting your memories roam deeper, questing until they're adrift.""}"
+6	6		301							{3: 'Space fades, time loses its grip, and even existence feels like an afterthought.'}
+7	7		401							{1: '1', 2: '137'}
+8	8		301							{3: 'Amidst the vast void, a distant shore beckons with a haunting melody.'}
+9	9		301							"{3: ""As the notes touch the water's surface, ripples take on a faint glow, weaving dark currents into intricate patterns.""}"
+10	10		301							{3: 'The shapes sculpted are heartbeats, bodies, and breaths.'}
+11	11		301							{3: 'The cast shadows are pulsations, fears, and wanderings.'}
+12	12		301							{3: 'Layers of reality shift, drawing nearer to the haunting song.'}
+13	13		401							{1: '1', 2: '36'}
+14	14		401							{1: '2', 2: '9335028'}
+15	15		301							{3: 'At last, the melody fades, replaced by a fragile rhythm.'}
+16	16		301							{2: '???', 3: 'Ready to embark on the journey? Alongside that girl.'}
+17	17		301							"{3: ""Like the somber toll of an ancient clock, time weighs heavily on the dream's edge.""}"
+18	18		301							"{2: '???', 3: ""You'll edge closer to the truth and pay the price, but not before...""}"
+19	19		301							{3: 'Memories slowly return from the void, heart pounding fiercely.'}
+20	20		301							{2: '???', 3: 'Remember the purpose of the journey.'}
+21	21		301							{3: 'Distant lights flicker in solitude, your own breath the only sound.'}
+22	22		301							{2: '???', 3: 'Choose.'}
+23	23		301				DialogDisable			"{3: ""A stranger's voice fades, light emerging in the darkness.""}"
+24	24		302							{2: 'Choose?'}
+25	25		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '1'}
+26	26		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab'}
+27	27		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+28	28		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+29	29		505				AniZhuanchangBegin	10.0		{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+30	30		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+31	31		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+32	32		401							{1: '1', 2: '209'}
+33	33		201							{1: '1', 2: '500728'}
+34	34		502							{1: 'DialogEnable'}
+35	35		301			AniZhuanchangEnd				{1: '1', 3: 'Emerging from slumber, your gaze meets eyes as crimson as a blood moon.'}
+36	36		301							{3: 'A peculiar girl stands before you, a mischievous grin playing on her lips.'}
+37	37		301							{3: 'The ticking of the clock persists, its echo resonating through the spacious room.'}
+38	38		301							"{3: ""The girl's lips tremble, eyes narrowed in curiosity as she watches you.""}"
+39	39		301							{2: '???', 3: 'What a peculiar rendezvous, awake yet tangled in dreams, huh?', 4: '1'}
+40	40		301							{2: '???', 3: 'So, Chosen One, tell me. What did you see on the flip side of this serene land?', 4: '1'}
+41	41		302							{2: 'The sea, grids, the distant shore...', 3: '42'}
+42	42		301							{2: '???', 3: 'All whimsical stuff kids cook up. Still stuck in childhood?', 4: '1'}
+43	43		302							"{2: ""Aren't you also..."", 3: '44'}"
+44	44		301							"{2: '???', 3: ""Me? I'm no kid! Open your eyes and take a good look."", 4: '1'}"
+45	45		301							{3: 'She gestures to the subtle package lines on her shoulder.'}
+46	46		301							{2: '???', 3: 'Get it? Judging by looks is a bad habit, gotta shake that off!', 4: '1'}
+47	47		301							{2: '???', 3: 'Anyway, as a thank-you for sharing your dream, let me introduce myself.', 4: '1'}
+48	48		301							"{2: '???', 3: ""I'm Jetavie, and for some reason, fate's brought us together here."", 4: '1'}"
+49	49		301							"{2: 'Jetavie', 3: ""Well, guess it's all written in the stars."", 4: '1'}"
+50	50		302							{2: 'Hello, Jetavie?', 3: '51'}
+51	51		301							{2: 'Jetavie', 3: 'Hello, Chosen One.'}
+52	52		301							{3: 'Jetavie, hands tucked behind her back, whips out a can of milk out of nowhere.'}
+53	53		204							{1: '1', 2: '2'}
+54	54		301							{3: 'Her expression turns freaky.'}
+55	55		302							{2: 'What do you want?', 3: '56'}
+56	56		203							{1: '1', 2: '0.3', 5: '-100'}
+57	57		301							{3: 'Jetavie saunters over, shoving a milk bottle in your mouth and pouring milk.'}
+58	58		301							"{2: 'Jetavie', 3: ""Don't fight it, you're pretty weak right now. More milk is good for you."", 4: '1'}"
+59	59		301							"{2: 'Jetavie', 3: ""That's it, keep chugging, it'd be a shame to waste it."", 4: '1'}"
+60	60		302							{2: 'Gulp—gulp—gulp—', 3: '61'}
+61	61		301							{2: 'Jetavie', 3: 'Hahaha, look at you, like a baby... Not a bad look, though.', 4: '1'}
+62	62		301							{3: 'Jetavie, trying to stifle her giggles, suddenly cracks up, hand flying to cover her mouth.'}
+63	63		301							{2: 'Jetavie', 3: 'Impressive, you shake off that weirdness without missing a beat.', 4: '1'}
+64	64		301							{2: 'Jetavie', 3: 'You totally cool with this or just clueless about the danger?', 4: '1'}
+65	65		301							{2: 'Jetavie', 3: 'Either way, staying calm like this is a rare trait.', 4: '1'}
+66	66		204							{1: '1'}
+67	67		203						500.0	{1: '1', 2: '0.3', 4: '-100', 5: '-100'}
+68	68		203							{1: '1', 2: '0.3', 5: '-100'}
+69	69		301							{3: 'Jetavie gives a little curtsy to apologize, showing a whole different level of grace from her earlier rudeness.'}
+70	70		301							{2: 'Jetavie', 3: 'Chosen One, get up and scope out your surroundings.', 4: '1'}
+71	71		301							"{2: 'Jetavie', 3: ""Seriously, you got zero clue what's going on?"", 4: '1'}"
+72	72		202							{1: '1'}
+73	73		301							"{3: ""Under Jetavie's guidance, your gaze wanders across every nook of the room...""}"
+74	74		301							"{3: ""It's a roomy space decked out in light tones, where simplicity and elegance take center stage.""}"
+75	75		301							{3: 'Pale sofas, walls, ceilings, and doors dominate the scene, except for one standout feature...'}
+76	76		301							{3: 'A mammoth black clock hanging dead center, way too big for comfort.'}
+77	77		201							{1: '1', 2: '500728'}
+78	78		301							{1: '1', 2: 'Jetavie', 3: 'Ah, caught it, huh? You saw that clock too, right?', 4: '1'}
+79	79		301							{3: 'Silver-haired Jetavie, now at your side, shoots you a concerned glance, her gaze fixed on the ominous clock.'}
+80	80		301							"{2: 'Jetavie', 3: ""Despite its clash with the room's aesthetic, it's a necessary evil, a constant reminder of the ticking clock."", 4: '1'}"
+81	81		302							{2: 'A dark clock?', 3: '82'}
+82	82		301							{2: 'Jetavie', 3: 'Not a run-of-the-mill timepiece, just a facade crafted by me.', 4: '1'}
+83	83		401							{1: '2', 2: '2750'}
+84	84		301							"{3: ""With a snap of Jetavie's fingers, the rustic clock morphs into a screen flashing red digits.""}"
+85	85		202							{1: '1', 6: '1'}
+86	86		401							{1: '2', 2: '9335029'}
+87	87		307	1						{1: '13:24:22', 3: '75', 4: 'e60000'}
+88	88		307							{2: '1'}
+89	89		201							{1: '1', 2: '500728'}
+90	90		301							"{1: '1', 2: 'Jetavie', 3: ""See? Clearer, isn't it?"", 4: '1'}"
+91	91		302							{2: 'A countdown?', 3: '92'}
+92	92		301							{2: 'Jetavie', 3: 'Precisely, a countdown.', 4: '1'}
+93	93		301							{3: 'As Jetavie talks, those numbers on the screen keep shifting.'}
+94	94		202							{1: '1', 6: '1'}
+95	95		401							{1: '2', 2: '9335029'}
+96	96		307	1						{1: '13:24:01', 3: '75', 4: 'e60000'}
+97	97		307							{2: '1'}
+98	98		201							{1: '1', 2: '500728'}
+99	99		301							"{1: '1', 2: 'Jetavie', 3: ""See, it's as simple as that."", 4: '1'}"
+100	100		301							{2: 'Jetavie', 3: 'They keep dropping until they hit zero.', 4: '1'}
+101	101		302							{2: 'And what happens then?', 3: '102'}
+102	102		301							"{2: 'Jetavie', 3: ""What happens if they hit zero? Well, it's game over for the world."", 4: '1'}"
+103	103		302							{2: 'Game over? What does that mean?', 3: '104'}
+104	104		301							"{2: 'Jetavie', 3: 'You seem a bit groggy. ""Game over"" means exactly what it sounds like—over, no more, nada.', 4: '1'}"
+105	105		301							{2: 'Jetavie', 3: 'Poof, like a bubble popped with a pin, everything just vanishes into thin air.', 4: '1'}
+106	106		301							"{2: 'Jetavie', 3: ""Can't wrap your head around it? Picture this: world's gone, you, me, everything, all gone like bubbles."", 4: '1'}"
+107	107		302							{2: 'Why...', 3: '108'}
+108	108		301							{2: 'Jetavie', 3: 'No need to tell you that.', 4: '1'}
+109	109		301							"{2: 'Jetavie', 3: ""Or rather, not my place to tell you, and you'll figure it out soon enough."", 4: '1'}"
+110	110		302							{2: 'Like bubbles...', 3: '111'}
+111	111		301							{2: 'Jetavie', 3: 'Like hapless bubbles.', 4: '1'}
+112	112		301							{3: 'Jetavie puts a finger to her lips, miming blowing a bubble.'}
+113	113		302							"{2: ""What's happening out there beyond these walls?"", 3: '114'}"
+114	114		301							"{2: 'Jetavie', 3: ""Chosen One, the world beyond this room isn't the peaceful paradise you might've hoped for."", 4: '1'}"
+115	115		301							"{2: 'Jetavie', 3: ""Even this room's just a brief respite in the eye of the storm of chaos."", 4: '1'}"
+116	116		301							"{2: 'Jetavie', 3: ""It won't hold up for long, soon crumbling into something unrecognizable."", 4: '1'}"
+117	117		301							{2: 'Jetavie', 3: 'This is about as far as my skills go. If we linger...', 4: '1'}
+118	118		301							{2: 'Jetavie', 3: 'This safe haven might just become our tomb.', 4: '1'}
+119	119		301							"{2: 'Jetavie', 3: ""So, we've got no choice but to leave, and there's not much time for you to get ready."", 4: '1'}"
+120	120		301							"{2: 'Jetavie', 3: ""But hey, don't stress too much. No matter what goes down, I've got your back, always."", 4: '1'}"
+121	121		301							"{2: 'Jetavie', 3: ""That means Jetavie's tagging along to witness every twist and turn of your journey."", 4: '1'}"
+122	122		302							"{2: ""You're a companion?"", 3: '123'}"
+123	123		301							"{2: 'Jetavie', 3: 'Doesn\'t really matter what I am, but ""companion"" sounds about right.', 4: '1'}"
+124	124		301							{2: 'Jetavie', 3: 'Neither foe nor friend, just an observer by your side.', 4: '1'}
+125	125		302							{2: 'What now?', 3: '126'}
+126	126		301							{2: 'Jetavie', 3: 'Uncovering the truth of this world before the countdown hits zero, obviously.', 4: '1'}
+127	127		301							"{2: 'Jetavie', 3: ""For you, for your past and future selves, it's all the same."", 4: '1'}"
+128	128		202							{1: '1', 6: '1'}
+129	129		401							{1: '2', 2: '9335029'}
+130	130		307							{1: '13:08:14', 3: '75', 4: 'e60000'}
+131	131		301							{3: 'The time on that dark screen keeps ticking down...'}
+132	132		307							{2: '1'}
+133	133		201							{1: '1', 2: '500728', 3: '2'}
+134	134		301							{1: '1', 3: 'With silver hair and crimson eyes, Jetavie flashes that devilish grin again, extending her hand toward you.'}
+135	135		301							{2: 'Jetavie', 3: 'Come on, Chosen One, time to hit the road.', 4: '1'}
+136	136		301							"{3: ""After a beat of hesitation, you grasp Jetavie's hand.""}"
+137	137		301							"{2: 'Jetavie', 3: ""Ah, that's more like it."", 4: '1'}"
+138	138		301							"{2: 'Jetavie', 3: ""And don't let go too easy from here on out."", 4: '1'}"
+139	139		301		1		AniZhuanchangBegin			{3: 'With a jittery heart, you make your way to that door...'}

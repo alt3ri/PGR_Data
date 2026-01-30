@@ -1,0 +1,65 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory154.png'}
+2	2		401							{1: '1', 2: '18'}
+3	3		201							{1: '1', 2: '1021001', 4: '-400'}
+4	4		201							{1: '2', 2: '500026', 4: '400'}
+5	5		301			DialogEnable				{1: '1', 2: 'Lee', 3: 'No guards at the entrance, nor any other restrictions.', 4: '2'}
+6	6		301							{2: 'Lee', 3: 'But a lot of humans...', 4: '2'}
+7	7		301							"{2: 'Lucia', 3: ""Let's go."", 4: '1'}"
+8	8		202							{1: '1', 2: '2'}
+9	9		301				AniZhuanchangBegin			{3: 'Lucia leads the way cautiously at a quick pace, while Lee is observing the surroundings closely. Liv follows, her curiosity piqued by the place.'}
+10	10		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory159.png'}
+11	14		301			AniZhuanchangEnd				{2: 'Peddling Voices', 3: 'Canned pupa! Three grubs a can!'}
+12	15		301							{2: 'Peddling Voices', 3: 'Virus-free oxygen tanks! Long shelf life! Buy one get one free! Buy two get two free!'}
+13	16		301							{2: 'Peddling Voices', 3: '—Ayyyy Razor Honey anyone?! Practically priceless, now at a fair price!!!'}
+14	11		201							{1: '1', 2: '1021001'}
+15	12		201							{1: '2', 2: '1031001', 4: '-600'}
+16	13		201							{1: '3', 2: '500026', 4: '600'}
+17	17		301							"{1: '1', 2: 'Liv', 3: ""What's that?"", 4: '2'}"
+18	18		301							{2: 'Lee', 3: '...No related information found. But an overall analysis of the conversations taking place here suggests that this is a market.', 4: '3'}
+19	19		301							{2: 'Lucia', 3: 'A market? In this time and age?', 4: '1'}
+20	20		301							{2: 'Liv', 3: 'Similar to ACA?', 4: '2'}
+21	21		301							{2: 'Lee', 3: 'Only in the sense that they both engage in organized trade, but other than that...', 4: '3'}
+22	22		301							{2: 'Lee', 3: '...Liv?', 4: '3'}
+23	23		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+24	24		301							{3: 'In a dark alley around a corner, Liv stops in her tracks before a shabby stall.'}
+25	25		201							{1: '1', 2: '1031001', 4: '-400'}
+26	26		201							{1: '2', 2: '500148', 4: '400'}
+27	27		301							{1: '1', 2: 'Stall Keeper', 3: '...', 4: '2'}
+28	28		301				AniZhuanchangBegin			"{2: 'Liv', 3: ""You don't look well. Do you need help?"", 4: '1'}"
+29	29		202							{1: '1', 2: '2', 6: '1'}
+30	990		401							{1: '1', 2: '202'}
+31	30		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1101_1.jpg'}
+32	31		301			AniZhuanchangEnd				{2: 'Stall Keeper', 3: '...Ah.'}
+33	32		301							{3: 'The voice is coarse and fuzzy, as if coming from damaged vocal cords.'}
+34	33		301							{2: 'Stall Keeper', 3: '...B-buy... Buy?'}
+35	34		301							{3: 'The stall keeper searches his cloak with a shaky hand, then presents Liv with a hermetic bag.'}
+36	35		301							{3: 'He curls up his lips, trying to squeeze out a friendly smile.'}
+37	36		301							{2: 'Stall Keeper', 3: 'Freshly... harvested.'}
+38	37		301							{2: 'Stall Keeper', 3: 'Perfectly... healthy.'}
+39	38		301							{3: 'Greyish murky organs are floating within the bag, as if thrown in there on a whim.'}
+40	39		301							{2: 'Liv', 3: 'You need immediate treatment! Let me run a check on...'}
+41	40		301							{2: 'Stall Keeper', 3: 'Only 286 miles to go... Only 286...'}
+42	41		301							"{2: 'Stall Keeper', 3: ""Then I can go home... Can you pay in miles? I'll even give you a discount. H-how's that...?""}"
+43	42		301							{2: 'Stall Keeper', 3: 'Buy... Please... Buy...!'}
+44	111		502							{1: 'RImgBg1BlowUp'}
+45	43		301							{2: 'Stall Keeper', 3: 'I just have to get through tonight... Then once I earn enough grubs...'}
+46	44		301							"{2: 'Liv', 3: ""Your heart rate is off the charts. Stay calm. I'll treat you immediately!""}"
+47	112		502							{1: 'RImgBg1Shake'}
+48	45		301							{3: 'The stall keeper grabs Liv by the arm and tries to pull her close, only to send himself lurching forward.'}
+49	46		301							"{2: 'Stall Keeper', 3: ""You're not human...""}"
+50	47		301							"{2: 'Stall Keeper', 3: ""Those horns... R-right, outsider Constructs have receptor horns... You're a Construct!""}"
+51	48		301							{2: 'Stall Keeper', 3: 'The most valuable merchandise!'}
+52	49		301							"{2: 'Stall Keeper', 3: ""A Construct that isn't the Kowloong Crew!""}"
+53	50		301							"{2: 'Stall Keeper', 3: ""I found you! You're mine! Pulao crew! Pulao crew! I have—""}"
+54	991		302				AniZhuanchangBegin			{2: 'Liv!', 3: '51', 4: 'Unhand that fair maiden!', 5: '51'}
+55	51		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory159.png'}
+56	52		301			AniZhuanchangEnd				{3: 'You step in front of Liv to put some distance between her and the stall keeper.'}
+57	53		201							{1: '1', 2: '1021001'}
+58	54		401							{1: '2', 2: '1513'}
+59	55		301							{1: '1', 2: 'Lucia', 3: 'Liv!', 4: '1'}
+60	992		302							"{2: ""Lucia, I'm back."", 3: '56', 4: 'A successful reunion.', 5: '56'}"
+61	56		301							{2: 'Lucia', 3: '...Commandant.', 4: '1'}
+62	993		302							"{2: 'Onward, Gray Raven!', 3: '994', 4: ""Let's deal with the enemies first."", 5: '994'}"
+63	130		204							{1: '1', 2: '1'}
+64	994		301		1		AniZhuanchangBegin			{2: 'Lucia', 3: 'Yes, Commandant.', 4: '1'}

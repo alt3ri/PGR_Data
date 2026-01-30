@@ -1,0 +1,355 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '176'}
+3	3		201							{1: '1', 2: '500576', 3: '8'}
+4	4		301			DialogEnable				{1: '1', 2: 'Ayla', 3: '...', 4: '1'}
+5	5		204							{1: '1', 2: '12'}
+6	6		301							{2: 'Ayla', 3: 'This place...', 4: '1'}
+7	7		202							{1: '1', 6: '1'}
+8	8		301							{3: 'The curtain on the stage has descended, yet she finds herself still walking in endless darkness.'}
+9	9		501							{1: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab', 2: '2'}
+10	10		301							{3: 'Shards of light spread from the edge of her vision. She reaches out her arm, trying to touch those drifting, glowing particles.'}
+11	11		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '1'}
+12	12		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab'}
+13	13		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+14	14		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+15	15		505					10.0		{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+16	16		301							{3: 'Countless memory fragments flash across her M.I.N.D.'}
+17	17		306							{1: '1'}
+18	18		401							{1: '2', 2: '558'}
+19	19		101						200.0	{1: 'Assets/Product/Texture/Image/BgCg/Cgqz1001.jpg'}
+20	20		401							{1: '2', 2: '558'}
+21	21		101						200.0	{1: 'Assets/Product/Texture/Image/BgCg/Cgqz1002.jpg'}
+22	22		401							{1: '2', 2: '558'}
+23	23		101						200.0	{1: 'Assets/Product/Texture/Image/BgCg/Cgqz1007.jpg'}
+24	24		401							{1: '2', 2: '558'}
+25	25		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory528.jpg'}
+26	26		401							{1: '2', 2: '558'}
+27	27		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory529.jpg'}
+28	28		401							{1: '2', 2: '558'}
+29	29		101						200.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3301_04.jpg'}
+30	30		401							{1: '2', 2: '558'}
+31	31		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+32	32		401							{1: '2', 2: '558'}
+33	33		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory347.jpg'}
+34	34		401							{1: '2', 2: '558'}
+35	35		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg'}
+36	36		401							{1: '2', 2: '558'}
+37	37		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory531.jpg'}
+38	38		301							{3: 'A labyrinth of memories that is, a Tower of Babel built for the girl named Ayla.'}
+39	39		104							{1: '0|0|-100', 2: '0.5'}
+40	40		401							{1: '2', 2: '927'}
+41	41		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory538.png', 3: '0', 4: '1', 5: '2'}
+42	42		301							{3: 'Seemingly realizing why she is here, Ayla takes one step forth and plummets into the bottomless lake.'}
+43	43		401							{1: '1', 2: '36'}
+44	44		401						300.0	{1: '2', 2: '2661'}
+45	45		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+46	46		401							{1: '2', 2: '2666'}
+47	47		301				AniZhuanchangBegin			{3: 'With a crisp snap, a scene unfolds in front of her, as if an old movie projector starts playing a film.'}
+48	48		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+49	49		101						1500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3301_04.jpg'}
+50	50		402							{1: '2666'}
+51	51		401							{1: '1', 2: '169'}
+52	52		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '0.8', 5: '0'}
+53	53		301			AniZhuanchangEnd				{3: '...'}
+54	54		401							{1: '2', 2: '2673'}
+55	55		301							{3: 'In the studio illuminated only by a desk lamp, someone gently pushes the door open.'}
+56	56		201							{1: '1', 2: '500111', 4: '400'}
+57	57		201							{1: '2', 2: '500110', 4: '-400'}
+58	58		301							{1: '1', 2: 'Allen', 3: 'Ayla, you have been working for three days straight?', 4: '1'}
+59	59		301							{2: 'Ayla', 3: 'Chairman Allen? What happened?', 4: '2'}
+60	60		301							"{2: 'Allen', 3: ""The members have been telling me that they've heard sorrowful cries and strange crashing noises coming from this studio... It frightened them, so I decided to give it a little investigation."", 4: '1'}"
+61	61		301							{2: 'Ayla', 3: 'Ah-haha... Is that so?', 4: '2'}
+62	62		301							{2: 'Allen', 3: 'Are you... drawing manga?', 4: '1'}
+63	63		301							"{2: 'Ayla', 3: ""Yeah, I've been working on it this whole time."", 4: '2'}"
+64	64		301							"{3: ""All of the Golden Age manga works available in Babylonia's library are piled up at the side of her desk. In the center, there are some sketches that haven't been colored yet. The trash can beside her feet is stuffed with crumpled balls of paper, with even more scattered around on the floor.""}"
+65	65		301							"{2: 'Allen', 3: ""It's great to see you exploring different interests, but how's your preparation for the art exhibition three months from now coming along?"", 4: '1'}"
+66	66		301							{2: 'Ayla', 3: 'A-art exhibition...?', 4: '2'}
+67	67		301							"{2: 'Allen', 3: ""Did it slip your mind? The WGAA is hosting a major art exhibition at Babylonia's salon in three months, which takes place once every two years. You already signed up for it before your last archaeological mission."", 4: '1'}"
+68	68		301							{2: 'Allen', 3: 'The association will allocate a special section with high exposure for new artists. Your previous works were highly praised within the community, so quite a few big names are eagerly anticipating your new creation this time.', 4: '1'}
+69	69		204							{1: '2', 2: '8'}
+70	70		301							{2: 'Ayla', 3: 'Big names...', 4: '2'}
+71	71		204							{1: '2'}
+72	72		301							"{2: 'Ayla', 3: ""I see. Once I've dealt with the current task at hand, I'll do my best to prepare for the exhibition."", 4: '2'}"
+73	73		204							{1: '2', 2: '8'}
+74	74		301							{2: 'Ayla', 3: 'But before that...', 4: '2'}
+75	75		301				AniZhuanchangBegin			"{3: ""But before that, there are things she'd like to take care of.""}"
+76	76		202							{1: '1', 2: '2', 6: '1'}
+77	77		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+78	78		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+79	79		301			AniZhuanchangEnd				{3: '...'}
+80	80		301							{3: 'As time flies by, the day for another surface mission quickly approaches.'}
+81	81		201							{1: '1', 2: '500110', 4: '-400'}
+82	82		201							{1: '2', 2: '500394', 4: '400'}
+83	83		301							{1: '1', 2: 'Orpheus', 3: 'Ayla? You signed up again for the mission this time?', 4: '2'}
+84	84		301							{2: 'Ayla', 3: 'Good to see you, Orpheus.', 4: '1'}
+85	85		301							"{2: 'Orpheus', 3: ""Seems like those things from before aren't bothering you anymore, huh?"", 4: '2'}"
+86	86		301							"{3: ""Is that a smile on her face? Even the girl herself couldn't discern the shift in her mood.""}"
+87	87		202							{1: '1', 2: '2', 6: '1'}
+88	88		301							{3: 'Ayla feels like a lifetime has passed as she waits for the transport craft to land. She lowers her head, gently clutching the item hidden in her arms.'}
+89	89		301							{3: 'This is what she has spent months working on—an answer she is attempting to provide.'}
+90	90		301							{3: 'She urgently wants to know if it is correct, if it is worth her continuing to pursue that wish.'}
+91	91		301							{3: 'Even a tiny bit of acknowledgment would suffice.'}
+92	92		301							{3: 'Once again, her imagination takes flight.'}
+93	93		301							"{3: ""Imagine that girl's eyes filling with surprise and joy; imagine the comment she will make about this work.""}"
+94	94		301							{3: 'Even though she has reminded herself countless times that reality may disappoint her, that she is not walking on a path with a predictable end but a labyrinth where there may be no way out.'}
+95	95		301				AniZhuanchangBegin			{3: 'Furthermore, the first turn one takes in a labyrinth often leads to a cold, dead end.'}
+96	96		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory566.jpg'}
+97	97		201							{1: '1', 2: '500110', 3: '4', 4: '400'}
+98	98		201							{1: '2', 2: '500197', 4: '-400'}
+99	99		301			AniZhuanchangEnd				{1: '1', 2: 'Ground Force Soldier', 3: 'This settlement was attacked by the Corrupted half a month ago, and many facilities were devastated. Reconstructing the site will be extremely challenging.', 4: '2'}
+100	100		301							{2: 'Ayla', 3: 'What about those people living here? Did anything bad happen to them?!', 4: '1'}
+101	101		301							"{2: 'Ground Force Soldier', 3: ""We were lucky to have some members of Babylonia's Task Force stationed nearby, which bought us some time to conduct rescue operations. However, the sudden assault by the Corrupted caught us off guard, and unfortunately, we couldn't save everyone."", 4: '2'}"
+102	102		301							{2: 'Ayla', 3: '...', 4: '1'}
+103	103		301				DialogDisable			"{2: 'Ayla', 3: ""I see. I'll look around nearby."", 4: '1'}"
+104	104		202							{1: '1', 2: '2'}
+105	105		502							{1: 'RImgBg1DisableSlow'}
+106	106		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory347.jpg'}
+107	107		301			DialogEnable				"{3: ""She enters the ruins, greeted by the heartbreaking sight of what was once the boys' playground, now reduced to devastation.""}"
+108	108		301							{3: 'The small shelter where the girl had been living is nowhere to be found, leaving no mark behind.'}
+109	109		502							{1: 'RImgBg1DisableSlow'}
+110	110		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory314.png'}
+111	111		301							"{3: ""Despite spending all her spare time on the surface, exploring the nearby conservation areas, she still couldn't find any trace of that girl named Milly.""}"
+112	112		502							{1: 'RImgBg1DisableSlow'}
+113	113		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory305.png'}
+114	114		301							{3: 'Perhaps she had been rescued, or maybe she had been relocated elsewhere.'}
+115	115		301							{3: 'Maybe she had left with her father before the assault took place, moving to a new home.'}
+116	116		201							{1: '1', 2: '500110', 3: '19'}
+117	117		301							"{1: '1', 2: 'Ayla', 3: ""It seems that... my promise to her won't be fulfilled as quickly as I had hoped."", 4: '1'}"
+118	118		301							{3: 'A myriad of changes could happen in an instant on the surface—she is well aware and has long been prepared for it.'}
+119	119		301							"{3: ""She shouldn't let it upset her. As long as the ending remains uncertain, she should keep her chin up and continue down her path.""}"
+120	120		301							{3: 'She is going to find that girl and fulfill her promise.'}
+121	121		301							{3: 'This is her choice, her determination.'}
+122	122		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory538.png', 3: '0', 4: '1', 5: '2'}
+123	123		301							{3: 'Her journey has merely seen its beginning.'}
+124	124		301				AniZhuanchangBegin			{3: 'Still...'}
+125	125		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory538.png', 3: '0', 4: '0', 5: '0'}
+126	126		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3301_04.jpg'}
+127	127		201							{1: '1', 2: '500110', 3: '8'}
+128	128		301			AniZhuanchangEnd				{1: '1', 2: 'Ayla', 3: '...', 4: '1'}
+129	129		201							{1: '1', 2: '500303'}
+130	130		301							"{1: '1', 2: 'WGAA Member', 3: ""Ayla, you've been staring at that canvas for days. When are you gonna start drawing?"", 4: '1'}"
+131	131		301							"{2: 'WGAA Member', 3: ""There's only half a month left before the exhibition. You gotta turn in something. Anything will do!"", 4: '1'}"
+132	132		301							"{2: 'WGAA Member', 3: ""Many big shots will be at the exhibition. We can't screw this up!"", 4: '1'}"
+133	133		201							{1: '1', 2: '500110', 3: '19'}
+134	134		301							"{1: '1', 2: 'Ayla', 3: ""I know. That's why..."", 4: '1'}"
+135	135		301							{3: 'She used to have inspiration striking her like lightning whenever she picked up a brush, but that feeling is too far away for her to grasp now.'}
+136	136		301							{3: 'She can no longer find herself fully immersed in her creation before the canvas, and even the colors on her palette seem tainted.'}
+137	137		301							{3: 'She is still brimming with ideas and thoughts, but a question has been haunting her, impeding her from placing her brush onto the blank canvas.'}
+138	138		301							{2: 'Ayla', 3: 'Will this become a good piece...?', 4: '1'}
+139	139		301							{3: 'The more she tries to present her best self, the stronger the urge to run away becomes.'}
+140	140		301							"{3: 'This is her ""second chance"" to make amends for that regret. She doesn\'t allow herself to fail.'}"
+141	141		301							{3: 'The efforts the association has put in, the expectations from her seniors, the admiration from her peers, the judgment of the viewers, and the standards she holds for herself.'}
+142	142		301							{3: 'She must bear these as she presses forward, having realized that the world is far more vast than the little space she and her friend used to share.'}
+143	143		301							{3: 'However, this determination has become a shackle, stifling her ability to express herself.'}
+144	144		301							"{2: 'Ayla', 3: ""This is not going to work... I can't turn in a painting like this..."", 4: '1'}"
+145	145		301							{3: 'She locks herself inside the studio almost every day, but creation is never just a matter of time.'}
+146	146		201							{1: '1', 2: '500137'}
+147	147		301							"{1: '1', 2: 'Exhibition Manager', 3: ""Ayla, if you keep this up, you're not gonna make it. I get that you want it to be perfect, but it ain't gonna be a cakewalk every time!"", 4: '1'}"
+148	148		301							"{2: 'Exhibition Manager', 3: ""There's no time for more trial and error. Did you save any of the stuff you worked on during these days? Seriously, not even one piece?!"", 4: '1'}"
+149	149		301							"{2: 'Exhibition Manager', 3: ""How about your older pieces? Anything that hasn't been published! Don't fret about whether they're finished or not. We can enlist some help to polish them up, as long as the piece itself is good enough to exhibit!"", 4: '1'}"
+150	150		301							"{2: 'Exhibition Manager', 3: ""Hold on a minute, didn't you complete a manga piece some time ago? That should work! Hurry, let's make fifty copies of it! We can spin it as the WGAA's rising star experimenting with a new art form. There's always room to adjust the marketing strategy!"", 4: '1'}"
+151	151		201							{1: '1', 2: '500110', 3: '19'}
+152	152		301							"{1: '1', 2: 'Ayla', 3: ""But I didn't draw that manga for the exhibition. There's no way the viewers would enjoy it."", 4: '1'}"
+153	153		201							{1: '1', 2: '500137'}
+154	154		301							"{1: '1', 2: 'Exhibition Manager', 3: ""Perhaps those big shots might appreciate a change of pace? You never know. It's our last-ditch effort, and all we can do is take a gamble."", 4: '1'}"
+155	155		201							{1: '1', 2: '500110', 3: '19'}
+156	156		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory538.png', 3: '0', 4: '1', 5: '2'}
+157	157		301							{1: '1', 3: 'She knows the manager was only trying to console her. As he takes away the copies of the manga, she can already anticipate what will happen.'}
+158	158		301							{3: 'In simple terms, she screwed it up.'}
+159	159		301							"{3: ""Many don't understand why she chose to submit such a work.""}"
+160	160		301							{3: 'Even the few critics who always strive to be fair and objective have criticized her work, labeling it as a childish and naive story with no artistic value.'}
+161	161		301							{3: 'As the creator, Ayla is expected to attend the exhibition for greater exposure and to engage with viewers about her creative process.'}
+162	162		301				AniZhuanchangBegin			"{3: ""However, she didn't make a single appearance until the final day of the exhibition.""}"
+163	163		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+164	164		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+165	165		201							{1: '1', 2: '500110', 3: '19'}
+166	166		301			AniZhuanchangEnd				{1: '1', 2: 'Ayla', 3: '...I wonder what the chairman will have to say to me this time. Would I get expelled from the association?', 4: '1'}
+167	167		301							{3: 'The rising star, the center of all anticipation, is letting everyone down miserably, a blow that is surely casting a shadow over the WGAA.'}
+168	168		301							{3: 'She sits on a bench near the salon, discreetly watching people coming and going, torn between whether or not to make her appearance.'}
+169	169		302							{2: 'What are you doing here?', 4: 'It seems that you really want to go in there?'}
+170	170		204							{1: '1'}
+171	171		301							{2: 'Ayla', 3: 'Ah... You are?', 4: '1'}
+172	172		202							{1: '1', 6: '1'}
+173	173		301							{3: 'She turns around and finds a young person, roughly her age... or slightly older, asking with curiosity, likely having noticed her sneaky behavior.'}
+174	174		301							{3: 'The youth in the commandant uniform is a soldier who has recently joined the Task Force.'}
+175	175		301							{3: 'This commandant is currently on a break, visiting the WGAA to look for a penfriend. After not finding the person in charge of reception, the youth decides to pass the time by wandering around.'}
+176	176		302							{2: 'Why do you think your work is not good enough?', 3: '177'}
+177	177		201							{1: '1', 2: '500110', 3: '19'}
+178	178		301							{1: '1', 3: 'Once she starts talking with the person, words come pouring out. As she explains the whole situation about the art exhibition, the young commandant poses that question to her.'}
+179	179		301							"{2: 'Ayla', 3: ""That manga doesn't convey any deep thoughts or carry any artistic value. The critics aren't going to acknowledge it."", 4: '1'}"
+180	180		301				DialogDisable			{2: 'Ayla', 3: 'Turning in such a work for this type of exhibition can even be considered an offense to art.', 4: '1'}
+181	181		302							{2: 'You can adapt to public taste, but you did what you wanted.', 3: '182'}
+182	182		302							{2: 'It may lack plenty of things.', 3: '183'}
+183	183		302							{2: 'But there definitely will be people who enjoy it.', 3: '184'}
+184	184		204							{1: '1', 2: '8'}
+185	185		301			DialogEnable				{2: 'Ayla', 3: '...', 4: '1'}
+186	186		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+187	187		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg'}
+188	188		504							{1: '0.7'}
+189	189		201							{1: '1', 2: '500596'}
+190	190		301							{1: '1', 2: 'Milly', 3: 'You like it, too, right?', 4: '1'}
+191	191		301							{2: 'Milly', 3: 'I... would be really happy if you could do that for me!', 4: '1'}
+192	192		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+193	193		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+194	194		504							{1: '0'}
+195	195		201							{1: '1', 2: '500110', 3: '8'}
+196	196		301							"{1: '1', 2: 'Ayla', 3: ""You're right. I did fail everyone's expectations by not completing the task they gave me."", 4: '1'}"
+197	197		301							"{2: 'Ayla', 3: ""But an artist should never abandon their creation—it's a sign of disrespect to both the people who dislike it and those who appreciate it."", 4: '1'}"
+198	198		204							{1: '1', 2: '4'}
+199	199		301							{2: 'Ayla', 3: 'In that manga, there are things I want to seek.', 4: '1'}
+200	200		204							{1: '1', 2: '4'}
+201	201		301							"{2: 'Ayla', 3: ""That's probably why I didn't choose to sit back and give up at that time."", 4: '1'}"
+202	202		204							{1: '1', 2: '1'}
+203	203		301							"{2: 'Ayla', 3: ""Thank you! Sorry, I've got to run. I hope you can find the person you're looking for!"", 4: '1'}"
+204	204		202							{1: '1'}
+205	205		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+206	206		104							{1: '0|0|-100', 2: '0.8'}
+207	207		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory529.jpg', 3: '0', 4: '1', 5: '1'}
+208	208		401						800.0	{1: '2', 2: '1513'}
+209	209		301							{3: 'She waves goodbye to the commandant and rushes toward the salon entrance.'}
+210	210		401							{1: '2', 2: '2624'}
+211	211		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+212	212		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory529.jpg'}
+213	213		301							{3: 'Though being a Construct, she can still hear her heart pounding loudly in her chest.'}
+214	214		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png', 3: '0', 4: '1', 5: '0.8'}
+215	215		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+216	216		301							{3: 'This is the last day of the exhibition, and the crowd inside the salon has considerably thinned.'}
+217	217		301							{3: 'No one recognizes her as she pants her way into the salon. Nervously, she casts her gaze toward her own section.'}
+218	218		402							{1: '2624'}
+219	219		301							{3: 'She finds no one staying there as well as the fifty copies of her manga lying intact on the display table, seemingly completely untouched.'}
+220	220		301							{3: 'A result just as she predicted, and it is no longer her concern.'}
+221	221		301							{3: 'While she picks up one copy, attempting to introduce it to the people remaining inside the salon, a girl sitting behind the display table draws her attention.'}
+222	222		301							{3: 'The young girl resembles a little bunny that has wandered alone into a strange forest, curling up in fear and waiting for someone to guide her back home.'}
+223	223		301							"{3: ""However, in that girl's hand is her manga—an image that starkly contrasts with the ambiance of the salon.""}"
+224	224		301							{3: 'The brown-haired girl flips through the pages again and again, from the beginning to the end, as if the book possesses some kind of magic that draws her deep into its world.'}
+225	225		201							{1: '1', 2: '500110'}
+226	226		301							{1: '1', 2: 'Ayla', 3: 'Excuse me...', 4: '1'}
+227	227		301							"{3: ""Ayla gently taps the girl's shoulder but receives no immediate response. It takes a few seconds for the girl to register that someone is trying to get her attention. Flustered, she quickly stands up with an apologetic look on her face.""}"
+228	228		202							{1: '1', 6: '1'}
+229	229		301							"{2: '???', 3: ""I'm sorry! Am I in your way? Did I break any rules here or something...?""}"
+230	230		301							{3: 'It is only now that Ayla notices the F.O.S. uniform the girl is wearing, but she appears much younger than the commandant Ayla met earlier.'}
+231	231		201							{1: '1', 2: '500110'}
+232	232		301							"{1: '1', 2: 'Ayla', 3: ""No, no, you didn't do anything wrong. I just want to ask you about this manga because you seem very attracted to it."", 4: '1'}"
+233	233		202							{1: '1', 6: '1'}
+234	234		301							{2: '???', 3: 'You mean this? I guess I did get pretty into it...'}
+235	235		301							"{2: '???', 3: ""A friend of mine told me that attending this kind of exhibition could be a nice change of pace, so she got me a ticket. I thought she was talking about some Golden Age weapon exhibition... but it turns out to be something I completely don't understand...""}"
+236	236		301							"{3: ""The girl rubs her hair, looking a bit embarrassed. She surely doesn't seem like someone who frequents this kind of event.""}"
+237	237		301							"{2: '???', 3: ""I didn't want to waste my friend's gift, so I found a quiet spot to hang out. Then, I saw this...""}"
+238	238		301							"{2: '???', 3: 'This is the first time I\'ve ever learned about something called ""manga""... It\'s quite different from the art I\'ve heard of from others, you know?'}"
+239	239		201							{1: '1', 2: '500110'}
+240	240		301							{1: '1', 2: 'Ayla', 3: 'I see... So, what do you think after reading it?', 4: '1'}
+241	241		202							{1: '1', 6: '1'}
+242	242		301							{2: '???', 3: 'Um... Is this like an interview for guests? Well... let me think...'}
+243	243		301							{3: 'The girl appears to have mistaken Ayla for a staff member coming to inquire about guest satisfaction. She presses the manga copy against her forehead, struggling to find the right words.'}
+244	244		301							"{2: '???', 3: ""I just feel so happy reading it... The author spends like four whole pages showing how the heroes transform and kick the villain's butt in the end. The first time I read it, I was totally blown away...""}"
+245	245		301							"{2: '???', 3: ""And... Well, I guess I'm kinda jealous. Those main characters, they never back down from the challenges they face, and always chase after their dreams... I find them so charming and likable.""}"
+246	246		301							{2: '???', 3: 'Somehow... they remind me of someone I really admire.'}
+247	247		301							{2: '???', 3: 'I was just thinking maybe I could become someone like that too... Ah, I mean, the story is also really interesting! Not too complicated or too basic.'}
+248	248		301							"{3: ""Realizing she's getting carried away, the girl hastily returns to talking about the manga, yet fails to hide the hint of dreariness in her voice.""}"
+249	249		301							"{2: '???', 3: 'As I read it, I couldn\'t help but think, ""If only this could happen in real life.""'}"
+250	250		301							{3: 'Ayla has no idea about what this F.O.S. freshman has been through or what kind of reality she is trying to escape by coming here.'}
+251	251		301							{3: 'But she likes the manga. She enjoys this childish and naive story.'}
+252	252		301							{3: 'The intent Ayla held during the creation of this manga resonates with her.'}
+253	253		301							{3: 'Perhaps at this moment, they have yet to recognize what they are truly seeking.'}
+254	254		301							{3: 'Even though Ayla understands that the fervor blazing in her heart may die out tomorrow.'}
+255	255		201							{1: '1', 2: '500110'}
+256	256		301							{1: '1', 2: 'Ayla', 3: 'To make a story more intriguing, creators tend to add a lot of fictional content.', 4: '1'}
+257	257		301				AniZhuanchangBegin			"{2: 'Ayla', 3: 'But a story is never just a ""story.""', 4: '1'}"
+258	258		306							
+259	259		202							{1: '1', 6: '1'}
+260	260		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+261	261		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3301_08.jpg'}
+262	262		401							{1: '1', 2: '180'}
+263	263		301			AniZhuanchangEnd				{3: 'Ayla walks closer to the girl and raises a hand to guide her gaze.'}
+264	264		301							{3: 'She shows her the many other creators like herself in this salon, each standing proudly in front of their works, striving to convey their thoughts to the viewers.'}
+265	265		301							"{2: 'Ayla', 3: ""It is the creator's decision how a story unfolds. Whether it's the warrior defeating the malicious dragon, the prince marrying the princess, justice prevailing against evil, or the bard singing praise of the hero... these are all fictional plots, but the intentions hidden behind are never fictional.""}"
+266	266		301							"{2: 'Ayla', 3: ""Perhaps in real life, the warrior couldn't defeat the malicious dragon, or the princess didn't see a prince come to her rescue...""}"
+267	267		301							{2: 'Ayla', 3: 'Yet people can craft such tales because they never relinquish those dreams.'}
+268	268		301							{2: '???', 3: '...'}
+269	269		301							"{2: '???', 3: ""Even if... those dreams can't come true in real life?""}"
+270	270		301							{2: 'Ayla', 3: 'Right.'}
+271	271		301							{2: 'Ayla', 3: 'No matter how hard to achieve or how childish the dream is—'}
+272	272		301							{2: 'Ayla', 3: 'No matter the inevitable failures one will face on this path and the non-existent results that await one—'}
+273	273		301							"{2: 'Ayla', 3: 'Even then, I think these ""idiots"" who work hard toward these unrealistic goals—'}"
+274	274		301				AniZhuanchangBegin			{2: 'Ayla', 3: 'Shine the brightest of all!'}
+275	275		306							{1: '1'}
+276	276		401							{1: '1', 2: '36'}
+277	277		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+278	278		201							{1: '1', 2: '500110'}
+279	279		401							{1: '1', 2: '181'}
+280	280		301			AniZhuanchangEnd				{1: '1', 2: 'Ayla', 3: 'Heave-ho...', 4: '1'}
+281	281		301							{3: 'As the last day of the exhibition comes to its end, Ayla walks out of the salon while holding the remaining 49 copies of the manga in her arms.'}
+282	282		301							{3: 'As a Construct, she can easily manage the weight, but the copies pile up, obstructing her vision and making it a bit cumbersome to walk.'}
+283	283		302							{2: '(Lend a hand)', 3: '284'}
+284	284		301							"{2: 'Ayla', 3: ""Ah, it's you. Thanks for the help."", 4: '1'}"
+285	285		301							{3: 'A hand reaches out, relieving her of half the weight. Ayla recognizes the owner as none other than the commandant she spoke to earlier.'}
+286	286		301				DialogDisable			{2: 'Ayla', 3: 'Did you find that person you were looking for?', 4: '1'}
+287	287		302							{2: '(Shake head)', 3: '288'}
+288	288		302							"{2: ""The people from the association couldn't recognize her pen name."", 3: '289'}"
+289	289		301			DialogEnable				"{2: 'Ayla', 3: ""So you don't know her real name... It's okay. I'm sure you will find her eventually."", 4: '1'}"
+290	290		302							{2: 'Is this the manga you created?', 3: '291'}
+291	291		301							"{2: 'Ayla', 3: ""Yup, I'm going to move them back to my studio."", 4: '1'}"
+292	292		301							"{2: 'Ayla', 3: ""I'll create a better one next time and share it with more people."", 4: '1'}"
+293	293		301							{2: 'Ayla', 3: 'Both in Babylonia and on Earth.', 4: '1'}
+294	294		302							{2: 'Can I take one back with me?', 3: '295'}
+295	295		204							{1: '1', 2: '1'}
+296	296		301							{2: 'Ayla', 3: 'Sure thing. Do you want my autograph?', 4: '1'}
+297	297		302							"{2: ""I'll wait until you make your name."", 3: '298', 4: ""Don't get yourself used to this celebrity attitude."", 5: '298'}"
+298	298		204							{1: '1', 2: '6'}
+299	299		301							"{2: 'Ayla', 3: ""Come on, where's your sense of humor? Is this how you talk to your penfriend?"", 4: '1'}"
+300	300		204							{1: '1'}
+301	301		301							"{2: 'Ayla', 3: ""You're a commandant of the Task Force, right? I'll keep that in mind."", 4: '1'}"
+302	302		204							{1: '1', 2: '1'}
+303	303		301				DialogDisable			"{2: 'Ayla', 3: ""I will be keeping an eye on you. I can't wait to see what kind of story unfolds in your life."", 4: '1'}"
+304	304		302							{2: 'Thanks for the attention...?', 3: '305'}
+305	305		302							{2: 'By the way...', 3: '306'}
+306	306		302							"{2: ""I still don't know your name."", 3: '307'}"
+307	307		204							{1: '1', 2: '6'}
+308	308		301			DialogEnable				{2: 'Ayla', 3: 'My name is... Wait.', 4: '1'}
+309	309		204							{1: '1'}
+310	310		301							"{2: 'Ayla', 3: ""Actually, I'm not going to tell you right now."", 4: '1'}"
+311	311		301							"{2: 'Ayla', 3: ""You'll find out once I become the biggest name in the WGAA."", 4: '1'}"
+312	312		204							{1: '1', 2: '1'}
+313	313		301				AniZhuanchangBegin			"{2: 'Ayla', 3: ""When you come to me with this manga later, I'll give you my autograph, if you ask nicely!"", 4: '1'}"
+314	314		401							{1: '1', 2: '36'}
+315	315		202							{1: '1', 6: '1'}
+316	316		401							{1: '2', 2: '2666'}
+317	317		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+318	318		401							{1: '1', 2: '176'}
+319	319		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+320	320		306							
+321	321		301			AniZhuanchangEnd				{3: 'The film comes to an end.'}
+322	322		201							{1: '1', 2: '500576'}
+323	323		301							{1: '1', 2: 'Ayla', 3: '...This is what you want to see?', 4: '1'}
+324	324		301							{3: 'She questions the darkness before her.'}
+325	325		201							{1: '1', 2: '500594'}
+326	326		301							{1: '1', 2: 'Cervantes', 3: '...', 4: '1'}
+327	327		202							{1: '1'}
+328	328		201							{1: '2', 2: '500585'}
+329	329		301							{1: '1', 3: 'A figure emerges from behind the curtain and approaches her.'}
+330	330		301							{2: 'Cervantes', 3: 'Why did Icarus fly toward the sun?', 4: '2'}
+331	331		202							{1: '2', 6: '1'}
+332	332		201							{1: '1', 2: '500576'}
+333	333		301							{1: '1', 2: 'Ayla', 3: 'Did you spend all this effort reading the memory in my M.I.N.D. through this device just to have a myth discussion with me?', 4: '1'}
+334	334		201							{1: '1', 2: '500585'}
+335	335		301							"{1: '1', 3: ""The mechanoid pays no heed to Ayla's teasing and continues to speak in a low voice.""}"
+336	336		301							"{2: 'Cervantes', 3: ""They had already crafted wings capable of aiding their escape from the labyrinth. They had discovered how to defy gravity and realize humanity's ultimate dream."", 4: '1'}"
+337	337		301							{2: 'Cervantes', 3: 'But why did he fly toward the sun, knowing it would lead him to his demise?', 4: '1'}
+338	338		201							{1: '1', 2: '500576', 3: '8'}
+339	339		301							{1: '1', 2: 'Ayla', 3: 'Myths are narratives created by humans. They fear the sun yet still hold an insatiable desire to conquer it, hence the story of Icarus.', 4: '1'}
+340	340		204							{1: '1', 2: '12'}
+341	341		301							"{2: 'Ayla', 3: ""He could've flown all the way to Sicily, safe and steady, but he didn't choose to do it."", 4: '1'}"
+342	342		201							{1: '1', 2: '500585'}
+343	343		301							{1: '1', 2: 'Cervantes', 3: 'Then, was it even possible for Icarus to conquer the sun?', 4: '1'}
+344	344		201							{1: '1', 2: '500576', 3: '12'}
+345	345		301							"{1: '1', 2: 'Ayla', 3: ""...I don't know. The storyteller didn't say it, did they?"", 4: '1'}"
+346	346		201							{1: '1', 2: '500585'}
+347	347		301							"{1: '1', 2: 'Cervantes', 3: ""But the storyteller must've already held an answer in their heart."", 4: '1'}"
+348	348		201							{1: '1', 2: '500576', 3: '8'}
+349	349		301							{1: '1', 2: 'Ayla', 3: 'Maybe, but the storyteller is dead, so that answer is nowhere to be found.', 4: '1'}
+350	350		201							{1: '1', 2: '500585'}
+351	351		301							{1: '1', 2: 'Cervantes', 3: '...No. You know the answer... You will know it.', 4: '1'}
+352	352		301							"{2: 'Cervantes', 3: ""The traces you've left on your paths and the traces we've left on ours have revealed everything."", 4: '1'}"
+353	353		301							"{2: 'Cervantes', 3: ""I will be waiting at the end I've reached."", 4: '1'}"
+354	354		301		1		AniZhuanchangBegin			{2: 'Cervantes', 3: 'I will be waiting... for you to give me that answer.', 4: '1'}

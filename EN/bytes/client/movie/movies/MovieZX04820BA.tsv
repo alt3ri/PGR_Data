@@ -1,0 +1,722 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1001.jpg'}
+2	2		401							{1: '1', 2: '5042'}
+3	3		201							{1: '1', 2: '500005'}
+4	4		301			DialogEnable				{1: '1', 2: 'Mercenary Captain', 3: 'Hey.', 4: '1'}
+5	5		301							{3: 'As soon as you return to the infirmary, the mercenary captain approaches.'}
+6	6		301							"{2: 'Mercenary Captain', 3: ""We've finished our discussion. Everyone trusts you and agrees to this operation. If the outside world remains safe, we'll send reinforcements to assist you."", 4: '1'}"
+7	7		301							"{2: 'Mercenary Captain', 3: ""But if... uh, like you said, everyone's struggling to survive... then we'll prioritize helping them first."", 4: '1'}"
+8	8		203							{1: '1', 2: '0.25', 3: '-500'}
+9	9		201							{1: '2', 2: '500994', 4: '500'}
+10	10		301							"{1: '1', 2: 'Lucia', 3: ""Alright, let's do it."", 4: '2'}"
+11	11		301							"{2: 'Mercenary Captain', 3: ""Right, then. I'll leave the big trouble here in your hands. If things get out of control, don't hesitate to call for backup."", 4: '1'}"
+12	12		301							{2: 'Lucia', 3: 'Yes, sir. It will be.', 4: '2'}
+13	13		301							"{2: 'Mercenary Captain', 3: ""Let's go. Most of them are already waiting on the second floor."", 4: '1'}"
+14	14		301							{2: 'Lucia', 3: 'I will.', 4: '2'}
+15	15		202							{1: '1', 2: '2'}
+16	16		301							{3: 'Lucia turns around and gives you a warm smile.'}
+17	17		201							{1: '1', 2: '500994', 3: '2'}
+18	18		301				DialogDisable			{1: '1', 2: 'Lucia', 3: 'Commandant.', 4: '1'}
+19	19		302				AniZhuanchangBegin			"{2: ""Yeah, it's time."", 3: '20'}"
+20	20		202							{1: '1', 6: '1'}
+21	21		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1019.jpg'}
+22	22		107			AniZhuanchangEnd			2000.0	{1: 'D7 Twin Observation Building 2nd Floor'}
+23	23		108							{1: '1'}
+24	24		401							{1: '2', 2: '212'}
+25	25		201							{1: '1', 2: '500005', 4: '-600'}
+26	26		201							{1: '2', 2: '501004', 4: '600'}
+27	27		201							{1: '3', 2: '500937', 4: '-200'}
+28	28		201							{1: '4', 2: '501007', 3: '4', 4: '200'}
+29	29		301			DialogEnable				{1: '1', 3: 'The previously dispirited crowd has come back alive, now eagerly discussing their upcoming plans with renewed vigor.'}
+30	30		402							{1: '212'}
+31	31		301							{3: 'As the Construct and you step into view, the crowd falls silent in unison.'}
+32	32		202							{1: '1', 2: '2', 3: '3', 4: '4', 6: '1'}
+33	33		201							{1: '1', 2: '501035'}
+34	34		301							{1: '1', 3: 'Apart from the crowd at the far edge stands Chaos, fixing her gaze directly on you.'}
+35	35		302							{2: '...', 3: '36'}
+36	36		202							{1: '1', 6: '1'}
+37	37		401							{1: '2', 2: '10042416'}
+38	38		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_95.jpg', 3: '0', 4: '1', 5: '0.4'}
+39	39		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_95.jpg'}
+40	40		205							{1: '999'}
+41	41		301							"{3: ""Just as your eyes are about to meet, Lucia steps between you, blocking both Chaos' gaze and the lurking Hetero-Creatures from your view.""}"
+42	42		301							{3: 'That very same step places Lucia right beside you as both of you now stand together before everyone.'}
+43	43		301							{2: 'Lucia', 3: 'Everyone.'}
+44	44		301							{3: 'The crowd falls into a tense silence, hanging on to every word Lucia speaks.'}
+45	45		301							{2: 'Lucia', 3: 'Form up behind me in the positions we planned.'}
+46	46		301							"{2: 'Lucia', 3: ""The Hetero-Creatures are currently in the first floor lobby. Once the force field barrier is down, they'll rush right at us.""}"
+47	47		301							"{2: 'Lucia', 3: ""I'll take point. While you handle any stragglers, avoid their fluid splashes at all costs—even a single drop will cause an unstoppable infection that could lead to amputation.""}"
+48	48		301							"{2: 'Lucia', 3: ""Once you're out, stay away from all machines and regroup with other humans—that's your only chance of survival.""}"
+49	49		301							"{2: 'Lucia', 3: ""That's all. Any questions?""}"
+50	50		201							{1: '18', 2: '500005', 4: '-600', 5: '-300', 6: '700'}
+51	51		301							"{1: '1', 2: 'Mercenary Captain', 3: ""We're good. Let's move out."", 4: '18'}"
+52	52		202							{1: '18'}
+53	53		301				AniZhuanchangBegin			{2: 'Lucia', 3: 'Rose, disable the force field.'}
+54	54		401							{1: '1', 2: '36'}
+55	55		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1036.jpg'}
+56	56		401							{1: '1', 2: '5043'}
+57	57		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0'}
+58	58		401							{1: '2', 2: '4818'}
+59	59		201							{1: '1', 2: '500868', 7: '1'}
+60	60		201							{1: '2', 2: '500868', 4: '300', 7: '1'}
+61	61		205							{1: '2', 3: '1', 4: '0', 5: '0'}
+62	62		501							{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab', 2: '2', 3: '2', 4: '2'}
+63	63		301			AniZhuanchangEnd				{1: '1', 3: 'Hidden in the shadows, the girl listens to the thundering footsteps above while crimson butterflies dance around her string-playing hands.'}
+64	64		301							"{2: 'Cradle', 3: ""Heh... By deliberately containing the Red Tide, they've fallen right into my trap, thinking I've lost control over it."", 4: '1'}"
+65	65		204							{1: '1', 2: '2'}
+66	66		301							{2: 'Cradle', 3: 'The grand plaza shall be the perfect stage for your mass funeral.', 4: '1'}
+67	67		505							{2: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab', 4: '2'}
+68	68		202							{1: '1', 2: '2', 6: '1'}
+69	69		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+70	70		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1037.jpg'}
+71	71		401							{1: '2', 2: '4319'}
+72	72		401							{1: '2', 2: '4819'}
+73	73		301			RImgBg1Shake				"{3: ""She smiles as Lucia's strike blasts through the inner doors of the exhibition hall, the shockwave carving a path through the sea of Hetero-Creatures all the way to the first-floor stairs.""}"
+74	74		301							"{3: ""The glimmer of hope vanishes as quickly as it appears—the remaining monsters surge forward to seal the gap, causing the Hetero-Creatures' formation to contract by one ring.""}"
+75	75		402							{1: '4819'}
+76	76		401						500.0	{1: '2', 2: '9380014'}
+77	77		401							{1: '2', 2: '4794'}
+78	78		201							{1: '3', 2: '500868', 4: '400', 7: '1'}
+79	79		201							{1: '4', 2: '500868', 4: '-400', 7: '1'}
+80	80		205							{1: '3', 3: '1', 4: '0', 5: '0'}
+81	81		205							{1: '4', 3: '1', 4: '0', 5: '0'}
+82	82		501							{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab', 2: '2', 3: '3'}
+83	83		501							{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab', 2: '2', 3: '4'}
+84	84		201							{1: '1', 2: '500868'}
+85	85		301							"{1: '1', 3: ""With an icy gaze, Cradle runs her fingers across the strings. In response, crimson butterflies soar over the monsters' heads, while the trembling strings echo with lingering resonance.""}"
+86	86		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+87	87		401							{1: '2', 2: '4319'}
+88	88		505							{2: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab', 4: '3'}
+89	89		505							{2: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab', 4: '4'}
+90	90		202							{1: '1', 2: '3', 3: '4', 6: '1'}
+91	91		301			RImgBg1Shake				{3: 'Through the carnage and scattered crimson, Lucia, at the vanguard, pierces through the chaos with her gaze fixed on the girl lurking in the shadows.'}
+92	92		201							{1: '1', 2: '500993'}
+93	93		301							"{1: '1', 2: 'Lucia', 3: ""It's time to end this, <phonetic=Agent Zero>Cradle</phonetic>."", 4: '1'}"
+94	94		401							{1: '2', 2: '1226'}
+95	95		203						200.0	{1: '1', 2: '0.2', 5: '-100'}
+96	96		202							{1: '1'}
+97	97		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '0.2'}
+98	98		301							{3: 'Dazzling flames burst forth, their radiance instantly dispersing the surrounding gloom.'}
+99	99		205							{1: '999'}
+100	100		201							{1: '1', 2: '500868', 3: '3'}
+101	101		301				DialogDisable			{1: '1', 2: 'Cradle?', 3: 'Heh...', 4: '1'}
+102	102		202							{1: '1', 6: '1'}
+103	103		401							{1: '2', 2: '4794'}
+104	104		201							{1: '3', 2: '500868', 4: '-400', 7: '1'}
+105	105		201							{1: '4', 2: '500868', 4: '400', 7: '1'}
+106	106		205							{1: '3', 3: '1', 4: '0', 5: '0'}
+107	107		205							{1: '4', 3: '1', 4: '0', 5: '0'}
+108	108		501							{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab', 2: '2', 3: '3'}
+109	109		501						800.0	{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab', 2: '2', 3: '4'}
+110	110		203							{1: '3', 2: '0.8'}
+111	111		203						850.0	{1: '4', 2: '0.8'}
+112	112		401							{1: '2', 2: '4411'}
+113	113		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndRed.prefab', 2: '3'}
+114	114		505							{2: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab', 4: '3'}
+115	115		505							{2: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudie215.prefab', 4: '4'}
+116	116		301			DialogEnable				"{3: ""The harp vanishes from the girl's grasp as crimson butterflies gather and dissolve, coalescing into a new form—a blood-red scythe materializing with its blade gleaming.""}"
+117	117		202							{1: '3', 2: '4', 6: '1'}
+118	118		201							{1: '1', 2: '500992', 7: '1'}
+119	119		203						150.0	{1: '1', 2: '0.1', 5: '-100'}
+120	120		401							{1: '2', 2: '10042001'}
+121	121		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+122	122		401							{1: '2', 2: '4319'}
+123	123		301			RImgBg1Shake				{3: 'As the scythe takes form, Lucia has already closed in on Cradle, her powerful strike slicing through the air with a frenzied howl.'}
+124	124		202							{1: '1', 6: '1'}
+125	125		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+126	126		401							{1: '2', 2: '10042001'}
+127	127		201							{1: '1', 2: '500868', 3: '2'}
+128	128		301							{1: '1', 3: 'The blade flashes, descending in a devastating overhead strike.'}
+129	129		204							{1: '1'}
+130	130		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryJianXue.prefab', 2: '2'}
+131	131		401							{1: '2', 2: '2593'}
+132	132		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+133	133		301							{3: 'Cradle barely raises her eyes, and with just a curl of her finger, a flying Hetero-Creature hurls itself at Lucia, its expendable body intercepting her fierce attack.'}
+134	134		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryJianXue.prefab'}
+135	135		202							{1: '1'}
+136	136		401							{1: '2', 2: '4784'}
+137	137		301			RImgBg1Shake				"{3: ""Two, three, four... At Cradle's call, every Hetero-Creature marks Lucia as their prey, lunging desperately at this radiant beacon of light.""}"
+138	138		401							{1: '2', 2: '10042001'}
+139	139		201							{1: '1', 2: '500992'}
+140	140		301							{1: '1', 3: 'Surrounded by the Hetero-Creatures, Lucia raises her other hand and firmly grasps her second blade.'}
+141	141		301				DialogDisable			"{2: 'Lucia', 3: ""You're not taking another step forward!"", 4: '1'}"
+142	142		202							{1: '1', 6: '1'}
+143	143		401						100.0	{1: '2', 2: '10042001'}
+144	144		401							{1: '2', 2: '10042002'}
+145	145		501						350.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '2'}
+146	146		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+147	147		401							{1: '2', 2: '4319'}
+148	148		502							{1: 'RImgBg1Shake'}
+149	149		301			DialogEnable				{3: 'The light of the blades flashes, cutting through the encroaching prison of monsters.'}
+150	150		401							{1: '2', 2: '4348'}
+151	151		401							{1: '2', 2: '4807'}
+152	152		301							{3: 'Serpentine dragons of soaring flames weave a violent dance, incinerating the grotesque enemies until nothing remains.'}
+153	153		402							{1: '4348'}
+154	154		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+155	155		401						100.0	{1: '2', 2: '10042001'}
+156	156		401						100.0	{1: '2', 2: '10042002'}
+157	157		401							{1: '2', 2: '10042008'}
+158	158		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+159	159		105							{1: 'Assets/Product/Ui/Spine/2-15Spine/LuxiyaTutorial/UiMovieLuxiyaTutorial.prefab'}
+160	160		301							"{3: ""Lucia deflects Cradle's strike with one blade as she swiftly eliminates a weakened Hetero-Creature with her Crimson Blade.""}"
+161	161		401							{1: '2', 2: '10042416'}
+162	162		301							"{3: ""The fierce wind sends her frame's ribbons fluttering. In a swirl of blazing light, her twin blades flash in a synchronized arc, shattering the ever-looming despair.""}"
+163	163		301							{3: 'The platinum radiance gleams brighter than the celestial dome above, its countless luminous facets reflecting and interweaving. Within this brilliance, Lucia stands out like a sun, casting light upon all in her path.'}
+164	164		301							{2: 'Lucia', 3: 'No matter where you run, I will stop you!'}
+165	165		201							{1: '18', 2: '500868', 3: '2'}
+166	166		301							"{1: '1', 2: 'Cradle', 3: ""What's the point of this?"", 4: '18'}"
+167	167		202							{1: '18'}
+168	168		301							{2: 'Lucia', 3: 'Chiko, cover them while they evacuate!'}
+169	169		201							{1: '18', 2: '501004'}
+170	170		301				AniZhuanchangBegin			{1: '1', 2: 'Chiko Kirishima', 3: 'Copy that.', 4: '18'}
+171	171		202							{1: '18', 6: '1'}
+172	172		105							
+173	173		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1032.jpg'}
+174	174		201							{1: '1', 2: '500005', 4: '-700', 6: '-50'}
+175	175		201							{1: '2', 2: '500005', 4: '700', 6: '-50'}
+176	176		201							{1: '3', 2: '500303', 4: '-200'}
+177	177		201							{1: '4', 2: '501007', 3: '4', 4: '200'}
+178	178		301			AniZhuanchangEnd				"{1: '1', 3: ""Yuko also leaves the hiding spot, joining the crowd's escape.""}"
+179	179		301							{3: 'Though Lucia has drawn away most of the enemies, several stragglers still lurk at the edges, their eyes fixed on the crowd.'}
+180	180		306							{1: '1'}
+181	181		203							{1: '1', 2: '0.25', 3: '-550', 5: '-50'}
+182	182		203							{1: '2', 2: '0.25', 3: '550', 5: '-50'}
+183	183		203							{1: '3', 2: '0.25', 3: '-200', 4: '-30', 5: '50'}
+184	184		203							{1: '4', 2: '0.25', 3: '200', 4: '-30', 5: '50'}
+185	185		401						200.0	{1: '2', 2: '10001004'}
+186	186		401							{1: '2', 2: '10001004'}
+187	187		401							{1: '2', 2: '4782'}
+188	188		301			RImgBg1Shake				{3: 'As the mercenaries form a protective circle around the employees, herself included, their gunfire keeping the stray Hetero-Creatures at bay, her thoughts suddenly drift back to Cradle.'}
+189	189		202							{1: '1', 2: '2', 3: '3', 4: '4'}
+190	190		301							{3: 'If only she had discovered the truth sooner, she would have never let Cradle help them fight off those mercenaries, and they would still be alive.'}
+191	191		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+192	192		504							{1: '0.7'}
+193	193		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1035.jpg'}
+194	194		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+195	195		201							{1: '1', 2: '500540', 3: '4', 7: '1'}
+196	196		201							{1: '2', 2: '500540', 4: '-575', 5: '-325', 7: '1'}
+197	197		205							{1: '2', 3: '1', 4: '0', 5: '0'}
+198	198		501							{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudieRole215.prefab', 3: '2'}
+199	199		301							{1: '1', 2: 'Cradle', 3: 'If you still hate me after this, then I shall give you a chance to hurt me.', 4: '1'}
+200	200		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+201	201		504							{1: '0'}
+202	202		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1032.jpg'}
+203	203		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+204	204		505							{2: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudieRole215.prefab', 4: '2'}
+205	205		202							{1: '1', 2: '2', 6: '1'}
+206	206		301							{3: '...Would she hate Cradle? If she saw Chiko being killed, she surely would.'}
+207	207		201							{1: '1', 2: '501004'}
+208	208		201							{1: '2', 2: '500005', 4: '-550'}
+209	209		201							{1: '3', 2: '500005', 4: '550'}
+210	210		301							{1: '1', 3: 'Caught in the middle of the crowd, Yuko watches Chiko as she maintains suppressing fire against the remaining monsters alongside other mercenaries, her eyes fixed on the battlefield.'}
+211	211		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+212	212		201							{1: '1', 2: '500005', 4: '-400', 6: '-50'}
+213	213		201							{1: '2', 2: '500005', 4: '400', 6: '-50'}
+214	214		201							{1: '3', 2: '501007', 3: '4'}
+215	215		301							"{1: '1', 3: ""...In the end, she's still the one being protected.""}"
+216	216		202							{1: '1', 2: '2', 3: '3'}
+217	217		301							{3: 'She thought things were different when working with Cradle, believing she could secretly offer food and protection to everyone. Only now does she realize the folly of her actions—she was still just relying on others.'}
+218	218		306							
+219	219		401							{1: '2', 2: '4535'}
+220	220		301			RImgBg1Shake				{3: 'In that moment, the ground suddenly trembles with a thunderous roar, like a beast awakening from its long slumber, the violent shaking scattering the evacuating crowd.'}
+221	221		201							{1: '1', 2: '500303', 3: '5', 7: '1'}
+222	222		301			PanelActor1Shake				{1: '1', 2: 'Barley', 3: '****, an earthquake now of all times?!', 4: '1'}
+223	223		202							{1: '1'}
+224	224		201							{1: '1', 2: '501004'}
+225	225		301							{1: '1', 2: 'Chiko Kirishima', 3: 'Watch out! The ground is cracking!', 4: '1'}
+226	226		202							{1: '1', 6: '1'}
+227	227		401							{1: '2', 2: '4319'}
+228	228		401							{1: '2', 2: '4827'}
+229	229		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+230	230		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1033.jpg'}
+231	231		301			RImgBg1Shake				"{3: ""The Red Tide bursts forth from the ground's fissures, surging outward in an instant.""}"
+232	232		401							{1: '2', 2: '4820'}
+233	233		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+234	234		104							{1: '0|0|-100', 2: '0.1'}
+235	235		201							{1: '1', 2: '500902', 4: '-400', 7: '1'}
+236	236		201							{1: '2', 2: '500902', 4: '400', 7: '1'}
+237	237		401							{1: '2', 2: '4784'}
+238	238		402							{1: '4827'}
+239	239		301							{1: '1', 3: 'Hetero-Creatures emerge from all directions, shaking off the tide from their bodies before charging forward with savage momentum.'}
+240	240		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+241	241		401							{1: '2', 2: '2927'}
+242	242		202							{1: '1', 2: '2'}
+243	243		301							{3: 'Those at the back of the group cry out in terror, their screams mixing with desperate footsteps as they run for their lives, afraid of being consumed by the crimson tide.'}
+244	244		201							{1: '3', 2: '501004'}
+245	245		301							"{1: '1', 2: 'Chiko Kirishima', 3: ""Move forward! Watch your step! We'll cover you!"", 4: '3'}"
+246	246		402							{1: '2927'}
+247	247		201							{1: '1', 2: '500005', 4: '-800', 7: '1'}
+248	248		201							{1: '2', 2: '500005', 4: '800', 7: '1'}
+249	249		203							{1: '1', 2: '0.25', 3: '-550'}
+250	250		203							{1: '2', 2: '0.25', 3: '550'}
+251	251		401							{1: '2', 2: '10001004'}
+252	252		301			RImgBg1Shake				"{1: '1', 3: ""Amidst the sharp report of mercenaries' gunfire, enemies fall one after another, momentarily quelling the panic in the crowd's hearts.""}"
+253	253		401						200.0	{1: '2', 2: '10001004'}
+254	254		401							{1: '2', 2: '10001004'}
+255	255		401							{1: '2', 2: '4782'}
+256	256		301			RImgBg1Shake				"{3: ""Like a battle horn's call, the mercenaries fire in unison, holding back the Hetero-Creatures' onslaught.""}"
+257	257		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+258	258		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+259	259		401							{1: '2', 2: '4331'}
+260	260		201							{1: '1', 2: '500956'}
+261	261		301							{1: '1', 3: 'The stragglers leap across the fissures one by one as the Red Tide surges madly behind them. Another person comes running, his face contorted with pure terror.'}
+262	262		203							{1: '1', 2: '0.25', 3: '-300', 5: '-100'}
+263	263		201							{1: '2', 2: '500902', 4: '400', 5: '-100', 6: '80'}
+264	264		401							{1: '2', 2: '4778'}
+265	265		301							{1: '1', 3: 'Behind him, a Hetero-Creature gives relentless chase as the ground trembles once more, churning up the tide in its wake.'}
+266	266		401							{1: '2', 2: '3077'}
+267	267		203							{1: '1', 2: '0.25', 3: '-300', 4: '-70', 5: '-100'}
+268	268		203							{1: '2', 2: '0.25', 3: '350', 4: '-100', 5: '30'}
+269	269		301							{3: 'Amid the chaos, the employee who has been hiding in the middle of the crowd suddenly buckles at the knees and collapses, reaching forward with desperate hands.'}
+270	270		301			PanelActor1Shake				{2: 'Staff', 3: 'Ahhh...!', 4: '1'}
+271	271		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+272	272		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+273	273		202							{1: '1', 2: '2', 6: '1'}
+274	274		401						100.0	{1: '2', 2: '2513'}
+275	275		401							{1: '2', 2: '4807'}
+276	276		301			RImgBg1Shake				"{3: ""With a Hetero-Creatures breathing down his neck, Chiko grips her gun with one hand and, amid the monster's roar, uses her other hand to pull the fallen person up before giving him a firm push forward.""}"
+277	277		201							{1: '1', 2: '501004'}
+278	278		301							"{1: '1', 2: 'Chiko Kirishima', 3: ""Keep running! Don't look back!"", 4: '1'}"
+279	279		202							{1: '1', 6: '1'}
+280	280		401						250.0	{1: '2', 2: '2513'}
+281	281		401							{1: '2', 2: '2513'}
+282	282		301			RImgBg1Shake				{3: 'As these words ring out, the mercenary captain fires several rapid shots, taking down the Hetero-Creature in front of Chiko.'}
+283	283		201							{1: '1', 2: '500005'}
+284	284		301							{1: '1', 2: 'Mercenary Captain', 3: 'Watch your flanks too!', 4: '1'}
+285	285		202							{1: '1'}
+286	286		201							{1: '1', 2: '501004'}
+287	287		301							{1: '1', 3: 'Taking advantage of this brief respite, Chiko catches her breath and resumes directing the evacuation group.'}
+288	288		201							{1: '2', 2: '501007', 3: '4', 4: '500'}
+289	289		301							"{1: '1', 3: ""As the crowd gradually shifts from chaos to order, Chiko takes position beside Yuko, standing guard at the group's flank.""}"
+290	290		203							{1: '1', 2: '0.25', 3: '-400'}
+291	291		203							{1: '2', 2: '0.25', 3: '300'}
+292	292		301							{3: 'Chiko, who has been focused on the broader situation until now, turns to her sister. Recalling the recent events, she asks in a low voice.'}
+293	293		301							"{2: 'Chiko Kirishima', 3: ""Where's your gun?"", 4: '1'}"
+294	294		301							"{2: 'Yuko Kirishima', 3: ""Still with me, but there's only one bullet left. Got any more for me?"", 4: '2'}"
+295	295		301							"{2: 'Chiko Kirishima', 3: ""Forget it. You've never been trained to use a gun."", 4: '1'}"
+296	296		401						200.0	{1: '2', 2: '4779'}
+297	297		402							{1: '4779'}
+298	298		301							{3: 'Chiko adjusts her shooting stance and reveals the dagger at her waist.'}
+299	299		301							"{2: 'Chiko Kirishima', 3: ""Take this. We'll make it out together."", 4: '1'}"
+300	300		202							{1: '1'}
+301	301		301							"{3: ""Chiko falls into silence once more, her focus back on guarding the flank. Sensing her sister's reluctance to speak, Yuko restrains the words she wishes to utter.""}"
+302	302		203							{1: '2', 2: '0.25'}
+303	303		301							{2: 'Yuko Kirishima', 3: '...', 4: '2'}
+304	304		306							{1: '1'}
+305	305		301							"{3: '""But I want to help you.""—Yuko glances once more at the dagger in her hand, then at the gun she doesn\'t know how to use.'}"
+306	306		306							
+307	307		202							{1: '2'}
+308	308		401							{1: '2', 2: '4782'}
+309	309		401							{1: '2', 2: '4820'}
+310	310		301							{3: 'She looks up at the battlefield—a few more Hetero-Creatures fall, but their armies continue to emerge from the tide in an endless onslaught.'}
+311	311		401							{1: '2', 2: '4319'}
+312	312		202							{1: '2', 6: '1'}
+313	313		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+314	314		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1601_7.jpg'}
+315	315		301			RImgBg1Shake				{3: 'In mere moments, the Red Tide erupts amid the earthquake. The crimson circle of death rapidly constricts, like a giant hand crushing what little space remains for the survivors to escape.'}
+316	316		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1033.jpg', 3: '0', 4: '1', 5: '0.8'}
+317	317		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1033.jpg'}
+318	318		205							{1: '999'}
+319	319		301							{3: 'As the massive wave threatens to swallow the crowd whole, desperate screams erupt from the group.'}
+320	320		201							{1: '1', 2: '500303', 3: '5', 7: '1'}
+321	321		301			PanelActor1Shake				"{1: '1', 2: 'Barley', 3: ""They're f***ing charging at us, aaagh!!"", 4: '1'}"
+322	322		202							{1: '1', 6: '1'}
+323	323		201							{1: '1', 2: '501035', 4: '-200', 7: '1'}
+324	324		203							{1: '1', 2: '0.15'}
+325	325		401						150.0	{1: '2', 2: '819042'}
+326	326		402							{1: '819042'}
+327	327		301							{3: 'An agile figure suddenly appears at the front of the group.'}
+328	328		202							{1: '1', 6: '1'}
+329	329		201							{1: '1', 2: '500303', 3: '7', 7: '1'}
+330	330		301							{1: '1', 2: 'Barley', 3: 'That monster?!', 4: '1'}
+331	331		202							{1: '1'}
+332	332		201							{1: '1', 2: '501033'}
+333	333		401							{1: '2', 2: '4814'}
+334	334		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustLightWall.prefab', 2: '2'}
+335	335		301							{1: '1', 3: 'Chaos extends her hand, and a force field unfurls, blocking most of the Hetero-Creatures while creating a temporary shelter against the encroaching Red Tide.'}
+336	336		202							{1: '1'}
+337	337		201							{1: '1', 2: '500005'}
+338	338		301							"{1: '1', 2: 'Mercenary Captain', 3: ""The exit's right ahead! Disable the force field behind us and let everyone retreat!"", 4: '1'}"
+339	339		203							{1: '1', 2: '0.25', 3: '-400'}
+340	340		201							{1: '2', 2: '500303', 3: '5', 4: '400'}
+341	341		301							"{1: '1', 2: 'Barley', 3: ""I don't think she has a hand to spare?! The moment we turn around, we'll get drowned!"", 4: '2'}"
+342	342		401						250.0	{1: '2', 2: '970804'}
+343	343		202							{1: '1', 2: '2', 6: '1'}
+344	344		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+345	345		401							{1: '2', 2: '2921'}
+346	346		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryJianXue.prefab', 2: '2'}
+347	347		301			RImgBg1Shake				"{3: ""The young man swings his baseball bat at the approaching Hetero-Creature's neck, as if venting days of pent-up frustration.""}"
+348	348		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryJianXue.prefab'}
+349	349		301							{3: 'Then, he grabs Darcie, who struggles to keep pace with the group due to her frail constitution, practically dragging her along by the arm.'}
+350	350		201							{1: '1', 2: '500303', 3: '5', 4: '300'}
+351	351		201							{1: '2', 2: '500937', 4: '-300', 5: '-80'}
+352	352		301							{1: '1', 2: 'Darcie', 3: 'Barley, slow down... slow...', 4: '2'}
+353	353		301							"{2: 'Barley', 3: ""Slow down? If we don't move now..."", 4: '1'}"
+354	354		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+355	355		401							{1: '2', 2: '2513'}
+356	356		202							{1: '1', 2: '2', 6: '1'}
+357	357		301			RImgBg1Shake				{3: 'The whistling of bullets cuts his words short as the mercenary captain takes down a struggling monster, throwing a sharp glance at the two.'}
+358	358		201							{1: '1', 2: '500005'}
+359	359		301				AniZhuanchangBegin			{1: '1', 2: 'Mercenary Captain', 3: 'Shut up and move!', 4: '1'}
+360	360		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustLightWall.prefab'}
+361	361		202							{1: '1', 6: '1'}
+362	362		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1031.jpg'}
+363	363		301			AniZhuanchangEnd				"{3: ""Yet disasters are like holes that can't be plugged—no sooner is one crisis contained than terrified screams erupt from another direction.""}"
+364	364		201							{1: '1', 2: '501024', 7: '1'}
+365	365		301			PanelActor1Shake				{1: '1', 2: 'Mona', 3: 'Aahh! Stay back!', 4: '1'}
+366	366		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+367	367		401							{1: '2', 2: '4784'}
+368	368		301							{3: 'A Hetero-Creature lunges at Mona, its deformed claws gleaming with murderous intent.'}
+369	369		201							{1: '2', 2: '501007', 4: '550'}
+370	370		301							{1: '1', 3: 'Following behind Mona, Yuko freezes for a moment before springing into action.'}
+371	371		204							{1: '2', 2: '5'}
+372	372		301							{2: 'Yuko Kirishima', 3: 'Mona!', 4: '2'}
+373	373		203						200.0	{1: '2', 2: '0.25', 3: '150'}
+374	374		401							{1: '2', 2: '4044'}
+375	375		203						200.0	{1: '1', 2: '0.25', 3: '-450'}
+376	376		202							{1: '1'}
+377	377		301							"{3: ""Yuko's body moves on instinct—she dashes forward and shoves Mona out of the way.""}"
+378	378		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHit01.prefab', 2: '2'}
+379	379		401							{1: '2', 2: '13082102'}
+380	380		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+381	381		201							{1: '2', 2: '501019', 4: '150', 7: '1'}
+382	382		301						1500.0	"{3: ""The claws still come down, leaving horrific gashes across Yuko's leg.""}"
+383	383		301			PanelActor2Shake				{1: '1', 2: 'Yuko Kirishima', 3: '...Agh!', 4: '2'}
+384	384		301							{3: 'The pain, rather than bringing her down, only serves to tighten her grip on the dagger.'}
+385	385		401							{1: '2', 2: '4813'}
+386	386		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+387	387		203						200.0	{1: '2', 2: '0.25', 3: '150', 5: '-50'}
+388	388		401							{1: '2', 2: '4796'}
+389	389		301							"{3: ""With newfound courage surging through her, she drives her blade deep into the Hetero-Creature's neck.""}"
+390	390		401							{1: '2', 2: '4807'}
+391	391		203							{1: '2', 2: '0.25', 3: '150', 4: '-100'}
+392	392		401							{1: '2', 2: '3077'}
+393	393		301			RImgBg1Shake				"{3: ""As fluid splatters and the monster collapses, delayed panic suddenly seizes Yuko's entire being. She falls back onto the ground, too terrified to even pull her dagger free.""}"
+394	394		201							{1: '1', 2: '501024', 4: '-300'}
+395	395		301							{1: '1', 2: 'Mona', 3: 'Yuko!', 4: '1'}
+396	396		301							"{2: 'Yuko Kirishima', 3: ""I'm fine... I'm fine!"", 4: '2'}"
+397	397		203							{1: '1', 2: '0.25', 3: '-350'}
+398	398		203						200.0	{1: '2', 2: '0.25', 3: '150', 4: '-50'}
+399	399		203							{1: '1', 2: '0.25', 3: '-300'}
+400	400		203							{1: '2', 2: '0.25', 3: '150', 4: '-100'}
+401	401		401							{1: '2', 2: '3077'}
+402	402		301							"{3: ""Her voice trembles as she grasps Mona's outstretched hand. Attempting to rise, the wounds on her leg prove too much, causing her to collapse back down.""}"
+403	403		301							"{2: 'Mona', 3: ""Yuko! What were you thinking? Now you can't even walk!"", 4: '1'}"
+404	404		301							"{2: 'Yuko Kirishima', 3: ""It's okay, it's not that bad... I can just walk slowly."", 4: '2'}"
+405	405		301							"{2: 'Mona', 3: ""What are you talking about?! I'm not complaining about your walking speed!"", 4: '1'}"
+406	406		301							"{2: 'Yuko Kirishima', 3: ""I know, but... I'm just glad you're safe. After all, you're the one who found a job here and brought me along. Consider this my way of saying thank you."", 4: '2'}"
+407	407		301							{2: 'Mona', 3: '...', 4: '1'}
+408	408		203							{1: '1', 2: '0.35', 3: '-350'}
+409	409		203							{1: '2', 2: '0.35', 3: '150'}
+410	410		301							{3: 'Mona lets out a sigh, saying no more words. She grabs Yuko again and, with all her strength, pulls Yuko up from the ground.'}
+411	411		301							"{2: 'Mona', 3: ""I'll help you. We walk together!"", 4: '1'}"
+412	412		301							{2: 'Yuko Kirishima', 3: '...Thank you, but...', 4: '2'}
+413	413		301							{3: 'The words reach her lips but come out as barely a mumble.'}
+414	414		301							"{2: 'Yuko Kirishima', 3: ""You should go ahead. I'll only slow you down with my pace."", 4: '2'}"
+415	415		301							{2: 'Mona', 3: 'Um... Alright.', 4: '1'}
+416	416		202							{1: '1'}
+417	417		401							{1: '2', 2: '4331'}
+418	418		301							{3: 'Mona glances at the departing group, loosens her grip, and hurries to catch up with them.'}
+419	419		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+420	420		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1601_7.jpg'}
+421	421		202							{1: '2', 6: '1'}
+422	422		401							{1: '2', 2: '4535'}
+423	423		401							{1: '2', 2: '4319'}
+424	424		301			RImgBg1Shake				{3: 'The moment she reunites with the group, the ground violently shakes again. The Red Tide surges forth, separating Yuko from everyone else.'}
+425	425		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1031.jpg', 3: '0', 4: '1', 5: '0.25'}
+426	426		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1031.jpg'}
+427	427		205							{1: '999'}
+428	428		509						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1033.jpg', 2: '1'}
+429	429		201							{1: '1', 2: '501024', 4: '-550'}
+430	430		201							{1: '2', 2: '501019', 4: '550'}
+431	431		301							{1: '1', 2: 'Mona', 3: 'Yuko?!', 4: '1'}
+432	432		301							"{2: 'Yuko Kirishima', 3: ""Don't worry! I'll wait for Lucia to help take me over. You all go ahead!"", 4: '2'}"
+433	433		301							{2: 'Mona', 3: '...', 4: '1'}
+434	434		202							{1: '2'}
+435	435		301				AniZhuanchangBegin			{3: 'It is her choice to make—Mona has no right to intervene. She watches as Yuko limps up the stairs, then turns to join the moving crowd.'}
+436	436		202							{1: '1', 6: '1'}
+437	437		510						500.0	{1: '1'}
+438	438		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1033.jpg'}
+439	439		301			AniZhuanchangEnd				"{3: ""The never-ending Red Tide slowly devours the lowlands, as the evacuating crowd seeks refuge within the sanctuary produced by Chaos under the mercenaries' protection.""}"
+440	440		301							"{3: ""Rose pours every ounce of her strength into dismantling the force field. Despite the repeated tremors within Chaos' sanctuary, it manages to stabilize with each surge of energy she unleashes.""}"
+441	441		301							{3: 'All eyes are fixed on Rose, hearts torn between utter despair and overflowing hope.'}
+442	442		301							"{3: ""Yuko catches sight of Chiko in the crowd, who scans the sea of faces, seemingly seeking her sister's presence among the throng.""}"
+443	443		301							"{3: ""The mercenary captain pats Chiko's shoulder, his gaze sweeping over the encroaching foes before pressing his last remaining bullets into her hands—a silent passing of responsibility. Chiko accepts it all without a word, shedding her role as a sister to once again become a protector.""}"
+444	444		201							{1: '1', 2: '501007', 3: '4'}
+445	445		301							{1: '1', 2: 'Yuko Kirishima', 3: '...Alright.', 4: '1'}
+446	446		202							{1: '1', 6: '1'}
+447	447		401							{1: '2', 2: '2819'}
+448	448		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+449	449		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_34.jpg'}
+450	450		301							{3: 'A sudden whoosh through the air shatters her momentary peace.'}
+451	451		301							"{3: ""Cradle, who has been trapped in the exhibition hall, now breaks through Lucia's blockade.""}"
+452	452		301							"{2: 'Cradle', 3: ""Looks like you're at the end of your rope again.""}"
+453	453		301							"{3: ""She doesn't even spare another glance at Yuko on the stairs, her eyes fixed on the sea of people and the Construct standing in her way.""}"
+454	454		301							"{2: 'Cradle', 3: ""One-on-one, I wouldn't stand a chance against you. But with all these people around... ensuring their safety is sure to distract you.""}"
+455	455		401							{1: '2', 2: '10042001'}
+456	456		301			RImgBg1Shake				"{3: ""Lucia rushes in with a fierce slash, cutting off both Cradle's advance and her taunt in one swift motion.""}"
+457	457		401							{1: '2', 2: '9380042'}
+458	458		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+459	459		401							{1: '2', 2: '10042008'}
+460	460		301			RImgBg1Shake	DialogDisable			"{3: ""A slight smirk crosses Cradle's lips as she swings her scythe to meet Lucia's blade—sparks explode from their violent collision.""}"
+461	461		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_31.jpg', 3: '0', 4: '1', 5: '0.8'}
+462	462		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_31.jpg'}
+463	463		205							{1: '999'}
+464	464		301			DialogEnable				{2: 'Yuko Kirishima', 3: '...'}
+465	465		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+466	466		504							{1: '0.7'}
+467	467		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1029.jpg'}
+468	468		201							{1: '1', 2: '501008', 3: '5'}
+469	469		301							{1: '1', 2: 'Yuko Kirishima', 3: '...What exactly are you, Cradle?', 4: '1'}
+470	470		202							{1: '1', 6: '1'}
+471	471		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+472	472		504							{1: '0'}
+473	473		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_31.jpg'}
+474	474		301							{3: 'In her daze, she recalls the question she once asked.'}
+475	475		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+476	476		504							{1: '0.7'}
+477	477		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1034.jpg'}
+478	478		201							{1: '1', 2: '500540', 7: '1'}
+479	479		301							{1: '1', 2: 'Cradle', 3: 'My name is Cradle. Who I am... is a more difficult question to answer.', 4: '1'}
+480	480		301							"{2: 'Cradle', 3: 'But I think... I lost my ""creator,"" and because of that, I\'ve been searching for stories of other ""creators."" It\'s not my mission... just consider it a regret, or maybe a hobby.', 4: '1'}"
+481	481		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+482	482		202							{1: '1', 6: '1'}
+483	483		504							{1: '0'}
+484	484		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_31.jpg'}
+485	485		301							{3: 'Cradle had shown her kindness before. When exactly did she start to change?'}
+486	486		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+487	487		202							{1: '1', 6: '1'}
+488	488		504							{1: '0.7'}
+489	489		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1020.jpg'}
+490	490		201							{1: '1', 2: '501008', 7: '1'}
+491	491		301							"{1: '1', 2: ""Lucia's Commandant"", 3: ""It's more like she's using that character as a vessel, similar to...""}"
+492	492		204							{1: '1', 2: '3'}
+493	493		301							{2: 'Yuko Kirishima', 3: 'Possession?', 4: '1'}
+494	494		301							"{2: ""Lucia's Commandant"", 3: '...More like personality data conflict.'}"
+495	495		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+496	496		202							{1: '1', 6: '1'}
+497	497		504							{1: '0'}
+498	498		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_31.jpg'}
+499	499		301							"{3: ""Two different personalities dwell within her body. The kindness Yuko felt back then wasn't a lie.""}"
+500	500		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+501	501		504							{1: '0.7'}
+502	502		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1020.jpg'}
+503	503		201							{1: '1', 2: '501008', 3: '4', 7: '1'}
+504	504		301							{1: '1', 2: 'Yuko Kirishima', 3: 'Is there any way to bring back her original self?', 4: '1'}
+505	505		301							"{2: ""Lucia's Commandant"", 3: ""It might be possible, but I don't know how exactly.""}"
+506	506		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+507	507		504							{1: '0'}
+508	508		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_31.jpg'}
+509	509		202							{1: '1', 6: '1'}
+510	510		301							{2: 'Yuko Kirishima', 3: '...', 4: '1'}
+511	511		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+512	512		504							{1: '0.7'}
+513	513		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1020.jpg'}
+514	514		201							{1: '1', 2: '501008', 7: '1'}
+515	515		301							"{1: '1', 2: ""Lucia's Commandant"", 3: 'She turned your consciousness into one of those butterflies around her and willingly swallowed it... Maybe you mean something special to her?'}"
+516	516		204							{1: '1', 2: '1'}
+517	517		301							{2: 'Yuko Kirishima', 3: '...Special? Me?', 4: '1'}
+518	518		301							"{2: ""Lucia's Commandant"", 3: 'Yeah, she said she would give you a chance to hurt her.'}"
+519	519		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+520	520		202							{1: '1', 6: '1'}
+521	521		504							{1: '0'}
+522	522		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_31.jpg'}
+523	523		301							{2: 'Yuko Kirishima', 3: 'That butterfly... is it still there...'}
+524	524		301							{3: 'Her murmurs are interrupted by shouts from behind. Turning around again, Yuko sees that the evacuating group has opened both the barrier and the disaster containment wall.'}
+525	525		301							"{3: ""The Red Tide surges forward another step, as if eager to drown everyone's hopes, forcing people to scream and push their way out as death inches ever closer.""}"
+526	526		509							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1033.jpg', 2: '2'}
+527	527		104							{1: '-500|0|0', 2: '0.5'}
+528	528		201					500.0		{1: '1', 2: '500005', 4: '550'}
+529	529		301							{1: '1', 2: 'Mercenary Captain', 3: 'Evacuate one by one! Those who can still fight, stay behind to cover! Everyone else go first!', 4: '1'}
+530	530		202							{1: '1', 6: '1'}
+531	531		201							{1: '1', 2: '501004', 3: '5', 4: '550', 7: '1'}
+532	532		301			PanelActor1Shake				{1: '1', 2: 'Chiko Kirishima', 3: 'Yuko!!', 4: '1'}
+533	533		301							{3: 'Her sister calls out to Yuko, finally noticing the insurmountable Red Tide that separates them.'}
+534	534		301							{2: 'Chiko Kirishima', 3: '...Yuko!!', 4: '1'}
+535	535		202							{1: '1'}
+536	536		301							"{3: ""To Yuko's surprise, her sister, whom she views as capable of overcoming any challenge, stands frozen in place, only able to utter her name once more.""}"
+537	537		301							{3: '...Once again, she finds herself becoming a burden to Chiko.'}
+538	538		301							"{2: 'Yuko Kirishima', 3: ""Chiko, you know what? Cradle told me that in the future, I'll still end up being a burden to you and everyone around you.""}"
+539	539		201							{1: '1', 2: '501004', 3: '5', 4: '550'}
+540	540		301							{1: '1', 2: 'Chiko Kirishima', 3: '...Huh?', 4: '1'}
+541	541		202							{1: '1'}
+542	542		301							"{3: ""Chiko sees Yuko break into an inexplicable smile, but can't make out what she's saying.""}"
+543	543		301							"{2: 'Yuko Kirishima', 3: ""I've been thinking about what someone like me could possibly do, but no matter how much I rack my brain... I just can't find an answer.""}"
+544	544		301							{3: 'Across the distance, her words fail to reach the other side again.'}
+545	545		201							{1: '1', 2: '501004', 3: '5', 4: '550', 7: '1'}
+546	546		301			PanelActor1Shake				"{1: '1', 2: 'Chiko Kirishima', 3: ""Speak up! I can't hear you!"", 4: '1'}"
+547	547		202							{1: '1'}
+548	548		201							{1: '1', 2: '501024', 4: '550'}
+549	549		301							"{1: '1', 2: 'Mona', 3: ""Yuko, hurry up and get Lucia to bring you over here! We're running out of time—this exit needs to be sealed right now!"", 4: '1'}"
+550	550		202							{1: '1'}
+551	551		301							{2: 'Yuko Kirishima', 3: '...'}
+552	552		301							{3: 'Half of the crowd has already pushed and shoved their way out, and Mona, after shouting her warning, squeezes through the narrow exit.'}
+553	553		201							{1: '1', 2: '501004', 3: '5', 4: '550', 7: '1'}
+554	554		301			PanelActor1Shake				{1: '1', 2: 'Chiko Kirishima', 3: 'Yuko!! Answer me!!', 4: '1'}
+555	555		301							{3: '...How could she possibly answer? What words could give her legs the strength to cross this uncrossable river?'}
+556	556		301							{3: 'All she can do is gaze at Chiko, listening as the sounds of combat between Cradle and Lucia draw closer and more frantic.'}
+557	557		202							{1: '1', 6: '1'}
+558	558		401							{1: '2', 2: '10042003'}
+559	559		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+560	560		510							{1: '2'}
+561	561		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_34.jpg', 4: '5'}
+562	562		103							{1: '1.5', 2: '150|0|0', 3: '5'}
+563	563		301							"{2: 'Cradle', 3: ""Perfect. Since you've opened the barrier, I might as well take advantage of this chance.""}"
+564	564		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_34.jpg', 4: '5', 5: '1'}
+565	565		104							{1: '150|0|-220', 2: '0'}
+566	566		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_34.jpg'}
+567	567		104						450.0	{1: '-300|-100|-220', 2: '0.4'}
+568	568		301							"{2: 'Lucia', 3: ""You're not getting past here!""}"
+569	569		104						450.0	{1: '0|0|0', 2: '0.4'}
+570	570		301							"{2: 'Cradle', 3: ""Oh really? Then let me present you with a trolley problem I've been planning for quite a while.""}"
+571	571		401							{1: '2', 2: '4319'}
+572	572		401							{1: '2', 2: '4820'}
+573	573		301			RImgBg1Shake				"{3: ""Amidst Cradle's laughter, the long-suppressed Red Tide and Hetero-Creatures suddenly burst forth, lunging at the commandant who is providing support behind Lucia.""}"
+574	574		301							"{2: 'Cradle', 3: 'Stop me, or stop those Hetero-Creatures? If you choose me... my little ""soldiers"" might just run wild everywhere.'}"
+575	575		301							{3: 'As Lucia charges without hesitation toward the commandant surrounded by Red Tide and Hetero-Creatures, the girl dashes past the Red Tide, making a beeline for the crowded exit.'}
+576	576		302				AniZhuanchangBegin			{2: 'Chaos!!', 3: '577'}
+577	577		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1033.jpg'}
+578	578		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustLightWall.prefab', 2: '2'}
+579	579		201							{1: '1', 2: '501035', 7: '1'}
+580	580		301			AniZhuanchangEnd				{1: '1', 3: 'Guarding the gate, Chaos hears the cry, but maintaining the force field has already drained her strength—she is in no condition to face Cradle head-on.'}
+581	581		301							"{3: ""Yet, seeing Chiko hasn't evacuated, Chaos stands her ground, refusing to abandon her post.""}"
+582	582		201							{1: '1', 2: '501004', 3: '5', 7: '1'}
+583	583		301							{1: '1', 2: 'Chiko Kirishima', 3: 'Watch out!!', 4: '1'}
+584	584		202							{1: '1', 6: '1'}
+585	585		401							{1: '2', 2: '4826'}
+586	586		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+587	587		301			RImgBg1Shake				"{3: ""The scythe's blade crashes forcefully against Chaos' force field, tearing open wounds across the doll's fragile arms.""}"
+588	588		301							{3: 'Just one more strike, and everything will crumble.'}
+589	589		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustLightWall.prefab'}
+590	590		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_31.jpg'}
+591	591		301			RImgBg1Shake				{2: 'Yuko Kirishima', 3: 'Cradle!!!'}
+592	592		301							{3: 'She screams at that body, one that will never answer her call.'}
+593	593		301			RImgBg1Shake				{2: 'Yuko Kirishima', 3: 'I remember now—how you killed me, and what happened with the butterfly!!!'}
+594	594		306							{1: '1'}
+595	595		301							{3: 'That is nothing but a complete lie.'}
+596	596		301							{3: 'How could someone with no connection to the Hetero Tower remember things from before the time rewind?'}
+597	597		306							
+598	598		301							"{3: 'Yet, <phonetic=Cradle>Agent Zero</phonetic> hesitates in her attack upon hearing this false ""intel,"" turning around to look back with <phonetic=Agent Zero>Cradle</phonetic>.'}"
+599	599		301							"{2: 'Yuko Kirishima', 3: 'Now I understand why the ""creator"" you spoke of made that choice in the end.'}"
+600	600		201							{1: '18', 2: '500868', 3: '4'}
+601	601		301							{1: '1', 2: 'Cradle', 3: '...?', 4: '18'}
+602	602		202							{1: '18'}
+603	603		401							{1: '2', 2: '4779'}
+604	604		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_32.jpg', 3: '0', 4: '1', 5: '0.2'}
+605	605		402							{1: '4779'}
+606	606		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_32.jpg'}
+607	607		205							{1: '999'}
+608	608		301							"{3: ""With a smile, she raises the gun loaded with a lone bullet—though unaware of how to wield it, there's one spot she knows she can't miss.""}"
+609	609		301							{2: 'Yuko Kirishima', 3: 'Let the rotten wood burn...'}
+610	610		401							{1: '2', 2: '1510'}
+611	611		402							{1: '5043'}
+612	612		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_33.jpg', 3: '0', 4: '1', 5: '0.25'}
+613	613		101				DialogDisable			{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_33.jpg'}
+614	614		205							{1: '999'}
+615	615		401							{1: '2', 2: '4818'}
+616	616		201							{1: '1', 2: '500540', 4: '-160', 5: '-100', 7: '1'}
+617	617		205							{1: '1', 3: '1', 4: '0', 5: '0'}
+618	618		501						1000.0	{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudieRole215.prefab', 3: '1'}
+619	619		401							{1: '2', 2: '4818'}
+620	620		203						500.0	{1: '1', 2: '1.5', 3: '-400', 4: '-300'}
+621	621		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1.5'}
+622	622		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+623	623		205							{1: '999'}
+624	624		401							{1: '2', 2: '2593'}
+625	625		505							{2: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudieRole215.prefab', 4: '1'}
+626	626		202							{1: '1', 6: '1'}
+627	627		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_03.jpg'}
+628	628		401							{1: '1', 2: '359'}
+629	629		301			DialogEnable				"{1: '1', 3: ""Blood erupts like flames, blooming into a single-winged red butterfly from Yuko's loose hair.""}"
+630	630		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.8'}
+631	631		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+632	632		205							{1: '999'}
+633	633		401						800.0	{1: '2', 2: '4802'}
+634	634		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '2'}
+635	635		401							{1: '2', 2: '2533'}
+636	636		301				AniZhuanchangBegin			{3: 'With countless words of worthless wishes and farewells left unsaid, she crumples heavily onto the ground and rolls into the Red Tide.'}
+637	637		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+638	638		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1033.jpg'}
+639	639		201							{1: '1', 2: '501004', 3: '5', 7: '1'}
+640	640		502							{1: 'PanelActor1Shake'}
+641	641		301			AniZhuanchangEnd	DialogDisable			{1: '1', 2: 'Chiko Kirishima', 3: 'Yuko?!!', 4: '1'}
+642	642		202							{1: '1'}
+643	643		401							{1: '2', 2: '4280'}
+644	644		401							{1: '2', 2: '2959'}
+645	645		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+646	646		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1035.jpg'}
+647	647		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+648	648		504							{1: '0.7'}
+649	649		201							{1: '1', 2: '500540', 3: '4', 7: '1'}
+650	650		201							{1: '2', 2: '500540', 4: '-410', 5: '-150', 7: '1'}
+651	651		205							{1: '2', 3: '1', 4: '0', 5: '0'}
+652	652		501						1000.0	{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudieRole215.prefab', 3: '2', 4: '2'}
+653	653		204							{1: '1', 2: '8'}
+654	654		401							{1: '2', 2: '1505'}
+655	655		505						1000.0	{2: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieHudieRole215.prefab', 4: '2'}
+656	656		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+657	657		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1033.jpg'}
+658	658		504							{1: '0'}
+659	659		202							{1: '1', 2: '2', 6: '1'}
+660	660		301			DialogEnable				{3: 'A familiar ringing emanates from the butterfly she had once swallowed, compelling <phonetic=Agent Zero>Cradle</phonetic> to lower her hands.'}
+661	661		201							{1: '1', 2: '500005', 7: '1'}
+662	662		301			PanelActor1Shake				{1: '1', 2: 'Mercenary Captain', 3: 'Run!! Chiko!!', 4: '1'}
+663	663		202							{1: '1'}
+664	664		401							{1: '2', 2: '4331'}
+665	665		301							"{3: ""The captain's firm grip seizes Chiko by the collar, scoops up Rose, and forcefully pulls them both through the narrow exit.""}"
+666	666		401							{1: '2', 2: '4473'}
+667	667		301							{3: 'As the last person evacuates, the force field finally seals shut once more.'}
+668	668		302							{2: 'Yuko...!', 3: '669'}
+669	669		401							{1: '2', 2: '4044'}
+670	670		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+671	671		104						150.0	{1: '0|10|-5', 2: '0.1'}
+672	672		104							{1: '0|0|0', 2: '0.1'}
+673	673		301				DialogDisable			"{3: ""Before there's any time to confirm anything, Lucia carries you up and leaps into the air.""}"
+674	674		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+675	675		201							{1: '2', 2: '500868', 3: '4', 4: '500'}
+676	676		203						550.0	{1: '2', 2: '0.5', 3: '300'}
+677	677		203						450.0	{1: '2', 2: '0.4', 3: '300', 4: '-50'}
+678	678		201							{1: '1', 2: '501019', 4: '-200', 5: '-300', 6: '50'}
+679	679		203							{1: '2', 2: '0.5', 3: '300'}
+680	680		203							{1: '1', 2: '0.5', 3: '-200', 4: '-250', 5: '50'}
+681	681		301			DialogEnable				{1: '1', 3: 'Within the Red Tide, Cradle slowly approaches Yuko, pensively taking her into her arms.'}
+682	682		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+683	683		202							{1: '1', 2: '2'}
+684	684		401							{1: '2', 2: '4648'}
+685	685		301							"{3: ""In the howling wind, Lucia's expression remains inscrutable, and yet her grip noticeably tightens around you.""}"
+686	686		301							{2: 'Lucia', 3: 'Commandant...'}
+687	687		301				AniZhuanchangBegin			{3: 'Regardless of the weight burdening her heart, she cannot look back on this one-way path.'}
+688	688		505			DialogDisable				{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+689	689		402							{1: '4648'}
+690	690		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_33.jpg'}
+691	691		104							{1: '-800|0|0', 2: '0'}
+692	692		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront25.png', 4: '4'}
+693	693		109							{1: '1', 2: '<color=#ffffffff><size=40>No one knows what emotions stirred within Yuko as she pulled the trigger.</size></color>', 3: '350'}
+694	694		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'No one knows what emotions stirred within Yuko as she pulled the trigger.'}
+695	695		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1601_7.jpg'}
+696	696		104							{1: '300|0|0', 2: '0'}
+697	697		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 4: '4'}
+698	698		109							{1: '1', 2: '<color=#ffffffff><size=50>...Was it because of that insurmountable Red Tide?</size></color>', 3: '-400'}
+699	699		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: '...Was it because of that insurmountable Red Tide?'}
+700	700		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_34.jpg'}
+701	701		104							{1: '-80|-80|-80', 2: '0'}
+702	702		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront25.png', 4: '4'}
+703	703		109							{1: '1', 2: '<color=#ffffffff><size=50>...Was it to buy a few precious seconds against Cradle?</size></color>', 3: '400'}
+704	704		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: '...Was it to buy a few precious seconds against Cradle?'}
+705	705		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1033.jpg'}
+706	706		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront21.png', 4: '4', 5: '1'}
+707	707		110				DialogEnable			{1: '1'}
+708	708		301			AniZhuanchangEnd				{3: '...Or was it because she learned what the future held?'}
+709	709		301							{3: 'Or perhaps... she had fallen into despair about her own life?'}
+710	710		301							{3: 'Was it truly the right decision to tell Yuko about the future?'}
+711	711		301							{3: 'Should one glimpse into the changed future, the survivors would affirm without hesitation: yes, her death was the right choice.'}
+712	712		301				AniZhuanchangBegin			"{3: ""Many will survive that incident, and Chiko's M.I.N.D. will not be damaged trying to save her.""}"
+713	713		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory334.png'}
+714	714		301			AniZhuanchangEnd				"{3: '""In the distant future,"" when Chiko dies at Copperfield Aquarium, her Hetero-Humanoid form will be able to process more intricate data, thanks to her intact M.I.N.D.'}"
+715	715		301							{3: 'The world will mark this as a turning point, guiding humanity toward a more stable and prosperous future, until one day... they can safely venture into the cosmos.'}
+716	716		401							{1: '2', 2: '4348'}
+717	717		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory460.jpg', 3: '0', 4: '1', 5: '0.5'}
+718	718		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory460.jpg'}
+719	719		205							{1: '999'}
+720	720		301							{3: 'Yet how much more rotten wood must we burn, how many heroes must die with regrets, and how many more righteous deaths must we endure...'}
+721	721		301		1		AniZhuanchangBegin			{3: '...before we can build a canal of wounds leading to the sea of stars?'}

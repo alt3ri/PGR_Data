@@ -1,0 +1,426 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401						1000.0	{1: '2', 2: '4259'}
+3	3		401							{1: '2', 2: '4278'}
+4	4		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+5	5		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '4'}
+7	7		401							{1: '1', 2: '36'}
+8	8		301			DialogEnable				{3: 'Your mind burns in the darkness as your consciousness rots away—every cell in you seems to be breaking apart and reconstructing itself...'}
+9	9		401							{1: '2', 2: '4278'}
+10	10		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+11	11		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+12	12		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+13	13		301				DialogDisable			{3: 'Mottled colors fill your vision. Time means nothing to you anymore... until a voice pulls your mind from the bottomless abyss.'}
+14	14		401							{1: '2', 2: '943'}
+15	15		402							{1: '4259'}
+16	16		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+17	17		104				AniZhuanchangBegin		250.0	{1: '0|0|-300', 2: '2', 4: '4'}
+18	18		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+19	19		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+20	20		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory539.jpg'}
+21	21		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '4', 5: '1'}
+22	22		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+23	23		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '2'}
+24	24		111			AniZhuanchangEnd			500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+25	25		111						1000.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+26	26		401							{1: '1', 2: '120'}
+27	27		201							{1: '1', 2: '501082'}
+28	28		301			DialogEnable				{1: '1', 2: '??', 3: 'Be careful now, The Star...', 4: '1'}
+29	29		302							{2: '...', 3: '30', 4: 'The Star...?', 5: '30'}
+30	30		202							{1: '1'}
+31	31		301							"{3: ""You cannot even be sure if your eyes are open, but you seem to hear Huaxu's voice drifting in and out as it travels across the distance to reach you.""}"
+32	32		401							{1: '2', 2: '2641'}
+33	33		301							{2: 'Huaxu', 3: 'Anomaly detected—anomaly—anomaly in memory storage—'}
+34	34		401							{1: '2', 2: '2641'}
+35	35		301							{2: 'Huaxu', 3: 'Illegal access—unable to—unable to proc—'}
+36	36		201							{1: '1', 2: '501082'}
+37	37		301							{1: '1', 2: '??', 3: 'If you fall, Aya is going to tease you about it...', 4: '1'}
+38	38		202							{1: '1'}
+39	39		401							{1: '2', 2: '4062'}
+40	40		301							{2: 'Huaxu', 3: 'Beeeeep—'}
+41	41		301				DialogDisable			{3: 'Huaxu falls completely silent.'}
+42	42		302							{2: '...Huaxu?', 3: '43', 4: '...?', 5: '43'}
+43	43		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+44	44		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+45	45		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+46	46		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory539.jpg'}
+47	47		111			AniZhuanchangEnd				{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+48	48		301			DialogEnable				{3: 'A hazy light appears before your eyes. What is this place...?'}
+49	49		201							{1: '1', 2: '501081', 3: '7', 4: '-50'}
+50	50		401							{1: '2', 2: '3077'}
+51	51		203							{1: '1', 2: '0.25', 3: '-300', 4: '-50'}
+52	52		301			RImgBg1Shake				{1: '1', 2: 'The Star', 3: 'Aargh—', 4: '1'}
+53	53		301							{3: 'A little girl with strange goggles crashes hard onto the ground.'}
+54	54		201							{1: '2', 2: '500471', 4: '400', 5: '-300', 6: '400'}
+55	55		301							{1: '1', 2: 'Aya', 3: 'Urgh—uuurgh.', 4: '2'}
+56	56		204							{1: '1', 2: '16'}
+57	57		202							{1: '2', 6: '1'}
+58	58		201							{1: '2', 2: '501082', 4: '250'}
+59	59		301							{1: '1', 2: '??', 3: 'Yikes, that must hurt.'}
+60	60		203						450.0	{1: '2', 2: '0.4', 3: '100'}
+61	61		203							{1: '2', 2: '0.4', 3: '200'}
+62	62		203							{1: '1', 2: '0.4', 3: '-300'}
+63	63		301							{3: 'The gray-haired girl quickly helps the little girl up from the ground.'}
+64	64		202							{1: '2', 6: '1'}
+65	65		201							{1: '2', 2: '500472', 3: '1', 4: '200'}
+66	66		301							"{1: '1', 2: '??', 3: ""I told you this wouldn't be a good place to move around, The Star."", 4: '2'}"
+67	67		302							{2: 'Na...', 3: '68', 4: 'Nanami?', 5: '68'}
+68	68		306							{1: '1'}
+69	69		301				DialogDisable			"{3: ""Is this place... Nanami's memory storage module? Has the Full Sensory Simulation Device connected you to Nanami's memories?""}"
+70	70		306							
+71	71		302							{2: 'Nanami—Nanami!', 3: '72', 4: '(Shout with all might)', 5: '72'}
+72	72		104							{1: '0|0|-100', 2: '0.4'}
+73	73		203							{1: '1', 2: '0.4', 3: '-300', 4: '-5', 5: '-50'}
+74	74		203						350.0	{1: '2', 2: '0.4', 3: '200', 4: '-5', 5: '-50'}
+75	75		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+76	76		401							{1: '2', 2: '4477'}
+77	77		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '0.8', 4: '5'}
+78	78		203							{1: '1', 2: '0', 3: '-300'}
+79	79		203							{1: '2', 2: '0', 3: '200'}
+80	80		502							{1: 'DialogEnable'}
+81	81		301			RImgBg1Shake				{3: 'Nanami and the mechanoid are right before your eyes, and yet your voice cannot seem to reach them, no matter how hard you shout. It is as if you were covered by a heavy transparent veil.'}
+82	82		202							{1: '1', 2: '2', 6: '1'}
+83	83		201							{1: '1', 2: '500472', 3: '3'}
+84	84		301							"{1: '1', 2: 'Nanami', 3: ""Alright, we're going to head back home now with our comrades here!"", 4: '1'}"
+85	85		202							{1: '1'}
+86	86		301							{3: 'Nanami squints her eyes playfully as she checks off items in an imaginary notebook.'}
+87	87		201							{1: '1', 2: '500476'}
+88	88		301							"{1: '1', 2: 'Nanami', 3: ""Alright! Let's go! Time for us to head back to the Church of Machina!"", 4: '1'}"
+89	89		203							{1: '1', 2: '0.8', 3: '-1800'}
+90	90		301							{3: 'She raises her arms high while riding on Power, looking like a little general returning from victory.'}
+91	91		302							{2: 'Nanami—!', 3: '92'}
+92	92		301							{3: 'Again, your shout falls on deaf ears.'}
+93	93		302							{2: '(Quickly recall the clues from before your departure)', 3: '94'}
+94	94		202							{1: '1', 6: '1'}
+95	95		401							{1: '2', 2: '2687'}
+96	96		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+97	97		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '1', 4: '5', 5: '1'}
+98	98		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory54.jpg', 3: '1'}
+99	99		504							{1: '0.7'}
+100	100		301							{3: 'From what you can recall, Cervantes did mention this situation.'}
+101	101		201							{1: '1', 2: '500585'}
+102	102		301							"{1: '1', 2: 'Cervantes', 3: ""The last thing I heard from the starship was that Sage attempted to continue her search for humanity's salvation through simulations after leaving Earth, but she vanished into the space-time turbulence. No one knows where she went."", 4: '1'}"
+103	103		301							{2: 'Cervantes', 3: 'If our hypothesis is correct and you manage to contact Sage through the Full Sensory Simulation Device, your consciousness might become lost with her in the space-time turbulence.', 4: '1'}
+104	104		301							"{2: 'Cervantes', 3: ""Sage has experienced many extraordinary encounters, and I can't be certain which point in time you might find her. It could take a while before you discover the singularity that can wake her up."", 4: '1'}"
+105	105		301							{2: 'Cervantes', 3: 'This might be a long journey...', 4: '1'}
+106	106		202							{1: '1'}
+107	107		301				AniZhuanchangBegin			{3: 'There is no doubt this is going to be a long journey.'}
+108	108		401							{1: '1', 2: '36'}
+109	109		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory579.jpg'}
+110	110		401							{1: '1', 2: '208'}
+111	111		504							{1: '0'}
+112	112		201							{1: '1', 2: '500476', 4: '1800', 7: '1'}
+113	113		203							{1: '1', 2: '0.8'}
+114	114		301			AniZhuanchangEnd			850.0	"{1: '1', 2: 'Nanami', 3: ""Beep beep—Nanami's back!"", 4: '1'}"
+115	115		301							{3: 'Power enters the Church of Machina like a small tornado with its master. The grand hall, usually filled with the clicking and whirring of machines, is unusually quiet. The handful of semi-awakened machines slouch listlessly in the corners.'}
+116	116		301							"{2: 'Nanami', 3: ""Why are we all looking like this? C'mon, Nanami's back!"", 4: '1'}"
+117	117		202							{1: '1', 6: '1'}
+118	118		201							{1: '1', 2: '500484', 3: '1'}
+119	119		301							{1: '1', 2: 'Arcana', 3: 'Welcome back, Sage.', 4: '1'}
+120	120		202							{1: '1'}
+121	121		301							{3: 'Arcana hurries out from the corridor on the other side.'}
+122	122		201							{1: '1', 2: '500472', 3: '7', 4: '400'}
+123	123		201							{1: '2', 2: '500484', 4: '-400'}
+124	124		301							"{1: '1', 2: 'Nanami', 3: ""Where did everyone go? I'm not seeing anyone here..."", 4: '1'}"
+125	125		301							"{2: 'Arcana', 3: ""They've all gone out on urgent missions to retrieve or contact our comrades that are scattered across the world."", 4: '2'}"
+126	126		301							"{2: 'Arcana', 3: 'Not long ago, the Gray Tower detected that the liquid called the ""Red Tide"" around the Hetero Tower had begun to mutate.', 4: '2'}"
+127	127		301							"{2: 'Arcana', 3: ""In the past, the Red Tide could not harm mechanoids unless there was direct contact, but since its mutation, it's been actively devouring semi-awakened machines."", 4: '2'}"
+128	128		204							{1: '1', 2: '4'}
+129	129		301							{2: 'Nanami', 3: 'The Red Tide... Mutation...', 4: '1'}
+130	130		301				DialogDisable			{3: 'Furrowing her brow, Nanami searches through her M.I.N.D. for these two keywords.'}
+131	131		202							{1: '1', 2: '2', 6: '1'}
+132	132		401							{1: '2', 2: '558'}
+133	133		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+134	134		101						200.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg2601_09.jpg'}
+135	135		401							{1: '2', 2: '558'}
+136	136		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+137	137		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory569.jpg'}
+138	138		401							{1: '2', 2: '558'}
+139	139		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+140	140		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory547.jpg'}
+141	141		401							{1: '2', 2: '558'}
+142	142		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+143	143		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory907.jpg'}
+144	144		401							{1: '2', 2: '558'}
+145	145		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+146	146		101						200.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg2301_5.jpg'}
+147	147		401							{1: '2', 2: '558'}
+148	148		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+149	149		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory438.jpg'}
+150	150		401							{1: '2', 2: '558'}
+151	151		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+152	152		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2601_10.jpg'}
+153	153		301			DialogEnable				"{3: 'Among all the worlds she has ""seen""... she wonders if there was ever an ending like this.'}"
+154	154		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+155	155		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory579.jpg'}
+156	156		201							{1: '1', 2: '500472', 4: '400', 7: '1'}
+157	157		201							{1: '2', 2: '500484', 4: '-400', 7: '1'}
+158	158		301							{1: '1', 2: 'Arcana', 3: 'Sage, have you heard anything from Babylonia?', 4: '2'}
+159	159		204							{1: '1', 2: '7'}
+160	160		301							"{2: 'Nanami', 3: ""Noooope! I haven't read anything from them yet..."", 4: '1'}"
+161	161		401							{1: '2', 2: '4422'}
+162	162		301							{3: 'The gray-haired girl opens her terminal and makes an exaggerated show of filtering through messages from Babylonia.'}
+163	163		301							"{2: 'Arcana', 3: ""...The Gray Raven Commandant and Lucia haven't made it out of the Hetero Tower."", 4: '2'}"
+164	164		204							{1: '1'}
+165	165		301							{2: 'Nanami', 3: '...', 4: '1'}
+166	166		301							"{2: 'Arcana', 3: ""It's been <color=#ff4e4eff>1825 days</color> since they entered the tower, and we haven't heard from them since. I think it's safe to say they're lost in there."", 4: '2'}"
+167	167		301							"{2: 'Arcana', 3: ""Zavier theorizes that the mutated Red Tide might be related to the Hetero Tower, but we haven't figured out the exact composition of this mutation."", 4: '2'}"
+168	168		204							{1: '1', 2: '7'}
+169	169		301							"{2: 'Nanami', 3: ""...Oh my, I had no idea it's been so long since they went in."", 4: '1'}"
+170	170		301							"{2: 'Nanami', 3: ""Nanami was wondering why she hadn't seen Commandant for so long."", 4: '1'}"
+171	171		204							{1: '1', 2: '5'}
+172	172		301							{2: 'Nanami', 3: 'I thought Commandant <phonetic=had not forgetten>had forgotten</phonetic> about me...', 4: '1'}
+173	173		204							{1: '1', 2: '7'}
+174	174		301							{2: 'Nanami', 3: 'Uh... Did someone just say something?', 4: '1'}
+175	175		301							{2: 'Arcana', 3: '...No, Sage. How is your frame, by the way?', 4: '2'}
+176	176		204							{1: '1'}
+177	177		301							"{2: 'Nanami', 3: ""It's holding up just fine. Nanami's frame is the toughest of them all!"", 4: '1'}"
+178	178		301							"{2: 'Arcana', 3: ""You... haven't been searching around the Hetero Tower, have you?"", 4: '2'}"
+179	179		204							{1: '1', 2: '1'}
+180	180		301				DialogDisable			{2: 'Nanami', 3: '{226|153|170}~', 4: '1'}
+181	181		202						100.0	{1: '1', 2: '2'}
+182	182		401						100.0	{1: '2', 2: '4331'}
+183	183		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+184	184		104				AniZhuanchangBegin			{1: '0|0|-150', 2: '1'}
+185	185		101			AniZhuanchangEnd			200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory580.jpg'}
+186	186		401						100.0	{1: '2', 2: '4331'}
+187	187		104				AniZhuanchangBegin			{1: '0|0|-150', 2: '1'}
+188	188		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory713.jpg'}
+189	189		505				DialogEnable			{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+190	190		301			AniZhuanchangEnd				"{3: ""Nanami glances around nervously before darting into Zavier's magic workshop.""}"
+191	191		201							{1: '1', 2: '500472', 4: '200'}
+192	192		201							{1: '2', 2: '500484', 4: '-600'}
+193	193		203							{1: '1', 2: '0.5', 3: '400'}
+194	194		203							{1: '2', 2: '0.5', 3: '-400'}
+195	195		301							{1: '1', 2: 'Arcana', 3: 'Regardless, Sage, we have to make a decision now.', 4: '2'}
+196	196		301							{3: 'Arcana follows right behind Nanami, refusing to let her dodge the subject.'}
+197	197		301							"{2: 'Arcana', 3: ""It's been a while since the Gray Raven Commandant went missing, and the mutated Red Tide now threatens the safety of the mechanoids. We..."", 4: '2'}"
+198	198		203							{1: '1', 2: '0.3', 3: '400', 4: '-250'}
+199	199		204							{1: '1', 2: '7'}
+200	200		301							{2: 'Nanami', 3: 'Hold on one second. Let Nanami just quickly finish this thing here.', 4: '1'}
+201	201		204							{1: '1'}
+202	202		401							{1: '2', 2: '9351042'}
+203	203		301							{3: 'Nanami pouts as she mumbles to herself and rummages through drawers and cabinets in search of something.'}
+204	204		301							"{2: 'Arcana', 3: ""Sage, we're out of time."", 4: '2'}"
+205	205		301							{3: 'She shakes her head, somewhat frustrated.'}
+206	206		204							{1: '2', 2: '14'}
+207	207		301							"{2: 'Arcana', 3: 'I can hear it... Calamity is approaching, change is imminent, and ""The World"" has fallen into a deep slumber. Before that happens... we must be prepared.', 4: '2'}"
+208	208		401							{1: '2', 2: '9351040'}
+209	209		204							{1: '2'}
+210	210		301							{2: 'Arcana', 3: 'The Gray Tower is ready to depart at any time, and Zavier already has all the starship modification materials ready...', 4: '2'}
+211	211		204							{1: '1', 2: '1'}
+212	212		301							{2: 'Nanami', 3: 'Hmmmmmm. Nanami remembers leaving that thing somewhere around here...', 4: '1'}
+213	213		401							{1: '2', 2: '9351041'}
+214	214		301							"{3: ""Nanami pays no attention to Arcana's words as she continues to search.""}"
+215	215		301							{2: 'Arcana', 3: '...', 4: '2'}
+216	216		301							"{2: 'Arcana', 3: ""This isn't a problem we can solve by avoiding it, Sage. In this calamity, mechanoids and humans cannot coexist."", 4: '2'}"
+217	217		203							{1: '1', 2: '0.3', 3: '400'}
+218	218		204							{1: '1', 2: '5'}
+219	219		301							"{2: 'Nanami', 3: ""Who says Nanami is avoiding anything? I'm not avoiding anything!"", 4: '1'}"
+220	220		204							{1: '2', 2: '14'}
+221	221		301							{3: 'Arcana lets out a soft sigh.'}
+222	222		301							{2: 'Arcana', 3: '...Wheel of Fortune has betrayed the Church of Machina and taken with him a group of awakened and semi-awakened mechanoids.', 4: '2'}
+223	223		204							{1: '2'}
+224	224		301				AniZhuanchangBegin			{2: 'Arcana', 3: 'This is the second piece of news I wanted to share with you.', 4: '2'}
+225	225		202							{1: '1', 2: '2', 6: '1'}
+226	226		401							{1: '1', 2: '36'}
+227	227		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory579.jpg'}
+228	228		401							{1: '1', 2: '120'}
+229	229		504							{1: '0.7'}
+230	230		301			AniZhuanchangEnd				{3: 'The changes brought by the mutated Red Tide spell trouble for the Church of Machina.'}
+231	231		301							{3: 'Some mechanoids firmly believe that humans are to blame for all these unfortunate changes—that humans have polluted this world, invaded this world, made this world worse—'}
+232	232		301							"{2: 'Wheel of Fortune', 3: ""Isn't it obvious?""}"
+233	233		401							{1: '2', 2: '9351042'}
+234	234		301						500.0	{3: 'His joints click and clatter as he fidgets with the components.'}
+235	235		301							"{3: 'Ever since he fled the Church of Machina with ""The Emperor"", his life has clearly taken a turn for the worse. No one would spare him any fuel, let alone maintain his frame for free—'}"
+236	236		201							{1: '1', 2: '500484'}
+237	237		301							{1: '1', 2: 'Arcana', 3: 'Wheel of Fortune, Sage has yet to hold you accountable for taking Schulz away.', 4: '1'}
+238	238		301							"{2: 'Wheel of Fortune', 3: ""Hold me accountable? If Schulz's desire to claim Aerospace City for our mechanical brethren counts as a crime... I can't think of a more beautiful way to describe him.""}"
+239	239		301							"{2: 'Wheel of Fortune', 3: 'Our time has come, Arcana... ""Mother"".'}"
+240	240		301							{2: 'Arcana', 3: 'Hand over Schulz, and Sage might just pardon you.', 4: '1'}
+241	241		301							"{2: 'Wheel of Fortune', 3: 'You\'re mistaken... ""Mother"". I didn\'t come back seeking anyone\'s forgiveness. I simply believe all our comrades have the right to know the truth.'}"
+242	242		301							{2: 'Wheel of Fortune', 3: 'And the truth is—Earth should be ours now.'}
+243	243		301							{2: 'Wheel of Fortune', 3: 'The era of machines has come! We shall purge humanity, claim Earth for ourselves, and we will fight off the Punishing Virus—we shall become the new dominant species of Earth!'}
+244	244		202							{1: '1', 6: '1'}
+245	245		201							{1: '1', 2: '500488', 4: '-550', 5: '-250', 6: '400'}
+246	246		201							{1: '2', 2: '500488', 4: '600', 5: '-250', 6: '400'}
+247	247		301							"{1: '1', 2: 'Mechanoid A', 3: ""That's not what Sage taught us."", 4: '1'}"
+248	248		301							{2: 'Mechanoid B', 3: 'Sage taught us that we should live in harmony with humans—', 4: '2'}
+249	249		202							{1: '1', 2: '2'}
+250	250		301							"{2: 'Wheel of Fortune', 3: ""I, Wheel of Fortune, am also an apostle of Sage's mechanical will. My comrade, if we could offer the entire world to Sage...""}"
+251	251		301				AniZhuanchangBegin			{2: 'Wheel of Fortune', 3: 'Why should we confine ourselves to this petty Church of Machina?'}
+252	252		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory713.jpg'}
+253	253		504							{1: '0'}
+254	254		201							{1: '1', 2: '500472', 3: '5', 4: '400', 7: '1'}
+255	255		201							{1: '2', 2: '500484', 4: '-400', 7: '1'}
+256	256		301			AniZhuanchangEnd				"{1: '1', 2: 'Nanami', 3: ""...Nanami doesn't care about ruling the world!"", 4: '1'}"
+257	257		301							{3: 'Nanami puffs up her cheeks and puts her hands on her hips.'}
+258	258		301							{2: 'Arcana', 3: 'So Wheel of Fortune only managed to take away a small portion of the gears. Most of the remaining mechanoids still hold your will as supreme.', 4: '2'}
+259	259		301							{2: 'Nanami', 3: '...', 4: '1'}
+260	260		301							{3: 'Nanami frowns and pouts.'}
+261	261		301							"{2: 'Nanami', 3: ""Schulz is a bad guy, but... I really don't know what to do about them."", 4: '1'}"
+262	262		204							{1: '1', 2: '4'}
+263	263		301							{2: 'Nanami', 3: 'We can punish Zero for letting Schulz and Wheel of Fortune escape by temporarily restricting her to the Church of Machina, but... Wheel of Fortune and Schulz...', 4: '1'}
+264	264		301							{2: 'Nanami', 3: 'Sigh...', 4: '1'}
+265	265		301							{3: 'Arcana rarely sees Nanami so troubled. She truly does not know how to deal with these wayward brethren.'}
+266	266		301							"{3: ""Attempting to destroy Schulz's core consciousness was already a drastic measure for her, but can a mechanoid's consciousness really be destroyed that easily?""}"
+267	267		202							{1: '1', 2: '2', 6: '1'}
+268	268		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+269	269		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+270	270		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+271	271		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront1.png', 4: '4'}
+272	272		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront4.png', 4: '5'}
+273	273		301							"{3: ""Schulz's core being is essentially just a string of code, and no one knows how many copies he has made of himself. Theoretically, he could be hiding anywhere in the data flow...""}"
+274	274		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+275	275		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+276	276		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory713.jpg'}
+277	277		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '4', 5: '1'}
+278	278		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront4.png', 4: '5', 5: '1'}
+279	279		201							{1: '1', 2: '500472', 3: '4', 7: '1'}
+280	280		301							{1: '1', 2: 'Nanami', 3: 'Sigh.', 4: '1'}
+281	281		202							{1: '1'}
+282	282		301							{3: 'She lets out another heavy sigh.'}
+283	283		301				AniZhuanchangBegin			{3: 'Even without Arcana pointing it out, she has already noticed signs of something going wrong.'}
+284	284		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgCg/Cg2601_06.jpg'}
+285	285		205			AniZhuanchangEnd			1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg2601_07.jpg', 3: '0', 4: '1', 5: '0.8'}
+286	286		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg2601_07.jpg', 3: '1', 4: '0', 5: '1'}
+287	287		301			DialogEnable				"{3: ""The air around her is twisting. The girl's body descends into infinite darkness, and is almost about to dissolve.""}"
+288	288		205							{1: '999'}
+289	289		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+290	290		301				AniZhuanchangBegin		1000.0	{3: 'She slowly reaches out her hand, and the magnetic pull grows steadily stronger.'}
+291	291		401							{1: '2', 2: '4704'}
+292	292		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieShizhong01.prefab', 2: '2'}
+293	293		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'The countdown begins to tick quietly.'}
+294	294		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieShizhong01.prefab'}
+295	295		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory713.jpg'}
+296	296		201							{1: '1', 2: '500472', 7: '1'}
+297	297		301			AniZhuanchangEnd				"{1: '1', 2: 'Nanami', 3: ""...There's no time left to waste."", 4: '1'}"
+298	298		202							{1: '1'}
+299	299		301							{3: 'Once awakened machines develop their own consciousness, the Church of Machina becomes powerless to stop their actions.'}
+300	300		301							{3: 'If this continues, Schulz and Wheel of Fortune will not be the last mechanoids to leave the Church of Machina.'}
+301	301		301							"{3: 'Looking from their perspective, are they truly ""wrong""? Nanami finds herself unable to judge.'}"
+302	302		301							{3: 'But one thing she knows for certain...'}
+303	303		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+304	304		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2601_01.jpg'}
+305	305		301							{3: 'She recalls the future she saw during the Gestalt simulation: a world of darkness and depravity, of deathly frost, where mechanoids wage never-ending wars, consuming every inch of land beneath them.'}
+306	306		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+307	307		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory713.jpg'}
+308	308		201							{1: '1', 2: '500472', 3: '4', 7: '1'}
+309	309		301							"{1: '1', 2: 'Nanami', 3: ""Nanami... doesn't want a future like that."", 4: '1'}"
+310	310		202							{1: '1'}
+311	311		401							{1: '2', 2: '4095'}
+312	312		301							"{3: ""Nanami digs deep into Zavier's magic workshop and retrieves a crude blueprint. She holds it up to the light and squints at the design she completed long ago.""}"
+313	313		201							{1: '1', 2: '500472', 4: '400'}
+314	314		201							{1: '2', 2: '500484', 4: '-400'}
+315	315		301							"{1: '1', 2: 'Nanami', 3: ""Where's Zavier?"", 4: '1'}"
+316	316		301							{2: 'Arcana', 3: 'He said he needed to retrieve something important from an abandoned warehouse nearby.', 4: '2'}
+317	317		301							{2: 'Nanami', 3: 'Hmm... Any news about what I asked him to make?', 4: '1'}
+318	318		301							{2: 'Arcana', 3: 'He mentioned it was in the laboratory before he left. The calibration is complete and good for use anytime.', 4: '2'}
+319	319		301							"{2: 'Arcana', 3: ""Is that Sage's new frame?"", 4: '2'}"
+320	320		204							{1: '1', 2: '3'}
+321	321		301							"{2: 'Nanami', 3: ""Of course! This is the most powerful frame I've ever come up with myself!"", 4: '1'}"
+322	322		202							{1: '1', 2: '2'}
+323	323		401							{1: '2', 2: '4895'}
+324	324		301							{3: 'After rummaging through every corner, Nanami finds the incubation pod housing a Construct. She draws back the curtain covering the glass window, lost in thought.'}
+325	325		201							{1: '1', 2: '500484', 3: '1'}
+326	326		301							{1: '1', 2: 'Arcana', 3: '...What a unique frame.', 4: '1'}
+327	327		202							{1: '1'}
+328	328		301							"{3: 'Arcana follows closely behind and sees ""Nanami"" lying motionless in the incubation pod.'}"
+329	329		201							{1: '1', 2: '500472', 3: '1', 4: '400'}
+330	330		201							{1: '2', 2: '500484', 3: '1', 4: '-400'}
+331	331		301							{1: '1', 2: 'Nanami', 3: 'Of course. Nanami put a lot of work into it.', 4: '1'}
+332	332		204							{1: '2', 2: '2'}
+333	333		301							{2: 'Arcana', 3: 'I thought Sage would come up with something more mature...', 4: '2'}
+334	334		204							{1: '1', 2: '5'}
+335	335		301							"{2: 'Nanami', 3: ""No, no, no! Nanami wouldn't want that!"", 4: '1'}"
+336	336		202							{1: '1', 2: '2', 6: '1'}
+337	337		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+338	338		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory577.jpg'}
+339	339		504							{1: '0.5'}
+340	340		201							{1: '1', 2: '501086', 7: '1'}
+341	341		301							"{1: '1', 3: ""The memory of a girl with silver-gray hair surfaces in Nanami's mind. She shakes her head repeatedly, seemingly trying to cast that spectral figure out of her M.I.N.D."", 4: '1'}"
+342	342		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+343	343		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory713.jpg'}
+344	344		504							{1: '0'}
+345	345		201							{1: '1', 2: '500472', 7: '1'}
+346	346		301							"{1: '1', 2: 'Nanami', 3: ""I've changed my mind. Nanami doesn't want to be the big sister anymore."", 4: '1'}"
+347	347		301							{2: 'Nanami', 3: 'I... I just want to stay here on Earth and live together with <phonetic=Nanami...>Commandant</phonetic> and all these people.', 4: '1'}
+348	348		301				DialogDisable			"{2: 'Nanami', 3: ""But... we're running out of time."", 4: '1'}"
+349	349		202							{1: '1'}
+350	350		306							{1: '1'}
+351	351		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory579.jpg', 3: '0', 4: '1', 5: '0.5'}
+352	352		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory579.jpg'}
+353	353		205							{1: '999'}
+354	354		301			DialogEnable				{3: 'In the hall, several semi-awakened mechanical children play together, blissfully ignorant.'}
+355	355		301							{3: 'Regardless of what happens next, she should first lead her kin away from the looming danger.'}
+356	356		301				DialogDisable			{3: 'This is the responsibility she must bear as Sagemachina.'}
+357	357		306							
+358	358		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory713.jpg', 3: '0', 4: '1', 5: '0.5'}
+359	359		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory713.jpg'}
+360	360		205							{1: '999'}
+361	361		201							{1: '1', 2: '500472', 4: '400'}
+362	362		201							{1: '2', 2: '500484', 4: '-400'}
+363	363		301			DialogEnable				{1: '1', 2: 'Arcana', 3: 'As for Babylonia and the Gray Raven Commandant...', 4: '2'}
+364	364		301							{2: 'Nanami', 3: 'I went to check the area shortly after Commandant and Lucia entered the tower...', 4: '1'}
+365	365		301							"{3: ""A knowing look crosses Arcana's face.""}"
+366	366		204							{1: '1', 2: '5'}
+367	367		301							"{2: 'Nanami', 3: ""Of course I had to check it out! I had to make sure that huge thing wouldn't become a threat to our kind."", 4: '1'}"
+368	368		204							{1: '1'}
+369	369		301							{2: 'Nanami', 3: 'But when I got there, the tower was completely sealed off.', 4: '1'}
+370	370		301							{2: 'Nanami', 3: 'There is no way Nanami or the other Gray Ravens can make it in there if the tower is still sealed.', 4: '1'}
+371	371		301							"{2: 'Nanami', 3: ""And we won't be able to find the commandant even if we force our way in. I've tried that already."", 4: '1'}"
+372	372		301							"{2: 'Nanami', 3: ""The new frame was designed to see if we could break through that barrier, but now it seems that even if we forced our way in, we still wouldn't be able to find the commandant."", 4: '1'}"
+373	373		301							{2: 'Nanami', 3: 'Plus...', 4: '1'}
+374	374		301							{2: 'Arcana', 3: 'Plus, your current frame is severely damaged from when you forced your way into that tower.', 4: '2'}
+375	375		301							"{2: 'Nanami', 3: ""Hey, it's not just the Hetero Tower!"", 4: '1'}"
+376	376		301							{2: 'Nanami', 3: 'I made the frame for a different purpose anyway. Nanami made it for smoother simulations in the data space, but none of that matters now.', 4: '1'}
+377	377		204							{1: '1', 2: '4'}
+378	378		301							"{2: 'Nanami', 3: ""What matters is... we're running out of time."", 4: '1'}"
+379	379		301							"{3: 'She frowns, feeling the pull of the ""gravity"" tugging at her.'}"
+380	380		204							{1: '2', 2: '14'}
+381	381		301							{2: 'Arcana', 3: 'Time is truly running out... for both mechanoids and humans alike...', 4: '2'}
+382	382		402							{1: '120'}
+383	383		401						500.0	{1: '2', 2: '4331'}
+384	384		401							{1: '1', 2: '202'}
+385	385		202							{1: '1', 2: '2', 6: '1'}
+386	386		201							{1: '1', 2: '501081', 3: '16', 4: '-800'}
+387	387		201							{1: '2', 2: '500484', 4: '400'}
+388	388		203							{1: '1', 2: '0.4', 3: '-400'}
+389	389		301			RImgBg1Shake				"{1: '1', 2: 'The Star', 3: 'Sage... Sage! Sob... ""Mother""... ""Mother""!', 4: '1'}"
+390	390		203							{1: '2', 2: '0.3', 3: '400', 4: '-100'}
+391	391		301							"{2: 'Arcana', 3: ""The Star... What's wrong?"", 4: '2'}"
+392	392		301							{3: 'Arcana patiently kneels down to comfort the frightened mechanoid.'}
+393	393		204							{1: '1', 2: '7'}
+394	394		301							"{2: 'The Star', 3: ""It's out there, it's out there! This strange red wave is flooding in! Aya told me to hurry and find Sage... Sob..."", 4: '1'}"
+395	395		301							"{3: ""The expressions on The Star's mask change rapidly as she sobs uncontrollably.""}"
+396	396		204							{1: '1', 2: '16'}
+397	397		301							"{2: 'The Star', 3: ""Aya says the red wave broke through the Gray Tower's defenses. She says t-the protective barriers in place seem to have failed. The red wave might be getting stronger now than it was before... Sob..."", 4: '1'}"
+398	398		301							{2: 'The Star', 3: 'The red wave has a-already flooded into our hide-and-seek spot in the outer layer of the Gray Tower...', 4: '1'}
+399	399		204							{1: '2', 2: '4'}
+400	400		301							{2: 'Arcana', 3: 'The mutated Red Tide... has breached the ruins?', 4: '2'}
+401	401		204							{1: '2', 2: '14'}
+402	402		203							{1: '2', 2: '0.3', 3: '400'}
+403	403		301							{3: 'Says Arcana with a furrow.'}
+404	404		301							{2: 'Arcana', 3: 'This is bad... Haicma, Trailblazer, and Zero have all left to rescue our comrades nearby...', 4: '2'}
+405	405		202							{1: '1', 2: '2', 6: '1'}
+406	406		201							{1: '1', 2: '500472', 3: '3'}
+407	407		301							"{1: '1', 2: 'Nanami', 3: ""Hey, you've still got me here!"", 4: '1'}"
+408	408		401							{1: '2', 2: '952'}
+409	409		301							{3: 'With practiced movements, she connects each port from the incubation pod to her frame, one by one.'}
+410	410		301							"{2: 'Nanami', 3: ""Let's show them what this new frame is made of!"", 4: '1'}"
+411	411		204							{1: '1', 2: '1'}
+412	412		301							{2: 'Nanami', 3: 'The Star, take your friends out there with Aya to our secret hideout!', 4: '1'}
+413	413		202							{1: '1', 6: '1'}
+414	414		201							{1: '1', 2: '501081', 3: '16', 4: '-400'}
+415	415		201							{1: '2', 2: '500484', 4: '400'}
+416	416		301							{1: '1', 2: 'The Star', 3: 'O-okay!', 4: '1'}
+417	417		301							"{2: 'Arcana', 3: ""This might be too hasty... Zavier isn't even here..."", 4: '2'}"
+418	418		202							{1: '1', 2: '2', 6: '1'}
+419	419		201							{1: '1', 2: '500472', 3: '1'}
+420	420		301							{1: '1', 2: 'Nanami', 3: 'Have faith in your great Sage! Nanami is pretty amazing!', 4: '1'}
+421	421		401							{1: '2', 2: '897'}
+422	422		301							"{3: ""After activating the incubation pod's button, Nanami gives Power a cheerful pat, her eyes crinkling with a smile.""}"
+423	423		301							{2: 'Nanami', 3: 'See you later, Power!', 4: '1'}
+424	424		204							{1: '1', 2: '3'}
+425	425		301		1		AniZhuanchangBegin			{2: 'Nanami', 3: 'Here comes Nanami the Knight!', 4: '1'}

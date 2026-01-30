@@ -1,0 +1,105 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory672.jpg'}
+2	2		401							{1: '1', 2: '204'}
+3	3		401							{1: '2', 2: '2915'}
+4	4		301			DialogEnable				"{3: ""The festival is more than halfway over, but there's still no sign of Ayla anywhere.""}"
+5	5		301							{3: 'When you go around asking the maintenance robots, they all tell you that Ayla was last seen in one of the preparation rooms.'}
+6	6		301							"{3: ""You can't hold back the urge of wanting to look for her, thinking she might be hiding somewhere, busy adjusting equipment instead of enjoying the holiday.""}"
+7	7		201							{1: '1', 2: '500576', 3: '7', 5: '-1080', 6: '-200'}
+8	8		203							{1: '1', 2: '0.3', 4: '-20', 5: '-200'}
+9	9		301				DialogDisable			{1: '1', 2: 'Ayla', 3: 'Commandant? Are you looking for me?', 4: '1'}
+10	10		204							{1: '1', 2: '1'}
+11	11		203							{1: '1', 2: '0.25', 3: '600', 4: '-20', 5: '-200'}
+12	12		202							{1: '1'}
+13	13		402							{1: '2915'}
+14	14		401							{1: '2', 2: '4387'}
+15	15		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+16	16		401							{1: '2', 2: '4388'}
+17	17		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1062.jpg'}
+18	18		306							{1: '1'}
+19	19		301			DialogEnable				{3: 'From an inconspicuous corner, Ayla suddenly pops her head out and quickly pulls you inside.'}
+20	20		301							{3: 'With your eyes now adjusted to the lighting, you now find yourself in a darkroom full of hanging film strips.'}
+21	21		301							{3: 'The tiny room is completely devoid of sunlight, with only faint red light strips flowing across the ceiling. Eerie... seems to be the best word to describe this place.'}
+22	22		306							
+23	23		302							"{2: ""Is this your new hobby? It's a bit... creepy."", 3: '24', 4: 'Never knew you had such a ""romantic"" hobby.', 5: '24'}"
+24	24		201							{1: '1', 2: '500576', 3: '1'}
+25	25		301							"{1: '1', 2: 'Ayla', 3: 'Hehe, ""daguerreotype"" is what this photo development process is called. Took me quite a fortune to get my hands on these gems that still function properly.', 4: '1'}"
+26	26		204							{1: '1', 2: '0'}
+27	27		301							"{3: ""Ayla's smile is every bit as bright as usual as she begins to explain everything to me enthusiastically.""}"
+28	28		301							"{2: 'Ayla', 3: ""I'm planning to give everyone who participated in this event these professionally mounted film slides as a keepsake."", 4: '1'}"
+29	29		202			DialogDisable				{1: '1', 6: '1'}
+30	30		306							{1: '1'}
+31	31		104							{1: '200|-150|-150', 2: '0.5'}
+32	32		401						600.0	{1: '2', 2: '4799'}
+33	33		402						200.0	{1: '4799'}
+34	34		301			DialogEnable	DialogDisable			{3: 'Ayla hands you a piece of cut film and switches on her flashlight.'}
+35	35		401							{1: '2', 2: '2683'}
+36	36		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '1'}
+37	37		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '0.8', 4: '0.8', 5: '0'}
+38	38		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_13.jpg'}
+39	39		301			DialogEnable				{3: 'In an instant, a bustling street explodes like fireworks across the empty white wall.'}
+40	40		401							{1: '2', 2: '2915'}
+41	41		301							{3: 'Blooming flowers along the street, people laughing and playing, sweet fragrance permeating the air... everything seems within reach.'}
+42	42		301				DialogDisable			{3: 'Everyone at the festival looks genuinely happy.'}
+43	43		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1062.jpg'}
+44	44		205						600.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '0.8', 4: '0', 5: '0.4'}
+45	45		401							{1: '2', 2: '2683'}
+46	46		402							{1: '2915'}
+47	47		104							{1: '0|0|0', 2: '0.5'}
+48	48		306						800.0	
+49	49		201							{1: '1', 2: '500576'}
+50	50		301			DialogEnable				"{1: '1', 2: 'Ayla', 3: ""See? It's quite meaningful as a keepsake, isn't it?"", 4: '1'}"
+51	51		301							{3: 'Ayla switches off the flashlight, and the street vanishes instantly.'}
+52	52		302							"{2: ""It's beautiful, but... once the light's off, it's gone.""}"
+53	53		301							"{2: 'Ayla', 3: ""But beautiful things are always ephemeral, aren't they?"", 4: '1'}"
+54	54		204							{1: '1', 2: '1'}
+55	55		301							"{2: 'Ayla', 3: 'We help people ""freeze"" these memories forever, which is why people need people like me.', 4: '1'}"
+56	56		302							{2: 'What about you?', 3: '57', 4: 'What about us?', 5: '57'}
+57	57		204							{1: '1', 2: '7'}
+58	58		301				AniZhuanchangBegin			{2: 'Ayla', 3: 'Hey... you really gotta learn to take things slowly, Commandant.', 4: '1'}
+59	59		202							{1: '1', 6: '1'}
+60	60		502						500.0	{1: 'DialogDisable'}
+61	61		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+62	62		401							{1: '2', 2: '5159'}
+63	63		301			DialogEnable				{3: 'Ayla steps closer, takes your hand, and leads you out of the darkroom into another passage.'}
+64	64		402							{1: '5159'}
+65	65		301				AniZhuanchangBegin			{2: 'Ayla', 3: 'Things that are super special... It only makes sense to keep them somewhere special, right?', 4: '1'}
+66	66		502						500.0	{1: 'DialogDisable'}
+67	67		205			AniZhuanchangEnd			600.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3301_04.jpg', 3: '0', 4: '1', 5: '0.5'}
+68	68		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3301_04.jpg'}
+69	69		205							{1: '999'}
+70	70		401							{1: '2', 2: '5370'}
+71	71		306							{1: '1'}
+72	72		301			DialogEnable				{3: 'The room the two of you enter is adorned with film negatives of all shapes and sizes hanging everywhere.'}
+73	73		301							{3: 'Ayla decorated this personal sanctuary, with film negatives arranged chronologically that turned the space into a small viewing gallery.'}
+74	74		301							"{3: ""The day the two of you first met at WGAA, the day you first participated in an event Ayla organized, and the day the two of you first spent Valentine's Day together...""}"
+75	75		301							{3: 'All these moments are now frozen in time within these tiny film negatives.'}
+76	76		306							
+77	77		302							"{2: ""So you've been capturing all these days we've spent together."", 3: '78'}"
+78	78		201							{1: '1', 2: '500576'}
+79	79		301							{1: '1', 2: 'Ayla', 3: 'No, I actually took a little shortcut.', 4: '1'}
+80	80		301							"{2: 'Ayla', 3: 'These are just ""simulated film negatives"" I made by retrieving daily life recordings from my terminal and manually reproducing them.', 4: '1'}"
+81	81		301				DialogDisable			"{2: 'Ayla', 3: ""But I did this because I wanted all the time I've spent with you, Commandant, to have a physical form that could hold our memories."", 4: '1'}"
+82	82		202							{1: '1'}
+83	83		401						600.0	{1: '2', 2: '4799'}
+84	84		402							{1: '4799'}
+85	85		306							{1: '1'}
+86	86		301			DialogEnable				{3: 'She takes your hand and guides your fingers gently across the surface of each film negative.'}
+87	87		301							{3: 'The film surface, due to the special coupling properties of photosensitive chemicals, creates unique textural patterns based on the image in it.'}
+88	88		301							{3: 'While regular printed photos all feel smooth to the touch, each film negative has its own unique texture.'}
+89	89		306							
+90	90		201							{1: '1', 2: '500576'}
+91	91		301							"{1: '1', 2: 'Ayla', 3: ""They're textured, aren't they?"", 4: '1'}"
+92	92		301							{2: 'Ayla', 3: 'The light and shadow left these traces instantaneously, and you only get these with your pictures when you actually take them with a camera.', 4: '1'}
+93	93		203							{1: '1', 2: '0.25', 4: '-50', 5: '-120'}
+94	94		401						600.0	{1: '2', 2: '4799'}
+95	95		402							{1: '4799'}
+96	96		204							{1: '1', 2: '20'}
+97	97		301							{3: 'Ayla leans against your shoulder, your fingers overlapping as the two of you trace the textured surface of the film together.'}
+98	98		301							{3: 'Her fragrant pink hair falls by your ear, making you dizzy.'}
+99	99		204							{1: '1', 2: '1'}
+100	100		301							"{2: 'Ayla', 3: ""These film negatives might be simulated, but I've made it a personal goal to capture every moment we spend together going forward, 【kuroname】."", 4: '1'}"
+101	101		204							{1: '1', 2: '0'}
+102	102		301							{3: 'She raises her head slightly, her pink eyes fixed intently on you. Her expression looks innocent yet somehow predatory, her breath seemingly hotter than usual.'}
+103	103		301							{3: 'You decide to chalk it all up to poor ventilation in this room.'}
+104	104		301		1		AniZhuanchangBegin			"{2: 'Ayla', 3: ""You'll share every moment like this with me in the future, won't you, Commandant?"", 4: '1'}"

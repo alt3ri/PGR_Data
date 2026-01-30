@@ -1,0 +1,61 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+2	2		401							{1: '1', 2: '203'}
+3	990		301			DialogEnable				{2: 'Kamui', 3: 'Cap...'}
+4	2000		502							{1: 'RImgBg1Shake'}
+5	991		301				AniZhuanchangBegin			{2: 'Kamui', 3: 'Captain.'}
+6	5		201							{1: '1', 2: '1081001', 3: '2', 4: '400'}
+7	6		201							{1: '2', 2: '500155', 4: '-400'}
+8	992		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory83.jpg'}
+9	4		301			AniZhuanchangEnd				{1: '1', 2: 'Kamui', 3: 'Captain! Captain!', 4: '1'}
+10	7		301							{2: 'Chrome', 3: 'I...', 4: '2'}
+11	8		301							"{3: ""Kamui's pestering snaps Chrome out of his deep thoughts. The destination of this mission now lies right before Chrome's eyes.""}"
+12	9		301							{2: 'Chrome', 3: 'The objective of this mission is to occupy this Corrupted spawning ground. Strike Hawk and the other teams will stay behind in Zone C to attract and contain any and all hostile entities.', 4: '2'}
+13	10		301							{2: 'Chrome', 3: '(This other team is... actually...)', 4: '2'}
+14	11		301							"{2: 'Kamui', 3: ""You've briefed me on the mission countless times, remember?"", 4: '1'}"
+15	12		301							{2: 'Chrome', 3: 'Countless times, you say?', 4: '2'}
+16	13		301							"{2: 'Kamui', 3: 'You\'ve been saying the same thing over and over since we got on the aircraft. Oh, and you also said: ""If anything happens, you get out of here. I\'ll take care of the rest.""', 4: '1'}"
+17	14		301							{2: 'Chrome', 3: '...I said that? Well, in that case, this command...', 4: '2'}
+18	15		301							"{2: 'Kamui', 3: ""I wasn't going to follow it anyway."", 4: '1'}"
+19	16		301							{2: 'Chrome', 3: '...Where are the others? Why are their signals outside this area?', 4: '2'}
+20	17		301							{2: 'Kamui', 3: 'For Smith, one sidekick is enough.', 4: '1'}
+21	18		301							{2: 'Chrome', 3: 'You—', 4: '2'}
+22	19		301							"{3: ""Chrome realizes from this conversation that Kamui noticed his concern and figured out his plan for the day, but he doesn't know when.""}"
+23	20		301							"{3: ""He instantly feels something—not nervousness, not animosity. Chrome can't really tell what it is. It's something he hasn't ever experienced before... something that seems to have burst his bubble.""}"
+24	21		301							{2: 'Chrome', 3: 'What do you want?', 4: '2'}
+25	22		301							{2: 'Kamui', 3: 'I just hate to see...', 4: '1'}
+26	23		301							{3: 'Kamui slowly softens his tone.'}
+27	24		301							"{3: ""I mean, I'm just trying to get that frown off your face.""}"
+28	25		202							{1: '1', 2: '2', 6: '1'}
+29	26		201							{1: '1', 2: '500155', 7: '1'}
+30	27		301							{1: '1', 2: 'Chrome', 3: 'Did I frown?', 4: '1'}
+31	28		202							{1: '1', 6: '1'}
+32	29		201							{1: '2', 2: '1081001', 3: '2', 7: '1'}
+33	31		301							"{1: '1', 2: 'Kamui', 3: ""That looks like it's all scrunched up with paper and wrinkles... The one you're making right now, chief. You aren't aware?"", 4: '2'}"
+34	32		202							{1: '2', 6: '1'}
+35	33		201							{1: '3', 2: '500013', 7: '1'}
+36	34		301							{1: '1', 2: 'Corrupted', 3: '—! —!', 4: '3'}
+37	35		202							{1: '3', 6: '1'}
+38	36		201							{1: '2', 2: '1081001', 3: '2', 7: '1'}
+39	37		301							"{1: '1', 2: 'Kamui', 3: ""Ah, they're on the move. I'll go take 'em down."", 4: '2'}"
+40	38		301							"{3: ""Before Chrome can say anything, Kamui has already rushed off towards the Corrupted. He's about to pull out his weapon when he turns around, as if suddenly reminded of something.""}"
+41	39		301							"{2: 'Kamui', 3: ""Captain Smith! Well, you're not Smith yet, but I'll call you that for now anyway. Captain Smith! sit tight for my good news!"", 4: '2'}"
+42	40		201							{1: '2', 2: '500155', 3: '1', 4: '-400'}
+43	41		201							{1: '1', 2: '500149', 4: '400'}
+44	43		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+45	42		301							{1: '1', 2: 'Chrome', 3: '...', 4: '2'}
+46	44		301							"{2: 'John', 3: ""Looks like the battle's already started. Chrome, I'll arrange for the support forces to pick you up at a location nearby. Retreat immediately."", 4: '1'}"
+47	47		301							"{2: 'Chrome', 3: ""And then I'll become Smith?"", 4: '2'}"
+48	50		301							"{2: 'John', 3: 'I\'ll have to climb to the position I need first. But you did carry out the responsibility of ""Smith"". Soon, I believe, you\'ll become Smith, like you wanted. Now, retreat.', 4: '1'}"
+49	53		301							{2: 'Chrome', 3: 'Do I want to become Smith?', 4: '2'}
+50	56		301							{2: 'John', 3: 'Hm?', 4: '1'}
+51	59		301							{2: 'Chrome', 3: 'No, Smith... No, father.', 4: '2'}
+52	60		301							"{2: 'Chrome', 3: ""It's not that I want to become Smith, but I NEED to..."", 4: '2'}"
+53	63		301							"{2: 'John', 3: ""Isn't it the same thing?"", 4: '1'}"
+54	66		301							"{2: 'Chrome', 3: ""No. I've always followed your orders. The reason my goal is to become Smith is because I have no other choice."", 4: '2'}"
+55	67		301							{2: 'Chrome', 3: 'Every action of mine is determined by your will...', 4: '2'}
+56	70		301							"{2: 'John', 3: ""That is the price of your existence. What's the point of bringing it up now?"", 4: '1'}"
+57	73		301							"{2: 'Chrome', 3: ""I'm bringing it up because I want my autonomy back."", 4: '2'}"
+58	74		301							"{2: 'Chrome', 3: '""Once the shell called the body is abandoned, what does the human leave behind?""', 4: '2'}"
+59	75		301							"{2: 'Chrome', 3: ""The part that's left behind in me is Chrome. Not Langston. And certainly not Smith!"", 4: '2'}"
+60	76		301		1		AniZhuanchangBegin			"{2: 'Chrome', 3: ""I'll meet up with the other squad members that departed early. After that, we'll defend the place until our very last breaths!"", 4: '2'}"

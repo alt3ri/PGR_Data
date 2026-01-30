@@ -1,0 +1,321 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '386'}
+3	3		301			DialogEnable				{3: 'Lucia once told Luna a story about imprisoned stars when she was little.'}
+4	4		301							{3: '—Long, long ago, humanity had not yet learned how to venture into the starry sky.'}
+5	5		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg', 3: '0', 4: '1', 5: '1'}
+6	6		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+7	7		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg'}
+8	8		301							{3: 'The vast starry sky holds endless mysteries, and shooting stars are seen as blessings from heaven. Make a wish before they land, and that wish shall come true.'}
+9	9		301							{3: 'But shooting stars are fleeting. How do you hold the intangible heavens in your hands like a divinity sculpture?'}
+10	10		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory706.jpg', 3: '0', 4: '1', 5: '1'}
+11	11		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+12	12		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory706.jpg'}
+13	13		201							{1: '1', 2: '500056'}
+14	14		301							{1: '1', 2: 'Lucia', 3: 'At that, the old man raises a mirror to the sky.', 4: '1'}
+15	15		301							"{2: 'Lucia', 3: ""The vast starlit sky is cut and becomes trapped within the mirror's edges."", 4: '1'}"
+16	16		301							"{2: 'Lucia', 3: '""At last, we can touch the stars!"" the people begin cheering, holding their mirrors high.', 4: '1'}"
+17	17		301							{2: 'Lucia', 3: 'The moment the shooting star streaks across the mirror, the old man presses his hand against it.', 4: '1'}
+18	18		301							"{2: 'Lucia', 3: '""Now we\'ve captured the star!""', 4: '1'}"
+19	19		202							{1: '1'}
+20	20		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+21	21		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+22	22		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+23	23		301							"{2: 'Lucia', 3: '""Quick, make a wish!""'}"
+24	24		301							{3: 'Luna shudders involuntarily at these words.'}
+25	25		401							{1: '1', 2: '36'}
+26	26		502							{1: 'DialogDisable'}
+27	27		102							{1: 'Stars Ensnared', 2: 'Chapter 30', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+28	28		101							{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading29.jpg'}
+29	29		502						7000.0	{1: 'ThemeEnable'}
+30	30		401							{1: '1', 2: '390'}
+31	31		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+32	32		301			DialogEnable				"{3: ""The moment Gestalt's data wall opens, the hall plunges into darkness. Only crimson warning lights frantically flash across the screen.""}"
+33	33		301			RImgBg1Shake				"{3: ""The entire Babylonia begins to shake in sync with Gestalt's tremors.""}"
+34	34		301							{3: 'Violent crimson lightning crackles under the alloy shell as the Punishing virus seeps out.'}
+35	35		301							"{3: ""The Punishing contracts inward, condensing into a pitch-black sphere that's no larger than a human eyeball.""}"
+36	36		301							{3: 'It looks like a dark star that can devour even light.'}
+37	37		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png', 3: '0', 4: '1', 5: '1'}
+38	38		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+39	39		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+40	40		201							{1: '1', 2: '500380'}
+41	41		301							"{1: '1', 2: 'Ishmael', 3: ""It was always going to come to this, wasn't it?"", 4: '1'}"
+42	42		301				AniZhuanchangBegin			{3: 'In the darkness, a woman gazes toward the source of the chaos, where humanity is racing against time before disaster strikes.'}
+43	43		202			DialogDisable			400.0	{1: '1', 6: '1'}
+44	44		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+45	45		201							{1: '1', 2: '500494', 3: '5'}
+46	46		301			DialogEnable				"{1: '1', 2: 'Karenina', 3: ""The emergency power isn't working. ****, follow me!"", 4: '1'}"
+47	47		202							{1: '1', 6: '1'}
+48	48		401							{1: '2', 2: '4331'}
+49	49		401				DialogDisable			{1: '2', 2: '1504'}
+50	50		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4301_05.jpg', 3: '0', 4: '1', 5: '1'}
+51	51		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+52	52		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4301_05.jpg'}
+53	53		301			DialogEnable				{2: 'Teddy', 3: 'What in the world...'}
+54	54		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png', 3: '0', 4: '1', 5: '1'}
+55	55		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+56	56		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+57	57		201							{1: '1', 2: '500004'}
+58	58		301							"{1: '1', 2: 'Asimov', 3: ""The repairs will take time. Let's head to Gestalt! We need a backup plan."", 4: '1'}"
+59	59		302							{2: 'What about access permissions?!', 3: '60'}
+60	60		301							"{2: 'Asimov', 3: ""I'll explain on the way!"", 4: '1'}"
+61	61		301				AniZhuanchangBegin			{3: 'Gray Raven and Asimov rush past the blaring alarms and disappear into the darkness.'}
+62	62		202			DialogDisable				{1: '1', 6: '1'}
+63	63		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+64	64		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading29.jpg'}
+65	65		301			DialogEnable				"{3: 'Behind the heavily fortified gates, the dark, star-like sphere ""watches"" over its time in confinement.'}"
+66	66		201							{1: '18', 2: '500380'}
+67	67		301							"{1: '1', 2: 'Ishmael', 3: '""This loop"" began on December 20th, 2160... We are just five days away from December 20th of this year.', 4: '18'}"
+68	68		202							{1: '18', 6: '1'}
+69	69		306							{1: '1'}
+70	70		301							{3: 'When the Punishing arrived on Earth, it first targeted the cornerstone of human civilization—information itself.'}
+71	71		301							{3: 'So it infiltrated the largest information hub of that time—Gestalt.'}
+72	72		301							{3: 'With its memetic contamination trait, the Punishing could have spread through electromagnetic transmission.'}
+73	73		301							"{3: ""Given enough time, its contamination would have infiltrated all text and language, ending Earth's civilization forever, except Gestalt stopped it.""}"
+74	74		301							"{3: 'But when the virus broke out on December 20th, it was without this crucial trait. Only an ""empty shell"" remained, and that is the Punishing Virus humanity knows now.'}"
+75	75		301							"{3: 'Over time, this ""empty shell"" infected countless Constructs, machines, and humans, and it was gradually filled with information belonging to Earth.'}"
+76	76		301							"{3: 'Bit by bit, it became Earth\'s own ""specialty""—a network, Ascension-Network.'}"
+77	77		306							
+78	78		201							{1: '18', 2: '500380'}
+79	79		301							{1: '1', 2: 'Ishmael', 3: '...', 4: '18'}
+80	80		301							{3: 'She is here only because of this anomaly, this new possibility of survival.'}
+81	81		301				AniZhuanchangBegin			{3: 'In the endless flow of time, she has watched humanity rebuild their homeland time and again, face disaster after disaster, and slowly uncover the network hidden within Punishing.'}
+82	82		401							{1: '1', 2: '36'}
+83	83		202			DialogDisable				{1: '18', 6: '1'}
+84	84		504						2000.0	{1: '0.7'}
+85	85		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+86	86		401							{1: '1', 2: '391'}
+87	87		201							{1: '1', 2: '500028'}
+88	88		301			DialogEnable				"{1: '1', 3: ""It all began when a Construct squad noticed that the infected machines weren't as chaotic as they seemed.""}"
+89	89		301							{2: 'Female Commandant', 3: 'You think these Corrupted are somehow connected to each other?'}
+90	90		301							{2: 'Construct Captain', 3: 'Yes. The Corrupted that got here later knew exactly how to avoid our traps.', 4: '1'}
+91	91		301							{2: 'Construct Captain', 3: 'No matter where we relocated the traps or upgraded our tactics, these Corrupted can detect them.', 4: '1'}
+92	92		301							{2: 'Construct Captain', 3: 'The Corrupted must be sharing information between themselves, just as machines did when they were still connected to the network.', 4: '1'}
+93	93		301							{2: 'Female Commandant', 3: 'But the network disconnected long ago, and the infected mechanoids were nothing but mindless aggressors.'}
+94	94		301							{2: 'Female Commandant', 3: 'What if...'}
+95	95		301							"{3: ""The female Commandant's face suddenly goes ashen.""}"
+96	96		301				AniZhuanchangBegin			{2: 'Female Commandant', 3: 'We need to report this immediately.'}
+97	97		504			DialogDisable				
+98	98		202							{1: '1', 6: '1'}
+99	99		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+100	100		301			DialogEnable				{3: 'Once humans discovered the network within the Punishing, they began desperately searching for ways to access the Ascension-Network once again.'}
+101	101		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg', 3: '0', 4: '1', 5: '1'}
+102	102		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+103	103		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+104	104		201							{1: '1', 2: '500258', 3: '14'}
+105	105		301							{1: '1', 2: 'Collins', 3: 'Unfortunately... We can never replicate that miracle again.', 4: '1'}
+106	106		301							{3: 'Collins sighed as his gaze fell upon the outdated document—a record of a miracle that occurred only once.'}
+107	107		204							{1: '1', 2: '5'}
+108	108		301							{3: 'Installing an Inver-Device in a Construct was extremely risky with the technology of the time. The smallest mistake could create a Corrupted, and it would go completely haywire in a few short hours.'}
+109	109		301							"{3: ""Collins' subordinates had only seen one other special child before Luna. That child and her mother received modifications together, but neither survived.""}"
+110	110		301							{3: 'When the strike team was about to take them out, the fully infected mother suddenly shielded her daughter. And that made the child the only Construct who remained uninfected after a failed procedure.'}
+111	111		301							{2: 'Collins', 3: 'It really is unfortunate.', 4: '1'}
+112	112		301							{3: 'He repeated the words.'}
+113	113		301							{2: 'Collins', 3: 'Had she lived a few more days... humanity could have figured out whether it was a true miracle or mere coincidence.', 4: '1'}
+114	114		204							{1: '1'}
+115	115		301				AniZhuanchangBegin			{2: 'Collins', 3: 'Now... All we know is that it was driven by both the fear of death and the power of love.', 4: '1'}
+116	116		202			DialogDisable				{1: '1', 6: '1'}
+117	117		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_22.jpg'}
+118	118		104				AniZhuanchangEnd			{1: '0|250|-400', 2: '0'}
+119	119		301			DialogEnable				{3: 'They sought to recreate this miracle.'}
+120	120		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+121	121		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+122	122		504							{1: '0.7'}
+123	123		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+124	124		201							{1: '1', 2: '500307', 4: '-400'}
+125	125		201							{1: '2', 2: '500258', 4: '400'}
+126	126		301							{1: '1', 2: 'Action Team Captain', 3: 'Should we proceed with this plan?', 4: '1'}
+127	127		301							{2: 'Collins', 3: 'Of course, we should. We need more Constructs anyway, and... we might have the chance to see that again...', 4: '2'}
+128	128		202							{1: '1', 2: '2', 6: '1'}
+129	129		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+130	130		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+131	131		504							
+132	132		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_22.jpg'}
+133	133		104							{1: '0|-250|-400', 2: '0'}
+134	134		301							{3: 'They wanted to seize this miracle.'}
+135	135		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+136	136		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+137	137		504							{1: '0.7'}
+138	138		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory41.jpg'}
+139	139		201							{1: '1', 2: '500012'}
+140	140		301							{1: '1', 2: 'Nikola', 3: 'According to our tests, your bodies show exceptional compatibility with the Tantalum-193 copolymer.', 4: '1'}
+141	141		301							{2: 'Nikola', 3: 'This means you have the potential to become Constructs.', 4: '1'}
+142	142		202							{1: '1', 6: '1'}
+143	143		201							{1: '1', 2: '500032'}
+144	144		301							{1: '1', 2: 'Lucia', 3: 'Con... structs?', 4: '1'}
+145	145		202							{1: '1', 6: '1'}
+146	146		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+147	147		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+148	148		504							
+149	149		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_22.jpg'}
+150	150		104							{1: '-100|50|-500', 2: '0'}
+151	151		301							{3: 'They sacrificed countless lives for this.'}
+152	152		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+153	153		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+154	154		504							{1: '0.7'}
+155	155		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg612_1.jpg'}
+156	156		301							{2: 'Black-clad Figures', 3: 'We will take care of these children from now on.'}
+157	157		301							{2: 'Black-clad Figures', 3: 'If our plan succeeds, they will keep everyone safe as the defenders of this region.'}
+158	158		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+159	159		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+160	160		504							
+161	161		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_22.jpg'}
+162	162		104							{1: '0|-250|-400', 2: '0'}
+163	163		301							{3: 'Humanity must look through a mirror to glimpse the shadows of the Ascension-Network.'}
+164	164		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+165	165		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+166	166		504							{1: '0.7'}
+167	167		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg612_2.jpg'}
+168	168		301							"{2: 'Luna', 3: ""Now's my turn to protect you.""}"
+169	169		301							{2: 'Luna', 3: 'Goodbye... Lucia...'}
+170	170		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+171	171		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+172	172		504							
+173	173		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_23.jpg'}
+174	174		104							{1: '0|-250|-400', 2: '0'}
+175	175		301							{3: '—She found the Ascension-Network.'}
+176	176		301							"{3: 'She replaced the ""dark star"" hiding within Gestalt, and assumed command over the Punishing, and the power to influence it.'}"
+177	177		301							{3: 'Even if this was just a coincidence, even if this person might not be Luna...'}
+178	178		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+179	179		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_24.jpg'}
+180	180		104							{1: '0|0|-400', 2: '0'}
+181	181		301							{3: '...In this sea of corpses, someone would eventually find their way to the Ascension-Network.'}
+182	182		301							{3: 'This masterless calamity yearned for logical commands, like a noose awaiting its master.'}
+183	183		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+184	184		401							{1: '2', 2: '4348'}
+185	185		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_25.jpg'}
+186	186		104							{1: '0|250|-400', 2: '0'}
+187	187		104							{1: '0|-250|-400', 2: '5'}
+188	188		301							{3: 'The masterless virus should have evolved alongside those who could control it and resume the mission it was assigned at its birth.'}
+189	189		301							{3: 'But how could an ordinary girl comprehend the grand conflict between civilizations?'}
+190	190		301							{3: 'All she could feel at that time was hatred, regret, and the heart she had yet to reclaim.'}
+191	191		301							{3: 'Yet, the Punishing gradually changed through countless subtle interventions, whether she liked it or not.'}
+192	192		301				AniZhuanchangBegin			{3: '...Until this moment.'}
+193	193		104							{1: '0|0|0', 2: '0'}
+194	194		502						400.0	{1: 'DialogDisable'}
+195	195		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+196	196		201							{1: '1', 2: '500380'}
+197	197		301			DialogEnable				"{1: '1', 3: 'Just as the ""dark star"""" gazes upon Ishmael, she is also staring at the """"dark star"" that has been imprisoned for over thirty years.'}"
+198	198		301							"{3: 'Over time, the once ""empty"" virus has absorbed Earth-specific information, displacing its memetic contamination characteristics.'}"
+199	199		301							{3: 'But if an individual with agent privileges yields their space to the virus, it will be able to merge with the Ascension-Network, and the world will be doomed.'}
+200	200		301							{2: 'Ishmael', 3: '...', 4: '1'}
+201	201		401							{1: '1', 2: '36'}
+202	202		301							{3: 'Luna cannot resist, because she has not been accepted by the re-filtering process. To the Ascension-Network, she is just a timely replacement...'}
+203	203		401							{1: '1', 2: '392'}
+204	204		301							{2: 'Ishmael', 3: '...Agent Zero.', 4: '1'}
+205	205		301							"{3: 'With Babylonia\'s current technology, once ""it"" is released and lands on the surface, no one will be able to stop what follows.'}"
+206	206		301							"{3: 'Once ""it"" merges with the Ascension-Network, it will begin to propagate once more, corrupt the ways civilization spreads, and destroy the future.'}"
+207	207		301							"{3: ""The most ideal approach is to destroy it before it's released, which means also destroying its prison—the corresponding sector of Gestalt.""}"
+208	208		301							{3: 'But how could anyone bring themselves to pay such a steep price?'}
+209	209		301							{2: 'Ishmael', 3: 'There is no time.', 4: '1'}
+210	210		301							"{3: ""It's already too late to face death in the imminent explosion or to avoid total annihilation.""}"
+211	211		301							"{3: 'At this rate, even the possibilities hidden deep within Chaos will disappear, leaving only the ""return ticket"" function.'}"
+212	212		301							{2: 'Ishmael', 3: '...', 4: '1'}
+213	213		301							{3: 'The tremors grow more violent. The cage borrowed from the future has been depleted. Soon, the sphere will shake the mighty Babylonia at its core.'}
+214	214		301							"{3: ""She heads toward the gathering crowd, hoping to see the final act up close. That's when she spots a children's picture book lying in a corner.""}"
+215	215		301							{3: 'The mirror that once held stars in the old tales now has a gaping hole torn through it by the stampede.'}
+216	216		301							"{3: 'Through the void of the ""mirror"", Ishmael sees an approaching shadow.'}"
+217	217		301				AniZhuanchangBegin			{3: 'Could that be... the final variable?'}
+218	218		401							{1: '1', 2: '36'}
+219	219		202			DialogDisable				{1: '1', 6: '1'}
+220	220		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+221	221		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading29.jpg'}
+222	222		401							{1: '1', 2: '390'}
+223	223		401							{1: '2', 2: '4515'}
+224	224		301			DialogEnable				"{3: ""The moment Gestalt's sealed gates open, a concentrated ball of Punishing Virus bursts from within.""}"
+225	225		302							{2: 'Asimov!', 3: '226'}
+226	226		301			RImgBg1Shake				"{3: ""You grab Asimov's collar and fall backward, using your weight to forcefully yank him away from Gestalt.""}"
+227	227		401							{1: '2', 2: '4362'}
+228	228		301							{3: 'At that moment, the sphere shoots past where Asimov was standing, and the device Asimov dropped in the mayhem shatters amid red electrical currents.'}
+229	229		201							{1: '1', 2: '500166', 3: '5'}
+230	230		301							{1: '1', 2: 'Lucia', 3: 'Watch out!', 4: '1'}
+231	231		301							{3: 'Lucia reacts first as she is closest to the gate. She rushes over to shield the others with her body.'}
+232	232		202							{1: '1', 6: '1'}
+233	233		201							{1: '1', 2: '1031001', 3: '5'}
+234	234		301							"{1: '1', 3: ""Liv was farther away, but she reacted just as fast because of her sharp sensing module's timely feedback.""}"
+235	235		301							{3: 'As Liv rushes over, she readies her Levi-Gun, but the Hetero-Core is moving too fast for the cannon.'}
+236	236		202							{1: '1', 6: '1'}
+237	237		201							{1: '1', 2: '500568'}
+238	238		301							{1: '1', 2: 'Lee', 3: '...', 4: '1'}
+239	239		401							{1: '2', 2: '10021515'}
+240	240		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+241	241		301							"{3: ""Lee calmly takes aim with his high-power sniper rifle. His frame's computing power is reaching its limits, and to him, time seems to slow down at this moment.""}"
+242	242		301							{3: 'The Hetero-Core is spherical, with a diameter of approximately 2.4 cm. It contains unstable energy that overflows as electrical arcs. Direct hits risk detonation. He can avoid destruction and alter its trajectory through precise shots to drive it away from everyone...'}
+243	243		301							{3: 'Scan, aim, fire!'}
+244	244		401							{1: '2', 2: '10021516'}
+245	245		301			RImgBg1Shake				{3: 'Bang!'}
+246	246		202							{1: '1', 6: '1'}
+247	247		301							{3: 'The bullet passes cleanly through a gap in the electrical currents and strikes the spherical Hetero-Core at its center.'}
+248	248		301							{3: 'The impact knocks the Hetero-Core off its course, only for it to violently snap back to its original path.'}
+249	249		201							{1: '1', 2: '500568'}
+250	250		301							{1: '1', 2: 'Lee', 3: 'Is it self-adjusting?', 4: '1'}
+251	251		401						400.0	{1: '2', 2: '10021516'}
+252	252		401						400.0	{1: '2', 2: '10021516'}
+253	253		401							{1: '2', 2: '10021516'}
+254	254		301			RImgBg1Shake				{3: 'Bang! Bang! Bang!'}
+255	255		301							{3: 'Lee continues firing. With each bullet, the Hetero-Core shifts direction—only to immediately correct its course.'}
+256	256		202							{1: '1', 6: '1'}
+257	257		301							{3: 'This adaptive behavior suggests the Hetero-Core possesses its own consciousness.'}
+258	258		201							{1: '1', 2: '500342'}
+259	259		301							{1: '1', 2: 'Control Court Officer', 3: '?!', 4: '1'}
+260	260		301							"{3: ""The Control Court Officer is standing directly in the spherical Hetero-Core's path.""}"
+261	261		401							{1: '2', 2: '4362'}
+262	262		301							{3: 'The reaction speed of humans is no match to that of Constructs. By the time the Control Court Officer realizes the danger, the red Hetero-Core has gotten too close for her to dodge it.'}
+263	263		202							{1: '1', 6: '1'}
+264	264		201							{1: '1', 2: '500005'}
+265	265		301							{1: '1', 2: 'Soldier', 3: 'Look out!', 4: '1'}
+266	266		203						140.0	{1: '1', 2: '0.14', 5: '-150'}
+267	267		202							{1: '1', 6: '1'}
+268	268		401							{1: '2', 2: '4306'}
+269	269		301			RImgBg1Shake				"{3: ""The soldier lunges forward to shove her out of harm's way.""}"
+270	270		401							{1: '2', 2: '9342074'}
+271	271		301							{3: 'Crash—'}
+272	272		301							{3: 'The soldier pulls his hand back immediately, but the red electrical discharge has already scathed his palm and forearm.'}
+273	273		301							{3: 'The group left the alloy doors to the Computing Power Center open just in case. When the spherical Hetero-Core emerges from Gestalt, it immediately makes a beeline for the exit.'}
+274	274		201							{1: '1', 2: '500166', 3: '5'}
+275	275		301							"{1: '1', 2: 'Lucia', 3: ""Liv! Treat the wounded! I'll protect the commandant. Lee!"", 4: '1'}"
+276	276		202							{1: '1', 6: '1'}
+277	277		201							{1: '1', 2: '500568'}
+278	278		301							{1: '1', 2: 'Lee', 3: 'Copy that.', 4: '1'}
+279	279		401							{1: '2', 2: '9342045'}
+280	280		202							{1: '1', 6: '1'}
+281	281		301							{3: 'Lee leaps down and gives chase.'}
+282	282		301							{3: 'Lucia takes up a defensive position and scans the surroundings, while Liv rushes to check on the soldier.'}
+283	283		301							{3: 'The soldier already tore off his damaged protective suit before Liv gets there. His palm and forearm show burn marks and corrosive damage from the virus. The corruption spreads rapidly and is already reaching his shoulder.'}
+284	284		401							{1: '2', 2: '1510'}
+285	285		301			RImgBg1Shake				{3: 'The soldier draws his handgun and aims it at his own infected shoulder. The modified large-caliber round tears through flesh and bones in the next moment.'}
+286	286		301							{3: 'There was no hesitation.'}
+287	287		201							{1: '1', 2: '500005', 4: '400'}
+288	288		201							{1: '2', 2: '1031001', 3: '5', 4: '-400'}
+289	289		301							"{1: '1', 2: 'Liv', 3: ""I'll administer the Serum!"", 4: '2'}"
+290	290		301							{2: 'Soldier', 3: 'The Omega Weapons!', 4: '1'}
+291	291		202							{1: '1', 2: '2'}
+292	292		301							"{3: ""The spherical Hetero-Core carries an extremely concentrated Punishing Virus. The virus would have spread throughout the room via the red electrical arcs if the Omega Weapons hadn't absorbed it by drawing the arcs.""}"
+293	293		301							"{3: ""Blood gushes from his wound, but the soldier doesn't seem to notice. He goes on to order the Construct squad to check the state of the Omega Weapons in the room.""}"
+294	294		201							{1: '1', 2: '500005', 4: '400'}
+295	295		201							{1: '2', 2: '1031001', 3: '5', 4: '-400'}
+296	296		301							"{1: '1', 2: 'Soldier', 3: ""What's the Punishing density in here?"", 4: '1'}"
+297	297		301							{2: 'Liv', 3: 'The levels are down to safe limits and continue to decrease.', 4: '2'}
+298	298		301							{2: 'Liv', 3: 'Please stay still while I dress your wound.', 4: '2'}
+299	299		301							{2: 'Soldier', 3: 'What about Gestalt?', 4: '1'}
+300	300		301							{2: 'Soldier', 3: 'What about Gestalt? Has it been infected?', 4: '1'}
+301	301		202							{1: '1', 2: '2', 6: '1'}
+302	302		301							{3: 'The current has stopped writhing around Gestalt, but it is heavily damaged and is falling apart. Its crimson glow has faded to an ethereal blue—a weak, flickering light that is growing dimmer.'}
+303	303		301							{3: 'The glow looks like the labored breaths of someone on their deathbed.'}
+304	304		201							{1: '1', 2: '500004'}
+305	305		301							{1: '1', 3: 'Asimov scrambles to his feet and rushes back to Gestalt, even though there might be a second wave of dangers.'}
+306	306		301							{3: 'The original connection equipment was destroyed by the lightning, so he quickly connects the backup diagnostic equipment.'}
+307	307		301							{3: 'The signal comes through but is incomprehensible.'}
+308	308		301							"{2: 'Asimov', 3: ""Data disruption... Punishing? No... no, these aren't the symptoms of an infection..."", 4: '1'}"
+309	309		302							"{2: ""What's happening to Gestalt?"", 3: '310'}"
+310	310		301							"{2: 'Asimov', 3: ""I'm not sure, but I think it's infected with a virus that's not the Punishing, but it's still going to be difficult to deal with."", 4: '1'}"
+311	311		301							"{2: 'Asimov', 3: ""I'll carve up Gestalt's data first, then run a backup to snag any core data that hasn't been corrupted."", 4: '1'}"
+312	312		301							{2: 'Asimov', 3: 'Right now, Gestalt desperately needs hardware maintenance. Can someone—', 4: '1'}
+313	313		401							{1: '1', 2: '36'}
+314	314		401							{1: '2', 2: '1503'}
+315	315		401							{1: '2', 2: '4142'}
+316	316		301			RImgBg1Shake				{3: 'Before Asimov can finish, the floor begins to shake, which nearly throws him off balance.'}
+317	317		202							{1: '1'}
+318	318		301							{3: 'The tremors grow stronger, and everyone quickly realizes the entire room is shaking.'}
+319	319		401							{1: '1', 2: '392'}
+320	320		301		1		AniZhuanchangBegin			{3: 'The entire Babylonia is shaking!'}

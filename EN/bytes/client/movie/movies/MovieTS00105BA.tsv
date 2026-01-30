@@ -1,0 +1,24 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory28.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+4	4		201							{1: '1', 2: '1011001', 4: '-400'}
+5	5		201							{1: '2', 2: '1021001', 4: '400'}
+6	6		301			DialogEnable				"{1: '1', 2: 'Lee', 3: ""Lucia... That's enough. If it was going to work, it would've worked already... We've lost contact with Liv."", 4: '1'}"
+7	7		301							"{2: 'Lucia', 3: ""...Let's turn around to find her immediately."", 4: '2'}"
+8	8		301							{2: 'Lee', 3: '(Peeks from your hiding place) The moment we entered this group of buildings, we had already alerted all the guards.', 4: '1'}
+9	9		301							"{2: 'Lee', 3: ""If we turn around now, we'll be facing an uphill battle."", 4: '1'}"
+10	10		301							"{2: 'Lucia', 3: ""Lee... you're saying..."", 4: '2'}"
+11	11		301							"{2: 'Lee', 3: ""I'll go look for Liv. You stay here to protect Commandant."", 4: '1'}"
+12	12		301							{2: 'Lee', 3: 'I originally thought that Liv and Browning had successfully activated the distractor, and they had shut off their comms for technical reasons...', 4: '1'}
+13	13		301							"{2: 'Lee', 3: ""But seeing the number of guards here, I'm pretty sure there's no distraction device to begin with."", 4: '1'}"
+14	14		301							"{2: 'Lee', 3: ""(Holds up the device in his hand) This is the distractor we found on the enemy's body earlier, but it was busted long ago."", 4: '1'}"
+15	15		301							"{2: 'Lee', 3: ""Even if we can contact Liv, there's no way we can lure the guards away for her with this."", 4: '1'}"
+16	16		301							"{2: 'Lucia', 3: ""You were right about Browning. Something's wrong with him."", 4: '2'}"
+17	17		301							{2: 'Lee', 3: 'I only made my hypothesis based on the facts we had.', 4: '1'}
+18	18		301							{2: 'Lee', 3: 'I had my suspicion when Browning recommended splitting us up.', 4: '1'}
+19	19		301							"{2: 'Lee', 3: ""Doesn't matter if Liv's in danger or not. The fact that she's with Browning right now is my responsibility."", 4: '1'}"
+20	20		301							{2: 'Lee', 3: 'And now I must find her.', 4: '1'}
+21	21		301							"{2: 'Lucia', 3: ""I'm also responsible..."", 4: '2'}"
+22	22		301							"{2: 'Lee', 3: ""(Looks at you) You have to stay with Commandant. My frame is not powerful enough to guarantee the commandant's safety."", 4: '1'}"
+23	23		301		1		AniZhuanchangBegin			"{2: 'Lucia', 3: ""I see... Our frames are different, aren't they? I'll leave Liv to you."", 4: '2'}"

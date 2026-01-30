@@ -1,0 +1,32 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory32.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500091'}
+4	4		301			DialogEnable				{1: '1', 2: 'Scavenger A', 3: 'Pant... pant... Finally, there you are!'}
+5	5		204							{1: '1', 2: '1'}
+6	6		301							{1: '1', 2: 'Nanami', 3: 'Hm? Did you need Nanami for something?', 4: '1'}
+7	7		301							{2: 'Scavenger A', 3: 'The leader says there are results from the investigation! Some scavengers found traces of Constructs, come with us!'}
+8	8		301							"{2: 'Nanami', 3: ""Ah, okay! I'll just go tell Amy about this first!"", 4: '1'}"
+9	9		301							"{2: 'Scavenger B', 3: ""Um, didn't you want to finish the mission quickly?""}"
+10	10		301							{2: 'Scavenger B', 3: 'Amy... Amy still needs to scavenge with us, you both have missions to complete!'}
+11	11		301							"{2: 'Scavenger B', 3: ""Just... wait until it's over, then you can talk it out, alright?""}"
+12	12		301							"{2: 'Nanami', 3: ""Mhm, you have a point! Nanami will wait until it's over then!"", 4: '1'}"
+13	13		201							{1: '1', 2: '500093'}
+14	14		301							{1: '1', 2: 'Garrison', 3: 'Jazroc tunnel, southern foundation pit. A scavenger saw a Construct there a few days ago.', 4: '1'}
+15	15		301				AniZhuanchangBegin			{2: 'Garrison', 3: 'The pit is connected to the surface, and so the viral density is higher than underground by a large margin. I can only have someone bring you near the entrance.', 4: '1'}
+16	16		202							{1: '1', 6: '1'}
+17	17		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory68.jpg'}
+18	18		301			AniZhuanchangEnd				{3: '——!'}
+19	19		201							{1: '1', 2: '500091'}
+20	20		301							"{1: '1', 2: 'Scavenger B', 3: ""It's here! Ah, wait... I need to wear a helmet first!""}"
+21	21		301							"{2: 'Nanami', 3: ""Even though the detection signal's not working, Nanami still smells something fishy here!"", 4: '1'}"
+22	22		301							"{2: 'Nanami', 3: ""Mhm... and it's a bit of a party... You better hurry back! And be careful!"", 4: '1'}"
+23	23		301							{2: 'Scavenger A', 3: 'You... have you... found out...?'}
+24	24		204							{1: '1', 2: '1'}
+25	25		301							{2: 'Nanami', 3: 'Just leave it to Nanami!', 4: '1'}
+26	26		301							{2: 'Nanami', 3: 'Nanami! Blasting off!', 4: '1'}
+27	27		202							{1: '1', 6: '1'}
+28	28		301							{2: 'Scavenger A', 3: '...'}
+29	29		301							{2: 'Scavenger B', 3: '...Block off the entrance now?'}
+30	30		301							{2: 'Scavenger A', 3: '...'}
+31	31		301		1		AniZhuanchangBegin			{2: 'Scavenger A', 3: 'Do it.'}

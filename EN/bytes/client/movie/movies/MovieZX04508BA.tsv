@@ -1,0 +1,224 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory926.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		107						2000.0	{1: 'Deep in the Mine', 2: 'Main Lobby'}
+4	4		108							{1: '1'}
+5	5		301			DialogEnable				{3: 'The second incident strikes sooner than anyone has expected. Shortly after the rested scouts disperse, a violent tremor rocks through the mine shaft.'}
+6	6		401							{1: '2', 2: '4537'}
+7	7		401							{1: '2', 2: '4142'}
+8	8		301			RImgBg1Shake				{3: 'Deep rumbling and the sound of falling rocks echo from the path behind, spreading through every corner of the mine.'}
+9	9		402							{1: '4142'}
+10	10		201							{1: '1', 2: '500906', 3: '4', 4: '-250'}
+11	11		201							{1: '2', 2: '500910', 3: '3', 4: '250'}
+12	12		301							{1: '1', 3: 'Upon returning to the hall with the rest of the group, Bridget immediately stands out in the center of a gathered crowd. Her face is grim as she grips An Jie, whose face bears fresh scratches.'}
+13	13		302							"{2: ""What's going on?"", 3: '14'}"
+14	14		301							"{2: 'Bridget', 3: ""The mine collapsed. We lost some members from the tunnel reinforcement team. Our way back is completely blocked, and we've lost all communication with the outside."", 4: '1'}"
+15	15		301							"{2: 'Bridget', 3: ""An Jie and her deputy here would have met their doom if I hadn't acted fast enough."", 4: '1'}"
+16	16		401							{1: '2', 2: '2915'}
+17	17		301				DialogDisable			"{3: ""Bridget's news sends ripples of shock through the crowd, leading to hushed conversations and whispered exchanges.""}"
+18	18		302							"{2: ""Quiet down, everyone. Let's stay calm."", 3: '19'}"
+19	19		302							"{2: ""Let's hear what Bridget has to say first."", 3: '20'}"
+20	20		402							{1: '2915'}
+21	21		301			DialogEnable				"{3: ""The crowd's murmurs gradually fade, but Bridget remains quiet.""}"
+22	22		301							"{3: ""Her eyes remain locked onto An Jie, her grip on An Jie's hand still firm and unyielding.""}"
+23	23		202							{1: '1', 2: '2', 6: '1'}
+24	24		201							{1: '1', 2: '500166'}
+25	25		301							{1: '1', 2: 'Lucia', 3: 'Bridget?', 4: '1'}
+26	26		202							{1: '1', 6: '1'}
+27	27		201							{1: '1', 2: '500906', 3: '4', 4: '-250'}
+28	28		201							{1: '2', 2: '500910', 3: '3', 4: '250'}
+29	29		301							{1: '1', 2: 'Bridget', 3: 'It never even occurred to me that I should keep an eye on you until 【kuroname】 told me to...', 4: '1'}
+30	30		301							{3: 'Bridget opens her mouth, and then pauses to collect her thoughts.'}
+31	31		301							{2: 'Bridget', 3: 'An Jie, why did you and your deputy just stand there when the cave-in started?', 4: '1'}
+32	32		301							{2: 'Bridget', 3: 'You clearly had enough time to make it back to us.', 4: '1'}
+33	33		201							{1: '3', 2: '500166'}
+34	34		203							{1: '1', 2: '0.3', 3: '-600'}
+35	35		203							{1: '2', 2: '0.3', 3: '600'}
+36	36		301							{1: '1', 2: 'Lucia', 3: 'Bridget.', 4: '3'}
+37	37		301							"{3: ""Lucia steps between them and pats Bridget's shoulder. An Jie seizes this chance to break free from Bridget's grip.""}"
+38	38		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+39	39		201							{1: '1', 2: '500910'}
+40	40		301							{1: '1', 3: 'She lowers her head, hiding her face, while gently rubbing the spot where she was grabbed.'}
+41	41		301							"{2: 'An Jie', 3: ""I'm sorry. Everything happened so fast, and we've never dealt with anything like this before. We panicked and froze up... we were too scared to move."", 4: '1'}"
+42	42		301							"{2: 'An Jie', 3: ""I know why you came down here to the mine, but that doesn't mean you need to be suspicious of everything."", 4: '1'}"
+43	43		202							{1: '1', 6: '1'}
+44	44		201							{1: '1', 2: '500906', 3: '4', 6: '-80'}
+45	45		301							{1: '1', 2: 'Bridget', 3: 'I...', 4: '1'}
+46	46		302							{2: 'Bridget.', 3: '47'}
+47	47		204							{1: '1', 2: '14'}
+48	48		301							"{2: 'Bridget', 3: ""...I'm sorry. I lost my squad members who were trying to save these two. I'm just... a bit..."", 4: '1'}"
+49	49		203							{1: '1', 2: '0.3'}
+50	50		301							{3: 'Bridget takes a deep breath and steps back. After a long moment, she finally regains her composure.'}
+51	51		204							{1: '1', 2: '4'}
+52	52		301							{2: 'Bridget', 3: 'Yes, there are things I want down here, and I have other motives besides the mission. But that will never cloud my judgment of what takes priority.', 4: '1'}
+53	53		301							"{2: 'Bridget', 3: ""If I've wronged you, rest assured that you'll get an apology. But An Jie... if you're hiding something... fine, just don't try anything sneaky again."", 4: '1'}"
+54	54		301							{2: 'Bridget', 3: 'I want you to understand—uncovering the truth about the past, or even completing this mission from Babylonia—none of it matters more than getting everyone back safely.', 4: '1'}
+55	55		301							{3: 'After composing herself in those few sentences, Bridget signals for the rest of the group to escort An Jie and her deputy away.'}
+56	56		301							{3: 'After briefing everyone on a few matters, Bridget dismisses the crowd.'}
+57	57		301				DialogDisable			{2: 'Bridget', 3: 'Sorry you had to see that, 【kuroname】.', 4: '1'}
+58	58		302							"{2: ""It's good to show emotion, especially in the military."", 3: '59'}"
+59	59		302							"{2: ""As long as it doesn't interfere with what's at hand."", 3: '60'}"
+60	60		301			DialogEnable				"{2: 'Bridget', 3: ""I know. It just never occurred to me that they'd be so drastic."", 4: '1'}"
+61	61		302							{2: 'Have we confirmed that the collapse was caused by humans?', 3: '62'}
+62	62		301							"{2: 'Bridget', 3: ""We don't have definitive proof, but it's hard not to get suspicious when we've seen the Corrupted we saw and all the cave-ins we've experienced."", 4: '1'}"
+63	63		202							{1: '1', 6: '1'}
+64	64		201							{1: '1', 2: '500906', 3: '4', 4: '-400'}
+65	65		201							{1: '2', 2: '500166', 3: '5', 4: '400'}
+66	66		301				DialogDisable			"{1: '1', 2: 'Lucia', 3: ""We should plan for the worst-case scenario. The real problem is that we've completely lost contact with the outside. We need to be prepared to set up camp here—possibly for an extended period."", 4: '2'}"
+67	67		302							"{2: ""Setting up camp isn't an issue. This should come as a no-brainer for Support Force since they operated in dangerous zones year-round."", 3: '68'}"
+68	68		302							"{2: ""But Norman's research team, probably not so much..."", 3: '69'}"
+69	69		301			DialogEnable				"{2: 'Bridget', 3: ""I'll take care of that. Learning how to manage the mental state of rescue subjects is part of our basic training."", 4: '1'}"
+70	70		301							"{2: 'Bridget', 3: ""And there is some good news—Cheryl found the mine's internal communication system. Both the transmitter and receiver still work."", 4: '1'}"
+71	71		301				DialogDisable			"{2: 'Bridget', 3: ""Once we've secured stable communications in the lower mine, I plan to have our technical specialists work with Norman's research team to modify the communication equipment. We'll see if we can restore contact with Babylonia."", 4: '1'}"
+72	72		302							"{2: ""That's good—keeping them busy will stop them from overthinking. Lucia, please check on the condition of the other mine tunnels in the area."", 3: '73'}"
+73	73		302							"{2: ""There might be a passage connecting to the outside that we haven't discovered yet."", 3: '74'}"
+74	74		301			DialogEnable	AniZhuanchangBegin			{2: 'Lucia', 3: 'Copy that.', 4: '2'}
+75	75		202							{1: '1', 2: '2', 6: '1'}
+76	76		502							{1: 'DialogDisable'}
+77	77		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+78	78		107			AniZhuanchangEnd			2000.0	{1: 'Babylonia'}
+79	79		108							{1: '1'}
+80	80		401							{1: '2', 2: '9317003'}
+81	81		502							{1: 'RImgBg1Shake'}
+82	82		301			DialogEnable				{3: 'Thud—'}
+83	83		201							{1: '1', 2: '500001', 3: '4', 7: '1'}
+84	84		301			PanelActor1Shake				"{1: '1', 3: ""After the muffled sound, a hammer leaves a dent in the conference room table. Celica flinches instinctively, unsure whether she's feeling more overwhelmed by the slam itself or the compensation form she'll have to fill out later.""}"
+85	85		202							{1: '1', 6: '1'}
+86	86		201							{1: '1', 2: '500494', 3: '4', 4: '-400'}
+87	87		201							{1: '2', 2: '500575', 4: '400'}
+88	88		301							{1: '1', 2: 'Wells', 3: 'Stay composed in times of crisis, Karenina. You need to keep your cool.', 4: '2'}
+89	89		301							"{2: 'Karenina', 3: ""Keep my cool? We're already on our third rescue proposal and you want me to keep my cool? When exactly is Babylonia planning to let Engineering Force step in?"", 4: '1'}"
+90	90		301							"{2: 'Karenina', 3: ""Trust me, we won't do anything rash. Engineering Force will advance carefully from the outside, based on the mine's condition. Safety guaranteed!"", 4: '1'}"
+91	91		202							{1: '2', 6: '1'}
+92	92		201							{1: '2', 2: '500001', 3: '4', 4: '400'}
+93	93		301							"{1: '1', 2: 'Celica', 3: ""I trust you, but that's not the issue here. I know you're anxious, but please be patient—an hour will pass before you know it."", 4: '2'}"
+94	94		301							"{2: 'Karenina', 3: ""It's been five hours since we last heard from 【kuroname】. Do we really have to wait the full six hours of radio silence before we're cleared to move?"", 4: '1'}"
+95	95		301							{2: 'Celica', 3: 'I understand how you feel, but applications take time, and so do arrangements.', 4: '2'}
+96	96		301							"{2: 'Karenina', 3: ""Time is exactly what we don't have during times like this! Why do we..."", 4: '1'}"
+97	97		202							{1: '2', 6: '1'}
+98	98		201							{1: '2', 2: '500864', 4: '400'}
+99	99		301							"{1: '1', 2: 'Teddy', 3: ""We can't confirm if this is just a communication issue or an actual accident. The mine itself is already a complicated environment, which is why it takes time."", 4: '2'}"
+100	100		301							{2: 'Teddy', 3: 'Rushing in might only complicate things further. I mean, 【kuroname】 might have only moved out of the service area temporarily, right?', 4: '2'}
+101	101		204							{1: '1', 2: '5'}
+102	102		301							"{2: 'Karenina', 3: ""Huh? Out of service area? Come on, Teddy, you've got to be kidding..."", 4: '1'}"
+103	103		202							{1: '1', 2: '2', 6: '1'}
+104	104		401							{1: '2', 2: '4544'}
+105	105		201							{1: '1', 2: '500864'}
+106	106		301							"{1: '1', 3: ""Teddy ignores Karenina's irritation, her fingers dancing across her keyboard. After pressing the final key, she swivels her chair to face Celica.""}"
+107	107		402							{1: '4544'}
+108	108		204							{1: '1', 2: '2'}
+109	109		301							{2: 'Teddy', 3: 'Engineering Force needs prep time anyway. If it turns out to be a false alarm, we can either clock out early or get a day off in return. What do you think?', 4: '1'}
+110	110		202							{1: '1', 6: '1'}
+111	111		201							{1: '1', 2: '500001', 3: '4'}
+112	112		301							{1: '1', 2: 'Celica', 3: '...', 4: '1'}
+113	113		301							"{3: ""Celica hesitates at the payment notification on her terminal. The amount shown could cover 20 desk replacements and then some. But that's not the issue—this account isn't on the publicly disclosed list.""}"
+114	114		301							{3: 'Celica looks over at Wells.'}
+115	115		301							{2: 'Celica', 3: 'Sir...', 4: '1'}
+116	116		202							{1: '1', 6: '1'}
+117	117		301							{3: 'He removes his glasses and rubs the bridge of his nose, speaking with a resigned tone.'}
+118	118		201							{1: '1', 2: '500575'}
+119	119		301							{1: '1', 2: 'Wells', 3: 'Go ahead, but be discreet.', 4: '1'}
+120	120		202							{1: '1', 6: '1'}
+121	121		201							{1: '1', 2: '500864'}
+122	122		301							"{1: '1', 2: 'Teddy', 3: ""Did you hear that? Be discreet. I haven't gotten the official approval yet, but I've already had the spaceport start its preparations."", 4: '1'}"
+123	123		301							"{2: 'Teddy', 3: ""The same old place. The inspection of Engineering Force's exclusive transport ship should be done soon. Make it quick, alright?"", 4: '1'}"
+124	124		202							{1: '1', 6: '1'}
+125	125		201							{1: '1', 2: '500494', 3: '1'}
+126	126		301							{1: '1', 2: 'Karenina', 3: 'I knew I could count on you, Teddy...', 4: '1'}
+127	127		202							{1: '1'}
+128	128		401							{1: '2', 2: '4547'}
+129	129		401							{1: '2', 2: '2711'}
+130	130		502							{1: 'RImgBg1Shake'}
+131	131		301							"{3: ""The thud of Karenina's hammer hitting the ground drowns out the rest of her words. She dashes out the door like a gust of wind, leaving behind two broken tiles and no trace of where she's gone.""}"
+132	132		201							{1: '1', 2: '500864', 4: '-400'}
+133	133		201							{1: '2', 2: '500575', 4: '400'}
+134	134		301							"{1: '1', 2: 'Teddy', 3: ""Looks like transferring those extra funds was pretty smart of me. So... I don't have to pay for the damaged floor now, right?"", 4: '1'}"
+135	135		301							{2: 'Wells', 3: 'Hah...', 4: '2'}
+136	136		301							{3: 'Wells waves Celica away as she tries to step forward, then leisurely bends down to pick up the hammer and floor fragments that Karenina dropped.'}
+137	137		301							"{2: 'Wells', 3: ""I have a feeling you've seen far into the future. You knew the mind would collapse before it happened, didn't you?"", 4: '2'}"
+138	138		301							"{2: 'Teddy', 3: ""I'm a hacker, not a politician. I don't deal with conspiracies and speculation."", 4: '1'}"
+139	139		301							{3: 'Teddy shrugs and closes her operating system and steals a glance at a familiar portrait in her contact list just before the screen goes dark.'}
+140	140		301				AniZhuanchangBegin			"{2: 'Teddy', 3: ""I just figured that anything Norman's involved in is bound to go wrong somehow. It's practically a given."", 4: '1'}"
+141	141		502							{1: 'DialogDisable'}
+142	142		401							{1: '1', 2: '36'}
+143	143		202							{1: '1', 2: '2', 6: '1'}
+144	144		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory926.jpg'}
+145	145		401							{1: '1', 2: '169'}
+146	146		107			AniZhuanchangEnd			2000.0	{1: 'Deep in the Mine', 2: 'Main Lobby'}
+147	147		108							{1: '1'}
+148	148		301			DialogEnable				{3: 'While the others busy themselves with setting up camp, Bridget leads Trojan to a secluded corner.'}
+149	149		201							{1: '1', 2: '500906', 3: '4', 4: '-400'}
+150	150		201							{1: '2', 2: '500586', 4: '400'}
+151	151		301							{1: '1', 2: 'Trojan', 3: 'So, pulling me aside when something goes wrong... Am I on the suspect list now? Heh... an alcohol-flavor electrolyte... that tastes like beer...', 4: '2'}
+152	152		401							{1: '2', 2: '2825'}
+153	153		301							{3: 'Trojan takes the bottle of electrolytes from Bridget, weighs it in her palm, and examines the packaging before handing it back.'}
+154	154		301							"{2: 'Trojan', 3: ""Forget it. We don't know how long we'll be stuck in this forsaken place. Better save supplies where we can."", 4: '2'}"
+155	155		204							{1: '2'}
+156	156		301							{2: 'Bridget', 3: '...', 4: '1'}
+157	157		301							"{3: ""Bridget takes back the electrolytes with a conflicted expression. Seeing Trojan's completely normal demeanor, even she, usually straightforward, finds herself at a loss for words.""}"
+158	158		301							{2: 'Trojan', 3: 'Ah... Did we use to drink this together before?', 4: '2'}
+159	159		301							{2: 'Bridget', 3: 'Huh? How did you know...', 4: '1'}
+160	160		204							{1: '2', 2: '8'}
+161	161		203							{1: '2', 2: '0.25', 3: '400', 4: '-50'}
+162	162		301							{3: 'Trojan shrugs, casually sits down on a rock, and taps his head.'}
+163	163		204							{1: '2'}
+164	164		301							"{2: 'Trojan', 3: ""You're easy to read... Or rather, you weren't trying to hide it."", 4: '2'}"
+165	165		301							"{2: 'Trojan', 3: ""You asked to meet me alone not just because I belong to Norman, but also because of the memories I've lost to the M.I.N.D. trauma, no?"", 4: '2'}"
+166	166		301							{2: 'Bridget', 3: 'Yup.', 4: '1'}
+167	167		203							{1: '1', 2: '0.25', 3: '-400', 4: '-50'}
+168	168		301							{3: 'Upon hearing this, Bridget lets her guard down and takes a seat next to Trojan.'}
+169	169		301							{2: 'Bridget', 3: 'We were here back then, too. Not in this tunnel, but in this same mine.', 4: '1'}
+170	170		401							{1: '2', 2: '4560'}
+171	171		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+172	172		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+173	173		301							"{1: '1', 3: ""Bridget's words send Trojan into a momentary daze, causing their visual and audio systems to fall slightly out of sync.""}"
+174	174		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+175	175		401							{1: '2', 2: '4560'}
+176	176		504							{1: '0.7'}
+177	177		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory833.jpg'}
+178	178		202							{1: '1', 2: '2', 6: '1'}
+179	179		201							{1: '1', 2: '500028', 7: '1'}
+180	180		301							{1: '1', 2: 'Support Force Member A', 3: 'Bridget?', 4: '1'}
+181	181		201							{1: '1', 2: '500167'}
+182	182		301							{1: '1', 2: 'Bridget', 3: 'Yes.', 4: '1'}
+183	183		201							{1: '1', 2: '500028'}
+184	184		301							{1: '1', 2: 'Support Force Member A', 3: 'Ruolin?', 4: '1'}
+185	185		201							{1: '1', 2: '500909'}
+186	186		301							{1: '1', 2: 'Ruolin', 3: 'Here.', 4: '1'}
+187	187		201							{1: '1', 2: '500028'}
+188	188		301							{1: '1', 2: 'Support Force Member A', 3: 'Trojan?', 4: '1'}
+189	189		201							{1: '1', 2: '500586', 4: '80'}
+190	190		301							{1: '1', 2: 'Trojan', 3: '...', 4: '1'}
+191	191		201							{1: '1', 2: '500028'}
+192	192		301							{1: '1', 2: 'Support Force Member A', 3: 'Trojan?', 4: '1'}
+193	193		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+194	194		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory926.jpg'}
+195	195		504							{1: '0'}
+196	196		202							{1: '1', 6: '1'}
+197	197		201							{1: '1', 2: '500906', 3: '4', 4: '-400', 5: '-50', 7: '1'}
+198	198		201							{1: '2', 2: '500586', 4: '400', 5: '-50', 7: '1'}
+199	199		301							{1: '1', 2: 'Bridget', 3: 'Trojan?', 4: '1'}
+200	200		301							{2: 'Trojan', 3: '...Present.', 4: '2'}
+201	201		301							"{3: ""Bridget has to call Trojan's name several times before Trojan, lost in thought, finally responds.""}"
+202	202		301							"{2: 'Bridget', 3: ""What's gotten into you? You were totally out of it just now."", 4: '1'}"
+203	203		301							"{2: 'Trojan', 3: ""No, I... guess I'm just a little exhausted."", 4: '2'}"
+204	204		301							"{3: ""Face to face with those worried eyes, Trojan can't help but want to look away.""}"
+205	205		301							{3: 'Even though their words carry hidden intentions, the person before her still radiates warmth and friendliness.'}
+206	206		301							"{3: ""Knowing herself, Trojan can't seem to remember why she decided to take this job in the first place. YOLO is the new black, and she's been living by it.""}"
+207	207		204							{1: '2', 2: '3'}
+208	208		301							"{2: 'Trojan', 3: ""...It's too bright. Bet I will get uncomfortable."", 4: '2'}"
+209	209		204							{1: '2'}
+210	210		301							{2: 'Bridget', 3: 'What did you say?', 4: '1'}
+211	211		301							"{2: 'Trojan', 3: ""...Well, considering you gave me that drink earlier, I'll be honest with you."", 4: '2'}"
+212	212		203							{1: '2', 2: '0.25', 3: '400'}
+213	213		301							{3: 'Trojan suddenly stands up, dusts herself off, and steps away from Bridget.'}
+214	214		301							{2: 'Trojan', 3: 'Norman did assign me to assist An Jie and report back with intel when possible.', 4: '2'}
+215	215		301							"{2: 'Trojan', 3: ""But it wasn't mandatory. They only brought it up as a formality, and they explicitly told me I could take it or leave it."", 4: '2'}"
+216	216		301							{2: 'Bridget', 3: 'So...', 4: '1'}
+217	217		301							"{2: 'Trojan', 3: 'There\'s no ""so"". One drink\'s worth exactly this much info. I\'ve told you all I\'m willing to share—if you want to know more, you\'ve got to sit down for a talk with An Jie yourself.', 4: '2'}"
+218	218		301							"{2: 'Trojan', 3: ""If I were on her side, I can tell you now that you wouldn't be able to bring An Jie back—that is, if she wanted to run."", 4: '2'}"
+219	219		202							{1: '1', 2: '2', 6: '1'}
+220	220		201							{1: '1', 2: '500586', 4: '80'}
+221	221		401							{1: '2', 2: '1516'}
+222	222		301							{1: '1', 3: 'Without looking back, Trojan walks toward the crowd as she does a half-hearted wave in the air.'}
+223	223		301		1		AniZhuanchangBegin			"{2: 'Trojan', 3: ""I'm off, sunshine. Make sure you assign someone to keep an eye on little An Jie."", 4: '1'}"

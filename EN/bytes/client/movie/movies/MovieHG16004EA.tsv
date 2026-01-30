@@ -1,0 +1,211 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1322.jpg'}
+2	2		401							{1: '1', 2: '250'}
+3	3		301			DialogEnable				{3: 'The harsh sun tilts westward, its scorching grip starting to loosen. The stifling heat blends into the air, turning into an almost imperceptible tension.'}
+4	4		301							{3: 'Veronica is back in a flash, zipping down at top speed before she comes to a halt in midair.'}
+5	5		201							{1: '1', 2: '501366', 3: '4', 5: '-20', 6: '-200'}
+6	6		301							"{1: '1', 2: 'Veronica', 3: ""We've got to get them out of here now."", 4: '1', 18: '100011981'}"
+7	7		302							{2: 'What did you find in there?', 3: '8'}
+8	8		204							{1: '1', 2: '5'}
+9	9		301							"{2: 'Veronica', 3: ""It's Red Tide. Everywhere. The savanna is surrounded, almost half of it is gone."", 4: '1', 18: '100011982'}"
+10	10		202							{2: '1'}
+11	11		301				AniZhuanchangBegin			"{3: ""Even this safe haven isn't secure anymore. Every last bit of moisture seems to have been sucked out of the air. That dry, scratchy feeling in your throat... is it a heads-up from this brutal environment, or just your nerves getting to you physically?""}"
+12	12		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory393.jpg'}
+13	13		201							{1: '1', 2: '501366', 3: '11', 5: '-20', 6: '-200'}
+14	14		301			AniZhuanchangEnd				{1: '1', 2: 'Veronica', 3: 'Hermione!', 4: '1', 18: '100011983'}
+15	15		202							{2: '1', 6: '1'}
+16	16		306							{1: '1'}
+17	17		301							"{3: ""When Veronica gets back to the lion pride's temporary resting place, she calls out the lioness's name. But the scene that meets their eyes is even worse than they'd imagined.""}"
+18	18		301							"{3: ""The once lush, green savanna has become a sticky mess of rotting stems and mud. Jagged fragments of stone, scarred from some unbelievable violence, stick out of the ground like the earth's exposed bones next to the broken veins of soil.""}"
+19	19		301				DialogDisable			{3: 'Those broken veins are the remains of acacia trees—the very same trees that used to give them a bit of shade from the scorching sun.'}
+20	20		306							
+21	21		302							{2: 'Epirus? Matilde!', 3: '22'}
+22	22		401							{1: '2', 2: '4640'}
+23	23		301			DialogEnable				{3: 'The savanna is silent as a tomb. Even the birdsong has been swallowed up by fear. The only thing left is an eerie, low moan.'}
+24	24		302							{2: 'That moaning sound... hyenas.', 3: '25'}
+25	25		301							"{3: ""Just like the night they first crossed paths, a murderous look fills Veronica's usually cold, stern eyes.""}"
+26	26		301							"{3: ""She's instantly transported back to her first encounter with these scavengers. As if history is repeating itself, she remembers pushing aside the tangled grass with her lance and seeing several hyenas gorging themselves on a male lion's carcass.""}"
+27	27		402							{1: '4640'}
+28	28		301							"{3: ""But she doesn't have to chase them away this time. The moment Veronica approaches, her murderous aura is enough to send the hyenas scattering with their tails between their legs.""}"
+29	29		401							{1: '1', 2: '6207'}
+30	30		201							{1: '1', 2: '501366', 3: '5', 5: '-20', 6: '-200'}
+31	31		301							{1: '1', 2: 'Veronica', 3: '...', 4: '1', 18: '100011984'}
+32	32		202							{1: '1', 6: '1'}
+33	33		306							{1: '1'}
+34	34		301							{3: 'Lying in the mud is a male lion, mauled beyond recognition. Veronica stares at it with a blank expression for a long moment before finally turning her gaze to the human beside her.'}
+35	35		104							{1: '0|60|-100', 2: '1'}
+36	36		401							{1: '2', 2: '1543'}
+37	37		301							"{3: ""She doesn't want to get a closer look, but she knows she has to. Meeting the human's eyes, finding both concern and reassurance there, she slowly crouches down and reaches for the lion's mane.""}"
+38	38		301							{3: 'A strand of mane, seemingly specially braided, falls into her palm.'}
+39	39		301							{3: 'In that moment, her normally unwavering mechanical heart skips a beat. She freezes, refusing to look down and confirm what she already knows in her gut.'}
+40	40		306							
+41	41		201							{1: '1', 2: '501366', 3: '3', 5: '-20', 6: '-200'}
+42	42		301							{1: '1', 2: 'Veronica', 3: '...', 4: '1', 18: '100011985'}
+43	43		302							"{2: ""What's wrong?"", 3: '44'}"
+44	44		202							{1: '1'}
+45	45		301							"{3: ""Watching Veronica's eyes flutter, you rush to her side. Your own heart sinks as you see her shoulders slump. You know all too well what a bad omen feels like.""}"
+46	46		301				DialogDisable			"{3: ""When a clump of mud-caked fur falls into your hand, you can't help but feel a wave of relief, even as a pang of guilt shoots through you. It's just a bit of mane matted with mud, not the small braid you'd tied yourself. You breathe a sigh of relief, a weight off your chest.""}"
+47	47		302							{2: 'But... why is there a strange lion here?', 3: '48'}
+48	48		401					400.0	800.0	{1: '2', 2: '4421'}
+49	49		401							{1: '2', 2: '4422'}
+50	50		301			DialogEnable	DialogDisable			"{3: ""With a sinking feeling, you realize you're in over your head. You pull up a map on your terminal, trying to pinpoint Epirus's location.""}"
+51	51		302							"{2: ""Veronica, would you mind getting a bird's-eye view for me?"", 3: '52'}"
+52	52		201							{1: '1', 2: '501366', 3: '8', 5: '-20', 6: '-200'}
+53	53		301			DialogEnable				{1: '1', 2: 'Veronica', 3: '...', 4: '1', 18: '100011986'}
+54	54		302							{2: 'Veronica?', 3: '55'}
+55	55		202							{1: '1'}
+56	56		301							"{3: ""Silence hangs in the air. Veronica doesn't budge.""}"
+57	57		302							"{2: ""Veronica, what's wrong?"", 3: '58'}"
+58	58		104							{1: '0|60|-200', 2: '0.5'}
+59	59		201							{1: '1', 2: '501359', 5: '-20', 6: '20'}
+60	60		301							"{1: '1', 3: ""Following Veronica's gaze, you spot a lion cub crawling into view.""}"
+61	61		302							{2: '(Close eyes)', 3: '62', 4: '...', 5: '62'}
+62	62		401							{1: '2', 2: '5496'}
+63	63		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+64	64		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 4: '5'}
+65	65		203							{1: '1', 2: '0.8', 4: '50', 5: '-100'}
+66	66		401							{1: '2', 2: '5886'}
+67	67		301							{2: 'Lion Cub', 3: 'Grrr...', 4: '1'}
+68	68		104							{1: '0|80|-250', 2: '0.5'}
+69	69		203							{1: '1', 2: '0.5', 4: '80', 5: '-200'}
+70	70		301							{1: '1', 3: 'The cub drags its broken body, its lower half a bloody, matted mess that resembles a tattered blanket soaked in the metallic stench of blood.'}
+71	71		104							{1: '0|100|-300', 2: '0.5'}
+72	72		203							{1: '1', 2: '0.5', 4: '120', 5: '-300'}
+73	73		301							{3: 'A long trail of blood marks its path as it inches toward Veronica.'}
+74	74		202							{1: '1'}
+75	75		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 4: '5', 5: '1'}
+76	76		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+77	77		402							{1: '5496'}
+78	78		306							{1: '1'}
+79	79		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '5'}
+80	80		504							{1: '0.7', 2: '999'}
+81	81		201							{1: '1', 2: '501366', 3: '7', 5: '-20', 6: '-200'}
+82	82		301			DialogShake	DialogDisable			{1: '1', 2: 'Veronica', 3: '(What is... that...)', 4: '1', 18: '100011987'}
+83	83		306							
+84	84		504							{1: '0', 2: '999'}
+85	85		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '5', 5: '1'}
+86	86		104							{1: '0|0|0', 2: '0.3'}
+87	87		203							{1: '1', 2: '0.3', 4: '-40', 5: '-100'}
+88	88		401						350.0	{1: '2', 2: '4298'}
+89	89		402							{1: '4298'}
+90	90		301			DialogEnable				{3: 'Veronica recoils instinctively, her foot sinking into black mud as her heart sinks into a similar mire of despair.'}
+91	91		301				DialogDisable			"{3: ""That wasn't a blanket—it was the lower half of its body.""}"
+92	92		202							{1: '1', 6: '1'}
+93	93		302							{2: 'Matilde...', 3: '94'}
+94	94		306							{1: '1'}
+95	95		301			DialogEnable				"{3: ""There is no need for a closer look; you know her in an instant. This is Matilde, the sole survivor of Hemiene's litter.""}"
+96	96		301							"{3: ""Matilde, who's always so sharp and quick.""}"
+97	97		301							"{3: ""You've seen more than your fair share of tragedy, yet your heart still bleeds at the sight.""}"
+98	98		306							
+99	99		302							"{2: ""It's okay now, little one..."", 3: '100', 4: ""Don't be scared anymore. We're back."", 5: '100'}"
+100	100		401							{1: '2', 2: '2704'}
+101	101		301							"{3: ""You carefully lay the cub down, pulling adrenaline and antibiotics from your first-aid kit and slowly injecting them into Matilde's body.""}"
+102	102		301							{3: 'Clever Matilde, who would never let anyone get a hand on her fuzzy face, now lays her small head quietly in your palm, letting out a deep, almost human-like sigh.'}
+103	103		401							{1: '2', 2: '1543'}
+104	104		301							"{3: ""As if all life's energy had been drained away, the cub goes limp in your arms.""}"
+105	105		302							{2: 'Rest now, Matilde.', 3: '106'}
+106	106		201							{1: '1', 2: '501366', 3: '7', 5: '-20', 6: '-200'}
+107	107		301							{1: '1', 2: 'Veronica', 3: '...', 4: '1', 18: '100011988'}
+108	108		202							{1: '1'}
+109	109		301							{3: 'The mechanical girl stands frozen, like a common device that has crashed.'}
+110	110		306							{1: '1'}
+111	111		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '5'}
+112	112		201							{1: '1', 2: '501366', 3: '7', 5: '-20', 6: '-200'}
+113	113		504							{1: '0.7', 2: '999'}
+114	114		301							{1: '1', 2: 'Veronica', 3: '(How could such a small body hold so much blood...)', 4: '1', 18: '100011989'}
+115	115		504							{1: '0', 2: '999'}
+116	116		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '5', 5: '1'}
+117	117		306							
+118	118		202							{1: '1', 6: '1'}
+119	119		301							"{3: ""She stares blankly at Matilde's broken body.""}"
+120	120		301							"{3: ""For the most part, her life is a cold, calculated machine. But this creature? This is something she's personally brought up—a strange, soft spot in a life full of battle, bloodshed, and rage.""}"
+121	121		301							{3: 'That little cub, which once curled up in her arms, has now become the most familiar sight in her world: broken, devastated, and tragic.'}
+122	122		306							{1: '1'}
+123	123		504							{1: '0.7', 2: '999'}
+124	124		201							{1: '1', 2: '501366', 3: '7', 5: '-20', 6: '-200'}
+125	125		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '5'}
+126	126		301							{1: '1', 2: 'Veronica', 3: '(How odd... why does this feel so new...)', 4: '1', 18: '100011990'}
+127	127		504							{1: '0', 2: '999'}
+128	128		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '5', 5: '1'}
+129	129		202							{1: '1', 6: '1'}
+130	130		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenRedEx.prefab', 2: '2'}
+131	131		401							{1: '2', 2: '1098'}
+132	132		401							{1: '2', 2: '4259'}
+133	133		306							
+134	134		301							"{3: ""She's seen far worse things in her time. So why does this one feel so alien... yet hit so close to home?""}"
+135	135		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+136	136		301							{3: 'Her neural algorithms are working overtime, frantically trying to make sense of the questions swirling inside her metallic body.'}
+137	137		301							"{3: ""She can't grasp what she's seeing or feeling, but her mechanical instincts are dutifully trying to find a logical explanation for it all.""}"
+138	138		301							{3: 'The logical part, however, is filling Veronica with dread. The harder she tries to put the pieces together, the more she feels some irresistible force trying to unravel her sanity.'}
+139	139		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+140	140		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenRedEx.prefab'}
+141	141		402							{1: '4259'}
+142	142		402							{1: '1098'}
+143	143		306						200.0	
+144	144		201							{1: '1', 2: '501366', 3: '4', 5: '-20', 6: '-200'}
+145	145		301							"{1: '1', 2: 'Veronica', 3: ""What's that?"", 4: '1', 18: '100011991'}"
+146	146		301							"{3: ""She looks at you with a gaze that's both mechanical and helpless, wracked with a pain she doesn't even understand.""}"
+147	147		202							{1: '1'}
+148	148		306							{1: '1'}
+149	149		301							{3: 'It has never been clearer that Veronica is a being just like you, a different kind of life capable of experiencing the world.'}
+150	150		301							"{3: ""She's a sentient being with real emotions. The idea has always been an abstract concept, but now it's a cold, hard fact.""}"
+151	151		301							"{3: ""Sadness. Not the first time you've seen that kind of emotion in a mechanical being, but you never thought you'd see it in Veronica.""}"
+152	152		301							{3: 'Whether by a cruel twist of fate or a stroke of luck, in this moment, destiny has revealed the existence of love to her through a veil of pain and fear.'}
+153	153		301							{3: 'The ghosts of her past come roaring back, threatening to pull her under. Veronica fights to shake off the feeling of helplessness and gets her feet moving, but the black, sticky muck underfoot hits her like a ton of bricks.'}
+154	154		301							"{3: ""It's an oily, muddy substance—a smell that all mechanical beings know like the back of their hand.""}"
+155	155		306							
+156	156		201							{1: '1', 2: '501366', 3: '5', 5: '-20', 6: '-200'}
+157	157		301							"{1: '1', 2: 'Veronica', 3: ""That's vehicle fuel from the humans."", 4: '1', 18: '100011992'}"
+158	158		301							{2: 'Veronica', 3: 'The humans. Those wanderers.', 4: '1', 18: '100011993'}
+159	159		202							{1: '1'}
+160	160		301							{3: 'Veronica declares calmly, a cold certainty in her voice.'}
+161	161		306							{1: '1'}
+162	162		201							{1: '1', 2: '501358'}
+163	163		401							{1: '2', 2: '1543'}
+164	164		301							"{1: '1', 3: ""She gets a handle on herself and strides over to you, giving Matilde's body a quick but thorough once-over.""}"
+165	165		301							"{3: ""It doesn't take her long to find what she's looking for: a gunshot wound on the cub's mangled hind leg.""}"
+166	166		202							{1: '1'}
+167	167		306							
+168	168		401							{1: '1', 2: '273'}
+169	169		201							{1: '1', 2: '501366', 3: '8', 5: '-20', 6: '-200'}
+170	170		301				DialogDisable			{1: '1', 2: 'Veronica', 3: 'Lonely... the power of connection? I never... really...', 4: '1', 18: '100011994'}
+171	171		202							{1: '1', 6: '1'}
+172	172		401							{1: '2', 2: '558'}
+173	173		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+174	174		504							{1: '0.7'}
+175	175		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+176	176		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1315.jpg'}
+177	177		401							{1: '2', 2: '558'}
+178	178		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+179	179		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1318.jpg'}
+180	180		401							{1: '2', 2: '558'}
+181	181		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+182	182		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory949.jpg'}
+183	183		401							{1: '2', 2: '558'}
+184	184		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+185	185		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory958.png'}
+186	186		301			DialogEnable				{3: 'Memories of the arena and Aerospace City flash through her mind.'}
+187	187		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+188	188		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+189	189		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory393.jpg'}
+190	190		504							{1: '0'}
+191	191		201							{1: '1', 2: '501366', 3: '9', 5: '-20', 6: '-200'}
+192	192		301							{1: '1', 2: 'Veronica', 3: 'I actually wanted to buy into that nonsense...', 4: '1', 18: '100011995'}
+193	193		204							{1: '1', 2: '13'}
+194	194		301				DialogDisable			"{2: 'Veronica', 3: ""If only one species had this world to itself, it would probably be lonely... but it'd sure be a lot less messy."", 4: '1', 18: '100011996'}"
+195	195		202							{1: '1', 6: '1'}
+196	196		401							{1: '2', 2: '4660'}
+197	197		104							{1: '0|0|-100', 2: '0.14'}
+198	198		301			DialogEnable				{3: 'She holds her lance out in front of her, like a line in the sand.'}
+199	199		201							{1: '1', 2: '501366', 3: '4', 5: '-20', 6: '-200'}
+200	200		301							{1: '1', 2: 'Veronica', 3: 'These are the lives you insisted on saving from me, lives that bring nothing but hell and destruction.', 4: '1', 18: '100011997'}
+201	201		204							{1: '1', 2: '5'}
+202	202		301							"{2: 'Veronica', 3: ""So, these are your humans—the ones you said I can't paint all of humanity with the same brush."", 4: '1', 18: '100011998'}"
+203	203		204							{1: '1', 2: '8'}
+204	204		301				DialogDisable			"{2: 'Veronica', 3: ""Exactly. You can't paint everyone with the same brush."", 4: '1', 18: '100011999'}"
+205	205		204							{1: '1', 2: '11'}
+206	206		104							{1: '0|0|-150', 2: '0.1'}
+207	207		203						110.0	{1: '1', 2: '0.1', 4: '-40', 5: '-300'}
+208	208		502							{1: 'RImgBg1Shake'}
+209	209		502							{1: 'DialogEnable'}
+210	210		301		1	DialogShake	AniZhuanchangBegin			"{2: 'Veronica', 3: ""But you... you're the exception! And these humans? They all deserve to die!"", 4: '1', 18: '100012000'}"

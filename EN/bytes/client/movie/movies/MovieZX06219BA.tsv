@@ -1,0 +1,559 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1381.jpg'}
+2	2		401							{1: '1', 2: '396'}
+3	3		201							{1: '1', 2: '500588'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Issarius', 3: ""He's dead. It's a suicide."", 4: '1'}"
+5	5		301							"{2: 'Issarius', 3: ""President Hassen's status?"", 4: '1'}"
+6	6		203							{1: '1', 2: '0.25', 3: '400'}
+7	7		201							{1: '2', 2: '500567', 4: '-400'}
+8	8		301							"{1: '1', 2: 'Crowe', 3: ""I'm patching him up, but he's still out cold."", 4: '2'}"
+9	9		301			DialogShake	DialogDisable			"{2: 'Crowe', 3: ""Damn it, don't tell me it's internal bleeding..."", 4: '2'}"
+10	10		202							{1: '1', 2: '2', 6: '1'}
+11	11		401							{1: '2', 2: '4543'}
+12	12		502						500.0	{1: 'RImgBg1Shake'}
+13	13		201							{1: '1', 2: '500059'}
+14	14		301			DialogEnable				{1: '1', 3: 'The door bursts open as medic stationed at Command Central rush into the office.'}
+15	15		301			DialogShake				"{2: 'Medic', 3: ""Where's the patient? What's his condition?!"", 4: '1'}"
+16	16		203							{1: '1', 2: '0.25', 3: '-400'}
+17	17		201							{1: '2', 2: '500567', 4: '400'}
+18	18		301							{1: '1', 2: 'Crowe', 3: 'Over here! The external wounds are handled.', 4: '2'}
+19	19		301							"{2: 'Medic', 3: ""Good work. Thank you. I'll take over from—"", 4: '1'}"
+20	20		201							{1: '2', 2: '500588', 4: '400'}
+21	21		301							{1: '1', 2: 'Issarius', 3: 'Wait.', 4: '2'}
+22	22		301							"{3: ""A hand blocks the medic's movement, its touch icy. Only then does she notice the chill in his tone.""}"
+23	23		301							"{2: 'Issarius', 3: 'All further actions will be conducted under the ""watch"" of the Purifying Force. The situation is exceptional. I trust you understand.', 4: '2'}"
+24	24		202							{1: '1', 2: '2', 6: '1'}
+25	25		201							{1: '1', 2: '500567'}
+26	26		301							{1: '1', 2: 'Crowe', 3: 'Hey, come on...', 4: '1'}
+27	27		202							{1: '1'}
+28	28		301							{3: 'Though his words offer an apology, his attitude is rigid and imperious, leaving no room for argument. The baseless accusation instantly inflames the medic.'}
+29	29		201							{1: '1', 2: '500059'}
+30	30		301			DialogShake				{1: '1', 2: 'Medic', 3: 'What are you implying? That I would hurt the President?!', 4: '1'}
+31	31		201							{1: '1', 2: '500588'}
+32	32		301							{1: '1', 2: 'Issarius', 3: 'As I said, the situation is exceptional. We must be cautious.', 4: '1'}
+33	33		301							{2: 'Issarius', 3: 'I am eliminating all potential threats.', 4: '1'}
+34	34		202							{1: '1'}
+35	35		306							{1: '1'}
+36	36		401							{1: '2', 2: '1516'}
+37	37		301							{3: 'The two other Purifying Force members silently shift their positions.'}
+38	38		306							
+39	39		201							{1: '1', 2: '500588', 4: '400'}
+40	40		201							{1: '2', 2: '500567', 4: '-400'}
+41	41		301							{1: '1', 2: 'Crowe', 3: 'Listen, you heartless bastard! Do what you have to, but let the medic examine President Hassen now!', 4: '2'}
+42	42		301							{2: 'Issarius', 3: '...You heard him.', 4: '1'}
+43	43		202							{1: '1', 2: '2'}
+44	44		201							{1: '1', 2: '500059'}
+45	45		301			DialogShake				{1: '1', 2: 'Medic', 3: 'Right, thanks for wasting precious time!', 4: '1'}
+46	46		401							{1: '2', 2: '4331'}
+47	47		203						350.0	{1: '1', 2: '0.3', 5: '-100'}
+48	48		202							{1: '1'}
+49	49		301							{3: 'The medic quickly moves forward to examine Hassen.'}
+50	50		201							{1: '1', 2: '500059'}
+51	51		301				DialogDisable			"{1: '1', 2: 'Medic', 3: ""It's a ruptured spleen—hemorrhagic shock. We can't treat this here; we need to get him to the Star of Life, now!"", 4: '1'}"
+52	52		401							{1: '2', 2: '6282'}
+53	53		203						350.0	{1: '1', 2: '0.3', 4: '-40'}
+54	54		203						350.0	{1: '1', 2: '0.3'}
+55	55		301			DialogEnable				{3: 'She retrieves a collapsible stretcher from her kit, unfolds it, and lays it beside Hassen.'}
+56	56		301			DialogShake	DialogDisable			{2: 'Medic', 3: 'Give me a hand!', 4: '1'}
+57	57		202							{1: '1'}
+58	58		201							{1: '1', 2: '500588', 4: '700'}
+59	59		201							{1: '2', 2: '500567', 4: '-700'}
+60	60		401							{1: '2', 2: '1088'}
+61	61		203							{1: '1', 2: '0.5', 3: '400', 4: '-60', 5: '-100'}
+62	62		203						550.0	{1: '2', 2: '0.5', 3: '-400', 4: '-60', 5: '-100'}
+63	63		202							{1: '1', 2: '2'}
+64	64		301			DialogEnable				{3: 'Issarius and Crowe step forward, carefully transfer Hassen onto the stretcher, and secure him in place.'}
+65	65		201							{1: '1', 2: '500059'}
+66	66		301							{1: '1', 2: 'Medic', 3: 'When we move him, make sure to keep—', 5: '1'}
+67	67		202							{1: '1'}
+68	68		306							{1: '1'}
+69	69		401							{1: '1', 2: '36'}
+70	70		401							{1: '2', 2: '5812'}
+71	71		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab', 2: '2'}
+72	72		301			RImgBg1Shake				{3: 'RUMBLE—'}
+73	73		401							{1: '1', 2: '391'}
+74	74		301							{3: 'A deep, massive rumble rolls through the room, seeming to originate from some impossibly distant core.'}
+75	75		401							{1: '2', 2: '5812'}
+76	76		301			RImgBg1Shake				"{3: ""It's followed immediately by a violent tremor that shakes the very foundations.""}"
+77	77		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab'}
+78	78		201							{1: '1', 2: '500059', 4: '400'}
+79	79		201							{1: '2', 2: '500567', 4: '-400'}
+80	80		502							{1: 'PanelActor1Shake'}
+81	81		203						350.0	{1: '2', 2: '0.3', 3: '-200'}
+82	82		301				DialogDisable			{1: '1', 3: 'The medic stumbles, but Crowe is there in an instant, grabbing her arm to steady her.', 4: '  '}
+83	83		202							{1: '1', 2: '2'}
+84	84		401							{1: '2', 2: '2655'}
+85	85		401						350.0	{1: '2', 2: '2533'}
+86	86		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+87	87		201							{1: '1', 2: '501429'}
+88	88		401							{1: '2', 2: '4044'}
+89	89		203						550.0	{1: '1', 2: '0.5', 4: '-100'}
+90	90		202							{1: '1'}
+91	91		301			DialogEnable				"{1: '1', 3: ""A coffee cup crashes to the floor, its contents splashing like a brown stain across the tiles. Nearby, Yan Zhen's wheelchair lies toppled, his corpse slumped beside it like a discarded doll. No one spares him a glance anymore.""}"
+92	92		306							{3: '  '}
+93	93		201							{1: '1', 2: '500567'}
+94	94		301							{1: '1', 2: 'Crowe', 3: 'What the hell... is this...?', 4: '1'}
+95	95		202							{1: '1', 6: '1'}
+96	96		401							{1: '2', 2: '2782'}
+97	97		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab', 2: '2'}
+98	98		301				DialogDisable			{3: 'An even more deafening alarm erupts, blaring throughout the entirety of Babylonia.'}
+99	99		307							{1: 'WARNING. Orbital height fluctuation: minus 325 meters.', 3: '45'}
+100	100		309	1					200.0	{1: 'System Alert', 2: 'WARNING. Orbital height fluctuation: minus 325 meters.'}
+101	101		307							{1: 'WARNING. High concentration of Punishing Virus detected.', 3: '45'}
+102	102		309	1					200.0	{1: 'System Alert', 2: 'WARNING. High concentration of Punishing Virus detected.'}
+103	103		307							{2: '1'}
+104	104		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab'}
+105	105		402							{1: '2782'}
+106	106		201							{1: '1', 2: '500567'}
+107	107		502							{1: 'DialogEnable'}
+108	108		301			DialogShake				"{1: '1', 2: 'Crowe', 3: ""Babylonia is falling?! You've got to be kidding!"", 4: '1'}"
+109	109		201							{1: '1', 2: '500011', 3: '9'}
+110	110		301			PanelActor1Shake				{1: '1', 2: 'Hassen', 3: 'Help...', 4: '1'}
+111	111		301							{3: 'For a fleeting moment, perhaps shaken by the violent tremor, his consciousness flickers back to life.'}
+112	112		203							{1: '1', 2: '0.25', 3: '-400'}
+113	113		201							{1: '2', 2: '500567', 4: '400'}
+114	114		301							{1: '1', 2: 'Crowe', 3: 'President!', 4: '2'}
+115	115		203							{1: '2', 2: '0.25', 3: '200'}
+116	116		301			PanelActor1Shake				{2: 'Hassen', 3: 'Help me... contact 【kuroname】... go find Teddy...', 4: '1'}
+117	117		301							"{3: ""Hassen's grip is a painful iron clamp on Crowe's wrist, despite the severity of his injury.""}"
+118	118		301				DialogDisable			{2: 'Hassen', 3: 'Everything... depends on it!', 4: '1'}
+119	119		401							{1: '2', 2: '4044'}
+120	120		203							{1: '1', 2: '0.25', 3: '-400', 4: '-50'}
+121	121		202						400.0	{1: '1'}
+122	122		202							{1: '2'}
+123	123		301			DialogEnable				{3: 'The words hang in the air as Hassen, finally succumbing to exhaustion, slips back into unconsciousness.'}
+124	124		301							{3: 'The group exchanges bewildered glances.'}
+125	125		201							{1: '1', 2: '500588'}
+126	126		301							"{1: '1', 2: 'Issarius', 3: ""Let's get the President to the Star of Life first. We will contact the Gray Raven Commandant en route."", 4: '1'}"
+127	127		401							{1: '2', 2: '1099'}
+128	128		301							"{3: ""Just then, Hassen's terminal buzzes.""}"
+129	129		301							{2: 'Issarius', 3: '...', 4: '1'}
+130	130		202							{1: '1'}
+131	131		401							{1: '2', 2: '1014'}
+132	132		509							{1: 'Assets/Product/Texture/Image/BgStory/BgStory642.jpg', 2: '1'}
+133	133		201							{1: '11', 2: '500012', 4: '-550'}
+134	134		301							"{1: '1', 3: ""Crowe picks up the terminal and answers the call. It's Nikola.""}"
+135	135		301							"{2: 'Nikola', 3: ""Crowe? And Issarius? Where's Hassen?"", 4: '11'}"
+136	136		401							{1: '1', 2: '36'}
+137	137		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+138	138		401							{1: '1', 2: '209'}
+139	139		202							{1: '1', 2: '2'}
+140	140		204							{1: '11', 2: '5'}
+141	141		301			DialogShake				{2: 'Nikola', 3: 'Hassen was shot by Yan Zhen? Inside Command Central? Of all times!', 4: '11'}
+142	142		306							{1: '1'}
+143	143		301							"{3: ""A tense silence falls as everyone waits for Nikola's next words.""}"
+144	144		306							
+145	145		204							{1: '11'}
+146	146		301							{2: 'Nikola', 3: '...', 4: '11'}
+147	147		204							{1: '11', 2: '9'}
+148	148		301							{2: 'Nikola', 3: '【kuroname】... Teddy...', 4: '11'}
+149	149		301							"{3: ""A vein pulses on Nikola's forehead, betraying his fury.""}"
+150	150		204							{1: '11', 2: '8'}
+151	151		301							{3: 'He clenches his jaw, wrestles the emotion down, and exhales the tension from his body.'}
+152	152		204							{1: '11'}
+153	153		301							{2: 'Nikola', 3: 'Issarius, get President Hassen to the Star of Life.', 4: '11'}
+154	154		301							"{2: 'Nikola', 3: ""Your primary objective is to protect the President's life. Move out. Now."", 4: '11'}"
+155	155		201							{1: '1', 2: '500588', 4: '550'}
+156	156		301				AniZhuanchangBegin			{1: '1', 2: 'Issarius', 3: 'Roger that.', 4: '1'}
+157	157		202							{1: '1', 2: '11'}
+158	158		510							{1: '1'}
+159	159		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory640.jpg'}
+160	160		205						1000.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 3: '0', 4: '1', 5: '0'}
+161	161		401							{1: '2', 2: '1516'}
+162	162		301			AniZhuanchangEnd				{3: 'As Purifying Force members swiftly evacuate with Hassen on a stretcher, Nikola strides briskly into another vehicle, his face a mask of cold severity.'}
+163	163		201							{1: '1', 2: '500012'}
+164	164		301				DialogDisable			{1: '1', 2: 'Nikola', 3: 'Back to Command Central.', 4: '1'}
+165	165		202							{1: '1'}
+166	166		401							{1: '2', 2: '4231'}
+167	167		502						700.0	{1: 'RImgBg1Shake2Loop'}
+168	168		502							{1: 'RImgBg3Shake2Loop'}
+169	169		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory263.png', 3: '0', 4: '1', 5: '1.5'}
+170	170		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory263.png'}
+171	171		205							{1: '999'}
+172	172		502							{1: 'RImgBg3Shake2Disable'}
+173	173		505							{1: 'RImgBg3Shake2Loop'}
+174	174		306							{1: '1'}
+175	175		301			DialogEnable				"{3: ""Nikola's expression is characteristically calm, a perfect mask of composure during the private transport from the residential district to Command Central.""}"
+176	176		301							{3: 'But his fingers, drumming a silent rhythm against his arm, betray the concern he refuses to show—a rare habit that signals deep thought and inner turmoil.'}
+177	177		301							{3: 'He understands the gravity of their situation perfectly, yet he cannot afford a hint of alarm; Babylonia needs a steady hand at the helm.'}
+178	178		301							{3: 'Mentally, he runs through every possible scenario, from best-case to worst, calculating survival rates against potential sacrifices with clinical precision.'}
+179	179		401							{1: '2', 2: '1515'}
+180	180		301							"{3: ""Then, the distinctive chime of Asimov's private channel cuts through the blaring alarms, a surprisingly welcome sound. For the first time, Nikola allows himself to hope it brings salvation.""}"
+181	181		306							
+182	182		401							{1: '2', 2: '1014'}
+183	183		509						350.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png', 2: '2'}
+184	184		201							{1: '13', 2: '500004', 4: '550'}
+185	185		201							{1: '1', 2: '500012', 4: '-700'}
+186	186		301							"{1: '1', 2: 'Nikola', 3: ""How's everything looking?"", 4: '1'}"
+187	187		204							{1: '13', 2: '8'}
+188	188		301							"{2: 'Asimov', 3: ""We've yet to determine the Punishing Virus' point of entry, but Gestalt was clearly the primary target."", 4: '13'}"
+189	189		204							{1: '13'}
+190	190		301							"{2: 'Asimov', 3: ""Gestalt initiated its defense protocols in time and has completed a full shutdown, containing the contamination. I've severed all power connections; the threat from that vector is neutralized, for now."", 4: '13'}"
+191	191		301							{2: 'Asimov', 3: 'However, Babylonia has already begun its descent. The situation remains critical.', 4: '13'}
+192	192		301							{2: 'Asimov', 3: 'With Gestalt offline, we must shut down the engines manually. Any attempt to force-activate the computing facilities would risk renewed contamination.', 4: '13'}
+193	193		301							{2: 'Nikola', 3: 'You told me that Karenina was already en route to the brake room to handle the shutdown.', 4: '1'}
+194	194		204							{1: '13', 2: '8'}
+195	195		301							"{2: 'Asimov', 3: ""That's the problem. At her pace, she should have completed it by now. The system shows no change."", 4: '13'}"
+196	196		204							{1: '13'}
+197	197		301							{2: 'Asimov', 3: 'Something is impeding her progress. And we are rapidly running out of time.', 4: '13'}
+198	198		301							"{2: 'Nikola', 3: ""I'll deploy all available Task Force units for backup immediately."", 4: '1'}"
+199	199		301							"{2: 'Asimov', 3: ""I'll work on isolating the Punishing Virus to bring Gestalt back online. Without its systems, regaining control of Babylonia will be nearly impossible."", 4: '13'}"
+200	200		301							{2: 'Nikola', 3: 'What are our chances of success?', 4: '1'}
+201	201		204							{1: '13', 2: '8'}
+202	202		301							{2: 'Asimov', 3: 'Minimal. But we have no other choice.', 4: '13'}
+203	203		301							"{2: 'Nikola', 3: ""...Then track Teddy's signal on the surface and transmit the coordinates to 【kuroname】."", 4: '1'}"
+204	204		301							"{2: 'Nikola', 3: ""Monitor the exact moment Babylonia reaches Earth's gravitational capture threshold. Keep me updated in real-time. I need to coordinate the full evacuation."", 4: '1'}"
+205	205		204							{1: '13'}
+206	206		301				DialogDisable			{2: 'Asimov', 3: '...Understood.', 4: '13'}
+207	207		202							{1: '1', 2: '13'}
+208	208		510						500.0	{1: '2'}
+209	209		306							{1: '1'}
+210	210		301			DialogEnable	DialogDisable			"{3: ""Nikola's mind is a whirlwind of data streams and mission directives all the way to Command Central.""}"
+211	211		401							{1: '1', 2: '36'}
+212	212		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+213	213		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+214	214		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1382.jpg'}
+215	215		502							{1: 'RImgBg1Shake2Disable'}
+216	216		505							{1: 'RImgBg1Shake2Loop'}
+217	217		401							{1: '1', 2: '187'}
+218	218		301			DialogEnable				{3: 'He is so consumed that his physical arrival at the office barely registers. Command Central, however, reacts instantly to his presence with a collective, audible sigh of relief.'}
+219	219		306							
+220	220		201							{1: '1', 2: '500012', 4: '-400'}
+221	221		201							{1: '2', 2: '500575', 4: '400'}
+222	222		301							{1: '1', 2: 'Wells', 3: 'Commander, all Task Force units near the main engine control room have received their orders.', 4: '2'}
+223	223		301							"{2: 'Nikola', 3: ""That's not enough. Patch me through to all military personnel."", 4: '1'}"
+224	224		301							{2: 'Wells', 3: 'All of them?', 4: '2'}
+225	225		301							{2: 'Nikola', 3: 'All of them.', 4: '1'}
+226	226		202							{1: '1', 2: '2', 6: '1'}
+227	227		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+228	228		401							{1: '2', 2: '1099'}
+229	229		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory213.png'}
+230	230		301							"{3: ""In that single moment, Nikola's transmission cuts through everything, reaching every soldier across Babylonia. Regardless of branch—Task Force, Engineering, Support, or Purifying Force—and whether they are hunkered down in shelters or deep in active operations, the message finds them.""}"
+231	231		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+232	232		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory3.jpg'}
+233	233		201							{1: '1', 2: '500019', 4: '400'}
+234	234		201							{1: '2', 2: '500405', 4: '-400'}
+235	235		301			RImgBg1Shake				{1: '1', 2: 'Engineering Force Member A', 3: '****, engine output is still dropping—', 4: '1'}
+236	236		301							{2: 'Engineering Force Member B', 3: 'Did you run the diagnostics on Section C7? Could it be that the—', 4: '2'}
+237	237		401							{1: '2', 2: '2924'}
+238	238		301							{2: 'System', 3: 'BZZZZT—'}
+239	239		301							"{2: 'Engineering Force Member A', 3: ""...That's coming from Command..."", 4: '1'}"
+240	240		301							{3: 'Their heads lift in unison, gazes pulled to the intercom speakers overhead.'}
+241	241		306							{1: '1'}
+242	242		401							{1: '2', 2: '1099'}
+243	243		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+244	244		202							{1: '1', 2: '2', 6: '1'}
+245	245		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1358.jpg'}
+246	246		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+247	247		201							{1: '18', 2: '500012', 5: '-150'}
+248	248		301							"{1: '1', 2: 'Nikola', 3: ""This is Nikola. Babylonia is projected to reach Earth's gravitational capture point in three hours and twenty-seven minutes."", 4: '18'}"
+249	249		202							{1: '18'}
+250	250		502							{1: 'DialogDisable'}
+251	251		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0', 4: '1', 5: '0'}
+252	252		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+253	253		205							{1: '999'}
+254	254		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+255	255		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab', 2: '2'}
+256	256		201							{1: '1', 2: '500012'}
+257	257		301			DialogEnable				{1: '1', 2: 'Nikola', 3: 'Evacuation vessels are located on both sides of each level. You may proceed to these vessels for protection.', 4: '1'}
+258	258		301							{2: 'Nikola', 3: 'Or, you can remain at your posts and assist Babylonia.', 4: '1'}
+259	259		301							{2: 'Nikola', 3: 'Task Force units will immediately coordinate emergency repairs across all departments. If you choose to stay, remain at your current position. They will assign you duties accordingly.', 4: '1'}
+260	260		301							{2: 'Nikola', 3: 'We stand with you. Babylonia stands with you.', 4: '1'}
+261	261		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+262	262		202							{1: '1', 6: '1'}
+263	263		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+264	264		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab'}
+265	265		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '1', 4: '0', 5: '0'}
+266	266		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory3.jpg'}
+267	267		306							
+268	268		301							{3: 'The broadcast is brutally short, devoid of any pleasantries. Classic Nikola.'}
+269	269		306							
+270	270		201							{1: '1', 2: '500019', 4: '400'}
+271	271		201							{1: '2', 2: '500405', 4: '-400'}
+272	272		301							{1: '1', 2: 'Engineering Force Member B', 3: 'Huh... we actually have evacuation vessels? How come I never knew?', 4: '2'}
+273	273		301							"{2: 'Engineering Force Member A', 3: ""A place this big would obviously have contingencies... Hey, aren't you going to one?"", 4: '1'}"
+274	274		301							"{2: 'Engineering Force Member B', 3: ""What's the point? I'm staying right here. What about you?"", 4: '2'}"
+275	275		301							{2: 'Engineering Force Member A', 3: '...Sector C7 inspection complete. No anomalies. Proceeding to C8.', 4: '1'}
+276	276		306							{1: '1'}
+277	277		301							{3: 'The same resolve echoes through nearly every sector of Babylonia.'}
+278	278		301				AniZhuanchangBegin			{3: 'Countless sparks are rushing to the frontlines.'}
+279	279		202							{1: '1', 2: '2'}
+280	280		306						500.0	
+281	281		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+282	282		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'Nikola switches to a private communication channel.'}
+283	283		509						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1382.jpg', 2: '1'}
+284	284		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+285	285		201							{1: '11', 2: '500012', 4: '-650'}
+286	286		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '11'}
+287	287		301			AniZhuanchangEnd				{1: '1', 2: 'Nikola', 3: 'This is the situation. 【kuroname】?', 4: '11'}
+288	288		302							{2: 'Okay.', 3: '289', 4: 'Got it.', 5: '289'}
+289	289		301							{3: 'From inside the transport returning from conservation area 368, a human voice answers, sharp and unwavering.'}
+290	290		301							"{2: 'Nikola', 3: ""Asimov has sent Teddy's coordinates to your terminal."", 4: '11'}"
+291	291		301							{2: 'Nikola', 3: 'I believe the quantum supercomputer is the key to this crisis. It might be able to serve as our contingency plan if Gestalt cannot be rebooted.', 4: '11'}
+292	292		301							"{2: 'Nikola', 3: ""Go and find Teddy. I'm counting on you to handle things from there."", 4: '11'}"
+293	293		302							{2: 'Understood.', 3: '294'}
+294	294		204							{1: '11', 2: '8'}
+295	295		301							{2: 'Nikola', 3: 'One more thing...', 4: '11'}
+296	296		302							{2: 'Another mission?', 3: '297'}
+297	297		204							{1: '11'}
+298	298		301							{2: 'Nikola', 3: 'Not a mission. An order.', 4: '11'}
+299	299		301							{2: 'Nikola', 3: 'If the worst should happen, you are forbidden from returning to Babylonia.', 4: '11'}
+300	300		302							{2: 'Commander?!', 3: '301', 4: 'Commander Nikola?!', 5: '301'}
+301	301		204							{1: '11', 2: '5'}
+302	302		301							{2: 'Nikola', 3: 'This is an order. Your only duty is to obey it. Nothing else matters.', 4: '11'}
+303	303		204							{1: '11'}
+304	304		301							{2: 'Nikola', 3: 'For humanity to endure, we must preserve whatever spark of civilization remains.', 4: '11'}
+305	305		302							{2: '...', 3: '306', 4: '...Yes, Commander.', 5: '306'}
+306	306		204							{1: '11', 2: '8'}
+307	307		301							{2: 'Nikola', 3: '...', 4: '11'}
+308	308		301							{3: 'The commander has no time to ponder, offering only a fleeting glance at the communication feed.'}
+309	309		204							{1: '11'}
+310	310		301							"{2: 'Nikola', 3: ""Good. Now go. Forge a path for humanity's hope."", 4: '11'}"
+311	311		202							{1: '11'}
+312	312		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '11'}
+313	313		401							{1: '2', 2: '1024'}
+314	314		510						350.0	{1: '1'}
+315	315		301				AniZhuanchangBegin			{3: 'Nikola cuts the transmission.'}
+316	316		401							{1: '1', 2: '36'}
+317	317		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory267.png'}
+318	318		401							{1: '1', 2: '34'}
+319	319		201							{1: '1', 2: '500568'}
+320	320		301			AniZhuanchangEnd	DialogDisable			{1: '1', 2: 'Lee', 3: 'Ugh, they just keep coming.', 4: '1'}
+321	321		201							{1: '2', 2: '500013', 4: '-800'}
+322	322		203						350.0	{1: '2', 2: '0.4', 3: '-200'}
+323	323		401							{1: '2', 2: '2513'}
+324	324		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+325	325		202							{1: '1', 2: '2', 6: '1'}
+326	326		502							{1: 'DialogEnable'}
+327	327		301			RImgBg1Shake				{1: '1', 3: 'Lee dispatches another wave of helpless Corrupted before him, frustration bleeding into his voice.'}
+328	328		301							{3: 'Any one of these low-level enemies is trivial to him or Lucia, but they are being overwhelmed by sheer numbers, their progress completely halted as they are trapped in a grueling stalemate.'}
+329	329		201							{1: '2', 2: '500568', 4: '-400'}
+330	330		201							{1: '1', 2: '500993', 3: '5', 4: '400'}
+331	331		301							"{1: '1', 2: 'Lucia', 3: ""Lee, find an opening and break through. I'll cover the rear."", 4: '1'}"
+332	332		301							{2: 'Lucia', 3: 'At least one of us needs to get through to provide backup.', 4: '1'}
+333	333		204							{1: '2', 2: '10'}
+334	334		301							"{2: 'Lee', 3: ""That's not gonna work. I've already tried. They're reinforcing their line faster than we can advance."", 4: '2'}"
+335	335		204							{1: '2'}
+336	336		301							"{2: 'Lee', 3: ""We're trapped in the inner ring. A solo breakthrough is not feasible."", 4: '2'}"
+337	337		202							{1: '1', 2: '2'}
+338	338		306							{1: '1'}
+339	339		301				DialogDisable			"{3: ""Gestalt is still offline, and Babylonia is deep in chaos. The engine control room is likely a disaster zone, and they're the only ones close enough to provide backup.""}"
+340	340		201							{1: '1', 2: '500993', 3: '5', 4: '500'}
+341	341		201							{1: '2', 2: '500568', 4: '-500'}
+342	342		201							{1: '3', 2: '500013', 4: '1100'}
+343	343		201							{1: '4', 2: '500013', 4: '-1100'}
+344	344		203							{1: '1', 2: '0.3', 3: '200'}
+345	345		203							{1: '2', 2: '0.3', 3: '-200'}
+346	346		401							{1: '2', 2: '1508'}
+347	347		203							{1: '3', 2: '0.3', 3: '600'}
+348	348		203							{1: '4', 2: '0.3', 3: '-600'}
+349	349		301			DialogEnable				"{1: '1', 3: ""But now, they're pinned down by monsters at the very entrance.""}"
+350	350		301							"{3: ""They can't call for backup; no one else would make it in time. They have to break through, and they have to do it now.""}"
+351	351		306							
+352	352		202							{1: '1', 2: '2', 3: '3', 4: '4', 6: '1'}
+353	353		201							{1: '18', 2: '500682', 3: '5', 4: '120', 5: '-228', 6: '-200'}
+354	354		301			RImgBg1Shake				{1: '1', 2: 'Noctis', 3: 'HEY!! OUTTA THE WAY!!', 4: '18'}
+355	355		202							{1: '18'}
+356	356		502						200.0	{1: 'DialogDisable'}
+357	357		201							{1: '3', 2: '500568', 4: '400'}
+358	358		201							{1: '4', 2: '500013', 4: '-900'}
+359	359		401							{1: '2', 2: '844090'}
+360	360		203						350.0	{1: '4', 2: '0.4', 3: '-200'}
+361	361		203						200.0	{1: '1', 2: '0.25', 3: '600'}
+362	362		202							{1: '3'}
+363	363		201							{1: '1', 2: '500682', 4: '800'}
+364	364		203						200.0	{1: '1', 2: '0.25', 3: '200'}
+365	365		401							{1: '2', 2: '1512'}
+366	366		502						600.0	{1: 'PanelActor4Shake'}
+367	367		505							{1: 'PanelActor4Shake'}
+368	368		203						300.0	{1: '4', 2: '0.25', 4: '-500'}
+369	369		202							{1: '4'}
+370	370		301			DialogEnable	DialogDisable			{1: '1', 3: 'His rough voice is a split-second warning before the attack. Lee senses the approaching presence from behind and dodges aside just as Noctis strikes down the Hetero-Creature about to ambush him.'}
+371	371		201							{1: '2', 2: '500013', 4: '800'}
+372	372		401							{1: '2', 2: '844090'}
+373	373		203						800.0	{1: '2', 2: '0.3', 3: '400'}
+374	374		201							{1: '3', 2: '500652', 4: '700'}
+375	375		401							{1: '2', 2: '13082101'}
+376	376		203						350.0	{1: '2', 2: '0.3', 3: '500'}
+377	377		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+378	378		502						350.0	{1: 'PanelActor2Shake'}
+379	379		505							{1: 'PanelActor2Shake'}
+380	380		401							{1: '2', 2: '4044'}
+381	381		203						700.0	{1: '2', 2: '0.3', 4: '-50'}
+382	382		202							{1: '2', 6: '1'}
+383	383		203							{1: '1', 2: '0.25', 3: '-400'}
+384	384		203						300.0	{1: '3', 2: '0.25', 3: '400'}
+385	385		301			DialogEnable				{1: '1', 3: 'Noctis gazes with satisfaction at his fallen trophy, but in that moment of triumph, the hunter becomes the hunted. Another Corrupted lunges—and is struck down by a different attack before Noctis can even turn.'}
+386	386		301							{2: 'No. 21', 3: 'Noctis. Careless.', 4: '3'}
+387	387		204							{1: '1', 2: '5'}
+388	388		301			DialogShake				"{1: '1', 2: 'Noctis', 3: ""#@&%*—?! Who're you calling careless?!"", 4: '1'}"
+389	389		203							{1: '1', 2: '0.25', 3: '-600'}
+390	390		203							{1: '3', 2: '0.25'}
+391	391		201							{1: '2', 2: '501239', 3: '13', 4: '600'}
+392	392		301							{1: '1', 2: 'Vera', 3: 'Save your breath, Noctis. Use it to kill more of the Hetero-Creatures.', 4: '2'}
+393	393		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+394	394		201							{1: '1', 2: '500309'}
+395	395		301							{1: '1', 2: 'Chrome', 3: 'Are you two alright?', 4: '1'}
+396	396		201							{1: '1', 2: '500993', 3: '1'}
+397	397		301							"{1: '1', 2: 'Lucia', 3: ""We're fine. Thanks!"", 4: '1'}"
+398	398		201							{1: '1', 2: '500934'}
+399	399		301							{1: '1', 2: 'Wanshi', 3: 'Other squads are en route. Those performing frame calibration or repairs are focused on civilian evacuation.', 4: '1'}
+400	400		203							{1: '1', 2: '0.25', 3: '-400'}
+401	401		201							{1: '2', 2: '500309', 4: '400'}
+402	402		301							"{1: '1', 2: 'Chrome', 3: ""The alert level has been raised again. We're running out of time. We'll hold this position; you proceed to support the Engineering Force in the brake room."", 4: '2'}"
+403	403		202							{1: '1', 2: '2', 6: '1'}
+404	404		201							{1: '1', 2: '500993', 4: '400'}
+405	405		201							{1: '2', 2: '500568', 4: '-400'}
+406	406		301				AniZhuanchangBegin			{1: '1', 2: 'Lucia & Lee', 3: 'Roger.', 4: '1', 5: '2'}
+407	407		502							{1: 'DialogDisable'}
+408	408		202							{1: '1', 2: '2'}
+409	409		401							{1: '1', 2: '36'}
+410	410		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory83.jpg'}
+411	411		401							{1: '1', 2: '186'}
+412	412		201			AniZhuanchangEnd				{1: '1', 2: '500494', 3: '5'}
+413	413		502							{1: 'RImgBg1Shake'}
+414	414		301			DialogEnable	DialogDisable			{1: '1', 2: 'Karenina', 3: 'Ugh, just die already!!', 4: '1'}
+415	415		401							{1: '2', 2: '1508'}
+416	416		201							{1: '2', 2: '500013', 4: '-800'}
+417	417		203						300.0	{1: '1', 2: '0.3', 3: '-400'}
+418	418		401							{1: '2', 2: '9317003'}
+419	419		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '2'}
+420	420		401							{1: '2', 2: '1508'}
+421	421		502						350.0	{1: 'PanelActor2Shake'}
+422	422		505							{1: 'PanelActor2Shake'}
+423	423		202							{1: '2'}
+424	424		203						350.0	{1: '1', 2: '0.3'}
+425	425		301			DialogEnable				"{1: '1', 3: ""With a furious roar, Karenina hammers her weapon into the advancing Corrupted. Of all the times for them to swarm in, it has to be now—she's only managed to shut down a single engine.""}"
+426	426		202							{1: '1'}
+427	427		306							{1: '1'}
+428	428		301							"{3: ""Now, locked in combat, she's trapped, unable to break away and complete her mission.""}"
+429	429		306							
+430	430		201							{1: '1', 2: '500494', 3: '5', 4: '-400'}
+431	431		201							{1: '2', 2: '500013', 4: '400'}
+432	432		301			RImgBg1Shake	DialogDisable			{1: '1', 2: 'Karenina', 3: 'What the ****! Get away from that, you piece of trash!', 4: '1'}
+433	433		203						350.0	{1: '1', 2: '0.3', 3: '200'}
+434	434		401							{1: '2', 2: '9317003'}
+435	435		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+436	436		401							{1: '2', 2: '1508'}
+437	437		502						350.0	{1: 'PanelActor2Shake'}
+438	438		505							{1: 'PanelActor2Shake'}
+439	439		202							{1: '2'}
+440	440		203						350.0	{1: '1', 2: '0.3'}
+441	441		301			DialogEnable				{3: 'Karenina spins on her heel, her fist connecting with the Corrupted behind her in a crushing blow. They have already shattered several components. She knows that if they compromise the core systems, the damage will be irreversible, even for her.'}
+442	442		301			RImgBg1Shake	DialogDisable			{2: 'Karenina', 3: '*%#!!', 4: '1'}
+443	443		202							{1: '1'}
+444	444		306							{1: '1'}
+445	445		201							{1: '1', 2: '500013', 4: '500'}
+446	446		201							{1: '2', 2: '500013'}
+447	447		201							{1: '3', 2: '500013', 4: '-500'}
+448	448		401							{1: '2', 2: '1508'}
+449	449		502							{1: 'DialogEnable'}
+450	450		301			RImgBg1Shake				"{1: '1', 3: ""Karenina sees another Corrupted beginning to sabotage the distant equipment. With her path blocked by countless enemies, she knows she won't be able to reach it in time.""}"
+451	451		306							
+452	452		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+453	453		201							{1: '1', 2: '500993', 3: '5'}
+454	454		301			DialogShake				{1: '1', 2: 'Lucia', 3: 'Karenina!', 4: '1'}
+455	455		202							{1: '1'}
+456	456		301							"{3: ""Karenina's gaze locks onto Lee and Lucia a short distance away, just as they manage to breach the emergency brake room.""}"
+457	457		201							{1: '1', 2: '500494', 3: '5'}
+458	458		301				DialogDisable			{1: '1', 2: 'Karenina', 3: 'Hurry!! Take down that piece of junk next to you before it wrecks the equipment!', 4: '1'}
+459	459		202							{1: '1', 6: '1'}
+460	460		201							{1: '1', 2: '500067', 4: '-400'}
+461	461		201							{1: '2', 2: '500992', 4: '400'}
+462	462		203						300.0	{1: '2', 2: '0.3'}
+463	463		401							{1: '2', 2: '5321'}
+464	464		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+465	465		202							{1: '1'}
+466	466		301			DialogEnable				{1: '1', 3: 'Lucia instantly processes the warning and takes down the rampaging Corrupted.'}
+467	467		202							{1: '2', 6: '1'}
+468	468		201							{1: '1', 2: '500568'}
+469	469		301							"{1: '1', 2: 'Lee', 3: ""We're coming to assist you."", 4: '1'}"
+470	470		201							{1: '1', 2: '500494', 3: '4'}
+471	471		301			DialogShake				"{1: '1', 2: 'Karenina', 3: ""Don't! Get to the engines on the left and shut them down first! They're more important than I am right now!"", 4: '1'}"
+472	472		204							{1: '1', 2: '5'}
+473	473		301				DialogDisable			{2: 'Karenina', 3: 'Quick! Babylonia is already in a nosedive!', 4: '1'}
+474	474		202							{1: '1', 6: '1'}
+475	475		306							{1: '1'}
+476	476		201							{1: '2', 2: '500993', 3: '6', 4: '200'}
+477	477		201						700.0	{1: '3', 2: '500568', 3: '7', 4: '-200'}
+478	478		204							{1: '2'}
+479	479		204							{1: '3'}
+480	480		401							{1: '2', 2: '1504'}
+481	481		203							{1: '2', 2: '0.5', 3: '600', 4: '-50', 5: '-50'}
+482	482		203						550.0	{1: '3', 2: '0.5', 3: '-600', 4: '-50', 5: '-50'}
+483	483		202							{1: '2', 2: '3'}
+484	484		301			DialogEnable	DialogDisable			{1: '1', 3: 'Lucia and Lee share a single glance of understanding before splitting up to silence the remaining engines.'}
+485	485		201							{1: '1', 2: '500013', 4: '600'}
+486	486		201							{1: '2', 2: '500013'}
+487	487		201							{1: '3', 2: '500013', 4: '-600'}
+488	488		401							{1: '2', 2: '9317003'}
+489	489		401							{1: '2', 2: '1508'}
+490	490		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+491	491		401							{1: '2', 2: '9317003'}
+492	492		401							{1: '2', 2: '1508'}
+493	493		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '2'}
+494	494		502							{1: 'PanelActor1Shake'}
+495	495		502							{1: 'PanelActor2Shake'}
+496	496		502						500.0	{1: 'PanelActor3Shake'}
+497	497		505							{1: 'PanelActor1Shake'}
+498	498		505							{1: 'PanelActor2Shake'}
+499	499		505							{1: 'PanelActor3Shake'}
+500	500		202							{1: '1', 2: '2', 3: '3'}
+501	501		301			DialogEnable				{3: 'With her concerns momentarily alleviated, Karenina unleashes her full power, a whirlwind of destruction against the Corrupted. The cacophony of battle—the shrieks of dying machines and the groan of failing engines—swells and then, one by one, fades into an eerie silence.'}
+502	502		301							{3: 'Faster. They need to move faster. They must stop this fatal fall before it passes the point of no return.'}
+503	503		306							
+504	504		201							{1: '1', 2: '500494', 3: '4'}
+505	505		301			DialogShake				"{1: '1', 2: 'Karenina', 3: ""We're almost at critical altitude!! HURRY!"", 4: '1'}"
+506	506		202							{1: '1'}
+507	507		201							{1: '1', 2: '500993', 4: '400'}
+508	508		201							{1: '2', 2: '500568', 4: '-400'}
+509	509		301							{1: '1', 2: 'Lucia & Lee', 3: 'Got it!!', 4: '1', 5: '2'}
+510	510		202							{1: '1', 2: '2'}
+511	511		306							{1: '1'}
+512	512		301							"{3: ""With the final Corrupted dispatched, Karenina rushes to aid in the engine shutdown. It's a race against time, but their combined efforts prevail. One by one, Babylonia's great engines fall silent.""}"
+513	513		301							{3: 'The immediate, violent descent has been stopped, pulling Eden back from the brink and granting them a temporary lifeline.'}
+514	514		301							{3: 'Yet, a deeper dread persists. The underlying threat remains unchecked. Babylonia is still a bullet aimed at Earth, carried by its own inertia, and a single moment of lowered guard could still mean catastrophe.'}
+515	515		306							
+516	516		201							{1: '1', 2: '500993'}
+517	517		301							"{1: '1', 2: 'Lucia', 3: ""What's next?"", 4: '1'}"
+518	518		203							{1: '1', 2: '0.25', 3: '400'}
+519	519		201							{1: '2', 2: '500494', 3: '4', 4: '-400'}
+520	520		301							"{1: '1', 2: 'Karenina', 3: ""We need to manually redirect the engine thrusters. We can't leave Babylonia dead in the water. Once the orientation is corrected, we can restore power. Only then will both Babylonia and Earth be safe."", 4: '2'}"
+521	521		203							{1: '2', 2: '0.25', 3: '-600'}
+522	522		203							{1: '1', 2: '0.25'}
+523	523		201							{1: '3', 2: '500568', 4: '600'}
+524	524		301							"{1: '1', 2: 'Lee', 3: ""We're short on manpower here. I'll get more help."", 4: '3'}"
+525	525		301							"{2: 'Karenina', 3: ""Fine, go. Let's just hope nothing else goes wrong..."", 4: '2'}"
+526	526		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+527	527		401							{1: '2', 2: '4409'}
+528	528		201							{1: '1', 2: '500928'}
+529	529		301			RImgBg1Shake	DialogDisable			{1: '1', 2: 'Hetero-Creature', 3: 'HISSSSS!!', 4: '1'}
+530	530		502							{1: 'RImgBg1Shake'}
+531	531		401							{1: '2', 2: '2513'}
+532	532		501						400.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+533	533		401							{1: '2', 2: '2513'}
+534	534		501						400.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+535	535		401							{1: '2', 2: '2513'}
+536	536		501						400.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+537	537		502						500.0	{1: 'PanelActor1Shake'}
+538	538		505							{1: 'PanelActor1Shake'}
+539	539		202							{1: '1'}
+540	540		301			DialogEnable				"{3: ""Lee is nearly at the brake room entrance when a Hetero-Creature lunges at him. There's no time to determine its origin. In one fluid motion, he evades and eliminates the threat.""}"
+541	541		201							{1: '2', 2: '500494', 3: '5'}
+542	542		301							{1: '1', 2: 'Karenina', 3: 'Dammit, this is endless!!', 4: '2'}
+543	543		202							{1: '2', 6: '1'}
+544	544		201							{1: '1', 2: '500993', 3: '5', 4: '-400'}
+545	545		201							{1: '3', 2: '500568', 4: '400'}
+546	546		301							{1: '1', 2: 'Lucia', 3: 'We keep fighting!', 4: '1'}
+547	547		301							{2: 'Lee', 3: 'Roger that.', 4: '3'}
+548	548		202							{1: '1', 2: '3', 6: '1'}
+549	549		201							{1: '1', 2: '500494', 3: '4'}
+550	550		301				DialogDisable			"{1: '1', 2: 'Karenina', 3: ""Hey! Can any of you reach Teddy?! Asimov says we'll need her to restart the engines later!"", 4: '1'}"
+551	551		203						350.0	{1: '1', 2: '0.3', 4: '-50', 5: '-100'}
+552	552		202							{1: '1'}
+553	553		401							{1: '2', 2: '9317003'}
+554	554		401							{1: '2', 2: '1508'}
+555	555		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+556	556		301			DialogEnable				{3: 'No sooner have the words left her mouth than Karenina spins around, delivering another devastating blow to a Corrupted she had just driven back.'}
+557	557		201							{1: '1', 2: '500494', 3: '5'}
+558	558		301		1	DialogShake	AniZhuanchangBegin			{1: '1', 2: 'Karenina', 3: 'When the hell will these damn things stop coming?!', 4: '1'}

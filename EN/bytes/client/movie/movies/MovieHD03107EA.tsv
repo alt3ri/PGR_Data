@@ -1,0 +1,49 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory912.jpg'}
+2	2		401							{1: '1', 2: '100'}
+3	3		301			DialogEnable				{3: 'The great waves shatter as the vessel of pure desire and bitter hatred finally wanes.'}
+4	4		104							{1: '0|50|0', 2: '0.5'}
+5	5		401						1000.0	{1: '2', 2: '3077'}
+6	6		401							{1: '2', 2: '721'}
+7	7		301							{3: 'Gasping heavily, Lamia can no longer maintain her form as she sinks beneath the waters.'}
+8	8		301				AniZhuanchangBegin			"{3: ""Guess it's all coming to an end now...""}"
+9	9		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg'}
+10	10		301			AniZhuanchangEnd				{3: 'A sudden mix of relief and uncertainty washes over Lamia.'}
+11	11		301				AniZhuanchangBegin			{3: 'Is that person safe now? What kind of world will she wake up to?'}
+12	12		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '3'}
+13	13		301			AniZhuanchangEnd	AniZhuanchangBegin			"{3: ""Lamia knows nothing more, wanting only to close her eyes. Through her eyelids, she feels the light fading away as she sinks deeper into the ocean's depths.""}"
+14	14		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+15	15		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+16	16		401							{1: '2', 2: '9339045'}
+17	17		301			AniZhuanchangEnd				{3: 'Whoosh—'}
+18	18		301				DialogDisable			{3: 'An otherworldly sound, one that should not exist beneath the waves, suddenly reaches her ears. Lamia opens her eyes in confusion.'}
+19	19		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+20	20		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_17.jpg'}
+21	21		302							{2: 'You did well, Lamia.', 3: '22'}
+22	22		302							{2: 'Good work.', 3: '23'}
+23	23		301			DialogEnable				{2: 'Lamia', 3: 'Cough... cough, cough...', 18: '100003923'}
+24	24		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4401_15.jpg', 3: '0', 4: '1', 5: '1.5'}
+25	25		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_15.jpg'}
+26	26		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+27	27		301							"{2: 'Lamia', 3: ""Looks like it didn't affect you... I'm just happy... to see you safe..."", 18: '100003924'}"
+28	28		301							"{3: ""Lamia's voice grows increasingly fragile, as her body, too, starts to fade.""}"
+29	29		301							"{2: 'Lamia', 3: ""Guess this means... that I don't have much time left...?"", 18: '100003925'}"
+30	30		302							{2: '...Yes.', 3: '31'}
+31	31		301							{2: 'Lamia', 3: 'I see... Well... can I ask one last question, then?', 18: '100003926'}
+32	32		302							"{2: ""I'm listening."", 3: '33'}"
+33	33		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4401_16.jpg', 3: '0', 4: '1', 5: '1.5'}
+34	34		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_16.jpg'}
+35	35		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+36	36		301							{3: 'Lamia swallows hard, her voice wavering, yet she manages to force a smile.'}
+37	37		301							{2: 'Lamia', 3: 'So... I was just wondering... if... cough... cough, cough... if you were happy...', 18: '100003927'}
+38	38		301							{2: 'Lamia', 3: 'During those two days... after I brought you back home from the sea...', 18: '100003928'}
+39	39		302							{2: '(Remain silent)', 3: '40', 4: 'Yes, I was.', 5: '42'}
+40	40		301							"{2: 'Lamia', 3: ""I see... I'll try harder to make you happy next time, then."", 18: '100003929'}"
+41	41	43	301							{2: 'Lamia', 3: 'In the real world...', 18: '100003930'}
+42	42		301							"{2: 'Lamia', 3: ""That's good, then... This world didn't exist for nothing, at least."", 18: '100003931'}"
+43	43		301							"{3: ""Lamia's voice grows ever more distant, until...""}"
+44	44		301							{2: 'Lamia', 3: 'If this is a dream... then I hope I can still remember this... when I wake up...', 18: '100003932'}
+45	45		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory912.jpg', 3: '0', 4: '1', 5: '1.5'}
+46	46		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory912.jpg'}
+47	47		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+48	48		301		1		AniZhuanchangBegin			{3: 'Her words dissolves completely into the ocean breeze.'}

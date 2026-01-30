@@ -1,0 +1,269 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory83.jpg'}
+2	2		401							{1: '1', 2: '12'}
+3	3		401							{1: '2', 2: '1516'}
+4	4		301			DialogEnable				{1: '1', 3: 'After leaving Gray Raven, Ishmael walks alone toward the control room.'}
+5	5		401							{1: '2', 2: '1507'}
+6	6		301							{3: 'She runs into Hetero-Creatures now and then, but the creatures just wander past Ishmael like she is not there.'}
+7	7		301				DialogDisable			{3: 'The pink-haired Construct walks calmly past the Hetero-Creatures toward the control room.'}
+8	8		104				AniZhuanchangBegin		250.0	{1: '0|0|-25', 2: '0.5'}
+9	9		401							{1: '2', 2: '4629'}
+10	10		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory84.jpg'}
+11	11		201							{1: '1', 2: '500380', 3: '3'}
+12	12		301			DialogEnable				{1: '1', 2: 'Ishmael', 3: '...Hmm?', 4: '1', 18: '100006345'}
+13	13		202							{1: '1'}
+14	14		301							{3: 'As soon as she enters the control room, Ishmael feels something off about it.'}
+15	15		301							{3: 'The filing cabinets that should have been there are gone, replaced by a weird, open space.'}
+16	16		301							{3: 'The air in that spot is twisting and warping, and a Hetero-Creature unlike any she has seen stands in the middle of the room.'}
+17	17		201							{1: '1', 2: '500380', 3: '12'}
+18	18		301							{1: '1', 2: 'Ishmael', 3: 'A Hetero-Creature... no, a Surge Mimicry.', 4: '1', 18: '100006346'}
+19	19		301							"{2: 'Ishmael', 3: ""You don't belong in this time."", 4: '1', 18: '100006347'}"
+20	20		202							{1: '1'}
+21	21		301							{3: 'Ishmael looks at a chair beside her.'}
+22	22		401							{1: '2', 2: '4044'}
+23	23		104						250.0	{1: '0|25|0', 2: '0.25'}
+24	24		104							{1: '0|0|-25', 2: '0.25'}
+25	25		301							{3: 'She takes a step forward, and the chair looks like it has fallen over from another perspective.'}
+26	26		301							{3: 'But looking closer, the chair is still firmly standing on the ground.'}
+27	27		401							{1: '2', 2: '1543'}
+28	28		301							{3: 'Ishmael holds her hand out, waving gently.'}
+29	29		201							{1: '1', 2: '500380', 3: '3'}
+30	30		301							{1: '1', 2: 'Ishmael', 3: 'Displacement...', 4: '1', 18: '100006348'}
+31	31		301							{2: 'Ishmael', 3: 'Not just time, but space too.', 4: '1', 18: '100006349'}
+32	32		401							{1: '2', 2: '2935'}
+33	33		104						250.0	{1: '0|25|-50', 2: '0.25'}
+34	34		104							{1: '0|0|-75', 2: '0.25'}
+35	35		202							{1: '1'}
+36	36		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab', 2: '3'}
+37	37		301							{3: 'Taking another step, she feels like she is walking through thick slime.'}
+38	38		301							{3: 'The control room looks like it is covered in the Red Tide, but it also seems to be just an illusion.'}
+39	39		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab'}
+40	40		201							{1: '1', 2: '500380', 3: '12'}
+41	41		301							{1: '1', 2: 'Ishmael', 3: 'The Hetero-Creatures outside did get in through other entrances.', 4: '1', 18: '100006350'}
+42	42		204							{1: '1', 2: '1'}
+43	43		301							{2: 'Ishmael', 3: 'But not this.', 4: '1', 18: '100006351'}
+44	44		202							{1: '1'}
+45	45		301							"{3: 'This is where it all started—the ""Dark Room"" defense system got infected here.'}"
+46	46		301							{3: 'But why did this place get infected?'}
+47	47		201							{1: '1', 2: '500380', 3: '12'}
+48	48		301							"{1: '1', 2: 'Ishmael', 3: 'The ""Dark Room"" is under attack by Hetero-Creatures, but Gray Raven can handle it.', 4: '1', 18: '100006352'}"
+49	49		301							"{2: 'Ishmael', 3: 'What was supposed to happen here was ""Gray Raven completing their mission by defeating the Hetero-Creatures with the residents of this base"".', 4: '1', 18: '100006353'}"
+50	50		301							"{2: 'Ishmael', 3: ""This control room shouldn't have been infected."", 4: '1', 18: '100006354'}"
+51	51		204							{1: '1', 2: '3'}
+52	52		301							"{2: 'Ishmael', 3: ""Something strange must've happened..."", 4: '1', 18: '100006355'}"
+53	53		202							{1: '1'}
+54	54		301							{3: 'She ignores the Surge Mimicry, staring at the space in front of her, but her gaze seems to go past it.'}
+55	55		306							{1: '1'}
+56	56		301							{3: 'Her eyes land on the distant...'}
+57	57		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+58	58		504							{1: '0.9'}
+59	59		401							{1: '2', 2: '4672'}
+60	60		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+61	61		301			DialogEnable	DialogDisable			{3: 'Her eyes land on the distant ▊▊▆▎▂▌▁▄▊▆▄'}
+62	62		401							{1: '2', 2: '4335'}
+63	63		301			DialogEnable	DialogDisable			{3: '<size=50>distant</size>'}
+64	64		402							{1: '4672'}
+65	65		402							{1: '4335'}
+66	66		301			DialogEnable				{3: 'Ishmael looks down, fiddling with the dice in her hand.'}
+67	67		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+68	68		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+69	69		306							
+70	70		504							{1: '0'}
+71	71		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory84.jpg'}
+72	72		201							{1: '1', 2: '500380', 3: '12'}
+73	73		301							"{1: '1', 2: 'Ishmael', 3: ""No, that narration won't do. It's not the right time yet."", 4: '1', 18: '100006356'}"
+74	74		301							{3: 'She stares off into the distance, gazing for a long while.'}
+75	75		301							"{2: 'Ishmael', 3: ""...It's not the right time yet."", 4: '1', 18: '100006357'}"
+76	76		301							{3: 'Ishmael puts the dice away, her gaze cutting through the control room.'}
+77	77		204							{1: '1', 2: '3'}
+78	78		301							{2: 'Ishmael', 3: 'Huh? Hold on...', 4: '1', 18: '100006358'}
+79	79		301							{3: 'She squints as if seeing something interesting.'}
+80	80		204							{1: '1'}
+81	81		301							"{2: 'Ishmael', 3: ""It's you..."", 4: '1', 18: '100006359'}"
+82	82		202							{1: '1'}
+83	83		401							{1: '2', 2: '777'}
+84	84		301							{3: 'The Surge Mimicry wails and slowly fades away. Something outside time seems to be stopping it from being there.'}
+85	85		301							"{3: 'The ""displacement"" in the control room starts to dissipate.'}"
+86	86		401							{1: '2', 2: '4044'}
+87	87		104						250.0	{1: '0|50|-75', 2: '0.25'}
+88	88		104							{1: '0|0|-100', 2: '0.25'}
+89	89		301							{3: 'Ishmael steps forward, like her next step will take her to another world.'}
+90	90		401							{1: '2', 2: '4182'}
+91	91		301							{3: 'Clack—'}
+92	92		301							"{3: ""But then, something on the floor catches Ishmael's eye.""}"
+93	93		301							{3: '—A wooden 20-sided die.'}
+94	94		301							{3: 'Apparently, she has not put the die away properly.'}
+95	95		301							{3: 'The die has fallen onto the ground with the number 20 facing up.'}
+96	96		201							{1: '1', 2: '500380', 3: '3'}
+97	97		301							{1: '1', 2: 'Ishmael', 3: 'Hmm... A critical fail.', 4: '1', 18: '100006360'}
+98	98		301							{3: 'Ishmael gives up her plan and steps back.'}
+99	99		301							{3: 'She moves to the side, quietly watching the Punishing Virus in the control room disappear.'}
+100	100		204							{1: '1', 2: '12'}
+101	101		301							"{2: 'Ishmael', 3: ""Thought I'd run into you here."", 4: '1', 18: '100006361'}"
+102	102		301							{3: 'She gives a knowing smile.'}
+103	103		301							{2: 'Ishmael', 3: 'Then...', 4: '1', 18: '100006362'}
+104	104		301							"{2: 'Ishmael', 3: 'What\'s happening here is still ""Gray Raven completing their mission by defeating the Hetero-Creatures with the residents of this base"".', 4: '1', 18: '100006363'}"
+105	105		202							{1: '1'}
+106	106		301				AniZhuanchangBegin			{3: '—Everything is as it should be.'}
+107	107		401							{1: '1', 2: '36'}
+108	108		502						400.0	{1: 'DialogDisable'}
+109	109		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory343.jpg'}
+110	110		107							{1: 'Emergency Stairwell'}
+111	111		301							{3: 'Emergency Stairwell'}
+112	112		108							{1: '1'}
+113	113		401							{1: '1', 2: '201'}
+114	114		401							{1: '2', 2: '2983'}
+115	115		301			DialogEnable				{2: '???', 3: 'Can you hear me, Gray Raven Commandant?', 18: '100006364'}
+116	116		301							{3: 'A familiar voice suddenly comes through the comms.'}
+117	117		302							{2: 'Ishmael?!', 3: '118'}
+118	118		201							{1: '18', 2: '500380'}
+119	119		301							"{1: '1', 2: 'Ishmael', 3: ""It's me. I've taken over the control room and removed the comms interference."", 5: '18', 18: '100006365'}"
+120	120		301							"{2: 'Ishmael', 3: ""I'll be patching Lee and the base leader into the comms channel."", 5: '18', 18: '100006366'}"
+121	121		301							"{2: 'Ishmael', 3: 'I\'m in full control of the ""Dark Room"" defense system now.', 5: '18', 18: '100006367'}"
+122	122		301				DialogDisable			"{2: 'Ishmael', 3: ""I'll seal off most of the Hetero-Creatures and point you to the right path."", 5: '18', 18: '100006368'}"
+123	123		202							{1: '18'}
+124	124		302							"{2: ""That'll be a big help!"", 3: '125', 4: 'Thanks!', 5: '125'}"
+125	125		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+126	126		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory84.jpg'}
+127	127		301			DialogEnable				{3: 'The large display before Ishmael has split into multiple smaller screens, showing surveillance feeds from various locations.'}
+128	128		301							{3: 'She can see 【kuroname】 moving down, and Lee leading the residents fighting back on B19.'}
+129	129		201							{1: '1', 2: '500380', 3: '12'}
+130	130		301							"{1: '1', 2: 'Ishmael', 3: 'Working with ""Gray Raven"" again... It\'s bringing back old memories...', 4: '1', 18: '100006369'}"
+131	131		202							{1: '1'}
+132	132		401							{1: '2', 2: '895'}
+133	133		301							{3: 'She hits the broadcast button and makes an announcement to everyone in the base.'}
+134	134		301							"{2: 'Broadcast', 3: ""This is Ishmael. I'll be providing remote support from now on."", 18: '100006370'}"
+135	135		201							{1: '1', 2: '500380', 3: '12'}
+136	136		301							"{1: '1', 2: 'Ishmael', 3: ""【kuroname】, I've sent the best route through to your terminal."", 5: '1', 18: '100006371'}"
+137	137		301							"{2: 'Ishmael', 3: ""There's a large number of Hetero-Creatures in the emergency stairwell between B13 and B14. I've blocked them off with barrier walls."", 5: '1', 18: '100006372'}"
+138	138		302				AniZhuanchangBegin			{2: 'Understood.', 3: '139'}
+139	139		202							{1: '1'}
+140	140		502						400.0	{1: 'DialogDisable'}
+141	141		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory343.jpg'}
+142	142		301			DialogEnable				"{3: ""With Ishmael's info, you, Lee, and Hutu work together to get the evacuees out as fast as you can.""}"
+143	143		401							{1: '2', 2: '2983'}
+144	144		301							"{3: ""Ishmael's voice cuts through the static on the comms now and then.""}"
+145	145		402							{1: '4325'}
+146	146		201							{1: '18', 2: '500380'}
+147	147		301							{1: '1', 2: 'Ishmael', 3: 'The Type-52 light machine guns in corridor D5 on B19 are active.', 4: '18', 18: '100006373'}
+148	148		301							"{2: 'Ishmael', 3: ""...It's been... a while."", 4: '18', 18: '100006374'}"
+149	149		202							{1: '18'}
+150	150		302							"{2: 'Hmm?', 3: '151', 4: '""It\'s been a while""?', 5: '151'}"
+151	151		301							{3: 'Even with her hushed voice, her odd comment has not gone unheard.'}
+152	152		201							{1: '18', 2: '500380'}
+153	153		301							"{1: '1', 2: 'Ishmael', 3: ""Of course, I've been a fan of the famous Gray Raven for a long time..."", 5: '18', 18: '100006375'}"
+154	154		301							"{2: 'Ishmael', 3: ""Alright, I've marked the armory in Zone A on B19. You can go there to resupply."", 5: '18', 18: '100006376'}"
+155	155		202							{1: '18'}
+156	156		301				AniZhuanchangBegin			{3: 'Ishmael changes the subject, marking a new spot on your terminal. Putting your questions aside temporarily, you signal Lee to lead the evacuees to the armory for weapons.'}
+157	157		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory84.jpg'}
+158	158		301			AniZhuanchangEnd				{3: 'Seeing 【kuroname】 on the screen, she smiles a little.'}
+159	159		201							{1: '1', 2: '500380', 3: '12'}
+160	160		301				AniZhuanchangBegin			"{1: '1', 2: 'Ishmael', 3: ""Let's work together, just like old times."", 5: '1', 18: '100006377'}"
+161	161		202							{1: '1'}
+162	162		502						400.0	{1: 'DialogDisable'}
+163	163		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory84.jpg'}
+164	164		107							{1: 'Control Room', 2: 'Five hours later'}
+165	165		301							{3: 'Five hours later, Control Room'}
+166	166		108							{1: '1'}
+167	167		401							{1: '2', 2: '4884'}
+168	168		301			DialogEnable				{3: 'After five hours of watching the monitors, Ishmael calmly presses the last button, sealing off the Hetero-Creatures that Lee and Lucia have pushed back.'}
+169	169		301							{3: 'All threats along the evacuation route are eliminated, and the rest are locked behind impenetrable barriers.'}
+170	170		301							{3: 'The screen shows the team on the first floor.'}
+171	171		301							"{3: ""Gray Raven's mission is halfway done. All that remains is moving these 4000-plus people to the conservation area.""}"
+172	172		301							{3: 'Ishmael turns away from the monitors, stands up, and walks to a corner of the control room.'}
+173	173		301							{3: 'The wall there recedes inward, slides aside, and reveals an elevator.'}
+174	174		301				AniZhuanchangBegin			{3: 'She steps inside, pressing the button for B21.'}
+175	175		401							{1: '2', 2: '4801'}
+176	176		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory40.jpg'}
+177	177		301			AniZhuanchangEnd				{3: 'A moment later, the elevator doors open, and Ishmael steps into the small room ahead.'}
+178	178		301							"{3: 'Motion sensor lights activate as Ishmael walks in. The room is hardly ""spacious""—there is only a row of filing cabinets and a large computer glowing blue.'}"
+179	179		301							{3: 'It is like walking into a strange, little library.'}
+180	180		301							{3: 'Ishmael walks to one of the cabinets and pulls out a box. There is only a vacuum-sealed disc inside.'}
+181	181		201							{1: '1', 2: '500380'}
+182	182		301				AniZhuanchangBegin			{1: '1', 2: 'Ishmael', 3: 'Mission accomplished.', 4: '1', 18: '100006378'}
+183	183		202							{1: '1'}
+184	184		502						400.0	{1: 'DialogDisable'}
+185	185		401							{1: '1', 2: '36'}
+186	186		502						400.0	{1: 'DialogDisable'}
+187	187		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory702.jpg'}
+188	188		401							{1: '1', 2: '5068'}
+189	189		107							{1: 'Target Conservation Area', 2: 'Three days later, late at night'}
+190	190		301							{3: 'Three days later, late at night. Target conservation area.'}
+191	191		108							{1: '1'}
+192	192		301			DialogEnable				"{3: 'Gray Raven has successfully led the ""Dark Room"" residents to the conservation area.'}"
+193	193		301							{3: '47 people died during the battle and the escape. Hutu held a small funeral for them.'}
+194	194		301							{3: 'Regardless, it is all over now.'}
+195	195		301							{3: 'Ishmael sits in a corner of the conservation area, quietly watching as you talk to Hutu and the conservation area supervisor.'}
+196	196		301							{3: 'A young person runs up to the conservation area supervisor with a folder. After a brief exchange, the two of them step away, leaving Hutu and you.'}
+197	197		201							{1: '1', 2: '500229'}
+198	198		301							{1: '1', 2: 'Hutu', 3: 'I must thank you for this. Gray Raven definitely lives up to their name.', 4: '1', 18: '100006379'}
+199	199		302							"{2: ""It's what we do."", 3: '200'}"
+200	200		202							{1: '1'}
+201	201		301							{3: 'Ishmael would notice how you hesitate briefly before asking Hutu a question.'}
+202	202		301							{3: 'Hutu visibly tenses up afterward.'}
+203	203		301							{3: 'Your conversation ends shortly after. Hutu leaves with his head down, looking somewhat shameful.'}
+204	204		301							{3: 'As Hutu walks away, Ishmael comes over.'}
+205	205		201							{1: '1', 2: '500380', 3: '12'}
+206	206		301							{1: '1', 2: 'Ishmael', 3: 'Hey.', 4: '1', 18: '100006380'}
+207	207		302							{2: 'Madam Ishmael.', 3: '208', 4: 'Hey.', 5: '208'}
+208	208		302							{2: 'Thank you for your help this time.', 3: '209'}
+209	209		204							{1: '1'}
+210	210		301							{2: 'Ishmael', 3: 'I just did what I had to.', 4: '1', 18: '100006381'}
+211	211		301							{2: 'Ishmael', 3: 'What were you two talking about?', 4: '1', 18: '100006382'}
+212	212		302							{2: '...', 3: '213'}
+213	213		204							{1: '1', 2: '12'}
+214	214		301							"{2: 'Ishmael', 3: ""Is it something you'd rather not say? If so, you don't have to answer."", 4: '1', 18: '100006383'}"
+215	215		302							"{2: ""It's fine. It's not a secret."", 3: '216'}"
+216	216		302							"{2: ""I asked him why he didn't have Lee send the message."", 3: '217'}"
+217	217		302							"{2: ""Lee could've handled it on his own."", 3: '218'}"
+218	218		301							{3: 'Ishmael gives a knowing grin.'}
+219	219		204							{1: '1'}
+220	220		301							"{2: 'Ishmael', 3: ""Because he doesn't trust Babylonia?"", 4: '1', 18: '100006384'}"
+221	221		302							"{2: ""...No, he doesn't."", 3: '222'}"
+222	222		302							"{2: ""He was afraid Lee wouldn't come back."", 3: '223'}"
+223	223		302							"{2: ""He figured Gray Raven wouldn't abandon them if Lee stayed."", 3: '224'}"
+224	224		204							{1: '1', 2: '3'}
+225	225		301							{3: 'The pink-haired Construct frowns, looking a bit confused.'}
+226	226		301							{2: 'Ishmael', 3: 'Why was he so set on risking a move to the conservation area?', 4: '1', 18: '100006385'}
+227	227		204							{1: '1', 2: '12'}
+228	228		301							"{2: 'Ishmael', 3: 'I inspected the whole ""Dark Room"" while I was in the control room—there were still tons of supplies inside.', 4: '1', 18: '100006386'}"
+229	229		301							{2: 'Ishmael', 3: 'After we got rid of the Hetero-Creatures, they could have lived there for another ten years, however high the Punishing Virus level is outside.', 4: '1', 18: '100006387'}
+230	230		301							"{2: 'Ishmael', 3: ""Ten years... Isn't that good enough?"", 4: '1', 18: '100006388'}"
+231	231		302							"{2: ""It's about hope."", 3: '232'}"
+232	232		301							{2: 'Ishmael', 3: 'Hope?', 4: '1', 18: '100006389'}
+233	233		302							{2: 'They have hope for the future, so they refuse to stay in a tomb.', 3: '234'}
+234	234		301							{2: 'Ishmael', 3: 'Hope, huh...', 4: '1', 18: '100006390'}
+235	235		202							{1: '1'}
+236	236		301							{3: 'Ishmael thinks about that word over and over.'}
+237	237		301							"{3: 'It feels like forever since she had ""hope"", but how long has it been?'}"
+238	238		301							{3: 'She has been on a long journey, so long that her memories are a bit blurry.'}
+239	239		301							"{3: 'Does she, as she is now, still hold onto ""hope""?'}"
+240	240		301							{3: 'Time changes a lot, but some things leave a mark, like that die...'}
+241	241		201							{1: '1', 2: '500380', 3: '12'}
+242	242		301							{1: '1', 2: 'Ishmael', 3: '...Please wait a moment.', 4: '1', 18: '100006391'}
+243	243		301							{3: 'She calls out to you, who is about to leave.'}
+244	244		302							{2: 'Hm?', 3: '245', 4: 'What is it?', 5: '245'}
+245	245		301							{2: 'Ishmael', 3: 'I have something I want to give you.', 4: '1', 18: '100006392'}
+246	246		301							{3: 'Ishmael pulls out a wooden 20-sided die from her pocket and hands it to you.'}
+247	247		302							{2: 'This is...', 3: '248', 4: 'A die?', 5: '248'}
+248	248		301							"{2: 'Ishmael', 3: 'This is... ""hope"".', 4: '1', 18: '100006393'}"
+249	249		301							{3: 'Seeing the die in your hand, Ishmael seems momentarily taken aback.'}
+250	250		301							"{2: 'Ishmael', 3: ""Keep going. Don't stop, just keep going."", 4: '1', 18: '100006394'}"
+251	251		301							"{2: 'Ishmael', 3: ""That's what the person who gave me this die used to say."", 4: '1', 18: '100006395'}"
+252	252		204							{1: '1'}
+253	253		301							"{2: 'Ishmael', 3: ""It's yours now."", 4: '1', 18: '100006396'}"
+254	254		302							{2: '...Thank you.', 3: '255'}
+255	255		301							{3: 'The conservation area supervisor comes over. It seems that they have sorted things out.'}
+256	256		301							{2: 'Ishmael', 3: 'It appears that you are needed.', 4: '1', 18: '100006397'}
+257	257		202							{1: '1'}
+258	258		301							{3: 'Ishmael smiles and says goodbye before walking into the crowd.'}
+259	259		301							{3: 'She sees a little girl asking a guitar player to teach her, and he smiles and agrees.'}
+260	260		401							{1: '2', 2: '4076'}
+261	261		301							{3: 'Watching the crowd, she listens to the sound of guitar swell again.'}
+262	262		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V300cibeizhe/V300_01_02.jpg', 3: '0', 4: '1', 5: '0.8'}
+263	263		101							{1: 'Assets/Product/Texture/Image/BgComic/V300cibeizhe/V300_01_02.jpg'}
+264	264		301							{3: 'The twilight disappears from her view, and the cold, snowy wind hits her face again.'}
+265	265		301							{2: 'Ishmael', 3: 'They have hope for the future, so they refuse to stay in a tomb...', 18: '100006398'}
+266	266		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5101_05.jpg', 3: '0', 4: '1', 5: '0.8'}
+267	267		301							"{3: ""The singer's voice echoes in her ears as Ishmael tightens her cloak and watches the bonfire dance.""}"
+268	268		301		1		AniZhuanchangBegin			{2: 'Ishmael', 3: 'Can you still bring them hope this time?', 18: '100006399'}

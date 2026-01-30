@@ -1,0 +1,273 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		501				DialogEnable			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+4	4		301			AniZhuanchangEnd				"{3: ""It didn't last as long as the first time. Soon, you regain vision.""}"
+5	5		201							{1: '1', 2: '500166', 3: '2'}
+6	6		301							"{1: '1', 2: 'Lucia', 3: ""Commandant, you're awake."", 4: '1'}"
+7	7		301							{3: 'Lucia and others seem to have waken up earlier. They are standing around Tiger, while Lee is holding a device running some checks.'}
+8	8		302							{2: 'What is it?'}
+9	9		201							{1: '1', 2: '1031001'}
+10	10		301							"{1: '1', 2: 'Liv', 3: ""Tiger stopped moving after we woke up. Lee's checking it."", 4: '1'}"
+11	11		201							{1: '1', 2: '500026'}
+12	12		301							"{1: '1', 2: 'Lee', 3: ""It's just out of power. I don't see any other problem so far."", 4: '1'}"
+13	13		301							{2: 'Lee', 3: 'But I need to run more checks to know the details.', 4: '1'}
+14	14		202							{1: '1', 6: '1'}
+15	15		301							{2: 'Kamui', 3: 'Commandant! Commandant!'}
+16	16		301							"{3: ""Kamui's loud voice can be clearly heard through the lounge door.""}"
+17	17		302							{2: '(Open the door)', 3: '18'}
+18	18		201							{1: '1', 2: '1081001', 3: '1'}
+19	19		301							{1: '1', 2: 'Kamui', 3: 'Commandant! Why are you still here?', 4: '1'}
+20	20		204							{1: '1', 2: '2'}
+21	21		301							"{2: 'Kamui', 3: ""Everybody's waiting! I sneaked over because I couldn't sit still."", 4: '1'}"
+22	22		203							{1: '1', 2: '0.25', 3: '400'}
+23	23		201							{1: '2', 2: '500166', 4: '-400'}
+24	24		301							{1: '1', 2: 'Lucia', 3: 'Is it the party time already?', 4: '2'}
+25	25		301							"{2: 'Kamui', 3: ""It's way past that!"", 4: '1'}"
+26	26		301							{3: 'When you check the time, you realize it is already the next day.'}
+27	27		302							{2: 'Sorry...', 3: '28'}
+28	28		202							{1: '2', 6: '1'}
+29	29		203							{1: '1', 2: '0.25'}
+30	30		204							{1: '1', 2: '1'}
+31	31		301							"{2: 'Kamui', 3: ""It's all right. We can still fix it."", 4: '1'}"
+32	32		301							{3: 'With a bright smile, Kamui gives a thumbs up.'}
+33	33		301							"{2: 'Kamui', 3: ""This is the Eastern calendar's New Year, so we should adopt the Eastern time zone."", 4: '1'}"
+34	34		301							{2: 'Kamui', 3: 'If we go by that, there is still some time before the next day arrives!', 4: '1'}
+35	35		301							"{2: 'Kamui', 3: ""That's what Captain said."", 4: '1'}"
+36	36		204							{1: '1', 2: '2'}
+37	37		301							{2: 'Kamui', 3: 'Together, we can definitely make it!', 4: '1'}
+38	38		301							{3: 'Kamui gets ready to take off.'}
+39	39		201							{1: '1', 2: '500166', 3: '1'}
+40	40		301							"{1: '1', 2: 'Lucia', 3: ""Let's go, Commandant."", 4: '1'}"
+41	41		302							{2: 'One moment please.', 3: '42'}
+42	42		202							{1: '1', 6: '1'}
+43	43		301				AniZhuanchangBegin			{3: 'You turn back and put the no longer functioning Tiger in your arms before catching up with the rest.'}
+44	44		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory459.jpg'}
+45	45		401						400.0	{1: '1', 2: '36'}
+46	46		401							{1: '1', 2: '5'}
+47	47		301			AniZhuanchangEnd				"{3: ""You follow Kamui to the venue. The restaurant's cool color tone has completely changed.""}"
+48	48		301							{3: 'The floor is covered in red carpet. Red lanterns hang from the ceiling and are joined together by red silk, with red fortune knots in the center.'}
+49	49		301							{3: 'Many familiar faces have already gathered here.'}
+50	50		201							{1: '1', 2: '500336'}
+51	51		301							{1: '1', 2: 'Noctis', 3: 'Whatcha doing, 21? Why are you bumping the lantern?', 4: '1'}
+52	52		203							{1: '1', 2: '0.25', 3: '400'}
+53	53		201							{1: '2', 2: '500328', 4: '-400'}
+54	54		301							"{1: '1', 2: 'No. 21', 3: 'I just learned a phrase ""Moth to a Flame"". I am imitating a moth.', 4: '2'}"
+55	55		204							{1: '1', 2: '4'}
+56	56		301							{2: 'Noctis', 3: 'But it runs on electricity!', 4: '1'}
+57	57		202							{1: '1', 2: '2', 6: '1'}
+58	58		502							{1: 'RImgBg1Shake'}
+59	59		505					500.0	400.0	{1: 'RImgBg1Shake'}
+60	60		201							{1: '1', 2: '500128', 3: '1', 4: '-400'}
+61	61		201							{1: '2', 2: '500214', 3: '1', 4: '400'}
+62	62		301							{1: '1', 2: 'Rosetta', 3: 'So, have you also lived on a snowfield?', 4: '2'}
+63	63		301							{2: 'Bianca', 3: 'Right. The view back there may not be as magnificent as the polar regions, but still very beautiful.', 4: '1'}
+64	64		202							{1: '1', 2: '2', 6: '1'}
+65	65		201							{1: '1', 2: '500196'}
+66	66		301							"{1: '1', 2: 'Karenina', 3: ""Hey, why are they still not here? I'm going back!"", 4: '1'}"
+67	67		203							{1: '1', 2: '0.25', 3: '-400'}
+68	68		201							{1: '2', 2: '500273', 4: '400'}
+69	69		301							"{1: '1', 2: 'Wanshi', 3: ""You were the first to arrive... Aargh, I'm so sleepy..."", 4: '2'}"
+70	70		202							{1: '1', 2: '2', 6: '1'}
+71	71		201							{1: '1', 2: '500110', 3: '1'}
+72	72		301							"{1: '1', 2: 'Ayla', 3: ""Something must have caught up with them. But I'm sure they will come eventually."", 4: '1'}"
+73	73		201							{1: '1', 2: '500004', 3: '8', 4: '400'}
+74	74		201							{1: '2', 2: '500001', 4: '-400'}
+75	75		301							{1: '1', 2: 'Asimov', 3: 'Why do I also have to be here...', 4: '1'}
+76	76		301							"{2: 'Celica', 3: ""Because we don't want you to exhaust yourself to death in the lab!"", 4: '2'}"
+77	77		201							{1: '2', 2: '500168', 3: '1', 4: '-400'}
+78	78		301							"{1: '1', 2: 'Vera', 3: ""Look who's here! You sure have some guts to keep everyone waiting for so long."", 4: '2'}"
+79	79		204							{1: '1'}
+80	80		301							{2: 'Asimov', 3: 'Is that a new CUB in your hand? Let me have a look.', 4: '1'}
+81	81		202							{1: '1', 2: '2', 6: '1'}
+82	82		201							{1: '1', 2: '500001', 3: '2'}
+83	83		301							"{1: '1', 2: 'Celica', 3: ""Please don't start working again, Mr. Asimov!"", 4: '1'}"
+84	84		201							{1: '1', 2: '500309', 3: '1'}
+85	85		301							{1: '1', 2: 'Chrome', 3: 'Welcome, Commandant.', 4: '1'}
+86	86		302				AniZhuanchangBegin			{2: 'Sorry we are late.', 3: '87'}
+87	87		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory309.png'}
+88	88		202				AniZhuanchangEnd			{1: '1', 2: '2', 6: '1'}
+89	89		301			DialogEnable				{3: 'Meanwhile, on the earth.'}
+90	90		201							{1: '1', 2: '500084'}
+91	91		301							{1: '1', 2: 'Rohacchi', 3: 'Nanami? What, are, you, doing?', 4: '1'}
+92	92		301							{3: 'The girl is only waving at the sky and not responding. Rohacchi pokes the giant bionic bear next to it.'}
+93	93		301							"{2: 'Rohacchi', 3: ""I'll, leave it, to you."", 4: '1'}"
+94	94		203							{1: '1', 2: '0.25', 3: '-400'}
+95	95		201							{1: '2', 2: '500211', 4: '400'}
+96	96		301							{1: '1', 2: 'Martin', 3: 'I see.', 4: '2'}
+97	97		301							{2: 'Martin', 3: 'Phew...', 4: '2'}
+98	98		202							{1: '1', 6: '1'}
+99	99		203							{1: '2', 2: '0.25'}
+100	100		301							{2: 'Martin', 3: 'Na! Na! Mi! Rawr!', 4: '2'}
+101	101		203							{1: '2', 2: '0.25', 3: '400'}
+102	102		201							{1: '1', 2: '500091', 4: '-400'}
+103	103		301							{1: '1', 2: 'Nanami', 3: 'Aah!', 4: '1'}
+104	104		204							{1: '1', 2: '8'}
+105	105		301							"{2: 'Nanami', 3: ""Oh, it's you, Martin. I thought it was a bear."", 4: '1'}"
+106	106		301							{2: 'Martin', 3: 'But I am a bear...', 4: '2'}
+107	107		201							{1: '2', 2: '500084', 4: '400'}
+108	108		301							{1: '1', 2: 'Rohacchi', 3: 'Nanami, spacing out. Something on your mind?', 4: '2'}
+109	109		204							{1: '1', 2: '1'}
+110	110		301							{2: 'Nanami', 3: 'No. I was just saying hello to my friends in the sky.', 4: '1'}
+111	111		301							{2: 'Rohacchi', 3: 'Friends, in the sky?', 4: '2'}
+112	112		301							{2: 'Rohacchi', 3: 'You mean, Gray Raven?', 4: '2'}
+113	113		301							{2: 'Nanami', 3: 'Not only them. There are many others too!', 4: '1'}
+114	114		201							{1: '2', 2: '500211', 4: '400'}
+115	115		301							"{1: '1', 2: 'Martin', 3: ""Why don't you go up then? You could have given them the gift in person."", 4: '2'}"
+116	116		301							"{2: 'Nanami', 3: ""Because Rohacchi and Martin are still here. I won't give up any side!"", 4: '1'}"
+117	117		301							{2: 'Nanami', 3: 'I want all of you!', 4: '1'}
+118	118		301							{2: 'Nanami', 3: 'Speaking of which, have you found what I need?', 4: '1'}
+119	119		301							{2: 'Martin', 3: 'Yes. Will this work?', 4: '2'}
+120	120		301							{2: 'Nanami', 3: 'Of course!', 4: '1'}
+121	121		202							{1: '1', 2: '2', 6: '1'}
+122	122		401							{1: '1', 2: '205'}
+123	123		301							{3: 'Nanami takes a few large scrolls of red cardboard sheets that are almost as tall as her. She puts them next to some materials on the ground and starts working.'}
+124	124		201							{1: '1', 2: '500091', 3: '1'}
+125	125		301							{1: '1', 2: 'Nanami', 3: 'Let me do this... and that... Chugga chugga...', 4: '1'}
+126	126		301							{3: 'Rohacchi and Martin look at each other and tacitly step back together.'}
+127	127		301							{2: 'Nanami', 3: 'And hola! Done!', 4: '1'}
+128	128		301							{2: 'Nanami', 3: 'Rohacchi, Martin, look... Why are you staying so far away?', 4: '1'}
+129	129		201							{1: '1', 2: '500084', 4: '-400'}
+130	130		201							{1: '2', 2: '500211', 4: '400'}
+131	131		301							{1: '1', 2: 'Rohacchi', 3: 'Because, danger.', 4: '1'}
+132	132		301							{2: 'Martin', 3: 'What did you do this time?', 4: '2'}
+133	133		201							{1: '1', 2: '500091', 3: '1', 4: '-400'}
+134	134		301							"{1: '1', 2: 'Nanami', 3: ""Hoho, it's my super-giga firecracker!... Hey, why are you moving further away?!"", 4: '1'}"
+135	135		301							{2: 'Martin', 3: 'Why do you want to make this bomb... I mean, Firecracker.', 4: '2'}
+136	136		301							"{2: 'Nanami', 3: ""Because today is New Year. Can't celebrate it without firecrackers."", 4: '1'}"
+137	137		301							{2: 'Nanami', 3: 'Too bad I only have materials for one.', 4: '1'}
+138	138		301							"{2: 'Martin', 3: ""Then don't make it so big!"", 4: '2'}"
+139	139		202							{1: '1', 2: '2', 6: '1'}
+140	140		301							"{3: 'Martin points at the ""firecracker"" next to Nanami.'}"
+141	141		301							{3: 'It is a red cylinder that is 1.5 times the height of Nanami, with a diameter of more than 2 times the width of Martin. Nobody knows how Nanami managed to let this humongous thing sit firmly on the soft muddy ground.'}
+142	142		201							{1: '1', 2: '500091', 3: '8'}
+143	143		301							"{1: '1', 2: 'Nanami', 3: ""You still don't understand, Martin."", 4: '1'}"
+144	144		301							{3: 'Nanami shakes her head, acting mature.'}
+145	145		204							{1: '1', 2: '1'}
+146	146		301							"{2: 'Nanami', 3: ""It ain't art if it's not this big."", 4: '1'}"
+147	147		301							"{2: 'Nanami', 3: ""Relax, I have done a lot of calculations. There won't be any danger."", 4: '1'}"
+148	148		301							"{2: 'Nanami', 3: ""Alright, Martin, help me light it up. The fuse is too high, I can't reach it."", 4: '1'}"
+149	149		201							{1: '1', 2: '500211'}
+150	150		301							"{1: '1', 2: 'Martin', 3: ""You're so..."", 4: '1'}"
+151	151		301							{3: 'Martin is complaining, but still walks out from the rock and takes the lighter from Nanami.'}
+152	152		301							{2: 'Martin', 3: 'Like this?', 4: '1'}
+153	153		201							{1: '1', 2: '500091', 3: '1'}
+154	154		301							{1: '1', 2: 'Nanami', 3: 'Yeah.', 4: '1'}
+155	155		301							{2: 'Nanami', 3: 'Now, run!', 4: '1'}
+156	156		201							{1: '1', 2: '500211'}
+157	157		301							{1: '1', 2: 'Martin', 3: '?', 4: '1'}
+158	158		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+159	159		301							{3: 'Before Martin can react, Nanami has already grabbed its claw and run toward the place it was hiding earlier.'}
+160	160		301							{2: 'Martin', 3: 'You said it would be safe!', 4: '1'}
+161	161		201							{1: '1', 2: '500091', 3: '1'}
+162	162		301				AniZhuanchangBegin			{1: '1', 2: 'Nanami', 3: 'Hahahahaha.', 4: '1'}
+163	163		401						400.0	{1: '1', 2: '36'}
+164	164		401							{1: '1', 2: '5'}
+165	165		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+166	166		301			AniZhuanchangEnd				{3: 'After coming behind the rock, Nanami covers her ears and stares at the red firecracker without blinking.'}
+167	167		301							{3: 'A long time as passed, but the deafening explosion is nowhere to be heard.'}
+168	168		201							{1: '1', 2: '500084', 4: '-400'}
+169	169		201							{1: '2', 2: '500211', 4: '400'}
+170	170		301							{1: '1', 2: 'Rohacchi', 3: 'Is it, faulty?', 4: '1'}
+171	171		301							{2: 'Martin', 3: 'The gunpowder we found was left unattended for many years.', 4: '2'}
+172	172		202							{1: '1', 2: '2', 6: '1'}
+173	173		201							{1: '1', 2: '500091', 3: '8'}
+174	174		301							{1: '1', 2: 'Nanami', 3: 'Hmm...', 4: '1'}
+175	175		202							{1: '1', 2: '2', 6: '1'}
+176	176		301							{3: 'Nanami lowers her head. Rohacchi and Martin could not see her face in the night, but they know she must be disappointed.'}
+177	177		201							{1: '1', 2: '500211'}
+178	178		301							{1: '1', 2: 'Martin', 3: 'Nanami...', 4: '1'}
+179	179		401							{1: '2', 2: '954'}
+180	180		401							{1: '1', 2: '36'}
+181	181		301							"{3: '""Swoosh—""'}"
+182	182		202							{1: '1', 6: '1'}
+183	183		301							{3: 'Martin is interrupted by a long, swooshing noise from afar.'}
+184	184		301							{3: 'Nanami also looks up after hearing the noise.'}
+185	185		401						200.0	{1: '2', 2: '10001108'}
+186	186		401							{1: '2', 2: '821531'}
+187	187		401							{1: '1', 2: '49'}
+188	188		301							{3: 'Bang!'}
+189	189		301							"{3: ""Warm, gentle light shines upon the girl's cheeks.""}"
+190	190		201							{1: '1', 2: '500084'}
+191	191		301							{1: '1', 2: 'Rohacchi', 3: 'Is, that, the Conservation Area?', 4: '1'}
+192	192		202							{1: '1', 6: '1'}
+193	193		301							{3: 'As Rohacchi speaks, another firework has climbed to the sky in a different direction.'}
+194	194		401						200.0	{1: '2', 2: '10001108'}
+195	195		401							{1: '2', 2: '821531'}
+196	196		301							{3: 'Bang!'}
+197	197		301							{3: 'It explodes into an orange flower.'}
+198	198		401						100.0	{1: '2', 2: '954'}
+199	199		401						200.0	{1: '2', 2: '954'}
+200	200		401						500.0	{1: '2', 2: '954'}
+201	201		401							{1: '2', 2: '954'}
+202	202		301							"{3: '""Swoosh—""'}"
+203	203		401						400.0	{1: '2', 2: '10001108'}
+204	204		401						400.0	{1: '2', 2: '10001108'}
+205	205		401						200.0	{1: '2', 2: '10001108'}
+206	206		401						200.0	{1: '2', 2: '10001108'}
+207	207		401							{1: '2', 2: '821531'}
+208	208		301							{3: 'Bang!'}
+209	209		301							{3: 'More fireworks, near and far, start to rise from different directions and locations.'}
+210	210		301							{3: 'Some are brighter, some last longer, some are larger and some are louder. They have painted a new chart of stars on the night canvas.'}
+211	211		301							"{3: ""Nanami's eyes are lit up by the dazzling sparks.""}"
+212	212		301							{3: 'The night sky is deeper than the universe, more brilliant than a nebula and brighter than daylight.'}
+213	213		301							{3: 'Ignite the path with light. Expel the winter with fire. The crackling sound is a hymn to celebrate life and hope.'}
+214	214		301							{3: 'Like ancient cities that use beacons to communicate with one another, the remaining humans on this land are launching the fireworks to announce the arrival of tomorrow on this special day.'}
+215	215		301							{3: 'Bid farewell to the night and embrace the new dawn. If the sky is still dark, then ignite it.'}
+216	216		301							{3: 'This mindset is probably what keeps humankind going forward no matter what obstacles they face.'}
+217	217		201							{1: '1', 2: '500091', 3: '1'}
+218	218		301							{1: '1', 2: 'Nanami', 3: 'Happy New Year...', 4: '1'}
+219	219		201							{1: '1', 2: '500084', 4: '-400'}
+220	220		201							{1: '2', 2: '500211', 4: '400'}
+221	221		301							"{1: '1', 2: 'Martin', 3: ""Hmm? Did you say anything, Nanami? It's too noisy here. Speaking of which, can you smell something burnt?"", 4: '2'}"
+222	222		301							{2: 'Rohacchi', 3: 'From, behind.', 4: '1'}
+223	223		201							{1: '1', 2: '500084', 4: '600'}
+224	224		201							{1: '2', 2: '500211', 4: '-600'}
+225	225		201							{1: '3', 2: '500091', 4: '100'}
+226	226		301							{1: '1', 2: 'Nanami & Martin & Rohacchi', 3: '?!', 4: '1', 5: '2', 6: '3'}
+227	227		301							"{3: ""Three of them quickly turn around and see an orange dot quickly flashing on the top of Nanami's firecracker.""}"
+228	228		301							{2: 'Nanami & Martin & Rohacchi', 3: '!!', 4: '1', 5: '2', 6: '3'}
+229	229		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+230	230		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+231	231		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory294.png'}
+232	232		401							{1: '2', 2: '10007502'}
+233	233		301			RImgBg1Shake				{3: 'Bang!'}
+234	234		301							{3: 'That is the loudest explosion of the night. Martin and Rohacchi can even feel the ground tremble.'}
+235	235		301							{3: 'When Martin finally waves away the white smoke, it finds itself covered in red debris.'}
+236	236		301							{3: 'Rohacchi and Nanami are not any better. Nanami is even worse. Shredded red paper is all over her hair, her cheeks are darkened by ash.'}
+237	237		301				AniZhuanchangBegin			{3: 'But her eyes are still bright and twinkling.'}
+238	238		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory309.png'}
+239	239		201							{1: '1', 2: '500211'}
+240	240		301			AniZhuanchangEnd				{1: '1', 2: 'Martin', 3: 'Cough... Are you alright, Nanami? What were you saying just now?', 4: '1'}
+241	241		201							{1: '1', 2: '500091', 3: '1'}
+242	242		301							"{1: '1', 2: 'Nanami', 3: ""I'm fine. I was saying happy new..."", 4: '1'}"
+243	243		301							"{2: 'Nanami', 3: ""Actually, I changed my mind. Let's do New Year countdown together."", 4: '1'}"
+244	244		201							{1: '1', 2: '500084'}
+245	245		301							{1: '1', 2: 'Rohacchi', 3: 'Why, do, so?', 4: '1'}
+246	246		201							{1: '1', 2: '500091', 3: '1'}
+247	247		301							"{1: '1', 2: 'Nanami', 3: ""It's the new year countdown."", 4: '1'}"
+248	248		301							{2: 'Nanami', 3: 'Of course we have to do it together!', 4: '1'}
+249	249		509							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory459.jpg', 2: '2'}
+250	250		203							{1: '1', 2: '0.25', 3: '-450'}
+251	251		201							{1: '13', 2: '1081001', 3: '2', 4: '450', 7: '1'}
+252	252		302							{2: 'Do you want me to lead the countdown?', 3: '253'}
+253	253		301				DialogDisable			"{2: 'Kamui', 3: ""Of course, Commandant. You're the best person to do this here."", 4: '13'}"
+254	254		302							{2: '...', 3: '255'}
+255	255		302							{2: 'New Year countdown is a wonderful thing.', 3: '256'}
+256	256		302							{2: 'Of course we have to do it together!'}
+257	257		201							{1: '13', 2: '500001', 4: '450'}
+258	258		301			DialogEnable				"{1: '1', 2: 'Celica', 3: ""【kuroname】 is right. Let's do it."", 4: '13'}"
+259	259		302							{2: '3', 3: '260'}
+260	260		201							{1: '13', 2: '500026', 4: '450'}
+261	261		301							{1: '1', 2: 'Nanami & Lee', 3: '3', 4: '1', 5: '13'}
+262	262		302							{2: '2', 3: '263'}
+263	263		201							{1: '13', 2: '1031001', 3: '1', 4: '450'}
+264	264		301							{1: '1', 2: 'Nanami & Liv', 3: '2', 4: '1', 5: '13'}
+265	265		302							{2: '1', 3: '266'}
+266	266		201							{1: '13', 2: '500166', 3: '2', 4: '450'}
+267	267		301							{1: '1', 2: 'Nanami & Lucia', 3: '1', 4: '1', 5: '13'}
+268	268		301				AniZhuanchangBegin			{2: 'Everyone', 3: 'Happy New Year!', 4: '1', 5: '13'}
+269	269		202							{1: '1', 2: '13', 6: '1'}
+270	270		510						400.0	{1: '2'}
+271	271		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+272	272		301		1	AniZhuanchangEnd	AniZhuanchangBegin			"{3: ""Let's have another great year together.""}"

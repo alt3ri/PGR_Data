@@ -1,0 +1,316 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory758.jpg'}
+2	2		401							{1: '2', 2: '2915'}
+3	3		401							{1: '1', 2: '6121'}
+4	4		502						250.0	{1: 'DialogDisable'}
+5	5		107							{1: 'New Oakley', 2: '9:21PM'}
+6	6		301							{3: '9:21 p.m., New Oakley'}
+7	7		108						250.0	
+8	8		401							{1: '2', 2: '5328'}
+9	9		201							{1: '1', 2: '500139'}
+10	10		203						250.0	{1: '1', 2: '0.25', 5: '-100'}
+11	11		203							{1: '1', 2: '0.25'}
+12	12		301			DialogEnable				{1: '1', 2: 'Armed Resident B', 3: 'Cheers!', 4: '1'}
+13	13		202							{1: '1'}
+14	14		301							{3: 'Compared to residents of other conservation areas, the people of New Oakley seem to be born with thicker skin.'}
+15	15		301							"{3: 'Not long after repelling a wave of Hetero-Creature attacks, some have already started celebrating. In their words, ""It\'s called celebrating living through another day.""'}"
+16	16		201							{1: '1', 2: '500454', 4: '400'}
+17	17		201							{1: '2', 2: '500420', 4: '-400'}
+18	18		301							"{1: '1', 2: 'Drunk Resident', 3: ""Say, don't you think it's about time we get out of here too?"", 4: '1'}"
+19	19		301							"{2: 'Armed Resident C', 3: ""Get out? And go where? Those bat freaks are everywhere. It's all the same no matter where we go."", 4: '2'}"
+20	20		301							"{2: 'Drunk Resident', 3: ""The Forsaken, Babylonia's conservation areas. Anywhere's fine. Just somewhere with more people around."", 4: '1'}"
+21	21		301							"{2: 'Armed Resident C', 3: ""Doesn't matter to me, I'm on my own. But if we really are leaving, it'll probably happen in the next few days."", 4: '2'}"
+22	22		301							"{2: 'Drunk Resident', 3: ""Looks like I'll need to pack my bags tonight..."", 4: '1'}"
+23	23		202							{1: '1', 2: '2', 6: '1'}
+24	24		306							{1: '1'}
+25	25		502							{1: 'RImgBg1BlowUp'}
+26	26		301							{3: 'Dante weaves through the bustling crowd, two drinks in hand, his gaze lighting up as he spots you tucked away in the corner.'}
+27	27		505							{1: 'RImgBg1BlowUp'}
+28	28		306							
+29	29		301				DialogDisable			{3: 'Sliding into the seat across from you, he pushes one of the glasses your way.'}
+30	30		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+31	31		402							{1: '2915'}
+32	32		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_6.jpg'}
+33	33		104						1000.0	{1: '250|180|-250', 2: '0'}
+34	34		104						1000.0	{1: '0|0|0', 2: '1'}
+35	35		301			DialogEnable				{2: 'Dante', 3: 'Fancy a glass?'}
+36	36		302							{2: 'Thank you.', 3: '37'}
+37	37		301							{2: 'Dante', 3: 'Not bad taking charge back there. Makes me think this team-up might actually work.'}
+38	38		302							"{2: ""You're not bad either. Few can wield a sword like that."", 3: '39'}"
+39	39		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_7.jpg', 3: '0', 4: '1', 5: '0.25'}
+40	40		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_7.jpg', 3: '1', 4: '0', 5: '0'}
+41	41		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_7.jpg'}
+42	42		301							{2: 'Dante', 3: 'Heh, wait until you see my other tricks.'}
+43	43		302							"{2: ""Don't you need to be with Vergil? Isn't he your..."", 3: '44'}"
+44	44		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_6.jpg', 3: '0', 4: '1', 5: '0.25'}
+45	45		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_6.jpg', 3: '1', 4: '0', 5: '0'}
+46	46		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_6.jpg'}
+47	47		301							"{2: 'Dante', 3: ""Don't worry about him. He's just not big on crowds.""}"
+48	48		301							{3: 'Dante drinks from his cup, not pursuing the topic any further.'}
+49	49		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_7.jpg', 3: '0', 4: '1', 5: '0.25'}
+50	50		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_7.jpg', 3: '1', 4: '0', 5: '0'}
+51	51		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_7.jpg'}
+52	52		301				DialogDisable			{2: 'Dante', 3: 'Have you talked to that girl?'}
+53	53		302							{2: 'Yeah, I have.', 3: '54'}
+54	54		302							"{2: ""Doesn't know much about the tower. Thomas kept her away."", 3: '55'}"
+55	55		301			DialogEnable	DialogDisable			{2: 'Dante', 3: 'So, when are we heading to the Babel Tower?'}
+56	56		302							{2: 'The Support Force from Babylonia will get here tonight.', 3: '57'}
+57	57		302							"{2: ""Once we've restocked, we'll head there tomorrow."", 3: '58'}"
+58	58		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_6.jpg', 3: '0', 4: '1', 5: '0.25'}
+59	59		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_6.jpg', 3: '1', 4: '0', 5: '0'}
+60	60		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_6.jpg'}
+61	61		301			DialogEnable				{2: 'Dante', 3: 'Looks like things will wrap up here soon.'}
+62	62		301							{2: 'Dante', 3: 'Hetero-Creatures... The Punishing Virus... Everything here is scary even for a guy who deals with demons in his daily life like me.'}
+63	63		302							{2: 'You...', 3: '64'}
+64	64		301							{2: 'Dante', 3: 'What?'}
+65	65		302							{2: 'I was just wondering what your world is like.', 3: '66'}
+66	66		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_8.jpg', 3: '0', 4: '1', 5: '0.25'}
+67	67		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_8.jpg', 3: '1', 4: '0', 5: '0'}
+68	68		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_8.jpg'}
+69	69		301							{2: 'Dante', 3: 'My world, huh...'}
+70	70		401							{1: '2', 2: '5288'}
+71	71		301							{3: 'Dante takes another sip of his drink and shifts into a more comfortable position.'}
+72	72		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_7.jpg', 3: '0', 4: '1', 5: '0.25'}
+73	73		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_7.jpg', 3: '1', 4: '0', 5: '0'}
+74	74		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_7.jpg'}
+75	75		301							"{2: 'Dante', 3: ""Hard to explain, really. You've probably figured out I'm not exactly your average human.""}"
+76	76		301							{2: 'Dante', 3: 'My father came from the Demon World, so half of me is demon blood.'}
+77	77		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_8.jpg', 3: '0', 4: '1', 5: '0.25'}
+78	78		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_8.jpg', 3: '1', 4: '0', 5: '0'}
+79	79		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_8.jpg'}
+80	80		301							"{2: 'Dante', 3: ""Demon World and Human World... Even I can't tell which one I belong to. Maybe my world is just that home I had...""}"
+81	81		306						200.0	{1: '1'}
+82	82		401							{1: '2', 2: '979'}
+83	83		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory758.jpg', 3: '0', 4: '1', 5: '0.25'}
+84	84		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory758.jpg', 3: '1', 4: '0', 5: '0'}
+85	85		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory758.jpg'}
+86	86		502							{1: 'RImgBg1BlowUp'}
+87	87		301							{3: 'He gazes at the campfire, lost in thought, seemingly reminiscing about his childhood.'}
+88	88		301							{3: 'But time never flows backward. Memories are like sparks in the air—brilliant one moment, gone the next.'}
+89	89		301							"{3: ""At least he still has family. The thought suddenly flickers through Dante's mind.""}"
+90	90		301							"{3: ""His gaze drifts to a quiet corner beyond the campfire's glow. There, Vergil leans against the wall, arms crossed, exchanging sparse words with Alpha beside him.""}"
+91	91		505							{1: 'RImgBg1BlowUp'}
+92	92		301							"{3: ""As Dante looks at Vergil's white hair and that face so like his own, he can't help but think of a certain young man, a smile tugging at his lips.""}"
+93	93		306							
+94	94		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_8.jpg', 3: '0', 4: '1', 5: '0.25'}
+95	95		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_8.jpg', 3: '1', 4: '0', 5: '0'}
+96	96		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_8.jpg'}
+97	97		301				DialogDisable			{2: 'Dante', 3: 'Nero would never guess what Vergil and I are experiencing right now.'}
+98	98		509						350.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory758.jpg', 2: '2'}
+99	99		201							{1: '1', 2: '501234', 4: '550'}
+100	100		301			DialogEnable				{1: '1', 3: 'Vergil feels the weight of his stare and glances over. Dante answers with a grin—and a raised middle finger.'}
+101	101		204							{1: '1', 2: '8'}
+102	102		301				DialogDisable			{2: 'Vergil', 3: 'You fool.', 4: '1'}
+103	103		202							{1: '1', 6: '1'}
+104	104		510						350.0	{1: '2', 2: 'Assets/Product/Texture/Image/BgStory/BgStory758.jpg'}
+105	105		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_6.jpg', 3: '0', 4: '1', 5: '0.25'}
+106	106		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_6.jpg', 3: '1', 4: '0', 5: '0'}
+107	107		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_6.jpg'}
+108	108		301			DialogEnable				{3: 'Dante lowers his hand, then continues.'}
+109	109		301							"{2: 'Dante', 3: ""The Human World's nothing special, just demons causing trouble now and then. Kinda like how this place would be without that Punishing Virus.""}"
+110	110		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_8.jpg', 3: '0', 4: '1', 5: '0.25'}
+111	111		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_8.jpg', 3: '1', 4: '0', 5: '0'}
+112	112		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_8.jpg'}
+113	113		301							{2: 'Dante', 3: 'While the Demon World...'}
+114	114		301							{3: 'He lets out a derisive snort.'}
+115	115		301							{2: 'Dante', 3: 'That place is crawling with disgusting freaks. Nothing worth talking about.'}
+116	116		302							{2: 'What do you think of this world?'}
+117	117		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_6.jpg', 3: '0', 4: '1', 5: '0.25'}
+118	118		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_6.jpg', 3: '1', 4: '0', 5: '0'}
+119	119		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_6.jpg'}
+120	120		301							{2: 'Dante', 3: 'Well...'}
+121	121		301							{3: 'He speaks with brutal honesty.'}
+122	122		301							"{2: 'Dante', 3: ""I think this world's doomed.""}"
+123	123		302							{2: '...', 3: '124'}
+124	124		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_7.jpg', 3: '0', 4: '1', 5: '0.25'}
+125	125		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_7.jpg', 3: '1', 4: '0', 5: '0'}
+126	126		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_7.jpg'}
+127	127		301							"{2: 'Dante', 3: ""And yet, aren't you helping this world?""}"
+128	128		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_8.jpg', 3: '0', 4: '1', 5: '0.25'}
+129	129		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_8.jpg', 3: '1', 4: '0', 5: '0'}
+130	130		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_8.jpg'}
+131	131		301							{3: 'Dante jerks his chin toward the campfire.'}
+132	132		301							"{2: 'Dante', 3: ""People are still kicking, and they've got pizza here. Could be much worse.""}"
+133	133		401							{1: '2', 2: '4416'}
+134	134		301							"{3: ""The sound of an approaching convoy echoes from afar, adding to the town's growing clamor. Lee's message chimes timely from your terminal.""}"
+135	135		401							{1: '2', 2: '4884'}
+136	136		201							{1: '18', 2: '500568'}
+137	137		301							{1: '1', 2: 'Lee', 3: 'The Support Force has arrived.', 4: '18'}
+138	138		202							{1: '18'}
+139	139		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab'}
+140	140		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_6.jpg', 3: '0', 4: '1', 5: '0.25'}
+141	141		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_6.jpg', 3: '1', 4: '0', 5: '0'}
+142	142		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_6.jpg'}
+143	143		301							"{2: 'Dante', 3: ""Looks like it's time for you to get to work.""}"
+144	144		301							{3: 'He raises his drink, bringing your conversation to a close.'}
+145	145		301							"{2: 'Dante', 3: ""Since we're hitting up the Babel Tower tomorrow, make sure to rest well tonight.""}"
+146	146		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_7.jpg', 3: '0', 4: '1', 5: '0.25'}
+147	147		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_7.jpg', 3: '1', 4: '0', 5: '0'}
+148	148		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_7.jpg'}
+149	149		301				DialogDisable			"{2: 'Dante', 3: ""Well, here's to tomorrow.""}"
+150	150		302							{2: 'To tomorrow.', 3: '151'}
+151	151		401				AniZhuanchangBegin			{1: '2', 2: '5328'}
+152	152		401							{1: '1', 2: '36'}
+153	153		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory608.jpg'}
+154	154		401							{1: '1', 2: '6182'}
+155	155		301			DialogEnable				{3: 'You meet Bridget at the edge of the town.'}
+156	156		201							{1: '1', 2: '500906', 3: '2'}
+157	157		301							{1: '1', 2: 'Bridget', 3: 'Hey, 【kuroname】.', 4: '1'}
+158	158		204							{1: '1'}
+159	159		301							{2: 'Bridget', 3: 'All the weapons and ammo are here, and your power armor.', 4: '1'}
+160	160		302							{2: 'Thank you.', 3: '161'}
+161	161		204							{1: '1', 2: '2'}
+162	162		301							{2: 'Bridget', 3: 'Just doing my job.', 4: '1'}
+163	163		302							{2: 'And one more thing...', 3: '164'}
+164	164		204							{1: '1', 2: '3'}
+165	165		301				DialogDisable			{2: 'Bridget', 3: 'Hm?', 4: '1'}
+166	166		302							{2: 'Can I have some of the Support Force to stay behind and guard this place?', 3: '167'}
+167	167		302							{2: 'According to our intel, Hetero-Creatures are trying to capture Lyca.', 3: '168'}
+168	168		204							{1: '1', 2: '4'}
+169	169		301			DialogEnable	DialogDisable			{2: 'Bridget', 3: 'The little girl mentioned in the report...?', 4: '1'}
+170	170		302							{2: 'Yeah, the Mirror Demon may have learned that Lyca is here.', 3: '171'}
+171	171		302							"{2: ""With Dante away tomorrow, the town's defenses will be vulnerable. We need someone to stay back and take care of Lyca."", 3: '172'}"
+172	172		301			DialogEnable	AniZhuanchangBegin			"{2: 'Bridget', 3: ""No problem, leave it to me. I'll take good care of her."", 4: '1'}"
+173	173		401							{1: '1', 2: '36'}
+174	174		202							{1: '1', 6: '1'}
+175	175		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory758.jpg'}
+176	176		401							{1: '1', 2: '207'}
+177	177		502							{1: 'RImgBg1BlowUp'}
+178	178		301			AniZhuanchangEnd				{3: 'Lyca strolls through the town, taking in the bustling atmosphere.'}
+179	179		301							{3: 'After speaking with the commandant from Babylonia, she can finally wash away days of exhaustion from being on the run.'}
+180	180		301							{3: 'Though drowsiness lingers at the edges of her mind, curiosity wins out. She wants to explore the town first.'}
+181	181		301							{3: 'Born in Babylonia, she has never set foot on the surface before. Until now, it existed only in images and secondhand stories.'}
+182	182		301							{3: 'New Oakley is her first real glimpse of a human settlement on the surface.'}
+183	183		505							{1: 'RImgBg1BlowUp'}
+184	184		301				DialogDisable			{2: '???', 3: 'Child...'}
+185	185		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+186	186		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_10.jpg'}
+187	187		201							{1: '1', 2: '500251'}
+188	188		301			DialogEnable				{1: '1', 3: 'A voice cuts through her thoughts. She turns to see an elderly woman with warm, crinkled eyes waving at her.'}
+189	189		301				DialogDisable			{2: 'Elderly Woman', 3: 'Care to join me here for a moment?', 4: '1'}
+190	190		202							{1: '1'}
+191	191		401						50.0	{1: '2', 2: '2635'}
+192	192		401							{1: '2', 2: '2635'}
+193	193		104						300.0	{1: '0|-30|-100', 2: '0.25'}
+194	194		104							{1: '0|0|-100', 2: '0.3'}
+195	195		301			DialogEnable				{3: 'After a moment of hesitation, Lyca walks toward the elderly woman.'}
+196	196		401							{1: '2', 2: '2936'}
+197	197		201							{1: '1', 2: '500251', 4: '-400'}
+198	198		201							{1: '2', 2: '501260', 4: '300'}
+199	199		301							{1: '1', 3: 'The woman cradles a bag in her arms. Seeing Lyca approach, she reaches inside and pulls out a tangerine.'}
+200	200		301							{2: 'Elderly Woman', 3: 'Here, try this.', 4: '1'}
+201	201		203						500.0	{1: '2', 2: '0.5', 3: '0', 4: '-80'}
+202	202		203							{1: '2', 2: '0.3', 3: '300'}
+203	203		301							{3: 'Lyca accepts the fruit, and the elderly woman pats the space beside her, inviting her to sit. Then, she asks—'}
+204	204		301							"{2: 'Elderly Woman', 3: ""You're a new face. I take it you just arrived in town recently?"", 4: '1'}"
+205	205		301							{2: 'Lyca', 3: 'Yes...', 4: '2'}
+206	206		301							{2: 'Elderly Woman', 3: 'Are you here alone?', 4: '1'}
+207	207		301							"{2: 'Lyca', 3: ""I have my dad... but he's not here right now. He told me to run ahead by myself."", 4: '2'}"
+208	208		301							"{3: ""Whatever scene plays out in the woman's mind, her face is etched with quiet sympathy.""}"
+209	209		301							"{2: 'Elderly Woman', 3: ""Sure wasn't easy, though..."", 4: '1'}"
+210	210		301							{2: 'Elderly Woman', 3: 'I used to have a granddaughter. If not for that incident, she would be about your height by now.', 4: '1'}
+211	211		301							{2: 'Elderly Woman', 3: '...Surviving is what matters.', 4: '1'}
+212	212		301							"{2: 'Elderly Woman', 3: ""Have you found a place to stay? If not, you're welcome to stay with me for now. Later on, you could learn a trade—mechanical repairs, gun-making, bullet crafting... things like that. You'll find a way to get by."", 4: '1'}"
+213	213		301							"{2: 'Elderly Woman', 3: ""I do have a grandson, but he's not well-behaved like you. Always wearing those sunglasses and clothes with spikes all over them. And his hair, sticking straight up like some kind of rooster! Looks absolutely ridiculous, if you ask me."", 4: '1'}"
+214	214		301							"{2: 'Elderly Woman', 3: 'His shirts have all these strange cartoon characters on them. He calls it ""anime"" or something... I don\'t understand a thing about it...', 4: '1'}"
+215	215		301							"{2: 'Elderly Woman', 3: ""But deep down, he's a good kid. These days, sometimes you've got to act tough just to get by."", 4: '1'}"
+216	216		301							"{3: ""Perhaps Lyca's appearance stirs old memories, or maybe it has been a long time since she last saw a child. Whatever the reason, the old woman rambles on about her family.""}"
+217	217		301							"{2: 'Elderly Woman', 3: ""And don't let our mayor Max fool you with that big, burly look of his. He's a good man at heart. Quite the romantic, actually."", 4: '1'}"
+218	218		301							"{3: ""Realizing she's been doing all the talking, she offers an apologetic smile.""}"
+219	219		301							"{2: 'Elderly Woman', 3: ""Oh dear, listen to me rambling on. Once I start talking, I just can't seem to stop."", 4: '1'}"
+220	220		204							{1: '2', 2: '1'}
+221	221		301							"{2: 'Lyca', 3: ""It's okay, ma'am. I enjoy listening to you."", 4: '2'}"
+222	222		301							"{2: 'Elderly Woman', 3: ""Let's talk about you instead. Where did you live before?"", 4: '1'}"
+223	223		204							{1: '2', 2: '0'}
+224	224		301							{2: 'Lyca', 3: 'Babylonia.', 4: '2'}
+225	225		301							{3: 'The elderly woman seems taken aback by the answer, her expression flickering with surprise, but she chooses not to pry further.'}
+226	226		204							{1: '2', 2: '1'}
+227	227		301							{2: 'Lyca', 3: 'My dad is really good to me. He always says he just wants me to grow up safe and happy.', 4: '2'}
+228	228		301							"{2: 'Lyca', 3: ""He used to be very busy, but he'd still bring me little gifts after work. And he taught me how to draw. He told me he wanted to be a manga artist when he was younger, but... life just got in the way."", 4: '2'}"
+229	229		204							{1: '2', 2: '14'}
+230	230		301				DialogDisable			{2: 'Lyca', 3: 'Then Mom got sick... and after that, Dad never really smiled again.', 4: '2'}
+231	231		401							{1: '2', 2: '4387'}
+232	232		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+233	233		202							{1: '1', 2: '2', 6: '1'}
+234	234		504							{1: '0.8'}
+235	235		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+236	236		301			DialogEnable	DialogDisable			{3: 'The white hospital room flickers back into her memory, that most familiar place to her.'}
+237	237		401							{1: '2', 2: '4388'}
+238	238		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+239	239		504							{1: '0'}
+240	240		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_10.jpg'}
+241	241		201							{1: '1', 2: '500251', 4: '-400', 7: '1'}
+242	242		201							{1: '2', 2: '501260', 4: '300', 7: '1'}
+243	243		301			DialogEnable				{1: '1', 2: 'Lyca', 3: 'And after that...', 4: '2'}
+244	244		204							{1: '2', 2: '14'}
+245	245		301							"{3: ""Lyca's words trail off, her smile dissolving like a fading echo.""}"
+246	246		301			PanelActor2Shake				{2: 'Lyca', 3: 'After that...', 4: '2'}
+247	247		401							{1: '1', 2: '36'}
+248	248		401							{1: '2', 2: '4331'}
+249	249		203							{1: '2', 2: '0.25', 3: '600'}
+250	250		202						250.0	{1: '2'}
+251	251		203							{1: '1', 2: '0.5', 3: '0'}
+252	252		301							{3: 'The elderly woman assumes the girl is merely reminiscing about something sad and moves to comfort her when Lyca suddenly bolts outside.'}
+253	253		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+254	254		202							{1: '1', 6: '1'}
+255	255		401							{1: '1', 2: '167'}
+256	256		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory750.jpg'}
+257	257		401							{1: '2', 2: '4331'}
+258	258		201							{1: '2', 2: '501260', 3: '19', 4: '-600'}
+259	259		203							{1: '2', 2: '0.25', 3: '0'}
+260	260		301				DialogDisable			"{1: '1', 3: ""Panic flashes across Lyca's face—no, not just panic. Something deeper, darker."", 4: '1'}"
+261	261		401							{1: '2', 2: '4259'}
+262	262		104						200.0	{1: '0|0|-150', 2: '0.2'}
+263	263		104							{1: '0|0|0', 2: '0.2'}
+264	264		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+265	265		301			DialogEnable	DialogDisable			{3: 'A primal terror, rising from the depths of her mind like a creature clawing its way out of the abyss. It seizes her heart, threatening to pull her under.'}
+266	266		401							{1: '2', 2: '3077'}
+267	267		502						250.0	{1: 'PanelActor2Shake'}
+268	268		203							{1: '2', 2: '0.25', 4: '-100'}
+269	269		204							{1: '2', 2: '8'}
+270	270		301			DialogEnable	DialogDisable			{3: 'Then, her foot catches on a stone, and she stumbles. But she barely registers the pain. Instead, she curls into herself on the ground, her expression hollow yet etched with dread.'}
+271	271		204							{1: '2', 2: '19'}
+272	272		301			DialogEnable				{2: 'Lyca', 3: 'What happened... after that?', 4: '2'}
+273	273		104						500.0	{1: '0|0|-250', 2: '0.5'}
+274	274		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.5'}
+275	275		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+276	276		402							{1: '4259'}
+277	277		301							{3: 'She finds her memories like a faded canvas, blurred beyond recognition.'}
+278	278		301			PanelActor2Shake				{2: 'Lyca', 3: 'How did I... get to the Babel Tower?', 4: '2'}
+279	279		203							{1: '2', 2: '0.5', 4: '-130'}
+280	280		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg', 3: '0', 4: '1', 5: '0.5'}
+281	281		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg', 4: '4'}
+282	282		301			PanelActor2Shake				{2: 'Lyca', 3: 'The person in the hospital bed... was it Mom, or... me?', 4: '2'}
+283	283		203							{1: '2', 2: '0.5', 4: '-150'}
+284	284		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_14.jpg', 3: '0', 4: '1', 5: '0.5'}
+285	285		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_14.jpg', 4: '4'}
+286	286		104							{1: '0|100|0', 2: '0', 4: '4'}
+287	287		401							{1: '2', 2: '844090'}
+288	288		301				AniZhuanchangBegin			{3: 'The unanswered question sends chills down her spine, and fear finally consumes her completely.'}
+289	289		401							{1: '1', 2: '36'}
+290	290		202							{1: '2', 6: '1'}
+291	291		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_14.jpg', 3: '0', 4: '0', 5: '0'}
+292	292		205							{1: '999'}
+293	293		101						4000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory756.jpg'}
+294	294		401							{1: '1', 2: '6182'}
+295	295		301			AniZhuanchangEnd				{3: 'A short while earlier, before meeting with the human commandant, Dante found Vergil.'}
+296	296		201							{1: '1', 2: '501235', 3: '1', 4: '-400'}
+297	297		201							{1: '2', 2: '501234', 4: '400'}
+298	298		301							{1: '1', 2: 'Dante', 3: 'How did you get here?', 4: '1'}
+299	299		204							{1: '2', 2: '8'}
+300	300		301							{2: 'Vergil', 3: 'I have no explanation. I simply appeared in mid-air without cause.', 4: '2'}
+301	301		204							{1: '2', 2: '0'}
+302	302		204							{1: '1', 2: '0'}
+303	303		301							{2: 'Dante', 3: 'Just like me...', 4: '1'}
+304	304		301							"{3: ""Dante strokes his chin, eyeing Yamato in Vergil's hand.""}"
+305	305		301							{2: 'Dante', 3: 'Can you use Yamato to open a portal back?', 4: '1'}
+306	306		204							{1: '2', 2: '4'}
+307	307		301							"{2: 'Vergil', 3: ""Portals aren't stable in this place."", 4: '2'}"
+308	308		204							{1: '1', 2: '10'}
+309	309		301							"{2: 'Dante', 3: ""Looks like we'll have to rely on those Babylonia folks for now."", 4: '1'}"
+310	310		204							{1: '1', 2: '0'}
+311	311		301							{2: 'Dante', 3: 'Also, that little girl...', 4: '1'}
+312	312		204							{1: '2', 2: '4'}
+313	313		301							"{2: 'Vergil', 3: ""I've sensed it as well."", 4: '2'}"
+314	314		204							{1: '1', 2: '0'}
+315	315		301		1		AniZhuanchangBegin			{2: 'Dante', 3: '...', 4: '1'}

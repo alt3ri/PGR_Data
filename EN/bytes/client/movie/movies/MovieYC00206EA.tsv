@@ -1,0 +1,20 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory62.jpg'}
+2	2		401			DialogEnable				{1: '1', 2: '202'}
+3	100		401							{1: '2', 2: '10007502'}
+4	3		301			RImgBg1Shake				{3: 'Boom—'}
+5	4		201							{1: '1', 2: '1081001', 3: '5'}
+6	5		301							{1: '1', 2: 'Kamui', 3: 'Woah, this bridge is... not going to hold!', 4: '1'}
+7	6		201							{1: '1', 2: '500015'}
+8	7		301							{1: '1', 2: 'Tifa', 3: 'Hahaha, the power of the Ascnet is indeed wonderful...', 4: '1'}
+9	8		301							{2: 'Tifa', 3: 'Who would ever want to share such power with others?', 4: '1'}
+10	9		301							{2: 'Tifa', 3: 'Those Ascendants must be foolish...', 4: '1'}
+11	10		301							"{2: 'Tifa', 3: ""Especially that Roland, someday... I'll..."", 4: '1'}"
+12	11		201							{1: '1', 2: '1081001', 3: '5'}
+13	12		301							"{1: '1', 2: 'Kamui', 3: ""Hey, what name did you say? I didn't catch that! You mind saying it again?"", 4: '1'}"
+14	13		201							{1: '1', 2: '500015'}
+15	14		301							{1: '1', 2: 'Tifa', 3: '...', 4: '1'}
+16	15		301							{3: 'Tifa ignores Kamui, and leaves before the bridge collapsed entirely.'}
+17	16		201							{1: '1', 2: '1081001', 3: '5'}
+18	17		301							{1: '1', 2: 'Kamui', 3: 'Darn it!', 4: '1'}
+19	18		301		1		AniZhuanchangBegin			{2: 'Kamui', 3: 'Hey! Captain, you hear this? The target has retreated!', 4: '1'}

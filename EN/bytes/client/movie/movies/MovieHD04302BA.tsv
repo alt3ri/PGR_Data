@@ -1,0 +1,127 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+2	2		401							{1: '1', 2: '207'}
+3	3		401						500.0	{1: '2', 2: '4294'}
+4	4		402							{1: '4294'}
+5	5		201							{1: '1', 2: '500568'}
+6	6		301			DialogEnable				{1: '1', 2: 'Lee', 3: '...This is what you said you wanted?', 4: '1'}
+7	7		301							{3: 'Lee points at the flashy, over-decorated notebook on the display stand, the corner of his mouth twitching slightly.'}
+8	8		302							{2: 'Not exactly...', 3: '9'}
+9	9		302							{2: 'This is just a display model. You can actually choose your own decorative style.', 3: '11'}
+10	10		204							{1: '1'}
+11	11		203							{1: '1', 2: '0.25', 3: '-400'}
+12	12		201							{1: '2', 2: '500863', 4: '400'}
+13	13		301							{1: '1', 2: 'Staff', 3: 'Do you think the display model needs more decorations? We have many more options you can choose from—', 4: '2'}
+14	14		204							{1: '1', 2: '10'}
+15	15		301							"{2: 'Lee', 3: ""...No, that's quite enough."", 4: '1'}"
+16	16		301							"{3: ""The mere thought of even more extravagant decorations waiting for him compels Lee to forcibly interrupt the shop attendant's introduction.""}"
+17	17		204							{1: '1', 2: '1'}
+18	18		301				DialogDisable			"{2: 'Lee', 3: ""So we basically just need to continue writing the other person's story after exchanging our notebooks and then read them out loud in public, right?"", 4: '1'}"
+19	19		202							{1: '1', 2: '2', 6: '1'}
+20	20		302							{2: '(Nod)', 3: '21'}
+21	21		302							"{2: ""And we get to bring the notebooks home as souvenirs when we're done."", 3: '22'}"
+22	22		302							"{2: ""Don't you want one, Lee? It looks quite special."", 3: '23'}"
+23	23		201							{1: '1', 2: '500568'}
+24	24		301			DialogEnable				"{1: '1', 2: 'Lee', 3: ""It's not that I don't want it. It's just..."", 4: '1'}"
+25	25		301							{3: 'Lee swallows his words.'}
+26	26		204							{1: '1'}
+27	27		301							"{2: 'Lee', 3: ""If this is what you want, I'll do it for you."", 4: '1'}"
+28	28		204							{1: '1', 2: '1'}
+29	29		301							"{2: 'Lee', 3: ""...Just consider it my way of making sure you don't get too carried away."", 4: '1'}"
+30	30		302							{2: 'Hooray!', 3: '31', 4: 'Pretty sure he just needed an excuse to do it for me...', 5: '31'}
+31	31		204							{1: '1', 2: '10'}
+32	32		301							"{2: 'Lee', 3: ""—Alright. Think that's enough."", 4: '1'}"
+33	33		204							{1: '1'}
+34	34		301							"{2: 'Lee', 3: ""Let's go."", 4: '1'}"
+35	35		202							{1: '1', 6: '1'}
+36	36		401							{1: '2', 2: '5286'}
+37	37		104						200.0	{1: '0|-50|0', 2: '0.5'}
+38	38		104							{1: '0|0|0', 2: '0.5'}
+39	39		301							"{3: ""Following the shop attendant's instructions, the two of you sit down separately. When you and Lee are halfway done, the shop attendant swaps your notebooks. The two of you go on writing, all the while without saying a thing to each other.""}"
+40	40		402							{1: '5286'}
+41	41		401							{1: '2', 2: '910'}
+42	42		201							{1: '1', 2: '500568', 5: '-75', 6: '-50', 7: '1'}
+43	43		301							{1: '1', 3: 'Occasionally glancing to the side, you catch glimpses of Lee slightly furrowing his brow and pausing briefly to think before putting pen to paper again. Is this giving him a headache?'}
+44	44		402							{1: '910'}
+45	45		202							{1: '1'}
+46	46		301							{3: 'The two of you are done before long. The shop attendant starts setting up recording equipment as he explains that both you and Lee can take some time to relax.'}
+47	47		302							{2: 'Were you struggling?', 3: '48'}
+48	48		201							{1: '1', 2: '500568', 4: '-75', 5: '-50'}
+49	49		301							"{1: '1', 2: 'Lee', 3: ""Nope. I just wasn't quite sure if I did a good job."", 4: '1'}"
+50	50		301							"{2: 'Lee', 3: ""I mean, writing this sort of thing... isn't exactly my forte."", 4: '1'}"
+51	51		302							{2: 'The memory is what counts, though.', 3: '52'}
+52	52		302							"{2: ""I wouldn't mind even if you came up with a bad ending, Lee."", 3: '53'}"
+53	53		204							{1: '1', 2: '1'}
+54	54		301							{2: 'Lee', 3: 'Not gonna happen.', 4: '1'}
+55	55		202							{1: '1'}
+56	56		301							{3: 'Halfway through your conversation, the shop attendant finishes setting up the stage and lets the two of you know that you can take the stage.'}
+57	57		401							{1: '2', 2: '2768'}
+58	58		301							"{3: ""You are told that, when you have your notebook back, you're supposed to finish the first half of the story—which you've written—and the second half of the story—written by whoever you're in this activity with—for your attempt to be considered successful.""}"
+59	59		201							{1: '1', 2: '500568', 3: '10'}
+60	60		301							"{1: '1', 2: 'Lee', 3: ""I'll go first."", 4: '1'}"
+61	61		204							{1: '1'}
+62	62		301							"{2: 'Lee', 3: '""After careful research, Lee decided to go out and purchase the parts needed to improve a set of weapons.""', 4: '1'}"
+63	63		301							"{2: 'Lee', 3: '""He planned his route according to the supply list, but for some reason, on the day of his shopping trip, he discovered that the list had been altered—the items were completely different from what he had originally written down.""', 4: '1'}"
+64	64		301							"{2: 'Lee', 3: '""Fortunately, the new list also had route locations marked for him, so Lee followed the guidance and made his purchases, eventually bringing back—""', 4: '1'}"
+65	65		301							{3: 'Lee goes through the first half of the story that he wrote. When he reaches the second half, however, he falls into a brief silence.', 4: '1'}
+66	66		204							{1: '1', 2: '1'}
+67	67		301							"{2: 'Lee', 3: '""...Eventually bringing back the signature desserts from the most popular bakery in the commercial district, famous coffee that required a two-hour wait in line, holiday snack packs on sale at the store, and specialty cuisine from Kowloong Restaurant.""', 4: '1'}"
+68	68		301							"{2: 'Lee', 3: '""When he returned to the lounge, Lee realized that he had accidentally mixed up his parts list with the commandant\'s shopping list. To thank the commandant for unintentionally helping him get some exercise done, Lee gave the commandant all the food he\'d brought back.""', 4: '1'}"
+69	69		204							{1: '1', 2: '10'}
+70	70		301							"{2: 'Lee', 3: ""...And that's it."", 4: '1'}"
+71	71		301							{3: 'Lee closes his eyes, seemingly unsure what to make of the story. After a soft sigh, he speaks in a note of resignation.'}
+72	72		204							{1: '1', 2: '1'}
+73	73		301							"{2: 'Lee', 3: ""You know what, never mind. As long as you like it, that's all that matters."", 4: '1'}"
+74	74		202							{1: '1'}
+75	75		301				DialogDisable			{3: 'It hits you that you should probably do something to ease up the mood.'}
+76	76		302							"{2: ""Well, guess it's my turn now, then?"", 3: '77'}"
+77	77		302							{2: 'Here goes...', 3: '78'}
+78	78		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory968.png'}
+79	79		401							{1: '2', 2: '5307'}
+80	80		306							{1: '1'}
+81	81		301			DialogEnable				"{2: '【kuroname】', 3: '""One day, 【kuroname】 got their hand on an oil lamp from an old age.""'}"
+82	82		301							"{2: '【kuroname】', 3: '""A tiny person that came out of the lamp claimed that it would grant whoever followed its instructions three wishes.""'}"
+83	83		301							"{2: '【kuroname】', 3: '""When 【kuroname】 made it clear that they didn\'t trust the tiny person, it immediately revealed some of their well-kept secrets. It hit 【kuroname】 that this tiny person was no normal being.""'}"
+84	84		301							"{2: '【kuroname】', 3: '""In hesitation, 【kuroname】 sought Lee\'s help. And they—""'}"
+85	85		301				DialogDisable			{2: '【kuroname】', 3: '......'}
+86	86		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+87	87		306							
+88	88		201							{1: '1', 2: '500568', 3: '7'}
+89	89		301			DialogEnable	DialogDisable			{1: '1', 2: 'Lee', 3: 'Why did you stop?', 4: '1'}
+90	90		202							{1: '1', 6: '1'}
+91	91		302							{2: 'Oh, uhh, yeah, on it.', 3: '92'}
+92	92		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory968.png'}
+93	93		306							{1: '1'}
+94	94		401							{1: '2', 2: '5307'}
+95	95		301			DialogEnable				"{2: '【kuroname】', 3: '""So they carefully took the lamp apart and discovered eavesdropping and surveillance devices hidden inside.""'}"
+96	96		301							"{2: '【kuroname】', 3: '""The lamp, as they thought, was a gizmo their enemy was using to collect intelligence.""'}"
+97	97		301							"{2: '【kuroname】', 3: '""So Lee captured the tiny person, took it apart, located their enemy through reverse tracking, and eventually wiped them all out in one fell swoop.""'}"
+98	98		301				DialogDisable			"{2: '【kuroname】', 3: '""And so it was another peaceful day for 【kuroname】.""'}"
+99	99		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+100	100		306							
+101	101		301			DialogEnable				{3: 'Hearing the ending of your story, the shop attendant and passersby can barely contain their amusement as faint laughter ripples through the crowd.'}
+102	102		201							{1: '1', 2: '500568', 3: '7'}
+103	103		301							"{1: '1', 2: 'Lee', 3: ""What? What's so funny about this?"", 4: '1'}"
+104	104		204							{1: '1'}
+105	105		301							"{2: 'Lee', 3: ""I'd never take any risk when it comes to your safety."", 4: '1'}"
+106	106		302							{2: 'Not at all. I really like the ending you wrote.', 3: '107'}
+107	107		302							"{2: ""And besides, I'm sure that's exactly what you'd do."", 3: '108'}"
+108	108		204							{1: '1', 2: '14'}
+109	109		301							{2: 'Lee', 3: 'Hm?', 4: '1'}
+110	110		301				AniZhuanchangBegin			{3: 'Regardless, the two of you have fulfilled all the requirements. The shop attendant hands over your notebooks, now decorated, and informs you that the activity has been completed and that you are free to leave with the souvenirs.'}
+111	111		202							{1: '1', 6: '1'}
+112	112		502						400.0	{1: 'DialogDisable'}
+113	113		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory671.jpg'}
+114	114		401							{1: '2', 2: '5159'}
+115	115		201							{1: '1', 2: '500568', 3: '1'}
+116	116		301			DialogEnable				"{1: '1', 2: 'Lee', 3: ""I guess it's actually kind of nice... doing things like this every now and then."", 4: '1'}"
+117	117		301							{3: 'Walking right next to you, Lee repeatedly flips through the notebooks and examines them carefully.'}
+118	118		302							"{2: ""I thought you'd find it boring, though."", 3: '119', 4: 'How do you find this way of keeping memories?', 5: '120'}"
+119	119	121	301							{2: 'Lee', 3: 'Things that have to do with you are never boring.', 4: '1'}
+120	120		301							{2: 'Lee', 3: 'I found it weird at first, but now it feels quite nice now.', 4: '1'}
+121	121		204							{1: '1'}
+122	122		301							"{2: 'Lee', 3: ""It's interesting the way it's done, and it really shows me what you think and vice versa."", 4: '1'}"
+123	123		301							"{2: 'Lee', 3: ""We can do this again sometime if you don't mind."", 4: '1'}"
+124	124		301							"{2: 'Lee', 3: ""One way to do it is that we could exchange diaries every week where we write down things we want to say. Then we'd be able to read each other's thoughts the next time we meet."", 4: '1'}"
+125	125		204							{1: '1', 2: '1'}
+126	126		301		1		AniZhuanchangBegin			{2: 'Lee', 3: 'When you have something to look forward to down the road... it just keeps you excited.', 4: '1'}

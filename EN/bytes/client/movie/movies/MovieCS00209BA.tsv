@@ -1,0 +1,66 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory1.jpg'}
+2	2		401							{1: '1', 2: '36'}
+3	3		302							{2: '特效', 3: '4', 4: '编辑器（程序）', 5: '44'}
+4	4		301							{3: 'v3.7特效演示'}
+5	5		301							{3: '曲线刀光'}
+6	6		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+7	7		301							{3: '曲线刀光'}
+8	8		301							{3: 'End'}
+9	9		301							{3: '曲线刀光（水平翻转）'}
+10	10		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '2'}
+11	11		301							{3: '曲线刀光（水平翻转）'}
+12	12		301							{3: 'End'}
+13	13		301							{3: '白色磁感线'}
+14	14		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieWhiteline.prefab', 2: '2'}
+15	15		301							{3: '白色磁感线'}
+16	16		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieWhiteline.prefab'}
+17	17		301							{3: 'End'}
+18	18		301							{3: '红色磁感线'}
+19	19		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieRedline.prefab', 2: '2'}
+20	20		301							{3: '红色磁感线'}
+21	21		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieRedline.prefab'}
+22	22		301							{3: 'End'}
+23	23		301				DialogDisable		200.0	{3: '裁剪0.8S'}
+24	24		401							{1: '2', 2: '5833'}
+25	25		111						50.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieCai.prefab'}
+26	26		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1253.jpg'}
+27	27		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieCai.prefab'}
+28	28		301			DialogEnable				{3: 'End'}
+29	29		301				DialogDisable		200.0	{3: '裁剪1.5S'}
+30	30		401							{1: '2', 2: '5865'}
+31	31		111						50.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieCai01.prefab'}
+32	32		101						1700.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+33	33		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieCai01.prefab'}
+34	34		301			DialogEnable				{3: 'End'}
+35	35		201							{1: '1', 2: '501125'}
+36	36		301				DialogDisable		200.0	{1: '1', 3: '裁剪3S'}
+37	37		401							{1: '2', 2: '5866'}
+38	38		111						50.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieCai02.prefab'}
+39	39		202							{1: '1', 6: '1'}
+40	40		101						3200.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory1.jpg'}
+41	41		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieCai02.prefab'}
+42	42		301			DialogEnable				{3: 'End'}
+43	43	65	301							{3: '特效演示结束'}
+44	44		302							{2: '自定义文本位移', 3: '45', 4: '特效旋转', 5: '56'}
+45	45		109							{1: '1', 2: 'Custom Text Test', 3: '-200', 12: '0.5'}
+46	46		109							{1: '2', 2: 'Custom Text Test', 3: '200', 4: '50'}
+47	47		109							{1: '3', 2: 'Custom Text Test', 4: '-200', 12: '3'}
+48	48		109							{1: '4', 2: 'Custom Text Test', 3: '100', 4: '300', 5: '90'}
+49	49		301							{3: '自定义文本'}
+50	50		112							{1: '1', 2: '1', 3: '100|60|200', 5: '2'}
+51	51		112							{1: '2', 2: '1', 3: '-400|-50|0', 4: '-180', 5: '0.5'}
+52	52		112							{1: '3', 2: '1', 3: '0|-200|0', 5: '1'}
+53	53		112							{1: '4', 2: '1', 3: '-200|200|0', 4: '360', 5: '2'}
+54	54		301							{3: '自定义文本位移'}
+55	55	65	110							
+56	56		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieRedline.prefab', 2: '2', 5: '1'}
+57	57		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieRedline.prefab', 2: '2', 5: '2'}
+58	58		301							{3: '红色磁感线'}
+59	59		511							{1: '1', 2: '0.7', 4: '45'}
+60	60		511							{1: '2', 2: '0.7', 4: '-45'}
+61	61		301							{3: '特效旋转'}
+62	62		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieRedline.prefab', 5: '1'}
+63	63		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieRedline.prefab', 5: '2'}
+64	64		301							{3: '特效卸载'}
+65	65		301		1		AniZhuanchangBegin			{3: '演示结束'}

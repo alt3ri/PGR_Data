@@ -1,0 +1,400 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory464.jpg'}
+2	2		401							{1: '1', 2: '120'}
+3	3		401							{1: '2', 2: '4292'}
+4	4		501						350.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+5	5		301			DialogEnable				{3: 'By the time you and Liv reach the base of the windmill tower, a hoarse thunder rumbles across the horizon. Dark clouds devour the sun, brewing what seems to be a long-overdue storm.'}
+6	6		201							{1: '1', 2: '501378', 3: '3'}
+7	7		301							{1: '1', 2: 'Liv', 3: 'Ms. Vimine!', 4: '1', 18: '100013245'}
+8	8		401							{1: '2', 2: '1513'}
+9	9		203						350.0	{1: '1', 2: '0.3', 5: '-100'}
+10	10		202							{1: '1'}
+11	11		401							{1: '2', 2: '4892'}
+12	12		301							{3: 'There, paint buckets lie overturned. Spattered in a riot of color, Vimine is scrambling to gather up that absurdly large drawing board. Seeing her struggle, Liv rushes forward to help manage the chaos.'}
+13	13		201							{1: '1', 2: '500163', 8: '1'}
+14	14		301							{1: '1', 2: 'Vimine', 3: 'Oh, Liv! And your... uh...', 4: '1', 18: '100013246'}
+15	15		302							{2: '【kuroname】.', 3: '16', 4: 'Gray Raven Commandant.', 5: '16'}
+16	16		301							{2: 'Vimine', 3: 'Right, right! Liv and her date.', 4: '1', 18: '100013247'}
+17	17		302							"{2: ""You weren't listening at all!"", 3: '18', 4: '...', 5: '18'}"
+18	18		301							"{2: 'Vimine', 3: ""What are you two doing out here? The weather report just blasted an alert. That hurricane that was supposed to hit Vennquis until the day after tomorrow? It's almost here."", 4: '1', 18: '100013248'}"
+19	19		203							{1: '1', 2: '0.25', 3: '-400'}
+20	20		201							{1: '2', 2: '501378', 3: '3', 4: '400'}
+21	21		301							{1: '1', 2: 'Liv', 3: 'A hurricane?', 4: '2', 18: '100013249'}
+22	22		301							"{2: 'Vimine', 3: ""Yes, a big one. You should get back now. I'll be fine; I'm heading to the windmill tower in a minute."", 4: '1', 18: '100013250'}"
+23	23		204							{1: '2', 2: '15'}
+24	24		301				DialogDisable			{2: 'Liv', 3: 'Ms. Vimine, before you go... I wanted to ask you about this. Do you remember this fairy tale book?', 4: '2', 18: '100013251'}
+25	25		401							{1: '2', 2: '5307'}
+26	26		203						450.0	{1: '2', 2: '0.4', 3: '300'}
+27	27		203						450.0	{1: '2', 2: '0.4', 3: '400'}
+28	28		301			DialogEnable				"{3: ""As Vimine's eyes fall upon the fairy tale book in Liv's outstretched hand, her busy hands still.""}"
+29	29		301							"{2: 'Vimine', 3: ""Ah... I do, I do. Right before the Punishing outbreak, I was just a starving artist, paying the bills by illustrating other people's stories."", 4: '1', 18: '100013252'}"
+30	30		301							{2: 'Vimine', 3: 'Work was so hard to find back then. I was lucky to have even one client... I remember every drawing I made, and every story that went with them.', 4: '1', 18: '100013253'}
+31	31		204							{1: '2', 2: '10'}
+32	32		301							"{2: 'Liv', 3: 'Then do you remember one called ""The Maiden of Eden""?', 4: '2', 18: '100013254'}"
+33	33		301							{3: 'Suppressing her anxiety, Liv calmly retells the story she had shared with you the night before.'}
+34	34		204							{1: '2', 2: '15'}
+35	35		301							"{2: 'Liv', 3: ""If you do, please... you have to tell me how it ends. It's important to me. What happened to the little gray raven and the maiden?"", 4: '2', 18: '100013255'}"
+36	36		301							{2: 'Vimine', 3: 'Ah-haha... I think I... might have forgotten?', 4: '1', 18: '100013256'}
+37	37		401							{1: '2', 2: '4892'}
+38	38		201							{1: '1', 2: '500163', 4: '-400'}
+39	39		301							{1: '1', 3: 'Vimine suddenly turns away, hastily packing up her art supplies.'}
+40	40		301							"{2: 'Vimine', 3: ""Come on, let's go! We need to find shelter now, or we're going to be drenched!"", 4: '1', 18: '100013257'}"
+41	41		204							{1: '2', 2: '14'}
+42	42		301							{2: 'Liv', 3: 'Then what about the author? Do you remember her? She... she shared my name. Liv.', 4: '2', 18: '100013258'}
+43	43		301							{2: 'Vimine', 3: '...', 4: '1', 18: '100013259'}
+44	44		204							{1: '2', 2: '15'}
+45	45		301							{2: 'Liv', 3: 'Maybe she wrote something else? Anything at all, if you know—', 4: '2', 18: '100013260'}
+46	46		202							{1: '1', 6: '1'}
+47	47		201							{1: '1', 2: '500163', 4: '-400', 8: '1'}
+48	48		301							{1: '1', 2: 'Vimine', 3: '...She only wrote this one book.', 4: '1', 18: '100013261'}
+49	49		301							"{2: 'Vimine', 3: '""The Maiden of Eden"" was her last story. It was never even published.', 4: '1', 18: '100013262'}"
+50	50		204							{1: '2', 2: '3'}
+51	51		301							{2: 'Liv', 3: 'So you do know it.', 4: '2', 18: '100013263'}
+52	52		204							{1: '2', 2: '15'}
+53	53		301							{2: 'Liv', 3: 'Please... what happened to the little gray raven and the maiden? After the winds grew stronger and the air turned cold?', 4: '2', 18: '100013264'}
+54	54		301							"{2: 'Vimine', 3: ""What if it doesn't have a happy ending?"", 4: '1', 18: '100013265'}"
+55	55		301							"{2: 'Vimine', 3: ""The little gray raven and the maiden, holding each other against the windstorm... Maybe that's not such a bad place to stop."", 4: '1', 18: '100013266'}"
+56	56		204							{1: '2', 2: '8'}
+57	57		301							{2: 'Liv', 3: 'Even so, I still want to know what happened next.', 4: '2', 18: '100013267'}
+58	58		204							{1: '2'}
+59	59		301							"{3: '""Because now, I finally have the courage to face it.""\\nShe purses her lips and tightens her grip on your hand.'}"
+60	60		301							{2: 'Vimine', 3: '...The original manuscript is in the church. At the top of the windmill tower.', 4: '1', 18: '100013268'}
+61	61		204							{1: '2', 2: '15'}
+62	62		301							{2: 'Liv', 3: 'The windmill tower... You mean the one right next to us?', 4: '2', 18: '100013269'}
+63	63		301							{2: 'Vimine', 3: 'Yes. She used to go there all the time. For inspiration, and to... pray for her daughter.', 4: '1', 18: '100013270'}
+64	64		204							{1: '2', 2: '3'}
+65	65		301							{2: 'Liv', 3: '...!', 4: '2', 18: '100013271'}
+66	66		202							{1: '1', 2: '2', 6: '1'}
+67	67		401							{1: '2', 2: '558'}
+68	68		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+69	69		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory530.jpg'}
+70	70		504							{1: '0.7'}
+71	71		201							{1: '1', 2: '500163'}
+72	72		301							{1: '1', 2: 'Vimine', 3: 'Antonia would be so happy to see you home.', 4: '1', 18: '100013272'}
+73	73		301							{2: 'Vimine', 3: 'I held you once when you were just a little thing.', 4: '1', 18: '100013273'}
+74	74		202							{1: '1', 6: '1'}
+75	75		504							{1: '0'}
+76	76		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+77	77		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory464.jpg'}
+78	78		306							{1: '1'}
+79	79		401							{1: '2', 2: '5517'}
+80	80		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCerberusGameChapter/FxUiCerberusGameChapterLizi01.prefab', 2: '2'}
+81	81		301							{3: 'Whoosh. A gale erupts from the ruins, catching the fallen leaves in a vortex of wind and spinning them into the sky.'}
+82	82		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCerberusGameChapter/FxUiCerberusGameChapterLizi01.prefab'}
+83	83		306							
+84	84		201							{1: '1', 2: '501378', 3: '15'}
+85	85		301							{1: '1', 2: 'Liv', 3: 'That author... she was...', 4: '1', 18: '100013274'}
+86	86		201							{1: '1', 2: '500163'}
+87	87		301							{1: '1', 2: 'Vimine', 3: 'Your mother, Antonia.', 4: '1', 18: '100013275'}
+88	88		201							{1: '1', 2: '501378', 3: '14'}
+89	89		301				DialogDisable			{1: '1', 2: 'Liv', 3: '...', 4: '1', 18: '100013276'}
+90	90		401							{1: '1', 2: '36'}
+91	91		401							{1: '2', 2: '5517'}
+92	92		501						400.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCerberusGameChapter/FxUiCerberusGameChapterLizi01.prefab', 2: '2'}
+93	93		401							{1: '2', 2: '1516'}
+94	94		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCerberusGameChapter/FxUiCerberusGameChapterLizi01.prefab'}
+95	95		203						350.0	{1: '1', 2: '0.3', 4: '-30', 5: '30'}
+96	96		202							{1: '1'}
+97	97		401							{1: '1', 2: '169'}
+98	98		301			DialogEnable	DialogDisable			{3: 'A warm wave of sorrow, borne on the gale, washes over her. She staggers back, speechless, the wind whipping at her slender frame.'}
+99	99		302							"{2: ""But isn't the author called Liv?"", 3: '100', 4: '...', 5: '100'}"
+100	100		201							{1: '1', 2: '500163'}
+101	101		301			DialogEnable				"{1: '1', 2: 'Vimine', 3: ""Tilmin Kj{195|166}reste Liv was her pen name. It's a phrase... it means something."", 4: '1', 18: '100013277'}"
+102	102		301							{2: 'Vimine', 3: 'Til min kj{195|166}reste Liv... It means...', 4: '1', 18: '100013278'}
+103	103		301							"{2: 'Vimine', 3: '""To my dearest Liv.""', 4: '1', 18: '100013279'}"
+104	104		301							{2: 'Vimine', 3: 'Every story she wrote was a gift for you, Liv.', 4: '1', 18: '100013280'}
+105	105		202							{1: '1'}
+106	106		301				AniZhuanchangBegin			{1: '1', 3: 'Unable to contain herself any longer, Liv breaks into a run toward the windmill tower.'}
+107	107		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+108	108		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory506.jpg'}
+109	109		401							{1: '2', 2: '4280'}
+110	110		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab'}
+111	111		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab'}
+112	112		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+113	113		301			AniZhuanchangEnd	DialogDisable			"{3: ""Whether from the desolate tower's disrepair or the sheer force of her own tumultuous emotions, a subtle vibration shudders through Liv's world.""}"
+114	114		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+115	115		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+116	116		401							{1: '2', 2: '1513'}
+117	117		104						450.0	{1: '0|0|-150', 2: '0.4'}
+118	118		301			DialogEnable	DialogDisable			"{3: ""She races to the windmill's peak, to the small church where her answer lies. Her hands fly to the cabinet just inside the entrance, pulling out the third drawer from the top. And there it is: the manuscript, long dismissed as a simple storybook.""}"
+119	119		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+120	120		306							{1: '1'}
+121	121		401							{1: '1', 2: '36'}
+122	122		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1320.jpg', 3: '0', 4: '1', 5: '1.5'}
+123	123		205							{1: '999'}
+124	124		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1320.jpg'}
+125	125		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '1'}
+126	126		401							{1: '1', 2: '6244'}
+127	127		401							{1: '2', 2: '5517'}
+128	128		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCerberusGameChapter/FxUiCerberusGameChapterLizi01.prefab', 2: '2'}
+129	129		201							{1: '18', 2: '501378', 3: '8'}
+130	130		301			DialogEnable				{1: '1', 2: 'Liv', 3: '...The wind grew bitter and sharp.', 4: '18', 18: '100013281'}
+131	131		202							{1: '18'}
+132	132		301							{3: 'She traces the crooked handwriting, and in a trance, begins to read the words aloud.'}
+133	133		201							{1: '18', 2: '501378', 3: '10'}
+134	134		301				DialogDisable			{1: '1', 2: 'Liv', 3: 'Searching for a way to leave this world, the little gray raven soared through the sky.', 4: '18', 18: '100013282'}
+135	135		202							{1: '18'}
+136	136		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCerberusGameChapter/FxUiCerberusGameChapterLizi01.prefab'}
+137	137		401							{1: '2', 2: '5165'}
+138	138		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+139	139		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1107.jpg', 3: '0', 4: '1', 5: '1.5'}
+140	140		205							{1: '999'}
+141	141		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1107.jpg'}
+142	142		201							{1: '18', 2: '501378', 3: '10'}
+143	143		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'One by one, silver snowflakes drifted down and settled upon its feathers. Winter had come, as it always did.', 4: '18', 18: '100013283'}
+144	144		401							{1: '2', 2: '759'}
+145	145		201							{1: '1', 2: '501396', 3: '8'}
+146	146		401							{1: '2', 2: '4044'}
+147	147		203						550.0	{1: '1', 2: '0.5', 4: '-100'}
+148	148		202							{1: '1'}
+149	149		204							{1: '18', 2: '15'}
+150	150		301							"{1: '1', 2: 'Liv', 3: ""The little gray raven flew back to the maiden's side, only to find her collapsed on the frozen ground."", 4: '18', 18: '100013284'}"
+151	151		201							{1: '1', 2: '501396', 3: '10'}
+152	152		301							"{1: '1', 2: 'Liv', 3: '""Don\'t worry... I\'m just a little sleepy..."" the maiden whispered to the little gray raven.', 4: '18', 18: '100013285'}"
+153	153		202			DialogDisable				{1: '18'}
+154	154		401							{1: '2', 2: '4276'}
+155	155		204							{1: '1'}
+156	156		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab', 2: '1', 5: '1'}
+157	157		511							{1: '1', 2: '0', 3: '315|75|-300'}
+158	158		205						1050.0	{1: '1', 3: '1', 4: '0.3', 5: '1'}
+159	159		205						1050.0	{1: '1', 3: '0.3', 4: '1', 5: '1'}
+160	160		205						1050.0	{1: '1', 3: '1', 4: '0.7', 5: '1'}
+161	161		201							{1: '18', 2: '501378', 3: '10'}
+162	162		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'A soft light glowed around her, and she was becoming like morning mist, clear and fading. If she did not leave this place soon, she would disappear forever.', 4: '18', 18: '100013286'}
+163	163		204							{1: '18', 2: '8'}
+164	164		301				AniZhuanchangBegin			"{2: 'Liv', 3: '""Stay... It\'s so cold here... Stay by my side...""', 4: '18', 18: '100013287'}"
+165	165		306							
+166	166		402							{1: '5165'}
+167	167		202							{1: '18', 2: '1', 6: '1'}
+168	168		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+169	169		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab', 5: '1'}
+170	170		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+171	171		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: '...'}
+172	172		306							{1: '1'}
+173	173		401							{1: '2', 2: '5704'}
+174	174		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1107.jpg'}
+175	175		201							{1: '18', 2: '501399'}
+176	176		301			AniZhuanchangEnd				{1: '1', 2: 'Antonia', 3: 'But that was exactly why the little gray raven had to go. It had to find the way back home.', 4: '18', 18: '100013288'}
+177	177		301							{2: 'Antonia', 3: 'Back to the warm world from which it came, and return to bring her with it.', 4: '18', 18: '100013289'}
+178	178		202			DialogDisable				{1: '18'}
+179	179		401							{1: '2', 2: '759'}
+180	180		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1089.jpg', 3: '0', 4: '1', 5: '1.5'}
+181	181		205							{1: '999'}
+182	182		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1089.jpg'}
+183	183		201							{1: '18', 2: '501399'}
+184	184		301			DialogEnable				{1: '1', 2: 'Antonia', 3: 'So once more, it lifted its wings. This time, it flew higher than it ever had before.', 4: '18', 18: '100013290'}
+185	185		202			DialogDisable				{1: '18'}
+186	186		401							{1: '2', 2: '5517'}
+187	187		104						450.0	{1: '0|-70|-100', 2: '0.4'}
+188	188		502						350.0	{1: 'RImgBg1Shake'}
+189	189		201							{1: '18', 2: '501399'}
+190	190		301			DialogEnable				{1: '1', 2: 'Antonia', 3: 'The air grew thin and colder. The wind screamed and tugged at its wings.', 4: '18', 18: '100013291'}
+191	191		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+192	192		301							{2: 'Antonia', 3: 'The beautiful gray feathers the girl had given it were slowly being painted white by the snow.', 4: '18', 18: '100013292'}
+193	193		301							{2: 'Antonia', 3: 'With every beat of its wings, the little raven felt it was flying toward death.', 4: '18', 18: '100013293'}
+194	194		202			DialogDisable				{1: '18'}
+195	195		401							{1: '2', 2: '5517'}
+196	196		104						450.0	{1: '0|-150|-200', 2: '0.4'}
+197	197		201							{1: '18', 2: '501399'}
+198	198		301			DialogEnable				{1: '1', 2: 'Antonia', 3: 'Even so, it stubbornly continued flying. It flew because only up here could it find the path that led away... the path that could save her.', 4: '18', 18: '100013294'}
+199	199		202			DialogDisable				{1: '18'}
+200	200		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1109.jpg', 3: '0', 4: '1', 5: '1.5'}
+201	201		205							{1: '999'}
+202	202		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1109.jpg'}
+203	203		201							{1: '18', 2: '501399'}
+204	204		301			DialogEnable				{1: '1', 2: 'Antonia', 3: 'At last, it burst through the clouds, and found itself among the stars. Looking down, the little gray raven finally saw this world as it truly was.', 4: '18', 18: '100013295'}
+205	205		301							"{2: 'Antonia', 3: '""What is this?"" it asked the twinkling stars around it.', 4: '18', 18: '100013296'}"
+206	206		401							{1: '2', 2: '558'}
+207	207		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+208	208		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+209	209		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6001_08.jpg'}
+210	210		301							{2: 'Antonia', 3: 'As it turned out, the place it had shared with the maiden was not the earth at all. It was her garden, a floating Eden, high above the true continent.', 4: '18', 18: '100013297'}
+211	211		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab', 2: '1', 5: '1'}
+212	212		511							{1: '1', 2: '0', 3: '315|75|-300'}
+213	213		201							{1: '1', 2: '501396', 3: '2'}
+214	214		301							{1: '1', 2: 'Antonia', 3: 'All wounded creatures were sent to Eden to heal. Once recovered, the maiden returned them to the mortal world.', 4: '18', 18: '100013298'}
+215	215		301							"{2: 'Antonia', 3: 'She was a deity of this realm, an ""angel"" to all living things.', 4: '18', 18: '100013299'}"
+216	216		202							{1: '1'}
+217	217		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab', 5: '1'}
+218	218		401							{1: '2', 2: '5517'}
+219	219		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCerberusGameChapter/FxUiCerberusGameChapterLizi01.prefab', 2: '2'}
+220	220		301							{2: 'Antonia', 3: 'Yet with every soul she mended, Eden ascended higher, climbing into storm-lashed skies where the cold rivaled the heart of winter.', 4: '18', 18: '100013300'}
+221	221		301							{2: 'Antonia', 3: 'This was the price she had to pay: the maiden was destined to remain alone, drifting ever farther from the mortal world she loved.', 4: '18', 18: '100013301'}
+222	222		201							{1: '1', 2: '501396', 3: '10'}
+223	223		301				AniZhuanchangBegin			{1: '1', 2: 'Antonia', 3: 'Yet she never minded, her gaze forever fixed on the world below with tender longing.', 4: '18', 18: '100013302'}
+224	224		502							{1: 'DialogDisable'}
+225	225		202							{1: '18', 2: '1', 6: '1'}
+226	226		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCerberusGameChapter/FxUiCerberusGameChapterLizi01.prefab'}
+227	227		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+228	228		402							{1: '5704'}
+229	229		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+230	230		302			AniZhuanchangEnd	AniZhuanchangBegin			{2: 'She must be taken away from Eden.'}
+231	231		504							{1: '0.7'}
+232	232		306							
+233	233		401							{1: '1', 2: '36'}
+234	234		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+235	235		401							{1: '1', 2: '229'}
+236	236		502							{1: 'DialogEnable'}
+237	237		201							{1: '1', 2: '500163'}
+238	238		301			AniZhuanchangEnd				{1: '1', 2: 'Vimine', 3: 'Though with that resolve, the little gray raven began its helpless fall. The flight had consumed its last ounce of strength, its very life force.', 4: '1', 18: '100013303'}
+239	239		301							{2: 'Vimine', 3: 'It dissolved into scraps of torn paper, scattering into the cold, raging winds.', 4: '1', 18: '100013304'}
+240	240		301							{2: 'Vimine', 3: '...', 4: '1', 18: '100013305'}
+241	241		301							{2: 'Vimine', 3: 'This is... the final story?', 4: '1', 18: '100013306'}
+242	242		202							{1: '1'}
+243	243		104						450.0	{1: '0|-50|-100', 2: '0.4'}
+244	244		201							{1: '1', 2: '501399'}
+245	245		301							{1: '1', 3: 'Vimine looked at the woman in the hospital bed, her eyes shut fast against the world.'}
+246	246		202							{1: '1'}
+247	247		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+248	248		306							{1: '1'}
+249	249		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory520.jpg'}
+250	250		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.5', 5: '0'}
+251	251		301							{3: 'Only hours before, she had been sketching illustrations for The Maiden of Eden—'}
+252	252		401							{1: '2', 2: '5517'}
+253	253		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCerberusGameChapter/FxUiCerberusGameChapterLizi01.prefab', 2: '1'}
+254	254		301							{3: 'She had a vision of brilliant sunshine, soft meadows, and a girl in a white dress. She had planned to use the Vennquis landscape for reference, but the day had surrendered to a raging wind, shrouding everything in gloom.'}
+255	255		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCerberusGameChapter/FxUiCerberusGameChapterLizi01.prefab'}
+256	256		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.5', 4: '0', 5: '0'}
+257	257		401							{1: '2', 2: '1099'}
+258	258		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+259	259		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+260	260		306							
+261	261		301							"{3: ""She was packing her sketchpad away when the hospital called: Antonia's condition had turned critical.""}"
+262	262		201							{1: '1', 2: '501399', 4: '400', 5: '-130'}
+263	263		201							{1: '2', 2: '500163', 4: '-400', 8: '1'}
+264	264		301							{1: '1', 2: 'Antonia', 3: '...', 4: '1', 18: '100013307'}
+265	265		401						800.0	{1: '2', 2: '4689'}
+266	266		402							{1: '4689'}
+267	267		301							{3: 'The machines emit cold, methodical beeping, seemingly counting down the final moments of her life...'}
+268	268		301							{2: 'Antonia', 3: 'No...', 4: '1', 18: '100013308'}
+269	269		301				DialogDisable			{3: 'A response barely more than a sigh escaped from her pale lips.'}
+270	270		203						550.0	{1: '2', 2: '0.5', 3: '-280', 4: '-70'}
+271	271		301			DialogEnable				{1: '1', 2: 'Vimine', 3: 'What did you say?', 4: '2', 18: '100013309'}
+272	272		301							{3: 'Vimine leaned in anxiously, afraid to miss even a single word.'}
+273	273		301							"{2: 'Antonia', 3: ""This isn't... the final story."", 4: '1', 18: '100013310'}"
+274	274		301							{2: 'Vimine', 3: '...', 4: '2'}
+275	275		301							"{2: 'Antonia', 3: ""But... it's too late..."", 4: '1', 18: '100013311'}"
+276	276		301			PanelActor1Shake	DialogDisable			{3: 'She outstretched her arms like a drowning woman, desperate to break through the surface that held her beneath the waves.'}
+277	277		401							{1: '2', 2: '2617'}
+278	278		203						550.0	{1: '2', 2: '0.5', 3: '-250', 4: '-50'}
+279	279		203						550.0	{1: '2', 2: '0.5', 3: '-280', 4: '-50'}
+280	280		301			DialogEnable				"{3: ""Each ragged gasp was the sound of someone sinking. Vimine grabbed Antonia's wrist, a futile attempt to haul her back from the abyss.""}"
+281	281		402							{1: '2617'}
+282	282		301							"{2: 'Antonia', 3: ""Vimine... it's so dark here... I can't see anything..."", 4: '1', 18: '100013312'}"
+283	283		301							{2: 'Vimine', 3: '...', 4: '2'}
+284	284		301							{2: 'Antonia', 3: 'Vimine... tell me...', 4: '1', 18: '100013313'}
+285	285		301							{2: 'Vimine', 3: 'What is it?', 4: '2', 18: '100013314'}
+286	286		301							{2: 'Antonia', 3: 'Tell me how the story ends...', 4: '1', 18: '100013315'}
+287	287		301							"{2: 'Vimine', 3: ""...I don't know..."", 4: '2', 18: '100013316'}"
+288	288		301							{2: 'Antonia', 3: 'Tell me... where did the little gray raven go?', 4: '1', 18: '100013317'}
+289	289		301							"{2: 'Vimine', 3: ""...I don't know..."", 4: '2', 18: '100013318'}"
+290	290		301							{2: 'Antonia', 3: 'Tell me... the maiden in the story... my child... my Liv...', 4: '1', 18: '100013319'}
+291	291		301							{2: 'Antonia', 3: 'Did she... find happiness in the end?', 4: '1', 18: '100013320'}
+292	292		301				AniZhuanchangBegin			"{1: '1', 2: 'Vimine', 3: ""...I don't know."", 4: '1', 18: '100013321'}"
+293	293		202							{1: '1', 2: '2', 6: '1'}
+294	294		504							{1: '0'}
+295	295		401							{1: '1', 2: '36'}
+296	296		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory506.jpg'}
+297	297		401							{1: '1', 2: '33'}
+298	298		201							{1: '1', 2: '501378', 3: '15'}
+299	299		301			AniZhuanchangEnd				{1: '1', 2: 'Liv', 3: '...', 4: '1', 18: '100013322'}
+300	300		302							"{2: 'So... ""The Maiden of Eden"" was never finished?', 3: '301', 18: '100013323'}"
+301	301		201							{1: '1', 2: '500163'}
+302	302		301							"{1: '1', 2: 'Vimine', 3: ""Right. You've probably figured out by now that it's a story based on Liv..."", 4: '1', 18: '100013323'}"
+303	303		301							"{2: 'Vimine', 3: ""But I couldn't give her an answer... I don't know how her story should end."", 4: '1', 18: '100013324'}"
+304	304		301							{2: 'Vimine', 3: 'That day, she asked me to leave her manuscript at the windmill church. Right here.', 4: '1', 18: '100013325'}
+305	305		301				AniZhuanchangBegin			{2: 'Vimine', 3: 'It was her final prayer for Liv.', 4: '1', 18: '100013326'}
+306	306		202							{1: '1'}
+307	307		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory601.jpg'}
+308	308		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+309	309		401							{1: '2', 2: '2597'}
+310	310		301			AniZhuanchangEnd				{3: 'Leaving the windmill tower, you are met by a maelstrom—thunderous roars, a pitch-black sky, and torrential rain.'}
+311	311		301				DialogDisable			{3: 'After saying goodbye to Vimine, you and Liv begin the walk home.'}
+312	312		401							{1: '2', 2: '1016'}
+313	313		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+314	314		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab'}
+315	315		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+316	316		301			DialogEnable	DialogDisable			{3: 'Her M.I.N.D. wavers, profound grief once again filling her eyes with tears.'}
+317	317		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+318	318		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong03.prefab'}
+319	319		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+320	320		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+321	321		402							{2: '2597'}
+322	322		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+323	323		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+324	324		401						350.0	{1: '2', 2: '4276'}
+325	325		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignSun01.prefab', 2: '2', 5: '1'}
+326	326		511							{1: '1', 2: '0', 3: '315|75|-300'}
+327	327		301			DialogEnable	DialogDisable			{3: 'She sees your Mind Beacon connecting, emanating a soft glow like a distant lighthouse in the storm.'}
+328	328		302							{2: 'Liv, Liv!', 3: '329'}
+329	329		301			DialogEnable	DialogDisable			"{3: '""Liv, Liv."" Someone is softly calling her name.'}"
+330	330		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignSun01.prefab', 5: '1'}
+331	331		401							{1: '2', 2: '558'}
+332	332		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+333	333		504							{1: '0.7'}
+334	334		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+335	335		101						350.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory921.jpg'}
+336	336		401							{1: '2', 2: '558'}
+337	337		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+338	338		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory609.jpg'}
+339	339		201							{1: '1', 2: '501399', 7: '1'}
+340	340		301			DialogEnable				"{1: '1', 3: ""A childhood carousel, her mother's feeble smile...""}"
+341	341		202							{1: '1', 6: '1'}
+342	342		401							{1: '2', 2: '558'}
+343	343		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+344	344		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory374.png'}
+345	345		201							{1: '1', 2: '500342', 7: '1'}
+346	346		301				DialogDisable			"{1: '1', 3: ""The soft wool of lambs, Calliope's caring chatter...""}"
+347	347		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+348	348		504							{1: '0'}
+349	349		202							{1: '1', 6: '1'}
+350	350		401							{1: '2', 2: '558'}
+351	351		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+352	352		101						350.0	{1: 'Assets/Product/Texture/Image/BgCg/Cgqz202.png'}
+353	353		401							{1: '2', 2: '558'}
+354	354		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+355	355		101						350.0	{1: 'Assets/Product/Texture/Image/BgCg/Cgqz204.png'}
+356	356		401							{1: '2', 2: '558'}
+357	357		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+358	358		101						350.0	{1: 'Assets/Product/Texture/Image/BgCg/Cgqz206.png'}
+359	359		401							{1: '2', 2: '558'}
+360	360		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+361	361		101						350.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1155.jpg'}
+362	362		401							{1: '2', 2: '4276'}
+363	363		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlinkNew.prefab', 2: '2'}
+364	364		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiColorTableStageMain/FxUiColorTableStageRollStarLoop.prefab', 2: '2'}
+365	365		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+366	366		301			DialogEnable	DialogDisable			{3: 'Through the veil of tears, fragments of memory flash before her eyes—vivid and sharp as shattered glass, shimmering with countless colors.'}
+367	367		104						800.0	{1: '0|0|-150', 2: '0.75'}
+368	368		301			DialogEnable	DialogDisable			{3: 'She reaches out, longing to gather those delicate shards and press them close to her heart.'}
+369	369		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlinkNew.prefab'}
+370	370		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiColorTableStageMain/FxUiColorTableStageRollStarLoop.prefab'}
+371	371		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory601.jpg', 3: '0', 4: '1', 5: '1.5'}
+372	372		205							{1: '999'}
+373	373		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory601.jpg'}
+374	374		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab'}
+375	375		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+376	376		401							{1: '2', 2: '5517'}
+377	377		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCerberusGameChapter/FxUiCerberusGameChapterLizi01.prefab', 2: '2'}
+378	378		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+379	379		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCerberusGameChapter/FxUiCerberusGameChapterLizi01.prefab'}
+380	380		201							{1: '1', 2: '501399'}
+381	381		205						1050.0	{1: '1', 3: '1', 4: '0.3', 5: '1'}
+382	382		205						1050.0	{1: '1', 3: '0.3', 4: '1', 5: '1'}
+383	383		201							{1: '1', 2: '500678'}
+384	384		205						1050.0	{1: '1', 3: '1', 4: '0.3', 5: '1'}
+385	385		205						1050.0	{1: '1', 3: '0.3', 4: '1', 5: '1'}
+386	386		401						500.0	{1: '2', 2: '772'}
+387	387		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab'}
+388	388		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+389	389		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+390	390		111						250.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab'}
+391	391		202							{1: '1', 6: '1'}
+392	392		401						300.0	{1: '2', 2: '4292'}
+393	393		401							{1: '2', 2: '2597'}
+394	394		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+395	395		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+396	396		301			DialogEnable	DialogDisable			"{1: '1', 3: ""But a sudden gale sweeps everything away—her mother's silhouette, the Gray Raven's commandant uniform, the dim lighthouse—all swallowed by the roaring rain.""}"
+397	397		201							{1: '1', 2: '501398'}
+398	398		307							{1: 'She stands motionless, drenched and utterly alone between heaven and earth.', 3: '50'}
+399	399		301		1		AniZhuanchangBegin			{1: '1', 3: 'She stands motionless, drenched and utterly alone between heaven and earth.'}

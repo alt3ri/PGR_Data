@@ -1,0 +1,136 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory546.jpg'}
+2	2		401							{1: '1', 2: '210'}
+3	3		401							{1: '2', 2: '4422'}
+4	4		301			DialogEnable				"{3: ""You finish today's plans early and check where your squad members are on your terminal.""}"
+5	5		301							"{3: 'A little red dot for Lucia is still at the ""Holographic Experience Hall"".'}"
+6	6		301							"{3: ""Lucia wouldn't usually come here alone. What's she up to?""}"
+7	7		302				AniZhuanchangBegin			"{2: ""(Let's check it out)"", 3: '8'}"
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+9	9		301			AniZhuanchangEnd	DialogDisable			"{3: ""After showing your ID and following the staff, you open the big white wooden door. You're hit with a salty, wet breeze, just like the ocean.""}"
+10	10		401						100.0	{1: '2', 2: '4870'}
+11	11		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory533.jpg', 3: '0', 4: '1', 5: '1'}
+12	12		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory533.jpg'}
+13	13		205							{1: '999'}
+14	14		401							{1: '2', 2: '903'}
+15	15		301			DialogEnable				{3: 'A vast sky stretches overhead, pristine blue as if freshly washed. Waves roll ceaselessly along the horizon—the scene before your eyes is indistinguishable from a real coastline.'}
+16	16		201							{1: '1', 2: '500988'}
+17	17		301							{1: '1', 2: 'Lucia', 3: 'Maybe a bit more to the left would look better?', 4: '1'}
+18	18		306							{1: '1'}
+19	19		301							{3: 'The black sand underfoot feels real. In the distance, Lucia stands with her back to you, hands behind her, looking up and talking to herself.'}
+20	20		306							
+21	21		302							"{2: 'Lucia.', 3: '22', 4: ""(Move closer to see what she's doing)"", 5: '22'}"
+22	22		402							{1: '903'}
+23	23		202							{1: '1', 6: '1'}
+24	24		201							{1: '1', 2: '500994', 3: '7'}
+25	25		301							{1: '1', 2: 'Lucia', 3: 'Commandant?', 4: '1'}
+26	26		301							{3: 'Noticing you, Lucia turns around suddenly, her red eyes filled with surprise and delight.'}
+27	27		204							{1: '1', 2: '2'}
+28	28		301							"{2: 'Lucia', 3: ""Wait... didn't you say you had a mission today?"", 4: '1'}"
+29	29		302							"{2: ""It wasn't that important, so I decided to take the day off."", 3: '30', 4: 'The mission was easy, so we finished early.', 5: '30'}"
+30	30		301							"{2: 'Lucia', 3: ""Got it. Next time there's an easy mission like that, let me handle it. You've been up late lately—you need to take care of yourself."", 4: '1'}"
+31	31		202							{1: '1'}
+32	32		401							{1: '2', 2: '4124021'}
+33	33		301							{3: 'As you smile back at Lucia, you hear a familiar metallic sound from above. You look up and see her CUB, Corvus.'}
+34	34		401							{1: '2', 2: '4124020'}
+35	35		301							{3: 'The bird-shaped CUB flies around and then drops a few little metal balls.'}
+36	36		401							{1: '2', 2: '2903'}
+37	37		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTempleBattle/FxUiTempleBattleYanhuan02.prefab', 2: '2'}
+38	38		401						300.0	{1: '2', 2: '2903'}
+39	39		401						300.0	{1: '2', 2: '2903'}
+40	40		401						300.0	{1: '2', 2: '2903'}
+41	41		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTempleBattle/FxUiTempleBattleYanhuan02.prefab'}
+42	42		301							{3: 'The little sphere drops through the air, pops open, and shoots out colorful lights. They burst across the sky, blending with the bright afternoon sun.'}
+43	43		302							{2: 'This...', 3: '44'}
+44	44		201							{1: '1', 2: '500994', 3: '6'}
+45	45		301							"{1: '1', 2: 'Lucia', 3: ""I'm... getting the holographic fireworks ready."", 4: '1'}"
+46	46		302							{2: 'Fireworks?', 3: '47'}
+47	47		204							{1: '1', 2: '4'}
+48	48		301				DialogDisable			"{2: 'Lucia', 3: ""It's your birthday, after all. I was planning a big surprise for this evening."", 4: '1'}"
+49	49		302							{2: 'I see.', 3: '50'}
+50	50		302							{2: 'Just you thinking of me is enough.', 3: '51'}
+51	51		204							{1: '1', 2: '2'}
+52	52		301			DialogEnable				"{2: 'Lucia', 3: ""Yeah, I have a birthday gift for you too. I'll give it to you later."", 4: '1'}"
+53	53		301							{3: 'Lucia smiles gently as she looks at you, the sea breeze lifting her hair.'}
+54	54		302							{2: 'This place looks unbelievably real.', 3: '55'}
+55	55		301							"{2: 'Lucia', 3: ""Commandant, come on over. There's even more cool stuff to see."", 4: '1'}"
+56	56		202							{1: '1'}
+57	57		301							{3: 'Lucia takes your arm, and you both walk toward the ocean.'}
+58	58		201							{1: '1', 2: '500994'}
+59	59		301							{1: '1', 2: 'Lucia', 3: 'Vehicle Request: Boat.', 4: '1'}
+60	60		202							{1: '1'}
+61	61		306							{1: '1'}
+62	62		401							{1: '2', 2: '690'}
+63	63		301						1000.0	{3: 'Lucia waves her index finger in the air. Blob-like things appear, growing and shrinking until they turn into a small boat.'}
+64	64		306							
+65	65		302							{2: 'Are we going out to sea?', 3: '66'}
+66	66		201							{1: '1', 2: '500994', 3: '2'}
+67	67		301							"{1: '1', 2: 'Lucia', 3: ""I was going to show them later, but since you're here, let's start now."", 4: '1'}"
+68	68		301				DialogDisable			{2: 'Lucia', 3: 'Please sit and hold on tight, Commandant.', 4: '1'}
+69	69		202							{1: '1'}
+70	70		401						700.0	{1: '2', 2: '4382'}
+71	71		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory537.jpg', 3: '0', 4: '1', 5: '1.5'}
+72	72		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory537.jpg'}
+73	73		205							{1: '999'}
+74	74		401							{1: '2', 2: '2634'}
+75	75		301			DialogEnable				{3: 'Lucia sits next to you at the back of the boat, waves her hand over the side, and the coast starts to fade away.'}
+76	76		201							{1: '1', 2: '500994', 3: '4'}
+77	77		301							"{1: '1', 2: 'Lucia', 3: ""This is all a copy of Earth's scenery before the Punishing. Seeing these untouched oceans brings me peace."", 4: '1'}"
+78	78		302							"{2: ""I'll do the same."", 3: '81', 4: 'Does the time here match Babylonia?', 5: '79'}"
+79	79		204							{1: '1'}
+80	80		301							"{2: 'Lucia', 3: ""Yeah, this place is still in testing. They haven't put in the manual sunlight control yet."", 4: '1'}"
+81	81		204							{1: '1', 2: '2'}
+82	82		301							"{2: 'Lucia', 3: ""If we get the chance, let's rent a boat and see more cool places, Commandant."", 4: '1'}"
+83	83		302							{2: 'Yes, definitely.', 3: '84'}
+84	84		202							{1: '1'}
+85	85		301							{3: 'The two of them sit next to each other on the boat, talking about everyday things, like they always do.'}
+86	86		104							{1: '0|0|-50', 2: '4'}
+87	87		301				AniZhuanchangBegin		4500.0	{3: 'As they chat, the land completely vanishes behind them, and the little boat floats aimlessly on the vast blue water.'}
+88	88		402							{1: '2634'}
+89	89		401							{1: '1', 2: '36'}
+90	90		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory783.jpg'}
+91	91		401							{1: '1', 2: '5047'}
+92	92		301			AniZhuanchangEnd				"{3: ""Before you know it, it's twilight. The setting sun's already painted the ocean gold.""}"
+93	93		301							"{3: ""Lucia looks at the blue and gold sky, slowly letting go of the hand she'd been holding.""}"
+94	94		201							{1: '1', 2: '500994', 3: '2'}
+95	95		301				DialogDisable			{1: '1', 2: 'Lucia', 3: 'Commandant, could you close your eyes and wait a second?', 4: '1'}
+96	96		302							{2: '...?', 3: '97', 4: '(Close eyes)', 5: '97'}
+97	97		202							{1: '1'}
+98	98		205						700.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.4'}
+99	99		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+100	100		205						500.0	{1: '999'}
+101	101		401						250.0	{1: '2', 2: '4124021'}
+102	102		301			DialogEnable	DialogDisable			{3: 'As Lucia asks, you lean back and close your eyes. In the dark, the metal gliding sound from the sky becomes remarkably clear.'}
+103	103		401							{1: '2', 2: '904'}
+104	104		401						3000.0	{1: '2', 2: '4161'}
+105	105		301			DialogEnable			1000.0	{3: 'A moment later, you hear light footsteps and the sound of waves. They come closer and stop right in front of you, and you smell something sweet.'}
+106	106		301							{2: 'Lucia', 3: 'You can open your eyes now, Commandant.'}
+107	107		402							{1: '904'}
+108	108		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+109	109		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory783.jpg'}
+110	110		201							{1: '1', 2: '500994', 3: '1', 7: '1'}
+111	111		301							{1: '1', 3: 'You see a small, beautiful chocolate cake. The white frosting looks like snow, with your name in jam and almonds on top.'}
+112	112		203							{1: '1', 2: '0.25', 5: '-10'}
+113	113		401							{1: '2', 2: '2635'}
+114	114		301							{3: 'Lucia slowly holds out her hand, and with a soft snap, a little flame comes from her fingertip, lighting all the candles and lighting up her face.'}
+115	115		301							{2: 'Lucia', 3: 'I asked the World Government Association of Art to make a special birthday cake for you, designed just how I wanted it.', 4: '1'}
+116	116		301							{2: 'Lucia', 3: 'Happy birthday, Commandant.', 4: '1'}
+117	117		302							{2: 'Thank you, Lucia.', 3: '118'}
+118	118		204							{1: '1', 2: '4'}
+119	119		301							{2: 'Lucia', 3: 'Actually, tonight... I have a special favor to ask.', 4: '1'}
+120	120		302							{2: 'A favor?', 3: '121'}
+121	121		204							{1: '1', 2: '2'}
+122	122		301							{2: 'Lucia', 3: 'Yeah, I want to borrow a wish from you—', 4: '1'}
+123	123		202							{1: '1'}
+124	124		401						250.0	{1: '2', 2: '4799'}
+125	125		402							{1: '4799'}
+126	126		301							{3: 'Lucia sits back down next to you, like she always does, her shoulder touching yours.'}
+127	127		201							{1: '1', 2: '500994', 3: '8'}
+128	128		301							{1: '1', 2: 'Lucia', 3: 'I wish for my Commandant to be safe and happy every day from now on.', 4: '1'}
+129	129		301							{2: 'Lucia', 3: 'I hope I can be with you every year at this time, like today, seeing more beautiful places and making new wishes together.', 4: '1'}
+130	130		204							{1: '1', 2: '2'}
+131	131		301							{3: 'A familiar warmth spreads across the back of your hand as Lucia looks at you, her ruby eyes reflecting your image.'}
+132	132		302							{2: 'Your wish is definitely going to come true.', 3: '133'}
+133	133		301							"{2: 'Lucia', 3: ""Alright then... Commandant, let's blow out the candles together."", 4: '1'}"
+134	134		202							{1: '1'}
+135	135		301		1		AniZhuanchangBegin			{3: 'With the ocean and candles watching, you hold hands, make a wish together, and simultaneously breathe warm air onto the candle flame.'}

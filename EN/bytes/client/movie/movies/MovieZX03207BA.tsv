@@ -1,0 +1,355 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '172'}
+3	3		401							{1: '2', 2: '884'}
+4	4		401							{1: '2', 2: '2601'}
+5	5		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+6	6		501			AniZhuanchangEnd				{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '3'}
+7	7		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg', 3: '0', 4: '1', 5: '1'}
+8	8		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+9	9		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg'}
+10	10		301			DialogEnable				{3: 'The alarm begins blaring the same time the ground roars in rage, plunging the entire conservation area into chaos and screams.'}
+11	11		301			RImgBg1Shake				{3: 'In the distance, a dilapidated building totters on the brink of collapse, its steel framework squeaking as it sways violently. As far as anyone can see, everything is shaking.'}
+12	12		301							"{3: ""Unable to stand firmly and on their wits' end, people hold on to whatever objects they can find and keep their bodies low to wait the quakes out.""}"
+13	13		401							{1: '2', 2: '738'}
+14	14		301							{3: 'No textbook or video can ever come close to describing the horror they are going through at this very moment.'}
+15	15		301							{3: 'They see with their very eyes how powerless they are, and every shake chips away at their will. Everything they once thought was indestructible crumbles into pieces with jaw-dropping ease. They try to escape out of instinct—only to find themselves completely at the mercy of Mother Nature.'}
+16	16		401							{1: '2', 2: '561'}
+17	17		301							{3: 'In the face of Mother Nature, mankind is no better than a bunch of inconsequential small fry.'}
+18	18		402							{1: '2601'}
+19	19		301							{3: 'And yet...'}
+20	20		401							{1: '2', 2: '1502'}
+21	21		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+22	22		201							{1: '1', 2: '500028', 4: '-600'}
+23	23		201							{1: '2', 2: '500019', 4: '600'}
+24	24		201							{1: '3', 2: '500567'}
+25	25		301							"{1: '1', 2: 'Construct of Support Force', 3: ""Stop what you're doing at once and evacuate like you've been drilled to! And don't push!"", 4: '1'}"
+26	26		301							"{2: 'Construct of Engineering Force', 3: ""Take cover where you are if you're in the medical zone. Pay attention to the injured! We've reinforced the shelters there, and y'all can count on it to sustain even the most violent of shakes!"", 4: '2'}"
+27	27		301							"{2: 'Task Force Construct', 3: ""Everything's going to be okay, and we aren't going to let another person get hurt!"", 4: '3'}"
+28	28		202							{1: '1', 2: '2', 3: '3'}
+29	29		301							"{3: ""There isn't a single idle soldier in sight, each and every single one of them doing what they should to help—which means that Gray Raven can't let anything stand in its way, either.""}"
+30	30		301							"{3: ""After a moment's hesitation, Gray Raven jumps into action.""}"
+31	31		201							{1: '1', 2: '500166', 3: '5', 4: '-250'}
+32	32		201							{1: '2', 2: '500167', 3: '4', 4: '250'}
+33	33		301							{1: '1', 3: 'Helping Bridget drive her longsword deep into the ground to steady her, Lucia nods at you, her eyes calm and reassuring as always.'}
+34	34		202							{1: '1', 2: '2', 6: '1'}
+35	35		401							{1: '2', 2: '10003001'}
+36	36		201							{1: '1', 2: '1031001', 3: '5'}
+37	37		301							{1: '1', 3: 'Liv, on the other hand, fires at a concrete pillar teetering on the verge of crumbling with a Levi-Gun, blowing it into pieces that pound the ground where no one stands.'}
+38	38		202							{1: '1', 6: '1'}
+39	39		302							{2: '(Activate exoskeleton)', 3: '40'}
+40	40		401							{1: '2', 2: '1509'}
+41	41		301							"{3: ""After pulling some residents away from the trial ground and out of harm's way, you turn around and, at the top of your lungs, shout your question at the Construct that was holding a monitoring device just now.""}"
+42	42		302							{2: 'Do we have the numbers on the earthquake?!'}
+43	43		201							{1: '1', 2: '500567'}
+44	44		301			DialogEnable				{1: '1', 2: 'Construct', 3: 'Nothing except that the epicenter is ten-to-fifteen kilometers away from here. Will have to go to the command center to find out the rest!', 4: '1'}
+45	45		302							"{2: ""Liv, how's connection looking?"", 3: '46'}"
+46	46		201							{1: '1', 2: '1031001', 3: '5'}
+47	47		301							{1: '1', 2: 'Liv', 3: 'All channels are temporarily down!', 4: '1'}
+48	48		502							{1: 'DialogDisable'}
+49	49		302							{2: 'I wonder what things are like around the epicenter now.', 3: '50'}
+50	50		302							{2: 'We need to get in touch with the people there and Babylonia as soon as we can.', 3: '51'}
+51	51		302							"{2: ""We're counting on your support, Bridget!"", 3: '52'}"
+52	52		202							{1: '1', 6: '1'}
+53	53		201							{1: '1', 2: '500167'}
+54	54		301			DialogEnable				{1: '1', 2: 'Bridget', 3: 'On it!', 4: '1'}
+55	55		302							{2: 'Where is Emergency Command Center?', 3: '56'}
+56	56		204							{1: '1', 2: '4'}
+57	57		301							"{2: 'Bridget', 3: ""It's right there! Three o'clock from the signal tower!"", 4: '1'}"
+58	58		301							{3: 'After pointing into a certain direction in the conservation area, Bridget tosses a set of keycards over this way.'}
+59	59		301				AniZhuanchangBegin			"{2: 'Bridget', 3: ""There are people on duty around the clock, but in case you don't see anyone there, the underground garage is right outside the command center's safety tunnel!"", 4: '1'}"
+60	60		202			DialogDisable				{1: '1', 6: '1'}
+61	61		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+62	62		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory9.jpg'}
+63	63		301			DialogEnable				{3: 'The wind and the chaos that now dominates the conservation area flood your ears the entire time you sprint toward the command center.'}
+64	64		301							{3: 'With the most violent of trembles behind, the conservation area is now deep in screams and cries, as well as people assisting those calling for help.'}
+65	65		301							{3: 'Right then, out of the corner of your eye, you see a pair of trembling hands with a thumbs up that dangles off a stretcher being carried away by a few Constructs.'}
+66	66		201							{1: '1', 2: '500019'}
+67	67		301							"{1: '1', 2: 'Support Construct', 3: ""Aren't you a tough one, huh..."", 4: '1'}"
+68	68		202							{1: '1', 6: '1'}
+69	69		301				AniZhuanchangBegin			"{3: ""Yes, come what may—because together, we're strong.""}"
+70	70		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+71	71		505			DialogDisable				{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+72	72		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory584.jpg'}
+73	73		301			DialogEnable				"{3: ""As soon as you open the door to the command center, you are met with an unbelievable mess. Sitting right in the center of the gigantic central system with a straight face are two Constructs, their hands flying over the control panel so fast that your eyes can't even catch up.""}"
+74	74		301							"{3: ""One of the Constructs' arm seems obviously crushed out of shape, except she seems completely unaware of it.""}"
+75	75		201							{1: '1', 2: '500028', 4: '400'}
+76	76		201							{1: '2', 2: '500250', 4: '-400'}
+77	77		301							{1: '1', 2: 'Construct of Engineering Force', 3: 'The spacetime distribution and characteristics... and the electromagnetic parameters... What in the world is going on? None of this is making any sense!', 4: '1'}
+78	78		301							"{2: 'Liaison Officer', 3: ""Emergency communications is 98% activated... 99%... There we go! Damn it. We aren't hearing anything back from Conservation Area 27!"", 4: '2'}"
+79	79		302							"{2: 'Task Force Gray Raven is here to help!', 3: '80', 4: ""Didn't think we'd run into anyone here..."", 5: '82'}"
+80	80		301							{2: 'Liaison Officer', 3: 'Oh, thank God!', 4: '2'}
+81	81	84	301							{3: 'The liaison officer almost jumps out of her seat.'}
+82	82		301							"{2: 'Construct of Engineering Force', 3: ""We aren't going anywhere!"", 4: '1'}"
+83	83		301							{3: 'The Construct says without even turning his head around.'}
+84	84		302							"{2: ""How's everything looking?"", 3: '85', 4: 'Have we located the epicenter yet?', 5: '87'}"
+85	85		301							"{2: 'Liaison Officer', 3: ""Not good at all. No comms, and we still haven't heard back from Babylonia."", 4: '2'}"
+86	86	88	301							{2: 'Construct of Engineering Force', 3: 'Not good at all. The abnormal electromagnetic signal of this earthquake is weird, and...', 4: '1'}
+87	87		301							"{2: 'Construct of Engineering Force', 3: ""Yes, and it's right around Conservation Area 27, which is 17 kilometers away from here. The seismic depth is highly unusual, though. Is this really just a normal earthquake?"", 4: '1'}"
+88	88		302							{2: 'What do you mean?', 3: '89'}
+89	89		301							{2: 'Construct of Engineering Force', 3: 'The epicenter is 2,000 meters underground, if our device got the measurement right.', 4: '1'}
+90	90		301							"{2: 'Construct of Engineering Force', 3: ""Which makes no sense at all... because if that's where the epicenter is, then we should be seeing catastrophic damage here just 17 kilometers away from the epicenter!"", 4: '1'}"
+91	91		301							{2: 'Construct of Engineering Force', 3: 'And Conservation Area 27 can only be having it worse... because they have a bigger population than we do with their high-power CPFs...', 4: '1'}
+92	92		502							{1: 'DialogDisable'}
+93	93		302							{2: 'Calm down and send us a copy of the data first.', 3: '94'}
+94	94		302							"{2: ""It's likely that they've lost all means of communication there."", 3: '95'}"
+95	95		302							"{2: ""We're going to head down there now."", 3: '96'}"
+96	96		301			DialogEnable				{2: 'Liaison Officer', 3: 'Wait. Use the car down in the underground garage!', 4: '2'}
+97	97		301							"{2: 'Liaison Officer', 3: ""The car comes with a mobile emergency command device that contains all our data. You'll be able to connect to the nodes with it. We've had a dozen nodes set up already."", 4: '2'}"
+98	98		301							"{2: 'Liaison Officer', 3: ""We'll keep trying and see if we can get in touch with the other zones."", 4: '2'}"
+99	99		302							{2: 'Thanks!', 3: '100', 4: 'Good luck.', 5: '100'}
+100	100		202							{1: '1', 2: '2', 6: '1'}
+101	101		201							{1: '1', 2: '500166', 3: '5', 4: '400'}
+102	102		201							{1: '2', 2: '1031001', 3: '5', 4: '-400'}
+103	103		301							{1: '1', 3: 'Exchanging a look with Lucia and Liv, you scurry toward the safety exit.'}
+104	104		202							{1: '1', 2: '2', 6: '1'}
+105	105		201							{1: '1', 2: '500028', 4: '400'}
+106	106		201							{1: '2', 2: '500250', 4: '-400'}
+107	107		301				AniZhuanchangBegin			{1: '1', 3: 'The Constructs, on the other hand, stay where they are.'}
+108	108		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+109	109		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory566.jpg'}
+110	110		401							{1: '2', 2: '885'}
+111	111		201							{1: '1', 2: '500166', 3: '5'}
+112	112		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'Please fasten your seatbelt, Commandant. The road is about to get bumpy.', 4: '1'}
+113	113		202							{1: '1', 6: '1'}
+114	114		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+115	115		301							{3: 'The entire time the military vehicle speeds down the quake-stricken highway, Liv busies herself with adjusting the radio in the car.'}
+116	116		301							"{3: ""Half an hour later, you finally hear a voice emerge from the white noise that's been filling the air.""}"
+117	117		401							{1: '2', 2: '615'}
+118	118		301							{2: '???', 3: 'This is the [BUZZ—] Commandant speaking. This is an SOS message to all squads from Babylonia.'}
+119	119		301							{2: '???', 3: 'I repeat. This is the [BUZZ—] Commandant speaking, and this is an SOS message to all [BUZZ—] from Babylonia.'}
+120	120		301							{2: '???', 3: 'A group of Hetero-Creatures [BUZZ—] attacked [BUZZ—], and unknown electromagnetic radiation [BUZZ—] abnormal...'}
+121	121		402							{1: '615'}
+122	122		201							{1: '1', 2: '1031001', 3: '5'}
+123	123		301							{1: '1', 2: 'Liv', 3: 'Commandant! That was an SOS message just now!', 4: '1'}
+124	124		302							{2: 'Can you locate them?', 3: '125'}
+125	125		301							{2: 'Liv', 3: 'Just confirmed the sender to be Apodidae under Task Force. Their last mission report was made 3 hours and 25 minutes ago, stating that they were on a joint mission with Engineering Force around Conservation Area 27.', 4: '1'}
+126	126		301							"{3: ""That's probably the squad Bridget was talking about.""}"
+127	127		302							{2: 'Let them know that we got their message.', 3: '128'}
+128	128		203							{1: '1', 2: '0.25', 3: '-400'}
+129	129		201							{1: '2', 2: '500166', 3: '5', 4: '400'}
+130	130		301				AniZhuanchangBegin			"{1: '1', 2: 'Lucia', 3: ""On it. SOS message received by Gray Raven. We're on our way!"", 4: '2'}"
+131	131		505			DialogDisable				{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+132	132		202							{1: '1', 2: '2', 6: '1'}
+133	133		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg'}
+134	134		301			DialogEnable				{3: 'The closer the car approaches the location shown, the stronger the reaction of Punishing you pick up.'}
+135	135		301							"{3: ""You can't be sure if there will be aftershocks, but you decide to go with the most safe-looking route that goes around the city—in case you ever need to engage any enemies when an aftershock hits.""}"
+136	136		301							{3: 'The weather seems worse than it was just now. The heavy clouds descending upon the horizon quickly rob you of your visibility and turn the gray buildings in the distance into a twisted mountain range.'}
+137	137		501						400.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+138	138		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+139	139		301							{3: 'Over the never-changing line of gray, however, a red flash quickly swooshes past.'}
+140	140		302							{2: '...!', 3: '141'}
+141	141		301							{3: 'When you turn your head around for a better look of what that was, however, you see nothing.'}
+142	142		201							{1: '1', 2: '500166', 3: '5'}
+143	143		301							"{1: '1', 2: 'Lucia', 3: ""We're in close vicinity of where the SOS message was sent out, Commandant."", 4: '1'}"
+144	144		302							{2: 'Look for their signal.', 3: '145'}
+145	145		301							"{2: 'Lucia', 3: ""...Found them! I'm picking up reactions of them and Hetero-Creatures 923 meters away at 2 o'clock!"", 4: '1'}"
+146	146		302				AniZhuanchangBegin			{2: 'Get ready for engagement!', 3: '147'}
+147	147		202			DialogDisable				{1: '1', 6: '1'}
+148	148		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg'}
+149	149		401							{1: '2', 2: '10007502'}
+150	150		502							{1: 'RImgBg1Shake'}
+151	151		302							{2: 'Incoming from the left!', 3: '152'}
+152	152		401							{1: '2', 2: '844006'}
+153	153		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+154	154		201							{1: '1', 2: '500166', 3: '5', 4: '-150', 6: '-100', 7: '1'}
+155	155		203							{1: '1', 2: '0.14'}
+156	156		301			DialogEnable				{1: '1', 2: 'Lucia', 3: '—!', 4: '1'}
+157	157		301							{2: 'Lucia', 3: 'Target has been directed to selected location, Commandant!', 4: '1'}
+158	158		302							{2: 'Get out of there!'}
+159	159		201							{1: '1', 2: '1031001', 3: '5'}
+160	160		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+161	161		301							{1: '1', 2: 'Liv', 3: 'Laser barrier set up on the right!', 4: '1'}
+162	162		302							{2: 'Liv, now!', 3: '163'}
+163	163		301							{2: 'Liv', 3: 'On it!', 4: '1'}
+164	164		202							{1: '1', 6: '1'}
+165	165		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+166	166		401							{1: '2', 2: '10003001'}
+167	167		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+168	168		401							{1: '2', 2: '752'}
+169	169		301							{3: 'Firing from across you, the mounted laser cannon accurately blows off a corner of the building you just marked.'}
+170	170		401							{1: '2', 2: '915'}
+171	171		301			RImgBg1Shake				"{3: ""Dealt the coup de grace, the already teetering walls crumble to the ground with an ear-splitting bang, whose falling concrete blocks block the Hetero-Creatures' way out.""}"
+172	172		401							{1: '2', 2: '1508'}
+173	173		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+174	174		301							{3: 'Then, like a mille-feuille that rots in a time-lapse, the floors of the building go down in a chain reaction, instantly burying away the Hetero-Creatures that try to make their way up and crushing them into a crimson pool of syrup in the remains of the building.'}
+175	175		401							{1: '2', 2: '1508'}
+176	176		301							{3: 'In the rolling smoke, a few Hetero-Creatures make their way out of the debris—and among them is a deranged Hetero-Sapien that dashes straight at you, whose broken arm you can see sandwiched between broken concrete blocks.'}
+177	177		201							{1: '1', 2: '500166', 3: '5'}
+178	178		301							{1: '1', 2: 'Lucia', 3: 'Commandant!', 4: '1'}
+179	179		202							{1: '1', 7: '1'}
+180	180		302			DialogDisable				{2: '(Raise your gun and shoot)', 3: '181'}
+181	181		401							{1: '2', 2: '11105405'}
+182	182		401							{1: '1', 2: '36'}
+183	183		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+184	184		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+185	185		301			DialogEnable				{3: 'Right when you pull the trigger, you hear a loud bang from behind you—and before you know it, something swishes past you with searing heat and heads straight for the Hetero-Creatures.'}
+186	186		401							{1: '2', 2: '3079'}
+187	187		301							"{3: ""Right away, you roll over and brace yourself for what's coming next. A wave of eye-searing heat and blinding light later, what were still the Hetero-Creatures and the remains of the building until moments ago are now a pile of overcooked black stones.""}"
+188	188		301							{3: 'The world is quiet again as your terminal beeps to inform you that all enemies have been neutralized.'}
+189	189		401							{1: '1', 2: '201'}
+190	190		201							{1: '1', 2: '1031001', 3: '5'}
+191	191		301							{1: '1', 2: 'Liv', 3: 'Commandant! Are you alright?!', 4: '1'}
+192	192		302							"{2: ""I'm okay, but wait..."", 3: '193'}"
+193	193		201							{1: '1', 2: '500560', 3: '15'}
+194	194		301							{1: '1', 3: 'Turning around, you see a girl in her commandant uniform collapse to the ground, the rocket launcher over her shoulder still spitting out smoke.'}
+195	195		301							{2: 'Sica', 3: 'Ha... ha...', 4: '1'}
+196	196		301							{3: 'Blood oozes through her fingers that wrap tightly around her arm.'}
+197	197		302							{2: 'We need a doctor here.', 3: '198'}
+198	198		201							{1: '1', 2: '1031001', 3: '5'}
+199	199		301				AniZhuanchangBegin			"{1: '1', 2: 'Liv', 3: ""Right. I'm on it!"", 4: '1'}"
+200	200		202			DialogDisable				{1: '1', 6: '1'}
+201	201		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg'}
+202	202		201							{1: '1', 2: '1031001', 3: '1'}
+203	203		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Some simple patching should do.', 4: '1'}
+204	204		301							{2: 'Liv', 3: 'Please stay still... and let me inject this serum for you.', 4: '1'}
+205	205		201							{1: '1', 2: '500560', 3: '3'}
+206	206		301							"{1: '1', 2: 'Sica', 3: ""Thank you... Wait, I mean. Oh my god. I'm terribly sorry!"", 4: '1'}"
+207	207		301							{3: 'Her arm still getting patched up by Liv, Sica apologizes at the top of her lungs as she looks out of the corner of her eye at the pile of burning metal a few meters away...'}
+208	208		301							{3: 'That was the vehicle you were still riding ten minutes ago.'}
+209	209		502							{1: 'DialogDisable'}
+210	210		302							"{2: '...', 3: '211', 4: ""...It's fine."", 5: '211'}"
+211	211		302							{2: '(Pretty sure Bridget is going to strangle me alive...)', 3: '212', 4: '(Thank God I took the communication device from the car...)', 5: '212'}
+212	212		301			DialogEnable				"{3: ""The shot that took down the building took a turn and landed squarely on the car, which you never saw coming... but you're just glad that no one got hurt.""}"
+213	213		302							{2: 'Forget about it. How are you feeling?', 3: '214'}
+214	214		301							"{2: 'Sica', 3: ""I'm feeling okay. See, I can still move..."", 4: '1'}"
+215	215		302							{2: 'Was it you that sent out the SOS message?', 3: '216'}
+216	216		204							{1: '1', 2: '4'}
+217	217		301							{2: 'Sica', 3: 'Y... Yes!', 4: '1'}
+218	218		301							"{3: ""Straightening herself and looking your way, Sica looks flustered. It seems like she hasn't yet recovered from everything that happened just now.""}"
+219	219		502							{1: 'DialogDisable'}
+220	220		302							"{2: ""We're safe now."", 3: '221'}"
+221	221		302							{2: 'And I know we should have introduced ourselves earlier, but...', 3: '222'}
+222	222		302							"{2: ""We're Gray Raven."", 3: '223'}"
+223	223		302							"{2: ""And I'm 【kuroname】.""}"
+224	224		301			DialogEnable				"{2: 'Sica', 3: ""Yes, I know who you are...! I mean, everyone from my class... Wait, no. Everyone who's been to F.O.S. knows who you are..."", 4: '1'}"
+225	225		301							{3: 'Says Sica, looking more flustered now.'}
+226	226		302							{2: '?', 3: '227'}
+227	227		204							{1: '1', 2: '7'}
+228	228		301							{2: 'Sica', 3: 'Oh, silly me!', 4: '1'}
+229	229		201							{1: '1', 2: '500559', 3: '4', 7: '1'}
+230	230		301							"{1: '1', 2: 'Sica', 3: ""I'm Sica LeBron. I came fresh out of F.O.S... and I currently serve as the Apodidae Commandant. It's truly a pleasure to meet you!"", 4: '1'}"
+231	231		301							{3: 'With the introduction, Sica pays you a proper, ceremonious salute—which you reciprocate with a salute.'}
+232	232		301							"{3: ""Fresh out of F.O.S. and already serving? Now, that's rare.""}"
+233	233		201							{1: '1', 2: '500560', 3: '4', 7: '1'}
+234	234		203							{1: '1', 2: '0.25', 3: '400'}
+235	235		201							{1: '2', 2: '1031001', 3: '3', 4: '-400'}
+236	236		301							{1: '1', 2: 'Liv', 3: '(LeBron... I must have heard it somewhere before.)', 4: '2'}
+237	237		301							"{3: ""Seeing Sica's glittering eyes brings you back to all the moments you looked into the shining bright eyes down in the audience when you delivered graduation speeches.""}"
+238	238		302							"{2: ""It's a little late, but... congratulations on graduating."", 3: '239', 4: 'Graduates these days are unbelievably young...', 5: '240'}"
+239	239	244	301							{2: 'Sica', 3: 'T-thank you...', 4: '1'}
+240	240		204							{1: '2'}
+241	241		301							"{2: 'Liv', 3: ""But Commandant, you're not... Uh-hum, never mind..."", 4: '2'}"
+242	242		201							{1: '2', 2: '500166', 3: '1', 4: '-400'}
+243	243		301							{1: '1', 2: 'Lucia', 3: 'You totally look the part now, Commandant.', 4: '2'}
+244	244		202							{1: '2', 6: '1'}
+245	245		203							{1: '1', 2: '0.25'}
+246	246		204							{1: '1', 2: '14'}
+247	247		301							"{2: 'Sica', 3: ""I never thought you'd be the one getting my SOS message, Commandant 【kuroname】..."", 4: '1'}"
+248	248		301							{3: 'Clenching her fist, Sica sounds upset.'}
+249	249		302							"{2: ""We're both commandants here, so feel free to just call me by my name."", 3: '250'}"
+250	250		204							{1: '1', 2: '4'}
+251	251		301							{2: 'Sica', 3: 'Right... Of course, Commandant 【kuroname】!', 4: '1'}
+252	252		301							"{3: ""It doesn't seem like she heard you.""}"
+253	253		301							{3: 'How she addresses you, however, is hardly what you want to discuss now.'}
+254	254		302							{2: 'Are you here alone?', 4: 'Where is the rest of your squad?'}
+255	255		204							{1: '1', 2: '14'}
+256	256		301							"{2: 'Sica', 3: ""It's just me... The rest of my squad is on a different mission, and I lost contact with them."", 4: '1'}"
+257	257		202							{1: '1', 6: '1'}
+258	258		301							"{3: ""Sica quickly goes over what's happened.""}"
+259	259		301							{3: 'She was sent here on a mission to help Engineering Force install new communication devices—but stumbled across a group of Corrupted and Hetero-Creatures on her way.'}
+260	260		301							{3: 'In the best interest of the engineers and the communication devices they came to install, she decided to stay behind to fight the enemies while the rest of her team escorted the engineers to safety in the nearby Conservation Area 27.'}
+261	261		301							{3: 'And everything went as planned—until the earthquake suddenly hit and severed all means of communication. In the last message she got from her team before the earthquake, they wrote that they had detected electromagnetic radiation of an unknown origin.'}
+262	262		201							{1: '1', 2: '500560', 3: '14'}
+263	263		301							{1: '1', 2: 'Sica', 3: 'I sent out SOS messages multiple times while moving toward Conservation Area 27 but never heard back from anyone.', 4: '1'}
+264	264		301							{2: 'Sica', 3: '...And I only have myself to blame... for failing to come up with a more well-thought-out plan...', 4: '1'}
+265	265		502							{1: 'DialogDisable'}
+266	266		302							{2: 'No one starts out experienced.', 3: '267'}
+267	267		302							{2: 'We can go over what you should have done better after the mission.', 3: '268'}
+268	268		302							"{2: ""But now, we need to think about what to do next while we're still here."", 3: '269'}"
+269	269		204							{1: '1', 2: '3'}
+270	270		301			DialogEnable				{2: 'Sica', 3: '...Right, of course.', 4: '1'}
+271	271		202							{1: '1', 6: '1'}
+272	272		301							"{3: ""Going through Apodidae's last message in your head again, you can't help but think that the electromagnetic radiation is a new form of attack that Corrupted and Hetero-Creatures came up with—and if that's true, then you need to get to where they are as soon as possible.""}"
+273	273		401							{1: '2', 2: '1099'}
+274	274		301							{3: 'Abruptly, an incoming call jolts the communication terminal to life.'}
+275	275		302							{2: '(Pick up)'}
+276	276		509						600.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory584.jpg', 2: '1'}
+277	277		201							{1: '1', 2: '500250', 4: '-500'}
+278	278		301							{1: '1', 3: 'It is the liaison officer, whom you met not long ago, her face looking grim.'}
+279	279		301							{2: 'Liaison Officer', 3: 'We have an emergency.', 4: '1'}
+280	280		301							{2: 'Liaison Officer', 3: 'A message was just received from soldiers near Conservation Area 27.', 4: '1'}
+281	281		302							{2: 'Is the communication issue resolved?', 3: '282'}
+282	282		301							"{2: 'Liaison Officer', 3: ""It's being addressed. A squad with communication expertise and their commandant headed to the site shortly after the support request was sent."", 4: '1'}"
+283	283		301							"{2: 'Liaison Officer', 3: ""From the on-site report we just received, the situation is... far more dire than we could've ever imagined."", 4: '1'}"
+284	284		301							{2: 'Liaison Officer', 3: 'Have a look yourselves.', 4: '1'}
+285	285		202							{1: '1', 6: '1'}
+286	286		510							{1: '1', 2: 'Assets/Product/Texture/Image/BgStory/BgStory584.jpg'}
+287	287		301							{3: 'The attachment sent by the officer only contains a video and a string of coordinates.'}
+288	288		201							{1: '1', 2: '500166', 3: '5'}
+289	289		301				AniZhuanchangBegin			{1: '1', 2: 'Lucia', 3: 'What is this...?', 4: '1'}
+290	290		401						500.0	{1: '1', 2: '36'}
+291	291		202			DialogDisable				{1: '1', 6: '1'}
+292	292		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory665.jpg'}
+293	293		104				AniZhuanchangEnd			{1: '0|-280|-400', 2: '0'}
+294	294		401							{1: '1', 2: '155'}
+295	295		301			DialogEnable				"{3: ""Had you not known that the video was captured on-site, you would've been overwhelmed by disbelief upon seeing the projected image.""}"
+296	296		104							{1: '0|280|-400', 2: '15'}
+297	297		301							{3: 'It unveils a spiral tower stretching toward the heavens.'}
+298	298		301							{3: 'With its crimson exterior and the ominous number displayed on the screen, the severity of the Punishing Virus concentration becomes apparent. Not even the most extensive protection would grant a human survival inside for more than a single minute.'}
+299	299		301							{3: 'However, its appearance is even more dread-inducing.'}
+300	300		301							{3: 'No word can convey its unearthly presence that surpasses any structure rooted in the ground. Its sturdy foundation pierces through the soil, while the sharp summit thrusts into the clouds.'}
+301	301		301							{3: 'At the sight of it, one cannot help but wonder: if the Tower of Babel—a testament to human ambition seeking to ascend into the realm of gods—were to materialize, would it bear an uncanny resemblance to this otherworldly creation?'}
+302	302		301							{3: 'Yet, its very existence evokes not awe and admiration, but a sense of impending menace within humans.'}
+303	303		301							"{3: ""It's said that the ancestral primates took millions of years to evolve into distinct lineages of humans and modern apes. In stark contrast, the development of the Punishing Virus, from chaos to the emergence of Hetero-Sapiens, transpired almost in the blink of an eye by comparison.""}"
+304	304		301							{3: 'Subsequently, the humanoid creatures birthed by the Hetero-Hive Mother unleashed havoc upon humanity a mere two hours after their genesis, leaving a wound that remains unhealed to this day.'}
+305	305		301							{3: 'You are inevitably reminded of the Central Purification Filter standing in the Pulia Forest Park, enveloped by the entangled mass of Hetero-Plants.'}
+306	306		301							{3: 'Unlike that one, this spiral tower before your eyes does not even bother to put up a camouflage, only blatantly revealing its danger and hostility to all humans on the surface and in space.'}
+307	307		301							"{3: 'Emerging from ""Eden"" and the ""Tree of Life"", they have meticulously observed and emulated every facet that defines humanity. Which path will they embark upon next? What evolution awaits ahead?'}"
+308	308		301							{3: 'No one dares to venture a prediction, yet the answer unfolds before the eyes of all.'}
+309	309		301							{3: '—Their pursuit now gravitates toward the stage of civilization.'}
+310	310		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg', 3: '0', 4: '1', 5: '1'}
+311	311		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+312	312		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg'}
+313	313		301							{3: 'A profound silence engulfs everyone, leaving all utterly speechless. Yet, you see the same conclusion etched upon each face.'}
+314	314		509						600.0	{2: '1'}
+315	315		201							{1: '1', 2: '500250', 4: '-500'}
+316	316		301							{1: '1', 2: 'Liaison Officer', 3: 'Are you still with me?!', 4: '1'}
+317	317		302							"{2: ""How's the situation in the conservation area?"", 3: '318'}"
+318	318		301							"{2: 'Liaison Officer', 3: ""The area hasn't witnessed any Hetero-Creature attacks so far. However, considering the event in Pulia Forest Park, it's imperative that we evacuate all residents before the situation spirals out of control."", 4: '1'}"
+319	319		502							{1: 'DialogDisable'}
+320	320		302							{2: 'Has the tower itself shown any abnormal signs?', 3: '321'}
+321	321		302							{2: 'Like any new type of Hetero-Creatures or reaction from Hetero-Hive Mother...', 3: '322'}
+322	322		301			DialogEnable				"{2: 'Liaison Officer', 3: ""There's no way to know. We can't possibly approach that tower with the Punishing Virus concentration as it is. Without complete immunity, attempting to enter would be no different than an act of suicide."", 4: '1'}"
+323	323		201							{1: '2', 2: '500166', 3: '5', 4: '500'}
+324	324		301							"{1: '1', 2: 'Lucia', 3: ""Such a high Punishing Virus concentration is beyond enough to raise any form of alarm, but we didn't notice any indications of it on the way here..."", 4: '2'}"
+325	325		201							{1: '2', 2: '1031001', 3: '5', 4: '500'}
+326	326		301							{1: '1', 2: 'Liv', 3: 'And the sharing of satellite images from Babylonia stopped forty minutes ago.', 4: '2'}
+327	327		202							{1: '2', 6: '1'}
+328	328		301							{3: 'Forty minutes ago... Right around when the last wave of earthquakes began.'}
+329	329		201							{1: '2', 2: '500560', 3: '4', 4: '500'}
+330	330		301							"{1: '1', 2: 'Sica', 3: ""Which means the tower had already risen by then... How come we didn't see it at all?!"", 4: '2'}"
+331	331		301							"{3: ""Suddenly, a recollection flashes in your mind—that of a twisted structure's silhouette you glimpsed in the distance while traveling. At the time, you dismissed it as a mere hallucination caused by the persistence of vision...""}"
+332	332		502							{1: 'DialogDisable'}
+333	333		302							{2: 'This tower may be able to employ some form of disguise.', 3: '334'}
+334	334		302							"{2: ""Maybe it's only visible from a certain distance."", 3: '335'}"
+335	335		301			DialogEnable				"{2: 'Sica', 3: ""I still can't reach my squad..."", 4: '2'}"
+336	336		301							{3: 'Sica clenches the terminal in her hand.'}
+337	337		301							{2: 'Sica', 3: 'I must get to them immediately!', 4: '2'}
+338	338		302							{2: 'Any information on Apodidae?', 3: '339', 4: 'How are the other squads on the surface doing?', 5: '339'}
+339	339		301							{2: 'Liaison Officer', 3: 'We are not able to locate them precisely yet due to electromagnetic interference.', 4: '1'}
+340	340		301							{2: 'Liaison Officer', 3: 'All we know is that Woodcock and Mountain Owl have already arrived. The other squads that were on missions in the vicinity are en route to provide support.', 4: '1'}
+341	341		302							{2: 'Got it. Then Gray Raven...', 3: '342'}
+342	342		201							{1: '2', 2: '500560', 3: '4', 4: '500'}
+343	343		301							{2: 'Sica', 3: 'Wait, I-I want to go too! Please, let me come with you!', 4: '2'}
+344	344		301							"{2: 'Sica', 3: ""Although Apodidae is a newly formed squad, I see each member as my important teammate... We've lost contact for a while, and I'm really worried about them."", 4: '2'}"
+345	345		301							"{2: 'Sica', 3: ""Sorry... I know these words may sound immature coming from a commandant like me, but I... And please don't worry about my injury. I assure you I won't slow you down!"", 4: '2'}"
+346	346		502							{1: 'DialogDisable'}
+347	347		302							"{2: ""It's fine with me."", 3: '348'}"
+348	348		302							"{2: ""If it were my squad in danger, I'd do everything in my power to reach them too."", 3: '349'}"
+349	349		201							{1: '2', 2: '500166', 3: '5', 4: '500'}
+350	350		301			DialogEnable				{1: '1', 3: 'You nod at Lucia, and she immediately discerns your intent.'}
+351	351		301							{2: 'Lucia', 3: 'Destination: Conservation Area 27, coordinates confirmed.', 4: '2'}
+352	352		502							{1: 'DialogDisable'}
+353	353		302							{2: 'Gray Raven and Apodidae Commandant are ready to go.', 3: '354'}
+354	354		302		1		AniZhuanchangBegin			{2: 'En route to provide support.'}

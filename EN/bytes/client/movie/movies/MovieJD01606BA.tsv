@@ -1,0 +1,21 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+2	2		401							{1: '1', 2: '203'}
+3	3		201							{1: '1', 2: '500128'}
+4	4		301							"{1: '1', 3: 'The Program Ghost twitches. ""Bianca"" stands in front of it, slowly disappearing.'}"
+5	5		202							{1: '1', 6: '1'}
+6	6		201							{1: '1', 2: '1031001', 4: '-600'}
+7	7		201							{1: '2', 2: '500026', 4: '600'}
+8	8		201							{1: '3', 2: '500166'}
+9	9		301			DialogEnable				"{1: '1', 2: 'Lucia', 3: ""You're not getting away this time!"", 4: '3'}"
+10	10		301							{2: 'Lee', 3: '...Liv, initiate signal jamming!', 4: '2'}
+11	11		301							{2: 'Liv', 3: 'Okay!', 4: '1'}
+12	12		301							"{3: 'Liv runs the Inver-Device at full power, dashing toward the vanishing ""Bianca"" as Lucia and Lee flank her from both sides.'}"
+13	13		301							{3: 'But they are still too late.'}
+14	14		301							"{3: '""Bianca"" vanishes into thin air, leaving only a shadow behind.'}"
+15	15		302							"{2: ""We're not done yet. Analyze the Program Ghost now!"", 3: '16'}"
+16	16		301							"{2: 'Lee', 3: ""Understood! She doesn't have time to cover up her track now. We'll find her if we just follow it!"", 4: '2'}"
+17	17		302				DialogDisable			{2: 'Hurry up!', 3: '18'}
+18	18		305							{1: '19', 2: '20'}
+19	19		301		1	DialogEnable	AniZhuanchangBegin			{2: 'Liv', 3: '...Found her!', 4: '1'}
+20	20		202		1		AniZhuanchangBegin			{1: '1', 2: '2', 3: '3', 6: '1'}

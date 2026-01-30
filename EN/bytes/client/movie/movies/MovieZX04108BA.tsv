@@ -1,0 +1,262 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory334.png'}
+2	2		401							{1: '1', 2: '358'}
+3	3		301			DialogEnable	AniZhuanchangBegin			"{3: '""Project Acadia Transfer"" will be the largest strategic relocation effort in human history and will be implemented in three phases.'}"
+4	4		502						400.0	{1: 'DialogDisable'}
+5	5		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg'}
+6	6		107							{1: 'Phase One'}
+7	7		301							{3: 'Phase One'}
+8	8		108							{1: '1'}
+9	9		301			DialogEnable				{3: 'Mobilizing global transport forces to move a total of 1.5 million engineers, technicians, raw materials, and essential equipment to the spaceport elevated at an orbital height of 10,000 kilometers.'}
+10	10		201							{1: '1', 2: '500303'}
+11	11		301							{1: '1', 2: 'Spaceport Administrator', 3: 'Hurry up, the next batch of transport ships will be here soon.', 4: '1'}
+12	12		301							{2: 'Technician', 3: 'The gravity field shifted by 2.6°. Send someone to adjust the gravity simulation segment.'}
+13	13		301							{2: 'Broadcast', 3: 'Exhaust gas backflow occurred in compartment DA13. Responsible personnel, please respond immediately.'}
+14	14		301							{2: 'Broadcast', 3: 'I repeat...'}
+15	15		301							{3: 'Busy figures move through every part of the space station. Everyone is busy doing their part since this is the focal point of the first phase of the project.'}
+16	16		401							{1: '2', 2: '1099'}
+17	17		203							{1: '1', 2: '0.25', 3: '-650'}
+18	18		509						700.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg', 2: '2'}
+19	19		201							{1: '2', 2: '500800', 4: '500'}
+20	20		301							"{1: '1', 2: 'Shin', 3: ""How's everything looking?"", 4: '2'}"
+21	21		301							{2: 'Spaceport Administrator', 3: 'We expect to clear the DH series compartments by 6 PM GMT to make room for the next group of personnel.', 4: '1'}
+22	22		301							{2: 'Shin', 3: 'Thank you.', 4: '2'}
+23	23		301							"{2: 'Shin', 3: ""How's the safety protocol?"", 4: '2'}"
+24	24		301							{2: 'Spaceport Administrator', 3: 'Punishing detection devices now cover the entire spaceport, and high-energy explosives are installed at each compartment connection for emergency detachment if necessary.', 4: '1'}
+25	25		301							"{2: 'Shin', 3: ""That's not enough... Rearrange the escape pod locations. They're too concentrated right now."", 4: '2'}"
+26	26		301				AniZhuanchangBegin			{2: 'Spaceport Administrator', 3: 'Roger that!', 4: '1'}
+27	27		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+28	28		510						1000.0	{1: '2', 2: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+29	29		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory585.jpg'}
+30	30		107							{1: 'Phase Two'}
+31	31		301							{3: 'Phase Two'}
+32	32		108							{1: '1'}
+33	33		301			DialogEnable				{3: 'Over 20 years, 20 out of 30 starships will be converted into small colony ships to accommodate a larger population.'}
+34	34		301							"{3: ""At the same time, half of the spaceport's compartments will be upgraded for military-industrial use to meet production targets.""}"
+35	35		201							{1: '1', 2: '500042'}
+36	36		301							"{1: '1', 2: 'Jada', 3: '""Tall Guy"", help me lift this up.', 4: '1'}"
+37	37		202							{1: '1', 6: '1'}
+38	38		201							{1: '1', 2: '500795', 4: '200'}
+39	39		201							{1: '2', 2: '500798', 4: '-300', 5: '100'}
+40	40		301							{1: '1', 3: 'The tall soldier takes the box.'}
+41	41		201							{1: '3', 2: '500810', 3: '17', 4: '-600', 5: '-150'}
+42	42		301							{1: '1', 2: 'Drone', 3: '(Puzzled)', 4: '1', 5: '2', 6: '3'}
+43	43		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+44	44		201							{1: '1', 2: '500042'}
+45	45		301							{1: '1', 2: 'Jada', 3: 'You want to know what the commotion was about?', 4: '1'}
+46	46		301							"{2: 'Jada', 3: ""It was mainly about starship modifications. The plans aren't decided, and the deadline is approaching, so a few supervisors almost started fighting."", 4: '1'}"
+47	47		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+48	48		201							{1: '1', 2: '500023'}
+49	49		301							{1: '1', 2: 'Philip', 3: 'Hey, the next meeting is about to start, hurry up!', 4: '1'}
+50	50		203							{1: '1', 2: '0.25', 3: '-400'}
+51	51		201							{1: '2', 2: '500042', 4: '400'}
+52	52		301							"{1: '1', 2: 'Jada', 3: ""When was it announced? I didn't get a notice."", 4: '2'}"
+53	53		301							"{2: 'Philip', 3: ""Just a minute ago. I'm heading there now!"", 4: '1'}"
+54	54		301							{2: 'Jada', 3: 'Wait for me!', 4: '2'}
+55	55		202							{1: '1', 2: '2', 6: '1'}
+56	56		201							{1: '1', 2: '500795', 4: '200'}
+57	57		201							{1: '2', 2: '500798', 4: '-300', 5: '100'}
+58	58		201							{1: '3', 2: '500810', 3: '16', 4: '-600', 5: '-150'}
+59	59		301				AniZhuanchangBegin			{1: '1', 2: 'Drone', 3: '(Speechless)', 4: '1', 5: '2', 6: '3'}
+60	60		202			DialogDisable				{1: '1', 2: '2', 3: '3', 6: '1'}
+61	61		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory334.png'}
+62	62		107							{1: 'Phase Three'}
+63	63		301							{3: 'Phase Three'}
+64	64		108							{1: '1'}
+65	65		301			DialogEnable				"{3: ""The 20 modified colony ships will shuttle the remaining population on Earth between other planets in the solar system to collect resources and continuously supply raw materials to the spaceport's industrial base.""}"
+66	66		301							{3: 'Thus forming a 380,000-kilometer depth with the spaceport, Starship Fleet, International Space Station, colony ships, and the lunar base as strategic points.'}
+67	67		301				AniZhuanchangBegin			{3: 'Humanity will launch a counterattack by relying on the entire solar system.'}
+68	68		401							{1: '1', 2: '36'}
+69	69		502						3000.0	{1: 'DialogDisable'}
+70	70		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory718.jpg'}
+71	71		401							{1: '1', 2: '201'}
+72	72		201							{1: '1', 2: '1101001', 4: '400'}
+73	73		201							{1: '2', 2: '500463', 4: '-400'}
+74	74		301			DialogEnable				"{1: '1', 2: 'Receptionist', 3: ""Hmm... All procedures are complete. Congratulations, you're discharged."", 4: '2'}"
+75	75		301							"{3: ""After confirming the signature, the person returns Watanabe's personal terminal.""}"
+76	76		301							{2: 'Watanabe', 3: 'Thanks for taking care of me during this time.', 4: '1'}
+77	77		301							"{2: 'Receptionist', 3: ""We're just doing our job... But you adapted surprisingly fast despite the emergency modifications."", 4: '2'}"
+78	78		301							"{2: 'Receptionist', 3: ""Didn't expect you to be the first to be discharged. Even the director is surprised."", 4: '2'}"
+79	79		301							"{2: 'Watanabe', 3: ""I can't stay in bed forever. This body will rust if I keep lying around."", 4: '1'}"
+80	80		301							"{2: 'Receptionist', 3: ""Uh... I know you're trying to be funny, but Tantalum polymers are actually quite resistant to rust."", 4: '2'}"
+81	81		301							{2: 'Watanabe', 3: '...', 4: '1'}
+82	82		301							{2: 'Receptionist', 3: 'Speaking of your body, are you going to replace that mismatched eye?', 4: '2'}
+83	83		301							{3: 'Watanabe waves his hand as he walks toward the door.'}
+84	84		301							"{2: 'Watanabe', 3: ""Don't worry about me. Besides, I don't mind the color of this eye."", 4: '1'}"
+85	85		202							{1: '1', 2: '2'}
+86	86		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory328.png', 3: '0', 4: '1', 5: '1'}
+87	87		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+88	88		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory328.png'}
+89	89		201							{1: '1', 2: '500686'}
+90	90		301							{1: '1', 3: 'After leaving the medical consortium, Watanabe finds Ballard already standing next to an off-road vehicle.'}
+91	91		203							{1: '1', 2: '0.25', 3: '550'}
+92	92		201							{1: '2', 2: '1101001', 4: '-450'}
+93	93		301							{1: '1', 2: 'Ballard', 3: 'All done?', 4: '1'}
+94	94		301							{2: 'Watanabe', 3: 'Yeah.', 4: '2'}
+95	95		301							{3: 'Ballard opens the car door.'}
+96	96		301				AniZhuanchangBegin			"{2: 'Ballard', 3: ""Get in. We've got a job."", 4: '1'}"
+97	97		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+98	98		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+99	99		201							{1: '1', 2: '1101001', 4: '500'}
+100	100		201							{1: '2', 2: '500686', 4: '-500'}
+101	101		301			DialogEnable				{1: '1', 2: 'Watanabe', 3: 'Gestalt central core?', 4: '1'}
+102	102		301							{3: 'Watanabe flips through his terminal which is filled mostly by an image of a spherical machine.'}
+103	103		301							{2: 'Ballard', 3: 'Yeah, let me explain while you do that.', 4: '2'}
+104	104		301							{2: 'Ballard', 3: 'After the Great Transfer was confirmed, the first thing we did was order the existing important equipment.', 4: '2'}
+105	105		301							"{2: 'Ballard', 3: ""Superconducting crystal processing equipment, full-space ecological cycle systems, fusion material refiners... They're all on the list."", 4: '2'}"
+106	106		301							"{2: 'Ballard', 3: ""But there's one piece of equipment that's surely the most important."", 4: '2'}"
+107	107		301							{3: 'He points to what looks like the eye of the spherical machine.'}
+108	108		301							{2: 'Ballard', 3: 'The pinnacle of human achievement—Gestalt.', 4: '2'}
+109	109		301							{2: 'Ballard', 3: 'The population relocation, resource allocation, and space management involved in the Great Transfer require immense computing power.', 4: '2'}
+110	110		301							"{2: 'Ballard', 3: ""Without Gestalt's help, this project would take twice as long to complete."", 4: '2'}"
+111	111		301							{2: 'Ballard', 3: 'Also...', 4: '2'}
+112	112		301							{2: 'Watanabe', 3: 'Moreover, if Gestalt gets infected, the damage that its computing power can cause would be unimaginable.', 4: '1'}
+113	113		301							"{2: 'Watanabe', 3: ""So we must ensure that it's under human control at all costs."", 4: '1'}"
+114	114		204							{1: '2', 2: '1'}
+115	115		301							"{2: 'Ballard', 3: ""Right, sounds like your hospital stay didn't do your brain damage."", 4: '2'}"
+116	116		301							"{2: 'Watanabe', 3: ""My injury wasn't on my brain."", 4: '1'}"
+117	117		301							{2: 'Watanabe', 3: 'But why me?', 4: '1'}
+118	118		204							{1: '2'}
+119	119		301							{2: 'Watanabe', 3: 'I just completed my adaptive training. Surely, you can find others to take on such an important mission?', 4: '1'}
+120	120		301							{2: 'Ballard', 3: '...', 4: '2'}
+121	121		301							"{2: 'Ballard', 3: ""There are still some dangerous areas. I've sent all my trusted subordinates to handle those."", 4: '2'}"
+122	122		301							{2: 'Watanabe', 3: 'Dangerous as in?', 4: '1'}
+123	123		301							{2: 'Ballard', 3: 'There are conspiracy theories that the World Government is abandoning the masses. Others try to reap benefits from the project through bribery. Some are taking advantage of the information blackout to deceive the public into participating in illegal experiments that have already been halted...', 4: '2'}
+124	124		301							{3: 'He lets out a rare snort of disdain.'}
+125	125		301							"{2: 'Ballard', 3: 'Article 1092 of the ""Law on the Advancement and Protection of Science and Technology""? Humph, nonsense.', 4: '2'}"
+126	126		301							{2: 'Watanabe', 3: 'Even at a time like this, you still...', 4: '1'}
+127	127		301							{2: 'Ballard', 3: 'In the eyes of some, disaster and misfortune are not bad news but opportunities for gaining power.', 4: '2'}
+128	128		301							"{2: 'Ballard', 3: ""Fortunately, there aren't too many of these scavenging jackals. Unfortunately, the more they take, the longer they live."", 4: '2'}"
+129	129		301							"{2: 'Ballard', 3: ""Eradicating them won't be easy. We need to prepare for a long-term battle."", 4: '2'}"
+130	130		301							"{2: 'Ballard', 3: ""But after dealing with Gestalt, I'll have plenty of time to deal with them."", 4: '2'}"
+131	131		301							{2: 'Watanabe', 3: 'You know, people like you might not have a good ending.', 4: '1'}
+132	132		301							"{3: ""Watanabe shows a wry smile but doesn't try to dissuade Ballard because he knows Ballard won't compromise or back down on this matter.""}"
+133	133		301							{3: 'This persistence has evolved into stubbornness and, in a sense, aggression. Ballard sees compromise as helping those people.'}
+134	134		301							{3: 'Watanabe remembers his father talking to Ballard about this many times, but neither side ever convinced the other.'}
+135	135		301							{2: 'Ballard', 3: 'Why should we let them reap huge profits from the gamble and leave unscathed?', 4: '2'}
+136	136		301							{3: 'Ballard shakes his head.'}
+137	137		301							{2: 'Ballard', 3: 'No, someone needs to drag them back to the table and make them pay back with interest.', 4: '2'}
+138	138		301							"{2: 'Watanabe', 3: ""Forget it... let's not talk about this."", 4: '1'}"
+139	139		301							{3: 'Faced with stubbornness, Watanabe decisively chooses to give up, just like his father would have.'}
+140	140		301							{2: 'Watanabe', 3: 'I see that besides the military, the Science Council and... Norman Group are all involved in this operation?', 4: '1'}
+141	141		301							"{2: 'Ballard', 3: ""Yes, their assistance is crucial for this mission. You'll meet them soon."", 4: '2'}"
+142	142		301							{2: 'Ballard', 3: 'But before the mission starts...', 4: '2'}
+143	143		301							{3: 'Ballard hands over another terminal to Watanabe.'}
+144	144		301							{2: 'Ballard', 3: 'You can leave a message for someone. Headquarters will deliver it to them.', 4: '2'}
+145	145		301							"{2: 'Ballard', 3: ""We don't have many satellites and wires now. Long-distance communication is mostly reserved for military and government use, so don't waste this rare opportunity."", 4: '2'}"
+146	146		301							"{2: 'Ballard', 3: ""You haven't contacted Shin since the outbreak of the Punishing Virus, right?"", 4: '2'}"
+147	147		301							"{2: 'Watanabe', 3: ""Yeah... it's been a long time..."", 4: '1'}"
+148	148		301							{3: 'For a moment, he thought about taking the terminal but pushed it back in the end.'}
+149	149		204							{1: '1', 2: '1'}
+150	150		301							{2: 'Watanabe', 3: 'Some things need to be said in person.', 4: '1'}
+151	151		301							"{3: ""Like understanding his mother's choice, fulfilling his comrades' last wishes, or his own regrets and relief...""}"
+152	152		301							{3: 'There are too many things to say. How can a simple message be enough?'}
+153	153		301							"{2: 'Watanabe', 3: ""It feels like writing a will, and I'd rather not."", 4: '1'}"
+154	154		301							"{2: 'Ballard', 3: ""You're right. Some things need to be said face-to-face."", 4: '2'}"
+155	155		301							{3: 'Ballard takes back the terminal.'}
+156	156		204							{1: '1'}
+157	157		301							{2: 'Watanabe', 3: 'By the way, did you write one?', 4: '1'}
+158	158		204							{1: '2', 2: '1'}
+159	159		301							{2: 'Ballard', 3: 'Do you even need to ask that?', 4: '2'}
+160	160		204							{1: '1', 2: '1'}
+161	161		301				AniZhuanchangBegin			{3: 'The two share a knowing smile.'}
+162	162		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+163	163		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg'}
+164	164		107							{1: 'Gestalt Retrieval Operation Temporary Command Post'}
+165	165		301							{3: 'Gestalt Retrieval Operation Temporary Command Post'}
+166	166		108							{1: '1'}
+167	167		301			DialogEnable				{3: 'The scarred off-road vehicle drifts over, leaving charred brake marks on the ground. It comes to a steady stop by the roadside.'}
+168	168		201							{1: '1', 2: '1101001', 4: '500'}
+169	169		201							{1: '2', 2: '500686', 4: '-500'}
+170	170		301							"{1: '1', 2: 'Watanabe', 3: ""You didn't mention we had to cross a battlefield."", 4: '1'}"
+171	171		301							{2: 'Ballard', 3: 'It saves time.', 4: '2'}
+172	172		202							{1: '1', 2: '2', 6: '1'}
+173	173		301							{1: '1', 3: 'The two get out of the car and a soldier immediately runs over.'}
+174	174		201							{1: '1', 2: '500813'}
+175	175		301							{1: '1', 2: '???', 3: 'Captain Ballard! And... Watanabe?', 4: '1'}
+176	176		201							{1: '1', 2: '500791', 4: '400'}
+177	177		201							{1: '2', 2: '1101001', 4: '-400'}
+178	178		301							{1: '1', 2: 'Watanabe', 3: 'Greenhead?', 4: '2'}
+179	179		301							{2: 'Albert', 3: 'So you are the one Captain Ballard was picking up.', 4: '1'}
+180	180		301							{2: 'Watanabe', 3: 'Did you join the Purifying Force?', 4: '2'}
+181	181		301							"{3: ""But Watanabe quickly dismisses the thought because the soldier isn't a Construct but a human.""}"
+182	182		301							{2: 'Albert', 3: 'No, I belong to the Ground Force.', 4: '1'}
+183	183		202							{1: '1', 2: '2', 6: '1'}
+184	184		201							{1: '1', 2: '500686'}
+185	185		301							"{1: '1', 2: 'Ballard', 3: ""People from various units were gathered for this operation. I'm just the temporary captain in charge of on-site command."", 4: '1'}"
+186	186		301							{2: 'Ballard', 3: 'Is everyone else here?', 4: '1'}
+187	187		203							{1: '1', 2: '0.25', 3: '-400'}
+188	188		201							{1: '2', 2: '500791', 4: '500'}
+189	189		301							"{1: '1', 2: 'Albert', 3: ""They're already here, waiting."", 4: '2'}"
+190	190		301							{2: 'Ballard', 3: 'Good, take me to them.', 4: '1'}
+191	191		301							{2: 'Albert', 3: 'Roger that!', 4: '2'}
+192	192		202							{1: '1', 2: '2', 6: '1'}
+193	193		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory732.jpg', 3: '0', 4: '1', 5: '1'}
+194	194		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+195	195		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory732.jpg'}
+196	196		301							{3: 'Behind the tent flap, the crowd inside is clearly divided into three groups.'}
+197	197		301							{3: 'Soldiers with firearms, technicians in work clothes with the Norman Mining logo, and a lone woman sitting in the corner.'}
+198	198		301							{3: 'She looks like she is lost in thought.'}
+199	199		201							{1: '1', 2: '500686', 4: '500'}
+200	200		201							{1: '2', 2: '500797', 4: '-450'}
+201	201		301							{1: '1', 2: 'Ballard', 3: 'Only one person from the Science Council?', 4: '1'}
+202	202		301							{2: 'Nithart', 3: 'Aside from the late Mr. Landau, no one knows Gestalt better than I do. Maintaining Gestalt is my daily duty.', 4: '2'}
+203	203		301							{2: 'Ballard', 3: 'No support or backup?', 4: '1'}
+204	204		301							{2: 'Nithart', 3: 'Those not already in space joined the team in shutting down Reactor One.', 4: '2'}
+205	205		301							"{2: 'Nithart', 3: ""I'm... the only one left behind."", 4: '2'}"
+206	206		301							{2: 'Ballard', 3: 'Sorry, I underestimated you.', 4: '1'}
+207	207		202							{1: '2', 6: '1'}
+208	208		203							{1: '1', 2: '0.25'}
+209	209		301							{2: 'Ballard', 3: 'Let me reiterate the operation plan.', 4: '1'}
+210	210		301							{2: 'Ballard', 3: 'First phase: Norman Mining will use heavy-duty cutters to open a path to the Gestalt deep well. You were the contractors for the entire underground area, right?', 4: '1'}
+211	211		301							"{2: 'Norman Representative', 3: ""No problem, but I must remind you, that the underground space where Gestalt is located is complex. It's easy to get lost there even with a map. Please be careful.""}"
+212	212		301							"{2: 'Ballard', 3: ""We'll be careful."", 4: '1'}"
+213	213		301							"{2: 'Ballard', 3: ""Second phase: Our assault team will open a path to Gestalt's central core."", 4: '1'}"
+214	214		301							"{2: 'Ballard', 3: ""Watanabe, you lead the team. I'll fend off the Corrupted that are drawn in."", 4: '1'}"
+215	215		203							{1: '1', 2: '0.25', 3: '500', 6: '1'}
+216	216		201							{1: '2', 2: '1101001', 4: '-450'}
+217	217		301							{1: '1', 2: 'Watanabe', 3: 'Roger that!', 4: '2'}
+218	218		301							"{2: 'Ballard', 3: ""Always monitor your infection rate. If it approaches the threshold, leave immediately. You haven't installed the Inver-Device yet so can't stay in a Punishing environment for long."", 4: '1'}"
+219	219		301							{2: 'Watanabe', 3: 'Inver-Device?', 4: '2'}
+220	220		202							{1: '1', 2: '2', 6: '1'}
+221	221		201							{1: '1', 2: '500797'}
+222	222		301							"{1: '1', 2: 'Nithart', 3: ""It's the first line of defense for Constructs against the Punishing Virus. You can think of it as a firewall for now."", 4: '1'}"
+223	223		202							{1: '1', 6: '1'}
+224	224		201							{1: '1', 2: '500686'}
+225	225		301							{1: '1', 2: 'Ballard', 3: 'Finally, a representative from the Science Council will enter the central core to check for infection.', 4: '1'}
+226	226		301							"{2: 'Ballard', 3: ""If there's no infection, they'll restart it to unlock the surrounding safety locks. That will allow Norman's team to take away the core."", 4: '1'}"
+227	227		301							"{2: 'Ballard', 3: ""Even if it's too late, we can't let the enemy have it. We'll use the explosives we brought to destroy the core."", 4: '1'}"
+228	228		301							{2: 'Ballard', 3: 'Any other questions?', 4: '1'}
+229	229		202							{1: '1', 6: '1'}
+230	230		201							{1: '1', 2: '1101001'}
+231	231		301							{1: '1', 2: 'Watanabe', 3: 'Why not just blow up the safety locks?', 4: '1'}
+232	232		203							{1: '1', 2: '0.25', 3: '400'}
+233	233		201							{1: '2', 2: '500797', 4: '-400'}
+234	234		301							{1: '1', 2: 'Nithart', 3: 'Gestalt was designed to withstand all extreme scenarios.', 4: '2'}
+235	235		301							"{2: 'Nithart', 3: ""While the core's reinforcement is limited, we've used every possible measure to reinforce the safety locks. The locks will remain intact even at an epicenter of a magnitude nine earthquake."", 4: '2'}"
+236	236		202							{1: '1', 2: '2', 6: '1'}
+237	237		201							{1: '1', 2: '500686'}
+238	238		301							{1: '1', 2: 'Ballard', 3: 'Of course, we could use stronger explosives, but that would obliterate the core, defeating the purpose.', 4: '1'}
+239	239		203							{1: '1', 2: '0.25', 3: '500'}
+240	240		201							{1: '2', 2: '500797', 4: '-450'}
+241	241		301							"{1: '1', 2: 'Nithart', 3: ""I have another question. Wouldn't it be more efficient if I joined the assault team?"", 4: '2'}"
+242	242		301							"{2: 'Ballard', 3: ""No, your safety is second only to Gestalt. Only you can restart Gestalt, so you can't take any risk."", 4: '1'}"
+243	243		301							{3: 'Nithart falls silent.'}
+244	244		401							{1: '1', 2: '36'}
+245	245		202							{1: '2', 6: '1'}
+246	246		203							{1: '1', 2: '0.25'}
+247	247		301							{1: '1', 2: 'Ballard', 3: 'Then I declare...', 4: '1'}
+248	248		401							{1: '1', 2: '276'}
+249	249		204							{1: '1', 2: '4'}
+250	250		301				AniZhuanchangBegin			{2: 'Ballard', 3: 'Operation start!', 4: '1'}
+251	251		202			DialogDisable			2000.0	{1: '1', 6: '1'}
+252	252		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory828.jpg'}
+253	253		401						1000.0	{1: '2', 2: '13015308'}
+254	254		401							{1: '2', 2: '647'}
+255	255		301			DialogEnable				{3: 'With a sharp cutting sound and bright sparks, the two-meter-thick safety door is pulled aside by a heavy-duty crane.'}
+256	256		201							{1: '1', 2: '1101001'}
+257	257		301							"{1: '1', 2: 'Norman Representative', 3: ""We'll leave the rest up to you.""}"
+258	258		301							{2: 'Watanabe', 3: 'Thank you.', 4: '1'}
+259	259		301							{3: 'He looks into the deep passage and takes the first step.'}
+260	260		204							{1: '1', 2: '5'}
+261	261		301		1		AniZhuanchangBegin			{2: 'Watanabe', 3: 'Move out!', 4: '1'}

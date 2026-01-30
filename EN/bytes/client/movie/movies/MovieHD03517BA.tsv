@@ -1,0 +1,93 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory669.jpg'}
+2	2		401							{1: '1', 2: '205'}
+3	3		107						2000.0	{1: 'Constellia', 2: 'Commercial Street'}
+4	4		108							{1: '1'}
+5	5		201							{1: '1', 2: '500462'}
+6	6		302							"{1: '1', 2: ""Hello, I'd like one of these."", 3: '7'}"
+7	7		301			DialogEnable	DialogDisable			{2: 'Vendor', 3: 'Sure thing, just a moment.', 4: '1'}
+8	8		201							{1: '2', 2: '500472', 3: '3', 4: '-1300', 5: '-700', 7: '1'}
+9	9		203						350.0	{1: '2', 2: '0.3', 3: '-900', 4: '-450'}
+10	10		301			DialogEnable	DialogDisable			{1: '1', 2: 'Nanami', 3: '(softly) Snap—', 4: '1', 5: '2'}
+11	11		203						350.0	{1: '2', 2: '0.3', 3: '-1300', 4: '-700'}
+12	12		302				AniZhuanchangBegin			{2: '...', 3: '13'}
+13	13		202							{1: '1', 2: '2', 6: '1'}
+14	14		201				DialogEnable			{1: '1', 2: '500488', 5: '-200', 6: '100', 7: '1'}
+15	15		301			AniZhuanchangEnd				{1: '1', 2: 'Kiske', 3: '【kuroname】, hey there.', 4: '1'}
+16	16		301							{2: 'Kiske', 3: 'Want to try my special Rusted Cog-Crunch Gas Ice Cream?', 4: '1'}
+17	17		302							"{2: ""Uh... I think I'll pass."", 3: '18'}"
+18	18		301				DialogDisable			{2: 'Kiske', 3: 'What a shame. This is my pride and joy.', 4: '1'}
+19	19		201							{1: '2', 2: '500472', 3: '3', 4: '1300', 5: '-200', 7: '1'}
+20	20		203						350.0	{1: '2', 2: '0.3', 3: '900', 4: '-200'}
+21	21		301			DialogEnable	DialogDisable			{1: '1', 2: 'Nanami', 3: '(softly) Snap—', 4: '1', 5: '2'}
+22	22		203						350.0	{1: '2', 2: '0.3', 3: '1300', 4: '-200'}
+23	23		302				AniZhuanchangBegin			{2: '...', 3: '24'}
+24	24		202							{1: '1', 2: '2', 6: '1'}
+25	25		201				DialogEnable			{1: '1', 2: '500261', 7: '1'}
+26	26		301			AniZhuanchangEnd				{1: '1', 2: 'Child Vendor', 3: 'Hi there! Care to give this a try?', 4: '1'}
+27	27		302							"{2: ""Sure, I'll have some."", 3: '28', 4: 'No, thanks.', 5: '29'}"
+28	28	30	301				DialogDisable			{2: 'Child Vendor', 3: 'Thank you. Just a moment.', 4: '1'}
+29	29		301				DialogDisable			{2: 'Child Vendor', 3: 'Alright, just drop by whenever you have time.', 4: '1'}
+30	30		201							{1: '2', 2: '500472', 3: '3', 4: '-1300', 5: '-200', 7: '1'}
+31	31		203						350.0	{1: '2', 2: '0.3', 3: '-900', 4: '-200'}
+32	32		301			DialogEnable	DialogDisable			{1: '1', 2: 'Nanami', 3: '(softly) Snap—', 4: '1', 5: '2'}
+33	33		203						350.0	{1: '2', 2: '0.3', 3: '-1300', 4: '-200'}
+34	34		302							{2: '...', 3: '35'}
+35	35		202							{1: '1', 2: '2'}
+36	36		302							{2: 'Nanami, what are you up to...?', 3: '37', 4: 'I see you, Nanami!', 5: '37'}
+37	37		201							{1: '1', 2: '500472', 3: '7'}
+38	38		301			DialogEnable	DialogDisable			{1: '1', 2: 'Nanami', 3: 'You got me!', 4: '1'}
+39	39		302							"{2: ""It's impossible not to notice you."", 3: '40'}"
+40	40		302							{2: 'After all...', 3: '41'}
+41	41		302							"{2: 'You whisper ""snap"" to yourself every single time.', 3: '42'}"
+42	42		204							{1: '1', 2: '3'}
+43	43		301			DialogEnable				{2: 'Nanami', 3: 'Hehehe!', 4: '1'}
+44	44		204							{1: '1', 2: '1'}
+45	45		301							"{2: 'Nanami', 3: ""I had Zavier make this camera for me, but there's no shutter sound at all."", 4: '1'}"
+46	46		204							{1: '1', 2: '3'}
+47	47		301							"{2: 'Nanami', 3: 'It\'s got to go ""snaap!"" when you take a photo, or it\'s just not fun!', 4: '1'}"
+48	48		302							"{2: 'That totally makes sense.', 3: '49', 4: ""There's no way that's a real thing, right?"", 5: '50'}"
+49	49	52	301							{2: 'Nanami', 3: 'I knew you would get it, Commandant!', 4: '1'}
+50	50		204							{1: '1', 2: '5'}
+51	51		301							"{2: 'Nanami', 3: ""What? It's not?!"", 4: '1'}"
+52	52		302							{2: 'But Nanami, why are you taking pictures of me?', 3: '53'}
+53	53		204							{1: '1', 2: '1'}
+54	54		301							{2: 'Nanami', 3: 'Because I want to capture exactly how you look, Commandant.', 4: '1'}
+55	55		301							"{2: 'Nanami', 3: ""Then I'm putting it all together into a big, thick photo album!"", 4: '1'}"
+56	56		204							{1: '1', 2: '3'}
+57	57		301							{2: 'Nanami', 3: 'This way, I can see you anytime I want!', 4: '1'}
+58	58		302							{2: 'You know, you can always just come directly to me.', 3: '59'}
+59	59		204							{1: '1', 2: '1'}
+60	60		301							{2: 'Nanami', 3: 'Heh heh, I know!', 4: '1'}
+61	61		301							{2: 'Nanami', 3: 'But I want to film your everyday life—how you hang out and connect with everyone else.', 4: '1'}
+62	62		301							"{2: 'Nanami', 3: ""I figure the only way to capture the real you is when you have no idea I'm recording."", 4: '1'}"
+63	63		302							"{2: ""From one perspective, you're taking photos without consent."", 3: '64', 4: 'I guess that makes some sense...', 5: '66'}"
+64	64		204							{1: '1', 2: '14'}
+65	65	68	301							{2: 'Nanami', 3: 'Sorry about that, Commandant!', 4: '1'}
+66	66		204							{1: '1', 2: '3'}
+67	67		301							{2: 'Nanami', 3: 'Hehe.', 4: '1'}
+68	68		302							"{2: ""Mind if I check out the photos you've taken?"", 3: '69'}"
+69	69		202							{1: '1'}
+70	70		301							{3: 'Nanami extends her hand and shows you the camera.'}
+71	71		301							"{3: ""You flip through the photos on the camera: they show everything from you sitting on a plaza bench to you saying hi to people... there's even a shot of you playing with a kitten.""}"
+72	72		301							{3: 'And from a certain angle, the pictures Nanami took actually look pretty good...'}
+73	73		201							{1: '1', 2: '500472', 3: '3'}
+74	74		301				DialogDisable			{1: '1', 2: 'Nanami', 3: 'So, what do you think? They came out great, right?', 4: '1'}
+75	75		302							{2: 'I feel like...', 3: '76'}
+76	76		302							"{2: ""Why don't we snap a few group photos too?"", 3: '77'}"
+77	77		302							{2: 'They might be even more meaningful that way.', 3: '78'}
+78	78		204							{1: '1', 2: '1'}
+79	79		301			DialogEnable	AniZhuanchangBegin			{2: 'Nanami', 3: 'Yeah, sounds good!', 4: '1'}
+80	80		202							{1: '1', 6: '1'}
+81	81		401							{1: '1', 2: '36'}
+82	82		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory783.jpg'}
+83	83		401							{1: '1', 2: '163'}
+84	84		104							{1: '0|-90|-100', 2: '0'}
+85	85		301			AniZhuanchangEnd				{3: 'The sun gradually sets, painting the distant sky a deep red.'}
+86	86		301							"{3: ""Nanami, having just left the human's company, sits on a bench with a photo album in her hands.""}"
+87	87		301							{3: 'A fleeting moment in time is carefully cut out and kept safe.'}
+88	88		301							"{3: ""She slowly turns the pages of the album, her eyes resting on a group picture, but it feels as if she's looking all the way into the future.""}"
+89	89		301							{3: 'In the photo, she and 【kuroname】 each hold an ice cream cone, forming peace signs with free hands, smiling straight into the camera.'}
+90	90		301							{3: 'Nanami wears a warm, gentle smile on her face.'}
+91	91		201							{1: '1', 2: '500472', 3: '2', 5: '-50'}
+92	92		301		1		AniZhuanchangBegin			{1: '1', 2: 'Nanami', 3: 'Nanami likes Commandant so much, more than anything.', 4: '1'}

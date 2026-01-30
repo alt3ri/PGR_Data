@@ -1,0 +1,53 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory283.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: 'Some time has passed since the Gray Raven escorted Ruolin back.'}
+4	5		201							{1: '1', 2: '500167', 3: '4'}
+5	6		301							{1: '1', 2: 'Bridget', 3: 'You came at the right time.', 4: '1'}
+6	7		302							{2: 'At the right time, again?', 3: '8'}
+7	8		301							{3: 'She looks the same as always, but there is something about her that betrays her composure.'}
+8	9		301							"{2: 'Bridget', 3: ""It's urgent, and let me bring you up to speed in 15 seconds. Remember Ruolin from before?"", 4: '1'}"
+9	10		302							{2: 'I do.', 3: '11'}
+10	11		301							"{2: 'Bridget', 3: ""She's been assigned to a different group. She has a good attitude, but is having a hard time fitting in and working with the team for fights. She seems absent-minded all the time."", 4: '1'}"
+11	12		302							{2: 'She needs a rest.', 3: '13'}
+12	13		301							"{2: 'Bridget', 3: ""The body can recover with rest, but it's going to take the heart a lot longer to do the same."", 4: '1'}"
+13	14		301							"{2: 'Bridget', 3: ""So the higher-ups have suggested that she have this part of her memory deleted, because it's having too strong an influence on her."", 4: '1'}"
+14	15		302							{2: 'Only this part?', 3: '16'}
+15	16		301							{2: 'Bridget', 3: 'They said if they had Asimov do it, he could accurately conceal certain parts of her memory.', 4: '1'}
+16	17		201							{1: '1', 2: '500166'}
+17	18		301							{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+18	19		201							{1: '1', 2: '500167', 3: '4'}
+19	20		301							{1: '1', 2: 'Bridget', 3: 'The negotiation went well. They went over her compensation and even had her signature already.', 4: '1'}
+20	21		301							{2: 'Bridget', 3: 'But she bailed at the last moment and came back here.', 4: '1'}
+21	22		301							"{3: ""She points at the e-mail on the projection screen. It seems like she's only just received the news.""}"
+22	23		302							{2: 'Should I go and help look for her?', 3: '24'}
+23	24		301							"{2: 'Bridget', 3: ""You've already helped me once, so I find it easier to just ask you."", 4: '1'}"
+24	25		302							{2: 'Ok.', 3: '26'}
+25	26		301				AniZhuanchangBegin			{2: 'Bridget', 3: 'These are her coordinates. She seems to be around the Red Tide. I have your protective equipment ready for you. Go as soon as you can.', 4: '1'}
+26	27		202							{1: '1', 6: '1'}
+27	28		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1601_7.jpg'}
+28	29		401							{1: '1', 2: '22'}
+29	30		301			AniZhuanchangEnd				"{3: ""Following Ruolin's coordinates, the Gray Raven heads straight into the Red Tide on Bridget's reinforced speedboat.""}"
+30	31		301							{2: 'Liv', 3: 'The target is standing on the slab in the middle of the Red Tide! She appears severely infected and is about to max out!'}
+31	32		301				AniZhuanchangBegin			{3: 'With your monitoring goggles, you can see Ruolin standing on an elevated slab of rock in the middle of the Red Tide. She is looking at the blood-red water, in which a red projection floats.'}
+32	33		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory289.png'}
+33	34		302			AniZhuanchangEnd				{2: '...A Red Tide projection!', 3: '35'}
+34	35		301							{2: 'Lucia', 3: 'Speed up!'}
+35	36		301				AniZhuanchangBegin			{2: 'Red Tide Projection', 3: '......'}
+36	37		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1601_7.jpg'}
+37	38		301			AniZhuanchangEnd				{3: 'The Gray Raven heads for Ruolin at full speed. Ruolin walks toward the edge of the slab after speaking with the Red Tide, her expression now free of worries.'}
+38	40		302							{2: 'Ruolin! Come back!', 3: '41'}
+39	41		301							{3: 'She hears you calling for her at the top of your voices, and she smiles as she turns to face this way.'}
+40	42		301							{2: 'Ruolin', 3: '......'}
+41	43		301							{3: 'Ruolin seems to have said something, yet what she said is drowned out by the splashing waves.'}
+42	44		301				AniZhuanchangBegin			"{3: ""A red ocean apart, she waves at the speedboat that's speeding toward her. Then, she takes a leap forward...""}"
+43	45		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory283.png'}
+44	46		201							{1: '1', 2: '500167', 3: '5'}
+45	47		301			AniZhuanchangEnd				{1: '1', 2: 'Bridget', 3: 'I see...', 4: '1'}
+46	48		301							"{2: 'Bridget', 3: ""She worked for me before she joined the Task Force. She wasn't outstanding at all, but worked hard and never crossed the line."", 4: '1'}"
+47	49		302							{2: '...', 3: '51'}
+48	50		204							{1: '1', 2: '4'}
+49	51		301							{2: 'Bridget', 3: 'Cheer up already.', 4: '1'}
+50	52		301							"{3: ""Bridget's comforting tone is anything but comforting. She forces a smile as she points at the footage from the monitoring goggles.""}"
+51	53		301							{2: 'Bridget', 3: 'Look at her mouth.', 4: '1'}
+52	54		301		1		AniZhuanchangBegin			"{2: 'Bridget', 3: 'She\'s saying, ""Thank you""...', 4: '1'}"

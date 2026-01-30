@@ -1,0 +1,145 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory119.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		107						2000.0	{1: 'International Space Station', 2: 'Orbital altitude 25,000 kilometers.'}
+4	4		108							{1: '1'}
+5	5		301			DialogEnable				"{2: 'Jada', 3: ""This modification plan won't work!""}"
+6	6		301							{2: 'Jada', 3: 'How many times do I have to say it? The ecological dome is essential! Are we to rely solely on the spaceport for all our organic resources?'}
+7	7		301							"{2: 'Manager', 3: ""Are you kidding? This is equivalent to building a new Eden I. There's no way we can meet the deadline.""}"
+8	8		401							{1: '2', 2: '4079'}
+9	9		301			RImgBg1Shake				"{2: 'Jada', 3: ""Cutting corners will ruin the entire project. What's the point even if we meet the deadline?""}"
+10	10		301							{2: 'Philip', 3: 'Um... can you get off the table first?'}
+11	11		301			RImgBg1Shake				{2: 'Jada', 3: 'Whose side are you on?'}
+12	12		301				DialogDisable			"{3: 'The sound of fierce arguing seeps through the isolation door from the room behind ""Tall Guy"".'}"
+13	13		201							{1: '1', 2: '500795', 4: '200', 7: '1'}
+14	14		201							{1: '2', 2: '500798', 4: '-300', 5: '100', 7: '1'}
+15	15		401							{1: '2', 2: '4052'}
+16	16		201							{1: '3', 2: '500810', 3: '2', 4: '-600', 5: '-150'}
+17	17		301							{1: '1', 2: 'Drone', 3: 'o((⊙﹏⊙))o', 4: '1', 5: '2', 6: '3'}
+18	18		202							{1: '3', 6: '1'}
+19	19		301			DialogEnable				"{3: '""Tall Guy"" never imagined that the usually soft-spoken and gentle woman could let out such an angry roar.'}"
+20	20		202							{1: '1', 2: '2', 6: '1'}
+21	21		301							{2: 'Manager', 3: 'At this point, as long as it works, who cares about the quality?'}
+22	22		401							{1: '2', 2: '2604'}
+23	23		301			RImgBg1Shake				{3: 'Thud!'}
+24	24		301							{2: 'Jada', 3: 'Ouch... That hurts! Are you even an engineer?'}
+25	25		301				DialogDisable			{3: 'With a muffled thump, it feels like the entire space station has begun to shake.'}
+26	26		201							{1: '1', 2: '500795', 4: '200', 7: '1'}
+27	27		201							{1: '2', 2: '500798', 4: '-300', 5: '100', 7: '1'}
+28	28		201							{1: '3', 2: '500810', 3: '4', 4: '-600', 5: '-150'}
+29	29		401							{1: '2', 2: '4052'}
+30	30		301							{1: '1', 2: 'Drone', 3: '’(°ー°〃)', 4: '1', 5: '2', 6: '3'}
+31	31		202							{1: '3', 6: '1'}
+32	32		301			DialogEnable				"{3: 'Maybe it doesn\'t just ""feel like"" shaking.'}"
+33	33		401							{1: '2', 2: '4007'}
+34	34		203							{1: '1', 2: '0.25', 3: '100', 4: '-100'}
+35	35		301			RImgBg1Shake				"{3: 'Another violent shake almost knocks ""Tall Guy"" off his feet.'}"
+36	36		202							{1: '1', 2: '2', 6: '1'}
+37	37		301							{2: 'Jada', 3: 'Ouch...'}
+38	38		301							{2: 'Philip', 3: 'I should be the one saying ouch! I told you not to stand on the table. Get off now.'}
+39	39		301							{2: 'Manager', 3: 'Korolev, report the situation.'}
+40	40		401							{1: '1', 2: '246'}
+41	41		401							{1: '2', 2: '2601'}
+42	42		301							"{3: ""No response. There's nothing but the blaring sound of alarms.""}"
+43	43		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab', 2: '2'}
+44	44		301							{2: 'Broadcast', 3: 'Warning, the space station is experiencing an unidentified intrusion. All maintenance personnel, please take your positions...'}
+45	45		301							{2: 'Broadcast', 3: 'Warning, the space station is experiencing an unidentified intrusion. All maintenance personnel, please take your positions...'}
+46	46		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab'}
+47	47		402							{1: '2601'}
+48	48		301							{2: 'Manager', 3: 'Unidentified intrusion? At an altitude of 25,000 kilometers?'}
+49	49		401							{1: '2', 2: '10028807'}
+50	50		301				DialogDisable			"{2: 'Jada', 3: ""The door won't open?!""}"
+51	51		201							{1: '1', 2: '500795', 4: '200', 7: '1'}
+52	52		201							{1: '2', 2: '500798', 4: '-300', 5: '100', 7: '1'}
+53	53		401							{1: '2', 2: '4052'}
+54	54		201							{1: '3', 2: '500810', 3: '12', 4: '-600', 5: '-150'}
+55	55		301							{1: '1', 2: 'Drone', 3: 'w(?Д?)w', 4: '1', 5: '2', 6: '3'}
+56	56		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+57	57		401							{1: '2', 2: '2700'}
+58	58		301			DialogEnable				"{3: 'Hearing voices inside, ""Tall Guy"" immediately presses his hands against the door crack. With a grating sound from the exoskeleton\'s hydraulic rods, the door slowly opens.'}"
+59	59		201							{1: '1', 2: '500042', 4: '-600'}
+60	60		201							{1: '2', 2: '500625'}
+61	61		201							{1: '3', 2: '500023', 4: '600'}
+62	62		301							"{1: '1', 3: 'Three terrified faces appear in front of ""Tall Guy"".'}"
+63	63		301							{2: 'Philip', 3: 'Watch out!', 4: '3'}
+64	64		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+65	65		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '1'}
+66	66		201							{1: '1', 2: '500795', 4: '200'}
+67	67		201							{1: '2', 2: '500798', 4: '-300', 5: '100'}
+68	68		401							{1: '2', 2: '970804'}
+69	69		301							"{1: '1', 3: 'By the time ""Tall Guy"" notices the sound of the wind behind him, it is already too late.'}"
+70	70		203							{1: '1', 2: '0.15', 3: '200', 4: '-100', 5: '200'}
+71	71		203							{1: '2', 2: '0.15', 3: '-300', 4: '100', 5: '200'}
+72	72		202							{1: '1', 2: '2'}
+73	73		401							{1: '2', 2: '9317003'}
+74	74		401						250.0	{1: '2', 2: '2604'}
+75	75		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+76	76		301			RImgBg1Shake				{3: 'A tremendous force hits him, sending him crashing into the conference room wall.'}
+77	77		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+78	78		201							{1: '1', 2: '500042'}
+79	79		301							"{1: '1', 2: 'Jada', 3: '""Tall Guy""!', 4: '1'}"
+80	80		202							{1: '1', 6: '1'}
+81	81		401							{1: '2', 2: '1080'}
+82	82		201							{1: '1', 2: '500119'}
+83	83		301							{1: '1', 3: 'The attacker reveals itself. It is a massive spherical machine towering over the three.'}
+84	84		301							{3: 'And eyeing its prey.'}
+85	85		301							{2: 'Korolev', 3: 'Watch closely, kids...', 4: '1'}
+86	86		401							{1: '2', 2: '9351040'}
+87	87		301							{3: 'It raises its alloy claw, still dripping with red remnants, casting a shadow over the terrified trio.'}
+88	88		203							{1: '1', 2: '0.25', 5: '-100'}
+89	89		301							{2: 'Korolev', 3: 'Next, I shall demonstrate the oldest hunting method!', 4: '1'}
+90	90		202							{1: '1'}
+91	91		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+92	92		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+93	93		301							{3: 'The three unarmed individuals close their eyes in despair, but the pain never came.'}
+94	94		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory119.png'}
+95	95		201							{1: '1', 2: '500119'}
+96	96		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+97	97		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+98	98		401							{1: '2', 2: '2760'}
+99	99		301			AniZhuanchangEnd				{1: '1', 2: 'Korolev', 3: 'Oldest... gah gah... hunting method... gah gah... demonstration...', 4: '1'}
+100	100		402							{1: '2760'}
+101	101		301							{3: 'The spherical machine stutters, repeating its previous words like a broken tape.'}
+102	102		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+103	103		202							{1: '1', 6: '1'}
+104	104		201							{1: '1', 2: '500023', 4: '300', 5: '-50'}
+105	105		201							{1: '2', 2: '500795', 4: '-300', 5: '-50'}
+106	106		203							{1: '1', 2: '0.25', 3: '300'}
+107	107		203							{1: '2', 2: '0.25', 3: '-300'}
+108	108		401							{1: '2', 2: '1543'}
+109	109		301							{1: '1', 3: 'A sturdy hand helps them up.'}
+110	110		301							"{2: 'Philip', 3: 'An electromagnetic restraint device? Did you make this, ""Tall Guy""?', 4: '1'}"
+111	111		301							"{3: ""The device at Korolev's feet is emitting a strong current, preventing the machine from killing them.""}"
+112	112		301							{3: 'The tall figure nods.'}
+113	113		202							{1: '1', 2: '2', 6: '1'}
+114	114		201							{1: '1', 2: '500625'}
+115	115		301							{1: '1', 2: 'Manager', 3: 'We... we need to get out of here... No, we need to leave the space station!', 4: '1'}
+116	116		401							{1: '2', 2: '1513'}
+117	117		301							{3: 'The person already starts to flee in a panic as they finish their sentence.'}
+118	118		301							{2: 'Manager', 3: 'Why are you standing there? Run!', 4: '1'}
+119	119		301							{3: 'He shouts in exasperation when he sees the remaining three are still frozen in a daze.'}
+120	120		202							{1: '1', 6: '1'}
+121	121		201							{1: '1', 2: '500042', 4: '-400'}
+122	122		201							{1: '2', 2: '500023', 4: '400'}
+123	123		301							{1: '1', 2: 'Philip', 3: 'Coming... coming!', 4: '2'}
+124	124		301							"{2: 'Jada', 3: '""Tall Guy"", are you okay?', 4: '1'}"
+125	125		202							{1: '1', 2: '2', 6: '1'}
+126	126		201							{1: '1', 2: '500795', 4: '200'}
+127	127		201							{1: '2', 2: '500798', 4: '-300', 5: '100'}
+128	128		301				DialogDisable			"{1: '1', 3: ""He doesn't answer but pushes the two trembling individuals forward with his hand.""}"
+129	129		401							{1: '2', 2: '4052'}
+130	130		201							{1: '3', 2: '500810', 3: '9', 4: '-600', 5: '-150'}
+131	131		301							{1: '1', 2: 'Drone', 3: '(? ?_?)?', 4: '1', 5: '2', 6: '3'}
+132	132		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+133	133		201							{1: '1', 2: '500042', 4: '-400'}
+134	134		201							{1: '2', 2: '500023', 4: '400'}
+135	135		301			DialogEnable				{1: '1', 2: 'Jada', 3: 'Thank you for saving us earlier.', 4: '1'}
+136	136		202							{1: '1', 2: '2'}
+137	137		401							{1: '2', 2: '1513'}
+138	138		301							"{3: ""The two researchers' legs finally gain strength as they hurriedly follow the manager ahead.""}"
+139	139		201							{1: '1', 2: '500795', 4: '200'}
+140	140		201							{1: '2', 2: '500798', 4: '-300', 5: '100'}
+141	141		301				DialogDisable			"{1: '1', 3: 'As they turn around, ""Tall Guy"" quietly wipes away the blood seeping through his armor.'}"
+142	142		401							{1: '2', 2: '4052'}
+143	143		201							{1: '3', 2: '500810', 3: '1', 4: '-600', 5: '-150'}
+144	144		301		1		AniZhuanchangBegin			{1: '1', 2: 'Drone', 3: '(。_。)', 4: '1', 5: '2', 6: '3'}

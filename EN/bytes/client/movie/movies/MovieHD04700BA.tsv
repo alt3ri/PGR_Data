@@ -1,0 +1,43 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+2	2		401							{1: '1', 2: '204'}
+3	3		201							{1: '1', 2: '500001'}
+4	4		301			DialogEnable				{1: '1', 2: 'Celica', 3: 'That concludes the announcement.', 4: '1'}
+5	5		301							"{2: 'Celica', 3: ""If there are no questions, you're all dismissed. Just don't forget to turn in your reports on time."", 4: '1'}"
+6	6		202							{1: '1'}
+7	7		301							{3: 'As the meeting wraps up, the fluorescent lights flicker on. Everyone around the long table gathers their files, stands, and begins to head out.'}
+8	8		201							{1: '1', 2: '500001', 3: '2'}
+9	9		301							{1: '1', 2: 'Celica', 3: 'Oh, 【kuroname】, I need you to stay for a moment.', 4: '1'}
+10	10		301							{3: 'With a mysterious smile, Celica waves you over.'}
+11	11		302							"{2: '(Walk over, already used to this routine)', 3: '12', 4: 'This is about ""that mission again,"" isn\'t it?', 5: '12'}"
+12	12		301							{2: 'Celica', 3: 'Bingo! You guessed it!', 4: '1'}
+13	13		202							{1: '1'}
+14	14		301							{3: 'She pulls a finely crafted mechanical magpie from a cardboard box beneath the table.'}
+15	15		201							{1: '1', 2: '500001'}
+16	16		301							{1: '1', 2: 'Celica', 3: 'Can you guess what the World Folklore Enthusiasts has cooked up this year?', 4: '1'}
+17	17		204							{1: '1', 2: '2'}
+18	18		301				DialogDisable			"{2: 'Celica', 3: ""They've teamed up with the mechanoids to host a huge Double Seventh Festival souvenir exhibition!"", 4: '1'}"
+19	19		202							{1: '1'}
+20	20		401						1000.0	{2: '759'}
+21	21		402							{1: '759'}
+22	22		301			DialogEnable				{3: 'Right then, the mechanical magpie in her hand seems to react to a keyword, flapping its wings and croaking out in a raspy voice.'}
+23	23		301							{2: 'Mechanical Magpie', 3: 'Caw caw! Constellia! Double Seventh Festival Souvenir Exhibition! Grand! Spectacular! Guaranteed to make you feel right at home! Caw caw!'}
+24	24		302							"{2: 'Pretty sure parrots are supposed to be the ones that talk, not magpies.', 3: '25', 4: ""So, I'm heading to Constellia again?"", 5: '25'}"
+25	25		201							{1: '1', 2: '500001'}
+26	26		301							"{1: '1', 2: 'Celica', 3: ""Mm-hmm. I hear this year's venue is bigger than ever, with more challenges and events to try."", 4: '1'}"
+27	27		301							{2: 'Celica', 3: 'The stalls are offering not only materials the mechanoids have collected, but also all kinds of handmade souvenirs as prizes...', 4: '1'}
+28	28		204							{1: '1', 2: '2'}
+29	29		301							"{2: 'Celica', 3: ""As usual, while you're there, just bring back a few items for the WGAA to use as references."", 4: '1'}"
+30	30		301							{2: 'Celica', 3: 'No need to stress about it. Just think of this as a chance to take a break and enjoy yourself.', 4: '1'}
+31	31		301							{3: 'Celica seems quite fond of the magpie, gently rubbing its head as she talks.'}
+32	32		302							{2: 'So, where did this magpie come from?', 3: '33'}
+33	33		301							"{2: 'Celica', 3: ""Oh, right, I forgot to introduce it. This is Little Caw. It's one of the mechanoid organizers for the event."", 4: '1'}"
+34	34		301				DialogDisable			"{2: 'Celica', 3: ""If you've got any questions, ask it on the way. It'll fill you in."", 4: '1'}"
+35	35		302							{2: 'Got it.', 3: '36'}
+36	36		202							{1: '1'}
+37	37		401						1000.0	{2: '759'}
+38	38		402							{1: '759'}
+39	39		301			DialogEnable				"{3: ""You take Little Caw from her. It's still flapping nonstop, and the weight hits you immediately—it's heavier than it looks.""}"
+40	40		301							"{2: 'Little Caw', 3: ""Caw caw! Don't worry, 【kuroname】! Once we reach Constellia, you're going to have a wonderful Double Seventh Festival!""}"
+41	41		302							"{2: ""I'm counting on you."", 3: '42', 4: ""Let's get moving."", 5: '42'}"
+42	42		301		1		AniZhuanchangBegin			"{2: 'Little Caw', 3: ""Alright, let's go, caw!""}"

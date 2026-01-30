@@ -1,0 +1,21 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '1031001', 4: '-600'}
+4	4		201							{1: '2', 2: '500026', 4: '600'}
+5	5		201							{1: '3', 2: '500166'}
+6	6		301			DialogEnable				{1: '1', 3: 'You all dash into the bridge, only to find no enemy to fight.'}
+7	7		301							{3: 'But the four of you seem to start losing your perception ability...'}
+8	8		301							"{2: 'Lee', 3: ""Area scan... Argh! It's the interfering nodes! If we let them stay where they are, they're going to keep affecting our perception ability!"", 4: '2'}"
+9	9		301							{2: 'Lee', 3: 'Liv, scan for their locations!', 4: '2'}
+10	10		301							"{2: 'Liv', 3: ""I've uploaded some possible locations to the command link!"", 4: '1'}"
+11	11		301				DialogDisable			"{2: 'Lee', 3: ""We have one immediately around us... That's why the disruption is so strong!"", 4: '2'}"
+12	12		305							{1: '13', 2: '20'}
+13	13		301			DialogEnable				{2: 'Lee', 3: 'So they installed this interfering node on the pre-existing program module...', 4: '2'}
+14	14		301							{2: 'Liv', 3: 'No. Aside from the interfering node, there is a data stream that goes beyond the program module... Can it be...', 4: '1'}
+15	15		301							{2: 'Lee', 3: 'Is the communication between Huaxu and the ground also integrated with this interference module? Such a high degree of aggregation is a reasonable guess considering that the intrusion took place so suddenly.', 4: '2'}
+16	16		301							"{2: 'Lucia', 3: ""Which means if we destroy the interfering node, we'll also be able to sever Huaxu's connection with the ground server?"", 4: '3'}"
+17	17		301							"{2: 'Lee', 3: ""Correct, and when that happens, I imagine Huaxu's sub-terminals will be critically hurt."", 4: '2'}"
+18	18		302							"{2: ""Let's do it."", 3: '19'}"
+19	19		301		1		AniZhuanchangBegin			{2: 'Lucia & Lee & Liv', 3: 'Understood!', 4: '1', 5: '2', 6: '3'}
+20	20		202		1		AniZhuanchangBegin			{1: '1', 2: '2', 3: '3', 6: '1'}

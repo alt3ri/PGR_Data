@@ -1,0 +1,441 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg'}
+2	2		401				AniZhuanchangEnd			{1: '1', 2: '120'}
+3	3		107						2500.0	{1: 'Fast City', 2: 'Suburban Villa', 4: '16:00', 5: 'Line Spacing: 2'}
+4	4		108							{1: '1'}
+5	5		104						400.0	{1: '0|50|0', 2: '0.4'}
+6	6		401							{1: '2', 2: '4779'}
+7	7		104						300.0	{1: '0|0|0', 2: '0.4'}
+8	8		402							{1: '4779'}
+9	9		301			DialogEnable				{3: 'As the mist dissipates, you crouch beside the scattered metal fragments, checking them each several times before finally putting away your gun.'}
+10	10		302							{2: 'Sorry, bit of a stress response there.', 3: '11'}
+11	11		201							{1: '1', 2: '501184'}
+12	12		301				DialogDisable			"{1: '1', 2: 'Iris', 3: ""It's alright. Anyone thrown into this kind of situation would instinctively be on guard."", 4: '1'}"
+13	13		302							{2: 'Looks like we have a common enemy.', 3: '14'}
+14	14		302							{2: 'What exactly is that thing?', 3: '15'}
+15	15		204							{1: '1', 2: '9'}
+16	16		301			DialogEnable				"{2: 'Iris', 3: 'Lueya... Enora Lueya... That ""armor"" we just saw was her duplicate.', 4: '1'}"
+17	17		302							{2: 'Duplicate?', 3: '18', 4: 'So what does she rely on to operate?', 5: '18'}
+18	18		204							{1: '1', 2: '17'}
+19	19		301				DialogDisable			{2: 'Iris', 3: 'This device... is its core.', 4: '1'}
+20	20		202							{1: '1'}
+21	21		401							{1: '2', 2: '4803'}
+22	22		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0.3'}
+23	23		201	1						{1: '1', 2: '501182', 6: '-100'}
+24	24		301			DialogEnable	DialogDisable			{3: 'Iris explains gently, sifting through the scattered debris to pick up a prism-shaped device.', 4: '1'}
+25	25		202							{1: '1'}
+26	26		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '0', 5: '0.3'}
+27	27		301			DialogEnable				"{3: ""You take it and notice the device's surface has lost its luster. You can't tell its function from its appearance.""}"
+28	28		401						300.0	{1: '2', 2: '4799'}
+29	29		402							{1: '4799'}
+30	30		301				DialogDisable			"{3: ""You take out your terminal while surveying the surroundings. Everything's functioning, except there's no signal.""}"
+31	31		302							{2: 'So it can block signals as well as teleport long distances...', 3: '32'}
+32	32		302							{2: 'How much longer can this one last?', 3: '33'}
+33	33		201							{1: '1', 2: '501184', 3: '17'}
+34	34		301			DialogEnable				"{1: '1', 2: 'Iris', 3: ""It's already dead. Or rather, this device alone is not enough."", 4: '1'}"
+35	35		302							{2: 'Then why...', 3: '36'}
+36	36		204							{1: '1', 2: '9'}
+37	37		301							{2: 'Iris', 3: '...', 4: '1'}
+38	38		204							{1: '1', 2: '17'}
+39	39		301				DialogDisable			"{2: 'Iris', 3: ""Because you're no longer in your original location. I mean, what you've crossed isn't just spatial distance."", 4: '1'}"
+40	40		202							{1: '1', 6: '1'}
+41	41		306							{1: '1'}
+42	42		401							{1: '2', 2: '5303'}
+43	43		104							{1: '0|-200|-150', 2: '0.5'}
+44	44		301			DialogEnable	DialogDisable		500.0	{3: 'As her words trail off, an aircraft flies overhead with a roaring sound, confirming her statement.'}
+45	45		402							{1: '5303'}
+46	46		302							{2: 'Wha...', 3: '47'}
+47	47		104							{1: '0|0|0', 2: '0.5'}
+48	48		306						500.0	
+49	49		201							{1: '1', 2: '501184', 3: '17'}
+50	50		301			DialogEnable				{1: '1', 2: 'Iris', 3: 'The core device is key to powering the duplicates, and it is also the key to traveling through time.', 4: '1'}
+51	51		301							"{2: 'Iris', 3: ""By pairing two devices together and anchoring the coordinates, it's possible to open a temporal passage."", 4: '1'}"
+52	52		301							{3: 'Iris pauses briefly, giving you a moment to digest this information.'}
+53	53		302							{2: 'Temporal... passage...', 3: '54'}
+54	54		301							{2: 'Iris', 3: 'Yes, the duplicates use this to travel to different points in time, to assassinate key figures or destroy important objects, changing history.', 4: '1'}
+55	55		301				DialogDisable			"{2: 'Iris', 3: ""In your time period... there must be something she's targeted as well."", 4: '1'}"
+56	56		302							{2: '...', 3: '57'}
+57	57		202							{1: '1', 6: '1'}
+58	58		401							{1: '2', 2: '952'}
+59	59		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+60	60		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+61	61		504							{1: '0.7'}
+62	62		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory759.jpg'}
+63	63		201						300.0	{1: '1', 2: '500110', 7: '1'}
+64	64		401							{1: '2', 2: '952'}
+65	65		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+66	66		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+67	67		201						300.0	{1: '1', 2: '500004', 7: '1'}
+68	68		401							{1: '2', 2: '952'}
+69	69		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+70	70		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg'}
+71	71		504							{1: '0'}
+72	72		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+73	73		201							{1: '1', 2: '501184', 3: '17', 7: '1'}
+74	74		301			DialogEnable				{1: '1', 3: 'Your fingers trace over the strange device as what happened with Ayla and the Science Council flashes through your mind. Everything fits what she just said.'}
+75	75		306							{1: '1'}
+76	76		301							"{3: ""Time travel... It's an incredibly far-fetched concept. The truth would require verifying more details, but the info gathered so far is logically consistent.""}"
+77	77		301				DialogDisable			{3: 'This unidentified Construct is clearly a powerful fighter, yet is showing goodwill, so you decide to cooperate with her for now.'}
+78	78		306							
+79	79		302							{2: 'Thank you for sharing this intelligence.', 3: '80'}
+80	80		302							{2: 'I apologize again for my earlier recklessness.', 3: '81'}
+81	81		401							{1: '2', 2: '5286'}
+82	82		204							{1: '1', 2: '13'}
+83	83		301			DialogEnable	DialogDisable			{3: 'You remove your gloves and extend your right hand, rapidly piecing together information in your mind to make up a new identity.'}
+84	84		302							{2: '...F.O.S., a mercenary from Eden Security Group.', 3: '85'}
+85	85		302							{2: 'Pleased to meet you, Miss Iris.', 3: '86'}
+86	86		204							{1: '1', 2: '1'}
+87	87		301			DialogEnable				{2: 'Iris', 3: '...', 4: '1'}
+88	88		301							"{3: ""For some reason, a faint smile forms on Iris's lips.""}"
+89	89		401							{1: '2', 2: '4799'}
+90	90		203						300.0	{1: '1', 2: '0.25', 4: '-20', 5: '-50'}
+91	91		402							{1: '4799'}
+92	92		301							{3: 'She noticeably hesitates before making contact, but ultimately shakes your hand.'}
+93	93		301				DialogDisable			{2: 'Iris', 3: '...Hello, F.O.S..', 4: '1'}
+94	94		302							{2: '(Is she trying to avoid physical contact?)', 3: '95'}
+95	95		104						150.0	{1: '10|0|0', 2: '0.15'}
+96	96		104							{1: '0|0|0', 2: '0.15'}
+97	97		302							{2: '(...No, her grip is surprisingly strong.)', 3: '98'}
+98	98		306							{1: '1'}
+99	99		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.4'}
+100	100		203							{1: '1', 2: '0.4', 4: '40', 5: '-150'}
+101	101		301			DialogEnable				{3: 'As you speak, you keep gathering info about the Construct, building a profile.'}
+102	102		301							"{3: ""Just as you're about to release her hand, an intricate pattern on her shoulder catches your eye. The design is strangely familiar.""}"
+103	103		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '0.4'}
+104	104		203							{1: '1', 2: '0.4'}
+105	105		306							
+106	106		301				DialogDisable			"{3: ""You're lost in thought for a moment until you see Iris's gentle smile again. You realize you've been holding her hand for too long and quickly let go.""}"
+107	107		302							{2: '...Sorry, I was a bit distracted.', 3: '108'}
+108	108		302							{2: 'Enora Lueya must be stopped.', 3: '109'}
+109	109		302							{2: 'Is there anything I can do to help?', 3: '110'}
+110	110		301			DialogEnable				"{2: 'Iris', 3: ""...Relax. This war is almost over. I'm executing the final... and most critical mission—escorting the target to the designated location."", 4: '1'}"
+111	111		204							{1: '1', 2: '4'}
+112	112		301							{2: 'Iris', 3: 'If all goes according to plan, Enora Lueya will be waiting for me there. Once I defeat her, everything will be fine.', 4: '1'}
+113	113		204							{1: '1', 2: '17'}
+114	114		301							"{2: 'Iris', 3: ""As for returning... you don't need to worry about that..."", 4: '1'}"
+115	115		202							{1: '1'}
+116	116		301							"{3: ""Iris hesitates, then quickly begins to explain, as if she's just made up her mind about something.""}"
+117	117		201							{1: '1', 2: '501184', 3: '17'}
+118	118		301							"{1: '2', 2: 'Iris', 3: ""Once I complete the final mission, I'll destroy her main body, and get the new device."", 4: '1'}"
+119	119		204							{1: '1'}
+120	120		301				DialogDisable			"{2: 'Iris', 3: ""By then, I'll be able to send you back to where you came from by using duplicates to traverse through time."", 4: '1'}"
+121	121		202							{1: '1', 6: '1'}
+122	122		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0.3'}
+123	123		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+124	124		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+125	125		302							{2: 'Critical mission...', 3: '126'}
+126	126		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+127	127		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+128	128		201							{1: '1', 2: '501184', 7: '1'}
+129	129		205							{1: '999'}
+130	130		502							{1: 'AniZhuanchangEnd'}
+131	131		301			DialogEnable				"{1: '1', 3: 'You quickly compile all the info and realize you don\'t even know the real identity of this ""Iris"" standing before you.'}"
+132	132		301				DialogDisable			"{3: ""Someone who knows so much about Lueya probably isn't an ordinary soldier...""}"
+133	133		302							"{2: ""Pardon me, but I haven't asked about your identity, Miss Iris."", 3: '134'}"
+134	134		204							{1: '1', 2: '16'}
+135	135		301			DialogEnable				{2: 'Iris', 3: '...', 4: '1'}
+136	136		301							{3: 'Iris falls silent for a moment, her gaze complicated.'}
+137	137		302							"{2: ""If it's classified information..."", 3: '138'}"
+138	138		204							{1: '1', 2: '13'}
+139	139		301							"{2: 'Iris', 3: ""No... it's, I'm just... thinking about how to explain it."", 4: '1'}"
+140	140		301							{2: 'Iris', 3: 'I belong to... to the Union Government of another time, Unit... Number 654, Operation Codename... Iris.', 4: '1'}
+141	141		301							"{3: ""She stumbles through the first part, but goes back to normal at the end, perhaps having weighed her options and decided it's worth revealing some information.""}"
+142	142		204							{1: '1'}
+143	143		301							"{2: 'Iris', 3: ""We were the first to discover Enora Lueya's existence, and we've been fighting for a long time to stop her from disrupting history."", 4: '1'}"
+144	144		204							{1: '1', 2: '16'}
+145	145		301							"{2: 'Iris', 3: ""...To be frank, if we had been a bit faster, this would likely have been resolved already, and you wouldn't have been dragged into it."", 4: '1'}"
+146	146		202							{1: '1'}
+147	147		301							"{3: ""A hint of apology is mixed in Iris's words.""}"
+148	148		302							"{2: ""That's not your responsibility."", 3: '149'}"
+149	149		301							{3: 'Iris shakes her head and changes the topic.'}
+150	150		201							{1: '1', 2: '501184'}
+151	151		301							"{1: '1', 2: 'Iris', 3: ""...If you'd prefer, you can stay in Fast City and do whatever you want. I'll come back for you after I complete my mission."", 4: '1'}"
+152	152		302							{2: '(Accept)', 3: '153', 4: '(Decline)', 5: '156'}
+153	153		204							{1: '1', 2: '8'}
+154	154		301							{3: 'Iris visibly relaxes when you tentatively accept this proposal.'}
+155	155		301							{3: 'Without pausing to analyze why, you change your answer.'}
+156	156		502						200.0	{1: 'DialogDisable'}
+157	157		302							"{2: ""I'm already involved, so I should do something."", 3: '158'}"
+158	158		302							{2: 'I may not match up to a Construct, but I can still help.', 3: '159'}
+159	159		204							{1: '1', 2: '16'}
+160	160		502							{1: 'DialogEnable'}
+161	161		301							{1: '1', 2: 'Iris', 3: '...', 4: '1'}
+162	162		301							"{3: ""You meet Iris's slightly puzzled gaze and see her nod gently.""}"
+163	163		301				AniZhuanchangBegin			"{2: 'Iris', 3: ""Alright, so from now on we're... partners, F.O.S. I look forward to working with you."", 4: '1'}"
+164	164		502							{1: 'DialogDisable'}
+165	165		202							{1: '1', 6: '1'}
+166	166		401						2000.0	{1: '1', 2: '36'}
+167	167		401							{1: '1', 2: '100'}
+168	168		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1190.jpg'}
+169	169		107			AniZhuanchangEnd			2500.0	{1: 'Fast City', 2: 'Suburban Villa', 4: '18:00', 5: 'Line Spacing: 2'}
+170	170		301							{3: 'Fast City\\nSuburban Villa\\n18:00\\nLine Spacing: 2'}
+171	171		108							{1: '1'}
+172	172		301			DialogEnable				{3: 'You sit in the living room of the damaged villa with Dandelion and Jonathan, introducing yourselves.'}
+173	173		201							{1: '1', 2: '501184'}
+174	174		401							{1: '2', 2: '5290'}
+175	175		301							{1: '1', 3: 'Iris emerges from the kitchen, carrying a saucer and a teapot.'}
+176	176		301							"{2: 'Iris', 3: ""We don't have much here, but here's something to drink."", 4: '1'}"
+177	177		202							{1: '1', 6: '1'}
+178	178		201							{1: '1', 2: '501184', 4: '-400'}
+179	179		201							{1: '2', 2: '501165', 4: '350'}
+180	180		203							{1: '2', 2: '0.4', 3: '400'}
+181	181		401							{1: '2', 2: '5290'}
+182	182		301							{1: '1', 3: 'Dandelion accepts it with surprise.'}
+183	183		301							{2: 'Dandelion', 3: 'I had no idea you had these here...', 4: '2'}
+184	184		301							"{2: 'Iris', 3: ""...I was too busy looking for Lueya, so I didn't have time to..."", 4: '1'}"
+185	185		202							{1: '1', 2: '2', 6: '1'}
+186	186		201							{1: '1', 2: '501162'}
+187	187		301							{1: '1', 3: 'Her gaze drifts casually toward the sofa, where you are quietly talking with Jonathan.'}
+188	188		302							{2: 'Are they old acquaintances?', 3: '189', 4: 'Have they known each other for long?', 5: '190'}
+189	189	191	301							"{1: '1', 2: 'Jonathan', 3: ""I suppose so. Longer than they've known me, at least. I just met them today."", 4: '1'}"
+190	190		301							"{2: 'Jonathan', 3: ""I suppose so, longer than they've known me, at least. I just met them today."", 4: '1'}"
+191	191		203							{1: '1', 2: '0.3', 3: '-400'}
+192	192		201							{1: '2', 2: '501184', 4: '400'}
+193	193		401							{1: '2', 2: '5290'}
+194	194		301							{1: '1', 3: 'Your quiet conversation is interrupted as Iris turns toward you, offering a cup of tea.'}
+195	195		302							{2: 'Thank you.', 3: '196'}
+196	196		301							"{2: 'Iris', 3: ""Careful, it's hot. What are you two talking about?"", 4: '2'}"
+197	197		301							"{2: 'Jonathan', 3: ""We're discussing what we should do next."", 4: '1'}"
+198	198		301							"{2: 'Jonathan', 3: ""Should I consider myself lucky? You were telling me there wouldn't be reinforcements right before the attack."", 4: '1'}"
+199	199		204							{1: '2', 2: '16'}
+200	200		301							"{2: 'Iris', 3: ""...Because I didn't expect F.O.S. to show up."", 4: '2'}"
+201	201		202							{1: '1', 2: '2', 6: '1'}
+202	202		201							{1: '1', 2: '501162', 3: '4'}
+203	203		301							{1: '1', 3: 'Jonathan turns to look at you and asks with confusion.'}
+204	204		301							"{2: 'Jonathan', 3: ""Iris said you volunteered to help. May I ask why? It wouldn't have affected you."", 4: '1'}"
+205	205		301							{3: 'He furrows his brow, genuinely confused.'}
+206	206		301							{2: 'Jonathan', 3: 'The situation... you probably already know, So why take the risk?', 4: '1'}
+207	207		306							{1: '1'}
+208	208		301							"{3: ""You have already figured out who Jonathan is through the simple chat just now. He's a lawyer who's about to participate in the signing of New Earth Calendar...""}"
+209	209		301							{3: 'Perhaps because he tried to avoid getting involved, he cannot see why someone would volunteer to join in.'}
+210	210		306							
+211	211		302							{2: 'Because Lueya is changing history.', 3: '212', 4: 'Because I want to help.', 5: '212'}
+212	212		301				DialogDisable			{3: 'Lueya is changing history, and no one knows if we can survive once that happens.'}
+213	213		302							"{2: ""Also, I'm a sol... I was a soldier."", 3: '214'}"
+214	214		302							{2: 'Before becoming a mercenary.', 3: '215'}
+215	215		302							"{2: ""I'm familiar with combat, just as you're familiar with legal codes."", 3: '216'}"
+216	216		204							{1: '1'}
+217	217		301			DialogEnable	DialogDisable			{2: 'Jonathan', 3: '...', 4: '1'}
+218	218		302							"{2: ""Combat isn't something you should worry about, I..."", 3: '219'}"
+219	219		302							{2: 'Iris and I will handle everything.', 3: '220'}
+220	220		202							{1: '1'}
+221	221		401							{1: '2', 2: '5281'}
+222	222		301			DialogEnable	AniZhuanchangBegin			{3: 'Jonathan stays silent for a moment, then slowly raises his glass and downs it in one gulp.'}
+223	223		502							{1: 'DialogDisable'}
+224	224		401						2000.0	{1: '1', 2: '36'}
+225	225		401							{1: '1', 2: '161'}
+226	226		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1190.jpg'}
+227	227		301			DialogEnable				"{3: ""After getting acquainted with each other, given the intense situation, there's no time for idle chat.""}"
+228	228		302							"{2: ""Let's go through our next steps."", 3: '229'}"
+229	229		302							{2: 'Iris?', 3: '230'}
+230	230		401							{1: '2', 2: '2936'}
+231	231		201							{1: '1', 2: '501184', 3: '4'}
+232	232		301							{1: '1', 3: 'Iris nods and takes a letter from her pocket, putting it on the table.'}
+233	233		301							{2: 'Iris', 3: 'According to our original trajectory, Jonathan will fly to the capital of Bane in a week. Our main concern is his safety once he lands.', 4: '1'}
+234	234		301							"{2: 'Iris', 3: ""But things have changed because now I know that Enora Lueya has discovered our plans. That's why she launched the attack earlier."", 4: '1'}"
+235	235		203							{1: '1', 2: '0.25', 3: '400'}
+236	236		201							{1: '2', 2: '501162', 3: '7', 4: '-400'}
+237	237		301							"{1: '1', 2: 'Jonathan', 3: ""...I thought that was just daily life for someone who's become her target."", 4: '2'}"
+238	238		204							{1: '1', 2: '17'}
+239	239		301							"{2: 'Iris', 3: ""That's an exaggeration. According to our initial assessment, you should have been safe until you reached the capital of Bane."", 4: '1'}"
+240	240		301				DialogDisable			{2: 'Jonathan', 3: 'So now we need to figure out how to stay alive until next week...', 4: '2'}
+241	241		302							{2: '...', 3: '242'}
+242	242		302							{2: 'No, the question is how to reach Bane at all.', 3: '243'}
+243	243		202							{1: '1', 2: '2', 6: '1'}
+244	244		201							{1: '1', 2: '501184', 3: '17'}
+245	245		401							{1: '2', 2: '4112'}
+246	246		401							{1: '2', 2: '911'}
+247	247		301			DialogEnable				"{1: '1', 3: ""Jonathan exchanges a glance with Iris to make sure they're on the same page. Iris takes out a map and marks the airports and flight paths between the capital of Bane and Fast.""}"
+248	248		301							{2: 'Iris', 3: 'Flying is no longer viable. This is the first change in our plan. Planes are sitting ducks. Enora Lueya can easily take down the entire aircraft with a suicide attack.', 4: '1'}
+249	249		203							{1: '1', 2: '0.25', 3: '-400'}
+250	250		201							{1: '2', 2: '501165', 4: '400'}
+251	251		301							"{1: '1', 2: 'Dandelion', 3: ""But wouldn't changing his itinerary seem suspicious to the United Government...? Wouldn't they think that Jonathan is trying to escape?"", 4: '2'}"
+252	252		203							{1: '1', 2: '0.25'}
+253	253		203							{1: '2', 2: '0.25', 3: '600'}
+254	254		201							{1: '3', 2: '501162', 3: '4', 4: '-600'}
+255	255		301							{1: '1', 2: 'Jonathan', 3: 'Of course. My name was probably already on the watchlist when I finished that call with the professor.', 4: '3'}
+256	256		301							"{2: 'Jonathan', 3: ""But we can't use other transportation either... I can't just wait around for her to blow up this plane... So what's next?"", 4: '3'}"
+257	257		301							{2: 'Iris', 3: 'First, contact the United Government to request personal protection in light of the recent attacks.', 4: '1'}
+258	258		301				DialogDisable			{2: 'Jonathan', 3: 'But could regular bodyguards save me from attacks like that? We might end up sacrificing more lives...', 4: '3'}
+259	259		302							"{2: ""We just need to convince the United Government that you're ready to play their game."", 3: '260'}"
+260	260		302							"{2: ""But that's not enough. We need a more decisive plan..."", 3: '261'}"
+261	261		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+262	262		401							{1: '2', 2: '911'}
+263	263		201							{1: '1', 2: '501162', 3: '4'}
+264	264		301			DialogEnable				"{1: '1', 3: ""Iris traces Bane's border on the map with her pen, thinks for a moment, then looks at Jonathan.""}"
+265	265		302							{2: 'You said that you own a law firm, and have substantial financial assets...', 3: '266'}
+266	266		301							"{2: 'Jonathan', 3: ""That's right, but..."", 4: '1'}"
+267	267		302							"{2: ""Purchase a large amount of Ban's company stocks and bonds with cash."", 3: '268'}"
+268	268		301							{3: 'As a negotiator, you should know which companies will benefit from the dividend period after the treaty signing, and what kind of assets will go up in value.'}
+269	269		204							{1: '1'}
+270	270		301							"{2: 'Jonathan', 3: ""...Bind my assets to Ban's?"", 4: '1'}"
+271	271		301							"{2: 'Jonathan', 3: ""That's... definitely not what I expected..."", 4: '1'}"
+272	272		302							{2: 'As long as it works.', 3: '273'}
+273	273		301							"{3: 'With profit as motivation, they\'ll believe that Jonathan has placed his bets on Bane signing the ""The New Earth Codex"".'}"
+274	274		301							{2: 'Jonathan', 3: 'What about the personal protection you mentioned earlier...', 4: '1'}
+275	275		202							{1: '1', 6: '1'}
+276	276		201							{1: '1', 2: '501184', 3: '17'}
+277	277		301							{1: '1', 2: 'Iris', 3: 'That part remains the same.', 4: '1'}
+278	278		301							"{3: ""Iris gives a firm answer. Jonathan meets her gaze and sees that she's following his line of thought.""}"
+279	279		301							{2: 'Iris', 3: 'If the airport is also attacked, the United Government will believe these are planned assaults, considering what happened at the Dionysus Theater and the villa today.', 4: '1'}
+280	280		203							{1: '1', 2: '0.25', 3: '-400'}
+281	281		201							{1: '2', 2: '501165', 3: '6', 4: '400'}
+282	282		301							{1: '1', 2: 'Dandelion', 3: 'The airport will also be attacked... Are you two planning to lure Enora Lueya to the airport?', 4: '2'}
+283	283		202							{1: '1', 2: '2'}
+284	284		301							{3: 'Dandelion interrupts Iris, her expression somewhat worried.'}
+285	285		201							{1: '1', 2: '501184'}
+286	286		301							"{1: '1', 2: 'Iris', 3: ""That would involve innocent civilians. Don't worry, we won't do that."", 4: '1'}"
+287	287		204							{1: '1', 2: '9'}
+288	288		301				DialogDisable			{2: 'Iris', 3: 'We can just use the simplest and most controllable method...', 4: '1'}
+289	289		302							"{2: 'By conducting the ""attack"" on the airport ourselves.', 3: '290'}"
+290	290		302							{2: 'There will be no casualties or damage.', 3: '291'}
+291	291		302							{2: 'We just need to show hostility and create a commotion.', 3: '292'}
+292	292		204							{1: '1'}
+293	293		301			DialogEnable				"{2: 'Iris', 3: ""Like what Jonathan thought earlier, the United Government won't suspect us."", 4: '1'}"
+294	294		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+295	295		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+296	296		504							{1: '0.7'}
+297	297		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1189.jpg'}
+298	298		201							{1: '1', 2: '501162', 3: '4', 4: '-400', 7: '1'}
+299	299		201							{1: '2', 2: '501165', 3: '4', 4: '400', 7: '1'}
+300	300		301							"{1: '1', 2: 'Jonathan', 3: 'For instance, the truth could be that I work for the United Government, helping revise the articles of ""The New Earth Codex"".', 4: '1'}"
+301	301		301							{2: 'Jonathan', 3: 'A group of dissatisfied civilians has targeted me, most of them victims of the Peace Operation.', 4: '1'}
+302	302		301							"{2: 'Jonathan', 3: 'They oppose the United Government and don\'t want to see ""The New Earth Codex"" implemented, so they planned the attack.', 4: '1'}"
+303	303		202							{1: '1', 2: '2', 6: '1'}
+304	304		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+305	305		504							{1: '0'}
+306	306		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1190.jpg'}
+307	307		201							{1: '1', 2: '501184', 3: '17', 7: '1'}
+308	308		301				DialogDisable			"{1: '1', 2: 'Iris', 3: ""After that, you can question the United Government's abilities. With your financial investments, they'll only see it as an overly anxious civilian looking for peace of mind."", 4: '1'}"
+309	309		302							{2: 'If you ask for a change of route and bodyguards then...', 3: '310'}
+310	310		302							{2: 'They will agree to it.', 3: '311'}
+311	311		202							{1: '1', 7: '1'}
+312	312		201							{1: '1', 2: '501165', 3: '6'}
+313	313		301			DialogEnable				"{1: '1', 2: 'Dandelion', 3: ""W-wait a second, I don't quite get it."", 4: '1'}"
+314	314		301							"{3: ""Dandelion wears a confused expression, clearly struggling with some details she can't figure out.""}"
+315	315		301							{2: 'Dandelion', 3: 'If our goal is to escort Jonathan, th-then why ask for bodyguards in the first place?', 4: '1'}
+316	316		302							"{2: ""After multiple assaults, if he doesn't have bodyguards..."", 3: '317'}"
+317	317		202							{1: '1', 7: '1'}
+318	318		201							{1: '1', 2: '501184', 3: '17'}
+319	319		301							"{1: '1', 2: 'Iris', 3: '...The United Government will definitely send troops to ""escort"" Jonathan.', 4: '1'}"
+320	320		204							{1: '1', 2: '1'}
+321	321		301							{3: 'You say in perfect unison with Iris again. Iris turns her around and gives you a gentle smile.'}
+322	322		202							{1: '1', 6: '1'}
+323	323		201							{1: '1', 2: '501165', 3: '1'}
+324	324		301							{1: '1', 2: 'Dandelion', 3: '...Oh... Ohh, I-I see now... That sounds doable...', 4: '1'}
+325	325		202							{1: '1', 6: '1'}
+326	326		201							{1: '1', 2: '501162'}
+327	327		301				DialogDisable			"{1: '1', 2: 'Jonathan', 3: ""...You two are so in sync that I'm starting to wonder if you've met each other before."", 4: '1'}"
+328	328		302							{2: 'You and your protectors quickly become familiar.', 3: '329'}
+329	329		302							{2: 'You should be happy about this.', 3: '330'}
+330	330		401						500.0	{1: '2', 2: '4799'}
+331	331		402							{1: '4799'}
+332	332		104							{1: '0|-50|0', 2: '0.4'}
+333	333		301			DialogEnable				{3: 'You pull out a disc-shaped listening device from your waist pouch as you stand up.'}
+334	334		401							{1: '2', 2: '4044'}
+335	335		104							{1: '0|-50|-50', 2: '0.4'}
+336	336		203							{1: '1', 2: '0.4', 5: '-50'}
+337	337		301				DialogDisable			"{3: ""You pat Jonathan's shoulder playfully and slip the device into the collar behind his neck.""}"
+338	338		202							{1: '1'}
+339	339		302				AniZhuanchangBegin			"{2: ""Alright, let's move."", 3: '340'}"
+340	340		502							{1: 'DialogEnable'}
+341	341		401						2000.0	{1: '1', 2: '36'}
+342	342		401							{1: '1', 2: '6154'}
+343	343		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1192.jpg'}
+344	344		301			AniZhuanchangEnd				{3: 'After discussing the operation, you split into pairs. Jonathan and Dandelion handle the finance, while Iris and you prepare the tools and scout the location.'}
+345	345		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+346	346		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory539.jpg'}
+347	347		104							{1: '-60|-292|0', 2: '0'}
+348	348		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront53.png', 4: '4'}
+349	349		103							{1: '1', 3: '4'}
+350	350		401							{1: '2', 2: '317', 3: '0.5'}
+351	351		201							{1: '1', 2: '501184', 3: '10', 5: '-120'}
+352	352		301							"{1: '1', 3: ""You sit next to Iris on the train heading downtown from the suburbs. Iris closes her eyes as soon as she sits down. Looks like she's not in the mood to chat.""}"
+353	353		302							{2: '...', 3: '354'}
+354	354		401							{1: '2', 2: '4095'}
+355	355		301							"{3: ""Taking the hint, you reach for a Golden Age newspaper on the train. Just as you pull it out, you hear Iris's voice.""}"
+356	356		301							"{2: 'Iris', 3: ""F.O.S... what's your take on this operation?"", 4: '1'}"
+357	357		301							"{3: ""You turn your head to see Iris's eyes still closed, her lips curved into a faint smile. She must be in a good mood.""}"
+358	358		301							{2: 'Iris', 3: 'Anything is fine. I just want to chat.', 4: '1'}
+359	359		301							{2: 'Iris', 3: 'Like you said, if we get familiar with each other quickly, the operation will go a lot smoother.', 4: '1'}
+360	360		302							"{2: ""...I'm surprised we're on the same wavelength."", 3: '361'}"
+361	361		204							{1: '1', 2: '9'}
+362	362		301							"{2: 'Iris', 3: ""You mean choosing the airport as our target? That's the easiest and most effective approach."", 4: '1'}"
+363	363		302							"{2: ""But that doesn't sound like an option you'd choose."", 3: '364'}"
+364	364		204							{1: '1', 2: '1'}
+365	365		301							{2: 'Iris', 3: 'Why?', 4: '1'}
+366	366		301				DialogDisable			"{3: ""Iris opens her eyes, amused. She doesn't seem offended by your comment, so you start speaking your mind.""}"
+367	367		302							"{2: ""I was concerned you'd pick a more complex approach."", 3: '368'}"
+368	368		302							{2: 'Like use the intricate connections within the United Government.', 3: '369'}
+369	369		301			DialogEnable				{2: 'Iris', 3: 'So you were surprised because I was very direct.', 4: '1'}
+370	370		302							{2: 'You come across more as an artist than a warrior.', 3: '371'}
+371	371		301							{2: 'Iris', 3: 'Thank you for the compliment. I do enjoy writing scripts in my spare time.', 4: '1'}
+372	372		301							{2: 'Iris', 3: 'If my past self were writing this, I probably would have made the resolution process more complex, like you said.', 4: '1'}
+373	373		204							{1: '1', 2: '7'}
+374	374		301							{2: 'Iris', 3: 'Until someone taught me a valuable lesson through their actions.', 4: '1'}
+375	375		301							{3: 'Something enigmatic flashes in her eyes. Whoever Iris is referring to is clearly important to her.'}
+376	376		204							{1: '1', 2: '10'}
+377	377		301							{2: 'Iris', 3: 'Before immersing in imagination and beauty, one should focus more on reality.', 4: '1'}
+378	378		302							{2: 'Art transcends life, yet is born from it.', 3: '379'}
+379	379		204							{1: '1', 2: '1'}
+380	380		301							"{2: 'Iris', 3: ""Yes, the reality is rarely as complex as we imagine. While art requires refinement, it's often too extreme."", 4: '1'}"
+381	381		204							{1: '1', 2: '6'}
+382	382		301							"{2: 'Iris', 3: ""I've learned... so much from these missions. The world I once knew only on paper has revealed its true face to me."", 4: '1'}"
+383	383		204							{1: '1', 2: '16'}
+384	384		301							"{2: 'Iris', 3: ""I never realized how many details need to be considered, how many unexpected events occur, or that goals can be reached through complex or simple means—as long as you're willing to put enough chips on the table..."", 4: '1'}"
+385	385		204							{1: '1', 2: '9'}
+386	386		301							"{2: 'Iris', 3: ""When I understood all of this, I realized the flaws in my past creative work and came to truly appreciate... Conductor's struggles."", 4: '1'}"
+387	387		202							{1: '1'}
+388	388		301							{3: 'Iris averts her gaze, lowering her eyelids.'}
+389	389		301							"{3: ""It's strange how candid Iris is being. She's sharing such personal thoughts with basically a stranger who happened to meet on a battlefield.""}"
+390	390		308							{1: '391', 2: '396'}
+391	391		302							{2: 'This conductor must mean a lot to you.', 3: '392', 4: 'Conductor?', 5: '392'}
+392	392		201							{1: '1', 2: '501184', 3: '11', 5: '-120'}
+393	393		301							{1: '1', 2: 'Iris', 3: 'Yes... someone... very important to me.', 4: '1'}
+394	394		202							{1: '1'}
+395	395		308							{3: '401'}
+396	396		302							{2: 'This conductor must mean a lot to you.', 3: '397', 4: 'Conductor?', 5: '397'}
+397	397		201							{1: '1', 2: '501184', 3: '11', 5: '-120'}
+398	398		301							{1: '1', 2: 'Iris', 3: 'Yes... someone... very important to me.', 4: '1'}
+399	399		202							{1: '1'}
+400	400		308							{3: '401'}
+401	401		301				AniZhuanchangBegin			{3: 'Her gaze lingers on you briefly before darting away.'}
+402	402		402							{1: '317'}
+403	403		401			DialogDisable			2000.0	{1: '1', 2: '36'}
+404	404		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1181.jpg', 4: '1'}
+405	405		104				AniZhuanchangEnd			{1: '0|-200|-100', 2: '0'}
+406	406		401						800.0	{1: '2', 2: '9326032'}
+407	407		401							{1: '2', 2: '4495', 3: '10'}
+408	408		301			DialogEnable				{3: 'Ding—'}
+409	409		301							{3: 'The train arrival announcement interrupts your conversation. Iris stands up first.'}
+410	410		401						500.0	{1: '2', 2: '4799'}
+411	411		402							{1: '4799'}
+412	412		401							{1: '1', 2: '6145'}
+413	413		201							{1: '1', 2: '501184', 3: '1'}
+414	414		301				DialogDisable			"{1: '1', 2: 'Iris', 3: ""Come to think of it, you've never been to Fast City before, have you?"", 4: '1'}"
+415	415		302							{2: '(In my time, the surface was nothing but ruins.)', 3: '416'}
+416	416		302							{2: 'Since becoming a mercenary, battlefields have been my only tourist destination.', 3: '417'}
+417	417		204							{1: '1', 2: '2'}
+418	418		301			DialogEnable	AniZhuanchangBegin			{2: 'Iris', 3: 'Then why not take this opportunity to properly enjoy the scenery here?', 4: '1'}
+419	419		202			DialogDisable				{1: '1', 6: '1'}
+420	420		101							{4: '4', 5: '1'}
+421	421		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1181.jpg'}
+422	422		401							{1: '2', 2: '4263', 3: '0.3'}
+423	423		401							{1: '2', 2: '4895'}
+424	424		104						500.0	{1: '0|-50|0', 2: '0.5'}
+425	425		104							{1: '0|0|0', 2: '0.5'}
+426	426		301			DialogEnable	DialogDisable			{3: 'As we step off the train, Iris stands in the middle of the path and looks back.'}
+427	427		402							{1: '4263'}
+428	428		401							{1: '2', 2: '4341', 3: '1'}
+429	429		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5301_07.jpg', 3: '0', 4: '1', 5: '1.5'}
+430	430		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_07.jpg'}
+431	431		205							{1: '999'}
+432	432		301			DialogEnable				{3: 'The slim figure blends into the light and shadow of the bustling city in the noises of peace that roar past the ears.'}
+433	433		301							"{3: ""It finally hits you just what kind of place you've arrived in.""}"
+434	434		301							"{3: ""Time, place... This entirely new environment brings freshness you can't put into words.""}"
+435	435		301				DialogDisable			{3: 'This is the past, a peaceful era, and...'}
+436	436		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5301_07.jpg', 3: '0', 4: '1', 5: '1.5'}
+437	437		104						2000.0	{1: '0|-100|-150', 2: '0', 4: '3'}
+438	438		301			DialogEnable				{2: 'Iris', 3: 'This is it—the stage where you and I will write our story.'}
+439	439		301							"{2: 'Iris', 3: ""I hope you'll enjoy working with me as much as I do, F.O.S.""}"
+440	440		301		1		AniZhuanchangBegin			{2: 'Iris', 3: 'Welcome to Fast City.'}

@@ -1,0 +1,120 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory457.jpg'}
+2	4		504							{1: '0.7', 2: '999'}
+3	2		104				AniZhuanchangEnd		100.0	{1: '0|20|-150', 2: '0'}
+4	3		104							{1: '0|-50|-150', 2: '45'}
+5	5		401							{1: '2', 2: '569'}
+6	6		401							{1: '1', 2: '201'}
+7	7		301			DialogEnable				{3: '1:36 PM. Outside City 072.'}
+8	8		301							{3: 'The sights beside you fly backward. You have not been to the surface for a while. Right now, you are on your way to conservation area 072.'}
+9	9		401							{1: '2', 2: '1515'}
+10	10		104							{1: '0|50|-150', 2: '45'}
+11	11		301							{3: 'You hear a comms notification from your terminal.'}
+12	12		201							{1: '1', 2: '500166', 3: '1'}
+13	13		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+14	14		301							{1: '1', 2: 'Lucia', 3: 'Commandant? How is it going?', 4: '1'}
+15	15		302							"{2: 'All is well.', 3: '16', 4: ""I'm almost there."", 5: '16'}"
+16	16		301							"{2: 'Lucia', 3: ""That's good."", 4: '1'}"
+17	17		302							{2: 'How about you guys?', 3: '18'}
+18	18		301							"{2: 'Lucia', 3: ""We've removed the threats in Zone C. The west side of City 072 is now free of Corrupted."", 4: '1'}"
+19	19		301							"{2: 'Lucia', 3: ""We're now taking stock of the remaining supplies."", 4: '1'}"
+20	20		301							{3: 'Transportation between the surface and Babylonia has recommenced. Over ten conservation areas have since requested assistance from the Task Force. You answered the call and were sent to help their reconstruction efforts.'}
+21	21		301							"{3: ""City 072's CPF has been reactivated, and many refugees and Scavengers have been moved there to await medical treatment. Demand for supplies has drastically increased, but communication with Babylonia remains chaotic.""}"
+22	22		301							"{3: ""Signing your assignment confirmation under Hippocrates' watchful eyes, you were surprised that she did not stop you. She simply sighed before waving her hand and leaving the rehabilitation room.""}"
+23	23		301							{3: 'Lucia and the rest have been assigned to different support teams, setting up scanning devices in areas threatened by Hetero-Creatures. They are to eliminate all threats to secure the supply routes on the surface.'}
+24	24		104							{1: '0|-50|-150', 2: '45'}
+25	25		301							{2: 'Lucia', 3: 'Please take care of yourself, Commandant.', 4: '1'}
+26	26		302							{2: 'I will.', 3: '27', 4: 'You too.', 5: '27'}
+27	27		204							{1: '1', 2: '2'}
+28	28		401					500.0		{1: '2', 2: '1515'}
+29	29		301							{3: 'Lucia smiles before she receives a new mission notification in her comms.'}
+30	30		104							{1: '0|50|-150', 2: '45'}
+31	32		301							"{1: '1', 2: 'Lucia', 3: ""I have to go, Commandant. We're about to head to the next location."", 4: '1'}"
+32	33		302							{2: 'Understood.', 3: '34', 4: 'Keep me posted.', 5: '34'}
+33	34		202							{1: '1', 6: '1'}
+34	35		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+35	36		301							{2: 'System', 3: 'Transmission over.'}
+36	37		504							{1: '0', 2: '999'}
+37	38		301							{3: 'You are suddenly greeted by light. Your vehicle has passed through an abandoned block, and the sun is no longer hiding behind tall buildings. You immediately notice the towering, metallic CPF in the distance.'}
+38	39		201							{1: '1', 2: '500019'}
+39	40		301				AniZhuanchangBegin			"{1: '1', 2: 'Construct', 3: ""We're almost there."", 4: '1'}"
+40	41		202			DialogDisable				{1: '1', 6: '1'}
+41	42		402							{1: '569'}
+42	43		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg'}
+43	44		301			DialogEnable				{3: 'You walk toward the entrance of the conservation area with the Task Force member accompanying you.'}
+44	45		302							"{2: ""A bit chilly, isn't it..."", 3: '46'}"
+45	46		301							{3: 'The temperature on the surface has dropped quite drastically recently. Even a sunny afternoon like this feels cold when a breeze blows past you.'}
+46	47		301							{3: 'Someone is already waiting at the entrance. You walk up, presenting your identification.'}
+47	48		301							{2: 'System', 3: 'Visitor identity confirmed. Welcome to the City 072 conservation area, 【kuroname】.'}
+48	49		301							{3: 'The person who has been waiting for you is a scantily clad middle-aged man. After you confirm your mission with him, he leads you to the center of the conservation area.'}
+49	50		301							{3: 'This conservation area is even more crowded than you thought. Most refugees who have been transferred here are living in temporary tents.'}
+50	51		201							{1: '1', 2: '500340'}
+51	52		301							"{1: '1', 2: 'Supervisor', 3: ""You're the Gray Raven Commandant, aren't you?"", 4: '1'}"
+52	53		301							"{2: 'Supervisor', 3: ""I knew a Babylonia commandant would be arriving today, but I wasn't expecting you."", 4: '1'}"
+53	54		302							{2: '（?）', 3: '55'}
+54	55		301							{3: 'Noticing your confusion, the supervisor chuckles.'}
+55	56		301							"{2: 'Supervisor', 3: 'You\'re a ""hero"" now. It\'s hard not to know who you are.', 4: '1'}"
+56	57		302							{2: '(Smile wryly)', 3: '58', 4: '(Remain silent)', 5: '58'}
+57	58		301							"{2: 'Supervisor', 3: ""If they're sending you here, then I suppose...""}"
+58	59		301							{3: 'The supervisor lowers his head as if contemplating something, the rest of his words turning into inaudible mumbles.'}
+59	60		302							{2: 'Sorry?', 3: '61'}
+60	61		301							"{2: 'Supervisor', 3: ""Pardon me. It's nothing... I just heard you were seriously injured in the last battle and have yet to fully recover. I didn't think you'd be back on the surface so soon."", 4: '1'}"
+61	62		302							"{2: ""Can't seem to sit still."", 3: '63', 4: ""I've more or less recovered."", 5: '63'}"
+62	63		302							"{2: ""Plus, we're short-handed right now."", 3: '64', 4: 'And we can always use more people.', 5: '64'}"
+63	64		301							{3: 'Since you are feeling better, you can no longer justify lying on a bed in Star of Life as your teammates send you their mission reports. Not that this mission is something you have never done before.'}
+64	65		301							{2: 'Supervisor', 3: 'You are... exactly as people describe.', 4: '1'}
+65	66		301							"{2: 'Supervisor', 3: ""This place was a mess when we started... We didn't even have space to settle the new refugees."", 4: '1'}"
+66	67		301							"{2: 'Supervisor', 3: ""But since transport to Babylonia has returned, we've been slowly receiving supplies. It's a glimmer of hope, so to speak."", 4: '1'}"
+67	68		301							{3: 'The supervisor shows you a tired smile, the dark circles underneath his eyes revealing how little rest he has gotten.'}
+68	69		302							"{2: ""I heard they're sending people from the Engineering Force to help rebuild."", 3: '70'}"
+69	70		301							{2: 'Supervisor', 3: 'Oh, right... From the base to the west, I think. Should have arrived a week ago if not for some problems with the energy station there.', 4: '1'}
+70	71		301							{2: 'Supervisor', 3: 'We were understaffed everywhere... Supplies allocation was in disarray. Not a single place was doing well...', 4: '1'}
+71	72		301							"{2: 'Supervisor', 3: ""Luckily... some people from the Engineering Force arrived early a few days ago. We've been doing much better that past two days."", 4: '1'}"
+72	73		301							{3: 'Following where the supervisor is pointing, you are surprised to find a familiar figure in the crowd.'}
+73	74		302							{2: '...Karenina?', 3: '75'}
+74	75		301							{3: 'You notice her pair of standing Inver-Devices from afar. The white-headed girl is dragging supply crates taller than a human as she speaks to a staff member. The staff member reacts with unease before replying.'}
+75	76		301							"{3: ""Hearing the reply, Karenina shoves a list into the staff member's hand before stomping off.""}"
+76	77		301							{3: 'Before long, she has disappeared into the busy crowd.'}
+77	78		302							{2: 'They sent her...', 3: '79', 4: 'Did something happen?', 5: '80'}
+78	79	81	301							{2: 'Supervisor', 3: 'I was told that she came immediately after she finished organizing the reconstruction of the last base.', 4: '1'}
+79	80		301							{2: 'Supervisor', 3: 'No... she did a lot.', 4: '1'}
+80	81		301							"{2: 'Supervisor', 3: ""Reinforcement on our temporary hospital, assessment reports, materials lists, supply requests... We were overwhelmed just settling the wounded, so she's been taking all the reconstruction work upon herself. We're all..."", 4: '1'}"
+81	82		301							{2: 'Supervisor', 3: 'Hey, Wright! I told you to play in the park!', 4: '1'}
+82	83		301							{3: 'You can hear the sound of children playing nearby. The supervisor stops speaking halfway through, turning his head and shouting in their direction.'}
+83	84		301							{3: 'The children stop and lower their heads as he scolds them. The leading child looks down, fiddling with a controller, and you hear a buzz in the air—a small drone circles around, flying back toward the children.'}
+84	85		301							"{2: 'Supervisor', 3: ""And Jonathan... Why are you two everywhere? If you keep messing around, Bossma'am is going to take your drone back."", 4: '1'}"
+85	86		301							{3: 'The children nod and retrieve the drone on the ground before hopping away. The supervisor sighs, returning to your side.'}
+86	87		302							"{2: ""Bossma'am?"", 3: '88', 4: 'Drone?', 5: '89'}"
+87	88	90	301							"{2: 'Supervisor', 3: ""It's what the kids call Karenina. She's been very popular with them ever since she fixed their toy drone...""}"
+88	89		301							{2: 'Supervisor', 3: 'Yeah... Karenina even fixed the drone the kids found in the trash. But thanks to that, we finally get to see the kids smiling again.'}
+89	90		302							{2: 'How many things has she done...', 3: '91'}
+90	91		301							"{2: 'Supervisor', 3: ""It's just... She overturned the previous rebuild plans the moment she arrived, saying they were too slow. Then she dived into work all alone, not listening to anyone..."", 4: '1'}"
+91	92		301							{2: 'Supervisor', 3: 'Some of the folks stationed here know a thing or two about construction. They wanted to help, but communicating with her was difficult, and they were always rejected.', 4: '1'}
+92	93		301							{2: 'Supervisor', 3: 'Her style is also very... hmm... No one was in danger, per se, but there were a lot of puzzling explosions.', 4: '1'}
+93	94		302							"{2: ""(It's Karenina, after all...)"", 3: '95'}"
+94	95		301							"{2: 'Supervisor', 3: ""So everyone's been stressed. Folks are going to clash if we keep going like this.""}"
+95	96		302							"{2: 'She just wants to make things better as quickly as possible.', 3: '97', 4: ""She's just bad at communicating."", 5: '98'}"
+96	97	99	301							"{2: 'Supervisor', 3: ""Sigh... I know. It's what everyone here wants. Still..."", 4: '1'}"
+97	98		301							"{2: 'Supervisor', 3: ""Sigh... I can tell. She's a responsible leader, and she's taken a lot off our plates since she came. Still..."", 4: '1'}"
+98	99		301							"{2: 'Supervisor', 3: ""It's bad for everyone if she keeps going like this."", 4: '1'}"
+99	100		301							{3: 'He sighs, shaking his head.'}
+100	101		301							"{2: 'Supervisor', 3: ""You're a commandant. Maybe she'll listen to you? If you don't mind... speaking with her."", 4: '1'}"
+101	102		302				AniZhuanchangBegin			{2: 'Of course.', 3: '103'}
+102	103		202			DialogDisable				{1: '1', 6: '1'}
+103	104		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg'}
+104	105		301			DialogEnable				{3: 'You head toward where Karenina went, arriving at a temporary shelter. The supervisor said there was a fight when they tried to recover this area. All the buildings were damaged, and this is the only building with a roof.'}
+105	106		301							{3: 'Some heavily-injured soldiers and Scavengers are currently lying on folding beds, moaning painfully in their dreams.'}
+106	107		301							"{2: '???', 3: ""We can't accept that...""}"
+107	108		301							{2: '???', 3: 'Are you kicking us out?!'}
+108	109		301							{3: 'You hear a muted shout, which causes a stir. You look toward where the sound comes from and find the girl you have been looking for surrounded by the residents, all of them looking unhappy and mad.'}
+109	110		302							{2: '(There...)', 3: '111', 4: '(What happened?)', 5: '111'}
+110	111		201							{1: '1', 2: '500494', 3: '4'}
+111	112		301							{1: '1', 3: 'Karenina seems to be arguing about something with the people there. Frowning, she is about to say something when her gaze goes across the crowd and meets yours.', 4: '1'}
+112	113		204							{1: '1', 2: '7'}
+113	114		301							{3: 'Her eyes widen.'}
+114	115		301							{2: 'Karenina', 3: 'Why are you...', 4: '1'}
+115	116		204							{1: '1', 2: '4'}
+116	117		301							{3: 'For a second, Karenina looks like she is withholding something. Then she immediately looks away and focuses back on the residents surrounding her.'}
+117	118		301							{3: 'She takes a deep breath, looking incredibly serious.'}
+118	119		301							"{2: 'Karenina', 3: ""I won't change my decision."", 4: '1'}"
+119	120		301		1		AniZhuanchangBegin			{2: 'Karenina', 3: 'Let me say it again: I have to blow up this place.', 4: '1'}

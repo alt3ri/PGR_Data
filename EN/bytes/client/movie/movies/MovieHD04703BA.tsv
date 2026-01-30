@@ -1,0 +1,106 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		306							{1: '1'}
+2	2		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+3	3		401							{1: '1', 2: '208'}
+4	4		301			DialogEnable				"{3: ""Maybe it's the festival atmosphere, Constellia's streets are at least twice as crowded as usual. Humans, Constructs, and mechanoids flow through the city like a living tide, filling it with noise and color.""}"
+5	5		301							{3: 'Even with the sea of people blocking your view, you easily spot the familiar pink silhouette waiting at the meeting spot.'}
+6	6		301				DialogDisable			{3: 'She sits quietly on a bench by the street, perfectly still. Sunlight filters through her soft, straight hair and lights up her fair skin. She almost seems translucent—so translucent that, against the busy backdrop, she stands out even more.'}
+7	7		306							
+8	8		302							{2: 'Liv.', 3: '9'}
+9	9		201							{1: '1', 2: '1031001', 3: '1'}
+10	10		301			DialogEnable				"{1: '1', 2: 'Liv', 3: ""Commandant, you're here."", 4: '1'}"
+11	11		202							{1: '1'}
+12	12		306							{1: '1'}
+13	13		301							{3: 'As you walk up, you notice two things neatly placed on her lap: a device with a small scanner and output port, and a soft pink pouch filled with silver chains, blank badge bases, and other materials.'}
+14	14		306							
+15	15		302							{2: 'What are these?', 3: '16'}
+16	16		201							{1: '1', 2: '1031001', 3: '1'}
+17	17		301							{1: '1', 2: 'Liv', 3: 'On the way over, I passed a store doing a Double Seventh Festival raffle. Every visitor got one free try. I was curious, so I gave it a shot, and somehow won second prize.', 4: '1'}
+18	18		301							"{2: 'Liv', 3: 'These are the prizes. The shop owner said this ""Souvenir Maker"" scans a person\'s features, uses the surrounding scenery, and creates a badge with a chibi version of them on it.', 4: '1'}"
+19	19		301							{2: 'Liv', 3: 'I even saw a few samples. The little characters were really cute.', 4: '1'}
+20	20		301							{3: 'She lifts the device in her hands, her eyes sparkling with anticipation and a hint of excitement.'}
+21	21		301				DialogDisable			"{2: 'Liv', 3: ""The mechanoid shopkeeper said this version was specially made for the Double Seventh Festival. It's designed for two people to use together. So I was thinking... maybe we could try it?"", 4: '1'}"
+22	22		302							"{2: ""Sounds fun. Let's give it a shot."", 3: '23'}"
+23	23		302				AniZhuanchangBegin			{2: 'I know the perfect spot.', 3: '24'}
+24	24		202							{1: '1', 6: '1'}
+25	25		401							{1: '1', 2: '36'}
+26	26		101				DialogEnable		2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory783.jpg'}
+27	27		104							{1: '0|-200|-300', 2: '0'}
+28	28		401							{1: '1', 2: '181'}
+29	29		301			AniZhuanchangEnd				{3: 'From above, the whole city is bathed in soft sunlight. Ribbons and lanterns flutter in the breeze. Laughter and music float from the plaza below. The crowd swirls like a sea of flowers, painting the festival in bright colors.'}
+30	30		301							{3: 'Liv gazes quietly at the view. The city reflects in her gentle eyes. She smooths a strand of wind-blown hair behind her ear, then turns to you with a soft smile.'}
+31	31		201							{1: '1', 2: '1031001', 3: '1'}
+32	32		301							"{1: '1', 2: 'Liv', 3: ""It's beautiful, Commandant."", 4: '1'}"
+33	33		302							"{2: ""I'm glad you like it."", 3: '34'}"
+34	34		202							{1: '1'}
+35	35		301							{3: 'While she enjoys the view, you take the chance to study the Souvenir Maker.'}
+36	36		301							"{3: ""It's not too complicated. The device scans both users, analyzes their features, and combines them with the environment to design a matching pair of chibi figures. It then uses miniature 3D printing to turn them into real badges.""}"
+37	37		301							"{3: ""There's a prominent preview window on the interface.""}"
+38	38		302							"{2: ""Let's make our Double Seventh Festival badge."", 3: '39'}"
+39	39		401							{2: '4628'}
+40	40		301							{3: 'You place the Souvenir Maker on a stone platform and start the scan. Liv stands to the side, watching the lens curiously.'}
+41	41		301							{3: 'You step in beside her. The two of you glance at the preview window, but...'}
+42	42		401							{2: '4062'}
+43	43		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '2'}
+44	44		301							{2: 'Souvenir Maker', 3: 'Beep! No target detected within scan area.'}
+45	45		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab'}
+46	46		302							{2: '...?', 3: '47'}
+47	47		301							{3: 'You blink and glance at Liv. She tilts her head slightly too, clearly confused.'}
+48	48		301							{3: 'Leaning closer, the two of you check the preview window and quickly spot the issue.'}
+49	49		201							{1: '1', 2: '1031001', 3: '3'}
+50	50		301							{1: '1', 2: 'Liv', 3: 'Commandant, we did select two-person mode, right? But why does it only show one recognition frame?', 4: '1'}
+51	51		202							{1: '1'}
+52	52		301							{3: 'Double Seventh couple mode. Two people making something together. One recognition frame...'}
+53	53		301							{3: 'A thought flashes through your mind.'}
+54	54		301							"{3: ""Maybe the device requires both people to stand close—so close they're recognized as a single unit.""}"
+55	55		302							{2: '(Share your theory with Liv)', 3: '56'}
+56	56		201							{1: '1', 2: '1031001', 3: '6'}
+57	57		301							{1: '1', 2: 'Liv', 3: 'Close enough... to...', 4: '1'}
+58	58		301							{3: 'She presses her lips together. Her expression freezes for a second, and a pink blush creeps up her ears.'}
+59	59		301							"{2: 'Liv', 3: ""Then... let's give it a try."", 4: '1'}"
+60	60		202							{1: '1'}
+61	61		301							{3: 'You restart the scan and step back beside her. This time, both of you move intentionally closer, trying to fit into that single recognition frame.'}
+62	62		401							{2: '4062'}
+63	63		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '2'}
+64	64		301							{2: 'Souvenir Maker', 3: 'Beep! No target detected within scan area.'}
+65	65		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab'}
+66	66		201							{1: '1', 2: '1031001', 3: '6'}
+67	67		301							{1: '1', 2: 'Liv', 3: '...Still not close enough?', 4: '1'}
+68	68		202							{1: '1'}
+69	69		301							{3: 'You move a little closer to her, letting your shoulders gently touch.'}
+70	70		301							{3: 'Her eyelashes flutter as she leans a little closer too, but even so...'}
+71	71		401							{2: '4062'}
+72	72		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '2'}
+73	73		301							{2: 'Souvenir Maker', 3: 'Beep! No target detected within scan area.'}
+74	74		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab'}
+75	75		201							{1: '1', 2: '1031001', 3: '6'}
+76	76		301							{1: '1', 2: 'Liv', 3: '...', 4: '1'}
+77	77		203							{1: '1', 2: '0.25', 5: '-80'}
+78	78		301							"{3: ""Just as you're wondering if you need to go even further, Liv draws in a deep breath, like she's made up her mind. She suddenly steps forward, pressing close. Her forehead gently touches yours.""}"
+79	79		301							{3: 'Her cheek is warm and soft against yours.'}
+80	80		302							{2: 'Liv?', 3: '81', 4: '...', 5: '82'}
+81	81		301							"{2: 'Liv', 3: ""D-don't say anything, Commandant! J-just stay like this... It should work now!"", 4: '1'}"
+82	82		401							{2: '4628'}
+83	83		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '2'}
+84	84		301							{2: 'Souvenir Maker', 3: 'Beep! Target locked. Beginning feature data collection...'}
+85	85		301							{2: 'Souvenir Maker', 3: 'Data collection complete. Generating personalized badges... Please wait.'}
+86	86		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab'}
+87	87		202							{1: '1'}
+88	88		301							"{3: ""As soon as the alert sounds, Liv jolts like she's been shocked, or maybe her courage just ran out. She steps back quickly, ears bright red, eyes darting away from yours.""}"
+89	89		302							"{2: ""...Looks like it worked. Let's wait for the badges."", 3: '90', 4: 'Cough...', 5: '90'}"
+90	90		401							{2: '2824'}
+91	91		301							{3: 'A few moments later, the machine hums softly, and two metal badges slide out of the output slot.'}
+92	92		301							"{3: ""They're small and detailed, featuring two chibi figures leaning together. The pink-haired one, clearly representing Liv, has blushing cheeks and is sneaking a glance at the figure beside her.""}"
+93	93		301							"{3: ""They're adorable.""}"
+94	94		302							"{2: ""Liv, look, they're ready.""}"
+95	95		301							{3: 'Liv hesitates, then gives a small nod. Slowly, she walks over and picks one up.'}
+96	96		301							{3: 'The moment she sees the two chibi characters pressed close together, especially the blushing pink one, her face turns red all over again.'}
+97	97		201							{1: '1', 2: '1031001', 3: '6'}
+98	98		301							"{1: '1', 2: 'Liv', 3: ""Didn't think... it'd... show up this clearly..."", 4: '1'}"
+99	99		202							{1: '1'}
+100	100		301							{3: 'Her voice is barely a whisper, but her eyes never leave the badge. She cups it gently, her fingertips tracing the chibi outline, eyes filled with both wonder and embarrassment.'}
+101	101		201							{1: '1', 2: '1031001', 3: '1'}
+102	102		301							"{1: '1', 2: 'Liv', 3: ""Commandant, let's turn them into matching necklace pendants."", 4: '1'}"
+103	103		302							{2: 'Yeah. This will be our exclusive Double Seventh keepsake.', 3: '104'}
+104	104		301							{3: 'Liv nods firmly. A soft, glowing smile lights her eyes. She holds the badge a little tighter.'}
+105	105		301		1		AniZhuanchangBegin			"{2: 'Liv', 3: ""Yes... I'll treasure it always."", 4: '1'}"

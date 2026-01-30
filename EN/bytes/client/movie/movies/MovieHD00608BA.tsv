@@ -1,0 +1,40 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory305.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				"{3: ""Following Embla's footsteps, you proceed deeper into the underground city to continue your investigation.""}"
+4	4		301							{3: 'When Lucia and Liv try to piece together the disarray tracks in front of them to form an estimated route, Lee calls you aside...'}
+5	5		201							{1: '1', 2: '1011001'}
+6	6		301							{1: '1', 2: 'Lee', 3: 'Commandant.', 4: '1'}
+7	7		302							{2: 'What is it?', 3: '8'}
+8	8		301							{2: 'Lee', 3: 'I have been thinking... Is the state exhibited by Embla and Askr really just the result of self-evolution?', 4: '1'}
+9	9		302							{2: 'Why?', 3: '10'}
+10	10		301							{2: 'Lee', 3: 'Without any bionic necessity, mechanoids are only implemented with service-oriented AI. In other words, they are only programmed to serve specific tasks.', 4: '1'}
+11	11		301							"{2: 'Lee', 3: ""Even if this simple command evolves, it shouldn't result in a mechanoid developing sentience, let alone imitating human relationships."", 4: '1'}"
+12	12		302							{2: '...', 3: '13'}
+13	13		301							{2: 'Lee', 3: 'So... I was thinking. Perhaps...', 4: '1'}
+14	14		201							{1: '1', 2: '500029'}
+15	15		301							"{1: '1', 2: 'Lucia', 3: ""We've found signs of Embla. Let's get going."", 4: '1'}"
+16	16		302							{2: '...Yeah.', 3: '17'}
+17	17		202							{1: '1', 6: '1'}
+18	18		301							"{3: ""At first, Embla's footprints are sporadic and staggered. But further on, Embla appears more light on her feet.""}"
+19	19		201							{1: '1', 2: '500029'}
+20	20		201							{1: '2', 2: '1011001', 4: '600'}
+21	21		201							{1: '3', 2: '1031001', 4: '-600'}
+22	22		301							"{1: '1', 2: 'Lucia', 3: ""What's going on? Her pace has quickened and become more agile..."", 4: '1'}"
+23	23		301							"{2: 'Lee', 3: ""That's definitely not a part of her design... It can't even be the result of self-evolution..."", 4: '2'}"
+24	24		301							{2: 'Liv', 3: 'If she continues at this level of motion intensity... The structural strength of her mechanoid frame might not last much longer.', 4: '3'}
+25	25		302							{2: '...Is she being reckless?', 3: '26'}
+26	26		301							{2: 'Lucia', 3: '...Seems like the only possibility.', 4: '1'}
+27	27		302				AniZhuanchangBegin			"{2: ""We need to stop her before it's too late."", 3: '28'}"
+28	28		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+29	29		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory298.png'}
+30	30		301			AniZhuanchangEnd				{3: 'Chasing behind Embla, the cityscape gradually disappears behind you.'}
+31	31		301							{3: 'A plaza-esque area appears before you...'}
+32	32		301							{3: '...'}
+33	33		301							"{3: ""Embla's tracks are starting to fade. You only have a vague sense of where she is going.""}"
+34	34		301							{3: 'Instead, your vision is filled with scattered mechanical limbs and the interspersed fights between mechanoids.'}
+35	35		201							{1: '1', 2: '500029'}
+36	36		301							{1: '1', 2: 'Lucia', 3: 'Looks like she continued forward.', 4: '1'}
+37	37		201							{1: '1', 2: '1011001'}
+38	38		301							"{1: '1', 2: 'Lee', 3: ""Well then, let's keep going."", 4: '1'}"
+39	39		302		1		AniZhuanchangBegin			{2: '(Nod)'}

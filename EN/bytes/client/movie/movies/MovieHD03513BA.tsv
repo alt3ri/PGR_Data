@@ -1,0 +1,123 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory207.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		401							{1: '2', 2: '903'}
+4	4		301			DialogEnable				"{3: ""The man-made beach extends as far as the eye can see, and even Constellia's silver skyline disappears from view.""}"
+5	5		301							"{3: ""The waves glimmer faintly behind the ash grove. It's hard to believe this futuristic city sets aside such an expansive area for a tropical park.""}"
+6	6		201							{1: '1', 2: '500906'}
+7	7		301							"{1: '1', 2: 'Bridget', 3: ""Wow, this place is huge! Is this really Constellia's seaside go-kart track?"", 4: '1'}"
+8	8		301							"{3: ""Following Bridget's gaze, you spot gray streaks amid the endless gold beneath the watchtower. Rising heat from the asphalt distorts the air, blurring everything in the distance.""}"
+9	9		302							"{2: ""It's so hot. Should we take a break under those trees?"", 3: '10'}"
+10	10		301							"{2: 'Bridget', 3: ""No need! Our missions take place everywhere, and staying adaptable is exactly what lets me jump in and back you up whenever it's needed..."", 4: '1'}"
+11	11		301							{3: 'She stops talking, turns to the side, and flashes a bright, easygoing smile.'}
+12	12		204							{1: '1', 2: '2'}
+13	13		301							"{2: 'Bridget', 3: ""Let's not talk about the missions anymore. I'm the one who invited you, so going on about that now is a total buzzkill!"", 4: '1'}"
+14	14		301							{1: '1', 2: 'Bridget', 3: 'That last sim race was such a rush!', 4: '1'}
+15	15		204							{1: '1'}
+16	16		301							{1: '1', 2: 'Bridget', 3: 'For this holiday invitation, I want you to experience the real adrenaline surge of a high-speed race!', 4: '1'}
+17	17		301							{3: 'With that, Bridget coolly adjusts the sunglasses resting just above her bangs.'}
+18	18		302							{2: '(Head to the track with her)', 3: '19'}
+19	19		301							{2: 'Bridget', 3: 'Commandant, go ahead and pick any vehicle you like!', 4: '1'}
+20	20		302							{2: 'Which coating do you prefer?', 3: '21', 4: 'Quick—check which one got the best performance!', 5: '23'}
+21	21		204							{1: '1', 2: '0'}
+22	22	25	301							"{1: '1', 2: 'Bridget', 3: ""Hmm, let's go with that orange go-kart on Track Four!"", 4: '1'}"
+23	23		204							{1: '1', 2: '2'}
+24	24	25	301							{1: '1', 2: 'Bridget', 3: 'Hah! So you want me to just size it up by eye? They might all be the same model, but little details—like how worn the tires are—really do set them apart.', 4: '1'}
+25	25		202							{1: '1'}
+26	26		301							"{3: ""She stands next to the bright orange chassis, examining the tires and body as if she's conducting a professional assessment.""}"
+27	27		301							"{2: 'Visitor A', 3: ""If I'm being honest, this go-kart feels more like a retro off-road buggy.""}"
+28	28		301							"{2: 'Visitor B', 3: ""It's definitely not a model you see every day. Think it'll be tough to drive?""}"
+29	29		301							"{3: ""You overhear complaints. Even though you've studied how to handle old-style vehicles at F.O.S., you rarely get to put that training into practice.""}"
+30	30		201							{1: '1', 2: '500906'}
+31	31		301							{1: '1', 2: 'Bridget', 3: 'What do you say, Commandant? Sure you can handle it?', 4: '1'}
+32	32		302							"{2: ""Let's give it a try."", 3: '33', 4: 'I\'m a seasoned ""Cool Racing 23"" player, so we\'re all set!', 5: '33'}"
+33	33		301							"{3: ""You rarely get to use old-style vehicles in real situations, but you've definitely learned the skills at F.O.S.""}"
+34	34		301				DialogDisable			"{2: 'Bridget', 3: ""Alright, hop on board. I've got this covered!"", 4: '1'}"
+35	35		203							{1: '1', 2: '0.25', 4: '-250'}
+36	36		202				AniZhuanchangBegin			{1: '1'}
+37	37		401						800.0	{1: '2', 2: '4650'}
+38	38		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory207.png'}
+39	39		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 4: '4'}
+40	40		301			DialogEnable				{3: 'You duck down into the seat and settle beside Bridget in front of the control panel.'}
+41	41		201							{1: '1', 2: '500906'}
+42	42		301							{1: '1', 2: 'Bridget', 3: 'Here—your helmet.', 4: '1'}
+43	43		301							{3: 'As soon as you sit down, she offers you a piece of protective gear painted in the same orange color.'}
+44	44		302							{2: '(Put on the helmet and buckle up)', 3: '45'}
+45	45		401							{1: '2', 2: '895'}
+46	46		301							{3: 'You stretch out your arms and fix your gaze on the clutch and throttle.'}
+47	47		204							{1: '1', 2: '3'}
+48	48		301							{2: 'Bridget', 3: 'Hey, hey, hey—take it easy. Better safe than...', 4: '1'}
+49	49		301							"{3: ""It's that familiar driver-safety line; whenever you ride with her, you always hear it a few times.""}"
+50	50		301							{3: 'As she reminds you about safety, she straps you on shoulder, elbow, and wrist guards.'}
+51	51		301							"{3: ""It's like being packed into a sturdy power suit all over again.""}"
+52	52		204							{1: '1', 2: '2'}
+53	53		301							{2: 'Bridget', 3: '...Pff.', 4: '1'}
+54	54		302							"{2: ""What's wrong?"", 3: '55', 4: 'Something funny?', 5: '57'}"
+55	55		204							{1: '1', 2: '3'}
+56	56	60	301							"{1: '1', 2: 'Bridget', 3: ""Oh, nothing's wrong. It's just that seeing you head out like this puts me at ease."", 4: '1'}"
+57	57		204							{1: '1'}
+58	58		301							"{1: '1', 2: 'Bridget', 3: ""I'm just thinking about this old tire company mascot from the Golden Age... You look just as cute right now, Commandant."", 4: '1'}"
+59	59		302							"{2: ""That's a weird comparison..."", 3: '60'}"
+60	60		401							{1: '2', 2: '4671'}
+61	61		301							"{3: ""You're about to ask what she means when the start buzzer suddenly blares in your ears.""}"
+62	62		204							{1: '1', 2: '2'}
+63	63		301							"{2: 'Bridget', 3: ""Let's go!"", 4: '1'}"
+64	64		202							{1: '1'}
+65	65		301							{3: 'She rests her hand on the secondary steering wheel that shares control of the main drive.'}
+66	66		302							{2: '(Release the clutch, step on the gas)', 3: '67'}
+67	67		401							{1: '2', 2: '885'}
+68	68		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+69	69		401							{1: '2', 2: '4661'}
+70	70		104						250.0	{1: '0|0|-50', 2: '0.25'}
+71	71		301			RImgBg1Shake				{3: 'The car gives a quick shudder and surges over the black-and-white checkered start line.'}
+72	72		401							{1: '2', 2: '4643'}
+73	73		301							{3: 'With each turn and overtake, Bridget responds in an instant. The wheel feels light and deft in her hands, almost like a toy she can maneuver with ease.'}
+74	74		401							{1: '2', 2: '4662'}
+75	75		301				AniZhuanchangBegin			"{3: ""You can only feel the warm sea breeze passing by. Before you know it, you're back at the starting line.""}"
+76	76		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+77	77		402							{1: '4661'}
+78	78		402							{1: '4643'}
+79	79		402							{1: '4662'}
+80	80		101							{4: '4', 5: '1'}
+81	81		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory207.png'}
+82	82		301			AniZhuanchangEnd				{3: 'Once the race is over, the tourists chill in the shade, while the champion—no surprise—stretches out on her towel without a care.'}
+83	83		201							{1: '1', 2: '500906'}
+84	84		204							{1: '1', 2: '2'}
+85	85		301							"{1: '1', 2: 'Bridget', 3: ""Sunbathing with a chilled alcohol-flavor electrolyte drink? It's absolutely perfect!"", 4: '1'}"
+86	86		301							{3: 'She gulps down a big mouthful of the icy drink and smacks her lips in pure satisfaction.'}
+87	87		204							{1: '1', 2: '3'}
+88	88		301							"{2: 'Bridget', 3: ""You know, the only real drawback is these blazing UV rays. If I keep going like this, my bionic skin's gel layer will age in no time..."", 4: '1'}"
+89	89		302							"{2: ""Didn't you say something like the frame will adapt by itself...?"", 3: '90', 4: '(Adjust the parasol)', 5: '93'}"
+90	90		204							{1: '1', 2: '2'}
+91	91	94	301							"{2: 'Bridget', 3: ""Don't be so clueless! Come on, help me put on some sunscreen gel."", 4: '1'}"
+92	92		204							{1: '1'}
+93	93	94	301							{2: 'Bridget', 3: 'Commandant, can you help me with this sunscreen gel?', 4: '1'}
+94	94		302							{2: 'Wait... what?!', 3: '95', 4: 'Help you with... the sunscreen gel?', 5: '95'}
+95	95		204							{1: '1', 2: '6'}
+96	96		301							"{2: 'Bridget', 3: ""Hey, why the fuss? This is part of keeping our frames in good shape. If I lie face-down, it's hard for me to reach my back, alright?"", 4: '1'}"
+97	97		301							{3: 'You accept the hose she offers, squeeze out a sticky, pale lotion, and rub it gently between your hands. Then you press your palms against the skin in front of you.'}
+98	98		301							"{3: ""It's more... elastic than you anticipate. As you spread the lotion, a soothing warmth settles into your fingertips—so warm, you can't tell if it's just the sunlight or the vital fluid beneath her skin.""}"
+99	99		204							{1: '1', 2: '3'}
+100	100		301							"{2: 'Bridget', 3: ""Yeah, that's the spot. Whew... that feels amazing."", 4: '1'}"
+101	101		204							{1: '1'}
+102	102		301							"{2: 'Bridget', 3: ""Actually... on a holiday like this, isn't racing a bit out of place?"", 4: '1'}"
+103	103		301							{3: 'She sits up partway, and the cheerful note in her voice suddenly softens.'}
+104	104		204							{1: '1', 2: '14'}
+105	105		301							{2: 'Bridget', 3: 'Back in the convoy days, I watched my fair share of old Double Seventh Festival-themed films...', 4: '1'}
+106	106		301							{2: 'Bridget', 3: 'So, I got to know plenty of festival traditions that way. But fireworks or wishes—they were all luxuries from before everything fell apart.', 4: '1'}
+107	107		301							{2: 'Bridget', 3: 'Even then, it struck me as unbelievable that, not long ago, people actually took the time to honor a myth like that.', 4: '1'}
+108	108		204							{1: '1', 2: '4'}
+109	109		301							"{2: 'Bridget', 3: ""So instead of copying a festival I've never experienced and juggling details I don't know, I decide to stick with an activity I'm comfortable with."", 4: '1'}"
+110	110		204							{1: '1', 2: '14'}
+111	111		301							"{2: 'Bridget', 3: ""Commandant... I'm being too willful, aren't I?"", 4: '1'}"
+112	112		302							"{2: ""Not at all. I'm having a great time today."", 3: '113'}"
+113	113		302							{2: 'Happy Double Seventh Festival, Bridget.', 3: '114'}
+114	114		202							{1: '1'}
+115	115		301							{3: 'She suddenly buries her face in the towel blanket, making it impossible to see her expression.'}
+116	116		301							"{3: ""Should you keep going with the massage? While you're hesitating, the familiar, cheerful voice suddenly interrupts your train of thought.""}"
+117	117		201							{1: '1', 2: '500906'}
+118	118		301							{1: '1', 2: 'Bridget', 3: 'Ah! Hurry up and drink. Your cold drink is practically turning into hot soup in this sun, Commandant!', 4: '1'}
+119	119		301							{3: 'Bridget suddenly straightens up and fixes her gaze on the bottle in your hand.'}
+120	120		302							{2: 'Cheers!', 3: '121'}
+121	121		204							{1: '1', 2: '2'}
+122	122		301		1		AniZhuanchangBegin			{2: 'Bridget', 3: 'Cheers!', 4: '1'}

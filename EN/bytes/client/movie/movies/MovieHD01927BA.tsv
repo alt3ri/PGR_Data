@@ -1,0 +1,9 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg'}
+2	2		401							{1: '1', 2: '5'}
+3	3		201							{1: '1', 2: '500238'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Luna', 3: ""You've found me. Does it mean that you're ready to forsake everything from your past?"", 4: '1'}"
+5	5		302							{2: '(Briefly explain the maze to Luna)', 3: '6'}
+6	6		301							"{2: 'Luna', 3: ""...You're just here for a maze?"", 4: '1'}"
+7	7		301							{2: 'Luna', 3: 'That sounds interesting, though... Lead the way.', 4: '1'}
+8	8		301		1		AniZhuanchangBegin			{2: 'Luna', 3: 'Let me see how special this maze is that the Gray Raven Commandant would go through all these troubles to find me.', 4: '1'}

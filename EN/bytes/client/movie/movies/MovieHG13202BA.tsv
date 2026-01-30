@@ -1,0 +1,201 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '169'}
+3	3		301			DialogEnable				"{3: ""What was going through your mind when you stopped by Egret's lounge again?""}"
+4	4		301							"{3: '""I\'ll just be in and out""—so you thought as you knocked on the door again.'}"
+5	5		301				AniZhuanchangBegin			{3: 'You try to remember what happened just a little over an hour ago, all the while unable to forget the blue figure you saw back then.'}
+6	6		502							{1: 'DialogDisable'}
+7	7		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+8	8		302			AniZhuanchangEnd				{2: 'Bambinata?', 3: '9'}
+9	9		201							{1: '1', 2: '500536'}
+10	10		301			DialogEnable	DialogDisable			{1: '1', 2: 'Bambinata', 3: '...Hello...?', 4: '1'}
+11	11		302							"{2: ""I'm 【kuroname】."", 3: '12'}"
+12	12		302							{2: 'Do you... remember me?', 3: '13'}
+13	13		301			DialogEnable				{2: 'Bambinata', 3: 'Who... are you?', 4: '1'}
+14	14		302							{2: 'Did you get your check-up done?', 3: '15'}
+15	15		301							"{2: 'Bambinata', 3: ""Check-up? Bambinata... doesn't understand."", 4: '1'}"
+16	16		302							{2: 'Do you remember what happened yesterday?', 3: '17'}
+17	17		301							{2: 'Bambinata', 3: 'Yesterday... Bambinata was ordered... to wait.', 4: '1'}
+18	18		301							"{2: 'Bambinata', 3: ""And... that's it."", 4: '1'}"
+19	19		302							{2: 'Do you still remember anything about the check-up, though?', 3: '20'}
+20	20		301							{3: 'Bambinata shakes her head lightly.'}
+21	21		302							{2: 'What else do you remember?', 3: '22', 4: 'Do you remember Vanessa?', 5: '23'}
+22	22	24	301							{2: 'Bambinata', 3: 'Remember... what? Va... nessa?', 4: '1'}
+23	23		301							"{2: 'Bambinata', 3: ""Vanessa... is Bambinata's Mistress. Yes, Mistress Vanessa."", 4: '1'}"
+24	24		301							{3: 'Bambinata remembers Vanessa like she did the day before, but that is it.'}
+25	25		301							"{3: ""Except she doesn't seem quite like the person you saw the day before—she seemed a lot more sensitive than when you brought up Vanessa, and she was able to string her sentences together a lot better, too.""}"
+26	26		301				AniZhuanchangBegin			"{3: ""Everything she didn't recall has become the heavy shades that loom in her eyes, which are now looking straight at you from the other side of the door. You know there is only one thing you can do now...""}"
+27	27		509							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory3.jpg', 2: '2'}
+28	28		201							{1: '1', 2: '500555', 4: '500'}
+29	29		501						800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+30	30		301			AniZhuanchangEnd				{1: '1', 2: 'Vanessa', 3: '...', 4: '1'}
+31	31		301							"{3: ""Vanessa gave you a piece of her mind when you got in touch with her, but fell quiet after hearing your description of Bambinata's symptoms.""}"
+32	32		204							{1: '1', 2: '4'}
+33	33		301							"{2: 'Vanessa', 3: ""I've figured as much, and that's precisely why I made the appointment."", 4: '1'}"
+34	34		302							{2: 'You really want to take her in sooner than later.', 3: '35'}
+35	35		204							{1: '1', 2: '13'}
+36	36		301							{2: 'Vanessa', 3: 'Oh boy... and I thought you were smart.', 4: '1'}
+37	37		301							{2: 'Vanessa', 3: 'The world would have one more genius to save the day if you were always this smart.', 4: '1'}
+38	38		401							{1: '2', 2: '966'}
+39	39		301							{3: 'Right then, your call with Vanessa grows fuzzy with white noise, followed by a vaguely distinguishable human voice.'}
+40	40		301							"{3: ""When Vanessa's voice resumes, she speaks in what sounds like an intentionally suppressed tone.""}"
+41	41		204							{1: '1', 2: '4'}
+42	42		301							{2: 'Vanessa', 3: 'I need to go now...', 4: '1'}
+43	43		301							"{2: 'Vanessa', 3: ""But don't you think you've been forgiven for going into our lounge uninvited."", 4: '1'}"
+44	44		301							{2: 'Vanessa', 3: 'Bambinata?', 4: '1'}
+45	45		301							{3: 'Staring into your terminal like an excited child, Bambinata immediately comes over once she hears her name.'}
+46	46		201							{1: '2', 2: '500536', 4: '-500'}
+47	47		301							{1: '1', 2: 'Bambinata', 3: 'Vanessa... Mistress. Bambinata... here.', 4: '2'}
+48	48		301							{2: 'Vanessa', 3: 'This is a lot worse than I thought...', 4: '1'}
+49	49		301							"{2: 'Vanessa', 3: ""You didn't do anything to her, did you?"", 4: '1'}"
+50	50		302							{2: 'Wait, are you talking to me?', 3: '51'}
+51	51		301							{2: 'Vanessa', 3: 'Who else, smartie?', 4: '1'}
+52	52		302							"{2: 'Why would I?', 3: '53', 4: ""Nope, didn't do anything to her."", 5: '53'}"
+53	53		301							"{2: 'Vanessa', 3: ""Didn't think you'd dare to anyway."", 4: '1'}"
+54	54		301							{2: 'Bambinata', 3: 'Mistress... and Commandant... of Gray Raven... get along...', 4: '2'}
+55	55		301							{2: 'Bambinata', 3: 'Are you... friends?', 4: '2'}
+56	56		301							{3: 'No!', 4: '1'}
+57	57		301							{3: 'You and Vanessa shouted out in perfect unison.'}
+58	58		302							"{2: ""We're just colleagues."", 3: '59'}"
+59	59		202							{1: '2'}
+60	60		301							{3: 'Having noticed her blunder, Bambinata backs away to the door, all the while saying nothing.'}
+61	61		204							{1: '1'}
+62	62		301							"{2: 'Vanessa', 3: ""Uh-hum, never mind. There is another way out... You're not to blame, Bambinata."", 4: '1'}"
+63	63		204							{1: '1', 2: '13'}
+64	64		301							{2: 'Vanessa', 3: 'Hey, Nice Chief.', 4: '1'}
+65	65		302							{2: 'Trying to mock me now, Ms. So Funny?', 3: '66', 4: 'Cut right to the chase already.', 5: '66'}
+66	66		204							{1: '1'}
+67	67		401							{1: '2', 2: '613'}
+68	68		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 3: '1'}
+69	69		301							{2: 'Vanessa', 3: 'You... Bambinata... Wait for... check-up...', 4: '1'}
+70	70		301							{2: 'Vanessa', 3: '...', 4: '1'}
+71	71		402							{1: '613'}
+72	72		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 4: '1'}
+73	73		202							{1: '1', 6: '1'}
+74	74		401							{1: '2', 2: '2566'}
+75	75		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+76	76		510							{1: '2'}
+77	77		301							{3: 'A few rounds of white noise later, the line died.'}
+78	78		301							{3: 'This is probably why Vanessa said she had to go. From how it sounds, she is probably in the middle of a classified mission.'}
+79	79		201							{1: '1', 2: '500536'}
+80	80		301							{1: '1', 2: 'Bambinata', 3: 'Nice... Chief', 4: '1'}
+81	81		302							{2: '?', 3: '82'}
+82	82		301							{3: 'Pulling you by a corner of your outfit, Bambinata repeats what Vanessa just called you.'}
+83	83		301							{2: 'Bambinata', 3: 'Check-up... Mistress said. You... Bambinata, check-up.', 4: '1'}
+84	84		301							{3: 'It seems like Bambinata has interpreted what Vanessa said as an order for you to take her in for the check-up...'}
+85	85		301							{2: 'Bambinata', 3: '...', 4: '1'}
+86	86		301							{3: 'Not letting go of her hand, Bambinata is redolent of a butterfly that perches quietly on you.'}
+87	87		301				DialogDisable			{2: 'Bambinata', 3: 'Nice Chief...', 4: '1'}
+88	88		302							{2: 'Okay, okay.', 3: '89'}
+89	89		302							"{2: ""But my name isn't Nice Chief. Just call me 【kuroname】."", 3: '90'}"
+90	90		301			DialogEnable	AniZhuanchangBegin			{2: 'Bambinata', 3: 'Nice... 【kuroname】.', 4: '1'}
+91	91		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+92	92		202							{1: '1', 6: '1'}
+93	93		301			AniZhuanchangEnd				"{3: 'It took the two of you half an hour to go from Egret\'s lounge to Star of Life—and for the entire way, you found yourself having to explain to Bambinata that she wasn\'t supposed to add ""Nice"" before your name when she addressed you.'}"
+94	94		301							{3: 'Deep in thought about what happened just an hour ago, you snap back when you hear the doctor at Star of Life.'}
+95	95		502							{1: 'RImgBg1DisableSlow'}
+96	96		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+97	97		301							{3: 'Under the shadowless lamps, the doctor inserts countless finger-size tubes into Bambinata, who lies quietly on the gurney as it all happens to her.'}
+98	98		201							{1: '1', 2: '500361'}
+99	99		301							"{1: '1', 2: 'Doctor', 3: ""Well... This will do. I'm going to start from here, then."", 4: '1'}"
+100	100		201							{1: '1', 2: '500536'}
+101	101		502							{1: 'PanelActor1Shake'}
+102	102		301							"{1: '1', 3: ""When one last pinky-size probe is inserted into the back of Bambinata's head, her closed eyes fly open, revealing her now shivering sky-blue pupils as her body spasms ever so lightly.""}"
+103	103		301							{2: 'Bambinata', 3: '...Mistress... Bambinata... It hurts...', 4: '1'}
+104	104		301							{2: 'Bambinata', 3: 'Mistress... Mistress?', 4: '1'}
+105	105		301							{3: 'As Bambinata begins mumbling, her shivering hands, too, begin unfolding and folding.'}
+106	106		302							"{2: ""What's going on?"", 3: '107'}"
+107	107		201							{1: '1', 2: '500361'}
+108	108		301				DialogDisable			"{1: '1', 2: 'Doctor', 3: ""I can't shut off her sensory system because I need to apply stimulation directly to her neurological network, but rest assured her functions are making recovery as we speak."", 4: '1'}"
+109	109		302							{2: 'Is there anything I can do?', 3: '110'}
+110	110		302							{2: 'She seems... to be in a lot of pain.', 3: '111'}
+111	111		301			DialogEnable				{2: 'Doctor', 3: 'The pain is part of the check-up, and this treatment is the only one that works.', 4: '1'}
+112	112		301							{3: 'Shaking his head, the doctor turns around to operate the machine.'}
+113	113		201							{1: '1', 2: '500536', 3: '9'}
+114	114		301							{1: '1', 2: 'Bambinata', 3: 'Where... Mistress...', 4: '1'}
+115	115		301							"{3: ""Bambinata repeats those same words, probably in the hopes that they'd make her feel better—except they do nothing to settle her nerves.""}"
+116	116		301							"{3: ""You now find yourself awash in an urge—one that's criticizing and urging you to act as it fights the other part of you.""}"
+117	117		301							{3: 'When you hold her hand—spasming from pain—you can seem to feel her suffering through her cold fingers.'}
+118	118		301							{3: 'No one should have to go through this kind of suffering, no matter who they are.'}
+119	119		301							{3: 'And you know that you want to help Bambinata feel better however you can—because she is who she is.'}
+120	120		204							{1: '1', 2: '1'}
+121	121		301							{2: 'Bambinata', 3: 'Mistress? Mistress...', 4: '1'}
+122	122		301							"{3: ""Apparently feeling you beside her, Bambinata's mumble falls quiet.""}"
+123	123		302							"{2: ""I'm here."", 3: '124', 4: ""I'm 【kuroname】."", 5: '124'}"
+124	124		201							{1: '1', 2: '500361'}
+125	125		301							"{1: '1', 2: 'Doctor', 3: ""She can't hear you now."", 4: '1'}"
+126	126		301							"{2: 'Doctor', 3: ""Whatever she's saying now... you can see them as the subconsciousness from the depths of her M.I.N.D., and most of them don't mean anything."", 4: '1'}"
+127	127		301							{3: 'Seeing Bambinata doing better now, the doctor says nothing as he walks up to you, his eyes no longer shrewd and cold.'}
+128	128		301							"{2: 'Doctor', 3: ""The M.I.N.D. is always the trickiest when it comes to treating a Construct. I'm sure she's going through a lot of pain now..."", 4: '1'}"
+129	129		302							{2: 'I beg your pardon?', 3: '130'}
+130	130		301							{2: 'Doctor', 3: 'Oh... I thought you knew. Both the M.I.N.D. and frame model of this Construct are outdated.', 4: '1'}
+131	131		301							{2: 'Doctor', 3: 'Both her memory loss and aphasia have to do with her M.I.N.D.', 4: '1'}
+132	132		301							"{3: ""Looking at the graph in the monitoring terminal that the doctor is now showing you, you can see that there are countless entangled lines of multiple colors that don't seem to exhibit a particular pattern. Toward the end of the graph, however, they seem to display what looks like a pattern.""}"
+133	133		302							{2: 'What are these lines?', 3: '134'}
+134	134		301							"{2: 'Doctor', 3: ""They represent the electrical signals of her M.I.N.D. This graph is supposed to tell us that, as we speak, her mental state is as active as it's a mess."", 4: '1'}"
+135	135		301							{2: 'Doctor', 3: 'And look at this here.', 4: '1'}
+136	136		301							{3: 'Looking at another graph on the terminal that the doctor is pointing at, you see the kind of zigzagging lines usually found in an ECG chart, except the lines seem more rhythmical than the lines you saw in the chart before.'}
+137	137		301							"{2: 'Doctor', 3: ""This graph shows the active cycles of her M.I.N.D. Normally, we don't see this number here so close to zero."", 4: '1'}"
+138	138		301							{2: 'Doctor', 3: 'But this is how her active cycles have been these days—every 24 hours, her M.I.N.D. plunges all the way down to almost zero.', 4: '1'}
+139	139		302							{2: 'Which means...', 3: '140'}
+140	140		301							"{2: 'Doctor', 3: ""You only get a number like this when someone's M.I.N.D. is overwritten by blank data. Yes, you heard that right."", 4: '1'}"
+141	141		301							"{2: 'Doctor', 3: ""Now, this blank data overwrites her M.I.N.D. every 24 hours, which wipes out the memory she's accumulated up to that point. This is also the cause of her aphasia."", 4: '1'}"
+142	142		302							{2: 'Why is it happening, though?', 3: '143'}
+143	143		301							{3: 'Thanks to the treatment, Bambinata is no longer mumbling, although the spasm has yet to die down.'}
+144	144		301							"{2: 'Doctor', 3: ""I'm not sure, but this is what I saw in her when she first came to me."", 4: '1'}"
+145	145		301							{2: 'Doctor', 3: 'This treatment is going to take another half an hour... Feel free to go back to your lounge and wait there if you want to.', 4: '1'}
+146	146		302							"{2: ""No, it's fine. I'll stay here."", 3: '147'}"
+147	147		301							{2: 'Doctor', 3: '...', 4: '1'}
+148	148		301				AniZhuanchangBegin			"{2: 'Doctor', 3: ""Alright. It'll probably make her feel better knowing that she isn't alone."", 4: '1'}"
+149	149		202							{1: '1', 6: '1'}
+150	150		301			AniZhuanchangEnd				"{3: ""Half an hour later, you finally let go of your hand—numb from holding Bambinata's hand for the past 30 minutes—when the doctor removes all the tubes.""}"
+151	151		301							"{3: ""After a few simple cognitive tests that ensure Bambinata has regained her basic language ability, the doctor shoves Bambinata's diagnostic report into your hand.""}"
+152	152		201							{1: '1', 2: '500361'}
+153	153		301							"{1: '1', 2: 'Doctor', 3: ""You can find everything you want to know on it. Now, I'm afraid you have to leave because I need to see my next patient in line."", 4: '1'}"
+154	154		202							{1: '1'}
+155	155		301							"{3: ""And with it, the two of you leave the examination room and traverse the crowded lobby—before you're back on the street facing Star of Life.""}"
+156	156		502							{1: 'RImgBg1DisableSlow'}
+157	157		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory267.png'}
+158	158		301							{3: 'Even at sunset, this street on the outskirts of Star of Life is still a lot more lively than the other streets in Babylonia. At the same time, the artificial sun in the sky can be seen playing its role dutifully to let people know that the end of the day has arrived.'}
+159	159		301							{3: 'In the hustle and bustle of the street, with your shadows trailing behind you, the two of you are trying to remember the way you came.'}
+160	160		201							{1: '1', 2: '500536'}
+161	161		301							"{1: '1', 3: ""Following you closely, Bambinata is as quiet as always—in fact, she hasn't said a word since the examination, other than when she had to complete the cognitive tests.""}"
+162	162		301							"{3: ""Right when you're about to open your mouth to speak, you feel a touch of bio-skin on your hand.""}"
+163	163		301							"{3: ""It's Bambinata—who's holding you by the fingers now, seemingly unable to hold your hand entirely.""}"
+164	164		301							"{2: 'Bambinata', 3: ""You were holding Bambinata's hand... during the check-up."", 4: '1'}"
+165	165		204							{1: '1', 2: '4'}
+166	166		301							{2: 'Bambinata', 3: 'Now, Bambinata is going to hold your hand, too.', 4: '1'}
+167	167		302							{2: 'Do you remember what happened just now?', 3: '168'}
+168	168		301							{3: 'Still keeping her head low, Bambinata nods.'}
+169	169		204							{1: '1'}
+170	170		301							"{2: 'Bambinata', 3: ""Mistress always holds Bambinata's hand, too, during check-ups."", 4: '1'}"
+171	171		204							{1: '1', 2: '4'}
+172	172		301							{2: 'Bambinata', 3: 'And Bambinata holds her hand, too, after that.', 4: '1'}
+173	173		302							{2: 'Does Vanessa personally take you in for check-ups?', 3: '174'}
+174	174		301							{2: 'Bambinata', 3: 'Yes, she does it every time Bambinata goes to the doctor.', 4: '1'}
+175	175		301							{2: 'Bambinata', 3: 'Sometimes, Mistress speaks a lot with the doctor, like how you spoke a lot with the doctor today.', 4: '1'}
+176	176		301							{2: 'Bambinata', 3: 'And when Bambinata is in pain, Mistress speaks even more with the doctor.', 4: '1'}
+177	177		204							{1: '1', 2: '1'}
+178	178		301							"{2: 'Bambinata', 3: ""It hurts every time, but Bambinata doesn't know why Mistress knows about this."", 4: '1'}"
+179	179		301							"{2: 'Bambinata', 3: ""Mistress touches Bambinata's head, too, when Bambinata's in pain..."", 4: '1'}"
+180	180		301							{3: 'Speaking quietly, Bambinata seems like a scared child who has yet to experience the world. She answers all the questions you have for her, and she says whatever comes to her mind.'}
+181	181		301							"{3: ""In your imagination, Vanessa is someone who treats her team like a box of tools, and she's never seen being friendly to anyone out in public.""}"
+182	182		301							{3: 'When speaking about Vanessa, however, Bambinata does so in a pure, childish, gentle tone.'}
+183	183		302							{2: 'Do you remember all of it?', 3: '184', 4: 'Is it how Vanessa usually treats you?', 5: '189'}
+184	184		204							{1: '1'}
+185	185		301							"{2: 'Bambinata', 3: ""No, Bambinata doesn't remember any of it."", 4: '1'}"
+186	186		301							{2: 'Bambinata', 3: 'The external memory module Mistress gave Bambinata keeps those memories.', 4: '1'}
+187	187		204							{1: '1', 2: '1'}
+188	188	194	301							"{2: 'Bambinata', 3: ""But Bambinata vaguely remembers them. Mistress is very, very important to Bambinata, and that's why she can vaguely remember Mistress."", 4: '1'}"
+189	189		204							{1: '1'}
+190	190		301							"{2: 'Bambinata', 3: ""But without the external memory module... Bambinata can't tell if this is how Mistress usually treats her..."", 4: '1'}"
+191	191		204							{1: '1', 2: '1'}
+192	192		301							"{2: 'Bambinata', 3: ""But Mistress holds Bambinata's hand sometimes, and sometimes she hugs Bambinata."", 4: '1'}"
+193	193		301							"{2: 'Bambinata', 3: ""Bambinata only recalled that Mistress did the same for Bambinata because you held Bambinata's hand and spoke a lot with the doctor, too."", 4: '1'}"
+194	194		202							{1: '1', 6: '1'}
+195	195		301							"{3: ""External memory module—you remember seeing the term on Bambinata's diagnostic report.""}"
+196	196		301							"{3: ""All you learned about it when you spoke with the doctor is that it's a precious product of neuroscience research and that Bambinata's is the only one throughout the entire Babylonia.""}"
+197	197		301							{3: 'Vanessa gave this incredibly precious device to Bambinata. But just like Vanessa, that device is nowhere to be seen right now.'}
+198	198		301							{3: 'It seems that their relationship is more complicated than you think.'}
+199	199		301							{3: 'Perhaps you just do not know Bambinata and Vanessa enough. When one does not know someone well enough—'}
+200	200		301		1		AniZhuanchangBegin			{3: 'They often never get to understand what the other person thinks of themselves.'}

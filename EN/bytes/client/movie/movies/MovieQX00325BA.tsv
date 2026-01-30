@@ -1,0 +1,74 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory202.png'}
+2	2		401							{1: '1', 2: '100'}
+3	3		201							{1: '1', 2: '500739', 3: '1'}
+4	4		301			DialogEnable				{1: '1', 2: 'Lamia', 3: '...', 4: '1'}
+5	5		302							{2: 'Lamia.', 3: '6'}
+6	6		204							{1: '1', 2: '19'}
+7	7		301			PanelActor1Shake				{2: 'Lamia', 3: 'Eek?! G-Gray Raven Commandant?', 4: '1'}
+8	8		301							{2: 'Lamia', 3: 'How... how in the world did you manage to track me down here?', 4: '1'}
+9	9		302							"{2: 'Actually, your sneaky moves just made you stand out even more, you know?', 3: '10', 4: ""You're not in disguise right now."", 5: '10'}"
+10	10		204							{1: '1'}
+11	11		301							{2: 'Lamia', 3: 'Uh... next time, how about a heads-up before you sneak up on me like that...', 4: '1'}
+12	12		301							"{2: 'Lamia', 3: ""Weren't you supposed to be out shopping with your squad? What brings you here..."", 4: '1'}"
+13	13		302							"{2: ""What's with this impromptu visit?"", 3: '14'}"
+14	14		204							{1: '1', 2: '19'}
+15	15		301				DialogDisable			{2: 'Lamia', 3: 'J-just had a sudden itch to swing by.', 4: '1'}
+16	16		202							{1: '1', 6: '1'}
+17	17		104						1000.0	{1: '150|0|-100', 2: '1'}
+18	18		104						2000.0	{1: '-150|0|-100', 2: '2'}
+19	19		104						1000.0	{1: '0|0|0', 2: '1'}
+20	20		301			DialogEnable				"{3: ""You take a peek around Lamia's hangout spot. There is an inflatable pool, a kiddie slide, a stash of munchies, and a heap of sparklers.""}"
+21	21		302							"{2: 'So... are you throwing a party solo-style?', 3: '22', 4: 'Is this your ""Fortress of Solitude"" or something?', 5: '22'}"
+22	22		201							{1: '1', 2: '500739', 3: '19'}
+23	23		301							{1: '1', 2: 'Lamia', 3: 'W-what gives?! Just to clear the air, all these things? Totally legit, no funny business involved.', 4: '1'}
+24	24		204							{1: '1', 2: '2'}
+25	25		301							{2: 'Lamia', 3: 'Took me ages to get this set up. Does it pass the test?', 4: '1'}
+26	26		202							{1: '1', 6: '1'}
+27	27		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory191.png', 3: '0', 4: '1', 5: '1'}
+28	28		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+29	29		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory191.png'}
+30	31		301							{1: '1', 3: 'Lamia is like a kid showing off her sandcastle on the shore, dragging you over to take a peek.'}
+31	32		302							{2: 'Is this your usual way to chillax?', 3: '33'}
+32	33		201							{1: '1', 2: '500739', 3: '3'}
+33	34		301							"{1: '1', 2: 'Lamia', 3: ""There's nothing wrong with that, right... especially for your kind."", 4: '1'}"
+34	35		204							{1: '1'}
+35	36		301							{3: 'The mermaid raises her gaze, peeking shyly at the person in front of her.'}
+36	37		301							{2: 'Lamia', 3: 'Have those problems... been sorted out?', 4: '1'}
+37	38		302							{2: 'What do you mean?', 3: '39'}
+38	39		204							{1: '1', 2: '14'}
+39	40		301							"{2: 'Lamia', 3: ""We're not going to... go through that again, right?"", 4: '1'}"
+40	41		302							{2: 'Not anymore.'}
+41	42		204							{1: '1'}
+42	43		301							{3: 'She nods.'}
+43	44		204							{1: '1', 2: '1'}
+44	45		301							{2: 'Lamia', 3: 'I want to say... thank you.', 4: '1'}
+45	46		302							{2: 'Why the thank-you?', 3: '47', 4: 'And why thank me?', 5: '49'}
+46	47		204							{1: '1'}
+47	48	60	301							"{2: 'Lamia', 3: ""Because you're still here, having a peaceful chat with me."", 4: '1'}"
+48	49		204							{1: '1', 2: '8'}
+49	50		301							"{2: 'Lamia', 3: ""Complicated stuff tends to scramble my brain, but with you, it's like, what I see is what I get..."", 4: '1'}"
+50	51		301							"{2: 'Lamia', 3: ""Whatever goes down, you'd handle it the same way, yeah?"", 4: '1'}"
+51	52		204							{1: '1', 2: '19'}
+52	53		203							{1: '1', 2: '1', 4: '-50', 5: '-100'}
+53	54		301							{3: 'Lamia inches her hand toward you, then hesitates and pulls back.'}
+54	55		302							"{2: ""(Grab Lamia's hand)"", 3: '56', 4: '...', 5: '56'}"
+55	56		204							{1: '1', 2: '1'}
+56	57		301							{3: 'She grips that pair of hands, then raises her head.'}
+57	58		301							{2: 'Lamia', 3: 'If there are any other problems, someone like you would sort them right away.', 4: '1'}
+58	59		302							"{2: ""I'll take that as a good sign."", 3: '60', 4: 'Naturally.', 5: '60'}"
+59	60		204							{1: '1'}
+60	61		301							"{2: 'Lamia', 3: ""So, what's the plan now? Hanging around here?"", 4: '1'}"
+61	62		204							{1: '1', 2: '14'}
+62	63		301							{2: 'Lamia', 3: 'If someone we know spots us... Wait, scratch that, not what I meant...', 4: '1'}
+63	64		301							{2: 'Lamia', 3: 'I put in some serious effort to spruce this place up... Nah, scratch that...', 4: '1'}
+64	65		204							{1: '1', 2: '19'}
+65	66		301							"{2: 'Lamia', 3: ""What I mean is, fancy sticking around? It's peaceful here, we could talk... you know."", 4: '1'}"
+66	67		301							{2: 'Lamia', 3: 'I-I-I might not always make sense, but...', 4: '1'}
+67	68		302							{2: 'I get it.'}
+68	69		204							{1: '1'}
+69	70		301							{2: 'Lamia', 3: 'So...', 4: '1'}
+70	71		302							"{2: 'You actually want me to join your ""Fortress of Solitude""?', 3: '72'}"
+71	72		204							{1: '1', 2: '1'}
+72	73		301							"{2: 'Lamia', 3: ""W-why not? I'm all about the open-door policy."", 4: '1'}"
+73	74		301		1		AniZhuanchangBegin			"{2: 'Lamia', 3: ""Take your time. You're welcome to stay here for as long as you need... seriously."", 4: '1'}"

@@ -1,0 +1,79 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/CgJD01.jpg'}
+2	2		401							{1: '1', 2: '101'}
+3	3		301			DialogEnable				{2: 'Aircraft System', 3: '—Prepare to depart L-7 returning orbit—'}
+4	4		301							{2: 'Aircraft System', 3: '—Moving through low Earth Corrupted ring—'}
+5	5		301							{2: 'Aircraft System', 3: '—All systems normal—'}
+6	6		302							{2: 'Confirm the mission one last time.'}
+7	7		201							{1: '1', 2: '1021001'}
+8	8		301							{1: '1', 2: 'Lucia', 3: 'Roger, Commander.', 4: '1'}
+9	9		301							{2: 'Lucia', 3: 'Seventeen hours ago, we got new eyewitness accounts on the Ascendants.', 4: '1'}
+10	10		301							{2: 'Lucia', 3: 'They were last seen in the western base of the Gangdise Mountains—a place called the Jijing Monastery.', 4: '1'}
+11	11		301							{2: 'Lucia', 3: 'During this time, there was a massive outbreak of the Punishing Virus throughout the area. Reports claim that it is highly concentrated.', 4: '1'}
+12	12		203							{1: '1', 2: '0.25', 3: '400'}
+13	13		201							{1: '2', 2: '1031001', 4: '-400'}
+14	14		301							{1: '1', 2: 'Liv', 3: 'Why would Ascendants appear in a place like that...?', 4: '2'}
+15	15		202							{1: '1', 2: '2', 6: '1'}
+16	16		201							{1: '1', 2: '1011001'}
+17	17		301							"{1: '1', 2: 'Lee', 3: ""Don't look into it too much for now. We're going to cross the Karman line and enter the atmosphere. Make sure the commandant doesn't have a bitten tongue after this."", 4: '1'}"
+18	18		201							{1: '1', 2: '1031001'}
+19	19		301							{1: '1', 2: 'Liv', 3: 'O-of course...', 4: '1'}
+20	20		202							{1: '1', 6: '1'}
+21	21		301							{2: 'Aircraft System', 3: '—Warning! Multiple heat sources approaching—'}
+22	22		301							{2: 'Aircraft System', 3: '—Warning! Multiple heat sources approaching—'}
+23	23		301							"{2: 'Lucia', 3: ""What's going on?""}"
+24	24		301							"{2: 'Lee', 3: ""Don't panic. Let me check the radar data first. It could just be a false alarm... wait...""}"
+25	25		301				AniZhuanchangBegin			{2: 'Lucia', 3: 'What is it?'}
+26	26		101							{1: 'Assets/Product/Texture/Image/BgCg/CgJD02.jpg'}
+27	27		301			AniZhuanchangEnd				{2: 'Lee', 3: 'The radar shows that a barrage of long-ranged projectiles has locked onto us. They appear to be interstellar cruise missiles...'}
+28	28		301							"{2: 'Liv', 3: ""I've also got a reading on Punishing Virus reaction!""}"
+29	29		301							{2: 'Lucia', 3: 'The Punishing Virus... low Earth missile attacks... Must be the space station!'}
+30	30		301							"{2: 'Lee', 3: ""No, the space station isn't capable of attacking us while we're in low Earth orbit...""}"
+31	31		301							"{2: 'Lee', 3: ""We're flying through a minefield—the remains of warships infected by the Punishing Virus are activating as we pass.""}"
+32	32		301							{2: 'Lee', 3: 'Normally, they should only lock onto transport-class airships...'}
+33	33		301							{2: 'Lee', 3: 'Dammit... I chose to go the long way to stay out of danger, but I got us stuck in low Earth orbit for too long...'}
+34	34		301							{3: '—!'}
+35	35		301							{2: 'Liv', 3: '...The cruise missiles are getting closer!'}
+36	36		301							{2: 'Lucia', 3: 'Can we shake them off our tail?'}
+37	37		301							"{2: 'Lee', 3: ""It's too late. With our entry speed into the stratosphere, we can't outrun the missiles.""}"
+38	38		301							{2: 'Lee', 3: 'Even in the most optimistic scenario, the missiles will hit us in thirty seconds...'}
+39	39		301							{2: 'Lee', 3: 'I got this. Activating manual flight control.'}
+40	40		301							{2: 'Liv', 3: 'ETA... Twenty seconds!'}
+41	41		301							{2: 'Lee', 3: 'Done...! Commandant I need to maintain operational procedures. Take the wheel.'}
+42	42		302							{2: 'Leave it to me.', 3: '43'}
+43	43		301							{3: 'BOOM—!'}
+44	44		301							{3: 'A missile explodes near the airdrop jet, throwing you into disarray.'}
+45	45		302							{2: 'Ugh…', 3: '46'}
+46	46		301							{2: 'Lucia', 3: 'Are you okay, Commandant?!'}
+47	47		302							"{2: ""...I'm good."", 3: '48'}"
+48	48		301							{2: 'Lee', 3: 'Relax, everyone...'}
+49	49		302							{2: 'Activating optical positioning.', 3: '50'}
+50	50		301							{3: 'Optical positioning activated—'}
+51	51		302							{2: 'Re-adjusting engines for ignition.', 3: '52'}
+52	52		301							{3: 'Engines re-adjusted. Activating maximum thrust—'}
+53	53		301							{3: 'Autonomous rotation stabilized—'}
+54	54		301							{2: 'Liv', 3: 'Arrgh... The centrifugal force is... too strong...'}
+55	55		302							{2: 'Releasing tow line.', 3: '56'}
+56	56		301							{3: 'Two tow lines with counterweights ejected—'}
+57	57		301							{2: 'Lee', 3: 'Commandant, NOW!'}
+58	58		302							{2: 'Severing connection!', 3: '59'}
+59	59		301							{2: 'Lucia', 3: 'Have we regained control?'}
+60	60		301							"{2: 'Lee', 3: ""We have. I'm guessing our commandant graduated at the top of the class.""}"
+61	61		301							{2: 'Liv', 3: 'More... missiles... approaching fast!'}
+62	62		301							"{2: 'Lee', 3: ""Our airdrop jet should be a bit more agile, comparatively speaking... Let's change direction to widen the gap first.""}"
+63	63		302							{2: 'Make it so.', 3: '64'}
+64	64		301							"{2: 'Lee', 3: ""Wait, what?! They're approaching from the other side too?""}"
+65	65		301							{2: 'Liv', 3: 'ETA... Fifteen seconds!'}
+66	66		301							{2: 'Lee', 3: 'Brace for impact...'}
+67	67		301							"{2: 'Liv', 3: ""Wait... Commandant, something is approaching from the surface... It's coming in hot!""}"
+68	68		302							{2: 'Take evasive action!'}
+69	69		101							{1: 'Assets/Product/Texture/Image/BgCg/CgJD03.jpg'}
+70	70		301			RImgBg1Shake				{3: 'BOOM—!'}
+71	71		301							{3: 'Suddenly, all of the missiles explode behind your jet.'}
+72	72		301							{2: 'Lucia', 3: 'What was that?'}
+73	73		301							{2: 'Liv', 3: 'It looked like... a lance...'}
+74	74		301							{2: 'Liv', 3: 'But why...'}
+75	75		301							{2: 'Lee', 3: 'Watch out! Shockwave incoming!'}
+76	76		301							{2: 'Lucia', 3: 'Commandant!'}
+77	77		301							{2: 'Aircraft System', 3: '—Entering the atmosphere blackout zone. Engaging silent mode—'}
+78	78		301		1		AniZhuanchangBegin			{3: '———'}

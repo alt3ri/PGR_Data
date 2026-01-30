@@ -1,0 +1,104 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+2	2		401							{1: '1', 2: '5059'}
+3	3		401						500.0	{1: '2', 2: '4009'}
+4	4		402							{1: '4009'}
+5	5		201							{1: '1', 2: '1031001', 3: '3'}
+6	6		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Commandant?', 4: '1'}
+7	7		301							{3: 'You were just about to ask Liv to complete the challenge together when, around the corner a block after, she shows up out of the blue with a ticket in hand.'}
+8	8		204							{1: '1', 2: '6'}
+9	9		301							"{3: ""When she sees that you, too, are holding the same ticket she's holding, she breaks into a blush.""}"
+10	10		302							{2: 'Liv, I was just about to pay you a visit.', 3: '11'}
+11	11		204							{1: '1', 2: '1'}
+12	12		301							{2: 'Liv', 3: 'Great minds think alike, I guess.', 4: '1'}
+13	13		301							{2: 'Liv', 3: 'So...', 4: '1'}
+14	14		302							"{2: ""Let's do this together. What say you?"", 3: '15'}"
+15	15		301							{2: 'Liv', 3: 'Sure. This ticket here says we can pick any shop as our final challenge...', 4: '1'}
+16	16		202							{1: '1', 6: '1'}
+17	17		104							{1: '250|-50|-200', 2: '1'}
+18	18		301							"{3: 'Liv looks at a shop on the street corner with a sign that says ""Animal Healing"", its interior soft and pink.'}"
+19	19		301				DialogDisable			{3: 'She seems a little too embarrassed to just say she wants to go there.'}
+20	20		104							{1: '0|0|0', 2: '1'}
+21	21		302							"{2: ""Let's give that one a try, then?""}"
+22	22		201							{1: '1', 2: '1031001', 3: '3'}
+23	23		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'A-are you sure?', 4: '1'}
+24	24		301							"{3: ""It only takes her a second to realize that you've noticed how she was looking at the shop.""}"
+25	25		204							{1: '1', 2: '1'}
+26	26		301							"{2: 'Liv', 3: ""I'll take you up on that offer then, Commandant. Let's go."", 4: '1'}"
+27	27		202							{1: '1', 6: '1'}
+28	28		104				AniZhuanchangBegin			{1: '0|0|-100', 2: '1'}
+29	29		502							{1: 'DialogDisable'}
+30	30		401						800.0	{1: '2', 2: '5159'}
+31	31		402							{1: '5159'}
+32	32		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory609.jpg'}
+33	33		301			DialogEnable				"{3: ""The two of you step into the warmly decorated shop. When you open the door, you're greeted by a gentle herbal fragrance.""}"
+34	34		402							{1: '4294'}
+35	35		401						500.0	{1: '2', 2: '2930'}
+36	36		104						200.0	{1: '0|-50|0', 2: '0.5'}
+37	37		104							{1: '0|0|0', 2: '0.5'}
+38	38		402							{1: '2930'}
+39	39		301							{3: 'Several toddling white lambs with round eyes bounce happily out of their pen and charge straight toward you and Liv before circling playfully around the two of you.'}
+40	40		201							{1: '1', 2: '1031001', 3: '6'}
+41	41		301							{1: '1', 2: 'Liv', 3: 'How adorable... Looks like they want us to feed them.', 4: '1'}
+42	42		204							{1: '1', 2: '1'}
+43	43		203						500.0	{1: '1', 2: '0.5', 3: '0', 4: '-75'}
+44	44		203							{1: '1', 2: '0.5', 3: '0', 4: '0'}
+45	45		401							{1: '2', 2: '4044'}
+46	46		301							{3: 'Liv crouches down and picks up one of the lambs with practiced ease and starts padding its head.'}
+47	47		301							"{3: ""Still energetic just moments ago, the lamb now nestles in Liv's arms and slowly turns into a docile ball of fluff as it settles down peacefully.""}"
+48	48		301							{2: 'Liv', 3: 'Lambs feel really comfortable when you massage this spot... Here, Commandant, want to give it a try?', 4: '1'}
+49	49		301							{3: 'Noticing your gaze, Liv gently passes over the now thoroughly docile lamb.'}
+50	50		302							"{2: ""You seem to know what you're doing."", 3: '51'}"
+51	51		301							{2: 'Liv', 3: 'Hmm... I visited a ranch where I worked as a sheep caretaker for a few days a long time ago while I was traveling.', 4: '1'}
+52	52		301							{2: 'Liv', 3: 'Never thought the experience would come in handy now.', 4: '1'}
+53	53		301							"{2: 'Liv', 3: ""Here, Commandant, try gently patting its head like this. It'll make the lamb feel safe."", 4: '1'}"
+54	54		203							{1: '1', 2: '0.5', 3: '0', 4: '-75'}
+55	55		401							{1: '2', 2: '5286'}
+56	56		301							{3: 'Liv leans in closer and starts showing you how to soothe the lamb.'}
+57	57		301							"{3: ""Her voice is so soft that it almost seems like she's afraid of scaring the little ball of fluff in her arms, yet her guidance is perfectly clear and precise.""}"
+58	58		302							"{2: ""(Follow Liv's instructions)"", 3: '0'}"
+59	59		204							{1: '1', 2: '6'}
+60	60		301							{2: 'Liv', 3: 'Commandant...', 4: '1'}
+61	61		202							{1: '1'}
+62	62		104							{1: '0|50|-25', 2: '0.5'}
+63	63		301							"{3: ""A warm sensation spreads through your hand. Looking down, you realize you're now touching Liv's palm, having been following her guidance without noticing that you've been doing just that. Both your and Liv's hands are now resting atop the lamb's head.""}"
+64	64		301							"{3: ""Liv's hand is small, her skin delicate and soft. You feel a wave of warmth going coursing through your heart the moment you touch her hand.""}"
+65	65		104							{1: '0|0|0', 2: '0.5'}
+66	66		302							"{2: ""I'm sorry."", 3: '67', 4: '(Turn your hand to hold hers)', 5: '72'}"
+67	67		301							{3: 'You consider pulling away slightly, but Liv immediately tightens her grip on your retreating hand.'}
+68	68		201							{1: '1', 2: '1031001', 3: '2'}
+69	69		301							"{1: '1', 2: 'Liv', 3: ""Commandant, I... that's not what I meant."", 4: '1'}"
+70	70		204							{1: '1', 2: '6'}
+71	71	75	301							{3: 'Instead of finishing what she was about to say, Liv tightens her grip to convey what she truly means.'}
+72	72		201							{1: '1', 2: '1031001', 3: '6'}
+73	73		301							{1: '1', 2: 'Liv', 3: 'Your palm... is incredibly warm, Commandant...', 4: '1'}
+74	74	75	301							{3: 'Her face flushes crimson as she keeps her head down in embarrassment, yet her words carry no hint of rejection.'}
+75	75		204							{1: '1', 2: '3'}
+76	76		301							{2: 'Liv', 3: 'T-the little lamb... seems to have just fallen asleep.', 4: '1'}
+77	77		301							{3: 'The two of you stand quietly together cradling the lamb for several minutes before Liv softly murmurs to herself.'}
+78	78		204							{1: '1', 2: '1'}
+79	79		301							{2: 'Liv', 3: 'Then...', 4: '1'}
+80	80		203							{1: '1', 2: '0.25', 4: '-75', 5: '-50'}
+81	81		401						500.0	{1: '2', 2: '4432'}
+82	82		402							{1: '4432'}
+83	83		301							{3: 'Liv raises her hand slightly steps forward and wraps her arm firmly around yours.'}
+84	84		204							{1: '1', 2: '6'}
+85	85		301							{2: 'Liv', 3: 'This is how close I want to be to you going forward, Commandant.', 4: '1'}
+86	86		301							{3: 'The cream-colored lamb slumbers sweetly in the cradle of your arms, nestled between the two of you.'}
+87	87		301							{3: 'Liv gazes at you with a kind of tenderness rarely seen in her everyday demeanor.'}
+88	88		301							"{2: 'Liv', 3: ""Commandant, I know I've been pampered the entire day already, but... may I be a little more selfish?"", 4: '1'}"
+89	89		302							"{2: ""Of course, I'd love to."", 3: '90', 4: 'Never crossed my mind that you were being selfish, though.', 5: '90'}"
+90	90		301							{2: 'Liv', 3: 'Well, could you answer me just this one question, Commandant?', 4: '1'}
+91	91		301							"{3: ""Her crimson face speaks volumes about the courage it's taking her to ask the question she's about to ask.""}"
+92	92		301							{2: 'Liv', 3: 'The challenge has been fun, but... would it be okay for us to spend time hanging out like this going forward?', 4: '1'}
+93	93		202							{1: '1', 6: '1'}
+94	94		306							{1: '1'}
+95	95		301							{3: 'Her whisper sounds so soft that it threatens to melt you.'}
+96	96		301							{3: 'You feel the warm touch of her body against yours, then catch a fresh floral scent as you look down.'}
+97	97		301							{3: 'Liv has drawn herself close to you.'}
+98	98		301							{3: 'She lifts her head and graces you with a captivating smile.'}
+99	99		306							
+100	100		201							{1: '1', 2: '1031001', 3: '1', 5: '-75', 6: '-50'}
+101	101		301							{1: '1', 2: 'Liv', 3: 'It feels warm... where you are.', 4: '1'}
+102	102		204							{1: '1', 2: '2'}
+103	103		301		1		AniZhuanchangBegin			"{2: 'Liv', 3: ""I'm sorry, but I might end up falling asleep soon... because you make me feel absolutely safe."", 4: '1'}"

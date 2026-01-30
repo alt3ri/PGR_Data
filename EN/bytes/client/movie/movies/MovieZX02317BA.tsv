@@ -1,0 +1,179 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory456.jpg'}
+2	2		401							{1: '1', 2: '101'}
+3	3		201							{1: '1', 2: '500417'}
+4	4		301			DialogEnable				{1: '1', 2: 'Lee', 3: 'Tch...', 4: '1'}
+5	5		202							{1: '1', 6: '1'}
+6	6		301							{3: 'The remaining carriages cross the barren field and enter a tunnel.'}
+7	7		301							{3: 'After a brief moment of darkness, the survivors are horrified to find the train encircled by Hetero-Creatures on both sides.'}
+8	8		201							{1: '1', 2: '500019'}
+9	9		301							"{1: '1', 2: 'Construct Soldier 1', 3: ""We're surrounded!"", 4: '1'}"
+10	10		201							{1: '1', 2: '500416'}
+11	11		301							{1: '1', 2: 'Lucia', 3: 'Engage the enemies!', 4: '1'}
+12	12		201							{1: '1', 2: '500019', 4: '600'}
+13	13		201							{1: '2', 2: '500405'}
+14	14		201							{1: '3', 2: '500394', 4: '-600'}
+15	15		301							{1: '1', 2: 'Constructs', 3: 'Roger!', 4: '1', 5: '2', 6: '3'}
+16	16		301							{3: 'The Constructs inside leap out the windows, heading for the roof to fend off the hostile force.'}
+17	17		301							{3: 'But in their path stands a colossal nightmare.'}
+18	18		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+19	19		201							{1: '1', 2: '500301'}
+20	20		401							{1: '2', 2: '1508'}
+21	21		301			RImgBg1Shake				{1: '1', 2: 'Hetero-Hive Mother', 3: '—!', 4: '1'}
+22	22		201							{1: '1', 2: '500019', 4: '-400'}
+23	23		201							{1: '2', 2: '500394', 4: '400'}
+24	24		301			PanelActor1Shake				{1: '1', 2: 'Construct Soldier 2', 3: 'Why is it here?!', 4: '1'}
+25	25		301			PanelActor2Shake				"{1: '1', 2: 'Construct Soldier 3', 3: ""They're flanking us!"", 4: '2'}"
+26	26		201							{1: '1', 2: '500019', 4: '-400'}
+27	27		201							{1: '2', 2: '500028', 4: '400'}
+28	28		301			PanelActor1Shake				{1: '1', 2: 'Construct Soldier 4', 3: 'How many mothers have they got? Enough to send one to block our way?!', 4: '1'}
+29	29		301							"{1: '1', 2: 'Construct Soldier 5', 3: ""My Inver-Device...! Dammit... I can't move!"", 4: '2'}"
+30	30		202							{1: '1', 2: '2', 6: '1'}
+31	31		201							{1: '1', 2: '500418'}
+32	32		301							{1: '1', 2: 'Chrome', 3: 'Brace for impact!', 4: '1'}
+33	33		202							{1: '1', 6: '1'}
+34	34		401						100.0	{1: '2', 2: '10007502'}
+35	35		401						10.0	{1: '2', 2: '915'}
+36	36		401						10.0	{1: '2', 2: '957'}
+37	37		401							{1: '2', 2: '974'}
+38	38		401							{1: '2', 2: '959'}
+39	39		301			RImgBg1Shake				{3: 'The speeding train crashes into the Hetero-Hive Mother, rocking the carriages intensely in a deafening clash.'}
+40	40		301							{3: 'The train shrieks woefully. The Hive Mother, with her tentacles planted firmly into the ground, is uprooted as the walls of the tunnel collapse.'}
+41	41		301			RImgBg1Shake				{3: 'The next moment, the last surviving human is flung outside the train alongside the many things stored within.'}
+42	42		201							{1: '1', 2: '500417'}
+43	43		301							{1: '1', 2: 'Lee', 3: 'Watch out!', 4: '1'}
+44	44		301							"{3: ""The moment the Hive Mother's interference is gone, Lee dashes through the crumbling debris and grabs Shrek's hand, but his split-second decision puts him right underneath a falling rock that he cannot dodge.""}"
+45	45		301							"{3: 'With a loud ""Snap!"", Lee realizes his joint is broken.'}"
+46	46		301							{2: 'Lee', 3: 'Tch...', 4: '1'}
+47	47		301							{3: 'His broken frame alerts him with excruciating pain, but Lee refuses to let go.'}
+48	48		301				AniZhuanchangBegin			"{2: 'Lee', 3: ""Get up! I can't pull you!"", 4: '1'}"
+49	49		202							{1: '1', 2: '2'}
+50	50		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2301_7.jpg'}
+51	51		401							{1: '1', 2: '36'}
+52	52		401							{1: '1', 2: '33'}
+53	53		301			AniZhuanchangEnd				"{3: ""Hearing Lee's desperate plea, Shrek smiles.""}"
+54	54		301							"{2: 'Shrek', 3: ""I was thinking... if those two monsters didn't avoid the handbag or the tumbling human...""}"
+55	55		301							"{2: 'Shrek', 3: ""It stands to reason that they wouldn't duck from a guy with a handbag like me, no?""}"
+56	56		301							{3: 'Hearing that, Lee finally notices that Shrek is holding onto the handbag with the masking device that Lee hid in the carriage earlier.'}
+57	57		301							{2: 'Lee', 3: 'Enough with that nonsense...!'}
+58	58		301							"{2: 'Lee', 3: ""There are still other ways we haven't tried! Get up first, and we'll figure it out!""}"
+59	59		301							"{2: 'Shrek', 3: ""But time's running out, isn't it? They've noticed the potential danger, and they're hesitant to mingle with us anymore.""}"
+60	60		301							"{2: 'Lee', 3: ""Get up and we'll talk!""}"
+61	61		301							"{2: 'Lee', 3: ""We're surrounded! I can't pull you up with my broken arm!""}"
+62	62		301							{3: 'Standing at the edge above the speeding train, Lee is struggling to keep himself safe. All he can do is kick the approaching Hetero-Creatures away while pressing Shrek to save himself.'}
+63	63		301							"{2: 'Lee', 3: ""It's meaningless! You die, and you lose all possibilities!""}"
+64	64		301							"{2: 'Shrek', 3: ""You're right...""}"
+65	65		301							"{2: 'Shrek', 3: 'I had someone once. I lost her, and it was ""meaningless,"" like you said.'}"
+66	66		301							{2: 'Shrek', 3: 'But her death changed me, you know?'}
+67	67		301							{2: 'Shrek', 3: 'I became a novice medic because I regretted not being able to save her.'}
+68	68		301							"{2: 'Shrek', 3: ""I couldn't change the past, but I've saved a few people since she's gone.""}"
+69	69		301							"{2: 'Shrek', 3: ""It's meaningless for the dead, sure, but my death has to amount to something for the living, right?""}"
+70	70		301							{2: 'Lee', 3: 'Enough! I told you to stop that nonsense!'}
+71	71		301							"{2: 'Lee', 3: ""I don't need your sacrifice for a mere chance...!""}"
+72	72		301							{2: 'Shrek', 3: 'Lee... you ought to be more honest with yourself.'}
+73	73		301							"{2: 'Shrek', 3: ""Otherwise, you're gonna regret it one day.""}"
+74	74		301							{2: 'Lee', 3: 'What are you talking about?'}
+75	75		301							{2: 'Shrek', 3: 'Let me tell you a secret.'}
+76	76		301							"{2: 'Shrek', 3: ""Although I always bring bad luck to those near me, I'm unbelievably lucky myself.""}"
+77	77		301							{2: 'Shrek', 3: 'Even if you drop me here, I might still be able to walk out of this in one piece.'}
+78	78		301							{2: 'Shrek', 3: 'Who knows, I might be standing before you with rainbow hair in a few days as a Construct.'}
+79	79		301							"{3: ""Lee spends an extra 0.53 seconds to come up with a reply in the face of Shrek's absurdity.""}"
+80	80		301							"{2: 'Lee', 3: ""I don't think the technicians are interested in making rainbow hair.""}"
+81	81		301							{3: 'The wind breezes past them to somewhere beyond reach, chuckling like the young man hung by the edge.'}
+82	82		301							"{2: 'Shrek', 3: ""See, you're not dismissing the Construct part, impossible as it is.""}"
+83	83		301							{3: 'Shrek begins to loosen his grip.'}
+84	84		301							"{2: 'Shrek', 3: ""I've been hoping to reunite with my friends since they passed.""}"
+85	85		301							"{2: 'Shrek', 3: ""Not because I've decided to give up the possibility they gave me...""}"
+86	86		301							"{2: 'Shrek', 3: ""I'm just making the same choice they did. I'm passing this ticket to the future to someone else.""}"
+87	87		301							{2: 'Shrek', 3: 'I finally understand...'}
+88	88		301							{3: 'Winter does not take, for some would light fires with their souls. Small and frail as their flames may be, they... are enough to light a fuse. All possibilities stem from a big bang, after all.'}
+89	89		301							{2: 'Lee', 3: 'Stop talking! Get up, now!'}
+90	90		301							"{2: 'Shrek', 3: ""Thank you, Lee. But I think I've done almost everything I wanted to do. There's just one thing left.""}"
+91	91		301							{2: 'Shrek', 3: 'Forsaken, Babylonians... you all deserve to live. You live, and you save more lives, yeah?'}
+92	92		301							"{2: 'Shrek', 3: ""It's my genuine pleasure to have spent this time with you...""}"
+93	93		301							{2: 'Shrek', 3: 'So, this is my last wish. This is the reason why.'}
+94	94		301							"{3: ""Shrek smiles, and he lets go of Lee's broken arm.""}"
+95	95		301							{2: 'Lee', 3: 'SHREK!!!'}
+96	96		301							{2: 'Shrek', 3: '...Until next time, kind stranger.'}
+97	97		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+98	98		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory294.png'}
+99	99		401							{1: '2', 2: '10007502'}
+100	100		401					10.0		{1: '2', 2: '964'}
+101	101		301			RImgBg1Shake				{3: 'As the twins catch the tumbling young man unsuspectingly, Omega II finally unleashes its unmatched rage amidst the cries and roars.'}
+102	102		301							{3: 'The tunnel fully collapses at its impact, blocking off the barrage of Hetero-Creatures completely.'}
+103	103		301							"{3: ""Countless charging monsters crash into the fallen debris, disintegrating into dust as they enter Omega II's domain.""}"
+104	104		301							{3: 'The leaders of this mad tide of calamity wail as they examine their festering bodies. They flung the bloodied human in their hands toward the debris before them.'}
+105	105		301							{3: 'With twisted, frightened expressions, they stare at the blocked tunnel, the exit beyond their reach.'}
+106	106		301				AniZhuanchangBegin			{3: '—On the other side of the collapse, the train has already safely sailed away.'}
+107	107		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+108	108		301			AniZhuanchangEnd				{3: 'The gusting wind departs the tunnel, making its way across the abandoned city.'}
+109	109		301							{3: 'Specks of sand are swept up, smacking the shelterless sojourners, striving to seize them at a standstill.'}
+110	110		301							{3: 'Weary the wanderers are, they watch the way they walked on a whim, withheld by the will of the wind.'}
+111	111		201							{1: '1', 2: '500419'}
+112	112		301							{1: '1', 2: 'Watanabe', 3: '...', 4: '1'}
+113	113		203							{1: '1', 2: '0.25', 3: '-400'}
+114	114		201							{1: '2', 2: '500270', 4: '400'}
+115	115		301							{1: '1', 2: 'Refugee A', 3: 'What is it?', 4: '2'}
+116	116		301							{2: 'Watanabe', 3: '...Nothing. I just thought...', 4: '1'}
+117	117		301							{2: 'Watanabe', 3: '...I thought I heard someone chuckle.', 4: '1'}
+118	118		202							{1: '1', 2: '2', 6: '1'}
+119	119		201							{1: '1', 2: '500423', 4: '-100'}
+120	120		301							{1: '1', 2: 'Matches', 3: 'Woof! MmmWwoooo...', 4: '1'}
+121	121		201							{1: '1', 2: '500140', 4: '-400'}
+122	122		201							{1: '2', 2: '500419', 4: '400'}
+123	123		301							{1: '1', 2: 'Refugee B', 3: 'Who can chuckle at a time like this?', 4: '1'}
+124	124		301				AniZhuanchangBegin			"{2: 'Watanabe', 3: ""...I probably misheard. Let's keep going."", 4: '2'}"
+125	125		202							{1: '1', 2: '2', 6: '1'}
+126	126		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory143.png'}
+127	127		301			AniZhuanchangEnd				{3: 'The sun sets in the west. The clouds at the edge of the sky are adorned with the colors of fiery flames, coating the survivors in a blanket of gold.'}
+128	128		301							{3: 'In the dust-filled tunnel, a dark figure breaks the silence and steps through the stillness.'}
+129	129		201							{1: '1', 2: '500308'}
+130	130		301							{1: '1', 2: 'Cinderelik', 3: 'Their new weapon is destroyed, but its aura still lingers. The Punishing Virus concertation here is still incredibly low.', 4: '1'}
+131	131		301							{2: 'Cinderelik', 3: 'Mister...?', 4: '1'}
+132	132		202							{1: '1', 6: '1'}
+133	133		401							{1: '2', 2: '1516'}
+134	134		301							"{3: ""Ignoring the girl's report, the man who has merged with the shadows walks across the ash-covered floor, placing his attention on the pool of blood beneath his feet.""}"
+135	135		301							{3: 'As he carries the misery-bound body of the bloodied young man, he discovers tender heartbeats underneath the ravaged flesh.'}
+136	136		301							{3: 'Would he consider it misfortune or luck?'}
+137	137		201							{1: '1', 2: '500305'}
+138	138		301							{1: '1', 2: 'Vonnegut', 3: 'What an incredible will to live... Interesting.', 4: '1'}
+139	139		301							"{2: 'Vonnegut', 3: 'I didn\'t expect the twins to leave a ""sample"" behind. Seems like they\'re starting to have a will of their own.', 4: '1'}"
+140	140		203							{1: '1', 2: '0.25', 3: '-400'}
+141	141		201							{1: '2', 2: '500308', 4: '400'}
+142	142		301							{1: '1', 2: 'Cinderelik', 3: 'It could be the effect of those who broke into the Central Purification Filter.', 4: '2'}
+143	143		301							"{2: 'Vonnegut', 3: 'You mean the ""fear"" they instilled?', 4: '1'}"
+144	144		301							{3: 'The dark figure walks back and forth before the ruins, observing the giant creature that once was lying not far away from them.'}
+145	145		301							"{2: 'Vonnegut', 3: 'It seems that the damaged Hive Mother... also sensed her children\'s ""fear,"" rushing here from a nearby hive to their aid. Is that the maternal bond?', 4: '1'}"
+146	146		204							{1: '2', 2: '8'}
+147	147		301							{2: 'Cinderelik', 3: '...', 4: '2'}
+148	148		301							{2: 'Vonnegut', 3: 'Are you feeling sad for her?', 4: '1'}
+149	149		204							{1: '2'}
+150	150		301							"{2: 'Cinderelik', 3: 'No. She\'s just a vessel for data, a being that takes the role of a ""mother."" She isn\'t my real mom.', 4: '2'}"
+151	151		301							"{2: 'Cinderelik', 3: ""Even if she would mimic my mom and speak the words she once said... I wouldn't feel sad for a vessel."", 4: '2'}"
+152	152		301							"{2: 'Cinderelik', 3: 'Everything we\'re doing is for the day real mom and ""Cinderelik"" return.', 4: '2'}"
+153	153		301							"{3: 'She closes her eyes, her hands caressing the wings that once belonged to ""Cinderelik"" in order to conceal the despair that is about to burst through her heart.'}"
+154	154		301							{2: 'Vonnegut', 3: 'Are you thinking about that day?', 4: '1'}
+155	155		301							"{2: 'Cinderelik', 3: ""...I'm sorry."", 4: '2'}"
+156	156		301							"{2: 'Vonnegut', 3: ""I'll give you your freedom once it's all over."", 4: '1'}"
+157	157		301							{2: 'Vonnegut', 3: 'I can help you even if what you want is going to Babylonia.', 4: '1'}
+158	158		204							{1: '2', 2: '8'}
+159	159		301							{2: 'Cinderelik', 3: '...', 4: '2'}
+160	160		301							"{2: 'Vonnegut', 3: ""You want to see him, don't you?"", 4: '1'}"
+161	161		204							{1: '2'}
+162	162		301							{2: 'Cinderelik', 3: 'I do.', 4: '2'}
+163	163		301							{3: 'The detached girl looks up at the dark shadow before her, as compliant as a rabbit.'}
+164	164		301							"{2: 'Cinderelik', 3: ""Whether he... whether Mr. Kugawa Kurono remembers killing mom... Whether he agrees with everything I've done..."", 4: '2'}"
+165	165		301							{2: 'Cinderelik', 3: 'I want to see him again and tell him that mom has woken up.', 4: '2'}
+166	166		301							"{3: ""The dark figure does not comment on the girl's wish. He acknowledges it plainly before gazing at the other end of the tunnel, like the two creatures who stood here did.""}"
+167	167		301							"{2: 'Vonnegut', 3: ""They're back inside the Red Tide, aren't they?"", 4: '1'}"
+168	168		301							{2: 'Cinderelik', 3: 'They are. The twins will need some time to recover.', 4: '2'}
+169	169		301							{2: 'Cinderelik', 3: 'But the attack command on the three Constructs has yet to be lifted. The Hetero-Creatures will be hunting for those three.', 4: '2'}
+170	170		301							{2: 'Cinderelik', 3: 'Should we follow?', 4: '2'}
+171	171		301							{2: 'Vonnegut', 3: 'No... We should watch from the sideline until the end.', 4: '1'}
+172	172		301							{2: 'Cinderelik', 3: 'The captain that you favor is among them too.', 4: '2'}
+173	173		301							{2: 'Vonnegut', 3: 'Obstacles should clarify the current situation for him.', 4: '1'}
+174	174		301							"{2: 'Vonnegut', 3: ""We don't have to get involved in this game of survival."", 4: '1'}"
+175	175		301							{2: 'Cinderelik', 3: 'But the survivors have already left the damaged train, and they happen to be trapped at her...', 4: '2'}
+176	176		301							{2: 'Cinderelik', 3: '...At the church the Merciful One frequents...', 4: '2'}
+177	177		301							"{2: 'Vonnegut', 3: ""Oh? We don't have to interfere if she wants to get involved."", 4: '1'}"
+178	178		301		1		AniZhuanchangBegin			"{2: 'Vonnegut', 3: 'After all, she... is ""oblivion"" itself.', 4: '1'}"

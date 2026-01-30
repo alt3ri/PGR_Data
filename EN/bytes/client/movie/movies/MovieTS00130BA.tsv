@@ -1,0 +1,35 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory40.jpg'}
+2	2		401							{1: '1', 2: '203'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+4	4		201							{1: '1', 2: '1091001', 4: '-400'}
+5	5		201							{1: '2', 2: '1101001', 4: '400'}
+6	6		301			DialogEnable				{1: '1', 2: 'Watanabe', 3: 'Has the Purifying Force found an antibody yet?', 4: '2'}
+7	7		301							"{2: 'Bianca', 3: ""You're reading too much into it. I know less than you."", 4: '1'}"
+8	8		301							{2: 'Bianca', 3: 'Did they get out safely?', 4: '1'}
+9	9		301							"{2: 'Watanabe', 3: ""They're safe."", 4: '2'}"
+10	10		301							"{2: 'Watanabe', 3: ""I've kept my end of the bargain. I'll be leading my men away from this hellhole now."", 4: '2'}"
+11	11		301							"{2: 'Watanabe', 3: ""I don't want anything to do with this place anymore."", 4: '2'}"
+12	12		301							{2: 'Bianca', 3: 'This is more complicated than you think. I strongly advise you to stay out of it.', 4: '1'}
+13	13		301							"{2: 'Bianca', 3: '""(Turn to leave) Stick to your own business, Forsaken.""', 4: '1'}"
+14	14		401							{1: '2', 2: '1516'}
+15	15		203						300.0	{1: '1', 2: '0.5', 3: '-1200'}
+16	16		202							{1: '1'}
+17	17		203							{1: '2', 2: '0.25'}
+18	18		301				AniZhuanchangBegin			{2: 'Watanabe', 3: '...Forsakens! Retreat.', 4: '2'}
+19	19		202							{1: '2', 6: '1'}
+20	20		502							{1: 'DialogDisable'}
+21	21		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory40.jpg'}
+22	22		201							{1: '1', 2: '1091001'}
+23	23		204							{1: '1', 2: '4'}
+24	24		301			DialogEnable				"{1: '1', 2: 'Bianca', 3: '""That\'s unexpected... They haven\'t found the Commandant, but they got samples.""', 4: '1'}"
+25	25		301							"{2: 'Bianca', 3: ""The retriever is still analyzing the antigen from their tissues. I'm sure it won't be long before I find out its detailed composition."", 4: '1'}"
+26	26		204							{1: '1'}
+27	27		301							"{2: 'Bianca', 3: '""If I go further inside, I\'ll run into the Queen\'s royal guards sooner or later...""', 4: '1'}"
+28	28		301							{2: 'Bianca', 3: 'And the antigen might get destroyed in the fight...', 4: '1'}
+29	29		204							{1: '1', 2: '4'}
+30	30		301							"{2: 'Bianca', 3: ""Time's running out. We can't think about this now."", 4: '1'}"
+31	31		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+32	32		401							{1: '2', 2: '1515'}
+33	33		301							"{1: '1', 2: 'Bianca', 3: '""(Turns on comms) Gray Raven, I don\'t know if you\'ll hear this...""', 4: '1'}"
+34	34		301		1		AniZhuanchangBegin			"{2: 'Bianca', 3: '""I just want to say that... this is Bianca. I\'m here. I\'ll save you, Commandant.""', 4: '1'}"

@@ -1,0 +1,418 @@
+Id	Type	Formula	Params	Desc
+999001		999101&999201		Current quarter count greater than 5, player has over 100 items for sale
+999002		999101|999201		Current quarter count greater than 5, or player has more than 100 items
+999003		(999101&999106)|999111		Own more than 100 Item 1 and more than 100 Item 2; or own more than 100 Live Item 3
+999101	3		[1, 1, 100]	Own more than 100 Type 1 items
+999102	3		[1, 2, 100]	Own more than or equal to 100 Type 1 items
+999103	3		[1, 3, 100]	Own 100 Type 1 items
+999104	3		[1, 4, 100]	Own less than or equal to 100 Type 1 items
+999105	3		[1, 5, 100]	Own less than 100 Type 1 items
+999106	3		[2, 1, 100]	Own more than 100 Type 2 items
+999107	3		[2, 2, 100]	Own more than or equal to 100 Type 2 items
+999108	3		[2, 3, 100]	Own 100 Type 2 items
+999109	3		[2, 4, 100]	Own less than or equal to 100 Type 2 items
+999110	3		[2, 5, 100]	Own less than 100 Type 2 items
+999111	3		[3, 1, 100]	Own more than 100 Type 3 items
+999112	3		[3, 2, 100]	Own more than or equal to 100 Type 3 items
+999113	3		[3, 3, 100]	Own 100 Type 3 items
+999114	3		[3, 4, 100]	Own less than or equal to 100 Type 3 items
+999115	3		[3, 5, 100]	Own less than 100 Type 3 items
+999201	4		[1, 5]	Current quarter count greater than 5
+999202	4		[3, 5]	Current quarter count equals 5
+999203	4		[5, 5]	Current quarter count less than 5
+999204	4		[3, 10]	Current quarter count equals 10
+999205	4		[3, 15]	Current quarter count equals 15
+999206	4		[3, 20]	Current quarter count equals 20
+999207	4		[3, 25]	Current quarter count equals 25
+999208		999204|999205|999206|999207		Current Round is 10/15/20/25
+999501	7		[1, 3]	Main City reached Lv.3?
+999502	7		[1, 4]	Main City reached Lv.4?
+999503	7		[1, 5]	Main City reached Lv.5?
+999504	7		[1, 6]	Main City reached Lv.6?
+999505	7		[1, 7]	Main City reached Lv.7?
+999506	7		[0, 3]	Main City failed to reach Lv.3?
+999507	7		[0, 4]	Main City failed to reach Lv.4?
+999508	7		[0, 5]	Main City failed to reach Lv.5?
+999509	7		[0, 6]	Main City failed to reach Lv.6?
+999510	7		[0, 7]	Main City failed to reach Lv.7?
+999601	3		[1, 2, 100]	Type 1 item current stock greater or equal to 100
+999602	8		[1, 1, 2, 100]	Type 1 item stock limit greater or equal to 100
+999603	8		[1, 100, 2, 100]	Type 1 item final price greater or equal to 100
+999604	8		[1, 200, 2, 100]	Type 1 item final production greater or equal to 100
+999605	3		[2, 2, 100]	Type 2 item current stock greater or equal to 100
+999606	8		[2, 1, 2, 100]	Type 2 item stock limit greater or equal to 100
+999607	8		[2, 100, 2, 100]	Type 2 item final price greater or equal to 100
+999608	8		[2, 200, 2, 100]	Type 2 item final production greater or equal to 100
+999609	3		[3, 2, 100]	Type 3 item current stock greater or equal to 100
+999610	8		[3, 1, 2, 100]	Type 3 item stock limit greater or equal to 100
+999611	8		[3, 100, 2, 100]	Type 3 item final price greater or equal to 100
+999612	8		[3, 200, 2, 100]	Type 3 item final production greater or equal to 100
+51001	10		[2, 5]	More than 5 Cities activated?
+51002	11		[2, 3]	More than 3 City Missions completed?
+51003	7		[1, 5]	Main City must be Lv.5 or above
+120101	7		[1, 5]	Main City must be Lv.5 or above
+120201	7		[1, 5]	Main City must be Lv.5 or above
+155201	7		[1, 5]	Main City must be Lv.5 or above
+120301	10		[2, 3]	Connect more than 3 cities
+120401	10		[2, 3]	Connect more than 3 cities
+120501	10		[2, 3]	Connect more than 3 cities
+120601	10		[2, 3]	Connect more than 3 cities
+12010101	7		[1, 6]	Main City must be Lv.6 or above
+12020101	7		[1, 6]	Main City must be Lv.6 or above
+12030101	10		[2, 3]	Connect more than 3 cities
+12040101	10		[2, 3]	Connect more than 3 cities
+12050101	11		[2, 4]	Complete more than 4 City Missions
+12060101	11		[2, 4]	Complete more than 4 City Missions
+12070101	13		[2, 2, 10000]	10000 Golden Shells required
+12080101	3		[1, 2, 250]	<color=#969190>Coconut </color> x250 required
+12090101	3		[2, 2, 500]	<color=#969190>Wood </color> x500 required
+12100101	3		[3, 2, 50]	<color=#cd934a>Petroleum</color> x50 required
+15210101	13		[2, 2, 30000]	30000 Golden Shells required
+15210102	13		[2, 2, 10000]	10000 Golden Shells required
+15410101	13		[2, 2, 10000]	10000 Golden Shells required
+15420101	13		[2, 2, 10000]	10000 Golden Shells required
+15430101	13		[2, 2, 10000]	10000 Golden Shells required
+15510101	13		[2, 2, 30000]	30000 Golden Shells required
+15510201	13		[2, 2, 30000]	30000 Golden Shells required
+15510301	13		[2, 2, 100000]	100000 Golden Shells required
+15520201	7		[1, 5]	Main City must be Lv.5 or above
+15520301	7		[1, 6]	Main City must be Lv.6 or above
+18010101	13		[2, 2, 5000]	5000 Golden Shells required
+18020101	13		[2, 2, 5000]	5000 Golden Shells required
+18030101	13		[2, 2, 5000]	5000 Golden Shells required
+18040101	13		[2, 2, 5000]	5000 Golden Shells required
+18050101	13		[2, 2, 5000]	5000 Golden Shells required
+18110101	3		[1, 2, 100]	<color=#fdc700>Coconut</color> x100 required
+18120101	3		[2, 2, 900]	<color=#969190>Wood </color> x900 required
+18130101	3		[3, 2, 60]	<color=#cd934a>Petroleum</color> x60 required
+18140101		18140102&18140103		<color=#fdc700>Coconut</color> x75 and <color=#969190>Wood</color> x225 required
+18140102	3		[1, 2, 75]	<color=#fdc700>Coconut</color> x75 required
+18140103	3		[2, 2, 225]	<color=#969190>Wood</color> x225 required
+18150101		18150102&18150103		<color=#fdc700>Coconut</color> x25 and <color=#969190>Wood</color> x675 required
+18150102	3		[1, 2, 25]	<color=#fdc700>Coconut</color> x25 required
+18150103	3		[2, 2, 675]	<color=#969190>Wood </color> x675 required
+18160101		18160102&18160103		<color=#969190>Wood</color> x675 and <color=#cd934a>Petroleum</color> x15 required
+18160102	3		[2, 2, 675]	<color=#969190>Wood </color> x675 required
+18160103	3		[3, 2, 15]	<color=#cd934a>Petroleum</color> x15 required
+18170101		18170102&18170103		<color=#969190>Wood</color> x225 and <color=#cd934a>Petroleum</color> x45 required
+18170102	3		[2, 2, 225]	<color=#969190>Wood</color> x225 required
+18170103	3		[3, 2, 45]	<color=#cd934a>Petroleum</color> x45 required
+18180101		18180102&18180103		<color=#fdc700>Coconut</color> x75 and <color=#cd934a>Petroleum</color> x15 required
+18180102	3		[1, 2, 75]	<color=#fdc700>Coconut</color> x75 required
+18180103	3		[3, 2, 15]	<color=#cd934a>Petroleum</color> x15 required
+18190101		18190102&18190103		<color=#fdc700>Coconut</color> x25 and <color=#cd934a>Petroleum</color> x45 required
+18190102	3		[1, 2, 25]	<color=#fdc700>Coconut</color> x25 required
+18190103	3		[3, 2, 45]	<color=#cd934a>Petroleum</color> x45 required
+20000000	4		[2, 1]	Current round count ≥1
+20000001	7		[1, 1]	Main City must be Lv.1 or above
+20000002	7		[1, 2]	Main City must be Lv.2 or above
+20000003	7		[1, 3]	Main City must be Lv.3 or above
+20000004	7		[1, 4]	Main City must be Lv.4 or above
+20000005	7		[1, 5]	Main City must be Lv.5 or above
+20000006	7		[1, 6]	Main City must be Lv.6 or above
+20000007	7		[1, 7]	Main City must be Lv.7 or above
+20000008	7		[1, 8]	Main City must be Lv.8 or above
+20000009	7		[1, 9]	Main City must be Lv.9 or above
+19010101	13		[2, 2, 10000]	10000 Golden Shells required
+19110101	13		[2, 2, 10000]	10000 Golden Shells required
+19310101	13		[2, 2, 10000]	10000 Golden Shells required
+19410101	13		[2, 2, 10000]	10000 Golden Shells required
+21010401	13		[2, 2, 10000]	10000 Golden Shells required
+21020101	13		[2, 2, 10000]	10000 Golden Shells required
+21020301	3		[1, 2, 500]	<color=#fdc700>Coconut</color> x500 required
+21030101	3		[1, 2, 500]	<color=#fdc700>Coconut</color> x500 required
+21030102	3		[1, 2, 500]	<color=#fdc700>Coconut</color> x500 required
+21031102	3		[1, 2, 500]	<color=#fdc700>Coconut</color> x500 required
+21031201	3		[1, 2, 500]	<color=#fdc700>Coconut</color> x500 required
+22010101	13		[2, 2, 2000000]	2000000 Golden Shells required
+1001	7		[1, 3]	Tutorial Stage - 3★ requirement - Main City reaches Lv.3
+1011	10		[2, 2]	Normal Stage 1 - 3★ requirement - Explore 2 Cities
+1012	7		[1, 5]	Normal Stage 1 - 3★ requirement - Main City reaches Lv.5
+1021	10		[2, 2]	Normal Stage 2 - 3★ requirement - Explore 2 Cities
+1022	7		[1, 5]	Normal Stage 2 - 3★ requirement - Main City reaches Lv.5
+1023	15		[2, 300000]	Normal Stage 2 - 3★ requirement - Earn 300000 Golden Shells
+1031	10		[2, 2]	Normal Stage 3 - 3★ requirement - Explore 2 Cities
+1032	7		[1, 7]	Normal Stage 3 - 3★ requirement - Main City reaches Lv.7
+1033	15		[2, 1500000]	Normal Stage 3 - 3★ requirement - Earn 1500000 Golden Shells
+1041	10		[2, 2]	Normal Stage 4 - 3★ requirement - Explore 2 Cities
+1042	7		[1, 7]	Normal Stage 4 - 3★ requirement - Main City reaches Lv.7
+1043	15		[2, 1500000]	Normal Stage 4 - 3★ requirement - Earn 1500000 Golden Shells
+1051	10		[2, 2]	Normal Stage 5 - 3★ requirement - Explore 2 Cities
+1052	7		[1, 7]	Normal Stage 5 - 3★ requirement - Main City reaches Lv.7
+1053	15		[2, 1500000]	Normal Stage 5 - 3★ requirement - Earn 1500000 Golden Shells
+1054	11		[2, 2]	1★ requirement changed to: Complete 2 City Missions
+1101	7		[1, 2]	Main City reaches 2★
+1102	15		[2, 5000]	Earn 5000 Golden Shells
+1103	7		[1, 3]	Main City reaches 3★
+1111	11		[2, 4]	Complete 4 City Missions
+1112	22		[0, 8]	Construct 8 buildings
+1113	7		[1, 5]	Main City reaches 5★
+1121	11		[2, 4]	Complete 4 City Missions
+1122	7		[1, 5]	Main City reaches 5★
+1123	15		[2, 700000]	Earn 700000 Golden Shells
+1131	17		[2, 6]	Purchase 6 islands
+1132	7		[1, 6]	Main City reaches 6★
+1133	15		[2, 8000000]	Earn 8000000 Golden Shells
+1141	22		[0, 5]	Construct 5 buildings
+1142	15		[2, 1000000]	Earn 1000000 Golden Shells
+1143	17		[2, 5]	Purchase 5 islands
+1201	15		[2, 100000]	Earn 100000 Golden Shells
+1202	22		[0, 20]	Construct 20 buildings
+1203	17		[2, 8]	Purchase 8 islands
+9001	19		[2, 1304, 3]	Stage 3, City 4, 3★ building bonus effect condition
+810001		810002&810003		Current round count ≥1 and ＜3
+810002	4		[2, 1]	Current round count ≥1
+810003	4		[5, 3]	Current round count ＜3
+810101		810102&810103		Current quarter count ≥1 and ＜6
+810102	4		[2, 1]	Current quarter count ≥1
+810103	4		[5, 6]	Current quarter count ＜6
+811101		811102&811103		Current quarter count ≥6 and ＜11
+811102	4		[2, 6]	Current quarter count ≥6
+811103	4		[5, 11]	Current quarter count ＜11
+812101		812102&812103		Current quarter count ≥11 and ＜16
+812102	4		[2, 11]	Current quarter count ≥11
+812103	4		[5, 16]	Current quarter count ＜16
+813101		813102&813103		Current quarter count ≥16 and ＜21
+813102	4		[2, 16]	Current quarter count ≥16
+813103	4		[5, 21]	Current quarter count ＜21
+814101	4		[2, 21]	Current quarter count ≥21
+815101		815102&815103		Current quarter count ≥1 and ＜5
+815102	4		[2, 1]	Current quarter count ≥1
+815103	4		[5, 5]	Current quarter count ＜5
+816101	4		[2, 5]	Current quarter count ≥5
+81010101	13		[2, 2, 5000]	5000 Golden Shells required
+81010102	13		[2, 2, 1500]	1500 Golden Shells required
+81011101	13		[2, 2, 6500]	6500 Golden Shells required
+81011102	13		[2, 2, 2600]	2600 Golden Shells required
+81011201	13		[2, 2, 8450]	8450 Golden Shells required
+81011202	13		[2, 2, 4225]	4225 Golden Shells required
+81011301	13		[2, 2, 8450]	8450 Golden Shells required
+82010101	13		[2, 2, 5000]	5000 Golden Shells required
+82010102	13		[2, 2, 1500]	1500 Golden Shells required
+82011101	13		[2, 2, 6500]	6500 Golden Shells required
+82011102	13		[2, 2, 2600]	2600 Golden Shells required
+82011201	13		[2, 2, 8450]	8450 Golden Shells required
+82011202	13		[2, 2, 4225]	4225 Golden Shells required
+82011301	13		[2, 2, 8450]	8450 Golden Shells required
+83010101	13		[2, 2, 8000]	8000 Golden Shells required
+83010102	13		[2, 2, 2400]	2400 Golden Shells required
+83011101	13		[2, 2, 10400]	10400 Golden Shells required
+83011102	13		[2, 2, 4160]	4160 Golden Shells required
+83011201	13		[2, 2, 13520]	13520 Golden Shells required
+83011202	13		[2, 2, 6760]	6760 Golden Shells required
+83011301	13		[2, 2, 13520]	13520 Golden Shells required
+81110101	13		[2, 2, 8000]	8000 Golden Shells required
+81110102	13		[2, 2, 2400]	2400 Golden Shells required
+81111101	13		[2, 2, 10400]	10400 Golden Shells required
+81111102	13		[2, 2, 4160]	4160 Golden Shells required
+81111201	13		[2, 2, 13520]	13520 Golden Shells required
+81111202	13		[2, 2, 6760]	6760 Golden Shells required
+81111301	13		[2, 2, 13520]	13520 Golden Shells required
+82110101	13		[2, 2, 10000]	10000 Golden Shells required
+82110102	13		[2, 2, 3000]	3000 Golden Shells required
+82111101	13		[2, 2, 13000]	13000 Golden Shells required
+82111102	13		[2, 2, 5200]	5200 Golden Shells required
+82111201	13		[2, 2, 16900]	16900 Golden Shells required
+82111202	13		[2, 2, 8450]	8450 Golden Shells required
+82111301	13		[2, 2, 16900]	16900 Golden Shells required
+83110101	13		[2, 2, 20000]	20000 Golden Shells required
+83110102	13		[2, 2, 6000]	6000 Golden Shells required
+83111101	13		[2, 2, 26000]	26000 Golden Shells required
+83111102	13		[2, 2, 10400]	10400 Golden Shells required
+83111201	13		[2, 2, 33800]	33800 Golden Shells required
+83111202	13		[2, 2, 16900]	16900 Golden Shells required
+83111301	13		[2, 2, 33800]	33800 Golden Shells required
+81210101	13		[2, 2, 40000]	40000 Golden Shells required
+81210102	13		[2, 2, 12000]	12000 Golden Shells required
+81211101	13		[2, 2, 52000]	52000 Golden Shells required
+81211102	13		[2, 2, 20800]	20800 Golden Shells required
+81211201	13		[2, 2, 67600]	67600 Golden Shells required
+81211202	13		[2, 2, 33800]	33800 Golden Shells required
+81211301	13		[2, 2, 67600]	67600 Golden Shells required
+82210101	13		[2, 2, 40000]	40000 Golden Shells required
+82210102	13		[2, 2, 12000]	12000 Golden Shells required
+82211101	13		[2, 2, 52000]	52000 Golden Shells required
+82211102	13		[2, 2, 20800]	20800 Golden Shells required
+82211201	13		[2, 2, 67600]	67600 Golden Shells required
+82211202	13		[2, 2, 33800]	33800 Golden Shells required
+82211301	13		[2, 2, 67600]	67600 Golden Shells required
+83210101	13		[2, 2, 60000]	60000 Golden Shells required
+83210102	13		[2, 2, 18000]	18000 Golden Shells required
+83211101	13		[2, 2, 78000]	78000 Golden Shells required
+83211102	13		[2, 2, 31200]	31200 Golden Shells required
+83211201	13		[2, 2, 101400]	101400 Golden Shells required
+83211202	13		[2, 2, 50700]	50700 Golden Shells required
+83211301	13		[2, 2, 101400]	101400 Golden Shells required
+81310101	13		[2, 2, 60000]	60000 Golden Shells required
+81310102	13		[2, 2, 18000]	18000 Golden Shells required
+81311101	13		[2, 2, 78000]	78000 Golden Shells required
+81311102	13		[2, 2, 31200]	31200 Golden Shells required
+81311201	13		[2, 2, 101400]	101400 Golden Shells required
+81311202	13		[2, 2, 50700]	50700 Golden Shells required
+81311301	13		[2, 2, 101400]	101400 Golden Shells required
+82310101	13		[2, 2, 80000]	80000 Golden Shells required
+82310102	13		[2, 2, 24000]	24000 Golden Shells required
+82311101	13		[2, 2, 104000]	104000 Golden Shells required
+82311102	13		[2, 2, 41600]	41600 Golden Shells required
+82311201	13		[2, 2, 135200]	135200 Golden Shells required
+82311202	13		[2, 2, 67600]	67600 Golden Shells required
+82311301	13		[2, 2, 135200]	135200 Golden Shells required
+83310101	13		[2, 2, 120000]	120000 Golden Shells required
+83310102	13		[2, 2, 36000]	36000 Golden Shells required
+83311101	13		[2, 2, 156000]	156000 Golden Shells required
+83311102	13		[2, 2, 62400]	62400 Golden Shells required
+83311201	13		[2, 2, 202800]	202800 Golden Shells required
+83311202	13		[2, 2, 101400]	101400 Golden Shells required
+83311301	13		[2, 2, 202800]	202800 Golden Shells required
+81410101	13		[2, 2, 200000]	200000 Golden Shells required
+81410102	13		[2, 2, 60000]	60000 Golden Shells required
+81411101	13		[2, 2, 260000]	260000 Golden Shells required
+81411102	13		[2, 2, 104000]	104000 Golden Shells required
+81411201	13		[2, 2, 338000]	338000 Golden Shells required
+81411202	13		[2, 2, 169000]	169000 Golden Shells required
+81411301	13		[2, 2, 338000]	338000 Golden Shells required
+82410101	13		[2, 2, 200000]	200000 Golden Shells required
+82410102	13		[2, 2, 60000]	60000 Golden Shells required
+82411101	13		[2, 2, 260000]	260000 Golden Shells required
+82411102	13		[2, 2, 104000]	104000 Golden Shells required
+82411201	13		[2, 2, 338000]	338000 Golden Shells required
+82411202	13		[2, 2, 169000]	169000 Golden Shells required
+82411301	13		[2, 2, 338000]	338000 Golden Shells required
+83410101	13		[2, 2, 350000]	350000 Golden Shells required
+83410102	13		[2, 2, 105000]	105000 Golden Shells required
+83411101	13		[2, 2, 455000]	455000 Golden Shells required
+83411102	13		[2, 2, 182000]	182000 Golden Shells required
+83411201	13		[2, 2, 591500]	591500 Golden Shells required
+83411202	13		[2, 2, 295750]	295750 Golden Shells required
+83411301	13		[2, 2, 591500]	591500 Golden Shells required
+81510101	13		[2, 2, 60000]	60000 Golden Shells required
+81510102	13		[2, 2, 18000]	18000 Golden Shells required
+81511101	13		[2, 2, 78000]	78000 Golden Shells required
+81511102	13		[2, 2, 31200]	31200 Golden Shells required
+81511201	13		[2, 2, 101400]	101400 Golden Shells required
+81511202	13		[2, 2, 50700]	50700 Golden Shells required
+81511301	13		[2, 2, 101400]	101400 Golden Shells required
+82510101	13		[2, 2, 80000]	80000 Golden Shells required
+82510102	13		[2, 2, 24000]	24000 Golden Shells required
+82511101	13		[2, 2, 104000]	104000 Golden Shells required
+82511102	13		[2, 2, 41600]	41600 Golden Shells required
+82511201	13		[2, 2, 135200]	135200 Golden Shells required
+82511202	13		[2, 2, 67600]	67600 Golden Shells required
+82511301	13		[2, 2, 135200]	135200 Golden Shells required
+83510101	13		[2, 2, 120000]	120000 Golden Shells required
+83510102	13		[2, 2, 36000]	36000 Golden Shells required
+83511101	13		[2, 2, 156000]	156000 Golden Shells required
+83511102	13		[2, 2, 62400]	62400 Golden Shells required
+83511201	13		[2, 2, 202800]	202800 Golden Shells required
+83511202	13		[2, 2, 101400]	101400 Golden Shells required
+83511301	13		[2, 2, 202800]	202800 Golden Shells required
+81610101	13		[2, 2, 200000]	200000 Golden Shells required
+81610102	13		[2, 2, 60000]	60000 Golden Shells required
+81611101	13		[2, 2, 260000]	260000 Golden Shells required
+81611102	13		[2, 2, 104000]	104000 Golden Shells required
+81611201	13		[2, 2, 338000]	338000 Golden Shells required
+81611202	13		[2, 2, 169000]	169000 Golden Shells required
+81611301	13		[2, 2, 338000]	338000 Golden Shells required
+82610101	13		[2, 2, 200000]	200000 Golden Shells required
+82610102	13		[2, 2, 60000]	60000 Golden Shells required
+82611101	13		[2, 2, 260000]	260000 Golden Shells required
+82611102	13		[2, 2, 104000]	104000 Golden Shells required
+82611201	13		[2, 2, 338000]	338000 Golden Shells required
+82611202	13		[2, 2, 169000]	169000 Golden Shells required
+82611301	13		[2, 2, 338000]	338000 Golden Shells required
+83610101	13		[2, 2, 350000]	350000 Golden Shells required
+83610102	13		[2, 2, 105000]	105000 Golden Shells required
+83611101	13		[2, 2, 455000]	455000 Golden Shells required
+83611102	13		[2, 2, 182000]	182000 Golden Shells required
+83611201	13		[2, 2, 591500]	591500 Golden Shells required
+83611202	13		[2, 2, 295750]	295750 Golden Shells required
+83611301	13		[2, 2, 591500]	591500 Golden Shells required
+910001	4		[2, 1]	Current round count ≥1
+910002		910004&910005		Current round count ≥3 and triggered promotion event once
+910003		910006&910007		Current round count ≥1 and ＜3
+910004	4		[2, 3]	Current round count ≥3
+910005	6		[1, 910001]	Prerequisite condition(s) completed
+910006	4		[2, 1]	Current round count ≥1
+910007	4		[5, 3]	Current round count ＜3
+910101		910102&910103		Main City 1★ or 2★
+910102	7		[1, 1]	Main City reaches 1★
+910103	7		[0, 3]	Main City under 3★
+920101		920102&920103		Main City between 3★ and 5★
+920102	7		[1, 3]	Main City reaches 3★
+920103	7		[0, 6]	Main City under 6★
+930101	7		[1, 6]	Main City reaches 6★
+940101	7		[1, 1]	Main City reaches 1★
+10201	6		[1, 10100]	Prerequisite event must be completed first
+10301	6		[1, 10201]	Prerequisite event must be completed first
+10501	6		[1, 10401]	Prerequisite event must be completed first
+10601	6		[1, 10502]	Prerequisite event must be completed first
+10701	6		[1, 10503]	Prerequisite event must be completed first
+10901	6		[1, 10802]	Prerequisite event must be completed first
+11001	6		[1, 10803]	Prerequisite event must be completed first
+11101	6		[1, 10901]	Prerequisite event must be completed first
+11103	6		[1, 11001]	Prerequisite event must be completed first
+11301	6		[1, 11202]	Prerequisite event must be completed first
+11401	6		[1, 11203]	Prerequisite event must be completed first
+11501	6		[1, 11301]	Prerequisite event must be completed first
+11601	6		[1, 11401]	Prerequisite event must be completed first
+11801	6		[1, 11701]	Prerequisite event must be completed first
+11901	6		[1, 11801]	Prerequisite event must be completed first
+30200	6		[1, 30101]	Prerequisite event must be completed first
+30211	6		[1, 30102]	Prerequisite event must be completed first
+30400	6		[1, 30301]	Prerequisite event must be completed first
+30411	6		[1, 30302]	Prerequisite event must be completed first
+30600	6		[1, 30501]	Prerequisite event must be completed first
+30611	6		[1, 30502]	Prerequisite event must be completed first
+30800	6		[1, 30701]	Prerequisite event must be completed first
+30811	6		[1, 30702]	Prerequisite event must be completed first
+31000	6		[1, 30901]	Prerequisite event must be completed first
+31011	6		[1, 30902]	Prerequisite event must be completed first
+31200	6		[1, 31101]	Prerequisite event must be completed first
+31211	6		[1, 31102]	Prerequisite event must be completed first
+31400	6		[1, 31301]	Prerequisite event must be completed first
+31411	6		[1, 31302]	Prerequisite event must be completed first
+31600	6		[1, 31501]	Prerequisite event must be completed first
+31611	6		[1, 31502]	Prerequisite event must be completed first
+31800	6		[1, 31701]	Prerequisite event must be completed first
+31811	6		[1, 31702]	Prerequisite event must be completed first
+32000	6		[1, 31901]	Prerequisite event must be completed first
+32011	6		[1, 31902]	Prerequisite event must be completed first
+91010101	13		[2, 2, 10000]	10000 Golden Shells required
+92010101	13		[2, 2, 50000]	50000 Golden Shells required
+93010101	13		[2, 2, 150000]	150000 Golden Shells required
+94010101	13		[2, 2, 150000]	150000 Golden Shells required
+2001	23		[1, 3]	Gain most profit from Coconuts within 3 rounds
+2002	23		[2, 3]	Gain most profit from Wood within 3 rounds
+2003	23		[3, 3]	Gain most profit from Petroleum within 3 rounds
+2004	28		[0, 1, 50000]	Earn more than 50000 Golden Shells in a single round
+2005	26		[1, 0, 5]	Coconut fluctuation <0
+2006	26		[2, 0, 5]	Wood fluctuation <0
+2007	26		[3, 0, 5]	Petroleum fluctuation <0
+2008	26		[1, 0, 1]	Coconut fluctuation <0
+2009	26		[2, 0, 1]	Wood fluctuation <0
+2010	26		[3, 0, 1]	Petroleum fluctuation <0
+3001	4		[1, 1]	Current quarter count >1
+3002	4		[1, 5]	Current quarter count greater than 5
+4001	22		[0, 3]	Less than 3 buildings constructed
+4002	22		[0, 8]	Less than 8 buildings constructed
+4003	22		[0, 12]	Less than 12 buildings constructed
+4004	17		[2, 2]	Less than 2 islands purchased
+4005	22		[0, 20]	Less than 20 buildings constructed
+4006	7		[1, 4]	Main City not upgraded to Lv.4
+4007	22		[0, 30]	Less than 30 buildings constructed
+4008	17		[2, 5]	Less than 5 islands purchased
+4009	7		[1, 9]	Main City not upgraded to Lv.9
+4010	18		[1504]	Polarized Island not purchased
+1010001	13		[2, 2, 1000]	1000 Golden Shells required
+1020101	13		[2, 2, 5000]	5000 Golden Shells required
+1030101	13		[2, 2, 10000]	10000 Golden Shells required
+1030102	13		[2, 2, 8000]	8000 Golden Shells required
+1170102	13		[2, 2, 1000]	1000 Golden Shells required
+1401	13		[2, 2, 100000]	100000 Golden Shells required
+1402	13		[2, 2, 200000]	200000 Golden Shells required
+2010001	13		[2, 2, 1000]	1000 Golden Shells required
+3050001	13		[2, 2, 2000]	2000 Golden Shells required
+3070101	13		[2, 2, 2000]	2000 Golden Shells required
+3130001	13		[2, 2, 500]	500 Golden Shells required
+3150001	13		[2, 2, 5000]	5000 Golden Shells required
+3190001	13		[2, 2, 5000]	5000 Golden Shells required

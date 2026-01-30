@@ -1,0 +1,78 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory204.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				{3: 'You have an appointment to meet Noan this afternoon in Constellia.'}
+4	4		301							"{3: ""You show up early at the scheduled spot, but he's nowhere to be found. You figure you'll kill some time at the bar next door—and end up spotting him there.""}"
+5	5		301							"{3: 'He\'s surrounded by a bunch of Cargo Crew members who are all swearing under their breath. The table is covered with playing cards and dice, and there\'s a pile of ""loot"" stacked around him.'}"
+6	6		201							{1: '1', 2: '500136'}
+7	7		301							"{1: '1', 2: 'Cargo Crew Member A', 3: ""Come on, let's go again! I've never seen anyone stay this ******* lucky playing against me. Didn't think some Construct from Babylonia would be pulling off card tricks!"", 4: '1'}"
+8	8		201							{1: '1', 2: '500506', 3: '4'}
+9	9		301							"{1: '1', 2: 'Noan', 3: ""I can't right now. I can play again tomorrow, but I've got an appointment coming up."", 4: '1'}"
+10	10		401							{1: '2', 2: '4079'}
+11	11		502							{1: 'RImgBg1Shake'}
+12	12		201							{1: '1', 2: '500136'}
+13	13		301							"{1: '1', 2: 'Cargo Crew Member A', 3: ""So you strut around like you're hot stuff and then try to bail? The **** you have an appointment."", 4: '1'}"
+14	14		301							"{3: ""The group looks ready to explode with anger, but they can't do a thing against the Construct, so they just slam the table and hurl insults.""}"
+15	15		302							{2: 'Sorry, but he really has one right now. Could you come back another time?', 3: '16'}
+16	16		301							"{2: 'Cargo Crew Member A', 3: ""Aren't you guys wanna f******..."", 4: '1'}"
+17	17		202							{1: '1', 6: '1'}
+18	18		201							{1: '1', 2: '500136', 4: '-400'}
+19	19		201							{1: '2', 2: '500454', 4: '400'}
+20	20		301							{1: '1', 2: 'Cargo Crew Member B', 3: 'Hey, boss...', 4: '2'}
+21	21		301							"{3: ""He grabs his teammate's arm and gestures toward Noan, who keeps his head lowered over the card table and has his hand on his Rev Blade.""}"
+22	22		301				DialogDisable			"{2: 'Cargo Crew Member A', 3: ""I'll let you off this time!"", 4: '1'}"
+23	23		202							{1: '1', 2: '2'}
+24	24		302							{2: '...', 3: '25'}
+25	25		201							{1: '1', 2: '500506'}
+26	26		301			DialogEnable				"{1: '1', 2: 'Noan', 3: ""...Why'd you get here so early?"", 4: '1'}"
+27	27		302							{2: 'Am I bothering you?', 3: '28'}
+28	28		301							"{2: 'Noan', 3: ""No, it's just a little chaotic here."", 4: '1'}"
+29	29		301							{3: 'You look at the scattered playing cards on the table and remember how Noan always seems incredibly lucky at games like this...'}
+30	30		302							"{2: ""Well, since I'm not bothering you, why don't you join me for a round?"", 3: '31'}"
+31	31		204							{1: '1', 2: '1'}
+32	32		301							"{2: 'Noan', 3: 'Sure. Should we go with that simple ""guess higher or lower"" game we tried before? We\'ll take turns guessing, and whoever messes up first loses.', 4: '1'}"
+33	33		302							{2: 'Alright.', 3: '34'}
+34	34		301							{3: 'With a smile, Noan picks up the deck. Like last time, he only keeps the heart suit. After a quick shuffle, he places the pile in the middle, draws the top card, and flips it over—revealing the smallest heart: the Ace.'}
+35	35		302							{2: 'I can only guess high for the next card.', 3: '36'}
+36	36		204							{1: '1'}
+37	37		301							{3: 'Noan nods, then draws a new card—the Seven of Hearts.'}
+38	38		301							"{2: 'Noan', 3: ""Hmm... I'll guess high too."", 4: '1'}"
+39	39		301							{3: 'Following the sequence, the next card is the Three of Hearts.'}
+40	40		204							{1: '1', 2: '1'}
+41	41		301							{2: 'Noan', 3: 'I lost.', 4: '1'}
+42	42		301							"{3: 'Noan smiles calmly and sets the card on the table. If he weren\'t sitting right in the middle of all his ""spoils,"" this scene would look pretty convincing.'}"
+43	43		302							"{2: ""Noan, what's the next card after the Three of Hearts?"", 3: '44'}"
+44	44		204							{1: '1'}
+45	45		301							"{2: 'Noan', 3: ""I don't know."", 4: '1'}"
+46	46		302							"{2: ""You think I'd believe that?"", 3: '47'}"
+47	47		301							"{2: 'Noan', 3: ""If you're talking about what you saw when you walked in... they were cheating at the table, and I just decided to play along with them."", 4: '1'}"
+48	48		301							"{2: 'Noan', 3: ""But with you, it's just a normal game. No need to prep anything in advance."", 4: '1'}"
+49	49		301							"{3: ""If that's really how it is, he wouldn't be losing so fast. Then again, knowing him, even if you press further, he'll probably change the subject.""}"
+50	50		302							"{2: ""Let's switch things up. If you guess the next card correctly, I'll grant you one request."", 3: '51'}"
+51	51		204							{1: '1', 2: '2'}
+52	52		301							"{3: ""He places a hefty stack of chips on the table and flashes the remaining deck at Noan. After a moment's silence, he sighs, and then smiles like he's just hatched a plan.""}"
+53	53		204							{1: '1', 2: '1'}
+54	54		301							"{2: 'Noan', 3: ""For real? You're not gonna regret this?"", 4: '1'}"
+55	55		302							{2: 'Totally serious. Anything you want.', 3: '56', 4: 'Just... keep it within reason, okay?', 5: '56'}
+56	56		204							{1: '1'}
+57	57		301							"{2: 'Noan', 3: ""Alright then... it's the Seven of Hearts."", 4: '1'}"
+58	58		301							"{3: ""You glance at the card hidden in your hand, and sure enough, it's the Seven of Hearts.""}"
+59	59		301							"{3: ""For the next draw, he doesn't go in order but picks one straight from the middle. He tilts his head for a moment, then calls out the right answer again.""}"
+60	60		302							"{2: ""That's correct again. Do these cards have some kind of marking on them?"", 3: '61'}"
+61	61		301							"{2: 'Noan', 3: ""Markings are definitely an option, but this deck doesn't have any. I used a false shuffle."", 4: '1'}"
+62	62		301							"{2: 'Noan', 3: ""This trick makes it look like I'm shuffling, but it doesn't actually change the order of the cards. As long as I keep track of the original sequence, I can always tell what the next one will be."", 4: '1'}"
+63	63		302							"{2: ""What've you been learning lately...?"", 3: '64'}"
+64	64		301							{2: 'Noan', 3: 'My teacher showed me this ages ago. This kind of game helps you fit right in and get everyone talking.', 4: '1'}
+65	65		302							"{2: ""Alright, fair's fair. I lost the bet—so what's your request?"", 3: '66'}"
+66	66		204							{1: '1', 2: '1'}
+67	67		301							"{2: 'Noan', 3: ""I really want to chat with you more. How about we make our date last a little longer? We'll see the movie we planned, then grab dinner afterward."", 4: '1'}"
+68	68		302							"{2: ""That's it? I was planning to spend the rest of the day with you anyway."", 3: '69', 4: ""Sure, let's head out."", 5: '77'}"
+69	69		301							{2: 'Noan', 3: 'Hmm... well then...', 4: '1'}
+70	70		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+71	71		203							{1: '1', 2: '0.4', 5: '-80'}
+72	72		401							{1: '2', 2: '1516'}
+73	73		401							{1: '1', 2: '36'}
+74	74		202							{1: '1'}
+75	75		301							{3: 'Noan steps forward and gently covers your eyes with his hand.'}
+76	76		301		1		AniZhuanchangBegin			{2: 'Noan', 3: 'Commandant, please close your eyes.'}
+77	77		502		1					{1: 'AniZhuanchangBegin'}

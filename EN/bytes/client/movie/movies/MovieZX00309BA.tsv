@@ -1,0 +1,33 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory15.jpg'}
+2	100		401							{1: '1', 2: '102'}
+3	2		201							{1: '1', 2: '1011001'}
+4	3		301			DialogEnable				{1: '1', 2: 'Lee', 3: 'Wait, the enemy concentration is high near our destination.', 4: '1'}
+5	4		301							"{2: 'Lee', 3: ""If we were to move all at once, we'd likely be found out and surrounded, even with EM Camo protection."", 4: '1'}"
+6	5		301							"{2: 'Lee', 3: ""But if we split up, we can't cover each other if we were found."", 4: '1'}"
+7	6		201							{1: '1', 2: '1031001'}
+8	7		301							{1: '1', 2: 'Liv', 3: 'Then... what shall we do?', 4: '1'}
+9	8		201							{1: '1', 2: '1011001'}
+10	9		301							{1: '1', 2: 'Lee', 3: 'Theoretically speaking, if the energy output is adaptively stabilized, then it is possible to destroy enemies even with EM Camo on.', 4: '1'}
+11	10		301							{2: 'Lee', 3: 'The candidate will have to be skilled in combative techniques.', 4: '1'}
+12	11		203							{1: '1', 2: '0.25', 3: '-400'}
+13	12		201							{1: '2', 2: '1081001', 4: '400'}
+14	13		301							{1: '1', 2: 'Kamui', 3: 'Me! I volunteer for this position!', 4: '2'}
+15	14		204							{1: '1', 2: '10'}
+16	15		301							{2: 'Lee', 3: 'Your weapon makes too much noise, the vibrations themselves will already alert the enemies.', 4: '1'}
+17	101		204							{1: '1'}
+18	16		301							{2: 'Kamui', 3: 'Aww...', 4: '2'}
+19	17		202							{1: '2', 6: '1'}
+20	18		203							{1: '1', 2: '0.25'}
+21	19		301							"{2: 'Lee', 3: ""My weapons and Liv's too have a high energy output, so we're unfit for this mission as well."", 4: '1'}"
+22	20		301							{2: 'Lee', 3: 'Only Lucia can soundlessly destroy enemies with her weapon and techniques.', 4: '1'}
+23	21		201							{1: '1', 2: '1081001'}
+24	22		301							{1: '1', 2: 'Kamui', 3: 'That makes sense!', 4: '1'}
+25	23		201							{1: '1', 2: '1021001'}
+26	24		301							"{1: '1', 2: 'Lucia', 3: ""...I'm always ready."", 4: '1'}"
+27	25		201							{1: '1', 2: '1011001'}
+28	26		301							"{1: '1', 2: 'Lee', 3: ""We'll be counting on you, Lucia."", 4: '1'}"
+29	27		201							{1: '1', 2: '1031001'}
+30	28		301							{1: '1', 2: 'Liv', 3: 'Please... be careful.', 4: '1'}
+31	29		201							{1: '1', 2: '1021001'}
+32	30		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Lucia', 3: ""I will, don't worry."", 4: '1'}"

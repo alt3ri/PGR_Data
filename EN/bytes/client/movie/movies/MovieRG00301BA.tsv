@@ -1,0 +1,113 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory196.png'}
+2	2		401							{1: '1', 2: '210'}
+3	3		201							{1: '1', 2: '1081001', 3: '2', 4: '-400'}
+4	4000		401							{1: '2', 2: '106004'}
+5	5		301			DialogEnable				"{1: '1', 2: 'Kamui', 3: ""Alright, that's the end of our mission here. Hooray! Time to enjoy the holiday!"", 4: '1'}"
+6	6		301							{3: 'After checking his gear, Kamui collapsed to the ground, lazily asking our opinions like a Labrador.'}
+7	4001		203							{1: '1', 2: '0.25', 3: '-400'}
+8	4002		201							{1: '2', 2: '1031001', 4: '400'}
+9	7		301							"{1: '1', 2: 'Liv', 3: ""But the HQ asked us to be on stand-by... I don't think we should enjoy ourselves too much..."", 5: '2'}"
+10	8		301							{2: 'Kamui', 3: 'Just tell them we are maintaining the equipment. What do you think, Commandant?', 5: '1'}
+11	4003		302							{2: 'What equipment?', 3: '2000', 4: 'You definitely look suspicious...', 5: '2002'}
+12	2000	2001	202							{1: '1', 2: '2'}
+13	2001	9	201							{1: '1', 2: '500026'}
+14	9	2004	301							{1: '1', 2: 'Lee', 3: 'I think he is referring to the arcade machines we saw earlier.', 4: '1'}
+15	2002	2003	202							{1: '1', 2: '2'}
+16	2003	10	201							{1: '1', 2: '500026'}
+17	10	2004	301							{1: '1', 2: 'Lee', 3: 'I think he wants us to all play arcade games together.', 4: '1'}
+18	2004		203							{1: '1', 2: '0.25', 3: '400'}
+19	4004		201							{1: '2', 2: '500166', 4: '-400'}
+20	11		301							{1: '1', 2: 'Lucia', 3: 'Lee, how are the supplies?', 4: '2'}
+21	12		301							"{2: 'Lee', 3: ""All good. We still have Vera here. She has access to Kurono's express transport lines."", 4: '1'}"
+22	13		301							"{2: 'Lucia', 3: 'So this ""enjoyment"" you are talking about... Is just playing games together?', 4: '2'}"
+23	4005		203							{1: '1', 2: '0.25', 3: '600'}
+24	4006		203							{1: '2', 2: '0.25', 3: '-600'}
+25	4007		201							{1: '3', 2: '1081001', 3: '1'}
+26	14		301							"{1: '1', 2: 'Kamui', 3: ""Correct! Plus, I asked Miss Celica to secretly modify the game. I'm sure it's more fun than ever now."", 4: '3'}"
+27	4008		302							"{2: 'Somehow I am a bit worried with the ""modify"" part.', 3: '15', 4: 'Have you played it yourself?', 5: '16'}"
+28	15	17	301							"{2: 'Kamui', 3: ""What's there to worry about? Oh, I was quite surprised with the technologies she used though."", 4: '3'}"
+29	16	17	301							"{2: 'Kamui', 3: ""Of course not. It's more fun when we play it from scratch together."", 4: '3'}"
+30	17		301							{2: 'Kamui', 3: 'So, what do you think?', 4: '3'}
+31	18		301							"{2: 'Lucia', 3: ""I don't mind going."", 4: '2'}"
+32	19		301							{2: 'Lee', 3: 'Lucia?', 4: '1'}
+33	20		301							"{2: 'Lucia', 3: ""It's necessary to have a break from work occasionally. The HQ had already sent other teams to take over. We just need to not become addicted to the game."", 4: '2'}"
+34	21		301							{2: 'Lucia', 3: 'What do you think, Commandant?', 4: '2'}
+35	4009		302							"{2: ""If Lucia's alright with it..."", 3: '22', 4: 'Just let Kamui do what he wants.', 5: '23'}"
+36	22	24	301							{2: 'Kamui', 3: 'Hooray!', 4: '3'}
+37	23	24	301							"{2: 'Kamui', 3: ""Do what I want... I'm not a kid, Commandant."", 4: '3'}"
+38	24		301							"{2: 'Kamui', 3: ""Let's hurry up then. There are six of us, including Commandant. We can split into two teams of three."", 4: '3'}"
+39	25		301							"{2: 'Lee', 3: ""You never mentioned teams... Anyway, where's the sixth member you are talking about? There are only five of us!"", 4: '1'}"
+40	26		301							{2: 'Kamui', 3: 'Oh, Camu was also showing a lot of interest. But he is already in the game now.', 4: '3'}
+41	27		301							"{2: 'Lee', 3: ""...Really? Can't he wait?"", 4: '1'}"
+42	28		301							"{2: 'Kamui', 3: ""Don't worry, he seems to be just watching the opening animation again and again."", 4: '3'}"
+43	4010		302							"{2: ""Doesn't he have anything better to do..."", 3: '29', 4: 'We better not keep him waiting then.', 5: '30'}"
+44	29	31	301							{2: 'Lucia', 3: 'I think maybe Camu just likes that animation.', 4: '2'}
+45	30	31	301							{2: 'Lucia', 3: 'This is also a good opportunity for us to get along with Camu. Good thinking, Commandant.', 4: '2'}
+46	31		301							{2: '???', 3: 'Wait a sec.'}
+47	32		301							{2: 'Kamui', 3: 'Not again?', 4: '3'}
+48	33		301							{3: 'Just when Kamui was about to take the team forward, another voice from behind stopped everybody once again. Kamui complained as he turned back.'}
+49	4011		202							{1: '1', 2: '2', 3: '3'}
+50	4012		201							{1: '1', 2: '500168', 3: '1', 4: '400'}
+51	4013		201							{1: '2', 2: '500196', 4: '-400'}
+52	34		301							"{1: '1', 2: 'Vera', 3: ""You're up to something fun, aren't you? Mind if I join?"", 4: '1'}"
+53	35		301							"{2: 'Karenina', 3: 'It\'s ""us"", Vera.', 4: '2'}"
+54	36		301							{3: 'Under the sun were two Constructs wearing environment-specific Coatings. Vera and Karenina never stopped quarreling. They seemed to be on an operation together.'}
+55	4014		202							{1: '1', 2: '2'}
+56	4015		201							{1: '1', 2: '500166'}
+57	37		301							{1: '1', 2: 'Lucia', 3: 'Karenina, Vera, are you doing something together?', 4: '1'}
+58	4016		202							{1: '1'}
+59	4017		201							{1: '1', 2: '500168', 3: '1', 4: '400'}
+60	4018		201							{1: '2', 2: '500196', 4: '-400'}
+61	38		301							"{1: '1', 2: 'Karenina', 3: ""That's none of your business. But I heard you were going to slack off! Count me in!"", 4: '2'}"
+62	39		301							"{2: 'Vera', 3: 'It\'s ""us"", remember?', 4: '1'}"
+63	40		301							{2: 'Karenina', 3: 'Screw you!', 4: '2'}
+64	41		301							"{3: ""They didn't seem to be getting along at all. In fact, I felt they were about to start fighting in the next moment.""}"
+65	4019		202							{1: '1', 2: '2'}
+66	4020		201							{1: '1', 2: '500166'}
+67	42		301							"{1: '1', 2: 'Lucia', 3: ""We are going to try this game that Kamui recommended. I don't mind if you come along, but can the game fit so many of us?"", 4: '1'}"
+68	4021		203							{1: '1', 2: '0.25', 3: '400'}
+69	4022		201							{1: '2', 2: '1081001', 4: '-400'}
+70	43		301							"{1: '1', 2: 'Kamui', 3: ""Shouldn't be a problem. I don't see any limit on the instructions, and we could do two teams of four."", 4: '2'}"
+71	44		301							{2: 'Lucia', 3: 'Okay then. Speaking of which, you mentioned teams... Does it mean that we will play against one another in this game?', 4: '1'}
+72	45		301							{2: 'Kamui', 3: 'Celica said it was more like a traditional role-playing game. I guess the teams are just to compete with each other for fast clearing or something similar.', 4: '2'}
+73	4023		202							{1: '1', 2: '2'}
+74	4024		201							{1: '1', 2: '500168', 3: '1'}
+75	46		301							{1: '1', 2: 'Vera', 3: 'Shall we spice it up a little then? Like, the winning team can make the losing team do one thing.', 4: '1'}
+76	4025		203							{1: '1', 2: '0.25', 3: '400'}
+77	4026		201							{1: '2', 2: '1031001', 4: '-400'}
+78	47		301							{1: '1', 2: 'Liv', 3: 'What? No...', 4: '2'}
+79	4027		201							{1: '2', 2: '500026', 4: '-400'}
+80	48		301							{1: '1', 2: 'Lee', 3: 'Are you planning something evil again, Vera?', 4: '2'}
+81	49		301							{2: 'Vera', 3: 'No way. I said just to spice things up a little for fun.', 4: '1'}
+82	50		301							{3: 'Somehow, Vera kept staring at me while she was talking.'}
+83	4028		201							{1: '2', 2: '500166', 4: '-400'}
+84	51		301							"{2: 'Lucia', 3: ""Hmm... It's up to Commandant to decide."", 4: '2'}"
+85	4029		302							"{2: 'Alright, but the request must be reasonable.', 3: '52', 4: ""If you don't mind."", 5: '53'}"
+86	52	3000	301							"{2: 'Vera', 3: ""Reasonable, huh... Fine, let's just keep it that way, Commandant of Gray Raven."", 4: '1'}"
+87	53	3000	301							"{2: 'Lucia', 3: ""I think it's okay, because I have no plan to lose. Aren't you the same, Commandant?"", 4: '2'}"
+88	3000		201							{1: '1', 2: '1081001', 3: '2', 4: '400'}
+89	54		301							"{1: '1', 2: 'Kamui', 3: ""I'm okay either way. Can we just go?"", 4: '1'}"
+90	55		301							"{2: 'Lucia', 3: ""Yeah, let's go!"", 4: '2'}"
+91	4030		201							{1: '1', 2: '500026', 4: '400'}
+92	56		301							{1: '1', 2: 'Lee', 3: 'I never thought we would all be playing a game together...', 4: '1'}
+93	57		301				AniZhuanchangBegin			{2: 'Lucia', 3: 'I think it will be a good experience.', 4: '2'}
+94	4031		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+95	5001		202							{1: '1', 2: '2'}
+96	58		301			AniZhuanchangEnd				{3: '————'}
+97	59		301							"{3: ""After arriving at the arcade game center, everyone followed Kamui's instructions to create their characters and put on their connectors.""}"
+98	60		301							{2: 'Lee', 3: 'Kamui, how are the teams assigned?'}
+99	61		301							{3: 'Lee asked Kamui in the dark.'}
+100	62		301							{2: 'Kamui', 3: 'Celica said the system would randomly assign players to teams.'}
+101	63		301							{2: 'Lee', 3: 'Does it mean that we may be playing against Commandant?'}
+102	64		301							"{2: 'Kamui', 3: ""Yeah, it's possible. But I'm not going to give in, even if Commandant is my enemy.""}"
+103	4032		302							"{2: 'Maybe just a little?', 3: '65', 4: ""Don't blame me then."", 5: '66'}"
+104	65	67	301							"{2: 'Kamui', 3: ""There's no such option in the game, Commandant.""}"
+105	66	67	301							{2: 'Kamui', 3: 'Hmph, you sound very confident, Commandant.'}
+106	67		301							{2: 'Kamui', 3: 'Anyway, this game is fairly free, but bear in mind that players cannot kill important NPCs.'}
+107	68		301							"{3: ""It's a common practice in many open world games. Some NPCs will mess up the entire game if they are killed by players.""}"
+108	69		301							{3: 'Kamui completed some basic game settings. The arcade machines stared.'}
+109	70		301							{2: 'System', 3: 'Starting... Loading game—Le*end...of...H*ro...X'}
+110	71		301							{3: 'After some stuttering electrical sounds, a mysterious title was displayed.'}
+111	72		301							"{3: '""Legend of the Executor - GR"" was the title. Moments later, it was blurred and a few more words showed up, getting larger and larger...'}"
+112	73		301		1		AniZhuanchangBegin			"{3: '""Romance of the Kingdoms — Overlord\'s Conquest"".'}"

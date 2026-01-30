@@ -1,0 +1,156 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg'}
+2	2		401							{1: '1', 2: '6245'}
+3	3		201							{1: '1', 2: '501389'}
+4	4		301			DialogEnable				{1: '1', 2: 'Melinoe', 3: '...', 4: '1'}
+5	5		204							{1: '1'}
+6	6		301							"{2: 'Melinoe', 3: ""It's all right. She's... probably far from here by now."", 4: '1'}"
+7	7		202							{1: '1'}
+8	8		301							{3: 'With a rueful smile, she struggles to her feet.'}
+9	9		201							{1: '1', 2: '501385', 3: '12'}
+10	10		301							{1: '1', 2: 'Liv', 3: 'Why would you do this...?', 4: '1'}
+11	11		202							{1: '1', 6: '1'}
+12	12		201							{1: '1', 2: '501389'}
+13	13		301							{1: '1', 2: 'Melinoe', 3: 'Why...?', 4: '1'}
+14	14		301							"{2: 'Melinoe', 3: ""I don't know."", 4: '1'}"
+15	15		204							{1: '1', 2: '8'}
+16	16		301							"{2: 'Melinoe', 3: 'Maybe it was to atone for Aisling\'s death. Or to feel a little more... ""human."" Or perhaps it was just a way to give a love that had nowhere else to go...', 4: '1'}"
+17	17		204							{1: '1', 2: '14'}
+18	18		301							"{2: 'Melinoe', 3: ""Why did I do it? I don't really know myself..."", 4: '1'}"
+19	19		204							{1: '1', 2: '4'}
+20	20		301							"{2: 'Melinoe', 3: ""In the end... aren't they all just different forms of love?"", 4: '1'}"
+21	21		202							{1: '1', 6: '1'}
+22	22		201							{1: '1', 2: '501385', 3: '4'}
+23	23		301							{1: '1', 2: 'Liv', 3: '...', 4: '1'}
+24	24		202							{1: '1', 6: '1'}
+25	25		201							{1: '1', 2: '501389', 3: '8'}
+26	26		301							{1: '1', 2: 'Melinoe', 3: 'Maybe this is a kind of release, too.', 4: '1'}
+27	27		401							{1: '2', 2: '5810'}
+28	28		301							"{3: ""Her metal joints groan in protest. Just as Melinoe said herself, she wasn't built for combat. She can only fight using her own life.""}"
+29	29		402							{1: '5810'}
+30	30		204							{1: '1'}
+31	31		301							"{2: 'Melinoe', 3: ""Liv, you've gone further and seen more than I have. So, can you tell me..."", 4: '1'}"
+32	32		301							{2: 'Melinoe', 3: 'Do mechanoids have souls?', 4: '1'}
+33	33		202							{1: '1'}
+34	34		201							{1: '1', 2: '501385', 3: '7'}
+35	35		301							{1: '1', 2: 'Liv', 3: 'Melinoe...?!', 4: '1'}
+36	36		202							{1: '1'}
+37	37		301							{3: 'Before anyone can react, Melinoe presses the self-destruct button, a pained smile on her lips.'}
+38	38		201							{1: '1', 2: '501389', 3: '2'}
+39	39		301							{1: '1', 2: 'Melinoe', 3: 'Goodbye... Aisling...', 4: '1'}
+40	40		202							{1: '1', 6: '1'}
+41	41		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+42	42		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1210.jpg'}
+43	43		401							{1: '2', 2: '2647'}
+44	44		301			RImgBg1Shake				{3: 'BOOM—!'}
+45	45		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab', 2: '2'}
+46	46		401							{1: '2', 2: '4537'}
+47	47		301			RImgBg1Shake	AniZhuanchangBegin			{3: 'A violent convulsion tears through the mine, the thunderous roar echoing for a long moment before crumbling into silence.'}
+48	48		502							{1: 'DialogDisable'}
+49	49		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg'}
+50	50		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab'}
+51	51		401						2000.0	{1: '1', 2: '36'}
+52	52		401							{1: '1', 2: '169'}
+53	53		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+54	54		302			AniZhuanchangEnd				{2: '...', 3: '55', 4: 'Cough...', 5: '55'}
+55	55		301			DialogEnable				{3: 'As the clouds of dust and smoke slowly part, Melinoe is nowhere to be seen.'}
+56	56		201							{1: '1', 2: '501385', 3: '14'}
+57	57		301							"{1: '1', 2: 'Liv', 3: ""...She's here."", 4: '1'}"
+58	58		202							{1: '1'}
+59	59		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+60	60		301				AniZhuanchangBegin			{3: 'From the collapsed rubble, Liv retrieves a data storage box and lets out a weary sigh.'}
+61	61		304			AniZhuanchangEnd				{1: 'That child used her.', 2: 'ffffffff', 3: '0.4', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg', 7: '1'}
+62	62		304							{1: 'By exploiting her love to fulfill its own desires.', 2: 'ffffffff', 3: '0.5', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg', 7: '1'}
+63	63		304							"{1: ""It all began when that little, strange creature of unknown origin appeared by the grave of Melinoe's child."", 2: 'ffffffff', 3: '1.1', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg', 7: '1'}"
+64	64		304							{1: 'Melinoe took it in and poured all her love into it.', 2: 'ffffffff', 3: '0.6', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg', 7: '1', 8: '1'}
+65	65		304							"{1: 'And the creature... it wanted. It desired love, it needed to ""be nurtured,"" it craved a safe home.', 2: 'ffffffff', 3: '1.3', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg', 7: '1'}"
+66	66		304							{1: 'So, Melinoe provided. With everything she could possibly obtain.', 2: 'ffffffff', 3: '0.4', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg', 7: '1'}
+67	67		304				AniZhuanchangBegin			{1: 'She wove an enormous, intricate web to wrap the child inside it... and in doing so, became trapped herself.', 2: 'ffffffff', 3: '1.3', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg', 7: '1', 8: '1', 9: '1'}
+68	68		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1340.jpg'}
+69	69		301			AniZhuanchangEnd	DialogDisable			"{3: 'After searching the area thoroughly, the two of you fail to find any trace of ""Aisling"".'}"
+70	70		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+71	71		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6001_17.jpg'}
+72	72		301			DialogEnable				"{3: ""Liv collects the last metallic fragments of Melinoe, cleansing them with tender care. In a final act of grace, she lays them to rest in the ground beside Aisling's gravestone, uniting a mother and child in death.""}"
+73	73		201							{1: '1', 2: '501385', 3: '16'}
+74	74		301							{1: '1', 2: 'Liv', 3: 'Perhaps now... Aisling can rest a little more peacefully.', 4: '1'}
+75	75		202							{1: '1'}
+76	76		301				AniZhuanchangBegin			{3: 'In this dream, there will be no parents who adopt her just to exploit resources, only a mother who truly loves her.'}
+77	77		401						2000.0	{1: '1', 2: '36'}
+78	78		401							{1: '1', 2: '175'}
+79	79		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+80	80		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1347.jpg'}
+81	81		301			AniZhuanchangEnd				"{3: ""With Melinoe's disappearance, the attacks on Liv's M.I.N.D. and your Mind Beacon cease.""}"
+82	82		201							{1: '1', 2: '501385', 3: '12'}
+83	83		301							{1: '1', 2: 'Liv', 3: 'You were right, Commandant. That child was the one behind it all.', 4: '1'}
+84	84		204							{1: '1', 2: '3'}
+85	85		301							"{2: 'Liv', 3: ""The illusions Melinoe wove... they must have been created using the child's power."", 4: '1'}"
+86	86		302							{2: 'But... why are there still minor fluctuations in your M.I.N.D.?', 3: '87'}
+87	87		204							{1: '1', 2: '8'}
+88	88		301							{2: 'Liv', 3: '...It might be related to something that child left behind.', 4: '1'}
+89	89		302							{2: 'Something she left behind?', 3: '90', 4: 'What did you do?', 5: '90'}
+90	90		202							{1: '1', 6: '1'}
+91	91		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+92	92		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2601_11.jpg'}
+93	93		501							{1: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab', 2: '2'}
+94	94		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+95	95		301							"{3: ""At the other end of your Mind Beacon, Liv's M.I.N.D. gently rises and falls.""}"
+96	96		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+97	97		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1347.jpg'}
+98	98		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab'}
+99	99		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+100	100		401							{1: '2', 2: '558'}
+101	101		201							{1: '1', 2: '501385', 3: '12', 7: '1'}
+102	102		301							{1: '1', 2: 'Liv', 3: 'She was so desperate to have my M.I.N.D. that she risked infiltrating its outer layer.', 4: '1'}
+103	103		204							{1: '1', 2: '8'}
+104	104		301							"{2: 'Liv', 3: ""But she couldn't take anything away. Instead... I made her leave something behind."", 4: '1'}"
+105	105		302							{2: 'That was a huge risk.', 3: '106', 4: 'Liv...', 5: '106'}
+106	106		204							{1: '1'}
+107	107		301							"{2: 'Liv', 3: ""...Commandant, I'm really fine."", 4: '1'}"
+108	108		301							{3: 'Seeing your concern, she breaks into a gentle smile.'}
+109	109		204							{1: '1', 2: '2'}
+110	110		301				DialogDisable			"{2: 'Liv', 3: ""See? I'm perfectly fine, aren't I?"", 4: '1'}"
+111	111		302							{2: '...', 3: '112'}
+112	112		302							{2: 'We should still get back to Babylonia as soon as possible.', 3: '113'}
+113	113		301			DialogEnable				"{2: 'Liv', 3: ""Don't worry, Commandant."", 4: '1'}"
+114	114		301							{3: 'She looks at you, an indescribable emotion lingering in her eyes.'}
+115	115		301							"{2: 'Liv', 3: ""I won't gamble with my life. Not even for hope."", 4: '1'}"
+116	116		302							"{2: ""That's good to hear."", 3: '117'}"
+117	117		204							{1: '1'}
+118	118		301							{2: 'Liv', 3: 'But... I hope you can promise me the same. Please?', 4: '1'}
+119	119		302							"{2: '...', 3: '120', 4: ""I'll try my best."", 5: '120', 6: 'I promise you.', 7: '120'}"
+120	120		204							{1: '1', 2: '2'}
+121	121		301							"{2: 'Liv', 3: ""Alright, let's go check out that lab."", 4: '1'}"
+122	122		204							{1: '1', 2: '3'}
+123	123		301							"{2: 'Liv', 3: ""We didn't have the time for it earlier. There should still be some useful data in there."", 4: '1'}"
+124	124		202							{1: '1'}
+125	125		301				DialogDisable			{3: 'She brushes the topic aside, a casual gesture that feels anything but.'}
+126	126		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg6001_06.jpg', 3: '0', 4: '1', 5: '0.8'}
+127	127		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6001_06.jpg'}
+128	128		205							{1: '999'}
+129	129		301			DialogEnable				"{3: ""But you remember the ghostly despair etched on Liv's face in that nightmare.""}"
+130	130		301							"{3: 'If you were to ""die"" somewhere, Liv... would probably be consumed by that same pain.'}"
+131	131		301				DialogDisable			{3: 'Yet...'}
+132	132		401							{1: '2', 2: '558'}
+133	133		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+134	134		101						400.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5101_01.jpg'}
+135	135		401							{1: '2', 2: '558'}
+136	136		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+137	137		101						400.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5101_06.jpg'}
+138	138		401							{1: '2', 2: '558'}
+139	139		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+140	140		101						400.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5101_04.jpg'}
+141	141		301			DialogEnable				{3: 'Echoes from thirty years into the future reverberate in your mind.'}
+142	142		401							{1: '2', 2: '558'}
+143	143		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+144	144		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5101_03.jpg'}
+145	145		301							{3: 'If the only way to shatter the fated ending is through your own death...'}
+146	146		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+147	147		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1351.jpg'}
+148	148		201							{1: '1', 2: '501385', 3: '7', 7: '1'}
+149	149		301							{1: '1', 2: 'Liv', 3: '...Commandant?', 4: '1'}
+150	150		301							{3: 'A few paces ahead, Liv stops and turns. Her gaze finds you, a silent question in her eyes, wondering what has anchored your feet to the ground.'}
+151	151		302							{2: '...Coming.', 3: '152'}
+152	152		204							{1: '1', 2: '2'}
+153	153		301							{2: 'Liv', 3: 'Alright.', 4: '1'}
+154	154		202							{1: '1'}
+155	155		301		1		AniZhuanchangBegin			{3: 'The two of you press onward in the dark mine.'}

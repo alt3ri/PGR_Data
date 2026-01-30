@@ -1,0 +1,120 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory29.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: 'Dozens of minutes have passed since you arrived at the rendezvous point.'}
+4	4		301							{3: 'And you are still alone.'}
+5	5		301							{3: 'No matter how many times you try to contact the other person through the device, there is no reply.'}
+6	6		301							"{3: ""In situations like this where all connection is lost, it's not hard for your mind to wander to the possibility of a worst-case scenario.""}"
+7	7		301							{3: 'Should you leave first and call for backup? Or should you follow your planned route and try to find the other?'}
+8	8		301							{3: 'After a bit of thought, you make up your mind.'}
+9	9		301							"{3: ""There's a certain distance from your current location and the exit, and you don't have a firm grasp on the number of Corrupted there are. But the longer time passes, the higher the possibility that the other person gets in danger.""}"
+10	10		301							"{3: ""Not to mention you've said things like—""}"
+11	11		302							"{2: '""We\'ll get out of here together.""', 3: '12', 4: '""I won\'t leave you behind.""', 5: '14'}"
+12	12		301							"{3: ""You may be strangers, but it is thanks to your cooperation that you're currently here. If you were alone, you would probably be in even more trouble right now.""}"
+13	13	17	301							{3: 'The other person may be in grave danger in this very second, of course you cannot just leave.'}
+14	14		301							{3: 'You are suddenly reminded of something the other person had said during your interactions.'}
+15	15		301							"{3: '""You\'ll get abandoned once you lose value""—as if they were used to this kind of thing happening.'}"
+16	16		301							{3: 'Which makes it even harder to leave them here.'}
+17	17		301							"{3: ""That is when you realize that you don't even know their name.""}"
+18	18		302							{2: 'If we really do meet...', 3: '19'}
+19	19		302				AniZhuanchangBegin			"{2: ""I'll need to ask for their name first."", 3: '21'}"
+20	20		504							{1: '0.7', 2: '6'}
+21	21		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory35.jpg'}
+22	22		401							{1: '2', 2: '1513'}
+23	23		301			AniZhuanchangEnd				{3: 'The human runs down the dark corridor.'}
+24	24		301							{3: 'A gray-haired shadow follows from the floor above.'}
+25	25		301							{3: 'The human is reflected in a pair of heterochromia eyes. Roland can see how exhausted the figure was, but the gun in their hand never wavered, each step is taken with determination.'}
+26	26		301							"{3: ""Roland has already lost count on how many times he has been surprised in this short period of time. He thought that person would've just left.""}"
+27	27		201							{1: '1', 2: '500334', 3: '1'}
+28	28		301							{1: '1', 2: 'Roland', 3: 'You really never fail to amaze me, Commandant.', 4: '1'}
+29	29		301							"{2: 'Roland', 3: ""You make me want to see your reaction... when you're betrayed."", 4: '1'}"
+30	30		301							"{2: 'Roland', 3: ""When you finally realize the person you're risking your life to save is actually the enemy... I wonder what expression you'll show me."", 4: '1'}"
+31	31		301							"{2: 'Roland', 3: 'Betrayed by your ""friend"" you had trusted and dying alone in this prison... what an ironic ending for the Gray Raven Commandant.', 4: '1'}"
+32	32		202							{1: '1', 6: '1'}
+33	33		301							{3: 'He traces the human who refuses to give up with his eyes. The device keeps receiving new messages.'}
+34	34		301							{3: 'The human is heading toward the area with the most Corrupted in the prison. If they get surrounded, it would be impossible for them to escape on their own.'}
+35	35		201							{1: '1', 2: '500334', 3: '7'}
+36	36		301							{1: '1', 2: 'Roland', 3: '...', 4: '1'}
+37	37		301				AniZhuanchangBegin			{2: 'Roland', 3: 'How troublesome.', 4: '1'}
+38	38		202							{1: '1', 6: '1'}
+39	39		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory83.jpg'}
+40	40		401							{1: '2', 2: '1515'}
+41	41		301			AniZhuanchangEnd				"{2: 'Comms Device', 3: '""That\'s enough.""'}"
+42	42		301							{3: 'The device suddenly lights up with a new message after searching in the third area.'}
+43	43		302							{2: 'Where are you?', 3: '44', 4: 'Are you okay?', 5: '44'}
+44	44		301							"{2: 'Comms Device', 3: '""The thing you are searching for did not exist from the start.""'}"
+45	45		302							"{2: 'Who are you?!', 3: '46', 4: ""I don't understand."", 5: '48'}"
+46	46		301							"{2: 'Comms Device', 3: '""I\'m just someone passing by, resolving the problem for you.""'}"
+47	47	50	301							"{2: 'Comms Device', 3: '""That person from before is your enemy, I\'m just here saving you time.""'}"
+48	48		301							"{2: 'Comms Device', 3: '""Need I explain further?""'}"
+49	49		301							"{2: 'Comms Device', 3: '""If the one you want to save is your enemy, would you still save him?""'}"
+50	50		302							{2: 'Enemy?', 3: '51'}
+51	51		301							"{2: 'Comms Device', 3: '""That\'s right, the enemy. But don\'t worry, I\'ve already taken care of him for you.""'}"
+52	52		302							{2: 'Forgive me for not trusting your one-sided statements.', 3: '53'}
+53	53		301							"{2: 'Comms Device', 3: '""Yet you trust a stranger you\'ve never even met before?""'}"
+54	54		302							{2: 'I trust my own judgment.', 3: '55'}
+55	55		302							"{2: ""And I will leave together with the one I'm trying to find."", 3: '56'}"
+56	56		301							{2: 'Comms Device', 3: 'Why?'}
+57	57		301				AniZhuanchangBegin			"{3: ""You don't know under what pretense the person on the other end is asking this question. After some thought, you send your answer.""}"
+58	58		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory35.jpg'}
+59	59		301			AniZhuanchangEnd				"{2: 'Comms Device', 3: '""Because I said I wouldn\'t leave them behind.""'}"
+60	60		301							"{2: 'Comms Device', 3: '""Even if they are the enemy as you\'ve said, it does not affect my decision to save them in this moment.""'}"
+61	61		301							"{2: 'Comms Device', 3: '""I trust myself to make the correct judgment.""'}"
+62	62		301							"{2: 'Comms Device', 3: '""And if they really are the enemy then there\'s more the reason for me to find them as they may be the target of my mission.""'}"
+63	63		301							{3: 'Word by word, Roland reads the replies received on the device. He covers his eyes with the back of his hand and laughs.'}
+64	64		201							{1: '1', 2: '500334', 3: '1'}
+65	65		301							{1: '1', 2: 'Roland', 3: 'Ha... Haha...', 4: '1'}
+66	66		301							{3: 'He laughs so hard that his shoulders are shaking.'}
+67	67		301							{2: 'Roland', 3: 'As expected... Gray Raven Commandant.', 4: '1'}
+68	68		301							"{2: 'Roland', 3: ""Who would've thought after all this time... I'd be able to hear something like this..."", 4: '1'}"
+69	69		301				AniZhuanchangBegin			{2: 'Roland', 3: 'Pft... Hahaha...', 4: '1'}
+70	70		202							{1: '1', 6: '1'}
+71	71		301			AniZhuanchangEnd				{3: 'Roland finally stops laughing after some time.'}
+72	72		201							{1: '1', 2: '500334', 3: '1'}
+73	73		301				AniZhuanchangBegin			"{1: '1', 2: 'Roland', 3: ""Now this—really is interesting. It's going to be a shame to let you die here."", 4: '1'}"
+74	74		202							{1: '1', 6: '1'}
+75	75		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory83.jpg'}
+76	76		301			AniZhuanchangEnd				{3: 'Silence resumes after you sent your last reply.'}
+77	77		301							{3: 'You may be full of questions right now, but there is no time to waste here.'}
+78	78		301							"{3: ""No matter if you'll find a dangerous enemy or a friend in need, you'll confirm for yourself once and for all.""}"
+79	79		301							{3: 'You are currently in the cell area for felony offenders. The security is even tighter here, with an obvious increase in the number of bionic guards. There are currently four Corrupted loitering in the corridor as if on patrol.'}
+80	80		302							{2: 'I need to do something about them.', 3: '81'}
+81	81		301							{3: 'Looking around, you lock on to the cell in the middle.'}
+82	82		504							{1: '0'}
+83	83		301							{3: 'You take out a distress flare, ignite it and then throw it toward the cell. It leaves a bright trace of light as it lands in the middle of the cell.'}
+84	84		301							{3: 'The bright light and heat attract the attention of the Corrupted. They all turn and enter the cell.'}
+85	85		301							{3: 'Now!'}
+86	86		302							{2: '(Shut the cell door!)', 3: '87'}
+87	87		401							{1: '2', 2: '655'}
+88	88		301							{3: 'With the help of the exoskeleton, you close the heavy door, trapping the Corrupted inside the small cell. They stopped crowding over the flare and start to bash the door with their weapons.'}
+89	89		401							{1: '2', 2: '1501'}
+90	90		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+91	91		301							{3: 'The alarm sounds as the door is hit.'}
+92	92		301							{2: 'System voice', 3: 'Malicious attack to the facility detected.'}
+93	93		301							{2: 'System voice', 3: 'Begin scan—Guard T8760, Guard T8761, Guard T8763, Guard T8764 confirmed.'}
+94	94		301							{3: 'The red laser moves on to you after scanning the four mechanoids.'}
+95	95		301							{2: 'System voice', 3: 'Unidentified life form detected. You have violated the prison regulations, activating enforcement system.'}
+96	96		301							{2: 'System voice', 3: 'Execution target locked.'}
+97	97		302							{2: 'Crap...!', 3: '98'}
+98	98		301							{3: 'You look down at the red dot on your chest, impending doom fills your heart.'}
+99	99		301							{3: 'Your body reacts first, taking a step back toward your left, but the red dot immediately follows. You also see a thin red laser reflected in the dust in the air.'}
+100	100		301							{3: 'Tracking the laser to its origin, you notice a red light flash across the upper left of your peripheral vision. You immediately point your gun in that direction and pull the trigger.'}
+101	101		301							{2: '???', 3: '—!'}
+102	102		401							{1: '2', 2: '662'}
+103	103		401					100.0		{1: '2', 2: '1510'}
+104	104		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+105	105		301							"{3: ""If you didn't hear wrong, two shots rang out, almost at the same time.""}"
+106	106		301							{3: 'The execution device in front of you is destroyed by your bullet, while the other gunshot originated from behind you.'}
+107	107		301							{3: 'Turning around, you find a Corrupted guard standing in the shadows a few ten meters away.'}
+108	108		302							{2: 'When did it get there?!', 3: '109', 4: '(Raise your gun and shoot)', 5: '109'}
+109	109		301							{3: 'Before you could launch your next attack, the Corrupted falls forward as if it is thrown.'}
+110	110		301							{3: 'That is when you notice the other silhouette in the shadows behind the fallen mechanoid.'}
+111	111		301							"{3: ""But before you had a chance to get a good look at the figure, you see something rolling out from the Corrupted's hand.""}"
+112	112		301							{3: 'At the same time, you hear a ticking sound.'}
+113	113		301							{3: '—A flash grenade!'}
+114	114		302							{2: 'Shoot!', 3: '115'}
+115	115		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+116	116		401							{1: '1', 2: '36'}
+117	117		401							{1: '2', 2: '659'}
+118	118		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+119	120		301		1		AniZhuanchangBegin			{3: 'The explosion reverberates through the narrow corridor. You could still feel the light blinding you even though you have your eyes closed.'}

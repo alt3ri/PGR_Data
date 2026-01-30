@@ -1,0 +1,48 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab', 2: '2'}
+4	4		401							{1: '2', 2: '1509'}
+5	5		301			DialogEnable	AniZhuanchangBegin			{2: 'System', 3: 'Connected.'}
+6	6		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab'}
+7	7		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory68.jpg'}
+8	8		401							{1: '1', 2: '201'}
+9	9		301			AniZhuanchangEnd				{3: '...'}
+10	10		201							{1: '1', 2: '1031001', 3: '1'}
+11	11		401							{1: '4', 2: '103004'}
+12	12		301							"{1: '1', 2: 'Liv', 3: ""You surrenderin' or not? This big fella is a hard hitter."", 4: '1'}"
+13	13		201							{1: '1', 2: '500013'}
+14	14		501			PanelActor1Shake			1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+15	15		301							{1: '1', 2: 'Corrupted', 3: '—! —!', 4: '1'}
+16	16		202							{1: '1', 6: '1'}
+17	17		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+18	18		401							{1: '1', 2: '205'}
+19	19		301							{3: 'The world must have gone upside down. Liv is brazenly stepping on some Corrupted remains with a wild stance that you have never seen.'}
+20	20		301							{3: '...She is also wielding her Levi-Gun like some gigantic blunt weapon.'}
+21	21		201							{1: '1', 2: '1031001', 3: '1'}
+22	22		401							{1: '4', 2: '103003'}
+23	23		301							"{1: '1', 2: 'Liv', 3: ""Who's been peeking at me? Stop being sneaky and show yourself!"", 4: '1'}"
+24	24		302							"{2: ""It's me!"", 3: '25', 4: ""I'd show myself too if I could."", 5: '28'}"
+25	25		204							{1: '1', 2: '7'}
+26	26		401							{1: '4', 2: '103050'}
+27	27	30	301							{2: 'Liv', 3: 'Umm... Commandant, is that you? Wait, where exactly are you?', 4: '1'}
+28	28		401							{1: '4', 2: '103005'}
+29	29		301							"{2: 'Liv', 3: ""Now that you mention it, this does feel like you're remotely connecting to me... But not entirely. What is going on?"", 4: '1'}"
+30	30		302							{2: '(Explain the situation)', 3: '31'}
+31	31		204							{1: '1'}
+32	32		301							{2: 'Liv', 3: 'Oh, I see. Hmm.', 4: '1'}
+33	33		302							{2: 'Do you really?', 3: '34', 4: 'I feel like I know who you are already.', 5: '35'}
+34	34	36	301							{2: 'Liv', 3: 'Yep! Um... well, at least half of it!', 4: '1'}
+35	35		301							{2: 'Liv', 3: 'That means you know me well, Commandant! This cognitive discrepancy thing is just some dumb trick.', 4: '1'}
+36	36		401							{1: '4', 2: '103012'}
+37	37		301							"{2: 'Liv', 3: '■■■■■ gave me permission to act on my own for the next couple of days. I also want to take part in the ""Commandant Rescue Plan""!', 4: '1'}"
+38	38		201							{1: '1', 2: '500013'}
+39	39		401							{1: '2', 2: '1508'}
+40	40		301							{1: '1', 2: 'Corrupted', 3: '—! —!', 4: '1'}
+41	41		201							{1: '1', 2: '1031001', 3: '1'}
+42	42		401							{1: '4', 2: '103004'}
+43	43		301							"{1: '1', 2: 'Liv', 3: ""Anyway, gotta get rid of these annoying Corrupted first. Don't drag Liv down, Commandant."", 4: '1'}"
+44	44		302							"{2: ""I'll try my best..."", 3: '45', 4: 'Liv would never say that!', 5: '46'}"
+45	45		301		1		AniZhuanchangBegin			"{2: 'Liv', 3: ""Alrighty! Let's roll!"", 4: '1'}"
+46	46		204							{1: '1', 2: '7'}
+47	47		301		1		AniZhuanchangBegin			{2: 'Liv', 3: 'Huh, did I not get that line right?', 4: '1'}

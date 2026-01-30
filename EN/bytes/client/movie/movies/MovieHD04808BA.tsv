@@ -1,0 +1,192 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory262.png'}
+2	2		401							{1: '1', 2: '204'}
+3	3		301			DialogEnable				{3: 'Liv sent a message. She wants to meet at Kuroro Coffee.'}
+4	4		201							{1: '1', 2: '501385'}
+5	5		301							{1: '1', 2: 'Liv', 3: 'There you are, Commandant.', 4: '1'}
+6	6		301							"{2: 'Liv', 3: ""This is the Star of Life's specially developed health monitoring system. It can track your vitals and offer personalized lifestyle advice."", 4: '1'}"
+7	7		301							"{2: 'Liv', 3: ""Since it's still in testing, we went with the simplest design to minimize processing load. To handle unexpected offline situations, we made it a portable, detachable bionic skin ring for now."", 4: '1'}"
+8	8		301							{2: 'Liv', 3: 'I asked the professor for a prototype... so I could give it to you in time for your birthday today.', 4: '1'}
+9	9		203						600.0	{1: '1', 2: '0.5', 5: '-100'}
+10	10		301							{2: 'Liv', 3: 'Come on... give me your hand...', 4: '1'}
+11	11		302							"{2: '(Extend your hand)', 3: '21', 4: ""(Hold Liv's hand)"", 5: '12'}"
+12	12		204							{1: '1', 2: '5'}
+13	13		301			DialogShake				"{2: 'Liv', 3: ""C-Commandant! I can't put it on like this..."", 4: '1'}"
+14	14		301							{3: 'Even though she says that, she still hesitates and lets you hold her hand a little longer.'}
+15	15		204							{1: '1', 2: '6'}
+16	16		301							"{2: 'Liv', 3: ""Don't move just yet. Give me a moment, okay?"", 4: '1'}"
+17	17		202							{1: '1'}
+18	18		301							{3: 'She gently slips out of your grasp, takes your hand, and skillfully presses the ring-shaped patch onto the inside of your wrist.'}
+19	19		201							{1: '1', 2: '501385'}
+20	20	28	301							"{1: '1', 2: 'Liv', 3: ""Next, let's try something simple, like comparing a sugary drink with a healthy vegetable juice..."", 4: '1'}"
+21	21		204						200.0	{1: '1', 2: '6'}
+22	22		401							{1: '2', 2: '2902'}
+23	23		203						800.0	{1: '1', 2: '0.5', 5: '-50'}
+24	24		203							{1: '1', 2: '0.4', 5: '0'}
+25	25		301							{3: 'Only after the patch fully blends with your skin does her warmth slowly pull away.'}
+26	26		204							{1: '1'}
+27	27		301							"{2: 'Liv', 3: ""Next, let's try something simple, like comparing a sugary drink with a healthy vegetable juice..."", 4: '1'}"
+28	28		202							{1: '1'}
+29	29		401							{1: '2', 2: '5288'}
+30	30		301							"{3: ""Following Liv's instructions, you each take a sip from your drinks. Numbers immediately pop up on the wristband.""}"
+31	31		401							{1: '2', 2: '4883'}
+32	32		301							{2: 'System', 3: 'Beep beep beep. Sugar intake detected. Please consider moving around to burn calories...'}
+33	33		301							"{3: ""If it's this sensitive about sugar, does that mean you can't sneak snacks anymore...?""}"
+34	34		201							{1: '1', 2: '501385', 3: '14'}
+35	35		301							{1: '1', 2: 'Liv', 3: 'Mmm...', 4: '1'}
+36	36		301							"{3: ""You glance at Liv. She's just as puzzled, staring at the wristband with something unspoken in her eyes.""}"
+37	37		204							{1: '1', 2: '12'}
+38	38		301				AniZhuanchangBegin			"{2: 'Liv', 3: ""I didn't think it'd be this sensitive... Anyway, let's just follow its advice for now and move around a bit."", 4: '1'}"
+39	39		202							{1: '1', 6: '1'}
+40	40		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1275.jpg'}
+41	41		401						2000.0	{1: '1', 2: '36'}
+42	42		401							{1: '1', 2: '386'}
+43	43		301			AniZhuanchangEnd	DialogDisable			{3: 'You and Liv walk together to the cinema. The film playing is from the Golden Age, and even now, it still has a kind of magic that captivates you...'}
+44	44		306							{1: '1'}
+45	45		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+46	46		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory769.jpg', 3: '0', 4: '1', 5: '0.5'}
+47	47		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory769.jpg'}
+48	48		205							{1: '999'}
+49	49		301			DialogEnable	DialogDisable			{3: 'On their birthday, the protagonist and their lover part ways.'}
+50	50		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory824.jpg', 3: '0', 4: '1', 5: '1'}
+51	51		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory824.jpg'}
+52	52		205							{1: '999'}
+53	53		301			DialogEnable	DialogDisable			{3: 'Both turn back, trying to stop the other, but they miss their chance. In the end, each walks alone into the rain...'}
+54	54		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+55	55		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+56	56		205							{1: '999'}
+57	57		301			DialogEnable	DialogDisable			{3: 'The hands that once held each other can no longer find their way back together.'}
+58	58		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+59	59		306							
+60	60		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1275.jpg', 3: '0', 4: '1', 5: '1'}
+61	61		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1275.jpg'}
+62	62		205							{1: '999'}
+63	63		201							{1: '1', 2: '501385', 3: '15'}
+64	64		301			DialogEnable				{1: '1', 3: 'Liv stares into the flickering light and rain on the screen, her eyes filling with sorrow.'}
+65	65		302							"{2: '(Try to comfort Liv)', 3: '66', 4: ""(Try to firmly hold Liv's hand)"", 5: '66'}"
+66	66		301							"{2: 'Liv', 3: ""【kuroname】's birthday would never be spent like this..."", 4: '1'}"
+67	67		301							"{3: ""Just as you're about to act, you hear Liv murmuring softly to herself.""}"
+68	68		204							{1: '1', 2: '8'}
+69	69		301							"{2: 'Liv', 3: ""Commandant's birthday would never be spent like this."", 4: '1'}"
+70	70		203							{1: '1', 2: '0.25', 5: '-50'}
+71	71		301							{3: 'Maybe feeling sorry for the lovers in the story, she tries to grip your hand in the dark.'}
+72	72		401							{1: '1', 2: '36'}
+73	73		401							{1: '2', 2: '4883'}
+74	74		301							{2: 'System', 3: 'Beep beep beep—'}
+75	75		204							{1: '1', 2: '7'}
+76	76		301							{2: 'Liv', 3: 'Aargh!', 4: '1'}
+77	77		401							{1: '1', 2: '205'}
+78	78		301							{2: 'System', 3: 'Prolonged inactivity detected. For your physical and mental health, please start moving your limbs! One-two-three-four, two-two-three-four!'}
+79	79		401							{1: '2', 2: '2936'}
+80	80		203							{1: '1', 2: '0.25', 4: '-20', 5: '-50'}
+81	81		301							{3: 'The soft, dreamy mood is suddenly broken by a loud system beep. Liv quickly covers her wristband and turns the volume down in a fluster.'}
+82	82		204							{1: '1', 2: '5'}
+83	83		301							"{2: 'Liv', 3: ""I can't believe it's still going off... at a time like this..."", 4: '1'}"
+84	84		203						450.0	{1: '1', 2: '0.4', 5: '0'}
+85	85		301							{3: 'She turns her head with a bit of frustration, muttering under her breath. The two of you have no choice but to pull apart...'}
+86	86		202							{1: '1'}
+87	87		301				AniZhuanchangBegin			"{3: ""To follow the fitness band's prompt, you and Liv take a walk to Babylonia's simulated greenhouse.""}"
+88	88		202							{1: '1', 6: '1'}
+89	89		306							{1: '1'}
+90	90		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory716.jpg'}
+91	91		401						2000.0	{1: '1', 2: '36'}
+92	92		401							{1: '1', 2: '163'}
+93	93		301			AniZhuanchangEnd				"{3: ""It's still early, so the greenhouse is empty and feels a little quiet.""}"
+94	94		301							{3: 'The air is warm and damp, filled with lush young greenery. A quiet mist rises between the two of you as you walk side by side...'}
+95	95		301							{3: 'It feels like spring. Like wandering through a dreamlike rainy season.'}
+96	96		306							
+97	97		201							{1: '1', 2: '501385', 3: '2'}
+98	98		301							{1: '1', 2: 'Liv', 3: 'Did you know, Commandant? This plant needs soil type 810 and a specific kind of nutrient mix...', 4: '1'}
+99	99		306						400.0	{1: '1'}
+100	100		104							{1: '0|0|-50', 2: '2'}
+101	101		203							{1: '1', 2: '2', 5: '-50'}
+102	102		301						2000.0	{3: 'On the narrow path, the two of you get closer and closer. Your hands sway with each step, as if trying to find each other...'}
+103	103		306							
+104	104		104							{1: '0|0|0', 2: '0.25'}
+105	105		204							{1: '1', 2: '7'}
+106	106		203							{1: '1', 2: '0.25'}
+107	107		401							{1: '2', 2: '4883'}
+108	108		301			DialogShake				{2: 'System', 3: 'Beep beep beep beep—'}
+109	109		301							{3: 'The ill-timed alert chimes in again, right on schedule.'}
+110	110		301							{2: 'System', 3: 'Abnormal heart rate detected. Please take a deep brea—'}
+111	111		204							{1: '1', 2: '12'}
+112	112		301							{2: 'Liv', 3: '...', 4: '1'}
+113	113		401							{1: '2', 2: '2566'}
+114	114		301							{2: 'System', 3: 'Shutting down...'}
+115	115		203						300.0	{1: '1', 2: '0.4', 5: '-100'}
+116	116		401							{1: '2', 2: '2936'}
+117	117		301							{3: 'She silently raises your hand and gently removes the bracelet.'}
+118	118		302							{2: 'Liv?', 3: '119'}
+119	119		204							{1: '1', 2: '4'}
+120	120		301							{2: 'Liv', 3: 'I just knew it would go off right at this moment...', 4: '1'}
+121	121		301							"{3: 'She fiddles awkwardly with the band of the bracelet, clearly frustrated with the so-called ""health monitoring system.""'}"
+122	122		301				DialogDisable			"{3: ""The thing given as a birthday present ends up being taken back on the birthday itself. It's hard not to feel a little amused.""}"
+123	123		401							{1: '1', 2: '36'}
+124	124		302							{2: '(Express your confusion to Liv)', 3: '125'}
+125	125		401							{1: '1', 2: '162'}
+126	126		204							{1: '1', 2: '12'}
+127	127		301			DialogEnable				{2: 'Liv', 3: '【kuroname】, did you know?', 4: '1'}
+128	128		301							{3: 'Picking up where she left off, the girl speaks softly again.'}
+129	129		301							{2: 'Liv', 3: 'The plants in this area need soil type 810, with slightly alkaline nutrients at 24 degrees Celsius.', 4: '1'}
+130	130		204							{1: '1', 2: '8'}
+131	131		301							"{2: 'Liv', 3: ""I come to the greenhouse a lot to take care of these little ones, so I know them well. And you... you're just like them."", 4: '1'}"
+132	132		302							"{2: ""Am I one of Liv's flowers too?"", 3: '133', 4: 'Am I one of Liv\'s ""little ones"" too?', 5: '133'}"
+133	133		204							{1: '1', 2: '7'}
+134	134		301							"{2: 'Liv', 3: ""I-I didn't mean it like that..."", 4: '1'}"
+135	135		204							{1: '1', 2: '5'}
+136	136		301							{3: 'Realizing how abruptly the words came out, her face flushes with warmth.'}
+137	137		204							{1: '1', 2: '6'}
+138	138		301							{2: 'Liv', 3: 'What I mean is, I care about you... as much as I care about them.', 4: '1'}
+139	139		204							{1: '1', 2: '8'}
+140	140		301							"{2: 'Liv', 3: ""But you're also not like them. You're always working hard, always putting yourself in danger on the battlefield."", 4: '1'}"
+141	141		204							{1: '1', 2: '10'}
+142	142		301							{2: 'Liv', 3: 'I often wish... there could be a greenhouse that holds you for me.', 4: '1'}
+143	143		302							"{2: ""So that's why you gave me this bracelet?"", 3: '144'}"
+144	144		204							{1: '1', 2: '14'}
+145	145		301							"{2: 'Liv', 3: ""Yeah... I was hoping it could help you take care of yourself. I didn't think it would cause us this much trouble."", 4: '1'}"
+146	146		301							"{3: ""On your birthday, what the girl really wants to give you isn't the bracelet... but something else...""}"
+147	147		302							"{2: ""It's about my health, right?"", 3: '148'}"
+148	148		204							{1: '1', 2: '7'}
+149	149		301							"{3: ""Her face shows a hint of surprise, as if she hadn't expected to guess correctly.""}"
+150	150		302							{2: 'The gift you want to give me.', 3: '151'}
+151	151		204							{1: '1', 2: '16'}
+152	152		301							"{2: 'Liv', 3: 'But ""health"" isn\'t something you can see or touch, and this bracelet might be taking things a bit too far.', 4: '1'}"
+153	153		204							{1: '1', 2: '15'}
+154	154		301							"{2: 'Liv', 3: ""You don't have to avoid every snack, and you don't need to exercise every second. Your missions burn through calories so quickly anyway..."", 4: '1'}"
+155	155		302							"{2: ""It doesn't know me like you do."", 3: '156'}"
+156	156		204							{1: '1', 2: '3'}
+157	157		301							"{2: 'Liv', 3: ""Well... it's not like it fought alongside you for long. It doesn't know how to adjust things the way a person would."", 4: '1'}"
+158	158		204							{1: '1', 2: '8'}
+159	159		301							{3: 'She hesitates at first, but the more she talks, the more she nods with growing conviction.'}
+160	160		204							{1: '1'}
+161	161		301							"{2: 'Liv', 3: ""That's how it is. So I'll be the one to remind you."", 4: '1'}"
+162	162		302							{2: 'Then, what advice does the doctor have?', 3: '163'}
+163	163		301							{2: 'Liv', 3: 'The doctor has no advice to give.', 4: '1'}
+164	164		302							{2: 'Hm?', 3: '165'}
+165	165		204							{1: '1', 2: '9'}
+166	166		301							{2: 'Liv', 3: 'I know how sweet you like your coffee, when you tend to get insomnia, and which holidays you like to sleep in on...', 4: '1'}
+167	167		204							{1: '1'}
+168	168		301							"{2: 'Liv', 3: '""I\'ll adjust the sweetness of your coffee. If you can\'t sleep, I\'ll sing your favorite lullaby. When you want to sleep in, I\'ll turn off your alarm and stay in bed with you a bit longer... If there are unhealthy snacks, I\'ll secretly hide them and cook something that tastes just as good...""', 4: '1'}"
+169	169		204							{1: '1', 2: '2'}
+170	170		301							"{2: 'Liv', 3: 'So the doctor doesn\'t give advice. The doctor goes straight to the ""treatment.""', 4: '1'}"
+171	171		301				DialogDisable			"{3: 'She smiles gently at her ""patient.""'}"
+172	172		302							{2: 'Liv...', 3: '173', 4: '...', 5: '173'}
+173	173		302							"{2: ""I think... I've already found the real birthday gift."", 3: '174'}"
+174	174		204							{1: '1', 2: '7'}
+175	175		301			DialogEnable				{2: 'Liv', 3: 'Eh?', 4: '1'}
+176	176		401							{1: '2', 2: '4387'}
+177	177		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+178	178		504							{1: '0.7'}
+179	179		204							{1: '1', 2: '10'}
+180	180		301				DialogDisable			{1: '1', 2: 'Liv', 3: 'I often wish there could be a greenhouse that holds you for me...', 4: '1'}
+181	181		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+182	182		504							{1: '0'}
+183	183		201							{1: '1', 2: '501385', 3: '7', 6: '-100', 7: '1'}
+184	184		302					200.0		"{2: 'The ""greenhouse"" that cares for me is right here beside me.', 3: '185'}"
+185	185		302							{2: 'And she still owes me a hug.', 3: '186'}
+186	186		204							{1: '1', 2: '5'}
+187	187		301			DialogEnable				{2: 'Liv', 3: '...', 4: '1'}
+188	188		203						600.0	{1: '1', 2: '0.5', 5: '-150'}
+189	189		204							{1: '1', 2: '6'}
+190	190		301							{3: 'She lowers her flushed face a little, then slowly leans in as her arms wrap gently around your back.'}
+191	191		301		1		AniZhuanchangBegin			{2: 'Liv', 3: 'Well then, happy birthday, 【kuroname】.', 4: '1'}

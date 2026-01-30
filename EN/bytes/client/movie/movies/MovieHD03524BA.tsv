@@ -1,0 +1,124 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory669.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		107						2000.0	{1: 'Constellia', 2: 'Outskirts Street'}
+4	4		108							{1: '1'}
+5	5		201							{1: '1', 2: '500303'}
+6	6		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+7	7		401							{1: '2', 2: '2983'}
+8	8		301			DialogEnable				"{1: '1', 2: 'On-Duty Staff', 3: ""Thanks for all your hard work, Gray Raven Commandant. The festival draws more visitors than we expected, and we just don't have enough manpower. We really appreciate your help..."", 4: '1'}"
+9	9		302							"{2: ""It's all good. Keeping the tourists safe is the most important."", 3: '10', 4: ""Piece of cake. Just make sure I get triple pay, and we're set."", 5: '10'}"
+10	10		301							"{2: 'On-Duty Staff', 3: ""Well, there aren't many shops or tourists on your side. Fewer people means fewer issues, so I don't expect things to go wrong."", 4: '1'}"
+11	11		301				DialogDisable			{3: 'You look up and see only a few shops scattered along the street, with around a dozen visitors. Everyone is browsing quietly at the storefronts, no fuss at all—a complete contrast to the bustling main street.'}
+12	12		302							"{2: ""You're right. There's really nothing that could go..."", 3: '13'}"
+13	13		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+14	14		202							{1: '1'}
+15	15		104						1000.0	{1: '-300|50|-300', 2: '1'}
+16	16		301			DialogEnable				{1: '1', 3: 'Suddenly, you spot a figure you never expected to see.'}
+17	17		201							{1: '1', 2: '500884'}
+18	18		301							{1: '1', 3: 'The agent is hovering in front of a small street stall, pointing at an item as she talks to the owner. He just shakes his head. She waits a moment and tries again, but he still refuses with the same silent gesture.'}
+19	19		301							"{3: ""She stops talking and studies the items on display for a while. Then, when she's about to leave, she turns—and that's the moment she notices you watching her.""}"
+20	20		301				AniZhuanchangBegin			"{3: ""At the instant your gazes lock, the girl's usually aloof demeanor shows the faintest hint of change.""}"
+21	21		104							{1: '0|0|0', 2: '0'}
+22	22		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory672.jpg'}
+23	23		201							{1: '1', 2: '500303'}
+24	24		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+25	25		401							{1: '2', 2: '2983'}
+26	26		301			AniZhuanchangEnd				{1: '1', 2: 'On-Duty Staff', 3: 'Hey, you just stopped talking. Is something up?', 4: '1'}
+27	27		302							"{2: ""No, everything's fine."", 3: '28', 4: ""For now... there shouldn't be a problem..."", 5: '28'}"
+28	28		202							{1: '1', 6: '1'}
+29	29		401							{1: '2', 2: '2566'}
+30	30		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+31	31		301							{3: 'In the alley, now that the call is over, Luna stands before you with her arms crossed and starts to speak in a measured tone.'}
+32	32		201							{1: '1', 2: '500884'}
+33	33		301							{1: '1', 2: 'Luna', 3: 'Sheltering an agent is a serious crime.', 4: '1'}
+34	34		302							"{2: ""I'm not sheltering you. I really don't see any issue."", 3: '35', 4: 'That only becomes a problem if I get caught.', 5: '35', 6: 'Are you worried about me?', 7: '35'}"
+35	35		301							{2: 'Luna', 3: '...', 4: '1'}
+36	36		302							"{2: 'So, what about you? What brings you here?', 3: '37', 4: ""So you're here to check out the Double Seventh Festival?"", 5: '37', 6: ""I really didn't think you'd be into these kinds of celebrations."", 7: '37'}"
+37	37		301							{3: 'Luna stays quiet for a moment.'}
+38	38		301							{2: 'Luna', 3: 'When I was a kid, my family brought me to a festival like this. I remember... it being quite fun.', 4: '1'}
+39	39		301							"{2: 'Luna', 3: ""I heard there's a similar festival happening here, so I decided to come see it for myself."", 4: '1'}"
+40	40		302							{2: 'What do you think so far?', 3: '41'}
+41	41		301							"{3: ""Luna tilts her head toward the alley's mouth, which opens onto the street. Sometimes tourists pass by, flaunting their new souvenirs and chatting excitedly about upcoming shows...""}"
+42	42		301							{3: 'But the alley is too deep, and their laughter never reaches here.'}
+43	43		301							{3: 'Luna pulls her gaze away.'}
+44	44		301							{2: 'Luna', 3: '...There are too many people.', 4: '1'}
+45	45		301							{3: 'She gets up and moves farther in.'}
+46	46		301							"{2: 'Luna', 3: ""Pretend you never saw me—it'll spare you a lot of trouble."", 4: '1'}"
+47	47		202							{1: '1'}
+48	48		301							{3: 'Luna walks away without looking back, and her once-proud silhouette now stirs an unexpected feeling...'}
+49	49		302							"{2: ""There's a light show tonight—I hear it's gonna be really fun."", 3: '50'}"
+50	50		301							"{3: ""Just as she's about to vanish at the end of the alley, Luna stops in her tracks.""}"
+51	51		201							{1: '1', 2: '500884'}
+52	52		301				DialogDisable			"{1: '1', 2: 'Luna', 3: ""There's still plenty of time before night falls."", 4: '1'}"
+53	53		302							{2: 'Until then, you can do what you did a moment ago—take a stroll outside if the chance comes up.', 3: '54'}
+54	54		302							"{2: ""After all, most people here don't really recognize who you are."", 3: '55'}"
+55	55		301			DialogEnable				"{2: 'Luna', 3: ""There's always someone who can spot me. If that happens, they might cancel the celebration, though it doesn't bother me."", 4: '1'}"
+56	56		301							"{2: 'Luna', 3: ""I can't avoid being caught, unless..."", 4: '1'}"
+57	57		301							{3: 'Luna turns around, fixing her gaze in this direction.'}
+58	58		301							"{2: 'Luna', 3: 'Someone\'s willing to offer some ""help.""', 4: '1'}"
+59	59		302							{2: 'But the condition is you staying within my sight at all times and do exactly as I say.', 3: '60'}
+60	60		301							"{3: ""The girl regards you with a cold, measuring stare, as if she's weighing your proposal in her mind.""}"
+61	61		301							{3: 'Time slips by, second after second, and someone on the street notices you, leaning forward in curiosity. After a brief pause, she steps closer.'}
+62	62		301							"{2: 'Luna', 3: ""What's your plan?"", 4: '1'}"
+63	63		302							"{2: ""You said yes so fast—aren't you worried this might be a trap?"", 3: '64', 4: 'Wait a moment, let me figure this out.', 5: '66'}"
+64	64		301							{2: 'Luna', 3: 'In that case, bring some extra help.', 4: '1'}
+65	65		301							"{3: ""Her voice sounds nonchalant, making it hard to tell if she knows it's impossible or if she's just utterly sure of her own strength.""}"
+66	66		301				DialogDisable			"{3: ""You go over the streets you're responsible for, consider any issues that might arise, and try to remember which places are less crowded yet still intriguing...""}"
+67	67		302							{2: 'Follow me.', 3: '68'}
+68	68		302							{2: 'And again, you must do what I say.', 3: '69'}
+69	69		301			DialogEnable	AniZhuanchangBegin			{2: 'Luna', 3: 'Yeah, yeah, I hear you...', 4: '1'}
+70	70		202							{1: '1', 6: '1'}
+71	71		306							{1: '1'}
+72	72		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg'}
+73	73		301			AniZhuanchangEnd				"{3: ""With your role as on-duty personnel, you're able to get insider intel.""}"
+74	74		301							{3: 'Armed with this intel, you can quickly snuff out any sign of trouble the moment it appears.'}
+75	75		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory204.png', 3: '0', 4: '1', 5: '1'}
+76	76		205							{1: '999'}
+77	77		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory204.png'}
+78	78		301							"{3: 'Luna cooperates seamlessly. Even if she\'s fascinated by the shop displays, the moment you say you need to move, she doesn\'t hesitate. Thanks to that, you dodge multiple searches for ""suspicious individuals.""'}"
+79	79		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory671.jpg', 3: '0', 4: '1', 5: '1'}
+80	80		201							{1: '1', 2: '500372'}
+81	81		301							{1: '1', 3: 'The most nerve-racking moment is when you run into Harley Jo at a street corner.', 4: '1'}
+82	82		202							{1: '1'}
+83	83		205							{1: '999'}
+84	84		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory671.jpg'}
+85	85		301							"{3: ""It all happens so fast that you have no choice but to grab a human-sized plush from a nearby stall and shove it into Luna's arms so she can hide behind it. With some effort, you manage to fool him and slip away.""}"
+86	86		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory668.jpg', 3: '0', 4: '1', 5: '1'}
+87	87		301							{3: 'After that, nothing else worth noting happens. Time flows by gently, and before long, night falls.'}
+88	88		306							
+89	89		301							"{3: ""Late into the night, Constellia still bustles with excitement. Skyscrapers gradually go dark as the light show's stage takes shape. One by one, tourists fall silent, gazing skyward in anticipation.""}"
+90	90		201							{1: '1', 2: '500884'}
+91	91		301				DialogDisable			{1: '1', 3: 'Far away on a tower rooftop overlooking the city, the white-haired girl hovers beyond the railing, hugging a stuffed toy even bigger than her size, her face blank.'}
+92	92		302							{2: 'This combination...', 3: '93'}
+93	93		302							"{2: '(Looks unexpectedly fitting.)', 3: '94', 4: ""(Surely it doesn't match.)"", 5: '94', 6: '(Makes me want to snap a photo for the memory.)', 7: '94'}"
+94	94		302							{2: 'By the way, that plush is huge. Are you sure you have room for it?', 3: '95'}
+95	95		301			DialogEnable				"{2: 'Luna', 3: ""That's not your concern."", 4: '1'}"
+96	96		301							{3: 'It looks like she already has her own plan of handling that giant plush.'}
+97	97		302							{2: 'So, how do you feel about the festival?', 3: '98'}
+98	98		301							"{3: ""This is a question you've asked before, hoping to see if Luna's answer changes after half a day of hustle and bustle.""}"
+99	99		301							{2: 'Luna', 3: 'Too many people...', 4: '1'}
+100	100		302							"{2: 'Still the same answer...', 3: '101', 4: ""I've specifically picked less crowded places today..."", 5: '101', 6: 'There are indeed more tourists than expected.', 7: '101'}"
+101	101		204							{1: '1', 2: '1'}
+102	102		301							"{2: 'Luna', 3: ""And it's pretty interesting."", 4: '1'}"
+103	103		302							"{2: ""I'm glad to hear that."", 3: '104', 4: '(Smile)', 5: '104'}"
+104	104		202							{1: '1'}
+105	105		301							{3: 'No one says a word after that. You wait quietly, and the light show begins.'}
+106	106		301							"{3: ""Neon lights wash over the night sky in dazzling color, their vivid hues reflecting in the girl's eyes, making them gleam even brighter.""}"
+107	107		201							{1: '1', 2: '500884'}
+108	108		301							{1: '1', 2: 'Luna', 3: '【kuroname】...', 4: '1'}
+109	109		302							"{2: '(Glance over)', 3: '110', 4: ""What's wrong?"", 5: '110'}"
+110	110		301							{3: 'Luna holds out her left hand. In her palm rests a beautifully crafted wooden piece, divided into two sections, each carved with a small, simple figure. The one on the right looks like Luna, and the one on the left... looks like you.'}
+111	111		301							{2: 'Luna', 3: 'Before when I headed off, I wanted a souvenir to remember this by.', 4: '1'}
+112	112		301							"{2: 'Luna', 3: ""I noticed the piece, but the stall owner insisted it was a Double Seventh Festival couple's set, to be engraved with both people's images upon completion."", 4: '1'}"
+113	113		301							"{2: 'Luna', 3: ""Seeing me alone, the shop owner wouldn't sell it to me. Even when I said I was there with my sister, he still wouldn't agree."", 4: '1'}"
+114	114		301							{3: 'As Luna explains, she takes the wooden piece—joined in the middle—and splits it into two halves. She keeps the right half and hands you the left.'}
+115	115		301							{2: 'Luna', 3: 'So I used you as an excuse.', 4: '1'}
+116	116		301							"{3: ""Luna mentioned that this is a Double Seventh Festival couple's set, which means if she wants to buy it...""}"
+117	117		301							"{2: 'Luna', 3: ""I'm giving this half to you."", 4: '1'}"
+118	118		301				DialogDisable			"{3: ""You take the half piece of wood, still warm from Luna's palm.""}"
+119	119		302							{2: 'Thanks.', 3: '120'}
+120	120		302							{2: 'Happy festival.', 3: '121'}
+121	121		301			DialogEnable				{3: 'The girl buries her chin in the plush toy, stays quiet for a moment, then softly speaks.'}
+122	122		204							{1: '1', 2: '1'}
+123	123		301		1		AniZhuanchangBegin			{2: 'Luna', 3: '...Happy festival.', 4: '1'}

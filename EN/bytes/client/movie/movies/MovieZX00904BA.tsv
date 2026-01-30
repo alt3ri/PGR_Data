@@ -1,0 +1,48 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory118.png'}
+2	1000		401							{1: '1', 2: '201'}
+3	2		201							{1: '1', 2: '1031001'}
+4	3		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'If we want to go to the control center next, we need to take the main passage. But...', 4: '1'}
+5	4		201							{1: '1', 2: '1011001'}
+6	5		301							{1: '1', 2: 'Lee', 3: 'Darn. That AI shut the airtight valve...', 4: '1'}
+7	6		201							{1: '1', 2: '1021001'}
+8	7		301							{1: '1', 2: 'Lucia', 3: 'Is there no other way?', 4: '1'}
+9	8		302							{2: 'Breakthrough by force?', 3: '9', 4: 'Let me think.', 5: '9'}
+10	9		201							{1: '1', 2: '1011001'}
+11	10		301							"{1: '1', 2: 'Lee', 3: ""All terminals nearby are covered in that thick, black matter. We don't have enough firepower to force open this airtight valve..."", 4: '1'}"
+12	11		302							{2: 'If there was...', 3: '12', 4: 'Tsk.', 5: '12'}
+13	12		202							{1: '1', 6: '1'}
+14	13		301							{3: 'Connecting—'}
+15	14		201							{1: '1', 2: '500080'}
+16	15		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+17	16		301							{1: '1', 2: 'Watanabe', 3: 'I knew it was you... Leave immediately.', 4: '1'}
+18	17		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+19	18		201							{1: '1', 2: '1031001', 3: '7'}
+20	19		301							{1: '1', 2: 'Liv', 3: 'Watanabe! Why are you here?', 4: '1'}
+21	20		201							{1: '1', 2: '1011001'}
+22	21		301							{1: '1', 2: 'Lee', 3: 'Watanabe? If we can receive his comms, he must be not far away...', 4: '1'}
+23	22		201							{1: '1', 2: '500080'}
+24	23		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+25	24		301							{1: '1', 2: 'Watanabe', 3: 'Get away from that valve... Now!', 4: '1'}
+26	25		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+27	4646		202							{1: '1', 6: '1'}
+28	26		301							{3: 'A large howling sound travels all the way from the other end of the passage.', 4: '1'}
+29	1001		401							{1: '2', 2: '10007502'}
+30	27		301			RImgBg1Shake				{3: 'Bullets and explosions start to blast the airtight valve.', 4: '1'}
+31	28		201							{1: '1', 2: '1031001', 3: '7'}
+32	29		301							{1: '1', 2: 'Liv', 3: 'Watanabe is piloting an aircraft... in the passageway...', 4: '1'}
+33	30		201							{1: '1', 2: '500080'}
+34	31		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+35	32		301							"{1: '1', 2: 'Watanabe', 3: ""Tsk. Didn't manage to destroy it completely."", 4: '1'}"
+36	33		301				AniZhuanchangBegin			{2: 'Watanabe', 3: 'Whatever.', 4: '1'}
+37	34		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+38	35		202							{1: '1', 6: '1'}
+39	36		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg901_1.jpg'}
+40	37		301			AniZhuanchangEnd				{3: 'Watanabe opens his cockpit. He glances at Gray Raven and jumps off.'}
+41	1002		401							{1: '2', 2: '10007502'}
+42	38		301			RImgBg1Shake				{3: 'The next moment, his aircraft collides with the valve, causing a fiery explosion behind.'}
+43	39		301							{3: 'While Watanabe lands on the ground without a scratch...'}
+44	40		301							{2: 'Lee', 3: '...'}
+45	41		301							{2: 'Lee', 3: 'How reckless.'}
+46	42		302							{2: 'We meet again, Watanabe.', 3: '43', 4: 'Nice entrance.', 5: '43'}
+47	43		301		1		AniZhuanchangBegin			{2: 'Watanabe', 3: 'Hmph, we meet again.'}

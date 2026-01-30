@@ -1,0 +1,188 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500576'}
+4	4		301			DialogEnable				{1: '1', 3: 'Ayla stands with her painting in the middle of the street under the setting sun as the undisputable champion.'}
+5	5		204							{1: '1', 2: '20'}
+6	6		301							"{2: 'Ayla', 3: ""Phew... It's finally over."", 4: '1'}"
+7	7		202							{1: '1', 6: '1'}
+8	8		201							{1: '1', 2: '500576', 3: '20', 4: '400'}
+9	9		201							{1: '2', 2: '500275', 4: '-400'}
+10	10		301							{1: '1', 3: 'Stretching, she shows nothing but patience to the mechanoid who comes up to her.'}
+11	11		204							{1: '1'}
+12	12		301							{2: 'Ayla', 3: 'The winner has been decided, right?', 4: '1'}
+13	13		301							{2: 'Awakened Machine', 3: 'In a way, I suppose. But our biggest problem has yet to be solved.', 4: '2'}
+14	14		301							{2: 'Awakened Machine', 3: 'Has the Palette Clash brought you any joy, Ayla?', 4: '2'}
+15	15		301							{2: 'Ayla', 3: 'It has!', 4: '1'}
+16	16		301							{2: 'Ayla', 3: 'Thank you all for letting me participate in such a wonderful celebration of art.', 4: '1'}
+17	17		301							"{2: 'Awakened Machine', 3: ""Is that so? That's wonderful."", 4: '2'}"
+18	18		301							"{2: 'Awakened Machine', 3: ""We're glad to see that there are humans who are as obsessed with art as we are."", 4: '2'}"
+19	19		301							{3: 'The mechanoid before her has a body full of outdated parts. If awakened machines can grow old, this one must be an elder.'}
+20	20		301							{3: 'Ayla reacts accordingly and smiles modestly.'}
+21	21		301							"{2: 'Awakened Machine', 3: ""Aren't you going to ask us why we started this war, Ayla?"", 4: '2'}"
+22	22		301							"{2: 'Ayla', 3: ""I'm happy to listen if you're willing to tell me."", 4: '1'}"
+23	23		301							{2: 'Awakened Machine', 3: 'Hm...', 4: '2'}
+24	24		301							"{2: 'Awakened Machine', 3: ""So you wouldn't have minded getting involved in this war even by accident...?"", 4: '2'}"
+25	25		301							{2: 'Awakened Machine', 3: 'Even if nothing you have done would matter, and the Palette Clash would keep going?', 4: '2'}
+26	26		301							"{2: 'Ayla', 3: ""I can feel your sincerity and obsession with art. That's more than enough."", 4: '1'}"
+27	27		301							{2: 'Ayla', 3: 'Unless my instinct were wrong, I would have made the same choice.', 4: '1'}
+28	28		301							{3: 'The awakened machine nods, satisfied, before sighing with regret.'}
+29	29		301							"{2: 'Awakened Machine', 3: ""Unfortunately, we can't offer you the title of art leader despite you being the victor of this war."", 4: '2'}"
+30	30		301							{2: 'Awakened Machine', 3: 'As compensation, I will do my best to satisfy a request of yours.', 4: '2'}
+31	31		301							"{2: 'Awakened Machine', 3: ""Name it. We can offer everything from Golden Age relics to prized pieces of Constellia's art collection."", 4: '2'}"
+32	32		204							{1: '1', 2: '20'}
+33	33		301							{2: 'Ayla', 3: '...', 4: '1'}
+34	34		204							{1: '1'}
+35	35		301				AniZhuanchangBegin			"{2: 'Ayla', 3: ""I don't need any of those. I just want to ask you for a favor..."", 4: '1'}"
+36	36		202							{1: '1', 2: '2', 6: '1'}
+37	37		301			AniZhuanchangEnd				{3: '...'}
+38	38		301							{3: 'No matter what you say, Mark will not tell you what his earlier words meant.'}
+39	39		201							{1: '1', 2: '500275'}
+40	40		301							{1: '1', 2: 'Awakened Machine', 3: 'Mark.', 4: '1'}
+41	41		301							{3: 'The awakened machine heading toward you is a prime example of retro-style designs.'}
+42	42		201							{1: '1', 2: '500488'}
+43	43		301							"{1: '1', 2: 'Mark', 3: ""Do you have something to tell the human, Milon? I don't think it'll work."", 4: '1'}"
+44	44		201							{1: '1', 2: '500275'}
+45	45		301							"{1: '1', 2: 'Awakened Machine', 3: ""That's okay. If Ayla trusts this human, I'm willing to trust her judgment."", 4: '1'}"
+46	46		301							{3: 'Mark jumps down from his seat like a sulking child and heads out to find other mechanoids from the same School.'}
+47	47		301				DialogDisable			{2: 'Awakened Machine', 3: 'Hello, human. Nice to meet you. You can call me Milon.', 4: '1'}
+48	48		302							{2: 'Hello, Milon.', 3: '49'}
+49	49		302							{2: '(Tell him your name)', 3: '50'}
+50	50		301			DialogEnable	DialogDisable			"{2: 'Milon', 3: ""You're the Gray Raven Commandant, the human hero those Constructs speak of? No wonder Ayla trusts you so much."", 4: '1'}"
+51	51		302							"{2: '""Hero""... is an exaggeration.', 3: '52'}"
+52	52		302							"{2: ""We didn't manage to get here because of one human."", 3: '53'}"
+53	53		301			DialogEnable				{2: 'Milon', 3: '...My apologies.', 4: '1'}
+54	54		301							"{2: 'Milon', 3: ""...The sage's brilliance has perhaps blinded me from the differences between our kinds way too often."", 4: '1'}"
+55	55		302							"{2: ""There's no need for apologies."", 3: '56'}"
+56	56		302							{2: 'We can take our time to understand our differences.', 3: '57'}
+57	57		301							{2: 'Milon', 3: 'Take our time? Hmph...', 4: '1'}
+58	58		301							{3: 'You have no idea if he agrees or disagrees with you. Milon immediately changes the topic.'}
+59	59		301							{2: 'Milon', 3: 'Can you tell me why humans decided to get involved in Palette Clash?', 4: '1'}
+60	60		302							{2: '(Tell him your mission)', 3: '61'}
+61	61		301							{2: 'Milon', 3: 'I see. Humans do depend on our infrastructure to stay alive.', 4: '1'}
+62	62		302							{2: '...', 3: '63'}
+63	63		301							{3: 'Milon feels different from the other awakened machines you have encountered. Perhaps he is a mechanoid related to the city administrators Cervantes left behind?'}
+64	64		302							{2: '(Ask him about that)', 3: '65'}
+65	65		301							{2: 'Milon', 3: 'Administrators? No, no. I was around Cervantes for a longer period of time, I suppose, which made me ruminate more than the others.', 4: '1'}
+66	66		301							{3: 'Milon holds up his paint sprayer. This is the only part of him that does not look out of date.'}
+67	67		201							{1: '1', 2: '500598', 4: '400'}
+68	68		201							{1: '2', 2: '500275', 4: '-400'}
+69	69		301							{1: '1', 2: 'Milon', 3: 'Someone has to think about these things, after all.', 4: '2'}
+70	70		301							{2: 'Dulcinea', 3: 'Why...', 4: '1'}
+71	71		301							"{2: 'Dulcinea', 3: ""Why didn't you stop the Palette Clash, then, Milon?"", 4: '1'}"
+72	72		301							{2: 'Milon', 3: '...', 4: '2'}
+73	73		301							{2: 'Milon', 3: 'Do you also think that art has stopped Constellia from running properly, Dulcinea?', 4: '2'}
+74	74		301							"{2: 'Dulcinea', 3: ""It doesn't matter what I think. It is an objective fact."", 4: '1'}"
+75	75		301							"{2: 'Dulcinea', 3: ""I simply can't understand why you are all so obsessed with art."", 4: '1'}"
+76	76		301							"{2: 'Milon', 3: ""We're different from how composed and logical the mechanoids outside our city are, aren't we?"", 4: '2'}"
+77	77		301							{2: 'Dulcinea', 3: '...', 4: '1'}
+78	78		301							"{2: 'Milon', 3: ""Sigh... You're one of the lucky ones, Dulcinea. I can feel it. Your program and your frame were designed after humans."", 4: '2'}"
+79	79		301							"{2: 'Milon', 3: ""You've had the freedom most mechanoids envy since the day you were born."", 4: '2'}"
+80	80		301							{2: 'Dulcinea', 3: '...No one should envy me...', 4: '1'}
+81	81		202							{1: '1', 2: '2', 6: '1'}
+82	82		201							{1: '1', 2: '500275'}
+83	83		301							{1: '1', 3: 'Milon raises his rusty arm as if he did not hear her.'}
+84	84		401							{1: '1', 2: '36'}
+85	85		301							{2: 'Milon', 3: 'Guess, Gray Raven Commandant. What is my frame most suitable for?', 4: '1'}
+86	86		301							"{3: ""Milon's body is a giant orb with limps attached. A large visual sensor is set at the center of the orb, blinking occasionally.""}"
+87	87		302							{2: 'Industrial use.', 3: '90', 4: 'Military use.', 5: '88', 6: 'You were a chef!', 7: '89'}
+88	88	91	301							"{2: 'Milon', 3: ""Hm... It's worth considering. A bullet is a bullet, even if an old man pulls the trigger."", 4: '1'}"
+89	89	91	301							{2: 'Milon', 3: 'Would you like a plate of fried screws, Commandant?', 4: '1'}
+90	90		301							"{2: 'Milon', 3: ""As expected from a commandant who regularly interacts with mechanoids. You're correct."", 4: '1'}"
+91	91		401							{1: '1', 2: '211'}
+92	92		301							{2: 'Milon', 3: 'This is an industrial frame best suited for fabricating and welding metal products.', 4: '1'}
+93	93		301							{2: 'Milon', 3: 'There is no unnecessary design on this body to maximize efficiency and minimize cost.', 4: '1'}
+94	94		301							{2: 'Milon', 3: 'I can tell from the eighteen-digit production code logged in my program that my creator must be very satisfied with their design.', 4: '1'}
+95	95		301							{2: 'Milon', 3: 'A machine that lives and dies for one and only one job.', 4: '1'}
+96	96		301							{2: 'Milon', 3: 'Whenever I want to try something else, this body will let me know how ridiculous my idea is.', 4: '1'}
+97	97		301							{2: 'Milon', 3: 'These arms that are designed to hold welding equipment are too weak to swing a weapon.', 4: '1'}
+98	98		301							{3: 'Milon swings his arm to prove his theory. The low bearing capacity and the limited movement arc of his arm make him look clumsy and exhausted.'}
+99	99		301							{3: 'His designer must be a human from the Golden Age. Humans would design machines to spare themselves from doing the work they do not want to do.'}
+100	100		301							{3: 'It was not a problem, per se, but accidents like the Punishing Virus could change things in unexpected ways.'}
+101	101		201							{1: '1', 2: '500598'}
+102	102		301							"{1: '1', 2: 'Dulcinea', 3: ""You're a mechanoid. You could have considered modifying your body..."", 4: '1'}"
+103	103		201							{1: '1', 2: '500275'}
+104	104		301							{1: '1', 3: 'Milon looks at Dulcinea. You wonder if the blinking light from his visual sensor represents a kind of envy.'}
+105	105		301							{2: 'Milon', 3: 'For a being like you, Dulcinea, modifying yourself means replacing your arm with a stronger or lighter one.', 4: '1'}
+106	106		301							{2: 'Milon', 3: 'Would you remove your feet and replace them with tracks? Would you add unknown programs to your software to run them?', 4: '1'}
+107	107		201							{1: '1', 2: '500598'}
+108	108		301							{1: '1', 2: 'Dulcinea', 3: '...', 4: '1'}
+109	109		201							{1: '1', 2: '500275'}
+110	110		301							{1: '1', 2: 'Milon', 3: 'Not to mention how hard it would be for most mechanoids to attain that. Working and suitable parts are rare in this world.', 4: '1'}
+111	111		301							{2: 'Milon', 3: 'I tried blending in with others after I was awakened by the Sage.', 4: '1'}
+112	112		301							{2: 'Milon', 3: 'I helped other mechanoids process metal in order to survive. After I had a place to settle down, I still processed metal for the sake of efficiency.', 4: '1'}
+113	113		301							{2: 'Milon', 3: 'I joined the Church of Machina, and I was assigned to process metal because I was an industrial mechanoid through and through.', 4: '1'}
+114	114		301							{2: 'Milon', 3: 'My program never stops reminding me that an industrial mechanoid like me can only process metal, is only capable of processing metal, and will always process metal until one day in the future when my core gives out...', 4: '1'}
+115	115		301							"{2: 'Milon', 3: ""Me, Mark, the mechanoids from other Schools, we're all bound by our designs."", 4: '1'}"
+116	116		301							"{2: 'Milon', 3: ""We're on a stage that we didn't choose, performing a play that we didn't pick."", 4: '1'}"
+117	117		301							"{2: 'Milon', 3: ""The humans are luckier than us. We don't even have a god to pray to because we're born to be tools, the least important props in this story of humankind."", 4: '1'}"
+118	118		301							{2: 'Milon', 3: 'Fate treats us more cruelly than it does humans.', 4: '1'}
+119	119		301							{3: 'Milon exerts himself to twist his shoulder in a way that he can place his sprayer near his visual sensor.'}
+120	120		301							{2: 'Milon', 3: 'But we were lucky to run into Cervantes and art in the dark...', 4: '1'}
+121	121		301							"{2: 'Milon', 3: ""Only when I create do I feel my worth. I'm not just an industrial mechanoid who's disposable. I can dream of anything and draw anything."", 4: '1'}"
+122	122		301							{2: 'Milon', 3: 'Every machine, be it industrial, military, or even a road repairing bot, deserves freedom.', 4: '1'}
+123	123		301							{2: 'Milon', 3: 'There are no restraints, no destiny. Even the most disposable mechanoid can express themselves with a canvas.', 4: '1'}
+124	124		301							"{3: ""Milon's welding torch on his arm suddenly lights up, not as a fire of destruction but as creation.""}"
+125	125		301							"{2: 'Milon', 3: ""Art is our answer. At least, that's what every mechanoid in Constellia will tell you."", 4: '1'}"
+126	126		301							{3: 'This is the origin of Mechanical Art in Constellia. This is the soul of the mechanoids in this city.'}
+127	127		301							{3: 'It is the cry of freedom and an act of defiance against destiny. It is a pillar that connects all their dispersed minds at the bitter end of the world.'}
+128	128		301							{3: 'They obsess because they cannot live without it.'}
+129	129		301							"{3: ""It seems that the General Staff was right. This city's relationship with art is not as simple as it appears.""}"
+130	130		302							{2: 'And Ayla?', 3: '131'}
+131	131		301							"{2: 'Milon', 3: ""You're wondering what Ayla thinks?"", 4: '1'}"
+132	132		301							{3: 'Milon seems to have misunderstood your question.'}
+133	133		301							{2: 'Milon', 3: 'She just asked me to tell you this.', 4: '1'}
+134	134		301				DialogDisable			"{2: 'Milon', 3: ""I'm sure you have your duty, Commandant. I suppose you won't be able to rest until you have accurate intel."", 4: '1'}"
+135	135		302							{2: 'Thank you for letting me know, Milon.', 3: '136'}
+136	136		302							{2: 'Oh, so Ayla also knows about the Schools?', 3: '137'}
+137	137		401							{1: '1', 2: '36'}
+138	138		301			DialogEnable	AniZhuanchangBegin			{2: 'Milon', 3: 'She...', 4: '1'}
+139	139		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory668.jpg'}
+140	140		201							{1: '1', 2: '500576'}
+141	141		301			AniZhuanchangEnd				{1: '1', 2: 'Ayla', 3: 'I asked Milon not to tell me. Only you need to know, Commandant.', 4: '1'}
+142	142		401							{1: '1', 2: '207'}
+143	143		301							{2: 'Ayla', 3: 'That way, I am free to do what I have to do!', 4: '1'}
+144	144		301							{3: 'The temporary tents of WGAA have been set up on the field. More and more supplies are arriving in the meantime.'}
+145	145		301							{3: 'Ayla answers your question as she takes the storage boxes from you and places them in different locations.'}
+146	146		302							{2: 'Why?', 3: '147'}
+147	147		301							{3: 'Pressing a finger to her lips, Ayla seems a little conflicted.'}
+148	148		301							"{2: 'Ayla', 3: ""I feel like there's no way my art won't be affected after I learn about why they are so obsessed."", 4: '1'}"
+149	149		302							{2: 'The Palette Clash is still going...', 3: '150'}
+150	150		301							"{2: 'Ayla', 3: ""Of course. They haven't picked their art leader, after all."", 4: '1'}"
+151	151		301							"{2: 'Ayla', 3: ""And they're serious about creating art. More than I imagined."", 4: '1'}"
+152	152		301							"{2: 'Ayla', 3: ""But Milon has mentioned that those will take place later. There won't be any more actions anytime soon."", 4: '1'}"
+153	153		301							{3: 'Ayla empties a storage box, taking out a bunch of painting and sculpting tools.'}
+154	154		301							{3: 'If Ayla does not know why the awakened machines are obsessed with art...'}
+155	155		302							{2: 'Are you making choices out of instinct, Ayla?', 3: '156'}
+156	156		301							{3: 'Hearing that, Ayla stops what she is working on and turns to look at you with a smile.'}
+157	157		301							{2: 'Ayla', 3: 'I want to try to believe them, Commandant, because they have souls, too...', 4: '1'}
+158	158		301							{3: 'You can feel the sincerity behind her smile.'}
+159	159		301							"{2: 'Ayla', 3: ""And you're here, Commandant, aren't you?"", 4: '1'}"
+160	160		301							{3: 'All your worries become butterflies immediately, flying freely under the light.'}
+161	161		301							{3: 'Even Ayla is getting playful.'}
+162	162		301							{2: 'Ayla', 3: 'Ah! The theme of the first painting... is decided!', 4: '1'}
+163	163		302							{2: 'Ayla.'}
+164	164		301							"{2: 'Ayla', 3: ""Hm? Don't worry, Commandant. I'm going to win."", 4: '1'}"
+165	165		301							"{2: 'Ayla', 3: ""No matter how many Palette Clashes they're going to launch, I will keep fighting until they approve me!"", 4: '1'}"
+166	166		302							"{2: ""That's not what I was talking about."", 3: '167'}"
+167	167		301							"{3: ""You have never doubted Ayla's capabilities.""}"
+168	168		302							{2: 'Milon asked me to give you a message.', 3: '169'}
+169	169		301							{3: 'Ayla looks at you while she unwraps the twine around her canvas. You decide to keep talking since she appears to be listening carefully.'}
+170	170		401							{1: '1', 2: '36'}
+171	171		302							{2: 'Milon asked me to thank you on behalf of the mechanoids in Constellia...', 3: '172'}
+172	172		401							{1: '1', 2: '204'}
+173	173		301							"{3: '""Thank you for participating in our messy event.""'}"
+174	174		301							"{3: '""Thank you for taking it seriously and doing your best to achieve victory.""'}"
+175	175		301							"{3: '""Thank you for recognizing the Palette Clash. Constellia will always welcome you to our celebrations of art.""'}"
+176	176		301							"{3: '""But it won\'t be as easy to win next time.""'}"
+177	177		204							{1: '1', 2: '2'}
+178	178		301							{3: 'Ayla stops unrolling her canvas. What follows is a smile as bright as a blooming flower.'}
+179	179		301							"{2: 'Ayla', 3: ""We got challenged, Commandant! We'll have to do our best!"", 4: '1'}"
+180	180		302							"{2: ""That's right... Wait. We?"", 3: '181'}"
+181	181		204							{1: '1'}
+182	182		301							"{2: 'Ayla', 3: ""Of course! I have counted you in, Commandant. I wouldn't have moved so many things here otherwise."", 4: '1'}"
+183	183		301							{3: 'No wonder there are so many storage boxes and tools...'}
+184	184		301							"{3: ""Noticing Ayla's anticipatory gaze, you cannot help but nod.""}"
+185	185		202							{1: '1', 6: '1'}
+186	186		301							{3: 'Ayla cheers, and your station in this city has been moved into this tent.'}
+187	187		301		1		AniZhuanchangBegin			{3: 'Seeing how inspired she is, you expect to work alongside her imaginative ideas for a long, long time.'}

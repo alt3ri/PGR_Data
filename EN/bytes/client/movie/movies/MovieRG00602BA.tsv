@@ -1,0 +1,78 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory533.jpg'}
+2	2		401							{1: '1', 2: '36'}
+3	3		401							{1: '2', 2: '2634'}
+4	4		301			DialogEnable				{3: 'Your memories start from the moment you were washed ashore.'}
+5	5		301							{3: 'You do not remember anything before that, and you do not know how you got here.'}
+6	6		301							{3: 'A few Scavengers found you by the coast and saved you, and you have lived here ever since.'}
+7	7		301							{3: 'The old mechanic in the town needs an apprentice, and you are the obvious choice.'}
+8	8		301							{3: 'It is not a particularly difficult craft. It does not take you long before you start fixing up some simple things by yourself.'}
+9	9		301							{3: 'Days begin to pass quickly once you no longer have to worry about making a living.'}
+10	10		301							{3: 'And you spend less and less time wondering about your past.'}
+11	11		301							{3: 'Why did the sea take you here?'}
+12	12		301							{3: 'The answer to that question becomes less important once you are used to the sea breeze and the pace of the small town.'}
+13	13		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+14	14		504							{1: '0.7'}
+15	15		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory366.png'}
+16	16		201							{1: '1', 2: '500545'}
+17	17		301							"{1: '1', 2: '???', 3: 'You are more concerned about figuring out the ""how"""" before the """"why.""', 4: '1'}"
+18	18		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+19	19		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory533.jpg'}
+20	20		504							{1: '0'}
+21	21		202							{1: '1', 6: '1'}
+22	22		301							{3: '—Someone seemed to have said something similar to you once.'}
+23	23		301				AniZhuanchangBegin			{3: 'You no longer remember who that person was, but you find those words valuable still.'}
+24	24		402							{1: '2634'}
+25	25		401							{1: '1', 2: '120'}
+26	26		502							{1: 'DialogDisable'}
+27	27		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory41.jpg'}
+28	28		302			AniZhuanchangEnd				"{2: ""Today's order is..."", 3: '29'}"
+29	29		301			DialogEnable				{3: 'You roll up the shutter to the workshop and take the notebook hanging by the sign. When the townsfolks require a mechanic, they write down their requests for your mentor and you to sort out the next day.'}
+30	30		201							{1: '1', 2: '500139'}
+31	31		301							"{1: '1', 2: 'Mechanic', 3: ""They are yours today. I'll stay and watch the shop."", 4: '1'}"
+32	32		302							{2: 'Got it.', 3: '33'}
+33	33		202							{1: '1', 6: '1'}
+34	34		301							{3: 'You prepare your tools and leave the workshop.'}
+35	35		502							{1: 'RImgBg1DisableSlow'}
+36	36		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory361.png'}
+37	37		301							{3: 'Your first destination is a courtyard in the countryside.'}
+38	38		301							{3: 'The place is said to be abandoned for a long time. A rich family recently bought the land, and they made a huge deal about fixing up the estate.'}
+39	39		502							{1: 'RImgBg1DisableSlow'}
+40	40		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory366.png'}
+41	41		301							{3: 'You spot the pointy tower of the estate at the other end of the forest after about ten minutes of walk. Before it is a large courtyard.'}
+42	42		301							{3: 'Standing in front of the fence, you are about to call for someone to open the gate before you notice someone from the corner of your eye.'}
+43	43		301							"{3: 'There is a small and old cemetery by the courtyard—the rich family has had a long argument with the mayor about tearing down the ""unsightly"" place.'}"
+44	44		201							{1: '1', 2: '500540', 3: '8'}
+45	45		301							{1: '1', 3: 'A hooded girl is kneeling before a gravestone, her head lowered and her palms clasped as if she is praying.'}
+46	46		301							{3: 'The family will certainly kick her out if they discover what she is doing.'}
+47	47		302							{2: 'What are you doing here?', 3: '48'}
+48	48		301							{3: 'Before you realize it, you have already approached the girl and asked her your question.'}
+49	49		301							{3: 'Most of the people buried here were dead for centuries. You cannot imagine a girl this young would be here for any of them.'}
+50	50		204							{1: '1'}
+51	51		301							{2: '???', 3: 'Ah...', 4: '1'}
+52	52		301							{2: '???', 3: 'Nothing.', 4: '1'}
+53	53		301							{3: 'Hearing you, the girl slowly stands up and turns around to face you, smiling.'}
+54	54		302							{2: 'If the people living here see you...', 3: '55'}
+55	55		204							{1: '1', 2: '8'}
+56	56		301							"{2: '???', 3: ""That's okay. My task here is complete."", 4: '1'}"
+57	57		301							{3: 'She interrupts you as if she knows what is about to come.'}
+58	58		204							{1: '1'}
+59	59		301							{2: '???', 3: 'I was simply saying goodbye.', 4: '1'}
+60	60		302							{2: '...?'}
+61	61		301							{2: '???', 3: 'By the way, are you happy? With your time here?'}
+62	62		302							"{2: 'Fifty-fifty.', 3: '63', 4: ""I'm quite happy."", 5: '64'}"
+63	63	66	301							{2: '???', 3: 'Is that so?', 4: '1'}
+64	64		204							{1: '1', 2: '2'}
+65	65		301							"{2: '???', 3: ""I'm glad to hear that."", 4: '1'}"
+66	66		301							{3: 'You are not sure why she asked. That said, you getting saved by the townsfolks caused quite a stir back then. She must have recognized you from that.'}
+67	67		301							{3: 'That also explains why you do not remember her.'}
+68	68		204							{1: '1'}
+69	69		301							"{2: '???', 3: ""It's my time to go, then."", 4: '1'}"
+70	70		301							{2: '???', 3: 'Until we meet again.', 4: '1'}
+71	71		302							{2: '...Again?', 3: '72'}
+72	72		301							{3: 'You want to bid her farewell, but a strange feeling suddenly overwhelms you.'}
+73	73		302							{2: 'Have I seen her before?', 3: '74'}
+74	74		202							{1: '1'}
+75	75		301							{3: 'You watch silently as the girl walks farther and farther away until she disappears from your sight.'}
+76	76		302							{2: 'Never mind.', 3: '77'}
+77	77		301		1		AniZhuanchangBegin			{3: 'You must be imagining things.'}

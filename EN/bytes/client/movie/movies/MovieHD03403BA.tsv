@@ -1,0 +1,242 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory55.jpg'}
+2	2		401							{1: '1', 2: '36'}
+3	3		401							{1: '2', 2: '2599'}
+4	4		301			DialogEnable				{3: 'Toure musters a bit more courage, but Iron Skull has already left. Toure carefully guides you through winding passages, leading you to another side hall.'}
+5	5		401							{1: '2', 2: '4697'}
+6	6		301						1500.0	{3: 'You brace yourself and knock on the door, its surface covered in deep scratches. Right away, a jarring voice booms from inside.'}
+7	7		301							"{2: 'Black-Clad Thug', 3: ""Who's there? Which damned fool dares to disturb us? That red-eyed mechanoid?"", 18: '100005215'}"
+8	8		401							{1: '2', 2: '1543'}
+9	9		401						500.0	{1: '2', 2: '1511'}
+10	10		401							{1: '2', 2: '1511'}
+11	11		301							"{3: ""The synchronized sounds of rustling fabric and guns being loaded echo from within. Toure's body language screams that he's ready to bolt.""}"
+12	12		302							{2: 'We are humans.', 3: '13', 4: 'The Corrupted never knock.', 5: '13'}
+13	13		301				DialogDisable			{2: 'Black-Clad Leader', 3: 'Hold it. Let them in.', 18: '100005216'}
+14	14		401							{1: '2', 2: '754'}
+15	15		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1018.jpg', 3: '0', 4: '1', 5: '1.5'}
+16	16		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1018.jpg'}
+17	17		205							{1: '999'}
+18	18		401							{1: '1', 2: '5041'}
+19	19		402							{1: '2599'}
+20	20		301			DialogEnable				"{3: 'The heavy wooden door creaks open, revealing rows of... ""monks"" on both sides of the side hall, all wearing robes and holding guns at the ready.'}"
+21	21		302							{2: '...This is way too punk.', 3: '22', 4: 'Hey, could you lower your guns first?', 5: '24'}
+22	22		211							{1: '1', 2: '1021025', 3: '2', 7: '1'}
+23	23	26	301							{1: '1', 2: 'Black-Clad Thug', 3: 'Huh? You here to start something?! You must have a death wish.', 4: '101', 18: '100005217', 19: '1', 21: 'v215alpha'}
+24	24		211							{1: '1', 2: '1021025', 3: '2', 7: '1'}
+25	25		301							"{1: '1', 2: 'Black-Clad Thug', 3: ""Who do you think you're? You want some of this?"", 4: '101', 18: '100005218', 19: '1', 21: 'v215alpha'}"
+26	26		213							{1: '1', 2: '0.25', 3: '400'}
+27	27		211							{1: '2', 2: '1021034', 3: '1', 4: '-400', 7: '1'}
+28	28		301							{1: '1', 2: 'Black-Clad Leader', 3: 'Let them finish first.', 4: '102', 18: '100005219', 19: '2', 21: 'v215alpha'}
+29	29		214							{1: '1', 2: '1'}
+30	30		301							{2: 'Black-Clad Thug', 3: 'But...', 4: '101', 18: '100005220', 19: '1', 21: 'v215alpha'}
+31	31		301							{2: 'Black-Clad Leader', 3: 'A single bowl makes no sound, but two bowls clash. Sasafune, have you forgotten what Boss always tells us?', 4: '102', 18: '100005221', 19: '2', 21: 'v215alpha'}
+32	32		301							{2: 'Black-Clad Leader', 3: 'The Yama Clan upholds chivalry, not thuggery.', 4: '102', 18: '100005222', 19: '2', 21: 'v215alpha'}
+33	33		301							{3: 'His calm yet commanding voice resonates through the hall, and the young man lowers his once-haughty head.'}
+34	34		301							"{2: 'Sasafune', 3: ""I'm sorry, Mr. Kaiki."", 4: '101', 18: '100005223', 19: '1', 21: 'v215alpha'}"
+35	35		301							"{2: 'Sasafune', 3: 'B-but this is the same ""prey"" Young Madam took away. We couldn\'t even get a word in with her...', 4: '101', 18: '100005224', 19: '1', 21: 'v215alpha'}"
+36	36		214							{1: '2', 2: '2'}
+37	37		301							{2: 'Mr. Kaiki', 3: 'Oh?', 4: '102', 18: '100005225', 19: '2', 21: 'v215alpha'}
+38	38		301				DialogDisable			"{3: ""A faint glimmer flashes in the middle-aged man's eyes, making it feel like he's judging you from head to toe.""}"
+39	39		302							"{2: 'Young Madam?', 3: '40', 4: ""I'm not some prey."", 5: '41'}"
+40	40		302							"{2: ""I'm from Babylonia."", 3: '42'}"
+41	41		302							"{2: ""I'm a commandant of Babylonia."", 3: '42'}"
+42	42		214							{1: '2', 2: '1'}
+43	43		301			DialogEnable	AniZhuanchangBegin			"{2: 'Mr. Kaiki', 3: ""Let's talk inside."", 4: '102', 18: '100005226', 19: '2', 21: 'v215alpha'}"
+44	44		212							{1: '1', 2: '2', 6: '1'}
+45	45		401						2000.0	{1: '1', 2: '36'}
+46	46		401							{1: '1', 2: '201'}
+47	47		301			AniZhuanchangEnd				{3: 'The once-stifling tension eases. Under hostile gazes, you settle into a seat in the side hall.'}
+48	48		401							{1: '2', 2: '4044'}
+49	49		301							"{3: 'Toure has no chance to slip away, so he grudgingly tags along. The moment he tries anything sneaky, a few ""friendly"" folks promptly block him with their broad frames.'}"
+50	50		401							{1: '2', 2: '4221'}
+51	51		301							"{3: 'All the random trinkets he\'s been lugging around—hardly weapons by any measure—are swiftly and ""politely"" taken away.'}"
+52	52		301							"{3: 'The man everyone calls ""Mr. Kaiki"" should be their leader. He shows no hint of anger or joy, and he\'s surprisingly courteous—clearly someone not to be underestimated.'}"
+53	53		211							{1: '1', 2: '1021034', 3: '1', 7: '1'}
+54	54		301							{1: '1', 2: 'Mr. Kaiki', 3: 'Honored guest, what brings you here?', 4: '101', 18: '100005228', 19: '1', 21: 'v215alpha'}
+55	55		302							"{2: ""I'm here to mediate. The refugees around here aren't really at odds with you. I just wish both sides to get along and put an end to these attacks."", 3: '56'}"
+56	56		213							{1: '1', 2: '0.25', 3: '-400'}
+57	57		211							{1: '2', 2: '1021025', 3: '2', 4: '400'}
+58	58		301							"{1: '1', 2: 'Sasafune', 3: ""Are you kidding me? Those brats steal a little rice one day and grab a gun the next. You think we're just letting them walk away free? You really think the boys are okay with that?!"", 4: '102', 18: '100005229', 19: '2', 21: 'v215alpha'}"
+59	59		212							{1: '1', 2: '2', 6: '1'}
+60	60		211							{1: '1', 2: '1021026', 3: '1', 7: '1'}
+61	61		301							{1: '1', 2: 'Toure', 3: 'Well, you jumped us first and hurt our people. That was just payback!', 4: '101', 18: '100005227', 19: '1', 21: 'v215alpha'}
+62	62		212							{1: '1', 6: '1'}
+63	63		301							{3: 'The moment Toure stops talking, he ducks behind you. Sasafune glares at him fiercely. You signal him to stay quiet and quickly change the subject.'}
+64	64		302							"{2: ""If you're here for that sword in the monastery too, you'd better give up. It's really dangerous right now."", 3: '65'}"
+65	65		211							{1: '3', 2: '1021025', 3: '2', 7: '1'}
+66	66		301							"{1: '1', 2: 'Sasafune', 3: ""Dangerous? Like we don't already know that? You think we came all this way without being prepared?!"", 4: '103', 18: '100005230', 19: '3', 21: 'v215alpha'}"
+67	67		401						500.0	{1: '2', 2: '1511'}
+68	68		401							{1: '2', 2: '1511'}
+69	69		213							{1: '3', 2: '0.2', 4: '-50', 5: '-100'}
+70	70		201							{1: '1', 2: '500140', 4: '-600'}
+71	71		201							{1: '2', 2: '500136', 4: '600'}
+72	72		301							{3: 'Sasafune roars, fists clenched, as he charges ahead. His crew leaps up behind him, tension about to explode. Kaiki stands by, lost in thought, making no move to stop them.'}
+73	73		306							{1: '1'}
+74	74		301							"{3: ""This is not good. He's hotheaded and impulsive after all those hits. There's no telling what he'll do, and you're unarmed—if things escalate, you can't handle them alone.""}"
+75	75		301							{3: 'Are you really trapped in a helpless predicament? Beads of sweat begin to form on your back.'}
+76	76		202							{1: '1', 2: '2'}
+77	77		212							{1: '3', 6: '1'}
+78	78		306							
+79	79		104							{1: '0|-200|-200', 2: '0.25'}
+80	80		401							{1: '2', 2: '4100'}
+81	81		301							"{3: ""Right when you're at a standstill, a faint noise drifts down from the rooftop, like the crackle of static electricity.""}"
+82	82		301							{3: 'Alpha?!'}
+83	83		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+84	84		104							{1: '0|0|0', 2: '0'}
+85	85		401							{1: '2', 2: '819016'}
+86	86		401						500.0	{1: '1', 2: '36'}
+87	87		401							{1: '2', 2: '2607'}
+88	88		301			RImgBg1Shake				{3: 'Just as the thought crosses your mind, a cold glint streaks through the air. A dagger, tossed with uncanny accuracy, pierces the low table in front of you.'}
+89	89		401							{1: '1', 2: '276'}
+90	90		211							{1: '1', 2: '1021025', 3: '3', 7: '1'}
+91	91		301							{1: '1', 2: 'Sasafune', 3: 'What?! Where did that come from?!', 4: '101', 18: '100005231', 19: '1', 21: 'v215alpha'}
+92	92		212							{1: '1', 6: '1'}
+93	93		301							{3: 'Its hilt may be scarred, but the blade is in pristine shape—astonishingly sharp. Clearly, even now, its owner cares for it deeply.'}
+94	94		401							{1: '2', 2: '212'}
+95	95		301							{3: 'The crowd erupts in panic. Reflected on that gleaming blade are the faces of everyone—some guarded, some panicked, and some trembling in fear.'}
+96	96		301				DialogDisable			"{3: ""It's a perfect interruption. You silently cheer while keeping up a composed, confident front.""}"
+97	97		402							{1: '212'}
+98	98		302							{2: 'Do you get it now?', 3: '99'}
+99	99		302							"{2: ""I represent your young madam for negotiations, not for a fight. That doesn't help anyone."", 3: '100'}"
+100	100		301			DialogEnable				"{3: ""With the strongest backing behind you, you even stand a bit straighter. You just hope she isn't suggesting she'll use that dagger on anyone who disagrees.""}"
+101	101		301							"{3: 'As soon as Kaiki hears the title ""young madam"" again, his expression finally changes.'}"
+102	102		211							{1: '1', 2: '1021034', 3: '1', 7: '1'}
+103	103		301							{1: '1', 2: 'Mr. Kaiki', 3: 'Stop, all of you.', 4: '101', 18: '100005232', 19: '1', 21: 'v215alpha'}
+104	104		301							"{2: 'Mr. Kaiki', 3: ""You're from Babylonia, right? What's your relationship with Young Madam?"", 4: '101', 18: '100005233', 19: '1', 21: 'v215alpha'}"
+105	105		302							"{2: 'A very important one.', 3: '106', 4: ""That doesn't matter right now."", 5: '106'}"
+106	106		401							{1: '1', 2: '36'}
+107	107		401						500.0	{1: '2', 2: '13015111'}
+108	108		402							{1: '13015111'}
+109	109		301							{3: 'The middle-aged man taps the low table twice, then laces his hands beneath his chin. His henchmen immediately step back at his cue.'}
+110	110		401							{1: '1', 2: '37'}
+111	111		301							{2: 'Mr. Kaiki', 3: 'Honored guest, you might not know this.', 4: '101', 18: '100005234', 19: '1', 21: 'v215alpha'}
+112	112		301							{2: 'Mr. Kaiki', 3: 'Enshrined in the monastery, this sacred sword was forged by legendary Golden Age smith Masamune, who devoted his life to crafting it from materials so rare they were almost impossible to find.', 4: '101', 18: '100005235', 19: '1', 21: 'v215alpha'}
+113	113		301							"{2: 'Mr. Kaiki', 3: ""After all this time, it's still razor-sharp, cutting through iron like clay. It belonged to our boss, and now that he's gone, we will keep it safe."", 4: '101', 18: '100005410', 19: '1', 21: 'v215alpha'}"
+114	114		301							"{2: 'Mr. Kaiki', 3: ""We can't just let a masterpiece like this sit around collecting dust; as Boss' family, we'd never allow it."", 4: '101', 18: '100005236', 19: '1', 21: 'v215alpha'}"
+115	115		301							{2: 'Mr. Kaiki', 3: 'But...', 4: '101', 18: '100005237', 19: '1', 21: 'v215alpha'}
+116	116		301							"{2: 'Mr. Kaiki', 3: ""There's no mistaking Boss' swordsmanship. That figure... She is the successor Boss once mentioned."", 4: '101', 18: '100005238', 19: '1', 21: 'v215alpha'}"
+117	117		301							"{2: 'Mr. Kaiki', 3: ""If Young Madam wants to take this sword, we won't stand in the way."", 4: '101', 18: '100005239', 19: '1', 21: 'v215alpha'}"
+118	118		212							{1: '1', 6: '1'}
+119	119		301							{3: 'Sasafune is about to speak, but Kaiki raises a hand and gently stops him.'}
+120	120		211							{1: '1', 2: '1021034', 3: '1', 7: '1'}
+121	121		301							"{1: '1', 2: 'Mr. Kaiki', 3: ""For people like us abandoned and left with no home, Boss was like a savior who gave us a second chance. Staying true to his benevolence and beliefs is the Yama Clan's unwavering duty."", 4: '101', 18: '100005240', 19: '1', 21: 'v215alpha'}"
+122	122		301							{2: 'Mr. Kaiki', 3: 'Everyone here is my precious child, and I always stand up for them. When it comes to outsiders, though, I respectfully keep my distance.', 4: '101', 18: '100005241', 19: '1', 21: 'v215alpha'}
+123	123		301							"{2: 'Mr. Kaiki', 3: ""The Yama Clan is taking it upon ourselves to protect Boss' monastery."", 4: '101', 18: '100005242', 19: '1', 21: 'v215alpha'}"
+124	124		213							{1: '1', 2: '0.25', 3: '-400'}
+125	125		211							{1: '2', 2: '1021025', 3: '2', 4: '400', 7: '1'}
+126	126		301							"{1: '1', 2: 'Sasafune', 3: ""That's right!!"", 4: '102', 18: '100005243'}"
+127	127		301							{3: 'Sasafune stands there, full of pride, glaring in your direction as if raising his voice makes him more intimidating.'}
+128	128		301							"{2: '【kuroname】', 3: ""I understand where you're coming from. But we still have a real situation right in front of us that needs to be dealt with.""}"
+129	129		301							"{2: '【kuroname】', 3: ""The Corrupted are still lurking in the main hall, just waiting for the right moment to strike. Honestly, for regular folks, it's nearly impossible to avoid more casualties.""}"
+130	130		301							"{2: '【kuroname】', 3: ""You're not the type to lead your people to their doom, are you?""}"
+131	131		306							{1: '1'}
+132	132		301							"{3: 'You drive the point home with ""doom."" As suspected, they\'re well-organized and disciplined, and also treasure their comrades.'}"
+133	133		301							"{3: ""The Corrupted roam the snowy mountains, and these people have arrived here for various reasons. You can't help but respect their resolve and perseverance.""}"
+134	134		301							"{3: ""They want to protect the monastery and settle here, but going it alone is wishful thinking. The higher their rank, the more they need to weigh the pros and cons—determination alone just isn't enough.""}"
+135	135		306							
+136	136		301							"{2: '【kuroname】', 3: ""It's easy to conquer, but hard to defend. Please consider my proposal.""}"
+137	137		301							{2: '【kuroname】', 3: 'Regarding the Corrupted, A—I mean, your young madam and I will handle it.'}
+138	138		401							{1: '2', 2: '212'}
+139	139		301							"{3: ""Someone snorts in disdain, their expression making it clear they don't believe a word of this.""}"
+140	140		301				DialogDisable			{3: 'You raise your voice, ensuring you keep control of the negotiations.'}
+141	141		401							{1: '1', 2: '36'}
+142	142		402							{1: '212'}
+143	143		401						350.0	{1: '2', 2: '2766'}
+144	144		401						1000.0	{1: '2', 2: '2766'}
+145	145		401							{1: '1', 2: '202'}
+146	146		301			DialogEnable				{2: '【kuroname】', 3: 'It will take a lot of work before the monastery is truly livable again.'}
+147	147		301							{2: '【kuroname】', 3: 'I promise Babylonia provides some support to help establish order here.'}
+148	148		301							{3: 'Toure has no concept of what being a commandant of Babylonia means, and he looks over in surprise the moment he hears your words.'}
+149	149		301							"{2: '【kuroname】', 3: ""Think about it for a second—aren't these refugees just like you were back when you had no place to call home?""}"
+150	150		301							{2: '【kuroname】', 3: 'If your boss once took you in, he definitely wants you to make the better choice right now.'}
+151	151		301							{3: 'Kaiki finally looks moved. He sits up straight for a moment in solemn silence, then slowly nods.'}
+152	152		301							{3: 'It seems this showdown is about to end. While the momentum is there, you throw in one final comment.'}
+153	153		301							"{2: '【kuroname】', 3: ""No matter who's involved, this is a chance for a <b>win-win</b> outcome.""}"
+154	154		301							{2: 'Mr. Kaiki', 3: 'Hmm. All right. If you really can handle the Corrupted...', 4: '101', 18: '100005244', 19: '1', 21: 'v215alpha'}
+155	155		301							"{2: 'Sasafune', 3: ""Pops?! We can't just let this go...!"", 4: '102', 18: '100005245', 19: '2', 21: 'v215alpha'}"
+156	156		301							"{2: 'Mr. Kaiki', 3: ""Got a better idea? Sasafune, I know pride matters, but we're out of ammo and starving. Weapons won't fill our stomachs."", 4: '101', 18: '100005246', 19: '1', 21: 'v215alpha'}"
+157	157		301							{3: 'Sasafune glares at you, his fists clenched and trembling. His face goes bright red as he takes a few deep breaths, then suddenly snaps.'}
+158	158		401							{1: '2', 2: '8220025'}
+159	159		214							{1: '2', 2: '2'}
+160	160		213							{1: '2', 2: '0.25', 3: '200', 5: '-100'}
+161	161		213							{1: '1', 2: '0.25', 3: '-600'}
+162	162		401						1000.0	{1: '1', 2: '36'}
+163	163		401							{1: '1', 2: '244'}
+164	164		301			RImgBg1Shake				"{2: 'Sasafune', 3: ""Who the **** do you think you are? We've lost people left and right, and you just stand there running your mouth, ready to split our yakuza's turf—our lifeblood—like it's nothing?"", 4: '102', 18: '100005247', 19: '2', 21: 'v215alpha'}"
+165	165		213							{1: '2', 2: '0.25', 3: '400'}
+166	166		213							{1: '1', 2: '0.25', 3: '-400'}
+167	167		301							"{2: 'Sasafune', 3: ""Pops, let's settle this right now! That's how we've always done it!"", 4: '102', 18: '100005248', 19: '2', 21: 'v215alpha'}"
+168	168		301							"{2: 'Mr. Kaiki', 3: ""This isn't a place where you get to act willingly..."", 4: '101', 18: '100005249', 19: '1', 21: 'v215alpha'}"
+169	169		401						300.0	{1: '2', 2: '10021517'}
+170	170		402							{1: '10021517'}
+171	171		213							{1: '2', 2: '0.25'}
+172	172		212							{1: '1', 6: '1'}
+173	173		301				DialogDisable			"{3: ""Sasafune is about to draw the pistol from inside his coat. For the first time, Kaiki's poker face slips—he can't even finish what he's saying or stop him.""}"
+174	174		104							{1: '0|0|-100', 2: '0.25'}
+175	175		213						250.0	{1: '2', 2: '0.25', 5: '-100'}
+176	176		401						500.0	{1: '2', 2: '9342058'}
+177	177		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+178	178		401							{1: '2', 2: '4700'}
+179	179		212							{1: '2', 6: '1'}
+180	180		301			DialogEnable				"{3: ""The distance is perfect. Even though he's a yakuza, his reflexes are only human. Before anyone else can react, you kick the gun away and slam Sasafune onto his back with a decisive throw.""}"
+181	181		104							{1: '0|-50|-50', 2: '0.25'}
+182	182		401							{1: '2', 2: '4005'}
+183	183		301							{3: 'When facing an opponent this proud, dislocating the wrist joint is a tried-and-true technique.'}
+184	184		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+185	185		401							{1: '2', 2: '4306'}
+186	186		301			RImgBg1Shake				{3: 'Boom! A thunderous crash echoes through the side hall, followed by a pained wail.'}
+187	187		301							"{3: ""You look down at Sasafune, sprawled on the floor, his face twisted in pain. He's not entirely wrong—sometimes force is the quickest way to settle things.""}"
+188	188		301							"{2: '【kuroname】', 3: 'Can I assume we\'ve come to an agreement? I hope you\'ll respect the ""benevolence"" you keep talking about.'}"
+189	189		301							"{2: '【kuroname】', 3: ""You can afford to make mistakes now, but on a real battlefield, you can't.""}"
+190	190		401							{1: '2', 2: '4339'}
+191	191		401						1000.0	{1: '1', 2: '36'}
+192	192		401							{1: '1', 2: '37'}
+193	193		301							"{3: ""Nobody expected this. As he stands, the henchmen shuffle back, leaving space. Seeing that everything has settled, Kaiki's face is grim—he presses a hand to his forehead and exhales a long, tense sigh.""}"
+194	194		211							{1: '1', 2: '1021034', 3: '1', 7: '1'}
+195	195		301							"{1: '1', 2: 'Mr. Kaiki', 3: ""I haven't kept him in line. Apologies for the spectacle."", 4: '101', 18: '100005250', 19: '1', 21: 'v215alpha'}"
+196	196		213							{1: '1', 2: '0.25', 3: '-400'}
+197	197		211							{1: '2', 2: '1021025', 3: '1', 4: '400', 7: '1'}
+198	198		301							"{1: '1', 2: 'Mr. Kaiki', 3: ""Sasafune, if you still call yourself yakuza, you know what you have to do, don't you?"", 4: '101', 18: '100005251', 19: '1', 21: 'v215alpha'}"
+199	199		301							"{2: 'Mr. Kaiki', 3: ""It's your fault this time."", 4: '101', 18: '100005252', 19: '1', 21: 'v215alpha'}"
+200	200		301							{3: 'Kaiki glares at Sasafune and points to the dagger stuck in the table. The side hall falls silent, thick with tension.'}
+201	201		301							{2: 'Sasafune', 3: 'Y-yes, Pops...', 4: '102', 18: '100005253', 19: '2', 21: 'v215alpha'}
+202	202		401						500.0	{1: '2', 2: '13015111'}
+203	203		402							{1: '13015111'}
+204	204		212							{1: '1', 2: '2', 6: '1'}
+205	205		301							{3: 'Sasafune keeps his head low, wipes the blood from his nose, and is forced to stretch out his left hand. The dagger catches the light with a cold, merciless gleam.'}
+206	206		211							{1: '1', 2: '1021034', 3: '1', 7: '1'}
+207	207		301							"{1: '1', 2: 'Mr. Kaiki', 3: ""Is one finger enough? The kid clearly has no idea who he's messing with—and this is how he makes amends."", 4: '101', 18: '100005254', 19: '1', 21: 'v215alpha'}"
+208	208		302							{2: 'What are you doing?', 3: '209'}
+209	209		401							{1: '2', 2: '819016'}
+210	210		301							{2: 'Mr. Kaiki', 3: 'This is our way.', 4: '101', 18: '100005255', 19: '1', 21: 'v215alpha'}
+211	211		302							{2: 'Please, stop!', 3: '212', 4: 'Wait!', 5: '212'}
+212	212		212							{1: '1', 6: '1'}
+213	213		401							{1: '2', 2: '4701'}
+214	214		301							"{3: ""They glance at Kaiki, pause, then let Sasafune go. He gasps for air and meets your gaze, his eyes full of conflicting emotions. It's not just him—everyone else's hostility shifts as well.""}"
+215	215		301							"{3: ""You hurry to grab the dagger, hoping its owner won't mind.""}"
+216	216		302							"{2: ""Babylonia doesn't follow rules like that. It's not necessary."", 3: '217', 4: ""Keep your fingers. You'll need them to protect your own."", 5: '217'}"
+217	217		301							{3: 'Exhausted, the middle-aged man orders his men to stand down, then rises and gazes at the flickering oil lamp before the Buddha statue in the side hall.'}
+218	218		211							{1: '1', 2: '1021034', 3: '1', 7: '1'}
+219	219		301							{1: '1', 2: 'Mr. Kaiki', 3: 'Our boss... he was a man of benevolence, someone everyone respected. He had a natural talent for swordsmanship—so few could rival him—but he never used his strength to intimidate anyone.', 4: '101', 18: '100005256', 19: '1', 21: 'v215alpha'}
+220	220		301				AniZhuanchangBegin			{2: 'Mr. Kaiki', 3: 'Cornered by enemies who exploited his only weakness and destroyed his family, he fled to this mountain to escape the conflict. As for his treasured sword...I hope the young madam will make the most of it.', 4: '101', 18: '100005257', 19: '1', 21: 'v215alpha'}
+221	221		212							{1: '1', 6: '1'}
+222	222		401							{1: '1', 2: '36'}
+223	223		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory55.jpg'}
+224	224		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '1'}
+225	225		401							{1: '1', 2: '100'}
+226	226		301			AniZhuanchangEnd				"{3: ""When you step out of the side hall, Toure looks like he's just been granted a pardon. He gives an awkward bow and darts off.""}"
+227	227		301							{3: 'Snow drifts all around, and yet a single crimson camellia remains in full bloom, boldly defying the cold.'}
+228	228		301							{3: 'Even though the sky is overcast, the white-haired figure—arms crossed, leaning against the stone tower—stands out and somehow puts you at ease.'}
+229	229		301							{3: 'You swipe the snowflakes off your face and step up beside her.'}
+230	230		302							"{2: ""You've been listening from the start, haven't you?"", 3: '231'}"
+231	231		301							"{3: ""Alpha doesn't confirm or deny. She just brushes the thin dusting of snow from her shoulder.""}"
+232	232		301							{3: 'For her, ignoring everything or just stepping over it is the simplest option.'}
+233	233		302							{2: 'Thanks.', 3: '234', 4: 'I thought I was about to get killed.', 5: '236'}
+234	234		211							{1: '1', 2: '1021028', 3: '1', 7: '1'}
+235	235	239	301							"{1: '1', 2: 'Alpha', 3: ""I didn't do anything."", 4: '101', 18: '100005258', 19: '1', 21: 'v215alpha'}"
+236	236		211							{1: '1', 2: '1021028', 3: '3', 7: '1'}
+237	237		301							{1: '1', 2: 'Alpha', 3: 'Nice try.', 4: '101', 18: '100005259', 19: '1', 21: 'v215alpha'}
+238	238		214							{1: '1', 2: '1'}
+239	239		301							"{2: 'Alpha', 3: ""All the wandering Corrupted have been cleared; they won't cause any more trouble."", 4: '101', 18: '100005260', 19: '1', 21: 'v215alpha'}"
+240	240		301							"{3: ""Of course, there's no need to worry, no reason to doubt—nobody can stand in her way.""}"
+241	241		301		1		AniZhuanchangBegin			"{2: 'Alpha', 3: ""Now that the dagger's done its job, hand it over."", 4: '101', 18: '100005261', 19: '1', 21: 'v215alpha'}"

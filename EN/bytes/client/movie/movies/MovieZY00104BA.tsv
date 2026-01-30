@@ -1,0 +1,55 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory79.jpg'}
+2	2		401							{1: '1', 2: '209'}
+3	3		201							{1: '1', 2: '1031001', 4: '600'}
+4	4		201							{1: '2', 2: '500166'}
+5	5		201							{1: '3', 2: '500026', 4: '-600'}
+6	6		301			DialogEnable				"{1: '1', 2: 'Lee', 3: ""Frankly, I can't tell how that trial is related to wisdom at all."", 4: '3'}"
+7	7		301							{2: 'Lucia', 3: 'But it was pretty fun as an activity. Liv and I were guessing along as well.', 4: '2'}
+8	8		301							{2: 'Lee', 3: '...Were all the gesturings you guys were doing just you trying to solve the puzzles?', 4: '3'}
+9	9		301							"{2: 'Lucia', 3: ""That's right. I got distracted for a second, and Liv won in the end."", 4: '2'}"
+10	1000		302							{2: 'Should we give Liv a reward, then?', 3: '10', 4: 'Do you want a rematch next time, Lucia?', 5: '11'}
+11	10	12	301							"{2: 'Liv', 3: ""Oh, I... I don't need any rewards... Lee and Commandant winning is the best reward I can hope for."", 4: '1'}"
+12	11	12	301							"{2: 'Lucia', 3: ""I'll do my best if there is a rematch."", 4: '2'}"
+13	12		301							"{2: 'Lee', 3: ""Anyway, we've got two keys with us now. It also proves the importance of finding out whose portrait it is."", 4: '3'}"
+14	1001		202							{1: '1', 2: '2', 3: '3'}
+15	1002		201							{1: '1', 2: '500018'}
+16	13		301							"{1: '1', 2: 'Foreman', 3: ""Oh, ain't your trials going smoothly, Gray Raven from Babylonia!"", 4: '1'}"
+17	1003		302							"{2: 'Why are you here?', 3: '14', 4: ""What's up?"", 5: '15'}"
+18	14	4000	301							"{2: 'Foreman', 3: ""Not that odd for me to hang around the place. I'm part of the crew, after all! But you're right that I'm here for another reason."", 4: '1'}"
+19	15	4000	301							"{2: 'Foreman', 3: ""Something's up! But you ain't the one I'm looking for."", 4: '1'}"
+20	4000		203							{1: '1', 2: '0.25', 3: '-400'}
+21	1004		201							{1: '2', 2: '500170', 4: '400'}
+22	16		301							{1: '1', 3: 'After greeting you all, the foreman walks over to the South General, who is disappointed with the riddle having been solved, and smacks him on the back of the head.'}
+23	17		301			PanelActor2Shake				{2: 'South General', 3: 'Ouch! What was that, Foreman?!', 4: '2'}
+24	18		301							{1: '1', 2: 'Foreman', 3: 'Do you still have to ask? What are you doing leaving your post and coming all the way here? Look at that mess of a queue outside with all those mechanoids!', 4: '1'}
+25	19		301							{2: 'South General', 3: 'Ugh!', 4: '2'}
+26	20		301							"{2: 'Foreman', 3: ""Just pick yourself up and head back, or the event's screwed!"", 4: '1'}"
+27	21		301							{2: 'South General', 3: 'U-understood!', 4: '2'}
+28	1005		202							{1: '1', 2: '2'}
+29	1006		201							{1: '1', 2: '500166', 3: '1'}
+30	22		301							{1: '1', 2: 'Lucia', 3: 'I think I know why he is the foreman.', 4: '1'}
+31	1007		302							{2: 'So do I.', 3: '1008'}
+32	1008		203							{1: '1', 2: '0.25', 3: '400'}
+33	1009		201							{1: '2', 2: '500018', 4: '-400'}
+34	23		301							{1: '1', 2: 'Foreman', 3: 'I have to thank you as well, Babylonians.', 4: '2'}
+35	24		301							{2: 'Lucia', 3: 'Why?', 4: '1'}
+36	25		301							"{2: 'Foreman', 3: ""Because y'all are great contestants, that's why! The Fist of the Taoist has never been as competitive as this year, thanks to you!"", 4: '2'}"
+37	26		301							"{2: 'Lucia', 3: ""Now that you've mentioned it, there were indeed mechanoids cheering for us, just like an audience."", 4: '1'}"
+38	27		301							{2: 'Foreman', 3: 'The competition is an event, after all.', 4: '2'}
+39	1010		201							{1: '1', 2: '1031001', 4: '400'}
+40	28		301							{1: '1', 2: 'Liv', 3: 'But why are you organizing these activities during the Ghost Festival? The festival in the records is supposed to be...', 4: '1'}
+41	29		301							"{2: 'Foreman', 3: ""Of course we know what the Ghost Festival is supposed to be. We're just... trying to find an excuse to do something together, is what it is."", 4: '2'}"
+42	1011		302							"{2: ""Can't you do that in your daily lives?"", 3: '30', 4: 'Just to fool around?', 5: '31'}"
+43	30	32	301							{2: 'Foreman', 3: 'The lives of us mechanoids are way more boring than you think.', 4: '2'}
+44	31	32	301							"{2: 'Foreman', 3: ""That's a good way to put it."", 4: '2'}"
+45	32		301							"{2: 'Foreman', 3: ""Which is to say... sometimes we would want to remember the good ol' days too."", 4: '2'}"
+46	33		301							"{2: 'Liv', 3: ""These old days you're talking about..."", 4: '1'}"
+47	34		301							"{2: 'Foreman', 3: ""Hmm, weird to talk about this sort of thing in front of guests, ain't it? Trek along now to find the West General. I should return to my patrol!"", 4: '2'}"
+48	1012		202							{1: '2'}
+49	35		301							"{2: 'Liv', 3: ""And he's gone..."", 4: '1'}"
+50	1013		201							{1: '2', 2: '500166', 4: '-400'}
+51	36		301							"{1: '1', 2: 'Lucia', 3: ""From what Foreman said, this event shouldn't be dangerous to begin with. Let's keep going, Commandant."", 4: '2'}"
+52	1014		302							"{2: ""Let's go."", 3: '37', 4: ""Lucia's next, right?"", 5: '38'}"
+53	37		301		1		AniZhuanchangBegin			"{2: 'Lucia', 3: ""(Nods) Let's head toward the Western trial."", 4: '2'}"
+54	38		301		1		AniZhuanchangBegin			"{2: 'Lucia', 3: ""(Nods) We don't have anyone else, anyway. Let's go get our third victory!"", 4: '2'}"

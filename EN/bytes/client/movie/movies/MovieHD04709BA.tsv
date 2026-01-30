@@ -1,0 +1,146 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+2	2		401							{1: '1', 2: '294'}
+3	3		301			DialogEnable				"{3: ""On the west side of Constellia, the flea market is buzzing with life. Mechanoids who are usually quiet have all set up stalls, selling trinkets they've collected or crafted by hand.""}"
+4	4		301							{3: 'You came here hoping to find something unusual, but instead, you spot a familiar figure in the crowd.'}
+5	5		201							{1: '1', 2: '500610'}
+6	6		301							{1: '1', 2: 'Alpha', 3: '...', 4: '1'}
+7	7		306							{1: '1'}
+8	8		301				DialogDisable			{3: 'Alpha stands at a stall, focused on the item in her hands. She examines it carefully, exchanges a few words with the vendor, then pays without hesitation, slipping her purchase into a small pouch.'}
+9	9		202							{1: '1'}
+10	10		502						500.0	{1: 'RImgBg1BlowUp'}
+11	11		201						50.0	{1: '1', 2: '500340', 4: '-600', 7: '1'}
+12	12		203						500.0	{1: '1', 2: '2', 3: '-600', 5: '-800'}
+13	13		202						250.0	{1: '1'}
+14	14		201						50.0	{1: '2', 2: '500969', 4: '600', 7: '1'}
+15	15		203						500.0	{1: '2', 2: '2', 3: '600', 5: '-800'}
+16	16		202						250.0	{1: '2'}
+17	17		201						50.0	{1: '3', 2: '501025', 4: '-300', 7: '1'}
+18	18		203						500.0	{1: '3', 2: '2', 3: '-300', 5: '-800'}
+19	19		202						250.0	{1: '3'}
+20	20		201						50.0	{1: '4', 2: '500342', 4: '300', 7: '1'}
+21	21		203						500.0	{1: '4', 2: '2', 3: '300', 5: '-800'}
+22	22		202							{1: '4'}
+23	23		301			DialogEnable				{3: 'The crowd surges. A passerby blocks your view for only a moment, but when they move on, Alpha is gone.'}
+24	24		301							{3: 'Before you can look for her, you feel a fingertip press firmly against your back.'}
+25	25		505							{1: 'RImgBg1BlowUp'}
+26	26		306							
+27	27		201							{1: '1', 2: '500610'}
+28	28		301							"{1: '1', 2: 'Alpha', 3: ""Don't move."", 4: '1'}"
+29	29		301							{3: 'That cool, familiar voice could belong to no one else.'}
+30	30		302							"{2: ""...Couldn't you just say hello like a normal person?"", 3: '31', 4: 'Alpha?', 5: '31'}"
+31	31		202							
+32	32		301				AniZhuanchangBegin			"{3: ""Alpha says nothing, just gives you a look you can't quite read. Then she tilts her chin to the right, signaling you to follow.""}"
+33	33		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory672.jpg'}
+34	34		202							{1: '1', 6: '1'}
+35	35		301			AniZhuanchangEnd				"{3: ""Here at the market's edge, the noise fades and the crowds thin out.""}"
+36	36		301							{3: 'She finally withdraws her finger, and you turn to look at her, noticing the white cloth bag in her hand, stamped with little cat paw prints.'}
+37	37		302							"{2: ""That's a cute bag."", 3: '38', 4: 'This is...?', 5: '38'}"
+38	38		201							{1: '1', 2: '500610'}
+39	39		301							{1: '1', 2: 'Alpha', 3: 'Freebie.', 4: '1'}
+40	40		203							{1: '1', 2: '0.25', 5: '-50'}
+41	41		301							{3: 'She keeps it short, but when she sees your curiosity, she passes you the bag.'}
+42	42		202							{1: '1'}
+43	43		306							{1: '1'}
+44	44		301				DialogDisable			{3: 'Inside are boxes of cat food, a collapsible cat bed, neatly packed gauze, and antiseptic.'}
+45	45		306							
+46	46		302							{2: 'A full cat care kit?', 3: '47'}
+47	47		201							{1: '1', 2: '500610'}
+48	48		301			DialogEnable				"{1: '1', 2: 'Alpha', 3: ""I passed the pet supplies section earlier and picked them up. See if anything's missing."", 4: '1'}"
+49	49		301							{3: 'You take the bag. The kit is surprisingly complete—food, bedding, even emergency care supplies.'}
+50	50		302							{2: 'Speaking of which, does that white cat still try to claw your hair?', 3: '51'}
+51	51		204							{1: '1', 2: '8'}
+52	52		301							{3: 'She lets out the faintest sigh.'}
+53	53		204							{1: '1'}
+54	54		301							"{2: 'Alpha', 3: ""Yes. Every morning. First thing after waking up, it comes to me like it's clocking in for work."", 4: '1'}"
+55	55		301							{3: 'She turns slightly to the side, and her silver-white hair slides over her shoulder, the crimson tips swaying in your view.'}
+56	56		204							{1: '1'}
+57	57		301							"{2: 'Alpha', 3: ""...I don't understand what's so fascinating about it."", 4: '1'}"
+58	58		302							{2: '(Reach for the tips of her hair)', 3: '59', 4: 'I can see why it catches the eye.', 5: '65'}
+59	59		301							"{3: ""You can't help but glance at that flash of red. Almost without thinking, you reach out and twirl a strand between your fingers. It's cool, silky, softer than you imagined.""}"
+60	60		204							{1: '1', 2: '8'}
+61	61		301							{3: 'Alpha freezes for a moment at the unexpected touch, then simply exhales a quiet huff.'}
+62	62		204							{1: '1'}
+63	63		301							"{2: 'Alpha', 3: ""You've got more nerve than the cat."", 4: '1'}"
+64	64		202							{1: '1'}
+65	65		301							"{3: ""Thinking back to the bag's contents, you realize she bought everything except something to burn off the cat's energy. If the problem is clawing, then maybe she can give it something else to play with...""}"
+66	66		302				AniZhuanchangBegin			"{2: ""I've got a solution."", 3: '67'}"
+67	67		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+68	68		202							{1: '1', 6: '1'}
+69	69		306							{1: '1'}
+70	70		301			AniZhuanchangEnd				{3: 'You search the flea market until you find the perfect item:'}
+71	71		301				DialogDisable			{3: 'A lightweight rod with a few soft feathers attached—a simple but irresistible toy for cats.'}
+72	72		306							
+73	73		302							{2: 'Try this. A feather wand.', 3: '74'}
+74	74		201							{1: '1', 2: '500610'}
+75	75		301			DialogEnable				{1: '1', 3: 'Alpha eyes it with open skepticism.'}
+76	76		301							{2: 'Alpha', 3: 'You really think that will work?', 4: '1'}
+77	77		302							{2: 'Trust me, it works like a charm.', 3: '78', 4: 'It should... maybe... probably work?', 5: '78'}
+78	78		301							{2: 'Alpha', 3: 'How do you even use it? Just wave it in front of it?', 4: '1'}
+79	79		302							{2: 'Pretty much. Like this.', 3: '80'}
+80	80		401							{2: '2936'}
+81	81		301							{3: 'You give the wand a light shake. The feathers flutter like a moth in flight, tracing uneven arcs through the air.'}
+82	82		301							{3: 'Alpha watches intently, her heterochromatic gaze fixed on the feathers as if tracking real prey.'}
+83	83		301							{2: 'Alpha', 3: 'Hmph. Simple enough.', 4: '1'}
+84	84		202							{1: '1'}
+85	85		301							{3: 'As she speaks, she reaches toward the swaying feathers, as if testing their feel.'}
+86	86		302							{2: '(Lift upward)', 3: '87'}
+87	87		306							{1: '1'}
+88	88		301							{3: 'For some reason, without thinking, you move before your mind can catch up. A thought flashes through you and, almost like a prank, you lift your wrist ever so slightly.'}
+89	89		301							{3: 'The feathers brush her fingertips before darting upward, leaving her hand hanging in midair.'}
+90	90		306							
+91	91		201							{1: '1', 2: '500610'}
+92	92		301							{1: '1', 2: 'Alpha', 3: '...', 4: '1'}
+93	93		302							{2: '...', 3: '94'}
+94	94		301							"{3: ""Alpha glances at her empty fingers, then at the feathers. She doesn't seem upset, only gives a small shake of her head.""}"
+95	95		301							"{2: 'Alpha', 3: ""Don't be childish."", 4: '1'}"
+96	96		202							{1: '1'}
+97	97		301							{3: 'She reaches again, this time quicker and more precise.'}
+98	98		302							{2: '(Lift upward again)', 3: '99'}
+99	99		301							{3: 'The feathers slip past her fingertips once more.'}
+100	100		201							{1: '1', 2: '500610'}
+101	101		301							{1: '1', 2: 'Alpha', 3: 'Tsk...', 4: '1'}
+102	102		301							{3: 'Her tongue clicks against her teeth. She finally looks up at you, clear annoyance in her mismatched eyes.'}
+103	103		302							{2: 'Ahem.', 3: '104', 4: '...', 5: '104', 6: '(Smile)', 7: '104'}
+104	104		301							"{2: 'Alpha', 3: ""Third time's the charm."", 4: '1'}"
+105	105		203							{1: '1', 2: '0.25', 5: '-50'}
+106	106		301							{3: 'Her gaze returns to the feathers, and she tries again.'}
+107	107		302							{2: '(Keep lifting upward)', 3: '108'}
+108	108		301			RImgBg1Shake				{2: 'Alpha', 3: '【kuroname】!', 4: '1'}
+109	109		401							{2: '844'}
+110	110		301							"{3: 'With a sharp growl, she abandons the ""prey"" and moves in a flash, her hand cutting through their afterimage to clamp firmly around your wrist holding the toy.'}"
+111	111		301			DialogShake				{3: 'An unyielding force shoots through your arm, throwing your balance off instantly.'}
+112	112		401							{2: '4895'}
+113	113		203							{1: '1', 2: '0.25', 5: '-100'}
+114	114		301			RImgBg1Shake				"{3: ""By the time you realize it, your arm is twisted up behind you in a textbook restraint hold. The pressure on your joint leaves no doubt about the warning she's sending.""}"
+115	115		204							{1: '1', 2: '13'}
+116	116		301				DialogDisable			"{2: 'Alpha', 3: ""Getting bold lately, aren't you?"", 4: '1'}"
+117	117		302							{2: 'Ow, ow, ow—', 3: '118', 4: 'Alright! Calm down!', 5: '118'}
+118	118		302							{2: 'I was just showing you how it works!', 3: '119'}
+119	119		302							{2: 'And see? That just proves it works, right?', 3: '120'}
+120	120		301			DialogEnable				{3: 'The air hangs still for a few seconds.'}
+121	121		204							{1: '1'}
+122	122		203							{1: '1', 2: '0.25'}
+123	123		301							{3: 'Finally, the pressure on your arm eases as Alpha lets go.'}
+124	124		301							"{2: 'Alpha', 3: ""Don't do this again."", 4: '1'}"
+125	125		202							{1: '1'}
+126	126		301							"{3: 'She snatches the ""culprit"" from your hand and walks straight to the vendor to pay for it without hesitation.'}"
+127	127		201							{1: '1', 2: '500610'}
+128	128		301							"{1: '1', 2: 'Alpha', 3: ""Got what I came for. I'm heading back."", 4: '1'}"
+129	129		302							"{2: 'Leaving already?', 3: '130', 4: ""It's a festival. At least get yourself a souvenir."", 5: '130'}"
+130	130		301							{3: 'You think about it: Alpha has bought a complete set of supplies for the cat, but nothing for herself.'}
+131	131		301							"{2: 'Alpha', 3: ""I'm not interested in that sort of thing."", 4: '1'}"
+132	132		306							{1: '1'}
+133	133		301							"{3: ""She answers quickly, but as soon as she finishes speaking, her gaze settles on you and stays there. Your reflection shimmers in her mismatched eyes. She stays silent for a moment, as if she's studying a piece of art.""}"
+134	134		306							
+135	135		204							{1: '1', 2: '13'}
+136	136		301							"{2: 'Alpha', 3: 'No. Let me correct that. There is one ""souvenir"" here that I am interested in.', 4: '1'}"
+137	137		302							"{2: ""...I'm expensive, you know."", 3: '138', 4: ""I'm not for sale."", 5: '138'}"
+138	138		301							"{2: 'Alpha', 3: ""Relax. I wasn't planning to pay."", 4: '1'}"
+139	139		203							{1: '1', 2: '0.25', 5: '-50'}
+140	140		301							"{3: ""She reaches out again, but this time there's no force in her grip—she just holds your wrist gently.""}"
+141	141		203							{1: '1', 2: '0.25', 5: '-100'}
+142	142		301							"{2: 'Alpha', 3: ""Let's go."", 4: '1'}"
+143	143		302							{2: 'Where to?', 3: '144'}
+144	144		204							{1: '1', 2: '1'}
+145	145		301		1		AniZhuanchangBegin			"{2: 'Alpha', 3: ""Don't ask questions. And no excuses. You're spending the rest of the day with me."", 4: '1'}"

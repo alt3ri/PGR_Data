@@ -1,0 +1,85 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory243.png'}
+2	2		401							{1: '1', 2: '230'}
+3	3		301			DialogEnable				{3: 'The night sky is already covered.'}
+4	4		301							{3: 'You find myself on a bridge, observing the bustling crowd on the far shore.'}
+5	5		302				RImgBg1Shake			{2: 'Achoo—', 3: '6'}
+6	6		401							{1: '2', 2: '215'}
+7	7		301							{3: 'A sudden sneeze—a naughty breeze, perhaps.'}
+8	8		301							{3: 'Suddenly, a blanket is draped over your shoulders.'}
+9	9		301							"{3: ""The comforting texture instantly dispels the night's chill.""}"
+10	10		302							{2: 'Hmm?', 3: '11', 4: 'Bianca?', 5: '11'}
+11	11		201							{1: '1', 2: '500128'}
+12	12		301							{1: '1', 3: 'Turning around, you find the blonde woman already beside you.'}
+13	13		204							{1: '1', 2: '1'}
+14	14		301							{2: 'Bianca', 3: 'Good evening, Commandant.', 4: '1'}
+15	15		301							{3: 'A gentle smile graces her lips.'}
+16	16		204							{1: '1'}
+17	17		203							{1: '1', 2: '0.5', 4: '-50', 5: '50'}
+18	18		301							{3: 'Realizing she might be standing a bit too close, she takes a half step back and, out of habit, gives a small bow.'}
+19	19		302							{2: 'Ah—', 3: '20'}
+20	20		301							{3: 'You almost lose the blanket trying to return her bow.'}
+21	21		203							{1: '1', 2: '0.3', 4: '-50', 5: '-50'}
+22	22		301							{3: 'Bianca quickly catches the falling side, adjusts it, and then grabs a corner—only then noticing a button sewn on it.'}
+23	23		301							"{2: 'Bianca', 3: ""Sorry, I should've mentioned it earlier."", 4: '1'}"
+24	24		204							{1: '1', 2: '1'}
+25	25		301							{3: 'Bianca helps you fasten the button with a satisfied expression on her face.'}
+26	26		301							{2: 'Bianca', 3: 'Much better.', 4: '1'}
+27	27		301							{3: 'Your eyes follow her gaze to the blanket, noting the smooth stitching and fabric unlike anything you have seen in Babylonia.'}
+28	28		301							{3: 'There is also an embroidery of a magpie flying through clouds at the shoulder.'}
+29	29		301							"{3: 'In the corner, the character for ""cloud"" is embroidered—the handwriting...'}"
+30	30		302							{2: 'Did you make this...', 3: '31', 4: 'Was this your...', 5: '31'}
+31	31		301							{3: 'Bianca nods with a smile.'}
+32	32		301							{2: 'Bianca', 3: 'Are you satisfied, Commandant?', 4: '1'}
+33	33		302							{2: 'Very much so.', 3: '34', 4: 'Quite surprised.', 5: '35'}
+34	34	36	301							"{2: 'Bianca', 3: ""After all, it's a promise."", 4: '1'}"
+35	35		301				DialogDisable			{2: 'Bianca', 3: 'Seems I managed to keep it.', 4: '1'}
+36	36		202							{1: '1', 6: '1'}
+37	37		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+38	38		504							{1: '0.7'}
+39	39		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg'}
+40	40		301			DialogEnable				{3: 'Your mind drifts back to a similar moment last year, Bianca holding a bookmark toward the Milky Way.'}
+41	41		302							{2: 'So it was...', 3: '42'}
+42	42		301				DialogDisable			{2: 'Bianca', 3: 'Next year, may I prepare a surprise for you?'}
+43	43		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+44	44		504							{1: '0'}
+45	45		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory243.png'}
+46	46		301			DialogEnable				{3: 'That was when Bianca made a promise.'}
+47	47		201							{1: '1', 2: '500128', 3: '1'}
+48	48		301							{1: '1', 2: 'Bianca', 3: 'Lucky I caught you here.', 4: '1'}
+49	49		301							"{2: 'Bianca', 3: ""Otherwise, I'd still be looking for a chance to give it to you."", 4: '1'}"
+50	50		301							"{3: ""Seeing the sparkle in her eyes, you can't help but smile.""}"
+51	51		302							{2: 'No one would refuse such a surprise.', 3: '52'}
+52	52		302							{2: 'Especially when it comes from Bianca herself.', 3: '53'}
+53	53		301							"{2: 'Bianca', 3: ""It's my honor."", 4: '1'}"
+54	54		301							{3: 'Bianca, visibly relaxed after receiving your approval, plays with her hair and leans against the railing, gazing up at the night sky.'}
+55	55		301							{3: 'Her eyes mirror the scattered stars.'}
+56	56		202							{1: '1', 6: '1'}
+57	57		104							{1: '0|-100|-150', 2: '2'}
+58	58		301							{3: 'You follow her gaze.'}
+59	59		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg', 3: '0', 4: '1', 5: '1'}
+60	60		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+61	61		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg'}
+62	62		201							{1: '18', 2: '500128'}
+63	63		301							{1: '1', 2: 'Bianca', 3: 'Though the stars seem chaotic—', 4: '1'}
+64	64		301							"{2: 'Bianca', 3: ""There's a celestial dance they follow, a bit like..."", 4: '1'}"
+65	65		302							{2: 'The monotonous lives many of us lead, perhaps?', 3: '66', 4: 'Predetermined paths laid out for us?', 5: '66'}
+66	66		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory243.png', 3: '0', 4: '1', 5: '1'}
+67	67		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+68	68		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory243.png'}
+69	69		202							{1: '18', 6: '1'}
+70	70		301							{3: 'Bianca lowers her gaze.'}
+71	71		201							{1: '1', 2: '500128'}
+72	72		301							"{2: 'Bianca', 3: ""In the tale about the lovers' day of Kowloong, the Cowherd and the Weaver Girl are destined to meet only once a year."", 4: '1'}"
+73	73		301							{2: 'Bianca', 3: 'How can such a fate bring any surprises?', 4: '1'}
+74	74		302							"{2: ""It's precisely because some things are fated..."", 3: '75'}"
+75	75		302							{2: 'That the unexpected can happen when they actually occur.', 3: '76'}
+76	76		301							{3: 'Pulling out the gift you have prepared for Bianca, you see her eyes widen with surprise.'}
+77	77		301							{3: 'She carefully accepts the box, which contains a hairpin carved with drifting clouds.'}
+78	78		302							"{2: ""Last time Earth made its journey here, we didn't have these."", 3: '79'}"
+79	79		301							{3: 'Looking toward the shopping street, you see the sparse lights already coalescing into a bright night, everyone wearing a smile.'}
+80	80		203							{1: '1', 2: '1', 4: '-50', 5: '-100'}
+81	81		301							{3: 'A playful breeze sweeps across the wooden bridge, and Bianca leans closer, seemingly not just on a whim.'}
+82	82		204							{1: '1', 2: '1'}
+83	83		301							"{2: 'Bianca', 3: ""Let's turn such meetings into..."", 4: '1'}"
+84	84		301		1		AniZhuanchangBegin			{2: 'Bianca', 3: 'Destiny.', 4: '1'}

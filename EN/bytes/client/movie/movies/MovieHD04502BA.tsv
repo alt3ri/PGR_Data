@@ -1,0 +1,410 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1054.jpg'}
+2	2		401							{1: '1', 2: '5059'}
+3	3		301			DialogEnable				"{3: 'Thanks to your efforts, everyone is able to see the carefully prepared ""surprise"" at moonrise.'}"
+4	4		401							{1: '2', 2: '2704'}
+5	5		301							{3: 'Pushing aside the grass, they see a clean swimming pool with the fresh scent of bleach behind the rusty bars. Nobody can believe it.'}
+6	6		201							{1: '18', 2: '501205'}
+7	7		301							{1: '1', 2: 'Soyo', 3: 'Wait. Is this really the rundown swimming pool overgrown with weeds?', 4: '18', 18: '100010151'}
+8	8		202							{1: '18', 6: '1'}
+9	9		201							{1: '18', 2: '501064'}
+10	10		301							"{1: '1', 2: 'Female Student', 3: ""Jetavie, Instructor, can't believe you got it done within just a few hours... This is impressive..."", 4: '18', 18: '100010152'}"
+11	11		202							{1: '18', 6: '1'}
+12	12		301							{3: 'The students look at one another in surprise, but no one dares to walk the first step toward the swimming pool.'}
+13	13		201							{1: '1', 2: '501274'}
+14	14		301							"{1: '1', 2: 'Jetavie', 3: ""C'mon! Don't be shy! Go have a try!"", 4: '1', 18: '100010153'}"
+15	15		301							{3: 'Eventually, Jetavie was the one who broke the ice.'}
+16	16		204							{1: '1', 2: '9'}
+17	17		301							{2: 'Jetavie', 3: 'This is what you guys have been waiting for, right?', 4: '1', 18: '100010154'}
+18	18		202							{1: '1'}
+19	19		401							{1: '2', 2: '1504'}
+20	20		301						2000.0	"{3: ""Hearing Jetavie's encouraging words, the students finally stop hesitating. They thank Jetavie in a hurry and rush to the swimming pool.""}"
+21	21		402							{1: '1504'}
+22	22		201							{1: '18', 2: '501205'}
+23	23		301							"{1: '1', 2: 'Soyo', 3: ""Woah! The water is different from the sea! It's so hot!"", 18: '100010155'}"
+24	24		202							{1: '18', 6: '1'}
+25	25		201							{1: '18', 2: '501064'}
+26	26		301							{1: '1', 2: 'Female Student', 3: 'I know! It must be the heat from the sun.', 18: '100010156'}
+27	27		202							{1: '18'}
+28	28		401							{1: '2', 2: '4159'}
+29	29		301							{3: 'The students exclaim joyfully, splashing water at each other while exchanging feelings.'}
+30	30		306							{1: '1'}
+31	31		201							{1: '1', 2: '501274', 3: '1'}
+32	32		301							{1: '1', 3: 'Jetavie stands on the deck of the swimming pool. A satisfied smile appears on her face as she watches the students enjoying themselves.'}
+33	33		301				DialogDisable			{3: 'She looks very happy.'}
+34	34		306							
+35	35		302							{2: 'You look happy.', 3: '36'}
+36	36		204							{1: '1', 2: '4'}
+37	37		301			DialogEnable				{2: 'Jetavie', 3: 'Huh...? Do I?', 4: '1', 18: '100010157'}
+38	38		301							"{3: ""She's a bit surprised upon hearing your words.""}"
+39	39		204							{1: '1', 2: '8'}
+40	40		301							"{2: 'Jetavie', 3: ""I don't know why... I guess happiness is contagious."", 4: '1', 18: '100010158'}"
+41	41		204							{1: '1', 2: '1'}
+42	42		301							{3: 'She looks at the swimming pool. A smile gradually dawns on her face.'}
+43	43		301							{2: 'Jetavie', 3: 'No matter what, having your wish heard and granted is something to be happy about.', 4: '1', 18: '100010159'}
+44	44		204							{1: '1', 2: '9'}
+45	45		301							"{2: 'Jetavie', 3: ""I'd like to thank you as well. Thank you, Chosen One. I've had a great day today."", 4: '1', 18: '100010160'}"
+46	46		301							{3: 'She gives you a knowing smile, as if she has long figured out everything. You understand it the minute you see that smile. No more explanation is needed from her.'}
+47	47		302							"{2: '(Reach out to pat Jetavie)', 3: '48', 4: ""You're welcome."", 5: '48'}"
+48	48		401							{1: '2', 2: '1516', 3: '1'}
+49	49		301						500.0	"{3: ""A series of crisp footsteps come from behind just when you are about to reach out to Jetavie's shoulder.""}"
+50	50		202							{1: '1', 6: '1'}
+51	51		201							{1: '1', 2: '501054'}
+52	52		301							{1: '1', 3: 'You turn around with Jetavie and see Sakiko coming over.'}
+53	53		301							"{2: 'Sakiko', 3: ""I know I've said this a million times, but I still want to say..."", 4: '1', 18: '100010161'}"
+54	54		301				DialogDisable			"{2: 'Sakiko', 3: 'Thank you for letting us live as ""normal students"" here for one day as summer camp members.', 4: '1', 18: '100010162'}"
+55	55		203						600.0	{1: '1', 2: '0.25', 4: '-80'}
+56	56		203						450.0	{1: '1', 2: '0.4'}
+57	57		301			DialogEnable				{3: 'Sakiko bows deeply to both of you.'}
+58	58		301							"{2: 'Sakiko', 3: ""We know today is a special day... Tomorrow, we'll have to go back to work in the conservation area."", 4: '1', 18: '100010163'}"
+59	59		301							"{2: 'Sakiko', 3: ""Even if it is just one day, we'd still like to thank you for your company and for spending time and effort to prepare an irreplaceable memory like this."", 4: '1', 18: '100010164'}"
+60	60		301				AniZhuanchangBegin			{2: 'Sakiko', 3: 'Thank you, Jetavie. Thank you, Instructor 【kuroname】. We will never forget this summer.', 4: '1', 18: '100010165'}
+61	61		202							{1: '1', 6: '1'}
+62	62		401						2500.0	{1: '1', 2: '36'}
+63	63		401							{1: '1', 2: '6167'}
+64	64		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+65	65		301			AniZhuanchangEnd	DialogDisable			{3: 'By the time the students had finished and gone home satisfied, the full moon was already hanging high in the night sky.'}
+66	66		501							{1: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiYinghuochong.prefab', 2: '1'}
+67	67		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1056.jpg', 3: '0', 4: '1', 5: '1.5'}
+68	68		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1056.jpg'}
+69	69		205							{1: '999'}
+70	70		301			DialogEnable	DialogDisable			"{3: 'The campus is weirdly quiet ""after school."" Flickering fireflies are flying in the waist-high grass, silently declaring that this place is no longer a school but the last pure land in the conservation area.'}"
+71	71		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1271.jpg', 3: '0', 4: '1', 5: '1.5'}
+72	72		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1271.jpg'}
+73	73		205						250.0	{1: '999'}
+74	74		401							{1: '2', 2: '913'}
+75	75		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront76.png', 3: '0', 4: '1', 5: '1'}
+76	76		104						1200.0	{1: '-4|-336|0', 2: '0', 4: '3'}
+77	77		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront76.png', 3: '0', 4: '1', 5: '1'}
+78	78		104						1200.0	{1: '-2|-180|0', 2: '0', 4: '4'}
+79	79		205						1500.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1272.jpg', 3: '0', 4: '1', 5: '1'}
+80	80		402							{1: '913'}
+81	81		101							{4: '3', 5: '1'}
+82	82		101							{4: '4', 5: '1'}
+83	83		101							{4: '5', 5: '1'}
+84	84		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1272.jpg'}
+85	85		301			DialogEnable				{3: 'With the flashlight in your hand as the only source of light, you and Jetavie arrive at the swimming pool in the dark following the path you took during the day after everyone else is gone.'}
+86	86		201							{1: '1', 2: '501274', 3: '9'}
+87	87		301							"{1: '1', 2: 'Jetavie', 3: ""Everyone left... It's just you and me for the rest of the day, Chosen One."", 4: '1', 18: '100010166'}"
+88	88		306							{1: '1'}
+89	89		301							{3: 'She turns around in the faint moonlight. Her eyes make your heart skip a beat.'}
+90	90		301				DialogDisable			"{3: ""You don't know why, but Jetavie's smile looks more mysterious than earlier during the day.""}"
+91	91		306							
+92	92		202						400.0	{1: '1'}
+93	93		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiYinghuochong.prefab'}
+94	94		401							{1: '2', 2: '9339045'}
+95	95		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1272.jpg', 3: '0', 4: '1', 5: '1'}
+96	96		104						1500.0	{1: '0|-50|-100', 2: '0', 4: '3'}
+97	97		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1272.jpg'}
+98	98		104							{1: '0|-50|-100', 2: '0'}
+99	99		205							{1: '999'}
+100	100		104							{1: '0|0|0', 2: '0', 4: '3'}
+101	101		301			DialogEnable				{3: 'She takes your hand and leads you into the pool.'}
+102	102		401							{1: '2', 2: '4146'}
+103	103		205				DialogDisable		1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+104	104		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+105	105		205							{1: '999'}
+106	106		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionInvitation/FxUiRegressionInvitationShine.prefab', 2: '2'}
+107	107		301			DialogEnable				{3: 'Splash—'}
+108	108		301				AniZhuanchangBegin			{3: 'Water comes and gently wraps around your body with the remaining warmth of the day.'}
+109	109		402							{1: '4146'}
+110	110		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionInvitation/FxUiRegressionInvitationShine.prefab'}
+111	111		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1272.jpg'}
+112	112		502						400.0	{1: 'DialogDisable'}
+113	113		302			AniZhuanchangEnd				{2: '(So warm... completely different from what it feels in the sea.)', 3: '114'}
+114	114		201							{1: '1', 2: '501274', 3: '2'}
+115	115		301			DialogEnable				"{1: '1', 2: 'Jetavie', 3: ""I bet you're thinking it's different from the sea, right?"", 4: '1', 18: '100010167'}"
+116	116		301							"{3: ""When you're back to the moment, Jetavie is already in front of your eyes, looking at you with a mischievous grin.""}"
+117	117		301							"{2: 'Jetavie', 3: ""Hey, it's rare for us to have such a big pool to ourselves... Why don't we... make a mess?"", 4: '1', 18: '100010168'}"
+118	118		302							{2: 'Sure.', 3: '119', 4: 'What kind of mess?', 5: '119'}
+119	119		204							{1: '1'}
+120	120		301							{2: 'Jetavie', 3: 'We could have a water fight, play with water guns, or see who can hold their breath underwater the longest!', 4: '1', 18: '100010169'}
+121	121		204							{1: '1', 2: '1'}
+122	122		301							"{2: 'Jetavie', 3: ""Here, we don't need to care about others or what people would think of us..."", 4: '1', 18: '100010170'}"
+123	123		301							{3: 'But Jetavie gradually lowers her voice and eventually lets out a light sigh.'}
+124	124		204							{1: '1', 2: '8'}
+125	125		301							"{2: 'Jetavie', 3: ""But for some reason, I'm just not in the mood for those."", 4: '1', 18: '100010171'}"
+126	126		302							"{2: 'Are you feeling tired?', 3: '127', 4: ""If something's bothering you, I'm all ears."", 5: '127'}"
+127	127		204							{1: '1'}
+128	128		301							{3: 'You look at Jetavie with concern but only see a straightforward, comforting smile.'}
+129	129		301							"{2: 'Jetavie', 3: ""I'm fine! Don't overthink it."", 4: '1', 18: '100010172'}"
+130	130		204							{1: '1', 2: '8'}
+131	131		301				DialogDisable			"{2: 'Jetavie', 3: ""It's just... It's kind of a shame."", 4: '1', 18: '100010173'}"
+132	132		302							{2: 'Why?', 3: '133'}
+133	133		202							{1: '1', 6: '1'}
+134	134		401							{1: '2', 2: '1543'}
+135	135		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg', 3: '0', 4: '1', 5: '1'}
+136	136		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg'}
+137	137		205							{1: '999'}
+138	138		301			DialogEnable				{3: 'Jetavie remains quiet. She takes your hand and looks up into the sky, inviting you to do the same.'}
+139	139		201							{1: '18', 2: '501274', 3: '1', 4: '245', 5: '-160', 6: '-300'}
+140	140		301							{1: '1', 2: 'Jetavie', 3: 'See those stars? They are Deneb, Altair, and Vega.', 4: '18', 18: '100010174'}
+141	141		301							{2: 'Jetavie', 3: 'Those three form the Summer Triangle.', 4: '18', 18: '100010175'}
+142	142		202							{1: '18', 6: '1'}
+143	143		301							{3: 'She draws an intangible triangle upon the night sky with her white finger.'}
+144	144		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1106.jpg'}
+145	145		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '4'}
+146	146		301			AniZhuanchangEnd				"{3: ""In the direction she's pointing, three stars are shining forever somewhere at the other end of the universe.""}"
+147	147		101							{4: '4', 5: '1'}
+148	148		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg'}
+149	149		502							{1: 'DialogDisable'}
+150	150		502						1000.0	{1: 'AniZhuanchangEnd'}
+151	151		302							{2: 'Oh I see.', 3: '152', 4: 'It looks great.', 5: '152'}
+152	152		201							{1: '18', 2: '501274', 3: '4', 4: '245', 5: '-160', 6: '-300'}
+153	153		301			DialogEnable				{1: '1', 2: 'Jetavie', 3: 'And... Did you know?', 4: '18', 18: '100010176'}
+154	154		301							{2: 'Jetavie', 3: 'The Summer Triangle rises earlier as fall approaches.', 4: '18', 18: '100010177'}
+155	155		301							"{2: 'Jetavie', 3: ""It's only nine thirty-five right now, but the Summer Triangle is almost below the horizon, which means..."", 4: '18', 18: '100010178'}"
+156	156		302							{2: '(Listen to Jetavie quietly)', 3: '157', 4: 'What does that mean?', 5: '157'}
+157	157		204							{1: '18', 2: '14'}
+158	158		301							{2: 'Jetavie', 3: 'That summer is coming to an end.', 4: '18', 18: '100010179'}
+159	159		202				DialogDisable			{1: '18'}
+160	160		401							{1: '2', 2: '9339045'}
+161	161		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1272.jpg', 3: '0', 4: '1', 5: '1.5'}
+162	162		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1272.jpg'}
+163	163		205							{1: '999'}
+164	164		301			DialogEnable				{3: 'Jetavie lets go of your hand, steps back, and walks slowly to a brighter spot.'}
+165	165		201							{1: '1', 2: '501274', 3: '4'}
+166	166		301							{1: '1', 2: 'Jetavie', 3: 'I hate when things end, Chosen One.', 4: '1', 18: '100010180'}
+167	167		301							{2: 'Jetavie', 3: 'I hate the countdowns, the diminishing numbers, and the world that is doomed to collapse...', 4: '1', 18: '100010181'}
+168	168		301							{2: 'Jetavie', 3: 'But I also understand I have to say goodbye to things as I grow. I have to accept these prices no matter how reluctant I am.', 4: '1', 18: '100010182'}
+169	169		204							{1: '1', 2: '8'}
+170	170		301							{3: 'She takes a light breath, makes up her mind, and says—'}
+171	171		204							{1: '1', 2: '4'}
+172	172		301							{2: 'Jetavie', 3: 'You must have already noticed that my arrival was no accident.', 4: '1', 18: '100010183'}
+173	173		301							{2: 'Jetavie', 3: 'Days ago, I hacked into your terminal and found that you were scheduled to serve as the instructor here in this conservation area.', 4: '1', 18: '100010184'}
+174	174		204							{1: '1', 2: '6'}
+175	175		301							{2: 'Jetavie', 3: 'I pulled a few tricks and managed to sneak in.', 4: '1', 18: '100010185'}
+176	176		202							{1: '1', 6: '1'}
+177	177		401							{1: '2', 2: '895'}
+178	178		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+179	179		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+180	180		301				DialogDisable			{3: 'Yes, everything started from a simple wish—'}
+181	181		109							"{1: '1', 2: '<color=#ffffffff><size=65>""I want to see the Chosen One.""</size></color>', 4: '75', 11: '1'}"
+182	182		301							"{3: '""I want to see the Chosen One.""'}"
+183	183		110							
+184	184		401							{1: '2', 2: '895'}
+185	185		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+186	186		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1052.jpg'}
+187	187		301			DialogEnable				{3: 'So Jetavie sneaked out from Babylonia, got along with local students, and sneaked into this basic education facility.'}
+188	188		301							{3: 'However, during the short day, Jetavie really had fun from the peaceful campus life, which led to a change of her wish.'}
+189	189		301							"{3: 'It changed from ""I hope to spend a day with the Chosen One"" to ""I hope this day will never end.""'}"
+190	190		401							{1: '2', 2: '895'}
+191	191		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+192	192		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+193	193		201							{1: '1', 2: '501274', 3: '9', 7: '1'}
+194	194		301							{1: '1', 3: 'I wish I could be with the Chosen One like this forever—Jetavie secretly thought to herself.'}
+195	195		204							{1: '1', 2: '4'}
+196	196		301							{3: 'And what Sakiko said before leaving reminded her of her duty.'}
+197	197		202							{1: '1', 6: '1'}
+198	198		401							{1: '2', 2: '4387'}
+199	199		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+200	200		504							{1: '0.7'}
+201	201		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1054.jpg'}
+202	202		201							{1: '1', 2: '501054', 7: '1'}
+203	203		301							"{1: '1', 2: 'Sakiko', 3: ""We know today is a special day... Tomorrow, we'll have to go back to work in the conservation area."", 4: '1', 18: '100010163'}"
+204	204		301				AniZhuanchangBegin			"{2: 'Sakiko', 3: ""Even if it is just one day, we'd still like to thank you for your company and for spending time and effort to prepare an irreplaceable memory like this."", 4: '1', 18: '100010164'}"
+205	205		202							{1: '1', 6: '1'}
+206	206		504							{1: '0'}
+207	207		401						2500.0	{1: '1', 2: '36'}
+208	208		401							{1: '1', 2: '181'}
+209	209		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1272.jpg'}
+210	210		301			AniZhuanchangEnd				{3: '...After today, Commandant will return to Babylonia, and she will return to her duties as well.'}
+211	211		301							{3: 'She has to protect these students to keep this peaceful campus life going,'}
+212	212		201							{1: '1', 2: '501274', 3: '9'}
+213	213		301							"{1: '1', 2: 'Jetavie', 3: ""It's been great spending this day with you. It makes me almost forget..."", 4: '1', 18: '100010186'}"
+214	214		204							{1: '1', 2: '1'}
+215	215		301							{2: 'Jetavie', 3: 'No matter how happy I am, everything comes to an end one way or another.', 4: '1', 18: '100010187'}
+216	216		202							{1: '1'}
+217	217		301							{3: 'She smiles to you and turns away.'}
+218	218		201							{1: '18', 2: '501274', 3: '8', 4: '245', 5: '-160', 6: '-300'}
+219	219		301							"{1: '1', 2: 'Jetavie', 3: 'I thought kids born and raised in the conservation area were living a life close to a ""normal"" life...', 4: '18', 18: '100010188'}"
+220	220		204							{1: '18', 2: '4'}
+221	221		301							"{2: 'Jetavie', 3: ""However, I'm confused after we spent the day together."", 4: '18', 18: '100010189'}"
+222	222		301							{2: 'Jetavie', 3: 'Perhaps, this is how the world works. Even outside the Matrix or Gestrig... people still face all kinds of troubles.', 4: '18', 18: '100010190'}
+223	223		202							{1: '18'}
+224	224		301							{3: 'Her silhouette tilts upward, gazing past the nebula to where Altair and Vega twinkle, light-years away.'}
+225	225		201							{1: '18', 2: '501274', 3: '8', 4: '245', 5: '-160', 6: '-300'}
+226	226		301							"{1: '1', 2: 'Jetavie', 3: 'One day is too short. I still haven\'t figured out what a ""normal"" school or a ""normal"" student life is like.', 4: '18', 18: '100010191'}"
+227	227		204							{1: '18', 2: '1'}
+228	228		301							{2: 'Jetavie', 3: 'But I realized something...', 4: '18', 18: '100010192'}
+229	229		202							{1: '18', 6: '1'}
+230	230		401							{1: '2', 2: '1543'}
+231	231		201							{1: '1', 2: '501274', 3: '1'}
+232	232		301							{1: '1', 3: 'She lowers her gaze from the star-filled sky and turns toward you with a serious look.'}
+233	233		301							{2: 'Jetavie', 3: 'And that is: I enjoy every moment I spend with you.', 4: '1', 18: '100010193'}
+234	234		202							{1: '1', 6: '1'}
+235	235		401							{1: '2', 2: '558'}
+236	236		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+237	237		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+238	238		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_47.jpg'}
+239	239		301							"{2: 'Jetavie (In Her Mind)', 3: '(From the moment I opened my eyes for the first time in the ""Matrix"" and met you as the ""Chosen One""...)', 18: '100010194'}"
+240	240		401							{1: '2', 2: '558'}
+241	241		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+242	242		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5401_10.jpg'}
+243	243		301							"{2: 'Jetavie (In Her Mind)', 3: '(To the moment I recognized you as the ""Gray Raven Commandant"" outside the Cradle in reality...)', 18: '100010195'}"
+244	244		401							{1: '2', 2: '558'}
+245	245		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+246	246		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1052.jpg'}
+247	247		301							{2: 'Jetavie (In Her Mind)', 3: '(To today, here you are by my side, spending a wonderful day with me as 【kuroname】...)', 18: '100010196'}
+248	248		401							{1: '2', 2: '558'}
+249	249		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+250	250		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2601_11.jpg'}
+251	251		301				DialogDisable			{2: 'Jetavie (In Her Mind)', 3: '(All the way to this moment... These are all irreplaceable moments I have engraved in my module.)', 18: '100010197'}
+252	252		401							{1: '2', 2: '558'}
+253	253		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+254	254		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+255	255		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+256	256		401							{1: '2', 2: '895'}
+257	257		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront25.png', 4: '5'}
+258	258		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+259	259		201						800.0	{1: '1', 2: '500263', 4: '-650', 7: '1'}
+260	260		401							{1: '2', 2: '895'}
+261	261		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+262	262		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront58.png', 4: '5'}
+263	263		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory523.jpg'}
+264	264		201						800.0	{1: '1', 2: '500728', 7: '1'}
+265	265		401							{1: '2', 2: '895'}
+266	266		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+267	267		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 4: '5'}
+268	268		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory915.jpg'}
+269	269		201						800.0	{1: '1', 2: '500893', 4: '600', 7: '1'}
+270	270		401							{1: '2', 2: '895'}
+271	271		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+272	272		101							{4: '5', 5: '1'}
+273	273		501							{1: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab', 2: '2'}
+274	274		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+275	275		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory523.jpg', 4: '3'}
+276	276		104							{1: '660|0|0', 2: '0', 4: '3'}
+277	277		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory915.jpg', 4: '4'}
+278	278		104							{1: '1350|0|0', 2: '0', 4: '4'}
+279	279		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 4: '5'}
+280	280		201							{1: '1', 2: '501187', 3: '3', 5: '-195', 6: '300', 7: '1'}
+281	281		201							{1: '2', 2: '500263', 4: '-750', 7: '1'}
+282	282		201							{1: '3', 2: '500728', 4: '-50', 7: '1'}
+283	283		201						1500.0	{1: '4', 2: '500893', 4: '800', 7: '1'}
+284	284		205							{1: '1006', 2: 'Assets/Product/Texture/Image/BgStory/BgStory970.jpg', 3: '0', 4: '1', 5: '1'}
+285	285		203							{1: '2', 2: '1', 4: '-230', 5: '250'}
+286	286		203							{1: '3', 2: '1', 4: '-230', 5: '250'}
+287	287		203							{1: '4', 2: '1', 4: '-230', 5: '250'}
+288	288		203						800.0	{1: '1', 2: '1'}
+289	289		202							{1: '2', 2: '3', 3: '4'}
+290	290		101							{4: '3', 5: '1'}
+291	291		101							{4: '4', 5: '1'}
+292	292		101							{4: '5', 5: '1'}
+293	293		301			DialogEnable	DialogDisable	250.0		{1: '1', 3: 'Born in the digital ocean, the girl traveled through countless cycles and eventually chose to break free from the warm Cradle and embrace where she belongs in reality.', 4: '1'}
+294	294		401						500.0	{1: '2', 2: '772'}
+295	295		111						250.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab'}
+296	296		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab'}
+297	297		205							{1: '1006', 3: '0', 4: '1', 5: '0'}
+298	298		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+299	299		202							{1: '1', 6: '1'}
+300	300		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable02.prefab', 2: '2', 5: '1'}
+301	301		511							{1: '1', 2: '0', 3: '-450|0|0'}
+302	302		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable02.prefab', 2: '2', 5: '2'}
+303	303		511							{1: '2', 2: '0', 3: '450|0|0'}
+304	304		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable02.prefab', 2: '2'}
+305	305		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab'}
+306	306		511							{1: '1', 2: '1.2', 3: '0|0|0'}
+307	307		511						800.0	{1: '2', 2: '1.2', 3: '0|0|0'}
+308	308		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab', 2: '1'}
+309	309		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable02.prefab'}
+310	310		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable02.prefab', 5: '1'}
+311	311		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable02.prefab', 5: '2'}
+312	312		301			DialogEnable	DialogDisable			{1: '1', 3: 'But wherever she went, hope was always mingled with thorns.'}
+313	313		201						1000.0	{1: '1', 2: '501190'}
+314	314		202							{1: '1', 6: '1'}
+315	315		201							{1: '2', 2: '501187', 3: '1'}
+316	316		301			DialogEnable				{1: '1', 3: 'So, the girl embraced the pain—', 4: '2'}
+317	317		204							{1: '2', 2: '13'}
+318	318		301				DialogDisable			{3: 'She swallowed the sharp pain of reality along with the sweetness.', 4: '2'}
+319	319		401							{1: '2', 2: '4276'}
+320	320		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+321	321		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+322	322		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+323	323		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+324	324		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab'}
+325	325		202							{1: '2', 6: '1'}
+326	326		101						1800.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_20.jpg'}
+327	327		401							{1: '2', 2: '2768'}
+328	328		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4601_09.jpg', 3: '0', 4: '1', 5: '1'}
+329	329		104						1200.0	{1: '165|0|-100', 2: '0', 4: '3'}
+330	330		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4601_09.jpg'}
+331	331		104							{1: '165|0|-100', 2: '0'}
+332	332		205							{1: '999'}
+333	333		104						800.0	{1: '0|0|0', 2: '0', 4: '3'}
+334	334		401							{1: '2', 2: '2768'}
+335	335		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4601_10.jpg', 3: '0', 4: '1', 5: '1'}
+336	336		104						1200.0	{1: '-115|-50|-50', 2: '0', 4: '3'}
+337	337		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4601_10.jpg'}
+338	338		104							{1: '-115|-50|-50', 2: '0'}
+339	339		205							{1: '999'}
+340	340		104						800.0	{1: '0|0|0', 2: '0', 4: '3'}
+341	341		401							{1: '2', 2: '2768'}
+342	342		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5401_07.jpg', 3: '0', 4: '1', 5: '1'}
+343	343		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5401_07.jpg'}
+344	344		205						800.0	{1: '999'}
+345	345		401							{1: '2', 2: '2768'}
+346	346		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5401_08.jpg', 3: '0', 4: '1', 5: '1'}
+347	347		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5401_08.jpg'}
+348	348		205						250.0	{1: '999'}
+349	349		301			DialogEnable	AniZhuanchangBegin			"{1: '1', 3: 'Every ""moment,"" joyful or tearful, has eventually crystallized into an irreplaceable ""memory"" in her heart.', 4: '1'}"
+350	350		101							{4: '4', 5: '1'}
+351	351		101							{4: '5', 5: '1'}
+352	352		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1272.jpg'}
+353	353		201							{1: '1', 2: '501274', 3: '1'}
+354	354		301			AniZhuanchangEnd				{1: '1', 2: 'Jetavie', 3: 'So I think answers that cannot be found are no longer important.', 4: '1', 18: '100010198'}
+355	355		301							"{2: 'Jetavie', 3: 'I won\'t wonder about what being ""normal"" is like.', 4: '1', 18: '100010199'}"
+356	356		301							{2: 'Jetavie', 3: 'I just need to figure out...', 4: '1', 18: '100010200'}
+357	357		204							{1: '1', 2: '9'}
+358	358		301				DialogDisable			{2: 'Jetavie', 3: '...the path that I want to follow myself.', 4: '1', 18: '100010201'}
+359	359		302							{2: 'I will always be with you.', 3: '360'}
+360	360		302							{2: 'The summer will come to an end...', 3: '361'}
+361	361		302							"{2: ""...but the next summer will come. It's an endless cycle."", 3: '362'}"
+362	362		202							{1: '1'}
+363	363		306							{1: '1'}
+364	364		301			DialogEnable				{3: 'The water is shimmering in the bright moonlight.'}
+365	365		201							{1: '1', 2: '501274', 3: '9'}
+366	366		301							{1: '1', 3: 'Jetavie stands in the center of the pool. She raises her hand casually to scoop a handful of moonlight, letting it pour through her fingers.'}
+367	367		301							{3: 'She closes her eyes to weave the complex emotions in her heart into sentences.'}
+368	368		306						400.0	
+369	369		301							{2: 'Jetavie', 3: 'Next summer, the summer after next summer, and every summer in the future...', 4: '1', 18: '100010202'}
+370	370		204							{1: '1'}
+371	371		301							{2: 'Jetavie', 3: 'Promise me that you will always be with me like this.', 4: '1', 18: '100010203'}
+372	372		302							{2: 'I promise.', 3: '373', 4: 'Promise you will always be with me as well.', 5: '373'}
+373	373		401							{1: '2', 2: '4159'}
+374	374		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+375	375		202							{1: '1', 6: '1'}
+376	376		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_01.jpg'}
+377	377		301							{3: 'She opens her eyes. A bright smile emerges on her face again.'}
+378	378		301				DialogDisable			{2: 'Jetavie', 3: 'I... I think I have figured out what I want, Chosen One.', 18: '100010204'}
+379	379		104						1800.0	{1: '0|-120|-200', 2: '1.5'}
+380	380		301			DialogEnable				{3: 'Jetavie opens her arms toward you, as if to embrace something.'}
+381	381		301							{2: 'Jetavie', 3: 'I wish to learn something that only you can teach me, not anything or anyone else.', 18: '100010205'}
+382	382		301							{2: 'Jetavie', 3: 'I only had a partial understanding of it, but I believe you...', 18: '100010206'}
+383	383		301				DialogDisable			{2: 'Jetavie', 3: '...will give me an answer that does not exist in any of the databases.', 18: '100010207'}
+384	384		302							{2: 'Sure. I will answer your question no matter what it is.', 3: '385', 4: 'As long as I know the answer.', 5: '385'}
+385	385		104						550.0	{1: '0|-120|-250', 2: '0.5'}
+386	386		301			DialogEnable				{3: 'You walk toward Jetavie step by step against the current.'}
+387	387		505							{1: '1'}
+388	388		301							"{3: ""There is no need for words in this moment. You're pretty sure that your emotions are completely in resonance with those of the girl before you.""}"
+389	389		301							{3: 'The same resonance echoes in both of your chests in this moment, both the human and the mechanoid—'}
+390	390		301				DialogDisable			{2: 'Jetavie', 3: 'And that is...', 18: '100010208'}
+391	391		307						100.0	"{1: '...That is the frequency of a ""beating heart.""', 3: '55', 4: 'ffffffff'}"
+392	392		301							"{3: '...That is the frequency of a ""beating heart.""'}"
+393	393		307							{2: '1'}
+394	394		301			DialogEnable				"{2: 'Jetavie', 3: 'Teach me what ""bliss"" is.', 18: '100010209'}"
+395	395		301				DialogDisable			{3: 'You stop before the girl. She wraps her arms around you. Warm water runs down her chest.'}
+396	396		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab', 2: '2'}
+397	397		401						2000.0	{1: '2', 2: '4259'}
+398	398		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+399	399		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+400	400		301			DialogEnable	AniZhuanchangBegin			{3: 'You close your eyes and hear the deep heartbeats and her chaotic breathing.'}
+401	401		402							{1: '4259'}
+402	402		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+403	403		104							{1: '0|-224|-300', 2: '0'}
+404	404		301			AniZhuanchangEnd				{3: 'The summer is coming to an end, so is this short night.'}
+405	405		301				AniZhuanchangBegin			"{3: ""So let's create a memory that will never fade before dawn.""}"
+406	406		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1272.jpg'}
+407	407		201							{1: '1', 2: '501274', 3: '9', 7: '1'}
+408	408		502						500.0	{1: 'DialogDisable'}
+409	409		302		1	AniZhuanchangEnd	AniZhuanchangBegin			"{2: ""With pleasure, Jetavie<//Je t'aime, VI>."", 3: '410'}"

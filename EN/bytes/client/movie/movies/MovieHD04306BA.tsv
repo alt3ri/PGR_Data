@@ -1,0 +1,156 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory669.jpg'}
+2	2		401							{1: '1', 2: '5011'}
+3	3		201							{1: '1', 2: '501070', 3: '3', 4: '-300', 5: '-20', 6: '-200'}
+4	4		301			DialogEnable				{1: '1', 2: 'Nanami', 3: 'Commandant—??', 4: '1'}
+5	5		202							{1: '1'}
+6	6		301							"{3: ""On the streets of Constellia in the early morning, sunlight spills like shattered gold across the neat stone pavement, but from every angle, there's no sign of the human Commandant anywhere.""}"
+7	7		201							{1: '1', 2: '501070', 3: '4', 4: '-300', 5: '-20', 6: '-200'}
+8	8		301				DialogDisable			{1: '1', 2: 'Nanami', 3: 'This is definitely the right address...', 4: '1'}
+9	9		203						420.0	{1: '1', 2: '0.4', 3: '-300', 4: '-1080', 5: '-200'}
+10	10		203						200.0	{1: '1', 2: '0', 3: '0', 4: '-1080', 5: '-200'}
+11	11		203						420.0	{1: '1', 2: '0.4', 3: '0', 4: '-20', 5: '-200'}
+12	12		401							{1: '2', 2: '2561'}
+13	13		301			DialogEnable				{3: 'Repeatedly checking the address the human Commandant sent via email, Nanami looks around in confusion.'}
+14	14		204							{1: '1', 2: '5'}
+15	15		203						300.0	{1: '1', 2: '0.25', 3: '300', 4: '-20', 5: '-200'}
+16	16		301							{2: 'Nanami', 3: 'Wait, did I get stood up?', 4: '1'}
+17	17		204							{1: '1', 2: '3'}
+18	18		301				DialogDisable			{2: 'Nanami', 3: 'Uhh... what in the world is this?', 4: '1'}
+19	19		202						300.0	{1: '1'}
+20	20		104							{1: '-300|100|-200', 2: '0.5'}
+21	21		301			DialogEnable				{3: 'On a table nearby, a conspicuous ticket lies beneath a small clay figurine with gray hair.'}
+22	22		201							{1: '1', 2: '501070', 3: '3', 4: '300', 5: '-20', 6: '-200'}
+23	23		301							{1: '1', 2: 'Nanami', 3: 'Uhm? Is this for me?', 4: '1'}
+24	24		202							{1: '1', 6: '1'}
+25	25		306							{1: '1'}
+26	26		401							{1: '2', 2: '4112'}
+27	27		301				DialogDisable			"{3: ""Moving aside the small clay figurine that's obviously modeled after herself, Nanami flips open the colorful ticket and finds a line of familiar handwriting staring back at her.""}"
+28	28		307							"{1: ""<color=#ffffffff><size=50>—Follow the instructions and begin Nanami's Great Adventure!</size></color>""}"
+29	29		301							"{3: ""—Follow the instructions and begin Nanami's Great Adventure!""}"
+30	30		307							"{1: ""<color=#ffffffff><size=50>Please walk fifty steps forward, then turn right at the first intersection! That's where you will claim your first gift!</size></color>""}"
+31	31		301							"{3: ""Please walk fifty steps forward, then turn right at the first intersection! That's where you will claim your first gift!""}"
+32	32		307							{2: '1'}
+33	33		306							
+34	34		201							{1: '1', 2: '501070', 3: '1'}
+35	35		301			DialogEnable				"{1: '1', 2: 'Nanami', 3: ""Hey, I totally didn't see this coming!"", 4: '1'}"
+36	36		201							{1: '1', 2: '501071'}
+37	37		301				AniZhuanchangBegin			{1: '1', 3: 'Nanami holds the ticket high above her head and charges forward in excitement following the instructions.'}
+38	38		202							{1: '1', 6: '1'}
+39	39		502						300.0	{1: 'DialogDisable'}
+40	40		104							{1: '0|0|0', 2: '0'}
+41	41		104			AniZhuanchangEnd			2000.0	{1: '100|0|-100', 2: '1.8'}
+42	42		301			DialogEnable				{3: 'In the shadows down the street, two figures crouch together furtively.'}
+43	43		401							{1: '2', 2: '5388'}
+44	44		402					300.0		{1: '5388'}
+45	45		201							{1: '1', 2: '500929', 7: '1'}
+46	46		301			PanelActor1Shake				{1: '1', 2: 'Cathy', 3: 'Pup-pup-beep—', 4: '1'}
+47	47		302							"{2: 'Shhh!', 3: '48', 4: ""Keep it down or else she's gonna see us."", 5: '48'}"
+48	48		401							{1: '2', 2: '5388'}
+49	49		402					150.0		{1: '5388'}
+50	50		301							{2: 'Cathy', 3: 'Beep—', 4: '1'}
+51	51		301							"{3: ""The little robot's voice becomes slightly distorted as it quickly adjusts its volume.""}"
+52	52		302							"{2: ""She didn't see us here, did she?"", 3: '53'}"
+53	53		301							{2: 'Cathy', 3: 'Rest assured, Cathy is very familiar with the streets in this area. Cathy will definitely help you deliver this spectacular surprise!', 4: '1'}
+54	54		302							{2: 'Thank you.', 3: '55', 4: 'Glad to hear that...', 5: '55'}
+55	55		202							{1: '1'}
+56	56		301				DialogDisable			{3: 'Nanami always has holiday surprises prepared for you, but this time... you wanted to do something for her instead.'}
+57	57		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+58	58		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory671.jpg'}
+59	59		401							{1: '2', 2: '4388'}
+60	60		201							{1: '18', 2: '500929', 5: '30', 7: '1'}
+61	61		301			DialogEnable				{1: '1', 2: 'Cathy', 3: 'Your date has arrived at the first designated location—', 4: '18'}
+62	62		202							{1: '18', 6: '1'}
+63	63		301							{3: 'The little robot makes beeping sounds the entire way as you follow it through a side path.'}
+64	64		201							{1: '1', 2: '501070', 3: '1'}
+65	65		301				DialogDisable			"{1: '1', 2: 'Nanami', 3: 'Wow! It\'s ""Cardman Rider: Stardust Remnant""! I\'ve been looking for this book forever!', 4: '1'}"
+66	66		202							{1: '1', 6: '1'}
+67	67		306							{1: '1'}
+68	68		307							{1: '<color=#ffffffff><size=50>—Next, please advance to the third exhibition hall on your left—</size></color>'}
+69	69		301							{3: '—Next, please advance to the third exhibition hall on your left—'}
+70	70		307							{2: '1'}
+71	71		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory678.jpg', 3: '0', 4: '1', 5: '1'}
+72	72		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory678.jpg'}
+73	73		205							{1: '999'}
+74	74		306							
+75	75		201							{1: '1', 2: '501070', 3: '2'}
+76	76		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Nanami', 3: 'Ohhh! It\'s ""The Endless Sunset Garden""! I\'ve been dying to watch this movie with the commandant!', 4: '1'}"
+77	77		202							{1: '1', 6: '1'}
+78	78		306							{1: '1'}
+79	79		307							{1: '<color=#ffffffff><size=50>—Go straight ahead, and when you reach the end of the street, check the table on your right—</size></color>'}
+80	80		301							{3: '—Go straight ahead, and when you reach the end of the street, check the table on your right—'}
+81	81		307							{2: '1'}
+82	82		104							{1: '0|0|-150', 2: '2'}
+83	83		501					1000.0		{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+84	84		104							{1: '100|0|-100', 2: '0'}
+85	85		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory672.jpg'}
+86	86		401							{1: '2', 2: '2940'}
+87	87		306							
+88	88		201					800.0		{1: '1', 2: '501070', 3: '1'}
+89	89		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Nanami', 3: 'A ""Journey to Space"" game cartridge! I\'ve been wanting to play this with the commandant for ages—', 4: '1'}"
+90	90		202						1000.0	{1: '1'}
+91	91		306							{1: '1'}
+92	92		307							{1: '<color=#ffffffff><size=50>—Finally, please turn around—</size></color>'}
+93	93		301							{3: '—Finally, please turn around—'}
+94	94		307							{2: '1'}
+95	95		306							
+96	96		201							{1: '1', 2: '501071', 7: '1'}
+97	97		301			DialogEnable	DialogDisable			{1: '1', 2: 'Nanami', 3: 'Turn around...', 4: '1'}
+98	98		202						800.0	{1: '1'}
+99	99		104							{1: '0|0|0', 2: '0.8'}
+100	100		401							{1: '1', 2: '36'}
+101	101		302							{2: 'Nanami?', 3: '102', 4: 'Nanami.', 5: '102'}
+102	102		401							{1: '1', 2: '288'}
+103	103		201							{1: '1', 2: '501071', 7: '1'}
+104	104		301			DialogEnable				{1: '1', 3: 'Nanami recognizes the voice even before she fully turns around.'}
+105	105		201							{1: '1', 2: '501070', 3: '1', 6: '1'}
+106	106		301							{1: '1', 2: 'Nanami', 3: 'Commandant—!!', 4: '1'}
+107	107		203							{1: '1', 2: '0.2', 5: '-150'}
+108	108		401							{1: '2', 2: '4044'}
+109	109		204				RImgBg1Shake			{1: '1', 2: '11'}
+110	110		301							{3: 'Tossing aside the armful of gifts, Nanami spins around and throws her arms around you.'}
+111	111		204							{1: '1', 2: '2'}
+112	112		301							"{2: 'Nanami', 3: ""I knew it! I knew you did all of these for me as a Valentine's Day surprise!"", 4: '1'}"
+113	113		301							"{2: 'Nanami', 3: ""I'm super duper happy!"", 4: '1'}"
+114	114		204							{1: '1', 2: '1'}
+115	115		302							"{2: ""I'm glad you're happy, Nanami."", 3: '116', 4: 'Now...', 5: '116'}"
+116	116		302							{2: 'One last surprise for you...', 3: '117'}
+117	117		202							{1: '1', 6: '1'}
+118	118		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+119	119		401							{1: '2', 2: '4319'}
+120	120		301			RImgBg1Shake				{3: 'BANG!'}
+121	121		401							{1: '2', 2: '2633'}
+122	122		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiColorTableStageMain/FxUiColorTableStageRollStarLoop.prefab', 2: '2'}
+123	123		301							{3: 'Fine mist erupts from the fountain, intermingling with dazzling candies and colorful confetti. The wrappers reflect a kaleidoscope of colors in the morning sunlight.'}
+124	124		201							{1: '1', 2: '501070', 3: '3', 4: '50', 7: '1'}
+125	125		301							{1: '1', 2: 'Nanami', 3: 'A candy fountain—!', 4: '1'}
+126	126		301							{3: 'Surrounded by the iridescent mist, Nanami gazes up in wonder at the shower of candies raining down from above.'}
+127	127		302							{2: 'You always do all sorts of things for me, Nanami.', 3: '128', 4: 'There are surprises all the time with you around, Nanami.', 5: '128'}
+128	128		302							"{2: ""And I thought I'd do something for you for a change."", 3: '129'}"
+129	129		204							{1: '1', 2: '14'}
+130	130		203							{1: '1', 2: '0.2', 3: '50', 4: '-50', 5: '-150'}
+131	131		401							{1: '2', 2: '4044'}
+132	132		301							{2: 'Nanami', 3: 'Commandant...', 4: '1'}
+133	133		301							"{3: ""Nanami's pupils reflect fragments of sunlight. She bites her lips and buries herself in your arms.""}"
+134	134		301							"{2: 'Nanami', 3: ""Just being with you makes me super happy already, Commandant... For some reason, it feels like it's been so long since I last saw you..."", 4: '1'}"
+135	135		301							{2: 'Nanami', 3: 'I... I really missed you...', 4: '1'}
+136	136		204							{1: '1', 2: '6'}
+137	137		301							{3: 'Her voice is muffled, tinged with a hint of bitterness.'}
+138	138		302							{2: 'Nanami...', 3: '139'}
+139	139		204							{1: '1', 2: '1'}
+140	140		203							{1: '1', 2: '0.25', 3: '50', 4: '0', 5: '0'}
+141	141		301							"{2: 'Nanami', 3: ""Ahem! Nanami shouldn't waste time talking here anymore. Do you have anything else planned, Commandant?"", 4: '1'}"
+142	142		202							{1: '1'}
+143	143		301							{3: 'As if nothing had just happened, Nanami suddenly jumps away from your arms.'}
+144	144		302							"{2: ""Is there anything you'd like to do, Nanami?"", 3: '145', 4: 'Of course, there is.', 5: '145'}"
+145	145		301							"{3: ""Based on what you believe Nanami might enjoy, you've already arranged quite a few things to do.""}"
+146	146		201							{1: '1', 2: '501070', 3: '1', 4: '50', 7: '1'}
+147	147		301							"{2: 'Nanami', 3: ""Woohoo! Let's follow your plan today, Commandant!"", 4: '1'}"
+148	148		301							{3: 'Nanami throws her arms up in the air, full of energy.'}
+149	149		204							{1: '1', 2: '2'}
+150	150		301							{2: 'Nanami', 3: 'Annnnnd this is where our adventure in Constellia begins!', 4: '1'}
+151	151		301							"{2: 'Nanami', 3: ""Oh, I have a little something prepared for you, Commandant, but that will have to wait until we're done for the day..."", 4: '1'}"
+152	152		202							{1: '1'}
+153	153		401							{1: '2', 2: '4044'}
+154	154		502							{1: 'RImgBg1BlowUp'}
+155	155		301		1		AniZhuanchangBegin			{3: 'She takes your hand and runs down the sunlit path ahead.'}

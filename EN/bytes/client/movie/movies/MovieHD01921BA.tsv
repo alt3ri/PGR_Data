@@ -1,0 +1,12 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory669.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500127'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Sophia', 3: ""You're inviting me to the Constellia maze?"", 4: '1'}"
+5	5		301							{2: 'Sophia', 3: 'Is that a new training exercise?', 4: '1'}
+6	6		302							{2: '(Briefly explain the maze)', 3: '7'}
+7	7		301							"{2: 'Sophia', 3: ""I believe the aristocrats from the upper level once held a feast for this reason... but I don't really understand it."", 4: '1'}"
+8	8		301							{2: 'Sophia', 3: 'Is there a ritual before we enter?', 4: '1'}
+9	9		302							{2: 'We just need to clear the maze based on the guides.', 3: '10'}
+10	10		301							{2: 'Sophia', 3: 'Sounds simple enough. I can give it a shot.', 4: '1'}
+11	11		302		1		AniZhuanchangBegin			"{2: ""Let's go, then.""}"

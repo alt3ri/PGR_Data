@@ -1,0 +1,11 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory405.jpg'}
+2	2		401							{1: '1', 2: '203'}
+3	3		301			DialogEnable				"{3: ""Having removed all the obstacles in your way, you have discovered Lamia's tracks on the way to the observatory.""}"
+4	4		301							{3: 'Long and deep scratches graze the metal walls, marks that can only be made with her twinblade.'}
+5	5		201							{1: '1', 2: '500345', 3: '5'}
+6	6		301							"{1: '1', 2: 'Vera', 3: ""She's indeed after the data of the zero-point reactor."", 4: '1'}"
+7	7		202							{1: '1', 6: '1'}
+8	8		301							{3: 'Is she?'}
+9	9		301							{3: 'You cannot help but ask yourself.'}
+10	10		301		1		AniZhuanchangBegin			{3: 'Except no one can answer you now.'}

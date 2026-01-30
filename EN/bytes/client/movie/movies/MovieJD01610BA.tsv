@@ -1,0 +1,22 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory260.png'}
+2	2		401							{1: '1', 2: '203'}
+3	3		201							{1: '1', 2: '1031001', 4: '-600'}
+4	4		201							{1: '2', 2: '500026', 4: '600'}
+5	5		201							{1: '3', 2: '500166'}
+6	6		301			DialogEnable				{1: '1', 3: 'A group of disorderly Program Ghosts are attacking one another, blocking your way.'}
+7	7		301							{2: 'Lee', 3: 'The Program Ghosts that fought us before are killing one another now...', 4: '2'}
+8	8		301							"{2: 'Lucia', 3: ""We can't move forth with them blocking our way, and we've still got more Program Ghosts behind us..."", 4: '3'}"
+9	9		301							"{2: 'Liv', 3: ""Guess we'll have to force our way through here..."", 4: '1'}"
+10	10		301							"{2: 'Lee', 3: ""That's the only logical thing to do now. We can't afford to waste time here."", 4: '2'}"
+11	11		302							"{2: ""Let's go, then."", 3: '12'}"
+12	12		301				DialogDisable			{2: 'Lucia & Lee & Liv', 3: 'Understood!', 4: '1', 5: '2', 6: '3'}
+13	13		305							{1: '14', 2: '21'}
+14	14		301			DialogEnable				"{2: 'Lucia', 3: ""This is it! We've broken our way through!"", 4: '3'}"
+15	15		301							{2: 'Liv', 3: 'Commandant, over here!', 4: '1'}
+16	16		301							"{2: 'Lee', 3: ""Let's go!"", 4: '2'}"
+17	17		301							{3: 'Working together, the four of you make it past the Program Ghosts and arrive at a safer location.'}
+18	18		301							"{2: 'Lucia', 3: ""Who knows if we'll need to fight again up ahead, but we have no choice except to keep moving."", 4: '3'}"
+19	19		301							"{2: 'Liv', 3: '""Bianca"" is most likely... just right up ahead.', 4: '1'}"
+20	20		301		1		AniZhuanchangBegin			"{2: 'Lucia', 3: ""Let's go. Brace yourself. I've got a feeling that it's not going to be the smoothest ride."", 4: '3'}"
+21	21		202		1		AniZhuanchangBegin			{1: '1', 2: '2', 3: '3', 6: '1'}

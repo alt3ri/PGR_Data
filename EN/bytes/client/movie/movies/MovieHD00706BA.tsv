@@ -1,0 +1,92 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory32.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				{3: '—Babylonia Outpost.'}
+4	4		301							{3: 'Watanabe departed a while ago due to his allegiance, while the people you are meeting have already arrived at the outpost, according to the message you received.'}
+5	5		301							{3: 'The headlights from your vehicle light up the entrance to the outpost, and you find two female Constructs standing there, waiting for you.'}
+6	6		201							{1: '1', 2: '1111001', 4: '-400'}
+7	7		201							{1: '2', 2: '1091001', 4: '400'}
+8	8		301							{1: '1', 2: 'Bianca', 3: '【kuroname】. Happy to see you again.', 4: '2'}
+9	9		302							"{2: ""...It's been a while."", 3: '10', 4: 'The pleasure is mine.', 5: '12'}"
+10	10		301							"{2: 'Karenina', 3: ""Better we see you less! After all, every time we run into you... some weird shit's gonna happen."", 4: '1'}"
+11	11	13	301							"{2: 'Karenina', 3: ""...But nothing unusual this time, luckily. You'll have to travel with us for the remaining journey."", 4: '1'}"
+12	12		301							{2: 'Bianca', 3: 'I know it might be a bit unexpected, but Karen and I will be accompanying you and supporting you for the rest of your assignment.', 4: '2'}
+13	13		301							"{2: 'Bianca', 3: ""Please don't take it the wrong way. We're here for the same reason you are. As to where we've been... just consider our meeting a coincidence."", 4: '2'}"
+14	14		301							{2: 'Karenina', 3: 'Obviously. We are definitely not here because of how bothersome Gray Raven has been or because Lucia asked us to.', 4: '1'}
+15	15		301							"{2: 'Bianca', 3: ""Also, Asimov has talked to us, and before he gathers all the test data, you're in charge of bringing our test mechanoid back to Babylonia as well."", 4: '2'}"
+16	16		301							"{2: 'Karenina', 3: ""It's simple—we're all heading back to Babylonia. Nothing weird for us to share a ride."", 4: '1'}"
+17	17		202							{1: '1', 2: '2', 6: '1'}
+18	18		301							{3: 'As Karenina speaks, Bianca has already opened a comms channel.'}
+19	19		301							{3: 'Although you cannot tell who she is talking to, judging by her phrases and expression, the person on the other end is surely someone important in Babylonia.'}
+20	20		301							{3: 'Bianca does not turn back immediately after the call has ended. A Construct stationed at the outpost steps forward and talks to her.'}
+21	21		201							{1: '1', 2: '1111001'}
+22	22		301							"{1: '1', 2: 'Karenina', 3: ""...It's one thing for Constructs to have no holidays at all. It's another to ask you to go on a mission at this time of the year."", 4: '1'}"
+23	23		301							"{2: 'Karenina', 3: ""What an odd fella, that Asimov. What's the obsession with data?"", 4: '1'}"
+24	24		302							{2: 'A mission is a mission.', 3: '25', 4: 'Thanks for your hard work, Karenina.', 5: '26'}
+25	25	29	301							"{2: 'Karenina', 3: ""True. It's an emergency mission, after all. And I don't dislike this cute little critter."", 4: '1'}"
+26	26		204							{1: '1', 2: '5'}
+27	27		301							"{2: 'Karenina', 3: ""Don't say shit like this all of a sudden! What am I, a child?"", 4: '1'}"
+28	28		204							{1: '1'}
+29	29		301							"{2: 'Karenina', 3: ""I'm quite familiar with the development of the CUBs. After all, I was responsible for developing the power system..."", 4: '1'}"
+30	30		301							"{3: ""Karenina carefully goes through and examines the CUB after receiving it. The level of attention is not far from a professional's.""}"
+31	31		301							"{2: 'Karenina', 3: ""The completed version is even more detailed than I thought... I hope the Forsaken bunch didn't break the damn thing... or implanted some weird shit on it..."", 4: '1'}"
+32	32		302							"{2: ""You're overthinking things."", 3: '33'}"
+33	33		301							"{2: 'Karenina', 3: ""(Chuckles) Who knows? It's never smart to trust someone blindly... How the hell have you survived to this day?"", 4: '1'}"
+34	34		302							{2: 'So have you found anything?', 3: '35'}
+35	35		301							{2: 'Karenina', 3: 'Not yet... But! Those Forsaken...', 4: '1'}
+36	36		203							{1: '1', 2: '0.25', 3: '-400'}
+37	37		201							{1: '2', 2: '1091001', 4: '400'}
+38	38		301							{1: '1', 3: 'Karenina is going to continue before Bianca returns and stops her.'}
+39	39		301							"{2: 'Bianca', 3: ""The results of the CUB project will be inspected by Asimov... We don't have to get involved."", 4: '2'}"
+40	40		301							"{2: 'Bianca', 3: ""Our mission is also assigned with similar concerns, so we don't have to reveal too much. Also... I just talked to the other team members, and I've received some unexpected intel."", 4: '2'}"
+41	41		301							{2: 'Karenina', 3: '...Intel? Bianca, what kind of intel?', 4: '1'}
+42	42		301							"{2: 'Bianca', 3: ""We'll discuss the details after we've entered the guard post in City 015 proper."", 4: '2'}"
+43	43		302							{2: 'The conservation area?', 3: '44'}
+44	44		301				AniZhuanchangBegin			"{2: 'Bianca', 3: ""Let's find something to do before you're back on Babylonia."", 4: '2'}"
+45	45		202							{1: '1', 2: '2', 6: '1'}
+46	46		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory11.jpg'}
+47	47		401							{1: '1', 2: '36'}
+48	48		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+49	49		301			AniZhuanchangEnd				{3: 'The road to the conservation area outpost is calm and quiet. The track has been repaired, so the journey is far from tiring.'}
+50	50		301							{3: 'Apart from an argument on who gets to drive the vehicle, everything has been going smoothly.'}
+51	51		301				AniZhuanchangBegin			"{3: 'Suffice to say, the saying ""Don\'t let Karenina go near the cockpit!"" probably originates here.'}"
+52	52		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory30.jpg'}
+53	53		401							{1: '1', 2: '201'}
+54	54		301			AniZhuanchangEnd				{3: 'Once you have arrived in City 015, Karenina disappears the moment she leaves the vehicle.'}
+55	55		201							{1: '1', 2: '1091001'}
+56	56		301							"{1: '1', 2: 'Bianca', 3: ""If there's nothing else to attend to, maybe we'll speak in length later about what we mentioned in the outpost, Commandant."", 4: '1'}"
+57	57		302							"{2: ""We'll talk later, then."", 3: '58'}"
+58	58		301							{2: 'Bianca', 3: 'By the way... Have you seen where Karenina has gone to? I might have missed her when we arrived.', 4: '1'}
+59	59		302							"{2: ""Now that you mention it, I haven't seen her either..."", 3: '60'}"
+60	60		201							{1: '1', 2: '500019'}
+61	61		301							{1: '1', 2: 'Construct A', 3: 'Miss Bianca, are you talking about the girl in the hood?', 4: '1'}
+62	62		301							{2: 'Construct A', 3: 'She has left for the old commercial district in the city.', 4: '1'}
+63	63		301							{2: 'Construct A', 3: 'We showed her this when you were unpacking.', 4: '1'}
+64	64		202							{1: '1', 6: '1'}
+65	65		301							{3: 'Bianca takes the sample the Construct passes her and examines it. The graffiti on the box looks familiar.'}
+66	66		301							{3: 'After identification, you are almost certain that it matches the graffiti previously found in City 015.'}
+67	67		201							{1: '1', 2: '500019'}
+68	68		301							"{1: '1', 2: 'Construct A', 3: ""I'm sure you've heard about it before you arrived at our guard post?"", 4: '1'}"
+69	69		201							{1: '1', 2: '1091001'}
+70	70		301							"{1: '1', 2: 'Bianca', 3: ""(Nods) ...That's what I wanted to talk to you about."", 4: '1'}"
+71	71		301							{2: 'Bianca', 3: 'The graffiti symbol and the unusual Corrupted activities that follow its trail signify a Corrupted whose function has advanced beyond the norm. The target might be self-aware.', 4: '1'}
+72	72		301							{2: 'Bianca', 3: 'Despite ruling out many possibilities, there is still something that... concerns me.', 4: '1'}
+73	73		301							"{2: 'Bianca', 3: 'There was a similar Corrupted in the past—""Nozzle"", the one that only 【kuroname】 here has come into contact with before.', 4: '1'}"
+74	74		301							{2: 'Bianca', 3: 'For safety reasons, I was hoping to invite you to investigate with me to make sure we can keep everything under control. But Karen... she really is an impulsive one.', 4: '1'}
+75	75		301							{2: 'Bianca', 3: 'Commandant, I know this is not your duty, but can I ask for your assistance before the extraction team from Babylonia arrives?', 4: '1'}
+76	76		302							{2: 'Graffiti symbols...', 3: '77', 4: 'Unusual Corrupted activities...', 5: '78'}
+77	77	79	301							"{2: 'Bianca', 3: ""As the only commandant who has made contact with one, I'm sure you still remember it."", 4: '1'}"
+78	78		301							"{2: 'Bianca', 3: 'It is an unverified ""phenomenon,"" and there\'s no way for us to confirm the accuracy and authenticity of the intel...', 4: '1'}"
+79	79		301							"{2: 'Bianca', 3: ""Both of these concerns call for a more secure approach. We'll count on you for the operation ahead of us."", 4: '1'}"
+80	80		301							{3: 'As Bianca tries to locate Karenina with her comms, Karenina calls her.'}
+81	81		203							{1: '1', 2: '0.25', 3: '400'}
+82	82		201							{1: '2', 2: '1111001', 4: '-400'}
+83	83		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+84	84		301							{1: '1', 2: 'Bianca', 3: 'Karenina?! Where did you go? Have you gone investigating the graffiti symbols by yourself?!', 4: '1'}
+85	85		301							"{2: 'Karenina', 3: ""The symbols are real, but you don't have the slightest clue what it actually is."", 4: '2'}"
+86	86		301							{2: 'Bianca', 3: 'What it actually is? Are you saying that the graffiti points to something else entirely?', 4: '1'}
+87	87		301							"{2: 'Karenina', 3: ""That's why I have to call you—"", 4: '2'}"
+88	88		301							"{2: 'Karenina', 3: ""Bianca can see my coordinates, right? I'll be waiting for you there in 15 minutes! Now, move! I don't like waiting!"", 4: '2'}"
+89	89		301							{2: 'Bianca', 3: 'Hello? Hey? Karen?! Sigh... she hung up.', 4: '1'}
+90	90		302							"{2: ""I guess we'll have to go there?"", 3: '91'}"
+91	91		301		1		AniZhuanchangBegin			"{2: 'Bianca', 3: ""Apparently. She's even brought the CUB with her... What is she up to?"", 4: '1'}"

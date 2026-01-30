@@ -1,0 +1,59 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg'}
+2	990		401							{1: '1', 2: '201'}
+3	2		201							{1: '2', 2: '500149', 4: '-400'}
+4	3		201							{1: '3', 2: '500012', 4: '400'}
+5	4		301			DialogEnable				{1: '1', 2: 'John', 3: 'You asked for me, Commander?', 4: '2'}
+6	5		301							"{3: ""The files lie spread out on the desk. Besides the routine paper, there's also a brief report outlining resort findings.""}"
+7	6		301							"{3: ""It's the first time the military has recently received a successful report in Construct modification.""}"
+8	7		301							{2: 'Nikola', 3: 'Chrome.', 4: '3'}
+9	8		301							"{2: 'Nikola', 3: ""I don't see this name in the roster files of Babylonian members."", 4: '3'}"
+10	9		301							{2: 'Nikola', 3: 'The refitting was a success. A perfect success.', 4: '3'}
+11	10		301							{2: 'Nikola', 3: 'This was the first experiment ever made on the specialized Inver-Device. Smith Langston... Ah, your son is indeed talented.', 4: '3'}
+12	11		301							{2: 'John', 3: '...', 4: '2'}
+13	12		301							{2: 'Nikola', 3: 'Still, be it the blade or the one who wields it, their fates are one and the same on the battlefield.', 4: '3'}
+14	13		301							{2: 'Nikola', 3: 'What differences are there, after all?', 4: '3'}
+15	14		301							{2: 'Nikola', 3: 'As long as we win.', 4: '3'}
+16	15		301							{2: 'Nikola', 3: 'Still, I find your tradition to pass down the family name instead of the bloodline quite admirable.', 4: '3'}
+17	16		301							"{2: 'Nikola', 3: ""If only everyone were like you and I... practical, instead of full of flights of fancy... we'd have reclaimed Earth already."", 4: '3'}"
+18	17		301							{2: 'Nikola', 3: 'Anyway, now that we have live data on specialized Inver-Devices, the council will have to shut up and continue providing us resources.', 4: '3'}
+19	18		301							{2: 'Nikola', 3: 'Well, enough of that boring chitchat. The first refitting condition—', 4: '3'}
+20	19		301				AniZhuanchangBegin			{2: 'Nikola', 3: 'Congratulations on your promotion, John Smith.', 4: '3'}
+21	20		202							{1: '2', 2: '3'}
+22	995		401							{1: '1', 2: '202'}
+23	21		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory171.png'}
+24	22		201							{1: '1', 2: '500013'}
+25	23		301			AniZhuanchangEnd				{1: '1', 2: 'Corrupted', 3: '—! —!', 4: '1'}
+26	24		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 3: '1'}
+27	991		401							{1: '2', 2: '10002001'}
+28	1000		502							{1: 'PanelActor1Shake'}
+29	996		202					1000.0		{1: '1'}
+30	26		301							{1: '1', 2: 'Chrome', 3: '1!'}
+31	997		201							{1: '1', 2: '500013'}
+32	28		301							{1: '1', 2: 'Corrupted', 3: '—! —!', 4: '1'}
+33	29		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 3: '1'}
+34	992		401							{1: '2', 2: '10002001'}
+35	1001		502							{1: 'PanelActor1Shake'}
+36	998		202					1000.0		{1: '1'}
+37	31		301							{1: '1', 2: 'Chrome', 3: '2!'}
+38	32		201							{1: '1', 2: '500013'}
+39	33		201					500.0		{1: '2', 2: '500013', 4: '-400'}
+40	34		201					500.0		{1: '3', 2: '500013', 4: '400'}
+41	35		301							{1: '1', 2: 'Corrupted', 3: '—! —!', 4: '1', 5: '2', 6: '3'}
+42	36		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 3: '1'}
+43	993		401							{1: '2', 2: '10002001'}
+44	1002		502							{1: 'PanelActor1Shake'}
+45	1003		502							{1: 'PanelActor2Shake'}
+46	1004		502							{1: 'PanelActor3Shake'}
+47	37		202					1000.0		{1: '1', 2: '2', 3: '3'}
+48	39		301							{1: '1', 2: 'Chrome', 3: '5!', 4: '1'}
+49	38		201							{1: '1', 2: '500155', 7: '1'}
+50	40		202					2000.0		{1: '1'}
+51	41		301							{3: 'Chrome rushes ahead, slaying all Corrupted in his way. His squad continues on, following his pale figure. However, the number of enemies shows no signs of waning, and Chrome begins to worry that he may have led his team into a trap.'}
+52	42		301							{2: 'Dika', 3: 'Leader, behind you!'}
+53	43		301							"{3: ""A warning from his squadmate alerts Chrome to a gate that's crashing down, the loud noise attracting even more Corrupted.""}"
+54	44		201							{1: '2', 2: '500155', 4: '-400'}
+55	45		201							{1: '3', 2: '500013', 4: '400'}
+56	994		401							{1: '2', 2: '1508'}
+57	46		301							{1: '1', 2: 'Corrupted', 3: '...', 4: '3'}
+58	47		301		1		AniZhuanchangBegin			{1: '1', 2: 'Chrome', 3: 'A new... variant...', 4: '2'}

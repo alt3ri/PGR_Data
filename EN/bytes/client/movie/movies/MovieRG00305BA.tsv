@@ -1,0 +1,48 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory15.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500176'}
+4	4		301			DialogEnable				{1: '1', 2: 'Camu', 3: 'That Hassen was definitely lying to us.', 4: '1'}
+5	2001		203							{1: '1', 2: '0.25', 3: '400'}
+6	2002		201							{1: '2', 2: '500180', 4: '-400'}
+7	5		301							{1: '1', 2: 'Karenina', 3: 'Why do you say that?', 4: '2'}
+8	6		301							{2: 'Camu', 3: 'Just based on my experience. I have seen similar plots in the games that Kamui played.', 4: '1'}
+9	7		301							{2: 'Camu', 3: 'The humble-looking King could actually be the final Boss.', 4: '1'}
+10	2003		302							"{2: ""That's a lot of detail!"", 3: '8', 4: ""I don't think Hassen is like that."", 5: '9'}"
+11	8	10	301							"{2: 'Camu', 3: ""Details are always good. They help us to locate the objective. Don't you think?"", 4: '1'}"
+12	9	10	301							"{2: 'Camu', 3: ""Remember, this is a game. That wasn't the real Hassen."", 4: '1'}"
+13	10		301							{2: 'Camu', 3: 'I kind of learned what type of person Celica was yesterday. This King is probably set like Hassen in purpose to make others think he is a good guy.', 4: '1'}
+14	11		301							{2: 'Karenina', 3: 'A disguise, huh? Are you saying this Hassen is evil, and the Demons are good?', 4: '2'}
+15	2004		302							{2: 'Both can be evil though.', 3: '1001', 4: 'Are you so sure that Hassen is evil?', 5: '1004'}
+16	1001	1002	203							{1: '1', 2: '0.25', 3: '600'}
+17	1002	1003	203							{1: '2', 2: '0.25', 3: '-600'}
+18	1003	12	201							{1: '3', 2: '500181'}
+19	12	15	301							{1: '1', 2: 'Vera', 3: 'You have a good point, Commandant.', 4: '3'}
+20	1004	1005	203							{1: '1', 2: '0.25', 3: '600'}
+21	1005	1006	203							{1: '2', 2: '0.25', 3: '-600'}
+22	1006	13	201							{1: '3', 2: '500181'}
+23	13	14	301							"{1: '1', 2: 'Vera', 3: ""A good ruler doesn't necessarily have to be kind, but he must let others fear his authority. That Hassen apparently failed to do so."", 4: '3'}"
+24	14	15	301							{2: 'Karenina', 3: 'Yeah, no matter what we said, he was always smiling. Disgusting.', 4: '2'}
+25	15		301							"{2: 'Vera', 3: ""So why didn't we just beat that Hassen up? If he was evil, we could have skipped a lot of hassle."", 4: '3'}"
+26	16		301							{2: 'Camu', 3: 'He had no HP bar.', 4: '1'}
+27	17		301							{2: 'Karenina', 3: 'HP bar... What is that?', 4: '2'}
+28	18		301							{2: 'Camu', 3: 'Remember the enemies we fought earlier on? I could check their status and remaining health through the system, but not NPCs like Hassen.', 4: '1'}
+29	19		301							{2: 'Camu', 3: 'They were not configured as enemies that we could attack.', 4: '1'}
+30	20		301							"{2: 'Camu', 3: 'This is a game. Even if we can attack him, if he has no HP bar, he ""cannot"" be killed.', 4: '1'}"
+31	21		301							{2: 'Karenina', 3: '...How are we going to deal with enemies like that?', 4: '2'}
+32	22		301							"{2: 'Camu', 3: ""There are many ways, but all are up to the game settings, we can't really change that from our end."", 4: '1'}"
+33	23		301							"{2: 'Vera', 3: ""How annoying... Anyway, let's focus on the Demons and Liv now."", 4: '3'}"
+34	24		301							{2: 'Camu', 3: 'True. But if my guess is right, Hassen should be the final Boss.', 4: '1'}
+35	25		301							{2: 'Vera', 3: 'What a boring plot.', 4: '3'}
+36	26		301							{3: 'The three villain Constructs kept attacking the old-school plot and inappropriate game settings, as if they were professional game designers.'}
+37	27		301							"{3: ""Which completely destroyed the unfortunate listener's interests and dreams.""}"
+38	2005		202							{1: '1', 2: '2', 3: '3'}
+39	2006		201							{1: '1', 2: '500013'}
+40	2007		401							{1: '2', 2: '1508'}
+41	28		301							{1: '1', 2: 'Demon', 3: 'Uuuurgh!', 4: '1'}
+42	2008		201							{1: '1', 2: '500181', 3: '1'}
+43	29		301							{1: '1', 2: 'Vera', 3: 'So this must be one of those compulsory fights. Well, Commandant of Gray Raven, now is your time to shine. Make sure we clear in the first attempt!', 4: '1'}
+44	2009		302							{2: 'Just do whatever you want.', 3: '30', 4: 'Alright, leave it to me.', 5: '3000'}
+45	30		301		1		AniZhuanchangBegin			"{2: 'Vera', 3: ""Fine, we don't need a stable mind to unlock our full strength here. Just hide somewhere safe, okay?"", 4: '1'}"
+46	3000		201							{1: '1', 2: '500180'}
+47	31		301		1		AniZhuanchangBegin			{1: '1', 2: 'Karenina', 3: 'In the first attempt, huh... What will happen if we die in this game?', 4: '1'}

@@ -1,0 +1,212 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory533.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				{3: 'The next day, with the storm gone, the sky stretches on for as far as the eye can see without a piece of cloud, and the long coastline is strewn with treasures from the deep sea.'}
+4	4		301							{3: 'Lamia, along with Begonia and the young person they rescued yesterday, are happily absorbed in digging holes in the sand and sorting through fish and shrimp.'}
+5	5		211							{1: '1', 2: '1021020', 3: '1', 7: '1'}
+6	6		301							"{1: '1', 2: 'Lamia', 3: ""Still can't remember anything even after getting some rest? We could help you look around, but without any leads to go on..."", 4: '101', 18: '100003707', 19: '1', 21: 'v211lamiya'}"
+7	7		301				DialogDisable			"{2: 'Lamia', 3: ""What about names? People, places... You haven't forgotten your own name, I hope?"", 4: '101', 18: '100003708', 19: '1', 21: 'v211lamiya'}"
+8	8		302							{2: '【kuroname】', 3: '9'}
+9	9		302							{2: 'Just call me by this name.', 3: '10'}
+10	10		301			DialogEnable				{3: 'Lamia slows down as she gently repeats the name she heard.'}
+11	11		214							{1: '1', 2: '4'}
+12	12		301							"{2: 'Lamia', 3: ""...I feel like I've heard this name somewhere..."", 4: '101', 18: '100003709', 19: '1', 21: 'v211lamiya'}"
+13	13		212							{1: '1', 6: '1'}
+14	14		211							{1: '1', 2: '1021018', 3: '1'}
+15	15		301							"{1: '1', 2: 'Begonia', 3: ""Doesn't sound like one of the names I've heard around here."", 4: '101', 18: '100003710', 19: '1', 21: 'v211lamiya'}"
+16	16		302							{2: 'I remember another name—Begonia.'}
+17	17		301				DialogDisable			{2: 'Begonia', 3: 'Huh? Someone with the same name as me?', 4: '101', 18: '100003711', 19: '1', 21: 'v211lamiya'}
+18	18		302							{2: 'Yes, and about your age, too.', 3: '19'}
+19	19		302							"{2: ""There's a crescent-shaped birthmark on their arm."", 3: '20'}"
+20	20		301			DialogEnable				"{3: ""The little girl's eyes grow even wider as she quickly rolls up her sleeve and holds out her arm.""}"
+21	21		301							{2: 'Begonia', 3: 'Does this... look right?', 4: '101', 18: '100003712', 19: '1', 21: 'v211lamiya'}
+22	22		302							{2: 'Yes.', 3: '23'}
+23	23		301							{2: 'Begonia', 3: 'What a coincidence... Do people who share the same name and traits really exist in this world? I always thought those were stories that people made up.', 4: '101', 18: '100003713', 19: '1', 21: 'v211lamiya'}
+24	24		302							{2: 'Another way to think of it, though, is that you may be that very person.', 3: '25'}
+25	25		301							"{2: 'Begonia', 3: ""But how do you even know who I am when we've never met?"", 4: '101', 18: '100003714', 19: '1', 21: 'v211lamiya'}"
+26	26		301							{3: 'Hearing what she said, you offer a gentle smile without saying anything.'}
+27	27		212							{1: '1', 6: '1'}
+28	28		211							{1: '1', 2: '1021020', 3: '1'}
+29	29		301							"{1: '1', 2: 'Lamia', 3: ""...Hmm, I still can't remember anything useful."", 4: '101', 18: '100003715', 19: '1', 21: 'v211lamiya'}"
+30	30		301				DialogDisable			"{2: 'Lamia', 3: ""When we head into the city in a few days, I'll have a talk with the priests at the Temple about your situation. They're well-versed in many things, and I bet they know how to help you find your way home."", 4: '101', 18: '100003716', 19: '1', 21: 'v211lamiya'}"
+31	31		302							{2: 'Could you tell me more about the Temple and the priests?', 3: '32'}
+32	32		302							"{2: ""We don't have anything like that where I'm from."", 3: '33'}"
+33	33		212							{1: '1', 6: '1'}
+34	34		211							{1: '1', 2: '1021018', 3: '1'}
+35	35		301			DialogEnable				{1: '1', 2: 'Begonia', 3: 'You guys have no temples or priests there? But what do you guys do when the Sea God gets mad?', 4: '101', 18: '100003717', 19: '1', 21: 'v211lamiya'}
+36	36		302							"{2: ""...There's always a way to figure things out."", 3: '37'}"
+37	37		301							"{2: 'Begonia', 3: ""Ah... Counting on luck, huh... That's sad..."", 4: '101', 18: '100003718', 19: '1', 21: 'v211lamiya'}"
+38	38		301				AniZhuanchangBegin			"{3: ""Begonia's eyes are filled with sympathy. Lamia pats her shoulder, then turns around and points to the horizon opposite the coastline.""}"
+39	39		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory530.jpg'}
+40	40		104							{1: '0|-100|-300', 2: '0'}
+41	41		212							{1: '1', 6: '1'}
+42	42		104							{1: '0|-230|-300', 2: '2'}
+43	43		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'Rising mountains pierce the horizon in the distance, and atop the highest peak stands a magnificent structure.'}
+44	44		104							{1: '0|0|0', 2: '0'}
+45	45		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory533.jpg'}
+46	46		211							{1: '1', 2: '1021020', 3: '1', 7: '1'}
+47	47		301			AniZhuanchangEnd				"{1: '1', 2: 'Lamia', 3: ""As I was saying—look, that's the temple, but... don't even think about going in there."", 4: '101', 18: '100003719', 19: '1', 21: 'v211lamiya'}"
+48	48		301							"{2: 'Lamia', 3: ""That place is heavily guarded, and the sentries there are fiercer than you can imagine. I'm only allowed inside because the priests chose me to conduct their rituals."", 4: '101', 18: '100003720', 19: '1', 21: 'v211lamiya'}"
+49	49		302							{2: 'Rituals?', 3: '50'}
+50	50		301							"{2: 'Lamia', 3: ""Yes, it's how the priests appease the Sea God's wrath and drive away storms. That storm you encountered yesterday—it probably only cleared so quickly because of the ritual the Temple had just recently performed."", 4: '101', 18: '100003721', 19: '1', 21: 'v211lamiya'}"
+51	51		301							{2: 'Lamia', 3: 'Usually, these storms last at least three to five days... Hm? What are you doing?', 4: '101', 18: '100003722', 19: '1', 21: 'v211lamiya'}
+52	52		301							{3: 'Lamia watches with confusion as you pull out a terminal and point it toward the distant Temple.'}
+53	53		401							{1: '2', 2: '925'}
+54	54		301				DialogDisable			{3: 'Click—'}
+55	55		302							{2: 'This architectural style...', 3: '56'}
+56	56		302							"{2: ""Oh, don't get me wrong."", 3: '57'}"
+57	57		302							{2: 'This is how we show respect for people and places in my homeland.', 3: '58'}
+58	58		301			DialogEnable				{2: 'Lamia', 3: 'Take pictures as a gesture of respect...?', 4: '101', 18: '100003723', 19: '1', 21: 'v211lamiya'}
+59	59		401							{1: '2', 2: '2979'}
+60	60		301							"{3: ""Before Lamia finishes what she has to say, you've already sent out another message with your terminal, all the while with Lamia looking at you in bewilderment.""}"
+61	61		301							{2: 'Lamia', 3: 'What are you trying to—', 4: '101', 18: '100003724', 19: '1', 21: 'v211lamiya'}
+62	62		401							{1: '2', 2: '2915'}
+63	63		301							{3: 'Before she can finish her words, a clamor of voices suddenly rises from behind you.'}
+64	64		301							{3: 'The quiet beach gradually comes to life with activity.'}
+65	65		214							{1: '1', 2: '3'}
+66	66		301							{2: 'Lamia', 3: 'Ah, this is no good! People are awake now—we need to hurry up before they take all the good stuff!', 4: '101', 18: '100003725', 19: '1', 21: 'v211lamiya'}
+67	67		301				AniZhuanchangBegin			{3: 'Without waiting for you to say a word, Lamia grabs your sleeve and runs down the beach, heading toward somewhere in the distance.'}
+68	68		402							{1: '2915'}
+69	69		214							{1: '1', 2: '1'}
+70	70		401							{1: '2', 2: '2930'}
+71	71		301			AniZhuanchangEnd				{3: 'Lamia walks along the beach with a bucket in hand, scanning her surroundings.'}
+72	72		402							{1: '2930'}
+73	73		301							{3: 'At some point, Begonia has fallen behind and disappeared, yet their new acquaintance continues to follow behind closely.'}
+74	74		213							{1: '1', 2: '0.25', 4: '-100'}
+75	75		401							{1: '2', 2: '1514'}
+76	76		301							{3: 'With a keen eye, Lamia spots the perfect spot and quickly digs a deep hole with a couple of powerful scoops.'}
+77	77		402							{1: '1514'}
+78	78		214							{1: '1', 2: '5'}
+79	79		301							{2: 'Lamia', 3: 'Here... hold the bucket for me... There, got it!', 4: '101', 18: '100003726', 19: '1', 21: 'v211lamiya'}
+80	80		213							{1: '1', 2: '0.25'}
+81	81		301							{3: 'Lamia stands up, her hands full of razor clams.'}
+82	82		214							{1: '1', 2: '2'}
+83	83		301							"{2: 'Lamia', 3: ""Let's cook these for dinner tonight. Do you like razor clams?"", 4: '101', 18: '100003727', 19: '1', 21: 'v211lamiya'}"
+84	84		302							"{2: 'I do.', 3: '85', 4: ""I don't."", 5: '87'}"
+85	85		214							{1: '1', 2: '2'}
+86	86	89	301							{2: 'Lamia', 3: 'Hehe, I love them too. Looks like we have similar tastes.', 4: '101', 18: '100003728', 19: '1', 21: 'v211lamiya'}
+87	87		214							{1: '1', 2: '5'}
+88	88		301							"{2: 'Lamia', 3: ""I see... Don't worry! The bucket's full of seafood—we'll find something you like."", 4: '101', 18: '100003729', 19: '1', 21: 'v211lamiya'}"
+89	89		301							{3: 'Lamia places the razor clam in the bucket and pauses briefly in thought. She then changes direction and presses on without any sign of stopping.'}
+90	90		302							{2: 'Lamia.', 3: '91'}
+91	91		214							{1: '1', 2: '1'}
+92	92		301							"{2: 'Lamia', 3: ""Hm? Are you feeling okay? Want to head back? We can sit for a bit if you're feeling tired."", 4: '101', 18: '100003730', 19: '1', 21: 'v211lamiya'}"
+93	93		301							"{2: 'Lamia', 3: ""Just a bit longer. We don't get chances this good very often. A little extra work today means we can take it easy for days to come."", 4: '101', 18: '100003731', 19: '1', 21: 'v211lamiya'}"
+94	94		302							{2: '...How long have you been living here?', 3: '95'}
+95	95		214							{1: '1', 2: '4'}
+96	96		301							"{2: 'Lamia', 3: ""That's a weird question. You're making me sound like an outsider. I was born here and have lived my entire life here."", 4: '101', 18: '100003732', 19: '1', 21: 'v211lamiya'}"
+97	97		301				DialogDisable			{2: 'Lamia', 3: 'Wait a second... Are you trying to figure out how old I am?', 4: '101', 18: '100003733', 19: '1', 21: 'v211lamiya'}
+98	98		302							"{2: ""Cough... cough, cough... No, that's not what I'm trying to do."", 3: '99'}"
+99	99		302							{2: 'Um... Are you happy with your life here?', 3: '100'}
+100	100		214							{1: '1', 2: '1'}
+101	101		301			DialogEnable				{2: 'Lamia', 3: '...', 4: '101', 18: '100003734', 19: '1', 21: 'v211lamiya'}
+102	102		301							{3: 'Instead of answering your question, Lamia sets down the bucket of seafood, tugs your hand, and starts walking toward the sea.'}
+103	103		104							{1: '0|0|-100', 2: '2'}
+104	104		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory537.jpg', 3: '0', 4: '1', 5: '2'}
+105	105		104							{1: '0|0|0', 2: '0'}
+106	106		205							{1: '999'}
+107	107		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory537.jpg'}
+108	108		301							"{2: 'Lamia', 3: ""Yes, right here. Step up on this—but watch out for the rocks because they're super sharp."", 4: '101', 18: '100003735', 19: '1', 21: 'v211lamiya'}"
+109	109		301							{2: 'Lamia', 3: 'Now, do as I do.', 4: '101', 18: '100003736', 19: '1', 21: 'v211lamiya'}
+110	110		212							{1: '1', 6: '1'}
+111	111		301							{3: 'Lamia takes a deep breath and starts shouting toward the sea.', 18: '100003737'}
+112	112		301							"{2: 'Lamia', 3: ""I'M—SO—TIRED—OF—WORKING—"", 4: '101', 18: '100003738', 19: '1', 21: 'v211lamiya'}"
+113	113		301							{2: 'Lamia', 3: 'OH—GREAT—SEA—GOD—PLEASE—LEAVE—A—BUCKET—OF—SEAFOOD—AT—MY—DOOR—EVERY—DAY—', 4: '101', 18: '100003739', 19: '1', 21: 'v211lamiya'}
+114	114		302							{2: 'Uh... what exactly are you doing?', 3: '115'}
+115	115		211							{1: '1', 2: '1021020', 3: '1'}
+116	116		301							"{1: '1', 2: 'Lamia', 3: ""Can't you see that I'm letting it all out? Super helpful when you're feeling down!"", 4: '101', 18: '100003740', 19: '1', 21: 'v211lamiya'}"
+117	117		302							{2: 'Feeling down?', 3: '118'}
+118	118		301							"{2: 'Lamia', 3: ""Well, I'm obviously not the one feeling down here. I mean, you've got this serious look and all these serious questions. What's bothering you exactly?"", 4: '101', 18: '100003741', 19: '1', 21: 'v211lamiya'}"
+119	119		302							"{2: ""I guess that's just what happens when you're new to a place."", 3: '120'}"
+120	120		301							{2: 'Lamia', 3: 'Ah, I get it. I was super nervous myself when the priests first brought me to the Temple. But you know what? You get used to it eventually.', 4: '101', 18: '100003742', 19: '1', 21: 'v211lamiya'}
+121	121		301							"{2: 'Lamia', 3: ""Feel free to stay here, though, if you really can't find your way home. Pretty sure I won't go broke trying to keep you fed."", 4: '101', 18: '100003743', 19: '1', 21: 'v211lamiya'}"
+122	122		302							{2: '...', 3: '123'}
+123	123		301							{3: 'Lamia takes your lack of immediate response as your being afraid to ask.'}
+124	124		301							"{2: 'Lamia', 3: ""You know... See, looking at you, I get the feeling you're the type who pushes themselves too hard..."", 4: '101', 18: '100003744', 19: '1', 21: 'v211lamiya'}"
+125	125		301				DialogDisable			"{2: 'Lamia', 3: ""Since you can't remember anything now, why not just think of this period of time as a long vacation the world has given you? Take a breather."", 4: '101', 18: '100003745', 19: '1', 21: 'v211lamiya'}"
+126	126		302							"{2: ""I can't remember anything at all..."", 3: '127'}"
+127	127		302							{2: 'So... I should just see this as a long vacation that the world has given me?', 3: '128'}
+128	128		302							{2: 'Is that how you see it for yourself, too?', 3: '129'}
+129	129		301			DialogEnable				"{2: 'Lamia', 3: ""That's right! Just forget about all the annoying stuff. I mean, we didn't come to this world to endure suffering. Keep that face up, or you'll end up with wrinkles all over your face in no time!"", 4: '101', 18: '100003746', 19: '1', 21: 'v211lamiya'}"
+130	130		214							{1: '1', 2: '2'}
+131	131		301							{3: 'Lamia gives you a hearty pat on the shoulder. Seeing you all dumbfounded, she tilts her head and breaks into a gentle smile.'}
+132	132		301							"{2: 'Lamia', 3: ""I thought you were trying to find out if I liked my life here now, no? You'll find out soon enough in a few days when I'm done showing you around!"", 4: '101', 18: '100003747', 19: '1', 21: 'v211lamiya'}"
+133	133		302							{2: '...Alright.', 3: '135'}
+134	134		401							{1: '2', 2: '9339045'}
+135	135		301							{3: 'Satisfied with the response, Lamia nods contentedly, then leaps off the reef and gracefully treads through the water back to the shore.'}
+136	136		104							{1: '0|0|-100', 2: '2'}
+137	137		401							{1: '2', 2: '4298'}
+138	138		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory533.jpg', 3: '0', 4: '1', 5: '2'}
+139	139		104							{1: '0|0|0', 2: '0'}
+140	140		205							{1: '999'}
+141	141		402							{1: '4298'}
+142	142		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory533.jpg'}
+143	143		301				AniZhuanchangBegin			"{2: 'Lamia', 3: ""Let's go. It's getting late—let's pick up some more before heading back."", 4: '101', 18: '100003748', 19: '1', 21: 'v211lamiya'}"
+144	144		212							{1: '1', 6: '1'}
+145	145		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory912.jpg'}
+146	146		301			AniZhuanchangEnd				{3: 'By the time the two of you return, night has fallen. Awaiting you is a rather lively evening gathering.'}
+147	147		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3801_10.jpg', 3: '0', 4: '1', 5: '1.5'}
+148	148		205							{1: '999'}
+149	149		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_10.jpg'}
+150	150		301							"{3: ""Having lit up the nighttime sea, enthusiastic villagers generously share their catch from the day. They sing and dance around a bonfire, celebrating the day's bountiful harvest while showing their appreciation for the gift from the sea.""}"
+151	151		301							"{3: ""You and Lamia sit at the edge of the bonfire's light, keeping a comfortable distance from the crowd.""}"
+152	152		211							{1: '1', 2: '1021020', 3: '5'}
+153	153		301							{1: '1', 2: 'Lamia', 3: 'What a shame. I was totally going to make you dinner and show you what I can do in the kitchen.', 4: '101', 18: '100003749', 19: '1', 21: 'v211lamiya'}
+154	154		301							"{2: 'Lamia', 3: ""But hey, we got a free meal without having to lift a finger. Can't complain about that, right?"", 4: '101', 18: '100003750', 19: '1', 21: 'v211lamiya'}"
+155	155		301							{3: 'As she enjoys the grilled food passed over by the villagers, Lamia stretches comfortably.', 18: '100003751'}
+156	156		301							{3: 'As she is about to yawn, a familiar figure shows up before the two of you.'}
+157	157		212							{1: '1', 6: '1'}
+158	158		211							{1: '1', 2: '1021018', 3: '1'}
+159	159		301							"{1: '1', 2: 'Begonia', 3: ""Ah, there you are! Why are you sitting so far away from everyone else? We're having so much fun there! You should come and join us!"", 4: '101', 18: '100003752', 19: '1', 21: 'v211lamiya'}"
+160	160		212							{1: '1', 6: '1'}
+161	161		211							{1: '1', 2: '1021020', 3: '1'}
+162	162		301							"{1: '1', 2: 'Lamia', 3: ""You know what, just leave me out of whatever you're gonna ask us to do. I'm too tired—don't ask me to do anything that takes more than two movements."", 4: '101', 18: '100003753', 19: '1', 21: 'v211lamiya'}"
+163	163		212							{1: '1', 6: '1'}
+164	164		401							{1: '2', 2: '2704'}
+165	165		301							{3: 'With an exaggerated groan, Lamia tosses away her skewer and flops down dramatically onto the sand.'}
+166	166		211							{1: '1', 2: '1021018', 3: '1'}
+167	167		301							{1: '1', 2: 'Begonia', 3: 'Gee, you party pooper! Hey 【kuroname】, want to join in the fun?', 4: '101', 18: '100003754', 19: '1', 21: 'v211lamiya'}
+168	168		302							"{2: ""No thanks, I don't know how to dance."", 3: '169'}"
+169	169		301							{2: 'Begonia', 3: 'Well, have you got any other talents? Singing works, too.', 4: '101', 18: '100003755', 19: '1', 21: 'v211lamiya'}
+170	170		302							{2: '...Does fishing count?', 3: '171'}
+171	171		301				DialogDisable			"{2: 'Begonia', 3: ""Hahaha, you're funny! You do realize that everyone here is a fisher, don't you?"", 4: '101', 18: '100003756', 19: '1', 21: 'v211lamiya'}"
+172	172		302							"{2: ""I once caught this fish that's 49kg."", 3: '173'}"
+173	173		302							{2: 'Without any fishing gear or bait.', 3: '174'}
+174	174		301			DialogEnable				"{2: 'Begonia', 3: ""Whoa, that's actually pretty impressive!"", 4: '101', 18: '100003757', 19: '1', 21: 'v211lamiya'}"
+175	175		212							{1: '1', 6: '1'}
+176	176		301							{3: 'The statement draws a gasp of amazement from the little girl and makes Lamia tilt her head slightly, her lips parting in surprise.'}
+177	177		301							"{3: ""A second later, you give her a knowing look she doesn't quite understand.""}"
+178	178		211							{1: '1', 2: '1021020', 3: '4'}
+179	179		301							{1: '1', 2: 'Lamia', 3: '...?', 4: '101', 18: '100003758', 19: '1', 21: 'v211lamiya'}
+180	180		212							{1: '1', 6: '1'}
+181	181		211							{1: '1', 2: '1021018', 3: '1'}
+182	182		301							"{1: '1', 2: 'Begonia', 3: ""But fishing still doesn't count since you can't show it off here! Come on, sing us a song then. Don't be a party pooper on a night like this!"", 4: '101', 18: '100003759', 19: '1', 21: 'v211lamiya'}"
+183	183		302							"{2: ""Fine, but I was wondering if you could do a quick demo for me to show me how it's done, Begonia?"", 3: '184'}"
+184	184		301							{2: 'Begonia', 3: 'Eh?! Me?', 4: '101', 18: '100003760', 19: '1', 21: 'v211lamiya'}
+185	185		302							"{2: ""Yup, since I'm not familiar with the songs you guys sing around here."", 3: '186'}"
+186	186		301							"{2: 'Begonia', 3: ""Alright then, I'll sing a song that I learned from Lamia."", 4: '101', 18: '100003761', 19: '1', 21: 'v211lamiya'}"
+187	187		302							{2: '(Applaud with a smile)', 3: '188'}
+188	188		401							{1: '1', 2: '36'}
+189	189		301							{3: 'Begonia straightens her clothes, walks over to the bonfire, and clears her throat.'}
+190	190		401							{1: '1', 2: '334'}
+191	191		301							{2: 'Begonia', 3: 'Da... dada... dada...', 4: '101', 18: '100003762', 19: '1', 21: 'v211lamiya'}
+192	192		301				DialogDisable			{2: 'Begonia', 3: 'Dadadadadadada...', 4: '101', 18: '100003763', 19: '1', 21: 'v211lamiya'}
+193	193		302							{2: '...', 3: '194'}
+194	194		302							{2: 'Lamia, did you teach her this song?', 3: '195'}
+195	195		212							{1: '1', 6: '1'}
+196	196		211							{1: '1', 2: '1021020', 3: '1', 7: '1'}
+197	197		301			DialogEnable				{1: '1', 3: 'She nods gently, her expression growing slightly serious.'}
+198	198		302							{2: 'Where did you learn this?', 3: '199'}
+199	199		301							"{2: 'Lamia', 3: ""...I don't know, and... I think it came with lyrics, but I can't remember them."", 4: '101', 18: '100003764', 19: '1', 21: 'v211lamiya'}"
+200	200		301							{3: 'Watching Begonia, Lamia begins to hum to the melody.'}
+201	201		301							{2: 'Lamia', 3: 'Da... dada... dada...', 4: '101', 18: '100003765', 19: '1', 21: 'v211lamiya'}
+202	202		302							{2: '...', 3: '203'}
+203	203		301							{3: 'After a brief silence, you join them and sing along. Unlike their vague humming, however, you sing out the lyrics of the song with perfect clarity.'}
+204	204		214							{1: '1', 2: '4'}
+205	205		301				DialogDisable			{2: 'Lamia', 3: 'Uhm...? Wait... this song... do you know it, too?', 4: '101', 18: '100003766', 19: '1', 21: 'v211lamiya'}
+206	206		302							{2: '...Yes.', 3: '207'}
+207	207		302							"{2: ""It's... a song from my homeland."", 3: '208'}"
+208	208		301			DialogEnable				"{2: 'Lamia', 3: ""Could you teach me the rest of the song? When you led just now, I managed to sing a few lines, but I can't remember anything beyond that."", 4: '101', 18: '100003767', 19: '1', 21: 'v211lamiya'}"
+209	209		301							{3: 'You open your mouth slightly but hold the words at the tip of your tongue.'}
+210	210		301							{3: 'After a long pause, you give her a single-word response.'}
+211	211		302		1		AniZhuanchangBegin			{2: 'Alright.'}

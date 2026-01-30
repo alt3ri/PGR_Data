@@ -1,0 +1,44 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory126.png'}
+2	2		401							{1: '1', 2: '203'}
+3	3		201							{1: '1', 2: '1031001', 4: '400'}
+4	4		201							{1: '2', 2: '1021001', 3: '4', 4: '-400'}
+5	5		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'This way.', 4: '2'}
+6	6		301							{2: 'Liv', 3: 'I can see the stairs to the next level!', 4: '1'}
+7	7		202							{1: '1', 2: '2', 6: '1'}
+8	8		201							{1: '1', 2: '1011001', 4: '400'}
+9	9		201							{1: '2', 2: '500127', 3: '5', 4: '-400'}
+10	10		301							{1: '1', 2: 'Sophia', 3: 'We can get to the roof through here.', 4: '2'}
+11	11		301							"{2: 'Sophia', 3: ""Changyu's there."", 4: '2'}"
+12	12		301							{2: 'Lee', 3: 'Careful.', 4: '1'}
+13	13		202							{1: '1', 2: '2', 6: '1'}
+14	14		301			RImgBg1Shake				{3: 'Bang!'}
+15	15		201							{1: '1', 2: '1011001', 4: '-400'}
+16	16		201							{1: '2', 2: '1031001', 4: '400'}
+17	17		301							"{1: '1', 2: 'Lee', 3: ""Looks like we're getting closer to the source of danger."", 4: '1'}"
+18	18		301							{2: 'Lee', 3: 'Tsk, dropping Corrupted on us again.', 4: '1'}
+19	19		301							"{2: 'Liv', 3: ""Commandant, if I'm not wrong, the Rail Heterozygote up there is releasing more and more Corrupted into the carriages."", 4: '2'}"
+20	20		204							{1: '1', 2: '10'}
+21	21		301							{2: 'Lee', 3: 'Is it trying to claim this train as its nest?', 4: '1'}
+22	22		201							{1: '1', 2: '1021001', 4: '-400'}
+23	23		301							"{2: 'Lucia', 3: 'We\'ve already seen its ""oothecae"".', 4: '1'}"
+24	24		301							"{2: 'Liv', 3: ""It's... something I wish to never see again."", 4: '2'}"
+25	25		204							{1: '1', 2: '4'}
+26	26		301							"{2: 'Lucia', 3: ""Let's take care of them and move on."", 4: '1'}"
+27	27		201							{1: '2', 2: '500127', 3: '5', 4: '400'}
+28	28		301							{1: '1', 2: 'Sophia', 3: 'No.', 4: '2'}
+29	29		301							"{2: 'Sophia', 3: ""There's no time."", 4: '2'}"
+30	30		301							"{2: 'Sophia', 3: ""I'll create an opening so you guys can go up to the roof first."", 4: '2'}"
+31	31		301							{2: 'Sophia', 3: 'Changyu needs backup, now!', 4: '2'}
+32	32		201							{1: '1', 2: '1031001', 3: '7', 4: '-400'}
+33	33		301							{1: '1', 2: 'Liv', 3: 'What about you, Sophia?', 4: '1'}
+34	34		204							{1: '1'}
+35	35		204							{1: '2'}
+36	36		301							"{2: 'Sophia', 3: ""I'll catch up with you as soon as I'm done here."", 4: '2'}"
+37	37		301							{2: 'Sophia', 3: 'If that thing is right on top of here, then your team is more suitable to deal with it than me.', 4: '2'}
+38	38		301							{2: 'Sophia', 3: 'Please.', 4: '2'}
+39	39		201							{1: '1', 2: '1021001', 3: '4', 4: '-400'}
+40	40		301							{1: '1', 2: 'Lucia', 3: 'All right.', 4: '1'}
+41	41		201							{1: '1', 2: '1031001', 3: '1', 4: '-400'}
+42	42		301							"{1: '1', 2: 'Liv', 3: ""...If you require assistance, please let us know immediately. We'll come to your aid once we've ensured Changyu's safety."", 4: '1'}"
+43	43		301		1		AniZhuanchangBegin			{2: 'Sophia', 3: 'Yup!!!', 4: '2'}

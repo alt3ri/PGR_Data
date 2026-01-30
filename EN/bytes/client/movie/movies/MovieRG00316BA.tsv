@@ -1,0 +1,56 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory170.png'}
+2	2		401							{1: '1', 2: '16'}
+3	3		201							{1: '1', 2: '500097'}
+4	4		301			DialogEnable				{1: '1', 2: 'Granton', 3: 'Never thought I, Granton, would be so embarrassed by heroes.', 4: '1'}
+5	5		301							{3: 'Thanks to the recovery potions, we blasted through the castle with ease and finally reached the second Demon General, Granton.'}
+6	6		301							"{2: 'Granton', 3: ""I don't know about the first two heroes, but... Do you two really believe what the King said?"", 4: '1'}"
+7	7		301							"{3: ""As Camu and Vera defeated Granton's minions, he looked over, hands on his wounds.""}"
+8	2001		203							{1: '1', 2: '0.25', 3: '400'}
+9	2002		201							{1: '2', 2: '500180', 4: '-400'}
+10	8		301							{1: '1', 2: 'Karenina', 3: 'Do you mean me and the Commandant of Gray Raven?', 4: '2'}
+11	9		301							{2: 'Granton', 3: 'Correct. From what I heard, you already knew that King was plotting something.', 4: '1'}
+12	10		301							{2: 'Granton', 3: 'Why are you still doing this if you already doubt him!?', 4: '1'}
+13	11		302							{2: 'Because this is the main quest.', 3: '12', 4: 'Do you know what the King is really up to then?', 5: '13'}
+14	12	14	301							{2: 'Granton', 3: 'Main...what!? Just like the last generation, you heroes always say weird things.', 4: '1'}
+15	13	14	301							{2: 'Granton', 3: 'Of course I do...', 4: '1'}
+16	14		301							{2: 'Granton', 3: 'Anyway, that King is the real monster. He wants to take the artifact from us and control this world.', 4: '1'}
+17	2003		202							{1: '1', 2: '2'}
+18	2004		201							{1: '1', 2: '500176'}
+19	15		301							{1: '1', 2: 'Camu', 3: 'With this stone alone?', 4: '1'}
+20	16		301							{3: 'Camu took out the jade after hearing Granton. The latter gnashed his teeth...'}
+21	2005		201							{1: '1', 2: '500097'}
+22	17		301							{1: '1', 2: 'Granton', 3: 'Right, this is it. The artifact was originally given to us Demons by the Goddess as an order to keep the Demons alive.', 4: '1'}
+23	2006		302							{2: 'An order?', 3: '18', 4: 'Who is the Goddess?', 5: '19'}
+24	18	20	301							{2: 'Granton', 3: 'Yeah. Because of this artifact, we Demons have greater strength than humans.', 4: '1'}
+25	19	20	301							{2: 'Granton', 3: 'She is... No, there is a spell on her name. We are unable to write or read it out.', 4: '1'}
+26	20		301							{2: 'Granton', 3: 'The power of the artifact allowed us to summon the Demon King in the last war. The Goddess originally wanted to balance the power of both sides to reduce casualty.', 4: '1'}
+27	21		301							{2: 'Granton', 3: 'But the Demon King escalated the war without discussing with us. Eventually, the heroes of the revelation arrived and destroyed us. ', 4: '1'}
+28	2007		202							{1: '1', 2: '2'}
+29	2008		201							{1: '1', 2: '500176', 4: '400'}
+30	2009		201							{1: '2', 2: '500181', 4: '-400'}
+31	22		301							"{1: '1', 2: 'Vera', 3: 'Speaking of which, what exactly does the ""hero of the revelation"" mean?', 4: '2'}"
+32	23		301							{2: 'Camu', 3: 'The revelation means the main quest. This is probably how the last generation of heroes called it.', 4: '1'}
+33	3001		202							{1: '1', 2: '2'}
+34	3002		201							{1: '1', 2: '500097'}
+35	24		301							{1: '1', 2: 'Granton', 3: 'Right... They felt sorry to us, but said they had no choice but to follow the revelation in order to win this game.', 4: '1'}
+36	25		301							"{2: 'Granton', 3: ""We saw it as the Goddess' punishment and didn't want to take it back to them. But the humans soon retaliated and wanted to take the artifact away from us."", 4: '1'}"
+37	26		301							{2: 'Granton', 3: 'We could have summoned the Demon King again with the artifact. But we only created four sanctuaries with it and sealed them against all humans.', 4: '1'}
+38	3003		203							{1: '1', 2: '0.25', 3: '400'}
+39	3004		201							{1: '2', 2: '500181', 4: '-400'}
+40	27		301							{1: '1', 2: 'Vera', 3: 'You sealed them... But why are we standing right here?', 4: '2'}
+41	28		301							{2: 'Granton', 3: 'Because you are heroes. Only the heroes can ignore the rules set by the Goddess.', 4: '1'}
+42	29		301							"{2: 'Vera', 3: ""Aha... No wonder he couldn't do this himself."", 4: '2'}"
+43	30		301							"{2: 'Granton', 3: ""That's why you must stop working for the King. If you really are the heroes, you should do what's best for the world. We can promise to never attack humans again."", 4: '1'}"
+44	31		301							{2: 'Granton', 3: 'And... Please also go back and ask the King to leave us alone.', 4: '1'}
+45	3005		302							"{2: ""I'll try."", 3: '1001', 4: ""No, I don't think we can."", 5: '33'}"
+46	1001	1002	202							{1: '1', 2: '2'}
+47	1002	32	201							{1: '1', 2: '500176'}
+48	32	1003	301							"{1: '1', 2: 'Camu', 3: ""I met many people like him. Even if you threaten his life, it still won't work."", 4: '1'}"
+49	33	34	301							{2: 'Granton', 3: 'What...!?', 4: '1'}
+50	34	1003	301							"{2: 'Vera', 3: 'Just use your brain. Do you think that King will listen to ""heroes"" like us?', 4: '2'}"
+51	1003		202							{1: '1', 2: '2'}
+52	3006		201							{1: '1', 2: '500097'}
+53	35		301							"{1: '1', 2: 'Granton', 3: ""I'll take that as a no."", 4: '1'}"
+54	3007		201							{1: '1', 2: '500176'}
+55	36		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Camu', 3: 'Because we are also the ""heroes of the revelation."" Give us the artifact now!', 4: '1'}"

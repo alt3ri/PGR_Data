@@ -1,0 +1,100 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_10.jpg'}
+2	2		401							{1: '1', 2: '279'}
+3	3		201							{1: '1', 2: '500582'}
+4	4		301			DialogEnable				{1: '1', 3: 'Against a sky in which the stars hang far and wide apart, the low hums that the armor emits are reminiscent of alarm calls.'}
+5	5		202							{1: '1', 6: '1'}
+6	6		201							{1: '1', 2: '500702'}
+7	7		301							{1: '1', 2: 'Echo', 3: '...Commandant?', 4: '1'}
+8	8		302							"{2: ""What's wrong?"", 3: '9'}"
+9	9		301							{3: 'Your body wakes right up and readies itself for a fight after years of being on the front lines.'}
+10	10		301							"{2: 'Echo', 3: ""There is movement up ahead. They're probably trying to make their way back when it's still dark."", 4: '1'}"
+11	11		302				AniZhuanchangBegin			"{2: ""Let's tag them."", 3: '12'}"
+12	12		202			DialogDisable			600.0	{1: '1', 6: '1'}
+13	13		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+14	14		301			DialogEnable				{3: 'Following the Aurora Squadron soldiers, you see a black airship towering in the woods in the faint morning light two hills later.'}
+15	15		302							{2: 'So this... is Utopia?', 3: '16'}
+16	16		301							{3: 'Not as big as I imagined.'}
+17	17		201							{1: '1', 2: '500702'}
+18	18		301							{1: '1', 2: 'Echo', 3: '...The whole of Utopia is much bigger than this.', 4: '1'}
+19	19		301							{2: 'Echo', 3: 'This should be one of the smaller flying fortresses out on a mission.', 4: '1'}
+20	20		301							{2: 'Echo', 3: 'Utopia consists of a gigantic flying fortress flanked by numerous smaller ones. Most of the time, Utopia stays on land in the middle of the wilderness and is usually not airborne.', 4: '1'}
+21	21		301							"{2: 'Echo', 3: ""Some of the smaller fortresses scatter and come down to the ground when they're on missions, like this..."", 4: '1'}"
+22	22		401							{1: '2', 2: '558'}
+23	23		204							{1: '1', 2: '17'}
+24	24		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '1'}
+25	25		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+26	26		301							{2: 'Echo', 3: 'Ugh...', 4: '1'}
+27	27		301							{3: 'Echo stops cold and presses her hand to her forehead.'}
+28	28		302							{2: 'A M.I.N.D. interference?', 3: '29'}
+29	29		301							{2: 'Echo', 3: '...Yes. They have probably planted a small armored device somewhere nearby that is equipped with a M.I.N.D. disruptor.', 4: '1'}
+30	30		204							{1: '1'}
+31	31		301							"{2: 'Echo', 3: ""But it isn't something I can't handle with your connection, though, Commandant. Let's keep moving and see what's up ahead."", 4: '1'}"
+32	32		301							{3: 'With it, the two of you proceed carefully along the perimeter of the woods.'}
+33	33		301							{3: 'A few tents scatter under the small flying fortress, where a couple of refugees and visibly wounded Constructs line up for some sort of registration. Once verification is complete, they are led into the flying fortress.'}
+34	34		301							"{2: 'Echo', 3: ""They're still doing this."", 4: '1'}"
+35	35		302							"{2: ""Let's try to keep it on the low so they don't see us."", 3: '36'}"
+36	36		301							{2: 'Echo', 3: 'I know where the backdoor is on one of these smaller fortresses. We need to get those people out of there first.', 4: '1'}
+37	37		202							{1: '1', 6: '1'}
+38	38		401							{1: '2', 2: '2936'}
+39	39		301				AniZhuanchangBegin			{3: 'Before you can stop her, Echo has put away her weapon and started making her way quietly toward the flying fortress.'}
+40	40		401							{1: '1', 2: '36'}
+41	41		502						600.0	{1: 'DialogDisable'}
+42	42		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory760.jpg'}
+43	43		401							{1: '1', 2: '55'}
+44	44		301			DialogEnable				{3: 'Inside a lab in Utopia.'}
+45	45		201							{1: '1', 2: '500712'}
+46	46		301							{1: '1', 2: 'Aurora Squadron Soldier', 3: 'Alisa and the Gray Raven Commandant have reached the flying fortress.', 4: '1'}
+47	47		202							{1: '1', 6: '1'}
+48	48		201							{1: '1', 2: '500710'}
+49	49		301							{1: '1', 2: 'Pickman', 3: 'I see.', 4: '1'}
+50	50		202						800.0	{1: '1'}
+51	51		201							{1: '1', 2: '500709'}
+52	52		301							{1: '1', 3: 'Pickman turns around from the experiment bench, his golden eyes glistening with a gentle smile.'}
+53	53		204							{1: '1', 2: '1'}
+54	54		301							{2: 'Pickman', 3: 'Little Alisa is still as impatient as always.', 4: '1'}
+55	55		301							"{2: 'Pickman', 3: ""But I don't suppose a fruit ever becomes ripe with the juice of life if it isn't nurtured with the hardship of life. She has always been the best of them all..."", 4: '1'}"
+56	56		301							"{2: 'Pickman', 3: ""By the way, that girl from the other day who tried to pay me a visit but ended up in Babylonia... I don't even know who sent her to me. Seemed quite impulsive, saying that she wanted to join us."", 4: '1'}"
+57	57		301							{2: 'Pickman', 3: 'Where is the thing she brought with her?', 4: '1'}
+58	58		203							{1: '1', 2: '0.25', 3: '400', 6: '1'}
+59	59		201							{1: '2', 2: '500058', 4: '-400'}
+60	60		301							{1: '1', 2: 'Researcher From Aurora Squadron', 3: 'Here.', 4: '2'}
+61	61		401							{1: '2', 2: '2979'}
+62	62		301							{3: 'The researcher calls up a series of files on the screen.'}
+63	63		204							{1: '1'}
+64	64		301							{3: 'After quickly going through the files, Pickman falls silent.'}
+65	65		301							{2: 'Pickman', 3: 'Um... I see.', 4: '1'}
+66	66		301							{2: 'Researcher From Aurora Squadron', 3: 'Should I try to get in touch with them?', 4: '2'}
+67	67		301							"{2: 'Pickman', 3: ""No... we'll stay put for now."", 4: '1'}"
+68	68		301							"{2: 'Pickman', 3: ""Let's wait and see what we're getting out of the next batch of test subjects. Can't play on the table without any chips in our pocket, don't you agree?"", 4: '1'}"
+69	69		301							{2: 'Pickman', 3: 'I believe... Alisa is not going to let me down. Right?', 4: '1'}
+70	70		204							{1: '1', 2: '1'}
+71	71		301				AniZhuanchangBegin			"{3: ""He keeps his gaze on the report detailing Alisa's activities and breaks into another gentle smile.""}"
+72	72		401							{1: '1', 2: '36'}
+73	73		202			DialogDisable			600.0	{1: '1', 2: '2', 6: '1'}
+74	74		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory580.jpg'}
+75	75		401							{1: '1', 2: '279'}
+76	76		301			DialogEnable				{3: 'Inside the flying fortress.'}
+77	77		201							{1: '1', 2: '500702'}
+78	78		301							{1: '1', 3: 'Navigating the flying fortress is a breeze with Echo leading the way. What hits you as weird, though, is that all the things here are out of place, a sign that this place is still under construction.'}
+79	79		301							"{2: 'Echo', 3: ""This is where most of Pickman's men come to rest..."", 4: '1'}"
+80	80		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory175.png', 3: '0', 4: '1', 5: '1'}
+81	81		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+82	82		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory175.png'}
+83	83		301							{3: 'Echo quietly pushes open a door...'}
+84	84		204							{1: '1', 2: '17'}
+85	85		401							{1: '2', 2: '558'}
+86	86		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '1'}
+87	87		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+88	88		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+89	89		301							{2: 'Echo', 3: 'Hm...!', 4: '1'}
+90	90		301							{3: '...Only to see countless M.I.N.D. disruptors on the other side.'}
+91	91		302							"{2: ""...It's a trap!"", 3: '92'}"
+92	92		301							{2: 'Echo', 3: 'Ughh...!', 4: '1'}
+93	93		302							{2: '(Cut off power connection.)', 3: '94'}
+94	94		401							{1: '2', 2: '10022001'}
+95	95		301							{3: 'The gadgets are no longer working, but Echo still looks in pain.'}
+96	96		301							"{3: ""You can only imagine the pain she's going through having had her M.I.N.D. messed up by interference waves as powerful as the ones that had just hit her.""}"
+97	97		302							{2: '(Lock the door.)', 3: '98'}
+98	98		301							"{3: ""You've got hold of Lee and the Task Force squad nearby and asked them to come down for help, but before they get here, you know you have to help Echo stabilize her M.I.N.D. first.""}"
+99	99		302		1		AniZhuanchangBegin			"{2: ""(Attempt another deep dive into Echo's M.I.N.D.)""}"

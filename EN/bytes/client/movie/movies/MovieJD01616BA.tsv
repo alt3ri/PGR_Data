@@ -1,0 +1,20 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '1031001', 4: '-600'}
+4	4		201							{1: '2', 2: '500026', 4: '600'}
+5	5		201							{1: '3', 2: '500166'}
+6	6		301			DialogEnable				{1: '1', 3: 'You take a slightly longer path to avoid enemies.'}
+7	7		301							{3: 'But the four of you seem to start losing your perception ability...'}
+8	8		301							{2: 'Lee', 3: 'Area scan... Argh! The interfering nodes!', 4: '2'}
+9	9		301							{2: 'Lee', 3: 'Liv, scan for their locations!', 4: '2'}
+10	10		301							"{2: 'Liv', 3: ""I've uploaded some possible locations to the command link!"", 4: '1'}"
+11	11		301				DialogDisable			{2: 'Lee', 3: 'Another one at a place this far out...? We need to find out where it is!', 4: '2'}
+12	12		305							{1: '13', 2: '19'}
+13	13		301			DialogEnable				{2: 'Lee', 3: 'They really are everywhere.', 4: '2'}
+14	14		301							"{2: 'Liv', 3: ""This node seems to partially support Huaxu's connection with the ground..."", 4: '1'}"
+15	15		301							"{2: 'Lucia', 3: ""If we destroy it, Huaxu's invasive computing power will also suffer, right?"", 4: '3'}"
+16	16		301							{2: 'Lee', 3: 'If our judgment is correct.', 4: '2'}
+17	17		302							"{2: ""Let's do it."", 3: '18'}"
+18	18		301		1		AniZhuanchangBegin			{2: 'Lucia & Lee & Liv', 3: 'Understood!', 4: '1', 5: '2', 6: '3'}
+19	19		202		1		AniZhuanchangBegin			{1: '1', 2: '2', 3: '3', 6: '1'}

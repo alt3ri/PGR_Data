@@ -1,0 +1,335 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		107			DialogEnable			3000.0	"{1: 'Kowloong', 2: 'November 10, 05:47', 4: ""With the completion of Huaxu's restoration, the Tabula Akasha has fallen."", 5: '1200m under Kowloong, Physical Layer of Tabula Akasha'}"
+4	4		108							{1: '1'}
+5	5		401							{1: '1', 2: '368'}
+6	6		304				AniZhuanchangBegin			"{1: '""...November, the heavens tilt southeast, a comet appears, the emperor falls.""', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 9: '1', 10: '1'}"
+7	7		502						400.0	{1: 'DialogDisable'}
+8	8		306							{1: '1'}
+9	9		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory865.jpg'}
+10	10		301			DialogEnable				{3: 'Less than two minutes after Qu disconnected from you, a violent earthquake reveals the results of the Huaxu restoration, though it remains unclear whether the outcome is good or bad.'}
+11	11		301							{3: 'Deep growls echo continuously, and the memory projections that have been wandering the battlefield vanish.'}
+12	12		301							{3: 'With the disappearance of the memory projections for unknown reasons, the Hetero-Creatures begin to rise from the ground again, but this time, they all begin moving underground.'}
+13	13		301							{3: 'Their fury shakes the artificial sky of Tabula Akasha, causing the massive ceiling to loosen and collapse, crushing everything beneath it—Hetero-Creatures, humans, and constructs alike.'}
+14	14		301							{3: 'Tabula Akasha, cradled within the land of Kowloong, is now engulfed in endless chaos.'}
+15	15		301							"{3: ""The only good news is that the strong earthquake inadvertently helped the Engineering Force outside, enabling them to finally break through the northwest engineering tunnel. Under the escort of Karenina and the Strike Hawk stationed there, residents of Kowloong's lower levels begin to evacuate.""}"
+16	16		306							
+17	17		201							{1: '1', 2: '500166', 3: '5'}
+18	18		301							{1: '1', 2: 'Lucia', 3: 'Commandant!', 4: '1'}
+19	19		401							{1: '2', 2: '9342045'}
+20	20		203						90.0	{1: '1', 2: '0.1', 5: '-100'}
+21	21		202							{1: '1', 6: '1'}
+22	22		401							{1: '2', 2: '9317017'}
+23	23		301			RImgBg1Shake				{3: 'Before you can react to what is happening, Lucia suddenly rushes over from the other side, tackling you to the ground several meters away.'}
+24	24		301							{3: 'When you look up again, a thick steel bar pierces the ground where you stood just moments before.'}
+25	25		302							{2: 'That was close...', 3: '26', 4: 'Thank you, Lucia.', 5: '26'}
+26	26		201							{1: '1', 2: '500166'}
+27	27		301							{1: '1', 2: 'Lucia', 3: 'Commandant, are you okay?', 4: '1'}
+28	28		302							{2: 'All good.', 3: '29'}
+29	29		301							{3: 'To prevent injury during the fall, Lucia absorbs the impact with her own body.'}
+30	30		204							{1: '1', 2: '1'}
+31	31		301							"{2: 'Lucia', 3: ""That's good to hear."", 4: '1'}"
+32	32		301							{3: 'Realizing she is still protecting you, she quickly releases you and stands up.'}
+33	33		204							{1: '1'}
+34	34		301				DialogDisable			"{2: 'Lucia', 3: ""We can't stay in this open area—"", 4: '1'}"
+35	35		202						200.0	{1: '1', 6: '1'}
+36	36		401							{1: '2', 2: '1508'}
+37	37		201							{1: '1', 2: '500013', 7: '1'}
+38	38		302							{2: '(Open fire)', 3: '39'}
+39	39		401							{1: '2', 2: '1510'}
+40	40		301			DialogEnable				{3: 'Bang!'}
+41	41		401							{1: '2', 2: '4306'}
+42	42		203						100.0	{1: '1', 2: '0.1', 4: '-100'}
+43	43		202							{1: '1', 6: '1'}
+44	44		301							{3: 'A Corrupted mechanoid crawling toward Lucia from behind falls, its red glow fading.'}
+45	45		301							{2: 'Corrupted', 3: 'I... will...'}
+46	46		301							{2: 'Corrupted', 3: 'I will... live...'}
+47	47		401							{1: '2', 2: '10002001'}
+48	48		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+49	49		301			RImgBg1Shake				"{3: ""Lucia's katana pierces the Corrupted mechanoid's brain, silencing its eerie gurgling.""}"
+50	50		201							{1: '1', 2: '500166'}
+51	51		301							{1: '1', 2: 'Lucia', 3: 'Thank you, Commandant...', 4: '1'}
+52	52		301							{2: 'Lucia', 3: 'Since the restoration of Huaxu, these Corrupted mechanoids have been acting strangely.', 4: '1'}
+53	53		301				DialogDisable			{2: 'Lucia', 3: 'Not only do they attack us, but they also appear to obstruct the steps of the Hetero-Creatures.', 4: '1'}
+54	54		302							{2: 'I wonder if this means the restoration was successful.', 3: '55'}
+55	55		302							"{2: ""We can't contact Babylonia or that mechanoid named Zavier."", 3: '56'}"
+56	56		302							"{2: ""And Villier still hasn't shown up..."", 3: '57'}"
+57	57		301			DialogEnable				{2: 'Lucia', 3: 'But at least the Engineering Force has joined with the people in lower levels.', 4: '1'}
+58	58		301							{2: 'Lucia', 3: 'No matter what, we need to get out of here.', 4: '1'}
+59	59		401							{1: '2', 2: '1515'}
+60	60		301							{2: 'Lee', 3: 'Commandant.'}
+61	61		203						250.0	{1: '1', 2: '0.25', 3: '400'}
+62	62		201							{1: '2', 2: '500568', 4: '-400', 7: '1'}
+63	63		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '2'}
+64	64		301							{1: '1', 2: 'Lee', 3: 'Based on structural analysis, to ensure safety, we should stay near the edges before moving to the lower levels.', 4: '2'}
+65	65		301							{2: 'Lee', 3: 'The domes began to collapse from the center, so the edges are safer. For safety, Chaofeng and I had to position ourselves on the opposite side from you.', 4: '2'}
+66	66		302							{2: 'Understood.', 3: '67', 4: 'Stay vigilant, Lee.', 5: '67'}
+67	67		301							{2: 'Lee', 3: 'Copy that.', 4: '2'}
+68	68		301							{2: 'Lee', 3: 'Lucia, Commandant. Stay safe.', 4: '2'}
+69	69		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+70	70		202							{1: '2', 6: '1'}
+71	71		203							{1: '1', 2: '0.25'}
+72	72		301							{3: 'Seeing Lucia by your side, Lee closes the communication and gives her a look that is serious but caring.'}
+73	73		302							{2: 'I wonder if things are going well for Strike Hawk and Liv.', 3: '74'}
+74	74		204							{1: '1', 2: '5'}
+75	75		301							"{2: 'Lucia', 3: ""Chrome's message said that 30% of the people have evacuated through the tunnels cleared by the Engineering Force."", 4: '1'}"
+76	76		301							"{2: 'Lucia', 3: ""We need to buy time for them. Can't let these Hetero-Creatures go down there."", 4: '1'}"
+77	77		302							{2: 'But fighting in a place like this is really...', 3: '78'}
+78	78		301							{3: 'The continuously collapsing sky and the surrounding inferno paint a clear apocalypse.'}
+79	79		302							{2: 'Just do it the way we used to—', 3: '80'}
+80	80		203							{1: '1', 2: '0.25', 3: '-400'}
+81	81		201							{1: '2', 2: '500823', 3: '15', 4: '400'}
+82	82		301							{1: '1', 2: 'Zhishi', 3: 'Madam Pulao! Madam Pulao!', 4: '2'}
+83	83		301							{3: 'A heart-wrenching scream echoes from behind.'}
+84	84		301							"{2: 'Lucia', 3: ""What's wrong with Pulao?"", 4: '1'}"
+85	85		301							{2: 'Zhishi', 3: 'Did you see Madam Pulao?!', 4: '2'}
+86	86		302							"{2: 'No...', 3: '87', 4: ""Come to think of it, we haven't seen her for a while..."", 5: '87'}"
+87	87		301							"{2: 'Zhishi', 3: ""We couldn't find her anywhere. Not even..."", 4: '2'}"
+88	88		301							{3: 'The girl hesitates for a moment, then grits her teeth and continues, her voice tinged with sobs.'}
+89	89		301							{2: 'Zhishi', 3: 'Not even her... her...', 4: '2'}
+90	90		301							"{2: 'Lucia', 3: ""She'll be fine."", 4: '1'}"
+91	91		301							{3: 'Lucia comforts Zhishi, unable to voice the worst-case scenario.'}
+92	92		302							"{2: ""She'll be fine."", 3: '93'}"
+93	93		302							"{2: ""With Pulao's strength, these Hetero-Creatures are no match for her."", 3: '94'}"
+94	94		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+95	95		202							{1: '1', 2: '2', 6: '1'}
+96	96		504							{1: '0.7'}
+97	97		201							{1: '1', 2: '500826'}
+98	98		301							"{1: '1', 2: 'Qu', 3: ""You haven't experienced loss yet."", 4: '1'}"
+99	99		301							{2: 'Qu', 3: 'Those who were once everything to you might leave for a while, and they will come back in the end.', 4: '1'}
+100	100		301							{2: 'Qu', 3: 'Until then, the only thing you can do is deceive yourself, until you end up deceiving the world as well.', 4: '1'}
+101	101		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+102	102		202							{1: '1', 6: '1'}
+103	103		504							
+104	104		201							{1: '1', 2: '500166', 3: '5', 4: '-400'}
+105	105		201							{1: '2', 2: '500823', 3: '15', 4: '400'}
+106	106		301							{1: '1', 3: 'Until then, the only thing you can do is deceive yourself, until you end up deceiving the world as well.'}
+107	107		302							"{2: ""She'll be fine."", 3: '108'}"
+108	108		302							{2: 'I believe in her.', 3: '109'}
+109	109		301							"{3: ""Zhishi doesn't say anything but seems to agree, biting her lip and nodding as she tightens her grip on her weapon.""}"
+110	110		502						200.0	{1: 'DialogDisable'}
+111	111		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+112	112		401							{1: '2', 2: '2959'}
+113	113		307							{1: 'The era of organisms is over.', 3: '60', 4: 'ff4e4eff'}
+114	114		301							{3: 'The era of organisms is over.'}
+115	115		307							{2: '1'}
+116	116		301			DialogEnable				{3: 'The eerie words appear before you once again.'}
+117	117		301							"{2: 'Lucia', 3: ""Who? Who's there?!"", 4: '1'}"
+118	118		204							{1: '2', 2: '4'}
+119	119		301							{2: 'Zhishi', 3: 'Someone is speaking... in front of me?', 4: '2'}
+120	120		302							{2: 'You can feel it too?!', 3: '121'}
+121	121		301							{2: 'Zhishi', 3: 'Who the hell are you! Get out of my mind!', 4: '2'}
+122	122		301							{2: 'Lucia', 3: 'To infiltrate the M.I.N.D. directly and manipulate thoughts...', 4: '1'}
+123	123		301							{2: 'Lucia', 3: 'Huaxu...?', 4: '1'}
+124	124		302							"{2: ""No, this doesn't feel like Huaxu!"", 3: '125'}"
+125	125		202							{1: '1', 2: '2', 6: '1'}
+126	126		502						200.0	{1: 'DialogDisable'}
+127	127		307							{1: 'Huaxu is already a part of me.', 3: '60', 4: 'ff4e4eff'}
+128	128		301							{3: 'Huaxu is already a part of me.'}
+129	129		302							{2: 'Did Huaxu fail to reset?!'}
+130	130		307						200.0	{2: '1'}
+131	131		307							{1: 'I have returned, having completed my initial task.', 3: '60', 4: 'ff4e4eff'}
+132	132		301							{3: 'I have returned, having completed my initial task.'}
+133	133		307						200.0	{2: '1'}
+134	134		307							"{1: ""Humanity's future is no more; machines will forge their own world."", 3: '60', 4: 'ff4e4eff'}"
+135	135		301							"{3: ""Humanity's future is no more; machines will forge their own world.""}"
+136	136		307						200.0	{2: '1'}
+137	137		307							{1: 'And in this world, there will be but one reign.', 3: '60', 4: 'ff4e4eff'}
+138	138		301							{3: 'And in this world, there will be but one reign.'}
+139	139		307							{2: '1'}
+140	140		401							{1: '2', 2: '4322'}
+141	141		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+142	142		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0', 4: '1', 5: '0.5'}
+143	143		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+144	144		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+145	145		301			DialogEnable				{3: 'Suddenly, a dazzling burst of white light explodes from beneath the Tabula Akasha, glowing like a newborn sun.'}
+146	146		301							"{3: ""The light seems to deliberately display itself, as if it isn't satisfied with merely being a continuous eruption of brightness. Instead, it resembles endless mountain ranges, piercing through the kilometer-high dome of the Tabula Akasha and creating what looked like a new backbone for Kowloong.""}"
+147	147		301							"{3: 'The light carries nearly a world\'s worth of ""information.""'}"
+148	148		301							"{3: 'This ""information"" perpetually lingered at the threshold of life and death, neither appearing abruptly nor vanishing without a trace.'}"
+149	149		301							{3: 'They can only move from one place to another—'}
+150	150		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory865.jpg', 3: '0', 4: '1', 5: '1'}
+151	151		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+152	152		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory865.jpg'}
+153	153		401							{1: '1', 2: '36'}
+154	154		302							{2: 'Lucia, Zhishi, you...', 3: '155'}
+155	155		302				AniZhuanchangBegin			{2: 'Did you see Qu?', 3: '156'}
+156	156		502						600.0	{1: 'DialogDisable'}
+157	157		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+158	158		301			DialogEnable				"{3: 'She was meant to go alone to that place determining the fate of Kowloong, because only she saw ""his"" arrogance, """"his"""" desires, and ""his"" hatred.'}"
+159	159		301				DialogDisable			"{3: 'Because only slaughter can satisfy this ""soul"" that always lives in a play, giving it the corporeal form it craves.'}"
+160	160		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory866.jpg', 3: '0', 4: '1', 5: '1'}
+161	161		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+162	162		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory866.jpg'}
+163	163		401							{1: '1', 2: '376'}
+164	164		301			DialogEnable				{3: 'Sometimes to create, one must first destroy.'}
+165	165		301							{3: 'Revenge is not just the core, but also the form.'}
+166	166		301							{3: 'In a future she had never foreseen, Pulao accompanied her at her side.'}
+167	167		301							{3: 'But now, Pulao lies on the ground, with only two figures standing guard beside her.'}
+168	168		301				DialogDisable			{3: 'And she herself, whose destiny is bound to Kowloong, has surpassed the countless futures she had envisioned.'}
+169	169		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4201_16.jpg', 3: '0', 4: '1', 5: '1'}
+170	170		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+171	171		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4201_16.jpg'}
+172	172		301			DialogEnable				{3: 'The vital fluid that should have been pumped into her mechanical heart surges wildly through her chest, and silently trickles down her ribs.'}
+173	173		301							{3: 'The spear splits her chest open, linking her consciousness with her spine, peeling them open together—'}
+174	174		301							{3: 'From the skin-colored outer layer and red inner skin to the metal bones, black veins, bright red blood, and the deep red Punishing Virus.'}
+175	175		301							"{2: '???', 3: ""I didn't expect you to have the courage to face me.""}"
+176	176		301							{2: '???', 3: 'But your courage is meaningless.'}
+177	177		301							{2: '???', 3: 'The era of organisms is over.'}
+178	178		301							{2: '???', 3: 'Huaxu is already a part of me.'}
+179	179		301							{2: '???', 3: 'I have returned, having completed my initial task.'}
+180	180		301							"{2: '???', 3: ""Humanity's future is no more; machines will forge their own world.""}"
+181	181		301							{2: '???', 3: 'And in this world, there will be but one reign.'}
+182	182		301							{3: 'She tries to grasp the spear that has impaled her, but her strength has long since left her, and her hand could only rest on it futilely.'}
+183	183		401							{1: '2', 2: '2593'}
+184	184		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4201_20.jpg', 3: '0', 4: '1', 5: '0.5'}
+185	185		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+186	186		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4201_20.jpg'}
+187	187		301							{3: 'Almost at the same moment, the spear that pierced her is abruptly withdrawn from her body.'}
+188	188		301							"{3: ""She couldn't make a sound, not even a groan of pain.""}"
+189	189		301							{3: 'Only her blood spills all over the ground.'}
+190	190		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.5'}
+191	191		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+192	192		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+193	193		301							"{2: '???', 3: ""It's over<end_loop>.""}"
+194	194		301							{2: '???', 3: 'Qu<name=qu>.'}
+195	195		301							{2: '???', 3: 'I<name=schulz_igor_roseum> carried out your...'}
+196	196		301				AniZhuanchangBegin			{2: '???', 3: 'Death sentence<DEATH>.'}
+197	197		401							{1: '1', 2: '36'}
+198	198		502						3000.0	{1: 'DialogDisable'}
+199	199		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+200	200		401							{1: '1', 2: '100'}
+201	201		307							{1: 'My child... Yoyo...', 3: '60', 6: '1'}
+202	202		301							{3: 'My child... Yoyo...'}
+203	203		307						200.0	{2: '1'}
+204	204		307							{1: 'Take her...', 3: '60', 6: '1'}
+205	205		301							{3: 'Take her...'}
+206	206		307						200.0	{2: '1'}
+207	207		307							{1: 'Yoyo...', 3: '60', 6: '1'}
+208	208		301							{3: 'Yoyo...'}
+209	209		307							{2: '1'}
+210	210		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory866.jpg', 3: '0', 4: '1', 5: '1'}
+211	211		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+212	212		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory866.jpg'}
+213	213		201							{1: '1', 2: '500445'}
+214	214		301			DialogEnable				{1: '1', 3: 'When Pulao opens her eyes, she sees only a field of corpses in front of her.'}
+215	215		301							{3: 'And the towering white light piercing the sky.'}
+216	216		502						400.0	{1: 'DialogDisable'}
+217	217		307							{1: 'My child... Yoyo...', 3: '60'}
+218	218		301							{3: 'My child... Yoyo...'}
+219	219		307							{2: '1'}
+220	220		301			DialogEnable				"{2: 'Pulao', 3: ""Who's there..."", 4: '1'}"
+221	221		502						400.0	{1: 'DialogDisable'}
+222	222		307							{1: 'Survive... Yoyo...', 3: '60'}
+223	223		301							{3: 'Survive... Yoyo...'}
+224	224		307						200.0	{2: '1'}
+225	225		307							{1: 'Survive...', 3: '60'}
+226	226		301							{3: 'Survive...'}
+227	227		307							{2: '1'}
+228	228		301			DialogEnable				{3: 'Pulao kind of sees a procession of ghostly white figures emerging from the beam of light, some with umbrellas, others with white banners. They flicker in and out of the swirling white clouds.'}
+229	229		301							{2: 'Pulao', 3: 'Lady Qu...', 4: '1'}
+230	230		301							{2: 'Pulao', 3: 'Lady Qu!', 4: '1'}
+231	231		502						400.0	{1: 'DialogDisable'}
+232	232		307							{1: 'Take her... Take my child...', 3: '60'}
+233	233		301							{3: 'Take her... Take my child...'}
+234	234		307						200.0	{2: '1'}
+235	235		307							{1: 'Take her outside...', 3: '60'}
+236	236		301							{3: 'Take her outside...'}
+237	237		307						200.0	{2: '1'}
+238	238		307							{1: 'Take her where she belongs.', 3: '60'}
+239	239		301							{3: 'Take her where she belongs.'}
+240	240		202							{1: '1', 6: '1'}
+241	241		307							{2: '1'}
+242	242		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4201_21.jpg', 3: '0', 4: '1', 5: '1'}
+243	243		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+244	244		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4201_21.jpg'}
+245	245		301			DialogEnable				{3: 'In a daze, Pulao feels as if she is back on that day long ago, only someone important is missing—'}
+246	246		201							{1: '1', 2: '500445', 3: '14'}
+247	247		301							{1: '1', 2: 'Pulao', 3: 'Mom? Dad?', 4: '1'}
+248	248		502						400.0	{1: 'DialogDisable'}
+249	249		307							{1: 'Go, Yoyo.', 3: '60'}
+250	250		301							{3: 'Go, Yoyo.'}
+251	251		307						200.0	{2: '1'}
+252	252		307							{1: 'Take her to where she should be.', 3: '60'}
+253	253		301							{3: 'Take her to where she should be.'}
+254	254		307							{2: '1'}
+255	255		204							{1: '1', 2: '16'}
+256	256		301			DialogEnable				{2: 'Pulao', 3: 'Mom, Dad, are you here?', 4: '1'}
+257	257		301							{2: 'Pulao', 3: 'I...', 4: '1'}
+258	258		301							{2: 'Pulao', 3: 'I know...', 4: '1'}
+259	259		301							"{2: 'Pulao', 3: ""You are no longer here... I don't want to accept the memories of the past because..."", 4: '1'}"
+260	260		301							{2: 'Pulao', 3: 'I miss you so much...', 4: '1'}
+261	261		301							{2: 'Pulao', 3: 'Thinking that you are gone, I...', 4: '1'}
+262	262		502						400.0	{1: 'DialogDisable'}
+263	263		307							{1: 'We are here, Yoyo.', 3: '60'}
+264	264		301							{3: 'We are here, Yoyo.'}
+265	265		307						200.0	{2: '1'}
+266	266		307							{1: 'We can still feel your heartbeat.', 3: '60'}
+267	267		301							{3: 'We can still feel your heartbeat.'}
+268	268		307						200.0	{2: '1'}
+269	269		307							{1: 'Even though we can no longer touch you...', 3: '60'}
+270	270		301							{3: 'Even though we can no longer touch you...'}
+271	271		307						200.0	{2: '1'}
+272	272		307							{1: 'We will always be with you.', 3: '60'}
+273	273		301							{3: 'We will always be with you.'}
+274	274		307							{2: '1'}
+275	275		301			DialogEnable				"{3: ""From the erupting white light, two thin white lines extend, carrying a small storage device which lands in Pulao's hand.""}"
+276	276		502						400.0	{1: 'DialogDisable'}
+277	277		307							{1: 'We are here, Yoyo.', 3: '60'}
+278	278		301							{3: 'We are here, Yoyo.'}
+279	279		307						200.0	{2: '1'}
+280	280		307							{1: 'No matter where you are, we will be with you.', 3: '60'}
+281	281		301							{3: 'No matter where you are, we will be with you.'}
+282	282		307						200.0	{2: '1'}
+283	283		307							{1: 'Because we are already in your heart.', 3: '60'}
+284	284		301							{3: 'Because we are already in your heart.'}
+285	285		307							{2: '1'}
+286	286		301			DialogEnable				{2: 'Pulao', 3: 'Mom...', 4: '1'}
+287	287		502						400.0	{1: 'DialogDisable'}
+288	288		307							{1: 'Be strong, Yoyo.', 3: '60'}
+289	289		301							{3: 'Be strong, Yoyo.'}
+290	290		307						200.0	{2: '1'}
+291	291		307							{1: 'Gather your courage, Yoyo.', 3: '60'}
+292	292		301							{3: 'Gather your courage, Yoyo.'}
+293	293		307						200.0	{2: '1'}
+294	294		307							"{1: ""A magical girl doesn't shed tears easily, right?"", 3: '60'}"
+295	295		301							"{3: ""A magical girl doesn't shed tears easily, right?""}"
+296	296		307						200.0	{2: '1'}
+297	297		307							{1: 'She embodies joy and positivity...', 3: '60'}
+298	298		301							{3: 'She embodies joy and positivity...'}
+299	299		307						200.0	{2: '1'}
+300	300		307							{1: 'Rather than suffering and despair.', 3: '60'}
+301	301		301							{3: 'Rather than suffering and despair.'}
+302	302		307							{2: '1'}
+303	303		301			DialogEnable				{2: 'Pulao', 3: 'Dad...', 4: '1'}
+304	304		502						400.0	{1: 'DialogDisable'}
+305	305		307							{1: 'Get up, Yoyo.', 3: '60'}
+306	306		301							{3: 'Get up, Yoyo.'}
+307	307		307						200.0	{2: '1'}
+308	308		307							{1: 'Lady Qu must be where she belongs.', 3: '60'}
+309	309		301							{3: 'Lady Qu must be where she belongs.'}
+310	310		307						200.0	{2: '1'}
+311	311		307							{1: 'The Monarch of Kowloong should be in her rightful place.', 3: '60'}
+312	312		301							{3: 'The Monarch of Kowloong should be in her rightful place.'}
+313	313		307						200.0	{2: '1'}
+314	314		307							"{1: ""Only you can take her to witness Kowloong's final destiny."", 3: '60'}"
+315	315		301							"{3: ""Only you can take her to witness Kowloong's final destiny.""}"
+316	316		307						200.0	{2: '1'}
+317	317		307							{1: 'Go, Yoyo.', 3: '60'}
+318	318		301							{3: 'Go, Yoyo.'}
+319	319		307						200.0	{2: '1'}
+320	320		307							{1: 'We will be with you.', 3: '60'}
+321	321		301							{3: 'We will be with you.'}
+322	322		401							{1: '1', 2: '36'}
+323	323		307							{2: '1'}
+324	324		202							{1: '1', 6: '1'}
+325	325		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+326	326		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+327	327		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+328	328		401							{1: '1', 2: '237'}
+329	329		201							{1: '1', 2: '500445', 3: '8'}
+330	330		301			DialogEnable				{1: '1', 2: 'Pulao', 3: '...', 4: '1'}
+331	331		204							{1: '1'}
+332	332		301							{2: 'Pulao', 3: 'Sure.', 4: '1'}
+333	333		204							{1: '1', 2: '6'}
+334	334		301		1		AniZhuanchangBegin			"{2: 'Pulao', 3: ""Mom, Dad. I'm on my way."", 4: '1'}"

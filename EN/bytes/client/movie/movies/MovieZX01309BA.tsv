@@ -1,0 +1,270 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory187.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500175', 3: '1'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+5	5		301			DialogEnable				{1: '1', 2: 'Camu', 3: 'Alright, pick a path you like.', 4: '1'}
+6	6		302							{2: '...', 3: '7'}
+7	7		204							{1: '1', 3: '1'}
+8	8		301							"{2: 'Camu', 3: ""...What is it? I'll find my own way to the surface."", 4: '1'}"
+9	9		302							{2: '...Alright.', 3: '10'}
+10	10		401							{1: '2', 2: '1503'}
+11	11		301							{3: 'You hear the rumbling of mechanical movement coming from all over the theme park.'}
+12	12		301							{3: 'The pressed buttons and pulled levers must have activated something in the park.'}
+13	1201		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+14	13		201							{1: '1', 2: '500166', 4: '400'}
+15	14		201							{1: '2', 2: '500026', 4: '-400'}
+16	15		301							"{1: '1', 2: 'Lucia', 3: ""Let's go then!"", 4: '1'}"
+17	16		302							{2: 'Yeah.', 3: '17'}
+18	17		301				AniZhuanchangBegin			"{1: '1', 2: 'Lee', 3: ""I'm still a little worried, but there's no getting off this ride now."", 4: '2'}"
+19	18		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory188.png'}
+20	19		401							{1: '1', 2: '210'}
+21	21		201							{1: '1', 2: '500166', 7: '1'}
+22	22		201							{1: '2', 2: '500026', 4: '600', 7: '1'}
+23	23		201							{1: '3', 2: '1031001', 4: '-600', 7: '1'}
+24	24		301			AniZhuanchangEnd				{3: 'The old valves and rotating mechanisms hum as you head deeper into the theme park. It seems like a number of doorways and barricades have now been opened.'}
+25	25		301							{3: 'Finally awakened from their age-long slumber, the ancient mechanisms cough up dust in sheets and clouds.'}
+26	26		301							{3: 'Fortunately, Liv clamps a gas mask over your face in time, though it did hurt the bridge of your nose a little.'}
+27	27		301							{1: '1', 2: 'Lee', 3: 'Now scanning... Air composition test complete. Liv, you can take the mask off of Commandant.', 4: '2'}
+28	28		301							{2: 'Lee', 3: 'Unlike the underground, the viral density here is still in the safe range.', 4: '2'}
+29	29		302							{2: 'That said...', 3: '30'}
+30	30		302				AniZhuanchangBegin			{2: '...this place is really big.', 3: '32'}
+31	32		401				DialogDisable			{1: '1', 2: '209'}
+32	33		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+33	34		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory196.png'}
+34	36		201							{1: '1', 2: '1031001', 3: '7'}
+35	37		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'No matter what I had imagined before, this has certainly exceeded my expectations...', 4: '1'}
+36	38		201							{1: '1', 2: '500166', 3: '5'}
+37	39		301							"{1: '1', 2: 'Lucia', 3: ""Indeed, I've never seen anything like this."", 4: '1'}"
+38	40		201							{1: '1', 2: '500026'}
+39	41		301							"{1: '1', 2: 'Lee', 3: ""But Babylonia isn't completely devoid of these entertainment facilities though, yeah?"", 4: '1'}"
+40	42		201							{1: '1', 2: '500127', 3: '10'}
+41	43		301							{1: '1', 2: 'Sophia', 3: 'The scale of this is on another level.', 4: '1'}
+42	44		302							"{2: ""You're not surprised, Sophia?"", 3: '45'}"
+43	45		204							{1: '1', 2: '5'}
+44	46		301							{2: 'Sophia', 3: 'I read the brochure Jamilah found on the ride here. I have all the maps and structures memorized.', 4: '1'}
+45	47		301							{2: 'Sophia', 3: 'Did you not read it, Commandant?', 4: '1'}
+46	48		201							{1: '1', 2: '1031001', 3: '1'}
+47	49		301							{1: '1', 2: 'Liv', 3: 'You must have, right, Commandant?', 4: '1'}
+48	50		201							{1: '1', 2: '500026'}
+49	51		301							{1: '1', 2: 'Lee', 3: 'Well, Babylonia was made to recreate life on Earth for people away from it...', 4: '1'}
+50	52		301							"{2: 'Lee', 3: '...But it was not possible to accommodate a ""theme park"""" of this size. There is just no space to waste on a large-scale facility just for """"entertainment.""', 4: '1'}"
+51	53		201							{1: '1', 2: '500127', 3: '10'}
+52	54		301							{1: '1', 2: 'Sophia', 3: 'So that was why everyone was surprised.', 4: '1'}
+53	55		302							{2: '...Yep.', 3: '56'}
+54	56		301							{1: '1', 2: 'Sophia', 3: '...Hm.', 4: '1'}
+55	57		201							{1: '1', 2: '1031001'}
+56	58		301							{1: '1', 2: 'Liv', 3: 'Scanning complete. The traces in the area are... quite complicated.', 4: '1'}
+57	59		301							"{1: '1', 2: 'Liv', 3: ""Including Roland's, there are at least six traces with different traits here."", 4: '1'}"
+58	60		201							{1: '1', 2: '500166', 3: '5'}
+59	61		301							{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+60	66		301							"{1: '1', 2: 'Lucia', 3: ""Let's decide on search areas then."", 4: '1'}"
+61	67		201							{1: '1', 2: '500127', 3: '5'}
+62	68		301							{1: '1', 2: 'Sophia', 3: 'I will visit the indoors amusement area once more with Ayla. It felt a bit off when we passed by earlier.', 4: '1'}
+63	69		201							{1: '1', 2: '500155'}
+64	70		301							{1: '1', 2: 'Chrome', 3: 'Then Strike Hawk and Karenina will head toward the Ferris wheel.', 4: '1'}
+65	71		301							{2: 'Chrome', 3: 'Our weapons work best in more spacious areas.', 4: '1'}
+66	72		201							{1: '1', 2: '500166', 3: '5'}
+67	73		301							{1: '1', 2: 'Lucia', 3: 'Then Gray Raven will scout the aquariums.', 4: '1'}
+68	74		301							{2: 'Lucia', 3: 'We shall converge later to share our findings.', 4: '1'}
+69	75		201							{1: '1', 2: '500155', 4: '-400'}
+70	76		201							{1: '2', 2: '500127', 4: '400'}
+71	77		301							{1: '1', 2: 'Chrome & Sophia', 3: 'Copy that.', 4: '1', 5: '2'}
+72	78		202							{1: '1', 2: '2'}
+73	79		201							{1: '1', 2: '500166', 3: '1'}
+74	80		301							"{1: '1', 2: 'Lucia', 3: ""Then, let's move out!"", 4: '1'}"
+75	81		302				AniZhuanchangBegin			"{2: ""Let's go."", 3: '82'}"
+76	82		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory189.png'}
+77	83		201							{1: '1', 2: '500175'}
+78	84		301			AniZhuanchangEnd				{1: '1', 2: 'Camu', 3: 'Well, looks like my work here is done.', 4: '1'}
+79	85		301							{2: 'Camu', 3: 'All right then...', 4: '1'}
+80	86		301							{3: 'Just as Camu turns to leave, he feels a chill run down his spine. Immediately, he unsheathes his Greatsword to block his back.'}
+81	87		401			PanelActor1Shake				{1: '2', 2: '10007501'}
+82	88		203							{1: '1', 2: '0.1', 3: '200'}
+83	89		203							{1: '1', 2: '0.3', 3: '200'}
+84	90		203							{1: '1', 2: '0.1', 3: '0'}
+85	91		401							{1: '1', 2: '202'}
+86	92		301							{3: 'A rain of bullets bounce off his sword, creating a symphony of clangs. The bullets ricochet off the sword and hit nearby terminals, causing sparks to fly.'}
+87	93		202							{1: '1'}
+88	94		301							"{2: '???', 3: ""Hehe... Hehehe... I didn't think you would be able to block my Hetero-shots. You've got some fast reflexes.""}"
+89	95		201							{1: '1', 2: '500175'}
+90	96		301							{2: 'Camu', 3: '...Tch, that gloomy fish lady back in Kowloong?', 4: '1'}
+91	97		203							{1: '1', 2: '0.5', 3: '400'}
+92	98		201							{1: '2', 2: '500165', 4: '-400'}
+93	99		301							"{1: '1', 2: 'Lamia', 3: ""What's-sa-matter? Not our first meeting, right...?"", 4: '2'}"
+94	100		204							{1: '2', 2: '1'}
+95	101		301							{2: 'Lamia', 3: 'But then again, even your speech pattern is different... Looks like there was some truth in what Roland said after all.', 4: '2'}
+96	102		204							{1: '1', 2: '5'}
+97	103		301							{2: 'Camu', 3: '...What did that prick say?', 4: '1'}
+98	104		301							{2: 'Lamia', 3: 'Why do you care what he said?', 4: '2'}
+99	105		301							"{2: 'Lamia', 3: ""You should be caring about what I'm saying."", 4: '2'}"
+100	106		204							{1: '1', 2: '1'}
+101	107		301							"{2: 'Camu', 3: ""Hah, whatever. I don't care about either of you."", 4: '1'}"
+102	108		301							"{2: 'Lamia', 3: ""Even when it's about Kamui?"", 4: '2'}"
+103	109		204							{1: '1'}
+104	110		301							"{2: 'Lamia', 3: 'Ever wondered why ""Kamui"" got sealed away all of a sudden?', 4: '2'}"
+105	111		301							"{2: 'Lamia', 3: 'That\'s not something ""we"""" did. We only gave you your """"ticket"" to connect to Ascnet.', 4: '2'}"
+106	112		301							{2: 'Camu', 3: '...', 4: '1'}
+107	113		204							{1: '2', 2: '8'}
+108	114		301							{2: 'Lamia', 3: 'And... even if you try to separate Kamui now to buy some time for him...', 4: '2'}
+109	115		301							"{2: 'Lamia', 3: 'Your ""main personality"" Kamui is going to be gone in 140 hours anyway.', 4: '2'}"
+110	116		301							"{2: 'Lamia', 3: ""I can smell it... Your frame is unstable. If we put some pressure on it, it'll..."", 4: '2'}"
+111	117		204							{1: '2'}
+112	118		301							{2: 'Lamia', 3: '—Hey! Stop that!', 4: '2'}
+113	119		401							{1: '2', 2: '10006001'}
+114	120		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '2'}
+115	121		202							{1: '1', 2: '2'}
+116	122		201							{1: '1', 2: '500165', 7: '1'}
+117	123		301							{1: '1', 3: 'Camu is already swinging his Greatsword at Lamia before she could finish her sentence.'}
+118	124		301							{3: 'But it is blocked by a wall formed by Heteromers.'}
+119	125		201							{1: '1', 2: '500175', 3: '5'}
+120	126		301							"{1: '1', 2: 'Camu', 3: ""It's true that this frame is unstable and I do need a new frame."", 4: '1'}"
+121	127		204							{1: '1', 2: '1'}
+122	128		301							"{1: '1', 2: 'Camu', 3: ""I guess yours will do since we're both Ascendants."", 4: '1'}"
+123	129		201							{1: '1', 2: '500165', 3: '1'}
+124	130		301							"{2: 'Lamia', 3: ""...In case you haven't noticed, mine is a female frame, you sure you're okay with that...?"", 4: '1'}"
+125	131		201							{1: '1', 2: '500175'}
+126	132		301							"{1: '1', 2: 'Camu', 3: ""If it can make you shut up, then I'll take it."", 4: '1'}"
+127	133		203							{1: '1', 2: '0.5', 3: '400'}
+128	134		201							{1: '2', 2: '500165', 3: '1', 4: '-400'}
+129	135		301							{1: '1', 2: 'Lamia', 3: '...Hehe, just as Miss Luna said, you really are an interesting fellow...', 4: '2'}
+130	136		301							"{2: 'Lamia', 3: ""...What do you say, would you like to join us? If you do, we'll provide you with a new frame immediately, one that's absolutely stable, of course."", 4: '2'}"
+131	137		301							{2: 'Lamia', 3: '—Not that I think you have any other choice on that matter.', 4: '2'}
+132	138		301							{1: '1', 2: 'Camu', 3: 'Ha, in your dreams.', 4: '1'}
+133	139		301							"{2: 'Camu', 3: 'It\'s not like all Ascendants are your mates, like that ""Qu"" girl who runs Kowloong.', 4: '1'}"
+134	140		301							"{2: 'Camu', 3: ""I'd rather be in control of my own life."", 4: '1'}"
+135	141		301							{2: 'Lamia', 3: 'Hehe... Interesting, but naive. Oh, so naive.', 4: '2'}
+136	142		202							{1: '1', 2: '2'}
+137	143		401							{1: '2', 2: '10006001'}
+138	144		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '2'}
+139	145		301							{3: 'Camu lifts his Greatsword and deals a heavy blow to crack the Heteromer wall.'}
+140	146		301							{3: 'To maintain the offensive flow, Camu immediately throws his left fist and legs at Lamia to keep up the pressure.'}
+141	147		201							{1: '1', 2: '500175', 3: '1'}
+142	148		301							{1: '1', 2: 'Camu', 3: 'To let someone else dictate how my life goes? Not in a million years!', 4: '1'}
+143	149		201							{1: '1', 2: '500165', 3: '1', 7: '1'}
+144	150		301							{1: '1', 3: 'After flipping through the air, Camu raises his sword once again to swing at Lamia.'}
+145	151		301							{3: '—But the blade only hits air.'}
+146	152		202							{1: '1'}
+147	153		301							"{2: 'Lamia', 3: ""...A pity. I was starting to find you interesting, but turns out you're just as boring as the others.""}"
+148	154		301							{2: 'Lamia', 3: 'Good bye. See you—never, maybe.'}
+149	155		201							{1: '1', 2: '500175', 3: '5'}
+150	156		301				AniZhuanchangBegin			{1: '1', 2: 'Camu', 3: '...', 4: '1'}
+151	157		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory196.png'}
+152	158		401							{1: '1', 2: '205'}
+153	159		201							{1: '1', 2: '500127', 3: '10'}
+154	160		301			AniZhuanchangEnd				"{1: '1', 2: 'Sophia', 3: ""Sophia and Ayla reporting back. We've found someone."", 4: '1'}"
+155	161		302							{2: '?', 3: '162'}
+156	162		203							{1: '1', 2: '0.5', 3: '400'}
+157	163		201							{1: '2', 2: '500091', 3: '1', 4: '-400'}
+158	164		301							"{1: '1', 2: 'Nanami', 3: ""That's right! It's me! Na-na-mi!"", 4: '2'}"
+159	165		302							{2: 'What are you doing here?', 3: '166'}
+160	166		204							{1: '2'}
+161	167		301							"{2: 'Nanami', 3: ""That's what I want to ask you! What are you guys doing here at Nanami's secret base?!"", 4: '2'}"
+162	168		301							"{2: 'Nanami', 3: ""This was my secret base and no one else's... And now, boom! It's filled with people!"", 4: '2'}"
+163	169		302							{2: '...?', 3: '170'}
+164	170		204							{1: '2', 2: '1', 4: '2'}
+165	171		301							"{2: 'Nanami', 3: ""That's why Nanami ran off to hide! JUST WHEN I finally broke the game and got to farming infinite lives too!"", 4: '2'}"
+166	172		302							{2: 'Did you see someone weird?'}
+167	173		301							"{2: 'Nanami', 3: ""Let Nanami think... Well, I didn't see any people, but..."", 4: '2'}"
+168	174		204							{1: '1', 2: '5'}
+169	175		203							{1: '1', 2: '0.3', 3: '0'}
+170	176		301							{2: 'Sophia', 3: 'I suggest that you speak. Now.', 4: '1'}
+171	177		204			PanelActor2Shake				{1: '2'}
+172	178		203							{1: '2', 2: '0.1', 3: '-500'}
+173	179		301							{2: 'Nanami', 3: 'Ah! So cold! It tickles, hahaha! Sophia, stop shoving a gun to my waist!', 4: '2'}
+174	180		202							{1: '1', 2: '2'}
+175	181		201							{1: '1', 2: '500110', 3: '1'}
+176	182		301							"{1: '1', 2: 'Ayla', 3: ""Tell us what you know and we'll get Sophia to stop."", 4: '1'}"
+177	183		201							{1: '1', 2: '500091'}
+178	184		301							"{1: '1', 2: 'Nanami', 3: ""Ahaha! Achoo! All right! I'll talk! I'll talk!"", 4: '1'}"
+179	185		204							{1: '1', 2: '1'}
+180	186		301							"{2: 'Nanami', 3: 'When Nanami was farming points in ""Iron Formation BX Invincible Remastered Annual α++++ Feat. DK-Hyper"", there was this rumbling going grrrr from under the floor...', 4: '1'}"
+181	187		301							"{2: 'Nanami', 3: ""But I was almost at 9999990 points! So I didn't really pay attention to... Hey! Stop it!"", 4: '1'}"
+182	188		201							{1: '1', 2: '500110'}
+183	189		301							{1: '1', 2: 'Ayla', 3: 'How did you even remember such a long and tasteless game title...', 4: '1'}
+184	190		201							{1: '1', 2: '500091'}
+185	191		301							"{1: '1', 2: 'Nanami', 3: ""Oh! But after that, some weird noises shot over from the roller-coaster platform... but Nanami ain't no roaster-coaster-obsessor, so I ignored it."", 4: '1'}"
+186	192		302							{2: 'Not a roaster-coaster-obsessor, huh…', 3: '193', 4: 'Around when did that happen?', 5: '196'}
+187	193		204							{1: '1'}
+188	194		301							"{2: 'Nanami', 3: ""Hmph! So what if Nanami don't find no rollers cooler, but squeals for Ferris wheels?! Nothing wrong with that!"", 4: '1'}"
+189	195	208	301							"{2: 'Nanami', 3: ""If the Ferris wheel wasn't broken I would've been on it!"", 4: '1'}"
+190	196		301							"{2: 'Nanami', 3: 'What are you looking at me like that for?! ""Iron Formation BX"" on MAX heat takes about 12-something seconds to fill the combo gauge. That\'s how Nanami calculated the time!', 4: '1'}"
+191	197		201							{1: '1', 2: '500110', 3: '4', 4: '1'}
+192	198		301							{1: '1', 2: 'Ayla', 3: 'And when is that?', 4: '1'}
+193	199		201							{1: '1', 2: '500091'}
+194	200		301							"{1: '1', 2: 'Nanami', 3: ""Sigh! Who has time to keep the time?! If we really need to be specific, then it's from 9993366 points to 9997428 points, which is... 5 minutes 14 seconds?"", 4: '1'}"
+195	201		201							{1: '1', 2: '500110', 3: '4', 4: '400'}
+196	202		201							{1: '2', 2: '500127', 3: '10', 4: '-400'}
+197	203		301							"{1: '1', 2: 'Ayla & Sophia', 3: ""...And you said you didn't remember."", 4: '1', 5: '2'}"
+198	204		202							{1: '1', 2: '2'}
+199	205		201							{1: '1', 2: '500091'}
+200	206		301							"{1: '1', 2: 'Nanami', 3: 'What are you looking at me like that for?! ""Iron Formation BX"" on MAX heat takes about 12-something seconds to fill the combo gauge. That\'s how Nanami calculated the time!', 4: '1'}"
+201	207		302							"{2: ""I don't even know what to say to that..."", 3: '208', 4: ""You're really serious about this game..."", 5: '208'}"
+202	208		201							{1: '1', 2: '500166'}
+203	209		301							{1: '1', 2: 'Lucia', 3: '...Hm? Is it just me or did the number of people here increase?', 4: '1'}
+204	210		302							"{2: ""It's just you."", 3: '211', 4: ""No, you're right."", 5: '213'}"
+205	211		201							{1: '1', 2: '500091'}
+206	212	215	301							{1: '1', 2: 'Nanami', 3: '?', 4: '1'}
+207	213		204							{1: '1', 2: '1'}
+208	214		301							{2: 'Lucia', 3: '...?', 4: '1'}
+209	215		204							{1: '1'}
+210	21501		201							{1: '1', 2: '500166'}
+211	21502		401							{1: '1', 2: '201'}
+212	216		301							{1: '1', 2: 'Lucia', 3: 'We encountered another Task Force at the aquarium.', 4: '1'}
+213	217		302							{2: '?', 3: '218'}
+214	218		204							{1: '1', 2: '5'}
+215	219		301							{2: 'Lucia', 3: 'It was Vera and her team.', 4: '1'}
+216	220		302							"{2: ""I didn't expect them to be here."", 3: '221'}"
+217	221		301							"{2: 'Lucia', 3: ""Me neither, we still don't know what their objective is..."", 4: '1'}"
+218	222		302							"{2: ""I'll ask around."", 3: '223', 4: ""Maybe they're here on vacation too?"", 5: '231'}"
+219	223		201							{1: '1', 2: '500011'}
+220	224		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2'}
+221	225		301							"{1: '1', 2: 'Hassen', 3: ""Cerberus? Hm, I'm not sure as well. I'll go see if Nikola knows something."", 4: '1'}"
+222	226		301							"{2: 'Hassen', 3: 'I understand your situation. For now, pursue ""Shome"". It is highly likely that he knows what we want to know.', 4: '1'}"
+223	227		301							"{2: 'Hassen', 3: ""But we didn't have time to prepare for this mission, so you'll have to make do with the resources you have on hand."", 4: '1'}"
+224	228		302							{2: 'As per usual, I see.', 3: '229'}
+225	229		301							{2: 'Hassen', 3: 'Haha, anyway, just do what you can before reinforcements arrive.', 4: '1'}
+226	230		301							{2: 'Hassen', 3: 'Since we can confirm that there are several Ascendants in the area, it may be more dangerous than you think. Be careful.', 4: '1'}
+227	23001	238	505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab'}
+228	231		201							{1: '1', 2: '500166', 3: '5'}
+229	232		201							{1: '2', 2: '1031001', 3: '14', 4: '-600'}
+230	233		201							{1: '3', 2: '500026', 4: '600'}
+231	234		301							{1: '1', 2: 'Gray Raven', 3: '...', 4: '1', 5: '2', 6: '3'}
+232	235		301							{2: 'Lee', 3: 'Impossible.', 4: '3'}
+233	236		301							"{2: 'Liv', 3: ""I don't think vacationing is their thing...?"", 4: '2'}"
+234	237		301							{2: 'Lucia', 3: 'I also find it hard to believe.', 4: '1'}
+235	238		202							{1: '1', 2: '2', 3: '3'}
+236	239		301							"{3: 'Let me summarize. Gray Raven encountered Cerberus in the water cloister area; while Sophia and Ayla ""picked up"" Nanami in the indoors amusement area...'}"
+237	240		301							"{3: ""After sorting out the current situation, everyone realizes that what they've done has successfully... made the situation even more complicated.""}"
+238	241		201							{1: '1', 2: '500026'}
+239	242		301							{1: '1', 2: 'Lee', 3: '...If Cerberus is here, then that means Commander Nikola is plotting something here.', 4: '1'}
+240	243		201							{1: '1', 2: '1031001', 3: '7'}
+241	244		301							{1: '1', 2: 'Liv', 3: 'But the data shows that this area has always been a safe zone...', 4: '1'}
+242	245		201							{1: '1', 2: '500110'}
+243	246		301							{1: '1', 2: 'Ayla', 3: 'Better not to trust the public data.', 4: '1'}
+244	247		301							{2: 'Ayla', 3: 'Public data may have been edited in order to protect top-secret data of the Task Force.', 4: '1'}
+245	248		204							{1: '1', 2: '1'}
+246	249		301							"{2: 'Ayla', 3: ""That doesn't only apply to locational data, but also Construct data. They are sometimes edited to prevent tracking."", 4: '1'}"
+247	250		201							{1: '1', 2: '500026'}
+248	251		301							"{1: '1', 2: 'Lee', 3: ""No matter what's hidden here, we can't deny the fact that Cerberus is here."", 4: '1'}"
+249	252		301							{2: 'Lee', 3: 'Also, multiple unknown traces point toward the indoors amusement area.', 4: '1'}
+250	253		201							{1: '1', 2: '1031001'}
+251	254		301							{1: '1', 2: 'Liv', 3: 'The traces seem to lead to another exit underground, but the area beneath the ground is a Dead Zone...', 4: '1'}
+252	255		302							"{2: ""I guess we'll have to call Camu..."", 3: '256'}"
+253	256		301							{3: 'The team tries to contact Camu again, but to no avail.'}
+254	257		302							{2: '...', 3: '258'}
+255	258		301							{2: 'Liv', 3: 'His GPS signal is gone as well... It is possible he has entered an unknown blind zone.', 4: '1'}
+256	259		302							"{2: ""Let's go."", 3: '260'}"
+257	260		302							{2: 'Camu will find us.', 3: '261'}
+258	261		201							{1: '1', 2: '500166'}
+259	262		301							{1: '1', 2: 'Lucia', 3: 'Of course.', 4: '1'}
+260	263		201							{1: '1', 2: '1031001'}
+261	264		301							"{1: '1', 2: 'Liv', 3: ""Understood. I'll keep trying to establish a connection with him in the mean time."", 4: '1'}"
+262	265		401							{1: '1', 2: '10007502'}
+263	26501		401							{1: '1', 2: '202'}
+264	266		201							{1: '1', 2: '500166'}
+265	267		301							{1: '1', 2: 'Lucia', 3: 'What was that?!', 4: '1'}
+266	268		201							{1: '1', 2: '1031001'}
+267	269		301							"{1: '1', 2: 'Liv', 3: ""It's coming from where Cerberus was headed... No, there were explosions at six different spots underground at the same time!"", 4: '1'}"
+268	270		201							{1: '1', 2: '500026'}
+269	271		301		1		AniZhuanchangBegin			{1: '1', 2: 'Lee', 3: 'Vera...!', 4: '1'}

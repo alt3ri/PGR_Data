@@ -1,0 +1,53 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory639.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500168'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Vera', 3: ""Let's not waste any time. We'll start with the room on the left."", 4: '1'}"
+5	5		203							{1: '1', 2: '0.25', 3: '-400'}
+6	6		201							{1: '2', 2: '500555', 3: '4', 4: '400'}
+7	7		301							"{1: '1', 2: 'Vanessa', 3: ""...Let's go."", 4: '2'}"
+8	8		301							{3: 'Vanessa turns her gaze away from a corner of the room. Vera can glance from the corner of her eyes that Vanessa is still obsessed with the ballet shoes they found.'}
+9	9		301							{3: 'But if Vanessa does not want to talk about it, Vera does not bother to offer her a therapy session. Instead, she pretends she has not noticed anything.'}
+10	10		301				AniZhuanchangBegin			{2: 'Vanessa', 3: '...', 4: '2'}
+11	11		401							{1: '1', 2: '36'}
+12	12		202			DialogDisable			600.0	{1: '1', 2: '2', 6: '1'}
+13	13		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory642.jpg'}
+14	14		401							{1: '1', 2: '207'}
+15	15		201							{1: '1', 2: '500556', 4: '400'}
+16	16		201							{1: '2', 2: '500550', 3: '1', 4: '-400'}
+17	17		301			DialogEnable				"{1: '1', 2: 'Vanessa', 3: ""Since you were busy helping Father with his research today, I'll show you the moves you missed just this once... Don't you laugh at me if I look terrible. I'm warning you!"", 4: '1'}"
+18	18		301							"{2: 'Bambinata', 3: ""Bambinata won't! Thank you, Rosie."", 4: '2'}"
+19	19		301							{3: 'Bambinata nods with pen and paper in her hands like a dutiful student.'}
+20	20		301							"{2: 'Vanessa', 3: ""I'm only doing this so I don't cringe at how silly you'd otherwise be next time."", 4: '1'}"
+21	21		301							{3: 'Without letting Bambinata respond, Vanessa quickly taps the terminal and plays the practice music the teacher played earlier today.'}
+22	22		301							{3: 'She stands on her toes as the music plays, her hands moving the air just enough to stir the curtains by the window. The sunlight shines through the silk onto Vanessa, looking gentle and soft on the dancing girl.'}
+23	23		301							{3: 'Bambinata suddenly has the image of an egret trapped in a glass cage. Even when it cannot escape, it refuses to be any less elegant and proud.'}
+24	24		301							{3: 'Pirouette, passe, reverence. The beauty that extends beyond the boundaries of this room stops abruptly as Vanessa turns the music off.'}
+25	25		301							"{2: 'Vanessa', 3: ""That's about it. They didn't teach anything too complicated in the first session. Have you remembered the moves?"", 4: '1'}"
+26	26		301							"{3: ""Vanessa leans in to check Bambinata's notes, only to find them completely empty.""}"
+27	27		204							{1: '1', 2: '5'}
+28	28		301							"{2: 'Vanessa', 3: ""Bambinata! You didn't jot down anything!"", 4: '1'}"
+29	29		301							{2: 'Bambinata', 3: 'Bambinata has recorded the way you danced in her M.I.N.D.', 4: '2'}
+30	30		204							{1: '1', 2: '4'}
+31	31		301							"{2: 'Vanessa', 3: ""Sure you do. I gave you the notebook because we both know you'll forget things eventually."", 4: '1'}"
+32	32		301							"{2: 'Vanessa', 3: ""I'm going to change my clothes. Go review the moves."", 4: '1'}"
+33	33		202							{1: '1', 2: '2', 6: '1'}
+34	34		301							{3: 'When Vanessa comes back to the bedroom in her casual clothing, she finds Bambinata spacing out toward where she was dancing.'}
+35	35		301							"{3: ""Bambinata is staring at the sunlit spot, and Vanessa finds the solemn expression on Bambinata's child-like face inevitably funny.""}"
+36	36		301							"{3: ""Approaching Bambinata quietly, Vanessa sees herself drawn on the paper in Bambinata's hands. In the drawing, she is dancing alone in the bright, spacious room, her eyes closed as sunlight showers over the quiet scene.""}"
+37	37		301							{3: 'Feeling as if something is missing, Bambinata hesitantly sketches a shorter figure next to Vanessa.'}
+38	38		301							{3: 'Then her pen stops. The blank figure formed by a few rough circles and lines is filled with pointless dots.'}
+39	39		201							{1: '1', 2: '500557', 4: '400'}
+40	40		201							{1: '2', 2: '500550', 4: '-400'}
+41	41		204							{1: '1', 2: '5'}
+42	42		301							{2: 'Vanessa', 3: 'I told you to review the moves. Why on earth are you drawing?!', 4: '1'}
+43	43		301							{2: 'Vanessa', 3: 'Never mind that. What even is that mess?', 4: '1'}
+44	44		301							"{2: 'Bambinata', 3: ""That person... Bambinata hasn't figured it out yet."", 4: '2'}"
+45	45		301							"{2: 'Bambinata', 3: ""Bambinata hasn't figured out what the person standing next to you should look like."", 4: '2'}"
+46	46		204							{1: '1', 2: '4'}
+47	47		306							{1: '1'}
+48	48		301							{3: 'The person standing next to her? Sometimes Vanessa has no idea what Bambinata is thinking. But seeing how clueless Bambinata looks, how can Vanessa allow her to make a fool of herself?'}
+49	49		306							
+50	50		301							{2: 'Vanessa', 3: 'What do I do with you? Fine... Start practicing the basics with me. You can never go wrong with the fundamentals. Here, help me unroll this mat.', 4: '1'}
+51	51		301							{3: 'Bambinata puts down her pen and paper as told.'}
+52	52		301		1		AniZhuanchangBegin			{3: 'What Vanessa does not know is that Bambinata has already placed the blank figure deep inside her heart.'}

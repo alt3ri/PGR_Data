@@ -1,0 +1,18 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1120.jpg'}
+2	2		401							{1: '1', 2: '50'}
+3	3		401							{1: '2', 2: '4873'}
+4	4		301			DialogEnable				{3: 'The gate slowly closes.'}
+5	5		401							{1: '2', 2: '5148'}
+6	6		301							"{3: ""A book with a four-winged white raven engraved on its cover slowly materializes in Chaos' hand.""}"
+7	7		401							{1: '2', 2: '4627'}
+8	8		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStrongholdMain/FxUiStrongholdMainFlashing01.prefab', 2: '2'}
+9	9		301							{3: 'Light gray curves twist and intertwine, forming lines of complex text. Bowing her head, she stares at the heavy tome.'}
+10	10		302							{2: 'Let me see...', 3: '11', 8: '2', 11: '1'}
+11	11		401							{1: '2', 2: '5149'}
+12	12		301							{3: 'The lonely human opens the weighty tome.'}
+13	13		306							{1: '1'}
+14	14		301							"{3: 'Let me see your ""past"".'}"
+15	15		301							{3: 'Let me see the hardships you have endured...'}
+16	16		301							"{3: 'Let me see if there exists a new ""answer""...'}"
+17	17		301		1		AniZhuanchangBegin			{3: 'And why your civilization has been reduced to you alone.'}

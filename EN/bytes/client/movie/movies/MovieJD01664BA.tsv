@@ -1,0 +1,27 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory279.png'}
+2	2		401							{1: '1', 2: '203'}
+3	3		201							{1: '1', 2: '1031001', 3: '7', 4: '-400'}
+4	4		201							{1: '2', 2: '500026', 4: '400'}
+5	5		301			DialogEnable				"{1: '1', 2: 'Liv', 3: ""So that's the Polyphage... It's way too big!"", 4: '1'}"
+6	6		301							{2: 'Lee', 3: 'I say we move forward stealthily if possible...', 4: '2'}
+7	7		202							{1: '1', 2: '2', 6: '1'}
+8	8		301							{3: 'The Polyphage seems to have been expecting your arrival. It sends a powerful shock wave your way with an incredible roar.'}
+9	9		201							{1: '1', 2: '500166', 3: '5'}
+10	10		301							"{1: '1', 2: 'Lucia', 3: ""All hands, brace yourself for the shock! Don't fall into the Red Tide! Protect Commandant!"", 4: '1'}"
+11	11		201							{1: '1', 2: '1031001', 4: '-400'}
+12	12		201							{1: '2', 2: '500026', 4: '400'}
+13	13		301				AniZhuanchangBegin			{1: '1', 2: 'Lee & Liv', 3: 'Understood!', 4: '1', 5: '2'}
+14	14		305							{1: '15', 2: '26'}
+15	15		202							{1: '1', 2: '2', 6: '1'}
+16	16		201							{1: '1', 2: '500166'}
+17	17		301			AniZhuanchangEnd				{1: '1', 2: 'Lucia', 3: 'Is everyone okay?', 4: '1'}
+18	18		201							{1: '1', 2: '500026'}
+19	19		301							"{1: '1', 2: 'Lee', 3: ""I'm fine."", 4: '1'}"
+20	20		201							{1: '1', 2: '500166'}
+21	21		301							{1: '1', 2: 'Lucia', 3: 'Commandant?', 4: '1'}
+22	22		201							{1: '1', 2: '1031001'}
+23	23		301							{1: '1', 2: 'Liv', 3: 'Commandant and I are okay. That was one powerful roar, though...', 4: '1'}
+24	24		201							{1: '1', 2: '500166', 3: '5'}
+25	25		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Lucia', 3: ""We can't even get close to it now. We need to disable it temporarily somehow."", 4: '1'}"
+26	26		202		1					{1: '1', 2: '2', 6: '1'}

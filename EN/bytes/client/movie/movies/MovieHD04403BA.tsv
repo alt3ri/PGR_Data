@@ -1,0 +1,684 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1008.jpg'}
+2	2		104							{1: '30|140|-400', 2: '0'}
+3	3		401			AniZhuanchangEnd				{1: '1', 2: '6145'}
+4	4		301			DialogEnable				{3: 'Night drapes Catania in a gray veil, with everything in sight seemingly viewed through the hazy filter of an old film.'}
+5	5		301							{3: 'Lights come on in every home, with warm specks of color flowing from the mountain peaks that embrace the lush foothills down to the shore.'}
+6	6		301				DialogDisable			{3: 'On the beach, some people are on benches relishing the night, while there are some laughing and singing around barbecue grills with friends and family.'}
+7	7		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory912.jpg', 3: '0', 4: '1', 5: '1.5'}
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory912.jpg'}
+9	9		205							{1: '999'}
+10	10		301			DialogEnable				{3: 'You and Lucia find yourselves a quiet corner and sit shoulder to shoulder.'}
+11	11		211							{1: '1', 2: '1021039', 7: '1'}
+12	12		301							{1: '1', 2: 'Lucia', 3: 'Catania really comes alive at night, huh?', 4: '101', 18: '100007989', 19: '1', 21: 'v320luxiya'}
+13	13		302							{2: 'Sure does.', 3: '14'}
+14	14		214							{1: '1', 2: '4'}
+15	15		301							{2: 'Lucia', 3: 'Last time I saw a beach so full of life was... back at Venus Splash Park, I think?', 4: '101', 18: '100007990', 19: '1', 21: 'v320luxiya'}
+16	16		214							{1: '1', 2: '2'}
+17	17		301							{2: 'Lucia', 3: 'Remember that, Commandant? Just us and the squad. No missions, no surprises. Just peace for once.', 4: '101', 18: '100007991', 19: '1', 21: 'v320luxiya'}
+18	18		212							{1: '1', 6: '1'}
+19	19		301							{3: 'Venus Splash Park... Peace...'}
+20	20		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+21	21		504							{1: '0.7'}
+22	22		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory207.png'}
+23	23		201							{1: '18', 2: '500166', 4: '-85', 5: '-150', 6: '100', 7: '1'}
+24	24		301							{1: '1', 2: 'Lucia', 3: 'Play... What do you mean by that?', 4: '18', 18: '100007992'}
+25	25		202							{1: '18', 6: '1'}
+26	26		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+27	27		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory184.png'}
+28	28		201							{1: '1', 2: '500166', 7: '1'}
+29	29		301							"{1: '1', 2: 'Lucia', 3: 'I didn\'t come on vacation to avoid you. I received a mission telling us to ""wind down.""', 4: '1', 18: '100007993'}"
+30	30		202							{1: '1', 6: '1'}
+31	31		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+32	32		504							{1: '0'}
+33	33		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory912.jpg'}
+34	34		211							{1: '1', 2: '1021039', 7: '1'}
+35	35		301				DialogDisable			{1: '1', 3: 'Memories flood your mind as you look at Lucia.'}
+36	36		302							{2: 'I remember now...', 3: '37'}
+37	37		302							{2: 'You were always very tense back then.', 3: '38'}
+38	38		302							"{2: 'Remember how you took ""winding down"" as a mission?', 3: '39'}"
+39	39		214							{1: '1', 2: '4'}
+40	40		301			DialogEnable				{2: 'Lucia', 3: 'Back then, I was...', 4: '101', 18: '100007994', 19: '1', 21: 'v320luxiya'}
+41	41		214							{1: '1', 2: '8'}
+42	42		301							{3: 'Lucia closes her eyes and shakes her head, trying to cast aside those embarrassing memories.'}
+43	43		214							{1: '1', 2: '1'}
+44	44		301							"{2: 'Lucia', 3: ""Do you think I've changed, Commandant? Since then?"", 4: '101', 18: '100007995', 19: '1', 21: 'v320luxiya'}"
+45	45		301							{3: 'Lucia tilts her head and looks curiously at you.'}
+46	46		212							{1: '1', 6: '1'}
+47	47		301				AniZhuanchangBegin			{3: 'Under the pure moonlight, her question sends you down memory lane.'}
+48	48		502							{1: 'DialogDisable'}
+49	49		306						300.0	{1: '1'}
+50	50		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+51	51		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+52	52		109			AniZhuanchangEnd				{1: '1', 2: '<color=#ffffffff><size=55>Lucia...</size></color>', 4: '50'}
+53	53		301							{3: 'Lucia...'}
+54	54		110							
+55	55		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cgqz1501.jpg', 3: '0', 4: '1', 5: '2.5'}
+56	56		104							{1: '100|-125|-100', 2: '0', 4: '3'}
+57	57		104						3000.0	{1: '-5|-125|-100', 2: '2.5', 4: '3'}
+58	58		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz1501.jpg'}
+59	59		104							{1: '-5|-125|-100', 2: '0'}
+60	60		205							{1: '999'}
+61	61		104							{1: '0|0|0', 2: '0', 4: '3'}
+62	62		109							"{1: '11', 2: ""<color=#ffffffff><size=50>The two of you weren't exactly close when you first met...</size></color>"", 3: '440', 4: '-230', 9: '3'}"
+63	63		109							"{1: '1', 2: ""<color=#4d4d4dff><size=50>The two of you weren't exactly close when you first met...</size></color>"", 3: '445', 4: '-235'}"
+64	64		301							"{3: ""The two of you weren't exactly close when you first met...""}"
+65	65		110							
+66	66		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg001_5.jpg', 3: '0', 4: '1', 5: '2.5'}
+67	67		104							{1: '-80|-200|-100', 2: '0', 4: '3'}
+68	68		104						3000.0	{1: '80|-200|-100', 2: '2.5', 4: '3'}
+69	69		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg001_5.jpg'}
+70	70		104							{1: '80|-200|-100', 2: '0'}
+71	71		205							{1: '999'}
+72	72		104							{1: '0|0|0', 2: '0', 4: '3'}
+73	73		109							{1: '11', 2: '<color=#e53621ff><size=60>Cutting through thorns</size></color><color=#ffffffff><size=40>, growing into the powerful wings of Gray Raven</size></color>', 3: '-455', 4: '-230', 9: '3'}
+74	74		109							{1: '1', 2: '<color=#4d4d4dff><size=60>Cutting through thorns</size><size=40>, growing into the powerful wings of Gray Raven</size></color>', 3: '-450', 4: '-235'}
+75	75		301							{3: 'Cutting through thorns, growing into the powerful wings of Gray Raven.'}
+76	76		110							
+77	77		205						850.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1194.jpg', 3: '0', 4: '1', 5: '0.8'}
+78	78		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1194.jpg'}
+79	79		205							{1: '999'}
+80	80		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront40.png', 3: '0', 4: '1', 5: '2'}
+81	81		104							{1: '-200|-55|300', 2: '0', 4: '3'}
+82	82		104						2500.0	{1: '-465|-55|300', 2: '2', 4: '3'}
+83	83		109							{1: '11', 2: '<color=#ffffffff><size=40>Now, she is the <color=#FFE100ff><size=60>one</size></color> to bring humanity hope and victory.</size></color>', 3: '445', 4: '-30', 9: '3'}
+84	84		109							{1: '1', 2: '<color=#4d4d4dff><size=40>Now, she is the <size=60>one</size> to bring humanity hope and victory.</size></color>', 3: '448', 4: '-33'}
+85	85		301							{3: 'Now, she is the one to bring humanity hope and victory.'}
+86	86		110							
+87	87		205							{1: '999'}
+88	88		104							{1: '0|0|0', 2: '0', 4: '3'}
+89	89		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3801_03.jpg', 3: '0', 4: '1', 5: '2'}
+90	90		104							{1: '20|-150|-50', 2: '0', 4: '3'}
+91	91		104						2500.0	{1: '20|-230|-80', 2: '2', 4: '3'}
+92	92		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_03.jpg'}
+93	93		104							{1: '20|-230|-80', 2: '0'}
+94	94		205							{1: '999'}
+95	95		104							{1: '0|0|0', 2: '0', 4: '3'}
+96	96		109							"{1: '11', 2: ""<color=#ffffffff><size=40>She's also the one and only</size></color><color=#C8340Dff><size=60>captain under you</size></color>\\n\\n<color=#ffffffff><size=40>and a</size></color><color=#C8340Dff><size=60>comrade</size></color><color=#ffffffff><size=40> worthy of complete trust</size></color>"", 3: '-600', 4: '145', 9: '3'}"
+97	97		109							"{1: '1', 2: ""<color=#4d4d4dff><size=40>She's also the one and only</size><size=60>captain under you</size>\\n\\n<size=40>and a</size><size=60>comrade</size> <size=40>worthy of complete trust</size></color>"", 3: '-596', 4: '142', 9: '3'}"
+98	98		301							"{3: ""She's also the one and only captain under you and a comrade worthy of complete trust.""}"
+99	99		110							
+100	100		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5301_13.jpg', 3: '0', 4: '1', 5: '2'}
+101	101		104							{1: '0|-30|40', 2: '0', 4: '3'}
+102	102		104						2500.0	{1: '0|-70|80', 2: '2', 4: '3'}
+103	103		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_13.jpg'}
+104	104		104							{1: '0|-70|80', 2: '0'}
+105	105		205							{1: '999'}
+106	106		104							{1: '0|0|0', 2: '0', 4: '3'}
+107	107		109							{1: '10', 2: '<color=#ffffffff><size=40>No matter when you turn around, you can always count on her to be</size><size=60>there</size></color>', 3: '475', 4: '-365', 9: '3'}
+108	108		301							{3: 'No matter when you turn around, you can always count on her to be there.'}
+109	109		110							
+110	110		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cgqz1503.jpg', 3: '0', 4: '1', 5: '2.2'}
+111	111		104							{1: '-80|-200|-100', 2: '0', 4: '3'}
+112	112		104						2800.0	{1: '20|-200|-100', 2: '2.2', 4: '3'}
+113	113		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz1503.jpg'}
+114	114		104							{1: '20|-200|-100', 2: '0'}
+115	115		205							{1: '999'}
+116	116		104							{1: '0|0|0', 2: '0', 4: '3'}
+117	117		109							{1: '11', 2: '<color=#ffffffff><size=40>No matter what dangers lie ahead, she will </size></color><color=#FB3644ff><size=60>always fight by your side.</size></color>', 3: '-440', 4: '-235', 9: '3'}
+118	118		109							{1: '1', 2: '<color=#4d4d4dff><size=40>No matter what dangers lie ahead, she will </size><size=60>always fight by your side.</size></color>', 3: '-436', 4: '-238', 9: '3'}
+119	119		301							{3: 'No matter what dangers lie ahead, she will always fight by your side.'}
+120	120		110							
+121	121		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5301_03.jpg', 3: '0', 4: '1', 5: '3'}
+122	122		104							{1: '0|-68|0', 2: '0', 4: '3'}
+123	123		104						3500.0	{1: '0|-68|-80', 2: '3', 4: '3'}
+124	124		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_03.jpg'}
+125	125		104							{1: '0|-68|-80', 2: '0'}
+126	126		205							{1: '999'}
+127	127		104							{1: '0|0|0', 2: '0', 4: '3'}
+128	128		109							{1: '11', 2: '<color=#ffffffff><size=50><i>Your fates intertwine as one, no longer lost or adrift.</i></size></color>', 3: '0', 4: '0', 9: '3'}
+129	129		109							{1: '1', 2: '<color=#4d4d4dff><size=50><b><i>Your fates intertwine as one, no longer lost or adrift.</i></b></size></color>', 3: '3.7', 4: '-0.3'}
+130	130		301				AniZhuanchangBegin			{3: 'Your fates intertwine as one, no longer lost or adrift.'}
+131	131		110							
+132	132		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory912.jpg'}
+133	133		502							{1: 'DialogEnable'}
+134	134		306						300.0	
+135	135		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+136	136		301			AniZhuanchangEnd				"{3: ""You turn your memories into an answer and share it with her—the one who's always been by your side.""}"
+137	137		211							{1: '1', 2: '1021039', 3: '1', 7: '1'}
+138	138		301							{1: '1', 2: 'Lucia', 3: 'I... see...', 4: '101', 18: '100007996', 19: '1', 21: 'v320luxiya'}
+139	139		301							{3: 'A glimmer of delight sparkles in her eyes when she hears what you say.'}
+140	140		214							{1: '1', 2: '8'}
+141	141		301							{2: 'Lucia', 3: 'Maybe I am growing... into someone you can lean on.', 4: '101', 18: '100007997', 19: '1', 21: 'v320luxiya'}
+142	142		214							{1: '1', 2: '1'}
+143	143		301							{2: 'Lucia', 3: 'I believe... things will only get better for us.', 4: '101', 18: '100007998', 19: '1', 21: 'v320luxiya'}
+144	144		301							"{2: 'Lucia', 3: ""One day, we'll end all the disasters and sufferings in the world."", 4: '101', 18: '100007999', 19: '1', 21: 'v320luxiya'}"
+145	145		212							{1: '1', 6: '1'}
+146	146		301							{3: 'She gazes at the bustling coastline below as she envisions a peaceful and beautiful future.'}
+147	147		211							{1: '1', 2: '1021039', 3: '5', 7: '1'}
+148	148		301							{1: '1', 2: 'Lucia', 3: 'Maybe to others, that sounds like wishful thinking.', 4: '101', 18: '100008000', 19: '1', 21: 'v320luxiya'}
+149	149		214							{1: '1', 2: '1'}
+150	150		301							"{2: 'Lucia', 3: ""But after everything we've been through... with you here, that day doesn't feel so far away."", 4: '101', 18: '100008001', 19: '1', 21: 'v320luxiya'}"
+151	151		301				DialogDisable			{3: 'In her eyes, the flourishing island connects with brilliant celestial pathways, twinkling with radiant light.'}
+152	152		302							"{2: ""I'm sure..."", 3: '153'}"
+153	153		302							"{2: ""I'm sure that we both will be there when that day comes."", 3: '154'}"
+154	154		212							{1: '1', 6: '1'}
+155	155		301			DialogEnable	AniZhuanchangBegin			"{3: ""You gently take Lucia's hand as the two of you hold gaze at the brilliant lights illuminating the night.""}"
+156	156		401						1000.0	{1: '1', 2: '36'}
+157	157		401						1000.0	{1: '1', 2: '100'}
+158	158		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1195.jpg'}
+159	159		301			AniZhuanchangEnd				{3: 'Before you know it, a crowd dressed in classical formal attire gradually gathers on the beach.'}
+160	160		301							{3: 'They stand with bowed heads, holding hands in a circle around a marble statue, seemingly in the middle of some ancient, traditional ceremony.'}
+161	161		201							{1: '1', 2: '501148', 5: '-80'}
+162	162		301							{1: '1', 2: 'Priest', 3: 'Believers, let us pray together.', 4: '1', 18: '100008002'}
+163	163		301							"{2: 'Priest', 3: ""We give thanks, for the grace and strength bestowed upon Catania, and for the unity we've found in His light."", 4: '1', 18: '100008003'}"
+164	164		202							{1: '1'}
+165	165		306							{1: '1'}
+166	166		301							{3: 'At the center of the crowd stands a statue resembling a nun, her eyes covered by a thin veil.'}
+167	167		301							{3: 'Compassion and love flow across her features, and despite the constant erosion of sea winds, the statue maintains its prayer posture, silently bestowing blessings.'}
+168	168		306							
+169	169		211							{1: '1', 2: '1021039', 3: '4', 7: '1'}
+170	170		301							"{1: '1', 2: 'Lucia', 3: ""That statue... it's Saint Lucia."", 4: '101', 18: '100008004', 19: '1', 21: 'v320luxiya'}"
+171	171		302							{2: '...Lucia?', 3: '172'}
+172	172		214							{1: '1', 2: '1'}
+173	173		301							{2: 'Lucia', 3: 'Mm. Same name as me. Pure coincidence, I guess.', 4: '101', 18: '100008005', 19: '1', 21: 'v320luxiya'}
+174	174		301							{2: 'Lucia', 3: 'Saint Lucia was one of the four great martyrs. She gave her life right here, in Catania.', 4: '101', 18: '100008006', 19: '1', 21: 'v320luxiya'}
+175	175		302							{2: 'Do you know her well?', 3: '176'}
+176	176		212							{1: '1', 6: '1'}
+177	177		301							{3: 'She gives a slight nod in affirmation.'}
+178	178		211							{1: '1', 2: '1021039', 7: '1'}
+179	179		301							"{1: '1', 2: 'Lucia', 3: ""I've known her story for a long time, maybe because we share a name."", 4: '101', 18: '100008007', 19: '1', 21: 'v320luxiya'}"
+180	180		301							"{2: 'Lucia', 3: ""It's a story about love... and sacrifice. If you're interested, Commandant, I'll tell you."", 4: '101', 18: '100008008', 19: '1', 21: 'v320luxiya'}"
+181	181		302							"{2: ""Yes, I'd like to hear her story."", 3: '182', 4: ""I've got nothing better to do anyway."", 5: '182'}"
+182	182		214							{1: '1', 2: '8'}
+183	183		301							"{2: 'Lucia', 3: ""Alright, let's see..."", 4: '101', 18: '100008009', 19: '1', 21: 'v320luxiya'}"
+184	184		301				AniZhuanchangBegin			{3: 'She closes her eyes, concentrating as she recalls the legend of Saint Lucia.'}
+185	185		212							{1: '1', 6: '1'}
+186	186		502						350.0	{1: 'DialogDisable'}
+187	187		401							{1: '2', 2: '2596'}
+188	188		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png', 4: '5'}
+189	189		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory530.jpg'}
+190	190		109							{1: '10', 2: '<color=#ffffffff><size=40>A long, long time ago, there was a kingdom called Napoli...</size></color>', 4: '-380', 9: '3'}
+191	191		301			AniZhuanchangEnd				{2: 'Lucia', 3: 'A long, long time ago, there was a kingdom called Napoli...', 18: '100008010'}
+192	192		110						700.0	
+193	193		109							{1: '10', 2: '<color=#ffffffff><size=40>And Lucia, she was its princess.</size></color>', 4: '-380', 9: '3'}
+194	194		301							{2: 'Lucia', 3: 'And Lucia, she was its princess.', 18: '100008011'}
+195	195		110							
+196	196		402							{1: '2596'}
+197	197		401							{1: '2', 2: '4304'}
+198	198		401							{1: '2', 2: '2927'}
+199	199		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+200	200		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_22.jpg'}
+201	201		104						1200.0	{1: '-10|230|-400', 2: '0'}
+202	202		109							{1: '10', 2: '<color=#ffffffff><size=40>One day, a terrible plague swept through Napoli. Bodies filled the streets. Homes were abandoned. Entire towns were wiped out.</size></color>', 4: '-380', 9: '3'}
+203	203		301							{2: 'Lucia', 3: 'One day, a terrible plague swept through Napoli. Bodies filled the streets. Homes were abandoned. Entire towns were wiped out.', 18: '100008012'}
+204	204		110						700.0	
+205	205		109							"{1: '10', 2: ""<color=#ffffffff><size=38>Lucia and her lover couldn't just watch the people suffer. Out of love, and faith,\\nthey chased a legend: a four-leaf clover that could grant miracles and end this nightmare once and for all.</size></color>"", 4: '-400', 9: '3'}"
+206	206		301							"{2: 'Lucia', 3: ""Lucia and her lover couldn't just watch the people suffer. Out of love and faith, they chased a legend: a four-leaf clover that could grant miracles and end this nightmare once and for all."", 18: '100008013'}"
+207	207		402							{1: '2927'}
+208	208		110							
+209	209		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3801_05.jpg', 3: '0', 4: '1', 5: '1.5'}
+210	210		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_05.jpg'}
+211	211		205							{1: '999'}
+212	212		109							{1: '10', 2: '<color=#ffffffff><size=40>And so, they left for Catania together.</size></color>', 4: '-380', 9: '3'}
+213	213		301				AniZhuanchangBegin			{2: 'Lucia', 3: 'And so, they left for Catania together.', 18: '100008014'}
+214	214		502						350.0	{1: 'DialogEnable'}
+215	215		110							
+216	216		101							{4: '5', 5: '1'}
+217	217		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1195.jpg'}
+218	218		211							{1: '1', 2: '1021039', 3: '8', 7: '1'}
+219	219		301			AniZhuanchangEnd				{1: '1', 3: 'The ancient legend rests upon her words, floating gently into the profound darkness of night as Lucia weaves her tale.'}
+220	220		302							{2: 'Why Catania?', 3: '221'}
+221	221		214							{1: '1', 2: '1'}
+222	222		301							"{2: 'Lucia', 3: ""They were headed for Heaven's Cape, said to be the closest place on Earth to the divine, where the gods once planted a miracle clover."", 4: '101', 18: '100008015', 19: '1', 21: 'v320luxiya'}"
+223	223		301							{3: 'Lucia hugs her knees to her chest, gazing out at the undulating expanse of ocean in the distance.'}
+224	224		214							{1: '1', 2: '5'}
+225	225		301							{2: 'Lucia', 3: 'But just as they neared the coast, a storm hit. One huge wave came crashing, and her lover was gone.', 4: '101', 18: '100008016', 19: '1', 21: 'v320luxiya'}
+226	226		301							{2: 'Lucia', 3: 'A demon rose from the sea. It had taken him. Dragged him to hell.', 4: '101', 18: '100008017', 19: '1', 21: 'v320luxiya'}
+227	227		301							{2: 'Lucia', 3: 'It gave Lucia a choice: if she wanted to save him, she had to give up her eyes.', 4: '101', 18: '100008018', 19: '1', 21: 'v320luxiya'}
+228	228		302							{2: '...Why would it do that?', 3: '229'}
+229	229		301							{2: 'Lucia', 3: 'The demon had made a wager with the gods: if they took her sight and the one she loved, would she have the strength to find the clover?', 4: '101', 18: '100008019', 19: '1', 21: 'v320luxiya'}
+230	230		301							"{2: 'Lucia', 3: ""If she found it, her lover would be returned to her. But she'd spend the rest of her life in darkness."", 4: '101', 18: '100008020', 19: '1', 21: 'v320luxiya'}"
+231	231		212							{1: '1', 6: '1'}
+232	232		301							{3: 'Reaching this point in the story, Lucia closes her eyes, seemingly deep in thought.'}
+233	233		211							{1: '1', 2: '1021039', 3: '4', 7: '1'}
+234	234		301							"{1: '1', 2: 'Lucia', 3: ""Lucia didn't hesitate... She gave up her sight."", 4: '101', 18: '100008021', 19: '1', 21: 'v320luxiya'}"
+235	235		302							{2: '...', 3: '236'}
+236	236		214							{1: '1', 2: '5'}
+237	237		301							"{2: 'Lucia', 3: ""Blind and alone, she stepped onto Catania's shore."", 4: '101', 18: '100008022', 19: '1', 21: 'v320luxiya'}"
+238	238		301							{2: 'Lucia', 3: 'Every step felt like walking off a cliff.', 4: '101', 18: '100008023', 19: '1', 21: 'v320luxiya'}
+239	239		301							{2: 'Lucia', 3: 'She climbed, crawled, bled—but kept going.', 4: '101', 18: '100008024', 19: '1', 21: 'v320luxiya'}
+240	240		301							"{2: 'Lucia', 3: 'It wasn\'t just a test of faith, it was a vow: ""for better, for worse, for richer, for poorer, in sickness and in health, until death do us part.""', 4: '101', 18: '100008025', 19: '1', 21: 'v320luxiya'}"
+241	241		302							{2: 'Did she eventually find the four-leaf clover?', 3: '242'}
+242	242		212							{1: '1', 6: '1'}
+243	243		301							{3: 'She nods.'}
+244	244		211							{1: '1', 2: '1021039', 3: '5', 7: '1'}
+245	245		301							"{1: '1', 2: 'Lucia', 3: ""When she opened her eyes again, she was dying in her lover's arms. And he was holding the clover she'd found."", 4: '101', 18: '100008026', 19: '1', 21: 'v320luxiya'}"
+246	246		214							{1: '1', 2: '4'}
+247	247		301							{2: 'Lucia', 3: 'But the clover could only grant one wish...', 4: '101', 18: '100008027', 19: '1', 21: 'v320luxiya'}
+248	248		214							{1: '1', 2: '5'}
+249	249		301							{2: 'Lucia', 3: 'So now, he had to choose—', 4: '101', 18: '100008028', 19: '1', 21: 'v320luxiya'}
+250	250		301							{2: 'Lucia', 3: 'Save Lucia, or save the kingdom.', 4: '101', 18: '100008029', 19: '1', 21: 'v320luxiya'}
+251	251		212							{1: '1', 6: '1'}
+252	252		301							"{3: ""The gentle moonlight softly illuminated the trace of sorrow on Lucia's face.""}"
+253	253		301							{3: 'After a moment of silence, she slowly opens her mouth.'}
+254	254		211							{1: '1', 2: '1021039', 3: '5', 7: '1'}
+255	255		301							{1: '1', 2: 'Lucia', 3: 'With her last breath, Lucia whispered her wish and helped her lover decide.', 4: '101', 18: '100008030', 19: '1', 21: 'v320luxiya'}
+256	256		302							"{2: '...', 3: '257', 4: ""And that'd be..."", 5: '257'}"
+257	257		214							{1: '1', 2: '4'}
+258	258		301							"{2: 'Lucia', 3: '...Sorry, Commandant. I don\'t want to ""give"" an ending to this story.', 4: '101', 18: '100008031', 19: '1', 21: 'v320luxiya'}"
+259	259		301							{3: 'Lucia leaves the ending of the story hanging.'}
+260	260		301							{2: 'Lucia', 3: 'Because doing that might pull me further away from who Lucia really was.', 4: '101', 18: '100008032', 19: '1', 21: 'v320luxiya'}
+261	261		212							{1: '1', 6: '1'}
+262	262		301							{3: 'Lucia tilts her face upward to gaze at the countless stars scattered across the Milky Way.'}
+263	263		211							{1: '1', 2: '1021039', 3: '5', 7: '1'}
+264	264		301							{1: '1', 2: 'Lucia', 3: 'For the longest time, people believed Lucia had chosen to give up everything so her lover could save the kingdom.', 4: '101', 18: '100008033', 19: '1', 21: 'v320luxiya'}
+265	265		214							{1: '1', 2: '1'}
+266	266		301							{2: 'Lucia', 3: 'But more recent studies show something surprising: Her final wish, written centuries ago, was simply to live. With him.', 4: '101', 18: '100008034', 19: '1', 21: 'v320luxiya'}
+267	267		212							{1: '1', 6: '1'}
+268	268		301							{3: 'Stars bloom across the deep blue canvas of night, a celestial tapestry that seems to have shone this way since the beginning of time.'}
+269	269		301							"{3: ""The countless lights in the city flicker in the darkness as the evening breeze gently lifts the strands of hair from Lucia's forehead.""}"
+270	270		211							{1: '1', 2: '1021039', 7: '1'}
+271	271		301							"{1: '1', 2: 'Lucia', 3: ""That's why, for centuries, playwrights have kept revisiting Lucia's story—deconstructing it, reimagining it, and giving it all kinds of different endings."", 4: '101', 18: '100008035', 19: '1', 21: 'v320luxiya'}"
+272	272		301							{2: 'Lucia', 3: 'But people like their saints noble and selfless. So most versions still paint her as the girl who gave it all up for everyone else.', 4: '101', 18: '100008036', 19: '1', 21: 'v320luxiya'}
+273	273		301							{2: 'Lucia', 3: 'Just like Iphigenia, who gave her life for Troy... History remembers the noble sacrifice, but forgets the girl who had to endure it.', 4: '101', 18: '100008037', 19: '1', 21: 'v320luxiya'}
+274	274		302							"{2: ""So that's why you didn't want to give a set-in-stone ending."", 3: '275'}"
+275	275		214							{1: '1', 2: '8'}
+276	276		301							"{2: 'Lucia', 3: ""I think what kept her going wasn't just faith. It was love. The desire to see her lover again."", 4: '101', 18: '100008038', 19: '1', 21: 'v320luxiya'}"
+277	277		214							{1: '1', 2: '4'}
+278	278		301							{2: 'Lucia', 3: 'Whichever path she took, it was always going to hurt.', 4: '101', 18: '100008039', 19: '1', 21: 'v320luxiya'}
+279	279		302							{2: 'I see.', 3: '280'}
+280	280		214							{1: '1', 2: '1'}
+281	281		301							{3: 'Lucia turns to look at you curiously.'}
+282	282		301							{2: 'Lucia', 3: 'If you were Lucia, Commandant, what would you have done?', 4: '101', 18: '100008040', 19: '1', 21: 'v320luxiya'}
+283	283		301							{3: 'Your gazes intertwine as she awaits your answer.'}
+284	284		301							"{3: ""Now, that's a difficult question...""}"
+285	285		302							{2: 'I would choose to sacrifice myself to save more people.', 3: '286', 4: 'I hope I could survive.', 5: '291'}
+286	286		214							{1: '1', 2: '5'}
+287	287		401							{1: '2', 2: '4044'}
+288	288		213						300.0	{1: '1', 2: '0.4', 4: '-20', 5: '-50'}
+289	289		301							{3: 'Lucia reaches out and presses her hand against yours with a little more force than you thought she would.'}
+290	290	293	301							{3: 'In her crimson eyes dances an unwavering determination that brooks no argument.'}
+291	291		301							"{2: 'Lucia', 3: ""I, too, would hope you'd put your safety first."", 4: '101', 18: '100008041', 19: '1', 21: 'v320luxiya'}"
+292	292		301							"{2: 'Lucia', 3: ""Because as long as you're here, there's always hope."", 4: '101', 18: '100008042', 19: '1', 21: 'v320luxiya'}"
+293	293		214							{1: '1', 2: '4'}
+294	294		301							"{2: 'Lucia', 3: ""So no matter what happens, don't throw your life away, Commandant."", 4: '101', 18: '100008043', 19: '1', 21: 'v320luxiya'}"
+295	295		214							{1: '1', 2: '5'}
+296	296		301							"{2: 'Lucia', 3: ""I promise, whatever disaster comes, I'll put an end to it. So you won't have to make that choice."", 4: '101', 18: '100008044', 19: '1', 21: 'v320luxiya'}"
+297	297		301							{3: 'Her words are as resolute and forthright as the unwavering gaze she fixes upon you.'}
+298	298		302							{2: 'I trust you.', 3: '299', 4: '...', 5: '301'}
+299	299		214							{1: '1', 2: '1'}
+300	300	302	301							{3: 'When she hears what you say, she gives you a nod as her lips curl into a smile.'}
+301	301		301							{3: 'Under the gentle breeze and bright moonlight, the two of you share a moment of peaceful silence.'}
+302	302		302							{2: 'If you were Lucia in the story... what would you do?', 3: '303'}
+303	303		214							{1: '1', 2: '4'}
+304	304		301							{3: 'With it, she gently lowers her gaze, deep in thought.'}
+305	305		301							{2: 'Lucia', 3: 'But if it were you I had to save... that might be a different story.', 4: '101', 18: '100008045', 19: '1', 21: 'v320luxiya'}
+306	306		214							{1: '1', 2: '1'}
+307	307		301				DialogDisable			{2: 'Lucia', 3: 'I want to see peace return to the world. And I want you there to see it with me.', 4: '101', 18: '100008046', 19: '1', 21: 'v320luxiya'}
+308	308		302							{2: '(Nod)', 3: '309', 4: 'Same.', 5: '309'}
+309	309		302							{2: 'I really appreciate your honesty.', 3: '310'}
+310	310		214							{1: '1', 2: '2'}
+311	311		301			DialogEnable				{2: 'Lucia', 3: 'Same here, Commandant.', 4: '101', 18: '100008047', 19: '1', 21: 'v320luxiya'}
+312	312		212							{1: '1', 6: '1'}
+313	313		301							{3: 'Standing shoulder to shoulder, you and Lucia gaze out at the moonlit beach.'}
+314	314		401							{1: '2', 2: '4388'}
+315	315		401							{1: '1', 2: '36'}
+316	316		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+317	317		401							{1: '1', 2: '159'}
+318	318		301							{3: 'The ritual around the statue has ended, and people have lit bonfires to start a lively feast.'}
+319	319		301							{3: 'Suddenly, piano notes ring clearly across the beach.'}
+320	320		301							{3: 'Following suit are violin, saxophone, pipe organ...'}
+321	321		301							{3: 'To the melodious, cheerful tune, the Catanian youngsters on the beach break into pairs. They laugh as they dance with enthusiasm.'}
+322	322		211						200.0	{1: '1', 2: '1021038', 4: '10', 5: '-20', 6: '50', 7: '1'}
+323	323		213						350.0	{1: '1', 2: '0.2', 3: '-30', 4: '-10', 5: '20'}
+324	324		213							{1: '1', 2: '0.4', 3: '20', 5: '-10'}
+325	325		301							{1: '1', 2: 'Drunk Woman', 3: 'Miss, w-would you... hic—care to dance?', 4: '101', 18: '100008048', 19: '1', 21: 'v320luxiya'}
+326	326		301							{3: 'A woman reeking of alcohol has walked up to you and Lucia.'}
+327	327		302							{2: '...?', 3: '328', 4: '(Stand up and shield Lucia)', 5: '328'}
+328	328		213							{1: '1', 2: '0.2', 4: '-15', 5: '-35'}
+329	329		301							"{2: 'Drunk Woman', 3: ""T-tonight's for lovers, yeah? Hic! But my date's passed out. So maybe I could—hic—borrow you instead?"", 4: '101', 18: '100008049', 19: '1', 21: 'v320luxiya'}"
+330	330		401							{1: '2', 2: '4006'}
+331	331		212							{1: '1', 6: '1'}
+332	332		301			RImgBg1Shake				"{3: ""Before she even finishes talking, the woman's face contorts in discomfort as she covers her mouth and slumps to the ground.""}"
+333	333		211							{1: '1', 2: '1021039', 3: '6', 7: '1'}
+334	334		301							{1: '1', 2: 'Lucia', 3: 'For lovers?', 4: '101', 18: '100008050', 19: '1', 21: 'v320luxiya'}
+335	335		212							{1: '1', 6: '1'}
+336	336		301							{3: 'Looking around, you see that people are brimming with enthusiasm, completely immersed in the music.'}
+337	337		301							"{3: ""A moment later, you feel Lucia's gaze on you.""}"
+338	338		211							{1: '1', 2: '1021039', 4: '-400', 5: '-50', 7: '1'}
+339	339		211							{1: '2', 2: '1021038', 4: '400', 5: '-50', 7: '1'}
+340	340		301							"{1: '1', 2: 'Lucia', 3: ""...Thanks for asking, but I'm already taken."", 4: '101', 18: '100008051', 19: '1', 21: 'v320luxiya'}"
+341	341		212							{1: '2', 6: '1'}
+342	342		401							{1: '2', 2: '4833'}
+343	343		213						350.0	{1: '1', 2: '0.4'}
+344	344		402							{1: '4833'}
+345	345		301							{3: 'Lucia stands up and holds her hand toward you.'}
+346	346		302				DialogDisable			{2: 'Thank you for your invitation, though.', 3: '347', 4: '(Take her hand)', 5: '347'}
+347	347		212							{1: '1', 6: '1'}
+348	348		306							{1: '1'}
+349	349		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory923.jpg', 3: '0', 4: '1', 5: '1'}
+350	350		104						1200.0	{1: '15|125|-300', 2: '0', 4: '3'}
+351	351		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory923.jpg'}
+352	352		104							{1: '15|125|-300', 2: '0'}
+353	353		205							{1: '999'}
+354	354		104							{1: '0|0|0', 2: '0', 4: '3'}
+355	355		301			DialogEnable	DialogDisable			{3: 'They say the tarantella, a traditional dance in Catania, was originally named after a type of poisonous spider.'}
+356	356		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory758.jpg', 3: '0', 4: '1', 5: '1'}
+357	357		104						1200.0	{1: '157|0|-400', 2: '0', 4: '3'}
+358	358		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory758.jpg'}
+359	359		104							{1: '157|0|-400', 2: '0'}
+360	360		205							{1: '999'}
+361	361		104							{1: '0|0|0', 2: '0', 4: '3'}
+362	362		301			DialogEnable				{3: 'Those bitten by the spider had to dance fervently to neutralize the poison, which is how the dance got its name.'}
+363	363		301				DialogDisable			"{3: ""There's no need to worry about attire or technique. Dancers need only immerse themselves in the joyful atmosphere and passionately connect with the earth that nurtured them as they dance freely to the rhythm.""}"
+364	364		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1195.jpg', 3: '0', 4: '1', 5: '1'}
+365	365		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1195.jpg'}
+366	366		205							{1: '999'}
+367	367		306							
+368	368		301			DialogEnable				{3: 'You and Lucia find yourselves facing each other between two rows of people. You do what the dancers next to you do and kick your feet to the rhythm of the music.'}
+369	369		211							{1: '1', 2: '1021039', 3: '6', 7: '1'}
+370	370		301							{1: '1', 2: 'Lucia', 3: 'S-sorry, Commandant!', 4: '101', 18: '100008052', 19: '1', 21: 'v320luxiya'}
+371	371		301							{3: 'Probably a little too nervous, Lucia catches herself raising the same foot as yours on numerous occasions, causing your feet to tangle.'}
+372	372		302							"{2: ""Let's take it real nice and slow."", 3: '373'}"
+373	373		212							{1: '1', 6: '1'}
+374	374		301							{3: 'Under the bright moon and scattered stars, the entire beach pulses with the rhythm of the music.'}
+375	375		211							{1: '1', 2: '1021039', 7: '1'}
+376	376		301							{1: '1', 3: 'As she gradually becomes familiar with the dance, Lucia smiles and looks up at you.'}
+377	377		214							{1: '1', 2: '2'}
+378	378		301							"{2: 'Lucia', 3: ""I think I'm starting to get the hang of this, Commandant—"", 4: '101', 18: '100008053', 19: '1', 21: 'v320luxiya'}"
+379	379		301							{3: 'Right then, the music picks up in speed. With it, the crowd moves forward in unison and quickly pairs up in a ballroom dance formation.'}
+380	380		401							{1: '2', 2: '1543'}
+381	381		104							{1: '0|0|-50', 2: '0.4'}
+382	382		213							{1: '1', 2: '0.4', 5: '-50'}
+383	383		301							"{3: ""Following the crowd, you take a bold step forward and gently place your right hand around Lucia's waist.""}"
+384	384		214							{1: '1', 2: '1'}
+385	385		301							{3: 'Seeing the change in rhythm, Lucia offers you a gentle smile as she steps closer and takes your hand.'}
+386	386		301				AniZhuanchangBegin			{3: 'Your eyes meet as the two of you imitate the dancers around and move together gracefully amid the crowd.'}
+387	387		212							{1: '1', 6: '1'}
+388	388		401						2000.0	{1: '1', 2: '36'}
+389	389		401							{1: '1', 2: '181'}
+390	390		301			AniZhuanchangEnd				{3: 'The evening breeze rustles gently as you and Lucia move at your own pace in the center of the crowd, dancing leisurely at your own pace...'}
+391	391		301							"{3: ""The music streams across the shore like a clear spring. Lucia's dress sways with her steps, reminiscent of waves breaking upon the sand and white feathers floating gently in the night sky.""}"
+392	392		211							{1: '1', 2: '1021039', 7: '1'}
+393	393		301							{1: '1', 2: 'Lucia', 3: '【kuroname】...', 4: '101', 18: '100008054', 19: '1', 21: 'v320luxiya'}
+394	394		301							{3: 'With her hand on your arm, Lucia spins gracefully. As these gentle moments pass, your eyes quietly meet and intertwine.'}
+395	395		301							{3: 'Under the soft glow of moonlight, you see that her eyes are fixed on you.'}
+396	396		214							{1: '1', 2: '3'}
+397	397		301							{2: 'Lucia', 3: 'Dancing with you like this... It makes me happy.', 4: '101', 18: '100008055', 19: '1', 21: 'v320luxiya'}
+398	398		301							"{3: ""Your steps grow light and graceful when you sense the warmth in Lucia's eyes.""}"
+399	399		214							{1: '1', 2: '2'}
+400	400		301				DialogDisable			"{2: 'Lucia', 3: ""Let's try other dances too, once we're back."", 4: '101', 18: '100008056', 19: '1', 21: 'v320luxiya'}"
+401	401		302							"{2: ""Yes, let's do that."", 3: '402'}"
+402	402		212							{1: '1', 6: '1'}
+403	403		401							{1: '2', 2: '2903'}
+404	404		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+405	405		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1076.jpg'}
+406	406		205						600.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1195.jpg', 3: '0', 4: '1', 5: '0.5'}
+407	407		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1195.jpg'}
+408	408		205							{1: '999'}
+409	409		301			DialogEnable				{3: 'Suddenly, a ball of fire shoots up from the shore, bursting into a brilliant array of colors in the sky.'}
+410	410		211							{1: '1', 2: '1021039', 3: '3', 7: '1'}
+411	411		301							{1: '1', 2: 'Lucia', 3: 'Commandant, look! Fireworks!', 4: '101', 18: '100008057', 19: '1', 21: 'v320luxiya'}
+412	412		212				DialogDisable			{1: '1', 6: '1'}
+413	413		401							{1: '2', 2: '2903'}
+414	414		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+415	415		104							{1: '0|-200|-400', 2: '0'}
+416	416		401							{1: '2', 2: '4381'}
+417	417		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTempleBattle/FxUiTempleBattleYanhuan01.prefab', 2: '1', 5: '1'}
+418	418		301			DialogEnable				{3: 'Shooting stars trailing flames follow closely behind. In an instant, the beach is shrouded by flickering lights and awash in the cheers of the crowd.'}
+419	419		511							{1: '1', 2: '1.5', 3: '0|600|500'}
+420	420		104						1500.0	{1: '0|0|0', 2: '2'}
+421	421		401							{1: '2', 2: '2903'}
+422	422		402							{1: '4381'}
+423	423		301						800.0	"{3: ""With it, the event's organizer steps onto the stage and shouts out at the crowd.""}"
+424	424		211							{1: '1', 2: '1021016', 7: '1'}
+425	425		301							{1: '1', 2: 'Event Organizer', 3: 'Believers! The bells have rung twelve! The sacred moment is here!', 4: '101', 18: '100008058', 19: '1', 21: 'v320luxiya'}
+426	426		301							{2: 'Event Organizer', 3: 'Your joy has pleased the Lord. Now He blesses you!', 4: '101', 18: '100008059', 19: '1', 21: 'v320luxiya'}
+427	427		301							{2: 'Event Organizer', 3: 'Press your foreheads together. Soul to soul—', 4: '101', 18: '100008060', 19: '1', 21: 'v320luxiya'}
+428	428		212							{1: '1', 6: '1'}
+429	429		301							{3: 'When he finishes speaking, the dancers around you and Lucia turn to face one another. They stand in solemn silence as they press their foreheads together.'}
+430	430		301							{3: 'Caught by surprise, Lucia turns to look at you.'}
+431	431		211							{1: '1', 2: '1021039', 3: '6', 7: '1'}
+432	432		301							{1: '1', 2: 'Lucia', 3: 'Should we do that too, Commandant?', 4: '101', 18: '100008061', 19: '1', 21: 'v320luxiya'}
+433	433		301							{3: 'Everyone in the crowd embraces their dance partners and lowers their heads. On this vast beach, it seems only you and Lucia remain standing in place, unsure of what to do.'}
+434	434		302							"{2: ""(Press your forehead against Lucia's)"", 3: '435', 4: '...', 5: '436'}"
+435	435	439	213						650.0	{1: '1', 2: '0.6', 4: '-50', 5: '-100'}
+436	436		213						650.0	{1: '1', 2: '0.6', 4: '-50', 5: '-100'}
+437	437		214							{1: '1', 2: '1'}
+438	438		301							"{3: ""Before you can fully grasp what's happening, you feel the warmth of Lucia's palm against your neck.""}"
+439	439		214							{1: '1', 2: '8'}
+440	440		301							{2: 'Lucia', 3: 'Commandant...', 4: '101', 18: '100008062', 19: '1', 21: 'v320luxiya'}
+441	441		214							{1: '1', 2: '3'}
+442	442		301							{3: 'Under the watchful glow of the dazzling fireworks, your gazes meet and your breaths become one.'}
+443	443		212							{1: '1', 6: '1'}
+444	444		211							{1: '1', 2: '1021016', 7: '1'}
+445	445		301							{1: '1', 2: 'Event Organizer', 3: 'Close your eyes, and recall the first time you met...', 4: '101', 18: '100008063', 19: '1', 21: 'v320luxiya'}
+446	446		501						3000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab', 2: '3'}
+447	447		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTempleBattle/FxUiTempleBattleYanhuan01.prefab', 5: '1'}
+448	448		212							{1: '1', 6: '1'}
+449	449		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+450	450		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+451	451		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+452	452		504							{1: '0.7'}
+453	453		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory53.jpg'}
+454	454		201							{1: '1', 2: '1021001', 7: '1'}
+455	455		301							"{1: '1', 2: 'Lucia', 3: ""It's just... just me."", 4: '1', 18: '100008064'}"
+456	456		302							"{2: 'What a coincidence, I\'m ""just me"" too.', 3: '457'}"
+457	457		202							{1: '1', 6: '1'}
+458	458		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+459	459		504							{1: '0'}
+460	460		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+461	461		301							{2: 'Event Organizer', 3: 'Think back to the joy you shared under the same sky...', 4: '101', 18: '100008065'}
+462	462		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+463	463		504							{1: '0.7'}
+464	464		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory670.jpg'}
+465	465		201							{1: '1', 2: '500166', 7: '1'}
+466	466		301							{1: '1', 2: 'Lucia', 3: 'I wish to have you as my commandant in every universe out there.', 4: '1', 18: '100008066'}
+467	467		301							"{2: 'Lucia', 3: ""As long as I remain myself, I'm sure I'd be able to find my way to you even without this wish."", 4: '1', 18: '100008067'}"
+468	468		302							{2: 'Pretty sure that will come true.', 3: '469'}
+469	469		202							{1: '1', 6: '1'}
+470	470		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+471	471		504							{1: '0'}
+472	472		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+473	473		301							{2: 'Event Organizer', 3: 'And the pain you faced together...', 4: '101', 18: '100008068'}
+474	474		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+475	475		504							{1: '0.7'}
+476	476		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1201_6.jpg'}
+477	477		301							{2: 'Lucia', 3: '...Well then, see you soon, Commandant.', 18: '100008069'}
+478	478		302							{2: 'See you soon, Lucia.', 3: '479'}
+479	479		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+480	480		504							{1: '0'}
+481	481		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+482	482		301							{2: 'Event Organizer', 3: 'Now, welcome the rebirth that lies ahead.', 4: '101', 18: '100008070'}
+483	483		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+484	484		504							{1: '0.7'}
+485	485		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1025.jpg'}
+486	486		201							{1: '1', 2: '500994', 3: '2', 7: '1'}
+487	487		301							{1: '1', 2: 'Lucia', 3: 'Commandant, can you promise me something?', 4: '1', 18: '100008071'}
+488	488		302							{2: 'Lucia?', 3: '489'}
+489	489		301							{2: 'Lucia', 3: 'Promise me... that we will never be apart.', 4: '1', 18: '100008072'}
+490	490		202							{1: '1', 6: '1'}
+491	491		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+492	492		504							{1: '0'}
+493	493		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+494	494		301				AniZhuanchangBegin			"{2: 'Event Organizer', 3: ""Ceremony's over—"", 4: '101', 18: '100008077'}"
+495	495		401						2500.0	{1: '1', 2: '36'}
+496	496		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1195.jpg'}
+497	497		401							{1: '1', 2: '5059'}
+498	498		211							{1: '1', 2: '1021039', 7: '1'}
+499	499		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+500	500		301			AniZhuanchangEnd				"{1: '1', 3: ""Opening your eyes, you're greeted by a tender, loving gaze.""}"
+501	501		301							{3: 'Lost in the delicate resonance, you can almost see the Milky Way streaming slowly within her eyes.'}
+502	502		212							{1: '1', 6: '1'}
+503	503		301				DialogDisable			{3: 'By now, the boundless horizon has gradually shed its vibrant colors.'}
+504	504		401						2500.0	{1: '2', 2: '2669'}
+505	505		301			DialogEnable				{3: 'When the last bit of the fireworks has faded, the bell strikes twelve.'}
+506	506		401							{1: '2', 2: '2915'}
+507	507		301							"{3: ""With the resonant tolling of the bell, the crowd on the beach grows raucous once more—dancing and singing, carrying yesterday's revelry into a brand-new day.""}"
+508	508		402							{1: '2915'}
+509	509		211							{1: '1', 2: '1021039', 7: '1'}
+510	510		301							"{1: '1', 2: 'Lucia', 3: ""Catania doesn't sleep at night, does it..."", 4: '101', 18: '100008073', 19: '1', 21: 'v320luxiya'}"
+511	511		301							{2: 'Lucia', 3: 'Feels like no one here ever gets tired. They just keep on celebrating.', 4: '101', 18: '100008074', 19: '1', 21: 'v320luxiya'}
+512	512		302							"{2: ""Perhaps it's because it's party night tonight?"", 3: '513', 4: 'Sure does.', 5: '513'}"
+513	513		214							{1: '1', 2: '3'}
+514	514		301							{2: 'Lucia', 3: 'Commandant, should we head over that way—', 4: '101', 18: '100008075', 19: '1', 21: 'v320luxiya'}
+515	515		301							{2: 'Frank', 3: 'Ahem.', 18: '100008078'}
+516	516		212							{1: '1', 6: '1'}
+517	517		301							{3: 'While the two of you are still engaged in conversation, the voice of a middle-aged man that you recognize comes from behind you.'}
+518	518		211							{1: '1', 2: '1021045', 7: '1'}
+519	519		301							{1: '1', 2: 'Frank', 3: 'Sorry to interrupt.', 4: '101', 18: '100008079', 19: '1', 21: 'v320luxiya'}
+520	520		213							{1: '1', 2: '0.25', 3: '450'}
+521	521		211							{1: '2', 2: '1021039', 3: '6', 4: '-450', 7: '1'}
+522	522		301							{1: '1', 2: 'Lucia', 3: 'Frank?', 4: '102', 18: '100008076', 19: '2', 21: 'v320luxiya'}
+523	523		301							"{2: 'Frank', 3: ""You've come a long way, and there's still the wine to fetch at dawn. Best get some rest tonight."", 4: '101', 18: '100008080', 19: '1', 21: 'v320luxiya'}"
+524	524		212							{1: '1', 2: '2', 6: '1'}
+525	525		301							{3: 'Lost in the joy of the night, both you and Lucia have momentarily forgotten about time.'}
+526	526		301							{3: 'Faced with the word of advice, both of you fall silent.'}
+527	527		211							{1: '1', 2: '1021039', 3: '5', 7: '1'}
+528	528		301							"{1: '1', 2: 'Lucia', 3: ""...Yeah, it's late. You need some rest."", 4: '101', 18: '100008081', 19: '1', 21: 'v320luxiya'}"
+529	529		214							{1: '1', 2: '4'}
+530	530		301							"{2: 'Lucia', 3: ""Sorry, I should've thought of that sooner."", 4: '101', 18: '100008082', 19: '1', 21: 'v320luxiya'}"
+531	531		302							"{2: ""All good. Let's go back."", 3: '532'}"
+532	532		301							{2: 'Lucia', 3: 'Hm...', 4: '101', 18: '100008083', 19: '1', 21: 'v320luxiya'}
+533	533		212							{1: '1', 6: '1'}
+534	534		301				AniZhuanchangBegin			"{3: ""Under the starry sky, you hold Lucia's hand tight as you start making your way back.""}"
+535	535		401						2000.0	{1: '1', 2: '36'}
+536	536		401							{1: '1', 2: '6145'}
+537	537		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1197.jpg'}
+538	538		301			AniZhuanchangEnd				{3: 'Arriving at the mansion, you find the family has prepared a luxurious bedroom for both of you.'}
+539	539		301							{3: 'Fragrant teak flooring, golden silk curtains swaying in the breeze, lifelike religious paintings... Everything in the room exudes a refined, classical elegance.'}
+540	540		211							{1: '1', 2: '1021039', 3: '6', 7: '1'}
+541	541		301							"{1: '1', 2: 'Lucia', 3: ""Wait... there's only one bed?"", 4: '101', 18: '100008084', 19: '1', 21: 'v320luxiya'}"
+542	542		301							{3: 'Lucia stares at the only double bed in the room, sounding uncertain.'}
+543	543		214							{1: '1', 2: '1'}
+544	544		301							"{2: 'Lucia', 3: ""I-I'll take the night watch. You rest, Commandant."", 4: '101', 18: '100008085', 19: '1', 21: 'v320luxiya'}"
+545	545		302							{2: 'You need some rest, too.', 3: '546', 4: '(Nod)', 5: '579'}
+546	546		214							{1: '1', 2: '4'}
+547	547		301							{2: 'Lucia', 3: 'But...', 4: '101', 18: '100008086', 19: '1', 21: 'v320luxiya'}
+548	548		301							{3: 'She looks at you, looking visibly uncomfortable.'}
+549	549		214							{1: '1', 2: '6'}
+550	550		301							"{2: 'Lucia', 3: ""I-I don't need sleep."", 4: '101', 18: '100008087', 19: '1', 21: 'v320luxiya'}"
+551	551		214							{1: '1', 2: '1'}
+552	552		301				DialogDisable			{2: 'Lucia', 3: 'Since getting this new frame, I can go longer without downtime. Sleep is no longer necessary for me.', 4: '101', 18: '100008088', 19: '1', 21: 'v320luxiya'}
+553	553		302							{2: 'But your experience of fatigue is undeniable.', 3: '554'}
+554	554		302							{2: 'Activating your sleep mode every now and then is good for your M.I.N.D., too.', 3: '555'}
+555	555		212							{1: '1', 6: '1'}
+556	556		401							{1: '2', 2: '5286'}
+557	557		301			DialogEnable				{3: 'As you speak, you sit down on the soft mattress.'}
+558	558		302							{2: 'Get some rest, Lucia.', 3: '559'}
+559	559		211							{1: '1', 2: '1021039', 3: '4', 7: '1'}
+560	560		301							{1: '1', 2: 'Lucia', 3: 'Rest...? I...', 4: '101', 18: '100008089', 19: '1', 21: 'v320luxiya'}
+561	561		214							{1: '1', 2: '8', 6: '1'}
+562	562		301							{3: 'She closes her eyes and slowly lets out a breath.'}
+563	563		214							{1: '1', 2: '1'}
+564	564		301							{2: 'Lucia', 3: '...Alright, Commandant. I get it.', 4: '101', 18: '100008090', 19: '1', 21: 'v320luxiya'}
+565	565		212							{1: '1', 6: '1'}
+566	566		301							{3: 'Finally, she gives a gentle nod and sits down on the edge of the bed.'}
+567	567		301				DialogDisable			{3: 'You slowly lie down, and she gently reclines on her side at the edge of the bed.'}
+568	568		501						3000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab', 2: '3'}
+569	569		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1'}
+570	570		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+571	571		301			DialogEnable				{3: 'You close your eyes, relax your body, and let your thoughts drift into the peaceful stillness of the night.'}
+572	572		401							{1: '2', 2: '1543'}
+573	573		301							{3: 'Just then, you hear the soft rustle of bedsheets as a familiar warmth gradually nestles closer to you.'}
+574	574		401							{1: '2', 2: '2936'}
+575	575		301							{3: 'Lucia shifts her body gently as she carefully slides up next to you.'}
+576	576		301							{3: 'In the gentle warmth, you feel loose strands of hair brushing gently against your forehead.'}
+577	577		301							{2: 'Lucia', 3: 'Good night...', 18: '100008091'}
+578	578		302				AniZhuanchangBegin			{2: 'Good night.', 3: '587'}
+579	579		214							{1: '1', 2: '3'}
+580	580		301							{3: 'Seeing you lie down, Lucia smiles gently.'}
+581	581		301							{2: 'Lucia', 3: 'Good night, Commandant.', 4: '101', 18: '100008092', 19: '1', 21: 'v320luxiya'}
+582	582		401							{1: '2', 2: '5286'}
+583	583		213							{1: '1', 2: '0.4', 5: '-50'}
+584	584		301							{3: 'She pulls the soft, comfortable blanket up to your chest and whispers softly.'}
+585	585		302				AniZhuanchangBegin			{2: 'Good night.', 3: '586'}
+586	586		212							{1: '1', 6: '1'}
+587	587		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1'}
+588	588		301			AniZhuanchangEnd	DialogDisable			"{3: ""Your consciousness drifts into Catania's tranquil stillness, where moonlit waves dance like soothing poetry, gentle and melodious.""}"
+589	589		401							{1: '2', 2: '2589'}
+590	590		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '3'}
+591	591		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+592	592		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+593	593		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1179.jpg'}
+594	594		401							{1: '2', 2: '2589'}
+595	595		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+596	596		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+597	597		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory758.jpg'}
+598	598		104						500.0	{1: '157|0|-400', 2: '0'}
+599	599		401							{1: '2', 2: '2589'}
+600	600		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+601	601		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+602	602		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1195.jpg'}
+603	603		401							{1: '2', 2: '2589'}
+604	604		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+605	605		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+606	606		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab'}
+607	607		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+608	608		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRpgMakerGame/FxUiFubenRpgMakerGameBubble01.prefab', 2: '2', 5: '1'}
+609	609		301			DialogEnable				{3: 'Mythology, song and dance, islands...'}
+610	610		511							{1: '1', 2: '2', 3: '0|0|-450'}
+611	611		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLianyi.prefab', 2: '2'}
+612	612		401						2000.0	{1: '2', 2: '9339045'}
+613	613		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRpgMakerGame/FxUiFubenRpgMakerGameBubble01.prefab', 5: '1'}
+614	614		301							{3: 'Countless memories gather and intertwine in your mind, then burst and fade away like bubbles.'}
+615	615		301							"{3: ""You're not sure how much time has passed, but your mind still seems active, refusing to drift into sleep.""}"
+616	616		401						500.0	{1: '2', 2: '1516'}
+617	617		301							{3: 'In your drowsy haze, you hear soft footsteps on the floor.'}
+618	618		302							{2: '...?', 3: '619'}
+619	619		502							{1: 'AniZhuanchangEnd'}
+620	620		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1197.jpg'}
+621	621		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '3'}
+622	622		301							{3: 'You open your eyes to find the room still awash in darkness.'}
+623	623		211							{1: '1', 2: '1021039', 7: '1'}
+624	624		301							{1: '1', 2: 'Lucia', 3: '...', 4: '101', 18: '100008093', 19: '1', 21: 'v320luxiya'}
+625	625		301							"{3: ""Through blurry vision, you see Lucia standing by the window and gazing out at Catania's night.""}"
+626	626		301				DialogDisable			{3: 'In the gentle moonlight, the hair by her temple is flirted by a soft breeze, reminiscent of delicate gossamer dancing in the wind.'}
+627	627		212							{1: '1', 6: '1'}
+628	628		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+629	629		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+630	630		502						2000.0	{1: 'AniZhuanchangEnd'}
+631	631		302							{2: 'Lucia?', 3: '632'}
+632	632		211							{1: '1', 2: '1021039', 3: '6', 7: '1'}
+633	633		301			DialogEnable				{1: '1', 3: 'Hearing your call, she tilts her head to look at you, caught by surprise.'}
+634	634		301							{2: 'Lucia', 3: 'Commandant?', 4: '101', 18: '100008094', 19: '1', 21: 'v320luxiya'}
+635	635		214							{1: '1', 2: '4'}
+636	636		301							{2: 'Lucia', 3: '...Sorry. Did I wake you?', 4: '101', 18: '100008095', 19: '1', 21: 'v320luxiya'}
+637	637		302							{2: 'Nope. I was just having trouble falling asleep.', 3: '638'}
+638	638		212							{1: '1', 6: '1'}
+639	639		301							{3: 'You get up and look out the window. The bright moon hangs high above the horizon and shines brightly on the coastline below.'}
+640	640		302							{2: 'Are you admiring the view outside?', 3: '641'}
+641	641		211							{1: '1', 2: '1021039', 7: '1'}
+642	642		301							"{1: '1', 2: 'Lucia', 3: ""Mm... tonight flew by, didn't it?"", 4: '101', 18: '100008096', 19: '1', 21: 'v320luxiya'}"
+643	643		214							{1: '1', 2: '8'}
+644	644		301							{2: 'Lucia', 3: 'I just want to remember this night. This moment with you.', 4: '101', 18: '100008097', 19: '1', 21: 'v320luxiya'}
+645	645		212							{1: '1', 6: '1'}
+646	646		301							{3: 'She gazes into the distance with lingering fascination. The boundless ocean lies shrouded in the tranquil night, a stark contrast to the brilliantly illuminated shoreline.'}
+647	647		301							{3: 'Lying in bed earlier and reflecting on everything that happened today, you know you totally would have loved to stay out longer to enjoy the night.'}
+648	648		301				DialogDisable			{3: 'Seeing the look on her face, you think you know just what to do.'}
+649	649		302							{2: 'Lucia...', 3: '650'}
+650	650		302							"{2: ""Say, why don't we get out of this mansion..."", 3: '651'}"
+651	651		302							{2: 'To enjoy a chill night out?', 3: '652'}
+652	652		211							{1: '1', 2: '1021039', 3: '6', 7: '1'}
+653	653		301			DialogEnable				{1: '1', 2: 'Lucia', 3: '...A night out?', 4: '101', 18: '100008098', 19: '1', 21: 'v320luxiya'}
+654	654		301							{3: 'Lucia seems a little incredulous.'}
+655	655		301				DialogDisable			{2: 'Lucia', 3: 'But, Commandant...', 4: '101', 18: '100008099', 19: '1', 21: 'v320luxiya'}
+656	656		302							"{2: ""C'mon, it's party night tonight."", 3: '657'}"
+657	657		302							{2: 'No way a godchild from an important family is going to miss out on the fun, right?', 3: '658'}
+658	658		301			DialogEnable				{3: 'As you speak, you reach your hand out to Lucia.'}
+659	659		302							{2: 'What do you say?', 3: '660'}
+660	660		214							{1: '1', 2: '4'}
+661	661		301							{2: 'Lucia', 3: '...', 4: '101', 18: '100008100', 19: '1', 21: 'v320luxiya'}
+662	662		214							{1: '1', 2: '3'}
+663	663		301							{3: 'She smiles gently, a glimmer of anticipation gathering in her eyes.'}
+664	664		301							{2: 'Lucia', 3: '...Alright, Commandant. I get it.', 4: '101', 18: '100008101', 19: '1', 21: 'v320luxiya'}
+665	665		214							{1: '1', 2: '2'}
+666	666		301							"{2: 'Lucia', 3: ""Then I'll take you up on it. Tonight, let's just have fun. No missions, no worries."", 4: '101', 18: '100008102', 19: '1', 21: 'v320luxiya'}"
+667	667		302							"{2: ""Let's go!"", 3: '668'}"
+668	668		212							{1: '1', 6: '1'}
+669	669		301							{3: 'She takes your hand and pushes open the window, letting the cool breeze wash over your faces.'}
+670	670		401							{1: '2', 2: '4519'}
+671	671		401							{1: '2', 2: '4648'}
+672	672		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+673	673		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+674	674		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+675	675		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+676	676		104							{1: '0|-270|-400', 2: '0'}
+677	677		301							{3: 'Lucia leaps down and, kicking into flight mode, carries you in midair in her arms.'}
+678	678		301							{2: 'Lucia', 3: 'Commandant, hold on tight!', 4: '101', 18: '100008103', 19: '1', 21: 'v320luxiya'}
+679	679		401						150.0	{1: '2', 2: '8510113'}
+680	680		104						450.0	{1: '0|-270|-450', 2: '0.2'}
+681	681		402							{1: '8510113'}
+682	682		301							{3: 'The wind rushes past your ears as the blue waves roll beneath you.'}
+683	683		301		1		AniZhuanchangBegin			{3: 'You two fly over the coast to the grand party under the stars and the moon.'}

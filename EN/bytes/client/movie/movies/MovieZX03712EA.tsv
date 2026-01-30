@@ -1,0 +1,81 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory748.jpg'}
+2	2		401							{1: '1', 2: '257'}
+3	3		301			DialogEnable				"{3: ""You fell out of contact with Noctis from signal disruption when he entered the deserted brewery, and you can't help but worry for him.""}"
+4	4		301							"{3: ""But having been assigned the job of a bartender... you know that you should probably focus on what's at hand here.""}"
+5	5		302							"{2: ""Lucky we haven't gotten too busy yet."", 3: '6'}"
+6	6		301							{3: 'This bar becomes packed with people around midnight because of the Harvest Festival, and you know that you need to get yourself and the place ready before all the people come.'}
+7	7		301							{3: 'You blow a puff of air at each of the wine glasses you just finished washing, wipe them with a dry cloth until they glitter, and hang them on the wine glass rack. Seeing your work, you feel accomplished.'}
+8	8		302							"{2: ""Think I'm getting better at this..."", 3: '9'}"
+9	9		401							{1: '2', 2: '2720'}
+10	10		301							"{3: ""Right then, with the rings that come from the door, in comes the night's first customer.""}"
+11	11		301							"{3: ""Most of the tavern's regulars make a beeline straight for the bar counter as soon as they come through the door. This particular customer, however, walks slowly, with light taps on the floor.""}"
+12	12		302							{2: 'How are you doing today?', 3: '13'}
+13	13		301							{3: 'Apparently having noticed the seats at the counter, they walk up this way and pick a seat to sit on.'}
+14	14		201							{1: '1', 2: '500694'}
+15	15		301							"{1: '1', 2: '???', 3: ""My apologies... but I can't see anything."", 4: '1'}"
+16	16		301							"{3: ""Through the faint light, you now see that he's wearing sunglasses—behind which sits a pair of dark, lifeless eyes, sending a chill down your spine.""}"
+17	17		302							{2: 'Anything you would like to get yourself started?', 3: '18'}
+18	18		204							{1: '1', 2: '1'}
+19	19		301							"{2: '???', 3: ""Anything will do... Guess I'll go with whatever you make me."", 4: '1'}"
+20	20		301							"{3: ""Says the man with a polite smile. At the same time, you find his smile menacing in a way you can't quite place.""}"
+21	21		301							"{3: ""You know that this is probably a false alarm, but you can't seem to shake it off.""}"
+22	22		302							"{2: ""You're a Construct, I presume? Can I get you some alcohol-flavor electrolyte, then?"", 3: '23'}"
+23	23		301							{2: '???', 3: 'Well, sure...', 4: '1'}
+24	24		301							{3: 'You pull out a bottle of low-alcohol-flavored electrolyte from the rack and pour the golden, aromatic liquid into a glass.'}
+25	25		302				AniZhuanchangBegin			{2: 'Here you go, sir.', 3: '26'}
+26	26		202							{1: '1', 6: '1'}
+27	27		401							{1: '1', 2: '36'}
+28	28		101						1000.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3701_02.jpg'}
+29	29		401							{1: '1', 2: '209'}
+30	30		301			AniZhuanchangEnd				{2: '???', 3: 'Thank you.'}
+31	31		301							{3: 'Searching for the glass for a few seconds with his left hand, he finally finds it and grabs it.'}
+32	32		301							{3: 'While at it, his left shoulder cape flutters to the wind, revealing the empty space underneath.'}
+33	33		302							{2: '(Blind... with a single arm...)', 3: '34'}
+34	34		301							{3: 'You stop cold... when it hits you that you might have heard about this persona non grata.'}
+35	35		302							{2: '(Nigel?)', 3: '36'}
+36	36		301							"{3: ""The man, however, has no way of knowing who you really are—and you know that this is your chance to get him to talk without his guard on, so you can later share what you've learned with Noctis...""}"
+37	37		302							"{2: ""I gather you're from Babylonia, sir?"", 3: '38'}"
+38	38		301							{2: 'Nigel', 3: '...I used to be.'}
+39	39		301							{3: 'After a long pause, Nigel starts speaking again.'}
+40	40		301							{2: 'Nigel', 3: 'I had come to Earth many times, but our mission locations were the only places I had visited on Earth.'}
+41	41		302							"{2: ""And I presume you're here for another mission?"", 3: '42'}"
+42	42		301							{2: 'Nigel', 3: 'Yes... correct.'}
+43	43		301							{3: 'He picks up the wine glass and, instead of to his mouth, he holds the wine glass up to his ear.'}
+44	44		302							{2: 'Not exactly your type of drink, I see?', 3: '45'}
+45	45		301							"{2: 'Nigel', 3: ""I've never had any alcohol...""}"
+46	46		301							{3: 'He listens to the liquid circle around in the glass as he swirls it.'}
+47	47		301							"{2: 'Nigel', 3: ""I do have a friend... and he's a real drinker...""}"
+48	48		302							{2: 'A friend, huh...', 3: '49'}
+49	49		301							"{2: 'Nigel', 3: ""The thing, though... is that he can't really hold his drink, but he doesn't give a damn what he does when he gets drunk, and that's a quality he has that I don't.""}"
+50	50		301							{3: 'With a barely discernable smile, Nigel chugs the drink in one go.'}
+51	51		301							"{2: 'Nigel', 3: ""Heh, don't think I'll ever get used to this.""}"
+52	52		301				AniZhuanchangBegin			{3: 'He puts the glass down and stands up.'}
+53	53		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory748.jpg'}
+54	54		201							{1: '1', 2: '500694', 7: '1'}
+55	55		301			AniZhuanchangEnd				{1: '1', 2: 'Nigel', 3: 'One question for you before I go...', 4: '1'}
+56	56		302							{2: 'Sure. What is it?', 3: '57'}
+57	57		301							{2: 'Nigel', 3: 'What would you differentiate a Construct from a human...', 4: '1'}
+58	58		302							"{2: ""Haha, that's one interesting question, I gotta say..."", 3: '59'}"
+59	59		301							{3: 'You take as long as you possibly can with wiping the bar counter, all the while keeping your eye on Nigel.'}
+60	60		302							{2: 'As a bartender, I guess the difference is that one takes alcohol while the other takes electrolytes.', 3: '61'}
+61	61		301							{2: 'Nigel', 3: 'Uhm, is that so...', 4: '1'}
+62	62		301							{3: 'Nigel leaves the money for the drink on the table and turns around.'}
+63	63		401							{1: '1', 2: '36'}
+64	64		301							{2: 'Nigel', 3: 'Say... how would you answer that question as a commandant from Babylonia, though?', 4: '1'}
+65	65		401							{1: '1', 2: '226'}
+66	66		301							{3: 'No sooner have you heard the question than you reached your hand into the drawer behind the counter for the service pistol in it.'}
+67	67		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+68	68		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+69	69		301			RImgBg1Shake				"{3: ""A second later, you feel a pang of excruciating pain coming from your left arm that quickly occupies the left side of your body. You have no idea when you even got hit—you haven't taken your eye off him for even a split second this entire time.""}"
+70	70		301							{3: 'Your heart sinks at the numbness that quickly spreads across your body.'}
+71	71		302							{2: 'H-how in the world did you...', 3: '72'}
+72	72		301							"{2: 'Nigel', 3: ""Seems like Noctis has told you about me... Send him my way. It's high time that we got things settled between us now."", 4: '1'}"
+73	73		301							{2: 'Nigel', 3: 'And I look forward to hearing your answer to that last question from him.', 4: '1'}
+74	74		301							{3: 'Nigel pushes his sunglasses up and slowly makes his way toward the door.'}
+75	75		301							"{2: 'Nigel', 3: 'And just a word of advice—there is no way for you and this town\'s mayor to stop the ""Generalissimo""...', 4: '1'}"
+76	76		302							{2: 'N-Nigel...', 3: '77'}
+77	77		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '5'}
+78	78		401							{1: '2', 2: '1516'}
+79	79		202							{1: '1'}
+80	80		301		1		AniZhuanchangBegin			"{3: ""Nigel's fainting footsteps are the last thing you hear before the world around you slips into darkness.""}"

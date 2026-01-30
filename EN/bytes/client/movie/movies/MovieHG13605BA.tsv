@@ -1,0 +1,158 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory177.png'}
+2	2		401							{1: '1', 2: '242'}
+3	3		301			DialogEnable				{3: 'You follow Sturddy to a warehouse-like structure situated near the back door of the yard.'}
+4	4		201							{1: '1', 2: '500278'}
+5	5		301							"{1: '1', 2: 'Sturddy', 3: ""It stores all the artworks left behind by Master, and after the theft, I've enhanced the security measures here."", 4: '1'}"
+6	6		401							{1: '2', 2: '2701'}
+7	7		301							{3: 'As Sturddy hoists the 24th electronic locker, the gate grudgingly gives way with a dry, rasping squeak.'}
+8	8		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory167.jpg', 3: '0', 4: '1', 5: '1'}
+9	9		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+10	10		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory167.jpg'}
+11	11		301							{3: 'In contrast to the dilapidated yard, the warehouse is surprisingly tidy and capacious. A soft, warm light bathes the entire area, showcasing clear signs of regular cleaning and meticulous organization.'}
+12	12		301							{3: 'Wooden shelves line all four walls, displaying an array of artistic treasures—scrolls of calligraphy and paintings, porcelains, and colorful ceramic statues of diverse shapes and forms that you cannot even name. Each piece is carefully categorized and stored within glass cabinets.'}
+13	13		302							"{2: ""It's like a small museum..."", 3: '14'}"
+14	14		301							"{3: 'Evident vacancies punctuate the collection, likely once home to those ""forgeries"" now circulating in the market.'}"
+15	15		301							{2: 'Sturddy', 3: '...I wanted to show you these.', 4: '1'}
+16	16		301							"{3: 'You pick up a book from a shelf, the words ""Kowloong"" and ""porcelain kiln"" faintly discernible on its cover.'}"
+17	17		302							{2: 'Something is stuck here?', 3: '18'}
+18	18		301							{3: 'A shadow of an object stuck between two shelves unexpectedly grabs your attention. Upon closer inspection, you determine it to be a cylinder-shaped item. You then extend your hand to retrieve it.'}
+19	19		502							{1: 'DialogDisable'}
+20	20		302							{2: 'This is...', 3: '21'}
+21	21		302							{2: 'An ancient painting scroll?', 3: '22'}
+22	22		301			DialogEnable				"{2: 'Sturddy', 3: ""One of Master's proudest pieces... I thought it had already been stolen."", 4: '1'}"
+23	23		502							{1: 'DialogDisable'}
+24	24		302							{2: 'It survived the theft probably because it fell into the gap.', 3: '25'}
+25	25		302				AniZhuanchangBegin			"{2: ""Let's check to see if it's damaged."", 3: '26'}"
+26	26		202						500.0	{1: '1', 6: '1'}
+27	27		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory167.jpg'}
+28	28		301			DialogEnable				"{3: ""With Sturddy's consent, you and Hanying carefully unfold the scroll across a table.""}"
+29	29		201							{1: '2', 2: '500629', 3: '7'}
+30	30		301							{1: '1', 2: 'Hanying', 3: 'This is...', 4: '2'}
+31	31		301							"{3: 'Despite your limited knowledge of Kowloong culture, you can\'t help but notice the striking similarities this piece shares with a renowned work titled ""Kowloong Landscape"", painted by a famed Kowloong artist.'}"
+32	32		301							{3: 'However, different than the original piece that depicts a daytime view, this one portrays a nocturnal scene where sparse stars twinkle in the sky above, and the moon hangs high.'}
+33	33		204							{1: '2'}
+34	34		301							{2: 'Hanying', 3: '...Beyond the walls of the metropolis, Kowloong encompasses a far greater world.', 4: '2'}
+35	35		301							{3: 'Mists veil the long rivers stretching into the horizon, while rolling mountains stand majestically in the backdrop. Winding roads lead to deep, secluded courtyards where pavilions are sprinkled.'}
+36	36		301							{3: 'The lines and colors are vividly rendered on the paper, inciting a sense of awe and curiosity about the breathtaking beauty of the actual Kowloong landscape.'}
+37	37		302							{2: 'Have you been to these places, Hanying?', 3: '38', 4: 'I wish I could witness the views in person.', 5: '41'}
+38	38		204							{1: '2', 2: '2'}
+39	39		301							"{2: 'Hanying', 3: ""I haven't had the opportunity yet, but there is still plenty of time. I'm sure that the right chances will present themselves."", 4: '2'}"
+40	40	43	301							{2: 'Hanying', 3: 'When that time comes... perhaps we could undertake the journey together.', 4: '2'}
+41	41		204							{1: '2', 2: '2'}
+42	42		301							{2: 'Hanying', 3: 'We may go together if the opportunity arises.', 4: '2'}
+43	43		302							"{2: ""I'll be looking forward to it."", 3: '44', 4: 'I hope that day will come.', 5: '44'}"
+44	44		301							"{3: ""Hanying's gaze is fixed on the moon within the painting. Bathed in its soft luminescence, a solitary figure stands within a petite courtyard, their gaze skyward, as if spellbound by the moon's beauty or in anticipation of a cherished arrival.""}"
+45	45		301							"{2: 'Hanying', 3: 'Commandant, have you heard of an ancient Kowloong saying that goes, ""The moon shines brightest in one\'s hometown.""', 4: '2'}"
+46	46		302							{2: 'Nope.', 3: '47', 4: 'I think I have.', 5: '47'}
+47	47		301							"{2: 'Hanying', 3: 'The people of Kowloong exceptionally value the concept of ""family."" While technically the moon\'s appearance should be consistent regardless of one\'s location on Earth, these individuals believe that it shines most beautifully when observed from their hometown.', 4: '2'}"
+48	48		301							{2: 'Hanying', 3: 'Even prior to the Golden Age, humans had already established complex social relationships, implemented laws, and thrived in families.', 4: '2'}
+49	49		204							{1: '2', 2: '17'}
+50	50		301							"{2: 'Hanying', 3: 'But now... in the face of calamities, many have already left their family names in oblivion. For the Kowloong people who have strayed far from their birthplace, the concept of ""family"" may have dissolved into non-existence long ago.', 4: '2'}"
+51	51		301							{2: 'Hanying', 3: 'It often makes me ponder, how do these displaced wanderers find a true home to which they can return?', 4: '2'}
+52	52		301							"{2: 'Hanying', 3: 'Or will they persist in their wandering... If so, what then defines ""home""?', 4: '2'}"
+53	53		302							{2: 'Hanying...', 3: '54'}
+54	54		204							{1: '2'}
+55	55		301							{3: 'She shakes her head, showing you a relieving smile.'}
+56	56		301							"{2: 'Hanying', 3: ""Please don't mind me. I just thought about something from a long time ago."", 4: '2'}"
+57	57		301							{2: 'Hanying', 3: 'As I told you before, I once lived on the Nighter for a long period.', 4: '2'}
+58	58		301							{2: 'Hanying', 3: 'At that time, I was a dancer working for a dance troupe on the Nighter.', 4: '2'}
+59	59		301							{2: 'Hanying', 3: 'The prosperity of the Nighter once appeared boundless, yet every resident was ensnared within their collars, grappling with existence, either for miles or more clandestine desires.', 4: '2'}
+60	60		301							{2: 'Hanying', 3: 'The farther away they were from Kowloong, the more their longing for returning to that land grew.', 4: '2'}
+61	61		302							{2: 'Is your hometown in Kowloong too?', 3: '63'}
+62	62		203							{1: '2', 2: '17'}
+63	63		301							"{2: 'Hanying', 3: ""My hometown... Maybe, but I've left for too long. Everything has changed."", 4: '2'}"
+64	64		301							{2: 'Hanying', 3: 'There are certain things that are best left in the past.', 4: '2'}
+65	65		502							{1: 'DialogDisable'}
+66	66		302							{2: 'Someone once said this to me...', 3: '67'}
+67	67		302							{2: 'Only with certain things left in the past,', 3: '68'}
+68	68		302							{2: 'Can one truly and resolutely stride toward the future.', 3: '69'}
+69	69		302							"{2: ""While things that remain in the past won't just fade away."", 3: '70'}"
+70	70		204							{1: '2'}
+71	71		301			DialogEnable				"{2: 'Hanying', 3: ""Things that remain in the past won't just fade away..."", 4: '2'}"
+72	72		301							{3: 'Vibrant everyday scenes you have witnessed on the Nighter spring unbidden into your mind, accompanied by images of the Dragon Children and residents, all tirelessly striving for the reconstruction of Kowloong.'}
+73	73		301							{3: 'Compared to your initial experiences on the Nighter, everything now seems to be veering toward an improved trajectory, ushering in a brighter future.'}
+74	74		302							{2: 'Also, in my opinion...', 3: '75'}
+75	75		301							{3: 'The people who stay on the Nighter, be they Dragon Children or residents, are not trapped in the past. While the scars may never completely fade, everyone is working their hardest.'}
+76	76		301							{3: 'Either to make the Nighter a new home alongside their family or to return to their long-missed hometown and start a life anew. Everyone can make their own choice.'}
+77	77		302							{2: 'Everyone here has a fresh start.', 3: '78'}
+78	78		301							{3: 'Despite the onslaught of storms, there will always be those who grip the helm tightly, pressing forward with the weight of missions and memories on their shoulders.'}
+79	79		301							{3: 'Despite having sailed past countless ships, Kowloong remains Kowloong, and the wanderers will, in the end, find their way home.'}
+80	80		301							"{3: ""That likely explains why, upon the ship's arrival ashore, Sturddy's master abandoned all else in his pursuit to look for his family.""}"
+81	81		301							{2: 'Hanying', 3: 'A fresh start...', 4: '2'}
+82	82		204							{1: '2', 2: '2'}
+83	83		301							{2: 'Hanying', 3: 'Someone once said that to me, too.', 4: '2'}
+84	84		301							{3: 'Almost instinctively, Hanying lifts her hand to gently touch a spot on her neck, the only remaining trace of her past.'}
+85	85		301							{3: 'A trace that encapsulates both pain and departure, yet also warmth and hope.'}
+86	86		301							{2: 'Hanying', 3: 'It might be an overly naive thought, but I think...', 4: '2'}
+87	87		301							"{2: 'Hanying', 3: 'A place where someone is waiting for you to come back can be called ""home.""', 4: '2'}"
+88	88		203							{1: '2', 2: '0.25', 3: '400'}
+89	89		201							{1: '1', 2: '500278', 4: '-400'}
+90	90		204							{1: '2', 2: '7'}
+91	91		301							"{1: '1', 2: 'Sturddy', 3: ""I'm... starting to understand."", 4: '1'}"
+92	92		301							{3: 'Sturddy, who has remained quiet throughout, suddenly breaks his silence.'}
+93	93		204							{1: '2'}
+94	94		301							{2: 'Sturddy', 3: 'What Master wants is that we live a happy life together as a family.', 4: '1'}
+95	95		301							"{2: 'Sturddy', 3: ""I've been waiting for a long time, but he still hasn't come back."", 4: '1'}"
+96	96		301							"{2: 'Sturddy', 3: 'When you delivered the message to me through the bionic swallow, I realized that Master wouldn\'t be coming back anymore. Without Master... ""home"" has lost its meaning.', 4: '1'}"
+97	97		204							{1: '2', 2: '17'}
+98	98		301							{2: 'Sturddy', 3: 'But still... thank you for bringing back the data about Master and helping me with my wish.', 4: '1'}
+99	99		302							{2: '(...Data about Master?)', 3: '100'}
+100	100		301							{2: 'Sturddy', 3: '...I brought you here because, before I completely break down, I want to entrust the works Master left behind to the Dragon Children on the Nighter.', 4: '1'}
+101	101		301							{2: 'Hanying', 3: 'But...', 4: '2'}
+102	102		301							"{2: 'Hanying', 3: ""...Alright, I'll let Pulao know. I'm sure they'll take good care of your master's works."", 4: '2'}"
+103	103		301							"{2: 'Hanying', 3: ""But I didn't come here just to tell you that. It's still too early... to say goodbye."", 4: '2'}"
+104	104		301							"{3: ""Hanying clasps Sturddy's hands, their silent exchange echoing a conversation without words. The indicator on his face pulses rhythmically, its light akin to tears that can no longer be restrained.""}"
+105	105		301							{2: 'Sturddy', 3: '...', 4: '1'}
+106	106		301							{2: 'Sturddy', 3: '...I see.', 4: '1'}
+107	107		301							{2: 'Sturddy', 3: 'I have reached my operational limit and require a shutdown for maintenance and data organization. Estimated downtime: 5 hours and 36 minutes.', 4: '1'}
+108	108		301				AniZhuanchangBegin			{2: 'Sturddy', 3: 'I will tell you my answer after everything is settled.', 4: '1'}
+109	109		202			DialogDisable			500.0	{1: '1', 2: '2', 6: '1'}
+110	110		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory167.jpg'}
+111	111		201							{1: '1', 2: '500629'}
+112	112		301			DialogEnable				{1: '1', 3: 'Sturddy sits down in a corner of the room and enters maintenance mode.'}
+113	113		301							{2: 'Hanying', 3: 'Is there anything you are curious about, Commandant?', 4: '1'}
+114	114		302							"{2: 'By ""the data about Master"" he means...?', 3: '115', 4: ""About Sturddy's master..."", 5: '115'}"
+115	115		204							{1: '1', 2: '17'}
+116	116		301							"{2: 'Hanying', 3: ""...Actually, before coming here, I had already learned about what happened to Sturddy's master. As he indicated, his master already passed away."", 4: '1'}"
+117	117		301							"{3: ""Hanying's expression darkens for a moment. Despite her swift attempt to mask this shift, you still catch a glimpse of guilt flashing across her eyes.""}"
+118	118		204							{1: '1'}
+119	119		301							{2: 'Hanying', 3: 'A few days ago, I went to a mountain outside the city of Kowloong for a particular reason. There, on the stone stairway, I found a bionic swallow lying in repose.', 4: '1'}
+120	120		301							{2: 'Hanying', 3: 'I was shocked seeing it because I could hardly imagine how a little bionic bird flew all the way from the Nighter to a mountain beyond the city of Kowloong.', 4: '1'}
+121	121		302							"{2: ""You mean the bionic swallow that stores Sturddy's memory data?"", 3: '122'}"
+122	122		301							{2: 'Hanying', 3: 'Right. The poor bird had been hovering above the mountain, trying to find its master until it could no longer fly, but... it was already too late.', 4: '1'}
+123	123		204							{1: '1', 2: '17'}
+124	124		301							"{2: 'Hanying', 3: ""...In the end, all I managed to retrieve was a minor fragment of data about Sturddy's master."", 4: '1'}"
+125	125		204							{1: '1', 2: '1'}
+126	126		301							{2: 'Hanying', 3: 'Even so, I still wanted to bring it back.', 4: '1'}
+127	127		302							{2: 'I see...', 3: '128'}
+128	128		301							{3: 'The person you have been waiting for will never come back—such a truth would be unbearably cruel to anyone.'}
+129	129		301							{3: 'As a mechanoid, how would Sturddy perceive it when learning the truth...?'}
+130	130		204							{1: '1', 2: '2'}
+131	131		301							"{2: 'Hanying', 3: '...Commandant, do you believe that machines have ""hearts""?', 4: '1'}"
+132	132		302							{2: 'What makes you ask that?', 3: '133', 4: 'I do.', 5: '139'}
+133	133		301							{2: 'Hanying', 3: 'Just curious about your opinion.', 4: '1'}
+134	134		502							{1: 'DialogDisable'}
+135	135		302							"{2: ""I'm not sure if it's appropriate to judge this using human standards..."", 3: '136'}"
+136	136		302							{2: 'But I do.', 3: '138'}
+137	137	139	301							{2: 'Hanying', 3: 'Is that so...', 4: '1'}
+138	138		502							{1: 'DialogEnable'}
+139	139		301							{2: 'Hanying', 3: 'I see... Right, only with a heart can one have longings.', 4: '1'}
+140	140		301							{2: 'Hanying', 3: 'With longings come waiting and anticipation.', 4: '1'}
+141	141		301							{2: 'Hanying', 3: 'Sturddy is like this, everyone is like this, and even I...', 4: '1'}
+142	142		301							{2: 'Hanying', 3: 'Commandant, when I played the role of your family... despite knowing it was just a simulation, I still find myself feeling reluctant to end it.', 4: '1'}
+143	143		301							"{2: 'Hanying', 3: ""It's as if I'm having a sweet dream and am unwilling to wake up even though I know it's a dream."", 4: '1'}"
+144	144		301							"{2: 'Hanying', 3: ""...My apologies. I'm just expressing some peculiar thoughts."", 4: '1'}"
+145	145		302							"{2: ""It's okay."", 3: '146', 4: 'My thoughts exactly.', 5: '146'}"
+146	146		301							{3: 'For those still grappling with the calamities inflicted by the Punishing Virus, having a safe and comfortable place to stay is a luxury in itself.'}
+147	147		301							{3: 'Engage in labor during the day and rest under the cloak of night, live in tranquility, and find joy in work, all without the looming dread of impending threats or the heartache of losing loved ones on the battlefield. Each day unfolds in a pattern of simplicity and serenity.'}
+148	148		301							{3: 'There are no grand titles or missions that, while appearing glorious, bear a hefty toll. The most pressing concerns are the trivial matters of everyday life.'}
+149	149		301							{3: 'Such a life is not just a luxury for you, but a distant mirage, far beyond immediate grasp.'}
+150	150		302							{2: 'This could be a good lifestyle if I no longer need to fight one day.', 3: '151', 4: 'It was short, but I had a great time with you.', 5: '151'}
+151	151		301							{3: 'Now, you still have places to go and missions to accomplish.'}
+152	152		301							{3: 'As you cast a glance back at Hanying, your gaze intertwines with hers, her eyes glowing with a warmth of recognition and understanding.'}
+153	153		301							"{3: ""Once again, you feel you've seen those eyes somewhere else.""}"
+154	154		301							"{2: 'Hanying', 3: ""Commandant, what's on your mind?"", 4: '1'}"
+155	155		301							{3: 'Hanying inclines her head toward you, a smile gracing her features. The ornaments adorning her hair bun sway in gentle rhythm with her movements, making pleasant tinkling sounds.'}
+156	156		302							{2: 'By the way...'}
+157	157		301		1		AniZhuanchangBegin			{3: 'As you gaze upon Hanying, a nearly forgotten memory flickers back into your mind.'}

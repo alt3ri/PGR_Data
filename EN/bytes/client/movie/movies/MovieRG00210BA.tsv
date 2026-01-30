@@ -1,0 +1,32 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory93.png'}
+2	2		401							{1: '1', 2: '10'}
+3	3		301			DialogEnable				{3: '...'}
+4	4		301							"{3: 'The ""stone house"" the refugee leader mentioned is visible through the binoculars.'}"
+5	5		301							"{3: ""In fact, it's just an abandoned church with one wall missing.""}"
+6	6		301							{3: 'The church is bustling. It seems that some kind of mass is being held there.'}
+7	7		302							{2: 'Lucia?', 3: '8'}
+8	8		201							{1: '1', 2: '500166'}
+9	9		301							"{1: '1', 2: 'Lucia', 3: ""I'm here."", 4: '1'}"
+10	10		302							{2: 'Can you read lips?', 3: '11'}
+11	11		202							{1: '1'}
+12	12		301							{3: 'Lucia looks at the stone house for a moment, then turns around and shakes her head.'}
+13	13		201							{1: '1', 2: '500166', 4: '-400', 7: '1'}
+14	14		201							{1: '2', 2: '1011001', 4: '400', 7: '1'}
+15	15		301							"{1: '1', 2: 'Lucia', 3: ""Yes, but it's not a common language they're speaking."", 4: '1'}"
+16	16		301							"{1: '1', 2: 'Lucia', 3: ""All I can tell is that it's a self-invented coded language. We need to figure out its coding logic."", 4: '1'}"
+17	17		301							{1: '1', 2: 'Lee', 3: 'Maybe that stone tablet in front of them will give us a clue?', 4: '2'}
+18	18		202							{1: '1', 2: '2'}
+19	19		301							{3: 'Looking further inside, one can see that everyone in the gathering is facing the same stone tablet...'}
+20	20		201							{1: '1', 2: '1011001'}
+21	21		301							"{1: '1', 2: 'Lee', 3: ""But I can't make out what's written on it."", 4: '1'}"
+22	22		302				AniZhuanchangBegin			{2: 'Looks like we need to get closer.', 3: '23'}
+23	23		201							{1: '1', 2: '500013', 7: '1'}
+24	24		301			AniZhuanchangEnd				{1: '1', 2: 'Corrupted', 3: '...', 4: '1'}
+25	25		202							{1: '1'}
+26	26		301							{3: 'A Corrupted stands tall on the path leading to the stone house, as if waiting for you.'}
+27	27		302							{2: 'I knew it.', 3: '28'}
+28	28		201							{1: '1', 2: '1011001'}
+29	29		301							"{1: '1', 2: 'Lee', 3: 'Seems like this ""Grand Elder"" doesn\'t want us to see his writing.', 4: '1'}"
+30	30		302							"{2: ""It's not like anyone's going to judge his handwriting."", 3: '31'}"
+31	31		301		1		AniZhuanchangBegin			{1: '1', 2: 'Lee', 3: 'Well, we need to get past this guy to find out.', 4: '1'}

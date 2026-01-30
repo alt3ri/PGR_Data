@@ -1,0 +1,357 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_21.jpg'}
+2	2		401							{1: '1', 2: '66'}
+3	3		301			DialogEnable				{3: 'As Lamia deftly avoids Lithos, the lost soul trapped in the depths of the pit begin their own battle to break free and flee.'}
+4	4		302							{2: '(Attempt to wriggle free from the restraints once more)', 3: '5'}
+5	5		401							{1: '2', 2: '2987'}
+6	6		502							{1: 'RImgBg1Shake'}
+7	7		301					500.0		{3: 'Your limbs are trapped by shackles, firmly anchored to the table and the floor, granting only limited movement to your upper body.'}
+8	8		301							"{3: ""Luckily, the shaky sensation suggests the handcuffs aren't securely fastened. If not for this weakened body, it is possible to break free through sheer strength alone.""}"
+9	9		301				DialogDisable			{3: 'Time to find a tool.'}
+10	10		302							{2: '(Extract the fork from your hand with your teeth)', 3: '11'}
+11	11		104						500.0	{1: '-120|100|-150', 2: '0.5'}
+12	12		401						500.0	{1: '2', 2: '13015304'}
+13	13		104							{1: '0|0|0', 2: '0.5'}
+14	14		401							{1: '2', 2: '4044'}
+15	15		401							{1: '2', 2: '1505'}
+16	16		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+17	17		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '3'}
+18	18		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3901_22.jpg', 3: '0', 4: '1', 5: '0.5'}
+19	19		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+20	20		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3901_22.jpg'}
+21	21		502							{1: 'DialogEnable'}
+22	22		301			RImgBg1Shake	DialogDisable			{3: 'Biting down on one end of the fork and pulling hard, you feel a sharp pain shoot through the back of your hand.'}
+23	23		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+24	24		302							{2: '(Wedge the fork into the gap between the handcuffs and the table)', 3: '25'}
+25	25		104						500.0	{1: '0|100|-150', 2: '0.5'}
+26	26		401							{1: '2', 2: '13015304'}
+27	27		302							{2: 'This should do it...', 3: '28'}
+28	28		401							{1: '2', 2: '2646'}
+29	29		104							{1: '0|0|-300', 2: '0.5'}
+30	30		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3901_22.jpg', 3: '0', 4: '0.5', 5: '0.5'}
+31	31		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+32	32		104							{1: '0|0|0', 2: '0.5'}
+33	33		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.5', 5: '0.5'}
+34	34		301			DialogEnable				{3: 'Just as a glimmer of hope appears, exhaustion hits like a ton of bricks, blurring your vision.'}
+35	35		301				DialogDisable			{3: 'Maybe Lithos was right about the fish. A quick bite might restore some stamina.'}
+36	36		302							{2: 'Phew...', 3: '37'}
+37	37		302							{2: '(Lean in again and press the fork handle down with your chin)', 3: '38'}
+38	38		104						500.0	{1: '0|150|-150', 2: '0.5'}
+39	39		401							{1: '2', 2: '13015304'}
+40	40		301			DialogEnable				{3: 'The shackles remain immovable.'}
+41	41		302							{2: '(Give it another shot)', 3: '42'}
+42	42		104						500.0	{1: '0|200|-200', 2: '0.5'}
+43	43		401							{1: '2', 2: '9343086'}
+44	44		301							{3: 'Awkwardly changing angles and gritting teeth, you press down again and finally feel the fork sink, only to see its handle bent into an arc.'}
+45	45		302							{2: '...', 3: '46'}
+46	46		104							{1: '0|0|0', 2: '1'}
+47	47		301							{3: 'Shaking your head to clear your blurred vision, you realize sweat has begun to bead on your forehead.'}
+48	48		302							"{2: 'Phew...', 3: '49', 4: ""This isn't right..."", 5: '49'}"
+49	49		301							{3: 'Ever since resolving to step onto the battlefield, you have never allowed your body to reach such a state of weakness.'}
+50	50		301							{3: 'Knowing that there is no turning back and you have been harboring an unspoken lie, you must work harder than those with innate talent.'}
+51	51		301							{3: 'If not for being in this predicament, all of this would have remained a secret.'}
+52	52		302							{2: '...', 3: '53'}
+53	53		104						500.0	{1: '0|150|-150', 2: '0.5'}
+54	54		401							{1: '2', 2: '13015304'}
+55	55		301							{3: 'Shaking off these thoughts, you calm your chaotic breathing, adjust your posture, and press down on the fragile fork once more.'}
+56	56		302							{2: '(Mind the angle...)', 3: '57', 4: '(Stay with me, fork!)', 5: '57'}
+57	57		104						500.0	{1: '0|200|-200', 2: '0.5'}
+58	58		401							{1: '2', 2: '2824'}
+59	59		301							{3: 'The fork screeches, prying at the joint bit by bit.'}
+60	60		302							{2: 'Just a little... more...', 3: '61'}
+61	61		401							{1: '2', 2: '18511011'}
+62	62		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+63	63		301							{3: 'Clang! The base of the fork suddenly breaks into two, and your cheek is cut by the broken edge due to inertia.'}
+64	64		301							{3: 'Fortunately, the handcuffs loosen significantly.'}
+65	65		104							{1: '0|0|0', 2: '0.5'}
+66	66		302							{2: '(Struggle to break free)', 3: '67'}
+67	67		401							{1: '2', 2: '2987'}
+68	68		502						500.0	{1: 'RImgBg1Shake'}
+69	69		401							{1: '2', 2: '13015304'}
+70	70		301							{3: 'Vigorously shaking your wrists, you finally pull out the handcuffs along with the nails on them.'}
+71	71		301				DialogDisable			{3: 'After moving your newly freed hand to wipe the blood off your face, you shift your focus to the other hand.'}
+72	72		302				AniZhuanchangBegin			{2: '(Pick up the broken fork)', 3: '73'}
+73	73		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+74	74		104							{1: '-400|230|-500', 2: '0'}
+75	75		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory787.jpg'}
+76	76		301			DialogEnable				{3: 'With one hand freed, the rest of the escape goes much smoother.'}
+77	77		302							{2: '(Work on the shackles on the legs next)', 3: '78'}
+78	78		301							{3: 'You bend down to inspect the shackles fixed to the floor and find them to be very sturdy but locked with a simple lock, which could be picked with a simple tool.'}
+79	79		302							"{2: ""Looks like I'll have to use this fork again."", 3: '80'}"
+80	80		301							{3: 'Could Lithos have overlooked that this fork would help your escape?'}
+81	81		302							{2: 'No. No way.', 3: '82'}
+82	82		301							{3: 'What he said and how he said it all point to one thing—this is a game planned in cahoots with the defectors from Babylonia.'}
+83	83		301							"{3: ""The game didn't start now—it began the moment you boarded that doomed transport craft.""}"
+84	84		302							{2: '...', 3: '85', 4: 'First, focus on now. Forget about those things.', 5: '85'}
+85	85		401							{1: '2', 2: '2767'}
+86	86		401							{1: '2', 2: '1516'}
+87	87		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+88	88		301				DialogDisable			"{3: ""The moment the shackles fall off due to the fork's tampering, slow footsteps approach from outside.""}"
+89	89		302							{2: '(Lithos?!)', 3: '90'}
+90	90		302				AniZhuanchangBegin			{2: '(Quick, hide!)', 3: '91'}
+91	91		306							{1: '1'}
+92	92		401							{1: '2', 2: '1516'}
+93	93		509							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 2: '2'}
+94	94		201							{1: '1', 2: '500514', 3: '2', 4: '-600'}
+95	95		502							{1: 'DialogEnable'}
+96	96		301			AniZhuanchangEnd				{1: '1', 2: 'Lithos', 3: '...', 4: '1'}
+97	97		301							"{3: ""Lithos steps into the room, spots the discarded shackles on the table, and isn't surprised in the slightest.""}"
+98	98		301							{2: 'Lithos', 3: 'Commandant?', 4: '1'}
+99	99		302							{2: '...', 3: '100'}
+100	100		301							{2: 'Lithos', 3: 'Hiding so quickly?', 4: '1'}
+101	101		301							{2: 'Lithos', 3: 'It seems those with memories are more stable, immediately knowing what they should do.', 4: '1'}
+102	102		302							{2: '(Those with memories?)', 3: '103'}
+103	103		301							{3: 'Twirling his long hair around his finger and wandering around the room, Lithos never opens the cabinet or searches under the table.'}
+104	104		301							{2: 'Lithos', 3: 'Gray Raven Commandant?', 4: '1'}
+105	105		301							{3: 'He whispers softly, edging closer to your hiding spot.'}
+106	106		301							{3: 'It turns out that in the haste to hide, a drop of your blood inadvertently fell nearby.'}
+107	107		302							{2: '(Oh crap...)', 3: '108'}
+108	108		204							{1: '1'}
+109	109		301							{2: 'Lithos', 3: '...', 4: '1'}
+110	110		301							{3: 'He stops in his tracks beside that drop of blood.'}
+111	111		302							{2: '...', 3: '112'}
+112	112		301							{2: 'Lithos', 3: 'What should I do now...', 4: '1'}
+113	113		302							{2: '...?', 3: '114'}
+114	114		301							"{2: 'Lithos', 3: ""It's even more dangerous out there..."", 4: '1'}"
+115	115		302							{2: '(Has he not noticed?)', 3: '116'}
+116	116		301							{2: 'Lithos', 3: 'Besides those children, Loki is there too. Running into her would be troublesome...', 4: '1'}
+117	117		301							"{2: 'Lithos', 3: ""But this is our last chance for Project Cthylla. Mister won't allow us to fail."", 4: '1'}"
+118	118		301							{3: 'He mutters to himself, resting his hand against the wall.'}
+119	119		204							{1: '1', 2: '2'}
+120	120		301							{2: 'Lithos', 3: 'Cthylla? Cthylla...', 4: '1'}
+121	121		301							{2: 'Lithos', 3: 'No. Mr. Monster, can you hear me?', 4: '1'}
+122	122		301							{3: 'The wall behind you suddenly becomes scorching hot.'}
+123	123		302							{2: '...?!', 3: '124'}
+124	124		301							"{2: 'Lithos', 3: 'I know it\'s hard, but please, you must help Cthylla control her ""cradle""...', 4: '1'}"
+125	125		301							{2: 'Lithos', 3: 'We must stop Loki from leaving that area at any cost.', 4: '1'}
+126	126		204							{1: '1', 2: '1'}
+127	127		301							{3: 'He turns his head in the direction of your gaze, revealing a meaningful smile.'}
+128	128		301				AniZhuanchangBegin			"{2: 'Lithos', 3: ""Paper Crane, let's go."", 4: '1'}"
+129	129		401						800.0	{1: '2', 2: '1516'}
+130	130		202							{1: '1', 6: '1'}
+131	131		301			AniZhuanchangEnd				{3: 'After his footsteps fade away, silence reclaims the space as if the burning sensation behind just now was but a bluff to intimidate.'}
+132	132		306							
+133	133		510							{1: '2'}
+134	134		301							{3: 'Barely able to support your body, you creep through the narrow crevice, realizing then how drained and feeble your body is.'}
+135	135		301				DialogDisable			{3: 'The same feelings hit you after you sustained injuries in the battle at the Pulia Forest Park Ruins, followed by a prolonged coma.'}
+136	136		302							{2: 'If only Gray Raven were here...', 3: '137'}
+137	137		302							{2: 'If they were here...', 3: '138'}
+138	138		201							{1: '1', 2: '1031001', 3: '3', 6: '30', 7: '1'}
+139	139		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+140	140		401							{1: '2', 2: '2576'}
+141	141		205							{1: '1', 3: '0.5', 4: '0.5', 5: '0'}
+142	142		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Commandant, your wounds...!', 4: '1'}
+143	143		302							{2: 'Liv?', 3: '144'}
+144	144		301							{3: 'Reaching out toward her figure, you only grasp the afterglow of light.', 4: '1'}
+145	145		104							{1: '-400|230|-550', 2: '1'}
+146	146		501							{1: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiGuanbixiaoshi.prefab', 2: '2', 4: '1'}
+147	147		202						2000.0	{1: '1', 7: '1'}
+148	148		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiGuanbixiaoshi.prefab'}
+149	149		302							{2: '...A hallucination?', 3: '150'}
+150	150		301							{3: 'Your state of confusion grows, unsure if the anomaly lies within yourself or in this mysterious space.'}
+151	151		301				DialogDisable			{3: 'You shake your head again, clearing the chaos from your mind.'}
+152	152		302							"{2: ""Now's not the time for nostalgia and sorrow."", 3: '153'}"
+153	153		302							"{2: ""They're still searching for me. I must hurry back."", 3: '154'}"
+154	154		302				AniZhuanchangBegin			"{2: ""Can't let them worry for too long."", 3: '155'}"
+155	155		401							{1: '1', 2: '36'}
+156	156		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory796.jpg'}
+157	157		502							{1: 'DialogEnable'}
+158	158		401							{1: '1', 2: '201'}
+159	159		301			AniZhuanchangEnd				{3: 'While the Gray Raven Commandant hunts for an exit unarmed, a weathered soldier hurries past the grim alley in the amusement park.'}
+160	160		201							{1: '1', 2: '500730'}
+161	161		301							{1: '1', 3: 'It is the third survivor to fall into the pit—Shorthalt of Scarab.'}
+162	162		301							{2: 'Shorthalt', 3: '...', 4: '1'}
+163	163		301							{3: 'How did Shorthalt come to this?'}
+164	164		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+165	165		202							{1: '1', 6: '1'}
+166	166		504							{1: '0.7'}
+167	167		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+168	168		301							{3: 'He still remembers the day he left the squad, when the Scarab Commandant, Valeria, called him into the operation room for a confidential mission.'}
+169	169		201							{1: '1', 2: '500730', 3: '12'}
+170	170		301							"{1: '1', 2: 'Shorthalt', 3: ""Project Cthylla? What's so important about a crazy project that was terminated long ago?"", 4: '1'}"
+171	171		202							{1: '1', 6: '1'}
+172	172		301							"{2: 'Valeria', 3: ""That theory and experiment might have been unthinkable during the Golden Age, but it's different for Ascendants. Hetero-Creatures have provided new possibilities.""}"
+173	173		201							{1: '1', 2: '500730', 3: '12'}
+174	174		301							{1: '1', 2: 'Shorthalt', 3: 'Any news?', 4: '1'}
+175	175		201							{1: '1', 2: '500374', 3: '20'}
+176	176		301							"{1: '1', 2: 'Yata', 3: ""Yeah, here's what we got from the Science Council and the Purifying Force. Hetero-Creatures are sprouting new variations, namely—"", 4: '1'}"
+177	177		201							{1: '1', 2: '500730', 3: '12'}
+178	178		301							"{1: '1', 2: 'Shorthalt', 3: ""Give me the gist. I can't handle lengthy reports."", 4: '1'}"
+179	179		202							{1: '1', 6: '1'}
+180	180		301							{2: 'Valeria', 3: 'The brass wants us to scope out these spots for anyone the Purifying Force is after.'}
+181	181		401							{1: '2', 2: '4051'}
+182	182		301							{3: 'She taps the terminal screen on the table with her fingertips.'}
+183	183		201							{1: '1', 2: '500730', 3: '12'}
+184	184		301							"{1: '1', 2: 'Shorthalt', 3: ""Why can't the Purifying Force handle it themselves?"", 4: '1'}"
+185	185		202							{1: '1', 6: '1'}
+186	186		301							{2: 'Valeria', 3: 'Those folks are all about secrecy, darting from one spot to the next.'}
+187	187		201							{1: '1', 2: '500730', 3: '12'}
+188	188		301							"{1: '1', 2: 'Shorthalt', 3: ""Ah, so they've got stealth scouts among them."", 4: '1'}"
+189	189		202							{1: '1', 6: '1'}
+190	190		301							"{2: 'Valeria', 3: ""Exactly, which is why this stays between us. We're hitting the road in two hours, splitting up, and sharing any intel pronto.""}"
+191	191		301							"{2: 'Shiva', 3: ""I've got a hunch someone's about to strike gold.""}"
+192	192		201							{1: '1', 2: '500374', 3: '20'}
+193	193		301							"{1: '1', 2: 'Yata', 3: ""Stay sharp, Shorthalt. Don't go poking your head out of a manhole only to stumble upon a bunch of Ascendants worshipping the Red Tide."", 4: '1'}"
+194	194		201							{1: '1', 2: '500730', 3: '12'}
+195	195		301							{1: '1', 2: 'Shorthalt', 3: 'Hmph, like that would ever happen to me.', 4: '1'}
+196	196		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+197	197		504							{1: '0'}
+198	198		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory796.jpg'}
+199	199		201							{1: '1', 2: '500730'}
+200	200		301							{1: '1', 2: 'Shorthalt', 3: '...', 4: '1'}
+201	201		301							"{3: ""Shiva's gut feelings are always dead-on.""}"
+202	202		504							{1: '0.7'}
+203	203		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+204	204		202							{1: '1', 6: '1'}
+205	205		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory222.png'}
+206	206		301							"{3: ""Just as she foresaw, that nondescript spot turned out to be one of Lithos' bases, where Shorthalt was caught in an ambush during his investigation.""}"
+207	207		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+208	208		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory220.png'}
+209	209		301							{3: 'Barely dodging the trap, he was double-crossed by a defector pretending to help, sending him back into the abyss.'}
+210	210		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+211	211		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory107.png'}
+212	212		301							{3: 'To bait Valeria into a rescue, the defector scattered his severed limbs in conspicuous spots, while Lithos kept him captive.'}
+213	213		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+214	214		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory796.jpg'}
+215	215		301							{3: 'After waking from a long coma, he has spent ages rummaging through piles of rubble for spare parts and weapons, hunting for an escape route.'}
+216	216		301							{3: 'In this twisted maze, he has wandered for endless days, losing track of time.'}
+217	217		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory793.jpg'}
+218	218		504							{1: '0'}
+219	219		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+220	220		201							{1: '1', 2: '500730', 7: '1'}
+221	221		301							{1: '1', 2: 'Shorthalt', 3: 'Phew...', 4: '1'}
+222	222		401							{1: '2', 2: '9351040'}
+223	223		301							{3: 'Shorthalt briefly puts down his weapon, leans against the corner, and slips a liquor-filled peppermint candy from the bottom of his pocket into his mouth.'}
+224	224		301							"{3: ""Valeria had given it to him before they split up. She knows Shorthalt has a soft spot for these little treats, though she isn't one to dole them out herself.""}"
+225	225		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+226	226		202							{1: '1', 6: '1'}
+227	227		504							{1: '0.7'}
+228	228		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+229	229		301							"{2: 'Valeria', 3: ""This mission's dicey. Don't get stuck in a fight too long.""}"
+230	230		301							"{2: 'Valeria', 3: ""If there's no progress in three days, come back, and we'll brainstorm a fresh strategy.""}"
+231	231		201							{1: '1', 2: '500730'}
+232	232		301							"{1: '1', 2: 'Shorthalt', 3: ""You're not brushing off Shiva's words, right? I won't return empty-handed."", 4: '1'}"
+233	233		202							{1: '1', 6: '1'}
+234	234		301							"{2: 'Valeria', 3: ""Fine. If you're missing in three days, I'll send Wanshi that video of you cuddling a medic bot, sloshed.""}"
+235	235		301							{3: 'That was the parting shot from Commandant Valeria.'}
+236	236		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+237	237		504							{1: '0'}
+238	238		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory796.jpg'}
+239	239		201							{1: '1', 2: '500730'}
+240	240		301							{1: '1', 2: 'Shorthalt', 3: '...', 4: '1'}
+241	241		301							{2: 'Shorthalt', 3: 'Wonder if I can score a memory fragment wipe for a friend.', 4: '1'}
+242	242		204							{1: '1', 2: '12'}
+243	243		401							{1: '1', 2: '36'}
+244	244		401							{1: '2', 2: '1513'}
+245	245		301							{3: 'Crunching on the sweet, Shorthalt gears up for a recon trip down south, only to catch hurried footsteps nearby.'}
+246	246		401							{1: '1', 2: '101'}
+247	247		301							{2: 'Shorthalt', 3: '...?', 4: '1'}
+248	248		401							{1: '2', 2: '4044'}
+249	249		301			RImgBg1Shake	AniZhuanchangBegin			"{3: ""In a flash, he's face to face with a somewhat familiar human, trailed by a monstrous Hetero-Creature.""}"
+250	250		501			DialogDisable				{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+251	251		302				AniZhuanchangEnd			{2: '...!', 3: '252'}
+252	252		301			DialogEnable				{2: 'Shorthalt', 3: 'Get down!', 4: '1'}
+253	253		203							{1: '1', 2: '0.2', 5: '-100'}
+254	254		401							{1: '2', 2: '4044'}
+255	255		202						500.0	{1: '1'}
+256	256		201							{1: '2', 2: '500745', 4: '-400'}
+257	257		201							{1: '1', 2: '500730', 3: '12', 4: '1000'}
+258	258		203						200.0	{1: '1', 2: '0.15', 3: '200'}
+259	259		401							{1: '2', 2: '631'}
+260	260		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+261	261		401							{1: '2', 2: '9342060'}
+262	262		301			RImgBg1Shake				{1: '1', 3: 'He pulls the already weary human into a tight hug, then lunges forward to jab the creature with his weapon.'}
+263	263		502							{1: 'PanelActor2Shake'}
+264	264		401							{1: '2', 2: '1505'}
+265	265		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryJianXue.prefab', 2: '3'}
+266	266		505						700.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+267	267		505							{1: 'PanelActor2Shake'}
+268	268		401							{1: '2', 2: '3077'}
+269	269		202							{1: '2'}
+270	270		301							{3: 'Red liquid splatters, and the monster drops.'}
+271	271		401							{1: '1', 2: '201'}
+272	272		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryJianXue.prefab'}
+273	273		203							{1: '1', 2: '0.25'}
+274	274		301							{2: 'Shorthalt', 3: 'What a surprise, finding the Gray Raven Commandant here in this shithole.', 4: '1'}
+275	275		302							{2: 'And you are...', 3: '276', 4: 'Shorthalt?', 5: '277'}
+276	276	278	301							"{2: 'Shorthalt', 3: ""I'm Shorthalt from Scarab."", 4: '1'}"
+277	277		301							"{2: 'Shorthalt', 3: ""Oh? You know me? I'm flattered."", 4: '1'}"
+278	278		302							{2: 'I heard from Bianca that you had passed away.', 3: '279'}
+279	279		301							{2: 'Shorthalt', 3: 'Hah...', 4: '1'}
+280	280		302							{2: 'Why are you here?', 3: '281'}
+281	281		301							"{2: 'Shorthalt', 3: ""It's a long story."", 4: '1'}"
+282	282		301							{3: 'He pulls out a candy from his pocket, contemplating eating it, then tossing it over.'}
+283	283		301							"{2: 'Shorthalt', 3: ""Take it. You'll need the energy."", 4: '1'}"
+284	284		302							{2: '...Thanks.', 3: '285'}
+285	285		301							"{2: 'Shorthalt', 3: ""Had I known there were survivors, I'd have brought more."", 4: '1'}"
+286	286		301							{3: 'He lets out a sigh as he briefly recounts what he went through.'}
+287	287		301							"{2: 'Shorthalt', 3: ""The small purple Ascendant didn't off me, just chopped me up and dumped me in a heap of rubble."", 4: '1'}"
+288	288		301							"{2: 'Shorthalt', 3: ""Commandant Valeria didn't expect me to be alive, did she? What about you?"", 4: '1'}"
+289	289		302							{2: '(Briefly recount what you went through)', 3: '290'}
+290	290		301							{2: 'Shorthalt', 3: 'The transport craft to Babylonia had an accident?', 4: '1'}
+291	291		301							{2: 'Shorthalt', 3: 'Seems like some folks are driven to desperate measures, willing to do anything.', 4: '1'}
+292	292		302							{2: 'What do you mean?', 3: '293'}
+293	293		301							{2: 'Shorthalt', 3: 'Those who escaped the Purifying Force.', 4: '1'}
+294	294		302							{2: 'How long have you been stuck here?', 3: '295'}
+295	295		301							"{2: 'Shorthalt', 3: ""Hard to say. Time doesn't seem to exist in this place. I figure it's been over a month, most of it spent knocked out cold."", 4: '1'}"
+296	296		302							{2: 'Any luck finding a way out in that time?', 3: '297'}
+297	297		301							"{2: 'Shorthalt', 3: ""Transport vehicles bring people in every now and then, but they're heavily guarded by Ascendants and all sorts of Hetero-Creatures, making them tough to approach."", 4: '1'}"
+298	298		301							{2: 'Shorthalt', 3: 'And lately, those vehicles have vanished altogether.', 4: '1'}
+299	299		302							{2: 'Is it always this chaotic here?', 3: '300'}
+300	300		301							"{2: 'Shorthalt', 3: ""Chaotic doesn't even begin to describe it. You see those illusion-like doors and floors too?"", 4: '1'}"
+301	301		302							{2: '(Nod)', 3: '302'}
+302	302		301							{2: 'Shorthalt', 3: '**** me, this place is like a maze, with doors floating all over, leading to who knows where.', 4: '1'}
+303	303		301							{2: 'Shorthalt', 3: 'Some are labs, others are orphanages, and there are even underground waterways. I thought my M.I.N.D. was playing tricks on me.', 4: '1'}
+304	304		301				DialogDisable			{2: 'Shorthalt', 3: 'But since you can see them too, it means this place has some serious real-world simulation going on.', 4: '1'}
+305	305		302							"{2: ""Maybe it's tied to Lithos."", 3: '306'}"
+306	306		302							"{2: '(Or maybe it\'s because I\'m undergoing ""M.I.N.D.ification."")', 3: '307'}"
+307	307		301			DialogEnable				{2: 'Shorthalt', 3: 'Yeah, Lithos has been popping up a lot lately. Every time I run into her, she pulls some slick move and vanishes, neither attacking nor letting me attack.', 4: '1'}
+308	308		301							"{2: 'Shorthalt', 3: ""And believe it or not, when I'm at my lowest, she shows up to lend a hand, like I'm her pet or something."", 4: '1'}"
+309	309		302							{2: '...', 3: '310'}
+310	310		301							"{2: 'Shorthalt', 3: ""Can't trust a word that guy says. You'd be smart not to take his words at face value."", 4: '1'}"
+311	311		301							"{2: 'Shorthalt', 3: ""She's all about deception and manipulation, so watch your back."", 4: '1'}"
+312	312		301							"{2: 'Shorthalt', 3: ""Hmph, can't believe she fed you that line about Gray Raven already rescuing your clone. Total hogwash. You've only been gone a few days, and your clone couldn't have grown up that fast and fooled Gray Raven, could it?"", 4: '1'}"
+313	313		301							"{2: 'Shorthalt', 3: ""Even if those researchers have ways to speed up a clone's growth, it couldn't be that rapid."", 4: '1'}"
+314	314		302							"{2: ""True enough... You've got a point."", 3: '315'}"
+315	315		301							"{2: 'Shorthalt', 3: ""Since we seem to be in this together, I've got a favor to ask."", 4: '1'}"
+316	316		302							{2: 'Go ahead.', 3: '317'}
+317	317		301				DialogDisable			"{2: 'Shorthalt', 3: ""Connect my M.I.N.D. I've been wandering around here for so long, my M.I.N.D. is turning into mush."", 4: '1'}"
+318	318		302				AniZhuanchangBegin			{2: 'Sure thing.', 3: '319'}
+319	319		501				AniZhuanchangEnd			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab', 2: '3'}
+320	320		401							{1: '2', 2: '2567'}
+321	321		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie2New.prefab', 2: '3'}
+322	322		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie3New.prefab', 2: '3'}
+323	323		501				AniZhuanchangBegin		500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie4New.prefab', 2: '3'}
+324	324		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab'}
+325	325		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie2New.prefab'}
+326	326		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie3New.prefab'}
+327	327		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie4New.prefab'}
+328	328		502							{1: 'DialogEnable'}
+329	329		301			AniZhuanchangEnd				{3: 'With the M.I.N.D. connection established, Shorthalt lets out a long sigh of relief.'}
+330	330		301							"{2: 'Shorthalt', 3: ""Ah, that's much better."", 4: '1'}"
+331	331		301							"{2: 'Shorthalt', 3: ""Hmm... Your Mind Beacon feels different from Commandant Valeria's."", 4: '1'}"
+332	332		301							{2: 'Shorthalt', 3: 'Every time I connect with her, I feel this restlessness, like I wanna pick a fight with someone.', 4: '1'}
+333	333		302							"{2: ""(That's news to me...)"", 3: '334', 4: '...?', 5: '334'}"
+334	334		301							"{2: 'Shorthalt', 3: ""Your Mind Beacon has this calmness that's way beyond your years. We should take it slow and not rush into things, which suits me just fine."", 4: '1'}"
+335	335		401						300.0	{1: '2', 2: '4044'}
+336	336		401							{1: '2', 2: '4044'}
+337	337		301							{3: 'He chuckles heartily, giving you a friendly pat on the back with his big hand.'}
+338	338		302							{2: 'Easy there, easy...', 3: '339', 4: 'Ouch ouch...', 5: '339'}
+339	339		301							"{2: 'Shorthalt', 3: ""Oh, sorry about that. Didn't realize you were hurt."", 4: '1'}"
+340	340		301							{3: 'Shorthalt regards you, whom Commandant Valeria had described as someone noteworthy, with the kind of look one gives to a patient.'}
+341	341		301							"{2: 'Shorthalt', 3: ""You're a lot different from what I imagined. I thought you'd be more of a tough-as-nails soldier type."", 4: '1'}"
+342	342		301							"{2: 'Shorthalt', 3: ""But hey, when you're stuck in a place like this, you gotta face reality."", 4: '1'}"
+343	343		301							"{2: 'Shorthalt', 3: ""For now, let's treat you like someone who's wounded. Take it easy and don't push yourself too hard like you used to. Keep that in mind, okay?"", 4: '1'}"
+344	344		302							{2: '...', 3: '345', 4: 'Got it, thanks.', 5: '345'}
+345	345		301							"{2: 'Shorthalt', 3: ""So, what's the plan now?"", 4: '1'}"
+346	346		302							{2: 'Can you reach out to the outside world?', 3: '347'}
+347	347		301				DialogDisable			{2: 'Shorthalt', 3: 'My terminal got tossed ages ago, along with all that junk in the disposal channel, and turned into scrap metal. Yours probably met the same fate.', 4: '1'}
+348	348		302							"{2: ""But I've got a tiny micro-terminal."", 3: '349'}"
+349	349		302							{2: 'Lee gave it to me for emergencies.', 3: '350'}
+350	350		302							"{2: ""It's hidden in the hem of my jacket, and might still be there unnoticed."", 3: '351'}"
+351	351		301			DialogEnable				"{3: ""Even if there's no signal 5000 meters under the sea, there might be some messages on the terminal that could come in handy.""}"
+352	352		302							{2: '(Lithos was the one who shared the information, so it might not be accurate...)', 3: '353'}
+353	353		301							{2: 'Shorthalt', 3: 'And here I was wondering why you were dressed so lightly. Turns out you got stripped down.', 4: '1'}
+354	354		302							"{2: 'Just lost the jacket.', 3: '355', 4: ""Let's not say things that could be taken the wrong way."", 5: '355'}"
+355	355		301							"{2: 'Shorthalt', 3: ""Alright, let's head back and find it. There might be some usable weapons in that pile of debris, better than you going unarmed."", 4: '1'}"
+356	356		302		1		AniZhuanchangBegin			{2: 'Alright.'}

@@ -1,0 +1,583 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory767.png'}
+2	2		401							{1: '1', 2: '229'}
+3	3		205				AniZhuanchangEnd			{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png', 3: '1', 4: '1', 5: '0'}
+4	4		401							{1: '2', 2: '213'}
+5	5		301			DialogEnable	AniZhuanchangBegin			{3: 'Among the Constructs, some lost their families and took this path because they had no choice. Some see themselves as weapons, as expendables. Others try to build new bonds so they can keep going on the ravaged battlefield.'}
+6	6		502						400.0	{1: 'DialogDisable'}
+7	7		402							{1: '213'}
+8	8		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory546.jpg'}
+9	9		201							{1: '1', 2: '500627'}
+10	10		301			DialogEnable				{1: '1', 3: 'Discord works like an efficient Purifying Force machine—hardworking, highly skilled, never complaining, never showing weakness or hesitation when ordered to kill her own kind. She never reaches out to people, never forms connections with others.'}
+11	11		301				AniZhuanchangBegin			"{3: ""Even when others make small talk with her, she can't find anything to share.""}"
+12	12		502						400.0	{1: 'DialogDisable'}
+13	13		205							{1: '1005', 3: '0', 4: '1', 5: '0'}
+14	14		202							{1: '1', 6: '1'}
+15	15		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+16	16		201							{1: '1', 2: '501076', 4: '-450'}
+17	17		201							{1: '2', 2: '500627', 4: '350'}
+18	18		301			DialogEnable				"{1: '1', 2: 'Lilako', 3: ""It's easy to understand. The Kurono side doesn't want any more ties to anything related to Polard. That includes you."", 4: '1'}"
+19	19		301				DialogDisable			{2: 'Lilako', 3: 'They just shook off those accusations in front of the World Government. No way would they risk giving anyone new leverage against them.', 4: '1'}
+20	20		401							{1: '2', 2: '4044'}
+21	21		203						250.0	{1: '1', 2: '0.2', 3: '-100'}
+22	22		203							{1: '1', 2: '0.2', 3: '-200'}
+23	23		301			DialogEnable	DialogDisable			{2: 'Lilako', 3: 'In short, you have a new employer from now on. I look forward to working with you, colleague.', 4: '1'}
+24	24		202							{1: '1', 6: '1'}
+25	25		203							{1: '2', 2: '0.25', 3: '0'}
+26	26		205						450.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.4'}
+27	27		301			DialogEnable				"{3: ""That's fine, Discord thinks.""}"
+28	28		301							"{3: ""Core work, secrets, big missions usually don't involve tools and supporting players.""}"
+29	29		301				AniZhuanchangBegin			{3: 'Even so, minor, sidelined roles still get hit by little bouts of trouble.'}
+30	30		502						400.0	{1: 'DialogDisable'}
+31	31		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '0', 5: '0'}
+32	32		205							{1: '1005'}
+33	33		202							{1: '2', 6: '1'}
+34	34		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg'}
+35	35		201							{1: '1', 2: '500019', 4: '-450'}
+36	36		201							{1: '2', 2: '500627', 4: '450'}
+37	37		301			DialogEnable				{1: '1', 2: 'Construct A', 3: 'Here for supplies?', 4: '1'}
+38	38		301							{2: 'Construct A', 3: 'Name and ID.', 4: '1'}
+39	39		301							{2: 'Discord', 3: '...', 4: '2'}
+40	40		301							{2: 'Construct A', 3: 'Department?', 4: '1'}
+41	41		301							{2: 'Discord', 3: 'The Purifying Force.', 4: '2'}
+42	42		202							{1: '2', 6: '1'}
+43	43		203							{1: '1', 2: '0.25'}
+44	44		301							"{2: 'Construct A', 3: ""Hah... so you're the new recruit in the Purifying Force."", 4: '1'}"
+45	45		203							{1: '1', 2: '0.25', 3: '300'}
+46	46		201							{1: '3', 2: '500028', 4: '-200'}
+47	47		301							{1: '1', 2: 'Construct B', 3: 'Hey, you again...', 4: '3'}
+48	48		401							{1: '2', 2: '4044'}
+49	49		203							{1: '3', 2: '0.25', 3: '-450'}
+50	50		203							{1: '1', 2: '0.25', 3: '450'}
+51	51		301			DialogShake				"{2: 'Construct A', 3: ""Get off me! Stop holding me back! They're the ones who executed XXX!"", 4: '1'}"
+52	52		301			PanelActor1Shake				"{2: 'Construct A', 3: ""If only, if only they'd held on a little longer, until backup arrived..."", 4: '1'}"
+53	53		301							"{2: 'Construct B', 3: ""XXX was already badly infected, beyond saving. You just couldn't accept that..."", 4: '3'}"
+54	54		202							{1: '1', 2: '3'}
+55	55		301							"{3: ""Discord can't make out what the name XXX really is.""}"
+56	56		201							{1: '1', 2: '500019', 4: '450'}
+57	57		201							{1: '2', 2: '500028', 4: '-450'}
+58	58		203							{1: '1', 2: '0.25', 3: '350'}
+59	59		203							{1: '2', 2: '0.25', 3: '-350'}
+60	60		301			RImgBg1Shake				{1: '1', 2: 'Construct A', 3: 'He was so good to everyone around him... what could he have possibly done wrong?! The Purifying Force is nothing but a bunch of executioners—cold, mindless tools!', 4: '1'}
+61	61		301							"{2: 'Construct B', 3: ""Sorry... XXX was his childhood friend. He's just... too heartbroken..."", 4: '2'}"
+62	62		202							{1: '1', 2: '2'}
+63	63		301							"{3: ""The same syllables repeat again. This time, Discord still doesn't catch them clearly. She tells herself it's because she doesn't think they're important.""}"
+64	64		301							"{3: ""Whether the accusations are right or even meant for her, Discord feels no urge to argue. She won't even remember the accuser's face.""}"
+65	65		401							{1: '2', 2: '4044'}
+66	66		201							{1: '1', 2: '500019', 4: '-500', 5: '-100'}
+67	67		201							{1: '2', 2: '501122', 4: '200', 5: '-100'}
+68	68		203							{1: '1', 2: '0.3', 3: '-290'}
+69	69		203							{1: '2', 2: '0.3', 3: '200', 4: '0'}
+70	70		502							{1: 'RImgBg1Shake'}
+71	71		301			PanelActor2Shake				"{1: '1', 3: ""Enraged by Discord's indifference, the Construct suddenly breaks free of their companion's grip, lunges forward, grabs her collar, and knocks off her mask.""}"
+72	72		301							{2: 'Construct A', 3: 'Say something! You tool!', 4: '1'}
+73	73		301							"{2: 'Construct A', 3: ""You kill other people's lovers, family, and friends without hesitation. Don't you have any of your own? Do you even understand the pain of losing someone you love?"", 4: '1'}"
+74	74		301			RImgBg1Shake				{2: 'Construct A', 3: 'Tell me, what is there left in this world that you care about?!', 4: '1'}
+75	75		401							{1: '2', 2: '4387'}
+76	76		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+77	77		202							{1: '1', 2: '2', 6: '1'}
+78	78		504							{1: '0.7'}
+79	79		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1158.jpg'}
+80	80		104							{1: '-155|-25|-400', 2: '0'}
+81	81		201							{1: '1', 2: '501126', 7: '1'}
+82	82		301							{1: '1', 2: 'Rosewater', 3: 'Is there really nothing left in this world that you care about?', 4: '1'}
+83	83		401							{1: '2', 2: '4388'}
+84	84		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+85	85		202							{1: '1', 6: '1'}
+86	86		504							{1: '0'}
+87	87		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg'}
+88	88		201							{1: '1', 2: '500019', 4: '-290', 7: '1'}
+89	89		201							{1: '2', 2: '501122', 4: '200', 7: '1'}
+90	90		301							{1: '1', 3: 'A flicker crosses her eyes, then fades back to nothing.'}
+91	91		401							{1: '2', 2: '4044'}
+92	92		203							{1: '1', 2: '0.25', 3: '-400'}
+93	93		203							{1: '2', 2: '0.25', 3: '400'}
+94	94		301				AniZhuanchangBegin			"{2: 'Discord', 3: ""I don't have... anything like that."", 4: '2'}"
+95	95		502							{1: 'DialogDisable'}
+96	96		202							{1: '1', 2: '2', 6: '1'}
+97	97		401						1000.0	{1: '1', 2: '36'}
+98	98		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1158.jpg'}
+99	99		401							{1: '1', 2: '120'}
+100	100		301			DialogEnable				{3: 'Rosewater always pushes children into the abyss like this. He rescues them, chooses them, but in the end, they often face fates worse than starving or dying on the streets.'}
+101	101		301							{3: 'Most lab mice are put down after the experiment ends. To spare them extra pain, the executioner picks the best way to carry it out.'}
+102	102		301				AniZhuanchangBegin			{3: 'These animals are gentle and submissive, capable only of letting out useless cries in their final moments of struggle.'}
+103	103		502						800.0	{1: 'DialogDisable'}
+104	104		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory759.jpg'}
+105	105		201							{1: '1', 2: '501079'}
+106	106		502							{1: 'DialogEnable'}
+107	107		301			DialogShake				{1: '1', 2: 'Palangoski', 3: 'The orphanage kids can never live like normal children again. You personally cut away their future!', 4: '1'}
+108	108		301							"{2: 'Palangoski', 3: ""You're a hypocrite. You used their innocence and ignorance to turn them into future killers."", 4: '1'}"
+109	109		202							{1: '1', 6: '1'}
+110	110		306							{1: '1'}
+111	111		301				DialogDisable			{1: '1', 3: 'He thought he was ready to bear that sin.'}
+112	112		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1158.jpg', 3: '0', 4: '1', 5: '0.4'}
+113	113		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1158.jpg'}
+114	114		205							{1: '999'}
+115	115		201							{1: '1', 2: '501125'}
+116	116		301			DialogEnable				{1: '1', 3: 'Going back to his old trade feels like a weight off. Maybe, just like Palangoski mocked, he is never meant for that line of work.'}
+117	117		202							{1: '1', 6: '1'}
+118	118		201							{1: '1', 2: '501136'}
+119	119		301							{1: '1', 3: 'For Rosewater, Discord is an exception. She reminds him of his guilt and offers him a chance to atone.'}
+120	120		301							"{3: ""It's only a moment of kindness. Through his gloves, he strokes the little lab mouse he handpicked. She shrinks and goes still in his palm, as if sensing a brief shelter.""}"
+121	121		301				DialogDisable			"{3: ""Her meek obedience is a polished blade. It reflects a victim's face and an abuser's too.""}"
+122	122		202							{1: '1'}
+123	123		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1189.jpg', 3: '0', 4: '1', 5: '0.4'}
+124	124		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1189.jpg'}
+125	125		205							{1: '999'}
+126	126		201							{1: '1', 2: '501125', 4: '400'}
+127	127		201							{1: '2', 2: '501136', 4: '-400'}
+128	128		301			DialogEnable	AniZhuanchangBegin			"{1: '1', 3: ""They rarely talk, but they're used to each other's company. Even sitting in silence at opposite ends of the dinner table has become their quiet ritual.""}"
+129	129		306							{1: '0'}
+130	130		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+131	131		502						400.0	{1: 'DialogDisable'}
+132	132		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1158.jpg'}
+133	133		301			DialogEnable				{3: 'Life at the intelligence post is plain, far plainer than before.'}
+134	134		301							{3: 'Their job is to blend the tailor shop into Las Prados like fish blending into water.'}
+135	135		201							{1: '1', 2: '501125', 4: '400'}
+136	136		201							{1: '2', 2: '501136', 4: '-400'}
+137	137		301							{1: '1', 2: 'Rosewater', 3: 'Maybe relax a bit... try smiling more.', 4: '1'}
+138	138		301							{2: 'Discord', 3: 'Is that an order?', 4: '2'}
+139	139		202							{1: '1', 2: '2'}
+140	140		306							{1: '1'}
+141	141		301							"{3: ""After so much training, Discord can't understand what everyday life means at first.""}"
+142	142		301							{3: 'She lives by the book. When it should be class time, she practices tailoring.'}
+143	143		301							"{3: ""Compared with Polard's instructors, Rosewater is patient, and he really knows tailoring.""}"
+144	144		301							"{3: ""He's good at reading a customer's build, guessing their job, and judging their tastes.""}"
+145	145		306							
+146	146		201							{1: '1', 2: '501125', 4: '400'}
+147	147		201							{1: '2', 2: '501136', 4: '-400'}
+148	148		301							"{1: '1', 2: 'Rosewater', 3: ""Teachers tend to crane their necks forward. Athletes have stronger chests and limbs. If someone's body is streamlined... look closely and decide if they're friend or foe."", 4: '1'}"
+149	149		301							{3: 'A good suit shows everything and hides everything.'}
+150	150		301							"{2: 'Rosewater', 3: ""Isn't there anything you want? Do you like sewing because of your life before you drifted?"", 4: '1'}"
+151	151		301							{3: 'He keeps his tone light as he digs through his long-hidden stash.'}
+152	152		301							"{2: 'Rosewater', 3: ""For generations we've made only the best suits, and only for people who truly fit the criteria."", 4: '1'}"
+153	153		301							{2: 'Rosewater', 3: 'This world revolves around the few who truly have the power to change it. For anyone with ambition, the goal is always to get as close to that center as possible.', 4: '1'}
+154	154		202							{1: '1', 2: '2', 6: '1'}
+155	155		301							{3: 'Silence.'}
+156	156		201							{1: '1', 2: '501125', 4: '400'}
+157	157		201							{1: '2', 2: '501136', 4: '-400'}
+158	158		301							"{1: '1', 2: 'Rosewater', 3: ""Maybe you'd like your own sewing machine, finer fabrics, premium embroidery thread?"", 4: '1'}"
+159	159		301							{3: 'Discord shakes her head.'}
+160	160		301							"{2: 'Rosewater', 3: ""I'll teach you everything I know. I can also teach you how to create freely..."", 4: '1'}"
+161	161		202							{1: '1', 2: '2'}
+162	162		301				DialogDisable			{3: 'He gives her time to think.'}
+163	163		202							{1: '2', 6: '1'}
+164	164		306							{1: '1'}
+165	165		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1200.jpg', 3: '0', 4: '1', 5: '0.4'}
+166	166		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1200.jpg'}
+167	167		205							{1: '999'}
+168	168		301			DialogEnable				"{3: ""She's thought about it many times. She's still confused about what she's lost and what she's gained now. She stares for a long time at a father and daughter passing outside the shop.""}"
+169	169		301				DialogDisable			{3: 'The girl, five or six, looks tired and rubs her eyes. Her tall, gentle father lifts her. They laugh and hug for a moment, then he carries her on his back.'}
+170	170		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1158.jpg', 3: '0', 4: '1', 5: '0.4'}
+171	171		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1158.jpg'}
+172	172		205							{1: '999'}
+173	173		301			DialogEnable				"{3: ""Rosewater's voice cuts off.""}"
+174	174		301							{3: 'He remembers the unspoken rule: with orphanage kids, you can bring them new food, new clothes, new toys, new books...'}
+175	175		301							{3: 'But you must not give them a hug.'}
+176	176		201							{1: '1', 2: '501125'}
+177	177		301				DialogDisable			{1: '1', 3: 'He forces a reassuring, apologetic look.'}
+178	178		306							{1: '0'}
+179	179		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.3'}
+180	180		301			DialogEnable				"{2: 'Rosewater', 3: ""(This isn't allowed.)"", 4: '1'}"
+181	181		301				DialogDisable			{2: 'Rosewater', 3: '(Of all things... this is forbidden.)', 4: '1'}
+182	182		202							{1: '1'}
+183	183		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '0.3'}
+184	184		301			DialogEnable				"{3: 'After going through trauma and abandonment, even a simple hug can trigger emotional dependence in children at the orphanage. As its long-time ""director,"" he knows exactly what\'s best for them and how clear and strict the rules must be.'}"
+185	185		301							"{3: ""Discord knows he's trying to keep his distance, so she gets up without fuss and walks away, as if she'd only said a simple goodnight.""}"
+186	186		201							{1: '1', 2: '501125', 4: '400'}
+187	187		201							{1: '2', 2: '501136', 4: '-400'}
+188	188		301							"{1: '1', 2: 'Discord', 3: ""Mr. Director, it's time for me to sleep."", 4: '2'}"
+189	189		401							{1: '2', 2: '13081710'}
+190	190		203							{1: '2', 2: '0.25', 3: '-600'}
+191	191		202						300.0	{1: '2'}
+192	192		401							{1: '2', 2: '4202'}
+193	193		203						250.0	{1: '1', 2: '0.3', 3: '450', 4: '-50'}
+194	194		301							{3: 'A wave of helplessness hits him. After he hears her gently close the door, he slumps into his chair.'}
+195	195		202							{1: '1'}
+196	196		301							"{3: ""He once thought he could make up for the past and build her a home again. But reality stands between them like a sharp, blood-soaked pair of scissors, cutting them apart in a way that can't be ignored.""}"
+197	197		301							"{3: ""All his effort so far, the results built on sacrifice and imbalance, the stains he can't wash away, have all woven into a road with no way back.""}"
+198	198		301							{3: 'The intelligence outpost is only a clumsy, laughable fix.'}
+199	199		201							{1: '1', 2: '501125'}
+200	200		301							{1: '1', 2: 'Rosewater', 3: '(What else... can I do?)', 4: '1'}
+201	201		301				AniZhuanchangBegin			{2: 'Rosewater', 3: '(For Discord... and for myself?)', 4: '1'}
+202	202		502							{1: 'DialogDisable'}
+203	203		202							{1: '1', 6: '1'}
+204	204		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+205	205		306							{1: '1'}
+206	206		401						2000.0	{1: '1', 2: '36'}
+207	207		401							{1: '1', 2: '278'}
+208	208		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory1181.jpg'}
+209	209		301			DialogEnable	DialogDisable			"{3: ""The weather turns cold. In past years, the old district would fill up with gamblers who lost everything at the casinos and had to sleep on the streets. Under martial law, even they're gone now.""}"
+210	210		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1190.jpg', 3: '0', 4: '1', 5: '0.4'}
+211	211		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1190.jpg'}
+212	212		205							{1: '999'}
+213	213		201							{1: '1', 2: '501136'}
+214	214		301			DialogEnable	DialogDisable			"{1: '1', 3: ""She doesn't know what the director has been rushing around doing these past days, nor does she care. Quietly, she switches on the hallway floor lamp, keeping up the pretense of normal life as ordered.""}"
+215	215		202							{1: '1'}
+216	216		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1189.jpg', 3: '0', 4: '1', 5: '0.4'}
+217	217		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1189.jpg'}
+218	218		205							{1: '999'}
+219	219		301			DialogEnable	DialogDisable			{3: 'It has been a week since they last shared dinner. She glances at the empty seat at the table, then looks away.'}
+220	220		202							{1: '1'}
+221	221		401							{1: '2', 2: '4090'}
+222	222		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1158.jpg', 3: '0', 4: '1', 5: '0.4'}
+223	223		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1158.jpg'}
+224	224		205							{1: '999'}
+225	225		301			DialogEnable				{3: 'Wind chimes ring. He pushes the door back open with snow still on his coat. He unwraps a package: a roll of fine silk ribbon.'}
+226	226		306							
+227	227		201							{1: '1', 2: '501125'}
+228	228		301							{1: '1', 2: 'Rosewater', 3: 'Discord, come here. I got you a gift.', 4: '1'}
+229	229		202							{1: '1'}
+230	230		301							{3: 'A gift. The girl looks bewildered.'}
+231	231		201							{1: '1', 2: '501125'}
+232	232		301							"{1: '1', 2: 'Rosewater', 3: ""It's your birthday today, isn't it?"", 4: '1'}"
+233	233		202							{1: '1'}
+234	234		301							"{3: ""Birthday—another word that was once familiar but now feels foreign to her. She doesn't know whether to nod.""}"
+235	235		201							{1: '1', 2: '501125'}
+236	236		301				DialogDisable			{1: '1', 2: 'Rosewater', 3: 'I remember it from your file.', 4: '1'}
+237	237		202							{1: '1', 6: '1'}
+238	238		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1158.jpg', 3: '0', 4: '1', 5: '1.5'}
+239	239		104						2000.0	{1: '-155|-25|-400', 2: '0', 4: '3'}
+240	240		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1158.jpg'}
+241	241		104							{1: '-155|-25|-400', 2: '0'}
+242	242		205							{1: '999'}
+243	243		104							{1: '0|0|0', 2: '0', 4: '3'}
+244	244		401							{1: '2', 2: '5865'}
+245	245		401							{1: '2', 2: '5866'}
+246	246		301			DialogEnable				{3: 'He leads her behind the workbench, lifts the hat from the center mannequin, and stitches on the final touch himself.'}
+247	247		401							{1: '2', 2: '5286'}
+248	248		301							"{3: ""The ribbon falls like a stream of stars. He's sure his skill hasn't slipped. That soft shine will draw admiring looks anywhere.""}"
+249	249		201							{1: '1', 2: '501125', 4: '400'}
+250	250		201							{1: '2', 2: '501136', 4: '-400'}
+251	251		301							{1: '1', 2: 'Rosewater', 3: 'Same as the suit in the window. Only the finest materials.', 4: '1'}
+252	252		301							"{3: ""Proud, he sets the finished mannequin beside the shop's crown jewel in the display window so they can admire them together.""}"
+253	253		204							{1: '2', 2: '14'}
+254	254		301							"{2: 'Discord', 3: ""It's so pretty..."", 4: '2'}"
+255	255		301							{3: 'The girl gasps in admiration at the exquisite dress before her.'}
+256	256		202							{1: '1', 2: '2'}
+257	257		306							{1: '1'}
+258	258		301							{3: 'It looks as if it stepped out of an oil painting, noble and refined.'}
+259	259		301							{3: 'The fabric is silky smooth with a subtle shimmer. Fine lace trims the neckline and cuffs, while the bodice is shaped by delicate, three-dimensional pleats. The skirt billows outward in soft, cascading layers, like blue roses just beginning to bloom at daybreak—each layer edged with silver-embroidered trim.'}
+260	260		301							{3: 'In the display window, a suit stands beside it—majestic, commanding, the very image of royal perfection. Even the wealthiest clients she once saw at the workshop never wore anything of such genuine quality.'}
+261	261		301							{3: 'The girl knows the shopkeeper almost never brings customers to this part of the store.'}
+262	262		306							
+263	263		201							{1: '2', 2: '501136', 4: '-350'}
+264	264		201							{1: '1', 2: '501125', 4: '350'}
+265	265		301							"{1: '1', 2: 'Rosewater', 3: ""Don't you want to try it on?"", 4: '1'}"
+266	266		301							"{3: ""He stands shoulder to shoulder with Discord. The reflection in the glass almost makes it look like they're already wearing the finery.""}"
+267	267		401							{1: '2', 2: '5286'}
+268	268		203							{1: '2', 2: '0.4', 3: '-400'}
+269	269		301							{3: 'To his surprise, the girl steps back twice and shakes her head, shattering the illusion.'}
+270	270		202							{1: '1', 2: '2', 6: '1'}
+271	271		401							{1: '2', 2: '4387'}
+272	272		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+273	273		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1159.jpg'}
+274	274		504							{1: '0.7'}
+275	275		201							{1: '1', 2: '501121', 7: '1'}
+276	276		301							{1: '1', 3: 'The mannequin, draped in the gown and topped with a formal hat, looks so much like the friend she once depended on most. But that friend is no longer here, no longer speaking to her in that soft, patient voice.'}
+277	277		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+278	278		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1158.jpg'}
+279	279		104							{1: '-155|-25|-400', 2: '0'}
+280	280		504							{1: '0'}
+281	281		202							{1: '1', 6: '1'}
+282	282		201							{1: '2', 2: '501136', 4: '-400', 7: '1'}
+283	283		201							{1: '1', 2: '501125', 4: '350', 7: '1'}
+284	284		301							{1: '1', 3: 'She has to face that reality.'}
+285	285		301							{2: 'Rosewater', 3: 'Clothes make the person.', 4: '1'}
+286	286		301							{2: 'Rosewater', 3: 'As a tailor, I always believe that good, well-fitted clothing can bring better days.', 4: '1'}
+287	287		301							{3: 'He convinces himself that the girl deserves better—that she should have just as much as anyone else.'}
+288	288		301							{3: 'Maybe this dress can take the place of his embrace.'}
+289	289		204							{1: '2', 2: '14'}
+290	290		301							"{2: 'Discord', 3: 'There have never been any ""better days""...', 4: '2'}"
+291	291		202							{1: '1', 2: '2'}
+292	292		301							"{3: ""But in this life, that's almost like house arrest. They just keep playing the roles assigned to them.""}"
+293	293		301							{3: 'This life? Just another mission. Just another intel op.'}
+294	294		301							{3: 'There will always come a moment when every false mask is taken off.'}
+295	295		201							{1: '1', 2: '501125', 3: '7', 4: '350'}
+296	296		201							{1: '2', 2: '501136', 4: '-350'}
+297	297		301							"{1: '1', 2: 'Discord', 3: ""I don't care what I wear anyway."", 4: '2'}"
+298	298		301							{3: 'Rosewater is speechless. After a long pause, he finally speaks, sounding defeated.'}
+299	299		204							{1: '1'}
+300	300		301							{2: 'Rosewater', 3: 'Is there really nothing left in this world that you care about...?', 4: '1'}
+301	301		301							{3: 'The girl stands straight, eyes forward, calmly awaiting punishment, just as when she faced the instructors—just as she always has, every time.'}
+302	302		202							{1: '1', 2: '2'}
+303	303		301							"{3: ""Care? Weren't they the ones who trained them to care only about missions and objectives?""}"
+304	304		301							{3: 'Rosewater regrets his words instantly, shame twisting his face.'}
+305	305		401							{1: '2', 2: '4892'}
+306	306		301			RImgBg1Shake				{3: 'He suddenly gets to his feet and rushes to his meticulously organized desk. In a frenzy, he empties it drawer by drawer, throwing everything onto the floor.'}
+307	307		301							"{3: ""The girl's usually calm face changes. Her mouth hangs open as she watches it all happen.""}"
+308	308		401							{1: '2', 2: '4893'}
+309	309		401							{1: '2', 2: '2987'}
+310	310		301							{3: 'From the very back of the bottom drawer, he pulls out a small box, fiddles with its hidden mechanism, and takes out a tiny key. Like a madman, he runs to the glass cabinet, unlocks it, and rips the ornate suit from the mannequin.'}
+311	311		201							{1: '1', 2: '501125', 3: '7'}
+312	312		301							{1: '1', 2: 'Rosewater', 3: 'This was my proudest masterpiece... my only treasure in this corner of the universe...!', 4: '1'}
+313	313		301			DialogShake				{2: 'Rosewater', 3: 'Do you have any idea how special this is?', 4: '1'}
+314	314		202							{1: '1'}
+315	315		401						150.0	{1: '2', 2: '5865'}
+316	316		401							{1: '2', 2: '5866'}
+317	317		301							{3: 'He grabs his long-handled scissors and, in the blink of an eye, shreds both the one-of-a-kind suit and the freshly made gown to pieces.'}
+318	318		502							{1: 'RImgBg1Shake'}
+319	319		401							{1: '2', 2: '2987'}
+320	320		401							{1: '2', 2: '4892'}
+321	321		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '1'}
+322	322		301							{3: 'Fabric scraps, loose threads, and tufts of cotton fill the air like a blizzard. Heavy golden buttons hit the floor, rolling across the carpet with soft clicks. The tailor shop looks as if it is buried under a storm of tattered snow.'}
+323	323		301							{3: 'The mannequin stands bare and alone in the middle of the mess, its stillness like a silent actor mocking the scene.'}
+324	324		201							{1: '1', 2: '501136'}
+325	325		301							{1: '1', 3: 'Discord stands frozen, letting the scraps and threads settle on her hair and shoulders. Somehow, they feel more dangerous than falling silver forks.'}
+326	326		301				AniZhuanchangBegin			{3: 'Her lips part slightly, but no sound comes out.'}
+327	327		202							{1: '1', 6: '1'}
+328	328		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+329	329		502						300.0	{1: 'DialogDisable'}
+330	330		502							{1: 'AniZhuanchangEnd'}
+331	331		201							{1: '1', 2: '501125', 4: '400'}
+332	332		201							{1: '2', 2: '501136', 4: '-400'}
+333	333		301			DialogEnable				{1: '1', 2: 'Discord', 3: '...', 4: '2'}
+334	334		301							{2: 'Rosewater', 3: 'Looking at it was the only way I could keep believing that humanity is always improving... always moving toward something better.', 4: '1'}
+335	335		202							{1: '1', 2: '2'}
+336	336		301							{3: 'The fabric is made in runs of just twenty-three meters a year, over seven hundred top-grade textiles combined, stitched with platinum needles. A suit like this could only be worn by the oldest, wealthiest royal families.'}
+337	337		301							"{3: ""But now, he doesn't have the strength to list those meaningless accolades one by one.""}"
+338	338		201							{1: '1', 2: '501125', 3: '7'}
+339	339		301							{1: '1', 3: 'The tailor breathes hard, his eyes red as he stares down at the broken threads and fabric pieces in his hands.'}
+340	340		203							{1: '1', 2: '0.25', 3: '400'}
+341	341		201							{1: '2', 2: '501136', 3: '14', 4: '-400'}
+342	342		301							"{1: '1', 3: ""The girl trembles, then shudders, breathing in short bursts. She doesn't look at him.""}"
+343	343		301							{2: 'Discord', 3: 'Why...?', 4: '2'}
+344	344		301			PanelActor1Shake				"{2: 'Rosewater', 3: ""I... I don't know."", 4: '1'}"
+345	345		202							{1: '1', 2: '2'}
+346	346		301							{3: 'She feels nothing. No hope for the future.'}
+347	347		201							{1: '1', 2: '501125', 4: '400'}
+348	348		201							{1: '2', 2: '501136', 4: '-400'}
+349	349		301							{1: '1', 2: 'Rosewater', 3: 'Be a good girl and forget everything that happened tonight.', 4: '1'}
+350	350		301							{2: 'Rosewater', 3: 'Be a child...', 4: '1'}
+351	351		301							{2: 'Rosewater', 3: 'May the Lord... may the Lord forgive us...', 4: '1'}
+352	352		202							{1: '1', 2: '2'}
+353	353		301				AniZhuanchangBegin			{3: 'Rosewater says nothing more and walks her back to her room.'}
+354	354		502							{1: 'DialogDisable'}
+355	355		401						2000.0	{1: '1', 2: '36'}
+356	356		401							{1: '1', 2: '6230'}
+357	357		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+358	358		307			AniZhuanchangEnd				{1: 'Hurry up! Move faster!', 3: '60'}
+359	359		301							{3: 'Hurry up! Move faster!'}
+360	360		307							{2: '1'}
+361	361		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1158.jpg', 3: '0', 4: '1', 5: '1'}
+362	362		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1158.jpg'}
+363	363		205							{1: '999'}
+364	364		401							{1: '2', 2: '754'}
+365	365		401							{1: '2', 2: '4294'}
+366	366		301			DialogEnable				{3: 'The snowy day is silent as ever. The wind chimes of fate echo again through the streets of the old district, which is far removed from any trace of prosperity.'}
+367	367		401							{1: '2', 2: '10022001'}
+368	368		201							{1: '1', 2: '501125', 3: '7'}
+369	369		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+370	370		301				DialogDisable			{1: '1', 3: 'There are always countless ways to explain why something happens. Humans always feel the need to give meaning to the things we cannot understand.'}
+371	371		202							{1: '1', 6: '1'}
+372	372		401							{1: '2', 2: '5321'}
+373	373		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '3'}
+374	374		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+375	375		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+376	376		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+377	377		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5201_02.jpg'}
+378	378		104							{1: '0|-150|-300', 2: '0'}
+379	379		401							{1: '2', 2: '4806'}
+380	380		301			DialogEnable				{2: 'Rosewater', 3: '(At least...)'}
+381	381		104							{1: '0|0|0', 2: '5'}
+382	382		301						2500.0	"{3: ""Blood froth fills his throat as his life leaks away little by little. With regret, he realizes there's no time left to say goodbye.""}"
+383	383		301						2500.0	{2: 'Rosewater', 3: '(Tell... tell Discord...)'}
+384	384		301							"{2: 'Eleanor', 3: ""Trying to get my dress dirty too? Don't be so stingy now.""}"
+385	385		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5201_03.jpg', 3: '0', 4: '1', 5: '1'}
+386	386		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront87.png', 3: '0', 4: '1', 5: '1'}
+387	387		401							{1: '2', 2: '2593'}
+388	388		301			RImgBg1Shake	AniZhuanchangBegin			{2: 'Rosewater', 3: '(Reality... really is... nothing but a pair of scissors...)'}
+389	389		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+390	390		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+391	391		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1181.jpg'}
+392	392		502							{1: 'DialogDisable'}
+393	393		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.9', 4: '0.9', 5: '0'}
+394	394		504							{1: '0.7'}
+395	395		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '3'}
+396	396		401						2000.0	{1: '1', 2: '36'}
+397	397		401							{1: '1', 2: '120'}
+398	398		307			AniZhuanchangEnd				{1: 'Merry Christmas, Mr. Rosewater.', 3: '50', 4: 'ffffffff'}
+399	399		301							{3: 'Merry Christmas, Mr. Rosewater.'}
+400	400		307							{2: '1'}
+401	401		301			DialogEnable				{3: 'The famous tailor of the old district lies dead in a pool of blood. Karmic justice. His human experimentation projects end with him.'}
+402	402		301							{3: 'Half a lifetime of effort has become a dream steeped in sin, fading like mist.'}
+403	403		301				DialogDisable			{3: 'Huge scissors hang overhead...'}
+404	404		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+405	405		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+406	406		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+407	407		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1158.jpg'}
+408	408		201							{1: '1', 2: '501125', 4: '450', 7: '1'}
+409	409		201						1000.0	{1: '2', 2: '501136', 4: '-450', 7: '1'}
+410	410		401							{1: '2', 2: '5866'}
+411	411		111						50.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieCai02.prefab'}
+412	412		202							{1: '1', 2: '2', 6: '1'}
+413	413		101						3200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+414	414		301			DialogEnable	AniZhuanchangBegin			{3: 'Their fates are severed in that instant.'}
+415	415		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieCai01.prefab'}
+416	416		502							{1: 'DialogDisable'}
+417	417		504							{1: '0'}
+418	418		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+419	419		401							{1: '2', 2: '2692'}
+420	420		307							"{1: '<b>Regrettably, ""Embroidery Scissors"" is already deceased.</b>', 3: '65', 6: '1'}"
+421	421		301							"{3: 'Regrettably, ""Embroidery Scissors"" is already deceased.'}"
+422	422		307							{2: '1'}
+423	423		401							{1: '2', 2: '4388'}
+424	424		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+425	425		205							{1: '1004'}
+426	426		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg'}
+427	427		401							{1: '2', 2: '4044'}
+428	428		502							{1: 'RImgBg1Shake'}
+429	429		201							{1: '1', 2: '500019', 4: '-450', 7: '1'}
+430	430		201							{1: '2', 2: '501122', 4: '200', 7: '1'}
+431	431		203							{1: '1', 2: '0.25', 3: '-290'}
+432	432		301			DialogEnable				"{1: '1', 3: ""Flames sear her skin. Ash from burning cloth drifts before her eyes. Discord snaps out of the verdict and a Construct's fist is already swinging at her.""}"
+433	433		306							{1: '1'}
+434	434		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2', 5: '1'}
+435	435		511							{1: '1', 2: '0', 3: '310|112|100'}
+436	436		301							{3: 'She lowers her gaze and decides to take the punch head-on.'}
+437	437		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 5: '1'}
+438	438		306							{1: '0'}
+439	439		401							{1: '2', 2: '5286'}
+440	440		203							{1: '1', 2: '0.25', 3: '-650'}
+441	441		203							{1: '2', 2: '0.25', 3: '650'}
+442	442		201							{1: '3', 2: '500730'}
+443	443		301							{1: '1', 3: 'Unexpectedly, the blow never lands.'}
+444	444		301							"{2: '??', 3: ""Throwing a punch just because someone won't talk? Staying quiet is good. Trouble comes from a loose tongue."", 4: '3'}"
+445	445		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+446	446		201							{1: '4', 2: '500567'}
+447	447		301							{1: '1', 2: 'Passing Construct', 3: 'Shorthalt, I remember you being quite the chatterbox.', 4: '4'}
+448	448		201							{1: '4', 2: '500730', 7: '1'}
+449	449		301							{1: '1', 2: 'Shorthalt', 3: 'Oh? Is being talkative a crime now?', 4: '4'}
+450	450		202							{1: '4'}
+451	451		301							"{3: ""A tall Construct neutralizes the force of the punch and smoothly blocks the attacker who's lost control. Knowing they're in the wrong, the attacker's companion keeps apologizing while shoving and dragging him away.""}"
+452	452		201							{1: '1', 2: '500730', 4: '450'}
+453	453		201							{1: '2', 2: '500028', 4: '-450'}
+454	454		301				DialogDisable			"{1: '1', 2: 'Shorthalt', 3: ""Don't take this lightly. Make sure you take him to the Star of Life."", 4: '1'}"
+455	455		202							{1: '2'}
+456	456		203						600.0	{1: '1', 2: '0.4', 3: '-200'}
+457	457		201							{1: '2', 2: '501122', 4: '450'}
+458	458		203						400.0	{1: '1', 2: '0.4', 3: '-50'}
+459	459		401						200.0	{1: '2', 2: '4044'}
+460	460		401						200.0	{1: '2', 2: '4044'}
+461	461		203							{1: '1', 2: '0.3', 3: '-275'}
+462	462		301			DialogEnable				{3: 'After he finishes, Shorthalt pats her shoulder and waves the onlookers away.'}
+463	463		301							"{2: 'Shorthalt', 3: ""Show's over. Move along."", 4: '1'}"
+464	464		202							{1: '1', 2: '2', 6: '1'}
+465	465		201							{1: '4', 2: '500567'}
+466	466		301							"{1: '1', 2: 'Passing Construct', 3: ""Hah. The Purifying Force is nothing. If you run into the Scarabs, you won't even know what hit you before you're dead."", 4: '4'}"
+467	467		202							{1: '4', 6: '1'}
+468	468		201							{1: '1', 2: '500730', 4: '-450'}
+469	469		201							{1: '2', 2: '501122', 4: '450'}
+470	470		301							{1: '1', 2: 'Discord', 3: '...', 4: '2'}
+471	471		301							{2: 'Shorthalt', 3: 'Huh? Is that what we need to hear right now?!', 4: '1'}
+472	472		301							{2: 'Shorthalt', 3: 'Move along. Go on.', 4: '1'}
+473	473		202							{1: '1', 2: '2'}
+474	474		401							{1: '2', 2: '5286'}
+475	475		301							{3: 'Shorthalt picks up the mask that had fallen to the ground and hands it back to her.'}
+476	476		301				AniZhuanchangBegin			{3: 'Discord looks up at the stranger, hesitates, and misses her chance to say thanks.'}
+477	477		502							{1: 'DialogDisable'}
+478	478		202							{1: '1', 2: '2', 6: '1'}
+479	479		401						2000.0	{1: '1', 2: '36'}
+480	480		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory547.jpg'}
+481	481		401							{1: '2', 2: '4264'}
+482	482		401							{1: '1', 2: '229'}
+483	483		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+484	484		502							{1: 'DialogEnable'}
+485	485		301			RImgBg1Shake				{3: 'The second time she sees Shorthalt is on a ravaged battlefield after a mission. Discord remembers searching for something she lost, but by the end she has forgotten what it was.'}
+486	486		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+487	487		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+488	488		301							{3: 'She wanders among the wreckage of Constructs, her eyes unable to focus.'}
+489	489		201							{1: '2', 2: '500627'}
+490	490		301							"{1: '1', 2: 'Discord', 3: ""Constructs... are weapons. Expendable. Humanity's hope to reclaim Earth..."", 4: '2'}"
+491	491		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+492	492		301							{3: 'She keeps repeating the new rules and protocols uploaded into her mind.'}
+493	493		203							{1: '2', 2: '0.25', 3: '-400'}
+494	494		201							{1: '1', 2: '500730', 4: '450'}
+495	495		301							"{1: '1', 2: 'Shorthalt', 3: ""Oh, it's you?"", 4: '1'}"
+496	496		401							{1: '2', 2: '13081709'}
+497	497		203							{1: '1', 2: '0.25', 3: '450', 4: '-50'}
+498	498		301							{2: 'Shorthalt', 3: 'Lost something? I can help you look.', 4: '1'}
+499	499		202							{1: '1', 2: '2'}
+500	500		301				DialogDisable			"{3: ""Shorthalt's face is heavy. He doesn't paw through the remains like trash. He lifts them onto his broad shoulders as if they were comrades.""}"
+501	501		306							{1: '1'}
+502	502		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg', 3: '0', 4: '1', 5: '0.3'}
+503	503		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg'}
+504	504		205							{1: '999'}
+505	505		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory566.jpg', 3: '0', 4: '1', 5: '0.3'}
+506	506		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory566.jpg'}
+507	507		205							{1: '999'}
+508	508		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg', 3: '0', 4: '1', 5: '0.3'}
+509	509		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+510	510		205							{1: '999'}
+511	511		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg', 3: '0', 4: '1', 5: '0.3'}
+512	512		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg'}
+513	513		205							{1: '999'}
+514	514		306							
+515	515		301			DialogEnable				{3: 'Time blurs. Discord almost gives up and numbly follows him through one scene of ruin after another.'}
+516	516		201							{1: '1', 2: '500730', 4: '450'}
+517	517		201							{1: '2', 2: '500627', 4: '-400'}
+518	518		301							"{1: '1', 2: 'Shorthalt', 3: ""...I remember they picked a fight with you. Why didn't you fight back? Are you even human?"", 4: '1'}"
+519	519		301							"{2: 'Discord', 3: ""I'm a Construct, part of the Purifying Force."", 4: '2'}"
+520	520		301							"{2: 'Shorthalt', 3: ""No, I mean before you became a Construct. We aren't born with metal arms and legs."", 4: '1'}"
+521	521		301							{2: 'Shorthalt', 3: '...', 4: '1'}
+522	522		301							{2: 'Shorthalt', 3: 'You must have a name, right? Your human name.', 4: '1'}
+523	523		301							{2: 'Discord', 3: '...My name is Discord.', 4: '2'}
+524	524		301							"{2: 'Shorthalt', 3: ""I'm Shorthalt. We're all people. We all have names. There's no real difference."", 4: '1'}"
+525	525		301							"{2: 'Shorthalt', 3: ""We're not weapons, and we're not expendables."", 4: '1'}"
+526	526		203						400.0	{1: '1', 2: '0.4', 3: '250', 6: '1'}
+527	527		401						100.0	{1: '2', 2: '2936'}
+528	528		203						200.0	{1: '1', 2: '0.4', 3: '450'}
+529	529		301							{3: 'He folds his hands, tucks away a bundle of sorted dog tags, then solemnly places a thin metal tag in her palm.'}
+530	530		301							{2: 'Shorthalt', 3: 'See? You do have something you value.', 4: '1'}
+531	531		202							{1: '1', 2: '2'}
+532	532		306							{1: '1'}
+533	533		301							{3: 'Discord studies the small, cleaned tag. The thin cord is broken. Old bloodstains still sit in the grooves, turned deep brown.'}
+534	534		301							"{3: ""Her name is engraved on it, but she can't recall any memory tied to it.""}"
+535	535		306							
+536	536		201							{1: '1', 2: '500730', 4: '450'}
+537	537		201							{1: '2', 2: '500627', 4: '-400'}
+538	538		301							{1: '1', 3: 'Watching her fall silent, Shorthalt sighs.'}
+539	539		301							"{2: 'Shorthalt', 3: ""I know everyone is different, there can be individual differences... but in your case, hmm... I had some ice cream the day before yesterday, and right now you're like a bowl of ice cream that's frozen solid..."", 4: '1'}"
+540	540		301							"{2: 'Shorthalt', 3: ""You're from Kurono, right? A Kurono-made Construct?"", 4: '1'}"
+541	541		301							{2: 'Discord', 3: '...', 4: '2'}
+542	542		301							"{2: 'Shorthalt', 3: ""Easy. No need to be on guard. I don't have a grudge against you."", 4: '1'}"
+543	543		301							{2: 'Shorthalt', 3: 'I used to be a cop. Sorry, occupational habit.', 4: '1'}
+544	544		301							{3: 'Getting no answer, the big guy rubs his not-quite-stubbly chin.'}
+545	545		301							"{2: 'Shorthalt', 3: ""I have things I care about too... Where's the candy V gave me?"", 4: '1'}"
+546	546		301							{3: 'He digs in his pockets and pulls out a torn candy wrapper, then stuffs it back, embarrassed.'}
+547	547		301							{2: 'Shorthalt', 3: 'Back in the Education District, I met a bunch of brats who got into trouble every other day!', 4: '1'}
+548	548		301							{2: 'Shorthalt', 3: 'And before I knew it, I got attached to them.', 4: '1'}
+549	549		301							{2: 'Discord', 3: '...', 4: '2'}
+550	550		202							{1: '2', 6: '1'}
+551	551		201							{1: '2', 2: '501122', 4: '-400'}
+552	552		301							{1: '1', 2: 'Discord', 3: 'I... used to be a tailor.', 4: '2'}
+553	553		301							"{3: ""She's not used to this easy tone. She stammers it out, then sees him smile.""}"
+554	554		301				AniZhuanchangBegin			{2: 'Shorthalt', 3: 'Got it. When you find the things you care about again, tell me about them.', 4: '1'}
+555	555		502							{1: 'DialogDisable'}
+556	556		402							{1: '4264'}
+557	557		202							{1: '1', 2: '2', 6: '1'}
+558	558		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab'}
+559	559		505						500.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+560	560		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+561	561		301			DialogEnable				"{3: ""The last time she hears Shorthalt's name is in Commander Nikola's transfer order.""}"
+562	562		201							{1: '1', 2: '501076'}
+563	563		301							{1: '1', 2: 'Lilako', 3: 'Just like that, he was gone and left behind all the things he said he cared about.', 4: '1'}
+564	564		301							{2: 'Lilako', 3: 'And you? Think about it. What happens to the things you cared about?', 4: '1'}
+565	565		202							{1: '1'}
+566	566		301							"{3: 'After the ground mission in Las Prados, the ice cream\'s ""frozen solid"" problem gets worse.'}"
+567	567		301							{3: 'Her frame is fully repaired, smooth and flawless, yet at random times pain signals fire, and her vital fluid suddenly leaks.'}
+568	568		201							{1: '1', 2: '501076', 4: '-400'}
+569	569		201							{1: '2', 2: '500627', 4: '400'}
+570	570		301							{1: '1', 2: 'Lilako', 3: 'Phantom sight, phantom smell, and phantom pain.', 4: '1'}
+571	571		301							{2: 'Discord', 3: 'Should I follow the order to join the Scarabs, or stay with the Purifying Force?', 4: '2'}
+572	572		301							{3: 'The goal of her long search is gone. From now on, what will she live for?'}
+573	573		301							"{2: 'Lilako', 3: ""You don't need to choose. Once you choose, you carry that choice. Can you carry it?"", 4: '1'}"
+574	574		301							{2: 'Discord', 3: 'I should always... complete the mission.', 4: '2'}
+575	575		301							{2: 'Lilako', 3: 'To complete the mission, you only need to be simple and efficient.', 4: '1'}
+576	576		301							"{2: 'Lilako', 3: ""Stay the same. Doing nothing often works best. Keep to the shadows, don't try to stand out. That's how you live the longest."", 4: '1'}"
+577	577		202							{1: '1', 2: '2'}
+578	578		306							{1: '1'}
+579	579		301							{3: 'Her urge goes the other way. A pull toward self-destruction keeps pushing her to find a weapon strong enough to pierce her chest, or to stop maintaining her frame.'}
+580	580		301							"{3: ""Sadly, in Babylonia those things aren't easy to do.""}"
+581	581		306							
+582	582		301		1		AniZhuanchangBegin			{3: 'So she starts drifting toward more dangerous battlefields without thinking.'}

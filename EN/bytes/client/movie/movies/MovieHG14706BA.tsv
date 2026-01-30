@@ -1,0 +1,184 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory235.png'}
+2	2		401							{1: '1', 2: '169'}
+3	3		401							{1: '2', 2: '2987'}
+4	4		201							{1: '1', 2: '500934'}
+5	5		301			DialogEnable				{1: '1', 2: 'Wanshi', 3: 'Okay... That should do it.', 4: '1'}
+6	6		202							{1: '1'}
+7	7		301							"{3: ""By the time Wanshi finishes treating the injured researcher, the sun that had been stubbornly hanging in the sky has long set, marking the end of this year's Rain Flower Festival.""}"
+8	8		301							"{3: 'While you did take a tumble, too, everyone still acknowledges your time as the ""fastest record"" in Rain Flower Festival history.'}"
+9	9		301							{3: 'The festival prizes—several vats of rice wine and basketfuls of maltose candy—have all been delivered to the clinic.'}
+10	10		301							{3: 'While Wan goes door to door giving candy to the children, the yellow wine remains in the clinic, filling the room with its rich, mellow aroma.'}
+11	11		301							{3: 'The fragrant wine draws in some of the researchers who are eager for a few gulps—since nobody at the clinic is particularly interested in alcohol, you decide to share it with the townspeople and researchers alike.'}
+12	12		301							"{3: ""That's why everyone's drinking themselves into oblivion.""}"
+13	13		201							{1: '1', 2: '500934', 5: '-50'}
+14	14		301							"{1: '1', 3: ""Upon returning, Wanshi steps carefully around the drunk revelers and begins brewing yesterday's herbs on the stove.""}"
+15	15		302							{2: 'Do I still have to keep taking the medicine?', 3: '16', 4: 'Did someone get poisoned by the mushrooms again?', 5: '17'}
+16	16		203							{1: '1', 2: '0.25'}
+17	17		301							"{2: 'Wanshi', 3: ""Don't worry, this one's not meant for you."", 4: '1'}"
+18	18		203							{1: '1', 2: '0.25'}
+19	19		301							{2: 'Wanshi', 3: 'A few people got drunk at the festival and went into the woods to pick mushrooms, ignoring all warnings.', 4: '1'}
+20	20		302							"{2: '...Being a doctor here must be quite a challenge.', 3: '21', 4: ""...I promise I'll never eat random mushrooms again."", 5: '21'}"
+21	21		301							"{2: 'Wanshi', 3: ""We're heading back to Babylonia when the Rain Flower Festival ends."", 4: '1'}"
+22	22		204							{1: '1', 2: '1'}
+23	23		301							"{2: 'Wanshi', 3: ""I haven't been here for all that long... but this place is a pleasant one, and the memories will stay with me."", 4: '1'}"
+24	24		302							{2: 'Same. I had a wonderful time.', 3: '25', 4: 'I wish we could stay here for just a little longer.', 5: '25'}
+25	25		301							{2: 'Wanshi', 3: 'I hope I can visit again someday.', 4: '1'}
+26	26		202							{1: '1'}
+27	27		301							{3: 'Hurried footsteps from outside the door interrupt your thoughts.'}
+28	28		201							{1: '1', 2: '500641'}
+29	29		301							{1: '1', 2: 'Zhongjing', 3: 'Dr. Wanshi! Commandant!', 4: '1'}
+30	30		301							"{2: 'Zhongjing', 3: ""The Rain Flower Festival! Yes, that's it, the Rain Flower Festival! Oh, it sure took me a while!"", 4: '1'}"
+31	31		202							{1: '1'}
+32	32		301							{3: 'Supported by Wan, Zhongjing hurries inside, carefully cradling a worn notebook in his hands.'}
+33	33		201							{1: '1', 2: '500641'}
+34	34		301							"{1: '1', 2: 'Zhongjing', 3: ""You struck me as oddly familiar... I can't believe it didn't occur to me sooner who you are. I should have guessed who you are right away."", 4: '1'}"
+35	35		301							{3: 'Zhongjing stares at Wanshi with excitement, his aged body trembling with emotion.'}
+36	36		301							{2: 'Zhongjing', 3: 'Your parents are from Kowloong, right?', 4: '1'}
+37	37		203							{1: '1', 2: '0.25', 3: '400'}
+38	38		201							{1: '2', 2: '500934', 4: '-400'}
+39	39		301							{1: '1', 2: 'Wanshi', 3: '...? Why are we talking about this all of a sudden...', 4: '2'}
+40	40		301							{2: 'Zhongjing', 3: 'Your mother! Her name... was it Wanxu?', 4: '1'}
+41	41		204							{1: '2', 2: '7'}
+42	42		301							{2: 'Wanshi', 3: '...', 4: '2'}
+43	43		301							"{3: ""Wanshi doesn't answer, but the look on his face says it all.""}"
+44	44		301							{2: 'Zhongjing', 3: 'It was before the Punishing outbreak, right before the Rain Flower Festival. A group of Kowloong researchers got lost in the mountains then, too, and my daughter brought them back to the clinic.', 4: '1'}
+45	45		301							"{2: 'Zhongjing', 3: ""They made quite a few mechanical aids for Nanyun and helped repair our clinic. Some of those machines were lucky enough to survive the Punishing... and we're still using them to this day..."", 4: '1'}"
+46	46		301							{2: 'Zhongjing', 3: 'Also, there was this incredibly skilled doctor from Kowloong who came with the researchers. The doctor left behind quite a collection of medical records.', 4: '1'}
+47	47		301							"{2: 'Wanshi', 3: ""Wait, you can't be talking about..."", 4: '2'}"
+48	48		301							"{2: 'Zhongjing', 3: ""I'm talking about your parents, Dr. Wanshi!"", 4: '1'}"
+49	49		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+50	50		202							{1: '1', 2: '2', 6: '1'}
+51	51		504							{1: '0.7'}
+52	52		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory726.jpg'}
+53	53		201							{1: '1', 2: '500138', 4: '-400', 7: '1'}
+54	54		201							{1: '2', 2: '500938', 4: '400', 7: '1'}
+55	55		301							"{1: '1', 2: 'Young Zhongjing', 3: ""It's amazing how you managed to make these mechanoids look so much like humans... Truly remarkable."", 4: '1'}"
+56	56		301							"{2: 'Wanxu', 3: ""It's just what I'm interested in. They're nothing advanced, but they get the job done."", 4: '2'}"
+57	57		301							"{2: 'Young Zhongjing', 3: ""They even helped repair our clinic... But there are fewer and fewer people in town now. I'm afraid all this advanced equipment will go to waste in the future. It's just my daughter and me now... The clinic probably won't stay open much longer..."", 4: '1'}"
+58	58		301							"{2: 'Wanxu', 3: ""Don't worry. Nanyun is a wonderful place. Everyone who leaves here carries it in their hearts... As long as there are people, they'll need clinics, and they'll need mechanical support, too."", 4: '2'}"
+59	59		301							"{2: 'Wanxu', 3: ""Those medicinal herbs you use for treatment—you gather them from the mountain back there, right? Some of our fellow researchers are interested in that, too. They say these herbs are rare varieties that are hard to find elsewhere. Why don't you try making something of this?"", 4: '2'}"
+60	60		301							{2: 'Wanxu', 3: 'Besides... there will come a day when people return to their roots. They will come back home, and the town will prosper once again.', 4: '2'}
+61	61		301							"{2: 'Young Zhongjing', 3: ""This... This couldn't be more perfect."", 4: '1'}"
+62	62		204							{1: '2', 2: '1'}
+63	63		301							{3: 'The pristine, aloof woman shows a rare smile.'}
+64	64		301							"{2: 'Wanxu', 3: ""Whether it's ten, thirty, or fifty years from now, I hope that when I return to this small town, I'll find you all still doing as well as you do now."", 4: '2'}"
+65	65		301							{3: 'She places her hand on her own abdomen.'}
+66	66		301							{2: 'Wanxu', 3: 'Everyone wants to see their children grow up... just as they want to see what the future holds for this town.', 4: '2'}
+67	67		301							{2: 'Wanxu', 3: 'And so it will be passed down through generations.', 4: '2'}
+68	68		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+69	69		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory235.png'}
+70	70		202							{1: '1', 2: '2', 6: '1'}
+71	71		504							{1: '0'}
+72	72		201							{1: '1', 2: '500641', 7: '1'}
+73	73		301							"{1: '1', 2: 'Zhongjing', 3: ""After helping us organize that year's Rain Flower Festival, Wanxu never came back here..."", 4: '1'}"
+74	74		301							{2: 'Zhongjing', 3: 'Soon after that... the Punishing hit. Nanyun was too remote—by the time we learned what was happening, it was already too late.', 4: '1'}
+75	75		301							{2: 'Zhongjing', 3: 'I took my daughter and some mechanoids to follow the townspeople into our mountain refuge. It was a long time before we came back.', 4: '1'}
+76	76		301							{2: 'Zhongjing', 3: 'During that time, I lost my daughter, who left Wan behind. Wan was infected by the Punishing... and I had to operate on her myself...', 4: '1'}
+77	77		302							{2: '...', 3: '78'}
+78	78		301							{3: 'Wanshi lowers his head to the story, but Zhongjing shows no signs of sadness.'}
+79	79		301							{2: 'Zhongjing', 3: 'Some people are gone now, and some places have been destroyed, but...', 4: '1'}
+80	80		301							{2: 'Zhongjing', 3: 'As you can see, everything was gone, yet everything has also returned.', 4: '1'}
+81	81		301							"{2: 'Zhongjing', 3: ""The Rain Flower Festival hasn't changed a bit."", 4: '1'}"
+82	82		202							{1: '1'}
+83	83		301							{3: 'Zhongjing pats Wanshi on the shoulder.'}
+84	84		201							{1: '1', 2: '500641'}
+85	85		301							{1: '1', 2: 'Zhongjing', 3: 'Take this journal with you.', 4: '1'}
+86	86		202							{1: '1'}
+87	87		401							{1: '2', 2: '2768'}
+88	88		301							{3: 'Wanshi accepts the weathered journal and gently opens it. The steady, methodical handwriting within has finally traversed the long expanse of time and space.'}
+89	89		401							{1: '2', 2: '2768'}
+90	90		301							{3: 'Inside are research logs from Wanxu and the other researchers, notes on the medical case they worked on after they arrived in Nanyun, and even personal musings scribbled in the margins.'}
+91	91		301				AniZhuanchangBegin			{3: 'In the margin of one of the pages, however, is a name that everyone reading these pages knows.'}
+92	92		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '2'}
+93	93		504							{1: '0.7'}
+94	94		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory936.png'}
+95	95		201							{1: '1', 2: '500938', 3: '1'}
+96	96		301			AniZhuanchangEnd				"{1: '1', 2: 'Wanxu', 3: 'When this child is born, we\'ll name him ""Wanshi"".', 4: '1'}"
+97	97		202							{1: '1', 6: '1'}
+98	98		201							{1: '1', 2: '500138'}
+99	99		201							{1: '2', 2: '500059', 4: '-600'}
+100	100		201							{1: '3', 2: '500361', 4: '600'}
+101	101		301							{1: '1', 2: 'Researchers', 3: 'Wanshi?', 4: '1', 5: '2', 6: '3'}
+102	102		202							{1: '1', 2: '2', 3: '3'}
+103	103		301							{3: 'The researchers pause their work to look at the woman at the desk. A component covered in oil rolls down the corridor, but no one pays it any mind.'}
+104	104		201							{1: '1', 2: '500938', 3: '1'}
+105	105		301							"{1: '1', 2: 'Wanxu', 3: 'Yes, and the name comes with quite a few meanings... ""All Things in Creation""...? Or perhaps ""May All Things Go Well, And Every Wish Come True""...?', 4: '1'}"
+106	106		202							{1: '1'}
+107	107		201							{1: '1', 2: '500138'}
+108	108		301							{1: '1', 2: 'Young Zhongjing', 3: 'What a beautiful name.'}
+109	109		202							{1: '1'}
+110	110		201							{1: '1', 2: '500938', 3: '1'}
+111	111		301							{1: '1', 2: 'Wanxu', 3: 'Sure is.', 4: '1'}
+112	112		301							"{2: 'Wanxu', 3: ""That's not asking for too much...?"", 4: '1'}"
+113	113		202							{1: '1'}
+114	114		301							"{3: ""Wanxu gently strokes the hair of Zhongjing's daughter, who is resting her head on the table.""}"
+115	115		201							{1: '1', 2: '500938'}
+116	116		301							{1: '1', 2: 'Wanxu', 3: 'But it is what it is... Humans as a species—mothers especially—are naturally greedy creatures.', 4: '1'}
+117	117		301							{2: 'Wanxu', 3: 'Every parent wishes to give their child all the best things this world has to offer.', 4: '1'}
+118	118		204							{1: '1', 2: '8'}
+119	119		301							{2: 'Wanxu', 3: 'I want to watch him grow up, see what life brings his way, witness the choices he makes...', 4: '1'}
+120	120		301							{3: 'Wanxu closes her eyes, as if visualizing what Wanshi will become in the future.'}
+121	121		301							{2: 'Wanxu', 3: 'I hope that no matter how difficult life is going to be for him...', 4: '1'}
+122	122		204							{1: '1', 2: '1'}
+123	123		301				AniZhuanchangBegin			{2: 'Wanxu', 3: 'May he eventually get everything he desires, guided by the meaning of this name.', 4: '1'}
+124	124		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab'}
+125	125		504							{1: '0'}
+126	126		202							{1: '1', 6: '1'}
+127	127		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory559.jpg'}
+128	128		401						2000.0	{1: '1', 2: '234'}
+129	129		401							{1: '2', 2: '2596'}
+130	130		301			AniZhuanchangEnd				{3: 'On the day you and the others leave Nanyun Old Town, a brilliant sun hangs high in the sky. The group has barely covered any distance when large beads of sweat begin rolling down your foreheads.'}
+131	131		301							"{3: '""After the Rain Flower season comes the scorching heat""—the townspeople weren\'t kidding when they said that.'}"
+132	132		402							{1: '2596'}
+133	133		201							{1: '1', 2: '500934', 3: '8'}
+134	134		301							"{1: '1', 2: 'Wanshi', 3: ""Phew... This sun... it's way more brutal than when we first got here..."", 4: '1'}"
+135	135		204							{1: '1', 2: '10'}
+136	136		301							{2: 'Wanshi', 3: 'Maybe I should find some shade and catch a quick nap...', 4: '1'}
+137	137		302							"{2: ""Hang in there, we're almost there."", 3: '138', 4: ""When you came here... didn't you walk in on your own...? Phew..."", 5: '138'}"
+138	138		301							{2: 'Wanshi', 3: 'Um... fine.', 4: '1'}
+139	139		202							{1: '1'}
+140	140		301							{3: 'Wanshi rubs his eyes and straightens his back, as if trying to keep himself from dozing off on the way, then picks up his pace.'}
+141	141		301				DialogDisable			"{3: ""Ever since Wanshi obtained the researchers' notes that night, Wanshi's mood has noticeably dampened, although he's never brought up the subject himself.""}"
+142	142		302							"{2: ""(I bet he's thinking about what he read in the notes...)"", 3: '143'}"
+143	143		302							{2: 'Wanshi.', 3: '144'}
+144	144		201							{1: '1', 2: '500934'}
+145	145		301			DialogEnable				{1: '1', 2: 'Wanshi', 3: 'Yup?', 4: '1'}
+146	146		301							{3: 'Wanshi lifts his head and looks over.'}
+147	147		302							{2: 'The notes...', 3: '148'}
+148	148		301							{2: 'Wanshi', 3: 'Oh, that...', 4: '1'}
+149	149		301							"{2: 'Wanshi', 3: 'I know what you\'re gonna ask, but as I\'ve said... ""Let\'s not worry about each other.""', 4: '1'}"
+150	150		301							"{2: 'Wanshi', 3: ""I made a promise—I know exactly what I want now, and there's no room for hesitation."", 4: '1'}"
+151	151		202							{1: '1'}
+152	152		301							{3: 'At these words, Wanshi stops in his tracks.'}
+153	153		201							{1: '1', 2: '500934'}
+154	154		301							"{1: '1', 2: 'Wanshi', 3: ""And there is this other thing I've said before."", 4: '1'}"
+155	155		302							"{2: ""What's that?"", 3: '156'}"
+156	156		301							"{2: 'Wanshi', 3: ""—I'm not interested in fighting for humanity's fate. I just want to heal those who matter to me."", 4: '1'}"
+157	157		301							{2: 'Wanshi', 3: 'The circle of people I hold dear is so much bigger now.', 4: '1'}
+158	158		301							"{2: 'Wanshi', 3: ""Kamui, Camu, Chrome, the Gray Ravens, the people from Nanyun... I've met more and more people, and the number of people I've saved... has grown beyond anything you could imagine."", 4: '1'}"
+159	159		301							"{2: 'Wanshi', 3: ""I wasn't quite sure if I could truly shoulder the weight of all these lives."", 4: '1'}"
+160	160		204							{1: '1', 2: '1'}
+161	161		301							"{2: 'Wanshi', 3: ""But that's not the way I see it anymore."", 4: '1'}"
+162	162		301							"{2: 'Wanshi', 3: ""With what I've gained from all of you, I'm not more than capable of overcoming these hesitations."", 4: '1'}"
+163	163		301				DialogDisable			"{3: ""You listen to Wanshi's response and nod slowly.""}"
+164	164		302							{2: 'Got it.', 3: '165'}
+165	165		302							"{2: ""Oh right, there's something I didn't tell you last time."", 3: '166'}"
+166	166		204							{1: '1'}
+167	167		301			DialogEnable	DialogDisable			{2: 'Wanshi', 3: 'Hm? What is it?', 4: '1'}
+168	168		302							{2: 'When I became the 522nd person under your protection.', 3: '169'}
+169	169		302							{2: 'I actually meant to tell you...', 3: '170'}
+170	170		302							"{2: ""Be it fighting for humanity's fate or healing those who matter to you..."", 3: '171'}"
+171	171		301			DialogEnable	DialogDisable			{3: 'After a brief pause, you continue.'}
+172	172		302							"{2: ""—Or the path you've chosen for yourself..."", 3: '173'}"
+173	173		302							"{2: ""All of this... you've done a wonderful job."", 3: '174'}"
+174	174		401							{1: '2', 2: '967'}
+175	175		301			DialogEnable				{3: 'Wanshi listens quietly. The wind through the forest suddenly picks up, stirring leaves all around into a rustling chorus, yet it fails to drown out the earnest voice of the human speaking.'}
+176	176		301							"{3: ""—Having heard everything you've said, Wanshi simply smiles.""}"
+177	177		402							{1: '967'}
+178	178		204							{1: '1', 2: '1'}
+179	179		301							{2: 'Wanshi', 3: 'Yeah, I know.', 4: '1'}
+180	180		301							"{2: 'Wanshi', 3: ""Likewise... you've done well all this time."", 4: '1'}"
+181	181		203							{1: '1', 2: '0.25', 4: '-40', 5: '-50'}
+182	182		301							{3: 'Stepping onto a root protruding from the soil, Wanshi reaches out his hand to you once more.'}
+183	183		301		1		AniZhuanchangBegin			"{2: 'Wanshi', 3: ""Come on, let's keep going."", 4: '1'}"

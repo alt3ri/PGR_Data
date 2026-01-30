@@ -1,0 +1,290 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory528.jpg'}
+2	2		401			AniZhuanchangEnd				{1: '1', 2: '333'}
+3	3		301			DialogEnable				{3: 'The first day at F.O.S.'}
+4	4		301							{3: 'The campus is adorned with welcome projections, while the school anthem drifts through the air above the auditorium.'}
+5	5		201							{1: '1', 2: '501062'}
+6	6		301							{1: '1', 2: 'Student A', 3: 'Hey, hello there! Is this your first day at F.O.S.?', 4: '1'}
+7	7		401							{1: '2', 2: '4095'}
+8	8		301							"{2: 'Student A', 3: ""Here's the enrollment form. Make sure to fill it out using your terminal!"", 4: '1'}"
+9	9		202							{1: '1', 6: '1'}
+10	10		201							{1: '1', 2: '500557'}
+11	11		301							{1: '1', 2: '???', 3: '...I understand.', 4: '1'}
+12	12		202							{1: '1'}
+13	13		301							{3: 'The girl with purple eyes impatiently takes the form and turns to leave.'}
+14	14		201							{1: '1', 2: '501062'}
+15	15		301							"{1: '1', 2: 'Student A', 3: ""Oh... Hello there! You're also a freshman, right?"", 4: '1'}"
+16	16		302							{2: 'Yes.', 3: '19', 4: 'No.', 5: '17'}
+17	17		301							"{2: 'Student A', 3: ""Hahaha, looks like we've got quite a few interesting freshmen this year. You're already wearing our uniform..."", 4: '1'}"
+18	18		301							{3: 'The amiable senior student smiles and takes out an identical form.'}
+19	19		401							{1: '2', 2: '4095'}
+20	20		301							"{2: 'Student A', 3: ""Here's the enrollment form. Make sure to fill it out using your terminal!"", 4: '1'}"
+21	21		202							{1: '1'}
+22	22		301							{3: 'After briefly pointing out a few things to note on the form, the senior student walks away.'}
+23	23		301							{3: 'Enrollment... registration form...'}
+24	24		301							{3: 'For some reason, everything before your eyes becomes blurry.'}
+25	25		401							{1: '2', 2: '4276'}
+26	26		111						400.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+27	27		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab', 2: '2'}
+28	28		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory777.jpg', 3: '0', 4: '0.2', 5: '0.8'}
+29	29		301							{3: 'The surrounding laughter and bustling chatter slowly dissipate. In a daze, the campus scenery somehow overlaps with an unfamiliar structure where white fog fills the air and crimson crystals resonate with a distinct, metallic sound...'}
+30	30		302							{2: '(Rub eyes)', 3: '31', 4: '(Blink)', 5: '35'}
+31	31		205							{1: '999'}
+32	32		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab'}
+33	33		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+34	34	39	301							{3: 'You rub your eyes. Perhaps due to excitement keeping you from sleeping well last night, your eyes feel a bit strained, but it should be nothing serious.'}
+35	35		205							{1: '999'}
+36	36		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab'}
+37	37		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+38	38		301							{3: 'You blink, and for a moment the surroundings seem to waver, but upon closer inspection, nothing appears out of the ordinary.'}
+39	39		302							{2: 'I must be too nervous...', 3: '40', 4: 'I must be too excited...', 5: '40'}
+40	40		201							{1: '1', 2: '501062'}
+41	41		301							{1: '1', 2: 'Student A', 3: 'Hello, do you need any help? I just noticed you seemed a bit out of it...', 4: '1'}
+42	42		302							"{2: ""I'm fine, thank you."", 3: '43'}"
+43	43		202							{1: '1'}
+44	44		301							{3: 'Receiving your reassuring response, the senior student moves on to another freshman who appears to need help.'}
+45	45		302							{2: '(Go back to check the enrollment form)', 3: '46'}
+46	46		401							{1: '2', 2: '4095'}
+47	47		301							{3: 'F.O.S. Military Command College Enrollment Form'}
+48	48		301							{3: 'Name: ________'}
+49	49		302							{2: 'Gray Raven Commandant', 3: '50', 4: '【kuroname】', 5: '53'}
+50	50		301							{3: 'Strange, why is an unknown title appearing in your mind?'}
+51	51		301							{3: 'You shake your head and continue filling out the form on your terminal.'}
+52	52		302							{2: '【kuroname】', 3: '53'}
+53	53		301							{3: 'Gender: ________'}
+54	54		302							{2: 'Man', 3: '55', 4: 'Woman', 5: '55', 6: 'Other', 7: '55'}
+55	55		301							{3: 'Student ID: ________'}
+56	56		301							{3: 'Student ID... You think it was noted on the folder of your examination report. Where did you put that folder again...'}
+57	57		301							{3: 'The corner of a worn folder peeks out from your backpack.'}
+58	58		302							{2: 'The folder...', 3: '59', 4: '(Reach out to grab it)', 5: '59'}
+59	59		401							{1: '2', 2: '4044'}
+60	60		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+61	61		201							{1: '1', 2: '500557', 4: '50', 7: '1'}
+62	62		203							{1: '1', 2: '0.25'}
+63	63		301			RImgBg1Shake				{1: '1', 2: '???', 3: 'Excuse me.', 4: '1'}
+64	64		202							{1: '1'}
+65	65		401						150.0	{1: '2', 2: '4112'}
+66	66		401							{1: '2', 2: '4095'}
+67	67		301				DialogDisable			{3: 'The girl rushing to submit her enrollment form accidentally bumps into your shoulder. You lose grip of the folder, and the report pages are scattered across the ground by a mysterious gust of wind—'}
+68	68		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory799.jpg', 3: '0', 4: '1', 5: '0.8'}
+69	69		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory799.jpg'}
+70	70		205							{1: '999'}
+71	71		301			DialogEnable				{3: 'In the upper right corner of the report, a handwritten code catches your attention—'}
+72	72		104						1800.0	{1: '-50|-100|-200', 2: '1.5'}
+73	73		301							{3: '931206'}
+74	74		301							{3: 'Why... would there be a handwritten code...'}
+75	75		301							"{3: 'The deliberately stretched ""9"" drags behind it a long trail like some kind of scar, as everything fades back into silence.'}"
+76	76		401							{1: '1', 2: '36'}
+77	77		401							{1: '2', 2: '4292'}
+78	78		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+79	79		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+80	80		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '1', 4: '0', 5: '0.5'}
+81	81		301							{3: 'A roar of thunder blasts in the air.'}
+82	82		302							{2: 'No...', 3: '83'}
+83	83		401							{1: '2', 2: '4259'}
+84	84		301							{3: 'In the pitch-black, damp environment, a steady heartbeat pulses in your ears...'}
+85	85		301				DialogDisable			{3: 'This is...'}
+86	86		302							{2: 'Chaos...', 3: '87', 4: 'Egg...', 5: '87'}
+87	87		401							{1: '2', 2: '2559'}
+88	88		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+89	89		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+90	90		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront18.png', 4: '5'}
+91	91		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory523.jpg', 4: '4'}
+92	92		104							{1: '100|0|-20', 2: '0', 4: '4'}
+93	93		104						200.0	{1: '0|0|-20', 2: '0.15', 4: '4'}
+94	94		401							{1: '2', 2: '558'}
+95	95		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory774.jpg', 4: '4'}
+96	96		104							{1: '-100|0|-20', 2: '0', 4: '4'}
+97	97		104						200.0	{1: '0|0|-20', 2: '0.15', 4: '4'}
+98	98		401							{1: '2', 2: '558'}
+99	99		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory770.jpg', 4: '4'}
+100	100		104							{1: '0|-100|-20', 2: '0', 4: '4'}
+101	101		104						200.0	{1: '0|0|-20', 2: '0.15', 4: '4'}
+102	102		401							{1: '2', 2: '558'}
+103	103		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory663.jpg', 4: '4'}
+104	104		104							{1: '0|100|-20', 2: '0', 4: '4'}
+105	105		104						200.0	{1: '0|0|-20', 2: '0.15', 4: '4'}
+106	106		401							{1: '2', 2: '558'}
+107	107		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3201_14.jpg', 4: '4'}
+108	108		104							{1: '100|0|-20', 2: '0', 4: '4'}
+109	109		104						200.0	{1: '0|0|-20', 2: '0.15', 4: '4'}
+110	110		401							{1: '2', 2: '558'}
+111	111		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory928.png', 4: '4'}
+112	112		104							{1: '-100|0|-20', 2: '0', 4: '4'}
+113	113		104						200.0	{1: '0|0|-20', 2: '0.15', 4: '4'}
+114	114		401							{1: '2', 2: '9339041'}
+115	115		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+116	116		101							{4: '4', 5: '1'}
+117	117		101							{4: '5', 5: '1'}
+118	118		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1'}
+119	119		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+120	120		301			DialogEnable				{3: 'Memories resurface in a dizzying carousel, as Chaos seems to undergo an excruciating process of being shattered and reconstructed.'}
+121	121		401							{1: '2', 2: '4331'}
+122	122		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+123	123		301							{3: 'Your gaze clings to her consciousness as fleeing footsteps gradually quicken...'}
+124	124		402							{1: '4259'}
+125	125		401							{1: '2', 2: '2687'}
+126	126		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+127	127		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+128	128		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+129	129		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+130	130		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+131	131		401							{1: '1', 2: '229'}
+132	132		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+133	133		504							{1: '0.7'}
+134	134		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz1502.jpg'}
+135	135		301							"{2: 'Lucia', 3: ""Hello, my name is Lucia. My frame designation is BPL-01, Lotus, and I'm also the team leader of Gray Raven—""}"
+136	136		301							{2: 'Lucia', 3: 'I look forward to working with you!'}
+137	137		301							{2: 'Lee', 3: 'My name is Lee, frame designation BPN-06, Palefire.'}
+138	138		301							{2: 'Lee', 3: 'My original team... is not important. I have been assigned to Gray Raven. Dual guns are my weapons of choice.'}
+139	139		301							{2: 'Lee', 3: 'I am equally adept at strategic planning and close combat.'}
+140	140		301							{2: 'Liv', 3: 'My turn... um, my name is Liv, Support Construct.'}
+141	141		301							{2: 'Liv', 3: 'I came from Egret... my preferred weapons are levitated weapons platforms. I look forward to working together.'}
+142	142		301							{3: 'This was the new Gray Raven.'}
+143	143		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+144	144		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+145	145		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+146	146		504							{1: '0'}
+147	147		301							"{3: ""At times it's memories belonging to Gray Raven, at others it's...""}"
+148	148		401							{1: '2', 2: '2938'}
+149	149		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+150	150		504							{1: '0.7'}
+151	151		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+152	152		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+153	153		201							{1: '1', 2: '500730', 4: '-400', 7: '1'}
+154	154		201							{1: '2', 2: '500028', 4: '400', 7: '1'}
+155	155		301							"{1: '1', 2: 'Shorthalt', 3: ""You're going to the Youth Center again next month? You've been on quite a few missions lately—maybe you should take some proper rest?"", 4: '1'}"
+156	156		301							{2: 'Shorthalt', 3: 'After all these years... that child must be all grown up by now.', 4: '1'}
+157	157		202							{1: '1', 2: '2', 6: '1'}
+158	158		401							{1: '2', 2: '2938'}
+159	159		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+160	160		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+161	161		201							{1: '1', 2: '500730', 3: '12'}
+162	162		301							"{1: '1', 2: 'Shorthalt', 3: ""Project Cthylla? What's so important about a crazy project that was terminated long ago?"", 4: '1'}"
+163	163		202							{1: '1', 6: '1'}
+164	164		401							{1: '2', 2: '2938'}
+165	165		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+166	166		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory796.jpg'}
+167	167		201							{1: '1', 2: '500730', 3: '12', 7: '1'}
+168	168		301							"{1: '1', 2: 'Shorthalt', 3: ""The small purple Ascendant didn't off me, just chopped me up and dumped me in a heap of rubble."", 4: '1'}"
+169	169		202							{1: '1', 6: '1'}
+170	170		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+171	171		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+172	172		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+173	173		504							{1: '0'}
+174	174		301							"{3: ""Or perhaps it's...""}"
+175	175		401							{1: '2', 2: '2938'}
+176	176		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+177	177		504							{1: '0.7'}
+178	178		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+179	179		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2901_01.jpg'}
+180	180		301							{2: 'Noan', 3: 'My dream, that future we wanted, is right there beyond the seemingly infinite darkness.'}
+181	181		301							{2: 'Noan', 3: 'Hope will triumph and fulfill its dream!'}
+182	182		401							{1: '2', 2: '2938'}
+183	183		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+184	184		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory345.jpg'}
+185	185		201							{1: '1', 2: '500734'}
+186	186		301							"{1: '1', 2: 'Noan?', 3: 'You remember the name ""Noan"", but not this incident?', 4: '1'}"
+187	187		301							"{2: 'Noan?', 3: 'There\'s another ""real me"" in Babylonia, right? Gray Raven Commandant?', 4: '1'}"
+188	188		202							{1: '1', 6: '1'}
+189	189		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+190	190		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+191	191		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+192	192		504							{1: '0'}
+193	193		301							{3: 'And...'}
+194	194		401							{1: '2', 2: '2938'}
+195	195		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+196	196		504							{1: '0.7'}
+197	197		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+198	198		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1106.jpg'}
+199	199		301							"{3: '""This is not my will alone.""'}"
+200	200		301							"{3: '""This is... the will of civilization!""'}"
+201	201		402							{1: '4325'}
+202	202		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+203	203		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+204	204		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+205	205		504							{1: '0'}
+206	206		402							{1: '229'}
+207	207		401							{1: '2', 2: '2559'}
+208	208		401							{1: '2', 2: '4682'}
+209	209		301							"{3: 'The fragmented illusions are endlessly shattered and reconstructed, as chaotic memories continuously appear and vanish within the ""egg"".'}"
+210	210		401							{1: '2', 2: '2935'}
+211	211		402							{1: '4682'}
+212	212		301							{3: 'The pain, mercifully enveloped, hatches once more.'}
+213	213		301							{3: 'And...'}
+214	214		401							{1: '2', 2: '4276'}
+215	215		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable02.prefab', 2: '2'}
+216	216		301				AniZhuanchangBegin			"{3: 'This ""story"" has quietly changed the ending of fate.'}"
+217	217		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable02.prefab'}
+218	218		401							{1: '1', 2: '36'}
+219	219		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1130.jpg'}
+220	220		401							{1: '1', 2: '5067'}
+221	221		201							{1: '1', 2: '501095', 3: '8', 7: '1'}
+222	222		301			AniZhuanchangEnd				{1: '1', 2: 'Ishmael', 3: 'Huff...', 4: '1'}
+223	223		204							{1: '1', 3: '2'}
+224	224		301							"{2: 'Ishmael', 3: ""It's been so long... since I've done something this adventurous."", 4: '1'}"
+225	225		301							{3: 'The simple delight of pulling off this clever deception briefly fills her consciousness, creating a ripple in her long, monotonous life.'}
+226	226		301							{2: 'Ishmael', 3: 'And now...', 4: '1'}
+227	227		202							{1: '1'}
+228	228		401							{1: '2', 2: '2768'}
+229	229		301							{3: 'The book pages open gently, turning to the page marked with a giant whale.'}
+230	230		201							{1: '1', 2: '501095'}
+231	231		301							"{1: '1', 2: 'Ishmael', 3: ""It's almost time..."", 4: '1'}"
+232	232		202							{1: '1'}
+233	233		301				DialogDisable			{3: 'Her index finger glides across the book, where crimson-gold threads twist and writhe.'}
+234	234		401							{1: '2', 2: '4100'}
+235	235		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStrongholdMain/FxUiStrongholdMainFlashing01.prefab', 2: '2'}
+236	236		401							{1: '2', 2: '4042'}
+237	237		201							{1: '2', 2: '501095', 5: '-80', 6: '-400', 7: '1'}
+238	238		205							{1: '2', 3: '1', 4: '0', 5: '0'}
+239	239		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainLoop.prefab', 2: '2', 3: '2'}
+240	240		203							{1: '2', 2: '2', 4: '-80', 5: '-600'}
+241	241		104						2000.0	{1: '0|0|-100', 2: '2'}
+242	242		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+243	243		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStrongholdMain/FxUiStrongholdMainFlashing01.prefab'}
+244	244		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainLoop.prefab', 4: '2'}
+245	245		202							{1: '2', 6: '1'}
+246	246		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory107.png'}
+247	247		402							{1: '4042'}
+248	248		401							{1: '2', 2: '4704'}
+249	249		301			DialogEnable				{3: 'Time silently leaps to April 1st.'}
+250	250		301							"{3: ""Vonnegut never makes just one plan. On the book's projection, a gradually sprouting sapling is deeply rooted in the Red Tide.""}"
+251	251		301							{3: 'The shrewd agent, like a cunning rabbit with multiple burrows, has already set up a new Tree of Life in another area.'}
+252	252		301							{3: 'The small Tree of Life emits an eerie red glow in the dim base, a crimson egg slowly pulsating within its embrace.'}
+253	253		301							"{3: 'He hasn\'t noticed that the ""consciousness"" within has already been replaced, and the gaze of ""Gray Raven"" is now attached to the yet-to-hatch ""Chaos"".'}"
+254	254		301							{3: 'After that...'}
+255	255		401						1500.0	{1: '2', 2: '9327108'}
+256	256		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+257	257		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory616.jpg'}
+258	258		301			RImgBg1Shake	AniZhuanchangBegin		1000.0	"{3: ""The undersea cradle is thrown into chaos as a giant whale leaps from the water's surface.""}"
+259	259		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1130.jpg'}
+260	260		201							{1: '1', 2: '501095', 7: '1'}
+261	261		301			AniZhuanchangEnd				"{1: '1', 2: 'Ishmael', 3: 'What a... captivating ""story"".', 4: '1'}"
+262	262		301							{3: 'With great interest and a hint of anticipation, she turns her gaze back to the book.'}
+263	263		301				AniZhuanchangBegin			{2: 'Ishmael', 3: 'Can you really find the key to breaking this closed loop...', 4: '1'}
+264	264		202							{1: '1', 6: '1'}
+265	265		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory107.png'}
+266	266		401							{1: '2', 2: '2986'}
+267	267		301			AniZhuanchangEnd				"{3: '""Thump—""'}"
+268	268		301				DialogDisable			{3: 'The crimson egg once again pulsates with the rhythm of life.'}
+269	269		401							{1: '2', 2: '9339045'}
+270	270		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory800.jpg', 3: '0', 4: '1', 5: '1'}
+271	271		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory800.jpg'}
+272	272		205							{1: '999'}
+273	273		301			DialogEnable	DialogDisable			{3: 'The ending of the story has already been changed; the parade beneath the sea is never meant solely for the abandoned.'}
+274	274		307						100.0	"{1: '""We"" will continue to search for our path even in death—', 3: '55', 4: 'ffffffff'}"
+275	275		301							"{3: '""We"" will continue to search for our path even in death—'}"
+276	276		307							{2: '1'}
+277	277		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory785.jpg', 3: '0', 4: '1', 5: '1'}
+278	278		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory785.jpg'}
+279	279		205							{1: '999'}
+280	280		307							{2: '1'}
+281	281		301			DialogEnable				"{3: 'But what ""we"" truly desire is to endure life and see tomorrow.'}"
+282	282		301				DialogDisable			{3: 'Death is not the end.'}
+283	283		401							{1: '2', 2: '2634'}
+284	284		205						1800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory782.jpg', 3: '0', 4: '1', 5: '1.5'}
+285	285		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory782.jpg'}
+286	286		205							{1: '999'}
+287	287		301			DialogEnable				"{3: 'At the end of ""death"" lies the tomorrow of ""hope"".'}"
+288	288		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg1201_2.jpg', 3: '0', 4: '0.5', 5: '1'}
+289	289		301		1		AniZhuanchangBegin			{3: 'The torch will inevitably be rekindled, and the Gray Raven emblem will once again shine beneath the brilliant sunlight.'}

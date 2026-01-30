@@ -1,0 +1,484 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg'}
+2	2		401							{1: '1', 2: '204'}
+3	3		201							{1: '1', 2: '500001'}
+4	4		301			DialogEnable				{1: '1', 2: 'Celica', 3: 'Good morning, Commandant.', 4: '1'}
+5	5		302							{2: 'Morning... Celica...', 3: '6'}
+6	6		301							{2: 'Celica', 3: 'Whoa! Those are quite the striking pair of panda eyes! Are you... alright?', 4: '1'}
+7	7		302							{2: 'I was making Zongs', 3: '8', 4: 'I got a little carried away cooking', 5: '8'}
+8	8		301							{2: 'Celica', 3: 'Zongs? Oh yes, Duanwu festival is coming up. Did you make these yourself, Commandant? They look pretty tasty.', 4: '1'}
+9	9		301							{2: 'Celica', 3: 'Are those Zongs you have there? What an armful! Are those for the Constructs?', 4: '1'}
+10	10		302							"{2: 'Yes', 3: '11', 4: ""It's Duanwu festival after all"", 5: '11'}"
+11	11		301							"{2: 'Celica', 3: ""Ah... that's very thoughtful of you, Commandant, but be sure to ferret out the likes and dislikes of our Constructs, to avoid embarrassment."", 4: '1'}"
+12	12		301							{2: 'Celica', 3: 'Wars have been started over less!', 4: '1'}
+13	13		202							{1: '1'}
+14	14		301							{3: 'Celica leaves before you could muster a response.'}
+15	15		302				AniZhuanchangBegin			{2: 'Wars...?', 3: '16', 4: 'What does she mean by that?', 5: '16'}
+16	16		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+17	17		401							{1: '1', 2: '201'}
+18	18		301			AniZhuanchangEnd				{3: '(A delicate sheen of nervous energy does seem to be in the air today. All around Babylonia, people look at one another with wary and distrustful stares)'}
+19	19		201							{1: '1', 2: '500019'}
+20	20		201							{1: '2', 2: '500019', 4: '-600'}
+21	21		201							{1: '3', 2: '500019', 4: '600'}
+22	22		301							{1: '1', 2: 'Construct Soldier', 3: 'Good day. Could those be Zongs you have there? Mind if we open them up for inspection?', 4: '1'}
+23	23		302							{2: 'Why is that?', 3: '24', 4: 'Of course not', 5: '24'}
+24	24		301							{2: 'Construct Soldier', 3: 'Oh, no need to worry. We just wanted to make sure. Oh, and also ask you to vote for us.', 4: '2'}
+25	25		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+26	26		201							{1: '1', 2: '500028', 4: '1460'}
+27	27		201							{1: '2', 2: '500028', 4: '1460'}
+28	28		203							{1: '1', 2: '1', 3: '-400'}
+29	29		203							{1: '2', 2: '1', 3: '400'}
+30	30		301							{1: '1', 2: 'Zong Police A', 3: 'Hey! Canvassing is prohibited!', 4: '1'}
+31	31		301							"{2: 'Zong Police B', 3: ""You'll have to come with us!"", 4: '2'}"
+32	32		201							{1: '1', 2: '500019'}
+33	33		201							{1: '2', 2: '500019', 4: '-600'}
+34	34		201							{1: '3', 2: '500019', 4: '600'}
+35	35		301							"{1: '1', 2: 'Construct Soldier', 3: ""Uh-oh... it's the Zong Police! Scram!"", 4: '1'}"
+36	36		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+37	37		201							{1: '1', 2: '500028', 4: '-400'}
+38	38		201							{1: '2', 2: '500028', 4: '400'}
+39	39		301							{1: '1', 2: 'Zong Police A', 3: 'Stop right there!', 4: '1'}
+40	40		301							"{2: 'Zong Police B', 3: ""There's another! Arrest first, ask questions later!"", 4: '2'}"
+41	41		302							{2: 'Me!?', 3: '42'}
+42	42		301				AniZhuanchangBegin			{2: '???', 3: 'Commandant, over here!'}
+43	411		202							{1: '1', 2: '2'}
+44	43		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+45	44		401							{1: '1', 2: '5'}
+46	45		201							{1: '1', 2: '500166', 3: '1'}
+47	46		301			AniZhuanchangEnd				{1: '1', 2: 'Lucia', 3: 'Thank goodness, Commandant. You almost got caught up in that debacle...', 4: '1'}
+48	47		302							"{2: 'Lucia?', 3: '48', 4: ""What's going on here?"", 5: '48'}"
+49	48		204							{1: '1', 2: '4'}
+50	49		301							"{2: 'Lucia', 3: ""You didn't know? As thanks for our assistance in escorting the Forsaken shipment, the ACA sent Babylonia a batch of assorted Zongs."", 4: '1'}"
+51	50		301							{2: 'Lucia', 3: 'Disagreements started to spread from the ideal flavor of Zongs, all the way into other food preferences and the definition of good taste...', 4: '1'}
+52	51		302							"{2: 'For what...', 3: '52', 4: 'Is this the ""war"" Celica spoke of?', 5: '52'}"
+53	52		204							{1: '1', 2: '5'}
+54	53		301							{2: 'Lucia', 3: 'Now the two factions are hosting referendums in an attempt to install their flavor as the official Babylonian flavor.', 4: '1'}
+55	54		302							"{2: 'What about this ""Zong Police"" business...', 3: '55'}"
+56	55		301							"{2: 'Lucia', 3: 'The ""Zong Police"" is a temporary constabulary, hastily put together to head off impeding violence between the two factions.', 4: '1'}"
+57	56		301							"{2: 'Lucia', 3: ""The streets are no longer safe if you're carrying Zongs, Commandant..."", 4: '1'}"
+58	57		204							{1: '1', 2: '1'}
+59	58		301							{2: 'Lucia', 3: 'Say, those Zongs you have there, Commandant. Are they for us?', 4: '1'}
+60	59		302							{2: '(Gift Sweet Zongs)', 3: '60', 4: '(Gift Savory Zongs)', 5: '60'}
+61	60		204							{1: '1', 2: '6'}
+62	61		301							{2: 'Lucia', 3: 'You made these, Commandant?', 4: '1'}
+63	62		302							{2: 'Is it to your liking?', 3: '63'}
+64	63		301							"{2: 'Lucia', 3: 'Well... I\'m not sure what my likings are, or rather, what ""Lucia\'s"" likings are.', 4: '1'}"
+65	64		204							{1: '1', 2: '1'}
+66	65		301							"{2: 'Lucia', 3: ""But I'll like it, Commandant, as long as you're making it."", 4: '1'}"
+67	66		302							{2: 'Lucia...', 3: '67'}
+68	67		201							{1: '1', 2: '1031001', 3: '1'}
+69	68		301							{1: '1', 2: 'Liv', 3: 'Oh, there you are, Lucia. Good morning, Commandant.', 4: '1'}
+70	69		201							{1: '1', 2: '500166', 3: '1'}
+71	71		301							{1: '1', 2: 'Lucia', 3: 'What a coincidence, Liv. The Commandant has a gift for us.', 4: '1'}
+72	73		201							{1: '1', 2: '1031001', 3: '1'}
+73	74		301				AniZhuanchangBegin			"{1: '1', 2: 'Liv', 3: ""Really? Are those Zongs? I didn't know Commandant knew how to make them."", 4: '1'}"
+74	12345		201							{1: '1', 2: '1031001'}
+75	75		301			AniZhuanchangEnd				{1: '1', 3: '(Which Zong should I give Liv?)'}
+76	76		302							{2: 'Honey and Bean Paste (Sweet Zong)', 3: '77', 4: 'Pork and Egg Yolk (Savory Zong)', 5: '91', 6: 'Ask Lucia for advice', 7: '106'}
+77	77		204							{1: '1', 2: '1'}
+78	78		301							{2: 'Liv', 3: 'No problem.', 4: '1'}
+79	79		301							{2: 'Liv', 3: 'So different from normal desserts... sweet, still fresh. Is this really made out of rice?', 4: '1'}
+80	80		302							"{2: ""(Pick a grain of rice from the corner of Liv's mouth)"", 3: '81'}"
+81	81		204							{1: '1', 2: '6'}
+82	82		301							{2: 'Liv', 3: 'Oh! This is... Thank you, Commandant... this is embarrassing.', 4: '1'}
+83	83		204							{1: '1', 2: '1'}
+84	84		301							{2: 'Liv', 3: 'Time permitting, could Commandant give me some direction too?', 4: '1'}
+85	85		302							{2: 'Of course', 3: '86'}
+86	86		204							{1: '1', 2: '6'}
+87	87	110	301							"{2: 'Liv', 3: ""Okay, then... it's a date!"", 4: '1'}"
+88	88		204							{1: '1', 2: '4'}
+89	89		301							{2: 'Liv', 3: 'No problem.', 4: '1'}
+90	90		204							{1: '1', 2: '1'}
+91	91		301							{2: 'Liv', 3: 'Thank you... you really poured your heart into it, Commandant.', 4: '1'}
+92	92		301							"{3: ""Liv's smile always feels somewhat forced.""}"
+93	93		301							{3: 'Suddenly, several Construct Soldiers rush over with whistles in their mouths.'}
+94	94		201							{1: '1', 2: '500028', 4: '1460'}
+95	95		201							{1: '2', 2: '500028', 4: '1460'}
+96	96		203							{1: '1', 2: '1', 3: '-400'}
+97	97		203							{1: '2', 2: '1', 3: '400'}
+98	98		301							{1: '1', 2: 'Zong Police A', 3: 'Zong-related dispute detected!', 4: '1'}
+99	99		301							"{2: 'Zong Police B', 3: ""Are you trying to start another war, feeding people Zongs you know they won't like?"", 4: '2'}"
+100	100		301							{2: 'Zong Police A', 3: 'Humanity shall remain forever divided by the unbridgeable Zong Schism. It is up to us, the Zong Police, to maintain the fragile peace on Babylonia.', 4: '1'}
+101	101		301							{2: 'Zong Police B', 3: 'Take them away. It is because of these people that war never changes.', 4: '2'}
+102	102		302							{2: 'Wait!? What the', 3: '103'}
+103	103		202							{1: '1', 2: '2', 6: '1'}
+104	104		201							{1: '1', 2: '500166', 3: '6'}
+105	105		301							{1: '1', 2: 'Lucia', 3: 'C-Commandant!!!', 4: '1'}
+106	25852		302							{2: 'Please give me a chance!', 3: '25853'}
+107	25853		201							{1: '1', 2: '500028'}
+108	25854	12345	301				AniZhuanchangBegin			{1: '1', 2: 'Zong Police A', 3: 'Alright then... but choose wisely this time.', 4: '1'}
+109	106		201							{1: '1', 2: '500166'}
+110	107		301							"{1: '1', 2: 'Lucia', 3: ""I think Liv is attempting to make her own Zongs as well, but it doesn't seem to be going so well."", 4: '1'}"
+111	108		301							{2: 'Lucia', 3: 'Lee and I have tasted quite a few desserts Liv has whipped up with scraps and leftovers. I thought they were good... but Liv always seemed unsatisfied.', 4: '1'}
+112	109	76	201							{1: '1', 2: '1031001', 3: '1'}
+113	110		201							{1: '1', 2: '500166', 3: '1'}
+114	111		301							{1: '1', 2: 'Lucia', 3: 'Liv seems pretty happy just to receive Zongs.', 4: '1'}
+115	112		302							{2: 'Now to give away the rest', 3: '113'}
+116	113		301							{2: 'Lucia', 3: 'So this is the meaning of festivals, and gifts... So simple, and yet it brings such joy...', 4: '1'}
+117	114		302							"{2: ""It's the thought that counts"", 3: '115'}"
+118	115		204							{1: '1', 2: '4'}
+119	116		301				AniZhuanchangBegin			{2: 'Lucia', 3: 'The thought that... counts...', 4: '1'}
+120	117		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+121	118		201							{1: '1', 2: '500026', 3: '6', 4: '-400'}
+122	119		201							{1: '2', 2: '500166', 4: '400'}
+123	1191		301			AniZhuanchangEnd				"{1: '1', 2: 'Lucia', 3: ""Ah, Lee. It's good that you're here."", 4: '2'}"
+124	120		301							{2: 'Lee', 3: 'Zongs? Even Commandant has joined the madding crowd...', 4: '1'}
+125	121		301							{2: 'Lucia', 3: 'No, these are handmade by Commandant, in the spirit of the festival.', 4: '2'}
+126	122		202							{1: '1', 2: '2', 6: '1'}
+127	123		201							{1: '1', 2: '500026'}
+128	125		301				AniZhuanchangBegin			{1: '1', 2: 'Lee', 3: 'I see. But I wish to get one thing straight: no matter who made these Zongs, my critique will be honest and uncompromising.', 4: '1'}
+129	30000		201							{1: '1', 2: '500026'}
+130	126		301			AniZhuanchangEnd				{1: '1', 3: '(Which Zong should I give Lee?)'}
+131	127		302							{2: 'Mushroom and Pork (Savory Zong)', 3: '128', 4: 'Sticky Rice and Bean Paste (Sweet Zong)', 5: '135', 6: 'Ask Lucia for advice', 7: '139'}
+132	128		204							{1: '1'}
+133	129		301							{2: 'Lee', 3: '...', 4: '1'}
+134	130		301							{2: 'Lee', 3: '(Quietly, Lee finishes the Zong and gives a curt nod)', 4: '1'}
+135	131		204							{1: '1'}
+136	132		301							"{2: 'Lee', 3: ""A decent attempt, I'd say..."", 4: '1'}"
+137	133		201							{1: '1', 2: '500166', 3: '1'}
+138	134	143	301				AniZhuanchangBegin			"{2: 'Lucia', 3: ""Lee looks decently... satisfied? Let's call it that."", 4: '1'}"
+139	135		204							{1: '1'}
+140	136		301							{2: 'Lee', 3: '...', 4: '1'}
+141	137		204							{1: '1'}
+142	138		301							"{2: 'Lee', 3: ""Commandant, I'm afraid I have nothing to offer except my apologies."", 4: '1'}"
+143	22335		301							{3: 'Suddenly, several Construct Soldiers rush over with whistles in their mouths.'}
+144	22336		201							{1: '1', 2: '500028', 4: '1460'}
+145	22337		201							{1: '2', 2: '500028', 4: '1460'}
+146	22338		203							{1: '1', 2: '1', 3: '-400'}
+147	22339		203							{1: '2', 2: '1', 3: '400'}
+148	22340		301							{1: '1', 2: 'Zong Police A', 3: 'Zong-related dispute detected!', 4: '1'}
+149	22341		301							"{2: 'Zong Police B', 3: ""Are you trying to start another war, feeding people Zongs you know they won't like?"", 4: '2'}"
+150	22342		301							{2: 'Zong Police A', 3: 'Humanity shall remain forever divided by the unbridgeable Zong Schism. It is up to us, the Zong Police, to maintain the fragile peace on Babylonia.', 4: '1'}
+151	22343		301							{2: 'Zong Police B', 3: 'Take them away. It is because of these people that war never changes.', 4: '2'}
+152	22344		302							{2: 'Wait!? What the', 3: '22345'}
+153	22345		202							{1: '1', 2: '2', 6: '1'}
+154	22346		201							{1: '1', 2: '500166', 3: '6'}
+155	22347		301							{1: '1', 2: 'Lucia', 3: 'C-Commandant!!!', 4: '1'}
+156	95159		302							{2: 'Please give me a chance!', 3: '95160'}
+157	95160		201							{1: '1', 2: '500028'}
+158	95161	30000	301				AniZhuanchangBegin			{1: '1', 2: 'Zong Police A', 3: 'Alright then... but choose wisely this time.', 4: '1'}
+159	139		201							{1: '1', 2: '500166'}
+160	140		301							"{1: '1', 2: 'Lucia', 3: ""Right, Lee mentioned that he didn't like sweet things."", 4: '1'}"
+161	141		301							"{2: 'Lucia', 3: ""So he probably finished all of Liv's desserts to make her happy."", 4: '1'}"
+162	142	127	201							{1: '1', 2: '500026'}
+163	143		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+164	144		201							{1: '1', 2: '500110', 4: '-600'}
+165	145		201							{1: '2', 2: '500128'}
+166	146		201							{1: '3', 2: '500166', 4: '600'}
+167	147		301			AniZhuanchangEnd				{1: '1', 2: 'Lucia', 3: 'Bianca! And Miss Ayla, too. What are you talking about?', 4: '3'}
+168	148		301							"{2: 'Ayla', 3: ""Nothing except that exquisite new body of yours! I'd love to have you model for me sometime."", 4: '1'}"
+169	149		204							{1: '3', 2: '6'}
+170	150		301							{2: 'Lucia', 3: 'Um... if I can help.', 4: '3'}
+171	151		301							{2: 'Lucia', 3: 'By the way, what do you know about the ruckus outside?', 4: '3'}
+172	152		301							{2: 'Bianca', 3: 'Truth be told, we were driven here by sheer irritation as well.', 4: '2'}
+173	153		301							{2: 'Bianca', 3: 'Though it is understandable. It is only fair to cajole and revel during a festival. To break them up would be somewhat obtuse on our part.', 4: '2'}
+174	154		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+175	155		201							{1: '1', 2: '500110', 3: '1'}
+176	156		301							"{2: 'Ayla', 3: ""No matter which side gets their way, it will all be a colorful addition to Babylonia's cultural and historical tapestry. It's fun to watch from a distance."", 4: '1'}"
+177	157		301				AniZhuanchangBegin			{2: 'Ayla', 3: 'However, even neutral observers like us have to have standards when it comes to taste.', 4: '1'}
+178	12347		201							{1: '1', 2: '500110'}
+179	158		301			AniZhuanchangEnd				{1: '1', 3: '(Which Zong should I give Ayla?)'}
+180	159		302							{2: 'White Lotus Bean Paste (Sweet Zong)', 3: '160', 4: 'Pork and Egg Yolk (Savory Zong)', 5: '163', 6: 'Ask Lucia for advice', 7: '166'}
+181	160		204							{1: '1'}
+182	161		301							"{2: 'Ayla', 3: ""White and flawless, like a work of art! And the sweetness and fragrance isn't overpowering at all."", 4: '1'}"
+183	162	169	301				AniZhuanchangBegin			{2: 'Ayla', 3: 'The Commandant has good taste!', 4: '1'}
+184	163		204							{1: '1', 2: '4'}
+185	164		301							"{2: 'Ayla', 3: ""Well... objectively speaking, there's nothing wrong with the flavor..."", 4: '1'}"
+186	165		301							{2: 'Ayla', 3: 'But it does feel a bit... boorish.', 4: '1'}
+187	22350		301							{3: 'Suddenly, several Construct Soldiers rush over with whistles in their mouths.'}
+188	22351		201							{1: '1', 2: '500028', 4: '1460'}
+189	22352		201							{1: '2', 2: '500028', 4: '1460'}
+190	22353		203							{1: '1', 2: '1', 3: '-400'}
+191	22354		203							{1: '2', 2: '1', 3: '400'}
+192	22355		301							{1: '1', 2: 'Zong Police A', 3: 'Zong-related dispute detected!', 4: '1'}
+193	22356		301							"{2: 'Zong Police B', 3: ""Are you trying to start another war, feeding people Zongs you know they won't like?"", 4: '2'}"
+194	22357		301							{2: 'Zong Police A', 3: 'Humanity shall remain forever divided by the unbridgeable Zong Schism. It is up to us, the Zong Police, to maintain the fragile peace on Babylonia.', 4: '1'}
+195	22358		301							{2: 'Zong Police B', 3: 'Take them away. It is because of these people that war never changes.', 4: '2'}
+196	22359		302							{2: 'Wait!? What the', 3: '22360'}
+197	22360		202							{1: '1', 2: '2', 6: '1'}
+198	22361		201							{1: '1', 2: '500166', 3: '6'}
+199	22362		301							{1: '1', 2: 'Lucia', 3: 'C-Commandant!!!', 4: '1'}
+200	865656		302							{2: 'Please give me a chance!', 3: '865657'}
+201	865657		201							{1: '1', 2: '500028'}
+202	865658	12347	301				AniZhuanchangBegin			{1: '1', 2: 'Zong Police A', 3: 'Alright then... but choose wisely this time.', 4: '1'}
+203	166		201							{1: '1', 2: '500166'}
+204	167		301							{1: '1', 2: 'Lucia', 3: 'In my mind, Miss Ayla probably prefers more aesthetically pleasing things.', 4: '1'}
+205	168	159	201							{1: '1', 2: '500110', 3: '1'}
+206	169		201							{1: '1', 2: '500128'}
+207	12348		201							{1: '1', 2: '500128'}
+208	170		301			AniZhuanchangEnd				{1: '1', 3: '(Which Zong should I give Bianca?)'}
+209	171		302							{2: 'Red Date Paste (Sweet Zong)', 3: '172', 4: 'Fresh Ham (Savory Zong)', 5: '174', 6: 'Ask Lucia for advice', 7: '176'}
+210	172		301							{1: '1', 2: 'Bianca', 3: 'Thank you...', 4: '1'}
+211	173		301							{2: 'Bianca', 3: 'But it is still too sweet for my taste.', 4: '1'}
+212	22370		301							{3: 'Suddenly, several Construct Soldiers rush over with whistles in their mouths.'}
+213	22371		201							{1: '1', 2: '500028', 4: '1460'}
+214	22372		201							{1: '2', 2: '500028', 4: '1460'}
+215	22373		203							{1: '1', 2: '1', 3: '-400'}
+216	22374		203							{1: '2', 2: '1', 3: '400'}
+217	22375		301							{1: '1', 2: 'Zong Police A', 3: 'Zong-related dispute detected!', 4: '1'}
+218	22376		301							"{2: 'Zong Police B', 3: ""Are you trying to start another war, feeding people Zongs you know they won't like?"", 4: '2'}"
+219	22377		301							{2: 'Zong Police A', 3: 'Humanity shall remain forever divided by the unbridgeable Zong Schism. It is up to us, the Zong Police, to maintain the fragile peace on Babylonia.', 4: '1'}
+220	22378		301							{2: 'Zong Police B', 3: 'Take them away. It is because of these people that war never changes.', 4: '2'}
+221	22379		302							{2: 'Wait!? What the', 3: '22380'}
+222	22380		202							{1: '1', 2: '2', 6: '1'}
+223	22381		201							{1: '1', 2: '500166', 3: '6'}
+224	22382		301							{1: '1', 2: 'Lucia', 3: 'C-Commandant!!!', 4: '1'}
+225	858887		302							{2: 'Please give me a chance!', 3: '858888'}
+226	858888		201							{1: '1', 2: '500028'}
+227	858889	12348	301				AniZhuanchangBegin			{1: '1', 2: 'Zong Police A', 3: 'Alright then... but choose wisely this time.', 4: '1'}
+228	174		301							"{2: 'Bianca', 3: ""In my memories, meats were a valuable commodity, and salt was worth its weight in gold too... I've almost forgotten their taste on my tongue."", 4: '1'}"
+229	175	178	301							{2: 'Bianca', 3: 'It was delicious. Thank you.', 4: '1'}
+230	176		201							{1: '1', 2: '500166'}
+231	177	1771	301							"{1: '1', 2: 'Lucia', 3: ""I remember Lee saying that his taste was not far off from Bianca's. Perhaps I could use her as a reference."", 4: '1'}"
+232	1771	171	201							{1: '1', 2: '500128'}
+233	178		201							{1: '1', 2: '500166', 3: '1', 4: '1'}
+234	179		301				AniZhuanchangBegin			"{1: '1', 2: 'Lucia', 3: ""Both Miss Ayla and Bianca approve of Commandant's cooking. What a pleasant surprise."", 4: '1'}"
+235	180		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+236	181		401							{1: '1', 2: '205'}
+237	182		201							{1: '1', 2: '500155', 4: '-600'}
+238	183		201							{1: '2', 2: '500091', 3: '2'}
+239	184		201							{1: '3', 2: '500166', 4: '600'}
+240	185		301			AniZhuanchangEnd				{2: 'Nanami', 3: 'Gray Raven Commandant! Grr~', 4: '2'}
+241	186		302							{2: 'Nanami... and Chrome?', 3: '187'}
+242	187		204							{1: '1', 2: '1'}
+243	188		301							{2: 'Chrome', 3: 'Lucia. Commandant.', 4: '1'}
+244	189		301							"{2: 'Lucia', 3: ""Chrome, how come you're with Nanami?"", 4: '3'}"
+245	190		204							{1: '2', 2: '1'}
+246	191		301							"{2: 'Chrome', 3: ""So you're Nanami? The strange Construct that Gray Raven talked about earlier?"", 4: '1'}"
+247	192		204							{1: '2', 2: '2'}
+248	193		301							{2: 'Nanami', 3: 'Yeppers! Nanami usually goes by Nanami!', 4: '2'}
+249	194		301							"{2: 'Lucia', 3: ""So you two don't even know each other's names?"", 4: '3'}"
+250	195		301							{2: 'Nanami', 3: 'Would Lucia and Commandant like to join us?', 4: '2'}
+251	196		301							{2: 'Lucia', 3: 'Nanami, I understand... but Chrome too...?', 4: '3'}
+252	197		301							"{2: 'Chrome', 3: ""Well, I could hardly refuse a lady in need of assistance... but I didn't think it would be to lobby for votes."", 4: '1'}"
+253	198		204							{1: '1'}
+254	199		301							{2: 'Chrome', 3: 'Alas, a gentleman honors his promises.', 4: '1'}
+255	200		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+256	201		201							{1: '1', 2: '500091', 3: '2'}
+257	202		301							{1: '1', 2: 'Nanami', 3: 'Ooh~ are those Zongs you got there? Are they for us?', 4: '1'}
+258	203		302							{2: 'Which side are you on?', 3: '204'}
+259	204		204							{1: '1', 2: '1'}
+260	205		301				AniZhuanchangBegin			"{2: 'Nanami', 3: ""That would be telling, and telling's no fun! Guess!"", 4: '1'}"
+261	12349		201							{1: '1', 2: '500091'}
+262	206		301			AniZhuanchangEnd				{1: '1', 3: '(Which Zong should I give Nanami?)'}
+263	207		302							{2: 'Sesame and Roasted Nuts (Sweet Zong)', 3: '208', 4: 'Roast Pork (Savory Zong)', 5: '212', 6: 'Ask Lucia for advice', 7: '215'}
+264	208		204							{1: '1', 2: '2'}
+265	209		301							{2: 'Nanami', 3: 'Sweet... yummy!', 4: '1'}
+266	210		301							"{2: 'Nanami', 3: ""But don't get cocky, Commandant. Of the four Sweet Sovereigns, Nanami is but the lowliest!"", 4: '1'}"
+267	211		302				AniZhuanchangBegin			{2: 'What is this Sweet Sovereign business now...', 3: '218'}
+268	212		204							{1: '1'}
+269	213		301							{2: 'Nanami', 3: 'Savory...euch!', 4: '1'}
+270	214		301							{2: 'Nanami', 3: 'Savory is ptooey... and Nanami hates ptooey!', 4: '1'}
+271	22390		301							{3: 'Suddenly, several Construct Soldiers rush over with whistles in their mouths.'}
+272	22391		201							{1: '1', 2: '500028', 4: '1460'}
+273	22392		201							{1: '2', 2: '500028', 4: '1460'}
+274	22393		203							{1: '1', 2: '1', 3: '-400'}
+275	22394		203							{1: '2', 2: '1', 3: '400'}
+276	22395		301							{1: '1', 2: 'Zong Police A', 3: 'Zong-related dispute detected!', 4: '1'}
+277	22396		301							"{2: 'Zong Police B', 3: ""Are you trying to start another war, feeding people Zongs you know they won't like?"", 4: '2'}"
+278	22397		301							{2: 'Zong Police A', 3: 'Humanity shall remain forever divided by the unbridgeable Zong Schism. It is up to us, the Zong Police, to maintain the fragile peace on Babylonia.', 4: '1'}
+279	22398		301							{2: 'Zong Police B', 3: 'Take them away. It is because of these people that war never changes.', 4: '2'}
+280	22399		302							{2: 'Wait!? What the', 3: '22400'}
+281	22400		202							{1: '1', 2: '2', 6: '1'}
+282	22401		201							{1: '1', 2: '500166', 3: '6'}
+283	22402		301							{1: '1', 2: 'Lucia', 3: 'C-Commandant!!!', 4: '1'}
+284	898987		302							{2: 'Please give me a chance!', 3: '898988'}
+285	898988		201							{1: '1', 2: '500028'}
+286	898989	12349	301				AniZhuanchangBegin			{1: '1', 2: 'Zong Police A', 3: 'Alright then... but choose wisely this time.', 4: '1'}
+287	215		201							{1: '1', 2: '500166'}
+288	216		301							"{1: '1', 2: 'Lucia', 3: ""Children usually gravitate towards sweets more... though Nanami hardly counts as one, it's a safe bet."", 4: '1'}"
+289	217	207	201							{1: '1', 2: '500091', 3: '1'}
+290	218	2181	201							{1: '1', 2: '500155'}
+291	1235		201							{1: '1', 2: '500155'}
+292	2181		301			AniZhuanchangEnd				{1: '1', 3: '(Which Zong should I give Chrome?)'}
+293	219		302							{2: 'Fruit and Honeyed Dates (Sweet Zong)', 3: '220', 4: 'Egg Yolk and Five Spice Pork (Savory Zong)', 5: '224', 6: 'Ask Lucia for advice', 7: '226'}
+294	220		301							{1: '1', 2: 'Chrome', 3: 'Oh, my thanks, Commandant!', 4: '1'}
+295	221		204							{1: '1', 2: '4'}
+296	222		301							{2: 'Chrome', 3: 'It is not... inedible, but common sense dictates that sweets have no place in a main course. The two should remain separate.', 4: '1'}
+297	223		301							{2: 'Chrome', 3: 'Regrettably, I must draw the line at sweet rice...', 4: '1'}
+298	22500		301							{3: 'Suddenly, several Construct Soldiers rush over with whistles in their mouths.'}
+299	22501		201							{1: '1', 2: '500028', 4: '1460'}
+300	22502		201							{1: '2', 2: '500028', 4: '1460'}
+301	22503		203							{1: '1', 2: '1', 3: '-400'}
+302	22504		203							{1: '2', 2: '1', 3: '400'}
+303	22505		301							{1: '1', 2: 'Zong Police A', 3: 'Zong-related dispute detected!', 4: '1'}
+304	22506		301							"{2: 'Zong Police B', 3: ""Are you trying to start another war, feeding people Zongs you know they won't like?"", 4: '2'}"
+305	22507		301							{2: 'Zong Police A', 3: 'Humanity shall remain forever divided by the unbridgeable Zong Schism. It is up to us, the Zong Police, to maintain the fragile peace on Babylonia.', 4: '1'}
+306	22508		301							{2: 'Zong Police B', 3: 'Take them away. It is because of these people that war never changes.', 4: '2'}
+307	22509		302							{2: 'Wait!? What the', 3: '22510'}
+308	22510		202							{1: '1', 2: '2', 6: '1'}
+309	22511		201							{1: '1', 2: '500166', 3: '6'}
+310	22512		301							{1: '1', 2: 'Lucia', 3: 'C-Commandant!!!', 4: '1'}
+311	87845		302							{2: 'Please give me a chance!', 3: '87846'}
+312	87846		201							{1: '1', 2: '500028'}
+313	87847	1235	301				AniZhuanchangBegin			{1: '1', 2: 'Zong Police A', 3: 'Alright then... but choose wisely this time.', 4: '1'}
+314	224		301							{2: 'Chrome', 3: 'Oh, my thanks, Commandant!', 4: '1'}
+315	225	229	301							{2: 'Chrome', 3: 'Ah, I prefer this over its sweeter counterpart.', 4: '1'}
+316	226		201							{1: '1', 2: '500166'}
+317	227		301							"{1: '1', 2: 'Lucia', 3: ""As I recall, Chrome once turned down one of Liv's dessert when I offered it to him. He probably doesn't have a sweet tooth."", 4: '1'}"
+318	228	2281	301							"{2: 'Lucia', 3: ""But Nanami, on the other hand, has a huge sweet tooth. Strange, that he's hanging with her..."", 4: '1'}"
+319	2281	219	201							{1: '1', 2: '500155'}
+320	229		201							{1: '1', 2: '500155', 4: '-400', 7: '1'}
+321	230		201							{1: '2', 2: '500091', 4: '400', 7: '1'}
+322	231		301							{1: '1', 2: 'Nanami', 3: 'Chrome, you traitor! You have betrayed the Sweet League!', 4: '2'}
+323	232		301				AniZhuanchangBegin			{1: '1', 2: 'Chrome', 3: 'Traitor...?', 4: '1'}
+324	2321	233	202							{1: '1', 2: '2', 6: '1'}
+325	233	2331	101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory40.jpg'}
+326	2331		401							{1: '1', 2: '201'}
+327	234		301			AniZhuanchangEnd				{3: 'As you emerge onto the open area of the Babylonia plaza, you see two groups of people facing off against one another, brandishing banners and signs.'}
+328	235		201							{1: '1', 2: '500019', 4: '-400'}
+329	236		201							{1: '2', 2: '500019', 4: '400'}
+330	237		301							{1: '1', 2: 'Sweet Zong League Member', 3: 'Zongs that are sweet cannot be beat!', 4: '1'}
+331	238		301							"{2: 'Savory Zong Party Member', 3: '""Savor"" the better flavor!', 4: '2'}"
+332	239		202							{1: '1', 2: '2', 6: '1'}
+333	240		201							{1: '1', 2: '500028', 4: '1460'}
+334	241		201							{1: '2', 2: '500028', 4: '1460'}
+335	242		203							{1: '1', 2: '1', 3: '-400'}
+336	243		203							{1: '2', 2: '1', 3: '400'}
+337	244		301							{1: '1', 2: 'Zong Police A', 3: 'Disperse! You are not authorized to gather here.', 4: '1'}
+338	245		202							{1: '1', 2: '2'}
+339	246		301							{3: 'The Zong Police successfully disperse most of the rabble-rousers, until only the ringleaders of the opposing movements are left.'}
+340	247		201							{1: '1', 2: '500028', 4: '-400'}
+341	248		201							{1: '2', 2: '500028', 4: '400'}
+342	249		301							{2: 'Zong Police B', 3: 'Did you two have to start a riot...', 4: '2'}
+343	250		202							{1: '1', 2: '2'}
+344	251		201							{1: '1', 2: '1111001'}
+345	252		301							"{1: '1', 2: 'Karenina', 3: ""What was I supposed to do, stop the groundswell of support for savory Zongs? Why don't you ask that clueless ape over there?"", 4: '1'}"
+346	9655		203							{1: '1', 2: '0.25', 3: '-400'}
+347	253		201							{1: '2', 2: '1081001', 3: '2', 4: '400'}
+348	254		301							{1: '1', 2: 'Kamui', 3: 'I was elected as leader of this movement. I will not let them down!', 4: '2'}
+349	255		301							"{2: 'Kamui', 3: ""Why won't you just concede that sweet Zongs should be the official Babylonian flavor?"", 4: '2'}"
+350	256		204							{1: '1', 2: '5'}
+351	257		301							{1: '1', 2: 'Karenina', 3: '*Beep—*ing *Beep—* YOU concede!', 4: '1'}
+352	258		202							{1: '1', 2: '2'}
+353	259		201							{1: '1', 2: '500166'}
+354	260		301							{1: '1', 2: 'Lucia', 3: 'Kamui and Karen... so you two are the ringleaders?', 4: '1'}
+355	261		201							{1: '1', 2: '1111001', 4: '-400'}
+356	262		201							{1: '2', 2: '1081001', 3: '1', 4: '400'}
+357	263		301							"{1: '1', 2: 'Kamui', 3: ""That's right. I represent the Sweet Zong League. Karen over there, she speaks for the pitiful Savory Zong Party... And please, call me Captain Kamui."", 4: '2'}"
+358	264		301							"{1: '1', 2: 'Karenina', 3: ""Tch... Lucia, Gray Raven Commandant... this doesn't concern you."", 4: '1'}"
+359	265		202							{1: '1', 2: '2'}
+360	266		201							{1: '1', 2: '500166'}
+361	267		301							{1: '1', 2: 'Lucia', 3: 'Actually, Commandant wants to give you a few of these Zongs...', 4: '1'}
+362	268		201							{1: '1', 2: '1111001'}
+363	269		301							{1: '1', 2: 'Karenina', 3: 'Hmph, then give them already.', 4: '1'}
+364	270		301							{3: '(Which Zong should I give Karenina?)'}
+365	271		302							{2: 'Eight Treasures (Sweet Zong)', 3: '272', 4: 'Spicy Pork (Savory Zong)', 5: '277'}
+366	272		204							{1: '1', 2: '1'}
+367	273		301							"{2: 'Karenina', 3: ""You're kidding me... only kids eat sticky sweet stuff like this. Ugh, I can feel my stomach turning just looking at it."", 4: '1'}"
+368	2334		302							{2: 'Just try it', 3: '275'}
+369	275		204							{1: '1'}
+370	276		301							"{2: 'Karenina', 3: ""*Beep—*, fine! You're so annoying. I warn you, if this isn't to my taste, I'll yeet the whole thing to outer space."", 4: '1'}"
+371	2333		302							{2: 'How is it?', 3: '2344'}
+372	2344		301							{2: 'Karenina', 3: 'No problem.', 4: '1'}
+373	2345		301							"{2: 'Karenina', 3: ""I mean... it's alright... kinda sweet..."", 4: '1'}"
+374	2346		302							"{2: ""Didn't think you'd like it"", 3: '632563'}"
+375	632563		204							{1: '1', 2: '5'}
+376	2347	303	301							"{2: 'Karenina', 3: ""What's that s'posed to mean? You saying I don't have a sweet personality to match?"", 4: '1'}"
+377	277		204							{1: '1', 2: '5'}
+378	278		301							{2: 'Karenina', 3: 'What is this stuff... why is it hot?', 4: '1'}
+379	279		204							{1: '1'}
+380	280		301							{2: 'Karenina', 3: 'So weird... how dare you give me such a weird combination of flavors! Such a... weirdly... enticing...', 4: '1'}
+381	281		302							{2: 'And yet you ate it all', 3: '282'}
+382	282		204							{1: '1', 2: '5'}
+383	283	284	301							{2: 'Karenina', 3: 'Shut up, you!', 4: '1'}
+384	284		201							{1: '1', 2: '1081001'}
+385	285		301							{3: '(Which Zong should I give Kamui?)'}
+386	286		302							{2: 'Crystal Lotus Seed (Sweet Zong)', 3: '287', 4: 'Abalone Seafood (Savory Zong)', 5: '295'}
+387	287		204							{1: '1', 2: '1'}
+388	288		301							{1: '1', 2: 'Kamui', 3: 'Such sweetness in a delectable little package. Convenient!', 4: '1'}
+389	289		301							{2: 'Kamui', 3: 'I could eat these all day.', 4: '1'}
+390	290		302							{2: 'Kamui...', 3: '291'}
+391	291		301							"{2: 'Kamui', 3: ""What's up?"", 4: '1'}"
+392	292		302							{2: 'You have to unwrap the leaves...', 3: '293'}
+393	293		204							{1: '1', 2: '2'}
+394	294	322	301							{2: 'Kamui', 3: 'Ahahaha, is that so? (nibble) I was just about to say that the leaves are a bit on the tough side! (nibble)', 4: '1'}
+395	295		204							{1: '1', 2: '1'}
+396	296		301							"{1: '1', 2: 'Kamui', 3: '""Savory is heresy"", that\'s what they say...', 4: '1'}"
+397	297		301							"{2: 'Kamui', 3: ""Truth be told, savory isn't all bad... hmm, pretty tasty, to be honest!"", 4: '1'}"
+398	298		302							{2: 'Kamui...', 3: '299'}
+399	299		301							"{2: 'Kamui', 3: ""What's up?"", 4: '1'}"
+400	300		302							{2: 'You have to unwrap the leaves...', 3: '301'}
+401	301		204							{1: '1', 2: '2'}
+402	302	322	301							{2: 'Kamui', 3: 'Ahahaha, is that so? (nibble) I was just about to say that the leaves are a bit on the tough side! (nibble)', 4: '1'}
+403	303		201							{1: '1', 2: '1081001'}
+404	304		301							{3: '(Which Zong should I give Kamui?)'}
+405	305		302							{2: 'Crystal Lotus Seed (Sweet Zong)', 3: '306', 4: 'Abalone Seafood (Savory Zong)', 5: '314'}
+406	306		204							{1: '1', 2: '1', 3: '307'}
+407	307		301							{1: '1', 2: 'Kamui', 3: 'Such sweetness in a delectable little package. Convenient!', 4: '1'}
+408	308		301							{2: 'Kamui', 3: 'I could eat these all day.', 4: '1'}
+409	309		302							{2: 'Kamui...'}
+410	310		301							"{2: 'Kamui', 3: ""What's up?"", 4: '1'}"
+411	311		302							{2: 'You have to unwrap the leaves...', 3: '312'}
+412	312		204							{1: '1', 2: '2'}
+413	313	322	301							{2: 'Kamui', 3: 'Ahahaha, is that so? (nibble) I was just about to say that the leaves are a bit on the tough side! (nibble)', 4: '1'}
+414	314		204							{1: '1', 2: '1'}
+415	315		301							"{1: '1', 2: 'Kamui', 3: '""Savory is heresy"", that\'s what they say...', 4: '1'}"
+416	316		301							"{2: 'Kamui', 3: ""Truth be told, savory isn't all bad... hmm, pretty tasty, to be honest!"", 4: '1'}"
+417	317		302							{2: 'Kamui...', 3: '318'}
+418	318		301							"{2: 'Kamui', 3: ""What's up?"", 4: '1'}"
+419	319		302							{2: 'You have to unwrap the leaves...', 3: '320'}
+420	320		204							{1: '1', 2: '2'}
+421	321	333	301							{2: 'Kamui', 3: 'Ahahaha, is that so? (nibble) I was just about to say that the leaves are a bit on the tough side! (nibble)', 4: '1'}
+422	322	3221	201							{1: '1', 2: '500166', 3: '1'}
+423	3221		401							{1: '1', 2: '5'}
+424	323		301							{1: '1', 2: 'Lucia', 3: 'At least all the Zongs are gone.', 4: '1'}
+425	324		204							{1: '1', 2: '4'}
+426	325		301							"{2: 'Lucia', 3: ""Commandant? What's wrong?"", 4: '1'}"
+427	326		302							"{2: ""Didn't think I'd be this tired"", 3: '327', 4: 'Since when did gifting get so hard...', 5: '327'}"
+428	327		301							"{2: 'Lucia', 3: ""Don't worry. Come tomorrow, they'll be back to normal... mostly."", 4: '1'}"
+429	328		301							"{2: 'Lucia', 3: ""Still, it's a shame that Commandant's Zongs couldn't bring everyone together for the festival..."", 4: '1'}"
+430	329		302							{2: 'Was I that transparent...', 3: '330'}
+431	330		204							{1: '1', 2: '1'}
+432	331		301							"{2: 'Lucia', 3: ""I usually have a feel for what you're thinking."", 4: '1'}"
+433	332		301		1		AniZhuanchangBegin			{2: 'Lucia', 3: 'Festivals are rare occasions. It would be nice to have all of Babylonia together to celebrate.', 4: '1'}
+434	333	3331	401							{1: '1', 2: '5'}
+435	3331	334	201							{1: '1', 2: '1111001', 4: '-400'}
+436	334		201							{1: '2', 2: '1081001', 3: '1', 4: '400'}
+437	335		301							"{1: '1', 2: 'Kamui', 3: ""So? The Gray Raven Commandant knows his way around a Zong, doesn't he?"", 4: '2'}"
+438	336		204							{1: '1', 2: '1'}
+439	337		301							"{2: 'Karenina', 3: ""Hmph... it's so-so. It's better than you, Kamui, gorging yourself on savory Zongs."", 4: '1'}"
+440	338		204							{1: '2', 2: '2'}
+441	339	3391	301							"{2: 'Kamui', 3: ""Yep! Those savory Zongs were halfway decent... And that's Captain Kamui to you."", 4: '2'}"
+442	3391		202							{1: '1', 2: '2'}
+443	340		201							{1: '1', 2: '500091'}
+444	341		301							{1: '1', 2: 'Nanami', 3: 'Ahh! Even Captain Kamui has gone rogue!', 4: '1'}
+445	342		201							{1: '1', 2: '1081001'}
+446	343		301							"{1: '1', 2: 'Kamui', 3: ""Savory Zongs ain't half bad!"", 4: '1'}"
+447	344		201							{1: '1', 2: '500091'}
+448	345		301							"{1: '1', 2: 'Nanami', 3: ""That's it! Nanami wants to try the other flavors too!"", 4: '1'}"
+449	346		201							{1: '1', 2: '500155'}
+450	347		301							{1: '1', 2: 'Chrome', 3: 'Nobody was keeping you in the first place...', 4: '1'}
+451	348		201							{1: '1', 2: '1081001', 3: '1'}
+452	349		301							"{1: '1', 2: 'Kamui', 3: ""Captain! You're here too?"", 4: '1'}"
+453	350		201							{1: '1', 2: '500026'}
+454	351		301							{1: '1', 2: 'Lee', 3: 'No, I distinctly recall you crowning yourself Captain, Captain Kamui.', 4: '1'}
+455	352		201							{1: '1', 2: '1081001', 3: '2'}
+456	353		301							{1: '1', 2: 'Kamui', 3: 'Ahh... I was just horsing around, Captain.', 4: '1'}
+457	334455		202							{1: '1'}
+458	354		201							{1: '1', 2: '500110', 3: '1', 4: '400'}
+459	355		201							{1: '2', 2: '500128', 4: '-400'}
+460	356		301							"{1: '1', 2: 'Bianca', 3: 'It would seem that this ""war"" of ours shall end unresolved.', 4: '2'}"
+461	357		204							{1: '1', 2: '2'}
+462	358		301							"{2: 'Ayla', 3: ""That's alright. War, in all its forms, is never a good thing."", 4: '1'}"
+463	359		301							"{2: 'Ayla', 3: ""Festivals like these, it's better to have everyone together."", 4: '1'}"
+464	360		302							{2: 'Though we seem to be short on Zongs', 3: '3601'}
+465	3601		202							{1: '1', 2: '2'}
+466	361		201							{1: '1', 2: '1031001', 3: '1'}
+467	362		301							"{1: '1', 2: 'Liv', 3: ""I actually brought a lot of sweet treats too, Commandant. If you don't mind... we can all share."", 4: '1'}"
+468	363		201							{1: '1', 2: '500166'}
+469	364		301							{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+470	23333		302							"{2: ""What's the matter, Lucia?"", 3: '365', 4: 'Babylonia to Lucia...?', 5: '365'}"
+471	365		204							{1: '1', 2: '1'}
+472	366		301							"{1: '1', 2: 'Lucia', 3: ""It's great when everyone comes together, Commandant. I wish we can spend every year, every month, and every holiday just like this."", 4: '1'}"
+473	367		302							{2: '...', 3: '368', 4: 'Lucia...?', 5: '368'}
+474	368		301							"{1: '1', 2: 'Lucia', 3: ""I don't know why, but the words just... surfaced in my M.I.N.D.... then leapt off my tongue."", 4: '1'}"
+475	23334		301							"{2: 'Lucia', 3: ""It's good, on a day like this, to have everyone together."", 4: '1'}"
+476	23335		302							{2: 'Happy Duanwu festival, Lucia.', 3: '23336'}
+477	23336		301				AniZhuanchangBegin			{2: 'Lucia', 3: 'Happy Duanwu festival, Commandant.', 4: '1'}
+478	3681		202							{1: '1'}
+479	369		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+480	370		201							{1: '1', 2: '500001'}
+481	371		301			AniZhuanchangEnd				{1: '1', 2: 'Celica', 3: 'And just like that, this war of foolish pride has come to an end.', 4: '1'}
+482	372		301							{2: 'Celica', 3: 'Hm? Does Celica like Savory or Sweet Zongs?', 4: '1'}
+483	373		301		1		AniZhuanchangBegin			{2: 'Celica', 3: 'Well... why not take a guess, Commandant?', 4: '1'}

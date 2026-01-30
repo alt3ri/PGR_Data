@@ -1,0 +1,159 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory671.jpg'}
+2	2		401							{1: '1', 2: '36'}
+3	3		401							{1: '2', 2: '2915'}
+4	4		301			DialogEnable	DialogDisable			{3: 'In a makeshift theater on the street, a crowd gathers around a storyteller dressed in a robe and mask, dramatically reciting a script.'}
+5	5		402							{1: '2915'}
+6	6		401							{1: '1', 2: '37'}
+7	7		306						400.0	{1: '1'}
+8	8		201							{1: '1', 2: '500144'}
+9	9		301			DialogEnable				{1: '1', 2: 'Storyteller', 3: 'Previously, we spoke about a wealthy youngster who rejected family arrangements and decided to run away with a young martial artist.', 4: '1'}
+10	10		301				DialogDisable			"{2: 'Storyteller', 3: ""One dark and windy night, they climbed over the mansion's walls, hoping to escape to the capital. But little did they know the family had found out and sent guards to intercept them..."", 4: '1'}"
+11	11		202							{1: '1'}
+12	12		402							{1: '37'}
+13	13		401						250.0	{1: '2', 2: '4296'}
+14	14		401							{1: '2', 2: '10113408'}
+15	15		201							{1: '1', 2: '500638', 4: '-800'}
+16	16		201							{1: '2', 2: '500638', 4: '800'}
+17	17		203							{1: '1', 2: '0.4', 3: '450'}
+18	18		203						450.0	{1: '2', 2: '0.4', 3: '-450'}
+19	19		301			DialogEnable				{3: 'The storyteller slams his wooden block, and actors dressed in traditional black outfits appear on stage, each striking a martial arts pose.'}
+20	20		306							
+21	21		401							{1: '1', 2: '6151'}
+22	22		202							{1: '1', 2: '2', 6: '1'}
+23	23		201							{1: '1', 2: '500225', 3: '2'}
+24	24		301							{1: '1', 2: 'Changyu', 3: 'Wow, this show feels so immersive! They even have real martial arts performers!', 4: '1'}
+25	25		302							{2: 'No wonder tickets sold out so quickly.', 3: '26'}
+26	26		204							{1: '1'}
+27	27		301							{2: 'Changyu', 3: 'Of course! I woke up early just to get front-row seats.', 4: '1'}
+28	28		301							"{2: 'Changyu', 3: ""Oh, never mind. If we keep chatting, we'll miss the good parts."", 4: '1'}"
+29	29		202							{1: '1'}
+30	30		301				DialogDisable			{3: 'Changyu and you turn your attention back to the stage, only to see the performers in black descending into the audience.'}
+31	31		401							{1: '1', 2: '36'}
+32	32		306						400.0	{1: '1'}
+33	33		401							{1: '1', 2: '37'}
+34	34		201							{1: '1', 2: '500144'}
+35	35		301			DialogEnable				"{1: '1', 2: 'Storyteller', 3: ""Poor youngster and martial artist. They barely escaped the estate before the master's guards caught them, like birds trapped in a cage."", 4: '1'}"
+36	36		202							{1: '1', 6: '1'}
+37	37		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+38	38		401							{1: '2', 2: '4636'}
+39	39		301			RImgBg1Shake	DialogDisable			"{3: ""As the storyteller narrates, the performers suddenly tie your and Changyu's wrists together with ropes and escort you onto the stage.""}"
+40	40		306							
+41	41		302							"{2: '(Look at Changyu in shock)', 3: '42', 4: ""What's going on? Is this show interactive?"", 5: '42'}"
+42	42		201							{1: '1', 2: '500225', 3: '3'}
+43	43		301			DialogEnable				"{1: '1', 2: 'Changyu', 3: ""Huh? I didn't hear about this part!"", 4: '1'}"
+44	44		202							{1: '1'}
+45	45		401							{1: '2', 2: '4895'}
+46	46		201							{1: '1', 2: '500638', 4: '-600'}
+47	47		201							{1: '2', 2: '500638', 4: '600'}
+48	48		203							{1: '1', 2: '0.4', 3: '-450', 5: '-50'}
+49	49		203							{1: '2', 2: '0.4', 3: '450', 5: '-50'}
+50	50		301							{3: 'But the performers ignore your protests, silently surrounding you both as the storyteller continues his excited narration.'}
+51	51		202							{1: '1', 2: '2', 6: '1'}
+52	52		201							{1: '1', 2: '500144'}
+53	53		301							"{1: '1', 2: 'Storyteller', 3: ""With the martial artist's hands bound, he's helpless now. Even the strongest fighter can't escape—"", 4: '1'}"
+54	54		302							{2: '(Cooperate obediently)', 3: '55', 4: '(Give Changyu a look to signal an escape)', 5: '55'}
+55	55		202							{1: '1', 6: '1'}
+56	56		401							{1: '1', 2: '28'}
+57	57		401							{1: '2', 2: '8220025'}
+58	58		201							{1: '1', 2: '500225', 3: '5'}
+59	59		301			RImgBg1Shake				{1: '1', 2: 'Changyu', 3: 'Hiyah—!', 4: '1'}
+60	60		202							{1: '1', 6: '1'}
+61	61		401							{1: '2', 2: '4306'}
+62	62		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+63	63		301			RImgBg1Shake				"{3: ""While you're thinking of a plan, Changyu unexpectedly kicks away one of the performers.""}"
+64	64		301							"{3: ""Turning, you see he's already in a fighting stance as he faces the performers.""}"
+65	65		201							{1: '1', 2: '500225'}
+66	66		301							"{1: '1', 2: 'Changyu', 3: ""Sorry, surrendering without a fight isn't my style."", 4: '1'}"
+67	67		204							{1: '1', 2: '5'}
+68	68		301							{2: 'Changyu', 3: 'Come at me, all of you!', 4: '1'}
+69	69		302							"{2: '...?', 3: '71', 4: ""Fine! I didn't want to see this melodramatic cliche anyway!"", 5: '73'}"
+70	70		202							{1: '1'}
+71	71	74	301							{3: 'You have no idea why Changyu suddenly starts fighting back. All you can do is stand there, staring in shock.'}
+72	72		202							{1: '1'}
+73	73		301							"{3: ""You're starting to get a little impatient too, so you rise to your feet alongside Changyu. The two of you stand shoulder to shoulder, facing the group of men in black.""}"
+74	74		201							{1: '1', 2: '500144'}
+75	75		301							{1: '1', 2: 'Storyteller', 3: 'Oh? The guards made one mistake, giving the martial artist a chance! In a flash, he lashes out with a fierce kick...', 4: '1'}
+76	76		202							{1: '1'}
+77	77		301							{3: 'Seeing Changyu rise up and fight back, the storyteller actually gets excited by the sudden twist.'}
+78	78		302							"{2: ""Huh? Why's everyone suddenly getting so excited?"", 3: '79'}"
+79	79		201							{1: '1', 2: '500225'}
+80	80		301							{1: '1', 2: 'Changyu', 3: 'One, two, three, four...', 4: '1'}
+81	81		401							{1: '2', 2: '8220025'}
+82	82		204							{1: '1', 2: '5'}
+83	83		301			RImgBg1Shake				"{2: 'Changyu', 3: ""Ah, forget it! It doesn't matter how many there are. Bring it on!"", 4: '1'}"
+84	84		306							{1: '1'}
+85	85		301							{3: 'Changyu confidently straightens up, excitement burning in his red eyes.'}
+86	86		306							
+87	87		202							{1: '1'}
+88	88		401							{1: '2', 2: '10113408'}
+89	89		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+90	90		201							{1: '1', 2: '500638', 4: '-800'}
+91	91		201							{1: '2', 2: '500638', 4: '800'}
+92	92		203							{1: '1', 2: '0.25', 3: '-450', 4: '-50', 5: '-100'}
+93	93		203							{1: '2', 2: '0.25', 3: '450', 4: '-50', 5: '-100'}
+94	94		301				DialogDisable			{1: '1', 3: 'The armed performers glance at each other, excited to finally meet a worthy opponent, and eagerly rush forward.'}
+95	95		202							{1: '1', 2: '2', 6: '1'}
+96	96		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+97	97		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+98	98		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+99	99		401							{1: '2', 2: '831'}
+100	100		401						200.0	{1: '2', 2: '8220025'}
+101	101		401						300.0	{1: '2', 2: '1512'}
+102	102		401						200.0	{1: '2', 2: '1512'}
+103	103		402							{1: '831'}
+104	104		401						200.0	{1: '2', 2: '8220025'}
+105	105		401						300.0	{1: '2', 2: '1512'}
+106	106		401						200.0	{1: '2', 2: '1512'}
+107	107		301			DialogEnable	DialogDisable			{3: 'Instantly, the theater erupts with excitement. The sounds of fighting mix with enthusiastic shouts from the storyteller and audience.'}
+108	108		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+109	109		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory671.jpg'}
+110	110		401							{1: '2', 2: '4085', 4: '-350', 6: '400'}
+111	111		502							{1: 'DialogEnable'}
+112	112		301			RImgBg1Shake				"{1: '1', 2: 'Spectators', 3: ""Yeah! That's it! Show them what you've got, young man!"", 4: '18'}"
+113	113		302				AniZhuanchangBegin			{2: 'Wait, everyone! Stop encouraging them!', 3: '114', 4: '(Quietly retreat to the back of the crowd)', 5: '114'}
+114	114		402							{1: '4085'}
+115	115		306							{1: '1'}
+116	116		401						2000.0	{1: '1', 2: '36'}
+117	117		401							{1: '1', 2: '6226'}
+118	118		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory670.jpg'}
+119	119		301			AniZhuanchangEnd				{3: 'In the end, Changyu wins, completely and decisively.'}
+120	120		301							"{3: ""As the crowd disperses, the martial artists enthusiastically approach Changyu and thank him, saying they haven't had such an exciting fight in ages. They invite him back to Constellia for another guest appearance in the future.""}"
+121	121		301							"{3: ""Since his hands were tied during the fight, Changyu inevitably ended up with a few cuts on his face. You're now sitting on a bench by the street, using the medicine you just bought to disinfect his wounds.""}"
+122	122		306							
+123	123		201							{1: '1', 2: '500225', 3: '5', 5: '-50'}
+124	124		301			PanelActor1Shake				{1: '1', 2: 'Changyu', 3: 'Ouch! Go easy! Ow, ow, ow!', 4: '1'}
+125	125		301			PanelActor1Shake				"{2: 'Changyu', 3: ""Wait, hold on! My vital fluid's leaking! Quick, cover it up—"", 4: '1'}"
+126	126		302							"{2: ""That's what you get for fighting so recklessly..."", 3: '127'}"
+127	127		202							{1: '1'}
+128	128		301							{3: 'After you carefully clean the wounds and toss the cotton balls soaked with red vital fluid into a nearby trash bin, Changyu rubs his nose awkwardly.'}
+129	129		201							{1: '1', 2: '500225', 3: '6', 5: '-50'}
+130	130		301							"{1: '1', 2: 'Changyu', 3: ""I got a little too into the show, that's all..."", 4: '1'}"
+131	131		204							{1: '1', 2: '3'}
+132	132		301							"{2: 'Changyu', 3: ""I mean, imagine if the person you cared about most was kidnapped and all you could do was stand there. Wouldn't that feel pathetic?"", 4: '1'}"
+133	133		302							"{2: ""That's true."", 3: '134', 4: 'Wait a second, what did you just say?', 5: '134'}"
+134	134		204							{1: '1', 2: '14'}
+135	135		301							{2: 'Changyu', 3: 'And besides, I was the one who suggested we come see the show.', 4: '1'}
+136	136		204							{1: '1', 2: '5'}
+137	137		301							"{2: 'Changyu', 3: ""If I just stood there getting beaten up the whole time... wouldn't that make me look kind of... ahem..."", 4: '1'}"
+138	138		204							{1: '1'}
+139	139		401							{1: '2', 2: '4895'}
+140	140		203							{1: '1', 2: '0.25'}
+141	141		301							{3: 'He cuts himself off mid-sentence, then deliberately stands up, clasps his hands behind his back, and stretches with theatrical nonchalance.'}
+142	142		204							{1: '1', 2: '2'}
+143	143		301							{2: 'Changyu', 3: 'Ah, what a beautiful night. The breeze feels great, perfect weather for a walk.', 4: '1'}
+144	144		302							"{2: ""Wait, you didn't finish what you were saying."", 3: '145'}"
+145	145		204							{1: '1', 2: '1'}
+146	146		301							"{2: 'Changyu', 3: ""I did. I'm done."", 4: '1'}"
+147	147		202							{1: '1'}
+148	148		301							"{3: 'He puts extra emphasis on the word ""done.""'}"
+149	149		201							{1: '1', 2: '500225', 3: '3'}
+150	150		301							"{1: '1', 2: 'Changyu', 3: ""Sigh... You really don't know how to pick up on the important parts, do you, 【kuroname】?"", 4: '1'}"
+151	151		202							{1: '1'}
+152	152		301							{3: 'He gets up, pretending to be annoyed, and lightly taps your forehead in mock frustration.'}
+153	153		201							{1: '1', 2: '500225'}
+154	154		301							"{1: '1', 2: 'Changyu', 3: ""Well then... since the night's still young..."", 4: '1'}"
+155	155		203							{1: '1', 2: '0.3', 4: '-20', 5: '-50'}
+156	156		301							{3: 'In the moonlight, Changyu turns around. His medium-length ponytail arcs smoothly through the air as he reaches out his hand to you.'}
+157	157		204							{1: '1', 2: '2'}
+158	158		301		1		AniZhuanchangBegin			{2: 'Changyu', 3: '【kuroname】, where should we go next?', 4: '1'}

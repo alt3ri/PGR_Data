@@ -1,0 +1,59 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory30.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500019'}
+4	4		301			DialogEnable				{1: '1', 2: 'Construct', 3: 'Gray Raven, we thank you for your assistance.', 4: '1'}
+5	5		301							{2: 'Puppy', 3: 'Woof!'}
+6	6		201							{1: '1', 2: '1031001', 4: '-400'}
+7	7		201							{1: '2', 2: '1011001', 4: '400'}
+8	8		301							"{1: '1', 2: 'Liv', 3: ""The puppy's going home with the Support Force?"", 4: '1'}"
+9	9		301							{2: 'Lee', 3: 'Well, that is their mission.', 4: '2'}
+10	10		301							"{2: 'Lee', 3: ""How's you're training going, Lucia?"", 4: '2'}"
+11	11		302							"{1: '100', 2: 'If only we had a bit more time.', 3: '15', 4: ""We're just not in the right headspace at the moment."", 5: '16'}"
+12	12		202							{1: '1', 2: '2', 6: '1'}
+13	13		201							{1: '1', 2: '1021001', 3: '3'}
+14	14		303							{1: '100'}
+15	15		301							"{1: '1', 2: 'Lucia', 3: ""But I don't know how much longer it'll take..."", 4: '1'}"
+16	16		301							{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+17	17		201							{1: '1', 2: '500019'}
+18	18		301							"{1: '1', 2: 'Construct', 3: ""Stop, don't mess around!"", 4: '1'}"
+19	19		202							{1: '1', 6: '1'}
+20	20		301							{2: 'Puppy', 3: 'Woof!'}
+21	21		201							{1: '1', 2: '1011001'}
+22	22		301							"{1: '1', 2: 'Lee', 3: ""Hm? It's coming over here?"", 4: '1'}"
+23	23		202							{1: '1', 6: '1'}
+24	24		301							{2: 'Puppy', 3: 'Woof!!'}
+25	25		302							"{2: '...This is?', 3: '26', 4: ""The puppy's approaching Lucia?"", 5: '29'}"
+26	26		201							{1: '1', 2: '1021001'}
+27	27		301							"{1: '1', 2: 'Lucia', 3: ""You're..."", 4: '1'}"
+28	28	31	203							{1: '1', 2: '0.25', 3: '400'}
+29	29		301							{2: 'Puppy', 3: 'Ruff!'}
+30	30		201							{1: '1', 2: '1021001', 4: '400'}
+31	31		201							{1: '2', 2: '500019', 4: '-400'}
+32	32		301							"{1: '1', 2: 'Construct', 3: ""Looks like it's saying goodbye to you."", 4: '2'}"
+33	33		301							{2: 'Lucia', 3: 'Goodbye?', 4: '1'}
+34	34		301							{2: 'Construct', 3: 'It may be scared but it still remembers who rescued it.', 4: '2'}
+35	35		301							{2: 'Construct', 3: 'Maybe it has been trying to find the right timing to thank you, Lucia.', 4: '2'}
+36	36		302							"{1: '101', 2: 'That must be it.', 3: '40', 4: ""Why don't you try to pet it?"", 5: '48'}"
+37	37		202							{1: '2', 6: '1'}
+38	38		203							{1: '1', 2: '0.25', 3: '0'}
+39	39		303							{1: '101'}
+40	40		301							{2: 'Lucia', 3: 'Is that so?', 4: '1'}
+41	41		203							{1: '1', 2: '0.25', 3: '-400'}
+42	42		201							{1: '2', 2: '1031001', 3: '1', 4: '400'}
+43	43		301							{1: '1', 2: 'Liv', 3: 'Give it a pet, Lucia.', 4: '2'}
+44	44		301							{2: 'Lucia', 3: '...May I?', 4: '1'}
+45	45		202							{1: '1', 2: '2', 6: '1'}
+46	46		301							{2: 'Puppy', 3: 'Woof woof!'}
+47	47	50	201							{1: '1', 2: '1021001', 3: '1'}
+48	48		301							{2: 'Lucia', 3: 'I understand now, Commandant.', 4: '1'}
+49	49		204							{1: '1', 2: '1'}
+50	50		301							{1: '1', 2: 'Lucia', 3: 'I can feel the warmth even though my body is just a machine.', 4: '1'}
+51	51		302							"{2: ""Lucia, you're smiling!"", 3: '52', 4: 'Lucia, you have a great smile.', 5: '53'}"
+52	52		301							{2: 'Lucia', 3: 'Did I smile?', 4: '1'}
+53	53		301							{2: 'Lucia', 3: 'Is that... so.', 4: '1'}
+54	54		301							{2: 'Lucia', 3: 'This warm feeling is the base of a smile.', 4: '1'}
+55	55		204							{1: '1', 2: '6'}
+56	56		301							"{2: 'Lucia', 3: ""I know it's impractical, but I want to feel like this more together with everyone, and with you, Commandant."", 4: '1'}"
+57	57		302							"{2: 'I hope so too.', 3: '58', 4: ""I'm sure we will.""}"
+58	58		301		1		AniZhuanchangBegin			{2: 'Lucia', 3: 'Thank you, Commandant.', 4: '1'}

@@ -1,0 +1,112 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory783.jpg'}
+2	2		401							{1: '2', 2: '903'}
+3	3		401							{1: '1', 2: '5061'}
+4	4		201							{1: '1', 2: '500533', 3: '2'}
+5	5		301			DialogEnable				{1: '1', 2: 'Bianca', 3: 'Commandant.', 4: '1'}
+6	6		302							{2: 'Bianca.', 3: '7'}
+7	7		202						500.0	{1: '1'}
+8	8		502							{1: 'RImgBg1BlowUp'}
+9	9		301							"{3: ""In the twilight hours at Constellia's beachside garden, your awaited companion approaches nonchalantly, accompanied by the gentle rhythm of resting waves.""}"
+10	10		401						400.0	{1: '2', 2: '4799'}
+11	11		402							{1: '4799'}
+12	12		301							{3: 'Bianca holds a transparent box containing several cone-shaped treats wrapped in gold foil.'}
+13	13		201							{1: '1', 2: '500533', 3: '6'}
+14	14		301							{1: '1', 3: 'As she approaches you, she opens the box, takes out one of the treats, and holds it to your lips, her clear eyes glimmering with expectation.'}
+15	15		302							{2: 'This is...', 3: '16', 4: '(Open mouth)', 5: '18'}
+16	16		202							{1: '1'}
+17	17	19	301							{3: 'Before you can voice your question, her slender fingers gently push the sweet treat into your mouth.'}
+18	18		202							{1: '1'}
+19	19		301							{3: 'You bite through the slightly bitter shell, and a sweet almond liqueur flavor floods your mouth.'}
+20	20		301							"{3: ""It's liqueur chocolate.""}"
+21	21		201							{1: '1', 2: '500533', 3: '1'}
+22	22		301							{1: '1', 3: 'Noticing how you look when tasting the liqueur filling, Bianca responds with a smile.'}
+23	23		204							{1: '1', 2: '6'}
+24	24		301							{2: 'Bianca', 3: 'I made these this afternoon at a handcrafted dessert shop. I adjusted the ingredients slightly based on your preferences. I hope you enjoy them.', 4: '1'}
+25	25		302							"{2: ""It's delicious."", 3: '26'}"
+26	26		204							{1: '1', 2: '1'}
+27	27		301							{3: 'Hearing your response, Bianca breaks into a smile.'}
+28	28		202							{1: '1'}
+29	29		401						400.0	{1: '2', 2: '4799'}
+30	30		402							{1: '4799'}
+31	31		301							{3: 'When you finish the rest of the chocolate, Bianca, apparently having realized what she came here to do, takes out a date coupon.'}
+32	32		201							{1: '1', 2: '500533', 3: '7'}
+33	33		301							{1: '1', 2: 'Bianca', 3: 'So I got this thing on my way here...', 4: '1'}
+34	34		301							"{2: 'Bianca', 3: 'It says, ""Go on an adventure to the old lighthouse with someone special.""', 4: '1'}"
+35	35		202							{1: '1'}
+36	36		301							"{3: ""She shows you the coupon, and the lighthouse on it happens to be visible from where you both stand, its rotating beacon hasn't yet started working.""}"
+37	37		201							{1: '1', 2: '500533'}
+38	38		301			DialogEnable	DialogDisable			{1: '1', 2: 'Bianca', 3: 'Shall we go and check it out?', 4: '1'}
+39	39		302				AniZhuanchangBegin			{2: 'Without question.', 3: '40', 4: 'I mean, it says we have to do it together, right?', 5: '40'}
+40	40		202							{1: '1', 6: '1'}
+41	41		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory601.jpg'}
+42	42		306				AniZhuanchangEnd			{1: '1'}
+43	43		502							{1: 'RImgBg1BlowUp'}
+44	44		301			DialogEnable				{3: 'With the speedboat you rented at the dock, you find yourself and Bianca fast around the lighthouse before long.'}
+45	45		301							{3: 'The lighthouse stands silently in the evening sea breeze, its beacon—meant to shine in the deep of night—not yet working.'}
+46	46		401							{1: '2', 2: '4542'}
+47	47		301				DialogDisable			"{3: ""As you push open the door weathered by sea winds, Bianca, worried that there might be unforeseen dangers, steps in first. Having made sure it's safe, she beckons you to follow.""}"
+48	48		401							{1: '2', 2: '4114'}
+49	49		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.5'}
+50	50		402							{1: '903'}
+51	51		401							{1: '1', 2: '36'}
+52	52		301			DialogEnable				{3: 'You enter the lighthouse, but before taking more than a few steps, a gust of wind slams the iron door shut behind you.'}
+53	53		104							{1: '0|200|-200', 2: '0'}
+54	54		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory98.png'}
+55	55		205						600.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0.7', 5: '0.5'}
+56	56		301							{3: 'With it, the world around you plunges into darkness. Only the extremely faint moonlight from above allows you to make out the vague structure overhead.'}
+57	57		301							{2: 'Bianca', 3: 'Commandant!'}
+58	58		301							"{3: ""Bianca's voice echoes in the darkness.""}"
+59	59		302							"{2: ""I'm here."", 3: '60', 4: ""I'm okay."", 5: '60'}"
+60	60		301							"{3: ""In the darkness, you've completely lost your sense of distance and direction, each step forward growing more hesitant.""}"
+61	61		401							{1: '2', 2: '4044'}
+62	62		104						150.0	{1: '0|180|-200', 2: '0.2'}
+63	63		104						800.0	{1: '0|150|-200', 2: '0.3'}
+64	64		301							{3: 'As you fumble around trying to locate Bianca, you feel a hand gently taking your arm.'}
+65	65		301							"{3: ""You catch a fragrance, and you know that it's coming from the ends of Bianca's hair.""}"
+66	66		306							
+67	67		201							{1: '1', 2: '500533', 3: '8'}
+68	68		301							{1: '1', 2: 'Bianca', 3: 'Huff...', 4: '1'}
+69	69		204							{1: '1', 2: '0'}
+70	70		301							{3: 'Then, you feel her breath close to your ear.'}
+71	71		204							{1: '1', 2: '4'}
+72	72		301							{3: 'When the two of you have found each other and your hands interlocked, Bianca lets out a soft sigh of relief.'}
+73	73		302							"{2: ""Let's consider this part of our adventure."", 3: '74'}"
+74	74		204							{1: '1', 2: '1'}
+75	75		301				DialogDisable			"{2: 'Bianca', 3: ""I won't let go from now on."", 4: '1'}"
+76	76		202							{1: '1', 6: '1'}
+77	77		306							{1: '1'}
+78	78		401							{1: '2', 2: '2576'}
+79	79		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg', 3: '0', 4: '1', 5: '0.6'}
+80	80		104							{1: '0|-200|-220', 2: '0'}
+81	81		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg'}
+82	82		205							{1: '999'}
+83	83		401						400.0	{1: '2', 2: '4799'}
+84	84		402							{1: '4799'}
+85	85		401							{1: '1', 2: '230'}
+86	86		301			DialogEnable				"{3: ""With the help of the faint light, you've managed to approach the spiral staircase. Amidst creaking sounds, you locate the circuit switch, and the lighthouse comes back to life with a gentle hum of electricity.""}"
+87	87		301							{3: 'Together with Bianca, you make your way to the top of the lighthouse.'}
+88	88		301							{3: 'The warm yellow light rotates in a steady rhythm, causing your shadows to appear and vanish in turns.'}
+89	89		302							{2: '(You reach out your hand to feel the light and shade as they rotate.)', 3: '90'}
+90	90		306							
+91	91		201							{1: '1', 2: '500533', 3: '4'}
+92	92		204							{1: '1', 2: '2'}
+93	93		301							{1: '1', 2: 'Bianca', 3: 'This is like a twinkling star.', 4: '1'}
+94	94		204							{1: '1', 2: '3'}
+95	95		301							{2: 'Bianca', 3: 'A solitary star, twinkling in the night sky, guides those lost in darkness.', 4: '1'}
+96	96		301							{2: 'Bianca', 3: 'Just like you, Commandant.', 4: '1'}
+97	97		302							"{2: ""I certainly don't want to twinkle alone in the universe."", 3: '98'}"
+98	98		204							{1: '1', 2: '2'}
+99	99		301							{3: 'Bianca looks at you and nods gently.'}
+100	100		301							"{2: 'Bianca', 3: ""That's why I want to be with you... to spread this light, so more stars can shine in the night."", 4: '1'}"
+101	101		302							"{2: ""That's what the sun does in the night."", 3: '102'}"
+102	102		202							{2: '1'}
+103	103		301				DialogDisable			"{3: ""She doesn't answer immediately. Instead, you both turn your gaze back toward Constellia.""}"
+104	104		306							{1: '1'}
+105	105		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+106	106		401							{1: '2', 2: '4381'}
+107	107		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTempleBattle/FxUiTempleBattleYanhuan02.prefab', 2: '2'}
+108	108		301			DialogEnable				{3: 'Above the brightly lit city, a burst of fireworks blooms in the night sky.'}
+109	109		301							{3: 'Even the night sky, illuminated by the colorful bouquets and brilliant hues, cannot overshadow the warm glow of the silent lighthouse.'}
+110	110		301							{3: 'The lighthouse quietly resonates with the starry sky in the distance and gazes back.'}
+111	111		301		1		AniZhuanchangBegin			{3: 'The shadow of the sun, too, becomes one with this mutual gaze.'}

@@ -1,0 +1,300 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory665.jpg'}
+2	2		104				AniZhuanchangEnd			{1: '0|280|-400', 2: '0'}
+3	3		401							{1: '1', 2: '201'}
+4	4		301			DialogEnable				"{3: ""Advancing to the liaison officer's coordinates, a disorienting timelessness surrounds you. Intense heat and palpable tension blur your thoughts. Sweat trickles down, a reminder of the toll.""}"
+5	5		301							"{3: ""As the summit of the spiral tower comes into view, it presents a striking image—a sharp, red thorn piercing the fabric of the horizon, appearing both majestic and ominous. It seems to suspend itself above the planet, resembling the Sword of Damocles that may fall upon one's head anytime.""}"
+6	6		301							{3: 'However, no matter how far you have journeyed toward that trenchant blade, it remains out of reach, perpetually hanging near the edge of the sky.'}
+7	7		201							{1: '1', 2: '500560', 3: '4'}
+8	8		301							{1: '1', 2: 'Sica', 3: '【kuroname】...', 4: '1'}
+9	9		301							{3: 'Beside you, Sica, the young commandant, does not appear in a state any better. She brushes aside her sweat-soaked hair with a heavy breath, and raises her terminal once more to confirm the direction.'}
+10	10		301							{2: 'Sica', 3: 'I-it is the correct direction...', 4: '1'}
+11	11		202							{1: '1', 6: '1'}
+12	12		502							{1: 'DialogDisable'}
+13	13		302							{2: 'Liv?', 3: '14'}
+14	14		301			DialogEnable				{3: 'She immediately responds upon hearing your call.'}
+15	15		201							{1: '1', 2: '1031001', 3: '5'}
+16	16		301							{1: '1', 2: 'Liv', 3: 'Commandant, the satellite map suggests that we are getting closer to our destination... Huh...?', 4: '1'}
+17	17		203							{1: '1', 2: '0.25', 3: '-400'}
+18	18		201							{1: '2', 2: '500166', 3: '5', 4: '400'}
+19	19		301							{1: '1', 2: 'Lucia', 3: 'Anything wrong?', 4: '2'}
+20	20		301							{3: 'Liv seems a bit hesitant but still shakes her head.'}
+21	21		301							"{2: 'Liv', 3: ""Don't worry about it... It was just a momentary glitch on the screen, most likely due to the unstable signal."", 4: '1'}"
+22	22		301							{3: 'Liv turns off the holographic projection. As you and Lucia exchange glances, a somber and serious expression settles on both of your faces.'}
+23	23		301							"{2: 'Lucia', 3: ""The closer we get to that tower, the more off everything feels... Nevertheless, let's stay on our toes. Since it's already in our sight, the direction we are going in can't be wrong."", 4: '1'}"
+24	24		302							"{2: ""Yes, let's stay on guard and keep pushing forward."", 3: '25', 4: 'No, ""all that glitters is not gold.""', 5: '28'}"
+25	25		201							{1: '2', 2: '500560', 3: '4', 4: '400'}
+26	26		301							{1: '1', 2: 'Sica', 3: 'Roger that!', 4: '2'}
+27	27	30	301							"{2: 'Liv', 3: ""Got it, Commandant. I'll keep an eye on the surroundings and everyone's state."", 4: '1'}"
+28	28		201							{1: '2', 2: '500560', 3: '7', 4: '400'}
+29	29		301							{1: '1', 2: 'Sica', 3: 'Eh?', 4: '2'}
+30	30		502							{1: 'DialogDisable'}
+31	31		302							{2: 'I think we should contact the Support Force.', 3: '32'}
+32	32		302							"{2: ""Let's double-check our location."", 3: '33'}"
+33	33		301			DialogEnable				"{2: 'Liv', 3: ""Hold on a moment... Commandant, the Support Force didn't respond to my communication request. I've been constantly sending signals to the liaison officer through the temporary channel."", 4: '1'}"
+34	34		204							{1: '2', 2: '4'}
+35	35		301							"{2: 'Sica', 3: ""I can't reach anyone through my terminal either... Just in case, I'll open the authorization of my terminal so that I can immediately pick up signals once the connection is restored! I-it's not like I'm on any important missions anyway..."", 4: '2'}"
+36	36		302							{2: 'Thank you, Sica.', 3: '37'}
+37	37		301							"{2: 'Sica', 3: ""Please don't even mention it! This is the least I can do now!"", 4: '2'}"
+38	38		302							"{2: ""We've done what we can. Let's press on."", 3: '39'}"
+39	39		202							{1: '2', 6: '1'}
+40	40		201							{1: '1', 2: '500166', 3: '5'}
+41	41		301				AniZhuanchangBegin			{1: '1', 2: 'Lucia', 3: 'Yes, Commandant.', 4: '1'}
+42	42		202			DialogDisable				{1: '1', 6: '1'}
+43	43		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory665.jpg'}
+44	44		104				AniZhuanchangEnd			{1: '0|280|-400', 2: '0'}
+45	45		301			DialogEnable				{3: 'As you continue your march, the lack of response from the liaison officer weighs heavily on your mind. The photos and string of coordinates you received earlier now seem like the final communication from her...'}
+46	46		301							"{3: ""In a daze, you suddenly hear Liv's hesitant voice coming from behind.""}"
+47	47		201							{1: '1', 2: '1031001', 3: '3'}
+48	48		301							{1: '1', 2: 'Liv', 3: 'Um... Everyone... have you smelled... anything strange?', 4: '1'}
+49	49		203							{1: '1', 2: '0.25', 3: '-400'}
+50	50		201							{1: '2', 2: '500166', 4: '400'}
+51	51		301							{1: '1', 2: 'Lucia', 3: 'Smell... anything?', 4: '2'}
+52	52		301							"{2: 'Liv', 3: ""I think I've smelled grass..."", 4: '1'}"
+53	53		301							{3: 'All of you come to a halt, your gazes fixated on the desolate and barren ground beneath your feet.'}
+54	54		301							{2: 'Liv', 3: 'And the saltiness of seawater...', 4: '1'}
+55	55		301							{3: 'The scorching sunlight penetrates through the thick clouds, causing your neck to be seared by its rays. Sweat trickles down your body, drenching your clothes, while a growing sensation of thirst consumes your mouth.'}
+56	56		301							"{2: 'Lucia', 3: ""Now that I think about it, I have... Since just now, I've smelled something delicious... like food. But where's the source of these smells...?"", 4: '2'}"
+57	57		301							"{3: ""As Liv's words reach your ears, a sudden realization dawns upon you. The air around you carries a distinct and familiar odor—a scent reminiscent of gun oil, the very one that you only smell when repairing firearms.""}"
+58	58		302							"{2: ""I've smelled something too..."", 3: '59'}"
+59	59		202							{1: '1', 2: '2', 6: '1'}
+60	60		301							{3: 'As if in a disorienting haze, you notice that your own voice sounds distant, and the focus of your vision begins to recede.'}
+61	61		501						600.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+62	62		201							{1: '1', 2: '500559', 3: '7'}
+63	63		301							"{1: '1', 3: ""In your blurred sight, you perceive Sica's arm extending toward you in a languid, slow-motion manner. The shock that fills her eyes unfolds at an unusual speed, as if time itself has been distorted.""}"
+64	64		301							{2: 'Sica', 3: '【kuroname】... You are bleeding...!', 4: '1'}
+65	65		302							{2: '...Huh?', 3: '66'}
+66	66		202							{1: '1', 6: '1'}
+67	67		301							{3: 'As you touch your lip, blood flows out, staining your finger, yet you remain strangely unaffected by any sensation of touch or pain.'}
+68	68		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory663.jpg', 3: '0', 4: '1', 5: '1'}
+69	69		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+70	70		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory663.jpg'}
+71	71		401						400.0	{1: '2', 2: '957'}
+72	72		401							{1: '1', 2: '202'}
+73	73		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+74	74		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+75	75		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab', 2: '2'}
+76	76		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab'}
+77	77		301							"{3: ""Meanwhile, a colossal crimson wave resembling a nuclear mushroom cloud emerges silently from the sky's edge. It slowly expands outward, yet only takes a mere instant to shroud your group. Relentlessly, it keeps extending toward the other side of the land, as though in pursuit of the endless horizon.""}"
+78	78		401							{1: '2', 2: '3077'}
+79	79		301							{3: 'Before Sica finishes her words, her body suddenly stiffens, and she collapses to the ground as the uncanny incident unfolds before you.'}
+80	80		302							{2: 'Si—!', 3: '85'}
+81	81		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+82	82		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+83	83		401							{1: '2', 2: '3077'}
+84	84		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '3'}
+85	85		301							{3: 'The eerie light wave leaves no time for you to process or react, forcing your knees to buckle. Your mind feels constricted as if grasped by an immense hand, and a delayed pain pierces through your being, blurring your vision. Your senses start to fade, and you lose control over your limbs.'}
+86	86		301							"{3: ""—It's the Mind Beacon contamination! You know you must quickly steady your mind...""}"
+87	87		301							{3: 'The rapid progression of the contamination renders you powerless, unable to sever the M.I.N.D. Connection with Lucia and Liv or halt its relentless spread. In a devastating instant, the impact strikes deep within your brain, reminiscent of thousands of needles piercing through your Mind Beacon.'}
+88	88		401							{1: '2', 2: '3077'}
+89	89		301							{3: 'Consequently, Lucia and Liv collapse on the ground right before your eyes.'}
+90	90		302							{2: 'No...', 3: '91'}
+91	91		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+92	92		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+93	93		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+94	94		401							{1: '2', 2: '1512'}
+95	95		401							{1: '1', 2: '36'}
+96	96		301							{3: 'As your Mind Beacon struggles to stabilize, a sharp and distinct pain jolts through your body—unlike the contamination, it originates from a physical strike on the back of your neck. Your senses fade away, leaving you immersed in a state of unconsciousness.'}
+97	97		502						4000.0	{1: 'DialogDisable'}
+98	98		401							{1: '1', 2: '175'}
+99	99		301			DialogEnable				{3: 'The darkness resembles an inky beach after a neap tide, or sacrificial grounds of an alien civilization that sits at the barren border of another planet.'}
+100	100		301							{3: 'You find your feet settling on a surface constantly collapsing and reforming. Before you stands a lofty tower composed of multiple pillar-like formations, with its pinnacle shrouded in clouds like the mythical Tower of Babel.'}
+101	101		301							{3: 'In the hazy surroundings, red dots of light glow faintly, casting irregular crimson shades that dance across the layers of clouds.'}
+102	102		301							{3: 'The universe itself seems to reverberate in your ears. Echoing through the depths of space and time, distant voices converge into a cacophony of sound, carried by gushing winds that roar and scream.'}
+103	103		301							{3: 'As you take a step forward, the crying winds, despite their tremendous sound, offer no resistance. You find yourself landing on emptiness, akin to floating in space.'}
+104	104		301							"{3: ""In this weightless state, you sense the presence of two threads pulling you downward, anchoring you to the ground. They are preventing you from drifting away into the vast void and being devoured by the crimson light emanating from the tower's peak.""}"
+105	105		301							{3: 'Your aimless wander ends at the bottom of the tower. The black blocks that compose the tower swiftly transform, shifting into the form of a door, beckoning you to open it.'}
+106	106		301							{3: '—Yet, the door opens itself the next moment.'}
+107	107		401							{1: '2', 2: '754'}
+108	108		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0', 4: '1', 5: '0.4'}
+109	109		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+110	110		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+111	111		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+112	112		105							{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLi/UiMovieLi01/UiMovieLi01.prefab'}
+113	113		301							{3: 'You see Lee seated at a desk, repairing his frame.'}
+114	114		301							"{3: 'A scene you have seen before. Once again, the familiar smell of gun oil permeates the air surrounding you. This image, the oil scent, and the coldness your fingertips feel upon touching the door handle abruptly pulls you into the ""truth of memory""—'}"
+115	115		301				AniZhuanchangBegin			"{3: ""【kuroname】, it's time to wake up.""}"
+116	116		105			DialogDisable				
+117	117		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+118	118		301			DialogEnable				{3: 'As your consciousness gradually returns, the sense of touch is the first to resurface. Alongside the lingering pain in your nape, you realize you are in an uncomfortable posture, where your hands are bound tightly behind your back.'}
+119	119		401							{1: '2', 2: '1516'}
+120	120		301							{3: 'Next, a multitude of sounds flood your ears. From the front, you discern the sound of rapid, anxious breaths, accompanied by the sharp clatter of gravel being kicked around.'}
+121	121		301							{3: 'Then your sense of smell comes alive. You immediately detect the distinct odor of earthy soil and a metallic tang that hints at the presence of blood.'}
+122	122		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory663.jpg', 3: '0', 4: '1', 5: '0.4'}
+123	123		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+124	124		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory663.jpg'}
+125	125		301							{3: 'Your sight recovers at last, gradually regaining focus and readjusting to the brightness of your surroundings. Your gaze is drawn to a pair of military boots moving rhythmically back and forth, similar to the ones you are wearing. Looking up, you see...'}
+126	126		401							{1: '1', 2: '36'}
+127	127		201							{1: '1', 2: '500372', 3: '4', 7: '1'}
+128	128		302							{2: 'Harley Jo?!', 3: '129'}
+129	129		401							{1: '1', 2: '202'}
+130	130		301							{3: 'Standing before you is Harley Jo, clad in a commandant uniform. Hearing your call, he halts his pacing and turns to face you... to be more precise, spares you his merciful sight with an arrogant demeanor.'}
+131	131		302							{2: 'The ambush before... Was that you?', 3: '132'}
+132	132		301							{2: 'Harley Jo', 3: 'Ambush? Ambush?!', 4: '1'}
+133	133		401							{1: '2', 2: '1543'}
+134	134		203							{1: '1', 2: '0.14', 5: '-120'}
+135	135		301							"{3: ""Harley Jo seems deeply offended by this word. With a sudden burst of aggression, he pounces toward you, his eyes widened and pupils dilated to an abnormal degree. The rise and fall of his Adam's apple reveal his anxiety, and his fingers at his waist are twitching rapidly at an irregular pace.""}"
+136	136		203							{1: '1', 2: '0.25'}
+137	137		301							{3: 'The present Harley Jo seems a completely different person than the one you have known. For some inexplicable reasons, he is in an extremely abnormal mental state.'}
+138	138		301							"{2: 'Harley Jo', 3: ""Ha, sure! Only something filthy and tricky can match up with a defector like you, don't you agree?"", 4: '1'}"
+139	139		302							"{2: 'What are you talking about?', 3: '140', 4: ""I didn't defect."", 5: '140'}"
+140	140		301							{2: 'Harley Jo', 3: 'Save your cunning excuses. I saw it with my own eyes... you were messing around with two, no, three Ascendants! Three!', 4: '1'}
+141	141		302							{2: '?', 3: '142'}
+142	142		301							"{2: 'Harley Jo', 3: ""All of you are defectors! You think I'm so stupid that I can't realize it? You took advantage of the disarray in Babylonia, doing filthy business with the Ascendants! Now that I've caught you, just you wait. I'll make you pay for your greed...!"", 4: '1'}"
+143	143		302							"{2: 'Pull yourself together!', 3: '144', 4: ""I'm 【kuroname】!"", 5: '144'}"
+144	144		301							"{2: 'Harley Jo', 3: ""I've already contacted the Purifying Force!"", 4: '1'}"
+145	145		301							{3: 'Harley Jo raises the terminal in his hand. The screen is shattered, its cracked pieces obscuring any clear view of what lies beneath. However, he persists in frantically tapping on the screen, seemingly oblivious to its non-functional state.'}
+146	146		301							{3: 'Madness has devoured him, and you can only hope that such damage to the psyche is reversible. That wave of red light... You were also struck by its abrupt contamination. No—something tells you that the effects have been taking hold since you first entered the domain of the tower.'}
+147	147		301							{3: 'Akin to an alien creature hunting its prey, the tower emits a sweet, alluring poison, clouding minds and diminishing awareness.'}
+148	148		302							{2: 'Where are Lucia and...', 3: '149'}
+149	149		202							{1: '1', 6: '1'}
+150	150		301							{3: 'Casting a swift glance around, you discover Lucia and Liv tied together behind you. Their frames are still in emergency sleep mode, likely a response to the turmoil in the M.I.N.D. connection. Nearby, Sica lies motionless in the same position as when the contamination erupted.'}
+151	151		302							{2: 'Ugh...', 3: '152'}
+152	152		201							{1: '1', 2: '500372', 3: '4', 7: '1'}
+153	153		301							{3: 'Before you can further check their states, a hand forcefully grasps your jaw, violently redirecting your gaze. Your vision is dominated by the delirious visage of Harley Jo.'}
+154	154		301							{2: 'Harley Jo', 3: 'Alright, the Purifying Force is heading here now... Before they arrive, let me take the life of you, the top dog of the defectors, to avenge my teammates who fell on the battlefield!', 4: '1'}
+155	155		302							"{2: ""...You're going to regret this after regaining your senses."", 3: '156', 4: ""...Don't! Private execution is not allowed!"", 5: '156'}"
+156	156		301							"{2: 'Harley Jo', 3: ""Hmph, yes, I will kill you. I'm going to kill you now... Your Ascendant friends are on their way over. I knew it!"", 4: '1'}"
+157	157		301							{3: 'Harley Jo is not even conversing with you, absorbed in his frenetic illusion as he presses his dagger against your skin.'}
+158	158		301							{3: 'Powerless to stop him, you, however, are about to cut the rope binding you with the retractable knife hidden in your glove, and the connection with Lucia and Liv will soon...'}
+159	159		301							{3: 'You suddenly catch a glimpse of a person struggling to stand. The moment that figure raises an arm—'}
+160	160		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+161	161		401							{1: '2', 2: '662'}
+162	162		202							{1: '1', 6: '1'}
+163	163		301							{3: 'With lightning speed, you instinctively evade the anesthetic needle, the sharp tip grazing your face and drawing blood. Ignoring the wound, you swiftly break free from the rope and pin Harley Jo down with force, catching him off guard.'}
+164	164		201							{1: '1', 2: '500560', 3: '7'}
+165	165		301							{1: '1', 2: 'Sica', 3: 'I-I... I...', 4: '1'}
+166	166		203						100.0	{1: '1', 2: '0.14', 4: '-80'}
+167	167		202							{1: '1', 6: '1'}
+168	168		301							{3: 'Behind Harley Jo, Sica fails to steady herself due to the lack of strength and collapses on the ground once more.'}
+169	169		301							"{2: 'Sica', 3: ""I'm sorry...""}"
+170	170		502							{1: 'DialogDisable'}
+171	171		201							{1: '1', 2: '500372', 3: '4', 7: '1'}
+172	172		502						800.0	{1: 'PanelActor1Shake'}
+173	173		505							{1: 'PanelActor1Shake'}
+174	174		301			DialogEnable				{1: '1', 2: 'Harley Jo', 3: 'Arrrrgh! How dare you!', 4: '1'}
+175	175		301							{3: 'Harley Jo fiercely resists in your arms, and you know that your weak control will not hold for long.'}
+176	176		302							{2: '(Throw him a punch)', 3: '177', 4: '(Show him mercy)', 5: '179'}
+177	177		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+178	178		401							{1: '2', 2: '1512'}
+179	179		202							{1: '1', 6: '1'}
+180	180		301							{2: 'Lucia', 3: 'Commandant!'}
+181	181		301							"{3: ""From behind, Lucia's voice breaks through the chaos. The emergency frame rebooting process is complete, and you regain the connection with your two Gray Raven members.""}"
+182	182		301							{3: 'Sica manages to retrieve the dropped anesthetic gun and does her best to aim it at Harley Jo. The injected medicine successfully weakens his struggle, yet it fails to stop him from unleashing a barrage of malicious and venomous words.'}
+183	183		201							{1: '1', 2: '500372', 3: '4'}
+184	184		301							{1: '1', 2: 'Harley Jo', 3: 'You scum... Filth... Traitor of mankind... Running dog of the Ascendants...!', 4: '1'}
+185	185		202							{1: '1'}
+186	186		301							{3: 'Upon breaking free, Lucia and Liv swiftly join your side, lending their assistance in restraining Harley Jo. Meanwhile, Sica stumbles over and seizes the rope you just cut to bind Harley Jo.'}
+187	187		201							{1: '1', 2: '500166', 3: '5', 4: '400'}
+188	188		201							{1: '2', 2: '1031001', 4: '-400'}
+189	189		301							{1: '1', 2: 'Lucia', 3: 'What is happening?', 4: '1'}
+190	190		301							"{2: 'Liv', 3: ""I only know that my M.I.N.D. was affected for a moment... then I immediately lost consciousness. Commandant, I'm glad to see you alright..."", 4: '2'}"
+191	191		502							{1: 'DialogDisable'}
+192	192		302							"{2: ""It's the red light emitted by that tower."", 3: '193'}"
+193	193		302							{2: 'It appears to cause neurological damage to human brains.', 3: '194'}
+194	194		204							{1: '2', 2: '5'}
+195	195		301			DialogEnable				"{2: 'Liv', 3: ""I've detected signs of contamination in both Commandant's and Miss Sica's Mind Beacons... Please give me a moment. I'll run a quick check for you."", 4: '2'}"
+196	196		202							{1: '2', 6: '1'}
+197	197		201							{1: '1', 2: '500560', 3: '1'}
+198	198		301							{1: '1', 2: 'Sica', 3: 'Thank you, Liv!', 4: '1'}
+199	199		201							{1: '1', 2: '500166', 3: '5'}
+200	200		301							{1: '1', 2: 'Lucia', 3: 'Commandant, how are you feeling?', 4: '1'}
+201	201		302							"{2: 'I\'m fine. My body has probably developed some sort of ""resistance"" against it.', 3: '202'}"
+202	202		204						800.0	{1: '1', 2: '1'}
+203	203		204							{1: '1', 2: '5'}
+204	204		301							{3: 'Lucia responds to your bitter joke with a faint smile, but it only lasts a fleeting moment before her countenance turns even more serious.'}
+205	205		301							"{2: 'Lucia', 3: ""You have my faith, Commandant. The connection between us seems very stable. I'm just surprised that even you couldn't notice the impact of the tower immediately, which means greater dangers lie ahead on the surface. I'm afraid the situation in Babylonia..."", 4: '1'}"
+206	206		302							"{2: ""That's why we are here."", 3: '207', 4: 'I will find a solution to these problems.', 5: '207'}"
+207	207		201							{1: '1', 2: '500560', 3: '1'}
+208	208		301							{1: '1', 2: 'Sica', 3: '...I will do everything I can to help!', 4: '1'}
+209	209		301							{3: 'In response to your words, the young commandant before you undergoes a striking transformation. Her eyes sparkle like precious gems, reflecting a newfound energy and determination, and her face becomes illuminated with a radiant glow.'}
+210	210		203							{1: '1', 2: '0.25', 3: '400'}
+211	211		201							{1: '2', 2: '500372', 3: '4', 4: '-400'}
+212	212		301							{1: '1', 2: 'Harley Jo', 3: 'A swarm of filthy vermin!', 4: '2'}
+213	213		204							{1: '1', 2: '14'}
+214	214		301							{2: 'Sica', 3: 'Uh...', 4: '1'}
+215	215		201							{1: '2', 2: '1031001', 4: '-400'}
+216	216		301							"{1: '1', 2: 'Liv', 3: ""I'll run a contamination check on Commandant Harley Jo as well and try to find the cause."", 4: '2'}"
+217	217		204							{1: '1', 2: '4'}
+218	218		301							{2: 'Sica', 3: 'Ah, this is actually a surgical anesthetic for emergency self-treatment. So it can only achieve local anesthesia...', 4: '1'}
+219	219		204							{1: '2', 2: '1'}
+220	220		301							"{2: 'Liv', 3: ""I see... Leave the rest to me. I'll put Commandant Harley Jo to sleep for a little while."", 4: '2'}"
+221	221		202							{1: '1', 2: '2', 6: '1'}
+222	222		401							{1: '1', 2: '36'}
+223	223		502							{1: 'RImgBg1BlowUp'}
+224	224		301							{3: '—With the disarray finally settling down, you take the opportunity to carefully observe your surroundings.'}
+225	225		401							{1: '1', 2: '64'}
+226	226		301							{3: 'It turns out that you have already arrived at the foot of the tower. Previously perplexed by the Mind Beacon contamination, not until now can you see a clear image of this tower emitting an unsettling red glow...'}
+227	227		301							{3: 'Unlike seeing it through a video, the shock of witnessing the tower with your own eyes surpasses anything you have ever felt.'}
+228	228		301							{3: 'Initially a mere dot in a photo and now a colossal red giant, the tower occupies more than half of your field of vision. The sheer magnitude of its presence reinforces the realization that this structure is far from ordinary, an alien creation that defies the boundaries of possibility.'}
+229	229		301							{3: 'The summit of the tower is emitting a glaring red light that pierces through the atmosphere. The structure resembles an ethereal ladder, stretching toward the vast expanse of outer space. The sight leaves an impression of a pathway, a bridge that may one day invite the arrival of guests unknown.'}
+230	230		301							{3: 'Upon gazing up at the tower from its bottom, anyone would be engulfed by a deep, overwhelming fear, whether it be a human, a Construct, or any being driven by biological instincts. It is a profound and heartfelt apprehension in the face of an alien creation that should never have existed.'}
+231	231		505							{1: 'RImgBg1BlowUp'}
+232	232		401							{1: '2', 2: '1099'}
+233	233		301							"{3: ""Both Sica's and your terminals suddenly sound at the same time, shattering the suffocating silence.""}"
+234	234		201							{1: '1', 2: '500560', 3: '4'}
+235	235		301							{1: '1', 2: 'Sica', 3: 'Comms is back!', 4: '1'}
+236	236		202							{1: '1', 6: '1'}
+237	237		302							{2: '(Pick up the call)', 3: '238'}
+238	238		509							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg', 2: '1'}
+239	239		301							{2: 'Asimov', 3: 'Finally...'}
+240	240		301							"{3: ""You hear Asimov's voice, but his image is nowhere to be seen. The camera jolts violently before it finally stabilizes, revealing a holographic projection on a table. A luminous blue screen of light materializes, displaying a vast expanse of red with a striking crimson dot at its center.""}"
+241	241		301							"{2: 'Asimov', 3: ""This is the 13th time I've requested to communicate. I'll make it brief. I believe you've already noticed that tower. We don't know yet how long it had existed underground before manifesting itself, but I seriously doubt it took long.""}"
+242	242		301							{2: 'Asimov', 3: 'In other words, this thing rose from the ground out of the blue. It is the cause of all the earthquakes that have recently occurred on the surface.'}
+243	243		301							{2: 'Asimov', 3: 'It can emit electromagnetic radiation in the form of a visible red light that can contaminate the Mind Beacons of humans, causing several side effects such as mental disorders, hallucinations, drastic changes in personality, and even an increase in hostility.'}
+244	244		301							{2: 'Asimov', 3: 'And the contamination can affect all the Constructs connected to humans through their M.I.N.D... Also, the corrupted commandants can forcibly connect with Constructs.'}
+245	245		301							{2: 'Asimov', 3: '...The range of the contamination can already reach Babylonia. The closer to the tower, the more exponentially the Punishing Virus concentration and the contamination level will increase.'}
+246	246		301							{2: 'Asimov', 3: 'So far, we have not discovered an effective approach of defense. Ordinary anti-radiation equipment proves futile against it. Only commandants who can resist Mind Beacon contamination can [BUZZ—]... Damn it...'}
+247	247		302							{2: 'Asimov! Are you alright?!', 3: '248'}
+248	248		401							{1: '2', 2: '718'}
+249	249		301							{2: 'Asimov', 3: '[BUZZ—] you are the only one... can [BUZZ—]...'}
+250	250		301							{2: '??', 3: 'Asimov!'}
+251	251		301							"{3: ""A girl's piercing scream erupts from the background, and the camera begins to tremble violently. Something abruptly covers the vision, plunging everything into absolute darkness.""}"
+252	252		301							{2: 'Asimov', 3: 'Save the people who are still not affected! You must inform others of the situation [BUZZ—]... stop it from spreading [BUZZ—]...'}
+253	253		302							{2: 'Is Lee with you?', 3: '254'}
+254	254		301							{2: 'Asimov', 3: 'Lee [BUZZ—] the key... the new frame is completely immune to the Punishing Virus. He—'}
+255	255		402							{1: '718'}
+256	256		510							{1: '1', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg'}
+257	257		301							{3: 'The call is terminated.'}
+258	258		201							{1: '1', 2: '500166', 3: '5', 4: '400'}
+259	259		201							{1: '2', 2: '1031001', 3: '1', 4: '-400'}
+260	260		301							{1: '1', 2: 'Lucia', 3: 'Will Asimov be alright...?', 4: '1'}
+261	261		301							"{2: 'Liv', 3: ""Lee's new frame is completely immune to the Punishing Virus? I'm so relieved to hear that. Then his safety is guaranteed... I'm sure he will protect everyone in Babylonia!"", 4: '2'}"
+262	262		502							{1: 'DialogDisable'}
+263	263		302							{2: 'Yes, and we must quickly come up with a plan...', 3: '264'}
+264	264		302							{2: 'Based on what Asimov told us.', 3: '265'}
+265	265		201							{1: '2', 2: '500560', 3: '4', 4: '-400'}
+266	266		301			DialogEnable				"{1: '1', 2: 'Sica', 3: ""...【kuroname】, the distress signal is being sent in a larger range, and I've received more responses!"", 4: '2'}"
+267	267		301							{3: 'Sica raises her terminal. A constant stream of rendezvous comms from other squads pops up, thanks to the opened authorization. It seems that there are many more who have not yet fallen victim to that Hetero Tower.'}
+268	268		204							{1: '2', 2: '7'}
+269	269		301							{2: 'Sica', 3: 'Swallowtail, Caribou... and Strike Hawk?', 4: '2'}
+270	270		204							{1: '1', 2: '1'}
+271	271		301							"{2: 'Lucia', 3: ""Chrome's squad is also nearby? Let's meet up with them first!"", 4: '1'}"
+272	272		202							{1: '1', 2: '2', 6: '1'}
+273	273		401							{1: '2', 2: '1099'}
+274	274		301							{3: 'Meanwhile, the terminal of Harley Jo, who still lies unconscious nearby, also begins to ring incessantly.'}
+275	275		201							{1: '1', 2: '1031001', 3: '5'}
+276	276		301							{1: '1', 2: 'Liv', 3: 'Abnormal heat sources are detected approaching from behind. They should be different commandants with their squads! But they are not responding to our comms requests, likely affected by the unknown radiation. There are three squads in total... now increasing to four!', 4: '1'}
+277	277		202							{1: '1', 6: '1'}
+278	278		301							{3: 'From a distance, your gaze figures rushing toward the tower, like moths drawn to a flame. As the figures approach, their numbers steadily increase, forming a growing crowd. Some individuals even begin to fight each other along the way.'}
+279	279		301							"{3: '—This is probably the ""Purifying Force"" he called.'}"
+280	280		302							{2: 'Sica, can you still move?', 3: '281'}
+281	281		201							{1: '1', 2: '500560', 3: '4'}
+282	282		301							{1: '1', 2: 'Sica', 3: 'No problem!', 4: '1'}
+283	283		301							{3: 'Sica rises abruptly, driven by an overwhelming urge, but her attempt to maintain balance proves futile, causing her to collapse back onto the ground. Blood begins to flow from her nose.'}
+284	284		204							{1: '1', 2: '15'}
+285	285		301							"{2: 'Sica', 3: ""Um... I-I'm sorry... Guess I need a bit more time..."", 4: '1'}"
+286	286		502							{1: 'DialogDisable'}
+287	287		302							{2: 'Sica, will you do me a favor?', 3: '288'}
+288	288		204							{1: '1', 2: '4'}
+289	289		302							{2: 'Please help watch our back', 3: '290'}
+290	290		302							{2: 'and coordinate with the reinforcements.', 3: '291'}
+291	291		301			DialogEnable				{3: 'You have sent a rendezvous request to all the terminals nearby, disseminating the crucial information Asimov conveyed through the secret code of F.O.S. to the commandants and Constructs who still remain unaffected—'}
+292	292		301							{3: 'Stay connected with your squad, reject any connection requests from commandants unknown, and rendezvous at the coordinates provided.'}
+293	293		301							{2: 'Sica', 3: 'Allllrighty!', 4: '1'}
+294	294		201							{1: '1', 2: '500166', 3: '5', 4: '400'}
+295	295		201							{1: '2', 2: '1031001', 3: '5', 4: '-400'}
+296	296		301							{1: '1', 2: 'Liv', 3: 'Ahem...', 4: '2'}
+297	297		301							{3: 'The frantic crowd on the horizon gradually swarms toward your location.'}
+298	298		301							"{2: 'Lucia', 3: ""I'm ready."", 4: '1'}"
+299	299		302		1		AniZhuanchangBegin			{2: 'Gray Raven, prepare to engage!'}

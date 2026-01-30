@@ -1,0 +1,38 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		401							{1: '1', 2: '204'}
+2	2		301			DialogEnable	AniZhuanchangBegin			{1: '1', 3: 'After blowing up a few more walls, Karenina runs into another Construct underground...'}
+3	3		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory70.jpg'}
+4	4		201							{1: '1', 2: '1111001'}
+5	5		502							{1: 'RImgBg1Shake'}
+6	6		301			AniZhuanchangEnd				{1: '1', 2: 'Karenina', 3: 'Why are you here...?', 4: '1'}
+7	7		202							{1: '1', 6: '1'}
+8	8		201							{1: '2', 2: '1081001', 4: '400'}
+9	9		301			PanelActor2Shake				{1: '1', 2: 'Kamui', 3: 'You almost blew me up!', 4: '2'}
+10	10		301							{2: 'Kamui', 3: 'They sent you here for a mission! Not total annihilation!', 4: '2'}
+11	11		202							{1: '2', 6: '1'}
+12	12		201							{1: '1', 2: '1111001', 3: '5', 4: '-400'}
+13	13		301							"{1: '1', 2: 'Karenina', 3: ""It's just a bit of gunpowder... Stop being such a baby."", 4: '1'}"
+14	14		204							{1: '1'}
+15	15		201							{1: '2', 2: '1081001', 4: '400'}
+16	16		301							"{1: '1', 2: 'Kamui', 3: ""Well, we're here already, so let's exchange some information. What have you found?"", 4: '2'}"
+17	17		301							"{2: 'Karenina', 3: ""I've found some samples that resemble an antigen to the Punishing Virus."", 4: '1'}"
+18	18		301							{2: 'Kamui', 3: '(Takes out a handful of gold dust) So have I...', 4: '2'}
+19	19		301							{2: 'Karenina', 3: '...Hand it over. Let me run some tests.', 4: '1'}
+20	20		202							{1: '1', 2: '2', 6: '1'}
+21	21		301				AniZhuanchangBegin			{1: '1', 3: '————'}
+22	22		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory70.jpg'}
+23	23		201							{1: '1', 2: '1111001', 4: '-400'}
+24	24		201							{1: '2', 2: '1081001', 4: '400'}
+25	25		301			AniZhuanchangEnd				{1: '1', 2: 'Karenina', 3: '...Both of them are fundamentally the same kind of nanotechnology.', 4: '1'}
+26	26		301							{2: 'Karenina', 3: 'But it is very unstable in suppressing the virus...', 4: '1'}
+27	27		301							"{2: 'Kamui', 3: ""You're right! It's super unstable!"", 4: '2'}"
+28	28		301							"{2: 'Kamui', 3: ""It suppresses the virus, and then it weakens the Corrupted, doesn't it?"", 4: '2'}"
+29	29		301							"{2: 'Kamui', 3: ""But it doesn't take long for the Corrupted to get up again. Stranger still, some of them would return to their original power level..."", 4: '2'}"
+30	30		301							{2: 'Karenina', 3: 'Have you fought the Corrupted here? In the Golden Vortex?', 4: '1'}
+31	31		301							{2: 'Kamui', 3: 'Let me tell you the whole story...', 4: '2'}
+32	32		301							{2: 'Karenina', 3: 'From what you said, this antigen is highly unstable. We must report this to Babylonia...', 4: '1'}
+33	33		204							{1: '1', 2: '5'}
+34	34		301							"{1: '1', 2: 'Karenina', 3: ""If you're coming with me, then you better help out! Don't let me see you slacking!"", 4: '1'}"
+35	35		202							{1: '1', 6: '1'}
+36	36		301			RImgBg1Shake				{1: '1', 3: 'Right as she finishes speaking, she blows up another wall...'}
+37	37		301		1		AniZhuanchangBegin			{2: 'Kamui', 3: '...Wait for me!', 4: '2'}

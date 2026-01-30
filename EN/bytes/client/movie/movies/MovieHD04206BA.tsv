@@ -1,0 +1,54 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '204'}
+3	3		301			DialogEnable				{3: 'It is an ordinary afternoon of an ordinary vacation where ordinary work is being handled.'}
+4	4		301							{3: 'Everything flows along at its usual pace until a flash of crimson yanks open the door to the Gray Raven lounge.'}
+5	5		401						500.0	{1: '2', 2: '2871'}
+6	6		201							{1: '1', 2: '500345', 3: '4'}
+7	7		301							"{1: '1', 2: 'Vera', 3: ""Tch, aren't you looking swell?"", 4: '1'}"
+8	8		302							{2: 'Vera?', 3: '9', 4: 'Why are you in this frame... Did you just finish a mission?', 5: '9'}
+9	9		202							{1: '1'}
+10	10		301							"{3: ""You hurriedly put down your report and prepare to stand up to see what is happening outside, only to be firmly pushed back into your seat by Vera's hand.""}"
+11	11		301							{3: 'She examines you carefully from head to toe, sets down the two packages in her hands, and the usual mischievous expression returns to her face.'}
+12	12		201							{1: '1', 2: '500345', 3: '13'}
+13	13		301							{1: '1', 2: 'Vera', 3: 'Do you know there are rumors everywhere about your death?', 4: '1'}
+14	14		302							"{2: '?', 3: '15', 4: ""Whoa, that's surprising."", 5: '15'}"
+15	15		204							{1: '1'}
+16	16		301							"{2: 'Vera', 3: ""So what's actually going on? Let me see."", 4: '1'}"
+17	17		301							{3: 'After pondering for a moment, you finally recall injuring your arm last week during an exchange training with Hellhound.'}
+18	18		302							{2: '(Roll up sleeve)', 3: '19', 4: 'You mean this?', 5: '19'}
+19	19		301							"{2: 'Vera', 3: ""Hellhound...? Looks like they're looking for trouble again."", 4: '1'}"
+20	20		301							"{2: 'Vera', 3: ""You just have some antiseptic dressing on, so it's only a minor injury, right?"", 4: '1'}"
+21	21		204							{1: '1', 2: '13'}
+22	22		301							"{2: 'Vera', 3: ""Who knows what kind of telephone game is being played out there... It's truly ridiculous."", 4: '1'}"
+23	23		302							"{2: 'It was just a scratch. I took care of it myself.', 3: '24', 4: ""Can't you show a little concern for me?"", 5: '24'}"
+24	24		301							"{2: 'Vera', 3: ""Always putting on a brave face... One day you'll be in real trouble and no one will even notice."", 4: '1'}"
+25	25		302							"{2: ""It's fine. You noticed, and you came all this way to check on me."", 3: '26'}"
+26	26		204							{1: '1'}
+27	27		301							{2: 'Vera', 3: '...', 4: '1'}
+28	28		301							{3: 'Following your gaze, Vera notices the two packages she tossed onto the table earlier.'}
+29	29		302							{2: 'You brought these for me?', 3: '30'}
+30	30		301							{2: 'Vera', 3: 'Is my concern not enough for you?', 4: '1'}
+31	31		202							{1: '1'}
+32	32		301							{3: 'Vera pats the two packages on the table.'}
+33	33		201							{1: '1', 2: '500345'}
+34	34		301							"{1: '1', 2: 'Vera', 3: ""If you're curious, sit still and behave yourself."", 4: '1'}"
+35	35		202							{1: '1'}
+36	36		301							{3: 'Vera swiftly unwraps the packages, revealing the rather unexpected contents inside.'}
+37	37		301							{3: 'A basic first aid kit and a fruit basket.'}
+38	38		302							"{2: ""...I didn't think you were really here to check on me."", 3: '39', 4: ""I didn't expect a care package with a fruit basket..."", 5: '39'}"
+39	39		301							"{3: ""You do not know what is going through Vera's mind as she pulls out a fruit knife and begins to peel an apple.""}"
+40	40		201							{1: '1', 2: '500345'}
+41	41		301							"{1: '1', 2: 'Vera', 3: ""I'm not just here to check on you. I also happen to have some matters I need to confirm with you."", 4: '1'}"
+42	42		302							{2: 'Something you need to confirm with me...?', 3: '43'}
+43	43		301							{2: 'Vera', 3: 'I will.', 4: '1'}
+44	44		204							{1: '1', 2: '1'}
+45	45		301							"{2: 'Vera', 3: ""I just remembered that you didn't get a chance to eat the last apple I peeled for you as well, ha."", 4: '1'}"
+46	46		302							"{2: 'When you ""last""?', 3: '47', 4: 'When did you ever peel an apple for me?', 5: '47'}"
+47	47		301							{3: 'Vera does not continue immediately as if suddenly lost in some distant memory.'}
+48	48		204							{1: '1'}
+49	49		301							{2: 'Vera', 3: '...Oh, I must have remembered it wrong.', 4: '1'}
+50	50		202							{1: '1'}
+51	51		301							{3: 'Vera deftly peels the fruit, cuts it into small pieces, and hands one to you.'}
+52	52		201							{1: '1', 2: '500345'}
+53	53		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Vera', 3: ""Try it. I'll go back and have a word with the vendor if it isn't sweet. Go on."", 4: '1'}"

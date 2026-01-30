@@ -1,0 +1,643 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		401							{1: '2', 2: '215'}
+4	4		304							"{1: '<i>""You\'re not a hero, you don\'t pretend to be a hero, you\'re not even worthy of being called a fake hero.</i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 7: '-3', 10: '1'}"
+5	5		304							{1: '<i>...</i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 10: '1'}
+6	6		304							"{1: ""<i>You're like a rabbit sewn inside a bull's carcass,</i>"", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 10: '1'}"
+7	7		304							{1: '<i>suffocating in there, yet starving all the same,</i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 10: '1'}
+8	8		304				AniZhuanchangBegin			"{1: '<i>surrounded by all that fresh meat, yet craving real food.""</i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 9: '1', 10: '1'}"
+9	9		402							{1: '215'}
+10	10		502						500.0	{1: 'DialogEnable'}
+11	11		401							{1: '1', 2: '169'}
+12	12		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+13	13		301			AniZhuanchangEnd				"{3: ""Ascendant Gabriel took Lloyd... no, half of Lloyd's skull, which miraculously preserved part of his M.I.N.D.""}"
+14	14		301				AniZhuanchangBegin			"{3: 'Gabriel found a dilapidated old frame and spent nearly a month gradually ""reconstructing"" Lloyd.'}"
+15	15		502						800.0	{1: 'DialogDisable'}
+16	16		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory83.jpg'}
+17	17		201							{1: '1', 2: '501230', 5: '-350'}
+18	18		304			AniZhuanchangEnd				{1: 'At first, Lloyd remained unresponsive, lost in the overwhelming grief of suddenly losing his companions.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1'}
+19	19		202						500.0	{1: '1'}
+20	20		201							{1: '1', 2: '501230', 4: '-400', 5: '-350'}
+21	21		201							{1: '2', 2: '500101', 4: '400'}
+22	22		304			RImgBg1Shake				"{1: 'Once his voice module connected successfully, Lloyd ""awoke from his trance"" and immediately began cursing the Ascendant who had destroyed everything.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1'}"
+23	23		202							{1: '1', 2: '2'}
+24	24		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory83.jpg', 3: '0', 4: '1', 5: '1.2'}
+25	25		104						1500.0	{1: '10|-45|-300', 2: '0', 4: '3'}
+26	26		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory83.jpg'}
+27	27		104							{1: '10|-45|-300', 2: '0'}
+28	28		205							{1: '999'}
+29	29		104							{1: '0|0|0', 2: '0', 4: '3'}
+30	30		201							{1: '1', 2: '500101'}
+31	31		304							"{1: ""But Gabriel ignored him, blocking Lloyd's voice module and continuing to focus intently on his creation."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1'}"
+32	32		202							{1: '1'}
+33	33		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory83.jpg', 3: '0', 4: '1', 5: '1.2'}
+34	34		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory83.jpg'}
+35	35		205							{1: '999'}
+36	36		201							{1: '1', 2: '501230', 4: '-450', 7: '1'}
+37	37		201							{1: '2', 2: '500101', 4: '400', 7: '1'}
+38	38		203						200.0	{1: '1', 2: '0.25', 3: '-400'}
+39	39		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 2: '2', 3: '1'}
+40	40		304			PanelActor1Shake				{1: 'When his upper limb circuits connected successfully, Lloyd reached out to strangle Gabriel, only to be pinned to the frame by metal spikes.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1'}
+41	41		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 4: '1'}
+42	42		202							{1: '1', 2: '2'}
+43	43		304							{1: 'By the time his lower limb connection was complete, it had been exactly 33 days.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1'}
+44	44		201							{1: '1', 2: '501222', 3: '8', 4: '-400'}
+45	45		201							{1: '2', 2: '500101', 4: '400'}
+46	46		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 2: '2', 3: '1'}
+47	47		304				AniZhuanchangBegin			{1: 'Lloyd seemed to have abandoned any thoughts of escape. He remained silent while pinned to the frame, allowing Gabriel to reposition him once more.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1', 9: '1'}
+48	48		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 4: '1'}
+49	49		202							{1: '1', 2: '2', 6: '1'}
+50	50		502						500.0	{1: 'DialogEnable'}
+51	51		201							{1: '1', 2: '501222', 3: '8', 4: '-400', 7: '1'}
+52	52		201							{1: '2', 2: '500101', 4: '400', 7: '1'}
+53	53		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 2: '2', 3: '1'}
+54	54		301			AniZhuanchangEnd				{1: '1', 2: 'Gabriel', 3: 'You may speak now. Your noise was too loud earlier and interfered with my creative process, so I had to quiet you down.', 4: '2'}
+55	55		301							{2: 'Lloyd', 3: '...', 4: '1'}
+56	56		301							"{2: 'Gabriel', 3: ""Then I'll ask the first question."", 4: '2'}"
+57	57		301							"{2: 'Gabriel', 3: ""You've clearly passed the Ascension-Network's filtering process. Why won't you simply comply and join?"", 4: '2'}"
+58	58		204							{1: '1'}
+59	59		301							{2: 'Lloyd', 3: '...I witnessed you kill them with my own eyes. Do you really think I would ever join forces with you?', 4: '1'}
+60	60		301							"{2: 'Gabriel', 3: 'Why not? They were wrong, and the ""old world"" you despise is actually right. I stand on the side of truth.', 4: '2'}"
+61	61		301							{2: 'Lloyd', 3: 'I refuse to discuss such revolting notions of right and wrong with you.', 4: '1'}
+62	62		301							"{2: 'Gabriel', 3: ""Avoidance isn't the answer. Sooner or later, you'll have no choice but to face these truths."", 4: '2'}"
+63	63		301							"{2: 'Gabriel', 3: 'I\'ve observed that project in Las Prados. The ""built-in blocking system"" inside your body is more correct than Babylonia\'s current ""Inver-Device.""', 4: '2'}"
+64	64		301							"{2: 'Gabriel', 3: ""By the way, I admire the Las Prados project's spirit of exploration and willingness to embrace sacrifice. Those principles are truly commendable."", 4: '2'}"
+65	65		301							"{2: 'Gabriel', 3: ""If you allow yourself to drift with the current, swept away by the tide of changing worlds, you'll only end up as another sacrifice to the waves."", 4: '2'}"
+66	66		301							{2: 'Gabriel', 3: 'Only by building a sanctuary with your own hands and leading your loved ones to a mountain of your own can everyone find a true shelter and home.', 4: '2'}
+67	67		301							"{2: 'Gabriel', 3: ""I've personally witnessed all you've been through, yet you still refuse to see the truth."", 4: '2'}"
+68	68		301							"{2: 'Gabriel', 3: ""Lloyd, let me summarize for you—you're dull in comfort, hesitant before action, and blind during execution. You've accomplished nothing. You're pitifully wrong about everything."", 4: '2'}"
+69	69		301							{2: 'Lloyd', 3: 'Beat it.', 4: '1'}
+70	70		301							{2: 'Gabriel', 3: '...', 4: '2'}
+71	71		301							"{2: 'Gabriel', 3: ""You're too impatient. Don't you want to extract more truths from me?"", 4: '2'}"
+72	72		301							{2: 'Lloyd', 3: '...What exactly have you turned me into?', 4: '1'}
+73	73		401							{1: '2', 2: '1543'}
+74	74		301			PanelActor1Shake				{1: '1', 3: 'Lloyd struggles as he feels the Punishing Virus flowing across his frame.'}
+75	75		301							"{2: 'Gabriel', 3: ""You refused the Ascension-Network's invitation, yet I've still generously granted you the privilege of coexisting with the Punishing Virus."", 4: '2'}"
+76	76		301							"{2: 'Gabriel', 3: 'No need to thank me. I simply don\'t want to miss out on someone with talent. From today, you\'re free to go wherever you want, but this coexistence with the Punishing Virus won\'t fade until you truly see the ""new world"" for what it is.', 4: '2'}"
+77	77		401							{1: '2', 2: '5502'}
+78	78		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 4: '1'}
+79	79		301							"{3: ""Gabriel removes the spikes from Lloyd's body as he speaks.""}"
+80	80		301							"{2: 'Gabriel', 3: ""Oh, and you'd better not get caught by humans, or else you'll..."", 4: '2'}"
+81	81		202							{1: '1', 2: '2'}
+82	82		401							{1: '2', 2: '4331'}
+83	83		301			RImgBg1Shake				{3: 'Lloyd has no intention of listening to this madman. The moment his restraints are removed, he staggers to his feet and frantically runs away.'}
+84	84		301							"{3: ""Gabriel watches as Lloyd's figure disappears into the distance.""}"
+85	85		201							{1: '1', 2: '500101'}
+86	86		301							"{1: '1', 2: 'Gabriel', 3: ""...While you were unaware, they've already thoroughly studied your internal blocking system and used it to evolve their military forces."", 4: '1'}"
+87	87		301				AniZhuanchangBegin			"{2: 'Gabriel', 3: 'Do you think your precious ""new world"" will still welcome someone like you? You\'re about to be swept away by the tide once again, Lloyd.', 4: '1'}"
+88	88		502						500.0	{1: 'DialogDisable'}
+89	89		202							{1: '1', 6: '1'}
+90	90		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+91	91		401							{1: '2', 2: '4297'}
+92	92		307			AniZhuanchangEnd				"{1: ""You're about to be swept away by the tide once again, Lloyd."", 3: '80', 4: 'ffffffff'}"
+93	93		301				AniZhuanchangBegin			"{3: ""You're about to be swept away by the tide once again, Lloyd.""}"
+94	94		307							{2: '1'}
+95	95		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+96	96		502							{1: 'DialogEnable'}
+97	97		401						2000.0	{1: '1', 2: '36'}
+98	98		401							{1: '1', 2: '5022'}
+99	99		401							{1: '2', 2: '4331'}
+100	100		201							{1: '1', 2: '501222', 3: '14', 7: '1'}
+101	101		502							{1: 'RImgBg1Shake'}
+102	102		301			AniZhuanchangEnd				{1: '1', 2: 'Lloyd', 3: 'Wenke! Captain!', 4: '1'}
+103	103		301			RImgBg1Shake				{2: 'Lloyd', 3: 'Is anyone there?!', 4: '1'}
+104	104		202							{1: '1'}
+105	105		301							"{3: ""He stumbles back to where his entire team was wiped out, but it's been over a month since Gabriel took him away. Even the bodies have long been buried.""}"
+106	106		201							{1: '1', 2: '501222', 3: '14'}
+107	107		301							{1: '1', 2: 'Lloyd', 3: 'Something must still be here...', 4: '1'}
+108	108		203							{1: '1', 2: '0.25', 4: '-100'}
+109	109		401							{1: '2', 2: '2635'}
+110	110		301							{3: 'He digs frantically through the sand, finding only a single piece of leg armor that belonged to Francis.'}
+111	111		204							{1: '1', 2: '9'}
+112	112		301							{2: 'Lloyd', 3: 'Nothing remains...', 4: '1'}
+113	113		401							{1: '2', 2: '1543'}
+114	114		203							{1: '1', 2: '0.25', 4: '-150'}
+115	115		301							{3: 'He gently caresses the lone remnant and sinks to the ground.'}
+116	116		301							"{2: 'Lloyd', 3: ""I grew attached to the Gray Mako Squad from the old world, and all that's left is a piece of Mako-2's shoulder armor. I grew attached to my Babylonia team in this new world, and all that's left is a piece of Francis's leg armor."", 4: '1'}"
+117	117		204							{1: '1', 2: '14'}
+118	118		301							"{2: 'Lloyd', 3: ""...Wasn't it supposed to be the Punishing Virus's fault? All of it?"", 4: '1'}"
+119	119		301							"{2: 'Lloyd', 3: 'I escaped from Madam Monzano\'s false ""Eden Type III"" because I wanted to survive, I wanted everyone to survive.', 4: '1'}"
+120	120		301							"{2: 'Lloyd', 3: 'I never asked to be a leader, let alone a ""hero""... Yes, I avoided that responsibility, but was that alone so wrong?', 4: '1'}"
+121	121		301							{2: 'Lloyd', 3: 'Why am I punished just for being swept along by the tide?', 4: '1'}
+122	122		301							{2: 'Lloyd', 3: '...Is the Punishing Virus really to blame?', 4: '1'}
+123	123		301							"{3: ""Lloyd's gaze dims.""}"
+124	124		202							{1: '1', 6: '1'}
+125	125		401							{1: '2', 2: '2982'}
+126	126		201							{1: '1', 2: '501075', 7: '1'}
+127	127		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+128	128		301			PanelActor1Shake				{1: '1', 2: '???', 3: 'Ahead—help—', 4: '1'}
+129	129		402							{1: '2982'}
+130	130		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+131	131		202							{1: '1', 5: '1'}
+132	132		201							{1: '1', 2: '501222', 3: '7'}
+133	133		301							{1: '1', 2: 'Lloyd', 3: '...!', 4: '1'}
+134	134		202							{1: '1'}
+135	135		301							{3: 'Suddenly, he hears a call from nearby, catching a Babylonia signal—he must cling to this hope like driftwood in a flood.'}
+136	136		201							{1: '1', 2: '501222', 3: '7'}
+137	137		301							{1: '1', 2: 'Lloyd', 3: 'Where are you?!', 4: '1'}
+138	138		202							{1: '1', 6: '1'}
+139	139		401							{1: '2', 2: '2982'}
+140	140		201							{1: '1', 2: '501075', 7: '1'}
+141	141		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+142	142		301			PanelActor1Shake				{1: '1', 2: '???', 3: 'Search Mission—', 4: '1'}
+143	143		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+144	144		402							{1: '2982'}
+145	145		202							{1: '1', 6: '1'}
+146	146		401							{1: '2', 2: '4331'}
+147	147		104							{1: '0|0|-100', 2: '0.25'}
+148	148		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+149	149		301				DialogDisable		500.0	{3: 'Lloyd takes off running once again, clinging to hope.'}
+150	150		401							{1: '2', 2: '4331'}
+151	151		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory347.jpg', 3: '0', 4: '1', 5: '1.5'}
+152	152		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory347.jpg'}
+153	153		205							{1: '999'}
+154	154		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+155	155		301			DialogEnable				{3: 'At the end of his run, he finds a barely breathing Construct. Their injuries are severe, but not beyond salvation.'}
+156	156		201							{1: '1', 2: '501075', 5: '-100', 7: '1'}
+157	157		301			PanelActor1Shake				{1: '1', 2: '???', 3: 'Requesting support...', 4: '1'}
+158	158		203							{1: '1', 2: '0.25', 3: '400', 4: '-100'}
+159	159		201							{1: '2', 2: '501222', 4: '-400'}
+160	160		301							"{1: '1', 2: 'Lloyd', 3: ""I'm here!"", 4: '2'}"
+161	161		203							{1: '2', 2: '0.4', 3: '-300'}
+162	162		301							{3: 'Lloyd reaches out to pull the Construct from the sand, but freezes when he spots the nameplate on its chest.'}
+163	163		204							{1: '2', 2: '7'}
+164	164		301							"{2: 'Lloyd', 3: 'Are you... ""L-l-o-y-d""?', 4: '2'}"
+165	165		301			PanelActor1Shake				{1: '1', 2: '???', 3: '*cough*... Yes, I am... Lloyd. Please help me... perform... Recall.', 4: '1'}
+166	166		301							{2: '???', 3: 'The safety lock... is disabled. Just help me press this... and I can... transfer back... to Babylonia.', 4: '1'}
+167	167		301							"{3: ""Under Lloyd's puzzled gaze, the Construct points to a button-like mechanism on its body.""}"
+168	168		301							"{2: 'Lloyd', 3: ""...Impossible. Hasn't it only been a little over a month...? True Recall... that's something that shouldn't be possible yet..."", 4: '2'}"
+169	169		301							"{2: '???', 3: ""Don't worry, we'll all use this method to... return to the battlefield."", 4: '1'}"
+170	170		204							{1: '2', 2: '8'}
+171	171		301							{2: 'Lloyd', 3: '...', 4: '2'}
+172	172		204							{1: '2'}
+173	173		203							{1: '2', 2: '0.25', 3: '-225', 4: '-25'}
+174	174		301							{2: 'Lloyd', 3: 'Why are you using my name? Why are you trying to comfort me with lies?', 4: '2'}
+175	175		301							{2: '???', 3: '...Huh?', 4: '1'}
+176	176		401							{1: '2', 2: '1081'}
+177	177		301							"{3: 'The power core of the brand-new ""Lloyd"" gradually dims, but its Punishing detector clings to life, emitting a shrill alarm when Lloyd draws near.'}"
+178	178		402							{1: '1081'}
+179	179		401							{1: '2', 2: '1543'}
+180	180		203							{1: '1', 2: '0.25', 3: '550', 4: '-100'}
+181	181		301							"{2: '???', 3: ""High concentration of Punishing... That's not right... What are you really?!"", 4: '1'}"
+182	182		301							{2: 'Lloyd', 3: 'I am... Lloyd!', 4: '2'}
+183	183		301							{2: '???', 3: '...', 4: '1'}
+184	184		204							{1: '2', 2: '7'}
+185	185		401							{1: '2', 2: '2690', 3: '1'}
+186	186		203							{1: '1', 2: '0.25', 3: '300', 4: '-50'}
+187	187		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0.2'}
+188	188		301			PanelActor2Shake				"{1: '1', 3: ""The dying Construct says nothing more, but suddenly bursts with strength, raising its weapon to impale Lloyd's body—a Banner Spear.""}"
+189	189		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0', 5: '0.2'}
+190	190		301			PanelActor2Shake				{1: '1', 2: 'Lloyd', 3: 'AAARGH!!!', 4: '2'}
+191	191		205							{1: '1005', 3: '0', 4: '1', 5: '0'}
+192	192		204							{1: '2', 2: '14'}
+193	193		301			PanelActor2Shake				"{1: '1', 2: 'Lloyd', 3: ""No! Trust me, the way I am now... this frame full of Punishing, it's all because of someone called Gabriel..."", 4: '2'}"
+194	194		301							"{3: ""Lloyd doesn't resist, merely gripping the Banner Spear with his hands as he explains with an almost sorrowful tone.""}"
+195	195		401							{1: '2', 2: '2566'}
+196	196		203							{1: '1', 2: '0.25', 3: '350', 4: '-200'}
+197	197		301							{3: 'But the dying Construct has no chance to hear his explanation, its final attack seemingly accelerating its own death. The power core dims completely, emitting one last muffled sound.'}
+198	198		301							{2: 'Lloyd', 3: 'No...', 4: '2'}
+199	199		301							"{2: 'Lloyd', 3: ""It shouldn't have this name, how could it have this name..."", 4: '2'}"
+200	200		401							{1: '2', 2: '4833'}
+201	201		203							{1: '2', 2: '0.25', 3: '-180', 4: '-115'}
+202	202		301							{3: 'Lloyd tears the nameplate from the remains and examines its personal belongings.'}
+203	203		204							{1: '2', 2: '7'}
+204	204		301							{2: 'Lloyd', 3: '! This is... my notebook?', 4: '2'}
+205	205		202							{1: '1', 2: '2'}
+206	206		306							{1: '1'}
+207	207		301				DialogDisable			{3: 'Lloyd finds his notebook—the pages are well-preserved, even covered with fresh protective film.'}
+208	208		401							{1: '2', 2: '2768'}
+209	209		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory264.png', 3: '0', 4: '1', 5: '1'}
+210	210		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory264.png'}
+211	211		205						500.0	{1: '999'}
+212	212		401							{1: '2', 2: '2768'}
+213	213		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png', 3: '0', 4: '1', 5: '1'}
+214	214		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+215	215		205						500.0	{1: '999'}
+216	216		401							{1: '2', 2: '2768'}
+217	217		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory14.png', 3: '0', 4: '1', 5: '1'}
+218	218		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+219	219		205							{1: '999'}
+220	220		301			DialogEnable				{3: 'He gently opens it to find his own handwritten records of Babylonia—a testament to the peaceful year he spent there.'}
+221	221		301				DialogDisable			"{3: ""Since escaping the false Babylonia, he'd questioned everything around him, constantly seeking information to verify that what he saw was real. He'd asked about Babylonia's history and inquired about the lives of every passerby.""}"
+222	222		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory347.jpg', 3: '0', 4: '1', 5: '1'}
+223	223		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory347.jpg'}
+224	224		205							{1: '999'}
+225	225		201							{1: '1', 2: '501222', 3: '8'}
+226	226		301			DialogEnable				"{1: '1', 3: ""Lloyd cradles the notebook in his hands. He'd lost the ability to mourn himself, but now clearly realizes—someone has been continuing his existence.""}"
+227	227		306							
+228	228		204							{1: '1', 2: '14'}
+229	229		301							{2: 'Lloyd', 3: '...', 4: '1'}
+230	230		401							{1: '2', 2: '4421'}
+231	231		204							{1: '1'}
+232	232		301							{3: 'In the next moment, the terminal still attached to the remains activates once more.'}
+233	233		203							{1: '1', 2: '0.25', 3: '-600'}
+234	234		401							{1: '2', 2: '4422'}
+235	235		509							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png', 2: '2'}
+236	236		201					350.0		{1: '13', 2: '500359', 4: '500'}
+237	237		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '13'}
+238	238		301							{1: '1', 3: 'From it comes yet another unfamiliar male voice, but the words spoken are exactly the same.'}
+239	239		301							{2: '???', 3: 'Lloyd here. Approaching target...', 4: '13'}
+240	240		301							{2: 'Lloyd', 3: '...', 4: '1'}
+241	241		510							{1: '2'}
+242	242		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '13'}
+243	243		202							{1: '1', 2: '13'}
+244	244		301				AniZhuanchangBegin			"{3: ""He doesn't answer again. A new Lloyd is about to arrive, while the real Lloyd chooses to leave.""}"
+245	245		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+246	246		306						500.0	{1: '1'}
+247	247		401							{1: '2', 2: '968'}
+248	248		301			AniZhuanchangEnd				{3: 'After that, the windblown sands continue to rage for a long time.'}
+249	249		301				AniZhuanchangBegin			"{3: 'So long that even the last ""Lloyd"" met his end at the hands of that red-haired Construct; so long that even Gabriel has vanished without a trace; so long that even the armor remnants of old friends have been completely eroded by the windblown sand.'}"
+250	250		402							{1: '968'}
+251	251		306							
+252	252		401						2000.0	{1: '1', 2: '36'}
+253	253		401							{1: '1', 2: '148'}
+254	254		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory923.jpg'}
+255	255		201							{1: '1', 2: '501222', 7: '1'}
+256	256		301			AniZhuanchangEnd				{1: '1', 2: 'Lloyd', 3: 'How long has it been?', 4: '1'}
+257	257		202							{1: '1'}
+258	258		301							{3: 'He still wanders through the yellow sands.'}
+259	259		201							{1: '1', 2: '501222', 3: '8'}
+260	260		301							{1: '1', 2: 'Lloyd', 3: 'So long that... even their remaining armor is completely gone now.', 4: '1'}
+261	261		204							{1: '1'}
+262	262		301							"{2: 'Lloyd', 3: ""Even Gabriel has vanished without a trace... he'd better be dead."", 4: '1'}"
+263	263		204							{1: '1', 2: '2'}
+264	264		301							"{2: 'Lloyd', 3: 'Even the last ""Lloyd"" was eliminated by that red-haired Construct... just as well.', 4: '1'}"
+265	265		301							{2: 'Lloyd', 3: 'Searching for Wenke has become pointless—I no longer need to prove my identity. As long as I remain in this Punishing-contaminated state, I can never return to Babylonia.', 4: '1'}
+266	266		204							{1: '1', 2: '8'}
+267	267		301							{2: 'Lloyd', 3: '...', 4: '1'}
+268	268		204							{1: '1', 2: '14'}
+269	269		301							{2: 'Lloyd', 3: 'But why... have I still come all this way searching?', 4: '1'}
+270	270		202							{1: '1'}
+271	271		306							{1: '1'}
+272	272		401							{1: '2', 2: '318'}
+273	273		301							{3: 'He stands still behind the speeding golden train, watching as it recedes into the distance.'}
+274	274		306							
+275	275		402							{1: '318'}
+276	276		201							{1: '1', 2: '501222', 3: '7'}
+277	277		301							{1: '1', 2: 'Lloyd', 3: 'Wenke is on that train.', 4: '1'}
+278	278		301				AniZhuanchangBegin			{2: 'Lloyd', 3: '!', 4: '1'}
+279	279		502						500.0	{1: 'DialogDisable'}
+280	280		202							{1: '1', 6: '1'}
+281	281		401							{1: '2', 2: '649'}
+282	282		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory603.jpg'}
+283	283		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '5'}
+284	284		401				AniZhuanchangEnd			{1: '2', 2: '838'}
+285	285		104						550.0	{1: '1100|0|0', 2: '0.5', 4: '5'}
+286	286		301			DialogEnable				{3: 'He witnesses the door at the rear of the train suddenly being pulled open.'}
+287	287		201							{1: '1', 2: '500296'}
+288	288		301			RImgBg1Shake				"{1: '1', 2: '""The Fixer""', 3: 'Get off!', 4: '1'}"
+289	289		202							{1: '1', 6: '1'}
+290	290		201							{1: '1', 2: '500280', 4: '-700', 5: '-75', 7: '1'}
+291	291		201							{1: '2', 2: '500454', 4: '-240', 5: '-100', 7: '1', 8: '1'}
+292	292		301			PanelActor2Shake				"{1: '1', 2: '???', 3: ""Please... don't... look, I have a child with me, at least let her stay... I'm begging you..."", 4: '2'}"
+293	293		401							{1: '2', 2: '4044'}
+294	294		301			PanelActor2Shake	DialogDisable			{2: '???', 3: 'I can still... AHHH!!', 4: '2'}
+295	295		401							{1: '2', 2: '4006'}
+296	296		203							{1: '1', 2: '0.25', 3: '-700', 4: '-800'}
+297	297		203						250.0	{1: '2', 2: '0.25', 3: '-240', 4: '-800'}
+298	298		202							{1: '1', 2: '2'}
+299	299		401					800.0		{1: '2', 2: '4408'}
+300	300		301			DialogEnable				"{3: ""With the man's agonized scream, these pitifully dressed people, including the father and daughter, are thrown from the train. Their bodies slam hard against the tracks, broken into pieces by the unyielding rails.""}"
+301	301		201							{1: '1', 2: '500296'}
+302	302		301							"{1: '1', 2: '""The Fixer""', 3: 'Taken care of.', 4: '1'}"
+303	303		301				AniZhuanchangBegin			"{2: '""The Fixer""', 3: ""Freeloading off our rations for three months in the rear car, finally they're dealt with... it's just sickening to look at."", 4: '1'}"
+304	304		402							{1: '649'}
+305	305		202							{1: '1', 6: '1'}
+306	306		101							{4: '5', 5: '1'}
+307	307		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory923.jpg'}
+308	308		201							{1: '1', 2: '501222', 3: '7'}
+309	309		301			AniZhuanchangEnd				{1: '1', 2: 'Lloyd', 3: '...', 4: '1'}
+310	310		301							"{3: ""Lloyd feels as if he just witnessed Wenke's lost wife and daughter die, a long-forgotten sense of dread rising from the depths of his heart.""}"
+311	311		301				AniZhuanchangBegin			{2: 'Lloyd', 3: '...Would Wenke really be in a place like this?', 4: '1'}
+312	312		202							{1: '1', 6: '1'}
+313	313		401						2000.0	{1: '1', 2: '36'}
+314	314		401							{1: '1', 2: '229'}
+315	315		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory603.jpg'}
+316	316		401							{1: '2', 2: '4637'}
+317	317		301			AniZhuanchangEnd				{3: 'Lloyd boards the train.'}
+318	318		306							{1: '1'}
+319	319		301							{3: 'He walks silently down the center aisle, ignored by everyone—the disabled, severely ill, elderly, and young... all crammed into corners on both sides.'}
+320	320		301							"{3: ""Even when he accidentally steps on someone, there's no response.""}"
+321	321		306							
+322	322		201							{1: '1', 2: '501222', 4: '-400'}
+323	323		201							{1: '2', 2: '501252', 4: '400'}
+324	324		301							"{1: '1', 2: 'Lloyd', 3: 'I\'m looking for your ""Fixer.""', 4: '1'}"
+325	325		301							{2: 'Girl', 3: '...', 4: '2'}
+326	326		203							{1: '2', 2: '0.4', 3: '450'}
+327	327		301							{3: 'The only one who hears him speak, a little girl, shrinks back into the shadows.'}
+328	328		301							"{2: 'Lloyd', 3: ""...You're hungry, aren't you?"", 4: '1'}"
+329	329		301							{2: 'Girl', 3: '...', 4: '2'}
+330	330		203							{1: '1', 2: '0.4', 3: '-400', 4: '-200'}
+331	331		301							"{2: 'Lloyd', 3: ""Chocolate. It'll give you energy. Here, take it."", 4: '1'}"
+332	332		203							{1: '1', 2: '0.25', 3: '-350', 4: '-200'}
+333	333		301							"{3: ""Lloyd carefully places a piece of candy in the girl's palm. The Punishing virus he carries doesn't infect the child.""}"
+334	334		202							{1: '1', 2: '2'}
+335	335		301							{3: 'The girl devours it immediately. Withered souls around them look over, but fortunately, no one tries to snatch the candy away.'}
+336	336		201							{1: '1', 2: '501222', 4: '-400', 5: '-200'}
+337	337		201							{1: '2', 2: '501252', 4: '400'}
+338	338		301							{1: '1', 2: 'Lloyd', 3: 'Tell me, how many people were thrown off just now? Who did it?', 4: '1'}
+339	339		301							"{2: 'Girl', 3: '...""The Fixer."" What do... you... want with ""The Fixer""?', 4: '2'}"
+340	340		301							{2: 'Lloyd', 3: 'Eat slowly. I can give you another piece.', 4: '1'}
+341	341		301							"{2: 'Girl', 3: ""Thank you...! Don't look for them. They kill people. And they hate outsiders even more."", 4: '2'}"
+342	342		301							{2: 'Lloyd', 3: 'If they kill so indiscriminately, then they should be prepared to die themselves.', 4: '1'}
+343	343		301							{2: 'Girl', 3: 'Can you do it?', 4: '2'}
+344	344		301							{2: 'Lloyd', 3: 'I can handle them.', 4: '1'}
+345	345		301							{2: 'Girl', 3: 'Then please, help everyone here.', 4: '2'}
+346	346		301							{2: 'Lloyd', 3: 'I only have one piece of chocolate.', 4: '1'}
+347	347		301							"{2: 'Girl', 3: 'No... I\'m begging you to pass judgment on everyone. Kill us all, not just ""The Fixer.""', 4: '2'}"
+348	348		301							"{3: ""The girl's emaciated arm sweeps in a circle, pointing to every refugee around them.""}"
+349	349		301							{2: 'Lloyd', 3: '...', 4: '1'}
+350	350		301							"{2: 'Lloyd', 3: ""I'm sorry, I can't..."", 4: '1'}"
+351	351		202							{1: '1', 2: '2', 6: '1'}
+352	352		201							{1: '1', 2: '500296'}
+353	353		301							"{1: '1', 2: '""The Fixer""', 3: 'Are you looking for me?', 4: '1'}"
+354	354		301							{3: 'The culprit who had just cruelly thrown someone off the tracks stands right behind Lloyd, questioning him.'}
+355	355		301							"{2: '""The Fixer""', 3: 'The train is moving at high speeds. How did you get on board?', 4: '1'}"
+356	356		301							"{2: '""The Fixer""', 3: 'If you came from the front of the train, then turn back...!', 4: '1'}"
+357	357		203							{1: '1', 2: '0.25', 3: '400'}
+358	358		201							{1: '2', 2: '501222', 4: '-400'}
+359	359		301							"{1: '1', 3: ""Lloyd rises from the shadows in front of the girl—upon seeing Lloyd's face, The Fixer suddenly falls silent.""}"
+360	360		301							"{2: 'Lloyd', 3: ""...What's wrong? Cat got your tongue?"", 4: '2'}"
+361	361		301							"{2: '""The Fixer""', 3: '...', 4: '1'}"
+362	362		301							{2: 'Lloyd', 3: '...Wenke?', 4: '2'}
+363	363		401							{1: '2', 2: '4895'}
+364	364		203						250.0	{1: '2', 2: '0.25'}
+365	365		203							{1: '2', 2: '0.25', 3: '-100'}
+366	366		401							{1: '2', 2: '3077'}
+367	367		203						250.0	{1: '1', 2: '0.25', 3: '250', 4: '-100'}
+368	368		301			PanelActor1Shake				"{1: '1', 2: '""The Fixer""', 3: '—URGH!!', 4: '1'}"
+369	369		401							{1: '2', 2: '4826'}
+370	370		301			RImgBg1Shake				{3: 'Lloyd lunges forward, hurling The Fixer to the ground before him, then crushes his chest cavity with one stomp—The Fixer is a Construct.'}
+371	371		306							{1: '1'}
+372	372		203							{1: '1', 2: '0.4', 4: '50', 5: '-80'}
+373	373		203						450.0	{1: '2', 2: '0.4', 3: '-530', 4: '80', 5: '-80'}
+374	374		401							{1: '2', 2: '4276'}
+375	375		501						600.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab', 2: '3'}
+376	376		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab'}
+377	377		301							"{3: ""The metal framework inside the Construct's chest shatters, spraying faintly gleaming fragments—along with a filthy ring from his chest that hadn't been cleaned for years, now sent flying.""}"
+378	378		202							{1: '1', 2: '2'}
+379	379		401							{1: '2', 2: '5535'}
+380	380		301							{3: 'Clink.'}
+381	381		301							"{3: ""The filthy ring rolls into a corner, and The Fixer, pinned down by Lloyd, struggles briefly but can't reach it no matter how hard he tries.""}"
+382	382		306							
+383	383		201							{1: '1', 2: '500296', 4: '250', 5: '-200'}
+384	384		201							{1: '2', 2: '501230', 4: '-250'}
+385	385		301			RImgBg1Shake				{1: '1', 2: 'Lloyd', 3: 'Why is it YOU?!!!', 4: '2'}
+386	386		301			PanelActor1Shake				{1: '1', 2: 'Wenke', 3: 'My ring!', 4: '1'}
+387	387		301							"{2: 'Lloyd', 3: ""Weren't you searching for your wife and daughter? Why did you stop?! You just threw that father and daughter off the train with your own hands! Watched them fall to their deaths!"", 4: '2'}"
+388	388		301			RImgBg1Shake				"{2: 'Lloyd', 3: ""Anyone else could have done this, but it shouldn't have been YOU!!"", 4: '2'}"
+389	389		301			PanelActor1Shake				{1: '1', 2: 'Wenke', 3: 'The ring... give me back my ring!', 4: '1'}
+390	390		301							{2: 'Lloyd', 3: 'You and Francis were the ones who carried me out of Las Prados... Francis is dead! And you—you might as well be dead too!', 4: '2'}
+391	391		301				DialogDisable			{2: 'Lloyd', 3: 'Why is it you!!', 4: '2'}
+392	392		203						200.0	{1: '2', 2: '0.15', 3: '-260'}
+393	393		401							{1: '2', 2: '1512'}
+394	394		502							{1: 'PanelActor1Shake'}
+395	395		203						400.0	{1: '2', 2: '0.15', 3: '-240', 4: '-50'}
+396	396		203						200.0	{1: '2', 2: '0.15', 3: '-260'}
+397	397		401							{1: '2', 2: '1512'}
+398	398		502							{1: 'PanelActor1Shake'}
+399	399		203						200.0	{1: '2', 2: '0.15', 3: '-240', 4: '-50'}
+400	400		301			DialogEnable	DialogDisable			"{3: ""Lloyd, long since numbed into a fossil eroded by wind and sand, actually chokes up—he raises his fist high and, without using any Punishing, frantically pounds blow after blow into Wenke's face.""}"
+401	401		203						200.0	{1: '2', 2: '0.15', 3: '-260'}
+402	402		401							{1: '2', 2: '1512'}
+403	403		502							{1: 'PanelActor1Shake'}
+404	404		203						400.0	{1: '2', 2: '0.15', 3: '-240', 4: '-50'}
+405	405		301			DialogEnable				"{3: ""Wenke's face blurs before his eyes. Lloyd wipes his face with one hand, then continues pounding, as if he could somehow deny reality through his fists.""}"
+406	406		202							{1: '2', 6: '1'}
+407	407		201							{1: '2', 2: '501222', 4: '-240', 5: '-50'}
+408	408		301							"{1: '1', 2: 'Lloyd', 3: 'Mako-1, Mako-2, Francis... and so many other ""Lloyds""—I cherished all of them... and you\'re the only one who survived... the only one left alive, and you\'ve become this! Why?', 4: '2'}"
+409	409		204							{1: '2', 2: '14'}
+410	410		301							"{2: 'Lloyd', 3: ""I foolishly thought if I found you, I could prove my identity, and then I'd..."", 4: '2'}"
+411	411		301							{2: 'Wenke', 3: '*cough* And then what...? Go back to Babylonia?', 4: '1'}
+412	412		204							{1: '2', 2: '8'}
+413	413		301							"{2: 'Lloyd', 3: ""I don't know—"", 4: '2'}"
+414	414		401							{1: '2', 2: '1081'}
+415	415		301							"{3: ""Vital fluid drips steadily as the Punishing detector on Wenke's body screams in alarm, revealing the high concentration of Punishing Virus in Lloyd's body.""}"
+416	416		301							{3: 'Amid their mutual silence, Wenke breaks into a mocking laugh.'}
+417	417		402							{1: '1081'}
+418	418		301							"{2: 'Wenke', 3: ""Hahaha... so that's how it is... so you can't go back either. How did you end up like this?"", 4: '1'}"
+419	419		204							{1: '2'}
+420	420		301							"{2: 'Lloyd', 3: ""...It's not time for me to answer that yet. How did you become like this?"", 4: '2'}"
+421	421		301				DialogDisable			"{2: 'Wenke', 3: 'Just like you, I\'ve seen the true face of this world, so I can\'t go back to that ""haven for good people.""', 4: '1'}"
+422	422		401							{1: '2', 2: '4341'}
+423	423		203						450.0	{1: '1', 2: '0.25', 3: '240', 4: '-225'}
+424	424		203						300.0	{1: '1', 2: '0.25', 3: '250', 4: '-250'}
+425	425		402							{1: '4341'}
+426	426		301			DialogEnable				{3: 'Wenke struggles to reach for a ring in the corner. He hooks the metal chain with his pinky finger and clutches it in his palm with utmost tenderness.'}
+427	427		301							{2: 'Wenke', 3: 'You know my story. Shortly after the Punishing outbreak, I got separated from the two of them. I searched for them for many years, even after boarding Babylonia and becoming a Construct, but only found the smallest of leads.', 4: '1'}
+428	428		301							"{2: 'Wenke', 3: ""When you had your accident... when that strange metallic fellow took you away, I survived. He told me many things he'd witnessed firsthand—about my wife and daughter."", 4: '1'}"
+429	429		301							{2: 'Lloyd', 3: '...Gabriel.', 4: '2'}
+430	430		301							"{3: ""Lloyd trembles as he realizes Gabriel's hand has been guiding this story.""}"
+431	431		301							"{2: 'Wenke', 3: 'I didn\'t believe what he told me, so he pointed me toward a path where I could see for myself. That\'s why I ""deserted,"" to find the place that metal fellow directed me to.', 4: '1'}"
+432	432		301							{2: 'Wenke', 3: 'In the end, all I found were two corpses and this wedding ring... Hah, my wife was clearly shot to death, while my daughter had almost... melted.', 4: '1'}
+433	433		301							"{2: 'Wenke', 3: ""He said he saw the two of them escaping in a vehicle, but a fight broke out on board over resources. My wife's gun was taken from her, and they became nothing more than insignificant casualties."", 4: '1'}"
+434	434		301							"{2: 'Wenke', 3: ""Do you understand what I'm saying? The Punishing disaster didn't kill them. They fought to survive all that way, held on for so long, only to be murdered by other people."", 4: '1'}"
+435	435		204							{1: '2', 2: '14'}
+436	436		301							{2: 'Lloyd', 3: '...', 4: '2'}
+437	437		301			RImgBg1Shake				"{2: 'Wenke', 3: ""Don't just stand there in a daze! Stop avoiding the truth! I'll say it again: People kill each other!"", 4: '1'}"
+438	438		301							"{2: 'Wenke', 3: ""I've tamed myself into a jackal on this train, feeding on any carrion I find. That guy we just threw off? He couldn't feed himself, so he repeatedly traded his own daughter for food. I've become numb to such sights!"", 4: '1'}"
+439	439		301							"{2: 'Wenke', 3: ""That kid was right! If you're going to play hero and pass judgment, then purge all the rotting flesh in this rear carriage! A single chocolate bar won't save this train, and a Lloyd who just goes with the flow won't save this place where people murder each other!"", 4: '1'}"
+440	440		301							"{2: 'Wenke', 3: 'Ha! Why has the heroic ""Immortal Lloyd"" fallen silent? I heard you were in Babylonia, constantly being ""reborn"" through Recall, racking up impressive battle records... But looking at you now, that wasn\'t really you, was it?', 4: '1'}"
+441	441		301							"{2: 'Wenke', 3: ""After all, the poster hero they manufactured is nothing like the real you—you're just a coward with occasional bursts of passion, a deserter who betrayed the very spirit of heroism."", 4: '1'}"
+442	442		301							{2: 'Lloyd', 3: '...', 4: '2'}
+443	443		301							"{2: 'Wenke', 3: ""What's wrong, Lloyd? Does it bother you that I'm saying these things..."", 4: '1'}"
+444	444		301							{2: 'Wenke', 3: 'Have I tainted your new world?', 4: '1'}
+445	445		301							{3: 'Lloyd continues to tremble.'}
+446	446		301							{2: 'Lloyd', 3: '...How... how many more times must I be pushed?', 4: '2'}
+447	447		301				AniZhuanchangBegin			{2: 'Wenke', 3: 'I can give you one last push.', 4: '1'}
+448	448		306							{1: '1'}
+449	449		401							{1: '1', 2: '36'}
+450	450		502							{1: 'DialogDisable'}
+451	451		202							{1: '1', 2: '2', 6: '1'}
+452	452		401						1000.0	{1: '2', 2: '321'}
+453	453		101			AniZhuanchangEnd			1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory603.jpg'}
+454	454		402							{1: '321'}
+455	455		401							{1: '2', 2: '322'}
+456	456		205						2500.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.9', 5: '0.3'}
+457	457		402							{1: '322'}
+458	458		401							{1: '2', 2: '321'}
+459	459		205						500.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.9', 4: '0', 5: '0.3'}
+460	460		304							{1: '<size=40>The train races forward through the yellow sands,</size>', 2: 'ffffffff', 3: '1.5', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-3', 10: '1'}
+461	461		304							{1: '<size=40>No one knows that a dramatic change is brewing in the last car,</size>', 2: 'ffffffff', 3: '1.5', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-1', 10: '1'}
+462	462		402							{1: '321'}
+463	463		401							{1: '2', 2: '322'}
+464	464		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.9', 5: '0.3'}
+465	465		304							"{1: ""<size=40>It's about to detach and derail.</size>"", 2: 'ffffffff', 3: '1', 7: '-1', 9: '1', 10: '1'}"
+466	466		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '5'}
+467	467		104							{1: '-1070|0|0', 2: '0', 4: '5'}
+468	468		201			AniZhuanchangEnd				{1: '1', 2: '501230', 4: '300', 7: '1'}
+469	469		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+470	470		401							{1: '2', 2: '4044'}
+471	471		203						250.0	{1: '1', 2: '0.25', 3: '150', 5: '50'}
+472	472		109							{1: '1', 2: '<color=#ffffffff><size=60>Someone pushed Lloyd,</size></color>', 3: '-450', 4: '50', 9: '3'}
+473	473		301							{1: '1', 3: 'Someone pushed Lloyd,'}
+474	474		110							
+475	475		402							{1: '322'}
+476	476		401							{1: '2', 2: '321'}
+477	477		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+478	478		202							{1: '1', 6: '1'}
+479	479		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+480	480		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '5'}
+481	481		104							{1: '1070|0|0', 2: '0', 4: '5'}
+482	482		101							{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading13.jpg'}
+483	483		104							{1: '-275|0|0', 2: '0'}
+484	484		201			AniZhuanchangEnd				{1: '1', 2: '501230', 4: '500', 7: '1'}
+485	485		401							{1: '2', 2: '4006'}
+486	486		203						450.0	{1: '1', 2: '0.4', 3: '-400', 4: '-200'}
+487	487		109							{1: '1', 2: '<color=#ffffffff><size=60>Pushing him off the train.</size></color>', 3: '450', 4: '50', 9: '3'}
+488	488		301							{3: 'Pushing him off the train.'}
+489	489		202							{1: '1', 6: '1'}
+490	490		101							{4: '5', 5: '1'}
+491	491		110							
+492	492		306							
+493	493		402							{1: '321'}
+494	494		401							{1: '2', 2: '4322', 3: '1'}
+495	495		401							{1: '2', 2: '4510'}
+496	496		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+497	497		101			RImgBg1Shake			1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1210.jpg'}
+498	498		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png', 3: '0', 4: '1', 5: '1'}
+499	499		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+500	500		205							{1: '999'}
+501	501		301			DialogEnable	DialogDisable			{3: 'An earth-shattering explosion erupts, finally liberating the rotten flesh that was destined to derail.'}
+502	502		401							{1: '1', 2: '6172'}
+503	503		306							{1: '1'}
+504	504		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png', 3: '0', 4: '1', 5: '1.5'}
+505	505		104						2000.0	{1: '0|0|-200', 2: '0', 4: '3'}
+506	506		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+507	507		104							{1: '0|0|-200', 2: '0'}
+508	508		205							{1: '999'}
+509	509		104							{1: '0|0|0', 2: '0', 4: '3'}
+510	510		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+511	511		401							{1: '2', 2: '4331'}
+512	512		201							{1: '1', 2: '501230', 4: '-200', 5: '-100'}
+513	513		201							{1: '2', 2: '500280', 4: '220', 5: '-50', 8: '1'}
+514	514		301			DialogEnable				{1: '1', 3: 'The lone gray figure, cradling a small human girl, traverses the endless yellow sands, legs pushing forward through billowing dust, breaking into a run.'}
+515	515		301							{3: 'Completely numb to the world, he begins one last aimless run, just like when he had led countless Lloyds in their escape from the false paradise of Babylonia.'}
+516	516		301				AniZhuanchangBegin			{3: 'The Punishing Virus on his body slowly corrupts the girl, yet he refuses to put her down.'}
+517	517		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+518	518		306						1000.0	
+519	519		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+520	520		202							{1: '1', 2: '2', 6: '1'}
+521	521		201							{1: '1', 2: '501252', 4: '220', 5: '-50', 7: '1'}
+522	522		201							{1: '2', 2: '501222', 4: '-200', 5: '-100', 7: '1'}
+523	523		301			AniZhuanchangEnd				{1: '1', 2: 'Girl', 3: 'My skin hurts.', 4: '1'}
+524	524		301							"{2: 'Lloyd?', 3: "" It'll be worse if I put you down. Just hold on a little longer, we'll make it out of here soon."", 4: '2'}"
+525	525		301							{2: 'Girl', 3: '...Are you going to be my father?', 4: '1'}
+526	526		301							"{2: 'Lloyd?', 3: ""Do you want a father? If that's what you want, then I could..."", 4: '2'}"
+527	527		301							"{2: 'Girl', 3: ""No, I've seen my friend's father. He didn't seem like a good thing. Please don't."", 4: '1'}"
+528	528		301							{2: 'Lloyd?', 3: '...', 4: '2'}
+529	529		301							"{2: 'Lloyd?', 3: ""...I'm sorry. Then I'll never be your father. I'll be your partner instead, okay?"", 4: '2'}"
+530	530		301							{2: 'Girl', 3: 'Okay, partner... Where are we going?', 4: '1'}
+531	531		301							{2: 'Lloyd?', 3: 'To the end of the road.', 4: '2'}
+532	532		301							{2: 'Girl', 3: 'Does the desert have an end?', 4: '1'}
+533	533		301							{2: 'Lloyd?', 3: 'There should be.', 4: '2'}
+534	534		301							"{2: 'Lloyd?', 3: ""If it's like Las Prados, then the end should be a cliff."", 4: '2'}"
+535	535		202							{1: '1', 2: '2', 6: '1'}
+536	536		401							{1: '2', 2: '895'}
+537	537		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+538	538		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory319.png'}
+539	539		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '4'}
+540	540		504							{1: '0.7'}
+541	541		301							{3: 'Back then, he felt lost when facing the cliff. Now he realizes that the cliff is his salvation—if he jumps off it, everything can restart in a better new world.'}
+542	542		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+543	543		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+544	544		504							{1: '0'}
+545	545		101							{4: '4', 5: '1'}
+546	546		201							{1: '1', 2: '501252', 4: '220', 5: '-50', 7: '1'}
+547	547		201							{1: '2', 2: '501222', 3: '16', 4: '-200', 5: '-100', 7: '1'}
+548	548		301							"{1: '1', 2: 'Lloyd?', 3: ""I'm no longer threatened by Punishing, able to run to more places, to see more of reality... But it's all just deeper despair. Each dramatic scene is no less tragic than Wen's stories, to the point where dying in the sandstorm has become a merciful end."", 4: '2'}"
+549	549		301							{2: 'Girl', 3: 'Are you crying?', 4: '1'}
+550	550		301							"{2: 'Lloyd?', 3: ""Yes, I'm grieving for a tremendous tragedy."", 4: '2'}"
+551	551		202							{1: '1', 2: '2', 6: '1'}
+552	552		401							{1: '2', 2: '895'}
+553	553		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+554	554		504							{1: '0.7'}
+555	555		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+556	556		301				DialogDisable			"{3: 'He remembered the words that ""cowardly Lloyd"" shouted when escaping from the fake Babylonia—'}"
+557	557		307							"{1: '<i>""We\'ll definitely meet again in the sunlight!""</i>', 3: '60', 4: 'ffffffff'}"
+558	558		301							"{3: '<i>""We\'ll definitely meet again in the sunlight!""</i>'}"
+559	559		307							{2: '1'}
+560	560		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+561	561		504							{1: '0'}
+562	562		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+563	563		201							{1: '1', 2: '501252', 4: '220', 5: '-50', 7: '1'}
+564	564		201							{1: '2', 2: '501222', 3: '16', 4: '-200', 5: '-100', 7: '1'}
+565	565		301			DialogEnable				"{1: '1', 2: 'Lloyd?', 3: '""Meet again in the sunlight""...', 4: '2'}"
+566	566		301							{2: 'Lloyd?', 3: 'Tell me, will there be a new world this time?', 4: '2'}
+567	567		301							{2: 'Lloyd?', 3: 'Please tell me that this world is still just a ruin belonging to the old one.', 4: '2'}
+568	568		301							"{2: 'Girl', 3: ""I don't know. I've never seen any other kind of world... It hurts."", 4: '1'}"
+569	569		301							"{3: ""The exhausted girl rests her head against his chest, where there's no heartbeat, only the humming of mechanical parts driven by the Punishing Virus.""}"
+570	570		204							{1: '2', 2: '8'}
+571	571		301							"{2: 'Lloyd?', 3: ""...I'm sorry."", 4: '2'}"
+572	572		301							{3: 'He holds the girl tightly, the last two souls in the old world clinging to each other.'}
+573	573		301							"{3: ""He stops in the windblown sand, abandoning his hesitation and weakness—after Wenke's final push, he finally sees everything with perfect clarity.""}"
+574	574		306							{1: '1'}
+575	575		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0.3'}
+576	576		301							{2: 'Lloyd?', 3: 'This world no longer has an end, no cliff I can jump from to separate truth from illusion.', 4: '2'}
+577	577		301							"{2: 'Lloyd?', 3: ""The fault doesn't lie entirely with the Punishing Virus—this world corrupts good people, and human civilization had already begun rotting from within long ago."", 4: '2'}"
+578	578		301							"{2: 'Lloyd?', 3: ""<b>If I don't want to die in chaos, I should have stopped drifting with the current long ago.</b>"", 4: '2'}"
+579	579		301							{3: 'He sees clearly through the boundless storm of sand and wind:'}
+580	580		301							"{2: 'Lloyd?', 3: ""<b>If this world no longer has a cliff, then I will become the world's cliff.</b>"", 4: '2'}"
+581	581		306							
+582	582		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '0', 5: '0.3'}
+583	583		204							{1: '2'}
+584	584		301				AniZhuanchangBegin			"{2: 'Lloyd?', 3: ""Friend, what's your name? I want to save you. At the very least, I want to help you."", 4: '2'}"
+585	585		202							{1: '1', 2: '2', 6: '1'}
+586	586		401						2000.0	{1: '1', 2: '36'}
+587	587		401							{1: '1', 2: '63'}
+588	588		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory691.jpg'}
+589	589		201							{1: '1', 2: '501222', 7: '1'}
+590	590		301			AniZhuanchangEnd				{1: '1', 2: 'Lloyd?', 3: 'Ascendant...', 4: '1'}
+591	591		301							{3: 'He turns his hands over, examining his body anew, feeling the power flowing within him.'}
+592	592		301				DialogDisable			"{2: 'Lloyd?', 3: 'I can feel that the power obtained through ""Filtering"" is actually extremely limited.', 4: '1'}"
+593	593		202							{1: '1', 6: '1'}
+594	594		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '2'}
+595	595		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory691.jpg', 3: '0', 4: '1', 5: '1.5'}
+596	596		104						2000.0	{1: '0|0|-300', 2: '0', 4: '3'}
+597	597		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory691.jpg'}
+598	598		104							{1: '0|0|-300', 2: '0'}
+599	599		205							{1: '999'}
+600	600		104							{1: '0|0|0', 2: '0', 4: '3'}
+601	601		201							{1: '1', 2: '501230', 4: '-430', 5: '50', 6: '-350'}
+602	602		201							{1: '2', 2: '501139', 4: '205', 5: '-115', 6: '150'}
+603	603		301			DialogEnable	DialogDisable			"{1: '1', 3: ""He looks at Lilith standing not far away. This Ascendant has such overwhelming confidence in herself that she doesn't even bother to guard her back.""}"
+604	604		202							{1: '1', 2: '2'}
+605	605		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '1'}
+606	606		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory691.jpg', 3: '0', 4: '1', 5: '1'}
+607	607		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory691.jpg'}
+608	608		205							{1: '999'}
+609	609		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+610	610		201							{1: '1', 2: '501138', 4: '580', 5: '-75', 6: '100'}
+611	611		201							{1: '2', 2: '501222', 4: '-450'}
+612	612		301			DialogEnable				"{1: '1', 2: 'Lilith', 3: 'I understand your intentions. Allow me to offer a brief assessment... Gabriel trusts his ""deity"" too much, which is why his vision can never expand to more distant horizons.', 4: '1'}"
+613	613		301							{2: 'Lilith', 3: 'Of course, none of you have seen the upper limits of the Punishing power.', 4: '1'}
+614	614		301							"{2: 'Lloyd?', 3: 'What about the ""agents""? Can even more distant existences accomplish it?', 4: '2'}"
+615	615		301							{2: 'Lilith', 3: 'Oh? Do you want to become an agent? Want me to introduce you to that gentleman?', 4: '1'}
+616	616		301							{3: 'Lilith still has her back turned to him as she asks with casual indifference.'}
+617	617		301							{2: 'Lloyd?', 3: 'No, I have no interest for now. My gaze will not linger on Punishing.', 4: '2'}
+618	618		202							{1: '1', 2: '2'}
+619	619		301							{3: 'He looks outward, his gaze seemingly able to dash through the vast wilderness outside. Through the busy crowds in the conservation area, through the people preparing for battle in Babylonia floating in space.'}
+620	620		301							{3: 'He casts down a pitying glance.'}
+621	621		201							{1: '1', 2: '501138', 4: '580', 5: '-75', 6: '100'}
+622	622		201							{1: '2', 2: '501222', 4: '-450'}
+623	623		301							{1: '1', 2: 'Lloyd?', 3: 'I promise, my gaze will always remain on humanity.', 4: '2'}
+624	624		301							"{2: 'Lilith', 3: ""Hahaha... Now that's the most impossible goal—you want to wash away all of humanity's inherent flaws? Rebuild a beautiful society based on love and mutual aid? It's been a while since I've heard such laughable naivety."", 4: '1'}"
+625	625		301							"{2: 'Lloyd?', 3: ""You certainly think I'm foolish, and I won't argue against that. After all, whether humans are good or evil means nothing to you. In your eyes, they're just pigs in a pen."", 4: '2'}"
+626	626		301							"{2: 'Lloyd?', 3: ""But I'm already running down this path, and... I don't have much time left."", 4: '2'}"
+627	627		202							{1: '1', 6: '1'}
+628	628		401							{1: '2', 2: '4341'}
+629	629		201							{1: '1', 2: '501118', 4: '390'}
+630	630		301							"{1: '1', 2: 'Lilith', 3: ""No need to explain yourself to me. I've already agreed to your deal."", 4: '1'}"
+631	631		301							"{2: 'Lloyd?', 3: 'Fine. Within two days, I\'ll remove all of ""Lloyd\'s"" remains from the Las Prados Ruins. I\'ve already found a temporary storage location for them.', 4: '2'}"
+632	632		204							{1: '1', 2: '4'}
+633	633		301							"{2: 'Lilith', 3: ""Don't mention it, I'm merely returning things to their rightful owner. Come to think of it, I spent quite a lot of time hunting you down back then... Hahaha, to think that such an unremarkable little branch could come this far! Auntie's little experiment in her cultivation jar has certainly yielded impressive results!"", 4: '1'}"
+634	634		204							{1: '1', 2: '2'}
+635	635		301							"{2: 'Lilith', 3: 'By the way, if you\'re calling all those old remains ""Lloyd,"" then what should you call yourself?', 4: '1'}"
+636	636		204							{1: '2', 2: '8'}
+637	637		301							{2: 'Lloyd?', 3: '...', 4: '2'}
+638	638		202							{1: '1', 2: '2'}
+639	639		301							{3: 'He falls silent for a moment, then speaks a name he had chosen long ago.'}
+640	640		201							{1: '1', 2: '501222'}
+641	641		301							"{1: '1', 2: 'Ephialtes', 3: 'Call me <b>""Ephialtes""</b>. All betrayers of Lloyd should bear this name.', 4: '1'}"
+642	642		301		1		AniZhuanchangBegin			{2: 'Ephialtes', 3: 'When all the Lloyds become heroes... I alone will be Ephialtes.', 4: '1'}

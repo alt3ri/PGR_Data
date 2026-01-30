@@ -1,0 +1,14 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory279.png'}
+2	2		401							{1: '1', 2: '102'}
+3	3		201							{1: '1', 2: '1031001', 3: '7', 4: '400'}
+4	4		201							{1: '2', 2: '500026', 4: '-400'}
+5	5		301			DialogEnable				"{1: '1', 2: 'Liv', 3: ""We've got company from behind... There's no going back!"", 4: '1'}"
+6	6		301							"{2: 'Lee', 3: ""Don't worry. We never planned to go back anyways."", 4: '2'}"
+7	7		202							{1: '1', 2: '2', 6: '1'}
+8	8		201							{1: '1', 2: '500166'}
+9	9		301							{1: '1', 2: 'Lucia', 3: 'We need to force our way through before they have us totally cornered.', 4: '1'}
+10	10		202							{1: '1', 6: '1'}
+11	11		301				DialogDisable			{3: 'The enemies keep coming. Instead of defeating all of them, you need to find a way out.'}
+12	12		305							{1: '13', 2: '13'}
+13	13		502		1					{1: 'AniZhuanchangBegin'}

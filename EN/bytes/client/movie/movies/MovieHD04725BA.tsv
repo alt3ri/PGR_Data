@@ -1,0 +1,147 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory669.jpg'}
+2	2		401							{1: '1', 2: '5061'}
+3	3		401							{1: '2', 2: '212'}
+4	4		306							{1: '1'}
+5	5		301			DialogEnable				{3: 'Perhaps because of the festival, Constellia is bustling with activity during the day. The streets are packed with people, and a joyful festive atmosphere fills the city.'}
+6	6		301							"{3: ""Many shops have long lines—clear proof the heat hasn't melted anyone's enthusiasm. One line snakes from a shady corner, far longer than expected.""}"
+7	7		201							{1: '1', 2: '500506'}
+8	8		301							{1: '1', 3: 'At the head sits a young Construct with black-and-white streaked hair. His pencil flies; in three minutes he hands a lifelike manga sketch to the model.'}
+9	9		301							"{3: ""The young Construct has clearly been drawing for a long time. Even though he's in the shade, sweat still beads on his forehead. He glances at the long line that stretches out of sight and wipes it away.""}"
+10	10		202							{1: '1'}
+11	11		301							{3: 'He had originally planned to explore the festival with the Gray Raven Commandant, but since he arrived early and had time to spare, Noan set up his easel to warm up and get a feel for it.'}
+12	12		301							{3: 'But tourists mistook him for an official artist. Before he could explain, a long queue formed.'}
+13	13		306							
+14	14		201							{1: '1', 2: '500506', 3: '11'}
+15	15		301							{1: '1', 2: 'Noan', 3: 'There are... surprisingly many customers.', 4: '1'}
+16	16		204							{1: '1', 2: '9'}
+17	17		301							"{2: 'Noan', 3: ""Sorry, please join the line, I know it's long, but—hey? 【kuroname】?"", 4: '1'}"
+18	18		302							"{2: 'Take a break, have some water.', 3: '19', 4: ""You've been drawing for a while. Need a rest?"", 5: '19'}"
+19	19		204							{1: '1', 2: '1'}
+20	20		301							"{3: ""The young Construct's frown loosens as he accepts the electrolyte drink. He eyes the endless line, then gives you a helpless smile.""}"
+21	21		302							"{2: ""Looks like you won't get a break anytime soon."", 3: '22'}"
+22	22		204							{1: '1'}
+23	23		301							"{2: 'Noan', 3: ""I'll finish eventually. Shouldn't you be exploring the festival?"", 4: '1'}"
+24	24		302							{2: 'I am. Visiting your booth is part of the exploration.', 3: '25'}
+25	25		301				DialogDisable			"{2: 'Noan', 3: ""True, it's just that most years we enjoy the festival as visitors. Now then, valued customer, may I take a photo?"", 4: '1'}"
+26	26		202							{1: '1'}
+27	27		501					600.0		{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+28	28		401							{1: '2', 2: '2811'}
+29	29		301			DialogEnable				{3: 'At those words, you settle into a relaxed pose. From the easel, Noan snaps a picture with his terminal, capturing your easygoing look.'}
+30	30		201							{1: '1', 2: '500506'}
+31	31		301							{1: '1', 2: 'Noan', 3: 'If, after a whole day of fun, you still remember, Commandant, swing back here and collect your sketch.', 4: '1'}
+32	32		301							{3: 'Noan lowers his voice.'}
+33	33		204							{1: '1', 2: '1'}
+34	34		301							"{2: 'Noan', 3: ""Of course... even if it slips your mind, I'll hand-deliver it to your room."", 4: '1'}"
+35	35		302							{2: 'Are you sure you can finish them all?', 3: '36', 4: 'With a line this long, why add even more work for yourself?', 5: '36'}
+36	36		301							"{2: 'Noan', 3: ""It's only one more. Go explore, 【kuroname】. If you spot anything cool, report back. After all..."", 4: '1'}"
+37	37		301							{3: 'He pauses, jerking his chin toward the endless queue. Half exasperated, half amused, he says in a low voice.'}
+38	38		204							{1: '1', 2: '11'}
+39	39		301							"{2: 'Noan', 3: ""Pretty sure I'm stuck here for the whole day."", 4: '1'}"
+40	40		202							{1: '1'}
+41	41		301							{3: 'The young Construct hurries you off to enjoy yourself. Once you leave, he picks up his brush and pats his tired cheeks with both hands, trying to perk up.'}
+42	42		201							{1: '1', 2: '500506', 3: '4'}
+43	43		301							{1: '1', 2: 'Noan', 3: 'Alright, now to attend to these customers.', 4: '1'}
+44	44		301							"{2: 'Noan', 3: ""Here's your sketch. Thank you. Next!"", 4: '1'}"
+45	45		202							{1: '1'}
+46	46		301				DialogDisable			{3: 'The line only grows. His manga-style speed sketches, rare in these post-apocalyptic times, keep drawing newcomers.'}
+47	47		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+48	48		401					600.0		{1: '2', 2: '1099'}
+49	49		301			DialogEnable				{3: 'After a few more customers, the terminal beeps as if it pities his exhaustion.'}
+50	50		301							"{3: 'The ""emergency mission"" alert forces Noan to lay his brush aside; it seems today\'s booth shift is over.'}"
+51	51		302							{2: 'Sorry, folks! Agent Noan just received an emergency assignment.', 3: '52'}
+52	52		401							{1: '2', 2: '5159', 3: '0.8'}
+53	53		301							{3: 'With your announcement and guidance, the long line finally begins to move.'}
+54	54		302							"{2: ""Sorry, I can't take any more requests for now. Thank you for your understanding."", 3: '55'}"
+55	55		402							{1: '212'}
+56	56		402							{1: '5159'}
+57	57		301							"{3: 'The ever-growing line disperses amid complaints of ""I waited so long"" and ""What a shame.""'}"
+58	58		301							{3: 'Noan exhales, relieved, and glances at you who rescued him from sketching hell.'}
+59	59		201							{1: '1', 2: '500506'}
+60	60		301							"{1: '1', 2: 'Noan', 3: ""【kuroname】, I got an urgent call saying I need to help you. What's the task?"", 4: '1'}"
+61	61		202							{1: '1'}
+62	62		306							{1: '1'}
+63	63		401							{1: '2', 2: '4895', 3: '1'}
+64	64		301							"{3: ""The crowd is gone, leaving only you and the Construct artist. He rises from his easel. Though he speaks in a formal tone, he doesn't seem nearly as serious as he does during official missions.""}"
+65	65		401							{1: '2', 2: '4799'}
+66	66		301				DialogDisable			"{3: 'You both read each other\'s minds. Noan keeps a casual, perfunctory air toward the ""mission,"" and sees you—who should be grave and urgent—sitting at the easel just as relaxed.'}"
+67	67		306							
+68	68		302							{2: 'Noan, have a seat.', 3: '69'}
+69	69		201							{1: '1', 2: '500506', 3: '9'}
+70	70		301			DialogEnable				{1: '1', 2: 'Noan', 3: 'So this is our urgent mission?', 4: '1'}
+71	71		302							{2: 'The mission is simple: sit here as a model while I sketch you.', 3: '72'}
+72	72		202							{1: '1'}
+73	73		301							"{3: 'The young Construct understands at once and tactfully does not expose the ruse. He is happy to be your accomplice under the name of ""false mission intel.""'}"
+74	74		401							{1: '2', 2: '13081710'}
+75	75		301							{3: 'Following your instructions, Noan takes the chair he usually sets out for customers. Seeing you offer no further explanation, he raises his question.'}
+76	76		201							{1: '1', 2: '500506', 3: '7'}
+77	77		301							{1: '1', 2: 'Noan', 3: 'How did you know I wanted to escape?', 4: '1'}
+78	78		302							"{2: 'You might as well have written on your face: ""Once I finish these sketches, I\'m diving into the two-dimensional world tonight.""', 3: '79', 4: 'I even heard you praying for the brushes to draw on their own.', 5: '81'}"
+79	79		204							{1: '1', 2: '2'}
+80	80	86	301							{2: 'Noan', 3: 'That really does sound like something I would say...', 4: '1'}
+81	81		204							{1: '1', 2: '10'}
+82	82		301							"{2: 'Noan', 3: ""No wonder it failed. Wishes don't work when someone overhears them, right?"", 4: '1'}"
+83	83		302							{2: 'So you honestly believe that urban legend stuff?', 3: '84'}
+84	84		204							{1: '1'}
+85	85		301							{2: 'Noan', 3: 'Every manga artist I know prays like that.', 4: '1'}
+86	86		202							{1: '1'}
+87	87		301							{3: 'During the chat, he settles firmly into position, fully relaxed. You, the famous Gray Raven Commandant, grip the brush with mock solemnity and flash him a thumbs-up.'}
+88	88		201							{1: '1', 2: '500506', 3: '1'}
+89	89		301							"{1: '1', 2: 'Noan', 3: ""I didn't know you could draw, 【kuroname】."", 4: '1'}"
+90	90		302							{2: 'I had special-ops classes at F.O.S. They taught quick target sketches.', 3: '91'}
+91	91		301							"{2: 'Noan', 3: ""Looks like I'm the target today... Does this pose work, 【kuroname】?"", 4: '1'}"
+92	92		401							{1: '2', 2: '5286'}
+93	93		301							{3: 'The young Construct strikes a slightly exaggerated pose, as if out of habit.'}
+94	94		302							{2: 'That looks familiar.', 3: '95'}
+95	95		301							"{2: 'Noan', 3: ""It's the classic transformation pose from Cardman Rider... If this one's hard to draw, I know plenty more from the show."", 4: '1'}"
+96	96		302							"{2: ""Any of them is fine. The important thing is that you're enjoying yourself."", 3: '97'}"
+97	97		204							{1: '1', 2: '11'}
+98	98		301							"{2: 'Noan', 3: ""Then you'd better sketch quickly, 【kuroname】. I'm not sure how long I can hold this."", 4: '1'}"
+99	99		302							"{2: ""I'll do my best, but you should try to hold it just a little longer."", 3: '100', 4: '(Take out a camera and snap a photo)', 5: '103'}"
+100	100		204							{1: '1', 2: '1'}
+101	101		301							"{2: 'Noan', 3: ""It's not really hard for a Construct. I just wanted to mess with you."", 4: '1'}"
+102	102	110	302				DialogDisable			{2: '...'}
+103	103		501			DialogDisable		600.0		{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+104	104		401							{1: '2', 2: '2811'}
+105	105		204					800.0		{1: '1', 2: '15'}
+106	106		301			DialogEnable				"{2: 'Noan', 3: ""...You're not planning to send that to anyone, are you?"", 4: '1'}"
+107	107		302							"{2: ""It's just for the sketch. I'll delete it once I'm done."", 3: '108', 4: ""That way, you don't have to stay in that awkward pose anymore. You're the one who taught me this trick, remember?"", 5: '108'}"
+108	108		202							{1: '1'}
+109	109	111	301				DialogDisable			{3: 'The Construct sits back down on the stool. Without the need to maintain a dramatic pose, he seems more at ease.'}
+110	110		202							{1: '1'}
+111	111		401					500.0		{1: '2', 2: '911'}
+112	112		301			DialogEnable				{3: 'Your brush glides softly across the paper. Sitting at the easel, your expression shifts between focus and ease. After some final touches and adjustments, you finally set the brush down.'}
+113	113		302							{2: 'Want to come take a look?', 3: '114'}
+114	114		201							{1: '1', 2: '500506'}
+115	115		301							{1: '1', 2: 'Noan', 3: 'The linework... these angled shadows... You even captured this little tuft of white hair of mine perfectly...', 4: '1'}
+116	116		204							{1: '1', 2: '1'}
+117	117		301							{2: 'Noan', 3: 'Thanks for putting so much care into this.', 4: '1'}
+118	118		302							"{2: ""I'm really glad you like it, Noan."", 3: '119', 4: ""No surprise there. I'm amazing!"", 5: '119'}"
+119	119		204							{1: '1', 2: '14'}
+120	120		301							{2: 'Noan', 3: 'Though...', 4: '1'}
+121	121		302							{2: 'Though what?', 3: '122', 4: 'Is something missing?', 5: '122'}
+122	122		202							{1: '1'}
+123	123		301							"{3: ""Hearing the hint in his tone, you wonder if something's missing. You pick the pencil back up.""}"
+124	124		201							{1: '1', 2: '500506', 3: '1'}
+125	125		301				DialogDisable			"{1: '1', 2: 'Noan', 3: ""It's missing a partner. You know how Cardman Rider always fights alongside allies, right? If I'm posing like a hero of justice, then I can't do it solo."", 4: '1'}"
+126	126		202							{1: '1'}
+127	127		401							{1: '2', 2: '4341'}
+128	128		306							{1: '1'}
+129	129		301			DialogEnable				{3: 'The Construct leans in and gently takes your hand, guiding it as you hold the pencil. His light touch quietly takes over, helping you move it across the page.'}
+130	130		401							{1: '2', 2: '911'}
+131	131		301							{3: 'The pencil glides across the textured paper, capturing the moment in graphite. In this lively festival corner, you and the Construct stay at the easel. He patiently helps you sketch while your casual conversation becomes part of the drawing itself.'}
+132	132		301							"{3: ""The piece is finished. Next to the sketch of the Construct in his Cardman Rider pose stands a human Commandant. On the figure's shoulder, the emblem of wings and a shield is clearly visible.""}"
+133	133		306							
+134	134		201							{1: '1', 2: '500506'}
+135	135		301							"{1: '1', 2: 'Noan', 3: ""Looks better now, don't you think?"", 4: '1'}"
+136	136		302							{2: 'I love it.', 3: '137'}
+137	137		204							{1: '1', 2: '1'}
+138	138		301							"{2: 'Noan', 3: ""It's the perfect piece to wrap up the day's work at the booth."", 4: '1'}"
+139	139		302							{2: 'Yeah, phase one of the emergency mission, complete.', 3: '140'}
+140	140		204							{1: '1', 2: '9'}
+141	141		301							"{2: 'Noan', 3: 'There\'s a phase two to this ""emergency mission""? What\'s that about?', 4: '1'}"
+142	142		302							"{2: ""The festival's not over. Naturally, we'll patrol the area together, just to make sure everything's running smoothly.""}"
+143	143		202							{1: '1'}
+144	144		301							"{3: 'Noan, your accomplice in this imaginary mission, finally smiles warmly. He nods and accepts the second phase of your so-called ""emergency mission.""'}"
+145	145		201							{1: '1', 2: '500506', 3: '1'}
+146	146		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Noan', 3: 'Roger... I\'ll make sure the ""mission"" is successfully completed.', 4: '1'}"

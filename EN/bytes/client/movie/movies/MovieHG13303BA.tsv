@@ -1,0 +1,198 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: 'The morning sun shines through the window in the reception room onto the floor. You have a massive headache, having spent the whole night filing all kinds of military applications and observation reports.'}
+4	4		301							"{3: ""You wonder how Lee's M.I.N.D. is doing since he decided to stay in last night due to feeling unwell...""}"
+5	5		302							{2: 'Lee? Are you okay?', 3: '6'}
+6	6		301							{3: 'You open the door to the maintenance room, and you are greeted with—'}
+7	7		401							{1: '2', 2: '970804'}
+8	8		401							{1: '1', 2: '203'}
+9	9		301			RImgBg1Shake				{3: 'Aaargh!'}
+10	10		301							{3: 'The folding chair aiming for your head somehow changes its trajectory at the last possible moment, only grazing your arm. Still, it has left quite a mark.'}
+11	11		201							{1: '1', 2: '500568', 3: '5'}
+12	12		401							{1: '2', 2: '1511'}
+13	13		301							{1: '1', 3: 'Following closely behind the chair, Lee rushes toward you, holding his weapon against your neck.'}
+14	14		301							"{2: 'Lee', 3: ""—Where's the exit?"", 4: '1'}"
+15	15		302							{2: 'What?', 3: '16'}
+16	16		301							{3: 'Despite knowing that there are no bullets in his gun, you are still quite uncomfortable with how you are being threatened. You struggle to move your neck, and the gun on your neck loosens a little, to your surprise.'}
+17	17		202							{1: '1', 6: '1'}
+18	18		401						300.0	{1: '2', 2: '1504'}
+19	19		402							{1: '1504'}
+20	20		201							{1: '1', 2: '500166', 3: '5', 4: '400'}
+21	21		201							{1: '2', 2: '1031001', 3: '7', 4: '-400'}
+22	22		301							{1: '1', 3: 'Hearing the noise, Lucia and Liv burst into the room. Lucia has her hand on the hilt of her blade, baffled by the indifferent-looking Lee.'}
+23	23		202							{1: '2', 6: '1'}
+24	24		201							{1: '1', 2: '500568', 3: '5'}
+25	25		301							{1: '1', 2: 'Lee', 3: 'Start talking. What is this place, and where is the closest safe exit? Otherwise—', 4: '1'}
+26	26		302							{2: 'This is Babylonia.', 3: '27'}
+27	27		204						400.0	{1: '1', 2: '7'}
+28	28		204							{1: '1', 2: '5'}
+29	29		301							"{2: 'Lee', 3: ""...That's impossible. I couldn't have arrived on Babylonia without taking a transport craft, and I don't remember taking one."", 4: '1'}"
+30	30		301							"{2: 'Lee', 3: ""And Babylonia isn't in operation yet... Speak. Who sent you?"", 4: '1'}"
+31	31		201							{1: '1', 2: '1031001', 3: '7'}
+32	32		301							{1: '1', 2: 'Liv', 3: 'Please calm down, Lee...', 4: '1'}
+33	33		201							{1: '1', 2: '500568'}
+34	34		301							"{1: '1', 2: 'Lee', 3: ""Give me a map. I'll let the hostage go once I'm gone—"", 4: '1'}"
+35	35		201							{1: '1', 2: '500166', 3: '5', 7: '1'}
+36	36		203						120.0	{1: '1', 2: '0.15', 5: '-120'}
+37	37		202							{1: '1', 6: '1'}
+38	38		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+39	39		401							{1: '2', 2: '3077'}
+40	40		301							"{1: '1', 3: ""Seizing the opportunity, the quiet Lucia takes advantage of her Construct body and strikes with lightning speed, restraining Lee's arm with the gun and pinning him to the ground.""}"
+41	41		201							{1: '1', 2: '500166'}
+42	42		301							{1: '1', 2: 'Lucia', 3: 'Are you alright, Commandant?', 4: '1'}
+43	43		302							"{2: ""Nothing I couldn't handle."", 3: '47', 4: ""I'm okay."", 5: '47'}"
+44	44		202							{1: '1', 6: '1'}
+45	45		401						500.0	{1: '1', 2: '36'}
+46	46		401							{1: '1', 2: '201'}
+47	47		301							{3: 'This has been quite a chaotic morning. Lucia is holding Lee down on a chair nearby while Liv takes the extra medical supplies from yesterday to patch up your grazed arm.'}
+48	48		201							{1: '1', 2: '1031001'}
+49	49		301							"{1: '1', 2: 'Liv', 3: ""You're bleeding... Luckily, the folding chair wasn't rusty. Otherwise, you'd need an injection of tetanus immunoglobulin."", 4: '1'}"
+50	50		202							{1: '1', 6: '1'}
+51	51		201							{1: '1', 2: '500568', 3: '10'}
+52	52		301							{1: '1', 2: 'Lee', 3: '...', 4: '1'}
+53	53		301							"{3: ""Realizing that he cannot escape Lucia's restraint, Lee closes his eyes, looking as if he has accepted his fate on the butcher's block.""}"
+54	54		302							"{2: ""We aren't going to butcher you..."", 3: '55', 4: ""What's with that look..."", 5: '56'}"
+55	55	57	301							{2: 'Lee', 3: 'Why else are you monitoring me? My mission has failed. I have nothing to say.', 4: '1'}
+56	56		301							{2: 'Lee', 3: '...', 4: '1'}
+57	57		301							{3: 'Lee turns away, pursing stubbornly in silence, acting like a captured soldier in a Golden Age movie who would rather die than give in.'}
+58	58		202							{1: '1', 6: '1'}
+59	59		201							{1: '1', 2: '1031001', 3: '3'}
+60	60		301							{1: '1', 2: 'Liv', 3: 'Has... a new M.I.N.D. shard taken over Lee?', 4: '1'}
+61	61		302							{2: 'Apparently...', 3: '62'}
+62	62		301							"{3: ""You have been getting nightmares ever since Lee's M.I.N.D. disorder began. You just have not expected them to come true.""}"
+63	63		202							{1: '1', 6: '1'}
+64	64		301							{3: 'You look at the broken parts on the floor resignedly. The low-level drone that got mistaken for a spy camera is still struggling, its signal light blinking red.'}
+65	65		301							"{3: '""He"" probably did not notice the folder the drone was carrying—'}"
+66	66		401						500.0	{1: '1', 2: '36'}
+67	67		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+68	68		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory122.png'}
+69	69		504							{1: '0.7'}
+70	70		306							{1: '1'}
+71	71		401							{1: '1', 2: '201'}
+72	72		301							{3: 'The night before.'}
+73	73		301							{3: 'By the time you complete the report on the elimination mission at the conservation area, it is already midnight. You are planning to make a cup of coffee when you are startled by a figure standing by the door.'}
+74	74		201							{1: '1', 2: '500568'}
+75	75		301							{1: '1', 2: 'Lee', 3: 'Commandant...', 4: '1'}
+76	76		301							{3: 'The child-like tone in his voice is gone. Lee sounds like his old, reliable self again.'}
+77	77		302							"{2: ""You're back?"", 3: '78'}"
+78	78		301							{2: 'Lee', 3: 'For the moment. The M.I.N.D. shards are still compiling. Any one of them can take over at any moment.', 4: '1'}
+79	79		301							"{2: 'Lee', 3: ""Why do you sound like that's a shame, by the way?"", 4: '1'}"
+80	80		302							"{2: 'Asimov said it could take a week for you to recover...', 3: '85', 4: ""It's not every day that we get to see you like that."", 5: '81'}"
+81	81		204							{1: '1', 2: '6'}
+82	82		301							{2: 'Lee', 3: 'Hmph...', 4: '1'}
+83	83		301							"{2: 'Lee', 3: ""It's just a M.I.N.D. disorder. Nothing special."", 4: '1'}"
+84	84		204							{1: '1'}
+85	85		301							"{2: 'Lee', 3: ""I'm planning to apply for an emergency observational room and stay there until my M.I.N.D. shards are sorted."", 4: '1'}"
+86	86		301							"{2: 'Lee', 3: ""I've talked to Chrome. If an urgent mission comes up in the meantime, Wanshi or Kamui will support Gray Raven in my place."", 4: '1'}"
+87	87		302							{2: 'And your Plan B?', 3: '88', 4: 'Surely you have more than one plan.', 5: '88'}
+88	88		301							{2: 'Lee', 3: 'That is my best plan, Commandant.', 4: '1'}
+89	89		301							"{2: 'Lee', 3: ""You've seen all my files. If a shard who doesn't know you or Gray Raven takes over, I can't guarantee how things will turn out."", 4: '1'}"
+90	90		204							{1: '1', 2: '14'}
+91	91		301							{2: 'Lee', 3: 'If you or someone else got hurt...', 4: '1'}
+92	92		301							"{3: ""The central control system has switched the light in the room into a warm yellow this late at night. As Lee's blue eyes reflect the dim glow, you can see his tense jaw and worried expression.""}"
+93	93		204							{1: '1'}
+94	94		301							"{3: ""The squad is still under maintenance, so there is no mission that requires all members at the moment. Isolation is not ideal for someone with Lee's conditions, and the observational room... is not the best place to be.""}"
+95	95		301							{3: 'His new frame has already stirred up some unsavory folks. If something happens when Lee is alone...'}
+96	96		301							"{3: ""Being with Gray Raven is still Lee's best option. As long as he is with you, no one can take him away.""}"
+97	97		302							"{2: ""The observational room isn't a suitable place."", 3: '98', 4: ""I'd rather you stay with Gray Raven."", 5: '98'}"
+98	98		204							{1: '1'}
+99	99		301							{2: 'Lee', 3: 'I can take care of myself...', 4: '1'}
+100	100		301							"{3: ""Lee's voice grows quieter as he looks into your doubtful gaze. Eventually, he shakes his head resignedly as if recognizing something before handing you a filled cup of coffee—the most familiar fragrance.""}"
+101	101		301							"{2: 'Lee', 3: '...Plan B is me temporarily removing my clearance to enter any room apart from my maintenance room in case ""he"" gets into the armory or gets his hands on the spare weapons in the repair room.', 4: '1'}"
+102	102		301							"{2: 'Lee', 3: 'I\'ll also write a document and record a video that explains the current situation. If what I worry about happens, show ""him"" this folder.', 4: '1'}"
+103	103		301							"{2: 'Lee', 3: '""He"" may not believe anything you say, but his own handwriting and the video should convince him.', 4: '1'}"
+104	104		301							"{2: 'Lee', 3: 'If the folder doesn\'t work... Lucia and Liv should be able to control the situation before ""he"" can hurt you.', 4: '1'}"
+105	105		301							{3: 'Lee purses his lips again, clearly dissatisfied with this arrangement.'}
+106	106		302							"{2: ""It'll be alright."", 3: '107', 4: 'Try trusting others.', 5: '107'}"
+107	107		301							{2: 'Lee', 3: '...', 4: '1'}
+108	108		301							"{2: 'Lee', 3: ""It's not that I don't trust you. I just..."", 4: '1'}"
+109	109		301							"{2: 'Lee', 3: ""I can't trust who I was."", 4: '1'}"
+110	110		301							"{2: 'Lee', 3: ""I'll inform the Purifying Force. We'll ask Bianca to help if necessary."", 4: '1'}"
+111	111		301							"{2: 'Lee', 3: ""It's late now, Commandant. Go rest after you're done with your work."", 4: '1'}"
+112	112		301							"{2: 'Lee', 3: ""I'll try my best... to handle everything."", 4: '1'}"
+113	113		301							{3: 'And he closes the door to the lounge determinedly.'}
+114	114		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+115	115		202							{1: '1', 6: '1'}
+116	116		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+117	117		504							{1: '0'}
+118	118		306							
+119	119		301							{3: 'You pick up the folder that contains every file on Lee, including his graduation diploma, the Construct surgery agreement from Kurono, and his reassignment to Gray Raven. Each is hand-signed by Lee and stamped by the related authority.'}
+120	120		301							"{3: ""There is also a small memory device in there. Lee's hologram appears when you connect it to a terminal.""}"
+121	121		201							{1: '1', 2: '500568'}
+122	122		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+123	123		301							"{1: '1', 3: 'Noticing the strange yet familiar ""Lee"", Lee stops his scuffle with Lucia, glancing at the projection with seeming indifference.'}"
+124	124		301							"{2: 'Lee', 3: ""I don't know which period of my mind you came from, but whichever it is, you better listen to me carefully."", 4: '1'}"
+125	125		301							{2: 'Lee', 3: '【kuroname】, the Gray Raven Commandant, is someone you can trust.', 4: '1'}
+126	126		203							{1: '1', 2: '0.25', 3: '-400'}
+127	127		201							{1: '2', 2: '500568', 4: '400'}
+128	128		301							{1: '1', 2: 'Lee', 3: '...', 4: '2'}
+129	129		202							{1: '2', 6: '1'}
+130	130		203							{1: '1', 2: '0.25'}
+131	131		301							{2: 'Lee', 3: 'The folder contains all the files you need to verify the situation you are in.', 4: '1'}
+132	132		301							"{2: 'Lee', 3: ""Follow the commandant's orders at all times. Your only objective is to protect the commandant."", 4: '1'}"
+133	133		301							"{2: 'Lee', 3: ""Don't let Commandant get hurt, no matter what."", 4: '1'}"
+134	134		202							{1: '1', 6: '1'}
+135	135		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+136	136		201							{1: '2', 2: '500568'}
+137	137		301							{1: '1', 2: 'Lee', 3: '...', 4: '2'}
+138	138		301							{2: 'Lee', 3: 'Is the technology for deception this advanced already?', 4: '2'}
+139	139		301							{3: 'Despite what he says, Lee seems to have stopped struggling in his chair for a while.'}
+140	140		301							{3: 'He steals a glance at you from the corner of his eye before quickly looking away.'}
+141	141		301							{3: 'In front of him lies the folder, his graduation diploma, his Kurono employment, his Construct surgery agreement...'}
+142	142		301							"{3: ""All these documents span Lee's entire life.""}"
+143	143		302							{2: 'You should recognize your handwriting, right?', 3: '144'}
+144	144		204							{1: '1', 2: '10'}
+145	145		301							{2: 'Lee', 3: '...', 4: '2'}
+146	146		301							"{3: 'A skilled assassin certainly recognizes all kinds of markings—despite the sharper edges on some of the strokes, the penmanship on the files does not appear fake. Some were even undoubtedly signed by this ""Lee""...'}"
+147	147		301							{3: 'Lee looks away. Lucia relaxes her grasp on him, and he does not try to break free or start another fight.'}
+148	148		302							{2: 'When were you?', 3: '149'}
+149	149		204							{1: '1'}
+150	150		301							{2: 'Lee', 3: '...I can tell you, but no one else.', 4: '2'}
+151	151		202							{1: '2', 6: '1'}
+152	152		201							{1: '1', 2: '500166'}
+153	153		301							{1: '1', 2: 'Lucia', 3: 'Commandant?', 4: '1'}
+154	154		301							{3: 'Lucia looks at Lee worriedly before turning toward you, seeking confirmation.'}
+155	155		302							{2: 'I can take it from here.', 3: '156'}
+156	156		301							{2: 'Lucia', 3: '...Understood.', 4: '1'}
+157	157		202							{1: '1', 6: '1'}
+158	158		301							{3: 'You motion Lucia and Liv to leave for now and gently shut the door.'}
+159	159		201							{1: '1', 2: '500568'}
+160	160		301							{1: '1', 2: 'Lee', 3: 'How confident.', 4: '1'}
+161	161		301							{3: 'Lee seems to be a little more relaxed now that only the two of you are in the room.'}
+162	162		302							{2: 'Of course.', 3: '163'}
+163	163		302							{2: 'How else could you have missed me with that folding chair?', 3: '164'}
+164	164		204							{1: '1', 2: '10'}
+165	165		301							{2: 'Lee', 3: 'That was a one-time mistake.', 4: '1'}
+166	166		301							{3: 'He looks down in silence briefly before speaking again.'}
+167	167		301							{2: 'Lee', 3: '...I was carrying out an assassination. I had just infiltrated the target location when I opened my eyes and appeared here.', 4: '1'}
+168	168		204							{1: '1'}
+169	169		301							{2: 'Lee', 3: 'I thought I had failed my mission, and my target had discovered me, locking me up somewhere strange.', 4: '1'}
+170	170		301							{2: 'Lee', 3: 'That was the last memory I have before arriving here.', 4: '1'}
+171	171		301							{3: 'An assassination... Does this Lee come from the time when he worked as an assassin for Kurono?'}
+172	172		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '3'}
+173	173		201						600.0	{1: '1', 2: '500060'}
+174	174		201							{1: '1', 2: '500568'}
+175	175		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+176	176		301							"{3: ""There is a photo in his folder that was probably taken when someone was monitoring Lee's mission.""}"
+177	177		301							{3: 'In the photo, Lee was hiding in the shadow of a building, aiming at a nearby target with one eye closed. His profile still looked youthful, but his demeanor was as mature as the Lee you know.'}
+178	178		301							{3: 'This M.I.N.D. shard must be even younger. After all, the documents suggest that Lee was eighteen when he became a Construct.'}
+179	179		301							{3: 'Taking the folder on the desk, Lee goes through all the files one by one as if trying to piece together what happens to him afterward.'}
+180	180		301							{2: 'Lee', 3: 'Is this the Construct surgery agreement...', 4: '1'}
+181	181		301							{2: 'Lee', 3: 'Why would I do the adaptation test? Was it because...', 4: '1'}
+182	182		204							{1: '1', 2: '14'}
+183	183		301							{3: 'Reading the back of the agreement, Lee seems to have recalled something. You can tell from his blue eyes that something is bothering him, but you are not sure what.'}
+184	184		204							{1: '1'}
+185	185		301							{2: 'Lee', 3: 'What about Murray? How is he doing?', 4: '1'}
+186	186		301							{3: 'Murray has been acting elusive again as the war slows down.'}
+187	187		301							{3: 'But based on the messages he left in your terminal recently and the rumors you have heard about the Cerberus Commandant, Murray should be doing fine, physically and mentally.'}
+188	188		301							{2: 'Lee', 3: '...I see. Thanks.', 4: '1'}
+189	189		301							{3: 'Lee rubs his forehead, looking tired. The amount of new information may be too much for him to digest all at once.'}
+190	190		301							{2: 'Lee', 3: '...Is that my room? I woke up there.', 4: '1'}
+191	191		301							{2: 'Lee', 3: 'I... would like to take a break.', 4: '1'}
+192	192		202							{1: '1', 6: '1'}
+193	193		301							{3: 'With your permission, Lee takes the folder with him into his room and quietly shuts the door. Even the way he closes the door is the same—blocking the door briefly with his fingers so that he does not make any noise.'}
+194	194		201							{1: '1', 2: '500568'}
+195	195		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+196	196		301							{1: '1', 3: 'The holographic projection has finished playing, and it is replayed again. Blurring momentarily before clearing up, the holographic Lee looks calm and serious, his voice filled with certainty and conviction.'}
+197	197		301		1		AniZhuanchangBegin			{2: 'Lee', 3: '【kuroname】, the Gray Raven Commandant, is someone you can trust.', 4: '1'}

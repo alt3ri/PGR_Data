@@ -1,0 +1,61 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				"{2: 'Commandant A', 3: ""That's definitely a foul! Foul!""}"
+4	4		301							"{2: 'Commandant B', 3: ""C'mon, just forget about it. Who'd care about this sort of things on the battlefield...""}"
+5	5		301							{3: 'As soon as you enter the simulation training room, you see two commandants you have met before arguing around the holographic projection screen.'}
+6	6		301							"{3: 'Looking around, you find the ""Wanshi\'s Resting Place"" still posted on the wall, but he is nowhere to be found. Having not seen each other since the classroom, you cannot tell if you are glad or upset to miss him here.'}"
+7	7		301							{3: 'Just as you sigh a breath of relief and pick up the device hanging by the training cabin, a shout comes from behind.'}
+8	8		201							{1: '1', 2: '500273'}
+9	9		301							{1: '1', 2: 'Wanshi', 3: 'Ah, Gray Raven Commandant.', 4: '1'}
+10	10		302							{2: 'Wanshi?', 3: '12', 4: 'Are you training here as well?', 5: '11'}
+11	11		301							{2: 'Wanshi', 3: 'Well, going over the basics.', 4: '1'}
+12	12		301							{2: 'Wanshi', 3: 'Want to train one-on-one?', 4: '1'}
+13	13		202							{1: '1', 6: '1'}
+14	14		301							"{2: 'Commandant A', 3: ""Hey, didn't you just turn me down? That's unfair!""}"
+15	15		301							{3: 'The commandant nearby grumbles.'}
+16	16		201							{1: '1', 2: '500273', 3: '1'}
+17	17		301							"{1: '1', 2: 'Wanshi', 3: ""Well, I'm just returning a favor from the Gray Raven Commandant."", 4: '1'}"
+18	18		301							{2: 'Wanshi', 3: 'Thank you for sleeping with me last time. It was nice.', 4: '1'}
+19	19		302							{2: '?', 3: '20'}
+20	20		202							{1: '1', 6: '1'}
+21	21		301							{2: 'Commandant A', 3: '?'}
+22	22		301							{2: 'Commandant B', 3: '?'}
+23	23		302							"{2: ""It's not what you think."", 3: '24'}"
+24	24		201							{1: '1', 2: '500273'}
+25	25		301							"{1: '1', 2: 'Wanshi', 3: ""And the gifts you sent, they've been working very well..."", 4: '1'}"
+26	26		302							"{2: ""Don't phrase it like that! People might misunderstand!"", 3: '28'}"
+27	27		204							{1: '1', 2: '7'}
+28	28		301							{2: 'Wanshi', 3: 'Huh?', 4: '1'}
+29	29		301							"{2: 'Wanshi', 3: ""I'm just stating the facts. The gifts you sent have completely filled my sleeping pod..."", 4: '1'}"
+30	30		202							{1: '1', 6: '1'}
+31	31		301							{2: 'Commandant A', 3: '???'}
+32	32		301							"{2: 'Commandant B', 3: ""I didn't know that the Gray Raven Commandant would be the person the rumor says..."", 4: 'Is there such a rumor?'}"
+33	33		201							{1: '1', 2: '500273'}
+34	34		301							"{1: '1', 2: 'Wanshi', 3: ""...Ah. So you've also sent them to others as well..."", 4: '1'}"
+35	35		301			PanelActor1Shake	AniZhuanchangBegin			{3: 'You leap toward Wanshi and cover his mouth before dragging him away with an embarrassed smile under the mischievous gazes of the other commandants.', 4: '1'}
+36	36		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+37	37		302			AniZhuanchangEnd				"{2: ""Don't say such weird stuff in public!"", 3: '38'}"
+38	38		301			DialogEnable				{2: 'Wanshi', 3: 'Weird stuff? What do you mean?', 4: '1'}
+39	39		301							{3: 'Wanshi seems so unconcerned that you cannot help but wonder if you were making a big deal out of it.'}
+40	40		302							{2: 'Um...', 3: '41'}
+41	41		301							{2: 'Wanshi', 3: 'Does that mean I can say it now?', 4: '1'}
+42	42		302							{2: 'Uh...', 3: '43'}
+43	43		301							"{2: 'Wanshi', 3: ""So, then, the things you gave me—you can't give the same gifts to someone else."", 4: '1'}"
+44	44		302							"{2: ""It's not about that!"", 3: '45'}"
+45	45		301							{2: 'Wanshi', 3: 'Oh, so you do want to practice one-on-one then?', 4: '1'}
+46	46		301							{2: 'Wanshi', 3: 'I can continue where we left off last time.', 4: '1'}
+47	47		301							"{2: 'Wanshi', 3: ""Plus, I'll give it my best shot."", 4: '1'}"
+48	48		301							{3: 'As Wanshi says this, he lifts the stock of his rifle upward, making a clear and crisp sound. He seems to be serious, judging from the intensity of his manner, which makes you a bit nervous instead.'}
+49	49		302							"{2: ""Well, that's not quite necessary..."", 3: '50'}"
+50	50		204							{1: '1'}
+51	51		301							"{2: 'Wanshi', 3: ""Isn't that what you want? To be treated with respect as an opponent..."", 4: '1'}"
+52	52		204							{1: '1', 2: '1'}
+53	53		301							"{2: 'Wanshi', 3: ""I'm the Wish Machine, after all."", 4: '1'}"
+54	54		302							{2: 'Are you messing with me like you do those kids?', 3: '55'}
+55	55		301							"{2: 'Wanshi', 3: ""I'm not messing with you... It's just that I like the way we interact with children."", 4: '1'}"
+56	56		301							"{2: 'Wanshi', 3: ""Let's get started if you're ready."", 4: '1'}"
+57	57		204							{1: '1', 2: '1'}
+58	58		301							"{2: 'Wanshi', 3: ""It's rare for me to take this seriously."", 4: '1'}"
+59	59		302							{2: 'Fine.', 3: '60'}
+60	60		301		1		AniZhuanchangBegin			{3: 'His eyes light up, in a way you have never seen before.'}

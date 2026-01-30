@@ -1,0 +1,671 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		401							{1: '1', 2: '5060'}
+2	2		104							{1: '0|0|-250', 2: '0'}
+3	3		101				AniZhuanchangEnd		200.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory460.jpg'}
+4	4		104						1100.0	{1: '0|0|0', 2: '1'}
+5	5		104							{1: '0|0|0', 2: '0', 4: '3'}
+6	6		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg', 3: '0', 4: '1', 5: '0.5'}
+7	7		104							{1: '0|0|0', 2: '0', 4: '1'}
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+9	9		205							{1: '999'}
+10	10		401							{1: '1', 2: '36'}
+11	11		401							{1: '1', 2: '210'}
+12	12		301			DialogEnable				"{3: ""Yan Zhen's office features a window that frames a direct view of space, and at certain times, a glimpse of Earth.""}"
+13	13		301							{3: 'His only personal request, upon becoming a World Government councilor, was for an office with a window looking directly onto space.'}
+14	14		201							{1: '1', 2: '501425'}
+15	15		301				DialogDisable			"{1: '1', 2: 'Yan Zhen', 3: ""And that concludes today's work."", 4: '1'}"
+16	16		401						500.0	{1: '2', 2: '910'}
+17	17		402							{1: '910'}
+18	18		301			DialogEnable				{3: 'He signs the final report with his right hand, softly utters the words, and caps his fountain pen in a single, practiced motion.'}
+19	19		201							{1: '1', 2: '501025', 7: '1'}
+20	20		301							"{1: '1', 2: 'Assistant', 3: ""I'm afraid your day isn't quite over, sir."", 4: '1'}"
+21	21		301							{2: 'Assistant', 3: 'You have a private meeting with President Hassen in 23 minutes.', 4: '1'}
+22	22		201							{1: '1', 2: '501425', 7: '1'}
+23	23		301							{1: '1', 2: 'Yan Zhen', 3: 'Ah, yes... Of course. One last task.', 4: '1'}
+24	24		201							{1: '1', 2: '501025', 7: '1'}
+25	25		301							{1: '1', 2: 'Assistant', 3: 'One last task of the day, sir. The World Government still has need of you, after all.', 4: '1'}
+26	26		201							{1: '1', 2: '501425', 3: '1', 7: '1'}
+27	27		301							"{1: '1', 3: ""Yan Zhen answers his assistant's flattery with nothing but a faint, noncommittal smile.""}"
+28	28		301							{2: 'Yan Zhen', 3: 'Thank you. That will be all for now. I can manage from here.', 4: '1'}
+29	29		201							{1: '1', 2: '501025', 7: '1'}
+30	30		301							{1: '1', 2: 'Assistant', 3: 'Are you certain, sir?', 4: '1'}
+31	31		201							{1: '1', 2: '501425', 3: '8', 7: '1'}
+32	32		301							{1: '1', 3: 'Yan Zhen nods, his gaze resting on the assistant who has been at his side for many years.'}
+33	33		204							{1: '1', 2: '1'}
+34	34		301							"{2: 'Yan Zhen', 3: ""I'm not entirely helpless yet."", 4: '1'}"
+35	35		201							{1: '1', 2: '501025', 7: '1'}
+36	36		301							"{1: '1', 3: ""A brief glance from the assistant falls upon Yan Zhen's wheelchair.""}"
+37	37		301							"{2: 'Assistant', 3: ""Understood. I'll take my leave, then."", 4: '1'}"
+38	38		401							{1: '2', 2: '4202'}
+39	39		203							{1: '1', 2: '0.3', 3: '650'}
+40	40		202							{1: '1'}
+41	41		301				DialogDisable			{3: 'The door whispers shut behind the assistant, and a deep silence settles in the office.'}
+42	42		401							{1: '2', 2: '6383'}
+43	43		201							{1: '1', 2: '501425', 4: '-200'}
+44	44		203						250.0	{1: '1', 2: '0.2', 3: '-150'}
+45	45		203							{1: '1', 2: '0.3', 3: '0'}
+46	46		402							{1: '6383'}
+47	47		301			DialogEnable	DialogDisable			"{1: '1', 3: ""Yan Zhen's right hand guides his wheelchair to the window, where the distant Earth hangs in the void.""}"
+48	48		202							{1: '1', 6: '1'}
+49	49		306							{1: '1'}
+50	50		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory460.jpg', 3: '0', 4: '1', 5: '0.5'}
+51	51		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory460.jpg'}
+52	52		205							{1: '999'}
+53	53		301			DialogEnable				{3: 'He has occupied this spot countless times, using the planet as a backdrop for wrestling with endless, tedious paperwork.'}
+54	54		301							"{3: ""But today is different. This time, the sight of the blue planet sparks a memory of running across its surface. The recollection is immediate, visceral, and then it's gone.""}"
+55	55		301				DialogDisable			{3: 'A pang of sorrow hits as he realizes the sensation has evaporated, leaving no trace.'}
+56	56		306							{1: '0'}
+57	57		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg', 3: '0', 4: '1', 5: '0.5'}
+58	58		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+59	59		205							{1: '999'}
+60	60		201							{1: '1', 2: '501425', 3: '8'}
+61	61		301			DialogEnable				{1: '1', 2: 'Yan Zhen', 3: 'I was quite a runner, once...', 4: '1'}
+62	62		301				DialogDisable			{3: 'His thoughts drift, and he is pulled back more than thirty years.'}
+63	63		401							{1: '1', 2: '36'}
+64	64		401							{1: '2', 2: '4134'}
+65	65		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+66	66		202							{1: '1', 6: '1'}
+67	67		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1374.jpg'}
+68	68		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+69	69		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+70	70		107							{1: 'Kowloong Central University', 2: 'Kowloong'}
+71	71		309	1						{2: 'Kowloong, Kowloong Central University.'}
+72	72		108							
+73	73		401							{1: '1', 2: '120'}
+74	74		401							{1: '2', 2: '1513'}
+75	75		301			DialogEnable				{3: 'Under the dim glow of the track lights, 26-year-old Yan Zhen finished his evening run and spotted a friend approaching.'}
+76	76		201							{1: '1', 2: '500463', 5: '50', 6: '150'}
+77	77		203							{1: '1', 2: '0.35', 5: '0', 6: '0'}
+78	78		301							"{1: '1', 2: 'Claire', 3: ""Yan Zhen. I had a feeling you'd be here."", 4: '1'}"
+79	79		401							{1: '2', 2: '5286'}
+80	80		201							{1: '1', 2: '500863', 7: '1'}
+81	81		301							{1: '1', 3: 'Balancing with one foot on the steps, Yan Zhen threw his reply over his shoulder as he leaned into the stretch.'}
+82	82		301							{2: 'Yan Zhen', 3: 'Yeah. Might be the last time I get to run this track.', 4: '1'}
+83	83		201							{1: '1', 2: '500463', 7: '1'}
+84	84		301							{1: '1', 2: 'Claire', 3: 'I thought you were staying on at the university?', 4: '1'}
+85	85		301							{2: 'Claire', 3: 'With your record, you could easily—', 4: '1'}
+86	86		201							{1: '1', 2: '500863', 7: '1'}
+87	87		301							"{1: '1', 2: 'Yan Zhen', 3: ""You know that's not the path for me."", 4: '1'}"
+88	88		201							{1: '1', 2: '500463', 7: '1'}
+89	89		301							{1: '1', 2: 'Claire', 3: 'Then what is, Yan Zhen?!', 4: '1'}
+90	90		301							{2: 'Claire', 3: 'You turned down Kowloong Central, even the Science Council...', 4: '1'}
+91	91		301							{2: 'Claire', 3: 'And I heard that Transatlantic United and Arctic Route made offers, too, but you still...', 4: '1'}
+92	92		202							{1: '1'}
+93	93		301							{3: 'The sight of his smile made the words die in her throat.'}
+94	94		201							{1: '1', 2: '500463'}
+95	95		301							{1: '1', 2: 'Claire', 3: 'Is some corporate job really what you want? What happened to all those ideals we used to talk about?', 4: '1'}
+96	96		301				DialogDisable			{2: 'Claire', 3: 'All those dreams of changing the world...', 4: '1'}
+97	97		202							{1: '1', 6: '1'}
+98	98		401						100.0	{1: '2', 2: '1516'}
+99	99		401							{1: '2', 2: '1516'}
+100	100		104						350.0	{1: '0|30|-50', 2: '0.3'}
+101	101		104							{1: '0|0|-150', 2: '0.4'}
+102	102		301			DialogEnable				{3: 'With a silent shake of his head, he wrapped up his stretching and motioned for them to walk back to the dormitory together.'}
+103	103		201							{1: '1', 2: '500863', 4: '400'}
+104	104		201							{1: '2', 2: '500463', 4: '-400'}
+105	105		301							"{1: '1', 2: 'Yan Zhen', 3: ""They're offering a very competitive package."", 4: '1'}"
+106	106		301							{2: 'Claire', 3: '...', 4: '2'}
+107	107		301							{2: 'Yan Zhen', 3: 'You know why I need it.', 4: '1'}
+108	108		301							"{2: 'Claire', 3: ""How's your mother doing?"", 4: '2'}"
+109	109		301							{2: 'Yan Zhen', 3: 'The same. No better, no worse.', 4: '1'}
+110	110		301							"{2: 'Claire', 3: ""That accident... Yan Zhen, it wasn't your fault. You..."", 4: '2'}"
+111	111		301			DialogShake				{2: 'Yan Zhen', 3: 'Claire. Please.', 4: '1'}
+112	112		401							{1: '2', 2: '1543'}
+113	113		301			PanelActor2Shake				"{3: ""Yan Zhen's tone shifted, shedding its usual lightness.""}"
+114	114		301							{3: 'The sudden seriousness sent a jolt through Claire; she knew instantly she had misspoken.'}
+115	115		301							"{2: 'Claire', 3: ""I'm sorry, Yan Zhen... I just..."", 4: '2'}"
+116	116		301							{2: 'Yan Zhen', 3: 'I understand.', 4: '1'}
+117	117		301							"{3: ""A faint smile touched Yan Zhen's lips.""}"
+118	118		301				DialogDisable			{2: 'Yan Zhen', 3: 'As it is my responsibility.', 4: '1'}
+119	119		202							{1: '1', 2: '2', 6: '1'}
+120	120		306							{1: '1'}
+121	121		104							{1: '0|-50|0', 2: '0', 4: '3'}
+122	122		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory57.jpg', 3: '0', 4: '1', 5: '0.4'}
+123	123		104							{1: '0|-50|0', 2: '0', 4: '1'}
+124	124		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory57.jpg'}
+125	125		205							{1: '999'}
+126	126		301			DialogEnable				{3: 'Fifteen years ago, a young Yan Zhen had only one wish: to cook a meal for his sick, bedridden mother.'}
+127	127		301				DialogDisable			{3: 'Growing up in a single-parent household, he was acutely aware of her struggles. He dreamed of the smile that would grace her face when she awoke to a prepared dinner.'}
+128	128		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '1'}
+129	129		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+130	130		301			DialogEnable				{3: 'That dream ended in flames and thick smoke.'}
+131	131		504							{1: '1', 8: '0.8'}
+132	132		301							{3: 'The precise cause had faded from memory.'}
+133	133		301							{3: 'Whether it was faulty wiring or his own childish error, it no longer mattered.'}
+134	134		301				AniZhuanchangBegin			{3: 'His mother managed to drag him from the inferno, but in doing so, she inhaled a toxic dose of smoke. The damage resulted in pulmonary fibrosis, condemning her to a portable oxygen respirator for life.'}
+135	135		104							{1: '0|0|0', 2: '0', 4: '1'}
+136	136		104							{1: '0|0|0', 2: '0', 4: '3'}
+137	137		306							{1: '0'}
+138	138		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+139	139		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+140	140		504							{1: '0'}
+141	141		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1374.jpg'}
+142	142		201							{1: '1', 2: '500863', 4: '400'}
+143	143		201							{1: '2', 2: '500463', 4: '-400'}
+144	144		502							{1: 'AniZhuanchangEnd'}
+145	145		301			DialogEnable				"{1: '1', 2: 'Yan Zhen', 3: ""What about you? I heard you accepted the Science Council's offer."", 4: '1'}"
+146	146		301							{2: 'Claire', 3: 'I did. The terms were quite compelling.', 4: '2'}
+147	147		301							"{2: 'Yan Zhen', 3: ""Maybe I'll end up there someday. When I do, I'll be counting on you to show me around. Haha."", 4: '1'}"
+148	148		301							"{3: ""Claire didn't smile at his joke.""}"
+149	149		301							{2: 'Claire', 3: 'I will always...', 4: '2'}
+150	150		301							{2: 'Yan Zhen', 3: 'Claire.', 4: '1'}
+151	151		301							{2: 'Claire', 3: 'Huh?', 4: '2'}
+152	152		301				DialogDisable			{2: 'Yan Zhen', 3: 'Look.', 4: '1'}
+153	153		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+154	154		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory373.png'}
+155	155		301			DialogEnable				{3: 'Yan Zhen pointed toward the woods, where a sparrow with broken wings lay crumpled on the leaf-strewn ground, its silent gaze fixed on the sky.'}
+156	156		401							{1: '2', 2: '5286'}
+157	157		203						350.0	{1: '1', 2: '0.35', 3: '430', 4: '-50'}
+158	158		203							{1: '1', 2: '0.45', 3: '400', 4: '-100'}
+159	159		301			DialogEnable				{1: '1', 3: 'He walked over and crouched down, staring at the tiny, motionless body.'}
+160	160		301							{2: 'Yan Zhen', 3: 'Life is always so fragile...', 4: '1'}
+161	161		301				AniZhuanchangBegin			{3: 'Claire remained where she was, silently observing the black-haired young man. She was struck, as she often was, by the inscrutable sadness that clung to his gentle, scholarly soul.'}
+162	162		502							{1: 'DialogDisable'}
+163	163		202						1000.0	{1: '1', 2: '2', 6: '1'}
+164	164		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory691.jpg'}
+165	165		107							{1: 'One year later', 2: 'Transatlantic Nova Technology'}
+166	166		309	1					200.0	{2: 'One year later, Transatlantic Nova Technology.'}
+167	167		108							{1: '1'}
+168	168		201							{1: '1', 2: '500138'}
+169	169		301			DialogEnable				"{1: '1', 2: 'Colleague', 3: ""Hey, Yan Zhen, we're done for the day. Coming for a drink?"", 4: '1'}"
+170	170		203							{1: '1', 2: '0.25', 3: '400'}
+171	171		201							{1: '2', 2: '500863', 4: '-400', 5: '-80'}
+172	172		301							"{1: '1', 2: 'Yan Zhen', 3: ""I'll have to pass. You know I can't handle alcohol."", 4: '2'}"
+173	173		301							"{2: 'Colleague', 3: ""Then just dinner. You hole up in here too much; you'll forget how to talk to people."", 4: '1'}"
+174	174		301							"{2: 'Colleague', 3: ""And hey, you're not getting any younger. There's a girl from another department joining us. I hear she's been asking about you."", 4: '1'}"
+175	175		401							{1: '2', 2: '1543'}
+176	176		203							{1: '2', 2: '0.4', 3: '-400', 4: '0'}
+177	177		301							{3: 'Yan Zhen rose to his feet, his refusal already forming on his lips.'}
+178	178		202							{1: '1', 6: '1'}
+179	179		203							{1: '2', 2: '0.3', 3: '0'}
+180	180		301							{2: 'Yan Zhen', 3: 'I...', 4: '2'}
+181	181		401							{1: '2', 2: '4892'}
+182	182		203							{1: '2', 2: '0.25', 4: '-50'}
+183	183		301			PanelActor2Shake				{3: 'Suddenly, his left leg gave way. He lurched forward, panic scattering stationery across his desk as he and his fountain pen crashed to the floor.'}
+184	184		301			DialogShake	AniZhuanchangBegin			"{2: 'Yan Zhen', 3: ""...What's... wrong with me?"", 4: '2'}"
+185	185		502							{1: 'DialogDisable'}
+186	186		202							{1: '2', 6: '1'}
+187	187		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+188	188		301			DialogEnable				{2: 'Doctor', 3: 'The diagnosis is Amyotrophic Lateral Sclerosis. ALS.'}
+189	189		301							{2: 'Doctor', 3: 'I know this is difficult to process, but with current treatments, we can effectively manage the symptoms.'}
+190	190		301							{2: 'Doctor', 3: 'With consistent medication, patients can maintain a good quality of life for up to thirty years.'}
+191	191		301							"{2: 'Yan Zhen', 3: '""Up to""?'}"
+192	192		301							{2: 'Doctor', 3: '...Every case is unique. The record is thirty years.'}
+193	193		301							{2: 'Yan Zhen', 3: 'And the average?'}
+194	194		301							{2: 'Doctor', 3: '...About twenty.'}
+195	195		301				DialogDisable			{2: 'Yan Zhen', 3: 'Got it.'}
+196	196		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1034.jpg'}
+197	197		301			DialogEnable				{3: 'Yan Zhen had no memory of leaving the hospital. He was only jolted back to awareness by the ring of his terminal, finding himself already at the entrance.'}
+198	198		401							{1: '2', 2: '1015'}
+199	199		301							{3: 'An unknown number glowed on the screen.'}
+200	200		201							{1: '1', 2: '500863'}
+201	201		301				DialogDisable			{1: '1', 2: 'Yan Zhen', 3: '...', 4: '1'}
+202	202		202							{1: '1', 6: '1'}
+203	203		401							{1: '2', 2: '1014'}
+204	204		306							{1: '1'}
+205	205		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab', 2: '2'}
+206	206		301			DialogEnable				{2: 'Comms', 3: 'Hello, am I speaking with Mr. Yan Zhen? This is the Chuanyang Police Department.'}
+207	207		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.2'}
+208	208		301							{3: 'A visceral pressure clenched around his heart.'}
+209	209		205							{1: '999'}
+210	210		201							{1: '18', 2: '500863', 5: '-80'}
+211	211		301							{1: '1', 2: 'Yan Zhen', 3: 'Yes... what is it?', 4: '18'}
+212	212		202				DialogDisable			{1: '18', 6: '1'}
+213	213		301			DialogEnable	AniZhuanchangBegin			"{2: 'Comms', 3: ""I'm sorry to inform you, but your mother was involved in a traffic accident earlier today...""}"
+214	214		502							{1: 'DialogDisable'}
+215	215		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab'}
+216	216		202							{1: '1', 6: '1'}
+217	217		306							{1: '0'}
+218	218		401						1500.0	{1: '1', 2: '36'}
+219	219		401							{1: '2', 2: '6366', 3: '0.3'}
+220	220		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory824.jpg'}
+221	221		401							{1: '1', 2: '169'}
+222	222		301			DialogEnable				{3: 'The day of the funeral was met with rain, a light drizzle, yet bone-chilling cold.'}
+223	223		301							{3: 'Yan Zhen had handled every detail alone, yet it was only in this moment, facing the fresh gravestone, that the truth finally settled in his bones: he was utterly alone.'}
+224	224		306							{1: '1'}
+225	225		201							{1: '3', 2: '500527', 4: '-650'}
+226	226		201							{1: '4', 2: '501062'}
+227	227		201							{1: '5', 2: '500138', 4: '650'}
+228	228		301							{1: '1', 3: 'The service was sparsely attended, a mere handful of faces. But then, Yan Zhen never had many friends.'}
+229	229		202							{1: '3', 2: '4', 3: '5', 6: '1'}
+230	230		306							{1: '0'}
+231	231		201							{1: '1', 2: '500863', 4: '400'}
+232	232		201							{1: '2', 2: '500463', 4: '-400'}
+233	233		301							{1: '1', 3: 'As the ceremony ended, the small crowd drifted away, leaving just Yan Zhen and Claire in the damp silence.'}
+234	234		301							{2: 'Claire', 3: 'Zhen...', 4: '2'}
+235	235		301							{2: 'Yan Zhen', 3: 'Just one more year.', 4: '1'}
+236	236		301							{2: 'Claire', 3: '...', 4: '2'}
+237	237		301							{2: 'Yan Zhen', 3: 'One more year, and I would have saved enough for her surgery.', 4: '1'}
+238	238		301							{2: 'Yan Zhen', 3: 'I thought... I could finally give her a life without the oxygen mask. A normal life.', 4: '1'}
+239	239		301							{3: 'In that moment, any attempt at comfort would have been a hollow echo.'}
+240	240		301							{2: 'Yan Zhen', 3: 'She was so strong. After my father died, I only saw her cry once.', 4: '1'}
+241	241		301							{2: 'Yan Zhen', 3: 'It was right after she pulled me from the fire.', 4: '1'}
+242	242		301							{2: 'Yan Zhen', 3: 'I could never be that strong...', 4: '1'}
+243	243		301							"{2: 'Yan Zhen', 3: ""Whenever the other kids picked on me, I'd just run home in tears."", 4: '1'}"
+244	244		301							"{2: 'Yan Zhen', 3: 'I still remember the nickname those boys gave me. ""Crybaby Yan Zhen"".', 4: '1'}"
+245	245		301							"{2: 'Yan Zhen', 3: ""I'd cry when I fell down, cry during sad movies, cry just thinking about my father..."", 4: '1'}"
+246	246		301							{2: 'Yan Zhen', 3: 'My mother told me it was a good thing. She said it meant I had a gentle heart.', 4: '1'}
+247	247		301			PanelActor1Shake				"{2: 'Yan Zhen', 3: ""So why... why is it that now, I can't cry at all..."", 4: '1'}"
+248	248		401							{1: '2', 2: '5286', 3: '1'}
+249	249		203							{1: '1', 2: '0.3', 3: '230', 4: '-80'}
+250	250		203							{1: '2', 2: '0.3', 3: '-250', 4: '-80'}
+251	251		301				AniZhuanchangBegin			{3: 'Claire held Yan Zhen tightly, as if she could dissolve his sorrow by melting into him.'}
+252	252		502							{1: 'DialogDisable'}
+253	253		402							{1: '6366'}
+254	254		202							{1: '1', 2: '2', 6: '1'}
+255	255		401						2000.0	{1: '1', 2: '36'}
+256	256		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1379.jpg'}
+257	257		401							{1: '1', 2: '6179'}
+258	258		301			DialogEnable				{3: 'A year after the funeral, they got married.'}
+259	259		301				AniZhuanchangBegin			{3: 'It was a small, quiet ceremony, shunning any loud celebration.'}
+260	260		502							{1: 'DialogDisable'}
+261	261		401						1500.0	{1: '1', 2: '36'}
+262	262		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory640.jpg'}
+263	263		401							{1: '2', 2: '4697'}
+264	264		401							{1: '1', 2: '209'}
+265	265		301			DialogEnable				{3: 'Only three days later, an unexpected visitor came knocking at their door.'}
+266	266		201							{1: '1', 2: '501434'}
+267	267		301							{1: '1', 2: 'Hassen', 3: 'Hello, Dr. Yan Zhen.', 4: '1'}
+268	268		203							{1: '1', 2: '0.25', 3: '-450'}
+269	269		201							{1: '2', 2: '500863', 4: '450'}
+270	270		301							{1: '1', 2: 'Yan Zhen', 3: 'Military? No, not exactly. A politician?', 4: '2'}
+271	271		301							{3: 'Yan Zhen studied the man before him, a figure of roughly his own age, with a cautious eye.'}
+272	272		301							"{2: 'Yan Zhen', 3: ""Whatever your purpose is, I'm not currently interested in any offers."", 4: '2'}"
+273	273		301							{2: 'Hassen', 3: 'Enrolled at Transatlantic United University at 17, graduated at 20 to enter the Arctic Route Harbor College. At 23, you declined their invitation for Kowloong, where you earned your doctorate in Neuroscience from Kowloong Central by 26.', 4: '1'}
+274	274		301							"{2: 'Hassen', 3: ""You also managed to complete a second master's in Computer Science while you were there. Am I correct?"", 4: '1'}"
+275	275		301							"{2: 'Hassen', 3: ""I must say, it's a truly remarkable record for a 26-year-old."", 4: '1'}"
+276	276		301							"{2: 'Yan Zhen', 3: ""That's all public information. Anyone with a terminal could find it."", 4: '2'}"
+277	277		301							{2: 'Hassen', 3: 'After your doctorate, you declined offers from several prestigious institutions, including the Science Council.', 4: '1'}
+278	278		301							{3: 'Yan Zhen furrowed his brow.'}
+279	279		301							{2: 'Hassen', 3: 'You chose a corporate path for the compensation, and the reason was—', 4: '1'}
+280	280		301			DialogShake				"{2: 'Yan Zhen', 3: ""That's enough."", 4: '2'}"
+281	281		301							"{2: 'Yan Zhen', 3: ""If that's all you came to say, then this conversation is over."", 4: '2'}"
+282	282		301							"{2: 'Hassen', 3: 'Have you heard of the ""Dark Rooms""?', 4: '1'}"
+283	283		301							{3: 'Yan Zhen froze for a moment. Of course, he had heard of them.'}
+284	284		202							{1: '1', 2: '2', 6: '1'}
+285	285		306							{1: '1'}
+286	286		301							"{3: ""The World Government, driven by self-interest, had established the Dark Rooms to operate outside the Science Council's jurisdiction.""}"
+287	287		301							"{3: ""There, unlike the stubbornly independent Science Council, every research direction was entirely under the government's authority.""}"
+288	288		301							"{3: ""The Dark Rooms weren't a complete secret to the academic world, but their crucial details—their number, locations, and projects—were known only to a handful of officials, even within the World Government itself.""}"
+289	289		306							{1: '0'}
+290	290		201							{1: '1', 2: '501434', 4: '-450'}
+291	291		201							{1: '2', 2: '500863', 4: '450'}
+292	292		301							{1: '1', 2: 'Yan Zhen', 3: '...Are you with the World Government?', 4: '2'}
+293	293		301							"{2: 'Hassen', 3: ""Let's just say I'm a messenger."", 4: '1'}"
+294	294		301							{2: 'Yan Zhen', 3: 'Whose messenger?', 4: '2'}
+295	295		301							"{2: 'Hassen', 3: ""President Trillard's."", 4: '1'}"
+296	296		401							{1: '2', 2: '1543'}
+297	297		203							{1: '2', 2: '0.3', 3: '650'}
+298	298		301				AniZhuanchangBegin			{3: 'After a moment of surprised hesitation, Yan Zhen moved aside, making room for his visitor to come in.'}
+299	299		401							{1: '2', 2: '4202'}
+300	300		502							{1: 'DialogDisable'}
+301	301		202							{1: '1', 2: '2', 6: '1'}
+302	302		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+303	303		301			DialogEnable				{2: 'Yan Zhen', 3: 'Your name?'}
+304	304		301				AniZhuanchangBegin			{2: 'Hassen', 3: 'Hassen. Just Hassen.'}
+305	305		502							{1: 'DialogDisable'}
+306	306		401							{1: '1', 2: '36'}
+307	307		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory312.png'}
+308	308		107							{1: 'The Third Dark Room'}
+309	309		309	1					200.0	{2: 'The Third Dark Room.'}
+310	310		108							{1: '1'}
+311	311		401							{1: '1', 2: '210'}
+312	312		301			DialogEnable				{3: 'Though he had never set foot inside the Science Council headquarters, Yan Zhen had built a vivid picture of it in his mind from countless stories. He envisioned the magnificent building with its massive stone carvings, like an eternal flame.'}
+313	313		502							{1: 'RImgBg1BlowUp'}
+314	314		301							"{3: 'And the great relief hanging overhead, marking the facility as their era\'s own ""Academy of Athens"".'}"
+315	315		301							{3: 'The dome was adorned with a constellation of scientific genius: Babbage, Da Vinci, Feynman, Fermi, Newton, Dirac, Einstein... all there for visitors to admire.'}
+316	316		301							"{3: 'He had heard some Council members say, ""In the Golden Age and on the road of science, we are nothing but bricklayers. Bricklayers don\'t deserve to be carved onto the wall.""'}"
+317	317		301							{3: 'Yet, Yan Zhen sometimes allowed himself to imagine standing among them one day... observed and revered by future generations.'}
+318	318		301							"{3: ""In stark contrast to the Council's symbolic grandeur, the interior of the Third Dark Room was all cold, somber steel, save for a single World Government emblem.""}"
+319	319		401							{1: '2', 2: '1516'}
+320	320		301				DialogDisable			{3: 'But as Yan Zhen stepped inside, his eyes were drawn to a line of text inscribed beneath it:'}
+321	321		306						200.0	{1: '1'}
+322	322		307							"{1: '""We are to build a world for all.""', 3: '60'}"
+323	323		309	1					200.0	"{2: '""We are to build a world for all.""'}"
+324	324		307							{2: '1'}
+325	325		306							{1: '0'}
+326	326		301			DialogEnable				"{3: ""He stood transfixed by the words until Hassen's voice came from behind him.""}"
+327	327		201							{1: '1', 2: '501434'}
+328	328		301							"{1: '1', 2: 'Hassen', 3: ""Those are President Trillard's words."", 4: '1'}"
+329	329		203							{1: '1', 2: '0.25', 3: '-450'}
+330	330		201							{1: '2', 2: '500863', 4: '450'}
+331	331		301							{1: '1', 2: 'Yan Zhen', 3: 'Trillard...', 4: '2'}
+332	332		301							{2: 'Yan Zhen', 3: 'What kind of man is he?', 4: '2'}
+333	333		301							{3: 'Hassen paused to consider for a moment.'}
+334	334		301							{2: 'Hassen', 3: 'Ordinary. In the best way possible.', 4: '1'}
+335	335		301							{2: 'Yan Zhen', 3: 'An ordinary man became the first President of the World Government?', 4: '2'}
+336	336		401							{1: '2', 2: '1543'}
+337	337		203							{1: '1', 2: '0.3', 3: '-400'}
+338	338		301							{3: 'Hassen extended his right hand to Yan Zhen, gesturing for a handshake.'}
+339	339		301							{2: 'Hassen', 3: 'Of course, Doctor. This is a world where anyone can contribute. Including you.', 4: '1'}
+340	340		401							{1: '2', 2: '1543'}
+341	341		203							{1: '2', 2: '0.3', 3: '430'}
+342	342		301							"{3: ""After a moment's hesitation, Yan Zhen took Hassen's hand.""}"
+343	343		301				DialogDisable			{2: 'Hassen', 3: 'Dr. Yan Zhen, welcome to joining us in building a better world.', 4: '1'}
+344	344		202							{1: '1', 2: '2', 6: '1'}
+345	345		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory312.png', 3: '0', 4: '1', 5: '0.4'}
+346	346		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory312.png'}
+347	347		205							{1: '999'}
+348	348		301			DialogEnable	AniZhuanchangBegin			{3: 'Beneath the towering World Government emblem, their paths began to converge.'}
+349	349		502						800.0	{1: 'DialogDisable'}
+350	350		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1381.jpg'}
+351	351		401							{1: '2', 2: '5370'}
+352	352		301			DialogEnable				{3: 'After following Hassen into a private office, Yan Zhen could no longer resist asking the question that had been on his mind.'}
+353	353		201							{1: '2', 2: '500863'}
+354	354		301							{1: '1', 2: 'Yan Zhen', 3: 'Why me? The Science Council has minds far more brilliant than mine. When I was in Kowloong, I heard of a prodigy who earned his doctorate at sixteen.', 4: '2'}
+355	355		203							{1: '2', 2: '0.25', 3: '450'}
+356	356		201							{1: '1', 2: '501434', 4: '-450'}
+357	357		301							{1: '1', 3: 'Hassen smiled, fixing Yan Zhen with a gaze that seemed to peer straight into his soul.'}
+358	358		401							{1: '2', 2: '1543'}
+359	359		203							{1: '2', 2: '0.35', 3: '470', 4: '-20'}
+360	360		301							{3: 'Yan Zhen shifted uncomfortably on the sofa.'}
+361	361		301							{2: 'Hassen', 3: 'And what is your assessment of this prodigy?', 4: '1'}
+362	362		301							"{2: 'Yan Zhen', 3: ""I never met him. I only have second-hand gossip. It wouldn't be a fair judgment."", 4: '2'}"
+363	363		301							{2: 'Hassen', 3: 'Then let me ask another way. How do you believe you compare to him?', 4: '1'}
+364	364		202							{1: '1', 2: '2', 6: '1'}
+365	365		201							{1: '3', 2: '500863', 4: '30'}
+366	366		301							{1: '1', 2: 'Yan Zhen', 3: '...', 4: '3'}
+367	367		202							{1: '3', 6: '1'}
+368	368		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.2'}
+369	369		301				DialogDisable			{3: 'The desire within him screamed to be acknowledged.'}
+370	370		307							{1: '—Say it.', 3: '60'}
+371	371		309	1					200.0	{2: '—Say it.'}
+372	372		307							{2: '1'}
+373	373		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '0.2'}
+374	374		201							{1: '3', 2: '500863', 4: '30'}
+375	375		301			DialogEnable				{1: '1', 3: 'Yan Zhen remained silent for a long moment.'}
+376	376		301				DialogDisable			{2: 'Yan Zhen', 3: 'I believe...', 4: '3'}
+377	377		307							{1: '—Say it.', 3: '60'}
+378	378		309	1					200.0	{2: '—Say it.'}
+379	379		307							{2: '1'}
+380	380		301			DialogEnable	DialogDisable			"{2: 'Yan Zhen', 3: ""He's just lucky enough to have the right family connections."", 4: '3'}"
+381	381		307							{1: '—Say it.', 3: '60'}
+382	382		309	1					200.0	{2: '—Say it.'}
+383	383		307							{2: '1'}
+384	384		301			DialogEnable				{2: 'Yan Zhen', 3: 'But I am exceptional.', 4: '3'}
+385	385		202							{1: '3', 6: '1'}
+386	386		201							{1: '2', 2: '500863', 4: '450'}
+387	387		201							{1: '1', 2: '501434', 4: '-450'}
+388	388		301							{1: '1', 3: 'Hassen remained noncommittal.'}
+389	389		301							{2: 'Hassen', 3: 'Your paper from your Transatlantic United years was fascinating.', 4: '1'}
+390	390		301							"{2: 'Hassen', 3: '""Invasive Brain-Machine Extension Applications: A Hypothesis"".', 4: '1'}"
+391	391		301							{2: 'Hassen', 3: 'Chapter One: The Extension of Consciousness.', 4: '1'}
+392	392		301							{2: 'Hassen', 3: 'Using BMIs as psychic tentacles, translating thought directly into code to command any device...', 4: '1'}
+393	393		301							"{2: 'Hassen', 3: ""The general concept isn't groundbreaking; it's a classic sci-fi trope."", 4: '1'}"
+394	394		301							{2: 'Hassen', 3: 'But reality is less forgiving. The practical hurdles are immense, which is why invasive interfaces are a fringe pursuit today.', 4: '1'}
+395	395		301							{2: 'Hassen', 3: 'For a first publication, it was remarkably audacious. Some might even question if it qualified as academic work, given the lack of substantiation.', 4: '1'}
+396	396		301							"{2: 'Yan Zhen', 3: ""There's no need to be polite. Some reviewers called it pure fantasy."", 4: '2'}"
+397	397		301							{2: 'Yan Zhen', 3: 'It was never even archived. It was a mess.', 4: '2'}
+398	398		301							{2: 'Hassen', 3: 'However... what intrigued me was Chapter Two: The Transfer of Consciousness.', 4: '1'}
+399	399		301							{2: 'Hassen', 3: 'The idea of tethering the mind to the network, allowing consciousness to navigate the digital realm...', 4: '1'}
+400	400		301							"{2: 'Yan Zhen', 3: ""That's hardly an original concept, either. It's not worth your—"", 4: '2'}"
+401	401		202							{1: '1', 2: '2', 6: '1'}
+402	402		201							{1: '1', 2: '501434'}
+403	403		301							{1: '1', 3: 'Hassen interrupted Yan Zhen before the words could fully leave his mouth.'}
+404	404		301							{2: 'Hassen', 3: 'It could be implemented.', 4: '1'}
+405	405		201							{1: '1', 2: '500863', 7: '1'}
+406	406		301							{1: '1', 2: 'Yan Zhen', 3: '...', 4: '1'}
+407	407		301			PanelActor1Shake	DialogDisable			{3: 'Yan Zhen was rendered speechless, a flood of thoughts racing through his mind.'}
+408	408		401							{1: '2', 2: '4276'}
+409	409		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+410	410		202							{1: '1', 6: '1'}
+411	411		504							{1: '0.7'}
+412	412		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1136.jpg'}
+413	413		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '3'}
+414	414		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+415	415		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+416	416		201							{1: '1', 2: '500625'}
+417	417		301			DialogEnable				"{1: '1', 2: 'Professor', 3: ""That's way too far-fetched. Are you sure you want to dedicate your efforts to this direction?"", 4: '1'}"
+418	418		301							"{2: 'Professor', 3: ""You have promise. Don't squander it on a dead end."", 4: '1'}"
+419	419		401							{1: '2', 2: '4387'}
+420	420		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+421	421		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory69.jpg'}
+422	422		201							{1: '1', 2: '500956', 7: '1'}
+423	423		301							"{1: '1', 2: 'Mother', 3: ""Don't you worry about what they say..."", 4: '1'}"
+424	424		301							"{2: 'Mother', 3: ""I always know you're meant for something extraordinary."", 4: '1'}"
+425	425		401							{1: '2', 2: '4387'}
+426	426		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+427	427		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1136.jpg'}
+428	428		201							{1: '1', 2: '500527', 4: '-400', 7: '1'}
+429	429		201							{1: '2', 2: '500164', 4: '400', 7: '1'}
+430	430		301							"{1: '1', 2: 'Classmate A', 3: ""I can't believe that paper was ever published. He must have had connections."", 4: '1'}"
+431	431		301							"{2: 'Classmate A', 3: ""It's complete nonsense."", 4: '1'}"
+432	432		301							"{2: 'Classmate B', 3: ""Keep your voice down! Who knows if he'll implant a chunk of metal in your brain one day? Hahaha!"", 4: '2'}"
+433	433		401							{1: '2', 2: '4387'}
+434	434		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+435	435		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1374.jpg'}
+436	436		202							{1: '1', 2: '2', 6: '1'}
+437	437		201							{1: '3', 2: '500463', 7: '1'}
+438	438		301							{1: '1', 2: 'Claire', 3: 'But if this could ever be realized... think of the patients with disabilities, with partial paralysis...', 4: '3'}
+439	439		401							{1: '2', 2: '4387'}
+440	440		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+441	441		202							{1: '3', 6: '1'}
+442	442		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab'}
+443	443		504							{1: '0'}
+444	444		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1381.jpg'}
+445	445		201							{1: '1', 2: '500863', 7: '1'}
+446	446		301			PanelActor1Shake				{1: '1', 2: 'Yan Zhen', 3: 'You...', 4: '1'}
+447	447		301							{2: 'Yan Zhen', 3: 'Have you seen empirical evidence?', 4: '1'}
+448	448		201							{1: '1', 2: '501434', 7: '1'}
+449	449		301							"{1: '1', 2: 'Hassen', 3: ""No, I didn't."", 4: '1'}"
+450	450		301							"{3: ""Yan Zhen's reaction didn't surprise Hassen.""}"
+451	451		201							{1: '1', 2: '500863', 7: '1'}
+452	452		301			PanelActor1Shake				"{1: '1', 2: 'Yan Zhen', 3: ""That's impossible..."", 4: '1'}"
+453	453		202							{1: '1', 6: '2'}
+454	454		201							{1: '2', 2: '501434', 4: '-450'}
+455	455		201							{1: '3', 2: '500863', 4: '450'}
+456	456		301							{1: '1', 2: 'Hassen', 3: 'The feasibility is a question for later, Dr. Yan Zhen.', 4: '2'}
+457	457		301							{2: 'Hassen', 3: 'The question now is whether you, as you are, are willing to join Project [Connection].', 4: '2'}
+458	458		301				DialogDisable			{2: 'Yan Zhen', 3: 'Project [Connection]?', 4: '3'}
+459	459		202							{1: '2', 2: '3', 6: '1'}
+460	460		401							{1: '2', 2: '1516'}
+461	461		104						850.0	{1: '-100|30|-100', 2: '0.8'}
+462	462		301			DialogEnable	DialogDisable			{3: 'Rising to his feet, Hassen walked to the front of the conference room. Right on cue, the display activated.'}
+463	463		306						200.0	{1: '1'}
+464	464		401							{1: '2', 2: '4979'}
+465	465		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0', 4: '1', 5: '0.5'}
+466	466		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+467	467		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/UiFightDetailMapBg.png', 3: '1', 4: '1', 5: '0'}
+468	468		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/UiFightDetailMapBg.png', 3: '1', 4: '1', 5: '0'}
+469	469		401							{1: '2', 2: '4634'}
+470	470		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab', 2: '3', 5: '1'}
+471	471		511							{1: '1', 2: '0', 3: '-30|-30|110'}
+472	472		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenBlueEx.prefab', 2: '3', 5: '2'}
+473	473		511							{1: '2', 2: '0', 3: '0|85|1200'}
+474	474		205							{1: '999'}
+475	475		301			DialogEnable				{3: 'An abstract logo of a human brain appeared on the screen. From it, lines representing data streams and network connections radiated outward.'}
+476	476		301							{3: 'Yet, to Yan Zhen, the image inexplicably brought to mind the form of an abstract, two-dimensional tree.'}
+477	477		306							{1: '0'}
+478	478		201							{1: '18', 2: '501434', 4: '-80', 5: '-130'}
+479	479		301							"{1: '1', 2: 'Hassen', 3: ""Allow me to provide a proper introduction. A flagship initiative of the World Government's Third Dark Room, aimed at developing technology that enables consciousness to seamlessly connect with and be uploaded to the network..."", 4: '18'}"
+480	480		301				AniZhuanchangBegin			{2: 'Hassen', 3: 'If you choose to join, you will be the lead of Project Connection.', 4: '18'}
+481	481		502							{1: 'DialogDisable'}
+482	482		202							{1: '18', 6: '1'}
+483	483		205							{1: '1005'}
+484	484		205							{1: '1007'}
+485	485		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab', 5: '1'}
+486	486		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenBlueEx.prefab', 5: '2'}
+487	487		104							{1: '0|0|0', 2: '0'}
+488	488		401						1500.0	{1: '1', 2: '36'}
+489	489		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+490	490		401							{1: '1', 2: '381'}
+491	491		201							{1: '1', 2: '501425', 3: '8'}
+492	492		301			DialogEnable				{1: '1', 3: 'Yan Zhen turns his gaze away from Earth, a hint of stiffness in his neck as he raises his right hand to massage it.'}
+493	493		204							{1: '1', 2: '14'}
+494	494		301				AniZhuanchangBegin			{3: 'His fingers slide upward, finding the slightly warm metal hidden beneath his white hair.'}
+495	495		502							{1: 'DialogDisable'}
+496	496		202						2000.0	{1: '1', 6: '1'}
+497	497		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory342.jpg'}
+498	498		502							{1: 'DialogEnable'}
+499	499		301			AniZhuanchangEnd	DialogDisable			{3: 'Not every clandestine encounter has the power to change the world.'}
+500	500		401							{1: '2', 2: '952'}
+501	501		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+502	502		504						500.0	{1: '0.7'}
+503	503		401							{1: '2', 2: '4042'}
+504	504		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory648.jpg', 4: '4'}
+505	505		104							{1: '-1920|0|0', 2: '0', 4: '4'}
+506	506		104							{1: '1920|0|0', 2: '3.5'}
+507	507		104						4000.0	{1: '0|0|0', 2: '3.5', 4: '4'}
+508	508		402							{1: '4042'}
+509	509		401							{1: '2', 2: '952'}
+510	510		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory648.jpg'}
+511	511		101							{4: '4', 5: '1'}
+512	512		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+513	513		504							{1: '0'}
+514	514		301			DialogEnable				{3: 'The project began smoothly, with the prototype rapidly taking shape.'}
+515	515		301							{3: 'Yet its early success was deceptive; while the system managed to connect consciousness to the network, the process inflicted severe physical damage on the test subjects.'}
+516	516		301				DialogDisable			{3: 'Only a single volunteer from the first batch survived, and even he was pronounced dead after twenty-six hours in the emergency room.'}
+517	517		401							{1: '2', 2: '952'}
+518	518		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+519	519		504						500.0	{1: '0.7'}
+520	520		401							{1: '2', 2: '4042'}
+521	521		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory427.jpg', 4: '4'}
+522	522		104							{1: '-1920|0|0', 2: '0', 4: '4'}
+523	523		104							{1: '1920|0|0', 2: '3.5'}
+524	524		104						4000.0	{1: '0|0|0', 2: '3.5', 4: '4'}
+525	525		402							{1: '4042'}
+526	526		401							{1: '2', 2: '952'}
+527	527		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory427.jpg'}
+528	528		101							{4: '4', 5: '1'}
+529	529		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+530	530		504							{1: '0'}
+531	531		301			DialogEnable				{3: 'With progress stalled, the World Government officials began to lose faith.'}
+532	532		301				DialogDisable			{3: 'The final blow came when a rival breakthrough in consciousness digitalization from Construct Tech emerged, prompting them to terminate Project Connection entirely.'}
+533	533		401							{1: '2', 2: '952'}
+534	534		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+535	535		504						500.0	{1: '0.7'}
+536	536		401							{1: '2', 2: '4042'}
+537	537		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1001.jpg', 4: '4'}
+538	538		104							{1: '-1920|0|0', 2: '0', 4: '4'}
+539	539		104							{1: '1920|0|0', 2: '3.5'}
+540	540		104						4000.0	{1: '0|0|0', 2: '3.5', 4: '4'}
+541	541		402							{1: '4042'}
+542	542		401							{1: '2', 2: '952'}
+543	543		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1001.jpg'}
+544	544		101							{4: '4', 5: '1'}
+545	545		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+546	546		504							{1: '0'}
+547	547		301			DialogEnable				{3: 'But Yan Zhen could no longer bring himself to abandon the Third Dark Room.'}
+548	548		301				DialogDisable			{3: 'His wife had died there. His daughter had been born there.'}
+549	549		401							{1: '2', 2: '952'}
+550	550		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+551	551		504						500.0	{1: '0.7'}
+552	552		401							{1: '2', 2: '4042'}
+553	553		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1264.jpg', 4: '4'}
+554	554		104							{1: '-1920|0|0', 2: '0', 4: '4'}
+555	555		104							{1: '1920|0|0', 2: '3.5'}
+556	556		104						4000.0	{1: '0|0|0', 2: '3.5', 4: '4'}
+557	557		402							{1: '4042'}
+558	558		401							{1: '2', 2: '952'}
+559	559		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1264.jpg'}
+560	560		101							{4: '4', 5: '1'}
+561	561		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+562	562		504							{1: '0'}
+563	563		301			DialogEnable				{3: 'Within its walls lay hundreds of volunteers from around the globe: patients with ALS, persistent vegetative states, and catastrophic neurological damage.'}
+564	564		301				DialogDisable			{3: 'Their physical forms were prisons, their conditions deemed nearly untreatable.'}
+565	565		401							{1: '2', 2: '952'}
+566	566		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+567	567		504						500.0	{1: '0.7'}
+568	568		401							{1: '2', 2: '4042'}
+569	569		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory789.jpg', 4: '4'}
+570	570		104							{1: '-1920|0|0', 2: '0', 4: '4'}
+571	571		104							{1: '1920|0|0', 2: '3.5'}
+572	572		104						4000.0	{1: '0|0|0', 2: '3.5', 4: '4'}
+573	573		402							{1: '4042'}
+574	574		401							{1: '2', 2: '952'}
+575	575		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory789.jpg'}
+576	576		101							{4: '4', 5: '1'}
+577	577		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+578	578		504							{1: '0'}
+579	579		301			DialogEnable				{1: '1', 3: 'As a tide of despair washed over the Third Dark Room, Yan Zhen found himself desperate to produce a result, any result, before it was too late.'}
+580	580		401							{1: '1', 2: '36'}
+581	581		401							{1: '2', 2: '4387'}
+582	582		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+583	583		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+584	584		401							{1: '1', 2: '6245'}
+585	585		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+586	586		201							{1: '1', 2: '501416', 3: '2', 7: '1'}
+587	587		205							{1: '1', 3: '0.7', 4: '0.7', 5: '0'}
+588	588		301			PanelActor1Shake				"{1: '1', 2: '???', 3: ""Now we're getting to the good part, heh."", 4: '1'}"
+589	589		201							{1: '1', 2: '500863', 7: '1'}
+590	590		205							{1: '1', 3: '1', 4: '1'}
+591	591		301			PanelActor1Shake	DialogDisable			"{1: '1', 3: ""Yan Zhen's train of thought shatters as a single, blinding signal fires through every neuron at once.""}"
+592	592		104						150.0	{1: '0|0|-200', 2: '0.1'}
+593	593		104							{1: '0|0|0', 2: '0.2'}
+594	594		401							{1: '2', 2: '4280'}
+595	595		301			DialogEnable				"{3: '""PAIN!""'}"
+596	596		301			PanelActor1Shake				{2: 'Yan Zhen', 3: 'Get... back!', 4: '1'}
+597	597		203							{1: '1', 2: '0.3', 3: '-450'}
+598	598		201							{1: '2', 2: '501416', 3: '2', 4: '500', 7: '1'}
+599	599		205							{1: '2', 3: '0.7', 4: '0.7'}
+600	600		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront113.png', 3: '0.7', 4: '0.7', 5: '0'}
+601	601		301							{1: '1', 2: '???', 3: 'But back to where? I am you.', 4: '2'}
+602	602		301							{2: '???', 3: 'Or should I call you... Abel, my brother?', 4: '2'}
+603	603		301			PanelActor1Shake				{2: 'Yan Zhen', 3: 'I am... the real Yan Zhen!', 4: '1'}
+604	604		301				DialogDisable			{2: '???', 3: 'Is that so? And who, pray tell, gets to decide that?', 4: '2'}
+605	605		401							{1: '2', 2: '4225'}
+606	606		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndRed.prefab', 2: '2', 5: '4'}
+607	607		511						200.0	{1: '4', 2: '0', 3: '-200|0|0'}
+608	608		203							{1: '2', 2: '0.25', 3: '0', 4: '0', 5: '0'}
+609	609		202							{1: '2'}
+610	610		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+611	611		203							{1: '1', 2: '0.3', 3: '0', 4: '0', 5: '0'}
+612	612		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront113.png', 3: '0.5', 4: '0', 5: '0.2'}
+613	613		301			DialogEnable				{3: 'In a desperate gambit, Yan Zhen staked his life on the second-generation brain-computer, becoming a human test subject.'}
+614	614		202							{1: '1'}
+615	615		301							{3: 'That was when the whispers from the darkness first found him.'}
+616	616		301				DialogDisable			"{3: ""The true catastrophe, however, was still lurking. Using the second-generation brain-computer's flawed result, Yan Zhen manipulated all factions, barely sustaining the Third Dark Room's operations.""}"
+617	617		401							{1: '2', 2: '952'}
+618	618		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+619	619		504						500.0	{1: '0.7'}
+620	620		401							{1: '2', 2: '4042'}
+621	621		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory894.jpg', 4: '4'}
+622	622		104							{1: '-1920|0|0', 2: '0', 4: '4'}
+623	623		104							{1: '1920|0|0', 2: '3.5'}
+624	624		104						4000.0	{1: '0|0|0', 2: '3.5', 4: '4'}
+625	625		402							{1: '4042'}
+626	626		401							{1: '2', 2: '952'}
+627	627		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory894.jpg'}
+628	628		101							{4: '4', 5: '1'}
+629	629		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+630	630		504							{1: '0'}
+631	631		301			DialogEnable				{3: 'His pleas reached countless companies and organizations, and his persistence was finally met with a token offer from the Norman Mining Corp.'}
+632	632		201							{1: '1', 2: '500874', 4: '-450'}
+633	633		201							{1: '2', 2: '500838', 4: '450'}
+634	634		301							{1: '1', 3: 'The memory of that day remains sharp: as he practically groveled during a presentation of Project Connection, he saw young Edward with Charles in the audience.'}
+635	635		504							{1: '1', 8: '0.8'}
+636	636		301				DialogDisable			"{3: 'The profound pity in the young man\'s eyes revealed the humiliating truth of their ""help.""'}"
+637	637		202							{1: '1', 2: '2', 6: '1'}
+638	638		401							{1: '2', 2: '952'}
+639	639		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+640	640		504						500.0	{1: '1'}
+641	641		401							{1: '2', 2: '4042'}
+642	642		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory460.jpg', 4: '4'}
+643	643		104							{1: '-1920|0|0', 2: '0', 4: '4'}
+644	644		104							{1: '1920|0|0', 2: '3.5'}
+645	645		104						4000.0	{1: '0|0|0', 2: '3.5', 4: '4'}
+646	646		402							{1: '4042'}
+647	647		401							{1: '2', 2: '952'}
+648	648		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory460.jpg'}
+649	649		101							{4: '4', 5: '1'}
+650	650		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+651	651		504							{1: '0'}
+652	652		301			DialogEnable	AniZhuanchangBegin			{3: 'Just two months later, the outbreak of the Punishing Virus shattered the world forever.'}
+653	653		502							{1: 'DialogDisable'}
+654	654		401						800.0	{1: '1', 2: '36'}
+655	655		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+656	656		502							{1: 'RImgBg1Shake'}
+657	657		401							{1: '2', 2: '4892'}
+658	658		401							{1: '1', 2: '6390'}
+659	659		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+660	660		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGanRanGreen.prefab', 2: '2', 3: '1'}
+661	661		201							{1: '1', 2: '501416', 3: '2', 7: '1'}
+662	662		205							{1: '1', 3: '0.75', 4: '0.75', 5: '0'}
+663	663		301			DialogEnable				{1: '1', 2: '???', 3: 'Those dishonest Normans... They just left us to die...', 4: '1'}
+664	664		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGanRanGreen.prefab', 4: '1'}
+665	665		201							{1: '1', 2: '501425', 3: '5', 7: '1'}
+666	666		205							{1: '1', 3: '1', 4: '1'}
+667	667		301			PanelActor1Shake				{1: '1', 2: 'Yan Zhen', 3: 'John, return to Elysium. Now!', 4: '1'}
+668	668		201							{1: '1', 2: '501416', 3: '2', 7: '1'}
+669	669		205							{1: '1', 3: '1', 4: '1', 5: '0'}
+670	670		301		1		AniZhuanchangBegin			{1: '1', 2: 'John Doe?', 3: 'I am Yan Zhen! It is you who should... remember your place.', 4: '1'}

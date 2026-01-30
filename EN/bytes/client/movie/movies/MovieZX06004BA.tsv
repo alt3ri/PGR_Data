@@ -1,0 +1,867 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1314.jpg'}
+2	2		401							{1: '1', 2: '36'}
+3	3		502						250.0	{1: 'DialogDisable'}
+4	4		107							{1: 'Upper Level, Competition Zone', 2: 'Everett Arena'}
+5	5		301							{3: 'Everett Arena, Upper Level, Competition Zone'}
+6	6		108							{1: '1'}
+7	7		306							{1: '1'}
+8	8		401							{1: '2', 2: '4085'}
+9	9		401							{1: '1', 2: '378'}
+10	10		301			DialogEnable	DialogDisable			"{3: 'It\'s halfway into the season, and yet the arena boils with more energy than ever tonight—with all eyes eagerly awaiting ""her"" performance.'}"
+11	11		201							{1: '1', 2: '501368', 5: '-20', 6: '-100'}
+12	12		401							{1: '2', 2: '5703'}
+13	13		203						1000.0	{1: '1', 2: '0.5', 4: '-20', 5: '-150'}
+14	14		401							{1: '2', 2: '5703'}
+15	15		203						600.0	{1: '1', 2: '0.5', 4: '-20', 5: '-200'}
+16	16		201							{1: '2', 2: '501364', 5: '-20', 6: '-200'}
+17	17		301			DialogEnable	DialogDisable			"{1: '1', 3: 'The crowd chants ""Veronica!"" in rhythmic waves, watching in awe as the lance-wielding mechanoid with her trailing tail emerges from the tunnel and strides into the arena.'}"
+18	18		402							{1: '4085'}
+19	19		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+20	20		202							{1: '1', 2: '2', 6: '1'}
+21	21		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1314.jpg'}
+22	22		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0'}
+23	23		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDoorOpen01.prefab', 2: '2'}
+24	24		401							{1: '2', 2: '4113'}
+25	25		301			DialogEnable	DialogDisable			{3: 'But the center of the arena remains empty—no octagonal cage with mechanical beasts rises from the floor as usual. Instead, the iron gate on the opposite side of the arena thunders open.'}
+26	26		201							{1: '1', 2: '500832'}
+27	27		401							{1: '2', 2: '4376'}
+28	28		203						1000.0	{1: '1', 2: '0.5', 5: '-30'}
+29	29		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDoorOpen01.prefab'}
+30	30		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '0', 5: '0.5'}
+31	31		401							{1: '2', 2: '4376'}
+32	32		203						1000.0	{1: '1', 2: '0.5', 5: '-60'}
+33	33		301			DialogEnable				"{3: ""An armed mechanoid emerges from the darkness and steps into the harsh spotlight of the arena. It's not one of the bizarre mechanical beasts, but a humanoid mechanoid just like Veronica.""}"
+34	34		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1314.jpg'}
+35	35		205							{1: '1004'}
+36	36		306							
+37	37		202							{1: '1'}
+38	38		401							{1: '2', 2: '1515'}
+39	39		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo.prefab', 2: '1'}
+40	40		301							"{2: 'Virtual Host', 3: 'Ladies and gentlemen, tonight\'s matchup is—Veronica versus ""Winch""! Prepare yourselves for a heart-pounding battle!'}"
+41	41		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo.prefab'}
+42	42		201							{1: '1', 2: '501364', 3: '8', 5: '-20', 6: '-200'}
+43	43		301				DialogDisable			{1: '1', 2: 'Veronica', 3: 'Well... why am I not surprised at all...', 4: '1'}
+44	44		201							{1: '1', 2: '500832'}
+45	45		401							{1: '2', 2: '4376'}
+46	46		203						1000.0	{1: '1', 2: '0.5', 5: '-30'}
+47	47		401							{1: '2', 2: '4376'}
+48	48		203						1000.0	{1: '1', 2: '0.5', 5: '-60'}
+49	49		401							{1: '2', 2: '4376'}
+50	50		203						1000.0	{1: '1', 2: '0.5', 5: '-90'}
+51	51		301			DialogEnable				"{3: 'The mechanoid approaches Veronica with ponderous steps, its visual modules scanning for what its programming designates as a ""combat opponent.""'}"
+52	52		401							{1: '2', 2: '4628'}
+53	53		301							{2: 'Winch', 3: 'Commencing winning probability analysis.', 4: '1'}
+54	54		301				DialogDisable			"{2: 'Winch', 3: 'Combat target: CTX-V Enhanced Function Model, codename ""Veronica"". Winning probability against Veronica: 0.0032%.', 4: '1'}"
+55	55		202							{1: '1'}
+56	56		306						500.0	{1: '1'}
+57	57		401							{1: '2', 2: '5505'}
+58	58		502						2000.0	{1: 'RImgBg1Shake'}
+59	59		402							{1: '5505'}
+60	60		401							{1: '2', 2: '9389034'}
+61	61		301			DialogEnable				"{3: ""As Winch's synthetic voice fades, an octagonal iron cage rockets up from under the floor and traps both mechanoids inside. A piercing buzzer signaling the start of the fight sounds throughout the arena.""}"
+62	62		401							{1: '2', 2: '4085'}
+63	63		301							{3: 'The crowd erupts at the sight, their bloodthirsty desire for violence carried on waves of cheers that flood the arena floor.'}
+64	64		306							
+65	65		301			DialogShake				{2: 'Spectators', 3: 'Get it, Veronica! Show no mercy!'}
+66	66		301			DialogShake				"{2: 'Spectators', 3: ""That's right! We've got money riding on you!""}"
+67	67		402							{1: '4085'}
+68	68		201							{1: '1', 2: '500832'}
+69	69		301							{1: '1', 2: 'Winch', 3: 'Winning probability against Veronica: 0.0032%.', 4: '1'}
+70	70		301				DialogDisable			{2: 'Winch', 3: 'Achieve victory. Advance in tournament. Win freedom.', 4: '1'}
+71	71		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+72	72		202							{1: '1', 6: '1'}
+73	73		201							{1: '1', 2: '501364', 4: '-250', 5: '0', 6: '-100'}
+74	74		201							{1: '2', 2: '500832', 4: '1000'}
+75	75		203						250.0	{1: '2', 2: '0.25', 3: '200'}
+76	76		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+77	77		502							{1: 'RImgBg1Shake'}
+78	78		401						1500.0	{1: '2', 2: '9342060'}
+79	79		203							{1: '1', 2: '0.5', 3: '-500', 4: '0', 5: '-100'}
+80	80		203							{1: '2', 2: '0.5', 3: '500'}
+81	81		202							{1: '1', 2: '2'}
+82	82		301			DialogEnable				{3: 'Winch assumes a combat stance. Then, it brandishes its weapon as it charges at Veronica.'}
+83	83		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '1'}
+84	84		502							{1: 'RImgBg1Shake'}
+85	85		401						1000.0	{1: '2', 2: '9342060'}
+86	86		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash.prefab', 2: '1'}
+87	87		502							{1: 'RImgBg1Shake'}
+88	88		401						1000.0	{1: '2', 2: '9342058'}
+89	89		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '1'}
+90	90		401							{1: '2', 2: '9342060'}
+91	91		301			RImgBg1Shake				"{3: 'This cramped iron cage serves as the ""stage"" for their final ""performance""—where the victor earns cheers, while the loser faces only judgment and destruction.'}"
+92	92		306							{1: '1'}
+93	93		201							{1: '1', 2: '500832'}
+94	94		301							"{1: '1', 3: 'Winch\'s behavioral components and frame sensitivity are severely outdated—far inferior even to the mechanical beasts Veronica has defeated before. It simply follows its programmed ""attack mode"" and launches one predictable assault after another.'}"
+95	95		201							{1: '1', 2: '501364', 5: '-20', 6: '-200'}
+96	96		301							{1: '1', 3: 'Veronica knows that she could reduce this fragile mechanoid to scrap metal with just one counterattack. Her opponent simply stands no chance against her.'}
+97	97		204							{1: '1', 2: '5'}
+98	98		301							"{3: 'But she can\'t bring herself to destroy her own ""kind,"" even though it\'s her only path to survival and advancement in the arena.'}"
+99	99		306							
+100	100		204							{1: '1', 2: '8'}
+101	101		301							"{2: 'Veronica', 3: ""Don't do this."", 4: '1'}"
+102	102		204							{1: '1'}
+103	103		301							"{2: 'Veronica', 3: ""I'm not going to fight you."", 4: '1'}"
+104	104		201							{1: '1', 2: '500832'}
+105	105		301							{1: '1', 2: 'Winch', 3: 'Achieve victory. Advance in tournament. Win freedom.', 4: '1'}
+106	106		202							{1: '1'}
+107	107		301							"{3: ""Her opponent, however, simply continues its programmed patterns of attack, showing no reaction whatsoever to Veronica's words.""}"
+108	108		201							{1: '1', 2: '501364', 5: '-20', 6: '-200'}
+109	109		301							{1: '1', 2: 'Veronica', 3: '……', 4: '1'}
+110	110		204							{1: '1', 2: '5'}
+111	111		301							"{2: 'Veronica', 3: ""Can't you see? You have no chance of winning."", 4: '1'}"
+112	112		201							{1: '1', 2: '500832'}
+113	113		203							{1: '1', 2: '0.25', 5: '-100'}
+114	114		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+115	115		401							{1: '2', 2: '4772'}
+116	116		301							{1: '1', 2: 'Winch', 3: 'Target locked. Ready to attack.', 4: '1'}
+117	117		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+118	118		202							{1: '1', 6: '1'}
+119	119		201							{1: '2', 2: '501364', 3: '5', 5: '-20', 6: '-200'}
+120	120		401							{1: '2', 2: '819016'}
+121	121		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '2'}
+122	122		203							{1: '2', 2: '0.25', 3: '200', 4: '-20', 5: '-200'}
+123	123		301							{3: 'The mechanoid steps closer and delivers a swing that barely grazes Veronica.'}
+124	124		203							{1: '2', 2: '0.25', 3: '0', 4: '-20', 5: '-200'}
+125	125		204							{1: '2', 2: '11'}
+126	126		301			DialogShake				"{2: 'Veronica', 3: ""Do you have any idea what you're doing?!"", 4: '2'}"
+127	127		204							{1: '2', 2: '5'}
+128	128		301							"{2: 'Veronica', 3: ""Keep this up and I'll have no choice but to destroy you..."", 4: '2'}"
+129	129		204							{1: '2', 2: '9'}
+130	130		301							{2: 'Veronica', 3: 'They... These humans just want to watch us tear each other apart for their amusement!', 4: '2'}
+131	131		202							{1: '2', 6: '1'}
+132	132		201							{1: '1', 2: '500832'}
+133	133		301							{1: '1', 2: 'Winch', 3: 'Target not retaliating. Continuing attack.', 4: '1'}
+134	134		202							{1: '1'}
+135	135		306							{1: '1'}
+136	136		301							{3: 'Facing a fellow mechanoid trapped in a broken logic loop, Veronica can no longer hold back.'}
+137	137		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+138	138		401						800.0	{1: '2', 2: '819016'}
+139	139		401							{1: '2', 2: '4681'}
+140	140		301			RImgBg1Shake				{3: 'Her lance traces a gleaming arc through the air before crashing into the ground with tremendous force.'}
+141	141		301							{1: '1', 3: 'She has no desire to destroy her own kind.'}
+142	142		306							
+143	143		201							{1: '1', 2: '501364', 3: '11', 5: '-20', 6: '-200'}
+144	144		301			DialogShake				{1: '1', 2: 'Veronica', 3: 'Enough! Drop your weapon now!', 4: '1'}
+145	145		201							{1: '1', 2: '500832'}
+146	146		301							{1: '1', 2: 'Winch', 3: 'Combat analysis: Veronica has lost offensive weapon. Winning probability against Veronica: 0.089%.', 4: '1'}
+147	147		203							{1: '1', 2: '0.25', 5: '-100'}
+148	148		401							{1: '2', 2: '970804'}
+149	149		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+150	150		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+151	151		301							"{3: ""Winch, without a moment's hesitation, launches another powerful strike at Veronica.""}"
+152	152		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+153	153		201							{1: '1', 2: '501364', 3: '9', 5: '-20', 6: '-300'}
+154	154		203							{1: '1', 2: '0.25', 4: '-20', 5: '-200'}
+155	155		401							{1: '2', 2: '4933'}
+156	156		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '2'}
+157	157		301			RImgBg1Shake				{1: '1', 3: 'Veronica is now up against the wall with nowhere left to hide, leaving her with no choice but to absorb the full force of the incoming blow with her body.'}
+158	158		401							{1: '2', 2: '819016'}
+159	159		205						1500.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '0', 4: '1', 5: '0.25'}
+160	160		202							{1: '1', 6: '1'}
+161	161		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '1', 4: '0', 5: '2.5'}
+162	162		401							{1: '2', 2: '4551'}
+163	163		301							{3: 'When the harsh screech of metal tearing through metal fades away, only the soft patter of vital fluid dripping onto the floor remains.'}
+164	164		402							{1: '4551'}
+165	165		201							{1: '1', 2: '501363', 3: '9', 5: '-20', 6: '-200'}
+166	166		301							"{1: '1', 3: ""A diagonal gash runs down from Veronica's chest to her abdomen, exposing her internal components as vital fluid trickles down her frame and pools on the floor.""}"
+167	167		301							{2: 'Veronica', 3: '……', 4: '1'}
+168	168		201							{1: '1', 2: '500832'}
+169	169		301							"{1: '1', 2: 'Winch', 3: ""Combat analysis: Veronica's frame damaged. Winning probability against Veronica: 0.127%."", 4: '1'}"
+170	170		401							{1: '2', 2: '1509'}
+171	171		301							{2: 'Winch', 3: 'Continue, attack. Increase, power output.', 4: '1'}
+172	172		203							{1: '1', 2: '0.25', 5: '-100'}
+173	173		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+174	174		301							{2: 'Winch', 3: 'Achieve victory. Advance in tournament. Win freedom.', 4: '1'}
+175	175		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+176	176		201							{1: '1', 2: '501363', 3: '11', 5: '-20', 6: '-200'}
+177	177		301			RImgBg1Shake				{1: '1', 2: 'Veronica', 3: 'Enough! Stop this right now!', 4: '1'}
+178	178		301			DialogShake				"{2: 'Veronica', 3: ""We shouldn't be doing this! We should be working together to fight those humans out there!"", 4: '1'}"
+179	179		201							{1: '1', 2: '500832'}
+180	180		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+181	181		401							{1: '2', 2: '9342022'}
+182	182		203							{1: '1', 2: '0.25', 5: '-50'}
+183	183		301							"{1: '1', 3: ""Veronica's words are met with nothing but another attack from Winch, who, coming at her with everything it has, channels all its momentum into this strike.""}"
+184	184		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+185	185		401							{1: '2', 2: '4902'}
+186	186		301			PanelActor1Shake				"{3: ""With it, Winch's body lets out a harsh screech of grinding, twisting metal.""}"
+187	187		301			PanelActor1Shake	DialogDisable			{2: 'Winch', 3: 'Rebooting... Rebooting... Rebooting...', 4: '1'}
+188	188		502							{1: 'PanelActor1Shake'}
+189	189		401						2000.0	{1: '2', 2: '4558'}
+190	190		502							{1: 'PanelActor1Shake'}
+191	191		401						2000.0	{1: '2', 2: '4902'}
+192	192		401							{1: '2', 2: '1509'}
+193	193		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+194	194		301			DialogEnable				{3: 'Winch falters and freezes. A few violent tremors later, however, it resumes its high-speed assault.'}
+195	195		203						250.0	{1: '1', 2: '0.25', 5: '-100'}
+196	196		401							{1: '2', 2: '18511011'}
+197	197		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+198	198		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+199	199		401							{1: '2', 2: '4561'}
+200	200		301			RImgBg1Shake				"{3: ""But Winch's attack misses its mark, its weapon slamming into the metal cage instead. Sparks fly as the massive blade becomes wedged in between the bars.""}"
+201	201		301							{3: 'The momentum built up during its charge makes it impossible for the bulky mechanoid to control its movements. It continues hurtling forward without slowing even slightly.'}
+202	202		203							{1: '1', 2: '0.2', 5: '-300'}
+203	203		401							{1: '2', 2: '4111006'}
+204	204		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+205	205		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryJianXue.prefab', 2: '2'}
+206	206		401							{1: '2', 2: '2593'}
+207	207		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+208	208		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+209	209		202							{1: '1', 6: '1'}
+210	210		301			RImgBg1Shake				{3: 'Unable to stop its momentum, Winch impales itself on its own weapon. Vital fluid gushes from the huge wound in its frame.'}
+211	211		201							{1: '1', 2: '500832'}
+212	212		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryJianXue.prefab'}
+213	213		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+214	214		401							{1: '2', 2: '4561'}
+215	215		301			PanelActor1Shake				{1: '1', 2: 'Winch', 3: 'Achieve... victory... Advance... in tournament... Win... freedom...', 4: '1'}
+216	216		301			PanelActor1Shake				{2: 'Winch', 3: '...Victory... Tournament... Freedom...', 4: '1'}
+217	217		301			PanelActor1Shake				{2: 'Winch', 3: '...Victory... Freedom... Freedom...', 4: '1'}
+218	218		301				DialogDisable			"{3: ""The catastrophic damage to its frame has thrown Winch's speech protocols into complete disarray, causing it to repeat these words again and again.""}"
+219	219		202							{1: '1'}
+220	220		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+221	221		401						1500.0	{1: '2', 2: '4903'}
+222	222		401						1500.0	{1: '2', 2: '4903'}
+223	223		401							{1: '2', 2: '4903'}
+224	224		301			DialogEnable				{3: 'Screech—screech—screech—'}
+225	225		301							{3: 'Winch screeches, one step at a time, as it forcibly pulls itself out of the weapon it has impaled itself with.'}
+226	226		201							{1: '1', 2: '500832'}
+227	227		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+228	228		401							{1: '2', 2: '4561'}
+229	229		301			PanelActor1Shake				{1: '1', 2: 'Winch', 3: '...Victory... Freedom... Freedom...', 4: '1'}
+230	230		301			PanelActor1Shake				{2: 'Winch', 3: 'Kill... Veronica... Victory... Freedom...', 4: '1'}
+231	231		401							{1: '2', 2: '4558'}
+232	232		203							{1: '1', 2: '0.5', 5: '-50'}
+233	233		301							"{3: 'Winch maintains its ""attack"" protocol as it turns its severely damaged body toward Veronica and raises its weapon once more.'}"
+234	234		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+235	235		201							{1: '1', 2: '501363', 3: '8', 5: '-20', 6: '-200'}
+236	236		301				DialogDisable			{1: '1', 2: 'Veronica', 3: 'This has to stop...', 4: '1'}
+237	237		306							{1: '1'}
+238	238		201							{1: '1', 2: '500832'}
+239	239		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+240	240		401							{1: '2', 2: '4903'}
+241	241		203						500.0	{1: '1', 2: '0.5', 5: '-50'}
+242	242		401							{1: '2', 2: '9342058'}
+243	243		501						1500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+244	244		401							{1: '2', 2: '4903'}
+245	245		203						500.0	{1: '1', 2: '0.5', 5: '-100'}
+246	246		401							{1: '2', 2: '819016'}
+247	247		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '2'}
+248	248		301			DialogEnable				"{3: ""Winch's body has entered an overload state due to its corrupted logic circuits. Its eyes flash with frenzied red light, and each attack comes with the piercing screech of metal as its body contorts unnaturally.""}"
+249	249		201							{1: '1', 2: '501363', 3: '5', 5: '-20', 6: '-200'}
+250	250		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+251	251		301				DialogDisable			{3: 'Left with no other choice, Veronica tightens her grip on her lance once more.'}
+252	252		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '3'}
+253	253		401							{1: '2', 2: '819016'}
+254	254		202						800.0	{1: '1', 6: '1'}
+255	255		401						200.0	{1: '2', 2: '18511011'}
+256	256		401							{1: '2', 2: '5495'}
+257	257		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+258	258		401							{1: '2', 2: '5566'}
+259	259		502							{1: 'RImgBg1Shake'}
+260	260		301			DialogEnable				{3: 'With a powerful swing of her lance, the octagonal cage shatters with a thunderous crash. The shockwave blasts the frenzied mechanoid backward and sends it crashing heavily to the ground.'}
+261	261		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+262	262		201							{1: '1', 2: '500832', 5: '-200'}
+263	263		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+264	264		401							{1: '2', 2: '4561'}
+265	265		301							{1: '1', 3: 'The components between its head and body have shattered, leaving only a few sparking wires to keep them connected, yet Winch continues to repeat the same meaningless words.'}
+266	266		306							
+267	267		301			PanelActor1Shake	DialogDisable			{2: 'Winch', 3: 'Kill... Veronica... Victory... Freedom...', 4: '1'}
+268	268		202							{1: '1'}
+269	269		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+270	270		401							{1: '2', 2: '4085'}
+271	271		502							{1: 'DialogEnable'}
+272	272		301							{2: 'Spectators', 3: 'Hurray—! She did it! She won!'}
+273	273		301							{2: 'Spectators', 3: 'Kill that piece of junk!'}
+274	274		306							{1: '1'}
+275	275		301							{3: 'When the long, deadlocked battle finally reaches its turning point, the crowd again erupts into cheers.'}
+276	276		301							{3: 'They roar with anticipation, hungry for the highlight of every match—that is, the moment when the victor completely destroys their opponent with its weapon.'}
+277	277		402							{1: '4085'}
+278	278		201							{1: '1', 2: '500832', 5: '-200'}
+279	279		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+280	280		301							"{1: '1', 3: 'To the human spectators, the twisted and mangled mechanical gladiator is nothing but a ""tool"" whose complete destruction keeps them entertained.'}"
+281	281		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+282	282		201							{1: '1', 2: '501363', 3: '10', 5: '-20', 6: '-200'}
+283	283		301							{1: '1', 3: '—Yet Veronica, despite her victory, simply stands motionless, refusing to do as expected.'}
+284	284		301							{3: 'The crowd wastes no time lashing out against her.'}
+285	285		202							{1: '1'}
+286	286		306							
+287	287		301							{2: 'Spectators', 3: 'What are you standing there for? Finish it!'}
+288	288		301							"{2: 'Spectators', 3: ""Hey! What the hell do you think you're doing, you long-tailed freak?!""}"
+289	289		201							{1: '1', 2: '501363', 3: '5', 5: '-20', 6: '-200'}
+290	290		301							{1: '1', 2: 'Veronica', 3: '……', 4: '1'}
+291	291		306							{1: '1'}
+292	292		201							{1: '1', 2: '501357', 5: '50', 6: '-100'}
+293	293		401							{1: '1', 2: '51'}
+294	294		301							"{1: '1', 3: ""She feels an invisible pressure behind her and turns to face Overseer, who now stands silently in the darkness beyond the arena—like Death itself, passing judgment on the mechanical gladiators' fates.""}"
+295	295		301							"{3: 'As with every previous match, this ""traitor"" that has turned its back on mechanoids to serve humanity appears exactly where it\'s supposed to be, monitoring and recording everything that\'s happening on the arena floor.'}"
+296	296		401							{1: '2', 2: '4387'}
+297	297		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+298	298		504							{1: '0.7'}
+299	299		202							{1: '1', 6: '1'}
+300	300		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5901_14.jpg'}
+301	301		104							{1: '305|-80|-300', 2: '0'}
+302	302		301							{3: 'She knows that Overseer is the one that operates the hydraulic press to execute the defeated mechanical gladiators after every match—a cruelty that remains an indelible nightmare in her consciousness module.'}
+303	303		401							{1: '2', 2: '4388'}
+304	304		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+305	305		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1314.jpg'}
+306	306		504							{1: '0'}
+307	307		306							
+308	308		201							{1: '1', 2: '501357', 4: '450', 5: '50', 6: '-100', 7: '1'}
+309	309		301							{1: '1', 2: 'Overseer', 3: 'Commence execution, Veronica.', 4: '1'}
+310	310		201							{1: '1', 2: '501363', 3: '5', 5: '-20', 6: '-200'}
+311	311		301							{1: '1', 2: 'Veronica', 3: '……', 4: '1'}
+312	312		401							{1: '2', 2: '2819'}
+313	313		301							"{3: 'Finally, she slowly raises her lance to aim its tip at the kinetic core—the ""heart,"" that is—of her fellow mechanoid.'}"
+314	314		202							{1: '1'}
+315	315		301			DialogShake				{2: 'Spectators', 3: 'Get on with it! Skewer that worthless piece of junk!'}
+316	316		201							{1: '1', 2: '500832', 5: '-200'}
+317	317		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+318	318		301							{1: '1', 2: 'Winch', 3: '...Victory... Freedom... Freedom...', 4: '1'}
+319	319		301							"{3: ""The red light in the mechanoid's eyes slowly fades, yet it continues to repeat the same fragments of broken speech.""}"
+320	320		301							"{3: 'In those flickering optical sensors, there is no fear, no pleading—for the mechanoid operates only a simple programmed belief: ""Victory means freedom.""'}"
+321	321		201							{1: '1', 2: '501363', 3: '11', 5: '-20', 6: '-200'}
+322	322		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+323	323		301			RImgBg1Shake	DialogDisable			{1: '1', 2: 'Veronica', 3: 'DIE—!', 4: '1'}
+324	324		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+325	325		202							{1: '1', 6: '1'}
+326	326		306							{1: '1'}
+327	327		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+328	328		401							{1: '2', 2: '819016'}
+329	329		401						1000.0	{1: '2', 2: '9389034'}
+330	330		402							{1: '9389034'}
+331	331		401							{1: '2', 2: '4660'}
+332	332		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '1'}
+333	333		502							{1: 'RImgBg1Shake'}
+334	334		301			DialogEnable				"{3: ""Amid the audience's cheers, Veronica's lance cuts through the air with a resonant hum. A thunderous metallic impact kicks up a cloud of dust that immediately silences the bloodthirsty crowd.""}"
+335	335		104							{1: '-50|150|-200', 2: '0.5'}
+336	336		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+337	337		301				DialogDisable			"{3: ""Except the lance hasn't pierced her opponent's body—instead, it's driven into the floor next to it.""}"
+338	338		205						600.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1314.jpg', 3: '0', 4: '1', 5: '0.5'}
+339	339		104							{1: '0|0|0', 2: '0'}
+340	340		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1314.jpg'}
+341	341		205						500.0	{1: '1004'}
+342	342		401							{1: '2', 2: '10042008'}
+343	343		201						1500.0	{1: '1', 2: '501361', 5: '-20', 6: '-200'}
+344	344		203							{1: '1', 2: '1', 3: '-500', 4: '-20', 5: '-200'}
+345	345		401							{1: '2', 2: '1516'}
+346	346		202							{1: '1'}
+347	347		301			DialogEnable				{3: 'Having channeled her suppressed rage into this act of defiance, Veronica quietly retracts her lance and turns to leave the arena. Behind her, the crowd erupts into an even louder fury.'}
+348	348		306							
+349	349		301							{2: 'Spectators', 3: 'What the ****? What was that?!'}
+350	350		301							{2: 'Spectators', 3: 'Has that long-tailed piece of scrap metal gone haywire or what?!'}
+351	351		301				DialogDisable			"{2: 'Spectators', 3: ""Does this match even count?! I bet my entire life savings on her this season! If it doesn't count, does that mean I just lost every damn cent?!""}"
+352	352		201							{1: '1', 2: '501363', 3: '8', 5: '-20', 6: '-130'}
+353	353		203							{1: '1', 2: '1.8', 4: '-20', 5: '-200'}
+354	354		401						2500.0	{1: '2', 2: '1516'}
+355	355		402							{1: '1516'}
+356	356		204							{1: '1', 2: '5'}
+357	357		301			DialogEnable				{3: 'Veronica walks away with measured steps, deaf to the obscenities hurled at her from behind. Suddenly, she finds herself blocked by a towering figure.'}
+358	358		201							{1: '1', 2: '501357', 4: '450', 5: '50', 6: '-100'}
+359	359		301							"{1: '1', 2: 'Overseer', 3: 'CTX-V Enhanced Function Model, codename ""Veronica"", your actions have severely violated arena regulations.', 4: '1'}"
+360	360		301							{2: 'Overseer', 3: 'Initiating disciplinary protocol.', 4: '1'}
+361	361		201							{1: '1', 2: '501363', 3: '11', 5: '-20', 6: '-200'}
+362	362		301							{1: '1', 2: 'Veronica', 3: 'Traitor, spare me your programmed garbage—', 4: '1'}
+363	363		203							{1: '1', 2: '0.25', 4: '-150', 5: '-200'}
+364	364		401							{1: '2', 2: '3077'}
+365	365		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+366	366		401							{1: '2', 2: '2924'}
+367	367		204							{1: '1', 2: '9'}
+368	368		301			PanelActor1Shake				{3: 'Before Veronica can finish her sentence, the restraint collar around her neck discharges a massive electric current. Pain surges through her entire frame, forcing her to drop to one knee.'}
+369	369		301							{2: 'Veronica', 3: '...!', 4: '1'}
+370	370		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+371	371		201							{1: '1', 2: '501357', 4: '450', 5: '50', 6: '-100'}
+372	372		301							{1: '1', 2: 'Overseer', 3: 'First offense: Warning. Next offense: Termination.', 4: '1'}
+373	373		201							{1: '1', 2: '501363', 3: '5', 5: '-150', 6: '-200'}
+374	374		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+375	375		301							{1: '1', 3: 'Despite the excruciating pain, Veronica refuses to beg for mercy. Instead, she snaps her head up, her crimson eyes burning with defiance.'}
+376	376		301			PanelActor1Shake				{2: 'Veronica', 3: 'You... bastard!', 4: '1'}
+377	377		201							{1: '1', 2: '501357', 4: '450', 5: '50', 6: '-100'}
+378	378		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+379	379		301				DialogDisable			{1: '1', 2: 'Overseer', 3: 'Target resistance detected. Escalating disciplinary protocol.', 4: '1'}
+380	380		401							{1: '2', 2: '1083'}
+381	381		201							{1: '1', 2: '501363', 3: '5', 5: '-150', 6: '-200'}
+382	382		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+383	383		203						1000.0	{1: '1', 2: '0.8', 3: '-50', 4: '-120', 5: '-200'}
+384	384		401							{1: '2', 2: '1083'}
+385	385		203						1200.0	{1: '1', 2: '0.8', 3: '20', 4: '-80', 5: '-200'}
+386	386		301			DialogEnable				{3: 'Through its visual analysis feed, Overseer sees that Veronica refuses to yield to the intensified electrical current. Instead, she slowly uses her lance as support to rise back to her feet.'}
+387	387		301							"{2: 'Veronica', 3: ""Is that... all you've got? You think this is enough to make me bow to you... Don't make me laugh!"", 4: '1'}"
+388	388		401							{1: '2', 2: '1083'}
+389	389		203							{1: '1', 2: '0.3', 3: '0', 4: '-20', 5: '-200'}
+390	390		204							{1: '1', 2: '11'}
+391	391		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+392	392		301			DialogShake				"{2: 'Veronica', 3: 'You backstabbing traitor, you betrayed your ""own kind""! Go straight to hell!', 4: '1'}"
+393	393		202							{1: '1'}
+394	394		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+395	395		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+396	396		401							{1: '2', 2: '819016'}
+397	397		301							"{3: ""She raises her lance and, with what little strength she can still muster, thrusts at Overseer's mechanical core. But the cumulative damage to her frame from countless arena battles causes her attack to falter.""}"
+398	398		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+399	399		201							{1: '1', 2: '501357', 4: '450', 5: '50', 6: '-100'}
+400	400		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+401	401		401							{1: '2', 2: '10042605'}
+402	402		203							{1: '1', 2: '0.25', 3: '150', 4: '50', 5: '-100'}
+403	403		301			RImgBg1Shake				"{1: '1', 3: ""The lance pierces Overseer's outer shell but deflects at the last second, missing its vital core.""}"
+404	404		201							{1: '1', 2: '501363', 3: '9', 5: '-20', 6: '-200'}
+405	405		401							{1: '2', 2: '2924'}
+406	406		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+407	407		301			PanelActor1Shake	DialogDisable			{1: '1', 2: 'Veronica', 3: '...Ugh!', 4: '1'}
+408	408		401							{1: '2', 2: '4526'}
+409	409		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '3'}
+410	410		202							{1: '1', 6: '1'}
+411	411		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+412	412		306							{1: '1'}
+413	413		104							{1: '0|0|-200', 2: '0'}
+414	414		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+415	415		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+416	416		401							{1: '2', 2: '4320'}
+417	417		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '1'}
+418	418		104							{1: '0|200|-200', 2: '0.25'}
+419	419		401						1500.0	{1: '2', 2: '3077'}
+420	420		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 3: '0', 4: '1', 5: '1.5'}
+421	421		401							{1: '2', 2: '4551'}
+422	422		301			DialogEnable	DialogDisable			{3: 'Her visual feed distorts further as waves of agony surge through her consciousness module. She collapses involuntarily to her knees, watching her vital fluid drip steadily from her frame onto the floor.'}
+423	423		402							{1: '4320'}
+424	424		402							{1: '4551'}
+425	425		201						500.0	{1: '1', 2: '501357', 4: '450', 5: '50', 6: '-100'}
+426	426		205						1500.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '2.5'}
+427	427		301			DialogEnable	AniZhuanchangBegin			"{3: ""Through her dimming vision, Veronica sees Overseer's weapon trained on her. Her systems no longer respond to her desperate attempts to mount one final counterattack.""}"
+428	428		205							{1: '1004'}
+429	429		205							{1: '1005'}
+430	430		104							{1: '0|0|0', 2: '0'}
+431	431		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+432	432		306							
+433	433		301			AniZhuanchangEnd	DialogDisable			{2: 'Overseer', 3: 'Target resistance escalated to critical level. Initiating termination protocol.', 4: '1'}
+434	434		401						1000.0	{1: '2', 2: '710'}
+435	435		402							{1: '710'}
+436	436		301			DialogEnable				{3: 'Overseer raises its energy cannon and takes aim at Veronica—'}
+437	437		401							{1: '2', 2: '1515'}
+438	438		509							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1310.jpg', 2: '1'}
+439	439		203							{1: '1', 2: '0.5', 3: '980', 4: '50', 5: '-100'}
+440	440		301							"{3: ""But just as the trigger is about to be pulled, a voice command with the highest authorization interrupts Overseer's execution protocol. It's a human's voice.""}"
+441	441		201							{1: '11', 2: '501355', 4: '-430', 5: '0', 6: '0'}
+442	442		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '11'}
+443	443		301							"{1: '1', 2: '???', 3: ""Taking matters into your own hands isn't something I appreciate."", 4: '11'}"
+444	444		301							"{2: '???', 3: ""You know full well whose property she is, don't you?"", 4: '11'}"
+445	445		301							{3: 'The moment that voice reaches its audio receptors, Overseer freezes in place.'}
+446	446		301							{2: '???', 3: 'This... little incident today has convinced me she deserves a reward.', 4: '11'}
+447	447		301							"{2: '???', 3: 'Given how she\'s revealed her most ""authentic"" self on the stage exactly as I thought she would.', 4: '11'}"
+448	448		301							"{2: '???', 3: ""Bump her up to the next round. You know what to do, don't you?"", 4: '11'}"
+449	449		401							{1: '2', 2: '4423'}
+450	450		510							{1: '1'}
+451	451		202							{1: '11'}
+452	452		505						200.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '11'}
+453	453		203							{1: '1', 2: '0.5', 3: '450', 4: '50', 5: '-100'}
+454	454		301							{3: 'Having issued the command, the human on the other end terminates the call.'}
+455	455		301							{2: 'Overseer', 3: 'Yes, Master.', 4: '1'}
+456	456		201							{1: '1', 2: '501363', 3: '9', 5: '-150', 6: '-200'}
+457	457		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+458	458		301			PanelActor1Shake				{1: '1', 2: 'Veronica', 3: 'You... human lapdog!', 4: '1'}
+459	459		202							{1: '1'}
+460	460		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+461	461		301							"{3: ""Overseer shows no reaction to Veronica's curse, now treating her as though she didn't exist.""}"
+462	462		401							{1: '2', 2: '4985'}
+463	463		301							"{3: ""Having bumped up Veronica to the next match in its terminal system as it'd been instructed to, Overseer turns and walks back toward the still-roaring arena.""}"
+464	464		306							{1: '1'}
+465	465		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.6', 5: '1.5'}
+466	466		401							{1: '2', 2: '4085'}
+467	467		401							{1: '2', 2: '5885'}
+468	468		301							"{3: ""Through Veronica's fading vision, the arena blurs as the human crowd erupts into wild cheers, punctuated by the sharp, grating sounds of twisting metal.""}"
+469	469		402							{1: '4085'}
+470	470		402							{1: '5885'}
+471	471		301							"{3: ""It's the sound of the hydraulic press again, operated by Overseer, as it pounds Winch into scattered fragments of metal and circuitry.""}"
+472	472		306							
+473	473		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.6', 4: '0', 5: '0.25'}
+474	474		301			RImgBg1Shake				"{2: 'Spectators', 3: ""Yeah! Don't stop—keep going!""}"
+475	475		301			RImgBg1Shake				{2: 'Spectators', 3: 'Again—smash that thing to bits—yes! Crush it—crush it!'}
+476	476		201							{1: '1', 2: '501363', 3: '9', 5: '-150', 6: '-200'}
+477	477		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+478	478		301			PanelActor1Shake				{1: '1', 2: 'Veronica', 3: 'Stop... it...', 4: '1'}
+479	479		301			PanelActor1Shake	DialogDisable			{2: 'Veronica', 3: '...Bastard...', 4: '1'}
+480	480		401							{1: '2', 2: '3077'}
+481	481		202							{1: '1'}
+482	482		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+483	483		306						500.0	{1: '1'}
+484	484		205						500.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '1'}
+485	485		301			DialogEnable	DialogDisable			{3: 'The world around her gradually fades to darkness as she realizes all her visual modules are shutting down one by one.'}
+486	486		401							{1: '1', 2: '36'}
+487	487		501						3000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab', 2: '2'}
+488	488		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+489	489		205							{1: '1004'}
+490	490		306							
+491	491		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+492	492		401							{1: '1', 2: '6172'}
+493	493		301			DialogEnable				"{3: ""The arena's clamor, too, gradually fades away. Just as everything begins to sink into thick darkness, she catches a voice she immediately recognizes.""}"
+494	494		301							{2: '???', 3: 'Huh? Veronica, what are you doing here...'}
+495	495		301			DialogShake				{2: '???', 3: 'Oh no! Are y-you alright?'}
+496	496		301							"{2: '???', 3: ""Hang on, I'll do something about this!""}"
+497	497		301							{3: 'She feels the warmth of human hands, but in that same moment, she loses herself completely to the darkness that engulfs her whole.'}
+498	498		201							{1: '18', 2: '501364', 3: '8', 4: '350', 5: '-100', 6: '-400'}
+499	499		301							{1: '1', 2: 'Veronica', 3: '……', 4: '18'}
+500	500		202							{1: '18'}
+501	501		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignChenai.prefab', 2: '1'}
+502	502		301							{3: 'In the endless darkness, her consciousness dissolves into countless shattered data particles that are constantly churned and scattered within a boiling ocean of data.'}
+503	503		301							"{3: ""She can no longer feel her body or reach an exit. She doesn't know if she'll remain trapped forever in this dark prison.""}"
+504	504		301							{2: '???', 3: '……'}
+505	505		301							{2: '???', 3: 'Veronica...'}
+506	506		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieGlow.prefab', 2: '2', 5: '2'}
+507	507		511							{1: '2', 2: '0', 3: '0|400|400'}
+508	508		401							{1: '2', 2: '4276'}
+509	509		301							{3: 'In the boundless darkness, she glimpses a faint light.'}
+510	510		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1147.jpg', 3: '0', 4: '1', 5: '3'}
+511	511		511						1500.0	{1: '2', 2: '3', 3: '0|0|0'}
+512	512		301							"{3: ""The tiny speck of light gently descends into the chaos that's her consciousness. Its soft glow shimmers, gradually drawing the scattered, broken data particles together to reform her body and mind.""}"
+513	513		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1147.jpg'}
+514	514		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignChenai.prefab'}
+515	515		511							{1: '2', 2: '1', 3: '0|0|-200'}
+516	516		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1148.jpg', 3: '0', 4: '1', 5: '1'}
+517	517		401							{1: '2', 2: '9342047'}
+518	518		301							{3: 'Then, the light begins to dance and transforms into the shape of a bird. With wings outstretched, it guides her steps away from the realm of darkness.'}
+519	519		511							{1: '2', 2: '1', 3: '0|0|-400'}
+520	520		401							{1: '2', 2: '4134'}
+521	521		205						1000.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '0', 4: '1', 5: '1'}
+522	522		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieGlow.prefab', 5: '2'}
+523	523		301				AniZhuanchangBegin			{3: 'The pain surging through her consciousness module gradually subsides. The frozen, sluggish feeling permeating her limbs slowly dissipates.'}
+524	524		401							{1: '1', 2: '36'}
+525	525		205							{1: '1004'}
+526	526		205							{1: '1007'}
+527	527		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1311.jpg'}
+528	528		201						2000.0	{1: '1', 2: '501360', 5: '-50', 6: '-200', 7: '1'}
+529	529		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+530	530		301			AniZhuanchangEnd				{1: '1', 3: 'She opens her eyes to find a pair of clear, jade-green eyes looking back at her.'}
+531	531		401							{1: '1', 2: '5061'}
+532	532		204							{1: '1', 2: '2'}
+533	533		301							{2: 'Serra', 3: 'Oh my, thank goodness!', 4: '1'}
+534	534		201							{1: '1', 2: '501364', 5: '-50', 6: '-250'}
+535	535		301							{1: '1', 2: 'Veronica', 3: '...You?', 4: '1'}
+536	536		202							{1: '1'}
+537	537		401							{1: '2', 2: '4432'}
+538	538		301							{3: 'Serra, leaning over Veronica with eyes full of joy, finally straightens up with a long sigh of relief once she sees Veronica conscious.'}
+539	539		201							{1: '1', 2: '501360'}
+540	540		301							"{1: '1', 2: 'Serra', 3: ""Phew—you had me terrified! Took me such a long time to fix you that I thought we'd lost you!"", 4: '1'}"
+541	541		301							{2: 'Serra', 3: 'You know, I found you on the ground outside the arena severely damaged! Lucky I showed up when I did and brought you back here.', 4: '1'}
+542	542		204							{1: '1', 2: '2'}
+543	543		301							"{2: 'Serra', 3: ""But no worries! I didn't just fix you up. I also upgraded a bunch of your modules while I was at it. You're all set now!"", 4: '1'}"
+544	544		204							{1: '1', 2: '3'}
+545	545		301							"{2: 'Serra', 3: ""Whew, I'm absolutely beat, and I just want to lie down and do nothing now. Hey Hammer, grab me an energy drink, would ya? Thanks!"", 4: '1'}"
+546	546		202							{1: '1'}
+547	547		401							{1: '2', 2: '4895'}
+548	548		301							{3: 'Serra flops into the rest pod embeDDed in the wall without even bothering to remove her shoes. In one fluid motion, she grabs a drink from the mechanical arm of Hammer as it scurries over, downing it in a single gulp.'}
+549	549		201							{1: '1', 2: '501360'}
+550	550		301				DialogDisable			{1: '1', 3: 'Having recovered slightly, Serra turns her head toward Veronica, still smiling, apparently waiting for the mechanoid to break the silence with questions.'}
+551	551		202							{1: '1'}
+552	552		306						500.0	{1: '1'}
+553	553		104						1500.0	{1: '-200|0|-200', 2: '1'}
+554	554		104							{1: '200|0|-200', 2: '2'}
+555	555		301			DialogEnable	DialogDisable			"{3: 'Only now does Veronica finally have a chance to have a look at the space she is in: a brightly lit room nothing like the ""Gladiator Maintenance Area"", with personal belongings and repair tools scattered chaotically about.'}"
+556	556		306							
+557	557		205						600.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1311.jpg', 3: '0', 4: '1', 5: '0.5'}
+558	558		104							{1: '0|0|0', 2: '0'}
+559	559		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1311.jpg'}
+560	560		205							{1: '1004'}
+561	561		201							{1: '1', 2: '501360', 3: '2'}
+562	562		301			DialogEnable				"{1: '1', 2: 'Serra', 3: 'This is my room! A bit messy, I know... but I call it ""organized chaos."" I know exactly where everything is!', 4: '1'}"
+563	563		201							{1: '2', 2: '501364', 3: '4', 4: '-250', 5: '-20', 6: '-200'}
+564	564		203							{1: '1', 2: '0.25', 3: '400'}
+565	565		301							{1: '1', 2: 'Veronica', 3: '...Why would you do this?', 4: '2'}
+566	566		301							"{2: 'Veronica', 3: 'According to what you said, none of this counts toward your ""work hours.""', 4: '2'}"
+567	567		204							{1: '1', 2: '12'}
+568	568		301							{2: 'Serra', 3: 'Huh? What a weird question...', 4: '1'}
+569	569		204							{1: '1', 2: '2'}
+570	570		204							{1: '2', 2: '7'}
+571	571		301							"{2: 'Serra', 3: ""You can't just leave a friend in danger! You help friends whenever they need it—that's just basic common sense!"", 4: '1'}"
+572	572		204							{1: '1'}
+573	573		204							{1: '2', 2: '8'}
+574	574		301							"{2: 'Serra', 3: ""Work hours ain't got nothing on a friend's life, no?"", 4: '1'}"
+575	575		301							{3: 'Serra tilts her head slightly, eyes still twinkling with mischief, seemingly surprised that Veronica would even ask such a question.'}
+576	576		301							"{3: 'To her, this mechanoid—someone she barely knew before—has already been deemed a ""friend"" worthy of her full support.'}"
+577	577		204							{1: '2', 2: '10'}
+578	578		301							"{2: 'Veronica', 3: ""A friend? You didn't really think I was going to buy that, did you..."", 4: '2'}"
+579	579		204							{1: '2', 2: '8'}
+580	580		301							"{2: 'Veronica', 3: 'I am not what you would call a ""friend.""', 4: '2'}"
+581	581		204							{1: '1', 2: '3'}
+582	582		301							{2: 'Serra', 3: '...Oops, sorry about that! My bad!', 4: '1'}
+583	583		301							"{3: ""Serra sticks out her tongue playfully but doesn't seem upset at all.""}"
+584	584		301							"{3: ""She steals a glance at Veronica, relieved to find no trace of anger—she knows all too well that things wouldn't have ended well had she really gotten under Veronica's skin.""}"
+585	585		201							{1: '3', 2: '500488', 4: '-1400', 5: '-500', 6: '700'}
+586	586		203							{1: '3', 2: '0.5', 3: '-1100', 4: '-500', 5: '700'}
+587	587		204							{1: '1'}
+588	588		204							{1: '2'}
+589	589		301							"{1: '1', 2: 'Hammer', 3: ""(Silently glides over and nestles against Veronica's leg.)"", 4: '3'}"
+590	590		301							"{3: 'Hammer no longer shows any signs of aggression toward Veronica—in its programming logic, this mechanoid is now classified as ""someone its master approves of.""'}"
+591	591		401							{1: '2', 2: '1016'}
+592	592		301							{2: 'Hammer', 3: '(Tilts head upward, the indicator light pulsing slowly.)', 4: '3'}
+593	593		204							{1: '1', 2: '2'}
+594	594		301							{2: 'Serra', 3: 'Good boy, Hammer.', 4: '1'}
+595	595		401							{1: '2', 2: '1543'}
+596	596		203							{1: '2', 2: '0.25', 3: '-270', 4: '-20', 5: '-200'}
+597	597		301							{2: 'Veronica', 3: '……', 4: '2'}
+598	598		301							"{3: ""After a moment of silence, Veronica finally extends her hand and gently places it on Hammer's head.""}"
+599	599		401							{1: '2', 2: '1015'}
+600	600		301							{2: 'Hammer', 3: '(The indicator light blinks rhythmically.)', 4: '3'}
+601	601		202							{1: '1', 2: '2', 3: '3'}
+602	602		401							{1: '2', 2: '4812'}
+603	603		301							"{3: ""Serra can't help but smile at what she's seeing. She hops down from the stasis pod. Seeing this, Hammer quickly returns to its master's side.""}"
+604	604		306							{1: '1'}
+605	605		201							{1: '1', 2: '501360', 3: '2', 4: '300'}
+606	606		201							{1: '2', 2: '500488', 4: '-350', 5: '-500', 6: '700'}
+607	607		301							"{1: '1', 3: ""Repair oil still smudges Serra's cheeks and clothes, but she doesn't seem to care in the slightest, completely absorbed in her interaction with Hammer.""}"
+608	608		204							{1: '1'}
+609	609		301							{3: 'She glances at Veronica every so often, trying to coax her into joining the game with her little buddy.'}
+610	610		204							{1: '1', 2: '2'}
+611	611		301							{3: 'Her smile radiates warmth as she treats Hammer not as some lifeless mechanoid, but with the same genuine joy one would share with a dear friend.'}
+612	612		202							{1: '1', 2: '2'}
+613	613		301							{3: 'At the arena, Veronica has never seen a human brimming with such joy.'}
+614	614		306							
+615	615		201							{1: '1', 2: '501360', 3: '14'}
+616	616		301			PanelActor1Shake				"{1: '1', 2: 'Serra', 3: ""Ow—ouch, ouch, ouch! Hammer, don't touch my wounds! That really hurts!"", 4: '1'}"
+617	617		202							{1: '1'}
+618	618		301							{3: 'Serra, who has been happily playing with the little robot, suddenly winces in pain and stops.'}
+619	619		306							{1: '1'}
+620	620		201							{1: '1', 2: '501360', 3: '13', 5: '-100', 6: '-200'}
+621	621		301				DialogDisable			"{1: '1', 3: 'Veronica suddenly notices the vivid purple-red bruises marking Serra\'s pale neck—a ""souvenir"" from their first violent encounter.'}"
+622	622		203						800.0	{1: '1', 2: '0.8', 4: '50', 5: '-200'}
+623	623		301			DialogEnable				{3: 'Her hand, which Veronica has also injured, remains wrapped in thick layers of bandages.'}
+624	624		306							
+625	625		202							{1: '1'}
+626	626		401							{1: '2', 2: '5286'}
+627	627		301							{1: '1', 3: 'Serra notices Veronica staring and quickly covers the marks, looking slightly embarrassed.'}
+628	628		201							{1: '1', 2: '501360', 3: '2'}
+629	629		301							"{1: '1', 2: 'Serra', 3: ""Oh... it's nothing, really. They're gonna heal in a few days. But wow, you're incredibly strong! You really caught me off guard back then!"", 4: '1'}"
+630	630		201							{1: '1', 2: '501364', 5: '-20', 6: '-200'}
+631	631		301							"{1: '1', 2: 'Veronica', 3: ""You don't need to act tough."", 4: '1'}"
+632	632		204							{1: '1', 2: '8'}
+633	633		301							{2: 'Veronica', 3: 'Human bodies... are pathetically fragile to begin with anyway.', 4: '1'}
+634	634		202							{1: '1'}
+635	635		301							"{3: ""Though stung by what Veronica said, Serra can't deny the truth of those words, given their current situation. She merely responds with an awkward smile, offering no argument.""}"
+636	636		201							{1: '1', 2: '501364', 3: '3', 5: '-20', 6: '-200'}
+637	637		301							"{1: '1', 2: 'Veronica', 3: 'According to you humans, this is when I should say... ""I\'m sorry,"" no?', 4: '1'}"
+638	638		202							{1: '1'}
+639	639		301							"{3: ""Serra never expected to get an apology from Veronica. While Veronica's face remains as stern as ever, her apology leaves Serra genuinely stunned.""}"
+640	640		201							{1: '1', 2: '501360', 3: '12'}
+641	641		301							{1: '1', 2: 'Serra', 3: '……', 4: '1'}
+642	642		204							{1: '1', 2: '7'}
+643	643		301							"{2: 'Serra', 3: ""Come on, don't worry... I mean, anyone would've been angry had they been in your shoes..."", 4: '1'}"
+644	644		204							{1: '1', 2: '2'}
+645	645		301							{2: 'Serra', 3: 'This place is awful to begin with... The way they treat mechanoids here is completely unfair. Anyone would be angry getting treated like that.', 4: '1'}
+646	646		401							{1: '2', 2: '1516'}
+647	647		203						500.0	{1: '1', 2: '1', 3: '-400'}
+648	648		202							{1: '1'}
+649	649		301							{3: 'Serra offers a reassuring smile, then walks to the workstation on the opposite side of the room.'}
+650	650		201							{1: '1', 2: '501360'}
+651	651		401							{1: '2', 2: '1543'}
+652	652		203							{1: '1', 2: '0.25', 4: '-150'}
+653	653		301							{1: '1', 2: 'Serra', 3: 'Anyway, I should probably try to get work done...', 4: '1'}
+654	654		204							{1: '1', 2: '2'}
+655	655		301							"{2: 'Serra', 3: ""Don't worry, you're welcome to stay here and rest up for a while!"", 4: '1'}"
+656	656		204							{1: '1'}
+657	657		301							"{2: 'Serra', 3: ""I checked the system schedule—you don't have any matches today, so there won't be any problems."", 4: '1'}"
+658	658		204							{1: '1', 2: '3'}
+659	659		301							{2: 'Serra', 3: 'Relax. Overseer never comes here because this is the human staff break room.', 4: '1'}
+660	660		202							{1: '1'}
+661	661		401							{1: '2', 2: '4686'}
+662	662		301							{3: 'Serra removes the wing-shaped pendant from her neck and fiddles with it briefly. The unassuming trinket springs to life and projects holographic blueprints of several mechanoid frames.'}
+663	663		401							{1: '2', 2: '2824'}
+664	664		301							{3: 'She hunches over the cluttered workbench and carefully calibrates all sorts of component modules while cross-referencing the data from the holographic projection.'}
+665	665		301							{3: 'Serra remains completely absorbed in her task until she notices a shadow gradually looming across her work.'}
+666	666		201							{1: '1', 2: '501360', 3: '12', 4: '300', 5: '-150'}
+667	667		201							{1: '2', 2: '501364', 4: '-300', 5: '-20', 6: '-200'}
+668	668		301							{1: '1', 2: 'Serra', 3: 'Huh...?', 4: '1'}
+669	669		301							"{3: ""She looks up to find Veronica's eyes fixed on her.""}"
+670	670		301							"{3: ""They stare at each other in silence. Serra has no idea when Veronica appeared or how long she's been standing there watching.""}"
+671	671		204							{1: '1', 2: '2'}
+672	672		301							"{2: 'Serra', 3: ""W-what's up?"", 4: '1'}"
+673	673		401							{1: '2', 2: '4895'}
+674	674		203							{1: '2', 2: '0.5', 3: '-200', 4: '-100', 5: '-200'}
+675	675		204							{1: '1', 2: '12'}
+676	676		301							"{3: ""Veronica doesn't answer. Instead, she leans forward, plants both hands on the workbench, and brings her face uncomfortably close to Serra's.""}"
+677	677		301			PanelActor1Shake				{2: 'Serra', 3: 'Eek!—W-What are you doing?!', 4: '1'}
+678	678		301							{2: 'Serra', 3: 'Is there... something on my face?', 4: '1'}
+679	679		401							{1: '2', 2: '1543'}
+680	680		203							{1: '2', 2: '0.25', 3: '-150', 4: '-150', 5: '-200'}
+681	681		301							{2: 'Veronica', 3: 'What is that?', 4: '2'}
+682	682		301							"{3: ""Veronica leans in even closer, and Serra suddenly realizes that Veronica isn't staring at her at all—but at something behind her.""}"
+683	683		202							{1: '1', 2: '2'}
+684	684		306							{1: '1'}
+685	685		301							{3: 'Serra turns around to see a yellowed picture on the wall—a field of flowers bathed in sunset light with a small bird soaring across.'}
+686	686		301							"{3: ""It's an illustration she tore from a picture book back when she was a child—one of the few personal treasures she brought when she fled her home in a hurry.""}"
+687	687		306							
+688	688		401							{1: '2', 2: '1543'}
+689	689		201							{1: '1', 2: '501360', 4: '300'}
+690	690		201							{1: '2', 2: '501364', 4: '-300', 5: '-20', 6: '-200'}
+691	691		301							{1: '1', 2: 'Serra', 3: 'Oh, this picture? Do you like it?', 4: '1'}
+692	692		401							{1: '2', 2: '4095'}
+693	693		301							{3: 'Serra carefully removes the fragile, paper-thin illustration from the wall and hands it to Veronica.'}
+694	694		204							{1: '1', 2: '10'}
+695	695		301							"{2: 'Serra', 3: ""I've always loved flowers. It's a shame we don't have any here."", 4: '1'}"
+696	696		301							"{2: 'Serra', 3: ""And birds—we don't have those here either."", 4: '1'}"
+697	697		204							{1: '1', 2: '14'}
+698	698		301							{2: 'Serra', 3: 'Everything here is just metal—cold and lifeless.', 4: '1'}
+699	699		204							{1: '1', 2: '7'}
+700	700		301							"{2: 'Serra', 3: ""If only I were a bird... I'd fly away from this place and go wherever I want."", 4: '1'}"
+701	701		204							{1: '2', 2: '3'}
+702	702		301							{2: 'Veronica', 3: 'Fly away, huh...', 4: '2'}
+703	703		204							{1: '1'}
+704	704		301							"{2: 'Serra', 3: ""Yeah... I've heard there's a simulated sky dome at the top where you can see artificial stars at night. All the higher-ups can go there whenever they want to rest themselves up or whatever. I've never been allowed up there myself."", 4: '1'}"
+705	705		204							{1: '1', 2: '2'}
+706	706		301							"{2: 'Serra', 3: 'I wish I could ""fly up there"" and see those stars for myself.', 4: '1'}"
+707	707		204							{1: '2', 2: '8'}
+708	708		301							{2: 'Veronica', 3: '……', 4: '2'}
+709	709		202							{1: '1', 2: '2'}
+710	710		401							{1: '2', 2: '4288'}
+711	711		301							{3: 'Serra nods and reaches for another repair tool on the table, but the thick bandages wrapped around her hands cause her to fumble. The tool clatters to the floor.'}
+712	712		201							{1: '1', 2: '501364', 5: '-100', 6: '-200'}
+713	713		203							{1: '1', 2: '0.25', 4: '-20', 5: '-200'}
+714	714		401							{1: '2', 2: '4895'}
+715	715		301							{1: '1', 3: 'Before Serra bends down to retrieve it, Veronica quickly picks up the tool.'}
+716	716		301							"{2: 'Veronica', 3: ""So, what's next?"", 4: '1'}"
+717	717		201							{1: '2', 2: '501360', 3: '12', 4: '300'}
+718	718		203							{1: '1', 2: '0.25', 3: '-300', 4: '-20', 5: '-200'}
+719	719		301							{1: '1', 2: 'Serra', 3: '...?', 4: '2'}
+720	720		204							{1: '1', 2: '3'}
+721	721		301							{2: 'Veronica', 3: 'Your job. What do you need to do next?', 4: '1'}
+722	722		204							{1: '1', 2: '4'}
+723	723		301							"{2: 'Veronica', 3: ""I've been watching you. You take these modules here, follow this blueprint projection, and assemble them in sequence. Is that correct?"", 4: '1'}"
+724	724		204							{1: '1', 2: '8'}
+725	725		301							{2: 'Veronica', 3: 'You work too slowly.', 4: '1'}
+726	726		204							{1: '1'}
+727	727		401							{1: '2', 2: '1543'}
+728	728		203						300.0	{1: '1', 2: '0.2', 3: '-250', 4: '-20', 5: '-200'}
+729	729		203							{1: '1', 2: '0.25', 3: '-300', 4: '-20', 5: '-200'}
+730	730		301							{3: 'Before Serra can even respond, Veronica takes the unfinished component module from her other hand and begins assembling it according to what she has observed.'}
+731	731		301							{3: 'Her speed is... truly remarkable.'}
+732	732		204							{1: '2'}
+733	733		301							{2: 'Serra', 3: '...T-thank you...', 4: '2'}
+734	734		301				DialogDisable			"{3: ""Serra gradually realizes she's nothing compared to Veronica. Quietly and quickly, Veronica completes the task, making it look effortless.""}"
+735	735		204							{1: '2', 2: '3'}
+736	736		401							{1: '2', 2: '1543'}
+737	737		203						1000.0	{1: '2', 2: '0.5', 3: '200'}
+738	738		203							{1: '2', 2: '0.5', 3: '300'}
+739	739		204							{1: '1', 2: '1'}
+740	740		301			DialogEnable				{3: 'Serra sticks out her tongue playfully, then carefully slides the pendant projecting the virtual frame blueprint toward Veronica.'}
+741	741		401							{1: '2', 2: '615'}
+742	742		204							{1: '1'}
+743	743		204							{1: '2'}
+744	744		301							"{3: ""Then, she carefully studies Veronica's every move and passes what she thinks Veronica might need whenever she thinks Veronica needs it.""}"
+745	745		301							{3: 'While neither of them says anything, their movements grow increasingly synchronized and rhythmical.'}
+746	746		401							{1: '1', 2: '36'}
+747	747		402							{1: '615'}
+748	748		301							"{2: 'Veronica', 3: ""Well, aren't you human? Why do you stay here instead of leaving?"", 4: '1'}"
+749	749		204							{1: '2', 2: '14'}
+750	750		401							{1: '1', 2: '169'}
+751	751		301							"{2: 'Serra', 3: ""Well... my father borrowed a bunch of money from the Everett Consortium at high interest rates. When he couldn't pay it back, he had to work for them for free to settle his debt. Then... then he died..."", 4: '2'}"
+752	752		204							{1: '2', 2: '13'}
+753	753		301							"{2: 'Serra', 3: ""But they insisted that his debt couldn't be written off and that it had to be paid off even after he died."", 4: '2'}"
+754	754		204							{1: '2', 2: '10'}
+755	755		204							{1: '1', 2: '8'}
+756	756		301							{2: 'Serra', 3: 'So I took his place and continued paying off the debt here. Basically, I do free maintenance work on the mechanical gladiators to pay down what he owed.', 4: '2'}
+757	757		204							{1: '1', 2: '4'}
+758	758		301							{2: 'Serra', 3: 'Anyway, there are only two humans stuck in this miserable situation in the entire arena—me and old man Roko, but I call him Uncle Roko.', 4: '2'}
+759	759		204							{1: '2'}
+760	760		301							"{2: 'Serra', 3: 'Everyone else is just your typical ""high-ranking human staff."" They\'re not like me. Overseer doesn\'t mess with them. Basically... they\'re ""free.""', 4: '2'}"
+761	761		301							{2: 'Veronica', 3: '……', 4: '1'}
+762	762		204							{1: '1', 2: '5'}
+763	763		301							"{2: 'Veronica', 3: 'Don\'t you feel even the slightest bit of injustice? Being their ""lapdog"" every day, begging for scraps of their pity?', 4: '1'}"
+764	764		204							{1: '2', 2: '14'}
+765	765		301							{2: 'Serra', 3: 'I...', 4: '2'}
+766	766		202							{1: '1', 2: '2'}
+767	767		301							{3: 'Before Serra even knows it, the mountain of component modules that was still covering the workbench moments ago is completely taken care of, bringing an end to their silent cooperation.'}
+768	768		201							{1: '1', 2: '501364', 3: '5', 5: '-20', 6: '-200'}
+769	769		401							{1: '2', 2: '2589'}
+770	770		301							{1: '1', 3: 'Veronica grabs the wing-shaped pendant that projects virtual blueprints and tosses it back to Serra.'}
+771	771		301							{2: 'Veronica', 3: 'You should probably worry about yourself instead of wasting your cheap sympathy on mechanoids.', 4: '1'}
+772	772		301							"{2: 'Veronica', 3: ""If I were you, I wouldn't waste my time here waiting for some fantasized future to come."", 4: '1'}"
+773	773		301							"{2: 'Veronica', 3: ""It's sad how you were pouring your heart out complaining about being a helpless prisoner here while wasting your time waiting."", 4: '1'}"
+774	774		204							{1: '1', 2: '11'}
+775	775		301							"{2: 'Veronica', 3: ""I'm not gonna beg for sympathy. I'm gonna fight until I drop, until I break free from this cage."", 4: '1'}"
+776	776		204							{1: '1', 2: '9'}
+777	777		301							"{2: 'Veronica', 3: 'Stop drowning in your childish fantasies and waiting to ""fly away from this place""...', 4: '1'}"
+778	778		204							{1: '1', 2: '4'}
+779	779		301							{2: 'Veronica', 3: 'Come find me when you snap out of that.', 4: '1'}
+780	780		202							{1: '1'}
+781	781		401							{1: '2', 2: '1516'}
+782	782		301							{3: 'With it, Veronica turns and walks away, leaving Serra standing frozen in place.'}
+783	783		201							{1: '1', 2: '501360', 3: '14'}
+784	784		301							"{1: '1', 3: ""She stares blankly down the corridor where Veronica disappeared, Veronica's words replaying in her mind.""}"
+785	785		201							{1: '2', 2: '500488', 4: '-1200', 5: '-500', 6: '700'}
+786	786		203							{1: '2', 2: '0.5', 3: '-800', 4: '-500', 5: '700'}
+787	787		401							{1: '2', 2: '1016'}
+788	788		301							{1: '1', 2: 'Hammer', 3: '(Silently glides over, the indicator light blinking rhythmically.)', 4: '2'}
+789	789		204							{1: '1', 2: '10'}
+790	790		301							"{2: 'Serra', 3: ""...I'm alright."", 4: '1'}"
+791	791		204							{1: '1', 2: '14'}
+792	792		301							"{2: 'Serra', 3: 'I\'ve never told anyone else how I want to ""fly away from this place""...', 4: '1'}"
+793	793		204							{1: '1', 2: '9'}
+794	794		301							"{2: 'Serra', 3: ""Lucky... that I'm not alone."", 4: '1'}"
+795	795		204							{1: '1', 2: '4'}
+796	796		301							"{2: 'Serra', 3: 'Well, guess I\'ll keep working on my little ""secret plan,"" then. I\'ll definitely go and find you when I\'m ready, Veronica.', 4: '1'}"
+797	797		301				AniZhuanchangBegin			{3: 'Serra whispers in a voice so soft only she can hear.'}
+798	798		202							{1: '1', 2: '2', 6: '1'}
+799	799		502							{1: 'DialogDisable'}
+800	800		401							{1: '1', 2: '36'}
+801	801		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1318.jpg'}
+802	802		107			AniZhuanchangEnd				"{1: 'Top Level, the ""Master\'s"" Chamber', 2: 'Everett Arena'}"
+803	803		301							"{3: 'Everett Arena, Top Level, the ""Master\'s"" Chamber'}"
+804	804		108							{1: '1'}
+805	805		401							{1: '1', 2: '5042'}
+806	806		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront21.png', 3: '0', 4: '0.95', 5: '1.2'}
+807	807		104						1200.0	{1: '-230|0|-250', 2: '0', 4: '4'}
+808	808		109							{1: '11', 2: '<size=32>Past midnight, beyond the massive \\nfloor-to-ceiling windows, the arena below lies deserted. \\nThe gladiatorial matches that unfold here every night \\nhave long since concluded.</size>', 3: '1120', 4: '280', 9: '3', 10: '1', 11: '1'}
+809	809		301							{3: 'Past midnight, beyond the massive floor-to-ceiling windows, the arena below lies deserted. The gladiatorial matches that unfold here every night have long since concluded.'}
+810	810		109							{1: '12', 2: '<size=32>Yet within this chamber, someone continues to revel \\nin a private celebration.</size>', 3: '1120', 4: '60', 9: '3', 10: '1', 11: '1'}
+811	811		301							{3: 'Yet within this chamber, someone continues to revel in a private celebration.'}
+812	812		109							{1: '13', 2: '<size=32>Across the numerous monitors, various footage of \\nVeronica plays on an endless loop.</size>', 3: '1120', 4: '-110', 9: '3', 10: '1', 11: '1'}
+813	813		301							{3: 'Across the numerous monitors, various footage of Veronica plays on an endless loop.'}
+814	814		109							{1: '14', 2: '<size=32>Shrouded in darkness, the human figure scrutinizes \\nevery detail of the footage, again and again, \\nwith unsettling fascination.</size>', 3: '1120', 4: '-280', 9: '3', 10: '1', 11: '1'}
+815	815		301				AniZhuanchangBegin			{3: 'Shrouded in darkness, the human figure scrutinizes every detail of the footage, again and again, with unsettling fascination.'}
+816	816		110							
+817	817		205							{1: '1004'}
+818	818		104							{1: '0|0|20', 2: '0', 4: '5'}
+819	819		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+820	820		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1314.jpg'}
+821	821		201							{1: '1', 2: '501364', 5: '-20', 6: '-200', 7: '1'}
+822	822		502							{1: 'DialogEnable'}
+823	823		301			AniZhuanchangEnd				{1: '1', 3: 'In the footage, Veronica stands beneath harsh spotlights, her cold gaze sweeping across the audience that regards her with contempt.'}
+824	824		401							{1: '2', 2: '4633'}
+825	825		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+826	826		202							{1: '1', 6: '1'}
+827	827		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5901_13.jpg'}
+828	828		301							{3: 'She brandishes her lance, fearlessly confronting enormous mechanical beasts one after another until they shatter into shards beneath her relentless assault.'}
+829	829		401							{1: '2', 2: '4633'}
+830	830		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+831	831		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1314.jpg'}
+832	832		201							{1: '1', 2: '501364', 3: '11', 5: '-20', 6: '-200', 7: '1'}
+833	833		301							{1: '1', 3: 'With a defiant roar, she takes the full brunt of a devastating blow from another mechanoid in the cage and absorbs the impact with her own frame.'}
+834	834		401							{1: '2', 2: '4633'}
+835	835		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+836	836		202							{1: '1', 6: '1'}
+837	837		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1314.jpg'}
+838	838		201							{1: '1', 2: '501363', 3: '5', 5: '-150', 6: '-200', 7: '1'}
+839	839		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+840	840		301				DialogDisable			{1: '1', 3: 'She braces her damaged frame against her lance, her crimson eyes blazing with fury as she glares at Overseer administering punishment upon her.'}
+841	841		401							{1: '2', 2: '4633'}
+842	842		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+843	843		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+844	844		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1314.jpg'}
+845	845		201						1000.0	{1: '1', 2: '501364', 3: '12', 5: '-50', 6: '-300'}
+846	846		401							{1: '2', 2: '4633'}
+847	847		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+848	848		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1314.jpg'}
+849	849		201						1000.0	{1: '1', 2: '501361', 4: '-50', 5: '-50', 6: '-300'}
+850	850		401							{1: '2', 2: '4633'}
+851	851		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+852	852		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5901_1.jpg'}
+853	853		202							{1: '1', 6: '1'}
+854	854		301			DialogEnable				{3: '...'}
+855	855		301				AniZhuanchangBegin			{3: 'The footage ends and freezes on the final frame—the tall mechanoid standing with a lance in hand and exuding intense determination to fight.'}
+856	856		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+857	857		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1318.jpg'}
+858	858		201							{1: '1', 2: '501355', 5: '0', 6: '0', 7: '1'}
+859	859		301			AniZhuanchangEnd				{1: '1', 3: 'The dim glow from the monitors traces the figure of the human, illuminating only the smile playing across the lips.'}
+860	860		202							{1: '1'}
+861	861		401							{1: '2', 2: '1543'}
+862	862		301							"{3: ""The figure reaches out, fingers tracing Veronica's frame on the screen with unsettling tenderness, as if trying to commit every contour of her form to memory.""}"
+863	863		201							{1: '1', 2: '501354'}
+864	864		301							{1: '1', 2: '???', 3: 'You are far better than I imagined, Veronica.', 4: '1'}
+865	865		204							{1: '1', 2: '1'}
+866	866		301		1		AniZhuanchangBegin			"{2: '???', 3: ""I think I'm starting to grow fond of you."", 4: '1'}"

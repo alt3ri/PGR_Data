@@ -1,0 +1,36 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory730.jpg'}
+2	2		401							{1: '1', 2: '181'}
+3	3		201							{1: '1', 2: '500494', 3: '13'}
+4	4		301			DialogEnable				{1: '1', 2: 'Karenina', 3: 'Hm...', 4: '1'}
+5	5		301							{3: 'Karenina stomps the floor, confused.'}
+6	6		301							"{2: 'Karenina', 3: ""There's nothing particularly special here..."", 4: '1'}"
+7	7		301							{2: 'Karenina', 3: 'Are we supposed to get some kind of reward after we clear the maze?', 4: '1'}
+8	8		302							"{2: ""I don't think so."", 3: '9'}"
+9	9		301							{3: 'This event is just supposed to give its participants an opportunity to express their feelings. Even if it gives out presents, it would not be—'}
+10	10		302							"{2: ""It wouldn't be hidden there!"", 3: '11'}"
+11	11		204							{1: '1', 2: '7'}
+12	12		301			RImgBg1Shake				{2: 'Karenina', 3: 'Whoa!', 4: '1'}
+13	13		301							{3: 'With a slight tremble, a gap appears on the ground. An elevating platform seems to be stuck there.'}
+14	14		301							{2: 'Karenina', 3: 'W-why is there a stage lift here?!', 4: '1'}
+15	15		302							{2: '...Perhaps it was used to decorate the place?', 3: '16'}
+16	16		301							{3: 'You recall seeing flowers or balloons somehow appearing in old movies when people triumph over hardships and reunite on a date...'}
+17	17		204							{1: '1', 2: '13'}
+18	18		301							{3: 'Perhaps that is what the stage lift is for?'}
+19	19		301							{2: 'Karenina', 3: '...There seem to be some burst balloons in there.', 4: '1'}
+20	20		301							{3: 'Karenina has already pried open the floor to study the lift underneath as you speak.'}
+21	21		301							"{2: 'Karenina', 3: ""It's a problem with the relay. It's probably been a while since its last maintenance, but this is an easy fix..."", 4: '1'}"
+22	22		204							{1: '1', 2: '6'}
+23	23		301							{2: 'Karenina', 3: 'Hey! Why are you staring at me like that?!', 4: '1'}
+24	24		301							{3: 'Having finally noticed your gaze, Karenina lifts her head from underneath the platform angrily, and her Inver-Device stands up alertly.'}
+25	25		302							{2: 'I think you look cool.', 3: '26', 4: 'I think you look adorable.', 5: '26'}
+26	26		301							{2: 'Karenina', 3: '...Hmph.', 4: '1'}
+27	27		301							{3: 'She quietly grumbles, and her voice lowers.'}
+28	28		204							{1: '1', 2: '13'}
+29	29		301							"{2: 'Karenina', 3: ""Let's do the maze again after I fix this place."", 4: '1'}"
+30	30		204							{1: '1', 2: '1'}
+31	31		301							{2: 'Karenina', 3: 'I... want to see those balloons go up.', 4: '1'}
+32	33		302							{2: 'Okay.', 3: '34', 4: 'I have to think about it.', 5: '35'}
+33	34		502		1		AniZhuanchangBegin			{1: 'DialogDisable'}
+34	35		204							{1: '1', 2: '6'}
+35	36		301		1		AniZhuanchangBegin			"{2: 'Karenina', 3: ""...Hey! Don't push it!"", 4: '1'}"

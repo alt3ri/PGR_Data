@@ -1,0 +1,277 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory221.png'}
+2	2		401							{1: '1', 2: '169'}
+3	3		301			DialogEnable	DialogDisable			{3: 'After a three-hour journey, you finally rendezvous with Bianca at the ruins, situated not far from the pond.'}
+4	4		211							{1: '1', 2: '1021013', 3: '1'}
+5	5		302							{2: 'Bianca!', 3: '6'}
+6	6		302							{2: 'Took me some time to get these parts without registration.', 3: '7'}
+7	7		302							"{2: ""I hope I'm not too late."", 3: '8'}"
+8	8		301			DialogEnable				{2: 'Bianca', 3: 'Great timing, thank you... Did you come alone?', 4: '101', 18: '100001494', 19: '1'}
+9	9		302							{2: 'Lucia and Liv went to recycle the bodies.', 3: '10'}
+10	10		301				DialogDisable			{2: 'Bianca', 3: 'Where is Lee? He is not here with you?', 4: '101', 18: '100001495', 19: '1'}
+11	11		302							{2: 'Lee... is still calibrating his new frame.', 3: '12'}
+12	12		302							"{2: ""He can't participate in this mission."", 3: '13'}"
+13	13		301			DialogEnable	DialogDisable			{3: 'The human commandant looks down at the terminal.'}
+14	14		302							"{2: ""Lucia and Liv sent over their report. It's just as you said..."", 3: '15'}"
+15	15		302							{2: 'People are waiting in ambush there. The nearby underground entrance also harbors a lot of Corrupted.', 3: '16'}
+16	16		301			DialogEnable	DialogDisable			"{2: 'Bianca', 3: ""What's the situation?"", 4: '101', 18: '100001496', 19: '1'}"
+17	17		302							"{2: ""Heeding your warning, they've been very cautious."", 3: '18'}"
+18	18		302							{2: 'The enemies have been repelled, yet a few managed to escape.', 3: '19'}
+19	19		302							"{2: ""According to Liv's tracking record... Hmm..."", 3: '20'}"
+20	20		302							"{2: ""Looks like they're heading to the north."", 3: '21'}"
+21	21		301			DialogEnable				{2: 'Bianca', 3: '...To the north...', 4: '101', 18: '100001497', 19: '1'}
+22	22		302							{2: 'Should we continue tracking them down?', 3: '23'}
+23	23		301							"{2: 'Bianca', 3: ""No, we could meet the Ascendants. They won't let us go easily if that happens. Let's recycle the bodies first. Tell them to stay alert."", 4: '101', 18: '100001498', 19: '1'}"
+24	24		302							{2: 'Understood.', 3: '25'}
+25	25		301							{2: 'Bianca', 3: 'And the rest...', 4: '101', 18: '100001499'}
+26	26		401							{1: '2', 2: '1099'}
+27	27		301							"{3: ""Before she can complete her sentence, the abrupt sound of a message notification emanates from the commandant's terminal.""}"
+28	28		302							{2: '...Unknown sender?', 3: '29', 4: 'Who would send me a message?', 5: '29'}
+29	29		301							{2: 'Bianca', 3: '...', 4: '101', 18: '100001500'}
+30	30		401							{1: '2', 2: '897'}
+31	31		301				DialogDisable			"{3: ""As Bianca's gaze remains fixed on you, you check the message, only to discover a concise line of text.""}"
+32	32		304				AniZhuanchangBegin			"{1: ""—Return to the church. I'll be waiting."", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 9: '1', 10: '1'}"
+33	33		302			AniZhuanchangEnd				{2: '...', 3: '34'}
+34	34		301			DialogEnable				{2: 'Bianca', 3: '...Simple and straightforward.', 4: '101', 18: '100001501', 19: '1'}
+35	35		302							{2: 'Return to the church?', 3: '36'}
+36	36		301							{2: 'Bianca', 3: 'The snowfield is my hometown. And the church I grew up in is in the north.', 4: '101', 18: '100001502', 19: '1'}
+37	37		301							"{2: 'Bianca', 3: 'Someone knows you\'re here with me. That person deliberately sent this message to your terminal to tell us ""I know everything about your actions and your past.""', 4: '101', 18: '100001503', 19: '1'}"
+38	38		212							{1: '1', 6: '1'}
+39	39		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+40	40		504							{1: '0.7'}
+41	41		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz1303.jpg'}
+42	42		301				DialogDisable			"{3: 'Like ""Wen"" back then.'}"
+43	43		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory221.png'}
+44	44		504							{1: '0'}
+45	45		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+46	46		211							{1: '1', 2: '1021013', 3: '1', 7: '1'}
+47	47		302							{2: 'Will you go?', 3: '48'}
+48	48		301			DialogEnable				"{2: 'Bianca', 3: ""It's a trap, but they already know where we are going. We won't get rid of them even if we return to Babylonia."", 4: '101', 18: '100001504', 19: '1'}"
+49	49		301							"{2: 'Bianca', 3: ""I have to find Renee and find out who's behind all this. It can't just be the Ascendants."", 4: '101', 18: '100001505', 19: '1'}"
+50	50		301							{3: 'Releasing the weapon that was supporting her body, she strains to mobilize her remaining hand, endeavoring to retrieve the frame maintenance box lying on the ground.'}
+51	51		302							{2: 'Let me help you.', 3: '52'}
+52	52		301							"{2: 'Bianca', 3: ""It's okay. I'm sorry to let you see me in this poor state. I don't want to bother you with such a trivial thing..."", 4: '101', 18: '100001506', 19: '1'}"
+53	53		212							{1: '1'}
+54	54		401							{1: '2', 2: '3077'}
+55	55		301							{3: 'In the midst of her sentence, she succumbs to fatigue and collapses forward, unable to continue.'}
+56	56		302							{2: 'Bianca!', 3: '57'}
+57	57		401							{1: '2', 2: '3079'}
+58	58		301			RImgBg1Shake				{3: 'Reacting swiftly, you catch the falling Bianca, and both of you descend to the ground. It is only at this moment that you become aware of the alarming wounds concealed beneath her dress.'}
+59	59		211							{1: '1', 2: '1021013', 3: '3'}
+60	60		301							{1: '1', 2: 'Bianca', 3: 'Commandant...! Sorry.', 4: '101', 18: '100001507', 19: '1'}
+61	61		302							"{2: ""You're injured. Just let me help you."", 3: '62'}"
+62	62		301							{3: 'Determined not to give her another opportunity to refuse, you tenderly take hold of her outstretched hand and gather the parts strewn across the ground.'}
+63	63		302							"{2: ""It won't kill you to lean on others for support when you're hurt."", 3: '64'}"
+64	64		214							{1: '1', 2: '1'}
+65	65		301				AniZhuanchangBegin			{2: 'Bianca', 3: '...Thank you, Commandant.', 4: '101', 18: '100001508', 19: '1'}
+66	66		212							{1: '1', 6: '1'}
+67	67		401							{1: '1', 2: '169'}
+68	68		105							{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLuxiya2S/UiMovieBiankaSkin05/UiMovieBiankaSkin05.prefab'}
+69	69		301			AniZhuanchangEnd				{3: 'You lower yourself, positioning one knee on the ground beside Bianca, and meticulously examine her injuries under the light seeping through the fractures of the ruins.'}
+70	70		301				DialogDisable			{2: 'Bianca', 3: '...', 18: '100001509'}
+71	71		302							"{2: ""I've learned some emergency maintenance measures."", 3: '72'}"
+72	72		302							{2: 'Not as good as a professional though.', 3: '73'}
+73	73		301			DialogEnable				{2: 'Bianca', 3: 'No, I have no doubt about your maintenance skills, Commandant.', 18: '100001510'}
+74	74		301				DialogDisable			"{3: ""Bianca's gaze fixates on the hands before her. There are numerous instances when she yearns to speak her mind, yet each time she halted, holding her words at bay.""}"
+75	75		302							"{2: ""Is there anything you didn't tell me?"", 3: '76'}"
+76	76		302							"{2: ""You've been refusing to let me come over and help all this time."", 3: '77'}"
+77	77		302							"{2: ""As if you know there's a trap ahead, waiting for me to stumble right into it."", 3: '78'}"
+78	78		301			DialogEnable	DialogDisable			"{2: 'Bianca', 3: ""...A trap...? Isn't that message clear enough?"", 18: '100001511'}"
+79	79		302							{2: 'You underestimate the dangers Gray Raven has been through.', 3: '80'}
+80	80		302							"{2: ""There's something else that worries you, right?"", 3: '81'}"
+81	81		302							{2: 'Can you tell me about it?', 3: '82'}
+82	82		301			DialogEnable				{2: 'Bianca', 3: '...', 18: '100001512'}
+83	83		301							{2: 'Bianca', 3: 'Sure, but what worries me is nothing but a nightmare with no basis in fact.', 18: '100001513'}
+84	84		302							"{2: ""You can consider it as if I'm sharing a dream with you."", 3: '85'}"
+85	85		301							{2: 'Bianca', 3: '...', 18: '100001514'}
+86	86		301							{3: 'After the human gazes at her for a while, Bianca finally begins to speak.'}
+87	87		301							"{2: 'Bianca', 3: 'I had a ""dream"" where everything was the same as what happened today. I was back in the church where I was raised...', 18: '100001515'}"
+88	88		504							{1: '0.7'}
+89	89		105							
+90	90		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+91	91		201							{1: '1', 2: '500498', 7: '1'}
+92	92		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory220.png'}
+93	93		201							{1: '1', 2: '500022'}
+94	94		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+95	95		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory504.jpg'}
+96	96		202							{1: '1', 6: '1'}
+97	97		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+98	98		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz706.png'}
+99	99		301							{3: 'The very place where all the encounters, partings, trust, betrayal, forgiveness, and resentment unfold.'}
+100	100		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+101	101		105							{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLuxiya2S/UiMovieBiankaSkin05/UiMovieBiankaSkin05.prefab'}
+102	102		504							{1: '0'}
+103	103		301							{2: 'Bianca', 3: 'Defectors emerged from the purge force that was supposed to keep order, which put us in a tough fight.', 18: '100001516'}
+104	104		301							{2: 'Bianca', 3: 'In the dream, off guard I fell into their trap and lost contact with Babylonia due to severe injury.', 18: '100001517'}
+105	105		301							"{2: 'Bianca', 3: ""...Even though we were more or less prepared, it didn't change the outcome too much. We were still trapped."", 18: '100001518'}"
+106	106		301							"{2: 'Bianca', 3: ""I called for the Task Force's support as the last restore but ended up getting you involved in the trap set by the Ascendants and the defectors."", 18: '100001519'}"
+107	107		301							{2: 'Bianca', 3: 'I used my last strength to send away the Corrupted who were once my comrades and became a Corrupted...', 18: '100001520'}
+108	108		302							{2: '...', 3: '109'}
+109	109		301							"{2: 'Bianca', 3: ""I didn't know how long I wandered around as a Corrupted, but..."", 18: '100001521'}"
+110	110		301							"{3: ""Bianca gently takes the human's hand.""}"
+111	111		301							{3: 'In her recollection, these hands have perpetually been clad in protective gloves, embodying the gravity and resolve befitting a soldier. Never before has she witnessed them so delicate and vulnerable, devoid of their usual guard.'}
+112	112		301							{3: 'However, in that dream of the future and the endless winter, she beheld these hands marred by wounds, nearly torn asunder by her relentless assault.'}
+113	113		301							{2: 'Bianca', 3: 'I met you at the end of the nightmare.', 18: '100001522'}
+114	114		302							{2: '...Bianca.', 3: '115'}
+115	115		301							{2: 'Bianca', 3: 'I was prepared when I slashed my blade at those who used to be my comrades and savior.', 18: '100001523'}
+116	116		301							{2: 'Bianca', 3: 'As a Purifying Force member, I was not surprised by this ending.', 18: '100001524'}
+117	117		301							"{2: 'Bianca', 3: ""But you told me not to be used to betrayal and separation... I guess it's because you are not used to them as well."", 18: '100001525'}"
+118	118		301							"{2: 'Bianca', 3: ""That's why you hesitated when you were about to execute me."", 18: '100001526'}"
+119	119		301							"{2: 'Bianca', 3: 'Which gave ""me"" the chance to hurt you.', 18: '100001527'}"
+120	120		301							{3: 'Her voice carries a subtle undercurrent of exhaustion, barely noticeable yet hinting at an imminent unraveling, akin to the quiver of snow preceding an impending avalanche.'}
+121	121		301							{2: 'Bianca', 3: 'This is it.', 18: '100001528'}
+122	122		302							{2: 'There must be other good reasons for you to believe this dream.', 3: '123'}
+123	123		301							{2: 'Bianca', 3: '...', 18: '100001529'}
+124	124		301							{2: 'Bianca', 3: 'Yes. The dream came from the data collected by the Phantom Tracer when I was under the sea.', 18: '100001530'}
+125	125		301							"{2: 'Bianca', 3: ""Mr. Asimov and Miss Vesalius both thought this had something to do with the future predicted by the Ascension-Network. It's just we didn't know the specific time of occurrence."", 18: '100001531'}"
+126	126		301							{2: 'Bianca', 3: 'The traces about the defectors I found through playback, the intel I got, and what happened today...', 18: '100001532'}
+127	127		301				DialogDisable			{2: 'Bianca', 3: 'All made me believe that this is when it will happen.', 18: '100001533'}
+128	128		302							{2: 'You never know until the last minute.', 3: '129'}
+129	129		302							"{2: ""I'm here with you now. This is different from the dream, isn't it?"", 3: '130'}"
+130	130		302							{2: 'It may not be about the present. Moreover, the future can be altered.', 3: '131'}
+131	131		302							"{2: ""So, you still let me come over, didn't you?"", 3: '132'}"
+132	132		301			DialogEnable				"{2: 'Bianca', 3: ""That's because I couldn't stop you."", 18: '100001534'}"
+133	133		301							{2: 'Bianca', 3: '...But I expected... a different future...', 18: '100001535'}
+134	134		302							{2: 'Are you happy with the outcome so far?', 3: '135'}
+135	135		301				DialogDisable			"{2: 'Bianca', 3: '""You never know until the last minute,"" right?', 18: '100001536'}"
+136	136		302							"{2: ""That's my line..."", 3: '137'}"
+137	137		302							{2: 'Speaking of prediction, it reminds me of some stories.', 3: '138'}
+138	138		301			DialogEnable	DialogDisable			{2: 'Bianca', 3: 'Stories about predictions?', 18: '100001537'}
+139	139		302							{2: 'One is about an old king who heard a prophecy that his son would kill him.', 3: '140'}
+140	140		302							{2: 'To prevent it from happening, he plotted to kill his infant son.', 3: '141'}
+141	141		302							{2: 'But his actions somehow caused the prophecy to come true.', 3: '142'}
+142	142		301			DialogEnable				{2: 'Bianca', 3: 'Yeah. Similar plots could be found in a magic-themed movie where the villain believed the prediction that he would be killed by a child born in July and decided to take action.', 18: '100001538'}
+143	143		301							{2: 'Bianca', 3: '...', 18: '100001539'}
+144	144		301							"{2: 'Bianca', 3: ""I didn't know you would also make fun of people, Commandant..."", 18: '100001540'}"
+145	145		302							"{2: 'I just don\'t want to see you ""somehow"" walk into that ending.', 3: '146'}"
+146	146		301							{3: 'Bianca releases a sigh, her gaze filled with resignation, fixed upon you.'}
+147	147		301							{2: 'Bianca', 3: 'But people always find it hard to believe in themselves. They often need recognition and encouragement from others.', 18: '100001541'}
+148	148		301							"{2: 'Bianca', 3: ""And when they can't have them, they would turn to gods, prophets, or fortunetellers to tell them what to do to avoid disasters in the future."", 18: '100001542'}"
+149	149		301							{2: 'Bianca', 3: 'Is it a form of weakness in your eyes?', 18: '100001543'}
+150	150		302							"{2: ""It is, but it's also part of our nature."", 3: '151'}"
+151	151		301							{3: 'Your response renders her momentarily silent, her gaze shifting to the accumulating snow outside the ruins. Then, unexpectedly, she diverts the conversation to a seemingly unrelated topic.'}
+152	152		301				DialogDisable			{2: 'Bianca', 3: 'Do you like flowers, Commandant?', 18: '100001544'}
+153	153		302							{2: 'I do.', 3: '154', 4: 'Not really.', 5: '154'}
+154	154		302							{2: 'Why bring this up all of a sudden?', 3: '155'}
+155	155		301			DialogEnable				{2: 'Bianca', 3: 'Your words reminded me of the past.', 18: '100001545'}
+156	156		301							{3: 'Lowering her gaze, she begins to regale you with tales of her past on the snowfield.'}
+157	157		301				AniZhuanchangBegin			{2: 'Bianca', 3: 'I used to love flowers when I was little, fascinated by the life of a flower from blossoming to withering.', 18: '100001546'}
+158	158		105							
+159	159		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory509.jpg'}
+160	160		504							{1: '0.7'}
+161	161		211							{1: '1', 2: '1021007', 3: '1'}
+162	162		301			AniZhuanchangEnd	AniZhuanchangBegin			{1: '1', 2: 'Father Snow', 3: 'You want to keep these lilies?', 4: '101', 18: '100001547', 19: '1'}
+163	163		504							{1: '0'}
+164	164		212							{1: '1', 6: '1'}
+165	165		105							{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLuxiya2S/UiMovieBiankaSkin05/UiMovieBiankaSkin05.prefab'}
+166	166		301			AniZhuanchangEnd	AniZhuanchangBegin			{2: 'Bianca', 3: 'One winter, I got a gift from a wanderer.', 18: '100001548'}
+167	167		504							{1: '0.7'}
+168	168		105							
+169	169		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory506.jpg'}
+170	170		211							{1: '1', 2: '1021008', 3: '1', 4: '400', 7: '1'}
+171	171		211							{1: '2', 2: '1021003', 3: '1', 4: '-400', 7: '1'}
+172	172		301			AniZhuanchangEnd				{1: '1', 2: 'Wanderer', 3: 'Thank you for listening to my confession, sister... This box of lily bulbs was left by my daughter before she passed away. I want you to have it.', 4: '101', 18: '100001549', 19: '1'}
+173	173		301							"{2: 'Bianca', 3: ""It's my pleasure to have your trust. That alone will be enough."", 4: '102', 18: '100001550', 19: '2'}"
+174	174		301							"{2: 'Wanderer', 3: ""Then, could you please save them? They should grow into flowers. I'm a homeless man. They would never bloom if I took them with me."", 4: '101', 18: '100001551', 19: '1'}"
+175	175		301				AniZhuanchangBegin			"{2: 'Wanderer', 3: ""Flowers produced seeds for them to bloom. They shouldn't wander around with me. Please save them..."", 4: '101', 18: '100001552', 19: '1'}"
+176	176		212							{1: '1', 2: '2', 6: '1'}
+177	177		504							{1: '0'}
+178	178		105							{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLuxiya2S/UiMovieBiankaSkin05/UiMovieBiankaSkin05.prefab'}
+179	179		301			AniZhuanchangEnd				"{2: 'Bianca', 3: ""Lilies don't favor the snowfield. I only saw them during rituals—most of them are bio-flowers."", 18: '100001553'}"
+180	180		301							{2: 'Bianca', 3: 'I loved flowers and was touched by the wanderer, so I took those lily bulbs that were carefully placed in the sand and placed them in rooms with heating equipment and temperature control.', 18: '100001554'}
+181	181		301							{2: 'Bianca', 3: 'I gave them the soil they needed, the purified water, and proper fertile. Every day I prayed for them to grow up healthily, but eventually...', 18: '100001555'}
+182	182		301							{2: 'Bianca', 3: 'They were destroyed in the bud before they could even experience the joy of blossom.', 18: '100001556'}
+183	183		301				AniZhuanchangBegin			"{2: 'Bianca', 3: ""I didn't even know if they were destroyed by the Corrupted or uprooted by people desperate for food."", 18: '100001557'}"
+184	184		105							
+185	185		504							{1: '0.7'}
+186	186		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory504.jpg'}
+187	187		211							{1: '1', 2: '1021003', 3: '2', 4: '-400', 7: '1'}
+188	188		211							{1: '2', 2: '1021007', 3: '1', 4: '400', 7: '1'}
+189	189		301			AniZhuanchangEnd				{1: '1', 2: 'Bianca', 3: 'I failed to protect them. No matter how hard I tried and how many times I prayed to God, they were still destroyed.', 4: '101', 18: '100001558', 19: '1'}
+190	190		301							"{2: 'Father Snow', 3: ""I know you loved them and spent a lot of effort to take care of them, but don't be sad... With God's blessing, life will come back to the earth and stay by your side in another form."", 4: '102', 18: '100001559', 19: '2'}"
+191	191		301							"{2: 'Bianca', 3: ""But I don't want that. They deserved a chance to bloom... Father Snow, I don't want to grow the rest of them."", 4: '101', 18: '100001560', 19: '1'}"
+192	192		301							"{2: 'Father Snow', 3: ""But I can feel your heart crying. Don't force yourself to give up love, my child."", 4: '102', 18: '100001561', 19: '2'}"
+193	193		301							"{2: 'Bianca', 3: ""I want to give them up because I love them but I can't protect them."", 4: '101', 18: '100001562', 19: '1'}"
+194	194		301							"{3: ""The priest releases a profound sigh, his gaze fixated on Bianca's pained eyes.""}"
+195	195		301							{2: 'Father Snow', 3: 'What if God wants you to keep them?', 4: '102', 18: '100001563', 19: '2'}
+196	196		301							{2: 'Father Snow', 3: 'I heard the voice from above. God hopes you keep nourishing these flowers.', 4: '102', 18: '100001564', 19: '2'}
+197	197		301							{2: 'Bianca', 3: 'Why?', 4: '101', 18: '100001565', 19: '1'}
+198	198		301				AniZhuanchangBegin			{2: 'Father Snow', 3: 'Because they could only live with you around. Protecting the lilies will one day protect ourselves.', 4: '102', 18: '100001566', 19: '2'}
+199	199		212							{1: '1', 2: '2', 6: '1'}
+200	200		504							{1: '0'}
+201	201		105							{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLuxiya2S/UiMovieBiankaSkin05/UiMovieBiankaSkin05.prefab'}
+202	202		301			AniZhuanchangEnd				{2: 'Bianca', 3: 'Father told me a white lie to stop me from giving up on the flowers I loved.', 18: '100001567'}
+203	203		301							{2: 'Bianca', 3: 'I always believed him and his words, so I believed I could do it.', 18: '100001568'}
+204	204		301				AniZhuanchangBegin			{2: 'Bianca', 3: 'However... the lilies died once again. Eventually, I had to give Miyi the few lily bulbs left to exchange for food.', 18: '100001569'}
+205	205		105							
+206	206		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory575.jpg'}
+207	207		504							{1: '0.7'}
+208	208		211							{1: '1', 2: '1021003', 3: '1', 4: '-400', 7: '1'}
+209	209		211							{1: '2', 2: '1021007', 3: '1', 4: '400', 7: '1'}
+210	210		301			AniZhuanchangEnd				{1: '1', 2: 'Father Snow', 3: 'Are you sure about this?', 4: '102', 18: '100001570', 19: '2'}
+211	211		301							"{2: 'Bianca', 3: ""I've made my decision. This can get us more food and let those who could protect the lilies have them."", 4: '101', 18: '100001571', 19: '1'}"
+212	212		301							{2: 'Father Snow', 3: '...I respect your decision, but I just want to remind you that life is unpredictable. This might not be the best choice.', 4: '102', 18: '100001572', 19: '2'}
+213	213		301				AniZhuanchangBegin			"{2: 'Father Snow', 3: ""If dying is inevitable for the lilies, then it's better for them to stay by your side."", 4: '102', 18: '100001573', 19: '2'}"
+214	214		212							{1: '1', 2: '2', 6: '1'}
+215	215		504							{1: '0'}
+216	216		105							{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLuxiya2S/UiMovieBiankaSkin05/UiMovieBiankaSkin05.prefab'}
+217	217		301			AniZhuanchangEnd				"{2: 'Bianca', 3: ""Lilies don't have feelings... How could they decide? This time, I didn't believe him."", 18: '100001574'}"
+218	218		301							"{2: 'Bianca', 3: ""But Father Snow was right... Life is unpredictable. Miyi didn't come back alive."", 18: '100001575'}"
+219	219		301							"{2: 'Bianca', 3: ""Those lily bulbs are inedible. They were useless for people who struggled to make a living through the apocalypse. They couldn't be exchanged for food... and were thrown away somewhere."", 18: '100001576'}"
+220	220		301							"{2: 'Bianca', 3: ""Even if the lilies couldn't choose an ending for themselves, it was not a good ending for me."", 18: '100001577'}"
+221	221		301							"{2: 'Bianca', 3: ""A terrible thought flashed through my mind back then... What if those lilies were kids who couldn't decide for themselves?"", 18: '100001578'}"
+222	222		301				AniZhuanchangBegin			"{2: 'Bianca', 3: ""What if they died just because I sent them out for I didn't believe myself? How would I face my cowardliness?"", 18: '100001579'}"
+223	223		105							
+224	224		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz703.png'}
+225	225		504							{1: '0.7'}
+226	226		301			AniZhuanchangEnd				{2: 'Bianca', 3: 'I made the wrong choice...', 18: '100001580'}
+227	227		301							"{2: 'Father Snow', 3: 'Don\'t blame yourself too hard, my child. Our hearts are frail. We only find the courage to love and take action when we ""believe"" that we can overcome our difficulties.', 18: '100001581'}"
+228	228		301							{2: 'Father Snow', 3: 'When we are blinded by fear, we believe the path forward will lead to failure and want to give up. This is human nature.', 18: '100001582'}
+229	229		301							{2: 'Father Snow', 3: 'And this is the very reason that we pray to God. We pray to see the path God once took and gain courage by following that path.', 18: '100001583'}
+230	230		301				AniZhuanchangBegin			{2: 'Father Snow', 3: 'Pray. Pray to gain the courage to believe in yourself, protect what you love, and not give up.', 18: '100001584'}
+231	231		504							{1: '0'}
+232	232		105							{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLuxiya2S/UiMovieBiankaSkin05/UiMovieBiankaSkin05.prefab'}
+233	233		301			AniZhuanchangEnd				"{2: 'Bianca', 3: 'That was the first time I realized the power of ""belief."" It\'s powerful enough to change the choice of a rational, thoughtful mind.', 18: '100001585'}"
+234	234		301							"{2: 'Bianca', 3: ""When I didn't believe myself, I asked Father for advice, believed his white lie, and kept the lilies. When I didn't believe his words, I sent the lilies away."", 18: '100001586'}"
+235	235		301							"{2: 'Bianca', 3: 'Perhaps... the king in the story and the ""Scarlet Revelation"" believers who depend on the belief and divination...', 18: '100001587'}"
+236	236		301				DialogDisable			"{2: 'Bianca', 3: '...chose to believe in the ""predictions"" because they also had times when they didn\'t believe themselves.', 18: '100001588'}"
+237	237		302							{2: 'I have a similar feeling...', 3: '238'}
+238	238		302							{2: 'Sometimes, I need recognition from others to press on, too.', 3: '239', 4: 'Sometimes, I seek answers through fortune-telling, too.', 5: '239'}
+239	239		301			DialogEnable				{2: 'Bianca', 3: 'Yeah, we are all the same...', 18: '100001589'}
+240	240		301							"{2: 'Bianca', 3: ""I've seen countless similar tragedies in the Purifying Force. People who didn't believe in themselves and gave in to feelings of powerlessness. People who believed in themselves too much and refused to control their desires."", 18: '100001590'}"
+241	241		301							"{2: 'Bianca', 3: 'Any ""outsider"" would find their struggle ridiculous.', 18: '100001591'}"
+242	242		301							{2: 'Bianca', 3: 'But I will never forget how those lilies died because of my decision. It is trivial, but it always reminds me to never forget the frailty of the human heart.', 18: '100001592'}
+243	243		302							{2: 'Is this why you are still praying?', 3: '244'}
+244	244		301				DialogDisable			{2: 'Bianca', 3: '...Yeah.', 18: '100001593'}
+245	245		302							{2: 'You say people always find it hard to believe in themselves. They often need recognition and encouragement from others.', 3: '246'}
+246	246		302							{2: 'If I do so, will you trust me?', 3: '247'}
+247	247		302							"{2: ""Trust me, even if I go with you, that future won't happen."", 3: '248'}"
+248	248		301			DialogEnable				{2: 'Bianca', 3: '...I can trust you, but there is a condition.', 18: '100001594'}
+249	249		302							{2: 'A condition?', 3: '250'}
+250	250		301							{2: 'Bianca', 3: 'Could you raise your hand for me, Commandant?', 18: '100001595'}
+251	251		302							{2: 'Like this?', 3: '252'}
+252	252		301							{2: 'Bianca', 3: 'Yeah.', 18: '100001596'}
+253	253		301							"{3: ""Looking at the human's hands, Bianca shows a faint, bitter smile.""}"
+254	254		301							{2: 'Bianca', 3: 'Would you make a promise to me?', 18: '100001597'}
+255	255		302							{2: 'What promise?', 3: '256'}
+256	256		301							"{2: 'Bianca', 3: ""This is a promise that every Purifying Force member made to one another. It's the prerequisite we make choices to believe and depend on one another."", 18: '100001598'}"
+257	257		302							"{2: ""I'm listening."", 3: '258'}"
+258	258		301							"{2: 'Bianca', 3: ""If one day I turn into a Corrupted, please don't hesitate to kill me and don't leave me any chance to hurt you."", 18: '100001599'}"
+259	259		301							"{2: 'Bianca', 3: ""I know... You are less used to separation than me, and you shouldn't get used to it."", 18: '100001600'}"
+260	260		301				DialogDisable			"{2: 'Bianca', 3: ""So, I don't want my trust in and dependence on you to become your weakness one day."", 18: '100001601'}"
+261	261		302							{2: '...Okay, I promise you.', 3: '262'}
+262	262		302							{2: 'Like other members of the Purifying Force.', 3: '263'}
+263	263		302							{2: 'Our relationship will never become my weakness.', 3: '264'}
+264	264		302							{2: 'If that day really comes...', 3: '265'}
+265	265		302				AniZhuanchangBegin			{2: 'I will not leave you any chance to hurt me.', 3: '266', 4: 'I will not hesitate even if it pains me.', 5: '266'}
+266	266		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory221.png'}
+267	267		105							
+268	268		211							{1: '1', 2: '1021012'}
+269	269		502							{1: 'DialogEnable'}
+270	270		301			AniZhuanchangEnd	DialogDisable			{1: '1', 2: 'Bianca', 3: '...Then, you have my trust.', 4: '101', 18: '100001602', 19: '1'}
+271	271		302							"{2: ""But please, don't carelessly walk into that end..."", 3: '272'}"
+272	272		302							{2: 'because of my promise.', 3: '273'}
+273	273		214							{1: '1', 2: '2'}
+274	274		301			DialogEnable				{2: 'Bianca', 3: '...I promise.', 4: '101', 18: '100001603', 19: '1'}
+275	275		301							{2: 'Bianca', 3: 'Even though I have your promise now, I still hate to see your sad face.', 4: '101', 18: '100001604', 19: '1'}
+276	276		301		1		AniZhuanchangBegin			{3: 'The icy, pure Holy Maiden flashes a gentle smile, firmly gripping those hands.'}

@@ -1,0 +1,435 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1179.jpg'}
+2	2		401							{1: '1', 2: '230'}
+3	3		301			DialogEnable				{2: 'Officiant', 3: 'Lucia, do you take 【kuroname】 to be your partner...', 18: '100007767'}
+4	4		301							{2: 'Officiant', 3: '...To love, cherish, and stand by 【kuroname】?', 18: '100007768'}
+5	5		301							{3: 'At twilight, the setting sun drapes a veil of gold across the boundless ocean.'}
+6	6		211							{1: '1', 2: '1021039', 3: '4', 7: '1'}
+7	7		301							{1: '1', 3: 'Amidst the solemn prayer, Lucia keeps her head lowered, occasionally stealing glances at you.'}
+8	8		301							{2: 'Lucia', 3: 'I... do.', 4: '101', 18: '100007769', 19: '1', 21: 'v320luxiya'}
+9	9		301							{2: 'Officiant', 3: 'Will you remain faithful to 【kuroname】, for as long as you live, until the end of time?', 18: '100007770'}
+10	10		214							{1: '1', 2: '6'}
+11	11		301							{2: 'Lucia', 3: '...', 4: '101', 18: '100007771', 19: '1', 21: 'v320luxiya'}
+12	12		306							{1: '1'}
+13	13		213							{1: '1', 2: '0.4', 4: '-20', 5: '-50'}
+14	14		301							{3: 'From behind her bouquet, Lucia fixes a lingering gaze on you.'}
+15	15		301							{3: 'When you turn around, you see her eyes veiled in twilight mist.'}
+16	16		214							{1: '1', 2: '4'}
+17	17		301							"{3: ""This warrior, who never took a step back facing all the battles she's been through, now seems unusually shy.""}"
+18	18		306							
+19	19		302							"{2: ""(Hold Lucia's hand firmly)"", 3: '20', 4: 'Cough...', 5: '24'}"
+20	20		214							{1: '1', 2: '1'}
+21	21		301							{2: 'Lucia', 3: '...', 4: '101', 18: '100007772', 19: '1', 21: 'v320luxiya'}
+22	22		214							{1: '1', 2: '3'}
+23	23	29	301							{3: 'With your encouragement, she gives a slight nod. Her furrow slowly disappears, and she breaks into a smile.'}
+24	24		301							{2: 'Lucia', 3: '...', 4: '101', 18: '100007773', 19: '1', 21: 'v320luxiya'}
+25	25		301							"{3: ""Seeing that you're equally nervous, she grips your hand tightly, seemingly trying to draw courage from it.""}"
+26	26		214							{1: '1', 2: '1'}
+27	27		301							{3: 'After a brief moment, her furrowed brow relaxes, revealing a hint of a smile.'}
+28	28		214							{1: '1', 2: '3'}
+29	29		301							{2: 'Lucia', 3: 'I do.', 4: '101', 18: '100007774', 19: '1', 21: 'v320luxiya'}
+30	30		212							{1: '1', 6: '1'}
+31	31		401							{1: '2', 2: '967'}
+32	32		301							{3: 'A sea breeze from the depths of the Atlantic drifts through the towering, magnificent marble columns, brushing your cheeks with cool moisture and stirring the French marigolds by your side into a gentle rustle.'}
+33	33		301							{2: 'Officiant', 3: '【kuroname】—godchild of the Savoy family and honored guest of Catania.', 18: '100007775'}
+34	34		301							{3: 'The officiant turns to face you.'}
+35	35		301							{2: 'Officiant', 3: 'Do you take Lucia to be your partner, to love, cherish, and stand by her?', 18: '100007776'}
+36	36		402							{1: '967'}
+37	37		211							{1: '1', 2: '1021039', 7: '1'}
+38	38		301							{1: '1', 3: 'You turn to look at Lucia. Her cheeks are slightly flushed, her left hand pressed against her chest, and a light of hopeful anticipation dances in her eyes.'}
+39	39		302							{2: '...I do.', 3: '40'}
+40	40		301							{3: 'Solemn and earnest—an answer that reveals your true feelings.'}
+41	41		301							{2: 'Officiant', 3: 'Will you remain faithful to her, for as long as you live, until the end of time?', 18: '100007777'}
+42	42		302				DialogDisable			{2: 'Yes.', 3: '43'}
+43	43		212							{1: '1', 6: '1'}
+44	44		104						1800.0	{1: '0|-80|-80', 2: '1.5'}
+45	45		301			DialogEnable				{3: 'The gentle sea breeze, the flowing wedding dress, the soft sunset. Everything good and beautiful that this world has to offer has apparently come to a stop at this very moment and come together in this very sacred hall.'}
+46	46		104						400.0	{1: '0|0|0', 2: '1.2'}
+47	47		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab', 2: '1'}
+48	48		211							{1: '1', 2: '1021039', 7: '1'}
+49	49		301							{1: '1', 3: 'At twilight, the golden sky stretches cloudless for miles. Sunlight pours down from above, making the Lucia in her satin wedding dress shine with brilliant radiance.'}
+50	50		301							{3: 'In this mesmerizing moment, she looks like an angel descended to the world of the mortals, so much so that even the sun lingering above the horizon seems to crave more of her radiant purity.'}
+51	51		301							{2: 'Officiant', 3: 'The Lord has borne witness to your choices. Now, please recite your vows and exchange your tokens to complete the union of your souls and your eternal bond.', 18: '100007778'}
+52	52		214							{1: '1', 2: '3'}
+53	53		301				AniZhuanchangBegin			{2: 'Lucia', 3: '...', 4: '101', 18: '100007779', 19: '1', 21: 'v320luxiya'}
+54	54		212							{1: '1', 6: '1'}
+55	55		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab'}
+56	56		306						300.0	{1: '1'}
+57	57		105							{1: 'Assets/Product/Ui/Spine/3-2Spine/UiMoveCGSpine/UiMovieLuxiyaCG1V32/UiMovieLuxiyaCG1V32.prefab'}
+58	58		104							{1: '95|-200|-500', 2: '0', 3: '1'}
+59	59		104							{1: '125|-200|-500', 2: '4', 3: '1'}
+60	60		301			AniZhuanchangEnd				{3: 'She lifts her head, her slightly trembling gaze intertwining with yours.'}
+61	61		301							"{3: ""In this moment, your face reflects in the depths of Lucia's ruby-like eyes.""}"
+62	62		302				AniZhuanchangBegin			{2: 'Lucia.', 3: '63'}
+63	63		104							{1: '-120|150|-500', 2: '0', 3: '1'}
+64	64		104							{1: '-120|150|-530', 2: '4', 3: '1'}
+65	65		301			AniZhuanchangEnd				"{3: ""You take Lucia's hand, feeling the warmth of her fingers, and take out the wedding ring you prepared.""}"
+66	66		301				AniZhuanchangBegin			{3: 'You gently steady her trembling fingers and begin to say your vows—'}
+67	67		502							{1: 'DialogDisable'}
+68	68		306						300.0	
+69	69		104							{1: '0|0|0', 2: '0', 3: '1'}
+70	70		302			AniZhuanchangEnd				{2: 'I give you this ring as a token of our marriage.', 3: '71'}
+71	71		301			DialogEnable				{3: 'Lucia gazes at you, listening in silence, her ears now hot red.'}
+72	72		302							{2: 'I will love and protect you faithfully, whether it be today, tomorrow, or forever.', 3: '73'}
+73	73		301							{3: 'All your feelings have found their way to Lucia through your vows.'}
+74	74		301							{3: 'With it, the corners of her eyes begin to glisten with crystalline light.'}
+75	75		301							{2: 'Lucia', 3: 'Huff...', 18: '100007780', 19: '1', 21: 'v320luxiya'}
+76	76		301							{3: 'She closes her eyes and lets out a long breath.'}
+77	77		301							{3: 'The uncertainty lingering in her seems to disperse with that misty breath, swept away completely.'}
+78	78		301							{2: 'Lucia', 3: '—【kuroname】, I accept and bear witness to your vow.', 18: '100007781', 19: '1', 21: 'v320luxiya'}
+79	79		301							{3: 'When she opens her eyes, she trembles in joy, seemingly worry-free now.'}
+80	80		301							{2: 'Lucia', 3: 'With this ring, I vow before the world my devotion and love for you.', 18: '100007782', 19: '1', 21: 'v320luxiya'}
+81	81		301							{3: 'Lucia responds with a gentle smile, her vows earnest and unwavering, reminiscent of the resolute warrior that she is every day.'}
+82	82		301							{2: 'Lucia', 3: 'Gold does not tarnish, and jade remains whole, just like the promise that binds us.', 18: '100007783', 19: '1', 21: 'v320luxiya'}
+83	83		401						100.0	{1: '2', 2: '4798'}
+84	84		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront42.png', 4: '5'}
+85	85		104						100.0	{1: '-1270|700|0', 2: '0', 4: '5'}
+86	86		104						625.0	{1: '1480|-806|-1500', 2: '2.5', 4: '5'}
+87	87		105							
+88	88		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1179.jpg'}
+89	89		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTempleBattle/FxUiTempleBattleHuaban.prefab', 2: '2'}
+90	90		301						1000.0	{3: 'Suddenly, a gentle breeze sweeps through, sending pink petals dancing through the air like snowflakes.'}
+91	91		101							{4: '5', 5: '1'}
+92	92		301							{3: 'The peach blossoms drift gracefully through the air like shooting stars passing before your eyes, but they fail to steal the gaze locked between the two of you.'}
+93	93		301							{3: 'At this moment, the officiant walks up this way in gentle steps and guides the couple as they begin to recite the ancient sacred prayers—'}
+94	94		301							{2: 'Officiant', 3: 'In the name of the Father, the Son, and the Holy Spirit—', 18: '100007784'}
+95	95		211							{1: '1', 2: '1021039', 7: '1'}
+96	96		301							{1: '1', 2: 'Lucia & 【kuroname】', 3: 'In the name of the Father, the Son, and the Holy Spirit—', 4: '101', 18: '100007785', 19: '1', 21: 'v320luxiya'}
+97	97		301							{2: 'Lucia & 【kuroname】', 3: 'Our love endures this day and all days, now and forevermore.', 4: '101', 18: '100007786', 19: '1', 21: 'v320luxiya'}
+98	98		302				AniZhuanchangBegin			"{2: ""(Put the ring on Lucia's finger)"", 3: '99'}"
+99	99		214							{1: '1', 2: '2'}
+100	100		301			AniZhuanchangEnd				{2: 'Lucia', 3: '...', 4: '101', 18: '100007787', 19: '1', 21: 'v320luxiya'}
+101	101		212							{1: '1', 6: '1'}
+102	102		301							{3: 'With a gentle push, the ring slides onto her finger—and with it, your enduring devotion wraps itself around her ring finger.'}
+103	103		301				DialogDisable			{3: 'The tiny ring gleams brilliantly in the radiant sanctuary, etching your promise to each other into the endless river of time.'}
+104	104		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTempleBattle/FxUiTempleBattleHuaban.prefab'}
+105	105		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1180.jpg', 3: '0', 4: '1', 5: '1.5'}
+106	106		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1180.jpg'}
+107	107		205							{1: '999'}
+108	108		301			DialogEnable				"{3: ""Quietly, the setting sun slips into the ocean's embrace, drawing down the vibrant, colorful curtain of night.""}"
+109	109		301							{3: 'The waves murmur gently as the silver gulls let out gentle calls.'}
+110	110		301				AniZhuanchangBegin			{3: 'As your journey comes to an end, you gaze upon the endless stretch of stars, your thoughts drifting hazily among countless memories.'}
+111	111		502						400.0	{1: 'DialogDisable'}
+112	112		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg'}
+113	113		304			AniZhuanchangEnd				{1: 'These few short hours unfold like a magnificent, beautiful dream—a poem celebrating love and hope.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 6: '1', 7: '1', 10: '1'}
+114	114		304							{1: 'Facing an ending always brings with it reluctance and tender reflection.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 6: '1', 7: '1', 10: '1'}
+115	115		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory542.jpg', 3: '0', 4: '1', 5: '1.5'}
+116	116		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory542.jpg'}
+117	117		205							{1: '999'}
+118	118		304							{1: 'To this scarred and broken world, it may be fleeting, even insignificant.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 6: '1', 7: '1', 10: '1'}
+119	119		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1180.jpg', 3: '0', 4: '1', 5: '1.5'}
+120	120		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1180.jpg'}
+121	121		205							{1: '999'}
+122	122		304							{1: 'It remains a unique, infinitely precious fairy tale to you and Lucia...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 6: '1', 7: '1', 10: '1'}
+123	123		304							{1: 'Because the two of you have come a long way, overcoming countless setbacks along the way.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 6: '1', 7: '1', 10: '1'}
+124	124		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory825.jpg', 3: '0', 4: '1', 5: '1.5'}
+125	125		104						2000.0	{1: '65|-145|-200', 2: '0', 4: '3'}
+126	126		304				AniZhuanchangBegin			{1: 'As the starry night sets in, tranquility blankets the earth. Before you, memory lane stretches long ahead...', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 6: '1', 7: '1', 9: '1', 10: '1'}
+127	127		205							{1: '999'}
+128	128		104							{1: '0|0|0', 2: '0', 4: '3'}
+129	129		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+130	130		109							{1: '1', 2: '<color=#ffffffff><size=75>A Love Story Across Time</size></color>', 4: '70'}
+131	131		109			AniZhuanchangEnd				{1: '2', 2: '<color=#ffffffff><size=40>— A Day In The Life —</size></color>', 4: '-70'}
+132	132		301				AniZhuanchangBegin			{3: 'A Love Story Across Time\\n A Day In The Life'}
+133	133		110							
+134	134		401						2000.0	{1: '1', 2: '36'}
+135	135		401							{1: '1', 2: '381'}
+136	136		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg'}
+137	137		107			AniZhuanchangEnd				{1: 'A few days ago'}
+138	138		301							{3: 'A few days ago'}
+139	139		108						250.0	{1: '1'}
+140	140		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 3: '0', 4: '1', 5: '0.2'}
+141	141		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory968.png'}
+142	142		205							{1: '999'}
+143	143		401							{1: '2', 2: '910'}
+144	144		109						1000.0	{1: '1', 2: '<color=#000000ff><size=30>...Dear President Hassen.</size></color>', 3: '0', 4: '395', 6: '1', 8: '0.05', 10: '1'}
+145	145		301							{3: '...Dear President Hassen.'}
+146	146		109						1500.0	{1: '2', 2: '<color=#000000ff><size=30>Thank you for your attention to Catania. On behalf of the people of this small island, I would like to extend my deepest respect.</size></color>', 3: '0', 4: '300', 6: '1', 8: '0.01', 10: '1'}
+147	147		301							{3: 'Thank you for your attention to Catania. On behalf of the people of this small island, I would like to extend my deepest respect.'}
+148	148		110							
+149	149		402							{1: '910'}
+150	150		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg', 3: '0', 4: '1', 5: '0.2'}
+151	151		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg'}
+152	152		205							{1: '999'}
+153	153		301			DialogEnable				{3: 'In the dimly lit room, a pen races across the stationery, producing a soft rustling sound.'}
+154	154		301							"{3: ""Slanting rays of light pierce through the gaps in the Venetian blinds, illuminating the beads of sweat on the man's neck. After careful consideration, he adjusts his tie and finally forces out words from deep in his throat.""}"
+155	155		211							{1: '1', 2: '1021042', 7: '1'}
+156	156		301							{1: '1', 2: 'Camilo Solasso', 3: 'Lady Dawne, I am Camillo Solasso, a humble farmer.', 4: '101', 18: '100007788', 19: '1', 21: 'v320luxiya'}
+157	157		301							{2: 'Camilo Solasso', 3: 'I toil from dawn to dusk, shipping crates of oranges to Babylonia, trusting the Lord to reward those who walk in righteousness.', 4: '101', 18: '100007789', 19: '1', 21: 'v320luxiya'}
+158	158		301							{2: 'Camilo Solasso', 3: 'I believe you have already heard that over the past month, the Nora family has arbitrarily seized vast tracts of land from my plantations—not only in Catania but also in several other conservation areas across the ocean...', 4: '101', 18: '100007790', 19: '1', 21: 'v320luxiya'}
+159	159		301							{2: 'Camilo Solasso', 3: 'All the orders are gone, and I am on the verge of bankruptcy. In Catania alone, hundreds of workers will soon face unemployment. I truly cannot imagine that such a thing could happen on land blessed by God.', 4: '101', 18: '100007791', 19: '1', 21: 'v320luxiya'}
+160	160		212							{1: '1', 6: '1'}
+161	161		301				DialogDisable			"{3: ""The writer doesn't respond to the man's lament, their face remaining concealed in the shade.""}"
+162	162		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 3: '0', 4: '1', 5: '0.2'}
+163	163		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory968.png'}
+164	164		205							{1: '999'}
+165	165		401							{1: '2', 2: '910'}
+166	166		109							{1: '1', 2: '<color=#000000ff><size=30>...Dear President Hassen.</size></color>', 3: '0', 4: '395', 10: '1'}
+167	167		109							{1: '2', 2: '<color=#000000ff><size=30>Thank you for your attention to Catania. On behalf of the people of this small island, I would like to extend my deepest respect.</size></color>', 3: '0', 4: '300', 10: '1'}
+168	168		109						1500.0	{1: '3', 2: '<color=#000000ff><size=30>Once upon a time, Catania was a renowned destination famous for its history and bay.</size></color>', 3: '0', 4: '205', 6: '1', 8: '0.01', 10: '1'}
+169	169		301							{3: 'Once upon a time, Catania was a renowned destination famous for its history and bay.'}
+170	170		109						1500.0	"{1: '4', 2: '<color=#000000ff><size=30>Yet during the thirty years of rule by the ""Thirteen Families"", it degenerated into a breeding ground for violence and crime.</size></color>', 3: '0', 4: '110', 6: '1', 8: '0.01', 10: '1'}"
+171	171		301							"{3: ""Yet during the thirty years of rule by the 'Thirteen Families', it degenerated into a breeding ground for violence and crime.""}"
+172	172		402							{1: '910'}
+173	173		401							{1: '2', 2: '910'}
+174	174		109							"{1: '5', 2: ""<color=#000000ff><size=30>My late father fought all his life for the welfare of the people of Catania, and I shall continue his work, putting Catania's history back on the right track.</size></color>"", 3: '0', 4: '15', 6: '1', 8: '0.005', 10: '1'}"
+175	175		301							"{3: ""My late father fought all his life for the welfare of the people of Catania, and I shall continue his work, putting Catania's history back on the right track.""}"
+176	176		109						1500.0	"{1: '6', 2: '<color=#000000ff><size=30>The time is ripe, and I have decided to host a wedding for my ""godchild.""</size></color>', 3: '0', 4: '-80', 6: '1', 8: '0.01', 10: '1'}"
+177	177		301							"{3: ""The time is ripe, and I have decided to host a wedding for my 'godchild.'""}"
+178	178		402							{1: '910'}
+179	179		401							{1: '2', 2: '910'}
+180	180		109						2500.0	{1: '7', 2: '<color=#000000ff><size=30>According to Catanian tradition, all family leaders must cease their conflicts at that time, attend the ceremony, and offer their blessings to the godchild of the Savoy family.</size></color>', 3: '0', 4: '-175', 6: '1', 8: '0.005', 10: '1'}
+181	181		301							{3: 'According to Catanian tradition, all family leaders must cease their conflicts at that time, attend the ceremony, and offer their blessings to the godchild of the Savoy family.'}
+182	182		109						2200.0	{1: '8', 2: '<color=#000000ff><size=30>At this wedding, I will announce the dissolution of the Thirteen Families, ban all underground industries, and establish a new autonomous committee with the United Government.</size></color>', 3: '0', 4: '-270', 6: '1', 8: '0.005', 10: '1'}
+183	183		301							{3: 'At this wedding, I will announce the dissolution of the Thirteen Families, ban all underground industries, and establish a new autonomous committee with the United Government.'}
+184	184		402							{1: '910'}
+185	185		401							{1: '2', 2: '910'}
+186	186		109						2500.0	{1: '9', 2: '<color=#000000ff><size=30>Those who comply with my authority will have their past transgressions pardoned, while those who stubbornly resist will be immediately arrested and brought to justice.</size></color>', 3: '0', 4: '-365', 6: '1', 8: '0.005', 10: '1'}
+187	187		301							{3: 'Those who comply with my authority will have their past transgressions forgiven, while those who stubbornly resist will be immediately arrested and brought to justice.'}
+188	188		402							{1: '910'}
+189	189		110							
+190	190		401						500.0	{1: '2', 2: '2768'}
+191	191		401							{1: '2', 2: '910'}
+192	192		109						1500.0	{1: '1', 2: '<color=#000000ff><size=30>I hope that Babylonia can dispatch two exceptional warriors.</size></color>', 3: '0', 4: '395', 6: '1', 8: '0.01', 10: '1'}
+193	193		301							{3: 'I hope that Babylonia can dispatch two exceptional warriors.'}
+194	194		109						2000.0	{1: '2', 2: '<color=#000000ff><size=30>They will pose as my godchild who lives in Babylonia, serve as the central figure of this wedding, and assist in handling potential threats at the venue.</size></color>', 3: '0', 4: '300', 6: '1', 8: '0.01', 10: '1'}
+195	195		301							{3: 'They will pose as my godchild who lives in Babylonia, serve as the central figure of this wedding, and assist in handling potential threats at the venue.'}
+196	196		402							{1: '910'}
+197	197		401							{1: '2', 2: '910'}
+198	198		109						1500.0	{1: '3', 2: '<color=#000000ff><size=30>Regarding the operation details, I will have a specialist be in touch with you directly.</size></color>', 3: '0', 4: '205', 6: '1', 8: '0.01', 10: '1'}
+199	199		301							{3: 'Regarding the operation details, I will have a specialist be in touch with you directly.'}
+200	200		110							
+201	201		402							{1: '910'}
+202	202		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg', 3: '0', 4: '1', 5: '0.2'}
+203	203		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg'}
+204	204		205							{1: '999'}
+205	205		211							{1: '1', 2: '1021042', 7: '1'}
+206	206		301			DialogEnable				"{1: '1', 2: 'Camilo Solasso', 3: ""Lady Dawne, I heard your godchild's wedding is coming up..."", 4: '101', 18: '100007792', 19: '1', 21: 'v320luxiya'}"
+207	207		301							{2: 'Camilo Solasso', 3: 'I beg you, with all due humility, out of respect for the friendship I once had with your father, please, show mercy. Help us honest Catanian folk survive this.', 4: '101', 18: '100007793', 19: '1', 21: 'v320luxiya'}
+208	208		212							{1: '1', 6: '1'}
+209	209		301							{3: 'The man keeps his head down, catching a glimpse from the corner of his eye as she picks up a fountain pen, dips it in ink, and signs the final few words in the bottom right corner of the letter—'}
+210	210		301							{3: 'Sincerely, Olivia.'}
+211	211		201							{1: '1', 2: '501180'}
+212	212		301							"{1: '1', 2: 'Olivia', 3: ""...Mr. Solasso, I'm afraid I have to say no."", 4: '1', 18: '100007794'}"
+213	213		202							{1: '1'}
+214	214		301							"{3: ""Her response from the darkness is cold and concise, putting out the faint glimmer of hope in the man's eyes.""}"
+215	215		401							{1: '2', 2: '4182'}
+216	216		301							"{3: ""The writer taps her fountain pen against the desk, tilts her face upward, and slowly leans back in her smoker's chair.""}"
+217	217		301							{3: 'Sunlight streams through the slats of the Venetian blinds, illuminating her stern, commanding face.'}
+218	218		211							{1: '1', 2: '1021037', 7: '1'}
+219	219		301							"{1: '1', 2: 'Olivia', 3: ""You've spent a month currying favor with the police, the government, the army, burning time and money."", 4: '101', 18: '100007795', 19: '1', 21: 'v320luxiya'}"
+220	220		301							"{2: 'Olivia', 3: 'So why now? Why come crawling to my estate, calling me ""Lady Dawne""?', 4: '101', 18: '100007796', 19: '1', 21: 'v320luxiya'}"
+221	221		301							"{3: ""She taps her fingers lightly against the carved armrest. The delicate sound vanishes instantly, yet it's enough to make the man shudder with fear.""}"
+222	222		213							{1: '1', 2: '0.25', 3: '-400'}
+223	223		211							{1: '2', 2: '1021042', 4: '400', 7: '1'}
+224	224		301							{1: '1', 2: 'Camilo Solasso', 3: 'Lady Dawne, I regret my mistakes...', 4: '102', 18: '100007797', 19: '2', 21: 'v320luxiya'}
+225	225		301							"{2: 'Olivia', 3: ""The Lord didn't spare Miriam just because she repented, and I'm no different. If you want help, you need to pay a price."", 4: '101', 18: '100007798', 19: '1', 21: 'v320luxiya'}"
+226	226		301							"{2: 'Camilo Solasso', 3: ""I'll give you half my shares in Solasso Produce. Just... please forgive my foolishness."", 4: '102', 18: '100007799', 19: '2', 21: 'v320luxiya'}"
+227	227		401							{1: '2', 2: '5286'}
+228	228		213							{1: '1', 2: '0.25', 3: '-350', 5: '-5'}
+229	229		301							{3: 'Before the man can finish speaking, Olivia raises her index finger slightly, cutting his words short.'}
+230	230		301							"{2: 'Olivia', 3: ""Mr. Solasso, you, my father, and I, we're all businesspeople who live by the Ten Commandments. For the Lord's sake, that offer is an insult!"", 4: '101', 18: '100007800', 19: '1', 21: 'v320luxiya'}"
+231	231		212							{1: '1', 2: '2', 6: '1'}
+232	232		301							"{3: 'At the word ""offer"", Solasso anxiously makes the sign of the cross over his chest.'}"
+233	233		211							{1: '1', 2: '1021037', 4: '-400', 7: '1'}
+234	234		211							{1: '2', 2: '1021042', 4: '400', 7: '1'}
+235	235		301							"{1: '1', 2: 'Camilo Solasso', 3: ""Lady Dawne, I would give anything for your support, I mean it. But you see, I'm broke, dead broke, living off my little sister..."", 4: '102', 18: '100007801', 19: '2', 21: 'v320luxiya'}"
+236	236		301							{3: 'He reveals his desperate situation in an almost begging tone.'}
+237	237		301							"{2: 'Olivia', 3: ""I don't need your money, Mr. Solasso."", 4: '101', 18: '100007802', 19: '1', 21: 'v320luxiya'}"
+238	238		301							{2: 'Camilo Solasso', 3: '...?', 4: '102', 18: '100007803', 19: '2', 21: 'v320luxiya'}
+239	239		301							"{3: ""Solasso looks up in astonishment, meeting Lady Dawne's eagle-sharp gaze.""}"
+240	240		301							{2: 'Olivia', 3: 'If you were close with my father, then you know what he always said: respect is the truest gift, and friendship the richest treasure.', 4: '101', 18: '100007804', 19: '1', 21: 'v320luxiya'}
+241	241		301							{2: 'Camilo Solasso', 3: 'Of course... those were his exact words.', 4: '102', 18: '100007805', 19: '2', 21: 'v320luxiya'}
+242	242		214							{1: '1', 2: '3'}
+243	243		301							"{2: 'Olivia', 3: ""Then show me respect. Be my friend. That's all it'll cost you to get your orchard back."", 4: '101', 18: '100007806', 19: '1', 21: 'v320luxiya'}"
+244	244		212							{1: '1', 2: '2', 6: '1'}
+245	245		301							"{3: ""With those few words, light rekindles in Solasso's eyes.""}"
+246	246		211							{1: '1', 2: '1021037', 3: '3', 4: '-400', 7: '1'}
+247	247		211							{1: '2', 2: '1021042', 4: '400', 7: '1'}
+248	248		301							{1: '1', 2: 'Camilo Solasso', 3: 'D-do you... mean it... Lady Dawne?', 4: '102', 18: '100007807', 19: '2', 21: 'v320luxiya'}
+249	249		214							{1: '1', 2: '1'}
+250	250		301							"{2: 'Olivia', 3: ""I'll fight for you, as a friend. But if one day I call on you for help..."", 4: '101', 18: '100007808', 19: '1', 21: 'v320luxiya'}"
+251	251		301							"{3: ""She pauses momentarily, her piercing gaze firmly locking onto the man's eyes, leaving him breathless.""}"
+252	252		301							{2: 'Olivia', 3: 'Can I count on you to return the favor, Mr. Solasso?', 4: '101', 18: '100007809', 19: '1', 21: 'v320luxiya'}
+253	253		301							{2: 'Camilo Solasso', 3: 'Y-yes! Of course!', 4: '102', 18: '100007810', 19: '2', 21: 'v320luxiya'}
+254	254		213							{1: '1', 2: '0.4', 3: '-350'}
+255	255		301						450.0	{3: 'Olivia leans forward and holds out her right hand from behind.'}
+256	256		213							{1: '2', 2: '0.6', 3: '300', 4: '-150'}
+257	257		301						650.0	{3: 'Seeing this, Solasso immediately bows, humbly placing a kiss on her hand.'}
+258	258		213						450.0	{1: '2', 2: '0.4', 3: '350'}
+259	259		301							{2: 'Camilo Solasso', 3: 'Thank you, Lady Dawne... Thank you so much...', 4: '102', 18: '100007811', 19: '2', 21: 'v320luxiya'}
+260	260		301							"{3: ""He trembles, clutching Lady Dawne's right hand tightly while repeatedly murmuring words of thanks.""}"
+261	261		301							"{2: 'Olivia', 3: ""Think nothing of it. The Lord rewards the just, and let's call this a wedding gift from my godchild."", 4: '101', 18: '100007812', 19: '1', 21: 'v320luxiya'}"
+262	262		213							{1: '1', 2: '0.3', 3: '-400'}
+263	263		301						350.0	"{3: ""She calmly accepts Solasso's gratitude. Only after his emotions stabilize does she withdraw her hand.""}"
+264	264		301							{2: 'Olivia', 3: 'Farewell, Mr. Solasso. May the Lord bless your work and keep you well.', 4: '101', 18: '100007813', 19: '1', 21: 'v320luxiya'}
+265	265		301							{2: 'Camilo Solasso', 3: 'Lady Dawne, you have my word as a Catanian, the Solasso family will never forget your friendship and your grace.', 4: '102', 18: '100007814', 19: '2', 21: 'v320luxiya'}
+266	266		301							{3: 'Olivia gives a slight nod.'}
+267	267		214							{1: '1', 2: '3'}
+268	268		301							{2: 'Olivia', 3: 'Pleasure doing business, my friend.', 4: '101', 18: '100007815', 19: '1', 21: 'v320luxiya'}
+269	269		301							{2: 'Camilo Solasso', 3: 'Thank you so much...', 4: '102', 18: '100007816', 19: '2', 21: 'v320luxiya'}
+270	270		212							{1: '1', 2: '2', 6: '1'}
+271	271		301							{3: 'Solasso can barely contain his joy, repeatedly bowing in gratitude as he backs out of the room with the utmost deference.'}
+272	272		401							{1: '2', 2: '4095'}
+273	273		301							{3: 'Once silence returns, Olivia begins organizing the papers on her desk. She casts a meaningful glance toward the depths of the room.'}
+274	274		211							{1: '1', 2: '1021037', 7: '1'}
+275	275		301							{1: '1', 2: 'Olivia', 3: 'Frank, you take care of this.', 4: '101', 18: '100007817', 19: '1', 21: 'v320luxiya'}
+276	276		401							{1: '2', 2: '4833'}
+277	277		213						150.0	{1: '1', 2: '0.3', 3: '-450'}
+278	278		402							{1: '4833'}
+279	279		211							{1: '2', 2: '1021045', 4: '450', 7: '1'}
+280	280		301							"{1: '1', 3: ""From a corner of the room, the Savoy family's strategist rises from his seat.""}"
+281	281		301							{2: 'Frank', 3: 'Yes.', 4: '102', 18: '100007818', 19: '2', 21: 'v320luxiya'}
+282	282		301							{2: 'Olivia', 3: 'Are the wedding invitations ready?', 4: '101', 18: '100007819', 19: '1', 21: 'v320luxiya'}
+283	283		301							"{2: 'Frank', 3: ""Everything's set. Our allies are ready to board the Ark of this new era, and they're still loyal to you."", 4: '102', 18: '100007820', 19: '2', 21: 'v320luxiya'}"
+284	284		301							{2: 'Olivia', 3: 'Good. What about the other families? Any news?', 4: '101', 18: '100007821', 19: '1', 21: 'v320luxiya'}
+285	285		301							{2: 'Frank', 3: 'I was just getting to that. The Russell brothers have locked down the factory. Tensions are high. We might be looking at an all-out conflict. Should we do something about it?', 4: '102', 18: '100007822', 19: '2', 21: 'v320luxiya'}
+286	286		212							{1: '1', 2: '2', 6: '1'}
+287	287		301							{3: 'In the shade of the dim sunlight, Olivia gently shakes her head.'}
+288	288		211							{1: '1', 2: '1021037', 4: '-450', 7: '1'}
+289	289		211							{1: '2', 2: '1021045', 4: '450', 7: '1'}
+290	290		301							"{1: '1', 2: 'Olivia', 3: ""When the eel and the octopus fight, it's the fisherman who gets the catch. Let them tire each other out, then I'll swoop in with an offer they can't refuse."", 4: '101', 18: '100007823', 19: '1', 21: 'v320luxiya'}"
+291	291		301							{2: 'Frank', 3: 'Roger that.', 4: '102', 18: '100007824', 19: '2', 21: 'v320luxiya'}
+292	292		301							"{2: 'Olivia', 3: ""Oh, and if I'm not mistaken, isn't Solasso's cousin the lead designer at Vivienne Atelier?"", 4: '101', 18: '100007825', 19: '1', 21: 'v320luxiya'}"
+293	293		301							"{2: 'Frank', 3: ""That's right. She made her name in Babylonia, thanks in no small part to your father's support."", 4: '102', 18: '100007826', 19: '2', 21: 'v320luxiya'}"
+294	294		212							{1: '1', 2: '2', 6: '1'}
+295	295		301							"{3: ""Olivia presses her ring into the wax on the envelope, imprinting the Savoy's family crest.""}"
+296	296		211							{1: '1', 2: '1021037', 3: '3', 7: '1'}
+297	297		301				AniZhuanchangBegin			{1: '1', 2: 'Olivia', 3: 'Then give my new friend a heads-up, Lady Dawne has a favor to ask.', 4: '101', 18: '100007827', 19: '1', 21: 'v320luxiya'}
+298	298		212							{1: '1', 6: '1'}
+299	299		502							{1: 'DialogDisable'}
+300	300		401						2000.0	{1: '1', 2: '36'}
+301	301		401							{1: '1', 2: '208'}
+302	302		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+303	303		107			AniZhuanchangEnd				{1: 'Gray Raven Lounge', 2: 'Babylonia'}
+304	304		301							{3: 'Gray Raven Lounge, Babylonia'}
+305	305		108							{1: '1'}
+306	306		301			DialogEnable				{3: 'You and Lucia finished recovering the sound device just a while ago.'}
+307	307		401							{1: '2', 2: '4387'}
+308	308		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+309	309		504							{1: '0.7'}
+310	310		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1025.jpg'}
+311	311		301							{3: 'You had been feeling exhausted from all the traveling, but that hot spring bath you had taken helped you refresh.'}
+312	312		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+313	313		504							{1: '0'}
+314	314		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+315	315		301							"{3: 'No sooner had the two of you returned to Babylonia than the military headquarters found you and put you on another ""routine test mission"".'}"
+316	316		211							{1: '1', 2: '1021044', 7: '1'}
+317	317		301							"{1: '1', 2: 'Lucia', 3: 'So we\'re supposed to pose as some family\'s ""godchildren"" and hold a wedding in Catania?', 4: '101', 18: '100007828', 19: '1', 21: 'v320luxiya'}"
+318	318		301				DialogDisable			{3: 'Lucia puts down the mission briefing, sounding confused.'}
+319	319		302							{2: 'This leader they call Olivia wants to dissolve the Thirteen Families at the wedding.', 3: '320'}
+320	320		302							{2: 'She plans to shut down all illegal operations and share control of Catania with the United Government.', 3: '321'}
+321	321		301			DialogEnable				"{2: 'Lucia', 3: '""By Catanian tradition, every family head must attend the godchild\'s wedding""... This is a bold move.', 4: '101', 18: '100007829', 19: '1', 21: 'v320luxiya'}"
+322	322		301				DialogDisable			"{2: 'Lucia', 3: ""If Olivia's so powerful, why hire someone from Babylonia to pose as her godchild?"", 4: '101', 18: '100007830', 19: '1', 21: 'v320luxiya'}"
+323	323		302							{2: 'Before she took power as a family leader, Olivia apparently lived in Babylonia for some time.', 3: '324'}
+324	324		302							{2: 'There have always been rumors in Catania that her heir is in Babylonia.', 3: '325'}
+325	325		301			DialogEnable				"{2: 'Lucia', 3: ""Because she has no heir. So she's spinning the rumors into something useful, staging a wedding with Babylonia's backing."", 4: '101', 18: '100007831', 19: '1', 21: 'v320luxiya'}"
+326	326		302							"{2: ""That's right. Our mission is to suppress any potential hostile forces on site."", 3: '327'}"
+327	327		301							{2: 'Lucia', 3: 'Makes sense now. I get it.', 4: '101', 18: '100007832', 19: '1', 21: 'v320luxiya'}
+328	328		301							{3: 'Lucia quickly organizes the information mentally and gives you a nod.'}
+329	329		302							{2: 'Any thoughts, Lucia?', 3: '330'}
+330	330		301				DialogDisable			"{2: 'Lucia', 3: 'No objections here. If that\'s the plan, then I\'ll be the ""bride"".', 4: '101', 18: '100007833', 19: '1', 21: 'v320luxiya'}"
+331	331		302							"{2: ""For security reasons, we can't let people know who we are during the mission."", 3: '332'}"
+332	332		302							{2: 'If necessary, just call me by my name.', 3: '333'}
+333	333		301			DialogEnable				{2: 'Lucia', 3: 'Understood, 【kuroname】.', 4: '101', 18: '100007834', 19: '1', 21: 'v320luxiya'}
+334	334		212							{1: '1', 6: '1'}
+335	335		301							"{3: ""According to the mission briefing, Olivia's family has commissioned several custom wedding coatings for Lucia to choose from.""}"
+336	336		301							{3: 'For the sake of compatibility with the Pyroath frame, Lucia will need to wear this coating while operating with you until the wedding officially begins, to avoid any abnormalities that might affect operational efficiency during the ceremony.'}
+337	337		301				AniZhuanchangBegin			{3: 'Next, the two of you will need to visit the designated formal wear shop to select a wedding dress for Lucia...'}
+338	338		401						2000.0	{1: '1', 2: '36'}
+339	339		401							{1: '1', 2: '5059'}
+340	340		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+341	341		301			AniZhuanchangEnd				"{3: ""You're seated on the plush, comfortable sofa in the formal wear shop. The projection you're looking at shows a palace carved from white jade.""}"
+342	342		301							{3: 'Countless exquisite gowns bloom like clusters of lilies within the marble palace, radiating divine and sacred brilliance.'}
+343	343		301							{2: 'Shop Owner', 3: 'Miss, if you could please turn around slowly...', 18: '100007835'}
+344	344		401						250.0	{1: '2', 2: '1543'}
+345	345		301							{2: 'Shop Owner', 3: 'Wow... you look absolutely stunning!', 18: '100007836'}
+346	346		301							{2: 'Lucia', 3: '【kuroname】, are you... are you outside right now?', 18: '100007837'}
+347	347		401							{1: '2', 2: '5286'}
+348	348		301							{3: 'The velvet partition of the fitting room trembles slightly as Lucia speaks somewhat nervously from inside the fitting room.'}
+349	349		302							{2: 'Yes.', 3: '350', 4: '...', 5: '350'}
+350	350		301							"{2: 'Lucia', 3: ""I... I've changed into the dress. So now—"", 18: '100007838'}"
+351	351		301							{3: 'Lucia sounds nervous.'}
+352	352		301							{2: 'Shop Owner', 3: 'Alright, alright, let your sweetheart see you already!', 18: '100007839'}
+353	353		401							{1: '2', 2: '10042416'}
+354	354		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+355	355		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+356	356		211							{1: '1', 2: '1021039', 3: '4', 7: '1'}
+357	357		301							{1: '1', 3: 'Swish—'}
+358	358		214							{1: '1', 2: '6'}
+359	359		213							{1: '1', 2: '0.25', 4: '-15', 5: '30'}
+360	360		301							{2: 'Lucia', 3: 'Ah!', 4: '101', 18: '100007840', 19: '1', 21: 'v320luxiya'}
+361	361		301							{3: 'When the partition is suddenly drawn aside, you see Lucia standing before the lavish wall decorations.'}
+362	362		306							{1: '1'}
+363	363		213							{1: '1', 2: '0.55', 4: '150', 5: '-100'}
+364	364		301							{3: 'Pure white satin envelops her like flower petals, with the glaze ornament on her chest sparkling under the lights.'}
+365	365		213						550.0	{1: '1', 2: '0.55', 4: '-150', 5: '-150'}
+366	366		301							"{3: ""She wears a light, elegant veil adorned with peach blossoms that perfectly complements the snow-white wedding dress she's wearing.""}"
+367	367		306							
+368	368		213						450.0	{1: '1', 2: '0.5'}
+369	369		214							{1: '1', 2: '4'}
+370	370		301							{2: 'Lucia', 3: '【kuroname】...', 4: '101', 18: '100007841', 19: '1', 21: 'v320luxiya'}
+371	371		301							{3: 'Against the enchanting backdrop, Lucia for a moment seems to exude the aura of the one who owns this ethereal pure white palace.'}
+372	372		213							{1: '1', 2: '0.25', 3: '200'}
+373	373		211							{1: '2', 2: '1021043', 4: '-600', 7: '1'}
+374	374		301							"{1: '1', 2: 'Shop Owner', 3: ""Ooh! Someone's completely blown away!"", 4: '102', 18: '100007842', 19: '2', 21: 'v320luxiya'}"
+375	375		213							{1: '1', 2: '0.25'}
+376	376		212							{1: '2', 6: '1'}
+377	377		301							{3: 'Embarrassed, Lucia looks away.'}
+378	378		302							{2: '...', 3: '379', 4: 'Lucia...', 5: '379'}
+379	379		214							{1: '1', 2: '6'}
+380	380		301							{3: 'Both you and Lucia look surprised.'}
+381	381		214							{1: '1', 2: '4'}
+382	382		301							{2: 'Lucia', 3: '...', 4: '101', 18: '100007843', 19: '1', 21: 'v320luxiya'}
+383	383		214							{1: '1', 2: '1'}
+384	384		301							{3: 'After a moment of silence, Lucia hesitates, then finally stops avoiding eye contact and slowly meets your gaze.'}
+385	385		301							{2: 'Lucia', 3: 'Commandant... does this dress suit me?', 4: '101', 18: '100007844', 19: '1', 21: 'v320luxiya'}
+386	386		301							{3: 'Her voice is barely above a whisper, seemingly worried about what you might say.'}
+387	387		301							{3: 'At this very moment, Lucia seems to be anything but the decisive and resolute warrior that she usually is.'}
+388	388		302							"{2: 'It looks great.', 3: '389', 4: ""It doesn't really seem like your style."", 5: '392'}"
+389	389		214							{1: '1', 2: '3'}
+390	390		301							{3: 'Hearing the answer she was hoping for, Lucia lets out a satisfied smile.'}
+391	391	401	301							"{2: 'Lucia', 3: ""That's a relief. I really like this wedding dress, too."", 4: '101', 18: '100007845', 19: '1', 21: 'v320luxiya'}"
+392	392		214							{1: '1', 2: '4'}
+393	393		301							"{2: 'Lucia', 3: ""Is that so...? Maybe I'm just not cut out for something this fancy."", 4: '101', 18: '100007846', 19: '1', 21: 'v320luxiya'}"
+394	394		301				DialogDisable			{3: 'She lowers her head, looking somewhat disappointed.'}
+395	395		302							"{2: ""It's gorgeous, Lucia."", 3: '396'}"
+396	396		302							{2: 'You made an excellent choice.', 3: '397'}
+397	397		214							{1: '1', 2: '6'}
+398	398		301			DialogEnable				{2: 'Lucia', 3: 'R-really?', 4: '101', 18: '100007847', 19: '1', 21: 'v320luxiya'}
+399	399		214							{1: '1', 2: '3'}
+400	400		301							{3: 'Lucia puts on a soft smile when hearing your compliment.'}
+401	401		214							{1: '1', 2: '2'}
+402	402		301							"{2: 'Lucia', 3: ""I'm glad you like it."", 4: '101', 18: '100007848', 19: '1', 21: 'v320luxiya'}"
+403	403		211							{1: '1', 2: '1021043', 7: '1'}
+404	404		301							"{1: '1', 2: 'Shop Owner', 3: ""Oh dear, your partner's elegance fits our Vivienne gowns perfectly."", 4: '101', 18: '100007849', 19: '1', 21: 'v320luxiya'}"
+405	405		301							"{2: 'Shop Owner', 3: ""Especially that peach-blossom veil she picked herself, it's a perfect match!"", 4: '101', 18: '100007850', 19: '1', 21: 'v320luxiya'}"
+406	406		301							{3: 'The shop owner, who has been watching with a beaming smile, joins the conversation and enthusiastically praises Lucia.'}
+407	407		301							{2: 'Shop Owner', 3: 'These dresses were all custom pieces by our head designer, Miss Talia Solasso. She asked me to personally wish you both a happy union.', 4: '101', 18: '100007851', 19: '1', 21: 'v320luxiya'}
+408	408		302							{2: 'Thank you, and please pass on my gratitude to her as well.', 3: '409'}
+409	409		301							"{2: 'Shop Owner', 3: ""No thanks needed. It's an honor to have friends of the Solasso family grace our humble shop."", 4: '101', 18: '100007852', 19: '1', 21: 'v320luxiya'}"
+410	410		212							{1: '1', 6: '1'}
+411	411		301							{3: 'While the two of you exchange pleasantries, Lucia stands in front of the full-length mirror. She gently lifts her peach blossom veil and examines her reflection from different angles, then murmurs to herself.'}
+412	412		211							{1: '1', 2: '1021039', 3: '4', 7: '1'}
+413	413		301							{1: '1', 2: 'Lucia', 3: 'Am I... really doing the mission in this outfit...?', 4: '101', 18: '100007853', 19: '1', 21: 'v320luxiya'}
+414	414		301							{3: 'She turns from side to side as she examines herself carefully, her eyes showing how deeply she treasures this moment.'}
+415	415		301							"{2: 'Lucia', 3: ""【kuroname】 likes this dress too... I just hope we don't ruin it out there..."", 4: '101', 18: '100007854', 19: '1', 21: 'v320luxiya'}"
+416	416		302							{2: '...Lucia.', 3: '417'}
+417	417		214							{1: '1', 2: '1'}
+418	418		301							{3: 'Lucia snaps out of her trance and turns to look at you.'}
+419	419		301							{2: 'Lucia', 3: 'Commandant?', 4: '101', 18: '100007855', 19: '1', 21: 'v320luxiya'}
+420	420		302							{2: 'Are you sure you want this one?', 3: '421'}
+421	421		212							{1: '1', 6: '1'}
+422	422		301							{3: 'You approach slowly, and your reflection appears in the mirror beside her.'}
+423	423		211							{1: '1', 2: '1021039', 7: '1'}
+424	424		301							"{1: '1', 2: 'Lucia', 3: ""Let's go with this one. It really works, especially with the headpiece."", 4: '101', 18: '100007856', 19: '1', 21: 'v320luxiya'}"
+425	425		213							{1: '1', 2: '0.25', 3: '50'}
+426	426		306							{1: '1'}
+427	427		301							{3: 'She makes room for you, and in the mirror, the two of you stand side by side, reminiscent of a couple in a wedding picture.'}
+428	428		214							{1: '1', 2: '3'}
+429	429		301							{3: 'Lucia gently touches the peach blossom veil on her head, a joyful smile spreading across her face without herself even noticing it.'}
+430	430		306							
+431	431		302							{2: 'Then shall we... get ready to leave? For Catania, that is.', 3: '432'}
+432	432		214							{1: '1', 2: '1'}
+433	433		301							{3: 'Lucia nods at you.'}
+434	434		301		1		AniZhuanchangBegin			"{2: 'Lucia', 3: ""Alright, Commandant. Let's move out."", 4: '101', 18: '100007857', 19: '1', 21: 'v320luxiya'}"

@@ -1,0 +1,27 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory662.jpg'}
+2	2		401							{1: '1', 2: '140'}
+3	3		201							{1: '1', 2: '500568'}
+4	4		301			DialogEnable				{1: '1', 3: 'The once-blocked road is now cleared.'}
+5	5		202							{1: '1', 6: '1'}
+6	6		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+7	7		401							{1: '2', 2: '1513'}
+8	8		301							"{3: 'The interior structure of the ""tower"" is changing according to Lee\'s actions. A spiral staircase appears in front of him and he ascends it without a second of hesitation.'}"
+9	9		301							{3: 'No matter how many problems he will be faced with, he will find a solution to them all.'}
+10	10		301							{3: 'A familiar lighthouse still shines in his M.I.N.D. throughout it all, guiding him like the North Star.'}
+11	11		301							"{3: ""Even though he has lost all channels of communication with the outside world, and no messages can be sent nor received, as long as the remote connection is still established, he will always be connected to Commandant's Mind Beacon.""}"
+12	12		301							{3: 'As long as that lighthouse still exists, he knows that his teammates are fighting together with him—no words needed, that is how well they know one another.'}
+13	13		301				AniZhuanchangBegin			{3: 'That is why, no matter what happens, he will not allow the future Tifa mentioned to become reality.'}
+14	14		505			DialogDisable				{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+15	15		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory653.jpg'}
+16	16		502							{1: 'RImgBg1Shake'}
+17	17		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '2'}
+18	18		201							{1: '1', 2: '500568'}
+19	19		301			DialogEnable				{1: '1', 3: 'Lees finds himself in front of a round floating platform at the top of the spiral staircase. As he steps onto the platform, it starts to shake violently and suddenly escalates at blinding speed.'}
+20	20		301							{3: 'The wind roars in his ears. No matter which way he tries to look, all he sees is an endless abyss of crimson. This eerie realm keeps stretching as the platform rises, just like endless nights.'}
+21	21		301							{3: 'It has been a while since the platform started to rise, and it does not seem like it will reach the top any time soon.'}
+22	22		301							{2: 'Lee', 3: '...Looks like this is another riddle.', 4: '1'}
+23	23		301							{3: 'On this empty platform, Lee sees another figure.'}
+24	24		203							{1: '1', 2: '0.25', 3: '-400'}
+25	25		201							{1: '2', 2: '1011001', 4: '400'}
+26	26		301		1		AniZhuanchangBegin			{1: '1', 3: '—His past self.'}

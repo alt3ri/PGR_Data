@@ -1,0 +1,230 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+2	2		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory393.jpg'}
+3	3		401							{1: '1', 2: '203'}
+4	4		401							{1: '2', 2: '2866'}
+5	5		201							{1: '1', 2: '500166'}
+6	6		301			DialogEnable				"{1: '1', 2: 'Lucia', 3: ""Commandant, we're here."", 4: '1', 18: '100006279'}"
+7	7		202							{1: '1'}
+8	8		301							{3: 'The transport craft makes a slow descent, touching down at a plaza.'}
+9	9		301							{3: 'The plaza is nestled between two mountains, with a highway stretching out from it.'}
+10	10		301							{3: 'This place looks really hidden from a distance.'}
+11	11		301							"{3: 'The plaza was clearly built for Golden Age fighter jets, suggesting that this ""Dark Room"" was designed with combat in mind.'}"
+12	12		301							"{3: ""Lucia starts scanning the area's Punishing Virus concentration after getting off the transport craft.""}"
+13	13		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+14	14		201							{1: '1', 2: '500166'}
+15	15		301							{1: '1', 2: 'Lucia', 3: 'Commandant, the Punishing density is higher than the data Lee sent back a few days ago.', 4: '1', 18: '100006280'}
+16	16		302							"{2: ""Looks like Hutu's intel was right."", 3: '17'}"
+17	17		301							{2: 'Lucia', 3: 'I should look around first.', 4: '1', 18: '100006281'}
+18	18		201							{1: '1', 2: '500019'}
+19	19		301							{1: '1', 2: 'Pilot', 3: 'The comms loss is worrying—this looks serious. 【kuroname】, do you need backup?', 4: '1', 18: '100006282'}
+20	20		301				DialogDisable			{3: 'The transport craft pilot opens the cockpit window and leans out, asking a question.'}
+21	21		302							{2: 'Thanks.', 3: '22'}
+22	22		302							"{2: ""As usual, call for backup if we don't report in 24 hours."", 3: '23'}"
+23	23		301			DialogEnable				{2: 'Pilot', 3: 'Alright, be careful and keep us posted.', 4: '1', 18: '100006283'}
+24	24		202							{1: '1'}
+25	25		401							{1: '2', 2: '4410'}
+26	26		301							{3: 'The transport craft takes off slowly, leaving the area.'}
+27	27		201							{1: '1', 2: '500380'}
+28	28		301							{1: '1', 2: 'Ishmael', 3: 'The entrance looks to be over there.', 4: '1', 18: '100006284'}
+29	29		202							{1: '1'}
+30	30		301							{3: 'Ishmael points to a huge door at the base of the mountain ahead of the plaza.'}
+31	31		301							"{3: 'The door is built into the mountainside as if a giant spoon scooped out a chunk of rock. The main ""Dark Room"" structure is underneath the mountain.'}"
+32	32		301							{3: 'The massive door is firmly closed, separating the inside from the outside.'}
+33	33		201							{1: '1', 2: '500380'}
+34	34		301				DialogDisable			"{1: '1', 2: 'Ishmael', 3: ""Doesn't look like anyone's broken in from outside."", 4: '1', 18: '100006285'}"
+35	35		302							"{2: ""Something's definitely off, but don't jump to conclusions yet."", 3: '36'}"
+36	36		302							"{2: ""Let's wait and see what Lucia finds."", 3: '37'}"
+37	37		301			DialogEnable				{3: 'While you wait, Ishmael asks you a question.'}
+38	38		301							"{2: 'Ishmael', 3: ""Lee's lost comms, and it's clearly more dangerous than the briefing said..."", 4: '1', 18: '100006286'}"
+39	39		301							"{2: 'Ishmael', 3: ""Why are we turning down the pilot's help?"", 4: '1', 18: '100006287'}"
+40	40		301							{3: 'She sounds curious. Not a loaded question, just a casual, friendly chat—like friends catching up.'}
+41	41		301							{3: 'Strangely, she starts to feel familiar to you, as if you have known each other for a long time.'}
+42	42		302							"{2: ""Missions like this aren't uncommon to Gray Raven."", 3: '43'}"
+43	43		301							{2: 'Ishmael', 3: 'Not uncommon...', 4: '1', 18: '100006288'}
+44	44		301							{3: 'She repeats the last part softly.'}
+45	45		301							{2: 'Ishmael', 3: 'Is this your daily routine now?', 4: '1', 18: '100006289'}
+46	46		302							"{2: 'Not entirely.', 3: '47', 4: ""It's only part of it."", 5: '47'}"
+47	47		301							"{2: 'Ishmael', 3: ""I'm really interested in your story."", 4: '1', 18: '100006290'}"
+48	48		202							{1: '1'}
+49	49		301							{3: 'Unprompted, she says it before getting quiet.'}
+50	50		301							{3: 'Just as you start to get confused, Lucia comes back from scouting.'}
+51	51		201							{1: '1', 2: '500166'}
+52	52		301							{1: '1', 2: 'Lucia', 3: 'No signs of anyone breaking in around here. Punishing Virus levels are normal, too.', 4: '1', 18: '100006291'}
+53	53		203							{1: '1', 2: '0.25', 3: '400'}
+54	54		201							{1: '2', 2: '500380', 3: '3', 4: '-400'}
+55	55		301							{1: '1', 2: 'Ishmael', 3: 'Internal intrusion...', 4: '2', 18: '100006292'}
+56	56		302							"{2: ""Internal incursion... That doesn't make sense."", 3: '57', 4: ""They could've gotten in through other entrances."", 5: '57'}"
+57	57		204							{1: '1', 2: '5'}
+58	58		301							{2: 'Lucia', 3: 'Other entrances...', 4: '1', 18: '100006293'}
+59	59		302							"{2: ""There's no way a facility like this only has one entrance."", 3: '60'}"
+60	60		204							{1: '2'}
+61	61		301							"{2: 'Ishmael', 3: ""You're right, 【kuroname】, there'd be other ways in. But those records are gone."", 4: '2', 18: '100006294'}"
+62	62		301							"{2: 'Ishmael', 3: ""The Control Court only got some of the records. We don't know where the other entrances are."", 4: '2', 18: '100006295'}"
+63	63		301							{2: 'Ishmael', 3: 'Hutu probably held back some info to keep himself safe.', 4: '2', 18: '100006296'}
+64	64		302							"{2: ""So he doesn't fully trust Babylonia..."", 3: '65'}"
+65	65		202							{1: '1', 2: '2'}
+66	66		301							{3: 'After searching the area, you find a hidden small door on a far mountainside.'}
+67	67		301							{3: 'You cannot force the door open, but you find a control panel hidden behind the rocks next to the door after a while.'}
+68	68		301							{3: 'Since Liv is out and Lee is not here, you have brought a decryption device just in case.'}
+69	69		301							{3: 'Lucia looks at you after checking the panel.'}
+70	70		201							{1: '1', 2: '500166'}
+71	71		301							{1: '1', 2: 'Lucia', 3: 'The decryption device needs about 20 minutes...', 4: '1', 18: '100006297'}
+72	72		203							{1: '1', 2: '0.25', 3: '400'}
+73	73		201							{1: '2', 2: '500380', 4: '-400'}
+74	74		301							{1: '1', 2: 'Ishmael', 3: 'Do you need my help?', 4: '2', 18: '100006298'}
+75	75		302							"{2: 'Do you have enough computing power?', 3: '76', 4: ""You've got a decryption system installed?"", 5: '76'}"
+76	76		301							{2: 'Ishmael', 3: 'Of course.', 4: '2', 18: '100006299'}
+77	77		301							{3: 'It would be quicker to have a Construct handle the decryption directly.'}
+78	78		302							{2: 'Sure.', 3: '79', 4: 'Thank you.', 5: '79'}
+79	79		202							{1: '1', 2: '2'}
+80	80		401							{1: '2', 2: '1227'}
+81	81		301							{3: 'Ishmael walks up to the panel and skillfully initiates the decryption process.'}
+82	82		201							{1: '1', 2: '500380'}
+83	83		301							"{1: '1', 2: 'Ishmael', 3: ""It'll take about... two minutes."", 4: '1', 18: '100006300'}"
+84	84		301							{2: 'Ishmael', 3: 'Hmm... Looks like someone from the base tweaked the system.', 4: '1', 18: '100006301'}
+85	85		302							"{2: ""(That's some serious computing power...)"", 3: '86'}"
+86	86		202							{1: '1'}
+87	87		301							{3: 'Cutting the decryption time by almost ten times—few in the Task Force have that level of power.'}
+88	88		301							{3: 'Ishmael does not seem worried about revealing some of her cards.'}
+89	89		401							{1: '2', 2: '4542'}
+90	90		301							{3: 'Two minutes later, the door cracks open.'}
+91	91		201							{1: '1', 2: '500380'}
+92	92		301				AniZhuanchangBegin			"{1: '1', 2: 'Ishmael', 3: ""Let's go, 【kuroname】."", 4: '1', 18: '100006302'}"
+93	93		202							{1: '1', 6: '1'}
+94	94		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory83.jpg'}
+95	95		301			AniZhuanchangEnd				{3: 'Inside, you find a large, open warehouse area with various vehicles.'}
+96	96		201							{1: '1', 2: '500166'}
+97	97		301							"{1: '1', 2: 'Lucia', 3: ""It's weapons and gear... Looks like they're ready to go."", 4: '1', 18: '100006303'}"
+98	98		302							"{2: ""Let's head to the elevator first."", 3: '99'}"
+99	99		202							{1: '1'}
+100	100		301							"{3: ""Based on Hutu's data, the underground base has 20 floors total, with B7 to B14 as living areas. They were on B12 at the time.""}"
+101	101		201							{1: '1', 2: '500380'}
+102	102		301							"{1: '1', 2: 'Ishmael', 3: ""So, we're going to B12 first?"", 4: '1', 18: '100006304'}"
+103	103		302							{2: 'Right.', 3: '104'}
+104	104		202							{1: '1'}
+105	105		301				AniZhuanchangBegin			{3: 'Investigating where they spent the most time is the easiest way.'}
+106	106		401							{1: '1', 2: '36'}
+107	107		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory70.jpg'}
+108	108		401							{1: '1', 2: '202'}
+109	109		301			AniZhuanchangEnd				{3: 'Going through the warehouse, you see the elevator bay ahead of you.'}
+110	110		201							{1: '1', 2: '500166'}
+111	111		301							{1: '1', 2: 'Lucia', 3: 'Commandant, Hetero-Creatures spotted.', 4: '1', 18: '100006305'}
+112	112		301							{3: 'Two medium-sized Hetero-Creatures are wandering near the elevator bay.'}
+113	113		302							"{2: ""Let's go—I'll take the left. You take the right."", 3: '114'}"
+114	114		301							{2: 'Lucia', 3: 'Roger!', 4: '1', 18: '100006306'}
+115	115		202							{1: '1'}
+116	116		401							{1: '2', 2: '2970'}
+117	117		301			RImgBg1Shake				{1: '1', 3: 'The Hetero-Creatures turn to the three of you, roaring. They have definitely picked up your traces.'}
+118	118		302							{2: '(Raise gun and fire at the Hetero-Creature on the left)', 3: '119'}
+119	119		401						200.0	{1: '2', 2: '1510'}
+120	120		401						300.0	{1: '2', 2: '1510'}
+121	121		401							{1: '2', 2: '1510'}
+122	122		301							{3: 'BANG—BANG—BANG—'}
+123	123		301							{3: 'As the fight starts, Lucia immediately speeds up, charging the Hetero-Creature on the right like a fast, low-flying gray raven.'}
+124	124		401							{1: '2', 2: '636'}
+125	125		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '2'}
+126	126		301							{3: 'The frost fades as Lucia takes down the Hetero-Creature quickly and cleanly.'}
+127	127		301							"{3: ""At the same time, your bullets hit the left one perfectly, exploding when they hit the Hetero-Creature's torso.""}"
+128	128		201							{1: '1', 2: '500380', 3: '3'}
+129	129		301							"{1: '1', 2: 'Ishmael', 3: ""I'm seeing something here..."", 4: '1', 18: '100006307'}"
+130	130		301							{3: 'Ishmael stops at the elevator bay.'}
+131	131		301							{3: 'One elevator stands out from the others.'}
+132	132		301				DialogDisable			{3: 'The elevator door is ripped open, with a big pool of blood in front. Three bodies lie on the ground, laid out from the elevator.'}
+133	133		302							"{2: ""They're armed—not just regular citizens."", 3: '134'}"
+134	134		302							{2: 'Judging by how they fell, they were trying to get outside.', 3: '135'}
+135	135		302							{2: 'There are signs that they were attacking backward.', 3: '136'}
+136	136		301			DialogEnable				{2: 'Ishmael', 3: 'This elevator got trashed, looks like from the inside.', 4: '1', 18: '100006308'}
+137	137		204							{1: '1'}
+138	138		301							{2: 'Ishmael', 3: 'Hmm... They came up in the elevator, and then Hetero-Creatures chased them up the shaft?', 4: '1', 18: '100006309'}
+139	139		301							{2: 'Ishmael', 3: 'This happened... less than an hour ago.', 4: '1', 18: '100006310'}
+140	140		301							{3: 'After a quick look at the markings on the floor, Ishmael concludes.'}
+141	141		302							{2: 'So the Punishing Virus did come from the inside?', 3: '142'}
+142	142		301							{2: 'Ishmael', 3: 'Perhaps?', 4: '1', 18: '100006311'}
+143	143		301							{3: 'That smile of hers... For a second there, you get the feeling that Ishmael knows exactly what is coming.'}
+144	144		201							{1: '1', 2: '500166'}
+145	145		301							{1: '1', 2: 'Lucia', 3: 'Commandant, I found this thing on one of them.', 4: '1', 18: '100006312'}
+146	146		301							{3: 'What Lucia has found is a Babylonia-made storage device.'}
+147	147		301							"{2: 'Lucia', 3: ""Lee must've dropped it."", 4: '1', 18: '100006313'}"
+148	148		202							{1: '1'}
+149	149		301							{3: 'You plug the device into your terminal, and a video starts playing.'}
+150	150		401							{1: '2', 2: '4051'}
+151	151		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageOpen.prefab', 2: '2'}
+152	152		201							{1: '1', 2: '500026'}
+153	153		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+154	154		301							"{1: '1', 2: 'Lee', 3: ""Commandant, I'll give you the situation report from here."", 4: '1', 18: '100006314'}"
+155	155		301							"{2: 'Lee', 3: ""I left this video on a bunch of different paths, making sure you'd find it."", 4: '1', 18: '100006315'}"
+156	156		301							{2: 'Lee', 3: 'Following the mission intel, I came to this base to talk to Hutu, their leader, and we had a good exchange.', 4: '1', 18: '100006316'}
+157	157		301							{2: 'Lee', 3: 'But something unexpected happened earlier—a group of Hetero-Creatures showed up inside the base, mainly between B5 and B9.', 4: '1', 18: '100006317'}
+158	158		301							{2: 'Lee', 3: 'Communications are totally down here too.', 4: '1', 18: '100006318'}
+159	159		301							"{2: 'Lee', 3: ""We've got way too many evacuees, so I'm helping them pull back to deeper levels, away from the Hetero-Creatures, so..."", 4: '1', 18: '100006319'}"
+160	160		301							{3: 'He pauses for a moment.'}
+161	161		301							"{2: 'Lee', 3: ""That's why I can't break free alone. I could only leave you a message this way."", 4: '1', 18: '100006320'}"
+162	162		301							{3: 'Even though he looks worried in the video, Lee keeps his cool and gives a quick rundown of what is happening.'}
+163	163		301							"{2: 'Lee', 3: ""Right now, we're at B12. Given our speed, we should hit B17 to B19 in about an hour or two, for temporary shelter."", 4: '1', 18: '100006321'}"
+164	164		301							"{2: 'Lee', 3: ""Then, the stronghold leader's going to leave you a message with some info about the place."", 4: '1', 18: '100006322'}"
+165	165		301							{3: 'Lee steps to the side, moving out of the frame as a man wearing Kowloong-style clothing walks into view.'}
+166	166		201							{1: '1', 2: '500229'}
+167	167		301							"{1: '1', 2: 'Hutu', 3: ""I'm Hutu, this base's leader. I've been in touch with Babylonia before."", 4: '1', 18: '100006323'}"
+168	168		301							{3: 'He looks a little anxious.'}
+169	169		301							"{2: 'Hutu', 3: ""Let's cut to the chase. I'm sending our best team to break out of here and get this video to you guys."", 4: '1', 18: '100006324'}"
+170	170		301							{2: 'Hutu', 3: 'If you get this message, I hope you can bring more folks down here with you.', 4: '1', 18: '100006325'}
+171	171		301							"{2: 'Hutu', 3: ""This base has its own defense system, which we've tweaked. If things get bad, we can use it to evacuate."", 4: '1', 18: '100006326'}"
+172	172		301							"{2: 'Hutu', 3: ""But now, something unexpected happened. The defense system kicked in on its own, and we've lost control."", 4: '1', 18: '100006327'}"
+173	173		301							"{2: 'Hutu', 3: ""The area between B6 and B7 is locked down tight. Nobody's getting out."", 4: '1', 18: '100006328'}"
+174	174		301							"{2: 'Hutu', 3: ""I'll get my people to go through the ventilation shafts to break through."", 4: '1', 18: '100006329'}"
+175	175		301							"{2: 'Hutu', 3: ""I hope you see this video... I can't let thousands of people die here."", 4: '1', 18: '100006330'}"
+176	176		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+177	177		202							{1: '1'}
+178	178		401							{1: '2', 2: '4052'}
+179	179		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageEnd.prefab', 2: '2'}
+180	180		301							{3: 'The video cuts off there.'}
+181	181		201							{1: '1', 2: '500380'}
+182	182		301							{1: '1', 2: 'Ishmael', 3: 'As expected.', 4: '1', 18: '100006331'}
+183	183		302							{2: 'What is it?', 3: '184'}
+184	184		204							{1: '1'}
+185	185		301							"{2: 'Ishmael', 3: 'The ""Dark Room"" itself has a security system in case of emergencies.', 4: '1', 18: '100006332'}"
+186	186		302							{2: 'Emergencies?', 3: '187'}
+187	187		301							"{2: 'Ishmael', 3: ""It's meant to keep people or... something from getting out, I think. Basically, it seals everything off."", 4: '1', 18: '100006333'}"
+188	188		301							"{2: 'Ishmael', 3: ""The people in this base made use of the Dark Room's defensive system."", 4: '1', 18: '100006334'}"
+189	189		301							{2: 'Ishmael', 3: 'They tried to rewrite the system, but they did it poorly. They were trying to use it to defend against the Corrupted, but clearly...', 4: '1', 18: '100006335'}
+190	190		301							{2: 'Ishmael', 3: 'They failed.', 4: '1', 18: '100006336'}
+191	191		201							{1: '1', 2: '500166'}
+192	192		301							{1: '1', 2: 'Lucia', 3: 'What should we do next, Commandant?', 4: '1', 18: '100006337'}
+193	193		302							{2: 'Leave a message in case we lose contact.', 3: '194'}
+194	194		202							{1: '1'}
+195	195		301							"{3: ""Lee's comms are down. There is probably electromagnetic interference blocking the signals down here.""}"
+196	196		301							{3: 'Hutu said floors B6 and B7 are locked, and Hetero-Creatures are all over B5 through B9, but the vents are pretty safe.'}
+197	197		302							"{2: ""Let's take the elevator to B4 and descend through the vents."", 3: '198'}"
+198	198		301							"{3: ""According to Lee's intel, they are supposed to be taking shelter on B19.""}"
+199	199		301							{3: 'The three of you enter the elevator and head to B4.'}
+200	200		301				AniZhuanchangBegin			{3: 'You try to select floors below B7 on your way down, but they are indeed locked.'}
+201	201		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory343.jpg'}
+202	202		107			AniZhuanchangEnd			3000.0	{1: 'Emergency Stairwell', 2: 'Between B9 and B10'}
+203	203		108							
+204	204		301			DialogEnable				{3: 'You have not seen many Hetero-Creatures on your way, but you have encountered protective barriers in the stairwell on each floor.'}
+205	205		301							{3: 'Lucia has been tearing down these barriers, so you are able to descend steadily.'}
+206	206		301							"{3: 'You keep going until you see a large ""B10"" written on the wall, where Ishmael stops.'}"
+207	207		201							{1: '1', 2: '500380'}
+208	208		301							"{1: '1', 2: 'Ishmael', 3: ""It seems we'll have to part ways here for now, Gray Raven Commandant."", 4: '1', 18: '100006338'}"
+209	209		302							{2: '...Because of your mission?', 3: '210'}
+210	210		301							"{2: 'Ishmael', 3: ""Correct. My data says the Dark Room's control room is on B10."", 4: '1', 18: '100006339'}"
+211	211		302							{2: 'Can you handle the Hetero-Creatures?', 3: '212'}
+212	212		301							{3: 'Ishmael says nothing, just giving you that enigmatic smile of hers.'}
+213	213		301							"{3: 'You remember that line in your mission briefing—you are ""not responsible for the safety of the accompanying Control Court member"".'}"
+214	214		301							"{2: 'Ishmael', 3: ""Don't worry... I can handle myself in a fight."", 4: '1', 18: '100006340'}"
+215	215		302							{2: 'Get down!', 3: '216'}
+216	216		301			RImgBg1Shake				{3: 'Right as you are talking, a Hetero-Creature sneaks up from behind Ishmael.'}
+217	217		203							{1: '1', 2: '0.15', 3: '-100'}
+218	218		401							{1: '2', 2: '819016'}
+219	219		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryWhite.prefab', 2: '2'}
+220	220		301			RImgBg1Shake				"{3: ""Ishmael does not look back—she just takes a step to the left, dodging the Hetero-Creature's claws.""}"
+221	221		401							{1: '2', 2: '1510'}
+222	222		301							"{3: ""In one move, she pulls out a pistol, turns, and fires—the bullet heading straight toward the Hetero-Creature's head.""}"
+223	223		301							"{3: ""Ishmael's smile has not shifted a bit.""}"
+224	224		301							"{2: 'Ishmael', 3: ""I'm a Construct, after all—my computing power can help me dodge a few attacks."", 4: '1', 18: '100006341'}"
+225	225		301							{2: 'Ishmael', 3: 'Hmm... Just like that.', 4: '1', 18: '100006342'}
+226	226		401							{1: '2', 2: '4306'}
+227	227		301							{3: 'The Hetero-Creature hits the ground with a thud.'}
+228	228		301							"{2: 'Ishmael', 3: 'Also, I can try to take back control of the ""Dark Room\'s"" defense system from the control room.', 4: '1', 18: '100006343'}"
+229	229		301		1		AniZhuanchangBegin			{2: 'Ishmael', 3: 'Maybe I can even crack the sealed defense system... Who knows?', 4: '1', 18: '100006344'}

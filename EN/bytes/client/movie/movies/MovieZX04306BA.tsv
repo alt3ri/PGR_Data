@@ -1,0 +1,307 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory109.png'}
+2	2		401							{1: '1', 2: '205'}
+3	3		107						2000.0	{1: 'Babylonia', 2: 'Entrance to the Engineering Force'}
+4	4		108							{1: '1'}
+5	5		502							{1: 'RImgBg1Shake'}
+6	6		201							{1: '1', 2: '500494', 3: '5'}
+7	7		301			DialogEnable				{1: '1', 2: 'Karenina', 3: 'TEDDY!', 4: '1'}
+8	8		301							{2: 'Karenina', 3: 'Did you hack into my terminal and change the alarm settings again?!', 4: '1'}
+9	9		202							{1: '1', 6: '1'}
+10	10		201							{1: '1', 2: '500864', 4: '400'}
+11	11		201							{1: '2', 2: '500494', 3: '4', 4: '-400'}
+12	12		301							"{1: '1', 2: 'Teddy', 3: ""If you mess up the traction calculations again, I'll hack into your sleeping pod and lock you inside."", 4: '1'}"
+13	13		301							"{2: 'Teddy', 3: ""Or else you're gonna end up smashing your own fingers with a hammer someday."", 4: '1'}"
+14	14		301							"{2: 'Teddy', 3: ""As far as these additional frame repair costs go, I'm not gonna fill out the reimbursement forms for ya."", 4: '1'}"
+15	15		204							{1: '2', 2: '5'}
+16	16		301							{2: 'Karenina', 3: '****! You know what, forget it.', 4: '2'}
+17	17		204							{1: '2', 2: '4'}
+18	18		301							"{3: ""Karenina can't seem to come up with a good comeback.""}"
+19	19		301							"{2: 'Teddy', 3: ""It's time to head over to Gestalt. Asimov and the Gray Raven Commandant are waiting for us, so chop chop!"", 4: '1'}"
+20	20		202							{1: '1', 2: '2'}
+21	21		301				DialogDisable			{3: 'Teddy says, giving Karenina no time to react.'}
+22	22		401							{1: '1', 2: '36'}
+23	23		502							{1: 'RImgBg1DisableSlow'}
+24	24		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory546.jpg'}
+25	25		401							{1: '1', 2: '209'}
+26	26		301			DialogEnable				"{3: ""Just as they step out of the Engineering Force's main entrance, they run into someone they weren't expecting to see.""}"
+27	27		201							{1: '1', 2: '500497', 3: '2'}
+28	28		301							"{1: '1', 2: 'Leonardo', 3: ""Hey, Christina! It's been a while!"", 4: '1'}"
+29	29		202							{1: '1', 6: '1'}
+30	30		201							{1: '1', 2: '500864', 4: '-400'}
+31	31		201							{1: '2', 2: '500497', 3: '2', 4: '400'}
+32	32		301							{1: '1', 2: 'Teddy', 3: '...What are you doing here?', 4: '1'}
+33	33		301							"{2: 'Leonardo', 3: ""Can't believe you didn't tell me you were going to upgrade your frame. This suits you so much better!"", 4: '2'}"
+34	34		301							"{2: 'Leonardo', 3: ""I'm feeling like my little sister's all grown up all of a sudden. Oh, this definitely brings tears to my eyes."", 4: '2'}"
+35	35		301							{2: 'Teddy', 3: 'There is no Christina here.', 4: '1'}
+36	36		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory546.jpg'}
+37	37		301							"{2: 'Leonardo', 3: ""C'mon, we've been through that already. I probably don't seem like the emotional type, but words like those can still hurt sometimes."", 4: '2'}"
+38	38		204							{1: '1', 2: '10'}
+39	39		301							"{2: 'Teddy', 3: ""Well, I'm leaving now if you've got nothing else to say."", 4: '1'}"
+40	40		301							"{2: 'Leonardo', 3: ""Woah, is that all you've got to say to your brother?"", 4: '2'}"
+41	41		301							"{2: 'Leonardo', 3: ""Wait, haven't you seen the news these days? Well, granted you haven't, you've seen all those guys in the lab coats, right?"", 4: '2'}"
+42	42		204							{1: '1'}
+43	43		301							{2: 'Teddy', 3: '...', 4: '1'}
+44	44		301							{3: 'Teddy nods at Karenina to go ahead while she slips into a quiet side corridor.'}
+45	45		202							{1: '1', 2: '2'}
+46	46		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg', 3: '0', 4: '1', 5: '2'}
+47	47		205							{1: '999'}
+48	48		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+49	49		201							{1: '1', 2: '500864', 4: '-400'}
+50	50		201							{1: '2', 2: '500497', 3: '2', 4: '400'}
+51	51		301							"{1: '1', 2: 'Teddy', 3: ""We only have a few minutes, so you'd better get straight to business. Won't do us any good if they see us still in touch."", 4: '1'}"
+52	52		301							{2: 'Leonardo', 3: 'Alright, fine...', 4: '2'}
+53	53		301							{2: 'Leonardo', 3: 'I was sidelined at the core management meeting. The old man and Victoria teamed up to seize control of Norman Mining Corp and meddle with Gestalt...', 4: '2'}
+54	54		301							"{2: 'Leonardo', 3: ""Phew... well, fast, ain't it?"", 4: '2'}"
+55	55		204							{1: '1'}
+56	56		301							"{2: 'Teddy', 3: ""...Well, didn't you see all of these coming your way when you inherited that stupid amount of fortune? You made this choice yourself."", 4: '1'}"
+57	57		204							{1: '1'}
+58	58		301				AniZhuanchangBegin			"{2: 'Teddy', 3: ""Wealth and freedom. You've made your choice, no?"", 4: '1'}"
+59	59		202							{1: '1', 2: '2', 6: '1'}
+60	60		401							{1: '1', 2: '36'}
+61	61		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory894.jpg'}
+62	62		401							{1: '1', 2: '278'}
+63	63		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.7', 4: '0.7', 5: '0'}
+64	64		504							{1: '0.7'}
+65	65		201							{1: '1', 2: '500872'}
+66	66		301			AniZhuanchangEnd				{1: '1', 2: 'Leonardo', 3: 'Christina? Are you there?', 4: '1'}
+67	67		202							{1: '1', 6: '1'}
+68	68		201							{1: '1', 2: '500495', 3: '4', 4: '400'}
+69	69		201							{1: '2', 2: '500872', 4: '-400'}
+70	70		301							"{1: '1', 2: 'Christina', 3: ""I'm right here if your eyes aren't just for show. I'm pretty busy actually, so just say whatever you want to say."", 4: '1'}"
+71	71		301							"{2: 'Leonardo', 3: 'C\'mon, I\'m here to discuss our ""little plan"" with you!', 4: '2'}"
+72	72		301							"{2: 'Christina', 3: ""...Close the door. I've already switched the nearby surveillance."", 4: '1'}"
+73	73		301							"{2: 'Christina', 3: ""How's Victoria doing?"", 4: '1'}"
+74	74		301							"{2: 'Leonardo', 3: 'The old man is still claiming she\'s ""recovering from illness"". I\'ve seen her a few times through surveillance, though, and she kept asking me where you were because she wanted to hang out with you.', 4: '2'}"
+75	75		301							"{2: 'Leonardo', 3: ""I've tried to get her out. No luck so far, though, since the geezer's men are always around."", 4: '2'}"
+76	76		204							{1: '2', 2: '14'}
+77	77		301							"{2: 'Leonardo', 3: ""I get the feeling they want to use Victoria for something, but I can't do much about it."", 4: '2'}"
+78	78		301							{3: 'Leonardo furrows his brow.'}
+79	79		301							"{3: ""Everyone in Norman Mining Corp's upper echelons knows that no matter who the next successor is, it won't be Leonardo.""}"
+80	80		301							{3: 'People recognize him as an outcast.'}
+81	81		301							"{3: ""Charles Norman, Norman Mining Corp's power holder, favors the talented Christina and the frail Victoria, who's making a long-term recovery from her illness.""}"
+82	82		301							"{2: 'Christina', 3: ""He never trusted you. He's not going to let Victoria go because she's the only leverage he has over us."", 4: '1'}"
+83	83		301							"{2: 'Leonardo', 3: ""I can't get Victoria out, but I can still make life a little difficult for the old man."", 4: '2'}"
+84	84		301							"{2: 'Christina', 3: ""Thanks for the smokescreen by the way. I've got my hand on some fresh intel."", 4: '1'}"
+85	85		401							{1: '2', 2: '2568'}
+86	86		301							{3: 'A cascade of transaction records for all sorts of resources and money flows past the screen.'}
+87	87		301							"{2: 'Leonardo', 3: ""...Kurono? Are you sure this is right? I... don't find this joke funny at all."", 4: '2'}"
+88	88		301							{2: 'Christina', 3: 'Are you doubting me?', 4: '1'}
+89	89		301							"{2: 'Leonardo', 3: ""Oh no, it's just... I really didn't see this coming."", 4: '2'}"
+90	90		301							"{2: 'Christina', 3: ""The butler might think he's covered his tracks well, but he's gonna need a professional to do the job when it comes to destroying information."", 4: '1'}"
+91	91		204							{1: '2'}
+92	92		301							{2: 'Leonardo', 3: 'Like you?', 4: '2'}
+93	93		301							"{2: 'Christina', 3: ""Well, they can't afford me."", 4: '1'}"
+94	94		301							"{2: 'Leonardo', 3: ""Having ties with the infamous Kurono Group... that's bold."", 4: '2'}"
+95	95		301							"{2: 'Leonardo', 3: ""How do you plan to use this information? Going public with it is pretty risky, and we most likely wouldn't be able to stay out of the mess."", 4: '2'}"
+96	96		301							"{2: 'Christina', 3: ""That's your problem, not mine."", 4: '1'}"
+97	97		301							{2: 'Christina', 3: 'I just want Victoria out.', 4: '1'}
+98	98		301							"{2: 'Leonardo', 3: 'Don\'t you want out of Norman Mining Corp? ""Dominik\'s successor""?', 4: '2'}"
+99	99		301							{3: 'Leonardo knows Christina hates it when people call her that.'}
+100	100		301							"{2: 'Christina', 3: ""What good would that do me, though? Getting out of Norman Mining Corp doesn't mean I'll be able to make it out of Babylonia, right?"", 4: '1'}"
+101	101		204							{1: '2', 2: '14'}
+102	102		301							{2: 'Leonardo', 3: '...', 4: '2'}
+103	103		301							"{2: 'Christina', 3: ""It's like going from a small cage into a bigger one."", 4: '1'}"
+104	104		401							{1: '2', 2: '4047'}
+105	105		204							{1: '1'}
+106	106		301							{3: 'Says Christina as she quietly types strings of complex codes into her terminal, all the while without stopping.'}
+107	107		301							"{3: '""Dominik\'s successor"", ""Little Dominik"", ""Future Dominik""...'}"
+108	108		301							{3: 'She despises these names, but has gradually gotten used to living under their rules and titles.'}
+109	109		402							{1: '4047'}
+110	110		301							"{2: 'Christina', 3: ""I've already been remodeled into a Construct, and there is nothing much I can do even if I make it out of here."", 4: '1'}"
+111	111		301							"{2: 'Christina', 3: ""Let's get Victoria out first, and then... we'll deal with the rest after that."", 4: '1'}"
+112	112		204							{1: '2'}
+113	113		301							"{2: 'Leonardo', 3: ""Well, you don't know what you're missing out on. The world out there is much more exciting than you imagine, Christina."", 4: '2'}"
+114	114		301							"{2: 'Leonardo', 3: ""Don't worry. We'll all get out of this place together."", 4: '2'}"
+115	115		301							"{2: 'Leonardo', 3: ""C'mon, show me some love and support!"", 4: '2'}"
+116	116		202							{1: '1', 2: '2'}
+117	117		205							{1: '999'}
+118	118		401							{1: '2', 2: '4387'}
+119	119		301							{3: 'Leonardo yanks open the curtains, flooding the room with a blinding light.'}
+120	120		201							{1: '1', 2: '500872'}
+121	121		301				AniZhuanchangBegin			"{1: '1', 2: 'Leonardo', 3: ""Don't worry! Everything will turn out fine. You'll all leave here and live the life you want."", 4: '1'}"
+122	122		202							{1: '1', 6: '1'}
+123	123		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+124	124		401							{1: '2', 2: '1515'}
+125	125		301			AniZhuanchangEnd				{2: 'System', 3: '—Hello, Ms. Teddy. Your login credentials have been verified.'}
+126	126		301							"{3: ""Says Teddy's terminal in a mechanical voice.""}"
+127	127		201							{1: '1', 2: '500495', 3: '1'}
+128	128		301							"{1: '1', 2: 'Teddy', 3: ""...Sure, Leonardo. Guess it wouldn't hurt to show him some trust."", 4: '1'}"
+129	129		301							{3: 'Says the pink-haired Construct with a rare smile.'}
+130	130		301							"{2: 'Teddy', 3: ""Guess I wouldn't mind lending him a hand if he ever needs one."", 4: '1'}"
+131	131		301							"{2: 'Teddy', 3: ""Gotta start thinking about what I'm going to do after getting Victoria out..."", 4: '1'}"
+132	132		301							{2: 'Teddy', 3: 'Well, a terminal repair shop sounds like a good idea...', 4: '1'}
+133	133		301							"{3: 'With this ""transaction"", she\'s going to be able to break away from that ""sacred"" name. With it, the weight that has been imposed on her since birth seems to be slowly crumbling, too.'}"
+134	134		301							"{3: ""She is no longer someone's follower or replacement. From now on, she just has to be herself.""}"
+135	135		301							"{3: ""Next, she's going to rendezvous with Leonardo at the location he specified.""}"
+136	136		301				AniZhuanchangBegin			"{3: ""Despite the old man's far-reaching influence, she's confident that she has what it takes to dig up an even bigger scoop about Norman Mining Corp to get Victoria out of the old man's hands. All she needs is time...""}"
+137	137		401							{1: '1', 2: '36'}
+138	138		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory526.jpg'}
+139	139		401							{1: '1', 2: '169'}
+140	140		204							{1: '1'}
+141	141		301			AniZhuanchangEnd				{1: '1', 2: 'Teddy', 3: '...Leonardo?', 4: '1'}
+142	142		202							{1: '1'}
+143	143		301							"{3: ""The address she was given leads her to an apartment in Babylonia that doesn't exactly bustle with life. In it, however, she doesn't see who she was expecting to see.""}"
+144	144		301							"{3: ""On the table lies a letter that briefly explains Leonardo's intentions.""}"
+145	145		401							{1: '2', 2: '4112'}
+146	146		304							"{1: ""I've thought about it for a long time, and I've decided to go back home to inherit Norman Mining Corp's assets."", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}"
+147	147		304				AniZhuanchangBegin			{1: 'Enjoy life, Christina. Haha!', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 9: '1'}
+148	148		201							{1: '1', 2: '500495', 3: '5'}
+149	149		301			AniZhuanchangEnd				{1: '1', 2: 'Teddy', 3: '...', 4: '1'}
+150	150		401							{1: '2', 2: '4095'}
+151	151		301				AniZhuanchangBegin			{3: 'She clenches the letter tightly in her hand.'}
+152	152		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+153	153		201							{1: '1', 2: '500497', 3: '2'}
+154	154		301			AniZhuanchangEnd				{1: '1', 2: 'Leonardo', 3: 'Hey, been a while!', 4: '1'}
+155	155		301							"{2: 'Leonardo', 3: ""Is this where you're working now? How's it going, Christina? Enjoying work?"", 4: '1'}"
+156	156		202							{1: '1', 6: '1'}
+157	157		201							{1: '1', 2: '500495', 3: '5', 4: '-400'}
+158	158		201							{1: '2', 2: '500497', 3: '2', 4: '400'}
+159	159		301							{1: '1', 2: 'Teddy', 3: 'There is no Christina here. If your memory still serves you, Mr. Norman, my name is Teddy.', 4: '1'}
+160	160		204							{1: '1', 2: '14'}
+161	161		301							{2: 'Teddy', 3: 'Why... did you choose to go back to the Normans...', 4: '1'}
+162	162		301							{3: 'She left behind ample documents that could serve as bargaining chips. According to their original plan, they should first leave Norman Mining Corp, then try to dig up enough evidence to get Victoria out...'}
+163	163		204							{1: '2', 2: '13'}
+164	164		301							{2: 'Leonardo', 3: 'Well, guess I did that to inherit that stupid amount of fortune.', 4: '2'}
+165	165		301							"{2: 'Leonardo', 3: 'I mean I was naturally the only one the old man could have passed his wealth to since you were gone and Victoria has been trying to make a ""recovery"" all this time.', 4: '2'}"
+166	166		204							{1: '1', 2: '13'}
+167	167		301							{2: 'Teddy', 3: 'Oh... is that so? Well, congratulations, then...', 4: '1'}
+168	168		204							{1: '1'}
+169	169		301							{3: 'Leonardo bursts out laughing.'}
+170	170		204							{1: '2', 2: '2'}
+171	171		301							"{2: 'Leonardo', 3: ""So, Teddy, you haven't answered my question... Are you enjoying work?"", 4: '2'}"
+172	172		204							{1: '1', 2: '1'}
+173	173		301							"{2: 'Teddy', 3: ""Well, let's just say I'm surviving... I mean, I don't enjoy what I do as much as you do what you do, that's for sure."", 4: '1'}"
+174	174		204							{1: '2', 2: '2'}
+175	175		301							"{2: 'Leonardo', 3: ""That's good... yes, that's good."", 4: '2'}"
+176	176		204							{1: '1'}
+177	177		301				AniZhuanchangBegin			{3: 'Squinting at Leonardo, Teddy says no more.'}
+178	178		504							{1: '0'}
+179	179		401							{1: '1', 2: '36'}
+180	180		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+181	181		401							{1: '1', 2: '209'}
+182	182		201							{1: '1', 2: '500864', 4: '-400'}
+183	183		201							{1: '2', 2: '500497', 3: '2', 4: '400'}
+184	184		301			AniZhuanchangEnd				"{1: '1', 2: 'Leonardo', 3: ""I see you're as sharp as ever, Teddy."", 4: '2'}"
+185	185		301							"{2: 'Leonardo', 3: ""You either go with wealth or freedom, so there is really no issue with the way you're putting the situation."", 4: '2'}"
+186	186		301							"{2: 'Leonardo', 3: ""I've chosen the mire and I know I'm not getting out clean. But..."", 4: '2'}"
+187	187		301							"{2: 'Leonardo', 3: 'They\'re going to send down ""Heralds"" again, but I guess this is no news to you.', 4: '2'}"
+188	188		204							{1: '1', 2: '2'}
+189	189		301							{3: 'Leaning against the wall, Teddy gives him a mocking glance.'}
+190	190		301							{2: 'Teddy', 3: 'Why else would I be here wasting time with you?', 4: '1'}
+191	191		301							"{2: 'Teddy', 3: ""You can't even handle Victoria. What a loser..."", 4: '1'}"
+192	192		204							{1: '1'}
+193	193		301							"{2: 'Leonardo', 3: ""Ha, always well-informed. That's my sister."", 4: '2'}"
+194	194		204							{1: '2'}
+195	195		301							{3: 'Feigning a couple of coughs, Leonardo shakes his head and sighs.'}
+196	196		301							{2: 'Leonardo', 3: 'Victoria is now on the Supervisory Board, aggressively pushing forward Project Herald as one of the heirs of Norman.', 4: '2'}
+197	197		301							"{2: 'Leonardo', 3: 'Thanks to the old man and ""Dominik\'s Legacy"", she has gained strong support from the board.', 4: '2'}"
+198	198		204							{1: '2', 2: '2'}
+199	199		301							"{2: 'Leonardo', 3: 'You know... those board members are almost fanatically believing in ""Dominik"".', 4: '2'}"
+200	200		301							{3: 'He lets out a slightly sarcastic laugh.'}
+201	201		301							"{2: 'Leonardo', 3: ""I don't know what the old man has been telling Victoria while I've been busy scheming for power..."", 4: '2'}"
+202	202		301							{2: 'Teddy', 3: 'No one knows what he is thinking.', 4: '1'}
+203	203		204							{1: '1', 2: '3'}
+204	204		301							"{2: 'Teddy', 3: ""Thanks for the update... I'll help you, not just to stop that stinky project, but also to save Victoria."", 4: '1'}"
+205	205		301							"{3: 'Teddy has broken free from the Norman family\'s predicament, but Victoria is still in there, let alone many more ""Heralds"" who might be sent underground.'}"
+206	206		301							{3: 'Never forget the value of life. No one should be left behind.'}
+207	207		204							{1: '1'}
+208	208		301							"{2: 'Teddy', 3: ""Let's temporarily cooperate and exchange some information. I don't want to work with a clueless fool."", 4: '1'}"
+209	209		401							{1: '2', 2: '4052'}
+210	210		301							{3: 'Teddy casts a glance at the surrounding surveillance and quickly operates her terminal to cover several data points.'}
+211	211		301							{2: 'Teddy', 3: 'Alright, spill the beans. What do you have on your end?', 4: '1'}
+212	212		301							"{2: 'Teddy', 3: ""I've got some original documents signed off by the Norman Mining Corp, as well as a few intercepted emails between senior members—don't ask how I got them."", 4: '1'}"
+213	213		301							{2: 'Teddy', 3: 'What do you have to offer me?', 4: '1'}
+214	214		301							"{2: 'Leonardo', 3: ""You really trust your brother that much? I'm so touched..."", 4: '2'}"
+215	215		204							{1: '1', 2: '10'}
+216	216		301							"{2: 'Teddy', 3: ""...I'm leaving."", 4: '1'}"
+217	217		301							"{2: 'Leonardo', 3: ""Hey, wait! Don't play this trick again."", 4: '2'}"
+218	218		301							"{2: 'Leonardo', 3: ""Victoria is really wary of me, so I've only got surface-level stuff here, but I do have some confirmed intel."", 4: '2'}"
+219	219		301				AniZhuanchangBegin			"{2: 'Leonardo', 3: 'The old man is obsessed with ""Dominik\'s Legacy"" because ""Heralds"" in the past once brought back some information...', 4: '2'}"
+220	220		202							{1: '1', 2: '2', 6: '1'}
+221	221		502							{1: 'DialogDisable'}
+222	222		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+223	223		107			AniZhuanchangEnd			2000.0	{1: 'Science Council'}
+224	224		108							{1: '1'}
+225	225		301			DialogEnable				{3: 'After several days of intense work through the nights, most researchers have fallen asleep on the spot, still in their clothes.'}
+226	226		201							{1: '1', 2: '500012', 4: '-400'}
+227	227		201							{1: '2', 2: '500004', 4: '400'}
+228	228		301							{1: '1', 3: 'Nikola silently stands beside Asimov in the corner of the room.'}
+229	229		301							{3: 'After a simple greeting, Nikola looks at the monitor in front of Asimov. The screen is full of red spots.'}
+230	230		301							{2: 'Nikola', 3: 'Are the analysis results out yet?', 4: '1'}
+231	231		301							{2: 'Asimov', 3: 'Yeah.', 4: '2'}
+232	232		401							{1: '2', 2: '2979'}
+233	233		301							{3: 'He taps the terminal. All the Red Tides, regardless of their sizes, have converged in the same direction.'}
+234	234		301							{2: 'Asimov', 3: 'The measurement data uploaded from each evacuated conservation area and the sample test results brought back by Gray Raven Commandant all point to one possible conclusion.', 4: '2'}
+235	235		301							{2: 'Asimov', 3: '—Their convergence point, which is also the center of this Hetero Zone Red Tide riot, is likely to be the first city where zero-point energy appeared.', 4: '2'}
+236	236		302							{2: 'The very first Zero-Point Reactor...', 3: '237'}
+237	237		301							"{3: ""It was a symbol of a civilization's pinnacle, and also the beginning of its downfall.""}"
+238	238		301							{2: 'Nikola', 3: '...', 4: '1'}
+239	239		301							{2: 'Nikola', 3: 'Is the data accurate?', 4: '1'}
+240	240		301							"{2: 'Asimov', 3: ""87.67%, there might be minor discrepancies, but the actual location won't deviate too much."", 4: '2'}"
+241	241		301							{2: 'Nikola', 3: 'Send nearby squads to investigate immediately... Tell them to bring back as many samples and data as possible while ensuring their own safety.', 4: '1'}
+242	242		301							{3: 'No one has ever stepped near that city since Dominik and his team sealed the Zero-Point Reactor.'}
+243	243		301							{3: 'As the first victim of the Punishing Virus outbreak, the city is surrounded by high concentrations of Punishing Virus, making it difficult for ordinary people to approach.'}
+244	244		301							"{2: 'Asimov', 3: ""It's too dangerous."", 4: '2'}"
+245	245		301							{3: 'Asimov looks at Nikola disapprovingly.'}
+246	246		301							"{2: 'Nikola', 3: ""I'd love to use the Omega Weapon to clear Reactor 1 directly if possible."", 4: '1'}"
+247	247		301							{2: 'Nikola', 3: 'However...', 4: '1'}
+248	248		301							"{2: 'Nikola', 3: 'The pioneer team led by Dominik to shut down the Zero-Point Reactor is still listed as ""missing"".', 4: '1'}"
+249	249		302							{2: 'What?!', 3: '250'}
+250	250		301							{2: 'Nikola', 3: 'According to the records from the Anti-Punishing Virus Command Center at the time, many Science Council members, led by Chief Dominik, all joined the team to shut down Reactor 1.', 4: '1'}
+251	251		301							"{2: 'Nikola', 3: ""Under Dominik's instructions, the military personnel, Norman Mining Corp technicians, and Constructs who went to assist were all arranged to stay on the outskirts of the city..."", 4: '1'}"
+252	252		202							{1: '2', 2: '1', 6: '1'}
+253	253		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory427.jpg'}
+254	254		504							{1: '0.7'}
+255	255		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+256	256		301							{1: '1', 3: '30 minutes ago, the 45 monitoring stations set up by the army simultaneously detected a surge in the Punishing Virus concentration in the area.'}
+257	257		301							{3: 'Within 300 milliseconds, it rose to 20000 times the original level, and we lost contact with Dominik and his team.'}
+258	258		301							{3: 'In the following 30 minutes, there were no further increases in the Punishing Virus concentration, and it is now spreading according to our diffusion model.'}
+259	259		301							{3: 'Since that outbreak, none of the monitoring stations have captured any internal energy reactions.'}
+260	260		301							{3: 'The General Staff ruled out all other possibilities, so we can infer that Reactor 1 has been shut down.'}
+261	261		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+262	262		504							{1: '0'}
+263	263		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+264	264		201							{1: '1', 2: '500012', 7: '1'}
+265	265		301							"{1: '1', 2: 'Nikola', 3: ""Since we can't accurately confirm the status of the pioneer team shutting down Reactor 1, they are still listed as missing."", 4: '1'}"
+266	266		301							"{2: 'Nikola', 3: ""There are too many uncertainties. We're concerned that using the Omega Weapon or the Longinus Arsenal recklessly might lead to unexpected incidents..."", 4: '1'}"
+267	267		401							{1: '2', 2: '1515'}
+268	268		301							"{3: ""Nikola's terminal chimes in before he can finish his words. He quickly scans the message and gives Asimov a brief nod, then leaves the Science Council hall.""}"
+269	269		401							{1: '2', 2: '1516'}
+270	270		202						1000.0	{1: '1'}
+271	271		201							{1: '1', 2: '500004'}
+272	272		301							{1: '1', 2: 'Asimov', 3: '...', 4: '1'}
+273	273		302							{2: 'Still thinking about Dominik?', 3: '274'}
+274	274		301							{2: 'Asimov', 3: 'Yeah.', 4: '1'}
+275	275		301							{2: 'Asimov', 3: 'I have browsed through the records from the Anti-Punishing Virus Command Center. No human could possibly survive such a concentration of the Punishing Virus.', 4: '1'}
+276	276		301							{2: 'Asimov', 3: 'Then... how did Dominik manage to shut down Reactor 1?', 4: '1'}
+277	277		302							{2: '...', 3: '279'}
+278	278		401							{1: '2', 2: '2711'}
+279	279		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory864.jpg'}
+280	280		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+281	281		202							{1: '2', 6: '1'}
+282	282		504							{1: '0.7'}
+283	283		201							{1: '1', 2: '500817', 7: '1'}
+284	284		301							{1: '1', 2: 'Qu', 3: 'Did you really think one Dominik could achieve all that on his own?', 4: '1'}
+285	285		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+286	286		504							{1: '0'}
+287	287		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+288	288		201							{1: '1', 2: '500004'}
+289	289		301							"{1: '1', 2: 'Asimov', 3: '""More than one Dominik""...', 4: '1'}"
+290	290		301							{2: 'Asimov', 3: 'What kind of world did Dominik actually see...?', 4: '1'}
+291	291		301							{3: 'Carrying those secrets, Dominik is hidden deep in a city shrouded by high concentrations of the Punishing Virus.'}
+292	292		301							{3: 'Asimov shakes his head and opens another interface on his terminal.'}
+293	293		301							{2: 'Asimov', 3: 'Teddy and I have unlocked the second layer of that storage card you brought and found some codes.', 4: '1'}
+294	294		302							{2: 'Codes?', 3: '295'}
+295	295		301							{2: 'Asimov', 3: 'It seems to contain some information. The encryption method... feels quite familiar.', 4: '1'}
+296	296		301							"{2: 'Asimov', 3: ""Do you remember the Heteromer Shard from Bianca's Phantom Tracer?"", 4: '1'}"
+297	297		302							{2: '...', 3: '298', 4: 'Of course.', 5: '299'}
+298	298		301							"{2: 'Asimov', 3: ""It's the core shard formed from the Punishing Virus heteromerization that was once used on Lee's Hyperreal frame."", 4: '1'}"
+299	299		302							"{2: '""...The gift of the \'future\'.""', 3: '300'}"
+300	300		301							{2: 'Asimov', 3: 'Correct.', 4: '1'}
+301	301		302							"{2: 'So, could that ""gift"" also be something Nanami has sent back?', 3: '302'}"
+302	302		301							"{2: 'Asimov', 3: ""I can't give a definite answer, but there's certainly a probability."", 4: '1'}"
+303	303		301							"{2: 'Asimov', 3: ""But if it's Nanami... there might be some new angles we can work on."", 4: '1'}"
+304	304		202							{1: '1'}
+305	305		401							{1: '2', 2: '1513'}
+306	306		301		1		AniZhuanchangBegin			{3: 'Asimov leaves the hall in a hurry as if he has thought of something.'}

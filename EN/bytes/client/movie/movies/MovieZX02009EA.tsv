@@ -1,0 +1,82 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory372.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		401						100.0	{1: '2', 2: '1513'}
+4	4		301			DialogEnable				{3: 'No. 21 rushes toward the basement after the battle is over.'}
+5	5		301							{3: 'Standing before the door to the basement—no, it is not a door anymore. Bloody handprints and scratches left by metal claws envelop it, turning it into a silent gravestone.'}
+6	6		401							{1: '2', 2: '1516'}
+7	7		301							{3: 'No. 21 gently opens the door and steps in.'}
+8	8		301				AniZhuanchangBegin			{3: 'The hidden memories unveil once more.'}
+9	9		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+10	10		301			AniZhuanchangEnd				{3: 'You cannot see anything at first. There is only the rotten, moldy smell of the basement and the touches of the heaps of junk as you run into them.'}
+11	11		301				AniZhuanchangBegin			{3: 'Then a bright light tears down the darkness. You cannot help but open the door slightly and look out carefully through the gap, and all you can see is a corner of the staircase.'}
+12	12		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory369.png'}
+13	13		401							{1: '1', 2: '43'}
+14	14		301			AniZhuanchangEnd				{3: 'The sound of metal dragging over the wooden floor gives you a shiver. Then you hear the heavy thud of a body hitting something, and nothing after that.'}
+15	15		301							"{3: ""An impulsion drives you to scream Lucia's name... but you must not. You bite down your lips as if the pain can keep your fear in check. But the pain is nothing in comparison.""}"
+16	16		301							{3: 'Dead silence.'}
+17	17		301							{3: 'You thought you could hear thunder before realizing that is just your heart beating loudly.'}
+18	18		301							{3: 'The artificial heart is wailing and thumping because of the memory of someone unrelated.'}
+19	19		301							{3: 'The longer the silence lasts, the more your desperation grows. The darkness in the basement weighs on your back, almost breaking you.'}
+20	20		401			RImgBg1Shake				{1: '2', 2: '1512'}
+21	21		301							{3: 'Then you hear a loud bang near you as a body in red and black rolls down the stairs and lands at its base.'}
+22	22		302							{2: 'No...', 3: '23'}
+23	23		301							{3: 'You subconsciously cover your mouth, trying desperately not to scream.'}
+24	24		301							{3: 'After a few seconds, or maybe longer, the body shifts, followed by a painful moan.'}
+25	25		301							{3: 'The young Lucia crawls on the floor, her tiny arms supporting her body as she slowly climbs up.'}
+26	26		301							{3: 'Blood drips down her temple, dying her eyes, collars, and fingers red.'}
+27	27		302							{2: 'L-Lucia...', 3: '28'}
+28	28		301							{3: 'Weakly you cry out, powerless to do anything.'}
+29	29		301							"{3: ""But the horror is not over. A large shadow cast from the top of the stairs shrouds Lucia's body. She cannot even stand straight.""}"
+30	30		301							{3: 'But she looks fearless.'}
+31	31		301							{3: 'Taking its time, the monster walks down the stairs, its shadow encroaching.'}
+32	32		301			RImgBg1Shake				{3: 'Before you can react, the door to the basement is pushed open. Sunlight pours in, and the orange, warm glow coats you as you stand at the door.'}
+33	33		302							"{2: ""I won't let you hurt her—"", 3: '34'}"
+34	34		301							{3: 'The blood is pumping in your veins like a tidal wave, thunderous and earthshaking.'}
+35	35		301							"{3: 'You raise the ""weapon"" in your hands, your heartbeat so loud that it drowns out the monster\'s shriek. All you can see is the wounded, bloody girl lying before you.'}"
+36	36		301							"{3: '—Even when your ""weapon"" is nothing but a ridiculous stuffed animal.'}"
+37	37		201							{1: '1', 2: '500032', 3: '14'}
+38	38		301							{1: '1', 2: 'Lucia', 3: 'LUNA!!', 4: '1'}
+39	39		301							"{3: ""Lucia's expression changes—a fear she has not shown even when confronting the horrid Corrupted.""}"
+40	40		202							{1: '1', 6: '1'}
+41	41		401							{1: '2', 2: '1512'}
+42	42		301			RImgBg1Shake				{3: 'She tries to run toward you, but the pain causes her to fall again. So she starts crawling.'}
+43	43		301							{2: 'Lucia', 3: 'Luna! GO BACK!', 4: '1'}
+44	44		302							{2: 'I can protect you too... I want to protect you—', 3: '47'}
+45	45		201							{1: '1', 2: '500013'}
+46	46		401							{1: '2', 2: '1508'}
+47	47		301							{1: '1', 3: 'Before she can finish, the Corrupted, its eyes glowing bright crimson, leaps toward you, noticing its new prey.', 4: '1'}
+48	48		401							{1: '1', 2: '36'}
+49	49		202							{1: '1', 6: '1'}
+50	50		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory372.png'}
+51	51		201							{1: '1', 2: '500328', 3: '5'}
+52	52		301							{1: '1', 2: 'No. 21', 3: 'N-NO—', 4: '1'}
+53	53		301							{3: 'No. 21 reaches out, but she catches nothing.'}
+54	54		204							{1: '1'}
+55	55		401							{1: '1', 2: '207'}
+56	56		301							{2: 'No. 21', 3: '...', 4: '1'}
+57	57		301							{2: 'No. 21', 3: '...What happened next?', 4: '1'}
+58	58		301							{3: 'This is as far as the memory goes. You have no idea if Luna has lost the memory of what followed, or if she refuses to remember them.'}
+59	59		301							{2: 'No. 21', 3: 'Am I hurt?', 4: '1'}
+60	60		301							{3: 'No, 21 touches her face. Her cheeks are cold to the touch, but there is nothing there.'}
+61	61		204							{1: '1', 2: '3'}
+62	62		301							{2: 'No. 21', 3: '...Something important is lost.', 4: '1'}
+63	63		302							"{2: ""...You're right."", 3: '65'}"
+64	64		204							{1: '1'}
+65	65		301							{3: 'These feelings are alien to her. Having never experienced, seen, or felt something like this, No. 21 just stands there, perplexed.'}
+66	66		204							{1: '1', 2: '3'}
+67	67		301							"{2: 'No. 21', 3: ""I... don't like this feeling."", 4: '1'}"
+68	68		301							{2: 'No. 21', 3: 'She has done... so many bad things.', 4: '1'}
+69	69		204							{1: '1', 2: '4'}
+70	70		301							{2: 'No. 21', 3: 'Why is she showing me this?', 4: '1'}
+71	71		302							"{2: ""She's not the one showing us this."", 3: '72'}"
+72	72		202							{1: '1', 6: '1'}
+73	73		301							{3: 'It is difficult for you to explain it to her, so you give No. 21 a simple explanation.'}
+74	74		301							"{3: '""Everyone has a past. Even when you think your past is a blank... it is still a past.""'}"
+75	75		301							"{3: '""Everyone becomes who they are because of what they have been through. Your past made you who you are. Maybe I\'m not the ideal person to tell you this way...""'}"
+76	76		301							"{3: '""But... do you like who you are now? Do you like what you have?""'}"
+77	77		301							"{3: '""If you do, then don\'t deny your past. The past isn\'t the point, nor is it the future... It\'s now. Here and now.""'}"
+78	78		301							"{3: '""This is Luna\'s past... That\'s it.""'}"
+79	79		302							{2: '(Tell her what you think)', 3: '80'}
+80	80		401							{1: '2', 2: '10007502'}
+81	81		301		1		AniZhuanchangBegin			{3: 'Right then, you hear a loud bang from the door.'}

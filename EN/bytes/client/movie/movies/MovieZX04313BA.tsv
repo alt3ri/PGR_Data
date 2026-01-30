@@ -1,0 +1,225 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory3.jpg'}
+2	2		401							{1: '1', 2: '119'}
+3	3		301			DialogEnable				{3: 'Once again, the Norman Mining Corp transport shuttle is preparing for takeoff.'}
+4	4		301							{3: 'Just like last time, the spaceport is bustling with the lively chatter of people.'}
+5	5		201							{1: '1', 2: '500042'}
+6	6		301							{1: '1', 2: 'Staff Member 1', 3: 'Wow... I thought none of the last batch made it back? Why are we still seeing so many people this time?', 4: '1'}
+7	7		301							{2: 'Staff Member 1', 3: 'Are they really not afraid of death?', 4: '1'}
+8	8		203							{1: '1', 2: '0.25', 3: '-500'}
+9	9		201							{1: '2', 2: '500023', 4: '500'}
+10	10		301							"{1: '1', 2: 'Staff Member 2', 3: ""That's why their corporation is vast and thriving, while you're still here guarding the port."", 4: '2'}"
+11	11		301							{3: 'He lowers his voice mysteriously.'}
+12	12		301							"{2: 'Staff Member 2', 3: ""I've heard from friends that Norman Mining Corp got their hands on some top-secret military intel!"", 4: '2'}"
+13	13		301							"{2: 'Staff Member 2', 3: ""Rumor has it there's a new method to enhance the Inver-Device, allowing even ordinary Constructs to withstand high concentrations of the Punishing Virus..."", 4: '2'}"
+14	14		301							"{2: 'Staff Member 1', 3: ""Eek, you actually believe that? I still think it's one of Norman Mining Corp's little tricks."", 4: '1'}"
+15	15		301							"{2: 'Staff Member 2', 3: ""No way. Do you know who's leading the team this time? It's Victoria!"", 4: '2'}"
+16	16		301							"{2: 'Staff Member 2', 3: ""She's the heiress of Norman Mining Corp, the future Chief Executive! Didn't you see the news a few days ago? I don't think Norman Mining Corp would risk their own heiress like that."", 4: '2'}"
+17	17		301							"{2: 'Staff Member 1', 3: ""That's true..."", 4: '1'}"
+18	18		202							{1: '1', 2: '2'}
+19	19		301							{3: 'The Norman Mining Corp vehicles slowly pull over. A pink-haired man jumps out from the first one.'}
+20	20		201							{1: '1', 2: '500497'}
+21	21		301							{1: '1', 2: 'Leonardo', 3: 'Ah... What a beautiful day.', 4: '1'}
+22	22		301							{2: 'Leonardo', 3: 'I wonder if the weather on the ground is just as nice?', 4: '1'}
+23	23		203							{1: '1', 2: '0.25', 3: '500'}
+24	24		201							{1: '2', 2: '500586', 4: '-500'}
+25	25		301							{1: '1', 2: 'Trojan', 3: 'According to the current landing plan, your touchdown point will be near Reactor 1.', 4: '2'}
+26	26		301							"{2: 'Trojan', 3: ""Chances are, you won't even get to see today's weather."", 4: '2'}"
+27	27		301							"{2: 'Leonardo', 3: 'Tsk, can\'t you think of something positive? What if I am so talented and actually bring back the ""glory"" flawlessly?', 4: '1'}"
+28	28		301							{2: 'Trojan', 3: 'I wish that would happen...', 4: '2'}
+29	29		301							{3: 'Trojan looks the man up and down with disdain.'}
+30	30		301				AniZhuanchangBegin			"{2: 'Trojan', 3: ""But I just hope your protective suit doesn't fall apart upon landing, so I have a chance to bring you back in one piece."", 4: '2'}"
+31	31		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+32	32		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory896.jpg'}
+33	33		301			DialogEnable				{3: 'Three hours ago.'}
+34	34		201							{1: '1', 2: '500873'}
+35	35		301							{1: '1', 2: 'Victoria', 3: 'We will bring back the sparks of hope.', 4: '1'}
+36	36		202							{1: '1'}
+37	37		301							{2: 'Herald', 3: 'We will bring back the sparks of hope.'}
+38	38		301							"{3: 'The chosen ""Heralds"" gather in a dim room, reciting the creeds of Norman Mining Corp that they had been taught for decades.'}"
+39	39		201							{1: '1', 2: '500873'}
+40	40		301				AniZhuanchangBegin			{1: '1', 2: 'Victoria', 3: '...Head back and prepare. The shuttle will depart in three hours.', 4: '1'}
+41	41		202			DialogDisable				{1: '1', 6: '1'}
+42	42		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory901.jpg'}
+43	43		301			DialogEnable				{3: 'After the brief meeting ends, Victoria stands alone in the meeting room outside.'}
+44	44		301							{3: 'On the wall hangs a massive portrait she recently commissioned from a World Government Association of Art painter.'}
+45	45		201							{1: '1', 2: '500873'}
+46	46		301							{1: '1', 2: 'Victoria', 3: 'When we meet again, everything will be over...', 4: '1'}
+47	47		203							{1: '1', 2: '0.25', 3: '-500'}
+48	48		201							{1: '2', 2: '500497', 4: '500'}
+49	49		301							"{2: 'Leonardo', 3: ""Yo, Victoria. It's been a while!"", 4: '2'}"
+50	50		301							{2: 'Victoria', 3: '...', 4: '1'}
+51	51		301							{2: 'Victoria', 3: 'Why are you here?', 4: '1'}
+52	52		204							{1: '2', 2: '2'}
+53	53		301							"{2: 'Leonardo', 3: ""Hey, don't underestimate me. I had to deal with those old foxes in the Parliament every day!"", 4: '2'}"
+54	54		301							"{2: 'Leonardo', 3: ""The little troubles you had set up couldn't slow down your big brother."", 4: '2'}"
+55	55		301							"{2: 'Leonardo', 3: ""You're really not considering my feelings at all, Victoria."", 4: '2'}"
+56	56		301							{1: '1', 2: 'Victoria', 3: 'I have nothing to say to you—', 4: '1'}
+57	57		202							{1: '1', 2: '2'}
+58	58		301							{3: 'Before her words even fall, a tranquilizer dart pierces her neck.'}
+59	59		201							{1: '1', 2: '500497'}
+60	60		301							"{1: '1', 2: 'Leonardo', 3: ""You're so slow, Trojan."", 4: '1'}"
+61	61		203							{1: '1', 2: '0.25', 3: '500'}
+62	62		201							{1: '2', 2: '500586', 4: '-500'}
+63	63		301							"{1: '1', 2: 'Trojan', 3: ""For what you paid, that's the speed you get. I can go faster, but it'll cost extra."", 4: '2'}"
+64	64		202							{1: '1', 2: '2'}
+65	65		301							{3: 'She gently places the deeply asleep Victoria onto a chair in the meeting room.'}
+66	66		201							{1: '1', 2: '500586'}
+67	67		301							{1: '1', 2: 'Trojan', 3: 'Are you sure you want to do this now...', 4: '1'}
+68	68		203							{1: '1', 2: '0.25', 3: '-500'}
+69	69		201							{1: '2', 2: '500497', 4: '500'}
+70	70		301							{1: '1', 2: 'Leonardo', 3: 'What else then?', 4: '2'}
+71	71		301							{3: 'Leonardo adjusts his collar with his signature chilling grin.'}
+72	72		204							{1: '2', 2: '2'}
+73	73		301							{2: 'Leonardo', 3: 'As a good big brother, of course, I want my little sisters to grow up happily and freely.', 4: '2'}
+74	74		301							"{2: 'Leonardo', 3: ""Do you really think I couldn't see through your little schemes, Victoria?"", 4: '2'}"
+75	75		301							"{2: 'Leonardo', 3: ""Grandfather's too sick to see through your tricks, but you can't fool me."", 4: '2'}"
+76	76		301							"{2: 'Leonardo', 3: ""Have a good sleep. When you wake up, it'll all be over."", 4: '2'}"
+77	77		202							{1: '1', 2: '2'}
+78	78		301				AniZhuanchangBegin			{3: 'He turns away and walks toward the spaceport without looking back.'}
+79	79		401							{1: '1', 2: '381'}
+80	80		101			DialogDisable	AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+81	81		107						3000.0	{1: 'Science Council Testing Ground', 2: 'Four hours ago.'}
+82	82		108							{1: '1'}
+83	83		201							{1: '1', 2: '500864'}
+84	84		301			DialogEnable				"{1: '1', 2: 'Teddy', 3: ""I'm going to apply the third version of the external interface model to my Inver-Device."", 4: '1'}"
+85	85		302							{2: 'What?!', 3: '86'}
+86	86		203							{1: '1', 2: '0.25', 3: '500'}
+87	87		201							{1: '2', 2: '500494', 3: '4', 4: '-500'}
+88	88		301							"{1: '1', 2: 'Karenina', 3: ""Are you crazy?! That's experimental technology! You're just a regular Construct, not a specialized one!"", 4: '2'}"
+89	89		301							"{2: 'Karenina', 3: ""****—! Don't you know the risks of modifying the Inver-Device with untested tech?!"", 4: '2'}"
+90	90		301							{2: 'Karenina', 3: 'Immersing in Gestalt simulation is one thing, but actual modification is another!', 4: '2'}
+91	91		302							"{2: ""I don't agree with this plan either."", 3: '92', 4: ""What's going on?"", 5: '95'}"
+92	92		204							{1: '1', 2: '2'}
+93	93		301							{2: 'Teddy', 3: 'Ah... Keep it down, my ears are about to be blasted by you two.', 4: '1'}
+94	94		301							"{2: 'Karenina', 3: ""...I'm seriously asking you, Teddy. What exactly are you trying to do?"", 4: '2'}"
+95	95		204							{1: '1', 2: '2'}
+96	96		301							"{2: 'Teddy', 3: ""I will bring back Dominik's Legacy from Reactor 1 and save this world."", 4: '1'}"
+97	97		301							{2: 'Teddy', 3: 'The army posted that mission ages ago. But no one has ever done it...', 4: '1'}
+98	98		301							{2: 'Karenina', 3: '...TEDDY!', 4: '2'}
+99	99		204							{1: '1'}
+100	100		301							{2: 'Teddy', 3: 'Hmm... Not satisfied with that answer?', 4: '1'}
+101	101		301							{3: 'Teddy turns off her terminal.'}
+102	102		301							"{2: 'Teddy', 3: ""According to our experiment plan, we have already reached the stage of modifying the Inver-Device, haven't we?"", 4: '1'}"
+103	103		301							"{2: 'Karenina', 3: ""...Let me emphasize again, you're just a regular frame, not a specialized version."", 4: '2'}"
+104	104		301							{2: 'Karenina', 3: 'If you ever get infected, it cannot be reversed.', 4: '2'}
+105	105		301							{2: 'Teddy', 3: 'Regular frames have more value in experiments. Specialized frames are too special to be used as references.', 4: '1'}
+106	106		204							{1: '1', 2: '3'}
+107	107		301							{2: 'Teddy', 3: 'This also poses a great opportunity to practically verify those two thresholds...', 4: '1'}
+108	108		301							{2: 'Karenina', 3: '...', 4: '2'}
+109	109		301							"{2: 'Teddy', 3: ""You know, I'm not doing this just to verify those thresholds or to improve the Inver-Device."", 4: '1'}"
+110	110		301							{2: 'Teddy', 3: 'I also want to save myself.', 4: '1'}
+111	111		301							{2: 'Teddy', 3: '...I really hate owing people favors.', 4: '1'}
+112	112		301							{2: 'Karenina', 3: 'Did Leonardo say something to you?', 4: '2'}
+113	113		301							{2: 'Teddy', 3: '...', 4: '1'}
+114	114		301							{2: 'Teddy', 3: 'No.', 4: '1'}
+115	115		301							{3: 'The pink-haired Construct stares absentmindedly at the model in front.'}
+116	116		301							"{2: 'Teddy', 3: ""My family once gave up everything, wanting me to become someone else's shadow."", 4: '1'}"
+117	117		302							{2: '...Dominik?', 3: '118'}
+118	118		301							{2: 'Teddy', 3: 'That is correct.', 4: '1'}
+119	119		301							"{2: 'Teddy', 3: '""Saint"", ""Failure"", and ""Successor""—these are the roles my grandfather assigned to me, Leonardo, and Victoria.', 4: '1'}"
+120	120		301							"{2: 'Teddy', 3: ""He wanted me to become Dominik's inheritor, chasing his footsteps with all my might. He hoped the entire Norman Mining Corp would become Dominik's most loyal followers."", 4: '1'}"
+121	121		301							{2: 'Teddy', 3: 'He saw Victoria as his most outstanding successor. From a young age, Victoria was kept by his side. Leonardo and I could only see her through... special arrangements.', 4: '1'}
+122	122		301							"{2: 'Teddy', 3: ""Leonardo... was a failure. He couldn't pass the copolymer test. Grandfather didn't like him."", 4: '1'}"
+123	123		302							{2: '...', 3: '125', 4: 'That sounds very complicated.', 5: '124'}
+124	124		301							{2: 'Teddy', 3: 'Just the way of big families.', 4: '1'}
+125	125		204							{1: '1', 2: '14'}
+126	126		301							{2: 'Teddy', 3: 'Everything can be measured in terms of profit; anything can be a valuable commodity.', 4: '1'}
+127	127		301							"{2: 'Teddy', 3: ""It's just that... to the old man, our values are more tangible."", 4: '1'}"
+128	128		301							"{3: ""It's rare to see Teddy show such a vulnerable side.""}"
+129	129		204							{1: '1'}
+130	130		301							{2: 'Teddy', 3: 'Leonardo and I teamed up to resist, thinking we had taken the most appropriate actions at the time.', 4: '1'}
+131	131		301							"{2: 'Teddy', 3: ""But now it seems... I wouldn't be able to break away from the family without Leonardo's other arrangements."", 4: '1'}"
+132	132		301							"{2: 'Teddy', 3: ""I once thought the whole world had betrayed me, but then it suddenly seemed like that wasn't the case."", 4: '1'}"
+133	133		301							"{2: 'Teddy', 3: ""I guess I'm just trying to compensate for my youthful arrogance—"", 4: '1'}"
+134	134		204							{1: '1', 2: '1'}
+135	135		301							"{2: 'Teddy', 3: ""I've always been protected without knowing it, and now, I want to protect others."", 4: '1'}"
+136	136		204							{1: '1'}
+137	137		301							"{2: 'Teddy', 3: ""If we can truly retrieve this so-called Dominik's legacy, it would also greatly aid Babylonia's current research progress."", 4: '1'}"
+138	138		302							"{2: 'Need help?', 3: '139', 4: ""I'll help you."", 5: '139'}"
+139	139		301							"{2: 'Teddy', 3: ""No need. I don't want to trouble too many people for such a trivial matter."", 4: '1'}"
+140	140		301							"{2: 'Teddy', 3: ""I really don't want to owe so many favors."", 4: '1'}"
+141	141		301							{2: 'Karenina', 3: '...Hey, do you really not need any help?', 4: '2'}
+142	142		204							{1: '1', 2: '5'}
+143	143		301							"{2: 'Teddy', 3: ""Captain Karenina, if you keep looking at me like that, I'll hack into your terminal and post all your embarrassing photos everywhere."", 4: '1'}"
+144	144		301							{2: 'Teddy', 3: 'And you too.', 4: '1'}
+145	145		302							{2: 'Ahem.'}
+146	146		301							"{2: 'Karenina', 3: ""...Ahem, I didn't do anything."", 4: '2'}"
+147	147		204							{1: '1'}
+148	148		301							"{2: 'Teddy', 3: ""The third version of the Inver-Device's external interface model is relatively stable, with a failure rate of no more than 4.28%."", 4: '1'}"
+149	149		301				AniZhuanchangBegin			"{2: 'Teddy', 3: ""Don't worry. I won't plan a mission based on sacrifices."", 4: '1'}"
+150	150		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+151	151		401							{1: '1', 2: '257'}
+152	152		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory546.jpg'}
+153	153		301			DialogEnable				{3: 'Five hours ago, outside the Science Council.'}
+154	154		201							{1: '1', 2: '500864'}
+155	155		301							"{1: '1', 2: 'Teddy', 3: ""You'd better have something worth telling me this time."", 4: '1'}"
+156	156		203							{1: '1', 2: '0.25', 3: '-500'}
+157	157		201							{1: '2', 2: '500497', 3: '2', 4: '500'}
+158	158		301							"{1: '1', 2: 'Leonardo', 3: ""I just want to bond with my little sister. You know, I don't often have the chance!"", 4: '2'}"
+159	159		301							{3: 'Teddy casts a glance at Leonardo, then turns around and starts walking back to the testing ground.'}
+160	160		301							"{2: 'Leonardo', 3: ""Hey, relax! This time, I have something really important that can't be discussed over the terminal..."", 4: '2'}"
+161	161		301							"{2: 'Leonardo', 3: ""They're sending people to Reactor 1 again. This time, the leader is... Victoria."", 4: '2'}"
+162	162		204							{1: '2'}
+163	163		301							{2: 'Teddy', 3: '...How credible is your source?', 4: '1'}
+164	164		301							"{2: 'Leonardo', 3: ""It's from my most secret informant. There won't be any mistakes."", 4: '2'}"
+165	165		204							{1: '1', 2: '5'}
+166	166		301							"{2: 'Teddy', 3: ""...I told you she shouldn't stay in the sanitarium for too long. The disinfectant must have messed with her head."", 4: '1'}"
+167	167		301							{2: 'Leonardo', 3: 'Sigh. My little sister has grown up and has her own thoughts now.', 4: '2'}
+168	168		204							{1: '1'}
+169	169		301							{2: 'Teddy', 3: '...Are you just going to watch them go down like that?', 4: '1'}
+170	170		301							{2: 'Leonardo', 3: 'Of course not.', 4: '2'}
+171	171		204							{1: '2', 2: '2'}
+172	172		301							{3: 'Leonardo flashes a sly and confident grin.'}
+173	173		301							"{2: 'Leonardo', 3: ""Don't underestimate your brother, Miss Teddy."", 4: '2'}"
+174	174		204							{1: '2'}
+175	175		301							"{2: 'Leonardo', 3: 'I\'ve planted someone in this batch of ""Heralds"".', 4: '2'}"
+176	176		301							"{2: 'Leonardo', 3: ""Once they reach the surface, they'll record everything and automatically send it back to a designated email at set intervals."", 4: '2'}"
+177	177		301							"{2: 'Leonardo', 3: ""This whole plan has always been a lie, and it's about time it gets exposed."", 4: '2'}"
+178	178		301							{2: 'Teddy', 3: 'Is that all?', 4: '1'}
+179	179		301							"{2: 'Leonardo', 3: ""Um... You know, I'm being watched all the time..."", 4: '2'}"
+180	180		301							{2: 'Teddy', 3: 'When do they set out?', 4: '1'}
+181	181		301							{2: 'Leonardo', 3: 'In two days.', 4: '2'}
+182	182		301							"{2: 'Teddy', 3: ""...There's still time."", 4: '1'}"
+183	183		301							{2: 'Teddy', 3: 'Where did you get the data you sent me last time?', 4: '1'}
+184	184		301							"{2: 'Leonardo', 3: ""Hey, that's classified... Wait, don't go! I'll tell you! My most secret informant tricked it out of Victoria."", 4: '2'}"
+185	185		301							{2: 'Teddy', 3: 'Which means Dominik definitely left something at Reactor 1?', 4: '1'}
+186	186		301							"{2: 'Leonardo', 3: ""Yes, but it's impossible for any human to survive there now."", 4: '2'}"
+187	187		301							"{2: 'Leonardo', 3: ""I've reviewed all the previous attempts of Project Herald. There were a few celebrations and some data was indeed sent back, but in reality..."", 4: '2'}"
+188	188		301							"{2: 'Leonardo', 3: 'Not a single ""Herald"" made it back to Babylonia alive.', 4: '2'}"
+189	189		301							{2: 'Leonardo', 3: 'Based on those records, I guess... during the earliest attempts, the Punishing Virus had not spread widely.', 4: '2'}
+190	190		301							"{2: 'Leonardo', 3: 'Some of the ""Heralds"" must have entered deep into Reactor 1 and... successfully brought back something.', 4: '2'}"
+191	191		301							"{2: 'Leonardo', 3: 'The ""Herald"" I planted will—', 4: '2'}"
+192	192		301							{2: 'Teddy', 3: 'Can you really plant a person there?', 4: '1'}
+193	193		301							"{2: 'Teddy', 3: ""I don't believe it."", 4: '1'}"
+194	194		301							{3: 'Teddy stares at Leonardo suspiciously until he raises his hands in surrender.'}
+195	195		204							{1: '2', 2: '2'}
+196	196		301							"{2: 'Leonardo', 3: ""Alright, I didn't plant anyone. My informant will help me take over Victoria's place in this mission."", 4: '2'}"
+197	197		204							{1: '2'}
+198	198		301							{2: 'Leonardo', 3: 'Either I bring back the data to shut the old man up, or...', 4: '2'}
+199	199		301							"{2: 'Leonardo', 3: ""I'll stay on the ground and take all those senior members in favor of Project Herald with me."", 4: '2'}"
+200	200		301							"{2: 'Teddy', 3: ""I'll go."", 4: '1'}"
+201	201		301							"{2: 'Leonardo', 3: ""That's not what I meant. I was only..."", 4: '2'}"
+202	202		301							"{2: 'Teddy', 3: ""I'm not negotiating with you."", 4: '1'}"
+203	203		301							"{2: 'Teddy', 3: ""Unlike you, I'm a Construct. I'll also add the latest Inver-Device external module to my frame, so my chance of survival will be higher."", 4: '1'}"
+204	204		301							"{2: 'Teddy', 3: ""In two days, I'll be waiting for you at the spaceport. You figure out the rest."", 4: '1'}"
+205	205		202							{1: '1', 2: '2'}
+206	206		301							{3: 'Teddy turns and walks away before Leonardo could refuse.'}
+207	207		201							{1: '1', 2: '500497'}
+208	208		301							{1: '1', 2: 'Leonardo', 3: 'Hff...', 4: '1'}
+209	209		301							"{2: 'Leonardo', 3: ""Even now, she's still worried about her brother..."", 4: '1'}"
+210	210		301				AniZhuanchangBegin			"{2: 'Leonardo', 3: ""Don't worry. In two days, everything... will be over."", 4: '1'}"
+211	211		202			DialogDisable				{1: '1', 6: '1'}
+212	212		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory3.jpg'}
+213	213		301			DialogEnable				{3: 'Once again, the Norman Mining Corp transport shuttle in the spaceport is preparing for takeoff.'}
+214	214		502				DialogDisable			{1: 'AniZhuanchangBegin'}
+215	215		401							{1: '1', 2: '382'}
+216	216		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory897.jpg'}
+217	217		301			DialogEnable				{3: 'Ground surface, 340 kilometers from Reactor 1.'}
+218	218		201							{1: '1', 2: '1031001'}
+219	219		301							{1: '1', 2: 'Liv', 3: 'Signals... We can finally receive some signals from the nearby monitoring stations!', 4: '1'}
+220	220		301							{2: 'Liv', 3: 'We have really come to the edge of the Hetero Forest!', 4: '1'}
+221	221		202							{1: '1'}
+222	222		401							{1: '2', 2: '2982'}
+223	223		301							{3: 'The terminal emits a raspy static sound, with faint, nearly indistinguishable human voices coming intermittently through the signal channel.'}
+224	224		301		1		AniZhuanchangBegin			"{2: 'Task Force Member', 3: ""Bzzz—nine o'clock—bzzz—direction—bzzz—escape!""}"

@@ -1,0 +1,70 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		401			AniZhuanchangEnd				{1: '1', 2: '207'}
+2	2		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+3	3		201							{1: '2', 2: '500012', 4: '-400'}
+4	4		201							{1: '3', 2: '500116', 4: '400'}
+5	5		301							{1: '1', 2: 'Nikola', 3: 'Despite some organizational hiccups, Construct Lucia passed all the required assessments.', 4: '2'}
+6	6		301							{1: '1', 2: 'Technician', 3: 'Do you mean to send her into combat, sir?', 4: '3'}
+7	7		301							{2: 'Nikola', 3: 'Yeah.', 4: '2'}
+8	8		301							"{2: 'Technician', 3: ""That carries certain risks, sir. I'm sure with more observation..."", 4: '3'}"
+9	9		301							"{2: 'Nikola', 3: ""We will never get real data if we don't deploy her. The Purifying Force exists for that exact eventuality."", 4: '2'}"
+10	10		301							{3: 'Understanding that Nikola had his mind set, the technician shakes her head and pulls up a selection of Military Construct files on the terminal.'}
+11	11		301							"{2: 'Technician', 3: ""Understood. We're allocating new members to Gray Raven... Do you have any special considerations, sir?"", 4: '3'}"
+12	12		301							{2: 'Nikola', 3: 'A support-type is a must, and also an armored one... no, Kurono leadership can decide on the second member.', 4: '2'}
+13	13		301							"{2: 'Technician', 3: ""Kurono? Why's that?"", 4: '3'}"
+14	14		301							{2: 'Nikola', 3: 'Just to be fair. They may have their own considerations on who to pair up with Lucia.', 4: '2'}
+15	15		301							{2: 'Technician', 3: 'Understood. I will send the files to your office once the team members are confirmed.', 4: '3'}
+16	16		301				AniZhuanchangBegin			{2: 'Nikola', 3: 'Work fast.', 4: '2'}
+17	17		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+18	18		202							{1: '2', 2: '3', 6: '1'}
+19	19		301			AniZhuanchangEnd				{3: 'One day, in the halls of Babylonia'}
+20	20		301							{3: 'It was an important day. I felt my body tense and seize multiple times, as if I were an old machine with outdated servos.'}
+21	21		301							{3: 'It was all because of a message from Commandant several days prior.'}
+22	22		301							"{2: 'Command Central', 3: ""After careful consideration from the Command Central, we have decided to replenish Gray Raven's ranks, and start preparations for combat operations.""}"
+23	23		301							{3: 'Many more bureaucratic entries followed, but my attention was solely focused on the short, curt notice.'}
+24	24		301							{3: 'Two reinforcing teammates were coming over, both with groundside combat experience. That is to say, we were combat-ready.'}
+25	25		301							{3: 'I felt joy at the turn of events, but also worry about what Gray Raven would turn into.'}
+26	26		301							"{3: ""—At least, I hoped history wouldn't repeat itself.""}"
+27	27		301				AniZhuanchangBegin			"{3: ""Just daydreaming here did me no good. At Commandant's reminder, I opened the office door.""}"
+28	28		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory53.jpg'}
+29	29		301			AniZhuanchangEnd				{2: '???', 3: 'I...'}
+30	30		201							{1: '2', 2: '1011001', 4: '-400'}
+31	31		201							{1: '3', 2: '1031001', 4: '400'}
+32	32		301							{1: '1', 3: 'Two unfamiliar faces in the office turned towards me. Male, blue. Female, pink.'}
+33	33		301							{3: 'I was at a loss for words, but such was the first impressions I had of my new teammates.'}
+34	34		301							{1: '1', 3: 'The male Construct noticed me, but made no visible response, coolly appraising his surroundings.', 4: '2'}
+35	35		204							{1: '3', 2: '6'}
+36	36		301							{1: '1', 3: 'The female Construct, however, kept fidgeting, shifting her position and posture. Whenever our eyes locked, hers would inevitably lower as her face reddened.', 4: '3'}
+37	37		301							{3: 'Two individuals, clearly different from me, but bursting with personality.'}
+38	38		301							"{3: ""Commandant did not speak, and neither did they. I knew the burden of breaking the silence fell on my shoulders. If I didn't, Gray Raven would never spread its wings, and our story would never start.""}"
+39	39		203							{1: '2', 2: '0.25', 3: '-600'}
+40	40		203							{1: '3', 2: '0.25', 3: '600'}
+41	41		201							{1: '1', 2: '1021001'}
+42	42		301				DialogDisable			{1: '1', 3: 'So, I—'}
+43	43		202				RImgBg1DisableSlow			{1: '1', 2: '2', 3: '3'}
+44	44		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgCg/Cgqz1502.jpg'}
+45	46		301			DialogEnable				{2: 'Lucia', 3: 'Hello, my name is Lucia, frame designation BPL-01, Lotus, also the team leader of Gray Raven—'}
+46	47		301							{2: 'Lucia', 3: 'I look forward to working with you!'}
+47	48		301							"{3: 'I felt my M.I.N.D. destabilize as I spoke the words, even though no harm had come to me. I recognized the emotion as ""embarrassment,"" but I resolved to finish the sentence nonetheless.'}"
+48	49		301							{3: 'After the stiff greeting, I felt my respiration resume without realizing it had halted in the first place. As Commandant started clapping slowly in the doorway, I was reaffirmed that I had done the right thing.'}
+49	50		301							{3: 'Swept along by the emotions swirling in the office, the two Constructs spoke up. The male took the lead.'}
+50	51		301							{2: 'Lee', 3: 'My name is Lee, frame designation BPN-06, Palefire.'}
+51	52		301							{2: 'Lee', 3: 'My original team... is not important. I have been assigned to Gray Raven. Dual guns are my weapons of choice.'}
+52	53		301							{2: 'Lee', 3: 'I am equally adept at strategic planning and close combat.'}
+53	54		301							{3: 'Lee, Palefire. The file identified him as an Attacker, same as me.'}
+54	55		301							{2: 'Liv', 3: 'My turn... um, my name is Liv, Support Construct.'}
+55	56		301							{2: 'Liv', 3: 'I came from Egret... my preferred weapons are levitated weapons platforms. I look forward to working together.'}
+56	57		301							{2: 'Lee', 3: 'What about your version?'}
+57	58		301							"{2: 'Liv', 3: ""Oh... I'm sorry, designation BPN-08, Eclipse.""}"
+58	59		301							{3: 'Though a bit shy, Liv nonetheless finished her introduction.'}
+59	60		301							{2: 'Lee', 3: 'Egret, I see... the team well-known for their meticulous strategy...'}
+60	61		301							{3: 'Lee visibly fell into a short computational cycle, as if seizing on freshly-gathered intelligence.'}
+61	62		301							{2: 'Liv', 3: 'Uh...'}
+62	63		301							"{3: ""It only served to exacerbate Liv's restlessness.""}"
+63	64		301							{3: 'Lucia, Lee, and Liv.'}
+64	65		301							{3: 'Those were our names.'}
+65	66		301							{3: 'Lotus, Palefire, and Eclipse.'}
+66	67		301							{3: 'The codenames given to our frames.'}
+67	68		301							{3: 'Katanas, dual guns, and levitating cannons.'}
+68	69		301							{3: 'The weapons we wielded.'}
+69	70		301		1		AniZhuanchangBegin			{3: 'This was the new Gray Raven.'}

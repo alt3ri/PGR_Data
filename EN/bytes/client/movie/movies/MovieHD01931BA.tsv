@@ -1,0 +1,11 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg'}
+2	2		401							{1: '1', 2: '5'}
+3	3		201							{1: '1', 2: '500214'}
+4	4		301			DialogEnable				{1: '1', 2: 'Rosetta', 3: 'Commandant? What is it?', 4: '1'}
+5	5		302							{2: '(Explain the maze to Rosetta)', 3: '6'}
+6	6		301							"{2: 'Rosetta', 3: 'A maze? That is something you can only solve with a little ""luck""...', 4: '1'}"
+7	7		301							{2: 'Rosetta', 3: 'Are you sure you want me to accompany you, Commandant?', 4: '1'}
+8	8		302							{2: 'Of course.', 3: '9'}
+9	9		204							{1: '1', 2: '1'}
+10	10		301		1		AniZhuanchangBegin			"{2: 'Rosetta', 3: ""I see. I'll make the preparations."", 4: '1'}"

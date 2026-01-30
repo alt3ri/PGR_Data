@@ -1,0 +1,12 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory24.jpg'}
+2	100		401							{1: '1', 2: '201'}
+3	2		201							{1: '1', 2: '500097'}
+4	3		301			DialogEnable				{1: '1', 2: 'Estate Butler', 3: 'Master, the Corrupted have broken through the outer doors.', 4: '1'}
+5	4		301							{2: 'Copperfield', 3: 'Are the citizens all evacuated?'}
+6	5		301							{2: 'Estate Butler', 3: 'They have all evacuated.', 4: '1'}
+7	6		301							{2: 'Copperfield', 3: 'And the defenses, all on?'}
+8	7		301							{2: 'Estate Butler', 3: 'They are all on, but they would likely only last forty minutes max.', 4: '1'}
+9	8		301							{2: 'Copperfield', 3: 'Very well. Then I will be leaving too.'}
+10	9		301							{2: 'Estate Butler', 3: 'Wait...', 4: '1'}
+11	10		301		1		AniZhuanchangBegin			"{2: 'Estate Butler', 3: ""Miss Emma's signal... appeared in the courtyard..."", 4: '1'}"

@@ -1,0 +1,274 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		301			DialogEnable	AniZhuanchangBegin			{3: 'On the surface outside of the development zone of City 075, during the emergency evacuation from Operation Red Tide—'}
+4	4		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+5	6		301			AniZhuanchangEnd				{3: 'A wave of golden yellow dust whirls in the air on the barren desert, followed immediately by deafening rock music and bursts of angry shouts.'}
+6	300		401							{1: '2', 2: '885'}
+7	7		301							{3: 'A folding truck, tilted, is trekking forward in an S-shaped path with only two of its wheels speedily while maintaining physics-defying balance, a feat that would have Archimedes risen from his grave and clapped.'}
+8	5		401							{1: '1', 2: '205'}
+9	8		301			RImgBg1Shake				{2: '???', 3: 'Hey! Who taught you to drive like this?!'}
+10	9		301							{2: '??', 3: 'Nobody.'}
+11	10		301							{2: '???', 3: 'Who the hell let the idiot take the wheel? Vera? Vera! Help!'}
+12	11		301							{2: 'Vera', 3: '...'}
+13	12		301							{2: 'Vera', 3: '...'}
+14	13		401							{1: '2', 2: '10002001'}
+15	14		301							{2: 'Vera', 3: 'Enough, the two of you!'}
+16	15		301							"{2: '??', 3: ""Capt., please don't unsheathe your sword in the car. It's dangerous.""}"
+17	16		301							"{2: '???', 3: ""What's more dangerous than what you're doing?! Step on the brake, now!""}"
+18	17		301							"{2: '??', 3: ""That's what I've been doing.""}"
+19	18		301							"{2: '???', 3: ""—That's the gas pedal, not the brakes!""}"
+20	19		301							{2: '???', 3: 'Do something, Vera—w-wait, why are you opening the door?'}
+21	20		301			RImgBg1Shake				{2: 'Vera', 3: 'All of you, out!'}
+22	21		301							{3: 'The door on the side in the air is slammed open as a red-haired female Construct jumps out, her arms bracing her head, and she rolls and lands deftly onto the ground.'}
+23	22		301							{3: 'Immediately afterward, one of the car windows is cranked down, and out hops the round Co-Bot, followed by a white figure who lands softly next to it.'}
+24	23		201							{1: '1', 2: '500328'}
+25	24		301							{1: '1', 2: 'No. 21', 3: 'Roger.', 4: '1'}
+26	25		202							{1: '1', 6: '1'}
+27	26		301							{2: '???', 3: 'What are you guys—?!'}
+28	27		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+29	29		401							{1: '2', 2: '884'}
+30	30		301			RImgBg1Shake				"{3: 'Before he can finish, the ear-piercing sound of grinding overwhelms his voice as the car finally stops, crashing into a rock. An unpleasant whine can be heard underneath the hood, and black smoke rises with a ""Poof!""'}"
+31	31		301							{2: '???', 3: 'C-cough...'}
+32	32		301							{3: 'A few moments later, a barely intact door opens up, and a figure appears amidst the black smoke. A masculine male Construct walks out and coughs, his hand waving, trying to clear the smoke away.'}
+33	33		401							{1: '2', 2: '1506'}
+34	34		301							{3: '—BOOM!'}
+35	35		201							{1: '1', 2: '500336', 3: '4'}
+36	36		301							{1: '1', 2: '???', 3: '...Aargh.', 4: '1'}
+37	37		202							{1: '1', 6: '1'}
+38	38		301							{3: 'The Construct looks down at the door handle in his hand and the broken car door still attached to the other end.'}
+39	39		301							{3: 'He shrugs and throws the door aside. Looking back up, he finds the blinding flashes of a blade before him, and he raises his hands in panic.'}
+40	40		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+41	41		201							{1: '1', 2: '500168', 4: '-450'}
+42	42		201							{1: '2', 2: '500336', 3: '4', 4: '450'}
+43	43		301							"{1: '1', 2: '???', 3: ""...C'mon, Vera, I wasn't even the one driving! Let's... let's talk about it, yeah? Put the sword away, man! You know how much trouble it is to fix up my frame!"", 4: '2'}"
+44	44		202							{1: '1', 2: '2', 6: '1'}
+45	45		201							{1: '1', 2: '500328'}
+46	46		301							{1: '1', 2: 'No. 21', 3: 'Noctis played his music too loud. It distracted me from driving.', 4: '1'}
+47	47		202							{1: '1', 6: '1'}
+48	48		201							{1: '1', 2: '500168', 4: '-450'}
+49	49		201							{1: '2', 2: '500336', 3: '4', 4: '450'}
+50	50		301							"{1: '1', 2: 'Vera', 3: ""Do you think we're heading for Woodstock? We're on a mission here! Keep your stupid in check because you're testing my limits!"", 4: '1'}"
+51	51		301							{2: 'Noctis', 3: 'How can an evacuation count as a mission?', 4: '2'}
+52	52		301							"{2: 'Vera', 3: ""I'm the Captain here! I decide what counts as one. Who do you think you are?"", 4: '1'}"
+53	53		301							{2: 'Noctis', 3: 'But 21 is the reason we crashed! The one time we got assigned a folding truck...', 4: '2'}
+54	54		202							{1: '1', 2: '2', 6: '1'}
+55	55		201							{1: '1', 2: '500328'}
+56	56		301							{1: '1', 2: 'No. 21', 3: 'Noctis is shifting blame.', 4: '1'}
+57	57		202							{1: '1', 2: '2', 6: '1'}
+58	58		201							{1: '1', 2: '500168', 4: '-450'}
+59	59		201							{1: '2', 2: '500336', 3: '4', 4: '450'}
+60	60		301							{1: '1', 2: 'Vera', 3: 'Did you forget that you were the idiot who forced 21 to drive?', 4: '1'}
+61	61		301							{3: 'Vera teases him as she withdraws her blade.'}
+62	62		301							"{2: 'Vera', 3: ""21, report the crash and note that it was Noctis' fault. We're not far from our destination now, so collect yourselves and we'll start walking."", 4: '1'}"
+63	63		204							{1: '2', 2: '4'}
+64	64		301							{2: 'Noctis', 3: 'Hey!', 4: '2'}
+65	65		202							{1: '1', 2: '2', 6: '1'}
+66	66		201							{1: '1', 2: '500328'}
+67	67		301							{1: '1', 2: 'No. 21', 3: 'Copy.', 4: '1'}
+68	68		202							{1: '1', 6: '1'}
+69	69		401							{1: '2', 2: '1515'}
+70	70		301				AniZhuanchangBegin			{3: 'No. 21 opens her terminal and walks toward the nasty crash site as she brings up the comms.'}
+71	72		401							{1: '1', 2: '201'}
+72	71		301			AniZhuanchangEnd				{3: 'The chunky red-headed Construct sits on a rock, his hands pulling his hair.'}
+73	73		201							{1: '1', 2: '500168', 4: '-450'}
+74	74		201							{1: '2', 2: '500336', 3: '4', 4: '450'}
+75	75		301							"{1: '1', 2: 'Noctis', 3: ""...Why do we have to evacuate so suddenly? Aren't the Strike Birds in terrible danger? Are the higher-ups underestimating us?"", 4: '2'}"
+76	76		301							"{2: 'Vera', 3: ""It's Strike Hawk, you fool."", 4: '1'}"
+77	77		301							"{2: 'Noctis', 3: ""And we're retreating for no reason! Our mission directory got cleared, and all of our jobs got assigned to those copycats in Hellhound!"", 4: '2'}"
+78	78		301							{2: 'Noctis', 3: 'I bet their Captain must be so goddamn thrilled right now, breakdancing in the war room.', 4: '2'}
+79	79		301							"{2: 'Noctis', 3: ""I'm going to tear his throat out the next time I catch that guy..."", 4: '2'}"
+80	80		301							"{2: 'Vera', 3: ""I don't care what you do in your spare time... but you do as I say when we're out on a mission, is that understood?"", 4: '1'}"
+81	81		301							"{2: 'Noctis', 3: ""Aren't you mad, Vera? Don't you hate getting your stuff taken right underneath your nose?"", 4: '2'}"
+82	82		204							{1: '1', 2: '1'}
+83	83		301							"{2: 'Vera', 3: ""What is there to be mad about? If it's a job that those idiots can do, then it isn't something that's worth my time to begin with."", 4: '1'}"
+84	84		202							{1: '1', 2: '2', 6: '1'}
+85	85		301							{3: 'Vera narrows her eyes and stays silent for a moment after saying that.'}
+86	86		201							{1: '1', 2: '500168', 3: '13', 4: '-450'}
+87	87		201							{1: '2', 2: '500336', 3: '4', 4: '450'}
+88	88		301							{1: '1', 2: 'Vera', 3: 'Plus... this might be the calm before the storm.', 4: '1'}
+89	89		301							"{2: 'Noctis', 3: ""Storm? Is it going to rain? The sun's still out, from what I can tell."", 4: '2'}"
+90	90		204							{1: '1'}
+91	91		301							{2: 'Vera', 3: 'Shush.', 4: '1'}
+92	92		202							{1: '1', 2: '2', 6: '1'}
+93	93		301							{3: 'Vera stops Noctis from babbling. There seems to be an incoming call as Vera has stood up, her finger tapping on her ear. Her flaming red hair flows in the wind, hiding her expression.'}
+94	94		301							{2: 'Vera', 3: '...'}
+95	95		301				AniZhuanchangBegin			{2: 'Vera', 3: '...Nikola?... I see.'}
+96	97		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory317.png'}
+97	99		201							{1: '1', 2: '500019', 7: '1'}
+98	100		301			AniZhuanchangEnd				{2: 'Support Force', 3: 'Cerberus?', 4: '1'}
+99	101		301							{1: '1', 3: 'The tired figure in the Support Force uniform before them looks up before pointing to the transport craft to the side.'}
+100	102		301							{2: 'Support Force', 3: 'That one.', 4: '1'}
+101	103		301							{2: 'Support Force', 3: 'The crashed vehicle you reported will be recycled after the battle. Just get going for now.', 4: '1'}
+102	104		301							{3: 'It seems that the Support Force members in the back are also exhausted by the intense battles on the frontline.'}
+103	105		201							{1: '1', 2: '500336', 3: '4'}
+104	106		301							"{1: '1', 2: 'Noctis', 3: ""Seriously? We're the only squad that's retreating?"", 4: '1'}"
+105	107		201							{1: '1', 2: '500019'}
+106	108		301							"{1: '1', 2: 'Support Force', 3: ""We're just following orders. Hurry up if possible; we're short on transportation, and we still have to pick up a bunch of squads who are finishing their operations."", 4: '1'}"
+107	109		201							{1: '1', 2: '500336', 3: '4'}
+108	110		301							{1: '1', 2: 'Noctis', 3: 'Tsk.', 4: '1'}
+109	111		201							{1: '1', 2: '500168'}
+110	112		301							{1: '1', 2: 'Vera', 3: 'Enough, Noctis.', 4: '1'}
+111	113		204							{1: '1', 2: '13'}
+112	114		301							{2: 'Vera', 3: '...Hah, survival of the fittest, is that so?', 4: '1'}
+113	115		301							{3: 'No one knows who Vera was talking to—if anything, she appears to be talking to herself. No. 21, however, seems to have noticed something and looks up.'}
+114	116		201							{1: '1', 2: '500328'}
+115	117		301							{1: '1', 2: 'No. 21', 3: '...?', 4: '1'}
+116	118		201							{1: '1', 2: '500336', 3: '4'}
+117	119		301							"{1: '1', 2: 'Noctis', 3: ""Hey, what's that? Are you saying I'm not fit..."", 4: '1'}"
+118	120		202							{1: '1', 6: '1'}
+119	121		301				AniZhuanchangBegin			{3: 'Vera gives No. 21 a look as Noctis protests in the background. Without another word, she steps into the transport craft heading back to Babylonia.'}
+120	122		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+121	123		301			AniZhuanchangEnd				{3: 'Survival of the fittest...'}
+122	124		301							{3: 'No. 21 recognizes the phrase—the winners live, and the losers die. Her captain has once used it to describe a place... somewhere they have both stayed before.'}
+123	125		301							"{3: 'The ""scent"" that Vera has just given off... No. 21 can smell danger.'}"
+124	126		301							{3: 'Was that a hint? Or was that just a random thing her captain said?'}
+125	128		301							{3: 'Kurono—a name that No. 21 no longer associates with. After getting transferred away, she has no longer heard it spoken in Babylonia. All traces of Kurono have just vanished from her life entirely.'}
+126	129		301				AniZhuanchangBegin			{3: '...Not entirely, perhaps.'}
+127	777		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory317.png'}
+128	778		201							{1: '1', 2: '500328', 3: '4', 7: '1'}
+129	779		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'No. 21 follows Vera and enters the transport craft without a word.'}
+130	780		202							{1: '1'}
+131	781		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+132	131		301			AniZhuanchangEnd	AniZhuanchangBegin			"{3: ""Inside Collins' office, a few days after the emergency evacuation from Operation Red Tide—""}"
+133	132		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+134	133		201							{1: '1', 2: '500319', 4: '450'}
+135	134		201							{1: '2', 2: '500337', 3: '4', 4: '-450'}
+136	136		301			AniZhuanchangEnd				"{1: '1', 2: '???', 3: ""And I'm doing it this time because—?"", 4: '2'}"
+137	137		301							"{2: 'Collins', 3: ""Seriously? Do you know how many favors I've had to trade in order to get the authority to employ that squad and their commandant?"", 4: '1'}"
+138	138		204							{1: '1', 2: '5'}
+139	139		301							"{2: 'Collins', 3: ""The Parliament doesn't want to make a fuss in front of the public—a Chief Commandant getting taken by an unknown force? It's a slap in their face, and it risks exposing us to the public."", 4: '1'}"
+140	140		301							"{2: 'Collins', 3: ""Frankly, I'm not interested in playing house with those Parliament folks... but now's not the best time for us to stand in the limelight."", 4: '1'}"
+141	141		204							{1: '1'}
+142	142		301							{2: 'Collins', 3: 'Therefore, you and your whole shtick... dearest Miss Popular? Better you do it this time instead of Kurono.', 4: '1'}
+143	143		204							{1: '2'}
+144	144		301							{3: 'The sweet-looking woman before Collins smiles and fixes her hair.'}
+145	145		301							"{2: '???', 3: 'I understand. My resume is ""clean"" on the surface, at the very least.', 4: '2'}"
+146	146		301							"{2: 'Collins', 3: 'Haha, ""clean"" my ass... A resume\'s no good apart from tricking those naive babies anyway. Whatever—intentionally revealing a flaw of ours might get them wary instead.', 4: '1'}"
+147	147		301							"{2: '???', 3: ""Anyhow, you're asking me to be the face of the operation, is that so?"", 4: '2'}"
+148	148		301							{2: 'Collins', 3: 'On the surface, sure. But you know your actual job description is going to be so much longer.', 4: '1'}
+149	149		301							"{2: 'Collins', 3: ""Ever since what happened, I've been studying what's happening with the commandant. Memory replays from a corrupted Mind Beacon... the data suggests that this condition can't be actively controlled."", 4: '1'}"
+150	998		301							{2: 'Collins', 3: 'Which means it could happen again as long as the commandant exists.', 4: '1'}
+151	150		204							{1: '1', 2: '5'}
+152	151		301							"{2: 'Collins', 3: ""I'm sure that little brain must be hiding even more secrets. I have a hunch... a strong hunch that the commandant is what I've been looking for."", 4: '1'}"
+153	152		204							{1: '2', 2: '4'}
+154	153		301							"{2: '???', 3: ""You're sure that you can find what you want in that commandant's brain?"", 4: '2'}"
+155	154		204							{1: '1'}
+156	155		301							{2: 'Collins', 3: 'Ha, of course not! My hypothesis is baseless! But if we only act with absolute certainty, humans would still be nose-picking monkeys and long extinct. Everything beautiful and true is accidental.', 4: '1'}
+157	156		301							"{2: '???', 3: ""Humans don't evolve from monkeys. It's apes if anything."", 4: '2'}"
+158	157		204							{1: '1', 2: '14'}
+159	158		301							{2: 'Collins', 3: 'Thank you for your correction, Rebecca. Of course I know that.', 4: '1'}
+160	159		204							{1: '1'}
+161	160		301							"{2: 'Collins', 3: ""I've got two pieces of the puzzle now—a corrupted Mind Beacon from entering an Ascendant's M.I.N.D. and the memory replays from its chain reactions. What an accident! Will the pieces match? What pattern will they make?"", 4: '1'}"
+162	161		301							{2: 'Rebecca', 3: 'Collins...', 4: '2'}
+163	162		204							{1: '1', 2: '5'}
+164	163		301							"{2: 'Collins', 3: ""Finding a commandant that can resist a M.I.N.D. corruption and catching an Ascendant... we've successfully taken our first step into a new era of R&D."", 4: '1'}"
+165	164		301							{2: 'Collins', 3: 'The first and the most important step.', 4: '1'}
+166	165		301							{2: 'Rebecca', 3: 'Collins, sir, please be careful—', 4: '2'}
+167	166		204							{1: '1', 2: '7'}
+168	167		301							{2: 'Collins', 3: 'Huh?', 4: '1'}
+169	168		301							"{2: 'Rebecca', 3: ""I'm certain that the things you said involve top Kurono secrets, and I'm sure it was an accident that you revealed them. I'll pretend I haven't heard any of them. Don't worry."", 4: '2'}"
+170	169		204							{1: '1'}
+171	170		301							"{2: 'Collins', 3: ""No, you don't have to worry. This place isn't bugged or anything."", 4: '1'}"
+172	171		301							"{2: 'Rebecca', 3: ""You're a high-ranking Kurono officer, and I'm just the middleman between you and the Parliament who doesn't benefit from it all. I don't want my position altered unknowingly."", 4: '2'}"
+173	172		301							{3: 'Having gotten disrupted by her strong and unwavering words, Collins does not appear to be displeased. Instead, he laughs.'}
+174	173		301							"{2: 'Collins', 3: ""Whatever! If you'd have betrayed us, you'd have done it by now—likewise, you wouldn't be here if Kurono wanted you gone. If I've decided to tell you the truth, it means that, at the very least, I trust you."", 4: '1'}"
+175	174		301							{2: 'Rebecca', 3: 'Why does that sound more like a threat...', 4: '2'}
+176	175		204							{1: '2'}
+177	176		301							"{2: 'Rebecca', 3: ""Fine, leave it to me. I don't run away from a mission for the higher-ups."", 4: '2'}"
+178	177		301							"{2: 'Collins', 3: ""That's the attitude! I picked you precisely because of that confidence... I look forward to your work. Let's scour every last inch of that commandant's brain for all the secrets hidden inside!"", 4: '1'}"
+179	178		204							{1: '2', 2: '4'}
+180	179		301							{2: 'Rebecca', 3: 'Sir...', 4: '2'}
+181	180		301							"{2: 'Collins', 3: ""Alright. I've made myself pretty clear."", 4: '1'}"
+182	181		301							"{2: 'Rebecca', 3: 'Clear... ""enough.""', 4: '2'}"
+183	182		204							{1: '1', 2: '14'}
+184	183		301							"{2: 'Collins', 3: ""Go, Rebecca. I'm excited to see you shine."", 4: '1'}"
+185	184		301							"{2: 'Rebecca', 3: ""Don't exaggerate. Have you sent the brief to my terminal? Which Task Force am I getting?"", 4: '2'}"
+186	185		202							{1: '1', 2: '2', 6: '1'}
+187	186		301							{3: 'Collins crosses his arm in front of his chest and gives Rebecca a gaze.'}
+188	187		201							{1: '1', 2: '500319'}
+189	188		301				AniZhuanchangBegin			"{1: '1', 2: 'Collins', 3: 'You\'ll find out soon enough. I ""handpicked"" them, after all. It\'s our best card in this game.', 4: '1'}"
+190	189		202							{1: '1', 2: '2', 6: '1'}
+191	190		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+192	997		401							{1: '1', 2: '36'}
+193	191		301			AniZhuanchangEnd				"{2: 'Collins', 3: ""Hehe... You're most definitely going to love them.""}"
+194	193		301				AniZhuanchangBegin			{3: 'World Government Operation Logistics Center, meanwhile—'}
+195	192		401							{1: '1', 2: '55'}
+196	194		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg'}
+197	195		301			AniZhuanchangEnd				{3: 'There is no noise except for quiet whispers and keyboards clicking. Advisors and sergeants walk between terminals, holo-maps, and battle simulations.'}
+198	196		301							{3: 'Infinite intel, analysis, and estimations go through this place every day, processed by the brains here before turning into orders and reports on the different Task Forces and those in charge of the conservation areas.'}
+199	197		301							{3: '—The same thing is happening today.'}
+200	198		301							{1: '1', 2: 'Operation Leader', 3: 'Operation command... Clearance... XX001A... Assigned to... Cerberus.'}
+201	199		301							{2: 'Chief Advisor', 3: 'Cerberus? We have a team called Cerberus?'}
+202	200		301							"{2: 'Operation Leader', 3: ""Missions for Cerberus are usually issued by the Chief Commander through direct channels. This... I've honestly no idea what's going on.""}"
+203	201		301							"{2: 'Chief Advisor', 3: 'I see... But their recent mission logs have all been cleared, and all their operation statuses are marked ""transferred."" It can\'t be...?'}"
+204	202		301							"{2: 'Operation Leader', 3: 'Don\'t ask about things we shouldn\'t know. Even I only know that they\'re related to the experimental remote connections... I\'ve never seen their ""commandant."" If they\'re getting assigned through us instead...'}"
+205	203		301							"{2: 'Operation Leader', 3: ""Anyway, if the operation is assigned through us, then it's our job. Give me the status of Cerberus.""}"
+206	204		301							{2: 'Chief Advisor', 3: 'One sec.'}
+207	205		401							{1: '2', 2: '1515'}
+208	206		301							{3: 'The Advisor taps on the keyboard in front of his terminal, his fingers jumping between keys, as rows of search results are listed on the holo-screen.'}
+209	207		301							{2: 'Chief Advisor', 3: 'Cerberus, status: standing by at the base.'}
+210	208		301							{2: 'Operation Leader', 3: 'Move the mission directly to the assignment terminal at the forward operating base. Set the priority to the highest.'}
+211	209		301							{2: 'Chief Advisor', 3: 'Roger.'}
+212	210		301							"{2: 'Operation Leader', 3: ""Good. That's the easiest part of our day sorted.""}"
+213	211		301							{2: 'Chief Advisor', 3: 'The easiest part?'}
+214	212		301							"{3: 'The operation leader takes out a black folder hidden in his coat, the cover marked with ""Clearance: Omega-7"".'}"
+215	213		301				AniZhuanchangBegin			{2: 'Operation Leader', 3: 'Get me a deployment officer with high clearance and two logistics officers... as well as a field commander from the Task Force.'}
+216	214		301			AniZhuanchangEnd				{3: 'His order is quickly issued, and within moments, the operation leader and the chief advisor are joined by people in different uniforms, all looking ready and prepared.'}
+217	215		301							"{2: 'Operation Leader', 3: ""Deployment officer, you're... going to distribute the units and supplies I'm about to mention in a reasonable fashion among the usual mission assign sequence. I don't want anyone outside of those here to notice anything.""}"
+218	216		201							{1: '1', 2: '500303'}
+219	217		301							{1: '1', 2: 'Deployment Officer', 3: 'Roger.', 4: '1'}
+220	218		202							{1: '1', 6: '1'}
+221	219		301							"{2: 'Operation Leader', 3: 'Logistics? You\'re going to figure out how to procure a set of scouting equipment and non-lethal weapons from the logistic pipeline for ""training needs."" I\'ll ask the Task Force to give you the details later.'}"
+222	220		201							{1: '1', 2: '500005'}
+223	221		301							{1: '1', 2: 'Field Commander', 3: 'Sir, may I ask—what operation is this, exactly?', 4: '1'}
+224	222		301							"{2: 'Operation Leader', 3: 'We\'re tracing a bio-signal, confirming the target\'s exact coordinates and maintaining observation if possible. Watch out for possible resistance, but control the impact—it\'s a direct order from the ""highest ups.""'}"
+225	223		301							{3: 'The operation leader waves his black folder at the field commander.'}
+226	224		301							{2: 'Field Commander', 3: '...Whose bio-signal?', 4: '1'}
+227	225		301							{2: 'Operation Leader', 3: '...【kuroname】, the commandant of Gray Raven from Babylonia.'}
+228	226		301							{2: 'Field Commander', 3: 'The target of the deployment...', 4: '1'}
+229	227		301							{2: 'Operation Leader', 3: '—Is the exact same commandant. You can read up on the details yourself.'}
+230	228		301				AniZhuanchangBegin			"{3: ""The operation leader throws the folder into the commander's arms.""}"
+231	229		202							{1: '1', 2: '2', 6: '1'}
+232	230		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+233	231		401							{1: '1', 2: '208'}
+234	232		301			AniZhuanchangEnd				{3: 'Parliament Square, Babylonia.'}
+235	233		301							{3: 'Today is the first day Cerberus is assigned a mission since they have been evacuated from supporting Strike Hawk and remained on standby.'}
+236	234		301							"{3: 'As their captain, Vera was called to confirm the mission details two hours ago. Noctis, having been breakdancing in their lounge room and picking on Hellhound, is also off to ""upgrade"" his gears enthusiastically.'}"
+237	235		401							{1: '2', 2: '1515'}
+238	236		301							{2: 'Vera', 3: '21, meet us at the war room in ten minutes.'}
+239	237		301							{3: 'Meanwhile, No. 21 is heading to the war room by herself.'}
+240	238		201							{1: '1', 2: '500328'}
+241	239		301							{1: '1', 2: 'No. 21', 3: '...', 4: '1'}
+242	240		202							{1: '1', 6: '1'}
+243	241		301							{3: 'The artificial sun on Eden is warm today.'}
+244	242		301							{3: 'Dust swirls and floats in the sunlight. No. 21 has observed a great many things—ants walking in dirt, patterns on leaves, fine furs on animals... but this is the first time she notices dust in the light.'}
+245	243		301							{3: 'She holds up her hand, and the rays of slightly blinding light shine through the gaps between her fingers, tangling. She cannot catch them, but she can feel their heat—this is the first time she has experienced this.'}
+246	244		301				AniZhuanchangBegin			{3: 'Sunlight, dust, birds... humans.'}
+247	246		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2001_9.jpg'}
+248	999		401							{1: '2', 2: '1516'}
+249	247		301			AniZhuanchangEnd				{3: 'A few human figures walk past her from behind. Their gloomy, oppressive presence sticks out like a dark cloud under the sun.'}
+250	248		301							{3: 'Her animalistic sensitivity makes her turn her head.'}
+251	249		301							"{3: ""She can smell the humans' scents clearly, and how they are different from the way other humans usually smell. She catches hints of fragrance from their soap, from their food... Scents that reassure and comfort her.""}"
+252	250		401							{1: '1', 2: '201'}
+253	251		301							"{3: 'But No. 21 also notices the pills, the chains, and the oil used to polish firearms. They remind her of the research institute where she stayed... as well as ""that place."" They all signify danger, unknown, and darkness.'}"
+254	252		301							"{3: ""Among the black-clad figures, the human in a long-sleeved windbreaker seems to notice No. 21's inquisitive gaze, looking up to meet it.""}"
+255	253		301							"{3: ""No. 21's eyes open wide, showing no intention to avoid the human's stare. The sense of danger does not come from the human but the black-clad figures around.""}"
+256	254		301							"{3: 'With one look, No. 21 recognizes that the tense figures in black have weapons hidden among their briefcases. The sense of familiarity further grabs ahold of her, digging up the word ""Kurono"" from her repressed memories.'}"
+257	255		301							"{3: 'She remembers her last mission months ago and how the scent of ""Kurono"" has been lingering in her M.I.N.D.'}"
+258	256		301							{3: 'Does this human know of the danger? Or perhaps the human is their leader?'}
+259	257		301							{3: 'With her almost animalistic instinct, No. 21 quickly makes multiple assessments of the situation, only to have them rebutted by more questions.'}
+260	258		301							{3: 'The human looks away after a quiet glance.'}
+261	259		301							{2: 'No. 21', 3: '...'}
+262	260		301							{3: 'That one glance has No. 21 relax her alerted, tensed body.'}
+263	261		301							{3: 'Whatever danger there is, that human has shown no fear. She can tell from those eyes that things are still in control.'}
+264	262		301							{3: 'This is Babylonia, not the research institute or Kurono. There are no unexpected menaces or experiments on her path that would put her on a leash.'}
+265	263		401							{1: '2', 2: '1515'}
+266	264		301				AniZhuanchangBegin			{2: 'Vera', 3: '...21? You done spacing out?'}
+267	265		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+268	267		301			AniZhuanchangEnd				{3: 'No. 21 retracts her gaze. The sense of security is back.'}
+269	268		201							{1: '1', 2: '500328'}
+270	269		301							{1: '1', 2: 'No. 21', 3: 'Yes, Capt.', 4: '1'}
+271	270		301							{3: 'She replies in the comms. Her body is alerted by the uncertainty, but she is no longer afraid nor lost the way she was.'}
+272	271		301							{3: 'Whatever lies ahead, No. 21 does not run away. She confronts them.'}
+273	272		301		1		AniZhuanchangBegin			{2: 'No. 21', 3: 'No. 21 is ready. Awaiting orders.', 4: '1'}

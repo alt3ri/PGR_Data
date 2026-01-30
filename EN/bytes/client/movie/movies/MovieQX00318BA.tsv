@@ -1,0 +1,101 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory181.png'}
+2	2		401							{1: '1', 2: '122'}
+3	3		201							{1: '1', 2: '500472', 3: '1'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Nanami', 3: ""Hmm... Let's do that next!"", 4: '1'}"
+5	5		301							{3: 'Nanami dashes past you, then jogs back.'}
+6	6		301							{2: 'Nanami', 3: 'Hey—Commandant!', 4: '1'}
+7	7		302							{2: 'Nanami?', 3: '8'}
+8	8		204							{1: '1', 2: '3'}
+9	9		301							{2: 'Nanami', 3: 'Need a hand?'}
+10	10		203							{1: '1', 2: '0.25', 4: '-50', 5: '-100'}
+11	11		301				AniZhuanchangBegin			{3: 'Before you can answer, Nanami grabs your arm.'}
+12	12		202			DialogDisable				{1: '1', 6: '1'}
+13	13		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory177.png'}
+14	14		301			DialogEnable				"{3: ""And that's how you find yourself dragged to the entrance of a small Kowloong-style courtyard.""}"
+15	15		302							"{2: ""What's this?"", 3: '16'}"
+16	16		201							{1: '1', 2: '500472', 3: '1'}
+17	17		301							{1: '1', 2: 'Nanami', 3: 'Haha.', 4: '1'}
+18	18		203						300.0	{1: '1', 2: '0.25', 4: '-40', 5: '20'}
+19	19		203						300.0	{1: '1', 2: '0.25', 4: '-20', 5: '50'}
+20	20		203						300.0	{1: '1', 2: '0.25', 4: '-40', 5: '60'}
+21	21		301							{3: 'Nanami hops up the steps and swings the gate open, revealing a yard filled with mechanical parts, Power just chilling in the corner.'}
+22	22		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+23	23		301							{2: 'Nanami', 3: 'Ta-da—', 4: '1'}
+24	24		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+25	25		302							{2: 'Just a pile of parts.', 3: '26'}
+26	26		204							{1: '1', 2: '5'}
+27	27		301							"{2: 'Nanami', 3: ""Haven't decided what to build yet."", 4: '1'}"
+28	28		302							{2: 'What about that wing?', 3: '29'}
+29	29		204							{1: '1', 2: '1'}
+30	30		301							{2: 'Nanami', 3: 'I snagged it from a crashed transport craft outside the city.', 4: '1'}
+31	31		301							"{2: 'Nanami', 3: ""The Little League's all hands on deck for the commercial street event, and I want to pitch in."", 4: '1'}"
+32	32		204							{1: '1', 2: '3'}
+33	33		301							{2: 'Nanami', 3: 'So Nanami is building a suuuuper big mechanical magpie!', 4: '1'}
+34	34		204							{1: '1', 2: '1'}
+35	35		301							{2: 'Nanami', 3: 'And you have to help, Commandant.', 4: '1'}
+36	36		302							{2: 'Uh—', 3: '37'}
+37	37		202							{1: '1', 6: '1'}
+38	38		301							{3: 'Somehow, you are already picking up parts and getting to work before you know it.'}
+39	39		104							{1: '0|50|-100', 2: '1'}
+40	40		401							{1: '2', 2: '685'}
+41	41		301							"{3: 'Likewise, somehow you end up buying paint for Nanami and start assembling this ""magpie.""'}"
+42	42		401							{1: '2', 2: '1509'}
+43	43		301							{3: 'Something feels amiss...'}
+44	44		201							{1: '1', 2: '500472'}
+45	45		301							{1: '1', 2: 'Nanami', 3: 'Nanami even considers outfitting Power with wings.', 4: '1'}
+46	46		204							{1: '1', 2: '5'}
+47	47		301							"{2: 'Nanami', 3: ""But Power excels in brute strength, not aerial prowess. Characters can't simply defy their core design, can they?"", 4: '1'}"
+48	48		202							{1: '1', 6: '1'}
+49	49		401							{1: '2', 2: '690'}
+50	50		301							{3: 'The final stretch.'}
+51	51		104							{2: '1'}
+52	52		301							"{3: ""Clicking the tail section into place, it hits you—something's seriously wrong.""}"
+53	53		301							"{3: ""The tail definitely isn't magpie-ish. More like...""}"
+54	54		301							"{3: ""No, that's a straight-up pterodactyl...""}"
+55	55		201							{1: '1', 2: '500472', 3: '1'}
+56	56		301							{1: '1', 2: 'Nanami', 3: 'Come on, Commandant, showtime!', 4: '1'}
+57	57		203							{1: '1', 2: '0.25', 4: '-50', 5: '-100'}
+58	58		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png', 3: '0', 4: '1', 5: '1'}
+59	59		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+60	60		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+61	61		301							"{3: 'Nanami shoves you, dazed and confused, into the ""cabin"" she whipped up just moments ago.'}"
+62	62		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory177.png', 3: '0', 4: '1', 5: '1'}
+63	63		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+64	64		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory177.png'}
+65	65		204							{1: '1', 2: '4'}
+66	66		301							{2: 'Nanami', 3: 'Now—', 4: '1'}
+67	67		301							"{3: ""Nanami's voice is serious.""}"
+68	68		302							"{2: ""Wait a minute, how's a pterodactyl supposed to get airborne?!"", 3: '69'}"
+69	69		204							{1: '1', 2: '3'}
+70	70		301							"{2: 'Nanami', 3: ""Alright, alright, buckle up. It's launch time."", 4: '1'}"
+71	71		202							{1: '1', 6: '1'}
+72	72		401						500.0	{1: '2', 2: '937'}
+73	73		401							{1: '2', 2: '777'}
+74	74		301							{3: 'Nanami slams a button, and the pterodactyl screeches.'}
+75	75		302							{2: 'Why did you even bother adding that feature?!', 3: '76'}
+76	76		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '3'}
+77	77		301			RImgBg1Shake				"{3: ""Fire erupts from the pterodactyl's tail, bathing the courtyard in a wave of heat. But weirdly, nothing actually catches fire.""}"
+78	78		301							{3: 'Did Nanami pre-emptively fireproof the whole area before picking this spot?'}
+79	79		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+80	80		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg', 3: '0', 4: '1', 5: '1'}
+81	81		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+82	82		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg'}
+83	83		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '2'}
+84	84		301							"{3: 'The yard is definitely trashed from Power\'s ""training,"" but that still doesn\'t explain why you are soaring over Constellia in a mechanical pterodactyl...'}"
+85	85		301							{3: 'Peering down, you see a flock of actual, mechanical magpies cutting through the sky.'}
+86	86		201							{1: '1', 2: '500472', 3: '1'}
+87	87		301							{1: '1', 2: 'Nanami', 3: 'See that? Genius, right? I just cranked these out, one for every corner.', 4: '1'}
+88	88		301							"{3: 'Regardless, the pterodactyl and its magpie posse cruise over the cityscape. From the cabin, you can clearly see people craning their necks to gawk at this ""spectacle.""'}"
+89	89		204							{1: '1', 2: '3'}
+90	90		301							{2: 'Nanami', 3: 'There you go—a power-up sticker! Boosts both brains and brawn by 20%. Seems a bit much, honestly.', 4: '1'}
+91	91		302							{2: 'Maxed out already.', 3: '92', 4: 'This could come in handy.', 5: '94'}
+92	92		204							{1: '1', 2: '1'}
+93	93	96	301							"{2: 'Nanami', 3: ""The commandant's got no stat caps!"", 4: '1'}"
+94	94		204							{1: '1', 2: '1'}
+95	95		301							{2: 'Nanami', 3: 'Perfect!', 4: '1'}
+96	96		203							{1: '1', 2: '0.25', 4: '-50', 5: '-100'}
+97	97		301							"{3: 'Nanami plasters a sticker on her face that declares, in no uncertain terms, ""Nanami is the Best.""'}"
+98	98		301							{2: 'Nanami', 3: 'So, Commandant!', 4: '1'}
+99	99		204							{1: '1', 2: '3'}
+100	100		301		1		AniZhuanchangBegin			{2: 'Nanami', 3: 'Where to next?', 4: '1'}

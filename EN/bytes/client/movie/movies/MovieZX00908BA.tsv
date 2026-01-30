@@ -1,0 +1,91 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory113.png'}
+2	1001		401							{1: '1', 2: '202'}
+3	2		401				RImgBg1Shake			{1: '2', 2: '10007502'}
+4	3		301			DialogEnable				{3: 'Boom—'}
+5	4		301							{3: 'The platform could not withstand the battle between Gray Raven and the Corrupted—'}
+6	5		301							{3: 'It shatters into pieces, separating the members of Gray Raven...'}
+7	6		201							{1: '1', 2: '1031001', 3: '7', 4: '-400'}
+8	7		201							{1: '2', 2: '1011001', 4: '400'}
+9	8		301							{1: '1', 2: 'Liv', 3: 'Lucia! Commandant and Watanabe are—', 4: '1'}
+10	9		201							{1: '1', 2: '1021001', 3: '4', 4: '-400'}
+11	10		301							{1: '1', 2: 'Lucia', 3: 'Commandant!', 4: '1'}
+12	11		302							"{2: ""I'm fine!"", 3: '12', 4: 'Maintain your formation!', 5: '12'}"
+13	12		201							{1: '1', 2: '1031001', 4: '-400'}
+14	13		301							"{1: '1', 2: 'Lee', 3: ""Tsk... Liv! Let's keep shooting!"", 4: '2'}"
+15	14		301							{2: 'Liv', 3: 'Okay!', 4: '1'}
+16	15		202							{1: '1', 2: '2', 6: '1'}
+17	16		201							{1: '1', 2: '500119'}
+18	1002		401							{1: '2', 2: '10001004'}
+19	1003		401							{1: '2', 2: '10003001'}
+20	17		301							"{1: '1', 3: ""Korolev is completely untouched by Lee and Liv's shooting."", 4: '1'}"
+21	18		202							{1: '1', 6: '1'}
+22	19		201							{1: '1', 2: '500080'}
+23	20		301							{1: '1', 2: 'Watanabe', 3: 'It seems to have chosen you as the target, Commandant of Gray Raven.', 4: '1'}
+24	21		201							{1: '1', 2: '500119'}
+25	1004		401							{1: '2', 2: '1509'}
+26	22		301							"{1: '1', 3: ""Although significantly damaged, Korolev's weapon modules are still preparing for the next round of attack."", 4: '1'}"
+27	23		301							{1: '1', 2: 'Korolev', 3: 'Humans... are... doomed...', 4: '1'}
+28	24		201							{1: '1', 2: '500080'}
+29	25		301							"{1: '1', 2: 'Watanabe', 3: ""Stay behind me. Don't move."", 4: '1'}"
+30	26		202							{1: '1', 6: '1'}
+31	27		301							{3: 'Watanabe moves forward as he prepares to face Corrupted Korolev alone.'}
+32	28		301							{3: 'However...'}
+33	29		301							{3: 'Connecting—'}
+34	30		201							{1: '1', 2: '500005'}
+35	31		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+36	32		301							{1: '1', 2: 'Demolition Squad', 3: 'Attention to all Babylonia forces! Explosives have been installed on the gravity cabin wall structure! Ready for final detonation!', 4: '1'}
+37	33		301							{2: 'Demolition Squad', 3: 'All personnel will be exposed to the vacuum of space after detonation. Switch to vacuum mode immediately!', 4: '1'}
+38	34		301							{2: 'Demolition Squad', 3: 'Countdown—', 4: '1'}
+39	35		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+40	36		201							{1: '1', 2: '500080'}
+41	37		301							{1: '1', 2: 'Watanabe', 3: 'Detonation?', 4: '1'}
+42	38		301							"{2: 'Watanabe', 3: ""Why blast the cabin wall now...? What's Babylonia planning..."", 4: '1'}"
+43	39		202							{1: '1', 6: '1'}
+44	1005		401							{1: '2', 2: '10007502'}
+45	40		301			RImgBg1Shake				{3: 'Boom—'}
+46	1000		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+47	41		301							{3: 'The cabin wall is destroyed by a giant explosion, but the debris does not fly inward.'}
+48	42		301							{3: 'Instead, they are sucked out by the enormous negative pressure.'}
+49	43		201							{1: '1', 2: '1021001'}
+50	44		301							{1: '1', 2: 'Lucia', 3: 'Liv!', 4: '1'}
+51	45		202							{1: '1', 6: '1'}
+52	46		301							{3: 'Lucia strikes her blade into the ground and holds Liv with her other hand.'}
+53	47		301							{3: 'While Liv tries her best to control the Levi-Guns, so that they do not get sucked into space.'}
+54	655		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+55	48		201							{1: '1', 2: '500080'}
+56	49		301				AniZhuanchangBegin			{1: '1', 2: 'Watanabe', 3: 'Grab on!', 4: '1'}
+57	50		202							{1: '1', 6: '1'}
+58	51		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory114.png'}
+59	52		301			AniZhuanchangEnd				{3: 'Watanabe grabs the shattered platform and reaches out his arm.', 4: '1'}
+60	53		302							"{2: ""(Grab Watanabe's hand)"", 3: '54', 4: 'You got it!', 5: '54'}"
+61	54		301							"{3: ""With Watanabe's support, you can now aim at Korolev's weak point—""}"
+62	55		201							{1: '1', 2: '500119'}
+63	56		301							{1: '1', 3: 'Meanwhile, Korolev continues to climb over with its robotic arms.', 4: '1'}
+64	57		302							{2: '(Aim and fire)', 3: '58'}
+65	58		202							{1: '1', 6: '1'}
+66	1006		401							{1: '2', 2: '1510'}
+67	59		301							{3: 'Bang!'}
+68	60		201							{1: '1', 2: '500119'}
+69	61		301			PanelActor1Shake				"{3: 'But it lost balance after its ""eye"" is hit, and falls into the volatile torrent created by space.'}"
+70	62		201							{1: '1', 2: '500080'}
+71	63		301							{1: '1', 2: 'Watanabe', 3: '——', 4: '1'}
+72	64		202							{1: '1', 6: '1'}
+73	65		301							{3: 'Watanabe shouts something, but he could hardly be heard.'}
+74	66		301							{3: 'After switching to electromagnetic communication—'}
+75	67		201							{1: '1', 2: '500080'}
+76	68		301							{1: '1', 2: 'Watanabe', 3: 'I said, good shot!', 4: '1'}
+77	69		202							{1: '1', 6: '1'}
+78	70		301							{3: 'Although the air nearby gets completely drained, the chaotic scene does eventually come to a rest.'}
+79	71		301							{3: 'You look into space through a hole created by the explosion and see a floating satellite.'}
+80	72		301							{3: 'Connecting—'}
+81	73		201							{1: '1', 2: '1111001'}
+82	74		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+83	75		301							"{1: '1', 2: 'Karenina', 3: 'Hello? The ""Prism"" is ready! It\'s up to you now, task force!', 4: '1'}"
+84	76		301							"{2: 'Karenina', 3: ""There's only one chance! Once you've stabilized the core, send me the signal! Make sure it's not too early or too late!"", 4: '1'}"
+85	77		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+86	78		201							{1: '1', 2: '500080'}
+87	79		301							"{1: '1', 2: 'Watanabe', 3: ""Prism... I think I know what's going on now..."", 4: '1'}"
+88	80		201							{1: '1', 2: '1111001'}
+89	81		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+90	82		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Karenina', 3: ""Huh? What's that sound... in the signal..."", 4: '1'}"

@@ -1,0 +1,393 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		401						2000.0	{1: '2', 2: '5713'}
+2	2		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory609.jpg'}
+3	3		401							{1: '1', 2: '163'}
+4	4		301			DialogEnable				{3: 'Two steeds move through the dense forest mist and finally stop in front of an unremarkable wooden cabin.'}
+5	5		401							{1: '2', 2: '5670', 3: '0.3'}
+6	6		402							{1: '5713'}
+7	7		401							{1: '2', 2: '2704', 3: '1'}
+8	8		301							{3: 'Still not fully recovered, Wanshi tugs the reins and slowly brings the horse to a stop in front of a weathered courtyard gate.'}
+9	9		201							{1: '1', 2: '501296', 4: '330'}
+10	10		301							"{1: '1', 2: 'Wanshi', 3: ""...This is where I've been staying. It's also an orphanage I built on my own."", 4: '1'}"
+11	11		301							{2: 'Wanshi', 3: 'The children inside were rescued from nearby villages. Most of their families were lost to the catastrophe.', 4: '1'}
+12	12		301							{3: 'Wanshi pauses for a moment, then seems to come to a firm decision and adds another line to the person beside him.'}
+13	13		301							"{2: 'Wanshi', 3: ""Also, things have been moving so fast that I haven't had the chance to explain everything. I want to use this moment to be honest with you."", 4: '1'}"
+14	14		302							{2: 'Alright.', 3: '15'}
+15	15		202							{1: '1'}
+16	16		301				AniZhuanchangBegin			{3: 'You nod and follow him into the narrow courtyard.'}
+17	17		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+18	18		504							{1: '0.7'}
+19	19		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory636.jpg'}
+20	20		107							"{1: 'Several Days Before ""The Great Train Robbery""'}"
+21	21		301							"{3: 'Several Days Before ""The Great Train Robbery""'}"
+22	22		108							{1: '1'}
+23	23		301			DialogEnable				{3: 'At dawn, the young man wakes to the sound of birds chirping. Still lying in bed, he touches his abdomen and finds the sharp, tearing pain is completely gone.'}
+24	24		301							{3: 'He sits up, dazed, and notices a familiar figure sitting at his bedside.'}
+25	25		302							"{2: 'This is one of the effects of the ""blood covenant."" It healed your critical wounds.', 3: '26'}"
+26	26		301				AniZhuanchangBegin			{3: 'Clad in a dark gray cloak, you hand him a cup of warm water, its heat dispelling the chill from his body.'}
+27	27		504			DialogDisable				{1: '0.7'}
+28	28		502							{1: 'AniZhuanchangEnd'}
+29	29		101					1000.0		{1: 'Assets/Product/Texture/Image/BgCg/Cg5801_08.jpg'}
+30	30		301			DialogEnable	DialogDisable			"{2: 'Wanshi', 3: ""Thank you. You're the one who...""}"
+31	31		302							{2: 'I am Gray Raven.', 3: '32'}
+32	32		302							"{2: ""The nightmare binding you isn't an ordinary one. To wake you up, I had no choice but to enter your dream."", 3: '33'}"
+33	33		301			DialogEnable				{3: 'His unspoken questions are answered before he can ask them.'}
+34	34		301				DialogDisable			{3: 'You lift your cloak, revealing an arm covered in scars and dried blood.'}
+35	35		302							{2: 'Blood connects our consciousness. By the time I reached you, you had already fallen unconscious from severe blood loss.', 3: '36'}
+36	36		302							{2: 'The only way to keep you alive was to turn you into a demon.', 3: '37'}
+37	37		301			DialogEnable				{2: 'Wanshi', 3: '...Right, the children in the castle...!'}
+38	38		301							{3: 'The answer stirs up fragments of memory in his mind. He clutches his throbbing forehead and tries to stand.'}
+39	39		302							"{2: ""I've already searched the castle once. There's nothing left there but the living dead."", 3: '40'}"
+40	40		301							{2: 'Wanshi', 3: 'Only... the living dead?'}
+41	41		301				DialogDisable			{3: 'He hesitates and repeats what he just heard.'}
+42	42		302							"{2: ""Yes. Even those tribespeople who collapsed in the front hall didn't escape the bloodsucking locusts."", 3: '43'}"
+43	43		302							{2: 'The catastrophe destroyed most of the clues, but I trust my judgment.', 3: '44'}
+44	44		301			DialogEnable				{2: 'Wanshi', 3: 'Then, the site where the live sacrifice rituals took place...'}
+45	45		301							{3: 'You step forward and return the lantern that had once been left on the ground to its owner.'}
+46	46		302				AniZhuanchangBegin			"{2: ""There are still some remnants at the ritual site. I'll take you there."", 3: '47'}"
+47	47		401							{1: '1', 2: '36'}
+48	48		401						600.0	{1: '2', 2: '2689'}
+49	49		401						600.0	{1: '2', 2: '2689'}
+50	50		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory634.jpg'}
+51	51		504							{1: '0.7'}
+52	52		402							{1: '5702'}
+53	53		401							{1: '1', 2: '381'}
+54	54		301			AniZhuanchangEnd				{3: 'The flames on the altar have all gone out. A crude wooden carving lies buried in the sacrificial platform, its surface smeared with dark brown blood and mud.'}
+55	55		301							{3: 'The carving is shaped like a goat, its limbs folded beneath it in a kneeling posture. It lies prostrate on the altar, as if offering its neck for slaughter.'}
+56	56		201							{1: '1', 2: '501295', 4: '330'}
+57	57		301							"{1: '1', 2: 'Wanshi', 3: ""...I was too late. I couldn't stop any of it."", 4: '1'}"
+58	58		204							{1: '1', 2: '8'}
+59	59		301				DialogDisable			"{2: 'Wanshi', 3: ""They didn't deserve to die like a helpless lamb."", 4: '1'}"
+60	60		204							{1: '1'}
+61	61		203						450.0	{1: '1', 2: '0.4', 3: '330', 4: '-100', 5: '-50'}
+62	62		401							{1: '2', 2: '10042416', 3: '0.3'}
+63	63		301			DialogEnable	DialogDisable			{3: 'Wanshi steps forward and digs out the wooden carving. He wipes the blood caked on its base, then carefully tucks it into his pouch.'}
+64	64		203							{1: '1', 2: '0.4', 3: '330'}
+65	65		401						450.0	{1: '2', 2: '4799', 3: '1'}
+66	66		402							{1: '4799'}
+67	67		301			DialogEnable				"{2: 'Wanshi', 3: ""Come on. There's nothing else to find here."", 4: '1'}"
+68	68		301							"{2: 'Wanshi', 3: ""That priest ran. He won't be coming back here."", 4: '1'}"
+69	69		301							{3: 'He lowers his head, thinking for a moment, then turns to glance back at you.'}
+70	70		301							{2: 'Wanshi', 3: 'Gray Raven, you saved me. I want to fight alongside you.', 4: '1'}
+71	71		301							"{2: 'Wanshi', 3: ""But before we leave, there's one more thing we need to do."", 4: '1'}"
+72	72		302							{2: 'Alright.', 3: '73'}
+73	73		301							"{2: 'Wanshi', 3: ""Too many innocent lives are buried here... I don't want to see anyone use this place again."", 4: '1'}"
+74	74		301				DialogDisable			{2: 'Wanshi', 3: 'We have to destroy this altar before we leave.', 4: '1'}
+75	75		302							"{2: ""I'm with you."", 3: '76'}"
+76	76		202							{1: '1'}
+77	77		401							{1: '2', 2: '759'}
+78	78		401							{1: '2', 2: '5672'}
+79	79		301			DialogEnable				{3: 'You raise your arm. A black raven swoops in from somewhere and lands steadily on your shoulder.'}
+80	80		201							{1: '18', 2: '501283'}
+81	81		301							"{1: '1', 2: 'Morigan', 3: ""Boss, what's the plan?"", 4: '18'}"
+82	82		302							"{2: ""Help me set up a formation nearby. We're going to destroy this altar."", 3: '83'}"
+83	83		301							"{2: 'Morigan', 3: ""Heh. Blowing up this thing's gonna take a lot of magic, and you just made a blood covenant with the knight. Maybe you should rest up first—"", 4: '18'}"
+84	84		301							"{2: 'Morigan', 3: ""Alright, alright, quit poking my head! I'll do it already!"", 4: '18'}"
+85	85		202							{1: '18'}
+86	86		401							{1: '2', 2: '759'}
+87	87		301							"{3: ""The raven's beak flaps open and shut as it grumbles a few reluctant words, then flaps its wings and flies off.""}"
+88	88		301							{3: 'The silver-haired knight glances at you. A trace of unspoken guilt flickers in his expression.'}
+89	89		201							{1: '1', 2: '501295', 4: '330'}
+90	90		301				DialogDisable			"{1: '1', 2: 'Wanshi', 3: ""...You don't have to push yourself, Gray Raven."", 4: '1'}"
+91	91		302							"{2: ""It's fine. I want to do this too."", 3: '92'}"
+92	92		302							{2: 'Even for the sake of those buried here... a place like this deserves to be put to rest.', 3: '93'}
+93	93		301			DialogEnable				{2: 'Wanshi', 3: 'You saved me, made a contract with me, and you clearly hate these fanatics too.', 4: '1'}
+94	94		301							"{3: ""His clear gaze falls on you. It isn't judgmental, just searching.""}"
+95	95		301				DialogDisable			{2: 'Wanshi', 3: 'Why? Why me? Why now?', 4: '1'}
+96	96		302							{2: 'Put simply, I want to bring down the Supreme Heaven.', 3: '97'}
+97	97		302							{2: 'To do that, I need the power of demons.', 3: '98'}
+98	98		302							{2: 'Meeting you here, and being forced to turn you into one—that really was a coincidence.', 3: '99'}
+99	99		301			DialogEnable				"{3: ""Wanshi nods. He doesn't look surprised, as if this were the answer he expected.""}"
+100	100		301							{2: 'Wanshi', 3: 'So you came to the source of the catastrophe to find a way to overthrow the Sanctuary.', 4: '1'}
+101	101		302							{2: '(Nod and confirm that this is exactly right)', 3: '102', 4: 'Like they say, no risk, no reward.', 5: '102'}
+102	102		301							{2: 'Wanshi', 3: '...', 4: '1'}
+103	103		401							{1: '2', 2: '1543'}
+104	104		301							{3: 'He takes a deep breath, as if making an important decision, then reaches out his hand to Gray Raven.'}
+105	105		301							{2: 'Wanshi', 3: 'My goal is to find a way to end this catastrophe, and bring peace back to the world.', 4: '1'}
+106	106		301							"{2: 'Wanshi', 3: ""The Sanctuary's plague has already claimed too many innocent lives. If you're also trying to save this world..."", 4: '1'}"
+107	107		204							{1: '1', 2: '1'}
+108	108		301				DialogDisable			"{2: 'Wanshi', 3: ""Then I'm with you. Let's purge the poison from this world together."", 4: '1'}"
+109	109		302				AniZhuanchangBegin			"{2: ""That's a big goal. But it's mine too."", 3: '110', 4: ""From here on out, we're a team."", 5: '110'}"
+110	110		202							{1: '1', 6: '1'}
+111	111		401						2000.0	{1: '1', 2: '36'}
+112	112		401							{1: '1', 2: '163'}
+113	113		504							{1: '0'}
+114	114		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory609.jpg'}
+115	115		107							{1: 'Back to the present'}
+116	116		301							{3: 'Back to the present'}
+117	117		108							{1: '1'}
+118	118		401						200.0	{1: '2', 2: '754'}
+119	119		301			DialogEnable				{3: 'The long-haired young man dismounts, and as soon as he opens the front door, a crowd of noisy children bursts out like a pack of squirrels.'}
+120	120		401							{1: '2', 2: '4931'}
+121	121		401							{1: '2', 2: '2978'}
+122	122		201							{1: '1', 2: '500280', 4: '-450'}
+123	123		201							{1: '2', 2: '500279'}
+124	124		201							{1: '3', 2: '500280', 4: '450'}
+125	125		301			DialogShake				"{1: '1', 2: 'Children', 3: ""Wanshi, you're back—!"", 4: '1', 5: '2', 6: '3'}"
+126	126		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+127	127		201							{1: '1', 2: '500259'}
+128	128		301							"{1: '1', 2: 'Little Boy', 3: ""Wanshi, where's the candy you promised?"", 4: '1'}"
+129	129		202							{1: '1'}
+130	130		301							{3: 'The children pay no attention to the unfamiliar guest at the door. They swarm over Wanshi, tugging at him and shouting for gifts.'}
+131	131		301							{3: 'At the center of the chaos, Wanshi remains calm. He reaches into his many pockets and begins handing out candy one piece at a time.'}
+132	132		301							"{3: ""His hands move like a magician's. Once one coat pocket is empty, he reaches into the next and pulls out something new. Candy pours out of him like Christmas streamers, never-ending.""}"
+133	133		201							{1: '1', 2: '501296', 4: '330'}
+134	134		301							"{1: '1', 2: 'Wanshi', 3: ""Come on in. The kids are well-behaved. They won't bother strangers."", 4: '1'}"
+135	135		301							{3: 'While keeping the children in check, Wanshi still remembers to glance up and say a word to you at the door.'}
+136	136		302							"{2: ""That's ridiculous. I've never seen someone hand out gifts like a walking Christmas tree."", 3: '137'}"
+137	137		204							{1: '1', 2: '1'}
+138	138		301				AniZhuanchangBegin			{3: 'He gives you a faint smile in response.'}
+139	139		202						1000.0	{1: '1'}
+140	140		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory894.jpg'}
+141	141		301			AniZhuanchangEnd				"{3: ""After calming the excited children and tucking them back into bed, the clock's hour hand ticks forward another notch.""}"
+142	142		301							"{3: ""Following Wanshi's lead, you, the Bloodsworn, enter the underground workshop. As the door opens, you're greeted by an entire wall covered in maps and photographs.""}"
+143	143		301							"{3: ""The entire workshop is set up like a detective's office. Alongside documents on the blood locust plague, there are investigation reports from murder cases across different regions.""}"
+144	144		301							"{3: ""The case files are neatly arranged in chronological order. Every victim's cause of death is marked in red: exsanguination.""}"
+145	145		302							"{2: ""You're also... tracking down leads about the blood locusts?"", 3: '146'}"
+146	146		301				DialogDisable			{3: 'Aside from the clue board, there are two large wall cabinets on either side of the room. Each grid-like drawer has a handwritten label bearing the name of a different herb.'}
+147	147		401						600.0	{1: '2', 2: '2689'}
+148	148		401						600.0	{1: '2', 2: '2689'}
+149	149		401							{1: '2', 2: '2689'}
+150	150		301			DialogEnable				{3: 'While tying up his silver hair, Wanshi strolls casually over to the cabinets and opens a few drawers at random.'}
+151	151		401							{1: '2', 2: '4126'}
+152	152		201							{1: '1', 2: '501296', 4: '330'}
+153	153		301							{1: '1', 2: 'Wanshi', 3: 'Yeah. Make yourself comfortable.', 4: '1'}
+154	154		202							{1: '1'}
+155	155		401					400.0		{1: '2', 2: '5290'}
+156	156		301							{3: 'No sooner do you sink into the soft chair than a steaming cup of herbal tea appears on the table.'}
+157	157		302							{2: '(Take a sip)'}
+158	158		301							{3: 'A gentle, sweet aroma spreads across your tongue.'}
+159	159		201							{1: '1', 2: '501296', 4: '330'}
+160	160		301				DialogDisable			{1: '1', 2: 'Wanshi', 3: 'Soul Cocoon Chrysanthemum, Silver Dew Basil, and Sleep Alfalfa—all ingredients with calming properties.', 4: '1'}
+161	161		302							"{2: ""It's good. So... what did you find in your investigation?"", 3: '162'}"
+162	162		204							{1: '1', 2: '1'}
+163	163		401						600.0	{1: '2', 2: '5543'}
+164	164		402							{1: '5543'}
+165	165		301			DialogEnable				{3: 'Wanshi gives a small nod of thanks, then pulls a memo board from the corner and begins to speak.'}
+166	166		204							{1: '1'}
+167	167		301							"{2: 'Wanshi', 3: ""I've been secretly investigating the origins of the blood locust plague for years."", 4: '1'}"
+168	168		301							"{2: 'Wanshi', 3: ""It's supposed to be a natural disaster that only happens every few years, but lately, more and more victims have been turning up—killed by blood loss, as if they'd been devoured by the locusts."", 4: '1'}"
+169	169		301							"{2: 'Wanshi', 3: ""I've classified these cases as a serial exsanguination murder chain. From what I've found, the blood-draining is part of a ritual sacrifice linked to the beliefs of certain tribal groups."", 4: '1'}"
+170	170		301							{2: 'Wanshi', 3: 'To trace the connection between the victims and the tribespeople, I infiltrated that castle alone. But right at the ritual site, the catastrophe struck. Completely unexpected.', 4: '1'}
+171	171		302							"{2: ""Unfortunately, we couldn't catch a single witness."", 3: '172'}"
+172	172		301							{2: 'Wanshi', 3: 'Still, I did find a few clues worth following up on.', 4: '1'}
+173	173		202							{1: '1', 2: '1'}
+174	174		306							{1: '1'}
+175	175		301							{3: 'He takes out the goat carving he found on the altar, tilting it toward the light. On the base is a twisted pentagram symbol.'}
+176	176		301							{3: 'At the center of the pentagram, a deep puncture mark has been carved, as if someone had tried to drill a hole clean through the base.'}
+177	177		306							
+178	178		201							{1: '1', 2: '501296', 4: '330'}
+179	179		301							{1: '1', 2: 'Wanshi', 3: 'This symbol closely matches the Old Seal used by the ancient tribal remnants, according to records in the great library.', 4: '1'}
+180	180		301							"{2: 'Wanshi', 3: ""The texts say it's a divine oracle. By following its rituals, the tribespeople believe they can commune with a holy being."", 4: '1'}"
+181	181		301							{2: 'Wanshi', 3: 'And from what the cultists in the castle were shouting, they were performing some kind of ritual...', 4: '1'}
+182	182		301							{2: 'Wanshi', 3: 'I believe these repeated sacrifices across different places are what they refer to as the steps of the ritual.', 4: '1'}
+183	183		302							{2: 'And your basis for that?', 3: '184'}
+184	184		301							{2: 'Wanshi', 3: 'If you connect the murder sites in chronological order...', 4: '1'}
+185	185		202							{1: '1', 2: '1'}
+186	186		301							{3: 'Wanshi raises his index finger and traces across the map, linking the case locations. The path he draws outlines a massive star shape in the air.'}
+187	187		201							{1: '1', 2: '501296', 4: '330'}
+188	188		301							{1: '1', 2: 'Wanshi', 3: 'They form this giant pentagram.', 4: '1'}
+189	189		202							{1: '1', 2: '1'}
+190	190		301							{3: 'At the center of the star lies a single, isolated town.'}
+191	191		302							{2: '...New Zohik.', 3: '192'}
+192	192		301							"{3: ""You read the town's name aloud.""}"
+193	193		201							{1: '1', 2: '501296', 4: '330'}
+194	194		301							"{1: '1', 2: 'Wanshi', 3: ""It's only speculation for now, but I don't think this is a coincidence."", 4: '1'}"
+195	195		301							"{2: 'Wanshi', 3: ""Whoever's behind the murders, whether it's the tribespeople or someone else, they must be doing all this for a reason."", 4: '1'}"
+196	196		301							{2: 'Wanshi', 3: 'If we can get there first, we might be able to stop the next blood locust outbreak.', 4: '1'}
+197	197		302							"{2: ""Then let's set out tomorrow."", 3: '198'}"
+198	198		202							{1: '1', 2: '1'}
+199	199		301							{3: 'Just as you start to stand, Wanshi lifts a hand to stop you.'}
+200	200		201							{1: '1', 2: '501296', 4: '330'}
+201	201		301				DialogDisable			"{1: '1', 2: 'Wanshi', 3: ""...Gray Raven. Before we leave, there's one more thing I need to tell you."", 4: '1'}"
+202	202		401						600.0	{1: '2', 2: '5543'}
+203	203		402							{1: '5543'}
+204	204		203							{1: '1', 2: '0.2', 3: '320', 4: '-20', 5: '-40'}
+205	205		301			DialogEnable				{3: 'Wanshi slides the clue board back into the corner and leans slightly closer to you.'}
+206	206		301							"{2: 'Wanshi', 3: ""That dream you saw when we made the covenant... it's the same nightmare I've always had ever since I was a child."", 4: '1'}"
+207	207		302							{2: 'Always?', 3: '208'}
+208	208		301							{2: 'Wanshi', 3: 'Yeah. No matter how many times I wake up, no matter how much time passes, the nightmare always traps me in the same moment.', 4: '1'}
+209	209		301							"{2: 'Wanshi', 3: ""When I was little, I lost all memory of what happened before I arrived at the orphanage. My foster mother and the others told me I'd been wandering on my own when she came across me during her travels and decided to take me in."", 4: '1'}"
+210	210		301							{2: 'Wanshi', 3: 'Not long after, a catastrophe struck the orphanage. I was the only one who made it out.', 4: '1'}
+211	211		301							"{2: 'Wanshi', 3: ""Ever since then, I've had the same dream over and over, reliving the day the disaster struck and the moment that angel interrogated me."", 4: '1'}"
+212	212		301							"{2: 'Wanshi', 3: ""Sometimes I dream about other things too, but it's always visions of catastrophe and judgment."", 4: '1'}"
+213	213		301							{3: 'His face remains calm, but you can tell from his voice that these are the memories he least wants to talk about.'}
+214	214		301							"{2: 'Wanshi', 3: ""But after forming the covenant with you, for some reason, I began to see another set of fragmented memories in my sleep, memories I've never lived through myself."", 4: '1'}"
+215	215		301				DialogDisable			{2: 'Wanshi', 3: 'I think... I must have glimpsed into your dreams as well.', 4: '1'}
+216	216		302							{2: 'This might be your power as Pestilence.', 3: '217'}
+217	217		302							{2: 'Did you see something in the dream?', 3: '218'}
+218	218		301			DialogEnable	DialogDisable			"{2: 'Wanshi', 3: ""...I couldn't see it clearly. Just scattered fragments."", 4: '1'}"
+219	219		302							"{2: ""Actually, I'm just like you. I once lost all of my memories too."", 3: '220'}"
+220	220		302							"{2: ""If you don't mind, would you help me take a glimpse into my past?"", 3: '221'}"
+221	221		301			DialogEnable				{2: 'Wanshi', 3: 'Well...', 4: '1'}
+222	222		301							{3: 'Seeing his hesitation, you add:'}
+223	223		302							{2: 'Besides, this ability might come in handy on the battlefield. Better to practice ahead of time.', 3: '224'}
+224	224		301							{2: 'Wanshi', 3: '...Alright.', 4: '1'}
+225	225		204							{1: '1', 2: '8'}
+226	226		301							{3: 'He no longer avoids it. The silver-haired demon raises a fingertip and begins reading the soul.'}
+227	227		205							{1: '1', 3: '1', 4: '0', 5: '0.6'}
+228	228		301				DialogDisable			{3: '—'}
+229	229		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLianyi.prefab', 2: '3'}
+230	230		401							{1: '2', 2: '981'}
+231	231		301			DialogEnable	DialogDisable			{3: 'A pale glow rises from his fingertip and sinks into your brow.'}
+232	232		205					500.0	1000.0	{1: '1', 3: '0', 4: '1', 5: '0.5'}
+233	233		202						200.0	{1: '1'}
+234	234		201							{1: '1', 2: '501296', 4: '320', 5: '-20', 6: '-40'}
+235	235		203							{1: '1', 2: '0.3', 3: '330'}
+236	236		301			DialogEnable				{1: '1', 3: 'After a brief moment of focus, Wanshi opens his golden eyes again.'}
+237	237		301							"{2: 'Wanshi', 3: ""I can see flashes of it, but the memories are too broken up. I can't piece them into a full picture."", 4: '1'}"
+238	238		302							"{2: ""I see. Then we're out of options."", 3: '239'}"
+239	239		301				DialogDisable			"{2: 'Wanshi', 3: ""...You don't seem too desperate to find out what happened either?"", 4: '1'}"
+240	240		302							"{2: ""It's not that I don't care. There's just no better way."", 3: '241'}"
+241	241		302							"{2: ""The past may be worth chasing, but there's something more urgent right now."", 3: '242'}"
+242	242		301			DialogEnable	DialogDisable			{2: 'Wanshi', 3: '...', 4: '1'}
+243	243		302							"{2: ""There's no way for us to verify if this ability will actually be useful."", 3: '244'}"
+244	244		302							"{2: ""We'll test it during a real fight."", 3: '245'}"
+245	245		301			DialogEnable				{2: 'Wanshi', 3: '...Hold on.', 4: '1'}
+246	246		302							{2: 'What is it?', 3: '247'}
+247	247		202							{1: '1', 2: '1'}
+248	248		301							{3: 'You pause again, stopping just before getting up.'}
+249	249		201							{1: '1', 2: '501296', 4: '330'}
+250	250		301							"{1: '1', 2: 'Wanshi', 3: ""I have one more question. If you've already lost all your memories..."", 4: '1'}"
+251	251		301				DialogDisable			{2: 'Wanshi', 3: 'Why are you still willing to take such a huge risk and fight against the Sanctuary?', 4: '1'}
+252	252		302							"{2: ""I don't really know how to explain it."", 3: '253'}"
+253	253		302							"{2: ""But there's one thing I know for sure, even without my memories."", 3: '254'}"
+254	254		302							{2: 'If no one stands up, humanity will be wiped out by the calamity sooner or later.', 3: '255'}
+255	255		302							{2: 'So if someone has to be that person, let it be me.', 3: '256'}
+256	256		301			DialogEnable				"{2: 'Wanshi', 3: ""...Once this calamity is over, let's go look for your memories together."", 4: '1'}"
+257	257		301							{3: 'After a brief silence, his reply takes you by surprise.'}
+258	258		301							"{2: 'Wanshi', 3: ""Now that I've become a demon, I probably have near-endless time, don't I?"", 4: '1'}"
+259	259		301							{3: 'He lets out a small yawn, his voice tinged with drowsiness, though his expression stays calm and serious.'}
+260	260		301							"{2: 'Wanshi', 3: ""If I have to spend all that time having the same nightmare, I won't be able to take it."", 4: '1'}"
+261	261		301							"{2: 'Wanshi', 3: ""Then it's settled. Once everything is over, I'll look for a way to end the nightmare. You go look for your past."", 4: '1'}"
+262	262		204							{1: '1', 2: '8'}
+263	263		301							"{3: ""He's trying to speak with focus, but his eyes are already starting to close on their own.""}"
+264	264		302							"{2: ""Wanshi? What's wrong?""}"
+265	265		201							{1: '1', 2: '501296', 4: '330'}
+266	266		301							"{2: 'Wanshi', 3: ""But before that... hah... I can't... I'm suddenly so tired..."", 4: '1'}"
+267	267		301							"{2: 'Wanshi', 3: ""Maybe it's... the price of peering into too many memories..."", 4: '1'}"
+268	268		301				DialogDisable			"{2: 'Wanshi', 3: ""For now... let's just get some rest..."", 4: '1'}"
+269	269		202							{1: '1'}
+270	270		401						500.0	{1: '2', 2: '13081709'}
+271	271		301			DialogEnable				{3: 'He hands you a soft owl-shaped pillow, then turns and stretches out on the armchair, closing his eyes.'}
+272	272		201							{1: '1', 2: '501296', 3: '8', 4: '330'}
+273	273		301				DialogDisable			{1: '1', 2: 'Wanshi', 3: 'You can have the bed... good... night...', 4: '1'}
+274	274		202							{1: '1', 2: '1'}
+275	275		401							{1: '2', 2: '4135'}
+276	276		402					1000.0		{1: '4135'}
+277	277		301			DialogEnable				{3: 'The herbal tea kettle beside the table gives two soft gurgles and shuts off at just the right moment.'}
+278	278		301							{3: 'The oil lamp dims, and the room falls quiet once more.'}
+279	279		302							{2: 'Good night, Wanshi.', 3: '280'}
+280	280		401							{1: '2', 2: '4341'}
+281	281		301				AniZhuanchangBegin			{3: 'You gently cover him with a blanket, then lie down on the soft bed.'}
+282	282		401							{1: '1', 2: '36'}
+283	283		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '1'}
+284	284		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+285	285		401							{1: '1', 2: '5042'}
+286	286		401							{1: '2', 2: '5712'}
+287	287		301			AniZhuanchangEnd				{3: 'The night passes dreamlessly. When morning light returns, the two of you have already set off on the new journey.'}
+288	288		301							"{3: ""The thick fog that has clung to the forest for days still hasn't lifted. The mountain road to New Zohik lies heavy under the gloom. With visibility low, you two ride slowly.""}"
+289	289		401							{1: '2', 2: '759'}
+290	290		301							{3: 'Morigan, too restless for silence, flies in circles around the two horses, loops through the sky several times, then finally settles on your shoulder.'}
+291	291		201							{1: '18', 2: '501283'}
+292	292		301							"{1: '1', 2: 'Morigan', 3: ""I'd bet my tail feathers that there's something weird in this fog."", 4: '18'}"
+293	293		301							{2: 'Morigan', 3: 'Caw, for all we know, this could be some tribal hideout. This creepy place... only you two would charge in like this.', 4: '18'}
+294	294		302							"{2: ""Let them come. We'll deal with whatever shows up."", 3: '295'}"
+295	295		202							{1: '18', 6: '1'}
+296	296		301							{3: 'In the thick fog, massive trees block your view. The towering forest stands like silent sentinels flanking the mountain path.'}
+297	297		201							{1: '18', 2: '501283'}
+298	298		301							"{1: '1', 2: 'Morigan', 3: ""You don't get it. Those tribal freaks are terrifying. Word is, they can summon giants!"", 4: '18'}"
+299	299		202							{1: '18', 6: '1'}
+300	300		201							{1: '1', 2: '501296', 4: '330'}
+301	301		301							{1: '1', 2: 'Wanshi', 3: 'Giants?', 4: '1'}
+302	302		202							{1: '1'}
+303	303		301							{3: 'Wanshi, who has long studied the history of the Scorched Borderland, seems intrigued'}
+304	304		201							{1: '18', 2: '501283'}
+305	305		301							{1: '1', 2: 'Morigan', 3: 'Oh, that stuff? That all happened a thousand years ago, back when the Cardinal Deity was still sitting high up in the heavens.', 4: '18'}
+306	306		301							"{2: 'Morigan', 3: ""Legend says the tribe's Holy Maiden could speak with spirits and summon white giants. They could flatten entire mountains and rivers in a single step. No one in any of the three realms dared mess with them."", 4: '18'}"
+307	307		301							"{2: 'Morigan', 3: ""But who's to say if it's true? The tribespeople haven't shown up in large numbers for centuries."", 4: '18'}"
+308	308		301							"{2: 'Morigan', 3: ""If they really are that powerful, their offspring wouldn't be stuck living like wild men in the forest today, would they?"", 4: '18'}"
+309	309		302							{2: 'So why did the tribespeople vanish without a trace?', 3: '310'}
+310	310		301							{2: 'Morigan', 3: 'Good question. That is a mystery.', 4: '18'}
+311	311		202							{1: '18', 6: '1'}
+312	312		401							{1: '2', 2: '759'}
+313	313		301							{3: 'Morigan smugly ruffles its wings and puffs out its chest.'}
+314	314		201							{1: '18', 2: '501283'}
+315	315		301							"{1: '1', 2: 'Morigan', 3: ""Some say the ancient tribe is pure myth, that it never existed, and today's tribespeople are just pretenders."", 4: '18'}"
+316	316		301							"{2: 'Morigan', 3: ""Others claim that centuries ago humans trekked from afar to this Scorched Borderland and, following the Cardinal Deity's command, massacred them to seize their land."", 4: '18'}"
+317	317		301							{2: 'Morigan', 3: 'The few survivors fled back to the forest that shelters them and now bide their time, planning to collect that blood debt from you humans.', 4: '18'}
+318	318		301							{2: 'Morigan', 3: 'But who really knows the truth? With angels almost wiping your kind out, who still cares about an old cycle of slaughter?', 4: '18'}
+319	319		202							{2: '18', 6: '1'}
+320	320		301							"{3: ""You stay silent about the raven's tale, and Wanshi, deep in thought, steers the conversation toward another topic.""}"
+321	321		201							{1: '1', 2: '501296', 4: '330'}
+322	322		301							{1: '1', 2: 'Wanshi', 3: 'Beliefs and legends usually spring from our deepest wishes. Take that tribal cult we shut down two days ago. Its leader believed only human sacrifice could fulfill the ancient oracle.', 4: '1'}
+323	323		301							{2: 'Wanshi', 3: 'The more powerless people feel, the more stories they invent to buy a little hope.', 4: '1'}
+324	324		202							{2: '1'}
+325	325		301							"{3: ""The two humans and the bird talk while they ride slowly through the mountains, the clang of hooves echoing in a fog so thick you can't see your hand ahead.""}"
+326	326		302							{2: 'In truth, no one has ever seen a giant with their own eyes.', 3: '327'}
+327	327		301							{3: 'He nods, his grip on the reins steady.'}
+328	328		201							{1: '1', 2: '501296', 4: '330'}
+329	329		301							"{1: '1', 2: 'Wanshi', 3: ""Because it's something they can't see or touch, they filled in the blanks with their own delusions, and eventually became madmen who slaughtered their own kind."", 4: '1'}"
+330	330		301							{3: 'At that, Wanshi pauses.'}
+331	331		301							"{2: 'Wanshi', 3: ""Oh right, when I broke into the castle, the cultists were shouting something about how we mustn't interfere with Carcosa..."", 4: '1'}"
+332	332		301							{2: 'Wanshi', 3: 'Carcosa might be the one behind all of this. That priest who escaped before the catastrophe could be him.', 4: '1'}
+333	333		302							{2: 'Then we need to find that priest. Otherwise, the same tragedy might happen again.', 3: '334'}
+334	334		301							{3: 'Just as the silver-haired knight is about to speak, something alerts him. He pulls down the bird-beak mask to cover his face.'}
+335	335		402							{1: '5712'}
+336	336		401							{1: '1', 2: '66', 3: '0.8'}
+337	337		202						200.0	{1: '1'}
+338	338		201							{1: '2', 2: '501295', 4: '330'}
+339	339		301							"{1: '1', 2: '""Pestilence""', 3: ""There's that drugged smoke in the fog. Cover your mouth and nose!"", 4: '2'}"
+340	340		302							{2: '(Pull up your cloak to cover your face)', 3: '341'}
+341	341		202							{1: '2'}
+342	342		401							{1: '2', 2: '759'}
+343	343		401							{1: '2', 2: '5672'}
+344	344		301							{3: 'Morigan lets out a sharp caw and dives back into the saddlebag.'}
+345	345		201							{1: '1', 2: '501295', 4: '330'}
+346	346		301							"{1: '1', 2: '""Pestilence""', 3: 'Watch out. The same smoke showed up in the castle. It contains compounds that cause confusion and hallucinations.', 4: '1'}"
+347	347		302							"{2: ""I'll be careful!"", 3: '348'}"
+348	348		202							{1: '1'}
+349	349		401							{1: '2', 2: '5670'}
+350	350		301							{3: 'No sooner are the words out than the horse squeals and rears wildly, nearly throwing you both off.'}
+351	351		502							{1: 'RImgBg1Shake'}
+352	352		401							{1: '2', 2: '4414'}
+353	353		104							{1: '0|50|-300', 2: '0.1'}
+354	355		306							{1: '1'}
+355	356		201							{1: '1', 2: '501343'}
+356	354		301							{1: '1', 3: 'Something slams to the ground in front of you with a boom, like a rotten ash-grey log, blocking the damp forest path.'}
+357	357		301							{3: 'A closer look shows the withered face and shriveled limbs belong to the black-robed priest you met in the castle.'}
+358	358		301				DialogDisable			"{3: ""The priest's corpse is drained of blood. His death matches the earlier serial-murder victims—desiccated frame, lungs emptied, pale eyes fixed on the sky.""}"
+359	359		302							"{2: ""Isn't he... the mastermind we were just discussing?"", 3: '360', 4: '...He was Carcosa?', 5: '360'}"
+360	360		306							
+361	361		202							{1: '1', 6: '1'}
+362	362		201							{1: '1', 2: '501295', 4: '330'}
+363	363		301			DialogEnable				"{1: '1', 2: '""Pestilence""', 3: '...Gray Raven.', 4: '1'}"
+364	364		401							{1: '2', 2: '5705'}
+365	365		301							{3: 'The knight draws his gun, aims at the sky, and you both slowly look up.'}
+366	366		301				DialogDisable			"{2: '""Pestilence""', 3: '—There.', 4: '1'}"
+367	367		202							{1: '1', 6: '1'}
+368	368		401							{1: '1', 2: '36'}
+369	369		104						2000.0	{1: '0|-120|-300', 2: '3'}
+370	370		401						500.0	{1: '1', 2: '192', 3: '1'}
+371	371		301			DialogEnable				{3: 'Looking up in the direction the corpse fell from, you see countless straw-cloak cocoons hanging from the trunks like medicine sachets.'}
+372	372		301							{3: 'The towering forest, dense enough to blot out the sky, is now draped with mummified corpses beyond counting, clustered like swarming flies.'}
+373	373		302							{2: 'How can this be...', 3: '374'}
+374	374		301							"{3: ""You don't have time to process the shock. Strange cries echo from the trees around you. A foul stench rises in the air, along with the sharp, rattling sound of bones knocking together.""}"
+375	375		104							{1: '0|0|0', 2: '0.14'}
+376	376		401							{1: '2', 2: '5815'}
+377	377		201							{1: '1', 2: '500084', 4: '-600'}
+378	378		201							{1: '2', 2: '500084'}
+379	379		201							{1: '3', 2: '500084', 4: '600'}
+380	380		301			DialogShake				{1: '1', 2: 'The Living Dead', 3: '...Click-click... Click-click-click...', 4: '1', 5: '2', 6: '3'}
+381	381		301				DialogDisable			"{3: ""They surround you on all sides. Every path is cut off. There's no way forward or back—just a wall of blood and flesh closing in.""}"
+382	382		202							{1: '1', 2: '2', 3: '3'}
+383	383		401						1000.0	{1: '2', 2: '4336'}
+384	384		402							{1: '4336'}
+385	385		301			DialogEnable				{3: 'Pestilence lifts his right hand. A pitch-black lantern forms in his palm.'}
+386	386		401							{1: '2', 2: '4834'}
+387	387		301							{3: 'You swing off your mount and draw your weapon, taking your place at his side.'}
+388	388		201							{1: '1', 2: '501295', 4: '300'}
+389	389		301							"{1: '1', 2: '""Pestilence""', 3: 'Judging by the rot, these ones only just turned.', 4: '1'}"
+390	390		302							{2: 'The culprit must still be nearby.', 3: '391'}
+391	391		301							{3: 'He raises the lantern. Threads of blood-like magic weave into the wick. A small flame flickers to life, casting light to guide the dead toward their final rest.'}
+392	392		301		1		AniZhuanchangBegin			"{2: '""Pestilence""', 3: ""Stay sharp. We're moving in."", 4: '1'}"

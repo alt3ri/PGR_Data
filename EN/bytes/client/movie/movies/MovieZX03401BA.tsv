@@ -1,0 +1,394 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+2	2		501				AniZhuanchangEnd			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+3	3		401							{1: '2', 2: '968'}
+4	4		401							{1: '1', 2: '209'}
+5	5		301			DialogEnable				{3: '10:00 a.m. 8 kilometers outside Oasis.'}
+6	6		301							{2: 'Singing', 3: '～In the desert is a lone traveling wolf...～'}
+7	7		301							{2: 'Singing', 3: '～Without a pack or a sense of direction...～'}
+8	8		301							{2: 'Singing', 3: '～Tired it may be, there is no stopping now...～'}
+9	9		401							{1: '2', 2: '959'}
+10	10		401						300.0	{1: '2', 2: '752'}
+11	11		401							{1: '1', 2: '54'}
+12	12		201							{1: '1', 2: '500136'}
+13	13		301			RImgBg1Shake				"{1: '1', 2: 'Desert Bandit 1', 3: ""Catch it! It couldn't have run far! We can't let it inform the Forsaken!"", 4: '1'}"
+14	14		301							{3: 'Sand flies as a car adorned with skulls and twisted letters charges across the desert, the sound of its engine covering even the music it is playing.'}
+15	15		301							{3: 'Ahead of the vehicle is a gray wolf.'}
+16	16		301							{3: 'One can imagine what it has gone through just by looking at it: wounds deep enough to reveal the bones and black sludges composed of dirt around its exposed flesh dyed red by fresh blood spilled.'}
+17	17		301							{3: 'There is no way to know how an animal this injured can run this fast.'}
+18	18		301							"{2: 'Desert Bandit 1', 3: ""Dammit! I didn't expect Watt to pull a stunt like this!"", 4: '1'}"
+19	19		203							{1: '1', 2: '0.25', 3: '400'}
+20	20		201							{1: '2', 2: '500427', 4: '-400'}
+21	21		301							"{1: '1', 2: 'Desert Bandit 2', 3: 'We can\'t let his pet spill the beans! If people find out that we were the ones who kidnapped those ""Scarlet Revelation"" members...', 4: '2'}"
+22	22		301							{3: 'He spits angrily at the thought of that.'}
+23	23		301							"{2: 'Desert Bandit 2', 3: ""Watanabe won't let us off the hook. Those guys from Kurono are only going to cover their tracks."", 4: '2'}"
+24	24		301							{2: 'Desert Bandit 1', 3: '****! This bastard surely is a fast runner!', 4: '1'}
+25	25		301				AniZhuanchangBegin			"{2: 'Desert Bandit 2', 3: ""It's stopping! Wait... Is that a person there?"", 4: '2'}"
+26	26		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+27	27		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+28	28		301			DialogEnable				{3: 'The stray wolf is just flesh and blood after all. As it runs, it stumbles...'}
+29	29		201							{1: '1', 2: '500066'}
+30	30		301							{1: '1', 3: 'And it falls next to a lonesome figure, no longer able to stand.'}
+31	31		301				AniZhuanchangBegin			{3: 'The figure looks drastically different from the armed bandits. The only weapon on her is the blade on her back.'}
+32	32		202			DialogDisable				{1: '1', 6: '1'}
+33	33		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+34	34		201							{1: '1', 2: '500136'}
+35	35		301			DialogEnable				"{1: '1', 2: 'Desert Bandit 1', 3: ""Doesn't look like a Forsaken to me..."", 4: '1'}"
+36	36		301							{3: 'Observing through the dust storm, the leading bandit on the vehicle finds the figure alone without the uniform and gears of a Forsaken soldier. He figures she must be a Scavenger who got separated from her group.'}
+37	37		301							{2: 'Desert Bandit 1', 3: 'Go over her!', 4: '1'}
+38	38		202							{1: '1'}
+39	39		301							{3: 'He quickly gives his order as he did in the past.'}
+40	40		201							{1: '1', 2: '500100', 7: '1'}
+41	41		301							{1: '1', 3: 'The wind from the car sweeps up the tattered cloak on her body, revealing her silvery hair.'}
+42	42		203							{1: '1', 2: '0.25', 3: '-400'}
+43	43		201							{1: '2', 2: '500136', 4: '400'}
+44	44		301							{1: '1', 2: 'Desert Bandit 1', 3: 'Is that... a Construct with heterochromia...?', 4: '2'}
+45	45		301							{3: 'Suddenly, the white light reflected by her blade blinds them all.'}
+46	46		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHit01.prefab', 2: '3'}
+47	47		202							{1: '1', 2: '2', 6: '1'}
+48	48		401							{1: '2', 2: '10022001'}
+49	49		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+50	50		401							{1: '2', 2: '2647'}
+51	51		301			RImgBg1Shake				"{3: ""The severed vehicle flips and rolls above Alpha's head before falling into the yellow sand.""}"
+52	52		201							{1: '1', 2: '500100'}
+53	53		301							{1: '1', 3: 'Alpha looks down at the dying wolf. With blood-stained foam in its mouth, it shivers as it tries to stand, but it can barely move a leg.'}
+54	54		301							{3: 'There is a pale blue collar around its neck, suggesting that humans have tamed this beast of nature.'}
+55	55		301							{3: 'Stubbornly, it looks ahead, its cloudy eyes glistening faintly.'}
+56	56		301							{2: 'Singing', 3: '～The wolf suddenly hears a song from afar...～'}
+57	57		301							{3: 'The wind carries the music to them. Perhaps fate has saved the music player from being cut in half like the vehicle was.'}
+58	58		301							{2: 'Singing', 3: '～Folks from home singing a song of yore...～'}
+59	59		301							{2: 'Singing', 3: '～And a life is saved by a connection made...～'}
+60	60		301							{3: 'The wolf turns to look at Alpha. In its mind, Alpha is someone who is willing to help it.'}
+61	61		301							{3: 'Even though it has never known her scent.'}
+62	62		301							{2: 'Alpha', 3: '...', 4: '1'}
+63	63		301							{3: 'Alpha reaches out to the dying creature.'}
+64	64		204							{1: '1', 2: '17'}
+65	65		301							{2: 'Alpha', 3: 'Ugh...', 4: '1'}
+66	66		301							{3: 'But before she does anything, she sees...'}
+67	67		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+68	68		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3401_08.jpg'}
+69	69		202							{1: '1', 6: '1'}
+70	70		306							{1: '1'}
+71	71		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+72	72		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+73	73		301							{3: 'Broken guns mingle with flesh and blood. A shattered dagger is embedded in vital fluid-covered sand.'}
+74	74		201							{1: '1', 2: '500620'}
+75	75		301							{1: '1', 3: 'In the center is a crimson figure, eerily reminiscent of a demon from the abyss, sheathing its long blade and casting a provocative gaze her way.'}
+76	76		301							{2: '???', 3: '▅▃▆▅▂▄▁▅▇', 4: '1'}
+77	77		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+78	78		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+79	79		202							{1: '1', 6: '1'}
+80	80		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+81	81		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+82	82		306							
+83	83		201							{1: '1', 2: '500100', 3: '17'}
+84	84		301							{1: '1', 2: 'Alpha', 3: 'Shut up!', 4: '1'}
+85	85		204							{1: '1'}
+86	86		301							"{3: ""The phantom vanishes as quickly as it appears, leaving nothing but a faint sting on Alpha's left eye like a ripple in the water.""}"
+87	87		301							"{3: ""She covers her left eye with her white hair. Ignoring the wolf's mournful plea, she continues toward her target.""}"
+88	88		301							{3: 'She was just a passerby. Getting involved will only lead to undesirable consequences.'}
+89	89		301							{3: 'Not to mention that the commotion just now is enough to alert some people around this part of the world.'}
+90	90		202							{1: '1'}
+91	91		301							{2: 'Singing', 3: '～Let go of the past, the present, the future... Put them in the hands of others...～'}
+92	92		301							{2: 'Singing', 3: '～Lah-la-la... Lah-la-la... Lah-la-la...～'}
+93	93		301				AniZhuanchangBegin			"{3: ""The wolf's heavy breathing slowly quiets down in the wind.""}"
+94	94		401							{1: '1', 2: '36'}
+95	95		502						1000.0	{1: 'DialogDisable'}
+96	96		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+97	97		401							{1: '1', 2: '201'}
+98	98		301			DialogEnable				{3: 'Half an hour later...'}
+99	99		201							{1: '1', 2: '500005'}
+100	100		301							"{1: '1', 2: 'Forsaken Soldier', 3: ""Boss, we've looked around. There is still a faint hint of Punishing Virus on the scene, but we can't locate the source."", 4: '1'}"
+101	101		203							{1: '1', 2: '0.25', 3: '400'}
+102	102		201							{1: '2', 2: '1101001', 4: '-400'}
+103	103		301							{1: '1', 2: 'Watanabe', 3: 'Good job, fellas. Whoever did this must have left already. Notify the other camps to stay alert for the next 24 hours.', 4: '2'}
+104	104		301							{2: 'Forsaken Soldier', 3: 'Roger!', 4: '1'}
+105	105		301							{2: 'Watanabe', 3: 'Did we find Watt?', 4: '2'}
+106	106		301							{2: 'Forsaken Soldier', 3: 'We found him in the trunk of the car... Should we let his family know?', 4: '1'}
+107	107		301							{3: 'Watanabe shakes his head.'}
+108	108		301							{2: 'Watanabe', 3: 'The only family Watt had died in the previous conflict.', 4: '2'}
+109	109		301							"{2: 'Forsaken Soldier', 3: ""...I-I'm sorry. I didn't know."", 4: '1'}"
+110	110		301							"{2: 'Watanabe', 3: ""It's not your fault. He never mentioned it to anyone."", 4: '2'}"
+111	111		301							"{3: ""Watanabe takes out the chip from the wolf's collar and clenches his fist.""}"
+112	112		301							"{2: 'Watanabe', 3: ""Let's cremate Watt and Walker together. That was his last request."", 4: '2'}"
+113	113		301							{2: 'Watanabe', 3: 'Pack it up. Ask the smelters to collect the wreckage of the vehicle. We still have a few things to discuss with Babylonia alone.', 4: '2'}
+114	114		301							"{2: 'Forsaken Soldier', 3: ""The disappearances and these people... are connected to Kurono, aren't they? It's happened before, but they always covered their tracks very thoroughly, leaving only inconsequential pawns in their wake."", 4: '1'}"
+115	115		301							"{2: 'Forsaken Soldier', 3: ""Do we really need to work with Babylonia? Perhaps it'll be cleaner if we do it ourselves."", 4: '1'}"
+116	116		301							{2: 'Watanabe', 3: 'Some things are more effective if we work with them. Right now, our priority is to stop these kidnappings from happening again.', 4: '2'}
+117	117		204							{1: '2', 2: '1'}
+118	118		301							{2: 'Watanabe', 3: 'And there are still a few decent people on Babylonia.', 4: '2'}
+119	119		301							"{2: 'Forsaken Soldier', 3: ""Sure, there are a few good eggs in the new generation, but you're trying to contact the gang that ordered the Great Evacuation."", 4: '1'}"
+120	120		301							{2: 'Forsaken Soldier', 3: 'Will those selfish bastards really care about these disappearing cultists?', 4: '1'}
+121	121		204							{1: '2'}
+122	122		301							"{2: 'Watanabe', 3: ""They'll be interested in the information. After all, it's no secret that the Parliament and Kurono don't see eye to eye."", 4: '2'}"
+123	123		301				AniZhuanchangBegin			{2: 'Watanabe', 3: 'And we need them to verify this intel anyway.', 4: '2'}
+124	124		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+125	125		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+126	126		201							{1: '1', 2: '500623'}
+127	127		301			DialogEnable				{1: '1', 3: 'A long and slender figure appears near the wreckage not long after the Forsaken has left.'}
+128	128		301							{3: 'She fiddles with the sand with her umbrella.'}
+129	129		301							{2: '???', 3: 'Gotcha...', 4: '1'}
+130	130		301							{3: 'With a light flick, the small music player lands in her hand.'}
+131	131		301							{3: 'A red spark flashes in the air before the silent machine sings again.'}
+132	132		301							{2: 'Singing', 3: '～Lah-la-la... Lah-la-la... Lah-la-la...～'}
+133	133		301							{2: '???', 3: 'This power is surely convenient. How intoxicating...', 4: '1'}
+134	134		301							{3: 'Says the slender figure delightedly as she holds the music player up.'}
+135	135		301							"{2: '???', 3: 'Having altered the signal of the music player to let that human ""accidentally"" discover the information on that group, she suspects the humans will continue investigating.', 4: '1'}"
+136	136		301							{2: '???', 3: 'Her mission has gone smoothly just with the push of a small coincidence.', 4: '1'}
+137	137		301							{3: 'Looking up, she gazes at where Alpha is headed and sticks her purplish-blue tongue out.'}
+138	138		301							{2: '???', 3: 'And an unexpected catch as well.', 4: '1'}
+139	139		301							{3: 'Humming alongside the tune from the music player, the slender figure joyously makes her way in the same direction.'}
+140	140		301							"{2: '???', 3: 'I surely hope I\'ll pass this ""internship assessment""!', 4: '1'}"
+141	141		202							{1: '1'}
+142	142		301							{2: 'Singing', 3: '～Lah-la-la... Lah-la-la... Lah-la-la...～'}
+143	143		301							{2: 'Singing', 3: '～The departing lone wolf has gained the courage to go on...～'}
+144	144		401							{1: '1', 2: '36'}
+145	145		402							{1: '968'}
+146	146		102							{1: 'Wintry Shackles', 2: 'Chapter 23', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+147	147		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+148	148		502						6000.0	{1: 'ThemeEnable'}
+149	149		401							{1: '1', 2: '229'}
+150	150		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+151	151		301							{2: 'Singing', 3: '～For a new home...～'}
+152	152		301							{2: 'Singing', 3: '～Lah-la-la... Lah-la-la... Lah-la-la...～'}
+153	153		502							{1: 'DialogDisable'}
+154	154		302							{2: 'Lucia.', 3: '155'}
+155	155		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+156	156		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory701.jpg', 3: '0', 4: '1', 5: '1'}
+157	157		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+158	158		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory701.jpg'}
+159	159		201							{1: '1', 2: '500166'}
+160	160		301			DialogEnable				{1: '1', 2: 'Lucia', 3: '...Huh?', 4: '1'}
+161	161		301							{3: 'A familiar voice interrupts the faint music in the background.'}
+162	162		302							{2: 'Something on your mind?', 3: '163'}
+163	163		301							{2: 'Lucia', 3: 'Nothing. I just thought I heard someone singing.', 4: '1'}
+164	164		302							{2: 'Singing?', 3: '165'}
+165	165		202							{1: '1', 6: '1'}
+166	166		301							{3: 'You look into the near distance and see a crowd working inside the large conservation area.'}
+167	167		502							{1: 'DialogDisable'}
+168	168		201							{1: '1', 2: '500294', 4: '300', 7: '1'}
+169	169		203						700.0	{1: '1', 2: '1.5', 3: '-100'}
+170	170		202						600.0	{1: '1'}
+171	171		201							{1: '2', 2: '500140', 4: '-400', 7: '1'}
+172	172		203						700.0	{1: '2', 2: '1.5', 3: '100'}
+173	173		202						600.0	{1: '2'}
+174	174		201							{1: '3', 2: '500426', 4: '100', 7: '1'}
+175	175		203						700.0	{1: '3', 2: '1.5', 3: '-200'}
+176	176		202						600.0	{1: '3'}
+177	177		301			DialogEnable				{3: 'Some of them are Scavengers trying to escape the Hetero-Creatures, and some are the Cargo Crew from Akdilek...'}
+178	178		301							{3: 'And some are Babylonia personnel like Lucia and you.'}
+179	179		201							{1: '1', 2: '500166', 3: '1'}
+180	180		301							"{1: '1', 2: 'Lucia', 3: ""It's probably the Scavengers singing. I couldn't tell."", 4: '1'}"
+181	181		203							{1: '1', 2: '0.25', 3: '400'}
+182	182		201							{1: '2', 2: '500225', 3: '2', 4: '-400'}
+183	183		301							{1: '1', 2: 'Changyu', 3: 'Oh! Here you are. Here you are.', 4: '2'}
+184	184		301							{3: 'A Construct walks in and interrupts you right as you are trying to listen to the song Lucia mentioned.'}
+185	185		204							{1: '2', 2: '1'}
+186	186		301							"{2: 'Changyu', 3: ""I thought you'd be here since you weren't with the Engineering Force."", 4: '2'}"
+187	187		204							{1: '1'}
+188	188		301				AniZhuanchangBegin			{2: 'Lucia', 3: 'We were trying to help, but the Engineering Force kicked us out...', 4: '1'}
+189	189		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+190	190		504				AniZhuanchangEnd			{1: '0.7'}
+191	191		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory701.jpg'}
+192	192		201							{1: '1', 2: '500019'}
+193	193		301			DialogEnable				"{1: '1', 2: 'Engineering Force Crew', 3: ""There's nothing you can help. And if someone sees you here..."", 4: '1'}"
+194	194		301				AniZhuanchangBegin			{2: 'Engineering Force Crew', 3: 'This place will be packed with people again. You better find somewhere to stay out of sight, I say.', 4: '1'}
+195	195		202			DialogDisable				{1: '1', 6: '1'}
+196	196		504							
+197	197		201							{1: '1', 2: '500166', 4: '400', 7: '1'}
+198	198		201							{1: '2', 2: '500225', 3: '1', 4: '-400', 7: '1'}
+199	199		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory701.jpg'}
+200	200		302							"{2: ""We don't want to disturb their work even if we were just trying to be helpful."", 3: '201'}"
+201	201		301			DialogEnable				{3: 'You let out a sigh.'}
+202	202		202							{1: '1', 2: '2', 6: '1'}
+203	203		301							{3: 'After the Hetero Tower was reversed, the situation on the surface changed drastically.'}
+204	204		301							{3: 'The blue spire indicates the first genuine safe zone on Earth.'}
+205	205		301							{3: 'A place that does not have to rely on giant Central Purification Filters or worry about attacks from waves of Hetero-Creatures.'}
+206	206		301							{3: 'Like the color of the spire itself, it has given humanity a haven with blue sky and clean air.'}
+207	207		301							{3: 'Most conservation areas were built away from the frontline in the past due to many factors: the concentration level of the Punishing Virus, the movement of Hetero-Creatures, the location of water sources, and so on.'}
+208	208		301							{3: 'Before the appearance of the Hetero Tower, there were only a few small conservation areas nearby that also served as supply stations and lookouts near the frontline.'}
+209	209		301							{3: 'Most conservation areas are far from the Tower, relying on CPFs to sustain the basic requirements of survival.'}
+210	210		301							{3: 'The resources required to keep CPFs running are nothing to scoff at. After a long discussion, the World Government decided to relocate the existing large conservation areas into the clean zone of the Inver-Hetero Tower.'}
+211	211		301							{3: 'The monitoring facilities surrounding the Inver-Hetero Tower have been more or less set up. Overseeing the new tower day and night, they are also equipped with Omega Weapons on standby.'}
+212	212		301							"{3: 'Humanity is treating this rare ""miracle"" with utmost caution.'}"
+213	213		301							{3: 'But the relocation has not gone well from the very start.'}
+214	214		306							{1: '1'}
+215	215		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+216	216		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg'}
+217	217		201							{1: '1', 2: '500382', 7: '1'}
+218	218		301							"{1: '1', 2: 'Conservation Area Staff', 3: ""You're asking me to move to a place that doesn't need CPFs anymore. What happens to my job?"", 4: '1'}"
+219	219		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+220	220		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory309.png'}
+221	221		201							{1: '1', 2: '500236', 7: '1'}
+222	222		301							"{1: '1', 2: 'Merchant', 3: ""Can you guarantee that I'll receive the same treatment in the new place? And what about the serums I've stockpiled?"", 4: '1'}"
+223	223		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+224	224		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory315.png'}
+225	225		201							{1: '1', 2: '500139', 4: '-400', 7: '1'}
+226	226		201							{1: '2', 2: '500226', 4: '400', 7: '1'}
+227	227		301							"{1: '1', 2: 'Scavenger A', 3: 'A ""Clean Zone"" without Punishing Virus? Can it be real? You\'re not trying to move us there as test subjects, are you?', 4: '1'}"
+228	228		301							"{2: 'Scavenger B', 3: ""I bet they're trying to work us to death to fix up the place before kicking us out. Why wouldn't the top brass on Babylonia move there right away otherwise?"", 4: '2'}"
+229	229		202							{1: '1', 2: '2', 6: '1'}
+230	230		301							"{3: 'Anxiousness, uncertainties, distrust, manipulations... The exhausted people prefer the ""stability"" of now instead of the unknown ""beauty"" of the future.'}"
+231	231		301				AniZhuanchangBegin			{3: 'The conservation areas are not owned by Babylonia. The residents of these places cannot be ignored.'}
+232	232		504			DialogDisable			400.0	{1: '0.7'}
+233	233		306							
+234	234		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory45.jpg'}
+235	235		201							{1: '1', 2: '500011'}
+236	236		301			DialogEnable				"{1: '1', 2: 'Hassen', 3: ""Wells told me you're willing to do the promotional work?"", 4: '1'}"
+237	237		302							{2: '...', 3: '238'}
+238	238		301							"{2: 'Hassen', 3: ""Ha. There's no need for that expression."", 4: '1'}"
+239	239		301							{2: 'Hassen', 3: 'You know full well how the situation on the surface differs from the past as a commandant on the frontline yourself.', 4: '1'}
+240	240		301							"{2: 'Hassen', 3: 'The ""Clean Zone"" created by the Inver-Hetero Tower. The awakened machines from Constellia.', 4: '1'}"
+241	241		301							"{2: 'Hassen', 3: ""The Punishing Virus is no longer humanity's only obstacle. These two new phenomenons have presented us new challenges but also new opportunities."", 4: '1'}"
+242	242		301							{2: 'Hassen', 3: 'The quicker we can decide on a way to address them, the more likely we can decide the shape of the future.', 4: '1'}
+243	243		502							{1: 'DialogDisable'}
+244	244		302							{2: 'Convincing the people from the conservation areas...', 3: '245'}
+245	245		302							"{2: ""It's probably a job for the Diplomatic Court instead of me."", 3: '246'}"
+246	246		301			DialogEnable				"{2: 'Hassen', 3: ""Don't underestimate your influence. What you have achieved on the battlefield is nothing short of a miracle. The people are not the only ones who trust Gray Raven's judgment."", 4: '1'}"
+247	247		301							{3: 'Hassen chuckles.'}
+248	248		301							"{2: 'Hassen', 3: ""Obviously, some also consider your lot an uncontrollable factor. But even those people can't lay a finger on you now."", 4: '1'}"
+249	249		301							{2: 'Hassen', 3: 'Trust is built over a long period of time, but it can be destroyed in an instant.', 4: '1'}
+250	250		301							"{2: 'Hassen', 3: ""The Great Evacuation was such an instance. There's no way of knowing if we made the right call."", 4: '1'}"
+251	251		301							"{2: 'Hassen', 3: ""But there's no doubt that it was a betrayal to the people remaining on the surface. It's unlikely for my generation to reestablish trust with them."", 4: '1'}"
+252	252		301							"{2: 'Hassen', 3: ""Luckily, there's a new generation now. You, in particular, Gray Raven Commandant."", 4: '1'}"
+253	253		301							"{2: 'Hassen', 3: ""That's why I want you to assist in the conservation areas."", 4: '1'}"
+254	254		502							{1: 'DialogDisable'}
+255	255		302							{2: 'So...', 3: '256'}
+256	256		302							{2: 'Is the Clean Zone really safe?', 3: '257'}
+257	257		301			DialogEnable				{2: 'Hassen', 3: 'Yes. We came up with that conclusion after thorough investigations. You can read the report from the Science Council whenever you want.', 4: '1'}
+258	258		301							{2: 'Hassen', 3: 'This will be our first step to reclaim Earth and our first step to rebuild trust with the people on the surface.', 4: '1'}
+259	259		301							"{2: 'Hassen', 3: ""We won't rest until all risks are eliminated."", 4: '1'}"
+260	260		202							{1: '1', 6: '1'}
+261	261		306							{1: '1'}
+262	262		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg'}
+263	263		201							{1: '1', 2: '500382'}
+264	264		301							"{1: '1', 2: 'Conservation Area Staff', 3: ""You'll offer other jobs with the same compensation and a safer environment...? Fine, I'll trust you."", 4: '1'}"
+265	265		301							"{2: 'Conservation Area Staff', 3: ""I'll help you persuade the others... It's fine. I'm sure Babylonia wouldn't send their wonder child just to trick us."", 4: '1'}"
+266	266		301							"{2: 'Conservation Area Staff', 3: ""After all, I'd rather trust someone who walks the same earth than those who sleep soundly in a space garden."", 4: '1'}"
+267	267		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+268	268		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory309.png'}
+269	269		201							{1: '1', 2: '500236', 7: '1'}
+270	270		301							{1: '1', 2: 'Merchant', 3: 'Alright. Business can take place anywhere.', 4: '1'}
+271	271		301							{2: 'Merchant', 3: 'But I imagine only soldiers like you will need these serums in the future. Do you want to buy some now while you can?', 4: '1'}
+272	272		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+273	273		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory315.png'}
+274	274		201							{1: '1', 2: '500139', 4: '-400', 7: '1'}
+275	275		201							{1: '2', 2: '500226', 4: '400', 7: '1'}
+276	276		301							"{1: '1', 2: 'Scavenger A', 3: 'How incredible... People were barely surviving just a while ago, and now we\'ve got the ""Clean Zone"", a place beyond our wildest dream...', 4: '1'}"
+277	277		301							"{2: 'Scavenger B', 3: ""We'll cooperate. After all, we would have died in that basement if it weren't for you."", 4: '2'}"
+278	278		301				AniZhuanchangBegin			{2: 'Scavenger B', 3: 'Even though you were unconscious the whole time...', 4: '2'}
+279	279		401							{1: '1', 2: '36'}
+280	280		202			DialogDisable			3000.0	{1: '1', 2: '2', 6: '1'}
+281	281		504							
+282	282		306							
+283	283		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory701.jpg'}
+284	284		401							{1: '1', 2: '201'}
+285	285		201							{1: '1', 2: '500225', 3: '1'}
+286	286		301			DialogEnable				"{1: '1', 2: 'Changyu', 3: ""It's good to have you here. Leader was hoping to take this chance to meet you."", 4: '1'}"
+287	287		301							"{2: 'Changyu', 3: ""The Cargo Crew's preparation is almost done. What about you guys?"", 4: '1'}"
+288	288		502							{1: 'DialogDisable'}
+289	289		302							{2: 'Wanshi should be calling us any minute now.', 3: '290'}
+290	290		302							"{2: ""He's never late."", 3: '291'}"
+291	291		203							{1: '1', 2: '0.25', 3: '500'}
+292	292		401							{1: '2', 2: '1099'}
+293	293		509						800.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory314.png', 2: '1'}
+294	294		201							{1: '2', 2: '500273', 4: '-550'}
+295	295		301			DialogEnable				{1: '1', 2: 'Wanshi', 3: 'This is Wanshi. The reconnaissance in Area FD-12 is complete...', 4: '2'}
+296	296		301							{3: 'At that moment, Wanshi notices Changyu standing next to you.'}
+297	297		301							{2: 'Changyu', 3: 'Hiya!', 4: '1'}
+298	298		301							"{2: 'Wanshi', 3: ""Hm... Are you discussing something else? I can report later... It's nice to take a nap first..."", 4: '2'}"
+299	299		502							{1: 'DialogDisable'}
+300	300		302							"{2: ""Don't worry. We just hired the Cargo Crew from Akdilek this time."", 3: '301'}"
+301	301		302							"{2: ""Changyu is representing the ACA. You don't have to talk around your findings when he's here."", 3: '302'}"
+302	302		301			DialogEnable				"{2: 'Wanshi', 3: ""If that's what the person in charge is saying..."", 4: '2'}"
+303	303		301							{3: 'The recon team members from Babylonia stare at the twisted creatures crawling by their feet in the ruins.'}
+304	304		301							{3: 'It keeps moving, one of its limbs probing forward like a worshipper trapped on the road.'}
+305	305		204							{1: '1'}
+306	306		301							{2: 'Wanshi', 3: 'Area FD-12 is the last reconnaissance location in this direction.', 4: '2'}
+307	307		301							"{2: 'Wanshi', 3: 'Although the concentration level of Punishing Virus now is much lower than what\'s recorded in the files, it hasn\'t dropped to zero. I suppose the reach of the ""Clean Zone"" ends here.', 4: '2'}"
+308	308		301							"{2: 'Wanshi', 3: ""Still, we'll have to wait for the results from the detectors we deployed to get an accurate reading of the actual concentration level."", 4: '2'}"
+309	309		301							{3: 'In order to confirm the area cleansed by the Inver-Hetero Tower and the situation within the Clean Zone, Babylonia has sent out almost every recon team and formed a joint reconnaissance company.'}
+310	310		301							{3: 'The company heads out in twelve directions around the Inver-Hetero Tower for an extensive recon mission.'}
+311	311		301							"{3: 'As their investigations progress, more and more ""Clean Zones"" absent of the Punishing Virus are discovered.'}"
+312	312		301							{3: 'The Support Force that follows them has since recovered many supplies that the Hetero-Creatures kept them from retrieving in the past, especially industrial supplies in large warehouses.'}
+313	313		301							{3: 'Because of that, requests for supplies from Logistics have also become easier.'}
+314	314		301							{3: 'But the joint reconnaissance company has also brought back many concerning discoveries apart from good news...'}
+315	315		302							{2: 'Do the immobile Hetero-Creatures match the previous reports?', 3: '316'}
+316	316		301							"{2: 'Wanshi', 3: ""Yeah. Although there isn't a pattern of how they are spread, all these Hetero-Creatures were heading for the same destination."", 4: '2'}"
+317	317		301							{3: 'As he speaks, Wanshi turns and stares at the blue spire that requires a visual aid module to see.'}
+318	318		204							{1: '2', 2: '8'}
+319	319		301							"{2: 'Wanshi', 3: ""You guessed it. They're all heading for the Inver-Hetero Tower... which is a pretty lazy name, don't you think?"", 4: '2'}"
+320	320		502							{1: 'DialogDisable'}
+321	321		302							"{2: ""It's just a temporary name."", 3: '322'}"
+322	322		204							{1: '2'}
+323	323		302							"{2: ""The Science Council's analysis of the tower has also paused."", 3: '324'}"
+324	324		301			DialogEnable				"{2: 'Wanshi', 3: ""After all, we can't get inside it now, no matter how hard we try."", 4: '2'}"
+325	325		301							"{2: 'Wanshi', 3: ""Lee is still the only person who has gotten inside, right? He still doesn't remember the crucial parts?"", 4: '2'}"
+326	326		502							{1: 'DialogDisable'}
+327	327		302							{2: '(Shake head)', 3: '328'}
+328	328		302							{2: 'He did a M.I.N.D. memory scan...', 3: '329'}
+329	329		302							"{2: ""But we couldn't find anything."", 3: '330'}"
+330	330		301			DialogEnable				"{3: ""The memory data obtained from Lee's M.I.N.D. replicated the sequence when Lee entered the top of the tower from his transport craft, and the length of the sequence matched the length of your connections.""}"
+331	331		301							{3: 'But it did not contain the key moments when the tower reversed.'}
+332	332		301							{3: 'The time recorded in his M.I.N.D. also reverted to zero at one point. Asimov said that it could only happen when memory data exceeded the storage capacity.'}
+333	333		301							{2: 'Wanshi', 3: 'It sounds like the tower used to look like a figment of the imagination.', 4: '2'}
+334	334		502							{1: 'DialogDisable'}
+335	335		302							"{2: ""That's not a bad name."", 3: '336'}"
+336	336		302							{2: 'You want me to relate it to the bosses?', 3: '337'}
+337	337		204							{1: '2', 2: '8'}
+338	338		301			DialogEnable				{2: 'Wanshi', 3: 'Whatever you say. Just let me continue my report...', 4: '2'}
+339	339		204							{1: '2', 2: '4'}
+340	340		301							{3: 'Wanshi looks down and inspects the new Hetero-Creature again.'}
+341	341		301							{3: 'It has a snake-shaped body with eight arthropod legs. Crystals with sharp edges cover its surface, acting as aggressive spikes that serve as both armor and blade.'}
+342	342		301							"{2: 'Wanshi', 3: ""We've discovered 12 undocumented types of Hetero-Creatures this time. We've uploaded all related images and data to the General Staff."", 4: '2'}"
+343	343		302							"{2: ""That's 86 new types in total."", 3: '344'}"
+344	344		204							{1: '2'}
+345	345		301							{2: 'Wanshi', 3: 'I wonder how many more there are we have yet to see...', 4: '2'}
+346	346		301							"{3: ""Hetero-Creatures have been relying on their endless numbers to annihilate humanity's bases.""}"
+347	347		301							{3: 'Whether by some unknown design or evolutionary instinct, all Hetero-Creatures seem to end up with hedgehog-like bodies.'}
+348	348		301							"{3: ""It forces human forces to waste their finite ammo to attack the creatures from afar while inhibiting Constructs' advantages on the battlefield.""}"
+349	349		301							{3: 'Once human forces are out of ammo, only the number of one side will be dwindling in close-quarter combats.'}
+350	350		301							"{2: 'Wanshi', 3: ""Thanks for all the attention you've given us lately..."", 4: '2'}"
+351	351		301							{3: 'Wanshi grumbles to nobody before kicking the now colorless crystals on the Hetero-Creature.'}
+352	352		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+353	353		301							{3: 'Hiss...'}
+354	354		301							{3: 'The crystals crumble into white sand, carried into the distance by a gentle breeze.'}
+355	355		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+356	356		204							{1: '2', 2: '4'}
+357	357		301							{2: 'Wanshi', 3: 'These Hetero-Creatures also experience a certain level of weathering. As the Science Council expected, they are not as weathered as the ones nearer to the Hetero Tower.', 4: '2'}
+358	358		301							"{2: 'Wanshi', 3: ""And the Corrupted... No, that's not what they are now... The intelligent machines here have all stopped moving. All of their logic circuits are heavily damaged."", 4: '2'}"
+359	359		301							"{2: 'Wanshi', 3: ""We haven't found anyone on the list of missing personnel..."", 4: '2'}"
+360	360		204							{1: '2', 2: '8'}
+361	361		301							{3: 'Wanshi pauses for a second.'}
+362	362		204							{1: '2'}
+363	363		301							"{2: 'Wanshi', 3: ""I'll still keep an eye out."", 4: '2'}"
+364	364		302							{2: 'Any sign of the Red Tide?', 3: '365'}
+365	365		301							"{2: 'Wanshi', 3: ""We've inspected all underground tunnels, bunkers, storage facilities, and more. There's no sign of the Red Tide anywhere."", 4: '2'}"
+366	366		301							"{2: 'Wanshi', 3: ""But there's one place that's concerning."", 4: '2'}"
+367	367		401						400.0	{1: '1', 2: '36'}
+368	368		401							{1: '1', 2: '202'}
+369	369		301							{3: 'Wanshi enlarges the visuals on the terminal. You can see a Construct in red with white hair dashing by in the corner of the footage.'}
+370	370		302							{2: 'An Ascendant...', 3: '371'}
+371	371		301							{2: 'Wanshi', 3: 'This was five days ago. We paid extra attention to that location after we detected some unusual concentral levels of Punishing Virus there.', 4: '2'}
+372	372		301							{2: 'Wanshi', 3: 'It was an abandoned factory. We spent quite a while to find a functioning camera that gave us this footage.', 4: '2'}
+373	373		502							{1: 'DialogDisable'}
+374	374		302							{2: 'Ascendants can control the Punishing Virus.', 3: '375'}
+375	375		302							"{2: ""She shouldn't have left behind such obvious traces."", 3: '376'}"
+376	376		301			DialogEnable				"{2: 'Wanshi', 3: ""There are many possible reasons. I'll let you guys figure that out."", 4: '2'}"
+377	377		302							{2: 'Thanks for your work.', 3: '378'}
+378	378		204							{1: '2', 2: '1'}
+379	379		301							"{2: 'Wanshi', 3: ""I wouldn't mind borrowing your sleeping pod a little bit longer. Wanshi out."", 4: '2'}"
+380	380		202							{1: '2', 6: '1'}
+381	381		510						1000.0	{1: '1', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory314.png'}
+382	382		201							{1: '2', 2: '500166', 3: '5', 4: '-500'}
+383	383		301							{1: '1', 2: 'Lucia', 3: 'Commandant...', 4: '2'}
+384	384		301							{3: 'Lucia and you look each other in the eyes. Both of you know full well who that figure was.'}
+385	385		301							{3: 'But why would she show up after disappearing for such a long time? And why did she leave such an obvious trail?'}
+386	386		301							{3: 'You temporarily ignore the questions you have in mind and concentrate on the work before you.'}
+387	387		302							{2: 'Changyu...', 3: '388'}
+388	388		204							{1: '1', 2: '1'}
+389	389		301							{2: 'Changyu', 3: 'I know, I know. Notify those in charge and come up with a new security plan, right?', 4: '1'}
+390	390		302							{2: 'Yeah. Thanks.', 3: '391'}
+391	391		204							{1: '1', 2: '3'}
+392	392		301							{2: 'Changyu', 3: 'First, it was the Hetero-Creatures, then it was the weird tower. I almost forgot about the Ascendants at this point.', 4: '1'}
+393	393		301		1		AniZhuanchangBegin			{2: 'Changyu', 3: 'What are these sneaky bastards up to?', 4: '1'}

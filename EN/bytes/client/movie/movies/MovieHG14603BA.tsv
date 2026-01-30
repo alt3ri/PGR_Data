@@ -1,0 +1,238 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500434'}
+4	4		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Man', 3: ""I've tallied up the supplies during the first month from the Nighter, as well as the Grubs Kowloong provided for us."", 4: '1'}"
+5	5		302							{2: 'Thank you, sir.', 3: '6'}
+6	6		302							{2: 'We might need your help again in the future.', 3: '7'}
+7	7		301			DialogEnable				{3: 'You take the ledger he compiled and place it on the cabinet where you currently store your paperwork.'}
+8	8		301							"{2: 'Man', 3: ""It's no big deal—after all, we're practically neighbors."", 4: '1'}"
+9	9		301							{2: 'Man', 3: 'Oh, right—my wife is really interested in becoming a patrol officer...', 4: '1'}
+10	10		202							{1: '1', 6: '1'}
+11	11		201							{1: '1', 2: '500916', 3: '1'}
+12	12		301							"{1: '1', 2: 'Hanying', 3: ""There's a mechanoid lady at the camp who can help with registration. Just look for her."", 4: '1'}"
+13	13		302							"{2: ""It's easier to organize our manpower that way."", 3: '14'}"
+14	14		202							{1: '1'}
+15	15		401							{1: '2', 2: '4126'}
+16	16		301							{3: 'Hanying carries a simple wooden rack to the doorway, and you rush over to help her push it against the corner.'}
+17	17		301							"{3: ""You compile the camp's status and borrow wooden boards from the Bixi Crew, which Hanying turns into simple shelves for paper storage.""}"
+18	18		301							{3: 'Given how spotty the signal is in this region, having an extra backup is never a bad idea.'}
+19	19		301							"{2: 'Man', 3: ""Thank you very much. I'll take my leave now."", 4: '1'}"
+20	20		302							{2: 'I appreciate your hard work.', 3: '21'}
+21	21		202							{1: '1', 6: '1'}
+22	22		201							{1: '1', 2: '500916', 3: '1'}
+23	23		301							{1: '1', 2: 'Hanying', 3: 'Take care.', 4: '1'}
+24	24		301							{3: 'You check the sign-up forms on the terminal that Hanying designed. A few names are already on the list.'}
+25	25		301							{2: 'Hanying', 3: 'Everyone is far more enthusiastic than I expected.', 4: '1'}
+26	26		302							"{2: ""Even the largest conservation area can't thrive without the support of the local residents."", 3: '27'}"
+27	27		301							{2: 'Hanying', 3: 'Apologies, Commandant.', 4: '1'}
+28	28		302							{2: 'Hmm?', 3: '29'}
+29	29		301							{2: 'Hanying', 3: 'I had hoped to have you over as a guest...', 4: '1'}
+30	30		302							{2: 'But somehow, ahem, I ended up working...', 3: '31', 4: 'I just get restless without work.', 5: '32'}
+31	31	33	301							{2: 'Hanying', 3: 'Please let me make it up to you properly afterward.', 4: '1'}
+32	32		301							"{2: 'Hanying', 3: ""If you really mean it, I'll make sure you take a proper break."", 4: '1'}"
+33	33		302							{2: 'Alright, moving on to the tally...', 3: '34'}
+34	34		202							{1: '1'}
+35	35		401							{1: '2', 2: '2768'}
+36	36		301							{3: 'You pick up the borrowed construction manual on the wooden desk and start flipping through it.'}
+37	37		301							{3: 'But you quickly spot a small figure at the doorway and pause.'}
+38	38		201							{1: '1', 2: '500916'}
+39	39		301							{1: '1', 2: 'Hanying', 3: 'Yalin?', 4: '1'}
+40	40		202							{1: '1', 6: '1'}
+41	41		201							{1: '1', 2: '500824'}
+42	42		301							{1: '1', 3: 'Yalin stands by the entrance, signing a question to Hanying.'}
+43	43		202							{1: '1', 6: '1'}
+44	44		201							{1: '1', 2: '500916', 3: '1'}
+45	45		301							"{1: '1', 2: 'Hanying', 3: ""You're not interrupting. Have a seat and take a breather here, Yalin."", 4: '1'}"
+46	46		301							{2: 'Hanying', 3: 'We still have a few things to take care of.', 4: '1'}
+47	47		301							"{2: 'Hanying', 3: ""Let's come back to this later..."", 4: '1'}"
+48	48		301				DialogDisable			{3: 'Roughly understanding the meaning of sign language, it dawns on you that you might have been taking things too seriously.'}
+49	49		302							"{2: ""Alright then, if that's the case..."", 3: '50'}"
+50	50		302							"{2: ""There's still one more thing we need to do."", 3: '51'}"
+51	51		202							{1: '1'}
+52	52		301			DialogEnable	AniZhuanchangBegin			{3: 'You walk over to the short cabinet by the door and pick up a pinecone.'}
+53	53		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory559.jpg'}
+54	54		201							{1: '1', 2: '500916', 3: '1'}
+55	55		301			AniZhuanchangEnd				{1: '1', 2: 'Hanying', 3: 'This should do it.', 4: '1'}
+56	56		203							{1: '1', 2: '0.3', 4: '-80'}
+57	57		401							{1: '2', 2: '1543'}
+58	58		301							{3: 'Hanying leans down to examine the ground, gently touching the soil.'}
+59	59		302							{2: 'Phew...', 3: '60'}
+60	60		202							{1: '1'}
+61	61		301							"{3: ""At midday, under the blazing sun, the three of you plant a few pinecones on a small slope. Smoke rising from the camp tells you it's already noon.""}"
+62	62		201							{1: '1', 2: '500824'}
+63	63		203							{1: '1', 2: '0.5', 4: '-100'}
+64	64		401							{1: '2', 2: '4434'}
+65	65		301							{1: '1', 3: 'You glance at Yalin—she slams down the watering bucket. This girl, barely taller than the shovel, plops right onto the ground.'}
+66	66		402							{1: '4434'}
+67	67		302							{2: 'You did great, Yalin.', 3: '68'}
+68	68		202							{1: '1', 6: '1'}
+69	69		201							{1: '1', 2: '500916', 3: '1'}
+70	70		301							{1: '1', 2: 'Hanying', 3: 'From now on, we just need to water them every few days.', 4: '1'}
+71	71		301							"{3: ""She wasn't too keen on the idea of planting trees at first, but when Hanying and you set out, she ended up following you all the same.""}"
+72	72		301							{3: 'She even snatches the task away when Hanying tries to help.'}
+73	73		203							{1: '1', 2: '0.5', 5: '-80'}
+74	74		401							{1: '2', 2: '1543'}
+75	75		301							{3: 'Hanying takes a handkerchief from her pocket and wipes the sweat from your forehead.'}
+76	76		302							"{2: ""It's more tiring than I imagined."", 3: '77'}"
+77	77		301							{3: 'Standing with Hanying on the slope, you have a perfect view of the old lodge complex below.'}
+78	78		301							"{2: 'Hanying', 3: 'This way, once these saplings grow, we\'ll be able to see our ""homeland"" again.', 4: '1'}"
+79	79		301							{2: 'Hanying', 3: 'I picked up some bamboo shoots on the way here—how about we use them for lunch today?', 4: '1'}
+80	80		202							{1: '1', 6: '1'}
+81	81		201							{1: '1', 2: '500824'}
+82	82		301				AniZhuanchangBegin			{1: '1', 3: 'The girl watches the two people in front of her conversing, slipping into contemplation.'}
+83	83		502							{1: 'DialogDisable'}
+84	84		202							{1: '1', 6: '1'}
+85	85		401							{1: '1', 2: '36'}
+86	86		101						3000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+87	87		401							{1: '1', 2: '207'}
+88	88		107			AniZhuanchangEnd			2000.0	{1: 'Several days later'}
+89	89		108						500.0	{1: '1'}
+90	90		201							{1: '1', 2: '500824'}
+91	91		301			DialogEnable				{1: '1', 3: 'A human girl paces around the tent assembled by mechanoids, unnoticed by the mechanoids passing by.'}
+92	92		301				DialogDisable			"{3: ""After a long moment's hesitation, she steps inside.""}"
+93	93		202							{1: '1'}
+94	94		502							{1: 'RImgBg1DisableSlow'}
+95	95		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory732.jpg'}
+96	96		201							{1: '1', 2: '500488', 4: '-450', 5: '-180', 6: '300'}
+97	97		201							{1: '2', 2: '500277', 4: '450'}
+98	98		301			DialogEnable				{1: '1', 2: 'Boccioni', 3: 'It seems the commandant of Babylonia has no intention of moving out.', 4: '1'}
+99	99		301							{2: 'Boccioni', 3: 'That newly built house is set aside for the pair who arrived from the Aerospace City yesterday—or as humans would say, a married couple.', 4: '1'}
+100	100		301							{2: 'Mechanoid', 3: 'Understood. My mission today is to help that couple settle in their new home and show them around the camp.', 4: '2'}
+101	101		301							{2: 'Boccioni', 3: 'Right, the Bixi Crew has already gone over to reinforce your rooftop.', 4: '1'}
+102	102		301							"{2: 'Mechanoid', 3: ""Thanks! I wouldn't want my batteries getting socked."", 4: '2'}"
+103	103		202							{1: '2'}
+104	104		301							{3: 'Repeating its assigned task, the mechanoid next to Boccioni leaves the tent.'}
+105	105		201							{1: '2', 2: '500824', 4: '800'}
+106	106		203							{1: '2', 2: '0.3', 3: '400'}
+107	107		301							{1: '1', 3: 'The girl walks over to Boccioni and pokes him.'}
+108	108		203							{1: '1', 2: '0.25', 3: '-550', 4: '-180', 5: '300'}
+109	109		203							{1: '2', 2: '0.25', 3: '550'}
+110	110		401							{1: '2', 2: '1506'}
+111	111		502							{1: 'PanelActor1Shake'}
+112	112		502							{1: 'PanelActor2Shake'}
+113	113		301							{1: '1', 2: 'Boccioni', 3: 'Oh, my dear Sage!', 4: '1'}
+114	114		301							{1: '1', 3: 'Boccioni staggers back half a step and nearly topples over, but the one who really reacts more strongly is the girl.'}
+115	115		203							{1: '1', 2: '0.25', 3: '-450', 4: '-180', 5: '300'}
+116	116		301							{2: 'Boccioni', 3: 'Apologies for my lapse, Yalin.', 4: '1'}
+117	117		203							{1: '2', 2: '0.25', 3: '450'}
+118	118		301							{3: 'Seeing the mechanoid still rattled, Yalin relaxes a bit.'}
+119	119		301							{3: 'The mechanoid before her is remarkably polite, so unlike those crazed Corrupted she recalls from her memories.'}
+120	120		301							{2: 'Boccioni', 3: 'Ugh...', 4: '1'}
+121	121		301							{3: 'As the mechanoid lets out a slightly sluggish murmur, she snaps back to reality.'}
+122	122		401							{1: '2', 2: '4563'}
+123	123		301			PanelActor1Shake				{3: 'Boccioni tries to gather up the blueprints he knocked to the floor, but for some reason ends up colliding with the table leg instead.'}
+124	124		301							{2: 'Boccioni', 3: 'Hmm... I would be most grateful if you could offer me some assistance.', 4: '1'}
+125	125		301							{3: 'The girl just stands there, still not fully letting go of the struggle with her memories.'}
+126	126		301							{2: 'Boccioni', 3: 'Is there something you came to ask me about?', 4: '1'}
+127	127		301							{3: 'Boccioni turns around to look at Yalin, his head swiveling a bit too dramatically before he clumsily steadies himself.'}
+128	128		301							{3: 'She lets out a sigh and walks over to help straighten up the once-tidy table.'}
+129	129		401							{1: '2', 2: '910'}
+130	130		301							{3: 'Once everything is back in order, she picks up a blank sheet of paper from the desk and sketches an arch over a small sapling.'}
+131	131		402							{1: '910'}
+132	132		301							"{2: 'Boccioni', 3: ""So... this is a shed? We've fixed the shed already, but the first batch of potatoes won't be ready for another month, and we'll only expand the farmland after the rainy season."", 4: '1'}"
+133	133		301							{3: 'Yalin nods, then shakes her head. She lifts the tent flap and points toward the slope in the distance.'}
+134	134		301							{3: 'Then she circles the sapling in her drawing and adds the pointed leaves of a pine tree.'}
+135	135		301							"{2: 'Boccioni', 3: ""If I may take a wild guess, you've planted pine trees on that hillside."", 4: '1'}"
+136	136		301							{2: 'Boccioni', 3: 'A shed can help speed up sprouting. Are you looking to grow pine saplings?', 4: '1'}
+137	137		301							{3: 'Yalin nods vigorously in agreement, pointing at herself, then at the mechanoid in front of her.'}
+138	138		301							"{2: 'Boccioni', 3: ""Help? I can't help right now."", 4: '1'}"
+139	139		301							{3: 'The girl looks at Boccioni with confusion.'}
+140	140		301							"{2: 'Boccioni', 3: ""This is my work shift. Planting trees isn't a higher priority than my other tasks."", 4: '1'}"
+141	141		301							{2: 'Yalin', 3: '...', 4: '2'}
+142	142		301							{2: 'Boccioni', 3: '...What about off-duty hours?', 4: '1'}
+143	143		301							{3: 'The mechanoid calculates at lightning speed.'}
+144	144		301							{2: 'Boccioni', 3: 'This is a practical hobby that might spark new ideas for my other projects.', 4: '1'}
+145	145		203							{1: '2', 2: '0.25', 3: '400'}
+146	146		301							{3: 'Yalin approaches the mechanoid and solemnly extends her bent pinky.'}
+147	147		203							{1: '1', 2: '0.25', 3: '-400', 4: '-180', 5: '300'}
+148	148		301							{2: 'Boccioni', 3: 'This is how humans seal a promise, right?'}
+149	149		301				AniZhuanchangBegin			"{3: 'Because Boccioni\'s arms differ from a human\'s, he simply taps her pinky with his own ""hand.""'}"
+150	150		502							{1: 'DialogDisable'}
+151	151		202							{1: '1', 2: '2', 6: '1'}
+152	152		101						3000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+153	153		107			AniZhuanchangEnd			2000.0	{1: 'Several days later'}
+154	154		108						500.0	{1: '1'}
+155	155		301			DialogEnable				"{3: ""After spending several days learning about the camp members, you and Hanying assign each person's role. Now, the camp operates without a hitch.""}"
+156	156		201							{1: '1', 2: '500916', 3: '1'}
+157	157		301							{1: '1', 3: 'Hanying raises the teapot and pours the freshly steeped tea into a porcelain cup.'}
+158	158		301							{3: 'A delicate wisp of steam drifts up from the teacup, merging with the already fragrant air.'}
+159	159		301							{2: 'Hanying', 3: 'The third cup offers the most refined taste of the entire brew.', 4: '1'}
+160	160		301							{2: 'Hanying', 3: 'Commandant, please.', 4: '1'}
+161	161		301							{3: 'Hanying hands you the teacup, and the light, elegant aroma greets your senses.'}
+162	162		301							{3: 'This morning, when the sunlight is subdued, Hanying takes out her tea set and brews a delicate pot of tea at home.'}
+163	163		302							{2: '(Drink)', 3: '164'}
+164	164		301							"{3: ""After two cups, the tea's aroma fills your senses. Then, with a single sip, a gentle cinnamon sweetness unfolds in the aftertaste.""}"
+165	165		301							{3: 'Before long, your fatigue melts away.'}
+166	166		302							{2: 'This tea really lives up to its name.', 3: '167', 4: 'It tastes amazing.', 5: '167'}
+167	167		301							"{2: 'Hanying', 3: ""It's been quite a busy morning, hasn't it?"", 4: '1'}"
+168	168		301							{2: 'Hanying', 3: 'Please accept this pot of premium oolong tea as my thanks.', 4: '1'}
+169	169		302							{2: 'I guess I just got carried away with work...', 3: '170'}
+170	170		301							"{2: 'Hanying', 3: ""Commandant, make sure you don't push yourself too hard from now on."", 4: '1'}"
+171	171		301							"{2: 'Hanying', 3: ""How about we do something we've both been longing to do?"", 4: '1'}"
+172	172		302							"{2: ""You know, I'm already satisfied with how life is right now."", 3: '173', 4: 'Being carefree is also part of a vacation.', 5: '173'}"
+173	173		301							"{3: ""Hanying smiles gently. She's poised and skilled as she brews tea, yet shows a hint of carefree abandon when she drinks it all in one go.""}"
+174	174		202							{1: '1', 6: '1'}
+175	175		201							{1: '1', 2: '500916', 3: '1', 4: '-400'}
+176	176		201							{1: '2', 2: '500824', 4: '400'}
+177	177		301							"{1: '1', 3: ""The girl who's here to help Hanying make lunch taps the corner of the table.""}"
+178	178		301							{2: 'Yalin', 3: '(I want some too.)', 4: '2'}
+179	179		301							"{2: 'Hanying', 3: ""You're still too young to drink tea, or you'll stay awake all night."", 4: '1'}"
+180	180		301							{2: 'Yalin', 3: '(I sleep just fine.)', 4: '2'}
+181	181		302							"{2: 'Listen to Hanying.', 3: '183', 4: ""(Hanying's right.)"", 5: '182'}"
+182	182		301							"{3: ""After a last-minute study session, you've picked up enough sign language to finally communicate with Yalin on a basic level.""}"
+183	183		401							{1: '2', 2: '759'}
+184	184		301							{3: 'Outside, a swallow glides low and disappears into its nest beneath the eaves.'}
+185	185		301							{3: 'Yalin takes one look at the weather outside, revealing a subtle concern that no one else seems to notice.'}
+186	186		301							{2: 'Yalin', 3: '(I need to go out to find Boccioni.)', 4: '2'}
+187	187		301							{2: 'Hanying', 3: 'Huh? Boccioni?', 4: '1'}
+188	188		301							"{2: 'Yalin', 3: ""(It's a secret!)"", 4: '2'}"
+189	189		302							{2: 'Take it easy, okay?', 3: '190'}
+190	190		401							{1: '2', 2: '4341'}
+191	191		203							{1: '1', 2: '0.3', 3: '-250'}
+192	192		301							"{3: ""Hanying sets down the teapot, takes her rain cape from a cabinet, and places it over Yalin's shoulders.""}"
+193	193		301							"{2: 'Hanying', 3: ""It may rain later, so make sure you don't catch a cold."", 4: '1'}"
+194	194		202							{1: '2'}
+195	195		301							{3: 'Yalin nods and then pours the fourth cup of tea for Hanying before heading out in a hurry.'}
+196	196		203							{1: '1', 2: '0.25'}
+197	197		301							{2: 'Hanying', 3: 'She used to be terrified of mechanoids.', 4: '1'}
+198	198		301							"{3: ""A satisfied smile appears on Hanying's face.""}"
+199	199		302							{2: 'It feels like Yalin is getting a bit more outgoing.', 3: '200', 4: 'And now she has her own little secrets.', 5: '202'}
+200	200		301							"{2: 'Hanying', 3: ""Ever since you came, she hasn't been nearly as timid around others..."", 4: '1'}"
+201	201	204	301							"{2: 'Hanying', 3: ""Come to think of it, you're really popular with kids, Commandant."", 4: '1'}"
+202	202		301							{2: 'Hanying', 3: 'Judging by what I just saw, it must be a pretty intriguing secret, huh?', 4: '1'}
+203	203		301							"{2: 'Hanying', 3: ""Now that I think about it, Boccioni hides it well. You'd never guess he and Yalin have struck up a friendship."", 4: '1'}"
+204	204		301							{3: 'You sip another cup, letting the warm tea chase away the lingering dampness of the rainy season.'}
+205	205		302							{2: 'Speaking of which, we should probably...', 3: '206'}
+206	206		301							"{2: 'Hanying', 3: ""Okay, let's begin."", 4: '1'}"
+207	207		301							{3: 'Hanying neatly puts away the tea set and turns down the flame on the small burner.'}
+208	208		202							{1: '1'}
+209	209		301							"{3: 'You two push two shipping containers together and slide the bookshelf into one corner, creating a makeshift ""bedroom.""'}"
+210	210		301							{3: 'The couple who usually watches over Yalin is on night duty, so Yalin is staying with you tonight.'}
+211	211		301							{3: 'The heavy clouds outside show no sign of dispersing, though you can just make out the sunlight trying to shine through.'}
+212	212		301							"{3: ""Since you can't tell the time, you use the clock on your terminal and only then realize you haven't looked at its screen for days.""}"
+213	213		201							{1: '1', 2: '500916'}
+214	214		301							"{1: '1', 2: 'Hanying', 3: ""Commandant, what do you feel like eating tonight? We still have some bamboo shoots left, and there's also that package Pulao sent..."", 4: '1'}"
+215	215		301							{3: 'Hanying steps into the kitchen, rummaging around to find what she needs.'}
+216	216		302							{2: 'How about I cook tonight?', 3: '217'}
+217	217		204							{1: '1', 2: '7'}
+218	218		301							"{2: 'Hanying', 3: ""Oh, I couldn't let you do that!"", 4: '1'}"
+219	219		204							{1: '1'}
+220	220		301				DialogDisable			"{2: 'Hanying', 3: ""I've got it covered. You traveled all this way, Commandant..."", 4: '1'}"
+221	221		302							"{2: ""Really, it's no trouble."", 3: '222'}"
+222	222		302							"{2: ""I don't just want to support this camp; I want to do something for you as well, Hanying."", 3: '223'}"
+223	223		301			DialogEnable				{3: 'Hanying turns her gaze on you, and a subtle, indescribable emotion stirs in her clear eyes.'}
+224	224		204							{1: '1', 2: '1'}
+225	225		301							"{3: ""It's almost like she's shrugging off a heavy burden, letting it melt into a gentle smile.""}"
+226	226		301							"{3: ""Her ability to conceal her emotions is so refined that no one ever gets the chance to read what's really going on inside.""}"
+227	227		301							{2: 'Hanying', 3: 'Then, how about I help you out?', 4: '1'}
+228	228		302				AniZhuanchangBegin			{2: 'Well, thanks in advance then!', 3: '229'}
+229	229		202							{1: '1', 6: '1'}
+230	230		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '7', 4: '0.7', 5: '0'}
+231	231		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+232	232		401							{1: '2', 2: '846106'}
+233	233		301			AniZhuanchangEnd				"{3: ""The stove's warm glow fills the room, but a sudden crack of spring thunder cuts through the calm, disrupting the moment.""}"
+234	234		401							{1: '2', 2: '214'}
+235	235		301							{3: 'A moment later, raindrops begin to fall outside, their gentle patter audible from within.'}
+236	236		401							{1: '2', 2: '4291'}
+237	237		301		1		AniZhuanchangBegin			{3: 'They tap against the windowsill and glass in a steady beat, but quickly shift into a frenzied, irregular drumming.'}

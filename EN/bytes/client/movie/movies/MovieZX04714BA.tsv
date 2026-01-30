@@ -1,0 +1,249 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		105			AniZhuanchangEnd				{1: 'Assets/Product/Ui/Spine/2-14Spine/UiMovieWanshi/UiMovieWanshi02idle2.prefab'}
+2	2		401							{1: '1', 2: '5029'}
+3	3		301			DialogEnable				{3: 'The surrounding kaleidoscope shards fade to darkness, and the silhouettes within dissipate with them.'}
+4	4		301							{3: 'The one Wanshi touched also fades to darkness as 056 leads the test subjects down the dimly lit corridor.'}
+5	5		301							{3: 'He grasps at thin air, catching nothing.'}
+6	6		301							"{2: 'Wanshi', 3: ""No... I haven't seen what happened to 056 and the others...""}"
+7	7		301							"{3: ""He hasn't seen how things end for 056 and the kids—did they really get out?""}"
+8	8		401							{1: '2', 2: '2589'}
+9	9		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+10	10		105							{1: 'Assets/Product/Ui/Spine/2-14Spine/UiMovieWanshi/UiMovieWanshi02idle3.prefab'}
+11	11		301				DialogDisable			{3: 'Suddenly a bullet tears through the air, cutting across his field of vision.'}
+12	12		307						100.0	"{1: '""Don\'t touch it.""', 3: '65', 4: 'ffffffff', 5: '0'}"
+13	13		301							"{3: '""Don\'t touch it.""'}"
+14	14		307							{2: '1'}
+15	15		301			DialogEnable				{2: 'Wanshi', 3: '...'}
+16	16		301							{3: 'Though a voice deep within refuses to accept this final truth, he still reaches out.'}
+17	17		301							"{3: ""The moment the bullet makes contact, searing pain shoots through Wanshi's head as it pierces through.""}"
+18	18		301				AniZhuanchangBegin			{3: 'Following the pain, memories flood back to Wanshi—visions of the abandoned research facility.'}
+19	19		105							
+20	20		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory986.jpg'}
+21	21		301			AniZhuanchangEnd				{3: 'After making sure they have no trackers, 056 quickly leads the children through the cultivation area and they slip out its back door, into a section the children have never seen before.'}
+22	22		301							{3: 'Some start falling behind, but the others grip their hands tightly, pulling them along as they stumble forward.'}
+23	23		201							{1: '1', 2: '500938'}
+24	24		201							{1: '2', 2: '500972', 4: '-500'}
+25	25		201							{1: '3', 2: '500975', 4: '500'}
+26	26		301							{1: '1', 2: 'Aviana', 3: 'Mom... Where are we going?', 4: '2'}
+27	27		301							{2: '056', 3: 'The Junkyard.', 4: '1'}
+28	28		301							{2: 'Eamon', 3: 'Why there?', 4: '3'}
+29	29		301							{2: '056', 3: 'Stay quiet for now.', 4: '1'}
+30	30		202							{1: '1', 2: '2', 3: '3'}
+31	31		401							{1: '2', 2: '4422'}
+32	32		301							{3: 'Soon, 056 leads them to a door, activates the control panel with an access card, and lets out a visible sigh of relief.'}
+33	33		201							{1: '1', 2: '500938'}
+34	34		201							{1: '2', 2: '500972', 4: '-500'}
+35	35		201							{1: '3', 2: '500975', 4: '500'}
+36	36		301							{1: '1', 2: '056', 3: 'Fortunately, no one cares about security clearance for this place.', 4: '1'}
+37	37		202							{1: '1', 2: '2', 3: '3'}
+38	38		401							{1: '2', 2: '4708'}
+39	39		301							{3: 'The gates open to reveal a clear night sky.'}
+40	40		301							"{3: 'Moonlight spills across the ""disposal heap"", illuminating the identification codes marked on each corpse.'}"
+41	41		301							{3: 'Recognizing former companions among the dead, the children keep their distance.'}
+42	42		201							{1: '1', 2: '500938'}
+43	43		201							{1: '2', 2: '500972', 4: '-500'}
+44	44		201							{1: '3', 2: '500975', 4: '500'}
+45	45		301							"{1: '1', 2: '056', 3: ""There could have been a better plan... but they've caught onto my intentions. If you don't leave now, you'll never get another chance."", 4: '1'}"
+46	46		301							"{2: '056', 3: ""And take this mechanoid with you. I've programmed it to locate another chip that will lead to Wanshi... the real Wanshi."", 4: '1'}"
+47	47		301							{2: '056', 3: 'Alright, everyone inside.', 4: '1'}
+48	48		202							{1: '2', 2: '3'}
+49	49		301							{3: '056 forcefully pushes the children into the Junkyard.'}
+50	50		301							{2: '056', 3: 'No other doors in this world will open for you now... This is the path you must take.', 4: '1'}
+51	51		202							{1: '1'}
+52	52		201							{1: '1', 2: '500972'}
+53	53		301							{1: '1', 2: 'Aviana', 3: 'Mom?', 4: '1'}
+54	54		202							{1: '1'}
+55	55		201							{1: '1', 2: '500938'}
+56	56		301							"{1: '1', 2: '056', 3: ""Don't call me that anymore. Just go."", 4: '1'}"
+57	57		301							{2: '056', 3: '...I knew what kind of experiments this facility was conducting, but I came anyway, because I wanted to use your M.I.N.D. to save my own child.', 4: '1'}
+58	58		202							{1: '1'}
+59	59		201							{1: '1', 2: '500975'}
+60	60		301							{1: '1', 2: 'Eamon', 3: 'Are you just like the other grownups? Then why are you helping us?', 4: '1'}
+61	61		301							{3: 'Eamon asks suddenly while struggling to drag the bulky robot.'}
+62	62		202							{1: '1'}
+63	63		201							{1: '1', 2: '500938'}
+64	64		301							{1: '1', 2: '056', 3: 'Why...', 4: '1'}
+65	65		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+66	66		202							{1: '1', 6: '1'}
+67	67		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+68	68		504							{1: '0.7'}
+69	69		301							"{3: ""On the night before leaving Babylonia, after Melvie departs, she returns to sit by Wanshi's sickbed.""}"
+70	70		201							{1: '1', 2: '500938'}
+71	71		301							"{1: '1', 2: 'Wanxu', 3: ""They say you'll be like this for life. If you're lucky, you'll find release in a few years."", 4: '1'}"
+72	72		301							{2: 'Wanxu', 3: 'Call me selfish, but I want you to live, to wake up, to experience a full human life just like everyone else.', 4: '1'}
+73	73		202							{1: '1'}
+74	74		301							{3: '...'}
+75	75		401							{1: '2', 2: '4323'}
+76	76		301							{3: 'Only the whirring of machines is heard in the ward. A long time ago, that child would have smiled and responded, even without understanding anything.'}
+77	77		301							{3: 'Wanxu lowers his head, wearily burying his face in his hands.'}
+78	78		201							{1: '1', 2: '500938', 3: '14'}
+79	79		301							"{1: '1', 2: 'Wanxu', 3: ""There's nothing left..."", 4: '1'}"
+80	80		301							"{2: 'Wanxu', 3: ""...That place is a hell. There's no return once you step in."", 4: '1'}"
+81	81		301							"{2: 'Wanxu', 3: ""And I'm exactly like what Melvie said—just another ruthless lunatic."", 4: '1'}"
+82	82		402							{1: '4323'}
+83	83		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+84	84		504							{1: '0'}
+85	85		401							{1: '2', 2: '2782'}
+86	86		202							{1: '1', 6: '1'}
+87	87		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory986.jpg'}
+88	88		301							{3: 'An alarm suddenly blares and puts everyone on edge.'}
+89	89		201							{1: '1', 2: '500938'}
+90	90		301							"{1: '1', 2: '056', 3: ""Go, Eamon. You need to lead them away from here. Don't underestimate the people in this facility—they're formidable. Even in the Junkyard, they'll find ways to stop you. The further you run now, the better your chances of survival."", 4: '1'}"
+91	91		301							{2: '056', 3: 'If you can escape safely, then...', 4: '1'}
+92	92		301							{3: 'When it comes to what happens after the escape, 056 falls silent.'}
+93	93		402							{1: '2782'}
+94	94		202							{1: '1'}
+95	95		301							{3: 'What comes after the escape?'}
+96	96		301							{3: 'Will they be taken away by other organizations? If they join the military, will they be sent straight to the battlefield?'}
+97	97		301							"{3: 'It depends on how the ""people"" outside treat them—will they nurture them like children, or exploit them as resources?'}"
+98	98		201							{1: '1', 2: '500938'}
+99	99		301							{1: '1', 2: '056', 3: 'Anyway... get going first.', 4: '1'}
+100	100		202							{1: '1'}
+101	101		301							{3: 'Amidst blaring alarms, 056 shoves the Constructs into the Junkyard. They climb the mountain of corpses, stepping on fallen seeds of life, reaching desperately for the moonlight above.'}
+102	102		301							{3: 'A kid notices 056 falling behind and calls out. All eyes turn to the woman lingering motionless at the doorway.'}
+103	103		201							{1: '18', 2: '500972'}
+104	104		301							"{1: '1', 2: 'Aviana', 3: ""Mom... 056, aren't you coming with us?"", 4: '18'}"
+105	105		202							{1: '18'}
+106	106		201							{1: '1', 2: '500938'}
+107	107		301							{1: '1', 2: '056', 3: 'At first, all I cared about was saving Wanshi and Wanshi alone.', 4: '1'}
+108	108		301							{2: '056', 3: 'But only when I stood in front of the cliff and saw hell for what it truly was, did I finally understand what I had done.', 4: '1'}
+109	109		301							{2: '056', 3: 'Melvie was right, I do need to atone. If someone has to remain in this swamp to lift you all out...', 4: '1'}
+110	110		301							{2: '056', 3: 'Then I am the one who deserves to sink.', 4: '1'}
+111	111		301							{3: '056 picks up the blood-stained demolition hammer and heads toward the sealed lab.'}
+112	112		204							{1: '1', 2: '4'}
+113	113		301				AniZhuanchangBegin			{2: '056', 3: 'I willingly step into the depths of hell.', 4: '1'}
+114	114		202							{1: '1', 6: '1'}
+115	115		401							{1: '1', 2: '36'}
+116	116		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory691.jpg'}
+117	117		401							{1: '1', 2: '5023'}
+118	118		301			AniZhuanchangEnd				{3: '056 enters the familiar room.'}
+119	119		301							"{3: ""Surprisingly, all traces of the chaos have vanished. The bloodstains on the isolation chamber's window have been thoroughly cleaned away—no hint remains of the researchers' desperation as they were left to die inside.""}"
+120	120		401							{1: '2', 2: '1508'}
+121	121		301							"{3: 'Theodore, ""housed"" within, instinctively lunges at the transparent window when he spots someone, screeching at 056.'}"
+122	122		401							{1: '2', 2: '10021517'}
+123	123		301							{3: 'Click.'}
+124	124		301							{3: '056 hears the click of a bullet being chambered behind her. She knows who it is without turning around.'}
+125	125		201							{1: '1', 2: '500938'}
+126	126		301							{1: '1', 2: '056', 3: 'Pickman.', 4: '1'}
+127	127		301							"{2: '056', 3: ""So you'd even experiment on infected Constructs too?"", 4: '1'}"
+128	128		301							{2: '056', 3: 'What are you researching this time?', 4: '1'}
+129	129		202							{1: '1'}
+130	130		301							{3: '056 turns to face the darkness—there stands Pickman, gun raised.'}
+131	131		201							{1: '1', 2: '500938', 3: '4', 4: '-400'}
+132	132		201							{1: '2', 2: '500709', 3: '1', 4: '400'}
+133	133		301							{1: '1', 2: 'Pickman', 3: 'Theodore is a good kid. He needs this level of control.', 4: '2'}
+134	134		301							"{3: ""A hint of regret crosses Pickman's face.""}"
+135	135		301							{2: 'Pickman', 3: 'I thought we shared the same feelings about these children.', 4: '2'}
+136	136		301							"{2: 'Pickman', 3: ""But it seems you've been using these experiments as an excuse to do unnecessary things."", 4: '2'}"
+137	137		301							{2: '056', 3: '...', 4: '1'}
+138	138		204							{1: '2'}
+139	139		301							{2: 'Pickman', 3: 'What do you gain from letting them escape? You even incite them to murder, turning them into criminals.', 4: '2'}
+140	140		301							"{2: 'Pickman', 3: ""The way you're nurturing these children will introduce significant variables into the experiment."", 4: '2'}"
+141	141		301							"{2: '056', 3: 'Besides me, you\'re the second person here to call the test subjects ""children."" I find that ironic.', 4: '1'}"
+142	142		301							{3: '056 points to the experiment chamber beside them, where Theodore, transformed into a monster by the Punishing Virus, is being kept in captivity. He crouches at the observation window, staring at the two confronting each other.'}
+143	143		301							"{2: 'Pickman', 3: ""I won't deny it—they are my children too."", 4: '2', 5: ' '}"
+144	144		301							{3: '056 points at her head.'}
+145	145		301							"{2: '056', 3: ""People outside already know about every experiment conducted here. You won't escape punishment."", 4: '1'}"
+146	146		401							{1: '2', 2: '970804'}
+147	147		301				AniZhuanchangBegin			{3: '056 raises the demolition hammer—'}
+148	148		202							{1: '1', 2: '2', 6: '1'}
+149	149		401							{1: '1', 2: '36'}
+150	150		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+151	151		401							{1: '1', 2: '5029'}
+152	152		201							{1: '1', 2: '500934', 3: '4', 7: '1'}
+153	153		301			AniZhuanchangEnd				"{1: '1', 3: ""Years into the future, the one who receives these memories can no longer stay still, reaching out in desperation to stop what's coming.""}"
+154	154		301							{2: 'Wanshi', 3: 'The Punishing Virus concentration inside is very high. Breaking it open now means...', 4: '1'}
+155	155		301							"{3: ""Wanshi's hand passes through the phantom image.""}"
+156	156		204							{1: '1', 2: '7'}
+157	157		301							{2: 'Wanshi', 3: '...', 4: '1'}
+158	158		301							"{3: ""Can't hold on to anything.""}"
+159	159		204							{1: '1', 2: '17'}
+160	160		301			PanelActor1Shake				{1: '1', 2: 'Wanshi', 3: 'No...', 4: '1'}
+161	161		301							"{3: ""The piercing pain in his head keeps intensifying. Wanshi's M.I.N.D. has reached its limit—one step away from being torn to shreds.""}"
+162	162		301							{3: 'Even knowing this is the past, knowing this ending is inevitable...'}
+163	163		203						800.0	{1: '1', 2: '0.4', 3: '-20', 4: '-10', 5: '-30'}
+164	164		203							{1: '1', 2: '0.4', 3: '10', 4: '-40', 5: '-60'}
+165	165		301							{3: 'Delirious with pain, Wanshi refuses to give up. His hands desperately wave through the air where the demolition hammer hangs, trying in vain to prevent its descent.'}
+166	166		301							{2: 'Wanshi', 3: 'Stop...', 4: '1'}
+167	167		202							{1: '1'}
+168	168		301							{3: 'His words come out as an incoherent mumble, too faint even for himself to hear.'}
+169	169		301							"{3: 'To whom should these words ""stop"" be said? At what point in time would they have made any difference?'}"
+170	170		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+171	171		504							{1: '0.7'}
+172	172		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory981.jpg'}
+173	173		201							{1: '1', 2: '500955', 4: '-250', 7: '1'}
+174	174		201							{1: '2', 2: '500714', 4: '250', 7: '1'}
+175	175		201							{1: '3', 2: '500755', 4: '-550', 7: '1'}
+176	176		201							{1: '4', 2: '500138', 4: '550', 7: '1'}
+177	177		301							{3: 'Was it before Recall Team 4 disbanded? Before Wanxu lost her way? Or before Pickman—before Kugawa Kurono arrived at this research facility?'}
+178	178		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+179	179		202							{1: '1', 2: '2', 3: '3', 4: '4', 6: '1'}
+180	180		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory985.jpg'}
+181	181		201							{1: '1', 2: '500978', 4: '-200', 7: '1'}
+182	182		201							{1: '2', 2: '500977', 4: '200', 7: '1'}
+183	183		201							{1: '3', 2: '500978', 4: '-600', 7: '1'}
+184	184		201							{1: '4', 2: '500977', 4: '600', 7: '1'}
+185	185		301							{3: 'Was it before those children were modified into test subjects... or even before they were born?'}
+186	186		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+187	187		202							{1: '1', 2: '2', 3: '3', 4: '4', 6: '1'}
+188	188		504							{1: '0'}
+189	189		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+190	190		201							{1: '1', 2: '500934', 3: '17', 7: '1'}
+191	191		301							{1: '1', 2: 'Wanshi', 3: '...', 4: '1'}
+192	192		301							{3: 'Finally, Wanshi lowers his hands, knowing he can only stand by and watch.'}
+193	193		301							{3: 'Wanshi stares at 056, lips trembling, and finally calls out that name.'}
+194	194		301							"{3: ""He doesn't expect her to hear it—he just wants to call out to her one last time, like the child he once was in his dreams.""}"
+195	195		301				AniZhuanchangBegin			{2: 'Wanshi', 3: '...Wanxu!', 4: '1'}
+196	196		202							{1: '1', 6: '1'}
+197	197		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory691.jpg'}
+198	198		301			AniZhuanchangEnd				{3: 'But the Wanxu of the past still raises the demolition hammer—'}
+199	199		201							{1: '1', 2: '500938', 3: '4', 4: '-400'}
+200	200		201							{1: '2', 2: '500709', 4: '400'}
+201	201		301							{1: '1', 2: 'Pickman', 3: 'You want to destroy the entire research institute?', 4: '2'}
+202	202		202							{1: '1', 2: '2'}
+203	203		301							{3: 'Pickman immediately backs away, distancing himself from the chamber containing the Corrupted specimens.'}
+204	204		201							{1: '1', 2: '500938', 3: '4'}
+205	205		301							"{1: '1', 2: 'Wanxu', 3: ""I'll do everything in my power to ensure you die here. But even if you manage to escape..."", 4: '1'}"
+206	206		301							"{2: 'Wanxu', 3: 'One day, Pickman, you\'ll die at the hands of your precious ""children"".', 4: '1'}"
+207	207		301							{3: 'As Wanxu brings down the demolition hammer, Pickman pulls the trigger.'}
+208	208		401						250.0	{1: '2', 2: '970804'}
+209	209		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+210	210		202							{1: '1', 6: '1'}
+211	211		401							{1: '2', 2: '2559'}
+212	212		301			RImgBg1Shake				{3: 'The isolation window shatters into pieces, scattering shards across the floor.'}
+213	213		301							"{3: ""The highly concentrated Punishing Virus surges from the lab, instantly corrupting half of Wanxu's face.""}"
+214	214		301							{3: 'Meanwhile—'}
+215	215		401							{1: '2', 2: '2513'}
+216	216		301			RImgBg1Shake				"{3: ""A bullet fires from Pickman's gun.""}"
+217	217		301							"{3: ""In this era of advanced mechanoid technology and Constructs, this bullet can't penetrate even the most common armor plating.""}"
+218	218		401							{1: '2', 2: '2690'}
+219	219		301							"{3: ""It spins as it slowly pierces through the woman's flesh, blood vessels, and bones... until it exits her body, leaving a blackened crater in the facility's metal wall.""}"
+220	220		401						500.0	{1: '2', 2: '2593'}
+221	221		401							{1: '2', 2: '3077'}
+222	222		301							"{3: ""The shot pierces through Wanxu's head. As she falls, her hair cascades onto the floor, blood flowing from her mouth and staining the strands red.""}"
+223	223		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+224	224		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory982.jpg'}
+225	225		201							{1: '1', 2: '500934', 3: '17'}
+226	226		301							{1: '1', 2: 'Wanshi', 3: '...!!', 4: '1'}
+227	227		202							{1: '1'}
+228	228		301							"{3: ""The pain from the pierced head radiates through every fiber of his being—the disruption in Wanshi's M.I.N.D. finally reaches a level beyond his endurance.""}"
+229	229		201							{1: '1', 2: '500934', 3: '10', 4: '-10', 5: '-20', 6: '-30'}
+230	230		301							{1: '1', 2: 'Wanshi', 3: '(So tired.)', 4: '1'}
+231	231		203						450.0	{1: '1', 2: '0.4', 3: '-15', 4: '-30', 5: '-30'}
+232	232		301							{2: 'Wanshi', 3: '...', 4: '1'}
+233	233		401							{1: '2', 2: '4306'}
+234	234		202							{1: '1', 6: '1'}
+235	235		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+236	236		301							{3: 'His struggles cease as he finally collapses.'}
+237	237		301							{3: 'Wanshi collapses somewhere in the abandoned research facility, unsure of his exact location. Before death claims him completely, he spares one last thought for something that probably no longer concerns him:'}
+238	238		201							{1: '18', 2: '500934', 3: '8'}
+239	239		301							{1: '1', 2: 'Wanshi', 3: '(The Commandant and the others said they would catch up.)', 4: '18'}
+240	240		202							{1: '18'}
+241	241		301							{3: 'Only a brief moment has passed between splitting up to chase that Corrupted in the cultivation area and his collapse.'}
+242	242		401							{1: '2', 2: '4627'}
+243	243		301							{3: 'The communication device by the ear crackles with static, human voices becoming indistinct.'}
+244	244		201							{1: '18', 2: '500934', 3: '8'}
+245	245		301							{1: '1', 2: 'Wanshi', 3: '(...Can you still find me?)', 4: '18'}
+246	246		202							{1: '18'}
+247	247		301							{3: 'As he drifts into eternal sleep, in his haze, he feels...'}
+248	248		301		1		AniZhuanchangBegin			{3: 'All is but a lucid dream.'}

@@ -1,0 +1,187 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory26.jpg'}
+2	2		401							{1: '1', 2: '207'}
+3	3		301			DialogEnable				{3: 'After the destruction of the Corrupted Colossus, the remnant of the damaged camp is left where it was.'}
+4	4		301							{3: 'The tattered tents are beyond repair, the flattened pots and weapons no longer usable. They were once the tools people relied on to survive, but now they lie in the sand, waiting for the shifting dunes to bury them.'}
+5	5		301							{3: 'But sand has already covered them before that day arrives.'}
+6	6		201							{1: '1', 2: '500259'}
+7	7		301							{1: '1', 3: 'A boy squats down and skillfully digs up sand with his shovel before throwing it aside as if he is searching for something underground.'}
+8	8		203							{1: '1', 2: '0.25', 3: '400'}
+9	9		201							{1: '2', 2: '1101001', 4: '-400'}
+10	10		301							{1: '1', 2: 'Watanabe', 3: 'Warren.', 4: '2'}
+11	11		301							{3: 'Hearing Watanabe, Warren answers without stopping shoveling.'}
+12	12		301							{2: 'Warren', 3: '...What is it?', 4: '1'}
+13	13		301							"{2: 'Watanabe', 3: ""I'm here to apologize."", 4: '2'}"
+14	14		301							{2: 'Watanabe', 3: 'I was being unfair back then.', 4: '2'}
+15	15		301							{2: 'Warren', 3: 'Oh. Alright.', 4: '1'}
+16	16		301							{3: 'Warren continues to dig after answering. Watanabe stands beside him, patiently waiting.'}
+17	17		301							{3: 'Before long, Warren gets impatient and speaks first.'}
+18	18		301							"{2: 'Warren', 3: ""...Aren't you going to ask me why I'm still here when everyone else has gathered at your camp?"", 4: '1'}"
+19	19		301							"{2: 'Watanabe', 3: ""Wasn't planning to. I'm sure you have your reasons."", 4: '2'}"
+20	20		301							"{2: 'Warren', 3: ""...You're not like other adults. At least you're more honest."", 4: '1'}"
+21	21		301							{2: 'Watanabe', 3: 'Thanks.', 4: '2'}
+22	22		301							{2: 'Watanabe', 3: 'Are you willing to be more honest with me, then, Warren?', 4: '2'}
+23	23		301							"{2: 'Warren', 3: ""That's a crafty way to put it."", 4: '1'}"
+24	24		301							"{2: 'Warren', 3: ""I've heard what the doctors said. You want to me dig up more herbs, right? Herbs that are hard to find, herbs that help with afflictions, herbs that are nutritious ingredients, herbs that do this, herbs that do that..."", 4: '1'}"
+25	25		301							{2: 'Watanabe', 3: 'I was talking about your father.', 4: '2'}
+26	26		301							{3: 'Warren freezes.'}
+27	27		301							"{2: 'Watanabe', 3: 'Back there, you asked them how they knew I wouldn\'t ""betray myself.""', 4: '2'}"
+28	28		301							"{2: 'Watanabe', 3: ""There was an adult who betrayed you and himself, wasn't there?"", 4: '2'}"
+29	29		301							{2: 'Warren', 3: 'What makes you say so?', 4: '1'}
+30	30		301							{2: 'Warren', 3: 'You speak like you know me, w-when you...', 4: '1'}
+31	31		301							{2: 'Watanabe', 3: 'When I know nothing about you?', 4: '2'}
+32	32		301							{2: 'Watanabe', 3: 'Everyone has a past or secrets no one knows about. I apologize if I guessed wrong.', 4: '2'}
+33	33		301							"{2: 'Watanabe', 3: ""I just don't want you to keep crying yourself to sleep every night because of your secret."", 4: '2'}"
+34	34		301							"{2: 'Warren', 3: ""I-I don't..."", 4: '1'}"
+35	35		301							"{2: 'Warren', 3: ""I don't..."", 4: '1'}"
+36	36		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+37	37		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory69.jpg'}
+38	38		202							{1: '2', 6: '1'}
+39	39		504							{1: '0.7'}
+40	40		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+41	41		201							{1: '1', 2: '500259'}
+42	42		301							"{1: '1', 2: 'Warren', 3: ""Dad? Dad, what's happening out there...?"", 4: '1'}"
+43	43		301							"{2: 'Warren', 3: ""I'm scared... I'm scared..."", 4: '1'}"
+44	44		301							"{2: ""Father's Voice"", 3: ""It's okay... Everything's okay, Warren... Dad's here.""}"
+45	45		301							"{2: ""Father's Voice"", 3: 'I... will protect you.'}"
+46	46		301							"{2: ""Father's Voice"", 3: ""Here, let me stay with you. Just hold me when you sleep if you're afraid.""}"
+47	47		301				AniZhuanchangBegin			{3: '...'}
+48	48		202			DialogDisable				{1: '1', 6: '1'}
+49	49		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory69.jpg'}
+50	50		201							{1: '1', 2: '500251'}
+51	51		301			DialogEnable				"{1: '1', 2: 'Theresa', 3: ""...Say something. You've been drinking alone since you received the notice from Babylonia. You're gonna ruin your body like that."", 4: '1'}"
+52	52		301							"{2: 'Theresa', 3: ""You got chosen, didn't you?"", 4: '1'}"
+53	53		301							"{2: 'Theresa', 3: ""I know what's on your mind after all these years together."", 4: '1'}"
+54	54		301							"{2: 'Theresa', 3: ""It's okay. You can go."", 4: '1'}"
+55	55		301							"{2: 'Theresa', 3: ""...Don't worry about your son."", 4: '1'}"
+56	56		301							"{2: 'Theresa', 3: ""I mean it. Don't worry about us. They have a shelter for the scientists remaining on the surface. We'll have somewhere to stay."", 4: '1'}"
+57	57		301							"{2: 'Theresa', 3: ""Don't... worry..."", 4: '1'}"
+58	58		301				AniZhuanchangBegin			{3: '...'}
+59	59		202			DialogDisable				{1: '1', 6: '1'}
+60	60		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory69.jpg'}
+61	61		201							{1: '1', 2: '500259'}
+62	62		301			DialogEnable				{1: '1', 2: 'Warren', 3: 'Where are you going, Dad?', 4: '1'}
+63	63		301							"{2: ""Father's Voice"", 3: '...'}"
+64	64		203							{1: '1', 2: '0.25', 3: '400'}
+65	65		201							{1: '2', 2: '500251', 4: '-400'}
+66	66		301							"{1: '1', 2: 'Theresa', 3: ""That's enough, Warren. Stop pulling your father's shirt. Dad is going to be away for a while."", 4: '2'}"
+67	67		301							"{2: 'Warren', 3: ""Isn't he staying with us?"", 4: '1'}"
+68	68		301							"{2: 'Theresa', 3: ""No. We'll meet again..."", 4: '2'}"
+69	69		301				AniZhuanchangBegin			"{2: 'Theresa', 3: ""We'll meet again one day..."", 4: '2'}"
+70	70		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+71	71		504							{1: '0'}
+72	72		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+73	73		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory26.jpg'}
+74	74		201							{1: '1', 2: '500259', 4: '400'}
+75	75		201							{1: '2', 2: '1101001', 4: '-400'}
+76	76		301			DialogEnable				{1: '1', 2: 'Warren', 3: '...', 4: '1'}
+77	77		301							"{3: ""The wind carries a cloud of sand, blowing past Watanabe and Warren. The grit stings the boy's eyes and cheeks.""}"
+78	78		301							"{2: 'Watanabe', 3: ""You... you're doing your best."", 4: '2'}"
+79	79		301							"{2: 'Watanabe', 3: ""You probably feel angry and hurt about your father's departure, but... you probably also look forward to seeing him again, don't you?"", 4: '2'}"
+80	80		301							{2: 'Watanabe', 3: 'That is how you and your mother can support each other and survive until now.', 4: '2'}
+81	81		301							{3: 'Warren bites his lips and stays silent until Watanabe takes out a handful of herbs.'}
+82	82		301							"{2: 'Watanabe', 3: ""This is what you were talking about. It's called Dahurian angelica."", 4: '2'}"
+83	83		301							{2: 'Watanabe', 3: 'Theresa was allergic to Pyxidanthera barbulata, but it is one of the main sources of calories in the desert.', 4: '2'}
+84	84		301							{2: 'Watanabe', 3: 'And you... probably have learned a few things about botany from your father and know that Dahurian angelica can prevent her allergic reactions.', 4: '2'}
+85	85		301							"{2: 'Watanabe', 3: ""You always follow the foraging team around until your shoes are all worn down because you're trying to forage for this herb, aren't you?"", 4: '2'}"
+86	86		301							{2: 'Warren', 3: '...', 4: '1'}
+87	87		301							{2: 'Warren', 3: 'I...', 4: '1'}
+88	88		301							{2: 'Warren', 3: 'All I know is Mom feels better after eating some of this herb. I just want her to sleep well. She could barely sleep in the camps we stayed in previously, and when she did, she would have terrible nightmares...', 4: '1'}
+89	89		301							{2: 'Watanabe', 3: 'Years of microcirculatory dysfunction caused by the allergy and lack of proper rest would be too much for any adult.', 4: '2'}
+90	90		301							{2: 'Watanabe', 3: 'But your mother continues to endure and survive.', 4: '2'}
+91	91		301							{2: 'Watanabe', 3: 'You are the reason why she has made it this far. You searched for a remedy for her, you looked out for her, and you even dared to challenge a leader of a camp for her.', 4: '2'}
+92	92		204							{1: '2', 2: '1'}
+93	93		301							{2: 'Watanabe', 3: 'Your ways are very direct, but... you are brave, Warren. Good job.', 4: '2'}
+94	94		301							{2: 'Warren', 3: 'I...', 4: '1'}
+95	95		301							{3: 'The boy covers his eyes.'}
+96	96		301							{3: 'Lowering his head, he seems to be hiding his face from everyone else.'}
+97	97		204							{1: '2'}
+98	98		301							"{2: 'Watanabe', 3: ""By the way, it's quite sunny today, isn't it? It's easy to get dehydrated."", 4: '2'}"
+99	99		301							"{3: ""Watanabe suddenly takes off his jacket and covers Warren's face with it. Warren immediately flings his arms around, trying to take the coat off, but Watanabe just holds him and makes sure he does not fall.""}"
+100	100		301							{2: 'Watanabe', 3: 'The sun is so bright in the desert that you might not want it to shine a light on the feelings you hide inside you.', 4: '2'}
+101	101		301							"{2: 'Watanabe', 3: ""But now that you have something covering you, you don't have to hide anymore."", 4: '2'}"
+102	102		301							{3: 'Watanabe can hear quiet sobbing coming from within his coat, the blubbering intermittent but non-stop, as if years of tears need to be silently released.'}
+103	103		301							"{3: ""Watanabe waits silently for a long time. He makes no attempt to comfort Warren, nor does he make any promise. He just puts his hand above Warren's head over the coat and waits for the sobbing to slowly end.""}"
+104	104		301							"{3: ""It takes Warren a few minutes to finish crying. Watanabe removes his coat, and there is no trace of tears in Warren's eyes, just faint water stains.""}"
+105	105		301							{2: 'Watanabe', 3: 'Enough time away from the sun, I assume?', 4: '2'}
+106	106		301							{2: 'Warren', 3: '...Yeah.', 4: '1'}
+107	107		301							{2: 'Watanabe', 3: 'Then you might want to tell your mother how you feel later.', 4: '2'}
+108	108		301							{2: 'Warren', 3: 'What? How can I...', 4: '1'}
+109	109		301							"{2: 'Watanabe', 3: ""That's not my suggestion. A friend named Zachery recommended it."", 4: '2'}"
+110	110		301							{2: 'Watanabe', 3: 'Hey. Come over here.', 4: '2'}
+111	111		202							{1: '1', 2: '2', 6: '1'}
+112	112		201							{1: '1', 2: '500565'}
+113	113		301							{1: '1', 2: 'Zachery', 3: 'Heh, haha... Right, right. Coming.', 4: '1'}
+114	114		301							{3: 'Laughing sheepishly, a soldier steps out from the shadow of the armored car.'}
+115	115		301							"{2: 'Zachery', 3: ""The weather's pretty good today, right, buddy? Hehe..."", 4: '1'}"
+116	116		203							{1: '1', 2: '0.25', 3: '400'}
+117	117		201							{1: '2', 2: '1101001', 3: '5', 4: '-400'}
+118	118		301							"{1: '1', 2: 'Watanabe', 3: ""Don't slouch before children. Stand straight! Be a role model!"", 4: '2'}"
+119	119		301							{2: 'Zachery', 3: 'Ah, um... Right, right.', 4: '1'}
+120	120		204							{1: '2'}
+121	121		301							"{3: ""Zachery rubs his face and collects himself upon Watanabe's remark, finally looking a little serious.""}"
+122	122		301							"{2: 'Zachery', 3: ""A role model... I don't know how I feel about that... It's just, eh... Look, buddy, I just want to say a few words."", 4: '1'}"
+123	123		301							"{2: 'Zachery', 3: ""You heard the boss earlier... I was the one who's been working for the extra supplies... It's been so long since my brother fell unconscious. There are so many things I want to say that he will never hear."", 4: '1'}"
+124	124		301							"{2: 'Zachery', 3: ""You see, my brother took care of me in the past, so I was... embarrassed to say anything. Now that I've been taking care of him for a few years, I've realized so much... but I can't tell him how I feel anymore."", 4: '1'}"
+125	125		301							{2: 'Zachery', 3: 'Suma was telling me that there are things you gotta say when the other person is still alive... right?', 4: '1'}
+126	126		301							"{2: 'Zachery', 3: ""Wait, no, that's not right. My brother's not dead, so... don't just say it while the other person is still alive. Say it when... when..."", 4: '1'}"
+127	127		301							"{2: 'Watanabe', 3: ""...When you're still together. When you still have the chance to say it."", 4: '2'}"
+128	128		301							"{3: ""Hearing the uncertainty in Zachery's voice, Watanabe elaborates.""}"
+129	129		201							{1: '1', 2: '500259', 4: '400'}
+130	130		301							"{1: '1', 2: 'Watanabe', 3: ""Zachery told me he wants to tell his brother that he's no longer holding him back, and they can now support each other. When that happens, Zachery's... nervous laughter will stop, and it can be replaced with a proud smile."", 4: '2'}"
+131	131		301							"{2: 'Watanabe', 3: ""I want to see that smile on everyone's face. This camp only survives if everyone stays together and does what they do best."", 4: '2'}"
+132	132		301							"{2: 'Watanabe', 3: ""And that includes you. You're not here because of your mother's technology. You're understanding and insight into wild plants is a rare talent. It's an incredibly useful gift, no matter where it comes from."", 4: '2'}"
+133	133		301							"{2: 'Watanabe', 3: ""With your gift, you should be telling your mother how you feel with pride. You should tell her that you're a grown-up now and that you're no longer holding her back."", 4: '2'}"
+134	134		301							"{2: 'Watanabe', 3: ""We can all lose our loved ones in the blink of an eye. Even when the world wasn't as terrible, people could still be far apart."", 4: '2'}"
+135	135		301							{2: 'Watanabe', 3: 'If your mother lost you one day... she might be tormented by regrets and grief as she tried to find you, not knowing how you felt.', 4: '2'}
+136	136		501			DialogDisable				{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+137	137		202							{1: '2', 6: '1'}
+138	138		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory122.png'}
+139	139		504							{1: '0.7'}
+140	140		201						800.0	{1: '1', 2: '500106'}
+141	141		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+142	142		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory55.jpg'}
+143	143		201						800.0	{1: '1', 2: '500081'}
+144	144		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+145	145		202							{1: '1', 6: '1'}
+146	146		504							{1: '0'}
+147	147		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory26.jpg'}
+148	148		201							{1: '1', 2: '500565', 4: '400'}
+149	149		201							{1: '2', 2: '1101001', 4: '-400'}
+150	150		301			DialogEnable				"{1: '1', 2: 'Watanabe', 3: ""So, tell her when you're still together. Never hide how you feel."", 4: '2'}"
+151	151		301							"{2: 'Zachery', 3: ""Right, that's right. What the boss said."", 4: '1'}"
+152	152		202							{1: '1', 2: '2', 6: '1'}
+153	153		201							{1: '1', 2: '500259'}
+154	154		301							{1: '1', 2: 'Warren', 3: 'I... I understand.', 4: '1'}
+155	155		301							{3: 'Warren nods, half understanding what Watanabe said.'}
+156	156		202							{1: '1', 6: '1'}
+157	157		201							{1: '1', 2: '500398'}
+158	158		301							{1: '1', 2: 'Suma', 3: 'Hey—where did you go, Zachery—come over and help—', 4: '1'}
+159	159		202							{1: '1', 6: '1'}
+160	160		201							{1: '1', 2: '500565'}
+161	161		301							{1: '1', 3: 'Zachery shivers upon hearing Suma call his name.'}
+162	162		301							{2: 'Zachery', 3: 'Zachery shivers upon hearing Suma call his name.', 4: '1'}
+163	163		202							{1: '1'}
+164	164		301							{3: 'Zachery quickly runs off. Warren returns the coat on his head to Watanabe and bows before heading back to the camp.'}
+165	165		301				AniZhuanchangBegin			{3: 'They both have someone they are looking for.'}
+166	166		401							{1: '1', 2: '36'}
+167	167		502						500.0	{1: 'DialogDisable'}
+168	168		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory318.png'}
+169	169		201							{1: '1', 2: '1101001'}
+170	170		301			DialogEnable				{1: '1', 2: 'Watanabe', 3: 'Phew...', 4: '1'}
+171	171		301				AniZhuanchangBegin			{3: 'Finally by himself, Watanabe relaxes and stretches his shoulders.'}
+172	172		202			DialogDisable				{1: '1', 6: '1'}
+173	173		401							{1: '1', 2: '119'}
+174	174		401							{1: '2', 2: '968'}
+175	175		105				AniZhuanchangEnd			{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLi/UiMovieDuBianTower.prefab'}
+176	176		301			DialogEnable				{3: 'The midday sun has cooled down a little. The wind brings up another cloud of sand, blowing past Watanabe and moving his sleeves.'}
+177	177		301							{3: 'Watanabe takes a step forward, pondering.'}
+178	178		301							"{2: 'Watanabe', 3: ""Food... technology... military... We've finally taken the first step to tackling all these problems.""}"
+179	179		301							{2: 'Watanabe', 3: 'Being able to solve our food crisis will be a crucial step. To continue its development, we will need to find our next partner. We also need to invest in engineering to restore its optimal environment.'}
+180	180		301							{2: 'Watanabe', 3: 'Alright. One step at a time, like we always do.'}
+181	181		301							"{2: 'Watanabe', 3: ""We'll keep going on until the day we can thrive on this barren planet... Then, we will remember everyone who has walked with us.""}"
+182	182		301							"{2: 'Watanabe', 3: ""We'll also need to give our group a name then... The Remembered... Doesn't sound right.""}"
+183	183		301							{3: 'Watanabe slows down.'}
+184	184		301							{2: 'Watanabe', 3: 'What should we call ourselves? Hm...'}
+185	185		301							{3: 'And then he stops.'}
+186	186		301		1		AniZhuanchangBegin			"{2: 'Watanabe', 3: ""That's it—""}"

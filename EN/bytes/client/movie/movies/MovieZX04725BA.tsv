@@ -1,0 +1,104 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory301.png'}
+2	2		401							{1: '1', 2: '209'}
+3	3		201							{1: '1', 2: '500273'}
+4	4		301							{1: '1', 2: 'Wanshi', 3: 'One, two...', 4: '1'}
+5	5		301							{2: 'Wanshi', 3: 'Three.', 4: '1'}
+6	6		401							{1: '2', 2: '2513'}
+7	7		301							{3: 'The bullet leaves the chamber and finds its mark, precisely striking the Corrupted wandering through the ruins.'}
+8	8		301				DialogDisable			{2: 'Wanshi', 3: 'All remaining Corrupted in the rear have been eliminated.', 4: '1'}
+9	9		202							{1: '1', 6: '1'}
+10	10		401							{1: '2', 2: '2983'}
+11	11		509						800.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory343.jpg', 2: '1'}
+12	12		201							{1: '1', 2: '500273', 4: '500'}
+13	13		201							{1: '11', 2: '500730', 4: '-500'}
+14	14		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '11'}
+15	15		301			DialogEnable				{1: '1', 2: 'Shorthalt', 3: 'Roger that. What about the wounded? I moved them under cover and left signal markers. Have you found them yet?', 4: '11'}
+16	16		301							"{2: 'Wanshi', 3: ""Found them. They're all stable. Emergency repairs have been completed."", 4: '1'}"
+17	17		301							"{3: 'Wanshi looks back to find several wounded Constructs meticulously ""arranged"" together, their eyes closed.'}"
+18	18		301							{3: 'Wanshi is already mentally prepared, but his first glance at the scene jolts him into stark alertness.'}
+19	19		301							{2: 'Wanshi', 3: 'Shorthalt, could you please stop...', 4: '1'}
+20	20		301							{2: 'Shorthalt', 3: 'Oh right, keep heading toward my position. There are still some loose ends I need you to tie up along the way.', 4: '11'}
+21	21		301							"{2: 'Wanshi', 3: ""Pull another one of your silly pranks, and I'll ask Chrome to never assign us on missions together again."", 4: '1'}"
+22	22		301							"{2: 'Shorthalt', 3: ""Well, well, think you're hot stuff just because you've got a captain? We even have a commandant in Scarab."", 4: '11'}"
+23	23		301							"{2: 'Shorthalt', 3: ""Besides, it's just some simple cleanup work. You could use the exercise."", 4: '11'}"
+24	24		301							"{2: 'Wanshi', 3: '""Simple cleanup""...? You mean like last time when you put two wounded Constructs who were exes together, and I had to play mediator for an hour?', 4: '1'}"
+25	25		301							"{2: 'Shorthalt', 3: ""Isn't that easier than fighting? But now that you mention those weirdos—I heard they actually teamed up to file a complaint against you? Seriously?"", 4: '11'}"
+26	26		301							{2: 'Wanshi', 3: '...Shorthalt.', 4: '1'}
+27	27		301							"{2: 'Shorthalt', 3: ""Yeah, yeah, I get it. I'll be more careful from now on."", 4: '11'}"
+28	28		301							"{2: 'Shorthalt', 3: ""This is the last time, I promise. I left some unfinished business at the previous location, but I've gone too far to turn back now. You'll have to help me clean it up."", 4: '11'}"
+29	29		301							"{2: 'Wanshi', 3: ""...Fine. I'm a scout. Next time, I'll insist on taking point."", 4: '1'}"
+30	30		301							"{2: 'Shorthalt', 3: ""Sure, fine. I won't complain about whatever mess you leave behind."", 4: '11'}"
+31	31		202							{1: '1', 2: '11', 6: '1'}
+32	32		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '11'}
+33	33		401							{1: '2', 2: '2566'}
+34	34		510							{1: '1'}
+35	35		301							{3: 'Beep—'}
+36	36		201							{1: '1', 2: '500273'}
+37	37		301							{1: '1', 3: 'Wanshi abruptly cuts off the communication.'}
+38	38		301							"{3: ""He contacts nearby support personnel to watch over the wounded under cover, then heads toward Shorthalt's location.""}"
+39	39		301							{3: 'With each step, his sense that something feels off only grows stronger.'}
+40	40		301							"{3: 'He first receives Shorthalt\'s ""advance forward"" signal, then discovers numerous Corrupted corpses strewn along the road. An unnatural silence hangs in the air. When he tries to contact Shorthalt again, there is no response.'}"
+41	41		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory305.png', 3: '0', 4: '1', 5: '2'}
+42	42		301							{3: 'He has not seen anyone along the way until he reaches the exact coordinates that Shorthalt is supposed to be.'}
+43	43		301							{3: 'Only a candy lies on the ground.'}
+44	44		301							{2: 'Wanshi', 3: '...', 4: '1'}
+45	45		301							"{2: 'Wanshi', 3: ""It's the kind that Shorthalt always carries with him."", 4: '1'}"
+46	46		301							{3: 'He bends down to pick up the tiny mint candy.'}
+47	47		401							{1: '1', 2: '36'}
+48	48		301							"{2: 'Wanshi', 3: ""What's going on here..."", 4: '1'}"
+49	49		401							{1: '1', 2: '205'}
+50	50		401							{1: '2', 2: '616'}
+51	51		301							{3: 'He turns the candy over in his palm, examining it carefully, when he notices a faint red light flickering on its surface.'}
+52	52		204							{1: '1', 2: '7'}
+53	53		301			PanelActor1Shake				{1: '1', 2: 'Wanshi', 3: 'Oh no—ugh!', 4: '1'}
+54	54		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+55	55		401							{1: '2', 2: '4081'}
+56	56		203							{1: '1', 2: '0.25', 4: '-150'}
+57	57		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+58	58		301							"{3: 'The mint candy detonates in Wanshi\'s hand, causing a mild ""explosion"" that sends him stumbling to the ground. Electricity crawls up his mechanical arm, temporarily paralyzing the entire limb.'}"
+59	59		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+60	60		202							{1: '1', 6: '1'}
+61	61		201							{1: '1', 2: '500730'}
+62	62		301							{1: '1', 2: 'Shorthalt', 3: 'You actually fell for that?', 4: '1'}
+63	63		202							{1: '1', 6: '1'}
+64	64		201							{1: '1', 2: '500273', 3: '4', 4: '400'}
+65	65		201							{1: '2', 2: '500730', 4: '-400'}
+66	66		301							{1: '1', 3: 'Shorthalt approaches from behind and helps Wanshi up from the ground.'}
+67	67		301							{2: 'Wanshi', 3: '...Shorthalt!', 4: '1'}
+68	68		301							"{2: 'Shorthalt', 3: ""You're being way too careless. What if it had been a trap left by the enemy?"", 4: '2'}"
+69	69		301							{2: 'Wanshi', 3: 'How could the Corrupted set up this kind of trap? Besides, I only picked it up because it belonged to you—', 4: '1'}
+70	70		202							{1: '1', 2: '2', 6: '1'}
+71	71		301							"{3: 'A lilting melody echoes from the ""mint candy"".'}"
+72	72		401							{1: '1', 2: '36'}
+73	73		401							{1: '2', 2: '890'}
+74	74		301							"{2: '""Mint Candy""', 3: 'Happy birthday to you → Happy birthday to you ↗ Happy birthday to you ↘ Happy birthday to you ↓'}"
+75	75		201							{1: '1', 2: '500273', 3: '7', 4: '400'}
+76	76		201							{1: '2', 2: '500730', 4: '-400'}
+77	77		301							{1: '1', 2: 'Wanshi', 3: '...?', 4: '1'}
+78	78		401							{1: '1', 2: '208'}
+79	79		301							"{2: 'Shorthalt', 3: ""Why do you look so surprised? Did you forget today's your birthday?"", 4: '2'}"
+80	80		301							{2: 'Wanshi', 3: '...', 4: '1'}
+81	81		301							{3: 'Since his modification, Wanshi has accepted that birthdays are celebrations that belong only to humans, not to him anymore.'}
+82	82		301							{3: 'And as for the Activation Date—'}
+83	83		301							{3: 'Chrome mentioned that due to severe injuries before the modification procedure, some of his memory data could have caused serious M.I.N.D. deviation, so they took the opportunity to seal those memories during the modification.'}
+84	84		301							"{3: ""He has no memory of the day he was modified. Kamui and Shorthalt's description is simple: during a refugee evacuation mission, they encountered an explosion, after which Chrome and his team found them and carried them back to base.""}"
+85	85		301							"{3: ""The vanishing of Thompson and his teammates remains like a missing puzzle piece in Wanshi's memory, one he never manages to fill in. As for Shorthalt, he never mentions Wanshi's Activation Date—likely because almost all his familiar teammates lost their lives during that mission.""}"
+86	86		301							"{3: 'However, Shorthalt becomes the last friend who still celebrates Wanshi\'s ""birthday"" with him.'}"
+87	87		204							{1: '1'}
+88	88		301							"{2: 'Shorthalt', 3: ""Here's your birthday gift. Stop daydreaming."", 4: '2'}"
+89	89		301							{3: 'Shorthalt hands over a combat-style straight blade.'}
+90	90		301							{2: 'Wanshi', 3: 'Oh... thanks.', 4: '1'}
+91	91		301							"{2: 'Shorthalt', 3: 'Aha, what a surprise to hear that from you. I miss the days when you\'d say ""Thanks, Uncle""—such a well-mannered kid you were.', 4: '2'}"
+92	92		301							{2: 'Wanshi', 3: '...Ha...', 4: '1'}
+93	93		301							{3: 'Wanshi lowers his head resignedly.'}
+94	94		301							"{2: 'Shorthalt', 3: ""Alright, enough talk. Let's pack up our gear and head back. I've cleared out all the Corrupted up ahead and didn't leave any stragglers for you to deal with, so don't worry."", 4: '2'}"
+95	95		301							{2: 'Wanshi', 3: 'Shorthalt, why do you still celebrate my birthday?', 4: '1'}
+96	96		301							{3: 'Shorthalt scratches his head.'}
+97	97		301							"{2: 'Shorthalt', 3: 'What\'s there to ask ""why"" about...? If you really want a reason, maybe it\'s because I think you\'re still young?', 4: '2'}"
+98	98		301							{2: 'Wanshi', 3: 'What?', 4: '1'}
+99	99		301							"{2: 'Shorthalt', 3: ""Getting modified is like putting your time on pause. No matter how many years pass after that, as long as you don't change frames, you'll stay exactly the same."", 4: '2'}"
+100	100		301							"{2: 'Shorthalt', 3: ""But there are still people who want you to keep growing—along with all the memory data you've accumulated... Ugh, that came out way too sappy."", 4: '2'}"
+101	101		301							{2: 'Wanshi', 3: '...', 4: '1'}
+102	102		301							{3: 'Shorthalt shivers at his own words, then waves his hand dismissively as he walks ahead.'}
+103	103		301		1		AniZhuanchangBegin			"{2: 'Shorthalt', 3: ""Let's go. I still have a report to submit after the mission, and I'll file an application with it. Next time we're assigned to a mission together, I'll follow your lead and let you take point."", 4: '2'}"

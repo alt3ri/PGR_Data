@@ -1,0 +1,142 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory315.png'}
+2	2		401							{1: '1', 2: '341'}
+3	3		301			DialogEnable				{3: 'The storm Luna spoke of never comes, which is a lucky turn of events. After about three hours of travel, you come across what can only be described as an abandoned village.'}
+4	4		301							{3: 'This place is less a village than it is a makeshift camp, with just a few sheds propped against the rocky surface surrounding an empty lot.'}
+5	5		301							"{3: ""Had there still been inhabitants, one might have marveled at humanity's resilience. Instead, the collapsed buildings, the scent of rust and mold hanging in the air, and the sparse weeds sprouting through the clearing all tell the same story—this place has been forgotten for years.""}"
+6	6		302							{2: 'Why did we come here?', 3: '7'}
+7	7		201							{1: '1', 2: '500884'}
+8	8		301							"{1: '1', 2: 'Luna', 3: ""At your current pace, you're never going to make it out of the storm's radius before it hits."", 4: '1'}"
+9	9		301							{2: 'Luna', 3: 'I brought you here because I remember there was a vehicle.', 4: '1'}
+10	10		202							{1: '1'}
+11	11		301							"{3: ""True to Luna's words, there is indeed a vehicle in this camp.""}"
+12	12		301							"{3: ""From the thick layer of dust coating its body and its bold modifications, it's hard to tell whether this vehicle is a milestone of human technological achievement or just another piece of industrial waste destined for the scrapyard.""}"
+13	13		302							{2: 'The vehicle looks like it was borrowed from some movie set...', 3: '14'}
+14	14		302							{2: 'Are you sure this thing is gonna run?', 3: '15'}
+15	15		201							{1: '1', 2: '500884'}
+16	16		301							{1: '1', 2: 'Luna', 3: 'Hmm...', 4: '1'}
+17	17		301							{3: 'Luna closes her eyes, taking a moment to contemplate.'}
+18	18		204							{1: '1', 2: '2'}
+19	19		301							{2: 'Luna', 3: 'How about I find a rope, tie you up, and fly you to our destination instead?', 4: '1'}
+20	20		302							{2: 'What?!', 3: '21', 4: 'Absolutely not!', 5: '21'}
+21	21		301							"{2: 'Luna', 3: ""Then you'd better pray this car still works. There aren't any others nearby."", 4: '1'}"
+22	22		202							{1: '1'}
+23	23		301							{3: 'After spending some time examining this old clunker, you find out that this vehicle is actually a Babylonia-made standard off-road vehicle under disguise.'}
+24	24		301							"{3: ""While this differs from the model you're familiar with, this is unmistakably made by Babylonia.""}"
+25	25		302							{2: 'Could it be an older model...', 3: '26'}
+26	26		201							{1: '1', 2: '500884'}
+27	27		301							"{1: '1', 2: 'Luna', 3: ""Doesn't really matter. Can it still run?"", 4: '1'}"
+28	28		302							"{2: ""It needs some repairs, but that's not our biggest problem here...""}"
+29	29		301							"{3: ""The wiring's a bit damaged, but that's nothing a quick fix won't solve. The real issue is that it's out of juice. You can take care of that with the solar panel in the storage compartment, but if you want the vehicle to be maximally charged...""}"
+30	30		301							"{2: 'Luna', 3: ""Guess that means we'll have to wait until sunset before we can leave?"", 4: '1'}"
+31	31		302							{2: 'Yes.', 3: '32'}
+32	32		301				AniZhuanchangBegin			"{2: 'Luna', 3: ""Then we'll depart at nightfall."", 4: '1'}"
+33	33		202			DialogDisable				{1: '1', 6: '1'}
+34	34		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory316.png'}
+35	35		302							{2: 'By the way...', 3: '36'}
+36	36		301			DialogEnable				"{3: ""Half-buried under the hood, you are fiddling with the car's wiring, while the agent sits on a nearby rock, staring absently into the distance.""}"
+37	37		302							"{2: ""What's in that box?"", 3: '38'}"
+38	38		301							{3: 'Luna has been carrying this box ever since your first encounter with her.'}
+39	39		201							{1: '1', 2: '500884'}
+40	40		301							"{1: '1', 2: 'Luna', 3: ""Curious, aren't you?"", 4: '1'}"
+41	41		302							{2: 'Of course.', 3: '42'}
+42	42		302							{2: 'Does your business have something to do with that box?', 3: '43'}
+43	43		204							{1: '1', 2: '1'}
+44	44		301							{2: 'Luna', 3: 'Yes.', 4: '1'}
+45	45		301							{3: 'Luna gives a faint smile.'}
+46	46		302							"{2: ""Don't tell me it's some kind of super-weapon capable of wiping out humanity?"", 3: '47'}"
+47	47		204							{1: '1', 2: '2'}
+48	48		301							{2: 'Luna', 3: 'You never struck me as the imaginative type.', 4: '1'}
+49	49		302							{2: '...', 3: '50'}
+50	50		204							{1: '1'}
+51	51		301							"{2: 'Luna', 3: ""No, I don't need a weapon like that now."", 4: '1'}"
+52	52		301							"{2: 'Luna', 3: ""Besides, there's no point trying to distract me. No one will come, no matter how many distress signals you send."", 4: '1'}"
+53	53		301							{3: 'Luna lets out a sigh before speaking.', 4: '1'}
+54	54		302							"{2: 'Sharp-witted, huh?', 3: '55', 4: ""I don't know what you're talking about."", 5: '57'}"
+55	55		204							{1: '1', 2: '2'}
+56	56	59	301							{2: 'Luna', 3: 'Heh.', 4: '1'}
+57	57		204							{1: '1', 2: '2'}
+58	58		301							"{2: 'Luna', 3: ""You can drop the act. I've been watching you this whole time."", 4: '1'}"
+59	59		301							"{2: 'Luna', 3: ""The car's been fixed for a while now, hasn't it?"", 4: '1'}"
+60	60		301							"{2: 'Luna', 3: ""You've been using the car's communication system to send distress signals this whole time."", 4: '1'}"
+61	61		302							{2: 'I have to try.', 3: '62'}
+62	62		204							{1: '1'}
+63	63		301							"{2: 'Luna', 3: ""I'm not going to hurt you. You have my word."", 4: '1'}"
+64	64		302							{2: 'And I guess I need to thank you for that?', 3: '65'}
+65	65		204							{1: '1', 2: '1'}
+66	66		301							{3: 'Luna responds with a faint smile without saying anything.'}
+67	67		202							{1: '1'}
+68	68		301							"{3: ""With your self-rescue actions discovered, there's no need to keep up the charade. Now, all that's left to do is wait for nightfall to depart.""}"
+69	69		301							"{3: ""Just as you're about to close the hood and look away from the vehicle...""}"
+70	70		302							{2: '!!', 3: '71'}
+71	71		301							{3: 'A chill crawls up your spine to the back of your head. Your eyes fix on an alphanumeric sequence—a manufacturing code Babylonia stamps on their products, indicating the production date and batch number.'}
+72	72		302							{2: '(How is this possible...?)', 3: '73'}
+73	73		301							{3: '...'}
+74	74		301				AniZhuanchangBegin			{3: 'Darkness begins its descent as the wind picks up and the horizon devours the setting sun.'}
+75	75		401							{1: '1', 2: '36'}
+76	76		205						3000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.9', 5: '2'}
+77	77		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory318.png'}
+78	78		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 4: '4'}
+79	79		401							{1: '1', 2: '207'}
+80	80		302							"{2: ""Let's go."", 3: '81'}"
+81	81		301			DialogEnable				"{3: ""Just as you settle into the driver's seat ready to depart, you find yourself joined by an unexpected person in the passenger seat.""}"
+82	82		302							"{2: ""I thought you'd be flying ahead to lead the way.""}"
+83	83		201							{1: '1', 2: '500884'}
+84	84		301							"{1: '1', 2: 'Luna', 3: ""I'll get tired if I keep flying."", 4: '1'}"
+85	85		301							{2: 'Luna', 3: 'Besides, in this wilderness far from human civilization, the night grows darker than you can imagine... You might lose sight of me from inside the vehicle.', 4: '1'}
+86	86		302							{2: 'Far from civilization, huh...', 3: '87'}
+87	87		301							{3: 'The serial number from the vehicle parts lingers in your mind.'}
+88	88		302							"{2: ""By the way, I've been meaning to ask..."", 3: '89'}"
+89	89		302							{2: 'You seem to know this place well.', 3: '90'}
+90	90		301							{2: 'Luna', 3: '...', 4: '1'}
+91	91		202							{1: '1'}
+92	92		301							{3: 'Luna turns her gaze to the window, making it clear she has no intention of answering.'}
+93	93		301							"{3: ""While you still feel a little uncertain, the strange feeling of unease that's been sitting in the back of your mind starts to make sense now.""}"
+94	94		401						1000.0	{1: '2', 2: '4230'}
+95	95		104							{1: '0|0|-100', 2: '2'}
+96	96		301							{3: 'The off-road vehicle rumbles to life, slowly pulling away from the abandoned camp and setting off into the wilderness.'}
+97	97		401							{1: '2', 2: '4232'}
+98	98		401							{1: '2', 2: '2608'}
+99	99		301							{3: 'Darkness swallows the world whole. Nothing exists here but the rumble of the engine and the whimpering wind.'}
+100	100		301							{3: 'After what feels like an eternity, you seem to recall something.'}
+101	101		302							{2: '(Turn on the interior light)', 3: '102'}
+102	102		301							{3: 'Warm yellow light fills the cramped interior of the vehicle.'}
+103	103		201							{1: '1', 2: '500884'}
+104	104		301							"{1: '1', 2: 'Luna', 3: ""You didn't need to turn on the light."", 4: '1'}"
+105	105		301							{3: 'The girl no longer fears darkness.'}
+106	106		301							{2: 'Luna', 3: 'I no longer...', 4: '1'}
+107	107		302							{2: 'I know.', 3: '108'}
+108	108		302							"{2: ""It's not about being afraid—"", 3: '109'}"
+109	109		302							{2: 'For light itself has meaning.', 3: '110'}
+110	110		204							{1: '1', 2: '1'}
+111	111		301							{3: 'Luna lets out a soft chuckle.'}
+112	112		301							"{2: 'Luna', 3: ""Getting quite philosophical here, aren't we?"", 4: '1'}"
+113	113		302							"{2: ""I can be even more so if you're interested."", 3: '114'}"
+114	114		301							"{2: 'Luna', 3: ""I'll pass on that, but... thank you."", 4: '1'}"
+115	115		302							"{2: ""It's rare to hear you say thank you."", 3: '116'}"
+116	116		204							{1: '1'}
+117	117		301							{2: 'Luna', 3: 'Courtesy begets courtesy. And stop copying what I say.', 4: '1'}
+118	118		301							{3: 'Luna curls up in the passenger seat, turning her face toward you.'}
+119	119		204							{1: '1'}
+120	120		301							{2: 'Luna', 3: 'I am an agent, after all. Are you certain you want to be this close to me?', 4: '1'}
+121	121		302							"{2: ""You said you wouldn't hurt me."", 3: '122'}"
+122	122		301							{2: 'Luna', 3: 'And you believe that?', 4: '1'}
+123	123		302							{2: 'Well, my gut feeling says so.', 3: '124'}
+124	124		302							"{2: ""I don't think you were lying."", 3: '125'}"
+125	125		301							{2: 'Luna', 3: 'You really are...', 4: '1'}
+126	126		204							{1: '1', 2: '4'}
+127	127		301							{3: 'Before Luna can finish her sentence, she suddenly sits bolt upright.'}
+128	128		302							"{2: ""What's wrong?"", 3: '129'}"
+129	129		301							"{2: 'Luna', 3: ""The storm is coming in soon. Let's go. At full speed."", 4: '1'}"
+130	130		401							{1: '1', 2: '202'}
+131	131		202							{1: '1', 6: '1'}
+132	132		301							"{3: ""In an instant, the world dissolves into nothing but windswept sand, as stones and gravel orchestrate a wild rhapsody against the vehicle's frame.""}"
+133	133		402							{1: '2608'}
+134	134		402							{1: '4232'}
+135	135		301							{3: 'The vehicle becomes nearly impossible to control. Worse still, you feel your mind clouded by the same lightheadedness—exactly what happened to you before you passed out at the camp...'}
+136	136		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '3'}
+137	137		401							{1: '2', 2: '4280'}
+138	138		301			RImgBg1Shake				{3: 'Finally, something snaps—the vehicle lurches sideways and begins to roll. This old, poorly maintained car has finally reached its end. As consciousness slips away, the world around you begins to blur...'}
+139	139		301							{3: 'The last thing you see before passing out cold is Luna reaching her hand out to you.'}
+140	140		201							{1: '1', 2: '500884', 3: '9'}
+141	141		301		1		AniZhuanchangBegin			{1: '1', 2: 'Luna', 3: 'Look out!', 4: '1'}

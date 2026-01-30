@@ -1,0 +1,509 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '120'}
+3	3		301			DialogEnable				{3: 'There was a door.'}
+4	4		301							{3: 'A door appeared in the darkness.'}
+5	5		401							{1: '2', 2: '2682'}
+6	6		301							{3: 'I remember when the door was shut. It made a loud noise.'}
+7	7		301							{2: '???', 3: 'How... disappointing you are.'}
+8	8		301							{2: '???', 3: '...'}
+9	9		301							"{2: '???', 3: ""You're wasting away what you could be worth.""}"
+10	10		301							{2: '???', 3: '...Ignoring all the effort made by others.'}
+11	11		301							{2: '???', 3: '...'}
+12	12		301							"{2: '???', 3: ""Ha. No one would want to be with you with the way you're acting now.""}"
+13	13		301							{2: '???', 3: '...'}
+14	14		301							{2: '???', 3: 'Let her go!'}
+15	15		401							{1: '1', 2: '36'}
+16	16		401							{1: '2', 2: '1515'}
+17	17		401					1500.0		{1: '2', 2: '1515'}
+18	18		301				AniZhuanchangBegin			{3: 'The terminal lights up with an incoming call, interrupting the dream before it starts.'}
+19	19		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+20	20		201							{1: '1', 2: '500555', 3: '4'}
+21	21		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+22	22		401							{1: '1', 2: '169'}
+23	23		301			AniZhuanchangEnd				{1: '1', 2: 'Vanessa', 3: '...', 4: '1'}
+24	24		301							{2: 'Vanessa', 3: 'Did I actually fall asleep?', 4: '1'}
+25	25		202							{1: '1', 6: '1'}
+26	26		301							{3: 'The annoying doctor in Star of Life insisted that Vanessa stay for another two weeks after her wounds had healed. She has now finally left the ward which had become somewhat familiar.'}
+27	27		301							{3: 'Whether intentional or not, she has yet to receive any combat missions after returning for almost a week.'}
+28	28		301							{3: 'It could be either the world has become too peaceful... or someone has turned her work hours into more time for recovery out of some silly considerations.'}
+29	29		301							{3: 'Vanessa quickly adjusts her posture and tidies the hair that has become messy during the short rest, preparing to start her duty.'}
+30	30		401							{1: '2', 2: '897'}
+31	31		301							{3: 'When everything is ready, she picks up the call.'}
+32	32		201							{1: '1', 2: '500340', 4: '-400'}
+33	33		201							{1: '2', 2: '500555', 3: '4', 4: '400'}
+34	34		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+35	35		301							{1: '1', 2: 'Junior Advisor', 3: 'Commandant Vanessa of Egret? Would this be a good time to discuss filling vacancies for your squad?', 4: '1'}
+36	36		301							{2: 'Vanessa', 3: 'Go ahead.', 4: '2'}
+37	37		301							"{2: 'Junior Advisor', 3: ""I haven't received any applications yet. Is there any problem with the submission process?"", 4: '1'}"
+38	38		301							"{2: 'Vanessa', 3: ""I saw the list of candidates and didn't think any one of them could replace Teasell."", 4: '2'}"
+39	39		301							"{2: 'Junior Advisor', 3: ""...I see. I will continue looking for potential members. I'm just slightly concerned that... Would it be alright for an elite squad to be understaffed?"", 4: '1'}"
+40	40		301							"{2: 'Junior Advisor', 3: ""Of course, it is ultimately up to the commandant to decide. I'm just suggesting it may be an option to choose a relatively fitting candidate for team integrity, given that the missions could be potentially challenging."", 4: '1'}"
+41	41		301							"{2: 'Vanessa', 3: ""I'll think about it."", 4: '2'}"
+42	42		301							{2: 'Junior Advisor', 3: 'How is Bambinata? The report you uploaded yesterday mentioned that...', 4: '1'}
+43	43		301							{2: 'Vanessa', 3: 'She just has to read the external memory module again like always.', 4: '2'}
+44	44		301							"{2: 'Vanessa', 3: ""The combat data is all coded into the external memory module. It won't affect her fighting abilities."", 4: '2'}"
+45	45		301							"{2: 'Vanessa', 3: ""I'll double-check her status after this."", 4: '2'}"
+46	46		301							{2: 'Junior Advisor', 3: 'I have no intent to question your capabilities, but the situation on the surface is still tense. There may be missions assigned to you very soon.', 4: '1'}
+47	47		301							{2: 'Junior Advisor', 3: 'If Egret decides to not recruit more members, please ensure the current member is in the best condition. This is for your safety.', 4: '1'}
+48	48		301							{2: 'Vanessa', 3: 'Understood.', 4: '2'}
+49	49		401							{1: '2', 2: '2566'}
+50	50		202							{1: '1', 2: '2', 6: '1'}
+51	51		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+52	52		301							{3: 'Vanessa hangs up and puts aside the terminal displaying the profiles of dozens of substitute members.'}
+53	53		301							{3: 'As the screen dims, the portraits and information of Constructs become unrecognizable.'}
+54	54		301							{3: 'The advisor had a point. After Teasell left, Bambinata became the only Construct left in Egret, greatly limiting their combat strength and capabilities in implementing tactics.'}
+55	55		301							{3: 'As the commandant, Vanessa already saw this coming sometime earlier. She has not submitted the application only because of one unanswered question.'}
+56	56		301							"{3: 'How can she create loyal ""toys""?'}"
+57	57		301							"{3: 'The foolish method used by that Chief obviously would not suit her. How could she create a false ""loving home"" with such irrational actions and laughable values?'}"
+58	58		301							{3: 'If everyone could obey her orders like Bambinata, things would be so much more efficient. Why should puppets have their own thoughts after all?'}
+59	59		301							{3: 'Why would they risk their own lives just to defect?'}
+60	60		301							{3: 'Before Teasell left at the seaside, she was actually keen to ask this question, but the pride deep within did not allow her to.'}
+61	61		301							{3: 'Thinking of the unfinished dream, she becomes increasingly restless for no reason.'}
+62	62		201							{1: '1', 2: '500555', 3: '4'}
+63	63		301				AniZhuanchangBegin			{1: '1', 2: 'Vanessa', 3: '...What a disgusting dream.', 4: '1'}
+64	64		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg'}
+65	65		201							{1: '1', 2: '500536'}
+66	66		301			AniZhuanchangEnd				{1: '1', 2: 'Bambinata', 3: 'Mistress... Are you feeling unwell today?', 4: '1'}
+67	67		301							"{3: ""Vanessa's expression and attire look nothing unusual, her pace of walking remaining unaltered. Still, her anxiety is spreading in the air like the light fragrance on her body.""}"
+68	68		301							"{3: ""Bambinata's blue bionic pupils carefully observe her mistress's actions, trying to figure out where her anxiety comes from.""}"
+69	69		202							{1: '1', 6: '1'}
+70	70		201							{1: '1', 2: '500536', 4: '-400'}
+71	71		201							{1: '2', 2: '500555', 3: '4', 4: '400'}
+72	72		301							{1: '1', 2: 'Vanessa', 3: 'Is your frame doing alright?', 4: '2'}
+73	73		301							{2: 'Bambinata', 3: 'The memory data in the external module has already been retrieved. The sync range is...', 4: '1'}
+74	74		301							"{2: 'Vanessa', 3: ""I'll have a look myself."", 4: '2'}"
+75	75		301							{2: 'Bambinata', 3: 'Yes, Mistress.', 4: '1'}
+76	76		301							"{3: ""Vanessa connects Bambinata's external memory module to her terminal and starts to check sector by sector.""}"
+77	77		301							{2: 'Vanessa', 3: 'The read time of combat data is slower than before... Could this be because it lacked regular maintenance while on Earth?', 4: '2'}
+78	78		301							{2: 'Bambinata', 3: 'Sorry... Bambinata should have discovered it sooner...', 4: '1'}
+79	79		301							"{2: 'Vanessa', 3: ""After this, I want you to go to Asimov and ask him to check your external memory module. I'll send the request to him later."", 4: '2'}"
+80	80		301							{2: 'Bambinata', 3: 'Yes, Mistress.', 4: '1'}
+81	81		202							{1: '1', 2: '2', 6: '1'}
+82	82		301							"{3: 'Bambinata\'s ""amnesia"" used to stir up some debate. In the early days, the Construct operation carried greater risks, and the consequences were often revealed soon after the frame was activated.'}"
+83	83		301							{3: 'To researchers—particularly those whose main field of study included the M.I.N.D.—Bambinata was definitely an important subject as her condition was stable for quite some time before the inability to recall memory data began to appear intermittently.'}
+84	84		301							{3: 'But as the war progressed, all the unresolved Construct symptoms and potential problems had to be put aside, and conservative measures were taken to ensure that the research subjects could fulfill their duties normally for the time being.'}
+85	85		301							{3: 'After Vanessa took Bambinata into her squad, Asimov upgraded her original memory assist device and configured some built-in data that allowed her to read important instructions immediately at any time after her symptoms took place, so they would not impact her battle performance significantly.'}
+86	86		301							"{3: ""But apart from the necessary data for battle and missions, the external memory module cannot store Bambinata's memory infinitely. Once it reaches the capacity limit, the earlier memory will be wiped as new data is written into the device.""}"
+87	87		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+88	88		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+89	89		504							{1: '0.7'}
+90	90		201							{1: '1', 2: '500004'}
+91	91		301							"{1: '1', 2: 'Asimov', 3: 'This is all I can do for now. My guess is that her symptoms could be the after-effects of ""the experiment,"" but I cannot make a more concrete conclusion without its detailed data.', 4: '1'}"
+92	92		301							"{2: 'Asimov', 3: ""The key to solving Bambinata's predicament is to figure out how the Inver-Device causes the conflict in her M.I.N.D. and how to respond to it."", 4: '1'}"
+93	93		301							{2: 'Asimov', 3: 'But all the current research on the Inver-Device is still in its exploratory stage. It is nearly impossible to find out the correct way to avoid or resolve her problem under the current conditions.', 4: '1'}
+94	94		301							"{2: 'Asimov', 3: ""Perhaps when we have finally deciphered the secrets of the Inver-Device, we will be able to find the missing pieces that resolve her complications. But I'm quite certain that would be an impossible task for now."", 4: '1'}"
+95	95		201							{1: '1', 2: '500293', 3: '4'}
+96	96		301							{1: '1', 2: 'Vanessa', 3: '...', 4: '1'}
+97	97		201							{1: '1', 2: '500004'}
+98	98		301							"{1: '1', 2: 'Asimov', 3: 'The good news is that her ""amnesia"" isn\'t due to memory loss. The data entered her Deep M.I.N.D. and couldn\'t be retrieved. We humans also have many things we can\'t recall, but these memories still exist in the subconscious.', 4: '1'}"
+99	99		301							{2: 'Asimov', 3: 'In other words, if we can resolve this problem, she will be able to recall all her memories in theory.', 4: '1'}
+100	100		201							{1: '1', 2: '500293', 3: '4'}
+101	101		301							{1: '1', 2: 'Vanessa', 3: 'If you think this is the most appropriate way to handle her situation, so be it.', 4: '1'}
+102	102		204							{1: '1'}
+103	103		301							"{2: 'Vanessa', 3: ""I don't care what happens later... I just need my Constructs to obey me, that's all."", 4: '1'}"
+104	104		301							"{2: 'Vanessa', 3: ""Isn't that right, Bambinata?"", 4: '1'}"
+105	105		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+106	106		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg'}
+107	107		201							{1: '1', 2: '500555', 3: '4'}
+108	108		504							{1: '0'}
+109	109		301							{1: '1', 2: 'Vanessa', 3: 'Memory data continuity is... good. The starting date is...', 4: '1'}
+110	110		301							"{3: ""Vanessa's fingers freeze upon the terminal.""}"
+111	111		301							{3: 'That date—those numbers—is like a trigger in her head. Merely seeing them brings back the scenes of her past along with intangible pain.'}
+112	112		202							{1: '1', 6: '1'}
+113	113		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+114	114		504							{1: '0.7'}
+115	115		101					500.0		{1: 'Assets/Product/Texture/Image/BgStory/Bgstory457.jpg'}
+116	116		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+117	117		101					500.0		{1: 'Assets/Product/Texture/Image/BgStory/Bgstory458.jpg'}
+118	118		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+119	119		101					500.0		{1: 'Assets/Product/Texture/Image/BgStory/Bgstory286.png'}
+120	120		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+121	121		101					500.0		{1: 'Assets/Product/Texture/Image/BgStory/Bgstory466.jpg'}
+122	122		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+123	123		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory378.png'}
+124	124		201							{1: '1', 2: '1031001', 4: '-600', 7: '1'}
+125	125		201							{1: '2', 2: '500166', 3: '5', 7: '1'}
+126	126		201					500.0		{1: '3', 2: '500026', 3: '10', 4: '600', 7: '1'}
+127	127		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+128	128		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+129	129		504							{1: '0'}
+130	130		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg'}
+131	131		301							{3: 'The unforgettable wounds, pulsating Red Tide, incapacitated Chief lying in the basement, and Gray Raven with their worn-out frames...'}
+132	132		401							{1: '2', 2: '897'}
+133	133		301							"{3: 'Somehow, an indescribable feeling drives her to tap ""Reproduce Memory Data"" on the terminal.'}"
+134	134		401							{1: '1', 2: '36'}
+135	135		401							{1: '2', 2: '1515'}
+136	136		304							{1: 'Establishing memory scenes >>>>>> 100%', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}
+137	137		401							{1: '2', 2: '1515'}
+138	138		304				AniZhuanchangBegin			{1: 'Reproducing memory data >>>>>> 100%', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 9: '1'}
+139	139		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory305.png'}
+140	140		201							{1: '1', 2: '500013', 7: '1'}
+141	141		401							{1: '2', 2: '1508'}
+142	142		301			AniZhuanchangEnd				{1: '1', 2: 'Hetero-Creature', 3: '!!', 4: '1'}
+143	143		401							{1: '2', 2: '13071102'}
+144	144		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+145	145		502						700.0	{1: 'PanelActor1Shake'}
+146	146		505							{1: 'PanelActor1Shake'}
+147	147		401							{1: '2', 2: '2603'}
+148	148		203							{1: '1', 2: '0.2', 4: '-1200'}
+149	149		202						500.0	{1: '1'}
+150	150		401							{1: '1', 2: '202'}
+151	151		201							{1: '1', 2: '500536', 3: '4'}
+152	152		301							"{1: '1', 2: 'Bambinata', 3: ""You're not allowed to pass through here."", 4: '1'}"
+153	153		201							{1: '1', 2: '500537'}
+154	154		301							{1: '1', 2: 'Vanessa', 3: 'Huff... How long has Gray Raven been gone?', 4: '1'}
+155	155		201							{1: '1', 2: '500536'}
+156	156		301							{1: '1', 2: 'Bambinata', 3: '1 hour 54 minutes since engaging with the enemy—', 4: '1'}
+157	157		201							{1: '1', 2: '500537'}
+158	158		301							{1: '1', 2: 'Vanessa', 3: 'Not even two hours?', 4: '1'}
+159	159		301							"{2: 'Vanessa', 3: ""Cough. The enemies just won't stop coming... In the end, I'm also doing such silly things—"", 4: '1'}"
+160	160		202							{1: '1', 6: '1'}
+161	161		401							{1: '2', 2: '1508'}
+162	162		201							{1: '1', 2: '500013', 7: '1'}
+163	163		301							{1: '1', 2: 'Hetero-Creature', 3: 'Squeak—!', 4: '1'}
+164	164		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+165	165		201							{1: '2', 2: '500536', 3: '4', 4: '800'}
+166	166		203						100.0	{1: '2', 2: '0.1', 3: '200'}
+167	167		401							{1: '2', 2: '11106007'}
+168	168		202							{1: '1'}
+169	169		301			RImgBg1Shake				{1: '1', 2: 'Bambinata', 3: 'Watch out!', 4: '2'}
+170	170		301							"{3: ""Bambinata turns around to clear the enemies that lunge at Vanessa's flank, but the position she was guarding is immediately taken by more enemies.""}"
+171	171		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+172	172		201							{1: '1', 2: '500537', 4: '-200'}
+173	173		301							{1: '1', 3: 'With her wounds, Vanessa has reached her physical limit. Bambinata holds her with one hand while trying to block the enemy attacks with the other.'}
+174	174		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+175	175		202							{1: '1', 2: '2', 6: '1'}
+176	176		401							{1: '2', 2: '737'}
+177	177		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+178	178		301			RImgBg1Shake				{3: 'She puts explosives on a damaged short-range drone, blowing up a large wave of enemies. But more Hetero-Creatures just swarm up, trampling over the remains of their fallen kin.'}
+179	179		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+180	180		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory306.png', 3: '0', 4: '1', 5: '2'}
+181	181		301							{3: 'The two of them continue to fight and retreat until the Red Tide has pushed them to a corner of the street.'}
+182	182		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+183	183		301							{3: 'Bambinata lets Vanessa lean on a pile of rubble, trying to save her some stamina.'}
+184	184		201							{1: '1', 2: '500536', 3: '4'}
+185	185		301							{1: '1', 2: 'Bambinata', 3: 'Bambinata is ready.', 4: '1'}
+186	186		301							{2: 'Bambinata', 3: 'Mistress, please take a break. Bambinata will hold them off until you can walk on your own.', 4: '1'}
+187	187		301							{2: 'Bambinata', 3: 'You can try to contact Gray Raven with this transmitter... Here is the detonator and the rest of the medicines and serum...', 4: '1'}
+188	188		301							{3: 'Seeing no response from Vanessa, Bambinata gently puts the detonator in her dominant hand.'}
+189	189		301							"{2: 'Bambinata', 3: 'The ""secret weapon"" was attached long ago. Bambinata has set it to the delayed mode that you often use. Once started, Bambinata will use the last 5 seconds to adjust the detonating position.', 4: '1'}"
+190	190		301							{3: 'Bambinata holds her arm up to show Vanessa the explosives attached to her frame.'}
+191	191		301							{3: 'The location of the explosives has been carefully calculated. Under extreme circumstances, it allows Bambinata to remain conscious for one extra instant before she is blown to pieces.'}
+192	192		301							"{3: ""That brief instant can maximize the value of this devotee's sacrifice.""}"
+193	193		201							{1: '1', 2: '500013', 7: '1'}
+194	194		203							{1: '1', 2: '0.1', 5: '-100'}
+195	195		301							{1: '1', 2: 'Hetero-Creature', 3: 'Rargh—!', 4: '1'}
+196	196		401							{1: '2', 2: '13071102'}
+197	197		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+198	198		502						700.0	{1: 'PanelActor1Shake'}
+199	199		505							{1: 'PanelActor1Shake'}
+200	200		401							{1: '2', 2: '2603'}
+201	201		203							{1: '1', 2: '0.2', 4: '-1200'}
+202	202		202						500.0	{1: '1'}
+203	203		201							{1: '1', 2: '500536', 3: '4'}
+204	204		301							{1: '1', 2: 'Bambinata', 3: '!!', 4: '1'}
+205	205		202							{1: '1', 6: '1'}
+206	206		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+207	207		401							{1: '2', 2: '13071301'}
+208	208		301							{3: 'Bambinata turns around, trying to push the enemies back. Her petite body dances among the crimson waves like a splash of foam that refuses to be carried away.'}
+209	209		301							{3: 'She may be able to disregard fatigue and pain, but her body is unable to withstand the onslaught of the tide of doom.'}
+210	210		201							{1: '1', 2: '500537'}
+211	211		301							{1: '1', 2: 'Vanessa', 3: 'This should be enough for Gray Raven to...', 4: '1'}
+212	212		204							{1: '1', 2: '13'}
+213	213		301							{2: 'Vanessa', 3: 'You better live on and bear the weight of my sacrifice for the rest of your lives.', 4: '1'}
+214	214		301							{3: 'Vanessa tries to sit up, but the excruciating pain from her wounds prevents her from doing so.'}
+215	215		204							{1: '1'}
+216	216		301							{2: 'Vanessa', 3: '...', 4: '1'}
+217	217		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+218	218		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+219	219		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory305.png'}
+220	220		504							{1: '0.7'}
+221	221		201							{1: '1', 2: '1031001', 3: '5'}
+222	222		301							"{1: '1', 2: 'Liv', 3: ""We'll stick together and overcome any obstacle. We'll never flee the battlefield because of hardship or fear!"", 4: '1'}"
+223	223		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+224	224		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory306.png'}
+225	225		504							{1: '0'}
+226	226		201							{1: '1', 2: '500537'}
+227	227		301							"{1: '1', 3: ""Vanessa recalls Liv's words. Gazing at the blue figure inside the Red Tide, she makes an almost unnoticeable smile.""}"
+228	228		301							{2: 'Vanessa', 3: 'Bambinata...', 4: '1'}
+229	229		301							"{2: 'Vanessa', 3: ""It's been so long... Is this... enough?"", 4: '1'}"
+230	230		301							"{3: ""The detonator slips from Vanessa's hand and falls to the ground, with fresh blood still on it."", 4: '1'}"
+231	231		301							{2: 'Vanessa', 3: '...I really want a shower... At least not like this...', 4: '1'}
+232	232		201							{1: '1', 2: '500536', 3: '7', 7: '1'}
+233	233		301							{1: '1', 2: 'Bambinata', 3: 'No—', 4: '1'}
+234	234		201							{1: '1', 2: '500013'}
+235	235		401							{1: '2', 2: '1508'}
+236	236		203							{1: '1', 2: '0.1', 5: '-100'}
+237	237		301							{1: '1', 2: 'Hetero-Creature', 3: '!!', 4: '1'}
+238	238		401							{1: '2', 2: '11106007'}
+239	239		202							{1: '1', 6: '1'}
+240	240		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+241	241		201							{1: '1', 2: '500536', 3: '9', 7: '1'}
+242	242		502							{1: 'PanelActor1Shake'}
+243	243		301							{1: '1', 2: 'Bambinata', 3: 'Aaargh!', 4: '1'}
+244	244		505							{1: 'PanelActor1Shake'}
+245	245		301							"{3: ""Bambinata gets distracted for one second and immediately receives a few deep wounds. Without Vanessa's careful maintenance, she looks like an abandoned old toy.""}"
+246	246		301							{3: 'The broken doll is utilizing all possible computing power to calculate a chance for her mistress to survive.'}
+247	247		301							"{3: ""After simulating all the methods that she can make use of herself, Bambinata still can't find an answer.""}"
+248	248		301							{3: 'But she must find one.'}
+249	249		301							{3: 'Otherwise, everything will be in vain.'}
+250	250		301							"{3: 'The ""secret weapon.""'}"
+251	251		301							{3: 'The countdown.'}
+252	252		301							{3: 'The bloody battle.'}
+253	253		301							{3: 'The... Construct frame.'}
+254	254		201							{1: '2', 2: '500013', 4: '-400', 5: '-200', 8: '1'}
+255	255		201							{1: '3', 2: '500013', 4: '-800'}
+256	256		201							{1: '4', 2: '500013', 4: '400', 5: '-200', 8: '1'}
+257	257		201							{1: '5', 2: '500013', 4: '800'}
+258	258		301							{1: '1', 3: 'Hetero-Creatures will not wonder why the Construct in front has slowed down. All they want is to tear their opponents apart.'}
+259	259		401							{1: '2', 2: '1508'}
+260	260		301							{1: '1', 2: 'Hetero-Creature', 3: 'Squeak—!', 4: '2', 5: '3', 6: '4', 7: '5'}
+261	261		401							{1: '2', 2: '2603'}
+262	262		203							{1: '2', 2: '0.2', 3: '-400', 4: '-1200'}
+263	263		203							{1: '4', 2: '0.2', 3: '400', 4: '-1200'}
+264	264		202							{1: '2', 2: '4'}
+265	265		301							{3: 'Before Bambinata is devoured by the Hetero-Creatures in front of her, they suddenly collapse to the ground without any warning.'}
+266	266		202							{1: '1', 2: '3', 3: '5', 6: '1'}
+267	267		201							{1: '1', 2: '500013', 4: '-600'}
+268	268		201							{1: '2', 2: '500013'}
+269	269		201							{1: '3', 2: '500013', 4: '600'}
+270	270		301							{1: '1', 3: 'Then the enemies that are farther away also stop attacking. They just stand still, looking lost.'}
+271	271		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+272	272		201							{1: '1', 2: '500562'}
+273	273		401							{1: '1', 2: '36'}
+274	274		301							{1: '1', 3: 'A tall, slender figure walks toward them, his back facing the sun.'}
+275	275		401							{1: '1', 2: '211'}
+276	276		301							"{2: '???', 3: ""...I didn't expect temporary access could be this powerful."", 4: '1'}"
+277	277		202							{1: '1', 6: '1'}
+278	278		201							{1: '1', 2: '500536', 3: '4'}
+279	279		301							{1: '1', 2: 'Bambinata', 3: 'Teasell...', 4: '1'}
+280	280		201							{1: '1', 2: '500537'}
+281	281		301							"{1: '1', 3: ""Hearing the name from Bambinata's mouth, Vanessa tries to open her eyes on the brink of unconsciousness.""}"
+282	282		301							{2: 'Vanessa', 3: '...?', 4: '1'}
+283	283		301							"{3: ""Vanessa's nearly stalled mind struggles to move again. She looks at the figure that appears from the wave of Hetero-Creatures, somewhat shocked.""}"
+284	284		301							{3: 'When a Construct becomes lost for a prolonged time, they have often been devoured by the Red Tide or have chosen to flee the battlefield. To any commandant, the least desirable situation would be to see their once comrades standing against themselves.'}
+285	285		301							"{3: 'After a brief moment of surprise, Vanessa immediately realizes that the person in front is no longer that ""toy"" who obeys all her orders, which means there is only one way to deal with him.'}"
+286	286		204							{1: '1', 2: '13'}
+287	287		301							{2: 'Vanessa', 3: 'Hmph... Did you purposely make the minions stop so you can laugh at your former mistress up close?', 4: '1'}
+288	288		301							{2: 'Vanessa', 3: 'Or did you come to me to share some experience of manipulating your own puppets?', 4: '1'}
+289	289		201							{1: '1', 2: '500523'}
+290	290		301							{1: '1', 3: 'Teasell does not answer. He just continues walking toward Vanessa until Bambinata holds the Mantis Blades that have ruthlessly cut through numerous enemies against him.'}
+291	291		201							{1: '1', 2: '500536', 3: '4'}
+292	292		301							{1: '1', 2: 'Bambinata', 3: 'Stay back, Teasell.', 4: '1'}
+293	293		201							{1: '1', 2: '500537'}
+294	294		301							"{1: '1', 2: 'Vanessa', 3: ""Let him come. He didn't have to show up if he wanted to kill me."", 4: '1'}"
+295	295		301							{2: 'Vanessa', 3: 'I want to hear what this traitorous puppet has to say in the final moment.', 4: '1'}
+296	296		201							{1: '1', 2: '500536', 3: '4'}
+297	297		301							{1: '1', 2: 'Bambinata', 3: 'But...', 4: '1'}
+298	298		201							{1: '1', 2: '500537'}
+299	299		301							{1: '1', 2: 'Vanessa', 3: 'Let him come, Bambinata.', 4: '1'}
+300	300		201							{1: '1', 2: '500536', 3: '4'}
+301	301		301				AniZhuanchangBegin			{1: '1', 2: 'Bambinata', 3: 'Yes, Mistress...', 4: '1'}
+302	302		202							{1: '1', 6: '1'}
+303	303		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3101_05.jpg'}
+304	304		301			AniZhuanchangEnd				"{3: ""Bambinata runs to Vanessa first. She sits down to grab Vanessa's hand, still openly showing her hostility against Teasell.""}"
+305	305		301							"{3: ""Teasell just calmly and slowly crouches down, taking a clean bandage roll and medicine from his outfit. He carefully rewraps the dressing on Vanessa's left eye.""}"
+306	306		301							"{3: ""After skillfully securing the end of the bandage, he puts the empty roll next to Vanessa's head.""}"
+307	307		301							{3: 'The empty bandage case falls to the ground, making a hollow sound.'}
+308	308		301							{2: 'Teasell', 3: 'This is the last bit of supplies I took from Babylonia.'}
+309	309		301							"{3: ""Teasell looks directly into Vanessa's eyes. His voice is completely calm.""}"
+310	310		301							{3: 'He picks up the blood-soaked detonator and holds it in his hand like Vanessa used to.'}
+311	311		301							{2: 'Vanessa', 3: '—!'}
+312	312		301							"{2: 'Teasell', 3: ""I've been waiting for you to press it.""}"
+313	313		301							{2: 'Teasell', 3: 'Now that I think about it, I can remember your face each time you pressed the detonator.'}
+314	314		301							{2: 'Teasell', 3: 'I forgot when it started, but I often wondered how you would press the button when it was my turn to be the bait.'}
+315	315		301							"{2: 'Teasell', 3: ""But I can guess it without having to experience it. You probably won't have any emotion at all.""}"
+316	316		301							"{2: 'Teasell', 3: 'I hated your smile, teasing, sarcasm, or even satisfaction. They were all the feedback given by an ""owner"" to their belongings.'}"
+317	317		301							"{2: 'Teasell', 3: 'But when your ""belongings"" were blown up into pieces, you didn\'t even want to spare a laugh for the show.'}"
+318	318		301							"{2: 'Teasell', 3: 'To you, they—no, we—are just such objects. When we were alive, you used us like toys. When we vanished, you even stripped us of our very last purpose as ""objects.""'}"
+319	319		301							{2: 'Vanessa', 3: '...'}
+320	320		301							"{2: 'Teasell', 3: ""Bambinata may be your favorite. That's why I've been waiting to see your face when you blow her up.""}"
+321	321		301							"{2: 'Teasell', 3: 'After you kill your favorite and most obedient ""toy,"" I will take your life with my own hands.'}"
+322	322		301							"{2: 'Bambinata', 3: ""Bambinata won't let you do that, Teasell!""}"
+323	323		301							{3: 'Teasell looks at Bambinata. His finger is still rubbing on the button of the detonator.'}
+324	324		301							"{3: ""Vanessa sneers. Her and Teasell's positions have now reversed, but her pride has not dwindled even the slightest.""}"
+325	325		301							{2: 'Vanessa', 3: 'I have trained you well... Hah, your twisted sense of humor deserves my praise.'}
+326	326		301							"{2: 'Vanessa', 3: 'Do it, then. You can also free your fellow ""toy,"" Bambinata.'}"
+327	327		301							"{2: 'Teasell', 3: ""That's what I don't understand.""}"
+328	328		301							"{2: 'Teasell', 3: 'I just cannot figure out how Gray Raven persuaded you to stay back and even made you change your attitude toward your ""toys.""'}"
+329	329		301							{2: 'Teasell', 3: 'To you, their way of doing things has always been extremely ridiculous.'}
+330	330		301							{2: 'Vanessa', 3: 'If you really want to know...'}
+331	331		301							"{2: 'Teasell', 3: ""...No, actually, I don't have to know anymore.""}"
+332	332		301							"{2: 'Teasell', 3: ""I just want my body to belong to myself and myself only. Nothing else matters to me, whether it's you, Egret, or Gray Raven.""}"
+333	333		301							"{3: ""Teasell's face is still calm, like a still lake under the moonlight.""}"
+334	334		301							"{2: 'Teasell', 3: 'The name ""Teasell"" was chosen by you. I don\'t want it to appear on that monument as a member of Egret next to your name.'}"
+335	335		301							"{2: 'Teasell', 3: 'That\'s why I came here in person to announce to you that there will no longer be a ""Teasell"" in this world after this.'}"
+336	336		301							{2: 'Vanessa', 3: 'You...'}
+337	337		301							{3: 'Vanessa still has something to say, but an overwhelming sense of exhaustion knocks her out cold.'}
+338	338		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3101_04.jpg', 3: '0', 4: '1', 5: '2'}
+339	339		301							{2: 'Bambinata', 3: 'Mistress!'}
+340	340		301							"{2: 'Teasell', 3: ""...She's not dead. She just passed out.""}"
+341	341		301							"{3: ""Teasell wants to lift Vanessa up, but Bambinata gets in his way. Her blade has already left a mark on Teasell's arm.""}"
+342	342		301							"{2: 'Bambinata', 3: ""Don't touch her.""}"
+343	343		301							{2: 'Teasell', 3: 'You better let me through. Otherwise, she will just die here.'}
+344	344		301							{2: 'Teasell', 3: '...Do you really not hate her at all?'}
+345	345		301							{2: 'Bambinata', 3: 'Why would Bambinata hate Mistress?'}
+346	346		301							"{2: 'Teasell', 3: ""I heard that she might have tampered with your M.I.N.D., so I understand your... unconditional obedience. But don't you want to experience what it feels like to have everything decided by yourself, for yourself?""}"
+347	347		301							"{2: 'Teasell', 3: ""You can do what you want to do instead of merely following someone else's orders. You can be a free... individual.""}"
+348	348		301							{2: 'Bambinata', 3: 'Bambinata wants to do what Mistress wishes.'}
+349	349		301							"{2: 'Bambinata', 3: ""Freedom isn't a necessary condition to complete Bambinata's missions.""}"
+350	350		301							"{2: 'Teasell', 3: 'Looks like you aren\'t ready yet... If you finally understand what I said one day, try to find me again. I can introduce you to ""them.""'}"
+351	351		301							{2: 'Teasell', 3: 'Then you will realize what freedom actually means.'}
+352	352		401							{1: '1', 2: '36'}
+353	353		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+354	354		401							{1: '2', 2: '937'}
+355	355		304							{1: 'Memory data reproduction ended >>>>>>', 2: 'ff4e4eff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 9: '1'}
+356	356		401							{1: '1', 2: '169'}
+357	357		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+358	358		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg'}
+359	359		301			AniZhuanchangEnd				{3: 'Vanessa presses the stop button. Her finger hovers above the data edit menu without realizing it.'}
+360	360		301							{3: 'She never thought that Teasell would approach Bambinata after she passed out.'}
+361	361		301							{3: 'Bambinata did not hesitate one bit, nor was there any sign of her frame being hacked into. Still—'}
+362	362		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+363	363		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory306.png'}
+364	364		504							{1: '0.7'}
+365	365		201							{1: '1', 2: '500523'}
+366	366		301							"{1: '1', 2: 'Teasell', 3: 'If you finally understand what I said one day, try to find me again. I can introduce you to ""them.""', 4: '1'}"
+367	367		202							{1: '1', 6: '1'}
+368	368		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+369	369		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg'}
+370	370		504							{1: '0'}
+371	371		301							"{3: 'Will Bambinata choose to leave her when she finally understands the meaning of ""freedom""?'}"
+372	372		301							"{3: ""Ultimately, it was not Bambinata's choice to join Egret as a combat Construct. If she ever...""}"
+373	373		201							{1: '1', 2: '500555', 3: '4', 4: '400'}
+374	374		201							{1: '2', 2: '500536', 4: '-400'}
+375	375		301							{1: '1', 2: 'Vanessa', 3: '...Go to Asimov now. He can find out about your other problems.', 4: '1'}
+376	376		301							{2: 'Bambinata', 3: 'Okay. Are you staying here, Mistress?', 4: '2'}
+377	377		301							{2: 'Vanessa', 3: 'Just go.', 4: '1'}
+378	378		202							{1: '2'}
+379	379		301							{3: 'Bambinata stops asking. She just salutes Vanessa and leaves.'}
+380	380		202							{1: '1', 6: '1'}
+381	381		201							{1: '1', 2: '500555', 3: '4'}
+382	382		301							"{1: '1', 3: ""Vanessa opens Bambinata's sleeping pod. Without exception, all the accessories inside were hand-picked by Vanessa herself.""}"
+383	383		301							{3: 'For some reason, she gets even more annoyed but cannot figure out where this emotion originated from.'}
+384	384		401							{1: '2', 2: '1512'}
+385	385		301			RImgBg1Shake	AniZhuanchangBegin			"{3: ""Vanessa throws a punch at the sleeping pod's alloy shell, making a dry, muffled thud.""}"
+386	386		202							{1: '1', 6: '1'}
+387	387		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+388	388		301			AniZhuanchangEnd				{3: 'If Mistress does not want to talk about it, do not ask.'}
+389	389		301							"{3: 'This is the ""pattern"" that Bambinata has discovered through numerous attempts. She figures this would be the style of interaction most accepted by her mistress.'}"
+390	390		301							{3: 'When Mistress is willing to share her feelings with Bambinata, she will naturally be able to understand them. As for the anxiety that arises during this period, Bambinata has already learned to suppress it deep within herself.'}
+391	391		201							{1: '1', 2: '500536'}
+392	392		301							{1: '1', 2: 'Bambinata', 3: 'Construct Bambinata from Egret, requesting external memory module check-up.', 4: '1'}
+393	393		201							{1: '1', 2: '500059'}
+394	394		301							{1: '1', 2: 'Researcher 1', 3: 'Here you are again. Come, I have half an hour of free time. He will take over after that.', 4: '1'}
+395	395		201							{1: '1', 2: '500058'}
+396	396		301							{1: '1', 3: 'The researcher points to the other researcher next to herself. He is wearing a trainee tag and looks a little nervous.'}
+397	397		301							{2: 'Researcher 2', 3: 'Is this that Construct from Egret? The classic case of Construct amnesia?', 4: '1'}
+398	398		301							"{3: ""He immediately covers his mouth. Pointing out the subject's condition in front of herself is way too harsh. Besides, Bambinata is more like a special research case than a patient to them.""}"
+399	399		301							{3: 'While he is hesitating whether to apologize for his rudeness, the other two have already continued their conversation.'}
+400	400		202							{1: '1', 6: '1'}
+401	401		201							{1: '1', 2: '500059', 4: '-400'}
+402	402		201							{1: '2', 2: '500536', 4: '400'}
+403	403		301							{1: '1', 2: 'Researcher 1', 3: 'Bambinata, are you here for a regular check-up, or are you already experiencing some issues?', 4: '1'}
+404	404		301							{2: 'Bambinata', 3: 'Mistress said the data reading speed has become slower. It might be because it lacked regular maintenance while on Earth.', 4: '2'}
+405	405		301							{2: 'Researcher 1', 3: 'Let me see... Oh, you are having symptoms again. No wonder.', 4: '1'}
+406	406		301							"{2: 'Researcher 1', 3: ""If that's the case, let's run a thorough check. Better safe than sorry. Just wait here while I get the M.I.N.D. probe ready."", 4: '1'}"
+407	407		301							{2: 'Bambinata', 3: 'Understood.', 4: '2'}
+408	408		202							{1: '1', 2: '2'}
+409	409		401							{1: '2', 2: '2560'}
+410	410		301							{3: 'The experienced researcher walks into the room next door where the devices are stored. A series of beeps can be heard as she configures the machine.'}
+411	411		201							{1: '1', 2: '500058', 4: '400'}
+412	412		201							{1: '2', 2: '500536', 4: '-400'}
+413	413		301							"{1: '1', 2: 'Researcher 2', 3: ""Hi, Bambinata, I am... Oops, sorry. My name doesn't really matter. Forget about it. You don't have to call me by my name."", 4: '1'}"
+414	414		301							{3: 'Perhaps concerned that his name would bring Bambinata more unnecessary memories, the new researcher gives up introducing himself.'}
+415	415		301							{2: 'Bambinata', 3: 'Okay...', 4: '2'}
+416	416		301							"{2: 'Researcher 2', 3: ""Sorry for just now. I didn't mean it... I have heard of you but didn't expect to meet you on my first day... Wait—that doesn't sound right either..."", 4: '1'}"
+417	417		301							"{2: 'Researcher 2', 3: ""What I mean is I'm sorry you're having these symptoms."", 4: '1'}"
+418	418		301							{3: 'Bambinata looks down but soon raises her head again.'}
+419	419		301							"{2: 'Bambinata', 3: ""That's alright. Everybody has gotten used to it. All that matters is Bambinata can still be of use."", 4: '2'}"
+420	420		301							{3: 'Used to it? The researcher is speechless for a moment. That does not change the sad truth. If even the empathy of others has been worn away, how many times has she suffered from these helpless moments?'}
+421	421		202							{1: '1', 2: '2', 6: '1'}
+422	422		201							{1: '1', 2: '500059'}
+423	423		301							{1: '1', 2: 'Researcher 1', 3: 'Alright, intern. Take this and set it up for her.', 4: '1'}
+424	424		201							{1: '1', 2: '500058'}
+425	425		301							{1: '1', 2: 'Researcher 2', 3: 'A-ah, got it!', 4: '1'}
+426	426		202							{1: '1'}
+427	427		301							{3: 'The new researcher awkwardly sets up the device for Bambinata. Although he knows that connecting the device will not cause much pain to Constructs as it would for a human, he is still trying to perform the task as gently as possible.'}
+428	428		301							{3: 'Bambinata lies down on the metal bed just as she has done so many times before. Before closing her eyes, she takes a good look at the researcher.'}
+429	429		301							{3: '—If he said his name just now, at least it would be stored in the external memory module for some time.'}
+430	430		301				AniZhuanchangBegin			{3: 'With this meaningless thought in mind, Bambinata follows the instructions, ceasing to think.'}
+431	431		201							{1: '1', 2: '500019', 4: '-400'}
+432	432		201							{1: '2', 2: '500019', 4: '400'}
+433	433		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+434	434		301			AniZhuanchangEnd				"{1: '1', 2: 'Construct 1', 3: ""You didn't see it in person. That monster was taller than a 10-story building in the end! Anyone would have freaked out!"", 4: '1'}"
+435	435		301							"{2: 'Construct 2', 3: ""Ho? Why aren't you bragging about yourself this time?"", 4: '2'}"
+436	436		301							{2: 'Construct 1', 3: 'Individual capability means nothing on a battlefield like that. Can you demolish a building by yourself?', 4: '1'}
+437	437		301							"{2: 'Construct 1', 3: ""Couldn't do much even if there were a dozen of me."", 4: '1'}"
+438	438		301							{2: 'Construct 2', 3: 'A dozen of you would hardly have any impact. I heard that almost all the elite squads on standby were dispatched in that battle.', 4: '2'}
+439	439		301							"{2: 'Construct 1', 3: ""Anyway, thank goodness it's all over. I was prepared to die in the ocean."", 4: '1'}"
+440	440		301							{2: 'Construct 2', 3: 'So what?! We can always start again in a new frame.', 4: '2'}
+441	441		301							"{2: 'Construct 1', 3: ""Talk as much as you want, but can you swear you weren't scared at all when you got badly wounded last time?"", 4: '1'}"
+442	442		301							"{2: 'Construct 2', 3: ""Do you think I'm lame like you? I don't brag about my glorious days!"", 4: '2'}"
+443	443		301							"{2: 'Construct 1', 3: ""Anyway, you've been recovering for quite some time already. You are returning to duty, aren't you? Which squad are you going to?"", 4: '1'}"
+444	444		301							"{2: 'Construct 2', 3: ""I haven't decided yet. I was actually thinking of applying to become an elite member."", 4: '2'}"
+445	445		301							"{2: 'Construct 1', 3: ""What? You've been working hard behind me, haven't you?"", 4: '1'}"
+446	446		301							"{2: 'Construct 1', 3: ""What a coincidence, I just heard that Egret was in need of members. Not too sure about the details, though. There wasn't any obituary either. People say one of them had gone missing."", 4: '1'}"
+447	447		301							{2: 'Construct 2', 3: 'Egret? You serious? Hell no... I heard that guy defected!', 4: '2'}
+448	448		301							{2: 'Construct 1', 3: '...What?', 4: '1'}
+449	449		301							{2: 'Construct 1', 3: 'For real? Their commandant was top-notch. They never suffered any significant loss.', 4: '1'}
+450	450		301							{2: 'Construct 2', 3: 'There must be a reason behind it... Is that thing on your neck filled with trash? Can you at least use your brain?', 4: '2'}
+451	451		301							"{2: 'Construct 2', 3: ""Rumor has it that those who had ever gone on a mission with Egret never came back with serious injuries. They either returned without a scratch or didn't return at all. Think about it..."", 4: '2'}"
+452	452		301							"{2: 'Construct 2', 3: ""I'm definitely not going. If it is a good squad, how come one of their own defected? Have you ever heard of anyone defecting from Gray Raven?"", 4: '2'}"
+453	453		202							{1: '1', 2: '2', 6: '1'}
+454	454		201							{1: '1', 2: '500555'}
+455	455		301							{1: '1', 2: 'Vanessa', 3: 'Impressive. Your great aspiration would probably make all the judges on the committee laugh out loud.', 4: '1'}
+456	456		301							"{3: ""Vanessa claps as she walks out from the corner. She has been listening to them gossiping about Teasell's departure the moment she left Bambinata's room.""}"
+457	457		201							{1: '1', 2: '500019', 4: '-400'}
+458	458		201							{1: '2', 2: '500019', 4: '400'}
+459	459		301							{1: '1', 3: 'The two Constructs are visibly shocked. One of them quickly covers his mouth, but then puts his hand down awkwardly.'}
+460	460		202							{1: '1', 2: '2', 6: '1'}
+461	461		201							{1: '1', 2: '500555', 3: '13'}
+462	462		301							"{1: '1', 2: 'Vanessa', 3: ""I don't know if Gray Raven will want you, but Egret definitely doesn't take trash."", 4: '1'}"
+463	463		202							{1: '1', 6: '1'}
+464	464		201							{1: '1', 2: '500019', 4: '-400'}
+465	465		201							{1: '2', 2: '500019', 4: '400'}
+466	466		301							{1: '1', 2: 'Construct 2', 3: 'You—!', 4: '2'}
+467	467		301							{2: 'Construct 1', 3: 'Shh... Shut up...', 4: '1'}
+468	468		202							{1: '1', 2: '2', 6: '1'}
+469	469		201							{1: '1', 2: '500555'}
+470	470		301							{1: '1', 2: 'Vanessa', 3: 'If trash like you can join an elite squad, humanity is probably doomed.', 4: '1'}
+471	471		204							{1: '1', 2: '13'}
+472	472		301							"{2: 'Vanessa', 3: ""As a commandant of an elite squad myself, I can guarantee that you don't look like you can survive till that day. Better pray that you don't end up in the Red Tide on some surface mission."", 4: '1'}"
+473	473		202							{1: '1'}
+474	474		301							{3: 'Vanessa sneers and walks to her own lounge, not even looking back.'}
+475	475		301							{3: 'One of the Constructs apparently does not want to escalate the situation. He pulls the other Construct away to the other side of the corridor.'}
+476	476		401							{1: '2', 2: '1099'}
+477	477		301							{3: 'Vanessa stops walking as her terminal receives an incoming call.'}
+478	478		201							{1: '1', 2: '500555', 3: '4', 4: '500'}
+479	479		201							{1: '2', 2: '500536', 4: '-400'}
+480	480		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+481	481		301							{1: '1', 2: 'Vanessa', 3: 'Bambinata? Is there any problem with your external memory module check-up?', 4: '1'}
+482	482		301							{2: 'Bambinata', 3: 'No, Mistress. The check-up is still in progress...', 4: '2'}
+483	483		301							{2: 'Bambinata', 3: 'Bambinata received a mission order and needs to head toward the designated location for a briefing immediately.', 4: '2'}
+484	484		301							{2: 'Vanessa', 3: 'A mission? On whose order?', 4: '1'}
+485	485		301							{2: 'Bambinata', 3: 'It seems to come... from the President himself.', 4: '2'}
+486	486		301							"{2: 'Vanessa', 3: ""I haven't received any notice. Did he ask you to go alone?"", 4: '1'}"
+487	487		301							"{2: 'Bambinata', 3: ""There's also the Cerberus Captain."", 4: '2'}"
+488	488		301							{2: 'Vanessa', 3: 'That woman from Cerberus? Why...', 4: '1'}
+489	489		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+490	490		202							{1: '2', 6: '1'}
+491	491		401							{1: '2', 2: '1099'}
+492	492		301							{3: 'Vanessa hangs up and calls Celica.'}
+493	493		509						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory546.jpg', 2: '1'}
+494	494		201							{1: '11', 2: '500001', 3: '4', 4: '-300'}
+495	495		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '11'}
+496	496		301							"{1: '1', 2: 'Celica', 3: ""Sorry, Vanessa. I'm just about to—"", 4: '11'}"
+497	497		301							{2: 'Vanessa', 3: 'To start a mission briefing, right?', 4: '1'}
+498	498		301							"{2: 'Vanessa', 3: ""I want to join this mission as Bambinata's overseer."", 4: '1'}"
+499	499		301							{2: 'Celica', 3: 'Huh? Does her frame have any problem?', 4: '11'}
+500	500		301							{2: 'Vanessa', 3: 'No... But considering that one of the Egret members recently left the squad illegally, it would be safer for Bambinata to perform the mission with her commandant as the only remaining member of the squad.', 4: '1'}
+501	501		301							{2: 'Vanessa', 3: 'And I just happen to be free right now.', 4: '1'}
+502	502		204							{1: '11', 2: '4'}
+503	503		301							{2: 'Celica', 3: '...Commander?', 4: '11'}
+504	504		201							{1: '12', 2: '500012', 4: '-800'}
+505	505		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '12'}
+506	506		301							{1: '1', 2: 'Nikola', 3: 'Let her go.', 4: '12'}
+507	507		301							{2: 'Nikola', 3: 'In a way, what Vanessa said makes sense.', 4: '12'}
+508	508		301		1		AniZhuanchangBegin			{2: 'Celica', 3: 'Understood. Vanessa, I will sync the mission details to your terminal right away.', 4: '11'}

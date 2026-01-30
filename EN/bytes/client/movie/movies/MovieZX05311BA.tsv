@@ -1,0 +1,173 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1198.jpg'}
+2	2		401							{1: '1', 2: '5061'}
+3	3		301			DialogEnable				{3: 'People cherish beautiful moments because they are fleeting, unlike the trivial events of daily life.'}
+4	4		301				DialogDisable			{3: 'As the sun rises on the horizon, this journey approaches its end.'}
+5	5		107						2500.0	{1: 'Jotunn City', 2: 'City Outskirts', 4: '17:30', 5: 'Line Spacing: 2'}
+6	6		108						1000.0	{1: '1'}
+7	7		301			DialogEnable	DialogDisable			{3: 'Standing on the hillside with binoculars, you see a city that looks more like a town on the edge of Bane in the distance.'}
+8	8		302							{2: 'Let me note down the supply list first.', 3: '9'}
+9	9		302							{2: 'Try to get everything within one to two hours after entering the city.', 3: '10'}
+10	10		201							{1: '1', 2: '501165'}
+11	11		301			DialogEnable				"{1: '1', 2: 'Dandelion', 3: ""Shouldn't we rest for the night?"", 4: '1'}"
+12	12		201							{1: '1', 2: '501184'}
+13	13		301							{1: '1', 2: 'Iris', 3: 'I think F.O.S. is worried about Enora Lueya making a move first.', 4: '1'}
+14	14		201							{1: '1', 2: '501165'}
+15	15		301							"{1: '1', 2: 'Dandelion', 3: ""Jotunn City is almost a day's drive from the capital... Would she set up an ambush there?"", 4: '1'}"
+16	16		302							"{2: ""She may not set up an ambush, but she'll definitely have scouts in the area."", 3: '17'}"
+17	17		201							{1: '1', 2: '501184', 3: '17'}
+18	18		301							{1: '1', 2: 'Iris', 3: '...The possibility stands.', 4: '1'}
+19	19		301							"{2: 'Iris', 3: ""Enora Lueya doesn't know which route we'll take to Bane, so she might send scouts to all the border cities."", 4: '1'}"
+20	20		201							{1: '1', 2: '501162'}
+21	21		301							"{1: '1', 2: 'Jonathan', 3: ""...That's a lot of effort. I've really reached the top of her hit list."", 4: '1'}"
+22	22		201							{1: '1', 2: '501184', 3: '16'}
+23	23		301							{1: '1', 2: 'Iris', 3: 'Anyway... we should keep our visit short.', 4: '1'}
+24	24		301				DialogDisable			"{2: 'Iris', 3: ""Let's hit the road as soon as we get our supplies... I'm afraid we'll all have to stay another night in the wilderness."", 4: '1'}"
+25	25		302							"{2: ""It's okay."", 3: '26', 4: ""I'm already used to it."", 5: '26'}"
+26	26		302				AniZhuanchangBegin			"{2: ""Now, grab your lists, and let's move out."", 3: '27'}"
+27	27		202							{1: '1', 6: '1'}
+28	28		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1200.jpg'}
+29	29		107			AniZhuanchangEnd			2500.0	{1: 'Jotunn City', 2: 'City Streets', 4: '18:45'}
+30	30		108						1.0	{1: '1'}
+31	31		301			DialogEnable				{3: 'Having finished gathering the supplies and picking up some extra desserts, you leave the market and head back to the car.'}
+32	32		301				AniZhuanchangBegin			"{3: ""Just when you're about to call Iris over to try some treats, you freeze with your hand in the air as you approach the window, the words stuck in your throat.""}"
+33	33		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_08.jpg'}
+34	34		104							{1: '-100|-150|-300', 2: '0'}
+35	35		104							{1: '-200|-150|-300', 2: '2'}
+36	36		301			AniZhuanchangEnd				"{3: 'In the amber glow of dusk and tree shadows dancing, she lies ""asleep"" in the driver\'s seat.'}"
+37	37		301							{3: 'Her left hand is in an unnatural position, and her slightly furrowed brows give a hint of distress.'}
+38	38		301							"{3: ""You can't hear her breathing through the window, but the irregular rise and fall of her chest shows her distress.""}"
+39	39		306							{1: '1'}
+40	40		201							{1: '1', 2: '501184'}
+41	41		504							{1: '0.7', 2: '1'}
+42	42		301							"{1: '1', 2: 'Iris', 3: 'After ""she doesn\'t seem like someone who\'d choose the fastest and most effective way,"" we have now added, ""she probably doesn\'t know how to drive""?', 4: '1'}"
+43	43		301							"{2: 'Iris', 3: ""I'm a Construct. Operating continuously for days isn't a problem when it's just driving. Plus, we'll be taking breaks."", 4: '1'}"
+44	44		301							"{2: 'Iris', 3: ""If we're just driving... why don't you stay on guard instead?"", 4: '1'}"
+45	45		306							
+46	46		202							{1: '1'}
+47	47		301							{3: 'Is she... tired from driving for four days straight? The absurd thought surfaces in your mind, only to be quickly dismissed.'}
+48	48		301							"{3: ""She's a Construct. With regular rests, she could drive continuously for forty days without showing any signs of fatigue.""}"
+49	49		306							{1: '1'}
+50	50		201							{1: '1', 2: '501184', 3: '16'}
+51	51		301							"{1: '1', 2: 'Iris', 3: ""No... it's, I'm just... thinking about how to explain it."", 4: '1'}"
+52	52		301							{2: 'Iris', 3: 'I belong to... to the Union Government of another time, Unit... Number 654, Operation Codename... Iris.', 4: '1'}
+53	53		301							"{2: 'Iris', 3: ""We were the first to discover Enora Lueya's existence, and we've been fighting for a long time to stop her from disrupting history."", 4: '1'}"
+54	54		202							{1: '1'}
+55	55		306							
+56	56		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5301_08.jpg', 3: '0', 4: '1', 5: '1'}
+57	57		301							"{3: ""What is making Iris doze off is probably the countless four-day stretches she's endured day and night, beyond your knowledge.""}"
+58	58		301							{3: 'With a sigh, you set down the supplies and use the phone you got in Fast to send Jonathan a message.'}
+59	59		504							{1: '0'}
+60	60		301				AniZhuanchangBegin			{3: 'You press your hand against the car window and, after hesitating, take out the keys.'}
+61	61		205							{1: '999'}
+62	62		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1200.jpg'}
+63	63		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront46.png', 4: '4'}
+64	64		401							{1: '2', 2: '4833', 3: '0.5'}
+65	65		301			AniZhuanchangEnd				"{3: ""You open the door with the least possible movement, unfasten the seatbelt, and lift Iris from the driver's seat.""}"
+66	66		201							{1: '1', 2: '501184', 3: '8'}
+67	67		301							{1: '1', 2: 'Iris', 3: 'Hm...', 4: '1'}
+68	68		301							"{3: ""Iris's reaction makes you think she woke up, because a Construct's senses are far beyond that of humans.""}"
+69	69		204							{1: '1', 2: '9'}
+70	70		301				AniZhuanchangBegin			"{3: ""You can't tell whether Iris is truly exhausted or if it's something else, but to your surprise, she stays unusually calm in your arms, even her furrowed brow noticeably relaxing.""}"
+71	71		202							{1: '1', 6: '1'}
+72	72		101							{4: '4', 5: '1'}
+73	73		301			AniZhuanchangEnd	DialogDisable			{3: 'You carefully place her in the back seat, then lean against the closed door, gazing at the evening glow on the horizon.'}
+74	74		302							{2: 'Iris...', 3: '75', 4: 'How long have you been fighting...', 5: '75'}
+75	75		302							{2: 'Who exactly... are you', 3: '76'}
+76	76		201							{1: '1', 2: '501162', 4: '-400'}
+77	77		201							{1: '2', 2: '501165', 4: '400'}
+78	78		301			DialogEnable				{1: '1', 3: 'Time flows amidst whispers and sighs. Soon, Jonathan and Dandelion come out from the supermarket and approach the car.'}
+79	79		302							{2: '(Put your finger to your lips)', 3: '80', 4: 'Shh—', 5: '80'}
+80	80		301							{3: 'You signal for the two to be quiet. Jonathan and Dandelion are confused, but they lighten their footsteps. Jonathan opens the bag in his hand and lowers his voice.'}
+81	81		301							{2: 'Jonathan', 3: '<size=30>I got the earmuffs you wanted, here.</size>', 4: '1'}
+82	82		302							{2: 'Thank you.', 3: '83'}
+83	83		301							{3: 'You take out the earmuffs, carefully open the car door and put them on Iris. Jonathan and Dandelion see the sleeping Iris and move more quietly.'}
+84	84		401							{1: '2', 2: '4799'}
+85	85		202							{1: '1', 2: '2'}
+86	86		301				AniZhuanchangBegin			{3: 'Dandelion sneaks into the back seat while Jonathan gently opens the passenger door...'}
+87	87		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront46.png', 4: '4'}
+88	88		401							{1: '2', 2: '4799'}
+89	89		301			AniZhuanchangEnd	DialogDisable			"{3: ""You take the driver's seat and, after a short pause, pour a cup of warm water and pass it to Dandelion.""}"
+90	90		201							{1: '1', 2: '501165'}
+91	91		302							{2: 'Please put it next to her.', 3: '92'}
+92	92		301			DialogEnable				{1: '1', 2: 'Dandelion', 3: '<size=30>Okay.</size>', 4: '1'}
+93	93		401							{1: '2', 2: '885'}
+94	94		202							{1: '1'}
+95	95		301				AniZhuanchangBegin			{3: 'You adjust the sun visor and rearrange the shopping bags in the car to shield the sleeping Iris from the last traces of sunset, then start the engine.'}
+96	96		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront47.png', 3: '1', 4: '4'}
+97	97		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory923.jpg'}
+98	98		401							{1: '2', 2: '4662'}
+99	99		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'The car drives into the sunset. Soon, both Jonathan and Dandelion fall asleep, leaving only the gentle vibration of the vehicle in your senses.'}
+100	100		301			AniZhuanchangEnd				"{3: ""You drive for a while, until the candy in your mouth dissolves. Just as you're about to get another, an unwrapped candy appears on your lips.""}"
+101	101		201							{1: '1', 2: '501184', 3: '9', 5: '-50', 6: '-150'}
+102	102		401							{1: '2', 2: '1543'}
+103	103		301							{1: '1', 2: 'Iris', 3: '...', 4: '1'}
+104	104		301							"{3: ""A pair of arms wraps around your neck from behind as Iris's voice appears at your side.""}"
+105	105		302							{2: 'You can sleep some more.', 3: '106'}
+106	106		204							{1: '1', 2: '7'}
+107	107		301							{2: 'Iris', 3: 'Who carried me to the back seat?', 4: '1'}
+108	108		301							{3: 'Her voice still sounds drowsy. Iris leans forward, resting her head on your shoulder, her eyelids half-drawn.'}
+109	109		302							{2: 'Dandelion', 3: '110'}
+110	110		301							{2: 'Iris', 3: 'I should have woken up ages ago.', 4: '1'}
+111	111		301							{2: 'Iris', 3: 'Dandelion might look gentle, but she has always been rather rough.', 4: '1'}
+112	112		204							{1: '1', 2: '8'}
+113	113		301							{3: 'She blows softly against your earlobe playfully, her breath gentle and warm. Iris keeps leaning against you, swaying her head while humming an unfamiliar tone.'}
+114	114		301							{3: 'Drowsiness creeps up with her melody, and she lets out a yawn.'}
+115	115		204							{1: '1', 2: '7'}
+116	116		301							{2: 'Iris', 3: 'Pull over...', 4: '1'}
+117	117		302							"{2: ""Hm? It's fine, I can still..."", 3: '118'}"
+118	118		301							{2: 'Iris', 3: 'Pull over. I want to get out and stretch my legs.', 4: '1'}
+119	119		204							{1: '1', 2: '9'}
+120	120		203							{1: '1', 2: '0.3', 4: '-100', 5: '-200'}
+121	121		301							{3: 'Iris buries her head back between her arms, making her voice sound muffled.'}
+122	122		301				DialogDisable			"{2: 'Iris', 3: ""It's getting dark."", 4: '1'}"
+123	123		302				AniZhuanchangBegin			{2: '...Sure.', 3: '124'}
+124	124		202							{1: '1', 6: '1'}
+125	125		101							{4: '4', 5: '1'}
+126	126		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory998.jpg'}
+127	127		401						500.0	{1: '2', 2: '4230'}
+128	128		402							{1: '4230'}
+129	129		201							{1: '1', 2: '501184', 3: '2'}
+130	130		301			DialogEnable				{1: '1', 3: 'After parking the car by the road, you get out. Iris stretches, notices you watching her, and smiles with a playful wink.'}
+131	131		202							{1: '1'}
+132	132		301				AniZhuanchangBegin			{3: 'After setting up the security devices, you walk with Iris toward a nearby hill blooming with flowers.'}
+133	133		401							{1: '1', 2: '36'}
+134	134		101						1000.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_15.jpg'}
+135	135		104							{1: '-150|-150|-300', 2: '0'}
+136	136		401							{1: '1', 2: '5059'}
+137	137		301			AniZhuanchangEnd				"{2: 'Iris', 3: ""Nights are short during summer. Let's meet before night if we can't make it at dawn.""}"
+138	138		104							{1: '0|0|0', 2: '15'}
+139	139		301							{3: 'Iris gathers some iris flowers, gently breathing in their scent.'}
+140	140		301							{2: 'Iris', 3: 'Do you like the sunset?'}
+141	141		302							{2: 'Yes.', 3: '142', 4: 'Not really.', 5: '146'}
+142	142		301							{2: 'Iris', 3: 'I like it too. Sunset always gives rise to a tapestry of emotions.'}
+143	143		301							{2: 'Iris', 3: 'Many of my inspirations... and reminiscences happen at this time.'}
+144	144		301							{3: 'Iris tucks a strand of hair behind her ear.'}
+145	145	150	301							"{2: 'Iris', 3: ""It's like slowly approaching a destined end—one we can only welcome, and never escape.""}"
+146	146		301							"{2: 'Iris', 3: ""Maybe it's because you've always been so resolute. External factors can't easily sway your thoughts.""}"
+147	147		301							{2: 'Iris', 3: 'But I know better...'}
+148	148		301							{3: 'Iris tucks a strand of hair behind her ear.'}
+149	149		301							"{2: 'Iris', 3: ""You're not what you appear to be right now.""}"
+150	150		301				DialogDisable			{2: 'Iris', 3: 'F.O.S... do you miss home?'}
+151	151		302							{2: 'Yeah, of course.', 3: '152', 4: 'Not too much.', 5: '152'}
+152	152		302							"{2: ""Don't worry, I'll help you defeat Enora Lueya."", 3: '153'}"
+153	153		302							"{2: ""Then, you'll finally be free from this long mission."", 3: '154'}"
+154	154		301			DialogEnable	AniZhuanchangBegin			{2: 'Iris', 3: '...Mm, I know you will.'}
+155	155		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1118.jpg', 3: '1', 4: '1', 5: '0'}
+156	156		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1118.jpg'}
+157	157		201							{1: '1', 2: '501184', 3: '2'}
+158	158		401							{1: '2', 2: '1543'}
+159	159		301			AniZhuanchangEnd				{1: '1', 3: 'Iris breaks into a gentle smile. She straightens up slightly and intertwines her fingers.'}
+160	160		301							{3: 'You immediately understand and sit beside her on the grass. Together, you watch as the sunset fades in the distance.'}
+161	161		204							{1: '1', 2: '9'}
+162	162		203							{1: '1', 2: '0.3', 4: '-50', 5: '-100'}
+163	163		401							{1: '2', 2: '1543'}
+164	164		301							{3: 'Suddenly, you feel a weight on your shoulder. Iris is leaning against you, her breathing soft and steady.'}
+165	165		301				DialogDisable			{3: 'She has fallen asleep in the end.'}
+166	166		302							{2: '...', 3: '167'}
+167	167		302							{2: '(Make a subtle movement)', 3: '168', 4: '(Remain peacefully still)', 5: '170'}
+168	168		401							{1: '2', 2: '1543'}
+169	169	171	301			DialogEnable				{3: 'You reach out to smooth her windswept hair, your fingertips lingering on her cheek.'}
+170	170		301			DialogEnable				{3: 'You watch as the sunlight slowly recede from her face.'}
+171	171		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.7', 5: '5'}
+172	172		302		1		AniZhuanchangBegin			{2: 'Goodnight, Iris.'}

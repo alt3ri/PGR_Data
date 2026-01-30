@@ -1,0 +1,13 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory667.jpg'}
+2	2		401							{1: '1', 2: '5'}
+3	3		201							{1: '1', 2: '500506'}
+4	4		301			DialogEnable				{1: '1', 2: 'Noan', 3: 'Commandant? Your outfit...', 4: '1'}
+5	5		302							"{2: ""It's for the maze activity."", 3: '6'}"
+6	6		301							{2: 'Noan', 3: 'The maze activity?', 4: '1'}
+7	7		302							{2: '(Briefly explain the maze)', 3: '8'}
+8	8		301							{2: 'Noan', 3: 'I see. This maze is a special gallery in Constellia.', 4: '1'}
+9	9		302							{2: 'So? Interested?', 3: '10'}
+10	10		204							{1: '1', 2: '1'}
+11	11		301							"{2: 'Noan', 3: ""Of course. Let's go."", 4: '1'}"
+12	12		301		1		AniZhuanchangBegin			{3: 'Noan smiles and reaches out to you.'}

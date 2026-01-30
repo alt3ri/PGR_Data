@@ -1,0 +1,53 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory158.png'}
+2	2		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+3	3		401							{1: '1', 2: '33'}
+4	4		301			DialogEnable				{3: 'The night rain begins to shower the Nighter, covering its fluttering lights with a haze. People speed up under their umbrellas, not noticing a small figure running breathlessly among them in the rain.'}
+5	5		301							{3: 'Or... perhaps they have been desensitized by what they have seen. It is just another night when another soul fails to survive the Nighter, devoured silently in the dark.'}
+6	6		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab', 2: '2'}
+7	7		401							{1: '2', 2: '1501'}
+8	8		301							"{2: 'Collar', 3: ""//Target's threat level rising. Priority level: C—""}"
+9	9		301							"{3: ""As the red light darkens on her collar, more Blubber mechanoids begin to approach Yoyo, triggered by the collar's warning signal.""}"
+10	10		201							{1: '1', 2: '500448', 3: '16'}
+11	11		301							{1: '1', 2: 'Yoyo', 3: 'Huff... Puff...', 4: '1'}
+12	12		202							{1: '1', 6: '1'}
+13	13		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab'}
+14	14		301							{3: 'Facing their slow but powerful swings, Yoyo has been dodging and running, but she is getting more and more exhausted. The collar around her neck is also slowly tightening, making it difficult for her to breathe.'}
+15	15		301							{3: 'Suddenly, Yoyo trips over a beer bottle on the ground, and she loses her grasp for a second, sending the panda plushie in her hand flying.'}
+16	16		301			RImgBg1Shake				{3: 'Yoyo reaches out and grabs the panda, but she loses balance in the process, falling onto the ground.'}
+17	17		201							{1: '1', 2: '500444'}
+18	18		401							{1: '2', 2: '1509'}
+19	19		301							{1: '1', 2: 'Blubber Mechanoid', 3: 'Rargh—!', 4: '1'}
+20	20		301							{3: 'The pain knocks the wind out of Yoyo. She tries to stand up, only to fall again and again, and she watches helplessly as the mechanoids get closer and closer.'}
+21	21		301							{3: 'The freezing rain hits her face, reminding her that this is not a dream—or, more precisely, this is just the beginning of a nightmare.'}
+22	22		201							{1: '1', 2: '500448', 3: '16'}
+23	23		301							"{1: '1', 2: 'Yoyo', 3: ""I'm... sorry..."", 4: '1'}"
+24	24		301							{3: 'Just like how she could not run away that day, try as she might—death seems to be the only way out.'}
+25	25		301							{3: 'Her father... her mother... her two robot friends whose names she still does not know... They all fought to give her a chance to live, but now it is going to be taken away regardless.'}
+26	26		201							{1: '1', 2: '500444'}
+27	27		401							{1: '2', 2: '1509'}
+28	28		301							{1: '1', 2: 'Blubber Mechanoid', 3: 'Rargh—!!!', 4: '1'}
+29	29		202							{1: '1', 2: '2', 6: '1'}
+30	30		301			RImgBg1Shake				"{3: ""As the red fist comes down on Yoyo, a slim figure suddenly appears, blocking the Blubber's strike with her body. In one swift move, she grabs the mechanoid's arm and tosses it toward its companions, knocking them over.""}"
+31	31		201							{1: '1', 2: '500442', 3: '4'}
+32	32		301							{1: '1', 2: '???', 3: 'You left too soon... You forgot to take what you bought.', 4: '1'}
+33	33		301							"{3: ""The slim woman lays down the Tai'E remains she has been holding. Yoyo recognizes the woman now—she is the woman who saved her in the beginning.""}"
+34	34		301							{3: 'But to see the her withstanding a hit from the Blubber before tossing it away, Yoyo knows clearly now that the woman is no ordinary human...'}
+35	35		301							"{2: '???', 3: ""It was just a worthless tool... Why would you still buy it when it cost your life? This ship throws away everything that's worthless, including you."", 4: '1'}"
+36	36		301							"{3: ""Yoyo shakes her head and stares into the woman's eyes.""}"
+37	37		203							{1: '1', 2: '0.25', 3: '-400'}
+38	38		201							{1: '2', 2: '500448', 3: '16', 4: '400'}
+39	39		301				AniZhuanchangBegin			"{1: '1', 2: 'Yoyo', 3: ""Worthless? I don't get it... He... They were my friends... They helped me. Did I do something wrong?"", 4: '2'}"
+40	40		202							{1: '1', 2: '2', 6: '1'}
+41	41		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+42	42		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz3001.jpg'}
+43	43		301			AniZhuanchangEnd				"{3: ""Completely spent, Yoyo's body slowly slides to the side. The collar on her neck gets heavier and heavier, and her vision suddenly darkens as she falls closer to unconsciousness every time she breathes.""}"
+44	44		301							"{2: '???', 3: ""Friends... Did your friends want you to live? I don't understand this feeling... but...""}"
+45	45		301							{3: 'The woman reaches out for Yoyo, still hesitant about whether or not she should confront this strange feeling.'}
+46	46		301							"{2: '???', 3: ""There might be nothing but pain in your future. Do you still want to live...? Even when you won't stop running in a world like this?""}"
+47	47		301							"{2: 'Yoyo', 3: ""I want to live... I don't want to... break their hearts...""}"
+48	48		301							"{3: ""Yoyo whimpers silently, grabbing the blindingly red collar around her neck with one hand and taking the woman's hand with another.""}"
+49	49		301							"{2: '???', 3: 'So frail, and yet, your strength... Is that the ""value"" you live by?'}"
+50	50		301							"{3: ""The girl's small hand is so fragile, but the woman finds the hand grasping her finger to be heavier than anything she knows.""}"
+51	51		301							"{3: ""Her head leans toward Yoyo, and she whispers a lullaby-like phrase—then her collar flashes, removing the blinding red light on Yoyo's collar.""}"
+52	52		301		1		AniZhuanchangBegin			"{2: '???', 3: ""Then... live. Together... we'll live.""}"

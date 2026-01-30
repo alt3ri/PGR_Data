@@ -1,0 +1,182 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+4	4		201							{1: '1', 2: '500351'}
+5	5		301			DialogEnable				{1: '1', 3: 'Nestled in the embrace of the human, Lamia clings tightly to those arms.'}
+6	6		301							"{2: 'Elene', 3: ""Just put me down. You won't get far carrying me like this."", 4: '1'}"
+7	7		301							"{2: 'Elene', 3: ""It's not like I'm very light."", 4: '1'}"
+8	8		502							{1: 'DialogDisable'}
+9	9		302							"{2: ""Don't worry. We'll be safe soon."", 3: '10'}"
+10	10		302							"{2: ""And you're not heavy.""}"
+11	11		201							{1: '18', 2: '500739'}
+12	12		301			DialogEnable				"{1: '1', 2: 'Lamia', 3: ""(If I had known this earlier, I would've not turned on the anti-gravity levitation...)"", 4: '18'}"
+13	13		202							{1: '18', 6: '1'}
+14	14		201							{1: '18', 2: '500197', 4: '-200', 5: '-100', 6: '200'}
+15	15		301							"{1: '1', 2: 'Pursuer', 3: ""Stop! Or we'll open fire!"", 4: '18'}"
+16	16		202							{1: '18', 6: '1'}
+17	17		301							"{3: ""Lamia casts a quick glance over the human's shoulder, only to spot three armed camp guards in hot pursuit from behind.""}"
+18	18		301							"{3: ""Despite their threats to shoot, the guards' attention is predominantly occupied by the roots underfoot and the slippery moss, making it impossible for them to maintain steady aim.""}"
+19	19		301							{3: 'Not to mention, their target has been frequently taking sharp turns, cleverly using large trees as cover.'}
+20	20		301							"{3: ""Lamia can't help but inwardly whine as the scenery around them relentlessly fades away yet remains monotonous.""}"
+21	21		201							{1: '18', 2: '500739', 3: '19'}
+22	22		301							{1: '1', 2: 'Lamia', 3: '(Why do I have to get dragged into this?!)', 4: '18'}
+23	23		202							{1: '18', 6: '1'}
+24	24		301				AniZhuanchangBegin			{3: 'All of this started several hours ago.'}
+25	25		401							{1: '1', 2: '36'}
+26	26		202			DialogDisable				{1: '1', 6: '1'}
+27	27		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+28	28		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory731.jpg'}
+29	29		401							{1: '1', 2: '207'}
+30	30		301			DialogEnable				{3: 'Since she cried before, the Gray Raven Commandant has never pressured Lamia for information again.'}
+31	31		301							{3: 'Instead, the human requests to help Lamia with her work at the camp.'}
+32	32		301							{3: 'This leaves Lamia, who intended to take it easy, in a bitter state of distress—the work meant to occupy her for an entire day is now finished within a mere hour.'}
+33	33		301							"{3: ""Finally, after hearing Lamia's complaints—or more accurately, her pleas—the Gray Raven Commandant gives in and joins her in the slacking off.""}"
+34	34		301							{3: 'As the days pass by, the commandant begins to grasp that Lamia is indeed different from the others at the camp, gradually lowering their guard.'}
+35	35		301							{3: 'While Lamia shares with the human many of the things she has overheard.'}
+36	36		301							{3: 'The two people, both under a false identity, end up developing a peculiar bond.'}
+37	37		201							{1: '1', 2: '500351'}
+38	38		301							{1: '1', 2: 'Elene', 3: 'This is how it should have been from the start...', 4: '1'}
+39	39		302							"{2: ""Elene, there's something I need to tell you."", 3: '40'}"
+40	40		301							{3: 'After making sure no one else is around, the human speaks to Lamia in a low voice.'}
+41	41		301							{2: 'Elene', 3: 'What is it?', 4: '1'}
+42	42		502							{1: 'DialogDisable'}
+43	43		302							"{2: ""It's a long story, but I'll make it short."", 3: '44'}"
+44	44		302							"{2: ""There's a transport vehicle coming to transfer us to another location."", 3: '45'}"
+45	45		301			DialogEnable				{2: 'Elene', 3: '...', 4: '1'}
+46	46		201							{1: '18', 2: '500739'}
+47	47		301							"{1: '1', 2: 'Lamia', 3: ""(I know that... And that's exactly what I'm here for.)"", 4: '18'}"
+48	48		204							{1: '18', 2: '3'}
+49	49		301							"{2: 'Lamia', 3: ""(Why mention this now... Don't tell me...)"", 4: '18'}"
+50	50		202							{1: '18', 6: '1'}
+51	51		301							{3: 'Lamia somehow has a bad feeling about it.'}
+52	52		302							{2: 'We have to escape before that happens.', 3: '53'}
+53	53		201							{1: '18', 2: '500739', 3: '8'}
+54	54		301							{1: '1', 2: 'Lamia', 3: '(I knew it!)', 4: '18'}
+55	55		202							{1: '18', 6: '1'}
+56	56		301							{2: 'Elene', 3: 'Eh... escape? But why?', 4: '1'}
+57	57		302							{2: 'For our own safety.', 3: '58'}
+58	58		301							{2: 'Elene', 3: 'Safety? Will something dangerous happen?', 4: '1'}
+59	59		301							"{3: ""The human doesn't elaborate but responds with an affirmative nod.""}"
+60	60		302							{2: 'Do you trust me?', 3: '61'}
+61	61		201							{1: '18', 2: '500739', 3: '19'}
+62	62		301							"{1: '1', 2: 'Lamia', 3: ""(Saying no at this point would only make my previous actions suspicious... Now I'm starting to regret my choices.)"", 4: '18'}"
+63	63		202							{1: '18', 6: '1'}
+64	64		301							{3: 'Lamia has no choice but to nod in agreement.'}
+65	65		201							{1: '18', 2: '500739', 3: '3'}
+66	66		301							{1: '1', 2: 'Lamia', 3: '(Maybe I should deal with this person outside or purposely get caught.)', 4: '18'}
+67	67		202							{1: '18', 6: '1'}
+68	68		301							{3: 'Amidst these thoughts, Lamia even feels a fleeting moment of sympathy toward the human standing before her.'}
+69	69		201							{1: '18', 2: '500739', 3: '3'}
+70	70		301							{1: '1', 2: 'Lamia', 3: '(If we get caught again, things will be tough, but maybe I can still choose to help this person somehow.)', 4: '18'}
+71	71		202							{1: '18', 6: '1'}
+72	72		302							{2: 'So, we move tonight?', 3: '73'}
+73	73		301				AniZhuanchangBegin			{2: 'Elene', 3: 'O-okay.', 4: '1'}
+74	74		202			DialogDisable				{1: '1', 6: '1'}
+75	75		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory71.jpg'}
+76	76		201							{1: '1', 2: '500351'}
+77	77		301			DialogEnable				{1: '1', 3: 'Thus, under the cover of the night, the two begin their escape.'}
+78	78		301							{3: 'Only now does Lamia realize that the human has already discerned the patrol routes of the guards and identified all the blind spots that can be exploited.'}
+79	79		201							{1: '18', 2: '500739', 3: '3'}
+80	80		301							{1: '1', 2: 'Lamia', 3: '(Was all the work in different areas just for this moment?)', 4: '18'}
+81	81		301							{2: 'Lamia', 3: '(If the plan was to escape all along, why come here in the first place?)', 4: '18'}
+82	82		202							{1: '18', 6: '1'}
+83	83		301							{3: 'As Lamia falls in puzzlement, the person ahead suddenly breaks the silence and speaks.'}
+84	84		302							{2: 'Almost there.', 3: '85'}
+85	85		301							{3: 'The human takes out a bolt cutter seemingly from nowhere and snips through the wire fence blocking their path.'}
+86	86		201							{1: '18', 2: '500739'}
+87	87		301							"{1: '1', 2: 'Lamia', 3: ""(Wait... I remember there's...)"", 4: '18'}"
+88	88		202							{1: '18', 2: '1', 6: '1'}
+89	89		401						400.0	{1: '1', 2: '36'}
+90	90		401							{1: '1', 2: '203'}
+91	91		201							{1: '1', 2: '500197'}
+92	92		301							"{1: '1', 2: 'Guard', 3: ""Who's there?!"", 4: '1'}"
+93	93		202							{1: '1', 6: '1'}
+94	94		201							{1: '1', 2: '500351'}
+95	95		301							{1: '1', 2: 'Elene', 3: 'They found us!', 4: '1'}
+96	96		301							{3: 'Says Lamia, suppressing her inner joy.'}
+97	97		301							"{2: 'Elene', 3: ""You should go ahead and run. My legs won't carry me fast enough, so I'll only slow you down."", 4: '1'}"
+98	98		201							{1: '18', 2: '500739', 3: '1'}
+99	99		301							"{1: '1', 2: 'Lamia', 3: ""(Just leave me and go. This way I don't have to risk exposing myself to deal with you.)"", 4: '18'}"
+100	100		202							{1: '18', 6: '1'}
+101	101		301							{3: 'While Lamia ponders, she abruptly feels herself being lifted off the ground, suspended in the air.'}
+102	102		301							{3: 'The person carries her up and securely cradles her in their arms.'}
+103	103		302							{2: 'Hold tight.', 3: '104'}
+104	104		301							{2: 'Elene', 3: 'Ah...', 4: '1'}
+105	105		301							"{3: ""Instinctively, Lamia tightens her grip on the person's arm, curling up in their embrace.""}"
+106	106		201							{1: '1', 2: '500197'}
+107	107		301							{1: '1', 2: 'Guard', 3: 'Stop there!', 4: '1'}
+108	108		401						200.0	{1: '2', 2: '661'}
+109	109		401						300.0	{1: '2', 2: '662'}
+110	110		401						100.0	{1: '2', 2: '1510'}
+111	111		401							{1: '2', 2: '658'}
+112	112		301							{3: 'Multiple gunshots echo from behind, but in the darkness, firearms lacking night vision equipment have little chance of hitting their intended targets.'}
+113	113		202							{1: '1'}
+114	114		301							{3: 'With Lamia in their arms, the human dashes toward the nearest forest at an astonishing speed, leaving only a handful of pursuers with any hope of catching up.'}
+115	115		201							{1: '18', 2: '500739'}
+116	116		301							{1: '1', 2: 'Lamia', 3: '(Why do you have to play the hero at a time like this...)', 4: '18'}
+117	117		202							{1: '18', 6: '1'}
+118	118		301				AniZhuanchangBegin			"{3: ""Left with no other choice, Lamia grips the human's arm even tighter.""}"
+119	119		502						400.0	{1: 'DialogDisable'}
+120	120		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+121	121		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+122	122		301			DialogEnable				{3: 'Now—'}
+123	123		302							{2: 'Pant... Pant...', 3: '124'}
+124	124		301							{3: 'In the refugee camp, the human endured both demanding physical labor and insufficient meals. The escape has undeniably taken a toll on them.'}
+125	125		301							{3: 'In stark contrast, the guards, apart from their regular patrols, rarely partake in physical tasks. Moreover, they enjoy privileged access to food.'}
+126	126		301							{3: 'Constantly changing directions to evade being targeted is incredibly physically demanding, and in this test of endurance, the Gray Raven Commandant is gradually falling behind.'}
+127	127		201							{1: '1', 2: '500351', 3: '19'}
+128	128		301							"{1: '1', 2: 'Elene', 3: ""Let me down. You won't make it like this."", 4: '1'}"
+129	129		302							"{2: ""It's not time to give up yet."", 3: '130'}"
+130	130		301							{3: 'As Lamia gazes at the face so closely in front of her, she notices that the bandages wrapped around it are completely drenched in sweat. Strands of hair stick together, only to be swept backward during the run.'}
+131	131		301							"{3: ""Lamia can feel the human's heavy panting brushing against her cheeks, the scorching temperature showing the extent of their exhaustion.""}"
+132	132		301							"{2: 'Elene', 3: ""Why don't you just give up..."", 4: '1'}"
+133	133		201							{1: '18', 2: '500739', 3: '19'}
+134	134		301							{1: '1', 2: 'Lamia', 3: '(For someone like me...)', 4: '18'}
+135	135		202							{1: '18', 6: '1'}
+136	136		302							{2: 'Because I came here for people like you.', 3: '137'}
+137	137		204							{1: '1', 2: '1'}
+138	138		301							{2: 'Elene', 3: 'People like me?', 4: '1'}
+139	139		204							{1: '1'}
+140	140		301							{3: 'Lamia mutters softly, her voice tinged with both confusion... and an unexplainable stirring of emotions deep within her.'}
+141	141		301							{3: 'Would someone really care about a useless child?'}
+142	142		301							{3: 'But the human protecting her has no spare energy to respond.'}
+143	143		201							{1: '1', 2: '500197'}
+144	144		301							{1: '1', 2: 'Pursuer', 3: 'That... that person seems exhausted! Just... a little longer...', 4: '1'}
+145	145		301							{3: 'Although the voice of the pursuer is also breathless, they continue to draw closer.'}
+146	146		202							{1: '1', 6: '1'}
+147	147		302							"{2: ""We're almost there."", 3: '148'}"
+148	148		401							{1: '1', 2: '36'}
+149	149		401							{1: '2', 2: '759'}
+150	150		401							{1: '2', 2: '904'}
+151	151		301							{3: 'After the human runs through the bush ahead, they are greeted by the sight of...'}
+152	152		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+153	153		401							{1: '1', 2: '201'}
+154	154		201							{1: '1', 2: '500197'}
+155	155		301							{1: '1', 2: 'Pursuer', 3: 'Hahaha, ran yourselves into a dead end, huh?', 4: '1'}
+156	156		202							{1: '1', 6: '1'}
+157	157		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory548.jpg', 3: '0', 4: '1', 5: '1'}
+158	158		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+159	159		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory548.jpg'}
+160	160		301							{3: 'A sheer cliff that overlooks a tumultuous sea below.'}
+161	161		201							{1: '18', 2: '500739'}
+162	162		301							{1: '1', 2: 'Lamia', 3: '(This mission is already a failure. I should escape through the sea...)', 4: '18'}
+163	163		202							{1: '18', 6: '1'}
+164	164		201							{1: '1', 2: '500351'}
+165	165		301							"{1: '1', 2: 'Elene', 3: ""Jump! Don't hesitate... Eh?"", 4: '1'}"
+166	166		301							{3: 'Expecting the human holding her to stop, Lamia is taken aback when, instead, they not only continue running but even accelerate into a sprint.'}
+167	167		301							"{3: ""Upon hearing Lamia's command, the human casts her a puzzled look, then takes a daring leap without hesitation!""}"
+168	168		302							{2: 'Hold tight!', 3: '169'}
+169	169		204							{1: '1', 2: '19'}
+170	170		301							{2: 'Elene', 3: 'Eeeek!', 4: '1'}
+171	171		301							"{3: ""Caught off guard by the sudden sensation of weightlessness, Lamia lets out a startled scream and clings tightly to the human's arm.""}"
+172	172		301							{3: 'Just as she considers removing her disguise, a soft and cushioned surface catches both of them.'}
+173	173		201							{1: '18', 2: '500739'}
+174	174		301							{1: '1', 2: 'Lamia', 3: '(A net?)', 4: '18'}
+175	175		202							{1: '18', 2: '1', 6: '1'}
+176	176		301							{3: 'While they are suspended in the secure net, disturbances erupt from the top of the cliff.'}
+177	177		201							{1: '18', 2: '500197', 4: '-200', 5: '-100', 6: '200'}
+178	178		301							{1: '1', 2: 'Pursuer', 3: 'Who are you?!', 4: '18'}
+179	179		301							{2: 'Pursuer', 3: 'Arrrgh!!', 4: '18'}
+180	180		202							{1: '18', 6: '1'}
+181	181		301		1		AniZhuanchangBegin			{3: 'Soon, the chaos quickly dissipates into silence.'}

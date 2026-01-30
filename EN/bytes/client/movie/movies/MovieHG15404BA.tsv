@@ -1,0 +1,286 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1165.jpg'}
+2	2		201							{1: '1', 2: '501130', 7: '1'}
+3	3		401			AniZhuanchangEnd				{1: '1', 2: '270'}
+4	4		302							"{2: ""In a situation where all three people know each other's hands."", 3: '5'}"
+5	5		302							{2: 'Two people play the same card, and the third plays differently.', 3: '6'}
+6	6		302							"{2: ""We'll lose everything. Slowly, but surely."", 3: '7'}"
+7	7		302							{2: 'Unless we start sticking together from now on.', 3: '8'}
+8	8		301			DialogEnable				{3: 'Instead of responding immediately, she shifts her gaze to the weapon in your hand.'}
+9	9		302							{2: 'Huff...', 3: '10', 4: 'Let me reiterate that I mean no harm.', 5: '10'}
+10	10		401						200.0	{1: '2', 2: '4779'}
+11	11		402							{1: '4779'}
+12	12		301							{3: 'You look at the tactical dagger in your hand and gently place it on the ground.'}
+13	13		301							"{2: 'Eleanor', 3: ""If you knew how to get us to meet all along, why didn't you just say so?"", 4: '1', 18: '100007529'}"
+14	14		204							{1: '1', 2: '2'}
+15	15		301							{2: 'Eleanor', 3: 'Are you afraid of being eaten alive by the other inmates in this cage?', 4: '1', 18: '100007530'}
+16	16		302							{2: 'Everyone trapped in this snare... must have their own motives.', 3: '17'}
+17	17		202							{1: '1'}
+18	18		301							{3: 'For a moment, she locks eyes with you. Then, with a light tap of her umbrella on the ground, she signals you to move to a more secure location.'}
+19	19		201							{1: '1', 2: '501130', 3: '4'}
+20	20		301							{1: '1', 2: 'Eleanor', 3: 'So, that was just a test for them—for us.', 4: '1', 18: '100007531'}
+21	21		204							{1: '1'}
+22	22		301							"{2: 'Eleanor', 3: ""Too bad, human nature doesn't hold up well under pressure."", 4: '1', 18: '100007532'}"
+23	23		302							{2: '(Shrug)', 3: '25', 4: 'Nobody places bets on someone they know nothing about.', 5: '24'}
+24	24		301							"{2: 'Eleanor', 3: ""You'd make a terrible gambler."", 4: '1', 18: '100007533'}"
+25	25		202							{1: '1'}
+26	26		301							{3: 'As you take a step forward, you feel the Punishing Virus concentration around you begin to drop. Eleanor moves closer, her presence both reassuring and unsettling.'}
+27	27		301							{3: 'In this deadly intimacy, you study the woman who remains an enigma.'}
+28	28		306							{1: '1'}
+29	29		201							{1: '1', 2: '501130'}
+30	30		301							{1: '1', 3: 'The woman in elaborate attire moves like a walking artisanal treasure from the Golden Age—every movement poised, every step effortless, leaving just a whisper of tart gooseberry in her wake.'}
+31	31		301							"{3: ""The woman stands there, motionless, as if she's always belonged to this faded world of gilded excess.""}"
+32	32		306							
+33	33		202							{1: '1'}
+34	34		301							{3: 'This is the only information you can gather—she shows no signs of an Inver-Device or any other mechanical structures on her body. At least, not that you can see right now.'}
+35	35		201							{1: '1', 2: '501130'}
+36	36		301							{1: '1', 2: 'Eleanor', 3: 'One final question.', 4: '1', 18: '100007534'}
+37	37		202							{1: '1'}
+38	38		301				AniZhuanchangBegin			{3: 'Eleanor has moved behind you.'}
+39	39		502						500.0	{1: 'DialogDisable'}
+40	40		101							{1: 'Assets/Product/Texture/Image/BgComic/V300cibeizhe/V300_00.png', 4: '5'}
+41	41		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_01.jpg'}
+42	42		104							{1: '50|0|0', 2: '0'}
+43	43		502						500.0	{1: 'AniZhuanchangEnd'}
+44	44		104						1000.0	{1: '0|0|0', 2: '0.15'}
+45	45		301			DialogEnable				{2: 'Eleanor', 3: 'You went through a lot of trouble to get here...', 18: '100007535'}
+46	46		502						500.0	{1: 'DialogDisable'}
+47	47		401							{1: '2', 2: '2936'}
+48	48		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_02.png', 4: '4'}
+49	49		104						150.0	{1: '-10|0|0', 2: '0.1', 4: '4'}
+50	50		104						800.0	{1: '0|0|0', 2: '0.1', 4: '4'}
+51	51		301			DialogEnable				{3: 'Something hard digs into your side—right where the old viral wound flares to life with fresh, searing pain.'}
+52	52		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_03.jpg'}
+53	53		101							{4: '4', 5: '1'}
+54	54		301							"{3: ""She's already picked up the dagger that had fallen to the floor, its blade glinting in the dim light. With a menacing gesture, she forces you deeper into the room.""}"
+55	55		502						500.0	{1: 'DialogDisable'}
+56	56		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_04.jpg', 3: '0', 4: '1', 5: '0.7'}
+57	57		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_04.jpg'}
+58	58		205							{1: '999'}
+59	59		301			DialogEnable				"{2: 'Eleanor', 3: ""Aren't you worried I might just hurt you?"", 18: '100007536'}"
+60	60		502						500.0	{1: 'DialogDisable'}
+61	61		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_05.jpg', 3: '0', 4: '1', 5: '0.7'}
+62	62		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_05.jpg'}
+63	63		205							{1: '999'}
+64	64		301			DialogEnable				{2: 'Eleanor', 3: 'Or did you give me your weapon to show you have other aces up your sleeve?', 18: '100007537'}
+65	65		502						500.0	{1: 'DialogDisable'}
+66	66		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_06.png', 3: '0', 4: '1', 5: '0.3'}
+67	67		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_06.png', 4: '4'}
+68	68		205							{1: '999'}
+69	69		401							{1: '2', 2: '4044'}
+70	70		104						450.0	{1: '-550|0|0', 2: '0.35', 4: '4'}
+71	71		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+72	72		101							{4: '4', 5: '1'}
+73	73		401							{1: '2', 2: '4892'}
+74	74		402							{1: '270'}
+75	75		101				RImgBg1Shake		1000.0	{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_07.jpg'}
+76	76		401						1000.0	{1: '2', 2: '4383'}
+77	77		104						300.0	{1: '-50|0|200', 2: '0.4'}
+78	78		401							{1: '1', 2: '226'}
+79	79		205						1800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_08.jpg', 3: '0', 4: '1', 5: '0.6'}
+80	80		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_08.jpg'}
+81	81		205							{1: '999'}
+82	82		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_09.jpg', 3: '0', 4: '1', 5: '0.8'}
+83	83		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_09.jpg'}
+84	84		205							{1: '999'}
+85	85		301			DialogEnable	AniZhuanchangBegin			{3: 'The hard, unyielding sensation on your body begins to fade, but the corruption of the virus replaces it with a searing, needle-like pain. Eleanor, who had been standing at your side, now turns to face you directly.'}
+86	86		502						500.0	{1: 'DialogDisable'}
+87	87		101							{4: '4', 5: '1'}
+88	88		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_10.jpg'}
+89	89		104							{1: '0|0|100', 2: '0'}
+90	90		502						500.0	{1: 'AniZhuanchangEnd'}
+91	91		401							{1: '2', 2: '4833'}
+92	92		104						350.0	{1: '0|0|0', 2: '0.3'}
+93	93		402						1000.0	{1: '4833'}
+94	94		301			DialogEnable				{3: 'She grabs your collar and sits on the nearby card table, forcing you to look up at her face.'}
+95	95		301				DialogDisable			{3: 'The pain comes roaring back—your heart jackhammers against your ribs, stealing your voice.'}
+96	96		302							{2: 'I know how to fight against them.', 3: '97'}
+97	97		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_12.png', 4: '4'}
+98	98		104							{1: '-1000|0|0', 2: '0', 4: '4'}
+99	99		104							{1: '0|0|0', 2: '0.6', 4: '4'}
+100	100		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_11.jpg', 3: '0', 4: '1', 5: '0.6'}
+101	101		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_11.jpg'}
+102	102		205							{1: '999'}
+103	103		301			DialogEnable				{2: 'Eleanor', 3: 'Your terms at the negotiating table...', 18: '100007538'}
+104	104		502						500.0	{1: 'DialogDisable'}
+105	105		401							{1: '2', 2: '5321'}
+106	106		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_13.jpg'}
+107	107		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_14.png', 4: '4'}
+108	108		104							{1: '0|-700|0', 2: '0', 4: '4'}
+109	109		104						1000.0	{1: '0|0|0', 2: '0.5', 4: '4'}
+110	110		301			DialogEnable	DialogDisable			{2: 'Eleanor', 3: 'Are a bit underwhelming.', 18: '100007539'}
+111	111		101							{4: '4', 5: '1'}
+112	112		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_15.jpg'}
+113	113		302							"{2: ""Of course, there's more to it than that."", 3: '114'}"
+114	114		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_16.jpg', 3: '0', 4: '1', 5: '0.7'}
+115	115		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_16.jpg'}
+116	116		205							{1: '999'}
+117	117		301			DialogEnable				{2: 'Eleanor', 3: 'Continue.', 18: '100007540'}
+118	118		301							{3: 'The cold kiss of steel against your throat stops you cold. She handles the blade with dinner knife precision, enough pressure to command obedience, not enough to draw blood.'}
+119	119		502						500.0	{1: 'DialogDisable'}
+120	120		302							"{2: ""If I tell you now, I'll lose my value, won't I?"", 3: '121'}"
+121	121		401							{1: '2', 2: '5325'}
+122	122		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+123	123		101							{1: 'Assets/Product/Texture/Image/BgComic/V300cibeizhe/V300_00.png', 4: '5'}
+124	124		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_01_17.jpg'}
+125	125		301			DialogEnable	DialogDisable			{3: 'Then, cold steel presses under your chin, tilting your head up. Only then do you realize your breath has gone ragged.'}
+126	126		302							{2: 'No matter the combination, two of us will inevitably make the same gesture.', 3: '127'}
+127	127		302							{2: 'And if your enemies continue to use the same methods as before...', 3: '128'}
+128	128		302							"{2: ""We'll just keep ending up in a two-two-one situation."", 3: '129'}"
+129	129		104						1500.0	{1: '0|-20|-50', 2: '1'}
+130	130		301			DialogEnable				{2: 'Eleanor', 3: 'In the event of a draw, the one with the fewest gestures loses.', 18: '100007541'}
+131	131		301							{2: 'Eleanor', 3: 'That way, the odds of winning become even...', 18: '100007542'}
+132	132		301				DialogDisable			"{2: 'Eleanor', 3: ""But once they catch on and switch tactics, you're back to a coin flip."", 18: '100007543'}"
+133	133		302							{2: 'This part...', 3: '134'}
+134	134		302							"{2: ""Let's leave it to the most thrilling possibility."", 3: '135'}"
+135	135		104						400.0	{1: '0|0|55', 2: '0.5'}
+136	136		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_02_01.jpg', 3: '0', 4: '1', 5: '0.7'}
+137	137		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_02_01.jpg'}
+138	138		205							{1: '999'}
+139	139		301			DialogEnable				"{2: 'Eleanor', 3: ""I don't see your terminal on you."", 18: '100007544'}"
+140	140		502						500.0	{1: 'DialogDisable'}
+141	141		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_02_02.png', 4: '4'}
+142	142		104							{1: '0|-600|0', 2: '0', 4: '4'}
+143	143		401							{1: '2', 2: '4341'}
+144	144		104							{1: '0|0|0', 2: '0.5', 4: '4'}
+145	145		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.9', 5: '0.5'}
+146	146		301			DialogEnable				{3: 'Eleanor looks down at your bare arms.'}
+147	147		301				DialogDisable			"{2: 'Eleanor', 3: ""You've stashed it away. In your plan, the terminal's more valuable than you are."", 18: '100007545'}"
+148	148		302				AniZhuanchangBegin			"{2: '(Nod)', 3: '149', 4: ""That's right."", 5: '149'}"
+149	149		205							{1: '999'}
+150	150		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_02_03.jpg'}
+151	151		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '4'}
+152	152		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '5'}
+153	153		104							{1: '0|800|0', 2: '0', 4: '4'}
+154	154		104				AniZhuanchangEnd			{1: '0|-715|0', 2: '0', 4: '5'}
+155	155		301			DialogEnable				{3: 'Her gaze shifts, turning playful and curious. An enigmatic smile tugs at her lips, hinting at genuine interest as she leans in closer.'}
+156	156		502						500.0	{1: 'DialogDisable'}
+157	157		401							{1: '2', 2: '5321'}
+158	158		104							{1: '0|0|-50', 2: '0.3'}
+159	159		104							{1: '0|1200|0', 2: '1', 4: '4'}
+160	160		104						1200.0	{1: '0|-1200|0', 2: '1', 4: '5'}
+161	161		101							{4: '4', 5: '1'}
+162	162		101							{4: '5', 5: '1'}
+163	163		301			DialogEnable	DialogDisable			"{2: 'Eleanor', 3: ""Are you threatening me? If we don't work together, we all lose."", 18: '100007546'}"
+164	164		302							"{2: ""Just to be clear, I don't have a plan with a hundred percent chance of success."", 3: '165'}"
+165	165		302							"{2: ""But I absolutely won't let this turn into a stalemate."", 3: '166'}"
+166	166		401							{1: '2', 2: '5321'}
+167	167		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_02_04.jpg', 3: '0', 4: '1', 5: '0.4'}
+168	168		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_02_04.jpg'}
+169	169		205							{1: '999'}
+170	170		301			DialogEnable				{3: 'Eleanor gives a soft chuckle, withdraws the dagger from your collar, and steps down from the table.'}
+171	171		302							{2: 'Are these terms appealing to you now?', 3: '172'}
+172	172		301							"{2: 'Eleanor', 3: ""Like you said... the possibility is the most intoxicating poison, isn't it?"", 18: '100007547'}"
+173	173		502						500.0	{1: 'DialogDisable'}
+174	174		401							{1: '2', 2: '5286'}
+175	175		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_02_05.jpg', 3: '0', 4: '1', 5: '0.4'}
+176	176		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_02_05.jpg'}
+177	177		205							{1: '999'}
+178	178		301			DialogEnable				{3: 'Without warning, the woman reaches out and takes your hand. The pristine white silk of her gloves brushes against the worn, dirt-streaked fabric of your combat gloves.'}
+179	179		502						500.0	{1: 'DialogDisable'}
+180	180		401							{1: '2', 2: '2589'}
+181	181		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_02_06.jpg', 3: '0', 4: '1', 5: '0.4'}
+182	182		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_02_06.jpg'}
+183	183		205							{1: '999'}
+184	184		104						300.0	{1: '0|0|100', 2: '0.4'}
+185	185		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_02_07.jpg', 3: '0', 4: '1', 5: '0.5'}
+186	186		101							{1: 'Assets/Product/Texture/Image/BgComic/V310Lilith/V310_02_07.jpg'}
+187	187		205							{1: '999'}
+188	188		301			DialogEnable	AniZhuanchangBegin			{3: 'Then, she places a dagger in your palm, guiding your fingers to close around it.'}
+189	189		401						2000.0	{1: '1', 2: '36'}
+190	190		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1165.jpg'}
+191	191		401							{1: '2', 2: '5321'}
+192	192		301			AniZhuanchangEnd	DialogDisable			{3: 'You breathe a sigh of relief as you sheathe the dagger at your waist.'}
+193	193		401							{1: '1', 2: '385'}
+194	194		401							{1: '2', 2: '4280'}
+195	195		401							{1: '2', 2: '2593'}
+196	196		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+197	197		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1165.jpg', 3: '0.5', 4: '4'}
+198	198		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1165.jpg', 3: '0.5'}
+199	199		104							{1: '-40|20|-20', 2: '0.5'}
+200	200		104							{1: '40|0|-20', 2: '0.5', 4: '4'}
+201	201		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 4: '5'}
+202	202		104							{1: '0|0|0', 2: '0.5'}
+203	203		104						500.0	{1: '0|0|0', 2: '0.5', 4: '4'}
+204	204		101							{4: '4', 5: '1'}
+205	205		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1165.jpg', 3: '1'}
+206	206		301			DialogEnable				{3: 'The pain you had been holding back suddenly surges, sharp and unrelenting. During your crossing between sectors, your left arm must have been briefly exposed to the corrosive elements outside. Even that fleeting contact was enough to cause severe, irreversible damage.'}
+207	207		301							{3: 'Despite the agony, your eyes flick to the terminal. Seeing the Punishing Virus concentration still at safe levels, you let out a sigh of relief out of instinct.'}
+208	208		301							{3: 'Eleanor notices your struggle, your expression slipping as the pain becomes harder to mask.'}
+209	209		302							{2: '...', 3: '210'}
+210	210		201							{1: '1', 2: '501130', 3: '7'}
+211	211		301							{1: '1', 2: 'Eleanor', 3: 'You look rough.', 4: '1', 18: '100007548'}
+212	212		202							{1: '1'}
+213	213		301							{3: 'Her tone cuts through the air, cold and indifferent.'}
+214	214		302							{2: '(Try to check wound)', 3: '215'}
+215	215		301				DialogDisable			"{3: ""It's a difficult decision, but if you don't treat this wound now, you probably won't make it until the end of the game.""}"
+216	216		302							{2: '(Try to remove the protective suit)', 3: '217'}
+217	217		401							{1: '2', 2: '4341'}
+218	218		302			RImgBg1Shake				{2: 'Uh...', 3: '219'}
+219	219		301			DialogEnable				{3: 'Your muscles scream in protest as you struggle to remove the protective suit, your hands slipping repeatedly from the pain.'}
+220	220		401							{1: '2', 2: '952'}
+221	221		301							{3: 'However, an unexpected force unlocks the buckle at your waist.'}
+222	222		302							{2: 'Thank you.', 3: '223', 4: 'Ugh...', 5: '226'}
+223	223		201							{1: '18', 2: '501130'}
+224	224		301							"{1: '1', 2: 'Eleanor', 3: 'After all, we\'re still counting on your ""genius"" to save us.', 4: '18', 18: '100007549'}"
+225	225	230	202							{1: '18'}
+226	226		201							{1: '18', 2: '501130'}
+227	227		301							"{1: '1', 2: 'Eleanor', 3: ""You're welcome."", 4: '18', 18: '100007550'}"
+228	228		202							{1: '18'}
+229	229		301							{3: 'She continues speaking without waiting for a response.'}
+230	230		301							{3: 'Her voice carries a mocking tone.'}
+231	231		401							{1: '2', 2: '2987'}
+232	232		301						450.0	"{3: ""Eleanor's movements are calm and steady as she bandages your injured arm and shoulder, following your instructions.""}"
+233	233		301							{3: 'Your skin makes contact with the not-fully-contaminated air again; with the help of the serum from earlier, you should barely be able to resist its effects.'}
+234	234		301				DialogDisable			{3: 'Your gaze shifts to your own blood-soaked undergarments and clothes, the fabric clinging stubbornly to your wounds, glued by tissue fluid.'}
+235	235		302							{2: 'Phew—', 3: '236'}
+236	236		302							{2: '(Bend down)', 3: '237'}
+237	237		104						450.0	{1: '0|50|-100', 2: '0.4'}
+238	238		302							{2: '(Pick up the backpack and dump the remaining contents onto the table)', 3: '239'}
+239	239		401							{1: '2', 2: '4892'}
+240	240		306							{1: '1'}
+241	241		205						650.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0.6'}
+242	242		301			DialogEnable				{3: 'A rope hits the table first, followed by several serum vials.'}
+243	243		201							{1: '1', 2: '500082', 4: '-600', 6: '400'}
+244	244		201							{1: '2', 2: '500082', 6: '400'}
+245	245		201							{1: '3', 2: '500082', 4: '600', 6: '400'}
+246	246		301							{1: '1', 3: 'Only three serum doses remain out of the original six. They roll across the table, coming to a stop at the edge of the wooden corner alongside flint and emergency flares.', 4: '1', 5: '2', 6: '3'}
+247	247		202							{1: '1', 2: '2', 3: '3'}
+248	248		301							{3: 'The first aid kit and thermal blanket finally slip free from the opening, landing with a soft thud on the velvet-covered tabletop.'}
+249	249		306							
+250	250		205						650.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '0', 5: '0.6'}
+251	251		205							{1: '999'}
+252	252		302							{2: '(Open the first aid kit)', 3: '253'}
+253	253		401							{1: '2', 2: '4700'}
+254	254		301							{3: 'With your left hand, you awkwardly grip the first aid kit—your posture strained, a desperate attempt to ease the pain—while your right hand fumbles to unzip it.'}
+255	255		302							{2: '(Take out two painkillers and swallow them)', 3: '256'}
+256	256		201							{1: '1', 2: '501130'}
+257	257		301				DialogDisable			{1: '1', 2: 'Eleanor', 3: 'Anything I can help with?', 4: '1', 18: '100007551'}
+258	258		202							{1: '1', 6: '1'}
+259	259		302							{2: 'Uh...', 3: '260'}
+260	260		302							{2: '(Pour medical saline solution on the wound)', 3: '261'}
+261	261		401							{1: '2', 2: '1505'}
+262	262		103							{1: '1.4', 2: '0|50|-100'}
+263	263		502						1200.0	{1: 'RImgBg1Shake'}
+264	264		301			DialogEnable				"{3: ""A clear, colorless liquid with a pungent smell gurgles from the bottle's mouth, its scalding sensation assaulting the skin.""}"
+265	265		302							{2: 'Ugh—!', 3: '266', 4: '(Endure the pain)', 5: '266'}
+266	266		401							{1: '2', 2: '4203'}
+267	267		301			RImgBg1Shake				{3: 'You slam the medicine bottle onto the table, snatching up the bandage with your left hand, finding even simple bandaging difficult now.'}
+268	268		301				DialogDisable			"{3: ""Eleanor doesn't say a word. She steps closer, and takes the bandages in your hand.""}"
+269	269		302							{2: '(Remain silent)', 3: '270', 4: 'Thanks...', 5: '270'}
+270	270		302							{2: '(Place gauze on the wound)', 3: '271'}
+271	271		401							{1: '2', 2: '1543'}
+272	272		302			RImgBg1Shake				{2: 'Tch...', 3: '273'}
+273	273		201							{1: '1', 2: '501130', 3: '9', 5: '-50', 6: '-50'}
+274	274		301			DialogEnable				"{1: '1', 2: 'Eleanor', 3: ""Just a warning, I'm no Florence Nightingale."", 4: '1', 18: '100007552'}"
+275	275		401							{1: '2', 2: '2987'}
+276	276		301						450.0	{3: 'She stretches the bandage and, with remarkably precise pressure, wraps it around your chest and shoulder.'}
+277	277		204							{1: '1'}
+278	278		301							"{2: 'Eleanor', 3: ""You're pretty easy to win over, aren't you?"", 4: '1', 18: '100007553'}"
+279	279		202							{1: '1'}
+280	280		301				DialogDisable			{3: 'The bandage secures your chest and shoulder while the hemostatic powder applied to it quickly begins to take effect.'}
+281	281		302							{2: '(Get up)', 3: '282'}
+282	282		401							{1: '2', 2: '4833'}
+283	283		104						1200.0	{1: '50|20|-50', 2: '0.4'}
+284	284		104							{1: '0|0|0', 2: '0.4'}
+285	285		301		1	DialogEnable	AniZhuanchangBegin			{3: 'After makeshift treatment, merely maintaining your current physical state feels like a small miracle.'}

@@ -1,0 +1,81 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory90.png'}
+2	2		401							{1: '1', 2: '9'}
+3	1000		201							{1: '1', 2: '500201'}
+4	3		301			DialogEnable				{1: '1', 2: 'Simon', 3: 'Gather up and defend! Keep an eye on your companions!', 4: '1'}
+5	4		301							{2: 'Simon', 3: 'Zone 2, switch places with Zone 4! Move!', 4: '1'}
+6	1001		201							{1: '1', 2: '500208'}
+7	5		301							{1: '1', 2: 'Bionic Machine', 3: 'ROAR!!!', 4: '1'}
+8	1002		201							{1: '1', 2: '500019'}
+9	6		301							{1: '1', 2: 'Construct', 3: 'Shields up!', 4: '1'}
+10	1003		201							{1: '1', 2: '500208'}
+11	1004		401							{1: '2', 2: '10007001'}
+12	7		301			PanelActor1Shake				{1: '1', 2: 'Bionic Machine', 3: '——', 4: '1'}
+13	1005		202							{1: '1'}
+14	8		301							{3: 'On the snowy field, the bionics exchange blows with the ARU. The ravage beasts charge incessantly in an attempt to rip apart the joint army of Babylonia and the ARU.'}
+15	9		301							"{3: ""However, the ARU remains unbroken. On the contrary, their forces became more united under Simon's command.""}"
+16	10		301							"{3: ""Everyone is fighting as one. Even though Simon's tactical decisions are old-fashioned in Babylonia terms, they proved highly effective against the scattered bionics.""}"
+17	1006		201							{1: '1', 2: '500201', 4: '400'}
+18	1007		201							{1: '2', 2: '500199', 4: '-400'}
+19	11		301							{1: '1', 2: 'Staessen', 3: 'Good, good! Looks like our side will be victorious if we keep this up.', 4: '2'}
+20	12		301							"{2: 'Simon', 3: ""I wouldn't be so optimistic..."", 4: '1'}"
+21	13		301							{2: 'Staessen', 3: 'Huh? Why?!', 4: '2'}
+22	1008		204							{1: '1', 2: '10'}
+23	14		301							"{2: 'Simon', 3: ""The drawn out battle will exhaust the meat-and-bones ARU members, and the Constructs from Babylonia can't keep up for long due to M.I.N.D. exhaustion from combat."", 4: '1'}"
+24	15		301							{2: 'Simon', 3: 'If only I were as good at M.I.N.D. calibration like Boss...', 4: '1'}
+25	16		301							"{3: ""Simon's pace of speech and breath quickens hastily as he speaks.""}"
+26	17		301							{2: 'Staessen', 3: 'What... What do you mean by this?', 4: '2'}
+27	18		301							{2: 'Simon', 3: 'In short, our fate is the hands of Boss. And—', 4: '1'}
+28	1009		202							{1: '1'}
+29	19		301			RImgBg1Shake				{2: 'Simon', 3: 'Sorry, Captain. My stomach is disagreeing with me... Ngh!!!'}
+30	1010		203							{1: '2', 2: '0.25', 3: '0'}
+31	20		301							{2: 'Staessen', 3: 'Oi, what the hell? Why are you vomiting all of a sudden. Dammit!', 4: '2'}
+32	21		301							{2: 'Comm Message', 3: 'Commandant Simon, your orders! Commandant Simon!'}
+33	22		301							{2: 'Staessen', 3: 'This... Damn it. Damn IT!', 4: '2'}
+34	23		301				AniZhuanchangBegin			"{2: 'Staessen', 3: ""I'll take the helm! All hands, get ready to fight like you've never!"", 4: '2'}"
+35	500		202							{1: '2', 6: '1'}
+36	1011		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory224.png'}
+37	24		301			AniZhuanchangEnd				{3: '——'}
+38	1012		201							{1: '1', 2: '500209'}
+39	25		301							{1: '1', 2: 'Amberia (Atiel)', 3: 'Cough... Ugh! Ahhhhh!', 4: '1'}
+40	26		301			RImgBg1Shake				{3: 'The tremors grow within the chamber as the energy transfer continues.'}
+41	1013		201							{1: '1', 2: '500214', 3: '5'}
+42	27		301							{1: '1', 2: 'Rosetta', 3: 'Argh... My M.I.N.D...', 4: '1'}
+43	28		301			RImgBg1Shake				"{3: ""Rosetta falls and kneels uncontrollably with Atiel's anguished scream. Her light wings deactivate, and her weapons slink out of her hand, landing on the floor with a series of metallic clinks.""}"
+44	1014		201							{1: '1', 2: '500209'}
+45	29		301							{1: '1', 2: 'Amberia (Atiel)', 3: 'AAAHHHHHH!', 4: '1'}
+46	30		301							"{3: ""Amberia's lower body, already charged, launches a chaotic flurry of attacks. She shoots at random, but is unusually effective at suppressing you and Rosetta.""}"
+47	1015		201							{1: '1', 2: '500214', 3: '5'}
+48	31		301							{1: '1', 2: 'Rosetta', 3: '...Ngh.', 4: '1'}
+49	1016		302							{2: 'Rosetta, is your M.I.N.D. okay?', 3: '32', 4: '(Stand in front of Rosetta)', 5: '33'}
+50	32	1017	301							{2: 'Rosetta', 3: 'N-no... Amberia has forcefully linked with my M.I.N.D... The pain... Rgh!', 4: '1'}
+51	33	34	301							"{3: ""Rosetta is unable to continue fighting in this state, so you pilot your mech in front of Rosetta to protect her from Atiel's attacks.""}"
+52	34	1017	301							{2: 'Rosetta', 3: 'Thank you... Commandant.', 4: '1'}
+53	1017		201							{1: '1', 2: '500209'}
+54	1018		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineBaozhaNew.prefab', 2: '2', 3: '1'}
+55	35		301							{1: '1', 2: 'Amberia (Atiel)', 3: 'AAAAGGHHH!', 4: '1'}
+56	36		301							{3: 'The energy pipeline seems to be practically writhing, speeding up energy transfer. Rosetta finally stands, lifting herself up with the back of your mech.'}
+57	1019		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineBaozhaNew.prefab', 4: '1'}
+58	1020		201							{1: '1', 2: '500214', 3: '4'}
+59	37		301							"{1: '1', 2: 'Rosetta', 3: ""Commandant, this doesn't look good. Remember on the files...? Our roots also trace back to Amberia."", 4: '1'}"
+60	38		301							{2: 'Rosetta', 3: 'I feel weak all over... Can you try to remote link and dive into my M.I.N.D.?', 4: '1'}
+61	1021		302							"{2: 'Do you need help calibrating your M.I.N.D.?', 3: '39', 4: ""But if so, we'll both be left open."", 5: '40'}"
+62	39	41	301							{2: 'Rosetta', 3: 'No, something more crucial than that...', 4: '1'}
+63	40	41	301							"{2: 'Rosetta', 3: ""As I've said, I will keep you safe."", 4: '1'}"
+64	1022		204							{1: '1', 2: '5'}
+65	41		301							{3: 'With that, Rosetta unfolds her light wings once more. She grips the handle of her spear with her two still functional fingers.'}
+66	42		301							{2: 'Rosetta', 3: 'Commandant, since Amberia is now linked with my M.I.N.D., you can use it as a proxy to hop into hers—', 4: '1'}
+67	43		301							"{2: 'Rosetta', 3: 'Then you can use this... The ""code"" I just managed to steal.', 4: '1'}"
+68	44		301							"{3: ""Rosetta shows you Evan's voice recorder. She somehow retrieved it in the mayhem just now.""}"
+69	1023		302							"{2: ""We'll put Amberia back to sleep?"", 3: '45'}"
+70	45		301							{2: 'Rosetta', 3: 'Yeah... That might sever her link to the bionics... And end the war outside.', 4: '1'}
+71	46		301				PanelActor1Shake			{2: 'Rosetta', 3: 'Commandant... Ngh!', 4: '1'}
+72	1024		401							{1: '2', 2: '10007501'}
+73	47		301							{3: 'Amberia launches a sudden barrage at you. Rosetta arduously blocks it with her shield.'}
+74	48		301							{2: 'Rosetta', 3: 'More importantly... If her M.I.N.D. is weakened, I can stand a chance against her.', 4: '1'}
+75	49		301							"{3: ""Amberia's energy pellets land on Rosetta's shield and dissipates into an icy sheet of fog. Rosetta turns her head at you in pain.""}"
+76	1025		204							{1: '1', 2: '1'}
+77	50		301							{3: 'By the look in her eyes—you could see that she is determined to win.'}
+78	1026		302							{2: 'Win, Rosetta.'}
+79	51		301							"{2: 'Rosetta', 3: ""Please hurry... I don't know how much longer my M.I.N.D. can take it."", 4: '1'}"
+80	52		301		1		AniZhuanchangBegin			{2: 'System', 3: 'Connection initiated.'}

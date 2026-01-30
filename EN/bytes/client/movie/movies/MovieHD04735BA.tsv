@@ -1,0 +1,216 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory670.jpg'}
+2	2		401							{1: '1', 2: '63'}
+3	3		301			DialogEnable				"{3: ""After checking several times to make sure no one is following, you grip the warning letter in your hand and step into the elevator to the windmill tower's top.""}"
+4	4		301							"{3: ""It's a letter foretelling a crime, and as you look at it, you can almost hear a woman's soft humming in your ear.""}"
+5	5		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory894.jpg'}
+7	7		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+8	8		504							{1: '0.7'}
+9	9		401							{1: '2', 2: '5704'}
+10	10		201							{1: '1', 2: '501118', 3: '2'}
+11	11		301							"{1: '1', 2: 'Eleanor', 3: ""<i>?Windmill tower's falling down, falling down, falling down. Windmill tower's falling down, falling down, falling down.?{226|153|170}</i>"", 4: '1'}"
+12	12		204							{1: '1'}
+13	13		301							{2: 'Eleanor', 3: '<i>My dear Commandant...</i>', 4: '1'}
+14	14		202							{1: '1', 6: '1'}
+15	15		301							{3: 'She hums as she writes.', 6: '1', 7: '1', 8: '0.5', 9: '3'}
+16	16		110							
+17	17		201							{1: '1', 2: '501118'}
+18	18		301							"{1: '1', 2: 'Eleanor', 3: ""<i>I imagine you're currently indulging in Constellia's cloyingly sweet, peaceful, and dreadfully dull festival games.</i>"", 4: '1'}"
+19	19		402							{1: '5704'}
+20	20		204							{1: '1', 2: '4'}
+21	21		301			DialogShake				"{2: 'Eleanor', 3: ""Ha! How unbearably dull. Why don't I add a little excitement..."", 4: '1'}"
+22	22		401							{1: '2', 2: '5704'}
+23	23		301							"{2: 'Eleanor', 3: ""<i>I've planted a bomb at the top of Constellia's windmill tower, one that's powerful enough to bring the whole thing down.</i>"", 4: '1'}"
+24	24		204							{1: '1', 2: '2'}
+25	25		301							{2: 'Eleanor', 3: '<i>Picture it. All those carefree laughs replaced by screams and wails in the wake of one deafening blast.</i>', 4: '1'}
+26	26		204							{1: '1', 2: '3'}
+27	27		301							{2: 'Eleanor', 3: '<i>I can hardly contain my excitement...</i>', 4: '1'}
+28	28		402							{1: '5704'}
+29	29		204							{1: '1'}
+30	30		301							"{2: 'Eleanor', 3: ""Heh... there's no way you'd just stand by and let it happen."", 4: '1'}"
+31	31		401							{1: '2', 2: '5704'}
+32	32		301							"{2: 'Eleanor', 3: ""<i>You know where to find me. That's right, as close to the bomb as possible.</i>"", 4: '1'}"
+33	33		204							{1: '1', 2: '2'}
+34	34		301							"{2: 'Eleanor', 3: ""<i>Don't worry. When the windmill tower falls, at least we'll fall together.<i>"", 4: '1'}"
+35	35		204							{1: '1'}
+36	36		301							{2: 'Eleanor', 3: '<i>After all...<i>', 4: '1'}
+37	37		204							{1: '1', 2: '8'}
+38	38		301				AniZhuanchangBegin			"{2: 'Eleanor', 3: '<i>""If a person never falls in their lifetime, they\'ll only know what falling feels like when they die.""<i>', 4: '1'}"
+39	39		502							{1: 'DialogDisable'}
+40	40		402							{1: '5704'}
+41	41		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+42	42		202							{1: '1', 6: '1'}
+43	43		504							{1: '0'}
+44	44		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory688.jpg'}
+45	45		401							{1: '1', 2: '36'}
+46	46		401							{1: '2', 2: '649'}
+47	47		502					1000.0		{1: 'AniZhuanchangEnd'}
+48	48		401							{1: '1', 2: '279'}
+49	49		302							{2: 'Eleanor...', 3: '50'}
+50	50		301			DialogEnable				{3: 'Your lips move silently as you mouth the name of the sender.'}
+51	51		306							{1: '1'}
+52	52		401							{1: '2', 2: '4789'}
+53	53		301							{3: 'The elevator rises quickly, and you stand alone inside, running through the situation in your mind.'}
+54	54		301							{3: 'The moment you learned of the bomb, you alerted Babylonia, and Constellia offered to send a team to assist in its removal.'}
+55	55		301							{3: 'But you refused their offer.'}
+56	56		301							"{3: ""You can't be sure whether this Ascendant, Eleanor, really planted a bomb, but given her unpredictable nature, it's safer to follow her so?called rules.""}"
+57	57		402							{1: '649'}
+58	58		306							
+59	59		401							{1: '2', 2: '804'}
+60	60		502							{1: 'RImgBg1Shake'}
+61	61		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+62	62		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory687.jpg'}
+63	63		301							{3: 'Ding. The elevator reaches the top.'}
+64	64		104						150.0	{1: '0|50|-50', 2: '0.3'}
+65	65		104						150.0	{1: '0|-50|-100', 2: '0.3'}
+66	66		401							{1: '2', 2: '5705'}
+67	67		301							{3: 'Your standard?issue pistol is already in hand as you step out, fully alert, only to catch a whiff of a dangerous sweet scent.'}
+68	68		301							"{3: ""You've imagined countless ways you might meet her again, but what greets you now is nothing like you pictured.""}"
+69	69		306							{1: '1'}
+70	70		201							{1: '1', 2: '501118'}
+71	71		301							{1: '1', 3: 'The somewhat familiar Ascendant is tied to a chair, hands and feet bound, with the promised bomb sitting right on her lap.'}
+72	72		301							"{3: ""If you hadn't dealt with her many times before, you might think she's just an unfortunate victim.""}"
+73	73		306							
+74	74		302							"{2: ""You're..."", 3: '75', 4: 'Eleanor.', 5: '75'}"
+75	75		401							{1: '2', 2: '13081710'}
+76	76		301			PanelActor1Shake				{3: 'Seeing you arrive on schedule, she shifts slightly against her restraints, looking even more pitiful.'}
+77	77		204							{1: '1', 2: '2'}
+78	78		301							{2: 'Eleanor', 3: 'My dear Commandant, it delights me to see you take my message so seriously.', 4: '1'}
+79	79		204							{1: '1'}
+80	80		301							"{2: 'Eleanor', 3: ""But... as you can see, my hands and feet are tied, so I can't stand to greet you. How rude of me."", 4: '1'}"
+81	81		401							{1: '2', 2: '5705'}
+82	82		301							{3: 'Her politeness earns no courtesy in return. Before she says another word, you already have your gun aimed at her.'}
+83	83		302							{2: 'What game are you playing?', 3: '84', 4: 'Do you have anyone else working with you?', 5: '88'}
+84	84		301							{3: 'Even the sturdiest restraints would be as easy for her to break as a strand of hair.'}
+85	85		301							"{3: 'Maybe, out of respect for the role of a ""helpless damsel,"" she is letting herself be bound, submitting to these thin ropes for the moment.'}"
+86	86		204							{1: '1', 2: '7'}
+87	87	90	301							{2: 'Eleanor', 3: 'Look at me like this, Commandant. Do you really think I could still pull any tricks?', 4: '1'}
+88	88		204							{1: '1', 2: '4'}
+89	89		301							"{2: 'Eleanor', 3: ""Don't overthink it. Do I look like the kind who gets along with other Ascendants?"", 4: '1'}"
+90	90		204							{1: '1'}
+91	91		301							"{2: 'Eleanor', 3: ""I can't even move, and you're still pointing a gun at me. That's a bit crude, don't you think?"", 4: '1'}"
+92	92		302							"{2: ""I don't believe those ropes can actually restrain you."", 3: '93'}"
+93	93		204							{1: '1', 2: '7'}
+94	94		301							"{2: 'Eleanor', 3: ""Ah... I didn't think I'd left you with such an unladylike impression of me."", 4: '1'}"
+95	95		302							{2: 'Is the bomb real?', 3: '96'}
+96	96		204							{1: '1'}
+97	97		301							"{2: 'Eleanor', 3: ""Why don't you guess? Either way, you'll end up checking it yourself, won't you?"", 4: '1'}"
+98	98		203						250.0	{1: '1', 2: '0.5', 5: '-50'}
+99	99		104							{1: '0|50|-150', 2: '0.5'}
+100	100		401							{1: '2', 2: '4779'}
+101	101		301							{3: 'Just as she says, you ignore her words and focus on the box in her lap, inspecting it closely.'}
+102	102		302							{2: 'How do I disarm it?', 3: '103', 4: 'Tell me how to disarm it.', 5: '103'}
+103	103		204							{1: '1', 2: '4'}
+104	104		301							"{2: 'Eleanor', 3: ""It's simple. The countdown is tied to my life. Pull the trigger, kill me, and the timer stops..."", 4: '1'}"
+105	105		302							"{2: 'What?', 3: '106', 4: '...', 5: '106', 6: ""I don't believe you."", 7: '106'}"
+106	106		204							{1: '1', 2: '3'}
+107	107		301							"{3: ""Still bound, she can't hide her smile any longer. A faint flush creeps across her cheeks, as if savoring the moment.""}"
+108	108		301							"{2: 'Eleanor', 3: ""Believe me or don't, Commandant. Either way, you'll have to choose."", 4: '1'}"
+109	109		301							{2: 'Eleanor', 3: 'So, will you save me, or kill me?', 4: '1'}
+110	110		302							{2: '...', 3: '111'}
+111	111		204							{1: '1', 2: '2'}
+112	112		301							"{3: ""You say nothing, and her smile only widens, as if she's relishing the performance.""}"
+113	113		301							"{2: 'Eleanor', 3: 'Let me guess what\'s going through your head, ""Should I save her? But this damned bomb is still threatening innocent lives in Constellia. Killing her would be the smarter choice.""', 4: '1'}"
+114	114		204							{1: '1', 2: '7'}
+115	115		301							"{2: 'Eleanor', 3: 'No? Then maybe something harsher, ""Kill her! She\'s an Ascendant, humanity\'s enemy. One shot and this bomb threat disappears instantly.""', 4: '1'}"
+116	116		204							{1: '1', 2: '2'}
+117	117		301							{2: 'Eleanor', 3: 'Well? Did I get it right?', 4: '1'}
+118	118		202							{1: '1'}
+119	119		104							{1: '0|100|-150', 2: '0.5'}
+120	120		401							{1: '2', 2: '4779'}
+121	121		301							"{3: ""But you seem done with her little mind games. You lower your gun, crouch in front of her, and focus back on the bomb's timer.""}"
+122	122		201							{1: '1', 2: '501118', 3: '7'}
+123	123		301							{1: '1', 2: 'Eleanor', 3: '...Such a simple device, and the Gray Raven Commandant still feels the need to check it twice?', 4: '1'}
+124	124		302							"{2: ""You shouldn't treat your life so lightly."", 3: '125'}"
+125	125		204							{1: '1', 2: '2'}
+126	126		301							"{2: 'Eleanor', 3: ""On the contrary, Commandant. I value my life, and that's exactly why I've placed it in your hands."", 4: '1'}"
+127	127		204							{1: '1'}
+128	128		301							"{2: 'Eleanor', 3: 'I\'m just sitting here, playing the part of a poor, clueless woman under threat from a bomb, waiting for the righteous Commandant to ""save"" me.', 4: '1'}"
+129	129		204							{1: '1', 2: '4'}
+130	130		301							{2: 'Eleanor', 3: 'I believe the Gray Raven Commandant can weigh the value of a life with precision, even if... it belongs to an enemy.', 4: '1'}
+131	131		401							{1: '2', 2: '5705'}
+132	132		301							{3: 'You seem to have made up your mind. You lower your gun at last and start to undo her restraints.'}
+133	133		204							{1: '1', 2: '7'}
+134	134		301							{2: 'Eleanor', 3: '...', 4: '1'}
+135	135		301							"{2: 'Eleanor', 3: ""Commandant, you've certainly surprised me. So, this is your choice in the end?"", 4: '1'}"
+136	136		401							{1: '2', 2: '9317013'}
+137	137		203						250.0	{1: '1', 2: '0.3', 5: '-100'}
+138	138		202							{1: '1'}
+139	139		401							{1: '2', 2: '970804'}
+140	140		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+141	141		401							{1: '1', 2: '6125'}
+142	142		301			RImgBg1Shake				{3: 'The moment her legs are freed, she kicks upward without warning, her sharp heel coming dangerously close to your chin.'}
+143	143		201							{1: '1', 2: '501118', 3: '2'}
+144	144		301				DialogDisable			"{1: '1', 2: 'Eleanor', 3: '""Save everyone you can,"" is it? I think I\'m starting to like you more. Maybe we don\'t have to be enemies after all.', 4: '1'}"
+145	145		202							{1: '1'}
+146	146		302							{2: 'I trust my instincts. The bomb is probably fake.', 3: '147'}
+147	147		302							{2: 'But to rule out every possible risk...', 3: '148'}
+148	148		401							{1: '2', 2: '5851'}
+149	149		301			DialogEnable				{3: 'You glance again at the numbers racing toward zero, then start working to disarm it.'}
+150	150		201							{1: '1', 2: '501118'}
+151	151		301							"{1: '1', 2: 'Eleanor', 3: ""...Still so earnest. I wonder how many more surprises you have in you. I'm almost starting to feel bad watching you struggle all alone."", 4: '1'}"
+152	152		302							{2: 'Lend me your processing power. We need to run through every possible passcode.', 3: '153'}
+153	153		204							{1: '1', 2: '4'}
+154	154		301							{2: 'Eleanor', 3: 'And what if I give you a fake code?', 4: '1'}
+155	155		302							{2: 'Everyone else has already been evacuated. Only you and I remain in the blast radius.', 3: '156'}
+156	156		301							{3: 'You lift your gaze from the maze of wires to meet her eyes.'}
+157	157		302							{2: 'Worst case, we end up on the front page of the next Communication Bulletin.', 3: '158'}
+158	158		204							{1: '1', 2: '2'}
+159	159		301							"{2: 'Eleanor', 3: '""Gray Raven Commandant and Ascendant Plunge to Their Death at Constellia\'s Double Seventh Festival""? I have to admire your sense of humor in a crisis. But don\'t worry, I also want to see just how far you can go.', 4: '1'}"
+160	160		401							{1: '2', 2: '5386'}
+161	161		301							"{3: ""Time doesn't slow for this uneasy alliance between two rivals. The countdown keeps outpacing your progress.""}"
+162	162		402							{1: '5386'}
+163	163		204							{1: '1', 2: '4'}
+164	164		301							{2: 'Eleanor', 3: 'Ahh... Looks like this is as far as we go.', 4: '1'}
+165	165		301							{3: 'Thirty seconds left. Nowhere near enough to finish.'}
+166	166		302							{2: 'Eleanor, one last time, is it real?', 3: '167', 4: '...Too late.', 5: '167'}
+167	167		301							"{2: 'Eleanor', 3: ""You already know the answer, don't you?"", 4: '1'}"
+168	168		301							{3: 'The enigmatic curve of her smile confirms the answer in your heart.'}
+169	169		202							{1: '1'}
+170	170		401							{1: '2', 2: '5386'}
+171	171		301				DialogDisable			{3: 'Ten seconds left... 9, 8, 7, 6, 5...'}
+172	172		302							{2: '(Throw the bomb with all your might!)', 3: '173'}
+173	173		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+174	174		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory668.jpg'}
+175	175		402							{1: '5386'}
+176	176		401							{1: '2', 2: '4486'}
+177	177		401							{1: '1', 2: '36'}
+178	178		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTempleBattle/FxUiTempleBattleYanhuan01.prefab', 2: '2'}
+179	179		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTempleBattle/FxUiTempleBattleYanhuan01.prefab'}
+180	180		401							{1: '1', 2: '6121'}
+181	181		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+182	182		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1076.jpg'}
+183	183		301			DialogEnable				{3: 'The bomb spins through the air, and instead of exploding, it bursts into a cascade of vivid purple fireworks, mocking your fears.'}
+184	184		201							{1: '18', 2: '501118', 3: '4'}
+185	185		301			DialogShake				{1: '1', 2: 'Eleanor', 3: 'Hahaha! Hahahahaha...', 4: '18'}
+186	186		202							{1: '18'}
+187	187		301							{3: 'Her laughter rings out behind you, wild and triumphant.'}
+188	188		302							{2: 'Eleanor—!', 3: '189', 4: '(Turn around to face the Ascendant)', 5: '189'}
+189	189		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+190	190		306							{1: '1'}
+191	191		401							{1: '2', 2: '4225'}
+192	192		301							"{3: 'But when you turn, ready to share the spectacle with your ""enemy,"" the mysterious Ascendant is gone.'}"
+193	193		401							{1: '2', 2: '4486'}
+194	194		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+195	195		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory687.jpg'}
+196	196		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTempleBattle/FxUiTempleBattleYanhuan01.prefab', 2: '2'}
+197	197		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTempleBattle/FxUiTempleBattleYanhuan01.prefab'}
+198	198		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiRpgTowerMain3d/FxUiRpgTowerMain3d01.prefab', 2: '2'}
+199	199		301							{3: 'The ropes lie scattered on the ground, applauding her escape. The air still holds the scent of gunpowder laced with her dangerous perfume.'}
+200	200		301				AniZhuanchangBegin			{3: 'On the chair, still carrying her fragrance, rests her final gift, a note in the same style as the warning letter.'}
+201	201		401							{1: '1', 2: '36'}
+202	202		502						2000.0	{1: 'DialogDisable'}
+203	203		401							{1: '1', 2: '6122'}
+204	204		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiRpgTowerMain3d/FxUiRpgTowerMain3d01.prefab'}
+205	205		306							
+206	206		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg'}
+207	207		104							{1: '0|0|-150', 2: '0'}
+208	208		502							{1: 'AniZhuanchangEnd'}
+209	209		304							{1: '<i>My dear Commandant, I simply adore that fire in you, that will to burn with everything you have.</i>', 2: 'aa44d9ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg', 6: '1', 7: '1'}
+210	210		304							{1: '<i>Shame I dislike the tired old twist of bombs turning into fireworks.</i>', 2: 'aa44d9ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg', 6: '1', 7: '1'}
+211	211		304							{1: '<i>And worse, the smoke masks that scent that belongs only to you. Such a pity...</i>', 2: 'aa44d9ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg', 6: '1', 7: '1'}
+212	212		304							"{1: ""<i>But this will not be the last time we meet. Promise me you'll guard that little flame in you. Don't let it burn out too soon.</i>"", 2: 'aa44d9ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg', 6: '1', 7: '1'}"
+213	213		304							{1: '<i>Next time, let me savor your essence properly.</i>', 2: 'aa44d9ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg', 6: '1', 7: '1', 9: '1'}
+214	214		502							{1: 'DialogEnable'}
+215	215		301		1		AniZhuanchangBegin			{3: 'In the bottom left corner of the note, a purple lipstick mark remains, still carrying her scent.'}

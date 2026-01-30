@@ -1,0 +1,328 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401				AniZhuanchangEnd			{1: '2', 2: '215'}
+3	3		304							{1: '<i>Darkness. Nothing but darkness. Veronica finds herself adrift once more in an endless void.</i>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-1'}
+4	4		304							{1: '<i>Yet her consciousness module registers neither pain nor confusion,</i>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-1'}
+5	5		304							{1: '<i>only the sensation of resting comfortably upon something soft.</i>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-1'}
+6	6		304							"{1: ""<i>The air doesn't reek of the same smell of machine oil and vital fluid from her memories,</i>"", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-1'}"
+7	7		304							{1: '<i>Instead, a gentle breeze dances across her frame, carrying with it a refreshing coolness.</i>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-1', 9: '1'}
+8	8		301			DialogEnable				{3: 'Then, she hears a voice she knows by heart.'}
+9	9		301				AniZhuanchangBegin			{2: '???', 3: 'Wakey-wakey!'}
+10	10		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory732.jpg'}
+11	11		402							{1: '215'}
+12	12		401							{1: '1', 2: '6186'}
+13	13		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+14	14		502							{1: 'DialogEnable'}
+15	15		201							{1: '1', 2: '501360'}
+16	16		301			AniZhuanchangEnd				{1: '1', 3: 'Slowly, Veronica wakes up to the voice.'}
+17	17		301							{3: 'When she opens her eyes, she sees that same smile on her human friend.'}
+18	18		401							{1: '2', 2: '4044'}
+19	19		502							{1: 'RImgBg1Shake'}
+20	20		201							{1: '1', 2: '501364', 3: '5', 5: '-60', 6: '-200', 7: '1'}
+21	21		203							{1: '1', 2: '0.25', 4: '-20', 5: '-200'}
+22	22		301							"{1: '1', 3: ""A cold jolt of alertness surges through Veronica's consciousness module. She bolts upright and reaches for her lance—but her fingers find only soft fabric beneath her.""}"
+23	23		301							{2: 'Veronica', 3: 'Where are we?', 4: '1'}
+24	24		301							{2: 'Veronica', 3: 'Where have they locked us in this time?!', 4: '1'}
+25	25		202							{1: '1', 6: '1'}
+26	26		201							{1: '2', 2: '501360', 4: '450'}
+27	27		201							{1: '3', 2: '501364', 3: '5', 4: '-350', 5: '-20', 6: '-200'}
+28	28		301							{1: '1', 3: 'Serra only offers a reassuring smile in response.'}
+29	29		301							"{2: 'Serra', 3: ""Bet it's that same nightmare again."", 4: '2'}"
+30	30		204							{1: '3', 2: '0'}
+31	31		301							{2: 'Veronica', 3: '...?', 4: '3'}
+32	32		301							"{2: 'Serra', 3: ""It's been so long, and you're still haunted by those dreams every night."", 4: '2'}"
+33	33		301				DialogDisable			"{2: 'Serra', 3: ""It's okay, though. Why don't you rest a little longer?"", 4: '2'}"
+34	34		202							{1: '2', 2: '3', 6: '1'}
+35	35		104						1000.0	{1: '250|0|-200', 2: '0.8'}
+36	36		104						1000.0	{1: '-250|0|-200', 2: '0.8'}
+37	37		104							{1: '0|0|0', 2: '1'}
+38	38		301			DialogEnable				{3: 'Veronica scans her unfamiliar surroundings with cautious eyes but finds no gunfire, no blood, and no trace of laboratory equipment anywhere.'}
+39	39		301							"{3: ""Her eyes find no trace of the mechanoid arena's cold metal surfaces—only humble, soft fabrics surrounding her on all sides.""}"
+40	40		301							{3: 'Above her, the same fabric stretches and flutters constantly in the strong wind.'}
+41	41		301							{3: 'Soft white specks drift in with the wind, reminiscent of the dust in the arena as they land on her frame with an icy touch.'}
+42	42		301							"{3: ""Yet unlike dust, they're pristinely pure and soft.""}"
+43	43		201							{1: '1', 2: '501360', 3: '2', 4: '450'}
+44	44		201							{1: '2', 2: '501364', 4: '-350', 5: '-20', 6: '-200'}
+45	45		301				AniZhuanchangBegin			"{1: '1', 2: 'Serra', 3: ""Veronica, look! It's snow—it's snowing outside!"", 4: '1'}"
+46	46		502						200.0	{1: 'DialogDisable'}
+47	47		202							{1: '1', 2: '2', 6: '1'}
+48	48		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1089.jpg'}
+49	49		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignSun01.prefab', 2: '2'}
+50	50		501				AniZhuanchangEnd			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+51	51		401							{1: '2', 2: '4651', 3: '0.5'}
+52	52		301			DialogEnable				"{3: ""Serra excitedly catches the delicate snowflakes on her fingertips, her face lighting up with joy. Before Veronica even knows what's happening, Serra grabs her hand and pulls her outside their shelter.""}"
+53	53		301							"{3: ""The gentle chill she'd barely felt inside suddenly intensifies, as a gust of wind carrying tiny white specks sweeps across her face.""}"
+54	54		301							"{3: ""A vast expanse of white unfolds before her. It's nothing like the harsh, sterile white that permeated the laboratory, but something soft and pure, stretching as far as her visual modules can perceive.""}"
+55	55		301							"{3: ""Her field of vision contains no cold, hard metal edges. The air is free of the smell of machine oil and vital fluid she can't be more familiar with. She's new to everything she's now seeing.""}"
+56	56		301							"{3: 'The delicate white particles—what Serra called ""snow""—drift down with the wind and land on Veronica, slowly building up a white blanket on her.'}"
+57	57		201							{1: '2', 2: '501364', 5: '-20', 6: '-200'}
+58	58		301							{1: '1', 2: 'Veronica', 3: '...', 4: '2'}
+59	59		201							{1: '2', 2: '501360', 3: '2', 7: '1'}
+60	60		301							"{1: '1', 2: 'Serra', 3: ""Whoa, I've never seen this much snow before!"", 4: '2'}"
+61	61		401							{1: '2', 2: '5286'}
+62	62		204							{1: '1', 2: '0'}
+63	63		203							{1: '2', 2: '0.3', 4: '-50'}
+64	64		301							"{3: ""Serra crouches down and gathers snow in her palms. Moments later, a small snow-white bird takes shape in her hands. She holds up her creation in excitement in front of Veronica's face.""}"
+65	65		301							"{2: 'Serra', 3: ""Isn't it pretty?"", 4: '2'}"
+66	66		202							{1: '2'}
+67	67		301							"{3: ""But Veronica remains unmoved by Serra's cheerfulness, her cold, vigilant eyes continuing to scan the snowy landscape for any sign of danger.""}"
+68	68		201							{1: '2', 2: '501364', 3: '4', 5: '-20', 6: '-200'}
+69	69		301							{1: '1', 2: 'Veronica', 3: 'Be quiet. Get back inside and hide.', 4: '2'}
+70	70		301							{2: 'Veronica', 3: 'Those people... they could find us at any moment.', 4: '2'}
+71	71		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignSun01.prefab'}
+72	72		203							{1: '2', 2: '0.25', 3: '-350', 4: '-20', 5: '-200'}
+73	73		201							{1: '1', 2: '501360', 3: '12', 4: '450'}
+74	74		301							"{1: '1', 2: 'Serra', 3: ""So you don't remember any of it..."", 4: '1'}"
+75	75		301							{2: 'Serra', 3: 'We escaped from that arena ages ago.', 4: '1'}
+76	76		301							"{2: 'Serra', 3: ""Don't worry, everything in that place has been destroyed. No one's going to drag us back there ever again."", 4: '1'}"
+77	77		301							{2: 'Veronica', 3: '...Destroyed?', 4: '2'}
+78	78		301							{2: 'Serra', 3: 'Yeah, that... mad woman. She tried to trap us by setting everything in the laboratory on fire.', 4: '1'}
+79	79		301							{2: 'Serra', 3: 'Then the whole place exploded... We were the only ones who made it out alive.', 4: '1'}
+80	80		204							{1: '2', 2: '0'}
+81	81		301							{2: 'Veronica', 3: '...', 4: '2'}
+82	82		401							{1: '2', 2: '5286'}
+83	83		203							{1: '1', 2: '0.3', 3: '400'}
+84	84		301							"{3: ""Serra gently places her hand on Veronica's mechanical frame, apparently trying to pass along her sense of peace. Her human fingers, chilled from the long exposure to the cold wind, rest against Veronica's metal surface.""}"
+85	85		204							{1: '1', 2: '0'}
+86	86		301							"{2: 'Serra', 3: ""So don't worry. We can stay here for just a while longer."", 4: '1'}"
+87	87		301							{2: 'Serra', 3: 'This is probably the last snowfall before spring. Once it stops, we can get back on the road.', 4: '1'}
+88	88		301							"{3: ""Veronica looks at Serra, who's looking back at her with a smile. With it, the tension that's been gripping her finally melts away.""}"
+89	89		401							{1: '2', 2: '5286'}
+90	90		203							{1: '2', 2: '0.25', 3: '-320', 4: '-80', 5: '-200'}
+91	91		203							{1: '1', 2: '0.25', 3: '350', 4: '-80'}
+92	92		301							{3: 'The two sit side by side on the soft snow, letting the drifting snowflakes settle gently upon their shoulders.'}
+93	93		301							{2: 'Veronica', 3: 'Where are we going after this?', 4: '2'}
+94	94		204							{1: '1', 2: '1'}
+95	95		301							{2: 'Serra', 3: 'Anywhere we want. The world out there is big, so we can just go wherever we want to go.', 4: '1'}
+96	96		301							{2: 'Serra', 3: 'Or we could stay right here and make this place our home.', 4: '1'}
+97	97		301							"{2: 'Serra', 3: ""As long as we can stay together like this, that's all that matters."", 4: '1'}"
+98	98		204							{1: '2', 2: '1'}
+99	99		301				DialogDisable			{2: 'Veronica', 3: '...Alright.', 4: '2'}
+100	100		202							{1: '1', 2: '2', 6: '1'}
+101	101		401							{1: '2', 2: '5286'}
+102	102		104							{1: '0|-180|-250', 2: '0', 4: '3'}
+103	103		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory105.png', 3: '0', 4: '1', 5: '0.4'}
+104	104		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory105.png'}
+105	105		104							{1: '0|-180|-250', 2: '0', 4: '1'}
+106	106		205							{1: '999'}
+107	107		301			DialogEnable				{3: 'Overcome with happiness, Serra lies back in the snow and lets the soft powder embrace her body, seemingly immune to the coldness.'}
+108	108		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignSun01.prefab', 2: '2'}
+109	109		201							{1: '2', 2: '501364', 3: '1', 5: '-20', 6: '-200'}
+110	110		301							"{1: '1', 3: ""Her eyes, brimming with joy, gaze up at the vast, boundless sky before turning to meet Veronica's eyes.""}"
+111	111		203							{1: '2', 2: '0.25', 3: '-320', 4: '-20', 5: '-200'}
+112	112		201							{1: '1', 2: '501360', 4: '350', 5: '0'}
+113	113		301							{1: '1', 2: 'Serra', 3: 'When spring comes, this place will bloom with flowers—just like in the painting.', 4: '1'}
+114	114		301							{2: 'Serra', 3: 'And when that time comes...', 4: '1'}
+115	115		301							{3: 'Veronica picks up where Serra left off.'}
+116	116		204							{1: '2', 2: '1'}
+117	117		301							"{2: 'Veronica', 3: ""When that time comes, we'll take another photo together."", 4: '2'}"
+118	118		301							{2: 'Veronica', 3: 'The two of us sitting in a sea of flowers at sunset.', 4: '2'}
+119	119		202							{1: '1', 2: '2', 6: '1'}
+120	120		306							{1: '1'}
+121	121		301							{3: 'Veronica gazes across the endless snowfield, attempting to construct an image in her consciousness module of this very place blanketed in flowers.'}
+122	122		301							{3: 'She imagines the sea of flowers taking on different hues as it is bathed in sunset and starlight.'}
+123	123		301							{3: 'And through it all, the two of them are together just as they are now, sitting shoulder to shoulder in this very spot.'}
+124	124		306							{1: '0'}
+125	125		201							{1: '2', 2: '501364', 3: '1', 5: '-20', 6: '-200'}
+126	126		301							{1: '1', 2: 'Veronica', 3: 'What about your mechanical bird drone?', 4: '2'}
+127	127		301							"{2: 'Veronica', 3: ""Let's take a photo here, right now."", 4: '2'}"
+128	128		301							{3: 'Serra, however, falls silent.'}
+129	129		204							{1: '2', 2: '0'}
+130	130		301							{2: 'Veronica', 3: '...?', 4: '2'}
+131	131		203							{1: '2', 2: '0.25', 3: '-320', 4: '-20', 5: '-200'}
+132	132		201							{1: '1', 2: '501360', 3: '7', 4: '350', 5: '0'}
+133	133		301							{1: '1', 3: 'Veronica turns her head to find Serra still in the same position, lying on the soft snow with her eyes closed, seemingly resting.'}
+134	134		301				DialogDisable			{3: 'She seems completely unbothered by the cold snowflakes landing on her body.'}
+135	135		401							{1: '2', 2: '4295'}
+136	136		401							{1: '1', 2: '36'}
+137	137		104							{1: '0|0|0', 2: '0', 4: '3'}
+138	138		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1092.jpg', 3: '0', 4: '1', 5: '0.5'}
+139	139		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1092.jpg'}
+140	140		205							{1: '999'}
+141	141		104							{1: '0|0|0', 2: '0', 4: '1'}
+142	142		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignSun01.prefab'}
+143	143		301			DialogEnable				"{3: ""The snowfall intensifies. Within moments, a thin white layer begins to build up on Serra's face.""}"
+144	144		401							{1: '1', 2: '119', 3: '1'}
+145	145		402							{1: '4295'}
+146	146		301							{3: 'The snow gradually obscures her features as it hardens into a ghastly white mask of frost.'}
+147	147		204							{1: '2', 2: '3'}
+148	148		301							"{2: 'Veronica', 3: ""Aren't you cold?"", 4: '2'}"
+149	149		401							{1: '2', 2: '5286'}
+150	150		203							{1: '2', 2: '0.3', 3: '-300', 4: '-20', 5: '-200'}
+151	151		301				DialogDisable			"{3: ""Veronica reaches out and tries to take hold of Serra's hand from under the snow.""}"
+152	152		401						500.0	{1: '2', 2: '772'}
+153	153		111						250.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab'}
+154	154		202							{1: '1', 2: '2', 6: '1'}
+155	155		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+156	156		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+157	157		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+158	158		301			DialogEnable				{3: 'But the moment she touches it, everything before her shatters like thin ice and falls apart into fragments.'}
+159	159		301				DialogDisable			{3: 'The illusions in her consciousness module collapse and dissolve, revealing once again a blinding whiteness.'}
+160	160		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+161	161		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+162	162		401							{1: '1', 2: '36'}
+163	163		402							{1: '4651'}
+164	164		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1317.jpg'}
+165	165		401							{1: '1', 2: '6235'}
+166	166		201							{1: '1', 2: '501364', 3: '7', 5: '-20', 6: '-200'}
+167	167		301			DialogEnable				"{1: '1', 3: ""This isn't the pristine white of a vast snowy plain, but the sterile pallor of a laboratory built of metal and reinforced barriers.""}"
+168	168		301				DialogDisable			"{3: ""The hand she's now holding has the same temperature and texture as her own—hard, cold, and metallic.""}"
+169	169		401							{1: '2', 2: '4673'}
+170	170		104						150.0	{1: '0|0|-150', 2: '0.1'}
+171	171		104							{1: '0|0|0', 2: '0.2'}
+172	172		204							{1: '1', 2: '9'}
+173	173		301			DialogEnable				{2: 'Veronica', 3: '...!', 4: '1'}
+174	174		301				DialogDisable			"{3: ""Intense waves of pain surge through Veronica's consciousness module once more. She knows her frame hasn't sustained any damage, yet she still feels that something is utterly wrong.""}"
+175	175		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+176	176		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+177	177		301			DialogEnable				{3: 'Her visual sensors receive clear signals with no signs of interference, yet she finds herself unable to analyze the specific data of what lies before her.'}
+178	178		202							{1: '1', 6: '1'}
+179	179		306							{1: '1'}
+180	180		201							{1: '2', 2: '500330'}
+181	181		301							{1: '1', 3: 'A small mechanoid with a plain, unremarkable coating lies motionless before Veronica.'}
+182	182		301							{3: 'It shows no response to external stimuli, apparently in some kind of dormant state.'}
+183	183		301							"{3: ""Veronica can't seem to sense the flow of time—everything she once perceived with such precision has now come to a complete halt.""}"
+184	184		301							{3: 'Right then, a hauntingly familiar human voice shatters this frozen stillness.'}
+185	185		202							{1: '2', 6: '1'}
+186	186		306							{1: '0'}
+187	187		201							{1: '1', 2: '501355'}
+188	188		301							{1: '1', 2: '???', 3: 'Fancy finally meeting you, Veronica.'}
+189	189		301							"{2: '???', 3: ""Allow me to introduce myself. My name is Dolores, and I'm the master of this arena.""}"
+190	190		202							{1: '1'}
+191	191		301							"{3: ""The human's voice creeps straight into Veronica's audio sensors, carrying with it the venomous touch of a serpent.""}"
+192	192		401							{1: '2', 2: '4339'}
+193	193		201							{1: '1', 2: '501364', 3: '3', 4: '-50', 5: '-50', 6: '-250', 7: '1'}
+194	194		203							{1: '1', 2: '0.25', 4: '-20', 5: '-200', 7: '1'}
+195	195		301							{1: '1', 2: 'Veronica', 3: '...!', 4: '1'}
+196	196		301							{3: 'She whirls around, lance at the ready, only to find nothing behind her.'}
+197	197		202							{1: '1', 6: '1'}
+198	198		502							{1: 'RImgBg1Shake'}
+199	199		401							{1: '2', 2: '4339'}
+200	200		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+201	201		301							{3: 'Her lance pierces nothing but thin air.'}
+202	202		401							{1: '2', 2: '4674'}
+203	203		306							{1: '1'}
+204	204		301							"{3: ""Yet the voice returns and floods the room. Veronica, however, can't pinpoint where it's coming from.""}"
+205	205		301				DialogDisable			{3: 'It seems to come from everywhere and nowhere.'}
+206	206		401							{1: '2', 2: '2959'}
+207	207		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+208	208		104						500.0	{1: '-150|-100|-150', 2: '0'}
+209	209		401							{1: '2', 2: '2959'}
+210	210		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+211	211		104						500.0	{1: '150|-100|-150', 2: '0'}
+212	212		401							{1: '2', 2: '2959'}
+213	213		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+214	214		104						500.0	{1: '0|0|0', 2: '0'}
+215	215		301			DialogEnable				{3: 'The human voice is like sticky spider silk, silently weaving through every inch of the cramped laboratory.'}
+216	216		401							{1: '2', 2: '2959'}
+217	217		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+218	218		104							{1: '150|-100|-150', 2: '0'}
+219	219		301							"{3: ""The voice, instantly tugging at the data within Veronica's memory module, matches a certain uncanny human voice she'd heard before in the darkness.""}"
+220	220		401							{1: '2', 2: '2959'}
+221	221		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+222	222		104							{1: '0|0|0', 2: '0'}
+223	223		301							{3: 'The same human voice that repeatedly tried to strangle her will to resist while she drifted in dark oblivion.'}
+224	224		402							{1: '4674'}
+225	225		306							{1: '0'}
+226	226		502							{1: 'RImgBg1Shake'}
+227	227		201							{1: '1', 2: '501364', 3: '4', 5: '-20', 6: '-200'}
+228	228		301							{1: '1', 2: 'Veronica', 3: '...So it was you all along!', 4: '1'}
+229	229		201							{1: '1', 2: '501354'}
+230	230		301							{1: '1', 2: 'Dolores', 3: 'Serra and I made a promise, but she failed to keep her end of the bargain.', 4: '1'}
+231	231		204							{1: '1', 2: '8'}
+232	232		301							"{2: 'Dolores', 3: ""I thought I'd take a little nap and wake up to find exactly what I wanted. Never thought it'd turn out like this."", 4: '1'}"
+233	233		204							{1: '1', 2: '5'}
+234	234		301							{2: 'Dolores', 3: 'So I saw to it that Serra was properly punished for her little blunder.', 4: '1'}
+235	235		301				DialogDisable			"{2: 'Dolores', 3: ""I left her consciousness trapped inside that mechanoid shell... where she'd be able to take her time to reflect upon her mistake."", 4: '1'}"
+236	236		202							{1: '1', 6: '1'}
+237	237		401							{1: '2', 2: '4674'}
+238	238		401							{1: '2', 2: '2959'}
+239	239		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+240	240		104						500.0	{1: '-150|-100|-150', 2: '0'}
+241	241		401							{1: '2', 2: '2959'}
+242	242		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+243	243		104						500.0	{1: '150|-100|-150', 2: '0'}
+244	244		401							{1: '2', 2: '2959'}
+245	245		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+246	246		104						500.0	{1: '0|0|0', 2: '0'}
+247	247		301			DialogEnable				{3: 'The voice continues as it goes from being intangible to taking on a definite form.'}
+248	248		301				DialogDisable			{1: '1', 3: 'Behind the one-way mirror in front of Veronica, the voice continues to spew unbearable venom.'}
+249	249		402							{1: '4674'}
+250	250		401							{1: '2', 2: '4276'}
+251	251		501						400.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab', 2: '2'}
+252	252		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab'}
+253	253		201							{1: '1', 2: '501364', 3: '5', 5: '-80', 6: '-350'}
+254	254		301			DialogEnable	DialogDisable			"{1: '1', 3: ""The mirror reflects Veronica's face, twisted with rage.""}"
+255	255		401						300.0	{1: '2', 2: '772'}
+256	256		402							{1: '772'}
+257	257		111						250.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab'}
+258	258		401							{1: '2', 2: '2655'}
+259	259		202							{1: '1', 6: '1'}
+260	260		301			DialogEnable				{3: 'Splash—'}
+261	261		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab'}
+262	262		401							{1: '2', 2: '4339'}
+263	263		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+264	264		201							{1: '1', 2: '501364', 3: '3', 4: '-50', 5: '-50', 6: '-250', 7: '1'}
+265	265		203							{1: '1', 2: '0.25', 4: '-20', 5: '-200'}
+266	266		502							{1: 'RImgBg1Shake'}
+267	267		301							{1: '1', 3: 'She swings her lance, shattering the mirror into countless pieces.'}
+268	268		202							{1: '1'}
+269	269		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+270	270		301				DialogDisable			"{3: ""Except there's nothing behind the shattered mirror.""}"
+271	271		401							{1: '2', 2: '4674'}
+272	272		401							{1: '2', 2: '2959'}
+273	273		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+274	274		104						500.0	{1: '-150|-100|-150', 2: '0'}
+275	275		401							{1: '2', 2: '2959'}
+276	276		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+277	277		104						500.0	{1: '150|-100|-150', 2: '0'}
+278	278		401							{1: '2', 2: '2959'}
+279	279		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+280	280		104						500.0	{1: '0|0|0', 2: '0'}
+281	281		301			DialogEnable				{3: 'Right then, she hears sadistic, delightful giggling coming from somewhere else.'}
+282	282		402							{1: '4674'}
+283	283		201							{1: '1', 2: '501364', 3: '5', 5: '-20', 6: '-200'}
+284	284		301							{1: '1', 2: 'Veronica', 3: 'Show yourself now!', 4: '1'}
+285	285		301							"{2: 'Veronica', 3: ""Don't be such a coward!"", 4: '1'}"
+286	286		301							"{2: 'Veronica', 3: ""Show yourself now, and I'll lend you an ear to any last words you have to say."", 4: '1'}"
+287	287		204							{1: '1', 2: '11'}
+288	288		301							"{2: 'Veronica', 3: ""You don't want to wait until I drive my lance through your throat!"", 4: '1'}"
+289	289		202							{1: '1'}
+290	290		301							"{3: ""Again, nothing but giggling. Soft and sickeningly sweet, the girl behind the voice laughs like she's heard something extremely amusing.""}"
+291	291		401							{1: '2', 2: '2959'}
+292	292		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+293	293		201							{1: '1', 2: '501353', 3: '2', 7: '1'}
+294	294		301							"{1: '1', 2: 'Dolores', 3: ""You know, Veronica, you're different from all the other mechanoids in this arena."", 4: '1'}"
+295	295		301							{2: 'Dolores', 3: 'They were no better than garbage, worthless, useless hunks of metal...', 4: '1'}
+296	296		201							{1: '1', 2: '501364', 3: '11', 5: '-20', 6: '-200', 7: '1'}
+297	297		301							{1: '1', 2: 'Veronica', 3: 'Shut up!', 4: '1'}
+298	298		401							{1: '2', 2: '2959'}
+299	299		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+300	300		201							{1: '1', 2: '501353', 3: '8', 7: '1'}
+301	301		301							"{1: '1', 2: 'Dolores', 3: ""C'mon, I had my eye on you all along. Let me at least finish what I have to say, will you?"", 4: '1'}"
+302	302		204							{1: '1', 2: '0'}
+303	303		301							{2: 'Dolores', 3: 'You know, your dear friend Serra... she was ever so polite when she spoke to me.', 4: '1'}
+304	304		204							{1: '1', 2: '2'}
+305	305		301							{2: 'Dolores', 3: 'I know you want to wrap your hands around my throat and ask me to give you your friend back...', 4: '1'}
+306	306		301							"{2: 'Dolores', 3: ""But I'm not the kind of villain who's destined for a tragic ending."", 4: '1'}"
+307	307		204							{1: '1', 2: '1'}
+308	308		301							"{2: 'Dolores', 3: 'So, leave it to me. Let\'s get ourselves ready for some... ""entertainment"" now.', 4: '1'}"
+309	309		301							{2: 'Dolores', 3: 'Well then, are you ready to meet your friend... Veronica?', 4: '1'}
+310	310		401							{1: '1', 2: '36'}
+311	311		204							{1: '1', 2: '2'}
+312	312		301				DialogDisable			"{2: 'Dolores', 3: 'Wakey-wakey, ""Serra"".', 4: '1'}"
+313	313		202							{1: '1', 6: '1'}
+314	314		401							{1: '2', 2: '1509'}
+315	315		201							{1: '2', 2: '500330', 5: '-80'}
+316	316		203						350.0	{1: '2', 2: '0.3', 3: '-40', 4: '-50'}
+317	317		203							{1: '2', 2: '0.4', 3: '0', 4: '0'}
+318	318		301			DialogEnable				"{1: '1', 3: ""With a harsh scraping of metal, the mechanoid that's been in sleep mode slowly rises to her feet.""}"
+319	319		401							{1: '1', 2: '226'}
+320	320		401							{1: '2', 2: '5286'}
+321	321		301			PanelActor2Shake				"{2: '""Serra""', 3: '...', 4: '2'}"
+322	322		301							"{2: '""Serra""', 3: 'I... am... ready to serve you... Master...', 4: '2'}"
+323	323		301							"{2: '""Serra""', 3: 'Target of attack... Awaiting... confirmation...', 4: '2'}"
+324	324		201							{1: '2', 2: '501353', 3: '5', 7: '1'}
+325	325		301							{1: '1', 2: 'Dolores', 3: 'Your target is—Veronica.', 4: '2'}
+326	326		204							{1: '2', 2: '2'}
+327	327		301		1	PanelActor2Shake	AniZhuanchangBegin			{2: 'Dolores', 3: 'Now—kill her for me!', 4: '2'}

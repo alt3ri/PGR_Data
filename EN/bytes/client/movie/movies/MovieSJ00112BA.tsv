@@ -1,0 +1,33 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		401							{1: '1', 2: '202'}
+2	2		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory226.png'}
+3	3		201							{1: '1', 2: '500004', 7: '1'}
+4	301		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryTongxunHalf.prefab', 2: '2', 3: '1'}
+5	4		301			DialogEnable				"{1: '1', 2: 'Asimov', 3: ""【kuroname】, there's good news and bad news. Which one do you want to hear first?"", 4: '1'}"
+6	5		302							{2: '...', 3: '6'}
+7	6		301							"{2: 'Asimov', 3: ""By the look on your face... Forget it. We found Amberia's location. I'm sending you the coordinates now."", 4: '1'}"
+8	7		301							"{2: 'Asimov', 3: ""However, her integration level is much higher than anticipated. She's approaching 100%, which is near critical mass..."", 4: '1'}"
+9	8		301							{2: 'Asimov', 3: 'Looks like she has sensed that you are severing the connections with the sub-systems, which has caused her to become enraged.', 4: '1'}
+10	9		301							"{2: 'Asimov', 3: ""Other Construct teams are ready for deep diving, but they can't last long without a commandant. So they'll be rotating in and out and supporting you."", 4: '1'}"
+11	1001		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryTongxunHalf.prefab', 4: '1'}
+12	11		201							{1: '1', 2: '500026'}
+13	12		301							"{1: '1', 2: 'Lee', 3: ""We've got a difficult battle ahead."", 4: '1'}"
+14	10		302							{2: 'Are you guys okay?', 3: '13'}
+15	13		201							{1: '1', 2: '500166'}
+16	14		301							"{1: '1', 2: 'Lucia', 3: ""Everything's fine."", 4: '1'}"
+17	15		201							{1: '1', 2: '1031001', 3: '1'}
+18	16		301							{1: '1', 2: 'Liv', 3: 'With you here, Commandant, our M.I.N.D.s are stable.', 4: '1'}
+19	17		302							{2: 'So...', 3: '18'}
+20	18		302							"{2: ""Let's rest a moment before we attack."", 3: '19'}"
+21	19		201							{1: '1', 2: '500166', 3: '5'}
+22	20		201							{1: '2', 2: '500026', 4: '600'}
+23	21		201							{1: '3', 2: '1031001', 4: '-600'}
+24	22		301							{1: '1', 2: 'Gray Raven', 3: 'Roger.', 4: '1', 5: '2', 6: '3'}
+25	23		202							{1: '1', 2: '2', 3: '3'}
+26	24		301				AniZhuanchangBegin			{3: 'The familiar Niflheim Lab extends in the space before. Amberia is in the deepest part of the lab.'}
+27	25		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+28	26		401							{1: '1', 2: '22'}
+29	27		301			AniZhuanchangEnd				"{2: '???', 3: '""Years had come and gone... 50 years, 100 years... Finally, a brave prince heard tales of the princess. He did not fear the bodies within the brambles, and proceeded resolutely to the castle of thorns.""'}"
+30	28		301							"{2: '???', 3: '""The brave prince arrived at the castle\'s gate and lit a crimson flame with his sword. Thorns surged forward to attack the prince but were frozen in place, and beautiful roses bloomed from every thorn as the prince walked past.""'}"
+31	29		301							"{2: '???', 3: '""Thunder and lightning illuminated the tower. Each of the Prince\'s firm steps gradually dispelled the darkness from the spiral staircase.""'}"
+32	30		301		1		AniZhuanchangBegin			"{2: '???', 3: '""The prince finally arrived at the room on the top floor. He opened the door to see a beautiful princess sleeping among a bed of roses.""'}"

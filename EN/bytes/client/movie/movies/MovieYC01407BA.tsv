@@ -1,0 +1,67 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory229.png'}
+2	2		401							{1: '1', 2: '103'}
+3	3		201							{1: '1', 2: '500091', 3: '5'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Nanami', 3: ""You're a Corrupted!"", 4: '1'}"
+5	5		201							{1: '1', 2: '500208'}
+6	6		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 3: '1'}
+7	7		301							{1: '1', 2: 'Bionic Machine (?)', 3: 'Urgh!!!', 4: '1'}
+8	8		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 4: '1'}
+9	9		201							{1: '1', 2: '500091', 3: '5'}
+10	10		301							"{1: '1', 2: 'Nanami', 3: ""And you're a Corrupted!"", 4: '1'}"
+11	11		201							{1: '1', 2: '500208'}
+12	12		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 3: '1'}
+13	13		301							{1: '1', 2: 'Bionic Machine (?)', 3: '——', 4: '1'}
+14	14		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 4: '1'}
+15	15		202							{1: '1', 6: '1'}
+16	16		201							{1: '1', 2: '500019', 4: '-400'}
+17	17		201							{1: '2', 2: '500028', 4: '400'}
+18	18		301							"{1: '1', 2: 'Construct', 3: ""What's with that Construct...?"", 4: '1'}"
+19	19		301							{2: 'Construct Captain', 3: 'I think I saw her on the files before! Are reinforcements coming?!', 4: '2'}
+20	20		301							{2: 'Construct', 3: 'Oh! Then we should get ready for a counterattack, yeah?', 4: '1'}
+21	21		202							{1: '1', 2: '2', 6: '1'}
+22	22		201							{1: '1', 2: '500091', 3: '5'}
+23	23		301							"{1: '1', 2: 'Nanami', 3: ""NO! Nanami isn't here to help you fight the bionics!"", 4: '1'}"
+24	24		201							{1: '1', 2: '500028'}
+25	25		301							{1: '1', 2: 'Construct Captain', 3: 'What?!', 4: '1'}
+26	26		202							{1: '1'}
+27	27		301							{3: 'Answering the Construct, Nanami dashes into the fray, defeating every Corrupted that she sees.'}
+28	28		301				AniZhuanchangBegin			"{3: ""All that stands in Nanami's way is met with a whack of her chainsaw and sent flying afar. Nobody can handle the Nanami calamity.""}"
+29	29		201							{1: '1', 2: '500199', 3: '5', 4: '-400'}
+30	30		201							{1: '2', 2: '500201', 4: '400'}
+31	31		301			AniZhuanchangEnd				"{1: '1', 2: 'Staessen', 3: ""Oi, Simon, what's with this Construct lass?! Why is she attacking our people?!"", 4: '1'}"
+32	32		301							{2: 'Simon', 3: 'I think I saw her with Boss before... Some Construct called Nanami.', 4: '2'}
+33	33		301							"{2: 'Staessen', 3: ""I don't need her name! I need a way to deal with that Construct!"", 4: '1'}"
+34	34		301							"{2: 'Simon', 3: ""I'm afraid only our very-not-present Boss can handle her."", 4: '2'}"
+35	35		301							"{2: 'Simon', 3: ""Soldiers on the frontline, do you copy? Pull back immediately! Don't engage with the Construct that just rushed in."", 4: '2'}"
+36	36		301							{2: 'Staessen', 3: 'What?! What about our defenses?!', 4: '1'}
+37	37		301							"{2: 'Simon', 3: ""It'll just be one or two openings. We'll be fine. Getting out of her way is more important."", 4: '2'}"
+38	38		201							{1: '2', 2: '500088', 3: '4', 4: '400'}
+39	39		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+40	40		301							"{1: '1', 2: 'Diana', 3: ""We'll cover for the openings."", 4: '2'}"
+41	41		301							{2: 'Staessen', 3: 'Diana... Why are the Forest Guard here? Did you capture that Atiel?', 4: '1'}
+42	42		301				AniZhuanchangBegin			"{2: 'Diana', 3: ""【kuroname】 and Rosetta will handle Atiel. We've returned to support the frontline instead. Forest Guards, spread out!"", 4: '2'}"
+43	43		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+44	44		202							{1: '1', 2: '2', 6: '1'}
+45	45		301			AniZhuanchangEnd				"{3: ""At Diana's behest, the Forest Guard members charge at the battlefield. Taking care to stay out of Nanami's way, they rescue the incapacitated ARU members.""}"
+46	46		201							{1: '1', 2: '500087', 4: '-400'}
+47	47		201							{1: '2', 2: '500088', 3: '4', 4: '400'}
+48	48		301							"{1: '1', 2: 'Fisher', 3: 'Pah, took your damn sweet time... some Forest ""Guards"" you all are!', 4: '1'}"
+49	49		301							"{2: 'Diana', 3: ""But it's still not too late, is it not?"", 4: '2'}"
+50	50		301							{2: 'Fisher', 3: '...Whaddya mean?', 4: '1'}
+51	51		301							"{2: 'Diana', 3: ""Your leg's hurt. Ride on my teammate's back and retreat. We'll handle the rest from here on out."", 4: '2'}"
+52	52		301							{2: 'Fisher', 3: 'Ya think we can leave our defenses to you sinners? You...', 4: '1'}
+53	53		301							"{2: 'Diana', 3: ""Even if we're sinners... We're sinners born and raised here. Please believe in us."", 4: '2'}"
+54	54		301				AniZhuanchangBegin			{2: 'Fisher', 3: '...', 4: '1'}
+55	100		202							{1: '1', 2: '2', 6: '1'}
+56	55		201							{1: '1', 2: '500211'}
+57	56		301			AniZhuanchangEnd				"{1: '1', 2: 'Martin', 3: ""Nanami, at this rate, you'll leave the battlefield. Aren't you trying to pluck all the Corrupted out?"", 4: '1'}"
+58	57		201							{1: '1', 2: '500091', 3: '5'}
+59	58		301							"{1: '1', 2: 'Nanami', 3: ""Well, I'm catching the trails of someone that's tryna sneak away!"", 4: '1'}"
+60	59		201							{1: '1', 2: '500211'}
+61	60		301							{1: '1', 2: 'Martin', 3: 'What?', 4: '1'}
+62	61		201							{1: '1', 2: '500091', 3: '5'}
+63	62		301							"{1: '1', 2: 'Nanami', 3: ""Dunno what that is, but that must be the source of all evil! The stinky sneaky baddie that's controlling the Corrupted and making a mess!"", 4: '1'}"
+64	63		301							"{2: 'Nanami', 3: ""Martin, you'll have to handle the Corrupted! Nanami is going to..."", 4: '1'}"
+65	64		301							{3: 'Nanami lowers her stance mid-dash, bending so low as if she is about to fall. The angles of her booster wheels adjust and maintain her balance, allowing Nanami to slide forward at full speed.'}
+66	65		301		1		AniZhuanchangBegin			{2: 'Nanami', 3: '...Be the hero!', 4: '1'}

@@ -1,0 +1,541 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangBegin				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '4'}
+3	3		301				DialogDisable			{3: 'Data Synchronization Progress: 65%'}
+4	4		401							{1: '2', 2: '4823'}
+5	5		109			AniZhuanchangEnd			250.0	{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>55%</color></size>', 9: '3'}
+6	6		401							{1: '2', 2: '4823'}
+7	7		109						100.0	{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>56%</color></size>', 9: '3'}
+8	8		401							{1: '2', 2: '4823'}
+9	9		109						100.0	{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>57%</color></size>', 9: '3'}
+10	10		401							{1: '2', 2: '4823'}
+11	11		109						100.0	{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>59%</color></size>', 9: '3'}
+12	12		401							{1: '2', 2: '4823'}
+13	13		109						100.0	{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>60%</color></size>', 9: '3'}
+14	14		401							{1: '2', 2: '4823'}
+15	15		109						100.0	{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>62%</color></size>', 9: '3'}
+16	16		401							{1: '2', 2: '4823'}
+17	17		109	1						{1: '11', 2: '<size=60><color=#ffffffff>Data Synchronization Progress: </color><color=#ff4e4eff>65%</color></size>', 9: '3'}
+18	18		110			AniZhuanchangBegin				
+19	19		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '4', 5: '1'}
+20	20		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+21	21		401							{1: '1', 2: '6186'}
+22	22		301			DialogEnable				{3: 'Under sibilant waves, you sleep peacefully in the murky depths.'}
+23	23		301							{2: '???', 3: 'Damn it!'}
+24	24		302							{2: '?!', 3: '25'}
+25	25		301				AniZhuanchangBegin			"{2: '???', 3: ""It's fine, just a rock.""}"
+26	26		101				DialogDisable			{1: 'Assets/Product/Texture/Image/BgStory/BgStory736.jpg'}
+27	27		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 3: '0', 4: '1', 5: '0'}
+28	28		501				AniZhuanchangEnd			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+29	29		301			DialogEnable				"{3: 'With the exclamation ""Damn it"" and a violent jolt, you drift hazily to consciousness and open your eyes.'}"
+30	30		301							{3: 'A slightly warm hand rests against your forehead.'}
+31	31		302							{2: '...', 3: '33'}
+32	32		306							{1: '1'}
+33	33		301							"{3: ""You glance around and quickly realize you're lying in the back seat of a vehicle.""}"
+34	34		301							{3: 'Ahead is the passenger seat, where a strand of red hair peeks through the gap—the hair belonging to the owner of the hand on your forehead.'}
+35	35		301							"{3: 'You just experienced another ""memory restart"" at the ruins, but fortunately, you still remember the last few words that Construct ""Hound"" said to you.'}"
+36	36		302							{2: '...Hound?', 3: '37'}
+37	37		306							
+38	38		201							{1: '1', 2: '500624', 4: '400'}
+39	39		201							{1: '2', 2: '500280', 4: '-400'}
+40	40		301							"{1: '1', 2: 'Girl', 3: ""Mom, that person's awake."", 4: '2'}"
+41	41		301							"{2: 'Mother', 3: ""Shh... don't disturb them."", 4: '1'}"
+42	42		202							{1: '1', 2: '2'}
+43	43		301							"{3: ""Only now do you notice the two other people in the back seat with you—the rear space is normally quite roomy, but they've given up much of it to ensure they don't accidentally press on your wounds.""}"
+44	44		301							"{3: ""The mother and daughter huddle together in the corner, and at the little girl's announcement, everyone's gaze turns toward you.""}"
+45	45		301							{3: 'Hound withdraws their hand and turns around from the front passenger seat.'}
+46	46		201							{1: '1', 2: '501239', 3: '1'}
+47	47		301							"{1: '1', 2: 'Vera', 3: ""...You're one tough cookie. You've been running a fever and sleeping for a solid 4 hours. I was worried you'd passed out for good."", 4: '1'}"
+48	48		302							{2: 'This is...', 3: '49'}
+49	49		301							{2: 'Vera', 3: 'We got lucky. Everyone was rescued by this... person.', 4: '1'}
+50	50		202							{1: '1'}
+51	51		301							"{3: ""Vera is typically sharp-tongued, yet for some reason, her finger hovers in midair as she points to the driver's seat, unable to find an appropriate pronoun to introduce their rescuer.""}"
+52	52		201							{1: '1', 2: '501219'}
+53	53		301							"{1: '1', 2: '???', 3: ""I'm just an old lady. My age is what it is, there's no need to search for some youthful term to address me."", 4: '1'}"
+54	54		401							{1: '2', 2: '5540'}
+55	55		301							"{2: ""Small Dog on Vera's Lap"", 3: 'Woof!', 4: '1'}"
+56	56		301							{2: 'Granny Wang', 3: 'Yep, just call me Granny Wang.', 4: '1'}
+57	57		301							"{2: 'Granny Wang', 3: ""This here's a cargo pickup, and the truck bed's already half-filled with people. You folks are really something, managing to get this many people out of a place like that."", 4: '1'}"
+58	58		301							{3: 'She appears to be an elderly woman in her seventies, sporting an extravagant silver-white perm, sharply defined tattooed eyebrows, and flaming-red lipstick.'}
+59	59		301							{3: 'The small dog, which should have been wearing a seatbelt in the passenger seat—is a common pet breed from the Golden Age. It has brown, coffee-colored curly fur that resembles a ball of fleece.'}
+60	60		301							{3: 'Now that Vera has taken its seat, the dog stands proudly on her lap, showing off like it owns the place.'}
+61	61		401							{1: '2', 2: '5540'}
+62	62		301							"{2: ""Small Dog on Vera's Lap"", 3: 'Woof!', 4: '1'}"
+63	63		301							{3: 'Vera seems to be tolerating it.'}
+64	64		301							"{2: 'Granny Wang', 3: 'It\'s a ""Sheepdog.""', 4: '1'}"
+65	65		302							{2: '?', 3: '66'}
+66	66		301				DialogDisable			"{2: 'Granny Wang', 3: 'I was just passing through. If it weren\'t for this little fella, I wouldn\'t have gone anywhere near the bombing zone, much less found you folks. Go on, say ""thank you"" to the sheepdog.', 4: '1'}"
+67	67		302							{2: '...Thank you, sheepdog!', 3: '68'}
+68	68		302							"{2: ""(I hope she's not carrying a sword or a folding fan...)"", 3: '69'}"
+69	69		306							{1: '1'}
+70	70		301			DialogEnable				"{3: ""Your gaze secretly shifts toward Granny Wang's hand—""}"
+71	71		301							{3: 'A heavy sniper rifle comes into view, secured at an angle near the hand brake, perfectly positioned for Granny Wang to grab with a quick stretch.'}
+72	72		302							{2: '??', 3: '73'}
+73	73		204							{1: '1', 2: '2'}
+74	74		301							{3: 'Noticing your shocked expression, she turns her head slightly to look back and, surprisingly, gives you a wink.'}
+75	75		306							
+76	76		204							{1: '1', 2: '2'}
+77	77		301							"{2: 'Granny Wang', 3: ""This rifle's been with me for many years. During the Punishing Virus outbreak, I traded a house at W Beach for it. It was premium real estate, mind you."", 4: '1'}"
+78	78		302							{2: '...', 3: '79'}
+79	79		202							{1: '1'}
+80	80		301							{3: 'A mixture of surprise and joy fills you, but more than anything, a fog of confusion clouds your mind.'}
+81	81		301							{3: 'Before they can ask for more details, the red-haired Construct hands over your terminal.'}
+82	82		201							{1: '1', 2: '501239', 3: '1'}
+83	83		301							"{1: '1', 2: 'Vera', 3: ""You should check your notes from the past few days first. Everything you want to know is recorded there—I haven't looked at them because I can't even access the device, so there's no need to worry about any tampering."", 4: '1'}"
+84	84		202							{1: '1'}
+85	85		401							{1: '2', 2: '2641'}
+86	86		301							{3: 'You unlock your terminal and start browsing through it. Meanwhile, Granny Wang takes the initiative to explain the situation.'}
+87	87		201							{1: '1', 2: '501219'}
+88	88		301							"{1: '1', 2: 'Granny Wang', 3: ""I heard the Construct's explanation about you. You're a student from F.O.S. College in Babylonia who came down here, and you've suffered a head injury. I'm sure you're not familiar with this area."", 4: '1'}"
+89	89		301							{2: 'Granny Wang', 3: 'As for me... I was a soldier stationed in this area during the Punishing Virus outbreak. I watched with my own eyes as this place transformed from a metropolis into ruins, and then gradually saw people return to rebuild it.', 4: '1'}
+90	90		301							"{2: 'Granny Wang', 3: ""A few days ago, I heard about a batch of Corrupted behaving unusually, acting more aggressively than ever before and spreading much faster. They've been affecting the nearby conservation areas, so I decided to bring my shepherd dog around to check things out."", 4: '1'}"
+91	91		204							{1: '1', 2: '2'}
+92	92		301							"{2: 'Granny Wang', 3: ""And that's how I stumbled across you folks—I almost thought there was no one left in that area, but then my shepherd dog discovered you. Seems I came at just the right time."", 4: '1'}"
+93	93		301							{3: 'Pleased with herself, Granny Wang lets out a cheerful, rising whistle.'}
+94	94		204							{1: '1'}
+95	95		301							"{2: 'Granny Wang', 3: ""It's not about waking up early, but waking up at the right moment. We've been racing down this road for several hours now and have just arrived at the nearest safe conservation area, the place where I'm usually stationed."", 4: '1'}"
+96	96		301							"{2: 'Granny Wang', 3: ""See that up ahead? That's the place, Conservation Area 062."", 4: '1'}"
+97	97		202							{1: '1'}
+98	98		301							{3: 'As Granny Wang finishes her brief introduction, the truck passes several stationed personnel waving for them to stop. A few refugees pause in their tracks to look at the pickup truck that has, once again, brought back a cabin full of survivors.'}
+99	99		301							{3: 'Granny Wang smoothly applies the brakes, bringing the late Golden Age cargo pickup to a steady stop in front of an area of hastily constructed refugee shelters. She gestures toward the door.'}
+100	100		201							{1: '1', 2: '501219', 3: '1'}
+101	101		301							"{1: '1', 2: 'Granny Wang', 3: ""Congratulations, everyone. You've temporarily outrun the spreading disaster. You can rest for a while now."", 4: '1'}"
+102	102		204							{1: '1'}
+103	103		301							{2: 'Granny Wang', 3: 'Get out of the truck.', 4: '1'}
+104	104		301							{3: 'After speaking, Granny Wang glances at the small box in the your arms.'}
+105	105		301				AniZhuanchangBegin			"{2: 'Granny Wang', 3: ""About that thing you're holding, my guess is you'll probably need to talk to someone about it."", 4: '1'}"
+106	106		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 3: '1', 4: '0', 5: '0'}
+107	107		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+108	108		202							{1: '1'}
+109	109		306							{1: '1'}
+110	110		301			AniZhuanchangEnd				{3: 'The conservation area houses far more refugees than expected. Vera grips your hand tightly as you follow Granny Wang into the shelter camp, pushing through the dense crowd.'}
+111	111		301							"{3: 'You, whose memory has ""rebooted"" once again, has already reviewed your notes from the past few days and grasped the general situation.'}"
+112	112		301							"{3: 'The refugees rescued and brought back by Granny Wang have already scattered throughout the area—or as Vera puts it, ""Finally got rid of the trash clinging to us.""'}"
+113	113		301							"{3: 'But the box that you insist is important proved to be somewhat problematic. Granny Wang had someone examine the markings on it, and they\'re quickly directed to find the conservation area\'s ""acting administrator.""'}"
+114	114		306							
+115	115		201							{1: '1', 2: '501240'}
+116	116		301				DialogDisable			{1: '1', 2: 'Vera', 3: 'Stop causing trouble and stay close to me.', 4: '1'}
+117	117		306						500.0	{1: '1'}
+118	118		502						800.0	{1: 'RImgBg1BlowUp'}
+119	119		201						50.0	{1: '5', 2: '500624', 4: '-600', 7: '1'}
+120	120		203						500.0	{1: '5', 2: '0.8', 3: '-600', 4: '-100', 5: '-600'}
+121	121		202						100.0	{1: '5'}
+122	122		201						50.0	{1: '2', 2: '500564', 4: '600', 7: '1'}
+123	123		203						500.0	{1: '2', 2: '0.8', 3: '600', 4: '-100', 5: '-600'}
+124	124		202						150.0	{1: '2'}
+125	125		201						50.0	{1: '3', 2: '501114', 4: '-300', 7: '1'}
+126	126		203						500.0	{1: '3', 2: '0.8', 3: '-400', 4: '-100', 5: '-600'}
+127	127		202						50.0	{1: '3'}
+128	128		201						50.0	{1: '4', 2: '500779', 4: '300', 7: '1'}
+129	129		203						500.0	{1: '4', 2: '0.8', 3: '400', 4: '-100', 5: '-600'}
+130	130		202							{1: '4'}
+131	131		306							
+132	132		505							{1: 'RImgBg1BlowUp'}
+133	133		301			DialogEnable				{3: 'With your face wrapped in bandages, you are led through the crowded mass of people. The unfamiliar glances and noisy chatter pressing in from all sides only intensifies the persistent ache in your skull.'}
+134	134		301							{3: 'The Construct ahead notices the problem right away. She eases her grip slightly and pulls you closer to her side.'}
+135	135		202						250.0	{1: '1'}
+136	136		201							{1: '1', 2: '501241'}
+137	137		301							"{1: '1', 2: 'Vera', 3: ""Everyone here just had their homeland destroyed. Desperate people will do extreme things. Don't listen, don't look, don't get involved, and don't reveal where you're from. Otherwise, I'll leave you here to fend for yourself."", 4: '1'}"
+138	138		301							{2: 'Vera', 3: 'Give me that box, too.', 4: '1'}
+139	139		302							{2: '(Shake head.)', 3: '140'}
+140	140		301							"{3: ""You refuse Vera's demand, staring at the few drops of dried blood on the box handle. Something tells you that the box is safest in your own hands.""}"
+141	141		301							"{2: 'Vera', 3: ""Then you'd better pray no one thinks there's something valuable inside."", 4: '1'}"
+142	142		201							{1: '1', 2: '501219'}
+143	143		301				AniZhuanchangBegin			{1: '1', 2: 'Granny Wang', 3: 'Here we are, Kent. This is the student.', 4: '1'}
+144	144		202							{1: '1', 6: '1'}
+145	145		401							{1: '1', 2: '36'}
+146	146		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory732.jpg'}
+147	147		401							{1: '1', 2: '209'}
+148	148		401							{1: '2', 2: '4833'}
+149	149		301			AniZhuanchangEnd				{3: 'Granny Wang lifts a thick curtain, shutting out the cold air as she gives you a gentle push forward.'}
+150	150		201							{1: '1', 2: '500086'}
+151	151		301							{1: '1', 2: 'Kent', 3: 'Excellent! You actually brought them back!', 4: '1'}
+152	152		301							{3: 'The worried-looking man inside hurries to his feet, but stops short when he sees you standing there all alone.'}
+153	153		301							{2: 'Kent', 3: '...Where are the people we sent out? Why has only one sample returned?', 4: '1'}
+154	154		203						250.0	{1: '1', 2: '0.25', 3: '400'}
+155	155		201							{1: '2', 2: '501219', 4: '-400'}
+156	156		301							"{1: '1', 2: 'Granny Wang', 3: ""This is an ungraduated student from F.O.S. College. I'm afraid your Task Force members and the researchers who went with them won't be coming back."", 4: '2'}"
+157	157		301							{2: 'Kent', 3: '...', 4: '1'}
+158	158		301							"{2: 'Kent', 3: ""This can't be... What happened out there?"", 4: '1'}"
+159	159		302							"{2: ""I... don't remember."", 3: '160'}"
+160	160		202							{1: '1', 2: '2', 6: '1'}
+161	161		201							{1: '1', 2: '501239'}
+162	162		301							"{1: '1', 2: 'Vera', 3: 'This is 【kuroname】, an honors student from F.O.S. College. I am ""Hound,"" their accompanying Construct. This class of F.O.S. students was originally carrying out field training in Conservation Area 059, but afterwards... well, as you can see, some students became separated.', 4: '1'}"
+163	163		301							{2: 'Vera', 3: 'We encountered an unusual Corrupted attack about 4 hours drive from here. Before that area was bombed, my Commandant met another student who had also become separated from the main group. He passed this box to us.', 4: '1'}
+164	164		301							"{2: 'Vera', 3: ""My Commandant didn't encounter any other personnel from the regular Task Force. I'm afraid they were all killed before reaching the bombing zone. As for the researcher you mentioned... You should confirm the name. If it's this person, I can verify that she is deceased."", 4: '1'}"
+165	165		202							{1: '1'}
+166	166		301							{3: 'Vera hands a name tag to Kent.'}
+167	167		201							{1: '1', 2: '501239', 4: '-400'}
+168	168		201							{1: '2', 2: '500086', 4: '400'}
+169	169		301							{1: '1', 2: 'Vera', 3: 'This is her name tag. I tore it off myself.', 4: '1'}
+170	170		301							{2: 'Kent', 3: '...', 4: '2'}
+171	171		204							{1: '1', 2: '10'}
+172	172		301							"{2: 'Vera', 3: ""Judging by your reaction, that's her alright."", 4: '1'}"
+173	173		202							{1: '1', 2: '2'}
+174	174		301							"{3: ""Vera places the tag in Kent's palm, then gestures toward the small box in your hands.""}"
+175	175		201							{1: '1', 2: '501239', 3: '4', 4: '-400'}
+176	176		201							{1: '2', 2: '500086', 4: '400'}
+177	177		301							"{1: '1', 2: 'Vera', 3: 'Now I need to know what this ""sample"" is that someone risked their life to bring it back.', 4: '1'}"
+178	178		301							{2: 'Kent', 3: 'Well...', 4: '2'}
+179	179		301							{2: 'Vera', 3: 'At this point, I advise against hiding anything. The disaster outside is still spreading. Hurry up, being indecisive is a luxury we no longer have.', 4: '1'}
+180	180		301							{2: 'Vera', 3: '—Report complete.', 4: '1'}
+181	181		202							{1: '1', 2: '2'}
+182	182		301							{3: 'Vera speaks with crisp efficiency and stands ramrod straight, enough to draw an inquisitive look even from Granny Wang.'}
+183	183		301							"{3: 'You recall a detail recorded in your terminal—Vera has always been a soldier so exemplary that ""paragon"" would be an understatement, having adapted to this lifestyle from a very young age.'}"
+184	184		201							{1: '1', 2: '501239', 4: '-400'}
+185	185		201							{1: '2', 2: '500086', 4: '400'}
+186	186		301							"{1: '1', 2: 'Vera', 3: ""You're in charge of this conservation area. You should know what's going on. Explain yourself."", 4: '1'}"
+187	187		301							{3: 'After hearing the report, Kent dejectedly lowers his head.'}
+188	188		301							"{2: 'Kent', 3: ""...I'm not actually in charge of this conservation area. I'm just temporarily filling in—Granny Wang knows this too. The person in charge left with some people yesterday. He still hasn't..."", 4: '2'}"
+189	189		202							{1: '1', 2: '2'}
+190	190		301							{3: 'Granny Wang frowns at these words and removes the sniper rifle from her shoulder.'}
+191	191		201							{1: '1', 2: '501219', 3: '4'}
+192	192		301							"{1: '1', 2: 'Granny Wang', 3: ""How can there be no news? I'll go bring them back."", 4: '1'}"
+193	193		203						250.0	{1: '1', 2: '0.25', 3: '400'}
+194	194		201							{1: '2', 2: '500086', 4: '-400'}
+195	195		301							"{1: '1', 2: 'Kent', 3: ""It's no use, Granny Wang... it's useless. If there was any chance of him coming back, I wouldn't be sitting here—everyone else just didn't have the time to tell you... and I was also afraid you wouldn't make it back either."", 4: '2'}"
+196	196		301							{2: 'Granny Wang', 3: '...', 4: '1'}
+197	197		202							{1: '1', 2: '2'}
+198	198		301							{3: 'Granny Wang abruptly freezes, gun in hand, processing the news as an all-too-familiar sensation sinks into her body.'}
+199	199		201							{1: '1', 2: '500086'}
+200	200		301							"{1: '1', 2: 'Kent', 3: ""Now this whole mess is dumped in front of me, and I don't have any good solutions... Ugh, why did I have to be the one shouldering this burden?"", 4: '1'}"
+201	201		301							{3: 'He anxiously wipes his face, staring at the box in your hands.'}
+202	202		301							"{2: 'Kent', 3: ""Forget it, let's deal with the matter at hand first... I can tell you that this box contains a highly dangerous Punishing Virus sample."", 4: '1'}"
+203	203		301							"{2: 'Kent', 3: 'This sudden Corrupted attack was more intense than ever before, and heavily concentrated in one area, so we suspect there are signs of ""human intervention."" In fact, it might be worse than we imagined.', 4: '1'}"
+204	204		301							"{2: 'Kent', 3: 'Sure enough, researchers who went to the frontlines with the soldiers informed us that the Punishing Virus in this area has undergone an ""evolutionary"" mutation.', 4: '1'}"
+205	205		301							{2: 'Kent', 3: 'First, they traced the source of the mutated virus to a ground-level research facility that should have been operating normally. The staff were all personnel dispatched from Babylonia, but somehow the virus leaked out.', 4: '1'}
+206	206		301							{2: 'Kent', 3: 'The cause of the leak is still unknown, but they discovered that someone left the research facility right before the virus leaked out. That person has now completely disappeared.', 4: '1'}
+207	207		301							"{3: ""Vera suddenly feels a sense of déjà vu at the story, but can't immediately recall where she's encountered a similar situation before.""}"
+208	208		201							{1: '1', 2: '501239', 3: '4'}
+209	209		301							{1: '1', 2: 'Vera', 3: 'We have to go after them.', 4: '1'}
+210	210		203						250.0	{1: '1', 2: '0.25', 3: '-400'}
+211	211		201							{1: '2', 2: '501219', 4: '400'}
+212	212		301							{1: '1', 2: 'Granny Wang', 3: 'Leia left the moment she received the news.', 4: '2'}
+213	213		202							{1: '1', 2: '2', 6: '1'}
+214	214		201							{1: '1', 2: '500086'}
+215	215		301							"{1: '1', 2: 'Kent', 3: ""Yes, we've already sent a Construct to find the person who left earlier, hoping to uncover some clues from them. She hasn't returned yet, but we're not just twiddling our thumbs either."", 4: '1'}"
+216	216		301							"{2: 'Kent', 3: ""Our team continued deeper into the outbreak's epicenter to collect virus samples... but starting from the second day of the operation, we lost all contact with them."", 4: '1'}"
+217	217		301							"{2: 'Kent', 3: ""Until today, based on the situation you just reported... it seems the samples were passed to a F.O.S. student who hadn't graduated yet, and then transferred to... you and your Construct here."", 4: '1'}"
+218	218		302							{2: '...', 3: '219'}
+219	219		301							"{2: 'Kent', 3: ""That's the situation. Everything has been incredibly rushed... everyone raced to their deaths... we don't even have time to mourn the fallen."", 4: '1'}"
+220	220		202							{1: '1'}
+221	221		301							"{3: 'Kent feels unprecedented pressure in his role as ""acting supervisor."" He rubs his face over and over, as if trying to wipe away the anxiety and fear clinging to his face.'}"
+222	222		301							{3: 'Finally, he looks at the few people who have journeyed so far to reach this place.'}
+223	223		201							{1: '1', 2: '500086'}
+224	224		301							"{1: '1', 2: 'Kent', 3: ""...I'm sorry, and thank you for your fearless efforts in bringing us the only anomalous virus sample."", 4: '1'}"
+225	225		301							{2: 'Kent', 3: 'I see some of you are injured. You should rest now and leave the sample with us. We still have some anti-inflammatory medicine that you can use.', 4: '1'}
+226	226		301							{3: 'Upon hearing those words, Vera nods, ready to relinquish her responsibilities.'}
+227	227		201							{1: '1', 2: '501239', 3: '13'}
+228	228		301							{1: '1', 2: 'Vera', 3: 'Good, now we can finally complete this side mission...', 4: '1'}
+229	229		302							"{2: ""No, it's not over yet."", 3: '230'}"
+230	230		202							{1: '1'}
+231	231		301							"{3: ""You stop Kent's hand as he reaches for the box.""}"
+232	232		302							{2: 'What are you going to do with the sample?', 3: '233'}
+233	233		201							{1: '1', 2: '500086'}
+234	234		301							"{1: '1', 2: 'Kent', 3: ""This place is at most a temporary shelter for refugees. We don't have any research capabilities here. I'll arrange for personnel to continue transporting the sample to the nearest base that can establish contact with Babylonia."", 4: '1'}"
+235	235		302							{2: 'Where would you get the personnel from?', 3: '236'}
+236	236		301							{2: 'Kent', 3: '...', 4: '1'}
+237	237		202							{1: '1'}
+238	238		301							{3: 'Upon hearing your concerns, Kent instinctively glances toward the crowds of refugees in the shelter outside.'}
+239	239		301							{3: 'Almost all of them are ordinary people who fled here from nearby areas. The majority are elderly, weak, sick, or injured. Anti-inflammatory and pain medications have become scarce commodities among them, worth their weight in gold.'}
+240	240		301							"{3: 'At this moment, there is not a single candidate among them that can ""escort the sample.""'}"
+241	241		301							{3: 'Granny Wang looks around, lets out a soft sigh, and steps forward.'}
+242	242		201							{1: '1', 2: '501219'}
+243	243		301							{1: '1', 2: 'Granny Wang', 3: 'I must remind everyone that the attack range of these abnormal Corrupted continues to expand. According to our established safety protocols, we should not only continue transporting this sample, but we should have already begun evacuating the conservation area.', 4: '1'}
+244	244		301							"{2: 'Granny Wang', 3: ""So here's what we'll do: give me the sample, I'll escort it to the next base with my dog. However, the evacuation work will be on you..."", 4: '1'}"
+245	245		302							{2: '(Steps forward.)', 3: '246'}
+246	246		201							{1: '1', 2: '501239'}
+247	247		301				DialogDisable			{1: '1', 2: 'Vera', 3: 'Come back.', 4: '1'}
+248	248		202						250.0	{1: '1'}
+249	249		401							{1: '2', 2: '2689'}
+250	250		104							{1: '0|0|-100', 2: '0.25'}
+251	251		301			DialogEnable	DialogDisable			{3: 'You stubbornly take another step forward, still clutching the box tightly in your arms.'}
+252	252		302							"{2: ""I'm a student of F.O.S.."", 3: '253'}"
+253	253		302							"{2: ""I'm also... a soldier."", 3: '254'}"
+254	254		301			DialogEnable				"{3: ""Everyone's gaze turns toward you, especially Vera, who appears to be barely restraining herself.""}"
+255	255		201							{1: '1', 2: '501239', 3: '4'}
+256	256		301							"{1: '1', 2: 'Vera', 3: ""Does F.O.S. College teach you how to jump out of the frying pan into the flames? That's so incredible, haha!"", 4: '1'}"
+257	257		302							"{2: ""There's no one left who can do this."", 3: '258'}"
+258	258		301							"{2: 'Vera', 3: ""What do you know? You know what's going on out there, you know that doing this is practically suicide, yet you still insist on going?"", 4: '1'}"
+259	259		302							"{2: ""I don't want to stand by and make a decision I'm bound to regret."", 3: '260'}"
+260	260		204							{1: '1', 2: '5'}
+261	261		301							"{2: 'Vera', 3: ""Enough. No matter what you say, I won't let you—"", 4: '1'}"
+262	262		201							{1: '18', 2: '501249'}
+263	263		301							"{1: '1', 2: '???', 3: ""Surely, you have to have someone else who can handle this right? There isn't enough medicine to go around, and that old hag keeps dumping more people into the shelter without even knowing who they are."", 4: '18'}"
+264	264		301							"{2: '???', 3: ""If you can't even handle something simple like this, you might as well just give me command... bunch of trash!"", 4: '18'}"
+265	265		302							"{2: ""...Is that Vanessa's voice?"", 3: '266'}"
+266	266		204							{1: '1', 2: '4'}
+267	267		202							{1: '18'}
+268	268		301							{2: 'Vera', 3: 'Huh? Who?', 4: '1'}
+269	269		202							{1: '1', 6: '1'}
+270	270		401							{1: '2', 2: '4833'}
+271	271		201							{1: '1', 2: '500293', 3: '4', 4: '300'}
+272	272		201							{1: '2', 2: '500616', 4: '600'}
+273	273		201							{1: '3', 2: '500260', 4: '-700'}
+274	274		201							{1: '4', 2: '500201', 4: '-200'}
+275	275		301							{1: '1', 3: 'Faint cursing drifts from behind the curtain. A moment later, a young woman yanks it open, pulling a listless boy along with her. Behind them are the mother and daughter whom Madam Wang rescued.'}
+276	276		301							{3: 'The girl points to the F.O.S. College badge on her chest and barks orders:'}
+277	277		301			PanelActor1Shake				{2: 'Vanessa', 3: 'This mother and daughter told me someone with the same badge as mine got into trouble and was brought back by that old hag, then brought directly here. Hand them over!', 4: '1'}
+278	278		301							"{2: 'Simon', 3: ""F.O.S. is a military academy directly under Babylonia's jurisdiction. Even if that student did something wrong on the surface, we should first—"", 4: '4'}"
+279	279		301							"{2: 'Mother', 3: 'You misheard me! I didn\'t say they ""caused trouble,"" I said they ""got into trouble""! They\'re hurt!', 4: '2'}"
+280	280		301							{2: 'Vanessa', 3: 'Get out of the way! Let me talk to her!', 4: '1'}
+281	281		301							"{2: 'Simon', 3: ""Huh? It's you?"", 4: '4'}"
+282	282		301							"{3: ""Vanessa and Simon stop dead in their tracks, caught completely off guard. The three disheveled classmates just stand there, staring at each other, their F.O.S. badges glinting in each other's eyes.""}"
+283	283		204							{1: '1', 2: '7'}
+284	284		301							{2: 'Vanessa', 3: '...', 4: '1'}
+285	285		204							{1: '1', 2: '5'}
+286	286		301							"{2: 'Vanessa', 3: ""What are YOU doing here?! Can't I ever catch a break from you?!"", 4: '1'}"
+287	287		401							{1: '1', 2: '36'}
+288	288		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+289	289		401							{1: '1', 2: '396'}
+290	290		202							{1: '1', 2: '2', 3: '3', 4: '4', 6: '1'}
+291	291		301							{3: 'Five minutes later—'}
+292	292		201							{1: '1', 2: '500293', 3: '4'}
+293	293		301							"{1: '1', 2: 'Vanessa', 3: ""I see. It's all crystal clear now."", 4: '1'}"
+294	294		301							{3: 'After hearing the rundown on the samples, Vanessa mulls it over for a moment before she makes her decision.'}
+295	295		301							"{2: 'Vanessa', 3: ""It's simple. From now on, everyone's doing as I say."", 4: '1'}"
+296	296		302							"{2: '...', 3: '297', 4: 'What exactly is ""crystal clear"" to you?!', 5: '297'}"
+297	297		301							"{2: 'Vanessa', 3: ""Alright, for those of us who are a little slow on the uptake, let me break it down again. We've got four things on our plate."", 4: '1'}"
+298	298		301							"{2: 'Vanessa', 3: 'First, we need to get the refugees out of dodge. Second, we\'re playing the waiting game for that Construct called ""Leia"" to haul in the big boss. Third, we need to wrestle those life-saving test materials away from this clown.', 4: '1'}"
+299	299		301							{2: 'Vanessa', 3: 'Fourth, and this is the big one, the anomalous virus samples have to be whisked away to the closest conservation area or research institute that can actually handle them.', 4: '1'}
+300	300		301							"{2: 'Vanessa', 3: ""Madam Wang will handle the first two tasks, while our F.O.S. forces need to focus all their energy on getting those samples safely escorted. Then, to top it all off, we'll retrieve the special materials from that one's abdomen. This is our best bet."", 4: '1'}"
+301	301		203						250.0	{1: '1', 2: '0.25', 3: '400'}
+302	302		201							{1: '2', 2: '501219', 3: '1', 4: '-400'}
+303	303		301							"{1: '1', 2: 'Madam Wang', 3: ""Didn't you just call me an old hag, kiddo?"", 4: '2'}"
+304	304		301							{2: 'Vanessa', 3: 'Are we all on the same page here?', 4: '1'}
+305	305		202							{1: '1', 2: '2', 6: '1'}
+306	306		201							{1: '1', 2: '500201', 4: '400'}
+307	307		201							{1: '2', 2: '500260', 4: '-400'}
+308	308		301							{1: '1', 2: 'Girl', 3: 'Got it!', 4: '2'}
+309	309		301							{2: 'Simon', 3: 'Understood.', 4: '1'}
+310	310		202							{1: '1', 2: '2'}
+311	311		301							{3: 'Simon coughs twice, clearly worse for wear. His body is a mess of wounds, and his wrist is in a cast.'}
+312	312		301							{3: 'Vanessa gives you another once-over, a look that could curdle milk.'}
+313	313		302							"{2: 'Understood.', 3: '314', 4: ""Isn't it obvious?"", 5: '316'}"
+314	314		201							{1: '1', 2: '500293', 3: '13'}
+315	315	318	301							{1: '1', 2: 'Vanessa', 3: 'So even the bottom of the barrel can use their brains once in a while.', 4: '1'}
+316	316		201							{1: '1', 2: '500293', 3: '4'}
+317	317		301							{1: '1', 2: 'Vanessa', 3: 'This bleeding pile of junk dares to talk back?', 4: '1'}
+318	318		204							{1: '1', 2: '4'}
+319	319		301							"{2: 'Vanessa', 3: ""And you over there, I shouldn't have to spell it out for you, right?"", 4: '1'}"
+320	320		201							{1: '1', 2: '501246', 3: '1'}
+321	321		301							{1: '1', 2: 'Vera', 3: '...', 4: '1'}
+322	322		301							{3: 'When Vanessa hauled Simon into the room, Vera melted away, only to pop back up after changing her look.'}
+323	323		301							"{3: ""Madam Wang didn't miss a beat. She didn't call her out, just gave a slight eyebrow raise.""}"
+324	324		301							"{2: 'Vera', 3: ""I thought you'd cook up a better plan, but it's still the same suicide run."", 4: '1'}"
+325	325		301							"{2: 'Vera', 3: 'I get it, you couldn\'t stand the thought of my little Commandant hogging all the ""glory."" Even knowing this mission would likely get you killed, you just had to stick your nose in.', 4: '1'}"
+326	326		301							{2: 'Vera', 3: 'What I want to ask is—is it worth it? Are reputation and honor really worth more than your hide?', 4: '1'}
+327	327		201							{1: '1', 2: '500293', 3: '5'}
+328	328		301							"{1: '1', 2: 'Vanessa', 3: 'I don\'t recall asking for your two cents. What kind of creature are you supposed to be? ""Hound""?', 4: '1'}"
+329	329		301							"{2: 'Vanessa', 3: 'That person might have taken a knock to the head, but I haven\'t. We all know this combat assessment never included ""Construct deployment"" in the cards. Everyone knows how precious you ""dolls"" are, yet here you are, volunteering yourself. Your appearance is shady as hell.', 4: '1'}"
+330	330		203						250.0	{1: '1', 2: '0.25', 3: '-400'}
+331	331		201							{1: '2', 2: '500201', 4: '400'}
+332	332		301							"{1: '1', 2: 'Simon', 3: ""But she did save 【kuroname】's life, didn't she?"", 4: '2'}"
+333	333		202							{1: '1', 2: '2', 6: '1'}
+334	334		201							{1: '1', 2: '500616', 4: '400'}
+335	335		201							{1: '2', 2: '500260', 4: '-400'}
+336	336		301							"{1: '1', 2: 'Girl', 3: ""I can back that up! The red-haired lady dragged that person a really long way. She's a good person... Huh? Her hair..."", 4: '2'}"
+337	337		301							"{2: 'Mother', 3: ""Shh, don't cut in when we're talking."", 4: '1'}"
+338	338		202							{1: '1', 2: '2', 6: '1'}
+339	339		201							{1: '1', 2: '500293', 3: '13', 4: '-400'}
+340	340		201							{1: '2', 2: '500201', 4: '400'}
+341	341		301							"{1: '1', 2: 'Simon', 3: ""Perhaps it's a special deal for 【kuroname】? I mean, someone who consistently aces everything might just get a few unique assignments and training ops thrown their way..."", 4: '2'}"
+342	342		301							"{2: 'Vanessa', 3: ""The graduation assessment isn't even done! Don't tell me you're already bowing down to that sorry excuse for a Chief? If you're going to pick someone to follow, at least choose someone who's not going to fall flat on their face."", 4: '1'}"
+343	343		302							"{2: '...', 3: '344', 4: ""Why do I feel like you're singling me out here?"", 5: '344'}"
+344	344		202							{1: '1', 2: '2', 6: '1'}
+345	345		201							{1: '1', 2: '501246', 3: '1'}
+346	346		301							{1: '1', 2: 'Vera', 3: 'I just said—', 4: '1'}
+347	347		202							{1: '1', 6: '1'}
+348	348		201							{1: '1', 2: '500293', 3: '13', 4: '-400'}
+349	349		201							{1: '2', 2: '500201', 4: '400'}
+350	350		301							"{1: '1', 2: 'Simon', 3: ""You shouldn't be so quick to judge. You know perfectly well what 【kuroname】 is capable of. Your scores have always been neck and neck, but... every single time, you've just missed the mark."", 4: '2'}"
+351	351		301							"{2: 'Vanessa', 3: ""I knew it. I should've just left you back there. You deserved to have your broken wrist gnawed off by the Corrupted."", 4: '1'}"
+352	352		301							{2: 'Simon', 3: 'You...', 4: '2'}
+353	353		202							{1: '1', 2: '2', 6: '1'}
+354	354		201							{1: '1', 2: '501246', 3: '1'}
+355	355		301							"{1: '1', 2: 'Vera', 3: ""I couldn't give a damn about any of this nonsense—"", 4: '1'}"
+356	356		202							{1: '1', 6: '1'}
+357	357		201							{1: '1', 2: '500293', 3: '13', 4: '-400'}
+358	358		201							{1: '2', 2: '500201', 4: '400'}
+359	359		301				DialogDisable			"{1: '1', 2: 'Simon', 3: 'Alright, time\'s a-wasting. Seriously, 【kuroname】, what\'s your take on this? What do you make of Miss ""Hound"" here?', 4: '2'}"
+360	360		302							"{2: ""I'm with Simon on this."", 3: '361'}"
+361	361		302							"{2: ""Even though my mind's a blank slate, she's been my rock through it all."", 3: '362'}"
+362	362		302							{2: '(Pat the terminal.)', 3: '363'}
+363	363		302							"{2: ""Everything's on the terminal."", 3: '364'}"
+364	364		302							"{2: ""I haven't lost a thing... not that I had much to lose in the first place."", 3: '365'}"
+365	365		301			DialogEnable				"{2: 'Vanessa', 3: 'Look at you, practically gift-wrapping yourself for them! Who knows what this ""test material"" they\'re so hot on really is? I\'ve never heard of such a thing. For all we know, you\'re just a guinea pig.', 4: '1'}"
+366	366		301							"{2: 'Simon', 3: ""Stop jumping to conclusions and laying into people like that! No, I can't stomach this anymore. 【kuroname】, if you're still planning to escort the sample, you'll have to take me with you."", 4: '2'}"
+367	367		301							"{3: ""Vera, clearly at her wits' end with the childish squabbling, shut her eyes.""}"
+368	368		202							{1: '1', 2: '2', 6: '1'}
+369	369		201							{1: '1', 2: '501246', 3: '1'}
+370	370		301							"{1: '1', 2: 'Vera', 3: ""Enough with this pointless back and forth! I don't have the patience for your games any—"", 4: '1'}"
+371	371		203						250.0	{1: '1', 2: '0.25', 3: '-400'}
+372	372		201							{1: '2', 2: '500293', 3: '13', 4: '400'}
+373	373		301							"{1: '1', 2: 'Vanessa', 3: ""I've got one last trick up my sleeve—use this."", 4: '2'}"
+374	374		301							{3: 'The refined girl, who moments before seemed the picture of good breeding, suddenly produces a pair of gleaming silver handcuffs with a sharp clink and advances on Vera.'}
+375	375		301							{2: 'Vera', 3: '?', 4: '1'}
+376	376		301							"{2: 'Vanessa', 3: ""Right now, we're flying blind, and I can't tell if she's on our side or not. The smart move is to keep her on a short leash. Give me a hand—we need to cuff her right here. There's no way we're bringing her along on our mission."", 4: '2'}"
+377	377		202							{1: '1', 2: '2', 6: '1'}
+378	378		201							{1: '1', 2: '500201', 3: '10'}
+379	379		301							{1: '1', 2: 'Simon', 3: 'This is... utterly outrageous...! Vanessa, what in the world are you playing at?', 4: '1'}
+380	380		202							{1: '1'}
+381	381		301							{3: 'Simon closes his eyes and cries out in despair.'}
+382	382		302							{2: 'Vanessa...!', 3: '383', 4: 'Oh my...', 5: '383', 6: 'Everyone, pipe down.', 7: '383'}
+383	383		201							{1: '1', 2: '501246', 3: '1'}
+384	384		301							{1: '1', 2: 'Vera', 3: '...', 4: '1'}
+385	385		301							{2: 'Vera', 3: '...', 4: '1'}
+386	386		202							{1: '1'}
+387	387		401							{1: '2', 2: '9351040'}
+388	388		301							"{3: ""Vera sneers, flexing her metallic wrist joints. She doesn't bother saying another word, finding these presumptuous youngsters too laughable to even get angry about.""}"
+389	389		201							{1: '1', 2: '501246', 3: '1'}
+390	390		301							"{1: '1', 2: 'Vera', 3: ""Go on, give it a shot. No one's ever dared to try this with me before—and you seriously think those things can hold me?"", 4: '1'}"
+391	391		201							{1: '1', 2: '500293', 3: '1'}
+392	392		301							"{1: '1', 2: 'Vanessa', 3: 'Of course they can\'t, but your reaction tells the tale. A ""doll"" is supposed to obey its master without question. If you insist on resisting, doesn\'t that just prove there\'s something off about you?', 4: '1'}"
+393	393		202							{1: '1'}
+394	394		401							{1: '2', 2: '10028805'}
+395	395		301							{3: 'Vera draws her weapon—this is her final answer.'}
+396	396		201							{1: '1', 2: '501219'}
+397	397		301				DialogDisable			{1: '1', 2: 'Madam Wang', 3: 'Oh my, looks like the munchkins are about to come to blows.', 4: '1'}
+398	398		202						250.0	{1: '1'}
+399	399		201							{1: '1', 2: '501246', 3: '1'}
+400	400		302							{2: 'Hold on, Vera.', 3: '401'}
+401	401		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+402	402		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+403	403		401							{1: '2', 2: '844'}
+404	404		104							{2: '0.25'}
+405	405		203						250.0	{1: '1', 2: '0.25', 5: '-100'}
+406	406		301			DialogEnable				{1: '1', 2: 'Vera', 3: '!', 4: '1'}
+407	407		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+408	408		202							{1: '1'}
+409	409		301							"{3: ""A rope suddenly cinches around Vera's waist.""}"
+410	410		301				DialogDisable			"{3: ""She spins around to see you've solemnly tied the other end of the rope around your own waist, meticulously securing the knot.""}"
+411	411		302							"{2: 'There. This should do the trick.', 3: '412', 4: ""I don't want to put them out or have them fretting over us."", 5: '412'}"
+412	412		302							"{2: ""I'll take the fall."", 3: '413'}"
+413	413		201							{1: '1', 2: '501246', 3: '1'}
+414	414		301			DialogEnable				{1: '1', 2: 'Vera', 3: 'Where on earth did you get that rope?', 4: '1'}
+415	415		301							{3: 'You give the rope a gentle tug, a surprisingly comforting gesture.'}
+416	416		302							"{2: ""Don't you worry your head."", 3: '417'}"
+417	417		301							"{3: ""For a moment, Vera feels as though you've seen right through her.""}"
+418	418		301							{2: 'Vera', 3: 'Have you...', 4: '1'}
+419	419		301							{3: 'As she looks up, her eyes meet yours.'}
+420	420		302				AniZhuanchangBegin			"{2: '—I need you, ""Hound"".', 3: '421', 4: '—I want your help, ""Hound"".', 5: '421'}"
+421	421		202							{1: '1', 6: '1'}
+422	422		401							{1: '1', 2: '36'}
+423	423		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory19.jpg'}
+424	424		401							{1: '1', 2: '5017'}
+425	425		301			AniZhuanchangEnd				{3: 'Not far from Conservation Area 032, a hunched figure stands silhouetted against the sun atop a towering abandoned building, gazing into the distance.'}
+426	426		301							{3: 'He hums a short melody, repeating the same two lines over and over.'}
+427	427		201							{1: '1', 2: '501236'}
+428	428		301							{1: '1', 2: '???', 3: '{226|153|170}~', 4: '1'}
+429	429		301							{2: '???', 3: 'Burn it all...', 4: '1'}
+430	430		201							{1: '1', 2: '500942', 5: '-800'}
+431	431		203							{1: '1', 2: '0.25'}
+432	432		301							"{1: '1', 2: 'Leia', 3: ""What's that song?"", 4: '1'}"
+433	433		201							{1: '1', 2: '501236'}
+434	434		301							{1: '1', 2: '???', 3: 'Hmm? No idea. Picked it up from someone ages ago. Does it sound alright?', 4: '1'}
+435	435		201							{1: '1', 2: '500942'}
+436	436		301							{1: '1', 2: 'Leia', 3: 'It sounds really fancy, like something a high-society type from the Golden Age would sing.', 4: '1'}
+437	437		201							{1: '1', 2: '501236'}
+438	438		301							"{1: '1', 2: '???', 3: ""Hahaha! Yeah, you've hit the nail on the head."", 4: '1'}"
+439	439		202							{1: '1'}
+440	440		301							{3: 'The old man turns his head to see the girl approaching from the edge of the rooftop.'}
+441	441		201							{1: '1', 2: '501236', 3: '8', 4: '400'}
+442	442		201							{1: '2', 2: '500942', 3: '2', 4: '-400'}
+443	443		301							{1: '1', 2: '???', 3: 'Did you climb all the way up here?', 4: '1'}
+444	444		301							{2: 'Leia', 3: 'You blocked off every normal way up, so I had to scale it to catch you, Haynes!', 4: '2'}
+445	445		204							{1: '1'}
+446	446		301							"{2: 'Haynes', 3: ""Catch me? I figured you'd come crawling, begging for my help. Tough luck, looks like you've made another bad call."", 4: '1'}"
+447	447		301							{2: 'Haynes', 3: 'Back in the Golden Age, self-evolution was a no-go. Ever since the outbreak, the Punishing has been treated like a curse.', 4: '1'}
+448	448		301							"{2: 'Haynes', 3: ""Why can't these numbskulls see that embracing change is the only way forward?"", 4: '1'}"
+449	449		204							{1: '2'}
+450	450		301							{2: 'Leia', 3: 'What are you muttering about now?', 4: '2'}
+451	451		204							{1: '1', 2: '8'}
+452	452		301							{2: 'Haynes', 3: '...', 4: '1'}
+453	453		301							"{3: ""Haynes falls silent for a few seconds, realizing that the Construct before him cannot comprehend the grand vision he's describing.""}"
+454	454		301							{3: 'He suddenly finds himself wishing for another red-haired girl who used to chew over these very same ideas with him.'}
+455	455		204							{1: '1'}
+456	456		301							{2: 'Haynes', 3: 'Forget it.', 4: '1'}
+457	457		301							"{2: 'Haynes', 3: ""Anyway, the messenger of the divine has already clued me into the Punishing Virus's real purpose. Your boneheaded moves can't touch me anymo—Ugh!"", 4: '1'}"
+458	458		202							{1: '1', 2: '2'}
+459	459		401							{1: '2', 2: '4306'}
+460	460		301			RImgBg1Shake				"{3: ""Leia's swift kick sends Haynes sprawling. End of conversation.""}"
+461	461		201							{1: '1', 2: '500942', 3: '2'}
+462	462		301							"{1: '1', 2: 'Leia', 3: ""Anyone who talks in riddles is shady in my book. Otherwise, why'd you bolt from that research place like you knew what's coming?"", 4: '1'}"
+463	463		204							{1: '1'}
+464	464		301							{2: 'Leia', 3: 'Spill it! Where are the virus samples? Are they still in that research place?', 4: '1'}
+465	465		201							{1: '1', 2: '501236', 3: '8'}
+466	466		301							{1: '1', 2: 'Haynes', 3: 'Cough, cough! Someone already made off with them!', 4: '1'}
+467	467		201							{1: '1', 2: '500942', 3: '2'}
+468	468		301							{1: '1', 2: 'Leia', 3: 'They pulled it off! Perfect.', 4: '1'}
+469	469		202							{1: '1'}
+470	470		301							{3: 'In a few quick motions, Leia hog-ties Haynes and slings him over her shoulder.'}
+471	471		201							{1: '1', 2: '500942'}
+472	472		301							"{1: '1', 2: 'Leia', 3: ""I've got my own mission to wrap up. You're coming with me, and don't even think about trying to talk to me on the way."", 4: '1'}"
+473	473		201							{1: '18', 2: '501236', 3: '5', 4: '-80'}
+474	474		301							"{1: '1', 2: 'Haynes', 3: ""Ow! Take it easy! I'm not going anywhere! If I really wanted to ditch you, you wouldn't have found me by now!"", 4: '18'}"
+475	475		202							{1: '18'}
+476	476		301							"{2: 'Leia', 3: ""You're a tough nut to crack, aren't you? So, what were you doing out here?"", 4: '1'}"
+477	477		204							{1: '1'}
+478	478		201							{1: '18', 2: '501236', 3: '5', 4: '-80'}
+479	479		301							"{1: '1', 2: 'Haynes', 3: ""Because this is the highest point. You've got the bird's-eye view from up here."", 4: '18'}"
+480	480		202							{1: '18'}
+481	481		301							{3: 'Leia suddenly freezes.'}
+482	482		301							{2: 'Leia', 3: 'Were you soaking in the chaos?', 4: '1'}
+483	483		201							{1: '18', 2: '501236', 4: '-80'}
+484	484		204							{1: '18'}
+485	485		301							"{1: '1', 2: 'Haynes', 3: ""Absolutely. The gods need to bear witness to my handiwork, and I need to see my efforts haven't gone to pot."", 4: '18'}"
+486	486		301							{2: 'Haynes', 3: 'Haha... Just like a hero who walks through nameless ruins, one must eventually stand at the highest point to look back upon their life.', 4: '18'}
+487	487		301							{2: 'Haynes', 3: 'Which conservation area are you from? By my reckoning, with those kids moving at that clip, Conservation Area 062 must be the only one still spick and span, right?', 4: '18'}
+488	488		202							{1: '18'}
+489	489		301							{3: 'Haynes is lost in the dangerous world of his own making. He lets out a booming laugh, as if poking fun at the simpletons below him.'}
+490	490		204							{1: '1', 2: '6'}
+491	491		301				AniZhuanchangBegin			{2: 'Leia', 3: 'Oh no!', 4: '1'}
+492	492		202							{1: '1', 7: '1'}
+493	493		401							{1: '1', 2: '36'}
+494	494		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory732.jpg'}
+495	495		401							{1: '1', 2: '396'}
+496	496		301			AniZhuanchangEnd				{3: 'Meanwhile, inside Conservation Area 062, Vera stares at the rope cinched around the waists of two people, a lump forming in her throat.'}
+497	497		201							{1: '1', 2: '501246', 3: '1'}
+498	498		301				DialogDisable			{1: '1', 2: 'Vera', 3: 'You idiot...', 4: '1'}
+499	499		302							{2: 'I—', 3: '500'}
+500	500		401						300.0	{1: '2', 2: '5540'}
+501	501		401						200.0	{1: '2', 2: '5540'}
+502	502		401						200.0	{1: '2', 2: '5540'}
+503	503		301			DialogEnable				{2: 'Sheepdog', 3: 'Woof! Woof, woof, woof!'}
+504	504		301							"{3: ""The frantic conversation hits a brick wall as the sheepdog's urgent barking grabs everyone's attention.""}"
+505	505		201							{1: '1', 2: '501219'}
+506	506		301							{1: '1', 2: 'Madam Wang', 3: 'This is even worse than I thought.', 4: '1'}
+507	507		202							{1: '1'}
+508	508		301							{3: 'Madam Wang shoulders her gun and steps outside. The moment she pulls back the curtain, the refugees erupt, surging toward her and Kent.'}
+509	509		201							{1: '1', 2: '500624'}
+510	510		201							{1: '2', 2: '501114', 4: '300'}
+511	511		201							{1: '3', 2: '500779', 4: '-350'}
+512	512		201							{1: '4', 2: '500460', 4: '700'}
+513	513		201							{1: '5', 2: '500454', 4: '-700'}
+514	514		301							"{1: '1', 2: 'Refugee', 3: ""The Corrupted! They've broken into the conservation area and they're headed straight for us!"", 4: '1', 5: '2', 6: '3', 7: '4', 8: '5'}"
+515	515		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '1'}
+516	516		201							{1: '1', 2: '500086'}
+517	517		301							"{1: '1', 2: 'Kent', 3: ""How in the world did they get here so fast? Leia's not back yet, and we can't possibly evacuate everyone on our own!"", 4: '1'}"
+518	518		202							{1: '1'}
+519	519		301							{3: 'Vera watches the pandemonium unfold, taking a deep breath.'}
+520	520		201							{1: '1', 2: '501246', 3: '1'}
+521	521		301							"{1: '1', 2: 'Vera', 3: ""I'm sick and tired of this crap. Can't we ever finish one damn conversation?"", 4: '1'}"
+522	522		301							"{2: 'Vera', 3: ""Playtime's over. I'll explain everything later."", 4: '1'}"
+523	523		301							{2: 'Vera', 3: 'But for now...', 4: '1'}
+524	524		202							{1: '1', 6: '1'}
+525	525		301							{3: 'Vera yanks on your rope, pushing past the curtain, her dual-bladed lance already gripped firmly in hand.'}
+526	526		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+527	527		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+528	528		201							{1: '1', 2: '501246', 3: '1'}
+529	529		301				DialogDisable			{1: '1', 2: 'Vera', 3: 'Stay close!', 4: '1'}
+530	530		302							{2: '<i><color=#34aff8ff>I will, <size=25>Vera</size>.</color></i>', 3: '531'}
+531	531		302							"{2: ""<i><color=#34aff8ff>I'll be waiting for you to explain everything.</color></i>"", 3: '532'}"
+532	532		301			DialogEnable				"{3: ""Vera pauses, her sharp senses picking up on an instant, subtle shift in the person she's pulling along.""}"
+533	533		301							"{3: ""Your appearance hasn't changed a bit, yet somehow you've shed a layer of innocence, gaining a certain maturity and something else she truly didn't want to see... exhaustion.""}"
+534	534		301							{2: 'Vera', 3: '...', 4: '1'}
+535	535		301							"{3: ""She doesn't have time to dwell on it.""}"
+536	536		301							"{3: ""Sometimes, even she has to admit she's never had a moment to just talk, constantly dragged forward by fate.""}"
+537	537		301							"{3: ""If she doesn't keep racing ahead, fate will swallow her whole, so she spends every single second running for her life.""}"
+538	538		301							"{3: 'Suddenly, she craves an opportunity for a real conversation with this human—the one who, no matter what, always says ""okay,"" ""I will,"" and ""don\'t worry.""'}"
+539	539		301							"{3: ""Not just to lay out all her Kurono plans, but to talk about other things, like the future... or what might lie at the end of her endless race. She has a gut feeling that this human, whom she's only just met, might hold the answers.""}"
+540	540		301		1		AniZhuanchangBegin			{2: 'Vera', 3: 'Yes.', 4: '1'}

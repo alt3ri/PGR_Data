@@ -1,0 +1,238 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory3.jpg'}
+2	2		401							{1: '1', 2: '204'}
+3	3		301			DialogEnable				"{3: ""On the day of Support Force recruit graduation, Babylonia's weather simulation system creates a brilliantly sunny day.""}"
+4	4		201							{1: '1', 2: '500909', 3: '1'}
+5	5		301							{1: '1', 2: 'Ruolin', 3: 'Bridget... Over here!', 4: '1'}
+6	6		301							"{3: ""Impressed by this year's recruits, Support Force Captain approves limited funds for a modest graduation ceremony.""}"
+7	7		301							"{3: ""Despite Trojan's protests and obvious reluctance, the graduation ceremony goes ahead in full swing.""}"
+8	8		301							{2: 'Ruolin', 3: 'Bridget! Look! My evaluation report!', 4: '1'}
+9	9		301							{2: 'Ruolin', 3: 'With this... I can finally apply for a transfer to Task Force!', 4: '1'}
+10	10		203							{1: '1', 2: '0.25', 3: '400'}
+11	11		201							{1: '2', 2: '500167', 4: '-400'}
+12	12		301							"{1: '1', 2: 'Bridget', 3: ""That's wonderful! See! I told you you could do it!"", 4: '2'}"
+13	13		204							{1: '2'}
+14	14		301							"{2: 'Ruolin', 3: ""All thanks to you... I'd probably still be the dead weight of the class without you..."", 4: '1'}"
+15	15		301							{2: 'Ruolin', 3: 'Thank you, Bridget!', 4: '1'}
+16	16		301							"{2: 'Bridget', 3: ""Don't mention it, That's what friends are for!"", 4: '2'}"
+17	17		301							"{3: ""Bridget laughs and gives Ruolin's shoulder a friendly pat.""}"
+18	18		301							{2: 'Ruolin', 3: 'But I still want to thank you in my own way...', 4: '1'}
+19	19		301							{3: 'Ruolin carefully pulls three colorful cards from her pocket with excitement.'}
+20	20		301							{2: 'Ruolin', 3: 'I managed to get three movie tickets from the WGAA. Would you like to watch it with me?', 4: '1'}
+21	21		301							"{2: 'Bridget', 3: ""Hm? Where's Jeffrey?"", 4: '2'}"
+22	22		301							"{2: 'Ruolin', 3: ""He's away on a mission on the surface, b-but... I'm not just asking you because he couldn't make it! You're not my backup plan or anything!"", 4: '1'}"
+23	23		301							{2: 'Ruolin', 3: 'Look, to prevent resale, the tickets all have our names—Bridget, Ruolin, and T...', 4: '1'}
+24	24		301							{2: 'Bridget', 3: '...Trojan?', 4: '2'}
+25	25		301							{2: 'Ruolin', 3: 'Um, y-yes... Instructor Trojan has helped me a lot, so I wanted to invite her, but...', 4: '1'}
+26	26		301							"{2: 'Ruolin', 3: ""I-I'm a bit scared to ask her..."", 4: '1'}"
+27	27		301							"{2: 'Bridget', 3: ""Hey, what's there to be scared of? Come on, I'll go with you!"", 4: '2'}"
+28	28		301							"{2: 'Ruolin', 3: ""I haven't seen Instructor Trojan since earlier..."", 4: '1'}"
+29	29		204							{1: '2', 2: '4'}
+30	30		301				AniZhuanchangBegin			"{2: 'Bridget', 3: ""Uh-huh, she's hiding somewhere, but I know exactly where. Let's go!"", 4: '2'}"
+31	31		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+32	32		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory457.jpg'}
+33	33		301			DialogEnable				{3: 'Leaving the noisy ceremony behind, Bridget guides Ruolin through shortcuts past the training grounds and supply areas to the Support Force warehouse.'}
+34	34		201							{1: '1', 2: '500909', 3: '1'}
+35	35		301							{1: '1', 2: 'Ruolin', 3: 'I had no idea there was a shortcut...', 4: '1'}
+36	36		203							{1: '1', 2: '0.25', 3: '400'}
+37	37		201							{1: '2', 2: '500167', 4: '-400'}
+38	38		301							{1: '1', 2: 'Bridget', 3: 'Yeah, I like to explore if there is downtime between my training sessions.', 4: '2'}
+39	39		301							"{2: 'Bridget', 3: ""So that's how I know..."", 4: '2'}"
+40	40		202							{1: '1', 2: '2'}
+41	41		301							{3: 'She lifts a curtain and sees Trojan standing inside with her arms crossed.'}
+42	42		201							{1: '1', 2: '500586'}
+43	43		301							"{1: '1', 2: 'Trojan', 3: ""...Who's there?"", 4: '1'}"
+44	44		301							{3: 'Trojan instinctively moves her hand onto her weapon.'}
+45	45		203							{1: '1', 2: '0.25', 3: '400'}
+46	46		201							{1: '2', 2: '500167', 4: '-400'}
+47	47		301							"{1: '1', 2: 'Bridget', 3: ""I knew you'd be here!"", 4: '2'}"
+48	48		301							{3: 'A harsh light breaks into the room.'}
+49	49		301							{2: 'Bridget', 3: 'Ruolin managed to get three movie tickets. Care to join us, Instructor Trojan?', 4: '2'}
+50	50		301							{2: 'Trojan', 3: '...Not interested.', 4: '1'}
+51	51		301							{3: 'Trojan casts a tired glance at Bridget and the timid Ruolin, feeling mentally drained.'}
+52	52		301							{3: 'When will they leave? The Kurono informant will be here any minute.'}
+53	53		301							"{2: 'Bridget', 3: ""These tickets are really hard to get. They're non-transferable, and Ruolin went through a lot to get them..."", 4: '2'}"
+54	54		301							"{2: 'Trojan', 3: ""...I'm really not interested."", 4: '1'}"
+55	55		301							"{3: ""This is true—she's never been interested in the Golden Age... maybe only a little.""}"
+56	56		301							{3: 'The only thing she cares about is hoarding actual gold.'}
+57	57		301							{2: 'Trojan', 3: 'Movies are just... actors acting out the lives and desires of others.', 4: '1'}
+58	58		301							"{2: 'Trojan', 3: ""When a character in a movie finds treasure, it doesn't help you in any way in real life. When they suffer..."", 4: '1'}"
+59	59		301							"{2: 'Trojan', 3: ""Humph. Isn't real-world suffering much worse than the staged dramas in movies?"", 4: '1'}"
+60	60		301							{2: 'Bridget', 3: 'Sigh... Is that really what you think of movies as a form of entertainment?', 4: '2'}
+61	61		301							{2: 'Trojan', 3: 'Is there an issue?', 4: '1'}
+62	62		301							{3: 'Trojan ponders how to get the two of them to leave while she waits for Bridget to continue the argument.'}
+63	63		301							{2: 'Bridget', 3: 'Okay.', 4: '2'}
+64	64		301							{2: 'Trojan', 3: '...?', 4: '1'}
+65	65		301							"{2: 'Bridget', 3: ""Hmm... I mean, it's subjective. I may not understand it, but I respect your perspective."", 4: '2'}"
+66	66		202							{1: '1'}
+67	67		203							{1: '2', 2: '0.25'}
+68	68		301							"{2: 'Bridget', 3: ""Let's go, Ruolin. When's our movie starting?"", 4: '2'}"
+69	69		203							{1: '2', 2: '0.25', 3: '-400'}
+70	70		201							{1: '1', 2: '500909', 4: '400'}
+71	71		301							{1: '1', 2: 'Ruolin', 3: 'It... it starts at 7:30 in the evening...', 4: '1'}
+72	72		202							{1: '1', 2: '2'}
+73	73		301							{3: 'Bridget quickly leaves with a tearful Ruolin, leaving Trojan momentarily lost.'}
+74	74		301				AniZhuanchangBegin			{3: 'Still... I guess this is better.'}
+75	75		401							{1: '1', 2: '36'}
+76	76		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory457.jpg'}
+77	77		401							{1: '1', 2: '209'}
+78	78		301			AniZhuanchangEnd				{3: 'The Kurono agent arrives exactly five minutes later using secret signals before entering this corner of the warehouse that has no surveillance.'}
+79	79		201							{1: '1', 2: '500427'}
+80	80		301							{1: '1', 2: 'Informant', 3: '7:30 tonight, at the new outdoor theater of the WGAA.', 4: '1'}
+81	81		301							"{2: 'Informant', 3: 'You\'ll receive your next mission info there. The keyword is ""popcorn""... Why are you holding out your hand?', 4: '1'}"
+82	82		203							{1: '1', 2: '0.25', 3: '400'}
+83	83		201							{1: '2', 2: '500586', 4: '-400'}
+84	84		301							{1: '1', 2: 'Trojan', 3: 'Ticket.', 4: '2'}
+85	85		301							"{2: 'Trojan', 3: ""I'm not going to pay money to get info for my new mission. Since when do employees have to pay to work?"", 4: '2'}"
+86	86		301							"{2: 'Informant', 3: ""...I can't make that call. I suggest you inquire with Logistics Support, or file for reimbursement afterward."", 4: '1'}"
+87	87		204							{1: '2', 2: '4'}
+88	88		301							{2: 'Trojan', 3: 'You better hope that works.', 4: '2'}
+89	89		301							"{2: 'Informant', 3: ""...I've got other stuff to do. See ya."", 4: '1'}"
+90	90		202							{1: '1'}
+91	91		203							{1: '2', 2: '0.25', 3: '0'}
+92	92		301							{3: 'The informant leaves in a rush for fear that Trojan might grab a chair and smash it over his head.'}
+93	93		301							"{2: 'Trojan', 3: ""Too scared of Babylonia to set up more encrypted channels, forcing these stupid rendezvous... And now I'm even supposed to ******* pay for this myself? Urgh..."", 4: '2'}"
+94	94		301							{2: 'Trojan', 3: '****... Dammit! I want to bloody quit...', 4: '2'}
+95	95		301				DialogDisable			"{2: 'Trojan', 3: ""Oh, it's already ******* five-thirty. Where am I supposed to get those cursed movie tickets... Wait."", 4: '2'}"
+96	96		202							{1: '2', 6: '1'}
+97	97		401							{1: '1', 2: '204'}
+98	98		504							{1: '0.7'}
+99	99		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory457.jpg'}
+100	100		201							{1: '1', 2: '500167', 4: '-400'}
+101	101		201							{1: '2', 2: '500909', 4: '400'}
+102	102		301			DialogEnable				"{1: '1', 2: 'Bridget', 3: ""Let's go, Ruolin. When's our movie starting?"", 4: '1'}"
+103	103		301				DialogDisable			{2: 'Ruolin', 3: 'It... it starts at 7:30 in the evening...', 4: '2'}
+104	104		202							{1: '1', 2: '2', 6: '1'}
+105	105		504							{1: '0'}
+106	106		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory457.jpg'}
+107	107		201							{1: '1', 2: '500586'}
+108	108		301			DialogEnable				{1: '1', 2: 'Trojan', 3: '...', 4: '1'}
+109	109		401							{1: '2', 2: '2918'}
+110	110		301							{3: 'Trojan pauses for a moment before making a call.'}
+111	111		402							{1: '2918'}
+112	112		301							{2: 'Trojan', 3: '...Ahem, Bridget? Is Ruolin... is Ruolin still with you?', 4: '1'}
+113	113		301				DialogDisable			{2: 'Trojan', 3: 'Well, um...', 4: '1'}
+114	114		104			AniZhuanchangBegin				{1: '300|-350|-500', 2: '0'}
+115	115		202							{1: '1', 6: '1'}
+116	116		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+117	117		401							{1: '1', 2: '5008'}
+118	118		301			DialogEnable				{3: 'Night falls and a few stars begin to glide across the simulated sky.'}
+119	119		104						1500.0	{1: '300|-310|-500', 2: '3'}
+120	120		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory459.jpg', 3: '0', 4: '1', 5: '2'}
+121	121		301							{3: 'The WGAA spent a fortune restoring projection equipment from the Golden Age and built a new outdoor theater to regularly screen classic films shot on Earth during that era.'}
+122	122		301							{3: 'The chairman of the WGAA claims that the films help those who have lived in Babylonia for too long remember their homeland—a place so close yet so far.'}
+123	123		301							{3: 'This excuse is a bit far-fetched, but Babylonia approved it.'}
+124	124		301							{3: 'At the modest outdoor venue, fighters and staff from Babylonia fill the seats in high spirits. Some have brought homemade snacks and various electrolyte drinks.'}
+125	125		201							{1: '1', 2: '500167'}
+126	126		301							"{1: '1', 2: 'Bridget', 3: ""Let's see... This is us! Oh, Trojan? You're so early."", 4: '1'}"
+127	127		203							{1: '1', 2: '0.25', 3: '-400'}
+128	128		201							{1: '2', 2: '500586', 3: '8', 4: '400'}
+129	129		301							{1: '1', 3: 'They are surprised to find the blue-haired Construct already sitting there with her eyes closed. Several gold bottles lie by her feet.'}
+130	130		204							{1: '2', 2: '1'}
+131	131		301							"{2: 'Trojan', 3: ""Mmm... ah, you're here."", 4: '2'}"
+132	132		301							{3: 'They did do her a favor, so Trojan forces a polite smile.'}
+133	133		301							"{2: 'Trojan', 3: ""I wasn't going to come because I don't really care for this kind of entertainment, as you know, but... Ahem."", 4: '2'}"
+134	134		301							{2: 'Trojan', 3: 'The drinks I ordered just arrived, and they expire in three days, so I brought them here... or they would go to waste.', 4: '2'}
+135	135		301							{2: 'Trojan', 3: 'Here, these are for you.', 4: '2'}
+136	136		301							{3: 'She points at the neatly placed drinks.'}
+137	137		301							"{2: 'Bridget', 3: ""Hey, I thought Constructs don't need to eat..."", 4: '1'}"
+138	138		202							{1: '2', 6: '1'}
+139	139		201							{1: '2', 2: '500909', 3: '1', 4: '400'}
+140	140		301							"{1: '1', 2: 'Ruolin', 3: ""No way! It's the limited edition beer-like alcohol-flavor electrolyte!"", 4: '2'}"
+141	141		301							{2: 'Bridget', 3: 'The... what?', 4: '1'}
+142	142		301							"{2: 'Ruolin', 3: ""Constructs don't need to eat, but we can drink electrolytes like these... This is amazing! Jeffrey and I have been dying to try this, but we could never get our hands on it..."", 4: '2'}"
+143	143		301							{2: 'Ruolin', 3: 'Wait... I thought alcohol-flavor electrolytes have a shelf life of 30 days...', 4: '2'}
+144	144		301							"{3: ""Bridget gently tugs at Ruolin's shirt.""}"
+145	145		301							{2: 'Ruolin', 3: 'Ah... Oh! A-anyway, thank you. Thank you so much!', 4: '2'}
+146	146		202							{1: '1', 2: '2', 6: '1'}
+147	147		201							{1: '1', 2: '500586'}
+148	148		301							"{1: '1', 2: 'Trojan', 3: ""Don't worry about it... I'm glad you like it."", 4: '1'}"
+149	149		301							{3: 'She turns her gaze away uncomfortably. She is not used to handling such direct displays of emotion.'}
+150	150		201							{1: '1', 2: '500167', 4: '-400'}
+151	151		201							{1: '2', 2: '500909', 3: '1', 4: '400'}
+152	152		301							{1: '1', 2: 'Bridget', 3: 'Is the movie about to start?', 4: '1'}
+153	153		301							{3: 'The guide lights dim as the massive screen, raised by the WGAA staff, flickers with snow-like static.'}
+154	154		301							"{2: 'Ruolin', 3: 'This one should be called ""The Twilight Seeker"". I heard it\'s a really old film...', 4: '2'}"
+155	155		301							{2: 'Bridget', 3: 'This is my first time watching a movie...', 4: '1'}
+156	156		202							{1: '1', 2: '2', 6: '1'}
+157	157		201							{1: '1', 2: '500586'}
+158	158		301							{1: '1', 2: 'Trojan', 3: '...', 4: '1'}
+159	159		202							{1: '1', 6: '1'}
+160	160		401							{1: '1', 2: '36'}
+161	161		301							{3: 'The movie begins.'}
+162	162		306							{1: '1'}
+163	163		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+164	164		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen01.prefab', 2: '3'}
+165	165		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory923.jpg', 3: '0', 4: '1', 5: '0.25'}
+166	166		401							{1: '1', 2: '360'}
+167	167		301							{3: 'On an endless wilderness, golden sands, and gun smoke linger in the air. The sun is dipping low.'}
+168	168		401							{1: '2', 2: '4104031'}
+169	169		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png', 3: '0', 4: '1', 5: '0.5'}
+170	170		301							{3: 'Horses and convertibles race across the vast landscape. Cloaks billow wildly in the dusty wind as thundering hoofbeats rip through the air.'}
+171	171		301							{3: 'The film rolls slowly, but Bridget and Ruolin are already lost in this symphony of light and shadow. Even Trojan finds herself drawn into this world on a screen...'}
+172	172		306							
+173	173		402							{1: '2608'}
+174	174		401							{1: '2', 2: '13015113'}
+175	175		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen01.prefab'}
+176	176		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+177	177		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0'}
+178	178		401							{1: '1', 2: '36'}
+179	179		301							{3: 'Click.'}
+180	180		301							{3: 'As the sound of mechanical gears breaks the silence, the massive screen suddenly goes dark.'}
+181	181		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory459.jpg', 3: '0', 4: '1', 5: '0.25'}
+182	182		401							{1: '1', 2: '5008'}
+183	183		201							{1: '1', 2: '500167', 3: '4'}
+184	184		301							"{1: '1', 2: 'Bridget', 3: ""What—! What's going on?"", 4: '1'}"
+185	185		203							{1: '1', 2: '0.25', 3: '-400'}
+186	186		201							{1: '2', 2: '500909', 4: '400'}
+187	187		301							"{1: '1', 2: 'Ruolin', 3: ""I think there's something wrong with the projector..."", 4: '2'}"
+188	188		202							{1: '1', 2: '2'}
+189	189		201							{1: '1', 2: '500342'}
+190	190		301							{1: '1', 2: 'Staff', 3: 'The projector has short-circuited. Screening will resume in approximately three minutes. Please remain in your seats—', 4: '1'}
+191	191		301							{2: 'Staff', 3: 'I repeat: The projector has short-circuited. Screening will resume in about three minutes. Please remain in your seats—', 4: '1'}
+192	192		201							{1: '1', 2: '500167'}
+193	193		301							"{1: '1', 2: 'Bridget', 3: ""Oh, thank goodness! It'll resume. I thought it was going to just stop right at the cliffhanger..."", 4: '1'}"
+194	194		203							{1: '1', 2: '0.25', 3: '-400'}
+195	195		201							{1: '2', 2: '500586', 4: '400'}
+196	196		301							{1: '1', 2: 'Bridget', 3: 'Trojan? Where are you going? The movie will resume in three minutes!', 4: '1'}
+197	197		301							"{2: 'Trojan', 3: ""I'll go and get some... popcorn."", 4: '2'}"
+198	198		202							{1: '1', 2: '2'}
+199	199		401							{1: '1', 2: '36'}
+200	200		301							{3: 'Trojan is walking in the darkness with a bucket of popcorn. Its ridiculous sweet aroma rises with an irritating intensity that disrupts her rare moment of peace.'}
+201	201		401							{1: '1', 2: '201'}
+202	202		301							{3: 'Hidden among the popcorn is a note with several timestamps written in code.'}
+203	203		301							{3: 'Konstantin. Support. Eliminate.'}
+204	204		201							{1: '2', 2: '500586', 3: '8'}
+205	205		301							{1: '1', 2: 'Trojan', 3: '...', 4: '2'}
+206	206		202							{1: '2'}
+207	207		301							{3: 'A surge of emotion wells up in her. She cannot tell whether it is satisfaction or sorrow. She crumbles the note in the darkness and returns to her seat.'}
+208	208		401							{1: '1', 2: '5008'}
+209	209		201							{1: '1', 2: '500167'}
+210	210		401							{1: '1', 2: '36'}
+211	211		301							{1: '1', 2: 'Bridget', 3: 'Popcorn... Can Constructs even eat that?', 4: '1'}
+212	212		203							{1: '1', 2: '0.25', 3: '-400'}
+213	213		201							{1: '2', 2: '500586', 4: '400'}
+214	214		401							{1: '1', 2: '381'}
+215	215		301							"{1: '1', 2: 'Trojan', 3: ""...It's fine. Eating occasionally can stabilize a Construct's M.I.N.D. Didn't you learn this in cultural training?"", 4: '2'}"
+216	216		301							{2: 'Bridget', 3: 'Ah... Haha... Mind if I try some?', 4: '1'}
+217	217		301							{2: 'Trojan', 3: '...Here.', 4: '2'}
+218	218		202							{1: '1', 2: '2'}
+219	219		301							{3: 'Bridget giggles playfully as she shares the bucket of popcorn with Ruolin.'}
+220	220		201							{1: '1', 2: '500167'}
+221	221		301							{1: '1', 2: 'Bridget', 3: 'Here, try some...', 4: '1'}
+222	222		202							{1: '1'}
+223	223		301							"{3: ""She grabs a handful of popcorn and puts it in Trojan's palm.""}"
+224	224		301							{3: 'At the end of the movie, everyone meets their destiny—the villain who had all the cards falls victim to their own greed, and the vengeful hero rides off into a new life.'}
+225	225		201							{1: '1', 2: '500909'}
+226	226		301							{1: '1', 2: 'Ruolin', 3: 'Phew... I was so worried the villain would get a happy ending...', 4: '1'}
+227	227		203							{1: '1', 2: '0.25', 3: '400'}
+228	228		201							{1: '2', 2: '500167', 4: '-400'}
+229	229		301							"{1: '1', 2: 'Bridget', 3: ""Hah, if I were the protagonist, I wouldn't have gotten myself into that situation... Trojan? The movie's over."", 4: '2'}"
+230	230		202							{1: '1'}
+231	231		201							{1: '1', 2: '500586', 4: '400'}
+232	232		301							{1: '1', 2: 'Trojan', 3: '...Ah, I spaced out.', 4: '1'}
+233	233		301							{2: 'Bridget', 3: 'From that ending, right? It was amazing!', 4: '2'}
+234	234		301							{2: 'Trojan', 3: '...Yeah, it was.', 4: '1'}
+235	235		301							{2: 'Trojan', 3: 'The despicable and greedy will get what they deserve.', 4: '1'}
+236	236		301							{2: 'Trojan', 3: 'This... this is how any story should end.', 4: '1'}
+237	237		301		1		AniZhuanchangBegin			"{2: 'Bridget', 3: ""Right? Eh... wait, Trojan? You're going the wrong way! The dorm is this way!"", 4: '2'}"

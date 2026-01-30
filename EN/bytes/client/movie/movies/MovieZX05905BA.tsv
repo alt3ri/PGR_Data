@@ -1,0 +1,736 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory41.jpg'}
+2	2		401							{1: '1', 2: '250'}
+3	3		201							{1: '1', 2: '500421'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Instructor', 3: ""Remember, you're no different from dogs—worse, even. Dogs don't overthink. They don't fear."", 4: '1'}"
+5	5		301							"{2: 'Instructor', 3: ""So learn from dogs. If you're told to bite, you bite. If you're told to stop, you stop."", 4: '1'}"
+6	6		301							{2: 'Instructor', 3: 'Got it?', 4: '1'}
+7	7		202							{1: '1'}
+8	8		306							{1: '1'}
+9	9		301							"{3: ""If crying gets no answer, what's the point of crying?""}"
+10	10		301							{3: 'If needs go unheard, do needs survive?'}
+11	11		301							{3: 'In the institution, the children have few spare emotions. Obedience and conditioned reflexes are their daily lessons.'}
+12	12		301							"{3: 'Behind closed doors, the ""obedience"" training never ends.'}"
+13	13		301							"{3: 'The instructors clearly tolerate it. As long as they don\'t have to dirty their hands each time, they\'re happy to let ""natural selection"" do the work and discard the ""defective products.""'}"
+14	14		401							{1: '2', 2: '4387'}
+15	15		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+16	16		306							
+17	17		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory731.jpg'}
+18	18		201							{1: '1', 2: '501120', 3: '7'}
+19	19		301							"{1: '1', 2: 'Eleanor', 3: ""The director brought her here personally... what's so special about this candidate?"", 4: '1'}"
+20	20		202							{1: '1'}
+21	21		301							"{3: ""After a few days of observation and interaction, Eleanor has to admit, she's a little disappointed.""}"
+22	22		301							"{3: ""In test after test, Discord's performance is average. Or maybe lacking any competitive drive is more accurate.""}"
+23	23		301							"{3: ""She can't even read, just like the others. So what could have earned the director's favor?""}"
+24	24		201							{1: '1', 2: '501120'}
+25	25		301							{1: '1', 2: 'Eleanor', 3: 'At least the name was unique.', 4: '1'}
+26	26		202							{1: '1'}
+27	27		301							"{3: ""Wherever you are, survival of the fittest rules. Fail to grasp it and you're gone.""}"
+28	28		306							{1: '1'}
+29	29		301							"{3: ""She lingers at the back of the line and watches older bullies knock Discord's meal to the floor.""}"
+30	30		301							{3: 'The blue-haired girl quietly picks up her food and finds a corner to sit.'}
+31	31		306							
+32	32		201							{1: '1', 2: '501120', 7: '1'}
+33	33		301							{1: '1', 2: 'Eleanor', 3: 'Playing weak, are you? Not a bad move.', 4: '1'}
+34	34		202							{1: '1', 6: '1'}
+35	35		301				AniZhuanchangBegin			"{3: ""She walks over and sits beside Discord like it's the most natural thing.""}"
+36	36		101						400.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory515.jpg'}
+37	37		301			AniZhuanchangEnd				{3: 'In the afternoon, the scheduled training begins.'}
+38	38		201							{1: '1', 2: '500421'}
+39	39		301							"{1: '1', 2: 'Instructor', 3: ""Finish your missions. Fall behind and you'll be punished."", 4: '1'}"
+40	40		301							{2: 'Instructor', 3: 'Everyone, begin!', 4: '1'}
+41	41		202							{1: '1'}
+42	42		401							{1: '2', 2: '4779'}
+43	43		301							{3: 'Countless parts scatter across the table. On command, the children move as one, assemble a handgun, and chamber rounds at top speed.'}
+44	44		201							{1: '1', 2: '500421'}
+45	45		301							{1: '1', 2: 'Instructor', 3: 'Eleanor, complete!', 4: '1'}
+46	46		202							{1: '1'}
+47	47		401							{1: '2', 2: '4779'}
+48	48		301							"{3: ""The rest of the kids panic. It's their first day with this training; some can't even tell the trigger from the safety.""}"
+49	49		201							{1: '1', 2: '500421'}
+50	50		301							{1: '1', 2: 'Instructor', 3: 'Roxie, Eggsy, complete!', 4: '1'}
+51	51		301							{2: 'Instructor', 3: 'Discord, complete!', 4: '1'}
+52	52		301				DialogDisable			{2: 'Instructor', 3: 'The rest of you, failed. Hands out.', 4: '1'}
+53	53		306							{1: '1'}
+54	54		202							{1: '1', 6: '1'}
+55	55		201							{1: '1', 2: '501120', 4: '-600'}
+56	56		201							{1: '2', 2: '500527', 4: '-250', 5: '-100'}
+57	57		201							{1: '3', 2: '500164', 4: '200', 5: '-100'}
+58	58		201						500.0	{1: '4', 2: '501136', 4: '600'}
+59	59		203						300.0	{1: '1', 2: '0.4', 3: '-550', 5: '-80'}
+60	60		202						200.0	{1: '1'}
+61	61		203						300.0	{1: '4', 2: '0.4', 3: '550', 5: '-80'}
+62	62		202							{1: '4'}
+63	63		301			DialogEnable	DialogDisable			{3: 'Eleanor steps gracefully out of line. A beat later, Discord follows.'}
+64	64		401							{1: '2', 2: '2924'}
+65	65		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 2: '2', 3: '2'}
+66	66		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 2: '2', 3: '3'}
+67	67		502							{1: 'PanelActor2Shake'}
+68	68		502						1800.0	{1: 'PanelActor3Shake'}
+69	69		401							{1: '2', 2: '4044'}
+70	70		203							{1: '2', 2: '0.4', 3: '-250', 4: '-500'}
+71	71		203						350.0	{1: '3', 2: '0.4', 3: '200', 4: '-500'}
+72	72		202							{1: '2', 2: '3'}
+73	73		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '2'}
+74	74		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '3'}
+75	75		301			DialogEnable				"{3: ""The stun gun cracks, charring the flesh of the palm until it's black and burning. The punished child doesn't dare cry, only sags to their knees.""}"
+76	76		301							{3: 'No one has ever doubted this place is nothing like ordinary orphanages.'}
+77	77		306							
+78	78		201							{1: '1', 2: '501136'}
+79	79		301							"{1: '1', 2: 'Discord', 3: ""They're afraid of you..."", 4: '1'}"
+80	80		301							"{3: ""Discord doesn't dare look back. Standing beside the girl, she speaks barely above a whisper.""}"
+81	81		301							"{2: 'Discord', 3: ""Is it because you're better than them? Are they jealous?"", 4: '1'}"
+82	82		202							{1: '1', 6: '1'}
+83	83		201							{1: '1', 2: '501120', 3: '4'}
+84	84		301							{1: '1', 2: 'Eleanor', 3: 'Being better than a bunch of fools is nothing to be proud of.', 4: '1'}
+85	85		204							{1: '1'}
+86	86		301							"{2: 'Eleanor', 3: ""What matters is being better than the person you were. That's worth being proud of."", 4: '1'}"
+87	87		306							{1: '1'}
+88	88		301							{3: 'To Discord, Eleanor acts refined around teachers and other orphans—never loud, never foolish. Even when she acts out, she is never scolded.'}
+89	89		301							"{3: ""Her only quirk is that sometimes she's hard to understand. Among kids who lack schooling, that counts as an advantage.""}"
+90	90		306							
+91	91		204							{1: '1', 2: '4'}
+92	92		301							{2: 'Eleanor', 3: 'They do fear me. When you fear something, you admit it has power over you.', 4: '1'}
+93	93		301							{3: 'She tells Discord which children to study and which ones she already understands completely.'}
+94	94		204							{1: '1'}
+95	95		301							"{2: 'Eleanor', 3: ""People should look for things that have meaning and value, then meet death calmly. Some people's value is to help others realize theirs."", 4: '1'}"
+96	96		202							{1: '1'}
+97	97		301							{3: 'She says her foresight is simply a matter of understanding, like how some creatures are born with a sharper sense of smell than humans.'}
+98	98		301				AniZhuanchangBegin			{3: 'But to Discord, it still feels like magic.'}
+99	99		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory759.jpg'}
+100	100		201							{1: '1', 2: '501120', 7: '1'}
+101	101		301			AniZhuanchangEnd				"{1: '1', 2: 'Eleanor', 3: ""See? He's about to slip out and quietly ask the kid in front to help him cheat."", 4: '1'}"
+102	102		301							"{2: 'Eleanor', 3: ""The kid in front will agree, then sneak a look around. But the one behind won't like it. He'll... hmm, let me think."", 4: '1'}"
+103	103		301							"{2: 'Eleanor', 3: ""He's gonna punch the kid in front of him."", 4: '1'}"
+104	104		202							{1: '1', 6: '1'}
+105	105		306							{1: '1'}
+106	106		401							{1: '2', 2: '1512'}
+107	107		301			RImgBg1Shake				{2: 'Cheating Child', 3: 'Ow! My nose!'}
+108	108		301			RImgBg1Shake				{2: 'Disgruntled Child', 3: 'I ******* hate you sneaky cheaters!'}
+109	109		306							
+110	110		301							"{3: ""The class stops when a brawl breaks out, and the instructor storms over. Discord stares, stunned, as Eleanor's predictions come true one by one.""}"
+111	111		201							{1: '1', 2: '501136', 4: '400'}
+112	112		201							{1: '2', 2: '501120', 3: '4', 4: '-400'}
+113	113		301							{1: '1', 2: 'Discord', 3: '...Can you make people do what you want?', 4: '1'}
+114	114		301							"{2: 'Eleanor', 3: ""No. I certainly can't."", 4: '2'}"
+115	115		301							"{3: ""An expression crosses her face that mingles an adult's calm with a child's innocence.""}"
+116	116		204							{1: '2'}
+117	117		301							{2: 'Eleanor', 3: 'All I do is observe. I watch what someone wants, what they need most right now, what they value.', 4: '2'}
+118	118		301							{2: 'Eleanor', 3: 'Then you know more about them than they do.', 4: '2'}
+119	119		301							{2: 'Discord', 3: 'Then... do you understand me the way you understand them?', 4: '1'}
+120	120		301							{3: 'She smiles and says nothing. Discord can already ask questions and doubt—better than the other fools.'}
+121	121		301							"{2: 'Discord', 3: ""Like... which foot I'll use when I step through the door next?"", 4: '1'}"
+122	122		301							{2: 'Eleanor', 3: 'A coin has two sides. You only get two outcomes when you toss it.', 4: '2'}
+123	123		202							{1: '1', 2: '2'}
+124	124		401							{2: '5850'}
+125	125		301							"{3: ""The commotion ends at the whistle. The older girl strolls back into line. The younger girl realizes she's asked something dumb, flushes with embarrassment, then remembers the secret game that sealed her fate.""}"
+126	126		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+127	127		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+128	128		301				DialogDisable			{3: 'A weathered portrait of an old man. A bird with outstretched wings.'}
+129	129		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1201.jpg', 3: '0', 4: '1', 5: '1'}
+130	130		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1201.jpg'}
+131	131		205							{1: '999'}
+132	132		301			DialogEnable				"{3: ""She chose the old man's face, and that path led her here. The other path...""}"
+133	133		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+134	134		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory759.jpg'}
+135	135		201							{1: '1', 2: '501120', 7: '1'}
+136	136		301							"{1: '1', 2: 'Eleanor', 3: 'So ""free will"" is a joke—an illusion.', 4: '1'}"
+137	137		301							{2: 'Eleanor', 3: 'The freedom people talk about is just making limited choices inside countless restraints.', 4: '1'}
+138	138		301							"{2: 'Eleanor', 3: ""They wield freedom the way they wield power. In the end it's the same prewritten road. Boring. Mind-numbingly boring."", 4: '1'}"
+139	139		202							{1: '1'}
+140	140		301							"{3: ""At the end of her sentence, the girl's voice suddenly slips back into a child's tone. She steps closer; her shadow and breath fall over Discord.""}"
+141	141		201							{1: '1', 2: '501120', 3: '2'}
+142	142		301							{1: '1', 2: 'Eleanor', 3: 'Oh dear, is that a bit too hard for you?', 4: '1'}
+143	143		202							{1: '1', 6: '1'}
+144	144		306							{1: '1'}
+145	145		401							{1: '2', 2: '895'}
+146	146		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+147	147		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1159.jpg'}
+148	148		301							"{3: ""Every window here is carefully covered so the children won't glimpse a scrap of blue sky and dream of freedom.""}"
+149	149		301							{3: 'Yet the children still whisper about freedom. During breaks, they stare at clouds through the cracks and watch leaves fall with the seasons.'}
+150	150		401							{1: '2', 2: '895'}
+151	151		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+152	152		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_40.jpg'}
+153	153		301							{3: 'If only they could be a cloud in the sky! Then they could drift anywhere. Almost every child has thought this.'}
+154	154		301							{3: 'Until Eleanor said it, Discord never considered that freedom might not be a good thing.'}
+155	155		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+156	156		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory759.jpg'}
+157	157		306							
+158	158		201							{1: '1', 2: '501136', 4: '400', 7: '1'}
+159	159		201							{1: '2', 2: '501120', 4: '-400', 7: '1'}
+160	160		301							{1: '1', 2: 'Eleanor', 3: 'Do you want freedom?', 4: '2'}
+161	161		301							{2: 'Discord', 3: 'No... we... should follow orders.', 4: '1'}
+162	162		202							{1: '1', 2: '2'}
+163	163		301							{3: 'Discord unconsciously rubs at the wrists that restraints have cinched for years, and forces the words out, uncomfortable.'}
+164	164		201							{1: '1', 2: '501120', 3: '4'}
+165	165		301							{1: '1', 2: 'Eleanor', 3: 'Does a puppy want freedom? Can it run wherever it wants?', 4: '1'}
+166	166		301							{3: 'The girl pictures the attack dogs in their training cages, then shakes her head slowly and heavily.'}
+167	167		204							{1: '1', 2: '2'}
+168	168		301							"{2: 'Eleanor', 3: ""Then what about the strays outside? They go where they want, bite who they want. They don't need anyone's orders."", 4: '1'}"
+169	169		301							"{3: ""Discord doesn't answer. She studies Eleanor's face, searching for the response that will satisfy her.""}"
+170	170		204							{1: '1', 2: '4'}
+171	171		301							"{2: 'Eleanor', 3: ""No matter how hard a small dog tries, no matter how loud it howls, it can't become a big dog."", 4: '1'}"
+172	172		301							"{3: ""So... no matter how much children yearn for it, they can't turn into clouds. Discord struggles to take it in.""}"
+173	173		204							{1: '1', 2: '2'}
+174	174		301			DialogShake				{2: 'Eleanor', 3: 'But a small dog can still kill a big dog—with the same sharp teeth and claws.', 4: '1'}
+175	175		204							{1: '1', 2: '4'}
+176	176		301							"{2: 'Eleanor', 3: ""I'm the only one who sees your potential. They all underestimate you, overlook you. But you're the protagonist of this story."", 4: '1'}"
+177	177		204							{1: '1'}
+178	178		301							"{2: 'Eleanor', 3: ""You're special. Prove it to me."", 4: '1'}"
+179	179		401							{1: '2', 2: '2936'}
+180	180		202							{1: '1'}
+181	181		301				DialogDisable			{3: 'Eleanor lets the blue-tinted gauze slide from her fingertips and walks, unbothered, from the sterile corridor into the course room.'}
+182	182		401							{1: '2', 2: '895'}
+183	183		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png', 4: '7'}
+184	184		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+185	185		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+186	186		307							{1: 'Special? Protagonist?', 3: '60', 4: 'fffffff'}
+187	187		301							{3: 'Special? Protagonist?'}
+188	188		307							{2: '1'}
+189	189		301			DialogEnable				"{3: ""Those words, sweet as honey, seep slowly into Discord's heart.""}"
+190	190		401							{1: '2', 2: '895'}
+191	191		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+192	192		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory928.png'}
+193	193		201							{1: '2', 2: '501120', 3: '4', 4: '-200', 7: '1'}
+194	194		201							{1: '1', 2: '501136', 4: '125', 5: '30', 6: '-100', 7: '1', 8: '1'}
+195	195		301							{1: '1', 3: 'Could she be a protagonist? Could she protect Eleanor, become the great hero from picture books?'}
+196	196		202							{1: '1', 2: '2', 6: '1'}
+197	197		401							{1: '2', 2: '895'}
+198	198		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+199	199		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory617.jpg'}
+200	200		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+201	201		301							{3: 'The lamp still glows with its faint, ghostly light, yet she feels as warm as if she were standing in the outdoor sun.'}
+202	202		301							{3: 'The world gathers in new colors and begins to surge forward. In that moment, her broken childhood and all those years of wandering no longer seem to matter.'}
+203	203		101							{4: '7', 5: '1'}
+204	204		401							{1: '2', 2: '895'}
+205	205		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+206	206		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory759.jpg'}
+207	207		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+208	208		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+209	209		306							
+210	210		201							{1: '1', 2: '501120', 3: '7', 7: '1'}
+211	211		301							{1: '1', 2: 'Eleanor', 3: 'By the way, would it be your left foot?', 4: '1'}
+212	212		204							{1: '1'}
+213	213		301							"{2: 'Eleanor', 3: ""My guess is that you hurt it before. You've been acting like nothing's wrong while quietly protecting it all this time."", 4: '1'}"
+214	214		202							{1: '1'}
+215	215		301				DialogDisable			{3: 'She glances back with an innocent smile and speaks the words that land squarely in the heart.'}
+216	216		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.5'}
+217	217		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+218	218		205							{1: '999'}
+219	219		201							{1: '1', 2: '501120'}
+220	220		301			DialogEnable	AniZhuanchangBegin			"{1: '1', 2: 'Eleanor', 3: ""You like to hide important things. Is it because you've lost them before?"", 4: '1'}"
+221	221		202							{1: '1', 6: '1'}
+222	222		401							{1: '1', 2: '36'}
+223	223		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory387.png'}
+224	224		401							{1: '1', 2: '381'}
+225	225		301			AniZhuanchangEnd				{3: 'The corridor to the dorms is ice cold at night. Many children linger there before bed, dragging their feet on purpose.'}
+226	226		201							{1: '1', 2: '500944', 4: '-400'}
+227	227		201							{1: '2', 2: '500947', 4: '400'}
+228	228		301			DialogShake				{1: '1', 2: 'Child A', 3: 'Fool!', 4: '1'}
+229	229		301							"{2: 'Child A', 3: ""She's tamed you, got you dancing to her tune, just so she can beat you more easily on the next test!"", 4: '1'}"
+230	230		301							"{2: 'Child A', 3: ""Tag-along! You'll find out soon enough how terrifying it is to be her enemy!"", 4: '1'}"
+231	231		301							"{2: 'Child B', 3: ""Yeah. We're just helping you face reality early!"", 4: '2'}"
+232	232		202							{1: '1', 2: '2'}
+233	233		306							{1: '1'}
+234	234		301							{3: 'A cluster of kids closes in. A perfect target who never fights back is too tempting for their restless, show-off energy.'}
+235	235		401							{1: '2', 2: '4306'}
+236	236		301			RImgBg1Shake				{3: 'Someone shoves her. She stumbles forward and crashes onto the ice-cold floor.'}
+237	237		306							
+238	238		201							{1: '1', 2: '500947'}
+239	239		301							"{1: '1', 2: 'Child B', 3: ""Think you're special? Think you were chosen?"", 4: '1'}"
+240	240		202							{1: '1'}
+241	241		306							{1: '1'}
+242	242		301							"{3: ""One boy slips a fork from the caretaker's cabinet and climbs to a high perch.""}"
+243	243		401						200.0	{1: '2', 2: '4797'}
+244	244		401							{1: '2', 2: '1085'}
+245	245		104						200.0	{1: '5|0|0', 2: '0.15'}
+246	246		104							{1: '0|0|0', 2: '0.15'}
+247	247		301							{3: 'He flicks his wrist and sends a fork flying. The angle is off; it spins and just clips her foot before bouncing away.'}
+248	248		306							
+249	249		201							{1: '1', 2: '500947'}
+250	250		301							{1: '1', 2: 'Child B', 3: 'Tsk. Missed. These things are a pain to aim. How about this?', 4: '1'}
+251	251		202							{1: '1'}
+252	252		306							{1: '1'}
+253	253		401						200.0	{1: '2', 2: '4797'}
+254	254		401							{1: '2', 2: '4797'}
+255	255		301							{3: 'In one go, he throws the rest of the forks at Discord.'}
+256	256		401						100.0	{1: '2', 2: '2767'}
+257	257		401							{1: '2', 2: '5811'}
+258	258		301			RImgBg1Shake				{3: 'They rain down like silver, clattering into each other without pattern.'}
+259	259		401							{2: '5321'}
+260	260		301							"{3: ""Only one—only one fork—spins fast, the tines flashing as it drops toward the back of Discord's unprotected neck.""}"
+261	261		306							
+262	262		401							{1: '2', 2: '1543'}
+263	263		201							{1: '1', 2: '501136'}
+264	264		203							{1: '1', 2: '0.25', 3: '50'}
+265	265		301							{1: '1', 2: 'Discord', 3: '...!', 4: '1'}
+266	266		202							{1: '1'}
+267	267		301							"{3: ""The girl doesn't turn. Maybe she catches it in the corner of her eye, because her arm whips back on instinct.""}"
+268	268		201							{1: '1', 2: '500944'}
+269	269		301							{1: '1', 2: 'Child A', 3: 'Damn! Lucky dodge!', 4: '1'}
+270	270		202							{1: '1'}
+271	271		401							{1: '2', 2: '4931'}
+272	272		301						1000.0	{3: 'The crowd scatters in a flash, like ants doused with boiling water. Only two things can get these kids to stop in their tracks with sound alone: a whistle, or her.'}
+273	273		402							{1: '4931'}
+274	274		201							{1: '1', 2: '501136'}
+275	275		301							{1: '1', 2: 'Discord', 3: 'Eleanor, they say...', 4: '1'}
+276	276		301							"{3: ""The girl bites her lip, unsure whether to repeat those cruel words. But Eleanor's eyes light up, fixed on the fork that was knocked away and now sits buried in the wall.""}"
+277	277		301							{3: 'As expected.'}
+278	278		401							{1: '2', 2: '4895'}
+279	279		201							{1: '2', 2: '501120', 3: '2', 4: '-400'}
+280	280		203							{1: '1', 2: '0.25', 3: '200'}
+281	281		203							{1: '2', 2: '0.25', 3: '-280'}
+282	282		301							{1: '1', 3: 'Smiling, she opens her arms and gathers Discord into lace and ruffles.'}
+283	283		301							"{3: ""The unfamiliar touch makes Discord tense up. She doesn't know what to do.""}"
+284	284		204							{1: '2'}
+285	285		301							{2: 'Eleanor', 3: 'Nothing to worry about, right?', 4: '2'}
+286	286		301							"{3: ""The girl's hand pats her back, soft and soothing.""}"
+287	287		202							{1: '1', 2: '2'}
+288	288		301				AniZhuanchangBegin			"{3: ""Discord breathes in a scent that doesn't match Polard at all. Nestled against gray hair, her tight muscles loosen.""}"
+289	289		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1160.jpg'}
+290	290		301			AniZhuanchangEnd				{3: 'The bullying is brushed aside. A harsh scolding, a token confinement, and then the instructors and caretakers pretend it never happened.'}
+291	291		301							{3: 'But after their confinement ends, those kids never come near the blue-haired girl again.'}
+292	292		201							{1: '1', 2: '501136'}
+293	293		301							"{1: '1', 2: 'Discord', 3: ""They're not bothering me anymore, but... what did you do? Did you beat them up?"", 4: '1'}"
+294	294		202							{1: '1'}
+295	295		301							"{3: ""The girl asks incredulously. She just can't picture this teenager using violence.""}"
+296	296		201							{1: '1', 2: '501120'}
+297	297		301							"{1: '1', 2: 'Eleanor', 3: ""No. I only talked to them, the same way I'm talking to you."", 4: '1'}"
+298	298		202							{1: '1'}
+299	299		301							{3: 'Discord already understands that the girl is far more mature than she looks; she only acts like an ordinary child when it suits her.'}
+300	300		401							{2: '4386'}
+301	301		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+302	302		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory387.png'}
+303	303		504							{1: '0.7'}
+304	304		201							{1: '1', 2: '501120', 3: '4', 7: '1'}
+305	305		301							"{1: '1', 2: 'Eleanor', 3: ""Don't you get it? Her forehead's already marked. Even you idiots should know some lines can't be crossed."", 4: '1'}"
+306	306		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+307	307		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1160.jpg'}
+308	308		504							{1: '0'}
+309	309		202							{1: '1', 6: '1'}
+310	310		301				DialogDisable			"{3: ""The girl's gentle smile smooths out every anxious ripple in Discord's young heart like a calming touch of magic.""}"
+311	311		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory515.jpg', 3: '0', 4: '1', 5: '0.8'}
+312	312		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory515.jpg'}
+313	313		205							{1: '999'}
+314	314		301			DialogEnable				"{3: 'From that day on, her time at Polard grows easier. Discord feels as if she\'s run back to some simple, sheltered place—even if each day\'s ""performance"" is anything but peaceful.'}"
+315	315		301				AniZhuanchangBegin			"{3: ""As long as Eleanor is there, there's nothing to fear. All she has to do is follow orders and keep living.""}"
+316	316		401							{1: '1', 2: '36'}
+317	317		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory759.jpg'}
+318	318		401							{1: '1', 2: '272'}
+319	319		301			AniZhuanchangEnd				{3: 'Yet a fate no child should bear still comes, mercilessly.'}
+320	320		201							{1: '1', 2: '500421'}
+321	321		301							"{1: '1', 2: 'Instructor', 3: ""Final training of the year. Make sure you're ready."", 4: '1'}"
+322	322		202							{1: '1'}
+323	323		301							"{3: 'Some kids spark with hope at the word ""final,"" but the gray, flat eyes around them show that words like these have long since lost their meaning.'}"
+324	324		301				DialogDisable			"{3: ""They're forced to fight each other. The closer the bond, the more deliberately they are paired. The rule is merciless; it slices apart what little tenderness remains.""}"
+325	325		401							{2: '4543'}
+326	326		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDoorOpen01.prefab', 2: '3', 5: '1'}
+327	327		101						800.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory833.jpg'}
+328	328		511						300.0	{1: '1', 2: '0.3', 3: '0|0|-150'}
+329	329		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDoorOpen01.prefab', 5: '1'}
+330	330		301			DialogEnable	DialogDisable			{3: 'A door opens. They step into a tunnel drowned in pitch-black darkness.'}
+331	331		104						450.0	{1: '0|0|-150', 2: '0.5'}
+332	332		401							{1: '2', 2: '4543'}
+333	333		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDoorOpen01.prefab', 2: '3', 5: '1'}
+334	334		101						800.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory828.jpg'}
+335	335		511						300.0	{1: '1', 2: '0.3', 3: '0|0|-150'}
+336	336		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDoorOpen01.prefab', 5: '1'}
+337	337		301			DialogEnable	DialogDisable			{3: 'They descend a staircase, pass through another door, and hear the heavy clang of a metal slab sealing shut behind them.'}
+338	338		104						450.0	{1: '0|0|-150', 2: '0.5'}
+339	339		401							{1: '2', 2: '4543'}
+340	340		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDoorOpen01.prefab', 2: '3', 5: '1'}
+341	341		101						800.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory635.jpg'}
+342	342		511						300.0	{1: '1', 2: '0.3', 3: '0|0|-150'}
+343	343		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDoorOpen01.prefab', 5: '1'}
+344	344		301			DialogEnable				{3: 'And finally, one last door.'}
+345	345		301				DialogDisable			{3: 'Some children grow restless. Others seem distant, already half-absent. It makes no difference to what lies ahead.'}
+346	346		401							{1: '2', 2: '4923'}
+347	347		509						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory41.jpg', 2: '2'}
+348	348		201							{1: '13', 2: '500421', 4: '550'}
+349	349		301			DialogEnable				{1: '1', 2: 'Instructor', 3: 'Complete your task: kill your companions! Or you all feed the dogs.', 4: '13'}
+350	350		202							{1: '13', 6: '1'}
+351	351		201							{1: '13', 2: '501125', 4: '550'}
+352	352		301							"{1: '1', 2: 'Rosewater', 3: ""No, you don't have to kill them. Just knock them out and it's over."", 4: '13'}"
+353	353		202							{1: '13'}
+354	354		301							{3: 'Director Pollard, who almost never shows up, drops that remark like a stone before passing the microphone back.'}
+355	355		201							{1: '13', 2: '501125', 4: '550'}
+356	356		301				DialogDisable			"{1: '1', 2: 'Rosewater', 3: ""Training's almost over. No point wasting resources."", 4: '13'}"
+357	357		510						300.0	{1: '2'}
+358	358		202							{1: '13'}
+359	359		306							{1: '1'}
+360	360		301			DialogEnable				{3: 'The other adults glance at each other and shrug. None of them bother explaining to the seldom-seen director how important the preset conditions are for forging the final nerves of steel.'}
+361	361		401						100.0	{1: '2', 2: '5832'}
+362	362		401						200.0	{1: '2', 2: '5832'}
+363	363		401							{1: '2', 2: '5832'}
+364	364		301							"{3: ""Dozens of trained military hounds come thundering out. They're massive, all muscle—some almost as tall as the children. Every set of eyes locks on the central platform, and their growls rumble like distant thunder.""}"
+365	365		301							{3: 'Weapons of every kind litter the arena floor. The instructors leave for the monitoring room, waiting for the final results of this bloodbath.'}
+366	366		306							
+367	367		401							{1: '2', 2: '4923'}
+368	368		201							{1: '18', 2: '500421', 4: '-500', 5: '-360', 6: '500'}
+369	369		301							{1: '1', 2: 'Instructor', 3: 'Of course, running and giving up are pointless too.', 4: '18'}
+370	370		202							{1: '18'}
+371	371		401							{1: '2', 2: '5834'}
+372	372		201							{1: '1', 2: '501120', 3: '4', 4: '-400'}
+373	373		201							{1: '2', 2: '501136', 4: '400'}
+374	374		301							"{1: '1', 3: ""Partially wiped blood stains remain on the platform. The air reeks of iron. Discord yanks at the chain linking her neck to another's, her face twisted in pain.""}"
+375	375		301							"{2: 'Eleanor', 3: ""A person must always obey, be a perfect expendable, adapting to the absurd—that's what soldiers were made to be in the world wars."", 4: '1'}"
+376	376		301							{2: 'Eleanor', 3: 'Life and death are a performance. Thirty-three ridiculous coin tosses make you believe in fate. You and I are puppets on a stage.', 4: '1'}
+377	377		301							"{3: ""Discord doesn't understand the poem-like murmur. It's even more obscure than usual.""}"
+378	378		204							{1: '1'}
+379	379		301							{3: 'The girl smiles and switches to a simpler story.'}
+380	380		301							{2: 'Eleanor', 3: 'Ever heard of your life flashing before your eyes?', 4: '1'}
+381	381		301							"{2: 'Eleanor', 3: ""Take oxygen deprivation, for example. It can cause hallucinations. In a lot of plane crashes, when the cabin loses pressure, people pass out almost instantly. Your body's dying, but your brain hasn't caught on yet, so it gives you dreamlike illusions."", 4: '1'}"
+382	382		301							"{2: 'Eleanor', 3: ""People who've had near-death experiences say they saw hazy scenes and heard a clear announcer's voice. The moment they step into an unknown river, torches flare to life around them."", 4: '1'}"
+383	383		301							"{2: 'Eleanor', 3: ""The flicker of firelight brightens the space. You see people waving to you. Their faces are blurred, but you feel a strange safety and happiness—like an infant in a mother's arms..."", 4: '1'}"
+384	384		202							{1: '1', 2: '2', 6: '1'}
+385	385		201							{1: '18', 2: '501125', 4: '-170', 5: '-190', 6: '150'}
+386	386		301							{1: '1', 2: 'Rosewater', 3: 'What are they talking about?', 4: '18'}
+387	387		201							{1: '18', 2: '500421', 4: '-500', 5: '-360', 6: '500'}
+388	388		301							"{1: '1', 2: 'Instructor', 3: ""I can't hear them clearly. Still this reckless? Are they turning a death test into storytime?"", 4: '18'}"
+389	389		201							{1: '18', 2: '501125', 4: '-170', 5: '-190', 6: '150'}
+390	390		301							{1: '1', 2: 'Rosewater', 3: '...', 4: '18'}
+391	391		202							{1: '18'}
+392	392		301							"{3: ""The girl keeps talking to herself. The speaker warns that if they don't get moving, the preset lethal current will be switched on.""}"
+393	393		201							{1: '1', 2: '501120'}
+394	394		301							{1: '1', 2: 'Eleanor', 3: 'Are you afraid of death?', 4: '1'}
+395	395		202							{1: '1'}
+396	396		502							{1: 'RImgBg1BlowUp'}
+397	397		301							"{3: ""The young woman walks slowly to the weapons rack, her pale fingers slipping from her sleeve. She smiles like she's unwrapping a gift and reaches for a brand-new chainsaw.""}"
+398	398		301				DialogDisable			{3: 'Discord follows the voice on the loudspeaker and grabs a tactical knife from the upper rack.'}
+399	399		505							{1: 'RImgBg1BlowUp'}
+400	400		401							{1: '2', 2: '2595'}
+401	401		307							{1: 'A suicidal choice.', 3: '50'}
+402	402		301				AniZhuanchangBegin			{3: 'A suicidal choice.'}
+403	403		307							{2: '1'}
+404	404		401						2000.0	{1: '1', 2: '36'}
+405	405		401							{1: '1', 2: '271'}
+406	406		101			DialogEnable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory41.jpg'}
+407	407		201							{1: '1', 2: '500421', 4: '-600', 7: '1'}
+408	408		201							{1: '2', 2: '500137', 7: '1'}
+409	409		201							{1: '3', 2: '500138', 4: '600', 7: '1'}
+410	410		301			AniZhuanchangEnd				{1: '1', 3: 'At the monitors, one adult mutters that a few casualties are acceptable, but a massive massacre would be too much.'}
+411	411		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+412	412		201							{1: '1', 2: '501125'}
+413	413		301							"{1: '1', 3: ""Rosewater's brow furrows.""}"
+414	414		202							{1: '1', 6: '1'}
+415	415		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+416	416		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory635.jpg'}
+417	417		301				DialogDisable			{3: 'But Discord is busy building the scene Eleanor once described. Her mind is pulled along as she peers down from several meters above into the darkness below. Barking rises and falls from somewhere under the platform.'}
+418	418		401							{1: '2', 2: '895'}
+419	419		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+420	420		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+421	421		307							{1: 'Death is... safe and happy?', 3: '60', 4: 'ffffffff'}
+422	422		301							{3: 'Death is... safe and happy?'}
+423	423		307							{2: '1'}
+424	424		401							{1: '2', 2: '895'}
+425	425		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+426	426		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory376.png'}
+427	427		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '4'}
+428	428		301			DialogEnable				{3: 'What she sees instead is the opposite: a cold corner hidden from a bustling street—bleak, shadowed, forgotten.'}
+429	429		301							"{3: ""She's been there before. Felt it. If no one remembers you, maybe the fire in your chest will finally burn out.""}"
+430	430		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+431	431		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory635.jpg'}
+432	432		101							{4: '4', 5: '1'}
+433	433		401							{1: '2', 2: '5382'}
+434	434		401							{1: '2', 2: '908'}
+435	435		301			RImgBg1Shake				{3: 'The clash of gears and chains, the roar of motors—it all explodes at once. The blast of sound forces the girl to raise her voice.'}
+436	436		402							{1: '908'}
+437	437		201							{1: '1', 2: '501120', 3: '4'}
+438	438		301							{1: '1', 2: 'Eleanor', 3: 'Jump from here.', 4: '1'}
+439	439		204							{1: '1'}
+440	440		301							"{2: 'Eleanor', 3: ""That's an order."", 4: '1'}"
+441	441		202							{1: '1'}
+442	442		301							"{3: ""Her last thread of hope snaps. So even Eleanor can't conjure a magic that shields them from reality.""}"
+443	443		301							{3: 'Why is the world like this? Is there no hope at all?'}
+444	444		401							{1: '2', 2: '5283'}
+445	445		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.5'}
+446	446		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '0'}
+447	447		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+448	448		201							{1: '1', 2: '501137'}
+449	449		301				DialogDisable			"{1: '1', 3: ""Discord wants to close her eyes but isn't allowed to. Her hand grips the chain at her neck, and she stops asking questions.""}"
+450	450		109						500.0	{1: '31', 2: '<size=50>JUMP, JUMP, JUMP!</size>', 3: '30', 4: '50', 9: '3', 11: '1'}
+451	451		301							{3: 'JUMP, JUMP, JUMP!'}
+452	452		109						500.0	{1: '31', 2: '<size=60>JUMP!</size>', 3: '30', 4: '50', 9: '3', 11: '1'}
+453	453		301							{3: 'JUMP!'}
+454	454		110						200.0	
+455	455		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+456	456		401							{1: '2', 2: '2604'}
+457	457		109						500.0	{1: '1', 2: '<size=30>Jump</size>', 3: '30', 4: '50', 11: '1'}
+458	458		401							{1: '2', 2: '2604'}
+459	459		109						500.0	{1: '2', 2: '<size=30>Jump</size>', 3: '300', 4: '200', 11: '1'}
+460	460		401							{1: '2', 2: '2604'}
+461	461		109						500.0	{1: '3', 2: '<size=40>Jump</size>', 3: '-300', 4: '-480', 11: '1'}
+462	462		401							{1: '2', 2: '2604'}
+463	463		109						500.0	{1: '4', 2: '<size=60>Jump</size>', 3: '500', 4: '100', 11: '1'}
+464	464		401							{1: '2', 2: '2604'}
+465	465		109						400.0	{1: '5', 2: '<size=70>Jump</size>', 3: '-800', 4: '-80', 11: '1'}
+466	466		401							{1: '2', 2: '2604'}
+467	467		109						400.0	{1: '6', 2: '<size=75>Jump</size>', 3: '200', 4: '-200', 11: '1'}
+468	468		401							{1: '2', 2: '2604'}
+469	469		109						400.0	{1: '7', 2: '<size=30>Jump</size>', 3: '600', 11: '1'}
+470	470		401							{1: '2', 2: '2604'}
+471	471		109						300.0	{1: '8', 2: '<size=50>Jump</size>', 3: '70', 4: '90', 11: '1'}
+472	472		401							{1: '2', 2: '2604'}
+473	473		109						300.0	{1: '9', 2: '<size=30>Jump</size>', 3: '90', 11: '1'}
+474	474		401							{1: '2', 2: '2604'}
+475	475		109						300.0	{1: '10', 2: 'Jump <size=70>Jump</size>', 3: '300', 4: '20', 11: '1'}
+476	476		401							{1: '2', 2: '2604'}
+477	477		109						200.0	{1: '11', 2: 'Jump <size=80>Jump</size>', 3: '-50', 4: '-60', 11: '1'}
+478	478		401							{1: '2', 2: '2604'}
+479	479		109						200.0	{1: '12', 2: '<size=90>Jump</size>', 3: '-300', 4: '-70', 11: '1'}
+480	480		401							{1: '2', 2: '2604'}
+481	481		109						200.0	{1: '13', 2: 'Jump <size=100>Jump</size>', 3: '-400', 4: '80', 11: '1'}
+482	482		401							{1: '2', 2: '2604'}
+483	483		109						200.0	{1: '14', 2: '<size=110>Jump</size>', 3: '200', 4: '-200', 11: '1'}
+484	484		401							{1: '2', 2: '2604'}
+485	485		109						200.0	{1: '15', 2: 'Jump <size=120>Jump</size>', 3: '-150', 4: '180', 11: '1'}
+486	486		401							{1: '2', 2: '2604'}
+487	487		109						100.0	{1: '16', 2: '<size=130>Jump</size>', 3: '450', 4: '-230', 11: '1'}
+488	488		401							{1: '2', 2: '2604'}
+489	489		109						100.0	{1: '17', 2: '<size=140>Jump</size>', 3: '-450', 4: '-230', 11: '1'}
+490	490		401							{1: '2', 2: '2604'}
+491	491		109						100.0	{1: '18', 2: '<size=150>Jump</size>', 3: '-400', 4: '230', 11: '1'}
+492	492		401							{1: '2', 2: '2604'}
+493	493		109						100.0	{1: '19', 2: '<size=160>Jump</size>', 3: '600', 4: '-400', 11: '1'}
+494	494		401							{1: '2', 2: '2604'}
+495	495		109						100.0	{1: '20', 2: '<size=170>Jump</size>', 3: '-550', 4: '450', 11: '1'}
+496	496		401							{1: '2', 2: '2604'}
+497	497		109						100.0	{1: '21', 2: '<size=60>Jump</size>', 4: '-400', 11: '1'}
+498	498		401							{1: '2', 2: '2604'}
+499	499		109						100.0	{1: '22', 2: '<size=190>Jump</size>', 3: '800', 4: '230', 11: '1'}
+500	500		401							{1: '2', 2: '2604'}
+501	501		109						100.0	{1: '23', 2: 'Jump <size=200>Jump</size>', 3: '-350', 4: '-350', 11: '1'}
+502	502		401							{1: '2', 2: '2604'}
+503	503		109						100.0	{1: '24', 2: '<size=210>Jump</size>', 3: '400', 11: '1'}
+504	504		401							{1: '2', 2: '2604'}
+505	505		109						100.0	{1: '25', 2: '<size=60>Jump</size>', 3: '-50', 4: '490', 11: '1'}
+506	506		401							{1: '2', 2: '2604'}
+507	507		109						100.0	{1: '27', 2: '<size=70>Jump</size>', 3: '70', 4: '-100', 11: '1'}
+508	508		401							{1: '2', 2: '2604'}
+509	509		109						100.0	{1: '28', 2: '<size=90>Jump</size>', 3: '-500', 4: '-300', 11: '1'}
+510	510		401							{1: '2', 2: '2604'}
+511	511		109						500.0	{1: '29', 2: 'Jump <size=220>Jump</size>', 3: '500', 4: '500', 11: '1'}
+512	512		301							{3: 'Jump Jump Jump Jump Jump Jump Jump Jump Jump Jump Jump Jump Jump Jump Jump Jump Jump Jump Jump Jump Jump Jump Jump Jump '}
+513	513		110							
+514	514		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+515	515		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory635.jpg', 3: '0', 4: '1', 5: '0.5'}
+516	516		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory635.jpg', 3: '1', 4: '0', 5: '0'}
+517	517		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory635.jpg'}
+518	518		301			DialogEnable				{3: 'Just... obey the command.'}
+519	519		202							{1: '1', 6: '1'}
+520	520		104						100.0	{1: '0|0|-100', 2: '0.2'}
+521	521		401							{1: '2', 2: '4386'}
+522	522		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.25'}
+523	523		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '0'}
+524	524		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+525	525		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '2'}
+526	526		301							"{3: ""With the countdown to fight blaring from the speakers, she lets the strength leave her body, slides her left foot over the platform's edge, and drops.""}"
+527	527		301							{3: 'The fall should be brief. For a moment, feeling only the pressure of wind, Discord knows nothing. Then the pressure at her neck vanishes—enough to tell her that whatever was on the other end is suddenly gone.'}
+528	528		301							"{3: ""Eleanor, she's passed the test now, hasn't she?""}"
+529	529		301							{3: 'If all she wanted was to give up, she had hundreds of chances already.'}
+530	530		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+531	531		401							{1: '2', 2: '558'}
+532	532		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+533	533		504							{1: '0.7'}
+534	534		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory387.png'}
+535	535		201							{1: '1', 2: '500958', 7: '1'}
+536	536		301			DialogShake				"{1: '1', 2: 'Child C', 3: ""Tag-along! You'll find out soon enough how terrifying it is to be her enemy!"", 4: '1'}"
+537	537		202							{1: '1', 6: '1'}
+538	538		401							{1: '2', 2: '558'}
+539	539		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+540	540		504							{1: '0'}
+541	541		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1159.jpg'}
+542	542		301				DialogDisable			"{3: ""After that day, every sleepless night, she chews on that sentence in the rhythm of the dorm's snoring, imagining all the ways it might come true.""}"
+543	543		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '3'}
+544	544		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+545	545		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.7', 5: '0'}
+546	546		201						1200.0	{1: '1', 2: '501341', 7: '1'}
+547	547		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+548	548		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+549	549		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+550	550		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+551	551		202							{1: '1', 6: '1'}
+552	552		301			DialogEnable				"{3: ""In a blink, a puppy doll seems to appear on her nightstand; in the next, she realizes it's a nightmare.""}"
+553	553		401							{1: '2', 2: '558'}
+554	554		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+555	555		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory806.jpg'}
+556	556		301							{3: 'It feels like an unknown force squeezes her heart, slinging her between light and darkness.'}
+557	557		301							{3: 'A good cry is the only thing that could settle her spirit. But crying is something reality never pities.'}
+558	558		402							{1: '271'}
+559	559		401							{1: '2', 2: '558'}
+560	560		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+561	561		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory939.png'}
+562	562		401							{1: '2', 2: '5861'}
+563	563		301						2000.0	{3: 'At last, she stretches the fingers that the restraints still allow, lips moving soundlessly, tapping a melody from memory into the moonlit air.'}
+564	564		301						2000.0	{3: 'Tap, tap, tap-tap.'}
+565	565		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+566	566		504							{1: '0'}
+567	567		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+568	568		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '2'}
+569	569		201							{1: '1', 2: '501136', 3: '14'}
+570	570		301							"{1: '1', 2: 'Discord', 3: ""I absolutely... don't want to be Eleanor's enemy."", 4: '1'}"
+571	571		301							{2: 'Discord', 3: 'But I also...', 4: '1'}
+572	572		204							{1: '1'}
+573	573		401							{1: '2', 2: '889'}
+574	574		402							{1: '5861'}
+575	575		301			DialogShake				"{2: 'Discord', 3: ""Don't want to die!"", 4: '1'}"
+576	576		202							{1: '1'}
+577	577		401							{1: '1', 2: '296'}
+578	578		401							{1: '2', 2: '4895'}
+579	579		301							{3: 'Survival instinct drives her to twist her body midair in a burst of desperate adjustment, and her razor-sharp vision lets her see the ground below—packed with hounds waiting for their meal.'}
+580	580		301							{3: 'For some reason, her downward rush seems to slow for a heartbeat—just enough to finish the adjustment.'}
+581	581		301							{3: 'Dagger clenched tight, Discord picks her landing spot.'}
+582	582		201							{1: '18', 2: '500421', 4: '-500', 5: '-360', 6: '500'}
+583	583		301			DialogShake				{1: '1', 2: 'Instructor', 3: 'Did you catch that move?!', 4: '18'}
+584	584		202							{1: '18'}
+585	585		301							{3: 'Someone at the monitors cries out.'}
+586	586		401							{2: '4006'}
+587	587		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+588	588		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+589	589		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory643.jpg', 3: '0', 4: '1', 5: '0.25'}
+590	590		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory643.jpg', 3: '1', 4: '0', 5: '0'}
+591	591		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory643.jpg'}
+592	592		301			DialogShake				{3: 'Discord crashes onto the backs of two hounds, curling up to execute a side roll as her arm grazes their terrifying fangs. Though she manages to break her fall, the impact still forces a muffled grunt from her lips.'}
+593	593		306							{1: '1'}
+594	594		401							{2: '5321'}
+595	595		104							{1: '0|50|-80', 2: '0.25'}
+596	596		301							"{3: ""No time to register the pain. She rides the momentum into a low crouch, twists halfway around, and drives her knife hard up into the snarling hound's soft underjaw.""}"
+597	597		401							{2: '2593'}
+598	598		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryJianXue.prefab', 2: '2'}
+599	599		301							"{3: ""Dark blood sprays in twisting ribbons, crawling along the dagger's edge like living worms.""}"
+600	600		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryJianXue.prefab'}
+601	601		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+602	602		401							{1: '2', 2: '5832'}
+603	603		401							{1: '2', 2: '9342045'}
+604	604		301			RImgBg1Shake				{3: 'Another hound, closer this time, lunges with a low, guttural snarl.'}
+605	605		104							{1: '0|0|-100', 2: '0.25'}
+606	606		401						100.0	{1: '2', 2: '844'}
+607	607		401							{1: '2', 2: '4306'}
+608	608		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+609	609		301			RImgBg1Shake				{3: 'Discord reacts faster than thought. She boots away the one whose jaws no longer work, winds the too-long chain between both hands, reads the incoming leap, loops the nearest throat, and slams the beast into the ground with brutal force.'}
+610	610		401							{1: '2', 2: '5834'}
+611	611		401							{1: '2', 2: '2690'}
+612	612		301							{3: 'She twists her wrists hard. The metal noose bites deep, tightening until foam flecks its muzzle and its legs go slack.'}
+613	613		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+614	614		306							
+615	615		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory41.jpg'}
+616	616		201							{1: '1', 2: '500421', 4: '-400'}
+617	617		201							{1: '2', 2: '501125', 3: '7', 4: '400'}
+618	618		301							{1: '1', 2: 'Instructor', 3: 'When did she hide a whip in her sleeve?', 4: '1'}
+619	619		301							{2: 'Rosewater', 3: 'She slips through the weapon racks, circles again and again, and uses metal fatigue to saw through the chain on her neck.', 4: '2'}
+620	620		301			DialogShake				"{2: 'Instructor', 3: ""Hey, hey! She's throwing every gun off the rack! Wait, she jumped down herself!"", 4: '1'}"
+621	621		301			DialogShake				{2: 'Instructor', 3: 'What is she really trying to do?!', 4: '1'}
+622	622		301							{2: 'Rosewater', 3: 'Why are there no cameras underneath? Where are the drones?', 4: '2'}
+623	623		202							{1: '1', 2: '2'}
+624	624		301							{3: 'Panic erupts in the monitoring room. They suddenly remember the passage beneath the platform—a route to the outside, to freedom.'}
+625	625		306							{1: '1'}
+626	626		301							"{3: ""Someone's getting nervous. Who'd have thought anyone could escape from Polard?""}"
+627	627		301				AniZhuanchangBegin			"{3: ""It isn't just that their abilities have surpassed every adult's expectations. Worse than that, what has been done to these children is something even heaven would refuse to forgive. Their will burns longer than the sum of every will set against them.""}"
+628	628		306							
+629	629		401						2000.0	{1: '1', 2: '36'}
+630	630		401							{1: '1', 2: '6230'}
+631	631		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory643.jpg'}
+632	632		201							{1: '1', 2: '501136'}
+633	633		301			AniZhuanchangEnd				{1: '1', 2: 'Discord', 3: 'How many... is that now?', 4: '1'}
+634	634		202							{1: '1'}
+635	635		301							"{3: ""The deafening wall of barking fades until she realizes there isn't a single bark left.""}"
+636	636		301							{3: 'She wipes the blood and sweat running from her nose and finally steals a breath.'}
+637	637		201							{1: '1', 2: '501120', 3: '2'}
+638	638		301							{1: '1', 2: 'Eleanor', 3: 'Good. I like dogs that bite.', 4: '1'}
+639	639		202							{1: '1'}
+640	640		301							{3: 'Discord looks up, delighted to see the girl walking toward her, still keeping her weight pressed on one gasping hound. Its last whimper disappears into a heavy silence.'}
+641	641		201							{1: '1', 2: '501136'}
+642	642		301							{1: '1', 2: 'Discord', 3: 'Eleanor...!', 4: '1'}
+643	643		202							{1: '1'}
+644	644		301							{3: 'She runs over, then freezes when she sees the girl no longer spotless.'}
+645	645		201							{1: '1', 2: '501120', 3: '2'}
+646	646		301							"{1: '1', 2: 'Eleanor', 3: ""Looks like you're enjoying the game too!"", 4: '1'}"
+647	647		401							{1: '2', 2: '561'}
+648	648		204							{1: '1', 2: '4'}
+649	649		301							{3: 'She tosses aside a blood-smeared power saw, frowning at her sleeve where flecks of flesh, bone, and blood have marred the fabric.'}
+650	650		301							{2: 'Eleanor', 3: 'Not elegant enough.', 4: '1'}
+651	651		301							"{2: 'Eleanor', 3: ""If only there were a weapon that didn't make me get so close and kept the mess off me."", 4: '1'}"
+652	652		401							{1: '1', 2: '5705'}
+653	653		204							{1: '1'}
+654	654		301							"{3: 'She selects again—this time a modified double-barrel shotgun—lifts it, and softly mouths a ""bang"" as she takes aim.'}"
+655	655		202							{1: '1', 6: '1'}
+656	656		401							{1: '2', 2: '5669'}
+657	657		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+658	658		301			RImgBg1Shake				"{3: ""A hound's head bursts; its body stumbles forward a few more steps before dropping, confusion still etched in its movements.""}"
+659	659		201							{1: '1', 2: '501120', 3: '2'}
+660	660		301							{1: '1', 2: 'Eleanor', 3: 'One point for Eleanor.', 4: '1'}
+661	661		204							{1: '1'}
+662	662		301							{2: 'Eleanor', 3: 'Ugh, the noise is overdone. Not my taste.', 4: '1'}
+663	663		204							{1: '1', 2: '4'}
+664	664		301							{2: 'Eleanor', 3: 'Whoever controls us must be dealt with for good.', 4: '1'}
+665	665		202							{1: '1', 6: '1'}
+666	666		401							{1: '2', 2: '5834'}
+667	667		401							{1: '2', 2: '844'}
+668	668		401							{1: '2', 2: '2593'}
+669	669		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+670	670		301			RImgBg1Shake				"{3: ""Discord flicks the chain into the jaws of the last hound charging toward Eleanor's back. She drives her knife into its heart. The shriek stops.""}"
+671	671		201							{1: '1', 2: '501120', 3: '7'}
+672	672		301							{1: '1', 2: 'Eleanor', 3: 'Looks like the game is over?', 4: '1'}
+673	673		204							{1: '1'}
+674	674		301							{2: 'Eleanor', 3: 'Shame. I forgot to keep score.', 4: '1'}
+675	675		204							{1: '1', 2: '2'}
+676	676		301			DialogShake				{2: 'Eleanor', 3: 'Haha. Hahaha. Hahahaha!', 4: '1'}
+677	677		202							{1: '1'}
+678	678		401							{1: '1', 2: '36'}
+679	679		401							{1: '2', 2: '10113408'}
+680	680		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+681	681		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+682	682		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5801_02.jpg'}
+683	683		401							{1: '1', 2: '6179'}
+684	684		301							{3: 'She reaches out her cool hand. When their palms meet, Discord feels herself pulled forward.'}
+685	685		301							{3: 'The warmth brings Discord a profound sense of comfort.'}
+686	686		401							{1: '2', 2: '4331'}
+687	687		401							{1: '2', 2: '13081710'}
+688	688		301							{3: 'She lets herself be led by that laughing figure. There are no more enemies to guard against.'}
+689	689		401							{1: '2', 2: '4302'}
+690	690		301							{3: 'The bloody arena fades into a phantom ballroom. Hand in hand, they walk across carpets cooling into dark red. They drift through the grand halls.'}
+691	691		401							{1: '2', 2: '4895'}
+692	692		301							"{3: ""Their skirts flutter. Their steps are light and free. It is Discord's first ball.""}"
+693	693		301							{3: 'She is a flicker of the dark moon, the bloom of a flower, the sweep of purple waves. Calm on the surface, burning inside.'}
+694	694		301							{3: 'Discord stares at the girl leading her.'}
+695	695		301							{2: 'Discord', 3: 'Would I one day be like those hounds standing in your way, blindly following commands?', 4: '2'}
+696	696		301							"{2: 'Eleanor', 3: ""It's not the same. You take orders from me. I'm not a slaughter maniac. Those dogs died, but their deaths had value."", 4: '1'}"
+697	697		301							{2: 'Discord', 3: '...', 4: '2'}
+698	698		301				AniZhuanchangBegin			{3: 'The girl stays quiet, so Eleanor turns back and searches her eyes.'}
+699	699		401							{1: '1', 2: '36'}
+700	700		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory643.jpg'}
+701	701		401							{1: '1', 2: '6186'}
+702	702		201							{1: '1', 2: '501120', 3: '4', 4: '-400', 7: '1'}
+703	703		201							{1: '2', 2: '501136', 4: '400', 7: '1'}
+704	704		301			AniZhuanchangEnd				"{1: '1', 2: 'Eleanor', 3: ""You don't like it here anymore, do you?"", 4: '1'}"
+705	705		301							"{2: 'Eleanor', 3: ""It's because they made us kill our own. It's too much."", 4: '1'}"
+706	706		301							{2: 'Discord', 3: '...', 4: '2'}
+707	707		204							{1: '1'}
+708	708		301							"{2: 'Eleanor', 3: ""Then we'll be leaving here soon."", 4: '1'}"
+709	709		202							{1: '1', 2: '2'}
+710	710		301				DialogDisable			{3: 'Coming from her, it sounds like a joke. But deep down, Discord firmly believes it.'}
+711	711		205						850.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.8'}
+712	712		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '0'}
+713	713		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+714	714		301			DialogEnable	AniZhuanchangBegin			"{3: ""After that, everything's a blur. She barely remembers the adults wading through the gore to pull them out, then splitting them apart. Maybe someone even asked why she hadn't opened the door.""}"
+715	715		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+716	716		201							{1: '18', 2: '501120', 3: '4', 4: '-155', 5: '-120', 6: '100', 7: '1'}
+717	717		301			AniZhuanchangEnd				"{1: '1', 2: 'Eleanor', 3: ""That's not necessary."", 4: '18'}"
+718	718		202							{1: '18'}
+719	719		301							"{3: ""Eleanor's voice drifts from the next room as Discord sinks into sleep under a net of sensors.""}"
+720	720		201							{1: '18', 2: '501120', 4: '-155', 5: '-120', 6: '100'}
+721	721		301							"{1: '1', 2: 'Eleanor', 3: ""It's all for our own good. For our betterment."", 4: '18'}"
+722	722		202							{1: '18'}
+723	723		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+724	724		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1159.jpg'}
+725	725		301							{3: 'When she wakes, only bare walls remain, echoing in the emptiness.'}
+726	726		301				AniZhuanchangBegin			{3: 'Metal bunks stand in neat rows. Thin mattresses are stacked flat. No one sleeps here anymore. Every child is gone.'}
+727	727		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1158.jpg'}
+728	728		201							{1: '1', 2: '501136', 4: '-400'}
+729	729		201							{1: '2', 2: '501125', 4: '400'}
+730	730		301			AniZhuanchangEnd				"{1: '1', 2: 'Rosewater', 3: ""Eleanor's got a new home. Isn't that great?"", 4: '2'}"
+731	731		301							{2: 'Rosewater', 3: 'Relax. Your new life starts soon.', 4: '2'}
+732	732		301							{2: 'Discord', 3: '...', 4: '1'}
+733	733		301							"{2: 'Discord', 3: ""She wasn't wrong."", 4: '1'}"
+734	734		202							{1: '1', 2: '2'}
+735	735		301		1		AniZhuanchangBegin			"{3: ""In a cozy bedroom above the Las Prados tailor shop, Discord runs her fingers over the skin where her neck and wrists were once bound. She lets out a sigh that's far too heavy for a child.""}"

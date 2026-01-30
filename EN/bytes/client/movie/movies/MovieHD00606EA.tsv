@@ -1,0 +1,184 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory305.png'}
+2	2		401							{1: '1', 2: '209'}
+3	3		201							{1: '1', 2: '500275'}
+4	4		301			DialogEnable				{1: '1', 2: '???', 3: 'What. Are. You. You. You. Doing?!', 4: '1'}
+5	5		302							{2: 'You can... speak?', 3: '6'}
+6	6		301							{2: '???', 3: 'S-speak?', 4: '1'}
+7	7		201							{1: '1', 2: '500029'}
+8	8		201							{1: '2', 2: '1011001', 4: '600'}
+9	9		201							{1: '3', 2: '1031001', 4: '-600'}
+10	10		301							{1: '1', 2: 'Liv', 3: 'Looks like you can understand us.', 4: '3'}
+11	11		301							"{2: 'Lucia', 3: ""We've run into mechanoids that weren't labeled red or blue, but they couldn't understand us."", 4: '1'}"
+12	12		301				DialogDisable			{2: 'Lee', 3: 'This is an interesting turn of events. Maybe they can tell us a thing or two.', 4: '2'}
+13	13		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+14	14		302							{2: 'Who are you?', 3: '15', 4: 'Why can you talk?', 5: '29'}
+15	15		201							{1: '1', 2: '500275'}
+16	16		301			DialogEnable				{1: '1', 2: '???', 3: 'Who? What?', 4: '1'}
+17	17		201							{1: '1', 2: '1011001'}
+18	18		301							"{1: '1', 2: 'Lee', 3: ""What's your name? Did you or someone give you a name?"", 4: '1'}"
+19	19		201							{1: '1', 2: '500275'}
+20	20		301							{1: '1', 2: '???', 3: '...A-Askr.', 4: '1'}
+21	21		201							{1: '1', 2: '500029', 4: '-400'}
+22	22		201							{1: '2', 2: '1011001', 4: '400'}
+23	23		301							"{1: '1', 2: 'Lucia', 3: ""Askr? Isn't that..."", 4: '1'}"
+24	24		302							{2: 'Do you know something, Lucia?', 3: '25'}
+25	25		301							{2: 'Lucia', 3: 'I think I ran across this name while reading a document in Babylonia.', 4: '1'}
+26	26		301							"{2: 'Lee', 3: ""I think I've heard of this myth as well... Isn't it the brother of two siblings carved out of wood by the gods?"", 4: '2'}"
+27	27		301							{2: 'Lucia', 3: '...I think so.', 4: '1'}
+28	28	60	301							"{2: 'Lee', 3: ""If I remember correctly... the girl's name is Embla?"", 4: '2'}"
+29	29		201							{1: '1', 2: '500275'}
+30	30		301			DialogEnable				{1: '1', 2: '???', 3: 'I. Just. Can.', 4: '1'}
+31	31		201							{1: '1', 2: '1011001'}
+32	32		301							"{1: '1', 2: 'Lee', 3: 'Just like the ""defect"" we saw. Seems like they have at least some degree of cognition.', 4: '1'}"
+33	33		201							{1: '1', 2: '500275'}
+34	34		301							"{1: '1', 2: '???', 3: ""C-cognition? What's. That?"", 4: '1'}"
+35	35		301							"{2: '???', 3: ""You. Won't. Kill us?"", 4: '1'}"
+36	36		201							{1: '1', 2: '1031001'}
+37	37		301							"{1: '1', 2: 'Liv', 3: 'Are you referring to those ""red"" and ""blue"" mechanoids?', 4: '1'}"
+38	38		301							"{2: 'Liv', 3: ""Relax. We aren't like them."", 4: '1'}"
+39	39		201							{1: '1', 2: '500275'}
+40	40		301							"{1: '1', 2: '???', 3: '""Red"". ""Blue"". On you. Too!', 4: '1'}"
+41	41		202							{1: '1', 6: '1'}
+42	42		301							{3: 'The mechanoid raises its hand and points at Lee and Lucia, bringing a previously relaxed situation back into confrontation.'}
+43	43		301							{3: 'Lucia gestures to the mechanoid to calm down.'}
+44	44		201							{1: '1', 2: '500029'}
+45	45		301							"{1: '1', 2: 'Lucia', 3: ""That may be true, but we're not hostile like those mechanoids."", 4: '1'}"
+46	46		301							"{2: 'Lucia', 3: 'The people in blue and pink and the person behind me are my ""comrades.""', 4: '1'}"
+47	47		201							{1: '1', 2: '500275'}
+48	48		301							"{1: '1', 2: '???', 3: '...""Comrades""?', 4: '1'}"
+49	49		201							{1: '1', 2: '1011001', 4: '400'}
+50	50		201							{1: '2', 2: '1031001', 4: '-400'}
+51	51		301							"{1: '1', 2: 'Liv', 3: 'Yes, ""comrades.""', 4: '2'}"
+52	52		301							{2: 'Lee', 3: 'Correct.', 4: '1'}
+53	53		302							"{2: ""It's true."", 3: '54'}"
+54	54		202							{1: '1', 2: '2', 6: '1'}
+55	55		201							{1: '1', 2: '500275'}
+56	56		301							"{1: '1', 2: '???', 3: '""Comrade."" I. Have too.', 4: '1'}"
+57	57		301							{3: 'The mechanoid steps forward while still shielding the figure behind it.'}
+58	58		201							{1: '1', 2: '1011001'}
+59	59		301							"{1: '1', 2: 'Lee', 3: 'Don\'t worry. We won\'t harm you or your ""comrade.""', 4: '1'}"
+60	60		202							{1: '1', 2: '2', 6: '1'}
+61	61		301							{3: 'Lee looks toward the small figure hiding behind the larger mechanoid.'}
+62	62		201							{1: '1', 2: '500276'}
+63	63		301							{1: '1', 2: '???', 3: 'A-Askr...', 4: '1'}
+64	64		203							{1: '1', 2: '0.25', 3: '-500'}
+65	65		201							{1: '2', 2: '500275', 4: '500'}
+66	66		301							"{1: '1', 2: 'Askr', 3: ""No. Embla. Don't. Come out."", 4: '2'}"
+67	67		301							"{2: 'Embla', 3: 'They. Not like. Robots. Want ""war.""', 4: '1'}"
+68	68		302							"{2: 'You know about the ""war""?', 3: '75', 4: 'Embla?', 5: 'Normal Dialog'}"
+69	69		301							"{2: 'Askr', 3: 'Embla. My comrade. Father\'s book. Says ""sister.""', 4: '2'}"
+70	70		301							{2: 'Askr', 3: 'Askr. Protects. Embla.', 4: '2'}
+71	71		302							"{2: 'She\'s your ""sister""? And... you\'re her ""brother""?', 3: '72'}"
+72	72		301							"{2: 'Askr', 3: 'Askr. Protects. Embla. We survived. Last ""war.""', 4: '2'}"
+73	73		302							{2: 'Last war?', 3: '74'}
+74	74	77	301							"{2: 'Askr', 3: '""War."" Many times. Many remains. Different remains. Askr and Embla. Hide here. And live.', 4: '2'}"
+75	75		301							{2: 'Askr', 3: 'We. They. All know.', 4: '2'}
+76	76		301							{2: 'Askr', 3: 'Red. Blue. No color. We live. Like this.', 4: '2'}
+77	77		202							{1: '1', 2: '2', 6: '1'}
+78	78		201							{1: '1', 2: '1011001'}
+79	79		301							"{1: '1', 2: 'Lee', 3: ""...What's going on?"", 4: '1'}"
+80	80		201							{1: '1', 2: '500276', 4: '-500'}
+81	81		201							{1: '2', 2: '500275', 4: '500'}
+82	82		301							"{1: '1', 2: 'Askr', 3: '...You aren\'t. Mechanoids. Made by. ""War System""?', 4: '2'}"
+83	83		302							{2: '...Questions are leading to more questions.', 3: '84'}
+84	84		301							{2: 'Embla', 3: 'Are you... Outside. Beings?', 4: '1'}
+85	85		202							{1: '1', 2: '2', 6: '1'}
+86	86		301							{3: 'Lucia and Lee look at you as if debating whether to tell the mechanoid where you are from.'}
+87	87		302							{2: '(Nod)', 3: '88', 4: '(Shake head)', 5: '96', 6: '...', 7: '96'}
+88	88		201							{1: '1', 2: '500029'}
+89	89		301							"{1: '1', 2: 'Lucia', 3: 'Yes, we... we are from the ""outside world.""', 4: '1'}"
+90	90		201							{1: '1', 2: '500275'}
+91	91		301							"{1: '1', 2: 'Askr', 3: 'But. My ""knowledge."" Says no. Outside beings.', 4: '1'}"
+92	92		301							{2: 'Askr', 3: 'Beings. Only in. Naraka.', 4: '1'}
+93	93		302							{2: 'Beings?', 3: '94', 4: 'Naraka?', 5: '95'}
+94	94	101	301							"{2: 'Askr', 3: 'You. Me. Are ""beings""', 4: '1'}"
+95	95	101	301							{2: 'Askr', 3: 'Here. There. All is. Naraka.', 4: '1'}
+96	96		201							{1: '1', 2: '1011001'}
+97	97		301							{1: '1', 2: 'Lee', 3: '...', 4: '1'}
+98	98		201							{1: '1', 2: '500275'}
+99	99		301							"{1: '1', 2: 'Askr', 3: ""You. Don't speak."", 4: '1'}"
+100	100		301							"{2: 'Askr', 3: 'Unlike. Beings. In ""Naraka"".', 4: '1'}"
+101	101		201							{1: '1', 2: '500276'}
+102	102		301							{1: '1', 2: 'Embla', 3: 'If you. Are. Outside beings. Then...', 4: '1'}
+103	103		201							{1: '1', 2: '500275'}
+104	104		301							"{1: '1', 2: 'Askr', 3: '""Knowledge."" Is. A lie.', 4: '1'}"
+105	105		302							"{2: 'This ""knowledge"" you speak of...', 3: '106'}"
+106	106		302							{2: 'What is it?', 3: '107'}
+107	107		301							"{2: 'Askr', 3: '""Knowledge"" is. Naraka. Beings. Must know. Do know.', 4: '1'}"
+108	108		301							"{2: 'Askr', 3: '""No outside beings."" ""Only \'war\' prolongs \'beings.\'"" ""Only \'war\' awakens \'Father.\'""', 4: '1'}"
+109	109		302							{2: 'Father?', 3: '110'}
+110	110		301							"{2: 'Askr', 3: 'When. ""Father"" is awoken. All will. End.', 4: '1'}"
+111	111		201							{1: '1', 2: '1011001'}
+112	112		301							"{1: '1', 2: 'Lee', 3: ""We aren't getting too many explanations, just more and more questions waiting to be answered."", 4: '1'}"
+113	113		301							"{2: 'Lee', 3: 'When ""Father"" wakes up, everything will end...?', 4: '1'}"
+114	114		201							{1: '1', 2: '500275'}
+115	115		301							{1: '1', 2: 'Askr', 3: 'This is. What. I must do.', 4: '1'}
+116	116		302							{2: '?', 3: '117'}
+117	117		301							"{2: 'Askr', 3: 'Me. Embla. Hesitate. Weak. Cannot ""war.""', 4: '1'}"
+118	118		301							"{2: 'Askr', 3: 'Only way. Is. Push everything. Past breaking point. I can. Wake ""Father"".', 4: '1'}"
+119	119		301							{2: 'Askr', 3: 'Naraka. Cannot. Be this.', 4: '1'}
+120	120		201							{1: '1', 2: '500029'}
+121	121		301							"{1: '1', 2: 'Lucia', 3: '...You want to wake up ""Father""?', 4: '1'}"
+122	122		201							{1: '1', 2: '500275'}
+123	123		301							"{1: '1', 2: 'Askr', 3: 'Wake ""Father"". Make Father. See everything.', 4: '1'}"
+124	124		301							{2: 'Askr', 3: 'Our. Pain. Our. Suffering. Make Father. See.', 4: '1'}
+125	125		201							{1: '1', 2: '1011001', 4: '400'}
+126	126		201							{1: '2', 2: '1031001', 4: '-400'}
+127	127		301							{1: '1', 2: 'Lee', 3: 'The other mechanoids also said...', 4: '1'}
+128	128		301							"{2: 'Lee', 3: '""Supreme Father won\'t sit idly by.""', 4: '1'}"
+129	129		301							"{2: 'Liv', 3: 'The mechanoids think... this ""Father"" won\'t ignore their suffering...?', 4: '2'}"
+130	130		302							"{2: 'Looks like this ""Father"" plays a key role.', 3: '131'}"
+131	131		202							{1: '1', 2: '2', 6: '1'}
+132	132		201							{1: '1', 2: '500029'}
+133	133		301							"{1: '1', 2: 'Lucia', 3: 'Indeed. If we can find ""Father""...', 4: '1'}"
+134	134		302							{2: 'Perhaps we can uncover the truth behind this facility.', 3: '135'}
+135	135		301							{2: 'Lucia', 3: 'Um, Askr?', 4: '1'}
+136	136		203							{1: '1', 2: '0.25', 3: '-400'}
+137	137		201							{1: '2', 2: '500275', 4: '500'}
+138	138		301							{1: '1', 2: 'Askr', 3: '...Speak.', 4: '2'}
+139	139		301							"{2: 'Lucia', 3: 'We want to help you awaken the ""Father"" you speak of.', 4: '1'}"
+140	140		301							{2: 'Askr', 3: '...Why?', 4: '2'}
+141	141		302							"{2: 'We have something to ask him.', 3: '142', 4: 'Because we also care about ""Father""...', 5: '145'}"
+142	142		301							"{2: 'Askr', 3: 'You. Want to. Ask ""Father""?', 4: '2'}"
+143	143		301							{2: 'Lucia', 3: 'That is, if he, or she, is willing to answer us.', 4: '1'}
+144	144	157	301							{2: 'Askr', 3: '...Alright.', 4: '2'}
+145	145		301							"{2: 'Askr', 3: 'You. Outside beings. Why care. About ""Father""?', 4: '2'}"
+146	146		202							{1: '1', 2: '2', 6: '1'}
+147	147		201							{1: '1', 2: '1011001'}
+148	148		301							"{1: '1', 2: 'Lee', 3: ""We're just following orders."", 4: '1'}"
+149	149		201							{1: '1', 2: '500275'}
+150	150		301							{1: '1', 2: 'Askr', 3: 'Orders. Come here?', 4: '1'}
+151	151		301							"{2: 'Askr', 3: 'Understood. You. Also share. Our. ""Knowledge.""', 4: '1'}"
+152	152		201							{1: '1', 2: '500029'}
+153	153		301							{1: '1', 2: 'Lucia', 3: '?', 4: '1'}
+154	154		302							{2: '(Motion to Lucia to be quiet)', 3: '155'}
+155	155		301							"{2: 'Lucia', 3: ""...That's right."", 4: '1'}"
+156	156		201							{1: '1', 2: '500275'}
+157	157		301							{1: '1', 2: 'Askr', 3: 'Then. Please. Help...', 4: '1'}
+158	158		302							{2: '?', 3: '159'}
+159	159		301							{3: 'Askr points to a nearly indiscernible wound on Embla.'}
+160	160		301							{3: '—You notice an indentation. The outer metal layer was cracked with black lubricant seeping out of it.'}
+161	161		301							{2: 'Askr', 3: 'Damaged. Movement. Slow.', 4: '1'}
+162	162		301							{2: 'Askr', 3: 'But. With. Parts...', 4: '1'}
+163	163		201							{1: '1', 2: '500029'}
+164	164		301							{1: '1', 2: 'Lucia', 3: 'Understood. You want us to help you find parts so you can repair it?', 4: '1'}
+165	165		202							{1: '1', 6: '1'}
+166	166		301							{3: 'Askr remains quiet as if his language module cannot find an appropriate response.'}
+167	167		301							{3: 'But after a period of silence, he nods with his spherical head and upper body slightly.'}
+168	168		302							{2: 'Understood.', 3: '169'}
+169	169		302							{2: 'Is that okay, everyone?', 3: '170'}
+170	170		201							{1: '1', 2: '500029'}
+171	171		201							{1: '2', 2: '1011001', 4: '600'}
+172	172		201							{1: '3', 2: '1031001', 4: '-600'}
+173	173		301							{1: '1', 2: 'Lucia', 3: 'No problem. We came here on a mission, but our duty as soldiers is to help those in need.', 4: '1'}
+174	174		301							{2: 'Lee', 3: 'Agreed.', 4: '2'}
+175	175		301							"{2: 'Liv', 3: ""I'd be... more than happy to help others..."", 4: '3'}"
+176	176		302							{2: 'I see.', 3: '177'}
+177	177		302							"{2: ""Then let's do this, Askr."", 3: '178'}"
+178	178		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+179	179		201							{1: '1', 2: '500275'}
+180	180		301							"{1: '1', 2: 'Askr', 3: '""Let\'s do this""... Do not. Compute.', 4: '1'}"
+181	181		302							"{2: ""It's a human phrase of acknowledgment."", 3: '182'}"
+182	182		301							{2: 'Askr', 3: '...', 4: '1'}
+183	183		301		1		AniZhuanchangBegin			"{2: 'Askr', 3: ""...Let's. Do this?"", 4: '1'}"

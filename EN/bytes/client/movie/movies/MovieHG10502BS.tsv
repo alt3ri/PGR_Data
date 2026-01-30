@@ -1,0 +1,38 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '5'}
+3	3		201							{1: '1', 2: '500091', 3: '1', 4: '-400'}
+4	4		201							{1: '2', 2: '500019', 4: '400'}
+5	5		301			DialogEnable				{1: '1', 2: 'Nanami', 3: 'Look! Look! Nanami has a new frame!', 4: '1'}
+6	6		301							{2: 'Construct', 3: 'Ah, yes, very awesome.', 4: '2'}
+7	7		301							{2: 'Construct', 3: 'We still have other Support Force tasks to take care of, bye.', 4: '2'}
+8	8		301							"{2: 'Nanami', 3: ""Hmph, they didn't even take a good look."", 4: '1'}"
+9	9		202							{1: '1', 2: '2', 6: '1'}
+10	10		201							{1: '1', 2: '1011001', 3: '10'}
+11	11		301							{1: '1', 2: 'Lee', 3: 'How long will this go on...', 4: '1'}
+12	12		204							{1: '1'}
+13	13		301							{2: 'Lee', 3: 'By the way, Commandant, did you know that Nanami designed and built that new frame herself?', 4: '1'}
+14	14		302							"{2: 'She made it herself?', 3: '15', 4: ""It's quite useful in battle.""}"
+15	15		301							{2: 'Lee', 3: 'I was there when she built it, even though I thought she was just messing around at first.', 4: '1'}
+16	16		301							{2: 'Lee', 3: 'But why would she decide to make a frame?', 4: '1'}
+17	17		203							{1: '1', 2: '0.25', 3: '-400'}
+18	18		201							{1: '2', 2: '1031001', 3: '14', 4: '400'}
+19	19		301							"{1: '1', 2: 'Liv', 3: ""Maybe it's because she's envious of everyone else's new frames..."", 4: '2'}"
+20	20		204							{1: '2'}
+21	21		301							{2: 'Lee', 3: 'She made one because of envy... I guess I can understand that.', 4: '1'}
+22	22		202							{1: '2', 6: '1'}
+23	23		203							{1: '1', 2: '0.25'}
+24	24		301							"{2: 'Lee', 3: ""Stray Constructs like her don't get new frames supplied by Babylonia."", 4: '1'}"
+25	25		302							"{2: ""She's really not in the system?"", 3: '26', 4: ""But she's still a member of Gray Raven."", 5: '27'}"
+26	26	28	301							{2: 'Lee', 3: 'Nothing. I already did multiple reverse positioning and filtered checks.', 4: '1'}
+27	27		301							"{2: 'Lee', 3: ""That's just what we think. Officially, the team only consists of me, Lucia, and Liv."", 4: '1'}"
+28	28		301							{2: 'Lee', 3: 'But now that you mention it, it really makes one wonder... Even though she decided to stay now.', 4: '1'}
+29	29		204							{1: '1', 2: '10'}
+30	30		301							{2: 'Lee', 3: 'Where in the world did she come from...', 4: '1'}
+31	31		201							{1: '1', 2: '1031001', 3: '6'}
+32	32		301							{1: '1', 2: 'Liv', 3: 'What do you think, Commandant?', 4: '1'}
+33	33		302							"{2: 'I want to know more about Nanami.', 3: '35', 4: ""She's one of us, that's all that matters."", 5: '34'}"
+34	34		301							{2: 'Liv', 3: 'Yes! I agree with Commandant.', 4: '1'}
+35	35		201							{1: '1', 2: '1011001'}
+36	36		301							"{1: '1', 2: 'Lee', 3: ""But she'll change the subject if we ask her directly."", 4: '1'}"
+37	37		301		1		AniZhuanchangBegin			"{2: 'Lee', 3: ""Anyway, keep an eye on Nanami, it'll be too late when something actually happens."", 4: '1'}"

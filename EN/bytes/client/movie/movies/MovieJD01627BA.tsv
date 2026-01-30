@@ -1,0 +1,20 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory285.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '1031001', 4: '-600'}
+4	4		201							{1: '2', 2: '500026', 4: '600'}
+5	5		201							{1: '3', 2: '500166'}
+6	6		301			DialogEnable				{1: '1', 3: 'You arrive at another fork...'}
+7	7		301							"{2: 'Liv', 3: ""It's your call again, Commandant."", 4: '1'}"
+8	8		301							{2: 'Liv', 3: 'Where did the young boy go?', 4: '1'}
+9	9		302							{2: 'Should we just check out both of them?', 3: '10'}
+10	10		301							"{2: 'Lucia', 3: ""I'm afraid we don't have the luxury of time for that."", 4: '3'}"
+11	11		302							"{2: ""Lee, what's your thought?"", 3: '12', 4: ""Lucia, it's up to you!"", 5: '13', 6: 'Liv, any thought?', 7: '14'}"
+12	12	15	301				DialogDisable			"{2: 'Lee', 3: ""I don't have enough clues to say much. They look the same."", 4: '2'}"
+13	13	15	301				DialogDisable			{2: 'Lucia', 3: 'There are a lot of enemies on the right. We might be able to walk away with quite some clues.', 4: '3'}
+14	14		301				DialogDisable			{2: 'Liv', 3: 'I think we should go left. It feels more peaceful.', 4: '1'}
+15	15		305							{1: '16', 2: '19'}
+16	16		301			DialogEnable				{2: 'Liv', 3: 'Seems like the boy and Roland both went left, but...', 4: '1'}
+17	17		302							{2: 'What is it?', 3: '18'}
+18	18		301		1		AniZhuanchangBegin			"{2: 'Liv', 3: ""I see the projection of a female scavenger there, and I don't know why it's bothering me so much..."", 4: '1'}"
+19	19		202		1		AniZhuanchangBegin			{1: '1', 2: '2', 3: '3', 6: '1'}

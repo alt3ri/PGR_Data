@@ -1,0 +1,141 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory7.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: 'Climbing up the long and narrow steps, you come upon a relatively safe area, finally allowing you to unload the heavy mods and empty air cylinder.'}
+4	4		301							{3: 'You search all the accessible floors but find no one. Only the rooms lying in ruins remain unsearched.'}
+5	5		302							{2: 'We need to think of a way in.', 3: '6'}
+6	6		201							{1: '1', 2: '1031001', 4: '-600'}
+7	7		201							{1: '2', 2: '500166'}
+8	8		201							{1: '3', 2: '500026', 4: '600'}
+9	9		301							"{1: '1', 2: 'Liv', 3: ""But there aren't any signs of activities in these rooms."", 4: '1'}"
+10	10		301							{2: 'Lucia', 3: 'No signs of activities?', 4: '2'}
+11	11		301							{2: 'Liv', 3: 'Correct. Maybe the person that cried for help is already...', 4: '1'}
+12	1011		301							"{2: 'Lucia', 3: ""I can't reach Bridget. And we can't get away from the Red Tide..."", 4: '2'}"
+13	12		302							"{2: ""Well, let's still check them out then."", 3: '13'}"
+14	13		301							{3: 'The wreckage in front of you looks like they were once a pile of furniture intentionally placed there to block the entrance, before being blown to pieces.'}
+15	14		301							"{2: 'Lee', 3: ""Let's clean up the debris first."", 4: '3'}"
+16	16		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+17	15		301				AniZhuanchangBegin			{3: 'The four of you use improvised shovels to clear out the debris in the corridor.'}
+18	17		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory83.jpg'}
+19	18		301			AniZhuanchangEnd				{3: 'Opening the doors, you find what appears to be similar storage rooms one after another.'}
+20	1018		301							{3: 'In the last room, old daily necessities are littered throughout, accompanied by stacks of storage boxes. Several work uniforms discarded in the corner have grown moldy over time.'}
+21	19		301							{3: 'An old polymer screen that seems to separate a changing area for the employees stands resolutely in place on the other side of the room.'}
+22	20		301							{3: 'Lee steps over the scattered objects and pulls the screen away.'}
+23	21		201							{1: '1', 2: '500026'}
+24	22		301							{1: '1', 2: 'Lee', 3: '...?!', 4: '1'}
+25	23		302							{2: 'What is it?', 3: '24'}
+26	24		201							{1: '2', 2: '1031001', 4: '-600'}
+27	25		201							{1: '3', 2: '500166', 3: '5', 4: '600'}
+28	26		201							{1: '1', 2: '500026'}
+29	27		301							{1: '1', 3: 'Seeing his odd expression, the rest of you rush over to him.', 5: '2', 6: '3'}
+30	28		301							{3: 'Behind the screen, you see a Construct and a human in commandant uniform.', 5: '2', 6: '3'}
+31	29		204							{1: '2', 2: '7'}
+32	30		301							"{2: 'Liv', 3: ""What's a Construct squad from Babylonia doing here?"", 4: '2'}"
+33	31		302							"{2: ""They weren't the ones calling for help... were they?"", 3: '32'}"
+34	32		204							{1: '2', 2: '14'}
+35	33		301							{2: 'Liv', 3: 'Looks like... the commandant must have been dead for over a week.', 4: '2'}
+36	34		301							{2: 'Lucia', 3: 'I heard from another squad leader that a squad came here on a mission but never returned.', 4: '3'}
+37	35		301							{2: 'Liv', 3: 'Is this them? Do you think there are any others...?', 4: '2'}
+38	36		302							{2: 'Can we recover the virtual projection?', 3: '37'}
+39	37		301							"{2: 'Lee', 3: ""Yes, but we're already out of range from the security terminal. We should set up another one here to boost the signal."", 4: '1'}"
+40	38		302							{2: 'Alright, it should be safe here.', 3: '39'}
+41	39		301							"{2: 'Liv', 3: ""We'll leave it to you, Lee."", 4: '2'}"
+42	40		301							{3: 'Lee nods, then he pulls out a security terminal from his bag.'}
+43	41		302							{2: 'Oh, right. Any response from Asimov?', 3: '43'}
+44	43		301							"{2: 'Liv', 3: ""Not yet. There's a lot of signal fluctuation here. We'll have to wait."", 4: '2'}"
+45	44		301							{3: 'You nod to Liv and quietly watch Lee operate the delicate security terminal.'}
+46	45		301							{2: 'Spear of F.O.S.', 3: 'Security terminal operational. Select an area to retrieve data.'}
+47	46		301							{2: 'Lee', 3: 'Just retrieve data from the last day they were alive.', 4: '1'}
+48	47		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+49	48		301							{2: 'Spear of F.O.S.', 3: 'Acquiring target data [>>>>>>>>] Complete.'}
+50	49		301				DialogDisable			{2: 'Spear of F.O.S.', 3: 'Generating image from data [>>>>>>>>>>>>>>>>>>>] Complete.'}
+51	50		202							{1: '1', 6: '1'}
+52	51		501						1500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+53	52		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+54	53		504							{1: '0.8'}
+55	54		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory83.jpg'}
+56	55		401							{1: '1', 2: '201'}
+57	56		201							{1: '1', 2: '500028', 4: '-400'}
+58	57		201							{1: '2', 2: '500019', 4: '400'}
+59	58		301			DialogEnable				{1: '1', 3: 'Under the influence of the Spear of F.O.S., you see two Constructs and a human commandant appearing in the room.'}
+60	59		301							{3: 'They lean wearily against the wall and place the holo-screens from their terminals in front of them.'}
+61	60		302							{2: 'There were three of them?', 3: '61'}
+62	61		301							"{2: 'Lucia', 3: ""Looks like the other one wasn't here by the end.""}"
+63	62		301							{2: 'The Dead Commandant', 3: 'Relay our coordinates to Coco. Have her meet us here.'}
+64	63		301							"{2: 'Chatty Male Construct', 3: ""She'll be able to find us anyway. Why don't we just let her figure it out?"", 4: '2'}"
+65	64		301							{2: 'Stern Male Construct', 3: 'Quit being stupid.', 4: '1'}
+66	65		504							{1: '0'}
+67	66		201							{1: '1', 2: '1031001', 4: '-400'}
+68	67		201							{1: '2', 2: '500166', 4: '400'}
+69	68		301							{1: '1', 2: 'Liv', 3: 'His voice sounds familiar.', 4: '1'}
+70	69		301							{2: 'Lucia', 3: 'Where have I heard it before?', 4: '2'}
+71	70		202							{1: '1', 2: '2', 6: '1'}
+72	71		301							{3: 'The commandant ignores their bickering and continues organizing the data, seemingly long familiar with their squabble.'}
+73	72		301							"{2: 'The Dead Commandant', 3: ""Let's organize the data we've collected. We'll prepare to head out once Coco returns.""}"
+74	73		301							{3: 'The stern male Construct furrows his brows and nods, then begins opening up the mess of data on his holo-screen.'}
+75	74		504							{1: '0.8'}
+76	75		201							{1: '1', 2: '500028'}
+77	76		301							"{1: '1', 2: 'Stern Male Construct', 3: ""The blood-like liquid Rowler and I discovered nearby... It's showing signs of the Punishing Virus evolving biologically."", 4: '1'}"
+78	77		301							"{2: 'Stern Male Construct', 3: ""The last recon team investigating it is still missing. Maybe they've been absorbed into it."", 4: '1'}"
+79	78		202							{1: '1', 6: '1'}
+80	79		504							{1: '0'}
+81	80		201							{1: '1', 2: '1031001', 4: '-400'}
+82	81		301							{1: '1', 2: 'Liv', 3: 'The Punishing Virus... evolving...', 4: '1'}
+83	82		201							{1: '2', 2: '500166', 4: '400'}
+84	83		301							{1: '1', 2: 'Lucia', 3: 'And another squad is missing...', 4: '2'}
+85	84		203							{1: '1', 2: '0.25', 3: '-600'}
+86	85		203							{1: '2', 2: '0.25', 3: '600'}
+87	86		201							{1: '3', 2: '500026'}
+88	87		301							{1: '1', 2: 'Lee', 3: 'Absorbed into it?', 4: '3'}
+89	88		301							{3: 'The information from this one sentence is enough to fill the four of you with the same dismay as the three people in the projection.'}
+90	89		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+91	90		504							{1: '0.8'}
+92	91		201							{1: '1', 2: '500028', 4: '-400'}
+93	92		201							{1: '2', 2: '500019', 4: '400'}
+94	93		301							"{1: '1', 2: 'Stern Male Construct', 3: ""We sampled that liquid just a few days ago, but it's now three times the size. It can cover an entire block now when it gushes out of the ground."", 4: '1'}"
+95	94		301							{2: 'The Dead Commandant', 3: 'Gushes? Does it still recede like the tide?'}
+96	95		301							{2: 'Rowler', 3: 'I think calling it a fountain is a bit more accurate!', 4: '2'}
+97	96		301							"{2: 'Stern Male Construct', 3: ""That may have been true a few days ago, but now it's turning into a tide."", 4: '1'}"
+98	97		301							{2: 'Stern Male Construct', 3: 'It takes longer and causes larger cracks to the surface, but it still recedes into the ground.', 4: '1'}
+99	98		301							{2: 'Stern Male Construct', 3: 'We must inform Babylonia of this news. The evolving Punishing Virus is a bad omen. Not to mention that it keeps expanding.', 4: '1'}
+100	99		504							{1: '0'}
+101	100		201							{1: '1', 2: '1031001', 4: '-400'}
+102	101		201							{1: '2', 2: '500166', 4: '400'}
+103	102		301							{2: 'Liv', 3: 'So, the Red Tide was originally hiding underground?', 4: '1'}
+104	103		301							"{2: 'Liv', 3: ""No wonder it's gone undetected by Babylonia."", 4: '1'}"
+105	104		301							{2: 'Liv', 3: 'He had already uncovered so much. If only he had returned safely...', 4: '1'}
+106	105		302							"{2: ""It's not too late. We've found it, too."", 3: '106', 4: ""We've already submitted the data to Asimov."", 5: '106'}"
+107	106		301							"{2: 'Liv', 3: ""Good thing we've reported it. I thought my survey equipment was malfunctioning..."", 4: '1'}"
+108	107		301							"{2: 'Lucia', 3: ""We've always been able to count on you, Liv. You should have more faith in yourself."", 4: '2'}"
+109	108		301							{2: 'Lucia', 3: 'However, if a team had already gone missing here, the following team sent here should have been far more equipped...', 4: '2'}
+110	109		301							{2: 'Lucia', 3: 'And if that team also went missing...', 4: '2'}
+111	110		504							{1: '0.8'}
+112	111		201							{1: '1', 2: '500028', 4: '-400'}
+113	112		201							{1: '2', 2: '500019', 4: '400'}
+114	113		301							"{1: '1', 2: 'The Dead Commandant', 3: ""The signal is unstable here. We'll have to wait until we're back to Babylonia. Do you know how it's expanding?""}"
+115	114		301							"{2: 'Rowler', 3: ""It's unclear, but I'm sure it has something to do with the dissolved remains."", 4: '2'}"
+116	115		301							{3: 'The male Construct, Rowler, raises his hand to cover a haphazard yawn.'}
+117	116		301							{2: 'The Dead Commandant', 3: 'Dissolved...'}
+118	117		301							"{2: 'Stern Male Construct', 3: ""That's right."", 4: '1'}"
+119	118		301							"{3: 'As he says ""That\'s right,"" the projection freezes in place as if it is buffering.'}"
+120	120		301							{2: 'The Dead Commandant', 3: 'The signal is being jammed here. We need to return to Babylonia ASAP.'}
+121	24111		202							{2: '1', 3: '2', 6: '1'}
+122	121		301							"{3: ""When the projection resumes, the two Constructs at the table stand up and prepare to leave per their commandant's order.""}"
+123	122		301							{3: 'However, a blurry shadow stands in the doorway, suddenly charging at them with a lightning-fast slash.'}
+124	1115		502							{1: 'RImgBg1Shake'}
+125	123		301							{2: 'The Dead Commandant', 3: 'Coco! You—!'}
+126	124		301							{3: 'He opens his eyes wide in horror as he looks at the dark figures before him, then falls to the ground, limp.'}
+127	125		504							{1: '0'}
+128	126		201							{1: '1', 2: '1031001', 3: '7', 4: '-400'}
+129	127		201							{1: '2', 2: '500166', 3: '5', 4: '400'}
+130	128		302							{1: '1', 2: '...?', 3: '129'}
+131	129		301							{3: 'After losing their commandant, the other two Constructs attempt to fight the dark figure, but their efforts are in vain.'}
+132	130		204							{1: '1'}
+133	131		301							{2: 'Lucia', 3: 'Did that Construct, Coco, betray them?', 4: '2'}
+134	132		301							"{2: 'Lucia', 3: ""Looks like the squad didn't exactly work well together."", 4: '2'}"
+135	133		301							"{2: 'Liv', 3: ""No, I think something's wrong with the recording."", 4: '1'}"
+136	134		301							{2: 'Lucia', 3: 'You mean when it was buffering for a moment?', 4: '2'}
+137	135		301							"{2: 'Liv', 3: ""Yeah, but... We can't prove anything without looking for more clues."", 4: '1'}"
+138	136		301							{2: 'Lucia', 3: 'Want to keep searching, Commandant?', 4: '2'}
+139	137		302							"{2: 'Just in case?', 3: '138', 4: ""I trust Liv's intuition."", 5: '138'}"
+140	138		301		1		AniZhuanchangBegin			"{2: 'Liv', 3: ""Alright, let's keep looking!"", 4: '1'}"

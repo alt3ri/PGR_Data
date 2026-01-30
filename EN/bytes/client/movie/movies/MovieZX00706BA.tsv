@@ -1,0 +1,18 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory33.jpg'}
+2	2		401							{1: '1', 2: '203'}
+3	3		201							{1: '3', 2: '1091001', 4: '400'}
+4	4		201							{1: '1', 2: '1031001', 4: '-400'}
+5	5		301			DialogEnable				"{1: '1', 2: 'Liv', 3: ""The digging device is nearing us. If it continues, the ruins here won't hold."", 4: '3'}"
+6	6		301							"{2: 'Bianca', 3: ""It's all broken machine parts and traces of heavy fire."", 4: '3'}"
+7	7		301							{2: 'Bianca', 3: 'Looks like Karen was here.', 4: '3'}
+8	8		202							{1: '1', 6: '1'}
+9	9		201							{1: '2', 2: '1021001', 4: '-400'}
+10	10		301							{1: '1', 2: 'Lucia', 3: 'The ruins are full of wandering Corrupted. Along with the unstable structural integrity, there is no merit for running solo.', 4: '2'}
+11	11		302							{2: 'Advancing alone is too dangerous!', 3: '12'}
+12	12		301							"{2: 'Bianca', 3: ""Sorry, but I think I know what she's trying to do now."", 4: '3'}"
+13	13		301							"{2: 'Bianca', 3: ""She's going after Kamui on her own."", 4: '3'}"
+14	14		302							{2: 'Liv, analyze the data immediately!', 3: '15'}
+15	15		202							{1: '2', 6: '1'}
+16	16		201							{1: '1', 2: '1031001', 4: '-400'}
+17	17		301		1		AniZhuanchangBegin			{1: '1', 2: 'Liv', 3: 'A-ah, got it!', 4: '1'}

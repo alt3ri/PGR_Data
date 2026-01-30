@@ -1,0 +1,45 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory38.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+4	4		201							{1: '2', 2: '1041001'}
+5	5		301			DialogEnable				"{1: '1', 2: 'Nanami', 3: ""(Reaches the top of the building) We're finally out... huh?"", 4: '2'}"
+6	6		301							{2: 'Nanami', 3: 'The guards are still after us.', 4: '2'}
+7	7		203							{1: '2', 2: '0.25', 3: '400'}
+8	8		201							{1: '1', 2: '500008', 4: '-400'}
+9	9		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+10	10		301							"{1: '1', 2: 'Roland', 3: ""Nat isn't going to... let me go so easily..."", 4: '1'}"
+11	11		301							{3: '(Roland concentrates the Punishing Virus to his right arm) ...'}
+12	12		301							{2: 'Nanami', 3: '...Roland?!', 4: '2'}
+13	13		301							"{2: 'Roland', 3: ""(Breaks away from Nanami's control) If I can't beat you..."", 4: '1'}"
+14	14		301			PanelActor2Shake				{1: '1', 2: 'Nanami', 3: '(Dashes toward Roland) ...!', 4: '2'}
+15	15		301			PanelActor1Shake				"{1: '1', 2: 'Roland', 3: '(Jumps backward) I\'ll leave it to ""destiny""...', 4: '1'}"
+16	16		301							{3: 'Roland jumps off from up high, and the golden guards leap toward him like hungry beasts...'}
+17	17		202							{1: '1', 6: '1'}
+18	18		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+19	19		203							{1: '2', 2: '0.25'}
+20	20		301							"{2: 'Nanami', 3: ""(Jumps after Roland) He'll get torn into pieces..."", 4: '2'}"
+21	21		301							{3: '...'}
+22	22		301							{2: 'Nanami', 3: 'Nanami was careless...', 4: '2'}
+23	23		301							"{2: 'Nanami', 3: ""(Battles the guards) Shouldn't have given him the opportunity to act freely."", 4: '2'}"
+24	24		203							{1: '2', 2: '0.25', 3: '600'}
+25	25		201							{1: '1', 2: '500008'}
+26	26		201							{1: '3', 2: '500013', 4: '-600'}
+27	27		401							{1: '2', 2: '1508'}
+28	28		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 3: '1'}
+29	29		301							{1: '1', 3: 'Nanami enters a deadly battle with the guards for Roland...'}
+30	30		202							{1: '2', 2: '3', 6: '1'}
+31	31		301							{1: '1', 2: 'Roland', 3: '(Concentrates the Punishing Virus on his arm) All of you... move...!', 4: '1'}
+32	32		301							{3: 'Although his frame is severely damaged, Roland still manages to throw off the guards and dashes toward the golden light beam...'}
+33	33		301							"{2: 'Roland', 3: ""(Leaps toward the golden light) I've been watching... If I take advantage of its force, I might be able to thrown out of here..."", 4: '1'}"
+34	34		301							{2: 'Roland', 3: 'Even though my body will probably be crushed by the impact...', 4: '1'}
+35	35		301							{2: 'Roland', 3: '(The light beam is right ahead) As long as my M.I.N.D. device gets carried far enough from the antigen above the desert... I can still summon enough Corrupted here to drag me away...', 4: '1'}
+36	36		301			RImgBg1Shake				"{3: ""A slashing tornado appears behind Roland's back...""}"
+37	37		301			PanelActor1Shake				{1: '1', 2: 'Roland', 3: '...What?!', 4: '1'}
+38	38		301			RImgBg1Shake				{3: 'After a wave of slashes, the whole floor begins to collapse... Before Roland can jump into the beam, he is hit by a fallen metal plate and falls into the depths...'}
+39	39		301			PanelActor1Shake				{1: '1', 2: 'Roland', 3: '(His body keeps getting hit by fallen objects) ...!', 4: '1'}
+40	40		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+41	41		201							{1: '1', 2: '1041001'}
+42	42		301							{1: '1', 3: 'Among the debris, Nanami is holding on to a torn cable, hanging above the gulf...'}
+43	43		301							{2: 'Nanami', 3: 'That was so, so close...', 4: '1'}
+44	44		301		1		AniZhuanchangBegin			"{2: 'Nanami', 3: ""Roland, wait for me! Nanami's coming to get you."", 4: '1'}"

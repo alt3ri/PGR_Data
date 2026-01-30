@@ -1,0 +1,184 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg'}
+2	2		502						250.0	{1: 'DialogDisable'}
+3	3		107							{1: 'Island Town'}
+4	4		401							{1: '1', 2: '176'}
+5	5		301							{3: 'Island Town'}
+6	6		108							{1: '1'}
+7	7		301			DialogEnable				{3: 'To Island Town.'}
+8	8		301							"{3: ""A rusted signpost is nailed to the wall; it looks like it's been neglected for years.""}"
+9	9		302				AniZhuanchangBegin			{2: '(Survey your surroundings)', 3: '10'}
+10	10		502						400.0	{1: 'DialogDisable'}
+11	11		104						200.0	{1: '-335|85|-300', 2: '0'}
+12	12		104			AniZhuanchangEnd			3000.0	{1: '255|85|-300', 2: '4'}
+13	13		502							{1: 'DialogEnable'}
+14	14		301							{3: 'This passage seems to have experienced a collapse, with rubble and debris scattered around. A path barely wide enough for two people has been cleared out.'}
+15	15		301							{3: 'The Red Tide faintly unfurls along the path, its glow seeping from hidden depths.'}
+16	16		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg', 3: '0', 4: '1', 5: '1'}
+17	17		104							{1: '0|0|0', 2: '0'}
+18	18		205							{1: '999'}
+19	19		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg'}
+20	20		401							{1: '2', 2: '10042608'}
+21	21		201							{1: '1', 2: '501298'}
+22	22		301							{1: '1', 3: 'Bianca tightens her grip on the Lashblade as you raise your sidearm, both of you advancing cautiously down the shadowed path.'}
+23	23		202							{1: '1'}
+24	24		401							{1: '2', 2: '1099'}
+25	25		301							{3: 'Your terminal suddenly rings.'}
+26	26		201							{1: '1', 2: '501298', 3: '7'}
+27	27		301				DialogDisable			{1: '1', 2: 'Bianca', 3: 'Commandant? How is there still a signal here...?', 4: '1'}
+28	28		302							"{2: ""It's the short-range communication channel Teddy set up earlier!"", 3: '29'}"
+29	29		302							{2: '(Pick up the call)', 3: '30'}
+30	30		202							{1: '1', 6: '1'}
+31	31		509							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory614.jpg', 2: '1'}
+32	32		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 3: '11'}
+33	33		201							{1: '11', 2: '500166', 3: '5', 4: '-600'}
+34	34		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'Commandant?! Is that really you?!', 4: '11'}
+35	35		302							{2: 'Lucia! Where are you?!', 3: '36'}
+36	36		301							"{2: 'Lucia', 3: ""I'm in an unlocatable area. Nothing but seawater and a whole lot of Hetero-Creatures."", 4: '11'}"
+37	37		301				DialogDisable			{2: 'Lucia', 3: 'Commandant, are you safe right now?!', 4: '11'}
+38	38		302							"{2: ""I'm safe."", 3: '39'}"
+39	39		302							{2: 'We had a confrontation with Vonnegut.', 3: '40'}
+40	40		301			DialogEnable				{3: 'You quickly fill Lucia in on what has happened and give her a rough idea of where you are.'}
+41	41		204							{1: '11'}
+42	42		301							{2: 'Lucia', 3: 'An island in the sea...', 4: '11'}
+43	43		204							{1: '11', 2: '5'}
+44	44		301							"{2: 'Lucia', 3: ""Got it, Commandant. I'll clear out these Hetero-Creatures here, then head straight for the island to link up with you."", 4: '11'}"
+45	45		302							{2: 'Alright.', 3: '48', 4: 'No problem.', 5: '48', 6: 'Stay safe.', 7: '46'}
+46	46		204							{1: '11', 2: '1'}
+47	47		301							"{2: 'Lucia', 3: ""You too, Commandant. I'll find you as soon as I can."", 4: '11'}"
+48	48		510							{1: '1', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+49	49		202							{1: '11', 6: '1'}
+50	50		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 4: '11'}
+51	51		301							"{3: ""Having confirmed Lucia's safety, the two of you press on toward the end of the passage.""}"
+52	52		201							{1: '1', 2: '501298'}
+53	53		301							"{1: '1', 2: 'Bianca', 3: ""The Red Tide's traces... They're getting clearer from here."", 4: '1', 5: '1'}"
+54	54		302							"{2: 'Vonnegut might have just left from here.', 3: '55', 4: ""This could be the Ascendants' doing."", 5: '55', 6: 'There might be traps up ahead.', 7: '55'}"
+55	55		204							{1: '1', 2: '9'}
+56	56		301							"{2: 'Bianca', 3: ""Yeah, that's definitely a possibility..."", 4: '1'}"
+57	57		204							{1: '1'}
+58	58		301							"{2: 'Bianca', 3: ""We're almost there."", 4: '1'}"
+59	59		202							{1: '1'}
+60	60		401							{1: '2', 2: '722'}
+61	61		301							{3: 'The sound of rushing water grows louder from beyond the rock wall, a sure sign that the exit is near.'}
+62	62		402							{1: '722'}
+63	63		201							{1: '1', 2: '501298', 3: '7'}
+64	64		301							{1: '1', 2: 'Bianca', 3: 'This is...', 4: '1'}
+65	65		202							{1: '1', 6: '1'}
+66	66		306							{1: '1'}
+67	67		401							{1: '2', 2: '5734'}
+68	68		301							"{3: 'The ""reversal"" device installed in the CUB emanates a gentle glow, illuminating the path ahead.'}"
+69	69		301							{3: 'The path gradually narrows, with stone steps extending into unknown territory.'}
+70	70		306							
+71	71		302							{2: 'Is that the town up ahead?', 3: '72'}
+72	72		201							{1: '1', 2: '501298'}
+73	73		301							{1: '1', 2: 'Bianca', 3: 'According to the signpost right here, yeah.', 4: '1'}
+74	74		204							{1: '1', 2: '5'}
+75	75		301							"{2: 'Bianca', 3: '""It\'s a passage built at the bottom level of the aquarium, leading straight to the nearest town.""', 4: '1'}"
+76	76		301							"{2: 'Bianca', 3: '""The town sits on a nearby island, and there\'s an altar set up on it...""', 4: '1'}"
+77	77		204							{1: '1'}
+78	78		301							{2: 'Bianca', 3: 'The rest of the text is illegible, Commandant.', 4: '1'}
+79	79		302							"{2: ""Let's keep moving."", 3: '80'}"
+80	80		202							{1: '1'}
+81	81		301				AniZhuanchangBegin			{3: 'In any case, the aquarium is no longer safe. You have to get out of here first, then figure out your next move.'}
+82	82		306							{1: '1'}
+83	83		502						400.0	{1: 'DialogDisable'}
+84	84		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1285.jpg'}
+85	85		502							{1: 'RImgBg1BlowUp'}
+86	86		301			DialogEnable				{3: 'The farther you advance, the stranger the scenery grows. Jagged stone pillars spear the sky, their bases streaked with water stains—years of neglect etched into their surfaces, mingling with the lingering remnants of the Red Tide.'}
+87	87		505							{1: 'RImgBg1BlowUp'}
+88	88		306							
+89	89		201							{1: '1', 2: '501298'}
+90	90		301							{1: '1', 2: 'Bianca', 3: 'Commandant...', 4: '1'}
+91	91		401							{1: '2', 2: '4044'}
+92	92		203							{1: '1', 2: '0.25', 5: '-75'}
+93	93		301							{3: 'Bianca shields you behind her, sending her CUB to scout the path ahead.'}
+94	94		301				DialogDisable			{2: 'Bianca', 3: '...', 4: '1'}
+95	95		202							{1: '1'}
+96	96		401							{1: '2', 2: '1504'}
+97	97		104				AniZhuanchangBegin			{1: '0|0|-150', 2: '1'}
+98	98		401						1600.0	{1: '1', 2: '36'}
+99	99		502						400.0	{1: 'DialogDisable'}
+100	100		402							{1: '1504'}
+101	101		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1276.jpg'}
+102	102		401							{1: '1', 2: '5039'}
+103	103		502							{1: 'DialogEnable'}
+104	104		301							"{3: ""As the CUB's view widens, the scene at the center of the island comes fully into focus.""}"
+105	105		301							"{3: ""Stone pillars jut out like sharp fish bones, spearing the twilight-streaked sky. The ruins scattered everywhere tell a story of the area's past glory.""}"
+106	106		301							{3: 'But none of that matters now—'}
+107	107		306							{1: '1'}
+108	108		201							{1: '1', 2: '501286'}
+109	109		301							"{1: '1', 3: 'In the center of the altar stands a ""monster"" with twisted limbs, her torso hanging limp. As if she has sensed the CUB\'s movement, her unfocused eyes sharpen slightly, meeting Bianca\'s scrutinizing gaze.'}"
+110	110		301							"{3: 'She—the ""monster""—with the faint remnants of her consciousness, still remembers that gaze.'}"
+111	111		202							{1: '1'}
+112	112		301							{3: 'She once walked beside the owner of that gaze time and again during missions, conquering one treacherous trial after another...'}
+113	113		301				DialogDisable			{3: 'She once watched the owner of that gaze covered in grime, wading through swamps of sin, yet still holding onto hope.'}
+114	114		306						200.0	
+115	115		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+116	116		401							{1: '2', 2: '4385'}
+117	117		504							{1: '0.7'}
+118	118		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+119	119		201							{1: '1', 2: '500498', 5: '-20', 7: '1'}
+120	120		301			DialogEnable				{1: '1', 2: 'Chiko', 3: 'Killing is evil. Each time I made a decision to kill, darkness haunted me.', 4: '1'}
+121	121		301							{2: 'Chiko', 3: 'Many people attribute such sins to external factors—to this flawed world, to the Punishing outbreak.', 4: '1'}
+122	122		301							"{2: 'Chiko', 3: ""But you, Bianca, you're different."", 4: '1'}"
+123	123		202							{1: '1'}
+124	124		301							"{3: 'The ""monster"" grows confused upon the sudden surge of images within her M.I.N.D. Disoriented, she acts on instinct—or perhaps some lingering shred of memory—and begins absorbing the surrounding Red Tide and Punishing creations more frantically...'}"
+125	125		201							{1: '1', 2: '500498'}
+126	126		301							"{1: '1', 2: 'Chiko', 3: ""But you'll never see yourself as innocent. You won't conveniently blame the Punishing Virus or the wrongdoings in this world."", 4: '1'}"
+127	127		301							{2: 'Chiko', 3: 'Your hands might be stained with blood and dust, yet your soul shines with pure light...', 4: '1'}
+128	128		301							"{2: 'Chiko', 3: ""That's just who you are, Bianca."", 4: '1'}"
+129	129		401							{1: '2', 2: '1543'}
+130	130		203							{1: '1', 2: '0.25'}
+131	131		204							{1: '1', 2: '1'}
+132	132		301							{3: 'The friend stands up with a smile.'}
+133	133		301				DialogDisable			{2: 'Chiko', 3: 'So...', 4: '1'}
+134	134		202							{1: '1', 6: '1'}
+135	135		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+136	136		401							{1: '2', 2: '4386'}
+137	137		504							{1: '0'}
+138	138		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1276.jpg'}
+139	139		104							{1: '0|-25|0', 2: '0.25'}
+140	140		401						100.0	{1: '2', 2: '4298'}
+141	141		104							{1: '0|0|0', 2: '0.25'}
+142	142		301			DialogEnable				{3: 'As she takes the final step at the end of the stairway, the crimson altar quietly transforms into a calm sea.'}
+143	143		402							{1: '4298'}
+144	144		201							{1: '1', 2: '501286'}
+145	145		301				DialogDisable			"{1: '1', 3: 'The blue-haired ""monster"" absorbs this altar and the Red Tide of this sea area; its form grows massive, to the point of distortion.'}"
+146	146		204							{1: '1', 2: '8'}
+147	147		401							{1: '2', 2: '5815'}
+148	148		401							{1: '2', 2: '2711'}
+149	149		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.4'}
+150	150		201							{1: '2', 2: '500498', 6: '25', 7: '1'}
+151	151		205							{1: '2', 3: '0.8', 4: '0.8', 5: '0'}
+152	152		504							{1: '0.3', 2: '2'}
+153	153		203							{1: '2', 2: '0.4', 3: '-250', 5: '25'}
+154	154		301			DialogEnable				{2: 'Chiko', 3: 'Captain, you made it.', 4: '1'}
+155	155		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '0.3'}
+156	156		202							{1: '1', 2: '2', 6: '1'}
+157	157		201							{1: '1', 2: '501298', 7: '1'}
+158	158		301							{1: '1', 2: 'Bianca', 3: 'Wait...', 4: '1'}
+159	159		204							{1: '1', 2: '7'}
+160	160		301				DialogDisable			"{3: ""Bianca's eyes widen. The moment she hears the monster's low growl, a keen awareness prickles at her senses.""}"
+161	161		502							{1: 'RImgBg1Shake'}
+162	162		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '3'}
+163	163		401							{1: '2', 2: '9342058'}
+164	164		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+165	165		204							{1: '1'}
+166	166		203							{1: '1', 2: '0.25', 3: '200'}
+167	167		301			DialogEnable				"{3: ""However, her lingering doubt is cut short by the monster's menacing strike, as that twisted arm slashes toward her shoulder.""}"
+168	168		401							{1: '2', 2: '5815'}
+169	169		202							{1: '1'}
+170	170		301			RImgBg1Shake				{3: 'A whisper, tinged with a smile, blends into the deafening screech.'}
+171	171		201							{1: '1', 2: '501286', 3: '1'}
+172	172		301							{1: '1', 2: 'Chiko', 3: 'Did I... handle this mission well?', 4: '1'}
+173	173		202							{1: '1'}
+174	174		306						200.0	{1: '1'}
+175	175		401							{1: '2', 2: '5311'}
+176	176		301							{3: 'Bianca swiftly dodges the attack. In that split second of surprise, she catches sight of a familiar figure...'}
+177	177		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+178	178		201							{1: '1', 2: '500498', 3: '1', 7: '1'}
+179	179		301			AniZhuanchangEnd				{1: '1', 3: 'Chiko stands right there, her face streaked with blood, wearing a surprisingly gentle smile.'}
+180	180		202							{1: '1', 6: '1'}
+181	181		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1277.jpg'}
+182	182		306							
+183	183		301		1	AniZhuanchangEnd	AniZhuanchangBegin			{3: 'The moonlight spills across the altar, silver and vast.'}

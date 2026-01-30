@@ -1,0 +1,88 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		102							{1: 'Firn Night', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+2	4001		502							{1: 'ThemeEnable'}
+3	4002		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory53.jpg'}
+4	2		401							{1: '1', 2: '208'}
+5	3		301			DialogEnable				{1: '1', 3: 'Near the reserve operation area of Babylonia, several squads are busy carrying supplies and weapons.'}
+6	1001		201							{1: '1', 2: '500166'}
+7	1002		201							{1: '2', 2: '500026', 4: '600'}
+8	1003		201							{1: '3', 2: '1031001', 4: '-600'}
+9	4		301							"{1: '1', 2: 'Lucia', 3: ""Looks like there's an emergency mission."", 4: '1'}"
+10	5		301							"{2: 'Liv', 3: ""Everyone's on edge. Hopefully, the mission isn't too serious."", 4: '3'}"
+11	6		301							"{2: 'Lee', 3: ""Don't worry, they've got skilled combatants with them. Though, back on our case, Commandant, we still have a round of data collection for Lucia's frame coming up, right?"", 4: '2'}"
+12	7		302							{2: 'Yeah.', 3: '8', 4: 'Data collection?', 5: '10'}
+13	8	9	301							"{2: 'Lucia', 3: ""I wonder how we'll go about the data collection."", 4: '1'}"
+14	9	1004	301							"{2: 'Lucia', 3: ""...It'll be nice if we can figure out why my frame isn't operating at its full capacity."", 4: '1'}"
+15	10	11	301							{2: 'Lee', 3: 'Commandant... You saw the transmission, right?', 4: '2'}
+16	11	5000	301							"{2: 'Lee', 3: ""Because the actual performance of Lucia's new frame wasn't quite up to par, the higher-ups want us to participate in a series of data collection to see what's wrong."", 4: '2'}"
+17	5000	12	204							{1: '1', 2: '1'}
+18	12	1004	301							"{2: 'Lucia', 3: ""That's what the data collection is about, Commandant."", 4: '1'}"
+19	1004		202							{1: '1', 2: '2', 3: '3'}
+20	1005		201							{1: '1', 2: '500214', 3: '8'}
+21	13		301							{1: '1', 2: 'Rosetta', 3: 'Gray Raven. Good to see you here.', 4: '1'}
+22	14		301							{3: 'Suddenly, an unexpected figure walks out of the bustling squads. Her expression is ice-cold—just like when you first met in the Arctic.'}
+23	1006		302							{2: 'Rosetta?', 3: '15', 4: 'Do you need us for anything?', 5: '16'}
+24	15	1007	301							{2: 'Rosetta', 3: 'Why the surprised expression...? Well, I guess it is my first time speaking to you in Babylonia.', 4: '1'}
+25	16	1007	301							"{2: 'Rosetta', 3: ""You're just as calm as ever, but at least that's reassuring."", 4: '1'}"
+26	1007		204							{1: '1', 2: '4'}
+27	17		301							"{2: 'Rosetta', 3: ""Nikola, Gray Raven's commandant can take the last spot. Report over and out."", 4: '1'}"
+28	18		301							{3: 'She seems to have been connected to Commander Nikola all this time. You feel a hint of what she is saying, but you are unsure as to why she did so.'}
+29	1008		203							{1: '1', 2: '0.25', 3: '-400'}
+30	1009		201							{1: '2', 2: '1031001', 4: '400'}
+31	19		301							"{1: '1', 2: 'Liv', 3: ""Rosetta, I know you must have a mission, but we need to collect data. I don't think we'd be able to help you out..."", 4: '2'}"
+32	20		301							"{2: 'Rosetta', 3: ""It's okay. It won't affect you. I'm just missing a commandant."", 4: '1'}"
+33	1010		201							{1: '2', 2: '500166', 4: '400'}
+34	21		301							{1: '1', 2: 'Lucia', 3: 'Huh...?', 4: '2'}
+35	22		301							{2: 'Rosetta', 3: 'ARU seems to be under attack and has requested reinforcements. I need to bring troops over from Babylonia ASAP.', 4: '1'}
+36	23		301							{2: 'Lucia', 3: 'Is it the Ascendants?', 4: '2'}
+37	24		301							"{2: 'Rosetta', 3: ""I can't say for sure... But I need to borrow your commandant and get back to the ARU. There's no time to spare."", 4: '1'}"
+38	25		301							{2: 'Lucia', 3: 'But, going there with just Commandant...', 4: '2'}
+39	26		301							"{2: 'Rosetta', 3: ""I won't let your commandant come to any harm. You have my word."", 4: '1'}"
+40	27		301							{2: 'Lucia', 3: '...', 4: '2'}
+41	28		301							{2: 'Rosetta', 3: '...', 4: '1'}
+42	29		301							"{2: 'Lucia', 3: ""If that's the case... What do you think, Commandant?"", 4: '2'}"
+43	1011		302							"{2: ""I'll go to the ARU."", 3: '30', 4: ""I don't think HQ will give me a choice."", 5: '3000'}"
+44	30	1012	301							{2: 'Lucia', 3: 'If you say so, Commandant. Rosetta, please keep Commandant safe.', 4: '2'}
+45	3000	31	204							{1: '1', 2: '1'}
+46	31	1012	301				AniZhuanchangBegin			"{2: 'Rosetta', 3: ""I'm sorry, but there is no way. Rest assured, I will keep you safe."", 4: '1'}"
+47	1012		202							{1: '1', 2: '2'}
+48	1013		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory227.png'}
+49	1014		401							{1: '1', 2: '7'}
+50	32		301			AniZhuanchangEnd				{3: '——'}
+51	33		301							{3: 'You hear fighting nearby, sending a chill down your spine.'}
+52	1016		201							{1: '1', 2: '500214'}
+53	36		301							"{1: '1', 2: 'Rosetta', 3: ""I won't let you get any closer!"", 4: '1'}"
+54	37		301			RImgBg1Shake				{3: 'Holding a spear, Rosetta confronts the group of hostile bionic machines. They continue their reckless assault heedlessly.'}
+55	38		301							"{2: 'Rosetta', 3: ""Great. You're awake."", 4: '1'}"
+56	1017		302							"{2: ""What's the situation now?"", 3: '39', 4: 'Are you okay?', 5: '40'}"
+57	39	41	301							"{2: 'Rosetta', 3: ""It's up in the air... Or actually, I think it's bordering a bit on the bad side. I wasn't expecting to run into these bionics this quickly."", 4: '1'}"
+58	40	41	301							"{2: 'Rosetta', 3: ""I think you should be more concerned about yourself. You've been asleep in the snow for over half an hour."", 4: '1'}"
+59	41		301							"{2: 'Rosetta', 3: ""Anyway, it's about over. I'm going to charge ahead!"", 4: '1'}"
+60	1018		202							{1: '1'}
+61	1019		401							{1: '2', 2: '10002001'}
+62	42		301							{3: 'Rosetta throws her spear, penetrating the enemies like a shooting star. While the enemies are distracted, she jumps into the air and unleashes her shield.'}
+63	1020		201							{1: '1', 2: '500214'}
+64	43		301							{1: '1', 2: 'Rosetta', 3: 'Ready, aim—', 4: '1'}
+65	44		301							{2: 'Rosetta', 3: '—Fire!', 4: '1'}
+66	1021		401							{1: '2', 2: '10007501'}
+67	1022		202							{1: '1'}
+68	45		301			RImgBg1Shake				{3: 'A burst of energy erupts from her shield and rains down on the enemy bionics.'}
+69	1023		201							{1: '1', 2: '500208'}
+70	46		301							{1: '1', 2: 'Bionic Machine', 3: '—Retreat!', 4: '1'}
+71	1024		202							{1: '1'}
+72	47		301							{3: 'The bionics at the rear make a split decision to abandon their fallen comrades and retreat out of the battlefield.'}
+73	1025		201							{1: '1', 2: '500214', 3: '8'}
+74	48		301							{1: '1', 2: 'Rosetta', 3: 'Hmph... Just my lucky day.', 4: '1'}
+75	49		301							"{3: ""Once Rosetta confirms the enemy's retreat, she lowers the output of her light wings and descends from the sky, retrieving her spear impaled in the ground.""}"
+76	1026		204							{1: '1', 2: '4'}
+77	50		301							"{1: '1', 2: 'Rosetta', 3: ""Alright, 【kuroname】. Let's continue our mission."", 4: '1'}"
+78	1027		302							{2: 'Our mission?', 3: '51', 4: 'What is this place?', 5: '52'}
+79	51	53	301							{2: 'Rosetta', 3: '...Are you messing with me? Or do you not care to remember these sorts of things?', 4: '1'}
+80	52	53	301							"{2: 'Rosetta', 3: ""We are within Arctic Route Union's jurisdiction. Did the impact just now give you brain damage or something...?"", 4: '1'}"
+81	53		301							{2: 'Rosetta', 3: 'At any rate—', 4: '1'}
+82	54		301							"{2: 'Rosetta', 3: ""I didn't expect the transport craft to be shot down by anti-aircraft guns and crash into the snow... Just my lucky day..."", 4: '1'}"
+83	1029		201							{1: '1', 2: '500208'}
+84	55		301							{1: '1', 2: 'Bionic Machine', 3: 'ROAR!!!', 4: '1'}
+85	56		301							{3: 'Just as you are about to inquire about the next course of action, a group of bionics suddenly charge out from where they evacuated. Looks like they were retreating to rally reinforcements.'}
+86	2444		201							{1: '1', 2: '500214', 3: '8'}
+87	57		301		1		AniZhuanchangBegin			"{2: 'Rosetta', 3: ""Looks like now's not the time to talk... 【kuroname】, no... Commandant, join me in battle!"", 4: '1'}"

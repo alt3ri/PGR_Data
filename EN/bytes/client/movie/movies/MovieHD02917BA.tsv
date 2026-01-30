@@ -1,0 +1,82 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+2	2		401							{1: '1', 2: '204'}
+3	3		201							{1: '1', 2: '500576'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Ayla', 3: ""Hey, there you are! Ready for this year's surprise?"", 4: '1'}"
+5	5		301							{3: 'The clock just struck 3:00 PM and the artificial sunlight is shining ever so brightly. Seeing you in a hurry, Ayla takes a hop and stops you in your tracks, her hands behind her back.'}
+6	6		301							{3: 'She has this mischievous glint in her eyes, obviously hiding something behind her back.'}
+7	7		302							{2: 'Well...', 3: '8'}
+8	8		302							{2: 'Is this surprise going to be long?', 3: '9'}
+9	9		301							"{2: 'Ayla', 3: ""Well... I can't say how long it'd take most people..."", 4: '1'}"
+10	10		301							"{2: 'Ayla', 3: ""But I'm sure this is gonna be a breeze for you since I've trained you so well."", 4: '1'}"
+11	11		302							"{2: ""So it's some sort of challenge?"", 3: '12'}"
+12	12		301							"{3: 'The porcelain-white surface of the card Ayla handed you looks plain enough, with only one line that reads, ""To 【kuroname】"".'}"
+13	13		301							"{3: ""Flipping the card over, you see what's on the other side. The backside of the card has been painted with random patterns in green and blue tones that, at best, seem like some kind of post-modern doodle. From afar, it looks like something, but up close, you have no idea what it is.""}"
+14	14		302							"{2: 'Is this some kind of abstract art?', 3: '15', 4: ""Is this supposed to be a clue that tells me there's more to the puzzle?"", 5: '16'}"
+15	15	17	301							"{2: 'Ayla', 3: ""It's an abstract art piece that's a puzzle, too."", 4: '1'}"
+16	16		301							"{2: 'Ayla', 3: ""Yup, it's part of the puzzle, and you'll have to work your way through the rest of it."", 4: '1'}"
+17	17		301							"{2: 'Ayla', 3: ""I've marked a location on this card, and you'll have to use this clue to figure out where you're supposed to go to uncover the next card."", 4: '1'}"
+18	18		302							"{2: ""Got it. So it's like a scavenger hunt."", 3: '19'}"
+19	19		301							"{2: 'Ayla', 3: ""Exactly! See, told you it'd be a breeze."", 4: '1'}"
+20	20		301							"{3: ""With a smile on her face, Ayla seems like she's about to explode in excitement.""}"
+21	21		301							"{3: ""Feeling Ayla's excitement, you have no choice but to take another look at the card and hope that you can actually live up to her expectations.""}"
+22	22		302							{2: 'A green lawn, a vast sky, and plenty of sunlight...', 3: '23'}
+23	23		302							{2: 'Hmm... is this the lawn where we used to draw together?', 3: '24'}
+24	24		301							"{2: 'Ayla', 3: ""Woah, that's fast!"", 4: '1'}"
+25	25		301							"{2: 'Ayla', 3: ""I thought it'd take you at least five minutes to figure that one out. Guess I made that too obvious?"", 4: '1'}"
+26	26		302							"{2: ""It's only because you did such a good job drawing the place, Ayla."", 3: '27'}"
+27	27		302							{2: 'And I happen to remember that lawn because I really like it.', 3: '28'}
+28	28		204							{1: '1', 2: '2'}
+29	29		301							{2: 'Ayla', 3: 'O-oh, I see.', 4: '1'}
+30	30		301							{3: 'Ayla seems a little embarrassed, a soft spot in her heart apparently touched by what you just said.'}
+31	31		301							{3: 'But her usual cheerful smile quickly resumes.'}
+32	32		204							{1: '1'}
+33	33		301							"{2: 'Ayla', 3: ""Well then, let's go!"", 4: '1'}"
+34	34		202				DialogDisable			{1: '1', 6: '1'}
+35	35		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory872.jpg'}
+36	36		301			DialogEnable				{3: 'The two of you find the second card in the shady green under the trees.'}
+37	37		301							"{3: 'Like the first card, this one, too, simply reads, ""To 【kuroname】"". Turning it over, you see several squiggly yellow patterns that, apparently, are supposed to form a large square.'}"
+38	38		201							{1: '1', 2: '500576'}
+39	39		301							"{1: '1', 2: 'Ayla', 3: ""Haha, this one took me quite some time to come up with. Pretty sure it's not as easy as the last one."", 4: '1'}"
+40	40		301							"{2: 'Ayla', 3: ""I'm always here to drop you a few hints, though, if you find it too challenging!"", 4: '1'}"
+41	41		302							{2: 'I already know where this is, though.', 3: '42'}
+42	42		302							"{2: ""A large square and yellow stage curtains—it's the screening room at WGAA, right?"", 3: '43'}"
+43	43		204							{1: '1', 2: '7'}
+44	44		301							{2: 'Ayla', 3: 'Holy... no way!', 4: '1'}
+45	45		301							{3: 'Ayla looks flabbergasted beyond words.'}
+46	46		302							"{2: ""This isn't a hard one since we share a lot of memories here."", 3: '47'}"
+47	47		204							{1: '1'}
+48	48		301							"{2: 'Ayla', 3: ""Man, I didn't think these puzzles would be this easy for you..."", 4: '1'}"
+49	49		302							"{2: ""...Should I pretend they're super hard, then?"", 3: '50'}"
+50	50		301							"{2: 'Ayla', 3: ""My puzzles aren't easy at all! It's just..."", 4: '1'}"
+51	51		301							"{3: ""Ayla's voice trails off, but she quickly shakes her head and stops herself in her tracks. Then, she puts on the professional smile she uses when hosting events.""}"
+52	52		301				DialogDisable			"{2: 'Ayla', 3: ""Ahem! Forget what I just said. Let's hurry up and head down to the next location."", 4: '1'}"
+53	53		202							{1: '1', 6: '1'}
+54	54		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory640.jpg'}
+55	55		301			DialogEnable				{3: 'You and Ayla find the third card at WGAA.'}
+56	56		301							"{3: ""You find the fourth card in a breeze in Ayla's studio.""}"
+57	57		301				DialogDisable			"{3: ""According to the hint on the fourth card, the last one is in Gray Raven's lounge.""}"
+58	58		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+59	59		201							{1: '1', 2: '500576'}
+60	60		301			DialogEnable				"{1: '1', 2: 'Ayla', 3: ""H-hold your horses there! There's only one card left, and I have to give it to you personally!"", 4: '1'}"
+61	61		301							{3: 'Just as you and Ayla enter the lounge, Ayla suddenly stops you, looking more determined than ever. No longer calm, she now looks like a child afraid of getting caught in a prank.'}
+62	62		301							{3: 'Stopped in your tracks, you have no choice but to give in—with victory right within your reach.'}
+63	63		302							{2: 'Sure... but why, though?', 3: '64'}
+64	64		301							"{2: 'Ayla', 3: ""Because it's the last piece of the puzzle."", 4: '1'}"
+65	65		301							"{2: 'Ayla', 3: ""Geez, Commandant, you've got to see things the way a girl does. It makes sense that for me to present at least one part of this birthday party when I put so much effort into putting it together, right?"", 4: '1'}"
+66	66		301							"{3: ""Her face is red. Ayla takes your hand, spreads out the cards you've collected on the table, and puts them in a line.""}"
+67	67		301							"{3: ""Then she takes the very last card from Gray Raven's lounge and places it in the missing spot.""}"
+68	68		301							{3: 'The dazzling puzzle finally has its last piece, and the five cards form a complete picture.'}
+69	69		301							{3: 'At first glance, nothing seems out of the ordinary with these cards, but a closer look reveals the message hidden within the vibrant colors.'}
+70	70		302							"{2: 'Does that say... ""Happy Birthday""?', 3: '71'}"
+71	71		204							{1: '1', 2: '2'}
+72	72		301							{2: 'Ayla', 3: 'Bingo, and there goes the final puzzle. Congratulations on cracking all of them in a breeze like you always do, by the way.', 4: '1'}
+73	73		204							{1: '1'}
+74	74		301							"{2: 'Ayla', 3: ""Thank God you had all of them figured out, though. I thought you'd find that last one overly challenging."", 4: '1'}"
+75	75		301							"{2: 'Ayla', 3: ""But together we're strong, right?"", 4: '1'}"
+76	76		202							{1: '1'}
+77	77		301							{3: 'With a smile, Ayla stacks up the five cards into a pile and hands it over to you.'}
+78	78		201							{1: '1', 2: '500576'}
+79	79		301							"{1: '1', 2: 'Ayla', 3: ""I know you're smart enough to crack any puzzles, Commandant, but there is this one thing I have to tell you myself."", 4: '1'}"
+80	80		301							"{3: ""The colorful cards in Ayla's hand seem to be reflecting the colors in her mind.""}"
+81	81		301		1		AniZhuanchangBegin			{2: 'Ayla', 3: 'Happy Birthday! May your days ahead be as colorful as ever, 【kuroname】.', 4: '1'}

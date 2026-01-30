@@ -1,0 +1,41 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+2	2		401							{1: '1', 2: '5'}
+3	3		201							{1: '1', 2: '500019'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+5	5		301			DialogEnable				"{1: '1', 2: 'Construct', 3: ""...Yes, that's right."", 4: '1'}"
+6	6		301							{2: 'Construct', 3: 'Can I trouble you to look after it before we have time to retrieve it?', 4: '1'}
+7	7		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+8	8		201							{1: '1', 2: '1021001'}
+9	9		301							"{1: '1', 2: 'Lucia', 3: ""That shouldn't be a problem."", 4: '1'}"
+10	10		201							{1: '1', 2: '500019'}
+11	11		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+12	12		301							{1: '1', 2: 'Construct', 3: '...Well, I guess I should say thanks first.', 4: '1'}
+13	13		302							{1: '100', 2: 'What was that about?', 3: '17', 4: 'Is it about that puppy?', 5: '18'}
+14	14		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+15	15		201							{1: '1', 2: '1021001'}
+16	16		303							{1: '100'}
+17	17	19	301							"{1: '1', 2: 'Lucia', 3: ""It's from the Support Force responsible for the conservation area."", 4: '1'}"
+18	18		301							{1: '1', 2: 'Lucia', 3: 'Yes, we were discussing what to do with the puppy.', 4: '1'}
+19	19		302							{2: 'Conservation area?', 3: '20'}
+20	20		301							{2: 'Lucia', 3: 'Conservation areas are areas that we execution forces have recovered and rebuilt afterward.', 4: '1'}
+21	21		301							{2: 'Lucia', 3: 'To put it simply, the environmental sustainability device is rebooted and an ecosystem is built.', 4: '1'}
+22	22		301							{2: 'Lucia', 3: 'The puppy we rescued was from the conservation area.', 4: '1'}
+23	23		302							"{2: ""They're going to come pick up the puppy?"", 3: '24', 4: 'Did they ask us to take care of it for a while?', 5: '25'}"
+24	24	27	301							"{2: 'Lucia', 3: ""Yes, but it'll need to stay in the base for a while before they can come to pick it up."", 4: '1'}"
+25	25		301							{2: 'Lucia', 3: 'Because they are currently short-staffed, and also, the puppy is injured.', 4: '1'}
+26	26		301							"{2: 'Lucia', 3: ""So, before the Support Force can come to pick it up, we'll have to take care of it here in the base."", 4: '1'}"
+27	27		202							{1: '1', 6: '1'}
+28	28		301							{2: 'Puppy', 3: 'Woof!'}
+29	29		201							{1: '2', 2: '1031001'}
+30	30		301							"{1: '1', 2: 'Liv', 3: ""Oh, the puppy's awake."", 4: '2'}"
+31	31		203							{1: '2', 2: '0.25', 3: '400'}
+32	32		201							{1: '1', 2: '1021001', 4: '-400'}
+33	33		301							{1: '1', 2: 'Lucia', 3: 'It seems so. Liv, can you go check up on it?', 4: '1'}
+34	34		301							{2: 'Liv', 3: 'Okay.', 4: '2'}
+35	35		202							{1: '2', 6: '1'}
+36	36		203							{1: '1', 2: '0.25', 3: '0'}
+37	37		301							{2: 'Lucia', 3: '...', 4: '1'}
+38	38		302							"{2: ""You're not coming, Lucia?"", 3: '39', 4: ""I'll go with you."", 5: '40'}"
+39	39		301		1		AniZhuanchangBegin			{2: 'Lucia', 3: 'No, I still have other missions to do.', 4: '1'}
+40	40		301		1		AniZhuanchangBegin			{2: 'Lucia', 3: 'Then you should go with Liv, Commandant. I still have other things to take care of.', 4: '1'}

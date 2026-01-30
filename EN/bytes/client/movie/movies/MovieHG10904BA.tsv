@@ -1,0 +1,49 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				{3: 'The next day, Ayla calls you to her studio.'}
+4	4		301							{3: 'For some reason, you are blindfolded as you enter the studio.'}
+5	5		301							"{2: 'Ayla', 3: ""Don't take off your blindfold just yet.""}"
+6	6		301							{3: 'Ella pushes you into a chair.'}
+7	7		301							{3: 'It seems like you have been moving for some time, but you get this sneaking suspicion that you are moving in circles.'}
+8	8		301							"{2: 'Ayla', 3: ""Hmm... If that's the case...""}"
+9	9		301							{3: 'You hear the electric buzzing of a projector turning on.'}
+10	10		301							"{2: 'Ayla', 3: ""Hmm... This isn't ideal...""}"
+11	11		301							{3: 'You hear the clicking of a button.'}
+12	12		301							{2: 'Ayla', 3: 'Just a few minor adjustments... Annnnd that should do it.'}
+13	13		301				AniZhuanchangBegin			{2: 'Ayla', 3: 'Alright, you can take off your blindfold.'}
+14	14		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory45.jpg'}
+15	15		301			AniZhuanchangEnd				{3: 'Is this... the bridge in Babylonia?'}
+16	16		301							{3: 'You pushed me all the way here?'}
+17	17		301							{3: 'Ayla wants to respond when the comms on your headset rings.'}
+18	18		201							{1: '1', 2: '1021001'}
+19	19		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+20	20		301							{1: '1', 2: 'Lucia', 3: 'Commandant?', 4: '1'}
+21	21		302							"{2: ""I'm here."", 3: '22'}"
+22	22		301							"{2: 'Lucia', 3: ""I didn't see you this morning. Everything okay?"", 4: '1'}"
+23	23		302							{2: 'You could say that.', 3: '24'}
+24	24		301							{2: 'Lucia', 3: 'Well, when you finish up, come to the bridge. Celica said...', 4: '1'}
+25	25		202							{1: '1', 6: '1'}
+26	26		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+27	27		301							{3: '?'}
+28	28		301							{3: 'Am I not already at the bridge?'}
+29	29		301							{3: 'Wait, no. Seems like the night sky is a bit blurry.'}
+30	30		302							{2: '(Extend hand to feel it)', 3: '31'}
+31	31		301							{3: 'Feels like... a wall.'}
+32	32		301							{3: 'There appears to be a wall about half a meter in front of you.'}
+33	33		201							{1: '1', 2: '500110'}
+34	34		301							"{1: '1', 2: 'Ayla', 3: ""Spacial immersion seems good enough, but the distance isn't fooling anyone..."", 4: '1'}"
+35	35		301				AniZhuanchangBegin			"{2: 'Ayla', 3: ""Looks like I can't just rely on pictures."", 4: '1'}"
+36	36		202							{1: '1', 6: '1'}
+37	37		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory21.jpg'}
+38	38		301			AniZhuanchangEnd				{3: 'Ella toggles her personal terminal, and a white wall appears in front of her.'}
+39	39		301							{3: 'Seems like this was parallax photography projected on the wall to create a sense of remote reality.'}
+40	40		201							{1: '1', 2: '500110'}
+41	41		301							"{1: '1', 2: 'Ayla', 3: ""If that's the case..."", 4: '1'}"
+42	42		301							{2: 'Ayla', 3: 'It seems to work in principle.', 4: '1'}
+43	43		301							"{2: 'Ayla', 3: ""Next up... I won't need to bother you anymore."", 4: '1'}"
+44	44		302							{2: '...?', 3: '45'}
+45	45		301							"{2: 'Ayla', 3: 'After all, how to frame the ""question,"" that is left to the creator...', 4: '1'}"
+46	46		201							{1: '1', 2: '1021001'}
+47	47		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+48	48		301		1		AniZhuanchangBegin			{1: '1', 2: 'Lucia', 3: 'Commandant? Are you there?', 4: '1'}

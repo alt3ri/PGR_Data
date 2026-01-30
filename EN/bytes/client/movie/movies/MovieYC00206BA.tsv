@@ -1,0 +1,28 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory62.jpg'}
+2	1000		401							{1: '1', 2: '203'}
+3	2		201							{1: '1', 2: '1081001', 4: '-400'}
+4	3		201							{1: '2', 2: '500007', 4: '400'}
+5	101		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+6	4		301			DialogEnable				"{1: '1', 2: 'Chrome', 3: ""Kamui, what's the situation on your end?"", 4: '2'}"
+7	5		301							{2: 'Kamui', 3: 'Captain, there are no Ascendants around here, but I found a...', 4: '1'}
+8	6		301							{2: 'Kamui', 3: 'Monster with a lot of spikes... uh... it looks quite... terrifying...', 4: '1'}
+9	7		301							"{2: 'Chrome', 3: 'That\'s ""Iron Maiden."" She\'s not your main target, leave her to other squads. Don\'t do stupid things.', 4: '2'}"
+10	8		301							{2: 'Kamui', 3: 'But we already made eye contact.', 4: '1'}
+11	102		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+12	9		202							{1: '1', 2: '2', 6: '1'}
+13	10		201							{1: '1', 2: '500015'}
+14	11		301							{1: '1', 2: 'Tifa', 3: '...', 4: '1'}
+15	12		202							{1: '1', 6: '1'}
+16	13		201							{1: '1', 2: '1081001', 4: '-400'}
+17	14		201							{1: '2', 2: '500007', 4: '400'}
+18	103		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+19	15		301							{1: '1', 2: 'Chrome', 3: 'What? You... (Sighs) Hold your fort until I get there!', 4: '2'}
+20	16		301							{2: 'Kamui', 3: 'No problem, Capt!', 4: '1'}
+21	104		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+22	17		201							{1: '2', 2: '500015', 4: '400'}
+23	18		301							{1: '1', 2: 'Tifa', 3: 'A mere Construct, showing itself before me alone...', 4: '2'}
+24	19		301							"{2: 'Kamui', 3: 'Um, just passing by, here to find out about this ""Ascendant"" hot topic.', 4: '1'}"
+25	20		301							"{2: 'Tifa', 3: ""Oh? You're interested in becoming an Ascendant as well?"", 4: '2'}"
+26	21		301							"{2: 'Kamui', 3: ""Uh, not really! We're just trying to find the Ascendants and... give them a good beating!"", 4: '1'}"
+27	22		301		1		AniZhuanchangBegin			{2: 'Tifa', 3: 'Ahahaha, foolish humans...', 4: '2'}

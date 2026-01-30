@@ -1,0 +1,65 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory732.jpg'}
+2	2		401							{1: '1', 2: '203'}
+3	3		201							{1: '1', 2: '1031001'}
+4	4		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Commandant, the wounded and priority evacuees have finished boarding.', 4: '1'}
+5	5		301							{2: 'Liv', 3: 'Should we get them going immediately?', 4: '1'}
+6	6		302							"{2: ""Give me a minute. I'll go take a look."", 3: '7'}"
+7	7		202							{1: '1', 6: '1'}
+8	8		502							{1: 'DialogDisable'}
+9	9		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg', 3: '0', 4: '1', 5: '1'}
+10	10		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+11	11		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+12	12		301			DialogEnable				"{3: ""The transport craft that Vera's team brought is now filled with people. The majority are elders and children, with only a few individuals being carried on stretchers.""}"
+13	13		201							{1: '1', 2: '500660', 3: '4'}
+14	14		301							{1: '1', 2: 'Salans', 3: 'That thing stopped.', 4: '1'}
+15	15		301							{3: 'Salans points at the globular forest that almost extended to your vicinity.'}
+16	16		302							{2: 'Is everyone alright?', 3: '17'}
+17	17		301							"{2: 'Salans', 3: ""Only a few are slightly scratched. They'll be fine."", 4: '1'}"
+18	18		301							"{2: 'Salans', 3: ""Still, we've seen much worse when the tower in the Clean Zone appeared. Having scratches was like winning the lottery at that time."", 4: '1'}"
+19	19		301							{2: 'Salans', 3: 'But the waves of tremors are really unsettling.', 4: '1'}
+20	21		202							{1: '1', 6: '1'}
+21	22		301							"{3: ""You wonder if it looks akin to a tumor abruptly sprouting from the surface, as seen from Babylonia's point of view.""}"
+22	23		301							{3: 'But the true horror that it resembles can only be fully experienced when one sets foot upon this land.'}
+23	24		301							{3: 'In contrast to the Inver-Hetero Tower, seemingly an intricate craft of another realm, the globular forest strands as a manifestation of betrayal originating from the soil.'}
+24	25		301							{3: 'Not a majestic staircase crafted by divine hands but a menace standing right before your eyes, whose roots have quietly torn the land apart in fleeting moments. Even the once tranquil woods surrounding it now exude an ominous aura.'}
+25	26		301							{3: 'Fortunately, its rapid growth has been slowing down after it first materialized.'}
+26	27		301							"{3: ""With its initial expanding speed, everything in your view would've been devoured already by now.""}"
+27	28		301							{3: 'However, that uncanny vitality persists, which everyone can feel through the occasional vibrations beneath their feet.'}
+28	29		502							{1: 'DialogDisable'}
+29	30		302							{2: 'Give us a break already.', 3: '31'}
+30	31		302							{2: 'How many trips will it take to evacuate everyone in the conservation area?', 3: '32'}
+31	32		201							{1: '1', 2: '500660', 3: '4'}
+32	33		301			DialogEnable				{1: '1', 2: 'Salans', 3: 'All the wounded are aboard, and those stretchers are taking up quite some space. I think three trips would suffice... No, actually, we might just pull it off in two trips.', 4: '1'}
+33	34		302							{2: 'On which trip are you leaving?', 3: '35'}
+34	35		301							"{2: 'Salans', 3: ""I'll stick around until the very last person leaves. Don't worry, there are trustworthy people within that group. I'm honestly not so important as you might think."", 4: '1'}"
+35	36		302							{2: 'Alright, the Constructs leaving with them will help them settle down as well.', 3: '37'}
+36	37		301							"{2: 'Salans', 3: ""Okay, then I'll leave that to you guys."", 4: '1'}"
+37	38		202							{1: '1'}
+38	39		301							{3: 'Having said that, Salans firmly strides toward a group of men who appear to be preoccupied with their tasks.'}
+39	40		301							{3: 'They are trying to push down the empty houses that teeter on the brink of collapse to avoid any potential danger if another wave of tremors hits.'}
+40	41		301							"{3: 'Observing Salans as he rolls up his sleeves and joins the group, you feel a newfound respect for him as a leader growing within you, even though he claims himself to be ""not so important.""'}"
+41	42		301							{3: 'In the corner of your eye, you catch a glimpse of Lee lifting the tent curtain and waving at you. After one last gaze at the transport craft that is taking off, you hastily make your way back.'}
+42	43		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory732.jpg', 3: '0', 4: '1', 5: '0.5'}
+43	44		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+44	45		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory732.jpg'}
+45	46		201							{1: '1', 2: '500568', 4: '-400'}
+46	47		201							{1: '2', 2: '500019', 4: '400'}
+47	48		301							{1: '1', 2: 'Lee', 3: 'He found this.', 4: '1'}
+48	49		301							{3: 'The thing placed on the table is an assistance device for remote connections, an exclusive piece of equipment that belongs to Cerberus.'}
+49	50		301							{2: 'Construct', 3: 'I knew there should be something that could come in handy!', 4: '2'}
+50	51		301							"{2: 'Construct', 3: ""This channel for remote connection with Constructs is exclusive to Cerberus, and its specs are more advanced compared to the standard ones. It's worth a shot!"", 4: '2'}"
+51	52		301							"{2: 'Construct', 3: ""But I heard that their commandant is pretty much the only one who can establish a remote connection with Cerberus members. Even if we manage to make it work, there's no guarantee that..."", 4: '2'}"
+52	53		302							"{2: ""It's fine."", 3: '54'}"
+53	54		301							"{3: 'The Construct mumbles something like ""The Gray Raven Commandant is surely a legend."" His face contorts with frustration as if he is depicting the pain of building a M.I.N.D. connection with some crazy Constructs, all based on the groundless rumors he has heard.'}"
+54	55		301							{3: 'But the imaginary pain apparently has little effect on his work efficiency—he quickly finishes setting up the device.'}
+55	56		301							{3: 'Lee lets out a quiet sigh.'}
+56	57		301							"{2: 'Lee', 3: ""I'll call Liv over to get you some emergency medical supplies, just in case."", 4: '1'}"
+57	58		301							{2: 'Construct', 3: 'As far as I know, no one has ever built a remote connection with that new frame... You sure about this?', 4: '2'}
+58	59		302							{2: 'There will soon be one.', 3: '60'}
+59	60		301							"{2: 'Construct', 3: ""What I mean is, that the new frame has not been fully calibrated for remote connections. It might take you a few attempts before you reach her, and trust me, the process won't be a walk in the park. You gotta be prepared."", 4: '2'}"
+60	61		301							{3: 'From moments of strangeness to sudden startles, and even times when she is seemingly lost in her own thoughts, you have experienced the full spectrum of her emotions.'}
+61	62		301							"{3: ""It's just a change of her frame, but No. 21 is still No. 21.""}"
+62	63		301							{3: 'The most pressing matter at hand is to help them overcome the current adversity.'}
+63	64		302							"{2: ""Let's do it."", 3: '65'}"
+64	65		301		1		AniZhuanchangBegin			{3: 'You close your eyes.'}

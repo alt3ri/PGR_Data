@@ -1,0 +1,280 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory627.jpg'}
+2	2		401							{1: '1', 2: '12'}
+3	3		301			DialogEnable	AniZhuanchangBegin			{3: 'A pair of hands appears, gently cradling both you and it in its palms.'}
+4	4		502						400.0	{1: 'DialogDisable'}
+5	5		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+6	6		109			AniZhuanchangEnd				"{1: '2', 2: ""<size=60>Don't worry... I'll protect you both.</size>"", 7: '1', 8: '1'}"
+7	7		301				AniZhuanchangBegin			"{3: ""Don't worry... I'll protect you both.""}"
+8	8		110							
+9	9		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory627.jpg'}
+10	10		301			DialogEnable				"{3: ""—A girl's gentle voice echoes from somewhere.""}"
+11	11		301							"{3: ""It doesn't reach your ears from outside, but resonates from within your heart... a voice filled with both strength and sorrow.""}"
+12	12		301							{3: 'It feels like an eternal embrace, as gentle waves flow over you with their warm touch, enveloping the wounds that mark this body.'}
+13	13		301				AniZhuanchangBegin			{3: 'And so the terrifying nightmares recede with the tide.'}
+14	14		502						400.0	{1: 'DialogDisable'}
+15	15		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+16	16		109			AniZhuanchangEnd				"{1: '2', 2: ""<size=60>It's alright now... it's alright now.</size>"", 7: '1', 8: '1'}"
+17	17		301				AniZhuanchangBegin			"{3: ""It's alright now... it's alright now.""}"
+18	18		110							
+19	19		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory627.jpg'}
+20	20		301			DialogEnable				{3: 'Her voice fades in and out.'}
+21	21		301							{3: 'It gently taps out a rhythm, carrying a familiar melody that brings peaceful tranquility.'}
+22	22		301							{3: 'Is she humming a lullaby?'}
+23	23		301				AniZhuanchangBegin			{3: 'Immersed in this warm ocean, your consciousness gradually fades away...'}
+24	24		401							{1: '1', 2: '36'}
+25	25		502							{1: 'DialogDisable'}
+26	26		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+27	27		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory648.jpg'}
+28	28		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+29	29		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+30	30		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+31	31		401							{1: '1', 2: '169'}
+32	32		301			DialogEnable				{3: 'You open your eyes.'}
+33	33		301							{3: 'Harsh, cold light pierces your eyes, sending waves of dizziness through your head.'}
+34	34		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+35	35		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+36	36		401							{1: '2', 2: '1543'}
+37	37		201							{1: '1', 2: '500697', 7: '1'}
+38	38		301							{1: '1', 3: 'A figure draws closer to you upon your awakening.'}
+39	39		202							{1: '1', 6: '1'}
+40	40		201							{1: '1', 2: '500571'}
+41	41		301							{1: '1', 2: '???', 3: 'What did you see over there?', 4: '1'}
+42	42		301							"{3: ""It's an unfamiliar girl with long, light-blue hair with an enigmatic smile.""}"
+43	43		302							{2: '(on guard)', 3: '44', 4: 'Who are you?', 5: '45'}
+44	44	46	301							{3: 'Unfamiliar surroundings, unfamiliar person, hazy memories... Instinctively, you sit up and reach for the sidearm at your waist—but nothing is there.'}
+45	45	46	301							{3: 'Your memories are a complete blur, the surroundings utterly unfamiliar... Who exactly is this person before you, and what did you just experience?'}
+46	46		204							{1: '1', 2: '4'}
+47	47		301							"{2: '???', 3: ""What's wrong with you? You look like you don't even remember me."", 4: '1'}"
+48	48		301							"{3: ""She examines you with a furrowed brow, confirming that your confused state isn't an act. After checking the data on a terminal beside her, she speaks again.""}"
+49	49		204							{1: '1'}
+50	50		301							"{2: '???', 3: ""My name is Lesti. This is the Control Court of Babylonia. No need to be nervous, Gray Raven's Commandant. You're here to carry out a mission."", 4: '1'}"
+51	51		301							"{2: 'Lesti', 3: ""Though this is already the second time I've introduced myself to you..."", 4: '1'}"
+52	52		203							{1: '1', 2: '0.25', 4: '-50', 5: '-25'}
+53	53		301							{3: 'She hands you a Control Court ID card. You hesitate for a moment before taking it and examining it. The information on it matches exactly what she told you...'}
+54	54		204							{1: '1', 2: '4'}
+55	55		301				DialogDisable			"{2: 'Lesti', 3: ""You don't remember anything at all?"", 4: '1'}"
+56	56		302							{2: 'Ugh...', 3: '57', 4: 'I... how did I end up here?', 5: '58'}
+57	57		302							"{2: ""I don't even know why I'm here..."", 3: '58'}"
+58	58		301			DialogEnable				"{3: ""After a moment's hesitation, Lesti rechecks the data on her terminal.""}"
+59	59		301							"{2: 'Lesti', 3: ""To think your memory would be affected to this extent... Though it's certainly within expectations, something still feels off about this..."", 4: '1'}"
+60	60		204							{1: '1'}
+61	61		301							"{2: 'Lesti', 3: ""...Anyway, you're here to execute a mission. I am the guide, and you are the executor."", 4: '1'}"
+62	62		203							{1: '1', 2: '0.25'}
+63	63		401							{1: '2', 2: '2765'}
+64	64		301							{3: 'She begins flipping through the mission briefing beside her. Only then do you notice that she seems to be holding two copies of the document.'}
+65	65		402							{1: '2765'}
+66	66		301							{3: 'Noticing your puzzled gaze, she speaks again with a hint of resignation.'}
+67	67		301							{2: 'Lesti', 3: 'Hah... Originally, Gestalt assigned a senior colleague to guide this mission, but she seems to be busy with other matters lately, so the guidance role fell to me.', 4: '1'}
+68	68		302							{2: 'Um... who is this senior colleague?', 3: '69'}
+69	69		301							"{2: 'Lesti', 3: ""Just a troublesome senior colleague, nothing you need to worry about... After all, as your guide, I'm extremely reliable."", 4: '1'}"
+70	70		401							{1: '2', 2: '5298'}
+71	71		203						250.0	{1: '1', 2: '0.25', 4: '-50', 5: '-25'}
+72	72		203							{1: '1', 2: '0.25'}
+73	73		301							{3: 'Lesti speaks with a sweet smile while handing you the mission briefing, discreetly tucking the other copy behind her back.'}
+74	74		301							{3: 'Though her explanation seems somewhat suspicious, the mission assignment in the briefing follows standard Babylonia procedures... The only problem is that you have virtually no recollection of anything mentioned in it.'}
+75	75		302							{2: 'So, can you tell me what happened?', 3: '76'}
+76	76		204							{1: '1', 2: '4'}
+77	77		301							{2: 'Lesti', 3: 'Yes.', 4: '1'}
+78	78		301							"{3: ""Lesti's flippant smile fades away.""}"
+79	79		301							"{2: 'Lesti', 3: '...Recently, Gestalt detected signals from a Gestalt sub-terminal on the surface. This sub-terminal is cultivating a ""consciousness"" internally. If this AI consciousness becomes infected, it could lead to even greater problems.', 4: '1'}"
+80	80		301							{2: 'Lesti', 3: 'Gestalt selected you as the Executor, but during the consciousness transfer process, there seems to have been some unexpected deviation...', 4: '1'}
+81	81		301							"{2: 'Lesti', 3: ""During this process, you lost some of your memories. It seems now that you've lost not only the memories of executing the mission, but also some from even earlier..."", 4: '1'}"
+82	82		301							"{3: ""Lesti stares at the data on the monitor and begins to think, as if you're not even there.""}"
+83	83		302							{2: 'Please wait, I have a lot of questions.', 3: '84'}
+84	84		204							{1: '1'}
+85	85		301							{2: 'Lesti', 3: 'Hmm? What do you want to know?', 4: '1'}
+86	86		302							{2: 'What is a Gestalt sub-terminal?', 3: '87'}
+87	87		301							"{2: 'Lesti', 3: ""It's a Matrix center built with technology from Gestalt, but its computing power is a tier lower than that of Huaxu and Gestalt itself."", 4: '1'}"
+88	88		301							{2: 'Lesti', 3: 'The existence of this sub-terminal was only discovered recently, and we know absolutely nothing about why it exists or which organization it belongs to. That uncertainty is one reason we needed to send someone to investigate.', 4: '1'}
+89	89		302							"{2: ""Sounds like that's not the main reason?"", 3: '90'}"
+90	90		204							{1: '1', 2: '4'}
+91	91		301							"{2: 'Lesti', 3: ""You're perceptive. The main reason is that it has the potential to become a massive threat."", 4: '1'}"
+92	92		301							{2: 'Lesti', 3: 'Let me give you a simple example. Suppose an entity like Gestalt were to stand against humanity, either by being exploited or infected by the Punishing Virus...', 4: '1'}
+93	93		302							{2: 'Of course.', 3: '94'}
+94	94		301							"{2: 'Lesti', 3: ""The same principle applies here. Although I mentioned earlier that the sub-terminal's computing power is lower than the main system, it's still not something to be underestimated."", 4: '1'}"
+95	95		302							"{2: ""That's why understanding its current status is critically important."", 3: '96'}"
+96	96		204							{1: '1'}
+97	97		301							"{2: 'Lesti', 3: ""That's right."", 4: '1'}"
+98	98		301							{2: 'Lesti', 3: 'That sub-terminal has cultivated a nascent AI consciousness, which is the primary subject we need to observe.', 4: '1'}
+99	99		302							{2: '...Why was I chosen for this?', 3: '100'}
+100	100		301							"{2: 'Lesti', 3: ""As a Matrix center derived from the same source as Gestalt, it's highly likely to have a similar internal environment."", 4: '1'}"
+101	101		301				DialogDisable			{2: 'Lesti', 3: 'And you have experience immersing Gestalt to execute combat operations.', 4: '1'}
+102	102		202							{1: '1', 6: '1'}
+103	103		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+104	104		504							{1: '0.7'}
+105	105		401							{1: '2', 2: '4386'}
+106	106		101							{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading29.jpg'}
+107	107		306							{1: '1'}
+108	108		301			DialogEnable				{3: '—That happened recently.'}
+109	109		301							"{3: ""To overcome Gestalt's blockade of the engine ignition signals and save Babylonia from crashing into Earth, Gray Raven infiltrated Gestalt using the Spear of F.O.S.""}"
+110	110		301				DialogDisable			{3: 'But... something feels off about this.'}
+111	111		306							
+112	112		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+113	113		504							{1: '0'}
+114	114		401							{1: '2', 2: '4386'}
+115	115		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory648.jpg'}
+116	116		302							"{2: ""Even so, the target of this immersion is still an entity we don't fully understand, right?"", 3: '117'}"
+117	117		302							"{2: ""In other words, it's bound to have defenses set up against external intrusions."", 3: '118'}"
+118	118		201							{1: '1', 2: '500571'}
+119	119		301			DialogEnable				{1: '1', 2: 'Lesti', 3: 'Actually, before bringing you in for this immersion, we had already failed numerous times.', 4: '1'}
+120	120		301							"{2: 'Lesti', 3: ""Its intrusion detection and defense systems are extremely sensitive, which is to be expected. After all, Gestalt itself, as the original entity, has multi-layered defense mechanisms against external threats. Anyone with access to such computational resources wouldn't leave it a sitting duck."", 4: '1'}"
+121	121		301							"{2: 'Lesti', 3: 'But if we can make it recognize us as an ""internal entity,"" everything changes. No system actively counters what it perceives as part of itself.', 4: '1'}"
+122	122		302							{2: 'An internal entity?', 3: '123'}
+123	123		301							"{2: 'Lesti', 3: 'To put it simply, with the Science Council\'s assistance, we discovered a consciousness ""shell"" inside the sub-terminal.', 4: '1'}"
+124	124		302							{2: 'Empty shell?', 3: '125'}
+125	125		204							{1: '1', 2: '4'}
+126	126		301							{3: 'Lesti furrows her brow, considering how to organize her thoughts for the explanation ahead.'}
+127	127		301							"{2: 'Lesti', 3: ""Most AI consciousnesses are merely created by humans to solve problems in specific domains. While they possess problem-solving capabilities, they're ultimately just machines executing instructions."", 4: '1'}"
+128	128		301							{2: 'Lesti', 3: 'They have no personality of their own, no desires, and are incapable of taking any initiative.', 4: '1'}
+129	129		301							{2: 'Lesti', 3: 'Up to this point, they can only be classified as machines—tools that follow orders and serve humans, without the ability to host human consciousness.', 4: '1'}
+130	130		301							"{2: 'Lesti', 3: ""But this entity is different. It's a model generated from human consciousness samples, with high compatibility with humans."", 4: '1'}"
+131	131		301							"{2: 'Lesti', 3: 'Coincidentally, although it was created from humans, it lost all personality due to ""overfitting.""', 4: '1'}"
+132	132		301							"{2: 'Lesti', 3: ""To put it simply, it's an empty shell missing a soul."", 4: '1'}"
+133	133		302							{2: '...'}
+134	134		301							"{2: 'Lesti', 3: ""Using the Spear of F.O.S., you connected to that entity and became the soul filling that empty shell. This way, your immersion wouldn't be interrupted."", 4: '1'}"
+135	135		302							"{2: ""Actually... it wasn't completely uninterrupted, was it?"", 3: '136'}"
+136	136		301							{2: 'Lesti', 3: 'Yeah...', 4: '1'}
+137	137		301							{3: 'Lesti shakes her head dejectedly.'}
+138	138		301							{2: 'Lesti', 3: 'Because even though we entrusted you with the immersion mission and you successfully entered the system, you ended up with virtually no memory of what happened there.', 4: '1'}
+139	139		301							{2: 'Lesti', 3: 'You even lost the memory of my mission briefing from before the immersion.', 4: '1'}
+140	140		302							{2: 'Have you figured out why?', 3: '141'}
+141	141		301				DialogDisable			"{2: 'Lesti', 3: ""It's still unclear, but not unexpected. After all, a Matrix facility wouldn't easily accept an external signal—there must be invisible barriers we couldn't detect."", 4: '1'}"
+142	142		302							{2: 'I have another question...', 3: '143'}
+143	143		302							"{2: 'Why was Gestalt able to make such precise judgments about that ""empty shell""?', 3: '144'}"
+144	144		302							"{2: ""Even though the first immersion wasn't successful, it already understood the internal situation so well..."", 3: '145'}"
+145	145		301			DialogEnable				"{2: 'Lesti', 3: ""That's definitely puzzling, but... actually, it's not just that..."", 4: '1'}"
+146	146		301							"{2: 'Lesti', 3: ""The request to detect the sub-terminal also came from Gestalt. As for why it suddenly captured the sub-terminal's signal... Gestalt's explanation was that it tracked technology from the same source."", 4: '1'}"
+147	147		301							{2: 'Lesti', 3: 'I have to admit, this explanation is reasonable enough. It could even explain why Gestalt understands that empty shell so well, but...', 4: '1'}
+148	148		301							"{2: 'Lesti', 3: ""I can't shake the feeling that there are other factors at play..."", 4: '1'}"
+149	149		301							{3: 'She ponders for a moment before dejectedly giving up on the thought.'}
+150	150		301							{2: 'Lesti', 3: 'Since this involves secret infiltration of an unknown force, and the existence of the Gestalt sub-terminal would likely cause panic among many people in Babylonia, this mission has an extremely high level of confidentiality.', 4: '1'}
+151	151		301							"{2: 'Lesti', 3: ""Commandant of Gray Raven, the fewer people who know about this, the better... With your recent memory loss, I would've been within my rights to withhold the details of this mission from you entirely."", 4: '1'}"
+152	152		302							{2: 'But you still explained it to me.', 3: '153'}
+153	153		204							{1: '1'}
+154	154		301							"{2: 'Lesti', 3: ""Because I'll need you to continue the immersion process later. If you knew nothing, I'd have to explain everything again next time, and that would be too much trouble."", 4: '1'}"
+155	155		203							{1: '1', 2: '0.25', 4: '10', 5: '-25'}
+156	156		401							{1: '2', 2: '1543'}
+157	157		301							{3: 'Lesti stretches, letting out a long, exaggerated yawn.'}
+158	158		301							{2: 'Lesti', 3: 'Anyway, the situation with that sub-terminal still needs further observation.', 4: '1'}
+159	159		301				AniZhuanchangBegin			"{2: 'Lesti', 3: ""I hope this memory loss is just a one-time occurrence... Next time you immerse, hopefully you'll bring back some substantial results."", 4: '1'}"
+160	160		202							{1: '1', 6: '1'}
+161	161		401							{1: '1', 2: '36'}
+162	162		502						400.0	{1: 'DialogDisable'}
+163	163		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading29.jpg'}
+164	164		401							{1: '1', 2: '381'}
+165	165		301			DialogEnable				"{3: ""As Babylonia's supreme governing AI, Gestalt has implemented a blockade to its core that can only be described as draconian.""}"
+166	166		401							{1: '2', 2: '2689'}
+167	167		301							{3: 'A pink-haired woman stands impassively before the massive mechanical behemoth.'}
+168	168		301							{2: 'Gestalt', 3: 'All information regarding the Matrix has been fully transmitted.'}
+169	169		301							{2: 'Gestalt', 3: 'But since you have access to it, why not continue observing?'}
+170	170		201							{1: '1', 2: '500380', 4: '-400'}
+171	171		301							"{1: '1', 2: 'Ishmael', 3: ""Because I don't want to interfere with their development."", 4: '1'}"
+172	172		301							"{2: 'Ishmael', 3: ""I'm also surprised... that you approved the request to let the Gray Raven Commandant take over observation duties."", 4: '1'}"
+173	173		301							"{2: 'Gestalt', 3: ""After analysis, this decision does not violate Gestalt's primary directive.""}"
+174	174		301							{2: 'Gestalt', 3: 'Furthermore, this unit requires more data to enhance its understanding of different technologies, and currently, there is no surplus computing power available to aid in infiltrating this sub-terminal.'}
+175	175		301							{2: 'Gestalt', 3: 'Relying on humans conserves computing power while still allowing us to gather technical intelligence from the sub-terminal.'}
+176	176		204							{1: '1', 2: '3'}
+177	177		301							{2: 'Ishmael', 3: 'Ohh...', 4: '1'}
+178	178		204							{1: '1'}
+179	179		301							"{2: 'Ishmael', 3: ""Then, as payment for providing this intelligence... please allow me to also await news of that child's development."", 4: '1'}"
+180	180		202							{1: '1'}
+181	181		301				AniZhuanchangBegin			{3: 'As silently as she appeared, the pink-haired woman once again vanishes from the heavily fortified chamber.'}
+182	182		401							{1: '1', 2: '36'}
+183	183		502						400.0	{1: 'DialogDisable'}
+184	184		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1211.jpg'}
+185	185		401							{1: '1', 2: '5061'}
+186	186		201							{1: '1', 2: '501191', 3: '1'}
+187	187		301			DialogEnable				{1: '1', 2: 'Yui', 3: 'Teacher.', 4: '1'}
+188	188		202							{1: '1'}
+189	189		401							{1: '2', 2: '2704'}
+190	190		301							{3: 'In the fluorescent chrysanthemum garden of Gestrig, Martha once again encounters the girl in a lab coat.'}
+191	191		301							{3: 'As always, she keeps her gaze lowered, her eyes in the twilight revealing no emotion whatsoever.'}
+192	192		301							{3: 'Whether it is her imagination or not, that once-fragile, pallid face seems to have gained a hint of color today.'}
+193	193		201							{1: '1', 2: '501193', 3: '3', 7: '1'}
+194	194		301							"{1: '1', 3: ""Hearing that respectful form of address, Martha waves her hand dismissively, signaling that the formal greeting isn't necessary.""}"
+195	195		204							{1: '1', 2: '8'}
+196	196		301							"{2: 'Martha', 3: ""I haven't been a teacher since Herta's class graduated. Gestrig won't be taking any new students."", 4: '1'}"
+197	197		202							{1: '1'}
+198	198		301							"{3: ""She's grown weary of it all.""}"
+199	199		301							{3: 'Weary of the endless cycle—taking in homeless orphans under the guise of education, molding their minds, only to ultimately feed them into the corporate furnace as kindling.'}
+200	200		301							{3: 'After her last encounter with Yui, she applied for retirement with the company.'}
+201	201		201							{1: '1', 2: '501191', 3: '8'}
+202	202		301							{1: '1', 2: 'Yui', 3: 'But your teachings remain forever engraved in my heart.', 4: '1'}
+203	203		301							{3: 'Something seems to be troubling her.'}
+204	204		301							"{3: ""Martha immediately notices this but doesn't respond, instead waiting in silence for Yui to continue.""}"
+205	205		204							{1: '1'}
+206	206		301							{2: 'Yui', 3: 'Knowledge and reason are powerful forces that help us conquer fear, dispel ignorance, and guide us forward.', 4: '1'}
+207	207		203							{1: '1', 2: '0.25', 3: '400'}
+208	208		201							{1: '2', 2: '501193', 4: '-400'}
+209	209		301							{1: '1', 2: 'Martha', 3: 'I was merely quoting famous sayings from Golden Age scholars. All I did was bring you a few books back then.', 4: '2'}
+210	210		301							{2: 'Yui', 3: 'They proved true—those teachings helped a frightened girl like me grow into who I am today.', 4: '1'}
+211	211		301							"{2: 'Martha', 3: ""Haven't you always done well for yourself?"", 4: '2'}"
+212	212		301							"{2: 'Yui', 3: ""I'm not sure. I think I might have done something foolish."", 4: '1'}"
+213	213		301							{3: 'A look of bewilderment flashes through her typically emotionless eyes.'}
+214	214		301							"{2: 'Yui', 3: 'I gave up my chance to go to headquarters, all to salvage a so-called ""experimental result.""', 4: '1'}"
+215	215		301							{3: 'Her eyebrows furrow almost imperceptibly as her face takes on a troubled expression.'}
+216	216		301							"{2: 'Martha', 3: ""It sounds like there's more to this story than just some experiment."", 4: '2'}"
+217	217		301							{3: 'Martha studies her with keen interest.'}
+218	218		301							{2: 'Yui', 3: 'It is special, but the company executive happened to be present that day, which was crucial for Matrix 141—it would determine whether we could share computing power with another Matrix.', 4: '1'}
+219	219		301							{2: 'Yui', 3: 'Furthermore, there was no evidence suggesting I had more than a 50% chance of persuading the executive. In reality, it was probably less than 10%.', 4: '1'}
+220	220		301							{2: 'Yui', 3: 'To sacrifice potentially enormous benefits for something almost impossible... Taking all factors into account, I was wrong.', 4: '1'}
+221	221		301							"{2: 'Martha', 3: ""Do you think you shouldn't have saved it?"", 4: '2'}"
+222	222		301							{2: 'Yui', 3: 'No, I absolutely had to save it.', 4: '1'}
+223	223		301							"{3: ""Seeing Yui's determined expression, Martha can't help but smile.""}"
+224	224		301							"{2: 'Martha', 3: ""Then what's troubling you so much?"", 4: '2'}"
+225	225		301							{3: 'Yui sighs softly.'}
+226	226		204							{1: '1', 2: '8'}
+227	227		301							{2: 'Yui', 3: 'Because it was an action driven by emotion... That frightens me, just like when I was a child.', 4: '1'}
+228	228		204							{1: '1'}
+229	229		301							"{2: 'Yui', 3: ""I'm afraid that if I continue like this, I'll repeat the same mistakes."", 4: '1'}"
+230	230		204							{1: '2', 2: '8'}
+231	231		301							{3: 'Martha waves her hand dismissively.'}
+232	232		204							{1: '2'}
+233	233		301							{2: 'Martha', 3: 'Always judging yourself by rational principles will only make you suffer.', 4: '2'}
+234	234		301							"{2: 'Martha', 3: ""From my perspective, your willingness to step out of that prison of equations and programs isn't a bad thing at all."", 4: '2'}"
+235	235		301							{3: 'Yui tilts her head slightly, her expression still filled with confusion.'}
+236	236		301							{3: 'Instead of answering immediately, Martha crouches down to examine the pyrethrum flowers, gently pinching the petals between her fingers as she studies their growth.'}
+237	237		301							"{2: 'Martha', 3: 'I\'ve heard that in your birthplace, there was a phrase called ""Je t\'aime.""', 4: '2'}"
+238	238		301							{3: 'She speaks softly while continuing to examine the flower petals.'}
+239	239		301							"{3: ""Yui's brow furrows, as if the words have touched upon some painful memory.""}"
+240	240		301							"{2: 'Yui', 3: ""Why bring that up so suddenly? I haven't used that language since coming to Leibowitz."", 4: '1'}"
+241	241		301							"{2: 'Martha', 3: 'You should understand it—it means ""I love you.""', 4: '2'}"
+242	242		204							{1: '1', 2: '8'}
+243	243		301							{2: 'Yui', 3: 'Of course, but love makes people vulnerable.', 4: '1'}
+244	244		301							"{2: 'Martha', 3: 'They say it\'s a ""spell""?', 4: '2'}"
+245	245		301							"{2: 'Yui', 3: ""That's true, but I don't believe in such magic."", 4: '1'}"
+246	246		301							"{2: 'Martha', 3: ""It has nothing to do with faith. It's simply meant to bring people happiness."", 4: '2'}"
+247	247		204							{1: '1', 2: '1'}
+248	248		301							"{2: 'Yui', 3: ""Hah... I see. That's probably why my childhood wasn't particularly happy."", 4: '1'}"
+249	249		301							{3: 'She offers a self-deprecating smile.'}
+250	250		204							{1: '1'}
+251	251		301							"{2: 'Yui', 3: 'The people who brought me into this world and raised me never once said such an absurd ""spell"" to me.', 4: '1'}"
+252	252		301							{3: 'Yui lets out an almost imperceptible sigh and continues in a hushed voice.'}
+253	253		301							{3: 'Martha gives no answer.'}
+254	254		301							{2: 'Martha', 3: 'For many people, their mother tongue is often the best language for expressing emotions.', 4: '2'}
+255	255		301							"{2: 'Martha', 3: ""Humans are both cursed and blessed by love... We're creatures who simply cannot survive without such spells."", 4: '2'}"
+256	256		301							"{3: ""Yui's expression remains full of confusion.""}"
+257	257		301							"{2: 'Martha', 3: ""...Look at me, even in retirement I can't break this bad habit of lecturing people."", 4: '2'}"
+258	258		401							{1: '2', 2: '4095'}
+259	259		301							{3: 'Martha takes out several foil packages and hands them to Yui.'}
+260	260		301							"{2: 'Martha', 3: ""There were some bags of coffee beans in the supplies the company sent recently. Take them back to the laboratory for me. They're too bitter, and I'm not used to the taste."", 4: '2'}"
+261	261		301							{2: 'Yui', 3: 'Hmm... If even you find it unbearable, it must be quite the rare delicacy.', 4: '1'}
+262	262		301				AniZhuanchangBegin			"{2: 'Yui', 3: ""I'll consider it a diversion for the days ahead, Teacher."", 4: '1'}"
+263	263		401							{1: '1', 2: '36'}
+264	264		202							{1: '1', 2: '2'}
+265	265		502						400.0	{1: 'DialogDisable'}
+266	266		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory936.png'}
+267	267		401							{1: '1', 2: '12'}
+268	268		201							{1: '2', 2: '500058', 4: '400'}
+269	269		201							{1: '1', 2: '500050', 4: '-400'}
+270	270		301			DialogEnable				{1: '1', 2: 'Horst', 3: 'Any update?', 4: '1'}
+271	271		301							{3: 'The researchers in front of him exchange glances, all somewhat hesitant to answer.'}
+272	272		301							{2: 'Horst', 3: 'I asked how things are going.', 4: '1'}
+273	273		301							{2: 'Researcher 1', 3: 'Many of them have become mentally unstable... We have fewer and fewer usable test subjects now.', 4: '2'}
+274	274		301							{2: 'Horst', 3: 'What about the model sampling results?', 4: '1'}
+275	275		301							{2: 'Researcher 1', 3: 'Most are not promising...', 4: '2'}
+276	276		301							"{2: 'Horst', 3: ""We'll only know for sure once we run them inside mechanoids."", 4: '1'}"
+277	277		301							{2: 'Researcher 1', 3: 'But I recall Miss de Lévis mentioned that introducing consciousness into shells before they reach the awakening stage poses a high risk of them going haywire...', 4: '2'}
+278	278		301							"{2: 'Horst', 3: ""De Lévis, de Lévis, it's always de Lévis. Can't our research move forward without her?"", 4: '1'}"
+279	279		301		1		AniZhuanchangBegin			"{2: 'Horst', 3: ""The Matrix safety system isn't something to be taken lightly. Stop dawdling and let's select some samples to test."", 4: '1'}"

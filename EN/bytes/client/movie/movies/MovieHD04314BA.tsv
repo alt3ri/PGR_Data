@@ -1,0 +1,171 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '2', 2: '4295'}
+3	3		301			DialogEnable	AniZhuanchangBegin			"{3: ""Tis a morning as ordinary as any other. You're about to open your eyes like you always do...""}"
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+5	5		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory686.jpg'}
+6	6		104							{1: '150|250|-300', 2: '0'}
+7	7		401							{1: '1', 2: '36'}
+8	8		401							{1: '1', 2: '2596'}
+9	9		401							{1: '2', 2: '4432'}
+10	10		402					200.0		{1: '4432'}
+11	11		301			AniZhuanchangEnd				{3: 'When someone yanks the blindfold off your face and starts speaking in a bizarre tone.'}
+12	12		201							{1: '1', 2: '500525'}
+13	13		401							{1: '1', 2: '55'}
+14	14		301							"{1: '1', 2: 'Evil Boss', 3: 'Well, well, guess a lot of people are starting to panic now with you kidnapped, hahaha... Welcome to ""hell,"" Commandant! I\'m the evil Boss here!', 4: '1'}"
+15	15		302							{2: '...', 3: '16'}
+16	16		202							{1: '1'}
+17	17		306							{1: '1'}
+18	18		301							"{3: 'Knowing that you\'ve been ""kidnapped,"" you start assessing your surroundings.'}"
+19	19		301							"{3: ""It's still dark out, probably early morning before daybreak, with birds chirping in the sky. You believe you're probably somewhere high up, on some rooftop... Constellia, perhaps?""}"
+20	20		301							"{3: ""Seeing the windmills slowly turning in the distance, you know you're right on the money.""}"
+21	21		302							{2: '(I wonder who this person is...)', 3: '22', 4: '(When I got kidnapped before, I think it was...)', 5: '22'}
+22	22		306							
+23	23		201							{1: '1', 2: '500525', 7: '1'}
+24	24		401							{1: '2', 2: '4222'}
+25	25		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+26	26		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '3'}
+27	27		402							{1: '4295'}
+28	28		402							{1: '2596'}
+29	29		401							{1: '1', 2: '36'}
+30	30		301			PanelActor1Shake				{1: '1', 2: 'Evil Boss', 3: 'Aargh—', 4: '1'}
+31	31		401							{1: '2', 2: '4306'}
+32	32		203							{1: '1', 2: '0.2', 4: '-1080'}
+33	33		301							"{3: 'Less than a minute after the ""kidnapper"" finished their opening lines, they suddenly let out a scream. A red strip of shade flashes in from the edge of the rooftop and quickly knocks them to the ground.'}"
+34	34		201							{1: '1', 2: '500168', 4: '-400', 7: '1'}
+35	35		203							{1: '1', 2: '0.1', 3: '0'}
+36	36		301							"{1: '1', 3: ""Your kidnapper's name escapes your lips the moment you see the red strip of shade.""}"
+37	37		302							{2: 'Vera?!', 3: '38'}
+38	38		401							{1: '1', 2: '184'}
+39	39		204							{1: '1', 2: '1'}
+40	40		301							"{1: '1', 2: 'Vera', 3: 'Hello, ""Beautiful."" I hope you\'ve wrapped your head around the situation and know that I wasn\'t the one kidnapping you this time.', 4: '1'}"
+41	41		301							{3: 'Vera steps closer and removes the ropes binding your arms and legs.'}
+42	42		204						200.0	{1: '1', 2: '0'}
+43	43		203							{1: '1', 2: '0.25', 5: '-100'}
+44	44		401							{1: '2', 2: '4432'}
+45	45		402					200.0	800.0	{1: '4432'}
+46	46		203							{1: '1', 2: '0.25', 5: '0'}
+47	47		301							"{2: 'Vera', 3: ""Don't ask stupid questions. I intercepted your message yesterday—and don't ask me why I intercepted it. I came across this childish warning letter and, as much as it seemed like something a kid wrote when they were just fooling around, I thought I probably shouldn't get the Gray Ravens involved so there won't be a scene."", 4: '1'}"
+48	48		204							{1: '1', 2: '4'}
+49	49		301							"{2: 'Vera', 3: 'Last time something like this happened, remember how you ended up with three Constructs tagging along everywhere you went? Today is a special day, so I thought you deserved some ""freedom.""', 4: '1'}"
+50	50		302							{2: 'Which is why you decided to stay quiet? So you could come here to save me?', 3: '51'}
+51	51		204							{1: '1', 2: '1'}
+52	52		301							"{2: 'Vera', 3: ""Why are you staring at me like that again? Things turned out fine, right? The evil Boss is gone, and you're now free again even when yet another beautiful hasn't even started... Not to mention you're completely free this time, with no one tagging along, and you're free to go anywhere you want to."", 4: '1'}"
+53	53		302				DialogDisable			{2: 'Well... thanks?', 3: '54'}
+54	54		202							{1: '1', 6: '1'}
+55	55		104					200.0		{1: '-150|250|-300', 2: '0.3'}
+56	56		306							{1: '1'}
+57	57		401							{1: '2', 2: '8510111'}
+58	58		201							{1: '1', 2: '500354', 4: '-400'}
+59	59		201							{1: '2', 2: '500353'}
+60	60		201							{1: '3', 2: '500239', 4: '600'}
+61	61		301			DialogEnable				"{1: '1', 3: 'Vera opens her mouth ready to say something, when noises come from the edge of the rooftop. It sounds like something is trying to make their way up. A split second later, a group of ""evil henchmen"" pop their heads up and start charging this way.'}"
+62	62		301			PanelActor1Shake				"{1: '1', 2: 'Evil Henchman', 3: ""Grab those two! Don't lose them!"", 4: '1'}"
+63	63		301			PanelActor3Shake				{1: '1', 2: 'Evil Henchman', 3: 'We gotta avenge Boss!', 4: '3'}
+64	64		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+65	65		104					400.0		{1: '150|250|-300', 2: '0.2'}
+66	66		306							
+67	67		201							{1: '1', 2: '500168', 3: '1', 7: '1'}
+68	68		301							"{1: '1', 2: 'Vera', 3: ""Well, looks like you're gonna have to wait for a bit to enjoy your freedom."", 4: '1'}"
+69	69		204							{1: '1', 2: '0'}
+70	70		301							"{2: 'Vera', 3: ""Let's go and hide ourselves for now. The last thing we want to do on such a beautiful day is start a fight before the sun is even out."", 4: '1'}"
+71	71		401							{1: '2', 2: '4548'}
+72	72		402					600.0		{1: '4548'}
+73	73		401					800.0		{1: '2', 2: '4547'}
+74	74		203							{1: '1', 2: '0.2', 3: '-600'}
+75	75		202							{1: '1'}
+76	76		301				AniZhuanchangBegin			{3: 'Vera yanks the rope in her hand, quickly ties a knot around your waist, kicks open the rooftop door with one foot, and drags you down the stairs.'}
+77	77		502							{1: 'DialogDisable'}
+78	78		401							{1: '2', 2: '4300'}
+79	79		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1035.jpg'}
+80	80		306							{1: '1'}
+81	81		104				AniZhuanchangEnd			{1: '300|0|-300', 2: '0'}
+82	82		401							{1: '2', 2: '1513'}
+83	83		302							"{2: 'This way! Vera!', 3: '84', 4: ""There's an emergency exit!"", 5: '84'}"
+84	84		401							{1: '2', 2: '4044'}
+85	85		104						800.0	{1: '-500|50|-500', 2: '0.5'}
+86	86		301			DialogEnable				"{3: ""You've spotted an open emergency exit, but right before you push through the door, Vera suddenly covers your mouth and pulls you into a narrow, dark space.""}"
+87	87		302							{2: '...!', 3: '88', 4: '(Vera?)', 5: '88'}
+88	88		401							{1: '1', 2: '36'}
+89	89		201							{1: '1', 2: '500168'}
+90	90		301							{1: '1', 3: 'Vera keeps your mouth and nose covered as she kills the lights of every single component on her that gives off light.'}
+91	91		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '3'}
+92	92		401							{1: '2', 2: '2617'}
+93	93		402					200.0		{1: '2617'}
+94	94		301							"{3: ""With it, Vera's internal systems all quiet down, making the sound of breathing the only thing audible in the darkness.""}"
+95	95		401							{1: '2', 2: '8510111'}
+96	96		301							{3: 'Meanwhile, the henchmen thunder down the stairs, all oblivious to the door into the maintenance room.'}
+97	97		302							"{2: ""Vera, they're gone."", 3: '98'}"
+98	98		306							
+99	99		401							{1: '1', 2: '208'}
+100	100		301							"{2: 'Vera', 3: ""Well, I have bad news for you—I'm actually the mastermind behind this kidnapping, and you're now about to meet the Boss face to face, unfortunately."", 4: '1'}"
+101	101		302							{2: '...', 3: '102', 4: 'No way.', 5: '104'}
+102	102		204							{1: '1', 2: '1'}
+103	103	106	301							"{2: 'Vera', 3: ""Pfft, I'm just messing with you. You didn't actually believe me, did you?"", 4: '1'}"
+104	104		204							{1: '1', 2: '1'}
+105	105		301							"{2: 'Vera', 3: ""C'mon, you should have played along."", 4: '1'}"
+106	106		301							{3: 'The maintenance room is extremely cramped, forcing the two of you to be right up against each other physically.'}
+107	107		401							{1: '2', 2: '5139'}
+108	108		402					800.0		{1: '5139'}
+109	109		301							"{3: ""Holding Vera's hand, you can feel a comforting warmth coming through her bionic skin. It feels no different from that of a human.""}"
+110	110		204							{1: '1', 2: '1'}
+111	111		301							"{2: 'Vera', 3: ""...Alright, time to go. It's safe now and you're free."", 4: '1'}"
+112	112		301							{3: 'You, however, make no movement.'}
+113	113		204							{1: '1', 2: '10'}
+114	114		301							{2: 'Vera', 3: 'Well?', 4: '1'}
+115	115		302							{2: 'Do you have any plans for today, Vera?', 3: '116'}
+116	116		301							"{2: 'Vera', 3: ""None of your business. I'm under no obligation to share my schedule with you."", 4: '1'}"
+117	117		302							"{2: ""The sun hasn't risen yet outside."", 3: '118'}"
+118	118		302							"{2: ""Perfect timing, isn't it?"", 3: '119', 4: 'I want to watch the sunrise with you.', 5: '119'}"
+119	119		204							{1: '1', 2: '0'}
+120	120		301							{2: 'Vera', 3: 'Nah.', 4: '1'}
+121	121		202							{1: '1', 6: '1'}
+122	122		401							{1: '2', 2: '2701'}
+123	123		104							{1: '0|0|-500', 2: '0.5'}
+124	124		205					200.0		{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '0', 5: '3'}
+125	125		301							{3: 'She clicks her tongue as she opens the door. With a creak from the door, she pushes you out.'}
+126	126		401							{1: '2', 2: '4044'}
+127	127		104						100.0	{1: '0|50|-550', 2: '0.3'}
+128	128		104						1000.0	{1: '0|0|-550', 2: '0.5'}
+129	129		201							{1: '1', 2: '500168'}
+130	130		301							"{1: '1', 2: 'Vera', 3: ""Just go. Go and hang out with the other Gray Ravens if you want to. I'm not about to waste time watching some stupid sunrise. What's the point? We see the sun all the time when we're out on missions, no?"", 4: '1'}"
+131	131		401							{1: '2', 2: '4548'}
+132	132		402					400.0		{1: '4548'}
+133	133		301							"{3: ""You point at the rope that's tying you and Vera together by the waist.""}"
+134	134		302							"{2: 'Well, guess we\'re ""joined at the hip"" for now.', 3: '135', 4: ""You're the one who tied this rope, you know."", 5: '135'}"
+135	135		401							{1: '2', 2: '4044'}
+136	136		203							{1: '1', 2: '0.5', 5: '-50'}
+137	137		301							{3: 'As the rope sways gently, Vera takes a small step forward in the shades.'}
+138	138		204							{1: '1', 2: '1'}
+139	139		301							"{2: 'Vera', 3: ""I did it only because I didn't want to lose you to those mechanoid wannabes, you idiot..."", 4: '1'}"
+140	140		302							{2: '(Tug on the rope gently.)', 3: '141'}
+141	141		204							{1: '1', 2: '10'}
+142	142		301							{2: 'Vera', 3: '...', 4: '1'}
+143	143		301				DialogDisable			"{2: 'Vera', 3: ""...You're such a child."", 4: '1'}"
+144	144		202							{1: '1'}
+145	145		302							{2: '...', 3: '146'}
+146	146		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '2'}
+147	147		301			DialogEnable				{3: 'The two of you make your way back to the rooftop.'}
+148	148		502							{1: 'AniZhuanchangBegin'}
+149	149		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0', 5: '0'}
+150	150		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory106.png', 4: '1'}
+151	151		104				AniZhuanchangEnd			{1: '100|-120|-250', 2: '0', 4: '1'}
+152	152		401							{1: '2', 2: '4295'}
+153	153		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab', 2: '2'}
+154	154		301							"{3: ""The sun slowly rises over the horizon, painting half the clouds with the same crimson hue as Vera's hair, while the other half of the sky still sleeps in the soothing embrace of the deep blue night.""}"
+155	155		201							{1: '1', 2: '500168'}
+156	156		301							{1: '1', 3: 'Vera sits in silence on the steps at the edge of the rooftop, gazing at the sky. The two of you are now all alone by yourselves, completely undisturbed.'}
+157	157		301							"{2: 'Vera', 3: '""...My gaze meets the azure vault... And I see the beautiful sapphire blue of the eastern sky, with clear, cool air reaching straight to the heavens.""', 4: '1'}"
+158	158		302							{2: '...Vera?', 3: '159', 4: 'What?', 5: '159'}
+159	159		204							{1: '1', 2: '1'}
+160	160		301							"{2: 'Vera', 3: ""...Never mind. Don't you think the sun looks like the yolk of a hot spring egg? A cosmic-sized, gigantic hot spring egg."", 4: '1'}"
+161	161		302							{2: '...', 3: '162', 4: 'It does, it absolutely does.', 5: '162'}
+162	162		204							{1: '1', 2: '0'}
+163	163		301							{3: 'Vera suddenly looks into your eyes as she clutches the rope between the two of you. It remains untied.'}
+164	164		301							"{2: 'Vera', 3: 'I was going to say something like... ""Our paths will cross again, in a better place.""', 4: '1'}"
+165	165		301							{2: 'Vera', 3: 'But I had a change of mind—I think we should stay tied together like this.', 4: '1'}
+166	166		302							"{2: ""You're right, we should stay tied together like this."", 3: '167', 4: 'For the entire day today!', 5: '167'}"
+167	167		204							{1: '1', 2: '1'}
+168	168		301							{3: 'Satisfied with your response, Vera throws her head back in laughter, revealing her little canines.'}
+169	169		301							"{2: 'Vera', 3: 'Unfortunately for you, though, you\'ll be stuck with me for a little while longer as we make our ""escape,"" hahaha...', 4: '1'}"
+170	170		301		1		AniZhuanchangBegin			"{2: 'Vera', 3: ""We'll walk above this city for the entire day where no one can see us! And no, you're not allowed to back out now!"", 4: '1'}"

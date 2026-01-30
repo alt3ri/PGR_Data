@@ -1,0 +1,108 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+2	2		401							{1: '1', 2: '207'}
+3	3		201							{1: '1', 2: '500038'}
+4	4		401							{1: '2', 2: '2626'}
+5	5		301			DialogEnable				{1: '1', 2: 'Nanami', 3: 'Hello...', 4: '1'}
+6	6		301							{3: 'The girl knocks gently on the half-broken door. As expected, no one answers.'}
+7	7		301							{3: 'She would occasionally find human survivors hiding behind doors, but they always screamed and ran away when they saw her—strangers are no less frightening in a world ravaged by the Punishing Virus, as human as Nanami is.'}
+8	8		301							{3: 'Still, this is the best-case scenario. More often than not, what hides behind the door are frantic Corrupted that do not hesitate to attack Nanami.'}
+9	9		301							"{2: 'Nanami', 3: ""Phew... Luckily, those strange, red-eye machines aren't here."", 4: '1'}"
+10	10		301							"{3: ""Although Nanami's body is built with the most advanced technology of the Golden Age and can repair herself, her self-repairing ability has eventually been damaged after numerous injuries.""}"
+11	11		301							{3: 'Perhaps her healing factor was only designed for everyday injuries when Nanami lived as a human. It could not sustain her constant battles with the Corrupted.'}
+12	12		301				DialogDisable			{2: 'Nanami', 3: 'Sorry to bother you...', 4: '1'}
+13	13		202							{1: '1'}
+14	14		401							{1: '2', 2: '754'}
+15	15		502							{1: 'RImgBg1DisableSlow'}
+16	16		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory6.jpg'}
+17	17		301			DialogEnable				{3: 'Nanami gently opens the broken door and enters what is more like ruins than a room.'}
+18	18		401							{1: '1', 2: '232'}
+19	19		301							{3: 'Ding! Ding-ding-ding!'}
+20	20		301							{3: 'Nanami has no idea what she has stepped on. A monitor in the room lights up, and a cheerful tune starts playing.'}
+21	21		301							"{3: '—""Little hero! Save the world!""'}"
+22	22		201							{1: '1', 2: '500038'}
+23	23		301							{1: '1', 2: 'Nanami', 3: 'This is...', 4: '1'}
+24	24		301							{3: 'Nanami picks up a controller hidden underneath rubbles and gravel. Although the case is quite damaged, it can still control the little character on the screen to explore the imaginary world within.'}
+25	25		301							"{2: 'Nanami', 3: ""You're just like Nanami... You're also facing an unfamiliar world alone. Well, let Nanami help you, then!"", 4: '1'}"
+26	26		301							{3: 'Using a game controller for the first time, Nanami slowly cheers up when she sees the character run and jump on the screen. This is the first time she feels joy since she left her parents.'}
+27	27		401							{1: '1', 2: '207'}
+28	28		204							{1: '1', 2: '1'}
+29	29		301							{2: 'Nanami', 3: 'Humans are so impressive... They created such an interesting world with just numbers and codes!', 4: '1'}
+30	30		204							{1: '1'}
+31	31		301							{2: 'Nanami', 3: 'Was this how Nanami and other mechanoids were created in the first place...? How nice would that be?', 4: '1'}
+32	32		204							{1: '1', 2: '14'}
+33	33		301							"{2: 'Nanami', 3: ""I wonder if I'll see other humans in the future... Will Nanami see more worlds they create?"", 4: '1'}"
+34	34		301							{3: 'Perhaps there are other mechanoids like Nanami in the world who will not be infected by the Punishing Virus and turn into red-eye machines. Perhaps there will be humans who can trust and become friends with Nanami...'}
+35	35		301							{3: 'Nanami pouts and considers the future... Still, she is more familiar with taking action than thinking.'}
+36	36		204							{1: '1', 2: '2'}
+37	37		301							{2: 'Nanami', 3: 'Regardless, I should try to look for them first! Right... I should also take this console with me. Begin scan!', 4: '1'}
+38	38		204							{1: '1'}
+39	39		301							{3: 'It takes Nanami less than a second to finish scanning the machine she does not know the name of.'}
+40	40		301							{2: 'Nanami', 3: 'Now, Nanami can play this game again when she finds the components needed to build the console!', 4: '1'}
+41	41		401							{1: '2', 2: '2766'}
+42	42		301							{3: 'Suddenly, Nanami claps her hands, having come up with an idea.'}
+43	43		204							{1: '1', 2: '2'}
+44	44		301							"{2: 'Nanami', 3: ""By that logic, Nanami can also build herself a new frame! That way, I won't have to fear those red-eye machines again!"", 4: '1'}"
+45	45		204							{1: '1'}
+46	46		301							{2: 'Nanami', 3: 'Nanami will be able to keep going and find new friends!', 4: '1'}
+47	47		301							{3: 'Peeking at the character in the game one last time, Nanami has another thought.'}
+48	53		301				AniZhuanchangBegin			{2: 'Nanami', 3: 'The look of this new frame... will be based on the character in this game!', 4: '1'}
+49	48		401							{1: '1', 2: '36'}
+50	49		201							{1: '1', 2: '500472', 3: '1', 4: '-400'}
+51	50		201							{1: '2', 2: '500484', 4: '400'}
+52	51		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+53	52		401							{1: '1', 2: '5'}
+54	54		301			AniZhuanchangEnd				{1: '1', 2: 'Nanami', 3: 'The game went online without us knowing!', 4: '1'}
+55	55		301							{3: 'Nanami points out the online icon above the leaderboard to Arcana.'}
+56	56		301							"{2: 'Nanami', 3: 'But who is this ""OAKES"" that just made the list?', 4: '1'}"
+57	57		301							"{2: 'Arcana', 3: 'If this ""OAKES"" isn\'t you, Sage... could they be another player?', 4: '2'}"
+58	58		301							{2: 'Nanami', 3: 'Hmm... Most likely.', 4: '1'}
+59	59		301							{2: 'Arcana', 3: 'But Zavier said this game was made in the Golden Age. Would anyone still play it now?', 4: '2'}
+60	60		301							"{2: 'Nanami', 3: ""If there are people who still play this, they're probably pretty old by now..."", 4: '1'}"
+61	61		301							"{2: 'Arcana', 3: ""Even if they exist, they couldn't possibly get online. All internet servers were disconnected after the virus outbreak, and there's no way a game server could have survived."", 4: '2'}"
+62	62		301							"{2: 'Nanami', 3: ""Weird. Not to mention that I've never been able to connect to a server before... The only possibility is that someone has set up their own private server. But no regular person can do so in this day and age."", 4: '1'}"
+63	63		301							"{2: 'Arcana', 3: ""Maybe it's not a person. Maybe they're an awakened machine."", 4: '2'}"
+64	64		401							{1: '2', 2: '941'}
+65	65		301							"{3: 'As the two speculate, ""OAKES"" has increased their ranking by a few places. That is enough to prove that the appearance of this new entry is not a bug but a real player.'}"
+66	66		204							{1: '1', 2: '7'}
+67	67		301							{2: 'Nanami', 3: 'Impressive! They may surpass Nanami soon at this pace...', 4: '1'}
+68	68		204							{1: '1', 2: '1'}
+69	69		301				DialogDisable			"{2: 'Nanami', 3: ""But since we're both online, I can just ask them who they are in the game—where else would two gamers talk?"", 4: '1'}"
+70	70		202							{1: '1', 2: '2', 6: '1'}
+71	71		401							{1: '2', 2: '1515'}
+72	72		307	1						"{1: '// Sending a chat request to ""OAKES""...'}"
+73	73		401							{1: '2', 2: '897'}
+74	74		307	1						"{1: '// Chatroom with ""OAKES"" created.'}"
+75	75		307							{2: '1'}
+76	76		301			DialogEnable				"{2: 'NANAMI', 3: '""Hello! Are you OAKES? I\'m NANAMI!""'}"
+77	77		301							{2: 'OAKES', 3: '?'}
+78	78		301							"{2: 'NANAMI', 3: '""How did you connect to the server?""'}"
+79	79		301							"{2: 'OAKES', 3: '""your the NANAMI in the first place""'}"
+80	80		301							"{2: 'NANAMI', 3: '""Indeed I am! I\'m NANAMI!""'}"
+81	81		301							"{2: 'OAKES', 3: '""your mechanoid 2""'}"
+82	82		301							"{2: 'NANAMI', 3: '""Busted! How do you know...? Are you a mechanoid too?""'}"
+83	83		301							"{2: 'OAKES', 3: '""puny humans cant score this high""'}"
+84	84		301							"{2: 'NANAMI', 3: '""That\'s not true! There are plenty of humans who are better than me.""'}"
+85	85		301							"{2: 'OAKES', 3: '""i\'ll beat u n get a higher score""'}"
+86	86		301							"{2: 'NANAMI', 3: '""Is that so? Hmph! NANAMI\'s not that easily defeated!""'}"
+87	87		301				DialogDisable			"{2: 'OAKES', 3: '""oakes will pass u n be the top player""'}"
+88	88		401							{1: '2', 2: '2566'}
+89	89		307	1						"{1: '// Chat with ""OAKES"" ended.'}"
+90	90		307							{2: '1'}
+91	91		301			DialogEnable				{3: 'After their brief conversation, all further chat requests from Nanami have been denied by Oakes.'}
+92	92		201							{1: '1', 2: '500484'}
+93	93		301							"{1: '1', 2: 'Arcana', 3: ""They do appear to be an awakened machine, but they didn't seem interested in talking to you, Sage. They were more focused on being the first on the leaderboard."", 4: '1'}"
+94	94		301							{3: 'Arcana encountered countless awakened machines when the Church of Machina was first established, and they all had their quirks and kinks for different reasons.'}
+95	95		301							"{3: ""Even so, this mechanoid's obsession with a video game is still beyond her understanding.""}"
+96	96		202							{1: '1', 6: '1'}
+97	97		201							{1: '1', 2: '500472', 4: '-400'}
+98	98		201							{1: '2', 2: '500484', 4: '400'}
+99	99		301							{1: '1', 2: 'Nanami', 3: 'What will you do if they really are an awakened machine, Arcana?', 4: '1'}
+100	100		301							"{2: 'Arcana', 3: ""The Church of Machina won't abandon one of our own... We'll find them and offer them your revelations as you did us."", 4: '2'}"
+101	101		301							"{3: 'Given the computing power of the ""Gray Tower"", the Church\'s massive intelligence center, it will not take them long to find the location of a terminal that is connected to the internet.'}"
+102	102		301							{2: 'Nanami', 3: 'I think everyone is busy right now...', 4: '1'}
+103	103		204							{1: '1', 2: '2'}
+104	104		301							"{2: 'Nanami', 3: ""Then, Arcana and Nanami will team up on this adventure! Let's find our new friend!"", 4: '1'}"
+105	105		301							{3: 'Nanami extends a hand to Arcana. A little surprised, Arcana gives a slight bow in return.'}
+106	106		204							{1: '2', 2: '1'}
+107	107		301		1		AniZhuanchangBegin			{2: 'Arcana', 3: 'Of course. Allow me to accompany you this time.', 4: '2'}

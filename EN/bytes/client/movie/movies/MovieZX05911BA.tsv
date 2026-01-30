@@ -1,0 +1,1041 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+2	2		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '5'}
+3	3		401			AniZhuanchangEnd				{1: '1', 2: '229'}
+4	4		401							{1: '2', 2: '4323'}
+5	5		201							{1: '1', 2: '501043', 4: '-400'}
+6	6		201							{1: '2', 2: '500138', 4: '400'}
+7	7		502							{1: 'DialogShake'}
+8	8		301			DialogEnable				{1: '1', 2: '??', 3: 'Damn it! Do something already!', 4: '1'}
+9	9		301							{2: '??', 3: 'Unless... unless she...', 4: '2'}
+10	10		301				AniZhuanchangBegin			"{2: '??', 3: ""I'm afraid it's... too late."", 4: '2'}"
+11	11		202							{1: '1', 2: '2', 6: '1'}
+12	12		402							{1: '4323'}
+13	13		101							{4: '5', 5: '1'}
+14	14		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+15	15		201							{1: '1', 2: '501061', 7: '1'}
+16	16		301			AniZhuanchangEnd	DialogDisable			{1: '1', 3: 'Voices echo everywhere without logic. She struggles against empty air.', 4: '1'}
+17	17		109						500.0	{1: '1', 2: '<color=#ffffffff><size=50>Regrettably, she is dead.</size></color>', 3: '-550', 4: '275', 9: '3', 11: '1'}
+18	18		109						500.0	{1: '2', 2: '<color=#ffffffff><size=40>Beyond saving.</size></color>', 3: '605', 4: '165', 9: '3', 11: '1'}
+19	19		109						400.0	"{1: '3', 2: ""<color=#ffffffff><size=45>She's gone.</size></color>"", 3: '-445', 4: '55', 9: '3', 11: '1'}"
+20	20		109						400.0	{1: '4', 2: '<color=#ffffffff><size=30>Regrettably, she is dead.</size></color>', 3: '500', 4: '-70', 9: '3', 11: '1'}
+21	21		109						400.0	{1: '5', 2: '<color=#ffffffff><size=35>Beyond saving.</size></color>', 3: '-590', 4: '-140', 9: '3', 11: '1'}
+22	22		109						250.0	"{1: '6', 2: ""<color=#ffffffff><size=50>She's gone.</size></color>"", 3: '700', 4: '-225', 9: '3', 11: '1'}"
+23	23		109						50.0	{1: '7', 2: '<color=#ffffffff><size=50>...</size></color>', 3: '-520', 4: '-340', 9: '3', 11: '1'}
+24	24		301							{3: 'Regrettably, she is dead. Beyond saving. Gone.', 4: '1'}
+25	25		110							
+26	26		202							{1: '1', 6: '1'}
+27	27		401							{1: '2', 2: '4387'}
+28	28		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+29	29		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+30	30		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '5'}
+31	31		201							{1: '1', 2: '501324', 4: '-400', 7: '1'}
+32	32		201							{1: '2', 2: '501125', 4: '400', 7: '1'}
+33	33		301			DialogEnable	DialogDisable			"{1: '1', 3: ""Why? Why can't she save anyone? The old tailor, Rosewater...""}"
+34	34		202							{1: '1', 2: '2', 6: '1'}
+35	35		401							{1: '2', 2: '4387'}
+36	36		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+37	37		201							{1: '1', 2: '500602', 4: '-450', 6: '-100'}
+38	38		203						800.0	{1: '1', 2: '1', 3: '-450'}
+39	39		201						100.0	{1: '2', 2: '501326', 4: '450', 6: '-100'}
+40	40		202							{1: '1'}
+41	41		203						800.0	{1: '2', 2: '1', 3: '450'}
+42	42		201						100.0	{1: '3', 2: '501076', 4: '-450', 6: '-100'}
+43	43		202							{1: '2'}
+44	44		203						800.0	{1: '3', 2: '1', 3: '-450'}
+45	45		201						100.0	{1: '4', 2: '501130', 6: '-100'}
+46	46		202							{1: '3'}
+47	47		203						800.0	{1: '4', 2: '1'}
+48	48		202						100.0	{1: '4'}
+49	49		301			DialogEnable				{3: 'Blatter, Isis, Lilako... and now Eleanor. All of them are gone, leaving her behind.'}
+50	50		401							{1: '2', 2: '4278'}
+51	51		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+52	52		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+53	53		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.2', 5: '0'}
+54	54		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+55	55		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory970.jpg'}
+56	56		101							{4: '5', 5: '1'}
+57	57		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+58	58		401							{1: '2', 2: '4280'}
+59	59		201							{1: '1', 2: '501061', 7: '1'}
+60	60		201							{1: '2', 2: '501061', 7: '1'}
+61	61		201							{1: '3', 2: '501061', 7: '1'}
+62	62		201							{1: '4', 2: '501061', 7: '1'}
+63	63		201							{1: '5', 2: '501061', 7: '1'}
+64	64		205							{1: '2', 3: '1', 4: '0.8', 5: '0'}
+65	65		205							{1: '3', 3: '1', 4: '0.8', 5: '0'}
+66	66		205							{1: '4', 3: '1', 4: '0.6', 5: '0'}
+67	67		205							{1: '5', 3: '1', 4: '0.6', 5: '0'}
+68	68		203							{1: '2', 2: '0.25', 3: '-200', 4: '50', 5: '-100'}
+69	69		203							{1: '3', 2: '0.25', 3: '215', 4: '-55'}
+70	70		203							{1: '4', 2: '0.25', 3: '-530', 4: '-50', 5: '50'}
+71	71		203							{1: '5', 2: '0.25', 3: '360', 4: '-35', 5: '-50'}
+72	72		301				AniZhuanchangBegin			{1: '1', 3: 'She can only stand there and listen as reality passes judgment. She wants to scream, to start over, but the pain in her head bursts again and again, like a string of lightbulbs exploding without pause.', 4: '1', 5: '2', 6: '3', 7: '4', 8: '5'}
+73	73		205							{1: '2', 3: '0.7', 4: '1', 5: '0'}
+74	74		205							{1: '3', 3: '0.7', 4: '1', 5: '0'}
+75	75		205							{1: '4', 3: '0.4', 4: '1', 5: '0'}
+76	76		205							{1: '5', 3: '0.4', 4: '1', 5: '0'}
+77	77		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '1'}
+78	78		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+79	79		402							{1: '4280'}
+80	80		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+81	81		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+82	82		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory718.jpg'}
+83	83		201							{1: '1', 2: '500012', 7: '1'}
+84	84		301			AniZhuanchangEnd				"{1: '1', 2: 'Nikola', 3: ""So there's nothing more we can do?"", 4: '1'}"
+85	85		301							"{2: 'Nikola', 3: ""We can't risk Mind Beacon contamination."", 4: '1'}"
+86	86		301				AniZhuanchangBegin			{2: 'Nikola', 3: 'Maybe assigning her to Scarab was a mistake...', 4: '1'}
+87	87		202							{1: '1', 6: '1'}
+88	88		502							{1: 'DialogDisable'}
+89	89		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory717.jpg'}
+90	90		401						2000.0	{1: '1', 2: '36'}
+91	91		401							{1: '1', 2: '201'}
+92	92		107			AniZhuanchangEnd				{1: 'Scarab Squad Lounge'}
+93	93		301							{3: 'Scarab Squad Lounge'}
+94	94		108						200.0	{1: '1'}
+95	95		201							{1: '1', 2: '500900', 4: '-200'}
+96	96		203						300.0	{1: '1', 2: '0.3'}
+97	97		401						100.0	{1: '2', 2: '4902'}
+98	98		203							{1: '1', 2: '0.25', 4: '-50'}
+99	99		301			DialogEnable				"{1: '1', 2: 'Shiva', 3: ""V, I'm telling you, Discord's not cut out for Scarab."", 4: '1'}"
+100	100		301							{3: 'Shiva storms into the Scarab lounge, pulls out a chair, and drops into it with a loud scrape.'}
+101	101		202							{1: '1'}
+102	102		301							{3: 'Yata is flipping through a comic. Valeria looks up from her terminal.'}
+103	103		201							{1: '1', 2: '500900', 5: '-50'}
+104	104		301							"{1: '1', 2: 'Shiva', 3: ""She's clearly going to get herself killed and doesn't even know it."", 4: '1'}"
+105	105		202							{1: '1', 6: '1'}
+106	106		201							{1: '1', 2: '500961'}
+107	107		301							{1: '1', 2: 'Valeria', 3: '...', 4: '1'}
+108	108		301							{2: 'Valeria', 3: 'Yata.', 4: '1'}
+109	109		203							{1: '1', 2: '0.25', 3: '-400'}
+110	110		201							{1: '2', 2: '500374', 4: '450'}
+111	111		301							{1: '1', 2: 'Yata', 3: 'Eh.', 4: '2'}
+112	112		301							"{2: 'Yata', 3: ""What am I supposed to do here? The Scarab squad's barely been formed and we're already falling apart?"", 4: '2'}"
+113	113		204							{1: '2', 2: '10'}
+114	114		301							"{2: 'Yata', 3: ""The comics I've read don't exactly cover this situation..."", 4: '2'}"
+115	115		306							{1: '1'}
+116	116		301				DialogDisable			{3: 'An emergency meeting call pulls Valeria away. Before leaving, she gives Yata a meaningful look.'}
+117	117		306							
+118	118		202						300.0	{1: '1', 2: '2', 6: '1'}
+119	119		201							{1: '1', 2: '500900', 4: '-400'}
+120	120		201							{1: '2', 2: '500374', 4: '600'}
+121	121		203							{1: '1', 2: '0.25', 3: '-500'}
+122	122		401							{1: '2', 2: '1543'}
+123	123		203						300.0	{1: '2', 2: '0.25', 3: '500'}
+124	124		301			DialogEnable				{1: '1', 3: 'Yata sits the fuming Shiva down and tosses her a can from the fridge.'}
+125	125		301							"{2: 'Shiva', 3: ""What's this? I don't drink synthetic alcohol."", 4: '1'}"
+126	126		301							{2: 'Yata', 3: 'Limited-edition mint-flavored fermented fruit electrolyte.', 4: '2'}
+127	127		401							{1: '2', 2: '5484'}
+128	128		301							"{3: ""Shiva doesn't even wait for a reply before popping the can open with a sharp crack. Yata watches, nervous, as she downs it in one go.""}"
+129	129		301							{2: 'Yata', 3: 'Alright, so... what happened between you and Discord?', 4: '2'}
+130	130		301							"{2: 'Shiva', 3: ""I told you already. She's going to get herself killed."", 4: '1'}"
+131	131		301							"{2: 'Shiva', 3: ""The Scarabs are supposed to be a safety net, a secret weapon. I can't work with someone who's rushing to throw her life away."", 4: '1'}"
+132	132		301							"{2: 'Shiva', 3: ""She acts like she's ready to be abandoned, discarded, or destroyed at any moment."", 4: '1'}"
+133	133		301							{2: 'Yata', 3: 'Yet you still forced her onto a path to survive.', 4: '2'}
+134	134		301							{2: 'Shiva', 3: '...', 4: '1'}
+135	135		301							"{2: 'Shiva', 3: ""Let me be clear. I don't think what happened out there can be repeated."", 4: '1'}"
+136	136		301							{2: 'Shiva', 3: 'She fought her way out of a swarm of Hetero-Creatures alone. Followed my orders with machine-like precision.', 4: '1'}
+137	137		301							"{2: 'Yata', 3: ""Isn't that a good thing?"", 4: '2'}"
+138	138		301							"{2: 'Shiva', 3: ""Good? She didn't show a trace of hesitation, doubt, fear, or fatigue. If I hadn't met her before, I'd think an AI had hijacked her frame."", 4: '1'}"
+139	139		301							{2: 'Shiva', 3: 'When unexpected enemies showed up, I told her to pull back. She told me the mission was to wipe them out...', 4: '1'}
+140	140		204							{1: '2', 2: '4'}
+141	141		301							"{2: 'Yata', 3: ""Wait, weren't you on a standard support and extermination job? Where did all those Hetero-Creatures come from?"", 4: '2'}"
+142	142		301							"{2: 'Shiva', 3: ""I'd like to know that myself. We barely got on the transport in time. The pilot almost left us to die in that mess."", 4: '1'}"
+143	143		204							{1: '2', 2: '10'}
+144	144		301							{3: 'Yata gives a wry smile, but Shiva keeps going before she can speak.'}
+145	145		301							"{2: 'Shiva', 3: ""Her mental state's all over the place. One moment she's like magma about to erupt, the next she's a dead, silent salt flat."", 4: '1'}"
+146	146		204							{1: '2'}
+147	147		301							"{2: 'Yata', 3: ""No way. If that were true, she would've shown signs of M.I.N.D. deviation ages ago."", 4: '2'}"
+148	148		301							{3: 'Shiva crushes the can in her hand, her expression serious.'}
+149	149		301							"{2: 'Shiva', 3: ""I've got a feeling."", 4: '1'}"
+150	150		204							{1: '2', 2: '4'}
+151	151		301							{3: 'The captain of Scarab feels the weight of the problem. This is trouble.'}
+152	152		301				AniZhuanchangBegin			"{2: 'Yata', 3: ""...I'll make sure V keeps an eye on her."", 4: '2'}"
+153	153		202							{1: '1', 2: '2', 6: '1'}
+154	154		401						2000.0	{1: '1', 2: '36'}
+155	155		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+156	156		301			AniZhuanchangEnd	AniZhuanchangBegin			"{3: ""The situation Shiva described happens again during another Scarab's mission.""}"
+157	157		401							{1: '1', 2: '6228'}
+158	158		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1174.jpg'}
+159	159		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+160	160		201							{1: '1', 2: '500627', 7: '1'}
+161	161		201							{1: '18', 2: '501040', 3: '4', 7: '1'}
+162	162		401							{1: '2', 2: '1513'}
+163	163		502							{1: 'RImgBg1Shake'}
+164	164		301			AniZhuanchangEnd			1000.0	"{1: '1', 2: 'Yata', 3: ""Hey! Discord! Get back here! We're not Gray Raven with their fancy specialized frames!"", 4: '18'}"
+165	165		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+166	166		202							{1: '1', 2: '18'}
+167	167		301							"{3: 'Yata watches Discord\'s blue silhouette disappear into the distance. She turns to Shiva, who gives her an all-too-familiar look that says, ""Told you so.""'}"
+168	168		201							{1: '1', 2: '500900', 4: '-600'}
+169	169		201							{1: '2', 2: '500961'}
+170	170		201							{1: '3', 2: '501040', 3: '4', 4: '600'}
+171	171		301							{1: '1', 2: 'Shiva', 3: 'Someone just jumped the gun.', 4: '1'}
+172	172		301							{2: 'Yata', 3: 'V, what now?', 4: '3'}
+173	173		301							{2: 'Valeria', 3: 'There are too many of them. Shiva and I will hold here. You go bring Discord back.', 4: '2'}
+174	174		301				AniZhuanchangBegin			{2: 'Valeria', 3: 'Be careful, Yata.', 4: '2'}
+175	175		202			DialogDisable				{1: '1', 2: '2', 3: '3', 6: '1'}
+176	176		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+177	177		101			AniZhuanchangEnd			200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1167.jpg'}
+178	178		401							{1: '2', 2: '4331', 3: '1'}
+179	179		104						500.0	{1: '0|0|-200', 2: '0.8'}
+180	180		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1172.jpg', 3: '0', 4: '1', 5: '0.8'}
+181	181		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1172.jpg'}
+182	182		205							{1: '999'}
+183	183		104						500.0	{1: '0|0|-200', 2: '0.8'}
+184	184		401							{1: '2', 2: '4331'}
+185	185		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1167.jpg', 3: '0', 4: '1', 5: '0.8'}
+186	186		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1167.jpg'}
+187	187		205							{1: '999'}
+188	188		104						500.0	{1: '0|0|-200', 2: '0.8'}
+189	189		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1172.jpg', 3: '0', 4: '1', 5: '0.8'}
+190	190		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1172.jpg'}
+191	191		205							{1: '999'}
+192	192		301			DialogEnable				{3: 'The landscape stretches on, repetitive and unchanging. Discord chases the enemy ahead. She must have gotten lost.'}
+193	193		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+194	194		201							{1: '1', 2: '500627'}
+195	195		301							{1: '1', 3: 'After that confusion and daze ease, Discord stops fixating on how to finish her mission. Instead, she sinks into a steady, even gloom.'}
+196	196		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.8'}
+197	197		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+198	198		111						300.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+199	199		301							{3: 'She goes under slowly, with no way to resist, like sinking inch by inch into a pit of quicksand.'}
+200	200		301							{3: 'She knows this place. She has been here before. Experiences like this are not rare, but even on the surface they are enough to make people uneasy.'}
+201	201		301				DialogDisable			{3: 'Most people ignore it and treat it as a memory fragment they forgot. Or, under the sway of mysticism, they think it is some kind of psychic experience.'}
+202	202		202							{1: '1', 6: '1'}
+203	203		205							{1: '1005', 3: '0', 4: '1', 5: '0'}
+204	204		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+205	205		401							{1: '2', 2: '895'}
+206	206		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+207	207		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+208	208		504							{1: '0.7'}
+209	209		307							{1: 'Deja vu.', 3: '55', 4: 'ff4e4eff'}
+210	210		301							{3: 'Deja vu.'}
+211	211		307							{2: '1'}
+212	212		301			DialogEnable	AniZhuanchangBegin			"{3: ""She's fought the enemies in this area more times than she can count.""}"
+213	213		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+214	214		504							{1: '0'}
+215	215		502							{1: 'RImgBg1Shake'}
+216	216		401							{1: '2', 2: '4306'}
+217	217		301			AniZhuanchangEnd				{3: 'The last active Corrupted Construct falls to the ground after her heavy strike, still muttering unclear commands.'}
+218	218		201							{1: '1', 2: '500006', 7: '1'}
+219	219		203							{1: '1', 2: '0.25', 4: '-75'}
+220	220		301			PanelActor1Shake				"{1: '1', 2: 'Corrupted Construct', 3: '""New world""... go to... ""new world""...', 4: '1'}"
+221	221		203						200.0	{1: '1', 2: '0.25', 4: '-500'}
+222	222		202							{1: '1'}
+223	223		401							{1: '2', 2: '4536'}
+224	224		401							{1: '2', 2: '4535'}
+225	225		301			RImgBg1Shake	AniZhuanchangBegin			{3: 'The Eden III colony ship, that grand deception, begins to shake. Chunks of stone and wall fall away. It seems the false structure can no longer hold together.'}
+226	226		401						2000.0	{1: '1', 2: '36'}
+227	227		401							{1: '1', 2: '6230'}
+228	228		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1162.jpg'}
+229	229		301			AniZhuanchangEnd				{3: 'Discord moves quickly through the inner chamber as the dust settles. Amid the rubble, she catches sight of a familiar golden color.'}
+230	230		201							{1: '1', 2: '500627'}
+231	231		301							{1: '1', 2: 'Discord', 3: 'What once bound you... is finally gone.', 4: '1'}
+232	232		301							{3: 'She whispers the words so quietly that only she can hear them.'}
+233	233		301							{2: 'Discord', 3: 'Target eliminated. Next, just need to get out with the intel...', 4: '1'}
+234	234		202							{1: '1', 6: '1'}
+235	235		401							{1: '2', 2: '4538'}
+236	236		301			RImgBg1Shake				{3: 'Suddenly, a massive piece of debris crashes down from above. It strikes a holographic projector midair, shattering into countless fragments.'}
+237	237		502							{1: 'DialogDisable'}
+238	238		401						200.0	{1: '2', 2: '844'}
+239	239		401							{1: '2', 2: '5793'}
+240	240		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+241	241		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+242	242		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1162.jpg', 3: '0', 4: '1', 5: '0.3'}
+243	243		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1162.jpg'}
+244	244		205							{1: '999'}
+245	245		401							{1: '2', 2: '807'}
+246	246		301			DialogEnable				"{3: ""Before she can move, a purple-black Moon Umbrella flies from behind, shielding her from the falling rubble before spinning back into its owner's hand.""}"
+247	247		201							{1: '1', 2: '500627'}
+248	248		301							{1: '1', 2: 'Discord', 3: '...!', 4: '1'}
+249	249		202							{1: '1', 6: '1'}
+250	250		201							{1: '1', 2: '501138'}
+251	251		301							"{1: '1', 2: 'Lilith', 3: ""That generation, blinded by idealism, clung to the belief that humanity's technological progress would bring a rapid rise in human morality."", 4: '1'}"
+252	252		301							"{2: 'Lilith', 3: 'But look at us, just expendable tools. I wonder if we\'ll end up erasing their precious words about ""peace and progress"" entirely.', 4: '1'}"
+253	253		306							{1: '1'}
+254	254		301							{3: 'Discord knows that mocking tone all too well. Lilith always knows more than most, yet despises the very knowledge she holds.'}
+255	255		306							
+256	256		202							{1: '1', 6: '1'}
+257	257		201							{1: '1', 2: '501118'}
+258	258		301							"{1: '1', 2: 'Lilith', 3: ""If a single shell could wipe anyone off the face of the earth, then storytelling would be pointless. I can't be killed so easily, and I don't plan on missing a good story."", 4: '1'}"
+259	259		204							{1: '1', 2: '8'}
+260	260		301							{2: 'Lilith', 3: 'But what if I could be the one to fire that shell myself...', 4: '1'}
+261	261		204							{1: '1', 2: '2'}
+262	262		301							"{2: 'Lilith', 3: ""Wouldn't that be the best thing ever?"", 4: '1'}"
+263	263		204							{1: '1', 2: '3'}
+264	264		502							{1: 'DialogShake'}
+265	265		301			RImgBg1Shake				{2: 'Lilith', 3: '<color=#ff4e4eff>HAHAHAHAHAHAHAHAHAHAHA!</color>', 4: '1'}
+266	266		301							{3: 'Lilith runs a hand over her face, laughing heartily. Every moment she lives is an announcement of her unchained freedom.'}
+267	267		202							{1: '1', 6: '1'}
+268	268		201							{1: '1', 2: '500627'}
+269	269		301				DialogDisable			{1: '1', 2: 'Discord', 3: 'Eleanor...', 4: '1'}
+270	270		202							{1: '1', 6: '1'}
+271	271		201						500.0	{1: '1', 2: '501118'}
+272	272		401							{1: '2', 2: '4278'}
+273	273		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+274	274		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+275	275		201						350.0	{1: '1', 2: '501130', 7: '1'}
+276	276		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+277	277		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+278	278		201							{1: '1', 2: '501118', 7: '1'}
+279	279		301			DialogEnable				{1: '1', 3: 'The Construct in front of her freezes at the sound of that familiar name. Her laughter stops, and she transforms in an instant into the frail, graceful, gentle lady she once was.'}
+280	280		202							{1: '1'}
+281	281		306							{1: '1'}
+282	282		301				DialogDisable			{3: 'But both of them know this is nothing more than the simplest performance in the theater of daily life.'}
+283	283		401							{1: '2', 2: '4278'}
+284	284		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+285	285		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+286	286		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5201_01.jpg'}
+287	287		104						500.0	{1: '0|-130|-50', 2: '0'}
+288	288		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+289	289		401							{1: '2', 2: '4278'}
+290	290		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+291	291		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+292	292		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+293	293		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5201_07.jpg'}
+294	294		104							{1: '0|-130|-50', 2: '0'}
+295	295		301			DialogEnable				{3: 'She has never cared about the stage or the audience.'}
+296	296		306							
+297	297		401							{1: '2', 2: '4278'}
+298	298		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+299	299		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+300	300		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1162.jpg'}
+301	301		201							{1: '1', 2: '501118', 7: '1'}
+302	302		401							{1: '2', 2: '1543'}
+303	303		301							{1: '1', 3: 'The Ascendant takes off her gloves, letting go of all formality, and slowly extends her pale hands. Mechanical joints and tightly interlocked gears are visible beneath the skin.'}
+304	304		301							"{2: 'Lilith', 3: ""So, will you stand by my side for Eleanor's sake?"", 4: '1', 18: '100011593'}"
+305	305		202							{1: '1', 6: '1'}
+306	306		401							{1: '2', 2: '4280'}
+307	307		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+308	308		201							{1: '1', 2: '500627', 7: '1'}
+309	309		301			PanelActor1Shake	DialogDisable		1000.0	{1: '1', 3: 'Discord holds back a shiver. Her breathing grows heavy.'}
+310	310		401							{1: '2', 2: '4278'}
+311	311		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+312	312		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+313	313		202							{1: '1', 6: '1'}
+314	314		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+315	315		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+316	316		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '7'}
+317	317		205							{1: '1001', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory514.jpg', 3: '0', 4: '0.5', 5: '0'}
+318	318		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgStory/BgStory759.jpg', 3: '0', 4: '0.5', 5: '0'}
+319	319		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1159.jpg', 3: '0', 4: '0.5', 5: '0'}
+320	320		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory894.jpg', 3: '0', 4: '0.5', 5: '0'}
+321	321		205							{1: '1006', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1303.jpg', 3: '0', 4: '0.5', 5: '0'}
+322	322		104							{1: '-50|0|-20', 2: '0', 4: '3'}
+323	323		104							{1: '50|-10|-10', 2: '0', 4: '4'}
+324	324		104							{1: '0|30|-5', 2: '0', 4: '5'}
+325	325		104						500.0	{1: '10|-50|-20', 2: '0', 4: '6'}
+326	326		401							{1: '2', 2: '5833'}
+327	327		111						50.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieCai.prefab'}
+328	328		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+329	329		101							{4: '7', 5: '1'}
+330	330		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+331	331		205							{1: '1001', 3: '0', 4: '1', 5: '0'}
+332	332		205							{1: '1003', 3: '0', 4: '1', 5: '0'}
+333	333		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+334	334		205							{1: '1005', 3: '0', 4: '1', 5: '0'}
+335	335		205							{1: '1006', 3: '0', 4: '1', 5: '0'}
+336	336		104							{1: '0|0|0', 2: '0', 4: '3'}
+337	337		104							{1: '0|0|0', 2: '0', 4: '4'}
+338	338		104							{1: '0|0|0', 2: '0', 4: '5'}
+339	339		104						1000.0	{1: '0|0|0', 2: '0', 4: '6'}
+340	340		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieCai.prefab'}
+341	341		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+342	342		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory928.png'}
+343	343		401							{1: '2', 2: '4538'}
+344	344		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab', 2: '1'}
+345	345		502							{1: 'DialogEnable'}
+346	346		301			RImgBg1Shake				{3: 'She thought the answer would come without hesitation, but her thoughts feel like they are being hacked apart by a pair of massive, razor-sharp scissors. Pieces are torn away and tossed onto a scrap heap.'}
+347	347		401							{1: '2', 2: '4278'}
+348	348		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+349	349		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+350	350		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab'}
+351	351		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1162.jpg'}
+352	352		201							{1: '1', 2: '501118', 3: '2', 7: '1'}
+353	353		301				DialogDisable			"{1: '1', 2: 'Lilith', 3: ""Wouldn't it be nice to just be my assistant forever? You never have to think again. Wouldn't that be nice?"", 4: '1', 18: '100011594'}"
+354	354		202							{1: '1', 6: '1'}
+355	355		401							{1: '2', 2: '4387'}
+356	356		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+357	357		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+358	358		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+359	359		109							{1: '21', 2: '<color=#ffffffff><size=70>Sorrow?</size></color>', 3: '-600', 4: '100', 9: '1'}
+360	360		112						150.0	{1: '21', 2: '0.25', 3: '0|100'}
+361	361		109							{1: '22', 2: '<color=#ffffffff><size=70>Grief?</size></color>', 3: '600', 4: '100', 9: '1'}
+362	362		112						150.0	{1: '22', 2: '0.25', 3: '0|100'}
+363	363		109							{1: '23', 2: '<color=#ffffffff><size=70>Guilt?</size></color>', 3: '-600', 4: '100', 9: '1'}
+364	364		112						150.0	{1: '23', 2: '0.25', 3: '0|100'}
+365	365		109							{1: '24', 2: '<color=#ffffffff><size=70>Resentment?</size></color>', 3: '600', 4: '100', 9: '1'}
+366	366		112						150.0	{1: '24', 2: '0.25', 3: '0|100'}
+367	367		109							{1: '25', 2: '<color=#ffffffff><size=70>Despair?</size></color>', 3: '-600', 4: '100', 9: '1'}
+368	368		112						150.0	{1: '25', 2: '0.25', 3: '0|100'}
+369	369		109							{1: '26', 2: '<color=#ffffffff><size=70>Anger?</size></color>', 3: '600', 4: '100', 9: '1'}
+370	370		112						150.0	{1: '26', 2: '0.25', 3: '0|100'}
+371	371		109							{1: '27', 2: '<color=#ffffffff><size=70>Disappointment?</size></color>', 3: '-600', 4: '100', 9: '1'}
+372	372		112						150.0	{1: '27', 2: '0.25', 3: '0|100'}
+373	373		109							{1: '28', 2: '<color=#ffffffff><size=70>Confrontation?</size></color>', 3: '600', 4: '100', 9: '1'}
+374	374		112						150.0	{1: '28', 2: '0.25', 3: '0|100'}
+375	375		109							{1: '29', 2: '<color=#ffffffff><size=70>Confusion?</size></color>', 3: '-600', 4: '100', 9: '1'}
+376	376		112						150.0	{1: '29', 2: '0.25', 3: '0|100'}
+377	377		109							{1: '30', 2: '<color=#ffffffff><size=70>Hope?</size></color>', 3: '600', 4: '100', 9: '1'}
+378	378		112						150.0	{1: '30', 2: '0.25', 3: '0|100'}
+379	379		109							{1: '31', 2: '<color=#ffffffff><size=70>Severance?</size></color>', 3: '-600', 4: '100', 9: '1'}
+380	380		112						300.0	{1: '31', 2: '0.25', 3: '0|100'}
+381	381		109							{1: '32', 2: '<color=#ffffffff><size=70>Choice?</size></color>', 4: '100', 9: '1'}
+382	382		401							{1: '2', 2: '4388'}
+383	383		112							{1: '21', 2: '0.25', 3: '0|370'}
+384	384		112							{1: '22', 2: '0.25', 3: '-384|28'}
+385	385		112							{1: '23', 2: '0.25', 3: '363|60'}
+386	386		112							{1: '24', 2: '0.25', 3: '-72|-374'}
+387	387		112							{1: '25', 2: '0.25', 3: '-390|-256'}
+388	388		112							{1: '26', 2: '0.25', 3: '425|-290'}
+389	389		112							{1: '27', 2: '0.25', 3: '-590|265'}
+390	390		112							{1: '28', 2: '0.25', 3: '600|260'}
+391	391		112							{1: '29', 2: '0.25', 3: '-685|-90'}
+392	392		112							{1: '30', 2: '0.25', 3: '645|-100'}
+393	393		112							{1: '31', 2: '0.25', 3: '180|-160'}
+394	394		301							{3: 'Sorrow? Grief? Guilt? Resentment? Despair? Anger? Disappointment? Confrontation? Confusion? Hope? Severance?\\nChoice?'}
+395	395		109						500.0	{1: '32', 2: '<color=#ffffffff><size=70><s>Choice?</s></size></color>', 4: '100', 9: '1'}
+396	396		110						500.0	{1: '32'}
+397	397		109							{1: '32', 2: '<color=#ffffffff><size=70>Choice?</size></color>', 4: '100', 9: '1', 11: '1'}
+398	398		301							{3: 'Choice?'}
+399	399		109						500.0	{1: '32', 2: '<color=#ffffffff><size=70><s>Choice?</s></size></color>', 4: '100', 9: '1'}
+400	400		110						500.0	{1: '32'}
+401	401		109							{1: '32', 2: '<color=#ff4e4eff><size=70>Choice?</size></color>', 4: '100', 9: '1', 11: '1'}
+402	402		301							{3: 'Choice?'}
+403	403		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+404	404		401							{1: '2', 2: '2959'}
+405	405		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+406	406		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+407	407		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+408	408		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokeRed.prefab', 2: '1'}
+409	409		109							{1: '21', 2: '<color=#ff4e4eff><size=70>Choice?</size></color>', 3: '0', 4: '370', 9: '1'}
+410	410		109							{1: '22', 2: '<color=#ff4e4eff><size=70>Choice?</size></color>', 3: '-384', 4: '28', 9: '1'}
+411	411		109							{1: '23', 2: '<color=#ff4e4eff><size=70>Choice?</size></color>', 3: '363', 4: '60', 9: '1'}
+412	412		109							{1: '24', 2: '<color=#ff4e4eff><size=70>Choice?</size></color>', 3: '-72', 4: '-374', 9: '1'}
+413	413		109							{1: '25', 2: '<color=#ff4e4eff><size=70>Choice?</size></color>', 3: '-390', 4: '-256', 9: '1'}
+414	414		109							{1: '26', 2: '<color=#ff4e4eff><size=70>Choice?</size></color>', 3: '425', 4: '-290', 9: '1'}
+415	415		109							{1: '27', 2: '<color=#ff4e4eff><size=70>Choice?</size></color>', 3: '-590', 4: '265', 9: '1'}
+416	416		109							{1: '28', 2: '<color=#ff4e4eff><size=70>Choice?</size></color>', 3: '600', 4: '260', 9: '1'}
+417	417		109							{1: '29', 2: '<color=#ff4e4eff><size=70>Choice?</size></color>', 3: '-685', 4: '-90', 9: '1'}
+418	418		109							{1: '30', 2: '<color=#ff4e4eff><size=70>Choice?</size></color>', 3: '645', 4: '-100', 9: '1'}
+419	419		109							{1: '31', 2: '<color=#ff4e4eff><size=70>Choice?</size></color>', 3: '180', 4: '-160', 9: '1'}
+420	420		109							{1: '32', 2: '<color=#ff4e4eff><size=70>Choice?</size></color>', 4: '100', 9: '1'}
+421	421		301							{3: 'Choice?'}
+422	422		401							{1: '2', 2: '2959'}
+423	423		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+424	424		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+425	425		109							{1: '21', 2: '<color=#ff4e4eff><size=70>>>CHOICE</size></color>', 3: '0', 4: '370', 9: '1'}
+426	426		109							{1: '22', 2: '<color=#ff4e4eff><size=70>>>CHOICE</size></color>', 3: '-384', 4: '28', 9: '1'}
+427	427		109							{1: '23', 2: '<color=#ff4e4eff><size=70>>>CHOICE</size></color>', 3: '363', 4: '60', 9: '1'}
+428	428		109							{1: '24', 2: '<color=#ff4e4eff><size=70>>>CHOICE</size></color>', 3: '-72', 4: '-374', 9: '1'}
+429	429		109							{1: '25', 2: '<color=#ff4e4eff><size=70>>>CHOICE</size></color>', 3: '-390', 4: '-256', 9: '1'}
+430	430		109							{1: '26', 2: '<color=#ff4e4eff><size=70>>>CHOICE</size></color>', 3: '425', 4: '-290', 9: '1'}
+431	431		109							{1: '27', 2: '<color=#ff4e4eff><size=70>>>CHOICE</size></color>', 3: '-590', 4: '265', 9: '1'}
+432	432		109							{1: '28', 2: '<color=#ff4e4eff><size=70>>>CHOICE</size></color>', 3: '600', 4: '260', 9: '1'}
+433	433		109							{1: '29', 2: '<color=#ff4e4eff><size=70>>>CHOICE</size></color>', 3: '-685', 4: '-90', 9: '1'}
+434	434		109							{1: '30', 2: '<color=#ff4e4eff><size=70>>>CHOICE</size></color>', 3: '645', 4: '-100', 9: '1'}
+435	435		109							{1: '31', 2: '<color=#ff4e4eff><size=70>>>CHOICE</size></color>', 3: '180', 4: '-160', 9: '1'}
+436	436		109						800.0	{1: '32', 2: '<color=#ff4e4eff><size=70>>>CHOICE</size></color>', 4: '100', 9: '1'}
+437	437		401							{1: '2', 2: '4297'}
+438	438		109							{1: '21', 2: '<color=#000000ff><size=70>></size></color><color=#ff4e4eff><size=70>>CHOICE</size></color>', 3: '0', 4: '370', 9: '1'}
+439	439		109							{1: '22', 2: '<color=#000000ff><size=70>></size></color><color=#ff4e4eff><size=70>>CHOICE</size></color>', 3: '-384', 4: '28', 9: '1'}
+440	440		109							{1: '23', 2: '<color=#000000ff><size=70>></size></color><color=#ff4e4eff><size=70>>CHOICE</size></color>', 3: '363', 4: '60', 9: '1'}
+441	441		109							{1: '24', 2: '<color=#000000ff><size=70>></size></color><color=#ff4e4eff><size=70>>CHOICE</size></color>', 3: '-72', 4: '-374', 9: '1'}
+442	442		109							{1: '25', 2: '<color=#000000ff><size=70>></size></color><color=#ff4e4eff><size=70>>CHOICE</size></color>', 3: '-390', 4: '-256', 9: '1'}
+443	443		109							{1: '26', 2: '<color=#000000ff><size=70>></size></color><color=#ff4e4eff><size=70>>CHOICE</size></color>', 3: '425', 4: '-290', 9: '1'}
+444	444		109							{1: '27', 2: '<color=#000000ff><size=70>></size></color><color=#ff4e4eff><size=70>>CHOICE</size></color>', 3: '-590', 4: '265', 9: '1'}
+445	445		109							{1: '28', 2: '<color=#000000ff><size=70>></size></color><color=#ff4e4eff><size=70>>CHOICE</size></color>', 3: '600', 4: '260', 9: '1'}
+446	446		109							{1: '29', 2: '<color=#000000ff><size=70>></size></color><color=#ff4e4eff><size=70>>CHOICE</size></color>', 3: '-685', 4: '-90', 9: '1'}
+447	447		109							{1: '30', 2: '<color=#000000ff><size=70>></size></color><color=#ff4e4eff><size=70>>CHOICE</size></color>', 3: '645', 4: '-100', 9: '1'}
+448	448		109							{1: '31', 2: '<color=#000000ff><size=70>></size></color><color=#ff4e4eff><size=70>>CHOICE</size></color>', 3: '180', 4: '-160', 9: '1'}
+449	449		109						500.0	{1: '32', 2: '<color=#000000ff><size=70>></size></color><color=#ff4e4eff><size=70>>CHOICE</size></color>', 4: '100', 9: '1'}
+450	450		401							{1: '2', 2: '4297'}
+451	451		109							{1: '21', 2: '<color=#000000ff><size=70>>></size></color><color=#ff4e4eff><size=70>CHOICE</size></color>', 3: '0', 4: '370', 9: '1'}
+452	452		109							{1: '22', 2: '<color=#000000ff><size=70>>></size></color><color=#ff4e4eff><size=70>CHOICE</size></color>', 3: '-384', 4: '28', 9: '1'}
+453	453		109							{1: '23', 2: '<color=#000000ff><size=70>>></size></color><color=#ff4e4eff><size=70>CHOICE</size></color>', 3: '363', 4: '60', 9: '1'}
+454	454		109							{1: '24', 2: '<color=#000000ff><size=70>>></size></color><color=#ff4e4eff><size=70>CHOICE</size></color>', 3: '-72', 4: '-374', 9: '1'}
+455	455		109							{1: '25', 2: '<color=#000000ff><size=70>>></size></color><color=#ff4e4eff><size=70>CHOICE</size></color>', 3: '-390', 4: '-256', 9: '1'}
+456	456		109							{1: '26', 2: '<color=#000000ff><size=70>>></size></color><color=#ff4e4eff><size=70>CHOICE</size></color>', 3: '425', 4: '-290', 9: '1'}
+457	457		109							{1: '27', 2: '<color=#000000ff><size=70>>></size></color><color=#ff4e4eff><size=70>CHOICE</size></color>', 3: '-590', 4: '265', 9: '1'}
+458	458		109							{1: '28', 2: '<color=#000000ff><size=70>>></size></color><color=#ff4e4eff><size=70>CHOICE</size></color>', 3: '600', 4: '260', 9: '1'}
+459	459		109							{1: '29', 2: '<color=#000000ff><size=70>>></size></color><color=#ff4e4eff><size=70>CHOICE</size></color>', 3: '-685', 4: '-90', 9: '1'}
+460	460		109							{1: '30', 2: '<color=#000000ff><size=70>>></size></color><color=#ff4e4eff><size=70>CHOICE</size></color>', 3: '645', 4: '-100', 9: '1'}
+461	461		109							{1: '31', 2: '<color=#000000ff><size=70>>></size></color><color=#ff4e4eff><size=70>CHOICE</size></color>', 3: '180', 4: '-160', 9: '1'}
+462	462		109						500.0	{1: '32', 2: '<color=#000000ff><size=70>>></size></color><color=#ff4e4eff><size=70>CHOICE</size></color>', 4: '100', 9: '1'}
+463	463		401							{1: '2', 2: '4297'}
+464	464		109							{1: '21', 2: '<color=#000000ff><size=70>>>CHOI</size></color><color=#ff4e4eff><size=70>CE</size></color>', 3: '0', 4: '370', 9: '1'}
+465	465		109							{1: '22', 2: '<color=#000000ff><size=70>>>CHOI</size></color><color=#ff4e4eff><size=70>CE</size></color>', 3: '-384', 4: '28', 9: '1'}
+466	466		109							{1: '23', 2: '<color=#000000ff><size=70>>>CHOI</size></color><color=#ff4e4eff><size=70>CE</size></color>', 3: '363', 4: '60', 9: '1'}
+467	467		109							{1: '24', 2: '<color=#000000ff><size=70>>>CHOI</size></color><color=#ff4e4eff><size=70>CE</size></color>', 3: '-72', 4: '-374', 9: '1'}
+468	468		109							{1: '25', 2: '<color=#000000ff><size=70>>>CHOI</size></color><color=#ff4e4eff><size=70>CE</size></color>', 3: '-390', 4: '-256', 9: '1'}
+469	469		109							{1: '26', 2: '<color=#000000ff><size=70>>>CHOI</size></color><color=#ff4e4eff><size=70>CE</size></color>', 3: '425', 4: '-290', 9: '1'}
+470	470		109							{1: '27', 2: '<color=#000000ff><size=70>>>CHOI</size></color><color=#ff4e4eff><size=70>CE</size></color>', 3: '-590', 4: '265', 9: '1'}
+471	471		109							{1: '28', 2: '<color=#000000ff><size=70>>>CHOI</size></color><color=#ff4e4eff><size=70>CE</size></color>', 3: '600', 4: '260', 9: '1'}
+472	472		109							{1: '29', 2: '<color=#000000ff><size=70>>>CHOI</size></color><color=#ff4e4eff><size=70>CE</size></color>', 3: '-685', 4: '-90', 9: '1'}
+473	473		109							{1: '30', 2: '<color=#000000ff><size=70>>>CHOI</size></color><color=#ff4e4eff><size=70>CE</size></color>', 3: '645', 4: '-100', 9: '1'}
+474	474		109							{1: '31', 2: '<color=#000000ff><size=70>>>CHOI</size></color><color=#ff4e4eff><size=70>CE</size></color>', 3: '180', 4: '-160', 9: '1'}
+475	475		109						500.0	{1: '32', 2: '<color=#000000ff><size=70>>>CHOI</size></color><color=#ff4e4eff><size=70>CE</size></color>', 4: '100', 9: '1'}
+476	476		401							{1: '2', 2: '4297'}
+477	477		110						500.0	
+478	478		401							{1: '2', 2: '4387'}
+479	479		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokeRed.prefab'}
+480	480		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+481	481		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+482	482		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_39.jpg'}
+483	483		301			DialogEnable				"{3: ""Countless feelings rush past her all at once, leaving behind a messy knot of emptiness she can't untangle.""}"
+484	484		301							"{3: ""Because of that, she can't speak. Even her face stays frozen.""}"
+485	485		401							{1: '2', 2: '4387'}
+486	486		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+487	487		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1162.jpg'}
+488	488		301							"{3: ""Night settles deeper, and Eden's artificial sky reflects the fading dusk perfectly. One figure steps toward the other, arms opening slowly, as if to offer an embrace.""}"
+489	489		201							{1: '1', 2: '501118', 4: '-400'}
+490	490		201							{1: '2', 2: '500627', 4: '400'}
+491	491		301							"{1: '1', 2: 'Lilith', 3: ""I thought it didn't matter whether we were allies, enemies, or anything in between... but now, forget it."", 4: '1'}"
+492	492		301							{2: 'Discord', 3: 'Yes. We already... said goodbye.', 4: '2'}
+493	493		301							{2: 'Lilith', 3: 'You could have just stopped thinking and followed me.', 4: '1'}
+494	494		301							{2: 'Lilith', 3: 'Plants and insects follow the light and the moon... People do that too.', 4: '1'}
+495	495		301							"{2: 'Lilith', 3: ""Without orders, you don't know how to act."", 4: '1'}"
+496	496		301			DialogShake				"{2: 'Discord', 3: ""No! That's not true! I've been looking for you, Eleanor. No one ordered me to."", 4: '2'}"
+497	497		301							"{2: 'Lilith', 3: ""You just don't want to face your weak heart alone again."", 4: '1'}"
+498	498		202							{1: '1', 2: '2', 6: '1'}
+499	499		401							{1: '2', 2: '4278'}
+500	500		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+501	501		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+502	502		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1067.jpg'}
+503	503		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '5'}
+504	504		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.5', 5: '0'}
+505	505		301							{3: 'Weak heart... Red flowers bloom where she was wounded, whispering to her quietly.'}
+506	506		201							{1: '1', 2: '501057'}
+507	507		301							{1: '1', 2: '??', 3: '<color=#ff4e4eff>Is that how it is?</color>', 4: '1'}
+508	508		202							{1: '1', 6: '1'}
+509	509		401							{1: '2', 2: '4278'}
+510	510		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+511	511		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+512	512		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1162.jpg'}
+513	513		101							{4: '5', 5: '1'}
+514	514		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+515	515		201							{1: '1', 2: '500627', 7: '1'}
+516	516		301							{1: '1', 2: 'Discord', 3: '...', 4: '1'}
+517	517		301							"{2: 'Discord', 3: ""I followed my heart once. That's why I chose to go with you."", 4: '1'}"
+518	518		301							{2: 'Discord', 3: 'You led me out of the abyss and darkness when I was just a child...', 4: '1'}
+519	519		202							{1: '1'}
+520	520		301							{3: 'Her vision clears as she speaks, the words lifting a burden she has carried for years.'}
+521	521		401							{1: '2', 2: '4278'}
+522	522		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+523	523		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+524	524		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1067.jpg'}
+525	525		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '5'}
+526	526		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.5', 5: '0'}
+527	527		201							{1: '1', 2: '501057', 7: '1'}
+528	528		301							"{1: '1', 2: '??', 3: ""<color=#ff4e4eff>Even you don't know what truly drives this body.</color>"", 4: '1'}"
+529	529		301							"{2: '??', 3: ""<color=#ff4e4eff>You've gotten so used to taking orders from others that you never realized you've been following your own will all along.</color>"", 4: '1'}"
+530	530		202							{1: '1', 6: '1'}
+531	531		401							{1: '2', 2: '4278'}
+532	532		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+533	533		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+534	534		101							{4: '5', 5: '1'}
+535	535		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1162.jpg'}
+536	536		201							{1: '1', 2: '501118', 3: '8', 4: '-400', 7: '1'}
+537	537		201							{1: '2', 2: '500627', 4: '400', 7: '1'}
+538	538		301							"{1: '1', 2: 'Lilith', 3: ""You'll always be an outsider, a discordant note in the main melody. Don't you see?"", 4: '1'}"
+539	539		204							{1: '1', 2: '10'}
+540	540		301							"{2: 'Lilith', 3: ""Low status, a dirty history... just another shadow agent hiding in Kurono's back alleys."", 4: '1'}"
+541	541		301							"{2: 'Lilith', 3: ""When they want someone to die, you'll just be another name on a monument. When they demand loyalty, you'll bury yourself without hesitation. Nobody truly cares how you feel."", 4: '1'}"
+542	542		301							"{2: 'Lilith', 3: ""You're nothing but a helper without a self. A stray dog with no goal and no home..."", 4: '1'}"
+543	543		301			DialogShake				{2: 'Discord', 3: 'I cared about you...!', 4: '2'}
+544	544		202							{1: '1', 2: '2', 6: '1'}
+545	545		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+546	546		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5201_05.jpg'}
+547	547		504							{1: '0.7', 2: '1001'}
+548	548		201							{1: '18', 2: '500627', 4: '-230', 5: '-140', 6: '150', 7: '1'}
+549	549		301							{1: '1', 2: 'Discord', 3: 'And you left without a word. You vanished right in front of me...', 4: '18'}
+550	550		202							{1: '18'}
+551	551		301							{3: 'She once believed that after regaining her legs, she could also give the other person the freedom to move forward.'}
+552	552		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+553	553		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1162.jpg'}
+554	554		504							{1: '0'}
+555	555		306							{1: '1'}
+556	556		201							{1: '1', 2: '501118', 3: '10', 5: '-80'}
+557	557		301							{1: '1', 3: 'Discord looks at her face. She once tried to stitch together the shape of her soul, thread by thread.'}
+558	558		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '8'}
+559	559		201							{1: '19', 2: '501118', 3: '10', 5: '-242', 6: '-500'}
+560	560		301							{1: '2', 3: 'But in those violet eyes, she has never seen her own reflection.', 4: '19'}
+561	561		306							
+562	562		101							{4: '8', 5: '1'}
+563	563		202							{1: '19', 6: '1'}
+564	564		201							{1: '1', 2: '501118', 3: '10', 4: '-400'}
+565	565		201							{1: '2', 2: '500627', 4: '400'}
+566	566		301							"{1: '1', 2: 'Discord', 3: ""I'm not a worthless stray..."", 4: '2'}"
+567	567		301							{2: 'Discord', 3: 'And I should never have been the first one you chose to throw away...!', 4: '2'}
+568	568		301							{3: 'Her outstretched hands close slowly, like the final pose of a dance.'}
+569	569		204							{1: '1', 2: '8'}
+570	570		301							{2: 'Lilith', 3: 'I see.', 4: '1'}
+571	571		204							{1: '1', 2: '2'}
+572	572		301							{2: 'Lilith', 3: 'But the peak of the world has always been so narrow, it can only hold one heel.', 4: '1'}
+573	573		401						100.0	{1: '2', 2: '2750'}
+574	574		402							{1: '6230'}
+575	575		201							{1: '1', 2: '501138', 4: '-400'}
+576	576		203							{1: '2', 2: '0.3'}
+577	577		203							{1: '1', 2: '0.3', 3: '700'}
+578	578		301							{1: '1', 3: 'Lilith walks past her and snaps her fingers.'}
+579	579		306							{1: '1'}
+580	580		203						150.0	{1: '2', 2: '0.1', 3: '-10'}
+581	581		203						150.0	{1: '2', 2: '0.1'}
+582	582		301				DialogDisable			{3: 'Discord freezes in place, held still as if under a spell.'}
+583	583		202							{1: '1', 7: '1'}
+584	584		201							{1: '1', 2: '501118', 4: '700'}
+585	585		203						200.0	{1: '1', 2: '0.25', 3: '400'}
+586	586		401							{1: '2', 2: '2593'}
+587	587		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0.3'}
+588	588		502						1200.0	{1: 'PanelActor2Shake'}
+589	589		401							{1: '2', 2: '558'}
+590	590		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+591	591		202							{1: '1', 2: '2', 6: '1'}
+592	592		504							{1: '0.7'}
+593	593		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1172.jpg'}
+594	594		201						500.0	{1: '1', 2: '500006', 7: '1'}
+595	595		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+596	596		202							{1: '1', 6: '1'}
+597	597		504							{1: '0'}
+598	598		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1162.jpg'}
+599	599		201							{1: '1', 2: '501118', 4: '400', 7: '1'}
+600	600		201							{1: '2', 2: '501061', 7: '1'}
+601	601		401							{1: '1', 2: '6207'}
+602	602		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+603	603		401							{1: '2', 2: '4306'}
+604	604		203							{1: '2', 2: '0.25', 4: '-100'}
+605	605		301			DialogEnable				{1: '1', 3: 'In the next moment, she watches the tip of the umbrella burst from her abdomen, exactly like what happened to the Construct who died before her eyes not long ago.'}
+606	606		202							{1: '1', 2: '2'}
+607	607		301							{3: 'The ending is already decided.'}
+608	608		306							
+609	609		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '3'}
+610	610		401							{1: '2', 2: '4064'}
+611	611		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+612	612		301							{3: 'When Discord finally realizes it, the grief hits her with a crushing force. Pain crashes through her M.I.N.D., alarms flood her perception systems, and darkness swallows her whole.'}
+613	613		201							{1: '1', 2: '501118', 3: '8'}
+614	614		301							{1: '1', 2: 'Lilith', 3: 'A parting gift.', 4: '1'}
+615	615		402							{1: '4064'}
+616	616		204							{1: '1', 2: '5'}
+617	617		301				DialogDisable			"{2: 'Lilith', 3: ""This is your final order: Don't come see me ever again."", 4: '1', 18: '100011598'}"
+618	618		202							{1: '1', 6: '1'}
+619	619		401							{1: '2', 2: '4548'}
+620	620		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront90.png', 3: '0', 4: '1', 5: '1.5'}
+621	621		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1.5'}
+622	622		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+623	623		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+624	624		301			DialogEnable	DialogDisable			{3: 'Threads from another presence snake in like tentacles, stitching together the broken pieces of her memories and the illusions reshaped around them.'}
+625	625		401						500.0	{1: '2', 2: '772'}
+626	626		111						250.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab'}
+627	627		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '5'}
+628	628		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1067.jpg'}
+629	629		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+630	630		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+631	631		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCommon/FxUiNewYearBackground.prefab', 2: '2'}
+632	632		301			DialogEnable				{3: 'Then the force vanishes. The stitches melt away like ice, breaking apart and scattering into a shower of crimson spider lilies.'}
+633	633		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab'}
+634	634		201							{1: '1', 2: '501057'}
+635	635		301							{1: '1', 2: '??', 3: '<color=#ff4e4eff>If only you had said these things back then.</color>', 4: '1'}
+636	636		301							"{2: '??', 3: ""<color=#ff4e4eff>Don't leave... any more regrets.</color>"", 4: '1'}"
+637	637		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+638	638		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0.8'}
+639	639		301						1500.0	{3: 'A gentle, unfamiliar voice whispers to her. The scene pulls back like a receding tide, and Discord suddenly realizes with perfect clarity that this moment is about to disappear.'}
+640	640		301				AniZhuanchangBegin			{2: '??', 3: '<color=#ff4e4eff>I hope... your next dream will be a good one.</color>', 4: '1'}
+641	641		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCommon/FxUiNewYearBackground.prefab'}
+642	642		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+643	643		101							{4: '5', 5: '1'}
+644	644		202							{1: '1', 6: '1'}
+645	645		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+646	646		301			AniZhuanchangEnd	AniZhuanchangBegin			{2: 'Valeria', 3: 'Wake up, Discord.'}
+647	647		401						2000.0	{1: '1', 2: '36'}
+648	648		401							{1: '1', 2: '120'}
+649	649		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+650	650		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+651	651		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '1'}
+652	652		401							{1: '2', 2: '4206'}
+653	653		301			AniZhuanchangEnd			1000.0	{3: 'When Discord opens her eyes, she does not see the Hydrangea Artificial Island. Instead, she sees nothing but a vast sky full of blowing sand.'}
+654	654		301							{3: 'Yata is carrying her in mechanical arms, pushing forward step by step against the strong wind toward the rendezvous point indicated by their signal.'}
+655	655		402							{1: '4206'}
+656	656		201							{1: '1', 2: '501122', 4: '-500', 8: '1'}
+657	657		201							{1: '2', 2: '501041', 3: '4', 4: '550'}
+658	658		301							{1: '1', 2: 'Discord', 3: 'I... why am I here?', 4: '1'}
+659	659		301							{2: 'Discord', 3: 'What about the mission?', 4: '1'}
+660	660		301							"{2: 'Yata', 3: ""Seriously? You're still thinking about the mission right now? How about you thank me first for dragging you out of that mess?"", 4: '2'}"
+661	661		301							"{2: 'Discord', 3: ""I'm sorry."", 4: '1'}"
+662	662		301							{2: 'Discord', 3: 'Thanks...', 4: '1'}
+663	663		204							{1: '2', 2: '6'}
+664	664		301							{2: 'Yata', 3: 'Were you dreaming just now?', 4: '2'}
+665	665		301							{2: 'Discord', 3: '...', 4: '1'}
+666	666		301							{3: 'Discord tries to remember, but her thoughts freeze in the span of a single breath.'}
+667	667		301							"{2: 'Discord', 3: ""Was it a dream? I don't really remember."", 4: '1'}"
+668	668		204							{1: '2', 2: '8'}
+669	669		301							{2: 'Yata', 3: 'Hmm... so this is what Shiva meant by magma one second and a dead sea the next?', 4: '2'}
+670	670		301							{2: 'Discord', 3: '...Shiva?', 4: '1'}
+671	671		301							{3: 'All ammo and guns are gone... Discord instinctively checks for weapons on her body before she even registers what Yata just said.'}
+672	672		204							{1: '2'}
+673	673		301							{2: 'Yata', 3: 'That mystic... Shiva is worried about you.', 4: '2'}
+674	674		401							{1: '2', 2: '5544'}
+675	675		202							{1: '1', 2: '2'}
+676	676		301							{3: 'Yata sets Discord down from her mechanical arms, lets out a breath, and takes the lead.'}
+677	677		306							{1: '1'}
+678	678		301							"{3: 'Discord remembers Shiva\'s furrowed brow and angry glare. The ""eye"" on her forehead emits a faint green glow.'}"
+679	679		301							{3: 'Was that... concern? She has no idea how to respond.'}
+680	680		306							
+681	681		201							{1: '1', 2: '501041'}
+682	682		301							{1: '1', 2: 'Yata', 3: 'For this mission, we Scarabs are just backup. The Cerberus squad is already going after the real target.', 4: '1'}
+683	683		301				DialogDisable			"{2: 'Yata', 3: ""Let's meet up with V."", 4: '1'}"
+684	684		202							{1: '1', 6: '1'}
+685	685		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png', 3: '0', 4: '1', 5: '1.5'}
+686	686		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+687	687		205							{1: '999'}
+688	688		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+689	689		301			DialogEnable				"{3: ""They walk in silence, one ahead and one behind. Yata shields her from part of the wind's force.""}"
+690	690		201							{1: '1', 2: '501041', 3: '1'}
+691	691		301							"{1: '1', 2: 'Yata', 3: ""My frame's got sand filters. That's thanks to the Babylonia military learning the hard way during past ground missions."", 4: '1'}"
+692	692		204							{1: '1', 2: '6'}
+693	693		301							"{2: 'Yata', 3: ""The feet are designed to spread out the weight so they don't sink into the sand like yours. Took a lot of training to get used to it back then..."", 4: '1'}"
+694	694		202							{1: '1'}
+695	695		301							{3: 'With an abrupt shift, the short-haired Construct finally forces out what she has been holding back the whole way.'}
+696	696		201							{1: '1', 2: '501040', 3: '6', 4: '-400'}
+697	697		201							{1: '2', 2: '501122', 4: '400'}
+698	698		301							"{1: '1', 2: 'Yata', 3: ""I don't know what kind of nightmare training you're planning, but—"", 4: '1'}"
+699	699		204							{1: '1'}
+700	700		301							{2: 'Yata', 3: 'Even if your combat skills are great, your actions put your teammates in danger.', 4: '1'}
+701	701		301							{2: 'Discord', 3: '...', 4: '2'}
+702	702		301							"{2: 'Discord', 3: ""Sorry, I didn't think anyone would come for me."", 4: '2'}"
+703	703		204							{1: '1', 2: '7'}
+704	704		301							{2: 'Yata', 3: 'What?', 4: '1'}
+705	705		301			DialogShake				"{2: 'Yata', 3: ""Of course I'd come to save you! You were about to get swallowed by the Red Tide."", 4: '1'}"
+706	706		301							{2: 'Discord', 3: 'You could have just hit me with grenades or a high-powered pulse gun. A mission sometimes needs bait to succeed.', 4: '2'}
+707	707		204							{1: '1', 2: '4'}
+708	708		301							{2: 'Yata', 3: '...', 4: '1'}
+709	709		301							{3: 'Yata gets a little angry.'}
+710	710		301				DialogDisable			{2: 'Yata', 3: 'Why are you so set on dying?', 4: '1'}
+711	711		202							{1: '1', 2: '2', 6: '1'}
+712	712		401							{1: '2', 2: '2974'}
+713	713		201							{1: '1', 2: '500902', 4: '-600', 5: '-500', 6: '50'}
+714	714		201							{1: '2', 2: '500902', 5: '-500'}
+715	715		201							{1: '3', 2: '500902', 4: '600', 5: '-500', 6: '50'}
+716	716		203							{1: '1', 2: '0.4', 3: '-600', 4: '-100', 5: '50'}
+717	717		203							{1: '2', 2: '0.4'}
+718	718		203							{1: '3', 2: '0.4', 3: '600', 4: '-100', 5: '50'}
+719	719		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+720	720		502						1000.0	{1: 'RImgBg1Shake'}
+721	721		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+722	722		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+723	723		202							{1: '1', 2: '2', 3: '3', 4: '4', 6: '1'}
+724	724		401							{1: '2', 2: '15021032'}
+725	725		502							{1: 'DialogEnable'}
+726	726		301			RImgBg1Shake				"{1: '1', 3: ""The swirling sands erupt as countless Hetero-Creatures stumble up from underground. Yata's last word comes out alongside the sound of her fist slamming into the ground.""}"
+727	727		401							{1: '2', 2: '9351040'}
+728	728		201							{1: '1', 2: '500627'}
+729	729		301							{1: '1', 3: 'Discord slips her mask on and locks onto heat sources moving through the sand. Her last remaining weapon unfolds into combat mode.'}
+730	730		401							{1: '2', 2: '2974'}
+731	731		201							{1: '2', 2: '500902', 4: '-1000'}
+732	732		203						350.0	{1: '2', 2: '0.4'}
+733	733		401							{1: '2', 2: '4806'}
+734	734		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+735	735		202							{1: '2', 6: '1'}
+736	736		402							{1: '2974'}
+737	737		301			RImgBg1Shake				{1: '1', 3: 'A drooling Hetero-Creature lunges at her, and her blade slices it clean in two.'}
+738	738		301							{2: 'Discord', 3: '...', 4: '1'}
+739	739		301				AniZhuanchangBegin			"{2: 'Discord', 3: ""Because... I don't even have the freedom to choose death."", 4: '1'}"
+740	740		202							{1: '1'}
+741	741		502						450.0	{1: 'DialogDisable'}
+742	742		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+743	743		109						1500.0	{1: '1', 2: '<color=#ffffffff><size=50>The mission, always the mission...</size></color>', 4: '50', 6: '1'}
+744	744		301							{3: 'The mission, always the mission...'}
+745	745		110							
+746	746		401							{1: '2', 2: '10042001'}
+747	747		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+748	748		401							{1: '2', 2: '10042001'}
+749	749		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '2'}
+750	750		401							{1: '2', 2: '10042001'}
+751	751		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '2'}
+752	752		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+753	753		109						1500.0	{1: '1', 2: '<color=#ffffffff><size=50>Kill. Then kill again.</size></color>', 4: '50', 6: '1'}
+754	754		301							{3: 'Kill. Then kill again.'}
+755	755		110							
+756	756		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0', 4: '1', 5: '1.5'}
+757	757		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory648.jpg', 3: '0', 4: '1', 5: '1.5'}
+758	758		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory648.jpg'}
+759	759		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+760	760		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+761	761		304							{1: 'Only much later does the captain of Scarab understand that all of this shows a hidden pain that has always been building inside Discord.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1'}
+762	762		304							{1: 'From street orphan to tailor, from maid to agent, from the Purifying Force to Scarab... the whole time, she feels that no one ever truly cares about her. She is invisible.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1'}
+763	763		304							{1: 'In an earlier era, a doctor might prescribe lithium carbonate or haloperidol.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1'}
+764	764		304							{1: 'For Constructs, though, disorders of the M.I.N.D. rarely receive real attention or care.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1'}
+765	765		304				AniZhuanchangBegin			{1: 'In the end, they only sink into the deep sea like forgotten shipwrecks, left to bacteria and rust, waiting in silence to be swallowed by time and darkness.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 6: '1', 7: '1', 9: '1'}
+766	766		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+767	767		201							{1: '1', 2: '501040', 4: '-400', 7: '1'}
+768	768		201							{1: '2', 2: '500627', 4: '400', 7: '1'}
+769	769		502							{1: 'DialogEnable'}
+770	770		301			AniZhuanchangEnd				"{1: '1', 2: 'Discord', 3: ""Aren't you the same? Back on Hydrangea Island..."", 4: '2'}"
+771	771		301							"{2: 'Discord', 3: ""Haven't you thought that never waking up might be better?"", 4: '2'}"
+772	772		301							{2: 'Yata', 3: 'Living in a dream is nice...', 4: '1'}
+773	773		301							{2: 'Yata', 3: 'But I stepped out of it.', 4: '1'}
+774	774		301							{2: 'Yata', 3: 'I promised a lot of people, and I promised myself, to face reality.', 4: '1'}
+775	775		301							{2: 'Discord', 3: '...', 4: '2'}
+776	776		301							{2: 'Discord', 3: 'Not everyone can be like you.', 4: '2'}
+777	777		301							{2: 'Yata', 3: 'Of course. Everyone is born carrying a bit of baggage.', 4: '1'}
+778	778		202							{1: '1', 2: '2', 6: '1'}
+779	779		401							{1: '2', 2: '2924'}
+780	780		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+781	781		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+782	782		301							"{3: 'Discord\'s memories suddenly stir. Electrical signals tickle her cortex. She remembers her small metal fragment—smooth and capable of transmitting body heat—her own ""baggage.""'}"
+783	783		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+784	784		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+785	785		201							{1: '1', 2: '501040', 3: '8', 4: '-400', 7: '1'}
+786	786		201							{1: '2', 2: '500627', 4: '400', 7: '1'}
+787	787		301							{1: '1', 2: 'Yata', 3: 'I got guidance and help from many people. Step by step, I reached this point.', 4: '1'}
+788	788		301							{3: 'Yata takes a deep breath and spreads her hands in front of her chest. They are scorching hot from running at high output.'}
+789	789		204							{1: '1', 2: '1'}
+790	790		301							"{2: 'Yata', 3: ""If it weren't for them, if I had kept living in a dream, I wouldn't be who I am now."", 4: '1'}"
+791	791		202							{1: '1', 2: '2'}
+792	792		401							{1: '1', 2: '5058'}
+793	793		301							{3: 'Discord notices that up ahead, through the howl of the sandstorm, Yata hums a tune under her breath.'}
+794	794		301							{3: 'That melody... it feels like she only heard it just now.'}
+795	795		401							{1: '2', 2: '4387'}
+796	796		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+797	797		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory870.jpg'}
+798	798		504							{1: '0.7'}
+799	799		201							{1: '1', 2: '501047', 7: '1'}
+800	800		301							{1: '1', 2: 'Masao Osako', 3: 'Time for you to go. This is goodbye for real this time.', 4: '1'}
+801	801		301			DialogShake				"{2: 'Masao Osako', 3: ""Hurry! Take my courage with you and charge forward with everything you've got!"", 4: '1'}"
+802	802		401							{1: '2', 2: '4387'}
+803	803		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+804	804		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1074.jpg'}
+805	805		201							{1: '1', 2: '501051', 3: '1', 7: '1'}
+806	806		301							{1: '1', 2: 'Yuka Saotome', 3: 'Thank goodness... you managed to escape.', 4: '1'}
+807	807		301							{2: 'Yuka Saotome', 3: 'So... stop blaming yourself for this.', 4: '1'}
+808	808		301							{2: 'Yuka Saotome', 3: 'In these dreams, some were promoted to officers, some became heroes, and a few shed their uniforms to live ordinary lives...', 4: '1'}
+809	809		301							{2: 'Yuka Saotome', 3: 'While you remained at Misono High.', 4: '1'}
+810	810		301							"{2: 'Yuka Saotome', 3: ""One's best dream shouldn't lie in the past... but in the future."", 4: '1'}"
+811	811		202							{1: '1', 6: '1'}
+812	812		504							{1: '0'}
+813	813		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+814	814		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+815	815		401							{1: '2', 2: '2974'}
+816	816		401							{1: '1', 2: '203'}
+817	817		301			RImgBg1Shake				{3: 'The broken bits of the school anthem cut off as more enemies keep appearing.'}
+818	818		201							{1: '1', 2: '501041', 3: '4'}
+819	819		301							{1: '1', 2: 'Yata', 3: 'Scorpion-type Hetero-Creatures? Ugh... damn you...!', 4: '1'}
+820	820		202							{1: '1', 6: '1'}
+821	821		401							{1: '2', 2: '15021022'}
+822	822		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+823	823		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFrontNewCommon22.png', 4: '4'}
+824	824		301							{3: 'The Night Raid unleashed by the Fulgor frame almost tears open the rotating wind pressure over the area, tinting the sky the gray indigo of a thunderstorm.'}
+825	825		301							{3: 'The swarm splits for a moment, then quickly surges back together.'}
+826	826		301							{3: 'As the fight drags on, waves of Hetero-Creatures overwhelm them again, and the two fall into danger.'}
+827	827		201							{1: '1', 2: '501041', 3: '4'}
+828	828		301			DialogShake				{1: '1', 2: 'Yata', 3: 'Not good!', 4: '1'}
+829	829		202							{1: '1', 6: '1'}
+830	830		306							{1: '1'}
+831	831		101							{4: '4', 5: '1'}
+832	832		201							{1: '1', 2: '500627'}
+833	833		401							{1: '2', 2: '4411'}
+834	834		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+835	835		301							{1: '1', 3: 'While fending off a massive Hetero-Creature, she sees from the corner of her eye that Discord is hurt. Vital fluid splashes out and the churning mud drinks it up. Her movements slow.'}
+836	836		401							{1: '2', 2: '2974'}
+837	837		401							{1: '2', 2: '4825'}
+838	838		203							{1: '1', 2: '0.25', 4: '-50'}
+839	839		301			RImgBg1Shake				{3: 'More and more Hetero-Creatures burst from underground, shrieking as they encircle Discord, trying to drag her into a prison of quicksand.'}
+840	840		306							
+841	841		301							"{2: 'Discord', 3: ""I... don't care... what happens to me..."", 4: '1'}"
+842	842		203							{1: '1', 2: '0.25', 4: '-150'}
+843	843		301			PanelActor1Shake	DialogDisable			{2: 'Discord', 3: 'You... go...!', 4: '1'}
+844	844		401							{1: '2', 2: '10022001'}
+845	845		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '2', 5: '3'}
+846	846		511						200.0	{1: '3', 2: '0', 3: '-500|0|100'}
+847	847		203						250.0	{1: '1', 2: '0.3', 4: '-200'}
+848	848		202							{1: '1'}
+849	849		301			DialogEnable				{3: 'The blue-haired Construct throws her weapon with all her strength. The blade pins the creature holding Yata right through the head. In the next instant, Discord sinks halfway down, buried in the yellow sand.'}
+850	850		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab'}
+851	851		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+852	852		201							{1: '1', 2: '501041', 3: '5'}
+853	853		301							{1: '1', 2: 'Yata', 3: 'Gasp... Gasp...', 4: '1'}
+854	854		301							{2: 'Yata', 3: 'Why... is it like this again...', 4: '1'}
+855	855		301							{3: 'Her mechanical arms enter a brief cool-down and recharge. Yata gasps for air and holds a guard stance on instinct.'}
+856	856		401							{1: '1', 2: '36'}
+857	857		401							{1: '2', 2: '4276'}
+858	858		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '3'}
+859	859		202							{1: '1', 6: '1'}
+860	860		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 2: '2', 5: '1'}
+861	861		511							{1: '1', 2: '0', 3: '0|30|-600'}
+862	862		301						1500.0	{3: 'No matter how she blinks, her vision stays blurry. The scorpion-like Hetero-Creature raises its stinger high.'}
+863	863		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 5: '1'}
+864	864		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+865	865		401							{1: '1', 2: '5058'}
+866	866		401							{1: '2', 2: '4387'}
+867	867		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+868	868		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4301_10.jpg'}
+869	869		504							{1: '0.7'}
+870	870		201							{1: '1', 2: '500730', 4: '-500', 7: '1'}
+871	871		201							{1: '2', 2: '500374', 4: '550', 7: '1'}
+872	872		301							"{1: '1', 2: 'Shorthalt', 3: ""Yata, quit slacking. You never know when this stuff will come in handy. Remember when I made you memorize how to rewire circuits? You ended up using it, didn't you?"", 4: '1'}"
+873	873		204							{1: '2', 2: '10'}
+874	874		301							"{2: 'Yata', 3: ""Yeah, but wouldn't it be enough if you knew how?"", 4: '2'}"
+875	875		301							"{2: 'Shorthalt', 3: ""I've got a feeling."", 4: '1'}"
+876	876		301							"{2: 'Shorthalt', 3: ""And what if I'm not around one day?"", 4: '1'}"
+877	877		301							{2: 'Yata', 3: 'Ugh, here we go. What are you now, some fortune-teller predicting your own death? Did you pick this up from that mystic?', 4: '2'}
+878	878		301							"{2: 'Shorthalt', 3: ""I'm your captain. Complaining about my nagging won't change that. Now get moving."", 4: '1'}"
+879	879		204							{1: '2'}
+880	880		301							{2: 'Yata', 3: 'Moving where?', 4: '2'}
+881	881		301							"{2: 'Shorthalt', 3: ""If you don't hurry, Coach V's gonna make you do another twenty sets of high knees."", 4: '1'}"
+882	882		401							{1: '2', 2: '4331'}
+883	883		202							{1: '1'}
+884	884		203							{1: '2', 2: '0.25'}
+885	885		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+886	886		104							{1: '0|0|-100', 2: '0.25'}
+887	887		204							{1: '2', 2: '4'}
+888	888		301							{3: 'She rushes to catch up.'}
+889	889		301							{2: 'Yata', 3: 'Wait, what?!', 4: '2'}
+890	890		401							{1: '2', 2: '4134'}
+891	891		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+892	892		202							{1: '2', 6: '1'}
+893	893		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+894	894		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+895	895		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+896	896		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+897	897		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1052.jpg'}
+898	898		301							{3: 'Golden dusk spills across the white-lined track.'}
+899	899		306							{1: '1'}
+900	900		301							"{3: ""Yata always thinks the captain's sash with the Scarab emblem looks ugly, but when the captain runs, that sash streaming in the wind looks like a clear, endless current—beautiful.""}"
+901	901		306							
+902	902		201							{1: '1', 2: '500730'}
+903	903		301							{1: '1', 3: 'Shorthalt slows to a stop. In the fading sunlight, his broad frame casts a long shadow across the ground.'}
+904	904		202							{1: '1', 6: '1'}
+905	905		201							{1: '1', 2: '501042'}
+906	906		301							{1: '1', 3: 'From ahead, Yata turns and looks back at him, puzzled.'}
+907	907		301							{3: 'Instead of moving forward, she jogs in place as she waits for her captain to catch up.'}
+908	908		202							{1: '1', 6: '1'}
+909	909		201							{1: '1', 2: '500730'}
+910	910		301							{1: '1', 2: 'Shorthalt', 3: 'Yata, this is where I stop.', 4: '1'}
+911	911		202							{1: '1', 6: '1'}
+912	912		201							{1: '1', 2: '501042', 3: '1'}
+913	913		301							"{1: '1', 2: 'Yata', 3: ""What's with you today? Out of breath already?"", 4: '1'}"
+914	914		202							{1: '1', 6: '1'}
+915	915		201							{1: '1', 2: '500730'}
+916	916		301							"{1: '1', 2: 'Shorthalt', 3: ""Yeah, I'm tired."", 4: '1'}"
+917	917		301							"{2: 'Shorthalt', 3: ""I'm stopping here."", 4: '1'}"
+918	918		401							{1: '2', 2: '1543'}
+919	919		301							"{3: ""He takes off the sash from his own body. It's the pride of the track team.""}"
+920	920		301							{2: 'Shorthalt', 3: 'But you still have to run forward, Yata.', 4: '1'}
+921	921		301							"{3: ""The man sets the sash on Yata's shoulder with care.""}"
+922	922		301							{2: 'Shorthalt', 3: 'As captain, guide Scarab, and push the whole squad to keep going.', 4: '1'}
+923	923		205							{1: '1', 3: '1', 4: '0', 5: '0.8'}
+924	924		201							{1: '2', 2: '500970', 7: '1'}
+925	925		205						850.0	{1: '2', 3: '0', 4: '1', 5: '0.8'}
+926	926		301							{2: 'Shorthalt', 3: 'Heh. When you finally think to thank me, just bring me extra snacks.', 4: '2'}
+927	927		205							{1: '1', 3: '0', 4: '1', 5: '0'}
+928	928		202							{1: '1', 6: '1'}
+929	929		202							{1: '2'}
+930	930		301							{3: 'His body turns into a silhouette of darkness, the edges slowly dissolving into nothing.'}
+931	931		306							{1: '1'}
+932	932		502							{1: 'RImgBg1BlowUp'}
+933	933		301						1000.0	{3: 'Yata turns her gaze back to the track stretching ahead.'}
+934	934		505							{1: 'RImgBg1BlowUp'}
+935	935		306							
+936	936		201							{1: '1', 2: '501042', 3: '3'}
+937	937		301							"{1: '1', 2: 'Yata', 3: ""See? Even as a ghost, you'd still be nagging in my ear. I knew it."", 4: '1'}"
+938	938		401							{1: '2', 2: '4387'}
+939	939		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+940	940		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+941	941		201							{1: '1', 2: '500970', 7: '1'}
+942	942		301							{1: '1', 2: 'Shorthalt', 3: 'Now, give her a hand.', 4: '1'}
+943	943		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+944	944		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1052.jpg'}
+945	945		201							{1: '1', 2: '501042', 3: '3', 7: '1'}
+946	946		301				DialogDisable			{1: '1', 2: 'Yata', 3: 'V... is this why you made me captain...?', 4: '1'}
+947	947		202							{1: '1', 6: '1'}
+948	948		307							{1: 'Run, students, run! All your troubles will fade away when you run!', 3: '50', 4: 'ffffffff'}
+949	949		301			RImgBg1Shake				{3: 'Run, students, run! All your troubles will fade away when you run!'}
+950	950		307							{2: '1'}
+951	951		301			DialogEnable				{3: 'She has many things she wants to say and many feelings she wants to release. But instead of speaking, she just runs forward.'}
+952	952		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+953	953		401							{1: '2', 2: '4331'}
+954	954		104							{1: '0|0|-150', 2: '0.3'}
+955	955		201							{1: '1', 2: '501042', 3: '5'}
+956	956		301			DialogShake				{1: '1', 2: 'Yata', 3: 'Ahh...', 4: '1'}
+957	957		202							{1: '1', 6: '1'}
+958	958		504							{1: '0'}
+959	959		401							{1: '1', 2: '5027'}
+960	960		401							{1: '2', 2: '15021003'}
+961	961		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+962	962		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+963	963		201							{1: '1', 2: '501041', 3: '4', 7: '1'}
+964	964		301			RImgBg1Shake				{1: '1', 2: 'Yata', 3: 'AAAAAAAAAARGH—!', 4: '1'}
+965	965		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+966	966		202							{1: '1', 6: '1'}
+967	967		401							{1: '2', 2: '15021002'}
+968	968		401							{1: '2', 2: '15021012'}
+969	969		301			RImgBg1Shake				{3: 'She shouts and throws her fists again and again, trying to drive away the shadows of the past.'}
+970	970		401							{1: '2', 2: '4895'}
+971	971		104							{1: '0|50|-150', 2: '0.4'}
+972	972		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+973	973		301							{3: 'Her punches are so fast they leave afterimages. She jumps into the center of the vortex where the blue Construct disappeared and reaches out as far as she can.'}
+974	974		201							{1: '1', 2: '501041', 3: '4', 7: '1'}
+975	975		301			RImgBg1Shake				{1: '1', 2: 'Yata', 3: 'Dreams are beautiful because you wake from them!', 4: '1'}
+976	976		401							{1: '2', 2: '4064'}
+977	977		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+978	978		301							"{3: ""The Fulgor frame's alarms sound loudly as streams of sand fall past her. Yata increases her output even more.""}"
+979	979		301							{2: 'Yata', 3: 'For those who want to face reality, is it right to let pleasant dreams take away their chance to grow?', 4: '1'}
+980	980		204							{1: '1', 2: '8'}
+981	981		301							{2: 'Yata', 3: 'This time I want to be the one who walks ahead with open eyes.', 4: '1'}
+982	982		204							{1: '1', 2: '6'}
+983	983		301							"{2: 'Yata', 3: ""Shorthalt... I don't know if I can be as good as you."", 4: '1'}"
+984	984		301							{3: 'Her hands finally grab her companion and stop them both from sinking further. The powered arms strain under the weight and feel like they could break at the joints.'}
+985	985		204							{1: '1', 2: '5'}
+986	986		301			RImgBg1Shake				{2: 'Yata', 3: 'But this is my choice!', 4: '1'}
+987	987		202							{1: '1'}
+988	988		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+989	989		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+990	990		402							{1: '4064'}
+991	991		301				DialogDisable			{3: 'The return of light feels both short and long at the same time.'}
+992	992		201							{1: '1', 2: '500627', 5: '-80'}
+993	993		401							{1: '2', 2: '13081710'}
+994	994		203						500.0	{1: '1', 2: '0.3', 3: '-20', 4: '-50'}
+995	995		203						300.0	{1: '1', 2: '0.25', 3: '10', 4: '-20'}
+996	996		203							{1: '1', 2: '0.3'}
+997	997		402							{1: '13081710'}
+998	998		301			DialogEnable				{1: '1', 3: 'The blue-haired Construct struggles to lift her battered body.'}
+999	999		301							{2: 'Discord', 3: '...Is the attack over?', 4: '1'}
+1000	1000		202							{1: '1'}
+1001	1001		301							{3: 'Remains of the enemies are scattered everywhere. Not far away, the short-haired Construct is kneeling on one knee, her mechanical hand slowly forming a V sign toward Discord.'}
+1002	1002		201							{1: '1', 2: '501041'}
+1003	1003		301							"{1: '1', 2: 'Yata', 3: ""I don't want to lose anyone else. That includes you, Discord."", 4: '1'}"
+1004	1004		204							{1: '1', 2: '8'}
+1005	1005		301							{2: 'Yata', 3: 'Once, twice... no matter how many times it takes.', 4: '1'}
+1006	1006		204							{1: '1', 2: '4'}
+1007	1007		301			DialogShake	AniZhuanchangBegin			"{2: 'Yata', 3: ""I'll come for you every single time."", 4: '1'}"
+1008	1008		202							{1: '1', 6: '1'}
+1009	1009		401						2000.0	{1: '1', 2: '36'}
+1010	1010		401							{1: '1', 2: '229'}
+1011	1011		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory53.jpg'}
+1012	1012		401							{1: '2', 2: '4873'}
+1013	1013		301			AniZhuanchangEnd				{3: 'The door slams shut right in front of them, trapping everyone on the other side in cold, endless waiting.'}
+1014	1014		301							{3: 'Once, twice... the same scene plays out again and again.'}
+1015	1015		201							{1: '1', 2: '500042'}
+1016	1016		301							"{1: '1', 2: 'Medic', 3: ""The symptoms are exactly like human brain death. Scarab squad member Discord... she's..."", 4: '1'}"
+1017	1017		201							{1: '18', 2: '501040', 3: '4'}
+1018	1018		301			DialogShake				"{1: '1', 2: 'Yata', 3: ""That's impossible!"", 4: '18'}"
+1019	1019		202							{1: '18'}
+1020	1020		203							{1: '1', 2: '0.25', 3: '600'}
+1021	1021		201							{1: '2', 2: '501040', 3: '4', 4: '-1000'}
+1022	1022		203						100.0	{1: '2', 2: '0.25', 3: '-600'}
+1023	1023		201							{1: '3', 2: '500900'}
+1024	1024		301							{1: '1', 3: 'Yata lunges forward, but Shiva stops her.', 4: '.'}
+1025	1025		301							{2: 'Shiva', 3: 'Only the symptoms are similar, right? What about her M.I.N.D.?', 4: '3'}
+1026	1026		301							{2: 'Medic', 3: 'Complete connection rejection.', 4: '1'}
+1027	1027		301							"{2: 'Shiva', 3: ""She doesn't have any fatal injuries. Could the new frame be the cause? Can we switch her back to the old one?"", 4: '3'}"
+1028	1028		301							"{2: 'Medic', 3: ""In this condition... that's almost impossible."", 4: '1'}"
+1029	1029		301							"{2: 'Shiva', 3: ""Then I'll find someone who can help!"", 4: '3'}"
+1030	1030		202							{1: '1', 2: '2', 3: '3'}
+1031	1031		301							{3: 'The short-haired Construct hits the glass helplessly, staring at the flat line on the dimly lit monitor.'}
+1032	1032		201							{1: '1', 2: '501040', 3: '4'}
+1033	1033		301							{1: '1', 2: 'Yata', 3: 'Hey...', 4: '1'}
+1034	1034		301			DialogShake				{2: 'Yata', 3: 'Discord! Wake up!', 4: '1'}
+1035	1035		203							{1: '1', 2: '0.3', 3: '-600'}
+1036	1036		509						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory648.jpg', 2: '2'}
+1037	1037		201							{1: '2', 2: '501328', 3: '8', 4: '550'}
+1038	1038		301							{1: '1', 2: 'Discord', 3: '...', 4: '2'}
+1039	1039		204							{1: '1', 2: '8'}
+1040	1040		301		1		AniZhuanchangBegin			{2: 'Yata', 3: 'Discord...', 4: '1'}

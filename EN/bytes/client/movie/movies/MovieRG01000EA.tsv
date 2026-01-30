@@ -1,0 +1,564 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory121.png'}
+2	2		401							{1: '1', 2: '64'}
+3	3		401							{1: '2', 2: '2970'}
+4	4		502							{1: 'DialogEnable'}
+5	5		301			RImgBg1Shake				"{3: ""The train roars to life, its thunderous engine drowning out the Angels' wails as it echoes once more across the desolate world.""}"
+6	6		401							{1: '2', 2: '5310'}
+7	7		201							{1: '1', 2: '500928', 7: '1'}
+8	8		301			PanelActor1Shake				"{1: '1', 2: '""Angel""', 3: '—Flesh and blood!! Slaughter!!', 4: '1'}"
+9	9		201							{1: '2', 2: '501297', 3: '2', 4: '-900'}
+10	10		203							{1: '2', 2: '0.25', 3: '-500'}
+11	11		203						250.0	{1: '1', 2: '0.25', 3: '100'}
+12	12		401							{1: '2', 2: '2593'}
+13	13		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '5'}
+14	14		104							{1: '100|0|300', 2: '0', 4: '5'}
+15	15		301			PanelActor1Shake				"{1: '1', 2: '""Famine""', 3: 'Oh? Just a bit slower than me.', 4: '2'}"
+16	16		301							"{2: '""Famine""', 3: ""You'd definitely feel bitter about dying like this, right?"", 4: '2'}"
+17	17		401							{1: '2', 2: '2593'}
+18	18		204							{1: '2', 2: '3'}
+19	19		301			PanelActor1Shake				"{2: '""Famine""', 3: 'Hahahaha—right? Right?', 4: '2'}"
+20	20		203							{1: '1', 2: '0.25', 3: '600', 4: '-60'}
+21	21		203							{1: '2', 2: '0.25', 3: '-100', 4: '-60'}
+22	22		104						100.0	{1: '870|-130|450', 2: '0.25', 4: '5'}
+23	23		401							{1: '2', 2: '5310'}
+24	24		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+25	25		201							{1: '3', 2: '500928', 4: '-800'}
+26	26		203							{1: '3', 2: '0.25', 3: '-600', 5: '-50'}
+27	27		301			RImgBg1Shake	DialogDisable			"{1: '1', 2: '""Angel""', 3: 'Aargh—!!', 4: '3'}"
+28	28		302							"{2: '""Famine"", duck!', 3: '29'}"
+29	29		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+30	30		101							{4: '5', 5: '1'}
+31	31		401							{1: '2', 2: '5669'}
+32	32		401							{1: '2', 2: '2593'}
+33	33		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+34	34		502							{1: 'RImgBg1Shake'}
+35	35		401							{1: '2', 2: '4820'}
+36	36		202						1000.0	{1: '1', 2: '2', 3: '3', 6: '1'}
+37	37		201							{1: '2', 2: '500928', 4: '-400', 5: '-800'}
+38	38		201						100.0	{1: '3', 2: '500928', 4: '400', 5: '-800'}
+39	39		203							{1: '2', 2: '0.4', 3: '-400'}
+40	40		203						300.0	{1: '3', 2: '0.4', 3: '400'}
+41	41		201							{1: '4', 2: '500928', 4: '-800', 5: '-800'}
+42	42		201						200.0	{1: '5', 2: '500928', 4: '800', 5: '-800'}
+43	43		203							{1: '4', 2: '0.4', 3: '-800'}
+44	44		203						300.0	{1: '5', 2: '0.4', 3: '800'}
+45	45		201							{1: '1', 2: '500928', 5: '-800'}
+46	46		203						500.0	{1: '1', 2: '0.4'}
+47	47		402							{1: '4820'}
+48	48		401							{1: '2', 2: '5669'}
+49	49		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+50	50		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '1'}
+51	51		502							{1: 'DialogEnable'}
+52	52		301			RImgBg1Shake				"{1: '1', 3: 'Angels form a silver-white ocean, surging wave after wave toward the end of the train car. ""Famine"" and you advance together, carving a crimson path through the tide as you fight upstream.'}"
+53	53		401							{1: '2', 2: '5673'}
+54	54		301							{3: 'You stride forward, raising your scarred arms to skillfully slash open your skin with the bayonet on your gun. You load fresh blood into the chamber, spin the cylinder, take aim, and pull the trigger.'}
+55	55		401							{1: '2', 2: '2905'}
+56	56		301				AniZhuanchangBegin			"{3: ""As the blade cuts through flesh, you can't help but briefly recall the legend known to all across the Scorched Borderland.""}"
+57	57		502							{1: 'DialogDisable'}
+58	58		401						2000.0	{1: '1', 2: '36'}
+59	59		401							{1: '1', 2: '250'}
+60	60		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg'}
+61	61		304			AniZhuanchangEnd				{1: 'Long ago, before the Dawn Laws collapsed, the world still had a clear distinction between day and night.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1'}
+62	62		304							{1: 'The Cardinal Deity enslaved humanity, forcing them to build magnificent temples and driving them into endless war against the Demons.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1', 8: '1'}
+63	63		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory955.png', 3: '0', 4: '1', 5: '1'}
+64	64		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory955.png'}
+65	65		205							{1: '999'}
+66	66		304							{1: 'One day, a slave collapsed from the unbearable labor. The overseer Angel grabbed him by the neck and lifted him high into the air.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1'}
+67	67		304							{1: 'As death closed in, the slave was helpless, able only to use his last bit of strength to ram his head into the Angel.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1'}
+68	68		304							"{1: ""Just then, a miracle happened. As the slave's skull shattered, his blood sprayed out and somehow melted the Angel's rock-hard flesh."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1'}"
+69	69		304							{1: 'That was the first recorded death of a divine being in all of history.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1'}
+70	70		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png', 3: '0', 4: '1', 5: '1'}
+71	71		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+72	72		205							{1: '999'}
+73	73		304				AniZhuanchangBegin			{1: 'In the Scorched Borderland, those who want to resist tyranny can only do so by destroying themselves and spilling their scorching blood.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 9: '1'}
+74	74		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory126.png'}
+75	75		502						500.0	{1: 'DialogEnable'}
+76	76		201							{1: '1', 2: '501297', 3: '2', 4: '-300', 7: '1'}
+77	77		301			AniZhuanchangEnd				"{1: '1', 2: '""Famine""', 3: '—Found it.', 4: '1'}"
+78	78		202							{1: '1'}
+79	79		301							{3: 'You step over corpses piled like a long corridor. Ahead, a vault door as wide as a city wall blocks your path.'}
+80	80		401							{1: '2', 2: '819016'}
+81	81		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFrontNewCommon23.png', 3: '0', 4: '1', 5: '0.3'}
+82	82		301							"{3: '""Famine"" faces the iron wall, lifts her Moon Umbrella, and gracefully draws its tip to carve several deep, long silver lines'}"
+83	83		401							{1: '2', 2: '799'}
+84	84		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+85	85		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '1', 4: '0', 5: '0.3'}
+86	86		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+87	87		301			RImgBg1Shake				{3: 'In an instant, the silver lines spread like spider silk, then suddenly light up with a blood-red glow and explode with a thunderous roar.'}
+88	88		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+89	89		401							{1: '2', 2: '2756'}
+90	90		301							{3: 'The once-impenetrable defenses crumble like paper, revealing countless mountains of gold shining brightly under the sunlight.'}
+91	91		201							{1: '1', 2: '501297', 3: '3', 4: '-300'}
+92	92		301							"{1: '1', 2: '""Famine""', 3: 'Children freeze to death in the streets while treasures sent to the temples pile up in vaults, rusting and rotting. Hallelujah, Lord of the Supreme Heaven!', 4: '1'}"
+93	93		301							{3: 'The woman puts away her umbrella and playfully announces her discovery with glee.'}
+94	94		204							{1: '1', 2: '8'}
+95	95		301							"{2: '""Famine""', 3: ""Lord Gray Raven, congratulations. You have become the wealthiest lord in the Scorched Borderland. This treasure outshines even Mammon's vault!"", 4: '1'}"
+96	96		204							{1: '1', 2: '2'}
+97	97		301							"{2: '""Famine""', 3: ""Look at the quality of these gold coins... It's probably enough to arm five Iron Armies. Interested in the salon business? Maybe you could—"", 4: '1'}"
+98	98		302							"{2: '""Famine,"" blow a hole in the floor.', 3: '99'}"
+99	99		204							{1: '1'}
+100	100		301							"{2: '""Famine""', 3: '?', 4: '1'}"
+101	101		301				DialogDisable			"{3: ""The knight's smile freezes, and a trace of surprise and curiosity emerges in her eyes.""}"
+102	102		302							{2: 'These gold coins have soaked up too much blood.', 3: '103'}
+103	103		302							"{2: ""It's time to return this wealth to its rightful owners."", 3: '104'}"
+104	104		301			DialogEnable				"{3: '""Famine"" gives you a confirming look, but the only response she gets is your sharp gaze from the shadows.'}"
+105	105		204							{1: '1', 2: '2'}
+106	106		301							"{2: '""Famine""', 3: 'Of course... If that is your wish, Lord Gray Raven.', 4: '1'}"
+107	107		401							{1: '2', 2: '4876'}
+108	108		202							{1: '1'}
+109	109		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+110	110		301							"{3: '""Famine"" pulls the door open, and a scorching wind filled with sand rushes into the vault. She braces herself, leaning halfway out of the vehicle to look at the distant landscape below.'}"
+111	111		201							{1: '1', 2: '501297', 4: '-300'}
+112	112		301							"{1: '1', 2: '""Famine""', 3: ""In a few more minutes, we'll pass by the first town. You still have time to change your mind now, Lord Gray Raven."", 4: '1'}"
+113	113		302							{2: '...', 3: '114', 4: 'This is an order.', 5: '114'}
+114	114		301							"{3: 'Seeing that her final attempt at persuasion was futile, ""Famine"" shrugs.'}"
+115	115		204							{1: '1', 2: '2'}
+116	116		301							"{2: '""Famine""', 3: ""Fine, but it doesn't matter. When you regret it, I will figure out a way to buy it all back."", 4: '1'}"
+117	117		202							{1: '1'}
+118	118		301							{3: 'Just as she lifts the Moon Umbrella to unleash her power, a flash of light suddenly streaks across the blood-red sky above.'}
+119	119		201							{1: '1', 2: '501297', 3: '5', 4: '-300'}
+120	120		301							"{1: '1', 2: '""Famine""', 3: '?!', 4: '1'}"
+121	121		301							"{2: '""Famine""', 3: 'Enemy attack! Get down!', 4: '1'}"
+122	122		202							{1: '1'}
+123	123		402							{1: '250'}
+124	124		401						150.0	{1: '2', 2: '2674'}
+125	125		401							{1: '2', 2: '2608'}
+126	126		301			RImgBg1Shake	AniZhuanchangBegin			{3: 'Giant wings tear through the sky, their thunderous roar shaking the heavens.'}
+127	127		402							{1: '2608'}
+128	128		401							{1: '1', 2: '221'}
+129	129		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+130	130		306							{1: '1'}
+131	131		502						400.0	{1: 'DialogDisable'}
+132	132		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+133	133		201							{1: '1', 2: '500179', 7: '1'}
+134	134		401							{1: '2', 2: '4297'}
+135	135		109							{1: '1', 2: '<color=#ff4e4eff><size=40>Si Slayer rubra putat hominem occidisse</size></color>', 4: '-380', 9: '3', 11: '1'}
+136	136		109			AniZhuanchangEnd				{1: '2', 2: '<color=#ff4e4eff><size=45>If the bloodstained slayer believes he has killed a man...</size></color>', 4: '-430', 9: '3', 11: '1'}
+137	137		301							{1: '1', 3: '<phonetic=Si Slayer rubra putat hominem occidisse>If the bloodstained slayer believes he has killed a man...</phonetic>'}
+138	138		110					200.0	600.0	{1: '1|1', 2: '2|1'}
+139	139		401							{1: '2', 2: '4297'}
+140	140		109							{1: '1', 2: '<color=#ff4e4eff><size=40>Si mortuus esset occisus</size></color>', 4: '-380', 9: '3', 11: '1'}
+141	141		109							{1: '2', 2: '<color=#ff4e4eff><size=45>If the dead believe they have already been slain...</size></color>', 4: '-430', 9: '3', 11: '1'}
+142	142		301							{3: '<phonetic=Si mortuus esset occisus>If the dead believe they have already been slain...</phonetic>'}
+143	143		110					200.0	600.0	{1: '1|1', 2: '2|1'}
+144	144		401							{1: '2', 2: '4297'}
+145	145		109							{1: '1', 2: '<color=#ff4e4eff><size=40>Sunt in arcano modo non multum de</size></color>', 4: '-380', 9: '3', 11: '1'}
+146	146		109							{1: '2', 2: '<color=#ff4e4eff><size=45>They know nothing of my miracles.</size></color>', 4: '-430', 9: '3', 11: '1'}
+147	147		301							{3: '<phonetic=Sunt in arcano modo non multum de>They know nothing of my miracles.</phonetic>'}
+148	148		110					200.0	600.0	{1: '1|1', 2: '2|1'}
+149	149		301			DialogEnable	DialogDisable			{3: 'A blazing comet rises slowly, trailing a blood-red flame, and shrieks as it crashes into the train.'}
+150	150		306							
+151	151		402							{1: '221'}
+152	152		401							{1: '2', 2: '884'}
+153	153		202							{1: '1', 6: '1'}
+154	154		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+155	155		101						2500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+156	156		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+157	157		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory126.png'}
+158	158		401							{1: '1', 2: '391'}
+159	159		301			DialogEnable				{3: 'You open your eyes, and branded into your consciousness along with the divine decree is a flawless and sacred supreme being.'}
+160	160		201							{1: '1', 2: '500179'}
+161	161		301							"{1: '1', 2: '""Archangel""', 3: '...', 4: '1'}"
+162	162		401							{1: '2', 2: '4280'}
+163	163		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+164	164		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+165	165		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+166	166		301							{3: 'Those inorganic eyes instantly drain every ounce of strength from your body, as if millions of spear points pierce through flesh and bone, nailing your consciousness to this very moment and forcing you to bare your neck in submission to slaughter.'}
+167	167		201							{1: '18', 2: '501297', 3: '5', 4: '-390', 5: '-210', 6: '50'}
+168	168		301							"{1: '1', 2: '""Famine""', 3: '—Lord Gray Raven!', 4: '18'}"
+169	169		202							{1: '18', 6: '1'}
+170	170		301							"{3: 'Human flesh and blood cannot resist an Angel\'s divine power. Even you, Gray Raven, a half-human, half-demon ""Bloodsworn"", feel powerless against this sacred law set by the Supreme Heaven.'}"
+171	171		401							{1: '2', 2: '4260'}
+172	172		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab', 2: '2'}
+173	173		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionL.prefab', 2: '2'}
+174	174		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionR.prefab', 2: '2'}
+175	175		502							{1: 'RImgBg1Shake'}
+176	176		205						900.0	{1: '1', 3: '1', 4: '0', 5: '0.8'}
+177	177		205							{1: '1', 3: '0', 4: '1', 5: '0'}
+178	178		202							{1: '1', 6: '1'}
+179	179		301			RImgBg1Shake				"{3: '""Famine"" rushes forward, lifting the tip of her umbrella and triggering a violent explosion. Thick smoke instantly engulfs the Angel\'s massive form.'}"
+180	180		401						500.0	{1: '2', 2: '5517'}
+181	181		301							{3: 'Hff—'}
+182	182		201							{1: '18', 2: '501297', 3: '5', 4: '-390', 5: '-210', 6: '50'}
+183	183		301							"{1: '1', 2: '""Famine""', 3: 'Lord Gray Raven, snap out of it!!', 4: '18'}"
+184	184		202							{1: '18', 6: '1'}
+185	185		401							{1: '2', 2: '4510'}
+186	186		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab'}
+187	187		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+188	188		301			RImgBg1Shake				"{3: 'However, the wings in the darkness flutter gently, instantly stirring up a hurricane inside the train car that clears the mist and sends ""Famine"" crashing into the golden mountain behind her.'}"
+189	189		201							{1: '1', 2: '501297', 3: '17', 4: '-300', 7: '1'}
+190	190		301			PanelActor1Shake				"{1: '1', 2: '""Famine""', 3: 'Cough—!', 4: '1'}"
+191	191		302							{2: '—!', 3: '192'}
+192	192		202							{1: '1'}
+193	193		401							{1: '2', 2: '4386'}
+194	194		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+195	195		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+196	196		301							"{3: 'In the brief moment that ""Famine"" fought for, your thoughts break free from the heavy shackles, and you regain control of the battle.'}"
+197	197		302							"{2: '""War""!!', 3: '198'}"
+198	198		401							{1: '2', 2: '807'}
+199	199		301				DialogDisable			{3: 'Countless muskets fill the sky in response to the call, swiftly flying into the train car and forming a rigid military formation, floating in ranks behind you.'}
+200	200		201							{1: '1', 2: '500179'}
+201	201		307							"{1: 'So you are ""Gray Raven""?', 3: '60', 4: 'ff4e4eff'}"
+202	202		301							"{1: '1', 3: 'So you are ""Gray Raven""?'}"
+203	203		307							{2: '1'}
+204	204		301			DialogEnable	DialogDisable			"{3: ""The Archangel's sudden appearance shatters the original plan. After quickly assessing the enemy, you decide to make a bold move.""}"
+205	205		302							{2: 'Come and get me, Angel.', 3: '206', 4: 'Get out of my head!', 5: '206'}
+206	206		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2', 5: '1'}
+207	207		502							{1: 'RImgBg1Shake'}
+208	208		401						150.0	{1: '2', 2: '5669'}
+209	209		401						150.0	{1: '2', 2: '5669'}
+210	210		401						150.0	{1: '2', 2: '5669'}
+211	211		401							{1: '2', 2: '5669'}
+212	212		301			DialogEnable				{3: 'With a sweep of your arm, the muskets fire together, and bullets stained with human blood pour down on the Angel like heavy rain.'}
+213	213		401							{1: '2', 2: '10028803'}
+214	214		301							{3: 'Gunpowder smoke billows as you aim at the crossbeam above the train car and swing your pistol with force. The bayonet beneath the barrel, along with its hook, suddenly shoots out and wraps around the hanging pillar.'}
+215	215		401							{1: '2', 2: '10028811'}
+216	216		401							{1: '2', 2: '4895'}
+217	217		104							{1: '0|-100|-200', 2: '0.4'}
+218	218		511							{1: '1', 2: '0.4', 3: '0|-100|-50'}
+219	219		203							{1: '1', 2: '0.4', 4: '-100'}
+220	220		301							"{3: ""You grip the pistol tightly and leap with all your strength as the hook tightens, lifting your body over the Angel's head.""}"
+221	221		301							"{2: '""Archangel""', 3: '—', 4: '1'}"
+222	222		401							{1: '2', 2: '4826'}
+223	223		301							{3: 'A fierce wind rises as the massive creature lifts its left arm high. With loud cracking sounds, sharp bone spikes burst through its steel-like skin, extending like an iron whip toward the ceiling.'}
+224	224		401							{1: '2', 2: '4387'}
+225	225		501						1400.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+226	226		202							{1: '1', 6: '1'}
+227	227		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory136.png'}
+228	228		401							{1: '2', 2: '4429'}
+229	229		301							{3: 'Meanwhile, you retract the gun cable, land on the ground, roll to the other side, and sprint frantically toward the next car.'}
+230	230		401							{1: '2', 2: '4508'}
+231	231		401							{1: '2', 2: '4509'}
+232	232		301			RImgBg1Shake	DialogDisable			{3: 'The iron whip swings close behind, clanging and splitting as it slashes a gruesome gash across the train roof, sending blood pouring down like a broken dam.'}
+233	233		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 5: '1'}
+234	234		401						200.0	{1: '2', 2: '4376'}
+235	235		201							{1: '1', 2: '500179'}
+236	236		307							{1: 'Insect.', 3: '60', 4: 'ff4e4eff'}
+237	237		301							{1: '1', 3: 'Insect.'}
+238	238		307							{2: '1'}
+239	239		502							{1: 'RImgBg1Shake'}
+240	240		401							{1: '2', 2: '4376'}
+241	241		301			DialogEnable				{3: 'The Archangel bathes in a crimson cascade, closing in as it enters the car where you wait. Each thunderous footfall shakes the entire train.'}
+242	242		302							"{2: '""Famine,"" blow up this car!', 3: '243'}"
+243	243		201							{1: '1', 2: '501297', 3: '5', 4: '-300', 5: '-100'}
+244	244		301							"{1: '1', 2: '""Famine""', 3: '...Commandant?', 4: '1'}"
+245	245		203							{1: '1', 2: '0.4', 3: '-300'}
+246	246		301						450.0	"{3: 'Hearing your command, ""Famine"" slowly rises from within the vault.'}"
+247	247		301							{3: 'She lifts her head and, through the curtain of blood, sees your eyes meeting hers. Her furrowed brow suddenly smooths out.'}
+248	248		302							{2: 'Now!', 3: '249'}
+249	249		204							{1: '1', 2: '2'}
+250	250		301							"{2: '""Famine""', 3: 'Understood. Good luck, Lord Gray Raven!', 4: '1'}"
+251	251		401							{1: '2', 2: '4348'}
+252	252		401							{1: '2', 2: '213'}
+253	253		301							{3: 'She grins mischievously as her umbrella lightly touches the ground, setting the passage between the cars ablaze.'}
+254	254		402							{1: '213'}
+255	255		202							{1: '1', 6: '1'}
+256	256		401							{1: '2', 2: '4317'}
+257	257		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+258	258		301			RImgBg1Shake				{3: 'BOOM—'}
+259	259		401							{1: '2', 2: '1506'}
+260	260		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiSuperTowerShopRain/FxUiSuperTowerShopRain.prefab', 2: '2'}
+261	261		301			RImgBg1Shake	DialogDisable			{3: 'The coupling explodes, and the car carrying both you and the Angel suddenly breaks away, plummeting at full speed.'}
+262	262		201							{1: '1', 2: '500179'}
+263	263		307							{1: 'Fool.', 3: '60', 4: 'ff4e4eff'}
+264	264		301				AniZhuanchangBegin			{1: '1', 3: 'Fool.'}
+265	265		307							{2: '1'}
+266	266		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiSuperTowerShopRain/FxUiSuperTowerShopRain.prefab'}
+267	267		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+268	268		502							{1: 'DialogEnable'}
+269	269		201							{1: '1', 2: '500179', 5: '-400', 7: '1'}
+270	270		401							{1: '2', 2: '10106504'}
+271	271		203							{1: '1', 2: '0.8'}
+272	272		301			AniZhuanchangEnd				{1: '1', 3: 'Amid the spinning chaos, the Angel sneers with disdain, spreading its iron wings to break free from the violent fall and ascend into the air.'}
+273	273		301							{3: 'It rights itself, coldly gazing down at the crimson earth below, watching the car hurtle toward the abyss.'}
+274	274		401							{1: '2', 2: '10028803'}
+275	275		301			PanelActor1Shake				{3: 'Suddenly, a hook shoots out from the car, wrapping tightly around its wings.'}
+276	276		301							"{3: ""Only now does it realize that you weren't trying to escape or sacrifice yourself, but preparing to hunt the divine.""}"
+277	277		301							"{2: '""Archangel""', 3: '...', 4: '1'}"
+278	278		202							{1: '1'}
+279	279		401							{1: '2', 2: '968'}
+280	280		301							"{3: ""In the howling wind, you swing back and forth on the iron chain, nimbly dodging the Angel's fierce iron thorn attacks.""}"
+281	281		301							{3: 'Muskets drift through the air one by one, gradually gathering beneath your feet to form a long stairway, supporting your ascent to slay a god.'}
+282	282		301							{3: 'For the first time in millennia, the Archangel feels threatened by the mortal realm.'}
+283	283		201							{1: '1', 2: '500179'}
+284	284		301				AniZhuanchangBegin			"{1: '1', 2: '""Archangel""', 3: 'Look at you struggle.', 4: '1'}"
+285	285		402							{1: '968'}
+286	286		401						1000.0	{1: '1', 2: '36'}
+287	287		401							{1: '1', 2: '330'}
+288	288		202							{1: '1', 6: '1'}
+289	289		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_26.jpg'}
+290	290		301			AniZhuanchangEnd	DialogDisable			{3: 'It stares at you, lips moving, as countless spots of light manifest in the air—'}
+291	291		401							{1: '2', 2: '4092'}
+292	292		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0', 4: '1', 5: '0.3'}
+293	293		109							{1: '4', 2: '<color=#FFFF00><size=60>Per me si va ne la città dolente</size></color>', 4: '100', 9: '3', 11: '1'}
+294	294		109						200.0	{1: '5', 2: '<color=#FFFF00><size=65>Through me, straight to the city of sorrow.</size></color>', 4: '0', 9: '3', 11: '1'}
+295	295		301							{3: 'Through me, straight to the city of sorrow.'}
+296	296		110							
+297	297		104							{1: '0|0|-100', 2: '0'}
+298	298		401							{1: '2', 2: '2959'}
+299	299		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+300	300		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+301	301		301			DialogEnable	DialogDisable			{3: 'The spell rumbles like rolling thunder, surging once again into your mind.'}
+302	302		401							{1: '2', 2: '4092'}
+303	303		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0', 4: '1', 5: '0.3'}
+304	304		109							"{1: '4', 2: ""<color=#FFFF00><size=60>Per me si va ne l'etterno dolore</size></color>"", 4: '100', 9: '3', 11: '1'}"
+305	305		109						200.0	{1: '5', 2: '<color=#FFFF00><size=65>Through me, straight to endless suffering.</size></color>', 4: '0', 9: '3', 11: '1'}
+306	306		301							{3: 'Through me, straight to endless suffering.'}
+307	307		110							
+308	308		401							{1: '2', 2: '2959'}
+309	309		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+310	310		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+311	311		104							{1: '0|0|-200', 2: '0'}
+312	312		301			DialogEnable	DialogDisable			{3: 'You fight with all your strength to quiet the chaotic thoughts as you climb toward the heavens, scaling the towering body.'}
+313	313		401							{1: '2', 2: '4092'}
+314	314		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0', 4: '1', 5: '0.3'}
+315	315		109							"{1: '4', 2: ""<color=#FFFF00><size=60>Lasciate ogne speranza， voi ch'intrate</size></color>"", 4: '100', 9: '3', 11: '1'}"
+316	316		109						200.0	{1: '5', 2: '<color=#FFFF00><size=65>All who enter this gate, relinquish all hope.</size></color>', 4: '0', 9: '3', 11: '1'}
+317	317		301							{3: 'All who enter this gate, relinquish all hope.'}
+318	318		110							
+319	319		401							{1: '2', 2: '2959'}
+320	320		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+321	321		104							{1: '0|0|-300', 2: '0'}
+322	322		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+323	323		301			DialogEnable				"{3: ""The distance between you keeps closing, and with just one step left, you raise your weapon, aiming the barrel straight at the Angel's head.""}"
+324	324		301							"{2: '""Archangel""', 3: '<phonetic=Longinus>Sever fate, final salvation—!</phonetic>'}"
+325	325		401							{1: '2', 2: '5669'}
+326	326		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+327	327		301			RImgBg1Shake				{3: 'Blazing flames burst from the barrel, and blood splatters in crimson blooms.'}
+328	328		401							{1: '2', 2: '2593'}
+329	329		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+330	330		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_03.jpg'}
+331	331		301			RImgBg1Shake				{3: 'The moment you pull the trigger, a golden bolt of lightning strikes down from the sky, cutting through the blood-red gloom and piercing straight through your chest.'}
+332	332		302				AniZhuanchangBegin			{2: '—!', 3: '333'}
+333	333		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+334	334		301			AniZhuanchangEnd				{3: 'The lightning spear blazes brilliantly, lighting up the entire sky and tearing a bloody hole where your heart should be.'}
+335	335		301							"{3: ""Meanwhile, the large-caliber blood bullet you fired with all your strength only made a small dent between the Archangel's brows.""}"
+336	336		301							"{3: ""There's no doubt you lose the struggle between mortal and divine.""}"
+337	337		302							{2: 'Guh—!', 3: '338'}
+338	338		401							{1: '2', 2: '2593'}
+339	339		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '3'}
+340	340		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 4: '5'}
+341	341		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+342	342		301						1500.0	{3: 'The light around you slowly fades, and you cough up blood in painful bursts as a crimson veil blurs your vision.'}
+343	343		201							{1: '1', 2: '500179'}
+344	344		301							"{1: '1', 2: '""Archangel""', 3: '...Why?', 4: '1'}"
+345	345		301							"{2: '""Archangel""', 3: 'You are human, yet you have no heart?', 4: '1'}"
+346	346		301							{3: 'The Angel asks in surprise and reaches out its massive arm to lift you up for a closer look.'}
+347	347		301							"{2: '""Archangel""', 3: 'If you were a Demon... Wait, no.', 4: '1'}"
+348	348		302							"{2: ""(I can't become a hostage...)"", 3: '349'}"
+349	349		301							"{2: '""Archangel""', 3: 'What exactly are you?', 4: '1'}"
+350	350		302							{2: '(I have to find a way...)', 3: '351'}
+351	351		401							{1: '2', 2: '4895'}
+352	352		202							{1: '1'}
+353	353		205						350.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.3'}
+354	354		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+355	355		205							{1: '1007', 3: '0', 4: '1', 5: '0'}
+356	356		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '2'}
+357	357		101							{4: '5', 5: '1'}
+358	358		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+359	359		301				AniZhuanchangBegin			{3: 'Just as its claws reach for you, you release your right hand from the gun and let your body fall, plunging toward the desolate earth below amid a rain of blood.'}
+360	360		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+361	361		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+362	362		201							{1: '1', 2: '500179', 7: '1'}
+363	363		301			AniZhuanchangEnd				"{1: '1', 2: '""Archangel""', 3: '...', 4: '1'}"
+364	364		202							{1: '1'}
+365	365		301							{3: 'The Archangel gazes down at your tiny figure growing ever more distant, until you disappear into the crimson curtain of rain...'}
+366	366		301				AniZhuanchangBegin			{3: 'And into the swirling yellow sands.'}
+367	367		502							{1: 'DialogDisable'}
+368	368		401							{1: '1', 2: '36'}
+369	369		102							{1: 'The Godfall Revelation', 2: 'Multiversal Chronicles', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+370	370		502						9000.0	{1: 'ThemeEnable'}
+371	371		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+372	372		401							{1: '2', 2: '798'}
+373	373		502					1000.0		{1: 'DialogEnable'}
+374	374		301			AniZhuanchangEnd				{3: '...'}
+375	375		301							{3: '...'}
+376	376		301							{3: 'In the dark world, everything is utterly still.'}
+377	377		301							{3: 'Until the wind and sand rustle past, stirring up the wailing of the dead.'}
+378	378		401							{1: '2', 2: '2920'}
+379	379		301							{2: 'Living Dead', 3: 'Ah... ahh...'}
+380	380		301							{3: 'The air smells of blood and rust, cold as death, as if countless razor-sharp steel wires fill it. With every breath, they coil around your throat and cut through your windpipe until flesh and blood blend together.'}
+381	381		302							{2: '(Open your eyes)', 3: '382'}
+382	382		401							{1: '1', 2: '51'}
+383	383		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '3'}
+384	384		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+385	385		301							{3: 'Rain falls from above, and a crimson sky fills your view. The sun hangs high, burning and swelling like a greedy blood bat as it drains the life of everything below.'}
+386	386		401							{1: '2', 2: '2920'}
+387	387		301			PanelActor1Shake				{2: 'Living Dead', 3: 'Arghh...'}
+388	388		301				DialogDisable			{3: 'Staggering footsteps kick up the yellow sand, reminding you that even in this wasteland, you are not alone.'}
+389	389		302							{2: '(Try to turn over)', 3: '390'}
+390	390		401							{1: '2', 2: '2936'}
+391	391		104						450.0	{1: '0|-10|0', 2: '0.4'}
+392	392		104							{1: '0|0|0', 2: '0.25'}
+393	393		301			DialogEnable				{3: 'You strain slightly to get up, and the blood pooled in your mouth suddenly rushes into your throat.'}
+394	394		302			RImgBg1Shake				{2: '—Cough!', 3: '395'}
+395	395		401							{1: '2', 2: '1505'}
+396	396		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0.3'}
+397	397		301							{3: 'You spit out a mouthful of blood and keep trying to move your body.'}
+398	398		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0', 5: '0.3'}
+399	399		301							{3: 'But no matter how hard you try, it feels like countless desperate rotting hands are holding you down, refusing to let you move an inch.'}
+400	400		401							{1: '2', 2: '2920'}
+401	401		301			RImgBg1Shake				{2: 'Living Dead', 3: 'Garghhh...', 4: '18'}
+402	402		301							{3: 'The footsteps come closer and closer, while distant wails begin to rise.'}
+403	403		401							{1: '2', 2: '2920'}
+404	404		301			RImgBg1Shake	DialogDisable			{2: 'Living Dead', 3: '—Ahhh! Ahhh!', 4: '18'}
+405	405		302							{2: '(Use all your strength to move)'}
+406	406		401							{1: '2', 2: '4895'}
+407	407		104						450.0	{1: '0|-10|0', 2: '0.4'}
+408	408		104						450.0	{1: '0|0|0', 2: '0.4'}
+409	409		301			DialogEnable				{3: 'Biting down until your lips bleed, you endure the searing pain and force your upper body upright in one quick motion.'}
+410	410		301							{3: 'Now you can finally see the gaping wound in your chest, with blood pouring out in steady, gurgling streams.'}
+411	411		301							{3: 'You struggle to turn over and crawl across the scorching sand. Reaching out with your right arm, you dig your fingers into the shifting grains to pull your body forward with all your strength.'}
+412	412		301							{3: 'Then, despite the excruciating pain from your open chest wound, you reach out with your left arm—'}
+413	413		401							{1: '2', 2: '2920'}
+414	414		301			RImgBg1Shake				{2: 'Living Dead', 3: 'Ugh-aargh—', 4: '18'}
+415	415		301							{3: 'Yet no matter how hard you struggle, you cannot escape the approaching footsteps slowly closing in from behind.'}
+416	416		302							"{2: ""I can't die like this..."", 3: '417', 4: ""It's too late..."", 5: '417'}"
+417	417		401							{1: '2', 2: '2920'}
+418	418		301			RImgBg1Shake				{2: 'Living Dead', 3: 'Urgh—ahhh!!!', 4: '18'}
+419	419		402							{1: '798'}
+420	420		401							{1: '2', 2: '2905'}
+421	421		401							{1: '2', 2: '1505'}
+422	422		402							{1: '51'}
+423	423		301							{3: 'A wet, sickening rip sounds from behind as flesh tears apart.'}
+424	424		401							{1: '1', 2: '120'}
+425	425		301							{3: 'Along with it comes a gentle, alluring voice.'}
+426	426		201							{1: '1', 2: '501299'}
+427	427		301							"{1: '1', 2: '???', 3: ""Sorry, I'm late."", 4: '1'}"
+428	428		301							{3: 'Two streaks of black shadow cut through the yellow sand, breaking the endless curtain of blood that stretched like threads of sorrow.'}
+429	429		301							{3: 'Like a pure and flawless night, like a gentle and earnest sweet rain, it quietly approaches this land, softly unfolding before your eyes.'}
+430	430		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+431	431		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+432	432		201							{1: '1', 2: '501282', 7: '1'}
+433	433		301							{1: '1', 3: 'A beautiful figure emerges from the shadow.'}
+434	434		301							{2: '???', 3: '...', 4: '1'}
+435	435		203							{1: '1', 2: '0.4', 4: '-50'}
+436	436		301							{3: 'She kneels down and gently lifts you up, cradling you in her warm, soft embrace.'}
+437	437		301							{3: 'A name mysteriously surfaces in your mind when you see her face.'}
+438	438		302							{2: 'Nirvatia...', 3: '439'}
+439	439		301							{2: 'Nirvatia', 3: '【kuroname】...', 4: '1'}
+440	440		301							"{2: 'Nirvatia', 3: ""You're badly hurt."", 4: '1'}"
+441	441		301				DialogDisable			"{3: ""You're certain this isn't the first time you have met.""}"
+442	442		202							{1: '1', 6: '1'}
+443	443		401							{1: '2', 2: '2959'}
+444	444		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+445	445		504							{1: '0.7'}
+446	446		101						450.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_05.jpg'}
+447	447		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+448	448		504							{1: '0'}
+449	449		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+450	450		201							{1: '1', 2: '501282', 3: '14', 7: '1'}
+451	451		301			DialogEnable				"{1: '1', 2: 'Nirvatia', 3: ""...You've come such a long way. It must have been so tough."", 4: '1'}"
+452	452		301							{3: 'She gazes at the horrifying wound on your chest, and sorrow gathers in the depths of her eyes.'}
+453	453		301							"{2: 'Nirvatia', 3: ""Don't be scared. Don't cry..."", 4: '1'}"
+454	454		301							"{2: 'Nirvatia', 3: ""I'm right here."", 4: '1'}"
+455	455		202							{1: '1'}
+456	456		301							{3: 'Her slender fingers touch your cheek gently, spreading sweet hope that warms your battered body.'}
+457	457		201							{1: '1', 2: '501282', 3: '8'}
+458	458		301				DialogDisable			"{1: '1', 2: 'Nirvatia', 3: ""I'll follow in your footsteps..."", 4: '1'}"
+459	459		401							{1: '2', 2: '2959'}
+460	460		202							{1: '1', 6: '1'}
+461	461		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+462	462		504							{1: '0.7'}
+463	463		101						450.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_04.jpg'}
+464	464		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+465	465		504							{1: '0'}
+466	466		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+467	467		201							{1: '1', 2: '501282', 3: '8', 7: '1'}
+468	468		301			DialogEnable				{1: '1', 2: 'Nirvatia', 3: 'And tend to your wounds...', 4: '1'}
+469	469		301							{3: 'The sound of flowing water rings in your ears as blood that has soaked into the earth rises from the ground, gathering into countless threads.'}
+470	470		301							{2: 'Nirvatia', 3: 'Witness your legend...', 4: '1'}
+471	471		301							{3: 'Amid the sweet fragrance, the threads, pulled by an unseen force, quietly flow into your body.'}
+472	472		301							{2: 'Nirvatia', 3: 'I will bear the suffering together with you...', 4: '1'}
+473	473		301							{2: 'Nirvatia', 3: 'For all eternity.', 4: '1'}
+474	474		202							{1: '1'}
+475	475		301							{3: 'She pulls her arms in, wrapping them tightly around you.'}
+476	476		201							{1: '1', 2: '501282'}
+477	477		301							{1: '1', 2: 'Nirvatia', 3: '...', 4: '1'}
+478	478		301							"{2: 'Nirvatia', 3: '""That forbidden slaughter stole death from this world, leaving only the endless sorrows of life.""', 4: '1'}"
+479	479		301							{3: 'A melodious and familiar singing voice echoes in your ears.'}
+480	480		301							"{2: 'Nirvatia', 3: '""We mourn, for Dawn rules the earth with tyranny. Bloodstains form scars across the sky, declaring the death of night.""', 4: '1'}"
+481	481		301							"{2: 'Nirvatia', 3: '""We weep, for the Angels see us as dogs and judge the world\'s wounds by the bones of the Living Dead.""', 4: '1'}"
+482	482		401							{1: '2', 2: '4276'}
+483	483		202							{1: '1'}
+484	484		301							{3: 'With her chanting, streams of fragmented dark purple light slowly appear before your eyes.'}
+485	485		401							{1: '2', 2: '10106504'}
+486	486		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.5'}
+487	487		301							{3: 'With a swift whoosh, a pair of black wings unfolds in the radiance, silently wrapping you from behind.'}
+488	488		201							{1: '1', 2: '501282'}
+489	489		301							"{1: '1', 2: 'Nirvatia', 3: '""And now, the savior cuts through chaos, leading us to raise the banner of rebellion—""', 4: '1'}"
+490	490		202							{1: '1'}
+491	491		401							{1: '2', 2: '967'}
+492	492		301							{3: 'Black feathers fall, blocking the crimson curtain. They drift down like flower petals from a tree, countless and weightless.'}
+493	493		301							{3: 'The intense pain throughout your body gradually fades, leaving only warm comfort and tranquil serenity in your consciousness.'}
+494	494		301				AniZhuanchangBegin			{3: 'Along with an epic you have long known by heart.'}
+495	495		205							{1: '1005', 3: '0', 4: '1', 5: '0'}
+496	496		402							{1: '967'}
+497	497		401						2000.0	{1: '1', 2: '36'}
+498	498		401							{1: '1', 2: '6201'}
+499	499		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_20.jpg'}
+500	500		301			AniZhuanchangEnd	DialogDisable			{3: 'That person will unveil the mark of sin, lead the four knights, and bring the night of hope back to the human world.'}
+501	501		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5701_20.jpg', 3: '0', 4: '1', 5: '1.2'}
+502	502		104						1800.0	{1: '-655|-325|-600', 2: '0', 4: '3'}
+503	503		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_20.jpg'}
+504	504		104							{1: '-655|-325|-600', 2: '0'}
+505	505		205							{1: '999'}
+506	506		104							{1: '0|0|0', 2: '0', 4: '3'}
+507	507		301			DialogEnable				"{3: 'The first knight shall be granted the name ""War"".'}"
+508	508		301				DialogDisable			{3: 'He rides a crimson steed, weapons darkening the sky, vowing blood for blood—revenge on those who slay the innocent, making traitors pay in kind.'}
+509	509		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5701_20.jpg', 3: '0', 4: '1', 5: '1.2'}
+510	510		104						1800.0	{1: '-625|85|-550', 2: '0', 4: '3'}
+511	511		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_20.jpg'}
+512	512		104							{1: '-625|85|-550', 2: '0'}
+513	513		205							{1: '999'}
+514	514		104							{1: '0|0|0', 2: '0', 4: '3'}
+515	515		301			DialogEnable				"{3: 'The second knight shall be granted the name ""Death"".'}"
+516	516		301				DialogDisable			"{3: ""She rises from Hell's blood and bones, piloting a train that ferries souls to the afterlife, seeking to reclaim the throne and reforge the laws of life and death.""}"
+517	517		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5701_20.jpg', 3: '0', 4: '1', 5: '1.2'}
+518	518		104						1800.0	{1: '-290|-360|-650', 2: '0', 4: '3'}
+519	519		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_20.jpg'}
+520	520		104							{1: '-290|-360|-650', 2: '0'}
+521	521		205							{1: '999'}
+522	522		104							{1: '0|0|0', 2: '0', 4: '3'}
+523	523		301			DialogEnable				"{3: 'The third knight shall be granted the name ""Pestilence"".'}"
+524	524		301				DialogDisable			"{3: ""The doctor questions the soul's ailments and bears the burdens as he enters the mist, seeking salvation that frees life from suffering.""}"
+525	525		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5701_20.jpg', 3: '0', 4: '1', 5: '1.2'}
+526	526		104						1800.0	{1: '-88|0|-450', 2: '0', 4: '3'}
+527	527		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_20.jpg'}
+528	528		104							{1: '-88|0|-450', 2: '0'}
+529	529		205							{1: '999'}
+530	530		104							{1: '0|0|0', 2: '0', 4: '3'}
+531	531		301			DialogEnable				"{3: 'The fourth knight shall be granted the name ""Famine"".'}"
+532	532		301				DialogDisable			{3: 'Life is a high-stakes card game—to reclaim her lost chips, she chases the Demon Lord Mammon in a gamble beyond time.'}
+533	533		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5701_20.jpg', 3: '0', 4: '1', 5: '1.5'}
+534	534		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_20.jpg'}
+535	535		205							{1: '999'}
+536	536		301			DialogEnable				{3: 'The four knights of apocalypse form a Blood Covenant with the savior—together they sever the chains of the mortal world, letting the corrupt universe be reborn through judgment.'}
+537	537		301							{3: 'Why must the sins of our ancestors be paid for with the blood of the innocent?'}
+538	538		301				DialogDisable			"{3: ""The free people call out the Hero's name in unison—""}"
+539	539		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1.5'}
+540	540		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+541	541		205							{1: '999'}
+542	542		307							{1: 'Set forth, Gray Raven. Return in triumph, our savior.', 3: '70', 4: 'ffffffff'}
+543	543		301							{3: 'Set forth, Gray Raven. Return in triumph, our savior.'}
+544	544		307						200.0	{2: '1'}
+545	545		307							{1: 'Refuse to be enslaved in the Sanctuary.', 3: '70', 4: 'ffffffff'}
+546	546		301							{3: 'Refuse to be enslaved in the Sanctuary.'}
+547	547		307						300.0	{2: '1'}
+548	548		401							{1: '2', 2: '9357061'}
+549	549		401							{1: '2', 2: '4348'}
+550	550		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab', 2: '1'}
+551	551		307							{1: 'Choose only to reign in Hell.', 3: '70', 4: 'ff4e4eff'}
+552	552		301				AniZhuanchangBegin			{3: 'Choose only to reign in Hell.'}
+553	553		307						200.0	{2: '1'}
+554	554		402							{1: '4348'}
+555	555		402							{1: '9357061'}
+556	556		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab'}
+557	557		502							{1: 'DialogEnable'}
+558	558		401						2000.0	{1: '1', 2: '36'}
+559	559		401							{1: '1', 2: '120'}
+560	560		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+561	561		201							{1: '1', 2: '501282', 7: '1'}
+562	562		301			AniZhuanchangEnd				{1: '1', 2: 'Nirvatia', 3: 'Just a little longer... 【kuroname】.', 4: '1'}
+563	563		301		1		AniZhuanchangBegin			"{2: 'Nirvatia', 3: ""I'm taking you home."", 4: '1'}"

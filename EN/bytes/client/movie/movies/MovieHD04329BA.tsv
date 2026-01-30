@@ -1,0 +1,101 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500581', 3: '1'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Echo', 3: ""So you're saying you'll be with me as long as I have this voucher?"", 4: '1'}"
+5	5		301							"{3: ""Echo examines the item in her hands, seemingly trying to figure out if it's actually going to deliver what it promises.""}"
+6	6		301							"{3: ""When she sees that you're holding the same voucher, she breaks into a smile.""}"
+7	7		301							{2: 'Echo', 3: 'I just heard from the shop attendant that we can use these vouchers at any participating store. Do you have somewhere in mind, Commandant?', 4: '1'}
+8	8		302							"{2: ""Let's go with whatever you'd like to try today."", 3: '10'}"
+9	9		301							{2: 'Echo', 3: 'Sure. I... will make sure I get everything planned out for you, Commandant.', 4: '1'}
+10	10		301				DialogDisable			"{2: 'Echo', 3: ""I don't have any particular store in mind right now, though... Let's walk around together and look for inspiration."", 4: '1'}"
+11	11		202							{1: '1'}
+12	12		401							{1: '2', 2: '2915'}
+13	13		306						250.0	{1: '1'}
+14	14		502						500.0	{1: 'RImgBg1BlowUp'}
+15	15		201						50.0	{1: '1', 2: '500340', 4: '-600', 7: '1'}
+16	16		203						500.0	{1: '1', 2: '2', 3: '-600', 5: '-800'}
+17	17		202						250.0	{1: '1'}
+18	18		201						50.0	{1: '2', 2: '500969', 4: '600', 7: '1'}
+19	19		203						500.0	{1: '2', 2: '2', 3: '600', 5: '-800'}
+20	20		202						250.0	{1: '2'}
+21	21		201						50.0	{1: '3', 2: '501025', 4: '-300', 7: '1'}
+22	22		203						500.0	{1: '3', 2: '2', 3: '-300', 5: '-800'}
+23	23		202						250.0	{1: '3'}
+24	24		201						50.0	{1: '4', 2: '500240', 4: '300', 7: '1'}
+25	25		203						500.0	{1: '4', 2: '2', 3: '300', 5: '-800'}
+26	26		202							{1: '4'}
+27	27		301			DialogEnable				{3: 'As you and Echo walk side by side through streets brimming with festive vibes, you notice that her steps are light and brisk.'}
+28	28		402							{1: '2915'}
+29	29		505							{1: 'RImgBg1BlowUp'}
+30	30		306						500.0	
+31	31		104						1000.0	{1: '100|100|-300', 2: '1'}
+32	32		301							{3: 'She quickly comes to a stop at a small shop at the corner of the street.'}
+33	33		301							{3: 'The small shop is decorated in deep, antiquated tones. Through the glass windows, you can see the interior filled with an assortment of miscellaneous items.'}
+34	34		301							"{3: 'The words ""Echoes of the Past"" on the sign stand out prominently, with a smaller line underneath reading ""Experience life in the Golden Age"".'}"
+35	35		201							{1: '1', 2: '500581', 3: '1'}
+36	36		301							"{1: '1', 2: 'Echo', 3: '""Echoes of the Past""? Is this some sort of music shop?', 4: '1'}"
+37	37		302							"{2: ""Looks like it's got to do with the Golden Age."", 3: '38'}"
+38	38		301							{3: 'Having heard what you said, Echo curiously examines the shop.'}
+39	39		301							{2: 'Echo', 3: 'Would you come inside with me to take a look, Commandant?', 4: '1'}
+40	40		302				AniZhuanchangBegin			{2: 'Sure.', 3: '41'}
+41	41		202							{1: '1', 6: '1'}
+42	42		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory637.jpg'}
+43	43		401							{1: '2', 2: '754'}
+44	44		301			AniZhuanchangEnd				{3: 'The dust dances in the streams of sunlight that pours into the shop as Echo pushes open the door with a creaking sound.'}
+45	45		301							{3: 'As far as you can see, the shop is filled with old objects from the Golden Age. Despite how old they must be, everything has been polished to immaculate cleanliness.'}
+46	46		301							"{3: ""A shop attendant in classical formal attire emerges from behind the shop and greets you both with a gentle bow. You feel like you've just stepped into a warm dream of bygone days.""}"
+47	47		201							{1: '1', 2: '500342'}
+48	48		301							"{1: '1', 2: 'Staff', 3: 'Welcome to ""Echoes of the Past"". We specialize in providing authentic everyday experiences from the Golden Age.', 4: '1'}"
+49	49		301							{2: 'Staff', 3: 'There is not one bit of simulation technology in the things you see here—everything is genuinely from the Golden Age.', 4: '1'}
+50	50		301							"{2: 'Staff', 3: ""Please feel free to explore at your leisure. If you need anything, I'll just be in the room in the back."", 4: '1'}"
+51	51		202							{1: '1'}
+52	52		301							{3: 'The shop once again falls silent when the shop attendant is gone. The heavy wooden door blocks out the bustling noise from the street outside, with only gentle music flowing like water through the space.'}
+53	53		301							{3: 'This place feels like a beautiful dream coming straight out of the Golden Age, exactly as she said.'}
+54	54		301							{3: 'Echo examines each item before her with intense concentration.'}
+55	55		301							{3: 'Finishing examining every corner of the room, she finally settles on an exquisite wooden music box.'}
+56	56		401						1000.0	{1: '1', 2: '36'}
+57	57		401							{1: '2', 2: '4917'}
+58	58		301							{3: 'As she opens the music box, gentle music starts playing like a stream of water.'}
+59	59		201							{1: '1', 2: '500581', 3: '1'}
+60	60		301							{1: '1', 2: 'Echo', 3: 'Wait... this melody... I need to write it down!', 4: '1'}
+61	61		301							{3: 'Echo quickly pulls out her notebook and carefully transcribes the melody onto paper.'}
+62	62		301							{2: 'Echo', 3: 'There, that should do it. This piece of paper is going to come in handy when I want to hear this melody again.', 4: '1'}
+63	63		301							{2: 'Echo', 3: 'People usually like to play music out of their terminals nowadays because you can play at the speed you want and switch songs whenever you like.', 4: '1'}
+64	64		301							{2: 'Echo', 3: 'But despite all that, some people still appreciate music boxes like this because they really help you relax.', 4: '1'}
+65	65		301							{2: 'Echo', 3: 'This room has an interesting vibe to it. It feels like time has come to a standstill here.', 4: '1'}
+66	66		301							"{2: 'Echo', 3: ""I'm feeling something I've never felt back in Babylonia."", 4: '1'}"
+67	67		301							"{2: 'Echo', 3: ""I can't quantify or define this feeling but it's very interesting. Do you feel the same way, Commandant?"", 4: '1'}"
+68	68		302							{2: 'It sure feels very different here.', 3: '69'}
+69	69		401							{1: '1', 2: '208'}
+70	70		202							{1: '1'}
+71	71		301							{3: 'Echo is drawn to a nearby wardrobe filled with a dazzling array of garments and accessories.'}
+72	72		402							{1: '4917'}
+73	73		301							{3: 'Heavy velvet, soft silk, delicate lace—everything stands in stark contrast to the cold metal of her frame.'}
+74	74		301							{3: 'Judging by their design, you believe these are all formal dresses from the Golden Age.'}
+75	75		201							{1: '1', 2: '500581', 3: '1'}
+76	76		301							{1: '1', 2: 'Echo', 3: 'Interesting how clothing and frames back then are so different from what we have now.', 4: '1'}
+77	77		301							"{2: 'Echo', 3: ""The overall tailoring isn't suitable for mobility or battle, and there's a severe lack of impact protection."", 4: '1'}"
+78	78		302							{2: 'Would you like to try one on?', 3: '79'}
+79	79		301							{3: 'Echo appears somewhat surprised at your suggestion.'}
+80	80		204							{1: '1', 2: '6'}
+81	81		301							"{2: 'Echo', 3: ""I... don't think they're gonna suit me."", 4: '1'}"
+82	82		302							"{2: ""C'mon, let's do it for the experience."", 3: '83'}"
+83	83		301							{2: 'Echo', 3: 'At your gentle insistence, Echo flushes.', 4: '1'}
+84	84		204							{1: '1', 2: '1'}
+85	85		301							"{2: 'Echo', 3: ""Alright, let's be brave and do things we normally wouldn't do, then!"", 4: '1'}"
+86	86		301							"{2: 'Echo', 3: ""Please don't laugh, Commandant."", 4: '1'}"
+87	87		301							{3: 'A moment later, Echo emerges from the changing room with a completely different look.'}
+88	88		301							{3: 'Against the backdrop of the elaborate formal gown, Echo looks completely different from her usual self.'}
+89	89		301							{3: 'She lifts her skirt and performs a perfect, elegant curtsy.'}
+90	90		301							"{2: 'Echo', 3: ""I've never worn anything like this before. It feels so weird."", 4: '1'}"
+91	91		301							"{2: 'Echo', 3: ""It's almost like having a new frame... Actually, it feels weirder than being in a new frame."", 4: '1'}"
+92	92		301							{2: 'Echo', 3: 'The dress has some wrinkles. I tried my best to smooth them out.', 4: '1'}
+93	93		301							{2: 'Echo', 3: 'Commandant, do you think I look weird like this?', 4: '1'}
+94	94		302							"{2: ""I'm just not used to seeing you like this."", 3: '95'}"
+95	95		301							"{2: 'Echo', 3: ""That's good. I thought you found me a joke because you weren't saying anything just now."", 4: '1'}"
+96	96		301							{3: 'Echo smiles, seemingly about to say something. After a few seconds of silence, she seems to have gathered herself and gestures for you to look at her back.'}
+97	97		301							{3: 'A loose satin ribbon hangs down the back of her dress.'}
+98	98		301							{2: 'Echo', 3: 'I was having a little trouble just now putting on this skirt.', 4: '1'}
+99	99		301							{2: 'Echo', 3: 'This ribbon here—I tried to tie it myself but kept failing.', 4: '1'}
+100	100		301		1		AniZhuanchangBegin			{2: 'Echo', 3: 'Say... would you give me a hand here, Commandant?', 4: '1'}

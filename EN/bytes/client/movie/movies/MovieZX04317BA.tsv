@@ -1,0 +1,114 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		503				AniZhuanchangBegin			{1: '10121'}
+4	4		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+5	5		107						1000.0	{1: 'Science Council', 3: 'Testing Ground'}
+6	6		108							{1: '1'}
+7	7		401							{1: '1', 2: '381'}
+8	8		201							{1: '1', 2: '500004'}
+9	9		301			DialogEnable				{1: '1', 3: 'The testing ground, once bustling day and night, was now silent, its bright lights dimmed. Asimov stands by the control panel, meticulously verifying the coordinates.'}
+10	10		301							{2: 'Asimov', 3: 'Any new discoveries?', 4: '1'}
+11	11		302							{2: 'None.'}
+12	12		203							{1: '1', 2: '0.25', 3: '400'}
+13	13		201							{1: '2', 2: '500864', 3: '4', 4: '-400'}
+14	14		301							"{1: '1', 2: 'Teddy', 3: ""It's still those data walls. Ever since they appeared, they've scattered and blocked the core areas."", 4: '2'}"
+15	15		301							{2: 'Teddy', 3: 'Even though all signs point to the possibility of opening them, I still stand by my conclusion.', 4: '2'}
+16	16		301							"{2: 'Teddy', 3: ""I could try to hijack them using the lower-level protocol, but Gestalt's database might activate its protection systems and get damaged."", 4: '2'}"
+17	17		301							"{2: 'Teddy', 3: ""The code for Gestalt's foundational database has been lost in the chaos for a long time, so I can't gauge how bad the potential damage might be."", 4: '2'}"
+18	18		204							{1: '2', 2: '13'}
+19	19		301							"{2: 'Teddy', 3: ""There's a chance we could extract the technology they want, but there's also a risk of blowing up the entire foundational database."", 4: '2'}"
+20	20		301							{2: 'Teddy', 3: 'Have they made a decision yet?', 4: '2'}
+21	21		301							"{2: 'Asimov', 3: ""Since Gestalt still can't perform certain calculations, they're getting ready for a parliamentary vote on whether to open these data walls."", 4: '1'}"
+22	22		204							{1: '2', 2: '10'}
+23	23		301							"{2: 'Teddy', 3: ""...It's tough to say just how low their intelligence really is."", 4: '2'}"
+24	24		302							"{2: ""They must think they've found a glimmer of hope."", 3: '25'}"
+25	25		204							{1: '2'}
+26	26		301							"{3: ""Even knowing that what they might open is Pandora's box, knowing that the abyss ahead might store poison disguised as nectar.""}"
+27	27		301							{3: 'But...'}
+28	28		301							"{3: ""Just like the Norman Mining Corp, once obsessed with Dominik's legacy, how can those who have seen the heights of power be satisfied with the status quo?""}"
+29	29		204							{1: '2', 2: '5'}
+30	30		301							{2: 'Teddy', 3: 'If only there was enough time...', 4: '2'}
+31	31		302							{2: '...', 3: '32'}
+32	32		301							"{3: 'With enough time and our current tech, we could actually create a new ""Golden Age"".'}"
+33	33		301							"{3: ""But they can't wait any longer.""}"
+34	34		301							"{3: 'They cannot wait to put their glorious mark in the history book and write, ""This is the decision that turns the page on humanity\'s history book, leading humanity into a new era.""'}"
+35	35		204							{1: '2', 2: '4'}
+36	36		301							{2: 'Teddy', 3: 'Once the Data Wall is opened, will Dominik actually show up?', 4: '2'}
+37	37		301							"{2: 'Asimov', 3: ""Can't tell."", 4: '1'}"
+38	38		204							{1: '1', 2: '8'}
+39	39		301							"{2: 'Asimov', 3: ""No one can really assess Dominik's current state, and..."", 4: '1'}"
+40	40		204							{1: '1', 2: '9'}
+41	41		301							"{2: 'Asimov', 3: ""Can we even be sure it's Dominik?"", 4: '1'}"
+42	42		301							{2: 'Teddy', 3: '...', 4: '2'}
+43	43		302							{2: '..Still, are they really intent on breaking through the Data Wall?', 3: '44'}
+44	44		204							{1: '1'}
+45	45		301							{2: 'Asimov', 3: 'A lot of people are in favor of it.', 4: '1'}
+46	46		301				AniZhuanchangBegin			{2: 'Asimov', 3: 'Even Commander Nikola from the military is on board.', 4: '1'}
+47	47		401							{1: '1', 2: '36'}
+48	48		202			DialogDisable			1000.0	{1: '1', 2: '2', 6: '1'}
+49	49		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory427.jpg'}
+50	50		107							{1: 'World Government Emergency Meeting'}
+51	51		301							{3: 'World Government Emergency Meeting'}
+52	52		108							{1: '1'}
+53	53		401							{1: '1', 2: '284'}
+54	54		301			DialogEnable				{3: 'Unlike the usual clamor, the hall is enveloped in silence.'}
+55	55		301							{3: 'Everyone senses the weight of this impromptu meeting.'}
+56	56		301							{3: 'Is it a moment of danger or a chance for opportunity? No one can foresee the outcome; each member silently contemplates their thoughts.'}
+57	57		201							{1: '1', 2: '500011', 3: '5'}
+58	58		301							{1: '1', 2: 'Hassen', 3: 'The briefing materials have already been distributed to you.', 4: '1'}
+59	59		301							"{2: 'Hassen', 3: ""I'd like to emphasize again that Chief Technician Asimov from the Science Council, Captain Karenina of the Engineering Force, and Vice-Captain Teddy are all opposed to unlocking the Data Wall in Gestalt."", 4: '1'}"
+60	60		202							{1: '1'}
+61	61		301							{3: 'A stir of whispers ripples through the attendees, but calm quickly settles over the room.'}
+62	62		201							{1: '1', 2: '500856'}
+63	63		301							{1: '1', 2: 'Councilor A', 3: 'So, we have indeed obtained some data on the Inver-Device from that space?', 4: '1'}
+64	64		203							{1: '1', 2: '0.25', 3: '-400'}
+65	65		201							{1: '2', 2: '500011', 3: '5', 4: '400'}
+66	66		301							{1: '1', 2: 'Hassen', 3: 'Yes.', 4: '2'}
+67	67		301							"{2: 'Councilor A', 3: ""And we've confirmed that there's even greater space beyond the Data Wall?"", 4: '1'}"
+68	68		301							{2: 'Hassen', 3: 'Yes.', 4: '2'}
+69	69		301							{2: 'Hassen', 3: 'Yet everything beyond that wall remains shrouded in mystery. Even a united effort from the Science Council and Engineering Force cannot reveal what lies beyond.', 4: '2'}
+70	70		202							{1: '1', 6: '1'}
+71	71		203							{1: '2', 2: '0.25'}
+72	72		301							{2: 'Hassen', 3: 'Next, is another crucial piece of information we must discuss.', 4: '2'}
+73	73		301							"{2: 'Hassen', 3: ""During the outbreak of the Punishing Virus, while relocating Gestalt, Dominik's adjutant Nithart intercepts an erroneous command sent from Gestalt."", 4: '2'}"
+74	74		301							{2: 'Hassen', 3: 'It is a launch order for 7295 indeterminate ballistic missiles aimed at the entire space fleet, targeting—', 4: '2'}
+75	75		301							{2: 'Hassen', 3: 'Babylonia.', 4: '2'}
+76	76		301							{2: 'Hassen', 3: 'This information comes from Mr. Watanabe of the Forsaken.', 4: '2'}
+77	77		202							{1: '2', 6: '1'}
+78	78		401							{1: '2', 2: '4328'}
+79	79		201							{1: '1', 2: '500838', 4: '400'}
+80	80		201							{1: '2', 2: '500202', 4: '-400'}
+81	81		301							{1: '1', 2: 'Councilor C', 3: 'Gestalt issued an order to destroy Babylonia?!', 4: '1'}
+82	82		301							{2: 'Councilor B', 3: 'I doubt the authenticity of this information.', 4: '2'}
+83	83		301							"{2: 'Councilor B', 3: ""The Forsaken wouldn't want Babylonia's technology to revert to the Golden Age's level."", 4: '2'}"
+84	84		202							{1: '1', 2: '2', 6: '1'}
+85	85		201							{1: '1', 2: '500011', 3: '5'}
+86	86		301							"{1: '1', 2: 'Hassen', 3: ""Yet the technology of the Golden Age is built on time and refinement; we don't necessarily require such drastic means to reclaim past achievements."", 4: '1'}"
+87	87		203							{1: '1', 2: '0.25', 3: '-400'}
+88	88		201							{1: '2', 2: '500012', 4: '400'}
+89	89		301							{1: '1', 2: 'Nikola', 3: 'Do we truly have any time left?', 4: '2'}
+90	90		301							{2: 'Hassen', 3: '...', 4: '1'}
+91	91		204							{1: '2', 2: '5'}
+92	92		301							{2: 'Nikola', 3: 'With the Ascendants watching us closely and the Hetero Zone spreading, can we honestly say we still have time?', 4: '2'}
+93	93		301							"{2: 'Nikola', 3: ""We've already sacrificed too much, warriors and resources alike."", 4: '2'}"
+94	94		301							"{2: 'Nikola', 3: ""The Hetero Zone may have receded for now, but who can assure us that the Red Tide won't rise again?"", 4: '2'}"
+95	95		301							{2: 'Nikola', 3: 'When humanity is entirely confined to the Clean Zone, what will we have left to fight back with?', 4: '2'}
+96	96		301							{2: 'Hassen', 3: 'Nikola, you know well that there may be dangers sealed behind that wall.', 4: '1'}
+97	97		204							{1: '2'}
+98	98		301							{2: 'Nikola', 3: 'Or it could present us with a rare opportunity.', 4: '2'}
+99	99		202							{1: '1', 2: '2'}
+100	100		301							{3: 'A heavy silence hangs in the Parliament hall.'}
+101	101		201							{1: '1', 2: '500011', 3: '5'}
+102	102		301							{1: '1', 2: 'Hassen', 3: '...Are there any other questions?', 4: '1'}
+103	103		301				AniZhuanchangBegin			"{2: 'Hassen', 3: ""Then let's move forward with the vote."", 4: '1'}"
+104	104		202			DialogDisable			1000.0	{1: '1'}
+105	105		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory427.jpg'}
+106	106		301			DialogEnable				{3: 'The scholars from the Science Council who favor unlocking the Data Wall believe they can implement safety measures similar to those used in the Inver-Device experiments. They plan to create an isolation zone within Gestalt for their work.'}
+107	107		301							"{3: ""If anything unexpected happens, they can quickly discard the isolation zone and protect most of Gestalt's modules.""}"
+108	108		301							{3: 'Humanity has been dormant for far too long; the desire to launch a bold counterattack and reclaim the civilization that has been imprisoned is overwhelming.'}
+109	109		301							{3: 'In the face of such irresistible temptation, no one can resist taking the bait.'}
+110	110		301							{3: 'To return to the Golden Age and reap the long-awaited fruits of our past.'}
+111	111		301							{3: 'The final result of the vote is too obvious to predict.'}
+112	112		301							"{2: 'Gestalt', 3: ""Commander Nikola's proposal received 52.8% support, 35.1% opposition, and 12.1% abstentions.""}"
+113	113		301		1		AniZhuanchangBegin			{2: 'Gestalt', 3: 'The proposal is approved.'}

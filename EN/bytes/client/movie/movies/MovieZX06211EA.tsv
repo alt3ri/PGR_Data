@@ -1,0 +1,576 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401						200.0	{1: '1', 2: '36'}
+3	3		401						1600.0	{1: '2', 2: '4649'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+5	5		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory936.png'}
+6	6		306						300.0	{1: '1'}
+7	7		401							{1: '1', 2: '169'}
+8	8		301			DialogEnable				{3: 'The sound of the door opening startles Teddy awake.'}
+9	9		301							"{3: ""A deep, instinctual feeling whispers that this isn't the first time she's woken up today.""}"
+10	10		201							{1: '1', 2: '501420'}
+11	11		301							{1: '1', 3: 'She sees Moineau step inside, two bags of bread in hand.'}
+12	12		306							
+13	13		301							"{2: 'Moineau', 3: ""Hungry? I've got bread, bread, and more bread."", 4: '1'}"
+14	14		306							{1: '1'}
+15	15		202							{1: '1', 6: '1'}
+16	16		201							{1: '1', 2: '500864', 3: '4', 5: '-50'}
+17	17		301							{1: '1', 3: 'Moineau is her usual self, yet a spark of wariness flashes through Teddy.'}
+18	18		204							{1: '1', 2: '3'}
+19	19		301							{3: 'This inexplicable caution leaves her frozen for a moment.'}
+20	20		306							
+21	21		201							{1: '18', 2: '501420', 3: '7', 4: '315', 5: '-100', 6: '-400'}
+22	22		301							"{1: '1', 2: 'Moineau', 3: ""What's with that blank stare?"", 4: '18'}"
+23	23		202							{1: '18'}
+24	24		401							{1: '2', 2: '5526'}
+25	25		204							{1: '1'}
+26	26		301							{3: 'Moineau tosses a bag of bread onto the bed, snapping Teddy out of her trance.'}
+27	27		301							"{2: 'Teddy', 3: ""I don't remember giving you a key."", 4: '1'}"
+28	28		201							{1: '18', 2: '501420', 4: '315', 5: '-100', 6: '-400'}
+29	29		301							{1: '1', 2: 'Moineau', 3: 'Guess who used an electronic lock? And remind me, who taught you everything you know about network programming?', 4: '18'}
+30	30		202							{1: '18'}
+31	31		301							{2: 'Teddy', 3: 'A self-taught genius.', 4: '1'}
+32	32		201							{1: '18', 2: '501420', 3: '1', 4: '315', 5: '-100', 6: '-400'}
+33	33		301							{1: '1', 2: 'Moineau', 3: 'Bingo. So, standing before you is at least half your teacher. And your prize for the right answer...', 4: '18'}
+34	34		202							{1: '18'}
+35	35		401							{1: '2', 2: '6375'}
+36	36		301							{3: 'She delivers a totally off-topic response while rummaging through the kitchen cabinets.'}
+37	37		201							{1: '18', 2: '501420', 3: '4', 4: '315', 5: '-100', 6: '-400'}
+38	38		301							{1: '1', 2: 'Moineau', 3: '...is a cup of my hand-brewed tea! ...Seriously, where do you hide your tea leaves?', 4: '18'}
+39	39		204							{1: '18'}
+40	40		301							{2: 'Moineau', 3: 'Ah, got them.', 4: '18'}
+41	41		202							{1: '18', 6: '1'}
+42	42		401							{1: '2', 2: '5286'}
+43	43		203							{1: '1', 2: '0.4'}
+44	44		204							{1: '1', 2: '10'}
+45	45		301				AniZhuanchangBegin			{3: 'Teddy rises to dress, listening to the sound of Moineau boiling water for tea in the kitchen. For a fleeting moment, this peaceful domesticity feels almost surreal.'}
+46	46		202							{1: '1', 6: '1'}
+47	47		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory894.jpg'}
+48	48		504							{1: '0.7'}
+49	49		301			AniZhuanchangEnd				{3: 'Such moments were rare in the Norman family.'}
+50	50		104							{1: '0|0|-200', 2: '7'}
+51	51		201							{1: '15', 2: '501415', 6: '-200'}
+52	52		201							{1: '3', 2: '501158', 4: '-800', 6: '-200'}
+53	53		201							{1: '4', 2: '501337', 4: '800', 6: '-200'}
+54	54		203							{1: '15', 2: '7'}
+55	55		203							{1: '3', 2: '7', 3: '-600'}
+56	56		203							{1: '4', 2: '7', 3: '600'}
+57	57		301							"{1: '1', 3: ""Meals were prepared by chefs and eaten under the servants' watchful eyes, with proper table manners strictly followed...""}"
+58	58		301				DialogDisable			"{3: 'Everyone was performing their rigid, pre-assigned roles in the grand play of being a ""Norman"".'}"
+59	59		202							{1: '3', 2: '4', 3: '15'}
+60	60		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1.5'}
+61	61		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+62	62		205							{1: '999'}
+63	63		504							{1: '0'}
+64	64		201							{1: '1', 2: '500861', 5: '50', 7: '1'}
+65	65		205							{1: '1', 3: '0', 4: '1', 5: '1'}
+66	66		301			DialogEnable				"{3: 'It was strange to think how a family, once a mere mining corporation before Dominik selected them as allies, had accumulated so many ""aristocratic customs.""', 4: '1'}"
+67	67		301				AniZhuanchangBegin			{3: 'New money, it seemed, could indeed be polished into old nobility.', 4: '1'}
+68	68		202							{1: '1', 6: '1'}
+69	69		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory936.png'}
+70	70		401							{1: '2', 2: '5281'}
+71	71		301			AniZhuanchangEnd				{3: 'Moineau returns from the kitchen, placing the freshly brewed tea before her.'}
+72	72		201							{1: '1', 2: '500864', 4: '-400'}
+73	73		201							{1: '2', 2: '501420', 4: '400'}
+74	74		301							"{1: '1', 2: 'Teddy', 3: ""So what's the real reason for the dawn raid?"", 4: '1'}"
+75	75		301							{2: 'Moineau', 3: 'Do I need a reason? Maybe I just wanted to see your morning scowl.', 4: '2'}
+76	76		204							{1: '1', 2: '3'}
+77	77		301							{2: 'Teddy', 3: '...', 4: '1'}
+78	78		301							{3: 'Teddy took a deliberate sip of the tea.'}
+79	79		204							{1: '1', 2: '10'}
+80	80		301							{2: 'Teddy', 3: 'Your brew is horrible.', 4: '1'}
+81	81		202							{1: '1', 2: '2'}
+82	82		301							{3: 'They finish their breakfast in the drowsy haze of early morning.'}
+83	83		201							{1: '1', 2: '501420', 3: '1'}
+84	84		301							{1: '1', 2: 'Moineau', 3: 'Case files are thin. The bureau actually approved a day off. So, feel like getting some air?', 4: '1'}
+85	85		202							{1: '1'}
+86	86		306							{1: '1'}
+87	87		301							{3: 'The faint chirping of sparrows drifts through the window, and Teddy turns to see several of them chattering on the windowsill.'}
+88	88		306							
+89	89		201							{1: '1', 2: '500864', 4: '-400'}
+90	90		201							{1: '2', 2: '501420', 4: '400'}
+91	91		301							{1: '1', 2: 'Teddy', 3: 'No cases, really?', 4: '1'}
+92	92		301				AniZhuanchangBegin			{2: 'Moineau', 3: 'Yeah, so we might as well go out for some fun, you know.', 4: '2'}
+93	93		202							{1: '1', 2: '2', 6: '1'}
+94	94		306							{1: '1'}
+95	95		401						2000.0	{1: '1', 2: '36'}
+96	96		401							{1: '1', 2: '6226'}
+97	97		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1370.jpg'}
+98	98		301			AniZhuanchangEnd	DialogDisable			"{3: ""With Moineau's urging, Teddy finally accompanies her out of the apartment.""}"
+99	99		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1366.jpg', 3: '0', 4: '1', 5: '1'}
+100	100		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1366.jpg'}
+101	101		205							{1: '999'}
+102	102		401							{1: '2', 2: '2915'}
+103	103		301			DialogEnable				{3: 'Together, they cross the overpass, wait for green lights at intersections, and order bubble tea like the most ordinary young women.'}
+104	104		301				DialogDisable			"{3: ""Around them, Elysium's commercial engine never stops humming. Shopping malls bulge with bustling crowds.""}"
+105	105		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1371.jpg', 3: '0', 4: '1', 5: '1'}
+106	106		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1371.jpg'}
+107	107		205							{1: '999'}
+108	108		301			DialogEnable				{3: 'As they walk, they pass a plaza taken over by an anime convention, where teenagers in elaborate costumes sing and dance with uninhibited joy.'}
+109	109		402							{1: '2915'}
+110	110		306							
+111	111		201							{1: '1', 2: '501420', 3: '7'}
+112	112		301							{1: '1', 2: 'Moineau', 3: 'Oh, I know that character!', 4: '1'}
+113	113		301							{3: 'She gestures toward a muscular man dressed in a red and blue bodysuit.'}
+114	114		203							{1: '1', 2: '0.25', 3: '400'}
+115	115		201							{1: '2', 2: '500864', 3: '1', 4: '-400'}
+116	116		301							{1: '1', 2: 'Teddy', 3: 'Everyone knows Superhuman.', 4: '2'}
+117	117		204							{1: '1', 2: '1'}
+118	118		301							"{2: 'Moineau', 3: ""And there's that Creepy Batguy, too."", 4: '1'}"
+119	119		204							{1: '1'}
+120	120		301							"{2: 'Moineau', 3: ""I heard someone once devised an elaborate plan to breach multiple security layers just to reach the Central Building's rooftop, all to check if there was a spotlight that projected a bat symbol."", 4: '1'}"
+121	121		204							{1: '2'}
+122	122		301							{2: 'Teddy', 3: 'Is there really one up there?', 4: '2'}
+123	123		204							{1: '1'}
+124	124		301							{2: 'Moineau', 3: 'Of course not.', 4: '1'}
+125	125		202							{1: '1', 2: '2'}
+126	126		301							{3: 'On the outdoor screen, an anime promotional video plays. In it, a young man in a yellow jacket walks with a white-haired hacker girl under a moonlit sky. The theme song swells, filling the plaza.'}
+127	127		301							"{3: '""\'Cause I really want you to stay here...""'}"
+128	128		301							{3: 'The soft plastic of the bubble tea straw yields, denting and flattening under the pressure of her teeth.'}
+129	129		201							{1: '1', 2: '500864', 3: '3', 4: '-400'}
+130	130		201							{1: '2', 2: '501420', 4: '400'}
+131	131		301							{1: '1', 2: 'Teddy', 3: 'Do you want me to stay here with you, too?', 4: '1'}
+132	132		301							"{3: ""Moineau's hand, which had been stirring the ice in her cup, freezes mid-motion.""}"
+133	133		301							"{2: 'Moineau', 3: ""You're thinking of changing jobs?"", 4: '2'}"
+134	134		204							{1: '1'}
+135	135		301							{2: 'Teddy', 3: 'Yeah. Any suggestions?', 4: '1'}
+136	136		204							{1: '2', 2: '1'}
+137	137		301							"{3: ""The straw circles her glass once more as a smile breaks across Moineau's face.""}"
+138	138		301				AniZhuanchangBegin			{2: 'Moineau', 3: 'Whatever works. I can tag along and quit with you.', 4: '2'}
+139	139		202							{1: '1', 2: '2', 6: '1'}
+140	140		502							{1: 'DialogDisable'}
+141	141		401						2000.0	{1: '1', 2: '36'}
+142	142		401							{1: '1', 2: '169'}
+143	143		401							{1: '2', 2: '649'}
+144	144		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1373.jpg'}
+145	145		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '0', 4: '1', 5: '0'}
+146	146		104							{1: '0|0|-250', 2: '0'}
+147	147		104			AniZhuanchangEnd			2500.0	{1: '0|0|0', 2: '3.5'}
+148	148		301			DialogEnable				{3: 'Rising in the glass elevator, they watch the city transform into a distant tapestry of light.'}
+149	149		402							{1: '649'}
+150	150		401							{1: '2', 2: '4386'}
+151	151		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+152	152		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+153	153		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory514.jpg'}
+154	154		104							{1: '-165|0|-300', 2: '0'}
+155	155		301							{3: 'Stepping out, they are drawn into an elegantly decorated dessert shop, where the highlight is a taste of the limited-edition cake.'}
+156	156		201							{1: '1', 2: '501420'}
+157	157		301							{1: '1', 2: 'Moineau', 3: 'So this is what Sachertorte tastes like.', 4: '1'}
+158	158		401							{1: '2', 2: '4386'}
+159	159		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+160	160		202							{1: '1', 6: '1'}
+161	161		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1275.jpg'}
+162	162		301							{3: 'They wander into a theater and pick a movie purely on a whim.'}
+163	163		201							{1: '1', 2: '500864', 4: '-400'}
+164	164		201							{1: '2', 2: '501420', 4: '400'}
+165	165		301							{1: '1', 2: 'Moineau', 3: 'I still think Iron Wolf is stronger.', 4: '2'}
+166	166		301							"{2: 'Teddy', 3: ""Nah, he doesn't match up to Immortal Motormouth."", 4: '1'}"
+167	167		401							{1: '2', 2: '4386'}
+168	168		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+169	169		202							{1: '1', 2: '2', 6: '1'}
+170	170		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory204.png'}
+171	171		301							"{3: ""They enter an arcade and settle in for a showdown at the King of Kickers '98 cabinet.""}"
+172	172		201							{1: '1', 2: '500864', 3: '2', 4: '-400'}
+173	173		201							{1: '2', 2: '501420', 3: '8', 4: '400'}
+174	174		301							{1: '1', 2: 'Moineau', 3: 'How are you so good at fighting games...', 4: '2'}
+175	175		301							"{2: 'Teddy', 3: ""This is just child's play for a genius like me."", 4: '1'}"
+176	176		401							{1: '2', 2: '4386'}
+177	177		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+178	178		202							{1: '1', 2: '2', 6: '1'}
+179	179		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory310.png'}
+180	180		301							{3: 'They step into an electronics store.'}
+181	181		201							{1: '1', 2: '500864', 4: '-400'}
+182	182		201							{1: '2', 2: '501420', 4: '400'}
+183	183		301							{1: '1', 2: 'Moineau', 3: 'This camera looks pretty nice.', 4: '2'}
+184	184		301							"{2: 'Teddy', 3: ""The value for money isn't there."", 4: '1'}"
+185	185		204							{1: '2', 2: '2'}
+186	186		301							{2: 'Moineau', 3: 'Even a rich girl like you worries about value for money?', 4: '2'}
+187	187		204							{1: '1', 2: '5'}
+188	188		301							{2: 'Teddy', 3: '...Seriously...', 4: '1'}
+189	189		204							{1: '2', 2: '1'}
+190	190		301							"{2: 'Moineau', 3: ""Let's check out."", 4: '2'}"
+191	191		401							{1: '2', 2: '4386'}
+192	192		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+193	193		202							{1: '1', 2: '2', 6: '1'}
+194	194		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory121.png'}
+195	195		301							{3: 'They walk into an accessory shop.'}
+196	196		201							{1: '1', 2: '500864', 4: '-400'}
+197	197		201							{1: '2', 2: '501420', 4: '400'}
+198	198		301							"{1: '1', 2: 'Moineau', 3: ""Is there anyone you'd want to buy a gift for?"", 4: '2'}"
+199	199		301							{2: 'Teddy', 3: 'For who...?', 4: '1'}
+200	200		301							{2: 'Moineau', 3: 'You know. Someone special... that sort of thing.', 4: '2'}
+201	201		204							{1: '1', 2: '3'}
+202	202		301							{2: 'Teddy', 3: '...', 4: '1'}
+203	203		204							{1: '2', 2: '7'}
+204	204		301							{2: 'Moineau', 3: 'There must be someone, right?', 4: '2'}
+205	205		202							{1: '1', 2: '2'}
+206	206		301							"{3: ""A familiar figure flashes through Teddy's mind.""}"
+207	207		401							{1: '2', 2: '895'}
+208	208		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+209	209		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_35.jpg'}
+210	210		504							{1: '0.7'}
+211	211		301							"{2: 'Teddy', 3: ""■■■, you owe me so much already, so asking you to promise me just one thing isn't too much, is it?""}"
+212	212		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+213	213		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory121.png'}
+214	214		504							{1: '0'}
+215	215		201							{1: '1', 2: '500864', 3: '3', 4: '-400', 7: '1'}
+216	216		201							{1: '2', 2: '501420', 3: '7', 4: '400', 7: '1'}
+217	217		301							{1: '1', 3: 'Who is that?'}
+218	218		203						300.0	{1: '2', 2: '0.3', 3: '200', 4: '-20'}
+219	219		204							{1: '2', 2: '9'}
+220	220		301							{2: 'Moineau', 3: 'That expression says it all! I knew it!', 4: '2'}
+221	221		401							{1: '2', 2: '4386'}
+222	222		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+223	223		202							{1: '1', 2: '2', 6: '1'}
+224	224		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1365.jpg'}
+225	225		301							"{3: ""On the street, Moineau's camera rises, capturing the scene.""}"
+226	226		201							{1: '1', 2: '501420'}
+227	227		301							{1: '1', 2: 'Moineau', 3: 'Hey.', 4: '1'}
+228	228		401							{1: '2', 2: '2811'}
+229	229		501						450.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieKuaimen01.prefab', 2: '3'}
+230	230		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png', 4: '7'}
+231	231		202							{1: '1', 6: '1'}
+232	232		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront63.png', 4: '5'}
+233	233		504							{1: '1', 2: '1005'}
+234	234		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1365.jpg', 3: '0', 4: '0.7', 5: '0'}
+235	235		104							{1: '10|5|0', 2: '0', 4: '3'}
+236	236		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1365.jpg', 3: '0', 4: '0.7', 5: '0'}
+237	237		104							{1: '-15|-5|0', 2: '0', 4: '4'}
+238	238		201							{1: '15', 2: '500864', 3: '3', 7: '1'}
+239	239		201							{1: '1', 2: '501114', 4: '-750', 5: '-90', 6: '150', 7: '1'}
+240	240		201							{1: '2', 2: '501114', 4: '-680', 5: '-90', 6: '100', 7: '1'}
+241	241		205							{1: '1', 3: '0', 4: '0.7', 5: '0'}
+242	242		205							{1: '2', 3: '0', 4: '0.5', 5: '0'}
+243	243		201							{1: '3', 2: '500779', 4: '600', 5: '-167', 6: '200', 7: '1'}
+244	244		201							{1: '4', 2: '500779', 4: '650', 5: '-200', 6: '200', 7: '1'}
+245	245		205							{1: '3', 3: '0', 4: '0.9', 5: '0'}
+246	246		205							{1: '4', 3: '0', 4: '0.5', 5: '0'}
+247	247		301							{1: '1', 3: 'Teddy turns at the sound. The shutter clicks, capturing her profile in a flash.'}
+248	248		301							{3: 'The photo transforms the city lights into layered streaks and smears the passersby into ghosts. Teddy alone stands in stark, relative clarity.'}
+249	249		201							{1: '18', 2: '501420', 3: '4', 4: '315', 5: '-100', 6: '-400'}
+250	250		301							"{1: '1', 2: 'Moineau', 3: ""Hmm, it's out of focus."", 4: '18'}"
+251	251		201							{1: '18', 2: '500864', 3: '3', 4: '250', 5: '-100', 6: '-300'}
+252	252		301							"{1: '1', 2: 'Teddy', 3: ""It's all digital noise, and your shutter speed is completely off."", 4: '18'}"
+253	253		204							{1: '18', 2: '15'}
+254	254		301							"{2: 'Teddy', 3: ""You clearly don't know the first thing about photography."", 4: '18'}"
+255	255		201							{1: '18', 2: '501420', 4: '315', 5: '-100', 6: '-400'}
+256	256		301				AniZhuanchangBegin			"{1: '1', 2: 'Moineau', 3: ""Not everyone's a privileged young lady who's an expert in everything."", 4: '18'}"
+257	257		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png', 4: '7', 5: '1'}
+258	258		504							{1: '0', 2: '1005'}
+259	259		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieKuaimen01.prefab'}
+260	260		202							{1: '18', 6: '1'}
+261	261		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+262	262		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+263	263		101							{4: '5', 5: '1'}
+264	264		205							{1: '1', 3: '0', 4: '1', 5: '0'}
+265	265		205							{1: '2', 3: '0', 4: '1', 5: '0'}
+266	266		205							{1: '3', 3: '0', 4: '1', 5: '0'}
+267	267		205							{1: '4', 3: '0', 4: '1', 5: '0'}
+268	268		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '15', 6: '1'}
+269	269		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1371.jpg'}
+270	270		301			AniZhuanchangEnd				{3: 'The day gradually slips away as they wander about.'}
+271	271		301							{3: 'They find themselves back in the plaza where they first began, now transformed.'}
+272	272		301							{3: 'The anime convention is winding down; the big screen has gone dark, no longer cycling through vibrant animation clips. Now, only a raw punk song echoes across the vast space.'}
+273	273		301							"{3: '""In time, I want to be your best friend...""'}"
+274	274		301							{3: 'Teddy watches Moineau under the streetlight, where a misty, dreamlike glow envelops her.'}
+275	275		201							{1: '1', 2: '500864', 4: '-400'}
+276	276		201							{1: '2', 2: '501420', 4: '400'}
+277	277		301							"{1: '1', 2: 'Teddy', 3: ""You're very cheerful today. More than you used to be."", 4: '1'}"
+278	278		204							{1: '2', 2: '1'}
+279	279		301							{2: 'Moineau', 3: 'Am I that different?', 4: '2'}
+280	280		204							{1: '1', 2: '2'}
+281	281		301							{2: 'Teddy', 3: 'More like an actual living person now.', 4: '1'}
+282	282		204							{1: '1', 2: '15'}
+283	283		301							{2: 'Teddy', 3: 'I thought that look of doom and gloom was a permanent fixture on your face.', 4: '1'}
+284	284		204							{1: '2', 2: '8'}
+285	285		301							{2: 'Moineau', 3: '...', 4: '2'}
+286	286		204							{1: '1', 2: '1'}
+287	287		301							{2: 'Teddy', 3: 'Want to go check out the rooftop of the central building?', 4: '1'}
+288	288		204							{1: '2'}
+289	289		301							{2: 'Moineau', 3: 'Why there?', 4: '2'}
+290	290		204							{1: '1', 2: '2'}
+291	291		301							{2: 'Teddy', 3: 'We might run into Creepy Batguy there. Who knows?', 4: '1'}
+292	292		204							{1: '2', 2: '1'}
+293	293		301				AniZhuanchangBegin			{2: 'Moineau', 3: 'Sure.', 4: '2'}
+294	294		202							{1: '1', 2: '2', 6: '1'}
+295	295		401						2000.0	{1: '1', 2: '36'}
+296	296		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1369.jpg'}
+297	297		201							{1: '15', 2: '500957', 4: '-200', 7: '1'}
+298	298		201							{1: '16', 2: '500958', 4: '150', 7: '1'}
+299	299		201							{1: '1', 2: '500864', 4: '-350', 7: '1'}
+300	300		201							{1: '2', 2: '501420', 4: '350', 7: '1'}
+301	301		201							{1: '3', 2: '500779', 4: '-800', 7: '1'}
+302	302		201							{1: '4', 2: '501054', 4: '800', 7: '1'}
+303	303		401							{1: '2', 2: '649'}
+304	304		301			AniZhuanchangEnd	DialogDisable			"{1: '1', 3: ""The central building's elevator takes three minutes to reach the top floor—longer still with stops.""}"
+305	305		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront108.png', 4: '5'}
+306	306		104							{1: '0|650|0', 2: '0', 4: '5'}
+307	307		109							{1: '1', 2: '<size=50><color=#ffffffff>Floor </color><color=#47f57fff>7</color></size>', 4: '820', 9: '3'}
+308	308		402							{1: '649'}
+309	309		401							{1: '2', 2: '6381'}
+310	310		104							{1: '0|280|0', 2: '0.5', 4: '5'}
+311	311		112						650.0	{1: '1', 2: '0.5', 3: '0|450'}
+312	312		401							{1: '2', 2: '6379'}
+313	313		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1304.jpg'}
+314	314		205							{1: '1006', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront126.png', 3: '0', 4: '1', 5: '0'}
+315	315		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront127.png', 3: '0', 4: '1', 5: '0'}
+316	316		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront128.png', 3: '0', 4: '1', 5: '0'}
+317	317		104							{1: '-200|0|0', 2: '0.6', 4: '3'}
+318	318		104						800.0	{1: '220|0|0', 2: '0.6', 4: '4'}
+319	319		309	1					200.0	"{2: '""Floor 7.""'}"
+320	320		401							{1: '2', 2: '6380'}
+321	321		104							{1: '0|0|0', 2: '0.6', 4: '3'}
+322	322		104							{1: '0|0|0', 2: '0.6', 4: '4'}
+323	323		104							{1: '0|650|0', 2: '0.6', 4: '5'}
+324	324		112						600.0	{1: '1', 2: '0.6', 3: '0|820'}
+325	325		401						300.0	{1: '2', 2: '649'}
+326	326		301			DialogEnable	DialogDisable			{3: 'Pressed among strangers, Teddy and Moineau keep their silence.'}
+327	327		109							{1: '1', 2: '<size=50><color=#ffffffff>Floor </color><color=#47f57fff>12</color></size>', 4: '820', 9: '3'}
+328	328		402							{1: '649'}
+329	329		401							{1: '2', 2: '6381'}
+330	330		104							{1: '0|280|0', 2: '0.5', 4: '5'}
+331	331		112						650.0	{1: '1', 2: '0.5', 3: '0|450'}
+332	332		401							{1: '2', 2: '6379'}
+333	333		104							{1: '-200|0|0', 2: '0.6', 4: '3'}
+334	334		104						800.0	{1: '220|0|0', 2: '0.6', 4: '4'}
+335	335		309	1					200.0	"{2: '""Floor 12.""'}"
+336	336		401							{1: '2', 2: '6380'}
+337	337		104							{1: '0|0|0', 2: '0.6', 4: '3'}
+338	338		104							{1: '0|0|0', 2: '0.6', 4: '4'}
+339	339		104							{1: '0|650|0', 2: '0.6', 4: '5'}
+340	340		112						600.0	{1: '1', 2: '0.6', 3: '0|820'}
+341	341		401						300.0	{1: '2', 2: '649'}
+342	342		301			DialogEnable	DialogDisable			{3: 'The doors part and seal again.'}
+343	343		109							{1: '1', 2: '<size=50><color=#ffffffff>Floor </color><color=#47f57fff>15</color></size>', 4: '820', 9: '3'}
+344	344		402							{1: '649'}
+345	345		401							{1: '2', 2: '6381'}
+346	346		104							{1: '0|280|0', 2: '0.5', 4: '5'}
+347	347		112						650.0	{1: '1', 2: '0.5', 3: '0|450'}
+348	348		401							{1: '2', 2: '6379'}
+349	349		104							{1: '-200|0|0', 2: '0.6', 4: '3'}
+350	350		104						800.0	{1: '220|0|0', 2: '0.6', 4: '4'}
+351	351		203						400.0	{1: '3', 2: '0.8'}
+352	352		203						400.0	{1: '4', 2: '0.8'}
+353	353		202						400.0	{1: '3'}
+354	354		202							{1: '4'}
+355	355		309	1					200.0	"{2: '""Floor 15.""'}"
+356	356		401							{1: '2', 2: '6380'}
+357	357		104							{1: '0|0|0', 2: '0.6', 4: '3'}
+358	358		104							{1: '0|0|0', 2: '0.6', 4: '4'}
+359	359		104							{1: '0|650|0', 2: '0.6', 4: '5'}
+360	360		112						600.0	{1: '1', 2: '0.6', 3: '0|820'}
+361	361		401						300.0	{1: '2', 2: '649'}
+362	362		301			DialogEnable	DialogDisable			{3: 'The crowd begins to thin.'}
+363	363		109							{1: '1', 2: '<size=50><color=#ffffffff>Floor </color><color=#47f57fff>19</color></size>', 4: '820', 9: '3'}
+364	364		402							{1: '649'}
+365	365		401							{1: '2', 2: '6381'}
+366	366		104							{1: '0|280|0', 2: '0.5', 4: '5'}
+367	367		112						650.0	{1: '1', 2: '0.5', 3: '0|450'}
+368	368		401							{1: '2', 2: '6379'}
+369	369		104							{1: '-200|0|0', 2: '0.6', 4: '3'}
+370	370		104						800.0	{1: '220|0|0', 2: '0.6', 4: '4'}
+371	371		309	1					200.0	"{2: '""Floor 19.""'}"
+372	372		401							{1: '2', 2: '6380'}
+373	373		104							{1: '0|0|0', 2: '0.6', 4: '3'}
+374	374		104							{1: '0|0|0', 2: '0.6', 4: '4'}
+375	375		104							{1: '0|650|0', 2: '0.6', 4: '5'}
+376	376		112						600.0	{1: '1', 2: '0.6', 3: '0|820'}
+377	377		401						200.0	{1: '2', 2: '649'}
+378	378		203							{1: '1', 2: '0.6', 3: '-550'}
+379	379		203						650.0	{1: '2', 2: '0.6', 3: '550'}
+380	380		301			DialogEnable	DialogDisable			{3: 'They lean into opposite walls, a mirrored tension.'}
+381	381		109							{1: '1', 2: '<size=50><color=#ffffffff>Floor </color><color=#47f57fff>20</color></size>', 4: '820', 9: '3'}
+382	382		402							{1: '649'}
+383	383		401							{1: '2', 2: '6381'}
+384	384		104							{1: '0|280|0', 2: '0.5', 4: '5'}
+385	385		112						650.0	{1: '1', 2: '0.5', 3: '0|450'}
+386	386		401							{1: '2', 2: '6379'}
+387	387		104							{1: '-200|0|0', 2: '0.6', 4: '3'}
+388	388		104						800.0	{1: '220|0|0', 2: '0.6', 4: '4'}
+389	389		309	1					200.0	"{2: '""Floor 20.""'}"
+390	390		401							{1: '2', 2: '6380'}
+391	391		104							{1: '0|0|0', 2: '0.6', 4: '3'}
+392	392		104							{1: '0|0|0', 2: '0.6', 4: '4'}
+393	393		104							{1: '0|650|0', 2: '0.6', 4: '5'}
+394	394		112						600.0	{1: '1', 2: '0.6', 3: '0|820'}
+395	395		401						300.0	{1: '2', 2: '649'}
+396	396		301			DialogEnable	DialogDisable			{3: 'Their eyes carefully avoid meeting.'}
+397	397		109							{1: '1', 2: '<size=50><color=#ffffffff>Floor </color><color=#47f57fff>24</color></size>', 4: '820', 9: '3'}
+398	398		402							{1: '649'}
+399	399		401							{1: '2', 2: '6381'}
+400	400		104							{1: '0|280|0', 2: '0.5', 4: '5'}
+401	401		112						650.0	{1: '1', 2: '0.5', 3: '0|450'}
+402	402		401							{1: '2', 2: '6379'}
+403	403		104							{1: '-200|0|0', 2: '0.6', 4: '3'}
+404	404		104						800.0	{1: '220|0|0', 2: '0.6', 4: '4'}
+405	405		309	1					200.0	"{2: '""Floor 24.""'}"
+406	406		401							{1: '2', 2: '6380'}
+407	407		104							{1: '0|0|0', 2: '0.6', 4: '3'}
+408	408		104							{1: '0|0|0', 2: '0.6', 4: '4'}
+409	409		104							{1: '0|650|0', 2: '0.6', 4: '5'}
+410	410		112						600.0	{1: '1', 2: '0.6', 3: '0|820'}
+411	411		401						300.0	{1: '2', 2: '649'}
+412	412		301			DialogEnable	DialogDisable			{3: 'Through the glass, the cityscape below softens into a smear of light.'}
+413	413		109							{1: '1', 2: '<size=50><color=#ffffffff>Floor </color><color=#47f57fff>28</color></size>', 4: '820', 9: '3'}
+414	414		402							{1: '649'}
+415	415		401							{1: '2', 2: '6381'}
+416	416		104							{1: '0|280|0', 2: '0.5', 4: '5'}
+417	417		112						650.0	{1: '1', 2: '0.5', 3: '0|450'}
+418	418		401							{1: '2', 2: '6379'}
+419	419		104							{1: '-200|0|0', 2: '0.6', 4: '3'}
+420	420		104						800.0	{1: '220|0|0', 2: '0.6', 4: '4'}
+421	421		309	1					200.0	"{2: '""Floor 28.""'}"
+422	422		401							{1: '2', 2: '6380'}
+423	423		104							{1: '0|0|0', 2: '0.6', 4: '3'}
+424	424		104							{1: '0|0|0', 2: '0.6', 4: '4'}
+425	425		104							{1: '0|650|0', 2: '0.6', 4: '5'}
+426	426		112						600.0	{1: '1', 2: '0.6', 3: '0|820'}
+427	427		401						700.0	{1: '2', 2: '649'}
+428	428		401						250.0	{1: '2', 2: '5917'}
+429	429		101						200.0	{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 4: '7'}
+430	430		101							{4: '7', 5: '1'}
+431	431		101						200.0	{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 4: '7'}
+432	432		101						200.0	{4: '7', 5: '1'}
+433	433		101						200.0	{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 4: '7'}
+434	434		101						300.0	{4: '7', 5: '1'}
+435	435		402							{1: '5917'}
+436	436		301			DialogEnable	DialogDisable			{3: 'Overhead, lights stutter, neglected for far too long.'}
+437	437		109							{1: '1', 2: '<size=50><color=#ffffffff>Floor </color><color=#47f57fff>30</color></size>', 4: '820', 9: '3'}
+438	438		402							{1: '649'}
+439	439		401							{1: '2', 2: '6381'}
+440	440		104							{1: '0|280|0', 2: '0.5', 4: '5'}
+441	441		112						650.0	{1: '1', 2: '0.5', 3: '0|450'}
+442	442		401							{1: '2', 2: '6379'}
+443	443		104							{1: '-200|0|0', 2: '0.6', 4: '3'}
+444	444		104						800.0	{1: '220|0|0', 2: '0.6', 4: '4'}
+445	445		309	1					200.0	"{2: '""Floor 30.""'}"
+446	446		401							{1: '2', 2: '6380'}
+447	447		104							{1: '0|0|0', 2: '0.6', 4: '3'}
+448	448		104							{1: '0|0|0', 2: '0.6', 4: '4'}
+449	449		104							{1: '0|650|0', 2: '0.6', 4: '5'}
+450	450		112						600.0	{1: '1', 2: '0.6', 3: '0|820'}
+451	451		401						200.0	{1: '2', 2: '649'}
+452	452		301			DialogEnable	DialogDisable			{3: 'Their shadows warp on the walls, stretching into grotesque, comical shapes.'}
+453	453		109							{1: '1', 2: '<size=50><color=#ffffffff>Floor </color><color=#47f57fff>35</color></size>', 4: '820', 9: '3'}
+454	454		402							{1: '649'}
+455	455		401							{1: '2', 2: '6381'}
+456	456		104							{1: '0|280|0', 2: '0.5', 4: '5'}
+457	457		112						650.0	{1: '1', 2: '0.5', 3: '0|450'}
+458	458		401							{1: '2', 2: '6379'}
+459	459		104							{1: '-200|0|0', 2: '0.6', 4: '3'}
+460	460		104						800.0	{1: '220|0|0', 2: '0.6', 4: '4'}
+461	461		203						200.0	{1: '15', 2: '0.4'}
+462	462		203						200.0	{1: '16', 2: '0.4'}
+463	463		202						200.0	{1: '15'}
+464	464		202							{1: '16'}
+465	465		309	1					200.0	"{2: '""Floor 35.""'}"
+466	466		401							{1: '2', 2: '6380'}
+467	467		104							{1: '0|0|0', 2: '0.6', 4: '3'}
+468	468		104							{1: '0|0|0', 2: '0.6', 4: '4'}
+469	469		104							{1: '0|650|0', 2: '0.6', 4: '5'}
+470	470		112						600.0	{1: '1', 2: '0.6', 3: '0|820'}
+471	471		401						200.0	{1: '2', 2: '649'}
+472	472		301			DialogEnable				{3: 'The last of the other passengers disembarks, leaving only Teddy and Moineau in the elevator.'}
+473	473		306						300.0	{1: '1'}
+474	474		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '8'}
+475	475		204							{1: '2', 2: '4'}
+476	476		201							{1: '19', 2: '501420', 3: '4', 5: '-180', 6: '-300'}
+477	477		301							"{1: '1', 3: ""The faint, grinding hum from the elevator shaft sets Moineau's nerves on edge.""}"
+478	478		306							
+479	479		101							{4: '8', 5: '1'}
+480	480		202							{1: '19', 6: '1'}
+481	481		401							{1: '2', 2: '6381'}
+482	482		402							{1: '649'}
+483	483		301				DialogDisable			{3: 'Ding—'}
+484	484		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1370.jpg'}
+485	485		104							{1: '0|0|300', 2: '0'}
+486	486		401							{1: '2', 2: '6379'}
+487	487		104							{1: '-200|0|0', 2: '0.6', 4: '3'}
+488	488		104						800.0	{1: '220|0|0', 2: '0.6', 4: '4'}
+489	489		301			DialogEnable	DialogDisable			{3: 'The doors slide open onto the top floor.'}
+490	490		202						200.0	{1: '1', 2: '2'}
+491	491		104							{1: '0|0|0', 2: '1.5'}
+492	492		104							{1: '0|0|-300', 2: '2', 4: '6'}
+493	493		104							{1: '-200|0|-300', 2: '2', 4: '3'}
+494	494		104						1000.0	{1: '220|0|-300', 2: '2', 4: '4'}
+495	495		401							{1: '1', 2: '100'}
+496	496		205							{1: '1006', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront126.png', 3: '1', 4: '0', 5: '0.8'}
+497	497		205							{1: '1003', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront127.png', 3: '1', 4: '0', 5: '0.8'}
+498	498		205						1200.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront128.png', 3: '1', 4: '0', 5: '0.8'}
+499	499		205							{1: '1006', 3: '0', 4: '1', 5: '0'}
+500	500		205							{1: '1003', 3: '0', 4: '1', 5: '0'}
+501	501		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+502	502		104							{1: '0|0|0', 2: '0', 4: '6'}
+503	503		104							{1: '0|0|0', 2: '0', 4: '3'}
+504	504		104							{1: '0|0|0', 2: '0', 4: '4'}
+505	505		301			DialogEnable	DialogDisable			{3: 'Ahead, a small terrace door stands partially ajar. Around the corner, a final flight of stairs leads up to the rooftop helipad.'}
+506	506		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1372.jpg', 3: '0', 4: '1', 5: '1.5'}
+507	507		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1372.jpg'}
+508	508		205							{1: '999'}
+509	509		301			DialogEnable				{3: 'The night wind sweeps in, cool and insistent, tousling their hair.'}
+510	510		201							{1: '1', 2: '500864', 4: '-400'}
+511	511		201							{1: '2', 2: '501420', 4: '400'}
+512	512		301							"{1: '1', 2: 'Moineau', 3: ""Well, looks like there's nothing here."", 4: '2'}"
+513	513		301							{2: 'Teddy', 3: 'Yeah. Absolutely nothing.', 4: '1'}
+514	514		301							"{2: 'Moineau', 3: ""Should've brought some snacks."", 4: '2'}"
+515	515		301							{2: 'Teddy', 3: 'Not like food would help anyway.', 4: '1'}
+516	516		301							{2: 'Moineau', 3: 'Ah... right. Constructs can function just fine without eating.', 4: '2'}
+517	517		202							{1: '1', 2: '2'}
+518	518		301							{3: 'A strange emotion hangs in the air. Sadness, perhaps?'}
+519	519		401							{1: '2', 2: '6352'}
+520	520		301							{3: 'Moineau draws an electrolytic vape from her pocket. She takes a long pull, the vapor passing through her artificial lungs before she exhales a shimmering, meditative cloud.'}
+521	521		201							{1: '1', 2: '500864', 3: '3', 4: '-400'}
+522	522		201							{1: '2', 2: '501420', 4: '400'}
+523	523		301							"{1: '1', 2: 'Teddy', 3: ""You know that's not what I mean."", 4: '1'}"
+524	524		203						100.0	{1: '2', 2: '0.15', 3: '390'}
+525	525		203							{1: '2', 2: '0.15', 3: '400'}
+526	526		301							"{3: ""Moineau's hand trembles at Teddy's words, but a glimmer of hope remains in her eyes.""}"
+527	527		301							{3: 'She exhales a plume of smoke that the night breeze snatches away, vanishing in an instant.'}
+528	528		301							{3: 'Her barely audible whisper fades with it, into nothingness.'}
+529	529		204							{1: '2', 2: '8'}
+530	530		301							{2: 'Moineau', 3: 'Please...', 4: '2'}
+531	531		204							{1: '1', 2: '4'}
+532	532		301							{2: 'Teddy', 3: 'I brought you a rose.', 4: '1'}
+533	533		204							{1: '2', 2: '14'}
+534	534		301							{2: 'Moineau', 3: 'Please, stop...', 4: '2'}
+535	535		401							{1: '2', 2: '5301'}
+536	536		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 2: '2', 5: '1'}
+537	537		511							{1: '1', 2: '0', 3: '-200|0|0'}
+538	538		511						550.0	{1: '1', 2: '0.5', 3: '0|250|-300'}
+539	539		301							{3: 'Teddy raises her right hand and tosses a glass card into the air.'}
+540	540		204							{1: '2', 2: '8'}
+541	541		301							{2: 'Moineau', 3: 'Does it really have to come to this...', 4: '2'}
+542	542		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 5: '1'}
+543	543		202							{1: '1', 2: '2', 6: '1'}
+544	544		402							{1: '100'}
+545	545		401							{1: '1', 2: '36'}
+546	546		401							{1: '2', 2: '6283'}
+547	547		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+548	548		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+549	549		301			DialogShake				{3: 'Bang!'}
+550	550		401							{1: '2', 2: '2939'}
+551	551		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1372.jpg'}
+552	552		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab', 2: '2', 5: '2'}
+553	553		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab', 2: '2', 5: '3'}
+554	554		511							{1: '2', 2: '0', 3: '-800|0|0'}
+555	555		511							{1: '3', 2: '0', 3: '800|0|0'}
+556	556		301			AniZhuanchangEnd				{3: 'Amid the swirling shards in the sky, a thousand roses shimmered in the light.'}
+557	557		401							{1: '1', 2: '6394'}
+558	558		201							{1: '1', 2: '500864', 3: '3'}
+559	559		301							"{1: '1', 2: 'Teddy', 3: ""I've been thinking for a long time... Why do you have to erase my memories? Why go to such extremes to play these games...?"", 4: '1'}"
+560	560		204							{1: '1', 2: '5'}
+561	561		301							{2: 'Teddy', 3: 'Moineau. What are you... what are you people really plotting against Babylonia?', 4: '1'}
+562	562		202							{1: '1', 6: '1'}
+563	563		201							{1: '1', 2: '501420', 3: '14'}
+564	564		301							{1: '1', 2: 'Moineau', 3: '...', 4: '1'}
+565	565		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab', 5: '2'}
+566	566		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab', 5: '3'}
+567	567		202							{1: '1'}
+568	568		306							{1: '1'}
+569	569		401							{1: '2', 2: '5702'}
+570	570		301							{3: 'From the distance, the sound of measured footsteps approaches.'}
+571	571		301					1000.0		{3: 'With each step, a man with fury burning in his eyes draws nearer.'}
+572	572		402							{1: '5702'}
+573	573		306							
+574	574		201							{1: '1', 2: '501419', 3: '5'}
+575	575		301		1	RImgBg1Shake	AniZhuanchangBegin			{1: '1', 2: 'Moore', 3: '**** it all! I choose the truth!', 4: '1'}

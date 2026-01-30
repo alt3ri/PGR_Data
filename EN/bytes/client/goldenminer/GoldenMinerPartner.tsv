@@ -1,0 +1,5 @@
+Type	Name	Prefab	TriggerEffect	TriggerSoundId	MoveSpeed	RangeXMin	RangeXMax	RangeYMin	RangeYMax	IgnoreStoneConfigKey	IntParam	FloatParam	StringParam
+1	Small UFO	Assets/Product/Ui/ComponentPrefab/GoldenMiner/PartnerShip.prefab	Assets/Product/Effect/Prefab/FxUi/FxUiGoldenMinerBattle/FxUiGoldenMinerBattleEliminate.prefab		260		1000000	-30000	779555	PartnerShipIgnore	[373152, 843555, 150]	[0.3, 3.0, 0.5, 0.6, 1.0]	
+2	Scanning Line	Assets/Product/Ui/ComponentPrefab/GoldenMiner/PartnerScan.prefab	Assets/Product/Effect/Prefab/FxUi/FxUiGoldenMinerBattle/FxUiGoldenMinerBattleEliminate.prefab		500		1000000	-79555	779555	PartnerScanIgnore	[3, 1]		
+3	Radar	Assets/Product/Ui/ComponentPrefab/GoldenMiner/PartnerRadar.prefab	Assets/Product/Effect/Prefab/FxUi/FxUiGoldenMinerBattle/FxUiGoldenMinerBattleEliminate.prefab				1000000	-79555	779555		[633152, 843555, 6003, 6004]	[10.0, 1.0]	
+4	Electromagnetic Connection									PartnerLinkIgonre	[1, 2]	[7.0, 0.0]	

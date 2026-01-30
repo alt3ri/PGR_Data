@@ -1,0 +1,13 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory76.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '2', 2: '1021001', 4: '400'}
+4	4		201							{1: '1', 2: '1031001', 4: '-400'}
+5	5		301			DialogEnable				"{1: '1', 2: 'Liv', 3: ""Everyone, I've decrypted the memory shell of this kind of Corrupted."", 4: '1'}"
+6	6		301							"{2: 'Liv', 3: ""There's a record of a battle with another strong Corrupted..."", 4: '1'}"
+7	7		301							{2: 'Lucia', 3: 'Another Corrupted?', 4: '2'}
+8	8		301							"{2: 'Lucia', 3: ""Would that be the Ascendants? We've seen a lot of fights between Corrupted before in City 015."", 4: '2'}"
+9	9		301							"{2: 'Liv', 3: ""I don't think so... Its memory shell didn't mention anything about Ascendants..."", 4: '1'}"
+10	10		301							{2: 'Liv', 3: 'And this battle record is from many years ago...', 4: '1'}
+11	11		301							"{2: 'Lucia', 3: ""Let's just keep a record of this first."", 4: '2'}"
+12	12		301		1		AniZhuanchangBegin			{2: 'Liv', 3: 'On it.', 4: '1'}

@@ -1,0 +1,264 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+2	2		107			AniZhuanchangEnd			2000.0	{1: 'World Government Association of Art', 2: 'Babylonia', 4: '9:00', 5: 'Line Spacing: 0'}
+3	3		401							{1: '1', 2: '171'}
+4	4		108							{1: '1'}
+5	5		301			DialogEnable				{3: 'Ayla responded to your earlier message, so you come to the WGAA with the drinks you got from the Shopping District on the day you agreed upon.'}
+6	6		301							"{3: ""You arrive at Ayla's private studio on the second floor and notice a framed poem hanging on the hallway wall.""}"
+7	7		301				DialogDisable			{3: 'Royal blue ink flows elegant lettering like spring buds—subtle and tender—blooming against the cold, hard wall.'}
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory968.png'}
+9	9		304							{1: '<i>I love your feet<i>', 2: '0066CC', 3: '0.5', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1', 10: '1'}
+10	10		304							{1: 'Because', 2: '0066CC', 3: '0.5', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1', 10: '1'}
+11	11		304							"{1: ""<i>They've traveled the world<i>"", 2: '0066CC', 3: '0.5', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1', 10: '1'}"
+12	12		304							{1: '<i>Across waters and channels<i>', 2: '0066CC', 3: '0.5', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1', 10: '1'}
+13	13		304				AniZhuanchangBegin			{1: '<i>Until you and me finally meet<i>', 2: '0066CC', 3: '0.5', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '1', 9: '1', 10: '1'}
+14	14		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png'}
+15	15		301			DialogEnable				{3: 'You freeze at the words. They stir a faint ripple in your thoughts.'}
+16	16		401							{1: '2', 2: '4341'}
+17	17		301							{3: 'You touch the edge of the frame. Your fingers gently caress it before reaching the label beneath.'}
+18	18		301							"{3: '""***For W*AA""'}"
+19	19		301							{3: 'A few characters on the label have become blurred due to the passage of time, or the carelessness of a cleaning staff.'}
+20	20		301				DialogDisable			"{3: ""You ignore the blurred words without further thinking and keep walking toward Ayla's room.""}"
+21	21		401							{1: '2', 2: '1516'}
+22	22		104				AniZhuanchangBegin			{1: '0|0|-50', 2: '0.25'}
+23	23		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg3301_04.jpg'}
+24	24		401							{1: '2', 2: '743'}
+25	25		301			DialogEnable				"{3: ""Ayla sits before several portrait sculptures in her private studio. Her body is perfectly still as her fingers gently trace the facial features of one. She doesn't react to your movements.""}"
+26	26		301				DialogDisable			"{3: ""After watching her for a while, you notice her pupils are not focusing. She's lost in thought.""}"
+27	27		302							{2: '(Press the cold drink on her cheeks.)', 3: '28', 4: '(Place the drink beside her.)', 5: '34'}
+28	28		302							"{2: '""Here, it\'s cold.""', 3: '29'}"
+29	29		201						250.0	{1: '1', 2: '500110', 5: '-25', 7: '1'}
+30	30		203						250.0	{1: '1', 2: '0.25', 4: '25'}
+31	31		203							{1: '1', 2: '0.25'}
+32	32		301			DialogEnable				{1: '1', 2: 'Ayla', 3: 'Gasp—【kuroname】?', 4: '1'}
+33	33	40	301							{2: 'Ayla', 3: 'When did you get here?', 4: '1'}
+34	34		201							{1: '1', 2: '500110', 7: '1'}
+35	35		301			DialogEnable				{1: '1', 3: 'Ayla is startled. She blinks in confusion before coming back to her senses.'}
+36	36		204							{1: '1', 2: '4'}
+37	37		301							{2: 'Ayla', 3: 'Hmm—?', 4: '1'}
+38	38		204							{1: '1'}
+39	39	40	301							"{2: 'Ayla', 3: ""Oh, you're here. When did you get here?"", 4: '1'}"
+40	40		302							"{2: ""Earlier. I hope I didn't disturb you."", 3: '41'}"
+41	41		204							{1: '1'}
+42	42		301							"{2: 'Ayla', 3: ""Not at all. Even if you did, it's fine! You're always welcome here."", 4: '1'}"
+43	43		203							{1: '1', 2: '0.25', 3: '50'}
+44	44		401							{1: '2', 2: '4903'}
+45	45		301							{3: 'Ayla casually pulls up a chair for you to sit down.'}
+46	46		302							{2: 'Are you working on something?', 3: '47'}
+47	47		302							"{2: ""You're not actually considering putting someone into your painting from our earlier conversation, are you?"", 3: '48'}"
+48	48		204							{1: '1', 2: '1'}
+49	49		301							"{2: 'Ayla', 3: ""Haven't I already done that?"", 4: '1'}"
+50	50		204							{1: '1'}
+51	51		301							{3: 'Ayla chuckles softly and tilts her head, continuing to gently caress the figurine. After a moment, she begins to explain.'}
+52	52		204							{1: '1', 2: '8'}
+53	53		301							"{2: 'Ayla', 3: ""I've been feeling inspired. In my dreams, I keep seeing a silhouette."", 4: '1'}"
+54	54		301							"{2: 'Ayla', 3: ""Hmm... a field, yes, a field. In my dream, there's this vast open field... with lots of flowers, many different kinds and so many of them... That person... is standing among the flowers."", 4: '1'}"
+55	55		301							"{2: 'Ayla', 3: ""Sometimes she's just standing there... The sky in my dreams is always dim, so I can't see her movements clearly. Several times, her silhouette became so ethereal that it seemed to merge with the sunset glow on the horizon."", 4: '1'}"
+56	56		204							{1: '1', 2: '4'}
+57	57		301							"{2: 'Ayla', 3: ""I want to reach out and hold onto her... but I can't get close... I feel like I know her... and she shouldn't be in such a lonely, desolate scene."", 4: '1'}"
+58	58		301							"{3: ""As she continues, Ayla's brow furrows and her voice takes on a hint of urgency.""}"
+59	59		301							"{2: 'Ayla', 3: ""Who is she... why is she there? I don't know. It's weird... I can't explain what I'm feeling..."", 4: '1'}"
+60	60		302							{2: '(Pat her back)', 3: '61', 4: '(Grab her hand)', 5: '64'}
+61	61		401							{1: '2', 2: '4044'}
+62	62		204							{1: '1', 2: '8'}
+63	63	66	301							{3: 'As you gently pat Ayla, her body gradually relaxes.'}
+64	64		204							{1: '1', 2: '8'}
+65	65	66	301							"{3: ""You take Ayla's hand to help her relax.""}"
+66	66		302							"{2: ""Take your time. Don't rush."", 3: '67'}"
+67	67		204							{1: '1', 2: '6'}
+68	68		301							{2: 'Ayla', 3: 'Huff...', 4: '1'}
+69	69		204							{1: '1'}
+70	70		301							"{2: 'Ayla', 3: ""I'm sorry you had to see me like that. It's just that I've been dreaming about this so often lately, and it feels..."", 4: '1'}"
+71	71		301							{3: 'Ayla gives up on explaining and lets out a sigh instead.'}
+72	72		302							{2: 'Have you tried drawing this figure?'}
+73	73		204							{1: '1', 2: '4'}
+74	74		301							{2: 'Ayla', 3: 'I did try, but...', 4: '1'}
+75	75		301							{3: 'Ayla scratches her head, leaving traces of paint on the tips of her hair.'}
+76	76		301							"{2: 'Ayla', 3: ""The rest of it turned out fine, but the face... no matter how hard I try, I can't capture that feeling from my dream."", 4: '1'}"
+77	77		202							{1: '1', 2: '2'}
+78	78		301							{3: 'As Ayla speaks, her fingers trace over the eyes of the human sculpture, as if trying to capture that elusive spark of inspiration hovering just beyond her grasp.'}
+79	79		302							"{2: ""Oh, that's why you were staring at the sculpture."", 3: '80'}"
+80	80		301							{3: 'Ayla makes a soft sound in agreement, turns around, and rubs her temple with a frown.'}
+81	81		201							{1: '1', 2: '500110', 3: '4'}
+82	82		301							"{1: '1', 2: 'Ayla', 3: ""Yeah... so now I'm stuck."", 4: '1'}"
+83	83		204							{1: '1', 2: '1'}
+84	84		301							"{2: 'Ayla', 3: ""It's not a big deal. This happens all the time in creative work. Whether it's painting or writing, time nurtures beauty..."", 4: '1'}"
+85	85		301							{3: 'Her finger slides downward, and Ayla snaps out of her thoughts.'}
+86	86		204							{1: '1'}
+87	87		301							"{2: 'Ayla', 3: ""Oh, right, would you like to see it? It's is in the back. It's still just a rough draft, though."", 4: '1'}"
+88	88		302							{2: 'Of course.', 3: '89', 4: 'Without question.', 5: '89'}
+89	89		202							{1: '1'}
+90	90		401							{1: '2', 2: '4892', 3: '0.5'}
+91	91		301							{3: 'Ayla nods happily and begins cleaning up her supplies.'}
+92	92		301							{3: 'Your gaze follows her movements. Art supplies are spread across the table. Almost every item bears the WGAA stamp, and you suddenly remember something.'}
+93	93		302							{2: 'Hey, I have something to show you.', 3: '94'}
+94	94		401							{1: '2', 2: '5298', 3: '1'}
+95	95		301							{3: 'You take out a blank letter from your pocket. You were going to ask Allen, the head of the WGAA, about it, but he seems to be off work today.'}
+96	96		301							{3: 'Ayla pauses for a moment, wipes her hands, and puts on a pair of clean, transparent gloves before taking the letter. She looks at it carefully.'}
+97	97		201							{1: '1', 2: '500110', 3: '7'}
+98	98		301							"{1: '1', 2: 'Ayla', 3: ""Is this... a letter? What's wrong with it?"", 4: '1'}"
+99	99		302							"{2: ""Do you know where it's from?"", 3: '100'}"
+100	100		204							{1: '1'}
+101	101		301							"{2: 'Ayla', 3: ""The paper does have the WGAA stamp on it, but I can't tell if it actually came from the Association."", 4: '1'}"
+102	102		301							"{2: 'Ayla', 3: ""Our stationery isn't just for internal use. It's also available through Babylonia's shops... Wait...?"", 4: '1'}"
+103	103		204							{1: '1', 2: '4'}
+104	104		301							{3: 'Ayla stops when the letter paper catches the light at a particular angle.'}
+105	105		302							{2: 'Did you find something?', 3: '106'}
+106	106		301							{3: 'Ayla examines it for a bit longer, then shakes her head and hands the letter back.'}
+107	107		301							"{2: 'Ayla', 3: ""No... I just thought it looked familiar, but that's normal, since it's our Association's paper."", 4: '1'}"
+108	108		204							{1: '1', 2: '6'}
+109	109		301							"{2: 'Ayla', 3: ""Sorry, I don't think I can help you. Is it urgent? I could connect you with someone who specializes in authentication?"", 4: '1'}"
+110	110		302							"{2: ""Okay, then. Let's go inside."", 3: '111'}"
+111	111		202							{1: '1', 6: '1'}
+112	112		401							{1: '2', 2: '5159'}
+113	113		104				AniZhuanchangBegin			{1: '0|0|-50', 2: '0.5'}
+114	114		401							{1: '1', 2: '36'}
+115	115		502						400.0	{1: 'DialogDisable'}
+116	116		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg3301_04.jpg'}
+117	117		401							{1: '1', 2: '22'}
+118	118		301			DialogEnable				{3: 'You walk into the inner room with Ayla. She heads straight to the humongous far wall, where a thin white cloth hangs.'}
+119	119		302							{2: 'Wow... is the entire wall covered?'}
+120	120		201							{1: '1', 2: '500110'}
+121	121		301							{1: '1', 2: 'Ayla', 3: 'Yep.', 4: '1'}
+122	122		202							{1: '1'}
+123	123		301							{3: 'Ayla glances back with a smile, clearly enjoying your impressed reaction. She gently tugs at the corner of the canvas.'}
+124	124		401							{1: '2', 2: '4300'}
+125	125		104						250.0	{1: '0|-25|0', 2: '0.25'}
+126	126		104						250.0	{1: '0|25|0', 2: '0.25'}
+127	127		104							{1: '0|0|0', 2: '0.25'}
+128	128		301							{3: 'The white cloth falls like a waterfall, revealing the breathtaking artwork behind it.'}
+129	129		301							"{3: ""It's an enormous waist-shot portrait featuring a woman in a blue and white dress, with a cluster of iris flowers on one side. Only her face is blank, as if deliberately erased.""}"
+130	130		302							{2: '...', 3: '131'}
+131	131		201							{1: '1', 2: '500110', 3: '12'}
+132	132		301							{1: '1', 2: 'Ayla', 3: '...', 4: '1'}
+133	133		301							{3: 'Ayla tilts her head up toward the blank space and lets out a soft sigh before getting ready to introduce it.'}
+134	134		204							{1: '1'}
+135	135		301				DialogDisable			{2: 'Ayla', 3: 'This is what I was telling you about earlier... Huh?', 4: '1'}
+136	136		401							{1: '2', 2: '4280'}
+137	137		111						550.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+138	138		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+139	139		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+140	140		204							{1: '1', 2: '7'}
+141	141		301			DialogEnable	DialogDisable			{2: 'Ayla', 3: '【kuroname】...?', 4: '1'}
+142	142		202							{1: '1'}
+143	143		402							{1: '4280'}
+144	144		401							{1: '2', 2: '4325'}
+145	145		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen03.prefab', 2: '2'}
+146	146		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+147	147		205							{1: '999'}
+148	148		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+149	149		301			DialogEnable	DialogDisable			{3: 'A deafening roar crashes like a tsunami against your ears.'}
+150	150		402							{1: '4325'}
+151	151		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen03.prefab'}
+152	152		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cgqz2903.jpg', 3: '0', 4: '1', 5: '1'}
+153	153		205							{1: '999'}
+154	154		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+155	155		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+156	156		401							{1: '2', 2: '4387'}
+157	157		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2903.jpg'}
+158	158		104						250.0	{1: '0|0|-25', 2: '0.25'}
+159	159		104							{1: '0|0|0', 2: '0.25'}
+160	160		301			DialogEnable				"{3: ""Ayla's voice becomes muffled and indistinct. The moment you see the portrait, that strange discomfort returns.""}"
+161	161		301							{3: 'An overwhelming impulse takes control of your body and makes you move closer.'}
+162	162		301							{3: 'What your eyes see overlaps with what your heart feels, both struggling with a name that refuses to take form.'}
+163	163		302				AniZhuanchangBegin			{2: '(Who... are you?)', 3: '164'}
+164	164		502						400.0	{1: 'DialogDisable'}
+165	165		401							{1: '1', 2: '36'}
+166	166		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+167	167		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+168	168		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1192.jpg'}
+169	169		401							{1: '1', 2: '371'}
+170	170		107						2000.0	{1: 'Dionysus Theater', 2: '9:00', 4: 'Fast City', 5: 'Line Spacing: 2'}
+171	171		108							{1: '1'}
+172	172		401							{1: '2', 2: '2983'}
+173	173		301			DialogEnable				{2: 'Earpiece', 3: 'Miss Iris...'}
+174	174		401							{1: '2', 2: '2983'}
+175	175		301							"{2: 'Earpiece', 3: ""I'm at the lounge, but he's not here. What should I do...? We're running out of time...""}"
+176	176		201							{1: '1', 2: '501184', 3: '7'}
+177	177		301							"{1: '1', 2: 'Iris', 3: ""Don't worry. Records show he's booked for today's performance, and his car isn't at his residence."", 4: '1'}"
+178	178		301							{3: 'Iris smiles and nods politely at people passing by while reassuring the female voice in her earpiece.'}
+179	179		301							{2: 'Iris', 3: 'We have 20 minutes until the performance. Audiences for events like this usually arrive early.', 4: '1'}
+180	180		301							{2: 'Iris', 3: 'Relax, Dandelion, relax.', 4: '1'}
+181	181		202							{1: '1'}
+182	182		401							{1: '2', 2: '4383'}
+183	183		301							{3: 'As they speak, a waiter and security guard notice Iris. They exchange a look before slowly walking toward her.'}
+184	184		402							{1: '4383'}
+185	185		201							{1: '1', 2: '501184', 3: '17'}
+186	186		301							"{1: '1', 2: 'Iris', 3: ""...I'm leaving the rest to you. I may need to step away for a moment."", 4: '1'}"
+187	187		204							{1: '1', 2: '1'}
+188	188		301							{2: 'Iris', 3: 'Believe in yourself. You can do this.', 4: '1'}
+189	189		202							{1: '1'}
+190	190		401							{1: '2', 2: '4557'}
+191	191		301				AniZhuanchangBegin			{3: 'Iris turns off her earpiece and casually turns to blend into the crowd. The waiter and security guard pick up their pace.'}
+192	192		402							{1: '4557'}
+193	193		502							{1: 'DialogDisable'}
+194	194		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1199.jpg'}
+195	195		401							{1: '2', 2: '5291'}
+196	196		301			DialogEnable				{3: 'Dandelion swallows hard amid the static of her earpiece as she carefully navigates between the rows of seats in the hall.'}
+197	197		402							{1: '5291'}
+198	198		301							{3: 'She locates her target soon enough, but...'}
+199	199		201							{1: '1', 2: '501024'}
+200	200		301							"{1: '1', 2: 'Well-Dressed Woman', 3: ""Is this someone else's seat?"", 4: '1'}"
+201	201		203							{1: '1', 2: '0.25', 3: '-400'}
+202	202		201							{1: '2', 2: '501165', 3: '6', 4: '400'}
+203	203		301							{1: '1', 2: 'Dandelion', 3: 'Y-yes, row twelve, seat sixteen. This is the seat I was assigned.', 4: '2'}
+204	204		301							{2: 'Dandelion', 3: 'Did you check your ticket? Perhaps you could take it out to check?', 4: '2'}
+205	205		301							"{2: 'Well-Dressed Woman', 3: ""Weird, I was sure this was my seat... I'm sorry, let me ask the staff."", 4: '1'}"
+206	206		401							{1: '2', 2: '5286'}
+207	207		203							{1: '1', 2: '0.25', 3: '-400', 4: '25'}
+208	208		202							{1: '1', 2: '2'}
+209	209		301							"{3: ""The woman looks at Dandelion's ticket with confusion before getting up. Dandelion exhales in relief—this should give her enough time...""}"
+210	210		401							{1: '2', 2: '4044'}
+211	211		201							{1: '1', 2: '501165', 7: '1'}
+212	212		203							{1: '1', 2: '0.25', 4: '-25'}
+213	213		301							{1: '1', 3: 'Dandelion sits down, subtly glances at the man reading beside her, and ponders the best way to start a conversation. To her surprise, he speaks first.'}
+214	214		203							{1: '1', 2: '0.25', 3: '400', 4: '-25'}
+215	215		201							{1: '2', 2: '501162', 3: '2', 4: '-400'}
+216	216		301							{1: '1', 2: 'Jonathan', 3: 'Misdirection may be a verbal skill, but lying is an entirely different matter. Deceiving others is unforgivable.', 4: '2'}
+217	217		204							{1: '1', 2: '6'}
+218	218		301							{2: 'Dandelion', 3: 'Huh...?', 4: '1'}
+219	219		204							{1: '2', 2: '1'}
+220	220		301							"{2: 'Jonathan', 3: '""Eurydice"", a classic opera returns to the Dionysus Theater after three years. Tickets priced at $30000.', 4: '2'}"
+221	221		301							"{2: 'Jonathan', 3: 'Amounts between $30000 and $100000 qualify as ""substantial sums"" under Article 266 of the Criminal Code.', 4: '2'}"
+222	222		301							"{2: 'Jonathan', 3: ""However, that is a law from the Orient, which I've been studying recently. Fast City's amounts may differ, though I imagine not by much."", 4: '2'}"
+223	223		204							{1: '1', 2: '4'}
+224	224		301							"{2: 'Dandelion', 3: ""N-no... wait... that's not..."", 4: '1'}"
+225	225		204							{1: '2'}
+226	226		401							{1: '2', 2: '4429'}
+227	227		203							{1: '2', 2: '0.25', 3: '-375'}
+228	228		301							{3: 'The man closes his book and looks at Dandelion with a scrutinizing gaze.'}
+229	229		301							{2: 'Jonathan', 3: 'Madam, the ticket you just presented as evidence is fake, and your deception techniques are terrible.', 4: '2'}
+230	230		301							"{2: 'Jonathan', 3: ""You've been glancing at me since you sat down. I don't consider myself particularly charming, so this must be about business."", 4: '2'}"
+231	231		204							{1: '2', 2: '2'}
+232	232		301							"{2: 'Jonathan', 3: ""A music plagiarism case? Financial inheritance? Ah... I see, the chemical pollution lawsuit, correct? You're a spokesperson for Mengu Corporation."", 4: '2'}"
+233	233		301							"{2: 'Dandelion', 3: ""W-wait... stop... I think you've got the wrong idea."", 4: '1'}"
+234	234		204							{1: '2'}
+235	235		301							{3: 'The man shakes his head and sighs.'}
+236	236		301							{2: 'Jonathan', 3: 'I understand the situation is urgent, but tracking me down like this is uncalled for.', 4: '2'}
+237	237		301							"{2: 'Jonathan', 3: ""Didn't my firm publish a notice? I'm currently working for the United Government and have no capacity to take on new cases."", 4: '2'}"
+238	238		301							{2: 'Dandelion', 3: 'Would you just listen to me for a moment!', 4: '1'}
+239	239		301							"{3: ""Caught off guard by the man's assumptions, Dandelion unintentionally raises her voice.""}"
+240	240		204							{1: '2', 2: '4'}
+241	241		301							{2: 'Jonathan', 3: '...', 4: '2'}
+242	242		204							{1: '2', 2: '1'}
+243	243		301							"{2: 'Jonathan', 3: ""Go ahead, I'll let you make up another story."", 4: '2'}"
+244	244		204							{1: '1', 2: '6'}
+245	245		301							"{2: 'Dandelion', 3: ""Who's making up..."", 4: '1'}"
+246	246		204							{1: '1', 2: '4'}
+247	247		401							{1: '2', 2: '5301'}
+248	248		203							{1: '1', 2: '0.25', 3: '400', 4: '25'}
+249	249		301							{3: 'Fuming, Dandelion raises the booklet in her hand only to lower it again.'}
+250	250		203							{1: '1', 2: '0.25', 3: '400'}
+251	251		301							"{2: 'Dandelion', 3: ""You're so annoying! Why did Iris tell me to... Okay, fine, I am here for you."", 4: '1'}"
+252	252		301							{2: 'Jonathan', 3: 'See, I knew it...', 4: '2'}
+253	253		301							"{2: 'Dandelion', 3: ""I'm not here to hire you for some case! And I'm definitely not a sent by that Men-something... gu... Corporation!"", 4: '1'}"
+254	254		301							"{2: 'Dandelion', 3: ""I'm here to save you! Hurry up and come with me—your life is in danger!"", 4: '1'}"
+255	255		204							{1: '2'}
+256	256		301							{2: 'Jonathan', 3: 'Danger? What kind of dumb new scam is this—', 4: '2'}
+257	257		202							{1: '1', 2: '2'}
+258	258		401							{1: '2', 2: '2647'}
+259	259		401							{1: '1', 2: '36'}
+260	260		301			RImgBg1Shake				"{3: ""He barely finishes when a strong tremor shakes the entire hall. At the same time, Dandelion's earpiece reconnects.""}"
+261	261		401							{1: '2', 2: '2983'}
+262	262		201							{1: '18', 2: '501184', 3: '5'}
+263	263		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Iris', 3: ""She's here! Dandelion, take Jonathan and go!"", 4: '18'}"

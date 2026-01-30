@@ -1,0 +1,43 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory29.jpg'}
+2	2		401							{1: '1', 2: '111'}
+3	3		201							{1: '1', 2: '500005', 4: '400'}
+4	4		201							{1: '2', 2: '500005', 4: '-400'}
+5	5		301			DialogEnable				"{1: '1', 2: 'Guard A', 3: ""They've broken through Section B! Seal all relevant gates!"", 4: '1'}"
+6	6		301							{2: 'Guard B', 3: 'Where are the guard bots?', 4: '2'}
+7	7		301							"{2: 'Guard A', 3: ""The connection was cut before we could activate them. They've already occupied the area. We can't get inside to fix the machines!"", 4: '1'}"
+8	8		301							{2: 'Guard A', 3: 'The basement exit has been totally destroyed. Some of our own are trapped in there!', 4: '1'}
+9	9		202							{1: '1'}
+10	10		201							{1: '1', 2: '500188', 4: '400'}
+11	11		301							{1: '1', 2: 'Mao Zhen', 3: 'What a mess.', 4: '1'}
+12	12		301							"{2: 'Guard B', 3: ""You're... from the Special Security Department..."", 4: '2'}"
+13	13		301							"{2: 'Mao Zhen', 3: ""I'll be in charge of this situation from now on. The security cameras are working, right?"", 4: '1'}"
+14	14		301							"{2: 'Guard B', 3: ""Yeah. The Corrupted haven't noticed the cameras yet. They're gathered in sections A and B right now and will probably make their way up here soon."", 4: '2'}"
+15	15		301							"{3: 'With an impassive face, Mao Zhen gives orders to the panicking Kurono soldiers who lost their head when the ""Corrupted"" charged in.'}"
+16	16		301							"{3: 'After calming the guards down, he trains his gaze onto the screen, which shows a horde of armed ""Corrupted"". Their leader Camu\'s greatsword is especially eye-catching.'}"
+17	17		301							"{2: 'Mao Zhen', 3: ""With the current situation, we can't expect the headquarters to send any ground troops. The few of you should stay here and report to me. The rest of you, come with me. We'll take down the Corrupted."", 4: '1'}"
+18	18		202							{1: '1', 2: '2'}
+19	19		301				AniZhuanchangBegin			{2: 'Guards', 3: 'Roger!'}
+20	20		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory70.jpg'}
+21	21		301			AniZhuanchangEnd				{3: '————'}
+22	22		201							{1: '1', 2: '500189', 3: '5', 4: '-400'}
+23	23		201							{1: '2', 2: '500197', 4: '400'}
+24	24		301							"{1: '1', 2: 'Soldier A', 3: ""Things are going well, Camu. Those bastards at Kurono sure didn't expect us to barge right in."", 4: '2'}"
+25	25		301							"{2: 'Camu', 3: ""Of course they wouldn't. Remember, don't let any of them slip by. Show them what it really means to not leave behind a single speck of dust!"", 4: '1'}"
+26	26		202							{2: '1', 3: '2'}
+27	27		301							"{3: ""Spurred on by hatred, Camu's squad goes on a destructive rampage like unchained monsters, smashing all the guard bots and supplies in the way.""}"
+28	28		301							{3: 'The computers storing important data, too, and life-saving equipment. They crush them all without a second thought.'}
+29	29		201							{1: '1', 2: '500005'}
+30	30		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '2', 3: '1'}
+31	31		301			PanelActor1Shake				{1: '1', 2: 'Guard', 3: 'No... No!', 4: '1'}
+32	32		202							{1: '1'}
+33	33		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 4: '1'}
+34	34		301							{3: 'They crush the Kurono employee they come across too. His fate has been sealed the moment he tripped in a panic.'}
+35	35		201							{1: '1', 2: '500189', 3: '5'}
+36	36		301							"{1: '1', 2: 'Camu', 3: ""That's enough. Continue forward!"", 4: '1'}"
+37	37		301							{3: 'They no longer care about casualties in their group—none of them had expected to leave alive anyway. They plough on.'}
+38	38		301							{2: 'Camu', 3: 'We have just one goal: the control room on the top level. Get there, find a way to destroy this place, and then do it!', 4: '1'}
+39	39		203							{1: '1', 2: '0.25', 3: '-400'}
+40	40		201							{1: '2', 2: '500197', 4: '400'}
+41	41		301							{1: '1', 2: 'Soldier A', 3: 'Camu! Some guard bots are coming down from upstairs!', 4: '2'}
+42	42		301		1		AniZhuanchangBegin			{2: 'Camu', 3: 'Out of my way!', 4: '1'}

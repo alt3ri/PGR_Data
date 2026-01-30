@@ -1,0 +1,46 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '5'}
+3	3		201							{1: '1', 2: '1011001'}
+4	4		301			DialogEnable				{1: '1', 2: 'Lee', 3: 'I can take care of this myself, Commandant. You can go help the Support Force to take inventory of battle resources.', 4: '1'}
+5	5		302							"{2: ""Why do I feel like you're chasing me away?"", 3: '6', 4: ""I'll leave it to you then."", 5: '6'}"
+6	6		301							"{1: '1', 2: 'Lee', 3: ""Lucia's over there with the Support Force and she probably needs your help more."", 4: '1'}"
+7	7		201							{1: '1', 2: '1021001', 4: '400'}
+8	8		201							{1: '2', 2: '500019', 4: '-400'}
+9	9		301							{1: '1', 2: 'Support Construct', 3: 'I understand your request.', 4: '2'}
+10	10		301							"{2: 'Lucia', 3: ""May I ask when it'll be finished...?"", 4: '1'}"
+11	11		302							{2: 'What are you two talking about?', 3: '12', 4: 'Lucia.', 5: '12'}
+12	12		301							{2: 'Lucia', 3: '...Commandant?', 4: '1'}
+13	13		301							"{2: 'Support Construct', 3: ""Oh, the commandant of Gray Raven, great timing. What do you think about Lucia's new frame?"", 4: '2'}"
+14	14		301							"{2: 'Lucia', 3: ""We don't need to bother Commandant with such trivial things..."", 4: '1'}"
+15	15		302							{2: 'My opinion?', 3: '16', 4: 'Is there something wrong with the new frame?', 5: '17'}
+16	16	18	301							"{2: 'Support Construct', 3: ""It's about the remodeling of the Dawn frame."", 4: '2'}"
+17	17		301							"{2: 'Support Construct', 3: ""There's nothing wrong but didn't you guys want to remodel it?"", 4: '2'}"
+18	18		301							"{2: 'Support Construct', 3: ""Commandant, you don't know?"", 4: '2'}"
+19	19		302							{2: 'Wait, remodeling?', 3: '20'}
+20	20		204							{1: '1', 2: '3'}
+21	21		301							{2: 'Lucia', 3: '...', 4: '1'}
+22	22		202							{1: '2', 6: '1'}
+23	23		203							{1: '1', 2: '0.25', 3: '0'}
+24	24		204							{1: '1', 2: '4'}
+25	25		301							{2: 'Lucia', 3: 'Commandant, allow me to explain.', 4: '1'}
+26	26		301							{2: 'Lucia', 3: 'Actually, I want to remodel the Dawn frame.', 4: '1'}
+27	27		301							"{2: 'Lucia', 3: ""It's nothing big, so I thought there was no need to trouble you."", 4: '1'}"
+28	28		302							{1: '100', 2: 'How do you want to change it?', 3: '31', 4: 'I want to know things about you, Lucia.', 5: '32'}
+29	29		204							{1: '1'}
+30	30		303							{1: '100'}
+31	31	33	301							"{1: '1', 2: 'Lucia', 3: ""It's just some changes to the appearance, more specifically..."", 4: '1'}"
+32	32		301							"{1: '1', 2: 'Lucia', 3: ""Commandant, I don't know how to respond to that."", 4: '1'}"
+33	33		201							{1: '1', 2: '500019'}
+34	34		301							"{1: '1', 2: 'Support Construct', 3: ""Well, we can remodel Constructs, but why don't you discuss it with your commandant first before making any changes?"", 4: '1'}"
+35	35		301							"{2: 'Support Construct', 3: ""It'd be easier for us all if you have an exact idea of what you want to change."", 4: '1'}"
+36	36		201							{1: '1', 2: '1021001', 3: '3'}
+37	37		301							{1: '1', 2: 'Lucia', 3: '...Alright.', 4: '1'}
+38	38		201							{1: '1', 2: '500019'}
+39	39		301							"{1: '1', 2: 'Support Construct', 3: ""I guess that's a wrap for today then, just give us a call once you've decided."", 4: '1'}"
+40	40		201							{1: '1', 2: '1021001'}
+41	41		301							{1: '1', 2: 'Lucia', 3: 'Commandant, can you help me pick out a new look for the frame?', 4: '1'}
+42	42		302							"{2: 'I got this!', 3: '43', 4: ""Though I don't think remodeling is necessary..."", 5: '45'}"
+43	43		204							{1: '1', 2: '1'}
+44	44		301		1		AniZhuanchangBegin			"{2: 'Lucia', 3: ""If you don't mind, Commandant."", 4: '1'}"
+45	45		301		1		AniZhuanchangBegin			{2: 'Lucia', 3: 'I still want you to help me choose a new look, Commandant.', 4: '1'}

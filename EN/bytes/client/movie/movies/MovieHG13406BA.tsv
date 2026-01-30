@@ -1,0 +1,123 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory259.png'}
+2	2		401							{1: '1', 2: '204'}
+3	3		301			DialogEnable				{3: 'After lunchtime on a certain day in Babylonia.'}
+4	4		201							{1: '1', 2: '500600'}
+5	5		301							{1: '1', 3: 'Against the cerulean artificial sky, Ayla lowers her hand as she sets her foot ever-so-lightly into the sun.'}
+6	6		301							"{3: ""Then, following the ringing of her terminal, Ayla's agent can be heard barking through the hall.""}"
+7	7		203							{1: '1', 2: '0.25', 3: '400'}
+8	8		201							{1: '2', 2: '500163', 4: '-400'}
+9	9		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '2'}
+10	10		301							{1: '1', 2: 'Agent', 3: 'This is your last warning, Ayla! The application deadline for the upcoming exhibit is tomorrow!', 4: '2'}
+11	11		301							{2: 'Agent', 3: 'And where is your portfolio that you said you were going to give me last month?', 4: '2'}
+12	12		301							{2: 'Ayla', 3: 'Hey, easy. You gotta take it slow with art, right?', 4: '1'}
+13	13		301							"{2: 'Agent', 3: ""You know what? I'm done with this. Today! I need to see your portfolio by the end of today!"", 4: '2'}"
+14	14		301							"{2: 'Ayla', 3: ""C'mon! A portfolio isn't just something that comes out of thin air!"", 4: '1'}"
+15	15		301							{3: 'Ayla sees that her destination is coming right up around the corner.'}
+16	16		301							{2: 'Ayla', 3: 'Anyhow, best of luck to me, yeah?'}
+17	17		202							{1: '2', 6: '1'}
+18	18		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab'}
+19	19		203							{1: '1', 2: '0.25'}
+20	20		301							"{3: ""And with that, Ayla hangs up before her agent's shouting can reach her. Pushing through the door into Gray Raven's lounge, she tiptoes her way in.""}"
+21	21		204							{1: '1', 2: '2'}
+22	22		301				AniZhuanchangBegin			{2: 'Ayla', 3: 'I bet Commandant is in here somewhere... sorting through the paperwork now!', 4: '1'}
+23	23		202			DialogDisable				{1: '1', 6: '1'}
+24	24		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+25	25		301			DialogEnable				"{3: ""In the warm afternoon sunlight that pours in through the window, you're barely keeping yourself awake...""}"
+26	26		301							{3: 'As you try to work through the piles of documents on your table that seem to have no end.'}
+27	27		301							"{3: 'The warmth in the air feels almost hypnotic, but you know better than to nap now with sticky notes on some of the papers shouting ""Must be done by the end of today!"" in your face.'}"
+28	28		301							{3: 'In what feels like a trance, you hear movement coming from outside the door—and wonder what the rest of your team is up to...'}
+29	29		201							{1: '1', 2: '500600', 3: '2'}
+30	30		301							{1: '1', 2: 'Ayla', 3: 'Hey, there you are!', 4: '1'}
+31	31		302							{2: 'Ayla?', 3: '32'}
+32	32		301							{3: 'In a white coating, the pink-haired Construct hops cheerfully into your office, instantly driving away the hypnotic afternoon air and filling it with a fruity tang.'}
+33	33		302							{2: 'I thought you were getting ready for the upcoming exhibit?', 3: '34'}
+34	34		301							"{2: 'Ayla', 3: ""Shh... My agent doesn't know I'm here!"", 4: '1'}"
+35	35		301							{3: 'Making herself comfortable on the sofa, Ayla pulls out her clipboard.'}
+36	36		204							{1: '1'}
+37	37		301							"{2: 'Ayla', 3: ""My agent wants me to give her my portfolio, but I'm still working on my last picture."", 4: '1'}"
+38	38		301							{2: 'Ayla', 3: 'Geez, people just need to understand that artists like to take it slow.', 4: '1'}
+39	39		204							{1: '1', 2: '1'}
+40	40		301							"{2: 'Ayla', 3: ""Can I hide myself here for a while? I promise I'll be quiet. Pretty please!"", 4: '1'}"
+41	41		301							{3: 'With her eyes squinted, Ayla puts her hands together in a begging gesture.'}
+42	42		302							"{2: ""I'm not going to rat you out."", 3: '43'}"
+43	43		301							"{2: 'Ayla', 3: ""That's nice of you, Commandant. And I think I just might know what to put down on my last painting now!"", 4: '1'}"
+44	44		204							{1: '1'}
+45	45		301							"{3: ""Says Ayla, although she seems anything but in a hurry to finish her portfolio. With a pencil in her hand, she'd survey the room for one second and trace her finger on the paper the next.""}"
+46	46		301				AniZhuanchangBegin			"{3: ""You wonder what's going through that head of hers...""}"
+47	47		202			DialogDisable				{1: '1', 6: '1'}
+48	48		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+49	49		301			DialogEnable				{3: 'After going through all the paperwork that needed to be done today and checking the time again, it hits you that two hours have passed.'}
+50	50		201							{1: '1', 2: '500600'}
+51	51		301							{1: '1', 3: 'The setting sun sprinkles the otherwise golden rays of sunlight with slivers of orange. With Ayla fully concentrating on her drawing, the only thing that can be heard now in the quiet room is her scribbling.'}
+52	52		302							{2: '(Quietly, you go behind Ayla.)', 3: '53'}
+53	53		301							"{3: ""Standing behind Ayla, you see the entirety of Gray Raven's lounge on the paper.""}"
+54	54		301							{3: 'The unfinished mug of coffee on the table, your cloak hanging on the chair, and a fountain pen stuck in between the sofa—every little detail in the lounge is reproduced on the paper.'}
+55	55		301							"{3: ""You don't see yourself in the picture—but all these traces are reminiscent of your presence.""}"
+56	56		301							{2: 'Ayla', 3: 'Mh-hm.', 4: '1'}
+57	57		301							{3: 'Ayla casts you a casual glance as she continues humming a tune.'}
+58	58		301							"{3: ""Right when you catch a glimpse of the smirk on her face, you see what's in the picture—a short cartoon character sitting in a chair behind a desk, all but buried under a sea of papers.""}"
+59	59		301							"{2: 'Ayla', 3: ""Think I didn't notice you were looking, huh?"", 4: '1'}"
+60	60		204							{1: '1', 2: '2'}
+61	61		301							{2: 'Ayla', 3: 'So, how do you like it? And congrats on surviving the paperwork tsunami, Commandant.', 4: '1'}
+62	62		302							"{2: ""I'm not that short."", 3: '63'}"
+63	63		301							"{2: 'Ayla', 3: ""C'mon, it's meant to be silly!"", 4: '1'}"
+64	64		301							{3: 'Taking her time to savor her own work, Ayla, with another evil smile, adds a few whiskers to the character—in what seems like a bittersweet attempt to avenge you for drawing the ugly picture of her before.'}
+65	65		302							{2: '(Take the clipboard from Ayla)', 3: '66'}
+66	66		204							{1: '1'}
+67	67		301							{2: 'Ayla', 3: 'Uhm? What are you doing?', 4: '1'}
+68	68		301							{3: 'Taking out a pencil from your desk, you sit on the sofa and sketch a human outline on the paper.'}
+69	69		301							{2: 'Ayla', 3: 'Is that... my new coating?', 4: '1'}
+70	70		301							{3: 'Decorative eyeglasses with a rounded frame, off-the-wall neckline, cute hat...'}
+71	71		301							{3: 'Sitting quietly next to you, Ayla is engrossed in your drawing.'}
+72	72		301							{3: 'Your drawing still leaves much to be desired, but every stroke you put down brings the Ayla on the paper closer to completion.'}
+73	73		301							"{3: ""The sun is all but gone by the time you're done making all the fixes.""}"
+74	74		301							{3: 'The sunlight tints the lounge in the picture with a cozy orange.'}
+75	75		301							{2: 'Ayla', 3: 'Phew... well done.', 4: '1'}
+76	76		301							{2: 'Ayla', 3: 'And good job with the lines here, too.', 4: '1'}
+77	77		301							"{2: 'Ayla', 3: ""I've got nothing left to teach you, Commandant!"", 4: '1'}"
+78	78		301							{3: 'With a smile in her eyes, Ayla seems genuinely happy with your work.'}
+79	79		301							"{2: 'Ayla', 3: ""I'm going to frame it and all, because this is our first ever work together!"", 4: '1'}"
+80	80		301							{3: 'Right when Ayla is about to say more, her terminal starts screaming.'}
+81	81		203							{1: '1', 2: '0.25', 3: '400'}
+82	82		201							{1: '2', 2: '500163', 4: '-400'}
+83	83		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '2'}
+84	84		301							{1: '1', 2: 'Agent', 3: 'Ayla, where in the world are you?!', 4: '2'}
+85	85		301							{2: 'Ayla', 3: 'I, uh, am in my studio. Working on my portfolio now!', 4: '1'}
+86	86		301							"{2: 'Agent', 3: ""I've been standing right by the door and knocking on it for the past five minutes already!"", 4: '2'}"
+87	87		301							"{2: 'Agent', 3: ""Tomorrow! Tomorrow will be the day we're moving into that little box if I don't see your portfolio!"", 4: '2'}"
+88	88		301							"{2: 'Ayla', 3: ""Hey, calm down! I'm on my way back now!"", 4: '1'}"
+89	89		202							{1: '2', 6: '1'}
+90	90		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab'}
+91	91		203							{1: '1', 2: '0.25'}
+92	92		301							{3: 'Ayla hops out of the sofa, all the while acting like a kitty with its tail on fire.'}
+93	93		301							"{2: 'Ayla', 3: ""My exhibit starts next week, Commandant! Are you free next Monday? If you are, I'd love to have you there to check out the layout!"", 4: '1'}"
+94	94		301							{2: 'Ayla', 3: 'Keep our little promise in mind, yeah?', 4: '1'}
+95	95		301							"{2: 'Ayla', 3: ""Let me know if you're free, alright? I gotta go now!"", 4: '1'}"
+96	96		301							{3: 'And before you know it, Ayla is gone like the wind.'}
+97	97		301				AniZhuanchangBegin			{3: 'The orange sunlight is slowly ebbing away from your room—and yet there you stand, awash still in the lingering warmth.'}
+98	98		202			DialogDisable				{1: '1', 6: '1'}
+99	99		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgCg/Cg3301_04.jpg'}
+100	100		301			DialogEnable				{3: 'WGAA.'}
+101	101		201							{1: '1', 2: '500600'}
+102	102		301							{1: '1', 3: 'Having successfully avoided her agent, Ayla is now back at her studio. Taking a deep breath, Ayla takes the picture off the clipboard in her hand.'}
+103	103		301							{2: 'Ayla', 3: 'So this... is what I look like when I slack off, huh?', 4: '1'}
+104	104		301							{3: 'Ayla squints, her gaze fixed on the lazy girl depicted in the painting. As she closely observes it, her pupils adopts an hue unnoticed by her, a brand new color.'}
+105	105		301							{2: 'Ayla', 3: 'Well, this is how I look to Commandant when I slack off, I guess.', 4: '1'}
+106	106		301							{3: 'Suddenly recalling something, Ayla opens her closet and takes out a few picture frames that she takes great care keeping.'}
+107	107		301							"{3: ""A half-page paper torn off a notebook, a standard drawing paper, a burned paper, and a piece of bandage stained with blood and vital fluid—these are what's inside the frames.""}"
+108	108		301							"{3: ""Unceremonious as some of them might be, these objects all bear the very girl who's now looking at them.""}"
+109	109		301							"{3: ""From failing to even get the shades right to being able to express emotions beyond the drawing instrument, the artist's improvement is plain to see.""}"
+110	110		301							{3: 'With a string she pulls out from the wall, Ayla hangs the frames and lines them up in an orderly fashion.'}
+111	111		301							{2: 'Ayla', 3: 'So these... are all that I am to Commandant, huh...', 4: '1'}
+112	112		301							"{3: ""Looking at the drawings on the wall, Ayla feels as though she were looking at herself through Commandant's eyes.""}"
+113	113		301							"{2: 'Ayla', 3: ""These are what I am like when I'm allowed to be just myself, without all the labels they put on me..."", 4: '1'}"
+114	114		301							{3: 'Ayla thinks out loud, her M.I.N.D. feeling the wavelets of emotions coming from the drawings.'}
+115	115		301							"{3: 'Ayla is so used to be seen as an ""artist"""" and """"warrior""...'}"
+116	116		301							{3: 'That she now barely remembers what she is like without these labels.'}
+117	117		301							"{3: ""Seeing herself in these pictures—in which she's stripped of all the labels—Ayla now sees herself for who she really is.""}"
+118	118		301							{2: 'Ayla', 3: 'Aha, another eureka moment.', 4: '1'}
+119	119		301							{3: 'With that certain person in mind, Ayla rolls out a drawing paper and paints it with what seems to be the color of the morning sun.'}
+120	120		301							{2: 'Ayla', 3: 'I wonder what Commandant is going to come up with next time.', 4: '1'}
+121	121		301							{3: 'As Ayla paints a blooming flower on the paper, so, too, does she break into a beam.'}
+122	122		301		1		AniZhuanchangBegin			"{3: ""Once a bird that lost its bearings in the wild, she's now found a world in which she can freely stretch her wings and fly.""}"

@@ -1,0 +1,316 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1102.jpg'}
+2	2		104				AniZhuanchangEnd			{1: '310|-75|-225', 2: '0'}
+3	3		401							{1: '1', 2: '119'}
+4	4		201							{1: '1', 2: '501070', 3: '13'}
+5	5		301			DialogEnable				{1: '1', 2: 'Nanami', 3: 'Wow, Nanami is drifting so far, so very far away...', 4: '1'}
+6	6		301							{3: 'Somewhere in the infinite cosmos, the girl looks back at the long path she has traveled, watching as even its traces fade into nothingness. She fails to notice the weary smile that dances across her face.'}
+7	7		301							{2: 'Nanami', 3: 'This sure feels a little awkward... without Commandant around me.', 4: '1'}
+8	8		301							{2: 'Power', 3: 'BOOM?'}
+9	9		204							{1: '1'}
+10	10		301							"{2: 'Nanami', 3: ""Oh, you mean this? This is the most beautiful flower I've come across on my journey."", 4: '1'}"
+11	11		301							"{3: ""In the girl's delicate arms lies a vibrantly beautiful flower.""}"
+12	12		301							"{2: 'Nanami', 3: ""When I see Commandant again, I'll hand it over proudly and say..."", 4: '1'}"
+13	13		204							{1: '1', 2: '1'}
+14	14		301							"{2: 'Nanami', 3: '""Look! I\'ve got you a little something. This is the most adorable flower I came across in space.""', 4: '1'}"
+15	15		204							{1: '1', 2: '13'}
+16	16		301							{3: 'She forces a cheerful tone to herself, imagining the moment of reunion with her Commandant, but a bitter smile tugs at her lips.'}
+17	17		301							"{2: 'Nanami', 3: ""But it's so dark here... and Commandant is so, so far away."", 4: '1'}"
+18	18		301							"{2: 'Nanami', 3: ""I'm fine being here alone, though..."", 4: '1'}"
+19	19		301							"{3: ""Just as she's about to close her eyes, a tiny speck of light streaks across her vision.""}"
+20	20		204							{1: '1', 2: '3'}
+21	21		301							{2: 'Nanami', 3: 'Ooh ooh, is that a comet?', 4: '1'}
+22	22		204							{1: '1', 2: '13'}
+23	23		301							"{2: 'Nanami', 3: ""...And it's gone... What a shame, I haven't seen a comet in such a long, long time."", 4: '1'}"
+24	24		204							{1: '1', 2: '8'}
+25	25		301				AniZhuanchangBegin			{3: 'She slowly draws her knees up and drifts into hibernation once more... This, perhaps, is one of the few ways she has to fend off loneliness during her long journey through space.'}
+26	26		202							{1: '1', 6: '1'}
+27	27		502							{1: 'DialogDisable'}
+28	28		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory100.png'}
+29	29		302			AniZhuanchangEnd				{2: 'Nanami—', 3: '30'}
+30	30		301			DialogEnable				"{3: ""Trudging alone through the void of space, you call out Nanami's name as you go.""}"
+31	31		301							"{3: ""While the starry sky may seem dazzling and brilliant from Earth, space itself is a lonely place. Those vibrant star charts... perhaps they're nothing but astronomers' lies...""}"
+32	32		301							{3: 'Only when truly among the stars does one realize just how far apart celestial bodies are from one another. Most of the time, not even a single ray of light can be caught.'}
+33	33		301							{3: 'Having been adrift for who knows how long, your body has grown numb from the endless solitude, yet your journey so far is but a tiny fraction of the path she has traveled.'}
+34	34		301							{3: 'Knowing how much Nanami loves being around people, you find it difficult to imagine how excruciating it must be for her having to travel all alone for so long.'}
+35	35		401							{1: '2', 2: '4134'}
+36	36		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab', 2: '2'}
+37	37		301							"{3: ""What's that speck of light over there?""}"
+38	38		302							{2: 'Nanami!', 3: '39', 4: '(Drift over for a look)', 5: '40'}
+39	39	41	301				AniZhuanchangBegin			{3: 'You decide to shout at the glimmering planet despite all the disappointments you have already experienced.'}
+40	40		301				AniZhuanchangBegin			{3: 'Weary, you decide to head toward the shimmering planet despite all the disappointments you have already experienced.'}
+41	41		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab'}
+42	42		402							{1: '4134'}
+43	43		301			AniZhuanchangEnd	DialogDisable			"{2: 'Planet 65535', 3: ""Nanami... I've never heard of that planet. There are only three planets in our solar system, and I know them all, but none of them goes by Nanami.""}"
+44	44		302							"{2: ""Nanami isn't a planet..."", 3: '45'}"
+45	45		302							"{2: ""(Describe Nanami's appearance)"", 3: '46'}"
+46	46		301			DialogEnable				{2: 'Planet 65535', 3: 'Oh, you mean a girl about this tall, with gray hair in a ponytail? And she always smiles?'}
+47	47		301							"{2: 'Planet 65535', 3: ""We'd definitely become great friends... if I ever met her! Sorry, I'm at my aphelion right now, and it's too cold here. I need to get moving!""}"
+48	48		301				AniZhuanchangBegin			"{3: ""You've been asking around the entire way, but no one in this solar system has seen Nanami, making you wonder if you've somehow gone astray somewhere...""}"
+49	49		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1102.jpg'}
+50	50		104							{1: '310|-75|-225', 2: '0'}
+51	51		201							{1: '1', 2: '501070'}
+52	52		301			AniZhuanchangEnd				"{1: '1', 2: 'Nanami', 3: ""Power, Power, I think I'm seeing another comet!"", 4: '1'}"
+53	53		301							{2: 'Power', 3: 'BOOM, BOOM...'}
+54	54		204							{1: '1', 2: '5'}
+55	55		301							{2: 'Nanami', 3: 'What?! My eyes are totally okay! I can see stars that are light-years away!', 4: '1'}
+56	56		204							{1: '1', 2: '7'}
+57	57		301							"{3: ""The distant light keeps stopping and starting, bumping around in confusion every now and then like a lost traveler. Nanami can't help but giggle at what she's seeing.""}"
+58	58		204							{1: '1'}
+59	59		301							"{2: 'Nanami', 3: ""Come to hang out with us already. It's boring as hell out here!"", 4: '1'}"
+60	60		401							{1: '2', 2: '8510113'}
+61	61		202							{1: '1'}
+62	62		301				AniZhuanchangBegin			"{3: 'The twin maglev engines on Nanami\'s back burst into brilliant flames as she races toward what she believes to be a ""comet.""'}"
+63	63		202							{1: '1', 6: '1'}
+64	64		104							{1: '0|0|0', 2: '0'}
+65	65		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1106.jpg'}
+66	66		301			AniZhuanchangEnd				"{3: ""You have no idea how long you've been drifting through space... You have seen novas burst into life, stars collapse into darkness, nebulae condense into stars, and stars fade back into nebulae...""}"
+67	67		301							"{3: ""To put it in earthly terms, you've come as far as any human can possibly imagine, and yet you still haven't traced the full length of Nanami's journey...""}"
+68	68		302							{2: 'Nanami... where are you?', 3: '69'}
+69	69		301							{3: 'While searching for Nanami, you suddenly find yourself trapped within a triple-star system. Three blazing suns circle you, instantly trapping you in a cosmic oven.'}
+70	70		302							{2: 'Boy, this is hot...', 3: '71'}
+71	71		301							{2: 'Planet 4294967294', 3: 'What a tiny comet...'}
+72	72		302							{2: 'Have you seen this girl called Nanami?', 3: '73'}
+73	73		301							"{2: 'Planet 4294967294', 3: ""We only know the names of stars! I'm the eldest among my siblings, and together with my two younger sisters, we're known collectively as Polaris!""}"
+74	74		302							"{2: ""You're the North Star?!"", 3: '75', 4: 'Who gave you that name?', 5: '76'}"
+75	75	77	301							"{2: 'Planet 4294967295', 3: ""So you know our other name! Beautiful, isn't it? A star just your size gave us that name. She told us all the stars where she's from call us by that name!""}"
+76	76		301							"{2: 'Planet 4294967295', 3: ""It was a tiny star, just as small as you! She told us that all the stars where she's from call us the North Star.""}"
+77	77		301							{3: 'The suns puff out their chests with pride, their rays growing even warmer as they shine.'}
+78	78		301							"{3: ""And that tiny star they spoke of, the one about your size... It's got to be Nanami.""}"
+79	79		302							{2: 'Do you know where that little star has gone?', 3: '80'}
+80	80		301							{3: 'The stars cast their light toward the edge of the galaxy, where a long, golden comet tail stretches into the distance—Nanami might be waiting at the end of that luminous trail.'}
+81	81		301							{3: 'The frozen clock begins to tick once more, and your heart pounds with renewed vigor—'}
+82	82		301							"{2: 'Planet 4294967296', 3: ""Oh, I almost forgot—your comet tails are the most beautiful we've ever seen among all the stars!""}"
+83	83		301							{2: 'Planet 4294967296', 3: 'Farewell, dear comet! Watch out for black holes, and may the stellar winds guide your way!'}
+84	84		502							{1: 'RImgBg1BlowUp'}
+85	85		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+86	86		301				AniZhuanchangBegin			"{3: ""As you once again venture into deep space, the North Star's light converges upon you. Your pace grows ever faster like it did when you were about to take off from Earth...""}"
+87	87		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+88	88		505							{1: 'RImgBg1BlowUp'}
+89	89		401							{1: '1', 2: '36'}
+90	90		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1102.jpg'}
+91	91		104							{1: '310|-75|-225', 2: '0'}
+92	92		401							{1: '1', 2: '181'}
+93	93		201							{1: '1', 2: '501070', 3: '3'}
+94	94		301			AniZhuanchangEnd				"{1: '1', 2: 'Nanami', 3: ""Wow, wow—that comet is moving so fast, and—it's so bright!"", 4: '1'}"
+95	95		301							{3: 'Having been chasing after the comet, Nanami freezes in place, with the growing sparkle of light reflecting in her golden eyes.'}
+96	96		204							{1: '1', 2: '14'}
+97	97		301							"{2: 'Nanami', 3: ""Oh... it's gone..."", 4: '1'}"
+98	98		301							{3: 'Like fireworks, it blazes brilliantly for one moment, only to vanish without a trace in the next.'}
+99	99		301							"{3: ""But such is the fate of most comets she's witnessed—perhaps they've flown to other places, or perhaps they've fallen onto some distant planet...""}"
+100	100		301							"{2: 'Nanami', 3: ""What, it's all dark here again..."", 4: '1'}"
+101	101		301							{3: 'Nanami stares blankly at the now-silent space and sticks out her tongue in disappointment.'}
+102	102		302							{2: 'Nanami!', 3: '103'}
+103	103		204							{1: '1', 2: '12'}
+104	104		301							"{3: ""Just as she's about to turn and leave, she suddenly stops in her tracks.""}"
+105	105		301							"{2: 'Nanami', 3: ""...Is that Commandant I'm hearing?"", 4: '1'}"
+106	106		301				AniZhuanchangBegin			{2: 'Nanami', 3: 'Am I hearing things...?', 4: '1'}
+107	107		502							{1: 'DialogDisable'}
+108	108		202							{1: '1', 6: '1'}
+109	109		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1106.jpg'}
+110	110		104							{1: '0|-200|-400', 2: '0'}
+111	111		302			AniZhuanchangEnd				{2: 'Nanami!!', 3: '112'}
+112	112		301			DialogEnable				{3: 'After traveling countless light-years, you find yourself in an entirely different environment, surrounded by the dazzling brilliance of an accretion disk.'}
+113	113		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '2'}
+114	114		301							{3: 'At the center of the accretion disk lies a bottomless black hole, destined to devour all light.'}
+115	115		301							{3: 'The immense gravitational force tugs relentlessly at your body—just a fraction closer and you would plunge into the darkness from which not even light can escape—'}
+116	116		201							{1: '1', 2: '501070', 7: '1'}
+117	117		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2'}
+118	118		205							{1: '1', 3: '0', 4: '0.3', 5: '1'}
+119	119		301							{1: '1', 2: 'Nanami', 3: 'Commandant!!!', 4: '1'}
+120	120		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab'}
+121	121		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3', 4: '1'}
+122	122		202							{1: '1', 6: '1'}
+123	123		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '1'}
+124	124		301							"{3: ""If this isn't just your imagination, Nanami might have become something that moves faster than light itself.""}"
+125	125		301				DialogDisable			{3: 'But hallucination or not, her cry has already activated the starship trigger on your belt, causing it to flash rapidly.'}
+126	126		302							{2: '(Sprint with all your might)', 3: '127', 4: '(Pull the starship trigger on the belt with style)', 5: '132'}
+127	127		401							{1: '2', 2: '937'}
+128	128		307							{1: '<b>MAX Q</b>', 3: '60', 4: '34aff8ff'}
+129	129		301							{3: 'MAX Q'}
+130	130		307							{2: '1'}
+131	131	137	301			DialogEnable				{3: 'As you pull the MAX Q trigger on the belt, a deep electronic bass resonates within your helmet, and then—'}
+132	132		401							{1: '2', 2: '937'}
+133	133		307							{1: '<b>MAX Q</b>', 3: '60', 4: '34aff8ff'}
+134	134		301							{3: 'MAX Q'}
+135	135		307							{2: '1'}
+136	136		301			DialogEnable				{3: 'Like a legendary Cosmic Rider, you pull the MAX Q trigger with flair. With it, a deep electronic bass instantly resonates within your helmet, and then—'}
+137	137		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+138	138		401							{1: '2', 2: '8510113'}
+139	139		301				AniZhuanchangBegin			"{3: ""An enormous thrust surges through your back as the speed readings on your visor skyrocket, pushing you right back into the comet's flight path—""}"
+140	140		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+141	141		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1102.jpg'}
+142	142		104							{1: '310|-75|-225', 2: '0'}
+143	143		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab', 2: '2'}
+144	144		401							{1: '2', 2: '4134'}
+145	145		301			AniZhuanchangEnd				{3: 'Her eyes shine brilliantly once more.'}
+146	146		301							{3: 'That beam of light struggles and dances as it grows larger and brighter in her eyes.'}
+147	147		301							{3: 'It was the most brilliant comet she has ever seen in this vast void.'}
+148	148		402							{1: '4134'}
+149	149		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab'}
+150	150		201							{1: '1', 2: '501070', 3: '3', 7: '1'}
+151	151		301			AniZhuanchangEnd				{1: '1', 2: 'Nanami', 3: '...Commandant?', 4: '1'}
+152	152		301							{3: 'Throughout the endless flow of time, she has witnessed countless comets, each silently streaking past her eyes, only to quietly vanish from her sight...'}
+153	153		401							{1: '2', 2: '4359'}
+154	154		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen03.prefab', 2: '2'}
+155	155		301							{3: 'But that one comet, having traced a rainbow-like path across the horizon, is coming straight for her.'}
+156	156		301							{3: 'Light gradually fills the space around Nanami, dispelling the darkness that has surrounded her all this time.'}
+157	157		301							{2: 'Nanami', 3: 'Is this a dream?', 4: '1'}
+158	158		301							{3: 'That comet comes racing through space for her, and her alone.'}
+159	159		301							"{3: ""Having crossed the boundless solitude of space and traversed the pitch-black abyss you're bringing her the most brilliant of lights...""}"
+160	160		302							{2: 'Nanami!!!', 3: '161'}
+161	161		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '3'}
+162	162		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+163	163		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+164	164		505					10.0		{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+165	165		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1108.jpg', 3: '0', 4: '1', 5: '2'}
+166	166		402							{1: '4359'}
+167	167		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen03.prefab'}
+168	168		104							{1: '0|0|0', 2: '0'}
+169	169		201							{1: '1', 2: '501070', 3: '3'}
+170	170		301							{1: '1', 2: 'Nanami', 3: '!!!!!', 4: '1'}
+171	171		204							{1: '1', 2: '1'}
+172	172		301							"{2: 'Nanami', 3: ""Hey, Commandant! It's you!"", 4: '1'}"
+173	173		301							{2: 'Nanami', 3: 'How did you get here, Commandant? Did you actually fly out of the solar system just like me?', 4: '1'}
+174	174		301							"{2: 'Nanami', 3: 'I thought I\'d hidden away in the deepest parts of space with the legendary ""Ultimate Answer""! How did you manage to find me, Commandant?', 4: '1'}"
+175	175		204							{1: '1', 2: '3'}
+176	176		301							{3: 'The girl floats over excitedly and circles around you a few times before touching your snow-white armor in amazement. The armor bears countless scars from years of cosmic voyage...'}
+177	177		204							{1: '1'}
+178	178		301							{3: 'She finally comes to a gentle stop before you and gently pokes at your space helmet with her finger.'}
+179	179		301							{2: 'Nanami', 3: 'Oh, I get it now! You turned yourself into the coolest Cosmic Rider ever with this belt, then traveled such a super duper long way to get here...', 4: '1'}
+180	180		301							{3: 'She murmurs while gazing in the direction from which you came, where the path you left behind reaches well into the distance.'}
+181	181		301							"{3: 'Here in this distant darkness, she has been searching alone for an ""answer"" that seems forever out of reach...'}"
+182	182		302							"{2: ""It's... pretty cold out here, isn't it?"", 3: '183'}"
+183	183		204							{1: '1', 2: '13'}
+184	184		301							"{2: 'Nanami', 3: ""It's cold indeed..."", 4: '1'}"
+185	185		204							{1: '1', 2: '1'}
+186	186		301							"{2: 'Nanami', 3: ""But with you as my anchor point, Commandant, I'm never going to go off course or be lost!"", 4: '1'}"
+187	187		301							{3: 'The girl hesitates for a moment before breaking into a cheerful smile again.'}
+188	188		302							"{2: ""I'm... your anchor point?"", 3: '189', 4: 'What does that mean, though?', 5: '189'}"
+189	189		301							"{2: 'Nanami', 3: ""Yes, you're as much a miracle to this world as you are to me!"", 4: '1'}"
+190	190		301							"{2: 'Nanami', 3: ""It's because of all the memories I share with you, Commandant, that I believe I can definitely find the legendary Ultimate Answer of the universe!"", 4: '1'}"
+191	191		301							"{3: 'Just like countless times before, the girl proudly puffs up her chest and raises her tiny fist to strike an ""I-am-about-to-save-the-world"" pose.'}"
+192	192		301							"{3: ""It seems that whenever she's with you, she'll always strike that same pose—smiling brightly, with her chest puffed out and fist raised high—as if your carefree treasure hunt together would just go on forever.""}"
+193	193		205							{1: '999'}
+194	194		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+195	195		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+196	196		504							{1: '0.7'}
+197	197		204							{1: '1'}
+198	198		301							"{1: '1', 2: 'Nanami', 3: ""Eh? Why the tight squeeze all of a sudden? It's not like Nanami's going anywhere!"", 4: '1'}"
+199	199		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1036.jpg'}
+200	200		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+201	201		204							{1: '1', 2: '2'}
+202	202		301							{2: 'Nanami', 3: 'Anyway, no matter where you are, Commandant, Nanami will come rushing to find you!', 4: '1'}
+203	203		301							{3: 'And then one day, she really did become Superman, soaring into space to save the world, just like her hero would.'}
+204	204		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+205	205		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+206	206		204							{1: '1', 2: '13'}
+207	207		301							{1: '1', 2: 'Nanami', 3: '...Farewell, Commandant... farewell.', 4: '1'}
+208	208		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1108.jpg'}
+209	209		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+210	210		504							{1: '0'}
+211	211		204							{1: '1', 2: '3'}
+212	212		301							{2: 'Nanami', 3: 'Commandant?', 4: '1'}
+213	213		301							{3: 'Catching you spacing out, Nanami gently taps your helmet again.'}
+214	214		302							"{2: '...I wish you could stay.', 3: '215', 4: ""...I don't want you to leave Earth."", 5: '215'}"
+215	215		301							{3: 'The words echo heavily inside your helmet as they roll off your lips, and only then do you realize just how hoarse your voice has grown from the long journey.'}
+216	216		204							{1: '1', 2: '8'}
+217	217		301							{2: 'Nanami', 3: '……', 4: '1'}
+218	218		204							{1: '1', 2: '1'}
+219	219		301							{2: 'Nanami', 3: 'Nanami hears your wish loud and clear, Commandant!', 4: '1'}
+220	220		204							{1: '1', 2: '6'}
+221	221		301							{2: 'Nanami', 3: 'Commandant... Nanami really misses those moments when it was just the two of us together.', 4: '1'}
+222	222		301							"{2: 'Nanami', 3: ""But a world like that would be too lonely. The world shouldn't be that way... and neither should Earth..."", 4: '1'}"
+223	223		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1109.jpg', 3: '0', 4: '1', 5: '2'}
+224	224		401							{1: '2', 2: '4770'}
+225	225		401							{1: '2', 2: '2708'}
+226	226		301							{3: 'The girl holds your hand as she drifts through space, while the stars around the two of you light up one by one like they would in a fairy tale.'}
+227	227		301							"{3: ""Each planet is like a spherical bubble of memories, reflecting the moments she's shared with people.""}"
+228	228		301							{3: 'Slowly, the lonely cosmos comes to life with light and noises.'}
+229	229		402							{1: '4770'}
+230	230		301							"{2: 'Nanami', 3: ""Commandant, I might have to be away from Earth for now, but this won't last forever."", 4: '1'}"
+231	231		301							"{2: 'Nanami', 3: ""Fate isn't set in stone, and that's exactly why it's worth looking forward to."", 4: '1'}"
+232	232		301							"{2: 'Nanami', 3: ""Just like all we've encountered on our journey—moments of sadness, joy, fear, and surprise..."", 4: '1'}"
+233	233		301							{2: 'Nanami', 3: 'The future will surely be just like that—filled with endless possibilities to look forward to.', 4: '1'}
+234	234		301				AniZhuanchangBegin			{2: 'Nanami', 3: 'Please believe in me, Commandant, and look forward to our future!', 4: '1'}
+235	235		202							{1: '1', 6: '1'}
+236	236		205							{1: '999'}
+237	237		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5001_22.jpg'}
+238	238		301			AniZhuanchangEnd				"{3: ""The girl cups a tiny starlight in her hands and offers her treasured flowers to you. Up until you crossed each other's paths just now, she had spent countless days and nights in this vast solitude...""}"
+239	239		301							"{2: 'Nanami', 3: ""Look! I've got you a little something. This is the most adorable flower I came across in space.""}"
+240	240		301							"{2: 'Nanami', 3: ""I just ket waiting and waiting... not knowing when I'd eventually be able to give this to you, Commandant...""}"
+241	241		301							"{2: 'Nanami', 3: ""That's when it hit me... that you'd have to travel a long, long way... to cover a longer distance than I have, just to be with me!""}"
+242	242		301							"{2: 'Nanami', 3: ""If you ever have to do this again, though, I'd love to be there by your side...""}"
+243	243		301							{2: 'Nanami', 3: 'Because I have a lot of things to give you, Commandant, so many stories to share, and countless treasures that I want to discover with you...'}
+244	244		301				AniZhuanchangBegin			{2: 'Nanami', 3: 'And there is something important that I have to tell you.'}
+245	245		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1109.jpg'}
+246	246		201							{1: '1', 2: '501070'}
+247	247		301			AniZhuanchangEnd				{1: '1', 3: 'She takes a deep breath, her beautiful golden eyes reflecting her own silver-white figure.'}
+248	248		301							{3: 'In this moment, she is neither a sage nor a superhuman... just an ordinary girl; and you are neither a hero nor a champion, but simply her knight.'}
+249	249		203							{1: '1', 2: '0.5', 5: '-200'}
+250	250		204							{1: '1', 2: '11'}
+251	251		301							{3: 'She floats over gently, wraps her arms softly around your neck as she rests her head against your space helmet, and closes her eyes with a smile.'}
+252	252		301							{3: '…………'}
+253	253		204							{1: '1', 2: '7'}
+254	254		301				DialogDisable			{2: 'Nanami', 3: 'Commandant... 【kuroname】...', 4: '1'}
+255	255		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.7', 5: '1'}
+256	256		109							{1: '1', 2: '<size=70>Nanami loves you soooooo very much!</size>', 6: '1', 9: '3'}
+257	257		301							{3: 'Nanami loves you soooooo very much!'}
+258	258		110					1000.0		
+259	259		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.7', 4: '0', 5: '1'}
+260	260		202						1000.0	{1: '1'}
+261	261		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5001_22.jpg', 3: '0', 4: '1', 5: '1'}
+262	262		301			DialogEnable	AniZhuanchangBegin			{3: 'The surrounding stars twinkle and trace beautiful paths across the sky, as if singing a melodious song just for the two of you.'}
+263	263		502							{1: 'DialogDisable'}
+264	264		205							{1: '999'}
+265	265		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5001_22.jpg'}
+266	266		304			AniZhuanchangEnd				{1: 'A voyage with you, setting sail for distant horizons together', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 6: '1'}
+267	267		304							{1: 'Because you are here', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 6: '1'}
+268	268		304							{1: 'No more wandering in despair, no more whispers of defeat', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 6: '1'}
+269	269		304							"{1: ""I'll share this dream with you and the world"", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 6: '1'}"
+270	270		304							"{1: ""No matter how faint the starlight's spark, no matter how fierce the storms may rage"", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 6: '1'}"
+271	271		304							{1: 'Throughout our journey, our clasped hands burn with such warmth', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 6: '1'}
+272	272		304							{1: 'Only through your presence and love can these dreams be loaded', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 6: '1'}
+273	273		304							{1: 'Countless moments of beauty and brilliance, endless patterns of splendor and light', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 6: '1'}
+274	274		304				AniZhuanchangBegin			{1: 'These are the colors that bloom for us alone', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 6: '1', 9: '1'}
+275	275		502							{1: 'DialogDisable'}
+276	276		202							{1: '1', 6: '1'}
+277	277		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.7', 5: '1'}
+278	278		307			AniZhuanchangEnd				{1: 'This is Nanami...', 3: '70', 6: '1'}
+279	279		301							{3: 'This is Nanami...'}
+280	280		307							{2: '1'}
+281	281		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.7', 4: '1', 5: '1.5'}
+282	282		109	1						{1: '1', 2: '<size=55>From me,</size>', 3: '-400', 6: '1'}
+283	283		109	1						{1: '2', 2: '<size=55>to you...</size>', 3: '-220', 6: '1'}
+284	284		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory956.jpg'}
+285	285		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '3'}
+286	286		109							{1: '3', 2: '<size=55>This is the starlight of countless millennia.</size>', 3: '300', 6: '1'}
+287	287		301							{3: 'From me, to you... this is the starlight of countless millennia.'}
+288	288		110							
+289	289		301			DialogEnable				{3: 'Opening your eyes, you return once again to The Bifrost.'}
+290	290		301							"{3: ""Having grown accustomed to space travel, you feel weighed down as Earth's gravity holds you in place.""}"
+291	291		301							{3: 'Below, countless lights twinkle where humanity persists in Aerospace City...'}
+292	292		301							"{3: ""Above, twinkling stars adorn the dome of night, reminding you of Nanami's smile.""}"
+293	293		301							{3: '————'}
+294	294		301				AniZhuanchangBegin			{3: 'She left what she cherished to the one she loved most.'}
+295	295		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+296	296		102							{1: 'Cosmic Rider: Prologue - End', 2: 'Racing forward, toward the future that belongs to us', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+297	297		502						5000.0	{1: 'ThemeEnable'}
+298	298		101				AniZhuanchangBegin		2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory577.jpg'}
+299	299		201							{1: '1', 2: '501069'}
+300	300		301			AniZhuanchangEnd				"{1: '1', 2: 'Nanami', 3: ""Phew... I thought I wouldn't be able to write it all down."", 4: '1'}"
+301	301		401							{1: '2', 2: '2589'}
+302	302		301							{3: 'The girl solemnly marks the final period on the last page of the thick book.'}
+303	303		204							{1: '1', 2: '1'}
+304	304		301							{2: 'Nanami', 3: 'Congratulations on finding the most precious treasure. Consider it my gift to you.', 4: '1'}
+305	305		301							{2: 'Nanami', 3: 'In return, I shall treasure your stories as my own.', 4: '1'}
+306	306		204							{1: '1', 2: '3'}
+307	307		301							{2: 'Nanami', 3: '……', 4: '1'}
+308	308		301							{3: 'As if struck by a thought, she lifts her pen once more.'}
+309	309		204							{1: '1', 2: '1'}
+310	310		401							{1: '2', 2: '910'}
+311	311		301							"{3: '""There has never been an endless winter on this planet...""'}"
+312	312		301							"{3: '""When the ice and snow finally melt away, I hope she remains by your side.""'}"
+313	313		402							{1: '910'}
+314	314		204							{1: '1', 2: '2'}
+315	315		301		1		AniZhuanchangBegin			{2: 'Nanami', 3: 'Well then... The next chapters will be yours to write.', 4: '1'}

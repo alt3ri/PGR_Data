@@ -1,0 +1,176 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		301			DialogEnable				{3: 'Early the next morning, the wake-up whistle echoes through the camp as the first light appears on the horizon.'}
+4	4		201							{1: '1', 2: '500005'}
+5	5		301							"{1: '1', 2: 'Resister Soldier', 3: ""Get up, get up! The Cargo Crew doesn't give us any breaks. If you want to eat, follow me to take down the supply trucks!"", 4: '1'}"
+6	6		202							{1: '1', 6: '1'}
+7	7		201							{1: '1', 2: '500434', 4: '-400'}
+8	8		201							{1: '2', 2: '500616', 4: '400'}
+9	9		301							{1: '1', 2: 'Male Civilian', 3: 'Count me in!', 4: '1'}
+10	10		301							"{2: 'Female Civilian', 3: ""I want to go, too. I'm strong. I promise I'll be helpful!"", 4: '2'}"
+11	11		301							{3: 'Hearing that new supplies have arrived, the drowsy civilians instantly perk up, eagerly raising their hands to join the raid.'}
+12	12		202							{1: '1', 2: '2', 6: '1'}
+13	13		201							{1: '1', 2: '500236', 4: '400'}
+14	14		201							{1: '2', 2: '500005', 4: '-400'}
+15	15		301							"{1: '1', 2: 'Refugee?', 3: ""Raiding a supply truck? That sounds dangerous. Are you sure we can do that when we've never received any military training?"", 4: '1'}"
+16	16		301							"{2: 'Resister Soldier', 3: ""You're new, aren't you? Listen, we pick the trucks we raid."", 4: '2'}"
+17	17		302							{2: 'What do you mean?', 3: '18'}
+18	18		202							{1: '1', 6: '1'}
+19	19		203							{1: '2', 2: '0.25'}
+20	20		301							{2: 'Resister Soldier', 3: 'There are two main types of supply trucks from the conservation area. One is the armed crew from Babylonia, guarded mostly by professional soldiers armed to the teeth. Taking them on is very dangerous.', 4: '2'}
+21	21		301							"{2: 'Resister Soldier', 3: ""The other is the Akdilek Cargo Crew hired by the conservation areas. They are mostly civilians like us, which makes them an easy target. As long as you're willing to risk your life, you'll get your reward."", 4: '2'}"
+22	22		301							"{2: 'Resister Soldier', 3: ""We generally raid the latter. That's why Boss makes sure that only those who contribute to the camp can participate in the raids."", 4: '2'}"
+23	23		301							"{2: 'Resister Soldier', 3: ""Also, for example, that guy over there is our doctor. We go to him whenever we're sick or injured. He never has to join the raids because we always save a portion for him."", 4: '2'}"
+24	24		302							{2: '...I see.', 3: '25'}
+25	25		301							"{2: 'Resister Soldier', 3: ""That's how it is. Don't worry about us. Just focus on your guard duty."", 4: '2'}"
+26	26		301							{2: 'Resister Soldier', 3: 'This batch is a big one. If we pull it off, everyone in the camp will have extra rations tonight.', 4: '2'}
+27	27		203							{1: '2', 2: '0.25', 3: '-400'}
+28	28		201							{1: '1', 2: '500236', 4: '400'}
+29	29		301							{1: '1', 2: 'Refugee?', 3: 'A big one? Is the cargo from conservation area 148 next over?', 4: '1'}
+30	30		301							{2: 'Resister Soldier', 3: 'Haha, you sure know your people like the back of your hand, huh?', 4: '2'}
+31	31		301							"{2: 'Resister Soldier', 3: ""But don't go around blabbing about it. Boss hates it when someone figures out his plans. How does he put it again? Unfor..."", 4: '2'}"
+32	32		301							{2: 'Refugee?', 3: 'Unforeseen complications.', 4: '1'}
+33	33		301							"{2: 'Resister Soldier', 3: ""Right, that's how he puts it. Boy, aren't you sharp? They sure educate you guys well at 148, huh?"", 4: '2'}"
+34	34		301							"{2: 'Resister Soldier', 3: ""Alright, I'm outta here. This place is all up to you now."", 4: '2'}"
+35	35		301							{3: 'The soldier is about to turn to leave when he suddenly comes back, pulling out a bag of tattered cactus-flavored cookies from his pocket.'}
+36	36		301							"{2: 'Resister Soldier', 3: ""By the way, don't take what I said yesterday to heart. Take the cookies as an apology."", 4: '2'}"
+37	37		301							"{2: 'Resister Soldier', 3: ""The flavor might be a bit strange, but they're edible and can give you some extra starch."", 4: '2'}"
+38	38		301							{2: 'Refugee?', 3: 'Thanks...', 4: '1'}
+39	39		301							"{2: 'Resister Soldier', 3: ""Don't worry about it. You are one of us now. Only makes sense that we look out for one another."", 4: '2'}"
+40	40		202							{1: '2'}
+41	41		301				AniZhuanchangBegin			{3: 'The soldier waves and leaves the tent without looking back again.'}
+42	42		202			DialogDisable				{1: '1', 6: '1'}
+43	43		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory31.jpg'}
+44	44		401							{1: '2', 2: '4206'}
+45	45		301			DialogEnable				"{3: ""All you can see from the low watchtower is the endless yellow sand. If you stand here long enough, you'll start to doubt if there are any plants left on this planet.""}"
+46	46		201							{1: '1', 2: '500783'}
+47	47		301							{1: '1', 3: 'Watanabe has been silently sitting on the rooftop after receiving the cookies, deep in thought.'}
+48	48		302							{2: 'Are you thinking about that soldier?', 3: '49', 4: 'Are you thinking about conservation area 148?', 5: '50'}
+49	49	51	301							"{2: 'Watanabe', 3: ""Yes... I think he's probably attacking the supply truck now if he hasn't already."", 4: '1'}"
+50	50		301							{2: 'Watanabe', 3: 'Yes... the supply truck heading to the conservation area is probably under attack by now.', 4: '1'}
+51	51		302							"{2: ""I hope there won't be too many casualties."", 3: '52'}"
+52	52		301							{2: 'Watanabe', 3: 'We have to stop Schneider once and for all so no one gets hurt again.', 4: '1'}
+53	53		301							{3: 'Watanabe murmurs to himself as if making a promise to someone.'}
+54	54		301							{3: 'No comfort or encouragement would help in this situation, so you choose to remain silent, gazing into the distance.'}
+55	55		301							{3: 'The scorching sun overhead shows no signs of retreating. A hazy heat shimmer is floating between the desert and the sky like an intangible barrier.'}
+56	56		301							{3: 'You can barely make out the few twisted red rocks, withered trees, and spiky cacti inside the barrier.'}
+57	57		301							{3: 'A few sand foxes quickly run across the yellow sand, leaving a trail of tiny footprints before disappearing into the bushes.'}
+58	58		301							{3: '...'}
+59	59		301							{3: '...'}
+60	60		302							{2: '...Wait, bushes?', 3: '61'}
+61	61		204							{1: '1', 2: '7'}
+62	62		301							{2: 'Watanabe', 3: 'What?', 4: '1'}
+63	63		301							"{3: ""Watanabe quickly stands up, looking at where you're pointing.""}"
+64	64		202							{1: '1', 6: '1'}
+65	65		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory539.jpg', 3: '0', 4: '1', 5: '1'}
+66	66		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+67	67		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory539.jpg'}
+68	68		301							{3: 'It is no illusion. The calm, mirror-like lake, lush green shrubs, and sand foxes playing by the water—an oasis appears in the middle of the desert.'}
+69	69		301							{3: 'The only thing odd about it is that it is floating high up in the sky, like an island drifting above the horizon.'}
+70	70		301							{3: 'A circle of faint white mist surrounds the edge of the green island, like a veil floating underneath the island and above the yellow sand.'}
+71	71		301							{3: 'The white mist looks like a boundary between dream and reality. Stepping into the mist would mean entering a dream.'}
+72	72		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory31.jpg', 3: '0', 4: '1', 5: '0.5'}
+73	73		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+74	74		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory31.jpg'}
+75	75		201							{1: '1', 2: '500783', 3: '1'}
+76	76		301							"{1: '1', 2: 'Watanabe', 3: ""This is a mirage. Don't worry, your eyes are fine."", 4: '1'}"
+77	77		302							"{2: ""So that's what a mirage looks like... It almost looks real to me."", 3: '78'}"
+78	78		301							"{2: 'Watanabe', 3: ""It's pretty hot today, and being right here in the center of the desert means it's easy to see perfect mirages."", 4: '1'}"
+79	79		301							"{2: 'Watanabe', 3: ""Be careful. We've had some new recruits thinking these mirage oases were real. They ran for them like crazy, only to find out by the evening that they were fake. They nearly froze to death trying to get back."", 4: '1'}"
+80	80		502							{1: 'DialogDisable'}
+81	81		302							"{2: ""Don't worry, I won't fall for these illusions."", 3: '82'}"
+82	82		302							"{2: ""I'm curious though, where is the real oasis?"", 3: '83'}"
+83	83		301			DialogEnable				"{2: 'Watanabe', 3: ""If we're lucky, the real oasis should be within a few dozen kilometers of the mirage."", 4: '1'}"
+84	84		301							{3: 'Watanabe breaks into a smile, apparently remembering something amusing.'}
+85	85		301							"{2: 'Watanabe', 3: ""If you're interested, we can go look for it together next time."", 4: '1'}"
+86	86		302							{2: 'Have you been to one?', 3: '87'}
+87	87		301							"{2: 'Watanabe', 3: ""I haven't chased after mirages, but... I've had some decent trips into the desert."", 4: '1'}"
+88	88		301							{2: 'Watanabe', 3: 'When I was younger, a few of us recruits from the mercenary camp would drive out into the desert on our days off to look for fossils.', 4: '1'}
+89	89		301							{2: 'Watanabe', 3: 'Many deserts were ancient sea beds hundreds of millions of years ago. We found ancient sea shells, and once, a massive sea anemone fossil after we dug down.', 4: '1'}
+90	90		301							{2: 'Watanabe', 3: 'Thinking about how this barren desert was once a deep sea makes the history of humanity seem incredibly short.', 4: '1'}
+91	91		502							{1: 'DialogDisable'}
+92	92		302							{2: 'Some people see mirages as reflections of the past. Kind of romantic if you think about it.', 3: '93'}
+93	93		302							{2: 'Maybe this oasis is what this desert looked like thousands of years ago.', 3: '94'}
+94	94		301			DialogEnable				"{2: 'Watanabe', 3: ""That doesn't make sense, but I like how that sounds."", 4: '1'}"
+95	95		301							"{2: 'Watanabe', 3: ""If people thousands of years from now could see what we're thinking and worrying about today, I wonder what they'd think."", 4: '1'}"
+96	96		302							"{2: ""They probably won't have any worries by then."", 3: '97', 4: ""They'll probably have other things to worry about."", 5: '97'}"
+97	97		204							{1: '1', 2: '8'}
+98	98		301							"{2: 'Watanabe', 3: ""Guess that's something we'll never find out."", 4: '1'}"
+99	99		204							{1: '1'}
+100	100		301							{2: 'Watanabe', 3: 'Anyhow, we need to solve our current problems before passing this world to the next generation.', 4: '1'}
+101	101		204							{1: '1', 2: '14'}
+102	102		301							{3: 'Watanabe leans against the low wall of the watchtower and gazes at the distant mirage, letting the desert monsoon ruffle his hair.'}
+103	103		301							"{3: ""The hot wind seems to carry echoes of the past, lingering in Watanabe's hair before dissipating.""}"
+104	104		301							{3: 'For some reason, seeing Watanabe leaning against the wall and gazing into the distance makes him look a bit melancholic.'}
+105	105		301							"{2: 'Watanabe', 3: ""【kuroname】, I've always admired you."", 4: '1'}"
+106	106		301							{3: 'After a long silence, he speaks again, as if giving words to thoughts long buried in his heart.'}
+107	107		301							{2: 'Watanabe', 3: 'No matter how difficult things get, you always shoulder the burden without hesitation and lead everyone forward.', 4: '1'}
+108	108		301							"{2: 'Watanabe', 3: ""I understand that as long as the Punishing Virus exists, these conflicts won't truly end. We have no way to prevent people like Schneider from reappearing."", 4: '1'}"
+109	109		301							{2: 'Watanabe', 3: 'Maybe human history is destined to be a history of struggle. No matter how hard we try, history repeats itself, but even so...', 4: '1'}
+110	110		301							{3: 'Watanabe clutches the cookies he got from the soldier, causing the thin foil wrapper to rustle in the wind.'}
+111	111		301							{2: 'Watanabe', 3: 'But even so, I still want to try to guide them down the right path of survival.', 4: '1'}
+112	112		204							{1: '1'}
+113	113		301							"{2: 'Watanabe', 3: ""Because I believe the will to survive shouldn't be used as a tool for someone's ambition."", 4: '1'}"
+114	114		502							{1: 'DialogDisable'}
+115	115		302							"{2: ""I'm no different."", 3: '116'}"
+116	116		302							{2: 'I will keep rising to defeat people like Schneider.', 3: '117'}
+117	117		302							"{2: ""Our efforts aren't in vain even if this happens again."", 3: '118'}"
+118	118		302							"{2: ""There's meaning in each disaster we stop."", 3: '119'}"
+119	119		204							{1: '1', 2: '1'}
+120	120		301			DialogEnable				"{2: 'Watanabe', 3: ""I knew you'd say that."", 4: '1'}"
+121	121		301							{3: 'Watanabe sighs and turns to meet your gaze.'}
+122	122		301							{2: 'Watanabe', 3: 'And this is precisely why I never want you to have to deal with everything alone.', 4: '1'}
+123	123		301							"{2: 'Watanabe', 3: ""Because if I do that, you'd think it's all your responsibility and that you can take everything upon yourself."", 4: '1'}"
+124	124		502							{1: 'DialogDisable'}
+125	125		302							{2: 'There is already plenty on my plate.', 3: '126'}
+126	126		302							"{2: ""Adding this one more thing won't make a difference."", 3: '127'}"
+127	127		302							"{2: ""So let me help you... I don't want you to do it alone."", 3: '128'}"
+128	128		301			DialogEnable				{2: 'Watanabe', 3: '...Got it, you always have a way with words.', 4: '1'}
+129	129		301							"{3: ""There's regret in Watanabe's voice, but he looks somewhat relieved.""}"
+130	130		301							"{2: 'Watanabe', 3: 'Let\'s face this problem together. You can always choose to be my ""partner"" anytime.', 4: '1'}"
+131	131		203							{1: '1'}
+132	132		301							{2: 'Watanabe', 3: 'But you must follow my orders. No more reckless actions.', 4: '1'}
+133	133		301							"{2: 'Watanabe', 3: ""I don't want to see you in danger again."", 4: '1'}"
+134	134		302							"{2: ""...I'll do my best to keep that promise."", 3: '135'}"
+135	135		301							{2: 'Watanabe', 3: 'No, you must keep it.'}
+136	136		301							{3: 'The towering Construct firmly emphasizes his point.'}
+137	137		202							{1: '1', 6: '1'}
+138	138		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory539.jpg', 3: '0', 4: '1', 5: '1'}
+139	139		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+140	140		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory539.jpg'}
+141	141		301							{3: 'You stop arguing and sit atop the watchtower, savoring the rare moment of tranquility.'}
+142	142		301							"{3: ""You understand each other's thoughts and the depth of your mutual trust without exchanging any words.""}"
+143	143		301							{3: 'Such honesty, transcending identities and positions, is a rare treasure in these chaotic times.'}
+144	144		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory31.jpg', 3: '0', 4: '1', 5: '0.5'}
+145	145		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+146	146		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory31.jpg'}
+147	147		201							{1: '1', 2: '500783'}
+148	148		301							{1: '1', 3: 'When the distant mirage quietly fades away, the dreamlike oasis vanishes back into the vast sea of sand, leaving no trace of its existence.'}
+149	149		301							"{3: ""You then shake off your brief respite and return to the watchtower to discuss the night's plans.""}"
+150	150		301							"{2: 'Watanabe', 3: ""If the hijack goes well, Schneider will show up at the celebration tonight. We need to avoid him so he doesn't see us."", 4: '1'}"
+151	151		301							"{2: 'Watanabe', 3: ""If things go south, just say I forced you. Don't worry about me. I'll find a way out."", 4: '1'}"
+152	152		302							{2: 'Got it.', 3: '154'}
+153	153		401							{1: '2', 2: '968'}
+154	154		301							"{2: 'Watanabe', 3: ""We don't know if Schneider will be willing to negotiate. If they surrender, the conservation area might—"", 4: '1'}"
+155	155		401							{1: '1', 2: '36'}
+156	156		301							{3: 'Watanabe stops in his tracks.'}
+157	157		301							{3: 'The wind picks up, turning from a gentle breeze into a howling gale.'}
+158	158		502							{1: 'DialogDisable'}
+159	159		302							{2: 'Speaking of which, when the mirage disappeared...', 3: '160'}
+160	160		302							{2: 'It felt like the sky suddenly darkened.', 3: '161'}
+161	161		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen01.prefab', 2: '2'}
+162	162		301			DialogEnable				{3: 'Fine sand and small pebbles whip against your faces. You wipe your face and see bloodstains on your palm.'}
+163	163		401							{1: '1', 2: '203'}
+164	164		301							"{3: ""Watanabe's face darkens drastically. He quickly pulls you out of the watchtower after realizing what is happening.""}"
+165	165		202							{1: '1', 6: '1'}
+166	166		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png', 3: '0', 4: '1', 5: '1'}
+167	167		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+168	168		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+169	169		301							{3: 'In the distant sky, a massive brown cloud looms like a giant, slowly pressing down on the small camp.'}
+170	170		301							{3: 'As the brown cloud sweeps over the ground, it stirs up countless yellow sands, forming an even larger canopy that completely blocks the remaining sunlight.'}
+171	171		301							{3: 'Looking at this scene, anyone with common sense would immediately know that humans stand no chance against such a powerful force of nature. Being caught in this vortex means certain destruction.'}
+172	172		301							{3: 'Watanabe grips your arm firmly. You are standing before the massive storm like two mantises holding the weight of an entire planet.'}
+173	173		301							{3: 'He tries to speak, but the wind quickly tears his words into fragmented sounds.'}
+174	174		201							{1: '1', 2: '500783'}
+175	175		301		1		AniZhuanchangBegin			{1: '1', 2: 'Watanabe', 3: '...The desert storm is coming.', 4: '1'}

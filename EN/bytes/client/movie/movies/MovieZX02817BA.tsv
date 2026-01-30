@@ -1,0 +1,171 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory592.jpg'}
+2	2		401							{1: '1', 2: '60'}
+3	3		301			DialogEnable				"{3: ""Not far from the lunar base where nobody can notice, a ship from Babylonia slowly descends onto the Moon's surface.""}"
+4	4		401						500.0	{1: '2', 2: '648'}
+5	5		401							{1: '2', 2: '1516'}
+6	6		201							{1: '1', 2: '500334', 3: '1'}
+7	7		301							{1: '1', 3: 'After the cabin door opens, an agile figure leaps off the ship and lands on the Moon, knocking up the very fine lunar soil and leaving his footprints.'}
+8	8		301							"{2: 'Roland', 3: ""Oh c'mon... I can forgive you for not putting up a red carpet, but you should have at least sent some fans to welcome Roland the superstar."", 4: '1'}"
+9	9		301							{3: 'Roland laughs at himself. The Moon is a silent, deserted place. Not even rabbits can be found here, let alone humans.'}
+10	10		401							{1: '2', 2: '737'}
+11	11		502						400.0	{1: 'RImgBg1Shake'}
+12	12		505							{1: 'RImgBg1Shake'}
+13	13		301							"{3: ""Roland's thoughts are suddenly disrupted by fiery explosions in the distance. An arm of a Construct's base model rapidly flies toward his face.""}"
+14	14		204							{1: '1', 2: '7'}
+15	15		203							{1: '1', 2: '0.14', 3: '60'}
+16	16		401						300.0	{1: '2', 2: '13015111'}
+17	17		402							{1: '13015111'}
+18	18		301							{3: 'Roland frowns and tilts his head slightly to avoid the arm.'}
+19	19		203							{1: '1', 2: '0.25'}
+20	20		204							{1: '1'}
+21	21		301							{2: 'Roland', 3: 'Okay, we have some audience here... Quite a lot actually.', 4: '1'}
+22	22		301							"{3: ""Following the arm are the Construct base models. They land in Roland's vicinity and rush toward Roland once managing to crawl up.""}"
+23	23		301							{3: 'He just realizes these incomplete Constructs were infected by the Punishing Virus and turned into horrific Corrupted long ago.'}
+24	24		301							{2: 'Roland', 3: 'Someone has arrived before me... Or, is that Luna...?', 4: '1'}
+25	25		203							{1: '1', 2: '0.25', 5: '-30'}
+26	26		401						300.0	{1: '2', 2: '1511'}
+27	27		401							{1: '2', 2: '1510'}
+28	28		204							{1: '1', 2: '1'}
+29	29		301							"{3: ""Roland strolls forward as he casually points the shotgun to a Corrupted's head, blowing up two-thirds of it.""}"
+30	30		401						200.0	{1: '2', 2: '561'}
+31	31		401							{1: '2', 2: '1508'}
+32	32		301							"{3: ""The shells' kinetic energy even sends the Corrupted's body away in the low-gravity environment, knocking down a few other Corrupted who are trying to stand up.""}"
+33	33		203							{1: '1', 2: '0.25'}
+34	34		301							{2: 'Roland', 3: 'I really wonder who is stealing my entrance...', 4: '1'}
+35	35		301							{3: 'Roland takes out the container and peeks at the stem cell inside, using the explosion as a light source. The low-gravity environment does not seem to have any impact on it.'}
+36	36		301							"{2: 'Roland', 3: ""Since I took the job, I must finish it no matter what. That's what I call being a professional actor."", 4: '1'}"
+37	37		204							{1: '1'}
+38	38		301							{3: 'Roland closes his eyes to find that weak connection between Luna and him... He can sense her a lot clearer. She is definitely on the Moon.'}
+39	39		301							"{2: 'Roland', 3: ""Well, let me find Luna first. Then I'll leave it to her and fate to decide."", 4: '1'}"
+40	40		204							{1: '1', 2: '1'}
+41	41		301							"{3: ""Roland stretches his body and walks toward Luna's direction.""}"
+42	42		301				AniZhuanchangBegin			{2: 'Roland', 3: 'The show must go on...', 4: '1'}
+43	43		401							{1: '1', 2: '36'}
+44	44		202			DialogDisable				{1: '1', 6: '1'}
+45	45		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory587.jpg'}
+46	46		201							{1: '1', 2: '500494', 3: '13'}
+47	47		301			DialogEnable				{1: '1', 3: 'Karenina failed to persuade Luna. She returns to the propulsion lab still thinking of her last words.'}
+48	48		301							"{3: '""Do you really have the courage to pop their inflated hope?""'}"
+49	49		301							{3: 'Karenina can choose the optimal answer if it only involves herself. But the decision to make right now affects all humans.'}
+50	50		204							{1: '1', 2: '6'}
+51	51		301							{2: 'Karenina', 3: 'Dammit...', 4: '1'}
+52	52		301							{3: 'Perhaps she is better off being alone, fighting, hurting, struggling...'}
+53	53		203							{1: '1', 2: '0.25', 3: '-400'}
+54	54		201							{1: '2', 2: '500502', 4: '400'}
+55	55		401							{1: '1', 2: '206'}
+56	56		301							{1: '1', 2: '???', 3: 'Hey, what are you doing...?', 4: '2'}
+57	57		204							{1: '1', 2: '7'}
+58	58		301							"{3: ""Someone hits Karenina on the shoulder. She then realizes Teddy is standing right next to her—shouldn't she have already left the lunar base with others?""}"
+59	59		201							{1: '2', 2: '500495', 4: '400'}
+60	60		301							{1: '1', 2: 'Karenina', 3: 'Why are you here??', 4: '1'}
+61	61		301							"{2: 'Teddy', 3: ""What's that look on your face? We're still alive... At least for now."", 4: '2'}"
+62	62		202						300.0	{1: '1', 2: '2', 6: '1'}
+63	63		401							{1: '2', 2: '1513'}
+64	64		201							{1: '1', 2: '500499', 3: '19'}
+65	65		301							{1: '1', 2: 'Yarha', 3: 'Tch... Teddy... This system mainframe was contaminated by the Punishing Virus and locked. How can we bypass it?', 4: '1'}
+66	66		301							{3: 'Yarha trots over scratching his head, asking Teddy about some problems he is facing on his portable terminal.'}
+67	67		201							{1: '1', 2: '500494', 3: '7'}
+68	68		301							{1: '1', 2: 'Karenina', 3: 'Yarha? Why are you also back?', 4: '1'}
+69	69		203							{1: '1', 2: '0.25', 3: '400'}
+70	70		201							{1: '2', 2: '500495', 3: '4', 4: '-400'}
+71	71		301							{1: '1', 2: 'Teddy', 3: 'We split into two groups. Some non-technical staff evacuated to protect the injured people. They stayed away from the lunar base and waited for rescue, while we technicians came back here to keep working.', 4: '2'}
+72	72		204							{1: '1', 2: '6'}
+73	73		301							{2: 'Karenina', 3: '****! What are you doing here?! I said I could do this all by myself!', 4: '1'}
+74	74		301							"{3: ""Seeing Karenina's anger, Teddy smiles instead.""}"
+75	75		204							{1: '2', 2: '13'}
+76	76		301							{2: 'Teddy', 3: 'Feeling good about yourself, huh...? We only came back for ourselves.', 4: '2'}
+77	77		201							{1: '2', 2: '500361', 4: '-400'}
+78	78		301							{1: '1', 2: 'Engineer', 3: 'Correct! Just like what the vice-captain said, if we run away and leave you behind, we would be held responsible for letting you destroy the zero-point engine without taking necessary precautions. Gotta do something to defend ourselves.', 4: '2'}
+79	79		204							{1: '1', 2: '5'}
+80	80		301							{2: 'Karenina', 3: 'You...', 4: '1'}
+81	81		301							"{2: 'Engineer', 3: ""And, Captain Karenina, I'm not new here. It's been two years since I joined the Engineering Force... Oh, two years and three months."", 4: '2'}"
+82	82		202							{1: '2'}
+83	83		301							"{3: ""The researcher in the Engineering Force quickly reported the situation and interrupted Karenina's question. He returned to work in no time.""}"
+84	84		204							{1: '1', 2: '4'}
+85	85		201							{1: '2', 2: '500495', 4: '-400'}
+86	86		301							{1: '1', 2: 'Teddy', 3: 'We are doing our best to collect and record the data related to the zero-point engine for its future restoration and improvement.', 4: '2'}
+87	87		301							{2: 'Karenina', 3: 'Restoration and improvement...? Is that really possible?', 4: '1'}
+88	88		301							{2: 'Teddy', 3: 'Probably depends on our luck and speed. In the past, we only had the right to use the engine. Kurono had always been in our way whenever we wanted to investigate the related records.', 4: '2'}
+89	89		204							{1: '2', 2: '13'}
+90	90		301							"{2: 'Teddy', 3: ""But that's no longer a problem. The entire base is probably going to be blown up soon."", 4: '2'}"
+91	91		202							{1: '2', 6: '1'}
+92	92		203							{1: '1', 2: '0.25'}
+93	93		301							{3: 'Karenina gets the terminal from Teddy and looks at it. The research data recorded is indeed highly confidential and has never been disclosed in public research. If they can also include the data observed while the engine was running and even going out of control...'}
+94	94		301							"{2: 'Karenina', 3: ""Perhaps making a new zero-point engine isn't impossible..."", 4: '1'}"
+95	95		301							{3: 'Karenina looks at Yarha. The people in Kurono have no reason to risk their lives to help them.'}
+96	96		203							{1: '1', 2: '0.25', 3: '400'}
+97	97		201							{1: '2', 2: '500499', 3: '19', 4: '-400'}
+98	98		301							"{1: '1', 2: 'Yarha', 3: ""Sigh... I don't want to become space junk, but Kurono's internal punishment is even scarier. That's why I must get something done at least, so I can bargain with them!"", 4: '2'}"
+99	99		301							"{2: 'Yarha', 3: ""Especially after Miss Vesalius became the research director... I really can't go back empty-handed."", 4: '2'}"
+100	100		202							{1: '2', 6: '1'}
+101	101		201							{1: '1', 2: '500303'}
+102	102		301							"{1: '1', 2: 'Kurono Researcher', 3: ""Director Yarha, please stop chatting with them. We're almost done."", 4: '1'}"
+103	103		301							"{3: ""Karenina looks at other Kurono researchers. They don't seem to be working only for their own lives.""}"
+104	104		201							{1: '1', 2: '500495', 3: '4'}
+105	105		301							"{1: '1', 2: 'Teddy', 3: ""Hey you, pack up the tools! We're almost done here in the power lab. Next, we need to go near the zero-point reactor and record its energy output and conversion ratio."", 4: '1'}"
+106	106		301							{2: 'Teddy', 3: 'The devices over there have all been contaminated... We probably have to take the readings on our own.', 4: '1'}
+107	107		202							{1: '1', 6: '1'}
+108	108		201							{1: '2', 2: '500303', 4: '-600'}
+109	109		201							{1: '3', 2: '500059'}
+110	110		201							{1: '4', 2: '500361', 4: '600'}
+111	111		301							{1: '1', 2: 'All Technicians', 3: 'Got it!', 4: '2', 5: '3', 6: '4'}
+112	112		202						200.0	{1: '2', 2: '3', 3: '4', 6: '1'}
+113	113		201							{1: '1', 2: '500494', 3: '13', 4: '400'}
+114	114		201						200.0	{1: '2', 2: '500495', 4: '-400'}
+115	115		203						100.0	{1: '2', 2: '0.18', 3: '-100'}
+116	116		203							{1: '2', 2: '0.18', 3: '-400'}
+117	117		301							"{1: '1', 3: ""Teddy looks at Karenina. Her slim right hand clenches into a fist and gently punches Karenina's left shoulder.""}"
+118	118		204							{1: '2', 2: '13'}
+119	119		301							"{2: 'Teddy', 3: ""Are you concerned about the consequences of destroying the zero-point engine...? That's totally not like you, fool."", 4: '2'}"
+120	120		301							"{2: 'Teddy', 3: ""Don't think too much. Just focus on the things that you must do... Leave the rest to us. You have friends who are willing to fight alongside you too."", 4: '2'}"
+121	121		204							{1: '1', 2: '14'}
+122	122		301							{2: 'Karenina', 3: 'You are so...', 4: '1'}
+123	123		204							{1: '2', 2: '4'}
+124	124		204							{1: '1', 2: '4'}
+125	125		401							{1: '2', 2: '737'}
+126	126		301			RImgBg1Shake				{3: 'More loud explosions can be heard from afar. Even the ground has begun to tremble.'}
+127	127		301				AniZhuanchangBegin			"{2: 'Teddy', 3: ""There's no time... We must get going. While you destroy the zero-point engine, we will take back the hope of science!"", 4: '2'}"
+128	128		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+129	129		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgCg/Cg2801_08.jpg'}
+130	130		301			DialogEnable				{3: 'Teddy puts back her serious face as she walks toward the researchers. They may come from different organizations and have different beliefs, but now they are standing together.'}
+131	131		301							{3: 'Even though Karenina still feels a little lost, she picks up her weapon and turns away with a subtle smile.'}
+132	132		301							"{2: 'Teddy', 3: ""Remember, don't die. If our effort ends up in vain because of you, I will hunt you down even in hell.""}"
+133	133		301							"{2: 'Yarha', 3: ""Better touch wood, Teddy. I'm sure she will succeed...""}"
+134	134		301							{2: 'Karenina', 3: 'Hmph! Just wait and see!'}
+135	135		301				AniZhuanchangBegin			"{3: ""Without even meeting each other's gaze, they turn their backs and head to their respective sides of the battlefield.""}"
+136	136		401						200.0	{1: '1', 2: '36'}
+137	137		101			DialogDisable	AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory588.jpg'}
+138	138		401							{1: '1', 2: '60'}
+139	139		201							{1: '1', 2: '500334'}
+140	140		301			DialogEnable				{1: '1', 3: 'Roland steps over the twisted door of the Construct lab. It seems to have been deformed by some tremendous force.'}
+141	141		301							{3: 'In the center of the lab is the white figure he has been searching for.'}
+142	142		301							{2: 'Roland', 3: 'Luna...', 4: '1'}
+143	143		201							{1: '1', 2: '500504'}
+144	144		301							{1: '1', 2: 'Luna', 3: '...', 4: '1'}
+145	145		201							{1: '1', 2: '500334'}
+146	146		301							{1: '1', 3: 'Roland calls her name softly but receives no response. He can feel the connection between Luna and himself is weakening—which means the agent Luna is dying.'}
+147	147		301							{3: 'A ring-shaped device is draining the Punishing Virus from her and disintegrating it eventually.'}
+148	148		301							{2: 'Roland', 3: 'This must be the Omega Weapon... I wonder if I can free Luna if I break it?', 4: '1'}
+149	149		401							{1: '2', 2: '1511'}
+150	150		301							{3: 'Roland holds his shotgun up, aiming at the Omega Weapon.'}
+151	151		204							{1: '1'}
+152	152		301							{2: 'Roland', 3: 'But what if it accelerates her death...', 4: '1'}
+153	153		204							{1: '1', 2: '1'}
+154	154		401							{1: '2', 2: '1543'}
+155	155		301							{3: 'Roland smiles and puts his shotgun away. He knows even if he rescues Luna here, it would only momentarily extend her life.'}
+156	156		301							{2: 'Roland', 3: 'Nobody can rewrite your own story except you, Luna... If your ending is a silent death on this cold Moon, maybe that is just what fate brings.', 4: '1'}
+157	157		301							{2: 'Roland', 3: 'Still, I wish you can change the ending yourself and embark on your journey again... The person who asked me to bring this gift to you would probably feel the same.', 4: '1'}
+158	158		204							{1: '1'}
+159	159		401					300.0		{1: '2', 2: '952'}
+160	160		301							{3: 'Roland takes out the storage unit he has been carefully protecting and inserts it into the control panel in front of Luna that connects to her M.I.N.D. Although Kurono does not have the technology to hack into the M.I.N.D. of agents, it can still send them a message.'}
+161	161		301							"{3: ""The container on Roland's waist begins to tremble vigorously as if the thing inside is banging against the container wall.""}"
+162	162		204							{1: '1', 2: '1'}
+163	163		301							"{2: 'Roland', 3: ""Hah, I almost forgot Vonnegut's gift... But I don't think I need it to kill her now."", 4: '1'}"
+164	164		301							{2: 'Roland', 3: 'Well, I still have to go through the motions. You can devour everything on the Moon as you like.', 4: '1'}
+165	165		301							"{3: ""Roland opens the container. The surging matter inside quickly crawls toward the cable connecting to the Omega Weapon, then squeezes itself into the cracks on the wall following zero-point energy's unique blue glow.""}"
+166	166		204							{1: '1', 2: '2'}
+167	167		301							{2: 'Roland', 3: 'Alright, here concludes my cameo appearance. Thank you for coming today...', 4: '1'}
+168	168		204					300.0		{1: '1'}
+169	169		301							"{3: ""Roland stops smiling and looks at Luna's face for one last time, whispering.""}"
+170	170		301		1		AniZhuanchangBegin			{2: 'Roland', 3: 'Luna... I hope you can be your true self when you open your eyes again.', 4: '1'}

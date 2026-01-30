@@ -1,0 +1,207 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+2	2		107						2000.0	{1: 'Babylonia', 2: 'Bridge Office'}
+3	3		108							{1: '1'}
+4	4		401							{1: '1', 2: '207'}
+5	5		201							{1: '1', 2: '500128', 3: '1'}
+6	6		301			DialogEnable				{1: '1', 2: 'Bianca', 3: 'Karenina!. There you are.', 4: '1'}
+7	7		203							{1: '1', 2: '0.25', 3: '400'}
+8	8		201							{1: '2', 2: '500494', 3: '8', 4: '-400'}
+9	9		301							{1: '1', 2: 'Karenina', 3: 'Hey, what brought you here?', 4: '2'}
+10	10		301							{3: 'Karenina is a little surprised to see Bianca come through the door.'}
+11	11		301							"{2: 'Bianca', 3: ""I asked around and they said you were fixing the observer for CC. Is the entire Engineering Force here? I'll come back later if you're busy."", 4: '1'}"
+12	12		204							{1: '2', 2: '1'}
+13	13		301							"{2: 'Karenina', 3: ""It's fine... We're doing a simulation calculation with observers from the other bridges to figure out the problem. It'll take about an hour because there's a lot to go through."", 4: '2'}"
+14	14		301							"{2: 'Karenina', 3: ""There's nothing else I can do now but wait anyways... So, are you here to see me? What's up?"", 4: '2'}"
+15	15		301							{2: 'Bianca', 3: 'I got a package from WGAA, and I thought... I should probably give it to you.', 4: '1'}
+16	16		301							"{3: 'Bianca took out a package with the name ""Wise"" on it and handed it over to Karenina.'}"
+17	17		204							{1: '2', 2: '9'}
+18	18		301							{2: 'Karenina', 3: 'Wise...?', 4: '2'}
+19	19		204							{1: '2', 2: '12'}
+20	20		301							{2: 'Karenina', 3: 'He—Um...', 4: '2'}
+21	21		301							{3: 'Karenina stopped herself from asking more questions and opened the package silently.'}
+22	22		301							{2: 'Karenina', 3: 'What in the world is this...', 4: '2'}
+23	23		301							{3: 'Under the wrapping was a rusty metal box with a tiny, intricate, handmade instrument inside.'}
+24	24		301							{2: 'Bianca', 3: 'Is this some kind of telescope?', 4: '1'}
+25	25		301							{3: 'The device has a fan-shaped base with scale markings that come with several tiny round mirrors. Its bronze has a green tint, showing its old age.'}
+26	26		301							{2: 'Karenina', 3: 'No... this is a sextant, a device people used to measure angles. People in the 18th century used it to determine latitude and longitude to navigate the seas.', 4: '2'}
+27	27		301							{2: 'Karenina', 3: 'It uses simple geometrical optics and became rare even before the Golden Age. Only physicists or astronomers collected them.', 4: '2'}
+28	28		301							"{2: 'Karenina', 3: ""But where did he get this... He didn't have a lot of personal items, and even his notebooks were from the guild. I don't think he got a lot of gifts either..."", 4: '2'}"
+29	29		301							{3: 'Karenina took out the sextant and flipped the metal box over to find a line of words engraved with laser.'}
+30	30		304							{1: 'To my youngest student, Wise—Wishing him the best of luck as he finds his own way through the vast ocean of knowledge, seeking truth.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1'}
+31	31		304							{1: '—Kalon.', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 9: '1', 10: '1'}
+32	32		204							{1: '2', 2: '4'}
+33	33		301							{2: 'Karenina', 3: 'I see. Grandpa gave this to him.', 4: '2'}
+34	34		301							{2: 'Karenina', 3: 'This sextant... I can just tell from the fine polishing of the individual parts that Grandpa must have made this by hand.', 4: '2'}
+35	35		301							{2: 'Karenina', 3: 'He used to make little gadgets for me... like a monocular telescope from an adventure story, or an ore radio that allows you to eavesdrop on city channels...', 4: '2'}
+36	36		204							{1: '2', 2: '13'}
+37	37		301							{2: 'Karenina', 3: 'If we go back to the time I met Wise... Grandpa probably gave Wise this sextant before they left for the moon. And after that...', 4: '2'}
+38	38		204							{1: '1'}
+39	39		301							"{2: 'Bianca', 3: 'So this is a gift from a ""teacher"" to his ""student""... But then...', 4: '1'}"
+40	40		204							{1: '2', 2: '4'}
+41	41		301							{2: 'Karenina', 3: 'But Wise respected Grandpa so much! Why would he give this to WGAA if Grandpa did give this to him...', 4: '2'}
+42	42		301							{3: 'Karenina scratched her head in annoyance and lifted the box before shaking it to see if there was anything else in it.'}
+43	43		301							{2: 'Karenina', 3: 'Hmm...', 4: '2'}
+44	44		301							{3: 'Hearing a strange sound, she ripped out the bubble wrap in the box—and out popped a tiny, yellowed card from the bottom.'}
+45	45		301							{2: 'Karenina', 3: 'Found it.', 4: '2'}
+46	46		301							{3: 'Just like what she did many years ago, in that empty lab.'}
+47	47		301				AniZhuanchangBegin			{3: 'She picked up the card and tried to figure out the message—'}
+48	48		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+49	49		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory262.png'}
+50	50		201							{1: '1', 2: '1111001', 4: '-400'}
+51	51		201							{1: '2', 2: '1091001', 4: '400'}
+52	52		301			DialogEnable				{1: '1', 2: 'Karenina', 3: 'Bianca—', 4: '1'}
+53	53		301							{2: 'Karenina', 3: 'Bianca! Hey! Bi—an—ca—!', 4: '1'}
+54	54		204							{1: '2', 2: '1'}
+55	55		301							"{2: 'Bianca', 3: ""Hum? Yeah? I'm listening."", 4: '2'}"
+56	56		301							"{3: ""Bianca's wandering thoughts were reined in by the voice calling her name. She refocused her sight on the girl sitting across from her.""}"
+57	57		204							{1: '1', 2: '8'}
+58	58		301							"{2: 'Karenina', 3: ""Liar, you weren't even trying to listen."", 4: '1'}"
+59	59		301							{2: 'Bianca', 3: 'O-of course I was. Um... you were talking about this Construct by the name of Lucia?', 4: '2'}
+60	60		204							{1: '1'}
+61	61		301							{2: 'Karenina', 3: 'Yes! Her! That damn Lucia!', 4: '1'}
+62	62		301							"{3: ""Karenina's Inver-Device hidden under her hat began to make tick-tock noises at the mention of that name. She clenched her teeth and fists as if trying to keep in a belly full of wrath.""}"
+63	63		301							"{2: 'Karenina', 3: ""I was this close! This! Close! To beating her in the last simulation battle! Urgh! I can't believe it."", 4: '1'}"
+64	64		204							{1: '1', 2: '5'}
+65	65		301							"{2: 'Karenina', 3: 'So what if she\'s in the Task Force? And she had a ""Man, that was easy"" face when she won!', 4: '1'}"
+66	66		204							{1: '1'}
+67	67		301							"{2: 'Bianca', 3: ""Hahaha... Karenina, I think it's time to let it go."", 4: '2'}"
+68	68		301							"{2: 'Bianca', 3: ""Lucia is one of the most powerful Constructs in the Task Force. You already did super well, considering you're from the Engineering Force."", 4: '2'}"
+69	69		301							"{2: 'Karenina', 3: ""I don't care! I don't care where she's from, and I'm totally going to fight her again at the next simulation!"", 4: '1'}"
+70	70		301							"{2: 'Bianca', 3: ""I don't think you can choose who to fight for simulation battles, though..."", 4: '2'}"
+71	71		301							"{3: ""Bianca smiled gently as she took a sip of her hot coffee. She wasn't going to get in Karenina's way.""}"
+72	72		301							"{2: 'Bianca', 3: ""The ice is gonna melt if you don't drink it."", 4: '2'}"
+73	73		301							"{3: ""Only then did Karenina remember that she hadn't touched the orange juice she ordered. She bit onto the straw and sipped on it aggressively but quietly, like a docile cat.""}"
+74	74		301							{3: 'Their interests, hobbies, even tastes, and aesthetic senses were vastly different.'}
+75	75		301							{3: 'Bianca would never touch any of the engineering books Karenina read, and Karenina also found classical art films boring to watch.'}
+76	76		301							"{3: ""But their friendship had grown stronger since they first met. Karenina was used to Bianca's company even after she made many new friends in the Engineering Force.""}"
+77	77		301							"{2: 'Bianca', 3: ""Oh, we haven't celebrated your promotion to the Captain of the Demolition Squad. No one in the Engineering Force has risen through the ranks so fast, right?"", 4: '2'}"
+78	78		204							{1: '1', 2: '1'}
+79	79		301							"{2: 'Karenina', 3: ""Damn straight, and I'll be the captain in no time!"", 4: '1'}"
+80	80		204							{1: '1', 2: '8'}
+81	81		301							{2: 'Karenina', 3: '...I mean, I wish, but I actually just got lucky this time. The squad captain disappeared on the ground not long ago, so I replaced him.', 4: '1'}
+82	82		204							{1: '2'}
+83	83		301							{2: 'Bianca', 3: 'Oh, is that right...', 4: '2'}
+84	84		204							{1: '1'}
+85	85		301							{2: 'Karenina', 3: 'Did you just say something?', 4: '1'}
+86	86		204							{1: '2', 2: '1'}
+87	87		301							{2: 'Bianca', 3: 'Oh, never mind.', 4: '2'}
+88	88		204							{1: '1'}
+89	89		301							"{2: 'Karenina', 3: ""Hey, stop saying that. You keep saying that these, acting all mysterious, and never tell me what's going on!"", 4: '1'}"
+90	90		204							{1: '1', 2: '8'}
+91	91		301							"{2: 'Karenina', 3: ""You never talk about yourself, ever. I've known you for so long, but I don't even know what squad you belong to."", 4: '1'}"
+92	92		204							{1: '1'}
+93	93		204							{1: '2'}
+94	94		301							{3: 'Bianca froze for a moment at the sudden change of atmosphere. She lowered her eyes and put on an apologetic face.'}
+95	95		204							{1: '2', 2: '8'}
+96	96		301							{2: 'Bianca', 3: '...Sorry, Karenina.', 4: '2'}
+97	97		301							{3: 'Bianca drew a light breath and rubbed her finger on the rim of her coffee cup.'}
+98	98		204							{1: '2'}
+99	99		301							{2: 'Bianca', 3: 'Actually...', 4: '2'}
+100	100		401							{1: '2', 2: '1099'}
+101	101		301							"{3: ""That was when Bianca's terminal suddenly rang.""}"
+102	102		204							{1: '2', 2: '4'}
+103	103		301							{3: 'She immediately picked up the call once she saw the caller ID, and her face turned solemn.'}
+104	104		301							"{2: 'Bianca', 3: ""Chiko? Okay... got it. I'll watch out for the signal. Okay... I'll be right there."", 4: '2'}"
+105	105		301							{2: 'Bianca', 3: 'Karenina, I...', 4: '2'}
+106	106		301							"{2: 'Karenina', 3: ""It's okay. That sounds urgent. Feel free to go."", 4: '1'}"
+107	107		301							"{3: ""Karenina gave Bianca a few big waves, showing that she understood Bianca's situation.""}"
+108	108		204							{1: '2', 2: '1'}
+109	109		301							"{2: 'Bianca', 3: ""Okay, I'll see you later."", 4: '2'}"
+110	110		202							{1: '2', 6: '1'}
+111	111		203							{1: '1', 2: '0.25'}
+112	112		301							{2: 'Karenina', 3: '...', 4: '1'}
+113	113		306							{1: '1'}
+114	114		301							"{3: ""Karenina propped her head with one arm and looked in Bianca's direction until she completely disappeared.""}"
+115	115		301							{3: 'She sat silently, an entirely different person from the energetic woman demanding Bianca to answer her questions just moments ago.'}
+116	116		301							{3: 'The mutters of people in the room slowly entered her ears once more.'}
+117	117		202							{1: '1'}
+118	118		301							{3: 'With the straw in her mouth, Karenina turned to look into the artificial sky outside the window.'}
+119	119		301							{3: 'The spotless blue sky seemed so real that some might even think that it was, but Karenina, being one who traveled back and forth between Babylonia and Earth, knew better than to actually fall for the bad joke.'}
+120	120		401							{1: '1', 2: '36'}
+121	121		301							{3: 'The real sky would never look so beautiful.'}
+122	122		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg', 3: '0', 4: '1', 5: '1'}
+123	123		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+124	124		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg'}
+125	125		401							{1: '1', 2: '201'}
+126	126		301							{3: 'When Corrupted, Constructs, and the bodies of dead humans burn in a giant pile, black smoke clogs the sky for tens of miles, stretching almost as far as one could see.'}
+127	127		301							"{3: ""She'd seen it more times than she could recall, because new bases were usually built upon old battlefields, and the Engineering Force could not start working until the remains were burned and cleared.""}"
+128	128		306							
+129	129		201							{1: '1', 2: '1111001'}
+130	130		301							{1: '1', 2: 'Karenina', 3: 'Cough... cough, cough...', 4: '1'}
+131	131		301							"{3: ""Constructs don't need to breathe, but the irritants in the air could still make them cough.""}"
+132	132		301							"{2: 'Karenina', 3: ""Okay... We've got this area cleared out. You, you, and you, take the equipment and follow us. Check the resources we were given so we can calculate the explosives needed."", 4: '1'}"
+133	133		301							{3: 'With a frown, Karenina looked through the faces of each of her teammates and began giving orders.'}
+134	134		301							{3: 'This was her first mission after her promotion to the position of Captain of the Demolition Squad. The Engineering Force was to clear the land to build a new base, and her squad was tasked with demolishing the dangerous buildings and old ruins.'}
+135	135		203							{1: '1', 2: '0.25', 3: '-400'}
+136	136		201							{1: '2', 2: '500019', 4: '400'}
+137	137		301							{1: '1', 2: 'Engineering Force Crew', 3: 'Do we need to have every single building counted? We usually just come up with a rough estimate.', 4: '2'}
+138	138		301							{2: 'Engineering Force Crew', 3: 'They gave us more resources than we needed anyways, so why give ourselves extra work?', 4: '2'}
+139	139		301							{2: 'Karenina', 3: 'The past is the past, and we do things differently now. Makes more sense for the leftover resources to be used at the new base than making explosives out of them.', 4: '1'}
+140	140		301							"{2: 'Karenina', 3: ""There are only 62 locations to measure, and that will only take an afternoon. By the way, where's Hugo? Thought he was on this mission, too."", 4: '1'}"
+141	141		301							{2: 'Engineering Force Crew', 3: 'He, uh... submitted his application to get his frame repaired yesterday, so he was sent to the back earlier today.', 4: '2'}
+142	142		301							{2: 'Karenina', 3: 'You know what he needs to get fixed? His ****ing bullshit! I am the squad captain, and I was never even told about this application he submitted!', 4: '1'}
+143	143		301							"{2: 'Engineering Force Crew', 3: ""He told me himself, but I'm not surprised since he's always looking for ways to slack off."", 4: '2'}"
+144	144		301							"{2: 'Karenina', 3: ""Urgh... You know what, I'll deal with him later. Let's focus on the mission first."", 4: '1'}"
+145	145		301							{2: 'Karenina', 3: 'Uhm...', 4: '1'}
+146	146		202							{1: '1', 2: '2', 6: '1'}
+147	147		301							{3: 'Just as Karenina was leading her team into the ruins for investigation, an elite squad of Constructs silently appeared nearby.'}
+148	148		301							{3: 'Looking at one another, the members of the Demolition Squad began murmuring amongst themselves when some recognized the approaching squad.'}
+149	149		201							{1: '1', 2: '500498'}
+150	150		301							{1: '1', 2: '???', 3: 'Folks—', 4: '1'}
+151	151		203							{1: '1', 2: '0.25', 3: '-400'}
+152	152		201							{1: '2', 2: '500019', 4: '400'}
+153	153		301							"{1: '1', 2: 'Engineering Force Crew', 3: ""Wait, aren't y'all from the Purifying Force?! Why are you here—"", 4: '2'}"
+154	154		301							"{2: '???', 3: ""Calm down, people. My name is Chiko and I am the vice-captain of the Purifying Force. We're here on order to carry out investigations."", 4: '1'}"
+155	155		301							"{2: 'Engineering Force Crew', 3: ""W-what is there to investigate? Aren't you only after deserters? We all have a clear record here, right? C'mon, Boss, say something..."", 4: '2'}"
+156	156		202							{1: '2', 6: '1'}
+157	157		203							{1: '1', 2: '0.25'}
+158	158		301							{1: '1', 2: 'Chiko', 3: 'Why do we have such a bad rep?', 4: '1'}
+159	159		301							{3: 'Chiko breaks into a wry smile that lasts for only a split second.'}
+160	160		204							{1: '1', 2: '4'}
+161	161		301							"{2: 'Chiko', 3: ""We know you guys are clean, so we're not here for you. We have it on good authority that someone around here is stealing Babylonia's technology and resources."", 4: '1'}"
+162	162		301							{2: 'Chiko', 3: 'We just wanted to ask you to work with us to gather some clues. We have nothing against you.', 4: '1'}
+163	163		301							"{2: 'Chiko', 3: ""And you are Karenina? You're in charge of these people, I presume? Please let me know where you stand."", 4: '1'}"
+164	164		202							{1: '1', 6: '1'}
+165	165		201							{1: '1', 2: '1111001'}
+166	166		301							{1: '1', 2: 'Karenina', 3: '...', 4: '1'}
+167	167		301							{3: 'Karenina remained silent, having trained her eyes on the Construct that was their captain, standing beside Chiko.'}
+168	168		301							"{2: 'Karenina', 3: ""Bianca, you're from the Purifying Force?"", 4: '1'}"
+169	169		301							{3: 'Karenina could never dream that she would meet Bianca at work under such circumstances.'}
+170	170		201							{1: '1', 2: '500498', 4: '-400'}
+171	171		201							{1: '2', 2: '1091001', 3: '4', 4: '400'}
+172	172		301							{1: '1', 2: 'Chiko', 3: 'Do you know her, Captain?', 4: '1'}
+173	173		301							{2: 'Bianca', 3: '...', 4: '2'}
+174	174		301							"{3: ""Bianca looked at Karenina silently without any look of surprise, as if she'd known this day would come.""}"
+175	175		301							{3: 'She spoke slowly while Karenina kept her quizzical eyes on her.'}
+176	176		301							"{2: 'Bianca', 3: ""...She is a friend, but don't worry, I won't bring personal feelings into work."", 4: '2'}"
+177	177		301							{2: 'Bianca', 3: 'Chiko has expressed our intentions clearly. Karenina, I hope you can cooperate with us.', 4: '2'}
+178	178		202							{1: '1', 2: '2', 6: '1'}
+179	179		201							{1: '1', 2: '1111001'}
+180	180		301							{1: '1', 3: 'Karenina kept her eyes fixed on Bianca, as though waiting for Bianca to say something else.'}
+181	181		301							"{3: ""It wasn't until someone behind her gave her a little shove that she realized everyone was waiting for her to make a decision.""}"
+182	182		301							"{3: 'She clenched her fist for a brief moment before loosening it, and closed her eyes before speaking in her capacity as ""Captain of the Demolition Squad"".'}"
+183	183		301							{2: 'Karenina', 3: 'I believe that none of my team has anything to hide, so if you want to look, be my guest.', 4: '1'}
+184	184		301							"{2: 'Karenina', 3: ""But our mission is urgent. If we cannot clear out this area by the end of the day, the rest of what the Engineering Force has to do will be delayed, and that's going to affect everything that comes after that."", 4: '1'}"
+185	185		301							"{2: 'Karenina', 3: ""I can help you with the investigation of the stolen resources since I'm in charge and am privy to some of the hush-hush stuff."", 4: '1'}"
+186	186		301							{2: 'Karenina', 3: 'That being said, you have to promise not to get in the way of the rest of our operations. You can leave someone here to keep an eye on us, but I will be the only one going with you.', 4: '1'}
+187	187		203							{1: '1', 2: '0.25', 3: '-400'}
+188	188		201							{1: '2', 2: '500019', 4: '400'}
+189	189		301							"{1: '1', 2: 'Engineering Force Crew', 3: 'Karenina, are you offering yourself as their ""hostage""?', 4: '2'}"
+190	190		301							"{2: 'Karenina', 3: ""Shut it! There's no hostage here. Well, if you're the one they're looking for, just offer yourself up now to put us all out of misery here."", 4: '1'}"
+191	191		301							"{2: 'Engineering Force Crew', 3: ""Hey, I'm definitely not! Never done a thing!"", 4: '2'}"
+192	192		301							{2: 'Karenina', 3: 'So, what do you say?', 4: '1'}
+193	193		202							{1: '1', 2: '2', 6: '1'}
+194	194		201							{1: '1', 2: '500498', 4: '-400'}
+195	195		201							{1: '2', 2: '1091001', 4: '400'}
+196	196		301							"{1: '1', 2: 'Bianca', 3: ""...Would be great if you could really give us the clues we're looking for. I think we have a deal here, but what do you say, Chiko?"", 4: '2'}"
+197	197		301							{2: 'Chiko', 3: 'No objections.', 4: '1'}
+198	198		301							"{2: 'Bianca', 3: ""That's great... Now, Karenina, if you'll please come this way with us."", 4: '2'}"
+199	199		301							"{3: ""Bianca reached out her hand but withdrew it immediately as if she'd been zapped.""}"
+200	200		202							{1: '1', 2: '2', 6: '1'}
+201	201		301							{3: 'She covered the faux pas by whispering some orders to Chiko and led the rest of her team off.'}
+202	202		201							{1: '1', 2: '500498', 4: '-400'}
+203	203		201							{1: '2', 2: '1111001', 4: '400'}
+204	204		301							"{1: '1', 2: 'Chiko', 3: ""You can go now. I'll keep an eye on your team."", 4: '1'}"
+205	205		301							{2: 'Karenina', 3: 'Thank you, Captain Obvious.', 4: '2'}
+206	206		301		1		AniZhuanchangBegin			{3: 'Karenina gave her a little shrug and followed behind Bianca.'}

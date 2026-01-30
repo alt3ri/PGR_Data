@@ -1,0 +1,67 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1333.jpg'}
+2	2		401							{1: '1', 2: '209'}
+3	3		201							{1: '1', 2: '501385', 3: '7'}
+4	4		301			DialogEnable				{1: '1', 2: 'Liv', 3: '?!!', 4: '1'}
+5	5		202							{1: '1'}
+6	6		301							{3: 'The fight over, you both make your way back to where the vehicle was parked, only to be greeted by a scene of utter violation.'}
+7	7		201							{1: '1', 2: '501385', 3: '7'}
+8	8		301							"{1: '1', 2: 'Liv', 3: ""This... this isn't possible. My sensors didn't pick up any Hetero-Creature movement in this direction..."", 4: '1'}"
+9	9		202							{1: '1'}
+10	10		301							{3: 'You retrieve the monitoring equipment you had stashed under the seat and begin sifting through the logs.'}
+11	11		302							{2: 'And the Punishing Virus readings have been stable.', 3: '12'}
+12	12		201							{1: '1', 2: '501385', 3: '4'}
+13	13		301							{1: '1', 2: 'Liv', 3: 'Could it be a new type of Hetero-Creature? Or...', 4: '1'}
+14	14		302							{2: 'No...', 3: '15'}
+15	15		202							{1: '1'}
+16	16		301							"{3: ""You circle to the vehicle's rear, your eyes tracing the lines of damage.""}"
+17	17		201							{1: '1', 2: '501385', 3: '3'}
+18	18		301							{1: '1', 2: 'Liv', 3: 'The damage is extensive... It looks like the random destruction of a Hetero-Creature or a wild animal.', 4: '1'}
+19	19		302							{2: 'But the most concentrated damage is around the power engine.', 3: '20'}
+20	20		202							{1: '1'}
+21	21		306							{1: '1'}
+22	22		301							{3: 'A web of crisscrossing scratches covers the vehicle, but the deepest gashes converge at the power unit.'}
+23	23		306							
+24	24		201							{1: '1', 2: '501385', 3: '12'}
+25	25		301							{1: '1', 2: 'Liv', 3: 'Commandant, you mean...?', 4: '1'}
+26	26		302				AniZhuanchangBegin			"{2: ""...It's still too early to draw conclusions."", 3: '27'}"
+27	27		202							{1: '1', 6: '1'}
+28	28		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory394.jpg'}
+29	29		301			AniZhuanchangEnd				{3: 'As you speak, the sun dips behind the mountains, and leaden shadows bleed out from the peaks, swallowing the light.'}
+30	30		302							"{2: ""Let's head back to the conservation area for now."", 3: '31'}"
+31	31		301							{3: 'On these unfamiliar roads, pushing ahead feels like the wrong move.'}
+32	32		301							{3: 'Most mountains of the mining area stand stark and treeless, their towering shadows stretching in twisted shapes across the land.'}
+33	33		201							{1: '1', 2: '501385', 3: '4'}
+34	34		301				DialogDisable			{1: '1', 2: 'Liv', 3: 'Alright.', 4: '1'}
+35	35		202							{1: '1', 6: '1'}
+36	36		401							{1: '1', 2: '55'}
+37	37		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+38	38		401							{1: '2', 2: '4320'}
+39	39		504							{1: '0.7'}
+40	40		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '3'}
+41	41		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+42	42		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+43	43		301			DialogEnable				{3: 'Liv acknowledges and moves toward you, but for a split second, the shifting light glints strangely in her visual module, making the world around her seem filtered and unreal.'}
+44	44		301							{3: 'Your face softens into a hazy smudge.'}
+45	45		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+46	46		504							{1: '0'}
+47	47		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+48	48		402							{1: '4320'}
+49	49		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+50	50		201							{1: '1', 2: '501385', 3: '7', 7: '1'}
+51	51		301							{1: '1', 2: 'Liv', 3: 'Comman... dant?', 4: '1'}
+52	52		302							"{2: ""Hmm? What's up?"", 3: '53', 4: ""I'm right here. What's wrong?"", 5: '53'}"
+53	53		204							{1: '1', 2: '12'}
+54	54		301							"{3: ""Your familiar voice instantly settles Liv's nerves.""}"
+55	55		204							{1: '1', 2: '10'}
+56	56		301							"{2: 'Liv', 3: ""...It's nothing. Just a minor glitch in my visual module. It's calibrated now."", 4: '1'}"
+57	57		302							{2: '...Your visual module?', 3: '58'}
+58	58		202							{1: '1'}
+59	59		301							{3: 'The familiar abnormal fluctuation immediately reminds you of the unexpected situation during your recent battle.'}
+60	60		302							{2: 'Your M.I.N.D. experienced slight fluctuations during that last battle, too...', 3: '61'}
+61	61		201							{1: '1', 2: '501385', 3: '10'}
+62	62		301				DialogDisable			"{1: '1', 2: 'Liv', 3: ""It's probably just some desynchronization. My new frame is still in its break-in period."", 4: '1'}"
+63	63		302							"{2: ""Are you sure you're okay now?"", 3: '64'}"
+64	64		302							"{2: ""If you notice anything abnormal, promise me you'll tell me right away."", 3: '65'}"
+65	65		204							{1: '1', 2: '2'}
+66	66		301		1	DialogEnable	AniZhuanchangBegin			"{2: 'Liv', 3: ""I will. I promise, Commandant. Don't worry."", 4: '1'}"

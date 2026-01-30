@@ -1,0 +1,69 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory43.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		401							{1: '2', 2: '10001004'}
+4	4		201						100.0	{1: '1', 2: '1011001', 4: '600'}
+5	5		203						700.0	{1: '1', 2: '0.25', 3: '-300'}
+6	6		203						400.0	{1: '1', 2: '0.35', 3: '-1500'}
+7	7		401							{1: '2', 2: '819016'}
+8	8		201						100.0	{1: '2', 2: '500992', 3: '4', 4: '-600'}
+9	9		203						700.0	{1: '2', 2: '0.25', 3: '400'}
+10	10		203						400.0	{1: '2', 2: '0.35', 3: '1800'}
+11	11		401							{1: '2', 2: '4511'}
+12	12		202							{1: '1', 2: '2', 6: '1'}
+13	13		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+14	14		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionL.prefab', 2: '2'}
+15	15		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionR.prefab', 2: '2'}
+16	16		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab', 2: '2'}
+17	17		502							{1: 'RImgBg1Shake'}
+18	18		301			DialogEnable				{3: 'Aggressive slashes and pursuing gunfire interweave like a torrential downpour.'}
+19	19		201							{1: '1', 2: '500061', 7: '1'}
+20	20		401							{1: '2', 2: '9351041'}
+21	21		301			PanelActor1Shake				{1: '1', 3: 'The Nozzle unit is completely defenseless against such a fierce offensive.'}
+22	22		401							{1: '2', 2: '11106008'}
+23	23		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+24	24		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab'}
+25	25		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 2: '2', 3: '1'}
+26	26		401							{1: '2', 2: '1506'}
+27	27		203			PanelActor1Shake				{1: '1', 2: '0.25', 4: '-200'}
+28	28		301							"{1: '1', 3: ""After another precisely coordinated attack, the Nozzle's defenses are completely shattered. The massive machine staggers backward before crashing to the ground.""}"
+29	29		203							{1: '1', 2: '0.25', 3: '550', 4: '-200', 6: '1'}
+30	30		201							{1: '2', 2: '1011001', 4: '-450'}
+31	31		301							{1: '1', 2: 'Lee', 3: 'Hmm?', 4: '2'}
+32	32		203							{1: '2', 2: '0.25', 3: '-450', 4: '-50'}
+33	33		301							{3: 'Unlike other enemies, the Nozzle does not immediately vanish after its destruction. Noticing this, Lee crouches next to the machine and connects his terminal to its core, reviewing its data.'}
+34	34		301							"{2: 'Lee', 3: ""That's what I thought."", 4: '2'}"
+35	35		302							{2: 'Found anything?', 3: '36'}
+36	36		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 4: '1'}
+37	37		202							{1: '1', 6: '1'}
+38	38		203							{1: '2', 2: '0.25'}
+39	39		301							"{2: 'Lee', 3: ""This Nozzle's core contains special, encrypted data. According to my preliminary review, this data is directly linked to the source of the interference."", 4: '2'}"
+40	40		301							{2: 'Lee', 3: 'If we can successfully decrypt it, we might be able to obtain information about the interference source and locate its whereabouts.', 4: '2'}
+41	41		301							{2: 'Lee', 3: 'Let me borrow your modified terminal for a moment, Commandant.', 4: '2'}
+42	42		203							{1: '2', 2: '0.25', 3: '450'}
+43	43		401							{1: '2', 2: '4422'}
+44	44		201							{1: '1', 2: '1031001', 4: '-450'}
+45	45		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+46	46		301							"{1: '1', 2: 'Lee', 3: ""Liv, I'm transmitting the decrypted information to you. Incorporate this data to survey the facility and try to locate the interference source."", 4: '2'}"
+47	47		301							{2: 'Liv', 3: 'Okay.', 4: '1'}
+48	48		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+49	49		202							{1: '1', 2: '2'}
+50	50		301							{3: 'The battle temporarily subsides. As you track the interference source, Lucia finally asks the question that has been on her mind for some time.'}
+51	51		201							{1: '1', 2: '500994', 3: '4'}
+52	52		301							{1: '1', 2: 'Lucia', 3: 'Why... is Lee in his Palefire frame?', 4: '1'}
+53	53		302							{2: 'Do you also see Palefire?', 3: '54'}
+54	54		204							{1: '1'}
+55	55		301							{3: 'Lucia nods gently, a hint of confusion visible on her face.'}
+56	56		203							{1: '1', 2: '0.25', 3: '-400'}
+57	57		201							{1: '2', 2: '1011001', 4: '400'}
+58	58		301							"{1: '1', 2: 'Lee', 3: 'It seems my appearance is being distorted in everyone else\'s vision and showing up as ""Palefire"".', 4: '2'}"
+59	59		302							{2: 'Lucia looks unchanged. Does this distortion only affect you?', 3: '60'}
+60	60		301							"{2: 'Lee', 3: ""Unclear... Fortunately, it hasn't affected my actual capabilities."", 4: '2'}"
+61	61		301							{2: 'Lee', 3: 'The decryption is almost complete. How are things on your end, Liv?', 4: '2'}
+62	62		203							{1: '1', 2: '0.25'}
+63	63		203							{1: '2', 2: '0.25', 3: '650'}
+64	64		201							{1: '3', 2: '1031001', 3: '5', 4: '-650'}
+65	65		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '3'}
+66	66		301							"{1: '1', 2: 'Liv', 3: ""Success! I've confirmed the target's location!"", 4: '3'}"
+67	67		301							{2: 'Lucia', 3: 'Commandant?', 4: '1'}
+68	68		302		1		AniZhuanchangBegin			"{2: ""Alright. Let's go!"", 3: '69'}"

@@ -1,0 +1,84 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory300.png'}
+2	2		401							{1: '1', 2: '171'}
+3	3		401							{1: '2', 2: '310'}
+4	4		301			DialogEnable				{3: 'You make your way into a lush forest, quietly amazed that Constellia has preserved such a vast stretch of green.'}
+5	5		301							"{3: ""Cicadas buzz incessantly, and in the near distance, pairs of fireflies drift by. It's tough to tell whether they're mechanical replicas or genuine insects living here.""}"
+6	6		301							{3: 'As you pass by a patch of short shrubs, you catch the sound of voices not too far away.'}
+7	7		301							"{2: '??', 3: 'Marry, our play is ""The most lamentable comedy and...""'}"
+8	8		301							"{3: ""The voices are hardly discernible amid the cicadas' constant buzz.""}"
+9	9		302							{2: '(Step in closer)', 3: '10'}
+10	10		301							{2: '??', 3: '...call forth your actors by the scroll. Masters, spread yourselves.'}
+11	11		301							{3: 'These lines sound so familiar.'}
+12	12		301							{3: 'As your vision sharpens alongside the sound, you spot several mechanoids rehearsing something in a clearing in the woods.'}
+13	13		301							{2: '???', 3: 'Conductor.'}
+14	14		201							{1: '1', 2: '500291', 4: '200'}
+15	15		301							{1: '1', 3: 'Following the voice, you notice a girl sitting neatly on a stone, nodding at you in greeting.'}
+16	16		302							{2: 'Selena?', 3: '17', 4: 'Selena...', 5: '17'}
+17	17		203							{1: '1', 2: '0.3'}
+18	18		401							{1: '2', 2: '1543'}
+19	19		301							{3: 'She shifts to create space, inviting you to sit beside her.'}
+20	20		302							"{2: '""A Midsummer Night\'s Dream""?', 3: '21', 4: 'The lines feel so familiar.', 5: '22'}"
+21	21	23	301							{3: 'Selena gives a gentle nod.'}
+22	22		301							"{2: 'Selena', 3: '""A Midsummer Night\'s Dream""...', 4: '1'}"
+23	23		301							"{2: 'Selena', 3: ""We're rehearsing a play set in the forest, right here among the trees."", 4: '1'}"
+24	24		301							"{3: ""The mechanoid performers act like they're all alone, as though this isn't just a rehearsal spot but a natural theater shaped by the forest itself.""}"
+25	25		302							"{2: ""It looks like we're the only ones watching this time."", 3: '26'}"
+26	26		301							"{2: 'Selena', 3: ""That is, if we don't count the birds, insects, and plants."", 4: '1'}"
+27	27		301							{3: 'A single petal, carried by the breeze, comes to rest beside her loose hair.'}
+28	28		301							{3: 'With that, the two of you become part of the performance too.'}
+29	29		301							"{3: ""After a moment's silence, you both turn your gaze to the mechanoid performers.""}"
+30	30		202							{1: '1', 6: '1'}
+31	31		201							{1: '1', 2: '500277'}
+32	32		301							{1: '1', 2: 'Mechanoid', 3: 'What is Pyramus—a lover or a tyrant?', 4: '1'}
+33	33		202							{1: '1', 6: '1'}
+34	34		201							{1: '1', 2: '500291'}
+35	35		301							"{1: '1', 2: 'Selena', 3: ""It's not my first time watching this play, but I still want to keep going."", 4: '1'}"
+36	36		302							"{2: ""Every time it's performed, you would feel something new."", 3: '37'}"
+37	37		301							{2: 'Selena', 3: 'Even the author might see his earlier works in a different light.', 4: '1'}
+38	38		301							"{2: 'Selena', 3: ""But I'm still not sure if I should look back on what I've written before."", 4: '1'}"
+39	39		301							{3: 'The girl turns to you, showing almost no emotion.'}
+40	40		301							"{3: ""As your eyes meet, you can't see the past she hides, nor can you catch what's going on in her mind right now.""}"
+41	41		301							{2: 'Selena', 3: 'I know exactly how it feels to stand in that same spot...', 4: '1'}
+42	42		301				DialogDisable			{2: 'Selena', 3: 'In those moments, I could still talk with you about the characters, the storyline, or the fate and choices of every character involved.', 4: '1'}
+43	43		302							{2: 'If you want, we can still do that—even now.', 3: '44'}
+44	44		302							{2: 'For example...', 3: '45'}
+45	45		301			DialogEnable				"{2: 'Selena', 3: ""It's okay, Conductor."", 4: '1'}"
+46	46		302							{2: 'Um...', 3: '47', 4: 'Alright.', 5: '47'}
+47	47		301							"{2: 'Selena', 3: ""I'm hoping that, at least for tonight, no one's out there planning or debating our future."", 4: '1'}"
+48	48		301							"{2: 'Selena', 3: ""So let's just let things happen as they do."", 4: '1'}"
+49	49		301							"{2: 'Selena', 3: ""Otherwise, we wouldn't be having this unexpected encounter, right?"", 4: '1'}"
+50	50		302							{2: 'Sure.'}
+51	51		204							{1: '1', 2: '1'}
+52	52		301							{3: 'Selena offers a gentle smile, as clear and refreshing as a flowing stream.'}
+53	53		301							{3: 'The mechanoids continue their performance, seemingly undisturbed by the conversation in the audience.'}
+54	54		301				AniZhuanchangBegin			{3: 'You stay silent in unspoken harmony with Selena.'}
+55	55		204							{1: '1'}
+56	56		301			AniZhuanchangEnd				{1: '1', 2: 'Selena', 3: 'Such a fleeting moment...', 4: '1'}
+57	57		302							{2: 'The scene is drawing to a close.', 3: '58'}
+58	58		301							{3: 'Selena sighs softly and stands up. Under the starlight, an iris flower stands tall.'}
+59	59		301							"{3: ""She pulls out a pen from somewhere—it's clearly battered, making it hard to tell if it's been with her all along or salvaged from some ruined place.""}"
+60	60		301				DialogDisable			{2: 'Selena', 3: 'Conductor, may I have your hand?', 4: '1'}
+61	61		302							{2: 'Of course.', 3: '62', 4: 'Huh?', 5: '63'}
+62	62		302							{2: '(Extend your hand)', 3: '65'}
+63	63		302							{2: '(Extend your hand)', 3: '64'}
+64	64	66	301			DialogEnable				{3: 'You hesitate for a moment but do as she asks.'}
+65	65	67	301			DialogEnable				"{3: ""Selena opens your palm, and a gentle breeze carries a subtle hint of her hair's delicate scent.""}"
+66	66		301							"{3: ""Selena opens your palm, and a gentle breeze carries a subtle hint of her hair's delicate scent.""}"
+67	67		301							{3: 'A slight prickling runs across your palm, tickling just enough to make you aware of the sensation.'}
+68	68		301							"{2: 'Selena', 3: ""Please, don't peek yet."", 4: '1'}"
+69	69		301							{3: 'She gives a slight bow.'}
+70	70		301							{2: 'Selena', 3: 'The lost lover is bound to arrive, and the mischievous fairy shall drip pansy nectar here...', 4: '1'}
+71	71		301							"{2: 'Selena', 3: ""Before we meet, even if it's the most lamentable comedy, I'll carry it through to the final curtain, Conductor."", 4: '1'}"
+72	72		202							{1: '1', 6: '1'}
+73	73		201							{1: '1', 2: '500277', 4: '-450'}
+74	74		201							{1: '2', 2: '500278', 4: '450'}
+75	75		301							"{1: '1', 2: 'Mechanoid', 3: ""What is Thisbe—a wand'ring knight?"", 4: '1'}"
+76	76		301							{2: 'Mechanoid', 3: 'It is the lady that Pyramus must love.', 4: '2'}
+77	77		202							{1: '1', 2: '2'}
+78	78		301							{3: 'The performance continues, and a hush settles for a while. The hand she asked to hold is already growing clammy.'}
+79	79		302							{2: '(Slowly open your palm)', 3: '80'}
+80	80		301							"{3: ""She doesn't react, which silently confirms her approval.""}"
+81	81		301							{3: 'Just a few simple words, and yet they bridge countless ages...'}
+82	82		301							{3: 'A reply letter, fated to go missing yet again, appears right in front of you.'}
+83	83		301		1		AniZhuanchangBegin			{3: 'On this midsummer night, you carry a subtle but peculiar emotion as you gently blow the ink on your hands dry.'}

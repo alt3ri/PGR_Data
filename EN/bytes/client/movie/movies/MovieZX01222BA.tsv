@@ -1,0 +1,49 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory177.png'}
+2	2		401							{1: '1', 2: '102'}
+3	3		201							{1: '1', 2: '500110', 3: '4', 4: '-400'}
+4	4		201							{1: '2', 2: '1031001', 3: '7', 4: '400'}
+5	100		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustBrokenLightWall.prefab', 2: '2'}
+6	5		301			DialogEnable				{1: '1', 2: 'Ayla', 3: 'Wow...', 4: '1'}
+7	6		301							{2: 'Liv', 3: '...Did we make it through?', 4: '2'}
+8	7		202							{1: '1', 2: '2'}
+9	101		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustBrokenLightWall.prefab'}
+10	8		301							{3: 'By the time you reach the light wall as instructed by the president, Gabriel is nowhere to be seen. Only a strange rift is torn in the wall.'}
+11	102		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustLightWall.prefab', 2: '2'}
+12	9		301							{3: 'Liv first suggested saving the comrades lying around first, but that was when the light wall begins to regenerate. Reaching curt agreement, everyone decides to enter and go after Gabriel.'}
+13	10		201							{1: '1', 2: '500110', 4: '-400'}
+14	11		201							{1: '2', 2: '500026', 4: '400'}
+15	12		301							"{1: '1', 2: 'Ayla', 3: ""Glad everyone's okay. Though... the buildings look exactly the same as they do from outside the walls."", 4: '1'}"
+16	13		301							"{2: 'Lee', 3: ""These buildings aren't important. It's the..."", 4: '2'}"
+17	14		301							{2: 'Ayla', 3: '...The tower, huh... Something important must be hiding in there.', 4: '1'}
+18	15		302							{2: 'Like Qu.', 3: '16', 4: 'Like Huaxu.', 5: '19'}
+19	16		301							{2: 'Ayla', 3: 'Makes sense. People with power live in high places.', 4: '1'}
+20	17		201							{1: '2', 2: '1031001', 3: '14', 4: '400'}
+21	18	20	301							"{1: '1', 2: 'Liv', 3: ""If that's the case, the Gestalt system should be up there too. After all, it's safer to keep it close by."", 4: '2'}"
+22	19		301							"{2: 'Lee', 3: ""Normally I'd consider this tower too conspicuous of a hiding place, but given how egomaniacal that Qu was earlier, I'd say there's a pretty good chance Huaxu is up there too."", 4: '2'}"
+23	20		202							{1: '1', 2: '2', 6: '1'}
+24	21		201							{1: '1', 2: '500026'}
+25	22		301							{1: '1', 2: 'Lee', 3: 'Okay then, since we have no idea where Gabriel ran off to, we might as well check out that tower first.', 4: '1'}
+26	23		301							"{2: 'Lee', 3: ""Let's go meet Qu or Huaxu first. We'll think about the next step after."", 4: '1'}"
+27	24		201							{1: '1', 2: '500110', 3: '4'}
+28	25		301							"{1: '1', 2: 'Ayla', 3: ""Would she ever listen to us? I mean, I don't know about Huaxu, but Qu has been hostile to us..."", 4: '1'}"
+29	26		201							{1: '1', 2: '500026'}
+30	27		301							"{1: '1', 2: 'Lee', 3: ""Doubt she would listen, but we're stuck here anyway."", 4: '1'}"
+31	28		202							{1: '1'}
+32	29		301							{3: 'Lee glances at the restored light wall. From the havoc outside, it goes without saying that the only way to open the wall is through a high-energy collision.'}
+33	30		201							{1: '1', 2: '1031001', 3: '14'}
+34	31		301							"{1: '1', 2: 'Liv', 3: ""I agree. That's what Lucia would have done too..."", 4: '1'}"
+35	32		302							"{2: ""All right, let's do this."", 3: '33', 4: ""We'll gift Lucia with the news of our victory."", 5: '35'}"
+36	33		201							{1: '1', 2: '500110'}
+37	34	39	301							{1: '1', 2: 'Ayla', 3: 'So, first step, I guess—We get rid of these terracottas, right?', 4: '1'}
+38	35		201							{1: '1', 2: '500026'}
+39	36		301							{1: '1', 2: 'Lee', 3: 'Great idea, Commandant.', 4: '1'}
+40	37		201							{1: '1', 2: '500110'}
+41	38		301							{1: '1', 2: 'Ayla', 3: 'How nice, I wish I had teammates like Gray Raven too... Huh?', 4: '1'}
+42	39		202							{1: '1'}
+43	40		301							{3: 'After deciding what to do, Ayla readies her scythe and fixes her gaze on the road ahead.'}
+44	41		301							{3: 'Sounds of machinery fill the space, followed by the entry of a Construct built like a dharmapala. He holds a weapon in one hand, and a mangled Corrupted in the other.'}
+45	42		301							{3: 'More Constructs of the same design follow after him. Together, they march to fewer than ten meters away from you. The leading Construct then discards the Corrupted remains in his hand as a display of strength.'}
+46	43		201							{1: '1', 2: '500169'}
+47	44		301							{1: '1', 2: 'Prime', 3: 'We are Primes, the pinnacle of Constructs guarding Kowloong.', 4: '1'}
+48	45		301		1		AniZhuanchangBegin			"{2: 'Prime', 3: ""We come on Lady Qu's order to eliminate invaders!"", 4: '1'}"

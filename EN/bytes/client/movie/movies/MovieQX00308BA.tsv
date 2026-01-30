@@ -1,0 +1,86 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory310.png'}
+2	2		401							{1: '1', 2: '100'}
+3	3		201							{1: '1', 2: '500214', 3: '4'}
+4	4		301			DialogEnable				{1: '1', 2: 'Rosetta', 3: 'Phew...', 4: '1'}
+5	5		301							{3: 'Rosetta stands outside the shop, a grim determination etched on her face.'}
+6	6		301							"{2: 'Rosetta', 3: ""Commandant, it's time."", 4: '1'}"
+7	7		302							"{2: ""Rosetta, there's no need to be so tense, right?""}"
+8	8		204							{1: '1', 2: '8'}
+9	9		301							"{2: 'Rosetta', 3: ""I don't say this often, and usually, when I do, it's trouble..."", 4: '1'}"
+10	10		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2', 3: '1', 4: '1'}
+11	11		203							{1: '1', 2: '0.15', 3: '100', 4: '-200', 5: '-200'}
+12	12		204							{1: '1', 2: '4'}
+13	13		301							"{2: 'Rosetta', 3: ""But this time, I'm determined to win."", 4: '1'}"
+14	14		202							{1: '1', 6: '1'}
+15	15		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 4: '1'}
+16	16		301							"{3: ""With a deep breath, Rosetta pushes open the shop's door."", 7: '1'}"
+17	17		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory748.jpg', 3: '0', 4: '1', 5: '1'}
+18	18		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+19	19		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory748.jpg'}
+20	20		201							{1: '1', 2: '500214'}
+21	21		301							{1: '1', 2: 'Rosetta', 3: 'Sir, I want to get the latest commemorative booster pack.', 4: '1'}
+22	22		201							{1: '1', 2: '500340'}
+23	23		301							{1: '1', 2: 'Card Shop Owner', 3: 'Understood. How many packs do you want, or do you prefer a whole booster box?', 4: '1'}
+24	24		201							{1: '1', 2: '500214', 3: '4'}
+25	25		301							{1: '1', 2: 'Rosetta', 3: 'Ten boxes.', 4: '1'}
+26	26		203							{1: '1', 2: '0.15', 3: '100', 4: '-200', 5: '-200'}
+27	27		301			RImgBg1Shake				{2: 'Rosetta', 3: 'Please, ten boxes.', 4: '1'}
+28	28		302							{2: 'Ten... boxes?', 3: '29'}
+29	29		301							{3: 'As Rosetta announces this ambitious number, all eyes in the shop turn toward her.'}
+30	30		203							{1: '1', 2: '0.15'}
+31	31		104							{1: '0|-100|-100', 2: '0.25'}
+32	32		301							"{3: ""As the owner lays out ten boxes worth of booster packs, you realize Rosetta wasn't kidding.""}"
+33	33		302							{2: 'How many are in here...', 3: '34', 4: 'How many Black Cards is this going to cost...', 5: '34'}
+34	34		204							{1: '1'}
+35	35		301							"{2: 'Rosetta', 3: ""A box contains six packs, each with fifteen cards... Looks like we'll be opening packs for a while."", 4: '1'}"
+36	36		204							{1: '1', 2: '1'}
+37	37		301							"{2: 'Rosetta', 3: ""Don't worry. The Engineering Force pays us regularly."", 4: '1'}"
+38	38		301							"{2: 'Rosetta', 3: ""It'll take a long time if I do it alone. Commandant, could you help me out?"", 4: '1'}"
+39	39		302							{2: 'No problem.', 3: '40', 4: 'Let me share some good luck with you, Rosetta.', 5: '40'}
+40	40		301							{2: 'Rosetta', 3: 'Thank you, Commandant.', 4: '1'}
+41	41		301				AniZhuanchangBegin			"{3: ""And so, side by side at the card shop's table, Rosetta and you embark on this grand project.""}"
+42	42		204			DialogDisable	AniZhuanchangEnd			{1: '1', 2: '14'}
+43	43		301			DialogEnable				{2: 'Rosetta', 3: 'Still no luck.', 4: '1'}
+44	44		301							{3: 'With a hint of disappointment, Rosetta opens the card pack and swiftly flips through the cards inside.'}
+45	45		301							"{2: 'Rosetta', 3: '""Infinite Illusion"", ""Blue Reboot"", a redrawn ""White Blossom & Joyous Spring""... We got a lot of useful cards, so it\'s not a total loss...', 4: '1'}"
+46	46		302							{2: 'Is that card really so rare?', 3: '47'}
+47	47		204							{1: '1'}
+48	48		301							"{2: 'Rosetta', 3: ""Yes, it's made with the latest technology. They say only one is included in every five boxes, and it won't be reprinted."", 4: '1'}"
+49	49		302							{2: 'Is it powerful?', 3: '50', 4: 'Expensive?', 5: '52'}
+50	50		204							{1: '1', 2: '8'}
+51	51	54	301							{2: 'Rosetta', 3: 'No, it was released early on and has no practical value now.', 4: '1'}
+52	52		204							{1: '1', 2: '8'}
+53	53		301							"{2: 'Rosetta', 3: ""Not really... Though it's unique, it might not even cost a hundred Black Cards."", 4: '1'}"
+54	54		204							{1: '1', 2: '14'}
+55	55		301							{2: 'Rosetta', 3: 'I just... really, really want that card.', 4: '1'}
+56	56		204							{1: '1', 2: '8'}
+57	57		301							{2: 'Rosetta', 3: 'My first dive into this game was in the ARU, back when I was fresh in the Forest Guard and not quite part of the group yet.', 4: '1'}
+58	58		301							{2: 'Rosetta', 3: 'I was a lone wolf until someone finally asked me to play together.', 4: '1'}
+59	59		204							{1: '1', 2: '1'}
+60	60		301							{2: 'Rosetta', 3: 'The ace of the deck they helped me build was that card.', 4: '1'}
+61	61		301							"{2: 'Rosetta', 3: ""It's more than just a card; it's a symbol of—"", 4: '1'}"
+62	62		302							{2: 'Companionship, right?', 3: '63', 4: 'A bond?', 5: '63'}
+63	63		301							{2: 'Rosetta', 3: 'Indeed.'}
+64	64		204							{1: '1', 2: '14'}
+65	65		301							"{2: 'Rosetta', 3: ""But luck just wasn't on my side this time."", 4: '1'}"
+66	66		301							{3: 'Ten boxes of card packs later, and here you are, down to the last one, still no luck finding it.'}
+67	67		301							"{2: 'Rosetta', 3: ""This is the last pack. Probably won't get it..."", 4: '1'}"
+68	68		301							{3: 'Rosetta resigns as she reaches for the scissors. But I intervene, gently taking the last pack from her hands.'}
+69	69		302							{2: 'Can I keep the last pack?', 3: '70'}
+70	70		301							{2: 'Rosetta', 3: 'Commandant?', 4: '1'}
+71	71		302							"{2: ""Let's leave it as a cliffhanger."", 3: '72', 4: 'Let me keep the last pack as a memento.', 5: '72'}"
+72	72		302							{2: 'Whether it brings good luck or bad...', 3: '73'}
+73	73		302							{2: 'I hope you trust me enough to entrust it to me, Rosetta.', 3: '74'}
+74	74		301							"{2: 'Rosetta', 3: ""It feels a bit like I'm fooling myself..."", 4: '1'}"
+75	75		301							"{2: 'Rosetta', 3: ""But holding onto this glimmer of hope isn't such a bad thing, after all."", 4: '1'}"
+76	76		302							{2: 'By the way, about all those cards we opened earlier...', 3: '77'}
+77	77		301							{3: 'You glance at the mountain of cards before us.'}
+78	78		302							{2: 'Do any of them have themes that could form a deck?', 3: '79'}
+79	79		301							{2: 'Rosetta', 3: 'Do you want to play, Commandant?', 4: '1'}
+80	80		302							"{2: ""After hearing so much about it, it's hard not to be intrigued."", 3: '81'}"
+81	81		302							"{2: ""I'm just not quite familiar with the rules."", 3: '82'}"
+82	82		204							{1: '1', 2: '1'}
+83	83		301							"{2: 'Rosetta', 3: ""No worries, I'll teach you."", 4: '1'}"
+84	84		301							{3: 'Rosetta assures you with a smile as bright as a campfire under a winter sky.'}
+85	85		301		1		AniZhuanchangBegin			{2: 'Rosetta', 3: 'The day is still young.', 4: '1'}

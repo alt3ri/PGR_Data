@@ -1,0 +1,103 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+2	2		401							{1: '1', 2: '181'}
+3	3		201							{1: '1', 2: '500739'}
+4	4		502							{1: 'PanelActor1Shake'}
+5	5		301			DialogEnable				{2: 'Lamia', 3: 'Are you for real?!', 4: '1'}
+6	6		301							"{3: 'Lamia clutches the voucher in her hand tightly, reading and rereading the title to make sure she isn\'t mistaken. Just moments ago, the two of you learned about a ""Truth or Dare"" event while walking the streets of Constellia.'}"
+7	7		301							{3: 'With your encouragement, Lamia closed her eyes and drew out a voucher—and the rest is history.'}
+8	8		204							{1: '1', 2: '1'}
+9	9		301							"{2: 'Lamia', 3: '""One-Day All-You-Have-To-Do Voucher"". You can ask your partner to do anything you want them to do!', 4: '1'}"
+10	10		204							{1: '1', 2: '2'}
+11	11		301							{3: 'Lamia reads the text aloud in disbelief before casting you a nervous glance.'}
+12	12		302							{2: 'Congratulations on winning the grand prize!', 3: '13', 4: 'At your command, Lamia.', 5: '13'}
+13	13		204							{1: '1', 2: '1'}
+14	14		301							"{3: ""Lamia finally lets out a sigh of relief when she's sure that you aren't feeling upset.""}"
+15	15		301							{2: 'Lamia', 3: 'Yeahhhh! This is awesome!', 4: '1'}
+16	16		301							"{2: 'Lamia', 3: ""Well then, let's see..."", 4: '1'}"
+17	17		202							{1: '1'}
+18	18		301							"{3: ""She fidgets with the voucher, turning it over and over. Lamia never saw this coming, so she's eager to make the most of every moment.""}"
+19	19		302							"{2: 'Perhaps I should start with something small?', 3: '20', 4: ""Take it step by step. You'll figure out what you want me to do for you."", 5: '20'}"
+20	20		201							{1: '1', 2: '500739', 3: '1'}
+21	21		301							{1: '1', 3: 'Her gaze drifts toward a dessert shop on the street.'}
+22	22		302							{2: 'Would you like to have some cake to start with?', 3: '23'}
+23	23		204							{1: '1'}
+24	24		301							{2: 'Lamia', 3: '...Sure.', 4: '1'}
+25	25		302				AniZhuanchangBegin			"{2: ""Let's head inside and grab a seat, then. We can chat while we eat."", 3: '26', 4: ""We've got plenty of time. Want to take your time to think about it while we're in the shop?"", 5: '26'}"
+26	26		202							{1: '1', 6: '1'}
+27	27		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory641.jpg'}
+28	28		104							{1: '-200|0|-200', 2: '0'}
+29	29		301			AniZhuanchangEnd				"{3: ""They walk into the small shop side by side. As per Lamia's request, the two of you choose a table in the very back. After carefully considering her options, Lamia makes up her mind and chooses the one dessert she wants to try today.""}"
+30	30		201							{1: '1', 2: '500937'}
+31	31		301							{1: '1', 2: 'Dessert Shop Waitress', 3: 'Hello, here are your desserts. Please enjoy!', 4: '1'}
+32	32		202							{1: '1'}
+33	33		301							{3: 'The waitress places a small cake with all sorts of fruit in front of Lamia. Lamia spotted this particular cake—which now sits before her piled high with fruits—in the corner of the menu and only decided to order it because she wanted to get the most bang for her buck.'}
+34	34		301							{3: 'Lamia racks her brain trying to figure out a way to make as many wishes to you as possible.'}
+35	35		301							{3: 'Then, after God only knows how long...'}
+36	36		301							"{3: ""The only thing she's eaten of the cake is one tiny piece of orange.""}"
+37	37		302							{2: 'Is it... good?', 3: '38'}
+38	38		201							{1: '1', 2: '500739', 3: '1'}
+39	39		301				DialogDisable			"{1: '1', 2: 'Lamia', 3: ""Huh? Oh! It's delicious. Would you like to try some?"", 4: '1'}"
+40	40		302							"{2: ""Sure, I'll have a piece."", 3: '41'}"
+41	41		302							{2: 'How about my drink? Would you like to try it?', 3: '42'}
+42	42		202							{1: '1'}
+43	43		301			DialogEnable				{3: 'With the ice broken, Lamia accepts the drink from you with a nod.'}
+44	44		301							"{3: ""Right when she's about to pass you a piece of the cake topped with strawberries, she stops cold.""}"
+45	45		201							{1: '1', 2: '500739', 3: '1'}
+46	46		301							{2: 'Lamia', 3: 'Wait, I think I know what it is that you could do for me... Ahem, I mean, what I need you to do for me.', 4: '1'}
+47	47		301							{2: 'Lamia', 3: 'Now, share your drink with me.', 4: '1'}
+48	48		302							{2: '?', 3: '49', 4: 'You already have it in your hand. Do you need me to get another straw?', 5: '49'}
+49	49		204							{1: '1', 2: '2'}
+50	50		301							"{2: 'Lamia', 3: ""Oh, oh, oh... No, it's okay... Ahem, I mean, you did very well!"", 4: '1'}"
+51	51		301							{2: 'Lamia', 3: 'Now... pay the bill.', 4: '1'}
+52	52		302							{2: 'Of course.', 3: '53'}
+53	53		301							{2: 'Lamia', 3: 'And I need you to go shopping with me in a bit to check out the latest coatings.', 4: '1'}
+54	54		302							{2: 'No problem, Lamia.', 3: '55'}
+55	55		301							{2: 'Lamia', 3: 'Really? Are you really okay with all that?', 4: '1'}
+56	56		301							"{3: ""Lamia's eyes light up.""}"
+57	57		204							{1: '1'}
+58	58		301							"{2: 'Lamia', 3: ""Well, I also want you to go to a concert with me. Doesn't matter if I appreciate the music or not."", 4: '1'}"
+59	59		204							{1: '1', 2: '1'}
+60	60		301							{2: 'Lamia', 3: 'I want to check out the chocolate fountain at the center of the plaza, too. I think this strawberry would be perfect with some chocolate drizzled on it.', 4: '1'}
+61	61		301							"{3: 'Rather than ordering you to do things, Lamia is now simply stating what she ""wants"" to do.'}"
+62	62		301							"{3: 'You nod to every single one of her ""wishes"" as she makes her ""request"" with the metal spoon.'}"
+63	63		301							{2: 'Lamia', 3: 'I want to take photos with you.', 4: '1'}
+64	64		301							"{2: 'Lamia', 3: 'I want to watch a ""movie"" with you that doesn\'t star anyone I know. And while we\'re at that, I want to hold your hand.', 4: '1'}"
+65	65		301							"{2: 'Lamia', 3: ""I want to have dinner with you, and breakfast tomorrow morning, too... Wait, is the voucher even still valid tomorrow morning? I... I don't care, I still want to have breakfast with you tomorrow."", 4: '1'}"
+66	66		301							"{2: 'Lamia', 3: ""I want you to praise me and tell me I'm smart, beautiful..."", 4: '1'}"
+67	67		302							{2: 'Brave, strong, wise, and pretty!', 3: '68'}
+68	68		204							{1: '1'}
+69	69		301							{2: 'Lamia', 3: 'Yes! Brave, strong, wise, and pretty! What I mean is, I want you to see me as someone special and intelligent, someone deserving the title of...', 4: '1'}
+70	70		302							{2: 'Professor?', 3: '71'}
+71	71		301							{2: 'Lamia', 3: 'Right! Doctor is a good title, just like that certain Mr. Whatchamacallit from Babylonia.', 4: '1'}
+72	72		301							"{3: 'Lamia\'s eyes suddenly light up with purpose as she attempts to ""gently"" coax you into doing all the things she wants you to do for her.'}"
+73	73		301							{2: 'Lamia', 3: 'And I want you to address me with something more affectionate.', 4: '1'}
+74	74		302							{2: 'Something more affectionate? Like what? Little Mermaid?', 3: '75'}
+75	75		301							"{2: 'Lamia', 3: ""No, not that one. It's gotta be something that has my name in it."", 4: '1'}"
+76	76		302							{2: 'Lamia... Lala? Mimi? Yaya?', 3: '77'}
+77	77		204							{1: '1', 2: '2'}
+78	78		301							{2: 'Lamia', 3: 'No! Argh...', 4: '1'}
+79	79		301							{3: 'Lamia shakes her head vigorously, her face turning bright red.'}
+80	80		204							{1: '1', 2: '2'}
+81	81		301							"{2: 'Lamia', 3: 'That ""Little"" from Little Mermaid was nice though...', 4: '1'}"
+82	82		302							"{2: '""Little""... Little Lala?', 3: '83', 4: '""Little""...? That prefix does make it sound more affectionate.', 5: '83'}"
+83	83		301							"{2: 'Lamia', 3: ""You're halfway there! Just add a bit more of that cleverness you just showed."", 4: '1'}"
+84	84		302							"{2: ""Oh, here's one."", 3: '85'}"
+85	85		301							"{3: ""With a knowing look, you hold a spoonful of fruit-filled cake up to Lamia's face.""}"
+86	86		302							"{2: '""Little Dr. Lala"", please enjoy your dessert.', 3: '87'}"
+87	87		204							{1: '1'}
+88	88		301							{2: 'Lamia', 3: '!!', 4: '1'}
+89	89		302							"{2: ""Little Dr. Lala! That's perfect!"", 3: '90'}"
+90	90		301							{2: 'Lamia', 3: 'Eek!!!', 4: '1'}
+91	91		204							{1: '1', 2: '1'}
+92	92		301							"{2: 'Lamia', 3: ""Am I, uhh... asking for too much? I mean, you don't... You know what, just don't need to call me that anymore!"", 4: '1'}"
+93	93		301							{3: 'Somewhat upset, Lamia puts down her dessert spoon. You catch her by the wrist when she seems ready to flee the scene.'}
+94	94		302							"{2: 'Relax, Lamia.', 3: '95', 4: ""Don't you want to be with me, Lamia?"", 5: '95'}"
+95	95		301							{2: 'Lamia', 3: '...', 4: '1'}
+96	96		202							{1: '1'}
+97	97		301							{3: 'With her hand still in your grip, she gives you an affirmative response.'}
+98	98		301							{3: 'Having calmed down, she decides to push her luck just a little further.'}
+99	99		201							{1: '1', 2: '500739', 3: '1'}
+100	100		301							{1: '1', 2: 'Lamia', 3: 'Well, then... Can we... make my wishes true one by one? Like, starting now?', 4: '1'}
+101	101		302							{2: 'Yup. You make the call, Lamia.', 3: '102', 4: 'Starting right now, Lamia.', 5: '102'}
+102	102		502		1					{1: 'AniZhuanchangBegin'}

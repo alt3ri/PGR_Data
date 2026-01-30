@@ -1,0 +1,153 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory121.png'}
+2	2		401							{1: '1', 2: '204'}
+3	3		301			DialogEnable				{3: 'Hologram Theatre, Babylonia. 2:20 pm.'}
+4	4		301							{2: 'System', 3: 'Welcome to the Hologram Theatre. Which movie do you want to watch today?'}
+5	5		201							{1: '1', 2: '500128'}
+6	6		301							"{1: '1', 2: 'Bianca', 3: ""I'm afraid I'm not very familiar with this."", 4: '1'}"
+7	7		301							"{2: 'Bianca', 3: ""I'll leave the decision to you, Commandant."", 4: '1'}"
+8	8		302							{2: 'A thriller.', 3: '9', 4: 'A romance.', 5: '1000'}
+9	9		202							{1: '1', 6: '1'}
+10	10		301							{2: 'System', 3: 'Understood. Here is the most popular thriller—'}
+11	11	14	301							"{2: 'System', 3: '""Dark Alley"" is the thriller we are showing today. The closest showing is at 10:15 pm.'}"
+12	1000		202							{1: '1', 6: '1'}
+13	12		301							{2: 'System', 3: 'Understood. Here is the most popular romance—'}
+14	13		301							"{2: 'System', 3: '""Promise of a Vacuum Baby 4: Two Souls"" is the romance we are showing today. The closest showing is at 6:06 pm.'}"
+15	14		302							"{2: ""Let's see if anything's showing now."", 3: '15', 4: ""That's way too late."", 5: '15'}"
+16	15		301							{2: 'System', 3: 'Understood. Here are the movies showing now—'}
+17	16		301							"{2: 'System', 3: '""A Hundred Years of Convenient Romance"", 2:35 pm, House 4; ""Dominik and the Beautiful Siren 2: Holographic Remastered"", 2:38 pm, House 3.'}"
+18	17		302							{2: 'Are you interested in any one of them?', 3: '18'}
+19	18		201							{1: '1', 2: '500128'}
+20	19		301							{1: '1', 2: 'Bianca', 3: 'Um... I...', 4: '1'}
+21	20		302							"{2: ""I can pick one if you're not sure."", 3: '21'}"
+22	21		204							{1: '1', 2: '1'}
+23	500		401							{1: '4', 2: '104003'}
+24	22		301							{2: 'Bianca', 3: 'That would be great.', 4: '1'}
+25	23		302							"{2: '""A Hundred Years of Convenient Romance"".', 3: '24', 4: '""Dominik and the Beautiful Siren 2: Holographic Remastered"".', 5: '83'}"
+26	24		202							{1: '1', 6: '1'}
+27	25		301							"{3: '""Are you purchasing tickets for \'A Hundred Years of Convenient Romance\'?""'}"
+28	26		302				AniZhuanchangBegin			"{2: ""The name sounds oddly familiar... We'll pick this one."", 3: '27'}"
+29	27		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory67.jpg'}
+30	28		201							{1: '1', 2: '500128'}
+31	29		301			AniZhuanchangEnd				{1: '1', 2: 'Bianca', 3: '...', 4: '1'}
+32	30		301							"{2: 'Bianca', 3: ""No one's here."", 4: '1'}"
+33	31		302							"{2: ""I guess we'll have the place to ourselves!""}"
+34	32		301							"{2: 'Bianca', 3: ""This is the first time I've seen a public space in Babylonia empty..."", 4: '1'}"
+35	33		302							{2: 'Have you been here for the movies before, Bianca?', 3: '34'}
+36	34		301							{2: 'Bianca', 3: 'No, this is my first time in the theatre.', 4: '1'}
+37	35		301							"{2: 'Bianca', 3: ""...This isn't a place for Constructs."", 4: '1'}"
+38	36		302							{2: 'Then you should take this opportunity to enjoy it!', 3: '37'}
+39	37		301							{2: 'Bianca', 3: 'Okay.', 4: '1'}
+40	38		302							{2: 'Here. This is for you.', 3: '39'}
+41	39		301							{2: 'Bianca', 3: 'Do I... put this on now?', 4: '1'}
+42	40		302							"{2: 'Yeah, this is the device for the virtual experience.', 3: '41', 4: ""You don't have to, but how about you give it a shot?"", 5: '41'}"
+43	41		301							{2: 'Bianca', 3: 'Hmm...', 4: '1'}
+44	42		302							{2: 'Let me help you.', 3: '43', 4: 'Just put it on like I did.', 5: '43'}
+45	43		202							{1: '1', 6: '1'}
+46	44		301							"{3: 'Bianca replies with an earnest ""yes,"" then she sits straight and observes how you put on the device. Afterward, her golden irises stare straight at you, unaware of how close the two of you have become.'}"
+47	45		201							{1: '1', 2: '500128'}
+48	46		301							{1: '1', 2: 'Bianca', 3: '...Thank you.', 4: '1'}
+49	47		202							{1: '1', 6: '1'}
+50	48		301							"{3: '""Welcome to the Holographic Theatre. We will be testing the projection devices in a second. Follow the instructions presented; press the button on your right hand if you encounter problems. Thank you, and enjoy the show.""'}"
+51	49		301							"{3: '""The movie you are watching is \'A Hundred Years of Convenient Romance\'. Blink to confirm.""'}"
+52	501		401							{1: '2', 2: '1509'}
+53	50		301							"{3: '""Please choose a theme for the viewing environment.""'}"
+54	51		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory126.png'}
+55	52		301							{3: '...'}
+56	53		301							{3: 'With the equipment calibrated, the opening credits begin to play. The giant logo of Galactic Pictures appears in the air, followed by all the production studios involved.'}
+57	502		401							{1: '1', 2: '205'}
+58	54		301							{3: 'As the movie plays, Bianca focuses intensely on it, her eyes widening, her brows frowning as the story ebbs and flows. When a zombie rushes toward Bianca, she looks as if she has just witnessed a new kind of Corrupted.'}
+59	55		201							{1: '1', 2: '500128'}
+60	56		301							{1: '1', 2: 'Bianca', 3: 'What is that?', 4: '1'}
+61	57		302							"{2: ""That's a zombie."", 3: '58', 4: 'A monster that humans turned into in the myths.', 5: '58'}"
+62	58		301							{2: 'Bianca', 3: 'Is that so...', 4: '1'}
+63	59		301							{2: 'Bianca', 3: 'I think the Corrupted might be cuter...', 4: '1'}
+64	60		302							{2: '???', 3: '61', 4: 'Excuse me?', 5: '61'}
+65	61		202							{1: '1', 6: '1'}
+66	62		301							"{3: ""As the plot unfolds, the romantic comedy part of the movie becomes obvious. As the protagonists meet each other in a hilarious manner, Bianca's solemn expression begins to relax.""}"
+67	63		201							{1: '1', 2: '500128', 3: '1'}
+68	503		401							{1: '4', 2: '104004'}
+69	64		301							{1: '1', 2: 'Bianca', 3: 'Hah...', 4: '1'}
+70	65		302							"{2: ""(Can't believe this kind of comedy will make Bianca laugh.)"", 3: '66'}"
+71	66		202							{1: '1', 6: '1'}
+72	67		301							{3: 'Bianca pays no attention to you. Her eyes are glued to the moving pictures, her mind obsessed with where the story is going.'}
+73	68		201							{1: '1', 2: '500128'}
+74	504		401							{1: '4', 2: '104002'}
+75	69		301							{1: '1', 2: 'Bianca', 3: 'It will only make it more devastating when his hidden identity is discovered. Lies are the prologues of tragedies, after all...', 4: '1'}
+76	70		302							"{2: 'Relax...', 3: '71', 4: ""It's for the plot..."", 5: '71'}"
+77	71		301							{2: 'Bianca', 3: 'If his lie is exposed...', 4: '1'}
+78	72		301							{2: 'Bianca', 3: 'Is it impossible for a human and non-human to get a happy ending?', 4: '1'}
+79	73		302							{2: 'Hah...', 3: '74'}
+80	74		301							{2: 'Bianca', 3: 'What are you laughing at?', 4: '1'}
+81	75		302							"{2: ""Nothing. I just thought it's cute how serious you are."", 3: '76', 4: 'I just found you a little different than how I remembered.', 5: '76'}"
+82	76		202							{1: '1', 6: '1'}
+83	77		301							{3: 'Bianca is too preoccupied with the movie to notice what you said. She bites her lips, having seen another nonsensical sequence.'}
+84	78		201							{1: '1', 2: '500128'}
+85	79		301							{1: '1', 2: 'Bianca', 3: 'God blesses you...', 4: '1'}
+86	80		301							{2: 'Bianca', 3: 'Please get through this safely...', 4: '1'}
+87	81		202							{1: '1', 6: '1'}
+88	82		301		1		AniZhuanchangBegin			{3: '...'}
+89	83		202							{1: '1', 6: '1'}
+90	84		301							"{3: '""Are you purchasing tickets for \'Dominik and the Beautiful Siren 2: Holographic Remastered\'?""'}"
+91	85		302				AniZhuanchangBegin			"{2: ""A movie about Dominik! Let's watch this!"", 3: '86'}"
+92	86		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory67.jpg'}
+93	87		201							{1: '1', 2: '500128'}
+94	88		301			AniZhuanchangEnd				{1: '1', 2: 'Bianca', 3: '...', 4: '1'}
+95	89		301							"{2: 'Bianca', 3: ""No one's here."", 4: '1'}"
+96	90		302							"{2: 'Not surprising.', 3: '91', 4: ""It's the name, I bet."", 5: '91'}"
+97	91		301							{2: 'Bianca', 3: 'Sorry?', 4: '1'}
+98	92		302							{2: 'Cough—nothing.', 3: '93'}
+99	93		301							"{2: 'Bianca', 3: ""This is the first time I've seen a public space in Babylonia empty..."", 4: '1'}"
+100	94		302							{2: 'Have you been here for the movies before, Bianca?', 3: '95'}
+101	95		301							{2: 'Bianca', 3: 'No, this is my first time in the theatre.', 4: '1'}
+102	96		301							"{2: 'Bianca', 3: ""...This isn't a place for Constructs."", 4: '1'}"
+103	97		302							{2: 'Then you should take this opportunity to enjoy it!', 3: '98'}
+104	98		301							{2: 'Bianca', 3: 'Okay.', 4: '1'}
+105	99		302							{2: 'Here. This is for you.', 3: '100'}
+106	100		301							{2: 'Bianca', 3: 'Do I... put this on now?', 4: '1'}
+107	101		302							"{2: 'Yeah, this is the device for the virtual experience.', 3: '102', 4: ""You don't have to, but how about you give it a shot?"", 5: '102'}"
+108	102		301							{2: 'Bianca', 3: 'Hmm...', 4: '1'}
+109	103		302							{2: 'Let me help you.', 3: '104', 4: 'Just put it on like I did.', 5: '104'}
+110	104		202							{1: '1', 6: '1'}
+111	105		301							"{3: 'Bianca replies with an earnest ""yes,"" then she sits straight and observes how you put on the device. Afterward, her golden irises stare straight at you, unaware of how close the two of you have become.'}"
+112	106		201							{1: '1', 2: '500128', 3: '1'}
+113	107		301							{1: '1', 2: 'Bianca', 3: '...Thank you.', 4: '1'}
+114	108		302							"{2: ""Th-that's alright..."", 3: '109'}"
+115	109		202							{1: '1', 6: '1'}
+116	110		301							"{3: '""Welcome to the Holographic Theatre. We will be testing the projection devices in a second. Follow the instructions presented; press the button on your right hand if you encounter problems. Thank you, and enjoy the show.""'}"
+117	111		301							"{3: '""The movie you are watching is \'Dominik and the Beautiful Siren 2: Holographic Remastered\'. Blink to confirm.""'}"
+118	112		301							"{3: '""Please choose a theme for the viewing environment.""'}"
+119	113		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+120	505		401							{1: '2', 2: '1509'}
+121	114		301							{3: '...'}
+122	115		301							{3: 'With the equipment calibrated, the opening credits begin to play. The giant logo of Allen Brothers appears in the air, followed by all the production studios involved.'}
+123	506		401							{1: '1', 2: '205'}
+124	116		301							{3: 'As the movie plays, Bianca focuses intensely on it, her eyes widening, her brows frowning as the story ebbs and flows. When Dominik shows up, she looks as if she has just witnessed a new kind of Corrupted.'}
+125	117		201							{1: '1', 2: '500128'}
+126	118		301							{1: '1', 2: 'Bianca', 3: 'So that is Dominik...', 4: '1'}
+127	119		302							"{2: 'No one has actually seen the real Dominik...', 3: '120', 4: ""It's just a movie!"", 5: '120'}"
+128	120		301							"{2: 'Bianca', 3: ""I've heard so many rumors of him on Babylonia, but this is the first time I've seen his face..."", 4: '1'}"
+129	121		302							"{2: 'I\'ll take you to watch ""The Legends of Dominik"" next time.', 4: 'He was a great hero of a new era, after all.'}"
+130	122		202							{1: '1', 6: '1'}
+131	123		301							{3: 'When the magnificent lead actress shows up, Bianca is already fully swayed by the characters. She leans forward as if trying to reach for the figures in the movie.'}
+132	124		201							{1: '1', 2: '500128'}
+133	125		301							{1: '1', 2: 'Bianca', 3: 'This Construct...', 4: '1'}
+134	126		301							{2: 'Bianca', 3: '...Is so beautiful.', 4: '1'}
+135	127		302							{2: 'I think so too.', 3: '128', 4: 'Not as beautiful as you.', 5: '128'}
+136	128		202							{1: '1', 6: '1'}
+137	129		301							"{3: ""As the plot unfolds, the story reaches its climax, with Dominik about to leave his lover for the battlefield, and Bianca's expressions intensify.""}"
+138	130		201							{1: '1', 2: '500128'}
+139	131		301							"{1: '1', 2: 'Bianca', 3: ""War is hell. Oh, brave Dominik, I'm sure that God will hear your prayers..."", 4: '1'}"
+140	132		301							{2: 'Bianca', 3: 'Why would Dominik leave her like this...?', 4: '1'}
+141	133		302							"{2: ""Bianca, don't feel too sad..."", 3: '134', 4: ""It's okay. It's just a movie."", 5: '134'}"
+142	134		301							{2: 'Bianca', 3: 'Who can say if this story is not real?', 4: '1'}
+143	135		301							{2: 'Bianca', 3: 'How many lovers had parted because of the war...', 4: '1'}
+144	136		202							{1: '1', 6: '1'}
+145	137		301							"{3: ""Fixated, Bianca's eyes begin to turn red.""}"
+146	138		302							{2: 'H-here, a napkin!', 3: '139', 4: 'Three months of my salary on them being together in the end!', 5: '139'}
+147	139		301							"{3: ""Bianca is too preoccupied with the movie to notice what you said. She bites her lips, having witnessed the characters' nonsensical separation.""}"
+148	140		201							{1: '1', 2: '500128'}
+149	141		301							{1: '1', 2: 'Bianca', 3: 'God blesses you...', 4: '1'}
+150	142		301							{2: 'Bianca', 3: 'Please get through this safely...', 4: '1'}
+151	143		202							{1: '1', 6: '1'}
+152	144		301		1		AniZhuanchangBegin			{3: '...'}

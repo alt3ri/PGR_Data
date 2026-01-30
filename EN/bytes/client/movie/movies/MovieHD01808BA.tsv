@@ -1,0 +1,167 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+2	2		401							{1: '1', 2: '205'}
+3	3		301			DialogEnable				{3: 'Earlier at the Science Council, Babylonia.'}
+4	4		301							{3: 'Every Babylonia citizen has probably heard of the Science Council—of how there is a group of scientists working relentlessly to push the boundary of science. The regular person, however, might go through their life never crossing paths with these scientists they hear about.'}
+5	5		301							{3: 'So people come up with their own imaginations of these scientists—picturing them, in their lab coats, exchanging opinions on difficult topics, filling up the whiteboard with calculations only at the end to refute them all, and working with all sorts of expensive-looking equipment.'}
+6	6		301							"{3: 'Babylonian children see scientists in a good light—which might have to do with Babylonia\'s science education, in which the textbook carries pictures of that certain scientist running out of their bathtub yelling, ""Eureka!"" from millennia ago.'}"
+7	7		301							{3: 'No one, however, can say for sure how much longer these scientists can be seen in a good light.'}
+8	8		201							{1: '1', 2: '500058'}
+9	9		301							{1: '1', 2: 'Researcher', 3: 'And you are?', 4: '1'}
+10	10		203							{1: '1', 2: '0.25', 3: '-400'}
+11	11		201							{1: '2', 2: '500404', 4: '400'}
+12	12		301							"{1: '1', 2: 'Hippocrates', 3: ""I see we've never met."", 4: '2'}"
+13	13		301							{3: 'Says Hippocrates as she flashes her nameplate at the researcher standing in her way.'}
+14	14		301							{2: 'Researcher', 3: 'Dr. Hippocrates from Star of Life? Apologies.', 4: '1'}
+15	15		301							{2: 'Researcher', 3: 'Hey, did any of you ask Dr. Hippocrates to come down here?', 4: '1'}
+16	16		301							"{2: 'Researcher A', 3: 'Did I just hear ""sashimi"" and ""take-out""? I\'m hungry.'}"
+17	17		301							"{2: 'Researcher B', 3: ""I don't know. Let's start over from Phase IV until we get it to work!""}"
+18	18		301							{2: 'Researcher C', 3: 'Say... is my coffee ready?'}
+19	19		301							"{2: 'Researcher D', 3: ""What's this? Save data? Sure, why not... Wait, what's this...""}"
+20	20		301							"{2: 'Researcher', 3: ""It's Dr. Hippocrates from Star of Life! Has any of you spoken with Star of Life?"", 4: '1'}"
+21	21		301							"{2: 'Hippocrates', 3: ""Well, I'm pretty sure you guys will need a doctor to come down here soon anyway."", 4: '2'}"
+22	22		301							{3: 'Hippocrates shakes her head as she makes her way toward the lab—but stops in her tracks right before she sets her foot inside.'}
+23	23		301							{2: 'Hippocrates', 3: 'Say, can you do me a favor and fetch Engineering Force for me?', 4: '2'}
+24	24		301							{2: 'Researcher', 3: 'Wait, what in the world is...', 4: '1'}
+25	25		301							"{2: 'Hippocrates', 3: ""Trust me. I'm a doctor."", 4: '2'}"
+26	26		301				AniZhuanchangBegin			{3: 'Giving the researcher a pat on the shoulder, Hippocrates enters the lab.'}
+27	27		401						1000.0	{1: '1', 2: '36'}
+28	28		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+29	29		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory584.jpg'}
+30	30		401							{1: '1', 2: '208'}
+31	31		301			DialogEnable				{3: 'Behind the door is an enormous net of wires that crisscross the room. With every few steps Hippocrates takes, she comes across a few shiny terminals—terminals that chain in place researchers with their now cold and foul-smelling coffee.'}
+32	32		301							{3: 'The flickering blue lights in the lab seem ghastly, showing the face of every drained soul working in there, the only signs of them still alive are their occasionally rolling eyeballs and moving fingers across the keyboards.'}
+33	33		201							{1: '1', 2: '500404'}
+34	34		301							{1: '1', 2: 'Hippocrates', 3: 'Say... have you ever looked yourselves in the mirror and seen how miserable you look?', 4: '1'}
+35	35		203							{1: '1', 2: '0.25', 3: '400'}
+36	36		201							{1: '2', 2: '500004', 3: '9', 4: '-400'}
+37	37		301							{1: '1', 2: 'Asimov', 3: 'Right back at you.', 4: '2'}
+38	38		301							"{3: ""Recognizing the voice, Asimov carries on with work without even turning around. When Asimov's finished checking the numbers on the screen, he finally turns around to greet Hippocrates. Reaching out for his coffee mug on the desk, however, he realizes that the mug is nowhere to be seen.""}"
+39	39		301							"{2: 'Hippocrates', 3: ""You're holding it."", 4: '1'}"
+40	40		301							{2: 'Asimov', 3: 'Oops, right.', 4: '2'}
+41	41		301							{2: 'Hippocrates', 3: 'When did you last sleep?', 4: '1'}
+42	42		301							{2: 'Asimov', 3: 'Two days ago, I think? For the record, though, I did squeeze in a power nap in between.', 4: '2'}
+43	43		301							"{2: 'Hippocrates', 3: ""What's going on? Been a while since I last saw you this busy."", 4: '1'}"
+44	44		301							{2: 'Asimov', 3: 'Yikes, sour. Well, same old.', 4: '2'}
+45	45		301							{3: 'Taking a sip of the cold coffee, Asimov points at the screen behind him.'}
+46	46		301							{3: 'On the screen is a gigantic circular device—with wires of all sizes hooked up to it and surrounded by a group of researchers from the Science Council.'}
+47	47		301							{2: 'Hippocrates', 3: 'Gestalt? I heard from the news on my way here that you guys have been trying to fix it.', 4: '1'}
+48	48		301							"{2: 'Asimov', 3: 'Well, ""fixing it"" is one way to put it, sure...', 4: '2'}"
+49	49		301							{2: 'Asimov', 3: 'You guys have some coma patients there now who passed out cold for no apparent reason, right?', 4: '2'}
+50	50		301							"{2: 'Hippocrates', 3: ""And that... has to do with what's happening here?"", 4: '1'}"
+51	51		301							"{2: 'Asimov', 3: ""Yup, but it's too complicated to explain, and it involves all sorts of issues from anti-human neuroscience."", 4: '2'}"
+52	52		301							"{3: ""That's when Hippocrates sees a thick book—titled Computing Neuroscience—that lays open on Asimov's desk.""}"
+53	53		301							"{2: 'Hippocrates', 3: ""And it didn't occur to you that you could have just asked me?"", 4: '1'}"
+54	54		301							"{2: 'Asimov', 3: ""Well, it's got to do with Gestalt, fundamentally speaking. If we take care of it, the patients will be out and about again."", 4: '2'}"
+55	55		301							{2: 'Hippocrates', 3: 'Fair enough, then. Here, take this.', 4: '1'}
+56	56		301							{3: 'Hippocrates hands a heavy gift over to Asimov.'}
+57	57		301							"{2: 'Asimov', 3: ""Jeez, what's this?"", 4: '2'}"
+58	58		301							"{2: 'Hippocrates', 3: ""A Lantern Festival's gift."", 4: '1'}"
+59	59		301							{2: 'Asimov', 3: '...', 4: '2'}
+60	60		202							{1: '1', 2: '2', 6: '1'}
+61	61		201							{1: '1', 2: '500019'}
+62	62		301							"{1: '1', 2: 'Engineer Construct', 3: ""Engineering Force reporting for duty here... What's that smell?!"", 4: '1'}"
+63	63		301							{3: 'By the door, an Engineer Construct exclaims with a frown.'}
+64	64		203							{1: '1', 2: '0.25', 3: '400'}
+65	65		201							{1: '2', 2: '500404', 4: '-400'}
+66	66		301							"{1: '1', 2: 'Hippocrates', 3: ""Hey, there you are. I think there's something wrong with the ventilation system here."", 4: '2'}"
+67	67		301							"{2: 'Engineer Construct', 3: ""Yeah, you don't say..."", 4: '1'}"
+68	68		202							{1: '1', 2: '2', 6: '1'}
+69	69		201							{1: '1', 2: '500004', 3: '9'}
+70	70		301							"{1: '1', 2: 'Asimov', 3: ""What's the matter?"", 4: '1'}"
+71	71		201							{1: '1', 2: '500404'}
+72	72		301							{1: '1', 2: 'Hippocrates', 3: 'Nothing—just a dozen people huddling up for two days in a room with a broken ventilation system.', 4: '1'}
+73	73		201							{1: '1', 2: '500019'}
+74	74		301							{1: '1', 2: 'Engineer Construct', 3: 'I know what to fix. Here, grab us a ladder. We need to take a look inside the air well.', 4: '1'}
+75	75		202							{1: '1', 6: '1'}
+76	76		201							{1: '1', 2: '500004', 3: '9', 4: '-400'}
+77	77		201							{1: '2', 2: '500404', 4: '400'}
+78	78		301							{1: '1', 2: 'Asimov', 3: 'Wait, seriously?', 4: '1'}
+79	79		301							{2: 'Hippocrates', 3: 'I need to pay Liv a visit. Ciao for now.', 4: '2'}
+80	80		301							"{2: 'Hippocrates', 3: ""I don't care why you need to work for such long hours, but you should really get a good rest. Take this as a doctor's advice."", 4: '2'}"
+81	81		202							{1: '2'}
+82	82		301							{3: 'With it, Hippocrates waves goodbye as she steps out of the lab.'}
+83	83		203							{1: '1', 2: '0.25'}
+84	84		301							{3: 'Seeing Hippocrates off and putting his coffee mug on the desk, Asimov drags himself out of the lab, feeling drowned in fatigue.'}
+85	85		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg', 3: '0', 4: '1', 5: '0.5'}
+86	86		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+87	87		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+88	88		301							{3: 'The air in the corridor instantly fills his lungs, putting life back on his face—before it quickly distorts from the foul smell from the lab.'}
+89	89		203							{1: '1', 2: '8'}
+90	90		301							{2: 'Asimov', 3: 'Uhm...', 4: '1'}
+91	91		204							{1: '1'}
+92	92		301							"{3: ""Asimov isn't quite sure if he really wants to step back inside.""}"
+93	93		301							"{3: ""As a scientist, however, he knows that he shouldn't let some foul smell stand in his way of probing into the unknown.""}"
+94	94		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory584.jpg', 3: '0', 4: '1', 5: '0.5'}
+95	95		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+96	96		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory584.jpg'}
+97	97		301							{3: 'Having made up his mind, Asimov throws himself back into the hellhole.'}
+98	98		301							{2: 'Asimov', 3: 'Uh-hum, everything looking good?', 4: '1'}
+99	99		202							{1: '1', 6: '1'}
+100	100		201							{1: '2', 2: '500042', 4: '-400', 7: '1'}
+101	101		201							{1: '3', 2: '500004', 4: '400', 7: '1'}
+102	102		301							{1: '1', 2: 'Researcher', 3: 'Still at Phase IV. Over 80% of computing models working at top speed now. Already asked the guys on the bottom to chip in with the remaining processing units.', 4: '2'}
+103	103		301							"{2: 'Asimov', 3: ""We need to, at the very least, get those people out of Gestalt's infiltration. It's the least we can do out here while Gestalt does whatever it wants in there."", 4: '3'}"
+104	104		301							"{2: 'Asimov', 3: ""Do we have the infiltration data yet? We need to find out how much computing power we need to burn through for cleanup and how much longer it's going to take."", 4: '3'}"
+105	105		301							"{2: 'Researcher', 3: ""Here. It comes with a list of all those involved, and we've sent the Parliament a copy, too."", 4: '2'}"
+106	106		301							"{2: 'Asimov', 3: ""Two hundred and twenty-six people, meaning we've got 10% more to go, then... And are these the Gray Ravens that I'm seeing on the list?"", 4: '3'}"
+107	107		301							{2: 'Researcher', 3: 'Yup, and there is Sir Nikola, too.', 4: '2'}
+108	108		301							"{2: 'Asimov', 3: ""I guess we'll just have to wait for them to physically insert the computing models into Gestalt's center and see what happens. Let's take a break for now."", 4: '3'}"
+109	109		202							{1: '2', 2: '3', 6: '1'}
+110	110		201							{1: '1', 2: '500004', 7: '1'}
+111	111		301							"{1: '1', 3: ""Says Asimov—with all eyes on him as everyone in the lab stops what they've been doing and stares at him.""}"
+112	112		306							{1: '1'}
+113	113		301							"{2: 'Researcher C', 3: ""We aren't done yet, though. Are you sure about that?""}"
+114	114		301							"{2: 'Researcher A', 3: ""I think we should make sure they're safe...""}"
+115	115		301							{2: 'Researcher E', 3: 'Objection! Wait, I agree... Wait, no, objection... What?'}
+116	116		306							
+117	117		204							{1: '1', 2: '8'}
+118	118		301							{2: 'Asimov', 3: '...', 4: '1'}
+119	119		204							{1: '1'}
+120	120		301							"{2: 'Asimov', 3: ""There is nothing much we can do until Gestalt's center is done processing the processing units, though."", 4: '1'}"
+121	121		301							{2: 'Asimov', 3: 'And how much longer the cleanup is going to take really depends on those in Gestalt now.', 4: '1'}
+122	122		301							"{2: 'Asimov', 3: ""So let's all take a break now. I'll keep an eye on how things go here."", 4: '1'}"
+123	123		301							{3: 'Says Asimov in his normal tone—which surprisingly puts everyone at ease and helps them feel comfortable about taking a break.'}
+124	124		301							{3: 'Asimov opens the heavy gift Hippocrates gave him…'}
+125	125		301							{3: 'General System Principles of M.I.N.D. (Third Edition)'}
+126	126		301							{3: 'This is the first book ever published with Asimov as the chief author.'}
+127	127		203							{1: '1', 2: '0.25', 3: '400'}
+128	128		201							{1: '2', 2: '500570', 4: '-400'}
+129	129		301							"{1: '1', 2: 'Neon', 3: ""So, where's the sashimi?"", 4: '2'}"
+130	130		301							{2: 'Asimov', 3: 'What sashimi?', 4: '1'}
+131	131		301							"{2: 'Asimov', 3: ""I don't know what you're talking about, but there should be some left still."", 4: '1'}"
+132	132		202							{1: '1', 6: '1'}
+133	133		201							{1: '3', 2: '500539', 3: '11', 4: '400'}
+134	134		301							{1: '1', 2: 'Rosa', 3: 'Your take-out order arrived a few days ago, Long.', 4: '3'}
+135	135		301				AniZhuanchangBegin			{2: 'Rosa', 3: 'Except it smells super terrible now. What should we do with it?', 4: '3'}
+136	136		202			DialogDisable				{1: '2', 2: '3', 6: '1'}
+137	137		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+138	138		301			DialogEnable				"{3: ""Minimally decorated like his personal cabinet, Hassen's office is devoid of his personal effects or a single piece of decoration—save for the frame that's been sitting face down on his desk all these years.""}"
+139	139		301							"{3: ""The frame carries a picture from Hassen's days in the services, the people in it long gone with time.""}"
+140	140		301							{3: 'Spared not by time himself, Hassen is no longer the young man he used to be.'}
+141	141		301							"{3: ""Looking away from the documents he's been reading, Hassen yawns to the quiet night.""}"
+142	142		201							{1: '1', 2: '500011', 3: '9'}
+143	143		301							{1: '1', 2: 'Hassen', 3: 'Not every day Nikola is late for something, huh?', 4: '1'}
+144	144		401							{1: '2', 2: '1099'}
+145	145		203							{1: '1', 2: '0.25', 3: '-400'}
+146	146		201							{1: '2', 2: '500001', 3: '4', 4: '400'}
+147	147		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '2'}
+148	148		301							{1: '1', 2: 'Celica', 3: 'President?', 4: '2'}
+149	149		204							{1: '1'}
+150	150		301							"{2: 'Hassen', 3: ""Yes, I'm listening."", 4: '1'}"
+151	151		301							"{2: 'Celica', 3: ""The Science Council has obtained a list of those affected by Gestalt, and I've already sent a copy of it your way."", 4: '2'}"
+152	152		301							{2: 'Celica', 3: 'Gestalt usually conducts cleanup on its own, according to Asimov. This year, however, it had to be carried out with the help of external data—hence the small-scale infiltration. The infiltration will cause no harm, though.', 4: '2'}
+153	153		301							{2: 'Celica', 3: 'And according to Asimov again, the cleanup will only take another hour to complete.', 4: '2'}
+154	154		204							{1: '2'}
+155	155		301							{2: 'Celica', 3: 'But...', 4: '2'}
+156	156		301							"{3: ""Through his terminal, Hassen can see that Celica's face is a mixture of emotions.""}"
+157	157		301							"{2: 'Hassen', 3: ""I'm seeing Nikola and the Gray Raven Commandant among everyone else on the list."", 4: '1'}"
+158	158		301							"{2: 'Celica', 3: ""Yes, which is why I'm heading down to Sir Nikola's cabin now. Asimov said we should probably take Sir Nikola to Star of Life for a check-up since it's been a while since Sir Nikola last had a good rest."", 4: '2'}"
+159	159		301							"{2: 'Hassen', 3: ""Right, and I have no doubt that you'll have that taken care of, Celica."", 4: '1'}"
+160	160		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+161	161		202							{1: '2', 6: '1'}
+162	162		203							{1: '1', 2: '0.25'}
+163	163		301							{3: 'With it, Hassen lets out a sigh of relief.'}
+164	164		301							"{2: 'Hassen', 3: ""Actually, why don't I just head down to Star of Life and wait for them there?"", 4: '1'}"
+165	166		301							"{2: 'Hassen', 3: ""Not that it's going to change anything, but I guess that will do."", 4: '1'}"
+166	167		301		1		AniZhuanchangBegin			"{3: ""Hassen picks up his cloak from his chair as he quietly erects the photo frame that's been lying face down.""}"

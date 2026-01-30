@@ -1,0 +1,454 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory895.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: 'Days of rain and the humid coastal air in the summer have make the Aomizu conservation area feel muggy.'}
+4	4		401							{1: '2', 2: '212'}
+5	5		301							"{3: ""The Engineering Force, the administrators, and the Diplomatic Court officers... The not very large meeting room is packed with all kinds of people, discussing about the conservation area's reconstruction matters.""}"
+6	6		301							"{3: ""There aren't enough stools in the room. Some have to stand in the back, leaning against the wall while taking notes of the meeting.""}"
+7	7		401							{1: '2', 2: '5533'}
+8	8		301							{3: 'Occasionally, there is a click of the lighter, followed by the sound of tobacco being ignited. The smoke is exhaled, rises slowly, and then gets scattered by the fan on the ceiling.'}
+9	9		402							{1: '212'}
+10	10		301							"{3: ""The meeting went on for hours. Everyone's a bit drowsy.""}"
+11	11		301							{3: 'Someone forces their way through their colleagues to the window and opens it. The salty and fishy wind immediately comes in and wakes everyone up.'}
+12	12		201							{1: '1', 2: '500019'}
+13	13		301							{1: '1', 2: 'Engineering Force Member', 3: 'This is ridiculous!', 4: '1', 18: '100010317'}
+14	14		301							"{2: 'Engineering Force Member', 3: ""We don't have enough people—there's no way we can handle all these construction projects at once!"", 4: '1', 18: '100010318'}"
+15	15		301							"{2: 'Engineering Force Member', 3: ""If we want to meet the deadline here in the west, then we'll have to postpone the construction of the residential area in the south."", 4: '1', 18: '100010319'}"
+16	16		203							{1: '1', 2: '0.35', 3: '500'}
+17	17		201							{1: '2', 2: '500303', 4: '-500'}
+18	18		301							"{1: '1', 2: 'Administrator', 3: ""We have already announced the construction schedule for the residential area to everyone in the conservation area. This can't wait."", 4: '2', 18: '100010320'}"
+19	19		301							"{2: 'Administrator', 3: ""The rainy season has already begun. Soon, we'll have another group of people moving in. We must ensure that everyone has proper living conditions."", 4: '2', 18: '100010321'}"
+20	20		301							{2: 'Engineering Force Member', 3: 'Then send more people here!', 4: '1', 18: '100010322'}
+21	21		301							{2: 'Administrator', 3: 'About that...', 4: '2', 18: '100010323'}
+22	22		202							{1: '1', 2: '2'}
+23	23		301							{3: 'Amidst the arguments, things have been sorted out one by one.'}
+24	24		201							{1: '1', 2: '500398'}
+25	25		301							"{1: '1', 2: 'Conservation Area Manager', 3: ""Next, we'll hear from... Gray Raven Commandant 【kuroname】."", 4: '1', 18: '100010324'}"
+26	26		202							{1: '1', 6: '1'}
+27	27		306							{1: '1'}
+28	28		301							"{3: ""Everyone stops taking notes. There is a brief silence. Then, everything returns to normal. Some stand on their tiptoes to peer over other colleagues' heads. Low murmurs can be heard here and there.""}"
+29	29		301							{2: 'Conservation Area Worker A', 3: 'Look...', 18: '100010325'}
+30	30		301							{2: 'Conservation Area Worker B', 3: 'Is that the Gray Raven Commandant...?', 18: '100010326'}
+31	31		306							
+32	32		301				DialogDisable			{3: 'A human sitting in a corner walks to the front of the room and projects a terrain map of Aomizu onto the screen.'}
+33	33		302							{2: 'The first item on agenda is the optimization of the patrol route and the defenses.', 3: '34'}
+34	34		302							{2: 'This map shows our previous patrol route.', 3: '35'}
+35	35		302							{2: 'You can see on the southeast side, here, the defenses construction here is at risk of late completion.', 3: '36'}
+36	36		302							{2: 'Also, toward the rear mountain on the north side...', 3: '37'}
+37	37		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1.5'}
+38	38		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+39	39		205							{1: '999'}
+40	40		301			DialogEnable	AniZhuanchangBegin			{3: 'Dark clouds of work constantly loom over the blue summer sky.'}
+41	41		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory700.jpg'}
+42	42		401							{1: '1', 2: '204'}
+43	43		301			AniZhuanchangEnd				"{3: ""The meeting is finally over when it's well past noon. Attendees rush out of the meeting room and breathe in fresh air deeply.""}"
+44	44		201							{1: '18', 2: '500994', 3: '2'}
+45	45		301							{1: '1', 2: 'Lucia', 3: 'Commandant!', 4: '18', 18: '100010327'}
+46	46		202							{1: '18'}
+47	47		301							{3: 'A familiar voice comes beside you. Someone pats your shoulder.'}
+48	48		301							{3: 'You look back. Lucia is standing next to you, smiling quietly.'}
+49	49		201							{1: '1', 2: '500994', 3: '2'}
+50	50		301							{1: '1', 2: 'Lucia', 3: 'All done with work?', 4: '1', 18: '100010328'}
+51	51		302							{2: 'For now.', 3: '52'}
+52	52		301							{3: 'Lucia takes out a bento box from behind and hands it to you.'}
+53	53		301							"{2: 'Lucia', 3: ""I knew you hadn't eaten yet, so I got some food for you."", 4: '1', 18: '100010329'}"
+54	54		302							{2: 'That helps a lot!', 3: '55', 4: 'Good work.', 5: '55'}
+55	55		202							{1: '1'}
+56	56		301							{3: 'The lengthy meeting in the morning has left you famished.'}
+57	57		301				DialogDisable			{3: 'You take the bento and walk toward the bench nearby with Lucia.'}
+58	58		302							{2: 'I thought it was gonna be easy.', 3: '59'}
+59	59		302							"{2: ""Can't believe it's so wearing."", 3: '60'}"
+60	60		201							{1: '1', 2: '500994'}
+61	61		204							{1: '1', 2: '4'}
+62	62		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'Yeah. There have been many unexpected things happening lately.', 4: '1', 18: '100010330'}
+63	63		204							{1: '1'}
+64	64		301							{2: 'Lucia', 3: 'First, heavy rains caused a landslide, destroying some of the buildings near the mountainside, and many rescue workers fell ill after being caught in the rain.', 4: '1', 18: '100010331'}
+65	65		301				DialogDisable			{2: 'Lucia', 3: 'Followed by attacks from a small group of wandering Corrupted... Speaking of which, some residents will be moving here soon, right?', 4: '1', 18: '100010332'}
+66	66		302							{2: 'Yeah. A lot of houses to be built.', 3: '67'}
+67	67		302							{2: 'It has been a headache for the manager of the conservation area.', 3: '68'}
+68	68		301			DialogEnable				{3: 'You chat with Lucia while having your food.'}
+69	69		302							{2: 'But being busy is not necessarily a bad thing.', 3: '70'}
+70	70		204							{1: '1', 2: '3'}
+71	71		301							{2: 'Lucia', 3: 'Are you disappointed, Commandant?', 4: '1', 18: '100010333'}
+72	72		302							{2: 'What?', 3: '73'}
+73	73		301				DialogDisable			{2: 'Lucia', 3: 'Having to work overtime, even on such a rare vacation.', 4: '1', 18: '100010334'}
+74	74		302							"{2: ""I'm... already used to this."", 3: '75', 4: 'Yeah.', 5: '76'}"
+75	75		302							"{2: ""Still, I'd like to know what a summer holiday feels like."", 3: '76'}"
+76	76		302							"{2: ""We haven't swum in the sea... We haven't done a lot of things."", 3: '77'}"
+77	77		302							{2: 'Build sand castles, pick up shells, have water gun fights, bathe in the sun, play water volleyball...', 3: '78'}
+78	78		204							{1: '1', 2: '1'}
+79	79		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'Once we finish work, we can spend the last few days having fun together.', 4: '1', 18: '100010335'}
+80	80		301							"{2: 'Lucia', 3: ""Besides, the conservation area is hosting a summer festival in a few days. I'm really looking forward to going with you, Commandant."", 4: '1', 18: '100010336'}"
+81	81		301				DialogDisable			"{2: 'Lucia', 3: ""Speaking of that, Commandant, have you gotten yourself a swimsuit? You'll need it for all those seaside activities I mentioned."", 4: '1', 18: '100010337'}"
+82	82		302							{2: 'Right... Suitable summer wear is also a necessary part of it.', 3: '83'}
+83	83		302							"{2: ""I haven't applied for a summer Coating for the Pyroath frame yet. Is it too late to apply now...?"", 3: '84'}"
+84	84		401							{1: '2', 2: '4553'}
+85	85		301			DialogEnable				{3: 'Your conversation is interrupted by the beeps of the terminal. You check on your terminal.'}
+86	86		204							{1: '1'}
+87	87		402							{1: '4553'}
+88	88		301							{2: 'Lucia', 3: 'New mission?', 4: '1', 18: '100010338'}
+89	89		302							{2: 'Yeah. The manager of the conservation area seems to have a problem.', 3: '90'}
+90	90		301							{3: 'You take the last bite of your meal.'}
+91	91		302							"{2: ""It's not a battle mission. I can handle it myself. Gotta go."", 3: '92'}"
+92	92		202							{1: '1'}
+93	93		301							{3: 'Lucia takes the bento box and watches the human leave.'}
+94	94		301							{3: 'A lazy vibe steals over the summer afternoon. After work in the morning, people have rested, and the whole town has quieted down.'}
+95	95		301							{3: 'On the quiet street, Lucia walks toward the residence.'}
+96	96		301							{3: 'She has to take another path as her usual path has been blocked by building materials.'}
+97	97		301				AniZhuanchangBegin			{3: 'And because of this, she comes across a shop unexpectedly.'}
+98	98		202							{1: '1', 6: '1'}
+99	99		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory204.png'}
+100	100		401							{1: '1', 2: '6121'}
+101	101		201							{1: '1', 2: '500994'}
+102	102		301			AniZhuanchangEnd				"{1: '1', 2: 'Lucia', 3: '""New Universal Swimwear""?', 4: '1', 18: '100010339'}"
+103	103		202							{1: '1'}
+104	104		306							{1: '1'}
+105	105		301							"{3: 'Though named as a ""company,"" it\'s more like a ""shop"" in terms of its size.'}"
+106	106		301							{3: 'The shop is roughly divided into two sections. On one side hang swimming equipment like surfboards and swim rings. On the other side are all kinds of swimsuits.'}
+107	107		201							{1: '1', 2: '500822', 3: '4'}
+108	108		301							{1: '1', 3: 'On a slightly old step ladder in the room, a red-haired girl is standing on her tiptoes, replacing a light while making some strange noises.'}
+109	109		306							
+110	110		203							{1: '1', 2: '0.35', 4: '50'}
+111	111		301							{2: 'Amina', 3: 'Huff... puff...', 4: '1', 18: '100010340'}
+112	112		301							"{3: ""It's just that the ladder is not tall enough, the girl tries hard but still can't reach the light tube.""}"
+113	113		301							"{2: 'Amina', 3: ""Huff... I should've..."", 4: '1', 18: '100010341'}"
+114	114		301							{3: 'The ladder creaks as she moves.'}
+115	115		204							{1: '1', 2: '7'}
+116	116		301							{2: 'Amina', 3: 'I should have asked Lazer to help... Whoa... Ahhhhh!', 4: '1', 18: '100010342'}
+117	117		203						200.0	{1: '1', 2: '0.25', 4: '-50'}
+118	118		202							{1: '1'}
+119	119		301							{3: 'A joint suddenly snaps, and the girl falls from the ladder.'}
+120	120		201							{1: '18', 2: '500994'}
+121	121		301							{1: '1', 2: 'Lucia', 3: 'Watch out!', 4: '18', 18: '100010343'}
+122	122		202							{1: '18', 6: '1'}
+123	123		201							{1: '1', 2: '500822', 5: '-50'}
+124	124		201							{1: '2', 2: '500994', 4: '800'}
+125	125		203						250.0	{1: '2', 2: '0.25', 3: '400'}
+126	126		203							{1: '1', 2: '0.25'}
+127	127		301							{1: '1', 3: 'Lucia rushes in to catch the red-haired girl.'}
+128	128		301							{3: 'Upon holding the girl, Lucia feels the unusual weight and touch of her.'}
+129	129		203							{1: '2', 2: '0.25', 3: '500'}
+130	130		204							{1: '2', 2: '6'}
+131	131		301							{2: 'Lucia', 3: '(Mechanoid?)', 4: '2', 18: '100010344'}
+132	132		203							{1: '1', 2: '0.35', 3: '-300'}
+133	133		301							{3: 'Amina regains her footing and smooths her clothes.'}
+134	134		204							{1: '1', 2: '1'}
+135	135		301							"{2: 'Amina', 3: ""Thanks for your help. I'm Amina, a toy merchant."", 4: '1', 18: '100010345'}"
+136	136		301							"{2: 'Amina', 3: ""As you see, I'm running this New Universal Swimwear."", 4: '1', 18: '100010346'}"
+137	137		204							{1: '2'}
+138	138		301							"{2: 'Lucia', 3: ""...I'm Lucia."", 4: '2', 18: '100010347'}"
+139	139		204							{1: '1', 2: '2'}
+140	140		301							"{2: 'Amina', 3: ""So you are Lucia! I've heard Nanami mention you before!"", 4: '1', 18: '100010348'}"
+141	141		301							{3: 'Amina circles around Lucia, looking her up and down in excitement.'}
+142	142		301							{2: 'Amina', 3: 'Well... Well... You are a rare beauty.', 4: '1', 18: '100010349'}
+143	143		301							{2: 'Amina', 3: 'Have you bought any swimsuit this year, Lucia?', 4: '1', 18: '100010350'}
+144	144		202							{1: '1', 2: '2'}
+145	145		301							{3: 'Lucia feels like she has entered some weird situation.'}
+146	146		201							{1: '2', 2: '500994', 3: '7'}
+147	147		301							{1: '1', 2: 'Lucia', 3: 'No, not yet...', 4: '2', 18: '100010351'}
+148	148		204							{1: '2', 2: '4'}
+149	149		301							"{2: 'Lucia', 3: ""Actually, we Constructs don't really need swimsuits..."", 4: '2', 18: '100010352'}"
+150	150		202							{1: '2', 6: '1'}
+151	151		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+152	152		101							{1: 'Assets/Product/Texture/Image/BgCg/Cghb017.png'}
+153	153		301							"{3: ""Lucia's voice drops gradually. She thinks of the summer Coatings she saw. The Plume frame has a summer Coating as well...""}"
+154	154		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+155	155		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory204.png'}
+156	156		201							{1: '2', 2: '500994', 3: '4', 7: '1'}
+157	157		301				DialogDisable			"{1: '1', 2: 'Lucia', 3: ""You... don't?"", 4: '2', 18: '100010353'}"
+158	158		306							{1: '1'}
+159	159		202							{1: '2', 6: '1'}
+160	160		201							{1: '1', 2: '500174', 4: '-500', 7: '1'}
+161	161		205							{1: '1', 3: '1', 4: '0.5', 5: '0'}
+162	162		201							{1: '2', 2: '500347', 7: '1'}
+163	163		205							{1: '2', 3: '1', 4: '0.5', 5: '0'}
+164	164		201							{1: '3', 2: '500999', 4: '500', 7: '1'}
+165	165		205						2000.0	{1: '3', 3: '1', 4: '0.5', 5: '0'}
+166	166		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+167	167		201							{1: '1', 2: '500822', 4: '-400'}
+168	168		201							{1: '2', 2: '500994', 4: '400'}
+169	169		301			DialogEnable				{1: '1', 2: 'Lucia', 3: '...Do... Do we?', 4: '2', 18: '100010354'}
+170	170		301							{3: 'Lucia falls into deep thought.'}
+171	171		306							
+172	172		203							{1: '2', 2: '0.25', 3: '400'}
+173	173		201							{1: '1', 2: '500822', 4: '-400'}
+174	174		301							"{1: '1', 2: 'Amina', 3: ""I've decided! I'm going to give a swimsuit, Lucia!"", 4: '1', 18: '100010355'}"
+175	175		204							{1: '2', 2: '7'}
+176	176		301							{2: 'Lucia', 3: '...?', 4: '2', 18: '100010356'}
+177	177		204							{1: '1', 2: '4'}
+178	178		301							"{2: 'Amina', 3: ""It's called advertising."", 4: '1', 18: '100010357'}"
+179	179		301							{2: 'Amina', 3: 'The kind of propaganda a start-up needs.', 4: '1', 18: '100010358'}
+180	180		301							{2: 'Amina', 3: 'Plus a little thank-you for your help!', 4: '1', 18: '100010359'}
+181	181		301							{3: 'Amina keeps going while pushing out a mannequin dressed in a blue swimsuit.'}
+182	182		204							{1: '1', 2: '2'}
+183	183		301							"{2: 'Amina', 3: ""This swimsuit is inspired by the legends of Aomizu—it's my take on recreating the appearance of the Ocean Moon Goddess."", 4: '1', 18: '100010360'}"
+184	184		204							{1: '2'}
+185	185		301							{2: 'Lucia', 3: 'The Ocean Moon Goddess?', 4: '2', 18: '100010361'}
+186	186		301							{2: 'Amina', 3: 'Yes. Legend has it that the goddess always appears with water clovers.', 4: '1', 18: '100010362'}
+187	187		301							{2: 'Lucia', 3: 'Could you tell me more about water clovers?', 4: '2', 18: '100010363'}
+188	188		204							{1: '1', 2: '3'}
+189	189		301							"{2: 'Amina', 3: ""Um... I don't really remember. A businesswoman is always busy. Sometimes I forget things."", 4: '1', 18: '100010364'}"
+190	190		204							{1: '1', 2: '1'}
+191	191		301							{2: 'Amina', 3: 'Anyway, just try this one on.', 4: '1', 18: '100010365'}
+192	192		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+193	193		202							{1: '2', 2: '1', 6: '1'}
+194	194		301							{3: 'A short period of dressing later.'}
+195	195		201							{1: '1', 2: '500822', 3: '2', 4: '-400'}
+196	196		201							{1: '2', 2: '501275', 4: '400'}
+197	197		301							{1: '1', 2: 'Amina', 3: 'Gooorgeous!', 4: '1', 18: '100010366'}
+198	198		301							{2: 'Amina', 3: 'I knew it! This swimsuit suits you perfectly!', 4: '1', 18: '100010367'}
+199	199		301							"{2: 'Lucia', 3: ""Isn't this a bit too expensive...?"", 4: '2', 18: '100010368'}"
+200	200		301							"{2: 'Amina', 3: 'Do you have someone who you ""want to put on a swimsuit and spend the summer with?""', 4: '1', 18: '100010369'}"
+201	201		204							{1: '2', 2: '3'}
+202	202		301							{2: 'Lucia', 3: '...Yes.', 4: '2', 18: '100010370'}
+203	203		301							{2: 'Amina', 3: 'Perfect, then.', 4: '1', 18: '100010371'}
+204	204		301							"{2: 'Amina', 3: ""You are happy as long as you're with that person, right?"", 4: '1', 18: '100010372'}"
+205	205		301							{2: 'Amina', 3: 'What the world lacks is happiness!', 4: '1', 18: '100010373'}
+206	206		301				AniZhuanchangBegin			{2: 'Amina', 3: 'So, just go ahead, Lucia!', 4: '1', 18: '100010374'}
+207	207		202						200.0	{1: '1', 2: '2'}
+208	208		101						1800.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1269.jpg'}
+209	209		402						1800.0	{1: '6121'}
+210	210		401							{2: '204'}
+211	211		301			AniZhuanchangEnd				{3: 'Humid air invades half of the town in the endless chirping of cicadas.'}
+212	212		301							"{3: ""After wrapping everything up, Lucia and the human come to Aomizu's market on the last day of the summer vacation.""}"
+213	213		201							{1: '1', 2: '501026', 4: '400'}
+214	214		201							{1: '2', 2: '500463', 4: '-400'}
+215	215		301							{1: '1', 2: 'Girl', 3: 'I want that candy!', 4: '1', 18: '100010375'}
+216	216		301							{2: 'Middle-Aged Woman', 3: 'Alright, alright. As you wish.', 4: '2', 18: '100010376'}
+217	217		202							{1: '1', 2: '2', 6: '1'}
+218	218		201							{1: '1', 2: '500342', 4: '400'}
+219	219		201							{1: '2', 2: '500965', 4: '-400'}
+220	220		301							"{1: '1', 2: 'Young Person A', 3: ""Oh, Minamoto-san is also here. Hurry, don't let him see us. I don't want to listen to his goddess story again."", 4: '1', 18: '100010377'}"
+221	221		301							{2: 'Young Person A', 3: 'Minamoto-san is a good man, except that he always has people listen to his story.', 4: '1', 18: '100010378'}
+222	222		301							"{2: 'Young Person B', 3: ""His late wife loved it. Guess he just can't let go."", 4: '2', 18: '100010379'}"
+223	223		202							{1: '1', 2: '2', 6: '1'}
+224	224		201							{1: '1', 2: '500434'}
+225	225		301							{1: '1', 2: 'Stall Owner A', 3: 'Goldfish scooping! Goldfish scooping!', 4: '1', 18: '100010380'}
+226	226		202							{1: '1'}
+227	227		301							{3: 'The market is bustling.'}
+228	228		201							{1: '1', 2: '500994'}
+229	229		204							{1: '1', 2: '1'}
+230	230		301				DialogDisable			"{1: '1', 2: 'Lucia', 3: ""It's so lively here."", 4: '1', 18: '100010381'}"
+231	231		302							{2: 'I heard that the summer celebration is a traditional festival here.', 3: '232'}
+232	232		302							{2: 'There will be fireworks at night.', 3: '233'}
+233	233		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'Fireworks...', 4: '1', 18: '100010382'}
+234	234		301							{3: 'Lucia looks up at the sky with a dreamy expression.'}
+235	235		204							{1: '1', 2: '1'}
+236	236		301				DialogDisable			{2: 'Lucia', 3: 'The last time I saw fireworks was in Catania.', 4: '1', 18: '100010383'}
+237	237		302							{2: 'Yeah.', 3: '238'}
+238	238		202							{1: '1', 6: '1'}
+239	239		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+240	240		101						800.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_19.jpg'}
+241	241		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+242	242		101						800.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_04.jpg'}
+243	243		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+244	244		101						800.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5301_05.jpg'}
+245	245		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+246	246		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1269.jpg'}
+247	247		301			DialogEnable				{1: '1', 3: 'The bonfire, the singing and dancing, and the party... The night at Catania is still vivid in your mind.'}
+248	248		201							{1: '1', 2: '500994'}
+249	249		301							"{1: '1', 2: 'Lucia', 3: ""Even though they're both islands, the atmosphere here is completely different."", 4: '1', 18: '100010384'}"
+250	250		202							{1: '1'}
+251	251		301							{3: 'Compared to the passionate and vibrant Catania, Aomizu appears more serene and introverted.'}
+252	252		301							"{3: ""You walk in the market with Lucia. The vendors' calls are not too loud, but the market still looks busy with the chatter and laughter of roadside tourists.""}"
+253	253		301							{3: 'Lucia is drawn to the unfamiliar snacks at the stalls.'}
+254	254		201							{1: '1', 2: '500086', 3: '1'}
+255	255		301							{1: '1', 2: 'Stall Owner', 3: 'Care for a candy apple, young one?', 4: '1', 18: '100010385'}
+256	256		202							{1: '1', 6: '1'}
+257	257		201							{1: '1', 2: '500994'}
+258	258		301							{1: '1', 2: 'Lucia', 3: 'Candy apple?', 4: '1', 18: '100010386'}
+259	259		202							{1: '1', 6: '1'}
+260	260		201							{1: '1', 2: '500086', 3: '1'}
+261	261		301							{1: '1', 2: 'Stall Owner', 3: 'Of course. No summer festival is complete without one!', 4: '1', 18: '100010387'}
+262	262		202							{1: '1'}
+263	263		301							{3: 'You bought a candy apple. The vendor skillfully cuts it into pieces with the knife, neatly arranges them in the paper box, and then sprinkles powdered sugar on top.'}
+264	264		201							{1: '1', 2: '500994', 3: '1'}
+265	265		204							{1: '1', 2: '2'}
+266	266		301							{1: '1', 3: 'Lucia spears a piece with a toothpick and offers it to the human.'}
+267	267		301							{2: 'Lucia', 3: 'Want to try some, Commandant?', 4: '1', 18: '100010388'}
+268	268		302							{2: '(Eat the candy apple)', 3: '269'}
+269	269		301							{3: 'The apple and the icing come together perfectly, while the powdered sugar adds another layer of flavor.'}
+270	270		301							{3: 'Lucia spears another piece and places it in the mouth.'}
+271	271		204							{1: '1', 2: '1'}
+272	272		301							{2: 'Lucia', 3: 'So sweet.', 4: '1', 18: '100010389'}
+273	273		202							{1: '1'}
+274	274		301							{3: 'The market is packed with snacks. Soon, both of you are stuffed.'}
+275	275		301							{3: 'In addition to having the snacks, Lucia would sometimes ask the vendors about the recipes and take notes carefully.'}
+276	276		201							{1: '1', 2: '500994', 3: '1'}
+277	277		301							{1: '1', 2: 'Lucia', 3: 'I can try making them when you want them in the future.', 4: '1', 18: '100010390'}
+278	278		302							"{2: 'Good luck!', 3: '279', 4: ""...Y-You don't have to do this."", 5: '279'}"
+279	279		301							"{2: 'Lucia', 3: 'By the way, I heard about ""water clovers"" from a mechanoid called Amina.', 4: '1', 18: '100010391'}"
+280	280		302							{2: 'Mechanoid?', 3: '281', 4: 'Water clovers?', 5: '284'}
+281	281		301				DialogDisable			"{2: 'Lucia', 3: ""Yeah. She also mentioned Nanami. I guess they're friends."", 4: '1', 18: '100010392'}"
+282	282		302							"{2: ""She's probably from the same place as Zavier, the guy we met earlier."", 3: '283'}"
+283	283		302							{2: 'But... water clovers?', 3: '284'}
+284	284		301			DialogEnable				{2: 'Lucia', 3: 'She mentioned the Ocean Moon Goddess in Aomizu, saying that the goddess always appears with water clovers.', 4: '1', 18: '100010393'}
+285	285		203							{1: '1', 2: '0.35', 3: '-400'}
+286	286		201							{1: '2', 2: '500294', 4: '400'}
+287	287		301							{1: '1', 2: '???', 3: 'Excuse me. Are you talking about the Ocean Moon Goddess?', 4: '2', 18: '100010394'}
+288	288		301							{3: 'An old man beside you breaks in.'}
+289	289		301							"{2: '???', 3: ""Sorry to cut into your conversation. It's just that I rarely hear anyone talking about the Ocean Moon Goddess."", 4: '2', 18: '100010395'}"
+290	290		301				DialogDisable			"{2: 'Minamoto-san', 3: ""I take it you're from Babylonia, right? I'm Minamoto."", 4: '2', 18: '100010396'}"
+291	291		302							"{2: ""Yes. I'm 【kuroname】, and this is Lucia. We are both from Gray Raven."", 3: '292'}"
+292	292		204							{1: '1'}
+293	293		301			DialogEnable				{2: 'Lucia', 3: 'Do you know anything about the Ocean Moon Goddess, Minamoto-san?', 4: '1', 18: '100010397'}
+294	294		301							{2: 'Minamoto-san', 3: 'Of course. The Ocean Moon Goddess is said to be the patron goddess of Aomizu.', 4: '2', 18: '100010398'}
+295	295		301							{2: 'Minamoto-san', 3: 'She originally lived among the stars with her lover, but later accidentally fell to the mortal world.', 4: '2', 18: '100010399'}
+296	296		301							{2: 'Minamoto-san', 3: 'She would appear on quiet nights by the sea, look up to the sky, and shed tears. Her tears would dye the ocean blue and make clovers grow from the water.', 4: '2', 18: '100010400'}
+297	297		301							{2: 'Minamoto-san', 3: 'Kind as the goddess is, she hates to see people get separated from their loved ones like she did, so she would protect any relationships between family members, friends, and lovers.', 4: '2', 18: '100010401'}
+298	298		301							{2: 'Minamoto-san', 3: 'In the past, people in Aomizu would pray to the goddess, and the goddess would fulfill their wishes. But now...', 4: '2', 18: '100010402'}
+299	299		301							{2: 'Minamoto-san', 3: 'Sigh... Now, nobody would listen to these stories anymore.', 4: '2', 18: '100010403'}
+300	300		301							{2: 'Minamoto-san', 3: 'Anyway, this is the legend known to most people in Aomizu in the past.', 4: '2', 18: '100010404'}
+301	301		301							"{2: 'Lucia', 3: '""Most people?""', 4: '1', 18: '100010405'}"
+302	302		301							{2: 'Lucia', 3: 'Are there other versions of this story?', 4: '1', 18: '100010406'}
+303	303		301							{2: 'Minamoto-san', 3: 'Um... There is a rarely known continuation of it.', 4: '2', 18: '100010407'}
+304	304		301							"{2: 'Minamoto-san', 3: ""Some say that the goddess' lover saw the blue sea and knew that she was weeping, so he left the stars behind and rushed to the ground."", 4: '2', 18: '100010408'}"
+305	305		301							{2: 'Minamoto-san', 3: 'He made it to the mortal world, but arrived covered in wounds, collapsing on the beach...', 4: '2', 18: '100010409'}
+306	306		301							{2: 'Lucia', 3: 'And then?', 4: '1', 18: '100010410'}
+307	307		301							{2: 'Minamoto-san', 3: 'Then, the goddess found her lover. She carried him on her back, and the two vanished into the night.', 4: '2', 18: '100010411'}
+308	308		301							"{2: 'Minamoto-san', 3: ""Well... That's all I know. Thank you for being patient with an old man."", 4: '2', 18: '100010412'}"
+309	309		302							"{2: ""Don't say that. We are happy to hear these stories."", 3: '310'}"
+310	310		301							"{2: 'Minamoto-san', 3: ""Haha, I'll leave you to yourselves then."", 4: '2', 18: '100010413'}"
+311	311		301							{2: 'Minamoto-san', 3: 'Make sure to cherish those around you.', 4: '2', 18: '100010414'}
+312	312		202							{1: '2'}
+313	313		203							{1: '1', 2: '0.45'}
+314	314		301							{3: 'Saying that, the old man slowly walks away.'}
+315	315		204							{1: '1', 2: '2'}
+316	316		301							{2: 'Lucia', 3: 'The Ocean Moon Goddess is a kind goddess.', 4: '1', 18: '100010415'}
+317	317		301							"{2: 'Lucia', 3: ""If there's ever a chance, I really want to see what water clovers look like."", 4: '1', 18: '100010416'}"
+318	318		301							"{3: ""Something falls silently on the girl's cheek as she speaks.""}"
+319	319		301				DialogDisable			{3: 'You reach out to wipe it away.'}
+320	320		302							"{2: ""It's rain."", 3: '321'}"
+321	321		202						200.0	{1: '1'}
+322	322		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiRain.prefab', 2: '2'}
+323	323		401							{1: '2', 2: '214'}
+324	324		205						500.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.6', 5: '0.4'}
+325	325		301			DialogEnable				"{3: ""The summer rain is like an uninvited guest, arriving secretly on the island and drowning out the vendors' calls.""}"
+326	326		201							{1: '1', 2: '500779', 4: '-400'}
+327	327		201							{1: '2', 2: '500138', 4: '400'}
+328	328		301							"{1: '1', 2: 'Visitor A', 3: ""It's raining again. I've lost count of how many times it has rained..."", 4: '1', 18: '100010417'}"
+329	329		301							"{2: 'Visitor B', 3: ""Ugh, we should probably head back. Those dark clouds mean we're in for some heavy rain soon."", 4: '2', 18: '100010418'}"
+330	330		202							{1: '1', 2: '2'}
+331	331		301							{3: 'The rustling of the wind is mixed with some complaints and curses. The vendors are packing up the stalls, getting ready to leave.'}
+332	332		201							{1: '1', 2: '500994'}
+333	333		301							"{1: '1', 2: 'Lucia', 3: ""Looks like it's time to go back."", 4: '1', 18: '100010419'}"
+334	334		301							{3: 'Lucia sounds a bit frustrated.'}
+335	335		204							{1: '1', 2: '4'}
+336	336		301							"{2: 'Lucia', 3: ""It's a shame that we haven't seen the fireworks."", 4: '1', 18: '100010420'}"
+337	337		302				AniZhuanchangBegin			"{2: ""Yeah. It's kind of a shame."", 3: '338'}"
+338	338		502						400.0	{1: 'DialogDisable'}
+339	339		202							{1: '1', 6: '1'}
+340	340		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiRain.prefab'}
+341	341		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+342	342		402							{1: '214'}
+343	343		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1007.jpg'}
+344	344		502							{1: 'DialogEnable'}
+345	345		301			AniZhuanchangEnd				"{3: 'It has already turned into a ""rainstorm"" after you finished showering where you live.'}"
+346	346		401							{1: '2', 2: '2597'}
+347	347		201							{1: '1', 2: '500994'}
+348	348		301							{1: '1', 3: 'You and Lucia play cards indoors while listening to the rain, enjoying the moment.'}
+349	349		301				DialogDisable			{3: 'But Lucia seems preoccupied, frequently gazing out the window.'}
+350	350		302							"{2: ""What's the matter, Lucia?"", 3: '351'}"
+351	351		301			DialogEnable				{2: 'Lucia', 3: 'I...', 4: '1', 18: '100010421'}
+352	352		301							{3: 'She pauses, then corrects herself.'}
+353	353		204							{1: '1', 2: '4'}
+354	354		301				AniZhuanchangBegin			{2: 'Lucia', 3: 'Nothing.', 4: '1', 18: '100010422'}
+355	355		202							{1: '1', 6: '1'}
+356	356		402							{1: '2597'}
+357	357		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1007.jpg'}
+358	358		401							{1: '1', 2: '214'}
+359	359		301			AniZhuanchangEnd				{3: 'The rain outside seems to have slowed down a bit after dark. The sound of raindrops falling down from the roof onto the pipes and the iron sheets has spread through the quiet night.'}
+360	360		301							{3: 'Only when you open the window and breathe in the earthy smell after rain can you make sure that the rain has stopped.'}
+361	361		201							{1: '1', 2: '501275', 3: '4'}
+362	362		301							"{1: '1', 3: ""Lucia, dressed in a blue swimsuit, stands before the human's room. She raises her right hand to knock but pauses with some hesitation.""}"
+363	363		301							{2: 'Lucia', 3: '(Could Commandant be already asleep by now...?)', 4: '1', 18: '100010423'}
+364	364		301							{3: 'She puts down her hand and looks down at her swimsuit, regretting how impulsive she was.'}
+365	365		301							{2: 'Lucia', 3: '(I was going to tell Commandant during the day...)', 4: '1', 18: '100010424'}
+366	366		301							{3: 'Lucia recalls what Amina said to her days ago.'}
+367	367		202							{1: '1', 6: '1'}
+368	368		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory204.png'}
+369	369		402							{1: '214'}
+370	370		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+371	371		504							{1: '0.7'}
+372	372		201							{1: '1', 2: '500822', 3: '2', 7: '1'}
+373	373		301							{1: '1', 2: 'Amina', 3: 'So, just go ahead, Lucia!', 4: '1', 18: '100010425'}
+374	374		202							{1: '1', 6: '1'}
+375	375		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+376	376		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1269.jpg'}
+377	377		201							{1: '1', 2: '500294', 7: '1'}
+378	378		301							{1: '1', 2: 'Minamoto-san', 3: 'Make sure to cherish those around you.', 4: '1', 18: '100010426'}
+379	379		202							{1: '1', 6: '1'}
+380	380		504							{1: '0'}
+381	381		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1007.jpg'}
+382	382		401							{1: '1', 2: '214'}
+383	383		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+384	384		201							{1: '1', 2: '501275', 7: '1'}
+385	385		301							{1: '1', 3: 'She raises her hand again, ready to knock on the door.'}
+386	386		401							{1: '2', 2: '754'}
+387	387		301				AniZhuanchangBegin			{3: 'But it opens right before she knocks.'}
+388	388		202							{1: '1'}
+389	389		402							{1: '754'}
+390	390		402							{1: '214'}
+391	391		401							{1: '1', 2: '207'}
+392	392		306						400.0	{1: '1'}
+393	393		301			AniZhuanchangEnd				{3: 'You toss and turn on the bed.'}
+394	394		301							{3: 'Lucia seemed to have something left unsaid.'}
+395	395		301							{3: 'You hesitate for a while but eventually decide to have a look outside.'}
+396	396		301							"{3: ""That's right. You just want some water. Nothing else.""}"
+397	397		301							{3: 'You find a bad excuse for your complicated feelings. You open the door and see someone unexpected.'}
+398	398		306							
+399	399		201							{1: '1', 2: '501275'}
+400	400		204							{1: '1', 2: '7'}
+401	401		301							{1: '1', 2: 'Lucia', 3: 'Ah...', 4: '1', 18: '100010427'}
+402	402		301							{3: 'Lucia is standing in front of the door, dressed in a blue swimsuit. It seems she has been standing here for a while.'}
+403	403		301							"{3: ""She looks a bit panicked. Looks like she didn't expect the door would suddenly open.""}"
+404	404		301							{3: 'Moonlight falls gently on her shoulders, bathing her in a soft, ethereal elegance.'}
+405	405		302							{2: 'Lucia?', 3: '406', 4: 'The Ocean Moon Goddess...?', 5: '415', 6: 'This Coating...?', 7: '423'}
+406	406		301			DialogEnable				{2: 'Lucia', 3: 'Good... evening, Commandant!', 4: '1', 18: '100010428'}
+407	407		301				DialogDisable			{3: 'Her voice sounds a bit twisted due to panic.'}
+408	408		302							{2: 'Good night...', 3: '409'}
+409	409		301			DialogEnable				{3: 'Somehow, you repeated the same words.'}
+410	410		301							{3: 'An awkward silence falls afterwards.'}
+411	411		204							{1: '1', 2: '12'}
+412	412		301							{3: 'Someone finally speaks up after a seemingly long while.'}
+413	413		204							{1: '1', 2: '1'}
+414	414	433	301							{2: 'Lucia', 3: 'Shall we take a walk together, Commandant?', 4: '1', 18: '100010429'}
+415	415		301							"{3: ""It reminds you of the goddess mentioned during the day the second you see Lucia's swimsuit.""}"
+416	416		204							{1: '1', 2: '2'}
+417	417		301							{2: 'Lucia', 3: 'This is inspired by the Ocean Moon Goddess.', 4: '1', 18: '100010430'}
+418	418		301							{2: 'Lucia', 3: 'Do you like it, Commandant?', 4: '1', 18: '100010431'}
+419	419		302							"{2: ""It's beautiful."", 3: '420', 4: 'It suits you very well, Lucia.', 5: '420'}"
+420	420		204							{1: '1', 2: '1'}
+421	421		301							"{3: ""A warm faint smile appears on her face. It seems she's happy with the answer.""}"
+422	422	433	301							{2: 'Lucia', 3: 'Shall we take a walk together, Commandant?', 4: '1', 18: '100010432'}
+423	423		301							{3: 'Lucia lowers her head and looks at her swimsuit. She sounds a bit unconfident.'}
+424	424		204							{1: '1', 2: '3'}
+425	425		301			DialogEnable				{2: 'Lucia', 3: 'I figured this was still a bit too...', 4: '1', 18: '100010433'}
+426	426		302							{2: '...different from what I usually wear.'}
+427	427		204							{1: '1', 2: '4'}
+428	428		301							{2: 'Lucia', 3: 'Is that so...', 4: '1', 18: '100010434'}
+429	429		302							{2: 'But this style looks good on you as well!', 3: '430'}
+430	430		204							{1: '1', 2: '1'}
+431	431		301							"{3: ""Lucia's expression turns into a smile.""}"
+432	432		301							{2: 'Lucia', 3: 'Shall we take a walk together, Commandant?', 4: '1', 18: '100010435'}
+433	433		302				AniZhuanchangBegin			{2: 'Sure.', 3: '434'}
+434	434		202							{1: '1', 6: '1'}
+435	435		402							{1: '214'}
+436	436		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1195.jpg'}
+437	437		201							{1: '1', 2: '501275', 7: '1'}
+438	438		301			AniZhuanchangEnd	DialogDisable			{1: '1', 3: 'You walk with Lucia toward the beach in the distance. The lights of the town gradually fade away behind you.'}
+439	439		302							{2: 'So about this Coating...', 3: '440'}
+440	440		204							{1: '1', 2: '1'}
+441	441		301			DialogEnable				"{2: 'Lucia', 3: ""Do you remember Amina? Her shop... well, her company's business is selling swimwear."", 4: '1', 18: '100010436'}"
+442	442		301							{2: 'Lucia', 3: 'And like you said, proper summer wear is essential.', 4: '1', 18: '100010437'}
+443	443		301							{2: 'Lucia', 3: 'I wanted to spend our vacation together on the beach.', 4: '1', 18: '100010438'}
+444	444		301				DialogDisable			{2: 'Lucia', 3: 'I even learned water volleyball for it.', 4: '1', 18: '100010439'}
+445	445		302							"{2: ""But things didn't work out as I hoped."", 3: '446'}"
+446	446		204							{1: '1'}
+447	447		301			DialogEnable				"{2: 'Lucia', 3: ""There's nothing I can do about it."", 4: '1', 18: '100010440'}"
+448	448		204							{1: '1', 2: '1'}
+449	449		301							"{2: 'Lucia', 3: ""But I'm happy to just walk with you like this."", 4: '1', 18: '100010441'}"
+450	450		202							{1: '1'}
+451	451		301							{3: 'Waves wash up on the shore, giving off a faint blue glow.'}
+452	452		201							{1: '1', 2: '501275', 3: '1'}
+453	453		301		1		AniZhuanchangBegin			{1: '1', 2: 'Lucia', 3: 'Commandant, look...', 4: '1', 18: '100010442'}

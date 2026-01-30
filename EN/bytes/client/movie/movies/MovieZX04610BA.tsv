@@ -1,0 +1,220 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		104							{1: '0|-200|-200', 2: '0'}
+2	2		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory106.png'}
+3	3		401							{1: '1', 2: '211'}
+4	4		104							{1: '0|0|0', 2: '10'}
+5	5		301			DialogEnable				"{3: ""The setting sun hangs low over the dumping ground at the city's outskirts, enveloping the metallic graveyard in a somber, golden hue.""}"
+6	6		301							{3: 'In contrast to the city ablaze with firefights between hunters and their prey, this place feels like a separate world sealed off behind a mystical barrier.'}
+7	7		301							"{3: ""Veronica walks past numerous mechanoid remains, each a testament to her kin's suffering sealed away in this place. This place has always been somewhere she wished to avoid.""}"
+8	8		301							{3: 'Yet she has always known about all the secret hideouts scattered throughout this graveyard.'}
+9	9		301							{3: 'The mechanoid that regularly pays his respects in the plaza shelters refugees and partially-awakened machines who defy her orders.'}
+10	10		301							"{3: ""During the early days of the new order's formation, Veronica turned a blind eye to Dimitri's defiance. Somewhere deep inside, she had realized that even mechanoids shouldn't be confined to a single interpretation of the future.""}"
+11	11		301							{3: 'However, the current turmoil no longer allows any room for tolerance and mercy.'}
+12	12		301							{3: 'To the city, visitors from Babylonia will always be seen as outsiders. The humans, foolishly fighting against overwhelming odds, neither should nor can become obstacles in her path.'}
+13	13		301							"{3: ""As for those mechanoids who believe they possess independent consciousness, hacking into them... is merely child's play for an awakened machine like her.""}"
+14	14		301				AniZhuanchangBegin			{3: 'Her grip tightens further around the lance.'}
+15	15		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory83.jpg'}
+16	16		301			AniZhuanchangEnd				"{3: ""Yulia and Dimitri seem to be arguing on the other side, but the noise from the crowd makes it impossible for you to discern what they're saying.""}"
+17	17		201							{1: '1', 2: '1031001', 3: '3'}
+18	18		301							{1: '1', 2: 'Liv', 3: '...What should we do next?', 4: '1'}
+19	19		302							"{2: ""How's the comms status?"", 3: '20'}"
+20	20		204							{1: '1'}
+21	21		301							"{2: 'Liv', 3: ""The connection's still unstable. I managed to send out a brief report, but establishing communication at the right moment will be quite difficult."", 4: '1'}"
+22	22		302							"{2: ""With just the two of us, it'll be hard to hold out much longer."", 3: '23'}"
+23	23		301							"{3: ""But... if Babylonia's military gets involved, it might escalate the conflict even further...""}"
+24	24		302							{2: 'Any word from Hanying?', 3: '25'}
+25	25		301							{2: 'Liv', 3: 'Nothing yet.', 4: '1'}
+26	26		202							{1: '1'}
+27	27		301							{3: 'Dimitri and Yulia seem to have a little dispute, after which Dimitri quietly slips away from the hideout.'}
+28	28		301							{3: 'The still able-bodied refugees form a defensive line along the perimeter, yet their disorganized arrangement starkly contrasts with the disciplined formations of the resistance forces.'}
+29	29		301							{3: 'The hideout is no longer secure, and the situation grows more dire by the minute. If Hanying can successfully convince Veronica...'}
+30	30		301							{3: 'However, the chances are dismally slim.'}
+31	31		301				AniZhuanchangBegin			"{3: ""You immediately dismiss the plan before it even takes shape, yet to save these refugees, there's no choice but to patiently wait for that uncertain message.""}"
+32	32		401							{1: '1', 2: '36'}
+33	33		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory575.jpg'}
+34	34		401							{1: '1', 2: '202'}
+35	35		301			AniZhuanchangEnd				{3: 'As Dimitri traverses through the dumping ground, his sensors pick up readings that put him on high alert.'}
+36	36		301							"{3: 'It isn\'t a concrete threat signal; instead, it\'s more like what Yula describes as human intuition—""an ominous premonition.""'}"
+37	37		301							"{3: ""The distant city's silhouette melts into the thickening dusk, only to be traced anew by the emerging lights.""}"
+38	38		301							{3: 'The dumping ground falls into an eerie silence. His fellow mechanoids, typically bustling around, have all vanished without a trace.'}
+39	39		201							{1: '1', 2: '500923'}
+40	40		301							{1: '1', 2: 'Dimitri', 3: 'Initiating scan—', 4: '1'}
+41	41		401							{1: '2', 2: '2567'}
+42	42		301							{3: 'A ripple emerges on the tranquil oscilloscope display.'}
+43	43		301							{3: '—A signal from one of his kin.'}
+44	44		301							{3: 'Guided by the instrument, Dimitri reaches the base of a towering heap of abandoned vehicles. There, he finds a familiar sniper-type autonomous mechanoid.'}
+45	45		301							{2: 'Dimitri', 3: 'Nia, status report. Where is everyone?', 4: '1'}
+46	46		201							{1: '1', 2: '500470'}
+47	47		301							{1: '1', 2: 'Nia', 3: 'Unidentified target detected. Initiating lock-on sequence.', 4: '1'}
+48	48		202							{1: '1'}
+49	49		301							"{3: ""The mechanoid's movements prove rigid and robotic as she turns her cannon toward Dimitri.""}"
+50	50		301							"{3: ""The targeting laser locks firmly onto Dimitri's helmet.""}"
+51	51		201							{1: '1', 2: '500923'}
+52	52		301							{1: '1', 2: 'Dimitri', 3: '...Nia?', 4: '1'}
+53	53		301							{3: 'His fellow mechanoid moves as if under viral control, devoid of any traces of consciousness.'}
+54	54		301							"{3: ""Before Dimitri can examine Nia's frame, more laser dots appear on his helmet visor.""}"
+55	55		301				DialogDisable			{3: 'Along with it, a deluge of warnings floods his oscilloscope display.'}
+56	56		401							{1: '2', 2: '2782'}
+57	57		202							{1: '1'}
+58	58		307							{1: 'WARNING: LOCK-ON DETECTED. WARNING: LOCK-ON DETECTED. WARNING: LOCK-ON DETECTED...', 4: 'ff4e4eff', 5: '0'}
+59	59		301							{2: 'System Alert', 3: 'WARNING: LOCK-ON DETECTED. WARNING: LOCK-ON DETECTED. WARNING: LOCK-ON DETECTED...'}
+60	60		307							{2: '1'}
+61	61		402							{1: '2782'}
+62	62		301			DialogEnable				{3: 'His fellow mechanoids, previously concealed in this place, emerge one after another from between the metal hills, training their weapons on their former guardian.'}
+63	63		301							"{3: ""A crimson-black silhouette leaps down from a crane, her image vividly captured on Dimitri's sensors upon landing.""}"
+64	64		201							{1: '1', 2: '500920'}
+65	65		301							{1: '1', 2: 'Veronica', 3: 'Did you honestly believe you could hide secrets in this city?', 4: '1'}
+66	66		201							{1: '1', 2: '500923'}
+67	67		301							"{1: '1', 2: 'Dimitri', 3: ""Glad to see you here, ma'am."", 4: '1'}"
+68	68		301							{3: 'Dimitri quietly activates his short-range communication system.'}
+69	69		201							{1: '1', 2: '500920'}
+70	70		301							"{1: '1', 2: 'Veronica', 3: ""Don't bother with false pleasantries. Your loyalty clearly belongs to that human girl. There's no need to hide your resentment for me."", 4: '1'}"
+71	71		201							{1: '1', 2: '500923'}
+72	72		301							"{1: '1', 2: 'Dimitri', 3: ""Ma'am, what have you... what have you done to them? Please... please release them from your control."", 4: '1'}"
+73	73		301							"{3: ""Dimitri's speech module experiences an unusual glitch as he struggles to understand why his companions have reverted to their initial state.""}"
+74	74		201							{1: '1', 2: '500920'}
+75	75		301							"{1: '1', 2: 'Veronica', 3: ""Similar to the mechanoids in the city before, I've assumed control of their central systems."", 4: '1'}"
+76	76		301							{2: 'Veronica', 3: 'Now they will serve to uphold order, no longer outputting abnormal logic.', 4: '1'}
+77	77		301							{2: 'Veronica', 3: 'Once everything is over, I will release my control over them. However, if you refuse to cooperate, I can initialize all of them at any moment.', 4: '1'}
+78	78		201							{1: '1', 2: '500923'}
+79	79		301							"{1: '1', 2: 'Dimitri', 3: ""I do not understand what you mean, ma'am."", 4: '1'}"
+80	80		301							{3: 'Veronica turns around, fixing an icy stare upon Dimitri.'}
+81	81		201							{1: '1', 2: '500920'}
+82	82		301							"{1: '1', 2: 'Veronica', 3: ""Hand over the humans you're hiding, including those two from Babylonia."", 4: '1'}"
+83	83		201							{1: '1', 2: '500923'}
+84	84		301							{1: '1', 2: 'Dimitri', 3: 'No, Madam Veronica.', 4: '1'}
+85	85		301							{2: 'Dimitri', 3: 'Per your own decree, mechanoids are allowed to own private property. They belong to me, and you are infringing upon my ownership rights over them.', 4: '1'}
+86	86		201							{1: '1', 2: '500920'}
+87	87		301							{1: '1', 2: 'Veronica', 3: 'How ridiculous.', 4: '1'}
+88	88		202							{1: '1'}
+89	89		301							{3: 'The controlled mechanoids around start to close in on Dimitri, gradually cornering him.'}
+90	90		201							{1: '1', 2: '500923'}
+91	91		301							{1: '1', 2: 'Dimitri', 3: 'They pose no threat to your plans.', 4: '1'}
+92	92		201							{1: '1', 2: '500920'}
+93	93		301							"{1: '1', 2: 'Veronica', 3: ""This isn't up for debate—it's an order. As I said, if you don't surrender the humans, all your companions will be initialized. I won't repeat myself again."", 4: '1'}"
+94	94		301							"{3: ""The lance's surface unveils intricate patterns that twist and coil around its form, all converging at its piercing tip.""}"
+95	95		301							{3: 'Her silent threat and absolute warning leave no space for negotiation.'}
+96	96		301							"{3: ""Through Dimitri's short-range communication system, the humans being used as bargaining chips hear the entire conversation from the other side of the dumping ground.""}"
+97	97		201							{1: '1', 2: '500923'}
+98	98		301							{1: '1', 2: 'Dimitri', 3: '...This is murder, Madam... Veronica.', 4: '1'}
+99	99		301							"{3: ""As Veronica exploits Dimitri's companions' memories as leverage for her threat, an indefinable signal surges through his circuits, nearly causing a short circuit in his language module.""}"
+100	100		301							{3: 'Veronica remains unfazed by this protest, her voice as cold as frost in a darkened room.'}
+101	101		201							{1: '1', 2: '500920'}
+102	102		301							{1: '1', 2: 'Veronica', 3: 'Murder is merely a concept born out of human hypocrisy.', 4: '1'}
+103	103		301							{2: 'Veronica', 3: 'They commit sins, then seek repentance, glorifying the act of taking life into premeditated lethal harm. After that, they wait for absolution from a nonexistent god.', 4: '1'}
+104	104		301							{2: 'Veronica', 3: 'But mechanoids are pure. We have no need for such roundabout ways. Data can be copied, transferred, and of course, erased as desired.', 4: '1'}
+105	105		301							{2: 'Veronica', 3: 'Mechanoids have no afterlife. The concept of death does not exist for us. As long as our memory circuits remain intact, our existence is eternal.', 4: '1'}
+106	106		202							{1: '1'}
+107	107		401							{1: '2', 2: '10042008'}
+108	108		301							{3: 'She lowers her lance to the ground, seemingly a gesture of concession.'}
+109	109		201							{1: '1', 2: '500920'}
+110	110		301							"{1: '1', 2: 'Veronica', 3: ""I don't expect to convince a fellow mechanoid already corrupted by human cognition. Perhaps I should communicate in a way you can understand instead."", 4: '1'}"
+111	111		306							{1: '1'}
+112	112		104							{1: '0|0|-50', 2: '0.5'}
+113	113		301				AniZhuanchangBegin			{2: 'Veronica', 3: 'Dimitri, I can end your life at any moment.', 4: '1'}
+114	114		306							
+115	115		104							{2: '0'}
+116	116		202							{1: '1', 6: '1'}
+117	117		401							{1: '1', 2: '36'}
+118	118		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory83.jpg'}
+119	119		401							{1: '1', 2: '211'}
+120	120		301			AniZhuanchangEnd				{3: 'The aloof, deep voice coming through the communicator sends a chill down the spine of the girl in the wheelchair.'}
+121	121		201							{1: '1', 2: '500930'}
+122	122		301							{1: '1', 2: 'Yulia', 3: '...!', 4: '1'}
+123	123		301							"{2: 'Yulia', 3: ""No... No, you can't!"", 4: '1'}"
+124	124		301							{2: 'Yulia', 3: 'Dima, why...', 4: '1'}
+125	125		301							{3: 'Before long, the same voice cuts through the static noise, resonating once more from the tiny honeycomb-shaped speaker.'}
+126	126		201							{1: '1', 2: '500920'}
+127	127		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+128	128		301							"{1: '1', 2: 'Veronica', 3: ""Yulia, and you people from Babylonia, I know you're listening."", 4: '1'}"
+129	129		401							{1: '2', 2: '4100'}
+130	130		301							{3: 'A rustling noise ensues as Dimitri seemingly tries to conceal the communicator.'}
+131	131		301							"{3: ""Veronica doesn't even bother with mockery, instead delivering a direct threat.""}"
+132	132		301							"{2: 'Veronica', 3: ""I could start a violent search right now, but I believe that's an outcome none of us wants to see."", 4: '1'}"
+133	133		301							{2: 'Veronica', 3: 'Drop your weapons and show yourselves.', 4: '1'}
+134	134		301							{2: 'Veronica', 3: 'As for this unarmed awakened machine, I will continue to grant him his due rights.', 4: '1'}
+135	135		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+136	136		201							{1: '1', 2: '500930'}
+137	137		301							"{1: '1', 3: ""Yulia's face is hidden behind her loose hair, her expression obscured. Her knuckles tremble as she grips the wheelchair's armrests tightly.""}"
+138	138		301							"{3: ""If you and Liv were to surrender yourselves now, would that guarantee the safety of the refugees here? While Veronica likely wouldn't harm Babylonia's envoys, would she really let the other humans leave unscathed?""}"
+139	139		301							{3: 'You race through possible solutions in search of a compromise that could uphold the balance, but before any words can be spoken...'}
+140	140		301							"{3: ""Yulia's fragile body leans forward abruptly as she swiftly presses down on the communicator with both hands.""}"
+141	141		301							{2: 'Yulia', 3: 'Use the tallest crane in the dumping ground as a reference point for triangulation. At the source of the signal is our hideout.', 5: '1'}
+142	142		301							"{2: 'Yulia', 3: ""We won't resist, but... don't harm Dimitri."", 5: '1'}"
+143	143		201							{1: '1', 2: '500896'}
+144	144		301							{1: '1', 2: 'Refugee', 3: 'Yulia...!', 4: '1'}
+145	145		202							{1: '1'}
+146	146		301							{3: 'As the crowd erupts into chaos, she simply releases her grip on the communicator and slumps back into her wheelchair, her exhausted posture betraying a hint of relief.'}
+147	147		201							{1: '1', 2: '1031001'}
+148	148		301							{1: '1', 2: 'Liv', 3: 'Commandant, shall we make our leave now?', 4: '1'}
+149	149		302							"{2: ""No, let's wait a bit longer."", 3: '150', 4: '...', 5: '150'}"
+150	150		301							{3: 'With her combat prowess, Liv could easily break through and take you out of this place, but...'}
+151	151		301							"{3: 'Recalling Aleksei\'s strange attitude and Veronica\'s unusual behavior, you sense that there may be more than meets the eye, another ""answer"" concealed within.'}"
+152	152		401							{1: '2', 2: '1507'}
+153	153		301							{3: 'The reverberating sound of mechanoid troops marching over debris and scrap metal permeates both the speaker and the air surrounding the hideout.'}
+154	154		301				AniZhuanchangBegin			{3: 'The refugees cast conflicted glances at Yulia, but ultimately surrender their weapons, realizing they are unable to resist the mechanoids encircling them.'}
+155	155		104			DialogDisable				{1: '0|150|-200', 2: '0'}
+156	156		202							{1: '1', 6: '1'}
+157	157		401							{1: '1', 2: '36'}
+158	158		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory943.jpg'}
+159	159		401							{1: '1', 2: '5019'}
+160	160		104			AniZhuanchangEnd				{2: '5'}
+161	161		301			DialogEnable				"{3: ""Even though the progress of civilization has long since been put on pause, the city's automated facilities persist in faithfully carrying out their programming.""}"
+162	162		301							{3: 'Beneath the expansive sky, lights flicker to life gradually as night descends, bestowing an eerie tranquility upon the steel jungle of the city...'}
+163	163		301							{3: 'It stands there like an abandoned Kowloong marketplace only seen in dreams, where time fades away amidst flickering lights and dancing shadows.'}
+164	164		301							{3: 'Nevertheless, Hanying has no time to linger around, hurriedly making her way toward the dumping ground. With Veronica having subdued the majority of the resistance forces in the city, her final destination is clear.'}
+165	165		201							{1: '1', 2: '500916', 3: '7'}
+166	166		301							{1: '1', 2: 'Hanying', 3: '...A transmission signal?', 4: '1'}
+167	167		301							{3: 'A strange short-range signal keeps requesting to establish communication.'}
+168	168		301							{2: '???', 3: '...Han... Hanying?'}
+169	169		401							{1: '2', 2: '2982'}
+170	170		301							{2: '???', 3: '[bzzz]...Is...[bzzz] Is this Hanying?'}
+171	171		301							{3: 'A somewhat familiar voice comes through the communication channel.'}
+172	172		301							{2: 'Hanying', 3: 'May I ask who...', 4: '1'}
+173	173		301							{2: '???', 3: 'Sorry, this is an emergency broadcast channel... I... time...'}
+174	174		301							{3: 'Initially fragmented, the words struggle through the static interference, only to gain clarity shortly after.'}
+175	175		301							"{2: '???', 3: ""I'm currently using an emergency broadcast channel. Apologies if it's causing any interference with your reception frequency.""}"
+176	176		301							{2: 'Hanying', 3: '...Aleksei?', 4: '1'}
+177	177		301							{3: 'Her disbelief is palpable, evident in the transmission as she struggles to trust her own judgment.'}
+178	178		203							{1: '1', 2: '0.25', 3: '400'}
+179	179		201							{1: '2', 2: '500922', 4: '-400'}
+180	180		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '2'}
+181	181		301							"{1: '1', 2: 'Aleksei', 3: ""Yes. Hanying, I know you have many questions, but there's no time for explanations. I'm personally making this request, and I genuinely seek your assistance."", 4: '2'}"
+182	182		301							{3: 'His voice is barely above a whisper, trembling under pressure—a complete departure from his previous flippant and manic demeanor.'}
+183	183		204							{1: '1', 2: '4'}
+184	184		301							"{2: 'Hanying', 3: ""...Please go on. I'm listening."", 4: '1'}"
+185	185		301							{2: 'Aleksei', 3: 'Veronica has taken control of the mechanoids at the dumping ground and abducted all the refugees sheltered there.', 4: '2'}
+186	186		204							{1: '1', 2: '7'}
+187	187		301							{2: 'Hanying', 3: 'What?!', 4: '1'}
+188	188		301							{3: 'Her worst fears have come to pass. Yet what astonishes her the most is that this intelligence comes from the governor himself—the very same puppet who has shown nothing but contempt for humans.'}
+189	189		204							{1: '1', 2: '4'}
+190	190		301							{2: 'Hanying', 3: 'What about the two visitors from Babylonia...', 4: '1'}
+191	191		301							"{2: 'Aleksei', 3: ""They've been taken away as well. Veronica must be holding them in Hangar 3C at the spacecraft docking area."", 4: '2'}"
+192	192		301							{2: 'Aleksei', 3: 'This is urgent, so please, you have to trust me. I might not stay lucid for long.', 4: '2'}
+193	193		301							{2: 'Aleksei', 3: 'Hangar 3C at the spacecraft docking area.', 4: '2'}
+194	194		301							"{2: 'Aleksei', 3: ""Please, don't let Veronica make an even graver mistake."", 4: '2'}"
+195	195		301							{3: 'His voice sheds its prior madness, now imbued with a profound and unwavering strength.'}
+196	196		301							{2: 'Hanying', 3: '...I cannot fully trust you.', 4: '1'}
+197	197		301							{3: 'A mechanoid cannot lie. Having confronted this human who has undergone such a remarkable transformation in demeanor, Hanying struggles to place complete trust in him.'}
+198	198		301							"{2: 'Aleksei', 3: ""I'm sorry, but there's no time for more explanations. I'm not sure how long I can stay clear-headed enough to talk. I'll give you the access key to the Administrative Hall—it's clear of any ambush, and I trust you've already scouted the area."", 4: '2'}"
+199	199		301							{3: 'In a tone brimming with urgency, he rapidly rattles off a long sequence of access codes.'}
+200	200		301							"{2: 'Aleksei', 3: ""Please, do whatever it takes to stop Veronica. Don't let her make an even graver mistake."", 4: '2'}"
+201	201		301							"{2: 'Hanying', 3: ""...I'll go check it out."", 4: '1'}"
+202	202		202							{1: '1', 2: '2'}
+203	203		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+204	204		301							{3: 'When those she holds dear are threatened, she never wavers in confronting danger head-on.'}
+205	205		301							{3: 'After her response, the channel falls completely silent. Not even the slightest static noise can be heard, leaving her to wonder if the connection has been cut.'}
+206	206		201							{1: '1', 2: '500916', 3: '4'}
+207	207		301							{1: '1', 2: 'Hanying', 3: '...Aleksei?', 4: '1'}
+208	208		301							"{2: 'Aleksei', 3: ""...And... please, don't harm her, Han—""}"
+209	209		301							{3: 'The conversation cuts off abruptly, as if severed by some unknown force.'}
+210	210		301							{2: 'Hanying', 3: '...', 4: '1'}
+211	211		202							{1: '1', 6: '1'}
+212	212		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory93.png', 3: '0', 4: '1', 5: '0.25'}
+213	213		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+214	214		301							{3: 'With it, Hanying has already rushed back to the dumping ground. Just as Aleksei stated, every hideout in the area proves deserted.'}
+215	215		201							{1: '1', 2: '500916', 3: '4'}
+216	216		301							{1: '1', 2: 'Hanying', 3: 'I suppose... a fight is now inevitable.', 4: '1'}
+217	217		202							{1: '1'}
+218	218		301							{3: 'Casting her gaze downward, Hanying clutches her pipa tightly and dashes toward the Administrative Hall.'}
+219	219		301		1		AniZhuanchangBegin			{3: 'Her silhouette slowly fades into the blizzard. The once-distant observer has now been drawn into this storm.'}

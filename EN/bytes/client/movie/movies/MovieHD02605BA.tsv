@@ -1,0 +1,169 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+2	2		401							{1: '1', 2: '36'}
+3	3		401							{1: '2', 2: '903'}
+4	4		301			DialogEnable				{3: 'Having fallen asleep to the sunset, you are woken by the clear moonlight outside. Pushing open the door, you see the stars glisten in the sky, painting the night in a cold silver.'}
+5	5		301							{3: 'The ocean breeze has dissipated any hint of drowsiness in you. Awake, you decide to take a walk to the shimmering shore in this comfortable weather.'}
+6	6		301							{3: 'You walk along the foamy traces left by the waves, not realizing how far you have traveled. By the time you turn around, all the lights are far behind you.'}
+7	7		301							{3: 'Under the milky moonlight stands a familiar figure.'}
+8	8		401							{1: '1', 2: '100'}
+9	9		201							{1: '1', 2: '500727'}
+10	10		301							{1: '1', 2: 'Noan', 3: 'Good evening, Commandant.', 4: '1', 18: '100002477'}
+11	11		301							{3: 'The firefly in his hand glows gently as if breathing, calling out to its companions in the night.'}
+12	12		302							{2: 'You seem to have guessed I would come.', 3: '13'}
+13	13		301							"{2: 'Noan', 3: ""It's not the first time we've met at night."", 4: '1', 18: '100002478'}"
+14	14		301							{3: 'You two exchange a smile, looking up at the starry sky at the same time.'}
+15	15		301							{2: 'Noan', 3: 'Want to take a walk together? I... want to talk to you.', 4: '1', 18: '100002479'}
+16	16		302							{2: 'Sure.', 3: '17'}
+17	17		301							{3: 'He walks toward you, standing closer than usual.'}
+18	18		301							"{3: ""The two of you cast long shadows under the clear moonlight, and you are reminded of the night you followed Noan's shadow into the forest.""}"
+19	19		302							"{2: ""You've been on Babylonia for quite a while now."", 3: '20'}"
+20	20		204							{1: '1', 2: '2'}
+21	21		301							{2: 'Noan', 3: 'Yeah. It feels like not that long ago when I came back with you.', 4: '1', 18: '100002480'}
+22	22		204							{1: '1'}
+23	23		302							"{2: ""I was worried that you wouldn't be able to fit in at first."", 3: '24'}"
+24	24		301							{3: 'He looks back at you with a smile as if asking why you would think that.'}
+25	25		302							{2: '(Bring up what happened in the training room)', 3: '26'}
+26	26		301							"{3: ""Many people were wary of Noan's connections with the Ascendants when he first arrived on Babylonia. Seeing him as a dangerous figure, many were reluctant to share a training room with him.""}"
+27	27		301							"{2: 'Noan', 3: ""That's no longer a problem—well, not as much of a problem. It's hard to change everyone's opinion, but I can start with the little things."", 4: '1', 18: '100002481'}"
+28	28		301							{2: 'Noan', 3: 'The instructor in the training room even gave me a small bag of cookies not long ago when Dark Aries was deployed outside Babylonia.', 4: '1', 18: '100002482'}
+29	29		302							{2: 'Is that... what Simon ate...?', 3: '30', 4: 'I feel like Dark Aries keeps hurting Simon unknowingly.', 5: '30'}
+30	30		204							{1: '1', 2: '10'}
+31	31		301							"{2: 'Noan', 3: ""I'm sorry... I really didn't know he was allergic to sesame. Thankfully, the symptoms weren't severe."", 4: '1', 18: '100002483'}"
+32	32		502							{1: 'DialogDisable'}
+33	33		302							"{2: ""He didn't know either. He never had sesame before."", 3: '34'}"
+34	34		302							{2: 'When I visited him, he told me he thought someone was trying to poison you.', 3: '35'}
+35	35		204							{1: '1'}
+36	36		301			DialogEnable				{2: 'Noan', 3: 'I see.', 4: '1', 18: '100002484'}
+37	37		302							{2: 'Simon used to think you were being bullied in the beginning.', 3: '38'}
+38	38		301							"{2: 'Noan', 3: ""Because of what happened in the training room? Well... without that, Commandant Simon wouldn't have been able to get me the role of a librarian."", 4: '1', 18: '100002485'}"
+39	39		301							"{2: 'Noan', 3: ""I'd definitely pick the library if I had to choose between it and the training room."", 4: '1', 18: '100002486'}"
+40	40		302							"{2: ""You didn't do it on purpose, did you?"", 3: '41'}"
+41	41		301							{3: 'He laughs at your guess, offering neither confirmation nor denial.'}
+42	42		204							{1: '1'}
+43	43		302							"{2: ""It wasn't just the training room. Those tests you did..."", 3: '44'}"
+44	44		301							"{3: ""You did not know what tests Noan was participating in until the day you visited the Science Council to fetch Lee's test results...""}"
+45	45		301							{3: 'And you saw the young man with a dismantled frame sitting amidst his limbs and parts.'}
+46	46		204							{1: '1', 2: '2'}
+47	47		301							{2: 'Noan', 3: 'Well... That was the condition for my stay on Babylonia, and I intended to fulfill my end of the bargain. Besides, I was quite curious as well.', 4: '1', 18: '100002487'}
+48	48		204							{1: '1', 2: '10'}
+49	49		301							"{2: 'Noan', 3: ""What did Lithos do to grant me the powers of Ascendants when I'm neither an Ascendant nor a Transcendant?"", 4: '1', 18: '100002488'}"
+50	50		204							{1: '1', 2: '2'}
+51	51		301							{2: 'Noan', 3: 'Since my M.I.N.D. is now verified stable, it means those tests were safe. They also explained why the tests were necessary.', 4: '1', 18: '100002489'}
+52	52		502							{1: 'DialogDisable'}
+53	53		302							"{2: ""I just didn't expect..."", 3: '54'}"
+54	54		204							{1: '1'}
+55	55		302							{2: 'That someone took the opportunity to copy your M.I.N.D...', 3: '56'}
+56	56		203							{1: '1', 2: '0.25', 5: '-100'}
+57	57		301			DialogEnable				{3: 'Hearing you, Noan steps a little bit closer without a word.'}
+58	58		302							"{2: '...', 3: '59', 4: ""What's wrong?"", 5: '59'}"
+59	59		301							{3: 'He reaches out and gently pinches your cheek.'}
+60	60		302							{2: '...Why are you the one comforting me?', 3: '61'}
+61	61		204							{1: '1'}
+62	62		301							{3: 'He spreads out his hands with a smile.'}
+63	63		302							{2: '...', 3: '64', 4: '...Hey.', 5: '64'}
+64	64		202							{1: '1', 6: '1'}
+65	65		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+66	66		504							{1: '0.7'}
+67	67		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+68	68		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory264.png'}
+69	69		301							{3: 'Thinking back, you remember a troubled Simon asking you how he could foster a sense of camaraderie in his squad like Gray Raven after that incident with Kurono.'}
+70	70		301							{3: 'Like all commandants, Simon has learned a lot about how a commandant should manage a squad and develop combat strategies in F.O.S.'}
+71	71		301							"{3: 'In theory, a squad should function normally as long as the relationship between the ""commandant"" and the ""squad members"" is maintained.'}"
+72	72		301							"{3: ""But after several unanticipated squad reforms... Simon has begun trying to explore approaches beyond a commandant's duties.""}"
+73	73		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg', 3: '0', 4: '0.7', 5: '0.5'}
+74	74		205							{1: '999', 3: '0.7', 4: '0', 5: '0'}
+75	75		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg'}
+76	76		301							{3: 'To help come up with a more comprehensive plan, you would occasionally consult Simon and Noan, whom you know relatively well.'}
+77	77		301							{3: 'In doing so, you have gradually become closer to Noan while aiding Dark Aries.'}
+78	78		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory262.png', 3: '0', 4: '0.7', 5: '0.5'}
+79	79		205							{1: '999', 3: '0.7', 4: '0', 5: '0'}
+80	80		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory262.png'}
+81	81		301							{3: 'After the escape from the library, the two of you have silently reached some sort of agreement.'}
+82	82		301							{3: 'Noan would help you avoid socializing and troublesome events whenever you ask.'}
+83	83		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+84	84		504							
+85	85		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+86	86		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+87	87		201							{1: '1', 2: '500727'}
+88	88		301							{1: '1', 3: 'If he could not, he would stay with you and help you with the tedious reports, plan approvals, and even video conferences where he would stand in for you using a disguise program.'}
+89	89		302							"{2: ""Some said I've learned how to be in multiple places at once."", 3: '90'}"
+90	90		301							{2: 'Noan', 3: 'Because you were giving lectures and having online meetings in the preparation room at the same time?', 4: '1', 18: '100002490'}
+91	91		302							"{2: ""Yeah. It's a miracle I wasn't busted."", 3: '92'}"
+92	92		204							{1: '1', 2: '2'}
+93	93		301							"{2: 'Noan', 3: ""They didn't ask much anyway. I was mostly reading the reports we prepared through a voice changer."", 4: '1', 18: '100002491'}"
+94	94		302							{2: 'Do you want to do the lecture for me next time?', 3: '95'}
+95	95		204							{1: '1'}
+96	96		301							"{2: 'Noan', 3: ""I'd love to, but all I can do right now is prescribe you the wrong medicine so you can feign illness."", 4: '1', 18: '100002492'}"
+97	97		502							{1: 'DialogDisable'}
+98	98		302							{2: 'Feign illness... Right.', 3: '99'}
+99	99		302							"{2: ""How's your study at Star of Life coming along?"", 3: '100'}"
+100	100		301			DialogEnable				"{2: 'Noan', 3: ""I've collected a lot of video materials. I'll be ready for the first aid certification exam after I go through them and practice for a bit."", 4: '1', 18: '100002493'}"
+101	101		301							{3: 'Noan slows down as he says that.'}
+102	102		301							"{2: 'Noan', 3: ""We've been walking along the shore for a while now. Do you want to sit down and take a break?"", 4: '1', 18: '100002494'}"
+103	103		502							{1: 'DialogDisable'}
+104	104		302				AniZhuanchangBegin			{2: 'Yeah.', 3: '105', 4: '(Nod)', 5: '105'}
+105	105		202						3000.0	{1: '1'}
+106	106		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg'}
+107	107		301			DialogEnable				{3: 'You two sit on the beach against the soft hums of the waves, gazing at the starry sky until the moon eventually hides behind the clouds.'}
+108	108		201							{1: '1', 2: '500727'}
+109	109		301							"{1: '1', 2: 'Noan', 3: ""It's been a while since I last saw you so relaxed... You're not on a mission, and you're not in a hurry to leave."", 4: '1', 18: '100002495'}"
+110	110		204							{1: '1', 2: '2'}
+111	111		301							{2: 'Noan', 3: '...The last time was on Babylonia, right?', 4: '1', 18: '100002496'}
+112	112		302				AniZhuanchangBegin			{2: 'Yeah.', 3: '113'}
+113	113		202			DialogDisable				{1: '1', 6: '1'}
+114	114		504							{1: '0.7'}
+115	115		306							{1: '1'}
+116	116		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory262.png'}
+117	117		301			DialogEnable				{3: 'For some reason, you could not sleep the night before Dark Aries was dispatched to Constellia. You decided to walk around the square, but you somehow ended up near the library.'}
+118	118		301							{3: 'This is not the first time you meet at night, just as Noan said.'}
+119	119		302							{2: 'I remember talking with you for so long that night.', 3: '120'}
+120	120		301							"{3: ""At first, you were just chatting about recent events—Liv's recovery, the Purifying Force's reform, your latest missions...""}"
+121	121		301							{3: 'Before you knew it, you started sharing everything that was troubling you.'}
+122	122		301							"{3: ""The endless defectors, the changes in the Hetero Zone, the missing people, the surveillance on Lucia, and Gray Raven's delayed reunion...""}"
+123	123		301							{3: 'Noan was an excellent listener.'}
+124	124		301							{3: 'He never offered shallow comfort, proposed unattainable plans, or questioned whether your sadness stemmed from something trivial.'}
+125	125		301							{3: 'Your conversation lasted until the sky began to turn bright. You were finally sleepy, but you had a strategy meeting in two hours before being dispatched to the surface immediately afterward.'}
+126	126		302							"{2: ""...I'm screwed."", 3: '127', 4: ""I should've gone back earlier."", 5: '127'}"
+127	127		201							{1: '1', 2: '500506', 3: '1'}
+128	128		301							{1: '1', 3: 'Hearing the regrets in your tone, Noan picked up an iced coffee from the bar and gently touched your cheek with it.'}
+129	129		302							"{2: ""It's so cold!"", 3: '130', 4: 'Uh...', 5: '130'}"
+130	130		204							{1: '1', 2: '2'}
+131	131		301							"{2: 'Noan', 3: ""You said you wouldn't be able to sleep even if you went back."", 4: '1', 18: '100002497'}"
+132	132		302							{2: 'True...', 3: '133'}
+133	133		204							{1: '1', 2: '1'}
+134	134		301							"{2: 'Noan', 3: ""Just hang in there. You'll be on a transport craft soon. You can sleep then."", 4: '1', 18: '100002498'}"
+135	135		301				AniZhuanchangBegin			{3: 'You took the coffee and said goodbye to him. Neither of you was aware of the storm that would follow.'}
+136	136		202			DialogDisable				{1: '1', 6: '1'}
+137	137		504							
+138	138		306							
+139	139		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg'}
+140	140		201							{1: '1', 2: '500727', 3: '12'}
+141	141		301			DialogEnable				"{1: '1', 2: 'Noan', 3: ""I tried to look for you after I heard you were missing, but Dark Aries was still more or less grounded. I couldn't leave."", 4: '1', 18: '100002499'}"
+142	142		301							"{2: 'Noan', 3: ""Those who would know what happened were the ones who were most wary of me... I didn't know why, but I was sure there was a reason for it."", 4: '1', 18: '100002500'}"
+143	143		301							{2: 'Noan', 3: 'Then you came back... and I found out the real reason from you.', 4: '1', 18: '100002501'}
+144	144		301							{3: 'He sighs deeply and chuckles wryly.'}
+145	145		502							{1: 'DialogDisable'}
+146	146		302							"{2: ""I had a feeling that you'd do something when we talked."", 3: '147'}"
+147	147		302							{2: 'That was why I was paying attention to your actions.', 3: '148'}
+148	148		302							{2: 'No matter how you put it, kidnapping a commandant was...', 3: '149'}
+149	149		301			DialogEnable				{2: 'Noan', 3: 'Yeah. Sorry about that.', 4: '1', 18: '100002502'}
+150	150		302							{2: 'You know you could be treated as a defector for this, right?', 3: '151'}
+151	151		301							{3: 'Noan quietly responds before reaching for your neck where a wound once was, as if checking if it has fully healed.'}
+152	152		302							"{2: ""What would you do if my testimony didn't help?"", 3: '153', 4: '...', 5: '153'}"
+153	153		301							{3: 'Noan is such a gentle person to most people that no one believes he would get angry for anything. Many thought that monitoring him was unnecessary.'}
+154	154		301							{3: 'That is why his reckless action surprised so many, including Dark Aries.'}
+155	155		301							"{2: 'Noan', 3: ""But I knew he would return, and I couldn't let him get away this time."", 4: '1', 18: '100002503'}"
+156	156		301							{3: 'Noan sounds calm as if talking about another standard mission.'}
+157	157		302							"{2: ""You didn't talk to Simon about Bethe."", 3: '158'}"
+158	158		301							"{2: 'Noan', 3: ""I told him the essential parts. Commandant Simon wouldn't talk to me about you or unnecessary things either."", 4: '1', 18: '100002504'}"
+159	159		301							{2: 'Noan', 3: 'I could only vaguely tell where his boundaries lied. It was only going to make my life harder if he thought it was dangerous.', 4: '1', 18: '100002505'}
+160	160		302							"{2: 'So... you were going no matter what.', 3: '161', 4: ""Since you were considering that, you didn't even plan to give up."", 5: '161'}"
+161	161		301							"{2: 'Noan', 3: ""Some people shouldn't be left alive. If he was coming back regardless, it'd be faster if I did it myself, especially when it involved someone I care about."", 4: '1', 18: '100002506'}"
+162	162		204							{1: '1'}
+163	163		301							{3: 'He withdraws his hand that was extended to confirm the wound.'}
+164	164		302							"{2: ""I still wish you'd talked to me..."", 3: '165'}"
+165	165		301							"{2: 'Noan', 3: ""I promise you I'll do that next time..."", 4: '1', 18: '100002507'}"
+166	166		302							"{2: ""Why don't you do it now?"", 3: '167'}"
+167	167		301							{2: 'Noan', 3: 'Sure.', 4: '1', 18: '100002508'}
+168	168		301		1		AniZhuanchangBegin			{3: 'The moonlight begins to fade, and the sky gradually darkens—dawn is coming.'}

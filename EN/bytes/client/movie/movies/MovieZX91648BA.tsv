@@ -1,0 +1,13 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	2		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory278.png'}
+2	3		401							{1: '1', 2: '203'}
+3	4		301			DialogEnable				{3: 'Following the tracks left behind by Lamia, the four of you soon reach a platform in an open area.'}
+4	5		201							{1: '1', 2: '500026'}
+5	6		301							{1: '1', 2: 'Lee', 3: 'Is Lamia here?', 4: '1'}
+6	7		201							{1: '1', 2: '1031001'}
+7	8		301							"{1: '1', 2: 'Liv', 3: ""Something isn't quite right..."", 4: '1'}"
+8	9		202							{1: '1', 6: '1'}
+9	10		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+10	11		301							{3: 'Suddenly, smoke emerges everywhere and engulfs the platform.'}
+11	12		201							{1: '1', 2: '500166', 3: '5'}
+12	13		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Lucia', 3: ""It's a trap! Retreat!"", 4: '1'}"

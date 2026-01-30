@@ -1,0 +1,260 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory12.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		201							{1: '1', 2: '500334', 4: '-450'}
+4	4		201							{1: '2', 2: '500165', 4: '450'}
+5	5		301			DialogEnable				{1: '1', 2: 'Lamia', 3: '...Eek...', 4: '2'}
+6	6		301							{2: 'Roland', 3: 'Not again?', 4: '1'}
+7	7		301							"{2: 'Lamia', 3: ""Um, at our 7 o'clock..."", 4: '2'}"
+8	8		301							"{2: 'Roland', 3: ""Let's take cover first."", 4: '1'}"
+9	9		202							{1: '1', 2: '2', 6: '1'}
+10	10		301							{3: 'Roland and Lamia find a broken wall nearby that can cover both of them, and hide in its shadow against the dawn light.'}
+11	11		301							{3: '...'}
+12	12		301							{3: 'Just as Roland expected, a few Corrupted show up behind their previous position.'}
+13	13		301							"{3: ""There aren't many of them, and they look just like ordinary wandering Corrupted.""}"
+14	14		301							"{3: ""A few hours ago—just after daybreak, to be precise—Roland didn't have any idea yet, but he and Lamia decided to head out first, trying to follow the known clues.""}"
+15	15		301							{3: 'Soon, strange wandering Corrupted began to show up on their route every once in a while.'}
+16	16		301							"{3: ""They kept coming. Every time, they ended up in Lamia and Roland's way, even in the areas where there was nothing to infest.""}"
+17	17		301							"{3: ""Like every time in the past, the small number of Corrupted do not pose any threat. But Roland feels something isn't quite right.""}"
+18	18		301							{3: 'He extends his hand, trying to control their leader to turn back—'}
+19	19		301							{3: '—But nothing happens.'}
+20	20		201							{1: '1', 2: '500334', 4: '-450'}
+21	21		201							{1: '2', 2: '500165', 4: '450'}
+22	22		301							"{1: '1', 2: 'Roland', 3: ""(What's going on? Is it because of this body, or...)"", 4: '1'}"
+23	23		301							"{2: 'Lamia', 3: ""Just a few wandering Corrupted... Can't we just finish them off?"", 4: '2'}"
+24	24		301							{2: 'Roland', 3: 'So?', 4: '1'}
+25	25		301							{2: 'Lamia', 3: '?', 4: '2'}
+26	26		301							"{2: 'Roland', 3: ""Don't you feel strange? These annoying Corrupted just keep coming. They can always find us."", 4: '1'}"
+27	27		301							{2: 'Roland', 3: 'We changed our route many times, they came back every time, even in the areas impossible for Corrupted to exist.', 4: '1'}
+28	28		301							{2: 'Lamia', 3: '(Eek? I thought we were just lost...)', 4: '2'}
+29	29		301							{2: 'Lamia', 3: 'Eek—!', 4: '2'}
+30	30		301							{2: 'Roland', 3: 'Whoever is behind them, I have no idea what they want... Are they just testing us?', 4: '1'}
+31	31		301							{2: 'Roland', 3: '(Not necessarily. They should have sent stronger forces to test us. Maybe they just wanted to change our route, so they sent those Corrupted in the hope that we would avoid them.)', 4: '1'}
+32	32		301							"{2: 'Roland', 3: ""(Better ask Lamia to control them if they ever show up again. I can't let her know that I've lost control of the Corrupted.)"", 4: '1'}"
+33	33		301							"{2: 'Roland', 3: ""Alright, let's kill them all!"", 4: '1'}"
+34	34		301							{2: 'Lamia', 3: '?', 4: '2'}
+35	35		301							"{3: ""Roland still doesn't know why his opponent sent in these soulless weaklings, but he has no time to waste on them.""}"
+36	36		202							{1: '1', 2: '2', 6: '1'}
+37	37		301				AniZhuanchangBegin			{3: 'Roland has a plan in mind. He rushes out from the broken wall, along with a still clueless Lamia.'}
+38	38		201							{1: '1', 2: '500013', 7: '1'}
+39	39		301			AniZhuanchangEnd				{1: '1', 2: 'Corrupted', 3: '——!——!', 4: '1'}
+40	40		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 3: '1'}
+41	41		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 4: '1'}
+42	42		202							{1: '1'}
+43	43		301							{3: 'They wipe off the wandering Corrupted in no time.'}
+44	44		301							"{3: ""Looking at their remains, Roland doesn't feel victorious at all.""}"
+45	45		301				AniZhuanchangBegin			{3: 'This is happening too often, and too easy.'}
+46	46		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+47	47		201							{1: '1', 2: '500008', 4: '-450'}
+48	48		201							{1: '2', 2: '500334', 4: '450'}
+49	49		301			AniZhuanchangEnd				"{1: '1', 2: 'Roland', 3: ""(...This isn't right.)"", 4: '2'}"
+50	50		301							{2: 'Roland?', 3: 'What is it?', 4: '1'}
+51	51		301							{2: 'Roland', 3: '(What do they want from these meaningless attacks?)', 4: '2'}
+52	52		301							{2: 'Roland', 3: '(Whether they want to get rid of us, or make us leave, none of that is going to happen.)', 4: '2'}
+53	53		301							"{2: 'Roland?', 3: ""Unlike humans, attrition warfare isn't going to work on Ascendants. But if the opponents can control Corrupted, they are probably no different."", 4: '1'}"
+54	54		301							{2: 'Roland?', 3: 'They are definitely aware that such a trivial attack is never going to pose any threat. If they send in all the Corrupted together, they might at least have a chance.', 4: '1'}
+55	55		301							{2: 'Roland', 3: '(Which means, they must be doing this on purpose for some reason.)', 4: '2'}
+56	56		301							{2: 'Roland?', 3: 'The question is... What do they want?', 4: '1'}
+57	57		204							{1: '2', 2: '2'}
+58	58		301				AniZhuanchangBegin			{2: 'Roland', 3: '...Interesting.', 4: '2'}
+59	59		202							{1: '1', 2: '2', 6: '1'}
+60	60		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory12.jpg'}
+61	61		201							{1: '1', 2: '500334', 4: '-450'}
+62	62		201							{1: '2', 2: '500165', 4: '450'}
+63	63		301			AniZhuanchangEnd				{1: '1', 2: 'Lamia', 3: 'Eek... Just what are you mumbling? Say something that I can understand.', 4: '2'}
+64	64		301							{3: 'Perhaps Roland and Lamia are staying at the same place for too long, as Roland talks, more Corrupted have appeared on the other side of the road, stumbling toward them.'}
+65	65		301							{2: 'Lamia', 3: 'Eek...', 4: '2'}
+66	66		301							{2: 'Roland', 3: '...Have they come again?', 4: '1'}
+67	67		301							{2: 'Roland', 3: '(They must be coming from the exact same spot. I walked a large circle just to confirm this.)', 4: '1'}
+68	68		301							{3: 'Roland watches the Corrupted as they march forward. He already knows what to do.'}
+69	69		301							{2: 'Roland', 3: 'Lamia, make them stop.', 4: '1'}
+70	70		301							{2: 'Lamia', 3: '?', 4: '2'}
+71	71		301							"{3: ""Lamia wonders why Roland doesn't do it himself, but she follows his order anyway—""}"
+72	72		301							"{3: ""But the Corrupted aren't stopping. Actually, their action is not impacted at all.""}"
+73	73		301							{2: 'Lamia', 3: '...Eek?', 4: '2'}
+74	74		301							{2: 'Roland', 3: '...I knew it.', 4: '1'}
+75	75		301				AniZhuanchangBegin			"{3: ""Lamia's Ascendant power cannot take control of the Corrupted. That means the opponents possess similar abilities to control them, if not stronger.""}"
+76	76		202							{1: '1', 2: '2', 6: '1'}
+77	77		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+78	78		201							{1: '1', 2: '500008', 4: '-450'}
+79	79		201							{1: '2', 2: '500334', 4: '450'}
+80	80		301			AniZhuanchangEnd				"{1: '1', 2: 'Roland', 3: '(The only possible explanation is, these things must represent some sort of ""information"" that the other party is trying to show us.)', 4: '2'}"
+81	81		301							{2: 'Roland?', 3: 'Could it be just an out-of-control automatic factory?', 4: '1'}
+82	82		301							{2: 'Roland', 3: '(How do you explain that Lamia and I, as Ascendants, both cannot control their action?)', 4: '2'}
+83	83		301							{2: 'Roland?', 3: 'You seem to have already found an answer.', 4: '1'}
+84	84		301							{2: 'Roland', 3: 'Maybe.', 4: '2'}
+85	85		301							"{2: 'Roland?', 3: ""Then what are you waiting for? I don't think I need to remind you of anything."", 4: '1'}"
+86	86		301							{2: 'Roland', 3: '(...Perhaps all I need is this line from you.)', 4: '2'}
+87	87		301							{2: 'Roland?', 3: 'You always have this problem.', 4: '1'}
+88	88		301				AniZhuanchangBegin			{2: 'Roland', 3: '(...Tsk.)', 4: '2'}
+89	89		202							{1: '1', 2: '2', 6: '1'}
+90	90		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory12.jpg'}
+91	91		201							{1: '1', 2: '500334', 3: '2', 4: '-450'}
+92	92		201							{1: '2', 2: '500165', 4: '450'}
+93	93		301			AniZhuanchangEnd				"{1: '1', 2: 'Roland', 3: ""Well, let's just try to walk into their trap."", 4: '1'}"
+94	94		301							{2: 'Lamia', 3: '...?', 4: '2'}
+95	95		301							"{2: 'Roland', 3: ""We won't get what we want just from any random scavenger or Babylonia guy."", 4: '1'}"
+96	96		301							"{2: 'Roland', 3: ""The easiest way is to ask Gabriel... But I don't think we can find him."", 4: '1'}"
+97	97		301							{3: 'Roland learned from The Merciful One that Alpha survived the battle... Which means, Gabriel is probably already dead.'}
+98	98		301							"{2: 'Roland', 3: 'So... We can only go to those guys behind the ""show"".', 4: '1'}"
+99	99		301							{2: 'Lamia', 3: 'Eek... Are we really going after them?', 4: '2'}
+100	100		301							{2: 'Roland', 3: 'Actually, I think we are pretty lucky. They are already looking for us before we go after them. These Corrupted can prove it.', 4: '1'}
+101	101		301							"{2: 'Roland', 3: ""And I'm not going to let the chance slip."", 4: '1'}"
+102	102		301							{2: 'Lamia', 3: '...Alright.', 4: '2'}
+103	103		301							{3: 'Lamia can only agree.'}
+104	104		301							"{2: 'Roland', 3: ""Well then, let's trace these Corrupted and find where they come from."", 4: '1'}"
+105	105		401							{1: '1', 2: '36'}
+106	106		301				AniZhuanchangBegin			{2: 'Roland', 3: 'Remember, Fortis Fortuna Adiuvat (fortune favors the bold).', 4: '1'}
+107	107		202							{1: '1', 2: '2', 6: '1'}
+108	108		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory5.jpg'}
+109	109		401							{1: '1', 2: '210'}
+110	110		301			AniZhuanchangEnd				"{3: ""Roland and Lamia have been walking toward the Corrupted's origin amidst ruins and wasteland.""}"
+111	111		301							{3: 'Corrupted have been appearing sporadically, and at an increased frequency as they move forward.'}
+112	112		301							{3: 'This makes Roland excited—at least it proves his theory that the Corrupted were dispatched from the same place.'}
+113	113		201							{1: '1', 2: '500334'}
+114	114		301							{1: '1', 2: 'Roland', 3: 'So... What will happen next?', 4: '1'}
+115	115		201							{1: '1', 2: '500165'}
+116	116		301							"{1: '1', 2: 'Lamia', 3: ""(Once again, there's someone walking in front, giving orders. Feels like the good old days...)"", 4: '1'}"
+117	117		301							{2: 'Lamia', 3: '(Hopefully this gives me a higher chance to survive... Hmm...)', 4: '1'}
+118	118		202							{1: '1', 6: '1'}
+119	119		301							{3: 'Roland and Lamia keep walking for a while, but Corrupted have stopped showing up.'}
+120	120		301							{3: '500 meters, 1 kilometer, 2 kilometers...'}
+121	121		301							{3: 'The Corrupted that always appear with fixed interval are now gone.'}
+122	122		301							{3: 'What does it mean? Roland starts to wonder.'}
+123	123		301							{3: 'Now that the Corrupted are no longer showing up, they must have achieved something. Which means—'}
+124	124		301							"{3: ""Roland's thoughts are interrupted by the engine roar in the sky. In fact, he is expecting it—""}"
+125	125		201							{1: '1', 2: '500334'}
+126	126		301				AniZhuanchangBegin			{1: '1', 2: 'Roland', 3: '...Is that it?', 4: '1'}
+127	127		202							{1: '1', 6: '1'}
+128	128		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory378.png'}
+129	129		301			AniZhuanchangEnd				{3: 'Roland and Lamia follow the sound, until it goes low in a particular direction, then becomes almost inaudible.'}
+130	130		301							{3: 'They continue heading in that direction, and finally arrive at the destination after climbing over a couple of building ruins.'}
+131	131		301							{3: 'They see a transport aircraft with Babylonia signs parked between the collapsed buildings.'}
+132	132		201							{1: '1', 2: '500334', 4: '-450'}
+133	133		201							{1: '2', 2: '500165', 4: '450'}
+134	134		301							{1: '1', 2: 'Lamia', 3: 'Eek... This is a Babylonia aircraft, right? Why is it here alone?', 4: '2'}
+135	135		301							{2: 'Roland', 3: 'Since it has come here alone, it is probably not carrying supplies or equipment, but—', 4: '1'}
+136	136		301							{3: 'They see three busy-working figures at a crossing further away.'}
+137	137		301				AniZhuanchangBegin			{2: 'Roland', 3: 'Task Force members on a mission.', 4: '1'}
+138	138		202							{1: '1', 2: '2', 6: '1'}
+139	139		201							{1: '1', 2: '500168'}
+140	140		301			AniZhuanchangEnd				{1: '1', 2: 'Vera', 3: 'What the hell are you two doing?', 4: '1'}
+141	141		301							{3: 'Breaking the silence, Vera closes the holo-projection on her terminal and turns to face her two teammates nearby.'}
+142	142		301							"{2: 'Vera', 3: ""It's a door! Why didn't you just open it?!"", 4: '1'}"
+143	143		202							{1: '1', 6: '1'}
+144	144		201							{1: '1', 2: '500336'}
+145	145		301							"{1: '1', 2: 'Noctis', 3: ""Oh, could it open? I didn't notice..."", 4: '1'}"
+146	146		201							{1: '1', 2: '500168'}
+147	147		301							{1: '1', 2: 'Vera', 3: 'Set up the gear and prepare to work.', 4: '1'}
+148	148		202							{1: '1', 6: '1'}
+149	149		201							{1: '1', 2: '500328'}
+150	150		301							{1: '1', 2: 'No. 21', 3: 'Roger.', 4: '1'}
+151	151		202							{1: '1', 6: '1'}
+152	152		301							{3: 'The Constructs begin to take out the node device used for enhancing remote connection from the crates they have been carrying.'}
+153	153		201							{1: '1', 2: '500334', 4: '-450'}
+154	154		201							{1: '2', 2: '500165', 4: '450'}
+155	155		301							{1: '1', 2: 'Lamia', 3: 'Babylonia Task Force? What are they doing here?', 4: '2'}
+156	156		301							"{2: 'Roland', 3: 'Are they here for ""her""...? No, it can\'t be.', 4: '1'}"
+157	157		301							{3: 'Roland soon dispels the idea from his mind after thinking about that female.'}
+158	158		301							"{2: 'Roland', 3: '""She"" doesn\'t look like the type of agent that would attract Babylonia\'s attention.', 4: '1'}"
+159	159		301							"{2: 'Roland', 3: 'Could it be us then...? No, I don\'t think so. We haven\'t done anything. The last time we exposed ourselves, we were with ""her""...', 4: '1'}"
+160	160		301							"{3: ""Rationally, Roland knows he should stay away from the Task Force as they have no conflicts of interest with him, especially when his main mission isn't going anywhere.""}"
+161	161		301							{3: 'But the Task Force must be sent here for some reason. Maybe that is related to what he wants to know.'}
+162	162		301							"{2: 'Roland', 3: '(There is no need for a direct engagement. Apart from ""someone"", the rest probably won\'t even listen to me.)', 4: '1'}"
+163	163		301							{2: 'Roland', 3: '(But I should at least find out what they are up to.)', 4: '1'}
+164	164		301							{2: 'Roland', 3: 'Lamia? Time for you to shine. Go eavesdrop on them, and find out what they are here for.', 4: '1'}
+165	165		301							{2: 'Lamia', 3: 'Eek... Me?', 4: '2'}
+166	166		301							"{2: 'Roland', 3: ""I can't go stealth like you."", 4: '1'}"
+167	167		301				AniZhuanchangBegin			{2: 'Lamia', 3: 'Um... Alright.', 4: '2'}
+168	168		202							{1: '1', 2: '2', 6: '1'}
+169	169		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory373.png'}
+170	170		201							{1: '1', 2: '500168', 3: '1'}
+171	171		301			AniZhuanchangEnd				"{1: '1', 2: 'Vera', 3: ""Perhaps they've transferred Murray to the Hellhounds. They're much better than you two, after all."", 4: '1'}"
+172	172		301							{3: 'Vera has quickly regained her composure, as well as her sarcasm.'}
+173	173		202							{1: '1', 6: '1'}
+174	174		201							{1: '1', 2: '500328', 3: '4', 4: '-450'}
+175	175		201							{1: '2', 2: '500336', 3: '4', 4: '450'}
+176	176		301							"{1: '1', 2: 'Noctis', 3: ""What?! No, I won't allow that! You're screwing with me, aren't you?"", 4: '2'}"
+177	177		202							{1: '1', 2: '2', 6: '1'}
+178	178		201							{1: '1', 2: '500168', 3: '1'}
+179	179		301							"{1: '1', 2: 'Vera', 3: ""Ha... That's an improvement. At least you understand irony now. Alright, let's stop complaining—we have the Gray Raven Commandant with us."", 4: '1'}"
+180	180		202							{1: '1', 6: '1'}
+181	181		201							{1: '1', 2: '500328', 3: '4', 4: '-450'}
+182	182		201							{1: '2', 2: '500336', 3: '4', 4: '450'}
+183	183		301							"{1: '1', 2: 'No. 21', 3: ""I don't like it."", 4: '1'}"
+184	184		202							{1: '1', 2: '2', 6: '1'}
+185	185		201							{1: '1', 2: '500168'}
+186	186		301							"{1: '1', 2: 'Vera', 3: ""A mission is a mission, 21. And if someone here doesn't like it, it sure as hell is me."", 4: '1'}"
+187	187		202							{1: '1', 6: '1'}
+188	188		201							{1: '1', 2: '500328', 4: '-450'}
+189	189		201							{1: '2', 2: '500336', 3: '4', 4: '450'}
+190	190		301							{1: '1', 2: 'No. 21', 3: 'Fine. Understood.', 4: '1'}
+191	191		301							{3: 'Lamia continues to listen for a while, but the only useful information she gathers is that the Gray Raven Commandant is involved in this mission.'}
+192	192		301				AniZhuanchangBegin			"{3: ""Once Lamia gets ahold of the approximate direction and distance of Cerberus' destination, she leaves them.""}"
+193	193		202							{1: '1', 2: '2', 6: '1'}
+194	194		201							{1: '1', 2: '500165'}
+195	195		301			AniZhuanchangEnd				{1: '1', 2: 'Lamia', 3: '(...They definitely have something to do here...)', 4: '1'}
+196	196		301							{2: 'Lamia', 3: '(Better let Roland know...)', 4: '1'}
+197	197		301							"{2: 'Lamia', 3: '(If I can get Roland to help me... to go to ""that place""...)', 4: '1'}"
+198	198		301							"{2: 'Lamia', 3: ""(Eek... Guess I'll just have to move with him now.)"", 4: '1'}"
+199	199		301							{3: '…………'}
+200	200		301				AniZhuanchangBegin			{3: '…………'}
+201	201		201							{1: '1', 2: '500334', 4: '-450'}
+202	202		201							{1: '2', 2: '500165', 4: '450'}
+203	203		301			AniZhuanchangEnd				{1: '1', 2: 'Roland', 3: '—I see.', 4: '1'}
+204	204		301							{3: 'Cerberus, and the Commandant of Gray Raven.'}
+205	205		301							"{3: ""From Roland's past experiences, there's nothing they have in common. Yet now they have come together.""}"
+206	206		301							{3: 'The strange combo gives Roland some weird thoughts.'}
+207	207		301							{2: 'Roland', 3: '...Are they here for Luna?', 4: '1'}
+208	208		301							{3: 'Whatever they have discovered, this mission must be related to Luna.'}
+209	209		301							{3: 'He also realizes why the Corrupted are no longer showing up.'}
+210	210		301							{3: 'Because they have already been guided to the right track.'}
+211	211		301							{2: 'Roland', 3: 'Interesting...', 4: '1'}
+212	212		301							"{3: ""Whoever is behind all this, it's worth investigating.""}"
+213	213		301							"{3: ""This opportunity is presented to him when he almost loses his direction. It's almost too good to be true, like a blatant trap.""}"
+214	214		301							{3: 'But Roland never fears traps. He is used to them.'}
+215	215		301							{3: 'He looks forward to where it will take him.'}
+216	216		301							{3: 'The only problem is...'}
+217	217		204							{1: '1', 2: '2'}
+218	218		301							{2: 'Roland', 3: 'The speed difference.', 4: '1'}
+219	219		301							{2: 'Lamia', 3: '?', 4: '2'}
+220	220		301							{3: 'Both Constructs and Ascendants can walk long distance without getting tired, but they are all based on the human body.'}
+221	221		301							"{3: ""Lamia can travel a lot faster, but Roland doesn't trust her enough.""}"
+222	222		301				AniZhuanchangBegin			{3: 'In that case—'}
+223	223		202							{1: '1', 2: '2', 6: '1'}
+224	224		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory378.png'}
+225	225		301			AniZhuanchangEnd				{3: 'Half an hour later...'}
+226	226		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+227	227		201							{1: '1', 2: '500165'}
+228	228		301							"{1: '1', 2: 'Lamia', 3: ""Eek—! This is way too heavy! I'm so tired! I need a break!"", 4: '1'}"
+229	229		201							{1: '1', 2: '500334'}
+230	230		301							"{1: '1', 2: 'Roland', 3: ""If we keep going at this speed, we can arrive two hours earlier than Babylonia. That's a win-win for both of us."", 4: '1'}"
+231	231		201							{1: '1', 2: '500165'}
+232	232		301							{1: '1', 2: 'Lamia', 3: 'In what way is this a win-win?! Eek—! A rock!', 4: '1'}
+233	233		202							{1: '1', 6: '1'}
+234	234		301							{3: 'Even with a rein on her waist, Lamia manages to jump over a rock with incredible dexterity.'}
+235	235		301							"{3: ""But the old cart she is pulling isn't so lucky. It bounces high above the ground and lands again, along with Roland, who is sitting inside.""}"
+236	236		201							{1: '1', 2: '500334'}
+237	237		301							"{1: '1', 2: 'Roland', 3: ""Watch out, Lamia! I can't find another one if this thing breaks apart!"", 4: '1'}"
+238	238		201							{1: '1', 2: '500165'}
+239	239		301				AniZhuanchangBegin			"{1: '1', 2: 'Lamia', 3: ""Then don't make me pull it eeek—"", 4: '1'}"
+240	240		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+241	241		202							{1: '1', 6: '1'}
+242	242		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory18.jpg'}
+243	243		401							{1: '1', 2: '211'}
+244	244		301			AniZhuanchangEnd				{3: 'Meanwhile...'}
+245	245		201							{1: '1', 2: '500308'}
+246	246		301							{1: '1', 2: 'Cinderelik', 3: 'Time for your regular report.', 4: '1'}
+247	247		301							{2: '???', 3: '...Situation normal. Maintaining cruising surveillance.'}
+248	248		301							{2: '???', 3: 'Altitude...6,500 meters. This is the best height for this body. I missed the target, but got to fly a little longer.'}
+249	249		301							"{2: '???', 3: 'But ""Loki"" doesn\'t like wings... I can never understand.'}"
+250	250		204							{1: '1', 2: '8'}
+251	251		301							{2: 'Cinderelik', 3: '...', 4: '1'}
+252	252		204							{1: '1'}
+253	253		301							{2: 'Cinderelik', 3: 'Stop tracking irrelevant targets.', 4: '1'}
+254	254		301							"{2: '???', 3: 'I just wanted to let ""Loki"" have some fun.'}"
+255	255		301							"{2: '???', 3: ""Plus, she was also one of the high-value targets that Mister mentioned. She claimed she no longer had the thing, but I didn't believe her.""}"
+256	256		301							{2: 'Cinderelik', 3: 'Okay.', 4: '1'}
+257	257		301							{2: 'Cinderelik', 3: 'Stick to the plan.', 4: '1'}
+258	258		301							{2: 'Cinderelik', 3: 'Stay focused. Your M.I.N.D. is easily affected by other things.', 4: '1'}
+259	259		301		1		AniZhuanchangBegin			{2: '???', 3: '...Understood.'}

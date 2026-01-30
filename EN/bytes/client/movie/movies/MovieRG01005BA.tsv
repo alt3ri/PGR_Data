@@ -1,0 +1,596 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory895.jpg'}
+2	2		401							{1: '1', 2: '6155'}
+3	3		502						250.0	{1: 'DialogDisable'}
+4	4		107							{1: 'Halo Fortress Main Keep', 2: 'Before the Prison Riot'}
+5	5		301							{3: 'Before the Prison Riot, Halo Fortress Main Keep'}
+6	6		108						300.0	{1: '1'}
+7	7		401							{1: '2', 2: '4819'}
+8	8		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab'}
+9	9		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+10	10		201							{1: '1', 2: '500787'}
+11	11		301			DialogEnable				{1: '1', 2: 'Death of Iron', 3: '【kuroname】 died thirty years ago.', 4: '1'}
+12	12		401							{1: '2', 2: '10028805'}
+13	13		301							{3: 'Click—the trigger is pulled.'}
+14	14		301							{2: 'Death of Iron', 3: '...But you look... You look just as young as you were thirty years ago. How is that possible?', 4: '1'}
+15	15		301							"{2: 'Death of Iron', 3: ""I sense no power of the Sanctuary within you, but the dream nets didn't react, either."", 4: '1'}"
+16	16		301							{2: 'Death of Iron', 3: 'You... what exactly are you?', 4: '1'}
+17	17		202							{1: '1'}
+18	18		401							{1: '2', 2: '4280'}
+19	19		301							"{3: ""A violent buzzing pierces your mind like needles drilling into bone. Right now, you can't process the Death of Iron's confusing words.""}"
+20	20		302							{2: '(Try to move)', 3: '21', 4: '(Try to speak)', 5: '21'}
+21	21		301							{3: 'An overwhelming, suffocating pressure seizes your mind, like countless blades scraping against each other next to your ears, wildly tearing at your eardrums.'}
+22	22		301							"{3: ""Urgh... can't... move.""}"
+23	23		302							{2: '(I must focus...)', 3: '24'}
+24	24		301							{3: 'You focus your mind on fighting it. This is the only way to break free from control, just like in your previous battle with the Archangel.'}
+25	25		401							{1: '2', 2: '4294'}
+26	26		301							"{3: ""Suddenly, the dreamcatcher on Death of Iron's desk begins to tremble.""}"
+27	27		401						100.0	{1: '2', 2: '4294'}
+28	28		401							{1: '2', 2: '4294'}
+29	29		401							{1: '2', 2: '5315'}
+30	30		301							{3: 'A storm sweeps through the fortress. Clear, resonant chimes ring from every corner, converging like rivers flowing into the sea and rising together into earth-shattering noise.'}
+31	31		301							{3: 'This means that Watanabe has begun the military operation to seize the fortress.'}
+32	32		402							{1: '5315'}
+33	33		201							{1: '1', 2: '500787'}
+34	34		402							{1: '4819'}
+35	35		301							{1: '1', 2: 'Death of Iron', 3: '—?!', 4: '1'}
+36	36		202							{1: '1'}
+37	37		301							"{3: ""Momentarily surprised by the Demon's sudden intrusion, Death of Iron's imposing aura falters.""}"
+38	38		301							{3: 'You seize this moment—'}
+39	39		104						300.0	{1: '-200|-100|-200', 2: '0.35'}
+40	40		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+41	41		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+42	42		401							{1: '2', 2: '5531'}
+43	43		401							{1: '2', 2: '5316'}
+44	44		301							{3: 'Swish-slash—'}
+45	45		301							{3: 'Using both arms, you shield your head with all your strength as you crash into the glass window beside you.'}
+46	46		401							{1: '2', 2: '4895'}
+47	47		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '2'}
+48	48		301							{3: 'Nauseating weightlessness suddenly crawls up your spine, and as the world spins, you cry out—'}
+49	49		302							{2: 'Nirvatia!!!', 3: '50'}
+50	50		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+51	51		401							{1: '2', 2: '4044'}
+52	52		401							{1: '2', 2: '10106504'}
+53	53		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+54	54		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+55	55		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory38.jpg'}
+56	56		201							{1: '1', 2: '501281'}
+57	57		301							{1: '1', 3: 'The raven shrieks as she dives down, sweeping over the chaotic military formations below. Gray feathers trail behind her as she changes form in mid-air and catches you in her embrace.'}
+58	58		301				DialogDisable			{2: 'Nirvatia', 3: '...【kuroname】, are you hurt?', 4: '1'}
+59	59		302							"{2: ""We've bought enough time."", 3: '60'}"
+60	60		302							"{2: ""Continue as planned. We're going to open the city gates!"", 3: '61'}"
+61	61		301			DialogEnable				{2: 'Nirvatia', 3: 'Copy.', 4: '1'}
+62	62		202							{1: '1', 6: '1'}
+63	63		401							{1: '2', 2: '10106504'}
+64	64		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+65	65		104							{1: '-300|-150|-300', 2: '0.25'}
+66	66		301							{3: 'Nirvatia beats her black wings as she holds you tightly and dives toward the fortress gates.'}
+67	67		401							{1: '2', 2: '4779'}
+68	68		301							"{3: ""You draw a sidearm from your waist. It's the one Morigan had hidden before you entered the city.""}"
+69	69		301				DialogDisable			{3: 'Then, aiming at the blood-red sun overhead, you pull the trigger.'}
+70	70		401							{1: '2', 2: '5669'}
+71	71		402							{1: '6155'}
+72	72		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+73	73		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+74	74		101				AniZhuanchangBegin			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+75	75		401					2000.0		{1: '1', 2: '6206'}
+76	76		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory315.png'}
+77	77		502							{1: 'DialogEnable'}
+78	78		201							{1: '1', 2: '500965', 7: '1'}
+79	79		301			AniZhuanchangEnd				"{1: '1', 2: 'Army Sergeant', 3: ""Demons have infiltrated the fortress! Patrol units, tighten security! Don't let even a fly slip through!"", 4: '1'}"
+80	80		202							{1: '1', 6: '1'}
+81	81		301			RImgBg1Shake				{2: 'Soldiers', 3: 'Yes, sir!'}
+82	82		202							{1: '1', 2: '2', 3: '3'}
+83	83		401							{1: '2', 2: '4557'}
+84	84		301							{3: 'After noticing signals from the dreamcatcher, about a hundred soldiers quickly assemble into emergency formation, hastily setting up defenses around the city gates against the brewing storm.'}
+85	85		402							{1: '4557'}
+86	86		201							{1: '1', 2: '500792'}
+87	87		301							{1: '1', 2: 'Outgoing Soldier', 3: 'Hey, so your squad got called, too, huh?', 4: '1'}
+88	88		301							{2: 'Outgoing Soldier', 3: 'I heard that you were playing cards with some prisoners one time, and when one of them called your bluff, you shot him dead. Is that true?', 4: '1'}
+89	89		203							{1: '1', 2: '0.25', 3: '400'}
+90	90		201							{1: '2', 2: '500791', 4: '-400'}
+91	91		301							"{1: '1', 2: 'Angry Soldier', 3: ""No, that's not true. I shot everybody dead."", 4: '2'}"
+92	92		301							{2: 'Angry Soldier', 3: 'Ah, screw it, forget about cards. I got dragged out here to stand guard right after I finally drew a damn good hand.', 4: '2'}
+93	93		301							"{2: 'Outgoing Soldier', 3: ""Why are you complaining? They're hunting Demons inside, while we're just here soaking up some sun and waiting to get paid."", 4: '1'}"
+94	94		301							"{2: 'Outgoing Soldier', 3: ""Anyway, we've killed off most of the rebels already, so who else could—"", 4: '1'}"
+95	95		202							{1: '1', 2: '2', 6: '1'}
+96	96		401							{1: '2', 2: '9342031'}
+97	97		301			RImgBg1Shake				{3: 'Whoosh—A sharp, prolonged noise pierces the sky behind them.'}
+98	98		301							{3: 'The soldiers turn around in terror as a red signal flare streaks through the sky, leaving a trail of flame and slicing a brilliant gash across the heavens.'}
+99	99		201							{1: '1', 2: '500965'}
+100	100		301							"{1: '1', 2: 'Army Sergeant', 3: ""Wh-what's that?!"", 4: '1'}"
+101	101		203							{1: '1', 2: '0.25', 3: '-400'}
+102	102		201							{1: '2', 2: '500792', 4: '400'}
+103	103		301							"{1: '1', 2: 'Outgoing Soldier', 3: ""Sir! It's a signal flare!"", 4: '2'}"
+104	104		301							{2: 'Army Sergeant', 3: 'Fool! I mean over there—!', 4: '1'}
+105	105		202							{1: '1', 2: '2'}
+106	106		301				AniZhuanchangBegin			"{3: ""Hearing the officer's horrified voice, everyone turns in alarm toward the distant horizon.""}"
+107	107		306							{1: '1'}
+108	108		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory393.jpg'}
+109	109		401						2000.0	{1: '1', 2: '36'}
+110	110		401							{1: '1', 2: '6191'}
+111	111		401							{1: '2', 2: '5671'}
+112	112		301			AniZhuanchangEnd				{3: 'In the billowing smoke, countless black figures emerge.'}
+113	113		301							{3: 'The shadows steadily grow larger, soon merging into a single, formidable battle line.'}
+114	114		301							"{3: ""At the very front, a gray battle flag juts into the sky and flutters in the wind, guiding the soldiers' advance.""}"
+115	115		306							
+116	116		201							{1: '1', 2: '500696', 3: '4'}
+117	117		301							{1: '1', 2: 'Taco', 3: 'Warriors! Thirty years ago, on this soil beneath our feet, our fathers faced blades and spilled blood. They charged fearlessly until they drove the Demons back to Hell!', 4: '1'}
+118	118		301							{2: 'Taco', 3: 'For thirty long years, the Sanctuary has twisted our history, clipped our wings, and kept us penned like livestock in the sun. We were reduced to tail-wagging beasts begging for scraps.', 4: '1'}
+119	119		301							"{2: 'Taco', 3: ""Now it's our turn to take up our fathers' banners and set the stage for revolution once more!"", 4: '1'}"
+120	120		301			RImgBg1Shake				{2: 'Taco', 3: 'Warriors! Today is our day! Let these traitors see who the real beasts are, and who the true butchers are!', 4: '1'}
+121	121		202							{1: '1'}
+122	122		401							{1: '2', 2: '5534'}
+123	123		301							{3: 'A whistle cuts through the air, followed by deafening roars that rattle mountains and plains.'}
+124	124		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+125	125		401							{1: '2', 2: '5671', 3: '1'}
+126	126		201							{1: '1', 2: '500696', 3: '5'}
+127	127		301			RImgBg1Shake	AniZhuanchangBegin			{1: '1', 2: 'Taco', 3: 'Charge—!!!', 4: '1'}
+128	128		202							{1: '1', 6: '1'}
+129	129		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+130	130		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+131	131		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory315.png'}
+132	132		401							{1: '2', 2: '5669'}
+133	133		401						200.0	{1: '2', 2: '5671'}
+134	134		401						100.0	{1: '2', 2: '5669'}
+135	135		401							{1: '2', 2: '5669'}
+136	136		301			AniZhuanchangEnd				{3: 'Horse hooves trample the earth with unstoppable force, charging toward the fortress defenses. Dust billows like surging ocean waves.'}
+137	137		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+138	138		201							{1: '1', 2: '500965', 7: '1'}
+139	139		301			PanelActor1Shake				{1: '1', 2: 'Army Sergeant', 3: 'En-enemy attack!!', 4: '1'}
+140	140		301							{2: 'Army Sergeant', 3: 'Everyone, prepare for bat—', 4: '1'}
+141	141		401							{1: '2', 2: '4636'}
+142	142		203							{1: '1', 2: '0.25', 4: '-50'}
+143	143		301							{2: 'Army Sergeant', 3: 'Gurgk...!', 4: '1'}
+144	144		201							{1: '2', 2: '501247', 4: '-400', 5: '-100', 7: '1'}
+145	145		203						200.0	{1: '2', 2: '0.25', 3: '250'}
+146	146		401							{1: '2', 2: '5321'}
+147	147		401							{1: '2', 2: '2921'}
+148	148		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+149	149		202							{1: '1', 2: '2', 6: '1'}
+150	150		301							{3: 'The sandy ground beside the officer suddenly collapses, and a black shadow bursts out at lightning speed. With swift, precise strikes, the phantom drives its blade straight into his heart.'}
+151	151		201							{1: '1', 2: '500792', 4: '-400'}
+152	152		201							{1: '2', 2: '500791', 4: '400'}
+153	153		301				DialogDisable			{1: '1', 2: 'Outgoing Soldier', 3: 'Who? Ugh...!', 4: '1'}
+154	154		401							{1: '2', 2: '5321'}
+155	155		401							{1: '2', 2: '1505'}
+156	156		501				PanelActor1Shake			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiChopping01.prefab', 2: '2', 3: '1'}
+157	157		203						350.0	{1: '1', 2: '0.25', 3: '-400', 4: '-1000'}
+158	158		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiChopping01.prefab', 4: '1'}
+159	159		202							{1: '1', 6: '1'}
+160	160		301			DialogEnable	DialogDisable			{2: 'Angry Soldier', 3: 'You...!', 4: '2'}
+161	161		401							{1: '2', 2: '5669'}
+162	162		501				PanelActor2Shake			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2', 3: '2'}
+163	163		203						350.0	{1: '2', 2: '0.25', 3: '400', 4: '-1000'}
+164	164		202							{1: '2', 6: '1'}
+165	165		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 4: '2'}
+166	166		301			DialogEnable				{3: 'A cold gleam flashes. Gunpowder smoke drifts through the air as two corpses fall like cut sticks, terror frozen on their faces as they plunge into the blood-soaked mud.'}
+167	167		201							{1: '1', 2: '500284'}
+168	168		301							{1: '1', 2: 'Calm Veteran', 3: '...', 4: '1'}
+169	169		202							{1: '1'}
+170	170		401							{1: '2', 2: '4264'}
+171	171		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+172	172		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+173	173		301							{3: 'At the same time, waves of anguished cries and gunfire echo from various points below the city.'}
+174	174		301							{3: 'As the rebel forces advance like a surging tide, assassins wipe out the guards before they can mount a counterattack.'}
+175	175		401							{1: '2', 2: '5504'}
+176	176		301							{3: 'Clang... clang...'}
+177	177		301							{3: 'The city gate slowly rises as dark red rust flakes off like congealed blood. The grinding hinges are drowned out by gunfire, like a dying giant knocking on the gates of Hell.'}
+178	178		301				DialogDisable			{3: 'At the end of darkness, you and Nirvatia walk upon the sea of corpses, slowly emerging from the city gate and bathing in the radiance of rebirth.'}
+179	179		302							{2: 'Halo Fortress has opened its gates!', 3: '180'}
+180	180		302							"{2: ""Follow Gray Raven's banner and go to war! Reclaim the glory and dignity that belongs to you!"", 3: '181'}"
+181	181		401							{1: '2', 2: '5671'}
+182	182		301			DialogEnable	DialogDisable			"{3: ""Gunfire and battle cries surge like a rising wave, growing more intense and staining the decayed earth blood red in response to 【kuroname】's call.""}"
+183	183		307						100.0	"{1: ""This is the moment when all of humanity's humiliation and fear transform into unstoppable wrath."", 3: '40', 4: 'ffffffff'}"
+184	184		301							"{3: ""This is the moment when all of humanity's humiliation and fear transform into unstoppable wrath.""}"
+185	185		307						200.0	{2: '1'}
+186	186		307						100.0	{1: 'It ignites the <phonetic=war><color=#ff4e4eff>furnace</color></phonetic> powerful enough to devour the old world and fuel rebirth.', 3: '40'}
+187	187		301				AniZhuanchangBegin			{3: 'It ignites the <phonetic=war><color=#ff4e4eff>furnace</color></phonetic> powerful enough to devour the old world and fuel rebirth.'}
+188	188		402							{1: '4264'}
+189	189		402							{1: '5671'}
+190	190		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+191	191		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+192	192		307							{2: '1', 3: '60', 5: '0', 6: '1'}
+193	193		502							{1: 'DialogDisable'}
+194	194		401						2000.0	{1: '1', 2: '36'}
+195	195		401							{1: '1', 2: '370'}
+196	196		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory49.jpg'}
+197	197		107			AniZhuanchangEnd				{1: 'Halo Fortress', 2: 'Meanwhile'}
+198	198		301							{3: 'Halo Fortress.'}
+199	199		108							{1: '1'}
+200	200		502							{1: 'RImgBg1Shake'}
+201	201		401							{1: '2', 2: '5671'}
+202	202		201							{1: '1', 2: '500773', 3: '7'}
+203	203		301			DialogEnable				{1: '1', 2: 'Rebel Soldier', 3: 'Attack!!', 4: '1'}
+204	204		202							{1: '1'}
+205	205		301							"{3: ""A dozen rebel soldiers charge ahead. They are the first to break into the fortress's main keep.""}"
+206	206		201							{1: '1', 2: '500965'}
+207	207		301							{1: '1', 2: 'Army Sergeant', 3: 'Drop!', 4: '1'}
+208	208		202							{1: '1', 6: '1'}
+209	209		401							{1: '2', 2: '4886'}
+210	210		301			RImgBg1Shake				"{3: ""The defending soldiers hiding on both sides pull the ropes in unison, and the main keep's open iron gate comes crashing down with a thunderous roar.""}"
+211	211		201							{1: '1', 2: '500965'}
+212	212		301							{1: '1', 2: 'Army Sergeant', 3: 'Aim—', 4: '1'}
+213	213		301			RImgBg1Shake				{2: 'Army Sergeant', 3: 'Fire!!!', 4: '1'}
+214	214		202							{1: '1', 6: '1'}
+215	215		401							{1: '2', 2: '13015204'}
+216	216		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+217	217		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+218	218		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+219	219		401							{1: '2', 2: '4340'}
+220	220		301							{3: 'The muskets fire at the same time, belching scalding smoke as the flames instantly engulf the enemies.'}
+221	221		301							{3: 'Agonized wails fill the air as the warriors charging at the front collapse, dying in pools of blood.'}
+222	222		402							{1: '4340'}
+223	223		201							{1: '1', 2: '500694', 3: '4'}
+224	224		401							{1: '2', 2: '2791'}
+225	225		301			RImgBg1Shake				{1: '1', 2: 'Half-blind Soldier', 3: 'Forward!!', 4: '1'}
+226	226		202							{1: '1', 6: '1'}
+227	227		401							{1: '2', 2: '799'}
+228	228		301			RImgBg1Shake				{3: 'The survivors from the rear trample over their fallen comrades, charging into the bloody smoke and gunpowder, and continue their assault with unwavering resolve.'}
+229	229		201							{1: '1', 2: '500965'}
+230	230		401							{1: '2', 2: '5671'}
+231	231		401							{1: '2', 2: '974'}
+232	232		301			RImgBg1Shake				{1: '1', 2: 'Army Sergeant', 3: 'Hold the line!! We must stop the rebels here!!', 4: '1'}
+233	233		401							{1: '2', 2: '5669'}
+234	234		401							{1: '2', 2: '799'}
+235	235		301			RImgBg1Shake				{1: '1', 2: 'Army Sergeant', 3: 'Kill them all!! Long live the Iron Army! Long live Generalissimo Death of Iron!!', 4: '1'}
+236	236		202							{1: '1', 6: '1'}
+237	237		401							{1: '2', 2: '4349'}
+238	238		301							{3: 'The defenders have no time to reload and are forced to use bayonets for a counter-attack. Amid deafening battle cries, both sides clash in brutal close-quarters combat.'}
+239	239		401							{1: '2', 2: '5671'}
+240	240		401							{1: '2', 2: '10022001'}
+241	241		401							{1: '2', 2: '2593'}
+242	242		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '0', 4: '1', 5: '0.3'}
+243	243		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '1', 4: '0', 5: '0.3'}
+244	244		301							{3: 'Bloodshot, murderous eyes lock onto each other as countless vicious, bloodthirsty faces clash, tearing each other apart in the crimson mist.'}
+245	245		301							{3: 'In the gruesome battle of flying blood and flesh, both sides have squads of soldiers crouching in the rear, advancing with the front line.'}
+246	246		401							{1: '2', 2: '5321'}
+247	247		401							{1: '2', 2: '2690'}
+248	248		301							{3: 'Armed with daggers, they check each corpse on the ground one by one. Whenever they find a body with an intact heart, they drive their blades deep between the ribs.'}
+249	249		301							"{3: '""Sendaway""—this is what people in the Age of Cataclysm call the practice of clearing battlefields and preventing corpses from transforming.'}"
+250	250		201							{1: '1', 2: '500965'}
+251	251		301							{1: '1', 2: 'Army Sergeant', 3: 'Form ranks! Volley fire formation—', 4: '1'}
+252	252		202							{1: '1', 6: '1'}
+253	253		401							{1: '2', 2: '830004'}
+254	254		301				DialogDisable			{3: 'War drums beat as the defending forces in the rear regroup, quickly forming a line with the front rank kneeling and the rear rank standing.'}
+255	255		402							{1: '830004'}
+256	256		201							{1: '1', 2: '500813', 4: '-800'}
+257	257		201						300.0	{1: '2', 2: '500694', 4: '800'}
+258	258		203							{1: '1', 2: '0.25', 3: '-400'}
+259	259		203						200.0	{1: '2', 2: '0.25', 3: '100'}
+260	260		401							{1: '2', 2: '10022001'}
+261	261		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+262	262		202						300.0	{1: '1', 6: '1'}
+263	263		201							{1: '3', 2: '500813', 4: '-800'}
+264	264		201							{1: '4', 2: '500813', 4: '800'}
+265	265		203							{1: '2', 2: '0.25', 4: '-40', 5: '-100'}
+266	266		203							{1: '3', 2: '0.25', 3: '-400'}
+267	267		203						250.0	{1: '4', 2: '0.25', 3: '400'}
+268	268		401							{1: '2', 2: '10042001'}
+269	269		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+270	270		202							{1: '3', 2: '4', 6: '1'}
+271	271		301			DialogEnable				{2: 'Half-blind Soldier', 3: 'Get out of the way! Move!', 4: '2'}
+272	272		202							{1: '2', 6: '1'}
+273	273		201							{1: '1', 2: '500965'}
+274	274		301							{1: '1', 2: 'Army Sergeant', 3: 'Aim—', 4: '1'}
+275	275		202							{1: '1', 6: '1'}
+276	276		401						100.0	{1: '2', 2: '2880'}
+277	277		401							{1: '2', 2: '2880'}
+278	278		301				DialogDisable			{3: 'While their comrades fight on the front line, the defenders raise their muskets, aiming into the chaotic battlefield where friend and foe are impossible to distinguish.'}
+279	279		401							{1: '2', 2: '10021517'}
+280	280		201							{1: '1', 2: '500813', 4: '-800'}
+281	281		201						300.0	{1: '2', 2: '500694', 4: '400'}
+282	282		203							{1: '1', 2: '0.25', 3: '-400'}
+283	283		203						200.0	{1: '2', 2: '0.25', 3: '-200'}
+284	284		401							{1: '2', 2: '10042001'}
+285	285		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+286	286		202						200.0	{1: '1'}
+287	287		201							{1: '3', 2: '500813', 4: '800'}
+288	288		401							{1: '2', 2: '10042002'}
+289	289		203							{1: '3', 2: '0.25', 3: '400'}
+290	290		203						200.0	{1: '2', 2: '0.25', 3: '200'}
+291	291		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+292	292		202							{1: '3'}
+293	293		301			DialogEnable				{2: 'Half-blind Soldier', 3: 'Assault squad! This way, follow me!', 4: '2'}
+294	294		202							{1: '2'}
+295	295		301							{2: 'Soldiers', 3: 'Yes, sir!'}
+296	296		301				DialogDisable			{3: 'In this critical moment, the veteran makes a split-second decision and leads a few soldiers carrying explosives in a flanking charge.'}
+297	297		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+298	298		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+299	299		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+300	300		402							{1: '2791'}
+301	301		402							{1: '370'}
+302	302		401							{1: '2', 2: '2595'}
+303	303		307							{1: 'Everyone, get down.', 3: '60', 4: 'e60000'}
+304	304		301							{3: 'Everyone, get down.'}
+305	305		307						100.0	{2: '1'}
+306	306		401							{1: '1', 2: '6210'}
+307	307		201							{1: '1', 2: '500694'}
+308	308		301			DialogEnable				{1: '1', 2: 'Half-blind Soldier', 3: '...Watanabe?!', 4: '1'}
+309	309		202							{1: '1'}
+310	310		301							"{3: ""Suddenly, a military command thunders through every rebel soldier's mind, echoing so clearly it feels like the voice is speaking directly into their ears.""}"
+311	311		201							{1: '1', 2: '500694'}
+312	312		301			RImgBg1Shake				{1: '1', 2: 'Half-blind Soldier', 3: 'Get down!!', 4: '1'}
+313	313		202							{1: '1', 6: '1'}
+314	314		401							{1: '2', 2: '4006'}
+315	315		301			RImgBg1Shake				{3: 'Almost simultaneously, the rebel soldiers break free from their fights and dive to either side.'}
+316	316		201							{1: '1', 2: '500965'}
+317	317		301							"{1: '1', 2: 'Army Sergeant', 3: ""Wh-what's happening?!"", 4: '1'}"
+318	318		203							{1: '1', 2: '0.25', 3: '-400'}
+319	319		201							{1: '2', 2: '500813', 4: '400'}
+320	320		301							{1: '1', 2: 'Army Warrior', 3: 'Sir... the g-gate!', 4: '2'}
+321	321		301				DialogDisable			{2: 'Army Sergeant', 3: 'Oh n-no, the Halo Cannon!!', 4: '1'}
+322	322		202							{1: '1', 2: '2'}
+323	323		401							{1: '2', 2: '4645'}
+324	324		501						850.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiReturnActivity/FxUiBlindBox.prefab', 2: '2'}
+325	325		402							{1: '4645'}
+326	326		401							{1: '2', 2: '11105406'}
+327	327		502							{1: 'DialogEnable'}
+328	328		301			RImgBg1Shake				{3: 'A streak of golden light appears, melting through the steel walls.'}
+329	329		401						200.0	{1: '2', 2: '11105406'}
+330	330		401							{1: '2', 2: '11105406'}
+331	331		301			RImgBg1Shake				{3: 'Soon, countless brilliant beams of light follow, piercing through the main keep like a rainbow, tearing the world apart as they surge forward with thunderous roars.'}
+332	332		401							{1: '2', 2: '4304'}
+333	333		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionL.prefab', 2: '2'}
+334	334		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionR.prefab', 2: '2'}
+335	335		301			RImgBg1Shake				{3: 'Loud roars shake heaven and earth as the impenetrable fortress crumbles, collapsing like a withered tree in a storm and falling into ruin.'}
+336	336		401							{1: '2', 2: '4304'}
+337	337		401							{1: '2', 2: '4511'}
+338	338		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+339	339		301			RImgBg1Shake				{3: 'Brilliant torrents of energy vaporize everything in their path, like a massive sword forged from fused meteors. Its blade roars upward, tearing the crimson demon fortress vertically apart, shaking heaven and earth.'}
+340	340		301							{3: 'The miracle from thirty years past transcends time, descending once more upon humanity.'}
+341	341		401							{1: '2', 2: '884'}
+342	342		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+343	343		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1210.jpg'}
+344	344		301			RImgBg1Shake	AniZhuanchangBegin			{3: 'BOOM—'}
+345	345		401						2000.0	{1: '1', 2: '36'}
+346	346		401							{1: '1', 2: '55'}
+347	347		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory49.jpg'}
+348	348		401							{1: '2', 2: '4536'}
+349	349		201							{1: '1', 2: '500965', 5: '-250', 7: '1'}
+350	350		502							{1: 'PanelActor1Shake'}
+351	351		301			AniZhuanchangEnd				{1: '1', 2: 'Army Sergeant', 3: '...Cough, cough cough!', 4: '1'}
+352	352		401							{1: '2', 2: '4536'}
+353	353		203			PanelActor1Shake				{1: '1', 2: '0.4', 4: '-100'}
+354	354		301							{3: 'The officer clears away the sand and stones pinning him down as scalding blood spatters across his face like rain.'}
+355	355		301							{2: 'Army Sergeant', 3: 'Anyone... anyone still alive?', 4: '1'}
+356	356		301							{2: 'Army Sergeant', 3: '—Eek?!', 4: '1'}
+357	357		202							{1: '1'}
+358	358		301							{3: 'Suddenly, an iron grip lifts him up from the sea of blood and presses a sharp blade against his throat.'}
+359	359		201							{1: '1', 2: '501270'}
+360	360		301							{1: '1', 2: 'Watanabe', 3: 'The war is over... for now.', 4: '1'}
+361	361		202							{1: '1'}
+362	362		301							{3: 'The crimson knight wipes the sticky blood from their face and basks in the glow of victory.'}
+363	363		306							{1: '1'}
+364	364		301							{3: 'A massive cannon towers behind him. Its barrel stretches several meters long and is forged entirely from Sanctuary mithril. Searing, deadly heat still billows from its gaping mouth.'}
+365	365		301							{3: 'Loaded with ordinary shells yet capable of destroying entire cities, this deadly weapon once slew gods and was revered as the pinnacle of human technology before the Cataclysm.'}
+366	366		301							"{3: '""Halo Cannon! Halo Cannon!""'}"
+367	367		301							{3: '—Cry the humans rallying by the knight.'}
+368	368		306							
+369	369		201							{1: '1', 2: '501270', 4: '400'}
+370	370		201							{1: '2', 2: '500965', 4: '-400', 5: '-100'}
+371	371		301							{1: '1', 2: 'Watanabe', 3: 'Open your damn eyes and see! Who overpowered this hotbed of violence? Who crushed the arrogant pride of you worthless scum!', 4: '1'}
+372	372		202							{1: '1', 2: '2', 6: '1'}
+373	373		306							{1: '1'}
+374	374		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignSun01.prefab', 2: '2'}
+375	375		201							{1: '3', 2: '500773'}
+376	376		201							{1: '4', 2: '500294', 4: '-600'}
+377	377		201							{1: '5', 2: '500694', 4: '600'}
+378	378		301							{1: '1', 3: 'A pillar of light illuminates the battlefield, like a spear piercing through the clouds, shining on the faces of countless avengers.'}
+379	379		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignSun01.prefab'}
+380	380		202							{1: '3', 2: '4', 3: '5'}
+381	381		306						300.0	
+382	382		201							{1: '1', 2: '501270', 4: '400', 7: '1'}
+383	383		201							{1: '2', 2: '500965', 4: '-400', 5: '-100', 7: '1'}
+384	384		301			PanelActor2Shake				"{1: '1', 2: 'Army Sergeant', 3: ""D-don't kill me, I surrender!"", 4: '2'}"
+385	385		301							{2: 'Watanabe', 3: 'What about the innocents who died under your murderous blades? When they begged for mercy on their knees, did you ever show them this twisted, despicable face?', 4: '1'}
+386	386		301			PanelActor2Shake				"{2: 'Army Sergeant', 3: ""I'm the quartermaster! I know lots of secrets! I'll be useful if you keep me alive!"", 4: '2'}"
+387	387		204							{1: '1', 2: '5'}
+388	388		301							"{2: 'Watanabe', 3: ""Silence! The Army's Eagle Banner is ashamed of your cowardice and treachery. The reborn world will forever condemn your betrayal."", 4: '1'}"
+389	389		204							{1: '1'}
+390	390		301							{2: 'Watanabe', 3: 'I, Watanabe, in the name of the true fourth Generalissimo of the Iron Army, now declare my final judgment on you, filthy traitors of Halo Fortress—', 4: '1'}
+391	391		301			RImgBg1Shake				{2: 'Army Sergeant', 3: 'D-Death of Iron is still alive!!!', 4: '2'}
+392	392		301							{3: 'Watanabe hesitates just as his blade pierces the flesh.'}
+393	393		301							{2: 'Army Sergeant', 3: 'I know... I know where he is...', 4: '2'}
+394	394		402							
+395	395		401							{1: '2', 2: '2593'}
+396	396		402							{1: '55'}
+397	397		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0.3'}
+398	398		104							{1: '-400|0|0', 2: '0', 4: '5'}
+399	399		301			PanelActor2Shake				{2: 'Army Sergeant', 3: 'Urgh—ahhh!!', 4: '2'}
+400	400		401							{1: '1', 2: '355'}
+401	401		301							{3: 'Before he can finish, monstrous tentacles pierce his chest from behind.'}
+402	402		301							"{3: ""Blood sprays onto Watanabe's face.""}"
+403	403		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0', 5: '0.3'}
+404	404		202							{1: '1', 2: '2'}
+405	405		401							{1: '2', 2: '4984'}
+406	406		301							{3: 'Behind the collapsed corpse, countless gleaming tentacles slowly rise, like a venomous octopus going for its prey.'}
+407	407		205							{1: '1005', 3: '0', 4: '1', 5: '0'}
+408	408		301							{3: 'Watanabe will never forget the person who wields this monstrous power.'}
+409	409		402							{1: '4984'}
+410	410		201							{1: '1', 2: '500787'}
+411	411		301							"{1: '1', 2: 'Death of Iron', 3: ""Words from the defeated are the most vicious of deceptions. This is the second time I've had to teach you that."", 4: '1'}"
+412	412		202							{1: '1'}
+413	413		301							{3: 'At the sight of that twisted face they so utterly despise, the surrounding rebel fighters glare and grit their teeth, burning with rage.'}
+414	414		201							{1: '1', 2: '500694', 3: '4'}
+415	415		301			RImgBg1Shake				{1: '1', 2: 'Half-blind Soldier', 3: 'Blood for blood!!', 4: '1'}
+416	416		202							{1: '1'}
+417	417		401							{1: '2', 2: '10022001'}
+418	418		301							{3: 'A veteran soldier holds up his blade and charges ahead of the formation.'}
+419	419		201							{1: '1', 2: '500773', 3: '7'}
+420	420		301			RImgBg1Shake				{1: '1', 2: 'Rebel Soldier', 3: 'Death of Iron!!', 4: '1'}
+421	421		401							{1: '2', 2: '5671'}
+422	422		202							{1: '1'}
+423	423		301							{3: 'The soldiers follow closely behind, charging past bloody corpses toward their common enemy.'}
+424	424		201							{1: '1', 2: '500787'}
+425	425		301							{1: '1', 3: 'The enemy stands motionless, chin raised slightly in contempt.'}
+426	426		301				DialogDisable			{3: 'Golden light flickers in his pupils as he gazes down upon a swarm of ants making their final, futile attempt.'}
+427	427		402							{1: '355'}
+428	428		402							{1: '5671'}
+429	429		401							{1: '2', 2: '4092'}
+430	430		307							{1: 'Submit.', 3: '60', 4: 'ffee82ff'}
+431	431		301							{3: 'Submit.'}
+432	432		307							{2: '1'}
+433	433		202							{1: '1'}
+434	434		301			DialogEnable	DialogDisable			{3: 'The clamorous battlefield instantly falls into deathly silence.'}
+435	435		401							{1: '1', 2: '360'}
+436	436		401							{1: '2', 2: '4280'}
+437	437		401							{1: '2', 2: '4819'}
+438	438		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab'}
+439	439		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+440	440		201							{1: '1', 2: '500694'}
+441	441		301			DialogEnable				{1: '1', 2: 'Half-blind Soldier', 3: '—?!', 4: '1'}
+442	442		202							{1: '1'}
+443	443		201							{1: '1', 2: '500773'}
+444	444		301							{1: '1', 2: 'Rebel Soldier', 3: '...Gk!', 4: '1'}
+445	445		202							{1: '1'}
+446	446		301							{3: 'Time seems to freeze. Every soldier is frozen in place, eyes wide but unable to move.'}
+447	447		301							{3: 'These are shackles that only Demons can break free from.'}
+448	448		402							{1: '4819'}
+449	449		401							{1: '2', 2: '8220087'}
+450	450		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong03.prefab'}
+451	451		201							{1: '1', 2: '501270', 3: '5'}
+452	452		301			RImgBg1Shake				{1: '1', 2: 'Watanabe', 3: 'Ballard!!!', 4: '1'}
+453	453		401							{1: '2', 2: '2924'}
+454	454		202							{1: '1'}
+455	455		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+456	456		301							{3: 'A roar tears through the silence as crimson lightning streaks forth, plunging into the blinding golden thorns.'}
+457	457		301				DialogDisable			"{3: ""The tentacles can't keep up with the Demon Knight's speed. Watanabe raises his Trailblade high and strikes Death of Iron's face with a momentum so fast it breaks the sound barrier, imperceptible to humans.""}"
+458	458		401						800.0	{1: '2', 2: '4349'}
+459	459		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+460	460		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+461	461		502							{1: 'DialogEnable'}
+462	462		301			RImgBg1Shake				{3: 'Clang!'}
+463	463		201							{1: '1', 2: '500787'}
+464	464		301							{1: '1', 2: 'Death of Iron', 3: 'Too slow.', 4: '1'}
+465	465		202							{1: '1', 6: '1'}
+466	466		401							{1: '2', 2: '18511038'}
+467	467		401							{1: '2', 2: '4511'}
+468	468		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+469	469		301			RImgBg1Shake				{3: 'Blades clash, sending sparks flying in all directions. A powerful shockwave sends the mind-controlled soldiers flying and crashing into the ruins.'}
+470	470		401							{1: '2', 2: '2690'}
+471	471		301							"{3: ""Death of Iron's blade suddenly drops as he steps to the side, driving his knee hard into Watanabe's abdomen, snapping bones.""}"
+472	472		401							{1: '2', 2: '8220025'}
+473	473		301							{3: 'He then immediately extends his right leg, kicking Watanabe several meters away and smashing the stone wall ahead to pieces.'}
+474	474		201							{1: '1', 2: '501270', 3: '17', 4: '-200', 7: '1'}
+475	475		203						200.0	{1: '1', 2: '0.25', 3: '500', 4: '-100'}
+476	476		401							{1: '2', 2: '4510'}
+477	477		301			PanelActor1Shake				{1: '1', 2: 'Watanabe', 3: '—Gahk!', 4: '1'}
+478	478		201							{1: '2', 2: '500787', 4: '-500'}
+479	479		301							{1: '1', 2: 'Death of Iron', 3: 'Get up! Did you forget everything I taught you?', 4: '2'}
+480	480		202							{1: '1', 2: '2'}
+481	481		301							{3: 'Death of Iron raises his sword and walks into the swirling dust.'}
+482	482		401							{1: '2', 2: '561'}
+483	483		301							{3: 'Right then, the sound of steel striking the ground echoed through the ruins.'}
+484	484		201							{1: '1', 2: '501270', 3: '8'}
+485	485		301							{1: '1', 2: 'Watanabe', 3: '...My mentor would never be reckless enough to walk into an enemy trap.', 4: '1'}
+486	486		202							{1: '1'}
+487	487		301							{3: 'The crimson firearms scattered across the battlefield rise one by one, taking the place of fallen soldiers to form battle lines that completely surround Death of Iron.'}
+488	488		201							{1: '1', 2: '500787'}
+489	489		301							"{1: '1', 2: 'Death of Iron', 3: ""Hah. Demon's little tricks."", 4: '1'}"
+490	490		202							{1: '1'}
+491	491		201							{1: '1', 2: '501270', 3: '5'}
+492	492		301				DialogDisable			{1: '1', 2: 'Watanabe', 3: 'Listen... to the wrath of this land!', 4: '1'}
+493	493		202							{1: '1', 6: '1'}
+494	494		401							{1: '2', 2: '9317004'}
+495	495		502							{1: 'RImgBg1Shake'}
+496	496		401						200.0	{1: '2', 2: '5669'}
+497	497		401						200.0	{1: '2', 2: '5669'}
+498	498		401						200.0	{1: '2', 2: '5669'}
+499	499		401						200.0	{1: '2', 2: '5669'}
+500	500		301			DialogEnable				"{3: ""The moment the barrage erupts, the golden tentacles on Death of Iron's back suddenly twist and contract, lashing wildly around his body in all directions to form a constantly shifting golden barrier.""}"
+501	501		502							{1: 'RImgBg1Shake'}
+502	502		401						200.0	{1: '2', 2: '5669'}
+503	503		401						200.0	{1: '2', 2: '5669'}
+504	504		401							{1: '2', 2: '5669'}
+505	505		301							{3: 'Gunfire erupts from all directions, and crimson blood rains down as the rebels charge toward the defensive line formed by the golden tentacles.'}
+506	506		401							{1: '2', 2: '5535'}
+507	507		401							{1: '2', 2: '10021206'}
+508	508		301							{3: 'The battlefield suddenly transforms into a blazing whirlpool, with scorching bullets falling like broken pearls, crackling as they hit the ground.'}
+509	509		201							{1: '1', 2: '501270', 3: '5'}
+510	510		301							{1: '1', 2: 'Watanabe', 3: 'Haargh—!', 4: '1'}
+511	511		202							{1: '1'}
+512	512		401							{1: '2', 2: '9342045'}
+513	513		301							{3: 'Having regained the upper hand through overwhelming firepower, Watanabe grips his weapon tightly and charges forward in a low crouch.'}
+514	514		301							{3: 'Using his vision enhanced by demonic power, he finds a blind spot that the tentacles cannot fully protect.'}
+515	515		301							{3: 'Going against an enemy whose techniques shift in the blink of an eye, Watanabe quickly makes a decision—'}
+516	516		201							{1: '1', 2: '501270'}
+517	517		301							{1: '1', 2: 'Watanabe', 3: '(An opening!)', 4: '1'}
+518	518		202							{1: '1'}
+519	519		401							{1: '2', 2: '9342045'}
+520	520		301							"{3: ""Watanabe seizes the perfect moment to strike with full force at the weak point in the iron barrier's otherwise flawless defense.""}"
+521	521		201							{1: '1', 2: '500787'}
+522	522		301							{1: '1', 2: 'Death of Iron', 3: 'I got you.', 4: '1'}
+523	523		202							{1: '1'}
+524	524		201							{1: '1', 2: '501270'}
+525	525		301							{1: '1', 2: 'Watanabe', 3: '?!', 4: '1'}
+526	526		202							{1: '1'}
+527	527		401							{1: '2', 2: '4825'}
+528	528		301			RImgBg1Shake				{3: 'The tentacles suddenly stop swaying and thrust outward like thorns.'}
+529	529		301							{3: 'Watanabe suddenly stops his attack, jumps back, and raises both arms in defense.'}
+530	530		301							{3: 'Countless tentacles brush straight past him to coil around the firearms spitting flames of fire.'}
+531	531		201							{1: '1', 2: '500787'}
+532	532		301							{1: '1', 2: 'Death of Iron', 3: 'Hmph. On our journey to seal the Rift of Chaos, the Demons slain by the Three Ashfire Heroes were far beyond anything you mortal fools could imagine.', 4: '1'}
+533	533		301							{3: 'The golden, thorned tentacles seem to have extraordinary power. They coil tightly around the firearms like pythons suffocating their prey.'}
+534	534		301							"{2: 'Death of Iron', 3: ""Even the Locust Flame Demons under <phonetic=Death Lord>Nyarlathotep's</phonetic> command cowered at the sight of my blade..."", 4: '1'}"
+535	535		301							{2: 'Death of Iron', 3: 'What makes you think you can defeat me by serving the Demons?', 4: '1'}
+536	536		202							{1: '1'}
+537	537		401							{1: '2', 2: '1506'}
+538	538		401							{1: '2', 2: '1506'}
+539	539		301							{3: 'The tentacles coil and slam down with immense force. Dozens of demonic firearms shatter like glass, dissolving into swirling crimson powder.'}
+540	540		201							{1: '1', 2: '501270'}
+541	541		301							{1: '1', 2: 'Watanabe', 3: 'Useless. As long as I have strength left, these firearms will keep appearing.', 4: '1'}
+542	542		202							{1: '1'}
+543	543		301							{3: 'As he speaks, the shattered weapons reassemble and turn into a new batch of firearms that continue circling around Watanabe.'}
+544	544		201							{1: '1', 2: '500787'}
+545	545		301							"{1: '1', 2: 'Death of Iron', 3: ""Tch. Looks like the conditions for agents to use abilities are the same, whether they're Angels or Demons."", 4: '1'}"
+546	546		202							{1: '1'}
+547	547		401							{1: '2', 2: '4825'}
+548	548		301			RImgBg1Shake				{3: 'The tentacles behind Death of Iron violently thrust forth again, and just like before, they bite down tightly on the weapons Watanabe summoned.'}
+549	549		201							{1: '1', 2: '501270'}
+550	550		301							{1: '1', 2: 'Watanabe', 3: 'What comes next is a deadly struggle of stamina and willpower.', 4: '1'}
+551	551		202							{1: '1'}
+552	552		201							{1: '1', 2: '500787'}
+553	553		301							{1: '1', 2: 'Death of Iron', 3: 'You fought your way in here with such effort. How can you still sound so calm and confident?', 4: '1'}
+554	554		202							{1: '1'}
+555	555		201							{1: '1', 2: '501270', 3: '8'}
+556	556		301							{1: '1', 2: 'Watanabe', 3: 'I have my reasons... I must win.', 4: '1'}
+557	557		301							{3: 'Watanabe wipes the fresh blood from the corner of his mouth and looks at his comrades lying motionless on the ground.'}
+558	558		202							{1: '1'}
+559	559		201							{1: '1', 2: '500787', 3: '1'}
+560	560		301							{1: '1', 2: 'Death of Iron', 3: 'Heh...', 4: '1'}
+561	561		301							{3: 'Death of Iron laughs disdainfully. He pauses his assault and turns to face the distant battlefield where battle cries are shaking the heavens.'}
+562	562		301							{2: 'Death of Iron', 3: 'We need to get more people... to witness the final moments of your arrogant ideals.', 4: '1'}
+563	563		301							"{2: 'Death of Iron', 3: ""A quiet death would be meaningless for either of us. Let's go where more people can witness our duel."", 4: '1'}"
+564	564		301							"{2: 'Death of Iron', 3: ""A hundred years from now, the Sanctuary's chroniclers will write your stubborn resistance and death as a mere footnote in the Iron Army's suppression of chaos and restoration of order."", 4: '1'}"
+565	565		202							{1: '1'}
+566	566		301							"{3: ""Hearing his enemy's arrogant conclusion, Watanabe responds with a defiant smile.""}"
+567	567		201							{1: '1', 2: '501270', 3: '2'}
+568	568		301							{1: '1', 2: 'Watanabe', 3: 'Your arrogant declaration means absolutely nothing to this revolution.', 4: '1'}
+569	569		301							"{2: 'Watanabe', 3: ""I don't know what kind of power the Supreme Heaven gave you to so completely corrupt human consciousness—turning a once-invincible Vice Generalissimo into a butcher who now only slaughters his own people."", 4: '1'}"
+570	570		301							{2: 'Watanabe', 3: 'But as a member of the Iron Army and as the son of Generalissimo Gyrfalcon, I must bring justice to the Three Ashfire Heroes who once fought for the people.', 4: '1'}
+571	571		204							{1: '1'}
+572	572		301							{2: 'Watanabe', 3: 'I will kill you, for the <b>real</b> Ballard, for those still fighting, and for those who can no longer fight!', 4: '1'}
+573	573		202							{1: '1'}
+574	574		301							{3: 'The shell that has become a Sanctuary agent sneers in response.'}
+575	575		201							{1: '1', 2: '500787', 3: '4'}
+576	576		301							{1: '1', 2: 'Death of Iron', 3: '...Are you ready to have your real final lesson?', 4: '1'}
+577	577		202							{1: '1'}
+578	578		401							{1: '2', 2: '4340'}
+579	579		301							{3: 'On the bloody ground, gunfire rumbles like frenzied war drums and moves ever closer.'}
+580	580		401							{1: '2', 2: '2905'}
+581	581		301							{3: 'Watanabe straightens his hat and swings his Trailblade in a clean motion, shaking off the blood.'}
+582	582		201							{1: '1', 2: '501270'}
+583	583		301							"{1: '1', 2: 'Watanabe', 3: ""Bring it on. Let this war's finale be the backdrop for our duel."", 4: '1'}"
+584	584		301							{2: 'Watanabe', 3: 'We shall fight with our blood until death claims us!', 4: '1'}
+585	585		402							{1: '4340'}
+586	586		202							{1: '1'}
+587	587		301				DialogDisable			{3: 'The two men walk toward the even grander and more magnificent battlefield—'}
+588	588		509							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory317.png', 2: '1'}
+589	589		201							{1: '11', 2: '501270', 4: '-500'}
+590	590		201						800.0	{1: '2', 2: '500787', 4: '550'}
+591	591		307							{1: 'Toward the grave that awaits them.', 3: '50', 4: 'ffffffff'}
+592	592		301							{1: '1', 3: 'Toward the grave that awaits them.'}
+593	593		307						200.0	{2: '1'}
+594	594		307							{1: 'Toward a future that will devour the past.', 3: '50', 4: 'ffffffff'}
+595	595		301		1		AniZhuanchangBegin			{3: 'Toward a future that will devour the past.'}

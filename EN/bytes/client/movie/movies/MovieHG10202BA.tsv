@@ -1,0 +1,30 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{2: 'System', 3: '—Analyzing target, Corrupted cluster confirmed, retrieving coordinates, coordinates confirmed.'}
+4	4		201							{1: '1', 2: '1031001'}
+5	5		301							{1: '1', 2: 'Liv', 3: 'Commandant, HQ has assigned us a new mission.', 4: '1'}
+6	6		302							"{2: ""Let Lucia know and we'll leave when ready."", 3: '7', 4: ""Thanks. Let's take Lucia too.""}"
+7	7		301							"{2: 'Liv', 3: ""Okay, I'll go fetch Lucia now."", 4: '1'}"
+8	8		201							{1: '1', 2: '1021001'}
+9	9		301							"{1: '1', 2: 'Lucia', 3: ""I'm here."", 4: '1'}"
+10	10		203							{1: '1', 2: '0.25', 3: '400'}
+11	11		201							{1: '2', 2: '1031001', 4: '-400'}
+12	12		301							"{1: '1', 2: 'Liv', 3: ""Lucia, we've got a new project."", 4: '2'}"
+13	13		301							{2: 'Lucia', 3: 'I know.', 4: '1'}
+14	14		302							"{2: ""Lucia, where's your new frame?"", 3: '17', 4: ""Alright, let's move out."", 5: '15'}"
+15	15		201							{1: '2', 2: '1011001', 4: '-400'}
+16	16		301							"{1: '1', 2: 'Lee', 3: ""Hold on. Where's the new frame?"", 4: '2'}"
+17	17		301							"{2: 'Lucia', 3: ""I placed it in storage. It's not required for this mission."", 4: '1'}"
+18	18		201							{1: '2', 2: '1011001', 4: '-400'}
+19	19		301							"{1: '1', 2: 'Lee', 3: ""Storage? Why wouldn't you use the more powerful model?"", 4: '2'}"
+20	20		301							"{2: 'Lucia', 3: ""I've assessed the operation. My regular frame should suffice."", 4: '1'}"
+21	21		301							{2: 'Lee', 3: 'But the new frame should still be more efficient overall. Using your old one is just a mismanagement of resources...', 4: '2'}
+22	22		301							"{2: 'Lucia', 3: ""We don't need it. That's it!"", 4: '1'}"
+23	23		202							{1: '1', 2: '2', 6: '1'}
+24	24		201							{1: '1', 2: '1031001'}
+25	25		301							{1: '1', 2: 'Liv', 3: 'Lucia?', 4: '1'}
+26	26		201							{1: '1', 2: '1021001'}
+27	27		301							{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+28	28		301							{2: 'Lucia', 3: 'My apologies, Lee, Commandant. I overreacted.', 4: '1'}
+29	29		301		1		AniZhuanchangBegin			"{2: 'Lucia', 3: ""I'll be waiting for you at the exit then, Commandant. Please come over once you're ready."", 4: '1'}"

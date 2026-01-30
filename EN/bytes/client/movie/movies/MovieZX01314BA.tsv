@@ -1,0 +1,30 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory196.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: '...'}
+4	4		301							{3: '...Hear...'}
+5	5		301							{3: '...You hear...'}
+6	6		301							{3: '—Can you hear me?!—'}
+7	7		302							{2: '!', 3: '8'}
+8	8		301							{2: 'Camu', 3: 'Heh. Guess it was worth tryna get near the surface.'}
+9	9		301							"{2: 'Camu', 3: ""I'm now in... I don't even know where I am.""}"
+10	10		301							"{2: 'Camu', 3: ""I think I have a hatch to the surface here before me, but it ain't budging from my end.""}"
+11	11		201							{1: '1', 2: '500196'}
+12	999001		301							{1: '1', 2: 'Karenina', 3: 'I have an idea.', 4: '1'}
+13	999002		301							"{2: 'Karenina', 3: ""I just pulled the building standard reference of Venus Splash Park from the Ferris wheel terminal. I've roughly figured out the design system this whole place runs on."", 4: '1'}"
+14	12		301							{2: 'Karenina', 3: 'According to the reference, the hatches in this area are all installed on the ground end of the rotating mechanism. They have pyrotechnic fasteners for emergency activation.', 4: '1'}
+15	99903		201							{1: '1', 2: '500026'}
+16	13		301							{2: 'Lee', 3: 'So what do we do?', 4: '1'}
+17	14		201							{1: '1', 2: '500196'}
+18	15		301							{1: '1', 2: 'Karenina', 3: 'This kinda run-of-the-mill control system should a cakewalk for you to crack, yeah?', 4: '1'}
+19	16		201							{1: '1', 2: '500026'}
+20	17		301							"{2: 'Lee', 3: ""As long as there's signal."", 4: '1'}"
+21	18		203							{1: '1', 2: '0.4', 3: '400'}
+22	19		201							{1: '2', 2: '500196', 4: '-400'}
+23	20		301							{1: '1', 2: 'Karenina', 3: 'Alright then! Access the network through the signature code I just sent you, and hack into the control system...', 4: '2'}
+24	21		301							{2: 'Lee', 3: 'Done.', 4: '1'}
+25	22		301							"{2: 'Karenina', 3: ""Yo, that's pretty quick! Nice job, Lee!"", 4: '2'}"
+26	23		301							"{2: 'Karenina', 3: ""Okay, now we'll just have to input a manual overload command here..."", 4: '2'}"
+27	24		401							{1: '1', 2: '10007502'}
+28	25		301							{3: 'You hear alarm bells ring in the park, followed by a dull explosion.'}
+29	26		301		1		AniZhuanchangBegin			"{2: 'Karenina', 3: ""The hatch should be blown open. What's left is... to hope that we blew open the right one."", 4: '2'}"

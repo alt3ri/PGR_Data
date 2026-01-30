@@ -1,0 +1,224 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		104							{1: '100|200|-300', 2: '0'}
+2	2		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1242.jpg'}
+3	3		401							{1: '1', 2: '249'}
+4	4		201							{1: '1', 2: '501235', 3: '1'}
+5	5		301			DialogEnable				"{1: '1', 2: 'Dante', 3: ""And that's that. Wasn't so tough after all."", 4: '1'}"
+6	6		202							{1: '1'}
+7	7		301							"{3: ""Thanks to Dante and Vergil's overwhelming power in their transformed states, the group arrives safely at the foot of the Babel Tower.""}"
+8	8		201							{1: '4', 2: '500994'}
+9	9		301							"{1: '1', 2: 'Lucia', 3: ""Commandant, the Hetero-Creatures' attack is weakening."", 4: '4'}"
+10	10		202							{1: '4', 6: '1'}
+11	11		401							{1: '2', 2: '6032'}
+12	12		201							{1: '1', 2: '501265', 4: '-550', 6: '25', 7: '1'}
+13	13		203							{1: '1', 2: '0.25', 3: '-600', 4: '-50', 5: '100'}
+14	14		201							{1: '2', 2: '501265', 5: '-75', 6: '0', 7: '1'}
+15	15		203							{1: '2', 2: '0.25', 4: '-75', 5: '75'}
+16	16		201							{1: '3', 2: '501265', 4: '550', 6: '25', 7: '1'}
+17	17		203							{1: '3', 2: '0.25', 3: '600', 4: '-25', 5: '100'}
+18	18		301							{1: '1', 3: 'There appears to be some kind of mystical barrier before the tower. The Hetero-Creatures grow eerily still, their attacks ceasing entirely as if bound by some unseen command.', 4: '1', 5: '2', 6: '3'}
+19	19		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+20	20		201							{1: '1', 2: '500568', 4: '-400'}
+21	21		201							{1: '2', 2: '500610', 4: '400'}
+22	22		301							"{1: '1', 2: 'Lee', 3: ""Their attacks have stopped. Is it because there's no need to continue?"", 4: '1'}"
+23	23		301							"{2: 'Alpha', 3: ""An open invitation... Very confident of the Mirror Demon. The path ahead won't be an easy one, it seems."", 4: '2'}"
+24	24		202							{1: '1', 2: '2', 6: '1'}
+25	25		201							{1: '1', 2: '501234', 3: '1'}
+26	26		301							{1: '1', 2: 'Vergil', 3: 'Ridiculous.', 4: '1'}
+27	27		202							{1: '1', 6: '1'}
+28	28		401							{1: '2', 2: '2700'}
+29	29		301							{3: 'The towering gates of Babel stand wide open—a gaping maw, demonic and foreboding, as though inviting the guests to step into the abyss.'}
+30	30		402							{1: '2700'}
+31	31		201							{1: '1', 2: '501235', 5: '-75'}
+32	32		203							{1: '1', 2: '0.25'}
+33	33		401							{1: '2', 2: '1543'}
+34	34		301							{1: '1', 3: 'Dante stretches leisurely on the spot, speaking with effortless confidence.'}
+35	35		306							
+36	36		204							{1: '1', 2: '1'}
+37	37		301							"{2: 'Dante', 3: ""Either way, moving forward is our only meaningful option. Don't think anyone here wants to turn back and swat more of those pesky bats, right? Bug extermination can be a real buzzkill."", 4: '1'}"
+38	38		203							{1: '1', 2: '0.25', 3: '100'}
+39	39		202							{1: '1'}
+40	40		301							{3: 'With that, Dante shrugs his shoulders and takes the lead through the gateway.'}
+41	41		401							{1: '2', 2: '1504'}
+42	42		104				AniZhuanchangBegin			{1: '100|220|-350', 2: '1'}
+43	43		502						400.0	{1: 'DialogDisable'}
+44	44		402							{1: '1504'}
+45	45		104							{1: '0|0|0', 2: '0'}
+46	46		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_11.jpg'}
+47	47		107			AniZhuanchangEnd				{1: 'Top of the Babel Tower'}
+48	48		301							{3: 'Top of the Babel Tower.'}
+49	49		108							
+50	50		301			DialogEnable				"{3: ""The Mirror Demon, now in full control of Thomas' body, watches coldly as the team steps into its domain.""}"
+51	51		201							{1: '18', 2: '501267', 4: '-100', 5: '-75', 6: '50', 7: '1'}
+52	52		301							{1: '1', 2: 'Mirror Demon', 3: 'Ordinary Hetero-Creatures can only achieve so far... as expected.', 4: '18'}
+53	53		301							{2: 'Mirror Demon', 3: 'However, a special surprise awaits you next.', 4: '18'}
+54	54		301							{2: 'Mirror Demon', 3: 'Enjoy...', 4: '18'}
+55	55		204							{1: '18', 2: '1'}
+56	56		301				AniZhuanchangBegin			{2: 'Mirror Demon', 3: 'By the time you reach the top, how much strength will you have left to face me?', 4: '18'}
+57	57		202							{1: '18', 6: '1'}
+58	58		401						2000.0	{1: '1', 2: '36'}
+59	59		502						400.0	{1: 'DialogDisable'}
+60	60		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1247.jpg'}
+61	61		401							{1: '1', 2: '250'}
+62	62		401							{1: '2', 2: '4886'}
+63	63		301			DialogEnable	AniZhuanchangBegin			{3: 'The gates of the Babel Tower swing shut behind the group, cutting off the clamor of Hetero-Creatures outside.'}
+64	64		502						400.0	{1: 'DialogDisable'}
+65	65		104						200.0	{1: '0|155|-300', 2: '0'}
+66	66		104			AniZhuanchangEnd			3000.0	{1: '0|-155|-300', 2: '4'}
+67	67		301			DialogEnable	DialogDisable			{3: 'As the last sliver of daylight vanishes, the interior is left in near-darkness, illuminated only by the erratic flicker of candlelight and the dim, colored glow of arched stained-glass windows. Looking around, a hollow chill lingers in the air.'}
+68	68		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1247.jpg', 3: '0', 4: '1', 5: '1'}
+69	69		104							{1: '0|0|0', 2: '0'}
+70	70		205							{1: '999'}
+71	71		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1247.jpg'}
+72	72		201							{1: '1', 2: '501235'}
+73	73		301			DialogEnable	DialogDisable			{1: '1', 2: 'Dante', 3: 'Gotta say, the owner of this tower really went all out on the decor.', 4: '1'}
+74	74		202							{1: '1'}
+75	75		104							{1: '0|75|-150', 2: '1'}
+76	76		301			DialogEnable	DialogDisable			"{3: ""The tower's vast, circular chamber stretches before you, its perimeter lined with identical curved doorways spaced at even intervals. There's no visible path upward.""}"
+77	77		104							{1: '0|0|0', 2: '1'}
+78	78		201							{1: '1', 2: '1031001', 4: '-400'}
+79	79		201							{1: '2', 2: '500568', 4: '400'}
+80	80		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'These doors... do we need to investigate them one by one?', 4: '1'}
+81	81		301							{2: 'Lee', 3: 'The path upward must be behind one of these doors.', 4: '2'}
+82	82		202							{1: '1', 2: '2', 6: '1'}
+83	83		201							{1: '1', 2: '501235', 3: '2'}
+84	84		301							"{1: '1', 2: 'Dante', 3: ""Then let's bust them all open!"", 4: '1'}"
+85	85		202							{1: '1'}
+86	86		401							{1: '2', 2: '2701'}
+87	87		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '1'}
+88	88		301							{3: 'With that, Dante casually opens a door beside him.'}
+89	89		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+90	90		201							{1: '1', 2: '500568', 3: '7'}
+91	91		301							{1: '1', 2: 'Lee', 3: 'Hey!', 4: '1'}
+92	92		202							{1: '1', 6: '1'}
+93	93		401							{1: '1', 2: '36'}
+94	94		401							{1: '2', 2: '10028806'}
+95	95		401							{1: '2', 2: '10042608'}
+96	96		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '8'}
+97	97		201							{1: '19', 2: '500994', 3: '5', 4: '600', 5: '-50'}
+98	98		201							{1: '20', 2: '1031001', 3: '5', 4: '-600', 5: '-50'}
+99	99		201							{1: '21', 2: '500610', 5: '-75', 6: '125'}
+100	100		301							"{1: '1', 3: ""The air suddenly falls silent. Bullets are chambered, blades unsheathed—the team's vigilance reaches its peak in this moment."", 4: '19', 5: '20', 6: '21'}"
+101	101		202							{1: '19', 2: '20', 3: '21', 6: '1'}
+102	102		101							{4: '8', 5: '1'}
+103	103		202							{1: '19', 6: '1'}
+104	104		201							{1: '1', 2: '501235', 3: '3'}
+105	105		301							{1: '1', 3: 'Even Dante catches himself, realizing his earlier actions were quite rash.'}
+106	106		202							{1: '1'}
+107	107		401							{1: '2', 2: '4201'}
+108	108		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 4: '5'}
+109	109		201							{1: '1', 2: '501235', 4: '300'}
+110	110		201							{1: '2', 2: '501235', 4: '-300', 7: '1'}
+111	111		201							{1: '3', 2: '501235', 4: '-400', 7: '1'}
+112	112		205							{1: '2', 3: '1', 4: '0.5', 5: '1'}
+113	113		205							{1: '3', 3: '1', 4: '0.5', 5: '1'}
+114	114		301							"{1: '1', 3: ""As the door creaks open, a hazy mirror appears before everyone. Dante's silhouette, framed against the doorway, twists eerily in the reflection."", 4: '1', 5: '2', 6: '3'}"
+115	115		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+116	116		401							{1: '1', 2: '6183'}
+117	117		301							{3: 'He steps closer, inspecting the mirror, only to find nothing and turn back to the rest of you.'}
+118	118		101							{4: '5', 5: '1'}
+119	119		201							{1: '1', 2: '501235'}
+120	120		301							{1: '1', 2: 'Dante', 3: 'Just some boring mirror trick...', 4: '1'}
+121	121		202							{1: '1'}
+122	122		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+123	123		401							{1: '2', 2: '4467'}
+124	124		301			RImgBg1Shake				{3: 'Just then, the shatter of glass splits the air behind him.'}
+125	125		401							{1: '2', 2: '10028806'}
+126	126		201							{1: '1', 2: '501235', 3: '1', 7: '1'}
+127	127		301							"{1: '1', 3: ""A ghost of a grin flickers across Dante's face as he draws Ebony and Ivory, quickly spinning around to take aim.""}"
+128	128		301							{2: 'Dante', 3: 'Jack—', 4: '1'}
+129	129		202							{1: '1'}
+130	130		301				DialogDisable			{3: 'But someone moves faster than him.'}
+131	131		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+132	132		401						800.0	{1: '2', 2: '15044024'}
+133	133		401							{1: '2', 2: '15044024'}
+134	134		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+135	135		401							{1: '2', 2: '4797'}
+136	136		502							{1: 'DialogEnable'}
+137	137		301			RImgBg1Shake				{3: 'Phantom-blue energy swirls and solidifies into Mirage Blades, hurling toward the Hetero-Creature as it claws free from the shattered mirror. The blades strike true, pinning it firmly to the wall.'}
+138	138		201							{1: '1', 2: '501235', 4: '400'}
+139	139		201							{1: '2', 2: '501234', 4: '-400'}
+140	140		301							"{1: '1', 2: 'Dante', 3: ""C'mon, you know I could've handled that."", 4: '1'}"
+141	141		301							{2: 'Vergil', 3: 'Mhm.', 4: '2'}
+142	142		301							"{2: 'Dante', 3: 'What does that ""Mhm"" mean?', 4: '1'}"
+143	143		301							"{2: 'Vergil', 3: ""I simply don't want to hear that word from you."", 4: '2'}"
+144	144		202							{1: '1', 2: '2', 6: '1'}
+145	145		201							{1: '1', 2: '500994', 3: '7', 4: '400'}
+146	146		201							{1: '2', 2: '1031001', 3: '3', 4: '-400'}
+147	147		301							{1: '1', 2: 'Liv', 3: 'That word?', 4: '2'}
+148	148		301							{2: 'Lucia', 3: 'Is it some kind of magical spell?', 4: '1'}
+149	149		202							{1: '1', 2: '2', 6: '1'}
+150	150		201							{1: '1', 2: '500610'}
+151	151		301							"{1: '1', 3: ""At these words, Alpha in the distance can't help but cast curious glances at Dante and Vergil.""}"
+152	152		302							"{2: ""Actually, I'm curious about that too."", 3: '153'}"
+153	153		202							{1: '1', 6: '1'}
+154	154		201							{1: '1', 2: '501235', 4: '400'}
+155	155		201							{1: '2', 2: '501234', 4: '-400'}
+156	156		301							{1: '1', 2: 'Vergil', 3: '...', 4: '2'}
+157	157		301							"{2: 'Dante', 3: ""Listen, guys, you got it all wrong. There's no magic spell like that."", 4: '1'}"
+158	158		301							"{3: ""The half-demon brothers have already demonstrated various extraordinary abilities, piquing everyone's curiosity.""}"
+159	159		302							"{2: ""I've been meaning to ask about your transformation..."", 3: '160'}"
+160	160		202							{1: '2'}
+161	161		203							{1: '1', 2: '0.25'}
+162	162		204							{1: '1', 2: '1'}
+163	163		301							"{2: 'Dante', 3: ""Oh, that? That's our Sin Devil Trigger form."", 4: '1'}"
+164	164		301				DialogDisable			{2: 'Dante', 3: 'After all, Vergil and I are half-demons, you know.', 4: '1'}
+165	165		202							{1: '1', 2: '2'}
+166	166		401							{1: '2', 2: '4201'}
+167	167		201						250.0	{1: '2', 2: '501265', 4: '100'}
+168	168		502							{1: 'RImgBg1Shake'}
+169	169		203							{1: '1', 2: '0.25'}
+170	170		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNewDante01V350.prefab', 2: '2'}
+171	171		401							{1: '2', 2: '6007', 3: '2'}
+172	172		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNewVergil03V350.prefab', 2: '3'}
+173	173		401							{1: '2', 2: '15044024', 3: '2'}
+174	174		203							{1: '2', 2: '0.25', 3: '100', 4: '-75'}
+175	175		401						100.0	{1: '2', 2: '4802'}
+176	176		202							{1: '2'}
+177	177		401							{1: '2', 2: '15044024'}
+178	178		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNewVergil02V350.prefab', 2: '2'}
+179	179		401						300.0	{1: '2', 2: '15044024'}
+180	180		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNewVergil03V350.prefab', 2: '2'}
+181	181		401							{1: '2', 2: '6032'}
+182	182		201							{1: '1', 2: '501265', 4: '-400', 5: '-60', 6: '50', 7: '1'}
+183	183		201							{1: '2', 2: '501265', 4: '400', 6: '50', 7: '1'}
+184	184		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+185	185		502							{1: 'PanelActor1Shake'}
+186	186		502							{1: 'PanelActor2Shake'}
+187	187		502							{1: 'RImgBg1Shake'}
+188	188		401							{1: '2', 2: '2593'}
+189	189		203							{1: '1', 2: '0.25', 4: '-75', 5: '-125'}
+190	190		202							{1: '1', 2: '2'}
+191	191		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndRed.prefab', 2: '2'}
+192	192		401							{1: '2', 2: '4306'}
+193	193		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1248.jpg', 3: '0', 4: '1', 5: '1'}
+194	194		205							{1: '999'}
+195	195		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1248.jpg'}
+196	196		301			DialogEnable				{3: 'The group continues to open doors one by one, eliminating any Hetero-Creatures that appear behind them while communicating, until an upward staircase is finally found.'}
+197	197		201							{1: '1', 2: '1031001', 3: '5'}
+198	198		301							"{1: '1', 2: 'Liv', 3: ""Commandant, it's here!"", 4: '1'}"
+199	199		203						250.0	{1: '1', 2: '0.25', 3: '-400'}
+200	200		201							{1: '2', 2: '501234', 3: '4', 4: '400', 7: '1'}
+201	201		301							{1: '1', 3: 'Just then, Vergil steps in front of Liv.'}
+202	202		301				DialogDisable			"{2: 'Vergil', 3: ""Back up. Something's wrong."", 4: '2'}"
+203	203		202							{1: '1', 2: '2', 6: '1'}
+204	204		401							{1: '2', 2: '6032'}
+205	205		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+206	206		502							{1: 'DialogEnable'}
+207	207		301			RImgBg1Shake	DialogDisable			{3: 'His warning comes not a second too soon. A blood-curdling howl rips through the air, and a blur of black shadow explodes from the curved staircase, lunging over with terrifying speed.'}
+208	208		201						125.0	{1: '2', 2: '501265', 4: '-200', 5: '100', 6: '350'}
+209	209		203						125.0	{1: '2', 2: '0.15', 3: '-100', 4: '25', 5: '50'}
+210	210		203							{1: '2', 2: '0.15', 3: '-10', 4: '-10', 5: '-125'}
+211	211		202							{1: '1', 2: '2'}
+212	212		401							{1: '2', 2: '4784'}
+213	213		104						250.0	{1: '0|50|-25', 2: '0.25'}
+214	214		104							{1: '0|0|-50', 2: '0.25'}
+215	215		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNewDante01V350.prefab', 2: '2'}
+216	216		401							{1: '2', 2: '11106007'}
+217	217		502							{1: 'DialogEnable'}
+218	218		301			RImgBg1Shake				{3: 'Bang!'}
+219	219		301							{3: 'But a red figure moves even faster. A greatsword cleaves through the air, striking the Hetero-Creature mid-way and hurling it back with brutal force.'}
+220	220		201							{1: '1', 2: '501235', 3: '1'}
+221	221		301							"{1: '1', 2: 'Dante', 3: ""Now that's what I call..."", 4: '1'}"
+222	222		204							{1: '1', 2: '2'}
+223	223		301		1		AniZhuanchangBegin			{2: 'Dante', 3: 'jackpot!', 4: '1'}

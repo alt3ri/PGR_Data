@@ -1,0 +1,425 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '120'}
+3	3		301			DialogEnable	AniZhuanchangBegin			"{2: '????', 3: ""At this point, a quick death would be a blessing. It'd put her out of her misery."", 18: '100011804'}"
+4	4		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory749.jpg'}
+5	5		306						2000.0	{1: '1'}
+6	6		301			AniZhuanchangEnd				{3: 'Dusk settled over the savanna.'}
+7	7		301							"{3: ""Epirus, once a jewel among the Golden Age's nature reserves, is now nothing but a forgotten dust bowl.""}"
+8	8		401							{1: '2', 2: '4783'}
+9	9		301							{3: 'Two spotted hyenas, up to their eyeballs in a gruesome feast, ravenously tear into the remains of a lioness. Her hide is peeled right off, and the untouched bits of her carcass bear the tell-tale signs of clean, precise cuts—this is no act of nature.'}
+10	10		402							{1: '4783'}
+11	11		301							{3: 'A distant howl from their kin cuts through the air, a clear signal to hustle and rejoin the migrating pack.'}
+12	12		401							{1: '2', 2: '2930'}
+13	13		301							{3: 'Crackle.'}
+14	14		301							"{3: ""It's the sound of grass stems snapping. Every inch of cold, hard metal pushing forward makes the wild grasses bend and break. Nature itself is groveling under the iron heel of something man-made, letting out a quiet sigh of surrender.""}"
+15	15		402							{1: '2930'}
+16	16		301							{3: 'The spotted hyenas flinch, their gut screaming danger. Without missing a beat, they bolt.'}
+17	17		306							
+18	18		201							{1: '1', 2: '501366', 5: '-20', 6: '-200'}
+19	19		301							{1: '1', 2: 'Veronica', 3: '...', 4: '1', 18: '100011749'}
+20	20		301							"{3: ""Her eyes, cold as ice, take it all in without a flicker. The grand sweep of the landscape, the brutal give and take of life and death—nothing stirs her. In the silent ruins of humanity's downfall, an even stranger visitor has finally shown up after a long time away.""}"
+21	21		401						200.0	{1: '2', 2: '4884'}
+22	22		301							"{2: 'Veronica', 3: ""I'm at Epirus savanna. Looks like our comms are getting jammed. Zavier, if you're getting this, give me the go-ahead or tell me to stand down—"", 4: '1', 18: '100011750'}"
+23	23		401							{1: '2', 2: '2704'}
+24	24		201							{1: '18', 2: '501374', 4: '150', 5: '300', 6: '-300'}
+25	25		301			DialogShake				{1: '1', 2: '??', 3: '(Tail trembling)...', 4: '18'}
+26	26		202							{1: '18'}
+27	27		301							{2: 'Veronica', 3: '...', 4: '1', 18: '100011751'}
+28	28		202							{1: '1'}
+29	29		306							
+30	30		401							{1: '2', 2: '2704'}
+31	31		201							{1: '1', 2: '501358', 3: '8'}
+32	32		301			PanelActor1Shake				"{1: '1', 3: ""Veronica doesn't even drop her chin; she just swivels her eyes with an icy stare. From her lofty perch, she spots it: a tail, no more than a dry stick, quivering ever so slightly in the tall grass. A scrawny, tiny lion cub lies on its side, already in death's cold embrace, surrounded by a cloud of buzzing flies and mosquitoes.""}"
+33	33		306							
+34	34		401							{1: '2', 2: '2704'}
+35	35		301			PanelActor1Shake				{2: 'Weak Lion Cub', 3: '(Tail trembling)...', 4: '1'}
+36	36		202							{1: '1'}
+37	37		401							{1: '2', 2: '2982'}
+38	38		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteMainNoise.prefab', 2: '2'}
+39	39		301							{3: 'A crackle of static breaks through her comms. Veronica barely tilts her head, her gaze instantly snapping away from the dying cub as she fiddles with the frequency.'}
+40	40		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteMainNoise.prefab'}
+41	41		401							{1: '2', 2: '5886'}
+42	42		201							{1: '1', 2: '501358', 3: '8'}
+43	43		301							{1: '1', 2: 'Weak Lion Cub', 3: 'Grrr...', 4: '1'}
+44	44		201							{1: '1', 2: '501366', 5: '-20', 6: '-200'}
+45	45		301							"{1: '1', 2: 'Veronica', 3: ""At this point, a quick death would be a blessing. It'd put it out of its misery."", 4: '1', 18: '100011752'}"
+46	46		202							{1: '1'}
+47	47		401							{1: '2', 2: '5887'}
+48	48		301							"{3: ""She turns to leave, her attention already back on her message. The cub struggles to open its eyes, a silent plea in its gaze, but Veronica doesn't miss a beat.""}"
+49	49		401							{1: '2', 2: '5887'}
+50	50		201							{1: '1', 2: '501358', 3: '7'}
+51	51		301							{1: '1', 2: 'Weak Lion Cub', 3: 'Raawr...', 4: '1'}
+52	52		301							"{3: ""The cub's desperate plea is no louder than the hum of the insects around it, and certainly not enough to halt Veronica's retreating footsteps.""}"
+53	53		401							{1: '2', 2: '5887'}
+54	54		301							{2: 'Weak Lion Cub', 3: 'Raawr...', 4: '1'}
+55	55		401							{1: '2', 2: '5887'}
+56	56		301				AniZhuanchangBegin			{2: 'Weak Lion Cub', 3: 'Raawr... Raawr...', 4: '1'}
+57	57		202							{1: '1'}
+58	58		101						1200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+59	59		301			AniZhuanchangEnd	DialogDisable			{3: 'The little cub is on its last legs, barely able to let out a whimper for survival, even though Veronica is long gone.'}
+60	60		307				AniZhuanchangBegin			{1: 'It clings to life by a thread, fighting tooth and nail.', 3: '100', 6: '1'}
+61	61		301							{3: 'It clings to life by a thread, fighting tooth and nail.'}
+62	62		307							{2: '1'}
+63	63		502							{1: 'DialogEnable'}
+64	64		101						1200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory749.jpg'}
+65	65		401							{1: '2', 2: '2704'}
+66	66		301			AniZhuanchangEnd				{3: 'The last vestiges of daylight are fading as the sun dips below the horizon. The rustling in the grass picks up again, signaling something moving through the tall stalks. It stops right in front of the dying cub.'}
+67	67		201							{1: '2', 2: '501375', 4: '500'}
+68	68		201							{1: '1', 2: '501366', 4: '-400', 5: '-20', 6: '-200'}
+69	69		301							{1: '1', 2: 'Veronica', 3: 'This is annoying.', 4: '1', 18: '100011753'}
+70	70		401							{1: '2', 2: '5886'}
+71	71		204							{1: '2', 2: '8'}
+72	72		301							{2: 'Weak Lion Cub', 3: 'Grrr...', 4: '2'}
+73	73		301							{2: 'Veronica', 3: 'As long as the memories are there, mechanical life never truly dies. Flesh and blood, though? It can be wiped out in a blink.', 4: '1', 18: '100011754'}
+74	74		301							{2: 'Veronica', 3: 'Is that the reason?', 4: '1', 18: '100011755'}
+75	75		204							{1: '1', 2: '5'}
+76	76		301							"{2: 'Veronica', 3: ""Is it because you've only got one shot at life? Whether it was Serra or Alexei, the way you all fought tooth and nail before croaking really..."", 4: '1', 18: '100011756'}"
+77	77		301							"{3: ""Veronica, who usually doesn't show an ounce of emotion, actually knits her brows, mulling it over for a moment.""}"
+78	78		301							{2: 'Veronica', 3: 'Really got under my skin.', 4: '1', 18: '100011757'}
+79	79		301				DialogDisable			{3: 'She drops her gaze, looking down at the dying lion cub at her feet.'}
+80	80		202							{1: '1', 2: '2'}
+81	81		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory826.jpg', 3: '0', 4: '1', 5: '1.5'}
+82	82		205							{1: '999'}
+83	83		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory826.jpg'}
+84	84		301			DialogEnable	AniZhuanchangBegin			{3: 'Night creeps over the sweeping savanna.'}
+85	85		502							{1: 'DialogDisable'}
+86	86		401							{1: '1', 2: '36'}
+87	87		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+88	88		401							{1: '1', 2: '208'}
+89	89		107			AniZhuanchangEnd				{1: 'Babylonia', 2: 'Star of Life', 4: '48 hours earlier'}
+90	90		301							{3: 'Star of Life, Babylonia, 48 hours ago.'}
+91	91		108							{1: '1'}
+92	92		201							{1: '1', 2: '500059'}
+93	93		301			DialogEnable				"{1: '1', 2: 'Nurse', 3: ""Most of your vitals are looking up, but I still wouldn't greenlight you for any high-risk, high-difficulty missions just yet. Best to really lean into this recovery period. It'll do wonders for those hidden aches and lingering issues."", 4: '1', 18: '100011758'}"
+94	94		302							{2: 'Thanks...', 3: '95', 4: 'Fine...', 5: '95'}
+95	95		301							"{2: 'Nurse', 3: ""Getting a bit antsy with the hospital grub, aren't we? I heard you jumped into combat medical training yesterday and even played a role in the demonstrations?"", 4: '1', 18: '100011759'}"
+96	96		302							"{2: ""Huh... word travels fast, doesn't it?"", 3: '97'}"
+97	97		301							"{2: 'Nurse', 3: ""You're kidding, right? Folks who didn't even sign up for the training were there to catch a glimpse. You're the Gray Raven Commandant, after all—a real rockstar around these parts."", 4: '1', 18: '100011760'}"
+98	98		301							{3: 'The nurse gives a playful wink.'}
+99	99		301							"{2: 'Nurse', 3: ""Just hang tight a little longer. If you're itching for something to do, we've got a whole slew of other lectures and training sessions. With you in the room, our attendance numbers would go through the roof, haha!"", 4: '1', 18: '100011761'}"
+100	100		302							"{2: ""I'm not looking to kill time with lectures."", 3: '101', 4: ""After being on the go for so long, it's tough to shift gears when things suddenly grind to a halt."", 5: '101'}"
+101	101		301							"{2: 'Nurse', 3: ""Just focus on recovery, Commandant. It's perfectly fine to kick back and enjoy the quiet life every now and then."", 4: '1', 18: '100011762'}"
+102	102		202							{1: '1'}
+103	103		401							{1: '2', 2: '1086'}
+104	104		301				DialogDisable			{3: 'No sooner have the words hung in the air than the peaceful moment is shattered by the rumble of gurneys hurtling down the hallway.'}
+105	105		402							{1: '1086'}
+106	106		401							{1: '1', 2: '36'}
+107	107		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory718.jpg', 3: '0', 4: '1', 5: '1.5'}
+108	108		205							{1: '999'}
+109	109		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory718.jpg'}
+110	110		401							{1: '1', 2: '205'}
+111	111		201							{1: '1', 2: '500019', 5: '-200'}
+112	112		203						400.0	{1: '1', 2: '0.35'}
+113	113		301			DialogEnable				{1: '1', 3: 'Several zip by, when suddenly, the patient on the last one shoots bolt upright, grabbing the rails. Even the old-hand medical staff are caught flat-footed before they can get him to lie back down.'}
+114	114		301							{2: 'The Wounded', 3: 'Commandant!', 4: '1', 18: '100011763'}
+115	115		302							{2: 'Hello?', 3: '116', 4: 'Be careful...', 5: '116'}
+116	116		301							"{2: 'The Wounded', 3: ""Nice to meet you! Wow, I can't believe I'm seeing the Gray Raven Commandant in the flesh..."", 4: '1', 18: '100011764'}"
+117	117		302							{2: '...', 3: '118'}
+118	118		301							"{2: 'The Wounded', 3: ""Sorry, sorry, I'm just a bit too hyped up. Our leader used to joke that the Star of Life just randomly throws opportunities your way to meet you. Hahaha, can't believe it's actually true!"", 4: '1', 18: '100011765'}"
+119	119		301							"{3: ""At the mention of his boss, the patient's face falls a mile long.""}"
+120	120		301			PanelActor1Shake				"{2: 'The Wounded', 3: ""Oh no... I'm toast. The leader must have heard by now... I bit off more than I could chew and now the ground mission team is down a man this afternoon. I'm so dead, so dead... The leader is definitely going to rip me a new one..."", 4: '1', 18: '100011766'}"
+121	121		301							"{2: 'The Wounded', 3: ""Then again, it's just a basic ruins recovery mission... hopefully I won't get chewed out too badly..."", 4: '1', 18: '100011767'}"
+122	122		302							{2: 'A ruins recovery mission?', 3: '123'}
+123	123		301							"{2: 'The Wounded', 3: ""That's right. This time we're making a beeline for the research facility ruins in what used to be the Epirus Nature Reserve. Our mission is to get our hands on some crucial conservation and research data and bring it back home to Babylonia. All in all, it should be a pretty easy ground mission."", 4: '1', 18: '100011768'}"
+124	124		203							{1: '1', 2: '0.25', 3: '400'}
+125	125		201							{1: '2', 2: '500059', 4: '-400'}
+126	126		301							"{1: '1', 2: 'Nurse', 3: ""I've actually caught wind from the researchers that the Science Council is apparently gearing up to kickstart some Golden Age research that got put on ice—stuff about rare diseases and specialized treatments. They're slowly but surely digging up related botanical and zoological research materials."", 4: '2', 18: '100011769'}"
+127	127		301							"{2: 'The Wounded', 3: ""Yeah, that's it exactly. Our leader also dropped a hint that these materials could lay the groundwork for ecosystem restoration and even help us ramp up food production through a bunch of different avenues."", 4: '1', 18: '100011770'}"
+128	128		301							"{2: 'Nurse', 3: ""Well, in that case, this mission might be a walk in the park, but it certainly packs a punch... though I'd still say you've got a good talking-to coming your way."", 4: '2', 18: '100011771'}"
+129	129		202							{1: '1', 2: '2', 6: '1'}
+130	130		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+131	131		306							{1: '1'}
+132	132		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory749.jpg'}
+133	133		301							"{3: ""Nature reserves—a relic of a bygone era, really. After the Punishing Virus swept through the world, it was all hands on deck for survival. Ecological preservation, along with cultural advancements, just got filed away in humanity's long to-do list.""}"
+134	134		301				DialogDisable			"{3: ""But where there's a human, there's a way. No matter how difficult, humanity always creates cultures that are unique to their times. As for ecology... With barely a patch of green left, conservation becomes a moot point.""}"
+135	135		306							
+136	136		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+137	137		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory718.jpg'}
+138	138		302							"{2: ""I'm interested. Why don't I ask to step in for you?"", 3: '139'}"
+139	139		201							{1: '1', 2: '500059'}
+140	140		301			DialogEnable				{1: '1', 2: 'Nurse', 3: 'Commandant?', 4: '1', 18: '100011772'}
+141	141		301							"{2: 'Nurse', 3: ""Even though you could join low-risk missions while you're on the mend, there's really no need to—"", 4: '1', 18: '100011773'}"
+142	142		301							"{3: ""The medical staff's next words catch in their throats. After all, the Commandant standing before them is never one to shy away from a bit of derring-do.""}"
+143	143		302							"{2: ""I can't keep bothering you guys whenever I'm bored."", 3: '144', 4: ""Don't worry. It's just a simple mission."", 5: '145'}"
+144	144	146	301							"{2: 'Nurse', 3: ""Calling recovery boring—that's an exaggeration! You really are someone who can't sit still, aren't you?"", 4: '1', 18: '100011774'}"
+145	145		301							{2: 'Nurse', 3: 'But you seem to have... a special knack for making mountains out of molehills.', 4: '1', 18: '100011775'}
+146	146		301							"{2: 'Nurse', 3: ""Anyway, I can't really hold you back, can I?"", 4: '1', 18: '100011776'}"
+147	147		302							"{2: '(Smile)', 3: '148', 4: ""Don't worry. I'll look after myself."", 5: '148'}"
+148	148		201							{1: '1', 2: '500019'}
+149	149		301							"{1: '1', 2: 'The Wounded', 3: ""Huh, really? You're actually going to step into my shoes for this mission?"", 4: '1', 18: '100011777'}"
+150	150		301							"{2: 'The Wounded', 3: ""Awesome! Then let's—pass the torch!"", 4: '1', 18: '100011778'}"
+151	151		301							{3: 'The wounded person raised his fist, so thickly wrapped in bandages it resembled a ball.'}
+152	152		302							{2: '(Fist bump)', 3: '153'}
+153	153		203						300.0	{1: '1', 2: '0.25', 4: '-50', 5: '-150'}
+154	154		202							{1: '1'}
+155	155		401							{1: '2', 2: '4044'}
+156	156		301			RImgBg1Shake	AniZhuanchangBegin			{3: 'The bandaged knuckles meet the tactical glove with a clean, decisive thud.'}
+157	157		401							{1: '1', 2: '36'}
+158	158		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1322.jpg'}
+159	159		401							{1: '1', 2: '6186'}
+160	160		301			AniZhuanchangEnd				"{3: ""A warm breeze meanders through the tall grass in front of the nature reserve's research facility, then sweeps over the mission crew as they carefully move scientific specimens from the ruins.""}"
+161	161		201							{1: '1', 2: '500394'}
+162	162		301							"{1: '1', 2: 'Construct Captain', 3: ""Gray Raven Commandant, it's a real honor to wrap up this ground mission with you."", 4: '1', 18: '100011779'}"
+163	163		301							"{2: 'Construct Captain', 3: ""We've got all the research data backed up. Let us take care of the specimen inventory from here. Since you're still on the mend, would you like to head back to Babylonia ahead of us?"", 4: '1', 18: '100011780'}"
+164	164		302							"{2: ""No, I'm good. I'll head back with all of you once the mission's done."", 3: '165'}"
+165	165		301				DialogDisable			"{2: 'Construct Captain', 3: ""Such dedication—that's just par for the course with you, Commandant."", 4: '1', 18: '100011781'}"
+166	166		202							{1: '1'}
+167	167		401							{1: '2', 2: '759'}
+168	168		104						850.0	{1: '-100|-100|-200', 2: '0.8'}
+169	169		301			DialogEnable				{3: 'The Construct Captain breaks into a grin, and their hearty laughter startles a few blue-bellied starlings, sending them flapping their wings as they soar towards the horizon. The savanna sky stretches out forever, yet feels close enough to touch, its low horizon making it seem like you could just reach out and touch it.'}
+170	170		201							{1: '1', 2: '500394'}
+171	171		301							{1: '1', 2: 'Construct Captain', 3: 'This feels amazing. Being in a place like this... it truly makes me feel grounded. Earth really is our home.', 4: '1', 18: '100011782'}
+172	172		302							"{2: ""Yeah, it's beautiful..."", 3: '173', 4: '...', 5: '173'}"
+173	173		301							"{2: 'Construct Captain', 3: ""You find it beautiful too, don't you? In that case, would you mind taking point on the perimeter while we wrap up inventory?"", 4: '1', 18: '100011783'}"
+174	174		301							"{3: ""There's a cheerful chuckle in the Construct Captain's voice.""}"
+175	175		301				AniZhuanchangBegin			"{2: 'Construct Captain', 3: ""It'd be a crying shame to waste your precious recovery time. Think of it as a little nature therapy instead."", 4: '1', 18: '100011784'}"
+176	176		202							{1: '1', 6: '1'}
+177	177		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory749.jpg'}
+178	178		301			AniZhuanchangEnd				{3: 'Blue-bellied starlings perch on acacia branches, etched against the sunset painting the Epirus savanna. Like something out of a dream, the birds preen their feathers without a care in the world, every now and then letting out cheerful chirps.'}
+179	179		302							"{2: ""Their song's quite a treat, isn't it?"", 3: '180', 4: 'Pure music to my ears...', 5: '180'}"
+180	180		301							"{3: ""Without even realizing it, you've gone off the beaten path, pulled in by the siren call of these wild melodies. You adjust the facial plate of your power armor and hit pause, soaking in this rare moment of calm.""}"
+181	181		401							{1: '2', 2: '5887'}
+182	182		201							{1: '18', 2: '501374', 4: '150', 5: '300', 6: '-300'}
+183	183		301				DialogDisable			{1: '1', 2: '??', 3: 'Rawr...', 4: '18'}
+184	184		202							{1: '18'}
+185	185		302							{2: 'Huh?', 3: '186'}
+186	186		306							{1: '1'}
+187	187		104						850.0	{1: '0|100|-200', 2: '0.8'}
+188	188		201							{1: '1', 2: '501358', 3: '8'}
+189	189		301			DialogEnable				{1: '1', 3: 'In the shade of an acacia tree, a weak lion cub lies tucked away in the tall grass.'}
+190	190		301							"{3: ""Around it, granite lies smashed to bits, strewn across the ground. The only piece that's been somewhat tamed is the one right by the cub, crudely hammered into a shallow dip that's barely holding a whisper of water. It's clearly the lone bright spot in a string of botched jobs.""}"
+191	191		301				DialogDisable			"{3: ""What's even more bizarre is the slab of raw meat just sitting there, bold as brass. Someone bothered to skin it, but it's plain as day that it's way too tough for a cub's baby teeth to even make a dent in.""}"
+192	192		202							{1: '1'}
+193	193		104						300.0	{1: '0|0|0', 2: '0.25'}
+194	194		306							
+195	195		302							"{2: ""It's clear someone tried to help, but they didn't exactly knock it out of the park."", 3: '196', 4: 'This whole scene just screams ""rookie caregiver""...', 5: '196'}"
+196	196		302							{2: '(Could there really be someone else out here in the sticks...)', 3: '197'}
+197	197		201							{1: '1', 2: '501358', 3: '8'}
+198	198		301			DialogEnable				{1: '1', 3: 'The poor little guy is plainly under the weather. Your heart sinks as you check its ear tips and paw pads, confirming your worries when they feel abnormally cold.'}
+199	199		302							{2: 'Rough go of it, huh, little one?', 3: '200'}
+200	200		301							"{3: ""When you gently pinch its fur, its skin is slow to spring back. Its dry nose and sunken eyes are all red flags, telling you this cub hasn't had a decent meal for ages.""}"
+201	201		204							{1: '1', 2: '7'}
+202	202		401							{1: '2', 2: '5887'}
+203	203		301							{2: 'Lion Cub', 3: 'Grrr...', 4: '1'}
+204	204		203						450.0	{1: '1', 2: '0.4', 4: '-20', 5: '-50'}
+205	205		301							"{3: ""Sensing you're on its side, the cub's round, black eyes lock onto mine. It tentatively licks the hand petting it, then tilts its head, as if sizing you up. Once it's sure you're no threat, it softly nuzzles your palm.""}"
+206	206		302							"{2: 'Clever little devil...', 3: '207', 4: ""You're quite the charmer, aren't you, little one?"", 5: '207', 6: '...', 7: '207'}"
+207	207		301				DialogDisable			"{3: ""From the feel of its tongue against your hand, it's clear its mouth is as dry as a bone too.""}"
+208	208		302							"{2: ""(Touch the cub's dry nose)"", 3: '209', 4: ""(Stroke the cub's head)"", 5: '209'}"
+209	209		302							"{2: ""You're safe with me."", 3: '210', 4: ""No need to fret, I'll get you sorted."", 5: '210'}"
+210	210		401						800.0	{1: '2', 2: '4682'}
+211	211		402							{1: '4682'}
+212	212		301			DialogEnable				{3: 'You fish out a nutritional solution from your supply pack and pour a bit into your palm.'}
+213	213		401							{1: '2', 2: '5887'}
+214	214		301			RImgBg1Shake				{2: 'Lion Cub', 3: '!!!!!!', 4: '1'}
+215	215		301							{3: 'The cub gives a tentative lick or two, then its eyes go wide as saucers. It immediately starts letting out little roars, practically begging for more.'}
+216	216		202							{1: '1'}
+217	217		401						800.0	{1: '2', 2: '4682'}
+218	218		402							{1: '4682'}
+219	219		301				DialogDisable			"{3: ""Once you're sure it can swallow without a hitch, you pour more of the solution into your palm.""}"
+220	220		401							{1: '1', 2: '36'}
+221	221		401							{1: '2', 2: '5905'}
+222	222		401							{1: '2', 2: '906607'}
+223	223		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHit01.prefab', 2: '2'}
+224	224		104						50.0	{1: '0|0|-200', 2: '0'}
+225	225		502							{1: 'DialogEnable'}
+226	226		301			RImgBg1Shake				{3: 'Whoosh—'}
+227	227		401							{1: '1', 2: '41'}
+228	228		401							{1: '2', 2: '5905'}
+229	229		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+230	230		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+231	231		301				DialogDisable			{3: 'A lance cuts through the air, its wicked whistle making your ears ring.'}
+232	232		401							{1: '2', 2: '2674'}
+233	233		104						300.0	{1: '150|0|-200', 2: '0.25'}
+234	234		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiChopping03.prefab', 2: '2', 5: '1'}
+235	235		511							{1: '1', 2: '0', 3: '300|0|0'}
+236	236		502							{1: 'DialogEnable'}
+237	237		301			RImgBg1Shake	DialogDisable			{3: 'But before the sound even registers, an odd change in the air against your back sets your muscles on high alert, kicking your defenses into gear. You dodge to the side, just missing the deadly shot.'}
+238	238		302							"{2: ""Who's there?!"", 3: '239'}"
+239	239		401						800.0	{1: '2', 2: '5895'}
+240	240		401							{1: '2', 2: '2674'}
+241	241		104						300.0	{1: '-150|0|-200', 2: '0.25'}
+242	242		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+243	243		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiChopping03.prefab', 2: '2'}
+244	244		502							{1: 'DialogEnable'}
+245	245		301			RImgBg1Shake				{3: 'Before you can even get a look at your attacker, a deep, rumbling hum hits you from right behind. You spin around, your armor snapping into place over your arm just in time to block a sweeping lance.'}
+246	246		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiChopping03.prefab', 2: '2'}
+247	247		401							{1: '2', 2: '18511011'}
+248	248		301			RImgBg1Shake				{3: 'Clang!'}
+249	249		201							{1: '1', 2: '501366', 3: '5', 5: '-20', 6: '-200'}
+250	250		301							"{1: '1', 3: ""The force of the impact ruffles Veronica's hair, revealing her cold, stern face and a pair of eyes that can curdle milk.""}"
+251	251		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+252	252		302							"{2: ""It's you..."", 3: '253'}"
+253	253		202							{1: '1', 6: '1'}
+254	254		401							{1: '2', 2: '5813'}
+255	255		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+256	256		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory947.jpg'}
+257	257		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+258	258		201							{1: '1', 2: '500920', 3: '5', 7: '1'}
+259	259		504							{1: '0.7'}
+260	260		301							"{1: '1', 3: ""Her face doesn't ring a bell, but your body remembers that unmistakable, bone-chilling killing intent—the very same you'd felt in the icy depths of Aerospace City. Some things, your body just never forgets.""}"
+261	261		504							{1: '0'}
+262	262		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+263	263		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+264	264		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory749.jpg'}
+265	265		201							{1: '1', 2: '501366', 3: '5', 5: '-20', 6: '-200'}
+266	266		301				DialogDisable			"{1: '1', 2: 'Veronica', 3: ""You're just everywhere, aren't you? I can't believe our paths would cross even in the back of beyond like this."", 4: '1', 18: '100011785'}"
+267	267		202							{1: '1', 6: '1'}
+268	268		401							{1: '2', 2: '4044'}
+269	269		104						300.0	{1: '100|0|-200', 2: '0.25'}
+270	270		301			DialogEnable				"{3: 'You quickly duck behind the acacia tree, making sure you\'re not an easy target before trying to talk to this ""ghost from your past.""'}"
+271	271		302							{2: 'Are you the one looking after this lion?', 3: '272'}
+272	272		201							{1: '1', 2: '501366', 3: '11', 5: '-20', 6: '-200'}
+273	273		301				DialogDisable			{1: '1', 2: 'Veronica', 3: 'What? Did you think you could just kick it while it was down, seeing as it had no one to stick up for it?', 4: '1', 18: '100011786'}
+274	274		302							{2: 'Kick it while it was down?', 3: '275', 4: 'What on earth are you talking about?', 5: '275'}
+275	275		302							"{2: ""I just saw it was in a bad way, so I've been giving it a bit of caring."", 3: '276'}"
+276	276		204							{1: '1', 2: '5'}
+277	277		301			DialogEnable				"{2: 'Veronica', 3: 'Caring? I suppose that skinned lioness carcass over there is your idea of ""caring,"" isn\'t it?', 4: '1', 18: '100011787'}"
+278	278		302							"{2: ""Lioness? But I just arrived. Don't just jump to conclusions."", 3: '279'}"
+279	279		301							"{2: 'Veronica', 3: ""Skinning and butchering—that's clearly human work, but there's no one else around. I was just wondering..."", 4: '1', 18: '100011788'}"
+280	280		204							{1: '1', 2: '13'}
+281	281		301							"{2: 'Veronica', 3: ""Hmph. Going by your moves just now, you're certainly no slouch when it comes to staying out of sight."", 4: '1', 18: '100011789'}"
+282	282		302							"{2: ""(You're tempted to bang your head. How absurd she is!)"", 3: '283', 4: ""(It was crystal clear that she's letting her prejudices do the talking.)"", 5: '283'}"
+283	283		204							{1: '1', 2: '4'}
+284	284		301							"{2: 'Veronica', 3: ""I just can't wrap my head around it, the human mind. Why on earth do you get your kicks from torture? Machines, animals, even your own flesh and blood... anything's fair game for your cruelty."", 4: '1', 18: '100011790'}"
+285	285		204							{1: '1', 2: '11'}
+286	286		301				DialogDisable			"{2: 'Veronica', 3: ""Fear, terror, suffering—that's all that lights your fire!"", 4: '1', 18: '100011791'}"
+287	287		401							{1: '1', 2: '36'}
+288	288		302							{2: 'Excuse me, if I might just cut in for a second.', 3: '289'}
+289	289		401							{1: '1', 2: '205'}
+290	290		302							{2: 'Your prejudice aside, does this lil guy look scared to you?', 3: '291'}
+291	291		401							{1: '2', 2: '5888'}
+292	292		203							{1: '1', 2: '0.25', 3: '-400', 4: '-20', 5: '-200'}
+293	293		201							{1: '2', 2: '501359', 3: '2', 4: '500'}
+294	294		301			DialogEnable				{1: '1', 2: 'Lion Cub', 3: 'Purrrrrr—', 4: '2'}
+295	295		401							{1: '2', 2: '5288'}
+296	296		301							{3: 'Meanwhile, as the two square off, the lion cub has sniffed out the nutrient pack tossed into the grass and is guzzling it down, even managing to let out happy little purrs between gulps.'}
+297	297		302							"{2: ""See that? That's my dinner."", 3: '298', 4: ""Doesn't it look happy chowing down?"", 5: '298'}"
+298	298		204							{1: '1', 2: '8'}
+299	299		301							{2: 'Veronica', 3: '...', 4: '1', 18: '100011792'}
+300	300		302							"{2: ""So, who's the one kicking it while it's down here? The poor thing was so hungry it was practically talking!"", 3: '301', 4: ""Looks like it's been famished for ages."", 5: '301'}"
+301	301		204							{1: '1', 2: '5'}
+302	302		301							"{3: ""Veronica keeps her lips sealed, but the sudden ice in her glare makes it clear she doesn't take kindly to being accused of neglecting the cub.""}"
+303	303		401							{1: '1', 2: '36'}
+304	304		204							{1: '2', 2: '8'}
+305	305		401							{1: '2', 2: '5886'}
+306	306		301			PanelActor2Shake	DialogDisable			{2: 'Lion Cub', 3: 'Mrrrrp—', 4: '2'}
+307	307		401							{1: '1', 2: '202'}
+308	308		401							{1: '2', 2: '3077'}
+309	309		204							{1: '1', 2: '7'}
+310	310		203						350.0	{1: '2', 2: '0.3', 3: '500', 4: '-100'}
+311	311		202							{1: '2'}
+312	312		301			DialogEnable	DialogDisable			{3: 'Before Veronica can even get a word in, the little cub, which has been feeding just moments before, lets out a pained whimper and suddenly keels over.'}
+313	313		204							{1: '1', 2: '5'}
+314	314		203						350.0	{1: '1', 2: '0.3', 4: '-20', 5: '-300'}
+315	315		202						350.0	{1: '1'}
+316	316		401							{1: '2', 2: '5905'}
+317	317		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+318	318		301			DialogEnable				{3: 'Your heart sinks, and a knot forms in your stomach as you dash out from behind the acacia tree. But before you could reach it, a lance whizzes through the air, cutting off your path.'}
+319	319		201							{1: '1', 2: '501366', 3: '11', 5: '-20', 6: '-200'}
+320	320		301			DialogShake	DialogDisable			{1: '1', 2: 'Veronica', 3: 'What did you do?!', 4: '1', 18: '100011793'}
+321	321		302							"{2: ""Don't stop me!"", 3: '322', 4: 'I need to check on it.', 5: '322'}"
+322	322		202							{1: '1'}
+323	323		306							{1: '1'}
+324	324		104						450.0	{1: '-100|100|-200', 2: '0.4'}
+325	325		201							{1: '1', 2: '501358', 3: '8'}
+326	326		301			DialogEnable	DialogDisable			"{1: '1', 3: ""You crouch beside the lion cub, and your worst fears are confirmed: it's not breathing, completely still, no response to anything.""}"
+327	327		202							{1: '1', 6: '1'}
+328	328		104						450.0	{1: '0|0|0', 2: '0.4'}
+329	329		306							
+330	330		201							{1: '1', 2: '501366', 3: '11', 5: '-20', 6: '-200'}
+331	331		302							{2: 'Hypophosphatemia.', 3: '332'}
+332	332		204							{1: '1', 2: '5'}
+333	333		301			DialogEnable	DialogDisable			{2: 'Veronica', 3: 'What is it?', 4: '1', 18: '100011794'}
+334	334		202							{1: '1'}
+335	335		302							"{2: ""It's going into shock. It had too much nutrition too fast..."", 3: '336'}"
+336	336		301			DialogEnable				"{3: ""You can't help but kick yourself. That nutritional solution is only meant for combat emergency rations—it never crossed your mind it would be too much for the cub's delicate system.""}"
+337	337		302							"{2: ""This isn't good. I need to clear its airway and start CPR to get its breathing and heart going again."", 3: '338'}"
+338	338		306							{1: '1'}
+339	339		301							"{3: ""Even though you know human CPR like the back of your hand, you've never formally learned animal emergency procedures. Luckily, you've recently skimmed through some research facility documents that have exactly the information you need.""}"
+340	340		306							
+341	341		401							{1: '2', 2: '2704'}
+342	342		201							{1: '1', 2: '501358', 3: '8'}
+343	343		301							{1: '1', 3: 'You lay the lion cub on its side and, going by the book, find the chest cavity right below the elbow.'}
+344	344		501						600.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab', 2: '2'}
+345	345		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab'}
+346	346		301							"{3: ""The instant your hand hits the spot, you feel something cold against your neck. Without looking back, you know there's a lance pointed right at your throat.""}"
+347	347		201							{1: '1', 2: '501366', 3: '5', 5: '-20', 6: '-200'}
+348	348		301							"{1: '1', 2: 'Veronica', 3: ""You seriously think I don't know where a mammal's heart is?"", 4: '1', 18: '100011795'}"
+349	349		301				DialogDisable			"{2: 'Veronica', 3: ""Did you honestly believe I'd just stand by and let you finish it off right in front of me?"", 4: '1', 18: '100011796'}"
+350	350		302							{2: 'Do you even know what a mammal is?', 3: '351', 4: 'As a mammal myself, I reckon I know a thing or two about what needs doing right now, way better than you do.', 5: '351'}
+351	351		302							{2: 'Every second of this golden hour is precious. If you really want to save it, then just back off and let me work.', 3: '352'}
+352	352		202							{1: '1'}
+353	353		306							{1: '1'}
+354	354		301			DialogEnable				"{3: ""It is the first time Veronica has ever heard such unshakeable, cold resolve in the human's voice since they've crossed paths.""}"
+355	355		401							{1: '2', 2: '10042008'}
+356	356		301							"{3: ""A plate of armor silently shimmers into existence around the human's neck, grating against the hovering lance tip with a harsh, ear-splitting screech.""}"
+357	357		201							{1: '1', 2: '501358', 3: '8'}
+358	358		301			PanelActor1Shake	DialogDisable			"{1: '1', 3: ""The lion cub lies out cold on the ground, barely stirring, its only signs of life due to the human's relentless efforts to bring it back.""}"
+359	359		202							{1: '1'}
+360	360		306							
+361	361		302							{2: 'Stop getting in my way. Take this as a heads-up—or a warning, if that floats your boat.', 3: '362'}
+362	362		306							{1: '1'}
+363	363		401							{1: '1', 2: '36'}
+364	364		301			DialogEnable				"{3: ""Veronica has been warned before; it's not new to her. Anyone who thinks they can strong-arm her into submission has, without fail, ended up eating dirt under her lance.""}"
+365	365		401							{1: '1', 2: '120'}
+366	366		301				DialogDisable			"{3: ""But something in this human's eyes makes her pump the brakes. It's not malice she sees, but something else—something that, for reasons she can't quite put her finger on, makes Veronica hold her horses.""}"
+367	367		306							
+368	368		401						500.0	{1: '2', 2: '4292'}
+369	369		401							{1: '2', 2: '4293'}
+370	370		401							{1: '2', 2: '4251'}
+371	371		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+372	372		301			DialogEnable				{3: 'A distant rumble of thunder rolls, and a fine drizzle begins to kiss the savanna. Through the gentle rain, the human keeps at it, methodically performing CPR on the lion cub, one hand rhythmically pressing its side, the other delivering rescue breaths with practiced precision.'}
+373	373		201							{1: '1', 2: '501366', 3: '8', 5: '-20', 6: '-200'}
+374	374		301							{1: '1', 2: 'Veronica', 3: '...', 4: '1', 18: '100011797'}
+375	375		401							{1: '2', 2: '5293'}
+376	376		301				DialogDisable			{3: 'She lowers her weapon.'}
+377	377		302							{2: 'Long before the Golden Age, humans had been perfecting their knowledge of animal care for generations.', 3: '378'}
+378	378		302							"{2: ""Connect with me if you don't trust me. I have proof."", 3: '379'}"
+379	379		204							{1: '1', 2: '13'}
+380	380		301			DialogEnable				"{2: 'Veronica', 3: ""Connection? Do you take me for a fool? Do you really think I'm as gullible as everyone else, someone who can be sweet-talked and put on a leash like a dog?"", 4: '1', 18: '100011798'}"
+381	381		204							{1: '1', 2: '3'}
+382	382		301							"{2: 'Veronica', 3: ""I couldn't care less about anything to do with you. Just focus on what you need to do."", 4: '1', 18: '100011799'}"
+383	383		203							{1: '1', 2: '0.25', 3: '-400', 4: '-20', 5: '-200'}
+384	384		201							{1: '2', 2: '501375', 3: '8', 4: '500'}
+385	385		301			PanelActor2Shake				{1: '1', 2: 'Lion Cub', 3: 'Cough—', 4: '2'}
+386	386		301				DialogDisable			"{3: ""With a feeble cough, the lion cub finally regains its heartbeat and breathing. Under Veronica's scrutinizing gaze, you retrieve a syringe from your first aid kit.""}"
+387	387		302							{2: 'This is sodium glycerophosphate.', 3: '388'}
+388	388		302							{2: 'Same name, but refined. It treats both humans and animals.', 3: '389'}
+389	389		204							{1: '1', 2: '4'}
+390	390		301			DialogEnable				{2: 'Veronica', 3: 'Humans?', 4: '1', 18: '100011800'}
+391	391		302							{2: 'Humans? Oh, right, of course. Hypophosphatemia is quite dangerous for humans too.', 3: '392'}
+392	392		301							"{3: ""Under Veronica's watchful eye, you slowly administer the injection to the lion cub.""}"
+393	393		301				DialogDisable			{2: 'Veronica', 3: 'What is CPR?', 4: '1', 18: '100011801'}
+394	394		302							{2: 'First aid for cardiac arrest. Works on most mammals.', 3: '395'}
+395	395		204							{1: '2', 2: '1'}
+396	396		401							{1: '2', 2: '2704'}
+397	397		203						300.0	{1: '2', 2: '0.25', 3: '500', 4: '-70'}
+398	398		203						150.0	{1: '2', 2: '0.1', 3: '500'}
+399	399		301			DialogEnable				"{3: ""As the lion cub's breathing gradually stabilizes, you reach out to stroke its fuzzy ears, a playful smile on your face.""}"
+400	400		302							{2: 'To survive this long, we humans have explored and strived for so much—', 3: '401'}
+401	401		301				DialogDisable			{2: 'Veronica', 3: 'Can we... even keep this thing alive with just this?', 4: '1', 18: '100011802'}
+402	402		202							{1: '1', 2: '2', 6: '1'}
+403	403		201							{1: '1', 2: '501367', 5: '-50', 6: '-300'}
+404	404		203							{1: '1', 2: '0.3', 4: '-20', 5: '-200'}
+405	405		301			DialogEnable	DialogDisable			"{1: '1', 3: ""Thinking of something, you face Veronica, who has just piped up. She's been keeping her distance ever since you saved the cub, and now her face is shrouded in shadow.""}"
+406	406		302							"{2: ""Don't be ridiculous... It doesn't work every time..."", 3: '407', 4: ""No kidding. I've had my share of failures, too. This is no miraculous resurrection technique, unfortunately."", 5: '407'}"
+407	407		202							{1: '1'}
+408	408		201							{1: '1', 2: '501358', 3: '2'}
+409	409		401							{1: '2', 2: '5886'}
+410	410		203							{1: '1', 2: '0.25', 5: '-100'}
+411	411		301			DialogEnable				{1: '1', 3: 'Just then, the little lion cub comes to, weakly flopping in your arms. It barely has the strength to lift its paws, but its nose twitches like crazy until it catches a whiff of something good. With a soft whimper, it starts to lap at the nutritional solution.'}
+412	412		302							{2: 'First thing you do is look for food, huh?', 3: '413', 4: 'You must be absolutely starving.', 5: '413', 6: '...', 7: '413'}
+413	413		201							{1: '18', 2: '501364', 3: '3', 4: '350', 5: '-100', 6: '-400'}
+414	414		301							{1: '1', 2: 'Veronica', 3: 'You mammals really go all out just to stay alive a little longer.', 4: '18', 18: '100011803'}
+415	415		202							{1: '18'}
+416	416		301			PanelActor2Shake				"{3: ""You feel the jab and gently flick the cub's forehead, a little punishment for embarrassing the entire mammalian class.""}"
+417	417		401							{1: '2', 2: '5887'}
+418	418		301							{2: 'Lion Cub', 3: 'Grrrr—!', 4: '1'}
+419	419		302				AniZhuanchangBegin			"{2: ""I hear you, little one. You've got a real will to live, don't you?"", 3: '420'}"
+420	420		202							{1: '1', 2: '2'}
+421	421		402							{1: '4251'}
+422	422		401							{1: '2', 2: '2597'}
+423	423		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+424	424		301		1	AniZhuanchangEnd	AniZhuanchangBegin			{3: 'The rain begins to come down in sheets as night falls over the savanna.'}

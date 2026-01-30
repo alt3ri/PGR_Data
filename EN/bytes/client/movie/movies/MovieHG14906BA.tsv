@@ -1,0 +1,346 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1077.jpg'}
+2	2		401							{1: '1', 2: '205'}
+3	3		401							{1: '2', 2: '2915'}
+4	4		201							{1: '5', 2: '501042', 5: '-20', 6: '-30'}
+5	5		201							{1: '1', 2: '500969', 4: '400'}
+6	6		201							{1: '2', 2: '500624', 4: '800'}
+7	7		201							{1: '3', 2: '500462', 4: '-400'}
+8	8		201							{1: '4', 2: '500140', 4: '-800'}
+9	9		401							{1: '2', 2: '9351041'}
+10	10		301			DialogEnable				"{1: '1', 3: ""The stall is packed with people as their lively chatter blends into a continuous buzz. Yata's mechanical arms move at lightning speed and become quite the spectacle for onlookers. The queue loops around the food cart, it is so packed that not even a needle could pass through.""}"
+11	11		202						250.0	{1: '1', 2: '3'}
+12	12		203							{1: '2', 2: '0.4', 3: '400'}
+13	13		203						450.0	{1: '4', 2: '0.4', 3: '-400'}
+14	14		201							{1: '1', 2: '500454', 4: '800'}
+15	15		201							{1: '3', 2: '500236', 4: '-800'}
+16	16		301							{3: 'With Yata at the helm, you focus on packaging, ensuring that customers can swiftly get their food. After several rounds of orders, the already limited ingredients quickly become depleted.'}
+17	17		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5'}
+18	18		401							{1: '2', 2: '4182'}
+19	19		402							{1: '2915'}
+20	20		301							"{3: 'You flip the sign to the side showing ""Sold Out"", and within moments, the crowd around the stall dissipates completely.'}"
+21	21		201							{1: '1', 2: '500342', 5: '-20'}
+22	22		301							{1: '1', 2: 'Visitor', 3: 'Excuse me?', 4: '1'}
+23	23		301							{3: 'Just as you can finally catch a break, a visitor approaches the food cart and eyes the remaining ingredients on the counter.'}
+24	24		301							{2: 'Visitor', 3: 'Looks like you still have some ingredients left for one more serving. Could I have some?', 4: '1'}
+25	25		202							{1: '1', 6: '1'}
+26	26		201							{1: '1', 2: '501042'}
+27	27		301							"{1: '1', 2: 'Yata', 3: ""I'm sorry, but someone has already reserved them."", 4: '1'}"
+28	28		202							{1: '1'}
+29	29		301							"{3: ""After hearing Yata's response, the customer leaves reluctantly, repeatedly glancing back to watch her prepare the final order.""}"
+30	30		301							{3: 'While wiping down the counter, you ask her curiously—'}
+31	31		302							{2: 'Who reserved the last order?', 3: '32'}
+32	32		201							{1: '1', 2: '501042'}
+33	33		301							{1: '1', 2: 'Yata', 3: 'Me.', 4: '1'}
+34	34		202							{1: '1'}
+35	35		401							{1: '2', 2: '9351041'}
+36	36		301						500.0	{3: 'Her mechanic arms continue their intense work—one flips the oden, another arranges the takoyaki, and two more speedily stir-fry noodles. Meanwhile, Yata herself leisurely slices open a bread roll to make a stir-fry noodles sandwich.'}
+37	37		401							{1: '2', 2: '4803'}
+38	38		301							{3: 'She lines up all the food in a neat row before her, picks up a chilled cherry blossom soda, pulls the ring on it, and deftly drops a straw right into it.'}
+39	39		201							{1: '1', 2: '501042', 3: '2'}
+40	40		301							{1: '1', 2: 'Yata', 3: 'I saved them just for you. You must be hungry after working so hard. Eat up before they get cold.', 4: '1'}
+41	41		302							"{2: ""One sec. I'm almost done cleaning up here..."", 3: '42', 4: 'Coming.', 5: '43'}"
+42	42		301							"{2: 'Yata', 3: ""Have some rest. I'll take care of it."", 4: '1'}"
+43	43		202							{1: '1'}
+44	44		401							{1: '2', 2: '4902'}
+45	45		301							{3: 'As you sit down to enjoy the dinner Yata prepared, she pulls up a chair and takes a seat beside you.'}
+46	46		301							{3: 'Yata rests her chin on one hand, gazing at the bustling crowds and the brilliant festival lights illuminating the night.'}
+47	47		401							{1: '2', 2: '4046'}
+48	48		301							{3: 'She slowly turns to watch you eat, opening another can of soda with a sharp hiss.'}
+49	49		201							{1: '1', 2: '501042'}
+50	50		301							"{1: '1', 2: 'Yata', 3: ""Didn't know our little stall would be so popular."", 4: '1'}"
+51	51		302							{2: 'It was definitely because of your cooking.', 3: '52', 4: 'Because the stall owner is very cute.', 5: '54'}
+52	52		204							{1: '1', 2: '2'}
+53	53	60	301							"{2: 'Yata', 3: ""Right? Who would've thought a recipe from years ago would come in handy?"", 4: '1'}"
+54	54		201							{1: '1', 2: '501044', 7: '1'}
+55	55		301			PanelActor1Shake				{1: '1', 2: 'Yata', 3: 'Cough—cough—', 4: '1'}
+56	56		202							{1: '1'}
+57	57		301							"{3: 'Caught off guard by the sudden ""compliment"", Yata chokes on her soda and breaks into a coughing fit.'}"
+58	58		201							{1: '1', 2: '501042', 3: '3'}
+59	59		301							"{1: '1', 2: 'Yata', 3: ""I'll take that as a compliment... just this once."", 4: '1'}"
+60	60		204							{1: '1', 2: '1'}
+61	61		301							{2: 'Yata', 3: 'Anyway, thanks to you, it turned out to be a success. Great work today. Cheers!', 4: '1'}
+62	62		302							{2: '(Clink your drinks)', 3: '63'}
+63	63		203							{1: '1', 2: '0.4', 5: '-30'}
+64	64		104						450.0	{1: '0|0|-50', 2: '0.4'}
+65	65		401						100.0	{1: '2', 2: '2825'}
+66	66		203							{1: '1', 2: '0.4'}
+67	67		104							{1: '0|0|0', 2: '0.4'}
+68	68		301				DialogDisable			{3: 'After the two cans clink together, Yata takes a long, satisfying gulp from hers and sighs contentedly, then she turns to look at your sweaty profile once more.'}
+69	69		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.3'}
+70	70		202						300.0	{1: '1'}
+71	71		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+72	72		201							{1: '1', 2: '501042', 3: '2'}
+73	73		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1077.jpg', 3: '0', 4: '1', 5: '0.3'}
+74	74		301			DialogEnable				{1: '1', 3: 'Suddenly, she presses her ice-cold drink against your cheek. The cool sensation disperses the heat, making you shiver involuntarily.'}
+75	75		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1077.jpg'}
+76	76		205							{1: '999'}
+77	77		301							{3: 'You stare at Yata, who seems quite pleased with herself, awaiting your reaction.'}
+78	78		302							{2: '(Wipe some flour back on her)', 3: '79', 4: 'Stop that...', 5: '86'}
+79	79		204							{1: '1', 2: '3'}
+80	80		203							{1: '1', 2: '0.25', 4: '-50', 5: '-50'}
+81	81		104							{1: '0|0|-50', 2: '0.25'}
+82	82		301							{3: 'Instead of dodging, she lets you poke her cheek.'}
+83	83		204							{1: '1', 2: '1'}
+84	84		301							"{2: 'Yata', 3: ""【kuroname】, you're the first person who's ever dared to do that."", 4: '1'}"
+85	85		302							"{2: ""That's my privilege as the stall manager."", 3: '88', 4: 'Does that count as breaking school rules?', 5: '88', 6: ""I won't do it again."", 7: '88'}"
+86	86		204							{1: '1', 2: '2'}
+87	87		301							{2: 'Yata', 3: 'Fine.', 4: '1'}
+88	88		203							{1: '1', 2: '0.25'}
+89	89		104						200.0	{1: '0|0|0', 2: '0.25'}
+90	90		202							{1: '1'}
+91	91		301							{3: 'She lets out a smug little hum before closing her eyes and quietly sipping her soda, letting you return to your dinner in peace.'}
+92	92		201							{1: '1', 2: '501042', 5: '-50'}
+93	93		301							{1: '1', 2: 'Yata', 3: 'Finished?', 4: '1'}
+94	94		302							{2: 'Pretty much.', 3: '95'}
+95	95		203							{1: '1', 2: '0.4'}
+96	96		301						450.0	"{3: ""Seeing that you've finished your meal, Yata slowly rises to her feet, gazing at the festively decorated streets.""}"
+97	97		204							{1: '1', 2: '2'}
+98	98		301							"{2: 'Yata', 3: ""Come on, let's take a walk to help digest."", 4: '1'}"
+99	99		202							{1: '1'}
+100	100		301				AniZhuanchangBegin			{3: 'She pulls at your wrist and leads you into the bustling crowd.'}
+101	101		401							{1: '1', 2: '100'}
+102	102		201						2000.0	{1: '1', 2: '501042', 7: '1'}
+103	103		301			AniZhuanchangEnd				{1: '1', 2: 'Yata', 3: 'The cooking club once held an eating competition where participants had to start from one end of the shopping street and eat one dish from every store they passed until they reached the other end.', 4: '1'}
+104	104		301							"{3: ""As you and Yata weave through the sea of people, she enthusiastically describes the eating competition's rules, her every gesture brimming with excitement.""}"
+105	105		204							{1: '1', 2: '2'}
+106	106		301							"{2: 'Yata', 3: ""All this talk is making me hungry. Anything you'd like to try?"", 4: '1'}"
+107	107		301							"{2: 'Yata', 3: ""Over here they've got konpeito candy, matcha daifuku, shaved ice—"", 4: '1'}"
+108	108		204							{1: '1', 2: '1'}
+109	109		301							"{2: 'Yata', 3: ""And over there they've got Lantern and fried chicken!"", 4: '1'}"
+110	110		301							"{3: ""There are so many food options that even Yata's six hands can barely keep up pointing at them all.""}"
+111	111		302							"{2: ""I'll let you pick."", 3: '112', 4: 'I want to try everything.', 5: '112'}"
+112	112		301							"{2: 'Yata', 3: ""No problem! This one, and this, oh and that one too—let's get two of each!"", 4: '1'}"
+113	113		202							{1: '1'}
+114	114		301							{3: 'The two of you make your way down the bustling street, sampling various local delicacies along the way.'}
+115	115		201							{1: '1', 2: '501042'}
+116	116		301							"{1: '1', 2: 'Yata', 3: ""This one's extra spicy. Wanna swap and give it a try?"", 4: '1'}"
+117	117		302							{2: '(Swap with her)', 3: '118', 4: '(Open your mouth)', 5: '119'}
+118	118	121	301							"{2: 'Yata', 3: 'Hmm—your food\'s way too mild. One day, I\'ll have to take you to try the island\'s specialty, the ""Spicy Hell"".', 4: '1'}"
+119	119		204							{1: '1', 2: '2'}
+120	120		301							"{2: 'Yata', 3: ""Hey, save some for me! Don't eat it all!"", 4: '1'}"
+121	121		204							{1: '1', 2: '2'}
+122	122		301				AniZhuanchangBegin			"{2: 'Yata', 3: ""Wanna grab something to drink? There's a shop over there selling Calpico."", 4: '1'}"
+123	123		202							{1: '1', 6: '1'}
+124	124		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory551.jpg'}
+125	125		103							{1: '2.2', 2: '1100|650|0'}
+126	126		301			AniZhuanchangEnd				{3: 'Chatting and laughing together, the two of you head toward a traditionally decorated drink stall.'}
+127	127		302							{2: 'This place has such a retro vibe.', 3: '128'}
+128	128		201							{1: '1', 2: '501042'}
+129	129		301							{1: '1', 2: 'Yata', 3: 'Normal Form', 4: '1'}
+130	130		301							{3: 'Yata comes to a sudden halt, her attention seized by something.'}
+131	131		301							"{2: 'Yata', 3: ""Is that... Miyuki's robot?"", 4: '1'}"
+132	132		202							{1: '1'}
+133	133		306							{1: '1'}
+134	134		201							{1: '1', 2: '500268'}
+135	135		301							"{1: '1', 3: ""Following Yata's gaze, you spot the handcrafted item that Uncle Morita had taken earlier, now displayed at this stand.""}"
+136	136		301							"{1: '1', 3: ""The simple coin-operated robot sways back and forth, with the vendor's kind face visible behind it. The light casts shadows that accentuate every wrinkle on her face.""}"
+137	137		202							{1: '1'}
+138	138		306							
+139	139		401							{1: '1', 2: '36'}
+140	140		301							{3: 'Yata stands motionless, gazing at the robot in disbelief before her eyes drift to the vendor, lost in thought.'}
+141	141		401							{1: '1', 2: '278'}
+142	142		201							{1: '1', 2: '500268'}
+143	143		301							"{1: '1', 2: 'Elderly Woman', 3: ""It's been so long... Yata."", 4: '1'}"
+144	144		301							{3: 'The elderly woman seems to know Yata. Could she be a survivor of Hydrangea Island?'}
+145	145		203							{1: '1', 2: '0.25', 3: '-400'}
+146	146		201							{1: '2', 2: '501042', 4: '400'}
+147	147		301							{1: '1', 2: 'Yata', 3: '...Hello.', 4: '2'}
+148	148		301							"{2: 'Elderly Woman', 3: ""Hmm... You haven't changed a bit, Yata."", 4: '1'}"
+149	149		301							{2: 'Elderly Woman', 3: 'Back then, Miyuki was about your height.', 4: '1'}
+150	150		301							"{2: 'Elderly Woman', 3: ""I'm fortunate to have met you today. Without you... I'd have almost forgotten what she looked like..."", 4: '1'}"
+151	151		204							{1: '2', 2: '3'}
+152	152		301							{2: 'Yata', 3: 'But...', 4: '2'}
+153	153		301							"{2: 'Elderly Woman', 3: ""Don't be sad. Miyuki always wanted to see you happy. After all, the kids really looked up to you back then."", 4: '1'}"
+154	154		301							{2: 'Elderly Woman', 3: 'So, how does it feel to be back here today?', 4: '1'}
+155	155		204							{1: '2', 2: '2'}
+156	156		301							{2: 'Yata', 3: '...Happy. I feel happy.', 4: '2'}
+157	157		301							"{2: 'Elderly Woman', 3: ""That's good to hear. I'm happy too, you know. Look—Miyuki's little robot is still here."", 4: '1'}"
+158	158		202							{1: '1', 2: '2'}
+159	159		401							{1: '2', 2: '2824'}
+160	160		301							{3: 'The old lady smiles kindly as she inserts a coin into the little robot with her calloused right hand.'}
+161	161		301							{2: 'Little Robot', 3: 'Thanks for feeding me! Welcome to Misono High Track and Field Club! May all your wishes come true!'}
+162	162		301							"{3: ""The enthusiastic recording of a high school girl's voice breaks free from time's confinement, blending with the festive crowds.""}"
+163	163		201							{1: '1', 2: '500268'}
+164	164		301							{1: '1', 2: 'Elderly Woman', 3: 'Officer, Morita told me you were the one who helped Yata find them?', 4: '1'}
+165	165		302							"{2: ""Yes, that's right."", 3: '166', 4: '(Nod)', 5: '166'}"
+166	166		301							"{2: 'Elderly Woman', 3: ""Miyuki once told me that Yata used to run around all by herself, keeping everyone at arm's length."", 4: '1'}"
+167	167		301							"{2: 'Elderly Woman', 3: ""It's wonderful to see that after all these years, Yata is no longer alone."", 4: '1'}"
+168	168		301							"{2: 'Elderly Woman', 3: ""Miyuki told me about your food stall—how it was everyone's shared dream back then. And now... I can see these kids' wishes come true with my own eyes."", 4: '1'}"
+169	169		301							{2: 'Elderly Woman', 3: 'Thank you. Please take the extra food. Consider it my blessing to you.', 4: '1'}
+170	170		301							{2: 'Elderly Woman', 3: 'I hope you will continue to live life to the fullest without regrets.', 4: '1'}
+171	171		302							{2: 'Thank you.', 3: '172'}
+172	172		203							{1: '1', 2: '0.25', 3: '-400'}
+173	173		201							{1: '2', 2: '501042', 4: '400'}
+174	174		301							{1: '1', 2: 'Yata', 3: '...We will. I promise.', 4: '2'}
+175	175		204							{1: '2', 2: '2'}
+176	176		301				AniZhuanchangBegin			{2: 'Yata', 3: 'And you too... May your days be filled with happiness!', 4: '2'}
+177	177		202							{1: '1', 2: '2', 6: '1'}
+178	178		401							{1: '1', 2: '36'}
+179	179		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg'}
+180	180		401							{1: '1', 2: '5059'}
+181	181		401							{1: '2', 2: '903'}
+182	182		301			AniZhuanchangEnd				{3: 'After leaving the drink stall, Yata appears somewhat absentminded as the two of you walk to the end of the festival street. You now stand on a slope by the shore, where gentle sea breezes brush against your face and waves crash rhythmically in your ears.'}
+183	183		301							"{3: ""Gathering clouds obscure the moonlight, dark masses stretching across the sky. At least the waterproof tarps and brackets have been handed over to the staff. It's better to be prepared.""}"
+184	184		301							{3: 'In the gentle, peaceful atmosphere, Yata sits down on the slope. She sets her unfinished snacks aside and leans back on her hands, gazing at the glittering sea in the distance.'}
+185	185		302							{2: '(Sit down beside her)', 3: '186'}
+186	186		402							{1: '903'}
+187	187		401							{1: '2', 2: '2936'}
+188	188		301							{3: 'Without a word, she lies down and gently tugs at you.'}
+189	189		301							{3: 'When you look over, Yata smiles and pats the soft grass beside her.'}
+190	190		401							{1: '2', 2: '2936'}
+191	191		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg', 3: '0', 4: '1', 5: '0.8'}
+192	192		301						1000.0	{3: 'As you lie down on the grass and gaze at the vast starry sky, Yata slowly begins to speak.'}
+193	193		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg'}
+194	194		205							{1: '999'}
+195	195		201							{1: '18', 2: '501042', 4: '20', 5: '-200', 6: '-20'}
+196	196		301							"{1: '1', 2: 'Yata', 3: ""That lady we just met... she's Miyuki's mother."", 4: '18'}"
+197	197		301							{2: 'Yata', 3: 'Seeing her and Uncle Morita today...', 4: '18'}
+198	198		301							"{2: 'Yata', 3: ""Walking with you through these familiar school grounds, gazing at this same night sky we've always known..."", 4: '18'}"
+199	199		301							"{2: 'Yata', 3: ""It all feels so surreal—like I'm in a dream."", 4: '18'}"
+200	200		202							{1: '18'}
+201	201		301							{3: 'She raises her hand against the sky, spreading her fingers and gazing through the gaps to the faint stars beyond.'}
+202	202		201							{1: '18', 2: '501042', 4: '20', 5: '-200', 6: '-20'}
+203	203		301							{1: '1', 2: 'Yata', 3: 'We... really made it back.', 4: '18'}
+204	204		301							{2: 'Yata', 3: 'Back to Hydrangea Island, back to Misono High.', 4: '18'}
+205	205		301							"{2: 'Yata', 3: ""Every struggle we've been through... it was all worth it."", 4: '18'}"
+206	206		302							{2: 'You drove out the Punishing with your own hands and liberated your hometown.', 3: '207'}
+207	207		301							{2: 'Yata', 3: 'Hmm, being a hero behind the scenes... It feels pretty good.', 4: '18'}
+208	208		202							{1: '18'}
+209	209		301							{3: 'After a moment, her outstretched hand closes into a fist, as if gathering all her scattered thoughts and pulling them back to her side.'}
+210	210		401							{1: '2', 2: '2936'}
+211	211		301							{1: '500', 3: 'Yata turns her head to look at you.'}
+212	212		201							{1: '18', 2: '501042', 4: '20', 5: '-200', 6: '-20'}
+213	213		301							{1: '1', 2: 'Yata', 3: 'As the human hero in the spotlight, do you have any... different insights to share?', 4: '18'}
+214	214		302							{2: 'Not really.', 3: '215'}
+215	215		302							"{2: ""Whether in the spotlight or behind the scenes, we're all running toward the same goal—"", 3: '216'}"
+216	216		302							{2: 'To guide humanity through this calamity.', 3: '217'}
+217	217		202							{1: '18'}
+218	218		301							{3: 'Yata responds with a faint smile.'}
+219	219		201							{1: '18', 2: '501042', 4: '20', 5: '-200', 6: '-20'}
+220	220		301							"{1: '1', 2: 'Yata', 3: ""You know, ever since becoming a Construct, I've been worried... that I'm not running fast enough."", 4: '18'}"
+221	221		301							"{2: 'Yata', 3: ""I've always been afraid that one day the Punishing would suddenly catch up to me and take away everything I cherished, all over again."", 4: '18'}"
+222	222		301							"{2: 'Yata', 3: ""That's why I kept chasing after the shadows of those stronger than me, hoping to follow in their footsteps and learn their ways to become stronger myself."", 4: '18'}"
+223	223		301							{2: 'Yata', 3: 'In this marathon, I passed one figure after another, crossing finish lines they could never reach, until before me appeared—', 4: '18'}
+224	224		301							{2: 'Yata', 3: 'The legendary Gray Raven Commandant.', 4: '18'}
+225	225		202							{1: '18'}
+226	226		401							{1: '2', 2: '2902'}
+227	227		301							{3: 'The evening breeze rustles by as she lies beside you, her silver hair swaying gently with the grass.'}
+228	228		201							{1: '18', 2: '501042', 4: '20', 5: '-200', 6: '-20'}
+229	229		301							{1: '1', 2: 'Yata', 3: 'I followed in your footsteps, from Puria Forest Park to the Hetero Forest outside the Inver-Hetero Tower...', 4: '18'}
+230	230		301							{2: 'Yata', 3: 'Even though we overcame so many obstacles together, the distance between us... only grew wider.', 4: '18'}
+231	231		301							{2: 'Yata', 3: 'You were like a brilliant shooting star, breaking through every obstacle in your path, as if nothing could ever slow your stride.', 4: '18'}
+232	232		204							{1: '18', 2: '3'}
+233	233		301							{2: 'Yata', 3: '...In the end, I almost gave up on catching up to you.', 4: '18'}
+234	234		204							{1: '18'}
+235	235		301							{2: 'Yata', 3: 'But to my surprise, right at that moment, you turned around, took my hand, and helped me run that final stretch together.', 4: '18'}
+236	236		202							{1: '18'}
+237	237		401							{1: '2', 2: '903'}
+238	238		301							{3: 'Under the moonlight, the sea breeze carries the tide as it gently washes over the shore, creating a soothing rustling sound against the sand.'}
+239	239		402							{1: '903'}
+240	240		201							{1: '18', 2: '501042', 4: '20', 5: '-200', 6: '-20'}
+241	241		301							"{1: '1', 2: 'Yata', 3: ""And more than that, you guided me to look back at the path we'd traveled together."", 4: '18'}"
+242	242		301							{2: 'Yata', 3: 'It was in that moment of turning around that I finally understood—', 4: '18'}
+243	243		301							{2: 'Yata', 3: 'I was already running fast enough.', 4: '18'}
+244	244		301							{2: 'Yata', 3: 'All this time, I never noticed how many others were following in my footsteps.', 4: '18'}
+245	245		301							"{2: 'Yata', 3: ""I've... come such a long way."", 4: '18'}"
+246	246		202							{1: '18'}
+247	247		301							{3: 'As Yata repeats your words from not long ago, she reaches up and gently taps the tip of your nose.'}
+248	248		201							{1: '18', 2: '501042', 3: '2', 4: '20', 5: '-200', 6: '-20'}
+249	249		301							{1: '1', 2: 'Yata', 3: 'Thank you for helping me make it this far.', 4: '18'}
+250	250		302							"{2: ""I'll keep running by your side."", 3: '251', 4: ""It's the least I could do."", 5: '251'}"
+251	251		202							{1: '18', 6: '1'}
+252	252		201							{1: '1', 2: '501042', 3: '2'}
+253	253		401							{1: '2', 2: '2936'}
+254	254		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg', 3: '0', 4: '1', 5: '0.5'}
+255	255		301							{1: '1', 3: 'She smiles and slowly sits up, her gaze wandering across the landscape as if seeing them for the first time.'}
+256	256		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg'}
+257	257		205							{1: '999'}
+258	258		202							{1: '1'}
+259	259		301							"{3: ""As Yata's gaze meets the sky, the wind tousles her hair, and through the dancing strands, her eyes grow ever brighter.""}"
+260	260		201							{1: '1', 2: '501042', 3: '7'}
+261	261		301				DialogDisable			{1: '1', 2: 'Yata', 3: 'Hey, look over there—', 4: '1'}
+262	262		202							{1: '1'}
+263	263		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg', 3: '0', 4: '1', 5: '1.5'}
+264	264		301			DialogEnable				{3: 'At her call, you sit up as well. The dark clouds have dispersed without notice, revealing a brilliant band of stars stretching across the sky, with the bright moon hanging high above.'}
+265	265		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+266	266		205							{1: '999'}
+267	267		401							{1: '2', 2: '4183'}
+268	268		301							{3: 'Suddenly, a purple bolide launches from the ground, trailing a long tail of flames as it soars into the sky.'}
+269	269		401							{1: '2', 2: '2903'}
+270	270		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+271	271		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1076.jpg'}
+272	272		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg', 3: '0', 4: '1', 5: '0.5'}
+273	273		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+274	274		205							{1: '999'}
+275	275		301							{3: 'It flickers for a moment before bursting with a crackle into countless stars, illuminating half the sky in a dazzling display.'}
+276	276		401							{1: '2', 2: '4183'}
+277	277		301							{3: 'Before the night sky can dim, another streak of flame shoots upward. With a boom, it adds its own sparks to the celestial display.'}
+278	278		302							"{2: ""What's this?"", 3: '279'}"
+279	279		301						1000.0	{3: 'Next, a hydrangea-shaped firework blooms beneath the dome of the night sky.'}
+280	280		401							{1: '2', 2: '4183'}
+281	281		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+282	282		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1076.jpg'}
+283	283		201							{1: '1', 2: '501042', 3: '2', 7: '1'}
+284	284		301							{1: '1', 2: 'Yata', 3: 'The fire... works!', 4: '1'}
+285	285		401							{1: '2', 2: '4183'}
+286	286		301							"{3: ""As fireworks burst in quick succession, Yata's voice is drowned out by their thunderous blooms.""}"
+287	287		302							{2: '—What did you say?', 3: '288'}
+288	288		203							{1: '1', 2: '0.4', 4: '-20', 5: '-50'}
+289	289		301							{3: 'To make herself heard more clearly, Yata leans in close to your ear.'}
+290	290		204							{1: '1', 2: '1'}
+291	291		301							"{2: 'Yata', 3: ""I said it's time for the fireworks!"", 4: '1'}"
+292	292		402							{1: '4381'}
+293	293		202							{1: '1', 6: '1'}
+294	294		401							{1: '2', 2: '4183'}
+295	295		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+296	296		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory784.jpg'}
+297	297		301							{3: 'Across the river, fireworks launch one after another, forming countless hydrangea-shaped bursts across the sky, turning night into day as they paint the scene in a magnificent display of light.'}
+298	298		201							{1: '1', 2: '501042', 3: '1'}
+299	299		301							"{1: '1', 2: 'Yata', 3: ""We're so lucky! This has got to be the perfect spot to watch the fireworks!"", 4: '1'}"
+300	300		204							{1: '1', 2: '2'}
+301	301		301							"{2: 'Yata', 3: ""Oh right—make a wish! The earlier you make them during the fireworks, the more likely they will come true. It's an old tradition on this island."", 4: '1'}"
+302	302		302				AniZhuanchangBegin			{2: '(Close your eyes and make a silent wish)', 3: '303'}
+303	303		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+304	304		301			AniZhuanchangEnd				{3: 'When you open your eyes, you find Yata sitting cross-legged, beaming at you with a radiant smile.'}
+305	305		302							"{2: ""Aren't you going to make a wish?"", 3: '306'}"
+306	306		204							{1: '1', 2: '3'}
+307	307		301							{2: 'Yata', 3: 'Ahem, of course I am.', 4: '1'}
+308	308		204							{1: '1', 2: '1'}
+309	309		301							"{2: 'Yata', 3: ""But I won't keep it a secret from you. I'll tell you my wish right here and now."", 4: '1'}"
+310	310		202							{1: '1'}
+311	311		301							{3: 'Yata closes her eyes and places a hand over her chest, visibly nervous.'}
+312	312		201							{1: '1', 2: '501042', 3: '3'}
+313	313		301							{1: '1', 2: 'Yata', 3: 'T-today...', 4: '1'}
+314	314		204							{1: '1', 2: '6'}
+315	315		301							{2: 'Yata', 3: 'No, tonight—', 4: '1'}
+316	316		301							{3: 'As if catching herself saying something wrong, she suddenly opens her eyes, her cheeks turning slightly red.'}
+317	317		301							{2: 'Yata', 3: 'Tonight—', 4: '1'}
+318	318		301							"{3: ""A gentle sea breeze passes by once more, caressing your cheeks and making the girl's hair dance in the wind.""}"
+319	319		204							{1: '1', 2: '2'}
+320	320		301							"{2: 'Yata', 3: ""The moon is beautiful... isn't it?"", 4: '1'}"
+321	321		401							{1: '2', 2: '4183'}
+322	322		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+323	323		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1076.jpg'}
+324	324		301							{3: 'But before Yata can finish her words, another round of fireworks screams into the sky, blooming into a brilliant curtain of colors—its thunderous boom nearly drowning out her voice.'}
+325	325		302							"{2: ""I can't hear you."", 3: '326'}"
+326	326		301							{2: 'Yata', 3: 'I said—', 4: '1'}
+327	327		202							{1: '1'}
+328	328		401							{1: '2', 2: '4044'}
+329	329		301							{3: 'As dazzling fireworks bloom across the night sky, their thunderous booms echo through the air. Yata suddenly lunges forward and punches your shoulder.'}
+330	330		301							"{3: ""Thankfully, you're quick enough to dodge her barrage of lightning-fast follow-up punches.""}"
+331	331		201							{1: '1', 2: '501042', 3: '4'}
+332	332		301							"{1: '1', 2: 'Yata', 3: ""Ahem! Well, I've made my wish anyway, so don't you ever bring up what I just said whether you understood it or not!"", 4: '1'}"
+333	333		301							{3: 'Under the star-studded night sky, Yata stands with her hands on her hips, bossing you around with an air of authority—just like the stern Disciplinary Committee member she once was.'}
+334	334		302							{2: 'Roger that, Yata.', 3: '335'}
+335	335		204							{1: '1', 2: '3'}
+336	336		301							"{2: 'Yata', 3: ""Phew... The night's still young, so I-I'm going to patrol around and... check if anyone's breaking any rules."", 4: '1'}"
+337	337		204							{1: '1', 2: '1'}
+338	338		301							"{2: 'Yata', 3: ""If you want to come along, then keep up and don't fall behind, 【kuroname】!"", 4: '1'}"
+339	339		202							{1: '1'}
+340	340		301							{3: 'Before she even finishes speaking, she turns away with flushed cheeks and takes off running along the coastline.'}
+341	341		301							{3: 'You follow her silhouette, your footsteps matching hers as you run together.'}
+342	342		301				DialogDisable			{3: 'As you gaze up at the brilliant fireworks, you lay your hand on the heart, searching for possible words to describe your emotion.'}
+343	343		401							{1: '2', 2: '4183'}
+344	344		307						200.0	{1: '—In your chest is a heart beating just as fast as hers.', 3: '60', 4: 'ffffff'}
+345	345		301		1		AniZhuanchangBegin			{3: '—In your chest is a heart beating just as fast as hers.'}

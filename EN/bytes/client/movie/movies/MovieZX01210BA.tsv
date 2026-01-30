@@ -1,0 +1,41 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		401			AniZhuanchangEnd				{1: '1', 2: '201'}
+2	2		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory179.png'}
+3	3		301			DialogEnable				{3: 'Soon after the beginning of the war, the outer ring of the city has already descended into chaos. The cacophonous shrieks of the Corrupted and the clang of weapons are the only things that fill the air.'}
+4	4		301							{3: 'At first, the Babylonia squads were having little trouble fending off the Corrupted, but then they began swarming in. The Corrupted grew in numbers, and things got out of control.'}
+5	5		201							{1: '2', 2: '500019', 4: '-400'}
+6	6		201							{1: '3', 2: '500019', 4: '400'}
+7	7		301							{1: '1', 2: 'Construct A', 3: 'If only I still had a weapon...', 4: '2'}
+8	8		301							{1: '1', 2: 'Construct B', 3: 'So this is it...', 4: '3'}
+9	9		202							{1: '2', 2: '3'}
+10	10		301							{3: 'These two Constructs have been separated from their squad. Overwhelmed by the onslaught of the Corrupted, they broke loose from their formation and were chased to a street corner.'}
+11	11		201							{1: '1', 2: '500013'}
+12	12		401							{1: '2', 2: '1508'}
+13	13		301							{1: '1', 2: 'Corrupted', 3: 'Urgh!', 4: '1'}
+14	14		202							{1: '1'}
+15	16		401							{1: '1', 2: '206'}
+16	17		301							"{1: '1', 2: '???', 3: ""Don't you dare give up, you morons!"", 4: '1'}"
+17	18		301			RImgBg1Shake				{3: 'A Corrupted is about to attack the two Constructs, when a slab of rebar-reinforced concrete sends it flying into the air. The two find themselves stunned, before realizing that they were saved.'}
+18	15		201							{1: '1', 2: '500171'}
+19	19		301							{1: '1', 3: 'Looking in the direction from which the slab soared, they see an imposing woman running over. She helps them up and starts checking their wounds.'}
+20	20		203					1000.0		{1: '1', 2: '0.5', 3: '-400'}
+21	21		201							{1: '3', 2: '500019', 4: '400'}
+22	22		301							{1: '1', 2: 'Construct A', 3: 'Thank you... Uh, may I ask who you are?', 4: '3'}
+23	24		301							"{1: '1', 2: 'Bridget', 3: ""I'm the leader of one of the squads in the Support Force. You can call me Bridget."", 4: '1'}"
+24	25		301							{2: 'Construct A', 3: 'Support Force!?', 4: '3'}
+25	26		203							{1: '1', 2: '0.25', 3: '-600'}
+26	27		203							{1: '3', 2: '0.25', 3: '600'}
+27	28		201							{1: '2', 2: '500019'}
+28	29		301							{1: '1', 2: 'Construct B', 3: 'You call those brawns of yours support?!', 4: '2'}
+29	34		202							{1: '1', 2: '2', 3: '3'}
+30	30		301							"{3: 'The words ""Support Force"" induces innumerable questions in the two Constructs. As far as Constructs know, the Support Force is made up of rank-and-file soldiers or new recruits.'}"
+31	31		301							{3: 'That a Construct as powerful as Bridget can be a member of the Support Force is beyond their wildest dreams.'}
+32	23		201							{1: '1', 2: '500167', 4: '-400'}
+33	33		201							{1: '3', 2: '500019', 4: '400'}
+34	35		301							"{1: '1', 2: 'Bridget', 3: ""Well, somebody's gotta do the support work around here."", 4: '1'}"
+35	36		301							{3: 'Bridget seems to have been used to questions like this. She tinkers with the Constructs as she replies.'}
+36	37		301							{2: 'Construct A', 3: 'Uh, yeah... fair point.', 4: '3'}
+37	38		301							{3: 'The two Constructs half-nods, hazily. Right after fixing them up, Bridget hurries off.'}
+38	39		301							{2: 'Support Force Member', 3: 'Boss, Gray Raven and some of the squads have arrived at the interception point!'}
+39	40		204							{1: '1', 2: '4'}
+40	41		301		1		AniZhuanchangBegin			"{2: 'Bridget', 3: ""Then let's hurry and move on to the next reinforcement location!"", 4: '1'}"

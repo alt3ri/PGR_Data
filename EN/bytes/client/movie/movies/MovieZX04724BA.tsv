@@ -1,0 +1,263 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+2	2		401							{1: '1', 2: '209'}
+3	3		107	1						{1: 'Science Council', 2: 'Testing Ground'}
+4	4		108							{1: '1'}
+5	5		301			DialogEnable				{3: 'After going through detailed inspection procedures and navigating numerous corridors, you finally stop in front of a sealed laboratory.'}
+6	6		301							{3: 'With his back to the window, Asimov is working on some laboratory equipment while Wanshi lies on the examination bed, connected to M.I.N.D. monitoring devices. The screen displays the current stability of his M.I.N.D. readings.'}
+7	7		301							"{3: ""The previously stable connection suddenly shows an abnormal fluctuation, and Wanshi's eyes flutter in response.""}"
+8	8		301							{3: 'Asimov walks out soon after noticing the Gray Raven Commandant.'}
+9	9		201							{1: '1', 2: '500004'}
+10	10		301							"{1: '1', 2: 'Asimov', 3: ""Perfect timing. I need to tell you something about Wanshi's condition."", 4: '1'}"
+11	11		301							"{2: 'Asimov', 3: ""Ever since receiving his new frame, he's been unconsciously accessing sealed memory data from time to time."", 4: '1'}"
+12	12		301							"{2: 'Asimov', 3: ""Thankfully, you performed a deep dive to stabilize Wanshi's M.I.N.D. in time. Otherwise, the sheer volume and disorganization of that data would have been enough to kill him through M.I.N.D. disruption."", 4: '1'}"
+13	13		301							"{2: 'Asimov', 3: 'The memory data no longer poses a threat to him, but I can still detect fluctuations in his M.I.N.D... He must have told you about his condition—those ""momentary blackouts""?', 4: '1'}"
+14	14		301							"{2: 'Asimov', 3: ""It's essentially just a brief, uncontrolled stasis."", 4: '1'}"
+15	15		302							{2: 'Is this... some kind of unusual aftereffect...?', 3: '16'}
+16	16		301							"{2: 'Asimov', 3: ""You can think of it that way. While it doesn't significantly affect his daily life, we must take this seriously for the sake of his future combat operations."", 4: '1'}"
+17	17		301							"{2: 'Asimov', 3: ""I've run a thorough examination. The trigger appears to be a momentary disruption in his memory data, which has destabilized his memory storage system."", 4: '1'}"
+18	18		302							{2: 'So it all comes down to his memory data.', 3: '19'}
+19	19		301				DialogDisable			{2: 'Asimov', 3: 'The M.I.N.D. disruption burst he experienced at the research facility was too severe. Even though you managed to stabilize him in time, this kind of irreversible damage was to be expected... At least, irreversible with our current technology.', 4: '1'}
+20	20		302							{2: 'Is there any way we can treat this, even partially?', 3: '21'}
+21	21		302							{2: 'Like temporarily switching back to his old frame?', 3: '22'}
+22	22		301			DialogEnable				"{2: 'Asimov', 3: ""There are two solutions. The simplest one is temporarily reverting to the old frame—it's the standard method for dealing with M.I.N.D. deviation. We've tried it already, but it doesn't work for Wanshi."", 4: '1'}"
+23	23		301							"{2: 'Asimov', 3: ""Another suggestion is to install an external memory module. We have Bambinata from Egret as a precedent. If we try something similar with Wanshi, the results should be more stable—after all, Wanshi's condition isn't as complex as Bambinata's."", 4: '1'}"
+24	24		301							"{2: 'Asimov', 3: ""However, using external modules would sacrifice much of Wanshi's memory data—at the very least, he would lose the ability to recall memories freely."", 4: '1'}"
+25	25		301							"{2: 'Asimov', 3: ""Wanshi himself has made it clear that he won't accept it."", 4: '1'}"
+26	26		302							{2: '...Wanshi?', 3: '27'}
+27	27		202							{1: '1', 6: '1'}
+28	28		201							{1: '1', 2: '500934'}
+29	29		301							{1: '1', 3: 'After disconnecting from the monitoring device, Wanshi walks over. It is hard to imagine him firmly rejecting anything.'}
+30	30		301							"{3: ""Still, having delved deep into Wanshi's M.I.N.D. before, you can somewhat understand how he feels.""}"
+31	31		301							"{3: ""So many people had all traces of their existence erased. If the memory data about them is moved to external storage... wouldn't that mean they have vanished completely from this world?""}"
+32	32		301							{2: 'Wanshi', 3: 'Besides these two options... Asimov and I want to try a third approach.', 4: '1'}
+33	33		302							{2: 'A third approach?', 3: '34'}
+34	34		201							{1: '1', 2: '500004'}
+35	35		301							{1: '1', 3: 'Asimov pulls up a document and gives the human a brief look at the publicly available research topics from a particular project group.'}
+36	36		301							{2: 'Asimov', 3: 'This project group was established by the Science Council a few years ago, specifically to study various types of M.I.N.D. disruptions in Constructs.', 4: '1'}
+37	37		301							{2: 'Asimov', 3: 'Unlike most previous M.I.N.D. research, this project is specifically focused on medical applications, working in close collaboration with Star of Life.', 4: '1'}
+38	38		301							"{2: 'Asimov', 3: ""I've asked around. Wanshi's condition is quite unique—there aren't any similar cases in the project group yet."", 4: '1'}"
+39	39		301							{2: 'Asimov', 3: 'So he needs to make a decision.', 4: '1'}
+40	40		301							"{2: 'Asimov', 3: 'Would you be willing to assist the clinical laboratory\'s research project on M.I.N.D. as the first ""case study""?', 4: '1'}"
+41	41		301							"{2: 'Asimov', 3: ""I'll be clear upfront: the first clinical case always carries significant risks, and complete recovery cannot be guaranteed."", 4: '1'}"
+42	42		302							{2: '...', 3: '43'}
+43	43		201							{1: '1', 2: '500934', 3: '4'}
+44	44		301							"{1: '1', 2: 'Wanshi', 3: ""...I've seen many Constructs struggling with M.I.N.D. deviation aftereffects."", 4: '1'}"
+45	45		301							{2: 'Wanshi', 3: 'If we can use this opportunity to find new treatment methods for similar M.I.N.D. damage symptoms, we could help far more Constructs than just myself.', 4: '1'}
+46	46		301							{2: 'Wanshi', 3: 'Whatever the odds, whatever the future holds, I know that this choice, right here and now, is the right one.', 4: '1'}
+47	47		301							"{3: ""Seeing Wanshi's serious expression, Asimov nods in response.""}"
+48	48		201							{1: '1', 2: '500004'}
+49	49		301							"{1: '1', 2: 'Asimov', 3: ""I can still guarantee some things, no need to be so serious... And you don't need to look so worried either."", 4: '1'}"
+50	50		301							{3: 'Asimov pulls up another document.'}
+51	51		301							"{2: 'Asimov', 3: 'This is the newly approved ""Administrative Measures on Clinical Trial"" from Parliament.', 4: '1'}"
+52	52		301							{2: 'Asimov', 3: 'It emphasizes that the primary consideration in clinical trials is the rights and safety of the test subjects.', 4: '1'}
+53	53		301							{2: 'Asimov', 3: 'Before research is carried out, all experiment plans must be approved by the ethics committee. A strict ethical review needs to be performed and consent must be collected.', 4: '1'}
+54	54		301							{2: 'Asimov', 3: 'The regulatory system will oversee the entire research process.', 4: '1'}
+55	55		301							"{3: ""The text flows smoothly as Asimov's finger glides across it—concise, meticulous, and clear. These are the principles everyone must abide by.""}"
+56	56		301							"{2: 'Asimov', 3: 'Humanity should have realized this by now: ""No proposition outweighs the survival of human civilization.""', 4: '1'}"
+57	57		301							{3: 'After Wanshi finishes reviewing the documents, Asimov leaves a final remark.'}
+58	58		301							"{2: 'Asimov', 3: ""This weapon was meant to benefit our era, but some had used it against the wrong targets. Now it's time for someone to wield it as intended."", 4: '1'}"
+59	59		301							{3: 'Science marches forward, and the refinement of human civilization continues without pause.'}
+60	60		301							{3: 'The pruning of excess and erroneous branches is always required before new buds can grow in spring.'}
+61	61		301							"{2: 'Asimov', 3: ""If there are no other questions, Wanshi's treatment should begin shortly."", 4: '1'}"
+62	62		201							{1: '1', 2: '500934'}
+63	63		301							{1: '1', 2: 'Wanshi', 3: 'Thanks.', 4: '1'}
+64	64		201							{1: '1', 2: '500004'}
+65	65		301							{1: '1', 2: 'Asimov', 3: 'No problem.', 4: '1'}
+66	66		301							"{2: 'Asimov', 3: ""...We're just treating the aftereffects left by that old M.I.N.D. project."", 4: '1'}"
+67	67		301							"{2: 'Asimov', 3: ""As for the rest... we'll leave it to time."", 4: '1'}"
+68	68		301							{3: 'Asimov gathers his files, preparing to leave.'}
+69	69		301							{2: 'Asimov', 3: 'Where are you heading next? Getting some rest?', 4: '1'}
+70	70		302							"{2: ""No, there's one more place I need to visit."", 3: '71'}"
+71	71		201							{1: '1', 2: '500934'}
+72	72		301				AniZhuanchangBegin			"{1: '1', 2: 'Wanshi', 3: ""We're going to the Youth Center."", 4: '1'}"
+73	73		202							{1: '1', 6: '1'}
+74	74		401							{1: '1', 2: '36'}
+75	75		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory972.jpg'}
+76	76		401							{1: '1', 2: '208'}
+77	77		301			AniZhuanchangEnd				{3: 'It is a rest day for Babylonian residents, and students have no classes. Children from the Youth Center gather in the hall, running past Constructs with familiar ease—some even stopping to say hello.'}
+78	78		301							{3: 'A human and a Construct sit together on a bench in the hall, basking in the clear sunlight streaming down from the artificial sky.'}
+79	79		201							{1: '1', 2: '500934'}
+80	80		301							"{1: '1', 2: 'Wanshi', 3: ""Constructs were almost never seen here before, but now they're a common sight."", 4: '1'}"
+81	81		302							{2: 'Gray Raven occasionally takes on requests from the Youth Center as well.', 3: '82'}
+82	82		301							"{2: 'Wanshi', 3: ""That's good."", 4: '1'}"
+83	83		301							{2: 'Wanshi', 3: '...When Shorthalt first came to the Youth Center, even I was wary of him.', 4: '1'}
+84	84		302							{2: 'Shorthalt...', 3: '85'}
+85	85		301							"{2: 'Wanshi', 3: ""I've handed over all of Shorthalt's belongings found in the research facility to Valeria."", 4: '1'}"
+86	86		202							{1: '1', 6: '1'}
+87	87		301							{3: 'The mention of Shorthalt brings to mind a conversation with Valeria, the commandant of Scarab, back when you were still on the ground.'}
+88	88		301				AniZhuanchangBegin			"{3: ""Everyone is still busy at the temporary shelter, but when Scarab's communication comes through, you answer it immediately.""}"
+89	89		502							{1: 'DialogDisable'}
+90	90		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory732.jpg'}
+91	91		401							{1: '1', 2: '209'}
+92	92		504							{1: '0.7'}
+93	93		302			AniZhuanchangEnd				{2: 'Valeria?'}
+94	94		401							{1: '2', 2: '2983'}
+95	95		509							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg', 2: '1'}
+96	96		301			DialogEnable				"{3: ""The projection flickers violently, barely showing the woman's black hair. Valeria must be on a mission.""}"
+97	97		201							{1: '11', 2: '500961', 4: '-500'}
+98	98		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '11'}
+99	99		301							{1: '1', 3: 'Realizing the call is connected, the projection stabilizes for just a moment before a tall, commanding figure appears before everyone.'}
+100	100		301							"{3: ""Valeria cuts straight to the question without looking to the human's surroundings.""}"
+101	101		301							{2: 'Valeria', 3: 'I heard you have news about Shorthalt.', 4: '11'}
+102	102		301							{2: 'Valeria', 3: 'Cut the nonsense. Tell me straight—is he dead?', 4: '11'}
+103	103		302							{2: '...', 3: '104'}
+104	104		302							{2: 'Yes.', 3: '105'}
+105	105		301							{3: 'Upon confirming the death of her squad member, Valeria falls into a long, heavy silence.'}
+106	106		301							{2: 'Valeria', 3: 'So those limbs of Shorthalt I found back then... were they removed by the defectors?', 4: '11'}
+107	107		201							{1: '1', 2: '500934', 4: '500'}
+108	108		301							"{1: '1', 2: 'Wanshi', 3: ""It's probably meant to bait you."", 4: '1'}"
+109	109		301							"{3: ""At some point, Wanshi has moved next to the human, answering Valeria's question.""}"
+110	110		301							{2: 'Valeria', 3: 'Wanshi... you were the one who solved the case.', 4: '11'}
+111	111		301							"{2: 'Wanshi', 3: ""...I still have some candy that Shorthalt gave me. I'll give it to you when we get back."", 4: '1'}"
+112	112		301							{2: 'Valeria', 3: 'Candy?', 4: '11'}
+113	113		301							{2: 'Wanshi', 3: 'The one you gave him before.', 4: '1'}
+114	114		301							"{2: 'Valeria', 3: ""...I understand. I'll come get it from you when you're back in Babylonia."", 4: '11'}"
+115	115		301							{2: 'Valeria', 3: 'I have no further questions.', 4: '11'}
+116	116		301							{3: 'Valeria accelerates once more, rushing towards her next mission.'}
+117	117		301							{2: 'Wanshi', 3: 'Wait, I have another question.', 4: '1'}
+118	118		301							{2: 'Valeria', 3: 'Say it.', 4: '11'}
+119	119		301							{2: 'Wanshi', 3: 'A long time ago... you mentioned a video recording of Shorthalt.', 4: '1'}
+120	120		301							{3: 'That was the last piece of news Wanshi had heard about Shorthalt before his disappearance.'}
+121	121		301							"{3: ""Valeria slows down again. She studies Wanshi's face carefully and hangs up.""}"
+122	122		301							{3: 'Before ending the call, she leaves Wanshi with one last message.'}
+123	123		301				AniZhuanchangBegin			{2: 'Valeria', 3: 'Nothing important... Just a lame joke.', 4: '11'}
+124	124		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '11'}
+125	125		202							{1: '11'}
+126	126		401							{1: '1', 2: '36'}
+127	127		510						1000.0	{1: '1'}
+128	128		504							{1: '0'}
+129	129		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory972.jpg'}
+130	130		401							{1: '1', 2: '208'}
+131	131		201							{1: '1', 2: '500934'}
+132	132		301			AniZhuanchangEnd				{1: '1', 2: 'Wanshi', 3: 'I walked my way, step by step, to finally say goodbye to him. There would be others who need those things more than I do... I knew it too well, especially after speaking with Valeria.', 4: '1'}
+133	133		301							{2: 'Wanshi', 3: 'Valeria took it without saying much, just like always.', 4: '1'}
+134	134		204							{1: '1', 2: '10'}
+135	135		301				DialogDisable			{3: 'Wanshi lowers his head, lost in thought.'}
+136	136		302							{2: '(Pat Wanshi on the shoulder.)', 3: '137'}
+137	137		302							"{2: ""Speaking of which... I wonder what Scarab's been up to lately."", 3: '138'}"
+138	138		302							"{2: ""Valeria's the only one I know from Scarab."", 3: '139'}"
+139	139		302							{2: 'She certainly left quite an impression.', 3: '140'}
+140	140		301			DialogEnable				{2: 'Wanshi', 3: 'I guess so...', 4: '1'}
+141	141		301							{3: 'The human tries to divert the conversation from the heavy topic. Wanshi thinks for a while before something crosses his mind.'}
+142	142		204							{1: '1'}
+143	143		301							"{2: 'Wanshi', 3: ""I heard Shiva's been learning how to pilot transport shuttles?"", 4: '1'}"
+144	144		302							{2: '?', 3: '145'}
+145	145		301							"{2: 'Wanshi', 3: ""Hmm, that's all I know."", 4: '1'}"
+146	146		202							{1: '1', 6: '1'}
+147	147		201							{1: '1', 2: '500944'}
+148	148		301							{1: '1', 3: 'As the two are chatting, a girl suddenly bounds up to Wanshi and greets him with uninhibited enthusiasm.'}
+149	149		301							"{2: 'Girl', 3: ""Brother Wanshi, you're here!"", 4: '1'}"
+150	150		201							{1: '1', 2: '500934'}
+151	151		301							{1: '1', 2: 'Wanshi', 3: 'Huh...? Oh, I remember you.', 4: '1'}
+152	152		301							{3: 'Upon seeing the familiar child, Wanshi instinctively rummages through his pouch for snacks, but suddenly stops.'}
+153	153		302							"{2: ""What's wrong?"", 3: '154'}"
+154	154		301							{2: 'Wanshi', 3: 'Last time I gave snacks to the children, I got scolded by the volunteers...', 4: '1'}
+155	155		301							"{3: ""A curl of hair droops on Wanshi's head as he explains to the girl with a hint of regret.""}"
+156	156		301							"{2: 'Wanshi', 3: ""...There are a lot of visitation procedures now, but next time I'll ask your teacher to bring you some snacks. You can share them with the other kids."", 4: '1'}"
+157	157		202							{1: '1', 6: '1'}
+158	158		301							{2: '???', 3: 'Wanshi!!'}
+159	159		201							{1: '1', 2: '500042'}
+160	160		301							"{1: '1', 3: ""You and Wanshi turn around together and see a wide-eyed female volunteer shouting while pointing at Wanshi's hand, which is still buried in his pouch.""}"
+161	161		301							{2: 'Natalie', 3: 'Wanshi! She just lost a decayed baby tooth! Stop giving her sweets!', 4: '1'}
+162	162		302							"{2: ""Who's that? I feel like I've seen her before."", 3: '163'}"
+163	163		301							{3: 'Natalie pulls out two sets of casual clothes with volunteer badges from the shelf and tosses them over.'}
+164	164		201							{1: '1', 2: '500934'}
+165	165		301							"{1: '1', 2: 'Wanshi', 3: ""We grew up together at the Youth Center. You might have seen her at the Star of Life—she's a doctor there."", 4: '1'}"
+166	166		301							{3: 'A few years ago, volunteer doctor Natalie survived the frontline warfare. After returning to Babylonia, she underwent additional training and became a doctor in the Construct Maintenance Department.'}
+167	167		301							{3: 'Occasionally, during maintenance sessions, Strike Hawk members would say hello to her.'}
+168	168		301							"{2: 'Wanshi', 3: ""She's already so busy with work, I wonder where she finds the time to volunteer... Ouch!"", 4: '1'}"
+169	169		202							{1: '1', 6: '1'}
+170	170		201							{1: '1', 2: '500042', 4: '400'}
+171	171		201							{1: '2', 2: '500934', 4: '-400'}
+172	172		301							{1: '1', 3: 'Natalie gives Wanshi a hearty pat on the back, sending him stumbling forward a few steps.'}
+173	173		301							"{2: 'Natalie', 3: ""Don't act like you've got time to spare—you're here just as often! Get going! Maka's still waiting for you."", 4: '1'}"
+174	174		301							{3: 'While walking away, Natalie throws a quick question at the Gray Raven Commandant.'}
+175	175		301							{2: 'Natalie', 3: 'Did you come with Wanshi to visit Maka? Do you have an appointment?', 4: '1'}
+176	176		302							{2: 'I wanted to check on Cosette. She was brought in by Liv earlier...', 3: '177'}
+177	177		301							"{2: 'Natalie', 3: ""Cosette? Ah, the child they brought back from the surface. Maka's told me about her quite a few times. Follow me..."", 4: '1'}"
+178	178		202							{1: '1', 6: '1'}
+179	179		204							{1: '2', 2: '7'}
+180	180		201							{1: '1', 2: '500976', 4: '600'}
+181	181		203							{1: '1', 2: '0.15', 3: '300'}
+182	182		301							{1: '1', 3: 'Before Natalie can finish her sentence, a boy bounces out from a nearby door and pounces on Wanshi.'}
+183	183		301							{2: 'Maka', 3: 'Brother Wanshi!', 4: '1'}
+184	184		301							{2: 'Wanshi', 3: 'Hey! Slow down!', 4: '2'}
+185	185		301							"{2: 'Maka', 3: ""Didn't you know, Brother Wanshi? After my last surgery, Natalie cleared me for running."", 4: '1'}"
+186	186		301							"{2: 'Maka', 3: ""Now I'm just like the superheroes from those old movies! Cool, right?"", 4: '1'}"
+187	187		301							{3: 'Maka puffs out his chest proudly, pointing to the special device mounted there.'}
+188	188		202							{1: '1', 2: '2', 6: '1'}
+189	189		201							{1: '1', 2: '500042'}
+190	190		301							"{1: '1', 2: 'Natalie', 3: ""Wanshi, Maka's just like any other kid now."", 4: '1'}"
+191	191		301							{3: 'Natalie crosses her arms as she looks at the energetic boy in front of her with a satisfied smile.'}
+192	192		301							"{2: 'Natalie', 3: ""Even my mentors found his condition challenging. I never expected we'd discover a new clinical solution so quickly."", 4: '1'}"
+193	193		201							{1: '1', 2: '500934'}
+194	194		301							{1: '1', 2: 'Wanshi', 3: '...I see.', 4: '1'}
+195	195		204							{1: '1', 2: '1'}
+196	196		301				AniZhuanchangBegin			{2: 'Wanshi', 3: 'Much faster than I expected.', 4: '1'}
+197	197		202							{1: '1', 6: '1'}
+198	198		401							{1: '1', 2: '36'}
+199	199		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory995.jpg'}
+200	200		401							{1: '1', 2: '5028'}
+201	201		301			AniZhuanchangEnd				{3: 'Good news always arrives much sooner than Wanshi had anticipated.'}
+202	202		301							{3: '—During the brief period before returning to Babylonia, Strike Hawk stays tightly together as they carry out their reconnaissance mission.'}
+203	203		301							{3: 'Especially for Wanshi—during the mission, the captain demands that he stays with the group at all times without exception.'}
+204	204		201							{1: '1', 2: '1081001'}
+205	205		301							"{1: '1', 2: 'Kamui', 3: 'Why do we suddenly ""care"" about Wanshi so much?', 4: '1'}"
+206	206		201							{1: '1', 2: '500309'}
+207	207		301							{1: '1', 2: 'Chrome', 3: 'After Rosetta brought the evidence back to Babylonia, people began investigating a Construct desertion incident that Wanshi was involved in during his time as a Construct doctor, demanding the case be reopened.', 4: '1'}
+208	208		201							{1: '1', 2: '500934'}
+209	209		301							{1: '1', 2: 'Wanshi', 3: '...', 4: '1'}
+210	210		201							{1: '1', 2: '500309'}
+211	211		301							"{1: '1', 2: 'Chrome', 3: ""Whether they're trying to hide something or obtain information... they'll do anything to get what they want. I hear they've pulled up old Purifying Force archives and are even investigating Wanshi's temporary modification."", 4: '1'}"
+212	212		201							{1: '1', 2: '500175'}
+213	213		301							"{1: '1', 2: 'Camu', 3: ""So they're trying to build a case against Wanshi?"", 4: '1'}"
+214	214		201							{1: '1', 2: '500309'}
+215	215		301							"{1: '1', 2: 'Chrome', 3: ""...Let's focus on the mission for now."", 4: '1'}"
+216	216		301							{3: 'Chrome performs one final check of the local Punishing concentration before touching his terminal to submit the report.'}
+217	217		401							{1: '2', 2: '2983'}
+218	218		301							{2: 'Chrome', 3: 'All remaining Hetero-Creatures ahead have been eliminated. Transport team is clear to advance.', 4: '1'}
+219	219		301							{2: 'Chrome', 3: 'Please remind the volunteer doctors in your team to wear their protective suits properly. The Punishing concentration levels are still quite high along the route ahead.', 4: '1'}
+220	220		301							{3: 'Chrome glances at Wanshi as more specific instructions come through from the other side of the communication.'}
+221	221		301							{2: 'Chrome', 3: 'You mean Wanshi...?', 4: '1'}
+222	222		201							{1: '1', 2: '500934'}
+223	223		301							{1: '1', 2: 'Wanshi', 3: '?', 4: '1'}
+224	224		201							{1: '1', 2: '500309', 3: '1'}
+225	225		401							{1: '2', 2: '2566'}
+226	226		301							"{1: '1', 3: ""Chrome ends the call with a hint of surprise on his face, as if he hadn't expected such good news to arrive so soon.""}"
+227	227		301							{2: 'Chrome', 3: 'The Gray Raven Commandant just received the news—we can return to Babylonia.', 4: '1'}
+228	228		301							"{2: 'Chrome', 3: ""Bianca asked the commandant to relay this... Wanshi won't be added to the Purifying Force's list. We can rest easy now."", 4: '1'}"
+229	229		301							{2: 'Chrome', 3: 'I heard she passed along some information—an audio recording from that desertion incident?', 4: '1'}
+230	230		201							{1: '1', 2: '500934'}
+231	231		301							{1: '1', 2: 'Wanshi', 3: 'A voice message...? Ah, right. Please thank her first.', 4: '1'}
+232	232		201							{1: '1', 2: '500309', 3: '1'}
+233	233		301							"{1: '1', 2: 'Chrome', 3: ""There's still plenty to deal with when we get back... but at least we've got some good news."", 4: '1'}"
+234	234		301							{3: 'At last, Chrome breaks into a relaxed smile.'}
+235	235		201							{1: '1', 2: '1081001', 3: '2'}
+236	236		301							"{1: '1', 2: 'Kamui', 3: ""Awesome! We can finally head back! Wanshi, I've got your Sleeping Pod all set up—you can try it out as soon as we return!"", 4: '1'}"
+237	237		201							{1: '1', 2: '500934'}
+238	238		301							"{1: '1', 2: 'Wanshi', 3: ""You haven't been stashing anything else in there, have you..."", 4: '1'}"
+239	239		201							{1: '1', 2: '500175'}
+240	240		301				AniZhuanchangBegin			{1: '1', 2: 'Camu', 3: 'Definitely no more weird pillows. He had already gotten chewed out for it.', 4: '1'}
+241	241		202							{1: '1', 6: '1'}
+242	242		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4701_13.jpg'}
+243	243		301			AniZhuanchangEnd				"{3: ""At Kamui's cheer, the transport fleet springs into action. One after another, vehicles pass before the Strike Hawk members, carrying engineering staff and volunteer doctors from Babylonia.""}"
+244	244		301							{3: 'Many young faces look around with curiosity and excitement, finding novelty even in the ruins surrounding them.'}
+245	245		301							{2: 'Volunteer Doctor', 3: 'This is my first time actually setting foot on the surface... It feels so different from what I saw in the footage!'}
+246	246		301							{2: 'Wanshi', 3: 'More people have come to the surface.'}
+247	247		301							{2: 'Chrome', 3: 'Indeed, the volunteer doctors were the quickest to respond in Babylonia this time—much faster than any previous mobilization.'}
+248	248		301							{2: 'Chrome', 3: 'The security measures for volunteer doctors have been greatly enhanced. With Support Force members now leading volunteer teams, the casualty rate has been greatly reduced.'}
+249	249		301							{3: 'Chrome seems to be recalling a certain support operation in the past.'}
+250	250		301							"{2: 'Chrome', 3: ""It's so much better now.""}"
+251	251		401							{1: '2', 2: '4662'}
+252	252		301							{3: 'As the transport vehicles pass by, the Strike Hawks complete their mission and turn to leave, heading toward another place that needs protection—they are the ones who stand at the vanguard.'}
+253	253		301							"{2: 'Kamui', 3: ""Come on, let's go! Clear the path ahead and we can go back!""}"
+254	254		301							"{3: ""Wanshi doesn't follow him immediately, his gaze lingering on the wheel tracks in the ground and the receding figures of the newcomers.""}"
+255	255		301							{3: 'He raises his hand, as if reaching out to touch both the distant past and future that lie beyond this moment.'}
+256	256		301							{2: 'Chrome', 3: 'Wanshi? What are you looking at?'}
+257	257		301							"{2: 'Wanshi', 3: ""...This is the future I've been longing for.""}"
+258	258		301							"{2: 'Wanshi', 3: ""I spent a lifetime venturing forward as both human and Construct... So this is how far I've come.""}"
+259	259		301							{2: 'Camu', 3: 'Tch, spacing out again? Are you really okay?'}
+260	260		301							"{2: 'Wanshi', 3: ""Yeah... I'm fine, don't worry.""}"
+261	261		301							{3: 'Wanshi lowers his hands, turns around, and catches up with his teammates.'}
+262	262		301		1		AniZhuanchangBegin			"{2: 'Wanshi', 3: ""Here I come. Let's go.""}"

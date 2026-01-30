@@ -1,0 +1,336 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory789.jpg'}
+2	2		401							{1: '1', 2: '120'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '2'}
+4	4		501			AniZhuanchangEnd				{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+5	5		201							{1: '1', 2: '501261', 3: '9', 6: '-100'}
+6	6		301			DialogEnable	DialogDisable			"{1: '1', 2: '???', 3: ""The recording switch... Here, maybe? Oh, it's already on..."", 4: '1'}"
+7	7		203						450.0	{1: '1', 2: '0.4'}
+8	8		401							{1: '2', 2: '5286'}
+9	9		203						200.0	{1: '1', 2: '0.4', 4: '-50'}
+10	10		301			DialogEnable				{3: 'The man in the frame walks to the office chair and lowers himself into it. He tugs at his lab coat, tightening it around his gaunt frame like a shroud.'}
+11	11		301				PanelActor1Shake			"{2: 'Thomas Hell', 3: ""I'm Thomas Hell. From now on, I'll... ahem..."", 4: '1'}"
+12	12		202							{1: '1'}
+13	13		401							{1: '2', 2: '5288', 3: '1'}
+14	14		301							{3: 'Realizing his voice is tight with excitement, he licks his lips, hesitates briefly, then grabs the glass of water from the desk and downs it in one gulp.'}
+15	15		201							{1: '1', 2: '501261'}
+16	16		301							"{1: '1', 2: 'Thomas Hell', 3: ""From now on, I'll be recording my experiment logs on video."", 4: '1'}"
+17	17		301							{2: 'Thomas Hell', 3: 'So...', 4: '1'}
+18	18		204							{1: '1', 2: '1'}
+19	19		301				DialogDisable			{2: 'Thomas Hell', 3: 'Experiment log entry: [A-0001].', 4: '1'}
+20	20		203						550.0	{1: '1', 2: '0.5', 4: '-50', 5: '-100'}
+21	21		301			DialogEnable				{3: 'The man leans toward the camera, his face slightly warped by the wide-angle lens. His eyes burn with an unnatural intensity, their gleam cutting through the pixelated haze of the screen—bright, almost feverish.'}
+22	22		301							{2: 'Thomas Hell', 3: 'Researcher: Thomas Hell.', 4: '1'}
+23	23		204							{1: '1', 2: '9'}
+24	24		301							{2: 'Thomas Hell', 3: 'I...', 4: '1'}
+25	25		301							"{2: 'Thomas Hell', 3: ""I don't even know how to describe what I'm feeling right now..."", 4: '1'}"
+26	26		204							{1: '1', 2: '4'}
+27	27		301				DialogDisable			{2: 'Thomas Hell', 3: 'This is such a crucial opportunity. I will... no, I must succeed.', 4: '1'}
+28	28		401							{1: '2', 2: '5286'}
+29	29		203						400.0	{1: '1', 2: '0.4'}
+30	30		202							{1: '1'}
+31	31		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory981.jpg', 3: '0', 4: '1', 5: '1.5'}
+32	32		104						2000.0	{1: '0|-95|-400', 2: '0', 4: '3'}
+33	33		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory981.jpg'}
+34	34		104							{1: '0|-95|-400', 2: '0'}
+35	35		205							{1: '999'}
+36	36		104							{1: '0|0|0', 2: '0', 4: '3'}
+37	37		301			DialogEnable				{3: 'The man rises from his chair and slowly approaches a cylindrical chamber nearby.'}
+38	38		306							{1: '1'}
+39	39		301							{3: 'Perched atop a pedestal within the chamber rests a shard, resembling nothing more than an ordinary stone one might find along any roadside.'}
+40	40		301							{3: 'But Thomas knows the infinite possibilities harbored within this shard, all because it comes from...'}
+41	41		306							
+42	42		201							{1: '1', 2: '501261', 3: '4'}
+43	43		301							{1: '1', 2: 'Thomas Hell', 3: 'The Hetero Tower...', 4: '1'}
+44	44		301							{2: 'Thomas Hell', 3: 'I will... reverse everything.', 4: '1'}
+45	45		301				AniZhuanchangBegin			{3: 'His voice is firm, devout as a prayer.'}
+46	46		202						2000.0	{1: '1', 6: '1'}
+47	47		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory789.jpg'}
+48	48		401							{1: '2', 2: '895'}
+49	49		201							{1: '1', 2: '501261', 7: '1'}
+50	50		301			AniZhuanchangEnd				{1: '1', 2: 'Thomas Hell', 3: 'Recording begins. Experiment log entry.', 4: '1'}
+51	51		401							{1: '2', 2: '1543'}
+52	52		203							{1: '1', 2: '0.4', 3: '5', 4: '-25'}
+53	53		301							{3: 'He gives a slow spin in his office chair, letting his body settle naturally against the backrest.'}
+54	54		204							{1: '1', 2: '1'}
+55	55		301							{2: 'Thomas Hell', 3: 'Guess I should make future logs more formal. My mentor always stressed the importance of rigor... Ahem, back to the topic.', 4: '1'}
+56	56		204							{1: '1', 2: '4'}
+57	57		301							{2: 'Thomas Hell', 3: 'Experiment log entry: [A-0014].', 4: '1'}
+58	58		301							{2: 'Thomas Hell', 3: 'Researcher: Thomas Hell.', 4: '1'}
+59	59		301							{2: 'Thomas Hell', 3: 'The 14th experiment has concluded. Still no progress, as expected.', 4: '1'}
+60	60		204							{1: '1', 2: '1'}
+61	61		301				AniZhuanchangBegin			{2: 'Thomas Hell', 3: 'This is just the brief darkness before dawn. The situation will improve soon.', 4: '1'}
+62	62		202						2000.0	{1: '1', 6: '1'}
+63	63		401							{1: '2', 2: '895'}
+64	64		201							{1: '1', 2: '501261', 7: '1'}
+65	65		301			AniZhuanchangEnd				{1: '1', 2: 'Thomas Hell', 3: 'Experiment log entry: [B-5042].', 4: '1'}
+66	66		301							{2: 'Thomas Hell', 3: 'Researcher: Thomas Hell.', 4: '1'}
+67	67		301							{2: 'Thomas Hell', 3: 'No progress in the experiment.', 4: '1'}
+68	68		204							{1: '1', 2: '9'}
+69	69		301							{2: 'Thomas Hell', 3: '...', 4: '1'}
+70	70		301							{3: 'He runs a hand over the rough stubble shadowing his chin, his voice low and grave.'}
+71	71		204							{1: '1', 2: '4'}
+72	72		301				AniZhuanchangBegin			{2: 'Thomas Hell', 3: 'No time to waste. I still have much to do.', 4: '1'}
+73	73		401						2000.0	{1: '1', 2: '36'}
+74	74		202							{1: '1', 6: '1'}
+75	75		401							{1: '1', 2: '55'}
+76	76		401							{1: '2', 2: '895'}
+77	77		201							{1: '1', 2: '501261', 3: '4', 7: '1'}
+78	78		301			AniZhuanchangEnd				{1: '1', 2: 'Thomas Hell', 3: 'Experiment log entry: [C-0251].', 4: '1'}
+79	79		301							{2: 'Thomas Hell', 3: 'Researcher: Thomas Hell.', 4: '1'}
+80	80		301							{3: 'The man sits in silence for a long while. The quiet grows heavy, thickening the air until it feels as though he might drown in it.'}
+81	81		301							{2: 'Thomas Hell', 3: 'Another failed experiment...', 4: '1'}
+82	82		301							{2: 'Thomas Hell', 3: 'I was prepared for this, but...', 4: '1'}
+83	83		204							{1: '1', 2: '9'}
+84	84		301							{2: 'Thomas Hell', 3: '...', 4: '1'}
+85	85		202							{1: '1'}
+86	86		301							{3: 'He throws himself back into the stagnant waters of silence.'}
+87	87		401							{1: '2', 2: '4112'}
+88	88		201							{1: '1', 2: '501261', 3: '4'}
+89	89		301							"{1: '1', 3: ""Thomas picks up the stack of experimental data from the table beside him, scanning the numbers once more, though he's already checked them countless times.""}"
+90	90		301							{2: 'Thomas Hell', 3: 'The Gibbs variables... power output... conversion results... the Zhang function...', 4: '1'}
+91	91		301							"{2: 'Thomas Hell', 3: ""I don't understand."", 4: '1'}"
+92	92		301							"{2: 'Thomas Hell', 3: ""Why can't I get the expected outcome in practice when using the value obtained by reversing the formula?"", 4: '1'}"
+93	93		301							{2: 'Thomas Hell', 3: 'Is the formula wrong?', 4: '1'}
+94	94		301							{2: 'Thomas Hell', 3: 'No... The formula is correct...', 4: '1'}
+95	95		204							{1: '1', 2: '9'}
+96	96		301							{2: 'Thomas Hell', 3: 'But...', 4: '1'}
+97	97		204							{1: '1', 2: '7'}
+98	98		301			PanelActor1Shake				{2: 'Thomas Hell', 3: 'No... this is wrong... completely wrong!', 4: '1'}
+99	99		203							{1: '1', 2: '0.25', 3: '-10', 4: '-80'}
+100	100		401							{1: '2', 2: '4095'}
+101	101		401							{1: '2', 2: '5298'}
+102	102		301			RImgBg1Shake				{3: 'He throws the papers violently to the ground, fingers raking through his unkempt hair in desperation.'}
+103	103		301			PanelActor1Shake				{2: 'Thomas Hell', 3: 'The Hetero Tower defies everything we thought was possible. I was a fool to trust those old theories.', 4: '1'}
+104	104		301			PanelActor1Shake				{2: 'Thomas Hell', 3: 'Those so-called wise predecessors were nothing but a bunch of mediocrities!', 4: '1'}
+105	105		204							{1: '1', 2: '2'}
+106	106		301			RImgBg1Shake	DialogDisable			{2: 'Thomas Hell', 3: 'Dominik was nothing special after all!!!', 4: '1'}
+107	107		204					200.0	200.0	{1: '1', 2: '4'}
+108	108		401							{1: '2', 2: '5286'}
+109	109		203						800.0	{1: '1', 2: '0.5'}
+110	110		301			DialogEnable				"{2: 'Thomas Hell', 3: ""I'm going to... derive a new formula."", 4: '1'}"
+111	111		301							{2: 'Thomas Hell', 3: 'Time will be mine to command.', 4: '1'}
+112	112		401							{1: '2', 2: '895'}
+113	113		401							{1: '2', 2: '2566'}
+114	114		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+115	115		202							{1: '1'}
+116	116		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab'}
+117	117		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+118	118		301				AniZhuanchangBegin			{3: 'After reaching this conclusion, Thomas silently rises and turns off the camera.'}
+119	119		505						2000.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+120	120		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '2'}
+121	121		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+122	122		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory789.jpg'}
+123	123		401							{1: '2', 2: '895'}
+124	124		201							{1: '1', 2: '501261', 7: '1'}
+125	125		301			AniZhuanchangEnd				{1: '1', 2: 'Thomas Hell', 3: 'Experiment log entry: [C-1564].', 4: '1'}
+126	126		301							{2: 'Thomas Hell', 3: 'Researcher: Thomas Hell.', 4: '1'}
+127	127		301							{2: 'Thomas Hell', 3: 'Failed again.', 4: '1'}
+128	128		401							{1: '2', 2: '895'}
+129	129		401							{1: '2', 2: '2566'}
+130	130		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+131	131		202							{1: '1'}
+132	132		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab'}
+133	133		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+134	134		301				AniZhuanchangBegin			{3: 'The camera flickers on for a moment, then off again.'}
+135	135		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+136	136		502						400.0	{1: 'DialogDisable'}
+137	137		304			AniZhuanchangEnd				{1: 'Experiment log entry: [C-1677].', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1'}
+138	138		401							{1: '2', 2: '4062'}
+139	139		304							{1: 'Failed.', 2: 'ff4e4eff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1', 8: '1'}
+140	140		304							{1: 'Experiment log entry: [C-1754].', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1'}
+141	141		401							{1: '2', 2: '4062'}
+142	142		304							{1: 'Failed.', 2: 'ff4e4eff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1', 8: '1'}
+143	143		304							{1: 'Experiment log entry: [C-2065].', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1'}
+144	144		401							{1: '2', 2: '4062'}
+145	145		304							{1: 'Failed.', 2: 'ff4e4eff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1', 8: '1'}
+146	146		304							{1: 'Experiment log entry: [C-2480].', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1'}
+147	147		401							{1: '2', 2: '4062'}
+148	148		304				AniZhuanchangBegin			{1: 'Failed.', 2: 'ff4e4eff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '1', 8: '1'}
+149	149		401							{1: '2', 2: '4062'}
+150	150		304			AniZhuanchangEnd				{1: '<size=35>Failed...</size>', 2: 'ff4e4eff', 3: '0.7', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 7: '-4', 8: '1', 10: '1'}
+151	151		401							{1: '2', 2: '4062'}
+152	152		304							{1: '<size=40>Failed, failed...</size>', 2: 'ff4e4eff', 3: '0.5', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 7: '-4', 8: '1', 10: '1'}
+153	153		401							{1: '2', 2: '4062'}
+154	154		304							{1: '<size=50>Failed, failed, failed...</size>', 2: 'ff4e4eff', 3: '0.3', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 7: '-4', 8: '1', 10: '1'}
+155	155		401							{1: '2', 2: '4062'}
+156	156		304				AniZhuanchangBegin			{1: '<size=60>FAILED, FAILED, FAILED, FAILED...</size>', 2: 'ff4e4eff', 3: '0.2', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 7: '-4', 8: '1', 9: '1', 10: '1'}
+157	157		502						400.0	{1: 'DialogEnable'}
+158	158		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '2'}
+159	159		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+160	160		401							{1: '2', 2: '895'}
+161	161		201							{1: '1', 2: '501261', 3: '9', 7: '1'}
+162	162		301			AniZhuanchangEnd				{1: '1', 2: 'Thomas Hell', 3: 'Experiment log entry: [E-0032].', 4: '1'}
+163	163		204							{1: '1', 2: '1'}
+164	164		301							{2: 'Thomas Hell', 3: 'Researcher... hah. Who else but a lunatic like me would do these experiments?', 4: '1'}
+165	165		301							{3: 'He lets out a self-deprecating chuckle.'}
+166	166		204							{1: '1', 2: '4'}
+167	167		301							{2: 'Thomas Hell', 3: 'I have an idea...', 4: '1'}
+168	168		301							"{2: 'Thomas Hell', 3: ""It's risky, but... I want to give it a try."", 4: '1'}"
+169	169		301							"{2: 'Thomas Hell', 3: ""If my mentor knew what I was thinking, she'd be furious."", 4: '1'}"
+170	170		204							{1: '1', 2: '9'}
+171	171		301							{2: 'Thomas Hell', 3: 'But in the end, someone mediocre like me can only resort to this kind of method...', 4: '1'}
+172	172		301							{3: 'His words gradually fade away, yet his bloodshot eyes glimmer with the ghost of a smile.'}
+173	173		301							{3: 'His thoughts drift back to long ago, when he wore not the white coat of an experienced researcher, but the humble garb of a still-green student.'}
+174	174		502							{1: 'DialogDisable'}
+175	175		401							{1: '2', 2: '4134'}
+176	176		401							{1: '1', 2: '36'}
+177	177		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+178	178		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+179	179		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+180	180		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab'}
+181	181		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+182	182		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+183	183		202							{1: '1', 6: '1'}
+184	184		401							{1: '1', 2: '278'}
+185	185		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg'}
+186	186		504							{1: '0.7'}
+187	187		401							{1: '2', 2: '2672'}
+188	188		301			DialogEnable		1000.0		{3: 'During a tranquil afternoon in the academic building, Thomas clutches his papers and eases open an office door with cautious hands.'}
+189	189		301							"{3: ""He isn't sure if the occupant is resting—or even wants to be disturbed—so he holds his breath and steps inside on light feet.""}"
+190	190		301							{3: 'There, behind the broad expanse of her desk sits his mentor, Ms. Valentina. She seems in a trance, her gaze lost in the depths of a photograph.'}
+191	191		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory949.jpg'}
+192	192		504							{1: '0.7', 2: '1', 3: '2', 4: '3', 5: '4', 6: '1001'}
+193	193		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront63.png', 3: '0', 4: '1', 5: '0'}
+194	194		201							{1: '1', 2: '500163', 4: '-750', 7: '1'}
+195	195		201							{1: '2', 2: '500042', 4: '-250', 7: '1'}
+196	196		201							{1: '3', 2: '500819', 3: '1', 4: '300', 7: '1'}
+197	197		201							{1: '4', 2: '500215', 4: '700', 7: '1'}
+198	198		301			AniZhuanchangEnd				"{1: '1', 3: ""Thomas' gaze unconsciously follows his mentor's, landing on that group photo of four people. He recognizes only two—his mentor herself and Ms. Schwartz.""}"
+199	199		301				AniZhuanchangBegin			{3: 'Of the remaining two, one is a kind-faced middle-aged man, and the other a young person from Kowloong.'}
+200	200		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg'}
+201	201		504							{1: '0.7'}
+202	202		205							{1: '1005', 3: '0', 4: '1', 5: '0'}
+203	203		202							{1: '1', 2: '2', 3: '3', 4: '4', 6: '1'}
+204	204		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.3', 5: '0'}
+205	205		502							{1: 'RImgBg1Narrow'}
+206	206		201							{1: '1', 2: '500722', 7: '1'}
+207	207		301			AniZhuanchangEnd	DialogDisable			{1: '1', 3: 'Something about the scene holds Thomas transfixed. An indescribable tension hangs between them like an invisible wall, making him hesitate to interrupt Valentina and pull her back to reality.'}
+208	208		505							{1: 'RImgBg1Narrow'}
+209	209		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.3', 4: '0', 5: '0.2'}
+210	210		203							{1: '1', 2: '0.25', 3: '400'}
+211	211		201							{1: '2', 2: '500163', 4: '-400'}
+212	212		301			DialogEnable				{1: '1', 3: 'But Valentina notices him anyway.'}
+213	213		301							{2: 'Valentina', 3: 'Curious?', 4: '2'}
+214	214		301							{2: 'Thomas Hell', 3: 'Sorry?', 4: '1'}
+215	215		301							"{3: ""Thomas doesn't respond right away, taking a moment to realize Valentina is talking about the people in the photo.""}"
+216	216		301							{2: 'Thomas Hell', 3: 'Who are those people?', 4: '1'}
+217	217		301							{2: 'Valentina', 3: 'They are the people who changed this world.', 4: '2'}
+218	218		301							{2: 'Valentina', 3: 'Compared to them, most people in this world are just mediocre, myself included.', 4: '2'}
+219	219		301							"{2: 'Thomas Hell', 3: ""You're being too modest, Ms. Valentina. The director of the Science Council could never be considered mediocre."", 4: '1'}"
+220	220		301							{3: 'Valentina chuckls at his words and waves her hand at the young man, her voice tinged with melancholy.'}
+221	221		301							{2: 'Valentina', 3: 'How am I not mediocre?', 4: '2'}
+222	222		402							{1: '278'}
+223	223		401							{1: '2', 2: '4388'}
+224	224		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+225	225		202							{1: '1', 2: '2', 6: '1'}
+226	226		504							{1: '0'}
+227	227		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory789.jpg'}
+228	228		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '2'}
+229	229		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+230	230		301							{3: 'Thomas shakes his head, as if trying to dislodge the memories. His gaze falls to the papers strewn across the floor, and he squeezes his eyes shut in anguish.'}
+231	231		401							{1: '1', 2: '70'}
+232	232		201							{1: '1', 2: '501261', 3: '9'}
+233	233		301							"{1: '1', 2: 'Thomas Hell', 3: ""You're right, Ms. Valentina... How am I not mediocre?"", 4: '1'}"
+234	234		202							{1: '1'}
+235	235		301				AniZhuanchangBegin			"{3: 'Only now does he understand what his mentor meant by ""mediocre,"" and...'}"
+236	236		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab'}
+237	237		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+238	238		502						400.0	{1: 'DialogDisable'}
+239	239		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+240	240		307							"{1: 'The torment of being ""mediocre.""', 3: '65', 4: 'ffffffff'}"
+241	241		301			AniZhuanchangEnd	AniZhuanchangBegin			"{3: 'The torment of being ""mediocre.""'}"
+242	242		307							{2: '1'}
+243	243		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+244	244		401							{1: '1', 2: '36'}
+245	245		502						1000.0	{1: 'DialogEnable'}
+246	246		401							{1: '1', 2: '155', 3: '0.8'}
+247	247		401							{1: '2', 2: '4063'}
+248	248		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory789.jpg'}
+249	249		301			AniZhuanchangEnd	DialogDisable			{3: 'Crimson alarms shriek throughout the laboratory, wrenching Thomas awake from unconsciousness, who finds his body sprawled on the floor.'}
+250	250		401							{1: '2', 2: '4280'}
+251	251		111						2000.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+252	252		402							{1: '4280'}
+253	253		301			DialogEnable				{3: 'As he fights to piece together the last moments, a knife-sharp headache splits his skull, scattering his thoughts.'}
+254	254		301				DialogDisable			{3: 'In his daze, he only recalls a few blurry fragments.'}
+255	255		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+256	256		401							{1: '2', 2: '9330023'}
+257	257		402							{1: '4063'}
+258	258		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+259	259		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+260	260		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '5'}
+261	261		401							{1: '2', 2: '5316', 3: '1'}
+262	262		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+263	263		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory971.jpg'}
+264	264		401							{1: '2', 2: '4007', 3: '1'}
+265	265		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+266	266		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory294.png'}
+267	267		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+268	268		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg'}
+269	269		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+270	270		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryYaoHe.prefab', 2: '2'}
+271	271		401						1900.0	{1: '2', 2: '2919'}
+272	272		402							{1: '2919'}
+273	273		401						800.0	{1: '2', 2: '5530', 3: '1'}
+274	274		202							{1: '1', 6: '1'}
+275	275		402							{1: '9330023'}
+276	276		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+277	277		101							{4: '5', 5: '1'}
+278	278		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+279	279		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+280	280		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+281	281		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryYaoHe.prefab'}
+282	282		401							{1: '2', 2: '844090'}
+283	283		205						1800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5601_14.jpg', 3: '0', 4: '1', 5: '1.2'}
+284	284		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5601_14.jpg'}
+285	285		205							{1: '999'}
+286	286		205						1800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+287	287		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+288	288		205							{1: '999'}
+289	289		301			DialogEnable				{3: 'Space splintering like glass. A deafening explosion. And laughter—cold, mocking, cruel...'}
+290	290		301				AniZhuanchangBegin			{2: '????', 3: 'Heh, humans...'}
+291	291		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+292	292		401						2000.0	{1: '1', 2: '36'}
+293	293		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory597.jpg'}
+294	294		104							{1: '0|-130|-300', 2: '0'}
+295	295		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '2'}
+296	296		401							{1: '1', 2: '6183', 3: '1'}
+297	297		401							{1: '2', 2: '968'}
+298	298		401							{1: '2', 2: '4332'}
+299	299		201							{1: '1', 2: '501235', 3: '3', 7: '1'}
+300	300		301			AniZhuanchangEnd				{1: '1', 2: '??', 3: 'What is... happening?', 4: '1'}
+301	301		301							"{3: ""Wind screams past his ears as the man suddenly understands—he's falling from the sky.""}"
+302	302		204							{1: '1', 2: '4'}
+303	303		301							"{3: ""With no time to question why he's here, the man reacts on instinct.""}"
+304	304		301				DialogDisable			{3: 'Crimson energy crackles around him, surging from his body as swirling red particles engulf his form.'}
+305	305		401						2500.0	{1: '2', 2: '6015'}
+306	306		401							{1: '2', 2: '15046053'}
+307	307		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+308	308		402							{1: '4332'}
+309	309		202							{1: '1', 6: '1'}
+310	310		201							{1: '1', 2: '501263', 7: '1'}
+311	311		401							{1: '2', 2: '15046053'}
+312	312		301			DialogEnable	DialogDisable			{1: '1', 3: 'In an instant, his figure twists and expands until a red demon looms in the air, his massive wings beating to steady the descent.'}
+313	313		401							{1: '2', 2: '15046053'}
+314	314		401						700.0	{1: '2', 2: '4815'}
+315	315		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+316	316		402							{1: '968'}
+317	317		202							{1: '1', 6: '1'}
+318	318		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+319	319		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory301.png'}
+320	320		502							{1: 'DialogEnable'}
+321	321		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+322	322		301			RImgBg1Shake				{3: 'BOOM—'}
+323	323		201							{1: '1', 2: '501235'}
+324	324		301							{1: '1', 3: 'The ground trembles as he lands, dust billowing around him. Then, just as quickly, the red demon shifts back to his human form.'}
+325	325		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+326	326		301							{3: 'The white-haired man in a red coat surveys his surroundings, only to be met with the bleak expanse of desolated ruins.'}
+327	327		204							{1: '1', 2: '3'}
+328	328		301				AniZhuanchangBegin			{2: '??', 3: 'What the hell is this place?', 4: '1'}
+329	329		202							{1: '1', 6: '1'}
+330	330		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory298.png'}
+331	331		301			AniZhuanchangEnd				{3: 'At some ruins on the surface.'}
+332	332		301							{3: 'A white-haired man in a dark blue coat with green patterns also turns his gaze toward the ruins, where red-glowing mechanoids approach ominously.'}
+333	333		301							{3: 'The commotion of the landing has attracted the attention of these Corrupted.'}
+334	334		201							{1: '1', 2: '501234', 3: '13'}
+335	335		301		1		AniZhuanchangBegin			{1: '1', 2: '???', 3: 'Hmm... Interesting...', 4: '1'}

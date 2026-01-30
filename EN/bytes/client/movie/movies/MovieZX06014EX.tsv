@@ -1,0 +1,550 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1305.jpg'}
+2	2		401							{1: '1', 2: '120'}
+3	3		301			DialogEnable				{3: 'The once-thriving manor now stands in silent decay, having never received any guests in ages.'}
+4	4		301							"{3: ""Rumor has it that the master and lady of the manor perished in some terrible accident, leaving their only daughter languishing in her sickbed, awaiting death's inevitable grip.""}"
+5	5		301				AniZhuanchangBegin			{3: 'Unbeknownst to them, however, is that there is a secret laboratory under the now-decrepit manor that operates day and night carrying out an urgent experiment.'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory936.png'}
+7	7		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+8	8		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '2'}
+9	9		401							{1: '2', 2: '926'}
+10	10		201							{1: '1', 2: '500058'}
+11	11		301			AniZhuanchangEnd				{1: '1', 3: 'A young researcher hunches over his control panel, fingers working methodically across the interface. Every few moments, his eyes dart nervously toward the ceiling-mounted security camera. He flinches whenever its faint red light blinks.'}
+12	12		301				DialogDisable			"{3: 'It hasn\'t been long since he started working here, and yet he\'s acutely aware of the fact that their every move in the laboratory is being closely watched by a certain ""director"" through the surveillance system.'}"
+13	13		202							{1: '1', 6: '1'}
+14	14		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+15	15		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab'}
+16	16		401							{1: '2', 2: '558'}
+17	17		504							{1: '0.7'}
+18	18		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+19	19		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+20	20		201							{1: '1', 2: '500965', 4: '600', 7: '1'}
+21	21		201							{1: '2', 2: '500625', 7: '1'}
+22	22		201						1000.0	{1: '3', 2: '500863', 4: '-600', 7: '1'}
+23	23		202							{1: '1', 2: '2', 3: '3'}
+24	24		301			DialogEnable				{3: 'On just his second day, he watched in horror as several senior researchers who had had a few experimental blunders were escorted from the lab by a stern-looking butler. None of them was ever seen again.'}
+25	25		504							{1: '0'}
+26	26		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+27	27		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+28	28		301							"{3: 'Such a generous salary comes with equally high expectations, he reasons. Those colleagues must have been dismissed from the Consortium\'s classified project. He silently prays he won\'t meet the same fate, though deep down, he suspects ""dismissal"" might mean something far worse.'}"
+29	29		301				DialogDisable			"{3: ""He reminds himself that he's young, with his scientific career still stretching before him like an unwritten page. This project, dangerous as it may be, is the launchpad his ambitions need—the perfect stage for his brilliance to finally shine.""}"
+30	30		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+31	31		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory41.jpg'}
+32	32		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+33	33		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory789.jpg'}
+34	34		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+35	35		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory788.jpg'}
+36	36		301			DialogEnable	DialogDisable			"{3: ""He refuses to return to those wasted years after graduation—fresh from academia's ivory tower, only to find himself scrubbing test tubes in nameless laboratories, his brilliance dimming with each menial task assigned to someone like himself who is clearly destined for greater things.""}"
+37	37		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory936.png', 3: '0', 4: '1', 5: '0.75'}
+38	38		205							{1: '999'}
+39	39		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory936.png'}
+40	40		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory937.png', 3: '0', 4: '1', 5: '0.75'}
+41	41		205							{1: '999'}
+42	42		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory937.png'}
+43	43		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory936.png', 3: '0', 4: '1', 5: '0.75'}
+44	44		205							{1: '999'}
+45	45		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory936.png'}
+46	46		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory937.png', 3: '0', 4: '1', 5: '0.75'}
+47	47		205							{1: '999'}
+48	48		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory937.png'}
+49	49		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory936.png', 3: '0', 4: '1', 5: '0.75'}
+50	50		205							{1: '999'}
+51	51		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory936.png'}
+52	52		301			DialogEnable				"{3: ""Determined to scale the heights of scientific achievement, the young researcher pushes himself relentlessly. He's first to arrive every morning and last to leave at night, his figure a familiar sight against the lab's harsh lights when everyone else has gone home.""}"
+53	53		301							{3: 'Where everyone else sees tedium, he finds fascination—poring over data sets with reverent attention, approaching each experimental protocol with a fervor his colleagues simply cannot comprehend.'}
+54	54		301				AniZhuanchangBegin			{3: '...'}
+55	55		401							{1: '1', 2: '36'}
+56	56		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1145.jpg'}
+57	57		401							{1: '1', 2: '201'}
+58	58		301			AniZhuanchangEnd				"{3: ""The researcher snaps back to reality and forces his wandering mind to focus on the task at hand. Once more, he initiates the procedure he's performed countless times before—the delicate process of transferring simulated consciousness data into a mechanoid vessel.""}"
+59	59		201							{1: '18', 2: '500058', 4: '-150', 5: '-100', 6: '200'}
+60	60		301							{1: '1', 2: 'Researcher', 3: 'Initiating simulated consciousness data mapping, integration test 167.', 4: '18'}
+61	61		202			DialogDisable				{1: '18'}
+62	62		401							{1: '2', 2: '1227'}
+63	63		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenBlueEx.prefab', 2: '2'}
+64	64		301			DialogEnable				{3: 'As the researcher inputs his commands, data streams across the experimental panel begin to pulse.'}
+65	65		301							{3: 'His eyes lock onto the fluctuating progress bar, and his heart races as the bar crosses the critical threshold. Going from a warning red to a promising green, the bar, by the second, inches closer to completion.'}
+66	66		201							{1: '18', 2: '500058', 4: '-150', 5: '-100', 6: '200'}
+67	67		301							"{1: '1', 2: 'Researcher', 3: ""Yes... Come on... Let's make it happen this time..."", 4: '18'}"
+68	68		202			DialogDisable				{1: '18'}
+69	69		104						300.0	{1: '0|-30|-75', 2: '0.3'}
+70	70		301			DialogEnable				{3: 'The researcher murmurs these words like incantations, as though his whispered encouragement would somehow speed up the process. Then, his body tense with anticipation, he rises from his chair despite himself.'}
+71	71		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenBlueEx.prefab'}
+72	72		301							{3: '—Right then, the bar, having come so far without any hiccup, freezes in place.'}
+73	73		401							{1: '2', 2: '4436'}
+74	74		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+75	75		401							{1: '2', 2: '2760'}
+76	76		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab', 2: '2'}
+77	77		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenRedEx.prefab', 2: '2'}
+78	78		301							{3: 'With it, the promising green quickly drains away and turns red again.'}
+79	79		201							{1: '18', 2: '500058', 4: '-150', 5: '-100', 6: '200'}
+80	80		301							{1: '1', 2: 'Researcher', 3: 'Damn it! Matching coefficient is dropping—reduce the signal-to-noise ratio, now!', 4: '18'}
+81	81		202							{1: '18', 6: '1'}
+82	82		301							{3: 'The red bar continues its merciless retreat.'}
+83	83		201							{1: '18', 2: '500058', 4: '-150', 5: '-100', 6: '200'}
+84	84		301							"{1: '1', 2: 'Researcher', 3: ""Why is it still dropping?! No... this isn't working!"", 4: '18'}"
+85	85		301							{2: 'Researcher', 3: 'Amplify input signal strength... Filter out the noise...', 4: '18'}
+86	86		202			DialogDisable				{1: '18'}
+87	87		402							{1: '2760'}
+88	88		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenRedEx.prefab'}
+89	89		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+90	90		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab'}
+91	91		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3MainChangeScreenRed.prefab', 2: '2'}
+92	92		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory951.png', 3: '0', 4: '1', 5: '1'}
+93	93		205							{1: '999'}
+94	94		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory951.png'}
+95	95		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenRedEx.prefab', 2: '2'}
+96	96		301			DialogEnable				{3: 'The progress bar hits zero.'}
+97	97		201							{1: '18', 2: '500058', 4: '-150', 5: '-100', 6: '200'}
+98	98		301				AniZhuanchangBegin			{1: '1', 2: 'Researcher', 3: '...', 4: '18'}
+99	99		202							{1: '18', 6: '1'}
+100	100		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenRedEx.prefab'}
+101	101		401							{1: '1', 2: '36'}
+102	102		101						2050.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory936.png'}
+103	103		401							{1: '1', 2: '208'}
+104	104		301			AniZhuanchangEnd				{3: 'Staring blankly at the cascade of error messages flooding the display panel, he lets out a long, defeated sigh.'}
+105	105		201							{1: '1', 2: '500058'}
+106	106		301							{1: '1', 2: 'Researcher', 3: 'Integration Test #167... failed.', 4: '1'}
+107	107		301							{3: 'He slumps back into his chair, shoulders sagging with defeat. He runs his fingers through his disheveled hair and begins to mutter to himself.'}
+108	108		301							"{2: 'Researcher', 3: ""It's not working. The signal interference always rockets out of control whenever I load the simulated consciousness data into the mechanoid, doesn't matter how I adjust the parameters..."", 4: '1'}"
+109	109		301							{2: 'Researcher', 3: 'No amount of playing with the parameters seems to work.', 4: '1'}
+110	110		301							"{2: 'Researcher', 3: ""This is pointless... I'm just wasting time at this point. I need to report these findings to management."", 4: '1'}"
+111	111		202							{1: '1', 6: '1'}
+112	112		201							{1: '1', 2: '500463', 4: '-600'}
+113	113		201							{1: '2', 2: '500755'}
+114	114		201							{1: '3', 2: '500138', 4: '600'}
+115	115		301							{1: '1', 3: 'Having noticed his distress, some of his colleagues walk up to him.'}
+116	116		301							"{2: 'Colleague A', 3: ""Don't beat yourself up over this. If the project is impossible, that's not on us. Gotta question this project instead of blaming yourself."", 4: '2'}"
+117	117		301							"{2: 'Colleague B', 3: ""Exactly. I mean, transferring human consciousness into mechanoids? C'mon, this whole thing has only existed as a theory up until now. They can't really expect us to come up with any breakthroughs anytime soon, right?"", 4: '1'}"
+118	118		301							"{2: 'Colleague C', 3: ""I heard this consortium funded this same project years ago, but shelved it when they couldn't make any breakthroughs. Weird how they decided to come back to it after all this time."", 4: '3'}"
+119	119		301							"{2: 'Colleague A', 3: ""Who cares? The pay is fantastic, and the consortium has money to burn. Once this project wraps up, I'll be halfway to financial independence. Ain't no point worrying about anything."", 4: '2'}"
+120	120		301							"{2: 'Colleague B', 3: ""Sure, the money's good, but these confidentiality agreements are brutal. No leaving the facility, no outside contact—we might as well be prisoners! We're scientists, for crying out loud..."", 4: '1'}"
+121	121		301							"{2: 'Colleague C', 3: ""And what about those guys from a while back? Weren't they fired because their experimental data wasn't promising? We can't even reach out to ask where they landed new jobs."", 4: '3'}"
+122	122		301							"{2: 'Colleague A', 3: ""Look, we can think all we want, but it ain't getting us anywhere. Just do the work and be done with it."", 4: '2'}"
+123	123		301							"{3: ""Clearly more experienced, the veterans continue their noisy chatter about the project, completely oblivious to the worried look on the young man's face.""}"
+124	124		202							{1: '1', 2: '2', 3: '3'}
+125	125		301							"{3: ""When they're done venting, they give the young researcher a few perfunctory pats on the shoulder and return to their respective workstations.""}"
+126	126		306							{1: '1'}
+127	127		301							"{3: ""These veterans have mastered the art of slacking off. Every day, they'd put on a show of being busy, run through the procedures once with exaggerated diligence, then submit completely fabricated data.""}"
+128	128		301							{3: 'The young researcher, on the other hand, stands out like a sore thumb, being the only one committed to producing real scientific results.'}
+129	129		306							
+130	130		401							{1: '1', 2: '36'}
+131	131		401							{1: '2', 2: '2774'}
+132	132		201							{1: '1', 2: '500058'}
+133	133		301							{1: '1', 3: 'After a long moment of contemplation, the young researcher seems to have made up his mind. With a deep breath, he dials an internal extension on his terminal.'}
+134	134		401							{1: '1', 2: '55'}
+135	135		401							{1: '2', 2: '4421'}
+136	136		301							{3: 'A few rings later, the composed voice of a man comes online.'}
+137	137		301							"{3: 'Though the young man has had limited interactions with him, he knows that this ""Edmond"" is essentially the one taking care of things around here. The young researcher was, in fact, onboarded to work on this project by none other than Edmond himself.'}"
+138	138		301							{3: 'The young man, however, can clearly tell that Edmond is just a frontman—that someone else is pulling the strings behind the scenes.'}
+139	139		203							{1: '1', 2: '0.25', 3: '500'}
+140	140		509						450.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1304.jpg', 2: '1'}
+141	141		201							{1: '11', 2: '501356', 4: '-400'}
+142	142		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 5: '1'}
+143	143		511							{1: '1', 2: '0', 3: '-400|0|0'}
+144	144		301							"{1: '1', 2: 'Edmond', 3: ""What's going on? Is there something wrong with the lab?"", 4: '11'}"
+145	145		301							{2: 'Researcher', 3: 'Sir, I really hated having to bother you... but I do have something urgent to report to management.', 4: '1'}
+146	146		204							{1: '11', 2: '8'}
+147	147		301							"{2: 'Edmond', 3: ""...Just focus on your work. I'm the one you should talk to if you ever run into any issues."", 4: '11'}"
+148	148		301							"{2: 'Researcher', 3: ""But the experiment is stuck. We have tried everything we could think of, but we've made absolutely no breakthroughs!"", 4: '1'}"
+149	149		301							"{2: 'Researcher', 3: ""I've gone through years of previous research records, and I'm convinced we're heading in the completely wrong direction!"", 4: '1'}"
+150	150		306							{1: '1'}
+151	151		301							{3: 'The young researcher, having broken his silence, launches into an impassioned monologue about all the experimental approaches they have tried and how each ended in failure.'}
+152	152		301							"{3: ""He doesn't even care if Edmond follows.""}"
+153	153		306							
+154	154		301							"{2: 'Researcher', 3: ""We're just wasting our time doing things the way we have all this time!"", 4: '1'}"
+155	155		204							{1: '11'}
+156	156		301							{3: 'But Edmond remains silent on the other end of the line.'}
+157	157		301							{2: 'Researcher', 3: 'Hello, sir? Are you still there?', 4: '1'}
+158	158		401							{1: '2', 2: '1099'}
+159	159		301							{3: 'An alert tone signals a new connection on the other end of the terminal, followed by the exceptionally young voice of a female.'}
+160	160		201							{1: '18', 2: '501355', 4: '-260', 5: '-80', 6: '300'}
+161	161		301							"{1: '1', 2: '???', 3: ""Go on. I'm listening."", 4: '18'}"
+162	162		301							"{2: '???', 3: ""I've been following this project's progress very closely."", 4: '18'}"
+163	163		202							{1: '18'}
+164	164		301							"{3: ""The researcher didn't expect anyone else to join the call, but this stranger's interest in the project rekindles his fading hope.""}"
+165	165		301							"{2: 'Researcher', 3: ""So here's the situation—I've tried every approach imaginable, but I just can't push past the data compatibility threshold in the consciousness transfer experiments."", 4: '1'}"
+166	166		301							{2: 'Researcher', 3: 'No matter how I adjust the parameters, I always end up with noise corrupting the results.', 4: '1'}
+167	167		301							{2: 'Researcher', 3: 'And...', 4: '1'}
+168	168		301							"{3: ""The female's voice cuts him off impatiently.""}"
+169	169		201							{1: '18', 2: '501355', 4: '-260', 5: '-80', 6: '300'}
+170	170		301							"{1: '1', 2: '???', 3: ""So, what's your conclusion?"", 4: '18'}"
+171	171		202							{1: '18'}
+172	172		301							{3: 'The researcher grips his terminal tightly, summoning the courage to deliver his conclusion.'}
+173	173		301							{2: 'Researcher', 3: 'My conclusion is this—the project is fundamentally impossible to complete in the short term!', 4: '1'}
+174	174		201							{1: '18', 2: '501355', 4: '-260', 5: '-80', 6: '300'}
+175	175		301							{1: '1', 2: '???', 3: '……', 4: '18'}
+176	176		301							{2: '???', 3: 'Is that so... I see.', 4: '18'}
+177	177		301							"{2: '???', 3: ""Excellent. You've got a good head on your shoulders. I'm appointing you as the research director for this project."", 4: '18'}"
+178	178		301							{2: '???', 3: 'Edmond, bring him to my office.', 4: '18'}
+179	179		301							"{2: '???', 3: ""We'll have some discussion about where this research project is going next."", 4: '18'}"
+180	180		202							{1: '18'}
+181	181		204							{1: '11', 2: '8'}
+182	182		301							{2: 'Edmond', 3: '...Understood.', 4: '11'}
+183	183		301				DialogDisable			"{2: 'Researcher', 3: ""Yes, of course! I'll gather all the previous data reports and be right over to brief you!"", 4: '1'}"
+184	184		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 5: '1'}
+185	185		202							{1: '11', 6: '1'}
+186	186		401							{1: '2', 2: '4423'}
+187	187		510						800.0	{1: '1'}
+188	188		203						300.0	{1: '1', 2: '0.25'}
+189	189		301			DialogEnable				{3: 'The young woman on the other end hangs up.'}
+190	190		306							{1: '1'}
+191	191		301				DialogDisable			"{3: 'The idea of ""reporting the situation upward"" excites the young man, and the prospect of an imminent promotion convinces him that he needs to take this opportunity seriously.'}"
+192	192		202							{1: '1', 6: '1'}
+193	193		401							{1: '2', 2: '4262'}
+194	194		205						1800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory209.png', 3: '0', 4: '1', 5: '1.5'}
+195	195		205							{1: '999'}
+196	196		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory209.png'}
+197	197		402							{1: '4262'}
+198	198		301			DialogEnable	DialogDisable			{3: 'He quickly organizes everything and downloads it to his terminal.'}
+199	199		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory936.png', 3: '0', 4: '1', 5: '1'}
+200	200		205							{1: '999'}
+201	201		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory936.png'}
+202	202		201							{1: '1', 2: '500463', 4: '-600'}
+203	203		201							{1: '2', 2: '500755'}
+204	204		201							{1: '3', 2: '500138', 4: '600'}
+205	205		301			DialogEnable	DialogDisable			"{1: '1', 3: ""He ignores the puzzled glances from his colleagues as he mentally rehearses how he's going to present his findings during the upcoming meeting.""}"
+206	206		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+207	207		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory644.jpg', 3: '0', 4: '1', 5: '1.5'}
+208	208		205							{1: '999'}
+209	209		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory644.jpg'}
+210	210		306							
+211	211		301			DialogEnable				"{3: ""Edmond arrives promptly and leads the young researcher out of the laboratory. He guides him through the mansion's labyrinthine corridors.""}"
+212	212		201							{1: '1', 2: '500058'}
+213	213		301							{1: '1', 2: 'Researcher', 3: 'Um, sir, where exactly are we... going? I thought I was supposed to report to the project director?', 4: '1'}
+214	214		203							{1: '1', 2: '0.25', 3: '400'}
+215	215		201							{1: '2', 2: '501356', 3: '8', 4: '-400'}
+216	216		301							"{1: '1', 2: 'Edmond', 3: ""...We're almost there."", 4: '2'}"
+217	217		202							{1: '1', 2: '2'}
+218	218		301							"{3: ""Edmond's icy expression silences the young researcher immediately.""}"
+219	219		301				AniZhuanchangBegin			"{3: ""Despite his composure, the young researcher feels uneasier by the second as soon as he realizes they're heading deeper into the basement levels of the estate. The complete absence of anyone else along the way only intensifies his apprehension.""}"
+220	220		401							{1: '2', 2: '4542'}
+221	221		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory60.jpg'}
+222	222		104							{1: '0|0|-200', 2: '0'}
+223	223		301			AniZhuanchangEnd				{3: 'Finally, they reach a dim, enclosed underground corridor. At its end stands a single rusted door that slowly creaks open, letting out a wave of dank, foul-smelling air from the darkness beyond.'}
+224	224		201							{1: '1', 2: '501356'}
+225	225		301							{1: '1', 2: 'Edmond', 3: 'The director is waiting for you inside. Go in.', 4: '1'}
+226	226		201							{1: '1', 2: '500058'}
+227	227		301							{1: '1', 2: 'Researcher', 3: 'Where the hell is this place? What are you planning to do with me?', 4: '1'}
+228	228		301			DialogShake				"{2: 'Researcher', 3: ""I came here to do a job, not to be pushed around by rich bastards like you! I quit, right here and now! I'm done with this!"", 4: '1'}"
+229	229		202							{1: '1', 6: '1'}
+230	230		301							{3: 'With newfound courage, the researcher refuses to comply and turns to leave.'}
+231	231		401							{1: '1', 2: '36'}
+232	232		401							{1: '2', 2: '5705'}
+233	233		301							"{3: ""The young man, however, freezes at the sound of a gun being cocked. Turning around, he finds himself staring down the dark barrel of Edmond's pistol.""}"
+234	234		401							{1: '1', 2: '186'}
+235	235		201							{1: '1', 2: '500058'}
+236	236		301							{1: '1', 2: 'Researcher', 3: 'W-what are you doing?!', 4: '1'}
+237	237		201							{1: '1', 2: '501356'}
+238	238		301							{1: '1', 2: 'Edmond', 3: 'I said, get inside.', 4: '1'}
+239	239		202							{1: '1', 6: '1'}
+240	240		401							{1: '2', 2: '4044'}
+241	241		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+242	242		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+243	243		301							"{3: ""Edmond violently shoves the researcher's shoulder, causing him to lose his footing and tumble into the dark room.""}"
+244	244		205						2050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory870.jpg', 3: '0', 4: '1', 5: '2'}
+245	245		205							{1: '999'}
+246	246		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory870.jpg'}
+247	247		401							{1: '2', 2: '3077'}
+248	248		301			RImgBg1Shake				{3: 'Terrified, the researcher lands on what feels like a pile of objects. Squinting in the faint light filtering from the doorway, he gradually makes out what surrounds him.'}
+249	249		301							{3: 'Several lab coats and ID cards were scattered about—the names on the cards belong to his colleagues who have gone missing.'}
+250	250		201							{1: '1', 2: '500058'}
+251	251		301				DialogDisable			{1: '1', 2: 'Researcher', 3: '...!', 4: '1'}
+252	252		202							{1: '1', 6: '1'}
+253	253		401							{1: '2', 2: '1510'}
+254	254		502							{1: 'RImgBg1Shake'}
+255	255		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2', 5: '2'}
+256	256		511						300.0	{1: '2', 2: '0', 3: '100|-100|0'}
+257	257		401							{1: '2', 2: '1510'}
+258	258		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2', 5: '3'}
+259	259		511						300.0	{1: '3', 2: '0', 3: '-100|100|0'}
+260	260		301			DialogEnable				{3: 'Bang—bang—'}
+261	261		301				DialogDisable			{3: 'Several gunshots drown out his screams.'}
+262	262		202							{1: '1'}
+263	263		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory643.jpg', 3: '0', 4: '1', 5: '1.5'}
+264	264		205							{1: '999'}
+265	265		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory643.jpg'}
+266	266		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '2'}
+267	267		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+268	268		401							{1: '2', 2: '926'}
+269	269		201							{1: '1', 2: '501356'}
+270	270		301			DialogEnable				{1: '1', 3: 'Moments later, Edmond shuts the heavy door behind him and returns to the hallway. He looks up to stare directly at an inconspicuous camera mounted on the ceiling.'}
+271	271		301				AniZhuanchangBegin			"{2: 'Edmond', 3: ""As you wish, Dolores. He'll raise no more objections about the project."", 4: '1'}"
+272	272		202							{1: '1', 6: '1'}
+273	273		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+274	274		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab'}
+275	275		401							{1: '1', 2: '36'}
+276	276		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory539.jpg'}
+277	277		401							{1: '1', 2: '120'}
+278	278		301			AniZhuanchangEnd				{3: 'Hours later, the still-shaken researcher hides in the forest beyond the estate grounds as he stares at Edmond in disbelief.'}
+279	279		201							{1: '1', 2: '501356'}
+280	280		301							{1: '1', 2: 'Edmond', 3: 'Here, all your belongings are in this bag. Lie low for a while, move to another city, and never come back here.', 4: '1'}
+281	281		301							"{2: 'Edmond', 3: ""I'll find a way to help those in the lab escape in small groups. Remember, no matter what happens, never ever try to reach out to one another after this."", 4: '1'}"
+282	282		204							{1: '1', 2: '8'}
+283	283		301							"{2: 'Edmond', 3: ""I'm truly sorry for dragging you all into this mess, but... this is as much as I can do for you."", 4: '1'}"
+284	284		204							{1: '1'}
+285	285		301							"{2: 'Edmond', 3: ""Just promise me that you won't go to the police, because if you do, then I'm afraid..."", 4: '1'}"
+286	286		203							{1: '1', 2: '0.25', 3: '-400'}
+287	287		201							{1: '2', 2: '500058', 4: '400'}
+288	288		301							"{1: '1', 2: 'Researcher', 3: ""I don't get it... Why are you still here?"", 4: '2'}"
+289	289		301							"{2: 'Researcher', 3: ""You saved my life! You're a good man! You should get out of here yourself!"", 4: '2'}"
+290	290		301							{3: 'Edmond simply shakes his head as he casts a worried yet longing gaze at the estate in the distance.'}
+291	291		301							"{2: 'Edmond', 3: ""Someone needs to take care of Dolores... She's going to die if I leave."", 4: '1'}"
+292	292		401							{1: '2', 2: '4044'}
+293	293		202							{1: '1', 2: '2'}
+294	294		301							"{3: ""Edmond says nothing more. He simply pats the young researcher's shoulder, then rises and walks back the way he came.""}"
+295	295		104						300.0	{1: '0|0|-100', 2: '0.25'}
+296	296		301							{3: 'The setting sun bathes the ivy-covered estate in a blood-red glow. Edmond stands in silence before the mansion, gazing up at a window on the top floor.'}
+297	297		301				AniZhuanchangBegin			{3: 'Behind the window, Dolores watches him quietly.'}
+298	298		401							{1: '1', 2: '36'}
+299	299		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory894.jpg'}
+300	300		401							{1: '1', 2: '202'}
+301	301		201							{1: '1', 2: '501354'}
+302	302		301			AniZhuanchangEnd				"{1: '1', 2: 'Dolores', 3: 'So this is what you call ""loyalty,"" Edmond.', 4: '1'}"
+303	303		301							{3: 'Dolores watches the butler enter with unsettling calm.'}
+304	304		201							{1: '1', 2: '501356', 3: '8'}
+305	305		301							"{1: '1', 2: 'Edmond', 3: ""...I'm sorry, Dolores."", 4: '1'}"
+306	306		201							{1: '1', 2: '501354', 3: '5'}
+307	307		301							{1: '1', 2: 'Dolores', 3: 'You let them go... every single one of them.', 4: '1'}
+308	308		301							{2: 'Dolores', 3: 'You got in the way of my plan and set free those that should have died... Is this how you show me your loyalty?', 4: '1'}
+309	309		201							{1: '1', 2: '501356'}
+310	310		301							{1: '1', 2: 'Edmond', 3: 'Dolores, your tea has grown cold. Allow me to bring you a fresh cup...', 4: '1'}
+311	311		202							{1: '1'}
+312	312		301							{3: 'Edmond pauses, then bends down to replace the cold tea on the side table.'}
+313	313		201							{1: '1', 2: '501354', 3: '5'}
+314	314		301			DialogShake				{1: '1', 2: 'Dolores', 3: '...Answer my question!', 4: '1'}
+315	315		202							{1: '1'}
+316	316		301							{3: 'With Edmond evading her questions, Deloris flies into a rage. She snatches the teacup and hurls it violently to the floor—'}
+317	317		401							{1: '2', 2: '4480'}
+318	318		301							{3: 'The thick carpet absorbs the impact, silencing what should have been a crash. The teacup rolls across the floor, unbroken.'}
+319	319		201							{1: '1', 2: '501356'}
+320	320		301							"{1: '1', 2: 'Edmond', 3: ""...I'm sorry, Dolores. Please... let's stop these experiments."", 4: '1'}"
+321	321		301							"{3: ""Edmond's lips tremble as he speaks.""}"
+322	322		204							{1: '1', 2: '8'}
+323	323		301							"{2: 'Edmond', 3: ""...You've seen it yourself, haven't you? These experiments are going nowhere."", 4: '1'}"
+324	324		204							{1: '1'}
+325	325		301							"{2: 'Edmond', 3: ""Every single researcher who'd ever worked here came to the same conclusion."", 4: '1'}"
+326	326		301							"{2: 'Edmond', 3: ""Dolores... please, spare yourself this torment. I really don't want..."", 4: '1'}"
+327	327		301							"{2: 'Edmond', 3: ""I don't want you to become like your father."", 4: '1'}"
+328	328		202							{1: '1', 6: '1'}
+329	329		401							{1: '2', 2: '558'}
+330	330		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+331	331		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory981.jpg'}
+332	332		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+333	333		301							{3: 'The oppressive laboratory doors, the sickly glow of failing lights, a brooding man cradling bizarre machinery...'}
+334	334		301							"{3: ""Edmond can't bear to see Dolores, whom he raised with his own hands, turn into another monster.""}"
+335	335		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+336	336		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+337	337		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory894.jpg'}
+338	338		201							{1: '1', 2: '501354', 3: '5'}
+339	339		301							"{1: '1', 2: 'Dolores', 3: ""...Haha, don't even think for a second that I don't know what you're up to, Edmond. You're just after our money like everyone else!"", 4: '1'}"
+340	340		301			DialogShake				"{2: 'Dolores', 3: ""I knew it! I KNEW it! You're—you're just like the rest of them! You're just one of those vultures! All waiting for me to surrender, waiting for me to die!"", 4: '1'}"
+341	341		301							"{3: 'Dolores shrieks hysterically. Years of physical suffering and endless battles against all her ""relatives"" eyeing their fortune have transformed her into a deeply paranoid and eccentric woman.'}"
+342	342		201							{1: '1', 2: '501356', 3: '8'}
+343	343		301							"{1: '1', 2: 'Edmond', 3: ""Dolores, I'm not..."", 4: '1'}"
+344	344		202							{1: '1', 6: '1'}
+345	345		401							{1: '2', 2: '4480'}
+346	346		301			RImgBg1Shake				{3: 'Smack—'}
+347	347		301							{3: 'His response comes in the form of a teapot violently hurled at his feet.'}
+348	348		301							"{3: ""The teapot doesn't shatter. The thick carpet—put in place specifically to protect Dolores from injury—quietly cradles the fragile porcelain.""}"
+349	349		201							{1: '1', 2: '501354', 3: '8'}
+350	350		301							{1: '1', 2: 'Dolores', 3: '...', 4: '1'}
+351	351		202							{1: '1'}
+352	352		301							{3: 'She looks down at the teapot rolling across the floor, a flicker of lucidity returning to her eyes.'}
+353	353		201							{1: '1', 2: '501356', 3: '8'}
+354	354		301							"{1: '1', 2: 'Edmond', 3: ""Dolores, you'll be alright. I'll find the finest specialists..."", 4: '1'}"
+355	355		202							{1: '1'}
+356	356		301							{3: 'Edmond stoops to retrieve the teapot from the floor, his voice gentle as he tries to soothe Dolores.'}
+357	357		201							{1: '1', 2: '501354'}
+358	358		301							"{1: '1', 2: 'Dolores', 3: ""Yes... of course. I won't be dying anytime soon."", 4: '1'}"
+359	359		401							{1: '1', 2: '36'}
+360	360		301							{3: 'Dolores speaks softly.'}
+361	361		401							{1: '1', 2: '279'}
+362	362		204							{1: '1', 2: '5'}
+363	363		301							"{2: 'Dolores', 3: ""I won't be dying, but you, Edmond..."", 4: '1'}"
+364	364		201							{1: '1', 2: '501356'}
+365	365		301							{1: '1', 2: 'Edmond', 3: '!', 4: '1'}
+366	366		401							{1: '2', 2: '5705'}
+367	367		301				DialogDisable			"{3: ""Before Edmond can react, the dark barrel of a gun is pointed squarely at the butler's chest.""}"
+368	368		202							{1: '1', 6: '1'}
+369	369		401							{1: '2', 2: '1510'}
+370	370		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0.25'}
+371	371		502							{1: 'DialogEnable'}
+372	372		301			RImgBg1Shake				{3: 'Bam!'}
+373	373		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryJianXue.prefab'}
+374	374		201							{1: '1', 2: '501356', 3: '8'}
+375	375		301			PanelActor1Shake				{1: '1', 2: 'Edmond', 3: '...Dolores...', 4: '1'}
+376	376		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0', 5: '0'}
+377	377		201							{1: '1', 2: '501354', 3: '5'}
+378	378		301							"{1: '1', 2: 'Dolores', 3: ""Of course, I won't die, but you, Edmond, I wouldn't say the same about you."", 4: '1'}"
+379	379		204							{1: '1', 2: '1'}
+380	380		301							{3: 'With cold detachment, Dolores watches the butler struggle to his feet, desperate to escape. She covers her mouth to stifle a soft, delighted laugh.'}
+381	381		301							{2: 'Dolores', 3: 'I hate you, Edmond.', 4: '1'}
+382	382		204							{1: '1', 2: '5'}
+383	383		301							"{2: 'Dolores', 3: ""Father's dead. Mother's dead. I'm... I'm dying, too. Why are you still alive? Why are you still so healthy?"", 4: '1'}"
+384	384		301							"{2: 'Dolores', 3: ""I hate all of you—I hate healthy humans, and I hate machines that never fall ill. Only me, only I'm trapped here, confined to this mansion waiting to die!"", 4: '1'}"
+385	385		204							{1: '1', 2: '2'}
+386	386		301			DialogShake				{2: 'Dolores', 3: 'Why do I have to be stuck with the short end of the stick?!', 4: '1'}
+387	387		201							{1: '1', 2: '501356', 3: '8'}
+388	388		301			PanelActor1Shake				{1: '1', 2: 'Edmond', 3: '(A choked sound...)', 4: '1'}
+389	389		301				DialogDisable			"{3: ""Blood bubbles from the corner of Edmond's mouth as he wobbles toward the impossibly distant door—""}"
+390	390		502						600.0	{1: 'PanelActor1Shake'}
+391	391		203						500.0	{1: '1', 2: '0.45', 4: '-150'}
+392	392		202							{1: '1'}
+393	393		401							{1: '2', 2: '4044'}
+394	394		301			DialogEnable				{3: '—then falls lifelessly to the floor.'}
+395	395		301							"{3: ""The metallic smell of blood seeps into the silent carpet as Dolores stares unwaveringly at Edmond's lifeless body.""}"
+396	396		201							{1: '1', 2: '501354', 3: '5'}
+397	397		301							"{1: '1', 2: 'Dolores', 3: ""You can't escape, Edmond. Don't even think about leaving this place."", 4: '1'}"
+398	398		202							{1: '1'}
+399	399		301				DialogDisable			"{3: ""She forces her frail body upright and methodically connects experimental devices to Edmond's body with surprising dexterity.""}"
+400	400		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1145.jpg', 3: '0', 4: '1', 5: '1'}
+401	401		205							{1: '999'}
+402	402		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1145.jpg'}
+403	403		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenBlueEx.prefab', 2: '2'}
+404	404		401							{1: '2', 2: '4262'}
+405	405		301			DialogEnable	DialogDisable			{3: 'Following the system prompts, she keeps her eye on the fluctuating readings on the control panel, her eyes darting across every changing number.'}
+406	406		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenBlueEx.prefab'}
+407	407		402						100.0	{1: '4262'}
+408	408		401							{1: '2', 2: '4436'}
+409	409		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory951.png', 3: '0', 4: '1', 5: '1.5'}
+410	410		205							{1: '999'}
+411	411		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory951.png'}
+412	412		301			DialogEnable				{3: 'The experiment progress bar inches forward and briefly surpasses the critical threshold before gradually grinding to a halt.'}
+413	413		201							{1: '18', 2: '501354', 3: '5', 4: '-260', 5: '-80', 6: '300'}
+414	414		301							{1: '1', 2: 'Dolores', 3: '...Tsk.', 4: '18'}
+415	415		202							{1: '18'}
+416	416		401							{1: '2', 2: '897'}
+417	417		301				DialogDisable			{3: 'Refusing to accept failure, Dolores frantically hammers at the buttons on the control panel.'}
+418	418		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1145.jpg', 3: '0', 4: '1', 5: '1.5'}
+419	419		205							{1: '999'}
+420	420		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1145.jpg'}
+421	421		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenBlueEx.prefab', 2: '2'}
+422	422		401							{1: '2', 2: '4262'}
+423	423		301			DialogEnable				{3: 'A moment later, the frozen progress bar begins to crawl forward once again.'}
+424	424		402							{1: '4262'}
+425	425		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenBlueEx.prefab'}
+426	426		401							{1: '2', 2: '4062'}
+427	427		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+428	428		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo.prefab', 2: '2'}
+429	429		301							{2: 'System Notice', 3: 'Partial consciousness data retrieved. Consciousness match coefficient: 45%. Memory data partially corrupted.'}
+430	430		301							{2: 'System Notice', 3: 'Proceed with forced activation? Warning. This action will result in permanent memory loss.'}
+431	431		301				AniZhuanchangBegin			"{3: 'Without a moment\'s hesitation, Dolores presses the ""CONFIRM"" button.'}"
+432	432		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo.prefab'}
+433	433		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+434	434		401							{1: '1', 2: '36'}
+435	435		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory894.jpg'}
+436	436		401							{1: '1', 2: '12'}
+437	437		401							{1: '2', 2: '4561'}
+438	438		301			AniZhuanchangEnd				{2: 'Mechanical Overseer', 3: '—(bzzzzt)...', 4: '1'}
+439	439		301							{2: 'Mechanical Overseer', 3: 'D-Dolores.', 4: '1'}
+440	440		301							{3: 'As the loading bar reaches completion, the mechanoid that Dolores put in place long ago slowly opens its eyes on the other side of the room.'}
+441	441		201							{1: '1', 2: '501357', 4: '300', 5: '50', 6: '-100'}
+442	442		301							{1: '1', 2: 'Overseer', 3: 'Deloris... H-Hello... Good day to you.', 4: '1'}
+443	443		203						300.0	{1: '1', 2: '0.25', 3: '700', 4: '50', 5: '-100'}
+444	444		201							{1: '2', 2: '501354', 4: '-400'}
+445	445		301							{1: '1', 2: 'Dolores', 3: '...Edmond?', 4: '2'}
+446	446		301							{2: 'Overseer', 3: 'Good—day. I am Edmond, I am—your butler.', 4: '1'}
+447	447		301							{2: 'Overseer', 3: 'No—no matter what happens—I will always remain loyal to you.', 4: '1'}
+448	448		301							"{2: 'Dolores', 3: ""...Hah, yes, that's what you always used to say, Edmond. That you would always remain loyal to me... right?"", 4: '2'}"
+449	449		202							{1: '1', 2: '2'}
+450	450		401							{1: '2', 2: '9351040'}
+451	451		301							{3: 'The mechanoid climbs out of the chamber and stands silently behind Dolores.'}
+452	452		201							{1: '1', 2: '501354', 3: '1'}
+453	453		301							"{1: '1', 2: 'Dolores', 3: ""That's more like it, Edmond."", 4: '1'}"
+454	454		301				DialogDisable			"{2: 'Dolores', 3: ""I can forgive you for what you have done, but since you let those researchers go... you'll have to continue their work yourself."", 4: '1'}"
+455	455		202							{1: '1', 6: '1'}
+456	456		306							{1: '1'}
+457	457		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+458	458		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory936.png', 3: '0', 4: '1', 5: '1'}
+459	459		205							{1: '999'}
+460	460		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory936.png'}
+461	461		301			DialogEnable	DialogDisable			"{3: ""Past experimental data and procedures are compiled into files and uploaded to the mechanoid's memory shell. Under Dolores' command, the mechanoid continues the hopeless experiments.""}"
+462	462		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory643.jpg', 3: '0', 4: '1', 5: '1'}
+463	463		205							{1: '999'}
+464	464		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory643.jpg'}
+465	465		301			DialogEnable	AniZhuanchangBegin			{3: 'The manor remains as desolate as ever.'}
+466	466		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+467	467		306							
+468	468		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory894.jpg'}
+469	469		301			AniZhuanchangEnd				"{3: 'Dolores summons ""Edmond"" into her room.'}"
+470	470		201							{1: '1', 2: '501354', 3: '8'}
+471	471		301							"{1: '1', 2: 'Dolores', 3: ""We're falling behind. We need more mechanoids for this project."", 4: '1'}"
+472	472		204							{1: '1'}
+473	473		301							{2: 'Dolores', 3: 'Only the most powerful mechanoids can meet my requirements.', 4: '1'}
+474	474		301							{2: 'Dolores', 3: 'I will create for them a brand new... stage... for them to shine.', 4: '1'}
+475	475		204							{1: '1', 2: '1'}
+476	476		301				AniZhuanchangBegin			{3: 'She gazes at the images of the colosseum on the screen before her, a smile slowly spreading across her face.'}
+477	477		202							{1: '1', 7: '1'}
+478	478		401							{1: '1', 2: '36'}
+479	479		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1314.jpg'}
+480	480		401							{1: '1', 2: '6237'}
+481	481		301			AniZhuanchangEnd				{3: 'Some time later, the long-dormant Everett Manor suddenly becomes the source of a new sensation—'}
+482	482		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo.prefab', 2: '2'}
+483	483		301							{2: 'Virtual Host', 3: 'MECHANOID ARENA! ENDLESS THRILLS GUARANTEED! GUARANTEED TO GET YOUR BLOOD PUMPING!'}
+484	484		301							{2: 'Virtual Host', 3: 'CRAVE THE THRILL OF A COLOSSEUM? WANT TO FEEL THE RUSH OF PURE ADRENALINE BURST?'}
+485	485		301							{2: 'Virtual Host', 3: 'COME TO THE EVERETT ARENA NOW! CHOOSE YOUR FAVORITE GLADIATOR AND PLACE YOUR BETS!'}
+486	486		301				AniZhuanchangBegin			{2: 'Virtual Host', 3: 'BLOOD! EXCITEMENT! CARNAGE! ENJOY A GOOD TIME!'}
+487	487		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo.prefab'}
+488	488		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1318.jpg'}
+489	489		301			AniZhuanchangEnd				"{3: ""The virtual announcer's voice reaches the top-floor control room, slightly distorted by the thick glass barrier.""}"
+490	490		201							{1: '1', 2: '501354'}
+491	491		301				AniZhuanchangBegin			{1: '1', 2: 'Dolores', 3: '...', 4: '1'}
+492	492		202							{1: '1'}
+493	493		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1314.jpg'}
+494	494		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '2'}
+495	495		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+496	496		301			AniZhuanchangEnd	DialogDisable			{3: 'Through the monitor, a raging battle unfolds between mechanoids in the arena.'}
+497	497		401							{1: '2', 2: '2974'}
+498	498		201							{1: '1', 2: '500353', 4: '-400'}
+499	499		201							{1: '2', 2: '501232', 4: '330'}
+500	500		203							{1: '1', 2: '0.15', 3: '-370'}
+501	501		203							{1: '2', 2: '0.15', 3: '500'}
+502	502		401							{1: '2', 2: '970804'}
+503	503		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '3'}
+504	504		203					150.0		{1: '1', 2: '0.6', 3: '-450'}
+505	505		203							{1: '2', 2: '0.6', 3: '600'}
+506	506		301			DialogEnable				{3: 'The horn of the rhinoceros-looking mechanoid morphs into a long blade as it charges at the human-looking mechanoid standing opposite, roaring as it goes...'}
+507	507		401							{1: '2', 2: '1506'}
+508	508		502						600.0	{1: 'PanelActor2Shake'}
+509	509		202							{1: '1', 2: '2'}
+510	510		301				DialogDisable			{3: 'In an instant, the human-looking mechanoid is shredded into flying metal shards.'}
+511	511		401							{1: '2', 2: '2593'}
+512	512		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0.3'}
+513	513		205						350.0	{1: '1006', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 3: '0', 4: '1', 5: '0.3'}
+514	514		502							{1: 'RImgBg1Shake'}
+515	515		401							{1: '2', 2: '4085'}
+516	516		301			DialogEnable	AniZhuanchangBegin			"{3: 'Deliberately red-colored oil sprays in all directions, captivating every spectator in the stands. They cheer wildly, demanding more ""explosive matches""—'}"
+517	517		205							{1: '1006'}
+518	518		205							{1: '999'}
+519	519		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+520	520		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab'}
+521	521		402							{1: '4085'}
+522	522		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1318.jpg'}
+523	523		201							{1: '1', 2: '501354', 3: '1'}
+524	524		301			AniZhuanchangEnd				{1: '1', 2: 'Dolores', 3: 'Look at that, Edmond.', 4: '1'}
+525	525		203							{1: '1', 2: '0.25', 3: '-400'}
+526	526		201							{1: '2', 2: '501357', 4: '700', 5: '50', 6: '-100'}
+527	527		301							{1: '1', 2: 'Overseer', 3: 'Yes, Master.', 4: '2'}
+528	528		301							{2: 'Dolores', 3: 'This is what I need. We acquire more experimental materials while squeezing every last fortune from those stupid bastards in the stands...', 4: '1'}
+529	529		301							"{2: 'Dolores', 3: ""That's two birds, one stone, wouldn't you agree?"", 4: '1'}"
+530	530		301				AniZhuanchangBegin			{2: 'Overseer', 3: 'Yes, Master.', 4: '2'}
+531	531		202							{1: '1', 2: '2', 6: '1'}
+532	532		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1314.jpg'}
+533	533		401							{1: '2', 2: '4085'}
+534	534		301			AniZhuanchangEnd				{3: 'As the match comes to an end, the spectators cheer wildly, eagerly awaiting the next poor soul to show up.'}
+535	535		402							{1: '4085'}
+536	536		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo.prefab', 2: '2'}
+537	537		301							{2: 'Virtual Host', 3: 'So sit back and enjoy this ultimate entertainment, and have a wonderful evening, everyone!'}
+538	538		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo.prefab'}
+539	539		401							{1: '2', 2: '4086'}
+540	540		301							"{3: ""With the virtual announcer's animated voice filling the arena, the stage is set for another round of gladiatorial combat.""}"
+541	541		401							{1: '2', 2: '9351041'}
+542	542		201							{1: '1', 2: '501364', 3: '2', 5: '-20', 6: '-200'}
+543	543		301							{1: '1', 3: 'A female mechanoid with a long tail, lance in hand, slowly steps into the gleaming spotlight at the center of the arena.'}
+544	544		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+545	545		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '2'}
+546	546		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+547	547		301							{3: 'Watching the mechanoid walk into the arena, Dolores breaks into a faint smile.'}
+548	548		201							{1: '18', 2: '501355', 4: '-260', 5: '-80', 6: '300'}
+549	549		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Dolores', 3: 'Surprise me... ""Veronica"".', 4: '18'}"

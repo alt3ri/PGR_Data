@@ -1,0 +1,508 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '4'}
+3	3		109						200.0	{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60>5%</size></color>', 9: '3'}
+4	4		401							{1: '2', 2: '4823'}
+5	5		109						400.0	{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60>6%</size></color>', 9: '3'}
+6	6		401							{1: '2', 2: '4823'}
+7	7		109						400.0	{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60>7%</size></color>', 9: '3'}
+8	8		401							{1: '2', 2: '9335029'}
+9	9		109	1			AniZhuanchangBegin			{1: '1', 2: '<color=#ffffffff><size=60>Data Synchronization Progress: </size></color><color=#ff4e4eff><size=60>8%</size></color>', 9: '3'}
+10	10		110							
+11	11		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront2.png', 4: '4', 5: '1'}
+12	12		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1239.jpg'}
+13	13		401							{1: '1', 2: '229'}
+14	14		107						2500.0	{1: 'December 20, 2160', 2: 'Night'}
+15	15		108							{1: '1'}
+16	16		301			DialogEnable				{3: 'That night, snowflakes began to drift down from the sky.'}
+17	17		401							{1: '2', 2: '754'}
+18	18		401							{1: '2', 2: '1543'}
+19	19		201							{1: '1', 2: '501218', 4: '-200', 7: '1'}
+20	20		203						2000.0	{1: '1', 2: '0.25'}
+21	21		401							{1: '2', 2: '5526'}
+22	22		201							{1: '1', 2: '501217'}
+23	23		301							{1: '1', 3: 'Vera walks through the falling snow and enters the military hospital. She removes her hat, gently brushing away the snowflakes that had settled on its brim.'}
+24	24		301							{2: 'Vera', 3: 'How is he doing tonight?', 4: '1'}
+25	25		203							{1: '1', 2: '0.25', 3: '-400'}
+26	26		201							{1: '2', 2: '500042', 4: '400'}
+27	27		301							"{1: '1', 2: 'Gwynneth', 3: ""He just finished dinner. His appetite remains unchanged. Like always, he spends his days eating, sleeping, and staring out the window after waking up. He hasn't spoken a word."", 4: '2'}"
+28	28		301							{2: 'Vera', 3: 'Oh, still refusing to speak.', 4: '1'}
+29	29		301							{2: 'Gwynneth', 3: 'His condition has completely stabilized. Technically speaking, we could consider discharging him... Are you going to continue keeping watch over him here?', 4: '2'}
+30	30		204							{1: '1', 2: '13'}
+31	31		301				DialogDisable			"{2: 'Vera', 3: ""I haven't found a better place for him yet. Besides, it would be best to have a proper conversation with him before any transfer."", 4: '1'}"
+32	32		202							{1: '1', 2: '2', 6: '1'}
+33	33		306							{1: '1'}
+34	34		401							{1: '2', 2: '4383'}
+35	35		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1264.jpg', 3: '0', 4: '1', 5: '1'}
+36	36		205							{1: '999'}
+37	37		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1264.jpg'}
+38	38		301			DialogEnable				"{3: 'Vera clutches her hat to her chest as she walks straight into the depths of the hospital, finally stopping at the window of the private room where she\'s been ""monitoring"" Haynes.'}"
+39	39		402							{1: '4383'}
+40	40		301							{3: 'The middle-aged man in the room has recovered quite well, with only the horrific scars covering his body, a coating of melted flesh, bearing witness to what happened to him.'}
+41	41		301							"{3: ""He sits on the bed, gazing into the far distance beyond the window, though there's nothing particularly worth mentioning out there.""}"
+42	42		201							{1: '18', 2: '500042'}
+43	43		301							{1: '1', 2: 'Gwynneth', 3: 'Those scars make me uncomfortable every time I see them... Could someone really do something this brutal to themselves? For revenge, or to make a statement... to willingly throw themselves into a fire and end up like this?', 4: '18'}
+44	44		202							{1: '18', 6: '1'}
+45	45		306							
+46	46		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1239.jpg'}
+47	47		201							{1: '1', 2: '501217', 4: '-400', 7: '1'}
+48	48		201							{1: '2', 2: '500042', 4: '400', 7: '1'}
+49	49		401							{1: '2', 2: '13081710'}
+50	50		301			AniZhuanchangEnd				{1: '1', 3: 'Vera silently traces similar burn scars on her own forearm, then turns her gaze toward the doctor.'}
+51	51		301							"{3: ""The thick layer of snow on her shoulders hasn't fully melted yet, and her eyes harbor an icy glint as cold as the snow outside.""}"
+52	52		204							{1: '1', 2: '13'}
+53	53		301							{2: 'Vera', 3: 'If someday I needed to achieve something important enough, and this was the price I had to pay... I could probably do it too.', 4: '1'}
+54	54		301							"{2: 'Gwynneth', 3: ""...No, Vera. You can't."", 4: '2'}"
+55	55		204							{1: '1', 2: '1'}
+56	56		301							"{2: 'Vera', 3: ""Don't worry, Gwynneth. I won't end up like him."", 4: '1'}"
+57	57		204							{1: '1'}
+58	58		301							"{2: 'Vera', 3: 'For him to end up like this, he must have made many selfish and self-righteous choices along the way. But I\'m not that stupid, I definitely wouldn\'t ""sacrifice"" myself while also endangering the safety of others.', 4: '1'}"
+59	59		301							{2: 'Vera', 3: 'Besides... I absolutely refuse to sympathize with a criminal suspect.', 4: '1'}
+60	60		202							{1: '2', 6: '1'}
+61	61		509							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1264.jpg', 2: '2'}
+62	62		201							{1: '13', 2: '501237', 4: '600', 5: '-75', 6: '-200'}
+63	63		203							{1: '1', 2: '0.25', 3: '-600', 4: '-75', 5: '-200'}
+64	64		301							{1: '1', 3: 'As if he heard something, the man in the hospital room turns his head toward the door, locking eyes directly with Vera.'}
+65	65		301							{2: 'Vera', 3: '...', 4: '1'}
+66	66		510						200.0	{1: '2'}
+67	67		202							{1: '13', 6: '1'}
+68	68		203							{1: '1', 2: '0.25', 4: '-75', 5: '-200'}
+69	69		204							{1: '1', 2: '1'}
+70	70		301							{2: 'Vera', 3: 'He looks like he wants to say something.', 4: '1'}
+71	71		301							"{3: ""A flicker of excitement flashes through Vera's eyes, caught by the doctor.""}"
+72	72		201							{1: '1', 2: '500042'}
+73	73		301							"{1: '1', 2: 'Gwynneth', 3: ""...From what I understand, your mission is simply to stay here and monitor him, isn't it?"", 4: '1'}"
+74	74		301							"{2: 'Gwynneth', 3: ""I think... it would be better if you didn't interact with him too much?"", 4: '1'}"
+75	75		202							{1: '1'}
+76	76		306							{1: '1'}
+77	77		301							{3: 'Looking at Vera, the doctor once again viscerally experiences her unfiltered sharpness.'}
+78	78		301							{3: 'As rare as a burning snowflake, yet just as likely to meet a calamitous end and melt away, breaking apart.'}
+79	79		301							{3: 'The doctor suddenly feels anxious, worried that Vera might develop some sort of bond with the suspect.'}
+80	80		401							{1: '2', 2: '754'}
+81	81		301							{3: 'She reaches out, trying to stop her, but Vera immediately pulls the door handle open.'}
+82	82		301							"{3: ""Vera walks in right before the doctor's eyes, casually hanging her coat on a nearby rack.""}"
+83	83		306							
+84	84		201							{1: '1', 2: '501217', 4: '-400'}
+85	85		201							{1: '2', 2: '500042', 4: '400'}
+86	86		301							"{1: '1', 2: 'Gwynneth', 3: ""...Vera, don't."", 4: '2'}"
+87	87		301							"{2: 'Vera', 3: ""Don't worry, I just want to learn more about his situation."", 4: '1'}"
+88	88		202							{1: '1', 2: '2'}
+89	89		401							{1: '2', 2: '9343086'}
+90	90		301							{3: 'Click.'}
+91	91		301				AniZhuanchangBegin			{3: 'Vera gently closes the door, not only keeping the doctor outside, but habitually locking it, trapping herself inside with the suspect.'}
+92	92		401							{1: '1', 2: '36'}
+93	93		101					2000.0		{1: 'Assets/Product/Texture/Image/BgStory/BgStory1264.jpg'}
+94	94		401							{1: '1', 2: '55'}
+95	95		201							{1: '2', 2: '501236'}
+96	96		301			AniZhuanchangEnd				"{1: '1', 2: 'Man', 3: ""...You're back again."", 4: '2'}"
+97	97		301							"{3: ""The man's voice is hoarse, his vocal cords scorched by the fire.""}"
+98	98		203							{1: '2', 2: '0.25', 3: '400'}
+99	99		201							{1: '1', 2: '501217', 4: '-400'}
+100	100		301							"{1: '1', 2: 'Vera', 3: ""We see each other every day. But this is the first time you've initiated conversation with me. Has something special happened?"", 4: '1'}"
+101	101		204							{1: '1', 2: '8'}
+102	102		301							"{2: 'Man', 3: ""Nothing important. I just want an apple. This fruit platter has been sitting here for two days, but I can't peel them, so I can't eat them."", 4: '2'}"
+103	103		301							{3: 'The man points to the fruit platter on the shelf.'}
+104	104		204							{1: '1', 2: '4'}
+105	105		301				DialogDisable			"{2: 'Vera', 3: ""You're quite demanding, wanting your fruit peeled and all."", 4: '1'}"
+106	106		202							{1: '1', 2: '2', 6: '1'}
+107	107		401							{1: '2', 2: '4044'}
+108	108		104						250.0	{1: '0|-50|0', 2: '0.25'}
+109	109		104							{1: '0|0|0', 2: '0.25'}
+110	110		401							{1: '2', 2: '5536'}
+111	111		301			DialogEnable				{3: 'Vera sits by the hospital bed, drawing the military knife she always carries. She slowly peels an apple while humming a tune, just like an ordinary family member looking after a patient.'}
+112	112		402							{1: '5536'}
+113	113		201							{1: '1', 2: '501217', 3: '1'}
+114	114		301							{1: '1', 2: 'Vera', 3: '{226|153|170}~', 4: '1'}
+115	115		203							{1: '1', 2: '0.25', 3: '-400'}
+116	116		201							{1: '2', 2: '501236', 4: '400'}
+117	117		301							{1: '1', 2: 'Man', 3: 'What song is that?', 4: '2'}
+118	118		204							{1: '1'}
+119	119		301							"{2: 'Vera', 3: ""I made it up. Don't worry about it."", 4: '1'}"
+120	120		204							{1: '1', 2: '8'}
+121	121		301							{2: 'Man', 3: '...', 4: '2'}
+122	122		301							"{2: 'Man', 3: ""I've been wanting to talk with you. You're the one who saved me from the fire, but I never found the right moment to thank you."", 4: '2'}"
+123	123		204							{1: '1'}
+124	124		301							"{2: 'Man', 3: ""You know how it is with burns, they hurt like hell. For two months now, I've just been enduring it here day after day."", 4: '2'}"
+125	125		301							"{3: ""The man gestures toward Vera's injured arm—she had rolled up her sleeve to peel the apple, revealing scars that had never been properly treated.""}"
+126	126		301							"{2: 'Man', 3: ""I believe you're someone who understands."", 4: '2'}"
+127	127		401						400.0	{1: '2', 2: '5537'}
+128	128		402							{1: '5537'}
+129	129		401							{1: '2', 2: '5281'}
+130	130		301							{3: 'Vera glances up at the man without responding. Her hands move deftly, quickly removing the skin and cutting the apple into equal pieces, which she arranges on the fruit platter.'}
+131	131		301							{2: 'Vera', 3: 'Help yourself.', 4: '1'}
+132	132		301							"{2: 'Man', 3: ""I knew it. I can tell you're different from those who casually slaughter like they're butchering animals, even though you work in the same slaughterhouse."", 4: '2'}"
+133	133		204							{1: '1', 2: '1'}
+134	134		301							{2: 'Vera', 3: 'Haha... Just because I cut some fruit for you? Has no one ever done something like this for you before?', 4: '1'}
+135	135		301							"{2: 'Man', 3: ""No. Those upright-walking creatures out there are either stupid livestock waiting for slaughter or butchers sharpening their knives. No one's willing to do small favors like that."", 4: '2'}"
+136	136		204							{1: '1'}
+137	137		301							"{2: 'Vera', 3: 'I didn\'t expect the ""Golden Age"" would look so wretched to you.', 4: '1'}"
+138	138		301							{2: 'Man', 3: 'What about you? The fact that you understand me despite being surrounded by calm seas... You must have had similar experiences, right?', 4: '2'}
+139	139		204							{1: '1', 2: '8'}
+140	140		401							{1: '2', 2: '5538'}
+141	141		301							{3: 'Vera takes a piece of apple from the platter and pops it into her mouth. She chews slowly, considering how to respond to his probing.'}
+142	142		301							{3: 'She could easily refuse to delve deeper into her own story, but she wants to extract more information—she needs to keep the ball rolling.'}
+143	143		204							{1: '1'}
+144	144		301							{2: 'Vera', 3: 'As for me...', 4: '1'}
+145	145		204							{1: '1', 2: '4'}
+146	146		301							"{2: 'Vera', 3: ""It might disappoint you, but I'm quite young and my life experiences are rather ordinary, not much different from the common Golden Age life you're familiar with."", 4: '1'}"
+147	147		301							{2: 'Vera', 3: 'Born to ordinary parents, had an ordinary birth, received an ordinary education. When I got a bit older, I chose to enroll where I am now, as you can see.', 4: '1'}
+148	148		301							{2: 'Man', 3: 'Was your family good to you?', 4: '2'}
+149	149		301							{2: 'Vera', 3: 'Very good. They raised me, cared for my health, and provided plenty of guidance with my studies.', 4: '1'}
+150	150		301							"{2: 'Man', 3: ""Isn't that just a parent's duty?"", 4: '2'}"
+151	151		301							"{2: 'Vera', 3: ""That's what duty means in broad terms. As for other details... when I was little, they would wake up early to prepare my breakfast, take me to school, and tell me bedtime stories at night."", 4: '1'}"
+152	152		301							{2: 'Man', 3: 'Did anyone help you comb your hair?', 4: '2'}
+153	153		204							{1: '1'}
+154	154		301							"{3: ""Vera's response falters for a moment—just half a second.""}"
+155	155		301							{2: 'Vera', 3: 'Yes, they even braided it.', 4: '1'}
+156	156		204							{1: '2', 2: '8'}
+157	157		301							{2: 'Man', 3: 'Did they stay in touch with your teachers?', 4: '2'}
+158	158		301							"{2: 'Vera', 3: ""Yes, they'd check in about my progress every month."", 4: '1'}"
+159	159		204							{1: '2'}
+160	160		301							{3: 'The man breaks into a wide grin.'}
+161	161		301							"{2: 'Man', 3: ""You're making this up, aren't you?"", 4: '2'}"
+162	162		301							"{2: 'Man', 3: ""Did your family die when you were young? Then you struggled your way to the military academy because it was your best shot at putting food on the table, wasn't it?"", 4: '2'}"
+163	163		301							{2: 'Vera', 3: '...', 4: '1'}
+164	164		204							{1: '1', 2: '1'}
+165	165		301							{3: 'Vera smiles as well.'}
+166	166		301							{2: 'Vera', 3: 'Are you trying to take control of this conversation? Pretty confident for someone trapped in a hospital room with me.', 4: '1'}
+167	167		301							"{2: 'Man', 3: ""Just look at your lies. They're painfully obvious."", 4: '2'}"
+168	168		301							"{2: 'Man', 3: ""Just as a poor person can't imagine the limits of a rich life, your story is riddled with holes—"", 4: '2'}"
+169	169		301							"{2: 'Man', 3: ""You've never been loved."", 4: '2'}"
+170	170		204							{1: '1'}
+171	171		301							{2: 'Vera', 3: '...', 4: '1'}
+172	172		301							{2: 'Man', 3: 'See, I was just about to say that. People cut from the same cloth can always spot each other in a crowd.', 4: '2'}
+173	173		301				AniZhuanchangBegin			"{2: 'Man', 3: ""I have a friend with a story pretty similar to yours. I could tell you about it, if you'd like to hear."", 4: '2'}"
+174	174		202							{1: '1', 2: '2'}
+175	175		306							{1: '1'}
+176	176		502						400.0	{1: 'DialogDisable'}
+177	177		104						200.0	{1: '-335|85|-300', 2: '0'}
+178	178		104			AniZhuanchangEnd			3000.0	{1: '255|85|-300', 2: '4'}
+179	179		502							{1: 'DialogEnable'}
+180	180		301							"{3: ""Without waiting for Vera's response, the man begins his tale, gesturing animatedly as he speaks.""}"
+181	181		301				DialogDisable			"{3: ""This story is indeed far more authentic than Vera's, rich with details that fuel his non-stop monologue for half an hour—nothing more than a familiar tale of childhood bullying, teenage disappointment, and resigned young adulthood... a life filled with perceived injustice and bitter resentment.""}"
+182	182		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1264.jpg', 3: '0', 4: '1', 5: '1'}
+183	183		104							{1: '0|0|0', 2: '0'}
+184	184		205							{1: '999'}
+185	185		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1264.jpg'}
+186	186		306							
+187	187		201							{1: '1', 2: '501217', 4: '-400'}
+188	188		201							{1: '2', 2: '501236', 4: '400'}
+189	189		301			DialogEnable				{1: '1', 2: 'Man', 3: '...and I just kept enduring all that unfair treatment, suffering the same injustices even as I got older.', 4: '2'}
+190	190		301							"{2: 'Vera', 3: 'Hmm... ""I have a friend.""', 4: '1'}"
+191	191		401							{1: '2', 2: '5538'}
+192	192		301							"{3: ""Vera tosses another piece of apple into her mouth, knowing it would brown if she didn't eat it soon.""}"
+193	193		301							"{2: 'Man', 3: ""I was ready to let go of all that... all that prejudice and injustice I'd suffered, because I got into the best laboratory at the time, working under Liston... that golden boy..."", 4: '2'}"
+194	194		204							{1: '2', 2: '7'}
+195	195		301							{2: 'Man', 3: 'But he was as cold and heartless as his research! He modified himself like that, yet still paraded around pretending to be respectable, always chasing publicity stunts for profit. I despised him, yet had no choice but to work under him.', 4: '2'}
+196	196		301							"{2: 'Man', 3: 'I thought I could tune out this ""background noise,"" but then he came directly to me, dismissed my achievements, questioned my methods, and completely disposed of all my experimental samples...', 4: '2'}"
+197	197		301							{3: 'Vera stops chewing.'}
+198	198		204							{1: '1', 2: '4'}
+199	199		301							{2: 'Vera', 3: 'Were those illegally obtained corpses? Where did you find them?', 4: '1'}
+200	200		204							{1: '2'}
+201	201		301							"{2: 'Man', 3: 'I scraped together what little money I had and struggled to find channels to purchase the samples. In the end, he slapped me with serious accusations, confiscated all my samples, and lectured me about how ""respecting life is a principle that must never be forgotten.""', 4: '2'}"
+202	202		301							"{2: 'Man', 3: 'To evolve, aren\'t ""principles"" the very limitations that should be broken through?', 4: '2'}"
+203	203		301							{2: 'Vera', 3: '...', 4: '1'}
+204	204		401							{1: '2', 2: '1543'}
+205	205		203							{1: '1', 2: '0.25', 3: '-500'}
+206	206		203							{1: '2', 2: '0.25', 3: '300'}
+207	207		301							{3: 'The man excitedly extends both hands toward Vera, as if seeking her approval, but she sidesteps to avoid his touch.'}
+208	208		301							{2: 'Man', 3: 'I once felt fortunate to have found my true love in my work—I viewed those results, those samples as my amour, never expecting that someone like Liston would take everything away from me, time and time again.', 4: '2'}
+209	209		301							"{2: 'Man', 3: ""They shouldn't have done that. They'll inevitably pay the price."", 4: '2'}"
+210	210		301							{2: 'Man', 3: 'So I gave them what they deserved... Only Liston... Liston is all that remains...', 4: '2'}
+211	211		202							{1: '1', 2: '2'}
+212	212		306							{1: '1'}
+213	213		301							"{3: 'The man\'s ""story"" matches almost perfectly with the information Hilda provided.'}"
+214	214		301							"{3: 'Vera silently plays the role of a ""listener."" In the two months she\'s been watching him, this is the first time the man has spoken so freely, unexpectedly eager to confess his motives and crimes the moment he opened his mouth.'}"
+215	215		306							
+216	216		201							{1: '1', 2: '501217', 4: '-400'}
+217	217		201							{1: '2', 2: '501236', 4: '400'}
+218	218		301							{1: '1', 2: 'Vera', 3: 'Why?', 4: '1'}
+219	219		301							{2: 'Man', 3: '...Why?', 4: '2'}
+220	220		301							{2: 'Vera', 3: 'Why would you confess everything about yourself to me, Haynes?', 4: '1'}
+221	221		301							"{2: 'Haynes', 3: ""Oh, I understand your confusion—you're here to monitor me. If I confess my actions, what likely awaits me is arrest or even death..."", 4: '2'}"
+222	222		301							{2: 'Haynes', 3: 'But compared to whatever might happen to me in the future, I care more about being understood right now. Understood by you.', 4: '2'}
+223	223		301							{2: 'Haynes', 3: 'I crave this sense of approval.', 4: '2'}
+224	224		301							{2: 'Vera', 3: 'All this just for my approval? I never expected my acknowledgment would be worth such valuable self-incrimination.', 4: '1'}
+225	225		202							{1: '1', 2: '2'}
+226	226		301				DialogDisable			"{3: ""Vera's fingertips tap lightly against her thigh as she suddenly notices a slight unease in her chest—this sensation always appears whenever her intuition tells her something is wrong.""}"
+227	227		104						1000.0	{1: '150|0|-200', 2: '0.5'}
+228	228		104						1000.0	{1: '0|0|-200', 2: '0.5'}
+229	229		104							{1: '0|0|0', 2: '0.5'}
+230	230		301			DialogEnable				{3: 'She discreetly wipes and retrieves the military knife she had placed on the fruit tray, instinctively scanning the hospital room: ordinary furniture, medical equipment functioning normally, a locked door, and a window cracked slightly open for ventilation...'}
+231	231		301							"{3: ""What's wrong here?""}"
+232	232		201							{1: '1', 2: '501217', 3: '4'}
+233	233		301							"{1: '1', 2: 'Vera', 3: ""The window... For the past two months, you've been constantly staring outside, barely speaking a word."", 4: '1'}"
+234	234		301				DialogDisable			{2: 'Vera', 3: 'What are you looking at?', 4: '1'}
+235	235		202							{1: '1'}
+236	236		401						500.0	{1: '2', 2: '4383'}
+237	237		104						250.0	{1: '0|50|-25', 2: '0.25'}
+238	238		104							{1: '0|0|-50', 2: '0.25'}
+239	239		301			DialogEnable				{3: 'As she speaks, Vera rises and walks to the window, closing the gap where cold air is flowing in.'}
+240	240		402							{1: '4383'}
+241	241		301							{3: 'A couple of snowflakes drift onto the back of her hand, their iciness heightening her vigilance.'}
+242	242		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory94.png'}
+243	243		401							{1: '2', 2: '215'}
+244	244		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'She gazes into the darkness outside, finding nothing particularly noteworthy except for the shining indicator lights lining both sides of the road at night.'}
+245	245		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1264.jpg'}
+246	246		402							{1: '215'}
+247	247		201							{1: '1', 2: '501217', 4: '-400'}
+248	248		201							{1: '2', 2: '501236', 4: '400'}
+249	249		301			AniZhuanchangEnd				"{1: '1', 2: 'Haynes', 3: 'It\'s not any specific direction I\'m looking at. I\'m watching out for a certain ""future.""', 4: '2'}"
+250	250		301							"{2: 'Vera', 3: 'A certain ""future""?', 4: '1'}"
+251	251		301							"{2: 'Haynes', 3: 'The so-called technological turning point of human civilization\'s fate—""Zero-point Energy,"" or... the ""Eden Project."" You must have heard of it, the name of that grand scheme even children can recite.', 4: '2'}"
+252	252		301							{2: 'Haynes', 3: 'What do you think will happen to this world after zero-point energy is ignited? What kind of future... will human civilization move toward?', 4: '2'}
+253	253		301							{2: 'Haynes', 3: 'Will it be a new leap forward, or a leap straight into destruction?', 4: '2'}
+254	254		301							{2: 'Vera', 3: '...', 4: '1'}
+255	255		301							"{2: 'Haynes', 3: ""You can't see it with eyes like yours, a gaze that can't even perceive yourself... Let me tell you what I see."", 4: '2'}"
+256	256		202							{1: '1', 2: '2'}
+257	257		401							{1: '2', 2: '4341'}
+258	258		104						250.0	{1: '0|50|-25', 2: '0.25'}
+259	259		104							{1: '0|0|-50', 2: '0.25'}
+260	260		301							{3: 'The man struggles to get out of the hospital bed. His physical condition is nowhere near ready for walking, yet he insists on performing this ungainly act.'}
+261	261		301							{3: 'He moves toward the window, drawing closer to Vera.'}
+262	262		201							{1: '2', 2: '501236', 3: '8'}
+263	263		301							"{1: '1', 2: 'Haynes', 3: ""Your eyes are filled with ambition, exactly like mine once were. That's why I understand you."", 4: '2'}"
+264	264		301							"{2: 'Haynes', 3: ""But you don't understand yet that humanity will ultimately perish on the road to fulfilling its ambitions."", 4: '2'}"
+265	265		204							{1: '2'}
+266	266		301							"{2: 'Haynes', 3: 'This is the ""future"" I\'ve seen... Just as every industrial revolution brought unbearable costs, zero-point energy will inevitably exact a new cost on humanity.', 4: '2'}"
+267	267		301							"{2: 'Haynes', 3: 'If they don\'t ""evolve"" alongside this new revolution, then ordinary humans... those swine will simply stand helplessly, waiting for disaster to descend upon them, like sheep to a slaughter.', 4: '2'}"
+268	268		202							{1: '2'}
+269	269		301							"{3: ""Vera's fingertips touch the window as her vision blurs momentarily. She seems to catch a fleeting flash of red light outside.""}"
+270	270		201							{1: '2', 2: '501236'}
+271	271		301							{1: '1', 2: 'Haynes', 3: 'So... hold onto that ambition of yours. With just a touch of evolution, you can easily wade across that river...', 4: '2'}
+272	272		301							{2: 'Haynes', 3: 'Like replacing this fragile flesh, removing the inferior genes within it, and substituting them with...', 4: '2'}
+273	273		203							{1: '2', 2: '0.25', 3: '400'}
+274	274		201							{1: '1', 2: '501217', 3: '4', 4: '-400'}
+275	275		301							{1: '1', 2: 'Vera', 3: 'Replace them with your experimental specimens? Those monstrosities that are neither human nor beast? Or should I follow your example and throw myself into the flames?', 4: '1'}
+276	276		301							"{3: ""A sense of urgency spikes in Vera's chest, perhaps triggered by the strange red light she glimpsed outside the window moments ago.""}"
+277	277		301							"{2: 'Vera', 3: 'Tell me, why doesn\'t your DNA match ""Haynes"" dossier? What did you do?', 4: '1'}"
+278	278		204							{1: '2', 2: '8'}
+279	279		301							{2: 'Haynes', 3: 'This is merely a small step in evolutionary filtering. You could do it too, if you wanted.', 4: '2'}
+280	280		204							{1: '1', 2: '10'}
+281	281		204							{1: '2'}
+282	282		301				DialogDisable			{2: 'Vera', 3: '...Our conversation ends here.', 4: '1'}
+283	283		202							{1: '1', 2: '2', 6: '1'}
+284	284		306							{1: '1'}
+285	285		401							{1: '2', 2: '4341'}
+286	286		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+287	287		301			DialogEnable				{3: 'The roundabout conversation finally ends as Vera walks toward the door—all signs convince her to report this immediately.'}
+288	288		402							{1: '4341'}
+289	289		301							{3: 'Even without tangible evidence, she can confirm that the disaster at that building originated with this man.'}
+290	290		301							{3: 'Her instincts tell her this guy needs a higher grade of containment.'}
+291	291		301							{3: 'She reaches for the hospital room door, preparing to leave.'}
+292	292		306							
+293	293		401							{1: '1', 2: '36'}
+294	294		201							{1: '1', 2: '501236'}
+295	295		301							{1: '1', 2: 'Haynes', 3: '—Are you sure you want to open that door?', 4: '1'}
+296	296		401							{1: '1', 2: '6175'}
+297	297		401							{1: '2', 2: '4421'}
+298	298		201							{1: '1', 2: '501217', 3: '7'}
+299	299		301							{1: '1', 2: 'Vera', 3: '!', 4: '1'}
+300	300		202							{1: '1'}
+301	301		401							{1: '2', 2: '4545'}
+302	302		301							"{3: ""The communicator at her waist suddenly buzzes with a highest-priority assembly message from the Academy, triggering alongside the hospital's alarms.""}"
+303	303		401							{1: '2', 2: '4883'}
+304	304		301							{3: 'WOOOOOO—'}
+305	305		301							"{3: ""Looking at the brief message on her communicator, Vera can't make out any details. The situation is unknown, yet extremely urgent.""}"
+306	306		301							"{3: ""Even students like them who haven't yet graduated must prepare to deploy to the frontlines.""}"
+307	307		402							{1: '4545'}
+308	308		201							{1: '1', 2: '501217', 3: '4'}
+309	309		301							"{1: '1', 2: 'Vera', 3: ""Wait, something's wrong...!"", 4: '1'}"
+310	310		301							"{2: 'Vera', 3: ""Haynes, sit back down immediately, or I'll enforce restrictive measures against you!"", 4: '1'}"
+311	311		203							{1: '1', 2: '0.25', 3: '150', 4: '-75', 5: '-50'}
+312	312		202							{1: '1'}
+313	313		104						250.0	{1: '0|-50|0', 2: '0.25'}
+314	314		104							{1: '0|0|0', 2: '0.25'}
+315	315		401							{1: '2', 2: '1085'}
+316	316		401							{1: '2', 2: '2970'}
+317	317		301							{3: 'Strange hissing screams echo from the hallway as Vera quickly ducks to the side of the door, watching the man shuffle obediently back to his hospital bed.'}
+318	318		402							{1: '1508'}
+319	319		201							{1: '1', 2: '501217', 3: '4', 4: '-400'}
+320	320		201							{1: '2', 2: '501236', 3: '8', 4: '400'}
+321	321		301							{1: '1', 2: 'Vera', 3: 'Is this your doing?', 4: '1'}
+322	322		301							"{2: 'Haynes', 3: ""Of course not. Look at the state I'm in. How could I possibly cause such widespread chaos?"", 4: '2'}"
+323	323		204							{1: '2'}
+324	324		301							"{2: 'Haynes', 3: 'Perhaps this has validated what I said earlier: ""Humanity will ultimately perish on the road to fulfilling its ambitions.""', 4: '2'}"
+325	325		301							{2: 'Vera', 3: '...', 4: '1'}
+326	326		202							{1: '1', 2: '2', 6: '1'}
+327	327		306							{1: '1'}
+328	328		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+329	329		401							{1: '2', 2: '4387'}
+330	330		504							{1: '0.7'}
+331	331		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory397.jpg'}
+332	332		301							"{3: ""A nugget of realization explodes in Vera's mind, like the instant of zero-point energy ignition in some distant, unknown place.""}"
+333	333		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+334	334		306							
+335	335		401							{1: '2', 2: '4387'}
+336	336		504							{1: '0'}
+337	337		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1264.jpg'}
+338	338		301							{3: 'A scream of agony echoes through the hallway outside.'}
+339	339		201							{1: '18', 2: '500042'}
+340	340		301							{1: '1', 2: 'Gwynneth', 3: 'Ah!', 4: '18'}
+341	341		202							{1: '18', 6: '1'}
+342	342		201							{1: '1', 2: '501217', 3: '7'}
+343	343		301							{1: '1', 2: 'Vera', 3: 'Gwynneth?!', 4: '1'}
+344	344		202							{1: '1'}
+345	345		401							{1: '2', 2: '10022001'}
+346	346		301							{3: 'Vera stops hesitating, drawing her blade, and reaching for the door handle. If battle approaches, she must go there, to the frontline.'}
+347	347		401							{1: '2', 2: '4306'}
+348	348		301			RImgBg1Shake				"{3: 'But a heavy ""thud"" sounds from beyond the door. Someone has collapsed at the entrance, desperately pressing against it to prevent Vera from leaving.'}"
+349	349		201							{1: '18', 2: '500042'}
+350	350		301							"{1: '1', 2: 'Gwynneth', 3: ""Don't come out... Vera, don't come out...!"", 4: '18'}"
+351	351		202							{1: '18'}
+352	352		201							{1: '1', 2: '501217', 3: '4'}
+353	353		301							{1: '1', 2: 'Vera', 3: 'What the hell is happening out there?! This place is supposed to be near a high-security military base! What kind of attack is this? I need information!!', 4: '1'}
+354	354		201							{1: '18', 2: '500042'}
+355	355		301							"{1: '1', 2: 'Gwynneth', 3: ""...Maybe it's the machines... the machines have all gone mad."", 4: '18'}"
+356	356		301							"{2: 'Gwynneth', 3: ""Ahh... it hurts so much... it's over for me..."", 4: '18'}"
+357	357		202							{1: '18'}
+358	358		301							"{2: 'Vera', 3: ""You're hurt? Let go right now! Let me out!"", 4: '1'}"
+359	359		201							{1: '18', 2: '500042'}
+360	360		301							"{1: '1', 2: 'Gwynneth', 3: ""Hurry and escape through the window, stay away from crowded areas... I suspect it's some kind of virus... I can't figure out anything else..."", 4: '18'}"
+361	361		301							"{2: 'Gwynneth', 3: ""Listen to me one more time... Vera, promise me... don't ever... break yourself... for anything..."", 4: '18'}"
+362	362		301							"{2: 'Gwynneth', 3: ""You're too—AAAAGGHHH!"", 4: '18'}"
+363	363		202				DialogDisable			{1: '1', 2: '18', 6: '1'}
+364	364		401							{1: '2', 2: '4806'}
+365	365		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+366	366		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1239.jpg'}
+367	367		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '1'}
+368	368		401							{1: '2', 2: '2593', 4: '4'}
+369	369		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png'}
+370	370		301			DialogEnable				"{3: ""Vera presses against the window, staring in horror at the scene outside—she witnesses something unimaginable, exactly as the doctor described: the crazed machines, glowing red, slicing through the doctor's body.""}"
+371	371		205							{1: '999'}
+372	372		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '4', 5: '1'}
+373	373		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1264.jpg'}
+374	374		201							{1: '1', 2: '501217', 3: '7', 4: '-400'}
+375	375		201							{1: '2', 2: '501236', 4: '400'}
+376	376		301							{1: '1', 2: 'Vera', 3: 'Doctor! Doctor!! Gwynneth!!', 4: '1'}
+377	377		301							"{2: 'Haynes', 3: ""Hahahahaha... Look at you! You can't save her!"", 4: '2'}"
+378	378		202							{1: '2'}
+379	379		204							{1: '1', 2: '4'}
+380	380		203						250.0	{1: '1', 2: '0.25', 5: '-50'}
+381	381		203							{1: '1', 2: '0.25'}
+382	382		401							{1: '2', 2: '4547'}
+383	383		301			RImgBg1Shake				{2: 'Vera', 3: '—! Open it! Open it now!!!', 4: '1'}
+384	384		202							{1: '1'}
+385	385		301							"{3: 'The doctor\'s corpse no longer blocks the door, but just as Vera is about to burst through, the ""crazed machines"" from outside slam against it from the other side.'}"
+386	386		301							{3: 'The hospital room door shudders violently, on the verge of giving way.'}
+387	387		301							{3: 'Vera steps back, her eyes flickering with disbelief.'}
+388	388		201							{1: '1', 2: '501217', 3: '4', 4: '-400'}
+389	389		201							{1: '2', 2: '501236', 4: '400'}
+390	390		301							"{1: '1', 2: 'Vera', 3: ""The window... yes, we'll escape through the window!"", 4: '1'}"
+391	391		301							{2: 'Haynes', 3: 'Hahahahaha...', 4: '2'}
+392	392		301							"{2: 'Vera', 3: ""You lunatic! Follow me if you don't want to die!"", 4: '1'}"
+393	393		401							{1: '2', 2: '4432'}
+394	394		203							{1: '1', 2: '0.25', 3: '-200', 4: '-75'}
+395	395		203						250.0	{1: '2', 2: '0.25', 3: '200', 4: '-120'}
+396	396		203							{1: '1', 2: '0.25', 3: '-400'}
+397	397		203						250.0	{1: '2', 2: '0.25', 3: '100'}
+398	398		202							{1: '1', 2: '2'}
+399	399		401							{1: '2', 2: '2559'}
+400	400		301			RImgBg1Shake				{3: 'Vera grabs the man by his collar and drags him toward the window, smashing the glass with her elbow.'}
+401	401		301							{3: 'As the snow and wind rush in, the glowing red machines simultaneously smash through the hospital room door.'}
+402	402		201							{1: '1', 2: '501217', 3: '7'}
+403	403		301			PanelActor1Shake				{1: '1', 2: 'Vera', 3: 'Move it!', 4: '1'}
+404	404		301							{3: 'Vera forcefully lifts the man by his collar, trying to hoist him onto the windowsill, but meets unexpected resistance.'}
+405	405		301							{2: 'Vera', 3: 'At a time like this, where do you think you can run to!', 4: '1'}
+406	406		203							{1: '1', 2: '0.25', 3: '-400'}
+407	407		201							{1: '2', 2: '501236', 4: '400'}
+408	408		301							"{1: '2', 2: 'Haynes', 3: ""Hahaha... I'm not running. Turn around and look. Just for a moment."", 4: '2'}"
+409	409		202							{1: '1', 2: '2'}
+410	410		301				AniZhuanchangBegin			{3: 'Vera places one foot on the windowsill and slowly turns her head to look at the scene inside the room.'}
+411	411		502						400.0	{1: 'DialogDisable'}
+412	412		401							{1: '2', 2: '5150'}
+413	413		105							{1: 'Assets/Product/Ui/Spine/3-4Spine/WeilaBaoXueMovieV34/WeilaBaoXueMovieV34A.prefab'}
+414	414		104			AniZhuanchangEnd			1000.0	{1: '400|150|-300', 2: '1'}
+415	415		301			DialogEnable				"{3: ""Vera sees that the man has somehow produced a knife, pointing it at his own throat. It's not her military blade, but what appears to be a fruit knife he had hidden away earlier.""}"
+416	416		104							{1: '-20|0|-300', 2: '1'}
+417	417		301							"{3: 'Behind the man stands a horde of frenzied mechanoids—later known as the ""Corrupted.""'}"
+418	418		301							{3: 'They huddle together, stained with the blood of doctors, eagerly lunging toward the two humans before them.'}
+419	419		104							{1: '-20|-150|-300', 2: '2'}
+420	420		301							"{3: ""Vera's eyes widen as she takes in the twisted scene before her.""}"
+421	421		301							"{3: ""The man, satisfied with the emotions in Vera's eyes, reveals an equally twisted smile as his throat squeezes out one final laugh—a laugh of profound glee and satisfaction.""}"
+422	422		104						1000.0	{1: '0|0|0', 2: '3'}
+423	423		301							{2: 'Haynes', 3: 'You see... this is what human ambition always leads to in the end.'}
+424	424		301							{2: 'Haynes', 3: 'Your sharpness, too, will inevitably be dulled until you reach the tragic end that awaits you.'}
+425	425		301							{2: 'Vera', 3: '—STOP!!'}
+426	426		401							{1: '2', 2: '2970'}
+427	427		301			RImgBg1Shake				{2: 'Corrupted Horde', 3: 'Grrr!'}
+428	428		401							{1: '2', 2: '4806'}
+429	429		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+430	430		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0'}
+431	431		301							{3: 'Snikt.'}
+432	432		401							{1: '2', 2: '2593'}
+433	433		105							{1: 'Assets/Product/Ui/Spine/3-4Spine/WeilaBaoXueMovieV34/WeilaBaoXueMovieV34B.prefab'}
+434	434		301							{3: 'Those few seconds stretch into infinity... The blade pierces his burn-scarred neck, a flower of blood blooming from the wound.'}
+435	435		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0', 5: '0.2'}
+436	436		301							"{3: ""Hot blood sprays out, splattering across Vera's cheeks, quickly chilled by the rushing snow and wind.""}"
+437	437		205							{1: '1005'}
+438	438		301							{2: 'Vera', 3: '...'}
+439	439		301							{2: 'Vera', 3: '...'}
+440	440		301							{3: 'Drip. Drop.'}
+441	441		301							{3: 'Drip. Drop.'}
+442	442		301							{3: '2160, the curtain of the apocalypse is violently torn apart, its fragments scattering across the ground before Vera:'}
+443	443		301							{3: 'Spraying blood, snow and wind rushing through shattered windows, hordes of Corrupted, and the corpse of a man who died in satisfaction by his own hand.'}
+444	444		401							{1: '2', 2: '5528'}
+445	445		301							{2: 'Vera', 3: '...'}
+446	446		301				AniZhuanchangBegin			"{2: 'Vera', 3: ""No... It shouldn't be... like this...""}"
+447	447		105							
+448	448		502						400.0	{1: 'DialogDisable'}
+449	449		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+450	450		301			DialogEnable	AniZhuanchangBegin			"{3: ""Something passionate cools with the snow and wind. Perhaps it's the 17-year-old Vera, or the ambition unique to a young girl, or perhaps the glory of an entire era.""}"
+451	451		401				DialogDisable			{1: '1', 2: '36'}
+452	452		102							{1: 'Spark to Wildfire', 2: 'To Vera', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+453	453		502						9000.0	{1: 'ThemeEnable'}
+454	454		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory597.jpg'}
+455	455		401							{1: '2', 2: '2634'}
+456	456		401			AniZhuanchangEnd				{1: '1', 2: '120'}
+457	457		107							{1: 'Port', 2: 'Year 2161'}
+458	458		301							{3: 'Year 2161, Port.'}
+459	459		108							{1: '1'}
+460	460		301			DialogEnable				{3: 'A few scattered seagulls fly low overhead, looking down upon the humans scrambling to prepare below.'}
+461	461		201							{1: '1', 2: '500434'}
+462	462		301							"{1: '1', 2: 'Worker', 3: ""This is the last shipment. Once everything's moved out, we'll never return to this port again."", 4: '1'}"
+463	463		301							"{2: 'Worker', 3: ""I heard Punishing is spreading this way. This place will probably fall too... What kind of thing is it that the entire world can't stop it from destroying everything?"", 4: '1'}"
+464	464		203							{1: '1', 2: '0.25', 3: '400'}
+465	465		201							{1: '2', 2: '500093', 4: '-400'}
+466	466		301							"{1: '1', 2: 'Port Manager', 3: ""Tch, this world is garbage anyway. If it's gonna end, then let it end. Whatever happens, happens."", 4: '2'}"
+467	467		301							{3: 'The Port Manager tallies the final assets, roughly striking through items on the screen.'}
+468	468		301							"{2: 'Port Manager', 3: ""I guess we might be considered lucky. At least someone's willing to pay good money for useless cargo at a time like this—those abandoned embryos... and other samples like that."", 4: '2'}"
+469	469		301							{2: 'Port Manager', 3: 'Who the hell knows what the new big boss wants these for... Whatever. No matter what, we still need to deliver these goods safely to the designated location as requested.', 4: '2'}
+470	470		301							"{2: 'Worker', 3: ""Who's this big boss you're talking about?"", 4: '1'}"
+471	471		301							"{2: 'Port Manager', 3: ""I heard it's Kurono."", 4: '2'}"
+472	472		301							"{2: 'Worker', 3: ""That's not surprising. They definitely have money to burn."", 4: '1'}"
+473	473		301							"{2: 'Worker', 3: ""Let's drop it. Looks like we can set sail on time. Are you coming aboard?"", 4: '1'}"
+474	474		301							"{2: 'Port Manager', 3: ""I'm not leaving. My wife and kids are here. If that damn Punishing really is going to swallow this city, I'd rather stay and die with my family."", 4: '2'}"
+475	475		301							{2: 'Worker', 3: '...', 4: '1'}
+476	476		301							"{2: 'Port Manager', 3: ""Oh right, the higher-ups told me someone's supposed to come aboard this morning. Make sure to verify his identity when he arrives. We can't have another arson incident like what happened at headquarters."", 4: '2'}"
+477	477		301							"{2: 'Worker', 3: ""What's his name?"", 4: '1'}"
+478	478		301							"{2: 'Port Manager', 3: 'Let me see... Someone named ""Haynes""? Yes, Haynes. Has he arrived yet?', 4: '2'}"
+479	479		301							"{2: 'Worker', 3: ""...That guy? He's right behind you. Been sitting on those stone steps for ages."", 4: '1'}"
+480	480		202							{1: '1', 2: '2', 6: '1'}
+481	481		201							{1: '1', 2: '501237'}
+482	482		301							{1: '1', 3: 'The Port Manager turns around in surprise, coming face to face with a middle-aged man.'}
+483	483		202							{1: '1', 6: '1'}
+484	484		201							{1: '1', 2: '500434', 4: '400'}
+485	485		201							{1: '2', 2: '500093', 4: '-400'}
+486	486		301							{1: '1', 3: 'Seabirds circle overhead as the middle-aged man gives the Port Manager a brief nod before returning his gaze to the departing vessel.'}
+487	487		301							"{2: 'Worker', 3: 'When he first arrived this morning, he was sobbing uncontrollably over the cargo... those samples. Kept saying he\'d never abandon his ""children""... something about his ""beloved""...', 4: '1'}"
+488	488		301							{2: 'Worker', 3: 'I think he might be mentally unstable. Are you sure the higher-ups want him on that ship?', 4: '1'}
+489	489		301							{2: 'Port Manager', 3: 'This...', 4: '2'}
+490	490		202							{1: '1', 2: '2'}
+491	491		104							{1: '0|25|-50', 2: '1'}
+492	492		301							"{3: ""The Port Manager's gaze shifts downward to the middle-aged man's ankle, where a tattoo-like code is visible. The numbers there indeed match the information he received.""}"
+493	493		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory597.jpg', 3: '0', 4: '1', 5: '1'}
+494	494		104							{1: '0|0|0', 2: '0'}
+495	495		205							{1: '999'}
+496	496		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory597.jpg'}
+497	497		201							{1: '2', 2: '500093'}
+498	498		301							"{1: '1', 2: 'Port Manager', 3: ""It's definitely him... I suppose scientists are all strange in their own way."", 4: '2'}"
+499	499		301							"{2: 'Port Manager', 3: ""Besides, so what if he's crazy? This world's already insane enough, one more madman won't make any difference."", 4: '2'}"
+500	500		301							{2: 'Port Manager', 3: 'Hey! You! Haynes?', 4: '2'}
+501	501		203							{1: '2', 2: '0.25', 3: '-400'}
+502	502		201							{1: '1', 2: '501237', 4: '400'}
+503	503		301							{1: '1', 2: 'Haynes', 3: '...', 4: '1'}
+504	504		301							{3: 'The middle-aged man turns his head again.'}
+505	505		301							{2: 'Port Manager', 3: 'Get on board! Keep an eye on your precious children!', 4: '2'}
+506	506		301							"{2: 'Haynes', 3: ""...Not just my children, but my own continued existence... is in there too. I'll watch over them carefully."", 4: '1'}"
+507	507		301		1		AniZhuanchangBegin			"{2: 'Port Manager', 3: ""Whatever you say—hurry up and board, we're leaving!"", 4: '2'}"

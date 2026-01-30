@@ -1,0 +1,19 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory42.jpg'}
+2	100		401							{1: '1', 2: '101'}
+3	2		201							{1: '1', 2: '1031001', 4: '400'}
+4	3		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'We broke through that area successfully.', 4: '1'}
+5	4		201							{1: '2', 2: '500018', 4: '-400'}
+6	5		301							{1: '1', 2: '???', 3: 'Sacred gallery!', 4: '2'}
+7	6		301							{2: '???', 3: 'No intruders—!', 4: '2'}
+8	7		201							{1: '2', 2: '1011001', 4: '-400'}
+9	8		301							"{1: '1', 2: 'Lee', 3: ""But the situation here doesn't seem that much better."", 4: '2'}"
+10	9		204							{1: '1', 2: '7'}
+11	10		301							{2: 'Liv', 3: 'The Nozzle model from before?!', 4: '1'}
+12	11		301							"{2: 'Liv', 3: ""Wasn't it retrieved by HQ for research?"", 4: '1'}"
+13	12		204							{1: '1'}
+14	13		201							{1: '2', 2: '500018', 4: '-400'}
+15	14		301							{1: '1', 2: 'Nozzle', 3: 'The world, belongs to art!', 4: '2'}
+16	15		201							{1: '2', 2: '500029', 4: '-400'}
+17	16		301							"{1: '1', 2: 'Lucia', 3: ""It isn't the same machine that we met last time."", 4: '2'}"
+18	17		301		1		AniZhuanchangBegin			{2: 'Lucia', 3: 'Prepare for battle. The target has shown hostility.', 4: '2'}

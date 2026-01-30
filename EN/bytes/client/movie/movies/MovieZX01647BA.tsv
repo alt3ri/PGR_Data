@@ -1,0 +1,49 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory279.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: 'As expected, it does not take long before that person calls again.'}
+4	4		201							{1: '1', 2: '500146'}
+5	5		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+6	6		301							{1: '1', 2: 'Murray', 3: 'Lee, have you guys reached the transport pod I mentioned?', 4: '1'}
+7	7		203							{1: '1', 2: '0.25', 3: '400'}
+8	8		201							{1: '2', 2: '500026', 4: '-400'}
+9	9		301							"{1: '1', 2: 'Lee', 3: '""Murray,"" or whatever you want to call yourself... Maybe you thought you did a good job mimicking him, but you could not fool me.', 4: '2'}"
+10	10		301							"{2: 'Murray', 3: ""L-Lee, what are you talking about?! I'm your brother—don't you recognize me?"", 4: '1'}"
+11	11		301							"{2: 'Lee', 3: ""Then explain to me why I couldn't get past the signal blockade when I tried to reach Babylonia since we've gotten Huaxu's key, when you, who are apparently in Babylonia, can suddenly contact us?"", 4: '2'}"
+12	12		301							"{2: 'Murray', 3: ""It's... probably..."", 4: '1'}"
+13	13		301							"{2: 'Lee', 3: ""The first time I felt suspicious was when I mentioned the graviton detector. If you were him, you would've known it's impossible to send a response here."", 4: '2'}"
+14	14		301							"{2: 'Lee', 3: ""Plus, we've analyzed the environmental noises in your call, and you weren't in Babylonia at all."", 4: '2'}"
+15	15		302							{2: 'Lamia, I assume.', 3: '16'}
+16	16		202							{1: '1', 2: '2', 6: '1'}
+17	17		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+18	18		201							{1: '1', 2: '500165', 3: '1'}
+19	19		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+20	20		301							"{1: '1', 2: 'Lamia', 3: ""Tch... now that I've been unmasked..."", 4: '1'}"
+21	21		301							{2: 'Lamia', 3: 'Apart from the human, this should be my first time meeting the Graven Ravens, right?', 4: '1'}
+22	22		302							{2: 'What do you want?', 3: '23'}
+23	23		301							{2: 'Lamia', 3: 'Just trying to get you out of here safe and sound with the pod.', 4: '1'}
+24	500		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+25	24		201							{1: '1', 2: '500026'}
+26	25		301							"{1: '1', 2: 'Lee', 3: ""I'm guessing there's something else."", 4: '1'}"
+27	26		201							{1: '1', 2: '500165'}
+28	501		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+29	27		301							"{1: '1', 2: 'Lamia', 3: 'Hehe... Pretty clever, aren\'t you, ""brother""?', 4: '1'}"
+30	28		301							{3: 'You can see Lee clenching his jaw. If this were not a call, Lamia would have been shot multiple times already.'}
+31	29		301							"{2: 'Lamia', 3: ""How about a deal, Commandant? Give me Huaxu's key, and I'll show you the way to the big guy there..."", 4: '1'}"
+32	30		302							{2: 'What do you want with the key?', 3: '31'}
+33	31		301							"{2: 'Lamia', 3: ""That you don't have to know... I'm not the one in a hurry here..."", 4: '1'}"
+34	32		301							"{3: ""As if responding to Lamia's words, the roar from the Polyphage echos again.""}"
+35	502		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+36	33		201							{1: '1', 2: '500166'}
+37	34		301							{1: '1', 2: 'Lucia', 3: 'What should we do, Commandant?', 4: '1'}
+38	35		302							{2: 'Give it to her.', 3: '36', 4: 'Find her.', 5: '40'}
+39	36		201							{1: '1', 2: '500026'}
+40	37		301							"{1: '1', 2: 'Lee', 3: ""Not a good idea to hand it in now. We can't guarantee that she'll keep her words."", 4: '1'}"
+41	38		201							{1: '1', 2: '500166'}
+42	39		301							{1: '1', 2: 'Lucia', 3: 'Is it possible to find her?', 4: '1'}
+43	40		201							{1: '1', 2: '1031001', 4: '-400'}
+44	41		201							{1: '2', 2: '500026', 4: '400'}
+45	42		301							{1: '1', 2: 'Liv', 3: 'But where is she?', 4: '1'}
+46	43		301							"{2: 'Lee', 3: ""Given how strong the signal blockade is here and how well she knows our actions, I'm guessing she's just nearby."", 4: '2'}"
+47	44		301							{2: 'Lee', 3: 'We can use the environmental sounds we analyzed earlier to deduce where she is in this chasm.', 4: '2'}
+48	45		301		1		AniZhuanchangBegin			{2: 'Liv', 3: 'Understood. Leave it to me!', 4: '1'}

@@ -1,0 +1,113 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory186.png'}
+2	2		201							{1: '1', 2: '500581'}
+3	3		301			DialogEnable				{1: '1', 2: 'Echo', 3: 'Hff...', 4: '1'}
+4	4		401							{1: '2', 2: '4382'}
+5	5		204							{1: '1', 2: '1'}
+6	6		301							{2: 'Echo', 3: 'This should be good.', 4: '1'}
+7	7		301							"{3: ""You meet Echo by the park's artificial lake, where Echo straightens her rain boots before cautiously stepping onto a small wooden boat.""}"
+8	8		301							"{2: 'Echo', 3: ""Now it's your turn, Commandant."", 4: '1'}"
+9	9		302							{2: '(Jump onto the boat)', 3: '10', 4: '(Board the boat with caution)', 5: '17'}
+10	10		204							{1: '1', 2: '7'}
+11	11		301							{2: 'Echo', 3: 'Waiiit!', 4: '1'}
+12	12		202							{1: '1'}
+13	13		401							{1: '2', 2: '9327108'}
+14	14		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+15	15		301			RImgBg1Shake	AniZhuanchangBegin			"{3: ""The boat lurches, and Echo's expression flashes with panic. She scrambles to steady the rocking vessel.""}"
+16	16	20	505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+17	17		204							{1: '1', 2: '10'}
+18	18		301							"{3: ""You've been as cautious as you can, but you notice Echo is still gripping the edge of the boat tightly.""}"
+19	19	20	202				AniZhuanchangBegin			{1: '1'}
+20	20		502						400.0	{1: 'DialogDisable'}
+21	21		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+22	22		109	1		AniZhuanchangEnd	AniZhuanchangBegin			{1: '1', 2: '<size=45>...A few minutes earlier</size>', 6: '1', 7: '1', 8: '1', 9: '3'}
+23	23		110							
+24	24		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory186.png'}
+25	25		401							{1: '1', 2: '278'}
+26	26		301			DialogEnable				"{3: ""It's evening when you receive Echo's message and make your way to the lakeside.""}"
+27	27		301							"{3: ""Even though it's already late, on a day like today—this festival has only just begun.""}"
+28	28		301							{3: 'Small, scattered boats glide across the lake.'}
+29	29		301							{3: 'Echo is here, waiting patiently. From a distance, she seems to be writing in a small notebook.'}
+30	30		201							{1: '1', 2: '500581', 3: '1'}
+31	31		301							{1: '1', 2: 'Echo', 3: 'Commandant! Over here!', 4: '1'}
+32	32		301							{3: 'She lifts her gaze and locks eyes with you. The tension on her face fades in an instant.'}
+33	33		302							{2: 'Hey, Echo.', 3: '34'}
+34	34		301							{2: 'Echo', 3: 'Good evening, Commandant.', 4: '1'}
+35	35		302							{2: 'Long time no see.', 3: '36'}
+36	36		301							{2: 'Echo', 3: 'Long time no see.', 4: '1'}
+37	37		301							{3: 'She turns around to look at the boat behind her.'}
+38	38		301							"{2: 'Echo', 3: ""Even though it's not my first time attending an event like this, I'm still picking up plenty of new knowledge and local customs today."", 4: '1'}"
+39	39		301							"{2: 'Echo', 3: ""But... this time, I've found something I really want to do with you, Commandant."", 4: '1'}"
+40	40		301							{2: 'Echo', 3: 'Maybe it fits the Double Seventh Festival theme better... spending time with someone who matters?', 4: '1'}
+41	41		301							{3: 'Echo explains this with a solemn air.'}
+42	42		302							{2: 'So...', 3: '43'}
+43	43		302							{2: 'Are we going rowing?', 3: '44'}
+44	44		301							{3: 'Echo nods and, looking a little shy, starts to speak.'}
+45	45		204							{1: '1', 2: '6'}
+46	46		301							"{2: 'Echo', 3: ""I may know the basics of rowing, but I'm still a long way from mastering it."", 4: '1'}"
+47	47		301							"{2: 'Echo', 3: ""Plus, the instructions in the survival manual aren't exactly clear, so I'd like to learn from you, Commandant."", 4: '1'}"
+48	48		202							{1: '1'}
+49	49		301							{3: '...'}
+50	50		401							{1: '2', 2: '9339045'}
+51	51		301							"{3: ""You take hold of the oar, and the armor—absent a moment ago—shows up and gently nudges the boat away from the shore, easing Echo's earlier nervousness.""}"
+52	52		201							{1: '1', 2: '500581', 3: '10'}
+53	53		301							"{1: '1', 2: 'Echo', 3: ""Good. That's the first step... then..."", 4: '1'}"
+54	54		402							{1: '9339045'}
+55	55		401							{1: '2', 2: '911'}
+56	56		301							{3: 'Echo hunches over her notebook, writing and sketching at lightning speed.'}
+57	57		301							{3: 'You slow your motions as much as you can, breaking down every paddle stroke into careful, deliberate steps.'}
+58	58		204							{1: '1', 2: '7'}
+59	59		301							{2: 'Echo', 3: 'Hmm?', 4: '1'}
+60	60		301							{3: 'You look Echo in the eye, noticing the spark of curiosity gleaming there.'}
+61	61		302							{2: 'Echo, want to try it out?', 3: '62'}
+62	62		204							{1: '1', 2: '10'}
+63	63		301							{2: 'Echo', 3: 'Huh? Right now?', 4: '1'}
+64	64		301							"{3: ""Echo's hand automatically tightens around the edge of the boat again.""}"
+65	65		302							{2: 'Naturally, getting each movement right really matters.', 3: '66'}
+66	66		302							"{2: ""But it's best to experience it firsthand."", 3: '67'}"
+67	67		301							{2: 'Echo', 3: 'Experience it firsthand...', 4: '1'}
+68	68		302							{2: '...No need to jot that down.', 3: '69'}
+69	69		301							"{3: ""At last, the young Construct musters the courage to grab an oar from the boat's hold.""}"
+70	70		204							{1: '1', 2: '5'}
+71	71		301							"{2: 'Echo', 3: ""I'll give it my all!"", 4: '1'}"
+72	72		204							{1: '1'}
+73	73		301							{3: 'Echo, eyes fixed with determination, quietly repeats the notes she just recorded and dips the oar into the water, while you help her keep the boat steady.'}
+74	74		301							"{3: ""The boat drifts forward under her careful strokes. It's obvious she hasn't quite found the right rhythm yet, so the progress stays slow and steady.""}"
+75	75		302							"{2: ""You've got real talent, Echo."", 3: '76'}"
+76	76		204							{1: '1', 2: '1'}
+77	77		301							{2: 'Echo', 3: 'I did it! ...Ahem.', 4: '1'}
+78	78		301							"{3: ""Echo can't help letting out a quick gasp of joy, then immediately pulls herself together.""}"
+79	79		301							"{3: ""Somehow, the small boat has already reached the center of the lake. It's not a full-moon night, but the stars glow brightly, making it feel like you're sailing through a cosmic sea.""}"
+80	80		301							"{2: 'Echo', 3: ""These stars... they're so beautiful..."", 4: '1'}"
+81	81		204							{1: '1', 2: '7'}
+82	82		301							{2: 'Echo', 3: 'This feeling... Please hold on a second!', 4: '1'}
+83	83		301							{3: 'Echo takes a finely crafted notebook out of her pocket and sets it on her lap. She flips to a blank page and starts scribbling furiously.'}
+84	84		302							{2: 'Can I see it?', 3: '85'}
+85	85		204							{1: '1', 2: '1'}
+86	86		301							"{2: 'Echo', 3: ""It's just a sudden rush of inspiration... I haven't polished it yet."", 4: '1'}"
+87	87		302							{2: 'Still, a first impression is always the most important, right?', 3: '88'}
+88	88		301							"{3: ""Echo doesn't recite her poem right away like she used to. Instead, she hands the notebook over to you.""}"
+89	89		204							{1: '1', 2: '6'}
+90	90		301				AniZhuanchangBegin			"{2: 'Echo', 3: ""P-please... don't make it too loud..."", 4: '1'}"
+91	91		202							{1: '1'}
+92	92		502						400.0	{1: 'DialogDisable'}
+93	93		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg'}
+94	94		304			AniZhuanchangEnd				"{1: ""This night isn't the moon's birthday,"", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg', 6: '1'}"
+95	95		304							{1: 'Like what we imagined.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg', 6: '1'}
+96	96		304							"{1: ""We're stumbling as we go,"", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg', 6: '1'}"
+97	97		304							{1: 'I hope you also pick up a bit of this dirt.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg', 6: '1'}
+98	98		304							{1: 'We nurture the heart that grows from the soil.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg', 6: '1'}
+99	99		304							{1: 'In reunion,', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg', 6: '1'}
+100	100		304							{1: 'All we can do,', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg', 6: '1'}
+101	101		304							{1: 'Is give the sun its own light once more.', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg', 6: '1'}
+102	102		304							"{1: ""Or maybe shape a river from the moon's soft glow."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg', 6: '1'}"
+103	103		304							{1: 'Return our feelings,', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg', 6: '1'}
+104	104		304	1						"{1: ""In love's purest form..."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory786.jpg', 6: '1', 9: '1'}"
+105	105		201							{1: '1', 2: '500581', 3: '7'}
+106	106		401			RImgBg1Shake				{1: '2', 2: '903'}
+107	107		301			DialogEnable				{1: '1', 3: 'A sudden undercurrent rocks the small boat, snapping both of you out of your daydream.'}
+108	108		204							{1: '1', 2: '6'}
+109	109		203							{1: '1', 2: '0.25', 5: '-100'}
+110	110		401						120.0	{1: '2', 2: '4044'}
+111	111		401							{1: '2', 2: '9339045'}
+112	112		301		1		AniZhuanchangBegin			{3: 'Water sprays in all directions as the Construct girl instinctively topples right into your arms.'}

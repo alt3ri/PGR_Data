@@ -1,0 +1,44 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory192.png'}
+2	2		401							{1: '1', 2: '209'}
+3	3		301			DialogEnable				{3: 'Luna is standing alone in the entrance of the Venus Splash Park, looking at the beach. Gradually, she opens her mouth.'}
+4	4		201							{1: '1', 2: '500105'}
+5	5		301							{1: '1', 2: 'Luna', 3: 'What is it?', 4: '1'}
+6	6		203							{1: '1', 2: '0.25', 3: '-400'}
+7	7		201							{1: '2', 2: '500008', 3: '4', 4: '400'}
+8	8		301							{1: '1', 3: 'As if on cue, Roland hops down from a nearby building. His once-damaged frame seems to have been perfunctorily repaired.'}
+9	9		301							{2: 'Roland', 3: 'Should we deal with the Babylonians next? I am ready always.', 4: '2'}
+10	10		301							{2: 'Luna', 3: 'Unnecessary. We have achieved our purpose.', 4: '1'}
+11	11		301							{2: 'Roland', 3: '...', 4: '2'}
+12	12		301							{2: 'Luna', 3: 'Babylonia playing sleuth here is just helping us clean up.', 4: '1'}
+13	13		301							{2: 'Luna', 3: 'They provide a good laugh, so let them be. Let them amuse us.', 4: '1'}
+14	14		301							{2: 'Roland', 3: 'Very well...', 4: '2'}
+15	15		202							{1: '1', 2: '2'}
+16	16		301							{3: 'While the two are talking, Alpha connects in.'}
+17	17		201							{1: '1', 2: '500100', 3: '8'}
+18	18		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+19	19		301							"{1: '1', 2: 'α', 3: ""I'm almost there."", 4: '1'}"
+20	20		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+21	21		201							{1: '1', 2: '500008'}
+22	22		301							{1: '1', 2: 'Roland', 3: 'Later than expected, hm?', 4: '1'}
+23	23		301							{3: 'Roland can see Alpha frowning slightly through the holographic screen.'}
+24	24		201							{1: '1', 2: '500100'}
+25	25		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+26	26		301							{1: '1', 2: 'α', 3: 'Just ran into some trouble on the way over.', 4: '1'}
+27	27		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+28	28		201							{1: '1', 2: '500105', 3: '13'}
+29	29		301							"{1: '1', 2: 'Luna', 3: ""No matter. I'll wait for you at the beach."", 4: '1'}"
+30	30		201							{1: '1', 2: '500100'}
+31	31		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+32	32		301							{1: '1', 2: 'α', 3: 'Sure.', 4: '1'}
+33	33		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+34	34		202							{1: '1'}
+35	35		301							{3: 'Luna disconnects and turns to look at Roland.'}
+36	36		201							{1: '1', 2: '500105'}
+37	37		301							{1: '1', 2: 'Luna', 3: 'Gabriel is almost finished on his end. Go meet him.', 4: '1'}
+38	38		201							{1: '1', 2: '500008'}
+39	39		301							{1: '1', 2: 'Roland', 3: 'Roger.', 4: '1'}
+40	40		301							{3: 'With that, Luna leaves, heading to her agreed location with Alpha. Roland, for some reason, is standing still.'}
+41	41		204							{1: '1', 2: '4'}
+42	42		301							"{2: 'Roland', 3: ""Miss Luna's expression... Is it just me?"", 4: '1'}"
+43	43		301		1		AniZhuanchangBegin			"{2: 'Roland', 3: ""...She's been acting quite strange today."", 4: '1'}"

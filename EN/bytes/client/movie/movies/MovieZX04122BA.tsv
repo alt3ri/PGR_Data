@@ -1,0 +1,165 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		401							{1: '2', 2: '968'}
+4	4		301			DialogEnable	DialogDisable			{3: 'A cool breeze awakes your slumbering mind.'}
+5	5		401							{1: '1', 2: '201'}
+6	6		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+7	7		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+8	8		302			AniZhuanchangEnd				{2: 'Well...', 3: '9'}
+9	9		301			DialogEnable				{3: 'You adjust your ill-fitting coat and focus.'}
+10	10		301							{3: 'Opening your terminal to check the time, you realize you have been asleep for half an hour.'}
+11	11		301							{3: 'You still have not found a way to disable tracking on the comms.'}
+12	12		302							{2: 'Time to move...', 3: '13'}
+13	13		301							{3: 'You throw the potentially dangerous terminal into the bottomless cliff and continue climbing the rugged mountain path.'}
+14	14		302							{2: 'Hiss...', 3: '15'}
+15	15		301							{3: 'You lost one of your oversized shoes back in the fight. Despite being careful, you still cut your bare left foot with a sharp rock.'}
+16	16		302							{2: 'The blood will leave a trail...', 3: '17'}
+17	17		401							{1: '2', 2: '2987'}
+18	18		301				DialogDisable			{3: 'You cover your wound with some dry moss, but this is only a temporary measure.'}
+19	19		302							{2: 'Need to find a place to clean the wound...', 3: '20'}
+20	20		402							{1: '968'}
+21	21		502							{1: 'RImgBg1DisableSlow'}
+22	22		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory333.png'}
+23	23		301			DialogEnable				{3: 'You acquire a few more wounds while searching for a stream. Fortunately, you have managed to find what you are looking for.'}
+24	24		301							{3: 'As you clean your injuries with the water from the stream, you finally get a clear look at your current state.'}
+25	25		301							{3: 'Your face has grown more angular from hunger, your eyes tired from lack of sleep. You are covered in bruises from your failed escape and scars from your fights with Corrupted...'}
+26	26		302							{2: 'How... messy...', 3: '27'}
+27	27		301							{3: 'Would they still recognize you when they see you again?'}
+28	28		301							{3: 'You cannot help but wonder.'}
+29	29		301							{3: 'It has been four days since you escaped from the underground laboratory. Apart from being sure you are no longer in the Clean Zone, you have no other clues about where you are.'}
+30	30		301							{3: 'But you cannot afford to ponder too long. Hunger and potential pursuers are urging you to act quickly.'}
+31	31		301							{3: 'Should you continue toward the mountaintop or follow the stream?'}
+32	32		401							{1: '2', 2: '2902'}
+33	33		301							{3: 'While you are thinking, you hear rustling behind you.'}
+34	34		302							"{2: ""Who's there?!"", 3: '35'}"
+35	35		401							{1: '2', 2: '1511'}
+36	36		301							{3: 'You grip the Construct pistol and point it at the sound.'}
+37	37		301							{3: 'Even though you might break your wrist firing it, it is better than surrendering.'}
+38	38		401							{1: '2', 2: '2902'}
+39	39		201							{1: '1', 2: '500696', 3: '7'}
+40	40		301							"{1: '1', 2: 'Zong', 3: ""Whoa! Don't shoot, Commandant!"", 4: '1'}"
+41	41		204							{1: '1'}
+42	42		301							"{2: 'Zong', 3: ""It's me."", 4: '1'}"
+43	43		302							{2: 'Zong?', 3: '44'}
+44	44		301							{3: 'You did not expect to run into a familiar face.'}
+45	45		204							{1: '1', 2: '3'}
+46	46		301							"{2: 'Zong', 3: ""...What are you doing here wearing someone else's jacket?"", 4: '1'}"
+47	47		301							{3: 'Zong keeps his hands up, his youthful face filled with confusion.'}
+48	48		204							{1: '1', 2: '7'}
+49	49		301							{2: 'Zong', 3: 'Are you hurt?', 4: '1'}
+50	50		204							{1: '1'}
+51	51		301							{3: 'He tries to walk over.'}
+52	52		302							"{2: ""Don't move!"", 3: '53'}"
+53	53		401							{1: '2', 2: '1511'}
+54	54		204							{1: '1', 2: '7'}
+55	55		301				DialogDisable			{2: 'Zong', 3: 'Huh?!', 4: '1'}
+56	56		302							{2: 'What were you holding...', 3: '57'}
+57	57		302							{2: 'When we first met?', 3: '58'}
+58	58		204							{1: '1', 2: '8'}
+59	59		301			DialogEnable				"{2: 'Zong', 3: ""Eh... Our first meeting... Wait! Don't aim at my head! I'm thinking!"", 4: '1'}"
+60	60		204							{1: '1', 2: '7'}
+61	61		301							{2: 'Zong', 3: 'Right! It was a crate of ingredients!', 4: '1'}
+62	62		301				DialogDisable			{2: 'Zong', 3: 'Apart from Watanabe and Gray Raven, there was also a kid from Akdilek with us back then. He was two heads shorter than me, and his name was... eh... Changyu!', 4: '1'}
+63	63		302							{2: '...', 3: '64'}
+64	64		302							"{2: ""I'm sorry. I had to make sure."", 3: '65'}"
+65	65		204							{1: '1'}
+66	66		301			DialogEnable				{3: 'The tension eases as you put the gun away.'}
+67	67		301							{2: 'Zong', 3: 'Phew...', 4: '1'}
+68	68		204							{1: '1', 2: '7'}
+69	69		301							{2: 'Zong', 3: 'Why are you here anyway, Commandant? No, wait! I should bandage your wounds first!', 4: '1'}
+70	70		301							{3: 'He fumbles around to treat you. Seeing him like this, you feel the pressure from the past four days eases a little.'}
+71	71		302				AniZhuanchangBegin			{2: 'One thing at a time.', 3: '72'}
+72	72		204							{1: '1'}
+73	73		401						2000.0	{1: '1', 2: '36'}
+74	74		401							{1: '1', 2: '210'}
+75	75		301			AniZhuanchangEnd				{1: '1', 3: 'After using the basic supplies Zong has brought to treat your worsening injuries, you recount the events of the past few days.'}
+76	76		204							{1: '1', 2: '7'}
+77	77		301							{2: 'Zong', 3: 'Huh? You were kidnapped?', 4: '1'}
+78	78		301							{2: 'Zong', 3: 'I thought Babylonia always arranged a flight to bring you back, no?', 4: '1'}
+79	79		302							{2: 'Who do you think I am? The commander?', 3: '80'}
+80	80		204							{1: '1', 2: '3'}
+81	81		301				DialogDisable			{2: 'Zong', 3: 'Well...', 4: '1'}
+82	82		302							{2: 'What about you?', 3: '83'}
+83	83		302							{2: 'Why are you here?', 3: '84'}
+84	84		204							{1: '1'}
+85	85		301			DialogEnable				{2: 'Zong', 3: '...Please follow me.', 4: '1'}
+86	86		301							{3: 'Looking at your bandaged left foot, he carefully proposes—'}
+87	87		301				DialogDisable			{2: 'Zong', 3: 'Should I carry you?', 4: '1'}
+88	88		302							{2: '...', 3: '89'}
+89	89		302							{2: 'I can walk.', 3: '90'}
+90	90		204							{1: '1', 2: '7'}
+91	91		301			DialogEnable				"{2: 'Zong', 3: ""Don't be mad, Commandant! I didn't mean to look down on you!"", 4: '1'}"
+92	92		204							{1: '1'}
+93	93		301							"{2: 'Zong', 3: ""Oh! Why don't you wear my shoes?"", 4: '1'}"
+94	94		302							"{2: ""That's not necessary..."", 3: '95'}"
+95	95		301				DialogDisable			{3: 'But he acts much faster than you can speak. That is when you notice something unusual.'}
+96	96		302							{2: 'Zong...', 3: '97'}
+97	97		302							{2: 'Are you a Construct?', 3: '98'}
+98	98		204							{1: '1', 2: '2'}
+99	99		301			DialogEnable				"{2: 'Zong', 3: ""Hehe... Not many people know about it... After all, I'm not as impressive as other Constructs..."", 4: '1'}"
+100	100		301							{3: 'He scratches his head embarrassedly and puts his shoes on you.'}
+101	101		301							"{2: 'Zong', 3: ""So I didn't really want others to find out..."", 4: '1'}"
+102	102		204							{1: '1'}
+103	103		301				AniZhuanchangBegin			"{2: 'Zong', 3: ""Let's go, Commandant."", 4: '1'}"
+104	104		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory300.png'}
+105	105		201							{1: '1', 2: '500803'}
+106	106		301			AniZhuanchangEnd				{1: '1', 3: 'You follow Zong through the forest to a cave, and you find a battered figure there.'}
+107	107		302							{2: 'Is that... Watanabe?', 3: '108'}
+108	108		202							{1: '1', 6: '1'}
+109	109		201							{1: '1', 2: '500696'}
+110	110		301							"{1: '1', 2: 'Zong', 3: ""Yep. It's the Boss."", 4: '1'}"
+111	111		301							"{2: 'Zong', 3: ""But he hasn't woken up since the attack."", 4: '1'}"
+112	112		301							{2: 'Zong', 3: 'I heard that a M.I.N.D. connection can fix almost anything with the M.I.N.D.', 4: '1'}
+113	113		301				DialogDisable			{2: 'Zong', 3: 'So use your connection to do something already, Commandant!', 4: '1'}
+114	114		302							{2: '...', 3: '115'}
+115	115		302							"{2: ""Don't believe in rumors."", 3: '116'}"
+116	116		302							"{2: ""A M.I.N.D. connection isn't a cure-all."", 3: '117'}"
+117	117		204							{1: '1', 2: '7'}
+118	118		301			DialogEnable				{2: 'Zong', 3: 'What?!', 4: '1'}
+119	119		302							"{2: ""And we don't have the equipment here."", 3: '120'}"
+120	120		301							"{2: 'Zong', 3: ""Isn't a M.I.N.D. connection just plug-and-play?"", 4: '1'}"
+121	121		302							{2: '...', 3: '122'}
+122	122		204							{1: '1'}
+123	123		301							"{2: 'Zong', 3: ""Uh... There weren't commandants yet when I became a Construct..."", 4: '1'}"
+124	124		301							{3: 'Zong explains, seeing how skeptical you are.'}
+125	125		204							{1: '1', 2: '3'}
+126	126		301				DialogDisable			{2: 'Zong', 3: 'What should we do, then...?', 4: '1'}
+127	127		302							{2: 'We need to find a place...', 3: '128'}
+128	128		302							{2: 'Somewhere outside Babylonia or Forsaken...', 3: '129'}
+129	129		302							{2: 'Somewhere that has equipment.', 3: '130'}
+130	130		301			DialogEnable				"{2: 'Zong', 3: ""Hmm... and it can't be too far."", 4: '1'}"
+131	131		301							{3: 'As you ponder, the name of a place pops into your mind. With many Constructs living there, it would have the basic equipment you need.'}
+132	132		302							{2: 'New Oakley!', 3: '133'}
+133	133		204							{1: '1'}
+134	134		301							{2: 'Zong', 3: 'New Oakley!', 4: '1'}
+135	135		301							{3: 'Zong and you say it out loud at the same time.'}
+136	136		302							{2: 'You know the place too?', 3: '137'}
+137	137		301							"{2: 'Zong', 3: ""I escorted Jada there before. She'll know what to do."", 4: '1'}"
+138	138		302				AniZhuanchangBegin			{2: '?', 3: '139'}
+139	139		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory423.jpg'}
+140	140		201							{1: '1', 2: '500692'}
+141	141		301			AniZhuanchangEnd	DialogDisable			{1: '1', 2: 'Max', 3: 'You come at the right time. The Forsaken just left after ransacking the town.', 4: '1'}
+142	142		302							{2: 'Actually...', 3: '143'}
+143	143		302							"{2: ""We've been staking out nearby for a long time..."", 3: '144'}"
+144	144		202							{1: '1', 6: '1'}
+145	145		201							{1: '1', 2: '500696', 3: '7'}
+146	146		301			DialogEnable				{1: '1', 2: 'Zong', 3: 'Eh... Did you really have to let them know, Commandant?', 4: '1'}
+147	147		201							{1: '1', 2: '500692'}
+148	148		301							"{2: 'Max', 3: ""Hah. Quite smart, aren't you?"", 4: '1'}"
+149	149		301							"{2: 'Max', 3: ""Were you making sure that we weren't siding with them?"", 4: '1'}"
+150	150		302							{2: 'I hope you can understand.', 3: '151'}
+151	151		301							{2: 'Max', 3: 'You should go hide in the basement of that abandoned tavern first.', 4: '1'}
+152	152		301							"{2: 'Max', 3: ""I'll inform Jada."", 4: '1'}"
+153	153		302							{2: 'Thank you.', 3: '154'}
+154	154		301							"{2: 'Max', 3: ""I'm not an ungrateful person. New Oakley doesn't turn away its friends."", 4: '1'}"
+155	155		301							"{2: 'Max', 3: ""Everything you've done will not be in vain."", 4: '1'}"
+156	156		202							{1: '1'}
+157	157		301							{3: 'And just like that, you finally have a place to stay after months of hardship.'}
+158	158		301				AniZhuanchangBegin			"{3: ""The long process of awakening comes afterward. During this time, you piece together the truth bit by bit from Zong's accounts and the information gathered from the outside world.""}"
+159	159		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory539.jpg'}
+160	160		201						2000.0	{1: '1', 2: '500696'}
+161	161		301			AniZhuanchangEnd				"{1: '1', 2: 'Zong', 3: ""Let's get going too, Commandant."", 4: '1'}"
+162	162		301							{3: 'Watanabe has driven away, heading to his battlefield.'}
+163	163		302							{2: 'Yeah.', 3: '164'}
+164	164		301		1		AniZhuanchangBegin			{3: 'And so you must fulfill your part of the deal too.'}

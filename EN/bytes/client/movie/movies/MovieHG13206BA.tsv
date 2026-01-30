@@ -1,0 +1,131 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		301			DialogEnable				"{3: '""...Step 2, turn off the sensory system. Inject circulatory enhancing transmitter at 3cm to the bottom right of C3, then turn the sensory system back on after 10 seconds.""'}"
+4	4		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '3'}
+5	5		504							{1: '0.8'}
+6	6		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+7	7		401							{1: '2', 2: '2566'}
+8	8		301							{3: 'Sensory system turned off. Here is the syringe.'}
+9	9		301							"{3: ""Bambinata can't feel anything... Where is the C3 section...""}"
+10	10		401						600.0	{1: '2', 2: '655'}
+11	11		402							{1: '655'}
+12	12		401							{1: '2', 2: '1516'}
+13	13		301							{3: 'The door is open. Someone has walked in.'}
+14	14		201							{1: '1', 2: '500555', 3: '4'}
+15	15		301							"{1: '1', 3: '""Bambinata... What are you doing?""'}"
+16	16		301							{3: 'It is Mistress Vanessa. Bambinata feels happy, but she seems surprised.'}
+17	17		301							{3: 'Following the order on the terminal, Bambinata is performing maintenance for herself.'}
+18	18		301							"{3: '""Did you book it with the Star of Life? Where\'s the report? I want to have a look.""'}"
+19	19		301							"{3: '""Hmm... Looks good. Who left this message behind the report?""'}"
+20	20		301							"{3: ""Bambinata doesn't know. But it says Bambinata should follow this order.""}"
+21	21		204							{1: '1', 2: '13'}
+22	22		301							"{3: '""Tsk... Quite a lot of details, but I really dislike the handwriting.""'}"
+23	23		204							{1: '1'}
+24	24		301							"{3: '""Whatever. Give me the syringe and have your back facing me.""'}"
+25	25		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '3'}
+26	26		504							{1: '0'}
+27	27		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+28	28		401							{1: '2', 2: '2577'}
+29	29		301							{3: '...Sensory system reboot complete...'}
+30	30		301							{3: '...External memory module loaded...'}
+31	31		402							{1: '2577'}
+32	32		301							"{3: '""Feeling a little better?""'}"
+33	33		301							{3: 'Bambinata can remember more things... But some have disappeared.'}
+34	34		204							{1: '1', 2: '4'}
+35	35		301							"{3: '""Hmm... Maybe it can still be optimized, but that\'s all we can do for now.""'}"
+36	36		301							{3: '【kuroname】? Commandant of Gray Raven... Why does Bambinata recall this name?'}
+37	37		301							"{3: '""【kuroname】? Why did you suddenly mention that person?""'}"
+38	38		301							{3: 'There was an impression. It just came to Bambinata.'}
+39	39		204							{1: '1', 2: '5'}
+40	40		301							"{3: '""Tsk, don\'t tell me this was left by...""'}"
+41	41		301							"{3: '""Whatever, forget about it. You can turn back now.""'}"
+42	42		204							{1: '1', 2: '4'}
+43	43		301							"{3: ""Mistress is adjusting Bambinata's hair clip. As her face is covered by her hand, Bambinata cannot see her expression.""}"
+44	44		301							"{3: '""Bambinata, you...""'}"
+45	45		301							{3: 'Mistress sounds a little sad, but relaxed.'}
+46	46		204							{1: '1'}
+47	47		301							"{3: '""Get ready. We have a combat meeting soon.""'}"
+48	48		301				AniZhuanchangBegin			{3: 'New order received. Bambinata will do it. Bambinata will remember it.'}
+49	49		202			DialogDisable				{1: '1', 6: '1'}
+50	50		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+51	51		301			DialogEnable				{3: '...'}
+52	52		401							{1: '1', 2: '201'}
+53	53		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg', 3: '0', 4: '1', 5: '2'}
+54	54		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+55	55		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+56	56		301							{3: 'An hour later in the war conference room.'}
+57	57		201							{1: '1', 2: '500012'}
+58	58		301							"{1: '1', 2: 'Nikola', 3: ""...That's all. I want all participating Task Force teams to start preparing right away and head out in three hours."", 4: '1'}"
+59	59		301							{3: 'Commander Nikola habitually knocks on the table to dismiss the meeting, then leaves the room in haste. The commandants of different squads immediately stand up, allocating tasks to their members who have been waiting behind.'}
+60	60		202							{1: '1'}
+61	61		301							{3: 'As the war conference room gets increasingly noisy, Egret looks particularly forlorn in the corner. Bambinata still follows her commandant like always, but Vanessa, who has disappeared for quite some time, seems somewhat exhausted.'}
+62	62		301							{3: 'Vanessa has not filed in any application to expand her squad. Two of them have to tackle all the missions assigned to Egret.'}
+63	63		301							{3: 'She seems to have also noticed your unintentional glances toward them.'}
+64	64		301							{3: 'Vanessa appears to be avoiding direct eye contact with you, but she keeps stealing glances at you whenever you are not paying attention to her.'}
+65	65		201							{1: '1', 2: '500555', 3: '4', 4: '400'}
+66	66		201							{1: '2', 2: '500536', 4: '-400'}
+67	67		301							{1: '1', 3: 'You finish assigning tasks to Gray Raven members and tell them to go back to the lounge. Vanessa walks at you with Bambinata following behind.'}
+68	68		302							"{2: ""...What's up?"", 3: '69'}"
+69	69		204							{1: '1', 2: '5'}
+70	70		301							"{2: 'Vanessa', 3: ""You took Bambinata to her maintenance, didn't you?"", 4: '1'}"
+71	71		302							{2: 'Yes.', 3: '72'}
+72	72		301							{3: 'Probably not expecting such a straightforward response, Vanessa seems to be choked on the words that she was going to say.'}
+73	73		204							{1: '1', 2: '13'}
+74	74		301							{2: 'Vanessa', 3: 'Um... Did you also write the maintenance details? Since when did you become so smart?', 4: '1'}
+75	75		301							"{3: ""You remember asking Liv for Bambinata's maintenance details after returning from her doctor visit as you were concerned that she might have other problems.""}"
+76	76		301							{3: 'Liv still remembered the details of when she treated her former teammates, even when she had not seen them for a long time.'}
+77	77		302							{2: 'Liv taught me.', 3: '78'}
+78	78		204							{1: '1', 2: '4'}
+79	79		301							"{3: ""You can see Vanessa's complicated expression through her eye mask when she hears Liv's name.""}"
+80	80		301							{3: 'Seemingly overwhelmed, Vanessa visibly struggles to continue the conversation. She falls into silence for a moment.'}
+81	81		301							{2: 'Vanessa', 3: 'Did you see Bambinata every day over the past few days?', 4: '1'}
+82	82		302							{2: 'Yes.', 3: '83'}
+83	83		301							{2: 'Vanessa', 3: 'Did anyone... come to her looking for trouble?', 4: '1'}
+84	84		204							{1: '1', 2: '13'}
+85	85		301							"{2: 'Vanessa', 3: ""They were probably monitoring her, but you mostly wouldn't be able to notice, tch."", 4: '1'}"
+86	86		302							{2: 'Trouble?', 3: '87'}
+87	87		204							{1: '1', 2: '4'}
+88	88		301							{2: 'Vanessa', 3: 'Bambinata and I worked on missions that involved Kurono. You know what will happen next.', 4: '1'}
+89	89		301							{2: 'Vanessa', 3: 'And... Teasell.', 4: '1'}
+90	90		301							"{2: 'Vanessa', 3: ""I'm not like you. I won't let them point fingers at my belongings. They can look at Bambinata's and my memory data if they have to see something."", 4: '1'}"
+91	91		302							{2: 'Is that why you were away over the past few days...', 3: '92'}
+92	92		301							{3: 'Vanessa is not answering. She just gives you a meaningful look.'}
+93	93		301							"{3: ""So Vanessa took Bambinata's external memory module and faced the investigations from Kurono and the Parliament. This is probably why nobody could reach her.""}"
+94	94		301							"{2: 'Vanessa', 3: ""Ahem... Don't ever think that I would thank you."", 4: '1'}"
+95	95		204							{1: '1', 2: '5'}
+96	96		301							"{2: 'Vanessa', 3: ""You trespassed into other people's lounge. That's not nice."", 4: '1'}"
+97	97		302							"{2: ""I'm sorry."", 3: '98', 4: 'I had a reason.', 5: '103'}"
+98	98		204							{1: '1', 2: '4'}
+99	99		301							{2: 'Vanessa', 3: 'Wow, that apology came fast.', 4: '1'}
+100	100		301							"{2: 'Vanessa', 3: ""...Whatever, it's not like you are ever going to apologize sincerely."", 4: '1'}"
+101	101		204							{1: '1', 2: '13'}
+102	102	106	301							{2: 'Vanessa', 3: 'How can our Chief possibly admit what they have done in the past?', 4: '1'}
+103	103		204							{1: '1', 2: '5'}
+104	104		301							{2: 'Vanessa', 3: 'Did you just use Bambinata as an excuse?', 4: '1'}
+105	105		301							"{2: 'Vanessa', 3: ""You didn't even try to apologize. I have nothing to talk to you about then."", 4: '1'}"
+106	106		204							{1: '1', 2: '4'}
+107	107		301							{2: 'Vanessa', 3: 'Whatever, just mind your own business.', 4: '1'}
+108	108		204							{1: '1'}
+109	109		301							"{2: 'Vanessa', 3: ""Let's go, Bambinata."", 4: '1'}"
+110	110		301							{3: 'Vanessa seems to have more to say, but after hesitating for a moment, she turns her head and walks away.'}
+111	111		203							{1: '2', 2: '0.25'}
+112	112		301							"{3: ""Bambinata quietly follows her. She gently holds Vanessa's hand, just like how she grabbed yours. Vanessa stands still not far away, with her back facing you.""}"
+113	113		401							{1: '1', 2: '36'}
+114	114		204							{1: '1', 2: '4'}
+115	115		301							{2: 'Vanessa', 3: '...', 4: '1'}
+116	116		401							{1: '1', 2: '169'}
+117	117		204							{1: '1'}
+118	118		301							{2: 'Vanessa', 3: 'Okay.', 4: '1'}
+119	119		202						300.0	{1: '1', 6: '1'}
+120	120		204							{1: '2', 2: '1'}
+121	121		203						1200.0	{1: '2', 2: '0.7', 4: '-100'}
+122	122		203							{1: '2', 2: '0.5'}
+123	123		301							{3: 'Bambinata calmly turns around and curtsies to you gracefully.'}
+124	124		204							{1: '2'}
+125	125		301							{3: 'Her eyes are just as blue and clear as when you met her a few days ago, but they are no longer vast and empty like the sky.'}
+126	126		301							{3: 'They feel like gentle waves that embrace you and carry you toward a calm, warm place deeper in the ocean. Even when her memories have also dived into the depths, something has crossed the dark reefs made from cold orders and remained on the sunlit sea.'}
+127	127		301							{3: 'No longer lost, exhausted or lonely.'}
+128	128		204							{1: '2', 2: '1'}
+129	129		301							"{3: '""Thank you.""', 4: '1'}"
+130	130		301		1		AniZhuanchangBegin			{3: 'That is what those eyes are telling you.'}

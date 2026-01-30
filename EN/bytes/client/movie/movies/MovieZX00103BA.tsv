@@ -1,0 +1,40 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory12.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '1031001', 3: '7'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Liv', 3: ""Everyone, we've reached the coordinates of the weapon supplies—ah, this is..."", 4: '1'}"
+5	5		202							{1: '1', 6: '1'}
+6	6		201							{1: '2', 2: '1021001', 3: '3'}
+7	7		301							{1: '1', 2: 'Lucia', 3: 'Such an eerie sight.', 4: '2'}
+8	8		301							{2: 'Lucia', 3: 'The Constructs here are all blown to pieces, and paint is all over their body parts.', 4: '2'}
+9	9		202							{1: '2', 6: '1'}
+10	10		201							{1: '1', 2: '500061'}
+11	11		301							{1: '1', 2: 'Voice in the dark', 3: 'Those... detestable... humans...', 4: '1'}
+12	12		301							{2: 'Voice in the dark', 3: 'Have... they come to... destroy my... work again...?', 4: '1'}
+13	13		202							{1: '1', 6: '1'}
+14	14		201							{1: '3', 2: '1011001'}
+15	15		301							{1: '1', 2: 'Lee', 3: '...', 4: '3'}
+16	16		301							{3: 'Lee kneels, then touches and checks the graffiti with his fingers.'}
+17	17		301							{2: 'Lee', 3: 'Composes mostly of Construct vital fluids... with a mixture of industrial coloring, fluorescent agents, and mixed coolants.', 4: '3'}
+18	18		301							"{2: 'Lee', 3: ""...Looks like they aren't using Construct fluids just to paint these horrid-looking graffiti, but also as a weapon."", 4: '3'}"
+19	19		202							{1: '3', 6: '1'}
+20	20		201							{1: '1', 2: '500061'}
+21	21		301							"{1: '1', 2: 'Voice in the dark', 3: ""H-horrid...? That imbecile... He's saying my work is... horrid..."", 4: '1'}"
+22	22		202							{1: '1', 6: '1'}
+23	23		201							{1: '1', 2: '1031001'}
+24	24		301							{1: '1', 2: 'Liv', 3: 'A weapon?', 4: '1'}
+25	25		202							{1: '1', 6: '1'}
+26	26		201							{1: '3', 2: '1011001'}
+27	27		301							{1: '1', 2: 'Lee', 3: 'Yes, a weapon. What blew up these Constructs is likely a bomb made from pressurized paint.', 4: '3'}
+28	28		301							{2: 'Lee', 3: 'These bombs would cause an almost instantaneous drop in temperature after its explosion, slowing down the affected targets.', 4: '3'}
+29	29		302							"{2: ""Seems like it's learning and evolving."", 3: '30', 4: 'What a monster.', 5: '32'}"
+30	30		204							{1: '3', 2: '10'}
+31	31	33	301							{2: 'Lee', 3: 'Indeed. They go to such disgusting lengths to fight against humanity.', 4: '3'}
+32	32		301							{2: 'Lee', 3: 'Agreed.', 4: '3'}
+33	33		202							{1: '3', 6: '1'}
+34	34		201							{1: '2', 2: '1021001', 3: '4'}
+35	35		301							{1: '1', 2: 'Lucia', 3: 'You really cannot expect even an ounce of conscience in the Corrupted...', 4: '2'}
+36	36		301							"{2: 'Lucia', 3: ""There's no peace to be made between us... Liv, is the area scan complete?"", 4: '2'}"
+37	37		202							{1: '2', 6: '1'}
+38	38		201							{1: '1', 2: '1031001'}
+39	39		301		1		AniZhuanchangBegin			{1: '1', 2: 'Liv', 3: 'Yes! The Levi-Gun parts the supply squad mentioned is nearby.', 4: '1'}

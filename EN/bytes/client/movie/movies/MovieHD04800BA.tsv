@@ -1,0 +1,159 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+2	2		401							{1: '1', 2: '210'}
+3	3		502						250.0	{1: 'DialogDisable'}
+4	4		107							{1: 'A Secluded Conference Room', 2: 'Babylonia'}
+5	5		301							{3: 'Babylonia, a secluded conference room.'}
+6	6		108							{1: '1'}
+7	7		201							{1: '1', 2: '501298'}
+8	8		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Bianca', 3: ""It's ten minutes past the scheduled time. Everyone should be here by now, so let's begin."", 4: '1'}"
+9	9		202							{1: '1', 6: '1'}
+10	10		306						400.0	{1: '1'}
+11	11		201							{1: '1', 2: '501385', 4: '600'}
+12	12		201							{1: '2', 2: '501239'}
+13	13		201						1000.0	{1: '3', 2: '501184', 4: '-600'}
+14	14		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+15	15		201							{1: '1', 2: '501328', 4: '400'}
+16	16		201						1000.0	{1: '2', 2: '501187', 4: '-400'}
+17	17		202							{1: '1', 2: '2'}
+18	18		306						400.0	
+19	19		301			DialogEnable				{1: '1', 3: 'Thrown together at a single table are the Gray Raven members, the Cerberus captain, a musician from WGAA, a taciturn maid, and a devil-tailed mechanoid girl... It sounds like the start of a bad joke, making the scene feel utterly bizarre.'}
+20	20		201							{1: '1', 2: '501298'}
+21	21		301							"{1: '1', 2: 'Bianca', 3: ""Let me summarize the situation. A few days ago, the system automatically posted a birthday notification for the Gray Raven Commandant, visible only to the Commandant's contacts."", 4: '1'}"
+22	22		301							{2: 'Bianca', 3: 'At that very moment, everyone who replied to the post, myself included, received a meeting alert. It seems we are all being asked to collaborate on planning a suitable celebration.', 4: '1'}
+23	23		202							{1: '1', 6: '1'}
+24	24		201							{1: '1', 2: '501385'}
+25	25		301							{1: '1', 2: 'Liv', 3: 'Considering how busy Gray Raven has been with missions lately, the birthday should be a chance for proper rest. I could prepare a specialized recuperation plan.', 4: '1'}
+26	26		202							{1: '1', 6: '1'}
+27	27		201							{1: '1', 2: '501187', 4: '-400'}
+28	28		201							{1: '2', 2: '501328', 4: '400'}
+29	29		204							{1: '1', 2: '9'}
+30	30		301							"{1: '1', 2: 'Jetavie', 3: ""Oh, come on, it's a birthday, not a medical check-up! Relaxing can mean having fun, you know? I should take the Chosen One to a secret spot, somewhere no one would ever find us."", 4: '1'}"
+31	31		301							"{2: 'Discord', 3: ""An undisclosed location? I must voice my strong opposition to that idea. The Commandant's safety is paramount."", 4: '2'}"
+32	32		202							{1: '1', 2: '2', 6: '1'}
+33	33		201							{1: '1', 2: '501239', 3: '8'}
+34	34		401							{1: '2', 2: '5482'}
+35	35		301							{1: '1', 3: 'Across from her, the red-haired Construct leans on one arm, chuckling softly as she drums her fingers on the table.'}
+36	36		301							"{2: 'Vera', 3: ""Why is this even a debate? The Commandant isn't going anywhere. I've already got plans—"", 4: '1'}"
+37	37		204							{1: '1', 2: '13'}
+38	38		402							{1: '5482'}
+39	39		301							{2: 'Vera', 3: 'Just finalized.', 4: '1'}
+40	40		202				DialogDisable		200.0	{1: '1'}
+41	41		401						500.0	{1: '2', 2: '4421'}
+42	42		401							{1: '2', 2: '4422'}
+43	43		201							{1: '1', 2: '501366', 3: '5', 4: '0', 5: '-20', 6: '-200'}
+44	44		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+45	45		301			DialogEnable				{1: '1', 3: 'The projection device at the end of the table suddenly hums and lights up on its own. The dragon-winged knight from the Church of Machina shows up in the image, frowning in displeasure.'}
+46	46		301							"{2: 'Veronica', 3: ""Let's settle this with a duel. I'm not going to lose."", 4: '1'}"
+47	47		202							{1: '1', 6: '1'}
+48	48		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+49	49		201							{1: '1', 2: '501184', 3: '7'}
+50	50		301				AniZhuanchangBegin			"{1: '1', 2: 'Selena', 3: ""A beautiful piece of theatre doesn't require such intense conflict... I believe a day of peaceful, quiet happiness is a precious gift in itself for the Commandant."", 4: '1'}"
+51	51		502							{1: 'DialogDisable'}
+52	52		202							{1: '1'}
+53	53		401						2000.0	{1: '1', 2: '36'}
+54	54		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+55	55		302			AniZhuanchangEnd				{2: '(Am I even supposed to be hearing this...?)', 3: '56'}
+56	56		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+57	57		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+58	58		401							{1: '1', 2: '6151', 3: '5'}
+59	59		301			DialogEnable				{3: 'Familiar voices come through your earpiece, arguing about something, slowly waking you from a light afternoon nap.'}
+60	60		301				DialogDisable			"{3: ""You check your terminal. Turns out you got pulled into an online meeting. They're still busy debating over you, and no one's noticed you're already here.""}"
+61	61		302							{2: '(Should I be saying something right now?)', 3: '62'}
+62	62		509						350.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg', 2: '1'}
+63	63		201							{1: '11', 2: '501298', 3: '9', 4: '-500'}
+64	64		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '11'}
+65	65		301			DialogEnable				"{1: '11', 2: 'Bianca', 3: ""Meetings really do all fall into the same pattern... A small blessing the Commandant isn't here to witness this."", 4: '11'}"
+66	66		302							{2: '...', 3: '67', 4: '(Better not.)', 5: '67'}
+67	67		202							{1: '11', 6: '1'}
+68	68		201							{1: '11', 2: '501385', 3: '4', 4: '-500'}
+69	69		301							{1: '1', 2: 'Liv', 3: 'Everyone, please listen to me.', 4: '11'}
+70	70		204							{1: '11', 2: '8'}
+71	71		301							"{3: ""Liv seems to have made up her mind, drawing everyone's attention to herself.""}"
+72	72		204							{1: '11', 2: '4'}
+73	73		301							"{2: 'Liv', 3: ""If we can't agree on a single plan, perhaps we could each prepare our own gift or activity, and present all the options to the Commandant? Let the Commandant choose."", 4: '11'}"
+74	74		204							{1: '11', 2: '1'}
+75	75		301							{2: 'Liv', 3: 'After all, the star of that day is <b>the Commandant</b>.', 4: '11'}
+76	76		202							{1: '11'}
+77	77		301							{3: 'Everyone at the table falls silent for a moment, then starts nodding in agreement.'}
+78	78		302							{2: 'Why do I suddenly feel kind of relieved?', 3: '79', 4: '(Sigh in relief)', 5: '79'}
+79	79		201							{1: '11', 2: '501187', 3: '2', 4: '-500'}
+80	80		301							"{1: '11', 2: 'Jetavie', 3: 'Ooh, I like that! Let\'s turn our plans into blind boxes and put them in a gacha machine! ""A thrilling surprise in every pull!"" Humans are totally into that these days, right?', 4: '11'}"
+81	81		401							{1: '2', 2: '5274'}
+82	82		204							{1: '11', 2: '9'}
+83	83		301							{3: 'The little devil girl perks right up, waving her hand to open a few holographic screens and quickly building a cube model.'}
+84	84		202							{1: '11', 6: '1'}
+85	85		201							{1: '11', 2: '501184', 3: '1', 4: '-500'}
+86	86		301				DialogDisable			{1: '1', 2: 'Selena', 3: 'The WGAA has dabbled in blind box projects. The key is in the presentation...', 4: '11'}
+87	87		401							{1: '2', 2: '2959'}
+88	88		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+89	89		505						500.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+90	90		202							{1: '11', 6: '1'}
+91	91		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+92	92		510							{1: '1'}
+93	93		401						1000.0	{1: '2', 2: '825'}
+94	94		302							{2: 'Hm? Did the signal just cut off?', 3: '95'}
+95	95		301			DialogEnable				"{3: ""Just as unexpectedly as it appeared, the meeting room feed cuts out. You try to reconnect, but it's gone without a trace, as if it never existed.""}"
+96	96		302							"{2: 'Could that be part of the design too...?', 3: '97', 4: ""Now it's really making me curious."", 5: '97'}"
+97	97		301				AniZhuanchangBegin			{3: 'Lunch break is ending. With a burning curiosity to see how the situation will develop, you head back to work.'}
+98	98		502							{1: 'DialogDisable'}
+99	99		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory717.jpg'}
+100	100		401						2000.0	{1: '1', 2: '36'}
+101	101		401							{1: '1', 2: '204'}
+102	102		107			AniZhuanchangEnd				"{1: ""Commandant's Lounge, Babylonia"", 2: 'Several Days Later'}"
+103	103		301							"{3: ""Several days later, Commandant's lounge, Babylonia.""}"
+104	104		108							{1: '1'}
+105	105		301			DialogEnable	DialogDisable			{3: 'The morning light feels soft and clear. Your schedule is completely empty. After being busy for so long, it feels strange to suddenly have a quiet day like this.'}
+106	106		401							{1: '2', 2: '4649'}
+107	107		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg', 3: '0', 4: '1', 5: '1.5'}
+108	108		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+109	109		205							{1: '999'}
+110	110		301			DialogEnable				"{3: 'When you open the door, there\'s a familiar-looking metal cube box sitting there. Printed on it in neat letters are the words: ""To Gray Raven Commandant: Please place your hand on the marked area for 3 seconds.""'}"
+111	111		301				DialogDisable			"{3: 'There\'s a little handwritten note stuck underneath: <i>""If you don\'t do it, it\'ll jump up and bite you!""</i>'}"
+112	112		302							"{2: '(Try to find what might be the mouth on the box)', 3: '113', 4: ""Alright, alright, I'll do it."", 5: '113'}"
+113	113		401							{1: '2', 2: '4650'}
+114	114		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+115	115		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory717.jpg'}
+116	116		301			DialogEnable	DialogDisable			"{3: ""You bring the box inside and place your hand on it like the instructions say. The box gives a soft hum, then a voice message starts to play. It's clearly been stitched together from different clips.""}"
+117	117		401							{1: '2', 2: '4824'}
+118	118		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageOpen.prefab', 2: '3', 5: '4'}
+119	119		511						250.0	{1: '4', 2: '0', 3: '0|-80|-200'}
+120	120		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.5', 5: '0.2'}
+121	121		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab', 2: '3', 5: '5'}
+122	122		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '3'}
+123	123		511							{1: '5', 2: '0', 3: '0|-80|-200'}
+124	124		201							{1: '1', 2: '501366', 3: '5', 4: '0', 5: '-20', 6: '-200'}
+125	125		301			DialogEnable				"{1: '1', 2: 'Veronica', 3: ""You opened it that easily? Where's your vigilance?"", 4: '1'}"
+126	126		202							{1: '1', 6: '1'}
+127	127		201							{1: '1', 2: '501239', 3: '13'}
+128	128		301							"{1: '1', 2: 'Vera', 3: ""Looks like I'll have to keep a much closer watch on you from now on. Let's be clear: consider yourself held hostage by this recording. No moving until it's finished."", 4: '1'}"
+129	129		302							"{2: ""You've told me about the rewards. What about the punishments?"", 3: '130', 4: '(Instinctively flex your wrists)', 5: '130'}"
+130	130		202							{1: '1', 6: '1'}
+131	131		201							{1: '1', 2: '501187', 3: '1'}
+132	132		301							{1: '1', 2: 'Jetavie', 3: 'To celebrate the day the universe was graced with you, Chosen One, I—ugh, fine, we—built this blind box machine.', 4: '1'}
+133	133		202							{1: '1', 6: '1'}
+134	134		201							{1: '1', 2: '501298', 3: '1'}
+135	135		301							{1: '1', 2: 'Bianca', 3: 'Invitations, plans, keepsakes, clues... all are sealed within individual boxes, each a small mystery crafted for you.', 4: '1'}
+136	136		202							{1: '1', 6: '1'}
+137	137		201							{1: '1', 2: '501184', 3: '1'}
+138	138		301							{1: '1', 2: 'Selena', 3: 'The true magic lies in that moment when you open it with your own hands.', 4: '1'}
+139	139		202							{1: '1', 6: '1'}
+140	140		201							{1: '1', 2: '501328', 3: '1'}
+141	141		301							{1: '1', 2: 'Discord', 3: 'Each item inside is unique. Yet, they all share one common thread.', 4: '1'}
+142	142		202							{1: '1', 6: '1'}
+143	143		201							{1: '1', 2: '501385', 3: '2'}
+144	144		301							{1: '1', 2: 'Liv', 3: 'We just hope you enjoy today, and every moment that comes after.', 4: '1'}
+145	145		202							{1: '1'}
+146	146		401							{1: '2', 2: '2982'}
+147	147		301							{1: '1', 3: 'A rustling static sound rises, followed by soft laughter drifting from somewhere far away.'}
+148	148		201							{1: '1', 2: '501139'}
+149	149		301							"{1: '1', 2: 'Lilith', 3: ""Such conventional offerings from the others. They're squandering this precious, once-a-year chance. If you desire an experience that truly quickens the pulse... come find me. A delight, or a delicious fright?"", 4: '1'}"
+150	150		202							{1: '1'}
+151	151		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageEnd.prefab', 2: '3'}
+152	152		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab', 5: '5'}
+153	153		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+154	154		401							{1: '2', 2: '4688'}
+155	155		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.5', 4: '0', 5: '0.2'}
+156	156		301							{3: 'The cube suddenly opens up, its metal pieces unfolding, flipping, and folding again like a flower blooming, revealing its precious core.'}
+157	157		301							"{3: 'There are eight small boxes, each different, and one sparkling message: <b>""Happy Birthday!""</b>'}"
+158	158		301		1		AniZhuanchangBegin			{3: 'Now then, which one should you open first?'}

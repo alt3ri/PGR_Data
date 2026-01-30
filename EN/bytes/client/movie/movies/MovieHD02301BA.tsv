@@ -1,0 +1,247 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory393.jpg'}
+2	2		401							{1: '1', 2: '209'}
+3	3		301			DialogEnable				{3: 'The morning sun bestows its gentle touch upon the land. Amidst the blossoming flowers, a girl stands, basking in the radiant glow.'}
+4	4		201							{1: '1', 2: '500426'}
+5	5		301							{1: '1', 3: 'Roaming through the sea of vibrant hues, the hero extends her arms, trying to embrace every tide surrounding her.', 4: '1'}
+6	6		301							{3: '...Until Mr. Guardian appears in the distance, standing firm with a sword in hand to confront the hero.', 4: '1'}
+7	7		301							{3: 'However, heeding the scene before him, he somehow chooses to lower his weapon.'}
+8	8		301							{3: 'Then, at a delightful pace, Mr. Guardian cheerfully capers into the embrace of the flower sea...'}
+9	9		202						100.0	{1: '1', 6: '1'}
+10	10		201							{1: '1', 2: '500576', 3: '4'}
+11	11		301							{1: '1', 2: 'Ayla', 3: 'Cut.', 4: '1'}
+12	12		301							{2: 'Ayla', 3: 'Why is it like this sea of flowers has some special allure?', 4: '1'}
+13	13		301							{2: 'Ayla', 3: 'And how do you want to introduce the conflict...', 4: '1'}
+14	14		202							{1: '1', 6: '1'}
+15	15		201							{1: '2', 2: '1031001', 3: '3'}
+16	16		301							{1: '1', 2: 'Liv', 3: 'Hmm...', 4: '2'}
+17	17		301							{2: 'Liv', 3: 'What about this?', 4: '2'}
+18	18		202							{1: '2', 6: '1'}
+19	19		301							{3: 'Seeing that Mr. Guardian has trampled on the flowers, the hero immediately stops and calls out to him.'}
+20	20		201							{1: '1', 2: '500426'}
+21	21		301							"{1: '1', 2: 'Hero', 3: ""Please don't step on the flowers. They are saying it hurts a lot."", 4: '1'}"
+22	22		301							{3: 'Despite being forced back to the edge of the flower sea, Mr. Guardian persists in his return.'}
+23	23		301							{3: 'After several failed attempts to stop Mr. Guardian from damaging the flowers, the hero finally cannot take it anymore.'}
+24	24		301							{2: 'Hero', 3: 'You shall taste...', 4: '1'}
+25	25		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+26	26		301							{2: 'Hero', 3: 'The wrath of the flowers!!', 4: '1'}
+27	27		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+28	28		202							{1: '1'}
+29	29		201							{1: '1', 2: '1031001', 3: '1'}
+30	30		301							{1: '1', 2: 'Liv', 3: 'Holding up her weapon, the hero charges toward Mr. Guardian.', 4: '1'}
+31	31		301							{2: 'Liv', 3: 'A fierce battle erupts, each participant striving to force the other out of the flower sea...', 4: '1'}
+32	232		203							{1: '1', 2: '0.15', 3: '-400'}
+33	231		201							{1: '2', 2: '500576', 3: '4', 4: '400'}
+34	33		301							{1: '1', 2: 'Ayla', 3: 'Cut.', 4: '2'}
+35	34		301							"{2: 'Ayla', 3: ""Wouldn't this reason for conflict be... a bit too mild? Don't you think it lacks some... captivating impact?"", 4: '2'}"
+36	35		204							{1: '1', 2: '3'}
+37	36		301							{2: 'Liv', 3: 'Eh? Is that so...', 4: '1'}
+38	37		301							"{2: 'Liv', 3: ""But I... I don't think I can come up with other reasons for a battle."", 4: '1'}"
+39	38		301							{2: 'Ayla', 3: 'Those flowers carry a special meaning for the hero... for example?', 4: '2'}
+40	39		301							{2: 'Ayla', 3: 'Or, having sensed the threat the Realm Guardian poses, the hero raises her weapon for self-defense?', 4: '2'}
+41	40		301							{2: 'Liv', 3: 'Hmm... I think Lucia might be able to offer some ideas in that direction.', 4: '1'}
+42	800		301							{3: 'Liv casts her gaze on Lucia, who has been listening carefully aside.', 4: '1'}
+43	41		202						100.0	{2: '1', 3: '2', 6: '1'}
+44	42		201							{1: '1', 2: '500166'}
+45	43		301							{1: '1', 2: 'Lucia', 3: 'Me?', 4: '1'}
+46	44		301							"{2: 'Lucia', 3: ""Do you really think I can? I've never tried to write any script..."", 4: '1'}"
+47	45		302							"{2: ""Don't worry. You can give it a shot first."", 3: '223', 4: ""You'll be okay. I believe in you!"", 5: '223'}"
+48	223		201							{1: '1', 2: '500576', 3: '2'}
+49	46		301							{1: '1', 2: 'Ayla', 3: 'Right, give it a try first!', 4: '1'}
+50	47		301							{2: 'Ayla', 3: 'If you have trouble finding inspiration along the way, we can work together to figure it out.', 4: '1'}
+51	224		201							{1: '1', 2: '500166', 3: '1'}
+52	48		301							"{1: '1', 2: 'Lucia', 3: ""Alright... I'll try it first."", 4: '1'}"
+53	49		301							{2: 'Lucia', 3: 'A fierce conflict... Battle... New enemy, maybe...', 4: '1'}
+54	50		301							"{2: 'Lucia', 3: ""Okay, I've got an idea. I'm starting."", 4: '1'}"
+55	51		202							{2: '1', 6: '1'}
+56	52		301							{3: 'The morning sun bestows its gentle touch upon the land. Amidst the blossoming flowers, a girl stands, basking in the radiant glow.'}
+57	53		301							{3: 'Roaming through the sea of vibrant hues, the hero extends her arms, trying to embrace every tide surrounding her.'}
+58	54		301							{3: '...Until Mr. Guardian appears in the distance, standing firm with a sword in hand to confront the hero.'}
+59	55		201							{1: '1', 2: '500568'}
+60	56		301							{1: '1', 2: 'Lee', 3: 'The same opening...?', 4: '1'}
+61	225		201							{1: '1', 2: '500166'}
+62	57		301							"{2: 'Lucia', 3: ""Yeah, I think it's a great scene to start with... Do you think it needs adjustment, Lee?"", 4: '1'}"
+63	226		201							{1: '1', 2: '500568'}
+64	58		301							{2: 'Lee', 3: '...No need. So, what happens next?', 4: '1'}
+65	59		202							{1: '1', 6: '1'}
+66	60		301							{3: 'Instead of offering any response to the hero, Mr. Guardian remains motionless in a distorted posture...'}
+67	61		201							{1: '1', 2: '500449'}
+68	202		401							{1: '2', 2: '1508'}
+69	62		301							{1: '1', 2: 'Realm Guardian', 3: 'Roarrr—', 4: '1'}
+70	63		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 2: '2', 3: '1'}
+71	64		301							{3: 'Suddenly, he erupts into a fearsome roar, while dark mist seeps out from the crevices of his armor.', 4: '1'}
+72	65		301							{3: 'Even the wind seems tainted with an ominous hue, gusting forcefully through the sea of flowers.', 4: '1'}
+73	66		301							{3: 'It spares no living being along its path—flowers wilt and leaves crumble, everything falling into its demise.', 4: '1'}
+74	67		301							{2: 'Ayla', 3: 'Nice tension built up there. Give me more!'}
+75	68		301							{3: 'Mr. Realm Guardian raises his sword, resting it upon his shoulder.', 4: '1'}
+76	69		301							{3: 'Meanwhile, the hero directs her weapon toward him, seemingly determined to jolt him back to his senses through the use of force.', 4: '1'}
+77	70		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 4: '1'}
+78	71		202							{1: '1', 6: '1'}
+79	72		201							{1: '1', 2: '500568', 4: '400'}
+80	73		201							{1: '2', 2: '500166', 4: '-400'}
+81	74		301							{1: '1', 2: 'Lee', 3: 'A one-on-one? Judging from their data, the hero still has quite a significant advantage.', 4: '1'}
+82	75		301							{2: 'Lee', 3: 'Considering the current status of both parties, the hero has an over 99% chance of winning.', 4: '1'}
+83	76		301							{2: 'Lucia', 3: 'Oh... I forgot about that. Then, let me make an adjustment.', 4: '2'}
+84	77		301							"{2: 'Lucia', 3: ""It's not only Mr. Guardian alone but two guardians."", 4: '2'}"
+85	78		202							{1: '1', 2: '2', 6: '1'}
+86	79		201							{1: '1', 2: '500449', 4: '400'}
+87	80		201							{1: '2', 2: '500449', 4: '-400'}
+88	210		401							{1: '2', 2: '1508'}
+89	81		301							{1: '1', 2: 'Guardian Duo', 3: 'Roar—', 4: '1', 5: '2'}
+90	82		301							{1: '1', 2: 'Lucia', 3: 'Wait. Actually, it should be three guardians.', 4: '1', 5: '2'}
+91	83		201							{1: '3', 2: '500449'}
+92	211		401							{1: '2', 2: '1508'}
+93	400		402							{1: '209'}
+94	84		301							{1: '1', 2: 'Guardian Trio', 3: 'Roarrr—', 4: '1', 5: '2', 6: '3'}
+95	85		301							"{2: 'Lucia', 3: ""It still doesn't seem enough. Then, I'll make it a group of guardians."", 4: '1', 5: '2', 6: '3'}"
+96	86		201							{1: '4', 2: '500449', 4: '600'}
+97	87		201							{1: '5', 2: '500449', 4: '-600'}
+98	88		301							{1: '1', 3: 'At this moment, the guardians cluster on the battlefield, like a vast array of wholesale products on display.', 4: '1', 5: '2', 6: '3'}
+99	89		301							{2: 'Hero', 3: '...'}
+100	90		301							{2: 'Lee', 3: '...'}
+101	91		301							{2: 'Liv', 3: '...'}
+102	92		302						200.0	{2: '...', 3: '401', 4: 'What a crowd here!', 5: '401'}
+103	401		401							{1: '1', 2: '205'}
+104	93		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '1'}
+105	94		201							{1: '1', 2: '500568', 3: '10', 4: '600'}
+106	95		201							{1: '2', 2: '500166', 4: '-600'}
+107	96		201							{1: '3', 2: '500576', 3: '4'}
+108	97		301							{1: '1', 2: 'Ayla', 3: 'Stop, stop.', 4: '3'}
+109	98		301							"{2: 'Ayla', 3: ""There are too many guardians. The hero won't even stand a chance against them."", 4: '3'}"
+110	99		301							"{2: 'Lucia', 3: ""Emm... I just think it'd be easier to create an epic battle this way."", 4: '2'}"
+111	100		301							{2: 'Lee', 3: 'But the guardian should be a character of exclusivity.', 4: '1'}
+112	101		301							{2: 'Lee', 3: 'Maybe you can try other methods to build up tension.', 4: '1'}
+113	102		301							{2: 'Lucia', 3: 'This feels beyond my capabilities. Any suggestions, Lee?', 4: '2'}
+114	199		204							{1: '1'}
+115	103		301							{2: 'Lee', 3: 'I may have a feasible proposal.', 4: '1'}
+116	104		301							{2: 'Lucia', 3: 'In that case, Ayla, shall we let Lee handle this part?', 4: '2'}
+117	106		301							"{2: 'Lee', 3: ""But I can't guarantee the final outcome due to the lack of practical data."", 4: '1'}"
+118	802		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+119	801		302							{2: 'Never hurts to try.', 3: '803', 4: 'You can start to collect it right now!', 5: '805'}
+120	803		201							{1: '1', 2: '1031001'}
+121	200		301							"{1: '1', 2: 'Liv', 3: ""I'm very interested in Lee's proposal too!"", 4: '1'}"
+122	806		201							{1: '1', 2: '500166'}
+123	804	900	301							{1: '1', 2: 'Lucia', 3: 'Same.', 4: '1'}
+124	807		201							{1: '1', 2: '500568'}
+125	805		301							"{1: '1', 2: 'Lee', 3: ""...Why do I feel you've been having fun watching this?"", 4: '1'}"
+126	812		302							"{2: ""It's priceless to see my team members pushing their limits."", 3: '900'}"
+127	900		201							{1: '1', 2: '500568'}
+128	810		301							{1: '1', 2: 'Lee', 3: '...', 4: '1'}
+129	811		301							"{2: 'Lee', 3: ""Fine, I'll give it a shot."", 4: '1'}"
+130	808		201							{1: '1', 2: '500576', 3: '2'}
+131	107		301							{1: '1', 2: 'Ayla', 3: 'Feel free to let your imagination fly, Lee.', 4: '1'}
+132	809		201							{1: '1', 2: '500568'}
+133	108		301							"{1: '1', 2: 'Lee', 3: ""Alright... I'm starting it."", 4: '1'}"
+134	402		402							{1: '205'}
+135	109		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+136	110		301						200.0	{3: 'The morning sun bestows its gentle touch upon the land. Amidst the blossoming flowers, a girl stands, basking in the radiant glow.'}
+137	111		301							{3: 'Roaming through the sea of vibrant hues, the hero extends her arms, trying to embrace every tide surrounding her...'}
+138	112		301							"{2: 'Ayla', 3: ""Pause. Let's fast-forward to skip this part.""}"
+139	113		504							{1: '0.7'}
+140	114		401							{1: '2', 2: '558'}
+141	115		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '1'}
+142	117		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+143	118		301							{3: 'After a rapid whirring noise...'}
+144	116		504							{1: '0'}
+145	119		201							{1: '1', 2: '500449', 8: '1'}
+146	403		401							{1: '1', 2: '209'}
+147	240		401							{1: '2', 2: '1508'}
+148	120		301							{1: '1', 2: 'Realm Guardian', 3: 'Roarrr—', 4: '1'}
+149	121		203							{1: '1', 2: '0.15', 3: '600'}
+150	122		201							{1: '2', 2: '500426', 4: '-600'}
+151	123		301							{1: '1', 2: 'Hero', 3: 'Mr. Guardian, this seems to be the only way to bring you back to your senses.', 4: '2'}
+152	124		301							{3: 'Holding the weapon that appears out of thin air, the hero casts a resolute gaze upon her opponent.'}
+153	125		301							{2: 'Hero', 3: 'Get ready for my attack with a powerful damage bonus of 23! Super—', 4: '2'}
+154	126		301							{1: '1', 2: 'Realm Guardian', 3: 'Hold on.', 4: '1'}
+155	127		301							{1: '1', 2: 'Hero', 3: '??', 4: '2'}
+156	128		301							{1: '1', 2: 'Realm Guardian', 3: 'Since the darkness has corrupted me, I should be able to summon a dark creature.', 4: '1'}
+157	129		301						200.0	{1: '1', 2: 'Realm Guardian', 3: 'Then, I choose to summon this—Spectral Dragon.', 4: '1'}
+158	270		202							{1: '1', 6: '1'}
+159	130		201							{1: '3', 2: '500437', 4: '400'}
+160	206		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+161	227		401							{1: '2', 2: '777'}
+162	131		301							{1: '1', 3: 'The air stirs with a gust, accompanied by a fierce roar. A giant creature makes its appearance as if returning from the depths of Hell itself.', 4: '3'}
+163	132		301						400.0	{3: 'Spectral Dragon, HP: 3000.', 4: '3'}
+164	404		402							{1: '209'}
+165	207		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+166	133		301							{2: 'Hero', 3: '...', 4: '2'}
+167	134		301							{2: 'Spectral Dragon', 3: '...', 4: '3'}
+168	135		301							{2: 'Hero', 3: '...', 4: '2'}
+169	405		402							{1: '209'}
+170	406		401							{1: '1', 2: '208'}
+171	136		301							{3: 'The peculiar confrontation persists, their hollow stares locked onto each other, until the hero finally reaches her breaking point.', 4: '2', 5: '3'}
+172	137		301							{2: 'Hero', 3: 'Creator, you should really take a look at the creature he summoned. This makes no sense.', 4: '2'}
+173	138		301							"{2: 'Hero', 3: ""Seriously, is it normal for a normal creature to have such ridiculously high HP? It's making me look like a total weakling!"", 4: '2'}"
+174	139		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+175	140		201							{1: '1', 2: '500568'}
+176	141		301							"{1: '1', 2: 'Lee', 3: ""This is no normal creature but a special demon that's not from this land."", 4: '1'}"
+177	142		203							{1: '1', 2: '0.15', 3: '-400'}
+178	143		201							{1: '2', 2: '500576', 3: '7', 4: '400'}
+179	144		301							{1: '1', 2: 'Ayla', 3: 'A special demon?', 4: '2'}
+180	145		301							"{2: 'Lee', 3: ""Yes. It's from a place outside this land, which allows the setting to reasonably extend beyond the boundaries of the original framework."", 4: '1'}"
+181	146		301							{2: 'Ayla', 3: 'Extend beyond... the boundaries of the original framework... Lee, mind if I ask where you found the inspiration?', 4: '2'}
+182	147		301							{2: 'Lee', 3: 'I did research on the Golden Age data about how to design a sequel for a concluded story, and this is what I got from the analysis.', 4: '1'}
+183	148		302							{2: 'Excuse me... I have a question.', 3: '149'}
+184	149		302							"{2: ""If there's a sequel later..."", 3: '150'}"
+185	150		301							{2: 'Lee', 3: 'Then it can be a demon from hell.', 4: '1'}
+186	151		302							"{2: ""If there's a second..."", 3: '152'}"
+187	152		301							{2: 'Lee', 3: 'Then it can be an ancient demon from the depths of hell.', 4: '1'}
+188	153		302							"{2: ""If there's a third..."", 3: '154'}"
+189	154		301							{2: 'Lee', 3: 'A demon from another world.', 4: '1'}
+190	155		301							{3: 'Lee appears completely convinced by this theory, his tone unwaveringly firm.'}
+191	156		301							"{2: 'Lee', 3: ""Theoretically, by incorporating settings that transcend the limitations of the existing framework, it's feasible to extend the story endlessly."", 4: '1'}"
+192	157		301							{2: 'Lee', 3: 'Based on the analysis of existing data, this method is the most efficient approach for developing sequels.', 4: '1'}
+193	208		204							{1: '2', 2: '1'}
+194	158		301							"{2: 'Ayla', 3: ""...Lee, you've never read those long serialized web novels from the Golden Age, right? I'm talking about the ones with hundreds of chapters."", 4: '2'}"
+195	159		301							"{2: 'Ayla', 3: ""That's why I have to say this: Cuuuut!"", 4: '2'}"
+196	160		301						500.0	"{3: ""Ayla intentionally elongates the pronunciation of the word, simultaneously initiating a reset in the program, grounding everyone's thoughts back to reality.""}"
+197	212		202						500.0	{1: '1', 2: '2'}
+198	161		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '1'}
+199	162		101						400.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory526.jpg'}
+200	163		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab'}
+201	213		201							{1: '1', 2: '500568', 4: '-400'}
+202	214		201							{1: '2', 2: '500576', 4: '400'}
+203	164		301							{1: '1', 2: 'Lee', 3: 'Did you find any flaw in the logic?', 4: '1'}
+204	165		301							"{2: 'Ayla', 3: ""In theory, you're indeed correct, but if we do it that way..."", 4: '2'}"
+205	166		301							"{2: 'Ayla', 3: ""As the person in charge of the script, I'll most likely end up being hung like a teru teru bozu on the balcony of WGAA for public criticism."", 4: '2'}"
+206	167		301							"{2: 'Lee', 3: ""Guess I'm indeed not cut out for this kind of job."", 4: '1'}"
+207	209		204							{1: '2', 2: '2'}
+208	168		301							{1: '1', 2: 'Ayla', 3: 'No, no, no.', 4: '2'}
+209	169		301							{2: 'Ayla', 3: 'As I told you just now, your theory is correct.', 4: '2'}
+210	170		301							{2: 'Ayla', 3: 'No doubt about it, Mr. Guardian is no longer the right fit for the role of the main villain. We should introduce some new foes for our hero.', 4: '2'}
+211	171		302							{2: 'But what kind of settings should we go with?', 3: '250'}
+212	250		204							{1: '2', 2: '8'}
+213	172		301							{2: 'Ayla', 3: 'Well...', 4: '2'}
+214	175		301							{2: 'Lucia', 3: 'Emm...'}
+215	176		301							{2: 'Liv', 3: 'Hmm...'}
+216	251		204							{1: '1', 2: '10'}
+217	177		301							{2: 'Lee', 3: 'Uh...', 4: '1'}
+218	178		302							{2: 'Ah...', 3: '179'}
+219	179		202							{1: '1', 2: '2', 3: '3', 4: '4'}
+220	180		301							"{3: ""Seated around the table, everyone's face is etched with perplexity.""}"
+221	181		301							"{3: 'Before you lies an open document titled ""Shooting Plan for Dragon Boat Festival Film Sequel"".'}"
+222	182		301						500.0	"{3: ""Clueless about the next step, everyone's thoughts involuntarily drift back to the moment when Celica entrusted you with the task.""}"
+223	183		504							{1: '0.7'}
+224	203		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+225	228		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '1'}
+226	184		201							{1: '1', 2: '500001'}
+227	185		301							{1: '1', 2: 'Celica', 3: 'The special film we made for the Dragon Boat Festival before was well received.', 4: '1'}
+228	186		302							{2: 'You mean the one where we defeated OVERLORD CELICA?', 3: '300'}
+229	300		204							{1: '1', 2: '4'}
+230	187		301							{2: 'Celica', 3: 'Defeated? Why do I remember it was someone taking the lead to snatch the key item and escape the scene using a dirty trick?', 4: '1'}
+231	188		301							{2: 'Lee', 3: 'It was a tactical retreat...'}
+232	189		301							"{2: 'Celica', 3: ""Ahem... Anyway, we've received quite some positive reviews on that heroic adventure story."", 4: '1'}"
+233	190		301							"{2: 'Celica', 3: ""And after some discussion, we decided to release a sequel during this year's Dragon Boat Festival event."", 4: '1'}"
+234	191		301							{2: 'Celica', 3: 'A story about the heroes returning to the Realm of Dragons one year after their initial departure.', 4: '1'}
+235	301		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '1'}
+236	192		202					400.0		{1: '1', 6: '1'}
+237	193		504							{1: '0'}
+238	204		101						0.15	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory526.jpg'}
+239	194		301							{3: 'Therefore, for the script of the sequel...'}
+240	195		301							{3: 'Gray Raven and Ayla have stayed at WGAA for an entire afternoon.'}
+241	196		301				AniZhuanchangBegin			{3: '...'}
+242	221		501			DialogDisable				{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '1'}
+243	222		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab'}
+244	409		201							{1: '1', 2: '500449'}
+245	197		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory393.jpg'}
+246	198		301		1	DialogEnable	AniZhuanchangBegin			{1: '1', 2: 'Realm Guardian', 3: 'Finally, you decided to give me a break! May the dragons bless you.', 4: '1'}

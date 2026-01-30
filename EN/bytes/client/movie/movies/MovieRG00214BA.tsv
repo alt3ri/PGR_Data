@@ -1,0 +1,30 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory99.png'}
+2	523		401							{1: '1', 2: '201'}
+3	2		301							{1: '1', 2: 'Pilot', 3: 'Approaching Abyssea Shipyard.'}
+4	3		301							{1: '1', 2: 'Pilot', 3: 'Please wait. Connecting to the ground.'}
+5	4		301							{1: '1', 2: 'Pilot', 3: 'Observation point 4-3. This is Mother Swan-17. You may speak now.'}
+6	5		301							{1: '1', 2: 'Pilot', 3: '...?'}
+7	6		301							{1: '1', 2: 'Pilot', 3: 'This is Mother Swan-17. Copy. Switch to 0-1-0. Take the backup final.'}
+8	7		302							{2: 'Did something happen?', 3: '8'}
+9	8		301							"{1: '1', 2: 'Pilot', 3: ""The tarmac outside the shipyard has been occupied by the Corrupted. We're gonna have to use the backup route.""}"
+10	9		302							{2: 'The backup route?', 3: '10'}
+11	10		301				AniZhuanchangBegin			"{2: 'Pilot', 3: ""It's gonna be a tough ride. Hold on tight!""}"
+12	11		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory29.jpg'}
+13	445		301			AniZhuanchangEnd				"{1: '1', 3: ""As you walk out of the aircraft, you don't see anyone come out to welcome you.""}"
+14	12		201							{1: '1', 2: '1031001', 3: '0', 4: '600'}
+15	13		201							{1: '2', 2: '500166', 3: '0', 4: '0'}
+16	14		201							{1: '3', 2: '1011001', 3: '0', 4: '-600'}
+17	15		301							{1: '1', 2: 'Lucia', 3: '...', 4: '2'}
+18	16		301							{1: '1', 2: 'Lee', 3: '...', 4: '3'}
+19	17		301							{1: '1', 2: 'Liv', 3: 'Should we go find the liaison officer?', 4: '1'}
+20	18		302							"{2: ""...Let's wait a bit."", 3: '19'}"
+21	19		301							{3: '...'}
+22	20		301							"{1: '1', 2: 'Lee', 3: ""Huh? There's something ahead..."", 4: '3'}"
+23	456		202							{1: '1', 2: '2', 3: '3'}
+24	21		301							{1: '1', 2: '???', 3: '...Ba...'}
+25	22		301							{1: '1', 2: '???', 3: '...Babylonia...'}
+26	23		301							{1: '1', 2: '???', 3: '...Are you Babylonia people?'}
+27	24		302							{2: 'Yes.', 3: '25'}
+28	25		301							{1: '1', 2: '???', 3: '...Wonderful!'}
+29	26		301		1		AniZhuanchangBegin			{1: '1', 2: '???', 3: 'Help get rid of the Corrupted behind us!'}

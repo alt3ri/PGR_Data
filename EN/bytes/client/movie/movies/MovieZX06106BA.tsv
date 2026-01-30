@@ -1,0 +1,533 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory32.jpg'}
+2	2		401							{1: '1', 2: '209'}
+3	3		301			DialogEnable	DialogDisable			{3: 'Night falls, its darkness thickened by clouds that shroud the moon.'}
+4	4		306						400.0	{1: '1'}
+5	5		104						1000.0	{1: '-50|0|-150', 2: '1'}
+6	6		104						1000.0	{1: '100|0|-150', 2: '1'}
+7	7		301			DialogEnable	DialogDisable			{3: 'Within the conservation area, silence reigns, broken only by the routine patrols—and by the two Gray Raven members slipping like shadows from their quarters.'}
+8	8		306							
+9	9		104						1000.0	{1: '0|0|0', 2: '1'}
+10	10		201							{1: '1', 2: '501385', 3: '12'}
+11	11		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Liv', 3: ""...Finally, everyone's settled for the night."", 4: '1'}"
+12	12		302							"{2: ""They certainly don't make it easy to get a moment alone."", 3: '13'}"
+13	13		202							{1: '1', 6: '1'}
+14	14		306							{1: '1'}
+15	15		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+16	16		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+17	17		504							{1: '0.7'}
+18	18		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+19	19		201						400.0	{1: '1', 2: '500460', 4: '-300', 7: '1'}
+20	20		203						1500.0	{1: '1', 2: '1.5', 3: '800'}
+21	21		202						400.0	{1: '1'}
+22	22		201						400.0	{1: '1', 2: '500454', 4: '800', 7: '1'}
+23	23		203						1500.0	{1: '1', 2: '1.5', 3: '-800'}
+24	24		202						400.0	{1: '1'}
+25	25		201							{1: '1', 2: '500624', 4: '-400'}
+26	26		201						400.0	{1: '2', 2: '500527', 4: '400'}
+27	27		301			DialogEnable	DialogDisable			{3: 'Ever since you returned from the central plaza, several residents have been lurking around your temporary quarters.'}
+28	28		202							{1: '1', 2: '2', 6: '1'}
+29	29		201							{1: '1', 2: '500268', 4: '-600'}
+30	30		201						800.0	{1: '2', 2: '501114', 4: '600'}
+31	31		203							{1: '1', 2: '0.5', 3: '-400', 5: '-100'}
+32	32		203						800.0	{1: '2', 2: '0.5', 3: '400', 5: '-100'}
+33	33		301			DialogEnable	DialogDisable			"{1: '1', 3: ""This wasn't curiosity; it was surveillance.""}"
+34	34		202							{1: '1', 2: '2', 6: '1'}
+35	35		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory69.jpg'}
+36	36		201						400.0	{1: '1', 2: '501385', 3: '4'}
+37	37		203						500.0	{1: '1', 2: '0.5', 3: '-800'}
+38	38		401						400.0	{1: '2', 2: '2683'}
+39	39		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory454.jpg', 3: '0', 4: '1', 5: '0.5'}
+40	40		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory454.jpg'}
+41	41		205							{1: '999'}
+42	42		301			DialogEnable	AniZhuanchangBegin			{1: '1', 3: 'The ruse only worked after Liv fake-extinguished the lights, and you both waited in silence for another thirty minutes. Convinced that you had gone to sleep, the watchers finally withdrew.'}
+43	43		306						400.0	
+44	44		202							{1: '1'}
+45	45		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+46	46		504						1000.0	{1: '0'}
+47	47		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory32.jpg'}
+48	48		401							{1: '2', 2: '1516'}
+49	49		301			AniZhuanchangEnd	DialogDisable			"{1: '1', 3: ""Under the cover of night, you navigate a world of shifting silhouettes. The patrol soldiers' lanterns warp the conservation buildings into grotesque shapes. You and Liv move between the pulses of light, finding safety in the deep, still darkness behind the structures.""}"
+50	50		201							{1: '1', 2: '501385', 3: '12', 7: '1'}
+51	51		302							{2: 'Is there a way to find out where the doctor is staying?', 3: '52'}
+52	52		301			DialogEnable	DialogDisable			"{2: 'Liv', 3: ""I have a feeling her quarters won't be far from the medical station... This way, Commandant."", 4: '1'}"
+53	53		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+54	54		202							{1: '1', 6: '1'}
+55	55		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory308.png'}
+56	56		301			DialogEnable				{3: 'Evading the patrol soldiers, you press yourself into the deep darkness under the eaves. Liv leads you to a surprisingly modest tent.'}
+57	57		201							{1: '1', 2: '501387', 3: '14'}
+58	58		301							{1: '1', 3: 'From within, a warm yellow light spills out. It seems Melinoe, the doctor, has decided to stop concealing her presence.'}
+59	59		204							{1: '1', 3: '2'}
+60	60		301							"{2: 'Melinoe', 3: ""Ah... It's you two. Hello there."", 4: '1'}"
+61	61		301							"{3: ""She's even standing at the entrance of the tent, as if she'd been expecting your visit all along.""}"
+62	62		302							{2: '...', 3: '63', 4: 'H-hello?', 5: '63'}
+63	63		204							{1: '1'}
+64	64		301							{2: 'Melinoe', 3: 'I had a feeling you would come... Please, come in and have a seat.', 4: '1'}
+65	65		301				AniZhuanchangBegin			{2: 'Melinoe', 3: 'We are not enemies. Whatever you wish to know, I will answer.', 4: '1'}
+66	66		202							{1: '1', 6: '1'}
+67	67		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1353.jpg'}
+68	68		401						2000.0	{1: '1', 2: '36'}
+69	69		401							{1: '1', 2: '6244'}
+70	70		401							{1: '2', 2: '4300'}
+71	71		301			AniZhuanchangEnd				{3: 'With a gentle smile, Melinoe draws back the tent flap, releasing a warm, delicate fragrance of wood and herbs to greet you.'}
+72	72		201							{1: '1', 2: '501386', 4: '300', 7: '1'}
+73	73		203							{1: '1', 2: '0.25', 3: '0'}
+74	74		301				DialogDisable			{1: '1', 2: 'Liv', 3: 'Wait, Commandant.', 4: '1'}
+75	75		202							{1: '1'}
+76	76		306						400.0	{1: '1'}
+77	77		104						800.0	{1: '-100|0|-200', 2: '0.5'}
+78	78		401						500.0	{1: '2', 2: '2567'}
+79	79		104						800.0	{1: '100|0|-200', 2: '0.5'}
+80	80		401							{1: '2', 2: '2568'}
+81	81		301			DialogEnable	DialogDisable			{3: 'With a protective step, Liv positions herself in front of you, her gaze darting through the tent to assess it for danger. After a moment, she gestures for you to enter.'}
+82	82		104						1000.0	{1: '0|0|0', 2: '0.5'}
+83	83		301			DialogEnable				{3: 'The space is modest, illuminated by a lantern that casts a warm, yellow glow. Against the walls and across the ground are piles of thick, hand-knitted blankets.'}
+84	84		301							"{3: ""Despite being furnished with crude and basic materials, the air itself holds a comforting warmth that pushes back the night's chill.""}"
+85	85		306						400.0	
+86	86		201							{1: '1', 2: '501388'}
+87	87		301							{1: '1', 2: 'Melinoe', 3: '...Please, make yourselves comfortable.', 4: '1'}
+88	88		401							{1: '2', 2: '5281'}
+89	89		301							{3: 'Melinoe gestures for you to sit, then lifts a kettle from a small stove to pour two cups of hot water.'}
+90	90		306							{1: '1'}
+91	91		301				DialogDisable			{3: 'She makes no attempt to conceal her inhuman hands; their steel framework grinds softly with the movement, a whisper of long-neglected maintenance.'}
+92	92		202							{1: '1'}
+93	93		104						1000.0	{1: '200|0|-150', 2: '0.5'}
+94	94		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront99.png', 3: '0', 4: '1', 5: '0.8'}
+95	95		401							{1: '2', 2: '2902'}
+96	96		301			DialogEnable	DialogDisable			{3: 'With a soft, whirring rustle, a mechanical spider dances in the corner, its eight legs weaving an intricate web in the air.'}
+97	97		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+98	98		104						850.0	{1: '0|0|0', 2: '0.8'}
+99	99		306						500.0	
+100	100		201							{1: '1', 2: '501388'}
+101	101		301			DialogEnable				"{1: '1', 2: 'Melinoe', 3: ""According to human etiquette, one should offer guests tea... I apologize, but I don't have any beverages to serve you."", 4: '1'}"
+102	102		301							{3: 'Melinoe offers an apologetic smile.'}
+103	103		302							"{2: '""According to human etiquette?""', 3: '104'}"
+104	104		204							{1: '1', 2: '14'}
+105	105		301							"{2: 'Melinoe', 3: ""Ah. Forgive me. I haven't properly introduced myself..."", 4: '1'}"
+106	106		301							{3: 'Setting down the kettle, Melinoe straightens her posture and sits formally upright before speaking with measured deliberation.'}
+107	107		204							{1: '1', 2: '10'}
+108	108		301							{2: 'Melinoe', 3: 'My name is Melinoe. As you can see, I am a mechanoid.', 4: '1'}
+109	109		301							{3: 'To your surprise, Melinoe openly acknowledges her true identity.'}
+110	110		302							{2: 'Everyone here seems to know.', 3: '111'}
+111	111		301							"{3: ""This isn't a question. Clearly, the residents of the conservation area have been collectively guarding the doctor's secret.""}"
+112	112		204							{1: '1', 2: '8'}
+113	113		301							"{2: 'Melinoe', 3: ""Yes. I've never tried to hide it from them."", 4: '1'}"
+114	114		204							{1: '1', 2: '14'}
+115	115		401							{1: '2', 2: '913'}
+116	116		301							{3: 'A clear nervousness betrays Melinoe as she reaches for the kettle, refilling the teacups in a flimsy gesture meant to disguise her unease.'}
+117	117		402							{1: '913'}
+118	118		204							{1: '1', 2: '10'}
+119	119		301							{2: 'Melinoe', 3: 'I have never harmed anyone. I simply live here, helping where I can. I perform minor medical duties, though my practical experience is still... limited.', 4: '1'}
+120	120		302							{2: 'Is that all?'}
+121	121		204							{1: '1', 2: '7'}
+122	122		301							{2: 'Melinoe', 3: 'That is all. Because... because I have no combat functions whatsoever...', 4: '1'}
+123	123		301							{3: 'She desperately tries to prove her harmlessness.'}
+124	124		204							{1: '1', 2: '4'}
+125	125		301							"{2: 'Melinoe', 3: 'If... if it is about earlier with Lyam... I did ""absorb"" his feelings of suffering. That much is true.', 4: '1'}"
+126	126		204							{1: '1', 2: '14'}
+127	127		301							{3: 'Her hands twist and fret against each other.'}
+128	128		203							{1: '1', 2: '0.25', 3: '-400'}
+129	129		201							{1: '2', 2: '501385', 3: '12', 4: '400'}
+130	130		301							"{1: '1', 2: 'Liv', 3: '""Absorbing"" emotions... Is that your function?', 4: '2'}"
+131	131		204							{1: '1', 2: '8'}
+132	132		301							{2: 'Melinoe', 3: 'No. It is... my job.', 4: '1'}
+133	133		301							"{3: ""A soft sigh of relief escapes Melinoe's lips, as if she's finally found solid conversational ground. She seizes the topic and runs with it.""}"
+134	134		204							{1: '1', 2: '14'}
+135	135		301							"{2: 'Melinoe', 3: 'For a complete introduction... I am a ""psychologist"" model mechanoid. Psychologist, Generation III, serial number III-0007. ""Melinoe"" is the codename my creators gave me.', 4: '1'}"
+136	136		302							{2: 'A psychologist model...', 3: '137'}
+137	137		204							{1: '2', 2: '3'}
+138	138		301							{2: 'Liv', 3: 'During the Golden Age, they did develop them for therapeutic purposes. But if I remember correctly, the project was terminated after the second generation due to ethical concerns. All existing prototypes were supposed to have been disposed of...', 4: '2'}
+139	139		204							{1: '1', 2: '8'}
+140	140		301							"{2: 'Melinoe', 3: ""But there are always those who see a use for such abilities, aren't there?"", 4: '1'}"
+141	141		204							{1: '2', 2: '4'}
+142	142		301							{2: 'Liv', 3: '...', 4: '2'}
+143	143		302							"{2: 'So, what exactly does a ""psychologist"" model do?', 3: '144', 4: 'I remember reading documents about this at F.O.S...', 5: '146'}"
+144	144		204							{1: '2', 2: '8'}
+145	145	148	301				AniZhuanchangBegin			"{2: 'Liv', 3: 'The ""psychologist"" model mechanoids were developed during the Golden Age, designed to ""regulate"" human emotions...', 4: '2'}"
+146	146		204							{1: '2', 2: '8'}
+147	147		301				AniZhuanchangBegin			"{3: 'You recall records from F.O.S. College about these mechanoids: The ""psychologist"" model mechanoids were developed during the Golden Age, designed to ""regulate"" human emotions...'}"
+148	148		202							{1: '1', 2: '2'}
+149	149		401						1000.0	{1: '1', 2: '36'}
+150	150		306						400.0	{1: '1'}
+151	151		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1200.jpg'}
+152	152		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+153	153		504							{1: '0.7'}
+154	154		401							{1: '2', 2: '212'}
+155	155		301			AniZhuanchangEnd				{3: 'As technology reached its zenith during the Golden Age, a plague of mental illness spread.'}
+156	156		301							{3: 'The wealthy could afford human therapists, but for the poor, the solution had to be cheaper and more scalable.'}
+157	157		301				DialogDisable			{3: 'Thus, to stem a crisis of suicides, the Psychologist Generation I was created—mechanoids equipped with psychological comfort modules to meet a desperate need.'}
+158	158		402							{1: '212'}
+159	159		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory310.png', 3: '0', 4: '1', 5: '0.5'}
+160	160		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory310.png'}
+161	161		205							{1: '999'}
+162	162		401							{1: '2', 2: '5008'}
+163	163		201							{1: '1', 2: '500138'}
+164	164		301			DialogEnable				{1: '1', 2: 'Golden Age Advertisement', 3: 'Is low morale impacting your bottom line? Are your teams struggling with focus, drive, and a lack of corporate synergy?', 4: '1'}
+165	165		301							"{2: 'Golden Age Advertisement', 3: 'Introducing the revolutionary ""Psychologist Generation I""! The future of workforce optimization is here!', 4: '1'}"
+166	166		301							"{2: 'Golden Age Advertisement', 3: 'Healthy, eco-friendly, and with zero side effects! Our proprietary ""positive emotion"" module gently recalibrates the employee psyche, and one session only takes twenty minutes!', 4: '1'}"
+167	167		301			DialogShake	AniZhuanchangBegin			{2: 'Golden Age Advertisement', 3: 'Be among the first to revolutionize your workplace. For a limited time, secure a Psychologist Generation I mechanoid for a one-time investment of just 199,999 credits!', 4: '1'}
+168	168		202							{1: '1', 6: '1'}
+169	169		306							
+170	170		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+171	171		504							{1: '0'}
+172	172		401						2000.0	{1: '1', 2: '36'}
+173	173		401							{1: '1', 2: '229'}
+174	174		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1353.jpg'}
+175	175		201							{1: '1', 2: '501388', 3: '10', 4: '-400', 7: '1'}
+176	176		201							{1: '2', 2: '501385', 3: '12', 4: '400', 7: '1'}
+177	177		301			AniZhuanchangEnd				"{1: '1', 3: ""A flickering Golden Age projection illuminates Liv's terminal. In it, a medical salesman gestures animatedly toward the female mechanoid standing silently behind him—a creation of human-like features.""}"
+178	178		302							"{2: '...And that was it? Just a ""positive emotion module""?', 3: '179'}"
+179	179		301							"{2: 'Melinoe', 3: ""...Of course it wasn't."", 4: '1'}"
+180	180		204							{1: '1', 2: '14'}
+181	181		301							{3: 'Her brow furrows, a pained expression crossing her features as she delves into an unpleasant memory.'}
+182	182		301							"{2: 'Melinoe', 3: 'The positive emotion module was just a placebo, a database of basic psychology. It was barely a bandage. The real ""treatment""... was the emotion extraction procedure that followed.', 4: '1'}"
+183	183		204							{1: '2', 2: '3'}
+184	184		301							{2: 'Melinoe', 3: 'We would translate the brainwaves of negative emotions, isolate the specific neural signals, and then... reverse-compile a program to send back to the brain.', 4: '1'}
+185	185		204							{1: '1', 2: '8'}
+186	186		204							{1: '2', 2: '7'}
+187	187		301							{2: 'Melinoe', 3: 'If you eliminate the neural signals for negative emotions, then the feeling itself... simply ceases to exist.', 4: '1'}
+188	188		204							{1: '2', 2: '8'}
+189	189		301							{2: 'Liv', 3: 'My father was a board member at the medical research center. I remember when the Generation I model launched; the praise was universal. They rushed the development of the Generation II immediately after...', 4: '2'}
+190	190		204							{1: '1', 2: '14'}
+191	191		204							{1: '2', 2: '14'}
+192	192		301				DialogDisable			{2: 'Liv', 3: 'Right as it hit the market... the first medical incident occurred.', 4: '2'}
+193	193		202							{1: '1', 2: '2', 6: '1'}
+194	194		306							{1: '1'}
+195	195		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory385.png'}
+196	196		104							{1: '327|90|-250', 2: '0'}
+197	197		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+198	198		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+199	199		201							{1: '1', 2: '500838', 7: '1'}
+200	200		504						1000.0	{1: '0.7'}
+201	201		104						300.0	{1: '327|90|-300', 2: '0.4'}
+202	202		401							{1: '2', 2: '5804'}
+203	203		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+204	204		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1137.jpg'}
+205	205		202						200.0	{1: '1', 6: '1'}
+206	206		401							{1: '2', 2: '1505'}
+207	207		205						1000.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0.8'}
+208	208		301			DialogEnable				{3: 'A corporate employee stepped casually from the 19th-floor landing, laughing and chatting as he fell.'}
+209	209		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+210	210		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+211	211		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1191.jpg'}
+212	212		201							{1: '1', 2: '500838', 4: '400', 7: '1'}
+213	213		201							{1: '2', 2: '501025', 4: '-400', 7: '1'}
+214	214		401							{1: '2', 2: '2616'}
+215	215		301							"{1: '1', 3: 'Moments before, he had been treated by a ""Psychologist Generation II"" mechanoid for ""work-related anxiety.""'}"
+216	216		202							{1: '1', 2: '2', 6: '1'}
+217	217		402							{1: '2616'}
+218	218		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+219	219		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0'}
+220	220		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1137.jpg'}
+221	221		301				AniZhuanchangBegin			{3: 'The procedure erased his capacity for fear, so he felt no alarm as he stepped into the open air.'}
+222	222		306						400.0	
+223	223		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+224	224		504							{1: '0'}
+225	225		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+226	226		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1353.jpg'}
+227	227		201							{1: '1', 2: '501388', 3: '14', 4: '-400', 7: '1'}
+228	228		201							{1: '2', 2: '501385', 3: '14', 4: '400', 7: '1'}
+229	229		301			AniZhuanchangEnd				"{1: '1', 2: 'Liv', 3: 'After that, a series of medical incidents related to the ""Psychologist Generation II"" occurred in rapid succession. It wasn\'t until the authorities dismantled several units that they uncovered the base logic behind their operations...', 4: '2'}"
+230	230		301							{3: 'Melinoe lets out a deep sigh.'}
+231	231		204							{1: '1', 2: '8'}
+232	232		301							"{2: 'Melinoe', 3: 'When extraction proved insufficient... the ""emotion consumption"" protocol would engage. It would... directly devour the neural activity in those wavelengths.', 4: '1'}"
+233	233		301							{3: 'Once these signals of neural activity are devoured, the emotions they govern briefly vanish from the human experience.'}
+234	234		302							{2: '...', 3: '235'}
+235	235		204							{1: '1', 2: '10'}
+236	236		204							{1: '2', 2: '16'}
+237	237		301							"{2: 'Melinoe', 3: ""It was a fundamental violation of human ethics. That's why the first and second generations were systematically recalled and destroyed."", 4: '1'}"
+238	238		301							"{2: 'Melinoe', 3: 'I am a ""Psychologist Generation III"" mechanoid, developed in secret.', 4: '1'}"
+239	239		204							{1: '1', 2: '14'}
+240	240		301				AniZhuanchangBegin			{3: 'Melinoe gives a sad shake of her head.'}
+241	241		202							{1: '1', 2: '2', 6: '1'}
+242	242		201							{1: '18', 2: '501388', 3: '4', 4: '-30', 5: '-160', 7: '1'}
+243	243		306						400.0	{1: '1'}
+244	244		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory936.png'}
+245	245		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+246	246		201							{1: '1', 2: '501388', 3: '8', 7: '1'}
+247	247		201							{1: '2', 2: '501388', 3: '8', 4: '-400', 7: '1'}
+248	248		201							{1: '3', 2: '501388', 3: '8', 4: '400', 7: '1'}
+249	249		504							{1: '0.7', 2: '1001', 3: '1', 4: '2', 5: '3'}
+250	250		301			AniZhuanchangEnd				{1: '1', 2: 'Melinoe', 3: 'We were already in development when Generation II was launched. The corporation simply buried our existence deeper.', 4: '18'}
+251	251		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+252	252		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+253	253		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1305.jpg'}
+254	254		504							{1: '0.7', 2: '1001'}
+255	255		301							{2: 'Melinoe', 3: 'Subsequently, Generation III units were manufactured in secret. They refused to abandon their investment. The final batch of us... we were auctioned off to the highest bidders through underground channels.', 4: '18'}
+256	256		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+257	257		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1278.jpg'}
+258	258		201							{1: '1', 2: '501387', 3: '8', 7: '1'}
+259	259		504							{1: '0.7', 2: '1001', 3: '1'}
+260	260		301							"{1: '1', 2: 'Melinoe', 3: 'I was purchased by the mining company here. My designation was ""domestic service,"" but my true function was to pacify the workers, to absorb their despair and prevent unrest... until the Punishing Virus came.', 4: '18'}"
+261	261		302							{2: '...And then what happened?', 3: '262', 4: 'What happened in the mine after the Punishing Virus outbreak?', 5: '262'}
+262	262		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+263	263		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1348.jpg'}
+264	264		301							{2: 'Melinoe', 3: 'I remained... trapped in the mine. For a very, very long time.', 4: '18'}
+265	265		204							{1: '1', 2: '7'}
+266	266		301							"{2: 'Melinoe', 3: ""Some of the miners died to machines corrupted by the Punishing Virus... others in the fights over dwindling supplies. As for me... I don't truly understand it. I just... opened my eyes."", 4: '18'}"
+267	267		202							{1: '18'}
+268	268		301							"{3: 'She struggles to articulate her awakening, latching onto the abstract phrase ""opening her eyes"" with visible confusion.'}"
+269	269		202							{1: '1', 6: '1'}
+270	270		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+271	271		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+272	272		201							{1: '18', 2: '501388', 3: '4', 4: '-30', 5: '-160', 7: '1'}
+273	273		301							"{1: '1', 2: 'Melinoe', 3: ""When my senses finally returned to me, everyone was gone. I navigated through the tunnels that hadn't yet collapsed and eventually... found this conservation area."", 4: '18'}"
+274	274		401							{1: '2', 2: '1516'}
+275	275		204							{1: '1', 2: '14'}
+276	276		301				AniZhuanchangBegin			"{2: 'Melinoe', 3: ""At first, I kept my distance. I was too afraid to approach. But in time, I saw the humans here didn't fear me... so I decided to stay. To live among them..."", 4: '18'}"
+277	277		202							{1: '18'}
+278	278		502							{1: 'DialogDisable'}
+279	279		306						400.0	
+280	280		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+281	281		504							{1: '0'}
+282	282		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1353.jpg'}
+283	283		201							{1: '1', 2: '501388', 3: '14', 6: '1'}
+284	284		302			AniZhuanchangEnd				{2: 'Then why hide from us?', 3: '285'}
+285	285		204							{1: '1', 2: '8'}
+286	286		301			DialogEnable				"{2: 'Melinoe', 3: ""...I'm sorry. I'd heard rumors that Babylonia isn't particularly welcoming to mechanoids."", 4: '1'}"
+287	287		301							"{3: ""Melinoe's gaze darts away for a moment, and she clears her throat in embarrassment.""}"
+288	288		204							{1: '1', 2: '4'}
+289	289		301							{2: 'Melinoe', 3: 'I did the same when the Rodent squad first arrived. I kept my distance until I was sure they meant no harm.', 4: '1'}
+290	290		204							{1: '1', 2: '10'}
+291	291		301							"{2: 'Melinoe', 3: 'I asked them about you, but they didn\'t know much. Only that you were ""some elite squad that\'s really tough.""', 4: '1'}"
+292	292		204							{1: '1', 2: '14'}
+293	293		301							"{2: 'Melinoe', 3: ""I was afraid you might... drive me away. After all, I'm not human."", 4: '1'}"
+294	294		301							{2: 'Melinoe', 3: 'I heard you were only here to help clear the Hetero-Creatures from the mine. My plan was to stay hidden until you left. But then... Lyam...', 4: '1'}
+295	295		204							{1: '1', 2: '8'}
+296	296		301							"{2: 'Melinoe', 3: ""I sensed his suffering. I... I couldn't just ignore it."", 4: '1'}"
+297	297		301							{3: 'Her voice tightens with grief.'}
+298	298		301							"{2: 'Melinoe', 3: ""I knew it would expose me. I knew I could only devour his fear and pain, that it wouldn't heal his injuries. But... but..."", 4: '1'}"
+299	299		301							"{3: ""Melinoe's voice trembles.""}"
+300	300		204							{1: '1', 2: '14'}
+301	301		301							{2: 'Melinoe', 3: 'He was calling for his mom...', 4: '1'}
+302	302		301							"{2: 'Melinoe', 3: ""I couldn't... I just couldn't leave that boy there in so much agony..."", 4: '1'}"
+303	303		204							{1: '1', 2: '8'}
+304	304		301							{2: 'Melinoe', 3: 'All I could do was try some basic medical techniques from my database, hoping to ease his suffering, even just a little.', 4: '1'}
+305	305		204							{1: '1', 2: '14'}
+306	306		301							"{2: 'Melinoe', 3: ""But I didn't know any other procedures. The painkillers were all gone. I could only... I could only do the one thing I was built for..."", 4: '1'}"
+307	307		301							{3: 'A faint trail of tears traces a path down her cheek. Stunned, Melinoe scrambles for a cloth, her mind reeling at the biological impossibility betrayed by her own mechanical body.'}
+308	308		204							{1: '1', 2: '8'}
+309	309		301			PanelActor1Shake				{2: 'Melinoe', 3: 'Forgive me, I...', 4: '1'}
+310	310		202							{1: '1'}
+311	311		201							{1: '1', 2: '501385', 3: '15'}
+312	312		301							{1: '1', 2: 'Liv', 3: '...', 4: '1'}
+313	313		202							{1: '1', 6: '1'}
+314	314		201							{1: '1', 2: '501388', 3: '14', 4: '-400'}
+315	315		201							{1: '2', 2: '501385', 3: '14', 4: '600'}
+316	316		203							{1: '2', 2: '0.4', 3: '400'}
+317	317		301							{1: '1', 3: 'Liv lets out a soft sigh and offers her a handkerchief.'}
+318	318		301							"{2: 'Liv', 3: ""We're not going to hurt you. In fact, we've become friends with many mechanoids who are kind to humans..."", 4: '2'}"
+319	319		301							"{2: 'Liv', 3: ""They... I mean, haven't any other mechanoids tried to contact you?"", 4: '2'}"
+320	320		204							{1: '1', 2: '10'}
+321	321		301							{2: 'Melinoe', 3: '...Y-yes... there have been.', 4: '1'}
+322	322		204							{1: '1', 2: '8'}
+323	323		204							{1: '2', 2: '12'}
+324	324		301							{3: 'As her emotions gradually settle, Melinoe wipes away her tears.'}
+325	325		204							{1: '1', 2: '4'}
+326	326		301							{2: 'Melinoe', 3: 'A mechanoid called Arcana contacted me once. She said she belonged to an organization for our kind...', 4: '1'}
+327	327		302							{2: 'The Church of Machina.', 3: '328'}
+328	328		204							{1: '1', 2: '7'}
+329	329		204							{1: '2', 2: '3'}
+330	330		301							{2: 'Melinoe', 3: '...You know of them? I was worried I might have revealed their existence.', 4: '1'}
+331	331		204							{1: '1', 2: '14'}
+332	332		301							{3: 'Melinoe lowers her gaze evasively.'}
+333	333		204							{1: '2', 2: '12'}
+334	334		301							"{2: 'Liv', 3: ""Why didn't you go to them? Find your own kind? Wouldn't you be safer with other mechanoids?"", 4: '2'}"
+335	335		204							{1: '1', 2: '7'}
+336	336		301							{2: 'Melinoe', 3: 'They did give me an address. A place where I could go and live with them. But...', 4: '1'}
+337	337		401						400.0	{1: '1', 2: '36'}
+338	338		204							{1: '1', 2: '14'}
+339	339		204							{1: '2', 2: '7'}
+340	340		301							"{2: 'Melinoe', 3: ""I don't want to leave the humans behind."", 4: '1'}"
+341	341		401							{1: '1', 2: '6244'}
+342	342		204							{1: '1'}
+343	343		301							"{3: ""As her tears fade, a gentle smile dawns on Melinoe's face.""}"
+344	344		204							{1: '2', 2: '3'}
+345	345		301							"{2: 'Melinoe', 3: ""I don't want to leave them. I love these humans, and my existence depends on them."", 4: '1'}"
+346	346		301							{3: 'She smiles with genuine warmth.'}
+347	347		202							{1: '1', 2: '2', 6: '1'}
+348	348		201							{1: '1', 2: '501388'}
+349	349		301							"{1: '1', 2: 'Melinoe', 3: ""It's the core programming of every psychologist mechanoid. Even with self-awareness... I have no desire to break free from this fundamental logic."", 4: '1'}"
+350	350		301							{2: 'Melinoe', 3: 'I love them, and I rely on them.', 4: '1'}
+351	351		202							{1: '1'}
+352	352		306							{1: '1'}
+353	353		201							{1: '1', 2: '501385', 3: '12'}
+354	354		301							"{1: '1', 3: ""Observing Melinoe's innocent smile, you exchange a subtle glance with Liv."", 4: '2'}"
+355	355		202							{1: '1'}
+356	356		301							{3: 'This mechanoid shows no obvious abnormalities—at least, no trace of the Punishing Virus. She appears to be just like Nanami, Hanying, and the other mechanoids you have met.'}
+357	357		301							{3: 'On the surface, her story seems plausible enough.'}
+358	358		301							{3: 'While this is no reason to let your guard down, it may be an opportunity to learn what is truly happening inside the mine.'}
+359	359		306							
+360	360		201							{1: '1', 2: '501388', 4: '-400'}
+361	361		201							{1: '2', 2: '501385', 4: '400'}
+362	362		301							"{1: '1', 2: 'Liv', 3: 'You mentioned you ""worked"" in the mine for a long time... Would you be willing to tell us about the conditions inside?', 4: '2'}"
+363	363		204							{1: '2', 2: '2'}
+364	364		301							{2: 'Liv', 3: 'As you know, clearing the Hetero-Creatures from those tunnels is our primary objective.', 4: '2'}
+365	365		204							{1: '1', 2: '2'}
+366	366		301							{2: 'Melinoe', 3: 'Of course.', 4: '1'}
+367	367		301							"{3: ""Melinoe agrees without a moment's hesitation.""}"
+368	368		204							{1: '1', 2: '3'}
+369	369		301							{2: 'Melinoe', 3: 'If the mine can be made safe, it would mean a real chance at survival for the people here... What do you need to know?', 4: '1'}
+370	370		302							"{2: 'What were the ""staff"" in the mine actually doing?', 3: '371', 4: 'What kind of minerals were actually being extracted from the mine?', 5: '380'}"
+371	371		204							{1: '1', 2: '12'}
+372	372		301							"{2: 'Melinoe', 3: 'According to the treatment records I was given, some were miners. The negative emotions I absorbed from them were predominantly ""fear"" and ""frustration.""', 4: '1'}"
+373	373		204							{1: '1', 2: '8'}
+374	374		204							{1: '2', 2: '7'}
+375	375		301							"{2: 'Melinoe', 3: 'The others... were listed as ""researchers."" Their primary emotions were ""exhaustion""... and a profound sense of ""terror.""', 4: '1'}"
+376	376		302							{2: 'Researchers?'}
+377	377		204							{1: '1', 2: '10'}
+378	378		204							{1: '2', 2: '12'}
+379	379	388	301							{2: 'Melinoe', 3: 'There seems to be a large laboratory deep within the complex. But... due to the nature of my function, I was confined to my designated treatment room for most of my operational period.', 4: '1'}
+380	380		204							{1: '1', 2: '14'}
+381	381		301							"{2: 'Melinoe', 3: ""Sorry, I'm not equipped with geological databases, so I can't identify the minerals."", 4: '1'}"
+382	382		204							{1: '1', 2: '8'}
+383	383		301							{3: 'She furrows her brow, straining to search her database for relevant information.'}
+384	384		204							{1: '2', 2: '3'}
+385	385		301							{2: 'Melinoe', 3: 'But they were extracting some kind of crystals... The laboratory existed solely to research them.', 4: '1'}
+386	386		204							{1: '1', 2: '10'}
+387	387		301							"{2: 'Melinoe', 3: ""But... due to the nature of my function, I was confined to my designated treatment room for most of my operational period, so I'm not clear on their specific operations."", 4: '1'}"
+388	388		301							"{3: ""Melinoe pauses briefly, a stream of luminous data flickering across her pupils, as if she's retrieving some information.""}"
+389	389		301							{2: 'Melinoe', 3: 'Based on my internal chronology, this was in the late Golden Age. They had been mining for years, excavating tunnels so vast they formed an entire underground city.', 4: '1'}
+390	390		204							{1: '1', 2: '14'}
+391	391		301							"{2: 'Melinoe', 3: ""After I settled here in the conservation area, I went back a few times to scavenge for supplies... That's when I encountered the Hetero-Creatures you're hunting. And... something else."", 4: '1'}"
+392	392		302							{2: 'What else did you find?', 3: '393'}
+393	393		204							{1: '1', 2: '8'}
+394	394		204							{1: '2', 2: '7'}
+395	395		301							{2: 'Melinoe', 3: '...A child.', 4: '1'}
+396	396		301							{2: 'Liv', 3: '...A child? Inside the mine?', 4: '2'}
+397	397		301							{3: 'Liv asks, visibly stunned.'}
+398	398		204							{1: '1', 2: '14'}
+399	399		301							{2: 'Melinoe', 3: 'In times like these, an adult can barely feed themselves... How could they hope to raise a child?', 4: '1'}
+400	400		301							{3: 'Melinoe lets out a sorrowful sigh.'}
+401	401		204							{1: '1', 2: '10'}
+402	402		204							{1: '2', 2: '15'}
+403	403		301							{2: 'Melinoe', 3: 'I suppose it was a wanderer who, after giving birth, felt she had no other choice. So she left her newborn in the mine.', 4: '1'}
+404	404		204							{1: '1', 2: '8'}
+405	405		301				AniZhuanchangBegin			{2: 'Melinoe', 3: 'That time, I was searching an old warehouse in the mining sector, hoping to find any leftover painkillers...', 4: '1'}
+406	406		202							{1: '1', 2: '2'}
+407	407		401							{1: '1', 2: '36'}
+408	408		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1349.jpg'}
+409	409		504						2000.0	{1: '0.7'}
+410	410		401							{1: '1', 2: '50'}
+411	411		201							{1: '1', 2: '501387', 3: '14', 7: '1'}
+412	412		401							{1: '2', 2: '2902'}
+413	413		301			AniZhuanchangEnd				{2: 'Melinoe', 3: 'Bandages... Ah, these have already deteriorated.', 4: '1'}
+414	414		301							"{3: ""In the supply warehouse, ravaged by time, the fabric crumbled to dust, falling in a soft cascade from the female mechanoid's hands.""}"
+415	415		401							{1: '2', 2: '895'}
+416	416		301							{3: 'She waved the motes from the air, recalibrated her visual module, and forced open another sealed container.'}
+417	417		204							{1: '1', 2: '3'}
+418	418		401						400.0	{1: '2', 2: '2825'}
+419	419		301				DialogDisable			"{2: 'Melinoe', 3: ""Painkillers... Thank goodness, there's still a bottle here."", 4: '1'}"
+420	420		306							{1: '1'}
+421	421		202						400.0	{1: '1'}
+422	422		201							{1: '1', 2: '500902', 7: '1'}
+423	423		201							{1: '2', 2: '500902', 4: '-400', 7: '1'}
+424	424		201						400.0	{1: '3', 2: '500902', 4: '400', 7: '1'}
+425	425		401							{1: '2', 2: '5309'}
+426	426		203							{1: '3', 2: '0.5', 3: '1500'}
+427	427		203							{1: '1', 2: '0.75', 3: '1500'}
+428	428		203						1000.0	{1: '2', 2: '1', 3: '1500'}
+429	429		301			DialogEnable				{3: 'Clutching the barely usable painkillers, Melinoe was about to return to the conservation area when she noticed several Hetero-Creatures converging in the same direction.'}
+430	430		202							{1: '1', 2: '2', 3: '3'}
+431	431		301							{3: 'Faintly, another sound could be heard from that direction...'}
+432	432		306							
+433	433		401							{1: '2', 2: '5835'}
+434	434		201							{1: '1', 2: '501387', 3: '7'}
+435	435		301				DialogDisable			{1: '1', 2: 'Melinoe', 3: '...Crying? How is that possible...', 4: '1'}
+436	436		202							{1: '1', 6: '1'}
+437	437		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1347.jpg', 3: '0', 4: '1', 5: '1.5'}
+438	438		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1347.jpg'}
+439	439		205							{1: '999'}
+440	440		401							{1: '2', 2: '1516'}
+441	441		301			DialogEnable	AniZhuanchangBegin			{3: 'A base-level protocol to protect infants was triggered within her data core. Offering no resistance to the directive, she walked straight into the depths of the pitch-black mine shaft—'}
+442	442		202							{1: '1', 6: '1'}
+443	443		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+444	444		504							{1: '0'}
+445	445		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1353.jpg'}
+446	446		401						2000.0	{1: '1', 2: '36'}
+447	447		401							{1: '1', 2: '229'}
+448	448		201							{1: '1', 2: '501388', 3: '14', 4: '-400'}
+449	449		201							{1: '2', 2: '501385', 3: '14', 4: '400'}
+450	450		301			AniZhuanchangEnd				{1: '1', 2: 'Melinoe', 3: 'The Hetero-Creatures had gathered, surrounding an infant. They were preparing to attack.', 4: '1'}
+451	451		204							{1: '1', 2: '8'}
+452	452		204							{1: '2', 2: '15'}
+453	453		301							{2: 'Melinoe', 3: 'I drove them away and rescued the child... but I paid for it with one arm.', 4: '1'}
+454	454		302							{2: 'Did you find out where the Hetero-Creatures came from?', 3: '455'}
+455	455		204							{1: '1', 2: '14'}
+456	456		301							"{2: 'Melinoe', 3: ""I'm sorry. My combat capabilities are too limited..."", 4: '1'}"
+457	457		301							{3: 'She shakes her head.'}
+458	458		301							"{2: 'Melinoe', 3: ""Even though the Hetero-Creatures aren't particularly drawn to mechanoids, their claws can still tear through my body with ease."", 4: '1'}"
+459	459		204							{1: '1', 2: '8'}
+460	460		301							"{2: 'Melinoe', 3: ""My model is rare. Replacement parts are... scarce. That's why I only dare to scavenge around the outskirts."", 4: '1'}"
+461	461		302							{2: 'And the infant? What happened to the child?', 3: '462'}
+462	462		204							{1: '1', 2: '10'}
+463	463		204							{1: '2', 2: '14'}
+464	464		301							{2: 'Melinoe', 3: '...', 4: '1'}
+465	465		204							{1: '1', 2: '14'}
+466	466		301				DialogDisable			"{2: 'Melinoe', 3: ""I am just a mechanoid. I don't know... how to care for a human infant."", 4: '1'}"
+467	467		306							{1: '1'}
+468	468		202							{1: '1', 2: '2'}
+469	469		104						500.0	{1: '100|0|-200', 2: '0.5'}
+470	470		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront99.png', 3: '0', 4: '1', 5: '0.8'}
+471	471		301			DialogEnable	DialogDisable			{3: 'Lost in thought, Melinoe stares at a corner where that mechanical spider waves its eight slender legs, perpetually mimicking the act of weaving a web.'}
+472	472		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+473	473		104						500.0	{1: '0|0|0', 2: '0.5'}
+474	474		306						500.0	
+475	475		201							{1: '1', 2: '501388', 3: '14'}
+476	476		301			DialogEnable				"{1: '1', 2: 'Melinoe', 3: ""I tried to give her water and food... but she wouldn't take it. She just kept crying."", 4: '1'}"
+477	477		204							{1: '1', 2: '4'}
+478	478		301							{2: 'Melinoe', 3: 'So I tried... I tried to devour her distress. But she was so young. New fears and discomfort would surface instantly, and the crying would start all over again.', 4: '1'}
+479	479		204							{1: '1', 2: '8'}
+480	480		301							"{2: 'Melinoe', 3: ""I didn't know how to comfort her..."", 4: '1'}"
+481	481		301							"{3: ""After all, she's only a mechanoid.""}"
+482	482		203							{1: '1', 2: '0.25', 3: '-400', 6: '1'}
+483	483		201							{1: '2', 2: '501385', 3: '15', 4: '400', 6: '1'}
+484	484		301							{1: '1', 2: 'Liv', 3: 'Where is she now?', 4: '2'}
+485	485		204							{1: '1', 2: '10'}
+486	486		301							{2: 'Melinoe', 3: 'A couple from the conservation area took her in.', 4: '1'}
+487	487		401							{1: '2', 2: '2768'}
+488	488		301							"{3: ""She opens the conservation area's registry and points out the names of the couple.""}"
+489	489		204							{1: '1', 2: '8'}
+490	490		301							"{2: 'Melinoe', 3: ""This couple... their own son didn't live to see his ninth birthday."", 4: '1'}"
+491	491		204							{1: '2', 2: '7'}
+492	492		301							{2: 'Liv', 3: 'How...', 4: '2'}
+493	493		204							{1: '1', 2: '14'}
+494	494		204							{1: '2', 2: '15'}
+495	495		301							"{2: 'Liv', 3: 'I\'ve read the resident manual for Conservation Area 368. Doesn\'t it have a rule that ""children under eight years old receive additional supplies""?', 4: '2'}"
+496	496		301							{3: 'Liv asks anxiously.'}
+497	497		204							{1: '1', 2: '4'}
+498	498		301							{2: 'Melinoe', 3: 'Those rations did help him reach eight years old. And then... he accidentally fell into an open mineshaft.', 4: '1'}
+499	499		204							{1: '2', 2: '16'}
+500	500		301				AniZhuanchangBegin			{2: 'Liv', 3: '...', 4: '2'}
+501	501		202							{1: '1', 2: '2', 7: '1'}
+502	502		306						400.0	{1: '1'}
+503	503		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1338.jpg'}
+504	504		504							{1: '0.7', 2: '1001', 3: '1', 4: '2', 5: '3'}
+505	505		201							{1: '1', 2: '501387', 3: '7', 7: '1'}
+506	506		201							{1: '2', 2: '500527', 4: '-600', 7: '1'}
+507	507		201							{1: '3', 2: '500460', 4: '600', 7: '1'}
+508	508		201							{1: '18', 2: '501388', 3: '14', 4: '-30', 5: '-160', 7: '1'}
+509	509		301			AniZhuanchangEnd				{1: '1', 2: 'Melinoe', 3: 'By the time we found him, it was too late.', 4: '18'}
+510	510		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+511	511		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+512	512		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+513	513		201							{1: '1', 2: '501387', 3: '3', 4: '400', 7: '1'}
+514	514		201							{1: '2', 2: '500463', 4: '-700', 7: '1'}
+515	515		201							{1: '3', 2: '500454', 4: '-300', 7: '1'}
+516	516		401							{1: '2', 2: '5835'}
+517	517		301				AniZhuanchangBegin			{1: '1', 2: 'Melinoe', 3: 'After I brought this child back... I placed her with them. I hoped she might bring some solace into their lives...', 4: '18'}
+518	518		202							{1: '1', 2: '2', 3: '3', 4: '18', 6: '1'}
+519	519		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1353.jpg'}
+520	520		306						400.0	
+521	521		504							{1: '0'}
+522	522		201							{1: '1', 2: '501388', 3: '14', 7: '1'}
+523	523		301			AniZhuanchangEnd				{1: '1', 3: 'Melinoe lowers her gaze.'}
+524	524		204							{1: '1', 2: '8'}
+525	525		301							"{2: 'Melinoe', 3: ""I am just a mechanoid. I don't know... how to raise a human child."", 4: '1'}"
+526	526		204							{1: '1', 2: '10'}
+527	527		301							"{2: 'Melinoe', 3: ""I tried to give her everything I thought was best, but she couldn't grow properly in my care."", 4: '1'}"
+528	528		204							{1: '1', 2: '14'}
+529	529		301							{2: 'Melinoe', 3: 'It was agony to let her go... but I had no other choice, so I asked the couple to take her in.', 4: '1'}
+530	530		301							{2: 'Melinoe', 3: 'Even if she will never call me mother... just being able to watch over her from a distance...', 4: '1'}
+531	531		204							{1: '1', 2: '8'}
+532	532		301		1		AniZhuanchangBegin			{2: 'Melinoe', 3: 'That is enough for me.', 4: '1'}

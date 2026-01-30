@@ -1,0 +1,540 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1290.jpg'}
+2	2		104							{1: '200|50|-150', 2: '0'}
+3	3		501				AniZhuanchangEnd			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '3'}
+4	4		401							{2: '2599'}
+5	5		301			DialogEnable				{3: 'It is the afternoon of March 10th. Riding on horseback, you see light snow falling from the sky. A few thin beams of light pierce through the clouds, making the surrounding landscape appear even more bleak.'}
+6	6		401							{1: '2', 2: '4432'}
+7	7		301				DialogDisable			{3: 'You dismount from the horse, secure the reins, and hurry into the church.'}
+8	8		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+9	9		104							{1: '0|0|0', 2: '0'}
+10	10		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+11	11		402							{1: '2599'}
+12	12		101						800.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory504.jpg'}
+13	13		401							{1: '2', 2: '2887'}
+14	14		401							{2: '229'}
+15	15		301			DialogEnable				"{3: ""The melodious church bells ring as scheduled. It's already 5 o'clock. You're nearly an hour late for your appointment with Bianca.""}"
+16	16		201							{1: '18', 2: '500259', 4: '250', 5: '200', 6: '-250', 7: '1'}
+17	17		301							{1: '1', 2: 'Venice', 3: 'And then, Sister Bianca? What happened next?', 4: '18', 18: '100010812'}
+18	18		201							{1: '18', 2: '501280', 3: '1', 4: '-160', 5: '50', 6: '100', 7: '1'}
+19	19		301							{1: '1', 2: 'Bianca', 3: 'Hmm... Have you finished practicing your writing?', 4: '18', 18: '100010813'}
+20	20		202				DialogDisable			{1: '18'}
+21	21		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+22	22		104						300.0	{1: '0|30|-20', 2: '0.25'}
+23	23		104							{1: '0|0|-50', 2: '0.3'}
+24	24		301			DialogEnable				"{3: ""You can hear Bianca teaching the children in a room down the hall. Just when you are about to pick up your pace, you suddenly hear the squad captain's voice from behind.""}"
+25	25		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+26	26		201							{1: '1', 2: '500565'}
+27	27		301							"{1: '1', 2: 'Squad Captain', 3: ""Commandant, how's the situation on your end?"", 4: '1', 18: '100010814'}"
+28	28		302							{2: '...Not very good.', 3: '29'}
+29	29		202							{1: '1'}
+30	30		401							{1: '2', 2: '1513'}
+31	31		301				DialogDisable			{3: 'The soldier jogs to catch up while you slow down. You signal for him to walk and talk.'}
+32	32		302							{2: 'The snow is very heavy on the west side.', 3: '33'}
+33	33		302							{2: 'We clear the snow in the day, and it returns overnight.', 3: '34'}
+34	34		201							{1: '1', 2: '500565'}
+35	35		301			DialogEnable				{1: '1', 2: 'Squad Captain', 3: '...', 4: '1', 18: '100010815'}
+36	36		302							{2: 'What about you? Is it possible to leave from the east?', 3: '37'}
+37	37		301							{2: 'Squad Captain', 3: 'No... The situation is worse than when you were there a few days ago. The monsters are multiplying.', 4: '1', 18: '100010816'}
+38	38		301							{2: 'Squad Captain', 3: 'Following your orders, one team has been clearing snow in the west, while another has been monitoring the east over the past few days.', 4: '1', 18: '100010817'}
+39	39		301							"{2: 'Squad Captain', 3: ""But here's the truth... The western retreat route is still frozen solid—snow's piled up too deep to clear. Meanwhile, the east is getting hit by warm currents, melting everything fast."", 4: '1', 18: '100010818'}"
+40	40		301							"{2: 'Squad Captain', 3: ""The monsters that were hunting us have tracked us down from the east, too. They're just waiting for the snow to melt..."", 4: '1', 18: '100010819'}"
+41	41		202							{1: '1'}
+42	42		306							{1: '1'}
+43	43		401							{1: '2', 2: '4557'}
+44	44		301				DialogDisable			"{3: ""A stretcher passes by you as you speak. The injured has his eyes tightly shut, his face twisted in agony. It's Toby, who fell seriously ill just days ago.""}"
+45	45		402							{1: '4557'}
+46	46		306							
+47	47		302							{2: 'Toby should be resting. Why is he being carried back?', 3: '48'}
+48	48		201							{1: '1', 2: '500565'}
+49	49		301			DialogEnable				"{1: '1', 2: 'Squad Captain', 3: ""He said that he's got a terminal illness anyway, he might as well help out before he dies, so he insisted on coming with us to scout out the enemy in the east."", 4: '1', 18: '100010820'}"
+50	50		301							"{2: 'Squad Captain', 3: ""Lately, he's been coughing up blood. When he blacks out, he thrashes like a wild animal, and wakes up with no memory of it. We decided bringing him was safer than leaving him alone in the church."", 4: '1', 18: '100010821'}"
+51	51		302							{2: 'Has Bianca looked at him?', 3: '52'}
+52	52		301							{2: 'Squad Captain', 3: 'She did, but what he needs is a real doctor, sigh...', 4: '1', 18: '100010822'}
+53	53		301				DialogDisable			"{2: 'Squad Captain', 3: ""Father Snow came down with the same sickness as Toby a few days back. At his age, he can hardly get out of bed, but he asked us not to tell the Holy Maiden. Didn't want her worrying over him..."", 4: '1', 18: '100010823'}"
+54	54		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+55	55		202							{1: '1', 6: '1'}
+56	56		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory708.jpg'}
+57	57		104							{1: '150|0|-150', 2: '0'}
+58	58		301			DialogEnable				{3: 'You enter the corridor next to the courtyard as you talk.'}
+59	59		201							{1: '18', 2: '500726'}
+60	60		301							"{1: '1', 2: 'Rosie', 3: ""It's a little sad... What happened next, Sister Bianca?"", 4: '18', 18: '100010795'}"
+61	61		201							{1: '18', 2: '501280', 3: '1', 4: '-160', 5: '50', 6: '100', 7: '1'}
+62	62		301							{1: '1', 2: 'Bianca', 3: 'After that...', 4: '18', 18: '100010796'}
+63	63		202				DialogDisable			{1: '18', 6: '1'}
+64	64		302							{2: 'I see...', 3: '65'}
+65	65		201							{1: '1', 2: '500565'}
+66	66		301			DialogEnable				"{1: '1', 2: 'Squad Captain', 3: ""They both need a doctor. The snow on the western road is still too thick, but I'm worried that if we wait any longer, it'll be too late."", 4: '1', 18: '100010824'}"
+67	67		301							{3: 'You make a gesture to tell the squad captain to lower his voice.'}
+68	68		301				DialogDisable			{2: 'Squad Captain', 3: '<size=28>If the Holy Maiden could use her power...</size>', 4: '1', 18: '100010827'}
+69	69		302							{2: 'She used up all her strength praying to protect us.', 3: '70'}
+70	70		302							{2: 'Her body is very frail right now.', 3: '71'}
+71	71		302							"{2: ""And even her power won't be able to help Toby..."", 3: '72'}"
+72	72		302							"{2: ""I'll go again later."", 3: '73'}"
+73	73		302							"{2: ""The children are all still here. We'll leave it for now."", 3: '74'}"
+74	74		301			DialogEnable	DialogDisable			"{2: 'Squad Captain', 3: ""Then I'll go check on Toby first."", 4: '1', 18: '100010828'}"
+75	75		302							{2: 'Okay.', 3: '76'}
+76	76		202						250.0	{1: '1'}
+77	77		104						1000.0	{1: '0|0|-150', 2: '0.9'}
+78	78		401							{1: '2', 2: '13081710'}
+79	79		301			DialogEnable				{3: 'After the squad captain leaves, you quietly find a seat in the back. The moment you look up, your eyes meet those gentle eyes...'}
+80	80		201							{1: '1', 2: '501280', 3: '1'}
+81	81		301							{1: '1', 2: 'Bianca', 3: 'Many years later, the great hero met the venomous snake feared by the world in the black forest...', 4: '1', 18: '100010798'}
+82	82		202							{1: '1'}
+83	83		301				AniZhuanchangBegin			{3: 'She reads the fairy tales in a soft voice, her words carrying a magic that soothes the soul.'}
+84	84		104						1000.0	{1: '0|0|0', 2: '0'}
+85	85		301			AniZhuanchangEnd				{3: 'The children reluctantly leave only after hearing the end of the story. Bianca closes the picture book and walks to where you are sitting.'}
+86	86		201							{1: '1', 2: '501280', 3: '1'}
+87	87		301				DialogDisable			{1: '1', 2: 'Bianca', 3: 'Commandant, you really should be setting a good example for the children.', 4: '1', 18: '100010799'}
+88	88		401							{1: '2', 2: '5286'}
+89	89		203							{1: '1', 2: '0.25', 4: '-50', 5: '-100'}
+90	90		301			DialogEnable				{3: 'She gently brushes the snow off your uniform and takes out a handkerchief to wipe away the water from the melted snow.'}
+91	91		203							{1: '1', 2: '0.25', 4: '0', 5: '0'}
+92	92		302							{2: 'Sorry, Bianca. I was a bit late today.', 3: '93'}
+93	93		204							{1: '1', 2: '7'}
+94	94		301							{2: 'Bianca', 3: 'I heard that you took the soldiers to clear the snow from the mountain paths... What happened? Can we talk about it?', 4: '1', 18: '100010800'}
+95	95		302							"{2: ""The snow is deeper than expected. It'll probably be hard to clear it in a few days."", 3: '96'}"
+96	96		202							{1: '1'}
+97	97		306							{1: '1'}
+98	98		301							{3: 'That is only part of the truth. The snow on the mountain road to the east is about to melt, but enemies are gathering there, so you hide it from her after careful consideration, only telling her about the western side.'}
+99	99		306							
+100	100		301				DialogDisable			{3: 'For a very simple reason.'}
+101	101		401							{1: '2', 2: '4387'}
+102	102		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+103	103		504							{1: '0.7'}
+104	104		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory504.jpg'}
+105	105		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '2'}
+106	106		201							{1: '1', 2: '500055', 7: '1'}
+107	107		301			DialogEnable				"{1: '1', 2: 'Bonnie', 3: ""I've checked up on her. She's been overusing her powers lately, praying nonstop for divine blessings. Her body's at its limit."", 4: '1', 18: '100010829'}"
+108	108		301				DialogDisable			"{2: 'Bonnie', 3: ""Listen, while she's staying at the church, try to keep her from overdoing it, not even a little, or she won't just pass out for a week next time. Am I clear?"", 4: '1', 18: '100010830'}"
+109	109		401							{1: '2', 2: '4388'}
+110	110		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+111	111		202							{1: '1', 6: '1'}
+112	112		504							{1: '0'}
+113	113		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab'}
+114	114		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory708.jpg'}
+115	115		302							{2: '...', 3: '116'}
+116	116		201							{1: '1', 2: '501280'}
+117	117		301			DialogEnable				"{1: '1', 2: 'Bianca', 3: ""I hope you understand that no matter what happens, you don't need to shoulder it all alone."", 4: '1', 18: '100010807'}"
+118	118		204							{1: '1', 2: '1'}
+119	119		301							{2: 'Bianca', 3: 'The warmth of two people together can overcome even the coldest of winters in this world.', 4: '1', 18: '100010808'}
+120	120		302							{2: '...', 3: '121'}
+121	121		202							{1: '1'}
+122	122		301							"{3: ""The Holy Maiden's power is very limited. It certainly doesn't include physical labor like clearing the snow with a shovel... and the monsters from the east will surely force her to draw the ominous Sacred Sword.""}"
+123	123		302							{2: 'I understand.', 3: '124'}
+124	124		301							{3: 'So you only acknowledge her concern, but do not reveal the entire truth.'}
+125	125		204							{1: '1', 2: '0'}
+126	126		201							{1: '18', 2: '500565', 4: '-80', 5: '-80', 6: '100'}
+127	127		301							{1: '1', 2: 'Squad Captain', 3: 'Commandant—', 4: '18', 18: '100010831'}
+128	128		202							{1: '18', 6: '1'}
+129	129		301							"{3: ""A soldier's call can be heard in the distance.""}"
+130	130		302							{2: 'Bianca...', 3: '131'}
+131	131		201							{1: '1', 2: '501280', 3: '1', 5: '-50', 6: '-50'}
+132	132		301							"{1: '1', 2: 'Bianca', 3: ""It's okay."", 4: '1', 18: '100010809'}"
+133	133		401							{1: '2', 2: '5286'}
+134	134		203							{1: '1', 2: '0.25', 3: '0', 4: '0', 5: '0'}
+135	135		301							{3: 'Bianca lets your hand go and gently straightens your collar with both hands.'}
+136	136		204							{1: '1', 2: '1'}
+137	137		301							{2: 'Bianca', 3: 'Godspeed.', 4: '1', 18: '100010810'}
+138	138		301				AniZhuanchangBegin			{3: 'She says with a smile.'}
+139	139		502							{1: 'DialogDisable'}
+140	140		401							{1: '1', 2: '36'}
+141	141		202						1000.0	{1: '1', 6: '1'}
+142	142		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1290.jpg'}
+143	143		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '3'}
+144	144		301			DialogEnable				{3: 'It is March 15th. A sudden blizzard breaks the tranquility that has lasted for days.'}
+145	145		401							{2: '50'}
+146	146		301							{3: 'Looking at the dark clouds gathering on the horizon, Bianca feels uneasy. After hesitating, she decides to also get on her horse.'}
+147	147		201							{1: '1', 2: '500055'}
+148	148		301							{1: '1', 2: 'Bonnie', 3: 'Honestly... why do we have to travel in this weather? And why are we circling around from the west? The little ones will catch a cold!', 4: '1', 18: '100010832'}
+149	149		202							{1: '1'}
+150	150		301							{3: 'Bonnie complains beside you as she looks at the children shivering in the wagon.'}
+151	151		201							{1: '1', 2: '501280'}
+152	152		301							{1: '1', 2: 'Bianca', 3: '...The commandant has deemed today the right time to depart for the southern town. There must be a good reason to act on a day like this.', 4: '1', 18: '100010833'}
+153	153		203							{1: '1', 2: '0.25', 3: '-450'}
+154	154		201							{1: '2', 2: '500055', 4: '450'}
+155	155		301							"{1: '1', 2: 'Bonnie', 3: ""Why didn't they come with us?"", 4: '2', 18: '100010834'}"
+156	156		301				DialogDisable			"{2: 'Bianca', 3: ""The soldiers came with only a handful of horses and wagons, and we need to evacuate quickly and get the children to safety. Then we'll send reinforcements with vehicles to come back for them."", 4: '1', 18: '100010835'}"
+157	157		202							{1: '1', 2: '2', 6: '1'}
+158	158		306							{1: '1'}
+159	159		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory511.jpg'}
+160	160		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory511.jpg'}
+161	161		104							{1: '0|0|-150', 2: '0'}
+162	162		205							{1: '999'}
+163	163		201							{1: '1', 2: '500022', 5: '-100'}
+164	164		301			DialogEnable				{1: '1', 3: 'Bianca looks toward the church, where Father Snow struggles to stand straight as he bids her farewell.'}
+165	165		201							{1: '1', 2: '501280', 7: '1'}
+166	166		301							{1: '1', 2: 'Bianca', 3: 'Father, your health...', 4: '1', 18: '100010836'}
+167	167		201							{1: '1', 2: '500022', 5: '-100', 7: '1'}
+168	168		301							{1: '1', 2: 'Father Snow', 3: 'Go. They need your guidance.', 4: '1', 18: '100010837'}
+169	169		201							{1: '1', 2: '501280', 3: '5', 7: '1'}
+170	170		301							"{1: '1', 2: 'Bianca', 3: ""Father, I don't understand... God said to love people and to love your enemies, but I can't love my enemies precisely because I love people..."", 4: '1', 18: '100010838'}"
+171	171		201							{1: '1', 2: '500022', 5: '-100', 7: '1'}
+172	172		301							{1: '1', 2: 'Father Snow', 3: 'Are you referring to those monsters?', 4: '1', 18: '100010839'}
+173	173		201							{1: '1', 2: '501280', 3: '5', 7: '1'}
+174	174		301							{1: '1', 2: 'Bianca', 3: 'Yes... They bring the plague, kill our soldiers, make you fall ill, and drive us away from our homes...', 4: '1', 18: '100010840'}
+175	175		204							{1: '1', 2: '9'}
+176	176		301							{2: 'Bianca', 3: 'I cannot forgive them... I have sinned, Father.', 4: '1', 18: '100010841'}
+177	177		201							{1: '1', 2: '500022', 5: '-100', 7: '1'}
+178	178		301							"{1: '1', 2: 'Father Snow', 3: ""We're all sinners, including... me. Follow your heart, my child."", 4: '1', 18: '100010842'}"
+179	179		201							{1: '1', 2: '501280', 7: '1'}
+180	180		301							{1: '1', 2: 'Bianca', 3: '...I want to lead everyone out of here.', 4: '1', 18: '100010843'}
+181	181		201							{1: '1', 2: '500022', 5: '-100', 7: '1'}
+182	182		301							"{1: '1', 2: 'Father Snow', 3: ""Yes, go on. I know you're brave, my child."", 4: '1', 18: '100010844'}"
+183	183		201							{1: '1', 2: '501280', 3: '7', 7: '1'}
+184	184		301							{1: '1', 2: 'Bianca', 3: '...Father, are you going to stay here?', 4: '1', 18: '100010845'}
+185	185		201							{1: '1', 2: '500022', 5: '-100', 7: '1'}
+186	186		301							{1: '1', 2: 'Father Snow', 3: 'I... need to stay, I must stay... This... is my choice, and also my faith, Bianca.', 4: '1', 18: '100010846'}
+187	187		301							{2: 'Father Snow', 3: 'Go, Bianca. Go into the light...', 4: '1', 18: '100010847'}
+188	188		301							{2: 'Father Snow', 3: 'Lead your people to where God can see them. I will pray for you here, for everybody.', 4: '1', 18: '100010848'}
+189	189		301				AniZhuanchangBegin			{2: 'Father Snow', 3: 'God loves the world, Bianca.', 4: '1', 18: '100010849'}
+190	190		401							{1: '1', 2: '36'}
+191	191		502							{1: 'DialogDisable'}
+192	192		306							
+193	193		402							{1: '2599'}
+194	194		202						1000.0	{1: '1', 6: '1'}
+195	195		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1290.jpg'}
+196	196		104				AniZhuanchangEnd			{1: '0|0|0', 2: '0'}
+197	197		107							{1: 'The Other Side of the Church'}
+198	198		301							{3: 'The Other Side of the Church'}
+199	199		108							{1: '1'}
+200	200		401							{1: '1', 2: '397'}
+201	201		201							{1: '1', 2: '500565'}
+202	202		301			DialogEnable				"{1: '1', 2: 'Squad Captain', 3: ""...It's been two hours since we split into three squads to scout enemy positions to the east, but only our squad made it back."", 4: '1', 18: '100010850'}"
+203	203		301				DialogDisable			"{2: 'Squad Captain', 3: ""And... Toby... hasn't come back either..."", 4: '1', 18: '100010851'}"
+204	204		302							{2: '...', 3: '205'}
+205	205		302							{2: 'What about Bianca and the others?', 3: '206'}
+206	206		301			DialogEnable	DialogDisable			"{2: 'Squad Captain', 3: ""They've already evacuated from the west. The other soldiers are ready to go at your command..."", 4: '1', 18: '100010852'}"
+207	207		202							{1: '1', 6: '1'}
+208	208		306						200.0	{1: '1'}
+209	209		205						150.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg109_1.jpg', 3: '0', 4: '1', 5: '0.1'}
+210	210		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg109_1.jpg'}
+211	211		205							{1: '999'}
+212	212		301			DialogEnable	DialogDisable			{3: 'In the endless wind and snow, a cluster of red light flickers in and out of sight...'}
+213	213		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1290.jpg', 3: '0', 4: '0', 5: '0'}
+214	214		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1290.jpg'}
+215	215		205							{1: '999'}
+216	216		502							{1: 'DialogEnable'}
+217	217		201							{1: '1', 2: '500565'}
+218	218		301			PanelActor1Shake	DialogDisable			{1: '1', 2: 'Squad Captain', 3: 'Watch out!', 4: '1', 18: '100010853'}
+219	219		203							{1: '1', 2: '0.1', 3: '-100', 4: '-80', 5: '-100'}
+220	220		202							{1: '1'}
+221	221		401							{1: '2', 2: '790'}
+222	222		501					200.0		{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiChopping03.prefab', 2: '2'}
+223	223		401							{1: '2', 2: '2593'}
+224	224		402						250.0	{1: '2593'}
+225	225		205						150.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0.1'}
+226	226		502							{1: 'RImgBg1Shake'}
+227	227		301			DialogEnable				{3: 'The squad captain lunges forward, and blood immediately appears before your eyes—'}
+228	228		401							{1: '2', 2: '4807'}
+229	229		502							{1: 'RImgBg1Shake'}
+230	230		301							"{2: '""Monster""', 3: '(Menacing shriek)'}"
+231	231		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '0', 5: '0'}
+232	232		306							
+233	233		401							{1: '2', 2: '3077'}
+234	234		502							{1: 'RImgBg1Shake'}
+235	235		401							{1: '2', 2: '3077'}
+236	236		301							{3: 'The soldiers are falling one after another before you can even issue a retreat order.'}
+237	237		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+238	238		201							{1: '1', 2: '500141'}
+239	239		301							{1: '1', 3: 'They look just as expected. This is the Punishing Virus that brought death and calamity to the world. But their leader...'}
+240	240		301			PanelActor1Shake	DialogDisable			{2: 'Toby?', 3: 'Comman... dant...', 4: '1', 18: '100010854'}
+241	241		401							{1: '2', 2: '4387'}
+242	242		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+243	243		504							{1: '0.7'}
+244	244		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+245	245		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+246	246		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+247	247		201							{1: '1', 2: '500131'}
+248	248		301			DialogEnable				{1: '1', 2: 'Toby', 3: 'Comman... dant...', 4: '1', 18: '100010855'}
+249	249		202							{1: '1'}
+250	250		301							{3: 'It is March 10th. You leave the courtyard where you and Bianca shared tender moments together and head off to visit Toby Davis, who is gravely ill.'}
+251	251		301							{3: 'The once healthy young man now lies curled up on the bed, his body withered and frail. Even so, that optimistic smile never leaves his lips.'}
+252	252		302							"{2: ""...Why did you insist on going when you're this ill?"", 3: '253'}"
+253	253		201							{1: '1', 2: '500131'}
+254	254		301							"{1: '1', 2: 'Toby', 3: ""Haha, even the Holy Maiden can't cure me. I probably don't have much time left."", 4: '1', 18: '100010856'}"
+255	255		301							"{2: 'Toby', 3: ""Don't be fooled by my looks now. Back home, I was pretty well-liked. Always helping out—cooking for the elders, working the forge, crewing on ships, even playing hide-and-seek with the kids..."", 4: '1', 18: '100010857'}"
+256	256		301							"{2: 'Toby', 3: ""I never got tired, and I was never satisfied. I've always believed that one day I'd become everyone's hero."", 4: '1', 18: '100010858'}"
+257	257		301							"{2: 'Toby', 3: ""That part of me hasn't changed... I still don't wanna die, not by my own hand, not from this sickness. What a damn pathetic way to go..."", 4: '1', 18: '100010859'}"
+258	258		301				DialogDisable			"{2: 'Toby', 3: ""I'd rather die in battle or be killed by one of you, so please let me..."", 4: '1', 18: '100010860'}"
+259	259		401							{1: '2', 2: '4387'}
+260	260		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+261	261		504							{1: '0'}
+262	262		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1290.jpg'}
+263	263		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+264	264		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+265	265		502							{1: 'DialogEnable'}
+266	266		201							{1: '1', 2: '500141'}
+267	267		301			PanelActor1Shake				{1: '1', 2: 'Toby?', 3: '...Become... a hero...', 4: '1', 18: '100010861'}
+268	268		201							{1: '18', 2: '500565', 4: '-80', 5: '-80', 6: '100'}
+269	269		301							"{1: '1', 2: 'Squad Captain', 3: ""Dammit, he doesn't recognize me anymore!"", 4: '18', 18: '100010862'}"
+270	270		401							{1: '2', 2: '1543'}
+271	271		202				DialogDisable			{1: '18', 6: '1'}
+272	272		203							{1: '1', 2: '0.2', 4: '-80', 5: '-150'}
+273	273		401							{1: '2', 2: '819043'}
+274	274		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiChopping03.prefab', 2: '2'}
+275	275		502							{1: 'RImgBg1Shake'}
+276	276		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+277	277		301			DialogEnable				"{3: ""You pull the severely wounded captain back in one swift motion as Toby's blade crashes down where he was crouching.""}"
+278	278		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+279	279		302							{2: '(Attack)', 3: '280'}
+280	280		401						100.0	{1: '2', 2: '2905'}
+281	281		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+282	282		401							{1: '2', 2: '9389038'}
+283	283		502							{1: 'RImgBg1Shake'}
+284	284		301							"{3: 'Clang! The shock from hitting ""Toby\'s"" body sends numbing vibrations up your hand.'}"
+285	285		202							{1: '1'}
+286	286		301							"{3: ""Without modern weapons or Constructs, you can only rely on your physical capabilities, but that's no match against the Corrupted.""}"
+287	287		201							{1: '1', 2: '500565'}
+288	288		301				DialogDisable			"{1: '1', 2: 'Squad Captain', 3: ""They've broken through on all sides! Fall back to the courtyard!"", 4: '1', 18: '100010863'}"
+289	289		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+290	290		202							{1: '1', 6: '1'}
+291	291		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+292	292		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+293	293		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory503.jpg'}
+294	294		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+295	295		401							{1: '2', 2: '1504'}
+296	296		301			DialogEnable				{3: 'You retreat with the squad captain, stepping over the remains of other soldiers scattered across the floor.'}
+297	297		201							{1: '1', 2: '500565'}
+298	298		301							{1: '1', 2: 'Squad Captain', 3: 'Everyone is here on your orders. We can get out through the back door once we pass through the courtyard—', 4: '1', 18: '100010864'}
+299	299		401							{1: '2', 2: '5321'}
+300	300		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+301	301		301			PanelActor1Shake				{2: 'Squad Captain', 3: 'Aaargh!!!', 4: '1', 18: '100010865'}
+302	302		401							{1: '1', 2: '36'}
+303	303		203						550.0	{1: '1', 2: '0.5', 4: '-50'}
+304	304		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+305	305		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+306	306		201							{1: '1', 2: '501148', 7: '1'}
+307	307		301							{1: '1', 2: 'Father Snow?', 3: 'Protect... the courtyard...', 4: '1', 18: '100010866'}
+308	308		401							{1: '2', 2: '4387'}
+309	309		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+310	310		504							{1: '0.7'}
+311	311		401							{1: '1', 2: '36'}
+312	312		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+313	313		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+314	314		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+315	315		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory708.jpg'}
+316	316		401							{1: '1', 2: '207'}
+317	317		201							{1: '1', 2: '500022'}
+318	318		301							{1: '1', 2: 'Father Snow', 3: 'Child... would you keep an old man company for a while?', 4: '1', 18: '100010867'}
+319	319		202							{1: '1'}
+320	320		301							{3: 'After the Sacred Prayer Ritual, you stroll with Father Snow through the courtyard full of newly planted seeds.'}
+321	321		302							{2: 'I heard from Bianca that you left without saying goodbye?', 3: '322'}
+322	322		201							{1: '1', 2: '500022'}
+323	323		301							"{1: '1', 2: 'Father Snow', 3: ""I wanted to bring back some lily seeds for Bianca. You won't find those around here in the Snowfields."", 4: '1', 18: '100010868'}"
+324	324		301							{2: 'Father Snow', 3: 'This courtyard may look barren in winter, but when spring comes, the flowers will bloom in all colors—', 4: '1', 18: '100010869'}
+325	325		301							{2: 'Father Snow', 3: 'I watched Bianca play here as she grew up. I watched her pull out the weeds and plant the lilies with her own hands...', 4: '1', 18: '100010870'}
+326	326		301							{2: 'Father Snow', 3: 'She might have worked at a flower shop. She also loved reading stories, so maybe she would have become a playwright.', 4: '1', 18: '100010871'}
+327	327		301							{2: 'Father Snow', 3: 'But she never had the chance because she was chosen by God as the Holy Maiden, and as a priest, I had to carry out His will...', 4: '1', 18: '100010872'}
+328	328		301							{2: 'Father Snow', 3: 'But as a parent, I only want my children to live an ordinary, happy life.', 4: '1', 18: '100010873'}
+329	329		301							"{2: 'Father Snow', 3: ""So I'm happy to see that she found someone to plant flowers with... Cough... cough..."", 4: '1', 18: '100010874'}"
+330	330		302							{2: 'Are you okay?', 3: '331'}
+331	331		301							"{2: 'Father Snow', 3: ""I'm very ill... I'm afraid I won't make it to spring..."", 4: '1', 18: '100010875'}"
+332	332		301				DialogDisable			{2: 'Father Snow', 3: 'Commandant, can you promise me? Witness with her the day the flowers bloom, and protect the courtyard forever.', 4: '1', 18: '100010876'}
+333	333		302							{2: 'I promise you.', 3: '334', 4: '...', 5: '334'}
+334	334		401							{1: '1', 2: '36'}
+335	335		401							{1: '2', 2: '4388'}
+336	336		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+337	337		504							{1: '0'}
+338	338		401							{1: '1', 2: '152'}
+339	339		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+340	340		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory503.jpg'}
+341	341		502							{1: 'DialogEnable'}
+342	342		201							{1: '1', 2: '501148', 7: '1'}
+343	343		301							{1: '1', 2: 'Father Snow?', 3: 'Protect... the courtyard...', 4: '1', 18: '100010877'}
+344	344		401							{1: '2', 2: '5321'}
+345	345		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+346	346		201							{1: '1', 2: '500565', 7: '1'}
+347	347		301			PanelActor1Shake				{1: '1', 2: 'Squad Captain', 3: 'Aaargh!!!', 4: '1', 18: '100010865'}
+348	348		401							{1: '2', 2: '3077'}
+349	349		203						300.0	{1: '1', 2: '0.25', 4: '-1200'}
+350	350		202							{1: '1'}
+351	351		301							{3: 'A blade pierces the squad captain the moment you step into the courtyard. Along the corridor, the bodies of soldiers who rushed here cover the floor.'}
+352	352		201							{1: '2', 2: '501148', 7: '1'}
+353	353		301			PanelActor2Shake	DialogDisable			{1: '1', 2: 'Father Snow?', 3: 'Protect... the courtyard...', 4: '2', 18: '100010878'}
+354	354		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab', 2: '2'}
+355	355		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab'}
+356	356		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+357	357		203							{1: '2', 2: '0.1', 3: '0', 4: '-100', 5: '-150'}
+358	358		202							{1: '2'}
+359	359		301			DialogEnable	AniZhuanchangBegin			{3: 'The blade that pierced through the squad captain is coming straight at you.'}
+360	360		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+361	361		502							{1: 'DialogDisable'}
+362	362		202							{1: '1', 2: '2', 6: '1'}
+363	363		505						2000.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+364	364		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg3401_06.jpg'}
+365	365		301			DialogEnable				{3: 'After a bumpy journey, the children finally arrive safely at the church in the southern town. Even here, where spring flowers should be blooming in the warm sun, snow covers everything.'}
+366	366		201							{1: '1', 2: '500055'}
+367	367		301							"{1: '1', 2: 'Bonnie', 3: ""The military here promised us they'll soon leave for the Snowfields to rescue them..."", 4: '1', 18: '100010879'}"
+368	368		301							"{2: 'Bonnie', 3: ""Don't worry too much. It's just a bit cold lately. When your commandant arrives, we'll stay here for a month together, and head back once the weather warms up..."", 4: '1', 18: '100010880'}"
+369	369		202							{1: '1'}
+370	370		301							{3: 'The relentless north wind erodes any peace in her heart. The unsettling feeling remains even after she prays silently for half an hour.'}
+371	371		201							{1: '1', 2: '500055'}
+372	372		301							{1: '1', 2: 'Bonnie', 3: 'Bianca, wait! Where are you going?', 4: '1', 18: '100010881'}
+373	373		201							{1: '1', 2: '501280'}
+374	374		301							"{1: '1', 2: 'Bianca', 3: ""I'm heading back to check on them. I can't rest until I know they're safe."", 4: '1', 18: '100010882'}"
+375	375		203							{1: '1', 2: '0.25', 3: '400'}
+376	376		201							{1: '2', 2: '500055', 4: '-400'}
+377	377		301				DialogDisable			"{1: '1', 2: 'Bonnie', 3: ""Come sit with me, dear Holy Maiden. They'll be fine. Just stay here with us."", 4: '2', 18: '100010883'}"
+378	378		202							{1: '1', 2: '2'}
+379	379		401							{1: '2', 2: '4297'}
+380	380		205						350.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.3'}
+381	381		307							"{1: ""Don't go back, don't ever go back—the voice in her heart cries out to her."", 3: '60'}"
+382	382		201							{1: '1', 2: '500024', 4: '-1500'}
+383	383		301							"{1: '1', 3: ""Don't go back, don't ever go back—the voice in her heart cries out to her.""}"
+384	384		307							{2: '1'}
+385	385		205							{1: '1', 3: '0.5', 4: '0.5', 5: '0'}
+386	386		203							{1: '1', 2: '0', 3: '150', 4: '0', 5: '0'}
+387	387		201							{1: '2', 2: '500055', 7: '1'}
+388	388		301			DialogEnable				"{1: '1', 2: 'Bonnie?', 3: ""Even if it's tough and dull, just live an ordinary, peaceful life and become a simple nun like me. We'll do our morning prayers, evening prayers, and read the scriptures..."", 4: '2', 18: '100010884'}"
+389	389		301							{2: 'Bonnie?', 3: 'This is what Father Snow wants for you, and what the commandant wants for you, too. Everyone who chose to stay there is fighting with their lives so that you can find peace.', 4: '2', 18: '100010885'}
+390	390		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+391	391		202							{1: '2', 6: '1'}
+392	392		203							{1: '1', 2: '0', 3: '0', 4: '0', 5: '0'}
+393	393		205							{1: '1', 3: '0.5', 4: '1', 5: '0.2'}
+394	394		301							{1: '1', 2: 'Bonnie?', 3: 'Stay here. Live the life you were meant to live.', 4: '1', 18: '100010886'}
+395	395		202							{1: '1', 6: '1'}
+396	396		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '0', 5: '0'}
+397	397		201							{1: '3', 2: '501280', 3: '9', 7: '1'}
+398	398		301				AniZhuanchangBegin			{1: '1', 2: 'Bianca', 3: '...', 4: '3', 18: '100010887'}
+399	399		502							{1: 'DialogDisable'}
+400	400		202							{1: '3', 6: '1'}
+401	401		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+402	402		205				AniZhuanchangEnd		1000.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/UiFightDetailMapBg.png', 3: '1', 4: '1', 5: '0'}
+403	403		304							{1: '<i>Live the life she was meant to live... but what is that life supposed to be?</i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-1'}
+404	404		304							{1: '<i>To live like a normal girl... Have snowball fights on snowy days, and share an umbrella with someone special on rainy days...</i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-1'}
+405	405		304							"{1: ""<i>Or to listen to people's prayers in the church... some sincere, others not...</i>"", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-1'}"
+406	406		304							{1: '<i>To listen to their confessions, genuine or feigned... To tend to sprouting flowers in the courtyard, and watch children grow up together.</i>', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-1'}
+407	407		304				AniZhuanchangBegin			"{1: ""<i>As long as there's a place she belongs... As long as that person is safe...</i>"", 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-1', 9: '1'}"
+408	408		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/UiFightDetailMapBg.png', 3: '0', 4: '0', 5: '0'}
+409	409		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg3401_06.jpg'}
+410	410		401							{1: '2', 2: '4885', 3: '0.5'}
+411	411		201							{1: '1', 2: '500813'}
+412	412		301			DialogEnable				{1: '1', 2: 'Reinforcement', 3: 'Are any of you from the Snowfields?', 4: '1', 18: '100010888'}
+413	413		201							{1: '1', 2: '501280', 7: '1'}
+414	414		301							"{1: '1', 2: 'Bianca', 3: ""I am. What's the matter?"", 4: '1', 18: '100010889'}"
+415	415		201							{1: '1', 2: '500813', 7: '1'}
+416	416		301							{1: '1', 2: 'Reinforcement', 3: 'Sentries spotted an enemy cluster to the northeast. There are at least over a hundred of them...', 4: '1', 18: '100010890'}
+417	417		402							{1: '4885'}
+418	418		201							{1: '1', 2: '501280', 3: '9', 7: '1'}
+419	419		301							{1: '1', 2: 'Bianca', 3: '...', 4: '1', 18: '100010891'}
+420	420		204							{1: '1', 2: '0'}
+421	421		301							{3: 'All the noise around her fades as her fears come true. She silently picks up her sword, rises to her feet, and heads toward the door.'}
+422	422		203							{1: '1', 2: '0.25', 3: '400'}
+423	423		201							{1: '2', 2: '500055', 4: '-150'}
+424	424		301							{1: '1', 2: 'Bonnie', 3: 'Wait! Reinforcements will reach them in half an hour—', 4: '2', 18: '100010892'}
+425	425		204							{1: '1', 2: '8'}
+426	426		301							{2: 'Bianca', 3: '...Bonnie, may God bless you and all the children.', 4: '1', 18: '100010893'}
+427	427		203							{1: '1', 2: '0.5', 3: '1200'}
+428	428		202				AniZhuanchangBegin			{1: '1'}
+429	429		502							{1: 'DialogDisable'}
+430	430		202							{2: '2', 6: '1'}
+431	431		401						1500.0	{1: '1', 2: '36', 3: '1'}
+432	432		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1290.jpg'}
+433	433		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+434	434		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+435	435		401							{1: '2', 2: '2599'}
+436	436		301			DialogEnable	DialogDisable			{3: 'The horse continues to gallop as the church appears on the horizon. The pale building stands quietly amid the howling, swirling snowflakes.'}
+437	437		401							{1: '2', 2: '844006'}
+438	438		301			DialogEnable				{3: 'Following the ringing clash of blades, she heads toward the open courtyard where the thick stench of blood hits her.'}
+439	439		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+440	440		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+441	441		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory707.jpg'}
+442	442		402							{1: '2599'}
+443	443		201							{1: '1', 2: '500565'}
+444	444		301			PanelActor1Shake				{1: '1', 2: 'Squad Captain', 3: 'Aaargh!!!', 4: '1', 18: '100010894'}
+445	445		201							{1: '1', 2: '501280', 3: '7'}
+446	446		301							{1: '1', 2: 'Bianca', 3: '!!', 4: '1', 18: '100010895'}
+447	447		401							{1: '1', 2: '6223'}
+448	448		302							{2: 'Bian... ca...', 3: '449'}
+449	449		202							{1: '1'}
+450	450		301							{3: 'The moment she steps through the gate, she sees you collapse onto the ground.'}
+451	451		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+452	452		201							{1: '1', 2: '500141'}
+453	453		301							{1: '1', 2: '??', 3: 'Become... a hero...', 4: '1', 18: '100010896'}
+454	454		201							{1: '1', 2: '501148'}
+455	455		301							{1: '1', 2: '??', 3: 'Protect... the courtyard...', 4: '1', 18: '100010897'}
+456	456		202							{1: '1'}
+457	457		301							{3: 'Standing on the corpses scattered everywhere are two deformed creatures.'}
+458	458		301							{3: 'She freezes in the swirling snow, trying to make out the two bloody, mangled faces.'}
+459	459		201							{1: '1', 2: '501280', 3: '7'}
+460	460		301							{1: '1', 2: 'Bianca', 3: 'Father Snow... Toby...?', 4: '1', 18: '100010898'}
+461	461		202							{1: '1', 6: '1'}
+462	462		201							{1: '2', 2: '500141', 4: '-400'}
+463	463		201							{1: '3', 2: '501148', 4: '400'}
+464	464		502							{1: 'PanelActor2Shake'}
+465	465		502							{1: 'PanelActor3Shake'}
+466	466		301							"{1: '1', 3: 'The ""monsters"" seem startled by her voice, and two pairs of lifeless pupils turn toward her.'}"
+467	467		202							{1: '2', 2: '3', 6: '1'}
+468	468		201							{1: '1', 2: '501280', 3: '9'}
+469	469		301							{1: '1', 3: 'Time seems to slow, and Bianca closes her eyes with pain on her face.'}
+470	470		301							{2: 'Bianca', 3: 'O Lord, if you can hear me now...', 4: '1', 18: '100010899'}
+471	471		301				DialogDisable			{2: 'Bianca', 3: 'I have sinned...', 4: '1', 18: '100010900'}
+472	472		401							{1: '2', 2: '4387'}
+473	473		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+474	474		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+475	475		504							{1: '0.7'}
+476	476		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+477	477		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory708.jpg'}
+478	478		201							{1: '1', 2: '500022', 7: '1'}
+479	479		301			DialogEnable	DialogDisable			{1: '1', 2: 'Father Snow', 3: '...Bianca... You have always been a gentle, yet strong and brave child...', 4: '1', 18: '100010901'}
+480	480		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+481	481		401							{1: '2', 2: '4388'}
+482	482		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+483	483		504							{1: '0'}
+484	484		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory707.jpg'}
+485	485		201							{1: '1', 2: '501280', 3: '9', 7: '1'}
+486	486		301			DialogEnable				{2: 'Bianca', 3: '...For which I will atone.', 4: '1', 18: '100010902'}
+487	487		401							{1: '2', 2: '10042608'}
+488	488		204							{1: '1', 2: '5'}
+489	489		301							{3: 'Slight tremors from the blade scraping against the sheath travel up her hand, while ghostly blue sparks burst from the mouth of the scabbard.'}
+490	490		301				DialogDisable			{2: 'Bianca', 3: 'Until then...', 4: '1', 18: '100010903'}
+491	491		202							{1: '1'}
+492	492		205						250.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/UiFightDetailMapBg.png', 3: '0', 4: '1', 5: '0.2'}
+493	493		304							{1: '<size=50>Bianca, if you were given another chance, would you choose differently?</size>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 7: '-3', 9: '1', 10: '1'}
+494	494		205						250.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/UiFightDetailMapBg.png', 3: '0', 4: '0', 5: '0.1'}
+495	495		201							{1: '1', 2: '501280', 3: '9'}
+496	496		301			DialogEnable	DialogDisable			{1: '1', 2: 'Bianca', 3: 'I must sin once more—', 4: '1', 18: '100010904'}
+497	497		401							{1: '2', 2: '4387'}
+498	498		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+499	499		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+500	500		504							{1: '0.7'}
+501	501		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory708.jpg'}
+502	502		201							{1: '1', 2: '500022', 7: '1'}
+503	503		301			DialogEnable	DialogDisable			{2: 'Father Snow', 3: '...Follow your heart, my child...', 4: '1', 18: '100010905'}
+504	504		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+505	505		401							{1: '2', 2: '4388'}
+506	506		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+507	507		504							{1: '0'}
+508	508		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory707.jpg'}
+509	509		201							{1: '1', 2: '501280', 3: '5', 7: '1'}
+510	510		301			DialogEnable	DialogDisable			{1: '1', 2: 'Bianca', 3: 'To bring down judgment—', 4: '1', 18: '100010906'}
+511	511		203							{1: '1', 2: '0.25', 4: '-80', 5: '-150'}
+512	512		202							{1: '1'}
+513	513		401					200.0		{1: '2', 2: '4276'}
+514	514		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab', 2: '2'}
+515	515		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab'}
+516	516		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+517	517		301			DialogEnable				{3: 'As the tip of the blade leaves its sheath, countless snowflakes shatter and transform into thousands of silver grains that roll toward the tip.'}
+518	518		401							{1: '2', 2: '4331'}
+519	519		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+520	520		502							{1: 'RImgBg1BlowUp'}
+521	521		301				DialogDisable			"{3: '""There will be no pain."" As she moves toward them, she is shocked to find a familiar feeling, as if she had killed countless people countless times before.'}"
+522	522		401							{1: '2', 2: '4223'}
+523	523		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '2'}
+524	524		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab'}
+525	525		505							{1: 'RImgBg1BlowUp'}
+526	526		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+527	527		401						500.0	{1: '2', 2: '772'}
+528	528		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab', 2: '2'}
+529	529		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+530	530		502							{1: 'DialogEnable'}
+531	531		301							{3: 'Yet when she points the blade at the monsters before her, raging sadness and anger still grip her heart, tormenting her.'}
+532	532		201							{1: '1', 2: '500141'}
+533	533		301			PanelActor1Shake	DialogDisable			{1: '1', 2: 'Toby?', 3: 'Saved... at last...', 4: '1', 18: '100010907'}
+534	534		401							{1: '2', 2: '3077'}
+535	535		203							{1: '1', 2: '0.25', 4: '-1200'}
+536	536		202						350.0	{1: '1'}
+537	537		301			DialogEnable				{2: 'Bianca', 3: '...', 18: '100010908'}
+538	538		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+539	539		301		1		AniZhuanchangBegin			{3: 'Heavy snow continues to fall.'}

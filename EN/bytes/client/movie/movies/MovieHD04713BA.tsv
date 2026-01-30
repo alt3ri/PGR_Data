@@ -1,0 +1,136 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory668.jpg'}
+2	2		401							{1: '1', 2: '6151'}
+3	3		201							{1: '1', 2: '501239'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Vera', 3: ""I knew you'd be here. I came straight over after leaving the Science Council."", 4: '1'}"
+5	5		301				DialogDisable			{3: 'A familiar cold voice sounds behind you. Turning around, you see the expected figure in red.'}
+6	6		302							"{2: ""You're early. We agreed on a later time."", 3: '7'}"
+7	7		302							{2: 'Did you finish your system module upgrade?', 3: '8'}
+8	8		301			DialogEnable				"{2: 'Vera', 3: ""About halfway, I'd say. But I managed to finish all the important parts in time for the Double Seventh Festival."", 4: '1'}"
+9	9		301							"{2: 'Vera', 3: ""The rest of the lifestyle modules still need fine-tuning. It can't all be set up in one go... This frame is still too focused on combat."", 4: '1'}"
+10	10		204							{1: '1', 2: '1'}
+11	11		301							{3: 'Vera suddenly crosses her arms, looking intrigued.'}
+12	12		301							{2: 'Vera', 3: 'Still, since you insisted, I upgraded the taste module first.', 4: '1'}
+13	13		204							{1: '1', 2: '13'}
+14	14		301							"{2: 'Vera', 3: ""Installing such high-sensitivity sensors was one of the most extravagant things I've done in years. Thanks for sponsoring it. I'll consider it a gift from you."", 4: '1'}"
+15	15		301				DialogDisable			"{2: 'Vera', 3: ""So, what's your real plan?"", 4: '1'}"
+16	16		302							{2: 'We can do a taste test right now.', 3: '17'}
+17	17		302							{2: 'I took a quick look around earlier, and...', 3: '18'}
+18	18		401							{1: '2', 2: '5735'}
+19	19		301			DialogEnable				{3: 'You pull out a stack of colorful vouchers from behind your back.'}
+20	20		302							{2: 'These are tasting vouchers for nearly every food stall here.', 3: '21'}
+21	21		204							{1: '1', 2: '1'}
+22	22		301							"{2: 'Vera', 3: ""Let me guess, you want to test how well the taste module's working?"", 4: '1'}"
+23	23		302							"{2: ""Exactly. You try each one, describe the flavor, and I'll take notes. Sound good?"", 3: '24'}"
+24	24		301							{3: 'Vera narrows her eyes and flicks a finger lightly against the stack of vouchers.'}
+25	25		301				DialogDisable			"{2: 'Vera', 3: ""Fine. Since I'm in a good mood today, we'll test as we walk."", 4: '1'}"
+26	26		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+27	27		202							{1: '1', 6: '1'}
+28	28		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory802.jpg'}
+29	29		202							{1: '1'}
+30	30		302							"{2: ""Let's start with something mild."", 3: '31'}"
+31	31		301			DialogEnable				"{3: ""You lead Vera to the nearest food stall and exchange a voucher for a small box of Lovers' Delights. She picks up two and pops them into her mouth.""}"
+32	32		201							{1: '1', 2: '501239', 3: '8'}
+33	33		301							{1: '1', 2: 'Vera', 3: '(Chew)', 4: '1'}
+34	34		204							{1: '1', 2: '6'}
+35	35		301							{2: 'Vera', 3: 'This is supposed to be mild? The taste module is really amplifying everything.', 4: '1'}
+36	36		302							"{2: ""What does it taste like? How's the texture?"", 3: '37'}"
+37	37		204							{1: '1', 2: '1'}
+38	38		301				DialogDisable			"{2: 'Vera', 3: ""Soft dough. Classic Kowloong-style. One's salted egg yolk, the other sweet cheese. Nothing special. I'm not big on sweets."", 4: '1'}"
+39	39		302							{2: 'How about this?', 3: '40'}
+40	40		202							{1: '1'}
+41	41		301			DialogEnable				{3: 'You hand her a bag of puffed snacks.'}
+42	42		201							{1: '1', 2: '501239'}
+43	43		301							{1: '1', 2: 'Vera', 3: 'Strongly sour. Some kind of pickled... kimchi-flavored chips? I remember this taste from the Military Academy training.', 4: '1'}
+44	44		204							{1: '1', 2: '1'}
+45	45		301							{2: 'Vera', 3: 'Buy a few extra bags. I want to bring them back to Cerberus.', 4: '1'}
+46	46		202							{1: '1'}
+47	47		301							{3: 'As she says that, her gaze shifts to the nearby drink stall. The mechanoid vendor shrinks back into the corner under her piercing stare.'}
+48	48		201							{1: '1', 2: '501239'}
+49	49		301							{1: '1', 2: 'Vera', 3: 'You sell coffee?', 4: '1'}
+50	50		203							{1: '1', 2: '0.3', 3: '400'}
+51	51		201							{1: '2', 2: '500488', 4: '-400', 5: '-250', 6: '400'}
+52	52		301			PanelActor2Shake				{1: '1', 2: 'Mechanoid Vendor', 3: 'Y-yes, we do. Only plain black coffee though...', 4: '2'}
+53	53		301							{2: 'Vera', 3: 'Perfect. No sugar. Bring me a cup.', 4: '1'}
+54	54		202							{1: '1', 2: '2'}
+55	55		301							{3: 'The vendor quickly hands her a small paper cup. Vera takes a sip and finally looks satisfied.'}
+56	56		201							{1: '1', 2: '501239', 3: '1'}
+57	57		301							{1: '1', 2: 'Vera', 3: 'Hah, bitter coffee really is the best. Helps keep you sharp. Way more interesting than the soft flavors earlier.', 4: '1'}
+58	58		301				DialogDisable			{3: 'The familiar bitterness intensifies on her tongue, and the sensation pleases her.'}
+59	59		302							{2: 'If you want something more intense... How about this?', 3: '60'}
+60	60		202							{1: '1'}
+61	61		301			DialogEnable				"{3: 'You spot a stall with a banner: ""Latest Electrolyte Flavors."" One label catches your eye, and you hand the product to Vera.'}"
+62	62		201							{1: '1', 2: '501239'}
+63	63		301							"{1: '1', 2: 'Vera', 3: ""Electrolyte drink... seawater flavor? Your creativity has officially crossed into absurdity. Alright, I'll try it."", 4: '1'}"
+64	64		401							{1: '2', 2: '5288'}
+65	65		204							{1: '1', 2: '8'}
+66	66		301							"{3: 'She says ""try,"" but Vera promptly takes a large gulp.'}"
+67	67		204							{1: '1', 2: '6'}
+68	68		301							{3: 'Then, she pauses.'}
+69	69		301							{2: 'Vera', 3: '...', 4: '1'}
+70	70		302							{2: 'Well?', 3: '71'}
+71	71		204							{1: '1'}
+72	72		401							{1: '2', 2: '1543'}
+73	73		301							{3: 'Vera wipes her mouth.'}
+74	74		204							{1: '1', 2: '13'}
+75	75		301							"{2: 'Vera', 3: ""...Hah. Before I became a Construct, I'd never even seen the sea. Since then I've swum in it plenty of times... but this is the first time I've actually tasted it."", 4: '1'}"
+76	76		301							"{2: 'Vera', 3: ""So that's what it's like... a harsh mix of salt and bitterness—overpoweringly salt, to the point of being foul."", 4: '1'}"
+77	77		204							{1: '1'}
+78	78		402							{1: '6151'}
+79	79		401							{1: '1', 2: '36'}
+80	80		301							{2: 'Vera', 3: '...', 4: '1'}
+81	81		202							{1: '1'}
+82	82		301							"{3: ""Vera's expression softens suddenly, as if remembering something.""}"
+83	83		401							{1: '1', 2: '6224'}
+84	84		201							{1: '1', 2: '501239'}
+85	85		301							{1: '1', 2: 'Vera', 3: 'Before the Punishing outbreak, eating was just another chore to me—just a way to refuel. Maybe it was to punish me. After becoming a Construct, I lost the ability to really taste anything.', 4: '1'}
+86	86		301							"{2: 'Vera', 3: ""Sour, sweet, bitter, spicy, salty... It's been so long. But I've finally tasted all five again."", 4: '1'}"
+87	87		204							{1: '1', 2: '8'}
+88	88		301							{2: 'Vera', 3: 'Still, it feels completely different from back then.', 4: '1'}
+89	89		202							{1: '1'}
+90	90		301							{3: 'Vera looks at you again, directly into your eyes.'}
+91	91		201							{1: '1', 2: '501239'}
+92	92		301							{1: '1', 2: 'Vera', 3: 'You really are impossible. Always causing trouble, always giving me a headache.', 4: '1'}
+93	93		204							{1: '1', 2: '1'}
+94	94		301							{2: 'Vera', 3: 'But for this, thank you.', 4: '1'}
+95	95		203							{1: '1', 5: '-70'}
+96	96		401							{1: '2', 2: '1543'}
+97	97		203							{1: '1', 2: '0.25', 4: '-100', 5: '-200'}
+98	98		301							{3: 'Without warning, she steps forward, grabs the back of your neck, and leans in. Her lips brush your ear.'}
+99	99		302							{2: 'Vera?', 3: '100'}
+100	100		204							{1: '1', 2: '13'}
+101	101		401							{1: '1', 2: '36'}
+102	102		301				DialogDisable			"{2: 'Vera', 3: ""There's one last flavor I want to try."", 4: '1'}"
+103	103		202							{1: '1', 6: '1'}
+104	104		401							{1: '2', 2: '1543'}
+105	105		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+106	106		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg'}
+107	107		301			DialogEnable	DialogDisable			{3: 'Her sharp canines catch your earlobe, then bite down hard.'}
+108	108		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+109	109		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory802.jpg'}
+110	110		401							{1: '1', 2: '6121'}
+111	111		302							{2: '!', 3: '112', 4: 'Ouch.', 5: '112', 6: '...', 7: '112'}
+112	112		301			DialogEnable				{3: 'A thin trail of blood trickles from between her teeth.'}
+113	113		201							{1: '1', 2: '501239', 3: '1'}
+114	114		301				DialogDisable			{1: '1', 2: 'Vera', 3: 'Salty, metallic, not too different from seawater. Just as I thought.', 4: '1'}
+115	115		302							{2: 'If you think those taste the same, your taste module needs work.', 3: '116', 4: '(Bite back)', 5: '119'}
+116	116		301			DialogEnable				"{2: 'Vera', 3: ""Doesn't matter. This street is long, with plenty more tastes to try. We can test as long as you like. I'll stay until you're satisfied."", 4: '1'}"
+117	117		204							{1: '1', 2: '13'}
+118	118		301		1		AniZhuanchangBegin			{2: 'Vera', 3: 'Little Commandant, from now on, your time belongs to me too. No objections, right?', 4: '1'}
+119	119		104							{1: '0|0|-100', 2: '0.4'}
+120	120		203						500.0	{1: '1', 2: '0.4', 5: '-100'}
+121	121		401							{1: '2', 2: '1543'}
+122	122		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+123	123		202							{1: '1', 5: '1'}
+124	124		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+125	125		205						600.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory802.jpg', 3: '0', 4: '1', 5: '0.5'}
+126	126		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory802.jpg'}
+127	127		205							{1: '999'}
+128	128		201							{1: '1', 2: '501239', 3: '13', 5: '-100'}
+129	129		301			DialogEnable				"{1: '1', 2: 'Vera', 3: ""Ooh, that's some sharp teeth."", 4: '1'}"
+130	130		301							{3: 'Touching the bite mark on her ear, Vera suddenly bursts out laughing.'}
+131	131		204							{1: '1', 2: '1'}
+132	132		301				DialogDisable			"{2: 'Vera', 3: ""Seems you're also quite interested in these strange flavors."", 4: '1'}"
+133	133		203						450.0	{1: '1', 2: '0.4', 4: '-60', 5: '-180'}
+134	134		204							{1: '1', 2: '13'}
+135	135		301		1	DialogEnable	AniZhuanchangBegin			{2: 'Vera', 3: 'Then, let me accompany you to try more. How does that sound?', 4: '1'}

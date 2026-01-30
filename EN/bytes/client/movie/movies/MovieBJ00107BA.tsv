@@ -1,0 +1,71 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory68.jpg'}
+2	990		401							{1: '1', 2: '201'}
+3	2		301			DialogEnable				{1: '1', 3: 'A slight breeze drifts through the empty streets. Distant sobs whisper of bitter farewells.'}
+4	3		201							{1: '1', 2: '500001', 4: '0', 5: '0', 6: '0'}
+5	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+6	5		301							"{1: '1', 2: 'Celica', 3: ""Testing, testing... Ahem, what's the situation over there?"", 4: '1'}"
+7	6		201							{1: '2', 2: '1031001', 4: '-600', 5: '0', 6: '0', 7: '0'}
+8	7		201							{1: '3', 2: '1011001', 4: '600', 5: '0', 6: '0', 7: '0'}
+9	8		301							{1: '1', 2: 'Lee & Liv', 3: 'All clear.', 4: '2', 5: '3'}
+10	9		301							{1: '1', 2: 'Celica', 3: 'Long-range scans put the CPF at the center of the city ruins.', 4: '1'}
+11	10		202							{1: '1'}
+12	11		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+13	12		203							{1: '2', 2: '1', 3: '-1460', 4: '0', 5: '0'}
+14	13		203						1000.0	{1: '3', 2: '1', 3: '1460', 4: '0', 5: '0'}
+15	14		202							{1: '2', 2: '3', 6: '1'}
+16	15		201							{1: '1', 2: '1081001', 3: '2', 4: '0', 5: '0', 6: '0'}
+17	16		301							"{1: '1', 2: 'Kamui', 3: ""Finally, a chance to stretch my legs! Hey, what's this under my feet?"", 4: '1'}"
+18	17		502							{1: 'RImgBg1Shake'}
+19	18		502							{1: 'PanelActor1Shake'}
+20	19		301							{1: '1', 2: 'Commandant', 3: '...'}
+21	20		203							{1: '1', 2: '0.25', 3: '400', 4: '0', 5: '0'}
+22	21		201							{1: '2', 2: '1011001', 4: '-400', 5: '0', 6: '0'}
+23	22		301							{1: '1', 2: 'Lee', 3: 'Loose parts? Let me check them.', 4: '2'}
+24	23		203							{1: '1', 2: '0.25', 3: '1460'}
+25	24		202							{1: '1'}
+26	25		203							{1: '2', 2: '0.25', 3: '400'}
+27	26		201							{1: '3', 2: '500127', 4: '-400'}
+28	27		301							"{1: '1', 2: 'Sophia', 3: ""I've seen a frequency converter like this one before, fixing the Engine's on-board camouflage."", 4: '3'}"
+29	28		301							{3: 'As Celica gives her report, you seem to notice Sophia and Lucia acting strangely.'}
+30	29		202							{1: '2'}
+31	30		204							{1: '3', 2: '10'}
+32	31		201							{1: '2', 2: '1021001', 3: '3', 4: '400'}
+33	32		301							{1: '1', 2: 'Lucia', 3: '...', 4: '2'}
+34	33		301							{1: '1', 2: 'Sophia', 3: '...', 4: '3'}
+35	34		302							{2: 'Lucia?', 3: '35', 4: 'Sophia?', 5: '39'}
+36	35		301							{1: '1', 2: 'Lucia', 3: 'According to my search log, the orphans here were used to train caretaker androids.', 4: '2'}
+37	36		202							{1: '3'}
+38	37		201							{1: '3', 2: '1031001', 3: '7', 4: '-400'}
+39	38	43	301							"{1: '1', 2: 'Liv', 3: ""Lucia mentioning her search log unprompted? That's rare."", 4: '3'}"
+40	39		301							{1: '1', 2: 'Sophia', 3: 'Sophia and Jamilah were here once. There are many children here. Wait, that is inaccurate.', 4: '3'}
+41	40		202							{1: '2'}
+42	41		201							{1: '2', 2: '1011001', 3: '10', 4: '400'}
+43	42	43	301							{1: '1', 2: 'Lee', 3: 'If there are survivors here, we need to pick up the pace.', 4: '2'}
+44	43		203							{1: '2', 2: '0.25', 3: '600'}
+45	44		203							{1: '3', 2: '0.25', 3: '-600'}
+46	45		201							{1: '1', 2: '500001'}
+47	46		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+48	47		301							{1: '1', 2: 'Celica', 3: 'This used to be a seaside city according to the records. There should still be caretaker and child androids around here.', 4: '1'}
+49	48		301							{1: '1', 2: 'Celica', 3: 'Androids are highly humanoid robots with machine learning capabilities. You can say they were predecessors of Construct Tech. However, according to records, these androids have some cognitive impairments.', 4: '1'}
+50	49		301							{1: '1', 2: 'Celica', 3: 'When this area was evacuated, many military and civil-use mechanoids were left behind. There may be human survivors here.', 4: '1'}
+51	50		301							"{1: '1', 2: 'Celica', 3: ""According to the coordinates, you'll need to find the main power source of the CPF... and then reactivate it, though as with previous reactivation attempts, it will be dangerous."", 4: '1'}"
+52	51		302							{2: '...What past experience?', 3: '52'}
+53	52		301							{1: '1', 2: 'Celica', 3: 'For safety reasons, the control systems around the CPF were hastily destroyed during the initial evacuation.', 4: '1'}
+54	53		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+55	54		202							{1: '1', 2: '2', 3: '3'}
+56	55		201							{1: '1', 2: '1011001'}
+57	56		301							"{1: '1', 2: 'Lee', 3: ""Heavy radiation levels detected. We're likely to find the main power source on the other end of the tunnel."", 4: '1'}"
+58	57		203							{1: '1', 2: '0.25', 3: '-400'}
+59	58		201							{1: '2', 2: '500127', 4: '400'}
+60	59		301							{1: '1', 2: 'Sophia', 3: 'Stop! We should not go further.', 4: '2'}
+61	60		203							{1: '1', 2: '0.25', 3: '-600'}
+62	61		203							{1: '2', 2: '0.25', 3: '600'}
+63	62		201							{1: '3', 2: '1091001'}
+64	63		301							{1: '1', 2: 'Bianca', 3: 'Why is that?', 4: '3'}
+65	64		301							{1: '1', 2: 'Sophia', 3: 'Because workers on the Engine warned us to steer clear of this place.', 4: '2'}
+66	65		202							{1: '3', 6: '1'}
+67	66		201							{1: '3', 2: '1021001'}
+68	67		301							{1: '1', 2: 'Lucia', 3: 'Sounds like we will face resistance up ahead.', 4: '3'}
+69	68		302				AniZhuanchangBegin			{2: 'Search and advance', 3: '69'}
+70	69		202		1					{1: '3'}

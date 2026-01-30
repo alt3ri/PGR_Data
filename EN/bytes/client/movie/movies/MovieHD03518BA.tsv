@@ -1,0 +1,76 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory669.jpg'}
+2	2		104							{1: '0|0|-90', 2: '0'}
+3	3		401			AniZhuanchangEnd				{1: '1', 2: '205'}
+4	4		201							{1: '1', 2: '500127', 4: '-400'}
+5	5		201							{1: '2', 2: '500462', 4: '400'}
+6	6		301			DialogEnable				{1: '1', 2: 'Sophia', 3: 'How long do these rations last?', 4: '1'}
+7	7		301							{2: 'Vendor', 3: 'Normally, they last around twenty days. If you have vacuum-sealed bags, they can keep for a year, though the flavor does lose some of its punch.', 4: '2'}
+8	8		301							{2: 'Sophia', 3: 'Hmm... how much is this?', 4: '1'}
+9	9		301							"{2: 'Vendor', 3: ""This one's just 20!"", 4: '2'}"
+10	10		301							{2: 'Sophia', 3: 'Could I take it for 15?', 4: '1'}
+11	11		301							"{2: 'Vendor', 3: ""Uh... 19. I can't go any lower."", 4: '2'}"
+12	12		301							"{2: 'Sophia', 3: ""Then let's settle on 16."", 4: '1'}"
+13	13		301							"{3: ""The vendor's face looks troubled, clearly torn by the bargaining.""}"
+14	14		301							"{2: 'Vendor', 3: ""Eighteen? Sorry, that's the absolute lowest I can go!"", 4: '2'}"
+15	15		301							"{2: 'Sophia', 3: ""Hmm... You know what? Forget it. I'm not buying."", 4: '1'}"
+16	16		202							{1: '1', 2: '2'}
+17	17		301							{3: 'Sophia says this with a blank expression, takes your hand, and turns away.'}
+18	18		201							{1: '1', 2: '500127'}
+19	19		301							"{1: '1', 2: 'Sophia', 3: ""Commandant, let's go."", 4: '1'}"
+20	20		302							{2: '(Follow after Sophia)', 3: '21'}
+21	21		301							{3: 'As the two of you start walking away, Sophia quietly murmurs something to herself.'}
+22	22		301							{2: 'Sophia', 3: 'Three...', 4: '1'}
+23	23		302							{2: 'What?', 3: '24'}
+24	24		104						250.0	{1: '0|-20|-60', 2: '0.2'}
+25	25		104							{1: '0|0|-30', 2: '0.2'}
+26	26		301							{2: 'Sophia', 3: 'Two...', 4: '1'}
+27	27		104						250.0	{1: '0|-20|-30', 2: '0.2'}
+28	28		104							{1: '0|0|0', 2: '0.2'}
+29	29		301							{2: 'Sophia', 3: 'One...', 4: '1'}
+30	30		301							"{2: 'Vendor', 3: ""Seventeen! Let's settle on seventeen—go on, take it.""}"
+31	31		202							{1: '1'}
+32	32		104							{1: '0|0|-90', 2: '0.25'}
+33	33		301							{3: 'The vendor calls out from behind, and Sophia quickly spins around.'}
+34	34		201							{1: '1', 2: '500127', 4: '-400'}
+35	35		201							{1: '2', 2: '500462', 4: '400'}
+36	36		301							"{1: '1', 2: 'Sophia', 3: ""Sure, I'll take one..."", 4: '1'}"
+37	37		301							{3: 'Sophia steals a quick glance over here.'}
+38	38		301							"{2: 'Sophia', 3: ""I'll take two."", 4: '1'}"
+39	39		202							{1: '1', 2: '2'}
+40	40		301							{3: 'Sophia comes over with two rations in hand and offers you one.'}
+41	41		201							{1: '1', 2: '500127'}
+42	42		301							{1: '1', 2: 'Sophia', 3: 'Here.', 4: '1'}
+43	43		301							{3: 'Seeing you take it, she slips the other one into a small pouch.'}
+44	44		302							"{2: 'Your bargaining skills are seriously impressive.', 3: '45', 4: ""You're so good at it, Sophia."", 5: '45'}"
+45	45		301							{2: 'Sophia', 3: 'Over there—raisins.', 4: '1'}
+46	46		301							{2: 'Sophia', 3: 'High in sugar and easy to store—this stuff makes perfect rations.', 4: '1'}
+47	47		202							{1: '1'}
+48	48		301				AniZhuanchangBegin			{3: 'She gestures to another stall, and you walk over there with Sophia.'}
+49	49		401							{1: '1', 2: '36'}
+50	50		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory69.jpg'}
+51	51		401							{1: '1', 2: '100'}
+52	52		301			AniZhuanchangEnd				{3: 'Once Sophia stocks up on long-lasting provisions, she brings you to a small house.'}
+53	53		201							{1: '1', 2: '500127'}
+54	54		301							{1: '1', 2: 'Sophia', 3: 'I rented this place.', 4: '1'}
+55	55		202							{1: '1'}
+56	56		301							{3: 'Inside, there are various supplies and tools.'}
+57	57		301							{3: 'Sophia pulls out that small pouch of food and sets it on the workbench. She starts portioning and packing the groceries she just bought, taking care to organize them neatly.'}
+58	58		302							{2: 'Why are you doing all this?', 3: '59'}
+59	59		201							{1: '1', 2: '500127'}
+60	60		301							"{1: '1', 2: 'Sophia', 3: ""I'm preparing emergency rations. I don't want to starve."", 4: '1'}"
+61	61		302							"{2: ""But Constructs don't get hungry... right?"", 3: '62'}"
+62	62		301							"{3: ""Sophia pauses for a split second—barely noticeable—then continues what she's doing.""}"
+63	63		301							{2: 'Sophia', 3: 'Back on the train... I used to get hungry.', 4: '1'}
+64	64		301							"{2: 'Sophia', 3: ""I'm not getting hungry now, but the old habit from those days still sticks with me."", 4: '1'}"
+65	65		301							{2: 'Sophia', 3: 'Whenever I get a free moment, I hand out some of the reserve rations to the kids on the train.', 4: '1'}
+66	66		302							"{2: ""You're doing a great job."", 3: '67'}"
+67	67		202							{1: '1'}
+68	68		301							{3: 'She works with practiced ease, swiftly packing different foods into vacuum-sealed bags and cans, then arranging them neatly in a backpack.'}
+69	69		301							"{3: ""Finally, Sophia hands you the emergency rations she's just prepared.""}"
+70	70		201							{1: '1', 2: '500127'}
+71	71		301							{1: '1', 2: 'Sophia', 3: 'For you, Commandant.', 4: '1'}
+72	72		302							"{2: ""Then I'll gladly take it."", 3: '73'}"
+73	73		301							{2: 'Sophia', 3: 'Going hungry... feels awful.', 4: '1'}
+74	74		301							"{2: 'Sophia', 3: ""I don't want you to suffer like that."", 4: '1'}"
+75	75		302		1		AniZhuanchangBegin			{2: 'Thank you, Sophia.', 3: '76'}

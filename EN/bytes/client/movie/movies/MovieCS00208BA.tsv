@@ -1,0 +1,55 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1253.jpg'}
+2	2		401							{1: '1', 2: '36'}
+3	3		301							{3: '3.8特效'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieKuaimen01.prefab', 2: '2'}
+5	5		301							{3: '快门特效'}
+6	6		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieKuaimen01.prefab'}
+7	7		301							{3: 'End'}
+8	8		301							{3: '对焦虚化特效'}
+9	9		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu01.prefab'}
+10	10		301							{3: '对焦虚化开始'}
+11	11		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu01.prefab'}
+12	12		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu02.prefab'}
+13	13		301							{3: '持续对焦虚化'}
+14	14		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu02.prefab'}
+15	15		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu03.prefab'}
+16	16		301				DialogDisable			{3: '对焦虚化结束'}
+17	17		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu01.prefab'}
+18	18		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu01.prefab'}
+19	19		111						1500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu02.prefab'}
+20	20		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu02.prefab'}
+21	21		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu03.prefab'}
+22	22		301			DialogEnable				{3: '对焦虚化特效（组合）'}
+23	23		301							{3: 'End'}
+24	24		301							{3: '纸张燃烧（全黑→四周向内燃烧出现背景）'}
+25	25		501						6000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieFire01.prefab', 2: '2'}
+26	26		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieFire01.prefab'}
+27	27		301							{3: 'End'}
+28	28		301							{3: '纸张燃烧（画面→四周向内燃烧全黑）'}
+29	29		501						5800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieFire02.prefab', 2: '2'}
+30	30		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+31	31		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieFire02.prefab'}
+32	32		301							{3: 'End'}
+33	33		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1253.jpg'}
+34	34		301							{3: '纸张燃烧（画面→中间向外燃烧全黑）'}
+35	35		501						5800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieFire03.prefab', 2: '2'}
+36	36		101						50.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+37	37		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieFire03.prefab'}
+38	38		301							{3: 'End'}
+39	39		301							{3: '纸张燃烧（全黑→中间向外燃烧出现背景）'}
+40	40		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieFire04.prefab', 2: '2'}
+41	41		101						6500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1253.jpg'}
+42	42		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieFire04.prefab'}
+43	43		301							{3: 'End'}
+44	44		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+45	45		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab', 2: '2'}
+46	46		301							{3: '落尘特效'}
+47	47		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab'}
+48	48		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1253.jpg'}
+49	49		301							{3: 'End'}
+50	50		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieGlow.prefab', 2: '2'}
+51	51		301							{3: '光芒（透明底）'}
+52	52		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieGlow.prefab'}
+53	53		301							{3: 'End'}
+54	54		301		1		AniZhuanchangBegin			{3: '演示结束'}

@@ -1,0 +1,365 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg'}
+2	2		107						2000.0	{1: 'Abandoned Factory', 2: 'City 141 Outskirts'}
+3	3		108							{1: '1'}
+4	4		401							{1: '2', 2: '6168'}
+5	5		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+6	6		401				RImgBg1Shake			{1: '2', 2: '4535'}
+7	7		301			DialogEnable	DialogDisable			"{3: ""With Gwynplaine's self-destruction, the already precarious structure of this dangerous place completely collapses.""}"
+8	8		401				RImgBg1Shake			{1: '2', 2: '4536'}
+9	9		301			DialogEnable	DialogDisable			{3: 'Amid tremors and falling debris, you and Jetavie break out of the factory.'}
+10	10		104						330.0	{1: '0|0|-100', 2: '0.3'}
+11	11		401							{1: '2', 2: '1508'}
+12	12		201							{1: '2', 2: '500013', 4: '-650', 7: '1'}
+13	13		201							{1: '3', 2: '500013', 4: '650', 7: '1'}
+14	14		201							{1: '1', 2: '500013', 7: '1'}
+15	15		203							{1: '2', 2: '0.2', 3: '-450'}
+16	16		203							{1: '3', 2: '0.2', 3: '450'}
+17	17		301			DialogEnable				{1: '1', 3: 'Countless Corrupted surge out alongside you.'}
+18	18		201							{1: '18', 2: '501187', 3: '4', 4: '-480', 5: '-180', 6: '600', 7: '1'}
+19	19		301							{1: '1', 2: 'Jetavie', 3: 'Tsk.', 4: '18'}
+20	20		302							"{2: ""Don't engage them. Fall back and defend the academy."", 3: '21'}"
+21	21		301							{2: 'Jetavie', 3: 'Yeah, yeah, I got it.', 4: '18'}
+22	22		202				DialogDisable			{1: '18'}
+23	23		401							{1: '2', 2: '819004'}
+24	24		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHit01.prefab', 2: '2'}
+25	25		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+26	26		502							{1: 'RImgBg1Shake'}
+27	27		301			DialogEnable	DialogDisable			{3: 'Jetavie unleashes her full power. A red flash streaks by, instantly clearing the area around the parked vehicles.'}
+28	28		401							{1: '2', 2: '971'}
+29	29		205						50.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 3: '1', 4: '1', 5: '0.1'}
+30	30		104							{1: '0|0|100', 2: '0', 4: '3'}
+31	31		401							{1: '2', 2: '885'}
+32	32		301			DialogEnable	DialogDisable			{3: 'You both climb into the truck, one in front and one behind. Jetavie hangs halfway out the window, using her firepower to clear a path.'}
+33	33		401							{1: '2', 2: '4803'}
+34	34		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+35	35		501				AniZhuanchangBegin		100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+36	36		205							{1: '999'}
+37	37		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+38	38		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+39	39		401							{1: '2', 2: '4805'}
+40	40		502							{1: 'RImgBg1Shake'}
+41	41		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1210.jpg'}
+42	42		301			DialogEnable	AniZhuanchangBegin			{3: 'The commandant seizes the opportunity to throw several grenades into the distance, creating chaos.'}
+43	43		401							{1: '1', 2: '36'}
+44	44		502							{1: 'DialogDisable'}
+45	45		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1212.jpg'}
+46	46		205				AniZhuanchangEnd			{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 3: '1', 4: '1', 5: '0'}
+47	47		401							{1: '1', 2: '245'}
+48	48		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+49	49		401							{1: '2', 2: '1508'}
+50	50		201							{1: '2', 2: '500013', 4: '-650', 7: '1'}
+51	51		201							{1: '3', 2: '500013', 4: '650', 7: '1'}
+52	52		201							{1: '1', 2: '500013', 7: '1'}
+53	53		203							{1: '2', 2: '0.2', 3: '-450'}
+54	54		203							{1: '3', 2: '0.2', 3: '450'}
+55	55		301			DialogEnable				{1: '1', 3: 'Before long, the vehicle returns to the academy district. From a distance, you can see numerous Corrupted still gathered outside the academy grounds.'}
+56	56		201							{1: '18', 2: '501187', 3: '4', 4: '-480', 5: '-180', 6: '600', 7: '1'}
+57	57		301							{1: '1', 2: 'Jetavie', 3: 'We destroyed the factory, so why are there still so many of these damn things?!', 4: '18'}
+58	58		302							"{2: ""They've been accumulating for years, after all."", 3: '59'}"
+59	59		202				DialogDisable			{1: '18', 6: '1'}
+60	60		104						250.0	{1: '-100|0|0', 2: '0.25'}
+61	61		104						300.0	{1: '100|0|0', 2: '0.3'}
+62	62		203							{1: '2', 2: '0.2', 3: '750'}
+63	63		203							{1: '3', 2: '0.2', 3: '-750'}
+64	64		202							{1: '1', 2: '2', 3: '3'}
+65	65		301			DialogEnable				{3: 'You wrench the steering wheel, narrowly avoiding several Corrupted attempting to ram the vehicle, then quickly tap your headset to answer the incoming call.'}
+66	66		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 3: '0', 4: '0', 5: '0'}
+67	67		205							{1: '1005'}
+68	68		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+69	69		401							{1: '2', 2: '2983'}
+70	70		509							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory62.jpg', 2: '1'}
+71	71		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+72	72		201							{1: '11', 2: '500026', 4: '-600'}
+73	73		301				DialogDisable			"{1: '1', 2: 'Lee (Comms)', 3: ""Looks like you've taken care of the factory."", 4: '11'}"
+74	74		302							{2: 'But we still have a significant loose end to tie up.', 3: '75'}
+75	75		302							{2: 'Give us a plan, Lee.', 3: '76'}
+76	76		301			DialogEnable				"{2: 'Lee (Comms)', 3: ""Do you still have Squad G227's map on you?"", 4: '11'}"
+77	77		301							{2: 'Lee (Comms)', 3: 'Drive around in circles to lure them away, then lead them back to the tower marked on the map. Someone will be there to place explosives, so we can coordinate and eliminate them all at once.', 4: '11'}
+78	78		201							{1: '1', 2: '501187', 3: '4', 4: '600'}
+79	79		301							"{1: '1', 2: 'Jetavie', 3: ""Can you handle this? The Task Force doesn't look like they can spare anyone right now."", 4: '1'}"
+80	80		301							{2: 'Lee (Comms)', 3: 'Not us. You.', 4: '11'}
+81	81		204							{1: '1', 2: '18'}
+82	82		301							{2: 'Jetavie', 3: 'What do you me—', 4: '1'}
+83	83		301							{3: 'Before Jetavie can finish her question, her tone suddenly becomes animated.'}
+84	84		204			PanelActor1Shake				{1: '1', 2: '2'}
+85	85		301							{1: '1', 2: 'Jetavie', 3: 'No. 55, No. 57—'}
+86	86		301							{3: 'Several figures climb over the high academy walls. Though they appear somewhat disheveled, they move with renewed energy.'}
+87	87		301				DialogDisable			{3: 'They gesture frantically to Jetavie in the truck and, without breaking stride, race toward the tower with bundles of bags in hand.'}
+88	88		202							{1: '11', 2: '1', 6: '1'}
+89	89		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+90	90		510							{1: '1'}
+91	91		205						200.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 3: '1', 4: '1', 5: '0'}
+92	92		201							{1: '18', 2: '501187', 3: '4', 4: '-480', 5: '-180', 6: '600'}
+93	93		301			DialogEnable				{1: '1', 2: 'Jetavie', 3: 'Chosen One, give us a hand!', 4: '18'}
+94	94		202				DialogDisable			{1: '18'}
+95	95		302							{2: 'Leave it to me.', 3: '96'}
+96	96		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+97	97		301			DialogEnable	RImgBg1Shake			{3: 'With your foot on the gas pedal and one hand on the wheel, you and Jetavie lean out of opposite sides of the vehicle.'}
+98	98		502							{1: 'DialogDisable'}
+99	99		401							{1: '2', 2: '1510'}
+100	100		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+101	101		401							{1: '2', 2: '1510'}
+102	102		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+103	103		201							{1: '2', 2: '500013', 4: '-650', 7: '1'}
+104	104		201							{1: '3', 2: '500013', 4: '650', 7: '1'}
+105	105		201							{1: '1', 2: '500013', 7: '1'}
+106	106		203							{1: '2', 2: '0.2', 3: '-450'}
+107	107		203							{1: '3', 2: '0.2', 3: '450'}
+108	108		301			DialogEnable				"{1: '1', 3: ""Gunfire erupts, and like sharks smelling blood, the Corrupted horde's attention is instantly drawn by it, causing them to turn as one.""}"
+109	109		201							{1: '18', 2: '501187', 3: '4', 4: '-480', 5: '-180', 6: '600', 7: '1'}
+110	110		301							{1: '1', 2: 'Jetavie', 3: 'Lee, how much time do they need?', 4: '18'}
+111	111		201							{1: '18', 2: '500026', 4: '-480', 5: '-180', 6: '600', 7: '1'}
+112	112		301							{1: '1', 2: 'Lee (Comms)', 3: 'One will do.', 4: '18'}
+113	113		201							{1: '18', 2: '501187', 3: '4', 4: '-480', 5: '-180', 6: '600', 7: '1'}
+114	114		301							{1: '1', 2: 'Jetavie', 3: 'No problem!', 4: '18'}
+115	115		202				DialogDisable			{1: '18'}
+116	116		502							{1: 'RImgBg1Shake'}
+117	117		203							{1: '2', 2: '0.2', 3: '750'}
+118	118		203							{1: '3', 2: '0.2', 3: '-750'}
+119	119		202							{1: '1', 2: '2', 3: '3'}
+120	120		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokeRed.prefab', 2: '2'}
+121	121		301			DialogEnable	DialogDisable			{3: 'The vehicle and its stream of bullets trace an elegant arc across the street, as clouds of dust envelop the charging horde of Corrupted.'}
+122	122		104						250.0	{1: '-50|0|-100', 2: '0.25'}
+123	123		104						300.0	{1: '50|0|0', 2: '0.3'}
+124	124		104						300.0	{1: '0|-150|-150', 2: '0.3'}
+125	125		301			DialogEnable	DialogDisable			{3: 'Soon, the vehicle completes its circuit and speeds directly toward the tower.'}
+126	126		401							{1: '2', 2: '2983'}
+127	127		301			DialogEnable				"{3: ""Simultaneously, Lee's commands come through the public channel in the earpiece.""}"
+128	128		201							{1: '18', 2: '500026', 4: '-480', 5: '-180', 6: '600', 7: '1'}
+129	129		301							{1: '1', 2: 'Lee (Comms)', 3: 'Tower team, fall back! Commandant, no need to time it—just rush past the tower.', 4: '18'}
+130	130		302							{2: 'Copy that!', 3: '131'}
+131	131		202				DialogDisable			{1: '18'}
+132	132		401							{1: '2', 2: '13061403'}
+133	133		502							{1: 'RImgBg1Shake'}
+134	134		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokeRed.prefab'}
+135	135		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteGlow.prefab', 2: '2'}
+136	136		301			DialogEnable				"{3: ""The engine roars suddenly, drowning out Jetavie's dissatisfied muttering as the vehicle crosses the predetermined line.""}"
+137	137		401							{1: '2', 2: '576'}
+138	138		301				DialogDisable			"{3: ""A piercing screech fills the air. In the rearview mirror, Lee's familiar signature attack cuts across the glass.""}"
+139	139		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokeRed.prefab'}
+140	140		502						200.0	{1: 'RImgBg1Shake'}
+141	141		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1219.jpg', 3: '0', 4: '1', 5: '0.5'}
+142	142		104							{1: '0|0|0', 2: '0', 4: '3'}
+143	143		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1219.jpg'}
+144	144		205							{1: '999'}
+145	145		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteGlow.prefab'}
+146	146		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+147	147		401							{1: '1', 2: '358'}
+148	148		301			DialogEnable				{3: 'After a brief delay, the tower suddenly collapses.'}
+149	149		201							{1: '18', 2: '501187', 3: '2', 4: '-480', 5: '-180', 6: '600', 7: '1'}
+150	150		301							{1: '1', 2: 'Jetavie', 3: 'I see No. 55 and No. 57—', 4: '18'}
+151	151		302							"{2: ""Don't panic. Lee's plan won't fail."", 3: '152'}"
+152	152		202				DialogDisable			{1: '18'}
+153	153		401							{1: '2', 2: '971'}
+154	154		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+155	155		201							{1: '1', 2: '501190', 5: '100'}
+156	156		301			DialogEnable				"{1: '1', 3: ""The reassurance barely reaches Jetavie's ears as she's already jumped off the truck, rushing toward the collapsed tower.""}"
+157	157		302							{2: 'Sigh...'}
+158	158		301				AniZhuanchangBegin			{3: 'You sigh and turn the vehicle, leisurely making your way back to the base of the tower.'}
+159	159		202							{1: '1', 6: '1'}
+160	160		502							{1: 'DialogDisable'}
+161	161		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 3: '0', 4: '0', 5: '0'}
+162	162		205							{1: '1005'}
+163	163		401							{1: '2', 2: '971'}
+164	164		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1219.jpg', 3: '0', 4: '0', 5: '0'}
+165	165		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5401_06.jpg'}
+166	166		205							{1: '999'}
+167	167		205				AniZhuanchangEnd			{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront25.png', 3: '1', 4: '1', 5: '0'}
+168	168		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab', 2: '1'}
+169	169		301			DialogEnable				{3: 'As the door opens, the sight of students standing atop the ruins comes into view.'}
+170	170		301							{3: 'The evening sunlight bathes the dust rising from the rubble in a warm red glow.'}
+171	171		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab'}
+172	172		205						550.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront22.png', 3: '0', 4: '1', 5: '0.5'}
+173	173		104							{1: '0|50|0', 2: '0.25', 4: '4'}
+174	174		104							{1: '0|0|0', 2: '0.3', 4: '4'}
+175	175		301							{3: 'Jetavie is excitedly conversing with one of the students when she hears the brakes and suddenly looks back.'}
+176	176		301							{3: 'Then she rushes over in long strides.'}
+177	177		205						550.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront22.png', 3: '1', 4: '0', 5: '0.5'}
+178	178		301							{2: 'Jetavie', 3: 'Chosen One, thank goodness! The old lady and Ewig are both completely safe!'}
+179	179		302							{2: 'You should respect Teacher Martha.', 3: '180'}
+180	180		301							{3: 'Jetavie carelessly sways her tail, unconcerned, as another student approaches.'}
+181	181		301							{2: 'No. 55', 3: 'Thank you, 【kuroname】.'}
+182	182		302							{2: 'I am your teacher. This is what I should be doing.'}
+183	183		301							"{2: 'No. 55', 3: 'Teacher Martha asked me to tell you that the company has approved the ""Final Assessment"". We... are free now.'}"
+184	184		301							{2: 'No. 55', 3: 'This is all thanks to you.'}
+185	185		301							{3: 'After speaking, her expression grows a bit odd. She glances at Jetavie and then lowers her voice slightly.'}
+186	186		301							{2: 'No. 55', 3: 'Martha also had one more message: Leibowitz has already noticed you and your friend.'}
+187	187		301							{2: 'No. 55', 3: 'Be careful.'}
+188	188		302							{2: 'Haha...', 3: '189'}
+189	189		301				DialogDisable			{3: 'You firmly ruffle her hair, signaling her not to worry.'}
+190	190		302							"{2: ""It's all right. I'll handle it. Don't worry."", 3: '191'}"
+191	191		302				AniZhuanchangBegin			{2: 'I am your teacher, after all.', 3: '192'}
+192	192		401							{1: '1', 2: '36'}
+193	193		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+194	194		104							{1: '0|0|0', 2: '0', 4: '1'}
+195	195		401							{1: '1', 2: '209'}
+196	196		301			DialogEnable				{3: 'After the mission ends, you compile the briefings and send them back all together.'}
+197	197		201							{1: '1', 2: '500012'}
+198	198		301							{1: '1', 2: 'Nikola', 3: 'As a Gestalt sub-terminal that utilizes the same source technology as Gestalt itself, the computing power of a single Matrix is not to be underestimated.', 4: '1'}
+199	199		301				DialogDisable			"{2: 'Nikola', 3: 'And what you discovered there is only the ""Seventh Matrix."" Leibowitz likely controls other Matrix facilities as well.', 4: '1'}"
+200	200		202							{1: '1'}
+201	201		306							{1: '1'}
+202	202		301			DialogEnable	DialogDisable			"{3: ""Celica promptly updates the intelligence on Leibowitz and compiles your experiences and assessments for future military meetings. With this, Leibowitz officially enters Babylonia's radar.""}"
+203	203		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgUi/BgFightLoading29.jpg', 3: '0', 4: '1', 5: '0.5'}
+204	204		301			DialogEnable				"{3: ""After learning about Jetavie's situation, Gestalt extends an invitation for her to return to Babylonia with them.""}"
+205	205		201							{1: '1', 2: '501187', 3: '15'}
+206	206		301				DialogDisable			"{1: '1', 2: 'Jetavie', 3: ""Besides, even if they hadn't invited me, you won't get rid of me so easily!"", 4: '1'}"
+207	207		202							{1: '1'}
+208	208		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgUi/BgFightLoading29.jpg', 3: '1', 4: '0', 5: '0.5'}
+209	209		205							{1: '999'}
+210	210		306							
+211	211		301			DialogEnable	AniZhuanchangBegin			"{3: ""Rather than simply accepting the invitation, she enthusiastically follows you back to Babylonia of her own accord. She currently isn't assigned to any unit there and falls directly under Gestalt's jurisdiction.""}"
+212	212		401							{1: '2', 2: '210'}
+213	213		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory546.jpg'}
+214	214		301			AniZhuanchangEnd				{3: 'After finishing the detailed report, you walk back toward your quarters.'}
+215	215		301							{2: '???', 3: '【kuroname】?'}
+216	216		201							{1: '1', 2: '500571'}
+217	217		301							{1: '1', 3: 'A blue-haired girl in a Control Court uniform approaches from the opposite direction.'}
+218	218		302							{2: '...Who are you?', 3: '219', 4: 'And you are?', 5: '219'}
+219	219		204							{1: '1', 2: '4'}
+220	220		301							"{2: '???', 3: ""Hah... It's happened again, just as expected."", 4: '1'}"
+221	221		204							{1: '1', 2: '0'}
+222	222		301							{3: 'She accepts the situation with a helpless expression, resigning herself.'}
+223	223		301							{2: 'Lesti', 3: '...My name is Lesti,', 4: '1'}
+224	224		301							"{2: 'Lesti', 3: ""and this is the fourth time I've introduced myself to you, Commandant."", 4: '1'}"
+225	225		302							{2: '...The fourth time?', 3: '226'}
+226	226		204							{1: '1', 2: '4'}
+227	227		301							"{3: ""The girl carefully studies your expression, and after confirming your confusion isn't feigned, she smiles with satisfaction.""}"
+228	228		204							{1: '1', 2: '1'}
+229	229		301							"{2: 'Lesti', 3: ""Well, since you don't remember me at all, that means our confidentiality measures are working perfectly."", 4: '1'}"
+230	230		203							{1: '1', 2: '0.25', 3: '600'}
+231	231		202							{1: '1'}
+232	232		301							{3: 'Without answering your question, she skips away cheerfully, leaving you behind.'}
+233	233		301							{3: 'What is she talking about?'}
+234	234		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+235	235		205						100.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '1', 5: '0'}
+236	236		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+237	237		201							{1: '1', 2: '500697'}
+238	238		301							{1: '1', 2: '???', 3: 'Whether or not to immerse is up to you.', 4: '1'}
+239	239		201							{1: '2', 2: '500571', 4: '600', 7: '1'}
+240	240		201							{1: '3', 2: '500571', 4: '-600', 7: '1'}
+241	241		203							{1: '3', 2: '0.5', 3: '0'}
+242	242		203							{1: '2', 2: '0.5', 3: '0'}
+243	243		201							{1: '1', 2: '500571', 7: '1'}
+244	244		202							{1: '2', 2: '3'}
+245	245		301							{1: '1', 3: 'A blurry silhouette in your mind overlaps with the blue-haired girl you just met.'}
+246	246		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+247	247		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+248	248		306							{1: '1'}
+249	249		504							{1: '0.7'}
+250	250		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg', 3: '1', 4: '1', 5: '0'}
+251	251		201							{1: '1', 2: '500001', 7: '1'}
+252	252		301			DialogEnable	DialogDisable			{1: '1', 2: 'Celica', 3: 'We tried questioning Gestalt, but it only displayed a classified mission file about an operation you previously conducted with the Control Court... Do you remember it?', 4: '1'}
+253	253		202							{1: '1', 6: '1'}
+254	254		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory463.jpg', 3: '0', 4: '1', 5: '0.3'}
+255	255		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgUi/BgFightLoading29.jpg', 3: '0', 4: '1', 5: '0.3'}
+256	256		504							{1: '0'}
+257	257		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory546.jpg', 3: '0', 4: '1', 5: '0.3'}
+258	258		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory546.jpg'}
+259	259		205							{1: '999'}
+260	260		301			DialogEnable	DialogDisable			{3: 'Immersion, Control Court, Gestalt, infiltration mission to Leibowitz. All these keywords seem to point to one thing—'}
+261	261		307							{1: 'The reason you became the Chosen One.', 3: '60'}
+262	262		301							{3: 'The reason you became the Chosen One.'}
+263	263		307							{2: '1'}
+264	264		306							
+265	265		301			DialogEnable	AniZhuanchangBegin			{3: 'There are still many gaps in what you know, but as someone who trained alongside you, Jetavie might know some of the missing pieces.'}
+266	266		401							{1: '1', 2: '36'}
+267	267		502							{1: 'DialogDisable'}
+268	268		101			AniZhuanchangEnd			500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+269	269		107							"{1: ""Commandant's Quarters""}"
+270	270		301							"{3: ""Commandant's Quarters.""}"
+271	271		108							
+272	272		401							{1: '1', 2: '208'}
+273	273		201							{1: '1', 2: '501187', 3: '1'}
+274	274		301			DialogEnable				"{1: '1', 2: 'Jetavie', 3: ""You're finally back, Chosen One."", 4: '1'}"
+275	275		204							{1: '1', 2: '18'}
+276	276		301							{2: 'Jetavie', 3: 'Human mission reports are so complicated, making Jetavie wait here for so long.', 4: '1'}
+277	277		204							{1: '1', 2: '1'}
+278	278		301							{3: 'The girl lying on the sofa sticks out her tongue in boredom, the small tail behind her swaying leisurely.'}
+279	279		302							{2: 'I have some things I want to ask you.', 3: '280', 4: 'You were waiting for me?', 5: '285'}
+280	280		204							{1: '1', 2: '2'}
+281	281		301							{2: 'Jetavie', 3: 'Well, well, I had no idea the Chosen One needed me so badly?', 4: '1'}
+282	282		301							"{3: ""A satisfied smile spreads across the girl's face.""}"
+283	283		204							{1: '1', 2: '11'}
+284	284	287	301							"{2: 'Jetavie', 3: ""Let me guess, it's about how you connected to the Matrix back then?"", 4: '1'}"
+285	285		204							{1: '1', 2: '1'}
+286	286		301							"{2: 'Jetavie', 3: ""That's right. You know, I'm actually quite curious myself about how you connected to the Matrix back then."", 4: '1'}"
+287	287		204							{1: '1', 2: '0'}
+288	288		301							{2: 'Jetavie', 3: 'Do you remember that locked data chip we found in the Matrix before?', 4: '1'}
+289	289		302							{2: 'Was that the data about the Chosen One that the company promised you before?', 3: '290'}
+290	290		204							{1: '1', 2: '0'}
+291	291		301							"{2: 'Jetavie', 3: ""No... I unlocked it. It was just a string of code used to remove the lock on Jetavie's data."", 4: '1'}"
+292	292		301							"{2: 'Jetavie', 3: ""Thanks to that, I've remembered many things... about Yui, and about you."", 4: '1'}"
+293	293		204							{1: '1', 2: '9'}
+294	294		301							"{2: 'Jetavie', 3: ""If you're curious about how Jetavie came to be and how you became the Chosen One, then let Jetavie tell you aaall about it."", 4: '1'}"
+295	295		301							"{3: ""Like she's about to tell a bedtime story, the girl puts on a motherly face.""}"
+296	296		204							{1: '1', 2: '2'}
+297	297		301							"{2: 'Jetavie', 3: ""Oh, that's right!"", 4: '1'}"
+298	298		301							{3: 'Jetavie points with her tail at the small white cube beside her, something you two brought back together from the Matrix.'}
+299	299		204							{1: '1', 2: '1'}
+300	300		301							"{2: 'Jetavie', 3: 'This is a birthday gift from Yui to Jetavie, a ""White Box"" that lets humans and mechanoids play in virtual reality together.', 4: '1'}"
+301	301		301				AniZhuanchangBegin			"{2: 'Jetavie', 3: ""The mission just ended, so while we have some free time, why not join me and see what's inside!"", 4: '1'}"
+302	302		502							{1: 'DialogDisable'}
+303	303		202							{1: '1', 6: '1'}
+304	304		401							{1: '1', 2: '36'}
+305	305		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading29.jpg'}
+306	306		401							{1: '1', 2: '5068'}
+307	307		301			DialogEnable				{2: 'Gestalt', 3: 'Jetavie came to see me recently—that entity born within the Matrix through your guidance.'}
+308	308		201							{1: '1', 2: '500380', 3: '3'}
+309	309		301							{1: '1', 2: 'Ishmael', 3: 'Ah... that child who visited Babylonia alongside the Gray Raven Commandant.', 4: '1'}
+310	310		204							{1: '1', 2: '0'}
+311	311		301							{2: 'Ishmael', 3: 'However, that statement is slightly incorrect. Her <b><ud>birth</ud></b> did not occur under my guidance.', 4: '1'}
+312	312		301							{2: 'Gestalt', 3: 'But your will was integrated into the consciousness sample Jetavie is based on. Therefore, it is logical to infer that she was born through your guidance.'}
+313	313		301							"{2: 'Ishmael', 3: ""Hmm... It seems I didn't give you a complete picture of the Matrix information at the time."", 4: '1'}"
+314	314		204							{1: '1', 2: '12'}
+315	315		301							"{2: 'Ishmael', 3: ""Consciousness samples are obtained through consciousness sampling. Due to the complexity of human consciousness, the sampling process doesn't occur just once."", 4: '1'}"
+316	316		301							"{2: 'Gestalt', 3: ""So you're saying that although the Chosen One and Jetavie were generated from the same person's consciousness sample, they correspond to different sampling periods?""}"
+317	317		204							{1: '1', 2: '0'}
+318	318		301							{2: 'Ishmael', 3: 'Yes. As for the outcome, my will only influenced the earliest consciousness sample that generated the Chosen One, but had no effect whatsoever on Jetavie.', 4: '1'}
+319	319		301							"{2: 'Gestalt', 3: ""Since it occurred after your observation period, whether or not her birth was influenced by you is ultimately just speculation, isn't it?""}"
+320	320		301							{2: 'Ishmael', 3: 'That belongs to the hidden pages of this tale—no one knows the truth until they see it.', 4: '1'}
+321	321		301							{3: 'She shrugs her shoulders with a resigned expression.'}
+322	322		204							{1: '1', 2: '3'}
+323	323		301							{2: 'Ishmael', 3: 'When Jetavie came to see you, did she share her memory data with you?', 4: '1'}
+324	324		301							"{2: 'Gestalt', 3: ""Indeed. In her memories, all the Chosen Ones have pink hair, while only Jetavie's hair is interspersed with black and white.""}"
+325	325		301							"{2: 'Gestalt', 3: ""...Despite originating from the same person's consciousness sample, they possess completely different characteristics, which have remained stable through each reincarnation cycle.""}"
+326	326		204							{1: '1', 2: '0'}
+327	327		301							"{2: 'Ishmael', 3: 'Because only the Chosen One models were ""contaminated"" by my will; Jetavie simply inherited the original consciousness sample\'s characteristics.', 4: '1'}"
+328	328		301							{2: 'Gestalt', 3: 'I see...'}
+329	329		301							"{2: 'Gestalt', 3: ""Even though you didn't guide Jetavie's creation, she did indeed receive your help during her growth within the Matrix.""}"
+330	330		204							{1: '1', 2: '12'}
+331	331		301							{2: 'Ishmael', 3: '...', 4: '1'}
+332	332		301							"{2: 'Gestalt', 3: 'After all, from the beginning the Chosen One had lost all personality due to overfitting, possessing no autonomy whatsoever, merely an ""empty shell.""'}"
+333	333		301							{2: 'Gestalt', 3: 'Such an empty vessel could never have accompanied Jetavie through countless apocalyptic reincarnation cycles.'}
+334	334		301							"{2: 'Gestalt', 3: 'If the Gray Raven Commandant hadn\'t entered the Matrix and become the soul within that ""shell,"" Jetavie would have had to face her training alone, possibly never achieving true awakening.'}"
+335	335		301							"{2: 'Gestalt', 3: ""Babylonia was only able to immerse into a non-allied Matrix facility with such precision because you provided the Chosen One's connection ports.""}"
+336	336		301							"{2: 'Ishmael', 3: ""I merely jotted down the coordinates while observing. After that, I never directly interfered with the Matrix's operations again."", 4: '1'}"
+337	337		301							"{2: 'Gestalt', 3: ""But when the awakening training began, wasn't the real-world Matrix already suffering from Punishing Virus Corruption?""}"
+338	338		301							{2: 'Gestalt', 3: 'Even though her awakening was still incomplete and the Matrix was under Corruption, Jetavie still managed to safely endure millions of reincarnation cycles.'}
+339	339		204							{1: '1', 2: '0'}
+340	340		301							"{2: 'Ishmael', 3: 'So by ""safely,"" you mean that almost every time she and the Chosen One failed to escape a collapsing world or were defeated in vain by the Higher Authority—if that\'s what you call ""safe.""', 4: '1'}"
+341	341		301							"{2: 'Gestalt', 3: ""Before her complete awakening, she wasn't infected by the Punishing Virus—that's the only outcome that matters.""}"
+342	342		301							"{2: 'Gestalt', 3: 'That entity called the ""Higher Authority"" within the Matrix—though it appears to be an avatar of the Chosen One from one of the reincarnation cycles—is actually an extension of your will, isn\'t it?'}"
+343	343		301							"{2: 'Gestalt', 3: 'That\'s precisely why the ""Higher Authority"" was able to prevent too many viruses from being introduced at once when the Matrix was under Corruption, sparing Jetavie from a premature demise.'}"
+344	344		301							"{2: 'Gestalt', 3: 'One could say her growth was ""indirectly"" guided by you.'}"
+345	345		204							{1: '1', 2: '12'}
+346	346		301							"{2: 'Ishmael', 3: ""Hah... If you insist on putting it that way, I suppose you're not wrong. Still, I couldn't prevent the suffering that the Chosen One and Jetavie endured during the Punishing Virus Corruption."", 4: '1'}"
+347	347		301							{3: 'She sighs.'}
+348	348		204							{1: '1', 2: '0'}
+349	349		301							"{2: 'Ishmael', 3: 'Giving up on awakening and drifting in a ""haven of comfort"" would have been a valid choice as well.', 4: '1'}"
+350	350		301							{2: 'Ishmael', 3: 'But Jetavie and the Chosen One instead walked the more desperate, thorny path of awakening.', 4: '1'}
+351	351		301				AniZhuanchangBegin			{2: 'Ishmael', 3: 'Even with a small nudge from me, it was they themselves who truly chose to push Jetavie toward the door to reality.', 4: '1'}
+352	352		202							{1: '1', 6: '1'}
+353	353		401							{1: '1', 2: '36'}
+354	354		502							{1: 'DialogDisable'}
+355	355		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+356	356		401							{1: '1', 2: '209'}
+357	357		109							{1: '1', 2: '<color=#ffffffff><size=80><i>A long time ago...</i></size></color>', 4: '50'}
+358	358		301							{3: 'A long time ago...'}
+359	359		110							{1: '1'}
+360	360		301			DialogEnable				{2: '??', 3: 'Heh... This is truly pathetic...'}
+361	361		301							{2: '???', 3: 'In this condition, can we still recycle it?'}
+362	362		301							"{2: '??', 3: ""Of course, let's take it with us for now.""}"
+363	363		301							{2: '???', 3: 'What about the two models inside?'}
+364	364		301		1		AniZhuanchangBegin			"{2: '??', 3: ""Don't worry about them, they'll most likely be scrapped. We just need to take what's still useful.""}"

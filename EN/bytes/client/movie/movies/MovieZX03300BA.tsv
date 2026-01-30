@@ -1,0 +1,364 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '119'}
+3	3		301			DialogEnable				{3: 'Ayla had her own little fantasies about what Earth would be like before her first assignment.'}
+4	4		502							{1: 'RImgBg1DisableSlow'}
+5	5		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory542.jpg'}
+6	6		301							"{3: ""Having only read about Earth in textbooks, she'd often imagine what's become of Earth now...""}"
+7	7		502							{1: 'RImgBg1DisableSlow'}
+8	8		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory309.png'}
+9	9		301							{3: 'The kind of poetry people on Earth are now writing, and how drastically different their culture must be from that of the Golden Age.'}
+10	10		502							{1: 'RImgBg1DisableSlow'}
+11	11		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory532.jpg'}
+12	12		301							"{3: ""She'd imagine herself coming across some unwithered spider ivy in some ruins and giving them to her colleagues back at Babylonia.""}"
+13	13		502							{1: 'RImgBg1DisableSlow'}
+14	14		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory347.jpg'}
+15	15		301							"{3: ""She'd imagine herself traveling through where all the past heroes once fought and commemorating them with a long-overdue requiem.""}"
+16	16		502							{1: 'RImgBg1DisableSlow'}
+17	17		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgCg/Cgqz1002.jpg'}
+18	18		301							{3: 'Cruel might be reality—and yet she was determined to remember every second of it by heart with her eyes wide open...'}
+19	19		502							{1: 'RImgBg1DisableSlow'}
+20	20		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgCg/Cgqz1001.jpg'}
+21	21		301							{3: 'All the while feeling uplifted by the idea that her artwork would rise to new heights with new experiences...'}
+22	22		401							{1: '1', 2: '36'}
+23	23		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+24	24		401							{1: '2', 2: '2559'}
+25	25		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+26	26		301				AniZhuanchangBegin			{3: 'Until, that is, reality shatters her imagination into pieces—pieces upon which she now finds herself standing.'}
+27	27		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory318.png'}
+28	28		401							{1: '1', 2: '201'}
+29	29		301			AniZhuanchangEnd				{3: '...'}
+30	30		301							{3: 'A team of a dozen Constructs is now making its way through the wild.'}
+31	31		301							{3: 'They have lost two members, and the survivors are not faring well. With severed neural circuits, alloy bones exposed, and coagulated clumps of vital fluid on their skin, several Constructs cannot walk without help.'}
+32	32		201							{1: '1', 2: '500110', 3: '19'}
+33	33		301							{1: '1', 2: 'Ayla', 3: '...', 4: '1'}
+34	34		301							{3: 'The pink-haired member walking at the end of the team is the least damaged, being one of those meant to be protected.'}
+35	35		301							{3: 'She stares blankly at the team, keeping a distance from them.'}
+36	36		202							{1: '1', 6: '1'}
+37	37		201							{1: '1', 2: '500110', 3: '19', 4: '-400'}
+38	38		201							{1: '2', 2: '500394', 4: '400'}
+39	39		301							{1: '1', 3: 'Having sensed the gloom in the air, one of the Constructs walking at the front slows down until they reach Ayla.'}
+40	40		301							{2: 'Archaeological Team Member', 3: 'How are you holding up, Ayla?', 4: '2'}
+41	41		301							{2: 'Archaeological Team Member', 3: 'You did really well for someone who came down for the first time.', 4: '2'}
+42	42		301							{2: 'Ayla', 3: 'Thanks...', 4: '1'}
+43	43		301							"{2: 'Ayla', 3: ""I'm feeling okay."", 4: '1'}"
+44	44		202							{1: '1', 2: '2', 6: '1'}
+45	45		301							"{3: ""This is Ayla's first ever big archaeological assignment since she joined the team.""}"
+46	46		301							{3: 'When WGAA discovered this archaeological site, it sent the team down to collect documents and relics that were left there.'}
+47	47		301							"{3: ""Task Force had cleansed the site, meaning that, theoretically, they weren't supposed to come across Corrupted in droves.""}"
+48	48		301							{3: 'As fate would have it, however, they found themselves surrounded by countless Corrupted—ones infected by previously undetected Punishing Virus—when the archaeological team traveled deep into the site with the Task Force team that had come along.'}
+49	49		301							"{3: ""The Task Force team managed to escort the archaeological team to safety with all the documents and precious relics they had—at the cost of two of its members' lives.""}"
+50	50		201							{1: '1', 2: '500110', 3: '19', 4: '-400'}
+51	51		201							{1: '2', 2: '500394', 4: '400'}
+52	52		301							{1: '1', 2: 'Orpheus', 3: 'You seem anything but okay, though.', 4: '2'}
+53	53		301							"{2: 'Orpheus', 3: ""But it's common among our newcomers, since there is a world of difference between up there and down here. It's going to take some getting used to."", 4: '2'}"
+54	54		301							"{2: 'Ayla', 3: ""I just... I don't really know how to word it..."", 4: '1'}"
+55	55		301							"{2: 'Ayla', 3: ""But things just seem very different from what I thought they'd be."", 4: '1'}"
+56	56		301							"{2: 'Ayla', 3: ""I mean I still remember Rex's straight face and how he'd always suddenly crack everyone up with a joke out of nowhere... and how Fay said we'd be going to the next exhibit together after this mission..."", 4: '1'}"
+57	57		301							{2: 'Ayla', 3: 'And now they are... gone.', 4: '1'}
+58	58		301							"{2: 'Orpheus', 3: ""I can totally relate. People have a false sense of security about what they're getting into, thinking that they can just recall in the worst-case scenario."", 4: '2'}"
+59	59		301							"{2: 'Orpheus', 3: ""But it is what it is, unfortunately, and life is the price we pay when we don't have backup plans to fall back on."", 4: '2'}"
+60	60		301							"{2: 'Orpheus', 3: ""We came to recycle technology and cultural relics from the Golden Age—and it's a breeze, relatively speaking, if you compare that with what the Task Force is doing at the frontlines."", 4: '2'}"
+61	61		301							"{2: 'Orpheus', 3: ""But you never know what's coming your way, and this time just so happens to be one of those days."", 4: '2'}"
+62	62		301							"{2: 'Orpheus', 3: ""And this is probably just going to get more common down the road. I can submit a withdrawal request for you, though, if you're having a hard time adjusting. It happens, and WGAA is okay with that."", 4: '2'}"
+63	63		204							{1: '1', 2: '4'}
+64	64		301							"{2: 'Ayla', 3: ""No, that's not what I mean. I'm not quitting!"", 4: '1'}"
+65	65		301							{3: 'Seeing that Orpheus has misinterpreted her intention, Ayla quickly shakes her head in denial.'}
+66	66		204							{1: '1', 2: '19'}
+67	67		301							"{2: 'Ayla', 3: ""I just think I'm not up to snuff yet..."", 4: '1'}"
+68	68		301				AniZhuanchangBegin			{2: 'Ayla', 3: 'I thought I was ready and all, but...', 4: '1'}
+69	69		202							{1: '1', 2: '2', 6: '1'}
+70	70		401							{1: '1', 2: '36'}
+71	71		101						2000.0	{1: 'Assets/Product/Texture/Image/BgCg/Cgqz1002.jpg'}
+72	72		401							{1: '1', 2: '33'}
+73	73		301			AniZhuanchangEnd				"{3: 'Ayla has seen ""war"" once in Babylonia...'}"
+74	74		301							{3: 'With remnants of ships afloat in the infinite expanse of the starry sky, a blast from a particle-beam weapon instantly lights up the otherwise pitch-black sky.'}
+75	75		301							{3: 'At the moment, beholding the same view as her dear friend, she thought they had an unspoken rapport established between them.'}
+76	76		301							"{3: ""Ayla thought she'd understood her choice and her dream and why her friend chose to leave without bidding farewell.""}"
+77	77		301				AniZhuanchangBegin			{3: 'And yet... she now sees that she knew nothing.'}
+78	78		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz1001.jpg'}
+79	79		301			AniZhuanchangEnd				{3: 'When her friend was out at Hetero Space Station fighting the Corrupted, Ayla was sitting by a porthole looking down from Babylonia, in the comfort of a greenhouse where gravity, humidity, and temperature had been adjusted to suitable levels.'}
+80	80		301							"{3: 'When she finally got a real taste of ""reality,"" however... her legs grew so numb that she wasn\'t even able to take a step forward.'}"
+81	81		301							"{3: '""Our paths will be rectified, as long as we portray the world as it truly is.""'}"
+82	82		301							{3: 'This is what Ayla seemed to have heard when she saw the space station awash in the debris of war.'}
+83	83		301				AniZhuanchangBegin			"{3: ""It was a secret message Selena left her, and was the answer that Ayla's idealist of a friend had found at the end of her journey.""}"
+84	84		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz1007.jpg'}
+85	85		301			AniZhuanchangEnd	AniZhuanchangBegin			"{3: ""And Ayla thought it was a heavenly revelation, and that following her dear friend's path would take her to where she herself wanted to go.""}"
+86	86		401							{1: '2', 2: '1508'}
+87	87		401							{1: '2', 2: '819004'}
+88	88		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory33.jpg'}
+89	89		504							{1: '0.7'}
+90	90		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+91	91		301			AniZhuanchangEnd				{3: 'But when she saw the Punishing-torn world with her own eyes and heard weapons thrust through Corrupted...'}
+92	92		201							{1: '1', 2: '500006', 4: '-400'}
+93	93		201							{1: '2', 2: '500406', 4: '400'}
+94	94		301							"{1: '1', 2: 'Rex', 3: ""Hey, what are you doing? Just keep moving with whatever you're holding!"", 4: '1'}"
+95	95		301							{2: 'Fay', 3: 'Our mission is to send you back home safe, guys! So do us a favor and soldier on now!', 4: '2'}
+96	96		301							{3: 'And when she looked at all the bloodstained Constructs in the eye and witnessed people she had only just befriended being torn into pieces…'}
+97	97		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '2'}
+98	98		202							{1: '1', 2: '2'}
+99	99		301							{3: 'She grew hesitant.'}
+100	100		301				AniZhuanchangBegin			{3: 'She was not as brave as she thought she was.'}
+101	101		504							{1: '0'}
+102	102		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+103	103		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory318.png'}
+104	104		201							{1: '1', 2: '500110', 3: '19'}
+105	105		301			AniZhuanchangEnd				"{1: '1', 2: 'Ayla', 3: 'I wanted to see the world as it ""really"" is and put what I come across into my work, which is why I decided to have myself turned into a Construct and joined the WGAA. Creations like that are what I call real art.', 4: '1'}"
+106	106		301							"{2: 'Ayla', 3: 'Except it hit me that ""reality"" can\'t necessarily inspire people, and that ""reality"" might just be my own imagination of what it is...', 4: '1'}"
+107	107		301							"{2: 'Ayla', 3: ""Because who's to say I'll be able to see the world in its entirety simply because I've come down here, right?"", 4: '1'}"
+108	108		301							"{2: 'Ayla', 3: ""And I'm just thinking... that I've probably been a little too naive this whole time. What do you think?"", 4: '1'}"
+109	109		201							{1: '1', 2: '500394'}
+110	110		301							"{1: '1', 2: 'Orpheus', 3: 'People tend to regard something as some higher truth if it revolutionizes their common sense... Does that hold true for this ""reality"" you\'re talking about, too?', 4: '1'}"
+111	111		301							"{2: 'Orpheus', 3: ""I can't judge your feelings here, and I don't have an answer to your question."", 4: '1'}"
+112	112		301							{2: 'Orpheus', 3: 'But...', 4: '1'}
+113	113		301							"{2: 'Orpheus', 3: ""There was this girl about your age, and I've been on several missions with her."", 4: '1'}"
+114	114		301							{2: 'Orpheus', 3: 'On our way back from our first mission together, she entertained us with her favorite poem.', 4: '1'}
+115	115		301							"{2: 'Orpheus', 3: ""He who mocks the infant's faith, shall be mock'd in age and death..."", 4: '1'}"
+116	116		301							{3: 'In a gentle tone, Orpheus starts reciting a poem Ayla knows by heart.'}
+117	117		301							"{2: 'Orpheus', 3: ""He who teaches the child to doubt, the rotting grave shall he ne'er get out..."", 4: '1'}"
+118	118		301							"{3: ""This is one of Selena's favorite poems.""}"
+119	119		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+120	120		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+121	121		201							{1: '1', 2: '500604'}
+122	122		301							"{1: '1', 2: '???', 3: ""He who respects the infant's faith, triumphs over hell and death..."", 4: '1'}"
+123	123		301							"{2: '???', 3: ""He who doubts all that he sees, will he ne'er believe..."", 4: '1'}"
+124	124		301							{2: '???', 3: '...Do what you please.', 4: '1'}
+125	125		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+126	126		504							{1: '0.7'}
+127	127		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory529.jpg'}
+128	128		201							{1: '1', 2: '500111'}
+129	129		301							"{1: '1', 2: 'Allen', 3: ""We're recorders, witnesses, articulators, and creators."", 4: '1'}"
+130	130		301							{2: 'Allen', 3: 'What we fight, we cannot see.', 4: '1'}
+131	131		301							{2: 'Allen', 3: 'Which is why people mock us and have a hard time imagining the purpose we serve.', 4: '1'}
+132	132		301							"{2: 'Allen', 3: ""Except we do know the purpose we serve—and it's a value from which we will not back down."", 4: '1'}"
+133	133		301							{2: 'Allen', 3: 'And I can see it in your eyes that you, too, wish to stand guard for that value...', 4: '1'}
+134	134		204							{1: '1', 2: '1'}
+135	135		301				AniZhuanchangBegin			{2: 'Allen', 3: 'Which is why the WGAA is honored to receive you with open arms, Ayla.', 4: '1'}
+136	136		202							{1: '1', 6: '1'}
+137	137		504							{1: '0'}
+138	138		401							{1: '1', 2: '36'}
+139	139		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg'}
+140	140		401							{1: '1', 2: '207'}
+141	141		301			AniZhuanchangEnd				{3: 'Having finished their mission, the archaeological team arrived at a human settlement.'}
+142	142		301							"{3: ""The settlement is built upon a deserted city. While a far cry from most conservation areas in terms of infrastructure, the settlement has proper mechanics in place that make life here possible. It's also fairly safe, with Ground Force permanently stationed around.""}"
+143	143		301							"{3: ""With Babylonia's transport craft still a good way out, the team has quite some time to spare in this settlement.""}"
+144	144		201							{1: '1', 2: '500110', 3: '4'}
+145	145		301				AniZhuanchangBegin			{1: '1', 2: 'Ayla', 3: '...', 4: '1'}
+146	146		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory318.png'}
+147	147		201							{1: '1', 2: '500434'}
+148	148		401							{1: '2', 2: '1516'}
+149	149		301			AniZhuanchangEnd	AniZhuanchangBegin			"{1: '1', 3: ""Ayla walks around the settlement, taking her time observing this place that's been put together by the humans here who had built it with whatever they could get their hands on.""}"
+150	150		201							{1: '1', 2: '500427'}
+151	151		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory41.jpg'}
+152	152		301			AniZhuanchangEnd	AniZhuanchangBegin			{1: '1', 3: 'When she looks into a simple tent, she sees an old mechanic pick out usable parts from a pile of mechanoid remains sent here by Ground Force.'}
+153	153		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory317.png'}
+154	154		401							{1: '2', 2: '2636'}
+155	155		201							{1: '1', 2: '500086'}
+156	156		301			AniZhuanchangEnd	AniZhuanchangBegin			"{1: '1', 3: ""Passing by a makeshift outdoor kitchen that's really just a cooking range put under an overhanging meat rack, she sees the chef cooking with ingredients she never even thought edible.""}"
+157	157		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory316.png'}
+158	158		402							{1: '2636'}
+159	159		201							{1: '1', 2: '500251', 4: '-400'}
+160	160		201							{1: '2', 2: '500294', 4: '400'}
+161	161		301			AniZhuanchangEnd	AniZhuanchangBegin			{1: '1', 3: 'She sees an old lady sewing an undershirt with a rusted needle and a man sharpening his hunting instruments with waste parts.'}
+162	162		202							{1: '1', 2: '2', 6: '1'}
+163	163		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg'}
+164	164		301			AniZhuanchangEnd				"{3: ""Ayla beholds the sights quietly, her mind occupied by Orpheus' words from before.""}"
+165	165		201							{1: '1', 2: '500259', 4: '400'}
+166	166		201							{1: '2', 2: '500164', 4: '-400', 5: '-50', 6: '100'}
+167	167		301							{1: '1', 2: 'Patrick', 3: 'Eat this, you damn thing!', 4: '1'}
+168	168		301			PanelActor2Shake				{1: '1', 2: 'Aaron', 3: 'Arghhhh...', 4: '2'}
+169	169		301							{3: 'There are kids around taking turns being Constructs and Corrupted with twigs in a make-believe.'}
+170	170		202							{1: '1', 2: '2', 6: '1'}
+171	171		201							{1: '1', 2: '500261'}
+172	172		301							"{1: '1', 2: 'Shrew', 3: ""Hey, it's my turn to be a Construct now."", 4: '1'}"
+173	173		201							{1: '1', 2: '500164', 5: '-50', 6: '100'}
+174	174		301							"{1: '1', 2: 'Aaron', 3: ""Hold on, it's my turn next!"", 4: '1'}"
+175	175		202							{1: '1', 6: '1'}
+176	176		201							{1: '1', 2: '500110', 3: '6'}
+177	177		301							{1: '1', 2: 'Ayla', 3: 'Boys will always be boys, eh...', 4: '1'}
+178	178		202							{1: '1', 6: '1'}
+179	179		201							{1: '1', 2: '500596'}
+180	180		301							{1: '1', 2: 'Little Girl', 3: '...', 4: '1'}
+181	181		301							"{3: ""With the boys making noises running all over the place, a girl catches Ayla's attention.""}"
+182	182		301							"{3: ""The girl sits quietly by herself at a wooden table with an open notebook in front of her, holding in her hand a hematite that's been cut into the shape of a strip—which she draws with.""}"
+183	183		301							"{3: 'Occasionally putting her hand under her chin and looking at her picture with a frown, the girl is fully focused on drawing. ""Milly""—says the words on the cloth badge sewn to her jacket.'}"
+184	184		301							{3: 'Ayla walks up to the girl and strikes up a conversation.'}
+185	185		202							{1: '1', 6: '1'}
+186	186		201							{1: '1', 2: '500110', 4: '-400'}
+187	187		201							{1: '2', 2: '500596', 4: '400'}
+188	188		301							"{1: '1', 2: 'Ayla', 3: ""Hey, I see you're drawing something."", 4: '1'}"
+189	189		301							{2: 'Milly', 3: 'Uhm...', 4: '2'}
+190	190		301							"{3: ""Ayla can't be sure if Milly has heard her—as Milly keeps her eyes trained squarely on her drawing in agitation.""}"
+191	191		301							"{3: ""Seeing what's on the paper, however, Ayla can't be sure how she would even begin to describe the drawing.""}"
+192	192		301							{2: 'Ayla', 3: 'What are you drawing?', 4: '1'}
+193	193		301							{2: 'Milly', 3: 'Turtles.', 4: '2'}
+194	194		301							{3: 'Says Milly as she points at a clump on the picture that seems anything but turtle-like.'}
+195	195		301							"{2: 'Milly', 3: ""And there are also birds and dogs, and I've got rabbits here, too."", 4: '2'}"
+196	196		301							{2: 'Ayla', 3: 'Well, they certainly look... very interesting.', 4: '1'}
+197	197		301							{2: 'Milly', 3: '...', 4: '2'}
+198	198		301							"{2: 'Milly', 3: ""Thanks for not just saying I'm doing a bad job."", 4: '2'}"
+199	199		301							{3: 'The girl reads Ayla like an open book.'}
+200	200		301							"{2: 'Ayla', 3: ""Hey, that's not true at all!"", 4: '1'}"
+201	201		301							{2: 'Ayla', 3: 'Do you like to draw?', 4: '1'}
+202	202		301							{2: 'Milly', 3: 'Well, I guess so...', 4: '2'}
+203	203		301							{2: 'Milly', 3: 'My dad said he found this notebook and gave it to me, and I just draw everything I see now so I get to show him what I saw when he gets home.', 4: '2'}
+204	204		301							{2: 'Milly', 3: 'Patrick and Aaron said my drawings are terrible, though... so I decided to stop playing with them.', 4: '2'}
+205	205		301							"{2: 'Milly', 3: ""My dad said he used to draw all the time, but he's too busy to teach me."", 4: '2'}"
+206	206		301							{2: 'Ayla', 3: 'Well... do you want me to show you how, then?', 4: '1'}
+207	207		301							"{2: 'Milly', 3: ""Are you good? None of these people here can draw... Oh, but you're from Babylonia, right?"", 4: '2'}"
+208	208		301							{2: 'Milly', 3: 'Patrick said that the Constructs from Babylonia are amazing. Are you good at drawing, too?', 4: '2'}
+209	209		301							{2: 'Ayla', 3: 'It depends on the person... but I do know a thing or two about drawing.', 4: '1'}
+210	210		301							{2: 'Milly', 3: 'Well... here, I have about 70 empty pages left. Try not to use too many of them, though.', 4: '2'}
+211	211		301							{3: 'Ayla sits down beside Milly. Ever so carefully, Milly passes Ayla her notebook and the hematite crayon.'}
+212	212		301							{2: 'Ayla', 3: 'Any idea what you want me to draw?', 4: '1'}
+213	213		301							{2: 'Milly', 3: 'Are you okay with drawing anything?', 4: '2'}
+214	214		301							"{2: 'Ayla', 3: ""As long as it's something common enough... like kitties or puppies. I'm good with plants like dandelions and hyacinths, too."", 4: '1'}"
+215	215		301							{2: 'Milly', 3: 'Well... can you draw me a hydrangea, then?', 4: '2'}
+216	216		301							{2: 'Ayla', 3: 'A what?', 4: '1'}
+217	217		301							{2: 'Milly', 3: 'A hy-dran-gea. I only know the name of the flower but I have never seen it.', 4: '2'}
+218	218		301							{2: 'Milly', 3: 'There was another Construct from Babylonia that brought me some hydrangea seeds. She told me hydrangeas have these beautiful blue flowers when they bloom.', 4: '2'}
+219	219		301							{2: 'Milly', 3: 'Have you seen hydrangeas? Are they really that pretty?', 4: '2'}
+220	220		301							"{3: ""Ayla nods with a smile at Milly, who's looking at her excitedly.""}"
+221	221		301							"{2: 'Ayla', 3: ""Well, I guess you can say I have. And yes, they're pretty when they bloom."", 4: '1'}"
+222	222		301							"{3: ""Except Ayla has never seen an actual hydrangea—other than in the pictures that she came across at Babylonia's Education Center, which struggles with what little resources it has to raise all the plants it has the pictures for.""}"
+223	223		301							"{3: ""Ayla, however, decides to give it a try anyway, hoping her attempt would give Milly a glimpse into a world she's never before seen.""}"
+224	224		301							"{3: ""Uneven all over with a dull tip, the hematite crayon Ayla is holding hardly makes a convenient tool to draw with. With a tool as unsuitable as this and a lack of proper instructions, Ayla can't imagine anyone making any meaningful progress at all drawing on their own.""}"
+225	225		301							"{2: 'Ayla', 3: ""Now, let's add a bit here... and here..."", 4: '1'}"
+226	226		301							{2: 'Ayla', 3: 'And that should do it... I think?', 4: '1'}
+227	227		301							{3: 'Ayla shows Milly her finished work.'}
+228	228		301							{2: 'Milly', 3: 'Wow... this is amazing! It looks so real... Are hydrangeas really this pretty?', 4: '2'}
+229	229		301							"{2: 'Ayla', 3: ""Well... this is based on what I remember of it, and I'm sure it's different from how you imagined it because it's not even blue."", 4: '1'}"
+230	230		301							"{2: 'Ayla', 3: ""But just wait until you see a real hydrangea in your garden. I'm sure it'll be a lot prettier than the one I drew."", 4: '1'}"
+231	231		301							"{2: 'Ayla', 3: ""And drawing is not as difficult as it seems, as I'm sure you've realized after seeing me draw just now. To start with, this is what you need to do..."", 4: '1'}"
+232	232		301							{3: 'Ayla shows Milly her ways, which Milly quickly picks up.'}
+233	233		301							{2: 'Milly', 3: 'Where did you learn all this?', 4: '2'}
+234	234		301							{2: 'Milly', 3: 'I have never thought about any of the things you said just now...', 4: '2'}
+235	235		301							{2: 'Milly', 3: 'So where did you learn all this stuff? Did you have a teacher who taught you this in Babylonia?', 4: '2'}
+236	236		301							{2: 'Ayla', 3: '...', 4: '1'}
+237	237		301							"{2: 'Ayla', 3: ""I'm from the WGAA, and it's an organization at Babylonia."", 4: '1'}"
+238	238		301							"{2: 'Ayla', 3: ""People from the WGAA are experts in art, and that's where I picked up a lot of what I know about drawing."", 4: '1'}"
+239	239		301							"{2: 'Milly', 3: ""WG... AA? What's art anyway?"", 4: '2'}"
+240	240		301							{2: 'Ayla', 3: 'Well, art is...', 4: '1'}
+241	241		301							{3: 'Ayla decides not to bombard the kid with the technical definition of art she knows like the back of her hand.'}
+242	242		301							{2: 'Ayla', 3: 'Let me see... Milly, what makes you want to show your work to your dad?', 4: '1'}
+243	243		301							{2: 'Milly', 3: 'Huh...?', 4: '2'}
+244	244		301							{2: 'Milly', 3: 'Well... because my dad is always happy when I share my drawings with him, and I just want to show him what I see and do out here every day because he is hardly ever home...', 4: '2'}
+245	245		301							"{2: 'Ayla', 3: ""I think that's a beautiful reason for you to keep drawing..."", 4: '1'}"
+246	246		301							"{2: 'Ayla', 3: ""To me at least... art is something that's created with motivations like that."", 4: '1'}"
+247	247		301							{2: 'Ayla', 3: 'Drawing, dancing, writing a novel or poetry are just some examples of art... And there were also movies and manga back in the Golden Age...', 4: '1'}
+248	248		301							"{2: 'Milly', 3: ""Manga...? Manga... Wait, I'll be right back!"", 4: '2'}"
+249	249		202							{1: '2'}
+250	250		401							{1: '2', 2: '1513'}
+251	251		301							{3: 'Moments later, Milly comes back with a booklet.'}
+252	252		201							{1: '2', 2: '500596', 4: '400'}
+253	253		301							"{1: '1', 2: 'Milly', 3: 'This is what you call a ""manga,"" right? Because that\'s what my dad calls it, too!', 4: '2'}"
+254	254		402							{1: '1513'}
+255	255		301							"{3: ""Milly gives the paperback to Ayla. It's an old one, its pages having yellowed from time, but not so much so that Ayla has trouble reading what's in it.""}"
+256	256		301							{2: 'Ayla', 3: 'Is this from... Beautiful Angel?', 4: '1'}
+257	257		301							{3: 'The manga is a series that gained traction during the Golden Age, based on the anime and toys that came before the series itself.'}
+258	258		301							"{2: 'Ayla', 3: ""It's by the same author that drew Cardman Rider..."", 4: '1'}"
+259	259		301							{2: 'Milly', 3: 'The girls in the story are amazing! They transform into these beautiful ladies with magical powers and rough up the bad guys!', 4: '2'}
+260	260		301							"{2: 'Ayla', 3: ""I remember reading a few of these at Babylonia's Education Center when I was a kid... and boy, was I addicted. Those were good times."", 4: '1'}"
+261	261		301							"{2: 'Milly', 3: ""Really, I'm so jealous! This is the only one I have... I've read it so many times already, but Dad said he can't find another one... Can I borrow one from you? I can... um... trade yours with this one!"", 4: '2'}"
+262	262		204							{1: '1', 2: '19'}
+263	263		301							"{2: 'Ayla', 3: ""I would love to help... but I think they only have a few copies in Babylonia, and I don't think I can even take them out."", 4: '1'}"
+264	264		301							{2: 'Milly', 3: 'Oh, no... but I really want to find out what happens next...', 4: '2'}
+265	265		301							"{3: 'At the end of the series, two protagonists are chosen as ""Beautiful Angels"" by the Fairy to fight the monsters. The two became friends because of that and started their journey from there.'}"
+266	266		301							{3: 'The story stops there, leaving many craving for a sequel.'}
+267	267		204							{1: '1', 2: '8'}
+268	268		301							"{2: 'Ayla', 3: ""Well... works like this have never received much attention from the WGAA. These obviously have more business value than they do art value, but I don't think it hurts to preserve them..."", 4: '1'}"
+269	269		204							{1: '1'}
+270	270		301							"{2: 'Milly', 3: ""Say... you wouldn't happen to be able to draw something like this, right?"", 4: '2'}"
+271	271		301							{3: 'Milly thinks out loud, stopping Ayla in her tracks.'}
+272	272		301							"{2: 'Ayla', 3: ""You're suggesting... that I draw manga?"", 4: '1'}"
+273	273		301							{2: 'Milly', 3: 'Yup. You like it, too, right?', 4: '2'}
+274	274		301							"{2: 'Ayla', 3: ""I've never tried it, and it requires a totally different set of skills and knowledge..."", 4: '1'}"
+275	275		301							"{2: 'Milly', 3: ""I... would be really happy if you could do that for me! And, well, I'd be more than happy to help you with anything if you ever need me to!"", 4: '2'}"
+276	276		301							"{3: ""Milly suddenly lowers her head, seemingly having realized that she's asking for a difficult favor.""}"
+277	277		202							{1: '1', 2: '2', 6: '1'}
+278	278		201							{1: '1', 2: '500394'}
+279	279		301							{1: '1', 2: 'Orpheus', 3: 'Hey, here you are, Ayla. Time to get moving.', 4: '1'}
+280	280		301							"{2: 'Orpheus', 3: ""Transport craft is here and we're set to go in ten minutes."", 4: '1'}"
+281	281		202							{1: '1', 6: '1'}
+282	282		201							{1: '1', 2: '500110', 4: '-400'}
+283	283		201							{1: '2', 2: '500596', 4: '400'}
+284	284		301							{1: '1', 2: 'Ayla', 3: 'Oh... gotcha.', 4: '1'}
+285	285		301							{2: 'Milly', 3: 'Oh... are you leaving?', 4: '2'}
+286	286		301							"{2: 'Ayla', 3: ""Yes, I'm going back to Babylonia."", 4: '1'}"
+287	287		301							"{2: 'Milly', 3: ""I see... Well, guess I'll see you next time, then! I mean... I don't know when that's gonna be, but."", 4: '2'}"
+288	288		301							"{2: 'Milly', 3: ""My dad said he's going to take me to a new conservation area in a few months, and I think it's going to be really far from here."", 4: '2'}"
+289	289		301							{2: 'Milly', 3: 'I hope you have a safe flight home.', 4: '2'}
+290	290		301							{2: 'Ayla', 3: 'Thank you, Milly.', 4: '1'}
+291	291		202							{1: '1', 2: '2'}
+292	292		301							{3: 'Having bid farewell to Milly, Ayla makes her way to the transport craft with Orpheus.'}
+293	293		201							{1: '1', 2: '500110', 4: '-400'}
+294	294		201							{1: '2', 2: '500394', 4: '400'}
+295	295		301							{1: '1', 2: 'Orpheus', 3: 'Did you have fun hanging out with the kids?', 4: '2'}
+296	296		301							{2: 'Ayla', 3: 'Not kids, just her. I happened to see her by herself.', 4: '1'}
+297	297		301							{2: 'Orpheus', 3: 'Most of us from the archaeological team choose to avoid having any contact with people from conservation areas, though.', 4: '2'}
+298	298		204							{1: '1', 2: '8'}
+299	299		301							"{2: 'Ayla', 3: ""...All because we're not Task Force?"", 4: '1'}"
+300	300		204							{1: '1'}
+301	301		301							"{2: 'Orpheus', 3: ""People living on Earth think that all Constructs from Babylonia are superheroes, but we all know that can't be further from the truth... See, we're nothing without Task Force's help."", 4: '2'}"
+302	302		204							{1: '1', 2: '8'}
+303	303		301							"{2: 'Ayla', 3: 'Say, how would you define ""art""?', 4: '1'}"
+304	304		204							{1: '1'}
+305	305		301							"{2: 'Orpheus', 3: ""Whoa, caught me by surprise there. Well, let's see... It's not clear-cut, and it depends on which theory you buy into."", 4: '2'}"
+306	306		202							{1: '1', 2: '2', 6: '1'}
+307	307		201							{1: '1', 2: '500110', 3: '6'}
+308	308		301							"{1: '1', 2: 'Ayla', 3: 'To me... ""art"" is something that\'s both within and out of our reach.', 4: '1'}"
+309	309		204							{1: '1'}
+310	310		301							"{2: 'Ayla', 3: 'There is this famous author who once wrote in his diary that he ""decided that one must love and work, and that\'s it,"" but then the day after wrote he was ""tired"" and ""didn\'t love and didn\'t work.""', 4: '1'}"
+311	311		301							{2: 'Ayla', 3: 'He always felt lost in life and doubted the weight of his own words.', 4: '1'}
+312	312		301							{2: 'Ayla', 3: 'But he kept going, and his work has become a time-honored part of human civilization.', 4: '1'}
+313	313		301							"{2: 'Ayla', 3: ""We'll probably never reach his heights, and what we do now might not amount to anything at all."", 4: '1'}"
+314	314		204							{1: '1', 2: '6'}
+315	315		301							{2: 'Ayla', 3: 'But, still...', 4: '1'}
+316	316		306							{1: '1'}
+317	317		301							{3: 'Still, Ayla has own her reasons to press forth.'}
+318	318		301							"{3: ""She can't say with certainty that nothing will ever change her—for all she knows, she might have a change of mind tomorrow.""}"
+319	319		301							"{3: ""And she also realizes that her persistence might not take her closer to the answer she came seeking, that she'll never be able to see the impact her work has down the road in this lifetime of hers, and that she'll never be able to find out whether she does serve a higher purpose.""}"
+320	320		301							"{3: ""What happened today might happen again and again, and again and again, she's going to find herself torn apart and put back together.""}"
+321	321		301							"{3: ""Still, she regrets not that she's chosen this path with a belief so naive...""}"
+322	322		301							{3: 'Much like how Milly is excited to show her father her drawings, and how she desires to find out what happens next in the manga series.'}
+323	323		306							
+324	324		204							{1: '1'}
+325	325		301							"{2: 'Ayla', 3: ""I'll be right back."", 4: '1'}"
+326	326		201							{1: '1', 2: '500394'}
+327	327		301							{1: '1', 2: 'Orpheus', 3: 'Ayla? Where are you going?', 4: '1'}
+328	328		401							{1: '1', 2: '36'}
+329	329		202							{1: '1', 6: '1'}
+330	330		401							{1: '2', 2: '1513'}
+331	331		301							{3: 'Without answering Orpheus, Ayla turns around and goes back the way they came.'}
+332	332		401							{1: '1', 2: '187'}
+333	333		201							{1: '1', 2: '500110', 4: '-400'}
+334	334		201							{1: '2', 2: '500596', 4: '400'}
+335	335		301							{1: '1', 2: 'Milly', 3: 'Huh?', 4: '2'}
+336	336		402							{1: '1513'}
+337	337		204							{1: '1', 2: '6'}
+338	338		301							"{2: 'Ayla', 3: ""H-hey... thank God you're still around."", 4: '1'}"
+339	339		301							{2: 'Milly', 3: 'Did you forget something?', 4: '2'}
+340	340		204							{1: '1'}
+341	341		301							"{2: 'Ayla', 3: ""Yes, I did, and it's very important."", 4: '1'}"
+342	342		203							{1: '1', 2: '0.25', 3: '-400', 4: '-100'}
+343	343		301							{3: 'Taking a knee, Ayla is now at eye level with Milly.'}
+344	344		301							"{2: 'Ayla', 3: ""My name is Ayla, and I'm from Babylonia's WGAA."", 4: '1'}"
+345	345		301							"{2: 'Ayla', 3: ""Can I borrow your manga? It'd be really helpful when I draw a sequel."", 4: '1'}"
+346	346		301							{3: 'Says Ayla, as she points at the manga from the Golden Age.'}
+347	347		301							{2: 'Milly', 3: 'Ohh...', 4: '2'}
+348	348		301							"{3: ""It takes a few moments for Ayla's words to sink in.""}"
+349	349		301							{2: 'Milly', 3: 'Really? Are you really going to do that for me?', 4: '2'}
+350	350		301							"{2: 'Ayla', 3: ""Yup. Here, let's pinky swear."", 4: '1'}"
+351	351		301							"{2: 'Ayla', 3: ""I can't draw it right now, but I'll get to it when I'm back at Babylonia."", 4: '1'}"
+352	352		204							{1: '1', 2: '1'}
+353	353		301							"{2: 'Ayla', 3: ""The girls are going to beat the bad guys, become great friends, and save the world together... Oops, forgot to remind you of a spoiler alert there... but hey, who knows what's going to happen, right? So stay tuned."", 4: '1'}"
+354	354		204							{1: '1'}
+355	355		301							"{2: 'Milly', 3: ""But I probably won't even be around when you're done..."", 4: '2'}"
+356	356		301							"{2: 'Ayla', 3: ""It's fine. I'll come find you."", 4: '1'}"
+357	357		301							"{2: 'Ayla', 3: ""I'll go through all the conservation areas there are until I find you."", 4: '1'}"
+358	358		301							"{3: ""Ayla realizes that this is probably not a promise she'll be able to keep.""}"
+359	359		301							"{3: ""Still, it's not a promise she regrets making.""}"
+360	360		301							"{2: 'Ayla', 3: ""And when I do, I'll give you your manga back—along with the new one I will draw for you."", 4: '1'}"
+361	361		301				AniZhuanchangBegin			{2: 'Ayla', 3: 'I promise.', 4: '1'}
+362	362		102							{1: 'Renaissance du Fantastique', 2: 'Chapter 22', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+363	363		502		1		AniZhuanchangBegin		5000.0	{1: 'ThemeEnable'}

@@ -1,0 +1,75 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '1021001'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Lucia', 3: ""How's the commandant doing?"", 4: '1'}"
+5	5		201							{1: '1', 2: '500004'}
+6	6		301							{1: '1', 2: 'Asimov', 3: 'Doing well, even finished two special meals in a row. But the virus inside is in an abnormal state that has never been observed.', 4: '1'}
+7	7		201							{1: '1', 2: '1021001'}
+8	8		301							{1: '1', 2: 'Lucia', 3: 'Commandant...', 4: '1'}
+9	9		201							{1: '1', 2: '500004'}
+10	10		301							"{1: '1', 2: 'Asimov', 3: ""Don't worry, the virus is still being suppressed by the immune serum, so it won't affect your dear commandant's health."", 4: '1'}"
+11	11		301							{2: 'Asimov', 3: 'But the virus keeps releasing signal units, forming a...', 4: '1'}
+12	12		202							{1: '1', 6: '1'}
+13	13		301							{3: 'Asimov glances at Lucia while speaking, but she seems to be too worried for the commandant to notice him.'}
+14	14		201							{1: '1', 2: '500004'}
+15	15		301							{1: '1', 2: 'Asimov', 3: 'After the channel is connected by Constructs, the Ascendants would simulate the connection of consciousness between Constructs and the commandant.', 4: '1'}
+16	16		201							{1: '1', 2: '1031001'}
+17	17		301							{1: '1', 2: 'Liv', 3: 'Is there no way to cut off the connection?', 4: '1'}
+18	18		201							{1: '1', 2: '500004'}
+19	19		301							"{1: '1', 2: 'Asimov', 3: ""Well, I'd hate to admit that, but we don't have such technology right now."", 4: '1'}"
+20	20		201							{1: '1', 2: '1011001'}
+21	21		301							{1: '1', 2: 'Lee', 3: 'Now that the security is ensured, what are you going to do with our commandant?', 4: '1'}
+22	22		301							{2: 'Lee', 3: 'To become your guinea pig for research?', 4: '1'}
+23	23		201							{1: '1', 2: '1021001', 3: '4', 4: '-400'}
+24	24		201							{1: '2', 2: '1031001', 4: '400'}
+25	25		301							{1: '1', 2: 'Lucia and Liv', 3: '!', 4: '1', 5: '2'}
+26	26		202							{1: '1', 2: '2', 6: '1'}
+27	27		201							{1: '1', 2: '500004'}
+28	28		301							{1: '1', 2: 'Asimov', 3: 'Why are you soldiers always like this?', 4: '1'}
+29	29		301							"{2: 'Asimov', 3: ""Put away all thoughts of fighting. We've got enough data samples, so we don't need to do any human experiments."", 4: '1'}"
+30	30		301							{2: 'Asimov', 3: 'Secondly, to ensure the safety of your commandant and let us be able to respond promptly if there is a danger in this channel.', 4: '1'}
+31	31		301							{2: 'Asimov', 3: 'We got to take him in temporarily. This has been communicated to your commandant.', 4: '1'}
+32	32		201							{1: '1', 2: '1011001', 4: '-600'}
+33	33		201							{1: '2', 2: '1021001'}
+34	34		201							{1: '3', 2: '1031001', 4: '600'}
+35	35		301							{1: '1', 2: 'Lucia, Lee, and Liv', 3: '...', 4: '1', 5: '2', 6: '3'}
+36	36		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+37	37		201							{1: '1', 2: '500004'}
+38	38		301							{1: '1', 2: 'Asimov', 3: 'Alright, I got to keep working on finding the solution, get out of my way.', 4: '1'}
+39	39		202							{1: '1', 6: '1'}
+40	40		301							{3: 'Asimov makes his way through the Gray Raven members, then stops at the corner behind them after walking a few steps.'}
+41	41		201							{1: '1', 2: '500004'}
+42	42		301				AniZhuanchangBegin			"{1: '1', 2: 'Asimov', 3: ""Although it's called isolation, I didn't say that you can't visit him. Do I have to just say it?"", 4: '1'}"
+43	43		202				DialogDisable			{1: '1', 6: '1'}
+44	44		302			AniZhuanchangEnd				"{2: ""That's all I have to report."", 3: '45'}"
+45	45		302							"{2: ""I'm counting on you guys."", 3: '46'}"
+46	46		201							{1: '1', 2: '1021001'}
+47	47		301			DialogEnable				{1: '1', 2: 'Lucia', 3: 'Yes, Commandant.', 4: '1'}
+48	48		201							{1: '1', 2: '1031001'}
+49	49		301							{1: '1', 2: 'Liv', 3: 'You must take care of yourself, Commandant.', 4: '1'}
+50	50		302							"{2: ""Go, it's time."", 3: '51'}"
+51	51		202							{1: '1', 6: '1'}
+52	52		301							{3: 'They leave, and the pale isolation room becomes silent again, the ticking sound of electronic devices comes from all sides of the room.'}
+53	53		301				AniZhuanchangBegin			{3: 'Tick-tock—Tick-tock. The familiar sounds come to mind. Someone is approaching, and someone is leaving.'}
+54	54		401				DialogDisable			{1: '1', 2: '201'}
+55	55		302			AniZhuanchangEnd				{2: 'Those were...', 3: '56'}
+56	56		301			DialogEnable				{3: 'Opening your eyes, you are still surrounded by white walls and instruments, with no one else here.'}
+57	57		301							{3: 'An electronic clock above the door of the isolation room shows the present time—1:28 a.m.'}
+58	58		301							{2: 'System', 3: 'Connection signal detected, Construct is connected successfully.'}
+59	59		201							{1: '1', 2: '500100'}
+60	60		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+61	61		301							{1: '1', 2: 'α', 3: '...', 4: '1'}
+62	62		302							{2: 'What are you planning?', 3: '63'}
+63	63		204							{1: '1', 2: '8'}
+64	64		301							{2: 'α', 3: 'Gotta do my job.', 4: '1'}
+65	65		302							{2: 'Are you Ascendants planning something again?', 3: '66'}
+66	66		301							{2: 'α', 3: 'No.', 4: '1'}
+67	67		302							{2: 'Your connection is under our control.', 3: '68'}
+68	68		301							"{2: 'α', 3: ""As expected, and it won't affect me."", 4: '1'}"
+69	69		204							{1: '1', 2: '13'}
+70	70		301							"{2: 'α', 3: ""I'll often send you a link like this in the future."", 4: '1'}"
+71	71		302							"{2: ""Looks like I don't I have the right to refuse."", 3: '72'}"
+72	72		301							"{2: 'α', 3: ""Maybe you do, maybe you don't. Who knows."", 4: '1'}"
+73	73		302							{2: '...', 3: '74'}
+74	74		301		1		AniZhuanchangBegin			"{2: 'α', 3: ""Well, then. I'll see you later."", 4: '1'}"

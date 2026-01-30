@@ -1,0 +1,486 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1060.jpg'}
+2	2		401							{1: '1', 2: '5055'}
+3	3		107						3000.0	{1: 'Activity Room - Misono High', 2: 'Track and Field Club Victory Party', 4: 'Night, August 16th - Pleasant and Dry'}
+4	4		108							{1: '1'}
+5	5		201							{1: '1', 2: '500969', 4: '-400', 5: '-100'}
+6	6		201							{1: '2', 2: '500342', 4: '400', 5: '-100'}
+7	7		301			DialogEnable				"{1: '1', 2: 'Female Club Member 1', 3: ""Why are we at school? Shouldn't we be having this party at a buffet restaurant?"", 4: '1'}"
+8	8		301							"{2: 'Female Club Member 2', 3: ""Who knows? The school probably has something special planned. Maybe there's a surprise in store?"", 4: '2'}"
+9	9		202							{1: '1', 2: '2'}
+10	10		301							{3: 'Inside the activity room, Yata sits with her legs crossed on a chair, yawning with an expressionless face.'}
+11	11		201							{1: '1', 2: '500342', 4: '-400', 5: '-100'}
+12	12		201							{1: '2', 2: '501042', 3: '3', 4: '400', 5: '-100'}
+13	13		301							"{1: '1', 2: 'Female Club Member 2', 3: ""Come on, Yata, don't look so gloomy. You're the star of this sports meet."", 4: '1'}"
+14	14		301							{2: 'Yata', 3: 'Something feels off about this... These chairs are arranged way too perfectly.', 4: '2'}
+15	15		301							{2: 'Yata', 3: 'And why did they have to call us here so late at night...', 4: '2'}
+16	16		202							{1: '1', 6: '1'}
+17	17		201							{1: '1', 2: '500969', 4: '-400', 5: '-100'}
+18	18		301							"{1: '1', 2: 'Female Club Member 1', 3: ""You're right. It feels like we're about to take a listening test or something."", 4: '1'}"
+19	19		202							{1: '1', 2: '2'}
+20	20		401							{1: '2', 2: '4898'}
+21	21		301							{3: 'As the crowd buzzes with chatter, a sharp screech suddenly pierces through the speakers at the front of the classroom...'}
+22	22		301							{2: 'Broadcast', 3: 'Please find your respective seats as assigned. Your names are written on the chairs.'}
+23	23		402							{1: '4898'}
+24	24		401							{1: '2', 2: '4897'}
+25	25		301							{3: 'A cold, raspy, emotionless voice creeps through the broadcast system.'}
+26	26		201							{1: '1', 2: '500969', 4: '-400', 5: '-100'}
+27	27		201							{1: '2', 2: '500342', 4: '400', 5: '-100'}
+28	28		301							"{1: '1', 2: 'Female Club Member 2', 3: ""What's with all this mystery?"", 4: '2'}"
+29	29		301							"{2: 'Female Club Member 1', 3: ""Who's speaking? I don't think I've ever heard this voice before."", 4: '1'}"
+30	30		202							{1: '1', 2: '2'}
+31	31		301							{3: 'Though confused, the track and field club members obediently follow the instructions.'}
+32	32		301				AniZhuanchangBegin			{3: 'In moments, every chair in the neat rows is occupied—the number of seats matching the number of people exactly, not one more, not one less.'}
+33	33		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1062.jpg'}
+34	34		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0'}
+35	35		301			AniZhuanchangEnd				{3: 'In the darkened room at the other end of the broadcast system, Kouhei holds the microphone and turns to question the others.'}
+36	36		201							{1: '1', 2: '501049', 4: '-400'}
+37	37		201							{1: '2', 2: '500058', 4: '400'}
+38	38		301							{1: '1', 2: 'Kouhei', 3: 'Is Yuka ready?', 4: '1'}
+39	39		301							"{2: 'Researcher', 3: ""All clear, Chief. She's connected to the mainframe."", 4: '2'}"
+40	40		301				AniZhuanchangBegin			{2: 'Kouhei', 3: 'Good. Boot up the terminal and initiate remote memory projection.', 4: '1'}
+41	41		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1060.jpg'}
+42	42		202							{1: '1', 2: '2', 6: '1'}
+43	43		205							{1: '999'}
+44	44		401							{1: '2', 2: '4898'}
+45	45		301			AniZhuanchangEnd				{2: 'Broadcast', 3: 'I would like to thank all of you for your cooperation. Now, let the experiment begin.'}
+46	46		402							{1: '4898'}
+47	47		201							{1: '1', 2: '501042', 5: '-100'}
+48	48		301							{1: '1', 2: 'Yata', 3: 'Experiment?', 4: '1'}
+49	49		401							{1: '2', 2: '4280'}
+50	50		204							{1: '1', 2: '5'}
+51	51		301			PanelActor1Shake			2000.0	{3: 'Before Yata can react, an intense headache assaults her brain.'}
+52	52		301							{2: 'Yata', 3: 'Damn it, it hurts... Why?!', 4: '1'}
+53	53		203							{1: '1', 2: '0.25'}
+54	54		401							{1: '2', 2: '4902'}
+55	55		301							{3: 'The pain feels like glass shards cutting through her skull as Yata rises from her chair.'}
+56	56		401							{1: '2', 2: '2959'}
+57	57		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+58	58		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+59	59		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.6', 5: '0'}
+60	60		201							{1: '1', 2: '501040', 3: '7', 7: '1'}
+61	61		301							{1: '1', 2: 'Yata', 3: 'Ah, I see... This headache first appeared back then...', 4: '1'}
+62	62		204							{1: '1'}
+63	63		301							{2: 'Yata', 3: 'That night, we were called to the club room.', 4: '1'}
+64	64		301							{2: 'Yata', 3: 'Someone was using us as lab rats for their experiment.', 4: '1'}
+65	65		401							{1: '2', 2: '2959'}
+66	66		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+67	67		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+68	68		205							{1: '999'}
+69	69		201							{1: '1', 2: '501042', 3: '5', 7: '1'}
+70	70		301							{1: '1', 2: 'Yata', 3: 'Dammit... Hey, guys...', 4: '1'}
+71	71		202							{1: '1'}
+72	72		301							{3: 'Yata turns around to find the other track team members collapsing to the ground one after another.'}
+73	73		301							{3: 'No matter how much Yata shakes them, they remain completely unconscious.'}
+74	74		301							{3: 'Soon, bodies lie sprawled across the entire club room, with Yata being the only one left standing.'}
+75	75		301				AniZhuanchangBegin			{3: 'Fighting to stay conscious, Yata staggers toward the classroom door through waves of hallucinations...'}
+76	76		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1062.jpg'}
+77	77		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0'}
+78	78		201							{1: '1', 2: '501049', 4: '-400', 7: '1'}
+79	79		201							{1: '2', 2: '500058', 4: '400', 7: '1'}
+80	80		301			AniZhuanchangEnd				"{1: '1', 2: 'Kouhei', 3: ""What's going on!? Why did they all just pass out like that?!"", 4: '1'}"
+81	81		301							"{2: 'Researcher', 3: ""I don't know..."", 4: '2'}"
+82	82		301							{2: 'Kouhei', 3: 'Look into it, now!', 4: '1'}
+83	83		301							{2: 'Researcher', 3: 'We found the cause—Yuka lost consciousness while she was trying to establish a consciousness connection.', 4: '2'}
+84	84		301							"{2: 'Researcher', 3: ""The nanomachines in her brain are disrupted—the host system's input signals are going berserk!"", 4: '2'}"
+85	85		301							{2: 'Researcher', 3: 'The pulse signal output has surged to 300% of planned levels in such a short period of time...', 4: '2'}
+86	86		301							"{2: 'Researcher', 3: ""And the readings... they're still climbing!"", 4: '2'}"
+87	87		301							{2: 'Kouhei', 3: 'Dammit! Why does that worthless piece of junk have to fail now of all times?', 4: '1'}
+88	88		301							"{2: 'Kouhei', 3: ""Cut off Yuka's connection to the mainframe now!"", 4: '1'}"
+89	89		301							{2: 'Researcher', 3: 'Yes, initiating disconnection between the mainframe and the terminal transmitter.', 4: '2'}
+90	90		301							"{2: 'Kouhei', 3: ""That's it. We're done for today."", 4: '1'}"
+91	91		301				AniZhuanchangBegin			{2: 'Kouhei', 3: 'The second mass consciousness projection experiment... has failed.', 4: '1'}
+92	92		202							{1: '1', 2: '2', 6: '1'}
+93	93		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1060.jpg'}
+94	94		205							{1: '999'}
+95	95		201							{1: '1', 2: '501042', 3: '5', 7: '1'}
+96	96		301			AniZhuanchangEnd				{1: '1', 2: 'Yata', 3: 'Well, then...', 4: '1'}
+97	97		202							{1: '1', 6: '1'}
+98	98		401							{1: '2', 2: '9317017'}
+99	99		301			RImgBg1Shake				{3: 'Yata grabs a chair and hurls it at the PA speaker mounted on the classroom wall.'}
+100	100		401							{1: '2', 2: '9317011'}
+101	101		301			RImgBg1Shake				{3: 'The speaker crashes to the floor, but the headache persists.'}
+102	102		201							{1: '1', 2: '501042', 3: '5'}
+103	103		301							"{1: '1', 2: 'Yata', 3: ""It's not the speaker? What the hell is it, then?!"", 4: '1'}"
+104	104		203						400.0	{1: '1', 2: '0.3', 4: '-50'}
+105	105		203							{1: '1', 2: '0.4', 4: '-1000'}
+106	106		401						450.0	{1: '2', 2: '4006'}
+107	107		202							{1: '1'}
+108	108		301				AniZhuanchangBegin			"{3: ""The pain in Yata's head intensifies until she staggers and collapses to her knees.""}"
+109	109		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '2'}
+110	110		301			AniZhuanchangEnd				{3: 'Her vision begins to blur as hallucinations nearly eclipse reality.'}
+111	111		301				AniZhuanchangBegin			"{3: ""Like the others, Yata's eyes begin to lose focus, growing distant and vacant.""}"
+112	112		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+113	113		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+114	114		301			AniZhuanchangEnd				{3: 'Fading away...'}
+115	115		401							{1: '2', 2: '2959'}
+116	116		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+117	117		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+118	118		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1060.jpg'}
+119	119		205							{1: '999'}
+120	120		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.6', 5: '0'}
+121	121		201							{1: '1', 2: '501040', 3: '8', 7: '1'}
+122	122		301							"{1: '1', 2: 'Yata', 3: ""No... I can't..."", 4: '1'}"
+123	123		204							{1: '1', 2: '4'}
+124	124		301			RImgBg1Shake				"{2: 'Yata', 3: ""You can't fall here, Yata! You're not that helpless kid anymore!"", 4: '1'}"
+125	125		202							{1: '1'}
+126	126		301							{3: 'Yata forces herself forward, groping blindly until her hand touches the wall—'}
+127	127		301							{3: 'She instantly realizes what felt off in the hallway—'}
+128	128		201							{1: '1', 2: '501040'}
+129	129		301							{1: '1', 2: 'Yata', 3: 'The walls here are thicker than the walls on the other floors.', 4: '1'}
+130	130		401							{1: '2', 2: '4795'}
+131	131		301			RImgBg1Shake				{3: 'Yata strikes the wall with her fist, and an echo resonates from within.'}
+132	132		204							{1: '1', 2: '7'}
+133	133		301							"{2: 'Yata', 3: ""There's a hidden room behind here!"", 4: '1'}"
+134	134		204							{1: '1', 2: '4'}
+135	135		301							"{2: 'Yata', 3: ""Of course, those hallucinations weren't coming from that tiny speaker, but from..."", 4: '1'}"
+136	136		202							{1: '1'}
+137	137		301							"{3: ""Yata clenches her fist and slams it into the club room's wall with all her might.""}"
+138	138		401							{1: '2', 2: '18511049'}
+139	139		401							{1: '2', 2: '4537'}
+140	140		401							{1: '1', 2: '36'}
+141	141		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+142	142		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory771.jpg'}
+143	143		205							{1: '999'}
+144	144		301			RImgBg1Shake				{3: 'As the old tiles and steel frame come crashing down...'}
+145	145		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '4'}
+146	146		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1059.jpg', 3: '0', 4: '1', 5: '1.5'}
+147	147		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1059.jpg'}
+148	148		205							{1: '999'}
+149	149		401							{1: '1', 2: '5053'}
+150	150		401							{1: '2', 2: '4679'}
+151	151		301							{3: 'A hidden chamber reveals itself behind the collapsed wall.'}
+152	152		301							{3: 'A secret room behind the club room, its existence never before confirmed.'}
+153	153		301							{3: 'In the secret chamber, a dust-covered mechanical behemoth continues its relentless operation.'}
+154	154		402							{1: '4679'}
+155	155		401						500.0	{1: '2', 2: '9317003'}
+156	156		301			RImgBg1Shake				{3: 'Yata approaches the behemoth, plants her feet on the floor, leaps high into the air, and smashes its power cables.'}
+157	157		401							{1: '2', 2: '13015113'}
+158	158		301						1000.0	"{3: ""Amid a shower of sparks, the mechanical behemoth's roar dies down, and silence once again fills the room.""}"
+159	159		301							{3: 'In that moment, Yata lets out a breath of relief.'}
+160	160		201							{1: '1', 2: '501040', 3: '6'}
+161	161		301							{1: '1', 2: 'Yata', 3: 'The hallucinations are gone, and her headache has subsided considerably...', 4: '1'}
+162	162		202							{1: '1', 6: '1'}
+163	163		401							{1: '2', 2: '2576'}
+164	164		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 4: '4', 5: '1'}
+165	165		301							{3: 'In the dim secret chamber, Yata activates the light device in her palm.'}
+166	166		301							{3: 'She rolls her shoulders and carefully circles the machine to examine it from every angle.'}
+167	167		201							{1: '1', 2: '501040'}
+168	168		301							{1: '1', 2: 'Yata', 3: 'A high-performance pulse wave weapon... Looks like it was modified from military hardware.', 4: '1'}
+169	169		301							"{3: ""Yata gently runs her fingers across the machine's surface, making out several lines of embossed text.""}"
+170	170		301							{2: 'Yata', 3: 'Suitable for regional counter-terrorism operations, anti-drone tactics, and coastal defense warfare.', 4: '1'}
+171	171		301							{2: 'Yata', 3: 'I see...', 4: '1'}
+172	172		301							{2: 'Yata', 3: 'According to the mission data, the people who experimented on Yuka had Kurono connections. They must have acquired this from Kurono.', 4: '1'}
+173	173		301							{2: 'Yata', 3: 'Those bastards got creative and fitted it with a remote input device, huh...', 4: '1'}
+174	174		301							{2: 'Yata', 3: 'They turned this thing into a tool for projecting hallucinations, with innocent students becoming its victims.', 4: '1'}
+175	175		204							{1: '1', 2: '8'}
+176	176		301							{2: 'Yata', 3: 'So this is why people just passed out cold at Misono.', 4: '1'}
+177	177		301							{2: 'Yata', 3: 'The track club members, myself included, were called here to be unwitting test subjects.', 4: '1'}
+178	178		204							{1: '1', 2: '4'}
+179	179		301							{2: 'Yata', 3: 'Used like lab rats in some mysterious scheme... Damn it!', 4: '1'}
+180	180		301							{2: 'Yata', 3: 'If only we had looked into it back then, we could have prevented that tragedy.', 4: '1'}
+181	181		204							{1: '1'}
+182	182		301				AniZhuanchangBegin			{2: 'Yata', 3: 'Gotta keep moving while the hallucinations are weakening. This might be my chance to find Yuka.', 4: '1'}
+183	183		202							{1: '1', 6: '1'}
+184	184		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1062.jpg'}
+185	185		509						700.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory101.png', 2: '1'}
+186	186		201							{1: '1', 2: '501050', 3: '4', 4: '-500', 7: '1'}
+187	187		201							{1: '2', 2: '501049', 4: '550', 7: '1'}
+188	188		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+189	189		301			AniZhuanchangEnd				{1: '1', 2: 'Reika Saotome', 3: 'Kouhei, how is she?', 4: '1'}
+190	190		301							{2: 'Kouhei', 3: 'I deeply apologize... but the mass consciousness projection experiment... has failed...', 4: '2'}
+191	191		301							{2: 'Kouhei', 3: 'In one-on-one experiments, we are able to implant nanomachines into the test subject to maintain signal stability...', 4: '2'}
+192	192		301							"{2: 'Kouhei', 3: ""But it's simply impossible to implant machines into that many subjects for mass consciousness experiments."", 4: '2'}"
+193	193		301							"{2: 'Kouhei', 3: ""I believe... perhaps we shouldn't limit ourselves anymore..."", 4: '2'}"
+194	194		301							{2: 'Reika Saotome', 3: 'Kouhei, repeat my question.', 4: '1'}
+195	195		301							"{3: ""The voice on the other end of the line is calm and emotionless, sending chills down Kouhei's spine.""}"
+196	196		301							{2: 'Kouhei', 3: 'Yuka... fell into a coma during the experiment.', 4: '2'}
+197	197		301							{2: 'Reika Saotome', 3: 'Vital signs?', 4: '1'}
+198	198		301							"{2: 'Kouhei', 3: ""Everything's normal... except her heart rate is getting weaker."", 4: '2'}"
+199	199		301							{2: 'Reika Saotome', 3: 'Do not proceed recklessly with any further experiments.', 4: '1'}
+200	200		301							"{2: 'Kouhei', 3: ""Yuka's body can still endure more..."", 4: '2'}"
+201	201		204							{1: '1', 2: '5'}
+202	202		301							{2: 'Reika Saotome', 3: 'Yuka must survive, no matter what. Do I make myself clear?', 4: '1'}
+203	203		301				AniZhuanchangBegin			{2: 'Kouhei', 3: '...I get it now.', 4: '2'}
+204	204		505			DialogDisable				{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+205	205		510						700.0	{1: '1'}
+206	206		202							{1: '1', 2: '2', 6: '1'}
+207	207		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+208	208		107			AniZhuanchangEnd			3000.0	"{1: 'Central Region - Hydrangea Island', 2: ""Near Scarab's Landing Site"", 4: 'Night - Pleasant and Dry'}"
+209	209		108							{1: '1'}
+210	210		201							{1: '1', 2: '500961', 4: '-400'}
+211	211		201							{1: '2', 2: '500627', 4: '400'}
+212	212		301			DialogEnable				{1: '1', 2: 'Valeria', 3: 'Discord, the Corrupted are losing their coordination.', 4: '1'}
+213	213		301							"{2: 'Discord', 3: ""Looks like Yata's making progress on her end."", 4: '2'}"
+214	214		301							"{2: 'Valeria', 3: ""Let's finish them off in one sweep."", 4: '1'}"
+215	215		301							{2: 'Discord', 3: 'Roger.', 4: '2'}
+216	216		202							{1: '1', 2: '2'}
+217	217		301							"{3: ""The pair seize their chance to strike as gaps appear in the enemy's encirclement.""}"
+218	218		401						500.0	{1: '2', 2: '4413'}
+219	219		401						500.0	{1: '2', 2: '4413'}
+220	220		401							{1: '2', 2: '4784'}
+221	221		301			RImgBg1Shake				{3: 'Valeria hurls two high-explosive grenades, causing the Corrupted around them to fall like dominoes.'}
+222	222		201							{1: '1', 2: '500961'}
+223	223		301				AniZhuanchangBegin			"{1: '1', 2: 'Valeria', 3: ""Let's go. We need to regroup with Yata."", 4: '1'}"
+224	224		202			DialogDisable				{1: '1', 6: '1'}
+225	225		401							{1: '1', 2: '36'}
+226	226		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1061.jpg'}
+227	227		401							{1: '1', 2: '5054'}
+228	228		107			AniZhuanchangEnd			3000.0	"{1: ""Derelict Stronghold - Misono's Grand Hall"", 2: 'Academic Building - Misono High', 4: 'Night - Pleasant and Dry'}"
+229	229		108							{1: '1'}
+230	230		201							{1: '1', 2: '501051', 3: '7'}
+231	231		301			DialogEnable				{1: '1', 2: 'Yuka Saotome', 3: 'My power is fading...', 4: '1'}
+232	232		301							{2: 'Yuka Saotome', 3: 'Did Yata destroy the Amplifier Pulse Emitter?', 4: '1'}
+233	233		204							{1: '1', 2: '1'}
+234	234		401							{1: '2', 2: '9395002'}
+235	235		203							{1: '1', 2: '0.25', 4: '-10', 5: '-30'}
+236	236		301							"{2: 'Yuka Saotome', 3: ""Impressive as always, Yata. You've never ceased to excel."", 4: '1'}"
+237	237		401							{1: '2', 2: '9395018'}
+238	238		203							{1: '1', 2: '0.25', 4: '-20', 5: '-60'}
+239	239		301							{2: 'Yuka Saotome', 3: 'Impressive determination and power, second to none.', 4: '1'}
+240	240		202							{1: '1'}
+241	241		401							{1: '2', 2: '9395025'}
+242	242		301			RImgBg1Shake				{3: 'In the empty lecture hall, Yuka quietly vents her frustrations to no one in particular.'}
+243	243		401						250.0	{1: '2', 2: '2589'}
+244	244		401							{1: '2', 2: '2589'}
+245	245		301							{3: 'As she complains, a rustling sound reaches her ears...'}
+246	246		301							{3: 'Her crimson eyes scan the surroundings before fixing upon a dark figure emerging from the corner.'}
+247	247		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+248	248		201							{1: '1', 2: '500013', 4: '-250', 7: '1'}
+249	249		201							{1: '2', 2: '500013', 4: '250', 7: '1'}
+250	250		203							{1: '1', 2: '0.2', 3: '-250', 4: '-50', 5: '-80'}
+251	251		203							{1: '2', 2: '0.2', 3: '250', 4: '-50', 5: '-80'}
+252	252		401							{1: '2', 2: '1508'}
+253	253		301			RImgBg1Shake				{1: '1', 3: 'Two Corrupted stagger out from between the seats and suddenly lunge at Yuka.', 4: '1', 5: '2'}
+254	254		202							{1: '1', 2: '2', 6: '1'}
+255	255		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+256	256		201							{1: '1', 2: '501051', 3: '1'}
+257	257		301							{1: '1', 2: 'Yuka Saotome', 3: 'A puppet breaking free from its strings... Planning to attack your puppeteer?', 4: '1'}
+258	258		202							{1: '1'}
+259	259		401							{1: '2', 2: '9395001'}
+260	260		301			RImgBg1Shake				{3: 'Yuka pulls her massive embroidery scissors from the ground and slices her attacker in half.'}
+261	261		401							{1: '2', 2: '9395060'}
+262	262		301							{3: 'The other Corrupted tries to circle behind Yuka, but before it can strike, invisible threads bind it in place.'}
+263	263		201							{1: '1', 2: '501051', 3: '8'}
+264	264		301							"{1: '1', 2: 'Yuka Saotome', 3: ""You're nothing but pathetic steel husks that don't even know who you are yourselves..."", 4: '1'}"
+265	265		401						500.0	{1: '2', 2: '4548'}
+266	266		301							{3: 'Yuka clenches her thread-wrapped fingers, and the Corrupted is torn to pieces.'}
+267	267		204							{1: '1', 2: '1'}
+268	268		301							{2: 'Yuka Saotome', 3: 'Those who cannot dream have no reason to exist.', 4: '1'}
+269	269		202							{1: '1'}
+270	270		401							{1: '2', 2: '9395006'}
+271	271		301							{3: 'Surrounded by scattered mechanical parts, Yuka plants her scissors into the ground and leans against them.'}
+272	272		401							{1: '2', 2: '4161'}
+273	273		301							{3: 'As the night breeze gently stirs her dress, Yuka softly hums a melody from her memories.'}
+274	274		301						1000.0	{3: 'Until footsteps interrupt her peaceful reverie...'}
+275	275		301							"{2: '????', 3: ""Feeling overwhelmed, aren't you? Even with a portion of the Red Tide's power.""}"
+276	276		201							{1: '1', 2: '501051'}
+277	277		301							{1: '1', 2: 'Yuka Saotome', 3: 'Who?', 4: '1'}
+278	278		301							{3: 'Yuka furrows her brow and cautiously scans her surroundings, then relaxes her guard.'}
+279	279		301							"{2: 'Yuka Saotome', 3: ""It's you again..."", 4: '1'}"
+280	280		301							{2: 'Yuka Saotome', 3: 'Why are you here?', 4: '1'}
+281	281		202							{1: '1'}
+282	282		201							{1: '1', 2: '500540'}
+283	283		301							"{1: '1', 2: 'Cradle', 3: 'I\'m a bit worried about you since your ""heart"" has been growing weaker.', 4: '1'}"
+284	284		204							{1: '1', 2: '2'}
+285	285		301							{2: 'Cradle', 3: 'Why else would you fail to maintain a few dreams?', 4: '1'}
+286	286		202							{1: '1'}
+287	287		201							{1: '1', 2: '501051', 3: '8'}
+288	288		301							{1: '1', 2: 'Yuka Saotome', 3: 'Ugh...', 4: '1'}
+289	289		202							{1: '1'}
+290	290		201							{1: '1', 2: '500540'}
+291	291		301							{1: '1', 2: 'Cradle', 3: 'If this goes on, even this body of yours... might go with the dreams you created.', 4: '1'}
+292	292		202							{1: '1'}
+293	293		201							{1: '1', 2: '501051', 3: '14'}
+294	294		301							"{1: '1', 2: 'Yuka Saotome', 3: ""This body wasn't something I willingly received, even if it once belonged to me..."", 4: '1'}"
+295	295		202							{1: '1'}
+296	296		201							{1: '1', 2: '500540'}
+297	297		301							"{1: '1', 2: 'Cradle', 3: ""But you are special... Instead of having your will devoured by the Red Tide, you strengthened your convictions... That's truly remarkable."", 4: '1'}"
+298	298		301							"{2: 'Cradle', 3: ""I find you quite interesting, Yuka. That's why I didn't devour you, but instead reshaped your body."", 4: '1'}"
+299	299		301							{2: 'Cradle', 3: 'I chewed up that mainframe connected to you and the data stored in it, and force-fed it to you...', 4: '1'}
+300	300		204							{1: '1', 2: '8'}
+301	301		301							{2: 'Cradle', 3: 'I went to such lengths for you, but you hate the Red Tide that gave you rebirth.', 4: '1'}
+302	302		204							{1: '1', 2: '2'}
+303	303		301							"{2: 'Cradle', 3: ""Now, this is what people call ingratitude, isn't it?"", 4: '1'}"
+304	304		202							{1: '1'}
+305	305		201							{1: '1', 2: '501051'}
+306	306		301							{1: '1', 2: 'Yuka Saotome', 3: '...', 4: '1'}
+307	307		202							{1: '1'}
+308	308		201							{1: '1', 2: '500540'}
+309	309		301							{1: '1', 2: 'Cradle', 3: 'You wanted to weave beautiful illusions and endless paradise with the Red Tide...', 4: '1'}
+310	310		301							"{2: 'Cradle', 3: ""I never stood in the way of your dreams. On the contrary, I've always been on your side."", 4: '1'}"
+311	311		202							{1: '1'}
+312	312		201							{1: '1', 2: '501051'}
+313	313		301							{1: '1', 2: 'Yuka Saotome', 3: 'What do you mean?', 4: '1'}
+314	314		202							{1: '1'}
+315	315		201							{1: '1', 2: '500540'}
+316	316		301							{1: '1', 2: 'Cradle', 3: 'Now that the Memory Amplifier and projection device are damaged, Babylonia will soon take control of this place...', 4: '1'}
+317	317		301							{2: 'Cradle', 3: 'Without control of the island, your dream will never come true.', 4: '1'}
+318	318		202							{1: '1'}
+319	319		201							{1: '1', 2: '501051'}
+320	320		301							{1: '1', 2: 'Yuka Saotome', 3: 'What are you suggesting?', 4: '1'}
+321	321		202							{1: '1'}
+322	322		201							{1: '1', 2: '500540'}
+323	323		301							{1: '1', 2: 'Cradle', 3: 'The Red Tide can grant you greater power than that machine ever could.', 4: '1'}
+324	324		301							"{2: 'Cradle', 3: ""Accept our blessing, and you'll gain full control of the Red Tide."", 4: '1'}"
+325	325		301							{2: 'Cradle', 3: 'Forget that old piece of junk—use the Red Tide as your medium to spread illusions instead.', 4: '1'}
+326	326		301							{2: 'Cradle', 3: 'Your woven vision will echo through every corner touched by the tide.', 4: '1'}
+327	327		202							{1: '1', 6: '1'}
+328	328		201							{1: '1', 2: '501051', 4: '-350'}
+329	329		201							{1: '2', 2: '500540', 4: '400'}
+330	330		203							{1: '2', 2: '0.25', 3: '300'}
+331	331		301							{1: '1', 3: 'Cradle moves close to Yuka and whispers softly in her ear.'}
+332	332		204							{1: '2', 2: '2'}
+333	333		301							"{2: 'Cradle', 3: ""Don't you want to become the Prometheus of this new world?"", 4: '2'}"
+334	334		204							{1: '2', 2: '1'}
+335	335		301							{2: 'Cradle', 3: 'Then achieve your perfect form first, Yuka.', 4: '2'}
+336	336		202							{1: '1', 2: '2'}
+337	337		301							"{3: 'At the mention of ""Prometheus"", a distant look flickers across Yuka\'s eyes.'}"
+338	338		301							{3: 'She remains silent, gazing wistfully at the podium in the center of the lecture hall.'}
+339	339		301							{3: 'Yuka walks over unhurriedly and gently caresses the wooden podium.'}
+340	340		201							{1: '1', 2: '501051'}
+341	341		301							{1: '1', 2: 'Yuka Saotome', 3: 'I remember how Dr. Saotome held quite a few seminars here and presented her hypotheses to everyone.', 4: '1'}
+342	342		301							{2: 'Yuka Saotome', 3: 'She believed that there are other beings lying hidden beyond Earth, in the vast cosmos. Their gaze never leaves humanity.', 4: '1'}
+343	343		301							{2: 'Yuka Saotome', 3: 'We have to evolve into a higher species through the connection of all human consciousness...', 4: '1'}
+344	344		204							{1: '1'}
+345	345		301							{2: 'Yuka Saotome', 3: 'Only by unifying human consciousness can we gain the power to fight them.', 4: '1'}
+346	346		301							{2: 'Yuka Saotome', 3: 'For a long time, Dr. Saotome has been waging a mental battle against enemies of her own imagination.', 4: '1'}
+347	347		301							{2: 'Yuka Saotome', 3: 'Whenever she mentioned threats from higher dimensions, it only drew laughter from the audience.', 4: '1'}
+348	348		301							{2: 'Yuka Saotome', 3: 'Yet, she possessed an innate messiah complex.', 4: '1'}
+349	349		204							{1: '1', 2: '8'}
+350	350		301							"{2: 'Yuka Saotome', 3: 'Even when no one believed in her, she just stuck to her research on ""world salvation"".', 4: '1'}"
+351	351		204							{1: '1'}
+352	352		301							{2: 'Yuka Saotome', 3: 'She saw anyone who hindered her research as enemies of the world and would stop at nothing to deal with them.', 4: '1'}
+353	353		301							{2: 'Yuka Saotome', 3: 'Such lofty ideals and sense of mission ultimately led her to lose herself.', 4: '1'}
+354	354		301							"{2: 'Yuka Saotome', 3: ""Today, the mysterious enemies she had imagined didn't appear. Instead, the Punishing came."", 4: '1'}"
+355	355		204							{1: '1', 2: '15'}
+356	356		301							"{2: 'Yuka Saotome', 3: ""Earth was no longer solely humanity's home, even though several forces fought like cornered beasts..."", 4: '1'}"
+357	357		301							{2: 'Yuka Saotome', 3: 'Anyhow, no matter who makes up society...', 4: '1'}
+358	358		204							{1: '1'}
+359	359		301							{2: 'Yuka Saotome', 3: 'I never believed that human society held any superiority over the Red Tide or the Punishing.', 4: '1'}
+360	360		204							{1: '1', 2: '8'}
+361	361		301							{2: 'Yuka Saotome', 3: 'When I was human, I witnessed far too many stories of pain and sorrow.', 4: '1'}
+362	362		301							"{2: 'Yuka Saotome', 3: ""Everyone is selfish, everyone fails to understand one another—that's the kind of species we are."", 4: '1'}"
+363	363		204							{1: '1'}
+364	364		301							{2: 'Yuka Saotome', 3: 'I believe humans could never fight the Punishing with the desperate determination that Dr. Saotome hoped for.', 4: '1'}
+365	365		301							{2: 'Yuka Saotome', 3: 'Humans will ultimately fall into corruption—they fall because they live.', 4: '1'}
+366	366		204							{1: '1', 2: '1'}
+367	367		301							{2: 'Yuka Saotome', 3: 'I deeply respect her, and I will keep my promise to become the Prometheus she envisioned.', 4: '1'}
+368	368		204							{1: '1', 2: '8'}
+369	369		301							{2: 'Yuka Saotome', 3: 'However, I will fulfill her vision in a completely different way—', 4: '1'}
+370	370		204							{1: '1'}
+371	371		301							"{2: 'Yuka Saotome', 3: ""I'm going to make everyone abandon their ideals of saving the world, embrace their desires and weaknesses, and then..."", 4: '1'}"
+372	372		301							{2: 'Yuka Saotome', 3: 'Drift aimlessly in this apocalyptic paradise of pleasure and let time slip away between moments and eternity.', 4: '1'}
+373	373		203							{1: '1', 2: '0.25', 3: '-400'}
+374	374		201							{1: '2', 2: '500540', 4: '400'}
+375	375		301							{1: '1', 2: 'Cradle', 3: 'I see... Now I understand why your desire runs so deep.', 4: '2'}
+376	376		301							"{2: 'Cradle', 3: ""You're a regressionist among humans... No, more accurately, you're a defeatist."", 4: '2'}"
+377	377		301							"{2: 'Cradle', 3: ""But humanity's final curtain will fall sooner or later..."", 4: '2'}"
+378	378		301							"{2: 'Cradle', 3: ""The Red Tide will paint this planet in beautiful colors, and you... you're someone who has what it takes to appreciate this beauty."", 4: '2'}"
+379	379		204							{1: '2', 2: '2'}
+380	380		301							{2: 'Cradle', 3: 'So? What do you say?', 4: '2'}
+381	381		301							{2: 'Yuka Saotome', 3: 'Let the Red Tide gather here, and I shall become one with its flow.', 4: '1'}
+382	382		301							"{2: 'Yuka Saotome', 3: ""And then, this island shall mark the beginning of humanity's fall from grace, the genesis of their descent..."", 4: '1'}"
+383	383		301							{2: 'Yuka Saotome', 3: 'Come, enter this fallen Eden.', 4: '1'}
+384	384		301							"{2: 'Cradle', 3: ""I'm pleased to see such enlightenment in you, Yuka."", 4: '2'}"
+385	385		204							{1: '2'}
+386	386		301							"{2: 'Cradle', 3: ""However, it won't be I who completes this task—it should be you."", 4: '2'}"
+387	387		301							"{2: 'Cradle', 3: ""As you once said, you understand humans better than I do. You're more suited to become the witness."", 4: '2'}"
+388	388		202							{1: '1', 2: '2'}
+389	389		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+390	390		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+391	391		504							{1: '0.7'}
+392	392		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory743.jpg'}
+393	393		201							{1: '1', 2: '500816', 4: '-400', 7: '1'}
+394	394		201							{1: '2', 2: '500545', 4: '400', 7: '1'}
+395	395		301							{1: '1', 3: 'Just as she did before with that Construct from the Forsaken...'}
+396	396		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+397	397		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+398	398		504							{1: '0'}
+399	399		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1061.jpg'}
+400	400		202							{1: '1', 2: '2', 6: '1'}
+401	401		201							{1: '1', 2: '501051', 3: '7', 4: '-400', 7: '1'}
+402	402		201							{1: '2', 2: '500540', 3: '2', 4: '400', 7: '1'}
+403	403		203							{1: '2', 2: '0.4', 3: '250'}
+404	404		401							{1: '2', 2: '2987'}
+405	405		301							"{1: '1', 3: ""Cradle takes Yuka's pale hand, and crimson threads seep into her body.""}"
+406	406		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryRedSmokeNew.prefab', 2: '2', 3: '1'}
+407	407		401							{1: '2', 2: '4141'}
+408	408		301							"{3: ""A scarlet glow seeps through Yuka's school uniform as crimson patterns materialize across her chest.""}"
+409	409		301							{2: 'Yuka Saotome', 3: 'What are you doing?', 4: '1'}
+410	410		301							"{2: 'Cradle', 3: ""Just a little power, that's all... I'll lend it to you. This way, you can go much further."", 4: '2'}"
+411	411		301							"{2: 'Yuka Saotome', 3: ""Why? Weren't you the one who wanted to explore human civilization?"", 4: '1'}"
+412	412		204							{1: '2', 2: '4'}
+413	413		301							"{2: 'Cradle', 3: ""I can't stay here for much longer. There are more important matters that await me."", 4: '2'}"
+414	414		204							{1: '1', 2: '4'}
+415	415		301							{2: 'Yuka Saotome', 3: 'Where are you going?', 4: '1'}
+416	416		301							{2: 'Cradle', 3: 'A place far, far away from here.', 4: '2'}
+417	417		204							{1: '2'}
+418	418		301							{2: 'Cradle', 3: 'Before I leave, consider this power my parting gift to you.', 4: '2'}
+419	419		301							"{2: 'Cradle', 3: ""I'm afraid this will be the last time we meet."", 4: '2'}"
+420	420		204							{1: '1'}
+421	421		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryRedSmokeNew.prefab', 4: '1'}
+422	422		203							{1: '2', 2: '0.4', 3: '400'}
+423	423		301							"{3: ""As Cradle releases her grip, color returns to Yuka's previously dim eyes.""}"
+424	424		301							{3: 'In amazement, she presses her hand against her heart, feeling its intense pulsing.'}
+425	425		204							{1: '1', 2: '8'}
+426	426		301							{2: 'Yuka Saotome', 3: 'My heart...', 4: '1'}
+427	427		204							{1: '2', 2: '2'}
+428	428		301				DialogDisable			{2: 'Cradle', 3: 'Goodbye, then.', 4: '2'}
+429	429		401							{1: '2', 2: '4388'}
+430	430		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndRed.prefab', 2: '2', 3: '2'}
+431	431		202						1000.0	{1: '2'}
+432	432		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndRed.prefab', 4: '2'}
+433	433		204							{1: '1'}
+434	434		203							{1: '1', 2: '0.35'}
+435	435		301			DialogEnable				{2: 'Yuka Saotome', 3: 'Hey...!', 4: '1'}
+436	436		202							{1: '1'}
+437	437		301							{3: 'Before Yuka can follow, Cradle vanishes without a trace.'}
+438	438		201							{1: '1', 2: '501051'}
+439	439		301							{1: '1', 2: 'Yuka Saotome', 3: 'What an... unlikeable person.', 4: '1'}
+440	440		301							{2: 'Yuka Saotome', 3: 'Just like me.', 4: '1'}
+441	441		202							{1: '1'}
+442	442		301							{3: 'With a soft sigh, Yuka turns and walks away, her steps carrying her across stone stairs blanketed with hydrangeas.'}
+443	443		201							{1: '1', 2: '501051', 3: '4'}
+444	444		301							{1: '1', 2: 'Yuka Saotome', 3: 'Come forth, tides, gather unto me.', 4: '1'}
+445	445		202							{1: '1'}
+446	446		306						300.0	{1: '1'}
+447	447		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+448	448		301							{3: 'White dust drifts down from the lecture hall ceiling like falling snow.'}
+449	449		401							{1: '2', 2: '4535'}
+450	450		401							{1: '2', 2: '4536'}
+451	451		301			RImgBg1Shake				"{3: ""As if answering Yuka's call, gentle tremors begin to ripple through her surroundings.""}"
+452	452		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+453	453		401							{1: '2', 2: '4819'}
+454	454		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgUi/BgFightLoading30.jpg', 3: '0', 4: '1', 5: '0.8'}
+455	455		101							{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading30.jpg'}
+456	456		205							{1: '999'}
+457	457		301							{3: 'Not far from here, the Red Tide from the bay area begins to corrupt its way inland...'}
+458	458		401							{1: '2', 2: '4784'}
+459	459		301			RImgBg1Shake	AniZhuanchangBegin			{3: 'In the wake of the tide comes an overwhelming swarm of Hetero-Creatures.'}
+460	460		306						700.0	
+461	461		402							{1: '4819'}
+462	462		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+463	463		401							{1: '2', 2: '4816'}
+464	464		502							{1: 'RImgBg1Shake'}
+465	465		301			AniZhuanchangEnd				{3: 'On the other side of Hydrangea Island, aftershocks continue to ripple outward.'}
+466	466		201							{1: '1', 2: '500961', 4: '-400'}
+467	467		201							{1: '2', 2: '500627', 4: '400'}
+468	468		301							{1: '1', 2: 'Discord', 3: 'An earthquake?', 4: '2'}
+469	469		301							"{2: 'Valeria', 3: ""That's not all—Hetero-Creatures from the forest are also surging forward."", 4: '1'}"
+470	470		201							{1: '2', 2: '501061', 4: '400', 7: '1'}
+471	471		301			PanelActor2Shake				{1: '1', 2: 'Discord', 3: 'The interference is back... Ngh!', 4: '2'}
+472	472		203							{1: '2', 2: '0.25', 3: '400', 4: '-30'}
+473	473		301							{3: 'Discord clutches her head in pain, struggling to maintain balance amid the tremors.'}
+474	474		203							{1: '1', 2: '0.25', 3: '-200', 4: '-30'}
+475	475		301							{2: 'Valeria', 3: 'Stay calm, take a deep breath, and connect with me like you did last time.', 4: '1'}
+476	476		203							{1: '1', 2: '0.4', 3: '-200'}
+477	477		203							{1: '2', 2: '0.4', 3: '400'}
+478	478		301							{3: 'As she speaks, Valeria firmly supports Discord by the shoulders to keep her body steady.'}
+479	479		301							{2: 'Valeria', 3: 'Feeling better?', 4: '1'}
+480	480		202							{1: '2', 6: '1'}
+481	481		201							{1: '2', 2: '500627', 4: '400', 7: '1'}
+482	482		301							"{2: 'Discord', 3: ""I can barely move. But there's no time for that... The Red Tide will be here in no time."", 4: '2'}"
+483	483		301							"{2: 'Valeria', 3: ""The threats we're facing have intensified, and I fear it's the same for Yata, too."", 4: '1'}"
+484	484		301							"{2: 'Valeria', 3: ""If things go well for her, communications should be restored soon. If not, we'll have to rush to her aid."", 4: '1'}"
+485	485		301		1		AniZhuanchangBegin			{2: 'Valeria', 3: 'The plan remains unchanged—regroup with Yata as soon as possible and find high ground to secure our position.', 4: '1'}

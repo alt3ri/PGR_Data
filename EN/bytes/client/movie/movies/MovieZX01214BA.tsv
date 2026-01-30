@@ -1,0 +1,48 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory172.png'}
+2	2		401							{1: '1', 2: '102'}
+3	3		201							{1: '1', 2: '500165'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Lamia', 3: ""...F-finally, I'm in position."", 4: '1'}"
+5	5		202							{1: '1'}
+6	6		301							"{3: '""In position,"" as in near the light wall. Luna did not spell it out loud, but the three Ascendants are fully aware that certain results are expected in this operation.'}"
+7	7		301							{3: 'As the war rages on in Kowloong, the balance slowly shifts. The Ascendants have occupied quite a few outer areas and turned them into domains of the virus.'}
+8	8		201							{1: '1', 2: '500170', 4: '-400'}
+9	9		201							{1: '2', 2: '500170', 4: '400'}
+10	10		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 3: '2'}
+11	11		301							"{1: '1', 2: 'Phecda A', 3: ""You've been infected, huh? On the orders of Lady Qu, I will grant you a quick death!"", 4: '1'}"
+12	12		301			PanelActor2Shake				{2: 'Phecda B', 3: '—!', 4: '2'}
+13	13		202							{1: '1', 2: '2'}
+14	14		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 4: '2'}
+15	15		301							{3: 'Lamia compresses the virus and discharges it wherever she goes. Just like what Roland said, the Phecda—without Inver-Devices to protect them—are easy hosts for the virus. They quickly join the Corrupted ranks.'}
+16	16		201							{1: '1', 2: '500170'}
+17	17		301							{1: '1', 2: 'Phecda Leader', 3: 'Damn it...', 4: '1'}
+18	18		202							{1: '1'}
+19	19		301							"{3: ""As the viral density in the area rises, Kowloong's arrogance gives way to angst. They begin to lock down streets to minimize the damage.""}"
+20	20		201							{1: '1', 2: '500170', 4: '-400'}
+21	21		201							{1: '2', 2: '500170', 4: '400'}
+22	22		301							"{1: '1', 2: 'Phecda A', 3: ""Captain, there's a female Corrupted at the defense line!"", 4: '1'}"
+23	23		301							"{2: 'Phecda Leader', 3: ""From the way she moves... she's an Ascendant! All units, destroy her!"", 4: '2'}"
+24	24		202							{1: '1', 2: '2'}
+25	25		301							"{3: ""At the Phecda leader's command, all Phecdas snap into action and fire away at Lamia. But instead of hitting the target—""}"
+26	26		301							{3: 'The bullets phase right through her.'}
+27	27		201							{1: '1', 2: '500170'}
+28	28		301							{1: '1', 2: 'Phecda Leader', 3: 'Is that only a... projected image? Then she must be near. Smoke her out!', 4: '1'}
+29	29		201							{1: '1', 2: '500165'}
+30	30		301							"{1: '1', 2: 'Lamia', 3: ""No, not a projection, but an illusion. It's bye-bye when you see it."", 4: '1'}"
+31	31		201							{1: '1', 2: '500170'}
+32	32		301							{1: '1', 2: 'Phecda Leader', 3: 'Ugh... Aaargh!', 4: '1'}
+33	33		202							{1: '1'}
+34	34		301							{3: 'Before the Kowloong guards can scatter, Lamia descends upon them. With a point of her finger, bulges appear on their bodies and quickly spread over like rashes.'}
+35	35		301							"{3: ""A Lamia specialty—using the Punishing Virus to paralyze a frame's control systems.""}"
+36	36		301							{3: 'The virus spreads amid anguished cries, but Lamia does not seem the least bothered by the screams. Instead, a stricken expression overtakes her.'}
+37	37		201							{1: '1', 2: '500165'}
+38	38		301							{1: '1', 2: 'Lamia', 3: 'This is exhausting... Those explosions too, it must have been Gabriel... Looks like he can handle that light wall himself...', 4: '1'}
+39	39		301							{2: 'Lamia', 3: 'And Roland...', 4: '1'}
+40	40		301							{2: 'Lamia', 3: 'Oh, no response...? Maybe... I can just... go home first...?', 4: '1'}
+41	41		301							"{2: 'Lamia', 3: ""...Naw, that won't do. They'll be mad..."", 4: '1'}"
+42	42		301							"{2: 'Lamia', 3: ""Someone's coming this way along the train tracks... Must be that Akdilek they mentioned earlier... How did Babylonia manage to bring all these people together?"", 4: '1'}"
+43	43		202							{1: '1'}
+44	100		301							{3: 'As Lamia ruminates on her growing troubles, her expression darkens. Eventually, she lets out a resigned sigh.'}
+45	44		201							{1: '1', 2: '500165', 3: '8'}
+46	45		301							"{1: '1', 2: 'Lamia', 3: ""...Fiiineee. I'll go somewhere populated in the city and start putting on a show. That should please Miss Luna."", 4: '1'}"
+47	46		301		1		AniZhuanchangBegin			{2: 'Lamia', 3: 'Mh-hm, sounds like a plan.', 4: '1'}

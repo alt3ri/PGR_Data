@@ -1,0 +1,32 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory28.jpg'}
+2	100		401							{1: '1', 2: '202'}
+3	2		201							{1: '1', 2: '1101001'}
+4	3		301			DialogEnable				{1: '1', 2: 'Watanabe', 3: 'What are you waiting for?! Get in the car!', 4: '1'}
+5	4		201							{1: '1', 2: '1021001'}
+6	5		301							{1: '1', 2: 'Lucia', 3: 'Kamui! Stop attacking!', 4: '1'}
+7	6		201							{1: '1', 2: '1081001', 3: '5'}
+8	7		301							"{1: '1', 2: 'Kamui', 3: ""Dammit, it's got me!"", 4: '1'}"
+9	8		201							{1: '1', 2: '1021001'}
+10	9		301							{1: '1', 2: 'Lucia', 3: 'Lee, go help Kamui!', 4: '1'}
+11	10		202							{1: '1', 6: '1'}
+12	11		201							{1: '2', 2: '1011001', 4: '-400'}
+13	12		201							{1: '1', 2: '1081001', 3: '5', 4: '400'}
+14	13		301							{1: '1', 2: 'Lee', 3: 'Kamui, get your head down!', 4: '2'}
+15	14		301							{2: 'Kamui', 3: 'What?', 4: '1'}
+16	15		301							"{2: 'Lee', 3: ""Don't blame me if you get hurt then!"", 4: '2'}"
+17	16		301			PanelActor1Shake				"{1: '1', 2: 'Kamui', 3: ""Ahhhh! You almost hit me! Don't you know how dangerous that is?!"", 4: '1'}"
+18	17		301				AniZhuanchangBegin			{2: 'Lee', 3: 'You not getting in the car is the most dangerous!', 4: '2'}
+19	18		202							{1: '1', 2: '2', 6: '1'}
+20	19		201							{1: '1', 2: '1101001'}
+21	20		301			AniZhuanchangEnd				{1: '1', 2: 'Watanabe', 3: 'Alright, drive.', 4: '1'}
+22	21		201							{1: '1', 2: '1021001'}
+23	22		301							"{1: '1', 2: 'Lucia', 3: ""Everyone, get in the car! Wait... Where's Liv?"", 4: '1'}"
+24	23		202							{1: '1', 6: '1'}
+25	24		201							{1: '1', 2: '1011001', 4: '-400'}
+26	25		201							{1: '2', 2: '1081001', 4: '400'}
+27	26		301							"{1: '1', 2: 'Lee', 3: ""Liv's on the Forsaken's car!"", 4: '1'}"
+28	27		202							{1: '1', 2: '2', 6: '1'}
+29	28		201							{1: '1', 2: '1021001'}
+30	29		301			PanelActor1Shake				{1: '1', 2: 'Lucia', 3: 'What?!', 4: '1'}
+31	30		301		1	PanelActor1Shake	AniZhuanchangBegin			{2: 'Lucia', 3: 'Watanabe!', 4: '1'}

@@ -1,0 +1,107 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory176.png'}
+2	2		401							{1: '1', 2: '204'}
+3	3		201							{1: '1', 2: '500629'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Hanying', 3: ""...What's the matter?"", 4: '1'}"
+5	5		301				DialogDisable			{3: 'After rummaging through the pouch you carry, you take out the wooden comb and hand it to Hanying.'}
+6	6		302							{2: 'I bought it at the market.', 3: '7'}
+7	7		302							{2: 'Now that I think about it...', 3: '8'}
+8	8		302							{2: 'It suits you well.', 3: '9'}
+9	9		301			DialogEnable	DialogDisable			{2: 'Hanying', 3: 'This is... for me?', 4: '1'}
+10	10		302							"{2: ""The stall owner told me that it's called Cloud Comb."", 3: '11'}"
+11	11		302							{2: 'Please take it.', 3: '12'}
+12	12		302							{2: 'As a keepsake for the little journey we had.', 3: '13'}
+13	13		204							{1: '1', 2: '2'}
+14	14		301			DialogEnable				{3: 'Hanying accepts the comb, cradling it gently in her hands.'}
+15	15		301							{2: 'Hanying', 3: 'I like it a lot.', 4: '1'}
+16	16		301							{2: 'Hanying', 3: 'Thank you. I will cherish it.', 4: '1'}
+17	17		301							{3: 'Her voice always concludes with a gentle, smiling lilt. It carries a comforting and serene sensation, akin to a soft breeze rustling through blossoming flowers.'}
+18	18		204							{1: '1'}
+19	19		301							"{2: 'Hanying', 3: ""It's just that I have nothing to offer you in return."", 4: '1'}"
+20	20		301							{2: 'Hanying', 3: 'How about... I show you a dance?', 4: '1'}
+21	21		302							{2: 'You said that you were a dancer on the Nighter, right?', 3: '22'}
+22	22		301							{2: 'Hanying', 3: 'Yes, the time I spent with the dance troupe holds a special place in my heart as well.', 4: '1'}
+23	23		301							{2: 'Hanying', 3: '...This will be my first dance here since returning to the Nighter.', 4: '1'}
+24	24		302							"{2: ""I can't wait to see it!"", 3: '25'}"
+25	25		301				AniZhuanchangBegin			{2: 'Hanying', 3: 'Then, please give me a moment.', 4: '1'}
+26	26		401							{1: '1', 2: '234'}
+27	27		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory176.png'}
+28	28		301			AniZhuanchangEnd				{1: '1', 3: 'Stationed at the heart of the yard, she takes a quiet breath. With a graceful lift of her arm, she unfolds her dance fan.'}
+29	29		301							{3: 'Devoid of a stage and the fiery glow of lamps, she dances under the ethereal moonlight. In the absence of any instruments, she orchestrates her performance with her own claps, her voice harmonizing with the rhythm.'}
+30	30		301							{3: 'She does not require a vast audience, for her dance is dedicated to just one person tonight.'}
+31	31		301							{2: 'Hanying', 3: '~Summer leaves whisper; cicada calls like a raindrop cascade. A lone shadow remains.~', 4: '1'}
+32	32		301							{3: 'Her attire flutters, rippling in tandem with her movements. The crisp, melodic clangs of her ornaments provide a subtle accompaniment.'}
+33	33		301							"{2: 'Hanying', 3: ""~Clouds reached, a lofty height, retreat to realms divine. My abode is found in heart's tranquil repose.~"", 4: '1'}"
+34	34		301							{2: 'Hanying', 3: '~Roam, once again, the mundane sea of dust, giants battled, flesh devoured. Sing a grand elegy in memory of souls long gone.~', 4: '1'}
+35	35		301							{3: 'Her eyes, bathed in the gentle glow of the moonlight, subtly alternate between hiding behind the fan and casting a firm gaze upon you.'}
+36	36		301							{3: 'The melody, gentle and intoxicating, flows like a stream of dreams into the quiet night. The moon, once shrouded by a veil of wispy clouds, now shines in its full brilliance, casting a creamy glow onto the yard.'}
+37	37		301							{3: 'She turns, unfurls, and tumbles in an elegant symphony of movement.'}
+38	38		301							"{3: ""Observing her dance, you're transported back to the scene you once dismissed as an illusion, a memory tucked away in the recesses of your mind.""}"
+39	39		202							{1: '1', 6: '1'}
+40	40		504							{1: '0.7'}
+41	41		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+42	42		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory729.jpg'}
+43	43		301				DialogDisable			{3: 'The figure that danced beyond the bounds of time, a dream hailing from a distant past... Despite its fleeting existence, it remains an unforgettable memory.'}
+44	44		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+45	45		504							{1: '0'}
+46	46		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory176.png'}
+47	47		201							{1: '1', 2: '500629', 7: '1'}
+48	48		302							{2: 'I was right...', 3: '49'}
+49	49		302							{2: 'It was real.', 3: '50'}
+50	50		301			DialogEnable				{1: '1', 3: 'The maiden who once danced amidst a whirlwind of falling petals, a vision you thought was an illusion, does indeed exist in the world. And in this breathtaking moment, she stands right before you.'}
+51	51		301							{3: 'As the dance reaches its finale, Hanying gracefully folds her fan and offers a bow in your direction. In response, you give her your most heartfelt applause.'}
+52	52		301							{2: 'Hanying', 3: 'Thank you for your time.', 4: '1'}
+53	53		301				DialogDisable			{2: 'Hanying', 3: 'Commandant... what do you think?', 4: '1'}
+54	54		302							"{2: ""It's breathtaking."", 3: '55'}"
+55	55		302							{2: '...Thought you were going to disappear after the dance.', 3: '56'}
+56	56		204							{1: '1'}
+57	57		301			DialogEnable				"{2: 'Hanying', 3: ""But look, I'm still here."", 4: '1'}"
+58	58		301							{3: 'She tenderly responds, walking over to sit down on a bamboo stool beside you. Together, you sit on the porch, your gazes falling upon the empty yard.'}
+59	59		401							{1: '2', 2: '759'}
+60	60		301							"{3: ""The moon now reigns high in the sky. From seemingly out of nowhere, two bionic swallows, freshly repaired, swoop in to perch on the house's eave.""}"
+61	61		302							"{2: ""All that's left now is to wait for Sturddy to wake up."", 3: '62'}"
+62	62		301							{2: 'Hanying', 3: 'Right. You can get some rest before that.', 4: '1'}
+63	63		302							{2: '...Alright.', 3: '64'}
+64	64		301							{3: 'As you let go of all your worries, a wave of accumulated exhaustion crashes over you, bringing with it an irresistible pull of sleepiness. You find your eyelids growing heavy, surrendering to the sweet call of rest.'}
+65	65		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '10'}
+66	66		301							{3: 'In your half-conscious state, you feel as though you are sinking into an ocean, one as soft and inviting as a bed of cotton.'}
+67	67		204							{1: '1', 2: '17'}
+68	68		301							"{2: '???', 3: ""You'll catch a cold sleeping like this."", 4: '1'}"
+69	69		301							{3: 'A tender voice whispers near your ear, its soft timbre resonating with a hint of resignation.'}
+70	70		301				AniZhuanchangBegin			{3: 'Before darkness fully embraces your vision, you catch a fleeting glimpse of Hanying showing a lonesome expression.'}
+71	71		202							{1: '1', 6: '1'}
+72	72		401							{1: '1', 2: '36'}
+73	73		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+74	74		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+75	75		401							{1: '1', 2: '243'}
+76	76		301			AniZhuanchangEnd				{2: 'Sturddy', 3: '...'}
+77	77		301							{2: 'Sturddy', 3: 'I decided to visit the place you mentioned.'}
+78	78		301							{2: 'Hanying', 3: 'Arcana will be happy to have a new family member.'}
+79	79		301							"{2: 'Sturddy', 3: 'The Church... Will it be a new ""home""?'}"
+80	80		301							{2: 'Hanying', 3: 'Depends on your choice, but we have someone there who can adjust your body.'}
+81	81		301							{2: 'Sturddy', 3: 'No need to... say goodbye?'}
+82	82		301							{2: 'Hanying', 3: '...Right.'}
+83	83		301							"{2: 'Hanying', 3: ""Whether it's due to that person's position or the rules of the Church, now isn't the best time... and I don't wish to bring trouble to everyone.""}"
+84	84		301							{2: 'Hanying', 3: 'A dance as a farewell is enough.'}
+85	85		301				AniZhuanchangBegin			{2: 'Hanying', 3: '...But I still need to thank Pulao for what happened this time.'}
+86	86		401							{1: '1', 2: '36'}
+87	87		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory234.png'}
+88	88		401							{1: '1', 2: '204'}
+89	89		301			AniZhuanchangEnd				"{3: ""When you wake up, it's already the next morning.""}"
+90	90		301							"{3: ""Looking out the window, you're greeted by a clear, azure sky. It seems the storm at sea has finally subsided, presumably followed by a promise of warm, sunny days.""}"
+91	91		301							{3: 'With your movement, a blanket, which was draped over your body, slips and falls gently beside the bed.'}
+92	92		302							{2: '...Hanying?', 3: '93', 4: 'Sturddy?', 5: '93'}
+93	93		301							{3: 'You hear no response. Your voice is the only sound echoing in the silent room.'}
+94	94		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory177.png', 3: '0', 4: '1', 5: '1'}
+95	95		301							{3: 'In a flurry of movement, you spring from the bed and stride out of the room. You search for Hanying and Sturddy in the yard, only to find it empty and barren, as if you have been here alone from the very beginning.'}
+96	96		301							{3: 'Did you wake up from a dream, or are you still in a dream?'}
+97	97		301							{3: 'Amidst your confusion, your gaze falls upon a jade fan pendant and a worn warehouse key card lying on the stone table in the yard.'}
+98	98		302							{2: 'Are they... left here by Hanying and Sturddy?', 3: '99'}
+99	99		301							"{3: ""Holding the jade fan pendant in your hand, you're struck by its cool yet gentle touch, a testament that everything you've experienced was not a mere dream.""}"
+100	100		301							"{3: ""While Hanying's silent departure leaves you puzzled, you believe that as long as she still revisits the Nighter, destiny will bring your paths together once more.""}"
+101	101		301							"{3: ""There will come a day when you find answers to the questions you couldn't ask this time.""}"
+102	102		301							{3: 'Though the yard remains empty and barren, signs of subtle change have emerged—the shattered door has been reconstructed and reinstated, the dust that once blanketed the floor has been swept away, and a small lantern now hangs on the porch.'}
+103	103		301							"{3: 'Not long ago, this place served as a temporary ""home;"" before that, it harbored the longings of a lonesome mechanoid; and once upon a time, just like the Nighter, this yard had witnessed the radiant lanterns aloft, the bustling symphony of convivial sounds, and the joyous reunions of families.'}"
+104	104		301							{3: 'Transient as those memories may be, nothing can deny their existence.'}
+105	105		401							{1: '2', 2: '759'}
+106	106		301		1		AniZhuanchangBegin			{3: 'As you tenderly close the yard door, a bionic swallow alights on your shoulder. It offers a gentle caress to your face with its beak, a touch as light as a whisper. Then, with a rustle of its wings, it takes flight once again, soaring toward the boundless azure sky.'}

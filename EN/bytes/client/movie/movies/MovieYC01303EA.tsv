@@ -1,0 +1,53 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory26.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		201							{1: '1', 2: '500100', 3: '13'}
+4	4		301			DialogEnable				{1: '1', 2: 'α', 3: 'Not bad. Go on.', 4: '1'}
+5	5		202							{1: '1'}
+6	6		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '2'}
+7	7		401							{1: '2', 2: '10002001'}
+8	8		401							{1: '2', 2: '10008001'}
+9	9		301							"{3: ""Alpha lunges at Watanabe. Watanabe crosses his daggers to block Alpha's perforating thrusts.""}"
+10	10		201							{1: '1', 2: '1101001', 3: '5', 4: '-400'}
+11	11		201							{1: '2', 2: '500100', 4: '400'}
+12	12		301							{1: '1', 2: 'Watanabe', 3: 'What are you people scheming again?', 4: '1'}
+13	13		301							{2: 'α', 3: 'Well. Just a mere hunt.', 4: '2'}
+14	14		301							{2: 'Watanabe', 3: 'A hunt?', 4: '1'}
+15	15		301							{2: 'α', 3: 'Quite. You people were just a few uninvited guests.', 4: '2'}
+16	16		202							{1: '1', 2: '2', 6: '1'}
+17	17		301							{3: 'Sensing Alpha laxing from speech, Watanabe rotates his dagger and redirects her blade to the ground. Stepping on the false edge of her blade, Watanabe hops airborne.'}
+18	18		201							{1: '1', 2: '1101001', 3: '5'}
+19	19		301							{1: '1', 2: 'Watanabe', 3: 'Oh. My apologies then.', 4: '1'}
+20	20		202							{1: '1', 6: '1'}
+21	21		401							{1: '2', 2: '10008001'}
+22	22		301			RImgBg1Shake				{3: 'Watanabe somersaults midair. Using the downward pull of gravity, he launches a wind-tearing cut at Alpha.'}
+23	23		301							{3: 'Alpha, on the ground, leisurely raises her blade behind her head, taking on an inviting stance.'}
+24	24		301			RImgBg1Shake				{3: 'The blades clash. Sparks flash. The two find themselves locked in a bind, but none of them could maneuver their weapons into functional offense. They push off each other to put distance between themselves.'}
+25	25		301							"{3: ""A dagger scratch finds itself planted on Alpha's arm. Red vital fluid seep out from the gash.""}"
+26	26		201							{1: '1', 2: '1101001', 3: '5', 4: '-400'}
+27	27		201							{1: '2', 2: '500100', 3: '8', 4: '400'}
+28	28		301							"{1: '1', 2: 'Watanabe', 3: ""What's the matter? Out of breath?"", 4: '1'}"
+29	29		301							"{2: 'α', 3: ""Well... You lot aren't our target this time. Though you did cause some trouble for me... You sure you want more?"", 4: '2'}"
+30	30		301							"{2: 'α', 3: ""Why don't we... make a deal?"", 4: '2'}"
+31	31		301							{3: 'Alpha points her blade at the Forsaken who have fallen to the ground around her.'}
+32	100		204							{1: '2'}
+33	32		301							{2: 'α', 3: 'We call it here, and your companions might make it if you patch them up in time.', 4: '2'}
+34	33		301							{2: 'Forsaken', 3: 'Hah... Nice try...!'}
+35	34		401							{1: '2', 2: '10001004'}
+36	35		301							{3: 'One of the Forsaken on the ground fires his gun shakily at Alpha, but before the bullet could reach her, Alpha casually deflects it with her blade.'}
+37	36		301							{2: 'Watanabe', 3: '...', 4: '1'}
+38	37		301							{2: 'Watanabe', 3: 'Clark, take our wounded to the medics.', 4: '1'}
+39	101		204							{1: '2', 2: '13'}
+40	38		301							{2: 'α', 3: 'Wise decision.', 4: '2'}
+41	39		301							{2: 'α', 3: 'Goodbye it is, then. I still have to make sure our prey is arriving at the right spot.', 4: '2'}
+42	40		301							{2: 'Watanabe', 3: 'What did that man do?', 4: '1'}
+43	41		202							{1: '1', 2: '2'}
+44	42		301							{3: 'Alpha puts away her Katana and walks toward her motorcycle.'}
+45	43		201							{1: '1', 2: '500100'}
+46	44		301							{1: '1', 2: 'α', 3: '...He chased after a false truth.', 4: '1'}
+47	45		301							{3: 'Under the wary gazes of the Forsaken, Alpha rides on her motorcycle and turns to face Watanabe.'}
+48	46		301							"{2: 'α', 3: ""T'was fun."", 4: '1'}"
+49	47		201							{1: '1', 2: '1101001'}
+50	48		301							"{1: '1', 2: 'Watanabe', 3: ""Hmph. It won't just be a scratch the next time you step into Forsaken territory."", 4: '1'}"
+51	49		201							{1: '1', 2: '500100', 3: '13'}
+52	50		301		1		AniZhuanchangBegin			{1: '1', 2: 'α', 3: 'Heh. I can hardly wait.', 4: '1'}

@@ -1,0 +1,323 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500627'}
+4	4		301			DialogEnable				{1: '1', 2: 'Discord', 3: 'Understood. I will change the cruising direction right now.', 4: '1'}
+5	5		301							{2: 'Discord', 3: 'As for her condition...', 4: '1'}
+6	6		301							{3: 'Discord looks back at the girl sleeping in the isolation pod to check her condition before answering Nikola.'}
+7	7		301							{2: 'Discord', 3: 'So far so good. Her weapon has already been disarmed. I will work with Asimov to install her blocker.', 4: '1'}
+8	8		301							{2: 'Discord', 3: 'Understood. I will do my best.', 4: '1'}
+9	9		401							{1: '2', 2: '2566'}
+10	10		301							{3: 'After Nikola hangs up, Discord looks at the fully armed members around her and lets out a barely noticeable sigh.'}
+11	11		301							{2: 'Discord', 3: '(Even Gray Raven can be abandoned when there is a need...)', 4: '1'}
+12	12		201							{1: '1', 2: '500567'}
+13	13		301							{1: '1', 2: 'Construct Soldier', 3: 'What do we do next, Captain?', 4: '1'}
+14	14		201							{1: '1', 2: '500627'}
+15	15		301				DialogDisable			{1: '1', 2: 'Discord', 3: 'We have a new destination, so we need to adjust our route. Turn on the Omega purification system, power up the operation cabin and connect to the remote operating table.', 4: '1'}
+16	16		202							{1: '1', 6: '1'}
+17	17		401							{1: '2', 2: '648'}
+18	18		509						800.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg', 2: '2'}
+19	19		301			DialogEnable				{3: 'The shuttle slightly trembles as it starts heading to the new coordinates. Lucia is pushed into the operation cabin.'}
+20	20		201							{1: '1', 2: '500004', 4: '500'}
+21	21		301				AniZhuanchangBegin			"{1: '1', 2: 'Asimov', 3: ""I'll start installing the blocker now. Keep the shuttle steady."", 4: '1'}"
+22	22		202							{1: '1', 6: '1'}
+23	23		510						500.0	{1: '2'}
+24	24		201							{1: '1', 2: '500019'}
+25	25		301			AniZhuanchangEnd				{1: '1', 2: 'Pilot', 3: 'We have entered the destination airspace. No suspicious target found so far.', 4: '1'}
+26	26		201							{1: '1', 2: '500627'}
+27	27		301							{1: '1', 2: 'Discord', 3: 'Has the accuracy of the coordinates been updated?', 4: '1'}
+28	28		201							{1: '1', 2: '500567'}
+29	29		301							"{1: '1', 2: 'Construct Soldier', 3: ""We are updating them right now. The Science Council's locating system needs some time to calculate."", 4: '1'}"
+30	30		202							{1: '1', 6: '1'}
+31	31		401							{1: '2', 2: '2734'}
+32	32		401							{1: '1', 2: '202'}
+33	33		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab', 2: '1'}
+34	34		301							{3: 'An alarm suddenly goes off inside the cabin.'}
+35	35		201							{1: '1', 2: '500627'}
+36	36		301							"{1: '1', 2: 'Discord', 3: ""What's going on?"", 4: '1'}"
+37	37		202							{1: '1', 6: '1'}
+38	38		201							{1: '2', 2: '500627', 4: '-400'}
+39	39		201							{1: '1', 2: '500019', 4: '400'}
+40	40		301							"{1: '1', 2: 'Pilot', 3: ""We've been locked on by anti-air missiles! How did they find us? This shuttle has the most advanced stealth coating!"", 4: '1'}"
+41	41		301							{2: 'Discord', 3: 'Is it from the surface?', 4: '2'}
+42	42		301							"{2: 'Pilot', 3: ""No! It comes from the air! It's an unidentified fighter aircraft!"", 4: '1'}"
+43	43		301							{3: 'The entire cabin is lighted up by the red, flashing alarm. Ear-splitting noises fill up the space.'}
+44	44		301							"{2: 'Discord', 3: ""Let's get landed first. This shuttle is not armed."", 4: '2'}"
+45	45		301							"{2: 'Pilot', 3: ""There's no time! We must survive this wave first! Just grab something!"", 4: '1'}"
+46	46		202							{1: '1', 2: '2', 6: '1'}
+47	47		201							{1: '1', 2: '500019'}
+48	48		401							{1: '2', 2: '13015202'}
+49	49		301							"{1: '1', 3: ""The pilot slams the button. Lots of metal foils are launched from the shuttle's tail, glowing in the sky like fireworks.""}"
+50	50		401							{1: '2', 2: '13015204'}
+51	51		301							{3: 'He then pulls up the control stick, trying to lift the shuttle up.'}
+52	52		401							{1: '2', 2: '13015203'}
+53	53		301			RImgBg1Shake				{3: 'A loud explosion has shaken the cabin.'}
+54	54		301							{2: 'Pilot', 3: 'Brace yourself! Another wave is coming!', 4: '1'}
+55	55		401							{1: '2', 2: '13015203'}
+56	56		301			RImgBg1Shake				{3: 'More foils were launched, but this time everybody heard something cracking after the explosion.'}
+57	57		301							{2: 'Pilot', 3: 'Left wing damaged! The fuel is leaking. We are going down!', 4: '1'}
+58	58		301							{3: 'The pilot tries his best to control the shuttle, preventing it from tumbling.'}
+59	59		201							{1: '1', 2: '500627', 6: '1'}
+60	60		301							{1: '1', 2: 'Discord', 3: 'Everybody, evacuate the shuttle. Get into the escape pod.', 4: '1'}
+61	61		202							{1: '1', 6: '1'}
+62	62		201							{1: '2', 2: '500627', 4: '400'}
+63	63		201							{1: '1', 2: '500567', 4: '-400'}
+64	64		301							{1: '1', 2: 'Construct Soldier', 3: 'What about her? The escape pods can only fit one.', 4: '1'}
+65	65		301							"{2: 'Discord', 3: ""Put her in a pod for now. We'll look for her after landing."", 4: '2'}"
+66	66		301							{2: 'Construct Soldier', 3: 'Shall we wake her up then?', 4: '1'}
+67	67		301							"{2: 'Discord', 3: ""...Turn on delayed awakening. The Science Council said as long as the blocker was working properly, waking her up wouldn't have much impact on the symptoms."", 4: '2'}"
+68	68		301							{2: 'Construct Soldier', 3: 'Roger!', 4: '1'}
+69	69		301							{3: 'Discord hesitates for a moment and adds.'}
+70	70		301							{2: 'Discord', 3: 'Put her weapons inside too.', 4: '2'}
+71	71		202							{1: '1', 2: '2', 6: '1'}
+72	72		201							{1: '1', 2: '500019'}
+73	73		301							"{1: '1', 2: 'Pilot', 3: ""Hurry up! I don't have much chaff left!"", 4: '1'}"
+74	74		201							{1: '1', 2: '500627', 6: '1'}
+75	75		301				AniZhuanchangBegin			{1: '1', 2: 'Discord', 3: 'Everyone, get into the cabin now! Prepare to eject!', 4: '1'}
+76	76		402							{1: '2734'}
+77	77		202							{1: '1', 6: '1'}
+78	78		401							{1: '1', 2: '36'}
+79	79		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab'}
+80	80		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+81	81		401							{1: '1', 2: '148'}
+82	82		301			AniZhuanchangEnd				{3: 'She wanders in the empty darkness. With nothing to refer to, she cannot even tell the directions.'}
+83	83		301							{3: 'Is this a dream? Or the chaos in her M.I.N.D.?'}
+84	84		301							"{3: 'Unable to find an answer, she can only take futile steps toward where ""front"" might be.'}"
+85	85		401							{1: '2', 2: '927'}
+86	86		301							{3: 'As she walks, the bubbles of memories begin to ripple.'}
+87	87		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+88	88		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz113.jpg'}
+89	89		104							{1: '-300|0|0', 2: '0'}
+90	90		104							{1: '0|0|0', 2: '1'}
+91	91		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory216.png', 3: '0', 4: '1', 5: '2'}
+92	92		301							{3: 'Crying in the rain holding her sister. Deceived by the fake ghost on the frostland.'}
+93	93		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+94	94		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+95	95		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz1503.jpg'}
+96	96		104							{1: '300|0|0', 2: '0'}
+97	97		104							{1: '0|0|0', 2: '1'}
+98	98		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory512.jpg', 3: '0', 4: '1', 5: '2'}
+99	99		301							{3: 'Fought hard on the Observatory of Kowloong. Saved the white bird from falling on the roof of the church.'}
+100	100		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+101	101		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+102	102		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1901_3.jpg'}
+103	103		301							{3: 'Betrayed by many.'}
+104	104		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+105	105		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1201_2.jpg'}
+106	106		301							{3: 'Loved by many.'}
+107	107		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+108	108		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory1.jpg'}
+109	109		301							{3: 'Disgusted by how despicable and greedy people could be.'}
+110	110		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+111	111		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory260.png'}
+112	112		301							{3: 'Touched by the beauty of humanity in the apocalypse.'}
+113	113		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+114	114		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+115	115		301							{3: 'Like the matches held by a little girl, the warm memories only lingered for a short moment in the chilling darkness.'}
+116	116		301							{3: 'When she reaches the end of the intersecting memories, she finally stops.'}
+117	117		306							{1: '1'}
+118	118		301							{3: 'Where to go now?'}
+119	119		301				AniZhuanchangBegin			{3: 'What to do now?'}
+120	120		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory597.jpg'}
+121	121		201							{1: '1', 2: '500165', 4: '-400'}
+122	122		301			AniZhuanchangEnd				"{1: '1', 2: 'Lamia', 3: ""The world is already beyond redemption. Why don't you just live an easy life instead of finding ways to change it?"", 4: '1'}"
+123	123		301				AniZhuanchangBegin			{3: 'Then why do you look so sad when you occasionally gaze at the ocean?'}
+124	124		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+125	125		201							{1: '1', 2: '1031001', 3: '1', 4: '400'}
+126	126		301			AniZhuanchangEnd				{1: '1', 2: 'Liv', 3: 'We all long for a home. Even the sturdiest ship will need a harbor. Even the strongest heart will need to feel warmth.', 4: '1'}
+127	127		301				DialogDisable			{3: 'Home... But I...'}
+128	128		202							{1: '1', 6: '1'}
+129	129		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+130	130		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+131	131		307	1						{1: 'Have no place to go back to.', 3: '100', 4: 'ffffffff'}
+132	132		307							{2: '1'}
+133	133		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+134	134		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_03.jpg'}
+135	135		401							{1: '2', 2: '2593'}
+136	136		301			DialogEnable				{3: 'Blood-stained memories suddenly come back to her. She has done something irreversible.'}
+137	137		301							{3: 'It has nothing to do with whether that person will forgive her or not. She has violated the unquestionable laws.'}
+138	138		301							{3: 'That person told her to not lose. But she already lost everything the moment her blade touched blood.'}
+139	139		301				DialogDisable			{3: 'Perhaps there is only one thing she can do...'}
+140	140		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+141	141		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+142	142		307	1						{1: 'Leave.', 3: '100', 4: 'ffffffff'}
+143	143		307	1			AniZhuanchangBegin			{1: 'Leave forever.', 3: '100', 4: 'ffffffff'}
+144	144		307							{2: '1'}
+145	145		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory347.jpg'}
+146	146		201							{1: '1', 2: '500334', 3: '1', 4: '-400'}
+147	147		502							{1: 'DialogEnable'}
+148	148		301			AniZhuanchangEnd	AniZhuanchangBegin			"{1: '1', 2: 'Roland', 3: ""Isn't it too pessimistic to think you are alone? As long as you still have a place with people waiting for you, that place is your home."", 4: '1'}"
+149	149		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+150	150		201							{1: '1', 2: '500568', 4: '400'}
+151	151		301			AniZhuanchangEnd				"{1: '1', 2: 'Lee', 3: ""You have been fighting for too long. It's time to rest. You can have a rest."", 4: '1'}"
+152	152		301				AniZhuanchangBegin			{3: 'But there are many things she has yet to complete.'}
+153	153		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+154	154		201							{1: '1', 2: '500238', 3: '1', 4: '-500'}
+155	155		301			AniZhuanchangEnd				{1: '1', 2: 'Luna', 3: 'You can leave everything behind and come over. I have always been waiting for you.', 4: '1'}
+156	156		302							{2: 'Just leave the rest to us.', 3: '157'}
+157	157		301							{2: 'Luna', 3: 'Sister.', 4: '1'}
+158	158		302							{2: 'Lucia.', 3: '159'}
+159	159		301							{3: '...'}
+160	160		202							{1: '1', 6: '1'}
+161	161		401							{1: '1', 2: '36'}
+162	162		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+163	163		509						800.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 2: '1'}
+164	164		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+165	165		201							{1: '1', 2: '500166', 3: '5', 4: '-500', 7: '1'}
+166	166		201							{1: '2', 2: '500610', 4: '500', 7: '1'}
+167	167		401							{1: '1', 2: '172'}
+168	168		301							{1: '1', 2: 'Lucia & Alpha', 3: 'No!', 4: '1', 5: '2'}
+169	169		301							"{2: 'Lucia', 3: ""I couldn't do anything to help Luna, but the Ascension-Network will never be my home."", 4: '1'}"
+170	170		301							{2: 'Alpha', 3: 'I never leave everything to others.', 4: '2'}
+171	171		301							{2: 'Lucia', 3: 'My home is Gray Raven. I will never break it apart, or betray what I believe in.', 4: '1'}
+172	172		301							{2: 'Alpha', 3: 'Even faced with endless battles, I will not fear them. I will fight on.', 4: '2'}
+173	173		301							{2: 'Lucia', 3: 'Because we both have promised.', 4: '1'}
+174	174		301							{2: 'Alpha', 3: 'Because we both have the same goal.', 4: '2'}
+175	175		301							{2: 'Lucia', 3: 'To restore the world to its original shape.', 4: '1'}
+176	176		301							{2: 'Alpha', 3: 'To bring new changes to this world.', 4: '2'}
+177	177		301							{2: 'Lucia & Alpha', 3: 'I will witness the future myself!', 4: '1', 5: '2'}
+178	178		401							{1: '2', 2: '1515'}
+179	179		304							{1: '>>>>>>>>>>System rebooting<<<<<<<<<<', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 10: '1'}
+180	180		304				AniZhuanchangBegin			{1: '>>>>>>>>>>Reboot complete. Consciousness: Lucia, online<<<<<<<<<<', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 9: '1', 10: '1'}
+181	181		306							
+182	182		202							{1: '1', 2: '2', 6: '1'}
+183	183		510						500.0	{1: '1'}
+184	184		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+185	185		401							{1: '1', 2: '201'}
+186	186		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+187	187		301			AniZhuanchangEnd				{3: 'Lucia opens her eyes again. Apart from a few indicators, the cabin is completely dark.'}
+188	188		401							{1: '2', 2: '2511'}
+189	189		401							{1: '2', 2: '215'}
+190	190		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+191	191		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory105.png', 3: '0', 4: '1', 5: '1'}
+192	192		301							{3: 'She fumbles around and finally finds the button. The cabin door drops to the ground, letting chilling wind and snow in.'}
+193	193		301							{3: 'Lucia looks back at the escape pod and finds her equipment and comms device inside.'}
+194	194		201							{1: '1', 2: '500166', 3: '5'}
+195	195		301							{1: '1', 2: 'Lucia', 3: 'My equipment is still here, but someone seems to have added something to the Inver-Device. The comms device... has no signal?', 4: '1'}
+196	196		301							{2: 'Lucia', 3: 'For them to use an escape pod like this... Was there an accident?', 4: '1'}
+197	197		301							{3: 'Lucia examines the slightly deformed escape pod. She realizes the transmitter used to send distress signals was not activated.'}
+198	198		301							{2: 'Lucia', 3: 'Does that mean the enemy is not Corrupted or Hetero-Creature?', 4: '1'}
+199	199		202							{1: '1', 6: '1'}
+200	200		301							"{3: ""The escape pod's transmitter was manually disabled before launch. Whoever did this was probably trying to avoid being detected, unless there was a malfunction during the landing.""}"
+201	201		401							{1: '2', 2: '897'}
+202	202		301							{3: 'After a few more failed attempts, Lucia turns on her terminal and finds an unread message.'}
+203	203		201							{1: '1', 2: '500627'}
+204	204		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+205	205		301							{1: '1', 2: 'Discord', 3: 'This message is for Lucia, our mission target. I am Discord, a member of the Purifying Force. If you are reading this message, you have already been separated from the escort team.', 4: '1'}
+206	206		301							{2: 'Discord', 3: 'Based on the backup plan provided by the HQ, I hereby give you the following mission:', 4: '1'}
+207	207		301							{2: 'Discord', 3: 'What is happening to your frame is related to a source that you keep receiving signals from.', 4: '1'}
+208	600		301							{2: 'Discord', 3: 'If you find yourself lost and are unable to regroup with us, please locate the signal source. To self-rescue, you must attempt to destroy it—', 4: '1'}
+209	208		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+210	209		201							{1: '1', 2: '500166', 3: '5'}
+211	210		301							{1: '1', 2: 'Lucia', 3: 'The source of that signal... It must be Alpha.', 4: '1'}
+212	211		301							"{3: ""Lucia is quite certain after recapping the memories that didn't belong to her during the hibernation.""}"
+213	212		301							{2: 'Lucia', 3: 'Alpha... So this is what you have been fighting against.', 4: '1'}
+214	213		301							{3: 'Lucia gazes through the storm and looks at the mountain peak.'}
+215	214		301							{2: 'Lucia', 3: 'If you really think that way...', 4: '1'}
+216	215		401							{1: '2', 2: '2814'}
+217	216		301							{3: 'Lucia takes out her terminal and turns on the recorder.'}
+218	217		301							{2: 'Lucia', 3: 'This is Lucia from Gray Raven. The following recording is not subject to any form of coercion or interference. It is entirely of my own volition.', 4: '1'}
+219	218		301							"{3: ""Lucia's voice faintly echoes in the snowstorm, like a solo piece before the finale.""}"
+220	219		301							"{2: 'Lucia', 3: ""...That's all."", 4: '1'}"
+221	220		301							{3: 'After recording the message, Lucia puts the terminal back in the escape pod. She grabs the name tags and decides not to put them in.'}
+222	221		301							{3: 'She takes her equipment and walks toward the peak in deep snow.'}
+223	222		301				AniZhuanchangBegin			{2: 'Lucia', 3: 'I must put an end to this.', 4: '1'}
+224	223		202							{1: '1', 6: '1'}
+225	224		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+226	225		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory698.jpg'}
+227	226		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+228	227		301			AniZhuanchangEnd				{3: 'When Alpha opens her eyes again, there is no more Corrupted nearby. The sludge on her body has also disappeared.'}
+229	228		201							{1: '1', 2: '500610'}
+230	229		301							{1: '1', 2: 'Alpha', 3: 'Did I make it?', 4: '1'}
+231	230		301							{3: 'Thinking of the chaotic experience in her M.I.N.D., She looks a little exhausted.'}
+232	700		301							{3: 'She looks at her new frame. The white windbreaker flies in the wind, blending into the snow in the background.'}
+233	701		301							{3: 'A black bandage wraps around her crimson left hand, but it cannot contain the red electricity current leaking through the gaps.'}
+234	702		301							{3: 'The more she uses the power of Ascension-Network, the more she will transform toward the direction of its filtering.'}
+235	703		301							{2: 'Alpha', 3: 'This is my contradiction...', 4: '1'}
+236	704		301							{3: 'Her mighty power is constrained within an unbreakable shackle. A blade that cannot be sheathed will hurt not only others, but also herself.'}
+237	231		301							{2: 'Alpha', 3: 'Gray Raven... Huh.', 4: '1'}
+238	232		301							{3: 'She whispers the name that holds complex meanings to her.'}
+239	233		301							{2: 'Alpha', 3: 'Even Gray Raven can be abandoned when necessary.', 4: '1'}
+240	234		301							{3: 'Alpha puts on her poker face again as she recalls the fragments of memory.'}
+241	235		301							{2: 'Alpha', 3: 'They are still trying to exploit the situation for their own good. How foolish.', 4: '1'}
+242	236		301							{2: 'Alpha', 3: 'No matter what Gray Raven has accomplished, they are still a pawn.', 4: '1'}
+243	237		301							{3: 'She looks at the figure that slowly walks out of the storm.'}
+244	238		301				AniZhuanchangBegin			{2: 'Alpha', 3: 'Alright. Let me see what you will choose.', 4: '1'}
+245	239		202							{1: '1', 6: '1'}
+246	240		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory105.png'}
+247	241		301			AniZhuanchangEnd				"{3: ""After crossing to the other side of the mountain, Lucia's vision suddenly clears up.""}"
+248	242		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory698.jpg', 3: '0', 4: '1', 5: '1'}
+249	243		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+250	244		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory698.jpg'}
+251	245		301							{3: 'Only the sound of the snowstorm can be heard in the vast mountain peak. An expected figure has shown up.'}
+252	246		201							{1: '1', 2: '500166', 3: '5', 4: '-400'}
+253	247		201							{1: '2', 2: '500610', 4: '400'}
+254	248		301							{1: '1', 2: 'Lucia', 3: 'Alpha...', 4: '1'}
+255	249		301							{3: 'Alpha has changed a lot from what Lucia remembers. Still, she recognizes her immediately.'}
+256	250		301							{2: 'Alpha', 3: 'I knew you would come.', 4: '2'}
+257	251		301							{2: 'Lucia', 3: 'Are you the reason behind my symptoms?', 4: '1'}
+258	252		301							{2: 'Alpha', 3: 'You already know the answer. Are you still hoping this is a coincidence?', 4: '2'}
+259	253		301							{2: 'Lucia', 3: 'I just want to find out the truth.', 4: '1'}
+260	254		301							{2: 'Alpha', 3: '...The Ascension-Network is running a new round of filtering. You were incorrectly chosen as a target because our M.I.N.D. had the same root.', 4: '2'}
+261	255		301							{2: 'Lucia', 3: 'A new round of filtering?', 4: '1'}
+262	256		301							"{2: 'Alpha', 3: ""That's none of your business, unless you also want to become an Ascendant."", 4: '2'}"
+263	257		301							"{2: 'Lucia', 3: ""...So this won't stop even if I destroy you, right?"", 4: '1'}"
+264	258		301							{2: 'Alpha', 3: 'Correct. Once the filtering has started, the Ascension-Network will not stop until there is a result.', 4: '2'}
+265	259		301							{2: 'Alpha', 3: 'Even if you manage to kill me, you will just have to deal with twice the stress.', 4: '2'}
+266	260		301							{2: 'Alpha', 3: 'Besides, you will never have the chance.', 4: '2'}
+267	261		301							{2: 'Lucia', 3: '...', 4: '1'}
+268	262		301							{2: 'Alpha', 3: 'If you ask me, I suggest you go back and spend your final days with Gray Raven.', 4: '2'}
+269	263		301							"{2: 'Lucia', 3: ""You can stop this filtering, can't you?"", 4: '1'}"
+270	264		301							{2: 'Alpha', 3: '...So you saw my memories through the resonance of M.I.N.D.', 4: '2'}
+271	265		301							{2: 'Alpha', 3: 'Right, there is a possible solution.', 4: '2'}
+272	266		301							{3: 'Alpha did not deny it. She paused for a while and answered.'}
+273	267		301							"{2: 'Lucia', 3: ""Let's work together then."", 4: '1'}"
+274	268		301							{2: 'Alpha', 3: 'Do you even realize what you just said?', 4: '2'}
+275	269		301							{2: 'Lucia', 3: 'I saw your memories, so I know you want to stop the filtering to go against the Ascension-Network.', 4: '1'}
+276	270		301							{2: 'Alpha', 3: 'Wait a second. We are enemies. Have you finally decided to give up Babylonia for this path?', 4: '2'}
+277	271		301							{3: 'Lucia grabs the equipment she took from the escape pod.'}
+278	272		301							"{2: 'Lucia', 3: ""Pushing you completely to the Ascension-Network will do us no good. I don't want to help it either."", 4: '1'}"
+279	273		301							"{2: 'Lucia', 3: ""It's our common enemy now. That gives us a foundation for cooperation."", 4: '1'}"
+280	274		401							{1: '1', 2: '36'}
+281	275		201							{1: '2', 2: '500611', 4: '400'}
+282	276		301							{1: '1', 2: 'Alpha', 3: 'What if I say no?', 4: '2'}
+283	277		401							{1: '2', 2: '10022001'}
+284	278		401							{1: '1', 2: '227'}
+285	279		301							{3: 'Lucia slowly draws her blade out. It gives a chilling reflection in the wind.'}
+286	280		301							"{2: 'Lucia', 3: ""I'll just do my best to change your mind then. No matter what it takes, I will put an end to this."", 4: '1'}"
+287	281		301							{2: 'Lucia', 3: 'I will go back to Gray Raven and those who are supporting me as Lucia.', 4: '1'}
+288	282		301							{2: 'Alpha', 3: 'It seems Gray Raven has become your weakness. It has taken away from you the courage to sacrifice.', 4: '2'}
+289	283		301							{2: 'Lucia', 3: 'Sacrifice may be an option, but it will traumatize those who are still living no matter what.', 4: '1'}
+290	284		301							{2: 'Lucia', 3: 'I have already hurt that person...', 4: '1'}
+291	285		301							{3: 'Lucia clenches her fist and puts it on her chest, right over the artificial heart.'}
+292	286		301							{2: 'Lucia', 3: 'But after going through so many things, I have also learned the feeling of heartache. I will never let it happen to others again.', 4: '1'}
+293	287		301							"{2: 'Lucia', 3: 'That\'s why I promised them that I would ""safely return.""', 4: '1'}"
+294	288		301							{2: 'Lucia', 3: 'Regardless of what I will be facing later. Be it a court-martial, surveillance, or even if I have to become a research subject.', 4: '1'}
+295	289		301				DialogDisable			{2: 'Lucia', 3: 'I will end this once and for all, then go back to apologize to Commandant, and everyone who worried about me!', 4: '1'}
+296	290		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+297	291		202							{1: '1', 2: '2', 6: '1'}
+298	292		401							{1: '2', 2: '10042302'}
+299	293		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+300	294		401							{1: '2', 2: '9342031'}
+301	295		101						60.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3402_01.jpg'}
+302	296		101						30.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3402_02.jpg'}
+303	297		101						30.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3402_03.jpg'}
+304	298		101						80.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3402_04.jpg'}
+305	299		101						30.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3402_05.jpg'}
+306	300		502							{1: 'RImgBg1Shake'}
+307	301		101						30.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3402_06.jpg'}
+308	302		101						40.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3402_01.jpg'}
+309	303		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3401_10.jpg'}
+310	304		301			DialogEnable				{2: 'Alpha', 3: 'You just never learn!'}
+311	305		301							{3: 'Alpha also unsheathes her blade, striking the same stance as Lucia.'}
+312	306		301							{2: 'Alpha', 3: 'I once had expectations for you, hoping that you would unveil a different future for me.'}
+313	307		301							{2: 'Alpha', 3: 'Who would have thought that you only became more loyal to humans and ended up a convenient weapon?'}
+314	308		301							{2: 'Alpha', 3: 'Why would you do that? How does it benefit you?'}
+315	309		301							{2: 'Lucia', 3: 'The lack of trust between us means we can only cooperate temporarily.'}
+316	310		301							"{2: 'Lucia', 3: ""I can't put all my hope on you. Now that I am no longer clueless like I used to be, I must take action.""}"
+317	311		301							{2: 'Alpha', 3: 'You are digging your own grave.'}
+318	312		301							{2: 'Lucia', 3: 'Still better than doing nothing, especially when the threat is right in front of me.'}
+319	313		301							{2: 'Alpha', 3: 'If you really think that way...'}
+320	314		301							{2: 'Alpha', 3: 'Show me what you are made of then.'}
+321	315		301							"{2: 'Lucia', 3: ""I'm also curious to know...""}"
+322	316		301		1		AniZhuanchangBegin			{2: 'Lucia', 3: 'Whether you really can contain this power.'}

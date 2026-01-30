@@ -1,0 +1,69 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory158.png'}
+2	2		401							{1: '1', 2: '17'}
+3	991		201							{1: '1', 2: '500158'}
+4	3		301			DialogEnable				{1: '1', 3: 'Standing on the stage, Kemuri bows to the audience.'}
+5	4		301							{2: 'Drawn-Out Voice', 3: 'All merchandise have been individually displayed.', 4: '1'}
+6	5		301				AniZhuanchangBegin			{2: 'Drawn-Out Voice', 3: 'All merchandise, please step on the stage for a group display.', 4: '1'}
+7	992		202							{1: '1'}
+8	6		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1101_7.jpg'}
+9	1000		502							{1: 'RImgBg1BlowUp'}
+10	7		301			AniZhuanchangEnd				{3: 'All attention is drawn to two feminine figures on the elevated platform.'}
+11	8		301							{3: 'An archaic duality of beauty emblazons the stage. One of an eastward demureness, and one of a westward elegance.'}
+12	9		301							{2: 'Golden-Haired Woman', 3: '...Lucia!'}
+13	10		301							{2: 'Lucia', 3: '...?'}
+14	11		301							"{2: 'Golden-Haired Woman', 3: ""What are y'all doing here? Did you receive the same mission too?""}"
+15	12		301				AniZhuanchangBegin			{2: 'Lucia', 3: 'You are...'}
+16	1010		505							{1: 'RImgBg1BlowUp'}
+17	14		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory159.png'}
+18	15		201							{1: '1', 2: '500026'}
+19	17		301			AniZhuanchangEnd				{1: '1', 2: 'Lee', 3: '……', 4: '1'}
+20	13		302							"{2: ""What's wrong, Lee?"", 3: '18', 4: ""Lee, you don't look very well."", 5: '18'}"
+21	18		301							{1: '1', 2: 'Lee', 3: 'Must be a glitch with my visual module.', 4: '1'}
+22	19		301							"{2: 'Lee', 3: ""I'll run a self-check later."", 4: '1'}"
+23	16		201							{1: '1', 2: '500145'}
+24	20		301							"{1: '1', 2: 'Pulao', 3: ""That's the leader, Lady Qu."", 4: '1'}"
+25	21		301							{2: 'Pulao', 3: 'We have to find a way to get to her.', 4: '1'}
+26	23		202							{1: '1', 6: '1'}
+27	25		301							{3: 'Looking around, you see some mechanical puppets that were snaking through the audience fall silent. Then a familiar figure bursts into view.'}
+28	233		201							{1: '1', 2: '500156'}
+29	26		301							{1: '1', 3: 'As if noticing your gaze, Chrome glances your way, then his face twitches and he lowers his head.'}
+30	234		202							{1: '1', 6: '1'}
+31	27		302							{2: 'Wait.', 3: '28', 4: 'Could it be...', 5: '28'}
+32	28		301							{3: 'The pretty golden-haired woman on the stage looks over to you synchronously, as if alerted by some signal.'}
+33	29		301							"{3: 'The gentle, twinkling pair of eyes curve into familiar slits... ""She"" parts her lips, and mouths an all-too familiar word.'}"
+34	30		201							{1: '1', 2: '500147', 3: '1'}
+35	31		301							{1: '1', 2: 'Kamui', 3: '(* ￣ 3￣) COM★MAN★DANT★', 4: '1'}
+36	32		201							{1: '1', 2: '500143', 4: '-400'}
+37	33		201							{1: '2', 2: '500150', 4: '400'}
+38	34		301							{1: '1', 3: 'A masked Construct, a paper umbrella in hand, gently lifts the bamboo curtain—the legendary leader finally emerges from backstage.'}
+39	35		202							{1: '1', 2: '2', 6: '1'}
+40	36		201							{1: '1', 2: '500156'}
+41	37		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+42	38		301							"{1: '1', 2: 'Chrome', 3: ""Commandant of Gray Raven, this is Chrome of Strike Hawk. I'm contacting you through a special channel."", 4: '1'}"
+43	39		301							"{2: 'Chrome', 3: ""Since we can't stay connected for long, I'll keep it short. Our team will work with Gray Raven to cause a distraction so Lucia can approach the target..."", 4: '1'}"
+44	57		301							{2: 'Chrome', 3: '...And then we meet up.', 4: '1'}
+45	40		202							{1: '1', 6: '1'}
+46	41		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+47	42		301							{3: 'The moment the call disconnects, a familiar figure leaps out of the audience.'}
+48	43		302							{2: '(Connect to Lucia)', 3: '44', 4: '(Tell Lucia)', 5: '44'}
+49	44		301							{3: 'Kamui, somehow, has already whipped out his gear from some unfathomable place. His ornate hat falls to the ground.'}
+50	45		301							"{3: ""Chrome's scythe catches the eaves of a corridor, and he pulls himself up in the air.""}"
+51	46		201							{1: '1', 2: '500143'}
+52	47		301							{1: '1', 2: 'Yazi', 3: '...Protect Master.', 4: '1'}
+53	111		203							{1: '1', 2: '0.25', 3: '-400'}
+54	48		201							{1: '2', 2: '500147', 3: '1', 4: '400'}
+55	49		301							"{1: '1', 2: 'Kamui', 3: ""Hey! I'm your dance partner!"", 4: '2'}"
+56	50		202							{1: '1', 2: '2', 6: '1'}
+57	51		301							"{3: ""Two figures, one blue and one red, pass by each other in mid-air. Lucia and Chrome's weapons meet.""}"
+58	222		401							{1: '2', 2: '10002001'}
+59	444		501				RImgBg1Shake			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '2'}
+60	555		401							{1: '2', 2: '10006001'}
+61	556		502							{1: 'RImgBg1Shake'}
+62	52		301				AniZhuanchangBegin			{3: 'With a boost from Chrome, Lucia vaults onto the platform and grabs Lady Qu by her arm.'}
+63	889		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory160.png'}
+64	888		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab'}
+65	238		201							{1: '1', 2: '500152', 4: '-400'}
+66	239		201							{1: '2', 2: '500150', 4: '400'}
+67	54		301			AniZhuanchangEnd				"{1: '1', 2: 'Lucia', 3: ""Let's go."", 4: '1'}"
+68	56		301		1		AniZhuanchangBegin			{2: 'Qu', 3: '……', 4: '2'}

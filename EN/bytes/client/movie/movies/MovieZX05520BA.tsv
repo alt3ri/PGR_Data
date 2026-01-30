@@ -1,0 +1,375 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1255.jpg'}
+2	2		401							{1: '1', 2: '5030'}
+3	3		201							{1: '1', 2: '501245', 3: '9'}
+4	4		203							{1: '1', 2: '0.25', 4: '-100'}
+5	5		401							{1: '2', 2: '4306'}
+6	6		502							{1: 'RImgBg1Shake'}
+7	7		301			DialogEnable				{1: '1', 3: 'Vera watches the dust settle as the power engines throughout her body finally emit a high-pitched warning of imminent overheating—she drops to one knee at the center of the platform.'}
+8	8		301			PanelActor1Shake				{2: 'Vera', 3: 'Cough...', 4: '1'}
+9	9		301			PanelActor1Shake				{2: 'Vera', 3: 'Gotta... get... further away... otherwise... something worse will happen.', 4: '1'}
+10	10		401							{1: '2', 2: '4811'}
+11	11		203						500.0	{1: '1', 2: '0.4', 3: '-15', 4: '-80'}
+12	12		203							{1: '1', 2: '0.4', 4: '-60'}
+13	13		301							"{3: ""She tries to prop her frame up with her weapon, still intent on moving further away, but the red light emanating from her entire body tells her this isn't going to happen.""}"
+14	14		306							{1: '1'}
+15	15		301							{3: 'Vital fluid leaks from every port in her frame, all circuits unable to bear the strain of her berserk mode any longer.'}
+16	16		301							"{3: 'She can feel herself succumbing to a terrible state of ""Haywire,"" her vision growing increasingly blurry as her fingers violently dig into the metal floor, carving a chilling black gash.'}"
+17	17		306							
+18	18		301							"{2: 'Vera', 3: ""No... I absolutely won't..."", 4: '1'}"
+19	19		301							{2: 'Vera', 3: '...end... so pathetically here.', 4: '1'}
+20	20		401						250.0	{1: '2', 2: '4111006'}
+21	21		203						100.0	{1: '1', 2: '0.15', 4: '-120'}
+22	22		301			PanelActor1Shake				{3: 'As sunlight gradually creeps over the horizon, her knees buckle as the engines in her legs completely melt down.'}
+23	23		301				DialogDisable			"{3: 'As she collapses completely to her knees, Vera can\'t help but concede that those bastards were right—she really does hate the feeling of going ""Haywire"" most of all.'}"
+24	24		202							{1: '1', 6: '1'}
+25	25		401							{1: '2', 2: '4280'}
+26	26		111						1000.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+27	27		301			DialogEnable				{3: 'A sharp pain surges through her M.I.N.D., as if some irritating beacon is repeatedly attempting to connect.'}
+28	28		402							{1: '4280'}
+29	29		401							{1: '2', 2: '5496'}
+30	30		104						550.0	{1: '0|0|-20', 2: '0.5'}
+31	31		402							{1: '5496'}
+32	32		301							{3: 'She instinctively begins dragging herself in the other direction, trying to put more distance between herself and whoever owns the beacon.'}
+33	33		201							{1: '1', 2: '501245', 3: '4', 5: '-120'}
+34	34		301							{1: '1', 2: 'Vera', 3: '...Stop... connecting... me...', 4: '1'}
+35	35		202							{1: '1', 6: '1'}
+36	36		401							{1: '2', 2: '213'}
+37	37		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+38	38		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory928.png'}
+39	39		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab', 2: '1'}
+40	40		301							{3: 'The lingering flames of fury will scorch everything.'}
+41	41		402							{1: '213'}
+42	42		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab'}
+43	43		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+44	44		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1255.jpg'}
+45	45		201							{1: '1', 2: '501245', 3: '9', 5: '-120', 6: '-50', 7: '1'}
+46	46		301				DialogDisable			"{1: '1', 2: 'Vera', 3: ""...I'm... dangerous..."", 4: '1'}"
+47	47		401							{1: '2', 2: '1015'}
+48	48		307							{1: 'Reconnecting, reconnecting, still reconnecting.', 3: '55', 4: 'ffffffff'}
+49	49		301							{3: 'Reconnecting, reconnecting, still reconnecting.'}
+50	50		307							{2: '1'}
+51	51		301			DialogEnable	DialogDisable			{2: 'Vera', 3: '...', 4: '1'}
+52	52		401							{1: '2', 2: '4387'}
+53	53		401							{1: '1', 2: '36'}
+54	54		205						650.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.6'}
+55	55		301			DialogEnable	DialogDisable			"{3: ""Vera's vision dims completely.""}"
+56	56		401						1000.0	{1: '2', 2: '1513', 3: '1'}
+57	57		401							{1: '2', 2: '4548'}
+58	58		301			DialogEnable				{3: 'Before her consciousness dissipates, she hears familiar, hurried footsteps, with a slight limp. She feels a tightening around her waist, just like when that person would grip a rope and climb toward her.'}
+59	59		301				AniZhuanchangBegin			{3: '...'}
+60	60		205							{1: '1005', 3: '0', 4: '1', 5: '0'}
+61	61		202							{1: '1', 6: '1'}
+62	62		401							{1: '1', 2: '100'}
+63	63		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+64	64		301			AniZhuanchangEnd				{2: '????', 3: 'Are you tired, Vera?'}
+65	65		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1267.jpg'}
+66	66		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}
+67	67		201							{1: '18', 2: '501245', 3: '6'}
+68	68		301			AniZhuanchangEnd				{1: '1', 2: 'Vera', 3: '...!!!', 4: '18'}
+69	69		202							{1: '18', 6: '1'}
+70	70		306							{1: '1'}
+71	71		201							{1: '1', 2: '500042', 5: '-50', 6: '-100'}
+72	72		301							"{1: '1', 3: ""Upon returning to the vast, seemingly endless hall of her true self, Gwynneth supports Vera's arm, carefully examining her metallic body.""}"
+73	73		306							
+74	74		203							{1: '1', 2: '0.4'}
+75	75		301							"{2: 'Gwynneth', 3: ""...So you've gone and turned yourself into this after all. When you first asked me about this technology, I knew this day would come."", 4: '1'}"
+76	76		301							{2: 'Gwynneth', 3: 'You really are... so single-minded in everything you do. Such a worrisome girl.', 4: '1'}
+77	77		301							"{3: ""The moment she sees Gwynneth, Vera's eyes widen with shock.""}"
+78	78		203							{1: '1', 2: '0.25', 3: '400'}
+79	79		201							{1: '2', 2: '501239', 4: '-350'}
+80	80		301							"{1: '1', 2: 'Vera', 3: ""Don't worry about me, I'm not tired. Now that I'm a Construct, I could walk through a burning building a hundred times and not have a single scar on my arm."", 4: '2'}"
+81	81		301							"{3: ""She grips Gwynneth, whom she hasn't seen for ages, and a flood of words flow out all at once.""}"
+82	82		301							{2: 'Vera', 3: 'I was among the first to voluntarily undergo modification. My initial model was a Support type... very much like you.', 4: '2'}
+83	83		301							"{2: 'Vera', 3: ""I've left all those fools in the dust. I joined Kurono and then left... Now I command my own Construct squad in Babylonia, and they all follow my orders."", 4: '2'}"
+84	84		301							"{2: 'Vera', 3: ""I'll never make you... or the Instructor... worry about me again."", 4: '2'}"
+85	85		301							"{3: ""Her words grow slower, as if she's carefully observing her old friend's reaction.""}"
+86	86		301							"{3: ""Gwynneth gently releases Vera's arm, offering only a soft smile in response.""}"
+87	87		301							{2: 'Gwynneth', 3: 'I see... Have you found your true path? Are you burning bright for a cause you believe in?', 4: '1'}
+88	88		301							"{2: 'Gwynneth', 3: ""Is what you're doing now something you'd willingly dedicate your entire life to?"", 4: '1'}"
+89	89		301							"{2: 'Vera', 3: ""...Yes, I've made up my mind."", 4: '2'}"
+90	90		301							"{2: 'Gwynneth', 3: ""As long as you're sure. You've always been like this, a devoted soul through and through, yet with a small spark of rebellion burning inside."", 4: '1'}"
+91	91		301							"{2: 'Gwynneth', 3: 'But even if you lived a thousand or ten thousand lives, you\'d still willingly let yourself be ""swept up"" in heroism—as long as it leads to the ending you desire.', 4: '1'}"
+92	92		301							{2: 'Vera', 3: '...Will I ever reach the ending I desire?', 4: '2'}
+93	93		301							{2: 'Gwynneth', 3: 'Yes, you will.', 4: '1'}
+94	94		204							{1: '2', 2: '10'}
+95	95		301							"{3: 'Vera\'s eyes briefly light up at the ""happy ending"" within her grasp, but then suddenly dim again as something crosses her mind.'}"
+96	96		301							"{2: 'Vera', 3: ""Even if the ending is good, I've made too many wrong choices along the way. I've lost so much."", 4: '2'}"
+97	97		301							"{2: 'Gwynneth', 3: 'I know I can\'t simply dismiss everything casually with ""it\'s fine,"" but understand this. Your entire life has been an exploration of heroism, and that journey of questioning is itself blameless.', 4: '1'}"
+98	98		301							"{2: 'Gwynneth', 3: ""Everyone you've ever met has wrestled with this same question, offering you countless different answers. Take some time to reflect on them."", 4: '1'}"
+99	99		204							{1: '2'}
+100	100		301							{2: 'Vera', 3: 'I can do that...', 4: '2'}
+101	101		306							{1: '1'}
+102	102		202							{1: '1'}
+103	103		401							{1: '2', 2: '903'}
+104	104		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.7', 5: '0.3'}
+105	105		203							{1: '2', 2: '0.4'}
+106	106		204							{1: '2', 2: '8'}
+107	107		301						500.0	{1: '1', 3: 'She closes her eyes in her boiling M.I.N.D., allowing the waves to carry her to the side of each traveler in her memories.'}
+108	108		402							{1: '903'}
+109	109		401							{1: '2', 2: '5539'}
+110	110		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+111	111		205							{1: '999'}
+112	112		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+113	113		504							{1: '0.7', 2: '1001', 3: '1', 4: '2'}
+114	114		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1238.jpg'}
+115	115		202							{1: '2', 6: '1'}
+116	116		201							{1: '1', 2: '500042', 7: '1'}
+117	117		201							{1: '18', 2: '501239', 3: '8', 7: '1'}
+118	118		301							{1: '1', 2: 'Vera', 3: 'Setting aside those irritating relatives from my childhood, you were the first one, Gwynneth.', 4: '18'}
+119	119		204							{1: '18'}
+120	120		301							{2: 'Vera', 3: 'You were the quintessential hero—sacrificing yourself to block the doorway, protecting me from those Corrupted. Without you, I would have died right there.', 4: '18'}
+121	121		202							{1: '18', 6: '1'}
+122	122		201							{1: '18', 2: '500042'}
+123	123		301							"{1: '1', 2: 'Gwynneth', 3: ""Yep, that's me."", 4: '18'}"
+124	124		401							{1: '2', 2: '895'}
+125	125		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+126	126		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory352.jpg'}
+127	127		201							{1: '1', 2: '501247', 7: '1'}
+128	128		201							{1: '18', 2: '501239', 7: '1'}
+129	129		301							"{1: '1', 2: 'Vera', 3: 'The Instructor was like that too. Always looked serious, but he was constantly helping me escape those ""troublemakers."" I\'m grateful to him.', 4: '18'}"
+130	130		204							{1: '18', 2: '8'}
+131	131		301							{2: 'Vera', 3: 'Unfortunately, after the Punishing outbreak, I never heard from him again.', 4: '18'}
+132	132		202							{1: '18', 6: '1'}
+133	133		201							{1: '18', 2: '500042'}
+134	134		301							"{1: '1', 2: 'Gwynneth', 3: 'Knowing his personality, he\'s probably holed up somewhere safe. Being a ""Behind-the-scenes Hero"" suits him much better.', 4: '18'}"
+135	135		401							{1: '2', 2: '895'}
+136	136		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+137	137		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory77.jpg'}
+138	138		201							{1: '1', 2: '500006', 7: '1'}
+139	139		201							{1: '18', 2: '501239', 7: '1'}
+140	140		301							"{1: '1', 2: 'Vera', 3: 'Next is... ""Average Joe."" Before joining Kurono, that was the most brutal battle I\'d ever experienced. I even dismantled my own arm to give to that Attacker-type ""Average Joe.""', 4: '18'}"
+141	141		202							{1: '18', 6: '1'}
+142	142		201							{1: '18', 2: '500042'}
+143	143		301							{1: '1', 2: 'Gwynneth', 3: 'What was his choice?', 4: '18'}
+144	144		202							{1: '18', 6: '1'}
+145	145		201							{1: '18', 2: '501239'}
+146	146		301							{1: '1', 2: 'Vera', 3: 'He dealt with the ambushing Corrupted for me. He died.', 4: '18'}
+147	147		202							{1: '18', 6: '1'}
+148	148		201							{1: '18', 2: '500042'}
+149	149		301							{1: '1', 2: 'Gwynneth', 3: '...Sounds a bit like me.', 4: '18'}
+150	150		401							{1: '2', 2: '895'}
+151	151		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+152	152		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+153	153		201							{1: '1', 2: '500407', 4: '-400', 7: '1'}
+154	154		201							{1: '2', 2: '500405', 4: '400', 7: '1'}
+155	155		201							{1: '18', 2: '501239', 7: '1'}
+156	156		301							"{1: '1', 2: 'Vera', 3: 'After that, I joined Kurono. I didn\'t get along with most people there, except for Little Mute and ""Hey.""', 4: '18'}"
+157	157		204							{1: '18', 2: '10'}
+158	158		301							"{2: 'Vera', 3: ""Little Mute was too young, didn't understand anything. She was a victim of conflict, like a lamb for sacrifice."", 4: '18'}"
+159	159		301							"{2: 'Vera', 3: 'As for ""Hey""...', 4: '18'}"
+160	160		204							{1: '18'}
+161	161		301							"{2: 'Vera', 3: 'She was a coward, always thinking about running away. Even died without dignity. But she was the one who stole the real ""key"" and took revenge. If it weren\'t for her, I wouldn\'t be here today.', 4: '18'}"
+162	162		202							{1: '18'}
+163	163		301							"{3: ""Vera's lips curl into a slightly mocking smile.""}"
+164	164		201							{1: '18', 2: '501239', 3: '13'}
+165	165		301							"{1: '1', 2: 'Vera', 3: 'I didn\'t like her, but she really had guts. That\'s why I crowned her the ""Cowardly Hero.""', 4: '18'}"
+166	166		202							{1: '18'}
+167	167		301							{3: 'Gwynneth responds with a resigned smile.'}
+168	168		201							{1: '18', 2: '500042'}
+169	169		301							{1: '1', 2: 'Gwynneth', 3: 'You still love giving people nicknames.', 4: '18'}
+170	170		401							{1: '2', 2: '895'}
+171	171		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+172	172		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory732.jpg'}
+173	173		202							{1: '1', 2: '2', 6: '1'}
+174	174		201							{1: '1', 2: '501219', 7: '1'}
+175	175		301							{1: '1', 2: 'Gwynneth', 3: 'Who else? Including those you met during that escape. What about Granny Wang?', 4: '18'}
+176	176		202							{1: '18', 6: '1'}
+177	177		201							{1: '18', 2: '501239', 3: '13'}
+178	178		301							"{1: '1', 2: 'Vera', 3: '""The Old Hero."" She and that old Teddy dog of hers are still running around, bothering Bridget every now and then. Living long certainly has its perks.', 4: '18'}"
+179	179		202							{1: '18', 6: '1'}
+180	180		201							{1: '18', 2: '500042'}
+181	181		301							{1: '1', 2: 'Gwynneth', 3: 'Haha...', 4: '18'}
+182	182		202							{1: '1', 2: '18', 6: '1'}
+183	183		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+184	184		504							{1: '0'}
+185	185		401							{1: '2', 2: '4387'}
+186	186		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+187	187		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1237.jpg'}
+188	188		301				AniZhuanchangBegin			{3: 'They both laugh, as if transported back to an ordinary afternoon at the end of the Golden Age. They basked in the tepid sunlight, chatting idly about nothing in particular.'}
+189	189		306							
+190	190		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1267.jpg'}
+191	191		201							{1: '1', 2: '500042', 4: '400', 7: '1'}
+192	192		201							{1: '2', 2: '501239', 4: '-350', 7: '1'}
+193	193		301			AniZhuanchangEnd				"{1: '1', 2: 'Gwynneth', 3: ""What about Leia? She's already joined Egret now."", 4: '1'}"
+194	194		204							{1: '2', 2: '13'}
+195	195		301							"{2: 'Vera', 3: ""What is she? Just a self-proclaimed hero and a thoroughbred specialist in making a mess of things—thankfully she's working under Vanessa now."", 4: '2'}"
+196	196		301							"{2: 'Vera', 3: ""As for Vanessa, Simon, and the like, I'd already made up my mind about them long ago. They're just a bunch of Babylonian trust fund babies, insufferably full of themselves."", 4: '2'}"
+197	197		301							{2: 'Gwynneth', 3: 'Do you still think the same?', 4: '1'}
+198	198		204							{1: '2', 2: '10'}
+199	199		301							{2: 'Vera', 3: '...', 4: '2'}
+200	200		301							{3: 'Vera tilts her head in thought for a moment, then shakes her head.'}
+201	201		204							{1: '2'}
+202	202		301							{2: 'Vera', 3: 'Now I admit that person was right—they really did dispel my prejudice through their actions.', 4: '2'}
+203	203		301							{2: 'Vera', 3: 'I can say this: every single Commandant who graduated from F.O.S. is a true hero.', 4: '2'}
+204	204		301							"{2: 'Vera', 3: ""Even that ill-intentioned Haniff was more than just a shadow of a hero. If he survives, he'll probably be able to figure out what decisions he needs to make next."", 4: '2'}"
+205	205		301							"{2: 'Vera', 3: ""As for the people of Atlantis... needless to say. I've eaten their cookies, I've taken up their cause, and I'll continue to carry their torch—except for that stupid fish, she's annoying, so she's an exception."", 4: '2'}"
+206	206		301							"{3: ""Gwynneth rests her chin in her hand, listening attentively to Vera's assessment before raising a new question.""}"
+207	207		301							"{2: 'Gwynneth', 3: 'What about... others? Like the two ""Lloyds,"" and... the many ""Haynes.""', 4: '1'}"
+208	208		301							{2: 'Gwynneth', 3: 'What kind of answers did they give when facing this proposition?', 4: '1'}
+209	209		204							{1: '2', 2: '10'}
+210	210		301							{2: 'Vera', 3: '...', 4: '2'}
+211	211		301							{3: 'Vera falls silent once again for a brief moment.'}
+212	212		204							{1: '2', 2: '8'}
+213	213		301							"{2: 'Vera', 3: ""...I feel regret for Lloyd, no matter which Lloyd we're talking about."", 4: '2'}"
+214	214		204							{1: '2'}
+215	215		301							{2: 'Vera', 3: 'They never fell from grace, nor did they make wrong choices—rather, they never made any choices at all. They were simply swept to their deaths by the tide of heroism, yet not one of them died like a hero.', 4: '2'}
+216	216		301							{2: 'Vera', 3: 'Putting an end to their stories was the only thing I could do for them.', 4: '2'}
+217	217		204							{1: '2', 2: '13'}
+218	218		301							{2: 'Vera', 3: 'As for Haynes... heh... just an insufferably arrogant old man, worse than even those young students.', 4: '2'}
+219	219		301							"{2: 'Vera', 3: 'He doesn\'t deserve to be mentioned alongside anyone I spoke of earlier, and he got exactly the end he deserved—killed by the next ""version of himself.""', 4: '2'}"
+220	220		202							{1: '1', 2: '2'}
+221	221		401							{1: '2', 2: '1543'}
+222	222		301							"{3: ""Vera waves her hand dismissively in the great hall, excising Haynes from this blood-and-tears-stained discussion of heroism. She's never bothered to waste much attention on people like him.""}"
+223	223		201							{1: '1', 2: '500042', 4: '400'}
+224	224		201							{1: '2', 2: '501239', 3: '1', 4: '-350'}
+225	225		301							{1: '1', 2: 'Vera', 3: 'Time to turn the page on all of this.', 4: '2'}
+226	226		301							"{2: 'Gwynneth', 3: ""Yes, it's time to turn the page."", 4: '1'}"
+227	227		202							{1: '1', 2: '2'}
+228	228		401							{1: '2', 2: '2936'}
+229	229		301							{3: 'Having heard everything, Gwynneth nods and gently pulls Vera to her feet.'}
+230	230		301							{3: 'Their exchange, as warm and comforting as a beautiful dream, comes to an abrupt end.'}
+231	231		201							{1: '1', 2: '500042', 4: '400'}
+232	232		201							{1: '2', 2: '501239', 4: '-350'}
+233	233		301							"{1: '1', 2: 'Gwynneth', 3: ""Let's end our conversation here."", 4: '1'}"
+234	234		301							{2: 'Vera', 3: '...?', 4: '2'}
+235	235		301							"{2: 'Gwynneth', 3: ""I'm sorry that we all... left you behind back then. We all departed ahead of you."", 4: '1'}"
+236	236		301							{2: 'Gwynneth', 3: 'We made you bear all the suffering.', 4: '1'}
+237	237		301							"{2: 'Gwynneth', 3: ""But looking back now, perhaps... it wasn't all suffering."", 4: '1'}"
+238	238		301							"{3: ""She gently pats the back of Vera's hand.""}"
+239	239		301							{2: 'Gwynneth', 3: 'Vera, none of us regret entrusting everything to you. We all want to see, through you, what lies beyond the end of this final stretch of the road.', 4: '1'}
+240	240		301							"{2: 'Gwynneth', 3: ""Whatever you choose, do it now—just like that Commandant. No matter what path you take, carry your torch forward and don't look back."", 4: '1'}"
+241	241		301							{2: 'Gwynneth', 3: 'The world outside belongs to you now.', 4: '1'}
+242	242		204							{1: '2', 2: '6'}
+243	243		301							{2: 'Vera', 3: '...', 4: '2'}
+244	244		202							{1: '1', 2: '2'}
+245	245		301							"{3: ""Standing in her M.I.N.D., Vera slowly releases Gwynneth's hand.""}"
+246	246		301							{3: 'Releasing her long-held obsessions along with it.'}
+247	247		201							{1: '1', 2: '501239', 3: '10'}
+248	248		301							"{1: '1', 2: 'Vera', 3: ""...Aren't you afraid I'll break myself anymore?"", 4: '1'}"
+249	249		202							{1: '1', 6: '1'}
+250	250		201							{1: '1', 2: '500042'}
+251	251		301							{1: '1', 2: 'Gwynneth', 3: 'No. The sheath that belongs to you will embrace and cherish you no matter what, extinguishing everything that would burn you.', 4: '1'}
+252	252		301							{2: 'Gwynneth', 3: 'Your sharpness will never be dulled by a tragic ending.', 4: '1'}
+253	253		301							{3: 'Gwynneth offers her unwavering approval.'}
+254	254		301							{2: 'Gwynneth', 3: 'Dear Valkyrie, please wake up.', 4: '1'}
+255	255		401							{1: '2', 2: '4134'}
+256	256		401							{1: '1', 2: '36'}
+257	257		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+258	258		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+259	259		202							{1: '1', 6: '1'}
+260	260		502						300.0	{1: 'DialogDisable'}
+261	261		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+262	262		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+263	263		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+264	264		307							"{1: '<i>""Dear Valkyrie, please wake up.""</i>', 3: '80', 4: '000000ff', 6: '1'}"
+265	265		301							"{3: '""Dear Valkyrie, please wake up.""'}"
+266	266		307							{2: '1'}
+267	267		401							{1: '2', 2: '4152'}
+268	268		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+269	269		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5501_20.jpg'}
+270	270		104							{1: '-100|-75|-250', 2: '0'}
+271	271		401							{1: '1', 2: '6172'}
+272	272		301			DialogEnable				{3: 'The turbulent currents in her M.I.N.D. seem to pause, then rush forward.'}
+273	273		301							{3: '—All her thoughts surge back into reality in a single moment.'}
+274	274		301							{2: 'Vera', 3: '...'}
+275	275		301				DialogDisable			{3: 'The Construct whose sanity had been seized by power awakens.'}
+276	276		401							{1: '2', 2: '8220025'}
+277	277		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5501_20.jpg', 3: '0', 4: '1', 5: '1'}
+278	278		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5501_20.jpg'}
+279	279		205							{1: '999'}
+280	280		301			DialogEnable				{3: 'Red light overflows from her chest, her escaping power, as she swings her fists high, savagely tearing at everything around her.'}
+281	281		302			RImgBg1Shake				{2: 'Vera!', 3: '282', 4: 'Connecting connecting connecting...', 5: '282', 6: '(Desperately resisting.)', 7: '282'}
+282	282		301							"{3: ""All the curses attached to her throughout her life seem to take effect in this moment, whether it's being a Harbinger of Disaster, going Haywire, or receiving Backlash.""}"
+283	283		301							{3: 'She lowers her head deeply, baring her sharp canines at you.'}
+284	284		104						150.0	{1: '10|0|0', 2: '0.1'}
+285	285		104							{1: '0|0|0', 2: '0.1'}
+286	286		302							{2: 'Ugh...', 3: '287'}
+287	287		301							{3: 'The wounds on your ankle and side still radiate agony, your body weakened to the brink of collapse.'}
+288	288		301							"{3: ""Through the endless night, this tug-of-war battle only now greets its dawn, but the final crisis clearly hasn't ended.""}"
+289	289		401							{1: '2', 2: '1015'}
+290	290		301							{3: 'Connecting, connecting, yet another attempt at connecting.'}
+291	291		401							{1: '2', 2: '1505'}
+292	292		301							{3: 'Through repeated connections, you taste your first hint of dread as blood flows from your nose and mouth.'}
+293	293		302							"{2: 'What kind of hasty ending is this...?', 3: '294', 4: ""I won't accept this..."", 5: '294', 6: 'I will not accept an ending like this.', 7: '294'}"
+294	294		301				DialogDisable			{3: 'Endless hardship and wandering should not lead to this outcome.'}
+295	295		302			RImgBg1Shake				"{2: ""I still haven't properly apologized to you."", 3: '296', 4: ""I still haven't properly thanked you."", 5: '296', 6: ""I'm FURIOUS!!!"", 7: '296'}"
+296	296		401						500.0	{1: '2', 2: '4548'}
+297	297		301			DialogEnable			500.0	{3: 'One final connection—you desperately grasp at the broken rope between you, as if trying to piece together your shattered past, nearly overcome with sorrow.'}
+298	298		302							{2: '...Dear Valkyrie, please wake up.', 3: '299'}
+299	299		401							{1: '2', 2: '2593'}
+300	300		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+301	301		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_03.jpg'}
+302	302		301				DialogDisable			{2: 'Vera', 3: '...'}
+303	303		401							{1: '2', 2: '1505'}
+304	304		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5501_20.jpg', 3: '0', 4: '1', 5: '1'}
+305	305		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5501_20.jpg'}
+306	306		205							{1: '999'}
+307	307		301			DialogEnable				{3: 'Fangs finally impale you. Vera clenches her teeth tightly as vital fluid mingles with blood flowing down.'}
+308	308		401							{1: '2', 2: '4560'}
+309	309		301				DialogDisable			{3: 'Connected.'}
+310	310		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5501_43.jpg', 3: '0', 4: '1', 5: '1.5'}
+311	311		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5501_43.jpg'}
+312	312		205							{1: '999'}
+313	313		301			DialogEnable				{2: 'Vera', 3: '...'}
+314	314		301							{3: 'Vera recognizes the pitiful human before her and instinctively tries to force a mocking smile, but fails.'}
+315	315		301							{2: 'Vera', 3: '...I told you... stay... away from me...'}
+316	316		301							"{2: 'Vera', 3: 'Do I... have to say ""sorry""... before you\'ll get up?'}"
+317	317		401							{1: '2', 2: '1543'}
+318	318		301				DialogDisable			{3: 'Hearing her familiar mockery, you take a deep breath like a heavy stone sinking into the sea, instantly releasing all tension.'}
+319	319		302							{2: 'This is... my responsibility.', 3: '320'}
+320	320		302							{2: 'If you go haywire,', 3: '321'}
+321	321		302							{2: 'then I must keep you under control...', 3: '322'}
+322	322		301			DialogEnable				"{2: 'Vera', 3: ""...Even at a time like this, you still spout noble-sounding platitudes... What's the point in keeping a haywire Construct around anyway?""}"
+323	323		301							"{3: ""Vera's voice catches slightly with emotion.""}"
+324	324		301				DialogDisable			"{2: 'Vera', 3: ""If you'd cut ties sooner, you wouldn't have to suffer like this...""}"
+325	325		401							{1: '2', 2: '4895'}
+326	326		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5501_21.jpg', 3: '0', 4: '1', 5: '1.5'}
+327	327		104							{1: '0|90|-250', 2: '0', 4: '3'}
+328	328		104						2000.0	{1: '0|50|-250', 2: '1.5', 4: '3'}
+329	329		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5501_21.jpg'}
+330	330		104							{1: '0|50|-250', 2: '0'}
+331	331		205							{1: '999'}
+332	332		104							{1: '0|0|0', 2: '0', 4: '3'}
+333	333		301			DialogEnable				"{3: ""You reach out, gently touching the corner of Vera's lips. Blood still trickles slowly from her mouth, flowing over your wounded hands.""}"
+334	334		301							"{3: ""Yet you persist, trembling hands gently cradling Vera's face.""}"
+335	335		302							{2: 'The fire is... still here...', 3: '336'}
+336	336		301				DialogDisable			{2: 'Vera', 3: '!'}
+337	337		302							{2: 'Safe and sound, right here,', 3: '338'}
+338	338		302							"{2: ""it hasn't gone out."", 3: '339'}"
+339	339		301			DialogEnable	DialogDisable			{3: 'These faint embers, in every sense of the word, are burning stubbornly in an open field. No storm can extinguish them.'}
+340	340		302							{2: 'I told you all along...', 3: '341'}
+341	341		302							{2: 'If anything happens to you... I will always...', 3: '342'}
+342	342		302							{2: 'rush to your side and hold you back...', 3: '343'}
+343	343		307							"{1: '<i>""No longer enemies, no longer opposed.""</i>', 3: '55', 4: 'ffffffff'}"
+344	344		301							"{3: '<i>""No longer enemies, no longer opposed.""</i>'}"
+345	345		307						100.0	{2: '1'}
+346	346		307							"{1: '<i>""Setting aside all prejudice and misunderstandings, embracing each other like true comrades.""</i>', 3: '55', 4: 'ffffffff'}"
+347	347		301							"{3: '<i>""Setting aside all prejudice and misunderstandings, embracing each other like true comrades.""</i>'}"
+348	348		307							{2: '1'}
+349	349		301			DialogEnable				{3: 'Vera suddenly clutches your wrist, overwhelmed by intense emotion upon hearing these words—'}
+350	350		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+351	351		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5501_22.jpg'}
+352	352		301			RImgBg1Shake				{2: 'Vera', 3: '...You remember now... do you remember everything?'}
+353	353		301							{3: 'She fights back a sob, but tears still stream down from the corners of her eyes.'}
+354	354		301				DialogDisable			{3: 'The light of dawn bathes their battle-worn bodies, illuminating the tear on her cheek as it slowly slides into your palm.'}
+355	355		302							"{2: ""Don't be sad,"", 3: '356'}"
+356	356		302							{2: 'sadness... can only last for a moment.', 3: '357'}
+357	357		301			DialogEnable				{3: 'You gently pat her back, even more weakly than Gwynneth would.'}
+358	358		302							"{2: 'So this is... the ""good ending,"" right?', 3: '359'}"
+359	359		301				DialogDisable			{2: 'Vera', 3: '...Of course it is!'}
+360	360		302							{2: 'Then... should we be more honest with each other?', 3: '361'}
+361	361		302							{2: 'We can talk about everything else when we get back.', 3: '362'}
+362	362		302							{2: 'The rope broke, but now... we can try to tie it back together.', 3: '363'}
+363	363		401							{1: '1', 2: '6186'}
+364	364		401							{1: '2', 2: '2979'}
+365	365		301			DialogEnable				{3: 'You point to the terminal, where the icons for both Cerberus and Gray Raven are now illuminated.'}
+366	366		302							"{2: ""See? Everything's back online."", 3: '367'}"
+367	367		301				DialogDisable			{2: 'Vera', 3: '...'}
+368	368		205					1500.0		{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5501_23.jpg', 3: '0', 4: '1', 5: '0.8'}
+369	369		101						900.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5501_23.jpg'}
+370	370		205							{1: '999'}
+371	371		301			DialogEnable				{3: 'Vera stares intently at the terminal, then turns her gaze to you—for about ten seconds, before finally allowing her eyes to close. The tears she had refused to shed now stream down freely.'}
+372	372		301							"{2: 'Vera', 3: ""Alright... then let me... honestly say something I haven't said in a long time.""}"
+373	373		301							"{3: 'Leaning against your hand, she remembers something you told her long ago: ""You should try trusting others, relying on them for once.""'}"
+374	374		301		1		AniZhuanchangBegin			"{2: 'Vera', 3: ""You're still alive... thank goodness.""}"

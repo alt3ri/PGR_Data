@@ -1,0 +1,564 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101				AniZhuanchangBegin			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		301			DialogDisable				{3: 'Remains of Polard Orphanage, Las Prados'}
+3	3		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory643.jpg'}
+4	4		107	1						{1: 'Remains of Polard Orphanage', 2: 'Outskirts of Las Prados'}
+5	5		108						250.0	{1: '1'}
+6	6		401							{1: '2', 2: '1501'}
+7	7		307						200.0	{1: 'Warning: Corrupted presence detected. Punishing levels are nearing the containment limit...', 3: '55', 4: 'ff4e4eff'}
+8	8		301							{3: 'Warning: Corrupted presence detected. Punishing levels are nearing the containment limit...'}
+9	9		307							{2: '1'}
+10	10		401							{1: '1', 2: '52'}
+11	11		301			DialogEnable				{3: 'The shrill alarm blares over and over, but to Lilith, it rings out like a triumphant war cry.'}
+12	12		201							{1: '1', 2: '501118', 3: '2'}
+13	13		301							"{1: '1', 2: 'Lilith', 3: ""Big sister's home! Shouldn't you all look a bit more thrilled?"", 4: '1'}"
+14	14		202							{1: '1'}
+15	15		401						150.0	{1: '2', 2: '9351040'}
+16	16		401							{1: '2', 2: '9351041'}
+17	17		301							{3: 'From the depths below, the undead surge upward, straining against their rusted bodies as they creep toward our defenses with a nightmarish crawl.'}
+18	18		301							"{3: ""This horror is the byproduct of a botched experiment—a prototype Construct built by trapping a child's brain inside a metal shell.""}"
+19	19		301							{3: 'The troops remain clueless that each enemy is a spirit doomed to wander, denied release. All they perceive is a nightmare ripped straight from the depths of hell.'}
+20	20		401							{1: '2', 2: '10021517'}
+21	21		201							{1: '1', 2: '501135', 4: '-500', 7: '1'}
+22	22		201							{1: '2', 2: '501135', 4: '500', 7: '1'}
+23	23		301			RImgBg1Shake				{1: '1', 2: 'Majestic-1', 3: 'All units, pull back the defense!', 4: '1'}
+24	24		301							"{2: 'Machete-1', 3: ""...Ammo's running out! Call for backup now! Ready for evac!"", 4: '2'}"
+25	25		202							{1: '1', 2: '2', 6: '1'}
+26	26		401							{1: '2', 2: '2593'}
+27	27		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '4'}
+28	28		301							"{3: ""Dark crimson fluid splatters across the Constructs' wounds like rain, but they spare no moment to tend to it.""}"
+29	29		101							{4: '4', 5: '1'}
+30	30		201							{1: '1', 2: '501135', 7: '1'}
+31	31		301			RImgBg1Shake	DialogDisable			{1: '1', 2: 'Ivy-1', 3: 'Stay calm, suppressive fire on the target group left corridor—short bursts!', 4: '1'}
+32	32		202							{1: '1', 6: '1'}
+33	33		401				RImgBg1Shake		250.0	{1: '2', 2: '11105405'}
+34	34		401							{1: '2', 2: '11105405'}
+35	35		502						250.0	{1: 'RImgBg1Shake'}
+36	36		401							{1: '2', 2: '11105405'}
+37	37		301			DialogEnable				{3: 'Before the squad leader can finish giving orders, a deafening salvo of full-powered high-explosive rounds drowns out his voice.'}
+38	38		201							{1: '1', 2: '501134'}
+39	39		301							{1: '1', 2: 'Ferret-2', 3: '...You want some too? Then come on! Bring it!', 4: '1'}
+40	40		301			PanelActor1Shake				{1: '1', 2: 'Ferret-2', 3: 'Graaahhhh!', 4: '1'}
+41	41		401							{1: '2', 2: '4635'}
+42	42		203						200.0	{1: '1', 2: '0.25', 3: '0', 4: '-50'}
+43	43		301							{3: 'Throwing trigger discipline to the wind, the Construct unloads a torrent of gunfire—only to have its ankle seized by a Corrupted crawling right up to the defensive perimeter.'}
+44	44		401							{1: '2', 2: '4779'}
+45	45		203						350.0	{1: '1', 2: '0.15', 3: '-10', 4: '-30'}
+46	46		402							{1: '4779'}
+47	47		203						200.0	{1: '1', 2: '0.15', 3: '10', 4: '-15'}
+48	48		203							{1: '1', 2: '0.15', 3: '0', 4: '-50'}
+49	49		301							{3: 'He staggers once, then gets hauled over a wooden floor slick with fluid and grime, desperately forcing his handgun free.'}
+50	50		301			PanelActor1Shake				{1: '1', 2: 'Ferret-2', 3: 'Not today! Get away from me, freak!!!', 4: '1'}
+51	51		401							{1: '2', 2: '4641'}
+52	52		301							"{2: 'Corrupted', 3: ""Nn... Di-Director... don't... understa... I...""}"
+53	53		401						250.0	{1: '2', 2: '10101101'}
+54	54		401							{1: '2', 2: '4782'}
+55	55		301			RImgBg1Shake				{3: 'Round after round tears into that slithering, mangled husk. The Corrupted convulses violently, spewing out garbled babbling and some mysterious fluid.'}
+56	56		301			PanelActor1Shake				{1: '1', 2: 'Ferret-2', 3: 'Die! Just die! All of you die!!!', 4: '1'}
+57	57		202							{1: '1', 6: '1'}
+58	58		201							{1: '1', 2: '501118'}
+59	59		301							"{1: '1', 2: 'Lilith', 3: ""The kids just started warming up—don't crush their enthusiasm by being too harsh."", 4: '1'}"
+60	60		301							{3: 'The silver-haired girl watches, mesmerized, as soldiers grapple with the Corrupted, her slender arm cutting an elegant arc through the air.'}
+61	61		203							{1: '1', 2: '0.2', 3: '10', 4: '-20'}
+62	62		401							{1: '2', 2: '5325'}
+63	63		301							"{3: ""Like a gymnast nailing a high-difficulty move, she whips her leg around, and her razor-sharp knee spike stops right at the shattered corpse's skull.""}"
+64	64		202							{1: '1', 6: '1'}
+65	65		201							{1: '1', 2: '501134', 5: '-50'}
+66	66		301							{1: '1', 2: 'Ferret-2', 3: 'Uh... Captain Eleanor! Th-thank you...', 4: '1'}
+67	67		203						400.0	{1: '1', 2: '0.15', 3: '-10', 4: '-30'}
+68	68		203						200.0	{1: '1', 2: '0.15', 3: '10', 4: '-15'}
+69	69		301							{3: 'He forces himself upright, but his gratitude dissolves into a wet gurgle as fluid churns in his throat.'}
+70	70		402							{1: '52'}
+71	71		401							{1: '2', 2: '2593'}
+72	72		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '4'}
+73	73		301			PanelActor1Shake				"{3: ""The Corrupted, stabbed in the head, snaps its metal arm upward and drives a corroded blade into the soldier's lower back—Lilith's non-lethal strike has only made the creature more ferocious.""}"
+74	74		401							{1: '1', 2: '59'}
+75	75		301			PanelActor1Shake				{1: '1', 2: 'Ferret-2', 3: '?! Wh-what... what is this...?', 4: '1'}
+76	76		401							{1: '2', 2: '4306'}
+77	77		203						200.0	{1: '1', 2: '0.25', 4: '-200'}
+78	78		101							{4: '4', 5: '1'}
+79	79		202							{1: '1'}
+80	80		301							{3: 'A Construct soldier collapses, and the echo of roars and gunshots in the corridor slowly fades away.'}
+81	81		401							{1: '2', 2: '4641'}
+82	82		301			RImgBg1Shake				"{2: 'Corrupted', 3: ""...Elea... Miss... I'm so... I truly... apologize...""}"
+83	83		301							{3: 'Its shattered form continues to spasm, dragging itself inch by inch toward Lilith.'}
+84	84		301							"{3: ""She recognizes that voice instantly—even though it's altered, she knows it's the confession of someone who once tormented others.""}"
+85	85		201							{1: '1', 2: '501118', 3: '7'}
+86	86		301							"{1: '1', 2: 'Lilith', 3: ""You've certainly given us a warm reception, but my soldiers are confused. They just can't wrap their heads around why an orphanage would be the hottest spot for Punishing activity on the outskirts of Las Prados."", 4: '1'}"
+87	87		401							{1: '2', 2: '4641'}
+88	88		301			RImgBg1Shake				"{2: 'Corrupted', 3: ""Please... I'm begging you... I...""}"
+89	89		202							{1: '1'}
+90	90		301							{3: 'The memory buried beneath that iron exterior ends in the excruciating moment when my very mind is wrenched from my spine and skull.'}
+91	91		301							"{3: 'Years later, that imprisoned spirit is seized by an entity known as ""Punishing"", becoming a mindless puppet, lost to the present.'}"
+92	92		301							"{2: 'Corrupted', 3: ""Dis... cord... she's... not... here...""}"
+93	93		401							{1: '2', 2: '1506'}
+94	94		301							"{3: ""The Corrupted's hydraulics groan as though on the verge of collapse, and yet it manages to choke out its final words.""}"
+95	95		201							{1: '1', 2: '501118', 3: '2'}
+96	96		301							"{1: '1', 2: 'Lilith', 3: ""Oh? You think I'm back here just for her?"", 4: '1'}"
+97	97		301							"{3: ""She offers a soft, rewarding laugh, as if expressing genuine thanks for the Corrupted's honesty.""}"
+98	98		204							{1: '1'}
+99	99		301							{2: 'Lilith', 3: 'They say people are good at heart—turns out they were right after all.', 4: '1'}
+100	100		301							"{2: 'Lilith', 3: ""In return... I promise I'll grant your wish."", 4: '1'}"
+101	101		204							{1: '1', 2: '2'}
+102	102		301							"{2: 'Lilith', 3: ""But my Moon Umbrella's already a mess—I simply can't risk getting it any dirtier, you know?"", 4: '1'}"
+103	103		301							"{3: ""The Construct's calf compartment unfurls, revealing intricate mechanisms. A well-oiled folding blade snaps into place with a soft whirr of gears.""}"
+104	104		203						350.0	{1: '1', 2: '0.3', 4: '10', 5: '-20'}
+105	105		203							{1: '1', 2: '0.25', 3: '20', 4: '-20', 5: '-25'}
+106	106		401							{1: '2', 2: '2690'}
+107	107		301			RImgBg1Shake				"{3: ""She moves as though stepping over the fallen Construct soldier, lifting her foot with practiced elegance before letting her heel come down on the Corrupted's shattered remains.""}"
+108	108		204							{1: '1', 2: '8'}
+109	109		301							{2: 'Lilith', 3: 'Good night... sleep in peace, free from any need for restraints.', 4: '1'}
+110	110		202							{1: '1'}
+111	111		301							{3: 'No Corrupted stir now, and the thunder of gunfire has faded. In the corridor leading to the orphanage basement, no one fights, and not a single voice is heard.'}
+112	112		301							{3: 'Those once-proud fireteams—Solemn, Scimitar, Ivy, Snow Ferret—find their glorious legacies cut short in this final stand, lost amid the wet, muddy carnage.'}
+113	113		306						250.0	{1: '1'}
+114	114		201							{1: '1', 2: '501138'}
+115	115		301							{1: '1', 3: 'Beyond them all stands a lone Construct beneath the Moon Umbrella.'}
+116	116		301							{3: 'Her frame is streaked with grime, and her boots are thick with dust and fluid.'}
+117	117		301							{3: 'But she is still alive, needing no backup of her memory—no unbreakable circulation system to keep her going...'}
+118	118		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory704.jpg', 3: '0', 4: '0.2', 5: '0.8'}
+119	119		202							{1: '1', 6: '1'}
+120	120		201							{1: '1', 2: '501118', 3: '8', 5: '-20', 6: '-50'}
+121	121		301				AniZhuanchangBegin			{1: '1', 3: 'She opens herself entirely to the network spun from the Punishing data.'}
+122	122		306							
+123	123		205							{1: '999'}
+124	124		202							{1: '1', 6: '1'}
+125	125		401						2000.0	{1: '1', 2: '36'}
+126	126		401				DialogDisable			{1: '1', 2: '201'}
+127	127		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+128	128		107							{1: 'Construct Fireteam Maintenance Deck', 2: 'Two hours later'}
+129	129		301							{3: 'Two hours later, on the Construct Fireteam Maintenance Deck'}
+130	130		108						250.0	{1: '1'}
+131	131		201							{1: '1', 2: '501123', 3: '4'}
+132	132		301			DialogEnable				{1: '1', 2: 'Madam Monzano', 3: '...So the final site we have to clear is the orphanage?', 4: '1'}
+133	133		301							"{3: ""She goes over the mission's coordinates again, her voice edged with dissatisfaction.""}"
+134	134		203							{1: '1', 2: '0.25', 3: '-450'}
+135	135		201							{1: '2', 2: '501118', 4: '450'}
+136	136		301							"{1: '1', 2: 'Lilith', 3: ""That's right. It's the last high-density zone outside the city."", 4: '2'}"
+137	137		301							"{3: ""The Construct that has emerged from a brutal battle speaks with disarmingly calm detachment, as if narrating someone else's story.""}"
+138	138		204							{1: '1', 2: '2'}
+139	139		301							{2: 'Madam Monzano', 3: 'Did I let you down? Should I apologize?', 4: '1'}
+140	140		301							"{3: ""Her aunt casts a challenging look, and Lilith instantly grasps what she's getting at.""}"
+141	141		202							{1: '1', 2: '2'}
+142	142		301							{3: 'Discord remains missing, and yet Lilith shows no sign of worry.'}
+143	143		201							{1: '1', 2: '501123', 3: '2', 4: '-450'}
+144	144		201							{1: '2', 2: '501118', 3: '8', 4: '450'}
+145	145		301							"{1: '1', 2: 'Lilith', 3: ""So many years pass. Even if there's any clue left behind, it's likely been eaten away by the rampant contamination."", 4: '2'}"
+146	146		204							{1: '2', 2: '2'}
+147	147		301							{2: 'Lilith', 3: 'I appreciate you still watching out for me, Aunt. But we have more urgent business to deal with right now.', 4: '2'}
+148	148		202							{1: '1', 2: '2', 6: '1'}
+149	149		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+150	150		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1164.jpg'}
+151	151		504							{1: '0.7'}
+152	152		301							"{3: ""Since that leaked incident a few years back, Lilith appears far more willing to align herself with Monzano's vision.""}"
+153	153		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+154	154		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+155	155		504							{1: '0'}
+156	156		201							{1: '1', 2: '501123', 4: '-450', 7: '1'}
+157	157		201							{1: '2', 2: '501118', 4: '450', 7: '1'}
+158	158		301							"{1: '1', 2: 'Madam Monzano', 3: ""...To sum up our progress: We've wiped out the Corrupted threat in Las Prados and effectively taken back control. With the city as our stronghold, our mission to reclaim the surface can finally get underway."", 4: '1'}"
+159	159		301							{2: 'Madam Monzano', 3: 'However, building large-scale conservation areas demands extensive purification systems. For now, our best move is to establish a stronghold in Las Prados.', 4: '1'}
+160	160		301				DialogDisable			{2: 'Madam Monzano', 3: 'Still, it stands as our first true victory in taking back the Earth.', 4: '1'}
+161	161		204							{1: '2', 2: '8'}
+162	162		203						800.0	{1: '2', 2: '0.4', 3: '450', 4: '-50'}
+163	163		203						500.0	{1: '2', 2: '0.4', 3: '450'}
+164	164		204							{1: '2'}
+165	165		301			DialogEnable				"{2: 'Lilith', 3: ""I'm proud I didn't end up slowing you down, Aunt."", 4: '2'}"
+166	166		301							{3: 'She packs every conversation with so much decorum that it comes off a bit forceful—though technically flawless.'}
+167	167		204							{1: '1', 2: '4'}
+168	168		301							"{2: 'Madam Monzano', 3: ""...Don't go patting yourself on the back. I haven't exactly pinned a medal on you yet."", 4: '1'}"
+169	169		301							{3: 'But the lady of the house is completely unfazed by that kind of smooth-talking.'}
+170	170		204							{1: '2', 2: '2'}
+171	171		301							"{2: 'Lilith', 3: ""I mean no disrespect. I'm honestly thrilled to see what you have managed to achieve all on your own, Aunt."", 4: '2'}"
+172	172		301							"{3: ""The implication is as if she doesn't want any kind of reward aside from recognition. But how could this be?""}"
+173	173		301							"{2: 'Madam Monzano', 3: ""Sure, the results are here. But what's your real aim? Taking charge of a Construct unit? You want me to believe the top card player is vying for an officer's rank?"", 4: '1'}"
+174	174		204							{1: '1', 2: '5'}
+175	175		301			RImgBg1Shake				{2: 'Madam Monzano', 3: 'Control over a conservation area? Or is it something else altogether? Talk!', 4: '1'}
+176	176		301							{3: 'For the first time, she backs her only living relative into a corner with no escape.'}
+177	177		301							"{2: 'Lilith', 3: ""You really don't know, Aunt? I've been gambling with my life all this time."", 4: '2'}"
+178	178		204							{1: '2', 2: '3'}
+179	179		301							{2: 'Lilith', 3: 'Walking away unscathed from a high-stakes battle... that sinful rush is like nothing else...', 4: '2'}
+180	180		204							{1: '2', 2: '8'}
+181	181		301							"{2: 'Lilith', 3: ""Sure, I was at fault for letting my guard down back then—but that unexpected crisis also handed you even more chances to run your experiments, didn't it?"", 4: '2'}"
+182	182		204							{1: '2'}
+183	183		301							"{2: 'Lilith', 3: ""Throwing myself into danger, turning the tables through skill, then reaping the rewards—that rush is everything I crave. I'm sure Auntie can see where I'm coming from, right?"", 4: '2'}"
+184	184		301							{3: 'With a calm drop of her gaze, the girl answers the interrogation in a soft, measured voice—like telling a story.'}
+185	185		301			RImgBg1Shake				"{2: 'Madam Monzano', 3: ""Don't get smart with me! You know perfectly well the only viable data sample escaped by latching onto that mechanoid—and we've never been able to recreate those results!"", 4: '1'}"
+186	186		301							{2: 'Lilith', 3: 'If it happened once, it will happen thousand times. Patience is the key to winning hands, after all.', 4: '2'}
+187	187		301							{3: 'The once-revered arbiter of the entertainment arena can rattle off those core principles as though reciting cherished heirlooms.'}
+188	188		204							{1: '1', 2: '4'}
+189	189		301							"{2: 'Madam Monzano', 3: ""...How is it you're always the one who comes out alive?"", 4: '1'}"
+190	190		204							{1: '2', 2: '7'}
+191	191		301							{2: 'Lilith', 3: 'Hmm?', 4: '2'}
+192	192		301							{3: 'The girl, under attack by cruel words, wears a startled expression.'}
+193	193		301							"{2: 'Madam Monzano', 3: ""I couldn't care less how many Construct squads I lose. But every single time, it's the same one who comes back alive."", 4: '1'}"
+194	194		301							"{2: 'Madam Monzano', 3: ""This doesn't make sense."", 4: '1'}"
+195	195		202							{1: '1', 2: '2'}
+196	196		301							{3: 'Her triumphant claim barely hangs in the air before the mistress suddenly switches to an accusing tone.'}
+197	197		201							{1: '1', 2: '501123', 3: '4', 4: '-450'}
+198	198		201							{1: '2', 2: '501118', 3: '7', 4: '450'}
+199	199		301							"{1: '1', 2: 'Lilith', 3: ""So Aunt, using built-in shielding and transferring one's Memory could be how we overcome Punishing's challenge and step into the next phase of our evolution—am I right?"", 4: '2'}"
+200	200		301							"{2: 'Lilith', 3: ""If you do nothing but flee from the virus, it's only a matter of time before it consumes you."", 4: '2'}"
+201	201		301							"{3: ""It feels like she's gently walking a child through each step, her voice so soft it could be woven from cotton.""}"
+202	202		204							{1: '1', 2: '2'}
+203	203		301							"{2: 'Madam Monzano', 3: ""Great genius, what's on your mind? An ultimate weapon that can drain the Punishing Virus?"", 4: '1'}"
+204	204		301							{3: 'Madam Monzano fires back with biting sarcasm.'}
+205	205		204							{1: '2'}
+206	206		301							"{2: 'Lilith', 3: ""I suppose my complete lack of fear in these high-risk environments is the reason I've been so lucky to survive every time."", 4: '2'}"
+207	207		301							"{2: 'Lilith', 3: ""Fear destroys clear thinking. Only a steady mind can make split-second, accurate decisions—and that's what boosts your odds of staying alive."", 4: '2'}"
+208	208		202							{1: '1', 2: '2'}
+209	209		301							{3: 'Despite the tension, the girl stays composed, presenting her straightforward hypothesis without hesitation.'}
+210	210		301							{3: 'It seems Madam Monzano has decided to drop her line of questioning.'}
+211	211		201							{1: '1', 2: '501123', 3: '4', 4: '-450'}
+212	212		201							{1: '2', 2: '501118', 4: '450'}
+213	213		301							"{1: '1', 2: 'Madam Monzano', 3: ""...It's of no real consequence. Odds, luck—call it what you will, but I hold my own trump card."", 4: '1'}"
+214	214		204							{1: '1'}
+215	215		301							"{2: 'Madam Monzano', 3: ""I've been aware of all your contributions, so there's no need to fret."", 4: '1'}"
+216	216		301							{3: 'With that measured cadence, she restores her sovereign poise.'}
+217	217		204							{1: '1', 2: '2'}
+218	218		301							"{2: 'Madam Monzano', 3: ""As long as I remain in Babylonia, I'm bound to overthrow Kuronoy... and even topple Hassen himself."", 4: '1'}"
+219	219		204							{1: '1'}
+220	220		301							"{2: 'Madam Monzano', 3: ""I don't care what schemes you're brewing, but here's some advice: if you can't rein yourself in before I seize power, the fallout won't just swallow up you—or me."", 4: '1'}"
+221	221		202							{1: '1', 2: '2'}
+222	222		301							"{3: ""Resources, authority—these lofty, elusive ideas still hold sway over every last survivor's destiny.""}"
+223	223		201							{1: '1', 2: '501123', 3: '4', 4: '-450'}
+224	224		201							{1: '2', 2: '501118', 4: '450'}
+225	225		301							"{1: '1', 2: 'Madam Monzano', 3: ""I'm only going to warn you once—don't play with fire, or you'll get burned."", 4: '1'}"
+226	226		301							{2: 'Lilith', 3: 'I understand.', 4: '2'}
+227	227		202							{1: '1', 2: '2'}
+228	228		401							{1: '2', 2: '4543'}
+229	229		301							"{3: ""The sliding door behind them gives a soft click. A blond man they haven't seen in ages steps into the hallway.""}"
+230	230		201							{1: '1', 2: '501067'}
+231	231		301							"{1: '1', 2: 'Kephart', 3: ""Madam, Eleanor... I'm here."", 4: '1'}"
+232	232		301							{2: 'Kephart', 3: 'Smooth op?', 4: '1'}
+233	233		203							{1: '1', 2: '0.25', 3: '450'}
+234	234		201							{1: '2', 2: '501123', 4: '-450'}
+235	235		301							"{1: '1', 3: ""Monzano doesn't say a word. Instead, she holds out the terminal for Kephart to see.""}"
+236	236		202							{1: '1', 2: '2', 6: '1'}
+237	237		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+238	238		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+239	239		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory605.jpg'}
+240	240		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0.4', 4: '4'}
+241	241		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1145.jpg', 3: '0', 4: '0.6', 5: '0'}
+242	242		301							"{3: ""On Las Prados's real-time warzone map, all traces of red have vanished—now it's covered entirely in a comforting blue.""}"
+243	243		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+244	244		101							{3: '1', 4: '4', 5: '1'}
+245	245		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+246	246		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png', 3: '1'}
+247	247		205							{1: '999'}
+248	248		201							{1: '1', 2: '501067', 7: '1'}
+249	249		301							{1: '1', 2: 'Kephart', 3: 'This is invigorating! Then we can move forward with drafting the proposal to return to the surface...', 4: '1'}
+250	250		202							{1: '1', 6: '1'}
+251	251		201							{1: '1', 2: '501118'}
+252	252		301							"{1: '1', 2: 'Lilith', 3: ""Mr. Kephart... so you've been re-elected yet again?"", 4: '1'}"
+253	253		202							{1: '1'}
+254	254		301							{3: 'Lilith suddenly drops this question out of nowhere, catching everyone off-guard.'}
+255	255		201							{1: '1', 2: '501067'}
+256	256		301							{1: '1', 2: 'Kephart', 3: 'Uh... yes, a landslide. The townspeople still appreciate everything we did during the crisis!', 4: '1'}
+257	257		301							{3: 'Though he maintains an air of confidence, a subtle hesitation seeps into his response.'}
+258	258		306							{1: '1'}
+259	259		203							{1: '1', 2: '0.4', 3: '-900'}
+260	260		201							{1: '2', 2: '501123', 4: '300'}
+261	261		203							{1: '2', 2: '0.4', 3: '4'}
+262	262		301							{1: '1', 3: 'Monzano shoots him a knowing look.'}
+263	263		306							
+264	264		203							{1: '1', 2: '0.4', 3: '-450'}
+265	265		203							{1: '2', 2: '0.4', 3: '450'}
+266	266		204							{1: '2'}
+267	267		301							"{2: 'Madam Monzano', 3: ""It's fine—speak your mind."", 4: '2'}"
+268	268		301							{2: 'Kephart', 3: '...', 4: '1'}
+269	269		202							{1: '1', 2: '2'}
+270	270		301							{3: 'A tense silence settles in the air.'}
+271	271		201							{1: '1', 2: '501118', 3: '7'}
+272	272		301							"{1: '1', 2: 'Lilith', 3: ""Sir, is there something you'd like to inform us about?"", 4: '1'}"
+273	273		203							{1: '1', 2: '0.25', 3: '450'}
+274	274		201							{1: '2', 2: '501067', 4: '-450'}
+275	275		301							"{1: '1', 2: 'Kephart', 3: ""I'm only here under official appointment, so I..."", 4: '2'}"
+276	276		202							{1: '2', 6: '1'}
+277	277		201							{1: '2', 2: '501123', 4: '-450'}
+278	278		301							"{1: '1', 2: 'Madam Monzano', 3: ""I'll explain. No need for votes, 'cause there's no one left to vote."", 4: '2'}"
+279	279		301							"{2: 'Lilith', 3: ""What's going on here? Did something happen recently?"", 4: '1'}"
+280	280		202							{1: '1', 2: '2'}
+281	281		301							"{3: ""She willingly steps into the role of a frontline commander, completely oblivious to what's unfolding behind the lines.""}"
+282	282		201							{1: '1', 2: '501123', 3: '2', 4: '-450'}
+283	283		201							{1: '2', 2: '501118', 3: '7', 4: '450'}
+284	284		301							"{1: '1', 2: 'Madam Monzano', 3: ""It's proof that you poured everything into the ground offensive—so much that you never sensed the upheaval aboard the ship."", 4: '1'}"
+285	285		204							{1: '1'}
+286	286		301							"{2: 'Madam Monzano', 3: ""Because our retreat was so rushed back then, this ship's ecological systems never underwent a proper test. In short, water and food supplies are already running dangerously low."", 4: '1'}"
+287	287		301							{2: 'Madam Monzano', 3: 'This is why we must accelerate our return to the surface.', 4: '1'}
+288	288		301							{3: 'Madam lays out every detail of the intel that could upend the entire situation, speaking with the clipped efficiency of a briefing.'}
+289	289		301							{2: 'Lilith', 3: 'But what about everyone living there...?', 4: '2'}
+290	290		301							{2: 'Madam Monzano', 3: 'Remember, the Eden-class was first conceived as a colony ship—outfitted with countless cryo-pods to endure the harsh realities of intergenerational voyages.', 4: '1'}
+291	291		301							{2: 'Madam Monzano', 3: 'When people enter extended low-temperature hibernation, their metabolism slows so drastically that they scarcely need any external support.', 4: '1'}
+292	292		204							{1: '1', 2: '2'}
+293	293		301							"{2: 'Madam Monzano', 3: ""Naturally, there's another perk in unfreezing a hero or two now and then: they emerge at full strength and can be converted into Constructs straight away, reinforcing our ranks."", 4: '1'}"
+294	294		204							{1: '2'}
+295	295		301							{2: 'Lilith', 3: '...', 4: '2'}
+296	296		202							{1: '1', 2: '2'}
+297	297		301							"{3: ""Maybe that's the trump card her aunt is counting on: a colossal, never-ending supply of manpower.""}"
+298	298		201							{1: '1', 2: '501067'}
+299	299		301							"{1: '1', 2: 'Kephart', 3: ""Rest assured, Eleanor—day-to-day life in the core residential sector won't be disrupted in the slightest."", 4: '1'}"
+300	300		301							"{2: 'Kephart', 3: ""Drink up and dance away! Honestly, maybe it's because our ground operations are going so smoothly that everyone's more pumped up than ever!"", 4: '1'}"
+301	301		301							{3: 'The blond man can never quite shake that playful streak in his nature.'}
+302	302		202							{1: '1', 6: '1'}
+303	303		201							{1: '1', 2: '501123', 4: '-450'}
+304	304		201							{1: '2', 2: '501118', 4: '450'}
+305	305		301							{1: '1', 2: 'Madam Monzano', 3: 'Policies and proposals still hinge on Kephart and his peers to drive them forward. Until that future is won by the few, everyone else should offer their support and understanding.', 4: '1'}
+306	306		301							{2: 'Lilith', 3: 'Does the Parliament truly approve of freezing the residents on such a massive scale?', 4: '2'}
+307	307		301				AniZhuanchangBegin			"{2: 'Madam Monzano', 3: ""When it comes to protecting one's own skin, who wouldn't make the same call?"", 4: '1'}"
+308	308		202							{1: '1', 2: '2', 6: '1'}
+309	309		401						2000.0	{1: '1', 2: '36'}
+310	310		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront25.png', 4: '4'}
+311	311		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1172.jpg'}
+312	312		401							{1: '2', 2: '4234'}
+313	313		401							{1: '2', 2: '5328'}
+314	314		104				DialogDisable			{1: '-461|0|0', 2: '0'}
+315	315		201							{1: '1', 2: '501149', 4: '-785', 5: '-70', 6: '100', 7: '1'}
+316	316		109			AniZhuanchangEnd				{1: '1', 2: '<color=#ffffffff><size=55>Is this just another callous choice by the powerful?</size></color>', 3: '315', 4: '30'}
+317	317		301							{1: '1', 3: 'Is this just another callous choice by the powerful?'}
+318	318		402							{1: '4234'}
+319	319		401							{1: '2', 2: '2959'}
+320	320		401							{1: '2', 2: '4330'}
+321	321		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+322	322		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory767.png'}
+323	323		104							{1: '-558|0|0', 2: '0'}
+324	324		201							{1: '1', 2: '500279', 4: '-600', 5: '-55', 7: '1'}
+325	325		109							"{1: '1', 2: ""<color=#ffffffff><size=55>Thus mediocrity's quiet dread enters.</size></color>"", 3: '315', 4: '30'}"
+326	326		301							"{1: '1', 3: ""Thus mediocrity's quiet dread enters.""}"
+327	327		401							{1: '2', 2: '2959'}
+328	328		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+329	329		110							
+330	330		202							{1: '1', 6: '1'}
+331	331		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront25.png', 4: '4'}
+332	332		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2301_10.jpg'}
+333	333		104						500.0	{1: '-827|0|0', 2: '0'}
+334	334		401							{1: '2', 2: '2959'}
+335	335		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+336	336		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront21.png', 4: '4'}
+337	337		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront22.png', 4: '5'}
+338	338		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2601_03.jpg'}
+339	339		104						500.0	{1: '300|0|-250', 2: '0'}
+340	340		401							{1: '2', 2: '2959'}
+341	341		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+342	342		101							{4: '5', 5: '1'}
+343	343		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 4: '4'}
+344	344		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_22.jpg'}
+345	345		104							{1: '592|97|-250', 2: '0'}
+346	346		109							{1: '1', 2: '<color=#ffffffff><size=55>Shattering common knowledge, breaking sense of reason,\\nuprooting every belief since humanity fled to orbit.</size></color>', 3: '-300', 4: '30'}
+347	347		301				AniZhuanchangBegin			{3: 'Shattering common knowledge, breaking sense of reason, uprooting every belief since humanity fled to orbit.'}
+348	348		110							
+349	349		101							{4: '4', 5: '1'}
+350	350		101							{4: '5', 5: '1'}
+351	351		306						300.0	{1: '1'}
+352	352		402							{1: '4330'}
+353	353		401							{1: '1', 2: '6122'}
+354	354		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+355	355		201			DialogEnable				{1: '1', 2: '501118', 3: '3', 7: '1'}
+356	356		301			AniZhuanchangEnd				"{1: '1', 3: ""Lilith can barely hold back her excitement—it's as if the entire world has gone mad, and no one even realizes why.""}"
+357	357		301							{3: 'Ever since that tiny spark of a singularity, every so-called plan and strategy has been undone by something far more ominous.'}
+358	358		301				AniZhuanchangBegin			{3: 'Like a mad scientist peering through a microscope at colonies too small to see with the naked eye—and reveling in it—she craves to witness how it all ends.'}
+359	359		306						300.0	
+360	360		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+361	361		204							{1: '1', 2: '8'}
+362	362		301			AniZhuanchangEnd				"{1: '1', 2: 'Lilith', 3: ""...It seems you and my aunt have things to discuss. If you'll pardon me, I'll take my leave."", 4: '1'}"
+363	363		204							{1: '1'}
+364	364		301							"{2: 'Lilith', 3: ""I'm heading over to... San Lorenzo for a drink."", 4: '1'}"
+365	365		301							{3: 'Lilith infuses her words with a carefully measured hint of exhaustion.'}
+366	366		203							{1: '1', 2: '0.25', 3: '450'}
+367	367		201							{1: '2', 2: '501067', 4: '-450'}
+368	368		301							{1: '1', 2: 'Kephart', 3: 'Ah, please, miss, by all means. Merely picturing those grueling fights is enough to send chills down my spine...', 4: '2'}
+369	369		301							"{2: 'Kephart', 3: ""Go on, indulge yourself. You've earned it."", 4: '2'}"
+370	370		401							{1: '2', 2: '2959'}
+371	371		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+372	372		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0'}
+373	373		202							{1: '1', 2: '2', 6: '1'}
+374	374		201							{1: '1', 2: '501118', 3: '4', 7: '1'}
+375	375		301							{1: '1', 3: 'Of course she has. But the treat waiting for her is far more than a single buzz-worthy cocktail.'}
+376	376		401							{1: '2', 2: '2959'}
+377	377		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+378	378		205							{1: '999'}
+379	379		202							{1: '1', 6: '1'}
+380	380		201							{1: '1', 2: '501118', 3: '2', 4: '400', 7: '1'}
+381	381		201							{1: '2', 2: '501067', 4: '-400', 7: '1'}
+382	382		301							"{1: '1', 2: 'Lilith', 3: ""Moving forward, we still have to trouble Mr. Kephart to handle the red tape on the stronghold's construction. We sincerely appreciate your diligent efforts."", 4: '1'}"
+383	383		202							{1: '2', 6: '1'}
+384	384		201							{1: '2', 2: '501123', 4: '-400'}
+385	385		301							"{1: '1', 2: 'Madam Monzano', 3: ""Go. I believe you can keep it together, but don't let your guard down."", 4: '2'}"
+386	386		204							{1: '2', 2: '2'}
+387	387		301							"{2: 'Madam Monzano', 3: ""It appears our esteemed guests are so overjoyed that they've completely lost themselves in the moment."", 4: '2'}"
+388	388		202							{1: '1', 2: '2'}
+389	389		301							"{3: ""Delivering both permission and a warning at once—that's so very Monzano.""}"
+390	390		301							{3: 'Lilith drowns her instinctive reply before it ever leaves her lips...'}
+391	391		301							{3: 'Her aunt still believes the plan is rock-solid... Has she really not let it go to her head?'}
+392	392		201							{1: '1', 2: '501118'}
+393	393		301							{1: '1', 2: 'Lilith', 3: 'Thank you for your kindness, Aunt.', 4: '1'}
+394	394		202							{1: '1'}
+395	395		301							{3: 'In the end, the words she speaks fizzle out like flat soda water.'}
+396	396		301				DialogDisable			"{3: ""Poised restraint is Lilith's hallmark style.""}"
+397	397		401							{1: '2', 2: '4543'}
+398	398		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1173.jpg', 3: '0', 4: '1', 5: '1.5'}
+399	399		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1173.jpg'}
+400	400		205							{1: '999'}
+401	401		301			DialogEnable	AniZhuanchangBegin			{3: 'She departs the room, strides down the deserted hallway, and slips into the elevator bound for the San Lorenzo entertainment complex.'}
+402	402		401						2000.0	{1: '1', 2: '36'}
+403	403		401							{1: '1', 2: '6123'}
+404	404		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1162.jpg'}
+405	405		301			AniZhuanchangEnd				{3: 'Beneath the crystal chandelier, the roar of the crowd surges, making every metal-ringed decoration tremble in its wake.'}
+406	406		301							"{3: ""It's just like the day, long ago, when a young girl first set foot in the Lucky 38 Casino—this place has never changed in the slightest.""}"
+407	407		301							{3: 'Whether during the Golden Age or in the aftermath of disaster, whether in an elysian city or beneath the orbital dome, its spirit endures.'}
+408	408		201							{1: '1', 2: '501149', 4: '-450', 7: '1'}
+409	409		201							{1: '2', 2: '500354', 4: '450', 7: '1'}
+410	410		301			RImgBg1Shake				"{1: '1', 2: 'Resident A', 3: ""Another round! Come on, top it off! Creds? Psh, I'm loaded with creds!"", 4: '1'}"
+411	411		401							{1: '2', 2: '4203'}
+412	412		203						250.0	{1: '1', 2: '0.2', 3: '-350'}
+413	413		301							"{3: ""The eccentric man waves his wine glass with a flourish, shoving a flashy black-and-gold card right up in the robot bartender's face.""}"
+414	414		401							{1: '2', 2: '4062'}
+415	415		301			PanelActor2Shake				{1: '1', 2: 'Servo Mechanoid', 3: 'Error: Unrecognized input. Reformatting...', 4: '2'}
+416	416		301							{3: 'The mechanoid, unfazed by his shouting, just keeps looping its cryptic alert tone.'}
+417	417		202							{1: '1', 2: '2', 6: '1'}
+418	418		201							{1: '1', 2: '500838', 7: '1'}
+419	419		301			RImgBg1Shake				"{1: '1', 2: 'Resident B', 3: ""Told you these metal suits are no match for flesh and blood—can't even compare when it comes to touch... Hahahahaha!"", 4: '1'}"
+420	420		301							{3: 'A rowdy customer hurls a full glass of amber liquor at the robotic bartender, cackling in a coarse laugh.'}
+421	421		203							{1: '1', 2: '0.25', 3: '450'}
+422	422		201							{1: '2', 2: '501149', 4: '-450'}
+423	423		301							"{1: '1', 2: 'Resident A', 3: ""H-hey, don't throw good booze away! If you won't drink it, hand it over!"", 4: '2'}"
+424	424		202							{1: '2', 6: '1'}
+425	425		201							{1: '2', 2: '500863', 4: '-450'}
+426	426		301							{1: '1', 3: 'The one who just asked for a refill seems utterly crestfallen, abandoning their glass on the velvet bar top as if in mourning.'}
+427	427		301							"{2: 'Resident B', 3: ""It won't listen to you—so what's wrong with me stepping in to straighten it out?!"", 4: '1'}"
+428	428		401							{1: '2', 2: '1512'}
+429	429		203						200.0	{1: '2', 2: '0.2', 3: '-200'}
+430	430		301			PanelActor1Shake				{3: 'A sharp rebuke lands him a fist that stinks of booze.'}
+431	431		203							{1: '2', 2: '0.25', 3: '-250'}
+432	432		301			PanelActor1Shake				{1: '1', 2: 'Resident B', 3: '...Ugh! D*mn it, you b*st*rd!', 4: '1'}
+433	433		301							{2: 'Resident A', 3: 'Bring it on!', 4: '2'}
+434	434		202							{1: '1', 2: '2'}
+435	435		301							{3: 'Men in tailored suits wrestle in a vicious tangle, provoking raucous laughter from the card players at the next table.'}
+436	436		301							{3: 'In the dim light, the decaying patches on their skin remain indistinct—no one really bothers with such unpleasant, mood-killing details.'}
+437	437		201							{1: '1', 2: '501118'}
+438	438		301							{1: '1', 2: 'Lilith', 3: 'Enjoy yourselves...', 4: '1'}
+439	439		202							{1: '1'}
+440	440		301							"{3: ""A rank, suffocating air eats away at everyone's nerves. Not a single person notices the young woman with her Moon Umbrella, quietly threading her way through the bar and the labyrinth of poker tables.""}"
+441	441		301				DialogDisable			{3: 'Her eyes settle on the self-serve buffet along one side of the hall.'}
+442	442		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1166.jpg', 3: '0', 4: '1', 5: '0.8'}
+443	443		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1166.jpg'}
+444	444		205							{1: '999'}
+445	445		301			DialogEnable				{3: 'A time-tested tactic: hand out free snacks, and people will lose track of time and stick around.'}
+446	446		301							"{3: ""Of course, you won't find a clock in a place like this—any hint of time passing gets taken out of the equation.""}"
+447	447		201							{1: '18', 2: '500240', 4: '111', 5: '-248', 6: '-50'}
+448	448		301							{1: '1', 2: 'Diner', 3: 'Hey, why are we out of that fancy gold-leaf bacon today?', 4: '18'}
+449	449		202							{1: '18'}
+450	450		301							"{3: ""The automated cook on the other side of the diner's been dead silent for ages—its status lights are practically buried under dust.""}"
+451	451		201							{1: '18', 2: '500240', 4: '111', 5: '-248', 6: '-50'}
+452	452		301							"{1: '1', 2: 'Diner', 3: ""Ugh, I knew it—these contraptions can't hold a candle to real human hands."", 4: '18'}"
+453	453		202							{1: '18'}
+454	454		301							{3: 'He stops fussing over extravagant requests, lifting the tray to survey the mountain of food before him.'}
+455	455		201							{1: '18', 2: '500240', 4: '111', 5: '-248', 6: '-50'}
+456	456		301							"{1: '1', 2: 'Diner', 3: ""Mmm... let's kick things off with a roasted lobster!"", 4: '18'}"
+457	457		202							{1: '18'}
+458	458		301							{3: 'With thick, stubby fingers, he scoops up a fungus-riddled morsel and stuffs it straight into his mouth.'}
+459	459		301							{3: 'Lilith can practically smell the rot in the air...'}
+460	460		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+461	461		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokeRed.prefab', 2: '2'}
+462	462		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopRed.prefab', 2: '2'}
+463	463		504							{1: '0.5'}
+464	464		301							{3: 'Like a lingering phantom, the Punishing Virus refuses to be banished; it steadily gnaws away at the once-pure air and delicate flesh, year after year.'}
+465	465		301							"{3: 'They call it the ""unaffected"" core district, and yet it—and the labs hidden beneath—are sealed off entirely, serving as a perfect petri dish for the Punishing Virus.'}"
+466	466		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+467	467		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBranch/FxUiActivityBranchSmokeRed.prefab'}
+468	468		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopRed.prefab'}
+469	469		504							{1: '0'}
+470	470		401							{1: '2', 2: '5287'}
+471	471		201							{1: '18', 2: '500240', 4: '111', 5: '-248', 6: '-50', 7: '1'}
+472	472		301							{1: '1', 2: 'Diner', 3: 'Munch, munch... Pfft! Blech—what in the world did I just eat?!', 4: '1'}
+473	473		202							{1: '18'}
+474	474		301							"{3: ""The man's face contorts in agony, and he chokes out a harsh, gut-wrenching heave.""}"
+475	475		301							{3: 'An unnatural dark red tinge spreads across his tongue and neck.'}
+476	476		201							{1: '1', 2: '501118'}
+477	477		301							{1: '1', 2: 'Lilith', 3: 'Bon appetit, everyone.', 4: '1'}
+478	478		202							{1: '1'}
+479	479		301							{3: 'She instinctively runs her tongue across her lips—the raucous crowd is none the wiser, but the atmosphere brims with a sensation she craves.'}
+480	480		301				DialogDisable			{3: 'The girl wastes no time heading to the escalator that leads straight to the first-floor lobby.'}
+481	481		401							{1: '2', 2: '5291'}
+482	482		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5201_01.jpg', 3: '0', 4: '1', 5: '1.5'}
+483	483		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5201_01.jpg'}
+484	484		205							{1: '999'}
+485	485		301			DialogEnable				"{3: ""Seductive jazz and defiant rock pierce everyone's ears; the jarring blend still earns raucous applause at the heart of the dance floor.""}"
+486	486		301							{3: 'From their council seats, the self-righteous elites immerse themselves in this grimy tide of sound, raising their glasses to toast its eerie harmonies.'}
+487	487		301							{3: 'For those confined within these walls, there is nothing beyond fleeting pleasure—only the void.'}
+488	488		301							"{3: ""When champagne flows in streams and gold is piled higher than the eye can see, what's the point of locking horns with hardship any longer?""}"
+489	489		301							{3: 'She studies her handiwork with cold satisfaction.'}
+490	490		301							{2: 'Lilith', 3: 'Yes... Poisoned wine and cheese—my special treat for you all. Go on, indulge yourselves!'}
+491	491		301							"{3: 'The source of this ""gift"" remains deliberately hidden—after all, those about to be swept away by their own cravings needn\'t know who\'s pulling the strings.'}"
+492	492		301							"{3: ""Lilith is certain her aunt won't object to this outcome. She needs an environment brimming with intensity for her experiments, and Lilith's approach provides the perfect breeding ground.""}"
+493	493		301							"{3: ""And these so-called elites? They're no different from those lying in cryo-sleep—just disposable resources, ready to be consumed.""}"
+494	494		301							{3: 'Still, someone calls out to the girl. At the foot of the steps, a flushed figure emerges from the haze and dares to ask an impertinent question.'}
+495	495		201							{1: '18', 2: '500969', 4: '65', 5: '-115', 6: '-50'}
+496	496		301							{1: '1', 2: 'Female Dancer', 3: 'Hey... y-you—who are you!?', 4: '18'}
+497	497		202				DialogDisable			{1: '18', 6: '1'}
+498	498		402							{1: '6123'}
+499	499		401							{1: '2', 2: '5283'}
+500	500		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+501	501		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+502	502		109							{1: '1', 2: '<color=#ffffffff><size=60>Who am I?</size></color>', 4: '30'}
+503	503		301							{3: 'Who am I?'}
+504	504		401							{1: '1', 2: '227'}
+505	505		401							{1: '2', 2: '4704'}
+506	506		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+507	507		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1165.jpg'}
+508	508		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.9', 5: '0'}
+509	509		201							{1: '1', 2: '501121', 7: '1'}
+510	510		109							{1: '10', 2: '<color=#ffffffff><size=60>Your esteemed arbiter and master mixologist?</size></color>', 4: '30', 9: '3'}
+511	511		301							{3: 'Your esteemed arbiter and master mixologist?'}
+512	512		401							{1: '2', 2: '4704'}
+513	513		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+514	514		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1175.jpg'}
+515	515		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.9', 5: '0'}
+516	516		201							{1: '1', 2: '501131', 7: '1'}
+517	517		109							"{1: '10', 2: ""<color=#ffffffff><size=60>The heiress who struts about under Madam Monzano's banner?</size></color>"", 4: '30', 9: '3'}"
+518	518		301							"{3: ""The heiress who struts about under Madam Monzano's banner?""}"
+519	519		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+520	520		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5201_01.jpg'}
+521	521		205							{1: '999'}
+522	522		202							{1: '1', 6: '1'}
+523	523		110							
+524	524		301			DialogEnable				{2: 'Lilith', 3: '...'}
+525	525		301							{3: 'A wave of euphoria sweeps across every inch of synthetic skin, seeps in through the nose, and tinges the very soul with crimson.'}
+526	526		401							{1: '2', 2: '4340'}
+527	527		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+528	528		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab', 2: '3'}
+529	529		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory531.jpg'}
+530	530		301							{3: 'She remembers the ancient city consumed by flames from the heavens, and the brazen revelry that once raged within its walls.'}
+531	531		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+532	532		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab'}
+533	533		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory928.png'}
+534	534		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFrontNewCommon23.png', 3: '0.5', 4: '4'}
+535	535		301							"{3: ""The power to judge lies with a net that hasn't even descended yet. She clearly has no authority to summon heavenly fire.""}"
+536	536		301							"{3: ""But history already has its share of those who've drowned in the whirlpool of intoxication and desire.""}"
+537	537		402							{1: '4340'}
+538	538		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+539	539		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5201_01.jpg', 3: '1'}
+540	540		101							{3: '1', 4: '4', 5: '1'}
+541	541		301							{2: 'Lilith', 3: 'Lilith, at your service.'}
+542	542		301							{3: 'She carries herself with such dignity and grace that even the faintest misstep in her composure is instantly pardoned.'}
+543	543		301							{3: 'Her heels, steeped in defiled blood, are hidden beneath silver trim. Each step on the marble stairs rings with poise and cruel delight.'}
+544	544		301							{3: 'She is the one who bestows this prison with its ultimate rapture, by her own hand.'}
+545	545		301							{3: 'In the end, those revelers will topple one after another into the crimson pools born of their own revelry, while the black clock that has no place here will never toll its final note.'}
+546	546		301				DialogDisable			{3: 'The opulent lamp perched on its triangular stand never dims, and yet Lilith remains unwavering in her certainty about how this Filtering will end.'}
+547	547		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+548	548		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+549	549		307							{1: 'Why is it that you always manage to survive?', 3: '70', 4: 'ff4e4eff'}
+550	550		301							{1: '1', 3: 'Why is it that you always manage to survive?'}
+551	551		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+552	552		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+553	553		205							{1: '999'}
+554	554		201							{1: '1', 2: '501118', 3: '3', 7: '1'}
+555	555		307							"{1: ""Because I don't fear the very things that terrify you. It really is that simple."", 3: '55', 4: '6D578C'}"
+556	556		301				AniZhuanchangBegin			"{1: '1', 3: ""Because I don't fear the very things that terrify you. It really is that simple.""}"
+557	557		202							{1: '1', 6: '1'}
+558	558		307							{2: '1'}
+559	559		101			DialogEnable				{1: 'Assets/Product/Texture/Image/BgCg/Cg5201_01.jpg', 3: '1'}
+560	560		301			AniZhuanchangEnd				{3: 'At last, the world admits the Red Death is here, but people remain disturbingly numb to their rotting flesh and frantic nerves.'}
+561	561		401							{1: '2', 2: '4411'}
+562	562		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 3: '0', 4: '1', 5: '1'}
+563	563		301		1		AniZhuanchangBegin			"{3: 'In this Fallen Garden, the Red Death ironically called ""Euphoria"" begins its endless dominion over all.'}"

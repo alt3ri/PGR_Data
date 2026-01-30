@@ -1,0 +1,51 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory152.png'}
+2	2		401							{1: '1', 2: '5042'}
+3	3		301			DialogEnable				"{3: ""Under Liv's guidance, you quickly arrive at the area where Lucia is located.""}"
+4	4		306							{1: '1'}
+5	5		104						650.0	{1: '0|0|-100', 2: '0.6'}
+6	6		301				AniZhuanchangBegin			{3: 'You see an abandoned factory before you. A massive metal structure stands at its center, surrounded by a maze of pipes and machinery. Green light permeates the mist that shrouds the space, creating an ominous atmosphere.'}
+7	7		306						1000.0	
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory153.png'}
+9	9		301			AniZhuanchangEnd				{3: 'After searching the area for a while, you finally—'}
+10	10		402							{1: '5042'}
+11	11		401							{1: '1', 2: '5044'}
+12	12		401							{1: '2', 2: '4807'}
+13	13		201							{1: '1', 2: '500990'}
+14	14		201							{1: '2', 2: '500902', 4: '-550'}
+15	15		201						100.0	{1: '3', 2: '500902', 4: '550'}
+16	16		203							{1: '2', 2: '0.25', 3: '-500', 5: '-100'}
+17	17		203							{1: '3', 2: '0.25', 3: '500', 5: '-100'}
+18	18		301			RImgBg1Shake				{1: '1', 2: 'Lucia', 3: 'Out of my way!', 4: '1'}
+19	19		401							{1: '2', 2: '5152'}
+20	20		202							{1: '2', 2: '3', 6: '1'}
+21	21		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+22	22		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+23	23		301							{3: 'A white figure leaps into the air ahead of you. A blinding white light suddenly erupts, dispersing the green mist around you and eliminating the numerous enemies blocking your path.'}
+24	24		302							{2: 'Lucia!', 3: '25'}
+25	25		401							{1: '2', 2: '11106008'}
+26	26		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+27	27		502							{1: 'RImgBg1Shake'}
+28	28		202							{1: '1', 6: '1'}
+29	29		201							{1: '1', 2: '500994'}
+30	30		401							{1: '2', 2: '9342045'}
+31	31		203							{1: '1', 2: '0.25', 4: '-20', 5: '-60'}
+32	32		301							{1: '1', 3: 'Hearing you, Lucia glances back and adjusts her trajectory in mid-air, her twin blades slashing fiercely at the enemies surging from below. Using the impact from her swing, she lands steadily beside you.'}
+33	33		301							{2: 'Lucia', 3: 'Commandant, and...', 4: '1'}
+34	34		204							{1: '1', 2: '7'}
+35	35		301							{2: 'Lucia', 3: 'Lee? Your...', 4: '1'}
+36	36		202							{1: '1', 6: '1'}
+37	37		201							{1: '1', 2: '1011001'}
+38	38		301							{1: '1', 2: 'Lee', 3: '...', 4: '1'}
+39	39		202							{1: '1'}
+40	40		301							"{3: ""Lucia's gaze falters briefly, but she quickly refocuses on the enemies that keep surfacing.""}"
+41	41		201							{1: '1', 2: '500994', 3: '6'}
+42	42		301							"{1: '1', 2: 'Lucia', 3: ""Let's get out of here first."", 4: '1'}"
+43	43		202							{1: '1'}
+44	44		401							{1: '2', 2: '10042001'}
+45	45		306							{1: '1'}
+46	46		104							{1: '-20|0|-50', 2: '0.25'}
+47	47		301							{3: 'After confirming that you are unharmed, Lucia wastes no time on pleasantries. She scans the area with a tactical eye before pointing her blade toward a passage to your left.'}
+48	48		306							
+49	49		201							{1: '1', 2: '500994', 3: '5'}
+50	50		301		1		AniZhuanchangBegin			{1: '1', 2: 'Lucia', 3: 'Over here!', 4: '1'}

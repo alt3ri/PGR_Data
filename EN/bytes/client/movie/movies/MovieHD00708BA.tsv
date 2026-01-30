@@ -1,0 +1,78 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory32.jpg'}
+2	2		401							{1: '1', 2: '204'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+4	4		301			DialogEnable				{3: 'The Forsaken Headquarters. Midnight.'}
+5	5		301							{3: 'With the help of his crew, Watanabe safely returns to the Forsaken campsite.'}
+6	6		301							{3: 'Greeting him there are the Forsaken soldiers and the three children who were sleeping.'}
+7	7		201							{1: '1', 2: '500279'}
+8	8		201							{1: '2', 2: '500279', 4: '600'}
+9	9		201							{1: '3', 2: '500280', 4: '-600'}
+10	10		301							{1: '1', 2: 'Xiuyong', 3: 'Uncle Watanabe!', 4: '1'}
+11	11		301							{2: 'Deckard', 3: '...Is the supplier not with you?', 4: '2'}
+12	12		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+13	13		201							{1: '1', 2: '1101001'}
+14	14		301							{1: '1', 2: 'Watanabe', 3: 'Huh? 【kuroname】is probably in the next trade port by now.', 4: '1'}
+15	15		203							{1: '1', 2: '0.25', 3: '400', 6: '1'}
+16	16		201							{1: '2', 2: '500280', 4: '-400'}
+17	17		301							{1: '1', 2: 'Ann', 3: 'We wanted to give this to the supplier... We promised 【kuroname】... payment.', 4: '2'}
+18	18		301							"{3: ""The anticipation on Ann's face quickly fades away. She lowers her head, her hands tugging the corners of her shirt, and she gets quiet.""}"
+19	19		301							{2: 'Watanabe', 3: 'Payment? Did you make a deal?', 4: '1'}
+20	20		301							{2: 'Ann', 3: 'N-no, not like that... The supplier helped us with the decorations.', 4: '2'}
+21	21		301							"{2: 'Watanabe', 3: ""So I've heard. You've done a great job."", 4: '1'}"
+22	22		201							{1: '1', 2: '500279'}
+23	23		201							{1: '2', 2: '500279', 4: '600'}
+24	24		201							{1: '3', 2: '500280', 4: '-600'}
+25	25		301							"{1: '1', 2: 'Xiuyong', 3: ""...Will the supplier return? A promise is a promise... It doesn't feel right to keep this."", 4: '1'}"
+26	26		301							{2: 'Ann', 3: 'It must be really exhausting to work so tirelessly for so long. We wanted to cheer up the supplier with a surprise.', 4: '3'}
+27	27		301							"{2: 'Deckard', 3: ""...It's alright! A supplier has to travel and supply others as well, after all..."", 4: '2'}"
+28	28		301							{2: 'Xiuyong', 3: 'And it was our fault for falling asleep without noticing. Well, the supplier gotta return and supply us in the future, right? We will do this next time!', 4: '1'}
+29	29		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+30	30		201							{1: '1', 2: '1101001'}
+31	31		301							"{1: '1', 2: 'Watanabe', 3: ""I hate to break it to you, but I don't think our supplier's coming back for a while... But don't worry. I'll figure out what to do with your gift."", 4: '1'}"
+32	32		204							{1: '1', 2: '1'}
+33	33		301							{2: 'Watanabe', 3: 'Now, as I promised, who wants to help me in the kitchen?', 4: '1'}
+34	34		301							"{3: ""Watanabe rubs the children's heads one by one, trying to divert their attention.""}"
+35	35		301				AniZhuanchangBegin			{3: 'Hearing that Watanabe is going to be cooking, they all become cheerful again.'}
+36	36		202							{1: '1', 6: '1'}
+37	37		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+38	38		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory309.png'}
+39	39		301			AniZhuanchangEnd				{3: 'Snow has stopped falling with the night breeze, but the blushing sky seems to hint at another snowstorm on the horizon.'}
+40	40		301							"{3: ""Under this backdrop, the rising smoke from the Forsaken camp is particularly notable. The fragrant scent of food lingers in the air, and their New Year's Eve celebration begins again.""}"
+41	41		301							{3: 'Inside the Forsaken Headquarters kitchen.'}
+42	42		401							{1: '1', 2: '201'}
+43	43		201							{1: '1', 2: '500166', 3: '5'}
+44	44		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+45	45		301							"{1: '1', 2: 'Lucia', 3: ""That's about it... We haven't received the scheduled call from Bianca and Karenina. They're supposed to pick up Commandant, but..."", 4: '1'}"
+46	46		201							{1: '1', 2: '1101001'}
+47	47		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+48	48		301							"{1: '1', 2: 'Watanabe', 3: ""Relax. I've also put a tracker on 【kuroname】 earlier. I'll sync that data with you later."", 4: '1'}"
+49	49		201							{1: '1', 2: '500026', 4: '400'}
+50	50		201							{1: '2', 2: '1031001', 3: '14', 4: '-400'}
+51	51		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+52	52		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+53	53		301							"{1: '1', 2: 'Lee', 3: ""I'm not saying I trust you... But I'll be counting on you."", 4: '1'}"
+54	54		301							{2: 'Liv', 3: 'So do I... Mr. Watanabe.', 4: '2'}
+55	55		202							{1: '1', 2: '2', 6: '1'}
+56	56		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+57	57		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+58	58		201							{1: '1', 2: '1101001'}
+59	59		301							"{1: '1', 2: 'Watanabe', 3: ""The Forsaken do not forsake those who fought with us. Despite our differences, we will make sure our guest is safe. I'll contact you later."", 4: '1'}"
+60	60		301							{3: 'Having ended the call, Watanabe breathes a sigh of relief, taking off his apron and putting it aside.'}
+61	61		202							{1: '1', 6: '1'}
+62	62		301							"{3: 'He opens the geolocation system again, confirming the location of his ""supplier""—the exact same spot since a few hours ago, with no sign of movement.'}"
+63	63		201							{1: '1', 2: '1101001'}
+64	64		301							"{1: '1', 2: 'Watanabe', 3: ""Tsk... Trouble. Although that's Babylonia territory..."", 4: '1'}"
+65	65		301							{3: 'Watanabe puts his fingers to his temples and groans.'}
+66	66		202							{1: '1', 6: '1'}
+67	67		201							{1: '1', 2: '500279'}
+68	68		201							{1: '2', 2: '500279', 4: '600'}
+69	69		201							{1: '3', 2: '500280', 4: '-600'}
+70	70		301							"{1: '1', 2: 'Xiuyong', 3: ""Uncle Watanabe! We're here to help!"", 4: '1'}"
+71	71		301							"{2: 'Ann', 3: ""That's right! We're gonna help you clean the kitchen... Is something wrong? Then we're right where we should be!"", 4: '3'}"
+72	72		301							{2: 'Deckard', 3: 'W-wait—have you cleaned the kitchen already?', 4: '2'}
+73	73		301							{3: 'Seeing how eager to help they are, Watanabe suddenly comes up with an idea.'}
+74	74		301							{3: 'If there is yet a solution for what is bothering him, then the children standing in front of him are the best odds he can get.'}
+75	75		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+76	76		201							{1: '1', 2: '1101001', 3: '1'}
+77	77		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Watanabe', 3: 'Hey, kids, do you want to give our ""supplier"" your gift yourselves?', 4: '1'}"

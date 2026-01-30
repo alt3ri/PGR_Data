@@ -1,0 +1,25 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory246.png'}
+2	2		401							{1: '1', 2: '211'}
+3	99		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '3'}
+4	3		301			DialogEnable				{3: 'He moves. Toward the evacuation point.'}
+5	4		301							{3: 'The sun is rising from the south, casting a slanted ray of bright yellow light. He sees a shimmering dot in the north, like a star, glowing faintly.'}
+6	5		301							{3: 'He walks. Slowly. Forward.'}
+7	6		301							{2: 'Pulao Crew', 3: 'Look! More Corrupted incoming!'}
+8	7		301							{2: 'Pulao Crew', 3: 'All forces, prepare for battle! Fight back these sons of ****es!'}
+9	858		401							{1: '2', 2: '10001004'}
+10	860		502							{1: 'RImgBg1Shake'}
+11	8		301							{3: 'He holds the girl up like the Holy Grail.'}
+12	9		301							{2: 'A noise?', 3: 'B1…! My name is...'}
+13	10		301							"{3: ""His receiver is damaged beyond repair, unable to distinguish the girl's cry from the surrounding clamor.""}"
+14	11		301							{2: 'Pulao Crew', 3: 'Wait, is that a person?'}
+15	13		301							{1: '1', 3: 'Then he pushes the girl forward.', 4: '1'}
+16	15		301							"{2: 'Pulao Crew', 3: ""Ensure the child's safety! Damn it, the ****ing Corrupted are downright evil!""}"
+17	16		301							{2: 'Pulao Crew', 3: 'Prepare to fire! Countdown!'}
+18	1000		502				RImgBg1Disable			{1: 'DialogDisable'}
+19	17		101			RImgBg1Enable				{1: 'Assets/Product/Texture/Image/BgCg/Cg1501_1.jpg'}
+20	999		401							{1: '2', 2: '10001004'}
+21	18		301			DialogEnable				{3: 'HNB1 files through his memory disk, finding a scene of human heroes dying in battle. He tries to force out a smile.'}
+22	19		301							{3: 'Though he might look just like a cruel and frightening monster to the people...'}
+23	20		301							"{3: ""But he knows that his mission is complete. After all, he is a Tai'E. He was created to protect humanity.""}"
+24	21		301		1		AniZhuanchangBegin			{3: 'After that, he never felt anything again.'}

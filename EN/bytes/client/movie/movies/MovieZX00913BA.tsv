@@ -1,0 +1,103 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory115.png'}
+2	1000		401							{1: '1', 2: '201'}
+3	2		201							{1: '1', 2: '500080'}
+4	3		301			DialogEnable				{1: '1', 2: 'Watanabe', 3: 'NOW!!!', 4: '1'}
+5	4		201							{1: '1', 2: '1021001'}
+6	5		301							{1: '1', 2: 'Lucia', 3: 'All squads, immediately evacuate from the core!', 4: '1'}
+7	6		202							{1: '1', 6: '1'}
+8	7		301							{3: '...'}
+9	8		201							{1: '1', 2: '1111001', 3: '5'}
+10	9		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+11	10		301							{1: '1', 2: 'Karenina', 3: 'Fire!', 4: '1'}
+12	11		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+13	12		202							{1: '1', 6: '1'}
+14	13		301							"{3: ""Karenina slams the launch button hard in Babylonia's command room.""}"
+15	14		301							{3: 'After some loud and low rumbling, a brilliant beam is fired at the relay satellite—'}
+16	15		301							{3: 'The entire Babylonia seems to have moved slightly.'}
+17	16		301							{3: 'The beam then passes through the special lenses on the relay satellite, traveling around the horizon and shooting toward the space station—'}
+18	17		301							{3: 'A few seconds later—'}
+19	18		201							{1: '1', 2: '1031001', 3: '7'}
+20	19		301				AniZhuanchangBegin			{1: '1', 2: 'Liv', 3: '...Incoming!', 4: '1'}
+21	20		202							{1: '1', 6: '1'}
+22	21		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg901_3.jpg'}
+23	22		401							{1: '2', 2: '10007502'}
+24	23		301			AniZhuanchangEnd	RImgBg1Shake			{3: 'Boom—'}
+25	24		301							{3: 'A high-energy beam penetrates the opening in the gravity room, striking the Punishing Virus Heteromer Core with pinpoint precision.'}
+26	25		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '1'}
+27	26		301							{3: 'It fiercely burns through the core, rapidly vaporizing its surface...'}
+28	27		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+29	28		301							{3: 'The process is witnessed by every single member of Babylonia and the Forsaken troops...'}
+30	29		301							{2: 'Lucia', 3: 'Is it over...?'}
+31	30		301							{2: 'Liv', 3: '...'}
+32	31		301							{2: 'Liv', 3: 'No...'}
+33	32		301							{3: 'After the beam finally disappears—'}
+34	33		301				AniZhuanchangBegin			{3: 'The blinding light gradually dims...'}
+35	35		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory120.png'}
+36	36		301			AniZhuanchangEnd				{3: 'At the center of the platform in the gravity room, the burning shell of the Hetero-Core falls off, revealing a cube striped in black and red inside...'}
+37	37		301							{3: 'The smooth and delicate surface shows no signs of damage...'}
+38	38		201							{1: '1', 2: '1011001'}
+39	39		301							{1: '1', 2: 'Lee', 3: 'It seems that this is its true face...', 4: '1'}
+40	40		202							{1: '1', 6: '1'}
+41	41		301							{3: '...'}
+42	42		201							{1: '1', 2: '1111001', 3: '5'}
+43	43		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+44	44		301							{1: '1', 2: 'Karenina', 3: 'What the hell? That was just a shell?!', 4: '1'}
+45	45		201							{1: '1', 2: '500004'}
+46	46		301							{1: '1', 2: 'Asimov', 3: 'It seems that all physical traits observed by the recon teams before...', 4: '1'}
+47	47		301							{2: 'Asimov', 3: '...They are all a deliberate disguise.', 4: '1'}
+48	48		201							{1: '1', 2: '1111001', 3: '5'}
+49	49		301							{1: '1', 2: 'Karenina', 3: 'What? Hey, Gray Raven! The second round! The second round is fully charged!', 4: '1'}
+50	50		201							{1: '1', 2: '500004'}
+51	51		301							"{1: '1', 2: 'Asimov', 3: ""It's too late."", 4: '1'}"
+52	52		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+53	53		202							{1: '1', 6: '1'}
+54	54		301							{3: 'The space station receives the full impact from Babylonia and begins to spin. The relay satellite can no longer aim.'}
+55	55		301							{3: 'Meanwhile, inside the gravity room—'}
+56	56		201							{1: '1', 2: '1031001', 3: '7'}
+57	57		301							"{1: '1', 2: 'Liv', 3: ""It's... gathering mass again..."", 4: '1'}"
+58	58		301							"{2: 'Liv', 3: ""What do we do, Commandant? There's nothing we can do now..."", 4: '1'}"
+59	59		302							"{2: 'We still have a chance!', 3: '60', 4: ""Steady! Don't give up!"", 5: '60'}"
+60	60		201							{1: '1', 2: '1021001', 3: '4'}
+61	61		301							{1: '1', 2: 'Lucia', 3: 'As long as...', 4: '1'}
+62	62		301							{2: 'Lucia', 3: 'We can still suppress it...', 4: '1'}
+63	63		301							{2: 'Lucia', 3: 'There will always be a second chance...', 4: '1'}
+64	64		202							{1: '1', 6: '1'}
+65	65		301							"{3: 'The space station slowly spins as the scene outside the ""skylight"" of the room continues to change.'}"
+66	66		201							{1: '1', 2: '1031001', 3: '7'}
+67	67		301							{1: '1', 2: 'Liv', 3: 'More energy is being generated again... this time at its bottom...', 4: '1'}
+68	68		204							{1: '1'}
+69	69		203							{1: '1', 2: '0.25', 3: '-400'}
+70	70		201							{1: '2', 2: '1021001', 4: '400'}
+71	71		301							{1: '1', 2: 'Lucia', 3: 'What is it trying to do...?', 4: '2'}
+72	72		202							{1: '1', 2: '2', 6: '1'}
+73	73		201							{1: '1', 2: '1011001'}
+74	74		301							{1: '1', 2: 'Lee', 3: '...', 4: '1'}
+75	75		301							{2: 'Lee', 3: 'This situation... If...', 4: '1'}
+76	46464		204							{1: '1', 2: '21'}
+77	76		301							{2: 'Lee', 3: 'Damn...', 4: '1'}
+78	77		202							{1: '1', 6: '1'}
+79	78		301							{3: 'Sunlight reflected by the blue planet shines directly into the gravity room through the skylight.'}
+80	79		201							{1: '1', 2: '1021001'}
+81	80		301							{1: '1', 2: 'Lucia', 3: 'Could it be...?', 4: '1'}
+82	81		201							{1: '1', 2: '500080'}
+83	82		301							{1: '1', 2: 'Watanabe', 3: '...', 4: '1'}
+84	83		202							{1: '1', 6: '1'}
+85	84		301							{3: 'A shockwave emits from the base of the Hetero-Core...'}
+86	85		301							{3: 'Wrapping some matters within, it ejects itself from the space station by pushing through the entrance of the gravity room...'}
+87	86		301							"{3: ""...Heading toward humanity's home—Earth.""}"
+88	87		201							{1: '1', 2: '1021001'}
+89	88		301							{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+90	89		202							{1: '1', 6: '1'}
+91	90		301				AniZhuanchangBegin			{3: 'Watanabe is the first to react.'}
+92	92		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg901_4.jpg'}
+93	93		301			AniZhuanchangEnd				{2: 'Watanabe', 3: 'Forsaken! Retreat from the space station at once!'}
+94	94		301							{2: 'Forsaken Construct', 3: 'Roger!'}
+95	95		301							{2: 'Forsaken Construct', 3: 'The evacuation route has been sent to you, sir!'}
+96	96		301				AniZhuanchangBegin			{3: 'Watanabe turns around, bolting toward the exit of the gravity room.'}
+97	98		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory120.png'}
+98	99		201							{1: '1', 2: '1021001'}
+99	100		301			AniZhuanchangEnd				{1: '1', 2: 'Lucia', 3: 'Watanabe...', 4: '1'}
+100	101		302							{2: 'Is he trying to...', 3: '102', 4: 'Follow him!', 5: '102'}
+101	102		202							{1: '1', 6: '1'}
+102	103		301		1		AniZhuanchangBegin			{3: 'Only the stunned group from Babylonia is left in the gravity room...'}

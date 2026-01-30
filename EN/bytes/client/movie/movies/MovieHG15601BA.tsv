@@ -1,0 +1,405 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1145.jpg'}
+2	2		401							{1: '1', 2: '36'}
+3	3		401							{1: '2', 2: '2616'}
+4	4		304							{1: 'Loading......', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 10: '1'}
+5	5		304							{1: '<i>The sense of the world must lie outside the world.</i>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 10: '1'}
+6	6		304							{1: '                                                                                                                 <i>——Ludwig Wittgenstein</i>', 2: 'ffffffff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 10: '1'}
+7	7		401							{1: '2', 2: '5487'}
+8	8		104							{1: '0|-100|300', 2: '0', 4: '3'}
+9	9		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront56.png', 3: '0', 4: '1', 5: '1'}
+10	10		109	1						{1: '1', 2: '<color=#000000ff><size=80><b>Viedolls</b></size></color><size=120>25</size>', 3: '25', 4: '-350', 9: '3'}
+11	11		205			AniZhuanchangBegin				{1: '999'}
+12	12		304							{1: '-----------------------------------------------------------', 2: 'ffffffff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 9: '1', 10: '1'}
+13	13		104							{1: '0|0|0', 2: '0', 4: '3'}
+14	14		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+15	15		301			DialogDisable				{3: '<color=#ff4e4eff>!!ATTENTION!!</color>\\nThe contents of this game are entirely fictitious.\\nAll character names, organizations, locations, and settings in the game are fictional and have no connection to the real world.\\nTherefore, please do not imitate the story or behaviors depicted in the game in any form. Otherwise, you might be taken away by people in white lab coats, you know?\\nIf you understand, quickly tap confirm and form a contract with your Vie-chan, okay?'}
+16	16		109							{1: '1', 2: '<size=40><color=#ff4e4eff>!!ATTENTION!!</color>\\nThe content of this game is entirely fictitious.\\nAll character names, organizations, locations, and settings in the game are fictional and have no connection to the real world.\\nTherefore, please do not imitate the story or behaviors depicted in the game in <b>any form</b>.</size>', 4: '150', 9: '3'}
+17	17		109	1		AniZhuanchangEnd				{1: '2', 2: 'Confirm.', 9: '3'}
+18	18		302							{2: 'Confirm.', 3: '19', 4: 'Confirm?', 5: '19', 6: 'Confirm!', 7: '19'}
+19	19		110							
+20	20		401							{1: '2', 2: '2959'}
+21	21		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3MainChangeScreenRed.prefab', 2: '3'}
+22	22		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1224.jpg'}
+23	23		401							{1: '1', 2: '6121'}
+24	24		201							{1: '1', 2: '501198'}
+25	25		301			DialogEnable				"{1: '1', 2: '???', 3: ""Welcome back! You're tuned in to Super Earth's most explosive, most no-holds-barred program—Midnight Syndrome Radio!"", 4: '1'}"
+26	26		301			PanelActor1Shake				"{2: 'Meme-germ', 3: ""I'm your old friend speaking through your headphones, and the amazing host about to capture your hearts—Meme-germ!"", 4: '1'}"
+27	27		202							{1: '1', 6: '1'}
+28	28		201							{1: '1', 2: '501198', 4: '400'}
+29	29		201							{1: '2', 2: '501208', 4: '-400'}
+30	30		301							"{1: '1', 2: 'Skip-chat', 3: ""...You talk too much. Hello everyone, I'm Skip-chat."", 4: '2'}"
+31	31		301							"{2: 'Meme-germ', 3: ""Now that we've finished roasting this quarter's intensely thrilling and slightly psychotic band anime series, let's get back to reality and talk about recent world news!"", 4: '1'}"
+32	32		301							{2: 'Meme-germ', 3: 'Dear listeners, do you know what the <color=#ff4e4eff>3D Virus</color> is?', 4: '1'}
+33	33		301							"{2: 'Skip-chat', 3: ""Oh, I know about that. It's the one that's been trending recently..."", 4: '2'}"
+34	34		301							{2: 'Meme-germ', 3: 'This is an extremely dangerous pathogen. In the early stages of infection, patients experience dizziness, nausea, and even clouded consciousness and confused memories.', 4: '1'}
+35	35		301							{2: 'Meme-germ', 3: 'As time passes, the infected gradually lose basic social skills and develop a pathological, self-destructive obsession with work and competition.', 4: '1'}
+36	36		301							{2: 'Meme-germ', 3: 'Typically, they abandon sleep altogether, spending day and night at offices, gyms, arcades, or any place that drains their energy, until they collapse from exhaustion.', 4: '1'}
+37	37		301							{2: 'Meme-germ', 3: 'To put it simply—<size=45><b>G R I N D U N T I L D E A T H!</b></size>', 4: '1'}
+38	38		301							{2: 'Skip-chat', 3: '...Sounds like they turn into robots straight out of some old movie.', 4: '2'}
+39	39		301				DialogDisable			"{2: 'Meme-germ', 3: ""What's even more terrifying is that while corrupting the infected's sanity, this virus continuously distorts their physical appearance!"", 4: '1'}"
+40	40		202							{1: '1', 2: '2', 6: '1'}
+41	41		306							{1: '1'}
+42	42		401							{1: '1', 2: '36'}
+43	43		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg3002_15.jpg', 3: '0', 4: '1', 5: '1'}
+44	44		401							{1: '1', 2: '250'}
+45	45		205							{1: '999'}
+46	46		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_15.jpg'}
+47	47		301			DialogEnable				{2: 'Meme-germ', 3: 'At first, the colors on the infected gradually fade away...'}
+48	48		401							{1: '2', 2: '2827'}
+49	49		401							{1: '2', 2: '901'}
+50	50		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+51	51		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+52	52		201						150.0	{1: '1', 2: '500853', 4: '300'}
+53	53		201						150.0	{1: '1', 2: '500828', 4: '-500'}
+54	54		201						150.0	{1: '1', 2: '500850', 4: '100'}
+55	55		101						150.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+56	56		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+57	57		202							{1: '1', 6: '1'}
+58	58		101						150.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+59	59		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory955.png'}
+60	60		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3MainChangeScreenRed.prefab', 2: '3'}
+61	61		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+62	62		201							{1: '1', 2: '500829', 7: '1'}
+63	63		301			PanelActor1Shake				{1: '1', 2: 'Meme-germ', 3: 'Eventually, they transform into an incomprehensible being—', 4: '1'}
+64	64		201							{1: '18', 2: '501208'}
+65	65		301				AniZhuanchangBegin			"{1: '1', 2: 'Skip-chat', 3: ""...Where did you even find those images? They're revolting. Get rid of them, now."", 4: '18', 5: '1'}"
+66	66		202							{1: '18', 6: '1'}
+67	67		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+68	68		306							
+69	69		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1224.jpg'}
+70	70		201							{1: '1', 2: '501198', 4: '400', 7: '1'}
+71	71		201							{1: '2', 2: '501208', 4: '-400', 7: '1'}
+72	72		301			AniZhuanchangEnd				{1: '1', 2: 'Meme-germ', 3: 'To this day, the origin and transmission mechanism of the <color=#ff4e4eff>3D Virus</color> are still shrouded in mystery. All anyone knows is that a relaxed and joyful social environment can inhibit its spread.', 4: '1'}
+73	73		301							"{2: 'Meme-germ', 3: ""If you see any strange individuals who are fanatically obsessed with working overtime, have confused memories, or display extremely abnormal appearances, be sure to keep your distance and report them to the Supreme Leader's Office immediately."", 4: '1'}"
+74	74		401							{1: '2', 2: '5320'}
+75	75		301							{2: 'Skip-chat', 3: 'The contact hotline is... um, what was it again?', 4: '2'}
+76	76		301							"{2: 'Meme-germ', 3: ""It's—huh? I can't seem to recall."", 4: '1'}"
+77	77		402							{1: '5320'}
+78	78		301							{2: 'Meme-germ', 3: 'Where was I just now? Oh, right—', 4: '1'}
+79	79		401							{1: '2', 2: '2827'}
+80	80		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3MainChangeScreenRed.prefab', 2: '3'}
+81	81		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+82	82		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory955.png'}
+83	83		201							{1: '1', 2: '500829', 4: '400', 7: '1'}
+84	84		201						1500.0	{1: '2', 2: '500829', 4: '-400', 7: '1', 8: '1'}
+85	85		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1224.jpg'}
+86	86		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+87	87		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3MainChangeScreenRed.prefab', 2: '3'}
+88	88		201							{1: '1', 2: '501198', 4: '400', 7: '1'}
+89	89		201							{1: '2', 2: '501208', 4: '-400', 7: '1'}
+90	90		301				DialogDisable			{1: '1', 2: 'Meme-germ', 3: 'Do you all know what the <color=#ff4e4eff>3D Virus</color> is?', 4: '1'}
+91	91		401							{1: '1', 2: '36'}
+92	92		202							{1: '1', 2: '2', 6: '1'}
+93	93		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+94	94		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+95	95		401							{1: '2', 2: '2959'}
+96	96		501				AniZhuanchangBegin		1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3MainChangeScreenRed.prefab', 2: '3'}
+97	97		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+98	98		502						1000.0	{1: 'DialogEnable'}
+99	99		401						4500.0	{1: '2', 2: '5488'}
+100	100		402							{1: '5488'}
+101	101		301			AniZhuanchangEnd				{2: '???', 3: 'Hey, Darling, <size=50>wake uuuuup!</size>'}
+102	102		301							{3: 'In the hazy darkness, a playful call rings in your ears, like a hook sinking into the sea, reaching for your muddled consciousness and pulling it out.'}
+103	103		401							{1: '1', 2: '6151'}
+104	104		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory642.jpg'}
+105	105		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '2'}
+106	106		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+107	107		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+108	108		201							{1: '2', 2: '501206'}
+109	109		301							{1: '1', 2: '???', 3: 'You were sleeping so deeply, just like a little baby.', 4: '2'}
+110	110		301							{2: '???', 3: 'Vie-chan has prepared a nutritious breakfast for you. Come on, open wide, aah—', 4: '2'}
+111	111		203							{1: '2', 2: '0.25', 5: '-150'}
+112	112		301							{3: 'A glass container presses against your lips, and a warm, sweet liquid slowly glides into your mouth.'}
+113	113		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+114	114		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+115	115		202							{1: '2'}
+116	116		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+117	117		201							{1: '1', 2: '501188', 6: '-150'}
+118	118		301							{1: '1', 2: '???', 3: 'So, feeling more awake now?', 4: '1'}
+119	119		301							{3: 'In a spacious, bright room, a familiar girl is straddling you.'}
+120	120		301							{3: 'She wears a mischievous smile, gently swirling the glass bottle in her hand.'}
+121	121		302							{2: '...Jetavie?', 3: '122', 4: '...What did you just call me?', 5: '130'}
+122	122		204							{1: '1', 2: '5'}
+123	123		301							"{2: 'Jetavie?', 3: ""Calling me someone else's name the moment you wake up?... As punishment, you have to finish all of Vie-chan's lovingly prepared breakfast."", 4: '1'}"
+124	124		401							{1: '2', 2: '5288'}
+125	125		301							{3: 'Glug, glug, glug—'}
+126	126		301							"{3: 'Jetavie presses the glass bottle against your lips, forcefully pouring the warm, palatable ""breakfast"" into your mouth.'}"
+127	127		204							{1: '1'}
+128	128		301							{3: 'After you down the entire drink, she flashes a smug grin and then thoughtfully runs her fingertip along the corners of your mouth, wiping away the last remaining droplets.'}
+129	129		302							"{2: 'Why did you say ""someone else\'s name,"" Jetavie?', 3: '143'}"
+130	130		301							{2: 'Jetavie?', 3: 'Oh? You seem quite lucid now. Want Vie-chan to say. That. Specific. Word. Again?', 4: '1'}
+131	131		301							{3: 'She covers her mischievous grin with her left hand while swirling the glass bottle with her right. The crimson liquid inside shimmers in the soft light.'}
+132	132		301							{2: 'Jetavie?', 3: 'If you behave well and finish your breakfast, then Vie-chan will reward you, capiche?', 4: '1'}
+133	133		301							{3: 'Before you can respond, she presses the glass bottle against your lips, pushing them apart to forcefully pour the warm liquid into your mouth.'}
+134	134		401							{1: '2', 2: '5288'}
+135	135		301							{3: 'Glug, glug, glug—'}
+136	136		301							"{2: 'Jetavie?', 3: ""Mmm, very good. You're such a good kid."", 4: '1'}"
+137	137		203							{1: '1', 2: '0.25', 4: '-50', 5: '-200'}
+138	138		301							{3: 'As she speaks, she gently leans her face close until her breath tickles your ear.'}
+139	139		204							{1: '1', 2: '2'}
+140	140		301							"{2: 'Jetavie?', 3: ""How does today's lovingly prepared breakfast taste? Darrrling?"", 4: '1'}"
+141	141		301							{3: 'The girl tilts her head, enunciating each syllable deliberately as she studies your reaction up close, her face radiating an impish energy with a mischievous smile.'}
+142	142		302							{2: 'Why do you keep calling yourself Vie-chan, Jetavie?', 3: '143'}
+143	143		204							{1: '1', 2: '7'}
+144	144		301							{3: 'Hearing your question, she crosses her arms with a puzzled expression on her face.'}
+145	145		301							{2: 'Vie-chan', 3: 'Jetavie? Vie-chan is Vie-chan, the beautiful Supreme Leader of Super Earth—Vie-chan!', 4: '1'}
+146	146		302							"{2: 'Vie-chan', 3: '147', 4: ""...I can't remember anything."", 5: '147'}"
+147	147		204							{1: '1', 2: '7'}
+148	148		301							"{2: 'Vie-chan', 3: ""How did you wake up with amnesia? Could it be you were attacked by those nasty adults' mind-control rays?"", 4: '1'}"
+149	149		204							{1: '1'}
+150	150		301							{2: 'Vie-chan', 3: 'Come on, get up! Vie-chan will perform her Super Memory Recovery Technique on you.', 4: '1'}
+151	151		401							{1: '2', 2: '4341'}
+152	152		203							{1: '1', 2: '0.25'}
+153	153		301							{3: 'She takes your hand and helps you up from the bed.'}
+154	154		204							{1: '1', 2: '3'}
+155	155		301				AniZhuanchangBegin			"{2: 'Vie-chan', 3: 'After you see ""these"", you might remember something—', 4: '1'}"
+156	156		202							{1: '1', 6: '1'}
+157	157		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory204.png'}
+158	158		401							{1: '2', 2: '5370'}
+159	159		301			AniZhuanchangEnd				{3: 'The girl leads you by the hand and pushes open the door. A black-and-white interior instantly floods your vision.'}
+160	160		301							{3: 'In the center of the room stands a long table covered with electronic devices. A water-cooled PC case emits a soft glow, accompanied by lighting equipment, a standing microphone, a dance pad, a VR headset... It matches your memory of what a high-end gaming room should look like.'}
+161	161		301							"{3: ""A white carpet bearing Jetavie's pixel portrait stretches beneath your feet, while the surrounding walls are covered with all manner of Jetavie-themed photographs.""}"
+162	162		301							{3: 'And in all of these photos, you seem to be present as well.'}
+163	163		201							{1: '1', 2: '501188'}
+164	164		301							"{1: '1', 2: 'Vie-chan', 3: ""This is the Supreme Leader's secret base! These photos on the wall document every precious moment of our journey together."", 4: '1'}"
+165	165		302							{2: 'Vie-chan', 3: '166'}
+166	166		204							{1: '1', 2: '3'}
+167	167		301							"{2: 'Vie-chan', 3: ""You're my super, super important Raven, you know?"", 4: '1'}"
+168	168		301							{3: 'With hands behind her back and head tilted to one side, she answers you before you can even voice your unspoken question.'}
+169	169		302							{2: 'Vie-chan', 3: '170'}
+170	170		204							{1: '1'}
+171	171		301							"{2: 'Vie-chan', 3: ""That's right."", 4: '1'}"
+172	172		301							{3: 'Her delicate fingers extend gently, pressing lightly against the Gray Raven emblem on your chest.'}
+173	173		204							{1: '1', 2: '10'}
+174	174		301							"{2: 'Vie-chan', 3: ""Raven is a poet, a swordsman, a philosopher, a pioneer of aerodynamics... and recently even became Vie-chan's Chief Producer!"", 4: '1'}"
+175	175		301							{3: 'The girl solemnly bestows upon you a litany of absurd titles with an air of grave importance.'}
+176	176		302							"{2: 'Chief Producer?', 3: '177', 4: ""I don't think we're on the same wavelength here."", 5: '177'}"
+177	177		204							{1: '1'}
+178	178		301							{3: 'She raises her hand, pointing to a photo of herself standing on a raised platform.'}
+179	179		301							"{2: 'Vie-chan', 3: ""This is the iconic moment of Vie-chan's fist-pumping speech during Vie-chan's campaign for Supreme Leader. Look, Raven was standing right next to me."", 4: '1'}"
+180	180		301							{3: 'In the image, you appear to be serving as security personnel, standing guard at her side.'}
+181	181		301							"{2: 'Vie-chan', 3: ""That one is a combat photo of Raven and Vie-chan bravely storming the enemy headquarters. I even threatened them at the time, saying if they didn't hand over this photo, I'd blow up two more bases."", 4: '1'}"
+182	182		204							{1: '1', 2: '2'}
+183	183		301							"{2: 'Vie-chan', 3: '""What, you\'d blow us all to smithereens just for this one photo?!"" Hahaha! Can you imagine the looks on their faces?', 4: '1'}"
+184	184		301							{3: 'In the photo, you and her are wearing armor resembling tin cans, clutching weapons that look like chainsaws—the whole scene evokes a strong Golden Age sci-fi movie vibe.'}
+185	185		204							{1: '1'}
+186	186		301							{2: 'Vie-chan', 3: 'And this one here, this is the moment when we disbanded all the companies on Earth together.', 4: '1'}
+187	187		204							{1: '1', 2: '10'}
+188	188		301							"{2: 'Vie-chan', 3: 'After that, all companies were turned into video game or anime companies. There were no more scheming or political intrigues from the ""grown-ups,"" and Super Earth entered an unprecedented era of peace.', 4: '1'}"
+189	189		301							"{2: 'Vie-chan', 3: ""In this new era, everyone can freely choose their own path for the future and pursue careers they're passionate about. You can truly say it's a happy ending for everyone."", 4: '1'}"
+190	190		204							{1: '1', 2: '3'}
+191	191		301							"{2: 'Vie-chan', 3: 'Even though the ""grown-ups"" were quite reluctant, Vie-chan eventually persuaded them with a bit of ""gunpoint diplomacy.""', 4: '1'}"
+192	192		301							"{3: 'As she speaks, she forms a gun shape with her right hand, squints her eyes, and playfully ""pulls the trigger"" at you with a mischievous grin.'}"
+193	193		301							"{3: ""In this fantastical tale of hers, you're supposedly the important character who's always by her side, yet right now you have no memory whatsoever of any of these adventures.""}"
+194	194		204							{1: '1'}
+195	195		301							{2: 'Vie-chan', 3: 'Recently, a strange disease called the <color=#ff4e4eff>3D Virus</color> has broken out on Super Earth. Anyone who gets infected by this virus transforms into a creature beyond our comprehension.', 4: '1'}
+196	196		301							{3: 'She approaches the computer desk, her ribboned tail swaying gently behind her.'}
+197	197		401							{1: '2', 2: '4100'}
+198	198		301				AniZhuanchangBegin			{3: 'Her tail lightly taps the computer case, and the two adjacent monitors light up instantly, displaying content related to the <color=#ff4e4eff>3D Virus</color>.'}
+199	199		202							{1: '1', 6: '1'}
+200	200		301			AniZhuanchangEnd				{3: 'Distorted histories, eerie photographs, syndromes that can only be suppressed in a relaxed environment...'}
+201	201		301							{3: 'A flood of incongruous information overwhelms your mind, leaving you utterly bewildered.'}
+202	202		201							{1: '1', 2: '501188', 3: '5'}
+203	203		301							"{1: '1', 2: 'Vie-chan', 3: ""It's all because of the <color=#ff4e4eff>3D Virus</color> that so many people have turned into emotionless, burned-out work machines who only know how to go to work."", 4: '1'}"
+204	204		301							{2: 'Vie-chan', 3: 'According to intelligence gathered by my cabinet besties, to stop the virus in its tracks, we have to make everyone happy again!', 4: '1'}
+205	205		204							{1: '1', 2: '3'}
+206	206		301							"{2: 'Vie-chan', 3: ""Therefore, to save Super Earth, Supreme Leader Vie-chan has decided to start streaming every night at seven o'clock and become an internet idol!"", 4: '1'}"
+207	207		301							{3: 'She stands with hands proudly planted on her hips, dramatically announcing her online debut that will determine the fate of humanity.'}
+208	208		302							"{2: 'Vie-chan', 3: '209', 4: ""I don't understand..."", 5: '209'}"
+209	209		204							{1: '1', 2: '4'}
+210	210		301							"{2: 'Vie-chan', 3: ""Hey, why do you still have that I-just-woke-up look on your face? Don't you remember yet?"", 4: '1'}"
+211	211		301							{2: 'Vie-chan', 3: 'Could it be—Raven has also been infected with the <color=#ff4e4eff>3D Virus</color>?', 4: '1'}
+212	212		204							{1: '1', 2: '5'}
+213	213		301							{2: 'Vie-chan', 3: 'Emergency procedure initiated! Supreme Leader CQC Healing Technique!', 4: '1'}
+214	214		301			RImgBg1Shake				{3: 'A slender tail springs out from behind her, coiling around her body and swaying from side to side.'}
+215	215		302							{2: 'Stop, stop, stop—', 3: '216', 4: 'No physical healing.', 5: '216'}
+216	216		202							{1: '1', 6: '1'}
+217	217		301				DialogDisable			{3: 'Just as the tail makes contact with you, the terminal on your wrist suddenly illuminates. Two lines of text glow prominently.'}
+218	218		205						500.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0.8'}
+219	219		507						250.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+220	220		401							{1: '2', 2: '4823'}
+221	221		109							{1: '1', 2: '<size=50><color=#ffffffff>>>>>> [Mission Objective] Eliminate </color><color=#ff4e4eff>3D Virus</color><color=#ffffffff> (65%)<<<<<</color></size>', 4: '125', 9: '3'}
+222	222		109							{1: '2', 2: '<color=#ffffffff><size=50>>>>>> [Mission Reward] Unlock Reality Portal<<<<<</size></color>', 4: '25', 9: '3'}
+223	223		301							{3: '>>>>> [Mission Objective] Eliminate 3D Virus (65%)<<<<<<\\n>>>>>> [Mission Reward] Unlock Reality Portal<<<<<'}
+224	224		508							
+225	225		110							
+226	226		205						500.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '0', 5: '0.8'}
+227	227		301			DialogEnable	DialogDisable			{3: 'The moment your gaze connects with it, a hazy stream of thoughts suddenly floods into your mind—'}
+228	228		205							{1: '1007', 3: '0', 4: '1', 5: '0'}
+229	229		401							{1: '1', 2: '36'}
+230	230		401							{1: '2', 2: '4134'}
+231	231		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '1'}
+232	232		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+233	233		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+234	234		505					10.0		{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+235	235		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg', 3: '0', 4: '1', 5: '1'}
+236	236		205							{1: '999'}
+237	237		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+238	238		401							{1: '1', 2: '205'}
+239	239		201							{1: '1', 2: '501187'}
+240	240		301			DialogEnable				{1: '1', 2: 'Jetavie', 3: 'Here, take this data cable. Just attach it to your neck.', 4: '1'}
+241	241		302							{2: 'Jetavie', 3: '242'}
+242	242		301							{2: 'Jetavie', 3: 'A mutually assured destruction device.', 4: '1'}
+243	243		301							{2: 'Jetavie', 3: 'All I have to do is tap this button, and Babylonia will be blown all the way to the Qu star system.', 4: '1'}
+244	244		301							{3: 'Jetavie delivers these chilling words with a grave expression, her finger tracing the smooth edges of the red button.'}
+245	245		204							{1: '1', 2: '2'}
+246	246		301							"{3: ""But in the very next moment, her solemn expression breaks as she can't hold it in any longer, a burst of laughter escaping her mouth as she claps her hands with glee.""}"
+247	247		301							"{2: 'Jetavie', 3: ""Hehe—just kidding! If a button like that really existed, the great Jetavie wouldn't have hesitated for so long!"", 4: '1'}"
+248	248		204							{1: '1', 2: '1'}
+249	249		301							{3: 'She sits down beside you and attaches another data cable to her own neck.'}
+250	250		301							"{2: 'Jetavie', 3: ""I've already checked—the White Box contains a virtual local computing server... To put it simply, just think of it as a basic matrix world."", 4: '1'}"
+251	251		301							"{2: 'Jetavie', 3: ""As for what's actually inside, well, we'll just have to dive in and see for ourselves."", 4: '1', 6: '99840'}"
+252	252		301							"{2: 'Jetavie', 3: ""Since it's a gift left by Yui, I'm guessing there must be something interesting inside."", 4: '1'}"
+253	253		301							"{2: 'Jetavie', 3: ""However, we can't rule out the possibility of encountering unexpected risks inside, just like in the matrix. Chosen One, if you don't want to get lost in the data, you'd better hold tight, okay?"", 4: '1'}"
+254	254		301							{3: 'As she speaks, she places your right hand on top of her hand, the warmth of her skin heating up your palm.'}
+255	255		302							"{2: '(Nod)', 3: '256', 4: ""Let's get started."", 5: '256'}"
+256	256		204							{1: '1', 2: '2'}
+257	257		301							"{2: 'Jetavie', 3: ""The great Jetavie and the Chosen One's Elite Adventure Squad—let's go!"", 4: '1'}"
+258	258		401							{1: '1', 2: '36'}
+259	259		401							{1: '2', 2: '2979'}
+260	260		301				DialogDisable			{3: 'Then, she presses the start button.'}
+261	261		401							{1: '1', 2: '297'}
+262	262		401							{1: '2', 2: '1105'}
+263	263		307							{1: 'No Target connected', 3: '50', 4: 'ff4e4eff'}
+264	264		301							{3: 'No Target connected'}
+265	265		401							{1: '2', 2: '1105'}
+266	266		307							{1: 'Error: EPERM: operation not permitted', 3: '50', 4: 'ff4e4eff'}
+267	267		301							{3: 'Error: EPERM: operation not permitted'}
+268	268		401							{1: '2', 2: '1105'}
+269	269		307							{1: 'No Target connected', 3: '50', 4: 'ff4e4eff'}
+270	270		301							{3: 'No Target connected'}
+271	271		307							{1: ' ', 3: '50'}
+272	272		109							{1: '1', 2: '<color=#ff4e4eff><size=50>Errorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr</size></color>', 4: '100', 6: '1', 8: '2', 9: '3'}
+273	273		401						200.0	{1: '2', 2: '1105'}
+274	274		401						200.0	{1: '2', 2: '1105'}
+275	275		401						200.0	{1: '2', 2: '1105'}
+276	276		401						200.0	{1: '2', 2: '1105'}
+277	277		401						200.0	{1: '2', 2: '1105'}
+278	278		401						200.0	{1: '2', 2: '1105'}
+279	279		401						200.0	{1: '2', 2: '1105'}
+280	280		401						200.0	{1: '2', 2: '1105'}
+281	281		401						200.0	{1: '2', 2: '1105'}
+282	282		401						200.0	{1: '2', 2: '1105'}
+283	283		401						200.0	{1: '2', 2: '1105'}
+284	284		401						200.0	{1: '2', 2: '1105'}
+285	285		401						200.0	{1: '2', 2: '1105'}
+286	286		401						200.0	{1: '2', 2: '1105'}
+287	287		401						200.0	{1: '2', 2: '1105'}
+288	288		401						200.0	{1: '2', 2: '1105'}
+289	289		301							{3: 'Errorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr'}
+290	290		307							{2: '1'}
+291	291		401							{1: '2', 2: '2979'}
+292	292		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1209.jpg'}
+293	293		109							"{1: '1', 2: '<size=40>""96·shizuku x""\\nバツ</size>', 3: '-700', 4: '400', 9: '2'}"
+294	294		301							"{3: '<size=40>""96·shizuku x""\\nバツ</size>'}"
+295	295		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1224.jpg'}
+296	296		401							{1: '2', 2: '2979'}
+297	297		109							"{1: '3', 2: '<size=40>""Magical Kant\'s Black Wave Suppression x""\\nバツ</size>', 3: '-450', 4: '250', 9: '2'}"
+298	298		301							"{3: '<size=40>""Magical Kant\'s Black Wave Suppression x""\\nバツ</size>'}"
+299	299		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1064.jpg'}
+300	300		401							{1: '2', 2: '2979'}
+301	301		109							"{1: '2', 2: '<size=40>""The Goodbye Classroom x""\\nバツ</size>', 3: '-100', 4: '100', 9: '2'}"
+302	302		301							"{3: '<size=40>""The Goodbye Classroom x""\\nバツ</size>'}"
+303	303		401							{1: '2', 2: '2979'}
+304	304		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory779.jpg'}
+305	305		109							"{1: '4', 2: '<size=40>""Departing Heideggers x""\\nバツ</size>', 3: '300', 4: '-50', 9: '2'}"
+306	306		301							"{3: '<size=40>""Departing Heideggers x""\\nバツ</size>'}"
+307	307		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory781.jpg'}
+308	308		401							{1: '2', 2: '2979'}
+309	309		109							"{1: '5', 2: '<size=40>""The Supreme Leader\'s Theory of Idols 〇""\\nバツ</size>', 3: '650', 4: '-200', 9: '2'}"
+310	310		301							"{3: '<size=40>""The Supreme Leader\'s Theory of Idols 〇""\\nバツ</size>'}"
+311	311		401							{1: '2', 2: '1509'}
+312	312		307							{1: 'Target connected', 3: '80', 4: 'ff4e4eff'}
+313	313		301							{3: 'Target connected'}
+314	314		307							{2: '1'}
+315	315		202							{1: '1', 6: '1'}
+316	316		110							
+317	317		401							{1: '1', 2: '36'}
+318	318		401							{1: '2', 2: '2616'}
+319	319		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1145.jpg'}
+320	320		304							{1: 'Loading......', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 10: '1'}
+321	321		304							{1: '<i>The sense of the world must lie outside the world.</i>', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 10: '1'}
+322	322		304							{1: '                                                                                                                 <i>——Ludwig Wittgenstein</i>', 2: 'ffffffff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 8: '1', 10: '1'}
+323	323		109							{1: '4', 2: '<size=32>Loading......</size>', 3: '0', 4: '347'}
+324	324		109							{1: '5', 2: '<size=32><i>The sense of the world must lie outside the world.</i></size>', 3: '0', 4: '287'}
+325	325		109							{1: '6', 2: '                                                                                                                 <size=32><i>——Ludwig Wittgenstein</i></size>', 3: '-32', 4: '215'}
+326	326		401							{1: '2', 2: '5487'}
+327	327		104							{1: '0|-100|300', 2: '0', 4: '3'}
+328	328		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront56.png', 3: '0', 4: '1', 5: '1'}
+329	329		109	1						{1: '1', 2: '<color=#000000ff><size=80><b>Viedolls</b></size></color><size=120>25</size>', 3: '25', 4: '-350'}
+330	330		201							{1: '18', 2: '501188', 3: '2', 4: '125', 5: '-200', 6: '-200'}
+331	331		301			DialogEnable				{1: '1', 2: 'Jetavie?', 3: 'Hey, Darling, wake uuuuup!', 4: '18'}
+332	332		202				DialogDisable			{1: '18', 6: '1'}
+333	333		401						500.0	{1: '2', 2: '772'}
+334	334		111						250.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab'}
+335	335		110							
+336	336		401							{1: '1', 2: '6151'}
+337	337		205							{1: '999'}
+338	338		104							{1: '0|0|0', 2: '0', 4: '3'}
+339	339		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront54.png', 4: '4'}
+340	340		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png', 4: '5'}
+341	341		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory204.png'}
+342	342		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab', 2: '3'}
+343	343		304							"{1: ""A young woman's call shatters the scene in your memory, breaking it into shards of scattered light that reassemble into the present moment."", 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png', 6: '1', 7: '-11', 9: '1', 10: '1'}"
+344	344		201							{1: '1', 2: '501188'}
+345	345		101							{4: '5', 5: '1'}
+346	346		101							{4: '4', 5: '1'}
+347	347		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab'}
+348	348		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+349	349		301			DialogEnable				{1: '1', 2: 'Vie-chan', 3: 'Hmm—?', 4: '1'}
+350	350		301							"{3: ""Coming back to your senses, you're greeted by Jetavie's slightly puzzled gaze.""}"
+351	351		202							{1: '1', 6: '1'}
+352	352		301				DialogDisable			{3: 'Looking at the terminal on your wrist again, two glowing lines of text remain jarringly prominent—'}
+353	353		205						500.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0.8'}
+354	354		507						250.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+355	355		401							{1: '2', 2: '4823'}
+356	356		109							{1: '1', 2: '<size=50><color=#ffffffff>>>>>> [Mission Objective] Eliminate </color><color=#ff4e4eff>3D Virus</color><color=#ffffffff> (65%)<<<<<</color></size>', 4: '125', 9: '3'}
+357	357		109							{1: '2', 2: '<color=#ffffffff><size=50>>>>>> [Mission Reward] Unlock Reality Portal<<<<<</size></color>', 4: '25', 9: '3'}
+358	358		301							{3: '>>>>> [Mission Objective] Eliminate 3D Virus (65%)<<<<<\\n>>>>> [Mission Reward] Unlock Reality Portal<<<<<'}
+359	359		508							
+360	360		110							
+361	361		205						500.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '0', 5: '0.8'}
+362	362		301			DialogEnable				{3: 'According to your memory, shortly after you and Jetavie entered the White Box, the two of you seem to have encountered some kind of interference, transporting both of you to this world invaded by the <color=#ff4e4eff>3D Virus</color>.'}
+363	363		205							{1: '1007', 3: '0', 4: '1', 5: '0'}
+364	364		201							{1: '1', 2: '501188'}
+365	365		301							"{1: '1', 3: 'The ""Jetavie"" before you, or rather Vie-chan, is currently playing the role of the supreme ruler of this world.'}"
+366	366		301							{3: 'To combat the <color=#ff4e4eff>3D Virus</color>, Vie-chan has decided to spread joy to people through livestreaming, seeking to maintain a relaxed atmosphere in this world.'}
+367	367		301							"{3: 'As for you, you\'re supposed to play the role of ""producer"" in this world, working together with Vie-chan on her livestreams.'}"
+368	368		301							"{3: ""If the text on the terminal is true... then perhaps going with the flow and collaborating with this world's Vie-chan is your only hope of returning to reality right now.""}"
+369	369		204							{1: '1', 2: '4'}
+370	370		301							"{2: 'Vie-chan', 3: ""Hey, why are you spacing out? You haven't said a word..."", 4: '1'}"
+371	371		204							{1: '1', 2: '2'}
+372	372		301				DialogDisable			"{2: 'Vie-chan', 3: ""Don't tell me—you're captivated by Vie-chan?"", 4: '1'}"
+373	373		302							"{2: '...I remember now, Vie-chan.', 3: '374', 4: ""Even though it's still hard to accept, but for the sake of getting back..."", 5: '374'}"
+374	374		302							"{2: ""I am your producer, Raven, and I'll work with you on your livestreams."", 3: '375'}"
+375	375		204							{1: '1', 2: '7'}
+376	376		301			DialogEnable				{3: 'Hearing your response, Vie-chan becomes surprised, but her expression quickly melts into a delighted smile.'}
+377	377		204							{1: '1'}
+378	378		301							"{2: 'Vie-chan', 3: ""Great! I was just thinking that if Raven really couldn't remember anything, I'd have to knock you out and resort to hypnotherapy."", 4: '1'}"
+379	379		301							{3: 'Good thing you recovered your memories just in time...'}
+380	380		301							"{1: ' ', 3: 'You clear your throat and quickly slip back into your role as ""producer.""'}"
+381	381		302							{2: 'Vie-chan', 3: '382'}
+382	382		204							{1: '1', 2: '2'}
+383	383		301							"{2: 'Vie-chan', 3: ""Tonight at seven! And it's Vie-chan's debut stream—it's already scheduled as a dance stream!"", 4: '1'}"
+384	384		301							"{3: 'She flicks her tail toward the digital clock beside the console, which reads ""9:30 AM,"" her voice bubbling with excitement.'}"
+385	385		302							{2: 'Vie-chan', 3: '386', 4: 'Your debut stream?', 5: '389'}
+386	386		204							{1: '1'}
+387	387		301							"{2: 'Vie-chan', 3: ""Huh? You're supposed to be my producer, yet you don't even know what a dance stream is?"", 4: '1'}"
+388	388	391	301							"{2: 'Vie-chan', 3: 'A dance stream is a livestream that primarily features dancing. If Vie-chan were to prepare songs instead, then that broadcast would be called a ""song stream.""', 4: '1'}"
+389	389		204							{1: '1', 2: '3'}
+390	390		301							"{2: 'Vie-chan', 3: ""That's right! Today is Producer Raven's first day on the job, so you'd better make a good impression in front of Vie-chan!"", 4: '1'}"
+391	391		302							{2: 'Can you dance?', 3: '392'}
+392	392		204							{1: '1', 2: '8'}
+393	393		301							"{2: 'Vie-chan', 3: ""Hmm... I'm okay, I guess. After all, as the Supreme Leader, I have countless matters to attend to each day. Sure, I'm skilled at stirring up trouble, but I can't be skilled at everything."", 4: '1'}"
+394	394		301							"{3: ""She shrugs her shoulders, wearing an expression that suggests she's reluctant to admit the truth.""}"
+395	395		302							{2: 'Should we do some crash training to make your stream look better?', 3: '396'}
+396	396		204							{1: '1', 2: '2'}
+397	397		301							{2: 'Vie-chan', 3: 'Crash training... Does that mean going out to have fun together? That sounds interesting!', 4: '1'}
+398	398		301							{3: 'She looks energetic and even somewhat impatient, immediately showing approval for her own proposal.'}
+399	399		301							"{2: 'Vie-chan', 3: ""To protect humanity and drive the <color=#ff4e4eff>3D virus</color> out of Super Earth, the Supreme Leader's training mission officially begins!"", 4: '1'}"
+400	400		204							{1: '1', 2: '3'}
+401	401		301							"{2: 'Vie-chan', 3: ""Ahem—I hereby appoint Producer Raven as the Supreme Leader's special training coach! If you perform exceptionally well, Vie-chan will re-ward you ve-ry nice-ly!"", 4: '1'}"
+402	402		302							"{2: ""I'll do my best."", 3: '403', 4: '...', 5: '403'}"
+403	403		301							{3: 'And so, the curtain rises on this whimsical fairy tale.'}
+404	404		301		1		AniZhuanchangBegin			{3: 'At the same time, you officially embark on a virtual idol development journey, with reality as your final destination.'}

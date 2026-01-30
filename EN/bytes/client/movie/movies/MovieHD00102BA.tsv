@@ -1,0 +1,109 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '5'}
+3	3		301			DialogEnable				{3: 'You have not been back here for a while. You were fully expecting to be forgotten, but a surging familiarity surrounds you the moment you step inside the lounge.'}
+4	4		301							{3: 'The only thing that has changed is the sprouting cultivar plant at the center of the desk. Touching the pot, you reckon someone has been watering it regularly based on the moisture level and the weight of the soil.'}
+5	5		401							{1: '2', 2: '2603'}
+6	6		301			RImgBg1Shake				"{3: '""Thud!"" You hear a container falling behind you, and a familiar voice follows.'}"
+7	7		201							{1: '1', 2: '500166', 3: '6'}
+8	8		301							{1: '1', 2: 'Lucia', 3: '...Commandant?', 4: '1', 18: '100001119'}
+9	9		204							{1: '1', 2: '1'}
+10	10		301							"{2: 'Lucia', 3: ""It's you, Commandant!"", 4: '1', 18: '100001120'}"
+11	11		301							{3: 'Lucia faces every obstacle head-on as a captain, but right now, staring at you, she seems to be afraid that the reality before her is a mere dream.'}
+12	12		302							"{2: ""Yes, Lucia. It's me."", 3: '13'}"
+13	13		301							"{2: 'Lucia', 3: ""I've been waiting for the day you come back—no. We all believe that you will come back, Commandant. That was how we could keep moving toward our goal."", 4: '1', 18: '100001121'}"
+14	14		204							{1: '1', 2: '2'}
+15	15		301							{2: 'Lucia', 3: 'Wait! I have to let Liv and Lee know immediately.', 4: '1', 18: '100001122'}
+16	16		301							{3: 'Lucia opens her terminal and sends out a message. Afterward, she picks up the fallen container—a watering can.'}
+17	17		502							{1: 'DialogDisable'}
+18	18		302							{2: 'This is your plant, Lucia?', 3: '19'}
+19	19		302							"{2: ""I thought it was Liv's."", 3: '20', 4: ""I don't remember you being interested in them."", 5: '21'}"
+20	20	22	301			DialogEnable				{2: 'Lucia', 3: 'You still remember, Commandant. Liv was the one who placed the plant here, indeed.', 4: '1', 18: '100001123'}
+21	21		301			DialogEnable				{2: 'Lucia', 3: 'You still remember my interest, Commandant... Liv was the one who placed the plant here, indeed.', 4: '1', 18: '100001124'}
+22	22		204							{1: '1', 2: '1'}
+23	23		301							{2: 'Lucia', 3: 'We spent too long on the surface in a previous mission, and the plant died by the time we returned.', 4: '1', 18: '100001125'}
+24	24		301							"{2: 'Lucia', 3: ""Liv applied for a new one the next day and said we had to take better care of it. I'm watering it for her today."", 4: '1', 18: '100001126'}"
+25	25		401						600.0	{1: '2', 2: '648'}
+26	26		402							{1: '648'}
+27	27		203							{1: '1', 2: '0.25', 3: '400'}
+28	28		201							{1: '2', 2: '500568', 3: '7', 4: '-400'}
+29	29		301							{1: '1', 2: 'Lee', 3: '【kuroname】!', 4: '2', 18: '100001105'}
+30	30		202							{1: '1', 6: '1'}
+31	31		203							{1: '2', 2: '0.25'}
+32	32		301							"{2: 'Lee', 3: ""You... you're back?"", 4: '2', 18: '100001106'}"
+33	33		301							{3: 'Lee stands at the door, so dumbfounded and wistful that he is at a loss for words.'}
+34	34		202							{1: '2', 6: '1'}
+35	35		201							{1: '1', 2: '1081001', 3: '1'}
+36	36		301							"{1: '1', 2: 'Kamui', 3: ""It's you, 【kuroname】! No wonder Lee stopped the meeting so abruptly. You're back!"", 4: '1', 18: '100001132'}"
+37	37		301							"{3: ""Kamui's voice sounds exactly as you remember. He walks toward you, patting you on the arm and the back as if he last saw you yesterday, and he looks relieved.""}"
+38	38		301							"{2: 'Kamui', 3: ""Not bad! You seem to be in one piece and well-rested! Capt. and Wanshi would also love to see you, but they're still carrying out a mission on the surface."", 4: '1', 18: '100001133'}"
+39	39		301							"{2: 'Kamui', 3: ""Let me tell them this good news—choose recipients... Let's just tell everyone!"", 4: '1', 18: '100001134'}"
+40	40		302							"{2: ""Ah? There's no need to make a big deal out of this!"", 3: '41'}"
+41	41		301							{3: 'You hear the sound of his fingers tapping on the terminal before you can finish. Kamui smiles cheerfully, waving a victory sign at you.'}
+42	42		202							{1: '1', 6: '1'}
+43	43		301							{3: 'As expected, new guests soon arrive at the Gray Raven lounge.'}
+44	44		201							{1: '1', 2: '500494', 3: '13'}
+45	45		301							{1: '1', 2: 'Karenina', 3: 'Here I thought something important happened, but it was just you... Hmph. You left without a word, and you came back without a heads-up.', 4: '1', 18: '100001102'}
+46	46		204							{1: '1', 2: '6'}
+47	47		301							{2: 'Karenina', 3: 'Why are you staring at me? Do you not recognize me?! Who the hell let you go away for such a long time...', 4: '1', 18: '100001103'}
+48	48		202							{1: '1', 6: '1'}
+49	49		201							{1: '1', 2: '500128', 3: '1'}
+50	50		301							"{1: '1', 2: 'Bianca', 3: ""I trust Commandant's decision, Karen."", 4: '1', 18: '100001098'}"
+51	51		301							"{2: 'Bianca', 3: ""There must be a mission-related reason that kept the commandant from telling us anything, but it's okay. We're together now."", 4: '1', 18: '100001099'}"
+52	52		204							{1: '1', 2: '2'}
+53	53		301							"{2: 'Bianca', 3: ""That said, we're all ears if you want to talk to us, Commandant."", 4: '1', 18: '100001100'}"
+54	54		202							{1: '1', 6: '1'}
+55	55		201							{1: '1', 2: '500168', 3: '1'}
+56	56		301							"{1: '1', 2: 'Vera', 3: ""I was wondering what all the buzz is about. My, my, the prodigal child has returned! Did you have fun while you're away?"", 4: '1', 18: '100001136'}"
+57	57		301							{2: 'Vera', 3: 'I reckon a missing commandant has earned a beating or two, no? You Gray Ravens can be too forgiving sometimes.', 4: '1', 18: '100001137'}
+58	58		301							{3: 'You know Vera is only joking, but you did leave quite suddenly back then, so much so that you did not have a chance to leave a message for anyone.'}
+59	59		202							{1: '1', 6: '1'}
+60	60		301							{3: 'How could you ask them to wait indefinitely when you were surprised by your departure as well?'}
+61	61		201							{1: '1', 2: '500568'}
+62	62		301							"{1: '1', 2: 'Lee', 3: ""There's nothing to forgive. We keep fighting regardless of how many of us are left, and we fight for those who are gone."", 4: '1', 18: '100001107'}"
+63	63		204							{1: '1', 2: '10'}
+64	64		301							"{2: 'Lee', 3: ""Still... don't you ever leave like that again."", 4: '1', 18: '100001108'}"
+65	65		302							"{2: ""I'm sorry."", 3: '66', 4: ""There won't be a next time."", 5: '67'}"
+66	66		301							"{2: 'Lee', 3: ""I don't need your apology... Forget it. Good to have you back."", 4: '1', 18: '100001109'}"
+67	67		202							{1: '1', 6: '1'}
+68	68		201							{1: '1', 2: '500472', 3: '1'}
+69	69		301							{1: '1', 2: 'Nanami', 3: 'Com—man—dant!', 4: '1', 18: '100001128'}
+70	70		301							{2: 'Nanami', 3: 'I found you, 【kuroname】! The great detective Nanami has finally caught the missing criminal!', 4: '1', 18: '100001129'}
+71	71		204							{1: '1', 2: '5'}
+72	72		301							"{2: 'Nanami', 3: 'Don\'t you cheat again, Commandant! If you want to play hide-and-seek, wait until Nanami says, ""Start!""', 4: '1', 18: '100001130'}"
+73	73		202							{1: '1', 6: '1'}
+74	74		301							"{3: 'The mood in the room relaxes after Nanami\'s wacky ""performance."" Suddenly, you realize someone is noticeably absent from the scene of jubilation.'}"
+75	75		502							{1: 'DialogDisable'}
+76	76		302							"{2: ""Where's... Liv?"", 3: '77'}"
+77	77		301			DialogEnable				{3: 'As many dreadful possibilities flash through your mind, you hear a series of hurried footsteps, and a figure appears by the door.'}
+78	78		401							{1: '2', 2: '1513'}
+79	79		201							{1: '1', 2: '1031001', 3: '7'}
+80	80		301							{1: '1', 2: 'Liv', 3: 'C-Commandant!', 4: '1', 18: '100001111'}
+81	81		301							{3: 'Above her flushed cheeks are a pair of teary eyes. Right before her suppressed emotions erupt, Liv attentively collects herself.'}
+82	82		204							{1: '1', 2: '19'}
+83	83		301							"{2: 'Liv', 3: ""I'm sorry I'm late. The Star of Life requested my help earlier today, but I came as soon as I received Lucia's message."", 4: '1', 18: '100001112'}"
+84	84		301							{3: 'You imagine how Liv ran back for you, and your chest suddenly feels heavy.'}
+85	85		302							{2: 'Liv, I...', 3: '86'}
+86	86		204							{1: '1', 2: '2'}
+87	87		301							"{2: 'Liv', 3: ""You don't have to say anything, Commandant. We all understand the weight of our responsibility to save others, don't we?"", 4: '1', 18: '100001113'}"
+88	88		301							"{2: 'Liv', 3: ""You might see it as your job, but it's okay to be tired! We all know how you forced yourself through difficult times in the past..."", 4: '1', 18: '100001114'}"
+89	89		204							{1: '1', 2: '1'}
+90	90		301							{2: 'Liv', 3: 'So, whenever you feel like you need the time to take care of yourself, Gray Raven... no, all of us will be here waiting for you!', 4: '1', 18: '100001115'}
+91	91		301							"{2: 'Liv', 3: ""Don't feel sorry or pressured, Commandant. We'll walk this path together from now on."", 4: '1', 18: '100001116'}"
+92	92		301							"{3: ""Liv's eyes are still as bright as they were, but now they are so clear that they can almost reflect the future.""}"
+93	93		301							{2: 'Liv', 3: 'Commandant—', 4: '1', 18: '100001117'}
+94	94		301							"{3: ""Liv's words are still stuck in your head when she grabs your hand. You look up to find all of them looking at you, and you watch every one of their expressions.""}"
+95	95		502							{1: 'DialogDisable'}
+96	96		202							{1: '1', 6: '1'}
+97	97		201							{1: '1', 2: '1081001', 3: '1', 4: '600'}
+98	98		201							{1: '2', 2: '500494', 3: '1'}
+99	99		201						1500.0	{1: '3', 2: '500128', 3: '1', 4: '-600'}
+100	100		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+101	101		201							{1: '1', 2: '500472', 3: '1', 4: '-400'}
+102	102		201						1500.0	{1: '2', 2: '500168', 3: '1', 4: '400'}
+103	103		202							{1: '1', 2: '2', 6: '1'}
+104	104		201							{1: '1', 2: '500568', 3: '1', 4: '600'}
+105	105		201							{1: '2', 2: '500166', 3: '2'}
+106	106		201							{1: '3', 2: '1031001', 3: '1', 4: '-600'}
+107	107		301			DialogEnable				{1: '1', 2: 'Everyone', 3: 'Welcome back!', 4: '1', 5: '2', 6: '3', 18: '100001139'}
+108	108		302		1		AniZhuanchangBegin			{2: 'I am back!'}

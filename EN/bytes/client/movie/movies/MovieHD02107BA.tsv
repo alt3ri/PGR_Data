@@ -1,0 +1,50 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+2	2		501				AniZhuanchangEnd			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '3'}
+3	3		401							{1: '1', 2: '201'}
+4	4		201							{1: '1', 2: '500581'}
+5	5		301			DialogEnable				"{1: '1', 3: 'On the screen, the ""Guardian of Order"" has finally obtained the ""Codex of Order"".'}"
+6	6		203							{1: '1', 2: '0.3', 4: '-60'}
+7	7		301				AniZhuanchangBegin			"{3: 'Since what happens after ""order is restored"" was not programmed, Echo can be seen sitting on a rock nearby after reading the ""Codex of Order"", looking slightly disappointed.'}"
+8	8		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+9	9		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+10	10		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory673.jpg'}
+11	11		509						600.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory579.jpg', 2: '2'}
+12	12		201							{1: '1', 2: '500598', 4: '-500', 7: '1'}
+13	13		201				AniZhuanchangEnd			{1: '2', 2: '500585', 4: '500', 7: '1'}
+14	14		301			DialogEnable				{1: '1', 2: 'Cervantes', 3: 'A spectacular simulation.', 4: '2'}
+15	15		301							{2: 'Dulcinea', 3: 'But this is just a simulation.', 4: '1'}
+16	16		301							"{2: 'Dulcinea', 3: 'All I can do is throw all of these data samples into the simulation machine and simulate the possible stories, but I can\'t predict the ""ending"" with it.', 4: '1'}"
+17	17		301							"{2: 'Cervantes', 3: 'But... why are you so fixated on the ""ending""?', 4: '2'}"
+18	18		301							"{2: 'Dulcinea', 3: ""I'm just curious about what could happen to Echo in the real world."", 4: '1'}"
+19	19		301							"{2: 'Cervantes', 3: ""Even a butterfly flapping its wings can develop into a storm. No matter how many samples you add and how many stories you simulate, you won't foretell a true prophecy."", 4: '2'}"
+20	20		301							"{3: 'Dulcinea is still staring at the ""Guardian of Order"" on the screen, contemplating.'}"
+21	21		301							"{3: 'Suddenly, the ""Guardian of Order"" stands up from her rock on the screen.'}"
+22	22		204							{1: '2', 2: '7'}
+23	23		301							{2: 'Cervantes', 3: 'Is this... a sequel?', 4: '2'}
+24	24		301							"{2: 'Dulcinea', 3: ""...I didn't enter any new commands."", 4: '1'}"
+25	25		301							"{3: ""On the simulation machine's back end, a stream of data pours across Dulcinea's eyes.""}"
+26	26		301							"{2: 'Dulcinea', 3: ""The back end shows that this action was determined by the Guardian of Order's core behavioral code. She failed to restore order, so she has decided to keep going until she can find a way to succeed."", 4: '1'}"
+27	27		204							{1: '2', 2: '14'}
+28	28		301							{2: 'Cervantes', 3: 'Her obsession has already penetrated her data sample...', 4: '2'}
+29	29		301							{2: 'Cervantes', 3: 'What kind of story will this obsession create...?', 4: '2'}
+30	30		301							{2: 'Cervantes', 3: 'Echo...', 4: '2'}
+31	31		301				AniZhuanchangBegin			{3: 'Cervantes lowers his head and sighs, lost in thought.'}
+32	32		401							{1: '1', 2: '36'}
+33	33		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+34	34		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '3'}
+35	35		510						600.0	{1: '2', 2: 'Assets/Product/Texture/Image/BgStory/BgStory579.jpg'}
+36	36		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory534.jpg'}
+37	37		401							{1: '1', 2: '50'}
+38	38		201							{1: '1', 2: '500582', 4: '200'}
+39	39		201							{1: '2', 2: '500581', 4: '-200'}
+40	40		301			DialogEnable				{1: '1', 3: 'As if sensing something, the Construct with purple hair looks up, gazing into the distance.'}
+41	41		301							{2: '???', 3: '▅▂▆▆▄▃▅▂▆▇...'}
+42	42		301							"{2: 'Echo', 3: ""...I'm fine."", 4: '2'}"
+43	43		301							"{2: 'Echo', 3: ""Based on the gathered intel, that place... shouldn't be too far ahead."", 4: '2'}"
+44	44		301							{2: '???', 3: '▆▄▃▅▂▆▇...'}
+45	45		301							"{2: 'Echo', 3: ""...I wasn't lying. I'm really okay."", 4: '2'}"
+46	46		301							"{2: 'Echo', 3: ""Let's go. Some things need to end one way or the other."", 4: '2'}"
+47	47		301							{2: '???', 3: '▇▆▆▄▃▅▂▆▇...'}
+48	48		301							{3: 'The eerie armor without feet growls beside her as if responding to her.'}
+49	49		301		1		AniZhuanchangBegin			{3: 'The night falls. The girl with purple hair begins her journey.'}

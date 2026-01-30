@@ -1,0 +1,27 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory13.jpg'}
+2	2		401							{1: '1', 2: '112'}
+3	3		201							{1: '1', 2: '500034'}
+4	4		301			DialogEnable	DialogDisable			{1: '1', 2: 'Katie', 3: 'Tom! Wh-what was that?', 4: '1'}
+5	5		401							{1: '2', 2: '1508'}
+6	6		201						2000.0	{1: '1', 2: '500013'}
+7	7		201							{1: '1', 2: '500035'}
+8	8		301			DialogEnable				{1: '1', 2: 'Tom', 3: 'Wha—?! What are those?!', 4: '1'}
+9	9		202							{1: '1', 6: '1'}
+10	10		301							"{2: 'Commotion', 3: ""Ahhh! Help! The Corrupted! They're in the city! It's over! It's all over!""}"
+11	11		201							{1: '1', 2: '500030', 3: '9'}
+12	12		301							{1: '1', 2: 'Karenina', 3: 'Grandpa!', 4: '1'}
+13	13		201							{1: '1', 2: '500033'}
+14	14		301							"{1: '1', 2: 'Old Man', 3: ""Grandpa... can't move... Karen should go..."", 4: '1'}"
+15	15		301							"{2: 'Old Man', 3: ""...Karen... Promise me... Don't lose... yourself... Promise me... Promise..."", 4: '1'}"
+16	16		201							{1: '1', 2: '500030', 3: '9'}
+17	17		301				DialogDisable			{1: '1', 2: 'Karenina', 3: 'Grandpa...', 4: '1'}
+18	18		401							{1: '2', 2: '1508'}
+19	19		201						2000.0	{1: '1', 2: '500013'}
+20	20		201							{1: '1', 2: '500035', 4: '400'}
+21	21		201							{1: '2', 2: '500034', 4: '-400'}
+22	22		301			DialogEnable				"{1: '1', 2: 'Katie', 3: ""Tom! I'm scared!"", 4: '2'}"
+23	23		301				AniZhuanchangBegin			"{2: 'Tom', 3: ""Ahh! They're coming!"", 4: '1'}"
+24	24		202							{1: '1', 2: '2', 6: '1'}
+25	25		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz505.jpg'}
+26	26		301		1	AniZhuanchangEnd	AniZhuanchangBegin			{2: 'Karenina', 3: '………………'}

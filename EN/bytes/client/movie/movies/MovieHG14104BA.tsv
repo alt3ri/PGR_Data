@@ -1,0 +1,255 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '202'}
+3	3		301			DialogEnable				{3: 'In the long history of battling the Punishing Virus, humans often forget that the virus is not their only enemy.'}
+4	4		301							{3: 'Natural disasters like tsunamis, earthquakes, avalanches, and volcanic eruptions can easily claim countless lives.'}
+5	5		301				AniZhuanchangBegin			"{3: ""Humans always believe they've conquered nature, only to scatter and flee in the face of its power.""}"
+6	6		502						400.0	{1: 'DialogDisable'}
+7	7		401							{1: '2', 2: '2915'}
+8	8		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory731.jpg'}
+9	9		301			DialogEnable				{3: 'The camp is in chaos due to the approaching desert storm, and everyone is anxious about the impending disaster.'}
+10	10		201							{1: '1', 2: '500434', 4: '-400'}
+11	11		201							{1: '2', 2: '500616', 4: '400'}
+12	12		301							"{1: '1', 2: 'Male Civilian', 3: ""I-I want to go back. The storm won't reach us for another hour. We can still make it..."", 4: '1'}"
+13	13		301							"{2: 'Female Civilian', 3: ""Go back where? The only conservation area nearby is 148 and we've just raided it. I'd rather stay and take my chances than be strung up and beaten."", 4: '2'}"
+14	14		301							"{2: 'Male Civilian', 3: ""Take your chances? Don't you see we have nothing but tents in this camp? We will die if we stay here!"", 4: '1'}"
+15	15		301							"{2: 'Female Civilian', 3: ""Then go back alone! We won't stop you. Just don't take our car!"", 4: '2'}"
+16	16		301							{2: 'Male Civilian', 3: 'Why are you yelling? Is the car yours? Everything here is stolen!', 4: '1'}
+17	17		301							"{2: 'Female Civilian', 3: ""So what if it's stolen? You're a thief too!"", 4: '2'}"
+18	18		301							"{3: ""Terrified civilians start arguing fiercely. Amid the uproar, there's a shout.""}"
+19	19		202							{1: '1', 2: '2', 7: '1'}
+20	20		301							"{2: '??', 3: ""What's the point of arguing? Whoever grabs the car keys first owns it. I'm going for the car. Who's with me?""}"
+21	21		301							{2: 'Civilians', 3: 'Me! Me!'}
+22	22		301							{3: 'The shout stirs up a frenzy. The fragile balance shatters at the mention of fighting for the car.'}
+23	23		301							{3: 'People begin pushing and shoving violently. Those for and against taking the car by force start fighting, filling the air with curses.'}
+24	24		301							{3: 'Seeing a brawl is about to start, you and Watanabe exchange a glance.'}
+25	25		402							{1: '2915'}
+26	26		201							{1: '1', 2: '500236'}
+27	27		301							{1: '1', 2: 'Refugee?', 3: '【kuroname】, this is our chance.', 4: '1'}
+28	28		301							"{3: ""You nod, knowing Watanabe is referring to the opportunity you'd discussed earlier—to persuade them to surrender without a fight.""}"
+29	29		202							{1: '1', 6: '1'}
+30	30		401							{1: '2', 2: '1510'}
+31	31		401							{1: '1', 2: '36'}
+32	32		301			RImgBg1Shake				{3: 'Just as you are about to stop the chaos, a sharp gunshot sounds, causing everyone to scream in fright and crouch down.'}
+33	33		401							{1: '1', 2: '201'}
+34	34		201							{1: '1', 2: '500093'}
+35	35		301							"{1: '1', 2: 'Schneider', 3: ""Shut up, you idiots. Did you really think I'd let you take my stuff and just walk away?"", 4: '1'}"
+36	36		301							"{2: 'Schneider', 3: ""If you weren't so stupid, I might have considered taking a few of you with me. But now I realize that none of you are worth saving."", 4: '1'}"
+37	37		301							"{2: 'Schneider', 3: ""It's a pity to lose people here, but there are plenty of useful idiots like you in other conservation areas. I'm leaving. You can stay here and die in this damned desert!"", 4: '1'}"
+38	38		202							{1: '1'}
+39	39		401							{1: '2', 2: '1504'}
+40	40		301							{3: 'With those words, Schneider, holding his pistol high, turns to flee toward the garage, guarded by his soldiers.'}
+41	41		402							{1: '1504'}
+42	42		302							"{2: ""—He's getting away!"", 3: '43'}"
+43	43		201							{1: '1', 2: '500236', 7: '1'}
+44	44		301							"{1: '1', 2: 'Watanabe', 3: ""I'll stop him!"", 4: '1'}"
+45	45		401							{1: '2', 2: '10113408'}
+46	46		202							{1: '1', 6: '1'}
+47	47		201						200.0	{1: '1', 2: '500783', 7: '1'}
+48	48		203						80.0	{1: '1', 2: '0.08', 5: '-100'}
+49	49		202							{1: '1', 6: '1'}
+50	50		301							{3: 'Watanabe tears off the cloak that is restricting his movements and dashes after Schneider like a black whirlwind.'}
+51	51		401							{1: '2', 2: '1512'}
+52	52		401							{1: '2', 2: '8220025'}
+53	53		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+54	54		301			RImgBg1Shake				"{3: ""Schneider's soldiers try to block him, but Watanabe dodges them in a breeze and knocks them out before they can react.""}"
+55	55		401							{1: '2', 2: '4149'}
+56	56		301							"{3: ""In the blink of an eye, only three or four of Schneider's soldiers are left standing.""}"
+57	57		301							"{3: ""The civilians, now aware of Schneider's betrayal, rush to block the path to the garage.""}"
+58	58		201							{1: '1', 2: '500783', 4: '500'}
+59	59		201							{1: '2', 2: '500093', 4: '-500'}
+60	60		301							"{1: '1', 2: 'Schneider', 3: ""You... you're the Forsaken traitor, Watanabe!"", 4: '2'}"
+61	61		301							{2: 'Watanabe', 3: 'You have no right to call me a traitor.', 4: '1'}
+62	62		301							{3: 'Seeing his escape route blocked, Schneider points his gun at you in desperation.'}
+63	63		301							"{2: 'Schneider', 3: ""Don't move! I saw you talking with that person. Come any closer and I'll shoot!"", 4: '2'}"
+64	64		301							{2: 'Watanabe', 3: 'I dare you.', 4: '1'}
+65	65		301							{3: 'Watanabe takes a step forward with an expressionless face.'}
+66	66		301							"{2: 'Watanabe', 3: ""I'm faster than you. I will break your wrist before you can pull that trigger."", 4: '1'}"
+67	67		301							"{2: 'Watanabe', 3: ""Say... you don't think you're faster than a Construct, do you?"", 4: '1'}"
+68	68		301							{2: 'Schneider', 3: 'D-damn it... Ahhh—!', 4: '2'}
+69	69		301							{3: 'Schneider tries to pull the trigger in desperation. Right then, both you and Watanabe lunge forward.'}
+70	70		203						100.0	{1: '1', 2: '0.1', 3: '300'}
+71	71		202							{1: '1', 2: '2', 6: '1'}
+72	72		302							{2: '(Dodge)', 3: '73'}
+73	73		401							{1: '2', 2: '1510'}
+74	74		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+75	75		301							{3: '—BANG!'}
+76	76		301			RImgBg1Shake				{3: 'Another deafening gunshot echoes through the small mess hall.'}
+77	77		201							{1: '1', 2: '500783'}
+78	78		301							{1: '1', 3: 'People open their eyes cautiously, expecting to see a bloodbath, but all they see is a bullet hitting the ceiling. Watanabe has taken down Schneider before he could fire.'}
+79	79		301							"{3: ""Watanabe quickly turns to check on you. You wave at him to show that you're fine.""}"
+80	80		302							"{2: ""I'm fine. Let's check on Schneider."", 3: '81'}"
+81	81		301							{3: 'The two of you walk over to Schneider and find him unconscious on the ground.'}
+82	82		301							"{2: 'Watanabe', 3: ""Good. Saved us some trouble. Let's take him to the conservation area for trial."", 4: '1'}"
+83	83		202							{1: '1'}
+84	84		301							{3: 'Watanabe ties up the unconscious Schneider. Only then do the civilians realize what has happened.'}
+85	85		201							{1: '1', 2: '500434', 4: '-400'}
+86	86		201							{1: '2', 2: '500616', 4: '400'}
+87	87		301							{1: '1', 2: 'Male Civilian', 3: 'W-wait, is he...', 4: '1'}
+88	88		301							"{2: 'Female Civilian', 3: ""That's right! He's Watanabe, leader of the Forsaken. How did we not recognize him earlier?"", 4: '2'}"
+89	89		301							{2: 'All', 3: 'Oh my... Watanabe!!'}
+90	90		301							{3: 'The civilians gasp, their admiration for Watanabe quickly turning to fear.'}
+91	91		202							{1: '1', 2: '2'}
+92	92		301							"{3: ""This is understandable. Even though Schneider has just betrayed them, it doesn't erase their long-standing hostility toward the Forsaken. To them, Watanabe is still an enemy.""}"
+93	93		201							{1: '1', 2: '500434', 4: '-600'}
+94	94		201							{1: '2', 2: '500616'}
+95	95		201							{1: '3', 2: '500564', 4: '600'}
+96	96		301							"{1: '1', 3: ""You raise your hand, signaling for everyone's attention.""}"
+97	97		502							{1: 'DialogDisable'}
+98	98		302							{2: 'Everyone, please listen to me.', 3: '99'}
+99	99		302							{2: 'Some of you may have recognized that I am the Gray Raven Commandant from Babylonia.', 3: '100'}
+100	100		302							{2: 'Today, Watanabe and I are here to assist you in your evacuation back to the conservation area...', 3: '101'}
+101	101		302							"{2: 'Where you will be treated fairly and not face any so-called ""vigilante justice.""', 3: '102'}"
+102	102		301			DialogEnable				{3: 'Your speech seems to ease some apprehension, but the crowd remains skeptical.'}
+103	103		301							"{2: 'Female Civilian', 3: ""You're the Gray Raven Commandant. I recognize you..."", 4: '2'}"
+104	104		301							{2: 'Female Civilian', 3: 'But words are just words. What if you go back on your promise?', 4: '2'}
+105	105		301							"{3: ""The woman voices the crowd's concern, and they all agree.""}"
+106	106		301							"{2: 'All', 3: ""Right! We've done many terrible things. People in the conservation area might not want to take us in.""}"
+107	107		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+108	108		201							{1: '1', 2: '500783'}
+109	109		301							"{1: '1', 2: 'Watanabe', 3: ""Just because you've done bad things in the past, does that mean you have to continue living like this?"", 4: '1'}"
+110	110		301							"{3: ""Watanabe's thought-provoking question interrupts the murmur.""}"
+111	111		301							"{2: 'Watanabe', 3: ""It's like saying you have to keep making mistakes simply because you've made one to begin with."", 4: '1'}"
+112	112		301							"{2: 'Watanabe', 3: ""If you keep running away from the consequences of your past actions, you'll never get back on the right path."", 4: '1'}"
+113	113		301							{2: 'Watanabe', 3: 'Do you really want to spend the rest of your lives hiding, barely filling your stomach through theft and robbery?', 4: '1'}
+114	114		301							"{3: ""The crowd falls silent, unable to answer Watanabe's questions.""}"
+115	115		202							{1: '1'}
+116	116		301							"{3: 'Of course, they all long for the day they can return to a peaceful life. Many of them have already seen through Schneider\'s trap and lost hope in the ""Resisters"".'}"
+117	117		301							"{3: ""But still, none of them ever found the courage to face the mistakes they have made, all while knowing full well that they couldn't realistically hide forever.""}"
+118	118		201							{1: '1', 2: '500005'}
+119	119		301							"{1: '1', 2: 'Resister Soldier', 3: ""...Hey, I've got something to say."", 4: '1'}"
+120	120		301							"{3: ""One of the soldiers who hasn't been knocked out by Watanabe raises his hand. You recognize him as the man who gave you cookies.""}"
+121	121		301							"{2: 'Resister Soldier', 3: 'I was the one who let them in. I knew from day one that they didn\'t agree with the idea of ""Resisters"", but I chose not to bust them.', 4: '1'}"
+122	122		301							"{2: 'Resister Soldier', 3: ""Because when we met, I remembered that I didn't come here to do this kind of dirty work. I came just for the food but somehow ended up as one of Schneider's henchmen."", 4: '1'}"
+123	123		301							{3: 'The soldier casts a glance at Watanabe and puts down his weapon.'}
+124	124		301							"{2: 'Resister Soldier', 3: ""Watanabe, Gray Raven Commandant, I'm going with the two of you. I want to try a new path."", 4: '1'}"
+125	125		202							{1: '1'}
+126	126		301							{3: 'The soldier goes to stand beside Watanabe. Seeing this, the other civilians start to murmur among themselves.'}
+127	127		201							{1: '1', 2: '500783'}
+128	128		301							{1: '1', 2: 'Watanabe', 3: 'Anyone else want to come with us?', 4: '1'}
+129	129		301							{2: 'Watanabe', 3: 'This Forsaken rescue mission will not leave anyone behind, as long as you believe in us.', 4: '1'}
+130	130		502							{1: 'DialogDisable'}
+131	131		302							{2: 'The conservation area will not reject anyone who needs protection.', 3: '132'}
+132	132		302							{2: 'We are here to help each other, not to fight against one another.', 3: '133'}
+133	133		301			DialogEnable				"{3: ""This time, the silence doesn't last long.""}"
+134	134		301							"{3: ""The soldier's actions acted as a catalyst, pushing the crowd toward the right path.""}"
+135	135		201							{1: '1', 2: '500434', 4: '-400'}
+136	136		201							{1: '2', 2: '500616', 4: '400'}
+137	137		301							"{1: '1', 2: 'Female Civilian', 3: ""I-I'll go with you. I don't want to die here!"", 4: '2'}"
+138	138		301							"{2: 'Male Civilian', 3: ""I'd rather be in jail than become a mummy here!"", 4: '1'}"
+139	139		301							"{2: 'All', 3: ""Me too! I've had enough of this life. Let's go back!""}"
+140	140		301							{3: 'The voices grow louder and more determined, eventually merging into a clear chant.'}
+141	141		301							{2: 'All', 3: 'Watanabe, Gray Raven Commandant, we want to go with you.', 4: '1', 5: '2'}
+142	142		202							{1: '1', 2: '2', 6: '1'}
+143	143		201							{1: '1', 2: '500783'}
+144	144		301							{1: '1', 2: 'Watanabe', 3: '...Okay.', 4: '1'}
+145	145		301							{3: 'Watanabe raises his right arm, making sure everyone can see his signal.'}
+146	146		301				AniZhuanchangBegin			"{2: 'Watanabe', 3: ""Everyone, follow me. We're leaving!"", 4: '1'}"
+147	147		202			DialogDisable			2000.0	{1: '1', 6: '1'}
+148	148		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+149	149		301			DialogEnable				"{3: ""By the time the Forsaken receives the emergency call and arrives, the sandstorm is already dangerously close to the camp's center. Moving through the swirling sand is incredibly difficult.""}"
+150	150		201							{1: '1', 2: '500783', 4: '400', 7: '1'}
+151	151		201							{1: '2', 2: '500565', 4: '-400', 7: '1', 8: '1'}
+152	152		301							{1: '1', 2: 'Skinny Recruit', 3: 'Commander, all twenty armored vehicles are in position. Please give further instructions!', 4: '2'}
+153	153		301							{1: '1', 2: 'Watanabe', 3: 'Good. Help the civilians evacuate the camp, prioritizing the elderly, women, and children. Once a vehicle is full, send it off immediately.', 4: '1'}
+154	154		301							"{1: '1', 2: 'Watanabe', 3: ""No matter what happens, don't look back. Drive straight toward the conservation area. If you stop, the sandstorm will catch up."", 4: '1'}"
+155	155		301							{1: '1', 2: 'Skinny Recruit', 3: 'Yes, Commander!', 4: '2'}
+156	156		202							{1: '2', 6: '1'}
+157	157		203							{1: '1', 2: '0.25'}
+158	158		301							"{2: 'Watanabe', 3: ""【kuroname】, please help maintain order. Someone might try to cut in line. We can't afford any delays."", 4: '1'}"
+159	159		302							{2: 'Okay.', 3: '160'}
+160	160		301							{2: 'Watanabe', 3: 'Wait, take this.', 4: '1'}
+161	161		401							{1: '2', 2: '1511'}
+162	162		301							{3: 'Watanabe pulls out a pistol from his coat, unlocks the safety, and hands it to you.'}
+163	163		301							"{2: 'Watanabe', 3: ""I know you don't want to hurt anyone, but now they know who you are. Some people might be hostile toward you."", 4: '1'}"
+164	164		301							{2: 'Watanabe', 3: '【kuroname】, take care of yourself.', 4: '1'}
+165	165		302							{2: 'I will.', 3: '166'}
+166	166		301							"{2: 'Watanabe', 3: ""I'll stay here and leave with the last vehicle, but the sandstorm might not give us that much time. If you have the chance, go ahead without me."", 4: '1'}"
+167	167		502							{1: 'DialogDisable'}
+168	168		302							"{2: ""That's not going to happen."", 3: '169'}"
+169	169		302							"{2: ""Like I said, I won't put myself in any danger."", 3: '170'}"
+170	170		302							{2: 'So let me complete this mission with you.', 3: '171'}
+171	171		301			DialogEnable				"{3: ""You hold firmly onto Watanabe's wrist.""}"
+172	172		204							{1: '1', 2: '8'}
+173	173		301							"{2: 'Watanabe', 3: ""...Alright. I'll be waiting for you."", 4: '1'}"
+174	174		204							{1: '1'}
+175	175		301							{2: 'Watanabe', 3: 'Come back as soon as possible.', 4: '1'}
+176	176		301				AniZhuanchangBegin			{3: 'You nod and rush into the swirling sandstorm.'}
+177	177		401							{1: '1', 2: '36'}
+178	178		202			DialogDisable				{1: '1', 6: '1'}
+179	179		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+180	180		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+181	181		401							{1: '2', 2: '215'}
+182	182		401							{1: '2', 2: '968'}
+183	183		301			DialogEnable				{3: 'Every step in the storm is incredibly difficult. Your legs feel as though they were filled with lead, sinking into the quicksand.'}
+184	184		301							{3: 'It feels like the entire desert has a will of its own, dragging its prey into the abyss.'}
+185	185		302							{2: 'Just a little longer...', 3: '186'}
+186	186		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+187	187		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '3'}
+188	188		401							{1: '2', 2: '952'}
+189	189		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+190	190		301							{3: 'One armored vehicle after another rushes away, accelerating to escape the vortex of death.'}
+191	191		302							{2: 'Just a bit more...', 3: '192'}
+192	192		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+193	193		401							{1: '2', 2: '952'}
+194	194		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory319.png'}
+195	195		301							{3: 'The sunlight grows dimmer, making it almost impossible to see where they are.'}
+196	196		302							{2: 'Almost there...', 3: '197'}
+197	197		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+198	198		401							{1: '2', 2: '952'}
+199	199		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory31.jpg'}
+200	200		301							{3: 'The last armored vehicle finally leaves, and you start heading to the rendezvous point with Watanabe.'}
+201	201		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab'}
+202	202		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+203	203		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+204	204		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+205	205		301							{3: 'But the last bit of sunlight is already completely obscured by the sandstorm, leaving you lost in the desert.'}
+206	206		302							{2: 'Right, the transmitter...', 3: '207'}
+207	207		301							{3: 'You struggle to take the transmitter out from your coat.'}
+208	208		401						200.0	{1: '2', 2: '2982'}
+209	209		402							{1: '2982'}
+210	210		301							"{3: 'The dim screen is flickering faintly with the words: ""No Signal"".'}"
+211	211		302							{2: '(Discard heavy items)', 3: '212'}
+212	212		401							{1: '2', 2: '4203'}
+213	213		301							{3: 'You drop the empty canteen and the useless transmitter, but your steps are still heavy.'}
+214	214		302							{2: '(Discard a few more heavy items)', 3: '215'}
+215	215		301							{3: 'You then throw away the useless combat knife.'}
+216	216		302							"{2: ""(It's still heavy)"", 3: '217'}"
+217	217		301							{3: 'You look through your belongings again, but there is nothing else to discard.'}
+218	218		301							{3: 'You pull on the cloak tighter to keep the sand out.'}
+219	219		301							{3: 'But your steps grow heavier, each one sinking deeper into the quicksand despite your effort to take larger strides.'}
+220	220		302							"{2: ""I'm going to fall..."", 3: '221'}"
+221	221		301				AniZhuanchangBegin			{3: 'Just as your body is about to sink into the quicksand, a force pulls you up.'}
+222	222		502						400.0	{1: 'DialogDisable'}
+223	223		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen01.prefab', 2: '2'}
+224	224		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+225	225		401							{1: '1', 2: '358'}
+226	226		201							{1: '1', 2: '500783'}
+227	227		301			DialogEnable				"{1: '1', 2: 'Watanabe', 3: ""I've got you, 【kuroname】! The vehicle is almost here. Hang in there!"", 4: '1'}"
+228	228		301							{3: 'Watanabe stands in the sinking quicksand, using all his strength to pull you out of the deadly whirlpool.'}
+229	229		302							"{2: ""(Grab Watanabe's arm)"", 3: '230'}"
+230	230		301							"{2: 'Watanabe', 3: ""See that white vehicle by the camp gate? Don't give up now. We're almost there!"", 4: '1'}"
+231	231		302							{2: '(Takes a step forward)', 3: '234'}
+232	232		104						500.0	{1: '0|20|-125', 2: '0.5'}
+233	233		104							{1: '0|0|-150', 2: '0.25'}
+234	234		301							{3: 'With stamina depleting, every step grows tougher, but Watanabe holds onto you firmly, preventing the quicksand from devouring your body.'}
+235	235		301							{3: 'Supported by this unwavering strength, you finally arrive at the vehicle.'}
+236	236		301				AniZhuanchangBegin			"{2: 'Watanabe', 3: ""We're here!"", 4: '1'}"
+237	237		202			DialogDisable				{1: '1', 6: '1'}
+238	238		402							{1: '215'}
+239	239		402							{1: '968'}
+240	240		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen01.prefab'}
+241	241		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+242	242		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory139.png'}
+243	243		205				AniZhuanchangEnd			{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 3: '1', 4: '1', 5: '0'}
+244	244		401						1000.0	{1: '2', 2: '4230'}
+245	245		402							{1: '4230'}
+246	246		301			DialogEnable				{3: 'Watanabe pushes you into the vehicle, slamming the door shut, separating you from the raging storm.'}
+247	247		201							{1: '1', 2: '500783', 3: '1', 4: '400'}
+248	248		301							"{1: '1', 2: 'Watanabe', 3: ""Good job. All civilians have been evacuated. Let's go."", 4: '1'}"
+249	249		302							{2: 'Finally...', 3: '250'}
+250	250		301							"{3: ""The armored vehicle smoothly drives out of the storm's center, leaving the small camp far behind.""}"
+251	251		202							{2: '1'}
+252	252		301							{3: 'Moments after the vehicle departs, the camp is swallowed by the rolling sands.'}
+253	253		301							{3: 'The expressions of the civilians in the back seats show lingering fear.'}
+254	254		301		1		AniZhuanchangBegin			{3: 'This is the desert, nature in its most primal and terrifying form.'}

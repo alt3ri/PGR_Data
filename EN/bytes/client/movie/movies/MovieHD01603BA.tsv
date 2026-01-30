@@ -1,0 +1,284 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory539.jpg'}
+2	2		401							{1: '1', 2: '40'}
+3	3		301			DialogEnable				{3: 'Dry moss rolls out over the otherwise stony ground, and the trees part to either side to reveal a straight path ahead.'}
+4	4		301							{3: 'As the river stops flowing, the ripples carry the pumpkin carriage ever so gently to the other side of the riverbank.'}
+5	5		301							{3: 'The mountains come together without leaving so much as a crack. The place now looks nothing like what it was when you just arrived.'}
+6	6		301							{3: 'Chipmunks coming out of nowhere flank the carriage while the bugs and birds sing together for the procession.'}
+7	7		301							"{3: ""You see the long line of sheep at the very end of the horizon. Still hopping over the saddle, they don't seem like they want to move out of the way.""}"
+8	8		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+9	9		201							{1: '1', 2: '500525'}
+10	10		301							"{1: '1', 2: '???', 3: ""Owoooo! You're the bad kids that make it impossible for people to sleep!"", 4: '1', 18: '100000679'}"
+11	11		203						80.0	{1: '1', 2: '0.18', 5: '-200'}
+12	12		202							{1: '1'}
+13	13		301							{3: 'Popping out from behind the pumpkin carriage, a shark plushie charges straight at the sheep.'}
+14	14		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+15	15		301							{3: 'Seeing the shark plushie, the sheep lose it and start running all over the place for dear life, clearing the path ahead.', 9: ' '}
+16	16		301							{3: 'Everything in the forest is trying to help in its own way.'}
+17	17		301							{3: 'You arrive at the spire before you know it.'}
+18	18		401							{1: '1', 2: '36'}
+19	19		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory531.jpg', 3: '0', 4: '1', 5: '1'}
+20	20		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+21	21		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory531.jpg'}
+22	22		401							{1: '1', 2: '201'}
+23	23		301							{3: 'Crimson vines stretch the length of the age-worn spire.'}
+24	24		301							{3: 'Standing in the shades the sun can never reach, the spire is redolent of an ominous wooden nail driven deep into the blood-red ground.'}
+25	25		301							{3: 'When seen from a different angle, however...'}
+26	26		301							"{3: ""It seems like the hand of someone that's reaching out from the depths of a mud puddle yearning for salvation.""}"
+27	27		401							{1: '2', 2: '754'}
+28	28		301							{3: 'The dusty door creaks as Liv and you push it open.'}
+29	29		301							{3: 'In the air lit up by the faint light that comes in through the door, the dust seems to be greeting you as it tries to tell you just how long-forgotten this place is.'}
+30	30		301							{3: 'The spiral staircase stretches toward different ends—upward, until it seems to become one with the spire itself, and downward, until it reaches well into the depths of darkness.'}
+31	31		201							{1: '1', 2: '500524'}
+32	32		301							"{1: '1', 2: 'Liv', 3: ""I'll do everything in my power to stop the monster Cinderella spoke of from hurting you, Commandant."", 4: '1', 18: '100000625'}"
+33	33		301							{3: 'Liv turns around and says as she makes her way up the staircase with red thorns all over it.'}
+34	34		302							"{2: 'And I will go and save your trapped ""dreams.""', 3: '35'}"
+35	35		204							{1: '1', 2: '2'}
+36	36		301							{3: 'You speak in response to Liv as you take a step forward down the stone staircase that stretches into the darkness underground.'}
+37	37		301				AniZhuanchangBegin			{3: 'You both know exactly what you came here to do.'}
+38	38		202			DialogDisable				{1: '1', 6: '1'}
+39	39		101				AniZhuanchangEnd		200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+40	40		301			DialogEnable				{3: 'Liv makes her way up the stairs, succumbing to the darkness that robs her of her sense of direction and monotonous footsteps that blur her sense of time.'}
+41	41		301							{3: 'In a trance, she seems to hear people whispering.'}
+42	42		301							"{3: ""It's a conversation she has with Hippocrates when she wakes up.""}"
+43	43		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+44	44		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+45	45		504							{1: '0.7'}
+46	46		201							{1: '1', 2: '1031001'}
+47	47		301							{1: '1', 2: 'Liv', 3: 'Professor, I have some questions for you.', 4: '1', 18: '100000626'}
+48	48		202							{1: '1', 6: '1'}
+49	49		201							{1: '1', 2: '500404'}
+50	50		301							{1: '1', 2: 'Hippocrates', 3: 'Yes?', 4: '1', 18: '100000858'}
+51	51		202							{1: '1', 6: '1'}
+52	52		201							{1: '1', 2: '1031001'}
+53	53		301							"{1: '1', 2: 'Liv', 3: ""It's about Deep M.I.N.D. connection..."", 4: '1', 18: '100000627'}"
+54	54		301							"{2: 'Liv', 3: ""I just wanted to know if it'd ever affect Commandant in a negative way."", 4: '1', 18: '100000628'}"
+55	55		202							{1: '1', 6: '1'}
+56	56		201							{1: '1', 2: '500404', 3: '14'}
+57	57		301							"{1: '1', 2: 'Hippocrates', 3: ""If you're trying to find out if it's going to cause your commandant migraines or death mirages..."", 4: '1', 18: '100000859'}"
+58	58		204							{1: '1'}
+59	59		301							"{2: 'Hippocrates', 3: ""I can tell you without a shadow of a doubt that it won't."", 4: '1', 18: '100000860'}"
+60	60		301							"{2: 'Hippocrates', 3: 'See, the Deep M.I.N.D. connection doesn\'t ""distribute"" your migraines.', 4: '1', 18: '100000861'}"
+61	61		301							"{2: 'Hippocrates', 3: ""What it does is it stabilizes your M.I.N.D. through Mind Beacon's deep connection."", 4: '1', 18: '100000862'}"
+62	62		301							"{2: 'Hippocrates', 3: ""Let's say you have a ship floating out at sea. When the ship shakes to winds or waves, you end up with a mess inside, right?"", 4: '1', 18: '100000863'}"
+63	63		204							{1: '1', 2: '1'}
+64	64		301							"{2: 'Hippocrates', 3: ""But the ship won't shake to the winds and waves if you have an anchor."", 4: '1', 18: '100000864'}"
+65	65		204							{1: '1'}
+66	66		301							"{2: 'Hippocrates', 3: ""It's true that Deep M.I.N.D. connection won't cause any damage..."", 4: '1', 18: '100000865'}"
+67	67		301							"{2: 'Hippocrates', 3: ""But I still want you to know that, in the process of improving it, we'll need your commandant to dive into your M.I.N.D. many times to collect data."", 4: '1', 18: '100000866'}"
+68	68		301							{2: 'Hippocrates', 3: 'During which, all the migraines and death mirages experienced will inflict real damage.', 4: '1', 18: '100000867'}
+69	69		204							{1: '1', 2: '14'}
+70	70		301							{2: 'Hippocrates', 3: 'Like what happened last time.', 4: '1', 18: '100000868'}
+71	71		202							{1: '1', 6: '1'}
+72	72		201							{1: '1', 2: '1031001'}
+73	73		301							{1: '1', 2: 'Liv', 3: '...', 4: '1', 18: '100000629'}
+74	74		202							{1: '1', 6: '1'}
+75	75		201							{1: '1', 2: '500414'}
+76	76		301							{1: '1', 2: 'Hippocrates', 3: 'So? Are we going to call it quits?', 4: '1', 18: '100000869'}
+77	77		301				AniZhuanchangBegin			"{2: 'Hippocrates', 3: ""Before it's too late to, that is..."", 4: '1', 18: '100000870'}"
+78	78		202			DialogDisable				{1: '1', 6: '1'}
+79	79		504							{1: '0'}
+80	80		101				AniZhuanchangEnd		200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+81	81		301			DialogEnable				{3: 'You press forward, all the while keeping your eyes straight ahead.'}
+82	82		301							{3: 'The air around you grows colder still the further down you walk. The sunlight out there can never reach this part of the spire.'}
+83	83		301							{3: 'Even with a torchlight in hand, you can still barely see the path as you make your way down the broken stone staircase.'}
+84	84		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0', 4: '1', 5: '1'}
+85	85		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+86	86		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+87	87		301							{3: 'Right then, you see light coming through a crack in the bricks up ahead.'}
+88	88		302							{2: '(Am I here already?)', 3: '89'}
+89	89		301							{3: 'When you go up for a closer look, however, all you see is the faint figure of a person from behind.'}
+90	90		302							{2: '(Move closer.)', 3: '91'}
+91	91		301							"{3: ""With a closer look, you can now see it very clearly—the person is wearing a school uniform, the logo on which you can't be more familiar with...""}"
+92	92		302							"{2: ""(It's the logo of F.O.S.)"", 3: '93'}"
+93	93		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+94	94		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+95	95		301							{3: 'With the realization, the light suddenly becomes so intense that it robs you of consciousness.'}
+96	96		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory146.png', 3: '0', 4: '1', 5: '1'}
+97	97		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+98	98		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory146.png'}
+99	99		201							{1: '1', 2: '500299'}
+100	100		301							{1: '1', 3: 'What was it that you were going to do again?'}
+101	101		301							"{3: ""Standing in the Instructor's Office in F.O.S., you see an old man sitting in front of you with a straight face.""}"
+102	102		301							"{2: 'Instructor', 3: ""I'm not going to stick my nose into your business, but I need to know your reasoning behind your decision as your instructor."", 4: '1', 18: '100000432'}"
+103	103		302							"{2: ""(Right, this is about what I'm going to do after graduating.)"", 3: '104'}"
+104	104		301							"{2: 'Instructor', 3: ""Why did you turn down Command Central's invitation and apply to be a frontline commandant at the Task Force?"", 4: '1', 18: '100000433'}"
+105	105		301							{3: 'The shrewd eyes staring right at you now are the same eyes that have been watching every single student since you entered the school.'}
+106	106		301							{3: 'You sense neither encouragement nor discontent from his tone—but solemness and gravity.'}
+107	107		301							{3: 'There is no doubt that those eyes will see right through any petty lies and excuses you come up with.'}
+108	108		302							{2: 'Because...', 3: '109'}
+109	109		502							{1: 'DialogDisable'}
+110	110		202							{1: '1', 6: '1'}
+111	111		101	1						{1: 'Assets/Product/Texture/Image/BgStory/BgStory630.jpg'}
+112	112		101	1						{1: 'Assets/Product/Texture/Image/BgStory/BgStory631.jpg'}
+113	113		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory146.png'}
+114	114		301			DialogEnable				{3: 'This was your answer then.'}
+115	115		301							"{3: ""Back then, a list of big names popped into your mind. You knew those names by heart, but it wasn't so much so that you could write their names down on the tests because they were people you deeply admired.""}"
+116	116		301							"{3: ""The words people praised these big names with had such nice rings to them back when you still didn't know how the big names got to where they were.""}"
+117	117		301							{3: 'Now, though, the big names—alive and active as they were—are now nothing more than strings of letters inscribed on monuments.'}
+118	118		301							{3: 'Earth is still a mess, and most of the early accomplishments have been destroyed overnight.'}
+119	119		301							{3: 'Can you still confidently say what you did back then?'}
+120	120		301				AniZhuanchangBegin			{3: '...After knowing the truth, that is.'}
+121	121		202			DialogDisable				{1: '1', 6: '1'}
+122	122		504							{1: '0.7'}
+123	123		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+124	124		201							{1: '1', 2: '1031001'}
+125	125		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Did Commandant know about this?', 4: '1', 18: '100000630'}
+126	126		202							{1: '1', 6: '1'}
+127	127		201							{1: '1', 2: '500414'}
+128	128		301							{1: '1', 2: 'Hippocrates', 3: 'Of course, and the commandant still signed the paper right away.', 4: '1', 18: '100000871'}
+129	129		202							{1: '1', 6: '1'}
+130	130		201							{1: '1', 2: '1031001'}
+131	131		301							"{1: '1', 2: 'Liv', 3: ""So the Construct's M.I.N.D. is to the ship as the commandant's Mind Beacon is to the anchor, right?"", 4: '1', 18: '100000631'}"
+132	132		202							{1: '1', 6: '1'}
+133	133		201							{1: '1', 2: '500414'}
+134	134		301							{1: '1', 2: 'Hippocrates', 3: '...', 4: '1', 18: '100000872'}
+135	135		202							{1: '1', 6: '1'}
+136	136		201							{1: '1', 2: '1031001'}
+137	137		301							{1: '1', 2: 'Liv', 3: 'If the anchor can help the ship make it through the storm, so, too, can the ship sail forth with the anchor.', 4: '1', 18: '100000632'}
+138	138		301							"{2: 'Liv', 3: ""Commandant said that risks and concerns should never bog us down. We didn't come together so we can huddle up in fear—but so we can go even further."", 4: '1', 18: '100000633'}"
+139	139		301							"{2: 'Liv', 3: ""I'm happy to have someone by my side who's willing to help me unconditionally."", 4: '1', 18: '100000634'}"
+140	140		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+141	141		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+142	142		504							{1: '0'}
+143	143		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory341.jpg'}
+144	144		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+145	145		201							{1: '1', 2: '500524'}
+146	146		301							"{1: '1', 3: ""Looking up, Liv now has a much clearer view of what's in front of her—scarlet crystal clusters, crimson tidewater, and blood-red soil, all of which come together to fill the air with tension.""}"
+147	147		301							"{3: ""It hit her only just now that she'd arrived at where she set out to come, with the crimson plants lying quietly in hunger behind her.""}"
+148	148		202							{1: '1', 6: '1'}
+149	149		301							"{3: ""Not so far away, a blood-red figure stands surrounded by monsters that seem to have made their way out of someone's worst nightmares.""}"
+150	150		201							{1: '1', 2: '500386'}
+151	151		301							{1: '1', 2: 'Nightmare Reflection', 3: 'Why...?', 4: '1', 18: '100000873'}
+152	152		501			DialogDisable				{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+153	153		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+154	154		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory146.png'}
+155	155		401							{1: '1', 2: '36'}
+156	156		201							{1: '1', 2: '500299', 7: '1'}
+157	157		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+158	158		302							{2: 'Because I...', 3: '159'}
+159	159		302							{2: 'Because I wanted to become part of the hope.', 3: '160'}
+160	160		302							{2: 'So I can pull this world back from the brink of despair.', 3: '161'}
+161	161		401							{1: '1', 2: '40'}
+162	162		301			DialogEnable				{3: 'Saying nothing, the old man before you seems to be waiting for you to explain yourself.'}
+163	163		301							"{3: '""I understand that none of the miracles happened as easily as they seemed to. Every step along the way was trial and error in the dark.""'}"
+164	164		301							"{3: '""A single wrong step sent some of them down an abyss from which they never returned, leaving their successors with nothing but the knowledge that whatever they did didn\'t work.""'}"
+165	165		301							"{3: '""And they even fought sometimes and went separate ways.""'}"
+166	166		202							{1: '1'}
+167	167		301							"{3: '""But even then...""'}"
+168	168		302							{2: 'The wise strained their wisdom down to the very last strand of their beings...', 3: '169'}
+169	169		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory404.jpg', 3: '0', 4: '1', 5: '1'}
+170	170		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+171	171		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory404.jpg'}
+172	172		301							{3: 'Some of them even ended up having their souls and dignity burned out.'}
+173	173		302							{2: 'The assiduous worked day and night...', 3: '174'}
+174	174		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg', 3: '0', 4: '1', 5: '1'}
+175	175		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+176	176		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory544.jpg'}
+177	177		301							{3: 'To fight for a place to persist in a place that was anything but favorable.'}
+178	178		302							{2: 'The brave soldiered on in the face of failure...', 3: '179'}
+179	179		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg', 3: '0', 4: '1', 5: '1'}
+180	180		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+181	181		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory543.jpg'}
+182	182		301							{3: 'To build a line of defense with their very own blood and flesh.'}
+183	183		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory146.png', 3: '0', 4: '1', 5: '1'}
+184	184		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+185	185		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory146.png'}
+186	186		301							{3: 'All these flash past you like a stream. These people—people who are just like you—are the reason you can speak as unwaveringly as you do now.'}
+187	187		301							{3: 'If anything, reality has made your dream stronger and more lucid than ever.'}
+188	188		201							{1: '1', 2: '500299'}
+189	189		301							"{1: '1', 2: 'Instructor', 3: ""Are you trying to say you're one of the brave?"", 4: '1', 18: '100000434'}"
+190	190		301							"{2: 'Instructor', 3: ""I hope you're aware that this is no place for you to discuss a bedtime story."", 4: '1', 18: '100000435'}"
+191	191		301							{2: 'Instructor', 3: 'Has it ever crossed your mind that your potential might have an easier time shining through if you work in a different position?', 4: '1', 18: '100000436'}
+192	192		301							"{3: '""The instructors, I believe, are the ones that made me believe I\'m one of the brave.""'}"
+193	193		301							"{3: '""Graduating summa cum laude makes it easier for me to make it straight to the Field Command, but F.O.S. was established in the first place to train commandants.""'}"
+194	194		301							{2: 'Instructor', 3: 'We came up with this choice for you precisely because we recognized your commanding talent.', 4: '1', 18: '100000437'}
+195	195		301							"{3: '""Most of you sitting here today will eventually be mere numbers on battle reports down the road.""'}"
+196	196		301							"{3: '""And if you don\'t experience what they do, you\'ll never be able to understand the meaning the numbers hold.""'}"
+197	197		301							"{3: '""And we didn\'t come together to make everyone suffer for the mistakes we make as a group.""'}"
+198	198		302							{2: 'This is what you said on day one, Instructor...', 3: '199'}
+199	199		302							"{2: ""I've been keeping these words close to my heart."", 3: '200'}"
+200	200		301							{2: 'Instructor', 3: '...Do you know the average life expectancy of a commandant?', 4: '1', 18: '100000438'}
+201	201		302							"{2: ""I'll keep rolling until I get my pension."", 3: '202'}"
+202	202		301							{2: 'Instructor', 3: 'You need to understand that there is no going back.', 4: '1', 18: '100000439'}
+203	203		302							{2: 'I think I can tell you very clearly now that I...', 3: '204'}
+204	204		502							{1: 'DialogDisable'}
+205	205		202							{1: '1', 6: '1'}
+206	206		205						120.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg001_5.jpg', 3: '0', 4: '0.5', 5: '0.2'}
+207	207		205							{1: '999', 3: '0.5', 4: '0', 5: '0'}
+208	208		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg001_5.jpg'}
+209	209		205						120.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg002_1.jpg', 3: '0', 4: '0.5', 5: '0.2'}
+210	210		205							{1: '999', 3: '0.5', 4: '0', 5: '0'}
+211	211		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg002_1.jpg'}
+212	212		205						120.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg608_1.jpg', 3: '0', 4: '0.5', 5: '0.2'}
+213	213		205							{1: '999', 3: '0.5', 4: '0', 5: '0'}
+214	214		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg608_1.jpg'}
+215	215		205						120.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg901_4.jpg', 3: '0', 4: '0.5', 5: '0.2'}
+216	216		205							{1: '999', 3: '0.5', 4: '0', 5: '0'}
+217	217		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg901_4.jpg'}
+218	218		205						120.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg901_6.jpg', 3: '0', 4: '0.5', 5: '0.2'}
+219	219		205							{1: '999', 3: '0.5', 4: '0', 5: '0'}
+220	220		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg901_6.jpg'}
+221	221		205						120.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg1001_2.jpg', 3: '0', 4: '0.5', 5: '0.2'}
+222	222		205							{1: '999', 3: '0.5', 4: '0', 5: '0'}
+223	223		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1001_2.jpg'}
+224	224		205						120.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg1001_6.jpg', 3: '0', 4: '0.5', 5: '0.2'}
+225	225		205							{1: '999', 3: '0.5', 4: '0', 5: '0'}
+226	226		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1001_6.jpg'}
+227	227		205						120.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg1101_2.jpg', 3: '0', 4: '0.5', 5: '0.2'}
+228	228		205							{1: '999', 3: '0.5', 4: '0', 5: '0'}
+229	229		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1101_2.jpg'}
+230	230		205						120.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg1101_7.jpg', 3: '0', 4: '0.5', 5: '0.2'}
+231	231		205							{1: '999', 3: '0.5', 4: '0', 5: '0'}
+232	232		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1101_7.jpg'}
+233	233		205						120.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg1301_7.jpg', 3: '0', 4: '0.5', 5: '0.2'}
+234	234		205							{1: '999', 3: '0.5', 4: '0', 5: '0'}
+235	235		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1301_7.jpg'}
+236	236		205						120.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg1801_3.jpg', 3: '0', 4: '0.5', 5: '0.2'}
+237	237		205							{1: '999', 3: '0.5', 4: '0', 5: '0'}
+238	238		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1801_3.jpg'}
+239	239		205						120.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg1401_2.jpg', 3: '0', 4: '0.5', 5: '0.2'}
+240	240		205							{1: '999', 3: '0.5', 4: '0', 5: '0'}
+241	241		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1401_2.jpg'}
+242	242		205						120.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg1801_2.jpg', 3: '0', 4: '0.5', 5: '0.2'}
+243	243		205							{1: '999', 3: '0.5', 4: '0', 5: '0'}
+244	244		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1801_2.jpg'}
+245	245		205						120.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg1901_4.jpg', 3: '0', 4: '0.5', 5: '0.2'}
+246	246		205							{1: '999', 3: '0.5', 4: '0', 5: '0'}
+247	247		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1901_4.jpg'}
+248	248		205						120.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg2001_9.jpg', 3: '0', 4: '0.5', 5: '0.2'}
+249	249		205							{1: '999', 3: '0.5', 4: '0', 5: '0'}
+250	250		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2001_9.jpg'}
+251	251		205						120.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg2101_3.jpg', 3: '0', 4: '0.5', 5: '0.2'}
+252	252		205							{1: '999', 3: '0.5', 4: '0', 5: '0'}
+253	253		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2101_3.jpg'}
+254	254		205						120.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg2101_5.jpg', 3: '0', 4: '0.5', 5: '0.2'}
+255	255		205							{1: '999', 3: '0.5', 4: '0', 5: '0'}
+256	256		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2101_5.jpg'}
+257	257		205						120.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg2801_08.jpg', 3: '0', 4: '0.5', 5: '0.2'}
+258	258		205							{1: '999', 3: '0.5', 4: '0', 5: '0'}
+259	259		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2801_08.jpg'}
+260	260		205						120.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg2901_01.jpg', 3: '0', 4: '0.5', 5: '0.2'}
+261	261		205							{1: '999', 3: '0.5', 4: '0', 5: '0'}
+262	262		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2901_01.jpg'}
+263	263		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg2401_2.jpg', 3: '0', 4: '0.5', 5: '0.2'}
+264	264		205							{1: '999', 3: '0.5', 4: '0', 5: '0'}
+265	265		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2401_2.jpg'}
+266	266		101	1						{1: 'Assets/Product/Texture/Image/BgStory/BgStory632.jpg'}
+267	267		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+268	268		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory146.png'}
+269	269		201							{1: '1', 2: '500299'}
+270	270		301			DialogEnable				{1: '1', 2: 'Instructor', 3: 'You can show yourself the door now.', 4: '1', 18: '100000440'}
+271	271		301							{3: 'His tone is as rock-hard as ever.'}
+272	272		301							{3: 'Old but powerful, a pair of hands gives you a light push from behind.'}
+273	273		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+274	274		202							{1: '1', 6: '1'}
+275	275		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+276	276		301							"{3: ""You've reached the end of the road. Right behind you, debris falls off the broken staircase, finally making the sound of landing on the ground after what seems like an eternity.""}"
+277	277		301							{3: 'Through the crack in the bricks, you seem to see her.'}
+278	278		302							{2: 'Liv, I promised to save you!', 3: '279'}
+279	279		509						500.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory341.jpg', 2: '1'}
+280	280		201							{1: '1', 2: '500524', 4: '-500'}
+281	281		301							"{1: '1', 2: 'Liv', 3: ""Because I've promised to keep Commandant safe!"", 4: '1', 18: '100000635'}"
+282	282		302							{2: 'And here I am making my promise count!', 3: '283'}
+283	283		301		1		AniZhuanchangBegin			{2: 'Liv', 3: 'And here I am making my promise count!', 4: '1', 18: '100000636'}

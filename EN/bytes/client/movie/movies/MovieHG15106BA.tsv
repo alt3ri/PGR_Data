@@ -1,0 +1,113 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory109.png'}
+2	2		401							{1: '1', 2: '204'}
+3	3		301							{3: '3:00 p.m. Outside the Training Room, Command Central'}
+4	4		301							{3: 'It is one of those rare days when Camu arrives at training on time. Babylonia is as sunny as usual, the artificial weather system making sure that the humidity and UV levels are perfect.'}
+5	5		301							{3: 'It gives Camu a sense of comfort.'}
+6	6		301							{3: 'He is heading towards the battle training room at the end of the corridor. The training has yet to begin, but he is already wondering what snacks he should get after it ends.'}
+7	7		301							{3: 'It is silly, of course, to prepare for something that has yet to happen. To Camu, disasters cannot be averted no matter how well-prepared you are.'}
+8	8		301							{3: 'Yet there is still a spring in his step as he walks. Quite a delightful feeling. Being silly might not be so bad if it lightens you up.'}
+9	9		301				DialogDisable			{3: 'He stops in front of the door with this unfamiliar emotion in mind. The sensor scans his iris and the door slides open.'}
+10	10		502							{1: 'RImgBg1DisableSlow'}
+11	12		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory122.png'}
+12	11		401							{1: '1', 2: '201'}
+13	13		301			DialogEnable				{3: 'And then he hears the familiar voices speaking.'}
+14	14		301							{2: 'Asimov', 3: '...To conclude, you no longer have to complete these missions together from today on.'}
+15	15		301							"{3: '""So this request form...""'}"
+16	16		301							{3: 'Standing there, back towards him, is the figure he has gradually become familiar with recently.'}
+17	17		301							"{2: 'Asimov', 3: ""Bring it to Hassen... or Nikola... or whoever you want. I don't care.""}"
+18	18		301							"{2: 'Asimov', 3: ""There's nothing else I can do for you.""}"
+19	19		301							"{3: '""Then sign here. After the text \'Agree to Terminate Missions\'.""'}"
+20	20		201							{1: '1', 2: '500175'}
+21	21		301				DialogDisable			{1: '1', 2: 'Camu', 3: '...?', 4: '1'}
+22	22		202							{1: '1', 6: '1'}
+23	555		502							{1: 'RImgBg1DisableSlow'}
+24	23		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+25	24		301			DialogEnable				{3: 'Terminate mission?'}
+26	25		301							"{3: ""Something lodges itself in Camu's throat. His previous good mood suddenly feels like no more than a joke. Replacing it is a crippling heaviness that resounds through his mechanical body.""}"
+27	26		301							{3: 'The sunshine from outside the window casts mottled shadows on the wall, as if mocking him.'}
+28	27		301				DialogDisable			{3: 'Before he can even react, he hears a voice that is not his own speak up.'}
+29	28		502							{1: 'RImgBg1DisableSlow'}
+30	29		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory122.png'}
+31	30		301			DialogEnable				"{2: '???', 3: ""Aren't you gonna hear what I have to say?""}"
+32	31		301							"{3: ""The two speakers in the room turn around to see Camu's surprised face.""}"
+33	32		301				DialogDisable			{2: '???', 3: 'If you even care, I want you to know that I refuse to be transferred for any reason.'}
+34	33		502							{1: 'RImgBg1DisableSlow'}
+35	34		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+36	35		301			DialogEnable				"{3: ""Am I the one who's talking?""}"
+37	36		301							"{3: ""So it's my voice, huh?""}"
+38	37		301							"{3: ""Eh, who cares. I'm at rock bottom already. There's nothing I have to lose. That itself makes me free.""}"
+39	38		301				DialogDisable			"{3: ""With this thought in mind, I walk on, even though my M.I.N.D. is utterly empty. Someone, tell me what to do—I'll even take Kamui. In the midst of all the chaos, I hear myself speak in a voice that's clearly not mine...""}"
+40	39		502							{1: 'RImgBg1DisableSlow'}
+41	40		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory122.png'}
+42	41		201							{1: '1', 2: '500175'}
+43	42		301			DialogEnable				{1: '1', 2: 'Camu', 3: '...I refuse to be transferred.', 4: '1'}
+44	43		302							{2: '...Camu??', 3: '44'}
+45	44		301							"{2: 'Camu', 3: ""You people brought me here. You people assigned me to 【kuroname】. I don't want any explanations or any excuses."", 4: '1'}"
+46	45		301							"{2: 'Camu', 3: ""If you want to transfer me somewhere else simply because you believe I'd be a better fit elsewhere, I refuse. I will not allow anyone who's not 【kuroname】 to touch my M.I.N.D."", 4: '1'}"
+47	46		301							{2: 'Camu', 3: 'You hear that?', 4: '1'}
+48	47		302							{2: 'Wait...', 3: '48'}
+49	48		202							{1: '1'}
+50	49		301							{3: 'The dark Construct is standing by the door, veins on his temples throbbing, as wrathful as he had been a number of days ago.'}
+51	50		201							{1: '1', 2: '500175', 3: '5'}
+52	51		301							"{1: '1', 2: 'Camu', 3: 'Don\'t ""wait"" me!', 4: '1'}"
+53	52		301							{2: 'Camu', 3: 'I hate waiting. I hate being on the receiving end. I hate being the one who always has to comply!', 4: '1'}
+54	53		301							"{2: 'Camu', 3: ""What about your so-called sense of responsibility as a commandant? You brought me here... forced me to do all sorts of things like a clown... and then you're just leaving me? You're just handing me over to someone else?"", 4: '1'}"
+55	54		302							"{2: ""I'm not—"", 3: '55'}"
+56	55		301							"{2: 'Camu', 3: ""You're the one who gave me a gift I didn't want... the one who forced me to train with you... the one who acted like an idiot to defend me."", 4: '1'}"
+57	56		301							"{2: 'Camu', 3: 'You\'re the human who taught me that it\'s safe to feel ""love"". The human who extended your hand to me.', 4: '1'}"
+58	57		301							"{2: 'Camu', 3: ""You barged into my life without invitation... and decided to just abandon me without a care. You're worse than my mentor!"", 4: '1'}"
+59	58		202							{1: '1'}
+60	59		301							{3: 'Rage boiling into inarticulate abandon, Camu bursts out laughing instead. He crosses his arms around himself defensively.'}
+61	60		301							"{3: 'You can hear his heaving breaths and thumping heartbeat. To a Construct, these features simply ""simulate biological reactions,"" but at this moment they feel like proof of his red-hot passion, proof that he\'s alive.'}"
+62	61		201							{1: '1', 2: '500175'}
+63	62		301							{1: '1', 2: 'Camu', 3: 'Do I look like a monster, huh?', 4: '1'}
+64	63		301							"{2: 'Camu', 3: ""I don't care how those people choose to deal with me."", 4: '1'}"
+65	64		301							"{2: 'Camu', 3: ""All I want to know is what I'm like in your eyes."", 4: '1'}"
+66	65		301							{2: 'Camu', 3: 'When those guys from Babylonia asked if I wanted to stay with you, I said yes.', 4: '1'}
+67	66		301							{2: 'Camu', 3: 'Now, I want your answer.', 4: '1'}
+68	67		202							{1: '1'}
+69	68		301							{3: '...'}
+70	69		301							{3: 'Right on cue, Asimov starts gathering his files.'}
+71	70		201							{1: '1', 2: '500004'}
+72	71		301							"{1: '1', 2: 'Asimov', 3: ""I'll let you two talk. Gotta go analyze some data."", 4: '1'}"
+73	72		302							{2: 'W-wait!', 3: '73'}
+74	73		202							{1: '1'}
+75	222		401							{1: '2', 2: '1516'}
+76	74		301							{3: 'Asimov simply ignores it all and walks past Camu towards the door.'}
+77	75		301							{3: 'You turn to Camu, who looks utterly humiliated.'}
+78	76		302							{2: 'You misunderstood.', 3: '77'}
+79	77		201							{1: '1', 2: '500175'}
+80	78		301							{1: '1', 2: 'Camu', 3: '...?', 4: '1'}
+81	79		401							{1: '1', 2: '208'}
+82	80		302							"{2: ""I'm not leaving you."", 3: '81'}"
+83	81		302							{2: 'We were talking about ending the simulated missions.', 3: '82'}
+84	82		302							{2: 'The Council approved of you fighting actual battles.', 3: '86'}
+85	86		301							{2: 'Camu', 3: '...Huh?', 4: '1'}
+86	87		301							{3: 'The youth looks so dumbfounded you almost feel guilty.'}
+87	88		302							"{2: ""Also, I feel like I'm understanding you better..."", 3: '89'}"
+88	89		302							{2: 'Not because of the M.I.N.D. connection...', 3: '90'}
+89	90		302							{2: 'But because we spent time together...', 3: '91'}
+90	91		302							{2: 'And that was how I got to know you better.', 3: '92'}
+91	92		301							{2: 'Camu', 3: '...', 4: '1'}
+92	93		302							"{2: ""Even if I didn't really understand you that well..."", 3: '94'}"
+93	94		302							"{2: ""I'll still work hard in my own way."", 3: '95'}"
+94	95		302							"{2: ""I'll do my best to be a good commandant."", 3: '96'}"
+95	96		301							{2: 'Camu', 3: '...', 4: '1'}
+96	97		301							"{2: 'Camu', 3: ""You're my commandant."", 4: '1'}"
+97	98		301							"{2: 'Camu', 3: 'This fact makes me feel... ""safe"".', 4: '1'}"
+98	99		202							{1: '1'}
+99	100		301							{3: 'Camu steps forward, shortening the distance between the two of you, his dark pupils glowing.'}
+100	101		201							{1: '1', 2: '500175'}
+101	102		301							"{1: '1', 2: 'Camu', 3: ""From now on, I won't wait for you to extend your hand anymore."", 4: '1'}"
+102	103		202							{1: '1'}
+103	104		301							"{3: ""There is a knock on the door and you hear Liv's voice.""}"
+104	105		301							{2: 'Liv', 3: 'Excuse me—Oh, Commandant, are you busy?'}
+105	106		302							"{2: ""What's going on?"", 3: '107'}"
+106	107		301							"{2: 'Liv', 3: ""I ran into Asimov... He said you're busy in the training room and we shouldn't disturb you.""}"
+107	108		301							{3: 'Your face heats up suddenly for no reason. Camu takes a step back. His gaze meets yours, sending what feels like an electric current down your spine before moving away.'}
+108	109		201							{1: '1', 2: '500175'}
+109	110		301							{1: '1', 2: 'Camu', 3: '...Hey.', 4: '1'}
+110	111		301							"{2: 'Camu', 3: ""I'm craving cheese rolls."", 4: '1'}"
+111	112		204							{1: '1', 2: '1'}
+112	113		301		1		AniZhuanchangBegin			"{2: 'Camu', 3: ""Let's go get some after training tonight."", 4: '1'}"

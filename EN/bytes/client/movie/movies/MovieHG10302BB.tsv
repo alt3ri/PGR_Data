@@ -1,0 +1,24 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '1031001'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Liv', 3: ""I'll do my best to complete the special training, Commandant!"", 4: '1'}"
+5	5		302							"{2: 'What exactly are we doing?', 3: '6', 4: ""I'll also do my best to help you."", 5: '6'}"
+6	6		301							"{2: 'Liv', 3: ""I've compiled several training programs after analyzing the data... but there's something I want to ask you first, Commandant."", 4: '1'}"
+7	7		302							"{2: 'Sure.', 3: '8', 4: ""Why don't we just do what the programs say?"", 5: '9'}"
+8	8	10	301							"{2: 'Liv', 3: ""Wonderful! I knew you'd help me, Commandant."", 4: '1'}"
+9	9		301							"{2: 'Liv', 3: ""It'll take quite a long time if we do all of them, so I thought it's best if you decide which one we should do, Commandant."", 4: '1'}"
+10	10		301							"{2: 'Liv', 3: ""I'm uncertain about what criteria we should be using to select our training program. Commandant, what kind of Construct is the most helpful to you?"", 4: '1'}"
+11	11		302							"{2: ""As long as they're helpful in combat."", 3: '12', 4: 'Constructs that are helpful outside combat as well.', 5: '13'}"
+12	12	14	301							"{2: 'Liv', 3: ""Combat is of course our top priority, isn't it?"", 4: '1'}"
+13	13		301							{2: 'Liv', 3: 'Outside combat? Like being able to handle other duties?', 4: '1'}
+14	14		301							{2: 'Liv', 3: 'Another question, then. What kind of personality do you think is good for a Construct?', 4: '1'}
+15	15		301							{2: 'Liv', 3: 'For example, whose personality would you prefer: Lucia or Nanami?', 4: '1'}
+16	16		302							"{2: ""They're on two ends of a spectrum, aren't they?"", 3: '17', 4: ""I don't know how to answer that out of the blue."", 5: '18'}"
+17	17	19	301							"{2: 'Liv', 3: ""Two ends, are they... but I can't think of a better pair to compare..."", 4: '1'}"
+18	18		301							"{2: 'Liv', 3: ""I'm sorry, Commandant! Did that question make you uncomfortable?"", 4: '1'}"
+19	19		301							{2: 'Liv', 3: 'Then... my last question, Commandant... Do you...', 4: '1'}
+20	20		301							{2: 'Liv', 3: 'Do you...', 4: '1'}
+21	21		302							{2: 'What is it?', 3: '22', 4: 'Yes?', 5: '22'}
+22	22		301							{2: 'Liv', 3: 'No, forget it.', 4: '1'}
+23	23		301		1		AniZhuanchangBegin			"{2: 'Liv', 3: ""Anyway, I understand what you're looking for in a Construct now, Commandant. I'll compile the data and present you with a new training program!"", 4: '1'}"

@@ -1,0 +1,274 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1165.jpg'}
+2	2		401							{1: '1', 2: '55'}
+3	3		301			DialogEnable				{3: 'Less than ten minutes after the third round ended, Faulkner, Rabio, and Eleanor confirmed their selections for the next round in sequence.'}
+4	4		301							{3: 'Then Collins.'}
+5	5		301							{3: 'The ten-second countdown appears on the screen of your terminal. If you do not make a choice now, you will be defeated.'}
+6	6		301							"{3: ""Faulkner and Rabio's sudden shift in attitude has pushed things toward chaos. They're already pushing to move the game into the next round.""}"
+7	7		302							{2: '(Choose rock)', 3: '8', 4: '(Choose scissors)', 5: '8', 6: '(Leave it to instinct)', 7: '8'}
+8	8		301				DialogDisable			{3: 'The result is submitted immediately.'}
+9	9		401							{1: '2', 2: '897'}
+10	10		307							{1: 'Result of this round: No. 3 and No. 4 are defeated.', 3: '50', 4: 'ff4e4eff'}
+11	11		301							{3: 'Result of this round: No. 3 and No. 4 are defeated.'}
+12	12		307							{2: '1'}
+13	13		401							{1: '2', 2: '4005'}
+14	14		301			DialogEnable			500.0	{3: 'You inject yourself with the serum before the red on the screen can fully sear your vision.'}
+15	15		301				AniZhuanchangBegin			{3: 'The concentration indicator on the screen suddenly jumps to the third space.'}
+16	16		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory895.jpg'}
+17	17		104							{1: '200|30|-350', 2: '0'}
+18	18		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.7', 5: '0'}
+19	19		301			AniZhuanchangEnd				{3: 'Lilith sits in a leather chair with her feet propped up on another undamaged chair.'}
+20	20		201							{1: '1', 2: '501130', 3: '8'}
+21	21		301							{1: '1', 2: 'Lilith', 3: 'Things are getting a bit stale...', 4: '1', 18: '100007503'}
+22	22		204							{1: '1', 2: '4'}
+23	23		301							{2: 'Lilith', 3: 'Deception, betrayal... such a played-out aesthetic, Aunt.', 4: '1', 18: '100007504'}
+24	24		202							{1: '1'}
+25	25		401							{1: '2', 2: '2938'}
+26	26		301							{3: 'She breaks open a fortune cookie and takes out the well-preserved slip of paper from inside.'}
+27	27		201							{1: '1', 2: '501130', 3: '5'}
+28	28		301							"{1: '1', 2: 'Lilith', 3: '""Luck sought is not luck.""', 4: '1', 18: '100007505'}"
+29	29		204							{1: '1'}
+30	30		301							"{2: 'Lilith', 3: ""Thought something different might happen, but they're just left hoping for a lucky break."", 4: '1', 18: '100007506'}"
+31	31		202							{1: '1'}
+32	32		401							{1: '2', 2: '2979'}
+33	33		301				AniZhuanchangBegin			"{3: ""Lilith taps a card on the terminal screen. She doesn't even properly look at the available options.""}"
+34	34		205							{1: '999'}
+35	35		101				DialogDisable			{1: 'Assets/Product/Texture/Image/BgStory/BgStory1165.jpg'}
+36	36		401							{1: '2', 2: '897'}
+37	37		307			AniZhuanchangEnd				{1: 'Result of this round: No. 5 is defeated.', 3: '50', 4: 'ff4e4eff'}
+38	38		301							{3: 'Result of this round: No. 5 is defeated.'}
+39	39		307							{2: '1'}
+40	40		201							{1: '18', 2: '501130', 3: '9', 4: '-175', 5: '-260', 6: '250'}
+41	41		301			DialogEnable				{1: '1', 2: 'Eleanor', 3: 'Speaking of which, Mr. Collins and Mr. Rabio have had some really good luck these past two rounds...', 4: '18', 18: '100007507'}
+42	42		202							{1: '18'}
+43	43		301							"{3: ""Eleanor's voice comes through the terminal as she speaks over the public channel.""}"
+44	44		301							"{3: ""Meanwhile, the Punishing Virus concentration indicator on the screen flashes a warning. Danger is closing in. If the levels rise any higher, they'll breach the protective suits' limits.""}"
+45	45		301							"{3: ""Collins and Rabio's card plays are perfectly identical—a pattern that might explain their winning streak.""}"
+46	46		301							{3: 'But Collins has no reason to cooperate with Rabio.'}
+47	47		302							{2: '(Pick up the terminal)', 3: '48'}
+48	48		301							{3: 'As stated at the beginning of the broadcast, players can participate in the game without wearing terminals.'}
+49	49		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+50	50		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1167.jpg'}
+51	51		504							{1: '0.7'}
+52	52		401							{1: '2', 2: '2924'}
+53	53		201							{1: '1', 2: '500354', 7: '1'}
+54	54		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 2: '2'}
+55	55		301			PanelActor1Shake				{1: '1', 3: 'After the gunshot rang out, the bullet likely hit the mechanoid who called himself Collins.'}
+56	56		306							{1: '1'}
+57	57		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab'}
+58	58		202							{1: '1'}
+59	59		301							"{3: ""This suggests one thing: the rooms aren't completely isolated from each other.""}"
+60	60		306							
+61	61		301				DialogDisable			"{3: ""And if that's the case, the killer would only need to take Collins' terminal to impersonate him and carry out his previous operations.""}"
+62	62		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+63	63		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1165.jpg'}
+64	64		504							{1: '0'}
+65	65		302							{2: '(To find a way out...)', 3: '66'}
+66	66		302							{2: '(The three remaining survivors must stay in contact.)', 3: '67'}
+67	67		306							{1: '1'}
+68	68		201							{1: '1', 2: '501075', 4: '-450', 5: '-150'}
+69	69		201							{1: '2', 2: '501131', 4: '450', 5: '-100'}
+70	70		301			DialogEnable				{1: '1', 3: 'And the sources of help available are a sensitive, easily angered rogue Construct and a mysterious lady of unknown background.'}
+71	71		306							
+72	72		202				DialogDisable			{1: '1', 2: '2'}
+73	73		302							"{2: ""(As you thought, you can't leave risks to uncertainty.)"", 3: '74'}"
+74	74		302							"{2: ""(Connect to Faulkner's private channel)"", 3: '75'}"
+75	75		401							{1: '2', 2: '4884'}
+76	76		302							{2: 'Faulkner.', 3: '77'}
+77	77		301			DialogEnable	DialogDisable			"{3: ""As expected, there's no response.""}"
+78	78		302							{2: 'Making hasty choices would only make things worse.', 3: '79'}
+79	79		302							{2: 'Collins and Rabio have been consistently choosing the same time options for several rounds.', 3: '80'}
+80	80		302							"{2: ""It's clear now: they must know each other's moves in advance."", 3: '81'}"
+81	81		302							{2: 'No matter what method they use.', 3: '82'}
+82	82		301			DialogEnable				{3: 'Still silence.'}
+83	83		301							{3: 'Based on his past behavior, he should have made his decision by now. But this time, he hesitates.'}
+84	84		301							{3: 'Seizing the opportunity during this brief pause, Eleanor takes the initiative and submits her choices for the round ahead of him.'}
+85	85		302							{2: 'Consider the real purpose behind the private channels they set up.', 3: '86'}
+86	86		301				AniZhuanchangBegin			{3: 'To sow distrust. To encourage conspiracy. To pit players against one another in a web of attacks and betrayal.'}
+87	87		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1174.jpg'}
+88	88		103							{1: '1.6', 2: '524|-21|0'}
+89	89		201							{1: '1', 2: '501074', 7: '1'}
+90	90		301			AniZhuanchangEnd				{1: '1', 2: 'Faulkner', 3: 'Continue.', 4: '1', 18: '100007508'}
+91	91		202							{1: '1'}
+92	92		301							{3: 'The Construct surveys the devastated room interior, the terminal carelessly tossed into a corner.'}
+93	93		201							{1: '18', 2: '500626', 4: '-300', 5: '-200', 6: '300'}
+94	94		301							"{1: '1', 2: '""Player No. 4""', 3: 'My draw for this round is scissors and paper.', 4: '18'}"
+95	95		202							{1: '18'}
+96	96		201							{1: '1', 2: '501074'}
+97	97		301							{1: '1', 2: 'Faulkner', 3: 'Paper.', 4: '1', 18: '100007509'}
+98	98		202							{1: '1'}
+99	99		301							{3: 'Faulkner feels utterly exhausted, both physically and mentally. But beneath the fatigue, a sharp, burning anger begins to take hold.'}
+100	100		301							{3: 'The virus is already eating away at his mind.'}
+101	101		301							"{3: '""This can\'t go on,"" he thinks, forcing himself to stay calm.'}"
+102	102		401							{1: '2', 2: '4811'}
+103	103		301				AniZhuanchangBegin			{3: 'The voice from the other end of the terminal helps Faulkner regain some composure. He stands up.'}
+104	104		101				DialogDisable			{1: 'Assets/Product/Texture/Image/BgStory/BgStory1165.jpg'}
+105	105		302			AniZhuanchangEnd				{2: 'Sure.', 3: '109', 4: 'Paper?', 5: '106'}
+106	106		201							{1: '18', 2: '501074', 4: '-300', 5: '-400', 6: '400'}
+107	107		301			DialogEnable				{1: '1', 2: 'Faulkner', 3: 'Right.', 4: '18', 18: '100007510'}
+108	108	110	202							{1: '18'}
+109	109		502							{1: 'DialogEnable'}
+110	110		301							"{3: ""Those who have already made their choices can't receive private communications. Eleanor will likely have to wait until the next round to make contact.""}"
+111	111		301							{3: 'After Faulkner makes his choice, you make yours as well.'}
+112	112		301				DialogDisable			{3: 'The results begin to unfold.'}
+113	113		401							{1: '2', 2: '897'}
+114	114		307							{1: 'Result of this round: No. 1 and No. 2 are defeated.', 3: '50', 4: 'ff4e4eff'}
+115	115		301							{3: 'Result of this round: No. 1 and No. 2 are defeated.'}
+116	116		307							{2: '1'}
+117	117		301			DialogEnable				"{3: ""Eleanor's choice aligned with mine and Faulkner's—maybe by luck, maybe not. Either way, it led to Rabio and Collins' defeat.""}"
+118	118		401							{1: '2', 2: '5315'}
+119	119		301				AniZhuanchangBegin			{3: 'The filtering device, whose operational sounds had become nearly inaudible, begins to hum once more. The Punishing concentration decreases accordingly.'}
+120	120		402							{1: '5315'}
+121	121		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1174.jpg'}
+122	122		103				DialogDisable			{1: '1.6', 2: '524|-21|0'}
+123	123		201			AniZhuanchangEnd				{1: '1', 2: '501146', 5: '15', 6: '-30', 7: '1'}
+124	124		401							{1: '2', 2: '4636'}
+125	125		203							{1: '1', 2: '0.15', 4: '-50', 5: '-30'}
+126	126		301			DialogEnable				{1: '1', 3: 'Rabio gently pushes the door open, slipping silently out of the ventilation duct and landing softly on the floor.'}
+127	127		301							"{3: ""Stepping into a room with an even higher concentration of the virus fills him with a pang of regret, but he can't afford to let the remaining enemies on the field form an alliance.""}"
+128	128		201							{1: '18', 2: '501074', 4: '-300', 5: '-400', 6: '400'}
+129	129		301				DialogDisable			"{1: '1', 2: 'Faulkner', 3: ""Prepare your last words, Kurono's lapdog."", 4: '18', 18: '100007511'}"
+130	130		202							{1: '1', 2: '18', 6: '1'}
+131	131		401							{1: '2', 2: '2690'}
+132	132		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+133	133		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+134	134		401							{1: '2', 2: '2690'}
+135	135		101	1			AniZhuanchangBegin			{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 4: '4'}
+136	136		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1145.jpg'}
+137	137		101							{4: '4', 5: '1'}
+138	138		201							{1: '1', 2: '500965', 4: '-1200', 5: '300', 6: '2500', 7: '1'}
+139	139		201							{1: '2', 2: '500965', 4: '-700', 5: '-800', 6: '2500', 7: '1'}
+140	140		201							{1: '3', 2: '500965', 4: '700', 5: '-800', 6: '2500', 7: '1'}
+141	141		201							{1: '4', 2: '500965', 4: '1200', 5: '300', 6: '2500', 7: '1'}
+142	142		201							{1: '5', 2: '500965', 5: '1200', 6: '2500', 7: '1'}
+143	143		109							{1: '1', 2: '<color=#ffffffff><size=35>No. 1</size></color>', 3: '-332', 4: '-30', 9: '2'}
+144	144		109							{1: '2', 2: '<color=#ffffffff><size=35>No. 2</size></color>', 3: '-195', 4: '-325', 9: '2'}
+145	145		109							{1: '3', 2: '<color=#ffffffff><size=35>No. 3</size></color>', 3: '188', 4: '-325', 9: '2'}
+146	146		109							{1: '4', 2: '<color=#ffffffff><size=35>No. 4</size></color>', 3: '325', 4: '-30', 9: '2'}
+147	147		109							{1: '5', 2: '<color=#ffffffff><size=35>No. 5</size></color>', 3: '-3', 4: '218', 9: '2'}
+148	148		203			AniZhuanchangEnd				{1: '4', 2: '0.4', 3: '1200', 4: '300', 5: '2455'}
+149	149		302							{2: 'What did you just say?', 3: '150'}
+150	150		201							{1: '18', 2: '501074', 4: '-300', 5: '-400', 6: '400'}
+151	151		301			DialogEnable				{1: '1', 2: 'Faulkner', 3: 'What are you playing this round?', 4: '18', 5: '3', 18: '100007512'}
+152	152		302							{2: 'Rock and scissors.', 3: '153'}
+153	153		301							{2: 'Faulkner', 3: 'Rock.', 4: '18', 5: '3', 18: '100007513'}
+154	154		302							{2: 'To be fair, I should also know what options you received.', 3: '155'}
+155	155		301							{2: 'Faulkner', 3: 'Does it even matter?', 4: '18', 5: '3', 18: '100007514'}
+156	156		302							{2: 'Faulkner, trust goes both ways.', 3: '157'}
+157	157		301							{2: 'Faulkner', 3: 'Rock and... paper.', 4: '18', 5: '3', 18: '100007515'}
+158	158		203							{1: '4', 2: '0.4', 3: '1200', 4: '300', 5: '2500'}
+159	159		202							{1: '18'}
+160	160		301				DialogDisable			"{3: ""Too much of a Mr. Goody-Two-Shoes—out of all the nonsense Rabio has spouted, it's the only thing Faulkner agrees with.""}"
+161	161		401							{1: '2', 2: '4112'}
+162	162		109							{1: '6', 2: '<color=#ffffffff><size=30>No. 1: Paper </size></color>', 3: '600', 4: '150', 9: '2'}
+163	163		201						800.0	{1: '1', 2: '501141', 4: '-1200', 5: '300', 6: '2500'}
+164	164		401							{1: '2', 2: '4112'}
+165	165		109							{1: '7', 2: '<color=#ffffffff><size=30>No. 2: Paper </size></color>', 3: '600', 4: '100', 9: '2'}
+166	166		201						800.0	{1: '2', 2: '501141', 4: '-700', 5: '-800', 6: '2500', 7: '1'}
+167	167		401							{1: '2', 2: '4112'}
+168	168		109							{1: '8', 2: '<color=#ffffffff><size=30>No. 3: Paper </size></color>', 3: '600', 4: '50', 9: '2'}
+169	169		201						800.0	{1: '3', 2: '501141', 4: '700', 5: '-800', 6: '2500', 7: '1'}
+170	170		401							{1: '2', 2: '4112'}
+171	171		109							{1: '9', 2: '<color=#ffffffff><size=30>No. 4: Rock</size></color>', 3: '600', 9: '2'}
+172	172		201						800.0	{1: '4', 2: '501142', 4: '1200', 5: '300', 6: '2500', 7: '1'}
+173	173		401							{1: '2', 2: '4112'}
+174	174		109							{1: '10', 2: '<color=#ffffffff><size=30>No. 5: Paper </size></color>', 3: '600', 4: '-50', 9: '2'}
+175	175		201							{1: '5', 2: '501141', 5: '1200', 6: '2500', 7: '1'}
+176	176		301				AniZhuanchangBegin			{3: 'No. 1: Paper\\nNo. 2: Paper\\nNo. 3: Paper\\nNo. 4: Rock\\nNo. 5: Paper', 4: '1', 5: '2', 6: '3', 7: '4', 8: '5'}
+177	177		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '1'}
+178	178		110							
+179	179		401						2000.0	{1: '1', 2: '36'}
+180	180		401							{1: '2', 2: '66'}
+181	181		101				DialogEnable			{1: 'Assets/Product/Texture/Image/BgStory/BgStory1165.jpg'}
+182	182		401							{1: '2', 2: '5315'}
+183	183		301			AniZhuanchangEnd				"{3: ""Before the results even appear, you've already strapped the terminal back onto your hand.""}"
+184	184		301							{3: 'Starting with the most unstable factors is definitely too risky.'}
+185	185		301							"{3: ""But then again, from every other angle, you can't get a read on Eleanor. She never shows a hint of emotion, making it impossible to figure out where she stands.""}"
+186	186		402							{1: '5315'}
+187	187		301							{3: 'Your eyes scan the dazzling colors in the results column, just as the hum of the filtration device nearby cuts out again.'}
+188	188		301							{3: 'As the device ceases operation, the Punishing concentration in the room begins to rise. On the terminal, the indicator gradually spreads from light green at the far end, approaching the X-shaped endpoint.'}
+189	189		302							"{2: ""But it's not the time to give up yet..."", 3: '190'}"
+190	190		301							{3: 'The process of adjusting the descending walls is designed to keep everyone isolated, ensuring no one can collaborate or interfere.'}
+191	191		301							"{3: ""With randomly assigned participant positions... this device couldn't possibly create perfect divisions.""}"
+192	192		301							"{3: ""If the game's goal was simply to weed out the lucky, they wouldn't have built it with such intricate mechanisms.""}"
+193	193		301							{3: ' The designers likely left this loophole open on purpose, maybe even encouraging the participants to exploit it.'}
+194	194		301				DialogDisable			{3: 'More importantly, your opponents have most likely already done the same.'}
+195	195		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1168.jpg', 3: '0', 4: '1', 5: '1'}
+196	196		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1168.jpg'}
+197	197		205							{1: '999'}
+198	198		301			DialogEnable				{3: 'And so, you finally return once more to the entrance gate damaged by the collapsed wall.'}
+199	199		401							{1: '2', 2: '2779'}
+200	200		301							{3: 'Pushing aside the debris piled atop the twice-damaged ruins, you find a gap just wide enough for one person to squeeze through.'}
+201	201		401							{1: '2', 2: '5321'}
+202	202		301							{3: 'After a quick check of the Standard Pistol, you slide it into your waistband. Then, you grab your combat knife and slice off every Babylonia emblem and identifying mark from your clothes.'}
+203	203		301							{3: 'Better not to reveal too many clues about identity before confirming what the other party knows.'}
+204	204		301				DialogDisable			{3: 'Shredded fabric litters the floor. The helmet of the protective suit is covered with numerous scratches. The final step is to inject the Serum.'}
+205	205		302							"{2: 'Now only one choice left...', 3: '206', 4: ""It's to embrace uncertainty and take the risk."", 5: '206'}"
+206	206		104						400.0	{1: '0|10|-20', 2: '0.3'}
+207	207		104						350.0	{1: '0|0|-50', 2: '0.3'}
+208	208		301			DialogEnable	AniZhuanchangBegin			{3: 'Stepping forward, you notice the Punishing concentration rising steadily on the terminal display.'}
+209	209		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1165.jpg'}
+210	210		201							{1: '1', 2: '501130', 5: '-80', 6: '100', 7: '1'}
+211	211		301			AniZhuanchangEnd				{1: '1', 2: 'Lilith', 3: 'If we lose this round, the Punishing Virus concentration in the room...', 4: '1', 18: '100007516'}
+212	212		301							"{2: 'Lilith', 3: ""Ordinary humans probably won't survive, right?"", 4: '1', 18: '100007517'}"
+213	213		301							{3: 'Lilith sits at a card table, utterly bored, and picks up her terminal.'}
+214	214		204							{1: '1', 2: '9'}
+215	215		301				DialogDisable			{2: 'Lilith', 3: 'Still kicking, Mr. Goody-Two-Shoes?', 4: '1', 18: '100007518'}
+216	216		302							{2: 'Ah, of course.', 3: '217'}
+217	217		302							"{2: ""I'm alive and well."", 3: '218'}"
+218	218		202							{1: '1'}
+219	219		301			DialogEnable				"{3: ""Lilith hears the voice, but it's not coming from the terminal in her hand.""}"
+220	220		301							{3: 'She looks toward the ruins where a figure in a standard protective suit appears before her.'}
+221	221		201							{1: '1', 2: '501130', 5: '-80', 6: '100'}
+222	222		301							"{1: '1', 2: 'Lilith', 3: ""So, you've decided to go full beast mode after all."", 4: '1', 18: '100007519'}"
+223	223		301							{3: 'She maintains her enigmatic smile.'}
+224	224		204							{1: '1', 2: '9'}
+225	225		301							{2: 'Lilith', 3: 'Should I be surprised you managed to cross over from another room, or should I say I was expecting you?', 4: '1', 18: '100007520'}
+226	226		204							{1: '1'}
+227	227		301							"{2: 'Lilith', 3: ""So, these rooms aren't completely isolated."", 4: '1', 18: '100007521'}"
+228	228		204							{1: '1', 2: '2'}
+229	229		301							{2: 'Lilith', 3: 'By paying a certain price—like you did—you can reach other areas.', 4: '1', 18: '100007522'}
+230	230		302							{2: '(Do not respond)', 3: '231'}
+231	231		202							{1: '1', 6: '1'}
+232	232		104							{1: '0|0|-50', 2: '0.4'}
+233	233		301							{3: 'You, who are in a protective suit, approach Lilith.'}
+234	234		201							{1: '1', 2: '501130', 5: '-50', 6: '50'}
+235	235		301							"{1: '1', 2: 'Lilith', 3: ""I saw the results from earlier. You tried to reach out to Mr. Faulkner, didn't you?"", 4: '1', 18: '100007523'}"
+236	236		204							{1: '1', 2: '8'}
+237	237		301							{2: 'Lilith', 3: 'Too bad he changed his tune so quickly.', 4: '1', 18: '100007524'}
+238	238		302							{2: 'Perhaps he has his own plans.', 3: '239', 4: '(Remain silent)', 5: '241'}
+239	239		204							{1: '1', 2: '9'}
+240	240		301							"{2: 'Lilith', 3: ""Now's not the time for sentimentality."", 4: '1', 18: '100007525'}"
+241	241		202							{1: '1', 6: '1'}
+242	242		104							{1: '0|0|-100', 2: '0.4'}
+243	243		301				DialogDisable			{3: 'You continue walking forward. On the terminal strapped to your arm, the Punishing Virus concentration has reached an alarmingly high level.'}
+244	244		401				RImgBg1Shake			{1: '2', 2: '2975'}
+245	245		401							{1: '2', 2: '4280'}
+246	246		111						1200.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+247	247		302							{2: 'Uh...', 3: '248', 4: 'Huff...', 5: '248'}
+248	248		201							{1: '1', 2: '501130', 3: '8'}
+249	249		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Lilith', 3: ""Speaking of which, you didn't come here for chit-chat, did you?"", 4: '1', 18: '100007526'}"
+250	250		302							{2: 'The outcome of the last round made one thing crystal clear:', 3: '251'}
+251	251		302							{2: 'If only you have realized earlier that Rabio and Collins had already formed an alliance...', 3: '252'}
+252	252		302							{2: 'And now, it seems this alliance has grown to three.', 3: '253'}
+253	253		204							{1: '1'}
+254	254		301			DialogEnable	DialogDisable			{2: 'Lilith', 3: 'You seem awfully confident about that.', 4: '1', 18: '100007527'}
+255	255		302							"{2: ""I've already been in contact with Faulkner."", 3: '256'}"
+256	256		302							{2: 'He has no reason to betray me...', 3: '257'}
+257	257		302							{2: 'Unless he has already contacted Rabio.', 3: '258'}
+258	258		301			DialogEnable	DialogDisable			"{3: ""Lilith gauges the distance between you and herself, suspecting that you're doing the same.""}"
+259	259		302							{2: 'I told you we should have evacuated as many people as possible.', 3: '260'}
+260	260		302							"{2: ""Even though now you're the only one left standing with me."", 3: '261'}"
+261	261		204							{1: '1', 2: '2'}
+262	262		301			DialogEnable				{3: 'The next two sentences bring that satisfied smile back to her face.'}
+263	263		306							{1: '1'}
+264	264		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0.4'}
+265	265		204							{1: '1', 2: '8'}
+266	266		301							{3: 'Could it be that the hunter is carefully disguising themselves, biding their time for the perfect moment to strike?'}
+267	267		204							{1: '1', 2: '9'}
+268	268		301							{3: 'So then, how long does the hunter plan to keep hiding their true intentions?'}
+269	269		306							
+270	270		205						400.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '0', 5: '0.4'}
+271	271		205							{1: '999'}
+272	272		204							{1: '1'}
+273	273		301		1		AniZhuanchangBegin			{2: 'Lilith', 3: 'But how are you going to prove you can deliver?', 4: '1', 18: '100007528'}

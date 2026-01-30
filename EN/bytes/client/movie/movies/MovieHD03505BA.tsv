@@ -1,0 +1,92 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg'}
+2	2		401							{1: '1', 2: '181'}
+3	3		301			DialogEnable				"{3: ""On both sides of Constellia's shopping street, vibrant displays of melons and other fruits line the stalls. Lucia stands among them, locking eyes with you the moment you arrive.""}"
+4	4		201							{1: '1', 2: '500994', 3: '2'}
+5	5		301							"{1: '1', 2: 'Lucia', 3: ""You're here, Commandant."", 4: '1'}"
+6	6		202							{1: '1'}
+7	7		301							"{3: ""She walks up to you and naturally takes your hand, as if it's the most ordinary thing in the world.""}"
+8	8		301							{3: 'A soft breeze passes between you right now, drifting gracefully ahead.'}
+9	9		401							{1: '2', 2: '4294'}
+10	10		301							{3: 'Clink, clink—'}
+11	11		301							{3: 'The wind chime outside the fruit shop jingles with a bright, clear note, as if beckoning new customers inside.'}
+12	12		201							{1: '1', 2: '500994', 3: '2'}
+13	13		301							{1: '1', 2: 'Lucia', 3: 'Commandant, shall we go pick some fruit?', 4: '1'}
+14	14		302				AniZhuanchangBegin			"{2: ""Okay, let's go."", 3: '15'}"
+15	15		202							{1: '1', 6: '1'}
+16	16		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory716.jpg'}
+17	17		301			AniZhuanchangEnd				{3: 'You enter the fruit store, welcomed by sweet aromas. A vivid spectrum stretches before you as freshly washed fruits glisten under the lights on the sampling counter.'}
+18	18		201							{1: '1', 2: '500994', 3: '2'}
+19	19		301							"{1: '1', 2: 'Lucia', 3: ""You've been busy lately—fresh fruit might be exactly what you need to refuel and stay healthy."", 4: '1'}"
+20	20		202							{1: '1'}
+21	21		301							{3: 'Still talking, you pass a variety of fruits until a display of bright-red strawberries catches your eye.'}
+22	22		301							{3: 'Lucia, as though sensing your thoughts, picks up a fork and plucks a strawberry from the sample tray.'}
+23	23		201							{1: '1', 2: '500994', 3: '2'}
+24	24		301							{1: '1', 2: 'Lucia', 3: 'These strawberries look pretty good, Commandant. Want to give them a try?', 4: '1'}
+25	25		302							{2: '(Take a bite)', 3: '26'}
+26	26		301				DialogDisable			"{3: ""The sweet-and-sour flavor blossoms on your tongue, and the fresh fruit's unique fragrance spreads through your mouth.""}"
+27	27		302							{2: 'Tastes pretty good.', 3: '28', 4: 'Not bad.', 5: '28', 6: 'This strawberry tastes exactly like strawberries should.', 7: '28'}
+28	28		302							"{2: ""Lucia, why don't you try one too?"", 3: '29'}"
+29	29		301			DialogEnable				{3: 'Lucia leans in and takes a bite of the strawberry. As she chews, her crimson eyes shine even brighter.'}
+30	30		201							{1: '1', 2: '500994', 3: '1'}
+31	31		301							"{1: '1', 2: 'Lucia', 3: ""This is pretty good, Commandant. Let's pick up a couple more boxes so Liv and Lee can have some."", 4: '1'}"
+32	32		302							{2: 'Of course.', 3: '33'}
+33	33		202							{1: '1'}
+34	34		301							"{3: ""Two boxes of strawberries mark the start of today's shopping trip, and you two walk through the vibrant lineup of fresh fruits.""}"
+35	35		301							{3: 'The festive spirit is in full swing, with Double Seventh Festival banners everywhere. Couples are filing in and out, completely caught up in the joyous mood.'}
+36	36		301							{3: 'As a result, a long queue forms in front of the cashier.'}
+37	37		301							{3: 'You stand at the back of the line with Lucia, but your attention veers toward a temporary event area set up nearby.'}
+38	38		201							{1: '1', 2: '500994', 3: '3'}
+39	39		301							"{1: '1', 2: 'Lucia', 3: '""Double Seventh Sweet Challenge""?', 4: '1'}"
+40	40		301							{3: 'Lucia murmurs, sounding a bit puzzled. In the middle of the event space, two people are wrapped in a tight embrace.'}
+41	41		301							{3: 'The staff member, responsible for marking this joyous occasion, nods and hands them a pink voucher.'}
+42	42		201							{1: '1', 2: '500956'}
+43	43		301							{1: '1', 2: 'Staff Member', 3: 'This voucher proves your sweet bond. Just show it at the reward booth to pick up a fruit tree sapling. May your love grow and flourish!', 4: '1'}
+44	44		202							{1: '1'}
+45	45		301							"{3: ""Hearing the keyword, Lucia's eyes flick over in response.""}"
+46	46		201							{1: '1', 2: '500994', 3: '2'}
+47	47		301							{1: '1', 2: 'Lucia', 3: 'A fruit sapling... Oh, over there.', 4: '1'}
+48	48		202							{1: '1'}
+49	49		301							"{3: ""Following Lucia's gesture, you see rows of fruit saplings at the back of the event area, stretching into a little oasis of shade.""}"
+50	50		301				DialogDisable			{3: 'That couple picks up their fruit sapling and heads off, chatting happily. As they leave, they reveal the slogan that was hidden.'}
+51	51		302							{2: 'Plant a promise, harvest the future.', 3: '52'}
+52	52		302							{2: 'It seems like a pretty interesting event.', 3: '53'}
+53	53		201							{1: '1', 2: '500994', 3: '2'}
+54	54		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Lucia', 3: ""Let's take part too, Commandant."", 4: '1'}"
+55	55		302							"{2: ""I don't see why not..."", 3: '56'}"
+56	56		302							"{2: ""But we don't really have enough space in the lounge to plant a tree..."", 3: '57', 4: ""We normally don't have much time to look after a tree."", 5: '57'}"
+57	57		301			DialogEnable				"{2: 'Lucia', 3: ""That's alright. We can hand the sapling over to the greenhouse to care for them."", 4: '1'}"
+58	58		301							"{2: 'Lucia', 3: ""This way, when next year comes, we can come back here and harvest fruit that's entirely ours."", 4: '1'}"
+59	59		202							{1: '1'}
+60	60		301							"{3: ""While you're talking, two more people head up to the event area, and the staff's enthusiastic welcome grabs Lucia's attention.""}"
+61	61		301							"{3: ""She keeps her eyes on the people on stage, her hands making subtle movements as if she's practicing some sort of imitation.""}"
+62	62		301							"{3: ""The couple steps onto the stage, striking a princess-carry pose for a sweet photo. As the camera clicks, they gently kiss each other's cheeks, and the staff hands them their coupon.""}"
+63	63		201							{1: '1', 2: '500956'}
+64	64		301							"{1: '1', 2: 'Staff Member', 3: ""Here's the proof of your sweet bond—head over and claim your fruit sapling! May your love grow and flourish!"", 4: '1'}"
+65	65		301							"{2: 'Staff Member', 3: ""Now, who's next to join in? Is it you two?"", 4: '1'}"
+66	66		301							"{2: 'Staff Member', 3: ""Have you figured out how to show off your sweetness? Once you're ready, just step to the center."", 4: '1'}"
+67	67		201							{1: '1', 2: '500994', 3: '2'}
+68	68		301							{1: '1', 2: 'Lucia', 3: 'Commandant, any ideas?', 4: '1'}
+69	69		302							"{2: ""I'm still thinking."", 3: '70', 4: 'Do you have any ideas?', 5: '70'}"
+70	70		204							{1: '1', 2: '4'}
+71	71		301							"{3: ""Lucia goes quiet for a moment, like she's double-checking something in her head. Then she nods firmly, and the bright glimmer in her eyes tells you she's ready.""}"
+72	72		301							"{3: ""Your heart starts to race; you have no clue what she's planning.""}"
+73	73		301							{3: 'Feeling a bit anxious, you step into the center of the event area. Under the spotlight, Lucia reaches out her hand to you.'}
+74	74		302							{2: '(Grab)', 3: '75'}
+75	75		301							{3: 'A gentle touch lifts your palm as Lucia lowers her head, pressing a soft kiss on the back of your hand.'}
+76	76		204							{1: '1', 2: '2'}
+77	77		301							{1: '1', 2: 'Lucia', 3: 'Commandant...', 4: '1'}
+78	78		301							{3: 'Her voice is barely audible, but you sense every subtle brush of her lips against your skin. A light, fruity scent swirls around you, delicately sweet.'}
+79	79		204							{1: '1', 2: '3'}
+80	80		301							{3: 'Then, those vivid crimson eyes slowly rise, laying her genuine feelings bare for you to see.'}
+81	81		202							{1: '1'}
+82	82		301							"{3: ""The sweetness Lucia offers is a passionate honesty that's uniquely her own.""}"
+83	83		301							{3: '...'}
+84	84		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory801.jpg', 3: '0', 4: '1', 5: '0.25'}
+85	85		401							{1: '2', 2: '4294'}
+86	86		301							{3: 'Clink, clink—'}
+87	87		301							{3: 'The wind chimes jingle in front of the fresh fruit store, and sunlight makes everything on the street sparkle.'}
+88	88		301							{3: 'Lucia holds a fruit sapling in one arm as she carefully closes the door with the other.'}
+89	89		301							{3: 'She seals the cool air back into the shade behind her, then heads into the summer with you as you hold a bag of fresh fruit in hand.'}
+90	90		301							{3: 'A dazzling future unfolds before her: the road bursts with vivid colors, the sky stretches out in clear blue, and a gentle breeze blows through the air.'}
+91	91		301		1		AniZhuanchangBegin			{3: 'Under the brilliant sunlight, two hands join together once more.'}

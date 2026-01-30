@@ -1,0 +1,17 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory459.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500175'}
+4	4		301			DialogEnable				{1: '1', 3: 'Camu quickly opens the box you handed him. Inside is a necklace with an abstract, metallic bird-shaped pendant.'}
+5	5		301							"{3: ""While you explain what the pendant represents, you also tell Camu the stories of the Valentine's Day.""}"
+6	6		301							{2: 'Camu', 3: 'Do you enjoy this kind of convoluted plot?', 4: '1'}
+7	7		301							"{2: 'Camu', 3: ""I wouldn't be able to wait a whole year if I wanted to see someone. That person better show up before me immediately."", 4: '1'}"
+8	8		301							"{2: 'Camu', 3: ""...What's that expression?"", 4: '1'}"
+9	9		302							"{2: ""I just suddenly realized that we haven't seen each other for a while."", 3: '10'}"
+10	10		301				DialogDisable			{2: 'Camu', 3: 'I came to see you twice, but you were busy, so I left.', 4: '1'}
+11	11		302							{2: '?!', 3: '12'}
+12	12		302							{2: 'I feel like I should apologize...', 3: '13'}
+13	13		301			DialogEnable				"{2: 'Camu', 3: ""Huh? Cough—don't misinterpret my words! We can see each other whenever we want."", 4: '1'}"
+14	14		204							{1: '1', 2: '1'}
+15	15		301							"{2: 'Camu', 3: ""Now that you're free, I'll bring you to the restaurant I wanted to take you last time."", 4: '1'}"
+16	16		301		1		AniZhuanchangBegin			"{2: 'Camu', 3: ""I believe the place is in... that direction. Stop daydreaming! Let's go!"", 4: '1'}"

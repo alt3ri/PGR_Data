@@ -1,0 +1,52 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory175.png'}
+2	2		401							{1: '1', 2: '112'}
+3	3		201							{1: '1', 2: '500173', 4: '-400'}
+4	4		201							{1: '2', 2: '1081001', 3: '1', 4: '400'}
+5	5		301			DialogEnable				{1: '1', 2: 'Lee', 3: 'But Karenina had a point. I say we separate the two artifact fragments for better safety.', 4: '1'}
+6	6		301							{2: 'Lee', 3: 'Commandant takes one, and the other one stays with Lucia or myself.', 4: '1'}
+7	7		301							{2: 'Kamui', 3: 'Wait, what about me and Karenina?', 4: '2'}
+8	8		301							"{2: 'Lee', 3: ""You two can't keep anything valuable. Just think of your fighting style."", 4: '1'}"
+9	9		301							{2: 'Kamui', 3: 'Hmm... Lucia keeps it then.', 4: '2'}
+10	10		202							{1: '1', 2: '2', 6: '1'}
+11	11		201							{1: '1', 2: '500113'}
+12	12		301							{1: '1', 2: 'Demon King', 3: 'Wait, did you say you have two artifact fragments?', 4: '1'}
+13	13		201							{1: '1', 2: '500173'}
+14	14		301							{1: '1', 2: 'Lee', 3: 'Yeah, why?', 4: '1'}
+15	15		201							{1: '1', 2: '500113'}
+16	16		301							"{1: '1', 2: 'Demon King', 3: ""Something's not right... The other two heroes said they had three..."", 4: '1'}"
+17	17		201							{1: '1', 2: '500180'}
+18	18		301							{1: '1', 2: 'Karenina', 3: 'Three... Huh?', 4: '1'}
+19	19		302							{2: 'Were there five artifact fragments?', 3: '20', 4: 'Where does the extra one come from?', 5: '22'}
+20	20		201							{1: '1', 2: '500113'}
+21	21	24	301							"{1: '1', 2: 'Demon King', 3: ""There have always been only four pieces. What's going on here..."", 4: '1'}"
+22	22		201							{1: '1', 2: '500113'}
+23	23		301							{1: '1', 2: 'Demon King', 3: 'I also wanted to ask. As far as I know, there are only four pieces.', 4: '1'}
+24	24		201							{1: '1', 2: '500173'}
+25	25		301							"{1: '1', 2: 'Lee', 3: ""If the Demon King's right, the simplest answer is one of the five fragments is a counterfeit."", 4: '1'}"
+26	26		201							{1: '1', 2: '1081001', 3: '2'}
+27	27		301							{1: '1', 2: 'Kamui', 3: 'Oh, another classic plot. Now we just have to find out which one is fake!', 4: '1'}
+28	28		201							{1: '1', 2: '500173'}
+29	29		301							"{1: '1', 2: 'Lee', 3: ""Fake... One of ours was retrieved directly from a Demon General. But the other wasn't..."", 4: '1'}"
+30	30		301							"{2: 'Lee', 3: ""Commandant, Karenina, Camu gave you the fragment you brought here, didn't he? Could it be possibly swapped?"", 4: '1'}"
+31	31		302							"{2: 'Maybe.', 3: '32', 4: ""I don't see why Camu would do this."", 5: '33'}"
+32	32	34	301							"{2: 'Lee', 3: 'Maybe... We can\'t make any conclusion from ""maybe.""', 4: '1'}"
+33	33		301							{2: 'Lee', 3: 'True. He could have kept the artifact, and no one would have any question.', 4: '1'}
+34	34		201							{1: '1', 2: '500180'}
+35	35		301							{1: '1', 2: 'Karenina', 3: '...', 4: '1'}
+36	36		201							{1: '1', 2: '500173'}
+37	37		301							"{1: '1', 2: 'Lee', 3: ""Um, you've been really quiet. Have you thought of something?"", 4: '1'}"
+38	38		201							{1: '1', 2: '500180'}
+39	39		301							{1: '1', 2: 'Karenina', 3: '...', 4: '1'}
+40	40		201							{1: '1', 2: '500173'}
+41	41		301							{1: '1', 2: 'Lee', 3: 'Karenina?', 4: '1'}
+42	42		201							{1: '1', 2: '500180', 3: '5'}
+43	43		301							"{1: '1', 2: 'Karenina', 3: '""We can\'t beat an NPC with no HP bar.""', 4: '1'}"
+44	44		301							{2: 'Karenina', 3: '【kuroname】, do you remember what Vera and Camu said? Now I finally understand.', 4: '1'}
+45	45		301							{3: 'Karenina clenched her fist. She looked infuriated.'}
+46	46		301							"{2: 'Karenina', 3: ""They have the counterfeit. We need to get the real one there. Let's go."", 4: '1'}"
+47	47		302							"{2: ""What's going on?"", 3: '48', 4: ""Yeah, let's go."", 5: '49'}"
+48	48	50	301							"{2: 'Karenina', 3: ""Just come, you fool! They'll get suspicious if we waste too much time!"", 4: '1'}"
+49	49		301							{2: 'Karenina', 3: 'Hmph, you are not that stupid.', 4: '1'}
+50	50		201							{1: '1', 2: '500113'}
+51	51		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Demon King', 3: ""Wait, what? What's happening?"", 4: '1'}"

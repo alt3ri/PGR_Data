@@ -1,0 +1,347 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		401							{1: '2', 2: '2596'}
+4	4		304			DialogEnable				{1: '<i>...</i>', 2: '0066ccff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg', 7: '1'}
+5	5		304							"{1: ""<i>When I come across it, it's covered with moss and withered branches.</i>"", 2: '0066ccff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg', 7: '1'}"
+6	6		304							{1: '<i>Sunlight and cloud shadows dance and mingle on its mottled form.</i>', 2: '0066ccff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg', 7: '1', 8: '1'}
+7	7		304							{1: '<i>...</i>', 2: '0066ccff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg', 7: '1'}
+8	8		304							{1: '<i>Lush leaves are poems the forest pens, longer than branches, yet shorter than longing.</i>', 2: '0066ccff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg', 7: '1'}
+9	9		304							"{1: ""<i>I secretly jotted down a few poems. I'll read them to you when we meet again.</i>"", 2: '0066ccff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg', 7: '1', 8: '1'}"
+10	10		304							{1: '<i>...</i>', 2: '0066ccff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg', 7: '1'}
+11	11		304							{1: '<i>The mountain breeze sweeps away the annoying cicada calls, and crushed ice soothes the stifling summer heat.</i>', 2: '0066ccff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg', 7: '1'}
+12	12		304							"{1: ""<i>But it still feels like something's missing. Only then does it hit me—summer has other meanings after all.</i>"", 2: '0066ccff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg', 7: '1'}"
+13	13		304							"{1: '<i>Without you here, it\'s just ""hot weather.""</i>', 2: '0066ccff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg', 7: '1'}"
+14	14		304				AniZhuanchangBegin			{1: '<i>...</i>', 2: '0066ccff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg', 7: '1', 9: '1'}
+15	15		402						1000.0	{1: '2596'}
+16	16		401							{1: '1', 2: '204'}
+17	17		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory700.jpg'}
+18	18		301			AniZhuanchangEnd				{3: 'Pale blue ink seems to doze across the letter paper, the lazy handwriting a bit rougher than usual, with a spontaneous flair.'}
+19	19		301							"{3: ""Fingertips brush the paper, as if they can feel the smile that spreads as the writer's pen glides across the page.""}"
+20	20		302							"{2: ""It's been so hot lately..."", 3: '21'}"
+21	21		301							"{3: ""As if the letter's closing words stir things up, the ordinary weather suddenly becomes a bit much.""}"
+22	22		301							"{3: ""You glance up at the nearby liaison officer, also your guide and driver, who's still getting ready. There's still a bit before departure.""}"
+23	23		401							{1: '2', 2: '4112'}
+24	24		301							{3: 'So you tuck away the letter, pull out your terminal, and tap on the familiar Portrait.'}
+25	25		302							{2: '(Type [I got your letter. I really loved the descriptions in it.])', 3: '26', 4: '(Type [I got your letter, with summer practically spilling from its pages.])', 5: '26'}
+26	26		301							{2: '【kuroname】', 3: 'You wanted to write back, but since you suddenly got a field mission, you can only send your greetings this way for now.'}
+27	27		401							{1: '2', 2: '4421'}
+28	28		301				DialogDisable			{3: 'Before long, a message pops up on the terminal.'}
+29	29		401							{1: '2', 2: '4422'}
+30	30		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageOpen.prefab', 2: '3', 5: '4'}
+31	31		511						250.0	{1: '4', 2: '0', 3: '0|-80|-200'}
+32	32		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.5', 5: '0.2'}
+33	33		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab', 2: '3', 5: '5'}
+34	34		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '3'}
+35	35		511							{1: '5', 2: '0', 3: '0|-80|-200'}
+36	36		211							{1: '1', 2: '1021057'}
+37	37		301			DialogEnable				{1: '1', 2: '[Selena]', 3: 'Is it a long-term deployment? If you need anything, I can lend a hand after I wrap up my mission.', 4: '101', 18: '100011080', 19: '1', 21: 'v360Selena'}
+38	38		301							"{2: '【kuroname】', 3: ""No need to worry. It's just that the schedule's tight. The actual work is a lot like the mission you're on—nothing particularly dangerous.""}"
+39	39		214							{1: '1', 2: '6'}
+40	40		301							"{2: '[Selena]', 3: ""That's good. Speaking of which..."", 4: '101', 18: '100011081', 19: '1', 21: 'v360Selena'}"
+41	41		401							{1: '2', 2: '4387'}
+42	42		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+43	43		212							{1: '1', 6: '1'}
+44	44		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+45	45		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageOpen.prefab', 5: '4'}
+46	46		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab', 5: '5'}
+47	47		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+48	48		301							{3: '...'}
+49	49		301							"{3: ""Time always seems to fly by when you're just chatting. When you snap back to reality, you notice the liaison officer has already finished getting everything ready and is waving to get your attention.""}"
+50	50		301							"{2: '【kuroname】', 3: ""Ah... looks like it's time to hit the road.""}"
+51	51		301							"{3: 'The ""typing..."" indicator on the screen freezes for a long time. The notification appears and disappears, repeating several times, before the screen finally refreshes with a new message.'}"
+52	52		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.5', 5: '0'}
+53	53		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab', 2: '3', 5: '5'}
+54	54		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '3'}
+55	55		511							{1: '5', 2: '0', 3: '0|-80|-200'}
+56	56		211							{1: '1', 2: '1021057', 7: '1'}
+57	57		301			AniZhuanchangEnd				"{1: '1', 2: '[Selena]', 3: ""Stay safe out there. When we see each other again, let's exchange stories."", 4: '101', 18: '100011082', 19: '1', 21: 'v360Selena'}"
+58	58		301				DialogDisable			{2: '【kuroname】', 3: 'Sure.'}
+59	59		401							{1: '2', 2: '4423'}
+60	60		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageEnd.prefab', 2: '3', 5: '3'}
+61	61		511							{1: '3', 2: '0', 3: '0|-80|-200'}
+62	62		212							{1: '1', 6: '1'}
+63	63		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.5', 4: '0', 5: '0.2'}
+64	64		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+65	65		505						500.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab', 5: '5'}
+66	66		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageEnd.prefab', 5: '3'}
+67	67		301			DialogEnable				{3: 'You tuck away your terminal and head over to the liaison officer.'}
+68	68		211							{1: '1', 2: '1021010', 7: '1'}
+69	69		301							"{1: '1', 2: 'Liaison Officer', 3: ""We're good to go. Apologies for the hold-up—getting all the supplies together took a minute. The team had quite the shopping list."", 4: '101', 18: '100011083'}"
+70	70		301							"{2: 'Liaison Officer', 3: ""It's not often we get to swing back to the conservation area for supplies, so we always end up hauling back all sorts of bits and bobs. Commandant, anything else you need to square away before we go?"", 4: '101', 18: '100011084'}"
+71	71		302				AniZhuanchangBegin			"{2: ""No, that's everything. Let's go."", 3: '72'}"
+72	72		212							{1: '1', 6: '1'}
+73	73		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 4: '4'}
+74	74		401							{1: '2', 2: '4637'}
+75	75		301			AniZhuanchangEnd				{3: 'As you say this, the liaison officer and you climb into the vehicle, one right after the other.'}
+76	76		301							{3: 'You buckle up, but instead of firing up the engine, the liaison officer reaches across the steering wheel and fumbles with something on the dashboard.'}
+77	77		302							"{2: ""What's this?"", 3: '78'}"
+78	78		211							{1: '1', 2: '1021010', 7: '1'}
+79	79		301							"{1: '1', 2: 'Liaison Officer', 3: ""It's a little memento. They hand these out to anyone who spends a few bucks or joins in on activities in the conservation area."", 4: '101', 18: '100011085'}"
+80	80		301							{2: 'Liaison Officer', 3: 'Construction is really humming along here. After getting some small businesses off the ground, they even managed to dig into some of the local cultural traditions.', 4: '101', 18: '100011086'}
+81	81		301							"{2: 'Liaison Officer', 3: ""There's a special local festival happening in two days. What do you think? Pretty neat, right?"", 4: '101', 18: '100011087'}"
+82	82		212							{1: '1', 6: '1'}
+83	83		301							{3: 'The liaison officer pulls their hands back with a touch of pride, giving you a full view of the memento.'}
+84	84		306							{1: '1'}
+85	85		301							"{3: ""It's an exquisite, little, spring-loaded ornament—a black fox and a white fox standing guard over a large bell.""}"
+86	86		301				DialogDisable			{3: 'At their prompting, you reach out and press it. Two fox figures sway back and forth around the bell, looking utterly comical.'}
+87	87		306							
+88	88		302							"{2: ""Yeah, it's pretty neat."", 3: '89'}"
+89	89		211							{1: '1', 2: '1021010', 7: '1'}
+90	90		301			DialogEnable				{1: '1', 2: 'Liaison Officer', 3: 'I thought so too! The archaeological team that came here to study the local culture even helped design it!', 4: '101', 18: '100011088'}
+91	91		302							{2: 'So, they even help design mementos like this?', 3: '92', 4: 'I thought your work was just about recovering and restoring things.', 5: '93'}
+92	92	94	301							{2: 'Liaison Officer', 3: 'Oh, absolutely! The archaeological team lives by a creed: recover, restore, inherit, and then promote all forms of art.', 4: '101', 18: '100011089'}
+93	93		301							"{2: 'Liaison Officer', 3: ""It's restoration, not just repair—it goes way beyond that. Our full creed is to recover, restore, inherit, and then promote all forms of art."", 4: '101', 18: '100011090'}"
+94	94		301							"{2: 'Liaison Officer', 3: ""After all, things are much better preserved when they actually impact people's lives, instead of just being studied and then filed away in the WGAA's dusty archives..."", 4: '101', 18: '100011091'}"
+95	95		401						300.0	{1: '2', 2: '4230'}
+96	96		301						600.0	{3: 'As the liaison officer starts the engine, she suddenly remembers something and pulls a cold drink from a bag beside her.'}
+97	97		213							{1: '1', 2: '0.25', 5: '-50'}
+98	98		301							{2: 'Liaison Officer', 3: 'Almost forgot! Here, this should help you beat the heat.', 4: '101', 18: '100011092'}
+99	99		301							{2: 'Liaison Officer', 3: 'This is the flavor you like, right?', 4: '101', 18: '100011093'}
+100	100		302							{2: 'Thanks.', 3: '101'}
+101	101		104							{1: '0|0|-20', 2: '0.25'}
+102	102		213						300.0	{1: '1', 2: '0.25', 5: '-60'}
+103	103		104							{1: '0|0|0', 2: '0.25'}
+104	104		213						300.0	{1: '1', 2: '0.25'}
+105	105		301							"{3: ""You are still a bit dazed, but you can't help but notice the packaging clearly states your favorite flavor.""}"
+106	106		302							{2: 'But how did you...', 3: '107'}
+107	107		301							{2: 'Liaison Officer', 3: 'Selena put it in her personal procurement request.', 4: '101', 18: '100011094'}
+108	108		301							{2: 'Liaison Officer', 3: 'If there are options, please get this flavor. I want to try what 【kuroname】 likes.', 4: '101', 18: '100011095'}
+109	109		302							{2: 'Huh? Oh... I see.', 3: '110'}
+110	110		212							{1: '1', 6: '1'}
+111	111		301							{3: 'As the explanation sinks in, a clear image forms in your mind: Selena, meticulously writing that request.'}
+112	112		401							{1: '2', 2: '4385'}
+113	113		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+114	114		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_31.jpg'}
+115	115		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png', 4: '4'}
+116	116		401							{1: '2', 2: '2596'}
+117	117		301							"{3: ""She's leaning over a stone table, sipping her tea, swaying gently in the mountain breeze. Ice cubes clink musically in her glass as her pen glides across the paper with serene, unhurried grace.""}"
+118	118		301							{3: 'The mountain breeze sweeps away the annoying cicada calls, and crushed ice soothes the stifling summer heat.'}
+119	119		402							{1: '2596'}
+120	120		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+121	121		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1198.jpg'}
+122	122		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory821.png', 4: '4'}
+123	123		104							{1: '-359|267|-300', 2: '0'}
+124	124		401							{1: '2', 2: '4231'}
+125	125		401							{1: '2', 2: '5288'}
+126	126		301							{3: 'Lost in thought, you take a sip. The cold liquid glides down your throat, settling in your chest and washing away any lingering discomfort, leaving only a sense of calm.'}
+127	127		302							{2: 'Is this the feeling you wanted to share with me?', 3: '128'}
+128	128		301							{3: 'As you savor the drink, you find yourself looking up at the hazy, distant mountains beyond the conservation area, a smile forming on your face without you even realizing it.'}
+129	129		302				AniZhuanchangBegin			{2: 'Yeah, it is.', 3: '130'}
+130	130		402							{1: '4231'}
+131	131		502							{1: 'DialogDisable'}
+132	132		101							{4: '4', 5: '1'}
+133	133		401						2000.0	{1: '1', 2: '36'}
+134	134		401							{1: '1', 2: '163'}
+135	135		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory557.jpg'}
+136	136		107			AniZhuanchangEnd				{1: 'Survey Point 23 Camp', 2: 'Outskirts of Conservation Area 357', 4: 'Midday'}
+137	137		301							{3: 'Midday, Outskirts of Conservation Area 357, Survey Point 23 Camp'}
+138	138		108							{1: '1'}
+139	139		306							{1: '1'}
+140	140		301			DialogEnable				{3: 'Lush forests blanket the landscape, with rolling green mountains stretching as far as the eye can see.'}
+141	141		301							{3: 'At the entrance to the mountain range, a few modular prefabricated buildings are scattered along the creekside terrace, forming a makeshift camp alongside two parked RVs.'}
+142	142		306							
+143	143		301							"{3: ""The vehicle's engine sputters to a stop in front of two side-by-side prefabricated buildings.""}"
+144	144		301							{3: 'The one on the right is empty, but the building on the left shows signs of a personal touch—homemade eaves with wind chimes swaying gently, and windowsills adorned with vibrant bouquets of blue and purple flowers.'}
+145	145		211							{1: '1', 2: '1021010', 7: '1'}
+146	146		301							"{1: '1', 2: 'Liaison Officer', 3: ""I'll leave your luggage here for now, and..."", 4: '101', 18: '100011096'}"
+147	147		301							{3: 'She notices your gaze, her eyes tracing to the decorations sprucing up the doors and windows. Then, a grin spreads across her face as she reaches into her pocket.'}
+148	148		213							{1: '1', 2: '0.25', 4: '-50', 5: '-80'}
+149	149		301							"{2: 'Liaison Officer', 3: ""She has no idea you're showing up yet. The team leader specifically told everyone to keep it on the down-low."", 4: '101', 18: '100011097'}"
+150	150		213						200.0	{1: '1', 2: '0.25'}
+151	151		301							"{2: 'Liaison Officer', 3: ""Oh, that's just grand! It's like something right out of a storybook. Why am I suddenly green with envy?"", 4: '101', 18: '100011098'}"
+152	152		302							{2: 'Ugh...', 3: '153'}
+153	153		301							{2: 'Liaison Officer', 3: 'Haha, just pulling your leg! Here, take these—the keys and the camera.', 4: '101', 18: '100011099'}
+154	154		301							"{2: 'Liaison Officer', 3: ""This camera is standard issue for folks on the archaeological team. I know you're here to back us up on security, but when in Rome, do as the Romans do—getting a feel for our work and how we live won't hurt a bit."", 4: '101', 18: '100011100'}"
+155	155		301							"{2: 'Liaison Officer', 3: ""I've already synced the work schedule and map info to your terminal. If you run into any other questions, just come find me."", 4: '101', 18: '100011101'}"
+156	156		302							{2: 'Thank you.', 3: '157'}
+157	157		212							{1: '1', 6: '1'}
+158	158		401							{1: '2', 2: '4637'}
+159	159		301							{3: 'After hearing that, she gives a dismissive wave, hops in the vehicle, and tosses out a playful remark as the engine roars to life.'}
+160	160		211							{1: '1', 2: '1021010', 4: '-1360', 5: '-500', 6: '600', 7: '1'}
+161	161		301							"{1: '1', 2: 'Liaison Officer', 3: ""Well, I'm off! Wouldn't want to hold up the Gray Raven Commandant's crucial mission, now would I?"", 4: '101', 18: '100011102'}"
+162	162		302							{2: 'Hah...', 3: '163'}
+163	163		212							{1: '1', 6: '1'}
+164	164		301							{3: 'A resigned chuckle escapes you. You turn back, your gaze sweeping over the courtyard—it feels oddly familiar, even though this is your first time here. A thought strikes you, and you pull out your terminal.'}
+165	165		302							"{2: '(Type ""I\'ve arrived."")', 3: '166', 4: '(Type ""What are you doing right now?"")', 5: '176'}"
+166	166		301				DialogDisable			{3: 'The empty status indicator quickly turns read-receipt green.'}
+167	167		401							{1: '2', 2: '4422'}
+168	168		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageOpen.prefab', 2: '3', 5: '4'}
+169	169		511						250.0	{1: '4', 2: '0', 3: '0|-80|-200'}
+170	170		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.5', 5: '0.2'}
+171	171		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab', 2: '3', 5: '5'}
+172	172		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '3'}
+173	173		511							{1: '5', 2: '0', 3: '0|-80|-200'}
+174	174		211							{1: '1', 2: '1021057'}
+175	175	186	301			DialogEnable				{1: '1', 2: '[Selena]', 3: 'Are you at the mission location yet?', 4: '101', 18: '100011103', 19: '1', 21: 'v360Selena'}
+176	176		301				DialogDisable			{3: 'The empty status indicator quickly turns read-receipt green.'}
+177	177		401							{1: '2', 2: '4422'}
+178	178		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageOpen.prefab', 2: '3', 5: '4'}
+179	179		511						250.0	{1: '4', 2: '0', 3: '0|-80|-200'}
+180	180		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.5', 5: '0.2'}
+181	181		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab', 2: '3', 5: '5'}
+182	182		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '3'}
+183	183		511							{1: '5', 2: '0', 3: '0|-80|-200'}
+184	184		211							{1: '1', 2: '1021057'}
+185	185		301			DialogEnable				"{2: '[Selena]', 3: ""I'm documenting info about today's research subject. Have you landed at your mission location yet?"", 4: '101', 18: '100011104', 19: '1', 21: 'v360Selena'}"
+186	186		301							"{2: '【kuroname】', 3: ""Yeah, the surroundings look pretty good, and the folks I'm staying with seem easy to get along with.""}"
+187	187		301							{2: '[Selena]', 3: 'Hmm, speaking of which, the room next to mine in the dormitory is still empty. I wonder when someone will move in.', 4: '101', 18: '100011105', 19: '1', 21: 'v360Selena'}
+188	188		301							{2: '[Selena]', 3: 'I hope my future neighbor is easy to get along with... though it would be even better if the room just stayed empty.', 4: '101', 18: '100011106', 19: '1', 21: 'v360Selena'}
+189	189		301							"{2: '【kuroname】', 3: ""Then I'll just move in there.""}"
+190	190		214							{1: '1', 2: '4'}
+191	191		301							"{2: '[Selena]', 3: ""That would be wonderful! I'm really hoping your mission wraps up before mine does..."", 4: '101', 18: '100011107', 19: '1', 21: 'v360Selena'}"
+192	192		214							{1: '1', 2: '5'}
+193	193		301							{2: '[Selena]', 3: 'Speaking of missions, would it be a bad idea chatting with me right now?', 4: '101', 18: '100011108', 19: '1', 21: 'v360Selena'}
+194	194		301							{2: '【kuroname】', 3: 'Not really...'}
+195	195		301							{3: 'Mid-message, she glances at the camera beside her, and an interesting idea starts to perk up in her mind.'}
+196	196		301							"{2: '【kuroname】', 3: ""I'm actually getting ready to meet my mission target. It's a rare lull.""}"
+197	197		301							{2: '【kuroname】', 3: 'Oh, hey, do you have any scenery photos you could share? Your letter really struck a chord with me.'}
+198	198		214							{1: '1', 2: '1'}
+199	199		301							{2: '[Selena]', 3: 'Of course! Let me get them organized and send them over in the order of my journey.', 4: '101', 18: '100011109', 19: '1', 21: 'v360Selena'}
+200	200		214							{1: '1', 2: '6'}
+201	201		301				AniZhuanchangBegin			{2: '[Selena]', 3: 'This way, 【kuroname】, you can get a little taste of the journey too, and hopefully soak in the good vibes.', 4: '101', 18: '100011110', 19: '1', 21: 'v360Selena'}
+202	202		212							{1: '1', 6: '1'}
+203	203		205							{1: '999', 3: '0', 4: '1', 5: '0'}
+204	204		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageOpen.prefab', 5: '4'}
+205	205		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab', 5: '5'}
+206	206		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+207	207		401							{1: '2', 2: '4421'}
+208	208		301			AniZhuanchangEnd				"{3: ""Soon after, a string of stunning landscape photos comes through. Even just looking at the screen, you can feel the photographer's emotion from the very moment she snapped the shot.""}"
+209	209		301				AniZhuanchangBegin			"{3: ""Just like her letter, it's all so chill and easygoing.""}"
+210	210		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory556.jpg'}
+211	211		301			AniZhuanchangEnd				"{3: ""After a quick breather, you follow the map's lead into the mountains and stumble upon an ancient stone path, completely swallowed by nature within the lush forest.""}"
+212	212		401							{1: '2', 2: '4421'}
+213	213		301							{3: 'Just as the first stone lantern appears, your terminal buzzes with new photos from Selena, along with a few casual comments.'}
+214	214		211							{1: '1', 2: '1021057', 4: '-1300', 5: '-500', 6: '600', 7: '1'}
+215	215		301							"{1: '1', 2: '[Selena]', 3: ""Since the torii gate's crossbeam had already rotted away, we had to piece together information about these ruins from documents and faint etchings on the stone monuments."", 4: '101', 18: '100011111', 19: '1', 21: 'v360Selena'}"
+216	216		301							"{2: '[Selena]', 3: ""But actually, we have this incredible scholar on our team who totally guessed the shrine's origins just from the style of the stone lanterns when we first got on the mountain path."", 4: '101', 18: '100011112', 19: '1', 21: 'v360Selena'}"
+217	217		212							{1: '1', 6: '1'}
+218	218		301							{3: 'You reach out and touch the stone lantern. Time has left its mark, mottling the surface with uneven spots that look like countless kisses from the passing years.'}
+219	219		301				DialogDisable			"{3: ""You scroll back through your terminal to find Selena's first photo, comparing it with the stone pillar right in front of you. This confirms you are standing in the exact spot she visited earlier today.""}"
+220	220		401							{1: '2', 2: '4422'}
+221	221		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageOpen.prefab', 2: '3', 5: '4'}
+222	222		511						250.0	{1: '4', 2: '0', 3: '0|-80|-200'}
+223	223		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.5', 5: '0.2'}
+224	224		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab', 2: '3', 5: '5'}
+225	225		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '3'}
+226	226		511							{1: '5', 2: '0', 3: '0|-80|-200'}
+227	227		211							{1: '1', 2: '1021057'}
+228	228		301			DialogEnable				{2: '【kuroname】', 3: '【Reply: Photo】\\nIs this the photo you were talking about?'}
+229	229		301							"{2: '[Selena]', 3: ""Yes, that's the one. What do you make of my shot?"", 4: '101', 18: '100011113', 19: '1', 21: 'v360Selena'}"
+230	230		301							{2: '【kuroname】', 3: 'The scene selection is excellent, the composition is unique, and the lighting is just perfect, but...'}
+231	231		214							{1: '1', 2: '6'}
+232	232		301							"{2: '[Selena]', 3: ""Hmm, it's alright. I'd like to hear your honest opinion—don't hold back."", 4: '101', 18: '100011114', 19: '1', 21: 'v360Selena'}"
+233	233		302							"{2: ""(Input 【It's a little disappointing.】)"", 3: '234', 4: '(Input 【I feel a bit let down.】)', 5: '237'}"
+234	234		301							"{2: '【kuroname】', 3: ""Maybe what I really want to see is you—the way you look when you're taking these photos.""}"
+235	235		214							{1: '1', 2: '2'}
+236	236	240	301				AniZhuanchangBegin			"{2: '[Selena]', 3: ""Well then... next time, I'll be the scenery for you instead."", 4: '101', 18: '100011115', 19: '1', 21: 'v360Selena'}"
+237	237		301							"{2: '【kuroname】', 3: ""I really wish I could've been right there with you when you were taking those photos.""}"
+238	238		214							{1: '1', 2: '4'}
+239	239		301				AniZhuanchangBegin			"{2: '[Selena]', 3: ""Then let's go together next time. There are so many places I want to see with you. We'll get our chance, I'm sure of it."", 4: '101', 18: '100011116', 19: '1', 21: 'v360Selena'}"
+240	240		212							{1: '1', 6: '1'}
+241	241		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.5', 4: '0', 5: '0'}
+242	242		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+243	243		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab', 5: '5'}
+244	244		301			AniZhuanchangEnd				{3: 'As you keep your casual conversation going, you make your way deeper into the mountain forest, step by step.'}
+245	245		301				DialogDisable			{3: 'The forest is full of diverging paths and winding corners. You constantly check the photos in your chat history, comparing them with your surroundings.'}
+246	246		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory555.jpg', 3: '0', 4: '1', 5: '1.5'}
+247	247		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory555.jpg'}
+248	248		205							{1: '999'}
+249	249		301			DialogEnable				{3: 'After taking several wrong turns and backtracking more than once, finally...'}
+250	250		301							{3: 'The scene from the last photograph lines up perfectly with the forest right in front of you.'}
+251	251		302							{2: 'Phew...', 3: '252'}
+252	252		301							{3: 'She... she must be just beyond these leaves. Just one step forward, a soft call of her name, and you could meet.'}
+253	253		301							{3: 'Suddenly, your heart fills with an unexplainable nervousness.'}
+254	254		401							{1: '2', 2: '4421'}
+255	255		301				DialogDisable			"{3: ""On your terminal, Selena's messages keep coming in.""}"
+256	256		401							{1: '2', 2: '4422'}
+257	257		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageOpen.prefab', 2: '3', 5: '4'}
+258	258		511						250.0	{1: '4', 2: '0', 3: '0|-80|-200'}
+259	259		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.5', 5: '0.2'}
+260	260		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab', 2: '3', 5: '5'}
+261	261		511							{1: '5', 2: '0', 3: '0|-80|-200'}
+262	262		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '3'}
+263	263		211							{1: '1', 2: '1021057'}
+264	264		301			DialogEnable				{1: '1', 2: '[Selena]', 3: 'Here are all the photos I took on my way up today.', 4: '101', 18: '100011117', 19: '1', 21: 'v360Selena'}
+265	265		214							{1: '1', 2: '6'}
+266	266		301							{2: '[Selena]', 3: '【kuroname】, if you want to see more, I can snap some for you after I finish work today.', 4: '101', 18: '100011118', 19: '1', 21: 'v360Selena'}
+267	267		301							{3: 'You take a moment to collect yourself before sending a reply.'}
+268	268		301							{2: '【kuroname】', 3: 'Come to think of it, am I actually interrupting your work?'}
+269	269		301							{2: '[Selena]', 3: 'Not at all. Chatting with you is the best kind of relaxation.', 4: '101', 18: '100011119', 19: '1', 21: 'v360Selena'}
+270	270		214							{1: '1', 2: '2'}
+271	271		301							"{2: '[Selena]', 3: ""A-although... my work hasn't really been moving forward much..."", 4: '101', 18: '100011120', 19: '1', 21: 'v360Selena'}"
+272	272		301							"{2: '【kuroname】', 3: ""Alright... that's enough chatting for now, I say. I'll send you one last photo to cap things off.""}"
+273	273		301							"{2: '【kuroname】', 3: ""You've been doing all the sharing up till now, you point out. I've actually found a beautiful view I'm keen to show you too.""}"
+274	274		214							{1: '1', 2: '6'}
+275	275		301							"{2: '[Selena]', 3: ""Yes, I'd absolutely love to see it. I really want to see the scenery through your eyes right now, Conductor. Even though we're apart, it'll put my heart at ease."", 4: '101', 18: '100011121', 19: '1', 21: 'v360Selena'}"
+276	276		301							{3: 'Her gentle words carry a subtle warmth, and an unconscious smile spreads across your face.'}
+277	277		301				DialogDisable			{2: '【kuroname】', 3: 'Alright, just a second, let me find the best camera angle.'}
+278	278		401							{1: '2', 2: '4423'}
+279	279		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageEnd.prefab', 2: '3', 5: '3'}
+280	280		511							{1: '3', 2: '0', 3: '0|-80|-200'}
+281	281		212							{1: '1', 6: '1'}
+282	282		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.5', 4: '0', 5: '0.2'}
+283	283		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+284	284		505						500.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageLoop3.prefab', 5: '5'}
+285	285		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMidAutumnMessageEnd.prefab', 5: '3'}
+286	286		401							{1: '2', 2: '2936'}
+287	287		301			DialogEnable	DialogDisable			{3: 'After sending the message, I put my terminal away, gently push aside the branches in front of me, and aim my camera forward.'}
+288	288		401							{1: '2', 2: '967'}
+289	289		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab', 2: '3'}
+290	290		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_17.jpg'}
+291	291		401							{1: '2', 2: '2667'}
+292	292		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+293	293		104							{1: '535|-335|-525', 2: '0'}
+294	294		104						550.0	{1: '535|-335|-480', 2: '0.5'}
+295	295		104						700.0	{1: '535|-335|-500', 2: '0.5'}
+296	296		502							{1: 'DialogEnable'}
+297	297		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+298	298		301			AniZhuanchangEnd	DialogDisable			"{3: ""Through the lens, sunlight streams through gaps in the forest canopy, as moss creeps over the tip of a stone fox's tail.""}"
+299	299		402							{1: '967'}
+300	300		401							{1: '2', 2: '2667'}
+301	301		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+302	302		104							{1: '0|0|-30', 2: '0'}
+303	303		104						650.0	{1: '0|0|-100', 2: '0.6'}
+304	304		104						800.0	{1: '0|0|0', 2: '0.7'}
+305	305		502							{1: 'DialogEnable'}
+306	306		301			AniZhuanchangEnd				{3: 'Mountain mist lifts the ends of her hair as the gentle sound of pen on paper blends with the rustling of leaves.'}
+307	307		301							{3: 'The scene is so picture-perfect that you instinctively hold your breath, afraid to break the spell of serenity.'}
+308	308		301							{3: 'After a long beat, I snap back to reality and hit the shutter button.'}
+309	309		401							{1: '2', 2: '2811'}
+310	310		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryQujingkuang.prefab'}
+311	311		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+312	312		301							{3: 'CRUNCH—'}
+313	313		301				DialogDisable			{2: 'Selena', 3: '...?', 18: '100011122'}
+314	314		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5701_03.jpg', 3: '0', 4: '1', 5: '0.5'}
+315	315		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_03.jpg'}
+316	316		205							{1: '999'}
+317	317		301			DialogEnable	DialogDisable			{3: 'The jarring sound and flash grab the attention of the person in the frame.'}
+318	318		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5701_36.jpg', 3: '0', 4: '1', 5: '0.5'}
+319	319		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_36.jpg'}
+320	320		205							{1: '999'}
+321	321		301			DialogEnable				{3: 'Selena initially jumps, then turns her head. Recognition lights up her face, and a smile blossoms on her lips.'}
+322	322		301				AniZhuanchangBegin			{3: 'Instead of speaking or standing up right away, she pulls out her terminal.'}
+323	323		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1293.jpg'}
+324	324		104							{1: '-20|0|0', 2: '0'}
+325	325		509						600.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory557.jpg', 2: '2'}
+326	326		211							{1: '1', 2: '1021057', 3: '6', 4: '-600', 7: '1'}
+327	327		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 5: '1'}
+328	328		511							{1: '1', 2: '0', 3: '-600|0|0'}
+329	329		301			AniZhuanchangEnd				"{1: '1', 2: '[Selena]', 3: ""Did you take it yet? The photo you said you'd send?"", 4: '101', 18: '100011123', 19: '1', 21: 'v360Selena'}"
+330	330		401							{1: '2', 2: '2562'}
+331	331		301							{2: '【kuroname】', 3: '[Image]'}
+332	332		214							{1: '1', 2: '5'}
+333	333		301							"{2: '[Selena]', 3: ""So you're on a mission with another Construct. No wonder you needed to get the angle just right."", 4: '101', 18: '100011124', 19: '1', 21: 'v360Selena'}"
+334	334		301							{2: '【kuroname】', 3: 'Yeah, because this particular Construct is quite stunning. To really do her justice, I had to put in some extra effort.'}
+335	335		214							{1: '1', 2: '1'}
+336	336		301							"{2: '[Selena]', 3: ""[Expression: Pouting] Is that why she's smiling so happily at you? Because she heard your compliment?"", 4: '101', 18: '100011125', 19: '1', 21: 'v360Selena'}"
+337	337		301							"{2: '【kuroname】', 3: ""[Expression: Innocent] I'm not sure. Could you help me guess what she might be thinking?""}"
+338	338		301				AniZhuanchangBegin			{2: '[Selena]', 3: 'I guess...', 4: '101', 18: '100011126', 19: '1', 21: 'v360Selena'}
+339	339		212							{1: '1', 6: '1'}
+340	340		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 5: '1'}
+341	341		401							{1: '2', 2: '2704'}
+342	342		510						600.0	{1: '2'}
+343	343		211							{1: '1', 2: '1021057', 3: '6', 7: '1'}
+344	344		301			AniZhuanchangEnd				"{1: '1', 3: ""You step through the tangled branches and move to Selena's side. Leaning down, you share a smile as your eyes meet.""}"
+345	345		301							"{3: ""Her answer isn't just text anymore; it's real—her voice carrying a gentle warmth.""}"
+346	346		301		1		AniZhuanchangBegin			{2: 'Selena', 3: 'Your unexpected arrival must have filled her with absolute joy.', 4: '101', 18: '100011127', 19: '1', 21: 'v360Selena'}

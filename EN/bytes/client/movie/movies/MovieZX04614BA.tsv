@@ -1,0 +1,191 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory945.jpg'}
+2	2		306			AniZhuanchangEnd				{1: '1'}
+3	3		401							{1: '1', 2: '5017'}
+4	4		201							{1: '1', 2: '500926'}
+5	5		301			DialogEnable				{3: 'A thin silhouette stands behind the curtain wall, the thick bulletproof panels shielding him from the deafening gunfire outside.'}
+6	6		301							{3: 'Hundreds of meters below him, rows of mechanoid guards are escorting captured resistance soldiers through the streets.'}
+7	7		301							{3: 'Gunfire continues to echo through the nearby districts.'}
+8	8		301							{3: 'Before him is the mechanoid control array entrusted by Veronica.'}
+9	9		301				DialogDisable			"{3: '""Suppress the resistance"" is such a vague order... Without a doubt, it gives him far too much room for interpretation.'}"
+10	10		306							
+11	11		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1.5'}
+12	12		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+13	13		205							{1: '999'}
+14	14		401							{1: '2', 2: '4297'}
+15	15		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+16	16		201							{1: '1', 2: '500922', 3: '1', 7: '1'}
+17	17		205						300.0	{1: '1', 3: '0', 4: '0.5', 5: '0'}
+18	18		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+19	19		202							{1: '1', 6: '1'}
+20	20		201							{1: '1', 2: '500926', 7: '1'}
+21	21		301			DialogEnable	DialogDisable			{1: '1', 2: '???', 3: 'I am... Death.', 4: '1'}
+22	22		401							{1: '2', 2: '4297'}
+23	23		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+24	24		201							{1: '1', 2: '500922', 3: '1', 4: '-100', 5: '-50', 6: '-100', 7: '1'}
+25	25		201							{1: '2', 2: '500922', 4: '100', 5: '-50', 6: '-100', 7: '1'}
+26	26		205							{1: '1', 3: '0', 4: '0.5', 5: '0'}
+27	27		205						300.0	{1: '2', 3: '0', 4: '0.5', 5: '0'}
+28	28		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+29	29		202							{1: '1', 2: '2', 6: '1'}
+30	30		201							{1: '1', 2: '500926', 5: '-50', 6: '-100', 7: '1'}
+31	31		301			DialogEnable	DialogDisable			{1: '1', 2: '???', 3: 'I am... your conqueror.', 4: '1'}
+32	32		401							{1: '2', 2: '4297'}
+33	33		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+34	34		202							{1: '1', 6: '1'}
+35	35		201						500.0	{1: '1', 2: '500922', 3: '2', 5: '-100', 6: '-200', 7: '1'}
+36	36		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+37	37		202							{1: '1', 6: '1'}
+38	38		201							{1: '1', 2: '500926', 5: '-100', 6: '-200', 7: '1'}
+39	39		301			DialogEnable	AniZhuanchangBegin			{1: '1', 2: '???', 3: 'Veni, vidi, vici...', 4: '1'}
+40	40		202							{1: '1', 6: '1'}
+41	41		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+42	42		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory943.jpg'}
+43	43		401							{1: '2', 2: '4008'}
+44	44		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory767.png', 3: '0', 4: '0.5', 5: '0'}
+45	45		301			AniZhuanchangEnd	AniZhuanchangBegin	2000.0		{3: 'Humanity will perish in this war.'}
+46	46		205			DialogDisable				{1: '999'}
+47	47		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+48	48		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+49	49		401							{1: '2', 2: '4511'}
+50	50		401							{1: '2', 2: '4538'}
+51	51		307			AniZhuanchangEnd	AniZhuanchangBegin		100.0	{1: 'His empire will rise from a world-staining crimson.', 3: '80', 4: 'ff4e4eff', 6: '1'}
+52	52		301							{3: 'His empire will rise from a world-staining crimson.'}
+53	53		307							{2: '1'}
+54	54		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory948.jpg'}
+55	55		402						1000.0	{1: '4008'}
+56	56		401							{1: '1', 2: '371'}
+57	57		502							{1: 'DialogEnable'}
+58	58		301			AniZhuanchangEnd				"{3: ""With Gray Raven's assistance, the refugees have found temporary shelter in another vacant docking bay.""}"
+59	59		302							{2: 'How are they holding up?', 3: '60', 4: 'How are the refugees?', 5: '60'}
+60	60		201							{1: '1', 2: '1031001'}
+61	61		301							"{1: '1', 2: 'Liv', 3: ""They're doing okay. They still trust Dimitri. Although they were angry when they were handed over, they weren't actually harmed, so..."", 4: '1'}"
+62	62		202							{1: '1'}
+63	63		301							{3: 'After being reassured by both you and Liv that this is all part of a plan, the refugees harbor no real hostility toward Yulia.'}
+64	64		301							{3: 'Yulia understands that this is meant to protect her, so she has not voiced any objections.'}
+65	65		302							"{2: ""That's good to hear."", 3: '66'}"
+66	66		401							{1: '2', 2: '212'}
+67	67		301							{3: 'Just as the crowd settles down and a headcount begins, a sudden commotion erupts among the refugees.'}
+68	68		302							"{2: 'Yulia?', 3: '69', 4: ""What's going on?"", 5: '69'}"
+69	69		301							{3: 'Looking across the hangar, you find all eyes focused on the girl in a wheelchair.'}
+70	70		301							{3: 'Yulia clutches a perforated note tightly in her hands, her expression eerily calm amid the surrounding chaos.'}
+71	71		402							{1: '212'}
+72	72		201							{1: '1', 2: '500895'}
+73	73		301							{1: '1', 2: 'Refugee A', 3: 'Wh-what? Dimitri... Where did he go?', 4: '1'}
+74	74		203							{1: '1', 2: '0.25', 3: '-400'}
+75	75		201							{1: '2', 2: '500896', 4: '400'}
+76	76		301							{1: '1', 2: 'Refugee B', 3: 'I think Yulia mentioned that he went to... Bifrost?', 4: '2'}
+77	77		301							"{2: 'Refugee A', 3: ""If Spikehead catches him, he'll die!"", 4: '1'}"
+78	78		202							{1: '1'}
+79	79		201							{1: '1', 2: '500294', 4: '-400'}
+80	80		301							"{1: '1', 2: 'Refugee C', 3: ""I know he's in charge of maintaining the energy systems and knows his way around the reactor..."", 4: '1'}"
+81	81		301							"{2: 'Refugee C', 3: ""But those mechanoids controlled by Spikehead... they won't care if he's one of their own when they strike..."", 4: '1'}"
+82	82		202							{1: '1', 2: '2'}
+83	83		301							"{3: ""The old man's words fall like salt upon snow, dissolving what little optimism they have managed to build.""}"
+84	84		301							{3: 'Yulia finally notices the new presence and turns her gaze toward Liv.'}
+85	85		201							{1: '1', 2: '500924'}
+86	86		301							{1: '1', 2: 'Yulia', 3: '...Dimitri slipped away during the chaos, leaving only this note behind.', 4: '1'}
+87	87		202							{1: '1'}
+88	88		301							{3: 'With feigned composure, she hands the note to Liv.'}
+89	89		301							{3: 'The text is formed by densely arranged tiny holes—a communication method unique to mechanoids.'}
+90	90		401							{1: '2', 2: '4095'}
+91	91		304							{1: 'Miss Yula,', 2: '000000ff', 3: '0.5', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1'}
+92	92		304							"{1: ""39 is an aerospace systems engineer, and my original designated mission since my creation has been to maintain Bifrost's power systems."", 2: '000000ff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1'}"
+93	93		304							"{1: ""I'm familiar with the reactor's structure and can withstand the radiation levels from the control core. Our only chance to stop the launch is for me to shut it down."", 2: '000000ff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1'}"
+94	94		304							"{1: ""I'm truly sorry for acting on my own without consulting you."", 2: '000000ff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1'}"
+95	95		304							"{1: ""My memories can always be backed up. I believe Sage's revelation will awaken me again one day."", 2: '000000ff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1'}"
+96	96		304							"{1: ""When that time comes, I'll surely recognize Miss Yula's kindness once again."", 2: '000000ff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1'}"
+97	97		304							"{1: ""And I'll return to your side as your companion once more."", 2: '000000ff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1'}"
+98	98		304							{1: 'For this city to survive until that day, please allow me this one selfish act.', 2: '000000ff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1'}
+99	99		304							{1: 'Hanying and the guests from Babylonia will ensure your safety.', 2: '000000ff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 8: '1', 9: '1'}
+100	100		401							{1: '2', 2: '4095'}
+101	101		301							{3: 'The brief note brings a heavy silence to the empty hangar.'}
+102	102		301							"{3: ""Every street in the city has become a war zone. To approach Bifrost's foundation—the most heavily guarded mechanoid stronghold—and infiltrate the reactor's control core for manual shutdown...""}"
+103	103		301							"{3: ""It's nothing short of a fool's errand.""}"
+104	104		201							{1: '1', 2: '1031001', 4: '-400'}
+105	105		201							{1: '2', 2: '500924', 4: '400'}
+106	106		301							"{1: '1', 2: 'Liv', 3: ""But Hanying has already headed to Bifrost's main control room."", 4: '1'}"
+107	107		301							"{2: 'Yulia', 3: ""It's not that Dima doesn't trust Hanying. It's just... he can never bring himself to stand by and watch."", 4: '2'}"
+108	108		202							{1: '1', 2: '2'}
+109	109		301							"{3: ""Liv bites her lip—it's a feeling she understands all too well.""}"
+110	110		201							{1: '1', 2: '500924'}
+111	111		301							"{1: '1', 2: 'Yulia', 3: ""Regardless, I can't let him march to his death."", 4: '1'}"
+112	112		202							{1: '1'}
+113	113		301							{3: 'The girl maintains a composed expression, making it impossible to guess what kind of resolve is brewing within her.'}
+114	114		301							{3: 'She tucks the note into her jacket pocket, tenderly, as if handling an irreplaceable treasure.'}
+115	115		301							"{3: ""Gripping the wheelchair's handrims firmly, she wheels herself into the clamoring crowd of refugees.""}"
+116	116		201							{1: '1', 2: '500924'}
+117	117		301							{1: '1', 2: 'Yulia', 3: 'Everyone, please... hear me out.', 4: '1'}
+118	118		301							{3: 'Despite her quiet voice, the refugees fall silent the moment Yulia speaks as they are accustomed to.'}
+119	119		301							"{2: 'Yulia', 3: ""You can all see the situation we're in now."", 4: '1'}"
+120	120		301							"{2: 'Yulia', 3: ""I'm sorry. It was my fault that we were captured by the mechanoids before."", 4: '1'}"
+121	121		202							{1: '1'}
+122	122		301							{3: 'She bows her head deeply from her wheelchair to the refugees.'}
+123	123		201							{1: '1', 2: '500895', 4: '-400'}
+124	124		201							{1: '2', 2: '500896', 4: '400'}
+125	125		301							"{1: '1', 2: 'Refugee A', 3: ""Hey, we all know it was part of the plan. Sure, we had it rough for a bit, but everyone made it back safe and sound, didn't we?"", 4: '1'}"
+126	126		301							"{2: 'Refugee B', 3: ""That's right. If it weren't for Dimitri, who knows how many of us would be standing here? We couldn't just watch while Spikehead wiped his memories and turned him into a vegetable. We can't live with that."", 4: '2'}"
+127	127		202							{1: '1', 2: '2', 6: '1'}
+128	128		201							{1: '1', 2: '500924'}
+129	129		301							{1: '1', 2: 'Yulia', 3: '...Thank you all.', 4: '1'}
+130	130		204							{1: '1', 2: '8'}
+131	131		301							{3: 'Yulia exhales softly and expresses her gratitude to the refugees once again.'}
+132	132		204							{1: '1'}
+133	133		301							"{2: 'Yulia', 3: ""You've all heard how Hanying explained the situation outside."", 4: '1'}"
+134	134		301							"{2: 'Yulia', 3: ""Ever since the resistance attacked Aleksei, Veronica has begun rounding up humans throughout the city... It's not just us—they've taken every human in the city."", 4: '1'}"
+135	135		301							"{2: 'Yulia', 3: ""The mechanoids... They're done maintaining even a pretense of peace with humans."", 4: '1'}"
+136	136		301							"{2: 'Yulia', 3: ""But... this is our city. The place we've called home all this time."", 4: '1'}"
+137	137		301							{2: 'Yulia', 3: 'The Punishing Virus glows red everywhere outside the city. If we leave here, where else can we possibly go?', 4: '1'}
+138	138		202							{1: '1'}
+139	139		301							{3: 'Murmurs of unrest ripple through the crowd of refugees.'}
+140	140		201							{1: '1', 2: '500924'}
+141	141		301							"{1: '1', 2: 'Yulia', 3: ""I won't deny it—I want to help Dima in a different way."", 4: '1'}"
+142	142		301							"{2: 'Yulia', 3: ""But isn't helping Dima also helping ourselves?"", 4: '1'}"
+143	143		301							{2: 'Yulia', 3: 'If we keep living like this, there are only two possible outcomes.', 4: '1'}
+144	144		301							"{2: 'Yulia', 3: ""Either the mechanoids, who have already destroyed this peaceful facade, drag us to their gallows, or we'll wait for Veronica to activate Bifrost and get blown to bits by Babylonia's orbital cannons."", 4: '1'}"
+145	145		301							{2: 'Yulia', 3: 'Are you all... just going to resign yourselves to death?', 4: '1'}
+146	146		202							{1: '1'}
+147	147		401							{1: '2', 2: '10021517'}
+148	148		301						1000.0	{3: 'A distinct click of a weapon being loaded breaks the silence, followed by a second, a third, a fourth...'}
+149	149		401						600.0	{1: '2', 2: '10021517'}
+150	150		401							{1: '2', 2: '10021517'}
+151	151		301							{3: 'The sound of rounds being chambered pierces through the deathly silence.'}
+152	152		301							{3: 'The refugees have somehow managed to reclaim their confiscated weapons from the defeated mechanoid guards and are now rearming themselves.'}
+153	153		301							{3: 'Their movements may lack the uniformity of the resistance, but their vigor surpasses that of the soldiers, now reduced to murderous machines fueled by hatred and iron law.'}
+154	154		201							{1: '1', 2: '500895'}
+155	155		201							{1: '2', 2: '500896', 4: '600'}
+156	156		201							{1: '3', 2: '500294', 4: '-600'}
+157	157		301							"{1: '1', 2: 'Refugee A', 3: ""Hah, dying like that would be pathetic. Even if we can't fight our way to the reactor, we can still give those crazed metal bastards a run for their money."", 4: '1'}"
+158	158		301							"{2: 'Refugee B', 3: ""If Spikehead gets her way, we're as good as dead."", 4: '2'}"
+159	159		301							"{2: 'Refugee B', 3: ""Hiding in our little corner of the dumping ground... Sometimes it feels like we're nothing but parasites."", 4: '2'}"
+160	160		301							"{2: 'Refugee C', 3: ""We've done our share of dirty deeds... Every time we'd tell ourselves it was for survival."", 4: '3'}"
+161	161		301							"{2: 'Refugee C', 3: ""But if we keep being cowards at a time like this... I swear I'd crawl out of hell and travel to the past just to slap some sense into myself now."", 4: '3'}"
+162	162		202							{1: '1', 2: '2', 3: '3'}
+163	163		301							{3: 'As the refugees prepare their equipment, Liv stands nearby, pressing her lips together.'}
+164	164		302							"{2: ""I feel like I'm witnessing something incredible here."", 3: '165'}"
+165	165		201							{1: '1', 2: '1031001'}
+166	166		301							{1: '1', 2: 'Liv', 3: 'Yeah...', 4: '1'}
+167	167		202							{1: '1'}
+168	168		301							{3: 'Even as a bystander, you can feel their determination burning bright.'}
+169	169		301							{3: 'Humans may be flawed and deceitful at times, but when faced with a common enemy, they can still come together and work as one.'}
+170	170		201							{1: '1', 2: '500924'}
+171	171		301							"{1: '1', 2: 'Yulia', 3: ""Alright then... let's go."", 4: '1'}"
+172	172		202							{1: '1'}
+173	173		301							{3: 'Everyone completes their preparations, and Yulia is now armed with a handgun.'}
+174	174		301							{3: 'She also cradles a bulky xenon lamp in her arms, likely equipment acquired from one of the refugees.'}
+175	175		201							{1: '1', 2: '500924'}
+176	176		301							{1: '1', 2: 'Yulia', 3: 'Maybe when all this is over, we can truly... start living again.', 4: '1'}
+177	177		202							{1: '1'}
+178	178		301				DialogDisable			{3: 'She puts special emphasis on those last words.'}
+179	179		306							{1: '1'}
+180	180		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory767.png', 3: '0', 4: '1', 5: '1.5'}
+181	181		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory767.png'}
+182	182		205							{1: '999'}
+183	183		401							{1: '2', 2: '2927'}
+184	184		301			DialogEnable				{3: 'Above the discarded steel frames in the dumping ground, the snow-covered buildings during the day and the automatic floodlights during the night are nowhere to be seen.'}
+185	185		301							{3: 'Streams of bullets and energy beams cut through the smoke-stained sky while explosions of varying sizes bloom like raindrops hitting a pond. Waves of muffled, destructive thunder roll in from the distant horizon.'}
+186	186		301							{3: 'The small unit remains unaware that the mechanoids guarding the resistance have completely gone haywire.'}
+187	187		301							{3: 'And they turn on a dime, aiming their guns and blades at humans, cutting down the prisoners of war who barely have time to put up a fight.'}
+188	188		301							{3: 'Like a relentless mixer of blood and fire, the battlefield continues to pour its toll into the furnace of futile slaughter.'}
+189	189		301							{3: 'In this endless darkness, no light pierces through.'}
+190	190		301		1		AniZhuanchangBegin			{3: 'And so the light-bearing maiden begins her own crusade, all for the sake of her companion, who has ventured alone into danger.'}

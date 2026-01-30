@@ -1,0 +1,625 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory623.jpg'}
+2	2		401							{1: '1', 2: '161'}
+3	3		201							{1: '1', 2: '501308', 3: '4'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Lulu', 3: ""Over here! There's another one!"", 4: '1'}"
+5	5		401							{1: '2', 2: '13081710'}
+6	6		203						400.0	{1: '1', 2: '0.25', 4: '-50'}
+7	7		402							{1: '13081710'}
+8	8		203							{1: '1', 2: '0.25'}
+9	9		301							{3: 'At the fork connecting the lower second and third levels, the female Construct quickly bends down, picking up another metal pebble inscribed with rune symbols.'}
+10	10		301							"{2: 'Lulu', 3: ""That's so like Grace... naive to the point of foolishness."", 4: '1'}"
+11	11		301							"{2: 'Lulu', 3: ""Whether she's blindly worshipping the Red Tide or just blundering through with the most ridiculously clumsy methods..."", 4: '1'}"
+12	12		302							{2: 'At least it works.', 3: '13', 4: 'But it did help us find our way.', 5: '13'}
+13	13		204							{1: '1', 2: '8'}
+14	14		301							{2: 'Lulu', 3: 'Heh...', 4: '1'}
+15	15		202							{1: '1', 6: '1'}
+16	16		201							{1: '1', 2: '500166', 3: '5'}
+17	17		301				DialogDisable			{1: '1', 2: 'Lucia', 3: 'Commandant! I hear fighting up ahead. Bianca and her team must be—', 4: '1'}
+18	18		202							{1: '1', 6: '1'}
+19	19		306							{1: '1'}
+20	20		401							{1: '2', 2: '4682'}
+21	21		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory625.jpg', 3: '0', 4: '1', 5: '0.3'}
+22	22		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory625.jpg'}
+23	23		205							{1: '999'}
+24	24		301			DialogEnable	DialogDisable			{3: 'The joy in her tone vanishes in a flash as the viscous Red Tide gathers into a thin stream, pooling in the corridor ahead.'}
+25	25		306							
+26	26		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory623.jpg', 3: '0', 4: '1', 5: '0.3'}
+27	27		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory623.jpg'}
+28	28		205							{1: '999'}
+29	29		402							{1: '4682'}
+30	30		201							{1: '1', 2: '500309'}
+31	31		301			DialogEnable	DialogDisable			{1: '1', 2: 'Chrome', 3: 'The Red Tide again...', 4: '1'}
+32	32		302							{2: '...', 3: '33'}
+33	33		302							"{2: ""The enemy's operating from the shadows. We're truly up against it."", 3: '34'}"
+34	34		202							{1: '1'}
+35	35		301			DialogEnable				"{3: ""The Red Tide clearly can't evolve a brain. The only explanation is someone's constantly keeping tabs on everyone from Babylonia.""}"
+36	36		201							{1: '1', 2: '500309'}
+37	37		301							{1: '1', 2: 'Chrome', 3: 'Should we split up?', 4: '1'}
+38	38		302							{2: '...No.', 3: '39'}
+39	39		301				DialogDisable			{3: 'Splitting up would divert some of their attention, sure, but it would also leave you vulnerable to being picked off one by one.'}
+40	40		302							"{2: ""Let's find Bianca and her team first."", 3: '41'}"
+41	41		302							"{2: ""Once we regroup, we'll figure out a way to draw the enemy out."", 3: '42'}"
+42	42		202							{1: '1', 6: '1'}
+43	43		201							{1: '1', 2: '501308', 3: '4'}
+44	44		301			DialogEnable				"{1: '1', 2: 'Lulu', 3: ""Easier said than done. With the Red Tide this murky, if we tried to push through, we'd likely bump into those things lurking inside before we even got a third of the way across."", 4: '1'}"
+45	45		301							"{2: 'Lulu', 3: ""I really don't want to be packed in like sardines with a bunch of people... ugh."", 4: '1'}"
+46	46		302							"{2: ""We don't necessarily have to go through the Red Tide."", 3: '47'}"
+47	47		202							{1: '1'}
+48	48		301							"{3: ""Following the signs along the way, it turns out Chrome's theory is spot on—this is indeed a service corridor the aquarium staff uses to get to the performance site on the lower third level.""}"
+49	49		401							{1: '2', 2: '4319'}
+50	50		301			RImgBg1Shake				{3: 'Just as you are wracking your brain trying to figure out how to get around the Red Tide, it suddenly churns into violent waves as if responding to some unseen command.'}
+51	51		201							{1: '1', 2: '500166', 3: '5'}
+52	52		301				DialogDisable			{1: '1', 2: 'Lucia', 3: 'Commandant! Look up! Metal supports!', 4: '1'}
+53	53		202							{1: '1', 6: '1'}
+54	54		306							{1: '1'}
+55	55		104						550.0	{1: '0|-200|-300', 2: '0.5'}
+56	56		301			DialogEnable	DialogDisable			{3: 'High above the ceiling, the Golden Age metal supports that once held up the dome stand uncorroded.'}
+57	57		306							
+58	58		104						550.0	{1: '0|0|0', 2: '0.5'}
+59	59		401							{1: '2', 2: '4833'}
+60	60		301			DialogEnable	DialogDisable			{3: 'After testing the weight capacity with the climbing ropes, Lucia takes the lead to leap onto the supports.'}
+61	61		302							"{2: ""Let's go!"", 3: '62'}"
+62	62		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+63	63		401							{1: '2', 2: '4833'}
+64	64		104							{1: '0|-200|-300', 2: '0'}
+65	65		301			DialogEnable				{3: 'Everyone scrambles across the metal framework, using both hands and feet, with the sounds of battle just inches away.'}
+66	66		201							{1: '18', 2: '500309', 4: '-190', 5: '-240', 6: '200'}
+67	67		301							"{1: '1', 2: 'Chrome', 3: ""...It's a password-protected door."", 4: '18'}"
+68	68		301				AniZhuanchangBegin			"{2: 'Chrome', 3: ""The wiring on this side is damaged. We probably can't open it with a password."", 4: '18'}"
+69	69		202							{1: '18', 6: '1'}
+70	70		401						2000.0	{1: '1', 2: '36'}
+71	71		401							{1: '1', 2: '6204'}
+72	72		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory619.jpg'}
+73	73		201							{1: '1', 2: '500541', 3: '5', 7: '1'}
+74	74		502							{1: 'PanelActor1Shake'}
+75	75		301			AniZhuanchangEnd				{1: '1', 2: 'Grace', 3: 'Damn it... Dammit!', 4: '1'}
+76	76		401							{1: '2', 2: '4781'}
+77	77		301							"{3: ""With the Hetero-Creatures' howls practically in her ears, Grace's fingers tremble as she frantically tries to input the password.""}"
+78	78		402							{1: '4781'}
+79	79		301							{3: 'She knows every password—the water curtains, the electronic doors. She burned those random number sequences into her memory during her long hours in the monitoring room. This is her last ace in the hole, but...'}
+80	80		202							{1: '1'}
+81	81		401							{1: '2', 2: '4627'}
+82	82		301							{2: 'System', 3: '(Static noise—)'}
+83	83		301							{3: 'A quiet static hisses from the system—no doubt about it, this metal door is completely busted.'}
+84	84		401							{1: '2', 2: '2690'}
+85	85		401							{1: '2', 2: '5310'}
+86	86		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '3'}
+87	87		201							{1: '1', 2: '501290', 4: '-100', 6: '-50', 7: '1'}
+88	88		203							{1: '1', 2: '0.25'}
+89	89		301			PanelActor1Shake				{1: '1', 2: 'Sylph', 3: 'Ugh...', 4: '1'}
+90	90		202							{1: '1'}
+91	91		301							{3: 'Up ahead, Sylph lets out a muffled groan. Clenching a dagger between her teeth, she rips off a piece of her clothing and ties it tightly around her injured joint, just barely stemming the flow of vital fluid.'}
+92	92		201							{1: '1', 2: '500541', 3: '8'}
+93	93		301							{1: '1', 2: 'Grace', 3: 'There just has to be... there just has to be a way...', 4: '1'}
+94	94		202							{1: '1'}
+95	95		401							{1: '2', 2: '4980'}
+96	96		301							"{3: ""With clumsy fingers, she wrenches the wire ends from the metal door, trying to rig different colored wires together like she's seen Lulu do when repairing vehicles, hoping the system might kick to life—""}"
+97	97		401							{1: '2', 2: '4627'}
+98	98		301							{2: 'System', 3: '————'}
+99	99		401							{1: '2', 2: '2924'}
+100	100		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab', 2: '2'}
+101	101		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLouDianNew.prefab'}
+102	102		402							{1: '4980'}
+103	103		301							{3: 'Electrical sparks fly from the circuits, and even the white noise vanishes.'}
+104	104		201							{1: '1', 2: '500541', 3: '5', 7: '1'}
+105	105		301			PanelActor1Shake				{1: '1', 2: 'Grace', 3: 'How... could this be... no... impossible... no...', 4: '1'}
+106	106		301							"{3: ""Grace's mind isn't just on the verge of breaking; it's already plummeted straight into despair.""}"
+107	107		202							{1: '1'}
+108	108		306							{1: '1'}
+109	109		301							"{3: ""Behind her lies the unconscious Bianca and a door won't budge, while ahead, Sylph is fighting a swarm of Hetero-Creatures all by herself.""}"
+110	110		301							"{3: ""Below, the Red Tide keeps spreading upward, already touching Sylph's feet.""}"
+111	111		306							
+112	112		402							{1: '6204'}
+113	113		401							{1: '1', 2: '160'}
+114	114		401							{1: '2', 2: '4977'}
+115	115		201							{1: '1', 2: '500454'}
+116	116		501							{1: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 2: '2', 3: '1'}
+117	117		301							{1: '1', 2: '??', 3: 'Lady... Grace...', 4: '1'}
+118	118		505							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 4: '1'}
+119	119		202							{1: '1', 6: '1'}
+120	120		201							{1: '1', 2: '500541', 3: '5', 7: '1'}
+121	121		301			PanelActor1Shake				"{1: '1', 2: 'Grace', 3: ""...! W-who's there?!"", 4: '1'}"
+122	122		301							{3: 'She shivers, staring in disbelief at the Red Tide.'}
+123	123		204							{1: '1'}
+124	124		301							{2: 'Grace', 3: 'M-Marvin...?', 4: '1'}
+125	125		202							{1: '1', 6: '1'}
+126	126		201							{1: '1', 2: '500454'}
+127	127		501							{1: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 2: '2', 3: '1'}
+128	128		301							"{1: '1', 2: ""Marvin's Phantom"", 3: 'Lady... Revelationist...', 4: '1'}"
+129	129		301			PanelActor1Shake				"{2: ""Marvin's Phantom"", 3: 'This is... rebirth... the Red Tide...', 4: '1'}"
+130	130		505							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 4: '1'}
+131	131		202							{1: '1', 6: '1'}
+132	132		201							{1: '1', 2: '500541'}
+133	133		301							"{1: '1', 2: 'Grace', 3: ""No... no... this can't be happening..."", 4: '1'}"
+134	134		401							{1: '2', 2: '4977'}
+135	135		202							{1: '1', 6: '1'}
+136	136		201							{1: '1', 2: '500460'}
+137	137		501							{1: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 2: '2', 3: '1'}
+138	138		301							"{1: '1', 2: ""Follower A's Phantom"", 3: ""Lady Revelationist... you've tricked me again..."", 4: '1'}"
+139	139		505							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 4: '1'}
+140	140		202							{1: '1', 6: '1'}
+141	141		201							{1: '1', 2: '500541'}
+142	142		301							"{1: '1', 2: 'Grace', 3: ""No, that's not true... how... could this..."", 4: '1'}"
+143	143		301							{3: 'She shakes her head, despair gnawing at her, her hands trembling on the crowbar. She has no idea where—or if—she should even strike.'}
+144	144		202							{1: '1', 6: '1'}
+145	145		201							{1: '1', 2: '500460'}
+146	146		501							{1: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 2: '2', 3: '1'}
+147	147		301							"{1: '1', 2: ""Follower A's Phantom"", 3: ""Within the Red Tide, there's rebirth..."", 4: '1'}"
+148	148		201							{1: '2', 2: '500564', 4: '-450'}
+149	149		501							{1: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 2: '2', 3: '2'}
+150	150		201							{1: '3', 2: '500677', 4: '450'}
+151	151		501							{1: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 2: '2', 3: '3'}
+152	152		301							"{1: '1', 2: 'Phantom', 3: ""Within the Red Tide, there's rebirth..."", 4: '2', 5: '3'}"
+153	153		201							{1: '4', 2: '500779', 4: '-900'}
+154	154		501							{1: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 2: '2', 3: '4'}
+155	155		201							{1: '5', 2: '500969', 4: '900'}
+156	156		501							{1: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 2: '2', 3: '5'}
+157	157		301							{2: 'Phantom', 3: 'Lady Revelationist, come, join us... embrace... enjoy...', 4: '4', 5: '5'}
+158	158		401							{1: '2', 2: '4278'}
+159	159		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+160	160		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+161	161		201							{1: '1', 2: '500454', 7: '1'}
+162	162		201							{1: '2', 2: '500280', 4: '-450', 7: '1'}
+163	163		201							{1: '3', 2: '500138', 4: '450', 7: '1'}
+164	164		201							{1: '4', 2: '501025', 4: '-900', 7: '1'}
+165	165		201							{1: '5', 2: '500382', 4: '900', 7: '1'}
+166	166		301							{1: '1', 3: 'The Red Tide projections are a grotesque mess, their faces constantly morphing, their voices shifting and swirling.'}
+167	167		301							{2: 'Phantom', 3: 'The Red Tide of Salvation... welcomes you...', 4: '1', 5: '2', 6: '3', 7: '4', 8: '5'}
+168	168		301							{3: 'The false deity pulls the strings of a hollow chorus, coaxing desperate followers down the road to damnation.'}
+169	169		401							{1: '2', 2: '4278'}
+170	170		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+171	171		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+172	172		201							{1: '1', 2: '500460', 7: '1'}
+173	173		201							{1: '2', 2: '500564', 4: '-450', 7: '1'}
+174	174		201							{1: '3', 2: '500677', 4: '450', 7: '1'}
+175	175		201							{1: '4', 2: '500779', 4: '-900', 7: '1'}
+176	176		201							{1: '5', 2: '500969', 4: '900', 7: '1'}
+177	177		301							"{1: '1', 2: 'Phantom', 3: ""This is a world of happiness, Grace, Lady Revelationist, don't you remember..."", 4: '1', 5: '2', 6: '3', 7: '4', 8: '5'}"
+178	178		301							{2: 'Phantom', 3: 'Do you remember... what you once... described...', 4: '1', 5: '2', 6: '3', 7: '4', 8: '5'}
+179	179		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '1'}
+180	180		505							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 4: '1'}
+181	181		505							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 4: '2'}
+182	182		505							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 4: '3'}
+183	183		505							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 4: '4'}
+184	184		505							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 4: '5'}
+185	185		201							{1: '1', 2: '500541', 3: '8'}
+186	186		301							{1: '1', 2: 'Grace', 3: 'The future...', 4: '1'}
+187	187		301							"{3: 'Grace\'s pupils blow wide as her mind floods with echoes—the voices of her followers, and the ""rebirth"" she once promised them.'}"
+188	188		401							{1: '2', 2: '4387'}
+189	189		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+190	190		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+191	191		504							{1: '0.7'}
+192	192		201							{1: '1', 2: '500260', 4: '-400', 7: '1'}
+193	193		201							{1: '2', 2: '500541', 3: '2', 4: '400', 7: '1'}
+194	194		301							"{1: '1', 2: 'Grace', 3: 'Of course, the ""rebirth"" within the Red Tide is beautiful.', 4: '2'}"
+195	195		301							"{2: 'Grace', 3: 'Anyone who passes the trials earns the right to ""rebirth""... and then, we\'ll all step into a beautiful new world, together.', 4: '2'}"
+196	196		202							{1: '1', 2: '2', 6: '1'}
+197	197		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+198	198		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory619.jpg'}
+199	199		504							{1: '0'}
+200	200		201							{1: '1', 2: '500541', 3: '8', 7: '1'}
+201	201		301							{1: '1', 2: 'Grace', 3: 'Rebirth...', 4: '1'}
+202	202		202							{1: '1'}
+203	203		301							{3: 'If... she really could cast aside all of this suffering and enter the Red Tide...'}
+204	204		301				DialogDisable			"{3: ""Grace's lips tremble as her fingers slowly glide down the metal door.""}"
+205	205		307							{1: 'If... within the Red Tide truly lies that world of happiness...', 3: '50', 4: 'ffffffff'}
+206	206		301							{3: 'If... within the Red Tide truly lies that world of happiness...'}
+207	207		401							{1: '2', 2: '558'}
+208	208		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+209	209		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory617.jpg'}
+210	210		401							{1: '2', 2: '558'}
+211	211		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+212	212		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1118.jpg'}
+213	213		401							{1: '2', 2: '558'}
+214	214		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+215	215		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1016.jpg'}
+216	216		401							{1: '2', 2: '558'}
+217	217		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+218	218		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory609.jpg'}
+219	219		401							{1: '2', 2: '558'}
+220	220		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+221	221		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+222	222		307							{2: '1'}
+223	223		504							{1: '0.7'}
+224	224		201							{1: '1', 2: '500260', 4: '-400', 7: '1'}
+225	225		201							{1: '2', 2: '500541', 3: '2', 4: '400', 7: '1'}
+226	226		301			DialogEnable				"{1: '1', 2: 'Grace', 3: 'A ""reborn"" world with no endless running, no Corrupted or monsters, and certainly no death.', 4: '2'}"
+227	227		301							{2: 'Grace', 3: 'If we believe in the God of the Red Tide, He will guide us to happiness beyond...', 4: '2'}
+228	228		202							{1: '1', 2: '2', 6: '1'}
+229	229		504							{1: '0'}
+230	230		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+231	231		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+232	232		301							{3: 'If only...'}
+233	233		205						200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory609.jpg', 3: '0', 4: '1', 5: '1.5'}
+234	234		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory609.jpg'}
+235	235		205							{1: '999'}
+236	236		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionInvitation/FxUiRegressionInvitationShine.prefab', 2: '2'}
+237	237		201							{1: '1', 2: '500460'}
+238	238		201							{1: '2', 2: '500136', 4: '-450'}
+239	239		201							{1: '3', 2: '500969', 4: '450'}
+240	240		201							{1: '4', 2: '500779', 4: '-900'}
+241	241		201							{1: '5', 2: '500677', 4: '900'}
+242	242		501							{1: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 2: '2', 3: '1'}
+243	243		501							{1: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 2: '2', 3: '2'}
+244	244		501							{1: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 2: '2', 3: '3'}
+245	245		501							{1: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 2: '2', 3: '4'}
+246	246		501							{1: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 2: '2', 3: '5'}
+247	247		301							{1: '1', 3: 'The Red Tide projections twist and beckon to her. She sees so many familiar faces—Marvin, Miller, Smoker—and beyond them, a world without the Corrupted, without Constructs...'}
+248	248		505							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 4: '1'}
+249	249		505							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 4: '2'}
+250	250		505							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 4: '3'}
+251	251		505							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 4: '4'}
+252	252		505							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 4: '5'}
+253	253		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '1'}
+254	254		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionInvitation/FxUiRegressionInvitationShine.prefab'}
+255	255		402							{1: '160'}
+256	256		401							{1: '2', 2: '2690'}
+257	257		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+258	258		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+259	259		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory619.jpg'}
+260	260		201							{1: '1', 2: '501290', 7: '1'}
+261	261		301			PanelActor1Shake				{1: '1', 2: 'Sylph', 3: 'Argh!', 4: '1'}
+262	262		202							{1: '1', 6: '1'}
+263	263		401							{1: '2', 2: '2593'}
+264	264		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+265	265		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+266	266		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0'}
+267	267		301			RImgBg1Shake				"{3: ""Sylph hurls her dagger, pinning the Hetero-Creature that's started climbing her leg to the ground.""}"
+268	268		205						250.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0', 5: '0.2'}
+269	269		401							{1: '1', 2: '5027'}
+270	270		201							{1: '1', 2: '500541'}
+271	271		301							{1: '1', 2: 'Grace', 3: '—!', 4: '1'}
+272	272		301							"{3: ""Jolted by Sylph's cry of pain, Grace instinctively clenches her fist, desperate to break free from the phantom's pull. A sharp pain shoots through her palm—""}"
+273	273		202							{1: '1'}
+274	274		306							{1: '1'}
+275	275		301							"{3: ""It's the last Rune pebble tucked away in her pocket.""}"
+276	276		301							{3: 'The metal Rune is now stained with blood from her palm, making the engraved letter M stand out with stark clarity.'}
+277	277		301							"{3: ""M—Mannaz—humanity—<b>you</b>'re really important.""}"
+278	278		306							
+279	279		201							{1: '1', 2: '500541'}
+280	280		301							"{1: '1', 3: ""It's like a bucket of ice-cold water just got dumped over her head; Grace has never felt such clarity before.""}"
+281	281		202							{1: '1', 6: '1'}
+282	282		401							{1: '2', 2: '558'}
+283	283		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+284	284		101							{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading30.jpg'}
+285	285		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory617.jpg', 3: '0', 4: '0.2', 5: '0'}
+286	286		301							{3: 'She has put her faith in the Red Tide, trusting that past lives reside within it, but she believes in life even more...'}
+287	287		401							{1: '2', 2: '558'}
+288	288		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+289	289		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory769.jpg'}
+290	290		205							{1: '1004', 3: '0', 4: '1', 5: '0'}
+291	291		301							{3: 'She believes in a future where life itself exists.'}
+292	292		401							{1: '2', 2: '4977'}
+293	293		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+294	294		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory619.jpg'}
+295	295		201							{1: '1', 2: '500460'}
+296	296		201							{1: '2', 2: '500564', 4: '-450'}
+297	297		201							{1: '3', 2: '500969', 4: '450'}
+298	298		201							{1: '4', 2: '500779', 4: '-900'}
+299	299		201							{1: '5', 2: '500677', 4: '900'}
+300	300		501							{1: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 2: '2', 3: '1'}
+301	301		501							{1: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 2: '2', 3: '2'}
+302	302		501							{1: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 2: '2', 3: '3'}
+303	303		501							{1: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 2: '2', 3: '4'}
+304	304		501							{1: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 2: '2', 3: '5'}
+305	305		301							{1: '1', 2: 'Phantom', 3: 'Lady... Revelationist... come to us...', 4: '1', 5: '2', 6: '3', 7: '4', 8: '5'}
+306	306		401							{1: '2', 2: '4977'}
+307	307		203							{1: '1', 2: '0.4', 5: '-50'}
+308	308		203							{1: '2', 2: '0.4', 3: '-450', 5: '-50'}
+309	309		203							{1: '3', 2: '0.4', 3: '450', 5: '-50'}
+310	310		203							{1: '4', 2: '0.4', 3: '-900', 5: '-50'}
+311	311		203						300.0	{1: '5', 2: '0.4', 3: '900', 5: '-50'}
+312	312		301							"{2: 'Phantom', 3: ""The Red Tide is... Scarlet Revelation's paradise..."", 4: '1', 5: '2', 6: '3', 7: '4', 8: '5'}"
+313	313		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '1'}
+314	314		505							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 4: '1'}
+315	315		505							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 4: '2'}
+316	316		505							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 4: '3'}
+317	317		505							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 4: '4'}
+318	318		505							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiLihui.prefab', 4: '5'}
+319	319		201							{1: '1', 2: '500541', 3: '5'}
+320	320		301			PanelActor1Shake				{1: '1', 2: 'Grace', 3: '—Get away! Get away from me!', 4: '1'}
+321	321		203							{1: '1', 2: '0.25', 3: '-50'}
+322	322		401						200.0	{1: '2', 2: '8220025'}
+323	323		203							{1: '1', 2: '0.25', 3: '50'}
+324	324		401							{1: '2', 2: '8220025'}
+325	325		301							{3: 'Grace grips the crowbar for dear life, swinging it wildly to fend off the projections appearing in the Red Tide.'}
+326	326		203							{1: '1', 2: '0.25'}
+327	327		401							{1: '2', 2: '8220025'}
+328	328		301							"{2: 'Grace', 3: ""False god... you're unworthy..."", 4: '1'}"
+329	329		202							{1: '1'}
+330	330		401							{1: '2', 2: '4692'}
+331	331		301							"{3: ""The metal door groans loudly—someone's trying to pry it open from the other side.""}"
+332	332		401							{1: '2', 2: '8220025'}
+333	333		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '1'}
+334	334		201							{1: '1', 2: '500541', 3: '5'}
+335	335		301							"{1: '1', 3: ""Seeing this, Grace—who'd just chased off the projections in front of her—frantically lifts her crowbar and whips it toward the door behind her.""}"
+336	336		301							{2: 'Grace', 3: 'Unworthy to proclaim the future of the Scarlet Revelation—!', 4: '1'}
+337	337		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+338	338		402							{1: '5027'}
+339	339		401							{1: '2', 2: '4556'}
+340	340		202							{1: '1', 6: '1'}
+341	341		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+342	342		301			RImgBg1Shake				{3: 'The door bursts open with a crash.'}
+343	343		401							{1: '1', 2: '187'}
+344	344		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '3'}
+345	345		201							{1: '1', 2: '501308', 3: '4'}
+346	346		301							{1: '1', 2: 'Lulu', 3: 'Whoa, whoa, whoa—! ****! Grace!', 4: '1'}
+347	347		301							"{3: ""Grace can't stop her swing—the sharp end of her crowbar plunges straight down toward Lulu, who's standing right in its path.""}"
+348	348		201							{1: '2', 2: '500541', 4: '800'}
+349	349		203						200.0	{1: '2', 2: '0.25', 3: '320'}
+350	350		401							{1: '2', 2: '4044'}
+351	351		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+352	352		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+353	353		201							{1: '1', 2: '501308', 3: '4', 4: '-400', 7: '1'}
+354	354		201							{1: '2', 2: '500541', 4: '400', 7: '1'}
+355	355		301			PanelActor1Shake				{1: '1', 2: 'Lulu', 3: 'YIKES—so violent!', 4: '1'}
+356	356		204							{1: '1', 2: '8'}
+357	357		301							{2: 'Lulu', 3: 'Good thing I was on guard! Surviving Hetero-Creatures only to get bashed by you would be a pretty embarrassing way to go.', 4: '1'}
+358	358		202							{1: '1', 2: '2'}
+359	359		401							{1: '2', 2: '4305'}
+360	360		301							"{3: ""Lulu coughs up some vital fluid that's leaked from an overload, then kicks the metal door with her foot.""}"
+361	361		201							{1: '1', 2: '501308', 3: '4'}
+362	362		301							{1: '1', 2: 'Lulu', 3: 'A relic from the Golden Age... Is it really that well-built? Took so many Constructs just to smash through...', 4: '1'}
+363	363		203							{1: '1', 2: '0.25', 3: '-400'}
+364	364		201							{1: '2', 2: '500541', 4: '400'}
+365	365		301							{1: '1', 2: 'Grace', 3: 'Lulu? Did the Red Tide also get you...', 4: '2'}
+366	366		301							"{2: 'Lulu', 3: ""Ugh, no way! Don't say such gross stuff! It's really me!"", 4: '1'}"
+367	367		203							{1: '1', 2: '0.25', 3: '-200'}
+368	368		301							"{2: 'Lulu', 3: ""It's—REALLY—ME—!"", 4: '1'}"
+369	369		204							{1: '2', 2: '5'}
+370	370		301			PanelActor2Shake				{2: 'Grace', 3: 'Ow... ow, ow, ow... Stop, stop pinching my face...', 4: '2'}
+371	371		202							{1: '1', 2: '2'}
+372	372		306							{1: '1'}
+373	373		301							{3: 'In a daze, she stares at the busted door, the Babylonia Constructs who just burst in, and the human commandant.'}
+374	374		301				AniZhuanchangBegin			"{3: ""It's like she's been pulled from treacherous waters and is finally back on the warm, dry shores of reality.""}"
+375	375		306							
+376	376		502							{1: 'DialogDisable'}
+377	377		401						2000.0	{1: '1', 2: '36'}
+378	378		401							{1: '1', 2: '161'}
+379	379		302			AniZhuanchangEnd				{2: 'Bianca!'}
+380	380		306							{1: '1'}
+381	381		201							{1: '1', 2: '500534', 3: '8'}
+382	382		301			DialogEnable				{1: '1', 3: 'The moment you burst in, you see Bianca with her eyes tightly shut.'}
+383	383		306							
+384	384		202							{1: '1', 6: '1'}
+385	385		201							{1: '1', 2: '500166', 3: '5'}
+386	386		301							{1: '1', 2: 'Lucia', 3: 'Severe Punishing Virus corruption, already at a critical threshold... Her M.I.N.D. has gone seriously off-kilter.', 4: '1'}
+387	387		302							{2: 'Prepare for Deep M.I.N.D. connection.', 3: '388'}
+388	388		401							{1: '2', 2: '4387'}
+389	389		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+390	390		202							{1: '1', 6: '1'}
+391	391		301				DialogDisable			{3: 'The equipment is quickly calibrated. With no time to find a safer spot, you immediately start the Deep M.I.N.D. connection.'}
+392	392		302							{2: '(Initiate Deep M.I.N.D. connection)', 3: '393'}
+393	393		401							{1: '2', 2: '2567'}
+394	394		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab', 2: '3'}
+395	395		505			AniZhuanchangBegin				{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab'}
+396	396		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+397	397		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+398	398		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '3'}
+399	399		401							{1: '2', 2: '4278'}
+400	400		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront1.png', 4: '4'}
+401	401		101			AniZhuanchangEnd			400.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_08.jpg'}
+402	402		401							{1: '2', 2: '4278'}
+403	403		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+404	404		101						250.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_12.jpg'}
+405	405		401							{1: '2', 2: '4278'}
+406	406		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+407	407		101						250.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_29.jpg'}
+408	408		301			DialogEnable				{3: 'Your Mind Beacon cuts through her M.I.N.D., which is now riddled with holes from the Punishing Virus corruption, as chaotic, twisted memories flash before your eyes.'}
+409	409		401							{1: '2', 2: '4278'}
+410	410		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+411	411		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+412	412		101						400.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_30.jpg'}
+413	413		401							{1: '2', 2: '4278'}
+414	414		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+415	415		101						250.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_28.jpg'}
+416	416		401							{1: '2', 2: '4278'}
+417	417		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}
+418	418		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_14.jpg'}
+419	419		301							{3: 'Nightmarish shadows tail your every step, incoherent whispers spilling from their lips. Tropical fish twist into grotesque forms, screaming and wailing.'}
+420	420		302							{2: 'Bianca...?'}
+421	421		401							{1: '2', 2: '4278'}
+422	422		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+423	423		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+424	424		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+425	425		301							{3: 'As you dodge the sharp mental spikes, countless voices blend together.'}
+426	426		401							{1: '2', 2: '4278'}
+427	427		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+428	428		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+429	429		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_14.jpg'}
+430	430		201							{1: '1', 2: '500133', 7: '1'}
+431	431		301							{1: '1', 2: 'Phantom', 3: 'Witch—', 4: '1'}
+432	432		401							{1: '2', 2: '4278'}
+433	433		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+434	434		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+435	435		202							{1: '1', 6: '1'}
+436	436		201							{1: '1', 2: '500268', 4: '-600', 7: '1'}
+437	437		201							{1: '2', 2: '500133', 7: '1'}
+438	438		201							{1: '3', 2: '500164', 4: '600', 7: '1'}
+439	439		301							{1: '1', 2: 'Phantom', 3: 'Blood-stained devil—', 4: '1', 5: '2', 6: '3'}
+440	440		401							{1: '2', 2: '4278'}
+441	441		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+442	442		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+443	443		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+444	444		201							{1: '1', 2: '501025', 4: '-750', 7: '1'}
+445	445		201							{1: '2', 2: '501078', 4: '-400', 7: '1'}
+446	446		201							{1: '3', 2: '500927', 7: '1'}
+447	447		201							{1: '4', 2: '501307', 4: '400', 7: '1'}
+448	448		201							{1: '5', 2: '500296', 4: '750', 7: '1'}
+449	449		301							{1: '1', 2: 'Phantom', 3: 'Self-righteous phonies—', 4: '1', 5: '2', 6: '3', 7: '4', 8: '5'}
+450	450		302							"{2: 'Bianca!', 3: '451', 4: 'Wake up!', 5: '451', 6: ""It's me!"", 7: '451'}"
+451	451		401							{1: '2', 2: '4278'}
+452	452		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+453	453		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+454	454		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+455	455		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '1'}
+456	456		201							{1: '1', 2: '501304', 7: '1'}
+457	457		301							{1: '1', 2: 'Bianca', 3: 'Com... Commandant?', 4: '1'}
+458	458		301							{3: 'A weak voice echoes from the depths of her M.I.N.D.'}
+459	459		302							{2: 'Bianca!', 3: '460'}
+460	460		301							{2: 'Bianca', 3: 'I—', 4: '1'}
+461	461		302							{2: 'Ugh—!', 3: '462'}
+462	462		402							{1: '161'}
+463	463		401							{1: '2', 2: '4052'}
+464	464		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+465	465		202							{1: '1', 6: '1'}
+466	466		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+467	467		101							{4: '4', 5: '1'}
+468	468		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory619.jpg'}
+469	469		301							{3: 'Just as you reach out to grasp her, the Deep M.I.N.D. connection abruptly cuts off.'}
+470	470		401							{1: '1', 2: '209'}
+471	471		201							{1: '1', 2: '500166'}
+472	472		301							"{1: '1', 2: 'Lucia', 3: ""...The corruption's too severe. She forcefully ended the connection..."", 4: '1'}"
+473	473		202							{1: '1', 6: '1'}
+474	474		201							{1: '1', 2: '500534', 3: '9', 7: '1'}
+475	475		301			PanelActor1Shake				{1: '1', 2: 'Bianca', 3: 'Cough...', 4: '1'}
+476	476		302							"{2: ""You're awake!"", 3: '477', 4: 'You okay?', 5: '477'}"
+477	477		301							{2: 'Bianca', 3: 'Commandant...', 4: '1'}
+478	478		301							"{2: 'Bianca', 3: 'We\'ve found traces of Ascendants. Besides the one named ""Lithos"", there could be others...', 4: '1'}"
+479	479		301							"{2: 'Bianca', 3: ""They're in charge of the monitoring room and are constantly pumping Red Tide through the drainage system, blocking our way."", 4: '1'}"
+480	480		301			PanelActor1Shake				"{2: 'Bianca', 3: ""Chiko's likely been taken by them... cough..."", 4: '1'}"
+481	481		301							{3: 'Vital fluid wells up from the corner of her mouth.'}
+482	482		302							"{2: ""We'll talk later."", 3: '483', 4: 'Your injuries are bad.', 5: '483'}"
+483	483		301							"{2: 'Bianca', 3: ""There's no time... We need to find them, fast."", 4: '1'}"
+484	484		301							"{2: 'Bianca', 3: 'The Red Tide mutated by these Ascendants can melt Constructs. I\'m worried... the more Constructs it absorbs, the stronger the ""monster"" it spawns becomes,', 4: '1'}"
+485	485		301							"{2: 'Bianca', 3: ""And there's Scarlet Revelation... cough..."", 4: '1'}"
+486	486		202							{1: '1'}
+487	487		301							{3: 'She struggles to spit out the vital fluid filling her mouth.'}
+488	488		201							{1: '1', 2: '500534', 3: '9'}
+489	489		301							"{1: '1', 2: 'Bianca', 3: ""We've got most of the Scarlet Revelation followers now. Sylph will show you the way to them..."", 4: '1'}"
+490	490		302							"{2: 'Got it.', 3: '491', 4: ""I'll get them out safe and sound."", 5: '491'}"
+491	491		204							{1: '1', 2: '8'}
+492	492		301							{2: 'Bianca', 3: '...', 4: '1'}
+493	493		202							{1: '1', 6: '1'}
+494	494		201							{1: '1', 2: '500166', 3: '5'}
+495	495		301							"{1: '1', 2: 'Lucia', 3: ""Her M.I.N.D. deviation is getting worse. This isn't looking good."", 4: '1'}"
+496	496		202							{1: '1'}
+497	497		301							"{3: ""Asimov said a support team is on their way with Bianca's new frame. If she can hold out until the frame replacement, it might ease the Punishing Virus corruption in her Stigmata frame—at least take the edge off.""}"
+498	498		201							{1: '1', 2: '500309'}
+499	499		301				DialogDisable			{1: '1', 2: 'Chrome', 3: 'Go back the way we came?', 4: '1'}
+500	500		302							{2: 'No chance of that.', 3: '501'}
+501	501		302							{2: 'Bianca said the Ascendants are in charge of the monitoring room.', 3: '502'}
+502	502		302							"{2: ""Then they've most likely already blocked off our original path. We've got no choice but to..."", 3: '503'}"
+503	503		202							{1: '1', 6: '1'}
+504	504		201							{1: '1', 2: '500616'}
+505	505		301			DialogEnable				"{1: '1', 2: 'Follower B', 3: ""Ah... They're from Babylonia!"", 4: '1'}"
+506	506		202							{1: '1', 6: '1'}
+507	507		301							{2: 'Purifying Force Member C', 3: '...Gray Raven Commandant!'}
+508	508		301							{3: 'Hearing all the noise, survivors who scattered during the Red Tide assault start helping each other out, gradually making their way over here.'}
+509	509		301							{3: 'A quick headcount shows at least a dozen people—but only three and a half of them are still mobile.'}
+510	510		301							"{3: 'The three are the fastest runners among the followers, and the ""half"" is Sylph, who stubbornly insists she can still move.'}"
+511	511		201							{1: '1', 2: '500309'}
+512	512		301							"{1: '1', 2: 'Chrome', 3: ""Let's split up, Commandant."", 4: '1'}"
+513	513		301							"{2: 'Chrome', 3: ""You and Lucia take Bianca and head out first. I'll stay behind with the Scarlet Revelation Construct to clear the obstacles and wait for backup."", 4: '1'}"
+514	514		301							"{3: ""He always takes the rear guard, a move that seems to be Chrome's go-to in his crisis management playbook. He's used to shouldering the danger himself.""}"
+515	515		302							{2: 'There are too many wounded for you to handle alone.', 3: '516'}
+516	516		202							{1: '1', 6: '1'}
+517	517		201							{1: '1', 2: '501290'}
+518	518		301							"{1: '1', 2: 'Sylph', 3: ""I'll stay with them."", 4: '1'}"
+519	519		302							{2: '...', 3: '520'}
+520	520		301				DialogDisable			"{3: ""A moment of hesitation flickers as you look at Sylph's wounds.""}"
+521	521		302							"{2: ""...Even with your help, it'd still be tough to handle everything."", 3: '522'}"
+522	522		302							"{2: ""And with Ascendants lurking, we can't tend to this many wounded..."", 3: '523'}"
+523	523		202							{1: '1'}
+524	524		401							{1: '2', 2: '4421'}
+525	525		301			DialogEnable	DialogDisable			{3: 'Your terminal suddenly rings, shattering the silence.'}
+526	526		302							"{2: ""We're getting a signal?"", 3: '527', 4: 'Is it Babylonia?', 5: '527'}"
+527	527		401							{1: '2', 2: '4422'}
+528	528		509						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1278.jpg', 2: '1'}
+529	529		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '11'}
+530	530		201							{1: '11', 2: '500494', 3: '5', 4: '-550'}
+531	531		301			DialogEnable				{1: '1', 2: 'Karenina', 3: 'Hey—! Hello, hello?!', 4: '11'}
+532	532		201							{1: '1', 2: '500166', 4: '550'}
+533	533		301							"{1: '1', 2: 'Lucia', 3: ""It's Karenina..."", 4: '1'}"
+534	534		202							{1: '1'}
+535	535		302							{2: 'Karenina?', 3: '537', 4: 'So they sent you to help us?!', 5: '536'}
+536	536		301							"{2: 'Karenina', 3: ""What's the big deal? Not thrilled? Well, like it or not, I'm all you've got!"", 4: '11'}"
+537	537		201							{1: '18', 2: '500495'}
+538	538		301							"{1: '1', 2: 'Teddy', 3: ""...Can you hurry it up already? You're in the way."", 4: '18'}"
+539	539		202							{1: '11', 2: '18'}
+540	540		401							{1: '2', 2: '5809'}
+541	541		301							{3: 'The faint sound of metal hull impacts drifts through the terminal.'}
+542	542		302							{2: 'Is Commander Nikola with you—', 3: '543'}
+543	543		201							{1: '11', 2: '500494', 3: '4', 4: '-550'}
+544	544		301							"{1: '1', 2: 'Karenina', 3: ""—I'm not on Babylonia."", 4: '11'}"
+545	545		301							{2: 'Karenina', 3: 'Teddy just hacked your terminal to set up this short-range comms channel. It only works so far.', 4: '11'}
+546	546		202							{1: '11', 6: '1'}
+547	547		201							{1: '11', 2: '500495', 3: '1', 4: '-550'}
+548	548		301				DialogDisable			"{1: '1', 2: 'Teddy', 3: ""You're welcome."", 4: '11'}"
+549	549		302							{2: 'Short range...', 3: '550'}
+550	550		302							{2: 'Are you at the aquarium right now?', 3: '551'}
+551	551		204							{1: '11', 2: '4'}
+552	552		301			DialogEnable				"{2: 'Teddy', 3: ""Thanks to you—Captain KA-RE-NI-NA, I'm telling you again, don't just stop moving."", 4: '11'}"
+553	553		201							{1: '18', 2: '500494', 3: '5'}
+554	554		301							"{1: '1', 2: 'Karenina', 3: ""Isn't this the spot YOU marked?! We! Need! To! Turn! NOW!"", 4: '18'}"
+555	555		202							{1: '18'}
+556	556		301							{2: 'Teddy', 3: 'Ugh... So noisy.', 4: '11'}
+557	557		202							{1: '11'}
+558	558		401							{1: '2', 2: '722'}
+559	559		401							{1: '2', 2: '8510114'}
+560	560		401							{1: '2', 2: '5809'}
+561	561		301							{3: 'Between their squabbling, you can just make out the sound of running water and metallic clanging.'}
+562	562		402							{1: '722'}
+563	563		302							{2: 'Did you just come from the lower first level?', 3: '564', 4: 'Are you in... the ventilation ducts?', 5: '567'}
+564	564		201							{1: '11', 2: '500495', 3: '4', 4: '-550'}
+565	565		301							{1: '1', 2: 'Teddy', 3: 'Obviously—no.', 4: '11'}
+566	566	571	301							"{2: 'Teddy', 3: ""The lower first level is an absolute wreck—like two mechanical monsters duked it out and then self-destructed together. It's completely caved in, with the Red Tide and rebar all over the place."", 4: '11'}"
+567	567		201							{1: '11', 2: '500495', 3: '1', 4: '-550'}
+568	568		301							{1: '1', 2: 'Teddy', 3: 'Clever.', 4: '11'}
+569	569		204							{1: '11', 2: '4'}
+570	570		301							"{2: 'Teddy', 3: ""The lower first level has totally collapsed—like two mechanical monsters duked it out and then self-destructed together. There's rebar and the Red Tide everywhere."", 4: '11'}"
+571	571		204							{1: '11', 2: '13'}
+572	572		301							"{2: 'Teddy', 3: ""But the good news is, thanks to this disaster, there are hardly any Hetero-Creatures left on the lower first level, and the Ascendants couldn't possibly stick around there either—unless they've already become one with the Red Tide."", 4: '11'}"
+573	573		202							{1: '11', 6: '1'}
+574	574		201							{1: '11', 2: '500494', 3: '4', 4: '-550'}
+575	575		301							"{1: '1', 2: 'Karenina', 3: ""The Engineering Force hauled in construction machinery from the nearby conservation area, zeroed in on the target, and dug straight through the lower first level's ceiling."", 4: '11'}"
+576	576		301							{2: 'Karenina', 3: 'The lower second level is completely swamped with seawater and choked with the Red Tide, so getting in there is a real nightmare.', 4: '11'}
+577	577		301							"{2: 'Karenina', 3: ""So, right now, we're in the ventilation ducts, hauling Bianca's new frame."", 4: '11'}"
+578	578		202							{1: '11', 6: '1'}
+579	579		201							{1: '11', 2: '500495', 4: '-550'}
+580	580		301							"{1: '1', 2: 'Teddy', 3: ""And we must be practically on top of you by now; otherwise, I wouldn't have been able to hack into your terminal and set up this call."", 4: '11'}"
+581	581		302							{2: 'So, does that mean we could get some of the survivors out through these ducts?', 3: '582'}
+582	582		301							{2: 'Teddy', 3: 'No chance of that.', 4: '11'}
+583	583		301							"{2: 'Teddy', 3: 'The ventilation ducts are way too narrow—you can\'t even move shoulder-to-shoulder in them. If your ""survivors"" were all up and moving, it might be a fallback plan, but with a significant number of injured people...', 4: '11'}"
+584	584		302							"{2: '...I spoke too soon.', 3: '585', 4: ""It's still a no-go..."", 5: '585'}"
+585	585		202							{1: '11', 6: '1'}
+586	586		201							{1: '11', 2: '500494', 3: '12', 4: '-550'}
+587	587		301							"{1: '1', 2: 'Karenina', 3: ""Parliament's given the green light to deploy the Omega Weapons. We're just the initial support; the second team will be here any minute."", 4: '11'}"
+588	588		401							{1: '2', 2: '4176'}
+589	589		203						200.0	{1: '11', 2: '0.15', 3: '-560'}
+590	590		203						200.0	{1: '11', 2: '0.15', 3: '-550'}
+591	591		203						200.0	{1: '11', 2: '0.15', 3: '-560'}
+592	592		203						200.0	{1: '11', 2: '0.15', 3: '-550'}
+593	593		203						200.0	{1: '11', 2: '0.15', 3: '-560'}
+594	594		203						200.0	{1: '11', 2: '0.15', 3: '-550'}
+595	595		201							{1: '18', 2: '500495', 3: '5'}
+596	596		301							"{1: '1', 2: 'Teddy', 3: ""...Hey! Don't go blasting holes with gravitational waves out of nowhere!"", 4: '18'}"
+597	597		202							{1: '18'}
+598	598		301							{2: 'Karenina', 3: 'Anyway, just hang tight—and make sure Bianca hangs on too.', 4: '11'}
+599	599		301							"{2: 'Karenina', 3: ""Teddy will sync the nearest coordinate point and a simple route to you. We'll meet up there."", 4: '11'}"
+600	600		401							{1: '2', 2: '4423'}
+601	601		510						300.0	{1: '1'}
+602	602		202							{1: '11'}
+603	603		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '11'}
+604	604		301							"{3: 'Probably needing to buckle down on her ""work,"" Karenina cuts off the communication.'}"
+605	605		401							{1: '2', 2: '2979'}
+606	606		301							{3: 'Soon, the meetup coordinates beam into your terminal.'}
+607	607		302							{2: 'Then...', 3: '608'}
+608	608		201						200.0	{1: '1', 2: '500309', 7: '1'}
+609	609		302							{2: 'Chrome, I need you to hold down the fort here and keep an eye on the survivors, clearing any obstacles.', 3: '610'}
+610	610		202							{1: '1'}
+611	611		301				DialogDisable			"{3: ""The second batch of support is on its way. As long as the survivors can tough it out in the large space on the lower third level, they'll definitely make it until rescue comes.""}"
+612	612		201						200.0	{1: '1', 2: '500166'}
+613	613		302							"{2: ""Lucia, let's go find Karenina together."", 3: '614'}"
+614	614		202							{1: '1'}
+615	615		301			DialogEnable				"{3: ""Given Bianca's M.I.N.D. state, she likely won't hang on until the obstacles are cleared and the second batch arrives. You have no choice but to push forward now.""}"
+616	616		201							{1: '1', 2: '500309', 4: '-400'}
+617	617		201							{1: '2', 2: '500166', 4: '400'}
+618	618		301							{1: '1', 2: 'Lucia', 3: 'Yes, Commandant.', 4: '1'}
+619	619		301							{2: 'Chrome', 3: 'Be careful out there.', 4: '2'}
+620	620		302							"{2: ""We will. Let's catch up on the surface."", 3: '621'}"
+621	621		202							{1: '1', 2: '2'}
+622	622		301							{3: 'After briefly swapping tactical information, the team splits up. Chrome stays put, watching intently as the Gray Raven Commandant walks off. Then he turns, organizing the few who can still move to begin clearing the obstacles.'}
+623	623		301							"{3: ""This isn't their first tough fight—""}"
+624	624		301		1		AniZhuanchangBegin			"{3: ""And it won't be their last.""}"

@@ -1,0 +1,114 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory240.png'}
+2	2		401							{1: '1', 2: '12'}
+3	3		301			DialogEnable				{3: 'Dead silence hangs over the road, only punctuated by the sound of footsteps moving forward and the occasional explosions in the distance.'}
+4	4		301							{3: 'The smell of oil and rust fills the air. The world seems to have been frozen in place.'}
+5	5		201							{1: '1', 2: '500231'}
+6	6		301							"{1: '1', 2: 'HNB1', 3: ""It's so empty here..."", 4: '1'}"
+7	7		203							{1: '1', 2: '0.25', 3: '400'}
+8	8		201							{1: '2', 2: '500233', 4: '-400'}
+9	9		301							{1: '1', 2: 'HBG3', 3: 'All of the large machineries were removed.', 4: '2'}
+10	10		301							{2: 'HNB1', 3: 'Look over there.', 4: '1'}
+11	11		202							{1: '1', 2: '2', 6: '1'}
+12	12		301							"{3: 'A wall by the road has been spray-painted with rudimentary images of robots, circled in red and crossed with an ominous ""X"".'}"
+13	13		201							{1: '1', 2: '500231', 4: '400'}
+14	14		201							{1: '2', 2: '500233', 4: '-400'}
+15	15		301							{1: '1', 2: 'HNB1', 3: 'Is that... us?', 4: '1'}
+16	16		301							"{2: 'HBG3', 3: ""There is only a 14% match in similarity, but I calculate an 84% chance that they are supposed to depict Tai'E units."", 4: '2'}"
+17	951		401							{1: '1', 2: '208'}
+18	17		301							"{2: 'HNB1', 3: ""Well, that does me no justice at all. I'll show them who's the artist here!"", 4: '1'}"
+19	18		202							{1: '1', 2: '2', 6: '1'}
+20	19		201							{1: '3', 2: '500219', 3: '1'}
+21	20		301							{1: '1', 2: 'Little Girl', 3: 'Me too, I wanna try!', 4: '3'}
+22	21		201							{1: '3', 2: '500233'}
+23	22		301							"{1: '1', 2: 'HBG3', 3: ""I don't think we have the time for that..."", 4: '3'}"
+24	23		202							{1: '3', 6: '1'}
+25	24		301							{3: 'Before HBG3 could stop them, HNB1 and the girl pick up the spray can on the ground.'}
+26	25		201							{1: '2', 2: '500233', 3: '10'}
+27	26		301							{1: '1', 2: 'HBG3', 3: '...', 4: '2'}
+28	27		202							{1: '2', 6: '1'}
+29	28		301							{3: '——'}
+30	29		301							"{3: ""A few minutes later, the two Tai'E on the wall have been expertly redesigned into cowboys with cowboy hats, with the red X modified into a heart symbol. On the bottom right, there is a stick figure with pigtails.""}"
+31	30		301							"{3: ""The girl sitting on HNB1's shoulders smiles.""}"
+32	31		401							{1: '2', 2: '10007502'}
+33	32		301			RImgBg1Shake				{3: 'Boom—'}
+34	33		301							{3: 'A muffled explosion can be heard in the distance.'}
+35	34		201							{1: '1', 2: '500231'}
+36	654		401							{1: '1', 2: '201'}
+37	35		301							{1: '1', 2: 'HNB1', 3: '...', 4: '1'}
+38	36		202							{1: '1', 6: '1'}
+39	37		301							{3: 'Their brief playtime is silenced by the rumbling of explosions.'}
+40	38		201							{1: '1', 2: '500233'}
+41	39		301							{1: '1', 2: 'HBG3', 3: 'We need to hurry.', 4: '1'}
+42	41		201							{1: '1', 2: '500231'}
+43	43		301							"{1: '1', 2: 'HNB1', 3: ""You're right. Sorry."", 4: '1'}"
+44	1000		201							{1: '1', 2: '500219'}
+45	44		301							{1: '1', 2: 'Little Girl', 3: '...', 4: '1'}
+46	1001		201							{1: '1', 2: '500231'}
+47	45		301							"{1: '1', 2: 'HNB1', 3: ""Hey, do you see that? There's a car up ahead!"", 4: '1'}"
+48	1002		201							{1: '1', 2: '500219'}
+49	46		301							"{1: '1', 2: 'Little Girl', 3: ""Yeah! It looks like Daddy's car!"", 4: '1'}"
+50	47		202							{1: '1', 2: '3', 6: '1'}
+51	48		201							{1: '1', 2: '500233'}
+52	49		301							{1: '1', 2: 'HBG3', 3: 'Wait up...', 4: '1'}
+53	51		201							{1: '1', 2: '500231', 3: '1'}
+54	52		301				AniZhuanchangBegin			{1: '1', 2: 'HNB1', 3: 'Alright, we need to get going!', 4: '1'}
+55	53		202							{1: '1', 6: '1'}
+56	54		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory248.png'}
+57	55		301			AniZhuanchangEnd				{3: 'The vehicle weaves throughout the lower city area and speeds out. Kowloong appears pale and hostile in the pallid sunlight.'}
+58	56		301							{3: 'Passing through the open industrial area, lofty towers reach out to the sky like giant fingers.'}
+59	57		301							{3: 'The sky gradually darkens... As they approach the city, the devastation and signs of war become more apparent.'}
+60	58		301							{3: 'Several fires are raging in the distant city, with plumes of smoke rising and radiating red from the flames. Arcs of electricity occasionally flash by, causing the smoke to ripple in blue.'}
+61	59		301				AniZhuanchangBegin			{3: 'Suddenly, the black plumes of smoke and the entire city all plunge into darkness from a blackout. Only the skyscrapers from afar can be seen fading in and out, illuminated by the flames of war.'}
+62	61		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory242.png'}
+63	62		301			AniZhuanchangEnd				"{3: ""Moving further, they stop as the army's defensive line appears before them.""}"
+64	63		201							{1: '2', 2: '500233'}
+65	64		301							{1: '1', 2: 'HBG3', 3: 'Looks like a battle was fought here.', 4: '2'}
+66	65		203							{1: '2', 2: '0.25', 3: '-400'}
+67	66		201							{1: '1', 2: '500231', 4: '400'}
+68	67		301							{1: '1', 2: 'HNB1', 3: 'Should we just go to the evacuation point from here?', 4: '1'}
+69	68		301							"{2: 'HBG3', 3: ""There's no need to tell her the truth. Honesty with emotional animals isn't the best option, nor is it the safest form of communication."", 4: '2'}"
+70	69		301							"{2: 'HBG3', 3: ""Based on our current info, entering the war zone indicates an 89% mortality rate for her, with her father's survival rate being at 3%. Most importantly, I have already obtained the coordinates for the evacuation point."", 4: '2'}"
+71	70		301							{2: 'HNB1', 3: 'Alright, looks like this is our only choice.', 4: '1'}
+72	71		301							"{2: 'HNB1', 3: ""Then it's bye-bye to this fella. What a pity, I liked the music in the car. The owner must have been a man of good taste."", 4: '1'}"
+73	72		202							{1: '1', 2: '2', 6: '1'}
+74	73		301							{3: 'HNB1 remains quiet a moment, possibly thinking of the missing car owner.'}
+75	74		201							{1: '1', 2: '500231', 4: '400'}
+76	75		201							{1: '2', 2: '500233', 4: '-400'}
+77	76		301							"{1: '1', 2: 'HNB1', 3: ""Wake her up. She's already slept for several hours. She must have been exhausted."", 4: '1'}"
+78	77		301							"{2: 'HBG3', 3: ""Stop the car. I'll take her out."", 4: '2'}"
+79	78		202							{1: '1', 2: '2', 6: '1'}
+80	79		201							{1: '3', 2: '500219'}
+81	80		301							{1: '1', 2: 'Little Girl', 3: 'Huh... Are we... there yet?', 4: '3'}
+82	81		201							{1: '3', 2: '500233'}
+83	82		301							{1: '1', 2: 'HBG3', 3: 'The road is blocked up ahead. We have to walk from here.', 4: '3'}
+84	83		202							{1: '3', 6: '1'}
+85	84		401							{1: '2', 2: '1508'}
+86	85		301							{2: '???', 3: '(Rustling noises)'}
+87	86		301							{3: 'At the end of the bridge... They catch a glimpse of the monsters. Their eyes shine with sanguine light.'}
+88	87		201							{1: '1', 2: '500239', 4: '-600'}
+89	88		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 3: '1'}
+90	89		401							{1: '2', 2: '1508'}
+91	90		301							{1: '1', 2: 'Unknown Corrupted', 3: '(Rustling noises)', 4: '1'}
+92	91		301							{3: 'Less than 100 meters away, a hulking mechanoid twists its body and crawls on the ground, as if trying to claw its way out of hell. It lets out an uncanny screech.', 4: '1'}
+93	92		301							{3: 'HNB1 looks straight at the monster. The shadowy abomination on the cliff charges forward. An inferno rises behind it, illuminating their faces.', 4: '1'}
+94	93		301							"{3: ""That thing is—was—a Tai'E."", 4: '1'}"
+95	94		301			PanelActor1Shake				"{3: ""Its outline seems to blur, like two shadows clumsily stacked over each other; one being a Tai'E, the other a screeching monster, roaring murderously."", 4: '1'}"
+96	96		201							{1: '2', 2: '500233', 4: '600'}
+97	97		301							{1: '1', 2: 'HBG3', 3: 'Come here!', 4: '2'}
+98	1080		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 4: '1'}
+99	98		202							{1: '1', 2: '2', 6: '1'}
+100	99		301							{3: 'HNB1 recovers from its brief shock.'}
+101	100		201							{1: '1', 2: '500233'}
+102	101		301							{1: '1', 2: 'HBG3', 3: 'We need to push on through.', 4: '1'}
+103	102		201							{1: '1', 2: '500231'}
+104	103		301							"{1: '1', 2: 'HNB1', 3: ""That thing, that's..."", 4: '1'}"
+105	104		201							{1: '1', 2: '500219', 3: '4'}
+106	105		301							"{1: '1', 2: 'Little Girl', 3: 'Grown-ups call them ""Corrupted"".', 4: '1'}"
+107	106		301							"{2: 'Little Girl', 3: ""They're... They're the ones attacking people."", 4: '1'}"
+108	107		201							{1: '1', 2: '500233'}
+109	108		301							"{1: '1', 2: 'HBG3', 3: ""We must quickly get through this place before more of those things appear. I'll go first, you take her and follow me."", 4: '1'}"
+110	109		201							{1: '1', 2: '500219', 3: '4'}
+111	110		301							"{1: '1', 2: 'Little Girl', 3: ""If they see us, we're finished."", 4: '1'}"
+112	111		201							{1: '1', 2: '500231'}
+113	112		301		1		AniZhuanchangBegin			{1: '1', 2: 'HNB1', 3: 'I know.', 4: '1'}

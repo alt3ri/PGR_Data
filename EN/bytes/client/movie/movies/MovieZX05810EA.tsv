@@ -1,0 +1,222 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory740.jpg', 4: '1'}
+2	2		401							{1: '1', 2: '55'}
+3	3		301			DialogEnable				{3: 'The Red Tide surrounding the forest slowly pulls back.'}
+4	4		301							{3: 'The brutal onslaught of Corrupted and Hetero-Creatures finally eases up, and the dark clouds blanketing the sky start to break apart.'}
+5	5		301							{3: 'Everyone can finally catch their breath and turn their attention to the girl still swallowed by the Red Tide.'}
+6	6		201							{1: '1', 2: '500610'}
+7	7		301				DialogDisable			{1: '1', 2: 'Alpha', 3: 'Luna...', 4: '1'}
+8	8		202							{1: '1'}
+9	9		306							{1: '1'}
+10	10		301			DialogEnable				"{3: 'When Selene shows up with her controlled Hetero-Creatures, Roland miraculously manages to bring—or rather, ""lure""—the four members of Gray Raven to this spot.'}"
+11	11		301				DialogDisable			"{3: ""Even though the Gray Raven Constructs don't jump into the fight and just stand guard over you, who's mentally connected to Luna, having you there to stabilize Luna's M.I.N.D. is enough.""}"
+12	12		306							
+13	13		201							{1: '1', 2: '500610'}
+14	14		301			DialogEnable				"{1: '1', 2: 'Alpha', 3: ""What's the situation?"", 4: '1'}"
+15	15		202							{1: '1'}
+16	16		301				DialogDisable			"{3: 'Selene, meanwhile, controls countless Corrupted and Hetero-Creatures to block everyone else\'s advance, while she herself makes a beeline for the ""Red Tide"" where Luna is submerged.'}"
+17	17		302							"{2: ""It's almost over..."", 3: '18'}"
+18	18		306							{1: '1'}
+19	19		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory911.jpg', 3: '0', 4: '1', 5: '0.3'}
+20	20		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+21	21		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory911.jpg'}
+22	22		301			DialogEnable				"{3: ""In another part of the battlefield, Luna defeats Selene's consciousness and reclaims her agent authority. But at the same time, her own mind is ripped to shreds by Punishing.""}"
+23	23		301				DialogDisable			"{3: ""Luckily, the M.I.N.D. connection to her holds firm. As long as the beacon stays steady, she'll surely find all her consciousness fragments in that endless labyrinth and discover the way out.""}"
+24	24		306							
+25	25		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory740.jpg', 3: '0', 4: '1', 5: '0.3'}
+26	26		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+27	27		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory740.jpg'}
+28	28		401				RImgBg1Shake			{1: '2', 2: '4685'}
+29	29		301			DialogEnable				{3: 'Before you can even finish speaking, the savage crimson tide surges skyward, morphing into towering waves.'}
+30	30		402							{1: '4685'}
+31	31		201							{1: '1', 2: '500166', 3: '5'}
+32	32		203							{1: '1', 2: '0.1', 4: '-20', 5: '-50'}
+33	33		301							{1: '1', 2: 'Lucia', 3: 'Commandant!', 4: '1'}
+34	34		301				AniZhuanchangBegin			"{3: ""The three Gray Raven members cautiously shield you, holding their ground. The Red Tide surges but doesn't breach their defensive line.""}"
+35	35		202							{1: '1', 6: '1'}
+36	36		401							{1: '1', 2: '36'}
+37	37		105						1000.0	{1: 'Assets/Product/Ui/Spine/2-11Spine/UimovieSpine/UimovieLuna/UimovieLuna01.prefab'}
+38	38		401							{1: '1', 2: '394'}
+39	39		301			AniZhuanchangEnd				{3: 'Meanwhile, the girl, enveloped by the Red Tide, keeps her eyes tightly shut, suspended amidst crimson thorns.'}
+40	40		301							{3: 'Murky moonlight pierces through the dark clouds, instantly flooding the entire forest.'}
+41	41		301							{3: 'She won.'}
+42	42		301							{3: 'No matter how many times it falls, there is only one moon in the world.'}
+43	43		301				DialogDisable			{3: 'The Red Tide and the rustling forest fall silent as Luna slowly opens her eyes.'}
+44	44		302				AniZhuanchangBegin			{2: 'Luna?', 3: '45'}
+45	45		105							
+46	46		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory740.jpg'}
+47	47		201							{1: '1', 2: '500885'}
+48	48		301			DialogEnable				{1: '1', 2: 'Luna', 3: '...', 4: '1'}
+49	49		301							{3: 'The reborn girl stares up at the moonlight on the horizon, as if still lost in that endless hell.'}
+50	50		302							"{2: ""You still haven't answered my question, Luna."", 3: '51'}"
+51	51		301							"{3: ""The Ascension-Network's will is essentially information from the dead—clusters of similar desires or emotions. It uses this information to filter for matching Agents.""}"
+52	52		301				DialogDisable			"{3: 'Luna, born from hatred, can only command information representing ""hatred,"" so...'}"
+53	53		302							{2: 'Do you still hate humans?', 3: '54'}
+54	54		302							"{2: 'Now, whose ""will"" are you standing by?', 3: '55'}"
+55	55		301			DialogEnable				{3: 'Luna quietly gazes at the sky, the moonlight reflecting in her eyes. After a long while, she finally speaks.'}
+56	56		301							"{2: 'Luna', 3: ""Now... I stand beside no one's will. My faith and emotions belong to me alone."", 4: '1'}"
+57	57		301							"{2: 'Luna', 3: ""I simply ache for a real future. I'm using this yearning to call out to those who will follow me."", 4: '1'}"
+58	58		301							{3: 'Luna, her agent authority revoked, smooths away the clusters of Punishing crystals.'}
+59	59		204							{1: '1', 2: '1'}
+60	60		301							{2: 'Luna', 3: 'No matter what, I owe you a thank you this time, 【kuroname】.', 4: '1'}
+61	61		302							"{2: ""We both got what we came for, that's all."", 3: '62'}"
+62	62		301							{2: 'Luna', 3: 'Yes, we both got what we needed.', 4: '1'}
+63	63		202							{1: '1', 2: '1'}
+64	64		301							"{3: ""Roland already tipped her off about the conditions promised to the Gray Raven Commandant—keeping the Punishing concentration in the Dead Zone in check and heading off the Red Tide's spread.""}"
+65	65		301							"{3: ""Even though Babylonia's new Central Purification Filters can now create areas that are almost like safe zones, a full-blown Red Tide invasion would still spell big trouble.""}"
+66	66		301							{3: 'Compared to the unknown Cradle, teaming up with Luna just makes more sense and is the quicker path.'}
+67	67		201							{1: '1', 2: '500885'}
+68	68		301							"{1: '1', 2: 'Luna', 3: ""And there's still that promise between us, isn't there?"", 4: '1'}"
+69	69		204							{1: '1', 2: '1'}
+70	70		301							"{3: ""The girl's fingertips linger at her neck as she cracks a slight smile.""}"
+71	71		301							"{2: 'Luna', 3: ""I'll hold up my end of the bargain."", 4: '1'}"
+72	72		302							{2: '...', 3: '73', 4: 'Alright.', 5: '73'}
+73	73		401						1000.0	{1: '2', 2: '5303'}
+74	74		301							"{3: ""Their brief encounter is cut short by the roar of Babylonia's transport crafts.""}"
+75	75		204							{1: '1'}
+76	76		301							"{2: 'Luna', 3: 'Looks like your ""reinforcements"" are about to arrive.', 4: '1'}"
+77	77		202						300.0	{1: '1'}
+78	78		401							{1: '2', 2: '4341'}
+79	79		201							{1: '1', 2: '500887', 4: '-300'}
+80	80		301							"{1: '1', 3: ""The Ascendants quietly fall back as the single wing behind Luna's back slowly unfurls.""}"
+81	81		204					100.0		{1: '1', 2: '1'}
+82	82		301				DialogDisable			"{2: 'Luna', 3: ""I hope this cooperation doesn't cause you any trouble... I look forward to our next meeting."", 4: '1'}"
+83	83		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '3'}
+84	84		203						100.0	{1: '1', 2: '0.1', 3: '-300', 4: '20', 5: '-50'}
+85	85		401							{1: '2', 2: '10028615'}
+86	86		202				RImgBg1Shake			{1: '1', 2: '1', 6: '1'}
+87	87		301			DialogEnable				{3: 'Suddenly, a roar rips through the air, and violent winds surge forth.'}
+88	88		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+89	89		301				AniZhuanchangBegin			"{3: ""When eyes open again, all that's left is the withered Red Tide and moonlight seeping into the soil.""}"
+90	90		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab'}
+91	91		401							{1: '1', 2: '36'}
+92	92		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+93	93		401							{1: '1', 2: '6172'}
+94	94		301			AniZhuanchangEnd				{3: 'In the desolate wasteland, starlight cascades down upon the plains.'}
+95	95		301							{3: 'Luna hovers in mid-air, her gaze sinking deep into the M.I.N.D. as she organizes the power extracted from the Red Tide.'}
+96	96		301				DialogDisable			"{3: ""The voices within the Red Tide are chaotic and overwhelming. It's like sifting through someone else's entire life; Luna examines the past through intricate, intertwined images.""}"
+97	97		401							{1: '2', 2: '2959'}
+98	98		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+99	99		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+100	100		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+101	101		101						300.0	{1: 'Assets/Product/Texture/Image/BgCg/Cgqz105.png'}
+102	102		401							{1: '2', 2: '2959'}
+103	103		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+104	104		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+105	105		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2101.jpg'}
+106	106		301			DialogEnable				{3: 'Some images are picture-perfect, while others are completely shattered.'}
+107	107		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.2'}
+108	108		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+109	109		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+110	110		301				DialogDisable			"{3: 'And some images... they\'re like ""stories"" she\'s never experienced.'}"
+111	111		401							{1: '2', 2: '2959'}
+112	112		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+113	113		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+114	114		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_06.jpg'}
+115	115		301			DialogEnable				{3: 'The one-winged girl stands calmly in the high air, looking down at a phone booth illuminated by only a trace of warm light.'}
+116	116		301							"{3: 'Another ""her"" is down there, dialing a number that should have no one to answer it.'}"
+117	117		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.2'}
+118	118		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+119	119		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+120	120		201							{1: '1', 2: '500885'}
+121	121		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+122	122		501							{1: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab', 2: '1'}
+123	123		301							{1: '1', 2: 'Luna', 3: '...', 4: '1'}
+124	124		202							{1: '1'}
+125	125		301							"{3: ""She's certain of one thing: this is something she has never done.""}"
+126	126		301							"{3: 'At least for now, she has no way or means to return to the ""past.""'}"
+127	127		301				DialogDisable			{3: 'Carefully tucking this image away, she examines other information...'}
+128	128		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab'}
+129	129		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0', 4: '1', 5: '1'}
+130	130		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+131	131		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+132	132		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '1'}
+133	133		401							{1: '2', 2: '4325'}
+134	134		301			DialogEnable				"{3: ""It's as if she's stumbled upon something that shouldn't be seen; a white mist shrouds a corner of her M.I.N.D., desperately concealing certain images.""}"
+135	135		301							{3: 'Luna shrugs off the throbbing in her M.I.N.D. as she pushes through a swirling white mist. Hazy scenes suddenly jump out at her from the depths of her mind.'}
+136	136		201							{1: '1', 2: '500885'}
+137	137		401							{1: '1', 2: '36'}
+138	138		301				DialogDisable			{1: '1', 2: 'Luna', 3: 'This is...', 4: '1'}
+139	139		202							{1: '1', 6: '1'}
+140	140		401							{1: '2', 2: '2959'}
+141	141		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+142	142		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+143	143		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+144	144		101						400.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1003.jpg'}
+145	145		401							{1: '2', 2: '2959'}
+146	146		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+147	147		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+148	148		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+149	149		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1105.jpg'}
+150	150		301			DialogEnable				{3: 'A crimson tower, piercing the clouds, an eerie Red Tide overflowing with strange information, and—'}
+151	151		401							{1: '2', 2: '2959'}
+152	152		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '3'}
+153	153		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+154	154		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+155	155		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5001_13.jpg'}
+156	156		301							{3: 'Their deaths.'}
+157	157		301				AniZhuanchangBegin			{2: 'Luna', 3: '...'}
+158	158		505			DialogDisable				{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+159	159		402							{1: '4325'}
+160	160		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory335.png'}
+161	161		205				AniZhuanchangEnd			{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory548.jpg', 3: '0.5', 4: '0.5', 5: '0'}
+162	162		401							{1: '1', 2: '396'}
+163	163		201							{1: '1', 2: '500885'}
+164	164		301			DialogEnable				{1: '1', 3: 'Luna quickly shoves the disturbing visions deep within her M.I.N.D. before her eyes snap open in the soft moonlight.'}
+165	165		203							{1: '1', 2: '0.25', 3: '400'}
+166	166		201							{1: '2', 2: '500610', 4: '-400'}
+167	167		301							{1: '1', 2: 'Alpha', 3: 'Are you alright?', 4: '2'}
+168	168		301							{3: 'Alpha asks, seeing her stir.'}
+169	169		301							"{2: 'Luna', 3: ""Yeah, I've managed to filter out the clutter. I'll have this chunk of power from the Red Tide sorted out soon."", 4: '1'}"
+170	170		301							{2: 'Alpha', 3: 'What did you see?', 4: '2'}
+171	171		301							{3: 'Alpha, who knows Luna inside and out, catches a flicker of something unsettling in her expression.'}
+172	172		301							"{2: 'Luna', 3: ""Nothing much. It's all still pretty hazy."", 4: '1'}"
+173	173		202							{1: '1', 2: '2'}
+174	174		301							{3: 'The girl tilts her head slightly, gazing into the distance.'}
+175	175		301							{3: 'Out there, she knows, a spiral tower should be stretching from the earth to the heavens.'}
+176	176		201							{1: '1', 2: '500885'}
+177	177		301							"{1: '1', 2: 'Luna', 3: ""Perhaps something's already changed, but..."", 4: '1'}"
+178	178		301				DialogDisable			"{2: 'Luna', 3: ""It's alright."", 4: '1'}"
+179	179		202			AniZhuanchangBegin				{1: '1', 6: '1'}
+180	180		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory548.jpg', 3: '0.5', 4: '0', 5: '0'}
+181	181		101				AniZhuanchangEnd		1000.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5701_16.jpg'}
+182	182		301			DialogEnable				{3: 'Hearing their conversation, Roland and Lamia walk over from nearby.'}
+183	183		301							"{2: 'Luna', 3: ""Even if it costs me everything, I won't let that future happen.""}"
+184	184		301							{3: 'Even if the price is her own life.'}
+185	185		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignLizi02.prefab', 2: '2'}
+186	186		301							{3: 'Specks of golden light drift down onto the quiet wasteland.'}
+187	187		301							{2: 'Lamia', 3: 'W-what just happened?'}
+188	188		301							"{2: 'Luna', 3: ""It's nothing. Let's get moving.""}"
+189	189		301				AniZhuanchangBegin			{3: 'Stepping through the moonlight washing over the land, the Ascendants start searching for their future in this brand new world.'}
+190	190		401			DialogDisable				{1: '1', 2: '36'}
+191	191		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignLizi02.prefab'}
+192	192		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+193	193		401			AniZhuanchangEnd				{1: '1', 2: '66'}
+194	194		201							{1: '1', 2: '500540'}
+195	195		301			DialogEnable				{1: '1', 2: 'Cradle', 3: '...', 4: '1'}
+196	196		301							{3: 'The girl in green robes sits perfectly still, waiting deep in the forest.'}
+197	197		204							{1: '1', 2: '4'}
+198	198		301							{2: 'Cradle', 3: '...', 4: '1'}
+199	199		401							{1: '2', 2: '2704'}
+200	200		203							{1: '1', 2: '0.2', 4: '-20', 5: '-10'}
+201	201		301							"{3: ""A Hetero-Creature tries to scramble away from her feet, but Cradle's sharp eyes catch it. She scoops it into her arms and pets it a few times, as if letting off steam.""}"
+202	202		204							{1: '1', 2: '8'}
+203	203		301							{2: 'Cradle', 3: 'Strange.', 4: '1'}
+204	204		301							{3: 'She senses that a chunk of power has been ripped right out of the Red Tide.'}
+205	205		301							{3: 'Who could have done it?'}
+206	206		301							"{3: ""Her own power isn't strong enough to trace it back to the source.""}"
+207	207		204							{1: '1', 2: '4'}
+208	208		301							"{2: 'Cradle', 3: ""Why do I keep getting this nagging feeling... that things shouldn't be this way?"", 4: '1'}"
+209	209		301							"{3: 'She furrows her brow, sifting through her ""thoughts.""'}"
+210	210		301							{2: 'Cradle', 3: 'I keep feeling like someone should be coming to find me...', 4: '1'}
+211	211		401							{1: '2', 2: '2704'}
+212	212		204							{1: '1', 2: '14'}
+213	213		203							{1: '1', 2: '0.3', 4: '-20', 5: '-50'}
+214	214		301							"{2: 'Cradle', 3: ""But why... hasn't anyone come..."", 4: '1'}"
+215	215		401							{1: '2', 2: '2704'}
+216	216		203							{1: '1', 2: '0.1', 4: '-20', 5: '-80'}
+217	217		301			PanelActor1Shake				{2: 'Cradle', 3: 'Why...', 4: '1'}
+218	218		203							{1: '1', 2: '0.1', 4: '-20', 5: '-100'}
+219	219		401							{1: '2', 2: '2704'}
+220	220		502							{1: 'RImgBg1Shake'}
+221	221		301		1	PanelActor1Shake	AniZhuanchangBegin			"{2: 'Cradle', 3: 'Who stole my ""script""—', 4: '1'}"

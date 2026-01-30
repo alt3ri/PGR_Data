@@ -1,0 +1,648 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory526.jpg'}
+2	2		401							{1: '1', 2: '5'}
+3	3		301			DialogEnable				{3: 'Inside a room of the WGAA on Babylonia.'}
+4	4		301							"{3: 'With a ""Woosh!"", Nanami disappears before the box.'}"
+5	5		301							{3: 'Seemingly dissatisfied by having to search the box from the outside, Nanami decides to jump inside instead, hauling something heavy out.'}
+6	6		201							{1: '1', 2: '500472', 3: '1'}
+7	7		301							{1: '1', 2: 'Nanami', 3: 'How about this? Is this on the list?', 4: '1', 18: '100001020'}
+8	8		301							{3: 'Looking at the package that is taller than Nanami, Lee quickly taps his terminal and checks.'}
+9	9		301							{3: 'Seeing Lee shake his head, Nanami grabs the package and walks toward him.'}
+10	10		301							"{2: 'Nanami', 3: ""Almost forgot about it! I'll add it to the list, then."", 4: '1', 18: '100001021'}"
+11	11		201							{1: '1', 2: '500472', 3: '1', 4: '-400'}
+12	12		201						300.0	{1: '2', 2: '500166', 4: '400'}
+13	13		203						500.0	{1: '1', 2: '0.25', 3: '-200'}
+14	14		203						200.0	{1: '2', 2: '0.1', 3: '400', 4: '-100'}
+15	15		203							{1: '2', 2: '0.25', 3: '400'}
+16	16		301							{1: '1', 3: 'With that, she hands the package to Lucia, who has been standing nearby. Lucia takes it and stumbles, not expecting it to be this heavy.'}
+17	17		202							{1: '1', 2: '2', 6: '1'}
+18	18		201							{1: '1', 2: '1031001', 4: '-400'}
+19	19		301							{1: '1', 3: 'Right as Nanami is going to explain to Lee what the package is, Liv discovers something as she rests by the window.'}
+20	20		301							{3: 'To stay hidden, Liv takes two small pillows to cover up the Inver-Devices on both sides.'}
+21	21		203						600.0	{1: '1', 2: '0.4', 3: '-200'}
+22	22		203							{1: '1', 2: '0.4'}
+23	23		301							{3: 'Even then, she still carefully steps back before tapping the seat by the window and gesturing with hand signals.'}
+24	24		201							{1: '1', 2: '500026'}
+25	25		301							{1: '1', 2: 'Lee', 3: 'Commandant is coming. Get in position, everyone.', 4: '1', 18: '100001044'}
+26	26		203							{1: '1', 2: '0.25', 3: '-400'}
+27	27		201							{1: '2', 2: '500472', 3: '7', 4: '400'}
+28	28		301							{1: '1', 3: 'Seeing that Nanami is still looking at him with confusion, Lee remembers that he has not had the time to tell her about their contingency plan.'}
+29	29		301							{2: 'Lee', 3: 'Pretend nothing is going on and do what you want to do.', 4: '1', 18: '100001045'}
+30	30		204							{1: '2', 2: '1'}
+31	31		301							{3: 'Nanami claps her hand upon realization and starts searching for her manga.'}
+32	32		202							{1: '1', 2: '2'}
+33	33		301							{3: 'Lucia lays the package on the ground before patting it up and down to confirm her guess.'}
+34	34		301							{3: 'Right then, the alarm underneath the doormat goes off, signaling the arrival of the commandant.'}
+35	35		301							{3: 'Nanami rushes toward the sofa in a panic while Liv hides in a corner, and Lee leans against the wall and picks up his terminal frantically.'}
+36	36		301							{3: 'Hearing the sound of the passcode being keyed in, Lucia puts the package down as quickly as possible and leaps for the sofa.'}
+37	37		301							{3: 'And as the door opens...'}
+38	38		201							{1: '1', 2: '500166', 3: '1'}
+39	39		301							{1: '1', 2: 'Lucia', 3: 'On base!', 4: '1', 18: '100000994'}
+40	40		401							{1: '1', 2: '36'}
+41	41		301				AniZhuanchangBegin			{3: 'And the world is quiet once more.'}
+42	42		202			DialogDisable				{1: '1', 6: '1'}
+43	43		401							{1: '1', 2: '205'}
+44	44		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory526.jpg'}
+45	45		301			DialogEnable				{3: '...'}
+46	46		301							{3: 'Something does not feel right...'}
+47	47		301							{3: 'You swear you heard loud noises in the room before opening the door.'}
+48	48		301							{3: 'What you find after opening it, however, is a calm room with some relaxed people. And a giant box. And a slightly unnerving-looking package.'}
+49	49		301							{3: 'You inspect it a bit at the door and reach out to touch it.'}
+50	50		301							{3: 'Despite how obviously you indicate your curiosity, no one seems to intend to break the silence and tell you what is going on.'}
+51	51		302							{2: 'Approach Lucia', 3: '52', 4: 'Approach Liv', 5: '60', 6: 'Approach Lee', 7: '69'}
+52	52		201							{1: '1', 2: '500166', 3: '1'}
+53	53		301							"{1: '1', 2: 'Lucia', 3: ""What's the matter, Commandant?"", 4: '1', 18: '100000995'}"
+54	54		301							{3: 'Lucia is sitting on the sofa with an opened book tightly in her grip, her gaze fixing on a single spot with no intention of moving.'}
+55	55		301							{3: 'It must be a very interesting book... You are just unsure how she is reading it upside down...'}
+56	56		201							{1: '2', 2: '1031001', 3: '1', 4: '-600'}
+57	57		301							{1: '1', 3: 'Liv puts a teabag into the electric kettle before pouring the clear water into an empty teapot and placing the teapot onto the base...'}
+58	58		201							{1: '3', 2: '500026', 4: '600'}
+59	59	77	301							{1: '1', 3: 'Lee seems to be calibrating some kind of device with his terminal, but it is displaying error after error despite him constantly typing...'}
+60	60		201							{1: '1', 2: '1031001', 3: '1'}
+61	61		301							"{1: '1', 2: 'Liv', 3: ""C-Commandant... What's wrong?"", 4: '1', 18: '100000979'}"
+62	62		301							{3: 'Liv takes a teabag from a can and puts it into the electric kettle before pouring the clear water into an empty teapot and placing the teapot onto the base...'}
+63	63		301							{3: 'Then she just stands there, seemingly waiting for the water in the teapot to boil.'}
+64	64		301							{3: 'But... that is the base for the electric kettle, not the teapot...'}
+65	65		201							{1: '2', 2: '500166', 3: '1', 4: '-600'}
+66	66		301							{1: '1', 3: 'Lucia is sitting on the sofa with an opened book tightly in her grip, her gaze fixing on a single spot with no intention of moving even though the book is upside down…'}
+67	67		201							{1: '3', 2: '500026', 4: '600'}
+68	68	77	301							{1: '1', 3: 'Lee seems to be calibrating some kind of device with his terminal, but it is displaying error after error despite him constantly typing...'}
+69	69		201							{1: '1', 2: '500026'}
+70	70		301							{1: '1', 2: 'Lee', 3: '...', 4: '1', 18: '100001046'}
+71	71		301							{3: 'Lee is constantly typing on his terminal as if there were a critical period for calibrating a device.'}
+72	72		301							{3: 'Ignoring the parts you do not understand... you wonder if all the notifications and error messages on the display are due to how much Lee is typing…'}
+73	73		201							{1: '2', 2: '500166', 3: '1', 4: '600'}
+74	74		301							{1: '1', 3: 'Lucia is sitting on the sofa with an opened book tightly in her grip, her gaze fixing on a single spot with no intention of moving even though the book is upside down…'}
+75	75		201							{1: '3', 2: '1031001', 3: '1', 4: '-600'}
+76	76	77	301							{1: '1', 3: 'Liv puts a teabag into the electric kettle before pouring the clear water into an empty teapot and placing the teapot onto the base...'}
+77	77		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+78	78		301							{3: 'Something just feels out of place. You look around the room, and you finally discover a hint behind the undistinguished sofa.'}
+79	79		201							{1: '1', 2: '500472', 3: '2'}
+80	80		301							{1: '1', 3: 'Behold—a Nanami lying flat.'}
+81	81		301							{3: 'She seems to be taking a nap. As you look at her, she turns her head to the other side.'}
+82	82		301							{3: 'And she accompanies her movement with loud snores, seemingly making it apparent to you that she is, in fact, asleep...'}
+83	83		202							{1: '1', 6: '1'}
+84	84		302							{2: '...', 3: '85'}
+85	85		301							{3: 'To put it simply, everything feels forced and creepy.'}
+86	86		301							{3: 'You are certain that someone is staring at you from behind, but you find nothing every time you turn back.'}
+87	87		301							{3: 'Never mind. You should finish the work you are assigned first. Once you are done, you will be able to...'}
+88	88		201							{1: '1', 2: '1031001', 3: '1'}
+89	89		301							{1: '1', 2: 'Liv', 3: 'Are you working on your assignments, Commandant?', 4: '1', 18: '100000980'}
+90	90		302							{2: 'Yeah.', 3: '91'}
+91	91		201							{1: '1', 2: '500166'}
+92	92		301							"{1: '1', 2: 'Lucia', 3: ""But... I thought we've completed all our missions today."", 4: '1', 18: '100000996'}"
+93	93		302							{2: 'We did, but some extra bit of work just came up.', 3: '94'}
+94	94		201							{1: '1', 2: '500026'}
+95	95		301							"{1: '1', 2: 'Lee', 3: ""If you don't mind me asking, Commandant, you're about to head to..."", 4: '1', 18: '100001047'}"
+96	96		302							{2: '...The dock.', 3: '97'}
+97	97		302							{2: 'So... is something wrong?', 3: '98'}
+98	98		201							{1: '1', 2: '1031001', 4: '-600', 7: '1'}
+99	99		201							{1: '2', 2: '500026', 4: '250', 7: '1'}
+100	100		201							{1: '3', 2: '500472', 4: '-250', 7: '1'}
+101	101		201							{1: '4', 2: '500166', 4: '600', 7: '1'}
+102	102		301							{1: '1', 2: 'Lucia, Liv, Lee, and Nanami', 3: 'Nope.', 4: '1', 5: '2', 6: '3', 7: '4', 18: '100001094'}
+103	103		301				AniZhuanchangBegin			{3: 'They answer in unison. You try to meet their gaze, but they all manage to evade yours.'}
+104	104		401						300.0	{1: '1', 2: '36'}
+105	105		202			DialogDisable				{1: '1', 2: '2', 3: '3', 4: '4', 6: '1'}
+106	106		401							{1: '1', 2: '204'}
+107	107		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory526.jpg'}
+108	108		301			DialogEnable				{3: '...'}
+109	109		301							{3: 'About five minutes later, the commandant leaves with a personal terminal.'}
+110	110		201							{1: '1', 2: '500166'}
+111	111		301							"{1: '1', 2: 'Lucia', 3: ""We... didn't give away anything, did we...?"", 4: '1', 18: '100000998'}"
+112	112		203							{1: '1', 2: '0.25', 3: '400'}
+113	113		201							{1: '2', 2: '1031001', 4: '-400'}
+114	114		301							{1: '1', 2: 'Liv', 3: 'The commandant seemed to have noticed something...', 4: '2', 18: '100000982'}
+115	115		202							{1: '1', 6: '1'}
+116	116		201							{1: '1', 2: '500026', 4: '400'}
+117	117		301							{1: '1', 2: 'Lee', 3: 'Given how Commandant acted upon entering the room, I think our... disguises did give Commandant some discomfort.', 4: '1', 18: '100001049'}
+118	118		202							{1: '1', 2: '2', 6: '1'}
+119	119		201							{1: '1', 2: '500472'}
+120	120		301							{1: '1', 2: 'Nanami', 3: 'Aaaargh! Nanami feels terrible lying down like this.', 4: '1', 18: '100001023'}
+121	121		301							{3: 'Nanami sits up from the sofa, and everyone else is prompted to action. Lucia returns her book, Liv hurries to clean the kettle, and Lee struggles to close all the error messages on his screen.'}
+122	122		202							{1: '1', 6: '1'}
+123	123		201							{1: '1', 2: '1031001', 4: '-400'}
+124	124		201							{1: '2', 2: '500166', 4: '400'}
+125	125		301							{1: '1', 2: 'Liv', 3: 'In that case, should we enter phase two of our plan?', 4: '1', 18: '100000983'}
+126	126		301							{2: 'Lucia', 3: 'Commandant mentioned an assignment at the dock...', 4: '2', 18: '100000999'}
+127	127		202							{1: '1', 2: '2', 6: '1'}
+128	128		201							{1: '1', 2: '500026'}
+129	129		301							"{1: '1', 3: 'Lee quickly pulls up his contact list and calls the team ""on standby.""'}"
+130	130		301							{2: 'Lee', 3: 'Outfielder, this is Infielder, over.', 4: '1', 18: '100001050'}
+131	131		203							{1: '1', 2: '0.25', 3: '400'}
+132	132		201							{1: '2', 2: '500166', 4: '-400'}
+133	133		301							{1: '1', 2: 'Lucia', 3: 'Commandant has left the house. I repeat—Commandant has left the house. Destination: the dock. The game may begin, over.', 4: '2', 18: '100001000'}
+134	134		202							{1: '1', 2: '2', 6: '1'}
+135	135		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+136	136		201							{1: '1', 2: '500309', 4: '400'}
+137	137		201							{1: '2', 2: '500273', 4: '-400'}
+138	138		301							"{1: '1', 2: 'Chrome', 3: ""Copy, Infielder. Attention, Outfielders. We're kicking off."", 4: '1', 18: '100000973'}"
+139	139		301							{2: 'Wanshi', 3: 'The ball has reached Area D4. Passing to Kamui.', 4: '2', 18: '100001081'}
+140	140		202							{1: '1', 2: '2', 6: '1'}
+141	141		201							{1: '1', 2: '1081001', 3: '2'}
+142	142		301							"{1: '1', 2: 'Kamui', 3: ""Copy. This is Kamui. I'm moving with the ball."", 4: '1', 18: '100001060'}"
+143	143		202							{1: '1', 6: '1'}
+144	144		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+145	145		301							{3: 'After ending the call, Lee focuses back on the task at hand, leaving the commandant to his companions.'}
+146	146		201							{1: '1', 2: '500472'}
+147	147		301							{1: '1', 2: 'Nanami', 3: '...', 4: '1', 18: '100001024'}
+148	148		204							{1: '1', 2: '7'}
+149	149		301							{2: 'Nanami', 3: 'So... is Commandant the ball?', 4: '1', 18: '100001025'}
+150	150		204							{1: '1'}
+151	151		203							{1: '1', 2: '0.25', 3: '-400'}
+152	152		201							{1: '2', 2: '500026', 4: '400'}
+153	153		301							"{1: '1', 2: 'Lee', 3: ""According to our plan, this operation is going to take a while, and there is a chance it will go into overtime. Isn't that similar to a lot of sports games?"", 4: '2', 18: '100001051'}"
+154	154		301							{2: 'Nanami', 3: 'Fair... but Nanami still thinks that it should be given a name.', 4: '1', 18: '100001026'}
+155	155		204							{1: '1', 2: '1'}
+156	156		301				AniZhuanchangBegin			"{2: 'Nanami', 3: 'How about ""Operation Happy-Go-Lucky""?!', 4: '1', 18: '100001027'}"
+157	157		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+158	158		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+159	159		301			DialogEnable				{3: 'Walking on a wide pathway, you can hear the sound of footsteps all around you.'}
+160	160		301							{3: 'That is to be expected—a new system is entering trial today, after all. A previously-suspended transport system for the Task Force is being relaunched after some optimizations.'}
+161	161		301							{3: 'Which is why the dock may be very busy today.'}
+162	162		301							"{3: 'Are the numbers stable? ""What about the safety systems?"" ""Has anyone checked the backup fuel?""'}"
+163	163		301							{3: 'You hear questions like these all over the place.'}
+164	164		301							{3: 'Speaking of which, you wonder if the sudden increase in tasks recently is due to the exponential growth in the number of trials. This trip to the dock is one of these tasks.'}
+165	165		301							{3: 'Although you are allowed to choose when to complete them, it is probably unwise to delay tackling them any longer lest they pile up.'}
+166	166		302							"{2: ""Excuse me. I'm wondering..."", 3: '167'}"
+167	167		301							{3: 'Before you can finish, the trial operator waiting for you rushes to your side and apologizes.'}
+168	168		302							"{2: ""That's alright. I want to check out the new transport system as well."", 3: '169'}"
+169	169		301							{3: 'Hearing that, the operator looks as if his eyes are twinkling, grabbing your arm as quickly as humanly possible and dragging you toward the trial area.'}
+170	170		301							{3: 'Once you arrive, he eagerly taps on the operation panel until the heavy hatchway opens and reveals a seat...'}
+171	171		301							{3: 'Noticing your confusion, the operation explains the process to you as he reaches for the seat—'}
+172	172		401							{1: '1', 2: '36'}
+173	173		301							{3: 'And he suddenly goes quiet. He should have touched the leathery texture of the seat itself.'}
+174	174		301							{3: 'But that is not what his hand finds. He even squeezes it a few times before turning around and checking.'}
+175	175		401							{1: '1', 2: '205'}
+176	176		201							{1: '1', 2: '1081001', 3: '2'}
+177	177		301							{1: '1', 2: 'Kamui', 3: 'What are the odds, Commandant?', 4: '1', 18: '100001061'}
+178	178		301							{3: 'Seeing how frightened the operator is encountering something unexpected in the chamber, Kamui raises a thumb.'}
+179	179		301							"{2: 'Kamui', 3: ""I'm Kamui from Strike Hawk..."", 4: '1', 18: '100001062'}"
+180	180		204							{1: '1', 2: '17'}
+181	181		301							"{2: 'Kamui', 3: ""Aaargh! E-enough! Stop pinching me! I'm doing the trial in Commandant's stead."", 4: '1', 18: '100001063'}"
+182	182		301							{3: 'The operator ignores Kamui, however, grabbing his arm and trying desperately to pull him out of the chamber.'}
+183	183		301							"{2: 'Kamui', 3: ""I—said—I'm—here—for—the—trial—"", 4: '1', 18: '100001064'}"
+184	184		204							{1: '1', 2: '1'}
+185	185		301							{3: 'After an intense tug of war, the operator sighs heavily, seemingly giving up.'}
+186	186		301							{3: 'Kamui rubs his arm before pointing to his ear as if asking the operator to turn on his comms.'}
+187	187		302							{2: '??', 3: '188'}
+188	188		301							{3: 'You have no idea what Kamui has said, but the operator seems instantly convinced.'}
+189	189		301							{3: 'He bows, evidently intending to replace you with Kamui in the trial.'}
+190	190		301							"{2: 'Kamui', 3: ""I've heard that the coffee shop inside the library in Area C2 is pretty decent. Why don't you give that a try, Commandant?"", 4: '1', 18: '100001065'}"
+191	191		301							{3: 'In the end, the two of them have somehow unanimously decided to push you out.'}
+192	192		301				AniZhuanchangBegin			"{3: ""You can hear Kamui's protest as the operator says to quadruple the intensity of the trial when you leave.""}"
+193	193		401						400.0	{1: '1', 2: '36'}
+194	194		202			DialogDisable				{1: '1', 6: '1'}
+195	195		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory122.png'}
+196	196		401							{1: '1', 2: '5'}
+197	197		301			DialogEnable				{3: 'Heading toward the other trial location marked on your terminal, you traverse familiar hallways and soon arrive at a room.'}
+198	198		301							{3: 'They seem to be testing a new kind of firearm here. Neon-framed shooting targets appear one by one before the thick, heavy-duty backstop.'}
+199	199		301							{3: 'The staff member passes you the box with the experimental firearm inside, scanning you before unlocking it.'}
+200	200		301							{3: 'Right as you are about to take out that peculiar-looking pistol, a bullet lodges into the target farthest away from you.'}
+201	201		301							{3: 'Then a second bullet, and a third one...'}
+202	202		301							{3: 'All the neon-framed figures on the shooting range go dark one after another in the blink of an eye.'}
+203	203		201							{1: '1', 2: '500273', 3: '1'}
+204	204		301							{1: '1', 2: 'Wanshi', 3: 'What are the odds, Commandant?', 4: '1', 18: '100001082'}
+205	205		302							{2: 'Wanshi?', 3: '206'}
+206	206		301							{2: 'Wanshi', 3: 'I can take care of the trial here.', 4: '1', 18: '100001083'}
+207	207		302							{2: 'But...', 3: '208'}
+208	208		301							{3: 'Wanshi waves his hand, interrupting you. Noticing the staff member approaching, Wanshi immediately pulls him aside and whispers something.'}
+209	209		302							{2: '??', 3: '210'}
+210	210		301							{3: 'By the time they finish talking and turn around, they seem to have mutually agreed on something.'}
+211	211		301							{3: 'The two grudging strangers suddenly become fast friends, forging some kind of kinship.'}
+212	212		301							"{3: ""Shaking each other's hands, they seem to have agreed in unison that you, the trial participant, are now just a visiting audience.""}"
+213	213		301							"{2: 'Wanshi', 3: ""By the way, I've heard that there's a pretty decent exhibition at WGAA today."", 4: '1', 18: '100001084'}"
+214	214		302							{2: '...', 3: '215'}
+215	215		301							{3: 'The scent of fire powder still lingers in the air, but the shooting range is strangely filled with a bubbly and harmonious aura.'}
+216	216		301							{3: 'Before you can inquire further, however, you have been kicked out of the room upon their mutual agreement.'}
+217	217		301							{3: 'Unconventional as it may be, Wanshi did volunteer, and the staff member did not complain. It is fitting for a firearm expert like Wanshi to replace you.'}
+218	218		202							{1: '1', 6: '1'}
+219	219		301							{3: 'Next up...'}
+220	220		302							{2: 'I should just clear the task list one by one in order.', 3: '221'}
+221	221		401							{1: '1', 2: '36'}
+222	222		301							{3: 'And yet, you are either incredibly lucky or fate is pulling some kind of prank—'}
+223	223		301				AniZhuanchangBegin			{3: 'You run into an incredible number of surprises in the next few hours.'}
+224	224		502						300.0	{1: 'DialogDisable'}
+225	225		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory232.png'}
+226	226		401							{1: '1', 2: '205'}
+227	227		301			DialogEnable				{3: 'Inside a room at the Science Council...'}
+228	228		301							{3: 'Questions you need to answer are presented in a list on the monitor.'}
+229	229		301							{3: 'This one is about the extra thrusters assigned to Constructs...'}
+230	230		201							{1: '1', 2: '500494', 3: '1'}
+231	231		301							{1: '1', 2: 'Karenina', 3: 'Hold on! Ah? What are the odds, Commandant?', 4: '1', 18: '100000963'}
+232	232		301							"{2: 'Karenina', 3: ""A Construct probably knows the answers to these questions better. Why don't I take over from here?"", 4: '1', 18: '100000964'}"
+233	233		301				AniZhuanchangBegin			{2: 'Karenina', 3: 'If you want to equip extra thrusters on Constructs, you need to outfit them with extra protective gears first...', 4: '1', 18: '100000965'}
+234	234		202			DialogDisable				{1: '1', 6: '1'}
+235	235		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory267.png'}
+236	236		301			DialogEnable				{3: 'A battlefield first aid demonstration.'}
+237	237		201							{1: '1', 2: '500168', 3: '1'}
+238	238		301							"{1: '1', 2: 'Vera', 3: ""Oh? Isn't that the Gray Raven Commandant? Do you require a refresher lesson? Or are you trying to heal the wounded with the power of optimism and laughter?"", 4: '1', 18: '100001090'}"
+239	239		301							{2: 'Vera', 3: 'Now, you sweet, curious babies, allow me to demonstrate...', 4: '1', 18: '100001091'}
+240	240		301				AniZhuanchangBegin			{2: 'Vera', 3: '...How to keep your injured friend awake without any medicine. First, grab your combat knife...', 4: '1', 18: '100001092'}
+241	241		202			DialogDisable				{1: '1', 6: '1'}
+242	242		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory260.png'}
+243	243		301			DialogEnable				{3: 'The same even happens to the request to look after some children...'}
+244	244		201							{1: '1', 2: '500110', 3: '1'}
+245	245		301							{1: '1', 2: 'Ayla', 3: 'Do you want to play hide-and-seek with me, boys and girls?', 4: '1', 18: '100000930'}
+246	246		301							"{2: 'Ayla', 3: ""Then let's begin! You have twenty seconds to hide!"", 4: '1', 18: '100000931'}"
+247	247		301				AniZhuanchangBegin			{2: 'Ayla', 3: 'Twenty... nineteen... eighteen... seventeen...', 4: '1', 18: '100000932'}
+248	248		401						600.0	{1: '1', 2: '36'}
+249	249		202			DialogDisable				{1: '1', 6: '1'}
+250	250		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory262.png'}
+251	251		401							{1: '1', 2: '204'}
+252	252		301			DialogEnable				{3: 'Sitting at a table, you try to figure out why this is happening to no avail.'}
+253	253		301							{3: 'Every time you arrived somewhere that requested your help, someone else would be there and take over.      '}
+254	254		301							{3: 'From trials to small requests, it would only take a few minutes before you were free again.'}
+255	255		301							"{3: 'And if you tried to look into it, you would only receive one answer—""What are the odds?""'}"
+256	256		201							{1: '1', 2: '500506'}
+257	257		301							{1: '1', 2: 'Noan', 3: 'Your hot chocolate, Commandant.', 4: '1', 18: '100001006'}
+258	258		302							{2: 'Thanks...', 3: '259'}
+259	259		302							{2: '??', 3: '260'}
+260	260		204							{1: '1', 2: '1'}
+261	261		301							"{2: 'Noan', 3: ""What's wrong? Not expecting me here?"", 4: '1', 18: '100001007'}"
+262	262		302							{2: 'I kind of did.', 3: '263', 4: 'What are you doing here?', 5: '264'}
+263	263	265	301							{2: 'Noan', 3: 'What are the odds that I was also expecting you here? So...', 4: '1', 18: '100001008'}
+264	264	265	301							"{2: 'Noan', 3: ""I've been working here part-time recently whenever I'm free. There are books here, and I get to learn how to make drinks. Right..."", 4: '1', 18: '100001009'}"
+265	265		301							{3: 'Noan bends down and takes away the empty dish on your table, as well as the folder you are about to deliver to Celica.'}
+266	266		301							"{2: 'Noan', 3: ""I'll take care of these. Don't worry about work when you're resting inside a library, Commandant."", 4: '1', 18: '100001010'}"
+267	267		301							{2: 'Noan', 3: 'Have a wonderful day.', 4: '1', 18: '100001011'}
+268	268		202							{1: '1', 6: '1'}
+269	269		302							{2: '...', 3: '270'}
+270	270		301							{3: 'Your table was covered with piles of documents and empty dishes a second earlier. Now, there is just a cup of steaming hot drink and an interesting-looking graphic novel.'}
+271	271		302							{2: 'What is happening...', 3: '272'}
+272	272		301							{3: 'Tasting the hot chocolate and letting your imagination run wild, you still cannot come up with a convincing answer.'}
+273	273		302							"{2: ""Right. There's still something to do..."", 3: '274'}"
+274	274		301							{3: 'Placing the cup aside, you take out your personal terminal and put it on the table.'}
+275	275		301							{3: 'Checking the list, you notice there is still a report you need to submit... Hmm? What report have you not finished?'}
+276	276		301							{3: 'It appears to be a joint report with the Purifying Force...'}
+277	277		201							{1: '1', 2: '500128', 3: '1'}
+278	278		301							{1: '1', 2: 'Bianca', 3: 'Commandant.', 4: '1', 18: '100000941'}
+279	279		301							{3: 'You have no idea how long Bianca has been standing near you as if waiting for you to notice her presence.'}
+280	280		301							{2: 'Bianca', 3: '...', 4: '1', 18: '100000942'}
+281	281		302							{2: 'What are the odds, Bianca?', 3: '282'}
+282	282		301							{2: 'Bianca', 3: 'E-exactly, Commandant.', 4: '1', 18: '100000943'}
+283	283		301							"{2: 'Bianca', 3: ""I've finished that report. I'll send it to you for confirmation tomorrow."", 4: '1', 18: '100000944'}"
+284	284		302							"{2: ""...I'm free right now."", 3: '285'}"
+285	285		301							"{2: 'Bianca', 3: ""You can go check out the fashion exhibition nearby if you're free, Commandant. WGAA is hosting a few other activities there too."", 4: '1', 18: '100000945'}"
+286	286		302							{2: '...I should probably prioritize the report...', 3: '287'}
+287	287		204							{1: '1'}
+288	288		301							{2: 'Bianca', 3: 'Leave the report to me, Commandant.', 4: '1', 18: '100000946'}
+289	289		301							"{2: 'Bianca', 3: ""I'll go over it again right now. You'll find it in your online mailbox tomorrow morning."", 4: '1', 18: '100000947'}"
+290	290		301							{3: 'You take a look at your terminal and recall there is a guest mode on this model.', 4: '1'}
+291	291		302							{2: 'I can lend you my terminal right now...', 3: '292'}
+292	292		301							{2: 'Bianca', 3: 'You cannot, Commandant.', 4: '1', 18: '100000948'}
+293	293		301							{3: 'Bianca shakes her head and steps back regrettably.'}
+294	294		301							"{2: 'Bianca', 3: ""I've already broken my promise, spending time with you alone, Commandant."", 4: '1', 18: '100000949'}"
+295	295		202							{1: '1', 6: '1'}
+296	296		301							{3: 'With that, Bianca leaves you by yourself.'}
+297	297		301							{3: 'And she has taken the work you intended to complete.'}
+298	298		301							{3: 'Clearing your thoughts and finishing the hot chocolate, you are at the last page of the graphic novel...'}
+299	299		301							{3: 'Should you stay here afterward? Should you check on the progress of the previous tasks? Should you visit someone?'}
+300	300		301							{3: 'You just feel... less than enthusiastic about any of these options.'}
+301	301		301							{3: 'Staring at the busy street, you are once again at a loss about what you should be doing.'}
+302	302		301				AniZhuanchangBegin			{3: 'Perhaps because you have been overworked quite a bit lately, you have more or less forgotten how to relax with the people around you.'}
+303	303		502						300.0	{1: 'DialogDisable'}
+304	304		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+305	305		301			DialogEnable				{3: '...'}
+306	306		301							"{3: ""The two people hiding behind the building poke their heads out, carefully observing the commandant's actions.""}"
+307	307		201							{1: '1', 2: '500128', 4: '-400', 5: '-150'}
+308	308		201							{1: '2', 2: '500494', 3: '12', 4: '400', 5: '-150'}
+309	309		203							{1: '1', 2: '0.35', 3: '-400'}
+310	310		203							{1: '2', 2: '0.35', 3: '400'}
+311	311		301							{1: '1', 2: 'Bianca', 3: 'The commandant has been sitting like this for a while...', 4: '1', 18: '100000950'}
+312	312		301							"{2: 'Karenina', 3: ""Tch. I had to answer a bunch of questions to get here. Why aren't the commandant satisfied?!"", 4: '2', 18: '100000966'}"
+313	313		204							{1: '2', 2: '1'}
+314	314		301							{2: 'Karenina', 3: '...Should we find someone to talk to Commandant?', 4: '2', 18: '100000967'}
+315	315		301							{2: 'Bianca', 3: '...Karenina, the punishment for breaking our promise is...', 4: '1', 18: '100000951'}
+316	316		204							{1: '2', 2: '6'}
+317	317		301							{2: 'Karenina', 3: 'Aaargh. I know, I know.', 4: '2', 18: '100000968'}
+318	318		204							{1: '2', 2: '14'}
+319	319		301							"{2: 'Karenina', 3: ""I'm just sick of crouching here."", 4: '2', 18: '100000969'}"
+320	320		204							{1: '2', 2: '12'}
+321	321		301							{2: 'Bianca', 3: 'Shush! Quiet. The commandant is moving.', 4: '1', 18: '100000952'}
+322	322		301							"{3: ""Karenina immediately quiets down upon Bianca's quiet gesture. They both turn, focusing on observing the commandant's movement.""}"
+323	323		301							{2: 'Bianca', 3: '...', 4: '1', 18: '100000953'}
+324	324		301							{2: 'Bianca', 3: 'Is there an emergency? Why is Commandant running?', 4: '1', 18: '100000954'}
+325	325		204							{1: '2', 2: '6'}
+326	326		301				AniZhuanchangBegin			"{2: 'Karenina', 3: ""****! We're exposed!"", 4: '2', 18: '100000970'}"
+327	327		401							{1: '1', 2: '36'}
+328	328		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+329	329		401							{1: '1', 2: '208'}
+330	330		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory526.jpg'}
+331	331		301			DialogEnable				{3: 'Inside a room of the WGAA.'}
+332	332		301							{3: 'The floor is littered with all kinds of things. They seem to be props that are yet to be packed away.'}
+333	333		201							{1: '1', 2: '500026'}
+334	334		301							{1: '1', 2: 'Lee', 3: 'T-minus one minute. Just stuff them inside the box if nothing works.', 4: '1', 18: '100001052'}
+335	335		202							{1: '1', 6: '1'}
+336	336		301							{3: 'Lucia struggles to push a giant spring inside the box before attaching a trumpet-playing figurine at the top.'}
+337	337		301							{3: 'More than half of these similar contraptions are yet to be set up, which is why everyone is working hectically before the commandant returns.'}
+338	338		201							{1: '1', 2: '1031001', 4: '-400'}
+339	339		301							{1: '1', 3: 'Right then, Liv looks outside the window and spots a familiar figure heading their way.'}
+340	340		301							{2: 'Liv', 3: 'What should we do? Commandant is here!', 4: '1', 18: '100000984'}
+341	341		201							{1: '2', 2: '500472', 3: '1', 4: '400'}
+342	342		301							{1: '1', 2: 'Nanami', 3: 'Use this.', 4: '2', 18: '100001028'}
+343	343		301							{3: 'Nanami hands Liv a wooden stick.'}
+344	344		204							{1: '1', 2: '7'}
+345	345		301							"{2: 'Liv', 3: ""How can I do it? I can't possibly knock Commandant out..."", 4: '1', 18: '100000985'}"
+346	346		301							{2: 'Nanami', 3: '...', 4: '2', 18: '100001029'}
+347	347		301							{2: 'Nanami', 3: 'Nanami was thinking... we could use the stick to latch the door.', 4: '2', 18: '100001030'}
+348	348		202							{1: '1', 2: '2', 6: '1'}
+349	349		201							{1: '1', 2: '500026', 3: '10'}
+350	350		301							{1: '1', 3: 'Seeing how they look at each other, Lee goes ahead and throws everything they have not set up into the box before giving the room one quick look.'}
+351	351		301							"{3: '""Get in position,"" announces Lee upon confirming that nothing is amiss, and everyone reverts to their previous disguises.'}"
+352	352		202							{1: '1', 6: '1'}
+353	353		301							{3: 'And the door gently opens at that exact moment...'}
+354	354		301							{3: '...'}
+355	355		301							{3: 'You would have suspected that everything you have experienced was a dream if not for your sore, tired legs.'}
+356	356		301							{3: 'It has been more than two hours since you left the room, but Lucia is still reading the book where she was. Liv is still making tea, and Lee is still struggling with his terminal.'}
+357	357		301							{3: 'It appears that no one intends to greet you still. You walk toward the only empty sofa and sit down.'}
+358	358		301							{3: 'As expected, Nanami is lying behind the sofa that is right in front of you.'}
+359	359		301							{3: 'The only thing that is obviously different is the increasing number of boxes in the room.'}
+360	360		301							{3: 'How creepy this is...'}
+361	361		301							{3: 'The Gray Ravens seem to be acting all day long. They have been repeating the same task over and over again.'}
+362	362		301							{3: 'Meanwhile, everyone else has been trying to keep you away from where you need to go for some reason.'}
+363	363		301							{3: 'Not to mention that Bianca and Karenina have been following you the entire way and the mysterious boxes that keep piling up in this room...'}
+364	364		301				DialogDisable			{3: 'This is just like the unending dream in one of those Golden Age horror movies.'}
+365	365		302							"{2: ""It's pretty unnerving, whichever way you put it..."", 3: '366'}"
+366	366		302							{2: '(Slap your face)', 3: '367'}
+367	367		301			DialogEnable				"{3: ""Opening your eyes, you notice some differences in everyone's position.""}"
+368	368		301							{3: 'Minute as it may be, they all seem to be ever so slightly closer to you.'}
+369	369		301							{3: '...'}
+370	370		301							{3: 'Aah! Enough overthinking things. You should just open the box before you, and all will be clear.'}
+371	371		301							{3: 'Right as you bend down, you catch Nanami poking her head out behind the sofa with the corner of your eye.'}
+372	372		201							{1: '1', 2: '500472', 3: '7'}
+373	373		301							{1: '1', 2: 'Nanami', 3: 'Ah! Not that one, Commandant...', 4: '1', 18: '100001031'}
+374	374		401							{1: '1', 2: '36'}
+375	375		301							{3: 'Maybe it is the fact that Nanami finally speaks, you feel like you are on the right track, and you hurry up with the box.'}
+376	376		202							{1: '1', 6: '1'}
+377	377		301							{3: 'Which means... it is too late to stop you now.'}
+378	378		301							{3: 'Brrr brrr! Brrr brrr!'}
+379	379		301							{3: 'A small figurine is energetically playing the trumpet, its head shaking from side to side.'}
+380	380		301							{3: 'Unfortunately, you do not get to enjoy its performance for long.'}
+381	381		301							{3: 'With the help of a mighty spring beneath it, the figurine and its trumpet are launched toward you at incredible speed...'}
+382	382		401							{1: '2', 2: '3077'}
+383	383		301				AniZhuanchangBegin			{3: '...'}
+384	385		101						300.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory526.jpg'}
+385	386		301			AniZhuanchangEnd				{3: 'Operation Happy-Go-Lucky?'}
+386	387		401							{1: '1', 2: '5'}
+387	388		302							{2: 'What is that?', 3: '389'}
+388	389		301							{3: 'Having survived the ballistic trumpet player, you question your companions as you rub your painful cheeks.'}
+389	390		201							{1: '1', 2: '500166'}
+390	391		301							"{1: '1', 2: 'Lucia', 3: ""You've been so busy, Commandant, and you haven't been able to rest."", 4: '1', 18: '100001001'}"
+391	392		201							{1: '1', 2: '1031001'}
+392	393		301							{1: '1', 2: 'Liv', 3: 'We came up with a plan with the others so that no work will bother you today.', 4: '1', 18: '100000986'}
+393	394		201							{1: '1', 2: '500472'}
+394	395		301				DialogDisable			"{2: 'Nanami', 3: ""Which means we're all-work, and you're all-play today, Commandant!"", 4: '1', 18: '100001032'}"
+395	396		202							{1: '1', 6: '1'}
+396	397		302							{2: '...', 3: '398'}
+397	398		302							{2: 'No wonder I feel like being followed the whole day...', 3: '399'}
+398	399		201							{1: '1', 2: '500026'}
+399	400		301			DialogEnable				{1: '1', 2: 'Lee', 3: 'After all, we had to know where you were to find out what you were going to do before arranging a substitute...', 4: '1', 18: '100001053'}
+400	401		302							"{2: 'Does that mean there are a lot of people involved in this ""operation""?', 3: '402'}"
+401	402		201							{1: '1', 2: '500472'}
+402	403		301							{1: '1', 3: 'Pressing a finger to the corner of her lips, Nanami begins to tally up the ever-expanding list.'}
+403	404		301							{2: 'Nanami', 3: 'There are Nanami, Gray Raven, Strike Hawk, Cerberus, Dark Aries, Bianca, Karey deary, Teddy... oh, and Vanessa and the others!', 4: '1', 18: '100001033'}
+404	405		302							{2: 'Even the operators and staff members I ran into?', 3: '406'}
+405	406		201							{1: '1', 2: '500309', 3: '1'}
+406	407		301							{1: '1', 2: 'Chrome', 3: 'Consider them latecomers.', 4: '1', 18: '100000974'}
+407	408		301							"{3: ""You suddenly hear Chrome's voice behind you, and you turn around to find the Strike Hawk members entering the room.""}"
+408	409		201							{1: '1', 2: '1081001', 3: '1'}
+409	410		301							{1: '1', 2: 'Kamui', 3: 'Luckily, the operator agreed immediately.', 4: '1', 18: '100001066'}
+410	411		201							{1: '1', 2: '500273', 3: '1'}
+411	412		301				DialogDisable			{1: '1', 2: 'Wanshi', 3: 'The staff member was really easy to persuade as well, and he quickly convinced the trial manager.', 4: '1', 18: '100001085'}
+412	413		202							{1: '1', 6: '1'}
+413	414		302							{2: '...', 3: '415'}
+414	415		302							{2: 'Thank you for your work so that I can take a break today...', 3: '416'}
+415	416		301			DialogEnable				{3: 'Before you can finish, however, you notice everyone staring at you strangely, and you cannot help but rub your hurt cheek again.'}
+416	417		301							{3: 'Nanami is the first to break the silence upon your confusion.'}
+417	418		201							{1: '1', 2: '500472', 3: '1'}
+418	419		301							{1: '1', 2: 'Nanami', 3: 'Ta-da! Nanami was right!', 4: '1', 18: '100001034'}
+419	420		203							{1: '1', 2: '0.25', 3: '-400'}
+420	421		201							{1: '2', 2: '500026', 3: '1', 4: '400'}
+421	422		301							{1: '1', 2: 'Lee', 3: 'A sweeping victory.', 4: '2', 18: '100001054'}
+422	423		201							{1: '1', 2: '1031001', 3: '1', 4: '-400'}
+423	424		301							"{1: '1', 2: 'Liv', 3: ""Sigh. You've got to take better care of yourself, Commandant."", 4: '1', 18: '100000987'}"
+424	425		201							{1: '2', 2: '500166', 3: '1', 4: '400'}
+425	426		301							"{1: '1', 2: 'Lucia', 3: ""I suppose it's inevitable. Commandant has been so busy lately."", 4: '2', 18: '100001002'}"
+426	427		201							{1: '1', 2: '500309', 3: '1', 4: '-400'}
+427	428		301							"{1: '1', 2: 'Chrome', 3: ""Fortunately, we have worked together and taken care of today's tasks."", 4: '1', 18: '100000975'}"
+428	429		302							{2: '??', 3: '430'}
+429	430		201							{1: '2', 2: '1081001', 3: '1', 4: '400'}
+430	431		301							"{1: '1', 2: 'Kamui', 3: ""Have you figured it out yet, Commandant? It's an important day today."", 4: '2', 18: '100001067'}"
+431	432		201							{1: '1', 2: '500273', 3: '1', 4: '-400'}
+432	433		301							{1: '1', 2: 'Wanshi', 3: 'Well... Who should start the countdown?', 4: '1', 18: '100001086'}
+433	434		202							{1: '2', 6: '1'}
+434	435		201							{1: '1', 2: '500473'}
+435	436		301							{1: '1', 2: 'Nanami', 3: 'Me! Nanami will do it!', 4: '1', 18: '100001035'}
+436	437		301							{3: 'Everyone sitting on the sofa stands up at once, grabbing different items from the boxes and the drawers.'}
+437	438		202							{1: '1', 6: '1'}
+438	439		301							{3: 'The Strike Hawk members also get their own props from Nanami.'}
+439	440		201							{1: '1', 2: '500472', 3: '1'}
+440	441		301							{1: '1', 2: 'Nanami', 3: 'Sit there and stay still, Commandant.', 4: '1', 18: '100001036'}
+441	442		301							{2: 'Nanami', 3: 'The countdown begins!', 4: '1', 18: '100001037'}
+442	443		401							{1: '1', 2: '36'}
+443	444		301							{2: 'Nanami', 3: 'Three...', 4: '1', 18: '100001038'}
+444	445		201							{1: '1', 2: '500309'}
+445	446		201							{1: '2', 2: '1081001', 4: '-600'}
+446	447		201							{1: '3', 2: '500273', 4: '600'}
+447	448		301							{1: '1', 2: 'Chrome, Kamui, and Wanshi', 3: 'Two...', 4: '1', 5: '2', 6: '3', 18: '100001095'}
+448	449		201							{1: '1', 2: '500166', 3: '1'}
+449	450		201							{1: '2', 2: '1031001', 3: '1', 4: '-600'}
+450	451		201							{1: '3', 2: '500026', 4: '600'}
+451	452		301							{1: '1', 2: 'Lucia, Liv, and Lee', 3: 'One...', 4: '1', 5: '2', 6: '3', 18: '100001096'}
+452	453		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+453	454		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+454	455		101						600.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+455	456		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3201_20.jpg'}
+456	457		301							{2: 'All', 3: 'Happy birthday, Commandant!', 18: '100001097'}
+457	458		401							{1: '1', 2: '29'}
+458	459		301							{3: 'Crackle! Crackle!'}
+459	460		301							{3: 'Countless confetti descends from above, blocking your sight in an instant.'}
+460	461		301							{3: 'By the time you brush the confetti away and open your eyes, you find a birthday cake on the table before you.'}
+461	462		301							"{3: ""Small figurines stand in a row on top of the cake's frosting. Before you can figure out who they represent, something immediately distracts you.""}"
+462	463		301							{3: 'Liv and Nanami are holding several jack-in-the-boxes in their hands, and miniature musicians all spring out to perform. Your face was hit by one of the band members earlier.'}
+463	464		301							{3: 'Only now do you realize how meticulously they must have been calibrated to perform in sync.'}
+464	465		301							{3: 'After the brief performance, you hear a series of explosions above you. The balloons that escape the boxes have exploded upon reaching a certain height.'}
+465	466		301							{3: 'Lee and Chrome exchange a satisfied look, the detonators still in their hands.'}
+466	467		301							{3: 'Lucia puts a paper crown on your head. It appears that the crown is staying there until you leave this room.'}
+467	468		301							{3: 'Finally, Wanshi and Kamui each take a confetti popper and fire at you in the face.'}
+468	469		301							"{3: ""Through the blasts of colors, you notice Kamui's face is also covered in confetti—probably because he held the popper backward.""}"
+469	470		301							{3: 'As the performance ends, the candles on the cake are quietly lit.'}
+470	471		301							{3: 'The soft, warm glow illuminates the figurines on the cake. Their shapes might be simplified, but you can still recognize your companions among them.'}
+471	472		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory526.jpg', 3: '0', 4: '1', 5: '1'}
+472	473		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+473	474		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory526.jpg'}
+474	475		301							"{3: ""And, following the others' guidance, you gently take the first figure...""}"
+475	476		201							{1: '1', 2: '500168', 3: '1'}
+476	477		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+477	478		301							"{1: '1', 2: 'Vera', 3: ""Is Commandant staring at the cake like an idiot right now? Don't forget to take a photo of it for me. Happy birthday, Com—man—dant—"", 4: '1', 18: '100001093'}"
+478	479		301							"{3: ""You hear Vera's voice from the figure.""}"
+479	480		202							{1: '1', 6: '1'}
+480	481		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+481	482		301							{3: 'And you take the second one...'}
+482	483		201							{1: '1', 2: '500328'}
+483	484		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+484	485		301							{1: '1', 2: 'No. 21', 3: 'Happy birthday, Commandant.', 4: '1', 18: '100001079'}
+485	486		301							{2: 'No. 21', 3: 'Come. You have to say happy birthday too, Buddy.', 4: '1', 18: '100001080'}
+486	487		301							{2: 'Buddy', 3: 'Squeak... Squeak...', 4: '1'}
+487	488		202							{1: '1', 6: '1'}
+488	489		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+489	490		301							{3: 'The third one...'}
+490	491		201							{1: '1', 2: '1101001', 3: '1'}
+491	492		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+492	493		301							{1: '1', 2: 'Watanabe', 3: 'Happy birthday, Gray Raven Commandant. I hope you like my gift.', 4: '1', 18: '100000962'}
+493	494		301							{3: 'A wrapped box is pushed toward you. There seems to be a guitar inside.'}
+494	495		201							{1: '1', 2: '500214', 3: '1'}
+495	496		301							"{1: '1', 2: 'Rosetta', 3: ""I'm probably still on a mission by the time you hear this, Commandant."", 4: '1', 18: '100000992'}"
+496	497		301							{2: 'Rosetta', 3: 'So please allow me to wish you a happy birthday this way before I can get back to you, Commandant.', 4: '1', 18: '100000993'}
+497	498		201							{1: '1', 2: '500128', 3: '1'}
+498	499		301							"{1: '1', 2: 'Bianca', 3: ""I need to calibrate this recording device... Oh? It's starting?"", 4: '1', 18: '100000955'}"
+499	500		301							"{2: 'Bianca', 3: ""I-I'm sorry I went away so quickly without explaining anything earlier. I made a promise..."", 4: '1', 18: '100000956'}"
+500	501		301							{2: 'Bianca', 3: 'Anyway. Happy birthday, Commandant.', 4: '1', 18: '100000957'}
+501	502		204							{1: '1'}
+502	503		301							"{2: 'Bianca', 3: ""Karenina...? Don't you want to record yours?"", 4: '1', 18: '100000958'}"
+503	504		201							{1: '1', 2: '500494', 3: '6'}
+504	505		301							"{1: '1', 2: 'Karenina', 3: ""O-of course I do! But they said they'd play this in public... I-I'll just say a word or two, then! H-happy birthday, Commandant!"", 4: '1', 18: '100000971'}"
+505	506		204							{1: '1', 2: '14'}
+506	507		301							"{2: 'Karenina', 3: ""And... you have to like the present I give you. Yeah, that's it."", 4: '1', 18: '100000972'}"
+507	508		202							{1: '1', 6: '1'}
+508	509		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+509	510		301							"{3: ""Following the end of Karenina's recording, you can hear the sound of drums from another figurine's speaker.""}"
+510	511		301							{3: 'The drums are so powerful that even the figurine is shaking and jumping on the cake.'}
+511	512		201							{1: '1', 2: '500225', 3: '1'}
+512	513		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+513	514		301							"{1: '1', 2: 'Changyu', 3: ""I haven't done this for a while... Getting Lesti..."", 4: '1', 18: '100000959'}"
+514	515		204							{1: '1', 2: '2'}
+515	516		301							{2: 'Changyu', 3: 'Whatever. As long as you can hear the drum beats, Commandant! Happy birthday!', 4: '1', 18: '100000960'}
+516	517		301							{3: 'Focusing, you finally manage to distinguish the shouting from the drumming.'}
+517	518		201							{1: '1', 2: '500127', 3: '10'}
+518	519		301							{1: '1', 2: 'Sophia', 3: 'Commandant, happy... This is so loud. Allow me to head somewhere else.', 4: '1', 18: '100001074'}
+519	520		201							{1: '1', 2: '500225', 3: '5'}
+520	521		301							"{2: 'Changyu', 3: ""Hey... Don't go... I'm not done playing..."", 4: '1', 18: '100000961'}"
+521	522		301							{3: 'The drum beats seem to get louder as Sophia walks away as if trying to pierce the walls and carve itself into the figure.'}
+522	523		201							{1: '1', 2: '500127'}
+523	524		301							{1: '1', 2: 'Sophia', 3: '...', 4: '1', 18: '100001075'}
+524	525		301							{2: 'Sophia', 3: 'Hmm. This place is much better. Happy birthday, Commandant.', 4: '1', 18: '100001076'}
+525	526		301							"{2: 'Sophia', 3: ""It's a shame I couldn't go to Babylonia this year. When will you come to visit Akdilek, Commandant?"", 4: '1', 18: '100001077'}"
+526	527		301							{2: 'Sophia', 3: 'You must tell me how to make this figurine then...', 4: '1', 18: '100001078'}
+527	528		202							{1: '1', 6: '1'}
+528	529		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+529	530		301							"{3: ""Her message is cut short, seemingly having exceeded the figure's storage capacity.""}"
+530	531		201							{1: '1', 2: '500445', 3: '5'}
+531	532		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+532	533		301							"{1: '1', 2: 'Pulao', 3: ""Oh? I haven't recorded anything yet! You two fooled around so much!"", 4: '1', 18: '100001017'}"
+533	534		204							{1: '1', 2: '2'}
+534	535		301							{2: 'Pulao', 3: 'Happy birthday, Commandant! I made some pastries for you... Hehe, I failed a few times until someone showed me how to make them.', 4: '1', 18: '100001018'}
+535	536		204							{1: '1', 2: '1'}
+536	537		301							{2: 'Pulao', 3: 'You must have it by now, Commandant. Feel free to guess who was the impressive person that made the other half!', 4: '1', 18: '100001019'}
+537	538		202							{1: '1', 6: '1'}
+538	539		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+539	540		301							{3: 'You can see an intricate box next to the cake. That must be the work of Pulao and the mysterious person.'}
+540	541		301							{3: 'The last two figurines belong to Noan and Ayla.'}
+541	542		201							{1: '1', 2: '500110', 4: '-400'}
+542	543		201							{1: '2', 2: '500506', 3: '1', 4: '400'}
+543	544		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '2'}
+544	545		301							"{1: '1', 2: 'Ayla', 3: ""The figures I made are cute, aren't they, Commandant? I also made one for you, just so you know. Happy birthday!"", 4: '1', 18: '100000933'}"
+545	546		301							"{2: 'Ayla', 3: ""Oh, and I ran into Noan at the door. He seems to be struggling with how to congratulate you, so I'm dragging him into my recording as well."", 4: '1', 18: '100000934'}"
+546	547		301							{2: 'Noan', 3: 'Happy birthday, Commandant.', 4: '2', 18: '100001012'}
+547	548		301							{2: 'Ayla', 3: 'We wish you a brilliant future.', 4: '1', 18: '100000935'}
+548	549		301							{2: 'Noan', 3: 'With fortune as expansive as the ocean...', 4: '2', 18: '100001013'}
+549	550		301							{2: 'Ayla', 3: 'And longevity that towers over the mountains!', 4: '1', 18: '100000936'}
+550	551		204							{1: '2'}
+551	552		301							{2: 'Noan', 3: '...Um.', 4: '2', 18: '100001014'}
+552	553		301							{2: 'Noan', 3: 'Do people wish their friends a happy birthday like this on Babylonia?', 4: '2', 18: '100001015'}
+553	554		204							{1: '1', 2: '1'}
+554	555		301							"{2: 'Ayla', 3: ""Probably, if we want to stand out! I'm sure it's fine. We did research!"", 4: '1', 18: '100000937'}"
+555	556		204							{1: '2', 2: '10'}
+556	557		301							{2: 'Noan', 3: 'Stand out, is it...', 4: '2', 18: '100001016'}
+557	558		202							{1: '1', 2: '2', 6: '1'}
+558	559		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+559	560		301							{3: 'You have picked up all the figurines from the cake. Taking a handkerchief from Ayla, you carefully wrap them up.'}
+560	561		201							{1: '1', 2: '500472', 3: '1'}
+561	562		301							{1: '1', 2: 'Nanami', 3: 'Commandant, Commandant! Nanami has brought you a gift from the surface!', 4: '1', 18: '100001040'}
+562	563		301							{3: 'From the surface?'}
+563	564		301							{3: 'Nanami pushes the strange, tall package from before toward you. It seems that she is hoping you will unwrap it yourself.'}
+564	565		202							{1: '1', 6: '1'}
+565	566		302							{2: '(Unwrap the package)', 3: '568'}
+566	567		401							{1: '1', 2: '36'}
+567	568		301							{3: 'You start to get a bad feeling upon touching the protrusions on the package.'}
+568	569		301							"{3: '""Swish!"" The outer layer of the package is ripped off, revealing a statue in the room.'}"
+569	570		401							{1: '1', 2: '205'}
+570	571		301							{3: 'The statue is two meters tall, standing straight with an arm reached out, gazing into the distance.'}
+571	572		301							{3: 'Its stalwart appearance even manages to briefly instill a hint of solemnity into the room.'}
+572	573		201							{1: '1', 2: '500110', 3: '4', 4: '-400'}
+573	574		201							{1: '2', 2: '500166', 4: '400'}
+574	575		301							{1: '1', 2: 'Ayla', 3: 'This is... quite impressive.', 4: '1', 18: '100000938'}
+575	576		301							{2: 'Lucia', 3: 'It looks kind of familiar.', 4: '2', 18: '100001005'}
+576	577		201							{1: '1', 2: '1031001', 3: '7', 4: '-400'}
+577	578		201							{1: '2', 2: '500026', 3: '7', 4: '400'}
+578	579		301							"{1: '1', 2: 'Liv', 3: ""If I have to guess, I'd say this is..."", 4: '1', 18: '100000990'}"
+579	580		301							{2: 'Lee', 3: '...A statue of Commandant.', 4: '2', 18: '100001057'}
+580	581		202							{1: '1', 2: '2', 6: '1'}
+581	582		301							{3: '...'}
+582	583		301							{3: 'How should you display this gift...?'}
+583	584		201							{1: '1', 2: '500472', 3: '1'}
+584	585		301							"{1: '1', 2: 'Nanami', 3: ""Nanami has a great idea! I've seen statues like this put up in parks on the surface."", 4: '1', 18: '100001041'}"
+585	586		301							"{2: 'Nanami', 3: ""We'll ask Power to place this in the center of the park on Babylonia!"", 4: '1', 18: '100001042'}"
+586	587		202							{1: '1', 6: '1'}
+587	588		301							{3: 'You take a moment to consider what Nanami suggested, imagining how, when morning comes, people who walk past the park will be bathed in the glory of your immaculate statue...'}
+588	589		302							"{2: ""Please don't do that to me.""}"
+589	590		201							{1: '1', 2: '500026', 4: '400'}
+590	591		201							{1: '2', 2: '500472', 4: '-400'}
+591	592		301							{1: '1', 2: 'Lee', 3: 'By the way, who was this impressive present from?', 4: '1', 18: '100001058'}
+592	593		301							{2: 'Nanami', 3: 'Hmm... A lady Construct who loves painting, perhaps?', 4: '2', 18: '100001043'}
+593	594		301							{3: 'Whoever it is, you should probably just hide it inside your room...'}
+594	595		301							"{2: 'Lee', 3: ""Are you going to open your gifts one by one, Commandant? Just want to remind you that the one in the blue box hasn't been unwrapped yet. Just a suggestion..."", 4: '1', 18: '100001059'}"
+595	596		201							{1: '1', 2: '1081001', 3: '2', 4: '400'}
+596	597		201							{1: '2', 2: '1031001', 3: '1', 4: '-400'}
+597	598		301							{1: '1', 2: 'Kamui', 3: 'Commandant! Commandant! Do you want to open my gift next?', 4: '1', 18: '100001070'}
+598	599		301							{2: 'Liv', 3: 'My gift is right there, Commandant. You can grab it if you reach out.', 4: '2', 18: '100000991'}
+599	600		401						400.0	{1: '1', 2: '36'}
+600	601		202							{1: '1', 2: '2', 6: '1'}
+601	602		401							{1: '1', 2: '207'}
+602	603		301							{3: '...'}
+603	604		301							{3: 'Hearing their lively cheers and joyful laughter, you ask yourself the same question again.'}
+604	605		301							{3: 'Have you forgotten how to relax with the people around you because you have been overworked?'}
+605	606		301							{3: 'Or, perhaps, you have just been missing the people in this room and their laughs.'}
+606	607		301							{3: 'You have no idea who suggested it, but everyone is gathering before the cake for a group photo.'}
+607	608		201							{1: '1', 2: '1081001', 3: '1'}
+608	609		301							{1: '1', 2: 'Kamui', 3: 'Oh! Remember to save Camu a slice of the cake later, Commandant!', 4: '1', 18: '100001071'}
+609	610		302							{2: 'Of course.', 3: '611'}
+610	611		301							{3: 'Recalling the adventurous foodie, you cannot help but wonder what is inside his present.'}
+611	612		201							{1: '1', 2: '500110'}
+612	613		301							"{1: '1', 2: 'Ayla', 3: ""It's a five-second countdown. Hurry up!"", 4: '1', 18: '100000939'}"
+613	614		301							{3: 'Ayla quickly dashes back after setting up the camera.'}
+614	615		301							{3: 'Five...'}
+615	616		301							"{2: 'Ayla', 3: ""Get closer, everyone! It's a vintage camera. There wasn't much I could adjust!"", 4: '1', 18: '100000940'}"
+616	617		202							{1: '1', 6: '1'}
+617	618		301							{3: 'Four...'}
+618	619		201							{1: '1', 2: '1081001', 3: '1'}
+619	620		301							{1: '1', 2: 'Kamui', 3: '(Hmm... Let me bend forward a little.)', 4: '1', 18: '100001072'}
+620	621		202							{1: '1', 6: '1'}
+621	622		301							{3: 'Three...'}
+622	623		201							{1: '1', 2: '500309', 3: '1'}
+623	624		301							"{1: '1', 2: 'Chrome', 3: ""(This sofa's placement... I'll just move it forward a little bit.)"", 4: '1', 18: '100000978'}"
+624	625		202							{1: '1', 6: '1'}
+625	626		301							{3: 'Two...'}
+626	627		201							{1: '1', 2: '1081001', 3: '2'}
+627	628		301							{1: '1', 2: 'Kamui', 3: '(If I support the weight of my upper body with my waist, I can bend forward and extend my arms to make a giant victory sign when the countdown hits zero!)', 4: '1', 18: '100001073'}
+628	629		202							{1: '1', 6: '1'}
+629	630		301							{3: 'One...'}
+630	631		201							{1: '1', 2: '500273'}
+631	632		301							{1: '1', 2: 'Wanshi', 3: '...', 4: '1', 18: '100001089'}
+632	633		202							{1: '1', 6: '1'}
+633	634		301							{3: 'Wanshi quietly picks up a dish and hides behind the sofa.'}
+634	635		301							{3: '0!'}
+635	636		401							{1: '2', 2: '925'}
+636	637		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+637	638		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory526.jpg', 3: '0', 4: '1', 5: '1'}
+638	639		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+639	640		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory526.jpg'}
+640	641		301							{3: 'Kamui suddenly lunges forward while the sofa is moved up a little bit.'}
+641	642		301							{3: 'With that, Kamui flies over Chrome, sliding toward the cake uncontrollably.'}
+642	643		301							{3: 'Lucia tries to stop him, but she is sitting the farthest away from Kamui.'}
+643	644		301							{3: 'Lee, being the closest one, finally manages to react, trying to move the cake away.'}
+644	645		301							{3: 'Hiding in the back, Wanshi, having foreseen this, shields his face with the dish from the inevitable spray of whipped cream and frosting.'}
+645	646		301							"{3: '""Snap!"" With the sound from the shutter, a photo of this last moment is captured and printed.'}"
+646	647		301							{3: 'Perhaps someone will find this photo inside a photo album many years later.'}
+647	648		301		1		AniZhuanchangBegin			{3: 'It will be proof that there was joy and laughter among the fighters despite the hardship and pain.'}

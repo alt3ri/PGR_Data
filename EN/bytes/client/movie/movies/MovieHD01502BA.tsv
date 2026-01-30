@@ -1,0 +1,173 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '204'}
+3	3		201							{1: '1', 2: '500110', 3: '8'}
+4	4		301			DialogEnable				{1: '1', 2: 'Ayla', 3: 'The warm wind has brought you a message. Across the rain, in the hidden Realm of Dragons...', 4: '1'}
+5	5		301							{2: 'Ayla', 3: 'Once sealed, the Ancient Triangle is now lost...', 4: '1'}
+6	8		301							{3: 'Lee turns on his terminal to simulate tactics and take records.'}
+7	11		301							{2: 'Ayla', 3: '...As adventurers, you have embarked on a journey to the hidden realm to retrieve the lost artifact.', 4: '1'}
+8	14		301							{3: 'While Lucia is using her terminal to assign different stages of the mission...'}
+9	15		301							{2: 'Ayla', 3: '...', 4: '1'}
+10	600		204							{1: '1'}
+11	19		301							"{2: 'Ayla', 3: ""Hey, this isn't a mission briefing. It's an adventure! Just relax and enjoy it."", 4: '1'}"
+12	20		301							"{2: 'Ayla', 3: ""This is the second story I drafted. I asked Changyu for some key elements about Kowloong's Dragon Boat Festival and incorporated them into this script."", 4: '1'}"
+13	21		301							{2: 'Ayla', 3: 'But I really want you to enjoy it rather than think of the script. Just leave the performance part to me.', 4: '1'}
+14	22		301							{2: 'Ayla', 3: 'I mean, we hardly get to sit together and play games like this.', 4: '1'}
+15	23		203							{1: '1', 2: '0.25', 3: '-400'}
+16	24		201							{1: '3', 2: '500026', 4: '400'}
+17	25		301							{1: '1', 2: 'Lee', 3: 'So what are the rules this time, Ayla?', 4: '3'}
+18	26		301							"{2: 'Ayla', 3: ""Rules? Just do whatever you like. You don't have to stick to role-playing this time."", 4: '1'}"
+19	27		302							{2: 'In other words, we will be playing ourselves.', 3: '28'}
+20	28		202							{1: '1', 6: '1'}
+21	29		201							{1: '2', 2: '500166', 4: '-400'}
+22	30		301							{1: '1', 2: 'Lucia', 3: 'Playing ourselves... Hmm...', 4: '2'}
+23	31		204							{1: '3', 2: '10'}
+24	32		301							{2: 'Lee', 3: 'Considering the personalities I rolled last time were... cheerful, gentle, and lovely... Honestly, I think I did my best.', 4: '3'}
+25	33		302							{2: 'Time to pick our starting location.', 3: '34'}
+26	34		202							{1: '2', 2: '3', 6: '1'}
+27	35		201							{1: '1', 2: '1031001', 3: '1'}
+28	36		301							{1: '1', 2: 'Liv', 3: 'Port, city, wilderness... Which one shall we choose?', 4: '1'}
+29	37		203							{1: '1', 2: '0.25', 3: '-400'}
+30	38		201							{1: '2', 2: '500026', 4: '400'}
+31	39		301							{1: '1', 2: 'Lee', 3: 'From an information gathering perspective, I suggest we pick the city, for there should be a library or academy inside.', 4: '2'}
+32	40		202							{1: '1', 6: '1'}
+33	41		201							{1: '1', 2: '500166', 3: '1', 4: '-400'}
+34	42		301							{1: '1', 2: 'Lucia', 3: 'We can also find more supplies.', 4: '1'}
+35	43		301							"{3: 'After seeking approval from everyone, you reach out and tap the icon marked with ""city.""'}"
+36	44		401							{1: '2', 2: '558'}
+37	45		302							{2: 'Hmm?', 3: '46'}
+38	46		301							{3: 'Before you can touch the option, its frame becomes grayed out.'}
+39	47		202							{1: '1', 2: '2', 6: '1'}
+40	48		201							{1: '1', 2: '500110'}
+41	49		301							{1: '1', 2: 'Ayla', 3: 'One moment, please...', 4: '1'}
+42	50		301							"{3: ""Ayla opens the control panel to check the game's status.""}"
+43	51		301							{2: 'Ayla', 3: 'Synchronized gameplay on. No connection error. Player quantity... Ah, found it.', 4: '1'}
+44	52		301							{2: 'Ayla', 3: 'Someone else had joined the game. They were so quick! I only just published the game script. Must be veteran players.', 4: '1'}
+45	53		203							{1: '1', 2: '0.25', 3: '-400'}
+46	54		201							{1: '2', 2: '500026', 4: '400'}
+47	55		301							{1: '1', 2: 'Lee', 3: 'It seems we can only choose the port now.', 4: '2'}
+48	56		302							"{2: ""As long as it's not the wilderness."", 3: '57'}"
+49	57		301							{3: 'Better make the decision before the system throws you into some unknown corner.'}
+50	58		302							{2: 'Starting location: Southern Port', 3: '59'}
+51	59		301				AniZhuanchangBegin			"{3: ""The guide screen disappears completely. The slowly expanding graphics have wrapped everyone's mind, gradually descending in the world sketched by Ayla.""}"
+52	60		401							{1: '1', 2: '36'}
+53	61		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+54	62		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory533.jpg'}
+55	63		104				AniZhuanchangEnd			{1: '0|-150|-150', 2: '0'}
+56	64		401							{1: '2', 2: '903'}
+57	65		401					400.0		{1: '2', 2: '904'}
+58	66		301			DialogEnable				{3: '...'}
+59	67		301							{3: 'Relentless waves struck the shore, bringing a cool scent.'}
+60	68		301							"{3: ""It's the middle of the day. Masts are swaying in the distance under the hot sun.""}"
+61	69		301							{3: 'Seagulls spread their wings, roaming and gliding freely along the never-ending coastline.'}
+62	70		301							{3: 'Definitely a peaceful and beautiful beach view... If only one can enjoy it from a normal angle.'}
+63	71		302							{2: '...', 3: '72'}
+64	72		301							{3: 'If the terminal screen is working properly, we are currently in the air.'}
+65	73		402							{1: '903'}
+66	74		402							{1: '904'}
+67	75		401							{1: '1', 2: '205'}
+68	76		104							{1: '0|0|0', 2: '0.5'}
+69	77		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '2'}
+70	78		301							{3: 'Clouds and birds fly past your vision. The ground is rapidly increasing in size—a hint that you are descending at a dangerously high speed.'}
+71	79		201							{1: '1', 2: '500026', 3: '7'}
+72	80		301							"{1: '1', 2: 'Lee', 3: ""I've never seen anyone land like this."", 4: '1'}"
+73	81		301							{2: 'Lee', 3: 'Oh, parachute. Ayla—no, DM, I want to find my parachute as soon as possible.', 4: '1'}
+74	82		301							{2: 'Ayla', 3: 'Sorry, but such service is not provided on this flight.'}
+75	83		202							{1: '1', 6: '1'}
+76	84		201							{1: '1', 2: '500166', 3: '5'}
+77	85		301							{1: '1', 2: 'Lucia', 3: 'Protect Commandant first. We are Constructs. We should be alright to land on the sea surface...', 4: '1'}
+78	86		301							{2: 'Ayla', 3: 'Oops, what are you talking about? Novice Lucia from a swordsman family?'}
+79	87		202							{1: '1', 6: '1'}
+80	88		201							{1: '1', 2: '1031001', 3: '7'}
+81	89		301							"{1: '1', 2: 'Liv', 3: ""There's a... village under us! Watch out!"", 4: '1'}"
+82	90		301							"{3: ""Liv's voice is torn apart by the howling wind. A group of villagers are gathering right underneath.""}"
+83	91		202							{1: '1', 6: '1'}
+84	92		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+85	93		301							"{3: ""But to Gray Raven's surprise, before they crash to the ground, an invisible force gently holds them up mid-air.""}"
+86	94		301							{3: 'The team lands safely after a little hovering, only to find themselves overwhelmed by the cheering of the crowd.'}
+87	95		302							{2: '???', 3: '96'}
+88	96		201							{1: '1', 2: '500434', 4: '600'}
+89	97		201							{1: '2', 2: '500410'}
+90	98		201							{1: '3', 2: '500527', 4: '-600'}
+91	99		301							"{1: '1', 3: 'They try to find out what is going on, but all they can hear are irrelevant phrases like ""heroes"", """"savior"""" or ""crisis.""'}"
+92	100		203							{1: '2', 2: '0.2', 5: '-40'}
+93	101		301							{3: 'A man walks forward and bows to Gray Raven. He seems to be the leader.'}
+94	102		301							{2: '???', 3: 'Greetings, heroes. Thank you for responding to my call.', 4: '2'}
+95	103		202							{1: '1', 2: '3'}
+96	104		301							{2: '???', 3: 'I am a Travelling Wizard. When I came past this village, I noticed the villagers here were in dire need of help, so I made a summoning toward the sky.', 4: '2'}
+97	105		301							{3: 'The man who claims to be a Travelling Wizard then turns around and stretches out his arms.'}
+98	106		301							{2: 'Travelling Wizard', 3: 'Ladies and gentlemen!', 4: '2'}
+99	107		301							{2: 'Travelling Wizard', 3: 'Behold, the heroes who have responded to my summoning! They have come to help... AWW!', 4: '2'}
+100	108		202							{1: '2'}
+101	109		301							{3: 'Before he can finish, the impatient villagers have already swarmed forward, pushing him to the ground.'}
+102	110		201							{1: '1', 2: '500434', 4: '400'}
+103	111		201							{1: '2', 2: '500527', 4: '-400'}
+104	112		301							{1: '1', 2: 'Villager', 3: 'Please help us, heroes!', 4: '1', 5: '2'}
+105	113		301							{2: 'Villager', 3: 'Heroes! Mighty heroes!', 4: '1', 5: '2'}
+106	114		301							{3: '...'}
+107	115		301							{3: 'You push through the crowd and run away. Fortunately, everyone in Gray Raven has decent stamina.'}
+108	116		301				AniZhuanchangBegin			{3: 'The Travelling Wizard becomes exhausted, but after rolling a dice, you are able to carry him to another place.'}
+109	117		401						200.0	{1: '1', 2: '36'}
+110	118		401							{1: '1', 2: '210'}
+111	119		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory530.jpg'}
+112	120		202				AniZhuanchangEnd			{1: '1', 2: '2', 6: '1'}
+113	121		301			DialogEnable				{3: 'Inside the room, squirrels are running up table legs with tea cups on their heads. They put the drinks in front of the guests, then each takes a candy from the jar.'}
+114	122		301							{3: 'The four Gray Raven members are sitting around the table, watching the Travelling Wizard wiping something off his hood—a large shoe print, to be precise.'}
+115	123		201							{1: '1', 2: '500166'}
+116	124		301							{1: '1', 2: 'Lucia', 3: 'So what would you like us to do?', 4: '1'}
+117	125		203							{1: '1', 2: '0.25', 3: '-400'}
+118	126		201							{1: '2', 2: '500410', 4: '400'}
+119	127		301							"{1: '1', 2: 'Travelling Wizard', 3: ""I haven't really thought about it. I mean, I haven't been so lucky for a long time."", 4: '2'}"
+120	128		302							{2: 'Lucky?', 3: '129'}
+121	129		301							{2: 'Travelling Wizard', 3: 'I mean, every summoning is like a lucky draw. Getting four heroes at once is an extremely rare event.', 4: '2'}
+122	130		301							{2: 'Travelling Wizard', 3: 'Legendary—!', 4: '2'}
+123	131		301							{3: 'The Travelling Wizard makes an exaggerated, croaky exclamation. He seems delighted.'}
+124	132		302							{2: 'Then why did you summon us here?', 3: '133'}
+125	133		301							"{2: 'Travelling Wizard', 3: ""Oh, um, if there weren't many heroes that responded, I was thinking about asking them to run errands like collecting firewood, picking up deliveries, or clearing a clogged toilet in the neighboring village."", 4: '2'}"
+126	134		302							{2: '...', 3: '135'}
+127	135		202							{1: '1', 6: '1'}
+128	136		201							{1: '1', 2: '500026', 3: '10', 4: '-400'}
+129	137		301							"{1: '1', 2: 'Lee', 3: ""People don't often ask others to perform these tasks..."", 4: '1'}"
+130	138		301							{2: 'Travelling Wizard', 3: 'True. Only fools would do those jobs.', 4: '2'}
+131	139		301							{2: 'Travelling Wizard', 3: 'But you are the famed heroes.', 4: '2'}
+132	140		301							"{2: 'Lee', 3: ""You weren't serious, were you? I don't mean to offend, but could you prove your identity as the summoner of heroes?"", 4: '1'}"
+133	141		202							{1: '1', 6: '1'}
+134	142		203							{1: '2', 2: '0.25'}
+135	143		301							{2: 'Travelling Wizard', 3: 'In the name of gods, please trust me. I mean, I was there to greet you in the first place. I stand by justice and integrity.', 4: '2'}
+136	144		301							{2: 'Travelling Wizard', 3: 'I changed my mind after seeing this large team of heroes.'}
+137	145		301							{2: 'Travelling Wizard', 3: 'I want you to save the world.', 4: '2'}
+138	146		401							{1: '1', 2: '36'}
+139	147		301							{3: 'Even the squirrels have stopped making noise. Time seems to have frozen.'}
+140	148		202							{1: '2', 6: '1'}
+141	149		201							{1: '1', 2: '500026', 3: '7', 4: '500'}
+142	150		201							{1: '2', 2: '500166'}
+143	151		201							{1: '3', 2: '1031001', 3: '7', 4: '-500'}
+144	152		301							{1: '1', 3: 'Everything has gone static, until a breeze moves the curtain.'}
+145	153		401							{1: '1', 2: '204'}
+146	154		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+147	155		201							{1: '1', 2: '500410'}
+148	156		301							{1: '1', 2: 'Travelling Wizard', 3: '...', 4: '1'}
+149	157		301							{2: 'Travelling Wizard', 3: 'Can I have some responses...?', 4: '1'}
+150	158		203							{1: '1', 2: '0.25', 3: '-400'}
+151	159		201							{1: '2', 2: '500026', 4: '400'}
+152	160		301							"{1: '1', 2: 'Lee', 3: ""Yes? I'm listening. Keep going. Mission objective: to save the world."", 4: '2'}"
+153	161		202							{1: '2', 6: '1'}
+154	162		201							{1: '2', 2: '1031001', 3: '3', 4: '400'}
+155	163		301							{1: '1', 2: 'Liv', 3: 'Save the world... But how?', 4: '2'}
+156	164		301							"{2: 'Travelling Wizard', 3: 'You need to find the legendary ""Ancient Triangle"", of course.', 4: '1'}"
+157	165		301							{2: 'Travelling Wizard', 3: 'As you saw earlier, the villagers came to me for the same reason.', 4: '1'}
+158	166		301							{2: 'Travelling Wizard', 3: 'Before the Ancient Triangle appeared, monsters often attacked the villages until heroes brought back the replicas of the Ancient Triangle from the Real of Dragons. But all the replicas have gone missing now...', 4: '1'}
+159	167		302							{2: 'Would you like us to go to the Realm of Dragons to retrieve new replicas?', 3: '168'}
+160	168		301							{2: 'Travelling Wizard', 3: 'Only to put them on the graves of this village? What a brilliant idea.', 4: '1'}
+161	169		301							"{2: 'Travelling Wizard', 3: ""I mean, there's no way you can make it in time. You may as well... just collect the materials required to make them."", 4: '1'}"
+162	170		301							{2: 'Travelling Wizard', 3: 'I can make them a new replica as long as I have enough materials.', 4: '1'}
+163	171		202							{1: '2', 6: '1'}
+164	172		201							{1: '2', 2: '500166', 4: '400'}
+165	173		301							{1: '1', 2: 'Lucia', 3: 'One moment please, I need to jot it down. Materials... to craft a new one... Is there any chance of failure when you make this replica?', 4: '2'}
+166	174		301							"{2: 'Travelling Wizard', 3: ""Um... I don't quite know, but I have tried many times in my journey. It's as reliable as it can be."", 4: '1'}"
+167	175		301							"{2: 'Lucia', 3: ""So there is still a possible chance to fail, isn't it?"", 4: '2'}"
+168	176		301							{2: 'Travelling Wizard', 3: 'Ahem, nobody is perfect.', 4: '1'}
+169	177		301							"{2: 'Lucia', 3: ""Recommended to prepare three times... No, four times the materials required... Just in case. Okay, what's next?"", 4: '2'}"
+170	178		301							"{3: ""Lucia's serious attitude makes the Travelling Wizard give up the drama and finish his speech as soon as possible.""}"
+171	179		301							"{2: 'Travelling Wizard', 3: 'The replica consists of three parts. The first is ""Twin Souls"", which can only be brought out from the Realm of Dragons, but worry not—I have already borrowed one from the nearby town. The next is ""Flawless Rope"". I got some from the black market, but there is only one left.', 4: '1'}"
+172	180		301		1		AniZhuanchangBegin			"{2: 'Travelling Wizard', 3: 'As for ""Soulless Body"", I have nothing left. Fortunately, we can find the material to make it nearby... Ordinary people won\'t be able to get close, but you are heroes...', 4: '1'}"

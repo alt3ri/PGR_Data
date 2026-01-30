@@ -1,0 +1,481 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory826.jpg'}
+2	2		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront47.png', 3: '1', 4: '1', 5: '0'}
+3	3		401							{1: '2', 2: '4643'}
+4	4		502							{1: 'RImgBg1Shake2Loop'}
+5	5		501				AniZhuanchangEnd			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '1'}
+6	6		401						1000.0	{1: '2', 2: '4251'}
+7	7		505							{1: 'RImgBg1Shake2Loop'}
+8	8		502							{1: 'RImgBg1Shake2Disable'}
+9	9		402							{1: '4251'}
+10	10		402							{1: '4643'}
+11	11		401							{1: '2', 2: '5845'}
+12	12		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+13	13		301			DialogEnable	DialogDisable			{3: 'The transport vehicle comes to a stop at the entrance to the village.'}
+14	14		205						600.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory825.jpg', 3: '0', 4: '1', 5: '0.5'}
+15	15		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory825.jpg'}
+16	16		205							{1: '999'}
+17	17		401							{1: '1', 2: '6244'}
+18	18		301			DialogEnable				{3: 'The night sky after the rain is clear and deep, countless stars forming the Milky Way, its finest details visible tonight.'}
+19	19		205							{1: '1007'}
+20	20		401							{1: '2', 2: '971'}
+21	21		301							{3: 'The docking point in the village is still occupied, giving the two of you a chance to sit quietly and admire the shining tapestry of the stars above.'}
+22	22		201							{1: '2', 2: '500398'}
+23	23		301							"{1: '1', 2: 'Conservation Area Worker', 3: ""Sorry, we're a bit behind on loading. The last salt convoy hasn't left yet. I'm afraid you'll have to wait a little longer."", 4: '2', 18: '100014131'}"
+24	24		301				DialogDisable			"{2: 'Conservation Area Worker', 3: ""I'll let you both know as soon as the unloading area becomes available."", 4: '2', 18: '100014132'}"
+25	25		302							"{2: ""It's fine. We'll be staying here for the night anyway. Take your time."", 3: '26'}"
+26	26		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+27	27		202							{1: '2', 6: '1'}
+28	28		201							{1: '1', 2: '501411', 5: '-30'}
+29	29		301			DialogEnable				"{1: '1', 3: ""After seeing the worker off, you return to Teddy. She perches on the vehicle's hood, head tilted toward the boundless night sky.""}"
+30	30		302							{2: 'Stargazing?', 3: '31'}
+31	31		301							{2: 'Teddy', 3: 'Do I really look that sentimental to you?', 4: '1', 18: '100014133'}
+32	32		302							"{2: ""You told me not to stereotype you. I've kept that in mind."", 3: '33'}"
+33	33		204							{1: '1', 2: '9'}
+34	34		301							{3: 'Her mechanical heart skips a beat.'}
+35	35		301				DialogDisable			{2: 'Teddy', 3: 'Then sit with me and stargaze for a bit.', 4: '1', 18: '100014134'}
+36	36		401							{1: '2', 2: '1543'}
+37	37		104							{1: '0|30|0', 2: '0.4'}
+38	38		203						450.0	{1: '1', 2: '0.4'}
+39	39		301			DialogEnable				{3: 'Another figure joins her under the starlight.'}
+40	40		204							{1: '1', 2: '1'}
+41	41		301							"{2: 'Teddy', 3: ""We're lucky. If it were still raining, with clouds and lightning above, we wouldn't be able to see a thing."", 4: '1', 18: '100014135'}"
+42	42		302							{2: '...', 3: '43'}
+43	43		301							{2: 'Teddy', 3: 'But even when clouds cover them, the stars are always there. You just have to part the clouds to see them.', 4: '1', 18: '100014136'}
+44	44		302							{2: 'Okay.', 3: '45'}
+45	45		301				DialogDisable			"{2: 'Teddy', 3: ""Like an inevitable result, a simple truth—just clear the mist, and you'll find it."", 4: '1', 18: '100014137'}"
+46	46		302							"{2: ""Comparing truth to the moon? That's romantic."", 3: '47'}"
+47	47		302							{2: 'Then scientists are the ones who part the clouds.', 3: '48'}
+48	48		204							{1: '1', 2: '2'}
+49	49		301			DialogEnable				{2: 'Teddy', 3: 'Just yesterday, Dorris told us that romance is foolish and laughable.', 4: '1', 18: '100014138'}
+50	50		302							{2: 'Do you think so too?', 3: '51', 4: 'Haha... do you think so too?', 5: '51'}
+51	51		204							{1: '1', 2: '8'}
+52	52		301							{2: 'Teddy', 3: 'Maybe it is foolish.', 4: '1', 18: '100014139'}
+53	53		204							{1: '1', 2: '2'}
+54	54		301							"{2: 'Teddy', 3: 'But those people who ""part the clouds"" aren\'t exactly geniuses either.', 4: '1', 18: '100014140'}"
+55	55		204							{1: '1', 2: '0'}
+56	56		301							"{2: 'Teddy', 3: ""Science is a torch passed from one generation to the next. Every pioneer stands on the shoulders of those before them, then clears away a bit more of the fog for those who'll come after."", 4: '1', 18: '100014141'}"
+57	57		301							{2: 'Teddy', 3: 'Almost no research is ever done in isolation. Some find the right path; others spend their whole lives just ruling out the wrong ones.', 4: '1', 18: '100014142'}
+58	58		301							"{2: 'Teddy', 3: ""The stars above us shine for ages, yet on the road to truth, each seeker can only walk a short distance. It's all those short paths joined together that form the map toward Veritas, the truth."", 4: '1', 18: '100014143'}"
+59	59		204							{1: '1', 2: '8'}
+60	60		301							"{2: 'Teddy', 3: ""From that point of view, romantics and idealists don't seem so different. Both cast their small, finite selves into the infinite realm of imagination."", 4: '1', 18: '100014144'}"
+61	61		302							"{2: '""Waste"" takes courage.', 3: '62', 4: 'Persistence takes courage.', 5: '62'}"
+62	62		204							{1: '1', 2: '4'}
+63	63		301							{3: 'Teddy pauses for a moment, slightly taken aback.'}
+64	64		204							{1: '1', 2: '16'}
+65	65		301							"{2: 'Teddy', 3: ""That's how it should be..."", 4: '1', 18: '100014145'}"
+66	66		302							{2: 'Should be?', 3: '67'}
+67	67		204							{1: '1', 2: '4'}
+68	68		301							{2: 'Teddy', 3: 'From Aristotle to Galileo, it took humanity over two thousand years. Then, it took another three centuries to build the foundations of classical mechanics.', 4: '1', 18: '100014146'}
+69	69		301							{2: 'Teddy', 3: 'From the second great unification of classical physics to the birth of quantum theory, it took about fifty years...', 4: '1', 18: '100014147'}
+70	70		204							{1: '1', 2: '8'}
+71	71		301							{2: 'Teddy', 3: 'And from the Zero-point Reactor accident until now... how long has it really been?', 4: '1', 18: '100014148'}
+72	72		302							{2: '...', 3: '73'}
+73	73		204							{1: '1', 2: '16'}
+74	74		301							"{2: 'Teddy', 3: ""The Punishing Virus, Construct Tech, Ascension-Network, Hetero-Core, contaminating memetic—there's so much, I've lost count."", 4: '1', 18: '100014149'}"
+75	75		204							{1: '1', 2: '8'}
+76	76		301							{2: 'Teddy', 3: 'Upheavals that used to happen once a century now feel like an annual routine.', 4: '1', 18: '100014150'}
+77	77		204							{1: '1', 2: '4'}
+78	78		301							{2: 'Teddy', 3: 'Have you ever wondered what that means for scholars?', 4: '1', 18: '100014151'}
+79	79		204							{1: '1', 2: '8'}
+80	80		301							"{2: 'Teddy', 3: ""It means the universe we trusted is collapsing. The systems we know could crumble by tomorrow. Things we can't comprehend might appear without warning, tearing through the laws we thought were unbreakable..."", 4: '1', 18: '100014152'}"
+81	81		204							{1: '1', 2: '16'}
+82	82		301							{2: 'Teddy', 3: 'So many are pushed forward, forced to use rules they barely grasp—rules that might not even belong to this world—to hold together a crumbling order.', 4: '1', 18: '100014153'}
+83	83		301							{2: 'Teddy', 3: 'Beyond genius minds like Asimov, Rosa, the Engineering Force, and the few other key figures you might not know, there are countless ordinary scholars struggling to breathe amid the collapsing and rebuilding of their beliefs.', 4: '1', 18: '100014154'}
+84	84		204							{1: '1', 2: '4'}
+85	85		301							{2: 'Teddy', 3: 'Science was meant to be an act of curiosity, a way to understand the world.', 4: '1', 18: '100014155'}
+86	86		204							{1: '1', 2: '17'}
+87	87		301							"{2: 'Teddy', 3: ""But now it's become a means of survival. Knowledge feels more like a parting gift left behind by disaster."", 4: '1', 18: '100014156'}"
+88	88		302							{2: 'Teddy...', 3: '89'}
+89	89		204							{1: '1', 2: '14'}
+90	90		301							{2: 'Teddy', 3: 'What if a whole lifetime of research only proves there was never a way forward?', 4: '1', 18: '100014157'}
+91	91		301							"{3: ""At that moment, she realizes that behind all her doubts and struggles, there's always been guilt.""}"
+92	92		204							{1: '1', 2: '17'}
+93	93		301							"{2: 'Teddy', 3: ""When I see people who believe in me, people who think I'm talented or capable, I get scared."", 4: '1', 18: '100014158'}"
+94	94		204							{1: '1', 2: '14'}
+95	95		301							"{2: 'Teddy', 3: ""Scared that in the end, all I'll prove is that none of it mattered."", 4: '1', 18: '100014159'}"
+96	96		202							{1: '1'}
+97	97		301							{3: 'That same despair once carved into every bone returns to her voice. Across the long, desolate stretch of time, two hearts briefly share the same rhythm.'}
+98	98		302							{2: '...', 3: '99'}
+99	99		201							{1: '1', 2: '501411', 3: '14'}
+100	100		301							{1: '1', 2: 'Teddy', 3: 'Commandant.', 4: '1', 18: '100014160'}
+101	101		301							{3: 'Her voice is faint, almost like a sigh.'}
+102	102		204							{1: '1', 2: '17'}
+103	103		301				DialogDisable			{2: 'Teddy', 3: 'I often fear that when I collapse, my broken body will serve no purpose, unable to pave the way for those who come after me.', 4: '1', 18: '100014161'}
+104	104		202							{1: '1', 6: '1'}
+105	105		306							{1: '1'}
+106	106		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg', 3: '0', 4: '1', 5: '0.5'}
+107	107		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg'}
+108	108		205							{1: '999'}
+109	109		301			DialogEnable				{3: 'Those burning, falling stars once lit the path of life. If even the stars lose their light, who will brighten this world?'}
+110	110		306							{1: '0'}
+111	111		401							{1: '2', 2: '4387'}
+112	112		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+113	113		504							{1: '0.7'}
+114	114		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+115	115		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+116	116		201							{1: '1', 2: '501411', 4: '-400', 7: '1'}
+117	117		201							{1: '2', 2: '500311', 4: '400', 7: '1'}
+118	118		301			DialogEnable				"{1: '1', 2: 'Research Assistant', 3: ""When the system failed just now, you shouldn't have stepped in to help me. At the very least, you shouldn't have stood in front of me. Vice-Captain, please... don't ever do that again."", 4: '2', 18: '100014162'}"
+119	119		204							{1: '1', 2: '7'}
+120	120		301							"{2: 'Teddy', 3: ""Do you even hear what you're saying?"", 4: '1', 18: '100014163'}"
+121	121		301							"{2: 'Research Assistant', 3: ""No, I mean it. You're far more important to this lab than I am. The Engineering Force would be fine without an assistant like me, but if something happened to you..."", 4: '2', 18: '100014164'}"
+122	122		306							{1: '1'}
+123	123		301							"{3: 'Comrades who willingly became ""shields,"" simply because ""Teddy"" was seen as more important...'}"
+124	124		306							{1: '0'}
+125	125		401							{1: '2', 2: '4387'}
+126	126		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+127	127		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory700.jpg'}
+128	128		202							{1: '1', 2: '2', 6: '1'}
+129	129		201							{1: '3', 2: '500460', 7: '1'}
+130	130		504							{1: '0.7'}
+131	131		301							{1: '1', 2: 'Transport Driver', 3: 'Working for Norman was the most peaceful time in my life. I missed those days, so... I could never throw the card away.', 4: '3', 18: '100014165'}
+132	132		301							{2: 'Transport Driver', 3: 'Because of people like him, I still believe life will get better. Thank you, Miss Norman. Thank your family too.', 4: '3', 18: '100014166'}
+133	133		306							{1: '1'}
+134	134		301							{3: 'The people who endure hardship yet remain optimistic, believing that we will bring them hope...'}
+135	135		306							{1: '0'}
+136	136		401							{1: '2', 2: '4387'}
+137	137		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+138	138		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory702.jpg'}
+139	139		202							{1: '1', 6: '1'}
+140	140		201							{1: '2', 2: '501411', 3: '16', 4: '-400', 7: '1'}
+141	141		201							{1: '3', 2: '501418', 4: '400', 7: '1'}
+142	142		301							"{1: '1', 2: 'Deerbear', 3: ""Then what's holding us back?"", 4: '3', 18: '100014167'}"
+143	143		204							{1: '1', 2: '4'}
+144	144		301							"{2: 'Teddy', 3: 'Because as ""Teddy,"" we\'re not allowed to cross it. We can\'t be less than intelligent, less than rational, and we can never let emotion take over.', 4: '2', 18: '100014168'}"
+145	145		301							{2: 'Teddy', 3: 'The world needs a useful Teddy. Not one who can be loved.', 4: '2', 18: '100014169'}
+146	146		401							{1: '2', 2: '4388'}
+147	147		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+148	148		504							{1: '0'}
+149	149		202							{1: '2', 2: '3', 6: '1'}
+150	150		104							{1: '0|0|-100', 2: '0', 4: '1'}
+151	151		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg'}
+152	152		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+153	153		306							{1: '1'}
+154	154		301							{3: 'Time and again, she reminds herself to stay resolute...'}
+155	155		301							{3: 'Physical pain can be shut off through her pain inhibitors, and mental anguish can be eased through M.I.N.D. therapy. But if her will is weak enough to be swayed by someone else... what then?'}
+156	156		301				DialogDisable			"{3: ""Her memory module overflows with every moment she's shared with you—the wind brushing past her cheeks atop the car, her hair tied back, that almost-confession on the sea walkway. Just standing beside you makes her sink into that feeling, caught between wanting to stay and wanting to run.""}"
+157	157		306							{1: '0'}
+158	158		104						550.0	{1: '0|80|-100', 2: '0.5', 4: '1'}
+159	159		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory825.jpg', 3: '0', 4: '1', 5: '0.5'}
+160	160		104							{1: '0|0|0', 2: '0', 4: '1'}
+161	161		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory825.jpg'}
+162	162		205							{1: '999'}
+163	163		201							{1: '1', 2: '501411', 3: '14'}
+164	164		301			DialogEnable				"{1: '1', 2: 'Teddy', 3: ""I should be trying harder, shouldn't I? And yet... I still lose focus because of a certain someone..."", 4: '1', 18: '100014170'}"
+165	165		204							{1: '1', 2: '17'}
+166	166		301				DialogDisable			{2: 'Teddy', 3: 'I...', 4: '1', 18: '100014171'}
+167	167		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.3'}
+168	168		301			DialogEnable				"{2: 'Teddy', 3: ""(I'm not allowed to have the kind of happiness Dorris found.)"", 4: '1', 18: '100014172'}"
+169	169		205							{1: '999'}
+170	170		202							{1: '1'}
+171	171		301							{3: 'The kind of happiness within reach is always the most frightening.'}
+172	172		301							{3: 'Within the M.I.N.D., the virus program Teddy created with her own hands spreads like wildfire. It feeds on every trace of anxiety and fear, stirring a storm far beyond what she expected.'}
+173	173		301				DialogDisable			{3: 'The fears we hide best are the ones that hit hardest when exposed.'}
+174	174		104						550.0	{1: '0|-30|0', 2: '0.5', 4: '1'}
+175	175		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg', 3: '0', 4: '1', 5: '0.5'}
+176	176		104							{1: '0|0|0', 2: '0', 4: '1'}
+177	177		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg'}
+178	178		205							{1: '999'}
+179	179		301			DialogEnable	DialogDisable			"{3: ""The stars above press down on the girl's trembling shoulders. It feels the same as years ago, when Dominik's era came to an end and the burden of a new age fell on her. It came in the name of family expectations and Norman honor.""}"
+180	180		302							{2: '(Long before she learned to be a child, the eldest daughter of the Norman family had already learned responsibility.)', 3: '181', 4: '...', 5: '181'}
+181	181		302							{2: '(Reach out to Teddy.)', 3: '182', 4: '...', 5: '182'}
+182	182		104						550.0	{1: '0|30|0', 2: '0.5', 4: '1'}
+183	183		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory825.jpg', 3: '0', 4: '1', 5: '0.5'}
+184	184		104							{1: '0|0|0', 2: '0', 4: '1'}
+185	185		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory825.jpg'}
+186	186		205							{1: '999'}
+187	187		401							{1: '2', 2: '4029'}
+188	188		301			DialogEnable				{3: 'Before your unspoken words of comfort can reach her, Teddy jumps down from the hood of the transport vehicle.'}
+189	189		201							{1: '1', 2: '501411', 3: '1'}
+190	190		301							"{1: '1', 2: 'Teddy', 3: ""...Someone's coming."", 4: '1', 18: '100014173'}"
+191	191		204							{1: '1', 2: '1'}
+192	192		301							{3: 'She turns and smiles—the same smile she always wears.'}
+193	193		201							{1: '1', 2: '500398', 7: '1'}
+194	194		301							{1: '1', 2: 'Conservation Area Worker', 3: 'Excuse me, have you seen a little girl around here?', 4: '1', 18: '100014174'}
+195	195		301							{3: 'A worker from the conservation area appears at the intersection.'}
+196	196		302							{2: 'A little girl?', 3: '197'}
+197	197		301							"{2: 'Conservation Area Worker', 3: ""Yes. She's from the salt-collecting crew. It's her first time out with her father, and we can't find her anywhere."", 4: '1', 18: '100014175'}"
+198	198		301							"{2: 'Conservation Area Worker', 3: ""We're still looking. I'm so sorry for the trouble... Once the salt-collecting crew moves on, you'll be able to drive through and unload your cargo."", 4: '1', 18: '100014176'}"
+199	199		302							{2: 'Do you need help searching?', 3: '200'}
+200	200		201							{1: '1', 2: '501411', 7: '1'}
+201	201		301							"{1: '1', 2: 'Teddy', 3: ""We'll help you look."", 4: '1', 18: '100014177'}"
+202	202		301							{3: 'You both speak up at almost the same time.'}
+203	203		201							{1: '1', 2: '500398', 7: '1'}
+204	204		301				DialogDisable			{1: '1', 2: 'Conservation Area Worker', 3: 'Really? Thank you, that means a lot.', 4: '1', 18: '100014178'}
+205	205		302							{2: 'No problem. The sooner we find her, the better for everyone.', 3: '206'}
+206	206		201							{1: '1', 2: '501411', 3: '1', 7: '1'}
+207	207		302							"{1: '1', 2: ""Teddy, let's go—"", 3: '208'}"
+208	208		204							{1: '1', 2: '4'}
+209	209		301			DialogEnable				"{2: 'Teddy', 3: ""Let's split up. We'll cover more ground that way."", 4: '1', 18: '100014179'}"
+210	210		302							{2: 'Teddy?', 3: '211'}
+211	211		204							{1: '1', 2: '8'}
+212	212		301							{3: 'It sounds reasonable, but she looks away too quickly to be convincing.'}
+213	213		302							"{2: ""Alright, but let's stay connected through the M.I.N.D."", 3: '214'}"
+214	214		204							{1: '1'}
+215	215		301				DialogDisable			{3: 'She pauses, then nods lightly.'}
+216	216		401							{1: '1', 2: '36'}
+217	217		401							{1: '2', 2: '2567'}
+218	218		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab', 2: '3'}
+219	219		505			AniZhuanchangBegin				{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab'}
+220	220		202						1500.0	{1: '1', 6: '1'}
+221	221		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+222	222		401							{1: '1', 2: '6390'}
+223	223		301			DialogEnable	DialogDisable			{3: 'In the dense forest near the seaside village, moonlight filters faintly through the trees. From afar, the calls of those searching for the missing child rise and fall in the night.'}
+224	224		302							{2: 'Teddy, you okay?', 3: '225'}
+225	225		306							{1: '1'}
+226	226		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '8'}
+227	227		201							{1: '19', 2: '501411', 5: '-50'}
+228	228		301			DialogEnable				"{1: '1', 2: 'Teddy', 3: ""I'm okay."", 4: '19', 18: '100014180'}"
+229	229		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '8', 5: '1'}
+230	230		202				DialogDisable			{1: '19', 6: '1'}
+231	231		301			DialogEnable				{3: 'Her voice comes softly through the M.I.N.D. connection.'}
+232	232		301							"{3: ""She's unusually quiet.""}"
+233	233		301				DialogDisable			"{3: ""Even though the connection stays open, it still feels like she's completely gone from your side.""}"
+234	234		306							{1: '0'}
+235	235		302							{2: '(Something about this feels... wrong.)', 3: '236'}
+236	236		301			DialogEnable				"{3: ""As the unease grows, a man's voice calls out from behind you.""}"
+237	237		201							{1: '18', 2: '500565', 4: '-30', 5: '-80', 7: '1'}
+238	238		301			DialogShake				{1: '1', 2: 'Young Father', 3: 'Liz, where are you?', 4: '18', 18: '100014181'}
+239	239		202				DialogDisable			{1: '18', 6: '1'}
+240	240		401							{1: '2', 2: '2704'}
+241	241		201							{1: '1', 2: '500565'}
+242	242		301			DialogEnable				{1: '1', 3: 'The voice draws closer, and a young man steps out from between the trees.'}
+243	243		301				DialogDisable			"{2: 'Young Father', 3: ""Uh... hello. Have you seen my daughter? She's gone missing."", 4: '1', 18: '100014182'}"
+244	244		302							"{2: ""(That must be the girl's father...)"", 3: '245'}"
+245	245		302							"{2: ""I'm helping search for her too. Let's check ahead together."", 3: '246'}"
+246	246		301			DialogEnable	DialogDisable			{2: 'Young Father', 3: 'Thank you. Thank you so much!', 4: '1', 18: '100014183'}
+247	247		202							{1: '1', 6: '1'}
+248	248		401							{1: '2', 2: '6286'}
+249	249		104						350.0	{1: '0|30|-50', 2: '0.3', 4: '1'}
+250	250		104							{1: '0|0|-150', 2: '0.4', 4: '1'}
+251	251		301			DialogEnable	AniZhuanchangBegin			{3: 'Together with the young father, you head deeper into the dense forest.'}
+252	252		502							{1: 'DialogDisable'}
+253	253		104							{1: '0|0|0', 2: '0'}
+254	254		401						1000.0	{1: '1', 2: '36'}
+255	255		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1182.jpg'}
+256	256		301			DialogEnable				{3: 'The moonlight feels sharper tonight, its cold glow slicing through stones and wild grass, scattering in thin reflections.'}
+257	257		401							{1: '1', 2: '165'}
+258	258		201							{1: '1', 2: '501411', 3: '8'}
+259	259		301							{1: '1', 3: 'Teddy sits alone on a boulder, having remained motionless for quite some time.'}
+260	260		204							{1: '1', 2: '16'}
+261	261		301							"{3: ""Through the M.I.N.D. connection, she senses that you've moved farther away—your voice distant, speaking to the girl's father. She doesn't focus on the words.""}"
+262	262		202							{1: '1'}
+263	263		401							{1: '2', 2: '4798'}
+264	264		301							{3: 'The wind hums low through the trees, swallowing her quiet sigh.'}
+265	265		201							{1: '1', 2: '501430'}
+266	266		301							{1: '1', 2: '???', 3: 'Are you lost too?', 4: '1', 18: '100014184'}
+267	267		201							{1: '1', 2: '501411', 3: '5', 7: '1'}
+268	268		301							{1: '1', 3: 'A clear, childlike voice drifts over from behind her. Teddy frowns in confusion.'}
+269	269		204							{1: '1', 2: '16'}
+270	270		301							{3: 'At that instant, the mental connection between you and her cuts off.'}
+271	271		306							{1: '1'}
+272	272		201							{1: '1', 2: '501430', 7: '1'}
+273	273		301							{1: '1', 3: 'She turns cautiously. In the moonlight stands a girl, maybe eight or nine years old, smiling sweetly.'}
+274	274		306							{1: '0'}
+275	275		301							"{2: '???', 3: ""I'm lost, miss. Can you help me?"", 4: '1', 18: '100014185'}"
+276	276		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+277	277		401							{1: '2', 2: '4798'}
+278	278		201							{1: '1', 2: '501411', 3: '10', 7: '1'}
+279	279		301							{1: '1', 3: 'The forest is silent except for the whispering wind, until a soft tone sounds in your terminal.'}
+280	280		202							{1: '1', 6: '1'}
+281	281		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab', 2: '2'}
+282	282		301				AniZhuanchangBegin			{2: 'System', 3: 'Incoming communication request. Accept?', 18: '100014186'}
+283	283		505				DialogDisable			{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab'}
+284	284		401							{1: '2', 2: '1515'}
+285	285		509						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1294.jpg', 2: '1'}
+286	286		302			AniZhuanchangEnd				{2: 'Teddy? What happened? The M.I.N.D. connection just—', 3: '287'}
+287	287		201							{1: '11', 2: '501411', 3: '4', 4: '-500'}
+288	288		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '11'}
+289	289		301			DialogEnable				{1: '1', 3: 'An anxious voice crackles through the comms. The moment the connection broke, you sent her an emergency call.'}
+290	290		301							"{2: 'Teddy', 3: ""I'm fine, Commandant."", 4: '11', 18: '100014187'}"
+291	291		204							{1: '11', 2: '0'}
+292	292		301							{2: 'Teddy', 3: 'I... I think I found the child.', 4: '11', 18: '100014188'}
+293	293		302							"{2: ""Really? Good. I'll bring her father over right away."", 3: '294'}"
+294	294		204							{1: '11', 2: '10'}
+295	295		301							{2: 'Girl', 3: 'Who are you talking to?', 18: '100014189'}
+296	296		301							{2: 'Teddy', 3: 'I—', 4: '11', 18: '100014190'}
+297	297		202							{1: '11'}
+298	298		301				DialogDisable			{3: 'Before she can finish, her vision fills with a whirlpool of purple light.'}
+299	299		302							{2: 'Teddy?', 3: '300'}
+300	300		401							{1: '2', 2: '1515'}
+301	301		510						300.0	{1: '1', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1182.jpg'}
+302	302		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '11'}
+303	303		301			DialogEnable				{3: 'Her voice vanishes from the channel.'}
+304	304		401							{1: '1', 2: '36'}
+305	305		301							{3: 'Still confused, you hear the father searching ahead cry out in sudden delight.'}
+306	306		201							{1: '1', 2: '500403'}
+307	307		301			PanelActor1Shake				{1: '1', 2: 'Young Father', 3: 'Liz!', 4: '1', 18: '100014191'}
+308	308		201							{1: '1', 2: '500260', 7: '1'}
+309	309		301			PanelActor1Shake				{1: '1', 2: 'Liz', 3: 'Daddy!', 4: '1', 18: '100014192'}
+310	310		202							{1: '1', 6: '1'}
+311	311		201							{1: '2', 2: '500403', 4: '100'}
+312	312		401							{1: '2', 2: '4044'}
+313	313		201							{1: '3', 2: '500260', 4: '-500'}
+314	314		203							{1: '3', 2: '0.5', 3: '-180'}
+315	315		301							"{1: '1', 3: ""The missing girl runs straight into her father's arms.""}"
+316	316		203							{1: '2', 2: '0.3', 3: '300'}
+317	317		203							{1: '3', 2: '0.3', 3: '-300'}
+318	318		301				DialogDisable			"{2: 'Young Father', 3: ""What are you doing here? I've been looking everywhere—"", 4: '2', 18: '100014193'}"
+319	319		302							"{2: ""(So this is Liz... then who's the girl Teddy found...)"", 3: '320'}"
+320	320		202							{2: '2', 3: '3', 6: '1'}
+321	321		401							{1: '1', 2: '166'}
+322	322		401							{1: '2', 2: '4331'}
+323	323		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+324	324		401							{1: '2', 2: '2936'}
+325	325		104							{1: '0|0|-100', 2: '0.25'}
+326	326		301			DialogEnable	AniZhuanchangBegin			"{3: ""A cold breeze sends a shiver down your spine. There's no time to think. Leaving the reunited pair behind, you run toward Teddy's coordinates.""}"
+327	327		502							{1: 'DialogDisable'}
+328	328		510							{1: '2', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1294.jpg'}
+329	329		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+330	330		401						2000.0	{1: '1', 2: '36'}
+331	331		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1182.jpg'}
+332	332		401							{1: '1', 2: '165'}
+333	333		301			DialogEnable				"{3: ""The moonlight and shadows of the trees hide the girl's face. The forest at night looks eerie and forbidding, yet she remains perfectly calm.""}"
+334	334		201							{1: '1', 2: '501411', 3: '1'}
+335	335		301							"{1: '1', 2: 'Teddy', 3: ""You're from the salt-collecting crew, right? Liz? You got lost?"", 4: '1', 18: '100014194'}"
+336	336		201							{1: '1', 2: '501415', 3: '1'}
+337	337		301							"{1: '1', 2: 'Girl', 3: ""You've got the name wrong, miss. I'm... Chris."", 4: '1', 18: '100014195'}"
+338	338		301							{2: 'Chris', 3: 'Do you know the way back?', 4: '1', 18: '100014196'}
+339	339		201							{1: '1', 2: '501411', 3: '1'}
+340	340		301							"{1: '1', 2: 'Teddy', 3: ""Of course. Your father's been searching everywhere for you."", 4: '1', 18: '100014197'}"
+341	341		201							{1: '1', 2: '501415', 3: '14'}
+342	342		301							"{1: '1', 2: 'Chris', 3: ""Is that so? I'm sorry for worrying him."", 4: '1', 18: '100014198'}"
+343	343		201							{1: '1', 2: '501411', 3: '1'}
+344	344		301				DialogDisable			"{1: '1', 2: 'Teddy', 3: ""Come on, I'll take you back."", 4: '1', 18: '100014199'}"
+345	345		202							{1: '1', 6: '1'}
+346	346		401							{1: '2', 2: '2704'}
+347	347		104						350.0	{1: '0|30|-50', 2: '0.3'}
+348	348		104							{1: '0|0|-100', 2: '0.4'}
+349	349		301			DialogEnable				"{3: ""The girl doesn't move.""}"
+350	350		201							{1: '1', 2: '501411'}
+351	351		301							{1: '1', 2: 'Teddy', 3: 'Not coming?', 4: '1', 18: '100014200'}
+352	352		201							{1: '1', 2: '501415', 3: '1', 7: '1'}
+353	353		301							{1: '1', 2: 'Chris', 3: 'Miss.', 4: '1', 18: '100014201'}
+354	354		301							"{2: 'Chris', 3: ""I can't walk anymore. Can you carry me?"", 4: '1', 18: '100014202'}"
+355	355		306							
+356	356		201							{1: '1', 2: '501411', 3: '1', 7: '1'}
+357	357		203							{1: '1', 2: '0.25', 4: '-50', 5: '-50'}
+358	358		401							{1: '2', 2: '5286'}
+359	359		301							"{1: '1', 3: ""Teddy bends down and reaches out to her. Moonlight spills across the child's gentle face, and for a moment, Teddy realizes she looks just like Victoria.""}"
+360	360		401							{1: '2', 2: '2704'}
+361	361		201							{1: '1', 2: '501415', 7: '1'}
+362	362		301							"{1: '1', 3: ""Chris reaches out too. Her cold, lifeless hands rest on the side of Teddy's neck.""}"
+363	363		201							{1: '1', 2: '501411', 3: '10', 7: '1'}
+364	364		301							{1: '1', 2: 'Teddy', 3: 'You...', 4: '1', 18: '100014203'}
+365	365		401							{1: '1', 2: '36'}
+366	366		401							{1: '1', 2: '6390'}
+367	367		201							{1: '1', 2: '501415', 3: '3', 7: '1'}
+368	368		301				DialogDisable			"{1: '1', 3: ""The girl's lips curl into a mocking smile.""}"
+369	369		201							{1: '1', 2: '501411', 3: '10', 7: '1'}
+370	370		401							{1: '2', 2: '4092'}
+371	371		104						150.0	{1: '0|0|-200', 2: '0.1'}
+372	372		104							{1: '0|0|0', 2: '0.2'}
+373	373		301			DialogEnable				{1: '1', 3: 'Thud—'}
+374	374		204							{1: '1', 2: '17'}
+375	375		502							{1: 'RImgBg1Shake'}
+376	376		301							{3: 'The realization hits the Construct girl like a sledgehammer, leaving her mind blank for a moment.'}
+377	377		204							{1: '1', 2: '10'}
+378	378		301							{3: 'Like snapping awake from a nightmare, Teddy gasps for breath, but the hand at her throat has already tightened its grip.'}
+379	379		202							{1: '1', 6: '1'}
+380	380		306							{1: '1'}
+381	381		301				DialogDisable			{3: 'Chris really does look like Victoria, but there was someone else, someone without a name, who looked even more like her. Christina.'}
+382	382		401							{1: '2', 2: '2987'}
+383	383		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+384	384		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+385	385		201							{1: '1', 2: '501411', 3: '10'}
+386	386		301			DialogEnable				"{1: '1', 3: ""She's choking her.""}"
+387	387		204							{1: '1', 2: '17'}
+388	388		502							{1: 'DialogShake'}
+389	389		301			PanelActor1Shake	DialogDisable			{2: 'Teddy', 3: 'Ugh...', 4: '1', 18: '100014204'}
+390	390		205						350.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.3'}
+391	391		401							{1: '2', 2: '1543'}
+392	392		201							{1: '1', 2: '501415', 3: '3', 7: '1'}
+393	393		203							{1: '1', 2: '0.3', 4: '50', 5: '-50'}
+394	394		301			DialogEnable				"{1: '1', 2: 'Chris', 3: ""Sorry, but I've waited long enough."", 4: '1', 18: '100014205'}"
+395	395		301							"{2: 'Chris', 3: ""At first, I couldn't understand. Why was the free personality a ridiculous doll, while the one suppressed was just a useless child?"", 4: '1', 18: '100014206'}"
+396	396		204							{1: '1', 2: '2'}
+397	397		301							"{2: 'Chris', 3: ""But now I get it. A child's face lowers everyone's guard. And you, the one controlling this body, you're weak. A fool desperate to be loved."", 4: '1', 18: '100014207'}"
+398	398		204							{1: '1', 2: '4'}
+399	399		301							"{2: 'Chris', 3: ""Maybe that's the deal we made."", 4: '1', 18: '100014208'}"
+400	400		204							{1: '1', 2: '5'}
+401	401		301							{2: 'Chris', 3: 'Permission for me to end our pathetic existence.', 4: '1', 18: '100014209'}
+402	402		204							{1: '1', 2: '3'}
+403	403		301							"{2: 'Chris', 3: ""Thank heavens our little chat under the stars finally helped you figure it out. Now I'm free."", 4: '1', 18: '100014210'}"
+404	404		201							{1: '1', 2: '501411', 3: '10', 7: '1'}
+405	405		502							{1: 'DialogShake'}
+406	406		301			PanelActor1Shake				{1: '1', 2: 'Teddy', 3: 'You...', 4: '1', 18: '100014211'}
+407	407		201							{1: '1', 2: '501415', 3: '3', 7: '1'}
+408	408		301							"{1: '1', 2: 'Chris', 3: ""Aren't you afraid that the rational part of you will betray the one you care for? Don't you wonder if it's wrong to ignore all the suffering and chase happiness on your own?"", 4: '1', 18: '100014212'}"
+409	409		301							"{2: 'Chris', 3: ""Aren't you afraid that wild, chaotic love will strip you of reason?"", 4: '1', 18: '100014213'}"
+410	410		204							{1: '1', 2: '2'}
+411	411		301							"{2: 'Chris', 3: ""Don't worry. Once you disappear, none of that will matter. No love. No betrayal. No pain."", 4: '1', 18: '100014214'}"
+412	412		204							{1: '1', 2: '4'}
+413	413		301							"{2: 'Chris', 3: ""I'm not weak. I can't be weak. I'm not allowed to be weak."", 4: '1', 18: '100014215'}"
+414	414		301							"{2: 'Chris', 3: ""When everyone else is helpless, I'm the one who stays clear-headed—the problem solver, the martyr."", 4: '1', 18: '100014216'}"
+415	415		203							{1: '1', 2: '0.5', 4: '60', 5: '-70'}
+416	416		401							{1: '2', 2: '2987'}
+417	417		502							{1: 'RImgBg1Shake'}
+418	418		301							"{3: ""Her hands tighten around Teddy's throat.""}"
+419	419		204							{1: '1', 2: '4'}
+420	420		301							{2: 'Chris', 3: 'Passion is just adrenaline for mortals, but the enemy of reason and intellect.', 4: '1', 18: '100014217'}
+421	421		204							{1: '1', 2: '5'}
+422	422		301							{2: 'Chris', 3: 'We used to scorn that kind of thing, remember? But you forgot.', 4: '1', 18: '100014218'}
+423	423		301							"{2: 'Chris', 3: ""All because you crave that human's gaze—you'd let yourself drown in a storm of emotion."", 4: '1', 18: '100014219'}"
+424	424		301							{2: 'Chris', 3: 'What you desire will end up enslaving you...', 4: '1', 18: '100014220'}
+425	425		204							{1: '1', 2: '14'}
+426	426		301							"{2: 'Chris', 3: ""Christina, I'm so disappointed in you."", 4: '1', 18: '100014221'}"
+427	427		201							{1: '1', 2: '501411', 3: '10', 7: '1'}
+428	428		502							{1: 'DialogShake'}
+429	429		301			PanelActor1Shake				"{1: '1', 3: ""Teddy's mind goes blank. She can't find words. A strangled breath catches in her throat, forcing tears to her eyes.""}"
+430	430		204							{1: '1', 2: '17'}
+431	431		301							{2: 'Teddy', 3: '(Another simulated consciousness...)', 4: '1', 18: '100014222'}
+432	432		301							"{2: 'Teddy', 3: ""(So Deerbear wasn't the only one...)"", 4: '1', 18: '100014223'}"
+433	433		401							{1: '2', 2: '2987'}
+434	434		301			PanelActor1Shake				"{3: ""Even if it's just a projection from her hacked visual module, Teddy feels the suffocating pressure as if it were real.""}"
+435	435		201							{1: '1', 2: '501415', 3: '3', 5: '60', 6: '-70', 7: '1'}
+436	436		301							"{1: '1', 2: 'Chris', 3: ""Don't cry. I'll take care of this for both of us."", 4: '1', 18: '100014224'}"
+437	437		201							{1: '1', 2: '501411', 3: '10', 7: '1'}
+438	438		301				DialogDisable			"{1: '1', 3: ""The moonlight pours coldly over Teddy's face, filling her eyes that spin like whirlpools.""}"
+439	439		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+440	440		306							{1: '0'}
+441	441		202							{1: '1', 6: '1'}
+442	442		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+443	443		205							{1: '999'}
+444	444		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+445	445		401							{1: '2', 2: '4331'}
+446	446		301			DialogEnable				{3: 'Just as the last of her clarity fades, hurried footsteps break through the forest.'}
+447	447		401							{1: '2', 2: '2704'}
+448	448		302				DialogDisable			{2: 'Teddy!', 3: '449'}
+449	449		104						250.0	{1: '0|30|-50', 2: '0.2'}
+450	450		104							{1: '0|0|-100', 2: '0.3'}
+451	451		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+452	452		201							{1: '1', 2: '501411', 3: '17'}
+453	453		301			DialogEnable				{1: '1', 3: 'You rush toward her coordinates and are stunned by the sight.'}
+454	454		401							{1: '2', 2: '2987'}
+455	455		203						450.0	{1: '1', 2: '0.4', 4: '-50'}
+456	456		203							{1: '1', 2: '0.5', 4: '-80'}
+457	457		301			PanelActor1Shake	DialogDisable			"{3: ""Under the pale moon, Teddy's pink-haired body is choking itself, eyes shut tight, tears streaming as if she's trapped in a nightmare.""}"
+458	458		302							{2: 'Teddy! Wake up!', 3: '459'}
+459	459		401							{1: '2', 2: '2704'}
+460	460		104						250.0	{1: '0|30|-150', 2: '0.2'}
+461	461		104							{1: '0|0|-200', 2: '0.3'}
+462	462		301			DialogEnable	DialogDisable			{3: 'You step forward and grab her from behind, forcing her hands away from her throat and locking her wrists in your grip. Without waiting for her consent, you re-establish a M.I.N.D. connection.'}
+463	463		401							{1: '2', 2: '2567'}
+464	464		501						2000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab', 2: '3'}
+465	465		505			AniZhuanchangBegin				{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab'}
+466	466		202							{1: '1', 6: '1'}
+467	467		401							{1: '2', 2: '3077'}
+468	468		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory1182.jpg'}
+469	469		502							{1: 'RImgBg1Shake'}
+470	470		302							{2: 'Teddy?', 3: '471'}
+471	471		201							{1: '1', 2: '501411', 3: '16'}
+472	472		301			DialogEnable				{1: '1', 3: 'You press your face to hers. Her tears soak your skin. Strands of her hair cling to your cheek, but you ignore them, calling anxiously into her ear.'}
+473	473		302							{2: 'Teddy...', 3: '474'}
+474	474		204							{1: '1', 2: '10'}
+475	475		301							{3: 'Finally, the unstable connection steadies. Her body relaxes. She opens her eyes, the purple whirlpools within them settling into stillness. As if all strength has drained from her body, the girl gently falls against your chest.'}
+476	476		301			DialogShake				{2: 'Teddy', 3: '...', 4: '1', 18: '100014225'}
+477	477		204							{1: '1', 2: '17'}
+478	478		301							{3: 'She closes her eyes and lets out a soft sigh.'}
+479	479		301							{2: 'Teddy', 3: 'How annoying...', 4: '1', 18: '100014226'}
+480	480		301		1		AniZhuanchangBegin			{2: 'Teddy', 3: 'The feeling of losing control.', 4: '1', 18: '100014227'}

@@ -1,0 +1,111 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory26.jpg'}
+2	2		401							{1: '2', 2: '968'}
+3	3		401							{1: '1', 2: '209'}
+4	4		301			DialogEnable				{2: 'Noctis', 3: 'Push harder, 21!'}
+5	5		301							{2: 'Noctis', 3: 'Are your claws for show only?'}
+6	6		301							"{2: 'No. 21', 3: ""I'm pushing. I'll destroy the car if I push any harder.""}"
+7	7		301							{2: 'No. 21', 3: 'But I think you can do it by yourself.'}
+8	8		301							"{2: 'No. 21', 3: ""You've been pushing the car without me for a while now.""}"
+9	9		301							{2: 'Noctis', 3: 'What?! You piece of...'}
+10	10		301							{2: 'Vera', 3: 'Help push for a bit, No. 21.'}
+11	11		301							{2: 'Vera', 3: 'You can take the wheel in ten more minutes.'}
+12	12		301							"{2: 'Noctis', 3: ""What about me? That's not fair!""}"
+13	13		301							{2: 'Vera', 3: 'You were just in the car! What else do you want?'}
+14	14		301				AniZhuanchangBegin			"{2: 'Vera', 3: ""You were so terrible at this that I'd rather put a tree stump on the driver's seat.""}"
+15	15		401							{1: '1', 2: '36'}
+16	16		502						1000.0	{1: 'DialogDisable'}
+17	17		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory318.png'}
+18	18		104				AniZhuanchangEnd			{1: '0|-180|-300', 2: '0'}
+19	19		401							{1: '2', 2: '759'}
+20	20		301			DialogEnable				{3: 'It is a sunny day—a little too sunny, perhaps. The sun shines blatantly upon the asphalt road that lies within hundreds of miles of deserted fields and sands.'}
+21	21		301							{3: 'The physical conditions of humans have determined that such an environment is not ideal for their survival. However, this place is a paradise for some other life forms.'}
+22	22		301							{3: 'Lizards, bharals, hares, wolves, the flying vultures...'}
+23	23		301				AniZhuanchangBegin			{3: '...And the members of Cerberus, who are pushing their car on an endless highway.'}
+24	24		502						400.0	{1: 'DialogDisable'}
+25	25		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory26.jpg'}
+26	26		402							{1: '968'}
+27	27		401							{1: '1', 2: '205'}
+28	28		201							{1: '1', 2: '500682', 3: '3'}
+29	29		301			DialogEnable				{1: '1', 2: 'Noctis', 3: 'What kind of mission is this?', 4: '1'}
+30	30		301							"{2: 'Noctis', 3: ""All the secrecy! What mission is so important that they're sending us to a barren place like this?"", 4: '1'}"
+31	31		202							{1: '1', 6: '1'}
+32	32		201							{1: '1', 2: '500345', 3: '8'}
+33	33		301							{1: '1', 2: 'Vera', 3: 'How the hell would I know? That bedridden commandant just told us to arrive at the coordinates he sent us.', 4: '1'}
+34	34		204							{1: '1'}
+35	35		301							"{2: 'Vera', 3: ""You should be glad that you're not grounded for the mess you made."", 4: '1'}"
+36	36		202							{1: '1', 6: '1'}
+37	37		201							{1: '1', 2: '500682', 3: '8'}
+38	38		301							{1: '1', 2: 'Noctis', 3: 'Hmph...', 4: '1'}
+39	39		204							{1: '1'}
+40	40		203							{1: '1', 2: '0.25', 3: '-400'}
+41	41		201							{1: '2', 2: '500650', 4: '400'}
+42	42		301							"{1: '1', 2: 'No. 21', 3: ""We're getting a call, Captain."", 4: '2'}"
+43	43		202							{1: '1', 2: '2', 6: '1'}
+44	44		201							{1: '1', 2: '500345'}
+45	45		301							"{1: '1', 2: 'Vera', 3: ""We're getting a signal?"", 4: '1'}"
+46	46		202							{1: '1', 6: '1'}
+47	47		301							{3: 'Vera lets go of the car, somersaulting onto the roof and sitting beside No. 21 before taking the comms device from her.'}
+48	48		301							"{3: ""Losing Vera's help, Noctis almost trips and falls over underneath the car.""}"
+49	49		201							{1: '1', 2: '500682', 5: '-100'}
+50	50		301							{1: '1', 2: 'Noctis', 3: '****!', 4: '1'}
+51	51		203							{1: '1', 2: '0.25', 3: '400', 4: '-100'}
+52	52		201							{1: '2', 2: '500345', 3: '4', 4: '-400'}
+53	53		301							{1: '1', 2: 'Vera', 3: 'Shut up!', 4: '2'}
+54	54		301							{3: 'Vera motions to Noctis, now sitting on the ground with his legs crossed, to quiet down before standing up on the roof and waving the comms device around for a better signal.'}
+55	55		202							{1: '1', 6: '1'}
+56	56		203							{1: '2', 2: '0.25'}
+57	57		301							"{3: ""This barren no man's land has always been a radio blind spot. There are only a few windows for them to connect with Babylonia every day, and each window lasts mere minutes.""}"
+58	58		401							{1: '2', 2: '2983'}
+59	59		401							{1: '2', 2: '791'}
+60	60		301							{2: 'Comms Device', 3: 'Bzzz... Bzzz...'}
+61	61		301							{2: 'Vera', 3: 'Why are the signals so bad here...', 4: '2'}
+62	62		301							{2: 'Comms Device', 3: 'Bzzz... Bzzz... Ve...'}
+63	63		301							{2: 'Comms Device', 3: 'Vera...'}
+64	64		301							{2: 'Vera', 3: 'Hello?', 4: '2'}
+65	65		301							{2: 'Comms Device', 3: 'Northwest... wagon...'}
+66	66		203							{1: '2', 2: '0.25', 3: '400'}
+67	67		201							{1: '1', 2: '500650', 4: '-400'}
+68	68		301							{1: '1', 2: 'No. 21', 3: '...What direction are we heading?', 4: '1'}
+69	69		301							"{2: 'Vera', 3: ""We're on Route 77, 24 degrees northwest of where we started."", 4: '2'}"
+70	70		301							{2: 'Comms Device', 3: 'Must... Med... Serums... You...'}
+71	71		203							{1: '2', 2: '0.25'}
+72	72		203							{1: '1', 2: '0.25', 3: '-600'}
+73	73		201							{1: '3', 2: '500682', 3: '3', 4: '600'}
+74	74		301							"{1: '1', 2: 'Noctis', 3: ""What do we need those for? We haven't run into anyone on our way."", 4: '3'}"
+75	75		301							{2: 'Comms Device', 3: 'Not... Components... Illegal... You... Bzzz... Problems...'}
+76	76		301							{2: 'Comms Device', 3: 'You... Handle it yourselves.'}
+77	77		301							{3: 'The voice from the comms turns into monotonous buzzing again.'}
+78	78		402							{1: '791'}
+79	79		301							"{2: 'Noctis', 3: ""What does that mean? Why did they say we're... illegal?"", 4: '3'}"
+80	80		204							{1: '3', 2: '2'}
+81	81		301							"{2: 'Noctis', 3: ""You didn't hide anything that got discovered by the higher-ups, did you?"", 4: '3'}"
+82	82		301							{2: 'Vera', 3: 'Is this about those components and serums...', 4: '2'}
+83	83		204							{1: '3', 2: '1'}
+84	84		301							"{2: 'Noctis', 3: ""We're done!"", 4: '3'}"
+85	85		204							{1: '2', 2: '13'}
+86	86		301							"{2: 'Vera', 3: ""We couldn't have fixed your mess just with the supplies they sent us. I heard there's still a queue of people in the court-martial waiting to make you suffer."", 4: '2'}"
+87	87		301							{2: 'Vera', 3: 'I can leave you to fend for yourself next time. How does that sound? Still feel like joking?', 4: '2'}
+88	88		204							{1: '3', 2: '3'}
+89	89		204							{1: '2'}
+90	90		301							"{2: 'No. 21', 3: ""I... don't think that's what it was."", 4: '1'}"
+91	91		301							"{2: 'No. 21', 3: 'The message was designated ""mission briefings"" when I got the call.', 4: '1'}"
+92	92		204							{1: '2', 2: '4'}
+93	93		301							{2: 'Vera', 3: 'Maybe it was about this mission.', 4: '2'}
+94	94		301							{2: 'Noctis', 3: 'What about the direction? Are we heading in the right direction?', 4: '3'}
+95	95		301							"{2: 'Vera', 3: ""Didn't they say northwest? I told you we're northwest of where we started."", 4: '2'}"
+96	96		301							{2: 'Noctis', 3: 'How long do we still need to push, then?', 4: '3'}
+97	97		301							"{2: 'Vera', 3: ""There's a rest zone five kilometers ahead of us on the map."", 4: '2'}"
+98	98		204							{1: '3', 2: '5'}
+99	99		301							{2: 'Noctis', 3: 'Five kilometers?!', 4: '3'}
+100	100		204							{1: '2'}
+101	101		301							{2: 'Vera', 3: 'Keep pushing.', 4: '2'}
+102	102		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+103	103		301							{3: 'Vera throws the comms device at No. 21 and jumps down next to Noctis, giving him a light kick to get him to stand up and start pushing.'}
+104	104		301							{3: 'Meanwhile, No. 21 continues to sit on the roof, humming an unknown tune like she did before.'}
+105	105		201							{1: '1', 2: '500682', 3: '5'}
+106	106		301							"{1: '1', 2: 'Noctis', 3: ""Hey, 21! Why aren't you in the car and holding the steering wheel?"", 4: '1'}"
+107	107		202							{1: '1', 6: '1'}
+108	108		201							{1: '1', 2: '500650'}
+109	109		301							"{1: '1', 2: 'No. 21', 3: ""I've tied up the steering wheel."", 4: '1'}"
+110	110		301		1		AniZhuanchangBegin			{2: 'No. 21', 3: 'The car will drive straighter this way than it did with Noctis behind the wheel.', 4: '1'}

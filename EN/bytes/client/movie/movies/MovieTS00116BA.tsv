@@ -1,0 +1,26 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory63.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+4	4		401							{1: '2', 2: '1506'}
+5	5		201							{1: '1', 2: '1101001'}
+6	6		203						500.0	{1: '1', 2: '0.25', 4: '-80'}
+7	7		203							{1: '1', 2: '0.25'}
+8	8		301			DialogEnable				"{1: '1', 2: 'Watanabe', 3: ""(Puts down the mechanoid head) None of these guards are properly communicating with each other... but taking down anyone of them and the whole area's alerted."", 4: '1'}"
+9	9		301							"{2: 'Watanabe', 3: ""Probably has something to do with the dual alarm system I found out. It's impossible to not trigger it at this stage."", 4: '1'}"
+10	10		301							"{2: 'Watanabe', 3: ""As I'm in the enemies' territory, there'll just be more and more guards I'll need to assassinate."", 4: '1'}"
+11	11		301							"{2: 'Watanabe', 3: ""I don't think it'll take long before the alerted guards have me surrounded."", 4: '1'}"
+12	12		301							{2: 'Watanabe', 3: 'This defense strategy is like a pool of quicksand... Going to drag me to my death without me noticing.', 4: '1'}
+13	13		301							{2: 'Watanabe', 3: 'Unless... I can slip inside without taking down any one of them.', 4: '1'}
+14	14		202							{1: '1', 6: '1'}
+15	15		401							{1: '2', 2: '1543'}
+16	16		201							{1: '1', 2: '1091001', 5: '-80'}
+17	17		203							{1: '1', 2: '0.25'}
+18	18		301							{1: '1', 2: 'Bianca', 3: '(Raises her bow) The comms interference is indeed getting stronger the closer I am to the building...', 4: '1'}
+19	19		201							{1: '1', 2: '1101001'}
+20	20		301							{1: '1', 2: 'Watanabe', 3: 'That uniform... Purifying Force? Just in time.', 4: '1'}
+21	21		301							"{2: 'Watanabe', 3: ""Let's follow their path and come at them from the side."", 4: '1'}"
+22	22		201							{1: '1', 2: '1091001'}
+23	23		301							"{1: '1', 2: 'Bianca', 3: ""I need to hurry. I'm still very far away from where Commandant's chip was located."", 4: '1'}"
+24	24		204							{1: '1', 2: '4'}
+25	25		301		1		AniZhuanchangBegin			{1: '1', 2: 'Bianca', 3: '(Readies bow) Get out of my way or perish!', 4: '1'}

@@ -1,0 +1,136 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401						5500.0	{1: '2', 2: '5303'}
+3	3		401							{1: '1', 2: '201'}
+4	4		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png'}
+5	5		401							{1: '2', 2: '212'}
+6	6		201							{1: '1', 2: '500028'}
+7	7		301			DialogEnable				{1: '1', 2: 'Construct A', 3: 'Check your ammo and gear.', 4: '1'}
+8	8		203						800.0	{1: '1', 2: '0.5', 3: '-600'}
+9	9		202							{1: '1'}
+10	10		201							{1: '5', 2: '500019', 8: '1'}
+11	11		301							{1: '1', 2: 'Construct B', 3: 'Sound off. Keep the communication line open!', 4: '5'}
+12	12		203						800.0	{1: '5', 2: '0.5', 3: '600'}
+13	13		202							{1: '5'}
+14	14		301				DialogDisable			{3: 'The Constructs move through the cabin in a flurry of combat preparations, each footfall tightening the air with tension.'}
+15	15		402							{1: '212'}
+16	16		401						500.0	{1: '2', 2: '4421'}
+17	17		401							{1: '2', 2: '4422'}
+18	18		509						350.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg', 2: '1'}
+19	19		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '11'}
+20	20		201							{1: '11', 2: '500001', 3: '4', 4: '-600'}
+21	21		301			DialogEnable				"{1: '1', 2: 'Celica', 3: ""Alright, let's begin the mission briefing. 【kuroname】, are you receiving me?"", 4: '11'}"
+22	22		302							"{2: 'Loud and clear.', 3: '23', 4: ""Yeah. What's the situation?"", 5: '23'}"
+23	23		301							{2: 'Celica', 3: 'Twenty days ago, a massive ice shelf in the Arctic region collapsed. Our preliminary analysis points to the Red Tide flowing into the ocean, which disrupted thermal currents and set off a chain reaction.', 4: '11'}
+24	24		301							{2: 'Celica', 3: 'The resulting fissures are tens of kilometers deep. Multiple coastal ports have been completely destroyed, displacing tens of thousands of civilians in the area. The World Government is currently leading evacuation and relief efforts.', 4: '11'}
+25	25		301							{2: 'Celica', 3: 'But this disaster has also revealed an enemy we never expected: Sophiasburgh, the former capital of the Arctic Route Union.', 4: '11'}
+26	26		302							{2: 'The former capital?', 3: '27', 4: 'Sophiasburgh?', 5: '27'}
+27	27		301							"{2: 'Celica', 3: ""Correct. As you've dealt with them before, you'll recall the Union was once a coalition of powers, similar to Kowloong. Sophiasburgh was its most powerful urban center."", 4: '11'}"
+28	28		301							"{2: 'Celica', 3: ""It went completely dark during a catastrophic Punishing Virus attack years ago... It seems now it wasn't destroyed; it was entombed beneath the ice this whole time."", 4: '11'}"
+29	29		301							"{2: 'Celica', 3: ""...As the ice recedes, Sophiasburgh is re-emerging... along with the Corrupted trapped inside. More worryingly, we've detected energy signatures consistent with an Ascendant-level threat."", 4: '11'}"
+30	30		301							"{2: 'Celica', 3: ""After careful consideration, Babylonia will honor our agreements by deploying roughly a regiment to the Arctic region as reinforcements. Given your experience in polar operations, you'll be among them, 【kuroname】."", 4: '11'}"
+31	31		301							"{2: 'Celica', 3: ""Your orders are as follows: link up with our advance units and the Union forces, neutralize the Corrupted threat, and ensure the safety of the Union civilians. We're relying on you, 【kuroname】."", 4: '11'}"
+32	32		302							{2: 'Understood.'}
+33	33		201							{1: '1', 2: '501449', 4: '600'}
+34	34		301							{1: '1', 2: 'Rosetta', 3: 'Let me take over from here.', 4: '1'}
+35	35		301							{3: 'Rosetta emerges from the rear of the cabin, a hint of weariness in her eyes.'}
+36	36		204							{1: '11'}
+37	37		301							{2: 'Celica', 3: 'So this is the frame codenamed Malkuth...', 4: '11'}
+38	38		306							{1: '1'}
+39	39		301							"{3: 'Gone is her elementary Rigor frame. Its replacement is a predominantly white model, armored with substantial plating. The equipment mounted on her back completes a distinctly ""fully armed"" appearance.'}"
+40	40		306							
+41	41		301							{2: 'Celica', 3: 'Rosetta, is your new frame fully calibrated?', 4: '11'}
+42	42		301							"{2: 'Rosetta', 3: ""I've completed basic diagnostics. The logistics team advised that, for safety, I remain by 【kuroname】's side. The consciousness connection should help stabilize my M.I.N.D."", 4: '1'}"
+43	43		204							{1: '11', 2: '4'}
+44	44		301							"{2: 'Celica', 3: ""...I just reviewed the report on your new frame. If 【kuroname】 hadn't performed that deep dive back at Babylonia, you'd likely still be unconscious from M.I.N.D. instability."", 4: '11'}"
+45	45		301							"{2: 'Rosetta', 3: ""Yes. Another blackout on my part would compromise the operation. That's why I'd like 【kuroname】 to accompany me in the upcoming engagements."", 4: '1'}"
+46	46		301							"{2: 'Celica', 3: ""That shouldn't be a problem. You each represent Babylonia and the Union in this operation. Working together will help ensure cohesion between our forces."", 4: '11'}"
+47	47		301							{2: 'Rosetta', 3: 'Commandant, are you alright with this arrangement?', 4: '1'}
+48	48		302							"{2: ""It's the most sensible option."", 3: '49', 4: ""I just hope you're not pushing yourself too hard."", 5: '51'}"
+49	49		204							{1: '1', 2: '1'}
+50	50	53	301							{2: 'Rosetta', 3: 'Thank you. As before, I will protect you with everything I have. Staying by your side... I trust my luck will hold.', 4: '1'}
+51	51		204							{1: '1', 2: '1'}
+52	52		301							"{2: 'Rosetta', 3: ""This isn't a situation where I can stand down. And if I stay by your side, I know my luck will hold."", 4: '1'}"
+53	53		301				DialogDisable			{2: 'Rosetta', 3: 'And we will secure victory in this war.', 4: '1'}
+54	54		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '11'}
+55	55		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+56	56		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0'}
+57	57		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png', 3: '0', 4: '1', 5: '0'}
+58	58		401							{1: '2', 2: '2983'}
+59	59		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab', 2: '3'}
+60	60		301			DialogEnable	DialogDisable			"{2: 'Pilot', 3: ""Everyone, we're about to enter the combat zone. As planned, we'll exfil immediately after reaching the designated airspace.""}"
+61	61		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+62	62		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab'}
+63	63		402							{1: '2983'}
+64	64		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.8', 4: '0', 5: '0'}
+65	65		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory211.png', 3: '0', 4: '0', 5: '0'}
+66	66		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '11'}
+67	67		301			DialogEnable				"{1: '1', 2: 'Rosetta', 3: ""As for us, we'll deploy via airdrop and join the engagement below."", 4: '1'}"
+68	68		204							{1: '11'}
+69	69		301							"{2: 'Celica', 3: ""That's quite a bold maneuver for your new frame."", 4: '11'}"
+70	70		301				DialogDisable			{2: 'Rosetta', 3: 'The Corrupted in this area have limited anti-air capability. Commandant and I intend to rendezvous with our allies swiftly before proceeding to the next phase.', 4: '1'}
+71	71		202							{1: '11', 2: '1', 6: '1'}
+72	72		510						300.0	{1: '1'}
+73	73		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '11'}
+74	74		205						200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0.5'}
+75	75		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab', 2: '2'}
+76	76		401							{1: '2', 2: '2983'}
+77	77		301			DialogEnable	DialogDisable			{2: 'Pilot', 3: 'Three minutes to the drop zone! All combat personnel to the bay doors and prepare for deployment!'}
+78	78		205							{1: '999'}
+79	79		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab'}
+80	80		402							{1: '2983'}
+81	81		302							"{2: ""Let's move, Rosetta."", 3: '82', 4: ""I wonder what's waiting for us down there."", 5: '84'}"
+82	82		201							{1: '1', 2: '501449', 3: '1'}
+83	83	86	301			DialogEnable				{1: '1', 2: 'Rosetta', 3: 'Yes. Commandant, land right after me; it will help reduce the impact on you.', 4: '1'}
+84	84		201							{1: '1', 2: '501449', 3: '1'}
+85	85		301			DialogEnable	DialogDisable			"{1: '1', 2: 'Rosetta', 3: ""Then we'll see how far our determination takes us."", 4: '1'}"
+86	86		202							{1: '1', 6: '1'}
+87	87		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0.5'}
+88	88		401							{1: '2', 2: '1501'}
+89	89		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab', 2: '2'}
+90	90		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+91	91		401							{1: '2', 2: '2983'}
+92	92		301			DialogEnable				{2: 'Pilot', 3: 'Depressurization complete. Bay doors opening—'}
+93	93		401							{1: '2', 2: '2923'}
+94	94		301							{2: 'Pilot', 3: 'Three, two, one!'}
+95	95		301							{2: 'Pilot', 3: 'Open the bay doors!'}
+96	96		402							{1: '2923'}
+97	97		205							{1: '999'}
+98	98		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiLivWarmActivity/FxUiLivWarmActivityVinylBo01.prefab'}
+99	99		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+100	100		402							{1: '2983'}
+101	101		401							{1: '1', 2: '36'}
+102	102		401				DialogDisable		300.0	{1: '2', 2: '655'}
+103	103		509						300.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1092.jpg', 2: '1'}
+104	104		401							{1: '2', 2: '5165'}
+105	105		501							{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieBgBlizzard.prefab', 2: '2'}
+106	106		301			DialogEnable				"{3: ""At the pilot's command, the bay doors slide open, admitting a fierce gust of wind and snow that whips against their armor. In perfect formation, the Constructs leap, one by one, from the aircraft.""}"
+107	107		401						800.0	{1: '1', 2: '7101'}
+108	108		201							{1: '1', 2: '501449', 4: '600'}
+109	109		301				DialogDisable			"{1: '1', 2: 'Rosetta', 3: ""It's our turn, Commandant."", 4: '1'}"
+110	110		302							"{2: ""Let's go."", 3: '111'}"
+111	111		401							{1: '2', 2: '9351042'}
+112	112		203						450.0	{1: '1', 2: '0.4', 3: '350'}
+113	113		204							{1: '1', 2: '8'}
+114	114		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDust.prefab', 2: '2', 3: '1'}
+115	115		301			DialogEnable				{3: 'Rosetta acknowledges your words with a nod. Gripping her weapon, she strides to the center of the bay doors. There, she closes her eyes and draws a deep breath, her frame responding with a soft, internal glow.'}
+116	116		301							{3: 'It is a final calibration that distributes power to all systems, ensuring she is combat-ready the instant she lands.'}
+117	117		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDust.prefab', 4: '1'}
+118	118		401							{1: '2', 2: '1226'}
+119	119		204						300.0	{1: '1', 2: '4'}
+120	120		203							{1: '1', 2: '0.25', 3: '280'}
+121	121		301				DialogDisable			{3: 'Seconds later, her eyes snap open. The thrusters on her back flare to life with a faint hum as she steps decisively into the void.'}
+122	122		401							{1: '2', 2: '10113408'}
+123	123		203							{1: '1', 2: '0.5', 3: '-400'}
+124	124		205						550.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '0', 4: '1', 5: '0.5'}
+125	125		505							{2: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieBgBlizzard.prefab'}
+126	126		202							{1: '1', 6: '1'}
+127	127		510						500.0	{1: '1'}
+128	128		104							{1: '-40|-175|-250', 2: '0'}
+129	129		501							{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieBgSnowfall.prefab', 2: '2'}
+130	130		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6201_30.jpg'}
+131	131		104							{1: '175|-155|-250', 2: '0.5'}
+132	132		401							{1: '2', 2: '9342059'}
+133	133		205						550.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '1', 4: '0', 5: '0.5'}
+134	134		502							{1: 'DialogEnable'}
+135	135		301		1	DialogShake	AniZhuanchangBegin			{1: '1', 2: 'Rosetta', 3: 'Rosetta, moving out!', 4: '1'}

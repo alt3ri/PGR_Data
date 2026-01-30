@@ -1,0 +1,63 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1026.jpg'}
+2	2		401							{1: '1', 2: '5029'}
+3	3		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront22.png', 4: '5'}
+4	4		109	1						{1: '1', 2: '<size=50>Having bid farewell to her most precious one,</size>', 3: '-350', 4: '50', 6: '1', 7: '1', 9: '3'}
+5	5		109	1			AniZhuanchangBegin			{1: '2', 2: '<size=50>Lucia steps into what will become her long imprisonment.</size>', 3: '-350', 4: '-50', 6: '1', 7: '1', 9: '3'}
+6	6		301			DialogDisable				{3: 'Having bid farewell to her most precious one, Lucia steps into what will become her long imprisonment.'}
+7	7		110							
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront22.png', 4: '5', 5: '1'}
+9	9		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+10	10		401							{1: '2', 2: '4278'}
+11	11		105			AniZhuanchangEnd				{1: 'Assets/Product/Ui/Spine/2-15Spine/ActivityLuxiya/UimovieActivityLuxiya.prefab'}
+12	12		301			DialogEnable				"{3: 'Through glimpses of ""future information,"" she sees herself standing before the rift. Among the nine possible futures, she knows this path will lead to the fewest losses.'}"
+13	13		301				AniZhuanchangBegin			{3: 'Even still, multiple possibilities await at the end of this path.'}
+14	14		502							{1: 'DialogDisable'}
+15	15		105							
+16	16		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+17	17		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+18	18		401							{1: '2', 2: '4792'}
+19	19		306							{1: '1'}
+20	20		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg1701_1.jpg'}
+21	21		301	1		DialogEnable	AniZhuanchangBegin			{3: 'She has seen a future where, after winning the battle, she and her commandant return to the correct era with the core, reuniting with everyone.'}
+22	22		502						400.0	{1: 'DialogDisable'}
+23	23		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+24	24		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+25	25		401							{1: '2', 2: '4792'}
+26	26		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg109_1.jpg'}
+27	27		301	1		DialogEnable	AniZhuanchangBegin			{3: 'She has also seen one where she fails to hold on for these 30 years, leaving the world in complete chaos.'}
+28	28		502						400.0	{1: 'DialogDisable'}
+29	29		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+30	30		306							
+31	31		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '3'}
+32	32		504							{1: '0.8', 2: '999'}
+33	33		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1012.jpg'}
+34	34		301			DialogEnable	AniZhuanchangBegin			{3: 'And more often... she has seen herself returning to the Hetero Tower, repeatedly battling Vonnegut only to fall to his power.'}
+35	35		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab'}
+36	36		504							
+37	37		105							{1: 'Assets/Product/Ui/Spine/2-15Spine/ActivityLuxiya/UimovieActivityLuxiya.prefab'}
+38	38		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1026.jpg'}
+39	39		301			AniZhuanchangEnd				{2: 'Lucia', 3: '...'}
+40	40		301							{3: 'Did Commandant make it back safely?'}
+41	41		301							{3: 'Did Commandant receive treatment?'}
+42	42		301							"{3: ""Was Commandant able to regroup with Liv and Lee without Cradle's interference?""}"
+43	43		301							{3: 'These questions remain unanswered, and this anxiety is bound to haunt her for a very long time to come.'}
+44	44		301							{3: 'Should she fail to endure these arduous 30 years, should she disappoint all those relying on her... how would she ever reconcile with herself?'}
+45	45		301							"{3: 'But what other choice is there? If no one restores this devastated past, the ""present"" that person could return to would cease to exist entirely.'}"
+46	46		301							{3: '...She will take it as a gamble.'}
+47	47		301							{3: 'She and the commandant have already found the path of least sacrifice through their journey. This alone is worth being grateful for.'}
+48	48		301							{2: 'Lucia', 3: '...'}
+49	49		401							{1: '2', 2: '2936'}
+50	50		301							{3: 'Lucia takes out the paper four-leaf clover from her chest, gently caressing it in her palm as she prays for a miracle at the end of her long imprisonment.'}
+51	51		301							{2: 'Lucia', 3: '...No matter what happens, Gray Raven will always reunite.'}
+52	52		301							{3: 'She speaks these words to herself as she gazes at the paper clover.'}
+53	53		301							{3: 'She needs to believe these words. She must believe that miracles are still possible.'}
+54	54		301				AniZhuanchangBegin			{2: 'Lucia', 3: '...'}
+55	55		105			DialogDisable				
+56	56		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+57	57		502						1500.0	{1: 'RImgBg1BlowUp'}
+58	58		109	1						"{1: '1', 2: ""<size=60>Meanwhile, she steels herself for what's to come.</size>"", 3: '0', 6: '1', 7: '1', 9: '3'}"
+59	59		109	1						{1: '1', 2: '<size=60>No matter what, she must fulfill her final promise...</size>', 3: '0', 4: '70', 6: '1', 7: '1', 9: '3'}
+60	60		301							"{3: ""Meanwhile, she steels herself for what's to come. No matter what, she must fulfill her final promise...""}"
+61	61		109	1						{1: '2', 2: '<size=60>Return the core to Commandant.</size>', 3: '0', 4: '-30', 6: '1', 7: '1', 9: '3'}
+62	62		301		1		AniZhuanchangBegin			{3: 'Return the core to Commandant.'}

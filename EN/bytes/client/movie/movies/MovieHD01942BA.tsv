@@ -1,0 +1,34 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory730.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500328', 3: '3'}
+4	4		301			DialogEnable				{1: '1', 2: 'No. 21', 3: '...Sniff. The scent is different.', 4: '1'}
+5	5		301							"{3: 'Smelling a light aroma in the air, you presume the mechanoids who built this place installed some air fresheners to mimic ""fragrance.""'}"
+6	6		301							{3: 'Although a long time has passed, the light sweetness still lingers in the air.'}
+7	7		302							"{2: ""It's probably used to create the spring atmosphere."", 3: '8'}"
+8	8		204							{1: '1'}
+9	9		301							{2: 'No. 21', 3: '...Spring? Is it for chameleons to mate?', 4: '1'}
+10	10		302							"{2: ""I guess that's one way to view it."", 3: '11', 4: ""I don't think spring is just for that."", 5: '13'}"
+11	11		301							{2: 'No. 21', 3: 'Hmm... I see.', 4: '1'}
+12	12	15	301							{3: 'Before you can react, No. 21 climbs up the pillar.'}
+13	13		301							{2: 'No. 21', 3: 'Not just for that? Why is it?', 4: '1'}
+14	14		301							{3: 'Before you can explain, No. 21 climbs up the pillar.'}
+15	15		302							"{2: ""...Don't do that."", 3: '16'}"
+16	16		301							{2: 'No. 21', 3: 'Hm? Why not?', 4: '1'}
+17	17		302							"{2: ""(Briefly explain chameleons' mating to No. 21)"", 3: '18'}"
+18	18		301							{2: 'No. 21', 3: 'So they die after mating?', 4: '1'}
+19	19		301							{2: 'No. 21', 3: 'Why?', 4: '1'}
+20	20		302							"{2: ""It's just the law of nature."", 3: '21'}"
+21	21		301							"{2: 'No. 21', 3: ""I won't sit by and watch you die."", 4: '1'}"
+22	22		301							"{2: 'No. 21', 3: ""I will take you away. We'll leave together."", 4: '1'}"
+23	23		301							"{3: ""You are not sure how to explain it, but seeing No. 21's resolute expression, you cannot help but pat her head.""}"
+24	24		204							{1: '1', 2: '3'}
+25	25		301							{2: 'No. 21', 3: '?', 4: '1'}
+26	26		204							{1: '1'}
+27	27		301							{3: 'She looks slightly confused before acting determined again.'}
+28	28		301							"{2: 'No. 21', 3: 'Is it time for us to ""leave together""?', 4: '1'}"
+29	29		401							{1: '2', 2: '1513'}
+30	30		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '1'}
+31	31		302							{2: 'Hey!', 3: '32'}
+32	32		301							{3: 'She grabs you before you can elaborate further and starts running forward.'}
+33	33		301		1		AniZhuanchangBegin			{2: 'No. 21', 3: 'I will take you away, Commandant. We will leave together.', 4: '1'}

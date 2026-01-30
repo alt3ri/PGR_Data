@@ -1,0 +1,123 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory973.jpg'}
+2	2		401							{1: '2', 2: '214'}
+3	3		401							{1: '1', 2: '208'}
+4	4		301			DialogEnable				{3: 'I was invited to an outdoor music lecture in the residential area, but it started pouring rain halfway through.'}
+5	5		301							{3: 'My terminal says an ecological module in the residential area broke down, messing up the water cycle and causing this heavy rain.'}
+6	6		301							{3: 'It was unexpected—neither the organizers nor the audience were prepared. Everyone had to take shelter in nearby buildings, waiting for it to clear up.'}
+7	7		301							{3: 'They said the Engineering Force started emergency repairs, and things might be back to normal soon...'}
+8	8		201							{1: '1', 2: '500380', 3: '12'}
+9	9		301							"{1: '1', 2: 'Ishmael', 3: ""Unfortunately—the problem was damaged hardware. They need to replace everything, so this rain's going to last a while."", 4: '1'}"
+10	10		301							{3: 'A woman in a gray-white uniform suddenly appears beside you, also looking out the window.'}
+11	11		301							{2: 'Ishmael', 3: 'But, finding the problem before it did real damage means this rain might be a blessing, really.', 4: '1'}
+12	12		301							{3: 'Ishmael...'}
+13	13		301							{3: 'These private little meetings with her seem to be happening more and more often.'}
+14	14		302							{2: 'Good evening.', 3: '15'}
+15	15		204							{1: '1'}
+16	16		301							{2: 'Ishmael', 3: 'Good evening.', 4: '1'}
+17	17		204							{1: '1'}
+18	18		301							"{2: 'Ishmael', 3: ""The rain's not stopping anytime soon. Since you have evening plans, would you like me to take you back now?"", 4: '1'}"
+19	19		202							{1: '1'}
+20	20		301							"{3: ""You see the long umbrella in Ishmael's hand, but what she just said is even more surprising.""}"
+21	21		301							"{3: ""There's a book I've wanted to read, but haven't had the time. I was planning to read it during my free time today.""}"
+22	22		301							"{3: ""But I don't recall ever telling anyone about this...""}"
+23	23		201							{1: '1', 2: '500380'}
+24	24		301							{1: '1', 2: 'Ishmael', 3: 'Because you always have a packed schedule.', 4: '1'}
+25	25		301							{3: 'As if she can tell you are confused, Ishmael smiles gently and lifts her umbrella.'}
+26	26		204							{1: '1', 2: '12'}
+27	27		301				AniZhuanchangBegin			"{2: 'Ishmael', 3: ""I'm actually headed that way too. It's on my way, so we can go together."", 4: '1'}"
+28	28		402							{1: '214'}
+29	29		401							{1: '1', 2: '36'}
+30	30		202							{1: '1'}
+31	31		502						400.0	{1: 'DialogDisable'}
+32	32		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory261.png'}
+33	33		501			AniZhuanchangEnd				{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '2'}
+34	34		401							{1: '2', 2: '214'}
+35	35		401							{1: '2', 2: '1516'}
+36	36		401							{1: '1', 2: '5068'}
+37	37		201							{1: '1', 2: '500380'}
+38	38		301			DialogEnable				{1: '1', 2: 'Ishmael', 3: '{226|153|171}~', 4: '1'}
+39	39		301							{3: 'Walking side by side under the umbrella, Ishmael softly hums a tune that sounds familiar.'}
+40	40		204							{1: '1', 2: '12'}
+41	41		301							{2: 'Ishmael', 3: 'Can you tell what song it is?', 4: '1'}
+42	42		302							{2: 'The one they mentioned at the start of the lecture?', 3: '43'}
+43	43		204							{1: '1', 2: '12'}
+44	44		301							{2: 'Ishmael', 3: 'Correct.', 4: '1'}
+45	45		204							{1: '1', 2: '12'}
+46	46		301							{2: 'Ishmael', 3: 'Actually, I came to this lecture partly because they were talking about this song.', 4: '1'}
+47	47		204							{1: '1', 2: '12'}
+48	48		301							{2: 'Ishmael', 3: 'I remember you know this song well, and the dance that goes with it.', 4: '1'}
+49	49		302							"{2: ""It's a pretty well-known dance tune, you know. I know it a little."", 3: '50'}"
+50	50		301							{3: 'Did I tell her about this?'}
+51	51		204							{1: '1'}
+52	52		301							{2: 'Ishmael', 3: 'In that case, would you care to dance?', 4: '1'}
+53	53		302							{2: 'Sure, when we have the chance—', 3: '54'}
+54	54		401							{1: '2', 2: '1543'}
+55	55		203						500.0	{1: '1', 2: '0.25', 4: '-80'}
+56	56		203							{1: '1', 2: '0.25'}
+57	57		301							{1: '1', 3: 'Before you finish, Ishmael stops and holds out her hand.'}
+58	58		302							{2: 'Now?', 3: '59'}
+59	59		204							{1: '1', 2: '12'}
+60	60		301				DialogDisable			{3: 'Ishmael keeps her soft smile and holds out her hand, nodding gently.'}
+61	61		202							{1: '1'}
+62	62		502							{1: 'RImgBg1BlowUp'}
+63	63		301			DialogEnable				"{3: ""You're completely alone. The rain's like a thick curtain, hiding the buildings and muffling everything. Only the streetlights manage to shine through, lighting the way.""}"
+64	64		301							"{3: ""It really feels like we're on a stage.""}"
+65	65		302							"{2: ""It's still raining..."", 3: '66', 4: ""(Take Ishmael's hand)"", 5: '74'}"
+66	66		201							{1: '1', 2: '500380', 3: '12'}
+67	67		301							"{1: '1', 2: 'Ishmael', 3: ""Don't worry, get closer. You won't get wet."", 4: '1'}"
+68	68		302							{2: 'Okay, then.', 3: '69'}
+69	69		401							{1: '2', 2: '4044'}
+70	70		203							{1: '1', 2: '0.25', 4: '-80', 5: '-200'}
+71	71		301							"{1: '1', 3: ""You take Ishmael's hand gently, move close until you're face to face, and place your right hand on her lower back.""}"
+72	72		204							{1: '1'}
+73	73	77	301							"{2: 'Ishmael', 3: ""Relax. If you get the steps wrong, it's fine—just go with it."", 4: '1'}"
+74	74		301							"{1: '1', 3: ""You take Ishmael's hand gently, move close until you're face to face, and place your right hand on her lower back.""}"
+75	75		201							{1: '1', 2: '500380', 5: '-80', 6: '-200'}
+76	76	77	301							"{1: '1', 2: 'Ishmael', 3: ""Relax. If you get the steps wrong, it's fine—just go with it."", 4: '1'}"
+77	77		202							{1: '1'}
+78	78		306							{1: '1'}
+79	79		104						1000.0	{1: '150|0|-200', 2: '1'}
+80	80		301							"{3: ""Everything's set. After a short pause, Ishmael hums the tune. You take the first step, following the melody, and she instantly matches you.""}"
+81	81		104						1000.0	{1: '-150|0|-200', 2: '1'}
+82	82		301							"{3: ""Step forward, step back—Ishmael's moves are perfectly timed, both leading and following. Even someone who's never danced could keep up with her.""}"
+83	83		104							{1: '0|0|0', 2: '1'}
+84	84		301							{3: 'Through all the moves and spins, the umbrella stays right over them.'}
+85	85		306							
+86	86		201							{1: '1', 2: '500380', 5: '-80', 6: '-200'}
+87	87		301							"{1: '1', 2: 'Ishmael', 3: ""Let's speed it up a little."", 4: '1'}"
+88	88		202							{1: '1'}
+89	89		306							{1: '1'}
+90	90		202							{1: '1'}
+91	91		301							"{3: ""You swear you can hear violins all around you, the melody getting livelier. Whether it's the music or something else, you feel a rush of joy, and your movements get smoother and more carefree.""}"
+92	92		301							{3: 'Step, lean, spin—the umbrella moves with you, shifting between your hands as you dance, spraying water with each movement.'}
+93	93		401							{1: '2', 2: '4681'}
+94	94		301				DialogDisable			"{3: ""As the music hits another high point, you spin Ishmael out. You briefly move apart, and then the umbrella makes a soft thump as it stops swinging. Only then do you notice you are out of the umbrella's cover.""}"
+95	95		306							
+96	96		302							"{2: '(Uh oh—)', 3: '97', 4: ""(Doesn't matter now)"", 5: '97'}"
+97	97		301			DialogEnable				"{3: ""But it doesn't start pouring. It might just be your imagination, but everything seems to freeze when the dance stops—thousands of raindrops hanging still in the air.""}"
+98	98		104						250.0	{1: '0|-25|0', 2: '0.25'}
+99	99		104						250.0	{1: '0|0|0', 2: '0.25'}
+100	100		401							{1: '2', 2: '4044'}
+101	101		301							{3: 'Ishmael gently pulls you as she spins back, leaning gracefully against you to finish the dance—just as the umbrella covers you again and the rain comes down hard.'}
+102	102		201							{1: '1', 2: '500380', 3: '12', 5: '-80', 6: '-200'}
+103	103		301							{1: '1', 2: 'Ishmael', 3: 'This is a perfect ending.', 4: '1'}
+104	104		301							{3: 'Ishmael straightens up and casually fixes her hair, which is a little messed up. She looks happier now, smiling wider than before.'}
+105	105		204							{1: '1'}
+106	106		301							"{2: 'Ishmael', 3: ""Hmm, the gift's ready now."", 4: '1'}"
+107	107		302							{2: 'New toys?', 3: '108', 4: 'Ready?', 5: '108'}
+108	108		301				AniZhuanchangBegin			"{2: 'Ishmael', 3: ""You'll see when you get back."", 4: '1'}"
+109	109		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}
+110	110		402							{1: '214'}
+111	111		202							{1: '1'}
+112	112		502						400.0	{1: 'DialogDisable'}
+113	113		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory717.jpg'}
+114	114		301			DialogEnable				{3: 'Nothing else happens. Ishmael walks you to the door, says a quick goodbye, and leaves. Back in your room, you are still thinking about what she said.'}
+115	115		301							{3: 'While you are thinking, you grab the book you mean to read but find an art book next to it.'}
+116	116		401							{1: '2', 2: '2765'}
+117	117		301							"{3: ""Opening it, you see pages of sketches—simple, but full of life. Flipping through, you see drawings that seem to capture someone's memorable moments from a long trip.""}"
+118	118		301							"{3: ""Flipping to the last page, you see a sketch of two people dancing in the rain—it's you and Ishmael.""}"
+119	119		301				AniZhuanchangBegin			"{3: ""At the bottom, there's a line of elegant handwriting.""}"
+120	120		502						400.0	{1: 'DialogDisable'}
+121	121		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory968.png'}
+122	122		304		1	AniZhuanchangEnd	AniZhuanchangBegin			"{1: '""Gray Raven, happy birthday.""', 2: '000000ff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory968.png', 6: '1', 7: '-5', 9: '1', 10: '1'}"

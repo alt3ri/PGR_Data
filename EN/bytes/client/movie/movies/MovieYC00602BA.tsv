@@ -1,0 +1,25 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory75.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500055'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Nun', 3: ""One by one, according to order! Don't rush in!"", 4: '1'}"
+5	5		301							"{2: 'Nun', 3: ""Even if you rushed in first, you won't be getting more food!"", 4: '1'}"
+6	6		202							{1: '1', 6: '1'}
+7	7		201							{1: '2', 2: '500005'}
+8	8		301							{1: '1', 2: 'Soldier', 3: 'How many in total?', 4: '2'}
+9	9		203							{1: '2', 2: '0.25', 3: '400'}
+10	10		201							{1: '1', 2: '500055', 4: '-400'}
+11	11		301							{1: '1', 2: 'Nun', 3: 'Five adults, a hundred and forty kids.', 4: '1'}
+12	12		301							{2: 'Soldier', 3: 'This many?', 4: '2'}
+13	13		301							{2: 'Soldier', 3: 'City 019 cannot take in as many refugees as it did before.', 4: '2'}
+14	14		301							{2: 'Nun', 3: 'But we came a long way here!', 4: '1'}
+15	15		301							"{2: 'Soldier', 3: ""That's everyone in this queue."", 4: '2'}"
+16	16		301							{2: 'Nun', 3: 'But have you ever seen this many plump and well-fed kids queuing up?', 4: '1'}
+17	17		301							{2: 'Soldier', 3: '...', 4: '2'}
+18	18		301							{2: 'Nun', 3: 'This means they are tougher than the normal bunch and can take on more work in the city.', 4: '1'}
+19	19		301							"{2: 'Nun', 3: ""Of course, your ol' sis here... I mean, I'm the one with exceptional caretaking abilities."", 4: '1'}"
+20	20		301							{2: 'Nun', 3: 'This amount of high-quality workforce is going to be a blessing to your...', 4: '1'}
+21	21		301							{2: 'Soldier', 3: 'Alright, alright, just get in already!', 4: '2'}
+22	22		301							{2: 'Nun', 3: 'Oh my, did you hear, children? Come now! Say thank you to Mr. Soldier!', 4: '1'}
+23	23		301							{2: 'Children', 3: 'Thank—you—Mr.—Sol—dier—'}
+24	24		301		1		AniZhuanchangBegin			{2: 'Soldier', 3: '...', 4: '2'}

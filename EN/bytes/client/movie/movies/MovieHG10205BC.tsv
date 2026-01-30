@@ -1,0 +1,41 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '1031001'}
+4	4		301			DialogEnable				{1: '1', 2: 'Liv', 3: 'Good afternoon, Commandant.', 4: '1'}
+5	5		301							"{2: 'Liv', 3: ""It's been a while since we last met."", 4: '1'}"
+6	6		302							"{2: ""Oh, it's you, Liv."", 3: '7'}"
+7	7		301							{2: 'Liv', 3: 'Yep, Commandant, were you expecting Lucia instead?', 4: '1'}
+8	8		302							{2: 'Not really...', 3: '9'}
+9	9		204							{1: '1', 2: '1'}
+10	10		301							{2: 'Liv', 3: '(Chuckles)', 4: '1'}
+11	11		301							{2: 'Liv', 3: 'Oh, Commandant, you...', 4: '1'}
+12	12		301							{2: 'Liv', 3: 'Lucia is not coming today, she said that she will wait at the base for the end of your isolation.', 4: '1'}
+13	13		204							{1: '1'}
+14	14		301							"{2: 'Liv', 3: 'And she said something like ""I don\'t want the commandant to get worried.""', 4: '1'}"
+15	15		301							"{2: 'Liv', 3: ""But I get where she's coming from. After all..."", 4: '1'}"
+16	16		301							"{2: 'Liv', 3: ""You aren't just some captain or a leader to us."", 4: '1'}"
+17	17		204							{1: '1', 2: '1'}
+18	18		301				DialogDisable			"{2: 'Liv', 3: ""It's more like we're friends."", 4: '1'}"
+19	19		302							{2: 'Friends, huh?', 3: '20'}
+20	20		302							{2: 'Makes me feel kinda embarrassed...', 3: '21'}
+21	21		301			DialogEnable				"{2: 'Liv', 3: ""Anyway, I'm relieved to see Commandant looking good. I'll tell Lucia that!"", 4: '1'}"
+22	22		202							{1: '1', 6: '1'}
+23	23		401							{1: '1', 2: '201'}
+24	24		301							{3: 'Right as Liv leaves, Alpha hijacks into your channel—'}
+25	25		201							{1: '1', 2: '500100'}
+26	26		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+27	27		301							{1: '1', 2: 'α', 3: 'Friends...', 4: '1'}
+28	28		301							{2: 'α', 3: 'Is this your relationship with the Constructs?', 4: '1'}
+29	29		302							{2: 'Maybe.', 3: '30'}
+30	30		301							"{2: 'α', 3: 'The Constructs are ""artificial weapons"" designed to fight against the Punishing Virus after all.', 4: '1'}"
+31	31		301							{2: 'α', 3: 'It sounds stupid to befriend weapons.', 4: '1'}
+32	32		302							"{2: ""You're a Construct too, are you not?"", 3: '33'}"
+33	33		301							"{2: 'α', 3: ""Yes, so I never want to be anyone's friend."", 4: '1'}"
+34	34		301							{2: 'α', 3: 'Weapons should stay weapons. No less. No more.', 4: '1'}
+35	35		302							"{2: ""But you still carry other Constructs' dog tags on you."", 3: '36'}"
+36	36		301							{2: 'α', 3: '...', 4: '1'}
+37	37		301							{2: 'α', 3: 'A hunter carries their trophies, no?', 4: '1'}
+38	38		302							"{2: ""Babylonia's database says otherwise."", 3: '39'}"
+39	39		301							{2: 'α', 3: '...', 4: '1'}
+40	40		301		1		AniZhuanchangBegin			{2: 'α', 3: '...Nonsense.', 4: '1'}

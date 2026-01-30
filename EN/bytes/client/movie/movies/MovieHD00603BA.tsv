@@ -1,0 +1,45 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory306.png'}
+2	2		401							{1: '1', 2: '203'}
+3	3		201							{1: '1', 2: '500278'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Mechanoid A', 3: ""Future. Is. The. Void! We. Don't need. A tyrant!"", 4: '1'}"
+5	5		301							{2: 'Mechanoid A', 3: 'No leader! No tyranny!', 4: '1'}
+6	6		201							{1: '1', 2: '500277'}
+7	7		301							{1: '1', 2: 'Mechanoid B', 3: 'Destroy! Destroy! Only our faction! Can rule the world!', 4: '1'}
+8	8		202							{1: '1', 6: '1'}
+9	9		301							{3: 'Mechanoids occupy both sides of the street, raising their arms with weapons drawn.'}
+10	10		301							{3: 'As if realizing that the phrases formed with their standard voice library are useless in overcoming the other side, the voices rising from the confronting camps gradually die down.'}
+11	11		301							{3: 'Instead, the crowd of mechanoids at the front begins to divide into smaller groups.'}
+12	12		301							{3: 'In silence, the two sides assign their targets, then approach the opposing groups.'}
+13	13		301							{3: 'As the small groups draw near each other, they collide into a chaotic frenzy.'}
+14	14		301				AniZhuanchangBegin			{3: 'As they meet, all the mechanoids raise their arms and attack.'}
+15	15		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory305.png'}
+16	16		201							{1: '1', 2: '500029'}
+17	17		301			AniZhuanchangEnd				{1: '1', 2: 'Lucia', 3: 'Are the mechanoids... trying to kill each other?', 4: '1'}
+18	18		202							{1: '1', 6: '1'}
+19	19		301							{3: 'Lee transmits the drone footage onto your screens, displaying an amalgamation of red and blue.'}
+20	20		301							{3: 'A slightly larger red mechanoid swings its hands and smashes the upper half of a blue mechanoid against a wall, crushing the remaining half of its head.'}
+21	21		301							"{3: ""—At which point, four sharp metal blades pierce through the blue mechanoid's back simultaneously.""}"
+22	22		301							{3: 'However, the four small red mechanoids responsible for the attack are immediately torn to pieces by the blue mechanoid reinforcements.'}
+23	23		301							{3: 'The formations come together, then spread apart slightly. A larger mechanoid standing among the two factions issues an unintelligible command, causing the formations to merge once more.'}
+24	24		301							{3: 'Among the mass of red and blue mechanoids, a chaotic flurry of fragmented armor flies out from the crowded mass.'}
+25	25		201							{1: '1', 2: '1031001', 4: '-600'}
+26	26		201							{1: '2', 2: '1011001', 4: '600'}
+27	27		201							{1: '3', 2: '500029'}
+28	28		301							"{1: '1', 2: 'Lee', 3: ""No, this isn't senseless killing."", 4: '2'}"
+29	29		301							"{2: 'Lee', 3: ""It's a war between the red and blue factions."", 4: '2'}"
+30	30		301							{2: 'Lucia', 3: 'A war?', 4: '3'}
+31	31		301							{2: 'Lee', 3: 'It appears so.', 4: '2'}
+32	32		302							{2: 'Should we interfere?', 3: '33', 4: 'Can we go around?', 5: '35'}
+33	33		301							{2: 'Lee', 3: 'The battle is spread across the entire area... We have no choice but to go through it.', 4: '2'}
+34	34		302							"{2: ""...There's no other choice."", 3: '37'}"
+35	35		301							"{2: 'Lee', 3: ""The battle is spread across the entire area... It's not a matter of can or cannot, but rather how much time that would take."", 4: '2'}"
+36	36		302							"{2: ""...There's no other choice."", 3: '37'}"
+37	37		301							"{2: 'Lucia', 3: ""If that's the case, then, Commandant, I'll take point."", 4: '3'}"
+38	38		302							"{2: ""Alright, Lucia. We'll count on you."", 3: '39'}"
+39	39		301							"{2: 'Lucia', 3: ""I'm just fulfilling my role as an Attacker Construct appointed by Babylonia to serve as the commandant's blade."", 4: '3'}"
+40	40		301							"{2: 'Lucia', 3: ""The commandant's wish is my command."", 4: '3'}"
+41	41		301							"{2: 'Lee', 3: ""I'll provide covering fire. It's what I do best."", 4: '2'}"
+42	42		301							"{2: 'Liv', 3: ""I'll monitor your injuries from the rear and provide medical attention as necessary."", 4: '1'}"
+43	43		302							{2: 'Gray Ravens, move out!', 3: '44'}
+44	44		301		1		AniZhuanchangBegin			{2: 'Everyone', 3: 'Roger!', 4: '1', 5: '2', 6: '3'}

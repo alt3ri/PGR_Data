@@ -1,0 +1,384 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory718.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500138', 4: '-400'}
+4	4		201							{1: '2', 2: '500404', 3: '1', 4: '400'}
+5	5		301			DialogEnable				"{1: '1', 2: 'Doctor', 3: ""I hear we're getting another batch of newcomers today. You always get so excited at times like these, Professor."", 4: '1'}"
+6	6		301							{2: 'Hippocrates', 3: 'Of course, seeing all these young people so talented and passionate about medicine... I should cherish these moments before retirement.', 4: '2'}
+7	7		301							{2: 'Doctor', 3: 'Could this be your secret to staying young—oh! Good morning, Dr. Little Wan! Still sporting those dark circles under your eyes, I see!', 4: '1'}
+8	8		202							{1: '1', 2: '2'}
+9	9		301							"{3: 'Surprised by the unexpected address of ""Doctor"", he turns around with a sheepish smile.'}"
+10	10		201							{1: '1', 2: '500289', 3: '1', 4: '400'}
+11	11		201							{1: '2', 2: '500138', 4: '-400'}
+12	12		301							"{1: '1', 2: 'Wanshi', 3: 'Morning... No need to call me ""Doctor"". I\'m still an intern.', 4: '1'}"
+13	13		301							"{2: 'Doctor', 3: 'You\'re still ""Dr. Little Wan"" for now, but once you get your certification, you\'ll be ""Dr. Wanshi"". Actually, you\'ve been interning at Star of Life for quite some time. When do you think you\'ll get certified? Have you decided on a department yet?', 4: '2'}"
+14	14		204							{1: '1'}
+15	15		301							"{2: 'Wanshi', 3: ""Hm... I'm not sure yet. I haven't really thought it through."", 4: '1'}"
+16	16		301							"{3: ""Hippocrates glances at the ID badge on Wanshi's chest.""}"
+17	17		203							{1: '1', 2: '0.25'}
+18	18		203							{1: '2', 2: '0.25', 3: '-600'}
+19	19		201							{1: '3', 2: '500404', 3: '1', 4: '600'}
+20	20		301							"{1: '1', 2: 'Hippocrates', 3: 'So you\'re the star student that every department\'s fighting over? The ""Multitasking Monster"", the ""Exam Deity""? The one who\'s so dedicated he\'d evolve past the need for sleep—Wanshi?', 4: '3'}"
+21	21		301							"{2: 'Doctor', 3: ""Don't just blurt out those silly names like that...!"", 4: '2'}"
+22	22		301							{2: 'Wanshi', 3: '...?', 4: '1'}
+23	23		204							{1: '3', 2: '2'}
+24	24		301							"{2: 'Hippocrates', 3: 'What else? ""Study Hall Gate Keeper"", ""The Wish-Granting Machine""?', 4: '3'}"
+25	25		204							{1: '1', 2: '7'}
+26	26		301							{2: 'Wanshi', 3: '...Me?', 4: '1'}
+27	27		301							{3: 'Wanshi points at his own face, feeling somewhat puzzled.'}
+28	28		204							{1: '3', 2: '1'}
+29	29		301							"{2: 'Hippocrates', 3: ""That's not all. I heard you're shadowing a pediatrician? If this affects your final decision, you might want to reconsider—pediatrics is exhausting work."", 4: '3'}"
+30	30		204							{1: '1'}
+31	31		301							{2: 'Wanshi', 3: '...', 4: '1'}
+32	32		301							"{2: 'Hippocrates', 3: ""Also, remember to balance work and rest. Keep burning the midnight oil like this, and you'll age faster than you'd like."", 4: '3'}"
+33	33		301							{2: 'Wanshi', 3: 'Um... Sorry to make you worry.', 4: '1'}
+34	34		301							"{2: 'Wanshi', 3: 'I\'m not ""burning myself out""—the doctor who used to take care of me here did the same thing.', 4: '1'}"
+35	35		301							{2: 'Hippocrates', 3: '...Go on, get back to work.', 4: '3'}
+36	36		301							{2: 'Hippocrates', 3: 'If I keep talking, your supervisor will come looking for me.', 4: '3'}
+37	37		202							{1: '1', 2: '2', 3: '3'}
+38	38		301							{3: 'The white-clad figure nods and hurries away, while Hippocrates bows his head to prepare his materials.'}
+39	39		201							{1: '1', 2: '500138', 4: '-400'}
+40	40		201							{1: '2', 2: '500404', 3: '1', 4: '400'}
+41	41		301							"{1: '1', 2: 'Doctor', 3: ""We never have enough time to chat. Professor, how's Wanshi doing? He's one of the top students in medical school, you know."", 4: '1'}"
+42	42		301							"{2: 'Hippocrates', 3: ""Nothing particularly unusual... Just a young one working too hard because they're overeager."", 4: '2'}"
+43	43		301				AniZhuanchangBegin			"{2: 'Doctor', 3: ""What's he in such a hurry for?"", 4: '1'}"
+44	44		202							{1: '1', 2: '2', 6: '1'}
+45	45		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+46	46		306						700.0	{1: '1'}
+47	47		301			AniZhuanchangEnd				"{3: ""What's pushing Wanshi?""}"
+48	48		301							{3: 'Every time he looks at his reflection, he sees the dark circles under his eyes—a reminder of his desperate pursuit to absorb every bit of knowledge within reach.'}
+49	49		301							{3: 'Why? Is it the desire to become a pediatrician like Melvie, to repay and inherit what has become an irreversible regret?'}
+50	50		301							{3: 'Or is it because he sees his younger self in these children at the ward, and genuinely wishes for their swift recovery?'}
+51	51		301							"{3: ""Or perhaps it's because every moment he allows himself to relax, he's reminded that Pelo and the others are still fighting on the ground?""}"
+52	52		301							"{3: ""He isn't sure, but he remembers Shorthalt's advice.""}"
+53	53		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+54	54		504							{1: '0.7'}
+55	55		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory973.jpg'}
+56	56		201							{1: '1', 2: '500730', 7: '1'}
+57	57		301							"{1: '1', 2: 'Shorthalt', 3: ""If you don't know what to do next, focus on what's right in front of you."", 4: '1'}"
+58	58		301							"{2: 'Shorthalt', 3: ""For you, it means attending medical school and saving lives after graduation... There's always more to learn, always more work to do—you won't have time to think about anything else."", 4: '1'}"
+59	59		202							{1: '1'}
+60	60		301							{3: '...'}
+61	61		201							{1: '1', 2: '500730'}
+62	62		301				AniZhuanchangBegin			"{1: '1', 2: 'Shorthalt', 3: ""Let's take it one step at a time. Become a doctor first... Or better yet, why not become an even better doctor than Melvie?"", 4: '1'}"
+63	63		306						700.0	
+64	64		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory718.jpg'}
+65	65		202							{1: '1', 6: '1'}
+66	66		504							{1: '0'}
+67	67		301			AniZhuanchangEnd				"{3: ""Don't overthink things. Just become a doctor first. Just open the ward doors one at a time... That's enough.""}"
+68	68		401							{1: '2', 2: '4708'}
+69	69		301				DialogDisable			{3: 'Wanshi pushes open the ward door.'}
+70	70		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg', 3: '0', 4: '1', 5: '1'}
+71	71		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory524.jpg'}
+72	72		205							{1: '999'}
+73	73		201							{1: '1', 2: '500978', 4: '-400'}
+74	74		201							{1: '2', 2: '500977', 4: '400'}
+75	75		301			DialogEnable				{1: '1', 2: 'Vivian', 3: 'Ah! Wanshi is here!', 4: '1'}
+76	76		301							"{2: 'Andy', 3: ""I got here first! Wanshi, I saved up two wish cards yesterday! Though I haven't decided what to trade them for..."", 4: '2'}"
+77	77		301							"{2: 'Vivian', 3: ""I got one too! I'm gonna trade it for the newest Mecha Girl stickers!"", 4: '1'}"
+78	78		202							{1: '1', 2: '2'}
+79	79		301							{3: 'The once-quiet ward suddenly springs to life as children well enough to walk gather around.'}
+80	80		201							{1: '1', 2: '500289', 3: '7'}
+81	81		301							{1: '1', 2: 'Wanshi', 3: 'Who gave you all these wish cards while I was away?', 4: '1'}
+82	82		301							{3: 'The nurse walks over.'}
+83	83		203							{1: '1', 2: '0.25', 3: '400'}
+84	84		201							{1: '2', 2: '500042', 4: '-400'}
+85	85		301							{1: '1', 2: 'Natalie', 3: 'Since you were finally taking a break yesterday, and these kids were behaving so well, the doctor on duty handed out some cards on your behalf. Maka got two of them, too.', 4: '2'}
+86	86		301							{3: 'Wanshi looks at the only boy still confined to bed in the ward. The boy smiles at him gently and points to two colorful cards beside his pillow.'}
+87	87		301							"{2: 'Natalie', 3: ""Maka was especially quiet during his IV drip, and even reminded the nurse not to forget the medicine. Vivian was just as good—she stuck to our agreement of watching only two episodes of Mecha Girls before bed. They've both been very responsible."", 4: '2'}"
+88	88		204							{1: '1'}
+89	89		301							{2: 'Wanshi', 3: 'Thanks for taking care of everything.', 4: '1'}
+90	90		202							{1: '1', 2: '2'}
+91	91		301							"{3: ""After Natalie leaves, Wanshi walks around the ward with his hands in his pockets, making a show of mysterious inspection before finally stopping at Maka's bedside.""}"
+92	92		201							{1: '1', 2: '500289'}
+93	93		301							"{1: '1', 2: 'Wanshi', 3: ""Now, let me see—who's been the most well-behaved? Andy? Vivian? Or could it be Maka?"", 4: '1'}"
+94	94		301							{3: 'He calls out to each child one by one, then dramatically pretends to have a sudden realization.'}
+95	95		301							"{2: 'Wanshi', 3: ""Oh my, looks like everyone's been working hard on getting better! Well, in that case..."", 4: '1'}"
+96	96		204							{1: '1', 2: '1'}
+97	97		301							{2: 'Wanshi', 3: 'How about I give everyone a piece of candy?', 4: '1'}
+98	98		202							{1: '1'}
+99	99		301							"{3: 'He reaches into his ""treasure chest"" pocket, and reveals an assortment of hard candies. After placing one by Maka\'s pillow, he lets the other children pick their favorites from his hand.'}"
+100	100		301							"{3: ""The children's cheers bring forth the most relaxed smile on the young doctor's face.""}"
+101	101		201							{1: '1', 2: '500289', 3: '1'}
+102	102		301							{1: '1', 2: 'Wanshi', 3: '...', 4: '1'}
+103	103		301							"{3: ""...Without a goal in mind, it's better to stop overthinking and focus on what's right in front of you. Just like this—put on the coat, open the door, and bring a bit of joy to the children.""}"
+104	104		203							{1: '1', 2: '0.25', 3: '-400'}
+105	105		201							{1: '2', 2: '500976', 4: '400'}
+106	106		301							{1: '1', 2: 'Maka', 3: 'May I have another piece?', 4: '2'}
+107	107		301							{3: 'Maka whispers.'}
+108	108		301							{2: 'Wanshi', 3: '...', 4: '1'}
+109	109		301							{2: 'Maka', 3: 'Wanshi?', 4: '2'}
+110	110		301							{3: 'Wanshi snaps back to reality.'}
+111	111		204							{1: '1', 2: '7'}
+112	112		301							{2: 'Wanshi', 3: 'Yes! The nurse said you were the best behaved yesterday. Have another one. Which flavor would you like...', 4: '1'}
+113	113		301							{2: 'Maka', 3: 'Is something bothering you, Wanshi?', 4: '2'}
+114	114		301							"{2: 'Maka', 3: ""When Dad's worried about something, he makes the same face you're making right now."", 4: '2'}"
+115	115		301							{2: 'Wanshi', 3: 'Oh, I...', 4: '1'}
+116	116		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+117	117		202							{1: '1', 2: '2', 6: '1'}
+118	118		504							{1: '0.7'}
+119	119		201							{1: '1', 2: '500042', 7: '1'}
+120	120		301							"{1: '1', 2: 'Natalie', 3: ""Maka's condition isn't looking good."", 4: '1'}"
+121	121		202							{1: '1'}
+122	122		301							"{3: ""Natalie pinches the bridge of her nose as the quiet examination room makes her drowsy. Beside her, Wanshi quickly flips through Maka's medical records and, for once, without his usual yawning.""}"
+123	123		201							{1: '1', 2: '500042', 4: '-400'}
+124	124		201							{1: '2', 2: '500289', 4: '400'}
+125	125		301							{1: '1', 2: 'Wanshi', 3: '...Born with a congenital condition... multiple surgeries with limited success... No strenuous activity before the next operation.', 4: '2'}
+126	126		301							{2: 'Wanshi', 3: 'Modern medicine has come so far, yet there are still diseases that remain beyond our ability to cure.', 4: '2'}
+127	127		301							{2: 'Natalie', 3: 'Nothing we can do but our best, I suppose—yawn.', 4: '1'}
+128	128		301							"{2: 'Natalie', 3: ""The professor's handling this case, so don't worry too much about it. You should get some rest—they've got you working the night shift again..."", 4: '1'}"
+129	129		301							"{2: 'Wanshi', 3: ""It's fine, I'll head back after the professor gets here. I'd like to hear the professor's treatment plan for Maka—it'll be a good learning opportunity for me."", 4: '2'}"
+130	130		301							{2: 'Natalie', 3: 'The professor specifically asked us to make sure you get some rest... I heard you fell asleep in your office chair again the other day. How many days have you been working non-stop this time?', 4: '1'}
+131	131		202							{1: '1', 2: '2'}
+132	132		301							{3: 'Wanshi shakes his head, deflecting the questions about himself as he turns to the final page.'}
+133	133		201							{1: '1', 2: '500042', 4: '-400'}
+134	134		201							{1: '2', 2: '500289', 4: '400'}
+135	135		301							"{1: '1', 2: 'Wanshi', 3: ""What's Maka's family situation like? Do you know what exactly his parents do in Babylonia?"", 4: '2'}"
+136	136		301							{2: 'Wanshi', 3: 'His hospitalization and surgeries require a lot of resources, and things may stay this way for a long time—possibly years.', 4: '2'}
+137	137		301							{2: 'Wanshi', 3: 'If his family is struggling financially, I can help apply for a fee waiver...', 4: '2'}
+138	138		301							"{2: 'Natalie', 3: ""Maka's father is his only remaining family, and he volunteered for modification to fight on the ground."", 4: '1'}"
+139	139		301							{2: 'Natalie', 3: 'The casualty rate among military Constructs has never decreased. If his father falls too, the Youth Center will assume custody of Maka.', 4: '1'}
+140	140		301							{2: 'Wanshi', 3: '...', 4: '2'}
+141	141		301							"{2: 'Natalie', 3: ""Understood... Let's focus on treatment for now."", 4: '1'}"
+142	142		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+143	143		202							{1: '1', 2: '2', 6: '1'}
+144	144		504							{1: '0'}
+145	145		201							{1: '1', 2: '500289', 3: '1', 4: '-400', 7: '1'}
+146	146		201							{1: '2', 2: '500976', 4: '400', 7: '1'}
+147	147		301							"{1: '1', 2: 'Wanshi', 3: ""Sorry, Maka. I didn't mean to worry you."", 4: '1'}"
+148	148		301							{2: 'Maka', 3: 'I want to help you, Wanshi! Yesterday, the nurse asked me to fetch her terminal, and I did a great job!', 4: '2'}
+149	149		301							"{2: 'Wanshi', 3: ""Fantastic! I'll make you my assistant."", 4: '1'}"
+150	150		301							"{2: 'Maka', 3: ""If I'm your assistant, will you give me more wish cards?"", 4: '2'}"
+151	151		204							{1: '1'}
+152	152		301							{2: 'Wanshi', 3: 'Are these wish cards important to you?', 4: '1'}
+153	153		301							"{3: 'Wanshi watches as Maka\'s expression grows uneasy, realizing that the child hasn\'t used his ""Anything I Want"" cards in a long time.'}"
+154	154		301							"{2: 'Maka', 3: 'I heard Dad\'s ""long-term mission"" is over, and he\'ll be back in a few days... How many wish cards would it take to get one day outside? I want to spend a day playing with Dad. If I don\'t have enough... could I maybe get an ""advance""?', 4: '2'}"
+155	155		301							{3: 'Maka pulls out his colorful wish cards from his pocket, carefully aligning them one by one, each card pristine without a single bent corner.'}
+156	156		301							"{2: 'Wanshi', 3: ""Have you talked about this with your dad? You're scheduled for surgery this week, and you'll need time to recover afterward."", 4: '1'}"
+157	157		301							{2: 'Maka', 3: 'No...', 4: '2'}
+158	158		301							{2: 'Wanshi', 3: '...', 4: '1'}
+159	159		203						450.0	{1: '1', 2: '0.4', 3: '-400', 4: '-150'}
+160	160		301							{3: 'Wanshi bends down to meet Maka at eye level.'}
+161	161		204							{1: '1', 2: '1'}
+162	162		301							"{2: 'Wanshi', 3: ""How about this: we'll wait patiently for him to return, then we can discuss when you might be discharged, okay? For now, just listen to the doctors and nurses, focus on your recovery, and I'm sure you'll be able to leave with your father in no time."", 4: '1'}"
+163	163		301							{3: 'Maka nods.'}
+164	164		301							"{2: 'Wanshi', 3: ""The wish cards... I don't need this many."", 4: '1'}"
+165	165		301							"{3: ""Wanshi takes a few colored cards from Maka's hand and returns the thick remaining stack to Maka's pocket.""}"
+166	166		301							{2: 'Wanshi', 3: 'This will do.', 4: '1'}
+167	167		202							{1: '1', 2: '2'}
+168	168		301							{3: 'He tucks the wish card retrieved from Maka into his pocket before turning to perform his routine check on the other children.'}
+169	169		401							{1: '2', 2: '4421'}
+170	170		301							"{3: ""Suddenly, the terminal rings, and the screen shows someone who hasn't been in touch for a long time.""}"
+171	171		201							{1: '1', 2: '500289', 3: '7'}
+172	172		301							{1: '1', 2: 'Wanshi', 3: '...Pelo??', 4: '1'}
+173	173		301							{3: 'Pelo has been on a long-term mission on the ground. Why would make contact now?'}
+174	174		301							{3: 'The call connects promptly, but the screen shows nothing but darkness.'}
+175	175		401							{1: '2', 2: '4672'}
+176	176		301							"{2: 'Wanshi', 3: ""Pelo? What's wrong?"", 4: '1'}"
+177	177		401							{1: '2', 2: '2982'}
+178	178		301							{2: 'Pelo', 3: 'Bzzz—you—'}
+179	179		301							"{2: 'Wanshi', 3: ""What? I can't hear you clearly—"", 4: '1'}"
+180	180		301							{3: 'The other side seems to be saying something, but the static makes it impossible for Wanshi to make out a single word.'}
+181	181		401							{1: '2', 2: '4671'}
+182	182		402							{1: '4672'}
+183	183		301							{3: 'Soon, the communication is forcibly cut off.'}
+184	184		301							{2: 'Wanshi', 3: '...', 4: '1'}
+185	185		301							{3: 'As Wanshi attempts to establish communication again, Natalie comes running in.'}
+186	186		203							{1: '1', 2: '0.25', 3: '400'}
+187	187		201							{1: '2', 2: '500042', 4: '-400'}
+188	188		301							{1: '1', 2: 'Natalie', 3: 'Is Wanshi here?', 4: '2'}
+189	189		204							{1: '1'}
+190	190		301							{2: 'Wanshi', 3: 'Natalie? I just...', 4: '1'}
+191	191		301							{3: 'Wanshi points at his terminal, but Natalie cuts him off. She glances at the bedridden Maka, anxiety evident on her face.'}
+192	192		301				AniZhuanchangBegin			{2: 'Natalie', 3: 'Wanshi, come with me, now!', 4: '2'}
+193	193		401							{1: '1', 2: '36'}
+194	194		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory717.jpg'}
+195	195		401							{1: '1', 2: '5029'}
+196	196		204							{1: '1', 2: '7'}
+197	197		301			AniZhuanchangEnd				{2: 'Wanshi', 3: 'What?', 4: '1'}
+198	198		301							"{2: 'Natalie', 3: ""It's Maka's father! His unit requested mass emergency medical support just hours ago!"", 4: '2'}"
+199	199		204							{1: '1'}
+200	200		301							"{2: 'Wanshi', 3: ""What's the exact situation?"", 4: '1'}"
+201	201		301							"{2: 'Natalie', 3: ""No idea. Everyone in Construct Maintenance is so swamped and can't spare even a moment to explain things properly."", 4: '2'}"
+202	202		301							"{2: 'Natalie', 3: ""Just yesterday, that child said his father's long-term mission would end in a few days... He even told me their travel plans in such detail..."", 4: '2'}"
+203	203		301							"{2: 'Wanshi', 3: ""...It might not be that bad. I'll go check. Could you please ask the professor to come back?"", 4: '1'}"
+204	204		202							{1: '1', 2: '2'}
+205	205		301				DialogDisable			{3: 'Without time for further instructions, Wanshi dashes to the Star of Life emergency center.'}
+206	206		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg', 3: '0', 4: '1', 5: '1.5'}
+207	207		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+208	208		205							{1: '999'}
+209	209		301			DialogEnable				{3: 'He rushes down the long corridor and opens the emergency stairwell door—he knows the shortcut.'}
+210	210		301							{3: 'The artificial sunlight feels as warm as ever, and the window—the one he once had to tiptoe to peek through—remains unchanged.'}
+211	211		301							{3: 'It was here, as a small child, that he first glimpsed the other side of their world—frantic Constructs and doctors rushing about, and broken Constructs being wheeled past.'}
+212	212		301							{3: 'Is it still the same as back then?'}
+213	213		301				AniZhuanchangBegin			{3: 'Many years have passed since that day as he turns his gaze toward the window once again.'}
+214	214		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory266.png'}
+215	215		201							{1: '1', 2: '500019', 4: '-400', 7: '1'}
+216	216		201							{1: '2', 2: '500019', 4: '400', 7: '1'}
+217	217		301			AniZhuanchangEnd				"{1: '1', 2: 'Construct Soldier A', 3: ""All because we had to save those dawdling refugees, we got ambushed by a pack of Corrupted! We'd just met up with another team, and now... Great! Everyone's gone, just like that!"", 4: '1'}"
+218	218		301							"{2: 'Construct Soldier A', 3: ""Do you know how long we were stuck on the ground? We finally had the chance to return to Babylonia... and now look what's happened... How many of us are even left?!"", 4: '1'}"
+219	219		301							"{2: 'Construct Soldier B', 3: ""It's pointless... No use talking about it now..."", 4: '2'}"
+220	220		301							"{3: ""He can't make out what the Constructs are saying, but their expressions are all too familiar—anger, grief, confusion... The maintenance doctors still rush about just as before.""}"
+221	221		301				AniZhuanchangBegin			{3: '—Exactly like it was back then.'}
+222	222		202							{1: '1', 2: '2', 6: '1'}
+223	223		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg'}
+224	224		201							{1: '1', 2: '500270', 4: '-400', 5: '-50', 7: '1'}
+225	225		201							{1: '2', 2: '500023', 4: '400', 7: '1'}
+226	226		301			AniZhuanchangEnd				{1: '1', 2: 'Chiron', 3: 'Pull up the stats for this Construct version and check for any internal cavity damage.', 4: '1'}
+227	227		301							{2: 'Chiron', 3: 'Let the auto-maintenance kit treat the external wounds and stop the vital fluid loss... No, prepare for vital fluid transfusion right away.', 4: '1'}
+228	228		301							"{2: 'Assistant', 3: ""Professor, we're running low on vital fluid. He needs far too much."", 4: '2'}"
+229	229		301							{2: 'Chiron', 3: '...Rescue operation in Maintenance Room 6 has failed. Clean up the quickly and bring in the next one.', 4: '1'}
+230	230		301							{2: 'Assistant', 3: 'There are still so many outside...', 4: '2'}
+231	231		301							"{3: ""The professor's face shows even more signs of exhaustion.""}"
+232	232		301							{2: 'Chiron', 3: 'Look for the severely injured ones—damage rates between forty and seventy percent.', 4: '1'}
+233	233		301							{2: 'Assistant', 3: 'But some are worse—', 4: '2'}
+234	234		301							"{2: 'Chiron', 3: ""Resources are stretched too thin... There's no point bringing them in—this isn't an execution chamber."", 4: '1'}"
+235	235		202							{1: '1', 2: '2', 6: '1'}
+236	236		201							{1: '1', 2: '500289'}
+237	237		301							{1: '1', 2: 'Wanshi', 3: 'I can help!', 4: '1'}
+238	238		301							{3: 'A young man in a lab coat stands in front of Maintenance Room 6, announcing to the professor and assistant inside.'}
+239	239		202							{1: '1'}
+240	240		201							{1: '1', 2: '500270', 5: '-50'}
+241	241		301							{1: '1', 2: 'Chiron', 3: '...', 4: '1'}
+242	242		301							{3: 'The busy professor spares him only a glance before returning to their emergency procedure.'}
+243	243		301							{2: 'Chiron', 3: 'Connection cable. Now.', 4: '1'}
+244	244		301							{3: 'The assistant swiftly hands over what the professor needs.'}
+245	245		203							{1: '1', 2: '0.25', 3: '400', 4: '-50'}
+246	246		201							{1: '2', 2: '500289', 4: '-400'}
+247	247		301							"{1: '1', 2: 'Wanshi', 3: ""...Professor Chiron, I've completed the Construct maintenance course, and you personally approved my basic Construct maintenance certification."", 4: '2'}"
+248	248		301							"{2: 'Wanshi', 3: ""I can handle two emergency procedures at once through remote maintenance... I've practiced countless times on medical equipment!"", 4: '2'}"
+249	249		301							{2: 'Chiron', 3: 'Aspirator.', 4: '1'}
+250	250		203							{1: '2', 2: '0.25', 3: '-600'}
+251	251		203							{1: '1', 2: '0.25', 4: '-50'}
+252	252		201							{1: '3', 2: '500023', 4: '650'}
+253	253		301							{1: '1', 2: 'Assistant', 3: 'Professor, I know him. He excelled in Construct Maintenance class too, even if his experience is limited to medical simulators...', 4: '3'}
+254	254		301							"{2: 'Chiron', 3: ""That much I'm aware of."", 4: '1'}"
+255	255		202							{1: '1', 2: '2', 3: '3'}
+256	256		301							"{3: ""Wanshi stands at the entrance of the emergency center, speaking rapidly. For a fleeting moment, he feels like a child again, only as tall as an adult's legs, with his view filled by the hems of white coats.""}"
+257	257		201							{1: '1', 2: '500270', 5: '-50'}
+258	258		201							{1: '2', 2: '500289', 4: '-600'}
+259	259		201							{1: '3', 2: '500023', 4: '600'}
+260	260		301							{1: '1', 2: 'Wanshi', 3: '...', 4: '2'}
+261	261		301							"{3: 'Will there be another ""Pelo"" standing there? Could it be Maka this time?'}"
+262	262		301							{2: 'Wanshi', 3: '...', 4: '2'}
+263	263		301							"{2: 'Wanshi', 3: ""Professor Chiron, I won't take up any maintenance room space—I can work outside. Please, let me take care of the lightly injured Constructs, you..."", 4: '2'}"
+264	264		301							"{2: 'Wanshi', 3: 'Please... save those with ""over seventy percent"" too...', 4: '2'}"
+265	265		301							"{3: 'Professor Chiron ""wastes"" another second on Wanshi.'}"
+266	266		301							{2: 'Chiron', 3: '...Start up a remote maintenance unit for them, and bring in those Constructs who can still sit up by the door.', 4: '1'}
+267	267		301				AniZhuanchangBegin			"{2: 'Assistant', 3: ""I'm on it!"", 4: '3'}"
+268	268		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+269	269		301			AniZhuanchangEnd				"{3: ""Wanshi can't even remember how many maintenance procedures were performed that day.""}"
+270	270		301							{3: 'His hands, covered in vital fluid, never stop working.'}
+271	271		301							"{3: ""The remote maintenance cables feel like they've fused into his head. The pain numbs everything else.""}"
+272	272		301							"{3: ""Repair, maintenance... turn around and there's another Construct lying there in pain, then more repairs, more maintenance...""}"
+273	273		301							"{3: ""No different from humans, really—when a Construct's bionic skin ruptures, it creates the same bloody, mangled mess.""}"
+274	274		201							{1: '1', 2: '500289', 4: '400'}
+275	275		201							{1: '2', 2: '500296', 4: '-400'}
+276	276		301							"{1: '1', 2: 'Wanshi', 3: ""Stay still and bear with it for a moment. It'll be over soon."", 4: '1'}"
+277	277		301							{2: 'Construct Soldier', 3: 'It hurts so much...', 4: '2'}
+278	278		301							"{2: 'Wanshi', 3: ""I'll help you. It'll be alright."", 4: '1'}"
+279	279		301				PanelActor2Shake			"{2: 'Construct Soldier', 3: ""You wouldn't understand. Cough, cough. Every time I come to this damned place, I—agh!"", 4: '2'}"
+280	280		301							"{3: ""Wanshi's vision blurs black. His hands slip, applying too much pressure—vital fluid seeps from the wound anew. His remote maintenance kit misaligns by an inch, drawing a cry of pain from the Construct.""}"
+281	281		301							{2: 'Wanshi', 3: 'Sorry...!', 4: '1'}
+282	282		202							{1: '1', 2: '2', 6: '1'}
+283	283		201							{1: '1', 2: '500270', 5: '-50', 7: '1'}
+284	284		301							{1: '1', 2: 'Chiron', 3: 'Disconnect him! Now!', 4: '1'}
+285	285		202							{1: '1'}
+286	286		301							{3: 'The throbbing in his head vanishes instantly. Wanshi slumps to the floor, as if his very soul has been sucked from his body.'}
+287	287		201							{1: '1', 2: '500290', 4: '400', 5: '-200'}
+288	288		201							{1: '2', 2: '500270', 4: '-400', 5: '-50', 7: '1'}
+289	289		301							{1: '1', 2: 'Wanshi', 3: 'Hff...', 4: '1'}
+290	290		301							"{2: 'Chiron', 3: ""That's enough, stop."", 4: '2'}"
+291	291		301							{2: 'Wanshi', 3: 'Not yet...', 4: '1'}
+292	292		401							{1: '2', 2: '4331'}
+293	293		301							"{3: ""As if answering Wanshi's determination, more Constructs come running through the airlock connecting to the emergency center, carrying new patients on stretchers.""}"
+294	294		301							"{2: 'Wanshi', 3: ""Three minutes, Professor. Give me three minutes and I'll be rested enough to hook up the maintenance kit."", 4: '1'}"
+295	295		202							{1: '1', 2: '2'}
+296	296		301							"{3: ""Wanshi takes a deep breath, pushes himself up from the ground, and rushes to check on the new patient's injuries.""}"
+297	297		201							{1: '1', 2: '500289'}
+298	298		301							"{1: '1', 2: 'Wanshi', 3: ""Elevate the chest cavity, but don't touch the neck! Careful now."", 4: '1'}"
+299	299		301							"{3: ""The Construct's injuries are severe. His face is completely disfigured, but one can still tell he underwent modification at a young age.""}"
+300	300		301							{2: 'Wanshi', 3: 'Lift carefully... Yes, like that.', 4: '1'}
+301	301		202							{1: '1'}
+302	302		201							{1: '1', 2: '500028'}
+303	303		301							{1: '1', 2: '??', 3: '...Wanshi?', 4: '1'}
+304	304		301							"{3: ""The Construct holding the injured person hesitantly calls out Wanshi's name.""}"
+305	305		203							{1: '1', 2: '0.25', 3: '400'}
+306	306		201							{1: '2', 2: '500289', 4: '-400'}
+307	307		301							{1: '1', 2: 'Wanshi', 3: '...! Sien? Is that you?', 4: '2'}
+308	308		301							"{3: ""Wanshi recognizes this veteran Construct—he served in the same squad as Pelo's parents. After their incident, he helped take care of Pelo.""}"
+309	309		301							{2: 'Sien', 3: 'You still remember me...', 4: '1'}
+310	310		301							{3: 'Sien closes his eyes in pain, looking more worn out than ever.'}
+311	311		301							{2: 'Wanshi', 3: 'Another mission gone wrong...?', 4: '2'}
+312	312		301							"{2: 'Sien', 3: ""Another... Yes, yes, it's happened again. This time it was his turn."", 4: '1'}"
+313	313		301							{2: 'Wanshi', 3: '...?', 4: '2'}
+314	314		301							{3: 'Wanshi freezes for a split second before sharply looking back down at the nearly destroyed Construct.'}
+315	315		301							"{3: ""Vital fluid has stained the Construct's synthetic hair, obscuring what was once a distinctive color.""}"
+316	316		204							{1: '2', 2: '7'}
+317	317		301							{2: 'Wanshi', 3: '...', 4: '2'}
+318	318		301							"{2: 'Sien', 3: ""I... I can't bear to watch this happen in front of me anymore..."", 4: '1'}"
+319	319		301							{2: 'Wanshi', 3: '...', 4: '2'}
+320	320		202							{1: '1', 2: '2'}
+321	321		301							{3: 'A gasp ripples through the crowd, and Chiron looks up—'}
+322	322		301							{3: 'A Construct slumps dejectedly on the ground, having laid down the critically wounded patient in his arm.'}
+323	323		301							"{3: ""The white-haired doctor kneels beside the patient, shouting for medical equipment while applying pressure above the amputation site on the patient's leg.""}"
+324	324		201							{1: '1', 2: '500290', 4: '400', 5: '-70'}
+325	325		201							{1: '2', 2: '500023', 4: '-400'}
+326	326		301							{1: '1', 2: 'Wanshi', 3: 'Get me the maintenance kit!', 4: '1'}
+327	327		301							"{2: 'Assistant', 3: ""It's too late, Wanshi."", 4: '2'}"
+328	328		301							"{3: ""Wanshi holds the maintenance tools, but can only watch helplessly at Pelo's wounds—both old and new, covering his body, each one more horrifying than the last.""}"
+329	329		301							"{2: 'Wanshi', 3: ""He's still so young... What about a Recall? Yes, we can still perform a Recall!"", 4: '1'}"
+330	330		301							{2: 'Assistant', 3: 'He has no vital signs...', 4: '2'}
+331	331		301							{2: 'Wanshi', 3: 'No... there must be a way...', 4: '1'}
+332	332		202							{1: '1', 2: '2'}
+333	333		301							{3: 'Wanshi wipes his face with his hand, but instead of clearing his blurry vision, he only manages to smear vital fluid near his eye.'}
+334	334		301							{3: 'The world before his eyes turns crimson red, his hands trembling to the point of near spasm, but nothing he could do would make a difference now.'}
+335	335		301							{3: 'The lifeless Construct lies before him. Through his chaotic thoughts, Wanshi grasps onto a single memory—he realizes that this is the very place where they first met.'}
+336	336		301							"{3: ""Back then, Pelo was crying and calling out for his mother while innocently exposing the young doctor's lie.""}"
+337	337		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+338	338		504							{1: '0.7'}
+339	339		201							{1: '1', 2: '500058', 4: '-400', 7: '1'}
+340	340		201							{1: '2', 2: '500948', 4: '400', 7: '1'}
+341	341		301							"{1: '1', 2: 'Medical Resident', 3: ""Your mother will be fine. She's just severely injured and needs to enter stasis."", 4: '1'}"
+342	342		301							{2: 'Pelo', 3: 'Stasis? Construct stasis?', 4: '2'}
+343	343		301							"{2: 'Medical Resident', 3: ""Yes. Our current medical technology can't restore her mobility right away. She needs to stay in stasis for a while before she can be treated."", 4: '1'}"
+344	344		301							{2: 'Pelo', 3: '...For how long?', 4: '2'}
+345	345		301							{2: 'Medical Resident', 3: 'Hmm... many years? Maybe after you grow up... How old are you now?', 4: '1'}
+346	346		301							{2: 'Pelo', 3: 'Seven and a half.', 4: '2'}
+347	347		301							"{2: 'Medical Resident', 3: ""Then in eight years... eight and a half years. Maybe when you're sixteen, she'll wake up."", 4: '1'}"
+348	348		301							{2: 'Pelo', 3: '...', 4: '2'}
+349	349		301							{2: 'Pelo', 3: '...I can wait.', 4: '2'}
+350	350		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+351	351		504							{1: '0'}
+352	352		202							{1: '1', 2: '2', 6: '1'}
+353	353		201							{1: '1', 2: '500290', 7: '1'}
+354	354		301							"{1: '1', 3: ""Wanshi chokes back tears and lowers his head, releasing his hand from Pelo's wound—no vital fluid gushing out anymore.""}"
+355	355		301							{2: 'Wanshi', 3: 'Sixteen.', 4: '1'}
+356	356		301							{2: 'Wanshi', 3: 'When you underwent the modification... you were still too young...', 4: '1'}
+357	357		301							{2: 'Wanshi', 3: 'Why did it take me so long to understand...', 4: '1'}
+358	358		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+359	359		504							{1: '0.7'}
+360	360		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory972.jpg'}
+361	361		201							{1: '1', 2: '500936', 4: '-400', 7: '1'}
+362	362		201							{1: '2', 2: '500722', 4: '400', 7: '1'}
+363	363		301							"{1: '1', 2: 'Pelo', 3: ""We've blown things up, we've made our noise—none of it matters anymore. Everything we could do was useless. Let's end this. I'm going in for modification this month."", 4: '2'}"
+364	364		301							"{2: 'Wanshi', 3: ""Why? It's just going to the ground, there's no need for modifications, right? And certainly no need to rush it..."", 4: '1'}"
+365	365		301							{2: 'Pelo', 3: 'No! It IS urgent!', 4: '2'}
+366	366		301							{2: 'Wanshi', 3: '...?', 4: '1'}
+367	367		301							"{2: 'Pelo', 3: ""The sooner the better. I'm done waiting."", 4: '2'}"
+368	368		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+369	369		504							{1: '0'}
+370	370		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory284.jpg'}
+371	371		202							{1: '1', 2: '2', 6: '1'}
+372	372		201							{1: '1', 2: '500290', 7: '1'}
+373	373		301							{1: '1', 2: 'Wanshi', 3: '...', 4: '1'}
+374	374		301							"{2: 'Wanshi', 3: ""He'll never turn sixteen..."", 4: '1'}"
+375	375		202							{1: '1'}
+376	376		301							{3: 'Pelo made his choice—to never confront the moment when the lie would unravel. Perhaps this way, he could die while still holding onto hope.'}
+377	377		201							{1: '1', 2: '500028'}
+378	378		301							"{1: '1', 2: 'Sien', 3: ""I'm sorry. I'm sorry..."", 4: '1'}"
+379	379		202							{1: '1'}
+380	380		301							"{3: ""Guilt is etched across Sien's face as M.I.N.D. shift warnings begin to sound. Several nearby Constructs carefully escort him away.""}"
+381	381		301							"{3: ""Wanshi pays no attention to Sien's departure. His head hangs low. His hair, damp with sweat and vital fluid, droops across his forehead as he appears to be in prayer.""}"
+382	382		201							{1: '1', 2: '500290'}
+383	383		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Wanshi', 3: ""...Won't someone lie to me too?"", 4: '1'}"

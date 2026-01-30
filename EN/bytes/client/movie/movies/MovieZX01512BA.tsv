@@ -1,0 +1,42 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory245.png'}
+2	2		401							{1: '1', 2: '211'}
+3	3		301			DialogEnable				{3: 'Defense turrets bombard the battlefield. High-pitched laser rifle blasts punctuate the roar of assault rifles.'}
+4	4		201							{1: '1', 2: '500220', 3: '4'}
+5	5		301							{1: '1', 2: 'Qu', 3: 'Thirty degrees portside, fire!', 4: '1'}
+6	6		202							{1: '1'}
+7	501		401							{1: '2', 2: '1506'}
+8	500		301			RImgBg1Shake				{3: 'After making great sacrifices, Kowloong has finally stabilized the defensive line. However, just as Qu commands the troops to re-consolidate the line, a loud rumble is heard above the city gate.'}
+9	7		301							{3: 'Qu turns to see several members of the Pulao Crew falling from the city gate. One of them lands among the Corrupted and is torn to pieces in an instant.'}
+10	8		201							{1: '1', 2: '500223'}
+11	9		301							"{1: '1', 2: 'Bian Crew', 3: ""Leave this area to us, Lady Qu. Hurry, go see what's going on."", 4: '1'}"
+12	10		201							{1: '1', 2: '500220'}
+13	11		301							{1: '1', 2: 'Qu', 3: 'On my way.', 4: '1'}
+14	12		202							{1: '1'}
+15	13		301							{3: 'Handing over command, Qu rushes over to the closest Pulao soldier that fell.'}
+16	14		301							{3: 'The Pulao Crew clear a way for Qu as she approaches.'}
+17	15		301							"{3: ""The exoskeleton has managed to save the soldier's life. Qu wipes away the blood on the soldier's face.""}"
+18	16		201							{1: '1', 2: '500220', 4: '-400'}
+19	17		201							{1: '2', 2: '500223', 4: '400'}
+20	18		301							{1: '1', 2: 'Qu', 3: 'What happened up there?', 4: '1'}
+21	19		301							"{2: 'Injured Pulao Crew', 3: ""An... enemy attack. She just... appeared out of nowhere... We couldn't react... fast enough."", 4: '2'}"
+22	20		301							{2: 'Qu', 3: 'I see. Inform the medics, then take him back to get healed.', 4: '1'}
+23	21		301							{3: 'Qu relays the order to the surrounding soldiers, then gets up and walks toward the gate. The fallen soldier stretches out his hand to Qu with his last strength.'}
+24	22		301							{2: 'Injured Pulao Crew', 3: 'Lady Qu, be careful...', 4: '2'}
+25	23		301				AniZhuanchangBegin			{2: 'Qu', 3: 'I will.', 4: '1'}
+26	24		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory249.png'}
+27	25		202							{1: '1', 2: '2', 6: '1'}
+28	26		201							{1: '1', 2: '500223'}
+29	27		301			AniZhuanchangEnd				{1: '1', 2: 'Chaofeng Crew', 3: 'Lady Qu, you made it.', 4: '1'}
+30	28		202							{1: '1'}
+31	29		301							"{3: ""Qu reaches the top of the city gate, only to be greeted by the grim looks on the soldiers' faces. They are all training their rifles vigilantly on a single Corrupted, but no one is firing.""}"
+32	30		301							{3: 'Parting the wall of soldiers, she sees the figure within.'}
+33	31		201							{1: '1', 2: '500237'}
+34	32		401							{1: '2', 2: '1508'}
+35	33		301							{1: '1', 2: 'Moyuan', 3: '—!', 4: '1'}
+36	34		202							{1: '1'}
+37	35		301							{3: 'It is a most familiar face, that of the Chaofeng Crew Officer—Moyuan. Now Corrupted, her body is a mural of human blood and Corrupted oil. She appears to be murmuring nonsensically.'}
+38	36		301							{3: 'After a moment of silence, Qu gives instructions to the soldiers around her.'}
+39	37		201							{1: '1', 2: '500220', 3: '4'}
+40	38		301							{1: '1', 2: 'Qu', 3: 'Return to the defensive line and prioritize defending against the main Corrupted forces. Leave her to me.', 4: '1'}
+41	39		301		1		AniZhuanchangBegin			{3: 'Knowing what is to happen next, the soldiers quietly put away their weapons and file out of the city gate.'}

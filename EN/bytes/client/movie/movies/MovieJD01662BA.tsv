@@ -1,0 +1,23 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory257.png'}
+2	2		401							{1: '1', 2: '203'}
+3	3		301							{3: 'Alpha stands just a few meters away, seemingly having been waiting for quite some time now.'}
+4	4		201							{1: '1', 2: '500100', 3: '13'}
+5	5		301			DialogEnable				{1: '1', 2: 'α', 3: 'How does that memory make you feel?', 4: '1'}
+6	6		201							{1: '1', 2: '500166', 3: '5'}
+7	7		301							{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+8	8		201							{1: '1', 2: '500100'}
+9	9		301							"{1: '1', 2: 'α', 3: ""At a loss for words? Let's see what your katana has to say, then."", 4: '1'}"
+10	10		301				DialogDisable			{3: 'Alpha points her blade at Lucia...'}
+11	11		305							{1: '12', 2: '22'}
+12	12		201							{1: '1', 2: '500100', 4: '400'}
+13	13		201							{1: '2', 2: '500166', 3: '5', 4: '-400'}
+14	14		301			DialogEnable				"{1: '1', 2: 'α', 3: ""It seems like the truth didn't get the better of you."", 4: '1'}"
+15	15		301							{2: 'α', 3: 'Do you remember Luna?', 4: '1'}
+16	16		301							{2: 'Lucia', 3: '...Of course!', 4: '2'}
+17	17		301							{2: 'α', 3: 'Is she part of your future in Babylonia?', 4: '1'}
+18	18		202							{1: '1', 6: '1'}
+19	19		301							{3: 'With that question, Alpha vanishes into thin air, and Lucia gains a moment of respite.'}
+20	20		203							{1: '1', 2: '0.25'}
+21	21		301		1		AniZhuanchangBegin			{2: 'Lucia', 3: 'Luna...', 4: '2'}
+22	22		202		1		AniZhuanchangBegin			{1: '1', 6: '1'}

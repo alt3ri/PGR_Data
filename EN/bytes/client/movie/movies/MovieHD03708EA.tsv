@@ -1,0 +1,37 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory360.png'}
+2	2		401							{1: '1', 2: '250'}
+3	3		301			DialogEnable				"{3: ""The two of you arrive at your journey's end, where a shimmering light marking the exit pulses at the heart of the mountain base.""}"
+4	4		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1003.jpg', 3: '0', 4: '1', 5: '1'}
+5	5		301							{3: 'From their vantage point on the mountain, a towering spire looms in the distance, both majestic and unsettling in its presence—'}
+6	6		301							{3: 'It stands imperious beneath the night sky, its eerie crimson glow staining both the clouds and the darkness alike, casting an oppressive shroud over the entire planet.'}
+7	7		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1003.jpg', 3: '1', 4: '0', 5: '1'}
+8	8		201							{1: '1', 2: '501070', 3: '14'}
+9	9		301							{1: '1', 2: 'Nanami', 3: 'This is... the world destroyed by the Hetero Tower.', 4: '1'}
+10	10		301							{2: 'Nanami', 3: 'It continuously sends out strange energy beams that drive living beings into a maddened frenzy, causing them to turn against one another.', 4: '1'}
+11	11		301							{2: 'Nanami', 3: 'Even hiding in space offers no escape from its influence. In no time, human civilization will spiral into complete self-destruction.', 4: '1'}
+12	12		301							{2: 'Nanami', 3: 'Until none survives...', 4: '1'}
+13	13		301							{2: 'Nanami', 3: '...Something about that red light makes Nanami feel terribly uneasy.', 4: '1'}
+14	14		301							"{2: 'Nanami', 3: ""Commandant, we need to get out of here. Let's go."", 4: '1'}"
+15	15		301							"{2: 'Nanami', 3: '""The Big Eater"" has filtered enough Dimension Domains already. We should be able to find the str■■■—if we head back to the departure point.', 4: '1'}"
+16	16		202							{1: '1'}
+17	17		111						1000.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+18	18		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '0', 4: '1', 5: '2'}
+19	19		401							{1: '2', 2: '5024'}
+20	20		301							{3: 'Without warning, the scenery before them begins to warp and distort as a transparent membrane slowly materializes.'}
+21	21		302							{2: 'Nanami!', 3: '22'}
+22	22		205							{1: '999'}
+23	23		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 4: '5'}
+24	24		201							{1: '1', 2: '501070', 3: '15'}
+25	25		301							{1: '1', 2: 'Nanami', 3: '■■■■■■!', 4: '1'}
+26	26		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen03.prefab', 2: '3'}
+27	27		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '3'}
+28	28		401							{1: '2', 2: '2604'}
+29	29		301			RImgBg1Shake				{3: 'Amidst the kaleidoscope of colors, Nanami, like yourself, is slowly engulfed by an iridescent bubble. She pounds desperately against the barrier before her, but it refuses to yield even an inch.'}
+30	30		301							{2: 'Nanami', 3: '—Comman■■■■...', 4: '1'}
+31	31		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+32	32		401							{1: '2', 2: '9389034'}
+33	33		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '3'}
+34	34		301							{3: 'The world before your eyes grows dim as everything spins violently, accompanied by an endless, piercing buzz—'}
+35	35		502							{1: 'RImgBg1Shake'}
+36	36		301		1		AniZhuanchangBegin			{2: 'Nanami', 3: '—Commandant—!!', 4: '1'}

@@ -1,0 +1,605 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading56.png'}
+2	2		401							{1: '1', 2: '296'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+4	4		201							{1: '1', 2: '501123', 3: '4'}
+5	5		301			DialogEnable				{1: '1', 2: 'Madam Raphael', 3: 'Lilith, the game of hide-and-seek is over.', 4: '1'}
+6	6		301							{3: 'After several rounds of savage bloodbath, the lesser Angels are now nothing but mangled corpses littering the ground, forcing the Archangel who had been commanding from safety to finally dirty her own hands.'}
+7	7		204							{1: '1', 2: '5'}
+8	8		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+9	9		301			DialogShake	DialogDisable			"{2: 'Madam Raphael', 3: ""Enough with the cat-and-mouse games! Hand over Mammon's Code!"", 4: '1'}"
+10	10		202							{1: '1', 6: '1'}
+11	11		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+12	12		401							{1: '2', 2: '884'}
+13	13		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionL.prefab', 2: '2'}
+14	14		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '3'}
+15	15		502							{1: 'RImgBg1Shake'}
+16	16		505						1000.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+17	17		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionR.prefab', 2: '2'}
+18	18		502							{1: 'RImgBg1Shake'}
+19	19		301			DialogEnable	DialogDisable			{3: 'Madam Raphael sweeps her hand forward, unleashing a barrage of searing light that crashes into the rocks and sends debris exploding in all directions.'}
+20	20		201						1200.0	{1: '1', 2: '501297', 4: '-300'}
+21	21		401							{1: '2', 2: '1543'}
+22	22		204						400.0	{1: '1', 2: '2'}
+23	23		401							{1: '2', 2: '4152'}
+24	24		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndRed.prefab', 2: '3'}
+25	25		202						500.0	{1: '1'}
+26	26		301			DialogEnable				"{3: ""Crouched behind a boulder, Lilith seizes the Bloodsworn's hand and, before the next blast hits, pierces your fingertip with her fangs and triggers the Blood Covenant's power, warping you both to safety behind another obstacle.""}"
+27	27		401							{1: '2', 2: '2926'}
+28	28		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+29	29		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+30	30		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1210.jpg', 3: '0', 4: '1', 5: '0'}
+31	31		301			RImgBg4Shake	DialogDisable			{3: 'Bang!'}
+32	32		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+33	33		205							{1: '1004'}
+34	34		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+35	35		401							{1: '2', 2: '737'}
+36	36		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable03.prefab', 2: '2', 5: '2'}
+37	37		511							{1: '2', 2: '0', 3: '200|200|0'}
+38	38		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab', 2: '2'}
+39	39		502						800.0	{1: 'RImgBg1Shake'}
+40	40		401							{1: '2', 2: '4172'}
+41	41		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable03.prefab', 2: '2', 5: '3'}
+42	42		511							{1: '3', 2: '0', 3: '-400|100|0'}
+43	43		502						800.0	{1: 'RImgBg1Shake'}
+44	44		401							{1: '2', 2: '4260'}
+45	45		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable03.prefab', 2: '2', 5: '4'}
+46	46		511							{1: '4', 2: '0', 3: '350|0|0'}
+47	47		502						1200.0	{1: 'RImgBg1Shake'}
+48	48		301			DialogEnable				{3: 'Another wave of attacks screams toward you, erupting in massive domes of blinding light that shake the very ground beneath your feet. Your rocky shelter is cracking, moments away from collapse.'}
+49	49		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+50	50		201							{1: '1', 2: '501297', 4: '-300'}
+51	51		301							"{1: '1', 2: 'Lilith', 3: ""Oh my, someone's getting rattled."", 4: '1'}"
+52	52		401							{1: '2', 2: '5327'}
+53	53		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab'}
+54	54		301				DialogDisable			{3: 'Below the crumbling rocks, Lilith simply raises her Moon Umbrella with leisurely precision, its canopy deflecting the steady cascade of stone and dust.'}
+55	55		302							"{2: ""Her assault is too intense. We're completely on the defensive."", 3: '56'}"
+56	56		204							{1: '1', 2: '8'}
+57	57		301			DialogEnable				{2: 'Lilith', 3: 'Since our opponent has been forced to show her hand, we should play this game all the more carefully...', 4: '1'}
+58	58		204							{1: '1', 2: '2'}
+59	59		301							{2: 'Lilith', 3: 'For instance, stealing the stakes right out of her hands and turning the tables. That would be an excellent counter-strategy.', 4: '1'}
+60	60		202							{1: '1'}
+61	61		201							{1: '18', 2: '501283'}
+62	62		301							"{1: '1', 2: 'Morigan', 3: ""Caw?! We're supposed to steal something from that Archangel who's raining light bombs on us?"", 4: '18'}"
+63	63		203							{1: '18', 2: '0.5', 4: '-200'}
+64	64		202							{1: '18'}
+65	65		401							{1: '2', 2: '4895'}
+66	66		301				DialogDisable			"{3: ""Both of you silently ignore Morigan's skepticism, shoving the crow's head back into the satchel and carrying on with your rather absurd conversation.""}"
+67	67		302							{2: 'I can help you. What exactly do we need to do?', 3: '68'}
+68	68		201							{1: '1', 2: '501297', 4: '-300'}
+69	69		301			DialogEnable				"{1: '1', 2: 'Lilith', 3: ""Tell me, has the renowned Gray Raven ever played a little children's game?"", 4: '1'}"
+70	70		401							{1: '2', 2: '2936'}
+71	71		301							"{3: ""Lilith runs her fingers slowly through her magical pet's feathers, tracing each tail plume, wing, and the soft down at its nape before her hand comes to rest on its head.""}"
+72	72		204							{1: '1', 2: '2'}
+73	73		301							"{2: 'Lilith', 3: 'The game is called ""slingshot,"" but this time, our ammunition will be a gold coin and...', 4: '1'}"
+74	74		302							{2: 'A raven?', 3: '75'}
+75	75		204							{1: '1', 2: '8'}
+76	76		401							{1: '2', 2: '2704'}
+77	77		301							"{3: ""Lilith remains silent, her fingers gently stroking Morigan's forehead as she gives a small nod.""}"
+78	78		202							{1: '1'}
+79	79		201							{1: '18', 2: '501283'}
+80	80		301				AniZhuanchangBegin			{1: '1', 2: 'Morigan', 3: '...Caw?', 4: '18'}
+81	81		202							{1: '18', 6: '1'}
+82	82		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory346.jpg'}
+83	83		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+84	84		301			AniZhuanchangEnd				{3: 'For the past few minutes, Lilith and the human who calls himself Gray Raven have vanished without a trace. Raphael paces slowly through the smoldering debris, searching for any sign of where they might be hiding.'}
+85	85		201							{1: '1', 2: '501123'}
+86	86		301							"{1: '1', 2: 'Madam Raphael', 3: ""There's no point in hiding anymore. I know you haven't left, and whatever you're planning won't work."", 4: '1'}"
+87	87		306							{1: '1'}
+88	88		301							"{3: ""She really doesn't consider that inexperienced Demon a threat. Setting aside matters of experience, Lilith's feeble magical power could never hope to defeat someone who has lived for a hundred years like herself.""}"
+89	89		301							{3: 'True, forming a covenant with a Bloodsworn can grant power beyond mortal reach in a short time, but before an Archangel, even such a miracle is nothing more than a cheap trick.'}
+90	90		301							{3: 'The Archangel waits with smug certainty, confident the Demon will expose herself soon enough and meet a gruesome end at her hands.'}
+91	91		306							
+92	92		204							{1: '1', 2: '2'}
+93	93		301							{2: 'Madam Raphael', 3: 'Lilith, why must you corner yourself like this? Fate has given you countless opportunities already.', 4: '1'}
+94	94		301							{2: 'Madam Raphael', 3: 'Even now, you can still choose to hand over the code and run.', 4: '1'}
+95	95		202							{1: '1'}
+96	96		401							{1: '2', 2: '2720'}
+97	97		301							{3: 'Clang—'}
+98	98		401							{1: '2', 2: '4260'}
+99	99		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionL.prefab', 2: '2'}
+100	100		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+101	101		301			RImgBg1Shake				{3: 'Raphael fires another burst of light toward the ringing sound, obliterating a massive boulder several meters high.'}
+102	102		201							{1: '1', 2: '501123', 3: '2'}
+103	103		301							"{1: '1', 2: 'Madam Raphael', 3: ""Or perhaps you're still too concerned with maintaining some form of dignity in defeat..."", 4: '1'}"
+104	104		202							{1: '1'}
+105	105		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+106	106		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+107	107		306							{1: '1'}
+108	108		301				DialogDisable			"{3: ""There's no one behind the boulder. Raphael already suspected as much. It was just a decoy.""}"
+109	109		306							
+110	110		201							{1: '1', 2: '501123', 3: '4'}
+111	111		203							{1: '1', 2: '0.25', 5: '-120'}
+112	112		401							{1: '2', 2: '4895'}
+113	113		301			DialogEnable				{1: '1', 3: 'In the next instant, she whirls around without hesitation, her fingers form a pistol shape, and she presses it against your forehead after you sneak up from behind.'}
+114	114		204							{1: '1'}
+115	115		301				DialogDisable			{2: 'Madam Raphael', 3: 'Oh... so Lilith sent you on a suicide mission. How typical of her, still as selfish as ever.', 4: '1'}
+116	116		302							"{2: ""...I know the code, and I don't trust Lilith either. Let's make a deal."", 3: '117'}"
+117	117		301			DialogEnable	DialogDisable			"{2: 'Madam Raphael', 3: ""Another self-important gambler. I don't make deals with humans. Die."", 4: '1'}"
+118	118		302							"{2: ""Given your nature, I'm betting the Archangels aren't exactly unified internally, are they?"", 3: '119'}"
+119	119		204							{1: '1', 2: '4'}
+120	120		401							{1: '2', 2: '1511'}
+121	121		301			DialogEnable				{2: 'Madam Raphael', 3: '...', 4: '1'}
+122	122		301				DialogDisable			{3: 'She cocks the hammer, neither confirming nor denying your suspicion.'}
+123	123		302							"{2: 'You won\'t pull that trigger. A living ""Gray Raven"" is far more valuable to both you and the Sanctuary, right?', 3: '124'}"
+124	124		301			DialogEnable	DialogDisable			{2: 'Madam Raphael', 3: 'Show me proof.', 4: '1'}
+125	125		302							{2: 'The coin reacts to the code and transforms into an actual key.', 3: '126'}
+126	126		302							"{2: ""You don't have to trust me, but the coin is real."", 3: '127'}"
+127	127		202						1200.0	{1: '1'}
+128	128		401							{1: '2', 2: '4676'}
+129	129		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront96.png', 3: '0', 4: '1', 5: '0.8'}
+130	130		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0', 4: '0.8', 5: '0.8'}
+131	131		301			DialogEnable				{3: 'Your story aligns with her intel, so Raphael confidently pulls the gold coin from her dimensional pouch. She refuses to believe some pathetic human could outmaneuver her right under her nose.'}
+132	132		201							{1: '18', 2: '501123', 3: '4', 4: '-280', 5: '-100', 6: '250'}
+133	133		301							{1: '1', 2: 'Madam Raphael', 3: 'Recite the code.', 4: '18'}
+134	134		202			DialogDisable				{1: '18'}
+135	135		302							{2: '(Recites the spell Lilith taught you)', 3: '136'}
+136	136		401							{1: '2', 2: '4359'}
+137	137		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable02.prefab', 2: '2', 5: '5'}
+138	138		511						50.0	{1: '5', 2: '0', 3: '0|10|0'}
+139	139		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0.8', 4: '0', 5: '3'}
+140	140		511						3000.0	{1: '5', 2: '3', 3: '0|10|-670'}
+141	141		301			DialogEnable				"{3: ""A strange spell in an unrecognizable language flows from your lips. Just as the intelligence indicated, the gold coin rapidly shifts under Mammon's Code, its form gradually morphing into a key—""}"
+142	142		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable02.prefab', 5: '5'}
+143	143		402							{1: '4359'}
+144	144		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront95.png', 3: '1', 4: '0', 5: '0'}
+145	145		301				DialogDisable			{3: 'But you suddenly stop just as the transformation nears completion.'}
+146	146		302							"{2: ""That's enough for a demonstration to prove I'm not lying."", 3: '147'}"
+147	147		302							"{2: ""If you want to reach the City of No Return, you'll have to offer me something in return."", 3: '148'}"
+148	148		201							{1: '1', 2: '501123', 3: '2'}
+149	149		301			DialogEnable				{1: '1', 2: 'Madam Raphael', 3: 'Heh...', 4: '1'}
+150	150		301							{3: 'The Archangel laughs with disdain, and this time her laughter rings far more triumphant than ever before.'}
+151	151		306							{1: '1'}
+152	152		204							{1: '1'}
+153	153		301							"{3: 'Whatever schemes Lilith might still have up her sleeve, Raphael knows she\'s already won. Extracting memories from humans is child\'s play for Angels, and once she has ""Gray Raven"" in her grasp, she\'ll have all the time in the world to get that code.'}"
+154	154		301							"{3: ""She's already secured the leverage she needs to overpower the authority of her fellow Archangels.""}"
+155	155		306							
+156	156		204							{1: '1', 2: '2'}
+157	157		301							{2: 'Madam Raphael', 3: 'Lilith, your greed was always going to be your undoing.', 4: '1'}
+158	158		204							{1: '1'}
+159	159		306							{1: '1'}
+160	160		301							"{3: ""Now that I've confirmed the code is genuine, this human no longer needs freedom.""}"
+161	161		306							
+162	162		401							{1: '2', 2: '4134'}
+163	163		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieGlow.prefab', 2: '2', 5: '6'}
+164	164		511							{1: '6', 2: '0', 3: '-160|-350|-150'}
+165	165		301							{3: 'She raises her hand once more, brilliant points of light swirling together in her palm, coalescing into a blazing orb—'}
+166	166		204							{1: '1', 2: '2'}
+167	167		301							{2: 'Madam Raphael', 3: 'And you, you can spend whatever pathetic life you have left regretting your foolish attempt to bargain with an Angel.', 4: '1'}
+168	168		402							{1: '4134'}
+169	169		301				DialogDisable			{3: 'But she overlooked one critical detail. Her own arrogance has quietly become her greatest vulnerability.'}
+170	170		401							{1: '1', 2: '36'}
+171	171		401							{1: '2', 2: '819016'}
+172	172		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+173	173		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieGlow.prefab', 5: '6'}
+174	174		401							{1: '2', 2: '2593'}
+175	175		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab', 2: '3'}
+176	176		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0.15'}
+177	177		204							{1: '1', 2: '5'}
+178	178		502						300.0	{1: 'PanelActor1Shake'}
+179	179		301			DialogEnable	DialogDisable			{3: 'The moment she raises her hand, a razor-sharp umbrella tip plunges through her heart from behind, piercing between her ribs in a crimson burst.'}
+180	180		401							{1: '1', 2: '279'}
+181	181		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHongBg.prefab'}
+182	182		205						1500.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0', 5: '1.5'}
+183	183		301			DialogEnable	DialogDisable			"{3: ""Such a wound could never kill an Archangel, but the Demon's strike wasn't meant to be lethal. It's meant to create a moment to snatch the gold coin from the Archangel's grasp.""}"
+184	184		202							{1: '1'}
+185	185		401							{1: '2', 2: '4276'}
+186	186		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0', 4: '0.8', 5: '0.5'}
+187	187		205						1800.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront95.png', 3: '0', 4: '1', 5: '0.5'}
+188	188		104							{1: '0|-300|0', 2: '0.25', 4: '4'}
+189	189		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0.8', 4: '0', 5: '0.25'}
+190	190		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront95.png', 3: '1', 4: '0', 5: '0.25'}
+191	191		401						150.0	{1: '2', 2: '5310'}
+192	192		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '2', 5: '7'}
+193	193		511						500.0	{1: '7', 2: '0', 3: '0|-150|-200', 4: '180'}
+194	194		301			DialogEnable				{3: 'The golden disc tumbles down, frozen in its half-transformed state, but in that fleeting instant, a pair of pale, slender hands intercepts it and hurls the coin skyward.'}
+195	195		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 5: '7'}
+196	196		201							{1: '18', 2: '501297', 3: '5', 4: '-590', 5: '-220', 6: '330'}
+197	197		301							"{1: '1', 2: '""Famine""', 3: 'Gray Raven!', 4: '18'}"
+198	198		202			DialogDisable				{1: '18'}
+199	199		302							{2: '(Recites the final part of the spell)', 3: '200'}
+200	200		401							{1: '2', 2: '4134'}
+201	201		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable02.prefab', 2: '2', 5: '8'}
+202	202		511							{1: '8', 2: '0', 3: '0|0|-690'}
+203	203		301			DialogEnable				{3: 'You swiftly recite the second half of the code, and this time the transformation completes and the coin morphs flawlessly into a key while still airborne.'}
+204	204		402							{1: '4134'}
+205	205		401							{1: '2', 2: '759'}
+206	206		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable02.prefab', 5: '8'}
+207	207		301				DialogDisable			{3: 'Lilith unleashes a surge of raw magical energy from her palms, catching Morigan in the torrent as the raven snatches the airborne key. The bird and key fuse into a living missile streaking straight for the stone gate—'}
+208	208		201							{1: '1', 2: '501297', 3: '2', 4: '-600'}
+209	209		203							{1: '1', 2: '0.25', 3: '-300'}
+210	210		301			DialogEnable	DialogDisable			"{1: '1', 2: '""Famine""', 3: ""Let's go!"", 4: '1'}"
+211	211		401							{1: '2', 2: '4152'}
+212	212		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziEndRed.prefab', 2: '2'}
+213	213		202						500.0	{1: '1'}
+214	214		301			DialogEnable	AniZhuanchangBegin			{3: 'In the next instant, the Femon Knight seizes the Bloodsworn by the collar, her bloodied finger tracing another magic circle through the air as she whisks them both from the scene.'}
+215	215		502							{1: 'DialogDisable'}
+216	216		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1019.jpg'}
+217	217		401							{1: '2', 2: '4322'}
+218	218		104							{1: '0|0|0', 2: '0', 4: '4'}
+219	219		104							{1: '0|0|0', 2: '0', 4: '1'}
+220	220		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory295.png', 3: '0', 4: '1', 5: '0'}
+221	221		502							{1: 'RImgBg4Shake'}
+222	222		502							{1: 'AniZhuanchangEnd'}
+223	223		301			DialogEnable	DialogDisable			{3: 'BOOM, BOOM!'}
+224	224		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+225	225		401						200.0	{1: '2', 2: '5812'}
+226	226		401							{1: '2', 2: '4374'}
+227	227		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory295.png', 3: '1', 4: '0', 5: '0.5'}
+228	228		104						700.0	{1: '0|0|-100', 2: '0.7', 4: '1'}
+229	229		402							{1: '5812'}
+230	230		401							{1: '2', 2: '9317017'}
+231	231		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+232	232		502							{1: 'RImgBg1Shake'}
+233	233		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+234	234		301			DialogEnable	DialogDisable			{3: 'The high-speed raven clutching the key smashes through the massive stone gate, and you and Demon tumble into the corridors of the City of No Return.'}
+235	235		401							{1: '2', 2: '970804'}
+236	236		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2', 5: '9'}
+237	237		511						600.0	{1: '9', 2: '0', 3: '0|-100|-200'}
+238	238		301			DialogEnable	DialogDisable			"{3: ""Struggling to peer through the swirling dust and darkness, you spot Mammon's key still clutched in the claws of the dazed Morigan as it plummets toward the infernal depths below.""}"
+239	239		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 5: '9'}
+240	240		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+241	241		401							{1: '2', 2: '4304'}
+242	242		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable03.prefab', 2: '2', 5: '10'}
+243	243		511							{1: '10', 2: '0', 3: '0|0|0'}
+244	244		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+245	245		502						1000.0	{1: 'RImgBg1Shake'}
+246	246		401							{1: '2', 2: '4304'}
+247	247		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable03.prefab', 2: '2', 5: '11'}
+248	248		511							{1: '11', 2: '0', 3: '400|100|0'}
+249	249		502						1000.0	{1: 'RImgBg1Shake'}
+250	250		401							{1: '2', 2: '4260'}
+251	251		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable03.prefab', 2: '2', 5: '12'}
+252	252		511							{1: '12', 2: '0', 3: '-500|-100|0'}
+253	253		502						1000.0	{1: 'RImgBg1Shake'}
+254	254		301			DialogEnable				{3: 'Just as Lilith reaches out to catch Morigan, a volley of light projectiles forces her back. She has no choice but to grab Gray Raven and keep running.'}
+255	255		201							{1: '1', 2: '501123', 3: '5'}
+256	256		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+257	257		301			DialogShake	DialogDisable			{1: '1', 2: 'Madam Raphael', 3: 'Little insects. How long do you think you can keep running?!', 4: '1'}
+258	258		202							{1: '1'}
+259	259		505						600.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+260	260		401							{1: '2', 2: '2926'}
+261	261		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionL.prefab', 2: '2'}
+262	262		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab', 2: '2'}
+263	263		502						1000.0	{1: 'RImgBg1Shake'}
+264	264		505						50.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab'}
+265	265		401							{1: '2', 2: '4260'}
+266	266		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionR.prefab', 2: '2'}
+267	267		502							{1: 'RImgBg1Shake'}
+268	268		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab', 2: '3'}
+269	269		301			DialogEnable				"{3: ""Raphael's rage has consumed all reason. She no longer cares if her assault brings down the entire vault, advancing with a relentless barrage of light projectiles that carelessly obliterate the scattered treasures, each blast sending glittering clouds of gold dust spiraling through the air.""}"
+270	270		301							"{3: ""Centuries of Mammon's carefully hoarded wealth crumble to dust in mere seconds. The sight hurts Lilith so deeply she feels her heart might bleed.""}"
+271	271		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab'}
+272	272		201							{1: '1', 2: '501297', 3: '17', 4: '-300'}
+273	273		301				DialogDisable			"{1: '1', 2: '""Famine""', 3: 'Tsk... but that gold never did anything wrong.', 4: '1'}"
+274	274		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+275	275		202							{1: '1', 6: '1'}
+276	276		401							{1: '2', 2: '4176'}
+277	277		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionL.prefab', 2: '2'}
+278	278		502							{1: 'RImgBg1Shake'}
+279	279		401						500.0	{1: '2', 2: '5883'}
+280	280		301			DialogEnable				{3: 'Her words are barely out when another blazing projectile slams into the treasure hoard, sending countless gold coins cascading down in a shimmering waterfall.'}
+281	281		402							{1: '5883'}
+282	282		201							{1: '1', 2: '501123', 3: '5'}
+283	283		301			DialogShake				"{1: '1', 2: 'Madam Raphael', 3: ""How vile! If the Supreme Heavens hadn't decreed that Mammon's throne cannot be empty, that someone must claim the Golden King's seat, I would never have defiled myself in this wretched place!"", 4: '1'}"
+284	284		301							"{3: ""Since accepting this mission, she's suffered defeat after defeat against Lilith, and her once-unshakable arrogance has crumbled into blind, consuming rage.""}"
+285	285		301			RImgBg1Shake	DialogDisable			{2: 'Madam Raphael', 3: 'The Sinclair blood is as foul as ever! Eleanor, you should have perished in that forest all those years ago, killed by your own parents!', 4: '1'}
+286	286		202							{1: '1'}
+287	287		302							{2: 'Eleanor?', 3: '288'}
+288	288		301			DialogEnable				{3: 'Though the situation grows more desperate by the second, you manage to catch every crucial word even while dodging for your life.'}
+289	289		201							{1: '1', 2: '501123'}
+290	290		301				DialogDisable			{1: '1', 2: 'Madam Raphael', 3: 'Oh? She never mentioned that name to you?', 4: '1'}
+291	291		202						600.0	{1: '1'}
+292	292		401							{1: '2', 2: '4322'}
+293	293		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionR.prefab', 2: '2'}
+294	294		502						500.0	{1: 'RImgBg1Shake'}
+295	295		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryExplosionL.prefab', 2: '2'}
+296	296		401							{1: '2', 2: '884'}
+297	297		502						1000.0	{1: 'RImgBg1Shake'}
+298	298		301			DialogEnable				{3: 'Her vicious assault halts for just a moment as a mocking smile spreads across her face, then she raises her hand and unleashes an even deadlier attack.'}
+299	299		201							{1: '1', 2: '501123', 3: '2'}
+300	300		301							{1: '1', 2: 'Madam Raphael', 3: 'Hahaha! And here I thought you two shared such a deep bond. She never even told you about her past?', 4: '1'}
+301	301		204							{1: '1'}
+302	302		301							"{2: 'Madam Raphael', 3: ""Haha! Then I'll tear down her mask myself. Listen carefully, Lilith is nothing but a lie. Eleanor Sinclair is her real name."", 4: '1'}"
+303	303		301							{2: 'Madam Raphael', 3: 'Her parents were appointed as tax collectors by the Sanctuary, yet they repaid this honor with theft. They stole funds and taxes meant for the people. When I discovered their crimes, I was merciful and gave them a warning.', 4: '1'}
+304	304		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+305	305		401							{1: '2', 2: '4387'}
+306	306		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+307	307		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory985.jpg'}
+308	308		504							{1: '0.7'}
+309	309		201							{1: '1', 2: '501297', 4: '-300'}
+310	310		301							"{1: '1', 2: '""Famine""', 3: 'My father was a tax collector in a small town. He worked himself to the bone, but the Angels in their lofty realm were never satisfied with what our poor little town could scrape together each month.', 4: '1'}"
+311	311		204							{1: '1', 2: '5'}
+312	312		301							"{2: '""Famine""', 3: 'Naturally, the Angels were quick to pin the blame on their ""incompetent tax collector."" Before long, my parents were executed on completely fabricated charges.', 4: '1'}"
+313	313		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+314	314		401							{1: '2', 2: '4388'}
+315	315		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1019.jpg'}
+316	316		504							{1: '0'}
+317	317		202							{1: '1', 6: '1'}
+318	318		301				DialogDisable			"{3: ""Lilith's words from before race through your mind, and the contradictions between her story and Raphael's are undeniable.""}"
+319	319		302							{2: '...Is that true, Lilith?', 3: '320'}
+320	320		201							{1: '1', 2: '501297', 3: '17', 4: '-300'}
+321	321		301			DialogEnable				"{1: '1', 2: '""Famine""', 3: '...', 4: '1'}"
+322	322		202							{1: '1'}
+323	323		301							{3: 'You cast a doubtful look at the Demon running alongside you, but her silence speaks louder than any words.'}
+324	324		201							{1: '1', 2: '501123'}
+325	325		301							"{1: '1', 2: 'Madam Raphael', 3: ""But this foolish, ungrateful couple kept pushing their luck, over and over again, until even the people of the town couldn't stand their greed any longer and drove them into the woods with torches and pitchforks."", 4: '1'}"
+326	326		301							{2: 'Madam Raphael', 3: 'So that couple made a choice. They threw their own daughter to the wolves, leaving her behind as they fled to the church, begging me to save their worthless lives.', 4: '1'}
+327	327		204							{1: '1', 2: '2'}
+328	328		301							"{2: 'Madam Raphael', 3: ""Once again, I saved that wretched couple, and I even arranged for Eleanor's release after the townspeople seized her, giving her a fresh start in another town."", 4: '1'}"
+329	329		204							{1: '1', 2: '4'}
+330	330		301							"{2: 'Madam Raphael', 3: ""I gave that family so many chances, but the Sinclairs have rotten blood in their veins. No matter how many fresh starts they get, they'd always crawl back to the gambling table."", 4: '1'}"
+331	331		204							{1: '1', 2: '5'}
+332	332		301				DialogDisable			"{2: 'Madam Raphael', 3: ""So now do you see? All her suffering is her own doing. Deep down, she's nothing more than a greedy gambler who can never get enough—"", 4: '1'}"
+333	333		401							{1: '2', 2: '819016'}
+334	334		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0'}
+335	335		401						300.0	{2: '5793'}
+336	336		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+337	337		201							{1: '1', 2: '501297', 3: '5', 4: '-300'}
+338	338		205						500.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '0.3'}
+339	339		301			DialogEnable				"{2: '""Famine""', 3: ""—That's enough. I guess Angels really love the sound of their own voice."", 4: '1'}"
+340	340		301				DialogDisable			"{3: ""Lilith, who has remained silent through it all, finally strikes back. Her umbrella snaps open in one swift motion, conjuring a dark brown barrier that shields you from Raphael's unrelenting stone attacks.""}"
+341	341		302							{2: 'Everyone carries secrets from their past. None of that matters anymore.', 3: '342'}
+342	342		302							"{2: ""It won't break the covenant between us."", 3: '343'}"
+343	343		204							{1: '1'}
+344	344		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+345	345		301			DialogEnable				"{3: ""As the dust clears, Lilith stands guard at your side. Together, you face Raphael's relentless assault, divine light washing over them like a golden waterfall.""}"
+346	346		401							{1: '1', 2: '36'}
+347	347		204							{1: '1', 2: '8'}
+348	348		301				DialogDisable			"{2: '""Famine""', 3: ""How pathetic, Raphael. You don't even understand why we chose to stand together in the first place."", 4: '1'}"
+349	349		401							{1: '2', 2: '5530'}
+350	350		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '0', 4: '1', 5: '0'}
+351	351		401							{1: '1', 2: '42'}
+352	352		204						1500.0	{1: '1', 2: '3'}
+353	353		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '1', 4: '0', 5: '2'}
+354	354		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryRedSmokeNew.prefab', 3: '1', 5: '31'}
+355	355		511						2000.0	{1: '31', 2: '0', 3: '300|0|0'}
+356	356		502							{1: 'DialogShake'}
+357	357		301			DialogEnable				"{2: '""Famine""', 3: ""That's exactly why you're doomed to fail. You're blind to what really matters!"", 4: '1'}"
+358	358		401							{1: '2', 2: '9342022'}
+359	359		301							"{3: ""She rips open the wound across her chest, unleashing Famine's ravenous hunger to surge through her veins. Gathering every last fragment of her power, she prepares for a final, all-or-nothing strike.""}"
+360	360		204							{1: '1'}
+361	361		301							"{2: '""Famine""', 3: ""Cover me. I'm going after Morigan. Anything with Mammon's power will eventually be drawn back to the Infernal Throne."", 4: '1'}"
+362	362		204							{1: '1', 2: '2'}
+363	363		301							"{2: '""Famine""', 3: ""I'm getting that key back and kicking Raphael out for good!"", 4: '1'}"
+364	364		301							{3: 'In the chaos, countless thoughts race through your mind, but none offer a clear path out of this desperate situation.'}
+365	365		301				DialogDisable			{3: 'And so, the Bloodsworn chooses to place complete faith in their knight.'}
+366	366		302							"{2: ""I'll watch your back."", 3: '367', 4: 'Hurry back.', 5: '367'}"
+367	367		204							{1: '1', 2: '1'}
+368	368		401							{1: '2', 2: '4895'}
+369	369		203							{1: '1', 2: '1', 3: '-300', 5: '-100'}
+370	370		104						1500.0	{1: '0|0|-200', 2: '1', 4: '1'}
+371	371		401						500.0	{1: '2', 2: '1543'}
+372	372		401							{1: '2', 2: '2975'}
+373	373		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1019.jpg', 3: '0', 4: '0.8', 5: '0.3'}
+374	374		104						300.0	{1: '0|0|-450', 2: '0.3', 4: '3'}
+375	375		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1019.jpg', 3: '0.8', 4: '0', 5: '0.3'}
+376	376		104							{1: '0|0|-200', 2: '0.3', 4: '3'}
+377	377		401							{1: '2', 2: '4819'}
+378	378		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '3'}
+379	379		301			DialogEnable	DialogDisable			{3: 'The Bloodsworn rises and takes the scepter Famine offers, gripping the heavy Moon Umbrella tight. Crimson light blazes forth as blood surges through your veins, an irresistible urge driving you to master it, to make it yours.'}
+380	380		204							{1: '1', 2: '2'}
+381	381		401							{1: '2', 2: '4895'}
+382	382		203						1500.0	{1: '1', 2: '1', 3: '-300', 5: '-200'}
+383	383		402							{1: '4819'}
+384	384		401							{1: '2', 2: '5321'}
+385	385		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+386	386		204							{1: '1', 2: '8'}
+387	387		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+388	388		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab'}
+389	389		401							{1: '2', 2: '902'}
+390	390		111						2000.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+391	391		204							{1: '1'}
+392	392		301			DialogEnable	DialogDisable			"{3: ""The long-haired woman gives a fierce, defiant smile as she pours every last ounce of her strength into the Bloodsworn. Two utterly different torrents of power clash and spiral across the umbrella's surface before finally merging like rivers meeting the sea.""}"
+393	393		401							{1: '2', 2: '4895'}
+394	394		202							{1: '1'}
+395	395		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryRedSmokeNew.prefab', 4: '1', 5: '31'}
+396	396		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+397	397		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+398	398		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong03.prefab'}
+399	399		402						500.0	{1: '902'}
+400	400		301			DialogEnable				{3: 'No time for explanations. The moment she releases her grip, she turns and strides toward the fissure leading into the depths below.'}
+401	401		111							{1: '0'}
+402	402		201							{1: '1', 2: '501297', 4: '-300'}
+403	403		301				DialogDisable			"{1: '1', 2: '""Famine""', 3: ""Just hold her off for five minutes. After that, I'll handle the rest."", 4: '1'}"
+404	404		401							{1: '2', 2: '9342045'}
+405	405		202							{1: '1'}
+406	406		203						500.0	{1: '1', 2: '0.25', 3: '-300', 4: '-1200'}
+407	407		301			DialogEnable	DialogDisable			{3: 'Then she leaps up and plunges into the abyss.'}
+408	408		302							{2: '...', 3: '409', 4: '(Raise the Moon Umbrella)', 5: '409'}
+409	409		201							{1: '1', 2: '501123', 3: '4'}
+410	410		301			DialogEnable				{1: '1', 3: 'With Lilith gone, Raphael emerges from behind the ruins. A single glance tells her everything. You have chosen to side with the Demon after all.'}
+411	411		301							{2: 'Madam Raphael', 3: 'How disappointing. I thought that little story would be enough to show you who she really is.', 4: '1'}
+412	412		302							"{2: ""But that same story showed me your true colors, too, didn't it?"", 3: '413'}"
+413	413		401							{1: '2', 2: '5327'}
+414	414		301							{3: 'The Moon Umbrella opens, now fully controlled by the human. Archangel blood still stains its tip as the Bloodsworn points this borrowed weapon at their enemy.'}
+415	415		204							{1: '1', 2: '2'}
+416	416		301							"{2: 'Madam Raphael', 3: ""Haha, well then... you'd better not let me down."", 4: '1'}"
+417	417		401							{1: '2', 2: '5380'}
+418	418		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDust.prefab', 3: '1'}
+419	419		301							"{3: ""Your defiance ignites her fury once again. Golden runes blaze across Raphael's form, weaving into shimmering pools of light as she unleashes the full extent of her Archangel power.""}"
+420	420		301				AniZhuanchangBegin			"{2: 'Madam Raphael', 3: 'I\'m absolutely thrilled to fight the legendary ""Gray Raven"" in combat. Do try to make it interesting for at least a minute, won\'t you?', 4: '1'}"
+421	421		202							{1: '1', 6: '1'}
+422	422		502						500.0	{1: 'DialogDisable'}
+423	423		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDust.prefab', 4: '1'}
+424	424		104							{1: '0|0|0', 2: '0', 4: '1'}
+425	425		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1020.jpg'}
+426	426		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '2'}
+427	427		502						300.0	{1: 'AniZhuanchangEnd'}
+428	428		401							{1: '2', 2: '18511011'}
+429	429		401							{1: '2', 2: '4805'}
+430	430		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash.prefab', 2: '2', 5: '13'}
+431	431		511							{1: '13', 2: '0', 3: '0|0|0'}
+432	432		502						1000.0	{1: 'RImgBg1Shake'}
+433	433		401							{1: '2', 2: '9342058'}
+434	434		401							{1: '2', 2: '5152'}
+435	435		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2', 5: '14'}
+436	436		511							{1: '14', 2: '0', 3: '0|0|0'}
+437	437		502						1000.0	{1: 'RImgBg1Shake'}
+438	438		401							{1: '2', 2: '18511011'}
+439	439		401							{1: '2', 2: '799'}
+440	440		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash.prefab', 2: '2', 5: '15'}
+441	441		511							{1: '15', 2: '0', 3: '0|0|0'}
+442	442		502						1000.0	{1: 'RImgBg1Shake'}
+443	443		301			DialogEnable				"{3: ""The Moon Umbrella clashes with blazing projectiles in thunderous bursts of metal and light. Both you and the Archangel are caught in this tide of destruction, plummeting through the city's floating architecture.""}"
+444	444		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+445	445		401						200.0	{1: '2', 2: '884'}
+446	446		401							{1: '2', 2: '5883'}
+447	447		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab', 2: '2'}
+448	448		301			RImgBg1Shake				{3: 'As you fall, countless gold coins rain down like scattered starlight, drifting alongside you to blanket every corner of the City of No Return.'}
+449	449		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab'}
+450	450		402							{1: '5883'}
+451	451		201							{1: '1', 2: '501123', 3: '2'}
+452	452		301							"{1: '1', 2: 'Madam Raphael', 3: ""Let me guess... that little schemer went after the key that fell into the depths, didn't she?"", 4: '1'}"
+453	453		204							{1: '1', 2: '5'}
+454	454		301			DialogShake	DialogDisable			{2: 'Madam Raphael', 3: 'But do you really think one measly code is enough to send me packing?!', 4: '1'}
+455	455		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable03.prefab', 2: '2', 5: '16'}
+456	456		511						200.0	{1: '16', 2: '0', 3: '-100|-200|0'}
+457	457		401						300.0	{1: '2', 2: '18511038'}
+458	458		202							{1: '1'}
+459	459		401							{1: '2', 2: '819016'}
+460	460		205						500.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.2'}
+461	461		301			DialogEnable	DialogDisable			"{3: ""A blazing projectile grazes Raphael's arm. With nowhere to dodge, the Bloodsworn desperately raises the Moon Umbrella mid-fall, bracing for the devastating blow.""}"
+462	462		104						50.0	{1: '0|50|-130', 2: '0', 4: '7'}
+463	463		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+464	464		205							{1: '1005'}
+465	465		401							{1: '2', 2: '4304'}
+466	466		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1210.jpg', 3: '0', 4: '1', 5: '0'}
+467	467		502							{1: 'RImgBg7Shake'}
+468	468		301			DialogEnable	DialogDisable			{3: '—BOOM!'}
+469	469		401							{1: '2', 2: '2593'}
+470	470		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+471	471		205							{1: '1007', 3: '0', 4: '0', 5: '0'}
+472	472		104							{1: '0|0|0', 2: '0', 4: '7'}
+473	473		205						800.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront32.png', 3: '1', 4: '1', 5: '0'}
+474	474		301			DialogEnable				{3: 'The projectile strikes the translucent blood barrier and erupts in a blinding burst. You convulse behind the umbrella as scattered fragments of light tear through your flesh, carving bloody gashes.'}
+475	475		205							{1: '1004'}
+476	476		201							{1: '1', 2: '501123', 3: '2'}
+477	477		301			DialogShake				"{1: '1', 2: 'Madam Raphael', 3: ""Well, well. Looks like you're the one getting left behind this time, Gray Raven!"", 4: '1'}"
+478	478		301							{3: 'Your body already has countless wounds, every inch of flesh searing under blistering heat, while Raphael continues her triumphant, mocking laughter.'}
+479	479		204							{1: '1'}
+480	480		301							"{2: 'Madam Raphael', 3: ""I tried to warn you! She's a parasite who lives by lying and stealing whatever she needs from others."", 4: '1'}"
+481	481		301				DialogDisable			"{2: 'Madam Raphael', 3: ""Since you won't listen to reason, don't blame me for what comes next. You'll just be another ghost haunting this forsaken city."", 4: '1'}"
+482	482		302							"{2: ""—We'll see who's left standing when this is over!"", 3: '483'}"
+483	483		401							{1: '2', 2: '1510'}
+484	484		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2', 5: '17'}
+485	485		511						250.0	{1: '17', 2: '0', 3: '-400|-50|200'}
+486	486		401							{1: '2', 2: '1510'}
+487	487		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2', 5: '18'}
+488	488		511						250.0	{1: '18', 2: '0', 3: '0|0|200'}
+489	489		401							{1: '2', 2: '1510'}
+490	490		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '2', 5: '19'}
+491	491		511						250.0	{1: '19', 2: '0', 3: '500|-100|200'}
+492	492		401							{1: '2', 2: '559'}
+493	493		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}
+494	494		511							{1: '17', 2: '0.35', 3: '0|0|0'}
+495	495		511							{1: '18', 2: '0.35', 3: '0|0|0'}
+496	496		511							{1: '19', 2: '0.35', 3: '0|0|0'}
+497	497		204							{1: '1', 2: '2'}
+498	498		203							{1: '1', 2: '0.7', 5: '-200'}
+499	499		104						200.0	{1: '0|0|-200', 2: '0.7', 4: '1'}
+500	500		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '0', 4: '1', 5: '0.5'}
+501	501		301			DialogEnable	DialogDisable			{3: 'You unleash everything in one desperate strike, firing your last blood bullets in brilliant crimson streaks across the sky, while Raphael hurls herself forward to meet the attack with equal fury.'}
+502	502		202							{1: '1', 6: '1'}
+503	503		104							{1: '0|0|0', 2: '0', 4: '1'}
+504	504		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+505	505		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+506	506		401							{1: '2', 2: '9389034'}
+507	507		205						2500.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '1', 4: '0', 5: '2.5'}
+508	508		401							{1: '2', 2: '884'}
+509	509		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+510	510		301			DialogEnable	AniZhuanchangBegin			{3: 'Amid thunderous roars, both you and the Angel crash down to the deepest depths together, the devastating impact sending shockwaves that shake the entire city.'}
+511	511		502							{1: 'DialogDisable'}
+512	512		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+513	513		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1020.jpg'}
+514	514		401						2000.0	{1: '1', 2: '36'}
+515	515		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+516	516		502						1500.0	{1: 'AniZhuanchangEnd'}
+517	517		401						2000.0	{1: '2', 2: '4895'}
+518	518		401							{1: '2', 2: '4276'}
+519	519		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab', 2: '2'}
+520	520		301			DialogEnable				{3: 'Heavy eyelids flutter open, and you instinctively reach for the Moon Umbrella lying nearby, but before your fingers can close around the handle, a blazing light blurs your vision.'}
+521	521		401							{1: '2', 2: '9389034'}
+522	522		401							{1: '2', 2: '5790'}
+523	523		301			RImgBg1Shake				{3: 'Bzzzz—'}
+524	524		401							{1: '1', 2: '6208'}
+525	525		301				DialogDisable			"{3: ""The entire city shudders from yet another tremor, its twisted corridors shrieking like caged beasts as the structure itself seems to come alive, roaring in jubilant celebration of someone's homecoming.""}"
+526	526		401							{1: '2', 2: '4134'}
+527	527		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '3'}
+528	528		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab'}
+529	529		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+530	530		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}
+531	531		104							{1: '180|-100|-200', 2: '0', 4: '1'}
+532	532		101						50.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5901_17.jpg'}
+533	533		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+534	534		104						5300.0	{1: '-120|-100|-200', 2: '4.5', 4: '1'}
+535	535		104						3500.0	{1: '0|0|0', 2: '2.5', 4: '1'}
+536	536		301			DialogEnable	DialogDisable			"{3: ""Nearby, atop Mammon's throne, an ominous, razor-sharp light engulfs Lilith's form as she stands over a skeleton, her hand plunging deep into the bone cage of its ribcage.""}"
+537	537		104							{1: '-60|-110|-330', 2: '0', 4: '4'}
+538	538		401							{1: '2', 2: '2720'}
+539	539		205						2000.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgCg/Cg5901_17.jpg', 3: '0', 4: '1', 5: '1'}
+540	540		301			DialogEnable				{3: 'She extracts the golden coin from between the ribs, cradling it like forbidden fruit before her tongue darts out to get a taste.'}
+541	541		301							{2: 'Lilith', 3: 'Greed, regret, torment, and pure indulgence...'}
+542	542		301				DialogDisable			"{2: 'Lilith', 3: ""Mmm, the former Mammon's remains certainly don't disappoint. It's such a wonderful flavor.""}"
+543	543		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+544	544		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0'}
+545	545		401							{1: '2', 2: '5287'}
+546	546		109							{1: '11', 2: '<size=60>Then, she bites down on the desire in one decisive crunch.</size>', 9: '3'}
+547	547		301							{3: 'Then, she bites down on the desire in one decisive crunch.'}
+548	548		104							{1: '0|0|0', 2: '0', 4: '4'}
+549	549		205							{1: '1004'}
+550	550		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '1'}
+551	551		110						500.0	{1: '11|1'}
+552	552		401							{1: '2', 2: '4348'}
+553	553		205							{1: '1007'}
+554	554		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieFire04.prefab', 2: '2'}
+555	555		104							{1: '-60|-110|-330', 2: '0', 4: '1'}
+556	556		101						6000.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5901_18.jpg', 4: '1'}
+557	557		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieFire04.prefab'}
+558	558		301			DialogEnable				{3: 'Blazing flames surge up her body with explosive force, and at last she tastes the sweet fruit she has pursued for so long.'}
+559	559		301				DialogDisable			{3: 'Her demonic body allows her to weather the crushing toll that would obliterate any mortal.'}
+560	560		401							{1: '2', 2: '4780'}
+561	561		104						4500.0	{1: '0|0|0', 2: '4'}
+562	562		301			DialogEnable				"{3: 'The desire dissolves rapidly within her stomach, digested and reforged into demonic bone that restructures Lilith\'s form as she transforms into the new ""Mammon.""'}"
+563	563		301			DialogShake				"{2: 'Lilith', 3: ""That's it... don't stop!""}"
+564	564		301							{3: 'She laughs, savoring the sweet ecstasy that races through every inch of her being.'}
+565	565		301							"{2: 'Lilith', 3: ""Come now, surrender everything you've worked so hard to gather—""}"
+566	566		301			RImgBg1Shake				{2: 'Lilith', 3: 'I am your new ruler, and everything will kneel before me!'}
+567	567		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 2: '2', 5: '20'}
+568	568		511						400.0	{1: '20', 2: '0', 3: '26|186.5|-400'}
+569	569		401							{1: '2', 2: '4276'}
+570	570		301				DialogDisable			{3: 'Then the crown that has hung empty for so long settles upon her head.'}
+571	571		402							{1: '4780'}
+572	572		401							{1: '2', 2: '4348'}
+573	573		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefShining02.prefab', 5: '20'}
+574	574		501						5800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieFire02.prefab', 2: '2'}
+575	575		101						200.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+576	576		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1020.jpg'}
+577	577		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieFire02.prefab'}
+578	578		502							{1: 'AniZhuanchangEnd'}
+579	579		301			DialogEnable				{1: '1', 3: 'As the flames die away, the newly born ruler stands atop the treasure mountain, slowly lowering her now-empty hand.'}
+580	580		202							{1: '1'}
+581	581		401							{1: '2', 2: '4383'}
+582	582		301				DialogDisable			{3: 'Then, with a smile of pure satisfaction, she slowly steps down from her throne and approaches you lying on the ground.'}
+583	583		201							{1: '1', 2: '501297', 3: '7', 4: '-300'}
+584	584		203						2000.0	{1: '1', 2: '1', 3: '-300', 5: '-50'}
+585	585		301			DialogEnable	DialogDisable			"{3: ""Her face shows no trace of regret, much less guilt. Raphael was right. Once again, she's torn flesh from another person through her lies.""}"
+586	586		302							{2: '...You knew how to become Mammon from the very beginning.', 3: '587'}
+587	587		301			DialogEnable	DialogDisable			"{2: '""Mammon""', 3: ""This doesn't change our plan. I'll still take down Raphael for you."", 4: '1'}"
+588	588		401							{1: '2', 2: '4895'}
+589	589		203						1500.0	{1: '1', 2: '0.5', 3: '-300', 5: '-150'}
+590	590		401							{1: '2', 2: '1543'}
+591	591		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab'}
+592	592		111						1000.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+593	593		301			DialogEnable				{3: 'She extends her hand to you and pulls you up from the ground without giving you a chance to protest, overwhelming waves of demonic power surging from her palm.'}
+594	594		301							"{3: 'No proof is needed. You can tell immediately that she has become the genuine ""Golden King.""'}"
+595	595		204							{1: '1', 2: '10'}
+596	596		301							"{2: '""Mammon""', 3: ""Besides, I've got my own score to settle..."", 4: '1'}"
+597	597		301							"{3: 'The newly crowned ""Mammon"" runs her tongue along her lips, revealing a gleaming, newly grown fang that glints between her lips as proof of her transformation.'}"
+598	598		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong03.prefab'}
+599	599		202							{1: '1'}
+600	600		401							{1: '2', 2: '5291'}
+601	601		301							{3: 'Releasing your arm, she walks toward Raphael without looking back.'}
+602	602		402							{1: '5291'}
+603	603		201							{1: '1', 2: '501297', 3: '6', 4: '-300'}
+604	604		301		1		AniZhuanchangBegin			"{1: '1', 2: '""Mammon""', 3: 'I told you. Nothing disgusts me more than backstabbing scum who stack the deck.', 4: '1'}"

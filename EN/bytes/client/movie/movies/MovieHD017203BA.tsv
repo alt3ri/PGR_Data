@@ -1,0 +1,265 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory318.png'}
+2	2		401							{1: '1', 2: '210'}
+3	3		201							{1: '1', 2: '500260', 4: '-400'}
+4	4		201							{1: '2', 2: '500601', 4: '400'}
+5	5		401							{1: '2', 2: '941'}
+6	6		301			DialogEnable				{1: '1', 3: '>>>Trailblazer Log, Entry Number 8980. Significant distance remains until destination. Expected power insufficiency. Power recharge necessary. Mission target exhibits no worrying signs of health.'}
+7	7		301				AniZhuanchangBegin			{2: 'Weixian', 3: 'Are you hungry, Steely? You seem a little wobbly.', 4: '1'}
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory302.png'}
+9	9		401							{1: '2', 2: '941'}
+10	10		301			AniZhuanchangEnd				{1: '1', 3: '>>>Trailblazer Log, Entry Number 9234. Stable source of power secured. Trailblazer is not specialized for speed. Proceed with caution.'}
+11	11		301							"{2: 'Weixian', 3: ""Hey, I didn't know electricity is your food. Should have told me earlier."", 4: '1'}"
+12	12		301				AniZhuanchangBegin			"{2: 'Weixian', 3: ""Speaking of food, though, do you suppose I'd be exactly the same or become twice my size if I ate myself? Have you tried eating yourself, Steely?"", 4: '1'}"
+13	13		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory566.jpg'}
+14	14		401							{1: '2', 2: '941'}
+15	15		301			AniZhuanchangEnd				{1: '1', 3: '>>>Trailblazer Log, Entry Number 9374. Free of pursuit of Corrupted. Mission target exhibits no worrying signs of health. No abnormalities found en route. No attack from larger-sized Corrupted.'}
+16	16		301				AniZhuanchangBegin			"{2: 'Weixian', 3: ""The place you're taking me to? I have no idea. My uncle didn't tell me much about it. Any guess what it's like, Steely? Do you think we're gonna find a bunch of Steelies there?"", 4: '1'}"
+17	17		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory32.jpg'}
+18	18		401							{1: '2', 2: '941'}
+19	19		301			AniZhuanchangEnd				{1: '1', 3: '>>>Trailblazer Log, Entry Number 9462. Mission target...'}
+20	20		301							{2: 'Weixian', 3: 'Steely? Are you still there?', 4: '1'}
+21	21		301							{2: 'Weixian', 3: 'S-T-E-E-L-Y! HELLO?!', 4: '1'}
+22	22		301							{2: 'Trailblazer', 3: '...Human children are a lot more spirited than shown in the data.', 4: '2'}
+23	23		301							{3: 'Trailblazer stops in his tracks. God only knows how long it took them to finally stumble across a relatively unscathed charging station.'}
+24	24		301							{3: 'Long is the trip and dark is the night. Trailblazer needs to find a place where he can rest, recharge, and cool himself down—and if anything, Weixian definitely needs to rest. Trailblazer only grows surer when seeing the humans at a nearby human encampment getting ready for bed.'}
+25	25		301							"{2: 'Trailblazer', 3: ""Don't you need to sleep? You might have taken a nap on your way here, but it's time to sleep now."", 4: '2'}"
+26	26		301							"{2: 'Weixian', 3: ""Sleep? Nah, I'm fine."", 4: '1'}"
+27	27		301							{2: 'Trailblazer', 3: 'Do you need to feed? Humans need to eat.', 4: '2'}
+28	28		301							"{2: 'Weixian', 3: ""No, I'm okay..."", 4: '1'}"
+29	29		301							{2: 'Trailblazer', 3: 'Negative. Lack of sleep and food can have detrimental effects on the human body.', 4: '2'}
+30	30		401							{1: '2', 2: '8510116'}
+31	31		202							{1: '2'}
+32	32		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '2'}
+33	33		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}
+34	34		301							{3: 'As soon as he finishes speaking, Trailblazer soars into the air and vanishes into the woods.'}
+35	35		401							{1: '2', 2: '2603'}
+36	36		201							{1: '2', 2: '500601', 4: '400'}
+37	37		301							{1: '1', 3: 'A few minutes later, Trailblazer comes back with a dead boar. Judging from a lack of visible wounds on the boar, Weixian assumes that the boar probably died a quick and painless death.'}
+38	38		301							{2: 'Trailblazer', 3: 'Food secured. Please consume at once.', 4: '2'}
+39	39		301							{2: 'Weixian', 3: '...Are you seriously going to make me eat this?', 4: '1'}
+40	40		301							{2: 'Trailblazer', 3: 'Affirmative. Please note your point of concern should you refuse consumption.', 4: '2'}
+41	41		301							{3: 'Raising her hand, Weixian appears at a loss for words.'}
+42	42		301							{2: 'Weixian', 3: '...You really are putting me on the spot...', 4: '1'}
+43	43		301							"{2: 'Weixian', 3: ""But I guess I'll play along. I'll start a fire here, but I need you to find me something I can burn..."", 4: '1'}"
+44	44		202							{1: '2', 6: '1'}
+45	45		401						500.0	{1: '2', 2: '9342045'}
+46	46		201							{1: '2', 2: '500601', 4: '1000'}
+47	47		203							{1: '2', 2: '0.2', 3: '400'}
+48	48		301							{1: '1', 2: 'Trailblazer', 3: 'Roger that. Task complete.', 4: '2'}
+49	49		301							{2: 'Weixian', 3: 'That was quick!', 4: '1'}
+50	50		301							"{2: 'Weixian', 3: ""Let's see... Dry twigs, coal, and... what's this? An IDO-1 idol machine promotion brochure? Well, I guess I can make do with that."", 4: '1'}"
+51	51		202							{1: '1', 2: '2'}
+52	52		401							{1: '2', 2: '2636'}
+53	53		301							{3: 'After stacking up the twigs, Weixian produces a lighter out of her pocket and sets the stack on fire. With a flick, a shard of fire travels from the lighter and blazes across the twigs, leaving crispy cracks in its wake.'}
+54	54		402							{1: '2636'}
+55	55		401							{1: '2', 2: '952'}
+56	56		301							{3: 'Before she knows what happened, however, Trailblazer has gone ahead and stepped on the fire, killing it in the blink of an eye.'}
+57	57		201							{1: '1', 2: '500260', 4: '-400'}
+58	58		201							{1: '2', 2: '500601', 4: '400'}
+59	59		301							{1: '1', 2: 'Trailblazer', 3: 'There is no need to start a fire. Fire is dangerous and can be harmful to the body. Let me start a safe fire for you.', 4: '2'}
+60	60		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+61	61		401							{1: '2', 2: '2750'}
+62	62		401							{1: '2', 2: '1226'}
+63	63		301							"{3: ""With a finger snap, a jet of blue flame materializes from the tip of Trailblazer's finger.""}"
+64	64		301							"{2: 'Weixian', 3: ""Quite the magician, aren't you... except that totally kills the mood."", 4: '1'}"
+65	65		301							{2: 'Trailblazer', 3: 'Mood is meaningless and unquantifiable. So long as I am around, there is no need to start a fire.', 4: '2'}
+66	66		301							"{2: 'Weixian', 3: ""No, I don't think you're getting it. See, campfire is really important to humans."", 4: '1'}"
+67	67		301							"{2: 'Weixian', 3: ""You probably don't know this, but humans would gather around campfires to keep warm before technology came around! And people would always sleep around campfires."", 4: '1'}"
+68	68		301							"{2: 'Weixian', 3: ""I'm sure life wasn't easy back then, but it must have been so nice to be surrounded by people that..."", 4: '1'}"
+69	69		301							{3: 'Trying to physically describe her feelings, Weixian stretches out her arm and traces a few circles in the air.'}
+70	70		301							"{3: ""But it isn't long before she gives up.""}"
+71	71		301							"{2: 'Weixian', 3: ""It must have been so nice that... you know... Well, it's not really something I've ever experienced myself, though."", 4: '1'}"
+72	72		301							{2: 'Trailblazer', 3: 'According to my data, campfire was an activity that only a handful of campfire enthusiasts enjoyed for an extended period of time even before the Punishing Virus.', 4: '2'}
+73	73		301							{2: 'Trailblazer', 3: 'I fail to understand the meaning of such activity.', 4: '2'}
+74	74		301							{2: 'Weixian', 3: 'Well, you see, fire is... uhm...', 4: '1'}
+75	75		301							{3: 'Weixian tries again in a futile attempt to explain herself with gestures.'}
+76	76		301							"{2: 'Weixian', 3: ""Forget it, then. I'm not hungry anyway. Guess I'll just give this boar to the people camping around here."", 4: '1'}"
+77	77		301							{3: 'With a pout, Weixian turns around and points at the sky.'}
+78	78		301							{2: 'Weixian', 3: 'I see that fire is rocket science to you, but check out all the stars up there.', 4: '1'}
+79	79		301							{3: 'While the moon is nowhere to be seen, the Heavens are fortunately sparkling with a sky full of stars.'}
+80	80		301							{2: 'Weixian', 3: 'Humans have always enjoyed sky gazing. Want to give it a try?', 4: '1'}
+81	81		301							{2: 'Trailblazer', 3: 'Negative. Stars are merely sources of energy that celestial bodies or galaxies left in their wake a few hundred thousand years ago when they perished, making such energy inaccessible.', 4: '2'}
+82	82		301							"{2: 'Weixian', 3: ""But no one is trying to obtain any energy here! See, I'm trying to tell you how we feel when we look at stars. Feelings like, you know... regret, romance, and hope."", 4: '1'}"
+83	83		301							{2: 'Trailblazer', 3: 'Hope...', 4: '2'}
+84	84		301							{3: '—'}
+85	85		202							{1: '1', 2: '2', 6: '1'}
+86	86		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+87	87		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory84.jpg'}
+88	88		504							{1: '0.7'}
+89	89		201							{1: '1', 2: '500138', 7: '1'}
+90	90		301							"{1: '1', 2: 'Victor', 3: ""Stars are nothing more than sources of energy that celestial bodies or galaxies left in their wake a few hundred thousand years ago when they perished? Wow, I bet people think you're romantic, huh?"", 4: '1'}"
+91	91		301							"{2: 'Victor', 3: ""Stars might be what's left of dead celestial bodies—but every single one of them, whether they incidentally appeared from the Big Bang or split from a planet, carries a story long before our time."", 4: '1'}"
+92	92		301							"{2: 'Victor', 3: ""Doesn't it keep you up at night thinking about every single one of those stories?"", 4: '1'}"
+93	93		301							"{2: 'Victor', 3: ""As we are, humans aren't even remotely close to putting our hands on those stars—and we're trillions of light years away from getting to the bottom of their origin, given that we've only just started getting our feet wet in interstellar navigation."", 4: '1'}"
+94	94		301							{2: 'Victor', 3: 'But any progress at all is good progress.', 4: '1'}
+95	95		301							"{2: 'Victor', 3: ""With our eyes set on them, we'll be headed straight down the stellar path until we reach them..."", 4: '1'}"
+96	96		301							{2: 'Victor', 3: 'Which is why I created you, Trailblazer, and named you so...', 4: '1'}
+97	97		301							{2: 'Victor', 3: 'Because I want you to lead me down that path.', 4: '1'}
+98	98		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+99	99		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory32.jpg'}
+100	100		504							{1: '0'}
+101	101		201							{1: '1', 2: '500601'}
+102	102		301							{1: '1', 2: 'Trailblazer', 3: '...', 4: '1'}
+103	103		301							{2: 'Trailblazer', 3: 'Humans hold high hopes for the stars—hopes that are, for the most part, unrealistic.', 4: '1'}
+104	104		301							{2: 'Trailblazer', 3: 'I do, however, relate to humans in your fondness for stars.', 4: '1'}
+105	105		301							"{2: 'Trailblazer', 3: ""I've come this far in pursuit of the world's most powerful weapons and the most challenging of missions, the same way humans have been looking at stars hoping to one day reach them."", 4: '1'}"
+106	106		301							"{2: 'Trailblazer', 3: ""In a sense, humans and I are both trying to reach the peak of a proverbial mountain that's beyond our current selves, which is why I am able to relate."", 4: '1'}"
+107	107		201							{1: '1', 2: '500260'}
+108	108		301							{1: '1', 2: 'Weixian', 3: 'Wow, you and your speech right there, Steely... I could barely keep up with it. And that little analogy you made about reaching the peak of a proverbial mountain is quite interesting.', 4: '1'}
+109	109		301							"{2: 'Weixian', 3: ""But... I think stars are most beautiful when you look at them with others, and I don't know if you want to go that high up the mountain to do that..."", 4: '1'}"
+110	110		301							{2: 'Weixian', 3: 'Because, you see, not everyone has what it takes to reach the peak, and most people would probably just stop halfway.', 4: '1'}
+111	111		301							"{2: 'Weixian', 3: ""Only a handful of people could go that high up, I'm sure."", 4: '1'}"
+112	112		301							"{2: 'Weixian', 3: ""Which means you'd be all alone and lonely when you get there, whatever it is that you set out to pursue in the first place... no?"", 4: '1'}"
+113	113		202							{1: '1', 2: '2', 6: '1'}
+114	114		201							{1: '1', 2: '500260', 4: '-400'}
+115	115		201							{1: '2', 2: '500601', 4: '400'}
+116	116		301							{1: '1', 2: 'Trailblazer', 3: '...', 4: '2'}
+117	117		301							"{2: 'Trailblazer', 3: ""...I can't answer that question."", 4: '2'}"
+118	118		301							"{2: 'Weixian', 3: ""Right. You probably weren't designed with the capabilities to answer philosophical questions in the first place anyway."", 4: '1'}"
+119	119		301							{2: 'Weixian', 3: 'If anything, I guess you probably want to just keep going and get your mission done, so...', 4: '1'}
+120	120		401							{1: '1', 2: '36'}
+121	121		301							{2: 'Trailblazer', 3: '...Warning. Lie down.', 4: '2'}
+122	122		401							{1: '1', 2: '202'}
+123	123		203							{1: '1', 2: '0.2', 3: '-400', 4: '-80'}
+124	124		203							{1: '2', 2: '0.2', 3: '400', 4: '-80'}
+125	125		301							{3: 'Trailblazer presses Weixian down by the head.'}
+126	126		301							{2: 'Trailblazer', 3: 'Enemies detected ahead.', 4: '2'}
+127	127		202							{1: '1', 2: '2', 6: '1'}
+128	128		301							{3: 'Looking into the direction Trailblazer is pointing toward, Weixian sees a group of Corrupted on the move.'}
+129	129		301							"{3: ""Around the group of Corrupted is a group of humans that's stationed right in between two Central Purification Filters, making the humans vulnerable to a potential attack from the group of Corrupted.""}"
+130	130		201							{1: '1', 2: '500260', 4: '-400', 5: '-80'}
+131	131		201							{1: '2', 2: '500601', 4: '400', 5: '-80'}
+132	132		301							{1: '1', 2: 'Trailblazer', 3: 'Undetected by enemies. Maintain concealment.', 4: '2'}
+133	133		301							"{2: 'Weixian', 3: ""...Sounds like a plan. We don't want to jump in and make things worse."", 4: '1'}"
+134	134		301							"{2: 'Trailblazer', 3: ""Affirmative. I'll be on recon in energy-saving mode."", 4: '2'}"
+135	135		202							{1: '1', 2: '2'}
+136	136		301							{3: 'With the short comment, Trailblazer assumes a sitting position—a posture of alert that, of all of the postures he can assume, consumes the greatest amount of his computing power.'}
+137	137		401							{1: '2', 2: '2567'}
+138	138		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory308.png', 3: '0', 4: '1', 5: '1.5'}
+139	139		301							"{3: ""Then, Trailblazer's vision fans out hemispherically, penetrating every last snag, cliff, cave, pasture, and the human encampment... until not a single view or movement of a creature within the hemisphere is missed from his radar.""}"
+140	140		401						1000.0	{1: '2', 2: '703'}
+141	141		401						300.0	{1: '2', 2: '1511'}
+142	142		401							{1: '2', 2: '1511'}
+143	143		301							{3: 'Before long, someone from the human encampment blows their whistle, prompting all human soldiers to jump into action with guns in hand. At the same time, having gathered around the encampment, the group of Corrupted wastes no time launching an attack on the humans.'}
+144	144		205							{1: '999', 3: '0', 4: '0', 5: '0'}
+145	145		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory308.png'}
+146	146		401							{1: '2', 2: '1508'}
+147	147		401							{1: '2', 2: '2791'}
+148	148		301							"{3: ""Obviously lacking any sound tactics, the Corrupted are doing nothing more than swinging at the humans anything they happen to be carrying—a strategy that otherwise would not have worked had the untrained humans not been so outnumbered, crushing the humans' line of defense in an instant.""}"
+149	149		502							{1: 'RImgBg1DisableSlow'}
+150	150		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory32.jpg'}
+151	151		201							{1: '1', 2: '500601'}
+152	152		301							{1: '1', 2: 'Trailblazer', 3: 'Change of plan. Activating defense mode.', 4: '1'}
+153	153		401							{1: '2', 2: '2568'}
+154	154		301				DialogDisable			"{3: ""With it, Trailblazer channels part of his computing power into activating his defense mode—where he won't hesitate to cut down any creature that so much as sets foot in his zone of attack.""}"
+155	155		202							{1: '1'}
+156	156		502							{1: 'RImgBg1DisableSlow'}
+157	157		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory308.png'}
+158	158		301			DialogEnable				{3: 'The humans fight on relentlessly as seconds tick into minutes. All the while, Trailblazer never looks away from the confrontation.'}
+159	159		201							{1: '1', 2: '500197'}
+160	160		301							{1: '1', 2: 'Soldier', 3: 'Incoming from left! Put Team Gamma in place!', 4: '1'}
+161	161		301							{3: 'Trailblazer has never seen humans fight as up close.'}
+162	162		202							{1: '1', 6: '1'}
+163	163		201							{1: '1', 2: '500425'}
+164	164		301							{1: '1', 2: 'Scavenger', 3: 'You were fighting those damn things unarmed! Are you out of your mind? We need to get this guy here treated!', 4: '1'}
+165	165		301							"{3: ""This is not the first time Trailblazer saw humans fight, but none of the confrontations he's born witness to felt anywhere as real as this one he's currently seeing.""}"
+166	166		202							{1: '1', 6: '1'}
+167	167		201							{1: '1', 2: '500136'}
+168	168		301							{1: '1', 2: 'Scavenger', 3: 'Second line of defense compromised! Excessive casualties! Evacuate at once!', 4: '1'}
+169	169		301							{3: 'Even with only a handful of them still standing, the humans refuse to give in.'}
+170	170		202							{1: '1', 6: '1'}
+171	171		201							{1: '1', 2: '500154'}
+172	172		301				DialogDisable			"{1: '1', 2: 'Soldier', 3: ""Don't give up! We can't stop here!"", 4: '1'}"
+173	173		202							{1: '1'}
+174	174		402							{1: '2791'}
+175	175		502							{1: 'RImgBg1DisableSlow'}
+176	176		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory32.jpg'}
+177	177		201							{1: '1', 2: '500260', 4: '-400', 5: '-80'}
+178	178		201							{1: '2', 2: '500601', 4: '400', 5: '-80'}
+179	179		301			DialogEnable				{1: '1', 2: 'Trailblazer', 3: '...Incomprehensible.', 4: '2'}
+180	180		301							"{2: 'Trailblazer', 3: ""The humans' persistence when there is absolutely no hope for winning is an incomprehensible behavior."", 4: '2'}"
+181	181		301							{2: 'Weixian', 3: 'Did you really mean that, Steely?', 4: '1'}
+182	182		301							{2: 'Trailblazer', 3: 'Affirmative. I struggle to understand such behavior.', 4: '2'}
+183	183		301							"{2: 'Weixian', 3: ""...Humans do it because it is through confrontation that they live... or at least that's what my uncle told me."", 4: '1'}"
+184	184		301							{2: 'Trailblazer', 3: 'Even if it amounts to absolutely nothing?', 4: '2'}
+185	185		202							{1: '1', 2: '2', 6: '1'}
+186	186		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory541.jpg'}
+187	187		201							{1: '1', 2: '500005', 7: '1'}
+188	188		504							{1: '0.7'}
+189	189		501						800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+190	190		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory32.jpg'}
+191	191		504							{1: '0'}
+192	192		201							{1: '1', 2: '500260', 4: '-400', 7: '1'}
+193	193		201							{1: '2', 2: '500601', 4: '400', 7: '1'}
+194	194		301							{1: '1', 3: 'Trailblazer recalls some of the soldiers he saw before from different battles.'}
+195	195		301							"{3: ""Like the humans he's seeing now, those soldiers, before taking their last breath in this world, never failed to fire one last shot at Trailblazer.""}"
+196	196		301							"{2: 'Weixian', 3: ""It might amount to nothing, but if that starts a fire that burns far and wide, then that's all that matters... Again, that's what my uncle said."", 4: '1'}"
+197	197		301							{2: 'Trailblazer', 3: '...Conclusion recorded.', 4: '2'}
+198	198		301							{3: 'Humans do it because it is through confrontation that they live—Trailblazer has no doubt that Victor has said this, because he tried to bring about peace through confrontation all his life, not to mention that Trailblazer himself was created for exactly that purpose.'}
+199	199		202							{1: '1', 2: '2', 6: '1'}
+200	200		401							{1: '2', 2: '1508'}
+201	201		201							{1: '1', 2: '500013'}
+202	202		301							{1: '1', 2: 'Corrupted', 3: 'Raaargh...', 4: '1'}
+203	203		401							{1: '2', 2: '13015111'}
+204	204		201							{1: '1', 2: '500601'}
+205	205		301							{1: '1', 2: 'Trailblazer', 3: '...Corrupted detected in zone of attack.', 4: '1'}
+206	206		301							{2: 'Trailblazer', 3: 'Entering attack mode.', 4: '1'}
+207	207		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+208	208		301				AniZhuanchangBegin			{2: 'Trailblazer', 3: 'Fully armed. Final form.', 4: '1'}
+209	209		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+210	210		202							{1: '1', 6: '1'}
+211	211		402							{1: '13015111'}
+212	212		401						2000.0	{1: '1', 2: '36'}
+213	213		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+214	214		505							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+215	215		401							{1: '1', 2: '120'}
+216	216		301			AniZhuanchangEnd				"{3: ""Hazes of sand, cries of dismay, and crumbling of destroyed buildings—such are the views portrayed of what it is like in the wake of armed confrontations in a lot of the literary works in Trailblazer's database. Trailblazer, however, thinks that all these are but baseless portraits.""}"
+217	217		301							{3: 'Because he knows just all too well that deafening silence is all that there can be found when conflagration is done planting on the land its kiss of death.'}
+218	218		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory32.jpg', 3: '0', 4: '1', 5: '1'}
+219	219		201							{1: '1', 2: '500601'}
+220	220		301							{1: '1', 2: 'Trailblazer', 3: 'Enemies neutralized. No further activity found of the neutral human group.', 4: '1'}
+221	221		301							{2: 'Trailblazer', 3: 'Recommended course of action would be to continue with mission before next round of attack.', 4: '1'}
+222	222		201							{1: '1', 2: '500260', 4: '-400'}
+223	223		201							{1: '2', 2: '500601', 4: '400'}
+224	224		301							{1: '1', 2: 'Weixian', 3: '...Wait.', 4: '1'}
+225	225		301							"{3: ""Says Weixian, who remained quiet all through Trailblazer's bombing just now.""}"
+226	226		301							{2: 'Weixian', 3: 'A lot of the people over at the encampment have died... from fighting the monsters just now... And humans make tombs for others when they die.', 4: '1'}
+227	227		301							{2: 'Trailblazer', 3: 'Negative. There exist instances where...', 4: '2'}
+228	228		301							"{2: 'Weixian', 3: ""C'mon, I want to make them a tomb. They were such a big help just now, right?"", 4: '1'}"
+229	229		301							{2: 'Trailblazer', 3: 'Objectionable behavior with commendable motivation. Insufficient materials with which to build a tomb. Building a tomb requires a corpse, stones, and...', 4: '2'}
+230	230		301							{2: 'Weixian', 3: 'Geez, not again... You know what, just wait here...', 4: '1'}
+231	231		301							{3: 'Weixian picks up a chunk of wood that was blown off a tree by Trailblazer just now. Then, she produces a dull pocket knife out of her pocket.'}
+232	232		301							"{2: 'Weixian', 3: 'Now, I\'ll carve ""Brave Souls That Fought Here"" for their names, and ""A Certain Day"" for their birthdays, followed by today\'s date. And I\'ll draw a few stick men here...', 4: '1'}"
+233	233		401						300.0	{1: '2', 2: '2589'}
+234	234		401							{1: '2', 2: '2589'}
+235	235		301							{3: 'With the pocket knife, Weixian draws a few stick men down on the ground that now acts as a drawing board.'}
+236	236		301							{2: 'Weixian', 3: 'There was this guy with the gun just now... and there was this woman...', 4: '1'}
+237	237		301							"{3: ""When she's done adding identifying features to each of the stick men, Weixian shoves the wooden board into the ground and holds her hands together in prayer.""}"
+238	238		301							{2: 'Weixian', 3: 'May you all rest in peace.', 4: '1'}
+239	239		301							{2: 'Weixian', 3: '...That should do it.', 4: '1'}
+240	240		301							{2: 'Trailblazer', 3: 'Incomprehensible behavior. Please provide an explanation.', 4: '2'}
+241	241		301							"{2: 'Weixian', 3: ""An explanation, huh... Let's see if I can put it in a way that makes sense to you."", 4: '1'}"
+242	242		301							"{2: 'Weixian', 3: ""My uncle said... humans need peace as much as they need war, and it's only when we're living in peace that we're able to honor the dead."", 4: '1'}"
+243	243		301							"{2: 'Weixian', 3: ""Now, let's pretend you died, Steely. Wouldn't you want a proper ceremony held and attended by people who are going to remember you?"", 4: '1'}"
+244	244		301							"{2: 'Trailblazer', 3: 'Negative. If this Trailblazer were destroyed, then a replacement would be created with all my memories and data to replace me. In that sense, the act of replacement would serve the same purpose as ""honoring"" the deceased Trailblazer.', 4: '2'}"
+245	245		301							{2: 'Trailblazer', 3: 'And if my replacement honored me, then the act of honoring would make my replacement a companion to me.', 4: '2'}
+246	246		301							"{2: 'Weixian', 3: ""Well, wouldn't you be sad... that you died before reaching that proverbial peak you were talking about?"", 4: '1'}"
+247	247		301							{2: 'Trailblazer', 3: 'Negative. My existence is but part of the grand journey to reach the peak. To all Trailblazers collectively, so long as that duty remains unfulfilled, there shall never come another to supplant it as our main duty.', 4: '2'}
+248	248		301							"{2: 'Weixian', 3: ""Okay, I feel like I'm running out of ways to explain it to you... but, hey, I think my uncle said this..."", 4: '1'}"
+249	249		301							"{2: 'Weixian', 3: ""...Let's say your replacement failed to assume your responsibility, Steely, and this duty you're talking about got scraped off. How would that make you feel?"", 4: '1'}"
+250	250		301							{2: 'Trailblazer', 3: 'Production of Trailblazers would stop... And our duties would be absolved...', 4: '2'}
+251	251		301							{2: 'Trailblazer', 3: '...', 4: '2'}
+252	252		401							{1: '2', 2: '18511073'}
+253	253		203							{1: '2', 2: '0.25', 3: '400', 5: '-100'}
+254	254		301							{3: 'Breaking his silence, Trailblazer takes a sudden step forward.'}
+255	255		301							{2: 'Trailblazer', 3: '...Negative! Dr. Jackson would never approve of that. Trailblazers will continue to thrive so long as Dr. Jackson lives.', 4: '2'}
+256	256		301							{2: 'Weixian', 3: 'Holy, Trailblazer, that reaction is totally uncalled for. But I get it now...', 4: '1'}
+257	257		301							"{2: 'Weixian', 3: ""Anyway, I don't think you'll ever get it, so let's just keep moving."", 4: '1'}"
+258	258		301							{2: 'Trailblazer', 3: '...Incomprehensible.', 4: '2'}
+259	259		202							{1: '1', 2: '2'}
+260	260		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '2'}
+261	261		301							{3: 'Completely incomprehensible.'}
+262	262		301							{3: 'The way Victor saw things, what Weixian just said, and how humans see the death of another human being—none of these makes any sense to Trailblazer.'}
+263	263		301							{3: 'Incomputable. Terminating computation.'}
+264	264		301		1		AniZhuanchangBegin			{3: '...Continuing with mission.'}

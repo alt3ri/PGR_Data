@@ -1,0 +1,77 @@
+Id	Type	Formula	Desc	Params
+1	7		The race has started!	[1]
+2	7		Halfway through the race	[500]
+3	8		First half in progress	[1000]
+4	2		When gaining Red Orbs	[3]
+5		3&4	In the first half of the race, when gaining Red Orbs	
+6	2		When gaining Signal Orbs	[0]
+7	5		After being affected by debuffs (excluding enemy immunity)	[0, 2, 2]
+8	8		Second half in progress	[1001]
+9		1|2	Triggers at match start and midway	
+10	4		Bianca Signature Mark	[0, 2, 1002]
+11		10&3	Bianca Dark Signature	
+12		10&8	Bianca Light Signature	
+13	4		Nanami Ultimate extra time	[0, 1, 19]
+14	4		When affected by buffs	[0, 2, 1]
+15	8		Have Forsaken buff	[33]
+16		14&15	Have Forsaken buff and when affected by buffs	
+17		1|16	16+ Opening Requirement	
+18		3&6	First half of the race, when gaining Signal Orbs	
+19		3&79	First half of the race, when receiving debuffs	
+20	9		When entering a turn	[2]
+21		3&20	In the first half of the race, each time when entering a turn	
+22		8&6	In the second half of the race, each time when gaining Signal Orbs	
+23	3		When ranking drops	[2]
+24		8&23	In the second half of the race, after your ranking drops	
+25	1		In the second half of the race, randomly select 20 points	[500, 525]
+26	1		In the second half of the race, randomly select 20 points	[525, 550]
+27	1		In the second half of the race, randomly select 20 points	[550, 575]
+28	1		In the second half of the race, randomly select 20 points	[575, 600]
+29	1		In the second half of the race, randomly select 20 points	[600, 625]
+30	1		In the second half of the race, randomly select 20 points	[625, 650]
+31	1		In the second half of the race, randomly select 20 points	[650, 675]
+32	1		In the second half of the race, randomly select 20 points	[675, 700]
+33	1		In the second half of the race, randomly select 20 points	[700, 725]
+34	1		In the second half of the race, randomly select 20 points	[725, 750]
+35	1		In the second half of the race, randomly select 20 points	[750, 775]
+36	1		In the second half of the race, randomly select 20 points	[775, 800]
+37	1		In the second half of the race, randomly select 20 points	[800, 825]
+38	1		In the second half of the race, randomly select 20 points	[825, 850]
+39	1		In the second half of the race, randomly select 20 points	[850, 875]
+40	1		In the second half of the race, randomly select 20 points	[875, 900]
+41	1		In the second half of the race, randomly select 20 points	[900, 925]
+42	1		In the second half of the race, randomly select 20 points	[925, 950]
+43	1		In the second half of the race, randomly select 20 points	[950, 975]
+44	1		In the second half of the race, randomly select 20 points	[975, 1000]
+45		25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44	In the second half of the race, randomly select 20 points	
+46	9		When entering a straight section	[1]
+47		3&46	In the first half of the race, when entering a straight section	
+48	5		When gaining a speed boost buff	[1, 2, 2000]
+49	5		When affected by debuffs (including enemy immunity)	[0, 2, 2]
+50	4		When Lamia gains Passive effects	[0, 1, 87]
+51		1|50	When starting with 50+	
+52	5		When Lilith casts Signature Move	[0, 1, 96]
+53	1		Race 5% intervals	[0, 50]
+54	1		Race 5% intervals	[50, 100]
+55	1		Race 5% intervals	[100, 150]
+56	1		Race 5% intervals	[150, 200]
+57	1		Race 5% intervals	[200, 250]
+58	1		Race 5% intervals	[250, 300]
+59	1		Race 5% intervals	[300, 350]
+60	1		Race 5% intervals	[350, 400]
+61	1		Race 5% intervals	[400, 450]
+62	1		Race 5% intervals	[450, 500]
+63	1		Race 5% intervals	[500, 550]
+64	1		Race 5% intervals	[550, 600]
+65	1		Race 5% intervals	[600, 650]
+66	1		Race 5% intervals	[650, 700]
+67	1		Race 5% intervals	[700, 750]
+68	1		Race 5% intervals	[750, 800]
+69	1		Race 5% intervals	[800, 850]
+73		53|54|55|56|57|58|59|60|61|62|63|64|65|66|67|68|69	Race 5% intervals	
+74	8		When Veronica has Signature Move mark	[100]
+75		74&73	When Veronica has a Signature Move mark + Race Tie	
+76	4		When affected by debuffs (excluding enemy immunity)	[0, 2, 2]
+77	4		Lamia Passive Acceleration Mark	[0, 2, 1010]
+78		8&77	Lamia Passive Acceleration Mark+ Second Half	
+79	4		When affected by debuffs (including enemy immunity)	[0, 2, 2]

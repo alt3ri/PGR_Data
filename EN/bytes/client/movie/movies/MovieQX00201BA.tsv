@@ -1,0 +1,76 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory263.png'}
+2	2		205				AniZhuanchangEnd			{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.8', 5: '0'}
+3	3		401							{1: '1', 2: '208'}
+4	4		301			DialogEnable				{3: 'This is a familiar night.'}
+5	5		301							{3: 'The fight is over. One by one, each deployed squad returns to Babylonia.'}
+6	6		301							{3: 'While technically on leave, you cannot afford to delay your mission report. After all, you have finally gathered some useful intel after days of fighting.'}
+7	7		201							{1: '1', 2: '500546'}
+8	8		301							{1: '1', 2: '???', 3: 'Commandant? Are you... stargazing on your own?', 4: '1'}
+9	9		301							{3: 'A figure appears behind you while you look off into the stars.'}
+10	10		202							{1: '1', 6: '1'}
+11	11		201							{1: '1', 2: '500128', 3: '1'}
+12	12		301							{1: '1', 2: 'Bianca', 3: 'My apologies. Did I interrupt you?', 4: '1'}
+13	13		302							"{2: 'Not at all.', 3: '14', 4: ""It's alright."", 5: '14'}"
+14	14		301							"{2: 'Bianca', 3: ""You've been coming here for some fresh air around this hour every day, haven't you?"", 4: '1'}"
+15	15		301							"{2: 'Bianca', 3: 'Aren\'t you still on leave? It doesn\'t sound like the best idea to ignore your doctor\'s order to ""get enough sleep.""', 4: '1'}"
+16	16		302							"{2: 'I slept when I filed the battle report.', 3: '17', 4: ""I'm just a night owl."", 5: '17'}"
+17	17		301							"{2: 'Bianca', 3: ""I knew you'd say that—you're as stubborn as ever."", 4: '1'}"
+18	18		301							{3: 'Bianca smiles resignedly, tucking her hair behind her ear.'}
+19	19		301							"{2: 'Bianca', 3: ""If you don't feel like sleeping right now, can I invite you to a walk?"", 4: '1'}"
+20	20		301							"{2: 'Bianca', 3: ""I heard that there's a gathering tonight at the plaza from a small hobby club. I'm sure the walk will at least unwind you."", 4: '1'}"
+21	21		302							{2: 'Sure.', 3: '22'}
+22	22		502							{1: 'AniZhuanchangBegin'}
+23	24		202			DialogDisable			300.0	{2: '1', 6: '1'}
+24	25		205							{1: '999', 3: '0.5', 4: '0', 5: '0'}
+25	26		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory459.jpg'}
+26	28		301			DialogEnable				{3: 'You expect an evening gathering to last until midnight, but there are only a few people left by the time you arrive. The numerous tables and chairs and the darkened lanterns prove that a party did take place here.'}
+27	29		201							{1: '1', 2: '500128'}
+28	30		301							"{1: '1', 2: 'Bianca', 3: ""It's over already? I'm sorry, Commandant; I should've checked their schedule before inviting you. That's on me..."", 4: '1'}"
+29	31		302							{2: 'The walk was relaxing enough.', 3: '32', 4: 'Being with you is good enough.', 5: '32'}
+30	32		204							{1: '1', 2: '1'}
+31	33		301							{2: 'Bianca', 3: '...As long as it helps, then.', 4: '1'}
+32	34		301							"{3: ""A shooting star flies across the sky, building a bridge across the galaxy with its silver tail and drawing the attention of the people in the plaza. It even catches Bianca's eyes.""}"
+33	35		301							{3: 'The silver bridge soon fades, returning the spotlight to the Summer Triangle in the sky: Deneb, the Cowherd, and the Weaver Girl—hold on. Is today...?'}
+34	36		301							"{3: ""You recall the Valentine's Day celebration on the Nighter, and the joyous, if not chaotic, memories make you smile.""}"
+35	37		301							{2: 'Bianca', 3: 'Did you think of something interesting, Commandant?', 4: '1'}
+36	38		301							{3: 'Bianca seems to relax as well, seeing you smile. You proceed to tell her about the lively celebration on the Nighter with some dramatic flair, and you both end up laughing.'}
+37	40		202							{1: '1'}
+38	39		301							{3: 'Truly, the romantic story humans gave to the stars has also brought about many unforgettable moments.'}
+39	41		301							{3: 'These moments form the universe that envelopes you, every cold, lifeless star granted warmth and meaning.'}
+40	42		301							{3: 'All your efforts are spent to defend where this warmth comes from.'}
+41	43		201							{1: '1', 2: '500303'}
+42	44		301							{1: '1', 2: '???', 3: 'How interesting... So the old Kowloong traditions in the database have been preserved to this day.', 4: '1'}
+43	45		301							"{2: '???', 3: ""What a shame. If you were here 40 minutes ago, your story could've been the climax of the night."", 4: '1'}"
+44	46		301							{3: 'You turn and find another stargazer applauding you. It is clear that he was eavesdropping on your exaggerated adventure on the Nighter just now.'}
+45	47		302							{2: 'The climax?', 3: '48', 4: 'It was a storytelling event tonight?', 5: '48'}
+46	48		301							"{2: '???', 3: ""Oh? You aren't members of the club?"", 4: '1'}"
+47	49		202							{1: '1', 6: '1'}
+48	50		201							{1: '1', 2: '500128'}
+49	51		301							{1: '1', 2: 'Bianca', 3: 'We were thinking of attending your gathering, but we missed it, unfortunately.', 4: '1'}
+50	52		202							{1: '1', 6: '1'}
+51	53		201							{1: '1', 2: '500303'}
+52	54		301							"{1: '1', 2: '???', 3: ""I see... Yeah, I totally got it now. You're hoping to join our Astrology Club, aren't you?"", 4: '1'}"
+53	55		302							{2: '?', 3: '56', 4: '...What club again?', 5: '57'}
+54	56	58	301							"{2: '???', 3: ""We are officially supported by the WGAA, by the way. I'm absolutely certain that the artists of WGAA are highly likely to consider joining us for a sharing in the future."", 4: '1'}"
+55	57		301							"{2: '???', 3: ""Astrology—Club. We are officially supported by the WGAA, by the way. I'm absolutely certain that the artists of WGAA are highly likely to consider joining us for a sharing in the future."", 4: '1'}"
+56	58		301							"{2: 'Club Member', 3: ""Ahem. Anyway, tonight was about Valentine's Day and its ties to the stars and astrotheology, so your story would have been welcomed. Hard to find someone who's experienced those Kowloong traditions firsthand."", 4: '1'}"
+57	59		301							{2: 'Club Member', 3: 'So? Do you want to join us? I think our members will love you guys.', 4: '1'}
+58	60		301							{3: 'Before you can reply, he already takes out an intricate box and a stack of cards with astrology symbols printed on them.'}
+59	61		301							"{2: 'Club Member', 3: ""Now, let's make a bet using the game we played during the gathering when we decided on the order of claiming the gifts."", 4: '1'}"
+60	62		301							{2: 'Club Member', 3: 'You win when you guess correctly if the next card is higher or lower than the current one. Easy, right?', 4: '1'}
+61	63		301							"{2: 'Club Member', 3: ""If you win, you'll get this mystery box handmade by our core members."", 4: '1'}"
+62	64		301							"{2: 'Club Member', 3: ""But if you lose, you'll join our club."", 4: '1'}"
+63	65		302							"{2: ""The reward doesn't match the punishment. I refuse to play."", 3: '66'}"
+64	66		301							"{2: 'Club Member', 3: ""What do you mean? It's clearly a win-win situation!"", 4: '1'}"
+65	67		301							"{2: 'Club Member', 3: ""And I guarantee you that whatever you find in that box will be so captivating that you'll want to join us regardless."", 4: '1'}"
+66	68		301							{2: 'Club Member', 3: 'At the very least, you can give it to someone you care about on this day. Think of the surprise you will share when you open it together! Our members will definitely deliver a proper dose of starry romance!', 4: '1'}
+67	69		301							{3: 'With 70 percent sincerity and 30 percent confidence, he makes it hard for you to reject him.'}
+68	70		202							{1: '1'}
+69	71		301							"{3: 'And his words have indeed made you curious about the ""captivating"" mystery box.'}"
+70	72		302							{2: '...Want to give it a shot, Bianca?', 3: '73'}
+71	73		201							{1: '1', 2: '500128', 3: '1'}
+72	74		301							"{1: '1', 2: 'Bianca', 3: ""It sounds interesting, but I'm not good at this kind of game..."", 4: '1'}"
+73	75		301							"{2: 'Bianca', 3: ""And he's inviting us mostly because of your story, Commandant. You should be the one who decides."", 4: '1'}"
+74	76		301							{2: 'Bianca', 3: 'I was just hoping to bring you somewhere relaxing. The way I see it, my mission is accomplished.', 4: '1'}
+75	77		302		1		AniZhuanchangBegin			"{2: ""Well... we're here anyway.""}"

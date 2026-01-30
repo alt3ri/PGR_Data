@@ -1,0 +1,325 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory301.png'}
+2	2		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.5', 5: '0'}
+3	3		401							{1: '1', 2: '5029'}
+4	4		301			DialogEnable				{3: 'After a grueling escape, the survivors finally reach the temporary shelter.'}
+5	5		201							{1: '1', 2: '500730', 4: '400'}
+6	6		201							{1: '2', 2: '500019', 4: '-400'}
+7	7		301							"{1: '1', 2: 'Shorthalt', 3: ""Reports are coming in that even the elite squad is overwhelmed. No reinforcements are arriving. We're trapped here for now."", 4: '1'}"
+8	8		301							"{2: 'Shorthalt', 3: ""The Corrupted are swarming out like a disturbed hornet's nest. I've never seen a swarm this size outside the Dead Zone. This is a disaster."", 4: '1'}"
+9	9		301							{2: 'Thompson', 3: 'So they really did come from the Dead Zone. Babylonia warned us about this.', 4: '2'}
+10	10		301							"{2: 'Thompson', 3: ""On the bright side, we've managed to get this many people this far."", 4: '2'}"
+11	11		301							"{2: 'Shorthalt', 3: ""Let's assess what equipment we have left. If the elite squad can't break through the Corrupted horde by dawn, we're in for a serious battle."", 4: '1'}"
+12	12		301							{2: 'Shorthalt', 3: 'Worst-case scenario, we can all grab some EMP bombs and make a charge into the Corrupted. That should create a path for us to escape.', 4: '1'}
+13	13		301							{3: 'No one voices an objection to this insane plan. Shorthalt taps his communicator again.'}
+14	14		301							{2: 'Shorthalt', 3: 'Remember to keep your comms open when the time comes.', 4: '1'}
+15	15		202							{1: '1', 2: '2'}
+16	16		301							"{3: ""The Constructs present respond in unison. It's only been a day, yet some of their comrades will never hear these words of comfort again.""}"
+17	17		201							{1: '1', 2: '500730'}
+18	18		301							"{1: '1', 2: 'Shorthalt', 3: ""How's Wanshi holding up? We have plenty of staff—shouldn't a doctor with a head wound be resting?"", 4: '1'}"
+19	19		202							{1: '1'}
+20	20		301							"{3: ""Shorthalt raises his arm, inspecting the crudely patched crack in his casing. Glancing around at the other Constructs, he sees that Wanshi has already tended to everyone's injuries.""}"
+21	21		301							{3: 'Wanshi is still back there with the refugees, not even thinking about taking a break.'}
+22	22		201							{1: '1', 2: '500019'}
+23	23		301							"{1: '1', 2: 'Thompson', 3: ""He'll be okay. Kamui's with him."", 4: '1'}"
+24	24		301							{2: 'Thompson', 3: 'In a situation like this, I guess only Kamui can stay so calm, haha.', 4: '1'}
+25	25		301							{2: 'Thompson', 3: 'You and I are freaking out, but he seems completely at ease, even in the middle of this chaos.', 4: '1'}
+26	26		202				DialogDisable			{1: '1'}
+27	27		401						250.0	{1: '2', 2: '4182'}
+28	28		401						250.0	{1: '2', 2: '4182'}
+29	29		401						700.0	{1: '2', 2: '4422'}
+30	30		401						500.0	{1: '2', 2: '4561'}
+31	31		401							{1: '2', 2: '4634'}
+32	32		301			DialogEnable				{3: 'Thompson taps his wrist, and the damaged projector sputters to life, displaying a blurry image of a boy. The projection fades quickly, but not before a couple of sparks dramatically erupt from the device.'}
+33	33		301							"{3: ""Shorthalt's optical sensors shift their focus away from Thompson's projection.""}"
+34	34		201							{1: '1', 2: '500730', 4: '400'}
+35	35		201							{1: '2', 2: '500019', 4: '-400'}
+36	36		301							{1: '1', 2: 'Thompson', 3: 'Shorthalt, what did you do before you became a Construct?', 4: '2'}
+37	37		301							{2: 'Shorthalt', 3: 'The police.', 4: '1'}
+38	38		301							{2: 'Thompson', 3: 'Huh?', 4: '2'}
+39	39		301							"{2: 'Shorthalt', 3: 'I was one of the first to undergo modifications, and I wasn\'t exactly a spring chicken when it happened... Surely you\'ve heard of the term ""police"" before?', 4: '1'}"
+40	40		301							"{2: 'Thompson', 3: ""No, no, actually... Euan guessed you were a police officer before. I can't believe he was right."", 4: '2'}"
+41	41		301							"{2: 'Shorthalt', 3: ""What for? Do I look like someone you'd trust?"", 4: '1'}"
+42	42		301							"{2: 'Thompson', 3: 'Of course not. You\'re the mastermind behind the ""EMP bomb suicide run"" against the Corrupted.', 4: '2'}"
+43	43		301							"{3: ""A flicker of doubt crosses Thompson's face, and his forced smile begins to falter.""}"
+44	44		301							"{2: 'Thompson', 3: ""Looks like Euan's learned a thing or two from you."", 4: '2'}"
+45	45		301							"{2: 'Shorthalt', 3: ""Don't be like me. Sure, I don't exactly look like a saint—and I'm definitely not one—but sometimes, I wonder if I was born to be a protector."", 4: '1'}"
+46	46		202							{1: '1', 2: '2'}
+47	47		301							"{3: ""Thompson's gaze falls on the new nameplates pinned to Shorthalt's chest—grim reminders of the Constructs lost in the battle. One of them bears Euan's name.""}"
+48	48		301							"{3: ""Shorthalt quickly covers the nameplates, not wanting to prolong Thompson's grief.""}"
+49	49		201							{1: '1', 2: '500730'}
+50	50		301							"{1: '1', 2: 'Shorthalt', 3: ""Contact the other squads. We need to secure the perimeter. We can't let those Corrupted overrun us again."", 4: '1'}"
+51	51		301							{3: 'Shorthalt rises from the ruins, watching Wanshi tend to a child while Kamui stands guard nearby, helping distribute supplies.'}
+52	52		301				AniZhuanchangBegin			"{2: 'Shorthalt', 3: ""This damn Punishing... I'm sick of seeing people die."", 4: '1'}"
+53	53		202							{1: '1', 6: '1'}
+54	54		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory302.png'}
+55	55		301			AniZhuanchangEnd				"{3: ""This is the darkest night of Wanshi's life.""}"
+56	56		301							{3: 'The sky above is devoid of stars, replaced by a sickly glow from the artificial lights that illuminate the makeshift stronghold.'}
+57	57		301							{3: 'Far from the Central Purification Filter, low on supplies, and with aid slow to arrive, the refugees teeter on the brink of despair, ravaged by disease and infection.'}
+58	58		201							{1: '1', 2: '500289', 4: '400'}
+59	59		201							{1: '2', 2: '500058', 4: '-400'}
+60	60		301							"{1: '1', 2: 'Wanshi', 3: ""I'm sorry..."", 4: '1'}"
+61	61		301							{2: 'Wanshi', 3: 'How much immune serum do we have now?', 4: '1'}
+62	62		301							"{2: 'Volunteer Doctor', 3: ""We're completely out, and Dr. Natalie is out of stock too. What are we going to do?"", 4: '2'}"
+63	63		301							"{2: 'Volunteer Doctor', 3: ""It's not just the refugees—there are volunteers with critical injuries too. Can we really just stand by and watch them die?"", 4: '2'}"
+64	64		301							"{3: ""The young doctor's voice trembles as he speaks to Wanshi.""}"
+65	65		301							{2: 'Wanshi', 3: '...', 4: '1'}
+66	66		202							{1: '1', 2: '2', 6: '1'}
+67	67		201							{1: '1', 2: '1081001', 3: '2'}
+68	68		301							"{1: '1', 2: 'Kamui', 3: ""Even the Wish-Granting Machine can't conjure serum out of thin air—you'll need to collect wish cards first."", 4: '1'}"
+69	69		202							{1: '1', 6: '1'}
+70	70		201							{1: '1', 2: '500289', 3: '7', 4: '400'}
+71	71		201							{1: '2', 2: '500058', 4: '-400'}
+72	72		301							{1: '1', 2: 'Volunteer Doctor', 3: 'Why?', 4: '2'}
+73	73		301							{2: 'Wanshi', 3: 'Kamui?', 4: '1'}
+74	74		202							{1: '2', 6: '1'}
+75	75		201							{1: '2', 2: '1081001', 3: '1', 4: '-400'}
+76	76		301							"{1: '1', 2: 'Kamui', 3: ""That kid's already got three stamps. Let's get him some candy as promised."", 4: '2'}"
+77	77		301							{2: 'Kamui', 3: 'Here you go, Wanshi. Scissors. Better sterilize those before you use them.', 4: '2'}
+78	78		301							{2: 'Wanshi', 3: 'Thanks...', 4: '1'}
+79	79		202							{1: '1', 2: '2'}
+80	80		401							{1: '2', 2: '4700'}
+81	81		301							"{3: ""Kamui throws the scissors to Wanshi and then drops a heavy arm around a volunteer doctor's shoulders, nearly knocking him over.""}"
+82	82		201							{1: '1', 2: '1081001', 3: '2', 4: '400'}
+83	83		201							{1: '2', 2: '500058', 4: '-400'}
+84	84		301							{1: '1', 2: 'Kamui', 3: 'If we found candy in the supplies unexpectedly, who knows? Maybe we overlooked some serum too! Let me help you look, come on, come on...', 4: '1'}
+85	85		301							{2: 'Volunteer Doctor', 3: 'You...', 4: '2'}
+86	86		202							{1: '1', 2: '2'}
+87	87		301							"{3: ""Kamui escorts the anxious doctor away, and Wanshi finally lets out a breath he didn't realize he was holding. He sits back down on the ground, laying out his sutures and scissors on a relatively clean piece of metal.""}"
+88	88		201							{1: '1', 2: '500260', 4: '-400', 7: '1'}
+89	89		201							{1: '2', 2: '500289', 4: '400'}
+90	90		301			PanelActor1Shake				{1: '1', 2: 'Girl', 3: 'Cough!', 4: '1'}
+91	91		301							{2: 'Girl', 3: 'Doctor... am I infected too?', 4: '1'}
+92	92		301							"{2: 'Wanshi', 3: ""No, no, we were in a rush earlier. You've just caught a mild cold."", 4: '2'}"
+93	93		203							{1: '1', 2: '0.25', 3: '-600'}
+94	94		203							{1: '2', 2: '0.25'}
+95	95		201							{1: '3', 2: '500259', 4: '600'}
+96	96		301							"{1: '1', 2: 'Boy', 3: ""Doctor, how's my arm? It hurt like crazy before, but now I can't feel anything."", 4: '3'}"
+97	97		301							{3: 'The bandage is soaked through, the flesh beneath it ravaged by the Punishing virus. Wanshi tries to stitch it up, but the damage is too severe.'}
+98	98		301							"{2: 'Wanshi', 3: ""You won't feel any more pain. I gave you some painkillers."", 4: '2'}"
+99	99		301							{2: 'Girl', 3: 'Painkillers... Nathan said they were the best.', 4: '1'}
+100	100		301							{2: 'Girl', 3: 'Is he okay?', 4: '1'}
+101	101		202							{1: '1', 2: '2', 3: '3'}
+102	102		301							"{3: ""The children look towards the corner, where a volunteer doctor's white coat is beneath Nathan's body, his white coat soaked in blood.""}"
+103	103		301							"{3: ""Nathan's asleep. He won't wake up.""}"
+104	104		201							{1: '1', 2: '500260', 4: '-600', 6: '-20'}
+105	105		201							{1: '2', 2: '500289'}
+106	106		201							{1: '3', 2: '500259', 4: '600', 6: '-20'}
+107	107		301							"{1: '1', 2: 'Wanshi', 3: ""Nathan's asleep. He'll wake up tomorrow."", 4: '2'}"
+108	108		301							{2: 'Girl', 3: 'Nathan... he saved me and now...', 4: '1'}
+109	109		301							"{2: 'Boy', 3: ""This is all my fault... We panicked when we saw the Corrupted. Only Nathan kept us moving forward. If I'd been stronger, I could have led them to safety... Cough!"", 4: '3'}"
+110	110		301							{2: 'Boy', 3: 'Doctor... I hurt everywhere too...', 4: '3'}
+111	111		301							{2: 'Wanshi', 3: '...', 4: '2'}
+112	112		301							"{3: ""The doctor's hands tremble as he gazes at the small bodies before him, each one bearing the scars of both illness and guilt.""}"
+113	113		301							{2: 'Wanshi', 3: 'You all... did a fantastic job today.', 4: '2'}
+114	114		301							"{2: 'Wanshi', 3: ""No one's to blame."", 4: '2'}"
+115	115		301							{3: 'He manages a weak smile.'}
+116	116		204							{1: '2', 2: '1'}
+117	117		301							{2: 'Wanshi', 3: 'Do you still want to go to Babylonia now?', 4: '2'}
+118	118		301							"{2: 'Wanshi', 3: ""I have a few boxes of medicine here. They're very valuable and only for emergencies. You need to keep an eye on them for me."", 4: '2'}"
+119	119		301							"{2: 'Wanshi', 3: ""When dawn comes, people from Babylonia will arrive to rescue us. They'll take all the good kids back to Babylonia."", 4: '2'}"
+120	120		202							{1: '1', 2: '2', 3: '3'}
+121	121		401						250.0	{1: '2', 2: '2938'}
+122	122		401							{1: '2', 2: '2938'}
+123	123		301							"{3: ""He rattles several medicine boxes, drawing everyone's attention.""}"
+124	124		201							{1: '1', 2: '500260', 4: '-600', 6: '-20'}
+125	125		201							{1: '2', 2: '500289', 3: '1'}
+126	126		201							{1: '3', 2: '500259', 4: '600', 6: '-20'}
+127	127		301							"{1: '1', 2: 'Wanshi', 3: ""I want to see who can keep their medicine safe all night. You've got this."", 4: '2'}"
+128	128		301							"{2: 'Wanshi', 3: ""Once you get to Babylonia, you'll grow up in the youth center. If you do well, you might even get adopted, have a family who cherishes you, learn the world's most advanced knowledge, and make more friends..."", 4: '2'}"
+129	129		301							{3: 'His voice lowers and cracks with emotion.'}
+130	130		301							"{2: 'Wanshi', 3: ""Until you're all grown up and strong..."", 4: '2'}"
+131	131		301							{2: 'Wanshi', 3: 'You can become anything you dream of—engineers, doctors, artists. You can make a real difference in the world.', 4: '2'}
+132	132		301							"{2: 'Wanshi', 3: ""We'll stand united against the Punishing, and together, we'll reclaim our home..."", 4: '2'}"
+133	133		301							{2: 'Wanshi', 3: 'Do you want that kind of future?', 4: '2'}
+134	134		301							"{2: 'Wanshi', 3: ""You'll love it, right?"", 4: '2'}"
+135	135		301							{3: 'The doctor holds up the medicine boxes, his eyes pleading with the children for a glimmer of hope.'}
+136	136		301							{2: 'Wanshi', 3: 'Raise your hand if this is the kind of life you always dreamed of.', 4: '2'}
+137	137		203							{1: '1', 2: '0.2', 3: '-600', 4: '30', 5: '-20'}
+138	138		203						250.0	{1: '3', 2: '0.2', 3: '600', 4: '30', 5: '-20'}
+139	139		203							{1: '1', 2: '0.2', 3: '-600', 5: '-20'}
+140	140		203							{1: '3', 2: '0.2', 3: '600', 5: '-20'}
+141	141		301							{3: 'The children raise their hands in unison, their eyes fixed on him with hopeful anticipation.'}
+142	142		301							"{2: 'Wanshi', 3: ""Protect these medical supplies with your lives. Watch each other's backs—they're not to be opened under any circumstances. Understand?"", 4: '2'}"
+143	143		301							{2: 'Kids', 3: 'Understood!', 4: '1', 5: '3'}
+144	144		202							{1: '1', 2: '2', 3: '3'}
+145	145		301							{3: 'The children clutch the empty boxes filled with wishes to their chests. Those boxes are their tickets to a better life, giving them the strength to endure this terrible night a little longer.'}
+146	146		301							{3: 'The surrounding adults stare at the doctor with hollow eyes, easily seeing through his deception. Just moments ago, he slipped wish cards into the empty medicine boxes.'}
+147	147		301							{3: 'The medicine box rattles when shaken, mimicking the sound of life-saving pills rattling inside.'}
+148	148		301							"{3: ""No one challenges him. They all know what he's trying to do.""}"
+149	149		301				AniZhuanchangBegin			"{3: ""He's just a doctor, begging his patients to survive.""}"
+150	150		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory301.png'}
+151	151		201							{1: '1', 2: '500730', 4: '400'}
+152	152		201							{1: '2', 2: '500019', 4: '-400'}
+153	153		301			AniZhuanchangEnd				"{1: '1', 2: 'Thompson', 3: ""Over an hour has passed, and there's still no sign of the rescue team. Are we really going to resort to a bomb?"", 4: '2'}"
+154	154		301							"{2: 'Shorthalt', 3: ""Gather the kids first. Wanshi and Kamui, you're responsible for their evacuation. The rest of us... we hold the line until dawn."", 4: '1'}"
+155	155		401							{1: '2', 2: '2782'}
+156	156		301							"{3: ""The emergency comms explode with activity, piercing alarms blaring from every Construct's terminal.""}"
+157	157		301							"{2: 'Shorthalt', 3: ""Looks like they're not coming."", 4: '1'}"
+158	158		402							{1: '2782'}
+159	159		401							{1: '2', 2: '1508'}
+160	160		202							{1: '1', 2: '2'}
+161	161		301			RImgBg1Shake				{2: 'Construct', 3: 'Corrupted ahead! Large group! Prepare for combat!'}
+162	162		401							{1: '2', 2: '4422'}
+163	163		301							{3: 'Shorthalt quickly turns on his comms to relay emergency instructions to the refugees behind.'}
+164	164		201							{1: '1', 2: '500730'}
+165	165		301							{1: '1', 2: 'Shorthalt', 3: 'Kamui! Wanshi! Do you copy?', 4: '1'}
+166	166		301							"{2: 'Shorthalt', 3: ""We're going in! Get those refugees to safety. If they run into any Corrupted, they're as good as dead!"", 4: '1'}"
+167	167		202							{1: '1', 7: '1'}
+168	168		401							{1: '2', 2: '1508'}
+169	169		201							{1: '1', 2: '500013'}
+170	170		201							{1: '2', 2: '500013', 4: '-550'}
+171	171		201							{1: '3', 2: '500013', 4: '550'}
+172	172		301			RImgBg1Shake				{1: '1', 2: 'Corrupted Horde', 3: 'Grrrrr!', 4: '1', 5: '2', 6: '3'}
+173	173		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+174	174		401							{1: '2', 2: '2690'}
+175	175		201							{1: '1', 2: '500019', 7: '1'}
+176	176		301			PanelActor1Shake				{1: '1', 2: 'Thompson', 3: 'Argh!', 4: '1'}
+177	177		401							{1: '2', 2: '4306'}
+178	178		203						300.0	{1: '1', 2: '0.25', 4: '-1080'}
+179	179		202							{1: '1', 6: '1'}
+180	180		201							{1: '1', 2: '500730'}
+181	181		301							"{1: '1', 2: 'Shorthalt', 3: ""Thompson?! Damn, those things are moving faster than we anticipated! Look out, they're right behind you!"", 4: '1'}"
+182	182		202							{1: '1'}
+183	183		401							{1: '2', 2: '1508'}
+184	184		301				AniZhuanchangBegin			{3: 'The Corrupted overpower Thompson and other Constructs, pinning them to the ground before unleashing a terrifying shriek and charging towards the crowd.'}
+185	185		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory302.png'}
+186	186		201							{1: '1', 2: '1081001', 7: '1'}
+187	187		301			AniZhuanchangEnd				{1: '1', 2: 'Kamui', 3: 'On it!', 4: '1'}
+188	188		202							{1: '1'}
+189	189		301							{3: 'Kamui leaps forward and positions himself at the front of the group, holding his greatsword across his body. His optical module locks onto the nearest Corrupted, ready for the attack.'}
+190	190		201							{1: '1', 2: '500289'}
+191	191		301							{1: '1', 2: 'Wanshi', 3: 'No time... I need to get a weapon as well.', 4: '1'}
+192	192		202							{1: '1'}
+193	193		401							{1: '2', 2: '1508'}
+194	194		201							{1: '1', 2: '500013'}
+195	195		301							{1: '1', 2: 'Corrupted', 3: 'Grrr!', 4: '1'}
+196	196		202							{1: '1'}
+197	197		201							{1: '1', 2: '1081001', 3: '1'}
+198	198		301							"{1: '1', 2: 'Kamui', 3: ""You're pretty quick, aren't you? Huh? More coming from behind?"", 4: '1'}"
+199	199		202							{1: '1', 6: '1'}
+200	200		401						250.0	{1: '2', 2: '2589'}
+201	201		401							{1: '2', 2: '10006001'}
+202	202		301							"{3: ""The Corrupted close in from all sides. Despite Kamui's lightning-fast swings with his Greatsword, some still manage to break through his defenses.""}"
+203	203		201							{1: '1', 2: '1081001', 4: '1'}
+204	204		301							"{1: '1', 2: 'Kamui', 3: ""Wanshi! One's headed your way!"", 4: '1'}"
+205	205		202							{1: '1'}
+206	206		201							{1: '1', 2: '500259'}
+207	207		301							{1: '1', 2: 'Boy', 3: 'Doctor!', 4: '1'}
+208	208		201							{1: '18', 2: '500289'}
+209	209		301							{1: '1', 2: 'Wanshi', 3: 'I saw them!', 4: '18'}
+210	210		202							{1: '1', 2: '18', 6: '1'}
+211	211		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+212	212		401							{1: '2', 2: '2513'}
+213	213		301			RImgBg1Shake				{3: 'Bam!'}
+214	214		401							{1: '2', 2: '4305'}
+215	215		201							{1: '1', 2: '500289'}
+216	216		301							"{1: '1', 3: 'Wanshi returns, his gun blazing. A long-range shot shatters the Corrupted\'s ""legs"", sending it crashing to the ground.'}"
+217	217		202							{1: '1'}
+218	218		401							{1: '2', 2: '1508'}
+219	219		201							{1: '1', 2: '500013'}
+220	220		301							{1: '1', 2: 'Corrupted', 3: '...Grrrr... Wan...', 4: '1'}
+221	221		202							{1: '1'}
+222	222		201							{1: '1', 2: '500289', 3: '7'}
+223	223		301							{1: '1', 2: 'Wanshi', 3: '!', 4: '1'}
+224	224		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+225	225		401							{1: '2', 2: '2513'}
+226	226		202							{1: '1', 6: '1'}
+227	227		301			RImgBg1Shake				{3: 'Wanshi fires another shot.'}
+228	228		201							{1: '1', 2: '500289'}
+229	229		301							"{1: '1', 2: 'Wanshi', 3: ""Was that... the Corrupted's speaker?"", 4: '1'}"
+230	230		203							{1: '1', 2: '0.25', 3: '-400'}
+231	231		201							{1: '2', 2: '1081001', 3: '2', 4: '400'}
+232	232		301							{1: '1', 2: 'Kamui', 3: 'Nice shot, Wanshi!', 4: '2'}
+233	233		301							{2: 'Wanshi', 3: 'Must have misheard it...', 4: '1'}
+234	234		202							{1: '1', 2: '2'}
+235	235		301							{3: 'He stands firm behind Kamui and fends off the remaining Constructs, protecting the refugees.'}
+236	236		201							{1: '1', 2: '500290'}
+237	237		301							{1: '1', 2: 'Wanshi', 3: 'One... two... three... There are simply too many of them.', 4: '1'}
+238	238		202							{1: '1'}
+239	239		301							{3: 'A pounding headache sets in, leaving him feeling drained and exhausted.'}
+240	240		301							"{3: ""After knocking down a Construct with the refugees' help, he straightens up, clutching his head in pain. He spots a Construct arm amongst the fallen, and his expression darkens.""}"
+241	241		201							{1: '1', 2: '500294', 4: '-400'}
+242	242		201							{1: '2', 2: '500289', 4: '400'}
+243	243		301							{1: '1', 2: 'Wanshi', 3: 'Construct casualties ahead...', 4: '2'}
+244	244		301							"{2: 'Wanshi', 3: ""I'm the only Construct doctor here. I have to find them."", 4: '2'}"
+245	245		301							{2: 'Refugee A', 3: 'What about us?', 4: '1'}
+246	246		301							{2: 'Wanshi', 3: 'Kids, the elderly, and the wounded to the rear. Volunteers, keep tending to the injured. Everyone else capable of fighting, get to your feet and move to the front lines.', 4: '2'}
+247	247		301							{3: 'A refugee collapses, burying his face in his hands.'}
+248	248		301							"{2: 'Refugee A', 3: ""I'm sick of this! Why do we have to fight the Corrupted head-on? And what's the point of those metal things pretending to be human?!"", 4: '1'}"
+249	249		202							{1: '2'}
+250	250		201							{1: '2', 2: '500042', 4: '400'}
+251	251		301							"{1: '1', 2: 'Natalie', 3: 'Pretending to be human?! We Constructs were all modified from humans, and you dare call us ""metal things""?! If I were one of those Constructs fighting the Punishing with their lives right now, I\'d rip your head off!', 4: '2'}"
+252	252		202							{1: '1', 2: '2', 6: '1'}
+253	253		201							{1: '1', 2: '500290'}
+254	254		301							{1: '1', 2: 'Wanshi', 3: '...', 4: '1'}
+255	255		301							"{3: ""A splitting headache rages through Wanshi's skull.""}"
+256	256		203							{1: '1', 2: '0.25', 3: '400'}
+257	257		201							{1: '2', 2: '1081001', 4: '-400'}
+258	258		301							"{1: '1', 2: 'Kamui', 3: ""Wanshi! Thompson's down! They're about to be overrun!"", 4: '2'}"
+259	259		301							{2: 'Wanshi', 3: '...', 4: '1'}
+260	260		202							{1: '1', 2: '2'}
+261	261		401							{1: '2', 2: '2880'}
+262	262		301							{3: 'His ears ring, but he checks his equipment and reloads his pistol, his hands trembling slightly.'}
+263	263		201							{1: '1', 2: '500392', 3: '16'}
+264	264		201							{1: '2', 2: '500260', 4: '-600'}
+265	265		201							{1: '3', 2: '500259', 4: '600'}
+266	266		301							"{1: '1', 2: 'Refugee B', 3: ""Quiet... Everyone needs to understand the situation. If we keep losing Constructs at this rate, we won't last much longer."", 4: '1'}"
+267	267		301							{2: 'Boy', 3: 'Doctor... will you come back? Please... Cough!', 4: '3'}
+268	268		301							"{2: 'Girl', 3: ""Be careful out there, Doctor. We'll behave."", 4: '2'}"
+269	269		202							{1: '1', 2: '2', 3: '3'}
+270	270		201							{1: '1', 2: '500289', 4: '400'}
+271	271		201							{1: '2', 2: '1081001', 4: '-400'}
+272	272		301							{1: '1', 2: 'Wanshi', 3: '...', 4: '1'}
+273	273		301							{2: 'Kamui', 3: 'Wanshi!', 4: '2'}
+274	274		203						300.0	{1: '2', 2: '0.25', 3: '-300'}
+275	275		203							{1: '2', 2: '0.25', 3: '-400'}
+276	276		203						350.0	{1: '1', 2: '0.25', 3: '300'}
+277	277		401						250.0	{1: '2', 2: '10006001'}
+278	278		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+279	279		301			RImgBg1Shake				{3: 'Kamui pulls Wanshi close as a Corrupted—somehow slipped inside—lunges at them. Kamui fends off the attacker.'}
+280	280		301							{2: 'Kamui', 3: 'You okay there? You look a bit green.', 4: '2'}
+281	281		301							"{2: 'Wanshi', 3: ""I'm fine... Just go ahead."", 4: '1'}"
+282	282		301							"{3: ""He insists he's fine, but a throbbing pain splits his head open, making him feel nauseous. Something feels wrong, as if something alien is trying to force its way into his mind.""}"
+283	283		301							{3: 'But there are more urgent matters to attend to.'}
+284	284		301							{2: 'Wanshi', 3: 'We need to hold this line, or the Corrupted will overrun us!', 4: '1'}
+285	285		301				AniZhuanchangBegin			{2: 'Wanshi', 3: 'My maintenance kit will come in handy! Take me there, Kamui!', 4: '1'}
+286	286		202							{1: '1', 2: '2', 6: '1'}
+287	287		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory301.png'}
+288	288		201							{1: '1', 2: '500730', 7: '1'}
+289	289		301			AniZhuanchangEnd				{1: '1', 2: 'Shorthalt', 3: 'Watch out, Felbert!', 4: '1'}
+290	290		202							{1: '1'}
+291	291		301			RImgBg1Shake				{2: 'Felbert', 3: 'Argh!'}
+292	292		201							{1: '1', 2: '500019'}
+293	293		301							"{1: '1', 2: 'Thompson', 3: ""Hold back! He's infected!"", 4: '1'}"
+294	294		301							{3: 'Thompson, the Support Construct, examines Felbert and shakes his head in dismay.'}
+295	295		301							"{2: 'Thompson', 3: ""My kit's useless now, and my leg's busted. Unless a miracle worker shows up, we're all as good as dead out here."", 4: '1'}"
+296	296		401						250.0	{1: '2', 2: '4182'}
+297	297		401							{1: '2', 2: '4182'}
+298	298		301							{3: 'Thompson taps the broken projector on his wrist again, but the device remains unresponsive.'}
+299	299		203							{1: '1', 2: '0.25', 3: '-400'}
+300	300		201							{1: '2', 2: '500730', 4: '400'}
+301	301		301							"{1: '1', 2: 'Shorthalt', 3: ""I've been meaning to ask—is that your son?"", 4: '2'}"
+302	302		301							"{2: 'Thompson', 3: ""Yes, my son is still in Babylonia. He must be a young man now. Hasn't Wanshi mentioned him?"", 4: '1'}"
+303	303		301							"{2: 'Shorthalt', 3: ""He won't even talk about himself, let alone share your story."", 4: '2'}"
+304	304		202							{1: '1', 2: '2'}
+305	305		401							{1: '2', 2: '4408'}
+306	306		301							"{3: ""Shorthalt slashes through several more frenzied Corrupted, throwing them back into the surging tide. He's holding onto a desperate gamble that might buy him some time.""}"
+307	307		201							{1: '1', 2: '500019', 4: '-400'}
+308	308		201							{1: '2', 2: '500730', 4: '400'}
+309	309		301							"{1: '1', 2: 'Shorthalt', 3: ""This attack is unlike anything we've seen before... I hope he and Kamui make it out alive. Ugh, more of them! They just keep coming!"", 4: '2'}"
+310	310		301							{2: 'Shorthalt', 3: 'Get ready to set off...', 4: '2'}
+311	311		202				DialogDisable			{1: '1', 2: '2'}
+312	312		401						600.0	{1: '2', 2: '906607'}
+313	313		401				RImgBg1Shake			{1: '2', 2: '4408'}
+314	314		301			DialogEnable				{3: 'A bullet rips through the air, taking down a few Corrupted. The Greatsword follows, plunging into the ground, creating a temporary barrier.'}
+315	315		201							{1: '1', 2: '500730'}
+316	316		301							{1: '1', 2: 'Shorthalt', 3: '!', 4: '1'}
+317	317		202							{1: '1'}
+318	318		201							{1: '1', 2: '500289', 4: '400'}
+319	319		201							{1: '2', 2: '1081001', 3: '2', 4: '-400'}
+320	320		301							"{1: '1', 2: 'Kamui', 3: ""Hey! I've brought Wanshi with me!"", 4: '2'}"
+321	321		301							"{3: 'Under Kamui\'s protection, Wanshi leaps over the ruins with his ""life-saving"" equipment, rushing straight towards the perilous area.'}"
+322	322		202							{1: '1', 2: '2'}
+323	323		301							"{3: 'He\'s not sure what\'s driving him anymore—perhaps he just wants to atone for his past actions with these ""butcher\'s hands"".'}"
+324	324		301		1		AniZhuanchangBegin			"{3: ""He leaps down from the ruins, hot on Kamui's heels, clutching the Construct repair components to his chest.""}"

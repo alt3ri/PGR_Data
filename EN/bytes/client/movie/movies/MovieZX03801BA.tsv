@@ -1,0 +1,57 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		401							{1: '2', 2: '2930'}
+4	4		301			DialogEnable				{2: '???', 3: 'Ah... ▇▇▇... My ▇▇▇▇... Brilliant...'}
+5	5		301							"{2: '???', 3: ""▇▇▇... Don't be afraid...""}"
+6	6		301							{2: '???', 3: 'Run... Run out of this place!'}
+7	7		402							{1: '2930'}
+8	8		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+9	9		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_10.jpg'}
+10	10		401							{1: '2', 2: '213'}
+11	11		201							{1: '1', 2: '500702', 3: '7'}
+12	12		401							{1: '1', 2: '36'}
+13	13		301							{1: '1', 2: '???', 3: '...!', 4: '1'}
+14	14		204							{1: '1', 2: '14'}
+15	15		401							{1: '1', 2: '201'}
+16	16		301							{3: 'The purple-haired Construct wakes up to the sound of the flickering bonfire. She sits straight, exhaling deeply.'}
+17	17		301							{3: 'Despite the many times she reassures herself that no one can find her here, her nightmares never get any less frightening—omnipresent, they eat away her flesh and bones like countless imperceptible insects.'}
+18	18		202							{1: '1', 6: '1'}
+19	19		201							{1: '1', 2: '500582'}
+20	20		301							{1: '1', 2: '???', 3: '▆▇▅▂▆▆▄▃▅▂...', 4: '1'}
+21	21		301							{3: 'The dimly glowing armor thrums quietly, lowering her head toward the purple-haired girl.'}
+22	22		202							{1: '1', 6: '1'}
+23	23		201							{1: '1', 2: '500702'}
+24	24		301							"{1: '1', 2: '???', 3: ""...I'm okay, Cecily."", 4: '1'}"
+25	25		301							"{2: '???', 3: ""...And please don't call me by that name again."", 4: '1'}"
+26	26		301							"{2: '???', 3: ""I'm... Echo now."", 4: '1'}"
+27	27		301							{3: 'Echo seems to be responding to the thrumming armor or perhaps talking to herself. Bending down to dust her shoes, she notices the fluttering flame from the corner of her eyes and recalls the intense explosion.'}
+28	28		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+29	29		204							{1: '1', 2: '17'}
+30	30		301							{2: 'Echo', 3: 'Emm...', 4: '1'}
+31	31		301				AniZhuanchangBegin			{3: 'Memories of the past inevitably rush back into her M.I.N.D., seemingly transporting her back to that day through the flame...'}
+32	32		202							{1: '1', 6: '1'}
+33	33		402							{1: '213'}
+34	34		401							{1: '1', 2: '36'}
+35	35		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+36	36		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '3'}
+37	37		301			AniZhuanchangEnd				{3: 'That day...'}
+38	38		401						800.0	{1: '2', 2: '13015202'}
+39	39		401							{1: '1', 2: '273'}
+40	40		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+41	41		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_02.jpg'}
+42	42		401							{1: '2', 2: '2791'}
+43	43		401							{1: '2', 2: '2790'}
+44	44		301			RImgBg1Shake				"{2: '???', 3: ""Don't look back! Keep running!""}"
+45	45		301							"{2: '???', 3: ""Weren't you going to pursue your justice? Weren't you... going to end this darkness?!""}"
+46	46		301							"{2: '???', 3: ""Don't look back! Run! Keep running!""}"
+47	47		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+48	48		401							{1: '2', 2: '2789'}
+49	49		301			RImgBg1Shake				{2: '???', 3: 'You have to get away from here. You... have to get away!'}
+50	50		301							{3: 'The piercing scream is stuck in her throat, the rusty scent of blood stopping her from shouting the name out loud.'}
+51	51		301				AniZhuanchangBegin			"{3: ""All she can do is follow her body's instincts and keep running forward. That seems the only way she can escape the nightmare on her heels.""}"
+52	52		402							{1: '2791'}
+53	53		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+54	54		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: 'That day...'}
+55	55		102							{1: 'Everglowing Justice', 2: 'Chapter 25', 3: 'Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png'}
+56	56		502		1				5000.0	{1: 'ThemeEnable'}

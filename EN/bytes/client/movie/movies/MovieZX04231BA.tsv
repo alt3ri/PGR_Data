@@ -1,0 +1,612 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '371'}
+3	3		304							{1: 'The fabric of time and space entwined, rendering the future<//PRESENT> meaningless.', 2: 'ffffffff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 7: '1', 10: '1'}
+4	4		304				AniZhuanchangBegin			{1: 'When their whispers reach your ears, the entire world<//HELL> will unfold before you<//ME>.', 2: 'ffffffff', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 6: '1', 9: '1', 10: '1'}
+5	5		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg4201_21.jpg'}
+6	6		301			DialogEnable				{3: 'What a magnificent city!'}
+7	7		301							{3: 'The world is cast as a reflection in a mirror, showing only this city within its glassy confines.'}
+8	8		301				DialogDisable			{3: 'The golden city, where humans, mechanoids, and Constructs coexist peacefully, dons its most enchanting regalia at night.'}
+9	9		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory551.jpg'}
+10	10		301			DialogEnable				{3: 'When Qu regains her senses, she finds herself on the bustling streets of Kowloong.'}
+11	11		301							{3: 'It is as though nothing has changed, with history eternally capturing the city in its most radiant moment.'}
+12	12		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+13	13		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+14	14		201							{1: '1', 2: '500828', 7: '1'}
+15	15		401							{1: '2', 2: '4278'}
+16	16		301							{1: '1', 2: '???', 3: 'Bzzzz... bzzzz...', 4: '1'}
+17	17		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+18	18		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+19	19		202							{1: '1', 6: '1'}
+20	20		301							{3: 'A strange figure darts through an alley across the street, and Qu sharply notices the anomaly.'}
+21	21		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+22	22		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+23	23		401							{1: '2', 2: '4278'}
+24	24		201							{1: '1', 2: '500828', 7: '1'}
+25	25		301				DialogDisable			{1: '1', 2: '???', 3: '...You... bzzzz... side...', 4: '1'}
+26	26		202							{1: '1'}
+27	27		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory240.png', 3: '0', 4: '1', 5: '1'}
+28	28		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+29	29		205							{1: '999'}
+30	30		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory240.png'}
+31	31		301			DialogEnable				{3: 'The street is too crowded. By the time Qu navigates through the throng to the mouth of the alley, the figure with the pulsing green glow has vanished.'}
+32	32		301							{3: 'In its place stands a woman in her twenties.'}
+33	33		201							{1: '1', 2: '500839'}
+34	34		301							{1: '1', 2: '???', 3: 'Greetings, Lady Qu.', 4: '1'}
+35	35		301							{2: '???', 3: 'Huaxu sent me to guide you. You can call me Jiaxi.', 4: '1'}
+36	36		202							{1: '1'}
+37	37		201							{1: '1', 2: '500817'}
+38	38		301							{1: '1', 2: 'Qu', 3: 'Huaxu sent you...', 4: '1'}
+39	39		301							"{2: 'Qu', 3: ""That means I'm still in the Tabula Akasha, right?"", 4: '1'}"
+40	40		202							{1: '1'}
+41	41		201							{1: '1', 2: '500839'}
+42	42		301							"{1: '1', 2: 'Jaxi', 3: ""Hmm... This isn't the right place to talk about it."", 4: '1'}"
+43	43		301							{2: 'Jaxi', 3: 'Please follow me to a safer location.', 4: '1'}
+44	44		301							{3: 'The woman cautiously peeks out of the alley before signaling Qu to follow.'}
+45	45		301				AniZhuanchangBegin			{3: 'Jiaxi leads Qu through the intricate alleyways. After making sure there is no one suspicious around, she opens an old door.'}
+46	46		401						500.0	{1: '2', 2: '754'}
+47	47		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory234.png'}
+48	48		201							{1: '1', 2: '500462'}
+49	49		301			AniZhuanchangEnd				{1: '1', 3: 'Inside, a tall and kind man immediately stands up to greet Qu.'}
+50	50		301							{2: 'Sufu', 3: 'Lady Qu.', 4: '1'}
+51	51		202							{1: '1'}
+52	52		201							{1: '1', 2: '500817'}
+53	53		301							{1: '1', 2: 'Qu', 3: 'What is going on?', 4: '1'}
+54	54		202							{1: '1'}
+55	55		201							{1: '1', 2: '500839', 4: '1'}
+56	56		301							{1: '1', 2: 'Jaxi', 3: 'Lady Qu, you are in the Tabula Akasha.', 4: '1'}
+57	57		301							{2: 'Jaxi', 3: 'Huaxu intended for you to finish building the historical data before entering the Tabula Akasha.', 4: '1'}
+58	58		301							{2: 'Jaxi', 3: 'But it seems there was a glitch in the cache, so Huaxu had to upload you into the Tabula Akasha.', 4: '1'}
+59	59		301							{2: 'Jaxi', 3: 'But some sectors of the Tabula Akasha have turned into a no-go zone, a kind of hell where any data that enters can never leave.', 4: '1'}
+60	60		301							{2: 'Jaxi', 3: 'At the last moment, Huaxu sent you here.', 4: '1'}
+61	61		202							{1: '1'}
+62	62		201							{1: '1', 2: '500817'}
+63	63		301							"{1: '1', 2: 'Qu', 3: ""So, this area is part of the Tabula Akasha's data space?"", 4: '1'}"
+64	64		202							{1: '1'}
+65	65		201							{1: '1', 2: '500462'}
+66	66		301							"{1: '1', 2: 'Sufu', 3: ""To put it simply, from the moment you were uploaded, you've been inside the Tabula Akasha."", 4: '1'}"
+67	67		301							{2: 'Sufu', 3: 'This sector is still safe. Huaxu moved us here temporarily.', 4: '1'}
+68	68		301							"{2: 'Sufu', 3: ""However, we don't know when we might have to move again..."", 4: '1'}"
+69	69		202							{1: '1'}
+70	70		201							{1: '1', 2: '500817'}
+71	71		301							"{1: '1', 2: 'Qu', 3: ""...So that's how it was, huh."", 4: '1'}"
+72	72		301							"{2: 'Qu', 3: ""Settle in here and don't leave without permission."", 4: '1'}"
+73	73		301							{2: 'Qu', 3: 'Huaxu will relocate you again when necessary.', 4: '1'}
+74	74		202							{1: '1'}
+75	75		201							{1: '1', 2: '500817', 3: '3', 4: '-400'}
+76	76		201							{1: '2', 2: '500839', 4: '400'}
+77	77		301							{1: '1', 3: 'As Qu grabs her sword and turns to leave, Jiaxi blocks the door with her body.'}
+78	78		301							{2: 'Jaxi', 3: 'No, Lady Qu.', 4: '2'}
+79	79		301							"{2: 'Jaxi', 3: ""You... you can't leave here."", 4: '2'}"
+80	80		301							{3: 'Her voice trembles as she blocks the path of the Monarch of Kowloong.'}
+81	81		204							{1: '1', 2: '4'}
+82	82		301							{2: 'Qu', 3: '...Step aside.', 4: '1'}
+83	83		204							{1: '1', 2: '3'}
+84	84		301							{2: 'Jaxi', 3: 'No.', 4: '2'}
+85	85		301							"{3: ""Unable to confront her people, Qu couldn't raise her sword.""}"
+86	86		202							{1: '2'}
+87	87		201							{1: '2', 2: '500462', 4: '400'}
+88	88		301							{1: '1', 2: 'Sufu', 3: 'Tsk, well, Jiaxi...', 4: '2'}
+89	89		301							"{2: 'Sufu', 3: ""You need to explain things properly. Lady Qu doesn't fully understand the situation yet."", 4: '2'}"
+90	90		301							"{3: ""The man, who appears to be Jiaxi's husband, quickly steps between them to mediate.""}"
+91	91		301							{2: 'Qu', 3: 'Continue.', 4: '1'}
+92	92		301							{2: 'Sufu', 3: 'Well... how should I put it...', 4: '2'}
+93	93		301							"{2: 'Sufu', 3: ""Well... Huaxu's orders were to bring you to this safe sector and make sure you stay here."", 4: '2'}"
+94	94		301							{2: 'Qu', 3: 'Why?', 4: '1'}
+95	95		301							{2: 'Sufu', 3: 'Uh, well...', 4: '2'}
+96	96		301							{3: 'He nervously searches for the right words.'}
+97	97		301							{2: 'Sufu', 3: 'Well...', 4: '2'}
+98	98		301							"{2: 'Sufu', 3: ""I, I am Jiaxi's husband!"", 4: '2'}"
+99	99		301							{2: 'Sufu', 3: 'I was already forty when I was transferred to this sector.', 4: '2'}
+100	100		301							{2: 'Sufu', 3: 'But look at Jiaxi. She still appears to be in her twenties, right?', 4: '2'}
+101	101		301							{2: 'Sufu', 3: 'That was the age I was when I first met her!', 4: '2'}
+102	102		301							"{2: 'Qu', 3: ""So, you're saying..."", 4: '1'}"
+103	103		301							"{2: 'Qu', 3: ""There's a lot of scrambled data here, and some timestamps are incorrect."", 4: '1'}"
+104	104		301							{2: 'Sufu', 3: 'Yes! Exactly!', 4: '2'}
+105	105		301							{2: 'Qu', 3: 'Then I must leave. There are things I need to do—', 4: '1'}
+106	106		202							{1: '1', 2: '2', 6: '1'}
+107	107		301							{2: '???', 3: 'Magical Girl! Shining Warrior!'}
+108	108		301							{3: 'A youthful and cheerful declaration rings out from the room, leaving an awkward silence among the three.'}
+109	109		201							{1: '1', 2: '500817'}
+110	110		301							{1: '1', 2: 'Qu', 3: '?', 4: '1'}
+111	111		202							
+112	112		201							{1: '1', 2: '500839'}
+113	113		301							"{1: '1', 2: 'Jaxi', 3: ""Why didn't you turn off the TV..."", 4: '1'}"
+114	114		202							{1: '1'}
+115	115		201							{1: '1', 2: '500462'}
+116	116		301							"{1: '1', 2: 'Sufu', 3: ""Ahem... Haha... It's nothing, nothing."", 4: '1'}"
+117	117		202							{1: '1'}
+118	118		401							{1: '2', 2: '4088'}
+119	119		301							{3: 'The middle-aged man, with a sheepish smile, walks past Qu and turns off the TV.'}
+120	120		201							{1: '1', 2: '500462'}
+121	121		301							"{1: '1', 2: 'Sufu', 3: ""You know, the kids love it, and I find it quite captivating myself, so I thought I'd watch too..."", 4: '1'}"
+122	122		202							{1: '1'}
+123	123		201							{1: '1', 2: '500817'}
+124	124		301							{1: '1', 2: 'Qu', 3: '...', 4: '1'}
+125	125		301							{2: 'Qu', 3: 'Your child...', 4: '1'}
+126	126		202							{1: '1'}
+127	127		201							{1: '1', 2: '500839'}
+128	128		301							{1: '1', 2: 'Jaxi', 3: 'She should be just outside now.', 4: '1'}
+129	129		202							{1: '1'}
+130	130		201							{1: '1', 2: '500817'}
+131	131		301							{1: '1', 2: 'Qu', 3: 'Her name is Yoyo, right?', 4: '1'}
+132	132		202							{1: '1'}
+133	133		201							{1: '1', 2: '500462'}
+134	134		301							{1: '1', 2: 'Sufu', 3: 'Yes...', 4: '1'}
+135	135		301							"{3: ""Sufu's mood visibly deflates.""}"
+136	136		301							{2: 'Sufu', 3: 'Speaking of which, you mentioned a special edition DVD last time...', 4: '1'}
+137	137		202							{1: '1'}
+138	138		301							"{3: ""As Qu turns back toward the room, the couple's expressions fall.""}"
+139	139		201							{1: '1', 2: '500839'}
+140	140		301							{1: '1', 2: 'Jaxi', 3: 'Lady Qu...', 4: '1'}
+141	141		301							"{2: 'Jaxi', 3: ""I know Huaxu doesn't have the spare resources to predict her future or end."", 4: '1'}"
+142	142		301							{2: 'Jaxi', 3: 'But if you could tell me... will she make it?', 4: '1'}
+143	143		202							{1: '1'}
+144	144		201							{1: '1', 2: '500817'}
+145	145		301							"{1: '1', 2: 'Qu', 3: ""She is currently serving her duty as Pulao for the people of Kowloong. She'll make it through."", 4: '1'}"
+146	146		301							{3: 'Qu clenches her weapon tighter.'}
+147	147		301							"{3: ""She knows she can't offer them any answers. She is not even sure if the situation is moving toward the future she hoped for, or if Yoyo can survive this disaster.""}"
+148	148		301							{3: 'But she has to offer some reassurance.'}
+149	149		301							"{3: ""It's a necessary facade.""}"
+150	150		202							{1: '1', 6: '1'}
+151	151		201							{1: '1', 2: '500462'}
+152	152		301							"{1: '1', 2: 'Sufu', 3: ""That's good... that's good..."", 4: '1'}"
+153	153		202							{1: '1'}
+154	154		301							{3: 'The man mutters softly, then quickly, as if realizing something, pulls his wife standing at the door back to his side.'}
+155	155		201							{1: '1', 2: '500462'}
+156	156		301							{1: '1', 2: 'Sufu', 3: 'Lady Qu, will we all survive?', 4: '1'}
+157	157		202							{1: '1'}
+158	158		201							{1: '1', 2: '500817'}
+159	159		301							{1: '1', 2: 'Qu', 3: 'Sure. Things will get better—', 4: '1'}
+160	160		401							{1: '1', 2: '36'}
+161	161		202							{1: '1'}
+162	162		401							{1: '2', 2: '2626'}
+163	163		201							{1: '1', 2: '500462'}
+164	164		301							"{1: '1', 2: 'Sufu', 3: ""...Who's that?"", 4: '1'}"
+165	165		401							{1: '1', 2: '250'}
+166	166		202							{1: '1', 6: '1'}
+167	167		401							{1: '2', 2: '2626'}
+168	168		301							{3: 'But the person outside seems unwilling to respond, continuing to knock incessantly.'}
+169	169		201							{1: '1', 2: '500817', 3: '4'}
+170	170		301							"{1: '1', 2: 'Qu', 3: ""Who's there?"", 4: '1'}"
+171	171		202							{1: '1', 6: '1'}
+172	172		401							{1: '2', 2: '2511'}
+173	173		301			RImgBg1Shake				{3: 'Thump!'}
+174	174		301							"{3: ""The knocking turns into violent ramming. If Huaxu hadn't reinforced the memory area's defenses, the seemingly fragile door wouldn't have withstood such impact.""}"
+175	175		301							{3: 'Qu immediately readies herself for battle.'}
+176	176		401							{1: '2', 2: '2511'}
+177	177		301			RImgBg1Shake				{3: 'Bang!!'}
+178	178		301							{3: 'Still no response from outside, and it feels different from the usual disturbances caused by the Punishing Virus.'}
+179	179		301							{3: 'Qu points her sword toward the door and slowly retreats to the bedside, signaling the panicked Sufu and Jiaxi to hide behind her.'}
+180	180		401							{1: '2', 2: '2511'}
+181	181		401							{1: '2', 2: '4305'}
+182	182		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+183	183		301			RImgBg1Shake				{3: 'Bang!!!'}
+184	184		401							{1: '2', 2: '819004'}
+185	185		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+186	186		509							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 2: '1'}
+187	187		301			RImgBg1Shake				{3: 'The fragile door finally cracks open, not from the ramming, but from a pitch-black longsword slicing through.'}
+188	188		301							{3: 'Behind the crack, a somewhat familiar eye is revealed.'}
+189	189		201							{1: '11', 2: '500841', 4: '-500'}
+190	190		301				DialogDisable			{1: '1', 2: '???', 3: 'Hey.', 4: '11'}
+191	191		202							{1: '11', 6: '1'}
+192	192		501						1000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '3'}
+193	193		510						800.0	{1: '1'}
+194	194		401							{1: '2', 2: '4305'}
+195	195		401							{1: '2', 2: '2511'}
+196	196		502							{1: 'DialogEnable'}
+197	197		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+198	198		301			RImgBg1Shake				{3: 'Bang!!!!'}
+199	199		401							{1: '1', 2: '36'}
+200	200		201							{1: '2', 2: '500841'}
+201	201		301							{1: '1', 3: 'The door finally gives way under the external force, revealing a shadowy figure as dark as the longsword.'}
+202	202		202							{1: '2'}
+203	203		401							{1: '1', 2: '337'}
+204	204		201							{1: '1', 2: '500840', 3: '2'}
+205	205		301							{1: '1', 2: '???', 3: 'Ah... finally.', 4: '1'}
+206	206		301							{2: '???', 3: 'Found you.', 4: '1'}
+207	207		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '1'}
+208	208		401							{1: '2', 2: '10042008'}
+209	209		301							"{3: ""Qu doesn't wait for the figure to respond and thrusts her sword toward their throat—""}"
+210	210		202							{1: '1', 6: '1'}
+211	211		201							{1: '1', 2: '500840', 3: '2', 4: '-500'}
+212	212		201							{1: '2', 2: '500817', 3: '5', 4: '1000'}
+213	213		203						100.0	{1: '2', 2: '0.15', 3: '300'}
+214	214		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+215	215		401							{1: '2', 2: '844006'}
+216	216		301			RImgBg1Shake				{1: '1', 3: 'Clang!'}
+217	217		301							"{3: ""The dark longsword deflects Qu's attack, causing her blade to merely graze the intruder's neck without inflicting harm.""}"
+218	218		301							{2: '???', 3: 'Interesting.', 4: '1'}
+219	219		203							{1: '1', 2: '0.1', 3: '-300'}
+220	220		203						50.0	{1: '2', 2: '0.1', 3: '500'}
+221	221		401							{1: '2', 2: '9342058'}
+222	222		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+223	223		301			RImgBg1Shake				{3: 'Clang!'}
+224	224		301							{3: 'Qu instinctively shifts to the right, trying to reposition for another strike. However, with Sufu and Jiaxi behind her, she has to block the incoming attack instead of advancing.'}
+225	225		203							{1: '1', 2: '0.15', 3: '-600'}
+226	226		203							{1: '2', 2: '0.15', 3: '600'}
+227	227		401							{1: '2', 2: '9342045'}
+228	228		301							"{3: ""The dark blade that swept past her seems oddly familiar, though she can't place why.""}"
+229	229		401							{1: '2', 2: '14014403'}
+230	230		501						300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '2'}
+231	231		502						140.0	{1: 'RImgBg1Shake'}
+232	232		505							{1: 'RImgBg1Shake'}
+233	233		203							{1: '1', 2: '0.1', 3: '-250'}
+234	234		203						100.0	{1: '2', 2: '0.1', 3: '250'}
+235	235		401							{1: '2', 2: '844007'}
+236	236		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+237	237		502						500.0	{1: 'RImgBg1Shake'}
+238	238		505							{1: 'RImgBg1Shake'}
+239	239		401							{1: '2', 2: '9342045'}
+240	240		203							{1: '1', 2: '0.1', 3: '-500'}
+241	241		203							{1: '2', 2: '0.1', 3: '500'}
+242	242		301							"{3: ""As the fight continues, the intruder mirrors Qu's techniques almost perfectly, but with a more sinister edge. Their attacks seem calculated to exploit Qu's instinct to protect the couple behind her, subtly aiming to strike at them with each move.""}"
+243	243		301							"{3: ""It is as if the fight isn't about winning or killing, but rather...""}"
+244	244		301							{3: 'For pure slaughter and Joy.'}
+245	245		301							{2: 'Qu', 3: 'Run!!', 4: '2'}
+246	246		202							{1: '1', 2: '2', 6: '1'}
+247	247		401							{1: '2', 2: '4331'}
+248	248		301							{3: 'Terrified, Sufu grabs Jiaxi and they both dash to an opposite door, fleeing the scene.'}
+249	249		201							{1: '1', 2: '500840', 3: '2', 4: '-1000'}
+250	250		201							{1: '2', 2: '500817', 3: '5', 4: '400'}
+251	251		203						100.0	{1: '1', 2: '0.15', 3: '-300'}
+252	252		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+253	253		401							{1: '2', 2: '844006'}
+254	254		301				DialogDisable			{1: '1', 2: '???', 3: 'Keep your eyes on me, Qu.', 4: '1'}
+255	255		401							{1: '2', 2: '9342058'}
+256	256		203						100.0	{1: '2', 2: '0.1'}
+257	257		203							{1: '1', 2: '0.1', 3: '-1000'}
+258	258		202						500.0	{1: '1'}
+259	259		202							{1: '2'}
+260	260		401						300.0	{1: '2', 2: '9342045'}
+261	261		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+262	262		502							{1: 'RImgBg1Shake'}
+263	263		401							{1: '2', 2: '819004'}
+264	264		401							{1: '2', 2: '4007'}
+265	265		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+266	266		301			DialogEnable				{3: 'Qu counters another strike from the intruder, swinging her sword at a cluttered nearby table and TV, creating a distraction with dust and sparks. She seizes the moment to dive through the same door Sufu and Jiaxi escaped through.'}
+267	267		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+268	268		401							{1: '2', 2: '1226'}
+269	269		401							{1: '2', 2: '4008'}
+270	270		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+271	271		301							{3: 'The room<//MEMORY> they just left instantly turns into a sea of flames.'}
+272	272		201							{1: '1', 2: '500840', 3: '2'}
+273	273		301							{1: '1', 3: 'The dark figure stands illuminated by the fire, her sinister smile reflecting the flickering flames.'}
+274	274		301				AniZhuanchangBegin			{2: '???', 3: 'Why not forget the past and embrace a new life?', 4: '1'}
+275	275		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+276	276		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+277	277		402							{1: '4008'}
+278	278		401							{1: '2', 2: '4331'}
+279	279		202							{1: '1', 6: '1'}
+280	280		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory234.png'}
+281	281		301			AniZhuanchangEnd				{3: 'Escape.'}
+282	282		509							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory234.png', 2: '1'}
+283	283		401							{1: '2', 2: '2661'}
+284	284		301							"{3: 'Behind every door lies the same scene: identical room layouts, the same furniture, and the same ""Kowloong\'s Magical Girl"" DVD.'}"
+285	285		510							{1: '2', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory234.png'}
+286	286		401							{1: '2', 2: '4331'}
+287	287		301							{3: 'Escape seems futile.'}
+288	288		401							{1: '2', 2: '2661'}
+289	289		509						500.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory234.png', 2: '1'}
+290	290		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab', 2: '3'}
+291	291		502							{1: 'RImgBg1Shake'}
+292	292		401							{1: '2', 2: '14014403'}
+293	293		301							{3: 'Behind every door were the same intruders, the same fights, and the same flames.'}
+294	294		201							{1: '1', 2: '500840', 3: '2', 4: '-500'}
+295	295		201							{1: '2', 2: '500817', 3: '5', 4: '500'}
+296	296		301							{1: '1', 2: '???', 3: 'Where else can you go?', 4: '1'}
+297	297		301				AniZhuanchangBegin			{2: '???', 3: 'You sinner.', 4: '1'}
+298	298		202							{1: '1', 2: '2', 6: '1'}
+299	299		510						500.0	{1: '1'}
+300	300		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+301	301		401							{1: '2', 2: '10042608'}
+302	302		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4201_02.jpg'}
+303	303		105							{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieQu/UiMovieQu02.prefab'}
+304	304		301			AniZhuanchangEnd				{3: 'The dark figure appears behind Qu, cold blade pressed to her throat.'}
+305	305		301							{2: '???', 3: 'Ah, so familiar.'}
+306	306		301							"{3: ""Her cold gaze lingers menacingly as she teases Qu's stoic face.""}"
+307	307		301							"{2: '???', 3: ""It's been too long since I tasted such defiant memories.""}"
+308	308		301							{2: 'Qu', 3: 'Get away from me!'}
+309	309		301							{3: 'Qu tries to push the figure back with her sword, but the blade at her neck presses closer, the pain searing through her thoughts.'}
+310	310		301							{3: 'Though the pain drains her strength to resist, she still holds onto her weapon.'}
+311	311		301							"{2: '???', 3: ""I won't leave, Qu.""}"
+312	312		301							"{2: '???', 3: 'I will ""never"" leave you.'}"
+313	313		301							{2: '???', 3: 'Because I am you.'}
+314	314		401							{1: '2', 2: '10042608'}
+315	315		301							"{3: ""The blade sinks deeper into her skin, yet no vital fluid flows out. Instead, a strong hatred seeps through the wound into Qu's mind—""}"
+316	316		401							{1: '1', 2: '36'}
+317	317		401							{1: '2', 2: '2711'}
+318	318		105							
+319	319		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+320	320		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory252.png'}
+321	321		504							{1: '1'}
+322	322		201							{1: '1', 2: '500220', 3: '4', 7: '1'}
+323	323		301			DialogEnable				{1: '1', 2: 'Qu', 3: '...I will fulfill the unfinished vision of my father.', 4: '1'}
+324	324		401							{1: '1', 2: '364'}
+325	325		301							{2: 'Qu', 3: 'Those who drove my father to his death will bleed for their deeds.', 4: '1'}
+326	326		202							{1: '1', 6: '1'}
+327	327		301							"{2: 'Xun', 3: ""No... You can't...""}"
+328	328		301							"{2: 'Xun', 3: ""You can't do this!""}"
+329	329		301							{2: 'Xun', 3: 'Many of them were my people, holding key positions in the Chamber.'}
+330	330		201							{1: '1', 2: '500220', 3: '4'}
+331	331		301							{1: '1', 2: 'Qu', 3: 'Your people are all dead.', 4: '1'}
+332	332		301							{2: 'Qu', 3: 'Now only you remain, despicable, shameless, and cunning.', 4: '1'}
+333	333		301							{2: 'Xun', 3: 'If you kill me... everything... Kowloong... will spiral back into... war!'}
+334	334		301							{2: 'Qu', 3: 'Kowloong does not fear war.', 4: '1'}
+335	335		301							{2: 'Qu', 3: 'As the Monarch of Kowloong, I will end the war.', 4: '1'}
+336	336		202							{1: '1', 6: '1'}
+337	337		301			RImgBg1Shake				{2: 'Xun', 3: 'Qu!!!!!!'}
+338	338		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+339	339		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg1501_2.jpg'}
+340	340		301							{2: 'Qu', 3: 'People of Kowloong! Hear me!'}
+341	341		301							{2: 'Qu', 3: 'Kowloong is in the grip of an unprecedented crisis, and you have the right to know the truth—we have been betrayed.'}
+342	342		301							{2: 'Qu', 3: 'A relentless faction within the Chamber coerced our previous leader into taking his own life.'}
+343	343		301							{2: 'Qu', 3: 'Like evil dragons, they hoard the wealth created by our hands, blocking the progress of our era.'}
+344	344		301							{2: 'Qu', 3: 'They only offer deceitful promises when confronted with our force.'}
+345	345		301							{2: 'Qu', 3: 'I promise you, as your leader, I will settle scores with those who betrayed Kowloong.'}
+346	346		301							{2: 'Qu', 3: 'They will pay dearly for their treachery and their betrayal.'}
+347	347		301							{2: 'Qu', 3: 'The people of Kowloong never fear war!'}
+348	348		301							{2: 'Qu', 3: 'And the war is right in front of us!'}
+349	349		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+350	350		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory252.png'}
+351	351		301							{3: 'I have fulfilled my vengeance, slaying those who wronged me.'}
+352	352		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+353	353		201							{1: '1', 2: '500220', 3: '9', 4: '-400'}
+354	354		201							{1: '2', 2: '500217', 3: '9', 4: '400'}
+355	355		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory249.png'}
+356	356		301							{1: '1', 3: 'Yet, in pursuing this path, I have lost my brothers, my only family.', 4: '1', 5: '2'}
+357	357		202							{1: '1', 2: '2', 6: '1'}
+358	358		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+359	359		101						1000.0	{1: 'Assets/Product/Texture/Image/BgCg/Cgqz1903.jpg'}
+360	360		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+361	361		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory855.jpg'}
+362	362		301							{3: 'I spent years quelling the fires of war in Kowloong.'}
+363	363		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+364	364		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz1902.jpg'}
+365	365		301							{3: 'But as I stand atop the peak of a reunited, mighty Kowloong...'}
+366	366		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+367	367		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+368	368		301				DialogDisable			{3: 'A hunger stirs deep within my soul—'}
+369	369		401							{1: '1', 2: '366'}
+370	370		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+371	371		401							{1: '2', 2: '1502'}
+372	372		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+373	373		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+374	374		307							{1: 'War! War!', 3: '60'}
+375	375		301							{3: 'War! War!'}
+376	376		401							{1: '2', 2: '915'}
+377	377		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+378	378		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory295.png'}
+379	379		307						100.0	{2: '1'}
+380	380		307							{1: 'With steel and flames, we sweep aside all who dare stand in our way.', 3: '60'}
+381	381		301			RImgBg1Shake				{3: 'With steel and flames, we sweep aside all who dare stand in our way.'}
+382	382		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+383	383		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+384	384		401							{1: '2', 2: '1502'}
+385	385		307						100.0	{2: '1'}
+386	386		307							{1: 'War! War!', 3: '60'}
+387	387		301							{3: 'War! War!'}
+388	388		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+389	389		401							{1: '2', 2: '2513'}
+390	390		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory547.jpg'}
+391	391		307						100.0	{2: '1'}
+392	392		307							{1: 'With bullets and death, we exact retribution on all who dare betray us.', 3: '60'}
+393	393		301			RImgBg1Shake				{3: 'With bullets and death, we exact retribution on all who dare betray us.'}
+394	394		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+395	395		401							{1: '2', 2: '1502'}
+396	396		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+397	397		307						100.0	{2: '1'}
+398	398		307							{1: 'War! War!', 3: '60'}
+399	399		301							{3: 'War! War!'}
+400	400		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+401	401		101							{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading19.jpg'}
+402	402		307						100.0	{2: '1'}
+403	403		307							{1: 'I<//WE> will build an eternal Kowloong, a timeless citadel where our legacy resounds forever.', 3: '60'}
+404	404		301							{3: 'I<//WE> will build an eternal Kowloong, a timeless citadel where our legacy resounds forever.'}
+405	405		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+406	406		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+407	407		401							{1: '2', 2: '1502'}
+408	408		307						100.0	{2: '1'}
+409	409		307							{1: 'War! War!', 3: '60'}
+410	410		301							{3: 'War! War!'}
+411	411		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory578.jpg'}
+412	412		307						100.0	{2: '1'}
+413	413		307							{1: 'I<//WE> will craft icy frontiers with the Arctic winds, forging realms of frost that endure beyond the ages.', 3: '60'}
+414	414		301							{3: 'I<//WE> will craft icy frontiers with the Arctic winds, forging realms of frost that endure beyond the ages.'}
+415	415		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+416	416		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+417	417		401							{1: '2', 2: '1502'}
+418	418		307						100.0	{2: '1'}
+419	419		307							{1: 'War! War!', 3: '60'}
+420	420		301							{3: 'War! War!'}
+421	421		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+422	422		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory535.jpg'}
+423	423		401							{1: '2', 2: '4264'}
+424	424		307						100.0	{2: '1'}
+425	425		307							{1: 'I<//WE> will cleanse the coastal defiance with storms born of the Atlantic, carving paths of power through the tempest.', 3: '60'}
+426	426		301							{3: 'I<//WE> will cleanse the coastal defiance with storms born of the Atlantic, carving paths of power through the tempest.'}
+427	427		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+428	428		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory767.png'}
+429	429		307						100.0	{2: '1'}
+430	430		307							{1: 'Wars, wars, endless wars!', 3: '60'}
+431	431		301				AniZhuanchangBegin			{3: 'Wars, wars, endless wars!'}
+432	432		307							{2: '1'}
+433	433		402							{1: '4264'}
+434	434		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+435	435		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+436	436		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory864.jpg'}
+437	437		502							{1: 'DialogEnable'}
+438	438		301			AniZhuanchangEnd				{3: 'All emotions are woven into the very fabric of my being.'}
+439	439		301							{3: 'I perceive them, I sculpt them to my will.'}
+440	440		301							{3: 'As I obliterate the foes of Kowloong with the fury of war, as I purchase the allegiance of nations with the weight of gold—'}
+441	441		301				AniZhuanchangBegin			{3: 'As I shed this mortal coil for an immortal form, as I transcend the confines of flesh and bone—'}
+442	442		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory334.png'}
+443	443		301			AniZhuanchangEnd				{3: 'As I fold the world into the grand dominion of Kowloong, as my city ascend from the soils of every celestial body within our solar grasp—'}
+444	444		301							"{3: ""As I wield the power of life and death across the cosmos with a Dyson sphere, as the might of Kowloong's flagship eradicates all who dare oppose us—""}"
+445	445		301							{3: 'Bow before me or face your demise!'}
+446	446		301							{3: 'This insatiable hunger gnaws at me still, leaving my essence hollow, a mere husk.'}
+447	447		301				AniZhuanchangBegin			{3: 'But now, I can feel it, that elusive jubilance.'}
+448	448		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg901_5.jpg'}
+449	449		301			AniZhuanchangEnd				{3: 'I have wiped out the intellect of an entire galactic civilization, drained a star of all its power, and launched a Kowloong ark beyond the speed of light, sending it on an eternal and boundless journey to the farthest reaches of the universe.'}
+450	450		301							{3: 'When I extinguished that star, jubilance filled me.'}
+451	451		301							{3: 'Beneath my throne lies the graveyard of history.'}
+452	452		301							{3: 'A palace built of bones and lies, is my only dwelling in the empty stars.'}
+453	453		301							"{3: ""I am compelled to ensure that both my will and Kowloong's permeate and conquer the cosmos, achieving true immortality.""}"
+454	454		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+455	455		105							{1: 'Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieQu/UiMovieQu02.prefab'}
+456	456		504							{1: '0'}
+457	457		205							{1: '999'}
+458	458		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4201_02.jpg'}
+459	459		301							{2: 'Qu?', 3: 'Now you see.'}
+460	460		301							{2: 'Qu', 3: 'You maniac.'}
+461	461		301							{2: 'Qu?', 3: 'To us, conquest and possession are everything.'}
+462	462		301							"{2: 'Qu?', 3: ""Humanity's primal urges need a unifying, eternal force to bind them.""}"
+463	463		301							{2: 'Qu?', 3: 'In that future you denied, I achieved immortality for Kowloong.'}
+464	464		301							{2: 'Qu?', 3: 'And that ship, faster than light... at the very end.'}
+465	465		301							{2: 'Qu?', 3: 'They reached the edge of the universe, but the farthest edge turned out to be just... the nearest beginning.'}
+466	466		301							{2: 'Qu?', 3: 'They came back to where it all began.'}
+467	467		301							{2: 'Qu?', 3: 'Bringing you... yes, you.'}
+468	468		301							{3: 'Her nails nearly pierce the cold cheek she clutches, her eyes blazing with insatiable greed and hunger.'}
+469	469		301							{2: 'Qu?', 3: 'You... you rewrote this story.'}
+470	470		301							{2: 'Qu', 3: 'You failed.'}
+471	471		301							"{2: 'Qu?', 3: ""Don't you get it? You're the one who failed.""}"
+472	472		301							{2: 'Qu?', 3: 'I sought to forge an eternal Kowloong in this universe, but in the end, you rejected me, rejected our ideals.'}
+473	473		301							{2: 'Qu', 3: 'How pitiful.'}
+474	474		301							{2: 'Qu', 3: 'Did I really talk so much in that rejected future?'}
+475	475		301							{2: 'Qu', 3: 'Who would have thought that me as a villain would be this garrulous?'}
+476	476		301							"{2: 'Qu', 3: ""In those... hmm, cartoons, they'd never let a villain talk this much.""}"
+477	477		301							{2: 'Qu?', 3: 'Huh? What?'}
+478	478		105							
+479	479		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '1'}
+480	480		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+481	481		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+482	482		401							{1: '2', 2: '13040024'}
+483	483		301							{3: 'Suddenly, a heavy greatsword flies toward Qu.'}
+484	484		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}
+485	485		401							{1: '2', 2: '2647'}
+486	486		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+487	487		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory771.jpg'}
+488	488		401							{1: '2', 2: '18511049'}
+489	489		301			RImgBg1Shake				{3: 'Boom!'}
+490	490		401							{1: '2', 2: '9342045'}
+491	491		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+492	492		401							{1: '2', 2: '3079'}
+493	493		301			RImgBg1Shake				{3: 'To evade the blade, the dark figure has no choice but to let go of Qu, who quickly takes the opportunity to break free and roll to safety.'}
+494	494		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory13.jpg', 3: '0', 4: '1', 5: '1.5'}
+495	495		301							{3: 'The place where they stood is now a desolate ruin, with a uniquely crafted greatsword standing upright amidst the debris.'}
+496	496		201							{1: '1', 2: '500817', 3: '5', 5: '-100'}
+497	497		301							"{1: '1', 2: 'Qu', 3: ""Dragon's Bane..."", 4: '1'}"
+498	498		301							{3: 'Qu kneels on the ground, supporting herself with the sword, as a stream of crimson vital fluid flows from her neck.'}
+499	499		202							{1: '1', 6: '1'}
+500	500		201							{1: '1', 2: '500462', 4: '400'}
+501	501		201							{1: '2', 2: '500839', 4: '-400'}
+502	502		301							{1: '1', 2: 'Sufu & Jiaxi', 3: 'Lady Qu!', 4: '1', 5: '2'}
+503	503		301							{3: 'From behind the door, a tall man and a shorter woman peer out, their expressions filled with concern as they look at Qu.'}
+504	504		301							{2: 'Sufu', 3: 'Ahem... uh... I saw Yoyo using this thing outside, and it reminded me.', 4: '2'}
+505	505		301							{2: 'Jaxi', 3: 'Huaxu is helping too! Hurry up, Lady Qu!', 4: '1'}
+506	506		202							{1: '1', 2: '2', 6: '1'}
+507	507		201							{1: '1', 2: '500840', 3: '4'}
+508	508		301							{1: '1', 2: 'Qu?', 3: 'Huaxu...?', 4: '1'}
+509	509		301							{2: 'Qu?', 3: 'Yes, Huaxu...', 4: '1'}
+510	510		301							{3: 'The shadowy figure murmurs softly, as the dark feathers on her body begin to burn with an abyssal darkness.'}
+511	511		301							{2: 'Qu?', 3: 'I, too, was betrayed by Huaxu...', 4: '1'}
+512	512		301							{2: 'Qu?', 3: 'Then I will take it all back, everything...', 4: '1'}
+513	513		401							{1: '2', 2: '10022001'}
+514	514		301							"{3: ""The dark blade points toward the couple who threw the Dragon's Bane.""}"
+515	515		201							{1: '1', 2: '500817', 3: '5'}
+516	516		301							{1: '1', 2: 'Qu', 3: 'Run! Run now! Both of you!', 4: '1'}
+517	517		202							{1: '1'}
+518	518		201							{1: '1', 2: '500840', 3: '2'}
+519	519		301							{1: '1', 2: 'Qu?', 3: 'To destroy, and then to recreate...', 4: '1'}
+520	520		202							{1: '1', 6: '1'}
+521	521		205							{1: '999'}
+522	522		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory13.jpg'}
+523	523		301							{3: 'In the endlessly replicated ruins of Kowloong, she musters her last ounce of strength, spreads her wings, and plunges into the profound darkness.'}
+524	524		201							{1: '1', 2: '500817', 3: '5'}
+525	525		301			RImgBg1Shake	DialogDisable			{1: '1', 2: 'Qu', 3: 'Huaxu!!!', 4: '1'}
+526	526		401							{1: '2', 2: '4280'}
+527	527		401							{1: '1', 2: '36'}
+528	528		202							{1: '1', 6: '1'}
+529	529		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '3'}
+530	530		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+531	531		505					3000.0		{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+532	532		401							{1: '1', 2: '12'}
+533	533		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory577.jpg', 3: '0', 4: '1', 5: '1.5'}
+534	534		205							{1: '999'}
+535	535		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory577.jpg'}
+536	536		301			DialogEnable				"{3: ""She lies beneath the library's dome, the brilliant stars above her.""}"
+537	537		401							{1: '2', 2: '4278'}
+538	538		301							{2: '???', 3: 'Bzzzz... bzzzz...'}
+539	539		301							{2: '???', 3: 'Qu... Qu...'}
+540	540		301							{3: 'A familiar voice whispers in her ear.'}
+541	541		201							{1: '1', 2: '500817'}
+542	542		301							{1: '1', 2: 'Qu', 3: 'Huaxu?', 4: '1'}
+543	543		301							{3: 'But she is weighed down by the stars, unable to move.'}
+544	544		202							{1: '1', 6: '1'}
+545	545		301							{2: 'Huaxu', 3: 'This unit... is expending all power... at any cost...'}
+546	546		301							{2: 'Huaxu', 3: 'To protect... The Tabula Akasha...'}
+547	547		201							{1: '1', 2: '500817'}
+548	548		301							{1: '1', 2: 'Qu', 3: 'Was the version of me just now, one of the futures you calculated?', 4: '1'}
+549	549		301							{2: 'Huaxu', 3: 'Yes... it was... one of them...'}
+550	550		301							{2: 'Qu', 3: 'But you dismissed her, and you never showed me that future.', 4: '1'}
+551	551		301							{2: 'Huaxu', 3: '...'}
+552	552		301							{2: 'Qu', 3: 'Great job.', 4: '1'}
+553	553		301							{2: 'Huaxu', 3: 'This is... the duty and obligation... of this unit...'}
+554	554		301							{2: 'Qu', 3: 'Did that couple survive?', 4: '1'}
+555	555		301							{2: 'Huaxu', 3: 'This unit has... relocated them... to a safe sector... in the Tabula Akasha...'}
+556	556		301							{2: 'Qu', 3: 'Great job.', 4: '1'}
+557	557		202							{1: '1'}
+558	558		301							{3: 'She gazes at the stars, but the only reflection she sees is her own.'}
+559	559		301							{3: 'She notices one star, burning with eternal darkness like herself, hanging in the sky and reflected in her eyes.'}
+560	560		301							{3: 'Can the past be rewritten with something that transcends both the speed of light and time?'}
+561	561		504							{1: '1'}
+562	562		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory152.png'}
+563	563		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+564	564		201							{1: '1', 2: '500220', 3: '4', 7: '1'}
+565	565		301							{1: '1', 2: 'Qu', 3: 'Huaxu, how can humanity survive under such circumstances?', 4: '1'}
+566	566		301							{2: 'Huaxu', 3: 'All data has been parsed, but no such method exists.'}
+567	567		301							{2: 'Huaxu', 3: 'Regardless of the method, humanity will only end in destruction.'}
+568	568		301							{2: 'Huaxu', 3: 'Earth has already experienced five mass extinctions. Humanity is merely just a visitor on this age-old planet.'}
+569	569		301							{2: 'Huaxu', 3: 'According to the consciousness simulation, you already know the answer to this question before asking me. Why ask then?'}
+570	570		301							{2: 'Huaxu', 3: 'The motion sensor has detected that you have not moved in over 20 seconds.'}
+571	571		504							{1: '0'}
+572	572		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory577.jpg'}
+573	573		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+574	574		201							{1: '1', 2: '500817'}
+575	575		301							{1: '1', 2: 'Qu', 3: 'Huaxu, can humanity survive?', 4: '1'}
+576	576		202							{1: '1'}
+577	577		301							{2: 'Huaxu', 3: '...'}
+578	578		301							{2: 'Huaxu', 3: 'The future... is unknown.'}
+579	579		201							{1: '1', 2: '500817'}
+580	580		301							"{1: '1', 2: 'Qu', 3: ""That wasn't your answer before."", 4: '1'}"
+581	581		202							{1: '1', 6: '1'}
+582	582		401							{1: '2', 2: '4278'}
+583	583		301							{2: 'Huaxu', 3: 'Variables... always...'}
+584	584		301							{2: 'Huaxu', 3: 'Exist...'}
+585	585		401							{1: '1', 2: '36'}
+586	586		301							{2: 'Huaxu', 3: '...'}
+587	587		401							{1: '1', 2: '373'}
+588	588		201							{1: '1', 2: '500817'}
+589	589		301				DialogDisable			{1: '1', 2: 'Qu', 3: 'Huaxu?', 4: '1'}
+590	590		202							{1: '1', 6: '1'}
+591	591		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+592	592		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+593	593		401							{1: '2', 2: '2626'}
+594	594		307							"{1: '""He"" is coming. I can no longer protect you.', 3: '60'}"
+595	595		301							"{3: '""He"" is coming. I can no longer protect you.'}"
+596	596		307						100.0	{2: '1'}
+597	597		307							{1: 'Please, end this story.', 3: '60'}
+598	598		301							{3: 'Please, end this story.'}
+599	599		307							{2: '1'}
+600	600		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory887.jpg', 3: '0', 4: '1', 5: '1.5'}
+601	601		205							{1: '999'}
+602	602		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory887.jpg'}
+603	603		301							"{3: ""I return'd from the most holy wave.""}"
+604	604		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory888.jpg', 3: '0', 4: '1', 5: '1.5'}
+605	605		205							{1: '999'}
+606	606		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory888.jpg'}
+607	607		301							"{3: ""Regenerate, if 'en as new plants renew'd with foliage new—""}"
+608	608		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory889.jpg', 3: '0', 4: '1', 5: '1.5'}
+609	609		205							{1: '999'}
+610	610		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory889.jpg'}
+611	611		301		1		AniZhuanchangBegin			"{3: 'Pure and made apt for mounting to the ""stars.""'}"

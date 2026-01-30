@@ -1,0 +1,56 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory188.png'}
+2	2		401							{1: '1', 2: '201'}
+3	999001		201							{1: '1', 2: '500026'}
+4	999002		301							{1: '1', 2: 'Lee', 3: '...What a long detour. Looks like Roland deliberately laid those trails to mislead us.', 4: '1'}
+5	999003		301							"{2: 'Lee', 3: ""But no matter what, his trails vanished here. That's for sure."", 4: '1'}"
+6	999004		202							{1: '1'}
+7	3		201							{1: '1', 2: '500166'}
+8	4		301			DialogEnable				"{1: '1', 2: 'Lucia', 3: ""There's a... hatch, hidden on the foundation wall...?"", 4: '1'}"
+9	5		301							{3: 'The trail ends before a hidden hatch on the foundation wall. Looks like Roland went through the hatch.'}
+10	6		302							{2: 'Lee', 3: '7'}
+11	7		201							{1: '1', 2: '500026'}
+12	8		301							{1: '1', 2: 'Lee', 3: 'Got it. Cracking it open, now.', 4: '1'}
+13	9		302							{2: 'Liv, run a full scan.', 3: '10'}
+14	10		201							{1: '1', 2: '1031001'}
+15	11		301							{1: '1', 2: 'Liv', 3: 'Roger.', 4: '1'}
+16	12		201							{1: '1', 2: '500026'}
+17	13		301							"{1: '1', 2: 'Lee', 3: ""Just a common industrial grade airlock. Door's open."", 4: '1'}"
+18	14		201							{1: '1', 2: '1031001', 3: '7'}
+19	15		301							"{1: '1', 2: 'Liv', 3: ""Wait! Lee! Don't move!"", 4: '1'}"
+20	16		301							{3: 'Liv gives a startled cry, and Lee immediately stops the movement of his hands.'}
+21	17		302							"{2: ""What's the matter?"", 3: '18'}"
+22	18		301							{2: 'Liv', 3: 'Commandant... Every meter down the hatch, the viral density spirals exponentially.', 4: '1'}
+23	19		301							"{2: 'Liv', 3: ""It's already at dead zone levels. If we open the door now, Commandant, you will die from the virus within five minutes."", 4: '1'}"
+24	20		201							{1: '1', 2: '500196'}
+25	21		301							{1: '1', 2: 'Karenina', 3: '****! How in the blazes can the viral density differ so much above and below ground?!', 4: '1'}
+26	22		301							"{2: 'Karenina', 3: ""Did they lay this entire freakin' place with partition tiles?! Talk about burning money!"", 4: '1'}"
+27	23		203							{1: '1', 2: '0.25', 3: '-400'}
+28	24		201							{1: '2', 2: '500127', 4: '400'}
+29	25		301							"{1: '1', 2: 'Sophia', 3: ""Now scanning... It's just like what Karenina said."", 4: '2'}"
+30	26		204							{1: '1'}
+31	27		301							{2: 'Karenina', 3: 'You wot?', 4: '1'}
+32	28		202							{1: '1', 2: '2', 6: '1'}
+33	29		201							{1: '1', 2: '500166'}
+34	30		301							{1: '1', 2: 'Lucia', 3: 'Can Constructs withstand this level of density?', 4: '1'}
+35	31		201							{1: '1', 2: '1031001'}
+36	32		301							"{1: '1', 2: 'Liv', 3: ""No, I'm already reading higher density levels than most dead zones. It's not something an Inver-Device can offset!"", 4: '1'}"
+37	33		301							"{2: 'Liv', 3: ""It's almost... as if someone had maliciously concentrated all the nearby virus underground."", 4: '1'}"
+38	34		201							{1: '1', 2: '500155'}
+39	35		301							{1: '1', 2: 'Chrome', 3: 'Just like that fishy Ascendant in Kowloong...?', 4: '1'}
+40	36		302							{2: 'Lamia?', 3: '37'}
+41	37		301							{2: 'Chrome', 3: 'Yeah. The Ascendant who can freely control the viral density near her. Quite the hassle to deal with...', 4: '1'}
+42	38		201							{1: '1', 2: '500026'}
+43	39		301							"{1: '1', 2: 'Lee', 3: ""If that's the case, we can't do anything about it..."", 4: '1'}"
+44	40		201							{1: '1', 2: '500175'}
+45	41		301							{1: '1', 2: 'Camu', 3: 'Hey, forgetting someone?', 4: '1'}
+46	42		302							{2: '?', 3: '43'}
+47	43		301							{2: 'Camu', 3: 'That nerd... Asimov told me something before the operation—what Roland buried in the deepest recesses of my mind is something like an Ascnet terminal.', 4: '1'}
+48	44		301							{2: 'Camu', 3: 'Which means that, I should be able to move freely even in high viral density areas, just like them.', 4: '1'}
+49	45		201							{1: '1', 2: '1031001'}
+50	46		301							{1: '1', 2: 'Liv', 3: '...That, might indeed work.', 4: '1'}
+51	47		201							{1: '1', 2: '500175'}
+52	48		301							"{1: '1', 2: 'Camu', 3: ""To make sure Kamui's safe. Our interests are aligned, temporarily."", 4: '1'}"
+53	49		301							{2: 'Camu', 3: 'You owe me one for this.', 4: '1'}
+54	50		302							{2: 'Thanks.', 3: '51'}
+55	51		301		1		AniZhuanchangBegin			"{2: 'Camu', 3: ""Hmph, thank me when it's all over."", 4: '1'}"

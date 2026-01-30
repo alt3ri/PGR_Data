@@ -1,0 +1,61 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory6.jpg'}
+2	2		401							{1: '1', 2: '203'}
+3	3		201							{1: '1', 2: '500013'}
+4	100		401							{1: '2', 2: '1508'}
+5	4		301			DialogEnable				{1: '1', 2: 'Corrupted', 3: '—!', 4: '1'}
+6	5		201							{1: '1', 2: '1021001'}
+7	6		301							{1: '1', 2: 'Lucia', 3: 'Target has escaped into the building. Commandant, your instruction?', 4: '1'}
+8	7		302							"{2: 'Liv and I will follow it. You two go around and cut it off.', 3: '8', 4: ""We'll pursue it together."", 5: '12'}"
+9	8		301							{2: 'Lucia', 3: 'Lee and I will each take a side and flank it as quickly as possible!', 4: '1'}
+10	9		301							"{2: 'Lucia', 3: ""Liv, we'll leave the front to you."", 4: '1'}"
+11	10		201							{1: '1', 2: '500025'}
+12	11	18	301							{1: '1', 2: 'Liv', 3: '(Nods) You can count on me!', 4: '1'}
+13	12		201							{1: '1', 2: '1011001'}
+14	13		301							{1: '1', 2: 'Lee', 3: 'Are we going in together?', 4: '1'}
+15	14		201							{1: '1', 2: '1021001'}
+16	15		301							"{1: '1', 2: 'Lucia', 3: ""We can easily outpower them even if it's a trap. Breaking through won't be a problem."", 4: '1'}"
+17	16		201							{1: '1', 2: '500025'}
+18	17		301							"{1: '1', 2: 'Liv', 3: ""I'll do my best as well, Commandant!"", 4: '1'}"
+19	18		201							{1: '1', 2: '1021001'}
+20	19		301				AniZhuanchangBegin			"{1: '1', 2: 'Lucia', 3: ""Let's do it!"", 4: '1'}"
+21	20		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory8.jpg'}
+22	21		201							{1: '1', 2: '500013'}
+23	22		501			AniZhuanchangEnd				{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 3: '1'}
+24	23		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '2'}
+25	101		401							{1: '2', 2: '1508'}
+26	24		301			DialogEnable				{1: '1', 2: 'Corrupted', 3: '—!—...', 4: '1'}
+27	25		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 4: '1'}
+28	26		201							{1: '1', 2: '1021001'}
+29	27		301							"{1: '1', 2: 'Lucia', 3: ""Target's function has ceased."", 4: '1'}"
+30	28		201							{1: '1', 2: '1011001'}
+31	29		301							{1: '1', 2: 'Lee', 3: 'Our mission is completed, then.', 4: '1'}
+32	30		302							"{2: 'Thanks to all of you.', 3: '31', 4: ""It'll be great if we don't let one escape next time."", 5: '32'}"
+33	31	33	301							"{2: 'Lee', 3: ""I'll contact the Support Force to recycle the materials."", 4: '1'}"
+34	32		301							"{2: 'Lee', 3: ""I know the operation strategy is your responsibility, but please don't be too harsh on yourself, Commandant."", 4: '1'}"
+35	33		201							{1: '1', 2: '1021001'}
+36	34		301							{1: '1', 2: 'Lucia', 3: 'How about we depart here, Commandant?', 4: '1'}
+37	35		302							{2: 'Sure.', 3: '36'}
+38	36		301							{2: 'Lucia', 3: 'Liv, prepare to depart.', 4: '1'}
+39	102		401							{1: '1', 2: '5'}
+40	37		201							{1: '1', 2: '500025'}
+41	38		301							{1: '1', 2: 'Liv', 3: '...', 4: '1'}
+42	39		201							{1: '1', 2: '1021001'}
+43	40		301							{1: '1', 2: 'Lucia', 3: 'Liv?', 4: '1'}
+44	41		201							{1: '1', 2: '500025'}
+45	42		301							"{1: '1', 2: 'Liv', 3: ""Oh... I'm sorry, we're departing, is it?"", 4: '1'}"
+46	43		201							{1: '1', 2: '1021001'}
+47	44		301							{1: '1', 2: 'Lucia', 3: 'Yeah, but what were you looking at? Did something come up on the radar?', 4: '1'}
+48	45		201							{1: '1', 2: '500025'}
+49	46		301							{1: '1', 2: 'Liv', 3: 'No, I was just looking at this church.', 4: '1'}
+50	47		302							{2: 'This is where we encountered the silver-haired Construct, right?', 3: '48', 4: 'Are you interested in this place?', 5: '49'}
+51	48	50	301							{2: 'Liv', 3: '(Nods) ...Back then, this place felt like the gate to hell.', 4: '1'}
+52	49		301							"{2: 'Liv', 3: ""I just think it's pretty."", 4: '1'}"
+53	50		301							{2: 'Liv', 3: 'Standing here in silence, looking at how the spots of sunlight brighten the place... It feels peaceful and warm.', 4: '1'}
+54	51		301							"{2: 'Liv', 3: ""I know that... this isn't just a place for prayers, but also..."", 4: '1'}"
+55	52		201							{1: '1', 2: '1011001'}
+56	53		301							"{1: '1', 2: 'Lee', 3: ""The Support Force is arriving in five. We don't have to stay here anymore."", 4: '1'}"
+57	54		301							{2: 'Lee', 3: 'What were you saying, Liv?', 4: '1'}
+58	55		201							{1: '1', 2: '500025'}
+59	56		301							"{1: '1', 2: 'Liv', 3: ""...It's nothing. Forget it."", 4: '1'}"
+60	57		301		1		AniZhuanchangBegin			"{2: 'Liv', 3: ""Let's return to the base, Commandant."", 4: '1'}"

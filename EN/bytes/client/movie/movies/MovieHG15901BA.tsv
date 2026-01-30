@@ -1,0 +1,260 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory700.jpg'}
+2	2		401							{1: '1', 2: '6226'}
+3	3		301			DialogEnable				{3: 'By early morning, the conservation area is already awake. The sky is bright and clear, and your steps grow lighter as you make your way to the appointment.'}
+4	4		401							{1: '2', 2: '2915'}
+5	5		401							{1: '2', 2: '5540'}
+6	6		401					500.0		{1: '2', 2: '5540'}
+7	7		301				DialogDisable			{3: 'The bustle along the path feels different from anywhere else. Humans and Constructs alike walk with animal companions—dogs of every shape and size, each wearing a name tag, full of energy as they play or train.'}
+8	8		402							{1: '2915'}
+9	9		401							{1: '2', 2: '4876'}
+10	10		205						1500.0	{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory974.jpg', 3: '0', 4: '1', 5: '1.5'}
+11	11		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory974.jpg'}
+12	12		205							{1: '1004'}
+13	13		301			DialogEnable				{3: 'You arrive at the door of a quiet, out-of-the-way house. Just as you reach for the bell, the door opens.'}
+14	14		201							{1: '1', 2: '501328', 3: '1'}
+15	15		301							"{1: '1', 2: 'Discord', 3: ""Good morning, Commandant. You're always punctual."", 4: '1'}"
+16	16		301							"{3: ""The morning light paints the blue-haired Construct's silhouette in a thin sheen of gold. She holds herself with the poise of a young lady, yet a trace of excitement hides in her eyes.""}"
+17	17		201							{1: '2', 2: '501320'}
+18	18		203							{1: '2', 2: '0.25', 3: '300', 4: '0'}
+19	19		401							{1: '2', 2: '5540'}
+20	20		301							{1: '1', 2: 'Ksori', 3: 'Woof!', 4: '2'}
+21	21		301							{3: 'A furry head pops out from behind her and barks at you cheerfully in greeting.'}
+22	22		202							{1: '1', 2: '2'}
+23	23		301							{3: 'A warm, inviting aroma of food drifts out from inside the house.'}
+24	24		201							{1: '1', 2: '501328', 3: '1'}
+25	25		301							{1: '1', 2: 'Discord', 3: 'Come in. Breakfast is ready.', 4: '1'}
+26	26		301							"{2: 'Discord', 3: ""Today's menu is fried sausages, tomato-baked beans, and buttered potato wedges. Best eaten while hot."", 4: '1'}"
+27	27		302							"{2: ""I'll dig in, then."", 3: '28', 4: 'Thank you for going to the trouble.', 5: '29'}"
+28	28	31	301							"{2: 'Discord', 3: ""Yes, that's exactly what I intended."", 4: '1'}"
+29	29		204							{1: '1', 2: '3'}
+30	30		301							"{2: 'Discord', 3: ""It's no trouble. I don't have many things I can say I'm good at, but cooking is one of them."", 4: '1'}"
+31	31		204							{1: '1', 2: '1'}
+32	32		301							{2: 'Discord', 3: 'And thank you for teaming up with me for the Paw Guardian event and helping train Ksori. Let me return the favor with a proper meal.', 4: '1'}
+33	33		301				DialogDisable			"{2: 'Discord', 3: ""I'll remember your tastes, Commandant."", 4: '1'}"
+34	34		202							{1: '1'}
+35	35		302							{2: 'Speaking of training, Ksori handled the last program pretty well.', 3: '36'}
+36	36		302							"{2: ""Do you think we should move on to the next phase? I'd like your thoughts."", 3: '37'}"
+37	37		201							{1: '2', 2: '501320', 4: '0'}
+38	38		301			DialogEnable				"{1: '1', 3: ""As if she understands the praise, Ksori's tail wags harder, though she stays perfectly seated.""}"
+39	39		201							{1: '1', 2: '501328', 3: '1'}
+40	40		203							{1: '2', 2: '0.25', 3: '300'}
+41	41		203							{1: '1', 2: '0.5', 4: '-100'}
+42	42		401							{1: '2', 2: '2936'}
+43	43		301							"{1: '1', 3: ""The blue-haired girl bends down to rub the dog's head, her smile soft and subtle.""}"
+44	44		301				AniZhuanchangBegin			"{2: 'Discord', 3: ""Something to talk about over tea later? I'd enjoy that."", 4: '1'}"
+45	45		502							{1: 'DialogDisable'}
+46	46		202						2000.0	{1: '1', 2: '2', 6: '1'}
+47	47		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory700.jpg'}
+48	48		401							{1: '1', 2: '36'}
+49	49		107			AniZhuanchangEnd				"{1: '""Canine Haven""', 2: 'Surface Conservation Area', 4: 'One week ago'}"
+50	50		301							{3: 'One week earlier, at Canine Haven in the surface conservation area.'}
+51	51		108							{1: '1'}
+52	52		401							{1: '1', 2: '208'}
+53	53		201							{1: '1', 2: '500311'}
+54	54		301			DialogEnable				"{1: '1', 2: 'Female Staff Member A', 3: ""Your earlier suggestions were a huge help in developing our working dog training program. As expected from Babylonia's Chief Commandant—your ground mission experience really shows."", 4: '1'}"
+55	55		301							"{2: 'Female Staff Member A', 3: ""Thank you for taking the time to visit Canine Haven. Did you sleep well last night? This way, please. The working dogs' kennels are just ahead."", 4: '1'}"
+56	56		202							{1: '1'}
+57	57		301							"{3: ""As the surface conservation area develops, people have started turning their attention to humanity's longtime companions—the dogs who arrived alongside the refugees.""}"
+58	58		301							{3: 'Experience has shown that dogs have unique abilities in search and rescue, finding supplies, and guiding people with disabilities—skills that can be a real asset to ground operations. To tap into that potential, the conservation area has set up a dedicated program for training working dogs.'}
+59	59		301							"{3: ""With some free time on your hands, you accepted Canine Haven's invitation to serve as a temporary advisor.""}"
+60	60		201							{1: '1', 2: '500311'}
+61	61		301							"{1: '1', 2: 'Female Staff Member A', 3: ""And we have some good news—we finally secured enough sponsorship to host a large-scale training competition. We're calling it Paw Guardian."", 4: '1'}"
+62	62		302							{2: 'What a cute name.', 3: '63', 4: 'What a goofy name.', 5: '63'}
+63	63		301							"{2: 'Female Staff Member A', 3: ""It's meant to encourage more people to sign up. The rules are simple: two trainers work with one dog to complete the training program in our manual, then take part in a final competition. The dogs that perform best can join our operational teams right away!"", 4: '1'}"
+64	64		301							{2: 'Female Staff Member A', 3: 'Would you like to participate too, Commandant?', 4: '1'}
+65	65		202							{1: '1'}
+66	66		401							{1: '1', 2: '36'}
+67	67		401							{1: '2', 2: '4380'}
+68	68		301							{3: 'Before you can answer, a commotion breaks out nearby. A small crowd gathers, watching something.'}
+69	69		402							{1: '4380'}
+70	70		401							{1: '1', 2: '201'}
+71	71		201							{1: '1', 2: '500303'}
+72	72		301							"{1: '1', 2: 'Male Staff Member', 3: ""It wasn't like this when its owner was still alive. Shame, the poor old man had only just brought it here, and he..."", 4: '1'}"
+73	73		201							{1: '2', 2: '500405', 4: '400'}
+74	74		203							{1: '1', 2: '0.25', 3: '-400'}
+75	75		301							"{1: '1', 2: 'Female Staff Member B', 3: ""Yeah. Now it's scared of everyone. Maybe we should... let it be."", 4: '2'}"
+76	76		202							{1: '1', 2: '2', 6: '1'}
+77	77		201							{1: '1', 2: '501328'}
+78	78		301							"{1: '1', 2: 'Blue-haired Construct', 3: ""But Ksori's earlier test scores were outstanding. If you'll allow it, I'd like to try working with her."", 4: '1'}"
+79	79		201							{1: '1', 2: '501318'}
+80	80		301							{1: '1', 2: 'Ksori', 3: 'Whimper...', 4: '1'}
+81	81		202							{1: '1'}
+82	82		301							{3: 'Looking closer, you spot a familiar figure.'}
+83	83		201							{1: '1', 2: '501328', 4: '-400'}
+84	84		201							{1: '2', 2: '501318', 4: '900', 5: '-430', 6: '700'}
+85	85		301							{1: '1', 3: 'Discord from the Scarab squad speaks in earnest. In the fenced area ahead, a brown-and-white dog is tethered, ears flat, curled up tightly—clearly terrified.'}
+86	86		202							{1: '1', 2: '2'}
+87	87		301							{3: 'A man in a suit sighs at her words, his expression tinged with reluctance.'}
+88	88		201							{1: '1', 2: '500856', 4: '100'}
+89	89		301							"{1: '1', 2: '??', 3: ""Young lady, what good are test scores if the dog is too afraid to even face people? We're just worried about your safety."", 4: '1'}"
+90	90		202							{1: '1'}
+91	91		502							{1: 'DialogDisable'}
+92	92		302							{2: 'Safety?', 3: '93', 4: 'What happened?', 5: '93'}
+93	93		201							{1: '1', 2: '501328'}
+94	94		301			DialogEnable				"{1: '1', 2: 'Discord', 3: ""Commandant? I didn't expect to see you here."", 4: '1'}"
+95	95		202							{1: '1'}
+96	96		301							{3: 'The blue-haired Construct looks surprised to see you and gives a polite nod. The suited man, noticing this, steps forward with sudden enthusiasm.'}
+97	97		201							{1: '1', 2: '500856', 4: '100'}
+98	98		203							{1: '1', 2: '0.5', 3: '100', 5: '-80'}
+99	99		401							{1: '2', 2: '5703'}
+100	100		301							"{1: '1', 2: '??', 3: ""Well, if it isn't the famous Gray Raven Commandant! An honor, truly!"", 4: '1'}"
+101	101		302							{2: 'You flatter me.', 3: '102', 4: 'May I ask who you are...', 5: '102'}
+102	102		201							{1: '2', 2: '500311', 4: '400'}
+103	103		203							{1: '1', 2: '0.25', 3: '-400'}
+104	104		301							{1: '1', 2: 'Female Staff Member A', 3: 'Commandant, this is Mr. Kaiji, our new sponsor.', 4: '2'}
+105	105		301							"{2: 'Kaiji', 3: ""You see, it's just a scared dog. No need to trouble the advisor with this. Best to <b>dispose</b> of it so it doesn't disrupt the training or competition. As for this Construct lady..."", 4: '1'}"
+106	106		202							{1: '1', 2: '2'}
+107	107		301							{3: 'He finishes speaking and glances at Discord, looking slightly unsure.'}
+108	108		201							{1: '1', 2: '501328', 3: '10'}
+109	109		301							{1: '1', 2: 'Discord', 3: '......', 4: '1'}
+110	110		202							{1: '1'}
+111	111		301				DialogDisable			"{3: ""You're close enough to see the blue-haired girl's expression go blank for an instant, though she doesn't say a word.""}"
+112	112		302							{2: 'Discord, what do you think?', 3: '113'}
+113	113		201							{1: '1', 2: '501328'}
+114	114		301			DialogEnable				{1: '1', 2: 'Discord', 3: 'I need to check something first, Commandant.', 4: '1'}
+115	115		204							{1: '1', 2: '8'}
+116	116		301							{2: 'Discord', 3: 'This dog, Ksori, has been through repeated abuse and abandonment. The death of her last owner left her deeply traumatized.', 4: '1'}
+117	117		204							{1: '1'}
+118	118		301							"{2: 'Discord', 3: ""I used to visit her often, and she was fond of me. If she still lets me come close, then there's a chance we can... turn this around."", 4: '1'}"
+119	119		302							{2: '(Nod)', 3: '120', 4: 'Be careful.', 5: '120'}
+120	120		202							{1: '1'}
+121	121		301							"{3: ""An elite Construct can handle herself. Perhaps it's your calm confidence, but Kaiji narrows his eyes, then steps back with you to join the crowd, giving Discord space to work.""}"
+122	122		201							{1: '1', 2: '501328', 4: '-300'}
+123	123		201							{1: '2', 2: '501318', 4: '800', 5: '-430', 6: '500', 8: '1'}
+124	124		203							{1: '1', 2: '0.5', 3: '-300', 4: '-200'}
+125	125		401							{1: '2', 2: '1543'}
+126	126		301							{1: '1', 3: 'The blue-haired girl crouches, locking eyes with the shivering dog.'}
+127	127		301							"{2: 'Discord', 3: ""Ksori? It's me."", 4: '1'}"
+128	128		401							{1: '2', 2: '2936'}
+129	129		301			PanelActor2Shake				"{3: ""The lone dog's front paws twitch nervously. She knows there's no escape, but still whimpers, looking around as if trying to dodge an unseen demon."", 4: '2'}"
+130	130		401							{1: '2', 2: '5832'}
+131	131		301			PanelActor2Shake				{2: 'Ksori', 3: 'Woof, woof!', 4: '2'}
+132	132		401							{1: '2', 2: '4387'}
+133	133		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+134	134		202							{1: '1', 2: '2', 6: '1'}
+135	135		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory755.jpg'}
+136	136		504							{1: '0.7'}
+137	137		201							{1: '1', 2: '501327', 3: '16'}
+138	138		301							"{1: '1', 2: 'Concordia', 3: ""It's all my fault... They don't want me... They don't want me anymore!"", 4: '1'}"
+139	139		401							{1: '2', 2: '4388'}
+140	140		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab'}
+141	141		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory700.jpg'}
+142	142		202							{1: '1', 6: '1'}
+143	143		504							{1: '0'}
+144	144		201							{1: '1', 2: '501328', 3: '8', 4: '-300', 5: '-200', 7: '1'}
+145	145		201							{1: '2', 2: '501318', 4: '800', 5: '-430', 6: '500', 7: '1', 8: '1'}
+146	146		301							{1: '1', 2: 'Discord', 3: '......', 4: '1'}
+147	147		204							{1: '1', 2: '1'}
+148	148		301							"{2: 'Discord', 3: ""Ksori, I'm back. I came for you."", 4: '1'}"
+149	149		401							{1: '1', 2: '36'}
+150	150		301				DialogDisable			{3: 'Something has changed imperceptibly. Ksori stops scraping at the ground, and the sound of pain in her throat fades.'}
+151	151		401							{1: '1', 2: '6224'}
+152	152		401							{1: '2', 2: '2704'}
+153	153		203						1500.0	{1: '1', 2: '0.8', 3: '-200', 4: '-200'}
+154	154		401							{1: '2', 2: '2704'}
+155	155		203						1500.0	{1: '1', 2: '0.8', 3: '-35', 4: '-200'}
+156	156		301			DialogEnable	DialogDisable			"{1: '1', 3: ""One step. Then another. She closes the distance, inch by inch. The crowd holds its breath as her hand reaches the dog's matted fur.""}"
+157	157		201							{1: '2', 2: '501317', 4: '800', 5: '-430', 6: '500', 8: '1'}
+158	158		401							{1: '2', 2: '2936'}
+159	159		203							{1: '2', 2: '0.8', 3: '730', 4: '-430', 5: '500'}
+160	160		204						2000.0	{1: '1', 2: '3'}
+161	161		204							{1: '1', 2: '6'}
+162	162		301			DialogEnable				"{3: ""Ksori doesn't pull away. Instead, she tilts his head up and hesitantly licks Discord's arm."", 4: '2'}"
+163	163		202							{1: '1', 2: '2', 6: '1'}
+164	164		201							{1: '1', 2: '500303', 3: '1', 4: '-400'}
+165	165		201							{1: '2', 2: '500405', 4: '400'}
+166	166		301							"{1: '1', 2: 'Male Staff Member', 3: ""Ksori actually accepts you! I knew it'd be a shame to waste its talent. With a bit of work, it could even place in the top three—ow! What was that for?"", 4: '1'}"
+167	167		301							"{2: 'Female Staff Member B', 3: ""Haha... yeah, didn't expect that."", 4: '2'}"
+168	168		202							{1: '1', 2: '2', 6: '1'}
+169	169		201							{1: '1', 2: '500856', 4: '100'}
+170	170		301							{1: '1', 2: 'Kaiji', 3: '......', 4: '1'}
+171	171		201							{1: '1', 2: '501328', 3: '1'}
+172	172		301							{1: '1', 3: 'The girl straightens up, folding her hands neatly in front of her. She gives you a small but unmistakably relieved smile, then glances around the crowd, her gaze lingering on Kaiji for a moment.'}
+173	173		204							{1: '1'}
+174	174		301							"{2: 'Discord', 3: ""As you can see, I'm perfectly capable of serving as Ksori's trainer."", 4: '1'}"
+175	175		201							{1: '1', 2: '500856', 4: '100'}
+176	176		301							"{1: '1', 2: 'Kaiji', 3: ""Not bad. But the rules say you need two trainers. Registration's closing soon. Where are you going to find another person who'll get the same special treatment?"", 4: '1'}"
+177	177		301							{2: 'Kaiji', 3: 'Anyone else want to try?', 4: '1'}
+178	178		201							{1: '1', 2: '500405'}
+179	179		301							"{1: '1', 2: 'Female Staff Member B', 3: ""Everyone here's already had a go. No luck."", 4: '1'}"
+180	180		201							{1: '1', 2: '500303'}
+181	181		301							"{1: '1', 2: 'Male Staff Member', 3: ""Not everyone. The Gray Raven Commandant hasn't tried yet!"", 4: '1'}"
+182	182		202							{1: '1'}
+183	183		301				DialogDisable			{3: 'In an instant, all eyes are on you.'}
+184	184		302							{2: 'I suppose I could.', 3: '191', 4: 'M-me?', 5: '185'}
+185	185		201							{1: '1', 2: '501328'}
+186	186		301			DialogEnable				"{1: '1', 2: 'Discord', 3: ""The Commandant's schedule is full. It wouldn't be fair to ask at the last minute."", 4: '1'}"
+187	187		301							{3: 'Her hands tighten slightly around her skirt, and her voice—usually calm and steady—carries a barely noticeable hint of urgency.'}
+188	188		301				DialogDisable			"{2: 'Discord', 3: ""Still, Commandant... would you be willing to sign up with me? You wouldn't have to do the training. Just having your name down is enough."", 4: '1'}"
+189	189		302							"{2: 'Let me try approaching her.', 3: '190', 4: ""I'm not letting you handle this on your own."", 5: '190'}"
+190	190		302							{2: 'I already have an invitation. I just need a partner.', 3: '193'}
+191	191		201							{1: '1', 2: '501328', 3: '3'}
+192	192	195	301			DialogEnable				{1: '1', 2: 'Discord', 3: 'So... you believe in Ksori too, Commandant?', 4: '1'}
+193	193		204							{1: '1', 2: '3'}
+194	194		301			DialogEnable				{2: 'Discord', 3: 'So... you believe in Ksori too, Commandant?', 4: '1'}
+195	195		302							{2: 'I believe in her.', 3: '196', 4: 'I trust your judgment.', 5: '200'}
+196	196		301							{3: 'A faint light of hope begins to glow in her eyes.'}
+197	197		204							{1: '1', 2: '1'}
+198	198		301							{2: 'Discord', 3: 'Thank you, 【kuroname】.', 4: '1'}
+199	199	204	301							"{2: 'Discord', 3: ""Ksori won't let you down."", 4: '1'}"
+200	200		301							{3: 'A faint light of hope begins to glow in her eyes.'}
+201	201		204							{1: '1', 2: '1'}
+202	202		301							{2: 'Discord', 3: 'Thank you, 【kuroname】.', 4: '1'}
+203	203		301							"{2: 'Discord', 3: ""I'll protect you and not let you know. You have my word."", 4: '1'}"
+204	204		202						500.0	{1: '1'}
+205	205		301				DialogDisable			{3: 'While soothing Ksori, Discord quietly wraps the leash twice around her wrist.'}
+206	206		401							{1: '2', 2: '1543'}
+207	207		104						500.0	{1: '0|150|-200', 2: '0.5'}
+208	208		201						2000.0	{1: '1', 2: '501318'}
+209	209		401							{1: '2', 2: '2936'}
+210	210		104							{1: '0|150|-250', 2: '0.8'}
+211	211		203						1500.0	{1: '1', 2: '0.8', 5: '-50'}
+212	212		401							{1: '2', 2: '2936'}
+213	213		104							{1: '0|150|-300', 2: '0.8'}
+214	214		203						1500.0	{1: '1', 2: '0.8', 5: '-100'}
+215	215		301			DialogEnable	DialogDisable			{3: 'Under her focused gaze, you follow her example, moving toward the dog with slow, steady steps.'}
+216	216		401							{1: '2', 2: '1543'}
+217	217		201							{1: '1', 2: '501318', 6: '-100'}
+218	218		203						1500.0	{1: '1', 2: '0.5', 5: '-150'}
+219	219		201							{1: '2', 2: '501317', 6: '-150', 7: '1'}
+220	220		202							{1: '1', 6: '1'}
+221	221		301			DialogEnable	DialogDisable			"{1: '1', 3: ""To everyone's surprise, Ksori, still wary of the crowd, peeks out from behind Discord's legs. She meets your eyes for a moment, nose twitching, then cautiously shuffles a small step toward you."", 4: '2', 5: '1'}"
+222	222		302				AniZhuanchangBegin			"{2: '(Pat Ksori on the head)', 3: '223', 4: ""(Stroke the fur on Ksori's neck)"", 5: '223'}"
+223	223		202							{1: '1', 2: '2', 6: '1'}
+224	224		104							{1: '0|0|0', 2: '0'}
+225	225		201							{1: '1', 2: '500311', 4: '400', 7: '1'}
+226	226		201							{1: '2', 2: '500303', 4: '-400', 7: '1'}
+227	227		502							{1: 'DialogEnable'}
+228	228		301			AniZhuanchangEnd				"{1: '1', 2: 'Female Staff Member A', 3: ""Well, would you look at that! The Commandant's got a way with dogs too!"", 4: '1'}"
+229	229		301							"{2: 'Male Staff Member', 3: ""I'd say it's the Commandant's presence. Dogs can feel it."", 4: '2'}"
+230	230		402							{1: '2581'}
+231	231		202							{1: '1', 2: '2', 6: '1'}
+232	232		201							{1: '1', 2: '501328', 3: '1'}
+233	233		301				DialogDisable			"{1: '1', 3: ""You lift your head to meet the girl's gaze. Her joy is quiet, her eyes shining like small blue flowers blooming across a barren field.""}"
+234	234		202							{1: '1', 6: '1'}
+235	235		201							{1: '1', 2: '500856', 4: '100', 6: '0'}
+236	236		401							{1: '2', 2: '2766'}
+237	237		203						800.0	{1: '1', 2: '1', 3: '100', 5: '-80'}
+238	238		401						1000.0	{1: '2', 2: '2766'}
+239	239		401							{1: '2', 2: '2766'}
+240	240		301			DialogEnable				"{2: 'Kaiji', 3: ""Alright, alright, looks like that's settled nicely."", 4: '1'}"
+241	241		301							"{2: 'Kaiji', 3: ""Didn't expect Ksori to land our advisor as a teammate. That's quite the stroke of luck. I've got a clever dog of my own, so... see you in the competition!"", 4: '1'}"
+242	242		401							{1: '2', 2: '1516'}
+243	243		202							{1: '1'}
+244	244		301							{3: 'Kaiji hurries away. His farewell is polite enough, but something about him still leaves you uneasy.'}
+245	245		301							{3: 'The priority now is registration. You make a mental note of your suspicion and head off with Discord, following the unusually cheerful staff member.'}
+246	246		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+247	247		201							{1: '1', 2: '500311', 7: '1'}
+248	248		301							"{1: '1', 2: 'Female Staff Member A', 3: ""That's all the paperwork done. We'll deliver the gear and supplies straight to the dorm assigned to Miss Construct here."", 4: '1'}"
+249	249		301							"{2: 'Female Staff Member A', 3: ""The location's a bit out of the way since our training dogs aren't used to crowds yet... hope that's okay."", 4: '1'}"
+250	250		201							{1: '1', 2: '501328'}
+251	251		301							"{2: 'Discord', 3: ""That's fine. Thank you for arranging it."", 4: '1'}"
+252	252		201							{1: '1', 2: '500311'}
+253	253		301							"{1: '1', 2: 'Female Staff Member A', 3: ""Good luck! I'm sure you'll do great and give Paw Guardian another strong contender!"", 4: '1'}"
+254	254		302							{2: 'Thank you.', 3: '255', 4: 'We will.', 5: '255'}
+255	255		202							{1: '1', 6: '1'}
+256	256		201							{1: '1', 2: '501328', 3: '1'}
+257	257		201							{1: '2', 2: '501320', 4: '300'}
+258	258		301							{1: '1', 3: 'The blue-haired Construct meets your gaze with quiet determination, her resolve as steady as her movements.'}
+259	259		301		1		AniZhuanchangBegin			"{2: 'Discord', 3: ""Come on, Commandant. Let's take Ksori home."", 4: '1', 5: '2'}"

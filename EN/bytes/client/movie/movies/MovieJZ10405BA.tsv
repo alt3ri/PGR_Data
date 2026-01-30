@@ -1,0 +1,38 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cgqz704.png'}
+2	1001		401							{1: '1', 2: '103'}
+3	2		301			DialogEnable				"{2: 'Bianca', 3: ""Is everyone ready? Hold your neighbors tight and keep the children close. We're moving now to the Southern Diocese.""}"
+4	3		301							"{2: 'Bianca', 3: ""If we do not live within God's reach, then I will bring us all to where God can see us.""}"
+5	4		301							{2: 'Bianca', 3: 'Even if our prayers are unheard, and salvation never comes, I do not intend to merely sit and wait—'}
+6	5		301							"{2: 'Bianca', 3: ""Everyone will be saved... I'll protect you all, until the end.""}"
+7	6		301							{2: 'Bianca', 3: 'So, let us move.'}
+8	7		301				AniZhuanchangBegin			"{2: 'Bianca', 3: ""(Please wait for me, Father Snow, I will bring them all to the eastern diocese, then I'll be returning to the church...)""}"
+9	8		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory54.jpg'}
+10	9		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '1'}
+11	10		301			AniZhuanchangEnd				{3: '...'}
+12	11		301							{3: 'On the hazy snowy horizon, the outline of the travelers could be seen getting closer and closer, only leaving a trail of footsteps behind them.'}
+13	12		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+14	13		201							{1: '1', 2: '500024'}
+15	14		301							{1: '1', 2: 'Bianca', 3: 'Stay together, everyone! Let me know if anyone is feeling unwell.', 4: '1'}
+16	15		301							{2: 'Bianca', 3: 'Careful!', 4: '1'}
+17	16		202							{1: '1', 6: '1'}
+18	17		301							{2: 'Child', 3: 'Sister! Is that... the army?'}
+19	18		301							"{2: '(Commotion)', 3: ""It is! It's the army! We're saved! Thank God we're saved!""}"
+20	19		301							"{2: '(Commotion)', 3: ""What's that in the back?! A Corrupted?! How could this be?!""}"
+21	20		201							{1: '1', 2: '500005'}
+22	21		301							{1: '1', 2: 'Soldier', 3: 'Civilians sighted! There are Corrupted behind! Stay in formation! Protect the civilians!', 4: '1'}
+23	22		202							{1: '1', 6: '1'}
+24	23		301							{2: '(Commotion)', 3: 'Quick, everyone! Run toward the army!'}
+25	24		201							{1: '1', 2: '500013'}
+26	1002		401							{1: '1', 2: '1508'}
+27	25		301							{1: '1', 2: 'Corrupted', 3: '—!—!', 4: '1'}
+28	26		202							{1: '1', 6: '1'}
+29	27		201							{1: '1', 2: '500024', 3: '17', 4: '-450'}
+30	28		201							{1: '2', 2: '500062', 4: '450'}
+31	29		301							{1: '1', 2: 'Bianca', 3: '... Please lend me a weapon.', 4: '1'}
+32	30		301							{2: 'Bruce', 3: '... This... nun?', 4: '2'}
+33	31		301							"{2: 'Bruce', 3: ""You're... A nun? I suppose you've never held a gun before, then... You'll be safer if you just stay in the back..."", 4: '2'}"
+34	32		301							{2: 'Bianca', 3: '... Please lend me a weapon.', 4: '1'}
+35	33		301							{2: 'Bruce', 3: 'Alright! Here! A gun!', 4: '2'}
+36	34		301							{2: 'Bianca', 3: 'God, I ask for your forgiveness for the sins I am about to commit...', 4: '1'}
+37	35		301		1		AniZhuanchangBegin			{2: 'Bianca', 3: 'Be prepared to atone for your sins, for I shall be your judgment!', 4: '1'}

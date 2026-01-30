@@ -1,0 +1,124 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory802.jpg'}
+2	2		401							{1: '1', 2: '6160'}
+3	3		301			DialogEnable				{1: '1', 3: 'The moon rises above the horizon, and stars fill the sky. A cool night breeze rustles through the trees lining the streets of Constellia.'}
+4	4		201							{1: '1', 2: '501184'}
+5	5		301							{1: '1', 3: 'A long-haired girl stands quietly beneath the bamboo shadows, holding a pale blue letter. She turns to look at you under the moonlight, her hair flowing like silk in the wind, carrying a faint scent of iris.'}
+6	6		204							{1: '1', 2: '1'}
+7	7		301							{2: 'Selena', 3: 'Here you are, 【kuroname】.', 4: '1'}
+8	8		301							{3: 'She gives you a gentle smile and sets the letter down next to the calligraphy brush.'}
+9	9		302							"{2: ""Sorry I'm late."", 3: '10', 4: 'Sorry, there was a last-minute mission at Babylonia...', 5: '10'}"
+10	10		204							{1: '1', 2: '7'}
+11	11		301							"{2: 'Selena', 3: ""No need to apologize. You're here... That's all that matters."", 4: '1'}"
+12	12		204							{1: '1', 2: '2'}
+13	13		301							"{2: 'Selena', 3: ""Conductor, we still have three hours to make wishes for the Double Seventh Festival. Do you have any wish you'd like to tell the Weaver Girl?"", 4: '1'}"
+14	14		202							{1: '1'}
+15	15		301							{3: 'Only now do you notice the wooden table in front of Selena, piled with colorful wish notes written in elegant handwriting.'}
+16	16		201							{1: '1', 2: '501184', 3: '1'}
+17	17		301							"{1: '1', 2: 'Selena', 3: ""Oh, these? They're just some lines I wrote while practicing."", 4: '1'}"
+18	18		301							{2: 'Selena', 3: 'Or... would you like to read some, Conductor?', 4: '1'}
+19	19		302							{2: 'Sure.', 3: '20'}
+20	20		204							{1: '1', 2: '11'}
+21	21		301							{2: 'Selena', 3: 'Then... please forgive my humble attempt.', 4: '1'}
+22	22		401							{1: '2', 2: '5735'}
+23	23		301				AniZhuanchangBegin			{3: 'With flushed cheeks, she picks up one of the notes and takes a small breath.'}
+24	24		502							{1: 'DialogDisable'}
+25	25		202							{1: '1', 6: '1'}
+26	26		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1207.jpg'}
+27	27		109						1500.0	{1: '1', 2: '<color=#0066ccff><size=40><i>Autumn winds rise as night grows deep,</i></size></color>', 4: '150', 6: '1', 9: '2', 11: '1'}
+28	28		301							{2: 'Selena', 3: 'Autumn winds rise as night grows deep,'}
+29	29		109						1500.0	{1: '2', 2: '<color=#0066ccff><size=40><i>I bow to scoop the starry stream,</i></size></color>', 4: '50', 6: '1', 9: '2', 11: '1'}
+30	30		301							{2: 'Selena', 3: 'I bow to scoop the starry stream,'}
+31	31		109						1500.0	{1: '3', 2: '<color=#0066ccff><size=40><i>Beneath the Magpie Bridge, waves ripple free,</i></size></color>', 4: '-50', 6: '1', 9: '2', 11: '1'}
+32	32		301							{2: 'Selena', 3: 'Beneath the Magpie Bridge, waves ripple free,'}
+33	33		109						1500.0	{1: '4', 2: '<color=#0066ccff><size=40><i>Here I stand, awaiting thee.</i></size></color>', 4: '-150', 6: '1', 9: '2', 11: '1'}
+34	34		301							{2: 'Selena', 3: 'Here I stand, awaiting thee.'}
+35	35		110			AniZhuanchangBegin				
+36	36		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory802.jpg'}
+37	37		401							{1: '2', 2: '5735'}
+38	38		201							{1: '1', 2: '501184', 3: '11'}
+39	39		502							{1: 'AniZhuanchangEnd'}
+40	40		301			DialogEnable				{1: '1', 3: 'She nervously puts the paper down and looks your way expectantly.'}
+41	41		301				DialogDisable			{2: 'Selena', 3: 'What do you think, Conductor?', 4: '1'}
+42	42		302							"{2: ""It's beautiful."", 3: '43', 4: ""It's beautifully written."", 5: '43'}"
+43	43		302							{2: 'Are you going to hang it on the bamboo leaves?', 3: '44'}
+44	44		204							{1: '1', 2: '10'}
+45	45		301			DialogEnable				"{2: 'Selena', 3: ""No, this one's just practice."", 4: '1'}"
+46	46		204							{1: '1', 2: '11'}
+47	47		301							{2: 'Selena', 3: 'What I really want to hang up there... is a wish written together with you, Conductor.', 4: '1'}
+48	48		202							{1: '1'}
+49	49		301							{3: 'She lowers her head slightly, silky hair hiding half of her flushed face.'}
+50	50		201							{1: '1', 2: '501184', 3: '1'}
+51	51		301							{1: '1', 2: 'Selena', 3: 'Legend says that on the Double Seventh Festival, if you hang your wish on bamboo, magpies will carry it to the Weaver Girl.', 4: '1'}
+52	52		301							{2: 'Selena', 3: 'The Weaver Girl picks the wish hung highest on the tree and grants it that same night.', 4: '1'}
+53	53		204							{1: '1', 2: '10'}
+54	54		301				AniZhuanchangBegin			"{2: 'Selena', 3: ""But I don't need the Weaver Girl to actually grant any wish. I just want to create this memory with you, Conductor."", 4: '1'}"
+55	55		202							{1: '1'}
+56	56		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory550.jpg'}
+57	57		401						600.0	{1: '2', 2: '4341'}
+58	58		402							{1: '4341'}
+59	59		301			AniZhuanchangEnd				{3: 'Selena takes your hand, and together you gaze up through the gaps between bamboo leaves at the endless starry sky above.'}
+60	60		201							{1: '18', 2: '501184', 3: '1'}
+61	61		301							{1: '1', 2: 'Selena', 3: 'Having you here, celebrating with me...', 4: '18'}
+62	62		301							"{2: 'Selena', 3: ""That's already enough."", 4: '18'}"
+63	63		302							{2: 'Is that really enough?', 3: '64', 4: 'We still have plenty of time. We could do so much more.', 5: '64'}
+64	64		202			DialogDisable				{1: '18', 6: '1'}
+65	65		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory802.jpg', 3: '0', 4: '1', 5: '1'}
+66	66		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+67	67		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory802.jpg'}
+68	68		201							{1: '1', 2: '501184', 3: '13'}
+69	69		301			DialogEnable				{1: '1', 2: 'Selena', 3: 'Do you mean...', 4: '1'}
+70	70		202							{1: '1'}
+71	71		306							{1: '1'}
+72	72		401							{1: '2', 2: '2986', 3: '0.5'}
+73	73		301							{3: 'Her temperature rises slightly, and her heartbeat quickens, betraying the emotions stirring within her M.I.N.D.'}
+74	74		301							{3: 'But Selena simply tightens her grip on your hand.'}
+75	75		306							
+76	76		201							{1: '1', 2: '501184', 3: '10'}
+77	77		301							"{1: '1', 2: 'Selena', 3: ""You've already made time for me, Conductor. I don't want to tire you out."", 4: '1'}"
+78	78		204							{1: '1', 2: '1'}
+79	79		302							"{2: ""Actually, I don't have any plans tonight."", 3: '80', 4: 'Think of it as you keeping me company. Shall we do something together?', 5: '80'}"
+80	80		204							{1: '1', 2: '11'}
+81	81		301							"{2: 'Selena', 3: ""Well... I do have one wish I'd like your help with."", 4: '1'}"
+82	82		202							{1: '1'}
+83	83		301							{3: 'Gathering courage, she picks up a long silk ribbon from the table.'}
+84	84		201							{1: '1', 2: '501184', 3: '1'}
+85	85		301							"{1: '1', 2: 'Selena', 3: ""There's a legend: on the Double Seventh Festival, two people write a hundred wishes on a silk ribbon and hang it high in a tree. After that, the Weaver Girl grants them one wish every year."", 4: '1'}"
+86	86		301							{2: 'Selena', 3: 'Could I invite you, Conductor, to write those hundred wishes together with me?', 4: '1'}
+87	87		301							{3: 'With a gentle smile, she hands you the smooth ribbon.'}
+88	88		301							"{2: 'Selena', 3: ""If you don't have anything specific, we could just dream about the future."", 4: '1'}"
+89	89		204							{1: '1', 2: '11'}
+90	90		301							{2: 'Selena', 3: 'About having each other... far into the future.', 4: '1'}
+91	91		301							{3: 'She speaks earnestly, her words filled with deep longing.'}
+92	92		204							{1: '1', 2: '10'}
+93	93		301							"{2: 'Selena', 3: ""We can imagine the life we'll share, the dreams we'll fulfill."", 4: '1'}"
+94	94		301							"{2: 'Selena', 3: ""Far into the future, after the war, maybe even after we've moved back to Earth... We'll still be together, making plans, just like today."", 4: '1'}"
+95	95		204							{1: '1', 2: '11'}
+96	96		301							{2: 'Selena', 3: 'Just imagining being with you makes me happy.', 4: '1'}
+97	97		302							"{2: ""Perhaps I'm thinking too far ahead, but even a hundred wishes aren't enough."", 3: '98'}"
+98	98		301				DialogDisable			{2: 'Selena', 3: 'Mm...', 4: '1'}
+99	99		203						300.0	{1: '1', 2: '0.3', 4: '-20', 5: '-50'}
+100	100		202							{1: '1'}
+101	101		401						600.0	{1: '2', 2: '4341', 3: '1'}
+102	102		402							{1: '4341'}
+103	103		301			DialogEnable	DialogDisable			"{3: ""She silently embraces you, no more words needed. You understand everything she's feeling.""}"
+104	104		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+105	105		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1076.jpg'}
+106	106		401						300.0	{1: '2', 2: '848'}
+107	107		401						600.0	{1: '2', 2: '4381'}
+108	108		306							{1: '1'}
+109	109		301			DialogEnable				{3: 'The summer breeze blows gently, carrying the distant sounds of fireworks.'}
+110	110		301							{3: 'Fireworks burst like a kaleidoscope in the night sky over Constellia.'}
+111	111		301				DialogDisable			"{3: ""For a brief, brilliant second, the light lights up Selena's profile, and at that moment, it feels as if time stood still.""}"
+112	112		306							
+113	113		302							{2: '(Tighten your arm around her shoulders)', 3: '114'}
+114	114		301			DialogEnable				{3: 'You feel her gently responding with an embrace around your waist.'}
+115	115		201							{1: '1', 2: '501184', 3: '7'}
+116	116		301							"{1: '1', 2: 'Selena', 3: ""It's so beautiful..."", 4: '1'}"
+117	117		301							"{2: 'Selena', 3: ""I'll remember this moment forever."", 4: '1'}"
+118	118		302							{2: 'Me too.', 3: '119'}
+119	119		204							{1: '1', 2: '1'}
+120	120		301							"{2: 'Selena', 3: ""In the future... let's create many more memories like this together."", 4: '1'}"
+121	121		301							{3: 'Her smile shines brightly under the fireworks.'}
+122	122		204							{1: '1', 2: '2'}
+123	123		301		1		AniZhuanchangBegin			{2: 'Selena', 3: 'My first and only... Conductor.', 4: '1'}

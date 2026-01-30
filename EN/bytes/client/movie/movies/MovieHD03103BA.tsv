@@ -1,0 +1,149 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory530.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		401							{1: '2', 2: '4379'}
+4	4		301			DialogEnable				"{3: ""The next morning, shadows of the forest dance across the pristine white stone walls. Following Lamia's lead, two people pull a cart through the city gates.""}"
+5	5		502							{1: 'RImgBg1DisableSlow'}
+6	6		101			RImgBg2Enable				{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_13.jpg'}
+7	7		401							{1: '2', 2: '212'}
+8	8		301							{3: 'The bustling sounds draw closer as the atmosphere grows lively. People of all kinds gather in the streets and set up their stalls to begin another day.'}
+9	9		402							{1: '4379'}
+10	10		402							{1: '212'}
+11	11		211							{1: '1', 2: '1021020', 3: '1'}
+12	12		301							"{1: '1', 2: 'Lamia', 3: ""Let's stop the cart here. Ugh, I'm exhausted. Come on, let's sit down for a bit."", 4: '101', 18: '100003768', 19: '1', 21: 'v211lamiya'}"
+13	13		302							"{2: ""I've been pulling the cart this whole time, though?!"", 3: '14'}"
+14	14		301							"{2: 'Lamia', 3: ""B-but... I've been following you around all this time, you know? Getting up this early takes a lot of energy."", 4: '101', 18: '100003769', 19: '1', 21: 'v211lamiya'}"
+15	15		301							"{2: 'Lamia', 3: ""I'd have been able to sleep for as long as I wanted to if it hadn't been for you... Yawn."", 4: '101', 18: '100003770', 19: '1', 21: 'v211lamiya'}"
+16	16		212							{1: '1', 6: '1'}
+17	17		401							{1: '2', 2: '4341'}
+18	18		301							{3: 'Lamia lets out a lazy yawn, tugs at her sleeve, and leans against the shoulder beside her, her head nodding drowsily.'}
+19	19		302							"{2: ""Don't we need to set up our stall?"", 3: '20'}"
+20	20		301							"{2: 'Lamia', 3: ""Hmm? Of course, we need to set it up... that's why I left it to you... Mmm... don't move... let me sleep a bit more... so sleepy... Zzz... zzz..."", 18: '100003771'}"
+21	21		302							{2: '...Lamia?', 3: '22'}
+22	22		301							{2: 'Lamia', 3: 'Zzz... zzz...', 18: '100003772'}
+23	23		302							{2: 'You...', 3: '24'}
+24	24		301							{2: 'Passerby', 3: 'Excuse me, how much is this?', 18: '100003816'}
+25	25		302							{2: 'Uh... just a moment.', 3: '26'}
+26	26		301							{3: 'Listening to the conversation between you and customers, noticing how you deliberately soften your movements, apparently being mindful of something...'}
+27	27		301							"{3: ""Lamia's lips curls gently upward as she makes an almost unnoticeable adjustment to her posture, looking even more at ease.""}"
+28	28		301				AniZhuanchangBegin			{3: 'Waking up early seems not as bad as she thought at all.'}
+29	29		401					2000.0		{1: '2', 2: '925'}
+30	30		301			AniZhuanchangEnd				{3: 'Click—'}
+31	31		301							{3: 'The soft mechanical whirring wakes Lamia. She rubs her eyes, taking a moment before she can make out what the person beside her is doing.'}
+32	32		211							{1: '1', 2: '1021020', 3: '4'}
+33	33		301				DialogDisable			{1: '1', 2: 'Lamia', 3: 'Mmm... what are you doing?', 18: '100003773', 19: '1', 21: 'v211lamiya'}
+34	34		302							{2: 'The architecture and clothing styles are quite telling...', 3: '35'}
+35	35		302							{2: 'And those trident symbols everywhere...', 3: '36'}
+36	36		302							{2: 'The Sea God... could it be Poseidon?', 3: '37'}
+37	37		302							"{2: ""No, that's not gonna cut it. I gotta look into it some more..."", 3: '38'}"
+38	38		301			DialogEnable				{2: 'Lamia', 3: 'Hm?', 4: '101', 18: '100003774', 19: '1', 21: 'v211lamiya'}
+39	39		302							"{2: ""Hey, I see you're awake."", 3: '40'}"
+40	40		301							"{2: 'Lamia', 3: ""Yawn... Didn't you say this is how people show respect in your homeland?"", 4: '101', 18: '100003775', 19: '1', 21: 'v211lamiya'}"
+41	41		301							"{2: 'Lamia', 3: ""This is just an ordinary marketplace, isn't it? Nothing special about it, right?"", 4: '101', 18: '100003776', 19: '1', 21: 'v211lamiya'}"
+42	42		302							"{2: ""Hmm... It's also something we do to show curiosity."", 3: '43'}"
+43	43		301				DialogDisable			"{2: 'Lamia', 3: ""Your homeland's traditions seem pretty casual... By the way, is everything selling just fine? Huh? W-wait, everything's sold out already? That's fast! We were here last time until evening before we sold everything."", 4: '101', 18: '100003777', 19: '1', 21: 'v211lamiya'}"
+44	44		302							"{2: ""Well, I guess it's because..."", 3: '45'}"
+45	45		302							"{2: ""It's not every day that people see a stall owner sleeping while clinging to someone else in the morning market."", 3: '46'}"
+46	46		302							{2: 'People probably came to see that and ended up buying things while they were here.', 3: '47'}
+47	47		301			DialogEnable				{2: 'Lamia', 3: 'Ahem...! W-well... guess you can count that as my contribution, yeah?', 4: '101', 18: '100003778', 19: '1', 21: 'v211lamiya'}
+48	48		302							{2: '...?', 3: '49'}
+49	49		301							"{2: 'Lamia', 3: ""Eek—D-don't stare at me like that... I-I was just saying whatever came to mind!"", 4: '101', 18: '100003779', 19: '1', 21: 'v211lamiya'}"
+50	50		301							{2: 'Lamia', 3: 'Oh, uhh... Look over there! The food at that stall looks so delicious!', 4: '101', 18: '100003780', 19: '1', 21: 'v211lamiya'}
+51	51		301							{3: 'Lamia starts looking around in an obviously exaggerated manner, making a clumsy attempt to change the subject.'}
+52	52		214							{1: '1', 2: '5'}
+53	53		301							{3: 'Soon enough, her eyes light up as if catching something truly interesting, and she starts dragging you from stall to stall.'}
+54	54		301							"{2: 'Lamia', 3: ""By the way, the only spare outfit that you have now is the one Begonia brought you from home, right? Want to get some clothes while we're here?"", 4: '101', 18: '100003781', 19: '1', 21: 'v211lamiya'}"
+55	55		301							{3: 'As she speaks, she keeps moving from stall to stall, peering at all the merchandise and browsing through everything with eager interest.'}
+56	56		214							{1: '1', 2: '2'}
+57	57		301							"{2: 'Lamia', 3: ""Heheh... This one's really cute! Want to try it on?"", 4: '101', 18: '100003782', 19: '1', 21: 'v211lamiya'}"
+58	58		301							"{2: 'Lamia', 3: 'Ah, this statue looks just like you—frowning and everything. It\'s got that ""I\'m thinking about important things, don\'t disturb me"" look down perfectly.', 4: '101', 18: '100003783', 19: '1', 21: 'v211lamiya'}"
+59	59		301							"{3: ""Seeing you all speechless, Lamia finds herself experiencing a sense of joy that she's never felt before.""}"
+60	60		302							"{2: ""You know, you're the one acting like it's your first time here."", 3: '61'}"
+61	61		214							{1: '1', 2: '5'}
+62	62		301							"{2: 'Lamia', 3: ""Um, s-sorry... Was I getting too carried away? L-let's just buy this and head back."", 4: '101', 18: '100003784', 19: '1', 21: 'v211lamiya'}"
+63	63		302							"{2: ""I wasn't trying to criticize you. I was just being curious."", 3: '64'}"
+64	64		214							{1: '1', 2: '4'}
+65	65		301							"{2: 'Lamia', 3: ""Hmm... Maybe it's because I've never really explored the market with anyone before. I'd just pack up and leave when business is over. Even when I go to the Temple for rituals, I'd always just go there and head straight back home without stopping to rest."", 4: '101', 18: '100003785', 19: '1', 21: 'v211lamiya'}"
+66	66		301							{3: 'Lamia answers thoughtfully while counting the items she has bought.'}
+67	67		301							{3: 'Suddenly, she freezes in place and tilts her head, as if listening to something.'}
+68	68		214							{1: '1', 2: '2'}
+69	69		301							"{2: 'Lamia', 3: ""Ah! Um... I'll be right back!"", 4: '101', 18: '100003786', 19: '1', 21: 'v211lamiya'}"
+70	70		212							{1: '1', 6: '1'}
+71	71		401							{1: '2', 2: '4331'}
+72	72		301				AniZhuanchangBegin			{3: 'Lamia hurries away. After a while, she returns holding something in her hands.'}
+73	73		502							{1: 'DialogDisable'}
+74	74		105							{1: 'Assets/Product/Ui/Spine/2-11Spine/UimovieSpine/UimovieLamiy01/UiMovieLamiy01.prefab'}
+75	75		104							{1: '-125|100|-400', 2: '0', 3: '1'}
+76	76		302			AniZhuanchangEnd				"{2: ""What's that?""}"
+77	77		104							{1: '-125|-150|-300', 2: '5', 3: '1'}
+78	78		301			DialogEnable				"{2: 'Lamia', 3: ""Hm? You don't know what a conch shell flute is? I thought everyone living by the sea would know what this is."", 18: '100003787'}"
+79	79		301							{2: 'Lamia', 3: 'Fishermen play shells and conchs as musical instruments all the time, kind of like a little game for them.', 18: '100003788'}
+80	80		301				AniZhuanchangBegin			{3: 'As she speaks, Lamia gently closes her eyes and begins to blow into the conch.'}
+81	81		105							
+82	82		401							{1: '1', 2: '36'}
+83	83		401							{1: '2', 2: '4461'}
+84	84		301			AniZhuanchangEnd				{3: 'Da... dada... dada...'}
+85	85		301							{3: 'Dadadadadadada...'}
+86	86		301				AniZhuanchangBegin			{3: 'A melodious tune fills the plaza. The people at the market pause their activities and turn to look this way.'}
+87	87		402							{1: '4461'}
+88	88		105							{1: 'Assets/Product/Ui/Spine/2-11Spine/UimovieSpine/UimovieLamiy01/UiMovieLamiy01.prefab'}
+89	89		401							{1: '1', 2: '208'}
+90	90		104							{1: '0|0|0', 2: '0', 3: '1'}
+91	91		301			AniZhuanchangEnd				{3: 'The music ends shortly after. Lamia purses her lips and holds out the conch shell flute.'}
+92	92		301							"{2: 'Lamia', 3: ""Here, it's yours. Thank you for helping me with the stall earlier. And didn't you teach me a song before?"", 18: '100003789'}"
+93	93		301							{2: 'Lamia', 3: 'Consider this my gift to you for being my music teacher.', 18: '100003790'}
+94	94		302				AniZhuanchangBegin			{2: '(Take the flute)', 3: '95'}
+95	95		401							{1: '1', 2: '36'}
+96	96		105							
+97	97		401							{1: '2', 2: '4461'}
+98	98		301			AniZhuanchangEnd				{3: 'Hesitantly, you, too, begin to play to the tune you just heard.'}
+99	99		211							{1: '1', 2: '1021020', 3: '1'}
+100	100		301							{1: '1', 2: 'Lamia', 3: '...', 4: '101'}
+101	101		301							{3: 'Lamia closes her eyes, seeming both to listen to the song and to look for something in its melody.'}
+102	102		213							{1: '1', 2: '0.4', 5: '-100'}
+103	103		301							{3: 'She sways gently to the music as she slowly draws closer to you.'}
+104	104		301							{3: 'Before the song is halfway through, you can already feel the warmth coming off Lamia.'}
+105	105		301							{2: 'Lamia', 3: '...', 4: '101'}
+106	106		213							{1: '1', 2: '0.4', 5: '-200'}
+107	107		301							{3: 'Lamia moves even closer.'}
+108	108		301							{3: 'Her long eyelashes quiver slightly as the wind carries her hair to brush against her cheeks.'}
+109	109		301							"{3: ""You're trying to decide if you want to stop the music to talk to Lamia when...""}"
+110	110		212							{1: '1', 6: '1'}
+111	111		402							{1: '4461'}
+112	112		401							{1: '1', 2: '36'}
+113	113		401							{1: '2', 2: '4292'}
+114	114		401							{1: '2', 2: '4293'}
+115	115		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory608.jpg', 3: '0.8', 4: '0.8', 5: '0'}
+116	116		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+117	117		301			RImgBg1Shake				{3: 'BOOM—!'}
+118	118		401							{1: '1', 2: '203'}
+119	119		301							{3: 'Thunder crashes through clear skies and, in an instant, the world becomes void of all colors.'}
+120	120		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+121	121		401							{1: '2', 2: '4292'}
+122	122		301			RImgBg1Shake				{3: 'BOOM—!!!'}
+123	123		301							{3: 'The deafening thunder is an endless stream of crashes, each boom louder than the last.'}
+124	124		301							{3: 'This is no natural phenomenon. Dark clouds materialize on the horizon, their terrifying presence slowly bearing down upon the city.'}
+125	125		301							{3: 'Beneath the dark clouds, an ink-black tide surges toward the coastline like a living creature.'}
+126	126		211							{1: '1', 2: '1021020', 3: '1'}
+127	127		301							{1: '1', 2: 'Lamia', 3: 'Eek—!', 4: '101', 18: '100003791', 19: '1', 21: 'v211lamiya'}
+128	128		301							{3: 'Trembling with fear, Lamia presses close for comfort.'}
+129	129		212							{1: '1', 6: '1'}
+130	130		301							{3: 'The marketplace freezes as if someone hit pause, and then erupts into chaos.'}
+131	131		401							{1: '2', 2: '2927'}
+132	132		301				DialogDisable			{3: 'Cries of fear and prayers blend into a cacophony that rivals even the thunder above.'}
+133	133		211							{1: '1', 2: '1021020', 3: '1', 7: '1'}
+134	134		302							{2: 'Lamia!', 3: '135'}
+135	135		301			DialogEnable				"{3: ""You cover Lamia's ears, lean down to meet her eyes, and mouth words in a hushed voice.""}"
+136	136		214							{1: '1', 2: '4'}
+137	137		301				DialogDisable			{3: 'Having swayed unsteadily for a moment, Lamia finally comes to her senses, her face cold in panic.'}
+138	138		302							"{2: ""What's going on?"", 3: '139'}"
+139	139		302							{2: 'Is there a storm coming? Why is everyone so freaked out?', 3: '140'}
+140	140		301			DialogEnable				"{2: 'Lamia', 3: ""N-no, this isn't just a storm. The Sea God is angry. But why does the Sea God get mad when we've just done a ritual...?"", 4: '101', 18: '100003792', 19: '1', 21: 'v211lamiya'}"
+141	141		302							"{2: ""What do you mean? Isn't this just typical coastal weather?"", 3: '142'}"
+142	142		301							"{2: 'Lamia', 3: ""No, it's not like that at all. I—we need to go back. We must hurry. The village is in danger."", 4: '101', 18: '100003793', 19: '1', 21: 'v211lamiya'}"
+143	143		302							{2: 'Lamia?', 3: '144'}
+144	144		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '1'}
+145	145		212							{1: '1', 6: '1'}
+146	146		502							{1: 'RImgBg1BlowUp'}
+147	147		401							{1: '2', 2: '4331'}
+148	148		301		1		AniZhuanchangBegin			"{3: ""Lamia's bag slips from her grasp with everything in it scattering all over. Leaving everything behind, Lamia grabs your arm and rushes toward town city gates without a word.""}"

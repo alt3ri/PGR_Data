@@ -1,0 +1,128 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory669.jpg'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '500488', 5: '-250', 6: '400'}
+4	4		401							{1: '2', 2: '4085', 3: '0.5'}
+5	5		301			DialogEnable				"{1: '1', 2: 'Officiant', 3: ""Congratulations! You've won the grand prize!"", 4: '1'}"
+6	6		202							{1: '1'}
+7	7		301							{3: 'One corner of the venue bursts into noise—some groaning over picking the wrong number, others clapping in celebration.'}
+8	8		301							{3: 'Then, amid the cheers, a shy and slightly bewildered girl steps onto the stage. She accepts the prize from the officiant.'}
+9	9		201							{1: '1', 2: '500536', 3: '7'}
+10	10		301							{1: '1', 2: 'Bambinata', 3: '...Commandant?', 4: '1'}
+11	11		302				DialogDisable			{2: 'Bambinata?', 3: '12'}
+12	12		402							{1: '4085'}
+13	13		202							{1: '1', 6: '1'}
+14	14		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory672.jpg', 3: '0', 4: '1', 5: '1'}
+15	15		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+16	16		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory672.jpg'}
+17	17		401						500.0	{1: '2', 2: '5703', 3: '0.8'}
+18	18		401						500.0	{1: '2', 2: '5703', 3: '0.6'}
+19	19		401							{1: '2', 2: '5703', 3: '1'}
+20	20		301			DialogEnable				"{3: ""She doesn't seem used to so much attention. Once the award ceremony ends, you lead her away from the noisy crowd to somewhere quieter.""}"
+21	21		201							{1: '1', 2: '500536'}
+22	22		301							{1: '1', 2: 'Bambinata', 3: 'Can Bambinata open it?', 4: '1'}
+23	23		302							"{2: 'Go ahead.', 3: '24', 4: ""Sure, it's yours."", 5: '24'}"
+24	24		204							{1: '1', 2: '1'}
+25	25		301							{2: 'Bambinata', 3: 'Yeah.', 4: '1'}
+26	26		202							{1: '1'}
+27	27		301							{3: 'She takes her time with the wrapping, careful not to tear the pretty paper. Layer by layer, she peels it away until a faint pink object comes into view.'}
+28	28		201							{1: '1', 2: '500536', 3: '7'}
+29	29		301							"{1: '1', 2: 'Bambinata', 3: '""Happy Little Home""... Commandant, there\'s a tiny house inside.', 4: '1'}"
+30	30		202							{1: '1'}
+31	31		306							{1: '1'}
+32	32		301							{3: 'The prize is a miniature house set, complete with two figurines. The packaging says it can be used to play house.'}
+33	33		306							
+34	34		201							{1: '1', 2: '500536'}
+35	35		301							{1: '1', 2: 'Bambinata', 3: 'Hello, welcome home...?', 4: '1'}
+36	36		302							"{2: ""I'm home."", 3: '37', 4: ""I'm back!"", 5: '37'}"
+37	37		301							"{2: 'Bambinata', 3: ""...Mhm, you're back..."", 4: '1'}"
+38	38		202							{1: '1'}
+39	39		301							{3: 'The moment she takes the figurines out, Bambinata starts acting out a conversation between them, clumsily adjusting their poses and lowering her voice.'}
+40	40		302							"{2: ""Let's play house, Bambinata."", 3: '41', 4: 'Want to play house?', 5: '41'}"
+41	41		201							{1: '1', 2: '500536', 3: '1'}
+42	42		301							{1: '1', 2: 'Bambinata', 3: 'Alright!', 4: '1'}
+43	43		301							{3: 'She thinks for a moment, then smiles warmly and hands you the figurine dressed in a suit.'}
+44	44		302							{2: '(Take it)', 3: '45', 4: 'What roles are we playing?', 5: '45'}
+45	45		204							{1: '1'}
+46	46		301							"{2: 'Bambinata', 3: ""You'll be the tired office worker coming home from work. Bambinata'll be waiting for you to come back, because Bambinata is your..."", 4: '1'}"
+47	47		202							{1: '1'}
+48	48		301							{3: 'Halfway through, she stops talking and starts searching for the right word.'}
+49	49		302							{2: 'Family.', 3: '50'}
+50	50		201							{1: '1', 2: '500536', 3: '1'}
+51	51		204							{1: '1', 2: '1'}
+52	52		301							{1: '1', 2: 'Bambinata', 3: '...Yes. Family.', 4: '1'}
+53	53		302							"{2: ""Then let's play it that way."", 3: '54'}"
+54	54		301							{2: 'Bambinata', 3: 'Thanks, Commandant!', 4: '1'}
+55	55		204							{1: '1'}
+56	56		301							"{2: 'Bambinata', 3: ""You should come in through the main door looking tired, and Bambinata'll greet you."", 4: '1'}"
+57	57		202							{1: '1'}
+58	58		301							{3: 'She places her figurine in the kitchen area, probably pretending to prepare a meal. Following her lead, you use your figurine to open the door...'}
+59	59		401							{1: '2', 2: '754'}
+60	60		302							"{2: ""I'm home."", 3: '61', 4: 'Ah, what a long day!', 5: '65'}"
+61	61		301							{3: 'You greet her as part of the scene, playing your role in the little game.'}
+62	62		201							{1: '1', 2: '500536', 3: '1'}
+63	63		301							{1: '1', 2: 'Bambinata', 3: 'Welcome home, my family... or welcome home, 【kuroname】?', 4: '1'}
+64	64	69	301				DialogDisable			{3: 'She tries saying your real name gently.'}
+65	65		301							"{3: ""You let out a theatrical sigh, the kind of mix of pain and relief you'd hear from a worn-out office worker in a story.""}"
+66	66		201							{1: '1', 2: '500536', 3: '1'}
+67	67		301							"{1: '1', 2: 'Bambinata', 3: ""Did your manager scold you again today? Don't worry, I'll give you a head pat."", 4: '1'}"
+68	68		301				DialogDisable			"{3: 'Her figurine seems to radiate warmth as she moves it, patting the head of the ""exhausted"" worker collapsed at the entryway.'}"
+69	69		204							{1: '1'}
+70	70		401							{1: '2', 2: '4895'}
+71	71		203						350.0	{1: '1', 2: '0.3', 4: '-20', 5: '-50'}
+72	72		301			DialogEnable				"{2: 'Bambinata', 3: ""But... there's something I have to tell you."", 4: '1'}"
+73	73		301							"{3: ""However, after that brief moment of warmth, Bambinata's figurine stands straight, her own face turning serious.""}"
+74	74		302							{2: 'Did something happen?', 3: '75', 4: '...?', 5: '75'}
+75	75		204							{1: '1', 2: '4'}
+76	76		301							"{2: 'Bambinata', 3: ""The landlord came by today. He says we need to pay the rent right now... or we'll be kicked out tomorrow."", 4: '1'}"
+77	77		302							{2: 'Hmm?', 3: '78', 4: 'Wait.', 5: '78'}
+78	78		301							{2: 'Bambinata', 3: 'And the rice jar is empty. Bambinata was in the kitchen just now, wondering how to make four dishes and a soup with only water and soy sauce...', 4: '1'}
+79	79		302							"{2: ""So that's what you were thinking about in the kitchen..."", 3: '80', 4: ""It's that bad?"", 5: '80'}"
+80	80		301				DialogDisable			{2: 'Bambinata', 3: 'And...', 4: '1'}
+81	81		302							{2: 'Enough! Hold on a second!', 3: '82', 4: 'This is seriously weird...', 5: '82'}
+82	82		302							"{2: 'What kind of ""play house"" setting is this?', 3: '83'}"
+83	83		204							{1: '1'}
+84	84		301			DialogEnable				"{2: 'Bambinata', 3: ""Hmm? It's a common plot in books. Bambinata's been reading a lot of them lately on the terminal."", 4: '1'}"
+85	85		204							{1: '1', 2: '7'}
+86	86		301							{2: 'Bambinata', 3: 'Other Constructs told Bambinata these stories are really popular right now and that Bambinata should try reading them... Is it not right?', 4: '1'}
+87	87		302							{2: 'How about we try something else?', 3: '88'}
+88	88		204							{1: '1'}
+89	89		301							{2: 'Bambinata', 3: 'Something else... Hmm.', 4: '1'}
+90	90		204							{1: '1', 2: '4'}
+91	91		301							{2: 'Bambinata', 3: 'Uh...', 4: '1'}
+92	92		204							{1: '1'}
+93	93		301							"{2: 'Bambinata', 3: ""Bambinata doesn't have any ideas. Sorry, Commandant."", 4: '1'}"
+94	94		202							{1: '1'}
+95	95		301							{3: 'She lowers her head, looking troubled.'}
+96	96		302							"{2: ""Why don't you tell me something that's happened lately?"", 3: '97', 4: 'What do you want to do most right now?', 5: '98'}"
+97	97	101	301							{3: 'I think family is about sharing everyday moments like that.'}
+98	98		201							{1: '1', 2: '500536'}
+99	99		301							"{1: '1', 2: 'Bambinata', 3: ""Right now... there's so much Bambinata wants to tell you, Commandant."", 4: '1'}"
+100	100		202							{1: '1'}
+101	101		401							{1: '2', 2: '5293', 3: '0.4'}
+102	102		301							{3: 'Inspired by your words, she seems to think of something. She picks up her figurine again and moves closer.'}
+103	103		201							{1: '1', 2: '500536', 3: '1'}
+104	104		301							{1: '1', 2: 'Bambinata', 3: 'Commandant, I placed a bet on the rabbit races by myself today, and I won the grand prize.', 4: '1'}
+105	105		302							"{2: ""So that's what that noisy place was about?"", 3: '106'}"
+106	106		301							{2: 'Bambinata', 3: 'Yeah. There was one rabbit that always kept its head held high, so I bet on it.', 4: '1'}
+107	107		302							{2: 'And it won?', 3: '108'}
+108	108		301							{2: 'Bambinata', 3: 'Yes. Bambinata even recorded it crossing the finish line.', 4: '1'}
+109	109		204							{1: '1', 2: '7'}
+110	110		301							{2: 'Bambinata', 3: 'Then, the day before yesterday, Bambinata helped choreograph the dances for the Double Seventh Festival performance... Ah...', 4: '1'}
+111	111		202							{1: '1'}
+112	112		301							"{3: ""She stops herself mid-sentence, realizing she might be revealing something she shouldn't, and quickly covers her mouth—just like that little rabbit she mentioned earlier.""}"
+113	113		302							"{2: ""You've been working hard."", 3: '114', 4: '(Pat her head)', 5: '114'}"
+114	114		201							{1: '1', 2: '500536', 3: '1'}
+115	115		301							"{1: '1', 2: 'Bambinata', 3: ""Mhm. Bambinata told you on Valentine's Day that Bambinata wanted to do better, so Bambinata's been trying a lot of things. Oh, and before that..."", 4: '1'}"
+116	116		302							"{2: ""Why don't we sit on the sofa to talk?"", 3: '117'}"
+117	117		202							{1: '1', 6: '1'}
+118	118		306							{1: '1'}
+119	119		301							"{3: ""Now that she'd started opening up, she's clearly ready to share more about herself, and judging by her expression, it won't be a short story.""}"
+120	120		401							{1: '2', 2: '1543', 3: '1'}
+121	121		301							"{3: 'You guide the suited figurine to gently take the ""family member"" figurine\'s hand, leading her through the cozy doorway into the living room of the little house.'}"
+122	122		401							{1: '2', 2: '2915'}
+123	123		301							{3: 'Outside, the real world grows busier as footsteps and voices increase—probably the start of another event. But the two little residents inside the toy home remain unaffected.'}
+124	124		301				DialogDisable			{3: 'No matter how noisy it gets outside, they stay nestled together in their tiny world, sharing small moments and warm words.'}
+125	125		306							
+126	126		302							{2: 'Before Bambinata finishes...', 3: '127'}
+127	127		302		1		AniZhuanchangBegin			{2: 'This game of playing house will keep going.', 3: '128'}

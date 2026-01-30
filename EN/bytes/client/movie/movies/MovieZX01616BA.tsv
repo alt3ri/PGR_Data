@@ -1,0 +1,31 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory12.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				"{3: ""...Looks like we've found a path with less Corrupted.""}"
+4	4		201							{1: '1', 2: '1031001', 4: '-600'}
+5	5		201							{1: '2', 2: '500166', 4: '0'}
+6	6		201							{1: '3', 2: '500026', 4: '600'}
+7	7		301							"{1: '1', 2: 'Lucia', 3: ""It's safe here. Let's look for clues."", 4: '2'}"
+8	8		302							"{2: ""Let's sort out all the key information first."", 3: '9'}"
+9	9		301							"{2: 'Liv', 3: ""Alright, I've laid out all the known information regarding Ascendants and Huaxu. I can use this database to screen for useful intel."", 4: '1'}"
+10	10		301				AniZhuanchangBegin			"{2: 'Lucia', 3: ""Looks like this is quite the workload. Let's divvy it up."", 4: '2'}"
+11	11		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+12	15		301			AniZhuanchangEnd				{3: 'You reconvene after investigating for quite some time.'}
+13	12		201							{1: '1', 2: '1031001', 4: '-600'}
+14	14		201							{1: '3', 2: '500026', 4: '600'}
+15	13		201							{1: '2', 2: '500166', 4: '0'}
+16	16		301							"{1: '1', 2: 'Lucia', 3: ""I haven't found any clues that match the keywords."", 4: '2'}"
+17	17		301							{2: 'Lee', 3: '...All I see is Corrupted going about their boring routine.', 4: '3'}
+18	18		302							{2: 'What about Liv?', 3: '19'}
+19	19		301							"{2: 'Liv', 3: ""I didn't find any useful clues matching the keywords, but I came across a letter... A farewell letter, rather."", 4: '1'}"
+20	20		301							{2: 'Lucia', 3: 'A farewell letter?', 4: '2'}
+21	21		301							"{2: 'Liv', 3: 'Well, a torn farewell letter. It\'s only the first half of the page. I was able to find it because it contains the word ""Huaxu"".', 4: '1'}"
+22	22		302							{2: 'Huaxu?', 3: '23'}
+23	23		301							"{2: 'Liv', 3: 'Correct. It says: ""I found a way to fight the Punishing Virus. I wanted to use it to create the legendary Huaxu Utopia. But it has cost all of my possessions, and it appears that I will die before its completion...""', 4: '1'}"
+24	24		301							"{2: 'Liv', 3: '""If you are reading this letter, please look for it at the location below...""', 4: '1'}"
+25	25		301							{2: 'Liv', 3: 'The last part is missing.', 4: '1'}
+26	26		301							{2: 'Lucia', 3: 'A method to fight the Punishing Virus?', 4: '2'}
+27	27		301							"{2: 'Lee', 3: ""It's probably either a ruse or just nonsense."", 4: '3'}"
+28	28		301							"{2: 'Lucia', 3: ""You're right. We can't confirm it without the last part. But maybe we shouldn't completely ignore it."", 4: '2'}"
+29	29		302							"{2: ""Let's look for the last part of the letter."", 3: '30'}"
+30	30		301		1		AniZhuanchangBegin			"{2: 'Liv', 3: ""Alright. We'll keep an eye out. Let's keep going, Commandant."", 4: '1'}"

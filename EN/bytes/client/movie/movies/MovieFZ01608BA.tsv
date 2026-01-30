@@ -1,0 +1,26 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory287.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500167'}
+4	4		301			DialogEnable				{1: '1', 2: 'Bridget', 3: 'Hey, you guys arrive at the right time.', 4: '1'}
+5	5		301							"{2: 'Bridget', 3: ""I'm caught up in all these rescue missions here and I'm in over my head. Would you be able to help?"", 4: '1'}"
+6	6		302							{2: 'No thanks...', 3: '7', 4: 'Sure.', 5: '8'}
+7	7	2301	301							"{2: 'Bridget', 3: ""Come on. It's got to do with the Red Tide, and we can't really ask the newbies for help. I'm sure Gray Raven is a lot more experienced."", 4: '1'}"
+8	8		301							{2: 'Bridget', 3: 'I knew I could count on the Gray Ravens.', 4: '1'}
+9	2301		204							{1: '1', 2: '4'}
+10	9		301							"{2: 'Bridget', 3: ""So here's the deal: the Silk Worm Commandant and a Construct member have been engulfed by the rising tide. We've lost all contact with them."", 4: '1'}"
+11	10		301							{2: 'Bridget', 3: 'I think it might be too late to do anything now...', 4: '1'}
+12	11		301							{2: 'Bridget', 3: 'One of the two remaining Constructs in their team has been assigned to a different group.', 4: '1'}
+13	12		301							"{2: 'Bridget', 3: ""Things are a little more complicated with the other one. She wasn't there with them when their commandant was attacked, because she had been under treatment for severe injury."", 4: '1'}"
+14	13		301							"{2: 'Bridget', 3: ""She regretted not being able to save their commandant, and firmly believes that he is just too injured to contact us and that he's waiting to be rescued."", 4: '1'}"
+15	14		301							"{2: 'Bridget', 3: ""So she refused to be assigned to a different team and later escaped at night. She's also somehow blocked location tracking."", 4: '1'}"
+16	15		301							{2: 'Bridget', 3: 'I would have asked a technician to track her down any other day, but we really need to do it ourselves now.', 4: '1'}
+17	16		301							{2: 'Bridget', 3: 'So? Would you be able to help?', 4: '1'}
+18	17		302							{2: '...Very well.', 3: '2302'}
+19	2302		204							{1: '1', 2: '1'}
+20	18		301							{2: 'Bridget', 3: 'Wonderful! Well, let me send her information to your terminal.', 4: '1'}
+21	19		301							"{2: 'Bridget', 3: ""She's probably looking for their commandant where the Red Tide has been. Look for her in the ruins."", 4: '1'}"
+22	20		201							{1: '1', 2: '500166'}
+23	21		301							{1: '1', 2: 'Lucia', 3: 'Ruolin, frame name Antler, Attacker Construct.', 4: '1'}
+24	22		201							{1: '1', 2: '500167'}
+25	23		301		1		AniZhuanchangBegin			"{2: 'Bridget', 3: ""Yes, that's her. I'll leave the job to you."", 4: '1'}"

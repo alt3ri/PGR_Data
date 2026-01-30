@@ -1,0 +1,185 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory168.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500629', 3: '5', 4: '400'}
+4	4		201							{1: '2', 2: '500144', 4: '-400'}
+5	5		301			DialogEnable				{1: '1', 2: 'Hanying', 3: '...But why?', 4: '1'}
+6	6		301							{2: 'Hanying', 3: 'Is he still alive?', 4: '1'}
+7	11		204							{1: '1', 2: '4'}
+8	7		301							{2: 'Chaofeng', 3: 'The leader at the time... Villier... wanted him alive.', 4: '2'}
+9	8		301							{2: 'Chaofeng', 3: 'After the incident, all other Cradle members that had infiltrated the ship were caught, save for the few associates who committed suicide.', 4: '2'}
+10	9		301							{2: 'Chaofeng', 3: 'Villier asked us to imprison them but never to execute them.', 4: '2'}
+11	10		301							"{2: 'Chaofeng', 3: ""It's been almost twenty years now, and only their leader, the hacker, is still alive."", 4: '2'}"
+12	12		301							{2: 'Hanying', 3: 'Why did Villier spare them...', 4: '1'}
+13	13		301							"{2: 'Chaofeng', 3: ""We can't be sure, but after their arrest, they openly confessed to Pulao's and your involvement."", 4: '2'}"
+14	14		301							"{2: 'Chaofeng', 3: ""We wouldn't have believed your identity so easily had he not been so forthcoming about the truth."", 4: '2'}"
+15	15		401							{1: '2', 2: '2626'}
+16	16		301							"{3: ""A few knocks sound on the door that has been left ajar. The visitor swiftly whispers into Chaofeng's ear—before disappearing once again into the shadows.""}"
+17	17		301							"{2: 'Chaofeng', 3: '""The Cradle"" says that he would like to see Pulao again.', 4: '2'}"
+18	18		301							"{2: 'Chaofeng', 3: ""It would seem like he does not know that Pulao isn't on the ship, but I can't guess his intentions at this point myself."", 4: '2'}"
+19	20		301							{2: 'Hanying', 3: '...For revenge, perhaps?', 4: '1'}
+20	21		301				AniZhuanchangBegin			{3: '...'}
+21	22		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+22	23		504							{1: '0.7'}
+23	24		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory254.png'}
+24	25		201							{1: '1', 2: '500148'}
+25	26		301			DialogEnable				"{1: '1', 2: '???', 3: ""...A machine is always going to be a machine. They exist only to fulfill humans' desires..."", 4: '1'}"
+26	27		301							{2: '???', 3: '...This time, we must take back what we lost from Villier—and more...', 4: '1'}
+27	28		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+28	29		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory551.jpg'}
+29	30		301				AniZhuanchangBegin			{2: '???', 3: '...Think, and remember why you exist...', 4: '1'}
+30	31		202			DialogDisable				{1: '1', 6: '1'}
+31	32		504							
+32	33		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+33	34		301			DialogEnable				{3: '...'}
+34	35		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory168.jpg', 3: '0', 4: '1', 5: '1'}
+35	36		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+36	37		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory168.jpg'}
+37	38		201							{1: '1', 2: '500629', 3: '4', 4: '400'}
+38	39		201							{1: '2', 2: '500144', 4: '-400'}
+39	40		301							{1: '1', 2: 'Hanying', 3: 'May I see him?', 4: '1'}
+40	41		301							{2: 'Chaofeng', 3: 'Huh?', 4: '2'}
+41	42		301							"{2: 'Hanying', 3: ""If Yoyo left the ship because of something he'd said, then we should be able to get some clues out of him."", 4: '1'}"
+42	43		301							{3: 'As if pondering the idea proposed by Hanying, Chaofeng grows hesitant—something that rarely happens to him.'}
+43	44		301							{2: 'Chaofeng', 3: '...If you so insist.', 4: '2'}
+44	45		301							{2: 'Hanying', 3: 'Thank you.', 4: '1'}
+45	46		301							{2: 'Chaofeng', 3: 'But I make no guarantee that you will be able to get anything out of him since you were the one who thwarted his plan twenty years ago.', 4: '2'}
+46	47		301							"{2: 'Chaofeng', 3: ""And the guy is well aware that he doesn't have much time left."", 4: '2'}"
+47	48		301							{3: 'Chaofeng gestures for Hanying to follow him and, together, they leave the secret room of the Kowloong Crew.'}
+48	49		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory159.png', 3: '0', 4: '1', 5: '1'}
+49	50		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+50	51		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory159.png'}
+51	52		301							{3: 'Just outside the room is a dim but spotless hallway. Giant words written with red paint can just about be seen in the faint xenon light, many parts of the paint having fallen off.'}
+52	53		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory712.jpg', 3: '0', 4: '1', 5: '1'}
+53	54		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+54	55		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory712.jpg'}
+55	56		301							{3: 'After passing through the well-lit deck, Hanying follows Chaofeng down into the gloomy prison ward. She spent years living on this ship, but never once has she been this deep down.'}
+56	57		301							"{3: ""Except for the flickering signage in the corners, the only source of light around is the faint light coming off the lantern in Chaofeng's hands.""}"
+57	58		301							{3: 'Light from the lantern traverses the rows of prison cell bars, casting lines of shadows on the back wall of the empty cells.'}
+58	59		301							{2: 'Hanying', 3: 'This is the prison on the Nighter?', 4: '1'}
+59	60		301							{2: 'Chaofeng', 3: 'Correct, though many prisoners have been released since we docked.', 4: '2'}
+60	61		301							"{2: 'Chaofeng', 3: ""Criminals with the worst offenses have all been thrown overboard, so the ones left in here are nothing more than petty thieves. It doesn't hurt to give them a second chance after teaching them a lesson."", 4: '2'}"
+61	62		301							{2: 'Hanying', 3: 'What if they revert back to their old ways after being released?', 4: '1'}
+62	63		301							"{2: 'Chaofeng', 3: ""Well, we don't keep loafers around—not on the ship, nor in the city, because it takes resources to keep them locked up. Better to give them a chance at a fresh start. Desperate times call for desperate measures."", 4: '2'}"
+63	64		301							"{2: 'Chaofeng', 3: ""If they still have trouble keeping their hands clean, it won't be us dealing with them. The residents will personally kick them out of the city."", 4: '2'}"
+64	65		301							"{2: 'Chaofeng', 3: ""Anyhow, no crime in this world is unredeemable... We're here."", 4: '2'}"
+65	66		301							{3: 'Before them stands a metal door different from that of the rest of the cells.'}
+66	67		301							{3: 'Chaofeng sways the lantern in his hand and carefully opens the lock on the cell door.'}
+67	68		301							"{2: 'Chaofeng', 3: ""I'll be on the watch in the control room next door."", 4: '2'}"
+68	69		301							"{2: 'Chaofeng', 3: ""There are no electronics within reach since we've got a hacker in here. If you need anything, just yell."", 4: '2'}"
+69	70		202							{1: '1', 2: '2', 6: '1'}
+70	71		301							{3: 'The heavy door grinds open slowly. Hanying walks in without any hesitation.'}
+71	72		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory711.jpg', 3: '0', 4: '1', 5: '1'}
+72	73		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+73	74		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory711.jpg'}
+74	75		201							{1: '1', 2: '500148'}
+75	76		301							"{1: '1', 2: '???', 3: ""I said I wanted to see the kid, didn't I? Now, get this little..."", 4: '1'}"
+76	77		301				AniZhuanchangBegin			{3: 'A faint ray of sunlight slipping through the porthole into the pitch-black cell gives the convict a chance to make out the face of his visitor.'}
+77	78		401						600.0	{1: '1', 2: '36'}
+78	79		202			DialogDisable				{1: '1', 6: '1'}
+79	80		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgCg/Cg3501_04.jpg'}
+80	81		401							{1: '1', 2: '120'}
+81	82		301			DialogEnable				"{2: 'Cradle', 3: ""Oh? It's you.""}"
+82	83		301							{2: 'Hanying', 3: 'I see you remember me.'}
+83	84		301							"{2: 'Cradle', 3: ""Of course, and I see you haven't changed one bit over the years.""}"
+84	85		301							{3: 'Time has taken his strength and looks and changed his voice, but the cunning tone in his words remains unchanged.'}
+85	86		301							"{2: 'Cradle', 3: ""Twenty-four long years have passed and I am left with nothing but a body of old bones. You, on the other hand, haven't aged a day—and I see you got a makeover, huh...""}"
+86	87		301							{2: 'Cradle', 3: 'Totally thought they would have thrown you off the ship. Fancy seeing you still here in one piece.'}
+87	88		301							"{2: 'Hanying', 3: ""I'm not here to chitchat about the old days.""}"
+88	89		301							"{2: 'Hanying', 3: ""You should know why I'm here.""}"
+89	90		301							{2: 'Cradle', 3: 'Huh? This can only mean that the kid has left the ship. Ha.'}
+90	91		301							{2: 'Hanying', 3: '...'}
+91	92		301							"{2: 'Hanying', 3: ""I heard that you'd told Villier and everyone on the ship what happened that day.""}"
+92	93		301							"{2: 'Hanying', 3: ""So if you tell me exactly what's happening now, maybe there is still room for you to salvage...""}"
+93	94		301							"{3: '""The Cradle"" bursts out laughing, which quickly turns into a violent coughing fit. It takes a while for the coughs to die down.'}"
+94	95		301							{2: 'Cradle', 3: 'Oh boy... this is just great. Did you sizzle your own memory shell when you removed your collar?'}
+95	96		301							"{2: 'Cradle', 3: ""Salvage? There's nothing... nothing I should be salvaging or seeking forgiveness for. The only regret I have now is that I wasn't there to witness Villier's death.""}"
+96	97		301							{2: 'Cradle', 3: 'Or you can say that I deeply regret that I was not able to end his life with my own hands.'}
+97	98		301							{3: 'It is obvious that The Cradle is intentionally provoking and aggravating Hanying.'}
+98	99		301							{2: 'Hanying', 3: '...That is truly unfortunate.'}
+99	100		301							{2: 'Cradle', 3: 'What was that?'}
+100	101		301							{2: 'Hanying', 3: 'I guess you can only carry that regret with you to the grave. Must be an insufferably painful reality to live with.'}
+101	102		301							{3: 'The mere meters between Hanying and The Cradle is the boundary between two vastly different worlds.'}
+102	103		301							"{3: ""Hanying still cannot discern the expression on his face, which is concealed in the shadows—while he can see every detail of Hanying's face, having been lit up by the sunlight beaming through the porthole.""}"
+103	104		301							{3: 'It was not an expression he expected to see.'}
+104	105		301							"{2: 'Cradle', 3: ""Interesting... Let's talk, shall we? If I feel like it, I might even spill the rest of the story and the girl's whereabouts to you.""}"
+105	106		301							{2: 'Hanying', 3: 'I am not about to strike a deal with someone like you, neither will the Nighter.'}
+106	107		301							"{2: 'Cradle', 3: ""You don't have to, of course, but you will.""}"
+107	108		301							"{2: 'Cradle', 3: ""We've got plenty of time.""}"
+108	109		301							{3: 'Hanying clenches her hands slightly, which The Cradle fails to notice.'}
+109	110		301							{2: 'Hanying', 3: 'I heard that you led an assassination attempt on the leader of Kowloong before pulling another one on the Nighter.'}
+110	111		301							"{2: 'Cradle', 3: ""That's what we get paid to do.""}"
+111	112		301							{2: 'Cradle', 3: 'After the incident at Kowloong, Villier destroyed our organization and for this, he shall brace himself for the price of retribution.'}
+112	113		301							{2: 'Cradle', 3: 'What goes around comes around.'}
+113	114		301							"{2: 'Cradle', 3: ""Everything I have done, I have done on the grounds of justice, which is why I don't feel sorry.""}"
+114	115		301							"{2: 'Cradle', 3: ""Villier murdered my friends, destroyed my home, and took everything from me, so fat chance I'm going to make peace with the guy.""}"
+115	116		301							{2: 'Hanying', 3: '...You are right.'}
+116	117		301							"{2: 'Hanying', 3: ""But the destruction of your organization was only a fair price to pay for what you had done. That was Villier's revenge against you.""}"
+117	118		301							"{2: 'Cradle', 3: 'Let me guess. You\'re not about to start lecturing me about how ""An eye for an eye leaves the whole world blind"" now, are you?'}"
+118	119		301							{2: 'Hanying', 3: 'We both know that getting rid of your enemies once and for all is the only proper way to carry out revenge.'}
+119	120		301							"{3: ""Hanying's reply sends The Cradle into a bout of silence.""}"
+120	121		301							{2: 'Cradle', 3: 'Well, well... Ha. Very intriguing.'}
+121	122		301							"{2: 'Cradle', 3: ""Never thought I'd hear words like those from that mouth of yours.""}"
+122	123		301							"{2: 'Cradle', 3: ""I would have died a long time ago had Villier ever had your resolve, and you wouldn't have lived to see another day had we carried out our revenge.""}"
+123	124		301							{2: 'Hanying', 3: 'In a world such as ours, forgiveness belongs only to those who respect it.'}
+124	125		301							"{2: 'Cradle', 3: ""I take it that you're ready for your revenge, then?""}"
+125	126		301							"{2: 'Hanying', 3: ""You've hurt not just me, but also people I hold dear—and for that, I'll not forgive you.""}"
+126	127		301							{2: 'Cradle', 3: 'Oh? You mean that bastard who cut the little girl twenty years ago? He was executed the day he was brought in here.'}
+127	128		301							{2: 'Hanying', 3: 'Serves him right.'}
+128	129		301							"{2: 'Cradle', 3: ""So are you going to kill me now? Go ahead. You don't get a chance like this every day.""}"
+129	130		301							{2: 'Cradle', 3: 'A fitting act for a tool built to kill.'}
+130	131		301							{3: 'The Cradle shakes his head. For an instant, Hanying sees his face clearly.'}
+131	132		301							"{3: ""The disheveled pale hair and wrinkly skin do nothing to divert one's attention away from the crazed grin around the corners of his mouth and the bone-chilling gleam in his eyes.""}"
+132	133		301							{2: 'Hanying', 3: '...And you think I came to do what you did, huh?'}
+133	134		301							{2: 'Cradle', 3: 'What do you mean?'}
+134	135		301							"{2: 'Hanying', 3: ""Well, I'm not going to lay a finger on you.""}"
+135	136		301							{3: 'The Cradle freezes in his grin.'}
+136	137		301							{2: 'Cradle', 3: 'Huh?'}
+137	138		301							{2: 'Hanying', 3: 'I am not a machine that lives for revenge. You are.'}
+138	139		301							"{2: 'Hanying', 3: ""Get this—you're dying a lonesome death with a heart full of regrets.""}"
+139	140		301							{2: 'Hanying', 3: 'And that is my revenge against you.'}
+140	141		301							{2: 'Cradle', 3: '...'}
+141	142		301							{2: 'Cradle', 3: 'Wonderful. Wonderful indeed.'}
+142	143		301							{3: 'The Cradle lets out a sneer. In the noise of heavy metal chains, he recedes back into the darkness.'}
+143	144		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory711.jpg', 3: '0', 4: '1', 5: '1'}
+144	145		205							{1: '999', 3: '1', 4: '0', 5: '0'}
+145	146		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory711.jpg'}
+146	147		201							{1: '1', 2: '500148', 4: '-400'}
+147	148		201							{1: '2', 2: '500629', 3: '4', 4: '400'}
+148	149		301							"{1: '1', 2: 'Cradle', 3: ""Never mind. I'm tired."", 4: '1'}"
+149	150		301							"{2: 'Cradle', 3: ""Mt. Huaiwu, 50 kilometers northwest of the Metropolis. That's where she's heading."", 4: '1'}"
+150	151		301							{2: 'Hanying', 3: 'Mt. Huaiwu?', 4: '2'}
+151	152		301							"{2: 'Cradle', 3: ""Ask a Kowloong Crew for a map and you'll find it."", 4: '1'}"
+152	153		301							{2: 'Hanying', 3: 'What business does she have there, though?', 4: '2'}
+153	154		301							{2: 'Cradle', 3: 'That mountain is our last base.', 4: '1'}
+154	155		301							"{2: 'Cradle', 3: ""The girl came to me with the coordinates of that mountain, so I told her. That's all. Apparently, people have disappeared in the vicinity and that's why she went to look into what had happened."", 4: '1'}"
+155	156		301							"{2: 'Hanying', 3: ""Do you know what's going on there? It's your base after all."", 4: '2'}"
+156	157		301							"{2: 'Cradle', 3: ""How on earth would I know? I've been in this lightless, soulless cell for twenty-odd years without ever getting my hands on an electronic device."", 4: '1'}"
+157	158		301							{2: 'Cradle', 3: 'But I guess... this is revenge being done right, no?', 4: '1'}
+158	159		301							{2: 'Cradle', 3: 'You, the city, and this ship are all still here, right?', 4: '1'}
+159	160		301							{2: 'Hanying', 3: 'I told you. Neither I, nor the Nighter, nor Kowloong, will give in to your demands.', 4: '2'}
+160	161		301							"{2: 'Hanying', 3: 'So are you still going to insist on your ""revenge""?', 4: '2'}"
+161	162		301							{2: 'Cradle', 3: 'In this time of survival of the fittest, everything warrants revenge.', 4: '1'}
+162	163		301							"{2: 'Cradle', 3: ""But I'm no expert when it comes to what kids think nowadays."", 4: '1'}"
+163	164		301							{2: 'Cradle', 3: 'Keep in mind that I had no obligation to tell you any of this.', 4: '1'}
+164	165		301							{2: 'Cradle', 3: 'This is as much as I know, anyway.', 4: '1'}
+165	166		301							{3: 'The Cradle lets out a few violent coughs before turning his head to gaze into the tiny porthole on the wall and falling into dead silence.'}
+166	167		301							{3: 'Knowing that she will not get anything else out of him, Hanying gets up to leave.'}
+167	168		202							{1: '2', 6: '1'}
+168	169		203							{1: '1', 2: '0.25'}
+169	170		301				AniZhuanchangBegin			{2: 'Cradle', 3: 'Time... has yet to leave its heart-wrenching mark on you.', 4: '1'}
+170	171		401						600.0	{1: '1', 2: '36'}
+171	172		202			DialogDisable				{1: '1', 6: '1'}
+172	173		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+173	174		401							{1: '1', 2: '201'}
+174	175		201							{1: '1', 2: '500630', 4: '400'}
+175	176		201							{1: '2', 2: '500144', 4: '-400'}
+176	177		301			DialogEnable				{1: '1', 2: 'Chaofeng', 3: 'So?', 4: '2'}
+177	178		301							"{2: 'Duheng', 3: ""I don't see a reason to doubt them."", 4: '1'}"
+178	179		301							{2: 'Chaofeng', 3: 'You are going to trust her?', 4: '2'}
+179	180		301							{2: 'Duheng', 3: 'Do you have a reason not to?', 4: '1'}
+180	181		301							{2: 'Chaofeng', 3: '...No.', 4: '2'}
+181	182		301							"{2: 'Duheng', 3: ""There we go. Let's go. We've got things to do."", 4: '1'}"
+182	183		301							"{2: 'Duheng', 3: ""Don't worry, I won't go too far. Everything so far is still going according to plan."", 4: '1'}"
+183	184		301							{2: 'Chaofeng', 3: 'A plan, huh...', 4: '2'}
+184	185		301		1		AniZhuanchangBegin			"{2: 'Chaofeng', 3: ""It's nothing more than a high-stakes gamble."", 4: '2'}"

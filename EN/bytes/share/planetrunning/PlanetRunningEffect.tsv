@@ -1,0 +1,134 @@
+Id	Type	Overlying	TriggerCountLimit	Desc	Params	BubbleControllerId	PlayEffect
+1001	2	True		Recovers 50% of the team's max HP	[2, 1, 0, 1, 5000]	1	Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab
+1002	6	True		Get 50 Star Ore when passing a Mine	[2, 55]	3	
+1003	3	True		Mine Synergy Summon Enemy	[2, 2, 0]		
+1004	2	True		Permanent increases the team's ATK by 3	[2, 1, 2, 2, 3]	2	Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab
+1005	2	True		Permanent increases the team's HP by 5	[2, 1, 1, 2, 5]		
+1006	3	True		Mine summons 1 enemy	[1, 3, 0]		
+1007	2	True		Shooting Range temporarily increases the team's CRIT Rate by 35%	[2, 2, 4, 2, 2000]	2	Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab
+1008	2	True		Temporarily increases the team's CRIT DMG by 30% when Shooting Range is adjacent to Training Field	[2, 2, 5, 2, 3000]		Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab
+1009	2	True		Recovers 8% of the team's max HP	[2, 1, 0, 1, 800]	1	Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab
+1010	2	True		Recovers 8% of the team's max HP	[2, 1, 0, 1, 800]		
+1011	8	True		Draw 1 item	[1]		
+1012	6	True		Bonus item deducts 50 Star Ore	[2, -50]		
+1013	2	True		Ion Tower grants bonus ATK SPD within range	[2, 2, 6, 2, 2800]		Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab
+1014	6	True		Ion Tower Synergy deducts 50 Star Ore	[2, -50]		
+1015	2	True		Bonus 3 ATK when Mutated Rock is adjacent to Training Field	[2, 2, 2, 2, 3]	2	Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab
+1017	2	True		Mutated Grass restores 1 HP	[2, 1, 0, 2, 1]		
+1018	2	True		Grass takes effect immediately. HP +1	[2, 2, 1, 2, 1]	1	Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab
+1019	2	True		Icy Star Rock restores 1 HP	[2, 1, 0, 2, 1]		
+1020	2	True		Icy Star Rock takes effect immediately. HP +1	[2, 2, 1, 2, 1]	1	Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab
+1021	2	True		Bonus ATK SPD when Icy Star Surface is adjacent to Training Field	[2, 2, 6, 2, 100]	2	Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab
+1022	2	True		Sand Star Oasis restores 1 HP	[2, 1, 0, 2, 1]		
+1023	2	True		Sand Star Oasis takes effect immediately. HP +1	[2, 2, 1, 2, 1]	1	Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab
+1024	2	True		Sand Star Rock & Divination House Synergy Bonus ATK	[2, 2, 2, 2, 3]	2	Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab
+1025	2	True		Fire Star Lava restores 1 HP	[2, 1, 0, 2, 1]		
+1026	2	True		Fire Star Lava takes effect immediately. HP +1	[2, 2, 1, 2, 1]	1	Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab
+1027	2	True		Fire Star Crystal & Shooting Range Synergy - Bonus CRIT Rate	[2, 2, 4, 2, 100]	2	Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab
+1028	2	True		Fire Star Crystal & Shooting Range Synergy - Bonus CRIT DMG	[2, 2, 5, 2, 100]		
+1031	6	True		Synergy: Get 10 Star Ore from killing an enemy	[2, 15]		Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab
+1032	2	True		Shooting Range temporarily increases the team's CRIT DMG by 25%	[2, 2, 5, 2, 2500]		
+1033	2	True		Red Velvet Cake: ATK +5 - Removed when dismantled	[2, 2, 2, 2, 5]	1	Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab
+1034	2	True		Red Velvet Cake: HP +10 - Removed when dismantled	[2, 2, 1, 2, 10]	1	Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab
+1035	6	True		Almond Cake & Mine Synergy: Star Ore +50	[2, 50]		Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab
+2001	2	True		Each enemy killed reduces the team's current HP by 2	[2, 1, 0, 2, -2]		
+2002	2	True		Each item defeated permanently increases the team's ATK by 1	[2, 1, 2, 2, 1]		
+2003	4			Miasma Weather: Bonus base event. Base does not recover HP	[503, 0, 3, 1]		
+2004	2	True		Miasma Weather: Base cannot recover HP. The Miasma will nullify the HP recovered by Base	[2, 1, 0, 1, -5000]		
+2005	2	True		Each item obtained increases the team's ATK by 20	[2, 1, 2, 2, 20]		
+2006	2	True		Each item obtained increases the team's CRIT DMG by 10%	[2, 1, 5, 1, 1000]		
+2007	2	True		Each item obtained increases the team's HP by 5%	[2, 1, 1, 1, 500]		
+2008	6		1	Icy Star Theme: Get 100 Star Ore after completing Construction Mission 1	[2, 100]	3	
+2009	4		1	Icy Star Theme: Completing Construction Mission grants a buff that adds stats every cycle	[512, 0, 1, 1]		
+2010	2	True		Permanent increases the team's ATK by 3	[2, 1, 2, 2, 5]		Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab
+2011	2	True		Permanent increases the team's HP by 10	[2, 1, 1, 2, 10]		
+2020	2	True		Sand Star Theme: Each item obtained increases the team's ATK by 5	[2, 1, 2, 2, 5]	2	Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab
+2021	2	True		Sand Star Theme: Each item obtained increases the team's HP by 10	[2, 1, 1, 2, 10]		
+2022	6	True		Icy Star Theme 2: Get 50 Star Ore when getting an item	[2, 10]		
+2030	6	True		Fire Star Theme 1: Get 200 Star Ore every cycle	[2, 200]		
+2031	6	True		Fire Star Theme 4, 5: Get 500 Star Ore every cycle	[2, 500]		
+2100	6		1	Icy Star Theme: Get 100 Star Ore after completing Construction Mission 2	[2, 100]		
+2101	6		1	Icy Star Theme: Get 100 Star Ore after completing Construction Mission 3	[2, 100]		
+3024	4			Icy Star Sunny: Bonus Star Ore from enemy event	[1002, 0, 4]		
+3025	6	True		Icy Star Sunny: Get Star Ore from killing an enemy	[2, 20]		
+3026	4			Arctic Weather: Mine gets an event that deducts Star Ore	[1005, 0, 3, 2]		
+3027	4			Arctic Weather: Training Field gets an event that deducts Star Ore	[1005, 0, 3, 3]		
+3028	4			Arctic Weather: Shooting Range gets an event that deducts Star Ore	[1005, 0, 3, 4]		
+3029	4			Arctic Weather: Bar gets an event that deducts Star Ore	[1005, 0, 3, 5]		
+3030	4			Arctic Weather: Ion Tower gets an event that deducts Star Ore	[1005, 0, 3, 7]		
+3031	6			Icy Star Arctic: Construction deducts 999 Star Ore	[2, -999]	6	
+3040	4			Desert Sunny: Divination House gets an event that gives item	[1011, 0, 3, 6]		
+3041	8	True		3040 Draw 1 item	[1]		
+3042	4			Desert Sunny: Base gets an event that gives Star Ore	[1031, 0, 3, 1]		
+3043	6			Desert Sunny: Get Star Ore when passing Base	[2, 200]		
+3045	4			3-1 Sandstorm: Wanderer gets 100% bonus CRIT Rate	[1013, 0, 5, 1]		
+3046	4			3-1 Sandstorm: Pirate gets 100% bonus CRIT Rate	[1013, 0, 5, 2]		
+3047	2			Sandstorm all units get +100% CRIT Rate	[4, 2, 4, 2, 10000]		
+3048	4			3-1 Sandstorm: Mine gets 3049	[1015, 0, 3, 2]		
+3049	8	True		Get an item when passing Mine in Sandstorm	[1]		
+3100	3	True		Fire Star Sunny: Summon normal enemy on random road	[1, 3, 1]		
+3101	4			Fire Star Embers Weather: Shooting Range gets an event that summons enemy	[1052, 0, 3, 4]		
+3102	3	True		Fire Star Embers: Summon Elite Enemy on random road	[3, 3, 1]		
+3103	2	True		CRIT DMG +7% after killing enemy	[2, 1, 5, 2, 700]		
+3150	4			Phantom: Red Velvet gets 10 Star Ore refund. 1 stack	[1080, 0, 3, 109]		
+3151	4			Phantom: Red Velvet gets 10 Star Ore refund. 2 stacks	[1081, 0, 3, 109]		
+3152	4			Phantom: Red Velvet gets 10 Star Ore refund. 3 stacks	[1082, 0, 3, 109]		
+3153	4			Phantom: Red Velvet gets 10 Star Ore refund. 4 stacks	[1083, 0, 3, 109]		
+3154	4			Phantom: Red Velvet gets 10 Star Ore refund. 5 stacks	[1084, 0, 3, 109]		
+3155	4			Phantom: Almond gets 10 Star Ore refund. 1 stack	[1080, 0, 3, 110]		
+3156	4			Phantom: Almond gets 10 Star Ore refund. 2 stacks	[1081, 0, 3, 110]		
+3157	4			Phantom: Almond gets 10 Star Ore refund. 3 stacks	[1082, 0, 3, 110]		
+3158	4			Phantom: Almond gets 10 Star Ore refund. 4 stacks	[1083, 0, 3, 110]		
+3159	4			Phantom: Almond gets 10 Star Ore refund. 5 stacks	[1084, 0, 3, 110]		
+3180	6	True		Phantom Refund	[2, 10]	6	
+3190	4			5-5 Phantom: Bonus Star Ore from enemy event	[1101, 0, 4]		
+3191	6	True		5-5 Phantom: Get Star Ore from killing an enemy	[2, 10]		
+3192	2	True		5-5 Mist: Each enemy defeated reduces the team's current HP by 2	[2, 1, 0, 2, -2]		
+3193	2	True		5-5 Mist: Each enemy defeated permanently increases the team's ATK by 1	[2, 1, 2, 2, 1]		
+3200	3	True		Fire Star Thunderstorm summons Pirate on random road	[2, 3, 1]		
+4001	5			Desert Sunny item (Weather ID to be updated)	[2, 1]		
+4002	2	True		Desert enhance item: Team ATK +3	[4, 1, 2, 2, 3]	2	Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab
+4003	2	True		Desert enhance item: Team HP +5	[4, 1, 1, 2, 5]		
+4004	2			Desert Cooling item: CRIT Rate -100%	[4, 1, 4, 2, -10000]		
+4005	6			Desert item gives 50 Star Ore	[2, 50]	3	
+4006	4			Worker gets HP deduct event	[2006, 0, 5, 1]		
+4007	4			Pointy gets HP deduct event	[2006, 0, 5, 2]		
+4008	2			After using item, Worker and Pointy's HP -99%	[4, 1, 1, 1, -9900]		
+4009	2			Using the item restores 10% team HP	[4, 1, 0, 1, 1000]	1	Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab
+4010	6			Desert item gives 1 Star Ore	[2, 1]		
+4011	6			Sweet Star 1 More Chance Item	[2, 420]	3	
+4012	6			Sweet Star 2 More Chances Item	[2, 840]		
+4013	2	True		Sweet Star ATK	[4, 1, 2, 2, 7]		
+4014	2	True		Sweet Star HP	[4, 1, 1, 2, 77]		
+4015	2	True		Sweet Star CRIT Rate	[4, 1, 4, 2, 770]		
+4016	2	True		Sweet Star CRIT DMG	[4, 1, 5, 2, 770]		
+4017	2	True		Sweet Star Speed Bonus	[4, 1, 6, 2, 770]		
+5001	2			Boss ATK reduced by 70%	[4, 1, 2, 1, -8500]		
+5002	2			Boss ATK SPD reduced by 10%	[4, 1, 6, 2, -1000]		
+10001	2	True		Exploration Team ATK +1	[2, 1, 2, 2, 1]		
+10101	6	True		Exploration Team Initial Star Ore +5	[2, 5]		
+10201	2	True		Exploration Team HP +1	[2, 1, 1, 2, 1]		
+10301	2	True		Exploration Team CRIT Rate +1%	[2, 1, 4, 2, 100]		
+20101	6	True		Exploration Team Initial Star Ore +5	[2, 5]		
+20201	2	True		Exploration Team ATK SPD Bonus +1%	[2, 1, 6, 2, 100]		
+20301	2	True		Exploration Team CRIT DMG +1%	[2, 1, 5, 2, 100]		
+30101	2	True		Exploration Team ATK +1	[2, 1, 2, 2, 1]		
+30201	2	True		Exploration Team HP +1	[2, 1, 1, 2, 1]		
+30301	2	True		Exploration Team CRIT Rate +1%	[2, 1, 4, 2, 100]		
+40101	6	True		Exploration Team Initial Star Ore +5	[2, 5]		
+40201	2	True		Exploration Team CRIT DMG +1%	[2, 1, 5, 2, 100]		
+40301	2	True		Exploration Team ATK +1	[2, 1, 2, 2, 1]		
+50101	2	True		Exploration Team ATK SPD Bonus +1%	[2, 1, 6, 2, 100]		
+50201	2	True		Exploration Team CRIT Rate +1%	[2, 1, 4, 2, 100]		
+50301	2	True		Exploration Team ATK +1	[2, 1, 2, 2, 1]		
+80001	6	True		Exploration Team Initial Star Ore +1	[2, 1]		
+80002	6	True		Exploration Team Initial Star Ore +1	[2, 1]		
+80003	2	True		Exploration Team HP +1	[2, 1, 1, 2, 1]		
+80004	2	True		Exploration Team HP +2	[2, 1, 1, 2, 2]		
+80005	2	True		Exploration Team HP +1	[2, 1, 1, 2, 1]		
+80006	2	True		Exploration Team ATK +1	[2, 1, 2, 2, 1]		
+80007	2	True		Exploration Team ATK +1	[2, 1, 2, 2, 1]		
+80008	2	True		Exploration Team ATK +1	[2, 1, 2, 2, 1]		
+90001	2	True		Recovers 25% of the team's max HP	[2, 1, 0, 1, 2500]	1	Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab
+90002	8		1	Guide draw 1 item	[1]		
+90050	6			Embers bonus 80 Star Ore when defeating an enemy	[2, 80]	3	Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab

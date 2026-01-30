@@ -1,0 +1,17 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory260.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '1031001', 4: '-600'}
+4	4		201							{1: '2', 2: '500026', 4: '600'}
+5	5		201							{1: '3', 2: '500166'}
+6	6		301			DialogEnable				{1: '1', 3: 'You pass through the cluster of Program Ghosts and keeps walking, until an armored protection layer stops you in your tracks.'}
+7	7		301							{3: 'A highly complicated data blockade stands in front of a closed space.'}
+8	8		301							{3: 'Given the complexity of the blockade, it will probably take you quite some time to deactivate it.'}
+9	9		301							"{2: 'Lucia', 3: ""...We don't have time to go back now. We need to come up with a method to force our way through."", 4: '3'}"
+10	10		301							{2: 'Lee', 3: 'It seems like it. What should we do?', 4: '2'}
+11	11		301				DialogDisable			{3: '...The team is looking your way now.'}
+12	12		305							{1: '13', 2: '16'}
+13	13		301			DialogEnable				{3: 'The space behind becomes accessible as soon as the blockade is deactivated.'}
+14	14		301							"{2: 'Lucia', 3: ""Great. Let's keep moving."", 4: '3'}"
+15	15		302		1		AniZhuanchangBegin			"{2: ""Yeah, let's go.""}"
+16	16		202		1		AniZhuanchangBegin			{1: '1', 2: '2', 3: '3', 6: '1'}

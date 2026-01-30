@@ -1,0 +1,92 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1107.jpg'}
+2	2		401							{1: '1', 2: '5070'}
+3	3		401							{1: '2', 2: '5165'}
+4	4		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+5	5		301			DialogEnable				{3: 'Winter drags on.'}
+6	6		301							{3: 'Luna stands on the peak, calmly observing the Mutated Red Tide below.'}
+7	7		301							"{3: 'She can ""see"" the Mutated Red Tide birthing alien ""life"" that doesn\'t belong here.'}"
+8	8		301							"{3: 'She ""hears"" the wind carrying deathly silence, alien pulses that shouldn\'t exist here.'}"
+9	9		201							{1: '1', 2: '500885', 3: '4'}
+10	10		301							{1: '1', 2: 'Luna', 3: 'A new... Agent Zero.', 4: '1'}
+11	11		301							{2: 'Luna', 3: '...', 4: '1'}
+12	12		202							{1: '1'}
+13	13		301							"{3: 'Luna holds out her hand, letting snowflakes fall through her fingers. She felt ""it"" growing even before rescuing the Gray Raven Commandant.'}"
+14	14		301							"{3: ""Strange creatures take shape in the Mutated Red Tide, lurking at the cliff's base.""}"
+15	15		201							{1: '1', 2: '500885', 3: '4'}
+16	16		301				DialogDisable			{1: '1', 2: 'Luna', 3: 'What a disgusting presence.', 4: '1'}
+17	17		202						300.0	{1: '1'}
+18	18		201						700.0	{1: '1', 2: '501033', 7: '1'}
+19	19		205							{1: '2', 3: '1', 4: '0', 5: '0'}
+20	20		205						1000.0	{1: '1', 3: '1', 4: '0.3', 5: '2'}
+21	21		201							{1: '2', 2: '501092', 7: '1'}
+22	22		205						1000.0	{1: '2', 3: '0', 4: '1', 5: '2'}
+23	23		301			DialogEnable				"{1: '1', 3: ""Chaos has almost disappeared, and the new Agent Zero's silhouette is solidifying.""}"
+24	24		202							{1: '1', 2: '2', 6: '1'}
+25	25		205							{1: '1', 3: '0.3', 4: '1', 5: '0'}
+26	26		201							{1: '1', 2: '500885', 3: '4'}
+27	27		301							{1: '1', 2: 'Luna', 3: 'Driven by basic instincts, so eager to steal my power...', 4: '1'}
+28	28		301							{2: 'Luna', 3: 'Looks like <phonetic=Agent Zero>you</phonetic> are nothing special after all.', 4: '1'}
+29	29		202							{1: '1'}
+30	30		401							{1: '2', 2: '4276'}
+31	31		301				AniZhuanchangBegin			{3: 'Dim moonlight washes over the cliff.'}
+32	32		402							{1: '5165'}
+33	33		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab'}
+34	34		105							{1: 'Assets/Product/Ui/Spine/2-11Spine/UimovieSpine/UimovieLuna/UimovieLuna02.prefab'}
+35	35		301			AniZhuanchangEnd				{3: 'Her frame was reformed in the Red Tide, absorbing its Punishing Virus power and gaining a sliver of its control...'}
+36	36		301							"{3: ""But the new agent isn't bound by the old rules. Luna is powerless against the mutated Punishing Virus.""}"
+37	37		301							"{3: 'The new Agent Zero won\'t abandon Luna as ""a source of nourishment"". It needs to master all powers to challenge the original will of the Red Tide—Chaos.'}"
+38	38		301				AniZhuanchangBegin			{3: 'Once the new Agent Zero consumes this area...'}
+39	39		105							
+40	40		401							{1: '2', 2: '5165'}
+41	41		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab', 2: '2'}
+42	42		201							{1: '1', 2: '500885'}
+43	43		301			AniZhuanchangEnd				{1: '1', 3: 'Luna turns slightly to the side. Behind her, out of sight, the Gray Raven Commandant struggles through the snow.'}
+44	44		301							"{2: 'Luna', 3: ""There will come a turning point... You'll find a perfect solution to the problems..."", 4: '1'}"
+45	45		301							"{3: 'She whispers, repeating the mechanoid girl\'s ""language"" the Gray Raven Commandant told her.'}"
+46	46		301							{2: 'Luna', 3: 'A turning point...', 4: '1'}
+47	47		301							{2: 'Luna', 3: '...Tch.', 4: '1'}
+48	48		204							{1: '1', 2: '1'}
+49	49		301							{2: 'Luna', 3: 'It feels good to move again, Gray Raven Commandant.', 4: '1'}
+50	50		202							{1: '1'}
+51	51		401							{1: '2', 2: '4984'}
+52	52		301							{3: 'She looks down at the newly formed Surge Mimicry.'}
+53	53		402							{1: '4984'}
+54	54		301							"{3: ""She's been alone for too long, drifting through this desolate, frozen valley.""}"
+55	55		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+56	56		504							{1: '0.7'}
+57	57		101							{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading66.png'}
+58	58		201							{1: '1', 2: '500885'}
+59	59		301							"{1: '1', 2: 'Luna', 3: ""I'll help you keep the Red Tide in check and buy humanity some time to retreat. In return, once my sister is ready to enter the Inver-Hetero Tower, I want you to share whatever intel she uncovers with me."", 4: '1'}"
+60	60		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+61	61		202							{1: '1', 6: '1'}
+62	62		504							{1: '0'}
+63	63		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1107.jpg'}
+64	64		301							"{3: 'She\'s already held up her end of the ""deal"".'}"
+65	65		301							"{3: ""She got intel on the Inver-Hetero Tower and, as promised, protected humanity's last stand.""}"
+66	66		201							{1: '1', 2: '500885'}
+67	67		301							{1: '1', 2: 'Luna', 3: 'And now...', 4: '1'}
+68	68		301							"{2: 'Luna', 3: ""Let's call this a new deal, shall we?"", 4: '1'}"
+69	69		301				AniZhuanchangBegin			"{2: 'Luna', 3: 'I\'ll trade a ""future"" to see you safe.', 4: '1'}"
+70	70		202							{1: '1', 6: '1'}
+71	71		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5001_13.jpg'}
+72	72		301			AniZhuanchangEnd				"{3: ""Cold wind blows the moonlight from the trees. Luna's voice is lost to the wind.""}"
+73	73		301							"{2: 'Luna', 3: 'If you really can find that ""singularity""...'}"
+74	74		301							{3: 'As long as humanity survives... Earth might have a chance.'}
+75	75		301							"{3: ""After all, she was born and raised here. She doesn't want to see this planet taken over by aliens.""}"
+76	76		301							"{3: ""She'll hold out as long as she can, keeping the Red Tide from overwhelming humanity.""}"
+77	77		301							{3: 'From now on...'}
+78	78		301							{3: 'She must continue alone now.'}
+79	79		205						250.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1107.jpg', 3: '0', 4: '1', 5: '0.25'}
+80	80		201							{1: '1', 2: '500887', 3: '1', 8: '1'}
+81	81		301							{1: '1', 2: 'Luna', 3: 'Good luck, 【kuroname】.', 4: '1'}
+82	82		202							{1: '1'}
+83	83		301				AniZhuanchangBegin			{3: 'She jumps off the cliff.'}
+84	84		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1107.jpg', 3: '1', 4: '0', 5: '0'}
+85	85		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory698.jpg'}
+86	86		201							{1: '1', 2: '500380', 3: '12'}
+87	87		301			AniZhuanchangEnd				{1: '1', 2: 'Ishmael', 3: '...', 4: '1'}
+88	88		202							{1: '1'}
+89	89		301							{3: 'The pink-haired Construct stands on a distant peak, watching the Mutated Red Tide spread like a flood.'}
+90	90		401							{1: '2', 2: '2824'}
+91	91		301		1		AniZhuanchangBegin			{3: 'The pages in her hand flip without a breeze, while two dice spin and stop on two identical numbers.'}

@@ -1,0 +1,352 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory359.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: 'A whole night passed since Lucia and Lee brought back the Construct wounded in the rescue attempt back to the enclosed basement in the conservation area.'}
+4	4		301							{3: 'After Liv performed basic maintenance, he recovered most of his ability to participate in a new rescue mission.'}
+5	5		301				AniZhuanchangBegin			{3: 'Unable to return to Babylonia, the Constructs have become entrenched in a war of attrition. Issues caused by the damage to their frames and lack of maintenance chambers are beginning to wear on them.'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory345.jpg'}
+7	7		301			AniZhuanchangEnd				{3: 'People are still huddled in the cold and damp basement of the conservation area, craning their necks and waiting for a sound from the outside.'}
+8	8		301							{3: 'They look forward to new development, whether that be news of the Punishing concentration decreasing; rescue or supplies to be arranged for their own conservation area, or for newly rescued refugees to be sent to other conservation areas.'}
+9	9		301							{3: '—So long as no more refugees would come, any news is eagerly awaited.'}
+10	10		301							{3: 'But disappointment was accompanied by hunger and sickness for the 164 people crowded in this enclosed basement.'}
+11	11		301							{3: 'In addition, there are also ten Constructs and two commandants.'}
+12	12		301							{3: 'Aside from the three Constructs and Commandant 【kuroname】 of Gray Raven, Bambinata, and Commandant Vanessa of Egret, the six remaining Constructs were the only few survivors from previous rescue attempts.'}
+13	13		301							"{3: ""Of these six Constructs, all but two are seriously injured. The other four had already recovered mobility under Liv's care.""}"
+14	14		301				AniZhuanchangBegin			{3: 'They had joined search and rescue attempts in the surrounding area, but as time passed, fewer and fewer refugees could be found.'}
+15	15		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2301_10.jpg'}
+16	16		201							{1: '1', 2: '500026'}
+17	17		301			AniZhuanchangEnd				{1: '1', 2: 'Lee', 3: 'All of the active units on the west coast have been searched.', 4: '1'}
+18	18		301							{3: 'Day two at 6:00 a.m. after the second rescue attempt by Babylonia.'}
+19	19		301							{3: 'Lee has returned from the search and rescue mission with two Constructs. Seeing all the people sleeping in the basement, he lowers his voice.'}
+20	20		401							{1: '2', 2: '895'}
+21	21		301							{3: 'He stands outside the sealed door, shakes the rain off his frame, and hands two small boxes to the Construct in front of him.'}
+22	22		301							{2: 'Lee', 3: 'This is all the supplies we could find. Place it in storage for now.', 4: '1'}
+23	23		203							{1: '1', 2: '0.25', 3: '-400'}
+24	24		201							{1: '2', 2: '500250', 4: '400', 5: '-100', 6: '100'}
+25	25		301							{1: '1', 2: 'Construct Soldier', 3: 'Yes, sir.', 4: '2'}
+26	26		301							"{2: 'Lee', 3: ""Lucia still hasn't completed her mission in City 044. I'm going to go help her."", 4: '1'}"
+27	27		201							{1: '2', 2: '1031001', 4: '400'}
+28	28		301							"{1: '1', 2: 'Liv', 3: ""What's the situation?"", 4: '2'}"
+29	29		301							{2: 'Lee', 3: 'The conservation areas along the west coast have all been completely destroyed.', 4: '1'}
+30	30		301							{2: 'Liv', 3: 'All of them?', 4: '2'}
+31	31		301							"{2: 'Lee', 3: ""Yes, just like Vanessa had predicted. The twins have left nothing but destruction in their wake as they've gone up the west coast."", 4: '1'}"
+32	32		301							{2: 'Lee', 3: 'During this period, they walked from Pulia Forest to the west coast, then up north, and stayed several days near the ARU.', 4: '1'}
+33	33		301							{2: 'Lee', 3: 'Instead of entering the ARU, they redirected their route to the southeastern coast... that is, the Pulia Forest Park Ruins, and returned here.', 4: '1'}
+34	34		301							"{2: 'Lee', 3: ""At present, the twins have arrived near City 041. If they choose to return to Pulia Forest, that should bode well for us, considering that City 043 isn't near City 040."", 4: '1'}"
+35	35		301							{2: 'Lee', 3: 'If they decide to enter City 042, their next target might be here.', 4: '1'}
+36	36		301							{2: 'Lee', 3: 'So, once Lucia comes back, we need to make a plan quickly.', 4: '1'}
+37	37		301							{2: 'Liv', 3: 'Are there any survivors in any of the cities along the west coast?', 4: '2'}
+38	38		202							{1: '1', 2: '2', 6: '1'}
+39	39		201							{1: '1', 2: '500026'}
+40	40		301							{1: '1', 2: 'Lee', 3: 'Not many.', 4: '1'}
+41	41		301							{2: 'Lee', 3: 'Only three, two of which I brought back. The other one went to another conservation area looking for a friend.', 4: '1'}
+42	42		201							{1: '2', 2: '500261', 4: '800'}
+43	43		201							{1: '3', 2: '500269', 4: '-800'}
+44	44		203							{1: '2', 2: '0.25', 3: '600'}
+45	45		203							{1: '3', 2: '0.25', 3: '-600'}
+46	46		301							{1: '1', 3: 'Two adolescent boys stand behind him, one of which is holding a cane, his leg badly corrupted. The other appears weak but seems otherwise healthy.'}
+47	47		301							{2: 'Lee', 3: 'His corruption appears serious. Looks like he needs serum.', 4: '1'}
+48	48		201							{1: '1', 2: '1031001'}
+49	49		301							"{1: '1', 2: 'Liv', 3: ""Well, there is still some serum in the initial supplies, but there's only one room left in the basement. Follow me."", 4: '1'}"
+50	50		301							{2: '???', 3: 'What about Matches?', 4: '3'}
+51	51		301							{3: 'The adolescent boy imitates the tone of their voices and keeps his voice down.'}
+52	52		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+53	53		201							{1: '1', 2: '500026', 4: '-400'}
+54	54		201							{1: '2', 2: '1031001', 4: '400'}
+55	55		301							{1: '1', 2: 'Liv', 3: 'Matches?', 4: '2'}
+56	56		301							{2: 'Lee', 3: 'Behind you.', 4: '1'}
+57	57		201							{1: '1', 2: '500422', 4: '-200'}
+58	58		201							{1: '2', 2: '500261', 4: '600'}
+59	59		201							{1: '3', 2: '500269', 4: '-600'}
+60	60		301							"{1: '1', 3: ""Before he can be heard, a furry figure crowded into the door. Although it's fur is dirty and it looks frail, they see that it's a border collie."", 4: '1'}"
+61	61		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+62	62		201							{1: '1', 2: '500269'}
+63	63		201							{1: '2', 2: '500422'}
+64	64		301							{1: '1', 2: 'Boy A', 3: '...Matches...', 4: '1', 5: '2'}
+65	65		301							{3: 'The boy lets out a sigh of relief as he pets his fluffy head.', 4: '2'}
+66	66		202							{1: '1', 2: '2', 6: '1'}
+67	67		201							{1: '1', 2: '500411', 7: '1'}
+68	68		301							"{1: '1', 2: 'Boy A', 3: ""Thanks for letting me bring him. If there's anything you need me to do..."", 4: '1'}"
+69	69		203							{1: '1', 2: '0.25', 3: '400'}
+70	70		201							{1: '3', 2: '500261', 4: '-400'}
+71	71		301							{1: '1', 2: 'Boy B', 3: 'No, thank you for bringing food!', 4: '3'}
+72	72		301							{3: 'The other boy beside him gives a resentful sneer, waking up several people lightly sleeping beside them, who look curiously at the door.'}
+73	73		301							{2: 'Boy A', 3: 'Matches is my family! No one can eat him!', 4: '1'}
+74	74		203							{1: '1', 2: '0.25', 3: '800'}
+75	75		203							{1: '3', 2: '0.25'}
+76	76		202							{1: '1', 6: '1'}
+77	77		301							"{2: 'Boy B', 3: ""Yeah, yeah, yeah... You're willing to starve people for the sake of your family."", 4: '3'}"
+78	78		301							{3: 'The boy strides into the room with a fake smile and nods to the curious person beside the bed.'}
+79	79		301							{2: 'Boy B', 3: 'Hey, bro. Wanna here something funny? That kid was teaching his dog to drive a car on the way over here.', 4: '3'}
+80	80		301							"{3: ""He raises his hands and acts like he's holding a steering wheel as he continues on.""}"
+81	81		301							"{2: 'Boy B', 3: '""Matches, this goes left and this goes right. Cool, huh? Now, we just need to find a car!"" Bahahaha!', 4: '3'}"
+82	82		301							{3: 'Amused, the tired refugees look at the boy and his dog, then burst out laughing. For a moment, everyone cheers up a bit in the dull basement.'}
+83	83		301							{3: 'But the jokester quickly stops laughing.'}
+84	84		301							"{2: 'Boy B', 3: ""Thank you for your hospitality, everyone. I'm sorry we didn't bring many supplies."", 4: '3'}"
+85	85		301							"{3: ""The boy seems accustomed to dealing with refugees. By cracking a joke and greeting everyone, he seems to quickly resolve the crowd's hostility to the loss of another share of the rations.""}"
+86	86		203							{1: '3', 2: '0.25', 3: '400'}
+87	87		201							{1: '1', 2: '500093', 4: '-400'}
+88	88		301							"{1: '1', 2: 'Refugee Leader', 3: ""What's the situation outside?"", 4: '1'}"
+89	89		301							"{2: 'Boy B', 3: ""Everything's destroyed from the park ruins to the west coast."", 4: '3'}"
+90	90		301							{3: 'Hearing this, the refugees begin murmuring to one another.'}
+91	91		301							"{2: 'Refugee Leader', 3: 'Because of those two ""things""?', 4: '1'}"
+92	92		301							{2: 'Boy B', 3: 'And a ton of those Hetero-Creatures. We were ducking and hiding behind every corner all the way here.', 4: '3'}
+93	93		301							"{2: 'Refugee Leader', 3: 'Well, since it appears that the west coast is pretty much destroyed, who knows where those two ""things"" will go next?', 4: '1'}"
+94	94		301							{3: 'The refugee hands him a thumb-sized biscuit.'}
+95	95		301							{2: 'Refugee Leader', 3: 'Here, take this. Thanks for the news. Those Constructs exchange intel with each other every day, and they refuse to tell us anything.', 4: '1'}
+96	96		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+97	97		201							{1: '1', 2: '500026'}
+98	98		301							{1: '1', 2: 'Lee', 3: '...', 4: '1'}
+99	99		301							"{2: 'Lee', 3: ""I'm going to go help Lucia. Seems like she's in a predicament. I'll leave you in charge here, Liv."", 4: '1'}"
+100	100		401							{1: '2', 2: '1516'}
+101	101		401					100.0		{1: '2', 2: '1516'}
+102	102		203							{1: '1', 2: '0.25', 3: '-250'}
+103	103		202					200.0		{1: '1', 6: '1'}
+104	104		301							{3: 'Lee waves to Liv and steps out with several Constructs fit to move.'}
+105	105		201							{1: '1', 2: '1031001', 3: '1'}
+106	106		301							"{1: '1', 2: 'Liv', 3: ""Okay, I'll have everything under control. Be careful."", 4: '1'}"
+107	107		202							{1: '1', 6: '1'}
+108	108		201							{1: '1', 2: '500093', 4: '400'}
+109	109		201							{1: '2', 2: '500270', 4: '-400'}
+110	110		301							"{1: '1', 2: 'Refugee Leader', 3: ""The officer staying in the room next door said she has some information, but it'll only cause us to lose all hope. So, she doesn't want to talk about it for the time being."", 4: '1'}"
+111	111		301							"{2: 'Refugee 2', 3: ""Hmph, what's the point of that? How can we be any more hopeless?"", 4: '2'}"
+112	112		202							{1: '1', 2: '2', 6: '1'}
+113	113		201							{1: '1', 2: '1031001'}
+114	114		301							"{1: '1', 2: 'Liv', 3: ""We've been conducting reconnaissance missions in the surrounding area, but nothing has changed."", 4: '1'}"
+115	115		301							"{2: 'Liv', 3: ""We'll let everyone know right away if the situation begins to improve or if there's any danger."", 4: '1'}"
+116	116		301							{3: 'She did not say anything more. She walks to another boy to lead him to a room deep inside to rest.'}
+117	117		203							{1: '1', 2: '0.25', 3: '-400'}
+118	118		201							{1: '2', 2: '500411', 4: '400'}
+119	119		301							{1: '1', 2: 'Boy A', 3: 'Thank you...', 4: '2'}
+120	120		301							{3: 'Just as they are about to cross the room, the boy who had just eaten the biscuit suddenly speaks.'}
+121	121		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+122	122		201							{1: '1', 2: '500261'}
+123	123		301							{1: '1', 2: 'Boy B', 3: 'Oh, yeah. Just to let everyone know...', 4: '1'}
+124	124		201							{1: '1', 2: '500093'}
+125	125		301							{1: '1', 2: 'Refugee Leader', 3: '?', 4: '1'}
+126	126		201							{1: '1', 2: '500411', 4: '400'}
+127	127		201							{1: '3', 2: '500261', 4: '-400'}
+128	128		301							{1: '1', 2: 'Boy B', 3: 'Be sure to guard your rations, everyone. Know what happened to our supplies in the warehouse when our conservation area was destroyed?', 4: '3'}
+129	129		301							"{2: 'Boy A', 3: ""Hey! I didn't do anything!"", 4: '1'}"
+130	130		301							"{2: 'Boy B', 3: ""Chill out. I'm not talking about you. After all, if you went into the warehouse, you'd have more than your leg corrupted."", 4: '3'}"
+131	131		201							{1: '1', 2: '500412', 4: '400'}
+132	132		301							{1: '1', 2: 'Boy B', 3: 'I mean his dog!', 4: '3'}
+133	133		301							{2: 'Boy B', 3: 'His dog ate a bunch of cans before those Constructs could go in and recover our supplies!', 4: '3'}
+134	134		301							"{2: 'Boy B', 3: ""That mutt even ate the supplies my friend gave his life for. Now, I'm stuck here!"", 4: '3'}"
+135	135		301							"{2: 'Boy A', 3: ""That's not true! Matches didn't do that! A person was trapped in there!"", 4: '1'}"
+136	136		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+137	137		201							{1: '1', 2: '500423', 4: '-100'}
+138	138		301							{1: '1', 2: 'Matches', 3: '(Whimpers)', 4: '1'}
+139	139		202							{1: '1', 6: '1'}
+140	140		201							{1: '1', 2: '500413', 4: '400'}
+141	141		201							{1: '3', 2: '500261', 4: '-400'}
+142	142		301							{1: '1', 2: 'Boy B', 3: 'When the Constructs went to bring out the supplies, they just said there were two bodies and a bunch of empty cans in there.', 4: '3'}
+143	143		301							{2: 'Refugee 15', 3: 'What if they ran in there to eat the supplies, then died from the high concentration of Punishing Virus?'}
+144	144		301							"{2: 'Boy B', 3: ""Everyone knew that going into the warehouse was certain death. Were they so starving that they didn't even care if they died?"", 4: '3'}"
+145	145		301							{2: 'Boy B', 3: 'I think they just rushed into the warehouse to stop the dog!', 4: '3'}
+146	146		301							"{2: 'Boy A', 3: ""I don't know why they ran in there, but Matches and I didn't take any of the supplies. We just—"", 4: '1'}"
+147	147		203							{1: '1', 2: '0.4', 3: '-400'}
+148	148		201							{1: '3', 2: '500093', 4: '800'}
+149	149		203							{1: '3', 2: '0.45', 3: '400'}
+150	150		301							{1: '1', 2: 'Refugee Leader', 3: 'Hey, kiddo.', 4: '3'}
+151	151		301							{2: 'Boy A', 3: '...', 4: '1'}
+152	152		301							{3: 'The refugee who appears to be the leader steps out of the shadowy corner and approaches the boy.'}
+153	153		301							"{2: 'Refugee Leader', 3: ""I don't want to argue about whether your dog ate the cans or not. They're already gone. Talking about it isn't going to do anything."", 4: '3'}"
+154	154		301							{2: 'Refugee Leader', 3: 'I just want to ask... How many supplies did you bring?', 4: '3'}
+155	155		301							"{2: 'Boy A', 3: ""I'm sorry... But I didn't bring any..."", 4: '1'}"
+156	156		301							{2: 'Refugee Leader', 3: 'Then what are we to do about your dog?', 4: '3'}
+157	157		401							{1: '1', 2: '202'}
+158	158		301							"{3: ""His question seems more like a command, turning everyone's laugher into solemn silence. They grimly stare at the boy's flustered and evasive eyes.""}"
+159	159		301							{2: 'Boy A', 3: 'I...', 4: '1'}
+160	160		203							{1: '1', 2: '0.4', 3: '400'}
+161	161		201							{1: '3', 2: '500270', 4: '-800'}
+162	162		203							{1: '3', 2: '0.45', 3: '-400'}
+163	163		301							{1: '1', 2: 'Refugee 2', 3: 'In other words, if you want it to stay here, you want to feed YOUR dog with OUR supplies, right?', 4: '3'}
+164	164		301							"{2: 'Boy A', 3: ""I'm sorry... I'll feed him myself."", 4: '1'}"
+165	165		203							{1: '1', 2: '0.35', 3: '-400'}
+166	166		201							{1: '3', 2: '500427', 4: '800'}
+167	167		203							{1: '3', 2: '0.4', 3: '400'}
+168	168		301							"{1: '1', 2: 'Refugee 3', 3: ""And how are you going to do that? You don't have any protective suit and your leg is wounded."", 4: '3'}"
+169	169		301							"{2: 'Refugee 3', 3: ""You think you can do that by yourself? You say that now, but then who's to stop you when you're off with our supplies in the middle of the night?"", 4: '3'}"
+170	170		203							{1: '1', 2: '0.3', 3: '400'}
+171	171		201							{1: '3', 2: '500226', 4: '-800'}
+172	172		203							{1: '3', 2: '0.35', 3: '-400'}
+173	173		301							"{1: '1', 2: 'Refugee 4', 3: ""Make him leave! We can't even feed ourselves. Where are we gonna get food to feed a dog, too?"", 4: '3'}"
+174	174		203							{1: '1', 2: '0.25', 3: '-400'}
+175	175		201							{1: '3', 2: '500261', 4: '800'}
+176	176		203							{1: '3', 2: '0.3', 3: '400'}
+177	177		301							"{1: '1', 2: 'Boy B', 3: ""Yeah! I'm starving! You even took my friend's supplies!"", 4: '3'}"
+178	178		301							"{3: ""The boy's cry ignites the grief and despair piled up by the crowd over the many days. They all stand up one after another, regardless of their injuries.""}"
+179	179		203							{1: '1', 2: '0.2', 3: '400'}
+180	180		201							{1: '3', 2: '500226', 4: '-800'}
+181	181		203							{1: '3', 2: '0.25', 3: '-400'}
+182	182		301							"{1: '1', 2: 'Refugee 4', 3: ""We can't just keep taking refugees! We don't have enough food to get through the day, and refugees keep coming! We're going to starve to death!"", 4: '3'}"
+183	183		203							{1: '1', 2: '0.15', 3: '-400'}
+184	184		201							{1: '3', 2: '500382', 4: '800'}
+185	185		203							{1: '3', 2: '0.2', 3: '400'}
+186	186		301							"{1: '1', 2: 'Refugee 5', 3: ""Damn kid! Don't blame us for not welcoming you with open arms. But if I can't even feed myself, then what makes you think you get a share of our food!"", 4: '3'}"
+187	187		203							{1: '1', 2: '0.1', 3: '400'}
+188	188		201							{1: '3', 2: '500427', 4: '-800'}
+189	189		203							{1: '3', 2: '0.15', 3: '-400'}
+190	190		301			RImgBg1Shake				"{1: '1', 2: 'Refugee 6', 3: ""We've had enough despair and starvation!! Selfish brat!! And to think we'll feed your dog!"", 4: '3'}"
+191	191		203							{1: '1', 2: '0.1', 3: '-400'}
+192	192		201							{1: '3', 2: '500270', 4: '800'}
+193	193		203							{1: '3', 2: '0.15', 3: '400'}
+194	194		201							{1: '1', 2: '500412', 4: '-400'}
+195	195		301			RImgBg1Shake				"{1: '1', 2: 'Refugee 2', 3: ""Why don't we barbeque your dog? I'll give you a pack of biscuits as a thank you."", 4: '3'}"
+196	196		203							{1: '1', 2: '0.1', 3: '10'}
+197	197		203							{1: '3', 2: '0.15', 3: '1600'}
+198	198		201							{1: '1', 2: '500411'}
+199	199		301			RImgBg1Shake				"{1: '1', 2: 'Boy A', 3: ""Don't you think about it!"", 4: '1'}"
+200	200		301							{3: 'The timid boy suddenly raises his voice.'}
+201	201		301							{2: 'Boy A', 3: 'Matches is my family!', 4: '1'}
+202	202		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+203	203		201							{1: '1', 2: '500270'}
+204	204		301							"{1: '1', 2: 'Refugee 2', 3: 'Hmph... Family? Think you can steal food to feed your ""family""?', 4: '1'}"
+205	205		301			RImgBg1Shake				{3: 'The atmosphere tenses up, as either side refused to back down.'}
+206	206		202							{1: '1', 6: '1'}
+207	207		301							"{2: 'Refuge 12', 3: ""Hey, they're about to fight...""}"
+208	208		301							"{2: 'Refuge 13', 3: ""Hmph, don't worry about it... The leader will break it up if they do.""}"
+209	209		201							{1: '1', 2: '500411'}
+210	210		301							"{1: '1', 2: 'Boy A', 3: ""I can leave if you want... I won't let you hurt him."", 4: '1'}"
+211	211		201							{1: '1', 2: '500270'}
+212	212		301							"{1: '1', 2: 'Refugee 2', 3: ""Alright, scram you worthless brat! I'm already being kind enough as is not punching your face in."", 4: '1'}"
+213	213		301							{3: 'He stands up, grabs the boy by the collar, and kicks away Matches who rushes over to protect him.'}
+214	214		202							{1: '1', 6: '1'}
+215	215		301							"{3: ""Seeing that there's going to be a conflict in the crowd, Liv, who has always been gentle, puts down her medicine and puts herself between the boy and the angry mob.""}"
+216	216		201							{1: '1', 2: '500093', 4: '450'}
+217	217		201							{1: '2', 2: '1031001', 4: '-450'}
+218	218		301							{1: '1', 2: 'Refugee Leader', 3: 'Oh? You want to protect this mutt, Ms. Doctor?', 4: '1'}
+219	219		301							"{2: 'Liv', 3: ""He said it's his family."", 4: '2'}"
+220	220		201							{1: '1', 2: '500270', 4: '400'}
+221	221		301							"{1: '1', 2: 'Refugee 2', 3: ""Bahaha! Family? What are you talking about? In this dog-eat-dog world, plundering's the only way to live!"", 4: '1'}"
+222	222		301							"{2: 'Refugee 15', 3: ""Here we go again. Quina's spouting that nonsense again.""}"
+223	223		301							"{2: 'Refugee 17', 3: ""Just let him go crazy. Those Constructs will put him in his place when they've seen enough.""}"
+224	224		301							{2: 'Refugee 2', 3: 'Put who in his place?!', 4: '1'}
+225	225		301							"{2: 'Refugee 2', 3: ""Now that her teammates are gone, she's the only Construct here. She can't even move with her leg broken. What's a Construct like her gonna do?"", 4: '1'}"
+226	226		301							"{2: 'Refugee 2', 3: ""I'll show you that the law of the jungle is the only truth! We need to kill that dog in order to survive."", 4: '1'}"
+227	227		301							"{2: 'Liv', 3: ""You're right about that in battle, but this isn't a battle we should fight."", 4: '2'}"
+228	228		301							"{2: 'Refugee 2', 3: ""Doesn't matter. If I wanna, I'd even sacrifice my own family. Don't think a dog is going to stop me!"", 4: '1'}"
+229	229		204							{1: '2', 2: '5'}
+230	230		301							{2: 'Liv', 3: '...', 4: '2'}
+231	231		301							{3: 'Liv stops arguing. Instead, she looks directly at the middle-aged man standing before her in silence.'}
+232	232		301							{2: 'Refugee 2', 3: 'Hmph! Babylonian scum!', 4: '1'}
+233	233		203							{1: '1', 2: '0.15', 3: '300'}
+234	234		203					150.0		{1: '2', 2: '0.1', 3: '-500', 4: '-20'}
+235	235		203					100.0		{1: '2', 2: '0.15', 3: '-450'}
+236	236		301			RImgBg1Shake				{3: 'He spits angrily, rolls up his worn cuffs, and swings a haymaker at Liv, but all it does is to make her take a step back with her broken leg.'}
+237	237		204							{1: '2', 2: '5'}
+238	238		301							{2: 'Liv', 3: '...', 4: '2'}
+239	239		301							"{2: 'Refugee 2', 3: ""Hmph, that's all you Babylonians are good for—"", 4: '1'}"
+240	240		202							{1: '1', 2: '2', 6: '1'}
+241	241		201							{1: '1', 2: '500093'}
+242	242		301							"{1: '1', 2: 'Refugee Leader', 3: ""Quit bullying a wounded doctor, Quina. It's embarrassing."", 4: '1'}"
+243	243		301							{3: 'The refugee, referred to as Quina, begrudgingly swallows his retort. Glaring at Liv, he rolls down his sleeves, holds his red fist with the other hand and sits down in his corner with an angry look on his face.'}
+244	244		301							{2: 'Refugee Leader', 3: 'No matter where they came from, these Constructs, especially this doctor with her leg injury, saved us and have taken care of us for so many days.', 4: '1'}
+245	245		301							"{2: 'Refugee Leader', 3: ""If the law of the jungle ruled the world, you wouldn't deserve to be saved. The Punishing Virus would've turned you into a piece of rotten meat to be fed to his dog."", 4: '1'}"
+246	246		203							{1: '1', 2: '0.25', 3: '400'}
+247	247		201							{1: '2', 2: '500270', 4: '-400'}
+248	248		301							{1: '1', 2: 'Quina', 3: '...Hmph.', 4: '2'}
+249	249		301							{3: 'Quina grits his teeth and shakes his head.'}
+250	250		301							{2: 'Quina', 3: 'You brought this upon us!', 4: '2'}
+251	251		301							"{2: 'Refugee Leader', 3: ""Yes, but I don't want to cause a dispute. I just want to ask this doctor and that boy, do you have any way to convince everyone?"", 4: '1'}"
+252	252		202							{1: '1', 2: '2', 6: '1'}
+253	253		201							{1: '1', 2: '500226', 4: '-600'}
+254	254		201							{1: '2', 2: '500382'}
+255	255		201							{1: '3', 2: '500425', 4: '600'}
+256	256		301							"{1: '1', 3: 'The crowd\'s gaze shifts back to the boy and his ""family"".'}"
+257	257		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+258	258		201							{1: '1', 2: '500412'}
+259	259		301							"{1: '1', 2: 'Boy A', 3: ""I'll just take my share and split it with Matches..."", 4: '1'}"
+260	260		301							"{2: 'Boy A', 3: ""We won't steal anything! I promise! You can quarantine me if that makes everyone feel better!"", 4: '1'}"
+261	261		202							{1: '1', 2: '2', 6: '1'}
+262	262		201							{1: '1', 2: '500093'}
+263	263		301							"{1: '1', 2: 'Refugee Leader', 3: ""Well, since you say so, I'm willing to believe you. You don't need to be quarantined. Not like we have the space anyway. I accept your proposal. What does everyone else think?"", 4: '1'}"
+264	264		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+265	265		301							{3: 'The hungry crowd is silent. No one raises any objection.'}
+266	266		201							{1: '1', 2: '500093', 4: '400'}
+267	267		201							{1: '2', 2: '500270', 4: '-400'}
+268	268		301							"{1: '1', 2: 'Refugee Leader', 3: ""Then it's settled."", 4: '1'}"
+269	269		301							{2: 'Refugee Leader', 3: 'But, Quina... Come with me for a moment.', 4: '1'}
+270	270		301							{2: 'Quina', 3: '...', 4: '2'}
+271	271		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+272	272		201							{1: '1', 2: '1031001', 3: '1'}
+273	273		301							"{1: '1', 2: 'Liv', 3: ""What's your name?"", 4: '1'}"
+274	274		301							{3: 'Since the food shortage cannot be fixed, she can at least do something that is within her power.'}
+275	275		301				AniZhuanchangBegin			{3: 'She pats the boy on the shoulder and gently leads him into the room.'}
+276	276		401							{1: '1', 2: '36'}
+277	277		401					1000.0		{1: '1', 2: '201'}
+278	278		201							{1: '1', 2: '500269', 4: '-200'}
+279	279		201							{1: '2', 2: '500422', 4: '100'}
+280	280		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory457.jpg'}
+281	281		301			AniZhuanchangEnd				"{1: '1', 2: 'Boy A', 3: ""My name's Stanley and this is Matches."", 4: '1'}"
+282	282		203							{1: '2', 2: '0.07', 3: '100', 4: '30'}
+283	283		203					100.0		{1: '2', 2: '0.15', 3: '100'}
+284	284		301							{1: '1', 2: 'Matches', 3: 'Woof!', 4: '2'}
+285	285		202							{1: '1', 2: '2', 6: '1'}
+286	286		201							{1: '1', 2: '500411'}
+287	287		301							{1: '1', 3: 'The border collie gives a gentle yip as a greeting, then follows Stanley into the room.'}
+288	288		301							{2: 'Stanley', 3: 'Thank you for being so kind to me, Miss Construct.', 4: '1'}
+289	289		203							{1: '1', 2: '0.25', 3: '400'}
+290	290		201							{1: '2', 2: '1031001', 3: '1', 4: '-400'}
+291	291		301							"{1: '1', 2: 'Liv', 3: ""Don't worry about it. You can call me Liv."", 4: '2'}"
+292	292		301							"{2: 'Stanley', 3: ""Thank you, Miss Liv, and to your friend for saving me... and bringing Matches along. Sorry for all the trouble I caused. There's not much I can do, but if you think of anything..."", 4: '1'}"
+293	293		301							{3: 'He bows humbly and carefully thanks Liv once again in fear of saying something wrong.'}
+294	294		301							"{2: 'Liv', 3: ""Everything's fine. Don't worry. Takes a lot of courage to look after that little guy in a place like this."", 4: '2'}"
+295	295		301							"{2: 'Liv', 3: ""Not to mention, you and Matches have already had your fair share of hunger and suffering... I'm sure you guys can tough it out just a little longer."", 4: '2'}"
+296	296		201							{1: '3', 2: '500422', 4: '400'}
+297	297		301							{1: '1', 2: 'Matches', 3: 'Woof!', 4: '3'}
+298	298		202							{1: '3'}
+299	299		301							{2: 'Stanley', 3: 'Is your leg okay?', 4: '1'}
+300	300		301							"{2: 'Liv', 3: ""I've patched it up, but we don't have enough supplies for me to fully repair it."", 4: '2'}"
+301	301		301							{2: 'Liv', 3: 'Oh, right...', 4: '2'}
+302	302		301							{3: 'She takes out a tattered bag stained with blood. Inside, it contains dry military rations.'}
+303	303		204							{1: '2', 2: '1'}
+304	304		301							{2: 'Liv', 3: 'This was supposed to be for our commandant.', 4: '2'}
+305	305		301							"{2: 'Liv', 3: ""But the seal was broken during our retreat. It's about to expire."", 4: '2'}"
+306	306		301							{2: 'Liv', 3: 'Mind if I give it to Matches?', 4: '2'}
+307	307		301							{2: 'Stanley', 3: 'Really? Thank you so much!', 4: '1'}
+308	308		301							"{2: 'Stanley', 3: ""But... Your commandant doesn't need it?"", 4: '1'}"
+309	309		204							{1: '2', 2: '19'}
+310	310		301							{2: 'Liv', 3: '...Appears so for now.', 4: '2'}
+311	311		301							{2: 'Stanley', 3: 'I hope your commandant gets well soon.', 4: '1'}
+312	312		301							{2: 'Liv', 3: 'Me, too.', 4: '2'}
+313	313		204							{1: '2'}
+314	314		301							"{3: ""Sensing Liv's sadness, Matches wags his tail and tries to lick her hand.""}"
+315	315		502							{1: 'PanelActor1Shake'}
+316	316		505					70.0		{1: 'PanelActor1Shake'}
+317	317		301							"{1: '1', 2: 'Stanley', 3: ""Don't, Matches!"", 4: '1'}"
+318	318		301							{3: 'Stanley quickly pulls Matches back.'}
+319	319		301							"{2: 'Stanley', 3: ""She's a doctor! She needs to keep her hands sanitized. There are not enough supplies for that. We can't be a burden on them..."", 4: '1'}"
+320	320		201							{1: '1', 2: '500412', 4: '400'}
+321	321		301							"{3: ""Matches' perky ears and head droop suddenly as if he understands.""}"
+322	322		301							{2: 'Liv', 3: '...', 4: '2'}
+323	323		301							"{2: 'Stanley', 3: ""It's okay. Don't worry."", 4: '1'}"
+324	324		301							{3: 'The boy appears skittish, likely due to frequently being ostracized. Seeing Liv take out a bandage and disinfectant, the boy rolls up his pants, exposing a festering wound from corruption, and begins helping Liv.'}
+325	325		301							"{3: ""Is the boy's personality because of Matches?""}"
+326	326		301							{2: 'Liv', 3: '...Stanley. If the situation continues to get worse... What are you going to do?', 4: '2'}
+327	327		301							{3: 'He looks down in silence.'}
+328	328		301							{2: 'Stanley', 3: 'I get what you mean, Miss Liv.', 4: '1'}
+329	329		301							"{2: 'Stanley', 3: ""I know animals can't be corrupted by the Punishing Virus, they can only carry it. So... I thought about releasing Matches into the wild."", 4: '1'}"
+330	330		301							"{2: 'Stanley', 3: ""But he's already used to living with humans even before I met him. If I let him go... The next time he sees another human, he might get attacked again."", 4: '1'}"
+331	331		201							{1: '1', 2: '500411', 4: '400'}
+332	332		301							"{1: '1', 2: 'Stanley', 3: ""I know I'm being selfish... But I need Matches by my side. He's the only thing keeping me going."", 4: '1'}"
+333	333		301							"{2: 'Stanley', 3: ""So, I'll just keep him with me. If I ever run out of supplies, I'll abandon myself—not Matches."", 4: '1'}"
+334	334		301							{2: 'Liv', 3: '...Do you even realize what you just said?', 4: '2'}
+335	335		301							{2: 'Stanley', 3: 'Thank you, Miss Liv.', 4: '1'}
+336	336		301							{3: 'He refrains from answering. Instead, he just sincerely thanks her one last time.'}
+337	337		301							{2: 'Liv', 3: '...', 4: '2'}
+338	338		301							{3: 'Every person wandering these lands has turmoil uniquely their own.'}
+339	339		301							"{3: ""It's useless even to ask. The only way to resolve their suffering is to restore Earth to its vitality. Anything else would only temporarily delay the pain.""}"
+340	340		301							{3: 'But this goal is too far away. People have no choice but to immerse themselves in daily life.'}
+341	341		301							{3: 'In order not to open up old wounds and delay the pain, Liv refrains from pushing the question.'}
+342	342		301							"{3: ""She just adeptly disinfects and bandages Stanley's wound, then injects him with serum.""}"
+343	343		301							"{3: ""As long as there's something that can be improved, that's the best consolation at this moment.""}"
+344	344		301							"{2: 'Liv', 3: ""Your corruption won't get any worse as long as you stay here in the enclosed basement."", 4: '2'}"
+345	345		301							{2: 'Liv', 3: 'And also...', 4: '2'}
+346	346		204							{1: '2', 2: '5'}
+347	347		301							"{2: 'Liv', 3: ""Since you aren't willing to let Matches go, you need to keep living... Got it?"", 4: '2'}"
+348	348		301							"{2: 'Liv', 3: ""Don't be going around saying you'll abandon yourself so casually. It's just like you said, you depend on Matches and Matches depends on you."", 4: '2'}"
+349	349		301							{2: 'Stanley', 3: 'Okay...', 4: '1'}
+350	350		202							{1: '1', 2: '2', 6: '1'}
+351	351		301		1		AniZhuanchangBegin			"{3: ""Mentioning Matches, the boy's voice becomes softer. He thanks Liv again, snuggles up with Matches, and quickly falls asleep.""}"

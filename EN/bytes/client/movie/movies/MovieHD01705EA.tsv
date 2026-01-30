@@ -1,0 +1,244 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory528.jpg'}
+2	2		401							{1: '1', 2: '36'}
+3	3		301			DialogEnable				{2: 'Rabbit Robot', 3: 'Grab her... Grab her... Grab her...'}
+4	4		201							{1: '1', 2: '500303'}
+5	5		301							{1: '1', 2: 'WGAA Member B', 3: 'Grab her... Grab her... Grab her...', 4: '1'}
+6	6		203							{1: '1', 2: '0.25', 3: '-400'}
+7	7		401							{1: '1', 2: '205'}
+8	8		201							{1: '2', 2: '500311', 4: '400'}
+9	9		301							{1: '1', 2: 'WGAA Member A', 3: '...', 4: '2'}
+10	10		301							{2: 'WGAA Member A', 3: 'Stop, just stop already! What in the world are you talking about? Those rabbit robots are meant to play hide-and-seek with the kids!', 4: '2'}
+11	11		301							"{3: ""Behind the center stage, a WGAA is explaining what's in the terminal to his fellow WGAA member—until his fellow WGAA member can't take it anymore.""}"
+12	12		301							"{2: 'WGAA Member B', 3: 'There is still time to get the script changed, right? See, this line here says, ""Grab them,"" but lines like these are only supposed to bring the staff up to speed with what\'s going on.', 4: '1'}"
+13	13		301							"{2: 'WGAA Member B', 3: ""We're going to use the official script when the time comes, so rest assured."", 4: '1'}"
+14	14		301							"{2: 'WGAA Member A', 3: ""And this official script you're talking about is..."", 4: '2'}"
+15	15		301							"{2: 'WGAA Member B', 3: ""Dubbed by Lucia, Liv, and Ayla from Gray Raven. Yes, it's an original soundtrack. Wanna give it a listen?"", 4: '1'}"
+16	16		301							"{2: 'WGAA Member A', 3: ""Ohh, I know them. That's great, then. Just change it up. There's no time for us to go through the soundtrack now because the kids will be here in no time."", 4: '2'}"
+17	17		301							{2: 'WGAA Member B', 3: '...', 4: '1'}
+18	18		301							{2: 'WGAA Member A', 3: 'Is there a problem?', 4: '2'}
+19	19		301							{2: 'WGAA Member B', 3: 'I just booted them up a few minutes ago with a command and put them all to a test. Why are they all lying down now?', 4: '1'}
+20	20		301							{2: 'WGAA Member A', 3: 'They probably just ran out of power?', 4: '2'}
+21	21		301							{2: 'WGAA Member B', 3: 'No way. I just checked them this morning...', 4: '1'}
+22	22		301							"{3: ""As the two carry on talking, they stick their heads out from behind the drapes to see what's happening...""}"
+23	23		301							{3: 'And see that all the rabbit robots are paralyzed.'}
+24	24		301							"{3: ""The handful that aren't can barely move anymore, having taken blows from Karenina's Blast Hammer earlier.""}"
+25	25		301							{2: 'WGAA Member A', 3: 'Did you forget to seal off the place before running the test?', 4: '2'}
+26	26		301							{2: 'WGAA Member B', 3: '...', 4: '1'}
+27	27		301							{2: 'WGAA Member B', 3: 'This place is all yours now.', 4: '2'}
+28	28		301				AniZhuanchangBegin			{3: 'Right when the WGAA member is about to go back behind the drapes and leave, their friend grabs him and stops them cold.'}
+29	29		202			DialogDisable			300.0	{1: '1', 2: '2', 6: '1'}
+30	30		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory528.jpg'}
+31	31		201							{1: '1', 2: '500494', 3: '12'}
+32	32		301			DialogEnable				{1: '1', 2: 'Karenina', 3: 'Are you both from WGAA', 4: '1'}
+33	33		202							{1: '1', 6: '1'}
+34	34		201							{1: '1', 2: '500303', 4: '-400'}
+35	35		201							{1: '2', 2: '500311', 4: '400'}
+36	36		301							{1: '1', 2: 'WGAA Member A&B', 3: 'Yes.', 4: '1', 5: '2'}
+37	37		202							{1: '1', 2: '2', 6: '1'}
+38	38		201							{1: '1', 2: '500494', 3: '12'}
+39	39		301							{1: '1', 2: 'Karenina', 3: 'These rabbit robots are out of order and need to be checked.', 4: '1'}
+40	40		203							{1: '1', 2: '0.25', 3: '-400'}
+41	41		201							{1: '2', 2: '500303', 4: '400'}
+42	42		301							"{1: '1', 2: 'WGAA Member B', 3: ""Actually... Let me explain to you what's happening here..."", 4: '2'}"
+43	43		301							"{3: ""The WGAA member quickly brings Karenina up to speed on WGAA's plan.""}"
+44	44		204							{1: '1', 2: '7'}
+45	45		301							"{2: 'Karenina', 3: ""So these rabbit robots are designed to look like rabbits from Mid-Autumn Festival to play hide-and-seek with kids? Why did they sound like they've got bugs in them, though?"", 4: '1'}"
+46	46		301							"{2: 'WGAA Member B', 3: ""It's my fault. I was supposed to swap their built-in script with the official script before I ran the test, except I didn't do that."", 4: '2'}"
+47	47		204							{1: '1', 2: '4'}
+48	48		301							{2: 'Karenina', 3: '...', 4: '1'}
+49	49		204							{1: '1', 2: '13'}
+50	50		301							"{2: 'Karenina', 3: ""I'm partially responsible for that, too. Let's try to gather them up now and fix the ones that can still be fixed."", 4: '1'}"
+51	51		301							"{2: 'Karenina', 3: ""I mean I did try to hold to back there with my Blast Hammer, so I don't think they're all damaged..."", 4: '1'}"
+52	52		202							{1: '2', 6: '1'}
+53	53		201							{1: '2', 2: '500311', 4: '400'}
+54	54		301							"{1: '1', 2: 'WGAA Member A', 3: ""We'll take care of that. If you don't mind, though, we actually need your help with a contingency plan now."", 4: '2'}"
+55	55		301							{2: 'WGAA Member A', 3: 'Children start entering the venue with the celebration just around the corner.', 4: '2'}
+56	56		301							"{3: ""Looking at the rabbit robots on the floor, Karenina gathers that fixing them shouldn't be a hassle.""}"
+57	57		204							{1: '1', 2: '12'}
+58	58		301							"{2: 'Karenina', 3: ""I got this, but I'll need you to get me some basic tools first."", 4: '1'}"
+59	59		301							"{2: 'WGAA Member A', 3: ""Let's make it even easier."", 4: '2'}"
+60	60		301							{3: 'The WGAA member whips out a device and asks their fellow WGAA members in all the different zones to come over.'}
+61	61		202							{1: '1', 2: '2', 6: '1'}
+62	62		301							{3: 'In no time, all the rabbit robots are moved backstage.'}
+63	63		401							{1: '1', 2: '36'}
+64	64		201							{1: '1', 2: '500303'}
+65	65		301							{2: 'WGAA Member B', 3: 'All cleared, all cleared. Open the square, open the square.', 4: '1'}
+66	66		301							{3: 'At the same time, the other WGAA member presses a button on his communicator.'}
+67	67		202							{1: '1', 6: '1'}
+68	68		301							{3: 'And with it, kids dressed to the nines start entering from the other side of the square.'}
+69	69		301							{2: 'Child', 3: 'Where are the little rabbits?'}
+70	70		301							{3: 'The kids approach the stage as they look around curiously.'}
+71	71		401							{1: '2', 2: '2576'}
+72	72		201							{1: '1', 2: '500494', 3: '4'}
+73	73		301							{1: '1', 3: 'Right then, a beam of light showers straight down on Karenina.'}
+74	74		204							{1: '1', 2: '13'}
+75	76		301							"{3: 'Her upright ""ears"" immediately drop down.'}"
+76	77		202							{1: '1', 6: '1'}
+77	78		401							{1: '1', 2: '29'}
+78	79		201							{1: '1', 2: '500303'}
+79	80		301							{1: '1', 2: 'WGAA Member B', 3: 'Kiddos, are we all ready for Ms. Bunny?!', 4: '1'}
+80	81		202							{1: '1', 6: '1'}
+81	82		201							{1: '1', 2: '500494', 3: '7'}
+82	83		301							"{1: '1', 2: 'Karenina', 3: ""W-wait! I can't do it!"", 4: '1'}"
+83	84		301							"{2: 'Karenina', 3: ""Hey, c'mon! Stop! I say stop coming this way!"", 4: '1'}"
+84	85		204							{1: '1', 2: '6'}
+85	86		301							{2: 'Karenina', 3: 'Teddy, gimme a hand here!', 4: '1'}
+86	87		203							{1: '1', 2: '0.25', 3: '400'}
+87	88		201							{1: '2', 2: '500495', 3: '13', 4: '-400'}
+88	89		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '2'}
+89	90		301							{1: '1', 2: 'Teddy', 3: 'Chill, I already am. Let me just... observe the situation some more.', 4: '2'}
+90	91		301							"{2: 'Karenina', 3: ""Dude, I'm outta here—and I'm taking you down with me. Just wait for it!"", 4: '1'}"
+91	92		301							{3: 'Teddy knows that Karenina means business when she sees Karenina get down. There is no way children can ever hope to catch up to a Construct running at top speed.'}
+92	93		204							{1: '2'}
+93	94		301							{2: 'Teddy', 3: 'Stay where you are.', 4: '2'}
+94	95		301							{2: 'Karenina', 3: 'No way.', 4: '1'}
+95	96		301							{2: 'Teddy', 3: 'You just need to pretend to be a statue or some big garage kit. Kids usually get bored of stuff like that very quickly, and when they do, the guys from WGAA will have nothing to say.', 4: '2'}
+96	97		204							{1: '1', 2: '4'}
+97	98		301							{2: 'Karenina', 3: '...', 4: '1'}
+98	99		301							{2: 'Karenina', 3: 'For real?', 4: '1'}
+99	100		204							{1: '2', 2: '13'}
+100	101		301							"{2: 'Teddy', 3: ""So what's it gonna be? The kids are swarming up on you now."", 4: '2'}"
+101	102		301							{2: 'Teddy', 3: 'Now, freeze in 3, 2... 1!', 4: '2'}
+102	103		202							{1: '2', 6: '1'}
+103	104		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+104	105		203							{1: '1', 2: '0.25'}
+105	106		204							{1: '1', 2: '13'}
+106	107		301							"{3: ""With it, Karenina freezes on the spot—and Teddy has never seen anything nearly as perfect, what with Karenina's body already being all stiff to begin with from being nervous.""}"
+107	108		301							"{3: ""In the blink of an eye, she's swarmed up by the kids.""}"
+108	109		301							"{2: 'Child', 3: ""Hey, why isn't she moving?""}"
+109	110		301							{2: 'Karenina', 3: '...', 4: '1'}
+110	111		301							{2: 'Child', 3: 'Ms. Bunny...'}
+111	112		301							{3: 'The little girl gives Karenina a careful shake, but she obviously stands no chance in making a Construct buckle.'}
+112	113		301							{3: 'Then, the little girl produces a red candy—a somewhat overly big one at it, too—out of her bag, removes the wrapper, and holds it up to Karenina.'}
+113	114		301							{2: 'Child', 3: 'How would you like a carrot, Ms. Bunny?'}
+114	115		301							{3: 'There is no mistaking it—the candy is made on a one-to-one scale to match the size of an actual carrot.'}
+115	116		204							{1: '1', 2: '5'}
+116	117		301							"{2: 'Karenina', 3: ""Like heck I'm gonna eat it!"", 4: '1'}"
+117	118		301							{2: 'Children', 3: 'Wow, she talks!'}
+118	119		301							{3: 'In a hustle, all the kids whip out their carrot-size candies that were meant for the rabbit robots.'}
+119	120		203							{1: '1', 2: '0.25', 3: '400'}
+120	121		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '2'}
+121	122		201							{1: '2', 2: '500495', 3: '13', 4: '-400'}
+122	123		301							"{1: '1', 2: 'Teddy', 3: ""Hey, you gotta look happier so you don't scare the kids."", 4: '2'}"
+123	124		204							{1: '1', 2: '1'}
+124	125		301							{3: 'With it, Karenina musters up what appears to be a perfect smile.'}
+125	126		301							"{2: 'Child', 3: ""Hey, she's smiling!""}"
+126	127		301							{3: 'The smile, in turn, attracts still more candy her way.'}
+127	128		301							{3: 'Maintaining her perfect smile, Karenina gently pats the head of the little girl who tried to give her her candy first...'}
+128	129		301							"{3: ""All while she manages to speak in a tone under her breath that hardly matches her perfect smile, so the kids can't hear it.""}"
+129	130		301							"{2: 'Karenina', 3: ""Teddy, I'm going to ****ing kill you."", 4: '1'}"
+130	131		202							{1: '2', 6: '1'}
+131	132		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+132	133		203							{1: '1', 2: '0.25'}
+133	134		301							{2: 'Child', 3: 'Can I touch your ears, Ms. Bunny?'}
+134	135		301							{2: 'Karenina', 3: 'Yes, of course, but can you all just let me through first...', 4: '1'}
+135	136		301							{3: 'Except the kids all jump up at her, seemingly having only heard the first half of what she said.'}
+136	137		301							{2: 'Karenina', 3: 'Wait, watch out... I still have my Blast Hammer in my hand, and part of it is super sharp... Be careful now...', 4: '1'}
+137	138		301							{3: 'Karenina has to raise her weapon high above herself to avoid hurting the kids—which makes it impossible for her to stop them from doing whatever they please with her ears.'}
+138	139		204							{1: '1', 2: '4'}
+139	140		301							{2: 'Karenina', 3: 'Oh boy... Are you all ready for hide-and-seek?!', 4: '1'}
+140	141		301							{2: 'Children', 3: '!!!'}
+141	142		301							"{3: ""All of a sudden, the kids seem to find the idea of hide-and-seek ten times more interesting than touching Ms. Bunny's ears.""}"
+142	143		301							{3: 'Letting go of her ears, the kids disperse exuberantly in all directions.'}
+143	144		204							{1: '1', 2: '13'}
+144	145		301							{3: 'Which gives Karenina enough time to take a breath and give her Blast Hammer to the WGAA member that comes up to her.'}
+145	146		203							{1: '1', 2: '0.25', 3: '400'}
+146	147		201							{1: '2', 2: '500303', 4: '-400'}
+147	148		301							{1: '1', 2: 'WGAA Member B', 3: 'We saw how insane that was, but we were just wondering... you know...', 4: '2'}
+148	149		301							"{2: 'Karenina', 3: ""Say no more. I'm going to stick through it."", 4: '1'}"
+149	150		301							"{2: 'Karenina', 3: ""And I was hoping to have the script actually, if you don't mind..."", 4: '1'}"
+150	151		301							{2: 'WGAA Member B', 3: 'Right, here it is.', 4: '2'}
+151	152		301							{3: 'The WGAA member gives a speaker to Karenina.'}
+152	153		202							{1: '2', 6: '1'}
+153	154		203							{1: '1', 2: '0.25'}
+154	155		204							{1: '1', 2: '1'}
+155	156		301							"{2: 'Karenina', 3: ""Thanks. Pretty sure this is going to make my life easier. I'm probably the last person you want to count on in this world with giving hide-and-seek commands."", 4: '1'}"
+156	157		301							"{3: ""When Karenina presses the button on the speaker, out comes Liv's gentle voice.""}"
+157	158		201							{1: '2', 2: '1031001', 4: '-600', 7: '1'}
+158	159		205							{1: '2', 3: '0.7', 4: '0.7', 5: '0'}
+159	160		301							{1: '1', 2: 'Liv', 3: 'Dear Lovely Kids, please make sure to stay within the square during our hide-and-seek.'}
+160	161		202							{1: '2', 6: '1'}
+161	162		301							{2: 'Karenina', 3: 'Was that Liv speaking? Her voice sure is a nice fit for occasions like this.', 4: '1'}
+162	163		301							"{3: ""When Karenina presses the button again, out bursts Ayla's overly zealous voice.""}"
+163	164		201							{1: '2', 2: '500110', 4: '600', 7: '1'}
+164	165		205							{1: '2', 3: '0.7', 4: '0.7', 5: '0'}
+165	166		301							{1: '1', 2: 'Ayla', 3: 'The rabbits are coming. Hide yourselves now, kiddos! The rabbits are coming for you!'}
+166	167		202							{1: '2', 6: '1'}
+167	168		301							"{2: 'Karenina', 3: ""Ayla, huh... Is that something the rabbit robots were programmed to say when they approached the kids from behind? Seems like I'm going to dumb down my search a little..."", 4: '1'}"
+168	169		301							{3: 'When Karenina presses the button on the speaker a third time, out comes a voice that she knows even better.'}
+169	170		201							{1: '2', 2: '500166', 4: '-600', 7: '1'}
+170	171		205							{1: '2', 3: '0.7', 4: '0.7', 5: '0'}
+171	172		301			PanelActor1Shake				{1: '1', 2: 'Lucia', 3: 'Kiddos, are we all ready?'}
+172	173		301							{2: 'Karenina', 3: '...', 4: '1'}
+173	174		301							{3: 'Karenina presses the button again.'}
+174	175		401							{1: '2', 2: '895'}
+175	176		201							{1: '2', 2: '500166', 4: '600', 7: '1'}
+176	177		205							{1: '2', 3: '0.7', 4: '0.7', 5: '0'}
+177	178		301							{1: '1', 2: 'Lucia', 3: 'Gotcha, little one!'}
+178	179		301							{3: 'Karenina presses the button again. And again. And again. And again and again...'}
+179	180		401						200.0	{1: '2', 2: '895'}
+180	181		401							{1: '2', 2: '895'}
+181	182		201							{1: '2', 2: '500166', 4: '-600', 7: '1'}
+182	183		205							{1: '2', 3: '0.7', 4: '0.7', 5: '0'}
+183	184		301							{1: '1', 2: 'Lucia', 3: 'The rabbits are on patrol now, kiddos...'}
+184	185		202							{1: '2', 6: '1'}
+185	186		401							{1: '2', 2: '1511'}
+186	187		301							{3: 'CLACK—Karenina turns off the speaker.'}
+187	188		204							{1: '1', 2: '5'}
+188	189		301							{2: 'Karenina', 3: 'Here, you can take this back.', 4: '1'}
+189	190		203							{1: '1', 2: '0.25', 3: '400'}
+190	191		201							{1: '2', 2: '500303', 4: '-400'}
+191	192		301							"{1: '1', 2: 'WGAA Member B', 3: ""Wait, aren't you going to use it?"", 4: '2'}"
+192	193		301							{2: 'Karenina', 3: 'I am not, because I can do a much better job than that.', 4: '1'}
+193	194		202							{1: '2', 6: '1'}
+194	195		203							{1: '1', 2: '0.25'}
+195	196		301							{3: 'Karenina takes a deep breath. Then, with a determined look on her face, she turns around to face the square.'}
+196	197		204							{1: '1', 2: '1'}
+197	198		301							{2: 'Karenina', 3: 'Alright, kiddos. Are you ready? Ms. Bunny is coming!', 4: '1'}
+198	199		202							{1: '1', 6: '1'}
+199	200		301							"{3: 'Getting her ""ears"" to stand up again, Karenina hops away.'}"
+200	201		301							"{3: '""Her voice is melody!""—exclaims the other WGAA member as they come walking out from behind the drapes clapping.'}"
+201	202		201							{1: '1', 2: '500311', 4: '400'}
+202	203		201							{1: '2', 2: '500303', 4: '-400'}
+203	204		301							"{1: '1', 2: 'WGAA Member A', 3: ""She's doing such a great job. Why wasn't she invited to make the recordings?"", 4: '1'}"
+204	205		301							{3: 'Hearing the question, the other WGAA member gives the Blast Hammer a little shake.'}
+205	206		301				AniZhuanchangBegin			{2: 'WGAA Member B', 3: 'Say that again to this gem here when this all ends.', 4: '2'}
+206	207		401							{1: '1', 2: '36'}
+207	208		202			DialogDisable			500.0	{1: '1', 2: '2', 6: '1'}
+208	209		401							{1: '1', 2: '201'}
+209	210		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory526.jpg'}
+210	211		201							{1: '1', 2: '500495'}
+211	212		301			DialogEnable				{1: '1', 2: 'Teddy', 3: '...', 4: '1'}
+212	213		204							{1: '1', 2: '13'}
+213	214		301							{2: 'Teddy', 3: '...', 4: '1'}
+214	215		301							{3: 'Looking at the screen, Teddy taps on the Recording Button on her terminal—before she Likes the live stream of the square WGAA is broadcasting.'}
+215	216		301							{2: 'Teddy', 3: 'Karenina shall be forever remembered for everything she has done.', 4: '1'}
+216	217		204							{1: '1'}
+217	218		203							{1: '1', 2: '0.25', 3: '-400'}
+218	219		201							{1: '2', 2: '500309', 4: '400'}
+219	220		301							"{1: '1', 2: 'Chrome', 3: ""If I were you, I'd focus on trying to get my work done here."", 4: '2'}"
+220	221		301							"{2: 'Teddy', 3: ""Right, I was just a little carried away with what was happening. I'm almost there, though, and if everything goes well..."", 4: '1'}"
+221	222		301							{3: 'And, almost as though trying to prove her wrong, a message window pops up on the screen of her terminal.'}
+222	223		204							{1: '1', 2: '4'}
+223	224		301							{1: '1', 2: 'Teddy', 3: '...Uh oh.', 4: '1'}
+224	225		202							{1: '2', 6: '1'}
+225	226		201							{1: '2', 2: '500273', 4: '400'}
+226	227		301							"{1: '1', 2: 'Wanshi', 3: ""What's going on?"", 4: '2'}"
+227	228		301							{2: 'Teddy', 3: 'I just initiated the delivery program on my terminal by accident. Argh, I really should have kept an eye on it.', 4: '1'}
+228	229		301							{3: 'And with it, Teddy starts operating her terminal manually.'}
+229	230		301							{3: 'A few keystrokes later, however, Teddy lets go of her terminal again.'}
+230	231		202							{1: '2', 6: '1'}
+231	232		201							{1: '2', 2: '1081001', 3: '1', 4: '400'}
+232	233		301							"{1: '1', 2: 'Kamui', 3: ""What's up? Is it all taken care of? I see the message window is gone."", 4: '2'}"
+233	234		202							{1: '2', 6: '1'}
+234	235		203							{1: '1', 2: '0.25'}
+235	236		301							{2: 'Teddy', 3: '...', 4: '1'}
+236	237		301							{2: 'Teddy', 3: 'Well, the good news is that I just went ahead and deleted the personal letter in question.', 4: '1'}
+237	238		301							"{2: 'Teddy', 3: ""And here is the bad news—all the cards are jumbled up and getting sent out like magma getting spewed out of a volcano. And yes, it's irreversible, if that's what you're wondering."", 4: '1'}"
+238	239		202							{1: '1', 6: '1'}
+239	240		201							{1: '1', 2: '500303'}
+240	241		301							"{1: '1', 2: 'WGAA Member', 3: ""But how are they even getting sent out when we haven't even written the opening and closing messages and the names of the recipients?"", 4: '1'}"
+241	242		202							{1: '1', 6: '1'}
+242	243		201							{1: '1', 2: '500495', 3: '4'}
+243	244		301		1		AniZhuanchangBegin			"{1: '1', 2: 'Teddy', 3: ""Uh-huh, that's right... Any guess where they're getting sent to?"", 4: '1'}"

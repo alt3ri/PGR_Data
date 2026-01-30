@@ -1,0 +1,27 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory669.jpg'}
+2	2		501				AniZhuanchangEnd			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '3'}
+3	3		401							{1: '1', 2: '201'}
+4	4		201							{1: '1', 2: '500486'}
+5	5		301			DialogEnable	AniZhuanchangBegin			{1: '1', 3: 'Cervantes seems quite surprised when the white-haired Construct appears on the screen.'}
+6	6		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+7	7		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory673.jpg'}
+9	9		509						600.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory579.jpg', 2: '2'}
+10	10		201							{1: '1', 2: '500598', 4: '-500'}
+11	11		201				AniZhuanchangEnd			{1: '2', 2: '500585', 4: '500'}
+12	12		301			DialogEnable				{1: '1', 2: 'Cervantes', 3: 'Haicma... Why have you chosen her data sample? Is there a special reason?', 4: '2'}
+13	13		301							"{2: 'Dulcinea', 3: 'I wonder what will happen when the rational ""Digital Heart"" encounters the impassioned Construct that carries an enormous guilt?', 4: '1'}"
+14	14		301							{2: 'Dulcinea', 3: 'I wanted to use my own data as the variable of this run, but the results were similar to previous simulations, no matter how many times I tried.', 4: '1'}
+15	15		301							"{2: 'Dulcinea', 3: ""So I chose Haicma's data sample she left behind from the time she was in Constellia."", 4: '1'}"
+16	16		301							{2: 'Cervantes', 3: 'How is the program configured this time, then?', 4: '2'}
+17	17		301							{2: 'Dulcinea', 3: 'As the gatekeeper, Haicma will stop Echo and question her reason for being there and obtaining the Codex of Order.', 4: '1'}
+18	18		301							"{2: 'Cervantes', 3: '""Codex of Order""... Is there any context for that?', 4: '2'}"
+19	19		301							{2: 'Dulcinea', 3: 'Obtaining the Codex of Order will allow her to restore order.', 4: '1'}
+20	20		301							"{2: 'Dulcinea', 3: ""I found this entry engraved all over Echo's data, so I extracted it to be the theme of this simulation."", 4: '1'}"
+21	21		204							{1: '2', 2: '14'}
+22	22		301							{2: 'Cervantes', 3: 'Restore order... What an obsessed lady.', 4: '2'}
+23	23		301							"{2: 'Dulcinea', 3: ""I don't know much about Haicma, however, so I can't tell how their encounter will go."", 4: '1'}"
+24	24		204							{1: '2'}
+25	25		301							"{2: 'Cervantes', 3: ""My time with Haicma was brief, but from what I know about her, she could always view what she didn't understand through an empathetic lens."", 4: '2'}"
+26	26		301		1		AniZhuanchangBegin			{2: 'Cervantes', 3: '...Will Haicma provide new inspirations and different perspectives to Echo?', 4: '2'}

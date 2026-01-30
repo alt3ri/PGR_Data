@@ -1,0 +1,154 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory700.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500568'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Lee', 3: ""They've approved Lucia's and Liv's support application, Commandant."", 4: '1'}"
+5	5		301							{2: 'Lee', 3: 'Surprisingly fast this time.', 4: '1'}
+6	6		502							{1: 'DialogDisable'}
+7	7		302							{2: 'Desperate times call for desperate measures.', 3: '8'}
+8	8		302							{2: 'The military needs evidence to pin Kurono down.', 3: '9'}
+9	9		204							{1: '1'}
+10	10		301			DialogEnable				{2: 'Lee', 3: 'Any news from them?', 4: '1'}
+11	11		302							{2: 'Not at the moment.', 3: '12'}
+12	12		301							{3: 'There are things that are better left out of open discussion, even at desperate times.'}
+13	13		302							"{2: ""Do we have Pickman's exact location now?"", 3: '14'}"
+14	14		301							{2: 'Lee', 3: 'Nothing more than an approximation. They are making finding him very difficult.', 4: '1'}
+15	15		301							"{2: 'Lee', 3: ""It's a big area, though, and even with three Task Force squads, it'd still take us quite some time to pinpoint his location."", 4: '1'}"
+16	16		301							"{2: 'Lee', 3: ""And chances are they'll probably have already destroyed the data we need by the time we find them."", 4: '1'}"
+17	17		302							{2: '...', 3: '18', 4: 'There should be another way to go about this.', 5: '18'}
+18	18		301							"{2: 'Lee', 3: ""I'll keep narrowing down Utopia to an even smaller area before Lucia and Liv arrive."", 4: '1'}"
+19	19		301				AniZhuanchangBegin			{2: 'Lee', 3: 'I hope we can still make it in time.', 4: '1'}
+20	20		401							{1: '1', 2: '36'}
+21	21		202			DialogDisable			1000.0	{1: '1', 6: '1'}
+22	22		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory732.jpg'}
+23	23		401							{1: '1', 2: '278'}
+24	24		301			DialogEnable				{3: 'Inside the conservation area.'}
+25	25		201							{1: '1', 2: '500702'}
+26	26		301							"{1: '1', 3: ""It's been a while since the girl last found herself unworried at a safe place.""}"
+27	27		301							{3: 'There is nothing to worry about and nothing to keep her guard up for—no need to fear seeing her face on a wanted list in a conservation area, nor does she have to watch her back for pursuers...'}
+28	28		301							{3: 'Inside a tent, Echo opens the window, letting a ray of sunlight come through along the window lattice.'}
+29	29		301							{3: 'Outside the window, she catches the Gray Raven Commandant in the middle of a conversation with the Construct going by Lee.'}
+30	30		203							{1: '1', 2: '0.25', 3: '400'}
+31	31		201							{1: '2', 2: '500311', 4: '-400'}
+32	32		301							"{1: '1', 2: 'Support Construct', 3: ""Hey, what are you doing down here when you're supposed to be lying in bed?"", 4: '2'}"
+33	33		301							{3: 'Coming through the door is the Support Construct that attended to her just the other day.'}
+34	34		301							"{2: 'Support Construct', 3: ""You really should be resting yourself now. We can't give you a full fix here because we don't have a whole lot of medical supplies at our disposal for Constructs."", 4: '2'}"
+35	35		301							{3: 'Gently, the Support Construct escorts Echo back to her bed and checks the more severely damaged parts on her once more.'}
+36	36		301							"{2: 'Support Construct', 3: ""On top of your M.I.N.D., we're seeing moderate damage in your support circulation system. And you should get these parts changed, too..."", 4: '2'}"
+37	37		301							{3: 'The Support Construct lets out a sigh as she records the parts that need to be changed.'}
+38	38		301							"{2: 'Support Construct', 3: ""Well, aren't you feeling any pain? Or is the pain signal malfunctioning?"", 4: '2'}"
+39	39		301							{2: 'Echo', 3: 'I... did feel pain before.', 4: '1'}
+40	40		306							{1: '1'}
+41	41		202							{1: '2', 6: '1'}
+42	42		203							{1: '1', 2: '0.25'}
+43	43		301							"{3: 'Back when she was little, when everyone still called her ""Alisa"".'}"
+44	44		301							{3: 'Whenever she fell and cried out for her father, her father would always stop whatever he was doing and put her on his lap to soothe her.'}
+45	45		301							{3: 'When exactly was it, though... that she stopped feeling pain?'}
+46	46		301							"{3: ""Was it when she bore witness to Cecily's chosen death?""}"
+47	47		301							"{3: 'Was it when she found her father\'s ""notebook""?'}"
+48	48		301							{3: 'Or was it when she and Lena got separated?'}
+49	49		301							{3: 'These pain her more than her physical wounds.'}
+50	50		306							
+51	51		203							{1: '1', 2: '0.25', 3: '400'}
+52	52		204							{1: '1', 2: '1'}
+53	53		201							{1: '2', 2: '500311', 4: '-400'}
+54	54		301							{1: '1', 2: 'Echo', 3: 'But I guess I just... got used to it.', 4: '1'}
+55	55		301							{2: 'Support Construct', 3: '...', 4: '2'}
+56	56		301							{3: 'Gently, the Support Construct lets out a sigh. After writing a few more things in a notebook, she looks tenderly at Echo.'}
+57	57		301							"{2: 'Support Construct', 3: ""Guess what? You're in luck."", 4: '2'}"
+58	58		301							"{2: 'Support Construct', 3: ""This isn't the first time Babylonia is bringing home a Construct from another faction. Asimov knows what he's doing, and I'm sure he'll be able to give your M.I.N.D. a full fix."", 4: '2'}"
+59	59		204							{1: '1', 2: '7'}
+60	60		301							{2: 'Echo', 3: 'Asimov?', 4: '1'}
+61	61		301							"{2: 'Support Construct', 3: ""He's currently in charge of Babylonia's Science Council and also its chief technician."", 4: '2'}"
+62	62		301							"{2: 'Support Construct', 3: ""He's done a lot of brilliant research, and I'm sure he can help you."", 4: '2'}"
+63	63		204							{1: '1', 2: '1'}
+64	64		301							{2: 'Echo', 3: 'He sounds amazing.', 4: '1'}
+65	65		301							{2: 'Support Construct', 3: 'Yup, so just chill and let Babylonia take care of everything now.', 4: '2'}
+66	66		301							{2: 'Support Construct', 3: 'And you really need to give yourself some rest here.', 4: '2'}
+67	67		301							{2: 'Support Construct', 3: 'Sleep kills your pain better than anything else.', 4: '2'}
+68	68		202							{1: '1', 2: '2', 6: '1'}
+69	69		301							"{3: ""The Support Construct sits by Echo's bed, and it isn't until Echo's breathing slows down that she takes her leave quietly.""}"
+70	70		301							{3: 'When the door slowly clicks to close, however, Echo opens her eyes silently.'}
+71	71		201							{1: '1', 2: '500702'}
+72	72		301							"{1: '1', 2: 'Echo', 3: ""Babylonia... doesn't sound too bad at all."", 4: '1'}"
+73	73		301							"{2: 'Echo', 3: ""But I'm afraid that's not where I should be going now."", 4: '1'}"
+74	74		203							{1: '1', 2: '0.25', 3: '-300'}
+75	75		201							{1: '2', 2: '500582', 4: '300'}
+76	76		301							"{1: '1', 3: ""Echo removes her weapon from the wall and, planning to escape, tiptoes her way across the floor toward the window. Before she even opens the window, however, she hears the same hum she's heard only too many times.""}"
+77	77		204							{1: '1', 2: '14'}
+78	78		301							{2: 'Echo', 3: 'Cecily? Would you like to stay here?', 4: '1'}
+79	79		301							"{3: ""The armor hums quietly as it touches Echo's forehead.""}"
+80	80		301							{2: 'Echo', 3: 'Babylonia should be a nice place, and that Science Council sounds pretty impressive, too. If you stay...', 4: '1'}
+81	81		301							{2: 'Armor', 3: '▂▆▆……', 4: '2'}
+82	82		204							{1: '1'}
+83	83		301							{2: 'Echo', 3: 'Alright. Fine.', 4: '1'}
+84	84		204							{1: '1', 2: '1'}
+85	85		301							"{2: 'Echo', 3: ""Let's go, then."", 4: '1'}"
+86	86		204							{1: '1'}
+87	87		301							{2: 'Echo', 3: 'There are things that we just have to do on our own.', 4: '1'}
+88	88		301				AniZhuanchangBegin			"{3: ""Still talking, the Gray Raven Commandant and the Construct haven't noticed what's happening here.""}"
+89	89		401							{1: '1', 2: '36'}
+90	90		202			DialogDisable			500.0	{1: '1', 2: '2', 6: '1'}
+91	91		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_09.jpg'}
+92	92		401							{1: '1', 2: '184'}
+93	93		301			DialogEnable				"{3: ""Without catching anyone's attention, Echo and Cecily sneak out of the conservation area—the first place that's ever made Echo feel safe.""}"
+94	94		301							"{3: ""Based on what she overhears from the conversation between the Gray Raven Commandant and the Construct, Babylonia is apparently plotting an attack on Utopia, except they haven't yet pinpointed its location.""}"
+95	95		301							{3: 'Being the airborne camp it is that comprises a few dozen flying fortresses, Utopia, if alerted, can easily slip into a non-traceable zone, making it close to impossible for anyone to ever find it again.'}
+96	96		301							{3: 'Which... is why Echo is starting to entertain the thought of turning herself into the torch that shines through the night...'}
+97	97		301							{3: '...By putting a locator on herself.'}
+98	98		301							{3: 'This is a shackle she bears—and a bloody sin she has yet to absolve herself of.'}
+99	99		301							{3: 'This is their fight...'}
+100	100		301							{3: '...And a path down which they stand to be tried.'}
+101	101		301							"{3: ""She doesn't know what the end of this path holds.""}"
+102	102		301							"{3: 'But having come this far, Echo is now starting to have a grasp of what ""justice"" and ""order"" really mean...'}"
+103	103		301							{3: '...Because someone has taught her what justice is like, shown her a path to freedom, and led her out of the swamp that once trapped her.'}
+104	104		301							{3: 'And she considers herself only too lucky for having such experience.'}
+105	105		301							"{2: 'Echo', 3: ""Let's get going, Cecily.""}"
+106	106		301				AniZhuanchangBegin			{2: 'Armor', 3: '▄▃……'}
+107	107		502						400.0	{1: 'DialogDisable'}
+108	108		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory331.png'}
+109	109		201							{1: '1', 2: '500702'}
+110	110		301			DialogEnable				{1: '1', 3: 'On her terminal, she dials a number she knows only too well but has never once actually dialed.'}
+111	111		203							{1: '1', 2: '0.25', 3: '-400'}
+112	112		201							{1: '2', 2: '500709', 3: '1', 4: '400'}
+113	113		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '2'}
+114	114		301							{1: '1', 2: 'Pickman', 3: '...Alisa? Anything I can do for you?', 4: '2'}
+115	115		301							{2: 'Pickman', 3: 'Need reports of another test subject sent your way? Or...', 4: '2'}
+116	116		301							{2: 'Echo', 3: 'I want to go back to Utopia.', 4: '1'}
+117	117		204							{1: '2', 2: '2'}
+118	118		301							"{2: 'Pickman', 3: ""...I see you've come around. I always know my little Alisa is the best of all."", 4: '2'}"
+119	119		204							{1: '2', 2: '1'}
+120	120		301							"{2: 'Pickman', 3: ""Come back, Alisa. Come back to Utopia, where you'll be received with open arms..."", 4: '2'}"
+121	121		301							{2: 'Pickman', 3: '...And become a real family with me.', 4: '2'}
+122	122		202							{1: '2', 6: '1'}
+123	123		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+124	124		203							{1: '1', 2: '0.25'}
+125	125		301							{3: 'Seemingly preoccupied, Pickman only sends Echo an address before hanging up.'}
+126	126		301							{2: 'Echo', 3: 'And back I will be, Father.', 4: '1'}
+127	127		301							{2: 'Echo', 3: 'Justice is bound to echo through the land. The storm might have invaded the skies, but the sun will shine on us again one day.', 4: '1'}
+128	128		301				AniZhuanchangBegin			"{3: ""I'll find you, try you, and head straight for hell... with you.""}"
+129	129		401							{1: '1', 2: '36'}
+130	130		202			DialogDisable			2000.0	{1: '1', 2: '2', 6: '1'}
+131	131		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+132	132		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory732.jpg'}
+133	133		401							{1: '1', 2: '201'}
+134	134		301			DialogEnable				"{3: ""The Support Construct that's been taking care of Echo has worry written all over her face when you're done talking with Lee and cast a look at where Echo is supposed to be.""}"
+135	135		201							{1: '1', 2: '500311'}
+136	136		301							"{1: '1', 2: 'Support Construct', 3: ""I thought she was asleep! When did she even get up and get out of here... It's all my fault. I should have stayed around longer instead of..."", 4: '1'}"
+137	137		302							"{2: ""It's not your fault."", 3: '138', 4: '...', 5: '138'}"
+138	138		202							{1: '1', 6: '1'}
+139	139		301				DialogDisable			{3: 'A slip of paper on the table catches your attention.'}
+140	140		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+141	141		307							"{1: '""Please take good care of Cecily when I help you locate Utopia.""', 3: '45'}"
+142	142		301							"{3: '""Please take good care of Cecily when I help you locate Utopia.""'}"
+143	143		307							{2: '1'}
+144	144		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory732.jpg'}
+145	145		301			DialogEnable				"{3: 'Except you don\'t see the armor that Echo calls ""Cecily""—whom Echo sees as her elder sister.'}"
+146	146		301							{3: 'There is just no way that an elder sister would bear sitting around seeing her younger sister walk into a battlefield.'}
+147	147		302							{2: 'How much longer will it take Lucia and Liv to get here?', 3: '148'}
+148	148		201							{1: '1', 2: '500568'}
+149	149		301							"{1: '1', 2: 'Lee', 3: ""They'll be arriving in airdrop pods, but they'll need time to get ready first, so we're looking at... 25 minutes."", 4: '1'}"
+150	150		502							{1: 'DialogDisable'}
+151	151		302							"{2: ""That's good enough."", 3: '152'}"
+152	152		302							"{2: ""Get yourself ready. We're leaving."", 3: '153'}"
+153	153		301		1	DialogEnable	AniZhuanchangBegin			"{3: ""Utopia shouldn't have been on Earth at all to begin with—and you're going to put an end to it.""}"

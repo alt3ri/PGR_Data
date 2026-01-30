@@ -1,0 +1,58 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+2	2		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory347.jpg'}
+3	3		401							{1: '1', 2: '229'}
+4	4		201							{1: '1', 2: '500005', 4: '-400'}
+5	5		201							{1: '2', 2: '500005', 4: '400'}
+6	6		301			DialogEnable				{1: '1', 2: 'Mercenary 1', 3: 'Captain...', 4: '1'}
+7	7		301							"{2: 'Mercenary 2', 3: ""As expected, she's dead, isn't she?"", 4: '2'}"
+8	8		202						150.0	{1: '1', 2: '2'}
+9	9		401							{1: '2', 2: '4416'}
+10	10		306							{1: '1'}
+11	11		104						1000.0	{1: '0|0|-300', 2: '1'}
+12	12		301							{3: 'After repelling the wave of Corrupted from the town, the transport vehicle stops beside the ruins where embers still dance in the air.'}
+13	13		104					4.0	1000.0	{1: '100|0|-300', 2: '1'}
+14	14		201							{1: '1', 2: '501205'}
+15	15		301							{1: '1', 3: 'A uniformed girl lies there, her torn skin revealing sunken mechanical structures, and patches of what appears to be vital fluid have already dried up around her.'}
+16	16		104						1000.0	{1: '200|0|-300', 2: '1'}
+17	17		301							"{3: ""She's dead.""}"
+18	18		301							{3: 'Around her, mountains of Corrupted corpses are piled high; she died after an intense battle.'}
+19	19		301							{3: 'With a hint of bewilderment and loneliness, she lies quietly among the skeletal remains of reinforced concrete and steel.'}
+20	20		201							{1: '2', 2: '500005', 4: '-600'}
+21	21		201							{1: '3', 2: '500005', 4: '600'}
+22	22		301							{1: '1', 2: 'Mercenary Captain', 3: 'I knew it...', 4: '2'}
+23	23		301							"{3: 'The mercenaries check twice to confirm she ""won\'t move anymore,"" speaking as if discussing some disposable commodity.'}"
+24	24		202							{1: '1'}
+25	25		104						1000.0	{2: '1'}
+26	26		306							
+27	27		301							"{1: '1', 2: 'Mercenary 2', 3: ""Let's go."", 4: '3'}"
+28	28		202							{2: '2', 3: '3'}
+29	29		301							{3: 'They walk away, having lost interest.'}
+30	30		302							{2: '(Lifts her up)', 3: '31'}
+31	31		401							{1: '2', 2: '4341'}
+32	32		201							{1: '1', 2: '500005', 4: '-400'}
+33	33		201							{1: '2', 2: '500005', 4: '400'}
+34	34		301							"{1: '1', 2: 'Yes.', 3: ""You want to take her with you, um... but she's already..."", 4: '1'}"
+35	35		302							{2: 'Alright.', 3: '36'}
+36	36		301							"{3: ""Although we're strangers, a warrior like her shouldn't rest in a place crawling with the Corrupted.""}"
+37	37		301							"{2: 'Mercenary 2', 3: ""Fine, let's take her. The vehicle can handle the extra weight."", 4: '2'}"
+38	38		202							{1: '1', 2: '2'}
+39	39		401						500.0	{1: '2', 2: '4230'}
+40	40		401							{1: '2', 2: '4232'}
+41	41		301							{3: 'Together, they lift her onto the transport vehicle. The engine roars as they continue their journey toward City 141.'}
+42	42		401							{1: '1', 2: '36'}
+43	43		402						500.0	{1: '4232'}
+44	44		401							{1: '1', 2: '5060'}
+45	45		201							{1: '1', 2: '501199'}
+46	46		301							{1: '1', 2: '???', 3: 'So they took her away.', 4: '1'}
+47	47		202						250.0	{1: '1'}
+48	48		306							{1: '1'}
+49	49		301							{3: 'Watching the transport vehicle slowly disappear into the distance,'}
+50	50		301							{3: 'the young girl, having finished cleaning up the remaining Corrupted, arrives at the ruins where her companion had been, only to find the place completely deserted.'}
+51	51		301							"{3: 'At regular intervals, mercenary-escorted transport vehicles enter City 141.\\n""Company"" specialists are stationed at her living quarters, posing as ""teachers.""'}"
+52	52		301							{3: 'Most likely, the companion they just picked up will also be brought there.'}
+53	53		301							"{3: ""She arches her back in a lazy stretch. After synchronizing with that human, the battle becomes unexpectedly easy. She can't help but feel curious about them.""}"
+54	54		306							
+55	55		201							{1: '1', 2: '501199'}
+56	56		301							{1: '1', 2: '???', 3: 'Tea-cher?', 4: '1'}
+57	57		301		1		AniZhuanchangBegin			{2: '???', 3: 'Tea-cher?', 4: '1'}

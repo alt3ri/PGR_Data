@@ -1,0 +1,107 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg116_2.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		301			DialogEnable				{3: '...'}
+4	4		301							{2: 'Liv', 3: 'It went silent...'}
+5	5		301							"{2: 'Liv', 3: ""I don't know why, but... I feel sad...""}"
+6	6		301							"{2: 'Lucia', 3: ""We've completed our mission, there's no use in thinking about other things.""}"
+7	7		301				AniZhuanchangBegin			{2: 'Lee', 3: '...'}
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory20.jpg'}
+9	9		201							{1: '3', 2: '1011001'}
+10	10		301			AniZhuanchangEnd				{1: '1', 2: 'Lee', 3: 'In short, now we have to extract its memory.', 4: '3'}
+11	11		301							"{1: '1', 2: 'Lee', 3: ""Let's begin."", 4: '3'}"
+12	12		202							{1: '3', 6: '1'}
+13	13		301							{3: 'Connecting—'}
+14	14		201							{1: '1', 2: '500001'}
+15	15		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+16	16		301							{1: '1', 2: 'Celica', 3: 'Gray Raven.', 4: '1'}
+17	17		301							{2: 'Celica', 3: 'President Hassen is ordering that you put a temporary stop to your mission.', 4: '1'}
+18	18		301							"{2: 'Celica', 3: ""We've deployed a nearby transport craft to your location."", 4: '1'}"
+19	19		301							{2: 'Celica', 3: 'Once the transport craft arrives, please return to Babylonia immediately.', 4: '1'}
+20	20		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+21	21		202							{1: '1', 6: '1'}
+22	22		201							{1: '1', 2: '1031001', 3: '7'}
+23	23		301							{1: '1', 2: 'Liv', 3: 'This is an order from President Hassen?', 4: '1'}
+24	24		202							{1: '1', 6: '1'}
+25	25		201							{1: '2', 2: '1021001'}
+26	26		301				AniZhuanchangBegin			{1: '1', 2: 'Lucia', 3: 'Return... to Babylonia...', 4: '2'}
+27	27		202							{1: '2', 6: '1'}
+28	28		401							{1: '1', 2: '5'}
+29	29		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory16.jpg'}
+30	30		201							{1: '1', 2: '500004'}
+31	31		301			AniZhuanchangEnd				"{1: '1', 2: 'Asimov', 3: ""What's wrong? What are you doing here?"", 4: '1'}"
+32	32		302							"{2: ""How's Lucia doing?"", 3: '33', 4: 'Am I not allowed to be here?', 5: '34'}"
+33	33	35	301							"{2: 'Asimov', 3: ""There's no need to operate. Don't worry."", 4: '1'}"
+34	34		301							"{2: 'Asimov', 3: ""This isn't a place you can just waltz right in, Commandant. But, no matter. I just haven't seen a commandant care so much about Constructs."", 4: '1'}"
+35	35		301							"{2: 'Asimov', 3: ""I just hope you aren't as reckless in battle."", 4: '1'}"
+36	36		301							{2: 'Asimov', 3: 'The abnormality... she encountered during the battle is indeed a very special situation, but I have no specific details to comment on.', 4: '1'}
+37	37		301							"{2: 'Asimov', 3: ""After all, it's top-secret."", 4: '1'}"
+38	38		302							"{2: 'Do I not have high enough clearance?', 3: '39', 4: ""What's your clearance level?"", 5: '40'}"
+39	39	41	301							"{2: 'Asimov', 3: ""You're just a commandant assigned to Gray Raven from the commandant division."", 4: '1'}"
+40	40		301							"{2: 'Asimov', 3: ""I am the Science Council's CTO for humanity's front. My crowning research achievement is the development of the Mind Beacon. There is an introduction about me on the title page of the operation tutorial. Haven't you seen the tutorial?"", 4: '1'}"
+41	41		301							"{2: 'Asimov', 3: ""This is the Science Council's highly classified experiment area. Only scientists and the higher-ups are allowed to enter. Soldiers only need to be responsible for standing guard outside."", 4: '1'}"
+42	42		301							"{2: 'Asimov', 3: 'However, if it\'s ""that"" person who is simultaneously a soldier, scientist and leader that I\'ve admired since childhood, exceptions can be made.', 4: '1'}"
+43	43		301							"{2: 'Asimov', 3: ""Too bad that person and I won't meet—at least in the physical sense. Considering we live almost a whole era apart, it seems highly unlike this person is still alive."", 4: '1'}"
+44	44		301							"{2: 'Asimov', 3: ""Apologies, I got sidetracked. Lucia's memory will be online again in five minutes. Now, please kindly get out of the way."", 4: '1'}"
+45	45		302							{2: '(Remain in place)', 3: '46', 4: '(Move)', 5: '47'}
+46	46	48	301				AniZhuanchangBegin			"{2: 'Asimov', 3: ""Huh? Brute strength may work some places, but not everywhere. That's why I can't stand soldiers. Don't make me file a complaint against you."", 4: '1'}"
+47	47		301				AniZhuanchangBegin			{2: 'Asimov', 3: 'Hmph.', 4: '1'}
+48	48		202							{1: '1', 6: '1'}
+49	49		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}
+50	50		201							{1: '1', 2: '500012', 7: '1'}
+51	51		301			AniZhuanchangEnd				{1: '1', 2: '???', 3: 'Wait, Asimov. I need to talk to you about Lucia and that Construct...', 4: '1'}
+52	52		301							{3: 'A tall, stern man appears at the exit of the experiment area.'}
+53	53		301							{2: 'Nikola', 3: 'Is everything alright?', 4: '1'}
+54	54		301							"{2: 'Nikola', 3: ""Shouldn't you salute your commander?"", 4: '1'}"
+55	55		302							{2: '(Salute)', 3: '56', 4: '……', 5: '56'}
+56	56		301							"{2: 'Nikola', 3: ""Forget it. I don't have time to educate young people on military conventions. Write a report with your superior and hand it in later."", 4: '1'}"
+57	57		301				AniZhuanchangBegin			{2: 'Nikola', 3: 'Well, get going. This is no place for you to dawdle.', 4: '1'}
+58	58		202							{1: '1', 6: '1'}
+59	59		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory45.jpg'}
+60	60		201							{1: '1', 2: '500001'}
+61	61		301			AniZhuanchangEnd				{1: '1', 2: 'Celica', 3: 'Hello, Gray Raven Commandant. We finally meet.', 4: '1'}
+62	62		301							"{2: 'Celica', 3: ""What's the matter? Not used to seeing me in the flesh?"", 4: '1'}"
+63	63		203							{1: '1', 2: '0.25', 3: '400'}
+64	64		201							{1: '2', 2: '500011', 4: '-400'}
+65	65		301							"{1: '1', 2: 'Hassen', 3: ""Enough, Celica. I didn't summon the Gray Raven Commandant for you to play games."", 4: '2'}"
+66	66		301							{2: 'Celica', 3: 'Yes, President Hassen.', 4: '1'}
+67	67		301							"{2: 'Hassen', 3: ""Heh... Don't play games in front of my subordinates either. You know I don't like such stuffy titles."", 4: '2'}"
+68	68		301							{2: 'Celica', 3: '(Giggles) Yes, Mr. Hassen.', 4: '1'}
+69	69		202							{1: '1', 6: '1'}
+70	70		203							{1: '2', 3: '0'}
+71	71		301							"{2: 'Hassen', 3: ""We've been keeping a close watch on Gray Raven."", 4: '2'}"
+72	72		301							"{2: 'Hassen', 3: ""You've performed well. Seems like I made the right choice entrusting Gray Raven to you."", 4: '2'}"
+73	73		301							"{2: 'Hassen', 3: ""But I'm not at liberty to discuss some things with you for the time being. As I told you in the beginning, Gray Raven is no ordinary team."", 4: '2'}"
+74	74		301							"{2: 'Hassen', 3: 'Only when you have passed enough tests and have formed a solid trust with each other will you be able to handle certain ""things"" without shaking the bond between you.', 4: '2'}"
+75	75		301							{2: 'Hassen', 3: 'Many more tests await you in the future. You must never forget that you and the others share the fate of humanity.', 4: '2'}
+76	76		301							"{2: 'Hassen', 3: ""Well, let's talk about those things you found in Nozzle's memory."", 4: '2'}"
+77	77		202							{1: '2', 6: '1'}
+78	78		201							{1: '1', 2: '500001'}
+79	79		301				AniZhuanchangBegin			{1: '1', 2: 'Celica', 3: 'Well then, come right this way, you two...', 4: '1'}
+80	80		401						2000.0	{1: '1', 2: '36'}
+81	81		401							{1: '1', 2: '208'}
+82	82		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory965.png'}
+83	83		201							{1: '1', 2: '1031001'}
+84	84		301			AniZhuanchangEnd				{1: '1', 2: 'Liv', 3: 'Target... completely silent.', 4: '1'}
+85	85		203							{1: '1', 2: '0.25', 3: '-400'}
+86	86		201							{1: '2', 2: '1011001', 4: '400'}
+87	87		301							{1: '1', 2: 'Lee', 3: 'Sim battle complete, Commandant. What are your next orders?', 4: '2'}
+88	88		302							"{2: ""Nice work, everyone. Let's take a quick breather."", 3: '89'}"
+89	89		204							{1: '1', 2: '1'}
+90	90		301							"{2: 'Liv', 3: ""Same to you, Commandant. You've worked hard."", 4: '1'}"
+91	91		301							"{2: 'Lee', 3: ""Commandant, I've sorted the rest of the combat logs."", 4: '2'}"
+92	92		202							{1: '1', 2: '2'}
+93	93		301							{3: 'After exiting the sim, Lee hands over a report.'}
+94	94		201							{1: '1', 2: '1011001'}
+95	95		301				DialogDisable			"{1: '1', 2: 'Lee', 3: ""We'll be able to revisit these battles anytime through the review system."", 4: '1'}"
+96	96		302							{2: 'Alright, then.', 3: '97'}
+97	97		202							{1: '1', 6: '1'}
+98	98		401							{1: '2', 2: '4422'}
+99	99		507						100.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+100	100		109							{1: '1', 2: '<color=#ffffffff><size=50>All main story chapters are now unlocked and available for reading.\\n\\nYou can start Chapters 2–3 while the rest of the resources finish downloading.</size></color>', 4: '90', 9: '3'}
+101	101		301							{3: '(All main story chapters are now unlocked and ready to read.\\nYou can start Chapters 2–3 while the rest of the resources finish downloading.)'}
+102	102		401							{1: '2', 2: '4423'}
+103	103		110							{1: '1'}
+104	104		508						200.0	
+105	105		201							{1: '1', 2: '1021001'}
+106	106		301		1	DialogEnable	AniZhuanchangBegin			"{1: '1', 2: 'Lucia', 3: ""Let's rest up a bit before the next mission begins."", 4: '1'}"

@@ -1,0 +1,171 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '204'}
+3	3		201							{1: '1', 2: '500110'}
+4	4		301			DialogEnable				{1: '1', 3: 'Ayla gives her room a quick clean-up, then sits back and awakes her terminal.'}
+5	5		301							"{3: ""She stares at the screen as the game world's time flows. She did her best to reconstruct the elements of this world—for example, the sea breeze that was blowing the sand—based on past records and documents.""}"
+6	6		301							{2: 'Ayla', 3: 'Alright, time to keep working. I was the one who invited them after all.', 4: '1'}
+7	7		301							{3: 'As a member of WGAA, Ayla is extremely skilled at creating game worlds.'}
+8	8		301							{2: 'Ayla', 3: 'Let me summarize their progress first.', 4: '1'}
+9	9		301							"{2: 'Ayla', 3: ""Once I consolidate all the players' results, I can design the upcoming changes."", 4: '1'}"
+10	10		301							{3: 'Ayla clicks open the world archive. The adventure team that spawned in the city is shown on the top.'}
+11	11		301							"{2: 'Ayla', 3: ""Hmm? So these are the players we found earlier on. Good, let me check what's happening over there."", 4: '1'}"
+12	12		301							{2: 'Ayla', 3: 'World influence factor is... 17.31?! Amazing. They just started the game and had already done something that could influence the entire kingdom.', 4: '1'}
+13	13		301				AniZhuanchangBegin			"{3: 'Ayla eagerly clicks ""Watch"" to peek at what is going on in the capital through her terminal screen.'}"
+14	14		202			DialogDisable				{1: '1', 6: '1'}
+15	15		401						300.0	{1: '1', 2: '36'}
+16	16		401							{1: '1', 2: '201'}
+17	17		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory531.jpg'}
+18	18		301			DialogEnable				{3: 'Unlike the sunny shore, the sky is dull and gray. It seems to have also impacted the pedestrians as they walk past with forlorn looks.'}
+19	19		301							{3: 'Numerous pieces of paper fall from above. Soldiers who are riding fantasy creatures are grabbing the paper pieces from baskets and throwing them out.'}
+20	20		301							{3: 'Ayla pauses the screen and zooms in.'}
+21	21		301							{3: 'The content on the paper is very simple: a poorly sketched, brandishing portrait with a line of text.'}
+22	22		201							{1: '1', 2: '500110'}
+23	23		301							{1: '1', 2: 'Ayla', 3: '...', 4: '1'}
+24	24		301							{2: 'Ayla', 3: 'Notice of execution?!', 4: '1'}
+25	25		202							{1: '1', 6: '1'}
+26	26		301							{3: 'Ayla searches the crowd and finally finds the player team in the center of the execution ground, guarded by many soldiers.'}
+27	27		201							{1: '1', 2: '1081001', 4: '600'}
+28	28		201							{1: '2', 2: '500155'}
+29	29		201							{1: '3', 2: '500273', 3: '8', 4: '-600'}
+30	30		301							{1: '1', 3: 'Three of them are individually tied to three stakes, with firewood under their feet. Looks like they do not have much time left.'}
+31	31		202							{1: '2', 2: '3', 6: '1'}
+32	32		203							{1: '1', 2: '0.25'}
+33	33		301							"{2: 'Kamui', 3: ""I said we didn't do it! Please trust us!"", 4: '1'}"
+34	34		301							{3: 'Compared with Chrome and Wanshi, he has a lot more ropes attached to himself.'}
+35	35		301							{2: 'Soldier', 3: 'Shut it! Just save us some rope, will you?'}
+36	36		204							{1: '1', 2: '17'}
+37	37		301							"{2: 'Kamui', 3: ""Like I said, we didn't do anything! You're just not listening!"", 4: '1'}"
+38	38		301							{2: 'Soldier', 3: 'Where did we catch you?'}
+39	39		204							{1: '1', 2: '1'}
+40	40		301							{2: 'Kamui', 3: 'The artifact room.', 4: '1'}
+41	41		301							{2: 'Soldier', 3: 'Was there anyone else in the room when you sneaked in?'}
+42	42		301							{2: 'Kamui', 3: 'No.', 4: '1'}
+43	43		301							{2: 'Soldier', 3: 'Where was the artifact stored?'}
+44	44		204							{1: '1', 2: '2'}
+45	45		301							{2: 'Kamui', 3: 'In the cabinet.', 4: '1'}
+46	46		301							{2: 'Soldier', 3: 'Is the cabinet now empty?'}
+47	47		301							{2: 'Kamui', 3: 'I think so.', 4: '1'}
+48	48		301							{2: 'Soldier', 3: 'Alright, we have all the evidence and witnesses. The criminal has confessed to the theft of the artifact. Light them up!'}
+49	49		204							{1: '1', 2: '17'}
+50	50		301							"{2: 'Kamui', 3: ""Hey! I didn't admit anything!"", 4: '1'}"
+51	51		301							{3: 'Kamui begins to shake his body again, making more squeaking sounds between the ropes and the stake.'}
+52	52		301							{2: 'Kamui', 3: 'I need to struggle. I keep taking this action.', 4: '1'}
+53	53		301							{2: 'Dungeon Master Ayla', 3: 'Failure, failure, failure, failure...'}
+54	54		301							"{2: 'Soldier', 3: ""Don't move!""}"
+55	55		301							{3: 'After wasting all the ropes, the soldier ties Kamui up with a steel chain. He pulls both sides of the chain and kicks the stake hard to tighten him up.'}
+56	56		301							{2: 'Dungeon Master Ayla', 3: 'DC to break free increased. DC to break free increased. DC to break free increased.'}
+57	57		301							"{2: 'Kamui', 3: ""I don't care! I keep struggling! With all my strength... Wait, why am I the only one that's rolling dice?"", 4: '1'}"
+58	58		301							{2: 'Kamui', 3: 'Do something, Wanshi.', 4: '1'}
+59	59		203							{1: '1', 2: '0.25', 3: '-400'}
+60	60		201							{1: '2', 2: '500273', 3: '8', 4: '400'}
+61	61		301							{1: '1', 2: 'Wanshi', 3: 'Zzzzz...', 4: '2'}
+62	62		301							{2: 'Dungeon Master Ayla', 3: 'Inspecting Wanshi of Strike Hawk... He is sleeping to recover spells.'}
+63	63		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+64	64		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+65	65		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+66	66		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+67	67		201							{1: '1', 2: '1081001', 3: '17'}
+68	68		301			DialogEnable				{1: '1', 2: 'Kamui', 3: 'At this point in time?', 4: '1'}
+69	69		301							"{3: 'Kamui shakes Wanshi in real life, whose eyes are all closed, only to get the reply that ""nothing else can be done.""'}"
+70	70		202			DialogDisable				{1: '1', 6: '1'}
+71	71		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+72	72		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory531.jpg'}
+73	73		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+74	74		201							{1: '1', 2: '500155', 3: '1'}
+75	75		301			DialogEnable				"{1: '1', 2: 'Chrome', 3: ""Excuse me, could I have some water, please? I don't want to die thirsty."", 4: '1'}"
+76	76		301							{3: 'Contrary to the farce in the center of the execution ground, Chrome remains calm in the corner and calls the soldier guarding him.'}
+77	77		301							"{2: 'Soldier', 3: ""Just wait. I'll get you some.""}"
+78	78		301							{2: 'Chrome', 3: 'Great, thanks.', 4: '1'}
+79	79		301							{3: 'The moment the soldier walks past the corner...'}
+80	80		301							{2: 'Chrome', 3: 'DM, I want to take out the knife that I hid earlier and attempt to cut my rope.', 4: '1'}
+81	81		301							{2: 'Dungeon Master Ayla', 3: 'No one is watching you. Success. Your progress is...'}
+82	82		301							{2: 'Soldier', 3: 'Hurry, get another chain to seal his mouth.'}
+83	83		202							{1: '1', 6: '1'}
+84	84		201							{1: '1', 2: '1081001', 3: '17'}
+85	85		301							"{1: '1', 2: 'Kamui', 3: ""You can't do this to me! At least let me say my final words!"", 4: '1'}"
+86	86		301							"{3: ""When the soldiers turn their backs against Kamui, he peeks in Chrome's direction. The rope is quietly coming off just like he thought.""}"
+87	87		204							{1: '1', 2: '1'}
+88	88		301							{3: 'Just a little longer...'}
+89	89		301							{3: 'Somehow, Kamui feels like he has heard Dungeon Master Ayla rolling a die.'}
+90	90		204							{1: '1', 2: '17'}
+91	91		301							"{2: 'Soldier', 3: ""Ahem! The royal family has decided to start the execution early due to poor weather conditions. We don't want the rain to put off their fire.""}"
+92	92		301							{3: 'The heated crowd bursts into a deafening cheer, as if throwing stones is not enough to calm their anger. The soldiers holding torches are getting restless.'}
+93	93		301							"{2: 'Kamui', 3: ""We don't even know what your artifact looks like! This makes no sense! I want to appeal!"", 4: '1'}"
+94	94		301							{3: 'Kamui tries to argue, but his futile attempt only stirs up endless insults. The crowd seems to have lost all sanity after hearing about their crime.'}
+95	95		301							{2: 'Kamui', 3: 'Calm down, guys...', 4: '1'}
+96	96		301							{2: 'Soldier', 3: 'Shut up! Recruit, put more firewood under his feet to burn him harder.'}
+97	97		203							{1: '1', 2: '0.25', 3: '-400'}
+98	98		201							{1: '2', 2: '500155', 4: '400'}
+99	99		301							{1: '1', 2: 'Chrome', 3: 'DM', 4: '2'}
+100	100		301							{2: 'Dungeon Master Ayla', 3: 'Progress: 50%.'}
+101	101		301							{2: 'Chrome', 3: '...I no longer try to conceal my action, but use all my strength to cut the rope instead.', 4: '2'}
+102	102		301							{2: 'Soldier', 3: 'Hey! What are you doing?!'}
+103	103		301							{3: 'Ignoring him, Chrome focuses on breaking away while calculating the escape route.'}
+104	104		202							{1: '1', 2: '2', 6: '1'}
+105	105		301							{3: 'To his surprise, the soldier was not even shouting at him.'}
+106	106		401						200.0	{1: '1', 2: '36'}
+107	107		401							{1: '1', 2: '206'}
+108	108		201							{1: '1', 2: '500494', 3: '1'}
+109	109		203							{1: '1', 2: '0.15', 4: '-100'}
+110	110		301							{1: '1', 3: 'A figure suddenly appears from above and lands on the stake behind Wanshi, crushing it into pieces with a war hammer.'}
+111	111		203							{1: '1', 2: '0.25'}
+112	112		301							{2: 'Karenina', 3: 'I spent so long making this weapon. Never thought the first thing I did with it was to cut a stake.', 4: '1'}
+113	113		203							{1: '1', 2: '0.25', 3: '400'}
+114	114		201							{1: '2', 2: '1081001', 3: '1', 4: '-400'}
+115	115		301							{1: '1', 2: 'Kamui', 3: 'Karenina? Why are you in this game?', 4: '2'}
+116	116		301							"{2: 'Karenina', 3: ""This is WGAA's public project. Ayla asked us to help her finish the script."", 4: '1'}"
+117	117		301							"{2: 'Karenina', 3: ""Honestly, I'm not good at this. So I had been making weapons at a place."", 4: '1'}"
+118	118		301							{2: 'Soldier', 3: 'Who are you?!'}
+119	119		301							{3: 'The soldier throws his torch away as he pulls out a sword. The torch rolls down the road and finally comes to a stop near Kamui.'}
+120	120		301							{3: 'Kamui makes three rolls in a row trying to kick it away, but none succeeded.'}
+121	121		301							"{2: 'Kamui', 3: ""The dice just hate me today, don't they? If that's the case..."", 4: '2'}"
+122	122		301							{2: 'Kamui', 3: 'Hey you, over there. You dropped something. DM, I want to use Mage Hand to pull that sword close.', 4: '2'}
+123	123		301							{2: 'Dungeon Master Ayla', 3: 'Kamui rolls a... critical failure.'}
+124	124		301							"{2: 'Dungeon Master Ayla', 3: ""You tried to grab the sword's hilt with a magic hand but accidentally sneezed. The hand elegantly sent the sword flying into a crack in the floor.""}"
+125	125		301							"{3: ""The soldier's nervous look immediately disappears. Infuriated, he grabs Kamui's neck and shakes him rigorously, stating that he just bought the new sword.""}"
+126	126		301							{2: 'Dungeon Master Ayla', 3: 'The soldier rolls a Will check... Critical failure. He jumps over and disappears in the crack, following his sword.'}
+127	127		202							{1: '1', 2: '2', 6: '1'}
+128	128		201							{1: '1', 2: '500155'}
+129	129		301							{1: '1', 3: 'Chrome manages to break free and lands on the ground with a thump. Someone immediately throws him a weapon.'}
+130	130		203							{1: '1', 2: '0.25', 3: '-400'}
+131	131		201							{1: '2', 2: '500494', 3: '1', 4: '400'}
+132	132		301							{1: '1', 2: 'Karenina', 3: 'Here you are. Took us a lot of effort to make it in that volcano.', 4: '2'}
+133	133		301							{2: 'Dungeon Master Ayla', 3: 'You obtained weapon: St. Elmo +10.'}
+134	134		202							{1: '1', 2: '2', 6: '1'}
+135	135		201							{1: '2', 2: '500494', 3: '4'}
+136	136		301							{1: '1', 2: 'Karenina', 3: 'DM, I want to cut the ropes on Kamui.', 4: '2'}
+137	137		301							{2: 'Dungeon Master Ayla', 3: 'But Kamui is wrapped in layers and layers of reinforced steel chains.'}
+138	138		301							"{2: 'Karenina', 3: ""I'll just break the stake then. Roll it."", 4: '2'}"
+139	139		202						300.0	{1: '2', 6: '1'}
+140	140		201							{1: '1', 2: '500175'}
+141	141		203							{1: '1', 2: '0.15', 5: '-80'}
+142	142		401					200.0		{1: '2', 2: '10006001'}
+143	143		401							{1: '2', 2: '10006001'}
+144	144		301							{1: '1', 3: 'As they are busy getting Kamui out, they hear the sound of multiple bows firing. A shadow dashes out from the crowd and knocks down all the soldiers from behind, then rushes to Kamui before the rain of arrows falls.'}
+145	145		203							{1: '1', 2: '0.15'}
+146	146		301							{3: 'Camu holds his greatsword horizontally and uses it as a shield. Arrows land on it and make clinking noises.'}
+147	147		301							{2: 'Camu', 3: 'The next time you want someone to run away alone to seek help, better get someone else to do it.', 4: '1'}
+148	148		203							{1: '1', 2: '0.25', 3: '-400'}
+149	149		201							{1: '2', 2: '1081001', 3: '2', 4: '400'}
+150	150		301							{1: '1', 2: 'Kamui', 3: 'It was an emergency. Thanks anyway.', 4: '2'}
+151	151		202							{1: '2', 6: '1'}
+152	152		201							{1: '2', 2: '500273', 4: '400'}
+153	153		301							{1: '1', 2: 'Wanshi', 3: 'What do we do now?', 4: '2'}
+154	154		301							{3: 'More soldiers come rushing to the execution ground. They are all differently equipped and look like an army that was just put together.'}
+155	155		301							{2: 'Soldier', 3: 'Dammit, too many of us went with the expedition team.'}
+156	156		301							{2: 'Soldier', 3: 'Come here! I want all my soldiers to head this way immediately!'}
+157	157		202							{1: '1', 6: '1'}
+158	158		201							{1: '1', 2: '500155', 4: '-400'}
+159	159		301							"{1: '1', 2: 'Chrome', 3: ""Hurry, let's get out of here while they are still in chaos."", 4: '1'}"
+160	160		202							{1: '1', 2: '2', 6: '1'}
+161	161		201							{1: '1', 2: '500495'}
+162	162		301							"{1: '1', 2: 'Teddy', 3: ""Just a reminder, don't take the wrong direction."", 4: '1'}"
+163	163		301							{3: 'Unlike her two teammates who were confronting the soldiers, Teddy chose to sneak all the way here.'}
+164	164		301							{2: 'Dungeon Master Ayla', 3: 'Teddy of Engineering Force has activated a Wall spell. Checking... Success.'}
+165	165		301							{3: 'Transparent ice blocks rise from the ground, forming a solid wall, making the soldiers quiver in fear as they fall back. An officer has to shout at them to force them to go back holding their weapons.'}
+166	166		301							{3: 'But the spears and swords cannot even leave a scratch on the wall. Even war hammers do not seem to crack it.'}
+167	167		203							{1: '1', 2: '0.25', 3: '400'}
+168	168		201							{1: '2', 2: '500155', 4: '-400'}
+169	169		301							{1: '1', 2: 'Teddy', 3: 'This crystal is less than 10cm thick, but it is stronger than bulletproof glass. I tested it.', 4: '1'}
+170	170		301		1		AniZhuanchangBegin			{2: 'Chrome', 3: 'We just need to take care of the soldiers on the other side now.', 4: '2'}

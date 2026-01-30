@@ -1,0 +1,193 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory683.jpg'}
+2	2		401							{1: '1', 2: '189'}
+3	3		301			DialogEnable				{3: 'The lobby alarm is still not disarmed, the mechanical statues continue to attack Iris Warbler.'}
+4	4		201							{1: '1', 2: '500583'}
+5	5		201							{1: '2', 2: '500583', 4: '600'}
+6	6		201							{1: '3', 2: '500583', 4: '-600'}
+7	7		301							"{1: '1', 3: ""The statues' movements are not complex, but they have the advantage in numbers. No matter how many they defeat, there are always new ones that appear out of nowhere to replace them.""}"
+8	8		203						200.0	{1: '2', 2: '0.2', 3: '600', 4: '-120'}
+9	9		203						200.0	{1: '3', 2: '0.2', 3: '-600', 4: '-120'}
+10	10		202						500.0	{1: '2', 2: '3'}
+11	11		201							{1: '4', 2: '500583', 4: '600', 7: '1'}
+12	12		201							{1: '5', 2: '500583', 4: '-600', 7: '1'}
+13	13		301							{1: '1', 3: 'Sica cannot predict where the next batch of enemies will strike next, and since Iris Warbler is still a new team, their cooperation is far from flawless, if they continue on like this, it is just a matter of time for the mechanic statues to break though their defenses.'}
+14	14		202							{1: '4', 2: '5', 6: '1'}
+15	15		201							{1: '1', 2: '500560', 3: '4'}
+16	16		301							{1: '1', 2: 'Sica', 3: 'They keep coming...!', 4: '1'}
+17	17		401							{1: '2', 2: '1510'}
+18	18		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+19	19		301							{3: 'The bullets rapidly fired from her tactical pistol hit the weak joints of the statues—Sica was the best shooter in her class, but no matter how accurately she shoots now, it still cannot make up for the disadvantage of armor.'}
+20	20		301							{3: 'She has to shoot half of her magazine before the mechanic statue ceases its movements. The usefulness of a commandant in this level of battle is limited.'}
+21	21		203							{1: '1', 2: '0.25', 3: '-400'}
+22	22		201							{1: '2', 2: '500581', 3: '5', 4: '400'}
+23	23		301							"{1: '1', 2: 'Lena', 3: ""Tsk... Get behind me! We'll be in trouble if you get hurt!"", 4: '2'}"
+24	24		202							{1: '1', 2: '2', 6: '1'}
+25	25		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+26	26		401							{1: '2', 2: '9332011'}
+27	27		201							{1: '1', 2: '500583', 4: '400', 7: '1'}
+28	28		201						500.0	{1: '2', 2: '500583', 7: '1'}
+29	29		203							{1: '1', 2: '0.1', 3: '-200'}
+30	30		203						500.0	{1: '2', 2: '0.16', 3: '-400'}
+31	31		301							{1: '1', 3: 'The alloy arrow soars through the air and pierces through the few statues in front of Sica with force.'}
+32	32		202							{1: '2', 6: '1'}
+33	33		201							{1: '1', 2: '500576', 3: '4'}
+34	34		301							"{1: '1', 2: 'Ayla', 3: ""This isn't ending any time soon..."", 4: '1'}"
+35	35		301							{2: 'Ayla', 3: 'We need to find a way to make them stop!', 4: '1'}
+36	36		401							{1: '2', 2: '844006'}
+37	37		301			RImgBg1Shake				{3: 'Sparks fly from the beam blade and heavy tonfas as they hit the statues. Ayla and Trojan have been bearing most of the burden as vanguards. Ayla can still manage with her new frame, but the sequela of M.I.N.D. damage is starting to show for Trojan as time goes on.'}
+38	38		203							{1: '1', 2: '0.25', 3: '-400'}
+39	39		201							{1: '2', 2: '500586', 3: '4', 4: '400'}
+40	40		301							"{1: '1', 2: 'Trojan', 3: 'We probably activated the security system of the museum... If we talking about Golden Age formats, then these ""security"" statues are most probably remotely linked to the system.', 4: '2'}"
+41	41		401							{1: '2', 2: '9332011'}
+42	42		201							{1: '1', 2: '500581', 3: '5', 4: '-400'}
+43	43		301							"{1: '1', 2: 'Lena', 3: ""Thanks for the info but what's the point?!"", 4: '1'}"
+44	44		301							"{2: 'Trojan', 3: ""The point is, if we can hack the firewall of the museum and shut off the alarm, then the statues won't move anymore!"", 4: '2'}"
+45	45		201							{1: '1', 2: '500576', 3: '4', 4: '-400'}
+46	46		301							{1: '1', 2: 'Ayla', 3: 'And does anyone here have a frame that has hacking functions?! Heads up, not me!', 4: '1'}
+47	47		203							{1: '2', 2: '600'}
+48	48		401							{1: '2', 2: '9332010'}
+49	49		301			RImgBg1Shake				"{2: 'Trojan', 3: ""I may have the same name as a famous computer virus but don't expect an old relic from the Golden Age like me to be able to hack!"", 4: '2'}"
+50	50		201							{1: '1', 2: '500581', 3: '5', 4: '-400'}
+51	51		301							"{1: '1', 2: 'Lena', 3: ""This is the first time I'm seeing people say they're useless with such confidence!"", 4: '1'}"
+52	52		301							"{2: 'Lena', 3: ""Fine... I'll hack the system, but I'm not a Support type so I'll have to use more primitive methods—"", 4: '1'}"
+53	53		301							{2: 'Lena', 3: 'Hang in there till I get back!', 4: '1'}
+54	54		202							{1: '2', 6: '1'}
+55	55		203							{1: '1', 2: '0.25'}
+56	56		301							"{3: ""Relying on the spatial data from the scan, Lena finds a hidden node port in the lobby. She takes our a specialized arrow from her quiver—this arrow contains a mini terminal, which can utilize a Construct's computing power to breakthrough from outside.""}"
+57	57		401							{1: '2', 2: '2760'}
+58	58		204							{1: '1', 2: '17'}
+59	59		301							{3: 'She plugs this arrow which is connected to her frame into the port. Instantly, a large amount of data swarms her M.I.N.D. She focuses on processing these data shards, trying to find a point for her to penetrate through.'}
+60	60		402							{1: '2760'}
+61	61		201							{1: '1', 2: '500586', 3: '4'}
+62	62		301							{1: '1', 2: 'Trojan', 3: 'Dammit... This frame...!', 4: '1'}
+63	63		301							"{3: ""With Lena lost as an offensive asset, Sica had to get Ayla and Trojan to shrink the defense area, but that also implies that the enemies will attack more frequently. As a commandant, she could feel the continuous turmoil in Trojan's M.I.N.D.""}"
+64	64		203							{1: '1', 2: '0.25', 3: '400'}
+65	65		201							{1: '3', 2: '500576', 3: '4', 4: '-400'}
+66	66		301							"{1: '1', 2: 'Ayla', 3: ""Why do I feel like there's an increase in enemies?!"", 4: '3'}"
+67	67		202							{1: '3', 2: '2', 6: '1'}
+68	68		201							{1: '1', 2: '500581', 3: '5'}
+69	69		301							"{1: '1', 2: 'Lena', 3: ""It's the system's level two security protocol... It detected me trying to hack it through the port. Give me some more time!"", 4: '1'}"
+70	70		202							{1: '1', 6: '1'}
+71	71		301							{3: 'Waves after waves of mechanic statues appear with no end in sight. They seem to have determined Lena to be the biggest threat, targeting their attacks at Lena, making it harder for Ayla and Trojan to defend.'}
+72	72		201							{1: '1', 2: '500560', 3: '4'}
+73	73		301							{1: '1', 2: 'Sica', 3: '(If only I can help...)', 4: '1'}
+74	74		401							{1: '2', 2: '9317003'}
+75	75		201							{1: '1', 2: '500586', 3: '4', 4: '-300', 7: '1'}
+76	76		203							{1: '1', 2: '0.14'}
+77	77		301			RImgBg1Shake				"{1: '1', 2: 'Trojan', 3: ""Lena! Your 11 o'clock! Enemies are heading over!"", 4: '1'}"
+78	78		301							{3: 'Trojan hits a statue in the head with her tonfa as she turns to warn Lena. But she is already at her limits trying to take care of the mechanoids in front of her and cannot take on any more.'}
+79	79		201							{1: '1', 2: '500581', 3: '17'}
+80	80		301							{1: '1', 2: 'Lena', 3: 'Dammit...! Just a bit more...', 4: '1'}
+81	81		203							{1: '1', 3: '-400'}
+82	82		201							{1: '2', 2: '500560', 3: '4', 4: '400', 7: '1'}
+83	83		301							"{1: '1', 2: 'Sica', 3: ""Don't worry, I got you covered...!"", 4: '2'}"
+84	84		204							{1: '1', 2: '7'}
+85	85		301							{2: 'Lena', 3: 'Idio... What are you doing?!', 4: '1'}
+86	86		203						120.0	{1: '2', 2: '0.14', 3: '400', 5: '-120'}
+87	87		202							{1: '1', 2: '2', 6: '1'}
+88	88		401						350.0	{1: '2', 2: '13015111'}
+89	89		402							{1: '13015111'}
+90	90		301							{3: 'Sica already lunged toward the statue before Lena could finish her sentence.'}
+91	91		201							{1: '1', 2: '500560', 3: '4', 4: '-400', 5: '-80', 7: '1'}
+92	92		201							{1: '2', 2: '500583', 4: '400', 7: '1'}
+93	93		203						300.0	{1: '1', 2: '0.14', 3: '100'}
+94	94		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+95	95		401							{1: '2', 2: '10202505'}
+96	96		203						500.0	{1: '1', 2: '0.25', 3: '-300'}
+97	97		203							{1: '2', 2: '0.2', 3: '400', 4: '-80'}
+98	98		202							{1: '2', 6: '1'}
+99	99		401							{1: '2', 2: '13015113'}
+100	100		301							{1: '1', 3: 'She is nimble as an apodidae, her tactical dagger slips into her hand and she accurately stabs the statue in its neck joint. The dagger emits an electromagnetic pulse, instantly demobilizing the statue.'}
+101	101		203						80.0	{1: '1', 2: '0.14', 3: '-600'}
+102	102		202							{1: '1', 6: '1'}
+103	103		401						200.0	{1: '2', 2: '1510'}
+104	104		401							{1: '2', 2: '1510'}
+105	105		301							"{3: ""Not wasting a second, she turns and pounces onto another mechanoid, rapidly pulling the trigger and shooting directly into the statue's chest.""}"
+106	106		201							{1: '1', 2: '500560', 3: '4', 7: '1'}
+107	107		401							{1: '2', 2: '1510'}
+108	108		301							{1: '1', 3: 'Annihilating two statues in a row with a surprisingly imposing manner, Sica grits her teeth and shoots at nearby statues with her pistol.'}
+109	110		301							{3: 'But even the newest pistol with expanded magazines would come a moment when it exhausts itself. Without a choice, she smashes her pistol into the memory shell of the statue in front of her. Its plaster face cracks, but the red glow of its eyes indicates that this hit was not enough to take it out.'}
+110	111		301							{2: 'Sica', 3: 'Tsk—!', 4: '1'}
+111	112		401							{1: '2', 2: '869'}
+112	113		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+113	114		202							{1: '1', 6: '1'}
+114	115		301							{3: 'Schween!'}
+115	116		301							{3: 'A howling spark shines in front of Sica, an ice-blue energy stream swipes past, blasting away the mechanoids in front of Sica like a lawnmower.'}
+116	117		201							{1: '1', 2: '500576', 3: '4', 7: '1'}
+117	118		301							"{1: '1', 3: ""Not far away, the muzzle of Ayla's gun is sizzling with white smoke, indicating that the energy blast was shot from it.""}"
+118	119		201							{1: '1', 2: '500586', 4: '-400', 7: '1'}
+119	120		201							{1: '2', 2: '500576', 3: '4', 4: '400', 7: '1'}
+120	121		301							"{1: '1', 2: 'Trojan', 3: ""Why didn't you take that out earlier?!"", 4: '1'}"
+121	122		301							"{2: 'Ayla', 3: 'Well, this is my last resort! Because it was made according to the Blast Hammer data of ""Scire"", I didn\'t know if it\'d work or not!', 4: '2'}"
+122	123		301							{2: 'Ayla', 3: 'Karenina insisted I add this function when I was brainstorming this new frame, I really should thank her when we get back.', 4: '2'}
+123	124		301							{3: 'The beam blade flickers, as if this one hit has used up all its stored-up energy.'}
+124	125		202							{1: '2', 6: '1'}
+125	126		201							{1: '1', 2: '500581', 3: '5'}
+126	127		301							{1: '1', 2: 'Lena', 3: 'All right, and—disarm!', 4: '1'}
+127	128		202							{1: '1', 6: '1'}
+128	129		401							{1: '1', 2: '36'}
+129	130		301							{3: 'Just as Lena announced this, the blaring alarm finally stops, and the remaining statues cease their attacks.'}
+130	131		401							{1: '1', 2: '184'}
+131	132		201							{1: '1', 2: '500576', 3: '4'}
+132	133		301							{1: '1', 2: 'Ayla', 3: 'Sica, are you alright?', 4: '1'}
+133	134		301							{3: 'Ayla half kneels and extends her hand to Sica, helping her up.'}
+134	135		203							{1: '1', 2: '0.25', 3: '-400'}
+135	136		201							{1: '2', 2: '500560', 3: '4', 4: '400'}
+136	137		301							"{1: '1', 2: 'Sica', 3: ""Yes, I'm fine."", 4: '2'}"
+137	138		301							"{2: 'Sica', 3: ""Sorry, I didn't expect them to suddenly attack us like that and I panicked..."", 4: '2'}"
+138	139		204							{1: '1'}
+139	140		301							"{2: 'Ayla', 3: ""It's not your fault, they seemed pretty normal at the beginning."", 4: '1'}"
+140	141		201							{1: '2', 2: '500586', 3: '4', 4: '400'}
+141	142		301							"{1: '1', 2: 'Trojan', 3: ""I don't recall us doing anything that could've enraged them... I don't think we triggered the alarm."", 4: '2'}"
+142	143		301							{2: 'Trojan', 3: 'Or this is a trap set by the mechanoid called Cervantes.', 4: '2'}
+143	144		204							{1: '1', 2: '4'}
+144	145		301							{2: 'Ayla', 3: 'Hm...', 4: '1'}
+145	146		301							{3: 'Ayla studies the scattered statue pieces on the ground—After a series of fierce battles, this meticulously designed space is now in ruins.'}
+146	147		301							"{2: 'Ayla', 3: 'Spending so much effort in curating this museum and just letting it get destroyed as a ""battlefield"" to get rid of intruders...?', 4: '1'}"
+147	148		202							{1: '1', 2: '2', 6: '1'}
+148	149		301							{3: 'Just as she gets lost deep in thought, a small wave of quarreling can be heard from behind.'}
+149	150		201							{1: '1', 2: '500581', 3: '5', 4: '-400'}
+150	151		201							{1: '2', 2: '500560', 3: '7', 4: '400'}
+151	152		301							{1: '1', 2: 'Lena', 3: 'What in the world were you thinking back there?! Why did you protect me?!', 4: '1'}
+152	153		301							{3: 'The usually calm and collected Lena is now furiously shouting at Sica.'}
+153	154		301							{2: 'Lena', 3: 'What if you get seriously injured? What should the Constructs connected to you do then?!', 4: '1'}
+154	155		301							{3: 'Her eyes are clouded by a complicated haze, as if what she is seeing is not Sica who is standing in front of her, but a past memory she does not dare to recall.'}
+155	156		301							"{2: 'Lena', 3: ""You're not a newbie on their first mission, do you not possess a bit of common sense?!"", 4: '1'}"
+156	157		301							{2: 'Lena', 3: 'Even if I get injured, I just have to change my parts and get fixed, and even if I die here, you can still lead the remaining members to finish the mission.', 4: '1'}
+157	158		301							{2: 'Lena', 3: 'But you? The core of a squad is their commandant. Did the F.O.S. not teach you the survival rate of a squad without a commandant?!', 4: '1'}
+158	159		204							{1: '2', 2: '15'}
+159	160		301							{2: 'Sica', 3: '...', 4: '2'}
+160	161		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+161	162		202							{1: '1', 2: '2', 6: '1'}
+162	163		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory329.png'}
+163	164		504							{1: '0.7'}
+164	165		201							{1: '1', 2: '500567', 7: '1'}
+165	166		301							"{1: '1', 2: '???', 3: ""Why did you respond to that squad's S.O.S. signal?! We should focus on the battle on the frontlines!"", 4: '1'}"
+166	167		301							"{2: '???', 3: ""Don't you know to weigh the pros and cons before making decisions as a commandant? That squad is stranded deep within enemy territory, it's a suicide mission!"", 4: '1'}"
+167	168		301							{2: '???', 3: 'Your job is to stabilize our M.I.N.D.s with your Mind Beacon. Tactics? What kind of tactics can someone who has never set foot in war come up with?', 4: '1'}
+168	169		202							{1: '1', 6: '1'}
+169	170		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+170	171		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory683.jpg'}
+171	172		504							
+172	173		201							{1: '1', 2: '500560', 3: '4', 7: '1'}
+173	174		301							{1: '1', 2: 'Sica', 3: 'I...', 4: '1'}
+174	175		301							"{2: 'Sica', 3: ""...I admit that my actions were rash. As the commandant, I should've prioritized my own safety... because on the battlefields, the commandant is the Constructs' lifeline."", 4: '1'}"
+175	176		301							"{2: 'Sica', 3: ""But in our case just now, protecting you was the priority, because without you hacking the systems, the battle would've been prolonged and we would've been at even more of a disadvantage."", 4: '1'}"
+176	177		301							{2: 'Sica', 3: 'That was my judgment of the situation... as the commandant.', 4: '1'}
+177	178		201							{1: '1', 2: '500581'}
+178	179		301							{1: '1', 2: 'Lena', 3: '...', 4: '1'}
+179	180		301							{3: 'Lena relaxes her fists and sighs defeatedly.'}
+180	181		301							{2: 'Lena', 3: 'I apologize for my outburst.', 4: '1'}
+181	182		301							{2: 'Lena', 3: 'It is partly my fault as a scout for not being able to predict this situation.', 4: '1'}
+182	183		301							"{2: 'Lena', 3: ""Let's not waste anymore time here and move on."", 4: '1'}"
+183	184		202							{1: '1', 6: '1'}
+184	185		301							{3: 'As if running away from something, Lena leaves the lobby through the exit on the side.'}
+185	186		201							{1: '1', 2: '500586', 3: '4', 4: '-400'}
+186	187		201							{1: '2', 2: '500560', 3: '15', 4: '400'}
+187	188		301							"{1: '1', 2: 'Trojan', 3: ""...Let's go."", 4: '1'}"
+188	189		301							"{3: ""Trojan pats Sica's shoulder before following after Lena.""}"
+189	190		201							{1: '1', 2: '500576', 4: '-400'}
+190	191		301							{1: '1', 2: 'Ayla', 3: 'I think... she was worried about your safety.', 4: '1'}
+191	192		204							{1: '2', 2: '3'}
+192	193		301		1		AniZhuanchangBegin			{2: 'Sica', 3: '...I know.', 4: '2'}

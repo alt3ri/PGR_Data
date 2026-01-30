@@ -1,0 +1,178 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		301							{3: '...'}
+3	3		302							{2: '...', 3: '4'}
+4	4		301				AniZhuanchangBegin			{3: 'Beep beep beep...'}
+5	5		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+6	6		401							{1: '1', 2: '208'}
+7	7		502							{1: 'AniZhuanchangEnd'}
+8	8		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+9	9		301					2500.0		{3: 'You wake up to your terminal beeping like no tomorrow. You open your eyes to see the bedroom ceiling. Strange. You have the day off as far as you can remember.'}
+10	10		302							{2: 'An emergency mission?', 3: '11'}
+11	11		401							{1: '2', 2: '1515'}
+12	12		301							{3: 'You connect to the device to hear Kamui speaking.'}
+13	13		201							{1: '1', 2: '1081001'}
+14	14		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+15	15		301							{1: '1', 2: 'Kamui', 3: 'Commandant! Commandant! Are you busy?', 4: '1'}
+16	16		302							{2: 'Not that busy...', 3: '17', 4: 'Yes.', 5: '17'}
+17	17		204							{1: '1', 2: '5'}
+18	18		301							"{2: 'Kamui', 3: ""Forget what you're doing, I've got something urgent here!"", 4: '1'}"
+19	19		302							"{2: ""What's up?"", 3: '20'}"
+20	20		301				AniZhuanchangBegin			"{2: 'Kamui', 3: ""It's Camu..."", 4: '1'}"
+21	21		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+22	22		202							{1: '1', 6: '1'}
+23	23		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory3.jpg'}
+24	24		502							{1: 'AniZhuanchangEnd'}
+25	25		301				AniZhuanchangBegin			"{3: ""You rush out onto the streets with just a jacket, Kamui's words still fresh in your head.""}"
+26	26		101			DialogDisable				{1: 'Assets/Product/Texture/Image/BgStory/BgStory46.jpg'}
+27	27		504							{1: '1'}
+28	28		201							{1: '1', 2: '1081001'}
+29	29		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '1'}
+30	30		302			AniZhuanchangEnd				"{2: ""Camu's gone?"", 3: '31'}"
+31	31		301			DialogEnable				"{2: 'Kamui', 3: ""Yeah. I hadn't been able to get in contact with him since last night. He often disappeared out of nowhere like this, too, but usually he'd be back by morning."", 4: '1'}"
+32	32		301							"{2: 'Kamui', 3: ""If he were still with me, I wouldn't have minded, but..."", 4: '1'}"
+33	33		301							"{2: 'Kamui', 3: ""It's the first time this happened... so I can't be sure where he is either."", 4: '1'}"
+34	34		302							{2: 'I understand.', 3: '35', 4: '...', 5: '35'}
+35	35		301							"{3: ""It's rare to see Kamui look so serious, though he's beaming again the very next second.""}"
+36	36		204							{1: '1', 2: '2'}
+37	37		301							{2: 'Kamui', 3: 'Heh, you must be confused, huh?', 4: '1'}
+38	38		302							{2: 'Not really.', 3: '39', 4: 'A little, yes.', 5: '39'}
+39	39		301							"{2: 'Kamui', 3: ""I'm not sure how to explain it, but I just have a feeling... perhaps because of how you usually seem..."", 4: '1'}"
+40	40		204							{1: '1', 2: '1'}
+41	41		301							"{2: 'Kamui', 3: ""I just feel like it'd be better if you're the one who finds him."", 4: '1'}"
+42	42		204							{1: '1', 2: '5'}
+43	43		301				AniZhuanchangBegin			{2: 'Kamui', 3: 'Please, Commandant, bring Camu home.', 4: '1'}
+44	44		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory3.jpg'}
+45	45		202							{1: '1', 6: '1'}
+46	46		504							{1: '0'}
+47	47		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+48	48		301			AniZhuanchangEnd				{3: 'You promised Kamui that you would find Camu, but Babylonia is huge... How will you find Camu without asking the Council for help?'}
+49	49		301							"{3: 'The Council must know where he is, which means that he is not posing a threat to anyone right now. On the other hand, you also do not exactly want the officials to ""capture"" Camu and force him to return.'}"
+50	50		301				AniZhuanchangBegin			{3: 'No choice but to start looking.'}
+51	52		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory81.jpg'}
+52	53		301			AniZhuanchangEnd				{3: 'It is almost noon, and the sun is getting increasingly blinding. Squinting, you walk around for a while without finding anything...'}
+53	54		502							{1: 'AniZhuanchangBegin'}
+54	55		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory3.jpg'}
+55	56		301			AniZhuanchangEnd				{3: '...And then you are back to where you have started.'}
+56	57		301							{3: '(Stomach growls)'}
+57	58		302							"{2: ""I'm hungry..."", 3: '59', 4: 'I should rest.', 5: '59'}"
+58	59		301							{3: 'You decide to sit down in a nearby park.'}
+59	60		301				DialogDisable			{3: 'As soon as you enter the park, you see a familiar figure sprawled out on a bench.'}
+60	62		201							{1: '1', 2: '500175'}
+61	61		302							{2: '...Camu?!', 3: '63'}
+62	63		301			DialogEnable				{2: 'Camu', 3: '—?!', 4: '1'}
+63	64		301							{2: 'Camu', 3: 'What are you doing here?', 4: '1'}
+64	65		302							"{2: 'Just passing by.', 3: '66', 4: ""I'm looking for you."", 5: '67'}"
+65	66	68	301							"{2: 'Camu', 3: ""I can tell you came looking for me. I'm not stupid."", 4: '1'}"
+66	67		301							{2: 'Camu', 3: 'What for?', 4: '1'}
+67	68		302							"{2: ""I couldn't reach you the whole night."", 3: '69'}"
+68	69		301							{2: 'Camu', 3: 'So? Am I not even free to be gone for one night?', 4: '1'}
+69	70		302							"{2: '...', 3: '71', 4: ""It's not that."", 5: '71'}"
+70	71		301							{2: 'Camu', 3: 'Tch. Well, now you know where I am. Get lost.', 4: '1'}
+71	72		302							"{2: ""I'm worried about you."", 3: '73'}"
+72	73		202							{1: '1', 6: '1'}
+73	74		301							{3: 'Camu grimaces, as if he just bit into a lemon.'}
+74	75		201							{1: '1', 2: '500175', 3: '5'}
+75	76		301							"{1: '1', 2: 'Camu', 3: ""I'm tired of repeating myself, Gray Raven Commandant. Listen, we have nothing to do with each other outside of our missions. You don't know anything about me and are in no position to stand here and talk about things you don't understand."", 4: '1'}"
+76	77		301							{3: 'He speaks without emotion, gaze full of judgment.'}
+77	78		301							{2: 'Camu', 3: 'Or are you acting all concerned because you want something from me?', 4: '1'}
+78	79		302							"{2: ""I'm not acting."", 3: '81', 4: ""You don't have anything I want."", 5: '80'}"
+79	80		301							{2: 'Camu', 3: '...Do you want to die or something?', 4: '1'}
+80	81		301							"{2: 'Camu', 3: ""So what exactly do you want, then? To get to know me? Fine. I'll tell you what I think."", 4: '1'}"
+81	82		301							{2: 'Camu', 3: 'This world is despicable.', 4: '1'}
+82	83		301							"{2: 'Camu', 3: ""Babylonia... the Punishing Virus... the world itself... they're all the same. All filthy."", 4: '1'}"
+83	84		301							"{2: 'Camu', 3: ""I'm just me. I'm not gonna change just because of a few pretty words you said, because I understand this world better than you do. It's not worth it, you know. Even without the virus, the world is just as corrupt."", 4: '1'}"
+84	85		301							{2: 'Camu', 3: 'If only the world would just end. We could start anew, then.', 4: '1'}
+85	86		301							"{2: 'Camu', 3: ""If I didn't know a thing, didn't have any of my past experiences... I might have ended up like Kamui."", 4: '1'}"
+86	87		301							"{2: 'Camu', 3: ""But I'm not like him."", 4: '1'}"
+87	88		301							"{2: 'Camu', 3: ""So don't waste your words and energy on me. Love... justice... those are foolish, selfish, self-righteous concepts."", 4: '1'}"
+88	89		302							{2: '...', 3: '90'}
+89	90		301							"{2: 'Camu', 3: 'I don\'t want to take responsibility for my powers. I\'m not obliged to nor want to ""save"" this disgusting world.', 4: '1'}"
+90	91		301							"{2: 'Camu', 3: ""Staying here is a temporary decision. There's no point in wasting energy on me."", 4: '1'}"
+91	92		301							{2: 'Camu', 3: 'Got it?', 4: '1'}
+92	93		302							"{2: 'I see.', 3: '94', 4: ""I don't get it."", 5: '102'}"
+93	94		301							{2: 'Camu', 3: '...', 4: '1'}
+94	95		301							{2: 'Camu', 3: 'Are you an imbecile?', 4: '1'}
+95	96		301							{2: 'Camu', 3: 'No idea why I just told you all that...', 4: '1'}
+96	97		302							"{2: ""I'm sorry."", 3: '98'}"
+97	98		301							{2: 'Camu', 3: 'What for?', 4: '1'}
+98	99		302							{2: 'For making assumptions about you.', 3: '100'}
+99	100		302							"{2: ""I'll respect you as your own person from now on."", 3: '101'}"
+100	101	110	301							{2: 'Camu', 3: '...?', 4: '1'}
+101	102		301							{2: 'Camu', 3: '...', 4: '1'}
+102	103		301							{2: 'Camu', 3: 'Are you an imbecile?', 4: '1'}
+103	104		301							{2: 'Camu', 3: 'No idea why I just told you all that...', 4: '1'}
+104	105		302							{2: 'Thank you.', 3: '106'}
+105	106		301							{2: 'Camu', 3: '...?', 4: '1'}
+106	107		302							{2: 'For taking a punch for me yesterday.', 3: '108'}
+107	108		301							{2: 'Camu', 3: '...Not a big deal. I was the one who shoved you to the ground by accident in the first place.', 4: '1'}
+108	109		302							{2: '...', 3: '110'}
+109	110		301							"{2: 'Camu', 3: ""Wait, that's not the point!"", 4: '1'}"
+110	111		502							{1: 'PanelActor1Shake'}
+111	112		301							{2: 'Camu', 3: 'Ughhhhh!', 4: '1'}
+112	113		301							"{2: 'Camu', 3: ""I told you all that... and you didn't even react?"", 4: '1'}"
+113	114		301							"{2: 'Camu', 3: ""Shouldn't you see me as a monster and want to steer clear of me?"", 4: '1'}"
+114	115		302							"{2: ""I don't feel that way."", 3: '116', 4: ""I'll try to not let it bother me."", 5: '116'}"
+115	116		301							"{2: 'Camu', 3: ""What... what's in that human noggin of yours?"", 4: '1'}"
+116	117		301							{2: 'Camu', 3: 'After all that I just said... nothing even changed. What a waste of my time!', 4: '1'}
+117	118		202							{1: '1', 6: '1'}
+118	119		502							{1: 'RImgBg1Shake'}
+119	120		301							{3: 'Losing his cool, Camu grabs the collar of your uniform and practically hoists you up into the air.'}
+120	121		201							{1: '1', 2: '500175', 3: '5'}
+121	122		301							{1: '1', 2: 'Camu', 3: 'What exactly do you want? To confuse me?', 4: '1'}
+122	123		302							{2: 'You misunderstand.', 3: '124', 4: 'Please let go of me first...', 5: '124'}
+123	124		301							{2: 'Camu', 3: 'Out with it, now!', 4: '1'}
+124	125		302							"{2: ""It's not that complicated."", 3: '126'}"
+125	126		302							{2: 'If you want a reason...', 3: '127'}
+126	127		302							"{2: 'It\'s because you\'re ""Camu"".', 3: '129'}"
+127	129		302							{2: 'I want to see you smile...', 3: '130'}
+128	130		302							"{2: 'As ""Camu"" and no one else.', 3: '131'}"
+129	131		302							"{2: ""I genuinely care about what you're thinking."", 3: '54269'}"
+130	54269		302							"{2: ""I don't need a reason for that."", 3: '132'}"
+131	132		202							{1: '1', 6: '1'}
+132	133		301							{3: 'Camu looks shocked.'}
+133	134		301							{3: 'It is rare to see him like that... though you do wish he would let go of your collar already.'}
+134	135		301							{3: '(Stomach growls)'}
+135	136		301							{3: 'You are starting to feeling lightheaded when your stomach growls at the wrong moment... or the right one, perhaps.'}
+136	137		302							"{2: ""It's time for lunch."", 3: '138'}"
+137	138		201							{1: '1', 2: '500175'}
+138	139		301							{1: '1', 2: 'Camu', 3: '...', 4: '1'}
+139	140		301							{2: 'Camu', 3: 'Hey, do you treat Kamui the same way you treat me?', 4: '1'}
+140	141		302							"{2: 'Nope.', 3: '142', 4: ""He's not as prickly as you."", 5: '142'}"
+141	142		202							{1: '1', 6: '1'}
+142	143		301				AniZhuanchangBegin			{3: 'Camu finally lets go of his chokehold and sighs... out of frustration or relief, you cannot tell.'}
+143	144		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory81.jpg'}
+144	145		301			AniZhuanchangEnd				{3: 'The golden octopus balls in your hand smell delectable.'}
+145	146		302							{2: '(Munch munch)', 3: '147'}
+146	147		301							{2: '???', 3: '(Munch munch munch)'}
+147	148		302							{2: '(Munch munch)', 3: '149'}
+148	149		301							{2: '???', 3: '(Munch munch munch)'}
+149	150		302							"{2: ""...You're a Construct. Why are you eating too?"", 3: '151'}"
+150	151		301							{3: 'Camu munches on with calm nonchalance.'}
+151	152		201							{1: '1', 2: '500175'}
+152	153		301							{1: '1', 2: 'Camu', 3: 'Yes, I like food. You have a problem with that?', 4: '1'}
+153	154		302							"{2: ""No, even though it's my money you're spending..."", 3: '160', 4: 'First time hearing you say you ""like"" something.', 5: '155'}"
+154	155		301							"{2: 'Camu', 3: '""Like"", huh?', 4: '1'}"
+155	156		301							{2: 'Camu', 3: 'The word just slipped out.', 4: '1'}
+156	157		301							{2: 'Camu', 3: 'Got a problem with that?', 4: '1'}
+157	158		302							{2: 'No. I was just relieved to hear you say it.', 3: '159'}
+158	159		301							"{2: 'Camu', 3: ""Huh? You're weird. What's to be relieved about that?"", 4: '1'}"
+159	160		301							"{2: 'Camu', 3: ""Hey, I'll get another serving. Double the spice!"", 4: '1'}"
+160	161		302							"{2: ""I'll get one too!"", 3: '162', 4: 'Can you really taste it?', 5: '163'}"
+161	162	165	301							{2: 'Camu', 3: '...One more serving, then.', 4: '1'}
+162	163		301							{2: 'Camu', 3: 'Of course. Do you really have to ask about everything?', 4: '1'}
+163	164		302							{2: 'Just curious...', 3: '165'}
+164	165		202							{1: '1', 6: '1'}
+165	166		301							{3: 'Carrying the street snacks he packed, Camu stands up from the chair and leaves the shade of the umbrella. He turns and glances at you, sunlight spilling over his face.'}
+166	167		201							{1: '1', 2: '500175'}
+167	168		301							"{1: '1', 2: 'Camu', 3: ""Let's go."", 4: '1'}"
+168	169		302							{2: 'Coming.', 3: '170', 4: 'Where to?', 5: '170'}
+169	170		202							{1: '1', 6: '1'}
+170	171		301							{3: 'Camu turns away, impatient. You can see him headed for the building of the Babylonia Command Central in the distance.'}
+171	172		201							{1: '1', 2: '500175', 3: '5'}
+172	173		301							"{1: '1', 2: 'Camu', 3: ""Hey. Next time don't come outside looking for me."", 4: '1'}"
+173	174		302							{2: 'Huh?', 3: '175', 4: 'But...', 5: '175'}
+174	175		301							"{2: 'Camu', 3: 'It\'s not like I ""ran away from home"".', 4: '1'}"
+175	176		301							"{2: 'Camu', 3: ""I know what I'm doing."", 4: '1'}"
+176	177		302							{2: 'Understood.', 3: '178', 4: '(Chuckle)', 5: '178'}
+177	178		301		1		AniZhuanchangBegin			{2: 'Camu', 3: 'Enough with that creepy smile.', 4: '1'}

@@ -1,0 +1,48 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '5'}
+3	3		301							{2: 'Puppy', 3: 'Woof!'}
+4	4		201							{1: '1', 2: '1031001'}
+5	5		301			DialogEnable				"{1: '1', 2: 'Liv', 3: ""Wait, don't run around inside the base!"", 4: '1'}"
+6	6		302							"{2: 'Looks like it has mostly recovered.', 3: '7', 4: ""You're the only one looking after it, Liv?"", 5: '8'}"
+7	7	9	301							"{2: 'Liv', 3: ""It's all thanks to Lucia getting the medicine from the city, but..."", 4: '1'}"
+8	8		301							"{2: 'Liv', 3: ""It's just my turn today, usually, it's Lucia's who's looking after it, but..."", 4: '1'}"
+9	9		201							{1: '1', 2: '1021001'}
+10	10		301							"{1: '1', 2: 'Lucia', 3: ""Commandant, we're currently connected so let's talk about today's mission."", 4: '1'}"
+11	11		302							"{2: ""Lucia, the puppy's awake."", 3: '12', 4: ""Lucia, I heard you're the one mainly looking after it."", 5: '13'}"
+12	12	14	301							{2: 'Lucia', 3: 'Commandant... About the puppy we rescued...', 4: '1'}
+13	13		301							{2: 'Lucia', 3: 'It? You mean the puppy?', 4: '1'}
+14	14		202							{1: '1', 6: '1'}
+15	15		301							{2: 'Puppy', 3: 'Woof!'}
+16	16		201							{1: '2', 2: '1031001', 4: '-400'}
+17	17		201							{1: '1', 2: '1021001', 4: '400'}
+18	18		301							"{1: '1', 2: 'Liv', 3: ""Lucia, it's full of energy today. Do you want to try again?"", 4: '2'}"
+19	19		302							{2: 'Try what?', 3: '20'}
+20	20		202							{1: '1', 2: '2', 6: '1'}
+21	21		301							{2: 'Puppy', 3: 'Woof...'}
+22	22		201							{1: '1', 2: '1021001'}
+23	23		301							{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+24	24		202							{1: '1', 6: '1'}
+25	25		301							{2: 'Puppy', 3: '...'}
+26	26		201							{1: '1', 2: '1021001', 3: '4'}
+27	27		301							{1: '1', 2: 'Lucia', 3: '...', 4: '1'}
+28	28		202							{1: '1', 6: '1'}
+29	29		301							{2: 'Puppy', 3: 'Ruff—'}
+30	30		302							{2: 'It ran?!', 3: '31'}
+31	31		201							{1: '1', 2: '1021001', 3: '3'}
+32	32		301							"{1: '1', 2: 'Lucia', 3: ""I guess it's just scared of me."", 4: '1'}"
+33	33		302							{2: 'Scared of Lucia?', 3: '34', 4: 'Did you do something to it?', 5: '34'}
+34	34		201							{1: '1', 2: '1031001', 4: '-400'}
+35	35		201							{1: '2', 2: '1011001', 4: '400'}
+36	36		301							"{1: '1', 2: 'Liv', 3: ""Yeah, it's still fine with me and Lee, but every time Lucia tries to get closer, the puppy will be on its guard..."", 4: '1'}"
+37	37		204							{1: '2', 2: '10'}
+38	38		301							"{2: 'Lee', 3: ""I think it's because of your murderous aura and poker face. It's a shame since Commandant's here too."", 4: '2'}"
+39	39		204							{1: '2'}
+40	40		301							"{2: 'Lee', 3: ""Why don't you help Lucia with her emotions training, Commandant?"", 4: '2'}"
+41	41		302							"{2: 'Emotions training?', 3: '42', 4: ""That's not really necessary."", 5: '43'}"
+42	42	44	301							"{2: 'Lee', 3: ""For example, like your expression. The Support Force has told me before that my team's leader looks a bit scary."", 4: '2'}"
+43	43		301							"{2: 'Liv', 3: ""I think so too... You're fine the way you are, Lucia..."", 4: '1'}"
+44	44		202							{1: '1', 2: '2', 6: '1'}
+45	45		201							{1: '1', 2: '1021001', 3: '4'}
+46	46		301							{1: '1', 2: 'Lucia', 3: 'I... I wish to carry out this type of training.', 4: '1'}
+47	47		301		1		AniZhuanchangBegin			{2: 'Lucia', 3: '...If Commandant can teach me.', 4: '1'}

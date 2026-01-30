@@ -1,0 +1,33 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory14.png'}
+2	2		401							{1: '1', 2: '208'}
+3	3		201							{1: '1', 2: '1011001'}
+4	4		301			DialogEnable				"{1: '1', 2: 'Lee', 3: ""If humans are truly required for Nanami's wacky experiments, then it would be easiest to send her to her corresponding place in human society."", 4: '1'}"
+5	5		301							{3: 'With a solemn expression, Lee gathers the team and announces his plan.'}
+6	101		302							{2: 'Her place in human society?', 3: '6', 4: 'Are you sending Nanami away?', 5: '111'}
+7	6	8	301							{2: 'Lee', 3: 'Yes. I think this is best for everyone. Hear me out.', 4: '1'}
+8	111		204							{1: '1', 2: '10'}
+9	7		301							{2: 'Lee', 3: 'I anticipated your reaction, Commandant, but just hear me out first.', 4: '1'}
+10	112		204							{1: '1'}
+11	8		301							"{2: 'Lee', 3: ""I plan to send Nanami to Babylonia's residential district. By her mental age, it should be possible to enroll her in school."", 4: '1'}"
+12	9		201							{1: '1', 2: '1031001', 3: '7'}
+13	10		301							{1: '1', 2: 'Liv', 3: 'A school... Can Constructs even go to school?', 4: '1'}
+14	11		201							{1: '1', 2: '1011001'}
+15	12		301							{2: 'Lee', 3: 'Of course. Schools are not only for the acquisition of knowledge, but also for the formation of a social identity.', 4: '1'}
+16	13		301							"{2: 'Lee', 3: ""Though the rules and regulations at school might tie Nanami down, they won't get in the way of her research."", 4: '1'}"
+17	14		301							{2: 'Lee', 3: 'Whether she wants to research individuals or groups, a school will suit her needs.', 4: '1'}
+18	15		301							{2: 'Lee', 3: 'What do you think, Nanami?', 4: '1'}
+19	16		203							{1: '1', 2: '0.25', 3: '-400'}
+20	17		201							{1: '2', 2: '1041001', 4: '400'}
+21	18		301							{1: '1', 2: 'Nanami', 3: 'Hmm... Nanami knows about school, duh. But is it fun?', 4: '2'}
+22	19		301							"{2: 'Lee', 3: ""It's not about fun. It's a place of learning. It won't be bad for you."", 4: '1'}"
+23	20		301							{2: 'Nanami', 3: 'If it gets me a chance to research humans... what do you think, Commandant?', 4: '2'}
+24	102		302							{2: 'I think this will be better.', 3: '21', 4: 'If it helps Nanami...', 5: '24'}
+25	21		301							{2: 'Nanami', 3: 'Does Commandant want to send Nanami away?', 4: '2'}
+26	22		301							{2: 'Lee', 3: 'The Commandant simply agrees with me, that this is the best choice for you.', 4: '1'}
+27	23		301		1		AniZhuanchangBegin			{2: 'Nanami', 3: 'No problem.', 4: '2'}
+28	24		301							{2: 'Lee', 3: 'Of course it will help. I will apply for the transfer with Babylonia immediately. All you need to do is sign, Commandant.', 4: '1'}
+29	25		301							{2: 'Nanami', 3: 'W-wait!', 4: '2'}
+30	26		301							{2: 'Lee', 3: 'Why wait? You want to finish your research, right?', 4: '1'}
+31	27		301							{2: 'Nanami', 3: 'Um... yeah.', 4: '2'}
+32	28		301		1		AniZhuanchangBegin			"{2: 'Lee', 3: ""It's settled then. Wait here for my good news."", 4: '1'}"

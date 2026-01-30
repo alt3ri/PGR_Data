@@ -1,0 +1,169 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_12.jpg'}
+2	2		401							{1: '1', 2: '120'}
+3	3		401							{1: '2', 2: '213'}
+4	4		301			DialogEnable				"{2: 'Echo', 3: ""Utopia... was a wonderful place. I've lived there for as long as I can remember.""}"
+5	5		301							{2: 'Echo', 3: 'They took in many children and Constructs. Some Constructs formed the Aurora Squadron, while others were charged with maintaining the operation of Utopia.'}
+6	6		301							{2: 'Echo', 3: 'The person in charge of Utopia... was Dr. Pickman.'}
+7	7		301							{2: 'Echo', 3: 'Dr. Pickman made many rules for Utopia, teaching us about truth and justice through beautiful songs, telling us that we must follow them so that we could contribute to the world when we grew up.'}
+8	8		301				AniZhuanchangBegin			{2: 'Echo', 3: 'Devote everything to kindness and love. Never disregard what is righteous...'}
+9	9		402							{1: '213'}
+10	10		401							{1: '1', 2: '36'}
+11	11		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory763.jpg'}
+12	12		401							{1: '1', 2: '278'}
+13	13		201							{1: '1', 2: '500704'}
+14	14		301			AniZhuanchangEnd				{1: '1', 2: 'Alisa', 3: 'Walk in the path of wisdom without arrogance or faltering...', 4: '1'}
+15	15		301							{2: 'Alisa', 3: 'Be fair, be just, be humble, be prudent...', 4: '1'}
+16	16		202							{1: '1', 6: '1'}
+17	17		201							{1: '1', 2: '500713'}
+18	18		301							"{1: '1', 2: 'Teacher', 3: ""You're here, Doctor."", 4: '1'}"
+19	19		202							{1: '1', 6: '1'}
+20	20		201							{1: '1', 2: '500709', 3: '1', 4: '300'}
+21	21		201							{1: '2', 2: '500704', 4: '-300'}
+22	22		301							{1: '1', 2: 'Pickman', 3: 'Alisa? Did you study hard today?', 4: '1'}
+23	23		301							{3: 'The scrawny, middle-aged man watches the young child lovingly with his golden eyes.'}
+24	24		204							{1: '2', 2: '1'}
+25	25		301							"{2: 'Alisa', 3: ""Of course! Didn't I tell you that I'm going to be the best prefect in Utopia?"", 4: '2'}"
+26	26		301							{2: 'Alisa', 3: 'I know the Utopia Protocols like the back of my hand!', 4: '2'}
+27	27		301							{2: 'Pickman', 3: 'Good girl.', 4: '1'}
+28	28		301							{2: 'Pickman', 3: 'Should I reward you with your favorite snack during dinner? The orange-flavored one you love?', 4: '1'}
+29	29		301							{2: 'Alisa', 3: 'Thank you!', 4: '2'}
+30	30		203							{1: '1', 2: '0.2', 3: '300', 4: '-100'}
+31	31		301							{3: 'The man with golden eyes smiles as he leans down and pats young Alisa on the shoulders.'}
+32	32		301							{2: 'Pickman', 3: 'I know Alisa is going to be the best of us.', 4: '1'}
+33	33		202							{1: '1', 2: '2', 6: '1'}
+34	34		201							{1: '1', 2: '500059'}
+35	35		301							"{1: '1', 2: 'Utopia Researcher', 3: ""It's almost time, Doctor."", 4: '1'}"
+36	36		202							{1: '1', 6: '1'}
+37	37		201							{1: '1', 2: '500709', 4: '400'}
+38	38		201							{1: '2', 2: '500713', 4: '-400'}
+39	39		301							{1: '1', 2: 'Pickman', 3: 'Ah. I almost forgot the important thing.', 4: '1'}
+40	40		301							"{2: 'Pickman', 3: ""—Come with me for a second. There's something I need your help with for the experiment."", 4: '1'}"
+41	41		301							{2: 'Teacher', 3: 'Yes, Doctor.', 4: '2'}
+42	42		301							{3: 'Pickman nods at the teacher, and the teacher immediately puts down the textbook and follows Pickman out of the room.'}
+43	43		202						500.0	{1: '1', 2: '2'}
+44	44		201							{1: '1', 2: '500704'}
+45	45		301							{1: '1', 2: 'Alisa', 3: 'Adults and their business...', 4: '1'}
+46	46		301							{3: 'Her lesson interrupted, Alisa puts down her book at a loss.'}
+47	47		301							"{2: 'Alisa', 3: ""But study time isn't over yet... What should I do?"", 4: '1'}"
+48	48		204							{1: '1', 2: '1'}
+49	49		301							"{2: 'Alisa', 3: 'I\'ll go find Cecily! Cecily has the best stories. That also counts as ""studying,"" I think!', 4: '1'}"
+50	50		301				AniZhuanchangBegin			{3: 'Having ruminated about what to do, Alisa happily decides the plan for the rest of her study time.'}
+51	51		202							{1: '1', 6: '1'}
+52	52		301			AniZhuanchangEnd	DialogDisable			{3: 'Inside Utopia, a couple of Constructs are sitting or standing in a quiet corner, focusing on their work.'}
+53	53		201							{1: '1', 2: '500704', 4: '600'}
+54	54		201							{1: '2', 2: '500711', 4: '-350', 7: '1'}
+55	55		203						800.0	{1: '1', 2: '0.25', 3: '350'}
+56	56		203						800.0	{1: '1', 2: '0.25', 3: '350', 4: '-80'}
+57	57		203							{1: '1', 2: '0.25', 3: '350'}
+58	58		301			DialogEnable				{2: 'Alisa', 3: 'Good morning, Cecily.', 4: '1'}
+59	59		301							{3: 'Alisa intentionally lowers her voice as she carefully runs to a Construct with long, purplish-gray hair. She holds her skirt up slightly and performs a complicated curtsy.'}
+60	60		204							{1: '2', 2: '1'}
+61	61		301							{2: 'Cecily', 3: '...Alisa? Is your class over already?', 4: '2'}
+62	62		301							{3: 'The female Construct named Cecily smiles gently and tucks away her hair before she reaches out, performing a curtsy in return and gesturing for Alisa to sit down.'}
+63	63		301							{2: 'Cecily', 3: 'What did you learn today?', 4: '2'}
+64	64		301							"{2: 'Alisa', 3: ""The teacher didn't teach anything new. We just revisited the Utopia Protocols today."", 4: '1'}"
+65	65		301							{2: 'Alisa', 3: 'The teacher got called away halfway through class. I suppose there was something important that needed to be done...', 4: '1'}
+66	66		204							{1: '2', 2: '14'}
+67	67		301							{3: 'Cecily looks down, complicated emotions flashing past her eyes.'}
+68	68		204							{1: '2', 2: '1'}
+69	69		301							{2: 'Cecily', 3: 'I see... How about I tell you a story?', 4: '2'}
+70	70		204							{1: '1', 2: '1'}
+71	71		301							{2: 'Alisa', 3: 'Yeah!', 4: '1'}
+72	72		301							{2: 'Cecily', 3: 'Do you remember where we were last time, Alisa?', 4: '2'}
+73	73		301							{2: 'Alisa', 3: 'Little Eliza was going to look for her brothers!', 4: '1'}
+74	74		204							{1: '1'}
+75	75		301							"{2: 'Alisa', 3: ""Poor Eliza... I wouldn't have known what to do."", 4: '1'}"
+76	76		204							{1: '1', 2: '1'}
+77	77		301							{2: 'Cecily', 3: 'Right... Eliza ran into an old woman in the woods. The kind woman told her about the eleven crowned swans swimming along the nearby river.', 4: '2'}
+78	78		301							{2: 'Cecily', 3: 'The old woman gave Eliza some fruits and guided her to a winding river ahead of them. After saying goodbye to the kind woman, Eliza walked along the river until she reached the beautiful ocean.', 4: '2'}
+79	79		301							{2: 'Cecily', 3: 'The waves from the ocean produced eleven white swan feathers. When the sun was about to set, little Eliza saw eleven crowned swans descending from the sky...', 4: '2'}
+80	80		301							{3: 'Alisa raises a hand to indicate that she has something to say.'}
+81	81		301							{2: 'Cecily', 3: 'Alisa? Do you have a question?', 4: '2'}
+82	82		301							{2: 'Alisa', 3: 'What does the ocean look like?', 4: '1'}
+83	83		203							{1: '1', 2: '0.25', 3: '250'}
+84	84		203							{1: '2', 2: '0.25', 3: '-250'}
+85	85		301							{3: 'Cecily pauses and tucks her hair away again before holding Alisa in her arms.'}
+86	86		301							{2: 'Cecily', 3: 'The ocean... is where many rivers and streams converge. It is endless and boundless, so expansive that it looks like it will go on forever.', 4: '2'}
+87	87		301							"{2: 'Cecily', 3: ""I've seen a golden ocean when its waves reflected the morning light. I've seen a pink ocean during the golden hours of twilight. I've seen its water at its darkest blue during a storm..."", 4: '2'}"
+88	88		301							{2: 'Alisa', 3: 'Whoa...', 4: '1'}
+89	89		301							"{3: ""Alisa listens to Cecily's description longingly.""}"
+90	90		301							"{2: 'Cecily', 3: ""You'll see the ocean one day, Alisa."", 4: '2'}"
+91	91		301							"{3: ""She smiles as she caresses Alisa's forehead.""}"
+92	92		301							{2: 'Alisa', 3: 'Really? Like Eliza did?', 4: '1'}
+93	93		301							{2: 'Cecily', 3: 'Of course.', 4: '2'}
+94	94		301							"{2: 'Cecily', 3: ""Little Eliza held onto her kindness and purity, which was why the evil queen's toad magic failed to take hold. She could only reunite with her brothers in the end because she never gave up."", 4: '2'}"
+95	95		301							{2: 'Cecily', 3: 'So, there is nothing you need to fear as long as you let nothing change you. Justice is bound to echo through the land, and eventually...', 4: '2'}
+96	96		202							{1: '1', 2: '2', 6: '1'}
+97	97		201							{1: '1', 2: '500711', 4: '300'}
+98	98		201							{1: '2', 2: '500405', 4: '-500'}
+99	99		203							{1: '2', 2: '0.25', 3: '-300'}
+100	100		401							{1: '2', 2: '2661'}
+101	101		301							{1: '1', 3: 'The door to the room opens, and a female Construct enters, subtly poking Cecily.'}
+102	102		301							{2: 'Short-haired Construct', 3: 'Ahem.', 4: '2'}
+103	103		202							{1: '1', 2: '2', 6: '1'}
+104	104		201							{1: '1', 2: '500704', 3: '1', 4: '300'}
+105	105		201							{1: '2', 2: '500711', 4: '-300'}
+106	106		301							{1: '1', 2: 'Alisa', 3: 'Nata!', 4: '1'}
+107	107		301							{2: 'Cecily', 3: '...', 4: '2'}
+108	108		204							{1: '1', 2: '1'}
+109	109		301							"{2: 'Cecily', 3: ""Alright, Alisa. We'll end today's story here, okay?"", 4: '2'}"
+110	110		301							"{2: 'Cecily', 3: 'I have to follow Utopia\'s rules and do my ""job"" now.', 4: '2'}"
+111	111		301							{2: 'Alisa', 3: '...Okay!', 4: '1'}
+112	112		301							"{3: ""Despite how much she wants to keep listening to Eliza's story, Alisa nods cooperatively.""}"
+113	113		301							{2: 'Alisa', 3: 'Goodbye, Cecily! Goodbye, Nata!', 4: '1'}
+114	114		301							{3: 'Alisa jumps down from the chair next to Cecily and performs a standard salute before departing.'}
+115	115		401							{1: '2', 2: '1516'}
+116	116		202						2000.0	{1: '1', 2: '2'}
+117	117		201							{1: '1', 2: '500704'}
+118	118		301							{1: '1', 2: 'Alisa', 3: 'Ah... I forgot my book.', 4: '1'}
+119	119		301							{3: 'Alisa realizes she has forgotten something before she walks out the door.'}
+120	120		301							{3: 'Turning around, she notices Nata saying something to Cecily.'}
+121	121		202							{1: '1', 6: '1'}
+122	122		201							{1: '1', 2: '500711', 4: '400'}
+123	123		201							{1: '2', 2: '500405', 4: '-400'}
+124	124		301							{1: '1', 2: 'Nata', 3: 'Cecily, you know full well...', 4: '2'}
+125	125		301							"{2: 'Cecily', 3: ""She's just a kid, Nata. She doesn't understand anything. Don't blame a child for the sin. We should be the ones working hard."", 4: '1'}"
+126	126		301							{2: 'Nata', 3: '...Forget it. I was being rash. Alisa... is a good kid.', 4: '2'}
+127	127		301							{2: 'Cecily', 3: 'Have you found those people? Do any of them show any inclination to escape this place?', 4: '1'}
+128	128		301							"{2: 'Nata', 3: ""...Pickman has been too good to them. He's basically flawless—providing food, sufficient water, plentiful care... and fair rules."", 4: '2'}"
+129	129		301							{2: 'Nata', 3: 'They all see Pickman as their savior, believing that he is sincerely building this place as a real utopia.', 4: '2'}
+130	130		301							"{2: 'Nata', 3: ""I released a lot of internal information on the lab, but they... wouldn't believe it."", 4: '2'}"
+131	131		301							{2: 'Cecily', 3: 'Yeah...', 4: '1'}
+132	132		301							{2: 'Cecily', 3: 'There are enough supplies in this place—food, sufficient water, fair rules... Who can say no to these things in this day and age?', 4: '1'}
+133	133		301							"{2: 'Cecily', 3: ""Does he not love everyone in this Utopia sincerely? He's done plenty, indeed."", 4: '1'}"
+134	134		301							"{2: 'Cecily', 3: ""He even punished the leading figures who caused the disturbance only because they disrupted Utopia's order..."", 4: '1'}"
+135	135		301							{2: 'Nata', 3: 'Cecily!', 4: '2'}
+136	136		301							"{2: 'Cecily', 3: ""Don't get angry. These are the truths."", 4: '1'}"
+137	137		301							{2: 'Nata', 3: 'But you know how Zikka...', 4: '2'}
+138	138		301							"{2: 'Cecily', 3: ""I know, which is why I'll think of a way. There's no use rushing, Nata."", 4: '1'}"
+139	139		301							{2: 'Cecily', 3: 'Have you gotten the code to the door outside?', 4: '1'}
+140	140		301							"{2: 'Nata', 3: ""I got it. I've placed it somewhere they'd never think of."", 4: '2'}"
+141	141		301							"{2: 'Cecily', 3: ""...I'll arrange what happens later. Don't be impulsive—we will escape this place with Zikka and Arabella."", 4: '1'}"
+142	142		301							"{2: 'Cecily', 3: ""Justice will eventually prevail, won't it?"", 4: '1'}"
+143	143		301							{2: 'Nata', 3: '...Enough with these lies for children.', 4: '2'}
+144	144		301							"{2: 'Nata', 3: ""We wouldn't have been in this hell if justice existed..."", 4: '2'}"
+145	145		401							{1: '2', 2: '2661'}
+146	146		202							{1: '2'}
+147	147		301			RImgBg1Shake	AniZhuanchangBegin			{3: 'Nata pushes the door open angrily and leaves.'}
+148	148		202							{1: '1', 6: '1'}
+149	149		401							{1: '1', 2: '36'}
+150	150		101						2000.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3801_14.jpg'}
+151	151		401							{1: '2', 2: '213'}
+152	152		401							{1: '1', 2: '120'}
+153	153		301			AniZhuanchangEnd				"{2: 'Echo', 3: ""...My teacher told me not to interrupt people's conversation, so Cecily had also left by the time I knocked on the door.""}"
+154	154		301							"{2: 'Echo', 3: ""I didn't understand what Cecily was saying back then, but now...""}"
+155	155		301							{2: 'Echo', 3: 'She must have thought about leaving as well. Unfortunately... I figured it out too late.'}
+156	156		302							{2: '...', 3: '157'}
+157	157		301							"{3: ""Although Echo's sadness seems genuine, you cannot let down your guard just because of a short story.""}"
+158	158		301							{3: 'Cecily... You seem to have seen this name before.'}
+159	159		301							"{3: 'Was it from the annual list of deceased Constructs or somewhere else? If ""Cecily"" was a Babylonia Construct, there must be a file on her up there.'}"
+160	160		301							"{3: 'Echo lowers her head slightly. The fabled armor-like ""Kurono test subject"" sits right beside her, gently touching Echo\'s shoulders.'}"
+161	161		302							{2: 'Why would they want to escape if Utopia was that good?', 3: '162'}
+162	162		301							"{3: ""Dr. Pickman even sounds like a rare altruist from Echo's descriptions.""}"
+163	163		301							{3: 'Food, sufficient water, plentiful care, fair rules... Even Babylonia cannot guarantee these to everyone who enters a conservation area now.'}
+164	164		301							{3: 'Why would those Constructs plan to escape if that was the case?'}
+165	165		301							{2: 'Echo', 3: '...I was the cause of all these sins.'}
+166	166		301							"{2: 'Echo', 3: ""Utopia might not have existed if it weren't for me, and they wouldn't have had...""}"
+167	167		301							"{2: 'Echo', 3: ""But... that's another story. Rest—we still have a long way to go tomorrow.""}"
+168	168		301		1		AniZhuanchangBegin			{3: 'She fiddles with the campfire, and the surroundings grow dim.'}

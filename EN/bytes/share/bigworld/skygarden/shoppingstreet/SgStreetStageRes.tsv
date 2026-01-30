@@ -1,0 +1,33 @@
+Id	ValueType	IsShopAttr	AttrId	BuffCalId	Div	IsSp	HasBubble	FormatStr	BubbleDesc	Desc	Name	InitKey	Icon	IconColor	Color	AttrKey
+101	1		101	102						Traffic	Base Traffic	CustomerNumFixed	Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlowAdd.png	7776D2FF	7776D2FF	
+102	2		102		10000					Traffic	Traffic Multiplier	CustomerNumMultiple	Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlowPercent.png	7776D2FF	7776D2FF	
+103	1		103	104						Atmosphere	Base Atmosphere	EnvironmentFixed	Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconEnvironmentAdd.png	8DA955FF	8DA955FF	
+104	2		104		10000					Atmosphere	Atmosphere Multiplier	EnvironmentMultiple	Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconEnvironmentPercent.png	8DA955FF	8DA955FF	
+105	1		105	106						Satisfaction	Base Satisfaction	SatisfactionFixed	Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconFavorabilityLevel.png	C97D99FF	FFD055FF	
+106	2		106		10000					Satisfaction	Satisfaction Multiplier	SatisfactionMultiple	Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconFavorabilityLevel.png	C97D99FF	C97D99FF	
+201	1										Fixed Customer Tips Quantity Bonus					
+202	2				10000						Customer Tips Quantity Multiplier					
+203	1										Fixed Sudden Event Quantity Bonus					
+204	2				10000						Sudden Event Quantity Multiplier					
+205	1										Fixed Recommended Store Profit Bonus					
+206	2				10000						Recommended Store Profit Multiplier					
+207	1										Fixed Recommended Store Visit Coefficient Bonus					
+208	2				10000						Recommended Store Visit Coefficient Multiplier					
+301	1										Auto Dissatisfaction Resolution (Client Only)					
+302	1										Auto Feedback Resolution (Client Only)					
+303	1										Store Demolishment Refund Bonus					
+304	1										Babylonia News Negative News Weight Decrease					
+305	1										Sudden Event Enable Special Reward					
+20001	1									Retail	Retail			FF7200FF		
+20002	1									Traffic	Traffic			1EBDFFFF		
+20003	1									Atmosphere	Atmosphere			45A22FFF		
+30001	2	1	1		10000	True	True		The more stars there are, the more customers will visit.	Traffic	Fixed Visit Coefficient Bonus	CustomerFactor	Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconStarLevel.png	8DA955FF	A5D449FF	
+30002	2	1	2		10000					Traffic	Visit Coefficient Bonus in Permyriad			C3A453FF	C3A453FF	
+30003	1	1	3			True	True	%s/person	Increases consumption per person at a store.	Profit	Fixed Profit Bonus	AwardGold	Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png	C3A453FF	C3A453FF	
+30004	2	1	4		10000					Profit	Profit Bonus in Permyriad			C3A453FF	C3A453FF	
+30005	2	1	5		10000					Construction consumption	Construction Consumption Bonus			C3A453FF	C3A453FF	
+30006	2	1	6		10000					Upgrade consumption	Upgrade Consumption Bonus			C3A453FF	C3A453FF	
+20101	1									Income: Used to build or upgrade stores.	Public Funds		Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconIncome.png	C3A453FF	C3A453FF	
+20102	2				100					Satisfaction: Determined by Rating and Atmosphere.	Satisfaction		Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconFavorabilityLevel.png	C97D99FF	FD71A5FF	
+20103	1									Customers: Number of customers during the operation.	Traffic		Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconPassengerFlow.png	7776D2FF	7B79FFFF	
+20104	1									Atmosphere: Boosts Satisfaction.	Atmosphere		Assets/Product/Texture/Atlas/BigWorld/SkyGarden/UiSkyGardenShoppingStreet/Icon/UiSkyGardenShoppingStreetTargetIconEnvironment.png	8DA955FF	A5D449FF	

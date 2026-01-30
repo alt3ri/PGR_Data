@@ -1,0 +1,83 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1248.jpg'}
+2	2		502						250.0	{1: 'DialogDisable'}
+3	3		107							{1: 'Babel Tower, 38th Floor'}
+4	4		301							{3: 'Babel Tower, 38th Floor.'}
+5	5		108							{1: '1'}
+6	6		401							{1: '2', 2: '5159'}
+7	7		401							{1: '1', 2: '6182'}
+8	8		104						200.0	{1: '0|30|-50', 2: '0.2'}
+9	9		104							{1: '0|0|-100', 2: '0.3'}
+10	10		201							{1: '1', 2: '501235'}
+11	11		301			DialogEnable	DialogDisable			{1: '1', 2: 'Dante', 3: 'How are you holding up?', 4: '1'}
+12	12		202							{1: '1', 7: '1'}
+13	13		104						200.0	{1: '0|30|-100', 2: '0.2'}
+14	14		104							{1: '0|0|-150', 2: '0.3'}
+15	15		301			DialogEnable				{3: 'The four of you walk along the curved staircase, steadily making your way upward.'}
+16	16		302							"{2: ""Don't worry. The power armor's got me covered."", 3: '17'}"
+17	17		401							{1: '2', 2: '9351042'}
+18	18		301							{3: 'You wave a hand, causing slight mechanical clinks from within the power armor, signaling that everything is fine.'}
+19	19		201							{1: '1', 2: '501235'}
+20	20		301							{1: '1', 2: 'Dante', 3: 'Which floor are we headed to next?', 4: '1'}
+21	21		201							{1: '1', 2: '501234', 3: '13', 7: '1'}
+22	22		301							{1: '1', 2: 'Vergil', 3: 'The 38th.', 4: '1'}
+23	23		201							{1: '1', 2: '501235', 7: '1'}
+24	24		301				DialogDisable			"{1: '1', 2: 'Dante', 3: ""Feels like we're close to the top now."", 4: '1'}"
+25	25		202							{1: '1', 6: '1'}
+26	26		401							{1: '2', 2: '5656'}
+27	27		104						1000.0	{1: '0|0|-250', 2: '1'}
+28	28		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1241.jpg', 3: '0', 4: '1', 5: '0.5'}
+29	29		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1241.jpg'}
+30	30		205							{1: '999'}
+31	31		104							{1: '0|0|0', 2: '0'}
+32	32		301			DialogEnable				{3: 'The group pushes open the door to the 38th floor while chatting casually.'}
+33	33		201							{1: '18', 2: '500610', 4: '50'}
+34	34		301							{1: '1', 2: 'Alpha', 3: 'A lab...', 4: '18'}
+35	35		202				DialogDisable			{1: '18'}
+36	36		104						1000.0	{1: '0|-150|-300', 2: '1'}
+37	37		104						2500.0	{1: '0|150|-300', 2: '2.5'}
+38	38		104						1000.0	{1: '0|0|0', 2: '1'}
+39	39		301			DialogEnable				{3: 'Inside the circular chamber, tangled cables and computer terminals fill the space. At its heart, a cylindrical device stands as crimson crystals formed from the Punishing Virus creep outward, while data is still displayed on some of the screens.'}
+40	40		201							{1: '1', 2: '501235'}
+41	41		301							"{1: '1', 2: 'Dante', 3: ""Nothing like what we've seen. What do you think, 【kuroname】?"", 4: '1'}"
+42	42		302							{2: 'Which is expected.', 3: '43'}
+43	43		202							{1: '1'}
+44	44		301							"{3: ""Based on intel you gathered, Thomas was conducting space-time research, which would require a dedicated facility. The Mirror Demon isn't likely to change its lair, so this tower was most likely constructed by modifying the original laboratory.""}"
+45	45		302							{2: 'This is where Thomas conducted his experiments.', 3: '46'}
+46	46		201							{1: '1', 2: '501234', 3: '4', 7: '1'}
+47	47		301				DialogDisable			{1: '1', 2: 'Vergil', 3: 'Where everything started.', 4: '1'}
+48	48		302							"{2: ""I need to back up Thomas' data while we're here."", 3: '49'}"
+49	49		302							{2: 'It will help you return to your world.', 3: '50'}
+50	50		201							{1: '1', 2: '501235', 7: '1'}
+51	51		301			DialogEnable				{1: '1', 2: 'Dante', 3: 'Then we wait for you to finish the backup.', 4: '1'}
+52	52		203							{1: '1', 2: '0.25', 3: '400', 7: '1'}
+53	53		201							{1: '2', 2: '500610', 4: '-400'}
+54	54		301							"{1: '1', 2: 'Alpha', 3: ""The Mirror Demon won't just stand by and watch while we gather information."", 4: '2'}"
+55	55		301				DialogDisable			"{2: 'Dante', 3: ""Hmm... which means someone's gotta scout ahead."", 4: '1'}"
+56	56		202							{1: '1', 2: '2', 6: '1'}
+57	57		401							{1: '2', 2: '5656'}
+58	58		104						500.0	{1: '250|100|-200', 2: '0.5'}
+59	59		301			DialogEnable				{3: 'Hearing this, Vergil turns to open a large door, heading up without a backward glance. Not one to be left behind, Dante strides after him.'}
+60	60		201							{1: '1', 2: '501235'}
+61	61		301				DialogDisable			"{1: '1', 2: 'Dante', 3: ""Well, looks like we're up."", 4: '1'}"
+62	62		202							{1: '1', 6: '1'}
+63	63		104						500.0	{1: '0|100|-200', 2: '0.5'}
+64	64		201							{1: '1', 2: '500610'}
+65	65		301			DialogEnable				{1: '1', 3: 'As the two half-demons disappear into the shadows, only you and Alpha remain in the eerie laboratory.'}
+66	66		302							"{2: ""Aren't you going up with them?"", 3: '67'}"
+67	67		401							{1: '2', 2: '4792'}
+68	68		301							{3: 'You lean forward to insert the storage device into the lab computer, asking in a hushed voice.'}
+69	69		301							"{2: 'Alpha', 3: ""I promised Lucia I'd take care of you."", 4: '1'}"
+70	70		301				AniZhuanchangBegin			{3: 'After these words, silence fills the room.'}
+71	71		401							{1: '1', 2: '36'}
+72	72		502						200.0	{1: 'DialogDisable'}
+73	73		202							{1: '1', 6: '1'}
+74	74		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1245.jpg'}
+75	75		104				AniZhuanchangEnd			{1: '0|-150|-300', 2: '0'}
+76	76		401							{1: '1', 2: '6185'}
+77	77		301			DialogEnable	DialogDisable			{3: 'The Sons of Sparda soon reach the next floor.'}
+78	78		104						2000.0	{1: '0|0|0', 2: '2'}
+79	79		301			DialogEnable				{3: 'This floor lacks the familiar ring of doors. Instead, it opens into a vast, domed chamber with a single passage leading upward.'}
+80	80		301							{3: 'At the heart of the space stands a Hetero-Creature. Its presence radiates menace, more powerful than any they have encountered before.'}
+81	81		201							{1: '1', 2: '501234', 3: '13'}
+82	82		301		1		AniZhuanchangBegin			{1: '1', 2: 'Vergil', 3: 'Things are getting interesting.', 4: '1'}

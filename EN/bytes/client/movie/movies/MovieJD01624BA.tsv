@@ -1,0 +1,27 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory285.png'}
+2	2		401							{1: '1', 2: '201'}
+3	6		301			DialogEnable				"{3: ""You board a reinforced defense ship and leaves the Red Tide with the Support Force's help.""}"
+4	7		301							{3: 'Everyone wears protective gear and the ship itself has been reinforced, but the highly concentrated Punishing Virus still finds its way in and causes symptoms of infection in everyone.'}
+5	8		301							{3: 'After receiving first-aid, you all look over the abandoned area.'}
+6	3		201							{1: '1', 2: '1031001', 4: '-600'}
+7	4		201							{1: '2', 2: '500026', 4: '600'}
+8	5		201							{1: '3', 2: '500166', 3: '5'}
+9	9		301							{1: '1', 2: 'Liv', 3: 'This place seems to have been an office area.', 4: '1'}
+10	10		301							{2: 'Lucia', 3: 'I thought a business area was the same as a business street.', 4: '3'}
+11	11		301							"{2: 'Liv', 3: ""They do sound very similar, but they're actually different. I've been here on several rescue missions... a business area has more people and Corrupted than a business street."", 4: '1'}"
+12	12		301							"{2: 'Lucia', 3: ""So it's like a factory, then? I focus so much on fighting that I never paid attention to their difference. I mean, they've both been destroyed beyond recognition, so..."", 4: '3'}"
+13	13		301							{2: 'Lucia', 3: 'But there is one thing I know about an industrial district.', 4: '3'}
+14	14		302							{2: 'The number of Corrupted.', 3: '15'}
+15	15		301							{2: 'Lucia', 3: 'Exactly.', 4: '3'}
+16	16		301							"{2: 'Lucia', 3: ""We've reached a fork—the road splits into left and right. Which path are we taking?"", 4: '3'}"
+17	17		302							"{2: ""Lee, what's your thought?"", 3: '18', 4: ""Lucia, it's up to you!"", 5: '19', 6: 'Liv, any thought?', 7: '20'}"
+18	18	21	301							"{2: 'Lee', 3: ""I don't have enough clues to say much. They look the same."", 4: '2'}"
+19	19	21	301							"{2: 'Lucia', 3: ""I can't tell you why, but I think we should go right."", 4: '3'}"
+20	20		301							{2: 'Liv', 3: 'I think we should go left. It feels more peaceful.', 4: '1'}
+21	21		301				DialogDisable			{3: 'Where do these paths lead?'}
+22	22		305							{1: '23', 2: '26'}
+23	23		301			DialogEnable				"{2: 'Liv', 3: ""We now have a rough idea where these paths lead. It's you call, Commandant."", 4: '1'}"
+24	24		301							{2: 'Liv', 3: 'It is quite obvious that the road on the left has fewer Corrupted. Most of them are crowding up on the right.', 4: '1'}
+25	25		301		1		AniZhuanchangBegin			{3: 'Left or right?'}
+26	26		202		1		AniZhuanchangBegin			{1: '1', 2: '2', 3: '3', 6: '1'}
